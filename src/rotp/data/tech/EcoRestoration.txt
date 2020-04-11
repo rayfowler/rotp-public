@@ -1,0 +1,25 @@
+[tech]
+seq:    0
+name:   ECORESTORATION_0_NAME
+detail: ECORESTORATION_0_DETAIL
+
+[tech]
+seq:    1
+name:   ECORESTORATION_1_NAME
+detail: ECORESTORATION_1_DETAIL
+
+[tech]
+seq:    2
+name:   ECORESTORATION_2_NAME
+detail: ECORESTORATION_2_DETAIL
+
+[tech]
+seq:    3
+name:   ECORESTORATION_3_NAME
+detail: ECORESTORATION_3_DETAIL
+
+[tech]
+seq:    4
+name:   ECORESTORATION_4_NAME
+detail: ECORESTORATION_4_DETAIL
+

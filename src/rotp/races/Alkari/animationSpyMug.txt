@@ -1,0 +1,15 @@
+#
+# Alkari Spy Mugshot Animation (Races Tech UI)
+
+Base, _ALL_  , AlkLab
+Base, _ALL_  , AlkSpy
+
+#   Looking (2,3) and Blinking (4,5)
+Eye,   260@90 , NULL:8:20+AlkSpyEy02:1+AlkSpyEy03:1+AlkSpyEy04:1+AlkSpyEy05:1+AlkSpyEy06:1
+
+#   1(null)-Closed, 2-Half-Open, 3-Open
+Mouth, 260@150 , NULL:2+AlkSpyMo02:2+AlkSpyMo03:2+AlkSpyMo02:2+AlkSpyMo03:2+AlkSpyMo02:2
+
+# Camera - 1-34  (lauching to fully open)
+Camera, 50@130 , NULL:10:20+AlkSpyCa02:1+AlkSpyCa03:1+AlkSpyCa04:1+AlkSpyCa05:1+AlkSpyCa06:1+AlkSpyCa07:1+AlkSpyCa08:1+AlkSpyCa09:1+AlkSpyCa10:1+AlkSpyCa11:1+AlkSpyCa12:1+AlkSpyCa13:1+AlkSpyCa14:1+AlkSpyCa15:1+AlkSpyCa16:1+AlkSpyCa17:1+AlkSpyCa18:1+AlkSpyCa19:1+AlkSpyCa20:1+AlkSpyCa21:1+AlkSpyCa22:1+AlkSpyCa23:1+AlkSpyCa24:1+AlkSpyCa25:1+AlkSpyCa26:1+AlkSpyCa27:1+AlkSpyCa28:1+AlkSpyCa29:10+AlkSpyCa30:1+AlkSpyCa31:1+AlkSpyCa32:1+AlkSpyCa33:1+AlkSpyCa34:1000
+

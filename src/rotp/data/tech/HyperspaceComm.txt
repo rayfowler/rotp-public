@@ -1,0 +1,4 @@
+[tech]
+seq:    0
+name:   HYPERSPACE_0_NAME
+detail: HYPERSPACE_0_DETAIL

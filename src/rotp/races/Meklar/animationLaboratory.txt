@@ -1,0 +1,7 @@
+#
+# Meklar Laboratory Animation
+
+Base,    _ALL_    , MekLab
+
+GlowA, 280@400  , NULL:10:30+MekLabGlowA:10:30
+GlowB, 1150@440 , NULL:10:30+MekLabGlowB:10:30

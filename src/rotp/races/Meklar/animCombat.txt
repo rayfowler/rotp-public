@@ -1,0 +1,4 @@
+#
+# Meklar Combat Animation
+
+Base, _ALL_ , MekComFir01:1+MekComFir02:1+MekComFir03:1+MekComFir04:1+MekComFir05:2+MekComFir06:1+MekComFir01:1

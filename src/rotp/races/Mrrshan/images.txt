@@ -1,0 +1,201 @@
+
+MrrFlagWar   | races/Mrrshan/banner_war.png
+MrrFlagNorm  | races/Mrrshan/banner_norm.png
+MrrFlagPact  | races/Mrrshan/banner_pact.png
+
+MrrDlgWar    | races/Mrrshan/dialogue_war.png
+MrrDlgNorm   | races/Mrrshan/dialogue_norm.png
+MrrDlgPact   | races/Mrrshan/dialogue_pact.png
+
+MrrLab       | races/Mrrshan/Mrrshan_Laboratory.jpg
+MrrCouncil   | races/Mrrshan/Council.jpg
+
+MrrLeader    | races/Mrrshan/CouncilLeader.png
+
+MrrDip       | races/Mrrshan/Diplomat_Base.png
+MrrDipEy01   | races/Mrrshan/Diplomat_Eyes_01.png
+MrrDipEy02   | races/Mrrshan/Diplomat_Eyes_02.png
+MrrDipEy03   | races/Mrrshan/Diplomat_Eyes_03.png
+MrrDipEy04   | races/Mrrshan/Diplomat_Eyes_04.png
+MrrDipMo01   | races/Mrrshan/Diplomat_Mouth_01.png
+MrrDipMo02   | races/Mrrshan/Diplomat_Mouth_02.png
+MrrDipMo03   | races/Mrrshan/Diplomat_Mouth_03.png
+MrrDipMo04   | races/Mrrshan/Diplomat_Mouth_04.png
+MrrDipCl01   | races/Mrrshan/Diplomat_Claw_01.png
+MrrDipCl02   | races/Mrrshan/Diplomat_Claw_02.png
+MrrDipCl03   | races/Mrrshan/Diplomat_Claw_03.png
+
+MrrSci       | races/Mrrshan/Scientist_Base.png
+MrrSciEy01   | races/Mrrshan/Scientist_Eyes_01.png
+MrrSciEy02   | races/Mrrshan/Scientist_Eyes_02.png
+MrrSciEy03   | races/Mrrshan/Scientist_Eyes_03.png
+MrrSciMo01   | races/Mrrshan/Scientist_Mouth_01.png
+MrrSciMo02   | races/Mrrshan/Scientist_Mouth_02.png
+MrrSciMo03   | races/Mrrshan/Scientist_Mouth_03.png
+MrrSciSe01   | races/Mrrshan/Scientist_Select_01.png
+MrrSciSe02   | races/Mrrshan/Scientist_Select_02.png
+MrrSciSe03   | races/Mrrshan/Scientist_Select_03.png
+MrrSciSe04   | races/Mrrshan/Scientist_Select_04.png
+MrrSciSe05   | races/Mrrshan/Scientist_Select_05.png
+MrrSciSe06   | races/Mrrshan/Scientist_Select_06.png
+
+MrrSol       | races/Mrrshan/Soldier_base.png
+MrrSolSn01   | races/Mrrshan/Soldier_Snarl_01.png
+MrrSolSn02   | races/Mrrshan/Soldier_Snarl_02.png
+MrrSolSn03   | races/Mrrshan/Soldier_Snarl_03.png
+MrrSolSn04   | races/Mrrshan/Soldier_Snarl_04.png
+MrrSolSn05   | races/Mrrshan/Soldier_Snarl_05.png
+MrrSolSn06   | races/Mrrshan/Soldier_Snarl_06.png
+MrrSolWe01   | races/Mrrshan/Soldier_Wpn_01.png
+MrrSolWe02   | races/Mrrshan/Soldier_Wpn_02.png
+MrrSolWe03   | races/Mrrshan/Soldier_Wpn_03.png
+MrrSolWe04   | races/Mrrshan/Soldier_Wpn_04.png
+MrrSolWe05   | races/Mrrshan/Soldier_Wpn_05.png
+MrrSolWe06   | races/Mrrshan/Soldier_Wpn_06.png
+MrrSolWe07   | races/Mrrshan/Soldier_Wpn_07.png
+MrrSolWe08   | races/Mrrshan/Soldier_Wpn_08.png
+MrrSolWe09   | races/Mrrshan/Soldier_Wpn_09.png
+MrrSolWe10   | races/Mrrshan/Soldier_Wpn_10.png
+MrrSolWe11   | races/Mrrshan/Soldier_Wpn_11.png
+MrrSolWe12   | races/Mrrshan/Soldier_Wpn_12.png
+MrrSolWe13   | races/Mrrshan/Soldier_Wpn_13.png
+MrrSolWe14   | races/Mrrshan/Soldier_Wpn_14.png
+MrrSolWe15   | races/Mrrshan/Soldier_Wpn_15.png
+
+MrrSpy00     | races/Mrrshan/Spy_00.png
+MrrSpy01     | races/Mrrshan/Spy_01.png
+MrrSpy02     | races/Mrrshan/Spy_02.png
+MrrSpy03     | races/Mrrshan/Spy_03.png
+MrrSpy04     | races/Mrrshan/Spy_04.png
+MrrSpy05     | races/Mrrshan/Spy_05.png
+MrrSpy06     | races/Mrrshan/Spy_06.png
+MrrSpy07     | races/Mrrshan/Spy_07.png
+MrrSpy08     | races/Mrrshan/Spy_08.png
+MrrSpy09     | races/Mrrshan/Spy_09.png
+MrrSpy10     | races/Mrrshan/Spy_10.png
+MrrSpy11     | races/Mrrshan/Spy_11.png
+MrrSpy12     | races/Mrrshan/Spy_12.png
+MrrSpyEy01   | races/Mrrshan/Spy_Eye_01.png
+MrrSpyEy02   | races/Mrrshan/Spy_Eye_02.png
+MrrSpyEa00   | races/Mrrshan/Spy_Ear_00.png
+MrrSpyEa01   | races/Mrrshan/Spy_Ear_01.png
+MrrSpyEa02   | races/Mrrshan/Spy_Ear_02.png
+
+
+
+MrrFort01     | races/Mrrshan/Fortress_01.png
+
+MrrTransport  | races/Mrrshan/Transport_Transit.png
+MrrTrans00    | races/Mrrshan/Transport_00.png
+MrrTrans08    | races/Mrrshan/Transport_08.png
+MrrTrans11    | races/Mrrshan/Transport_11.png
+MrrTrans12    | races/Mrrshan/Transport_12.png
+MrrTrans13    | races/Mrrshan/Transport_13.png
+MrrTrans14    | races/Mrrshan/Transport_14.png
+MrrTrans15    | races/Mrrshan/Transport_15.png
+MrrTrans16    | races/Mrrshan/Transport_16.png
+MrrTrans17    | races/Mrrshan/Transport_17.png
+
+MrrGNNB_01    | races/Mrrshan/GNN_Back_01.jpg
+MrrGNNB_02    | races/Mrrshan/GNN_Back_02.jpg
+MrrGNNB_03    | races/Mrrshan/GNN_Back_03.jpg
+MrrGNNB_04    | races/Mrrshan/GNN_Back_04.jpg
+MrrGNNB_05    | races/Mrrshan/GNN_Back_05.jpg
+MrrGNNB_06    | races/Mrrshan/GNN_Back_06.jpg
+MrrGNNB_07    | races/Mrrshan/GNN_Back_07.jpg
+MrrGNNB_08    | races/Mrrshan/GNN_Back_08.jpg
+MrrGNNB_09    | races/Mrrshan/GNN_Back_09.jpg
+MrrGNNB_10    | races/Mrrshan/GNN_Back_10.jpg
+MrrGNNB_11    | races/Mrrshan/GNN_Back_11.jpg
+MrrGNNB_12    | races/Mrrshan/GNN_Back_12.jpg
+MrrGNNB_13    | races/Mrrshan/GNN_Back_13.jpg
+MrrGNNB_14    | races/Mrrshan/GNN_Back_14.jpg
+MrrGNNB_15    | races/Mrrshan/GNN_Back_15.jpg
+MrrGNNB_16    | races/Mrrshan/GNN_Back_16.jpg
+MrrGNNB_17    | races/Mrrshan/GNN_Back_17.jpg
+MrrGNNB_18    | races/Mrrshan/GNN_Back_18.jpg
+MrrGNNB_19    | races/Mrrshan/GNN_Back_19.jpg
+MrrGNNB_20    | races/Mrrshan/GNN_Back_20.jpg
+MrrGNNB_21    | races/Mrrshan/GNN_Back_21.jpg
+MrrGNNB_22    | races/Mrrshan/GNN_Back_22.jpg
+MrrGNNB_23    | races/Mrrshan/GNN_Back_23.jpg
+
+MrrGNNH_1     | races/Mrrshan/GNN_Host_01.png
+MrrGNNH_2     | races/Mrrshan/GNN_Host_02.png
+MrrGNNH_3     | races/Mrrshan/GNN_Host_03.png
+MrrGNNA_1     | races/Mrrshan/GNN_Aura_01.png
+MrrGNNA_2     | races/Mrrshan/GNN_Aura_02.png
+MrrGNNA_3     | races/Mrrshan/GNN_Aura_03.png
+MrrGNNR_01    | races/Mrrshan/GNN_Arms_01.png
+MrrGNNR_02    | races/Mrrshan/GNN_Arms_02.png
+MrrGNNR_03    | races/Mrrshan/GNN_Arms_03.png
+MrrGNNR_04    | races/Mrrshan/GNN_Arms_04.png
+MrrGNNR_05    | races/Mrrshan/GNN_Arms_05.png
+MrrGNNR_06    | races/Mrrshan/GNN_Arms_06.png
+MrrGNNR_07    | races/Mrrshan/GNN_Arms_07.png
+MrrGNNR_08    | races/Mrrshan/GNN_Arms_08.png
+MrrGNNR_09    | races/Mrrshan/GNN_Arms_09.png
+MrrGNNR_10    | races/Mrrshan/GNN_Arms_10.png
+
+
+MrrComb01    | races/Mrrshan/Combat_01.png
+MrrComb02    | races/Mrrshan/Combat_02.png
+MrrComb03    | races/Mrrshan/Combat_03.png
+
+MrrHComb01   | races/Mrrshan/HCombat_01.png
+MrrHComb02   | races/Mrrshan/HCombat_02.png
+MrrHComb03   | races/Mrrshan/HCombat_03.png
+
+MrrDeath101    | races/Mrrshan/Death1-01.png
+MrrDeath102    | races/Mrrshan/Death1-02.png
+MrrDeath103    | races/Mrrshan/Death1-03.png
+MrrDeath104    | races/Mrrshan/Death1-04.png
+MrrDeath105    | races/Mrrshan/Death1-05.png
+MrrDeath201    | races/Mrrshan/Death2-01.png
+MrrDeath202    | races/Mrrshan/Death2-02.png
+MrrDeath203    | races/Mrrshan/Death2-03.png
+MrrDeath204    | races/Mrrshan/Death2-04.png
+MrrDeath205    | races/Mrrshan/Death2-05.png
+MrrDeath301    | races/Mrrshan/Death3-01.png
+MrrDeath302    | races/Mrrshan/Death3-02.png
+MrrDeath303    | races/Mrrshan/Death3-03.png
+MrrDeath304    | races/Mrrshan/Death3-04.png
+MrrDeath305    | races/Mrrshan/Death3-05.png
+MrrDeath306    | races/Mrrshan/Death3-06.png
+MrrDeath307    | races/Mrrshan/Death3-07.png
+MrrDeath308    | races/Mrrshan/Death3-08.png
+MrrDeath309    | races/Mrrshan/Death3-09.png
+MrrDeath401    | races/Mrrshan/Death4-01.png
+MrrDeath402    | races/Mrrshan/Death4-02.png
+MrrDeath403    | races/Mrrshan/Death4-03.png
+MrrDeath404    | races/Mrrshan/Death4-04.png
+MrrDeath405    | races/Mrrshan/Death4-05.png
+MrrDeath406    | races/Mrrshan/Death4-06.png
+MrrDeath407    | races/Mrrshan/Death4-07.png
+
+MrrDeath1H01   | races/Mrrshan/Death1H-01.png
+MrrDeath1H02   | races/Mrrshan/Death1H-02.png
+MrrDeath1H03   | races/Mrrshan/Death1H-03.png
+MrrDeath1H04   | races/Mrrshan/Death1H-04.png
+MrrDeath1H05   | races/Mrrshan/Death1H-05.png
+MrrDeath2H01   | races/Mrrshan/Death2H-01.png
+MrrDeath2H02   | races/Mrrshan/Death2H-02.png
+MrrDeath2H03   | races/Mrrshan/Death2H-03.png
+MrrDeath2H04   | races/Mrrshan/Death2H-04.png
+MrrDeath3H01   | races/Mrrshan/Death3H-01.png
+MrrDeath3H02   | races/Mrrshan/Death3H-02.png
+MrrDeath3H03   | races/Mrrshan/Death3H-03.png
+MrrDeath3H04   | races/Mrrshan/Death3H-04.png
+MrrDeath3H05   | races/Mrrshan/Death3H-05.png
+MrrDeath3H06   | races/Mrrshan/Death3H-06.png
+MrrDeath3H07   | races/Mrrshan/Death3H-07.png
+MrrDeath3H08   | races/Mrrshan/Death3H-08.png
+MrrDeath3H09   | races/Mrrshan/Death3H-09.png
+MrrDeath4H01   | races/Mrrshan/Death4H-01.png
+MrrDeath4H02   | races/Mrrshan/Death4H-02.png
+MrrDeath4H03   | races/Mrrshan/Death4H-03.png
+MrrDeath4H04   | races/Mrrshan/Death4H-04.png
+MrrDeath4H05   | races/Mrrshan/Death4H-05.png
+MrrDeath4H06   | races/Mrrshan/Death4H-06.png
+MrrDeath4H07   | races/Mrrshan/Death4H-07.png
+

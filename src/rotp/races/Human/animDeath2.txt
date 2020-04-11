@@ -1,0 +1,5 @@
+#
+# Combat Frames
+
+# Disrupted into nothingness
+Base, _ALL_ , HumDeath201+HumDeath202+HumDeath203+HumDeath204+null:99999

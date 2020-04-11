@@ -1,0 +1,8 @@
+#
+# Human GNN Host Frames
+
+Host, _ALL_, KlaGNN_01:10:30+KlaGNN_02:2+KlaGNN_03:5:10
+
+Host, _ALL_, KlaGNNA_01:2:6+KlaGNNA_02:2:6+KlaGNNA_03:2:6+KlaGNNA_04:2:6+KlaGNNA_05:2:6
+
+

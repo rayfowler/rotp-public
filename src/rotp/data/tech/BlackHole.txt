@@ -1,0 +1,5 @@
+
+[tech]
+seq:    0
+name:   BLACKHOLE_0_NAME
+detail: BLACKHOLE_0_DETAIL

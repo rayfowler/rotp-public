@@ -1,0 +1,50 @@
+[tech]
+seq:    0
+name:   CONTROLENV_0_NAME
+item:   CONTROLENV_0_ITEM
+brief:  CONTROLENV_0_BRIEF
+detail: CONTROLENV_0_DETAIL
+
+[tech]
+seq:    1
+name:   CONTROLENV_1_NAME
+item:   CONTROLENV_1_ITEM
+brief:  CONTROLENV_1_BRIEF
+detail: CONTROLENV_1_DETAIL
+
+[tech]
+seq:    2
+name:   CONTROLENV_2_NAME
+item:   CONTROLENV_2_ITEM
+brief:  CONTROLENV_2_BRIEF
+detail: CONTROLENV_2_DETAIL
+
+[tech]
+seq:    3
+name:   CONTROLENV_3_NAME
+item:   CONTROLENV_3_ITEM
+brief:  CONTROLENV_3_BRIEF
+detail: CONTROLENV_3_DETAIL
+
+[tech]
+seq:    4
+name:   CONTROLENV_4_NAME
+item:   CONTROLENV_4_ITEM
+brief:  CONTROLENV_4_BRIEF
+detail: CONTROLENV_4_DETAIL
+
+[tech]
+seq:    5
+name:   CONTROLENV_5_NAME
+item:   CONTROLENV_5_ITEM
+brief:  CONTROLENV_5_BRIEF
+detail: CONTROLENV_5_DETAIL
+
+[tech]
+seq:    6
+name:   CONTROLENV_6_NAME
+item:   CONTROLENV_6_ITEM
+brief:  CONTROLENV_6_BRIEF
+detail: CONTROLENV_6_DETAIL
+
+

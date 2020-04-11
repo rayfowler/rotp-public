@@ -1,0 +1,132 @@
+key: RACE_KLACKON
+
+langKey:       Klackon
+year:          3374
+
+homeStarType:  YELLOW
+homeworldType: PLANET_TERRAN
+homeworldSize: 100
+homeworldKey:  9208212
+
+// animations
+mugshot:       KlaAdvisorVS,      0@0|250x270
+setupImage:    KlackonDiploMug, 100@0|584x768
+spyMug:        KlaAdvisorS,       0@0|440x330
+soldierMug:    KlaAdvisorS,       0@0|440x330
+diploProfile:  KlaAdvisorW, 0@0|630x480
+lab:           KlackonLaboratory
+embassy:       KlackonLaboratory
+holograph:     KlackonHolograph
+diplomat:      KlackonDiplomat
+scientist:     KlackonScientist
+trooper:       KlackonSoldier
+spy:           KlackonSpy
+leader:        KlaLeader
+diploTheme:    ThemeKlackon
+gnn:           KlackonGNN
+gnnHost:       KlackonGNNHost
+gnnColor:      Orange
+gnnTextColor:  255,93,0
+winSplash:     KlaWin,255,255,255
+lossSplash:    KlaLoss,255,255,255
+
+advisorScout:      KlaAdvisor, 0@0|440x540
+advisorTransport:  KlaAdvisor, 0@0|440x540
+advisorDiplomacy:  KlaAdvisor, 0@0|440x540
+advisorShip:       KlaAdvisor, 0@0|440x540
+advisorRally:      KlaAdvisor, 0@0|440x540
+advisorMissile:    KlaAdvisor, 0@0|440x540
+advisorWeapon:     KlaAdvisor, 0@0|440x540
+advisorCouncil:    KlaAdvisor, 0@0|440x540
+advisorRebellion:  KlaAdvisor, 0@0|440x540
+advisorResistCouncil:   KlaAdvisor, 0@0|440x540
+advisorCouncilResisted: KlaAdvisor, 0@0|440x540
+
+
+transport:     KlaTransport
+transportDesc: KlackonTransportDesc, 1, 0@0|240x240
+transportOpen: KlackonTransportOpen, 10, 0@0|240x240
+transportW:    60
+transportYOff: 0
+transportLandingFrames: 120
+colonistWalk:  20, 150, 160@220>240@250
+landingAudio:  KlackonShip
+
+troopIcon:      KlackonCombat,    4/4
+troopHIcon:     KlackonCombatH,   4/4
+troopDeath1:    KlackonDeath1,    4
+troopDeath2:    KlackonDeath2,    5
+troopDeath3:    KlackonDeath3,    6
+troopDeath4:    KlackonDeath4,    6
+troopDeath1H:   KlackonDeath1H,   4
+troopDeath2H:   KlackonDeath2H,   5
+troopDeath3H:   KlackonDeath3H,   6
+troopDeath4H:   KlackonDeath4H,   6
+troopScale:     0.4, 40, 25
+troopFireXY:    285@130
+troopHFireXY:   285@130
+
+fortress:      KlaFort01,            0@0|420x450
+council:       KlaCouncil
+shield:        KlaShield,            0@0|420x450
+introTextX:    680
+espionageXY:   0@0
+spyFactories:  50
+spyMissiles:   45
+spyRebellion:  36
+dialogTextX:   180,180
+dialogTextY:   540
+councilDiplo:  0.5, 70, -160, 0.6
+labFlagX:      0.71
+flagSize:      200x200
+flagWar:       KlaFlagWar
+flagNormal:    KlaFlagNorm
+flagPact:      KlaFlagPact
+dialogWar:     KlaDlgWar
+dialogNormal:  KlaDlgNorm
+dialogPact:    KlaDlgPact
+
+// sounds
+voice:     KlackonVoice
+ambience:  KlackonAmbience
+
+
+// species info:
+// field #1 - terran(1), aquatic(2), silicate(3) or robotic(4)
+// field #2 - ignoreEco(1), don't ignore eco (0)
+species: 1, 0
+
+// personality % (must=100) - erratic, pacifist, honorable, ruthless, aggressive, xenophobic
+personality:0,0,0,20,20,60
+// objective % (must=100) - militarist, ecologist, diplomat, industrialist, expansionist, technologist
+objective: 10,10,10,50,10,10
+
+// ship set & preferred size (0-small to 3-huge)
+preferredship: Klackon, 0
+
+// ship bonus - att, def, init
+shipmod: 0,0,0
+
+// ground mod - att
+groundmod: 0
+
+// spy mod - cost%, security adj%, infiltration adj%, telepathic?(1/0), mask relations?(1/0)
+spymod: 100, 0, 0, 0, 0
+
+// production mod - worker productivity, factory controls bonus, ignoreRefitCost?(1/0)
+prodmod: 200, 0, 0
+
+// tech mods - discovery
+techmod: 50, 100
+
+// pop mods - growth rate
+popmod: 100
+
+// diplomacy mods % - trade % bonus, positive DP mod, diplomacy bonus, council bonus
+diplomod: 0,100,0,0
+
+// research category mods % - computer, construction, force field, planetary, propulsion, weapon
+research: 80,100,100,100,100,100
+
+// race relations
+relations: DEFAULT=0,RACE_KLACKON=31,RACE_HUMAN=7,RACE_DARLOK=-7,RACE_MRRSHAN=-7,RACE_ALKARI=-7,RACE_SAKKRA=-7,RACE_SILICOID=7

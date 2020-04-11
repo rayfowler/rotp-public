@@ -1,0 +1,5 @@
+#
+# Psilon Hostile Combat Frames
+
+# falls over dead
+Base, _ALL_ , PsiDeath1H01:1+PsiDeath1H02:1+PsiDeath1H03:99999

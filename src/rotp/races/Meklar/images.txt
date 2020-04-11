@@ -1,0 +1,186 @@
+MekFlagWar  | races/Meklar/banner_war.png
+MekFlagNorm | races/Meklar/banner_norm.png
+MekFlagPact | races/Meklar/banner_pact.png
+
+MekDlgWar   | races/Meklar/dialogue_war.png
+MekDlgNorm  | races/Meklar/dialogue_norm.png
+MekDlgPact  | races/Meklar/dialogue_pact.png
+
+MekFort01     | races/Meklar/Fortress_01.png
+MekFort02     | races/Meklar/Fortress_02.png
+MeklarShield  | races/Meklar/Fortress_shield.png
+
+MekLab      | races/Meklar/Meklar_Laboratory.jpg
+MekLabGlowA | races/Meklar/Meklar_Laboratory_glowA.png
+MekLabGlowB | races/Meklar/Meklar_Laboratory_glowB.png
+MekLab01    | races/Meklar/Meklar_Laboratory_Holograph.png
+MekCouncil  | races/Meklar/Council_01.jpg
+
+MekLeader    | races/Meklar/CouncilLeader.png
+
+MekDip      | races/Meklar/Diplomat_Base.png
+MekDipMo02  | races/Meklar/Diplomat_Mouth_02.png
+MekDipMo03  | races/Meklar/Diplomat_Mouth_03.png
+MekDipMo04  | races/Meklar/Diplomat_Mouth_04.png
+MekDipMo05  | races/Meklar/Diplomat_Mouth_05.png
+MekDipMo06  | races/Meklar/Diplomat_Mouth_06.png
+MekDipMo07  | races/Meklar/Diplomat_Mouth_07.png
+MekDipMo08  | races/Meklar/Diplomat_Mouth_08.png
+MekDipMo09  | races/Meklar/Diplomat_Mouth_09.png
+MekDipMo10  | races/Meklar/Diplomat_Mouth_10.png
+MekDipMo11  | races/Meklar/Diplomat_Mouth_11.png
+
+MekSci      | races/Meklar/Scientist_Base.png
+MekSciEy02  | races/Meklar/Scientist_Eye_02.png
+MekSciEy03  | races/Meklar/Scientist_Eye_03.png
+MekSciEy04  | races/Meklar/Scientist_Eye_04.png
+MekSciHa01  | races/Meklar/Scientist_Hand_01.png
+MekSciHa02  | races/Meklar/Scientist_Hand_02.png
+MekSciHa03  | races/Meklar/Scientist_Hand_03.png
+MekSciHa04  | races/Meklar/Scientist_Hand_04.png
+MekSciBe01  | races/Meklar/Scientist_Beaker_01.png
+MekSciBe02  | races/Meklar/Scientist_Beaker_02.png
+MekSciBe03  | races/Meklar/Scientist_Beaker_03.png
+MekSciBe04  | races/Meklar/Scientist_Beaker_04.png
+MekSciBe05  | races/Meklar/Scientist_Beaker_05.png
+MekSciBe06  | races/Meklar/Scientist_Beaker_06.png
+
+
+MekSol      | races/Meklar/Soldier_Base.png
+MekSolEy02  | races/Meklar/Soldier_Eye_02.png
+MekSolEy03  | races/Meklar/Soldier_Eye_03.png
+MekSolEy04  | races/Meklar/Soldier_Eye_04.png
+MekSolHa02  | races/Meklar/Soldier_Hand_02.png
+MekSolHa03  | races/Meklar/Soldier_Hand_03.png
+MekSolHa04  | races/Meklar/Soldier_Hand_04.png
+MekSolHa05  | races/Meklar/Soldier_Hand_05.png
+MekSolHa06  | races/Meklar/Soldier_Hand_06.png
+
+MekSpy      | races/Meklar/Spy_Base.png
+MekSpyEy02  | races/Meklar/Spy_Eye_02.png
+MekSpyEy03  | races/Meklar/Spy_Eye_03.png
+MekSpyEy04  | races/Meklar/Spy_Eye_04.png
+MekSpyEy05  | races/Meklar/Spy_Eye_05.png
+MekSpyEy06  | races/Meklar/Spy_Eye_06.png
+MekSpyEy07  | races/Meklar/Spy_Eye_07.png
+MekSpyEy08  | races/Meklar/Spy_Eye_08.png
+MekSpyEy09  | races/Meklar/Spy_Eye_09.png
+MekSpyEy10  | races/Meklar/Spy_Eye_10.png
+
+MekComFir01 | races/Meklar/Combat_01.png
+MekComFir02 | races/Meklar/Combat_02.png
+MekComFir03 | races/Meklar/Combat_03.png
+MekComFir04 | races/Meklar/Combat_04.png
+MekComFir05 | races/Meklar/Combat_05.png
+MekComFir06 | races/Meklar/Combat_06.png
+MekComFir07 | races/Meklar/Combat_07.png
+
+MekTransport  | races/Meklar/Transport_Transit.png
+MekTrans      | races/Meklar/Transport_00.png
+MekTrans07    | races/Meklar/Transport_07.png
+MekTrans11    | races/Meklar/Transport_11.png
+MekTrans12    | races/Meklar/Transport_12.png
+MekTrans13    | races/Meklar/Transport_13.png
+MekTrans14    | races/Meklar/Transport_14.png
+MekTrans21    | races/Meklar/Transport_21.png
+MekTrans22    | races/Meklar/Transport_22.png
+MekTrans23    | races/Meklar/Transport_23.png
+
+MekGNNB_01    | races/Meklar/GNN_Back_01.jpg
+MekGNNB_02    | races/Meklar/GNN_Back_02.jpg
+MekGNNB_03    | races/Meklar/GNN_Back_03.jpg
+MekGNNB_04    | races/Meklar/GNN_Back_04.jpg
+MekGNNB_05    | races/Meklar/GNN_Back_05.jpg
+MekGNNB_06    | races/Meklar/GNN_Back_06.jpg
+MekGNNB_07    | races/Meklar/GNN_Back_07.jpg
+MekGNNB_08    | races/Meklar/GNN_Back_08.jpg
+MekGNNB_09    | races/Meklar/GNN_Back_09.jpg
+MekGNNB_10    | races/Meklar/GNN_Back_10.jpg
+MekGNNB_11    | races/Meklar/GNN_Back_11.jpg
+MekGNNB_12    | races/Meklar/GNN_Back_12.jpg
+MekGNNB_13    | races/Meklar/GNN_Back_13.jpg
+MekGNNB_14    | races/Meklar/GNN_Back_14.jpg
+MekGNNB_15    | races/Meklar/GNN_Back_15.jpg
+MekGNNB_16    | races/Meklar/GNN_Back_16.jpg
+MekGNNB_17    | races/Meklar/GNN_Back_17.jpg
+MekGNNB_18    | races/Meklar/GNN_Back_18.jpg
+MekGNNB_19    | races/Meklar/GNN_Back_19.jpg
+MekGNNB_20    | races/Meklar/GNN_Back_20.jpg
+MekGNNB_21    | races/Meklar/GNN_Back_21.jpg
+MekGNNB_22    | races/Meklar/GNN_Back_22.jpg
+MekGNNB_23    | races/Meklar/GNN_Back_23.jpg
+
+MekGNNH_1     | races/Meklar/GNN_Host_01.png
+MekGNNH_2     | races/Meklar/GNN_Host_02.png
+MekGNNH_3     | races/Meklar/GNN_Host_03.png
+MekGNNH_4     | races/Meklar/GNN_Host_04.png
+MekGNNH_5     | races/Meklar/GNN_Host_05.png
+MekGNNH_6     | races/Meklar/GNN_Host_06.png
+MekGNNHA_1    | races/Meklar/GNN_HostA_01.png
+MekGNNHA_2    | races/Meklar/GNN_HostA_02.png
+MekGNNHA_3    | races/Meklar/GNN_HostA_03.png
+MekGNNHA_4    | races/Meklar/GNN_HostA_04.png
+MekGNNHA_5    | races/Meklar/GNN_HostA_05.png
+MekGNNHA_6    | races/Meklar/GNN_HostA_06.png
+MekGNNHA_7    | races/Meklar/GNN_HostA_07.png
+MekGNNHB_1    | races/Meklar/GNN_HostB_01.png
+MekGNNHB_2    | races/Meklar/GNN_HostB_02.png
+MekGNNHB_3    | races/Meklar/GNN_HostB_03.png
+MekGNNHB_4    | races/Meklar/GNN_HostB_04.png
+MekGNNHC_1    | races/Meklar/GNN_HostC_01.png
+MekGNNHC_2    | races/Meklar/GNN_HostC_02.png
+MekGNNHC_3    | races/Meklar/GNN_HostC_03.png
+MekGNNHC_4    | races/Meklar/GNN_HostC_04.png
+MekGNNHC_5    | races/Meklar/GNN_HostC_05.png
+MekGNNHC_6    | races/Meklar/GNN_HostC_06.png
+MekGNNHC_7    | races/Meklar/GNN_HostC_07.png
+MekGNNHC_8    | races/Meklar/GNN_HostC_08.png
+MekGNNHC_9    | races/Meklar/GNN_HostC_09.png
+MekGNNHC_10   | races/Meklar/GNN_HostC_10.png
+MekGNNHC_11   | races/Meklar/GNN_HostC_11.png
+MekGNNHC_12   | races/Meklar/GNN_HostC_12.png
+MekGNNHC_13   | races/Meklar/GNN_HostC_13.png
+MekGNNHD_1    | races/Meklar/GNN_HostD_01.png
+MekGNNHD_2    | races/Meklar/GNN_HostD_02.png
+MekGNNHD_3    | races/Meklar/GNN_HostD_03.png
+MekGNNHD_4    | races/Meklar/GNN_HostD_04.png
+
+MekComFir01 | races/Meklar/Combat_01.png
+MekComFir02 | races/Meklar/Combat_02.png
+MekComFir03 | races/Meklar/Combat_03.png
+MekComFir04 | races/Meklar/Combat_04.png
+MekComFir05 | races/Meklar/Combat_05.png
+MekComFir06 | races/Meklar/Combat_06.png
+
+MekDeath101  | races/Meklar/Death1-01.png
+MekDeath102  | races/Meklar/Death1-02.png
+MekDeath103  | races/Meklar/Death1-03.png
+MekDeath104  | races/Meklar/Death1-04.png
+MekDeath105  | races/Meklar/Death1-05.png
+MekDeath106  | races/Meklar/Death1-06.png
+MekDeath107  | races/Meklar/Death1-07.png
+MekDeath108  | races/Meklar/Death1-08.png
+MekDeath201  | races/Meklar/Death2-01.png
+MekDeath202  | races/Meklar/Death2-02.png
+MekDeath203  | races/Meklar/Death2-03.png
+MekDeath204  | races/Meklar/Death2-04.png
+MekDeath301  | races/Meklar/Death3-01.png
+MekDeath302  | races/Meklar/Death3-02.png
+MekDeath303  | races/Meklar/Death3-03.png
+MekDeath304  | races/Meklar/Death3-04.png
+MekDeath305  | races/Meklar/Death3-05.png
+MekDeath306  | races/Meklar/Death3-06.png
+MekDeath307  | races/Meklar/Death3-07.png
+MekDeath308  | races/Meklar/Death3-08.png
+MekDeath309  | races/Meklar/Death3-09.png
+MekDeath310  | races/Meklar/Death3-10.png
+MekDeath401  | races/Meklar/Death4-01.png
+MekDeath402  | races/Meklar/Death4-02.png
+MekDeath403  | races/Meklar/Death4-03.png
+MekDeath404  | races/Meklar/Death4-04.png
+MekDeath405  | races/Meklar/Death4-05.png
+MekDeath406  | races/Meklar/Death4-06.png
+MekDeath407  | races/Meklar/Death4-07.png
+MekDeath408  | races/Meklar/Death4-08.png
+
+

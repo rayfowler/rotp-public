@@ -1,0 +1,5 @@
+#
+# Alkari Transport Ship Opening Animation
+
+// Starts closed and opens "permanently" 
+Open,  0@0,AlkTrans07:1+AlkTrans22:1+AlkTrans23:1+AlkTrans24:1+AlkTrans25:1+AlkTrans26:1+AlkTrans27:1+AlkTrans28:999999

@@ -1,0 +1,16 @@
+#
+# Psilon Soldier Animation
+# #1 - Eye
+# #2 - Mouth
+# #3 - Shield
+
+Base,   _ALL_   , PsiLab
+Base,  _ALL_    , PsiSol
+
+# open-half-closed   1-4-5
+Eye,  310@250, NULL:30:50+PsiSolEy2:1+PsiSolEy3:2:4
+
+# closed-half-open     1-2-3-2-3-1
+# Mouth, 340@310, NULL:1+PsiSolMo2:1+PsiSolMo3:1+PsiSolMo2:1+PsiSolMo3:1+NULL:1:3
+
+Shield, _ALL_ , NULL:30:60+PsiShd01:1+PsiShd02:1+PsiShd03:1+PsiShd04:1+PsiShd05:1+PsiShd06:1+PsiShd07:1+PsiShd08:1+PsiShd09:1+PsiShd10:1+PsiShd11:60:90+NULL:30:60

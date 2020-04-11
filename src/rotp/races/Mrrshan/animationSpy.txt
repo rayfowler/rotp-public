@@ -1,0 +1,11 @@
+#
+# Mrrshan Spy Animation
+
+Base,   _ALL_  , MrrSpy00:30:35+MrrSpy01+MrrSpy02+MrrSpy03+MrrSpy04+MrrSpy05+MrrSpy06+MrrSpy07+MrrSpy08+MrrSpy09+MrrSpy10+MrrSpy11+MrrSpy12:200:500
+
+#   Ear
+Ears,   160@80 , MrrSpyEa00:25:30+MrrSpyEa01+MrrSpyEa02:50:200
+
+#   Blinks
+Eye,   300@160 , NULL:38:70+MrrSpyEy01+MrrSpyEy02:2
+

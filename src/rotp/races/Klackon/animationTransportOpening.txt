@@ -1,0 +1,5 @@
+#
+# Transport Ship Opening Animation
+
+// Starts closed and opens "permanently" 
+Open,  0@0,KlaTrans01:2+KlaTrans02:2+KlaTrans03:3+KlaTrans04:999999

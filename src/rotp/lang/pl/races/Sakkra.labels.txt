@@ -1,0 +1,18 @@
+// race-specific variables (must start with _)
+_empire                    | Konklawe Sakkra, Konklawe Reptara, Konklawe Saura
+_race                      | Sakkra, Reptara, Saura
+
+// Advisor text
+MAIN_ADVISOR_TITLE         | Doradca rasy %1
+MAIN_ADVISOR_BUTTON_OK     | Odpraw
+MAIN_ADVISOR_SCOUT         | Nareszcie możemy rozpocząć udoskonalanie środowisk poza naszym własnym światem. Pierwszy Magistrze, jak najszybciej wyślij zwiadowców i statek kolonizacyjny w kierunku pobliskiej planety.
+MAIN_ADVISOR_TRANSPORT     | Założyliśmy pierwszą kolonię na całkowicie nowym świecie. Wysyłając transport możemy zwiększyć naszą liczebość i jeszcze szybciej rozwiązać zagadki na %1! 
+MAIN_ADVISOR_DIPLOMACY     | Kolejny gatunek zdolny do podróży międzygwiezdnych skontaktował się z Konklawe. Rozpocznijmy z nim dialog i przekonajmy się jak traktuje swoje światy. Wówczas zadecydujemy jak z nim postąpić.
+MAIN_ADVISOR_SHIP_ENGINE   | Opracowaliśmy znaczniej bardziej efektywne silniki statków. Wykorzystajmy je w nowych projektach statków jak najszybciej.
+MAIN_ADVISOR_RALLY_POINTS  | Nasi sąsiedzi najwyraźniej mają nas za... kłótliwych. Możemy użyć Punktów Zbornych w celu przekierowania statków do jednej lokalizacji i zapobieżenia ataku na nasze przepiękne światy.
+MAIN_ADVISOR_MISSILE_BASES | Boli mnie sama myśl o takim plugawieniu naszych światów ale możemy poświęcić nieco miejsca na budowę obronnych baz rakietowych w celu ich ochrony przed jeszcze większym zniszczeniem.
+MAIN_ADVISOR_SHIP_WEAPON   | Nastąpiło odkrycie dotyczące wyrządzania większych szkód wrogim statkom. Pierwszy Magistrze, sugeruję użycie tej technologii w nowo budowanych statkach.
+MAIN_ADVISOR_COUNCIL       | Wszystkie zaawansowane cywilizacje będą uczestniczyć w zebraniu zwanym “Radą Galaktyczną”. To może być doskonała okazja aby przekonać się, które imperia miałyby coś przeciwko... ekspansji Konklawe.
+
+
+

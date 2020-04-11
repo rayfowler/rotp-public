@@ -1,0 +1,5 @@
+#
+# Silicoid Transport Ship Descending Animation
+
+// Default is closed
+Descending, 0@0, SilTrans01

@@ -1,0 +1,4 @@
+#
+# Darlok Transport Ship Opening Animation
+
+Open,  0@0,DarTrans01:1+DarTrans02:1+DarTrans03:1+DarTrans04:1+DarTrans05:1+DarTrans06:1+DarTrans07:1+DarTrans08:1+DarTrans09:1+DarTrans10:1+DarTrans11:1+DarTrans12:1+DarTrans13:1+DarTrans14:1+DarTrans15:999999

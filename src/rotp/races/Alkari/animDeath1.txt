@@ -1,0 +1,5 @@
+#
+# Alkari Hostile Combat Frames
+
+# falls over dead
+Base, _ALL_ , AlkDeath101:1+AlkDeath102:1+AlkDeath103:1+AlkDeath104:1+AlkDeath105:99999

@@ -1,0 +1,190 @@
+
+SakFlagWar   | races/Sakkra/banner_war.png
+SakFlagNorm  | races/Sakkra/banner_norm.png
+SakFlagPact  | races/Sakkra/banner_pact.png
+
+SakDlgWar    | races/Sakkra/dialogue_war.png
+SakDlgNorm   | races/Sakkra/dialogue_norm.png
+SakDlgPact   | races/Sakkra/dialogue_pact.png
+
+SakLab       | races/Sakkra/Sakkra_Laboratory.jpg
+SakLab01     | races/Sakkra/Sakkra_Laboratory_holograph.png
+SakLabGlow1  | races/Sakkra/Sakkra_Laboratory_Glow_01.png
+SakLabGlow2  | races/Sakkra/Sakkra_Laboratory_Glow_02.png
+SakLabGlow3  | races/Sakkra/Sakkra_Laboratory_Glow_03.png
+SakLabGlow4  | races/Sakkra/Sakkra_Laboratory_Glow_04.png
+SakLabGlow5  | races/Sakkra/Sakkra_Laboratory_Glow_05.png
+SakLabGlow6  | races/Sakkra/Sakkra_Laboratory_Glow_06.png
+SakLabGlow7  | races/Sakkra/Sakkra_Laboratory_Glow_07.png
+SakLabGlow8  | races/Sakkra/Sakkra_Laboratory_Glow_08.png
+SakLabGlow9  | races/Sakkra/Sakkra_Laboratory_Glow_09.png
+SakCouncil   | races/Sakkra/Council_01.jpg
+
+SakLeader    | races/Sakkra/CouncilLeader.png
+
+SakDip       | races/Sakkra/Diplomat_Base.png
+SakDipEy02   | races/Sakkra/Diplomat_Eye_02.png
+SakDipEy03   | races/Sakkra/Diplomat_Eye_03.png
+SakDipMo02   | races/Sakkra/Diplomat_Mouth_02.png
+SakDipMo03   | races/Sakkra/Diplomat_Mouth_03.png
+SakDipMo04   | races/Sakkra/Diplomat_Mouth_04.png
+
+SakSci       | races/Sakkra/Scientist_Base.png
+SakSciEy02   | races/Sakkra/Scientist_Eye_02.png
+SakSciEy03   | races/Sakkra/Scientist_Eye_03.png
+SakSciEy04   | races/Sakkra/Scientist_Eye_04.png
+SakSciMo02   | races/Sakkra/Scientist_Mouth_02.png
+SakSciMo03   | races/Sakkra/Scientist_Mouth_03.png
+SakSciMo04   | races/Sakkra/Scientist_Mouth_04.png
+
+SakSol       | races/Sakkra/Soldier_Base.png
+SakSolEy02   | races/Sakkra/Soldier_Eye_02.png
+SakSolEy03   | races/Sakkra/Soldier_Eye_03.png
+SakSolEy04   | races/Sakkra/Soldier_Eye_04.png
+SakSolG102   | races/Sakkra/Soldier_Gun1_02.png
+SakSolG103   | races/Sakkra/Soldier_Gun1_03.png
+SakSolG104   | races/Sakkra/Soldier_Gun1_04.png
+SakSolG105   | races/Sakkra/Soldier_Gun1_05.png
+SakSolG202   | races/Sakkra/Soldier_Gun2_02.png
+SakSolG203   | races/Sakkra/Soldier_Gun2_03.png
+SakSolG204   | races/Sakkra/Soldier_Gun2_04.png
+SakSolG205   | races/Sakkra/Soldier_Gun2_05.png
+SakSolMo02   | races/Sakkra/Soldier_Mouth_02.png
+SakSolMo03   | races/Sakkra/Soldier_Mouth_03.png
+SakSolMo04   | races/Sakkra/Soldier_Mouth_04.png
+
+SakSpy       | races/Sakkra/Spy_Base.png
+SakSpyEy02   | races/Sakkra/Spy_Eye_02.png
+SakSpyEy03   | races/Sakkra/Spy_Eye_03.png
+SakSpyEy04   | races/Sakkra/Spy_Eye_04.png
+SakSpyMo02   | races/Sakkra/Spy_Mouth_02.png
+SakSpyMo03   | races/Sakkra/Spy_Mouth_03.png
+SakSpyMo04   | races/Sakkra/Spy_Mouth_04.png
+SakSpyHa02   | races/Sakkra/Spy_Hands_02.png
+SakSpyHa03   | races/Sakkra/Spy_Hands_03.png
+  
+SakFort      | races/Sakkra/Fortress.png
+
+SakTransport | races/Sakkra/Transport_Transit.png
+SakTrans     | races/Sakkra/Transport_Base.png
+SakTrans01   | races/Sakkra/Transport_01.png
+SakTrans02   | races/Sakkra/Transport_02.png
+SakTrans03   | races/Sakkra/Transport_03.png
+SakTrans04   | races/Sakkra/Transport_04.png
+SakTrans05   | races/Sakkra/Transport_05.png
+SakTrans06   | races/Sakkra/Transport_06.png
+SakTrans11   | races/Sakkra/Transport_11.png
+SakTrans12   | races/Sakkra/Transport_12.png
+SakTrans13   | races/Sakkra/Transport_13.png
+SakTrans14   | races/Sakkra/Transport_14.png
+SakTrans15   | races/Sakkra/Transport_15.png
+SakTrans16   | races/Sakkra/Transport_16.png
+
+SakGNN_1      | races/Sakkra/GNN_1.png
+SakGNN_2      | races/Sakkra/GNN_2.png
+SakGNN_Bee1   | races/Sakkra/GNN_Bee1.png
+SakGNN_Bee2   | races/Sakkra/GNN_Bee2.png
+SakGNN_Bee3   | races/Sakkra/GNN_Bee3.png
+SakGNN_Bee4   | races/Sakkra/GNN_Bee4.png
+SakGNN_Bee5   | races/Sakkra/GNN_Bee5.png
+SakGNN_Bee6   | races/Sakkra/GNN_Bee6.png
+SakGNN_Eye1   | races/Sakkra/GNN_Eye1.png
+SakGNN_Eye2   | races/Sakkra/GNN_Eye2.png
+SakGNN_Eye3   | races/Sakkra/GNN_Eye3.png
+
+SakGNNB_01    | races/Sakkra/GNN_Back_01.jpg
+SakGNNB_02    | races/Sakkra/GNN_Back_02.jpg
+SakGNNB_03    | races/Sakkra/GNN_Back_03.jpg
+SakGNNB_04    | races/Sakkra/GNN_Back_04.jpg
+SakGNNB_05    | races/Sakkra/GNN_Back_05.jpg
+SakGNNB_06    | races/Sakkra/GNN_Back_06.jpg
+SakGNNB_07    | races/Sakkra/GNN_Back_07.jpg
+SakGNNB_08    | races/Sakkra/GNN_Back_08.jpg
+SakGNNB_09    | races/Sakkra/GNN_Back_09.jpg
+SakGNNB_10    | races/Sakkra/GNN_Back_10.jpg
+SakGNNB_11    | races/Sakkra/GNN_Back_11.jpg
+SakGNNB_12    | races/Sakkra/GNN_Back_12.jpg
+SakGNNB_13    | races/Sakkra/GNN_Back_13.jpg
+SakGNNB_14    | races/Sakkra/GNN_Back_14.jpg
+SakGNNB_15    | races/Sakkra/GNN_Back_15.jpg
+SakGNNB_16    | races/Sakkra/GNN_Back_16.jpg
+SakGNNB_17    | races/Sakkra/GNN_Back_17.jpg
+SakGNNB_18    | races/Sakkra/GNN_Back_18.jpg
+SakGNNB_19    | races/Sakkra/GNN_Back_19.jpg
+SakGNNB_20    | races/Sakkra/GNN_Back_20.jpg
+SakGNNB_21    | races/Sakkra/GNN_Back_21.jpg
+SakGNNB_22    | races/Sakkra/GNN_Back_22.jpg
+SakGNNB_23    | races/Sakkra/GNN_Back_23.jpg
+
+
+SakComb00    | races/Sakkra/Combat_00.png
+SakComb01    | races/Sakkra/Combat_01.png
+SakComb02    | races/Sakkra/Combat_02.png
+SakComb03    | races/Sakkra/Combat_03.png
+SakComb04    | races/Sakkra/Combat_04.png
+SakComb05    | races/Sakkra/Combat_05.png
+SakComb06    | races/Sakkra/Combat_06.png
+SakComb07    | races/Sakkra/Combat_07.png
+
+SakHComb00   | races/Sakkra/HCombat_00.png
+SakHComb01   | races/Sakkra/HCombat_01.png
+SakHComb02   | races/Sakkra/HCombat_02.png
+SakHComb03   | races/Sakkra/HCombat_03.png
+SakHComb04   | races/Sakkra/HCombat_04.png
+SakHComb05   | races/Sakkra/HCombat_05.png
+SakHComb06   | races/Sakkra/HCombat_06.png
+SakHComb07   | races/Sakkra/HCombat_07.png
+
+SakDeath101  | races/Sakkra/Death1-01.png
+SakDeath102  | races/Sakkra/Death1-02.png
+SakDeath103  | races/Sakkra/Death1-03.png
+SakDeath201  | races/Sakkra/Death2-01.png
+SakDeath202  | races/Sakkra/Death2-02.png
+SakDeath203  | races/Sakkra/Death2-03.png
+SakDeath204  | races/Sakkra/Death2-04.png
+SakDeath205  | races/Sakkra/Death2-05.png
+SakDeath301  | races/Sakkra/Death3-01.png
+SakDeath302  | races/Sakkra/Death3-02.png
+SakDeath303  | races/Sakkra/Death3-03.png
+SakDeath304  | races/Sakkra/Death3-04.png
+SakDeath305  | races/Sakkra/Death3-05.png
+SakDeath306  | races/Sakkra/Death3-06.png
+SakDeath307  | races/Sakkra/Death3-07.png
+SakDeath308  | races/Sakkra/Death3-08.png
+SakDeath309  | races/Sakkra/Death3-09.png
+SakDeath310  | races/Sakkra/Death3-10.png
+SakDeath311  | races/Sakkra/Death3-11.png
+SakDeath401  | races/Sakkra/Death4-01.png
+SakDeath402  | races/Sakkra/Death4-02.png
+SakDeath403  | races/Sakkra/Death4-03.png
+SakDeath404  | races/Sakkra/Death4-04.png
+SakDeath405  | races/Sakkra/Death4-05.png
+SakDeath406  | races/Sakkra/Death4-06.png
+SakDeath407  | races/Sakkra/Death4-07.png
+
+SakDeath1H01 | races/Sakkra/Death1H-01.png
+SakDeath1H02 | races/Sakkra/Death1H-02.png
+SakDeath1H03 | races/Sakkra/Death1H-03.png
+SakDeath2H01 | races/Sakkra/Death2H-01.png
+SakDeath2H02 | races/Sakkra/Death2H-02.png
+SakDeath2H03 | races/Sakkra/Death2H-03.png
+SakDeath2H04 | races/Sakkra/Death2H-04.png
+SakDeath2H05 | races/Sakkra/Death2H-05.png
+SakDeath3H01 | races/Sakkra/Death3H-01.png
+SakDeath3H02 | races/Sakkra/Death3H-02.png
+SakDeath3H03 | races/Sakkra/Death3H-03.png
+SakDeath3H04 | races/Sakkra/Death3H-04.png
+SakDeath3H05 | races/Sakkra/Death3H-05.png
+SakDeath3H06 | races/Sakkra/Death3H-06.png
+SakDeath3H07 | races/Sakkra/Death3H-07.png
+SakDeath3H08 | races/Sakkra/Death3H-08.png
+SakDeath3H09 | races/Sakkra/Death3H-09.png
+SakDeath3H10 | races/Sakkra/Death3H-10.png
+SakDeath4H01 | races/Sakkra/Death4H-01.png
+SakDeath4H02 | races/Sakkra/Death4H-02.png
+SakDeath4H03 | races/Sakkra/Death4H-03.png
+SakDeath4H04 | races/Sakkra/Death4H-04.png
+SakDeath4H05 | races/Sakkra/Death4H-05.png
+SakDeath4H06 | races/Sakkra/Death4H-06.png
+SakDeath4H07 | races/Sakkra/Death4H-07.png
+

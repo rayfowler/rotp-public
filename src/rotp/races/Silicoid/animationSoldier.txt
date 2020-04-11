@@ -1,0 +1,10 @@
+#
+# Silicoid Soldier Animation
+# #1 - Eye
+# #2 - Glowing Shield
+
+Base,  _ALL_     , SilSol
+
+Eye,   280@100   , NULL:2:6+SilSolEy02:2:6+SilSolEy03:2:6+SilSolEy04:2:6+SilSolEy03:2:6+SilSolEy02:2:6
+
+Shield, 30@520   , NULL:6:10+SilSolSh02:2+SilSolSh03:2+SilSolSh04:2+SilSolSh05:2+SilSolSh06:6:10

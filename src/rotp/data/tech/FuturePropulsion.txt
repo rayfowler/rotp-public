@@ -1,0 +1,50 @@
+[tech]
+seq:    0
+name:   FUTUREPROP_0_NAME
+detail: FUTUREPROP_0_DETAIL
+
+[tech]
+seq:    1
+name:   FUTUREPROP_1_NAME
+detail: FUTUREPROP_1_DETAIL
+
+[tech]
+seq:    2
+name:   FUTUREPROP_2_NAME
+detail: FUTUREPROP_2_DETAIL
+
+[tech]
+seq:    3
+name:   FUTUREPROP_3_NAME
+detail: FUTUREPROP_3_DETAIL
+
+[tech]
+seq:    4
+name:   FUTUREPROP_4_NAME
+detail: FUTUREPROP_4_DETAIL
+
+[tech]
+seq:    5
+name:   FUTUREPROP_5_NAME
+detail: FUTUREPROP_5_DETAIL
+
+[tech]
+seq:    6
+name:   FUTUREPROP_6_NAME
+detail: FUTUREPROP_6_DETAIL
+
+[tech]
+seq:    7
+name:   FUTUREPROP_7_NAME
+detail: FUTUREPROP_7_DETAIL
+
+[tech]
+seq:    8
+name:   FUTUREPROP_8_NAME
+detail: FUTUREPROP_8_DETAIL
+
+[tech]
+seq:    9
+name:   FUTUREPROP_9_NAME
+detail: FUTUREPROP_9_DETAIL
+

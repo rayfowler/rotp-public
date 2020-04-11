@@ -1,0 +1,5 @@
+#
+# Sakkra Hostile Combat Frames
+
+# vaporized into nothingness
+Base, _ALL_ , SakDeath401+SakDeath402+SakDeath403+SakDeath404+SakDeath405+SakDeath406+SakDeath407+null:99999

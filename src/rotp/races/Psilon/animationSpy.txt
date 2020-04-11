@@ -1,0 +1,9 @@
+#
+# Psilon Scientist Animation
+
+
+# Base   spy fade in and out
+Base,      0@68,   PsiSpy01:10:20+PsiSpy10:1+PsiSpy11:1+PsiSpy12:1+PsiSpy13:1+PsiSpy14:1+PsiSpy15:1+PsiSpy16:1+PsiSpy17:1+PsiSpy18:1+PsiSpy19:1+PsiSpy20:1+PsiSpy21:1+PsiSpy23:1+PsiSpy24:1+PsiSpy25:10:20+PsiSpy24:1+PsiSpy23:1+PsiSpy21:1+PsiSpy01:10:20
+
+#open-half-closed   1-2-3
+#Eyes,    280@240,   PsiSciEy1:30:50+PsiSciEy2:1+PsiSciEy3:2:4

@@ -1,0 +1,247 @@
+// First digit:    4=like,     2=neutral, 1=dislike
+// Second digit:   4=stronger, 2=same,    1= weaker
+
+
+// Contact: Displayed on first contact
+Contact-Diplomatic     |  77  | CONTACT_DIPLOMATIC
+Contact-Pacifist       |  77  | CONTACT_PACIFIST
+Contact-Honorable      |  77  | CONTACT_HONORABLE
+Contact-Ruthless       |  77  | CONTACT_RUTHLESS
+Contact-Aggressive     |  77  | CONTACT_AGGRESSIVE
+Contact-Xenophobic     |  77  | CONTACT_XENOPHOBIC
+Contact-Erratic        |  77  | CONTACT_ERRATIC
+
+// Ambassador greeetings, differs by relations
+DiplomacyGreeting      |  47  | GREETING_01
+DiplomacyGreeting      |  27  | GREETING_04 
+DiplomacyGreeting      |  17  | GREETING_07
+
+// Declarations of War, generally differs by power
+DeclareWar-Hate        |  74  | DECLAREWAR_HATE_01
+DeclareWar-Hate        |  72  | DECLAREWAR_HATE_02
+DeclareWar-Hate        |  71  | DECLAREWAR_HATE_03
+DeclareWar-Erratic     |  74  | DECLAREWAR_ERRATIC_01
+DeclareWar-Erratic     |  72  | DECLAREWAR_ERRATIC_02
+DeclareWar-Erratic     |  71  | DECLAREWAR_ERRATIC_03
+DeclareWar-Military    |  74  | DECLAREWAR_MILITARY_01
+DeclareWar-Military    |  72  | DECLAREWAR_MILITARY_02
+DeclareWar-Military    |  71  | DECLAREWAR_MILITARY_03
+DeclareWar-Alliance    |  74  | DECLAREWAR_ALLIANCE_01
+DeclareWar-Alliance    |  72  | DECLAREWAR_ALLIANCE_02
+DeclareWar-Alliance    |  71  | DECLAREWAR_ALLIANCE_03
+DeclareWar-Spying      |  74  | DECLAREWAR_SPYING_01
+DeclareWar-Spying      |  72  | DECLAREWAR_SPYING_02
+DeclareWar-Spying      |  71  | DECLAREWAR_SPYING_03
+DeclareWar-Attack      |  74  | DECLAREWAR_ATTACK_01
+DeclareWar-Attack      |  72  | DECLAREWAR_ATTACK_02
+DeclareWar-Attack      |  71  | DECLAREWAR_ATTACK_03
+DeclareWar-Opportunity |  77  | DECLAREWAR_OPPORTUNITY_01
+DeclareWar-Assassin    |  77  | DECLAREWAR_ASSASSIN_01
+
+// Warnings
+Warning-Trespassing      |  77  | WARN_TRESPASSING_01
+Warning-Expansion        |  77  | WARN_EXPANSION_01
+Warning-Buildup          |  77  | WARN_BUILDUP_01
+Warning-Skirmish         |  77  | WARN_SKIRMISH_01
+Warning-ColonyAttacked   |  77  | WARN_ATTACKED_01
+Warning-ColonyInvaded    |  77  | WARN_INVADED_01
+Warning-Espionage        |  77  | WARN_ESPIONAGE_01
+Warning-Sabotage         |  77  | WARN_SABOTAGE_01
+Warning-Bioweapon        |  77  | WARN_BIOWEAPON_01
+Warning-Genocide         |  77  | WARN_GENOCIDE_01
+Warning-FinalWar         |  77  | WARN_FINAL_WAR_01
+Warning-CouncilVote      |  77  | WARN_COUNCIL_VOTE_01
+Warning-Oathbreaker      |  77  | WARN_OATHBREAKER_01
+Warning-RebellingAgainst |  77  | WARN_REBELLING_AGAINST_01
+
+// Praise, differs by relations
+Praise-CouncilVote   |  47  | PRAISE_COUNCIL_VOTE_01
+Praise-CouncilVote   |  27  | PRAISE_COUNCIL_VOTE_02
+Praise-CouncilVote   |  17  | PRAISE_COUNCIL_VOTE_03
+Praise-AttackedEnemy |  47  | PRAISE_ATTACKED_ENEMY_01
+Praise-AttackedEnemy |  27  | PRAISE_ATTACKED_ENEMY_02
+Praise-AttackedEnemy |  17  | PRAISE_ATTACKED_ENEMY_03
+Praise-Trade         |  47  | PRAISE_TRADE_01
+Praise-Trade         |  37  | PRAISE_TRADE_02
+Praise-RebellingWith |  77  | PRAISE_REBELLING_WITH_01
+
+//
+Notice-Spying             |  77  | NOTICE_SPYING
+Notice-TechStolen         |  77  | NOTICE_TECH_STOLEN
+Notice-FactoriesDestroyed |  77  | NOTICE_FACTORIES_DESTROYED
+Notice-BasesDestroyed     |  77  | NOTICE_BASES_DESTROYED
+Notice-Rebellion          |  77  | NOTICE_REBELLION
+TransportsPerished        |  77  | NOTICE_TRANSPORTS_PERISHED
+TransportsKilled          |  77  | NOTICE_TRANSPORTS_KILLED
+EnemyTransportsKilled     |  77  | NOTICE_ENEMY_TRANSPORTS_KILLED
+
+// Menu prompt: displayed when showing diplomacy options
+DiplomacyMainMenu        |  77  | DIPLO_MAIN_MENU_01
+DiplomacyTradeMenu       |  77  | DIPLO_TRADE_MENU_01
+DiplomacyTechRequestMenu |  77  | DIPLO_TECH_REQUEST_MENU_01
+DiplomacyTechCounterMenu |  77  | DIPLO_TECH_COUNTER_MENU_01
+DiplomacyTreatyMenu      |  77  | DIPLO_TREATY_MENU_01
+DiplomacyDeclareWarMenu  |  77  | DIPLO_DECLARE_WAR_MENU_01
+DiplomacyJointWarMenu    |  77  | DIPLO_JOINT_WAR_MENU_01
+DiplomacyBreakAllyMenu   |  77  | DIPLO_BREAK_ALLIANCE_MENU_01 
+DiplomacyOfferAidMenu    |  77  | DIPLO_OFFER_AID_MENU_01
+DiplomacyOfferTechMenu   |  77  | DIPLO_OFFER_TECH_MENU_01
+
+// AI initiated requests
+OfferTechExchange        |  77  | OFFER_TECH_EXCHANGE_01
+AcceptTechExchange       |  77  | ACCEPT_TECH_EXCHANGE_01
+AcceptFinancialAid       |  77  | ACCEPT_FINANCIAL_AID_01
+AcceptTechnologyAid      |  77  | ACCEPT_TECHNOLOGY_AID_01
+OfferTrade               |  77  | OFFER_TRADE_01
+AcceptTrade              |  77  | ACCEPT_TRADE_01
+AnnounceTrade            |  77  | ANNOUNCE_TRADE_01
+BreakTrade               |  77  | BREAK_TRADE_01
+OfferPeace               |  77  | OFFER_PEACE_01
+AcceptPeace              |  77  | ACCEPT_PEACE_01
+AnnouncePeace            |  77  | ANNOUNCE_PEACE_01
+OfferPact                |  77  | OFFER_PACT_01
+AcceptPact               |  77  | ACCEPT_PACT_01
+AnnouncePact             |  77  | ANNOUNCE_PACT_01
+BreakPact                |  77  | BREAK_PACT_01
+OfferAlliance            |  77  | OFFER_ALLIANCE_01
+AcceptAlliance           |  77  | ACCEPT_ALLIANCE_01
+AnnounceAlliance         |  77  | ANNOUNCE_ALLIANCE_01
+BreakAlliance            |  77  | BREAK_ALLIANCE_01
+
+// Generic message when a diplomatic offer is declined
+DeclineOffer        |  44  | DECLINE_OFFER_01
+DeclineOffer        |  42  | DECLINE_OFFER_02
+DeclineOffer        |  41  | DECLINE_OFFER_03
+DeclineOffer        |  24  | DECLINE_OFFER_04 
+DeclineOffer        |  22  | DECLINE_OFFER_05
+DeclineOffer        |  21  | DECLINE_OFFER_06
+DeclineOffer        |  14  | DECLINE_OFFER_07
+DeclineOffer        |  12  | DECLINE_OFFER_08
+DeclineOffer        |  11  | DECLINE_OFFER_09
+
+// Decline when too many requests
+DeclineAnnoyed      |  47  | DECLINE_ANNOYED_01
+DeclineAnnoyed      |  27  | DECLINE_ANNOYED_02
+DeclineAnnoyed      |  17  | DECLINE_ANNOYED_03
+
+DeclineOathbreaker  |  44  | DECLINE_OATHBREAKER_01
+DeclineOathbreaker  |  42  | DECLINE_OATHBREAKER_01
+DeclineOathbreaker  |  41  | DECLINE_OATHBREAKER_01
+DeclineOathbreaker  |  24  | DECLINE_OATHBREAKER_01
+DeclineOathbreaker  |  22  | DECLINE_OATHBREAKER_01
+DeclineOathbreaker  |  21  | DECLINE_OATHBREAKER_01
+DeclineOathbreaker  |  14  | DECLINE_OATHBREAKER_01
+DeclineOathbreaker  |  12  | DECLINE_OATHBREAKER_01
+DeclineOathbreaker  |  11  | DECLINE_OATHBREAKER_01
+
+DeclineEspionage    |  44  | DECLINE_ESPIONAGE_01
+DeclineEspionage    |  42  | DECLINE_ESPIONAGE_01
+DeclineEspionage    |  41  | DECLINE_ESPIONAGE_01
+DeclineEspionage    |  24  | DECLINE_ESPIONAGE_01
+DeclineEspionage    |  22  | DECLINE_ESPIONAGE_01
+DeclineEspionage    |  21  | DECLINE_ESPIONAGE_01
+DeclineEspionage    |  14  | DECLINE_ESPIONAGE_01
+DeclineEspionage    |  12  | DECLINE_ESPIONAGE_01
+DeclineEspionage    |  11  | DECLINE_ESPIONAGE_01
+
+DeclineSabotage     |  44  | DECLINE_SABOTAGE_01
+DeclineSabotage     |  42  | DECLINE_SABOTAGE_01
+DeclineSabotage     |  41  | DECLINE_SABOTAGE_01
+DeclineSabotage     |  24  | DECLINE_SABOTAGE_01
+DeclineSabotage     |  22  | DECLINE_SABOTAGE_01
+DeclineSabotage     |  21  | DECLINE_SABOTAGE_01
+DeclineSabotage     |  14  | DECLINE_SABOTAGE_01
+DeclineSabotage     |  12  | DECLINE_SABOTAGE_01
+DeclineSabotage     |  11  | DECLINE_SABOTAGE_01
+
+DeclineBuildup      |  44  | DECLINE_BUILDUP_01
+DeclineBuildup      |  42  | DECLINE_BUILDUP_01
+DeclineBuildup      |  41  | DECLINE_BUILDUP_01
+DeclineBuildup      |  24  | DECLINE_BUILDUP_01
+DeclineBuildup      |  22  | DECLINE_BUILDUP_01
+DeclineBuildup      |  21  | DECLINE_BUILDUP_01
+DeclineBuildup      |  14  | DECLINE_BUILDUP_01
+DeclineBuildup      |  12  | DECLINE_BUILDUP_01
+DeclineBuildup      |  11  | DECLINE_BUILDUP_01
+
+DeclineEncroach     |  44  | DECLINE_ENCROACH_01
+DeclineEncroach     |  42  | DECLINE_ENCROACH_01
+DeclineEncroach     |  41  | DECLINE_ENCROACH_01
+DeclineEncroach     |  24  | DECLINE_ENCROACH_01
+DeclineEncroach     |  22  | DECLINE_ENCROACH_01
+DeclineEncroach     |  21  | DECLINE_ENCROACH_01
+DeclineEncroach     |  14  | DECLINE_ENCROACH_01
+DeclineEncroach     |  12  | DECLINE_ENCROACH_01
+DeclineEncroach     |  11  | DECLINE_ENCROACH_01
+
+DeclineSkirmish     |  44  | DECLINE_SKIRMISH_01
+DeclineSkirmish     |  42  | DECLINE_SKIRMISH_01
+DeclineSkirmish     |  41  | DECLINE_SKIRMISH_01
+DeclineSkirmish     |  24  | DECLINE_SKIRMISH_01
+DeclineSkirmish     |  22  | DECLINE_SKIRMISH_01
+DeclineSkirmish     |  21  | DECLINE_SKIRMISH_01
+DeclineSkirmish     |  14  | DECLINE_SKIRMISH_01
+DeclineSkirmish     |  12  | DECLINE_SKIRMISH_01
+DeclineSkirmish     |  11  | DECLINE_SKIRMISH_01
+
+DeclineAttack       |  44  | DECLINE_ATTACK_01
+DeclineAttack       |  42  | DECLINE_ATTACK_01
+DeclineAttack       |  41  | DECLINE_ATTACK_01
+DeclineAttack       |  24  | DECLINE_ATTACK_01
+DeclineAttack       |  22  | DECLINE_ATTACK_01
+DeclineAttack       |  21  | DECLINE_ATTACK_01
+DeclineAttack       |  14  | DECLINE_ATTACK_01
+DeclineAttack       |  12  | DECLINE_ATTACK_01
+DeclineAttack       |  11  | DECLINE_ATTACK_01
+
+DeclineInvasion     |  44  | DECLINE_INVASION_01
+DeclineInvasion     |  42  | DECLINE_INVASION_01
+DeclineInvasion     |  41  | DECLINE_INVASION_01
+DeclineInvasion     |  24  | DECLINE_INVASION_01
+DeclineInvasion     |  22  | DECLINE_INVASION_01
+DeclineInvasion     |  21  | DECLINE_INVASION_01
+DeclineInvasion     |  14  | DECLINE_INVASION_01
+DeclineInvasion     |  12  | DECLINE_INVASION_01
+DeclineInvasion     |  11  | DECLINE_INVASION_01
+
+DeclineBioweapons   |  44  | DECLINE_BIOWEAPONS_01
+DeclineBioweapons   |  42  | DECLINE_BIOWEAPONS_01
+DeclineBioweapons   |  41  | DECLINE_BIOWEAPONS_01
+DeclineBioweapons   |  24  | DECLINE_BIOWEAPONS_01
+DeclineBioweapons   |  22  | DECLINE_BIOWEAPONS_01
+DeclineBioweapons   |  21  | DECLINE_BIOWEAPONS_01
+DeclineBioweapons   |  14  | DECLINE_BIOWEAPONS_01
+DeclineBioweapons   |  12  | DECLINE_BIOWEAPONS_01
+DeclineBioweapons   |  11  | DECLINE_BIOWEAPONS_01
+
+DeclineAnnoyed      |  77  | DECLINE_ANNOYED_01
+DeclineTechTrade    |  77  | DECLINE_TECH_TRADE_01
+
+DeclineEnemyAlly     |  77  | DECLINE_ENEMY_ALLY_01
+DeclineAlreadyAllied |  77  | DECLINE_ALREADY_ALLIED_01
+DeclineNoWarOnAlly   |  77  | DECLINE_NO_WAR_ON_ALLY_01
+
+OfferJointWar        |  77  | OFFER_JOINT_WAR_01
+AcceptJointWar       |  77  | ACCEPT_JOINT_WAR_01
+CounterJointWar      |  77  | COUNTER_JOINT_WAR_01
+AcceptBreakAlliance  |  77  | ACCEPT_BREAK_ALLIANCE_01
+RespondCloseEmbassy  |  77  | RESPOND_CLOSE_EMBASSY_01
+RespondBreakTrade    |  77  | RESPOND_BREAK_TRADE_01
+RespondBreakPact     |  77  | RESPOND_BREAK_PACT_01
+RespondBreakAlliance |  77  | RESPOND_BREAK_ALLIANCE_01
+RespondDeclareWar    |  77  | RESPOND_DECLARE_WAR_01
+
+Warning-AttackedAlly |  77  | WARN_ATTACKED_ALLY_01
+
+
+#No Positive or Neutral replies
+Warning-ColonyCaptured  |  74  | WARN_CAPTURED_07
+Warning-ColonyCaptured  |  72  | WARN_CAPTURED_08
+Warning-ColonyCaptured  |  71  | WARN_CAPTURED_09
+
+
+#No Positive or Neutral replies
+Warning-ColonyDestroyed |  74  | WARN_DESTROYED_07
+Warning-ColonyDestroyed |  72  | WARN_DESTROYED_08
+Warning-ColonyDestroyed |  71  | WARN_DESTROYED_09
+

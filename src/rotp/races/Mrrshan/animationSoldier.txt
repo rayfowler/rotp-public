@@ -1,0 +1,10 @@
+#
+# Mrrshan Soldier Animation
+
+Base,   _ALL_  , MrrSol
+
+# Wpn
+Wpn,   _ALL_, MrrSolWe01:8:30+MrrSolWe01+MrrSolWe02+MrrSolWe03+MrrSolWe04+MrrSolWe05+MrrSolWe06+MrrSolWe07+MrrSolWe08+MrrSolWe09+MrrSolWe10+MrrSolWe11+MrrSolWe12+MrrSolWe13+MrrSolWe14+MrrSolWe15:99999
+
+#   Snarling
+Snarl,   330@160 , NULL:10:50+MrrSolSn01+MrrSolSn02+MrrSolSn03+MrrSolSn04+MrrSolSn05+MrrSolSn06:5:15+MrrSolSn04+MrrSolSn02

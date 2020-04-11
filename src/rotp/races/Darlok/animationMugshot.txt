@@ -1,0 +1,6 @@
+#
+# Darlok Diplomat Animation
+Base,   _ALL_       , DarLab01
+
+Base,   _ALL_  , DarDip
+Staff, 0@0 , DarDipStaff01:1+DarDipStaff02:1+DarDipStaff03:1+DarDipStaff04:1

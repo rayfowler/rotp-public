@@ -1,0 +1,45 @@
+[tech]
+seq:    0
+name:   IMPRTFORM_0_NAME
+detail: IMPRTFORM_0_DETAIL
+
+[tech]
+seq:    1
+name:   IMPRTFORM_1_NAME
+detail: IMPRTFORM_1_DETAIL
+
+[tech]
+seq:    2
+name:   IMPRTFORM_2_NAME
+detail: IMPRTFORM_2_DETAIL
+
+[tech]
+seq:    3
+name:   IMPRTFORM_3_NAME
+detail: IMPRTFORM_3_DETAIL
+
+[tech]
+seq:    4
+name:   IMPRTFORM_4_NAME
+detail: IMPRTFORM_4_DETAIL
+
+[tech]
+seq:    5
+name:   IMPRTFORM_5_NAME
+detail: IMPRTFORM_5_DETAIL
+
+[tech]
+seq:    6
+name:   IMPRTFORM_6_NAME
+detail: IMPRTFORM_6_DETAIL
+
+[tech]
+seq:    7
+name:   IMPRTFORM_7_NAME
+detail: IMPRTFORM_7_DETAIL
+
+[tech]
+seq:    8
+name:   IMPRTFORM_8_NAME
+detail: IMPRTFORM_8_DETAIL
+

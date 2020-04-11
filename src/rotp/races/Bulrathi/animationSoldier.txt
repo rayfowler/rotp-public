@@ -1,0 +1,11 @@
+#
+# Bulrathi Soldier Animation
+
+Base,   _ALL_  , BulSol
+
+#   Open/Blink
+Eye,   320@100 , NULL:30:50+BulSolEy02:2
+
+#   1-Closed, 2-Half-Open, 3-Open
+Mouth, 310@140 , NULL:3+BulSolMo02:3+BulSolMo03:3+BulSolMo02:3+BulSolMo03:3+BulSolMo02:3
+

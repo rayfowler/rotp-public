@@ -1,0 +1,131 @@
+key:           RACE_DARLOK
+langKey:       Darlok
+year:          31
+
+homeStarType:  WHITE
+homeworldType: PLANET_TERRAN
+homeworldSize: 100
+homeworldKey:  6438669
+
+// animations
+mugshot:       DarlokDiplomat, 200@10|250x270
+setupImage:    DarlokDiploMug, 0@0|584x768
+spyMug:        DarlokSpyMug, 100@0|440x330
+soldierMug:    DarlokSoldierMug, 100@0|440x330
+diploProfile:  DarlokDiploMug, 70@0|630x480
+lab:           DarlokLaboratory
+embassy:       DarlokEmbassy
+holograph:     
+diplomat:      DarlokDiplomat
+scientist:     DarlokScientist
+trooper:       DarlokSoldier
+spy:           DarlokSpy
+leader:        DarLeader
+diploTheme:    ThemeDarlok
+gnn:           DarlokGNN
+gnnHost:       DarlokGNNHost
+gnnColor:      Lavender
+gnnTextColor:  185,154,250
+winSplash:     ,255,255,255
+lossSplash:    ,255,255,255
+
+advisorScout:      DarlokDiplomat, 160@0|440x640
+advisorTransport:  DarlokDiplomat, 160@0|440x640
+advisorDiplomacy:  DarlokDiplomat, 160@0|440x640
+advisorShip:       DarlokDiplomat, 160@0|440x640
+advisorRally:      DarlokDiplomat, 160@0|440x640
+advisorMissile:    DarlokDiplomat, 160@0|440x640
+advisorWeapon:     DarlokDiplomat, 160@0|440x640
+advisorCouncil:    DarlokDiplomat, 160@0|440x640
+advisorRebellion:  DarlokDiplomat, 160@0|440x640
+advisorResistCouncil:   DarlokDiplomat, 160@0|440x640
+advisorCouncilResisted: DarlokDiplomat, 160@0|440x640
+
+transport:     DarTransport
+transportDesc: DarlokTransportDesc, 1,  0@0|370x768
+transportOpen: DarlokTransportOpen, 15, 0@0|370x768
+transportW:    100
+transportYOff: 20
+transportLandingFrames: 20
+colonistWalk:  60, 100, 190@745>290@765
+landingAudio:  DarlokShip
+
+troopIcon:      DarlokCombat,    4/7
+troopHIcon:     DarlokCombat,    4/7
+troopDeath1:    DarlokDeath1,    11
+troopDeath2:    DarlokDeath2,    5
+troopDeath3:    DarlokDeath3,    8
+troopDeath4:    DarlokDeath4,    8
+troopDeath1H:   DarlokDeath1,    11
+troopDeath2H:   DarlokDeath2,    5
+troopDeath3H:   DarlokDeath3,    8
+troopDeath4H:   DarlokDeath4,    8
+troopScale:     0.5, 25, 33
+troopFireXY:    318@113
+troopHFireXY:   200@58
+
+
+fortress:      DarFort01,  0@0|420x450
+council:       DarCouncil01
+shield:        MeklarShield,    0@0|420x450
+introTextX:    680
+espionageXY:   0@0
+spyFactories:  0
+spyMissiles:   0
+spyRebellion:  0
+dialogTextX:   230,120
+dialogTextY:   560
+councilDiplo:  0.30, 300, -100, 0.5
+labFlagX:      0.78
+flagSize:      200x200
+flagWar:       DarFlagWar
+flagNormal:    DarFlagNorm
+flagPact:      DarFlagPact
+dialogWar:     DarDlgWar
+dialogNormal:  DarDlgNorm
+dialogPact:    DarDlgPact
+
+// sounds
+voice:     DarlokVoice 
+ambience:  DarlokAmbience
+
+
+// species info:
+// field #1 - terran(1), aquatic(2), silicate(3) or robotic(4)
+// field #2 - ignoreEco(1), don't ignore eco (0)
+species: 1, 0
+
+// personality % (must=100) - erratic, pacifist, honorable, ruthless, aggressive, xenophobic
+personality:20,0,0,20,60,0
+// objective % (must=100) - militarist, ecologist, diplomat, industrialist, expansionist, technologist
+objective: 10,10,50,10,10,10
+
+// ship set & preferred size (0-small to 3-huge)
+preferredship: Darlok, 1
+
+// ship bonus - att, def, init
+shipmod: 0,0,0
+
+// ground mod - att
+groundmod: 0
+
+// spy mod - cost%, security adj%, infiltration adj%, telepathic?(1/0), mask relations?(1/0)
+spymod: 50, 20, 20, 0, 1
+
+// production mod - worker productivity, factory controls bonus, ignoreRefitCost?(1/0)
+prodmod: 100, 0, 0
+
+// tech mods - discovery %, research bonus
+techmod: 50, 100
+
+// pop mods - growth rate
+popmod: 100
+
+// diplomacy mods % - trade % bonus, positive DP mod, diplomacy bonus, council bonus
+diplomod: 0,100,0,0
+
+// research category mods % - computer, construction, force field, planetary, propulsion, weapon
+research: 80,100,100,100,100,100
+
+// race relations
+relations: DEFAULT=-7,RACE_DARLOK=31,RACE_HUMAN=7

@@ -1,0 +1,18 @@
+#
+# Psilon Diplomat Animation
+
+# Base..  RArm & LArm cropped out to avoid overlays with those animations
+Base, _ALL_, PsiDip  
+
+# closed-half-open  7-1-2-3-2-3-4-3-4-5-6-7 (7 = smile)
+Mouth,   300@275,   PsiDipMo07:2+PsiDipMo02:2+PsiDipMo03:2+PsiDipMo02:2+PsiDipMo03:2+PsiDipMo05:2+PsiDipMo03:2+PsiDipMo04:2
+
+#open-half-closed   1-2-3
+Eyes,    260@220,   PsiDipEy01:30:50+PsiDipEy02:1+PsiDipEy03:4:8+PsiDipEy01:1+PsiDipEy03:1+PsiDipEy01:1+PsiDipEy03:1
+
+#
+# gem 1through14
+Gem,     310@100,   PsiDipGm01:1:4+PsiDipGm02:1:4+PsiDipGm03:1:4+PsiDipGm04:1:4+PsiDipGm05:1:4+PsiDipGm06:1:4+PsiDipGm07:1:4+PsiDipGm08:1:4+PsiDipGm09:1:4+PsiDipGm10:1:4+PsiDipGm11:1:4+PsiDipGm12:1:4+PsiDipGm13:1:4+PsiDipGm14:1:4
+
+#Hair
+Hair,    385@210,    PsiDipHa01:10:20+PsiDipHa02:1:3+PsiDipHa03:1:6+PsiDipHa02:1

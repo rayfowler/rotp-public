@@ -1,0 +1,6 @@
+#
+# Human Laboratory Animation
+#
+
+Base,   _ALL_  , KlaLab
+Effect, _ALL_  , HumLabEff01+HumLabEff02+HumLabEff03

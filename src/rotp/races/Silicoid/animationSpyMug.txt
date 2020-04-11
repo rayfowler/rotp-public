@@ -1,0 +1,8 @@
+#
+# Sillar Spy Animation
+# #1 - Blinking eye
+
+Base,   _ALL_       , SilLab
+Base, _ALL_  , SilSpy
+
+Eye, 300@100 , NULL:20:40+SilSpyEy02:2+SilSpyEy03:2+SilSpyEy04:2+SilSpyEy05:2+SilSpyEy06:2+SilSpyEy07:2+SilSpyEy08:2+SilSpyEy09:20:40

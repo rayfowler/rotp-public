@@ -1,0 +1,5 @@
+#
+# Transport Ship Opening Animation
+
+// Starts closed and opens "permanently" 
+Open,  0@0,HumTrans01:2+HumTrans02:2+HumTrans03:3+HumTrans04:4+HumTrans05:5+HumTrans06:999999

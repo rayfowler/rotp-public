@@ -1,0 +1,5 @@
+#
+# Bulrathi Transport Ship Descending Animation
+
+// Default is closed
+Base, _ALL_  , BulTrans01

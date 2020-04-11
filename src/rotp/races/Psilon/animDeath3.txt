@@ -1,0 +1,6 @@
+#
+# Psilon Hostile Combat Frames
+
+
+# immolated. only ashes remain
+Base, _ALL_ , PsiDeath301:1+PsiDeath302:1+PsiDeath303:1+PsiDeath304:1+PsiDeath305:1+PsiDeath306:1+PsiDeath307:1+PsiDeath308:1+PsiDeath309:1+PsiDeath310:1+PsiDeath311:1+PsiDeath312:99999

@@ -1,0 +1,20 @@
+#
+# Psilon Scientist Animation
+
+# Base..  RArm & LArm cropped out to avoid overlays with those animations
+Base, _ALL_, PsiSci  
+
+# left arm, up & down  1-2-3-4-5-6-5-4-3-2
+LeftArm, 385@500,   PsiSciLA1:3+PsiSciLA2:3+PsiSciLA3:3+PsiSciLA4:3+PsiSciLA5:3+PsiSciLA6:3+PsiSciLA5:3+PsiSciLA4:3+PsiSciLA3:3+PsiSciLA2:1
+
+# right arm, right& left  1-2-3-4-5-6-5-4-3-2
+RightArm,  0@0,     PsiSciRA1:3+PsiSciRA2:3+PsiSciRA3:3+PsiSciRA4:3+PsiSciRA5:3+PsiSciRA6:3+PsiSciRA5:3+PsiSciRA4:3+PsiSciRA3:3+PsiSciRA2:1
+
+# closed-half-open  1-2-3-2-3-1
+# Mouth,   300@295,   PsiSciMo1:2+PsiSciMo2:2+PsiSciMo3:2+PsiSciMo2:2+PsiSciMo3:2+PsiSciMo1:2:6
+
+#open-half-closed   1-2-3
+Eyes,    280@240,   PsiSciEy1:30:50+PsiSciEy2:1+PsiSciEy3:2:4
+
+#rotating effect    1-2-3-4-5-6
+Effect, 280@385,    PsiSciEf1:3+PsiSciEf2:3+PsiSciEf3:3+PsiSciEf4:3+PsiSciEf5:3+PsiSciEf6:1

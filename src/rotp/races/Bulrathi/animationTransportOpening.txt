@@ -1,0 +1,5 @@
+#
+# Bulrathi Transport Ship Opening Animation
+
+// Starts closed and opens "permanently" 
+Open,  0@0,BulTrans07:7+BulTrans11:1+BulTrans12:1+BulTrans13:1+BulTrans14:1+BulTrans15:999999

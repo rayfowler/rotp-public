@@ -1,0 +1,7 @@
+#
+# Meklar Spy Animation
+# #1 - Blinking eye
+
+Base, 200@0  , MekSpy
+
+Eye, 290@150 , NULL:1:3+MekSpyEy02:1+MekSpyEy03:1+MekSpyEy04:1+MekSpyEy05:1+MekSpyEy06:20+MekSpyEy07:1+MekSpyEy08:1+MekSpyEy09:1+MekSpyEy10:1:7

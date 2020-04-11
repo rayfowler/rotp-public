@@ -1,0 +1,131 @@
+key:           RACE_BULRATHI
+langKey:       Bulrathi
+year:          14215
+
+homeStarType:  YELLOW
+homeworldType: PLANET_TERRAN
+homeworldSize: 100
+homeworldKey:  9208212
+
+// animations
+mugshot:       BulrathiDiplomat, 210@0|250x270
+setupImage:    BulrathiDiploMug, 0@0|584x768
+spyMug:        BulrathiSpyMug,  165@0|440x330
+soldierMug:    BulrathiSoldierMug, 165@0|440x330
+advisorMug:    BulrathiDiplomat, 185@0|440x640
+diploProfile:  BulrathiDiploMug, 95@0|630x480
+lab:           BulrathiLaboratory
+embassy:       BulrathiLaboratory
+holograph:     BulrathiHolograph
+diplomat:      BulrathiDiplomat
+scientist:     BulrathiScientist
+trooper:       BulrathiSoldier
+spy:           BulrathiSpy
+leader:        BulLeader
+diploTheme:    ThemeBulrathi
+gnn:           BulrathiGNN
+gnnHost:       BulrathiGNNHost
+gnnColor:      Orange
+gnnTextColor:  255,93,0
+winSplash:     BulWin,255,255,255
+lossSplash:    BulLoss,255,255,255
+
+
+advisorScout:      BulrathiDiplomat, 185@0|440x640
+advisorTransport:  BulrathiDiplomat, 185@0|440x640
+advisorDiplomacy:  BulrathiDiplomat, 185@0|440x640
+advisorShip:       BulrathiDiplomat, 185@0|440x640
+advisorRally:      BulrathiDiplomat, 185@0|440x640
+advisorMissile:    BulrathiDiplomat, 185@0|440x640
+advisorWeapon:     BulrathiDiplomat, 185@0|440x640
+advisorCouncil:    BulrathiDiplomat, 185@0|440x640
+advisorRebellion:  BulrathiDiplomat, 185@0|440x640
+advisorResistCouncil:   BulrathiDiplomat, 185@0|440x640
+advisorCouncilResisted: BulrathiDiplomat, 185@0|440x640
+
+transport:     BulTransport
+transportDesc: BulrathiTransportDesc, 1, 0@0|385x250
+transportOpen: BulrathiTransportOpen, 32, 0@0|385x250
+transportW:    100
+transportYOff: 0
+transportLandingFrames: 120
+colonistWalk:  50, 150, 240@180>370@250
+landingAudio:  BulrathiShip
+
+troopIcon:      BulrathiCombat,    4/4
+troopHIcon:     BulrathiCombatH,   4/4
+troopDeath1:    BulrathiDeath1,    9
+troopDeath2:    BulrathiDeath2,    5
+troopDeath3:    BulrathiDeath3,    11
+troopDeath4:    BulrathiDeath4,    8
+troopDeath1H:   BulrathiDeath1H,   9
+troopDeath2H:   BulrathiDeath2H,   5
+troopDeath3H:   BulrathiDeath3H,   11
+troopDeath4H:   BulrathiDeath4H,   8
+troopScale:     0.5, 25, 33
+troopFireXY:    153@119
+troopHFireXY:   153@119
+
+fortress:      BulFort01|BulFort02,  0@0|420x450
+council:       BulCouncil
+shield:        BulFortShield,    0@0|420x450
+introTextX:    680
+espionageXY:   0@0
+spyFactories:  45
+spyMissiles:   45
+spyRebellion:  45
+dialogTextX:   180,180
+dialogTextY:   550
+councilDiplo:  0.4, 375, -160, 0.6
+labFlagX:      0.71
+flagSize:      200x200
+flagWar:       BulFlagWar
+flagNormal:    BulFlagNorm
+flagPact:      BulFlagPact
+dialogWar:     BulDlgWar
+dialogNormal:  BulDlgNorm
+dialogPact:    BulDlgPact
+
+// sounds
+voice:     BulrathiVoice
+ambience:  BulrathiAmbience
+
+// species info:
+// field #1 - terran(1), aquatic(2), silicate(3) or robotic(4)
+// field #2 - ignoreEco(1), don't ignore eco (0)
+species: 1, 0
+
+// personality % (must=100) - erratic, pacifist, honorable, ruthless, aggressive, xenophobic
+personality:20,0,0,20,60,0
+// objective % (must=100) - militarist, ecologist, diplomat, industrialist, expansionist, technologist
+objective: 50,10,10,10,10,10
+
+// ship set & preferred size (0-small to 3-huge)
+preferredship: Bulrathi, 2
+
+// ship bonus - att, def, init
+shipmod: 0,0,0
+
+// ground mod - att
+groundmod: 25
+
+// spy mod - cost%, security adj%, infiltration adj%, telepathic?(1/0), mask relations?(1/0)
+spymod: 100, 0, 0, 0, 0
+
+// production mod - worker productivity, factory controls bonus, ignoreRefitCost?(1/0)
+prodmod: 100, 0, 0
+
+// tech mods - discovery %, research bonus
+techmod: 50, 100
+
+// pop mods - growth rate
+popmod: 100
+
+// diplomacy mods % - trade % bonus, positive DP mod, diplomacy bonus, council bonus
+diplomod: 0,100,0,0
+
+// research category mods % - computer, construction, force field, planetary, propulsion, weapon
+research: 125,80,100,100,100,80
+
+// race relations
+relations: DEFAULT=0,RACE_BULRATHI=31,RACE_HUMAN=7,RACE_DARLOK=-7,RACE_MRRSHAN=-7

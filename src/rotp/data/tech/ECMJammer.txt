@@ -1,0 +1,77 @@
+
+[tech]
+seq:    0
+name:   ECMJAMMER_0_NAME
+item:   ECMJAMMER_0_ITEM
+brief:  ECMJAMMER_0_BRIEF
+detail: ECMJAMMER_0_DETAIL
+
+[tech]
+seq:    1
+name:   ECMJAMMER_1_NAME
+item:   ECMJAMMER_1_ITEM
+brief:  ECMJAMMER_1_BRIEF
+detail: ECMJAMMER_1_DETAIL
+
+[tech]
+seq:    2
+name:   ECMJAMMER_2_NAME
+item:   ECMJAMMER_2_ITEM
+brief:  ECMJAMMER_2_BRIEF
+detail: ECMJAMMER_2_DETAIL
+
+[tech]
+seq:    3
+name:   ECMJAMMER_3_NAME
+item:   ECMJAMMER_3_ITEM
+brief:  ECMJAMMER_3_BRIEF
+detail: ECMJAMMER_3_DETAIL
+
+[tech]
+seq:    4
+name:   ECMJAMMER_4_NAME
+item:   ECMJAMMER_4_ITEM
+brief:  ECMJAMMER_4_BRIEF
+detail: ECMJAMMER_4_DETAIL
+
+[tech]
+seq:    5
+name:   ECMJAMMER_5_NAME
+item:   ECMJAMMER_5_ITEM
+brief:  ECMJAMMER_5_BRIEF
+detail: ECMJAMMER_5_DETAIL
+
+[tech]
+seq:    6
+name:   ECMJAMMER_6_NAME
+item:   ECMJAMMER_6_ITEM
+brief:  ECMJAMMER_6_BRIEF
+detail: ECMJAMMER_6_DETAIL
+
+[tech]
+seq:    7
+name:   ECMJAMMER_7_NAME
+item:   ECMJAMMER_7_ITEM
+brief:  ECMJAMMER_7_BRIEF
+detail: ECMJAMMER_7_DETAIL
+
+[tech]
+seq:    8
+name:   ECMJAMMER_8_NAME
+item:   ECMJAMMER_8_ITEM
+brief:  ECMJAMMER_8_BRIEF
+detail: ECMJAMMER_8_DETAIL
+
+[tech]
+seq:    9
+name:   ECMJAMMER_9_NAME
+item:   ECMJAMMER_9_ITEM
+brief:  ECMJAMMER_9_BRIEF
+detail: ECMJAMMER_9_DETAIL
+
+[tech]
+seq:    10
+name:   ECMJAMMER_10_NAME
+item:   ECMJAMMER_10_ITEM
+brief:  ECMJAMMER_10_BRIEF
+detail: ECMJAMMER_10_DETAIL

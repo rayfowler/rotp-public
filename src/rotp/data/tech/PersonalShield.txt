@@ -1,0 +1,20 @@
+[tech]
+seq:    0
+name:   PERSSHIELD_0_NAME
+detail: PERSSHIELD_0_DETAIL
+
+[tech]
+seq:    1
+name:   PERSSHIELD_1_NAME
+detail: PERSSHIELD_1_DETAIL
+
+[tech]
+seq:    2
+name:   PERSSHIELD_2_NAME
+detail: PERSSHIELD_2_DETAIL
+
+[tech]
+seq:    3
+name:   PERSSHIELD_3_NAME
+detail: PERSSHIELD_3_DETAIL
+

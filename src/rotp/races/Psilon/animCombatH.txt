@@ -1,0 +1,5 @@
+#
+# Psilon Hostile Combat Animation
+
+// Actual firing of weapon is on the 3rd of 9 frames
+Firing, _ALL_ , PsiHCombat00:1+PsiHCombat01:1+PsiHCombat02:1+PsiHCombat03:1+PsiHCombat04:1+PsiHCombat05:2+PsiHCombat06:1+PsiHCombat07:1+PsiHCombat08:1

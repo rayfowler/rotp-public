@@ -1,0 +1,5 @@
+#
+# Combat Frames
+
+# Disrupted into nothingness
+Base, _ALL_ , KlaDeath2H01+KlaDeath2H02+KlaDeath2H03+KlaDeath2H04+null:99999

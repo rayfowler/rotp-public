@@ -1,0 +1,40 @@
+[tech]
+seq:    0
+name:   IMPRINDUSTRY_0_NAME
+detail: IMPRINDUSTRY_0_DETAIL
+
+[tech]
+seq:    1
+name:   IMPRINDUSTRY_1_NAME
+detail: IMPRINDUSTRY_1_DETAIL
+
+[tech]
+seq:    2
+name:   IMPRINDUSTRY_2_NAME
+detail: IMPRINDUSTRY_2_DETAIL
+
+[tech]
+seq:    3
+name:   IMPRINDUSTRY_3_NAME
+detail: IMPRINDUSTRY_3_DETAIL
+
+[tech]
+seq:    4
+name:   IMPRINDUSTRY_4_NAME
+detail: IMPRINDUSTRY_4_DETAIL
+
+[tech]
+seq:    5
+name:   IMPRINDUSTRY_5_NAME
+detail: IMPRINDUSTRY_5_DETAIL
+
+[tech]
+seq:    6
+name:   IMPRINDUSTRY_6_NAME
+detail: IMPRINDUSTRY_6_DETAIL
+
+[tech]
+seq:    7
+name:   IMPRINDUSTRY_7_NAME
+detail: IMPRINDUSTRY_7_DETAIL
+

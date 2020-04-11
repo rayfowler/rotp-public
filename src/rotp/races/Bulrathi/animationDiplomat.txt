@@ -1,0 +1,12 @@
+#
+# Bulrathi Diplomat Animation
+Base,  _ALL_    , BulDip
+
+// open-blink-open-squint-blink-squint
+Eye,    320@50    , NULL:30:60+BulDipEy03:2+NULL:10:20+BulDipEy02:4:10+BulDipEy03:2+BulDipEy02:3:10
+
+// closed-open1-open2-open3-open2-open3-open2-open1
+Mouth,  320@120   , NULL:2+BulDipMo02:2+BulDipMo03:2+BulDipMo04:2+BulDipMo03:2+BulDipMo04:2+BulDipMo03:2+BulDipMo02:2
+
+// finger down-up-down-up-down-up (triple tap)
+Hand,   190@300   , NULL:10:25+BulDipFi02:1+BulDipFi03:1+BulDipFi02:1+NULL:2+BulDipFi02:1+BulDipFi03:1+BulDipFi02:1+NULL:2+BulDipFi02:1+BulDipFi03:1+BulDipFi02:1

@@ -1,0 +1,6 @@
+#
+# Diplomat Diplomat Animation
+
+Base,   _ALL_  , DarDip
+
+Staff, 0@0 , DarDipStaff01:2+DarDipStaff02:3+DarDipStaff03:4+DarDipStaff04:5

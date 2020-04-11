@@ -1,0 +1,22 @@
+// all possible names
+name: Klackon, Klackant, Klockan, Arthropon, Coleopteron
+
+desc1: Xenophobic Industrialists
+desc2: Hive Mind Colony
+desc3: A species with a single controlling mind, the industrious [race] is inscrutable to outsiders.
+
+// possible home system names
+home: Kholdan, Kholdant, Khaldon, Klokdon, Khakdon
+
+title:     The
+fulltitle: The
+
+// possible leader names
+leader: Ixitixl, Kaxal, Kikitik, Klaquan, K'kalak, Xantak
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Bumblebee, Needle, Mantis, Beetle, Drone, Spider, Mandible
+ship2: Hornet, Poison, Venom, Dragonfly, Stinger, Scarab, Wasp
+ship3: Tarantula, Viper, Cobra, Asp, Snake, Mamba, Scorpion
+ship4: King Cobra, Black Widow, Death Wyn, Pit Viper, Naga, Black Adder, Black Mamba
+

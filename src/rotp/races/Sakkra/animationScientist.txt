@@ -1,0 +1,12 @@
+#
+# Sakkra Scientist Animation
+
+Base, 0@100 , SakSci
+
+
+#   1(null)-Open, Closing 2,3 and Closed 4
+Eye,   280@130 , NULL:30:80+SakSciEy02:1+SakSciEy03:1+SakSciEy04:10:20+SakSciEy03:1+SakSciEy02:1
+
+#   1(null)-Closed, 2,3-Half-Open, 4-Open
+Mouth, 240@230 , NULL:5:15+SakSciMo02:3+SakSciMo03:3+SakSciMo04:3+SakSciMo03:3+SakSciMo02:3+SakSciMo03:3+SakSciMo04:3+SakSciMo03:3+SakSciMo02:3
+

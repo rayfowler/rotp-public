@@ -1,0 +1,15 @@
+#
+# Sakari Soldier Animation
+
+Base,   _ALL_  , SakSol
+
+# Guns, same timings, diff location
+Gun1,   190@180, NULL:30+SakSolG102:2+SakSolG103:2+SakSolG104:2+SakSolG105:30:50
+Gun2,   630@250, NULL:30+SakSolG202:2+SakSolG203:2+SakSolG204:2+SakSolG205:30:50
+
+#   1(null)-Open, Closing 2,3 and Closed 4
+Eye,   420@150 , NULL:30:80+SakSolEy02:1+SakSolEy03:1+SakSolEy04:10:20+SakSolEy03:1+SakSolEy02:1
+
+#   1(null)-Closed, 2-Half-Open, 3-Open
+Mouth, 400@220 , NULL:5:15+SakSolMo02:3+SakSolMo03:3+SakSolMo02:3+SakSolMo03:3+SakSolMo02:3+SakSolMo03:3+SakSolMo02:3
+

@@ -1,0 +1,4 @@
+[tech]
+seq:    0
+name:   COMBATTRANSPORT_0_NAME
+detail: COMBATTRANSPORT_0_DETAIL

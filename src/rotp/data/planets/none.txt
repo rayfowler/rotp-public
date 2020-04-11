@@ -1,0 +1,12 @@
+// MOO1 None Planet
+key: PLANET_NONE
+
+descBiological: NONE_DESC_BIOLOGICAL
+descSilicoid:   NONE_DESC_BIOLOGICAL
+terrainImage:   TERRAIN_NONE
+landscapeImage: 
+atmoImage:      
+cloudImage:     
+
+hostility: 99
+

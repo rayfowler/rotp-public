@@ -1,0 +1,7 @@
+#
+# Diplomat Mugshot Animation (Setup & Races UI)
+Base, _ALL_    , KlaLab
+Base,  _ALL_    , KlaDip01:5:60+KlaDip02+KlaDip03:5:15+KlaDip02
+
+# head/mouth
+Mouth, _ALL_   , KlaDipHd01:2+KlaDipHd02:2+KlaDipHd03:2+KlaDipHd02:2+KlaDipHd03:2+KlaDipHd02:2+KlaDipHd03:2+KlaDipHd04:2+KlaDipHd05:2+KlaDipHd06:5:10+KlaDipHd05:2+KlaDipHd04:2

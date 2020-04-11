@@ -1,0 +1,5 @@
+#
+# Silicoid Hostile Combat Frames
+
+# vaporized into nothingness
+Base, _ALL_ , SilDeath401:1+SilDeath402:1+SilDeath403:1+SilDeath404:1+SilDeath405:1+SilDeath406:1+SilDeath407:1+null:99999

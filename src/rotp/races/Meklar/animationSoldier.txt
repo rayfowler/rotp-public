@@ -1,0 +1,12 @@
+#
+# Meklar Soldier Animation
+# #1 - Eye
+# #2 - Glowing Gun
+
+Base, _ALL_  , MekSol
+
+// Flickers between off (NULL) and on (MekSol04)
+Eye,  510@200 , NULL:2:6+MekSolEy02:2+MekSolEy03:2+MekSolEy04:3:10
+
+// cycles smoothly from On (MekSol01) to Off (MekSol06) and back to On
+Gun, 370@578 , NULL:2+MekSolHa02:2+MekSolHa03:2+MekSolHa04:2+MekSolHa05:2+MekSolHa06:2

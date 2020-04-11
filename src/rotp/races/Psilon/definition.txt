@@ -1,0 +1,129 @@
+key:           RACE_PSILON
+langKey:       Psilon
+year:          417
+
+homeStarType:  YELLOW
+homeworldType: PLANET_TERRAN
+homeworldSize: 100
+homeworldKey:  2102626
+
+// animations
+mugshot:       PsilonDiplomat, 160@60|250x270
+setupImage:    PsilonDiploMug, 0@0|584x768
+spyMug:        PsilonSpyMug,  120@60|440x330
+soldierMug:    PsilonSoldierMug, 120@60|440x330
+diploProfile:  PsilonDiploMug, 70@0|630x480
+lab:           PsilonLaboratory
+embassy:       PsilonLaboratory
+holograph:     PsilonHolograph
+diplomat:      PsilonDiplomat
+scientist:     PsilonScientist
+trooper:       PsilonSoldier
+spy:           PsilonSpy
+leader:        PsiLeader
+diploTheme:    ThemePsilon
+gnn:           PsilonGNN
+gnnHost:       PsilonGNNHost
+gnnColor:      Orange
+gnnTextColor:  255,93,0
+winSplash:     ,255,255,255
+lossSplash:    ,255,255,255
+
+advisorScout:      PsilonDiplomat, 70@0|440x640
+advisorTransport:  PsilonDiplomat, 70@0|440x640
+advisorDiplomacy:  PsilonDiplomat, 70@0|440x640
+advisorShip:       PsilonDiplomat, 70@0|440x640
+advisorRally:      PsilonDiplomat, 70@0|440x640
+advisorMissile:    PsilonDiplomat, 70@0|440x640
+advisorWeapon:     PsilonDiplomat, 70@0|440x640
+advisorCouncil:    PsilonDiplomat, 70@0|440x640
+advisorRebellion:  PsilonDiplomat, 70@0|440x640
+advisorResistCouncil:   PsilonDiplomat, 70@0|440x640
+advisorCouncilResisted: PsilonDiplomat, 70@0|440x640
+
+transport:     PsiTransport
+transportDesc: PsilonTransportDesc,  1, 0@0|240x440
+transportOpen: PsilonTransportOpen, 40, 0@0|240x440
+transportW:    80
+transportYOff: -20
+transportLandingFrames: 120
+colonistWalk:  40, 100, 180@400>250@415
+landingAudio:  PsilonShip
+
+troopIcon:      PsilonCombat,    3/9
+troopHIcon:     PsilonCombatH,   3/9
+troopDeath1:    PsilonDeath1,    6
+troopDeath2:    PsilonDeath2,    6
+troopDeath3:    PsilonDeath3,    12
+troopDeath4:    PsilonDeath4,    8
+troopDeath1H:   PsilonDeath1H,   3
+troopDeath2H:   PsilonDeath2H,   7
+troopDeath3H:   PsilonDeath3H,   11
+troopDeath4H:   PsilonDeath4H,   8
+troopScale:     0.5, 25, 33
+troopFireXY:    200@107
+troopHFireXY:   200@107
+
+fortress:      PsiFort01|PsiFort02,  0@0|420x450
+council:       PsiCouncil
+shield:        MeklarShield,    0@0|420x450
+introTextX:    680
+espionageXY:   0@0
+spyFactories:  0
+spyMissiles:   0
+spyRebellion:  0
+dialogTextX:   100,320
+dialogTextY:   570
+councilDiplo:  0.5, 30, -40, 0.6
+labFlagX:      0.78
+flagSize:      200x200
+flagWar:       PsiFlagWar
+flagNormal:    PsiFlagNorm
+flagPact:      PsiFlagPact
+dialogWar:     PsiDlgWar
+dialogNormal:  PsiDlgNorm
+dialogPact:    PsiDlgPact
+
+// sounds
+voice:     PsilonVoice
+ambience:  PsilonAmbience
+
+// species info:
+// field #1 - terran(1), aquatic(2), silicate(3) or robotic(4)
+// field #2 - ignoreEco(1), don't ignore eco (0)
+species: 1, 0
+
+// personality % (must=100) - erratic, pacifist, honorable, ruthless, aggressive, xenophobic
+personality:20,60,20,0,0,0
+// objective % (must=100) - militarist, ecologist, diplomat, industrialist, expansionist, technologist
+objective: 10,10,10,10,10,50
+
+// ship set & preferred size (0-small to 3-huge)
+preferredship: Psilon, 1
+
+// ship bonus - att, def, init
+shipmod: 0,0,0
+
+// ground mod - att
+groundmod: 0
+
+// spy mod - cost%, security adj%, infiltration adj%, telepathic?(1/0), mask relations?(1/0)
+spymod: 100, 0, 0, 0, 0
+
+// production mod - worker productivity, factory controls bonus, ignoreRefitCost?(1/0)
+prodmod: 100, 0, 0
+
+// tech mods - discovery %, research bonus
+techmod: 75, 150
+
+// pop mods - growth rate
+popmod: 100
+
+// diplomacy mods % - trade % bonus, positive DP mod, diplomacy bonus, council bonus
+diplomod: 0,100,0,0
+
+// research category mods % - computer, construction, force field, planetary, propulsion, weapon
+research: 80,80,80,80,80,80
+
+// race relations
+relations: DEFAULT=0,RACE_PSILON=31,RACE_HUMAN=7,RACE_DARLOK=-7

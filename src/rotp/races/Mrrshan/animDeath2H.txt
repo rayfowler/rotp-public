@@ -1,0 +1,5 @@
+#
+# Mrrshan Hostile Combat Frames
+
+# Disrupted into nothingness
+Base, _ALL_ , MrrDeath2H01:1+MrrDeath2H02:1+MrrDeath2H03:1+MrrDeath2H04:1+null:99999

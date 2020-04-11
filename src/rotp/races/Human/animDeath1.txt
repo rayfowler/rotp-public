@@ -1,0 +1,5 @@
+#
+#  Combat Frames
+
+# falls over dead
+Base, _ALL_ , HumDeath101+HumDeath102+HumDeath103+HumDeath104+HumDeath105+HumDeath106:99999

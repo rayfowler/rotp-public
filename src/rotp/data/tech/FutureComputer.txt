@@ -1,0 +1,50 @@
+[tech]
+seq:    0
+name:   FUTURECOMP_0_NAME
+detail: FUTURECOMP_0_DETAIL
+
+[tech]
+seq:    1
+name:   FUTURECOMP_1_NAME
+detail: FUTURECOMP_1_DETAIL
+
+[tech]
+seq:    2
+name:   FUTURECOMP_2_NAME
+detail: FUTURECOMP_2_DETAIL
+
+[tech]
+seq:    3
+name:   FUTURECOMP_3_NAME
+detail: FUTURECOMP_3_DETAIL
+
+[tech]
+seq:    4
+name:   FUTURECOMP_4_NAME
+detail: FUTURECOMP_4_DETAIL
+
+[tech]
+seq:    5
+name:   FUTURECOMP_5_NAME
+detail: FUTURECOMP_5_DETAIL
+
+[tech]
+seq:    6
+name:   FUTURECOMP_6_NAME
+detail: FUTURECOMP_6_DETAIL
+
+[tech]
+seq:    7
+name:   FUTURECOMP_7_NAME
+detail: FUTURECOMP_7_DETAIL
+
+[tech]
+seq:    8
+name:   FUTURECOMP_8_NAME
+detail: FUTURECOMP_8_DETAIL
+
+[tech]
+seq:    9
+name:   FUTURECOMP_9_NAME
+detail: FUTURECOMP_9_DETAIL
+

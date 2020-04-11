@@ -1,0 +1,25 @@
+
+SakkraLaboratory    | races/Sakkra/animationLaboratory.txt
+SakkraHolograph     | races/Sakkra/animationHolograph.txt
+SakkraDiploMug      | races/Sakkra/animationMugshot.txt
+SakkraSpyMug        | races/Sakkra/animationSpyMug.txt
+SakkraSoldierMug    | races/Sakkra/animationSoldierMug.txt
+SakkraDiplomat      | races/Sakkra/animationDiplomat.txt
+SakkraScientist     | races/Sakkra/animationScientist.txt
+SakkraSoldier       | races/Sakkra/animationSoldier.txt
+SakkraSpy           | races/Sakkra/animationSpy.txt
+SakkraCombat        | races/Sakkra/animCombat.txt
+SakkraCombatH       | races/Sakkra/animCombatH.txt
+SakkraDeath1        | races/Sakkra/animDeath1.txt
+SakkraDeath2        | races/Sakkra/animDeath2.txt
+SakkraDeath3        | races/Sakkra/animDeath3.txt
+SakkraDeath4        | races/Sakkra/animDeath4.txt
+SakkraDeath1H       | races/Sakkra/animDeath1H.txt
+SakkraDeath2H       | races/Sakkra/animDeath2H.txt
+SakkraDeath3H       | races/Sakkra/animDeath3H.txt
+SakkraDeath4H       | races/Sakkra/animDeath4H.txt
+SakkraGNN           | races/Sakkra/animationGNN.txt
+SakkraGNNHost       | races/Sakkra/animationGNNHost.txt
+
+SakkraTransportDesc | races/Sakkra/animationTransportDescending.txt
+SakkraTransportOpen | races/Sakkra/animationTransportOpening.txt

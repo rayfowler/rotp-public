@@ -1,0 +1,37 @@
+// MOO1 Minimal Planet
+key: PLANET_MINIMAL
+
+descBiological: MINIMAL_DESC_BIOLOGICAL
+descSilicoid:   MINIMAL_DESC_BIOLOGICAL
+terrainImage:   TERRAIN_MINIMAL
+landscapeImage: LANDSCAPE_MINIMAL
+panoramaImage:  PANORAMA_MINIMAL
+atmoImage:      ATMO_MINIMAL
+cloudImage:     CLOUDS_THIN
+
+hostility: 6
+minSize: 30
+maxSize: 50
+
+// leftX, bottomY & width of ships landing on planet
+ship0: 320, 640, 400
+ship1: 160, 425, 200
+ship2: 150, 375, 140
+ship3: 290, 350, 110
+
+// water
+color: -1.00,  127,180,255
+color: -0.10,   138,170,240
+color: -0.00,   160,160,200
+color: -0.01,   117,140, 79
+
+// land
+color:    0.01, 240,223,145
+color:    0.16, 233,180,119
+color:    0.30, 233,165,104
+color:    0.40, 218,153, 85
+color:    0.50, 200,120, 61
+color:    0.82, 172, 82, 29
+color:    0.90, 127, 37,  1
+color:    0.95,  93, 21,  7
+color:    1.00,  93, 21,  7

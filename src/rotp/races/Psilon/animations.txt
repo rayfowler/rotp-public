@@ -1,0 +1,26 @@
+
+
+PsilonLaboratory    | races/Psilon/animationLaboratory.txt
+PsilonHolograph     | races/Psilon/animationHolograph.txt
+PsilonDiploMug      | races/Psilon/animationMugshot.txt
+PsilonSpyMug        | races/Psilon/animationSpyMug.txt
+PsilonSoldierMug    | races/Psilon/animationSoldierMug.txt
+PsilonDiplomat      | races/Psilon/animationDiplomat.txt
+PsilonSoldier       | races/Psilon/animationSoldier.txt
+PsilonScientist     | races/Psilon/animationScientist.txt
+PsilonSpy           | races/Psilon/animationSpy.txt
+PsilonCombat        | races/Psilon/animCombat.txt
+PsilonCombatH       | races/Psilon/animCombatH.txt
+PsilonDeath1        | races/Psilon/animDeath1.txt
+PsilonDeath2        | races/Psilon/animDeath2.txt
+PsilonDeath3        | races/Psilon/animDeath3.txt
+PsilonDeath4        | races/Psilon/animDeath4.txt
+PsilonDeath1H       | races/Psilon/animDeath1H.txt
+PsilonDeath2H       | races/Psilon/animDeath2H.txt
+PsilonDeath3H       | races/Psilon/animDeath3H.txt
+PsilonDeath4H       | races/Psilon/animDeath4H.txt
+PsilonGNN           | races/Psilon/animationGNN.txt
+PsilonGNNHost       | races/Psilon/animationGNNHost.txt
+
+PsilonTransportDesc | races/Psilon/animationTransportDescending.txt
+PsilonTransportOpen | races/Psilon/animationTransportOpening.txt

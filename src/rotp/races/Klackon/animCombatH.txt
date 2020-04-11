@@ -1,0 +1,4 @@
+#
+# Hostile Combat Frames
+
+Base, _ALL_ , KlaCombH01+KlaCombH02+KlaCombH03+KlaCombH04

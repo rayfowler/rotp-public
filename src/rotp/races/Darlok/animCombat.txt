@@ -1,0 +1,5 @@
+#
+# Darlok Combat Frames
+
+# shoots on frame 4 (of 7)
+Base, _ALL_ , DarComb01:1+DarComb02:1+DarComb03:1+DarComb04:1+DarComb03:1+DarComb02:1+DarComb01:1

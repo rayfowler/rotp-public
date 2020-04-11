@@ -1,0 +1,6 @@
+#
+# Darlok Hostile Combat Frames
+
+
+# immolated. only ashes remain
+Base, _ALL_ , DarDeath301:1+DarDeath302:1+DarDeath303:1+DarDeath304:1+DarDeath305:1+DarDeath306:1+DarDeath307:1+null:99999

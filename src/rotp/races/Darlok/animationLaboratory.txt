@@ -1,0 +1,5 @@
+
+
+Base, _ALL_  , DarLab01:1+DarLab02:1+DarLab03:1+DarLab04:1+DarLab05:120:360+DarLab04:1+DarLab03:1+DarLab02:1
+
+Fog, _ALL_   , DarLabFog01:2:5+DarLabFog02:2:5+DarLabFog03:2:5+DarLabFog04:2:5+DarLabFog05:2:5+DarLabFog03:2:5

@@ -1,0 +1,15 @@
+// race-specific variables (must start with _)
+_empire                    | Imperium Silikoidów, Imperium Igneoidów, Imperium Sedimoidów
+_race                      | Silicoid, Igneoid, Sedimoid
+
+// Advisor text
+MAIN_ADVISOR_TITLE         | Doradca rasy %1
+MAIN_ADVISOR_BUTTON_OK     | Odpraw
+MAIN_ADVISOR_SCOUT         | Bogu-Imperatorze, Twoi zwiadowcy są gotowi do eskorty pierwszego statku kolonizacyjnego do wybranego świata! Daj rozkaz a Twoja wola zostanie wypełniona!
+MAIN_ADVISOR_TRANSPORT     | Imperatorze, ku Twojej chwale została założona kolonia na %1! Rzeknij tylko słowo jeśli życzysz sobie wysłania transportów w celu jej wsparcia!
+MAIN_ADVISOR_DIPLOMACY     | Bogu-Imperatorze! Przed tronem pojawia się reprezentant obcego imperium! To może być nasz odwieczny wróg! Będziemy postępować ostrożnie!
+MAIN_ADVISOR_SHIP_ENGINE   | Twoi naukowcy dopracowali projekty nowego silnika statków! Zmodyfikują flotę jak tylko wydasz taki razkaz!
+MAIN_ADVISOR_RALLY_POINTS  | Nareszcie! Rozpoczyna się nasza święta wojna, Bogu-Imperatorze! Rozkaż swym flotom zbierać się w jednym punkcie a przyniosą wrogom szybką śmierć!
+MAIN_ADVISOR_MISSILE_BASES | Twoi generałowie wierzą, że roztropna byłaby budowa obronnych baz rakietowych na koloniach najbardziej wrażliwych na atak! Jeżeli tak uważasz, Bogu-Imperatorze, natychmiast rozpoczniemy konstrukcję!
+MAIN_ADVISOR_SHIP_WEAPON   | Bogu-Imperatorze! Twoi naukowcy prezentują ostatni postęp w technologii broni! Na Twój razkaz wyposażymy nasze floty w te narzędzia wojny!
+MAIN_ADVISOR_COUNCIL       | Wkrótce nastąpi zebranie władców zwane Radą Galaktyczną! Nasz odwieczny wróg musi ukrywać się wśród obecnych! Musimy go odkryć aby rozpocząć naszą szlachetną krucjatę!

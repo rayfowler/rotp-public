@@ -1,0 +1,45 @@
+[tech]
+seq:    0
+name:   FUELRANGE_0_NAME
+detail: FUELRANGE_0_DETAIL
+
+[tech]
+seq:    1
+name:   FUELRANGE_1_NAME
+detail: FUELRANGE_1_DETAIL
+
+[tech]
+seq:    2
+name:   FUELRANGE_2_NAME
+detail: FUELRANGE_2_DETAIL
+
+[tech]
+seq:    3
+name:   FUELRANGE_3_NAME
+detail: FUELRANGE_3_DETAIL
+
+[tech]
+seq:    4
+name:   FUELRANGE_4_NAME
+detail: FUELRANGE_4_DETAIL
+
+[tech]
+seq:    5
+name:   FUELRANGE_5_NAME
+detail: FUELRANGE_5_DETAIL
+
+[tech]
+seq:    6
+name:   FUELRANGE_6_NAME
+detail: FUELRANGE_6_DETAIL
+
+[tech]
+seq:    7
+name:   FUELRANGE_7_NAME
+detail: FUELRANGE_7_DETAIL
+
+[tech]
+seq:    8
+name:   FUELRANGE_8_NAME
+detail: FUELRANGE_8_DETAIL
+

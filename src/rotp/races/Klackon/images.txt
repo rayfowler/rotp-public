@@ -1,0 +1,167 @@
+KlaWin        | races/Klackon/WinSplash.jpg
+KlaLoss       | races/Klackon/LossSplash.jpg
+
+KlaFlagWar    | races/Klackon/banner_war.png
+KlaFlagNorm   | races/Klackon/banner_norm.png
+KlaFlagPact   | races/Klackon/banner_pact.png
+
+KlaDlgWar     | races/Klackon/dialogue_war.png
+KlaDlgNorm    | races/Klackon/dialogue_norm.png
+KlaDlgPact    | races/Klackon/dialogue_pact.png
+
+KlaLab        | races/Klackon/Laboratory.jpg
+KlaCouncil    | races/Klackon/Council.jpg
+
+KlaFort01     | races/Klackon/Fortress_01.png
+KlaShield     | races/Klackon/Fortress_shield.png
+
+KlaTransport  | races/Klackon/Transport_00.png
+KlaTrans00    | races/Klackon/Transport_00.png
+KlaTrans01    | races/Klackon/Transport_01.png
+KlaTrans02    | races/Klackon/Transport_02.png
+KlaTrans03    | races/Klackon/Transport_03.png
+KlaTrans04    | races/Klackon/Transport_04.png
+
+
+KlaGNNB_01    | races/Klackon/GNN_Back_01.jpg
+KlaGNNB_02    | races/Klackon/GNN_Back_02.jpg
+KlaGNNB_03    | races/Klackon/GNN_Back_03.jpg
+KlaGNNB_04    | races/Klackon/GNN_Back_04.jpg
+KlaGNNB_05    | races/Klackon/GNN_Back_05.jpg
+KlaGNNB_06    | races/Klackon/GNN_Back_06.jpg
+KlaGNNB_07    | races/Klackon/GNN_Back_07.jpg
+KlaGNNB_08    | races/Klackon/GNN_Back_08.jpg
+KlaGNNB_09    | races/Klackon/GNN_Back_09.jpg
+KlaGNNB_10    | races/Klackon/GNN_Back_10.jpg
+KlaGNNB_11    | races/Klackon/GNN_Back_11.jpg
+KlaGNNB_12    | races/Klackon/GNN_Back_12.jpg
+KlaGNNB_13    | races/Klackon/GNN_Back_13.jpg
+KlaGNNB_14    | races/Klackon/GNN_Back_14.jpg
+KlaGNNB_15    | races/Klackon/GNN_Back_15.jpg
+KlaGNNB_16    | races/Klackon/GNN_Back_16.jpg
+KlaGNNB_17    | races/Klackon/GNN_Back_17.jpg
+KlaGNNB_18    | races/Klackon/GNN_Back_18.jpg
+KlaGNNB_19    | races/Klackon/GNN_Back_19.jpg
+KlaGNNB_20    | races/Klackon/GNN_Back_20.jpg
+KlaGNNB_21    | races/Klackon/GNN_Back_21.jpg
+KlaGNNB_22    | races/Klackon/GNN_Back_22.jpg
+KlaGNNB_23    | races/Klackon/GNN_Back_23.jpg
+
+KlaGNN_01     | races/Klackon/GNN_01.png
+KlaGNN_02     | races/Klackon/GNN_02.png
+KlaGNN_03     | races/Klackon/GNN_03.png
+KlaGNNA_01    | races/Klackon/GNNa_01.png
+KlaGNNA_02    | races/Klackon/GNNa_02.png
+KlaGNNA_03    | races/Klackon/GNNa_03.png
+KlaGNNA_04    | races/Klackon/GNNa_04.png
+KlaGNNA_05    | races/Klackon/GNNa_05.png
+
+KlaLeader    | races/Klackon/CouncilLeader.png
+
+KlaDip01      | races/Klackon/Diplomat_01.png
+KlaDip02      | races/Klackon/Diplomat_02.png
+KlaDip03      | races/Klackon/Diplomat_03.png
+KlaDipHd01    | races/Klackon/Diplomat_Head_01.png
+KlaDipHd02    | races/Klackon/Diplomat_Head_02.png
+KlaDipHd03    | races/Klackon/Diplomat_Head_03.png
+KlaDipHd04    | races/Klackon/Diplomat_Head_04.png
+KlaDipHd05    | races/Klackon/Diplomat_Head_05.png
+KlaDipHd06    | races/Klackon/Diplomat_Head_06.png
+
+KlaAdvisor    | races/Klackon/Advisor.png
+KlaAdvisorW   | races/Klackon/Advisor_wide.png
+KlaAdvisorS   | races/Klackon/Advisor_small.png
+KlaAdvisorVS  | races/Klackon/Advisor_VS.png
+
+KlaSci01      | races/Klackon/Scientist_01.png
+KlaSci02      | races/Klackon/Scientist_02.png
+KlaSci03      | races/Klackon/Scientist_03.png
+KlaSci04      | races/Klackon/Scientist_04.png
+KlaSci05      | races/Klackon/Scientist_05.png
+KlaSciA01     | races/Klackon/ScientistA_01.png
+KlaSciA02     | races/Klackon/ScientistA_02.png
+KlaSciA03     | races/Klackon/ScientistA_03.png
+KlaSciA04     | races/Klackon/ScientistA_04.png
+KlaSciB01     | races/Klackon/ScientistB_01.png
+KlaSciB02     | races/Klackon/ScientistB_02.png
+KlaSciB03     | races/Klackon/ScientistB_03.png
+KlaSciB04     | races/Klackon/ScientistB_04.png
+
+KlaSpy01      | races/Klackon/Spy_01.png
+KlaSpy02      | races/Klackon/Spy_02.png
+KlaSpy03      | races/Klackon/Spy_03.png
+KlaSpy04      | races/Klackon/Spy_04.png
+KlaSpyA01     | races/Klackon/SpyA_01.png
+KlaSpyA02     | races/Klackon/SpyA_02.png
+KlaSpyB01     | races/Klackon/SpyB_01.png
+KlaSpyB02     | races/Klackon/SpyB_02.png
+KlaSpyB03     | races/Klackon/SpyB_03.png
+KlaSpyC01     | races/Klackon/SpyC_01.png
+KlaSpyC02     | races/Klackon/SpyC_02.png
+KlaSpyC03     | races/Klackon/SpyC_03.png
+KlaSpyC04     | races/Klackon/SpyC_04.png
+KlaSpyC05     | races/Klackon/SpyC_05.png
+KlaSpyC06     | races/Klackon/SpyC_06.png
+
+KlaSol01      | races/Klackon/Soldier_01.png
+KlaSol02      | races/Klackon/Soldier_02.png
+KlaSol03      | races/Klackon/Soldier_03.png
+KlaSolA01     | races/Klackon/SoldierA_01.png
+KlaSolA02     | races/Klackon/SoldierA_02.png
+KlaSolB01     | races/Klackon/SoldierB_01.png
+KlaSolB02     | races/Klackon/SoldierB_02.png
+KlaSolB03     | races/Klackon/SoldierB_03.png
+KlaSolB04     | races/Klackon/SoldierB_04.png
+KlaSolB05     | races/Klackon/SoldierB_05.png
+KlaSolB06     | races/Klackon/SoldierB_06.png
+KlaSolB07     | races/Klackon/SoldierB_07.png
+KlaSolB08     | races/Klackon/SoldierB_08.png
+
+KlaComb01      | races/Klackon/Combat_01.png
+KlaComb02      | races/Klackon/Combat_02.png
+KlaComb03      | races/Klackon/Combat_03.png
+KlaComb04      | races/Klackon/Combat_04.png
+KlaCombH01     | races/Klackon/CombatH_01.png
+KlaCombH02     | races/Klackon/CombatH_02.png
+KlaCombH03     | races/Klackon/CombatH_03.png
+KlaCombH04     | races/Klackon/CombatH_04.png
+KlaDeath101    | races/Klackon/Death1-01.png
+KlaDeath102    | races/Klackon/Death1-02.png
+KlaDeath103    | races/Klackon/Death1-03.png
+KlaDeath104    | races/Klackon/Death1-04.png
+KlaDeathH101   | races/Klackon/Death1H-01.png
+KlaDeathH102   | races/Klackon/Death1H-02.png
+KlaDeathH103   | races/Klackon/Death1H-03.png
+KlaDeathH104   | races/Klackon/Death1H-04.png
+KlaDeath201    | races/Klackon/Death2-01.png
+KlaDeath202    | races/Klackon/Death2-02.png
+KlaDeath203    | races/Klackon/Death2-03.png
+KlaDeath204    | races/Klackon/Death2-04.png
+KlaDeath2H01   | races/Klackon/Death2H-01.png
+KlaDeath2H02   | races/Klackon/Death2H-02.png
+KlaDeath2H03   | races/Klackon/Death2H-03.png
+KlaDeath2H04   | races/Klackon/Death2H-04.png
+KlaDeath301    | races/Klackon/Death3-01.png
+KlaDeath302    | races/Klackon/Death3-02.png
+KlaDeath303    | races/Klackon/Death3-03.png
+KlaDeath304    | races/Klackon/Death3-04.png
+KlaDeath305    | races/Klackon/Death3-05.png
+KlaDeath306    | races/Klackon/Death3-06.png
+KlaDeath3H01   | races/Klackon/Death3H-01.png
+KlaDeath3H02   | races/Klackon/Death3H-02.png
+KlaDeath3H03   | races/Klackon/Death3H-03.png
+KlaDeath3H04   | races/Klackon/Death3H-04.png
+KlaDeath3H05   | races/Klackon/Death3H-05.png
+KlaDeath3H06   | races/Klackon/Death3H-06.png
+KlaDeath401    | races/Klackon/Death4-01.png
+KlaDeath402    | races/Klackon/Death4-02.png
+KlaDeath403    | races/Klackon/Death4-03.png
+KlaDeath404    | races/Klackon/Death4-04.png
+KlaDeath405    | races/Klackon/Death4-05.png
+KlaDeath4H01   | races/Klackon/Death4H-01.png
+KlaDeath4H02   | races/Klackon/Death4H-02.png
+KlaDeath4H03   | races/Klackon/Death4H-03.png
+KlaDeath4H04   | races/Klackon/Death4H-04.png
+KlaDeath4H05   | races/Klackon/Death4H-05.png
+
+

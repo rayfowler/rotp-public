@@ -1,0 +1,25 @@
+
+KlackonLaboratory    | races/Klackon/animationLaboratory.txt
+KlackonHolograph     | races/Bulrathi/animationHolograph.txt
+KlackonDiploMug      | races/Klackon/animationDiploMug.txt
+KlackonSpyMug        | races/Klackon/animationSpyMug.txt
+KlackonSoldierMug    | races/Klackon/animationSoldierMug.txt
+KlackonDiplomat      | races/Klackon/animationDiplomat.txt
+KlackonScientist     | races/Klackon/animationScientist.txt
+KlackonSoldier       | races/Klackon/animationSoldier.txt
+KlackonSpy           | races/Klackon/animationSpy.txt
+KlackonCombat        | races/Klackon/animCombat.txt
+KlackonDeath1        | races/Klackon/animDeath1.txt
+KlackonDeath2        | races/Klackon/animDeath2.txt
+KlackonDeath3        | races/Klackon/animDeath3.txt
+KlackonDeath4        | races/Klackon/animDeath4.txt
+KlackonCombatH       | races/Klackon/animCombatH.txt
+KlackonDeath1H       | races/Klackon/animDeath1H.txt
+KlackonDeath2H       | races/Klackon/animDeath2H.txt
+KlackonDeath3H       | races/Klackon/animDeath3H.txt
+KlackonDeath4H       | races/Klackon/animDeath4H.txt
+KlackonGNN           | races/Klackon/animationGNN.txt
+KlackonGNNHost       | races/Klackon/animationGNNHost.txt
+
+KlackonTransportDesc | races/Klackon/animationTransportDescending.txt
+KlackonTransportOpen | races/Klackon/animationTransportOpening.txt

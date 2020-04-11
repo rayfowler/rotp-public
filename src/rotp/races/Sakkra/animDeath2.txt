@@ -1,0 +1,5 @@
+#
+# Sakkra Hostile Combat Frames
+
+# Disrupted into nothingness
+Base, _ALL_ , SakDeath201+SakDeath202+SakDeath203+SakDeath204+SakDeath205+null:99999

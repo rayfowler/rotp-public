@@ -1,0 +1,10 @@
+[tech]
+seq:    0
+name:   BIOANTIDOTE_0_NAME
+detail: BIOANTIDOTE_0_DETAIL
+
+[tech]
+seq:    1
+name:   BIOANTIDOTE_1_NAME
+detail: BIOANTIDOTE_1_DETAIL
+

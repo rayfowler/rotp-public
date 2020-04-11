@@ -1,0 +1,6 @@
+#
+# Sakkra Laboratory Animation
+
+Base, _ALL_    , SakLab
+ 
+Glow, _ALL_ , NULL:10:30+SakLabGlow1:2+SakLabGlow2:3+SakLabGlow4:4+SakLabGlow4:3+SakLabGlow5:2+SakLabGlow6:3+SakLabGlow7:4+SakLabGlow8:3+SakLabGlow9:2+NULL:100:300

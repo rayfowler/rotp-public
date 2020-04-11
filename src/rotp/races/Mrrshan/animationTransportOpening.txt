@@ -1,0 +1,5 @@
+#
+# Transport Ship Opening Animation
+
+// Starts closed and opens "permanently" 
+Open,  0@0,MrrTrans08:1+MrrTrans11:5+MrrTrans12:5+MrrTrans13:5+MrrTrans14:5+MrrTrans15:5+MrrTrans16:5+MrrTrans17:999999

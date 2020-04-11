@@ -1,0 +1,13 @@
+#
+# Sakkra Mugshot Animation (Setup & Races UI)
+
+Base, _ALL_  , SakLab
+Base, _ALL_  , SakDip
+
+
+#   1(null)-Open, Closing 2 and Closed 3
+Eye,   310@145 , NULL:30:80+SakDipEy02:1:2+SakDipEy03:2:4
+
+#   1(null)-Closed, 2,3-Half-Open, 4-Open
+Mouth, 300@220 , NULL:5:15+SakDipMo02:3+SakDipMo03:3+SakDipMo04:3+SakDipMo03:3+SakDipMo02:3+SakDipMo03:3+SakDipMo04:3+SakDipMo03:3+SakDipMo02:3
+

@@ -1,0 +1,7 @@
+#
+# Spy Animation
+Base,     _ALL_   , HumSpy
+
+
+# 1/NULL-@tablet, 2-@player, 3-halfopen, 4-closed
+Eye,    0@0   , NULL:20:30+HumSpyEy01:2+HumSpyEy02:2

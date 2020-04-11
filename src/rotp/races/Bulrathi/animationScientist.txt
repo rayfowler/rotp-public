@@ -1,0 +1,10 @@
+#
+# Bulrathi Scientist Animation
+Base,    _ALL_      , BulSci
+
+# 1/NULL-@tablet, 2-@player, 3-halfopen, 4-closed
+Eye,    300@100   , BulSciEy02:12:18+BulSciEy04:1+BulSciEy03:4:12+NULL:12:18+BulSciEy04:1+NULL:12:20
+
+# 1/NULL-closed,
+Mouth,  325@190   , NULL:2+BulSciMo02:2+BulSciMo03:2+BulSciMo02:2+BulSciMo03:2+BulSciMo02:2
+

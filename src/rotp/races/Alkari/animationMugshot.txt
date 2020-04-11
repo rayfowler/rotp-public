@@ -1,0 +1,16 @@
+#
+# Alkari Mugshot Animation (Setup & Races UI)
+
+Base, _ALL_  , AlkLab
+Base,   _ALL_  , AlkDip
+
+# NOTE: Staff MUST draw before eyes because of pixel overlap
+#   1(null)-Closed, 2,3-Half-Open, 4-Open
+Staff, 430@105 , AlkDipSt04:20:30+AlkDipSt03:2+AlkDipSt02:2+AlkDipSt01:2:4+AlkDipSt02:1+AlkDipSt03:1
+
+#   1(null)-Open, Closing (2,3) and Closed 4
+Eye,   315@115 , NULL:8:20+AlkDipEy02:1+AlkDipEy03:6:12+NULL:8:20+AlkDipEy04:2:4
+
+#   1(null)-Closed, 2,3-Half-Open, 4-Open
+Mouth, 320@145 , NULL:2+AlkDipMo02:2+AlkDipMo03:2+AlkDipMo04:2+AlkDipMo03:2+AlkDipMo02:2+AlkDipMo03:2+AlkDipMo02:2
+

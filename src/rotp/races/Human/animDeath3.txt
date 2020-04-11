@@ -1,0 +1,6 @@
+#
+# Combat Frames
+
+
+# immolated. only ashes remain
+Base, _ALL_ , HumDeath301+HumDeath302+HumDeath303+HumDeath304+HumDeath305+HumDeath306+HumDeath307+HumDeath308+HumDeath309+HumDeath310:99999

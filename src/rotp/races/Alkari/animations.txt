@@ -1,0 +1,26 @@
+
+AlkariLaboratory    | races/Alkari/animationLaboratory.txt
+AlkariHolograph     | races/Alkari/animationHolograph.txt
+AlkariDiploMug      | races/Alkari/animationMugshot.txt
+AlkariSpyMug        | races/Alkari/animationSpyMug.txt
+AlkariSoldierMug    | races/Alkari/animationSoldierMug.txt
+AlkariDiplomat      | races/Alkari/animationDiplomat.txt
+AlkariScientist     | races/Alkari/animationScientist.txt
+AlkariSoldier       | races/Alkari/animationSoldier.txt
+AlkariSpy           | races/Alkari/animationSpy.txt
+AlkariCombat        | races/Alkari/animCombat.txt
+AlkariCombatH       | races/Alkari/animCombatH.txt
+AlkariDeath1        | races/Alkari/animDeath1.txt
+AlkariDeath2        | races/Alkari/animDeath2.txt
+AlkariDeath3        | races/Alkari/animDeath3.txt
+AlkariDeath4        | races/Alkari/animDeath4.txt
+AlkariDeath1H       | races/Alkari/animDeath1H.txt
+AlkariDeath2H       | races/Alkari/animDeath2H.txt
+AlkariDeath3H       | races/Alkari/animDeath3H.txt
+AlkariDeath4H       | races/Alkari/animDeath4H.txt
+AlkariGNN           | races/Alkari/animationGNN.txt
+AlkariGNNHost       | races/Alkari/animationGNNHost.txt
+
+AlkariTransportDesc | races/Alkari/animationTransportDescending.txt
+AlkariTransportOpen | races/Alkari/animationTransportOpening.txt
+

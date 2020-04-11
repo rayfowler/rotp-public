@@ -1,0 +1,15 @@
+// race-specific variables (must start with _)
+_empire                    | Imperium Bulrathi, Imperium Bearathi, Imperium Ursinathi
+_race                      | Bulrathi, Bearathi, Ursinathi
+
+// Advisor text
+MAIN_ADVISOR_TITLE                | Doradca rasy %1
+MAIN_ADVISOR_BUTTON_OK            | OK
+MAIN_ADVISOR_SCOUT                | Panie, przygotowaliśmy oba statki zwiadowcze i statek kolonizacyjny do podróży. Na Twą komendę jesteśmy gotowi do eksploracji i kolonizacji pobliskich systemów.
+MAIN_ADVISOR_TRANSPORT            | Świat %1, dodany do naszego imperium! Daj tylko rozkaz a natychmiast wyślemy transporty!
+MAIN_ADVISOR_DIPLOMACY            | Panie, obca rasa nawiązała kontakt z naszym imperium. Wyłącznie od Ciebie zależy, czy potraktujemy ją jak wroga czy przyjaciela.
+MAIN_ADVISOR_SHIP_ENGINE          | Nasi naukowcy odkrywają kolejne tajemnice nauki - tym razem zwiększając zasięg silników statków. Inżynierowie czekają na decyzje dotyczące zaktualizowania projektów statków.
+MAIN_ADVISOR_RALLY_POINTS         | Przed nami wielka bitwa! W celu gromadzenia armii, przekieruj flotę z kolonii produkujących statki za pomocą Punktów Zbornych.
+MAIN_ADVISOR_MISSILE_BASES        | Panie, nasze kolonie oczekują na Twe słowo aby rozpocząć konstrukcję baz rakietowych w celu ochrony przed atakami wroga.
+MAIN_ADVISOR_SHIP_WEAPON          | Najtęższe umysły opracowały nową śmiercionośną broń dla floty! Panie, w wolnej chwili przejrzyj projekty statków aby upewnić się, że wrogowie padną na kolana przed naszą potęgą.
+MAIN_ADVISOR_COUNCIL              | Panie, reprezentanci pierwszej Rady Galaktycznej wkrótce zaczną obrady. Postąpimy zgodnie z wytycznymi aby zapewnić zgodność podjętych decyzji z twą wolą.

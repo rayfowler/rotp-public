@@ -1,0 +1,4 @@
+#
+# Psilon Transport Ship Opening Animation
+// Starts closed and opens "permanently" 
+Open,  0@0, PsiTrans01:4+PsiTrans02:4+PsiTrans03:4+PsiTrans04:4+PsiTrans05:4+PsiTrans11:2+PsiTrans12:2+PsiTrans13:2+PsiTrans14:2+PsiTrans21:2+PsiTrans22:2+PsiTrans23:2+PsiTrans24:2+PsiTrans25:2+PsiTrans26:999999

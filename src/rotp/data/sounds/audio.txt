@@ -1,0 +1,64 @@
+# key                   , filename                           , gain (0 to 100), playtype
+
+# UI click sounds
+ButtonClick             , data/sounds/click_button.wav       , 100            ,
+SoftClick               , data/sounds/click_soft.wav         , 50             ,
+MisClick                , data/sounds/click_invalid.wav      , 100            ,
+MapClick                , data/sounds/click_map.wav          , 50             ,
+MenuClick               , data/sounds/click_menu.wav         , 100            ,
+
+# Ambience
+ColonizeNormalAmbience  , data/sounds/colonize_normal.wav   , 100            ,
+ColonizeHostileAmbience , data/sounds/colonize_hostile.wav  , 100            ,
+ColonizeRuinsAmbience   , data/sounds/colonize_ruins.wav    , 100            ,
+IntroAmbience           , data/sounds/opening.wav           , 100            , L
+CouncilAmbience         , data/sounds/council_vote.wav      , 100            , L
+ExploreAmbience         , data/sounds/map_explore.wav       , 50             , C
+ContactAmbience         , data/sounds/map_contact.wav       , 50             , C
+WarAmbience             , data/sounds/map_war.wav           , 50             , C
+FinalWarAmbience        , data/sounds/map_finalwar.wav      , 50             , C
+ResearchAmbience        , data/sounds/tech.wav              , 100            , L
+NewsAmbience            , data/sounds/gnn.wav               , 100            , L
+GroundCombatAmbience    , data/sounds/combat_ground.wav     , 100            , L
+VictoryAmbience         , data/sounds/victory.wav           , 100            , L
+DefeatAmbience          , data/sounds/defeat.wav            , 100            , L
+ShipCombatAmbience      , data/sounds/combat_space.wav      , 100            , L
+ShipCombatIntro         , data/sounds/combat_open.wav       , 100            ,
+
+#Dipomacy Themes
+ThemeAlkari             , data/sounds/theme_alkari.wav       , 100            , L
+ThemeBulrathi           , data/sounds/theme_bulrathi.wav     , 100            , L
+ThemeDarlok             , data/sounds/theme_darlok.wav       , 100            , L
+ThemeHuman              , data/sounds/theme_human.wav        , 100            , L            
+ThemeKlackon            , data/sounds/theme_klackon.wav      , 100            , L
+ThemeMeklar             , data/sounds/theme_meklar.wav       , 100            , L
+ThemeMrrshan            , data/sounds/theme_mrrshan.wav      , 100            , L
+ThemePsilon             , data/sounds/theme_psilon.wav       , 100            , L
+ThemeSakkra             , data/sounds/theme_sakkra.wav       , 100            , L
+ThemeSilicoid           , data/sounds/theme_silicoid.wav     , 100            , L
+
+#Ship Landings
+AlkariShip               , data/sounds/ship_alkari.wav        , 100            ,
+BulrathiShip             , data/sounds/ship_bulrathi.wav      , 100            ,
+DarlokShip               , data/sounds/ship_darlok.wav        , 100            ,
+HumanShip                , data/sounds/ship_human.wav         , 100            ,
+KlackonShip              , data/sounds/ship_klackon.wav       , 100            ,
+MeklarShip               , data/sounds/ship_meklar.wav        , 100            ,
+MrrshanShip              , data/sounds/ship_mrrshan.wav       , 100            ,
+PsilonShip               , data/sounds/ship_psilon.wav        , 100            ,
+SakkraShip               , data/sounds/ship_sakkra.wav        , 100            ,
+SilicoidShip             , data/sounds/ship_silicoid.wav      , 100            ,
+
+#Ground Combat
+GroundBattle             , data/sounds/groundcombat_battle.wav   , 100            , L
+
+#ShipCombat
+ShipRetreat              , data/sounds/shipcombat_retreat.wav    , 100            ,
+ShipExplosion            , data/sounds/shipcombat_destroyed.wav  , 200            ,
+ShipLaser                , data/sounds/shipcombat_laser.wav      ,  50            ,
+ShipMultiLaser           , data/sounds/shipcombat_gatling.wav    , 100            ,
+
+#Sabotage
+SabotageRiot             , data/sounds/sabotage_riot.wav         , 100            ,
+SabotageExplosion        , data/sounds/sabotage_explosion.wav    , 100            , 
+

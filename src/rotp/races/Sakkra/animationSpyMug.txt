@@ -1,0 +1,15 @@
+#
+# Alkari Spy Mugshot Animation (Races Tech UI)
+
+Base, _ALL_  , SakLab
+Base,  50@120 , SakSpy
+
+
+#   1(null)-Open, Closing 2,3 and Closed 4
+Eye,   280@140 , NULL:30:80+SakSpyEy02:1+SakSpyEy03:1+SakSpyEy04:10:20+SakSpyEy03:1+SakSpyEy02:1
+
+#   1(null)-Closed, 2,3-Half-Open, 4-Open
+Mouth, 250@210 , NULL:5:15+SakSpyMo02:3+SakSpyMo03:3+SakSpyMo04:3+SakSpyMo03:3+SakSpyMo04:3+SakSpyMo03:3+SakSpyMo02:3
+
+# Hands
+Hands, 240@420, NULL:30:80+SakSpyHa02:2+SakSpyHa03:4+SakSpyHa02:2+NULL:4+SakSpyHa02:2+SakSpyHa03:4+SakSpyHa02:2+NULL:4+SakSpyHa02:2+SakSpyHa03:4+SakSpyHa02:2

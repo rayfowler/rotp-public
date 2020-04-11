@@ -1,0 +1,85 @@
+
+[tech]
+seq:    0
+name:   DEFLECTOR_0_NAME
+item:   DEFLECTOR_0_ITEM
+brief:  DEFLECTOR_0_BRIEF
+detail: DEFLECTOR_0_DETAIL
+
+[tech]
+seq:    1
+name:   DEFLECTOR_1_NAME
+item:   DEFLECTOR_1_ITEM
+brief:  DEFLECTOR_1_BRIEF
+detail: DEFLECTOR_1_DETAIL
+
+[tech]
+seq:    2
+name:   DEFLECTOR_2_NAME
+item:   DEFLECTOR_2_ITEM
+brief:  DEFLECTOR_2_BRIEF
+detail: DEFLECTOR_2_DETAIL
+
+[tech]
+seq:    3
+name:   DEFLECTOR_3_NAME
+item:   DEFLECTOR_3_ITEM
+brief:  DEFLECTOR_3_BRIEF
+detail: DEFLECTOR_3_DETAIL
+
+[tech]
+seq:    4
+name:   DEFLECTOR_4_NAME
+item:   DEFLECTOR_4_ITEM
+brief:  DEFLECTOR_4_BRIEF
+detail: DEFLECTOR_4_DETAIL
+
+[tech]
+seq:    5
+name:   DEFLECTOR_5_NAME
+item:   DEFLECTOR_5_ITEM
+brief:  DEFLECTOR_5_BRIEF
+detail: DEFLECTOR_5_DETAIL
+
+[tech]
+seq:    6
+name:   DEFLECTOR_6_NAME
+item:   DEFLECTOR_6_ITEM
+brief:  DEFLECTOR_6_BRIEF
+detail: DEFLECTOR_6_DETAIL
+
+[tech]
+seq:    7
+name:   DEFLECTOR_7_NAME
+item:   DEFLECTOR_7_ITEM
+brief:  DEFLECTOR_7_BRIEF
+detail: DEFLECTOR_7_DETAIL
+
+[tech]
+seq:    8
+name:   DEFLECTOR_8_NAME
+item:   DEFLECTOR_8_ITEM
+brief:  DEFLECTOR_8_BRIEF
+detail: DEFLECTOR_8_DETAIL
+
+[tech]
+seq:    9
+name:   DEFLECTOR_9_NAME
+item:   DEFLECTOR_9_ITEM
+brief:  DEFLECTOR_9_BRIEF
+detail: DEFLECTOR_9_DETAIL
+
+[tech]
+seq:    10
+name:   DEFLECTOR_10_NAME
+item:   DEFLECTOR_10_ITEM
+brief:  DEFLECTOR_10_BRIEF
+detail: DEFLECTOR_10_DETAIL
+
+[tech]
+seq:    11
+name:   DEFLECTOR_11_NAME
+item:   DEFLECTOR_11_ITEM
+brief:  DEFLECTOR_11_BRIEF
+detail: DEFLECTOR_11_DETAIL
+

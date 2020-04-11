@@ -1,0 +1,130 @@
+key: RACE_HUMAN
+langKey:       Human
+year:          2300
+
+homeStarType:  YELLOW
+homeworldType: PLANET_TERRAN
+homeworldSize: 100
+homeworldKey:  9208212
+
+// animations
+mugshot:       HumanDiplomat, 175@100|250x270
+setupImage:    HumanDiploMug, 0@0|584x768
+spyMug:        HumanSpyMug,  80@70|440x330
+soldierMug:    HumanSoldierMug, 120@10|440x330
+diploProfile:  HumanDiploMug, 0@100|630x480
+lab:           HumanLaboratory
+embassy:       HumanLaboratory
+holograph:     HumanHolograph
+diplomat:      HumanDiplomat
+scientist:     HumanScientist
+trooper:       HumanSoldier
+spy:           HumanSpy
+leader:        HumLeader
+diploTheme:    ThemeHuman
+gnn:           HumanGNN
+gnnHost:       HumanGNNHost
+gnnColor:      Orange
+gnnTextColor:  255,93,0
+winSplash:     ,255,255,255
+lossSplash:    ,255,255,255
+
+advisorScout:      HumanSoldier2, 130@0|440x640
+advisorTransport:  HumanSoldier2, 130@0|440x640
+advisorDiplomacy:  HumanDiplomat, 100@50|440x640
+advisorShip:       HumanScientist, 130@50|500x640
+advisorRally:      HumanSoldier2, 170@0|440x640
+advisorMissile:    HumanScientist, 130@50|500x640
+advisorWeapon:     HumanScientist, 130@50|500x640
+advisorCouncil:    HumanDiplomat, 100@50|440x640
+advisorRebellion:  HumanSoldier2, 170@0|440x640
+advisorResistCouncil:   HumanSoldier2, 170@0|440x640
+advisorCouncilResisted: HumanSoldier2, 170@0|440x640
+
+transport:     HumTransport
+transportDesc: HumanTransportDesc, 1, 0@0|400x160
+transportOpen: HumanTransportOpen, 30, 0@0|400x160
+transportW:    100
+transportYOff: 0
+transportLandingFrames: 130
+colonistWalk:  50, 150, 310@140>370@170
+landingAudio:  HumanShip
+
+troopIcon:      HumanCombat,    3/3
+troopHIcon:     HumanCombat,    3/3
+troopDeath1:    HumanDeath1,    6
+troopDeath2:    HumanDeath2,    5
+troopDeath3:    HumanDeath3,    10
+troopDeath4:    HumanDeath4,    8
+troopDeath1H:   HumanDeath1,    6
+troopDeath2H:   HumanDeath2,    5
+troopDeath3H:   HumanDeath3,    10
+troopDeath4H:   HumanDeath4,    8
+troopScale:     0.5, 25, 33
+troopFireXY:    285@130
+troopHFireXY:   285@130
+
+fortress:      HumFort01|HumFort02,  0@0|420x450
+council:       HumCouncil
+shield:        HumShield,            0@0|420x450
+introTextX:    680
+espionageXY:   0@0
+spyFactories:  0
+spyMissiles:   0
+spyRebellion:  0
+dialogTextX:   130,130
+dialogTextY:   540
+councilDiplo:  0.4, 80, -200, 0.7
+labFlagX:      0.71
+flagSize:      200x200
+flagWar:       HumFlagWar
+flagNormal:    HumFlagNorm
+flagPact:      HumFlagPact
+dialogWar:     HumDlgWar
+dialogNormal:  HumDlgNorm
+dialogPact:    HumDlgPact
+
+// sounds
+voice:     BulrathiVoice
+ambience:  BulrathiAmbience
+
+
+// species info:
+// field #1 - terran(1), aquatic(2), silicate(3) or robotic(4)
+// field #2 - ignoreEco(1), don't ignore eco (0)
+species: 1, 0
+
+// personality % (must=100) - erratic, pacifist, honorable, ruthless, aggressive, xenophobic
+personality:20,20,60,0,0,0
+// objective % (must=100) - militarist, ecologist, diplomat, industrialist, expansionist, technologist
+objective: 10,10,50,10,10,10
+
+// ship set & preferred size (0-small to 3-huge)
+preferredship: Human, 1
+
+// ship bonus - att, def, init
+shipmod: 0,0,0
+
+// ground mod - att
+groundmod: 0
+
+// spy mod - cost%, security adj%, infiltration adj%, telepathic?(1/0), mask relations?(1/0)
+spymod: 100, 0, 0, 0, 0
+
+// production mod - worker productivity, factory controls bonus, ignoreRefitCost?(1/0)
+prodmod: 100, 0, 0
+
+// tech mods - discovery %, research bonus
+techmod: 50, 100
+
+// pop mods - growth rate
+popmod: 100
+
+// diplomacy mods % - trade % bonus, positive DP mod, diplomacy bonus, council bonus
+diplomod: 25,200,60,20
+
+// research category mods % - computer, construction, force field, planetary, propulsion, weapon
+research: 100,100,60,100,80,100
+
+// race relations
+relations: DEFAULT=7,RACE_HUMAN=31

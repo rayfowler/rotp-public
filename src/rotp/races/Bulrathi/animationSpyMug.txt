@@ -1,0 +1,16 @@
+#
+# Bulrathi Spy Animation
+# #1 - Blinking eye
+
+Base, _ALL_      , BulLab
+Base,  _ALL_     , BulSpy
+
+# open, closed, open, squint
+Eye,     320@130 , NULL:30:40+BulSpyEy03:2+NULL:24:40+BulSpyEy02:20:40
+
+# closed, then talking 1-2-3-2-3-2
+Mouth,  355@220   , NULL:2+BulSpyMo02:2+BulSpyMo03:2+BulSpyMo02:2+BulSpyMo03:2+BulSpyMo02:2
+
+# alternate 2 & 5 to show hitting on tube
+Critter, 420@280 , BulSpyCr03:2:3+BulSpyCr05:6:8
+

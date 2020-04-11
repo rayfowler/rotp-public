@@ -1,0 +1,6 @@
+#
+# Mrrshan Hostile Combat Frames
+
+
+# immolated. only ashes remain
+Base, _ALL_ , MrrDeath301:1+MrrDeath302:1+MrrDeath303:1+MrrDeath304:1+MrrDeath305:1+MrrDeath306:1+MrrDeath307:1+MrrDeath308:1+MrrDeath309:99999

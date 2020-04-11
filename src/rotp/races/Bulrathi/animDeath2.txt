@@ -1,0 +1,5 @@
+#
+# Bulrathi Hostile Combat Frames
+
+# Disrupted into nothingness
+Base, _ALL_ , BulDeath201:1+BulDeath202:1+BulDeath203:1+BulDeath204:1+null:99999

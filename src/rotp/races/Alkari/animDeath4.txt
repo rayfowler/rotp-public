@@ -1,0 +1,5 @@
+#
+# Alkari Hostile Combat Frames
+
+# vaporized into nothingness
+Base, _ALL_ , AlkDeath401:1+AlkDeath402:1+AlkDeath403:1+AlkDeath404:1+AlkDeath405:1+AlkDeath406:1+AlkDeath407:1+null:99999

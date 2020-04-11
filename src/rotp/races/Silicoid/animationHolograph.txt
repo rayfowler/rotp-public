@@ -1,0 +1,6 @@
+#
+# Laboratory Animation
+# effect fades in and stays
+
+Base,   _ALL_  , SilLab01
+

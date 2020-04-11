@@ -1,0 +1,8 @@
+#
+# Silicoid Diplomat Animation
+
+Base,   _ALL_       , SilLab
+Base,   _ALL_       , SilDip
+Eye,    290@130     , NULL:2:6+SilDipEy02:2:6+SilDipEy03:2:6+SilDipEy04:2:6+SilDipEy03:2:6+SilDipEy02:2:6
+
+Hand,     0@410     , NULL:3:5+SilDipHa02:1+SilDipHa03:1+SilDipHa04:3:5+SilDipHa03:1+SilDipHa02:1

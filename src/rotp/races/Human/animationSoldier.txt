@@ -1,0 +1,9 @@
+#
+# Human Scientist Animation
+Base,     _ALL_   , HumSol
+
+Helm,     _ALL_   , NULL:6+HumSol02+HumSol03+HumSol04+HumSol05+HumSol06+HumSol07+HumSol08+HumSol09+HumSol10+HumSol11+HumSol12+HumSol13+HumSol14:99999
+
+# 1/NULL-@tablet, 2-@player, 3-halfopen, 4-closed
+Eye,    0@0   , NULL:20:30+HumSolEy02:2+HumSolEy03:2
+

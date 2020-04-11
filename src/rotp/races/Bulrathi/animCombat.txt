@@ -1,0 +1,4 @@
+#
+# Bulrathi Combat Frames
+
+Base, _ALL_ , BulComb01:1+BulComb02:1+BulComb03:1+BulComb04:1

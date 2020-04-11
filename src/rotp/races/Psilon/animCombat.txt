@@ -1,0 +1,5 @@
+#
+# Psilon Combat Animation
+
+// Actual firing of weapon is on the 3rd of 9 frames
+Firing, _ALL_ , PsiCombat00:1+PsiCombat01:1+PsiCombat02:1+PsiCombat03:1+PsiCombat04:1+PsiCombat05:2+PsiCombat06:1+PsiCombat07:1+PsiCombat08:1

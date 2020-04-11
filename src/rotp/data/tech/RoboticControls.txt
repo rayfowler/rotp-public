@@ -1,0 +1,25 @@
+[tech]
+seq:    0
+name:   ROBOTCTRL_0_NAME
+detail: ROBOTCTRL_0_DETAIL
+
+[tech]
+seq:    1
+name:   ROBOTCTRL_1_NAME
+detail: ROBOTCTRL_1_DETAIL
+
+[tech]
+seq:    2
+name:   ROBOTCTRL_2_NAME
+detail: ROBOTCTRL_2_DETAIL
+
+[tech]
+seq:    3
+name:   ROBOTCTRL_3_NAME
+detail: ROBOTCTRL_3_DETAIL
+
+[tech]
+seq:    4
+name:   ROBOTCTRL_4_NAME
+detail: ROBOTCTRL_4_DETAIL
+

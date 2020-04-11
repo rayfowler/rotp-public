@@ -1,0 +1,3 @@
+#
+# Human Scientist Animation
+Base,     _ALL_   , HumSci:12:18+HumSci01+HumSci02+HumSci03+HumSci04+HumSci05+HumSci06+HumSci07+HumSci08+HumSci09+HumSci10+HumSci11+HumSci12+HumSci13+HumSci14:99999

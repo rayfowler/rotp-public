@@ -1,0 +1,5 @@
+#
+# Alkari Hostile Combat Frames
+
+# Disrupted into nothingness
+Base, _ALL_ , AlkDeath201:1+AlkDeath202:1+AlkDeath203:1+AlkDeath204:1+AlkDeath205:1+null:99999

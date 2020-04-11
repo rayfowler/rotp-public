@@ -1,0 +1,42 @@
+// race-specific variables (must start with _)
+_empire                           | Psilon Republic, Mentalon Republic, Psychon Republic, Cerebron Republic, Neuralon Republic
+_race                             | Psilon, Mentalon, Psychon, Cerebron, Neuralon
+_race_plural                      | Psilons, Mentalons, Psychons, Cerebrons, Neuralons
+_title                            | High Councilor
+_nameTitle                        | High Councilor 
+
+
+GOVT_EMPIRE                       | %1 Republic 
+
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Advisor text
+MAIN_ADVISOR_TITLE                | %1 Advisor
+MAIN_ADVISOR_BUTTON_OK            | Dismiss
+MAIN_ADVISOR_SCOUT                | High Councilor, our exploration fleet stands ready. Would you deem it most prudent for us to find a new world and create a settlement there soon?
+MAIN_ADVISOR_TRANSPORT            | Our new colony has been established. The council is now deliberating on how many of our people we should send there on a transport ship, if we should send any at all.
+MAIN_ADVISOR_DIPLOMACY            | From the depths of space, an entirely new civilization has appeared! I pray that they prefer a peaceful co-existence over a violent one. 
+MAIN_ADVISOR_SHIP_ENGINE          | Our scientists have maintained a steady advancement on the technology of our starship engines. Representatives are now before the council offering suggestion on how best to use them. 
+MAIN_ADVISOR_RALLY_POINTS         | It is unfortunate, but the Republic now finds itself in the midst of war. The council must decide on a rally point for our fleets to ensure our colonists remain safe.
+MAIN_ADVISOR_MISSILE_BASES        | Instead of massing fleets of war, we can construct defensive missile bases on our colonies to protect them from invasion. The council wishes to hear your thoughts on what worlds would be best served by the presence of these bases. 
+MAIN_ADVISOR_SHIP_WEAPON          | The council is in heated debate about the newest design for ship weaponry. Some wish the weapons destroyed immediately, but we may wish to change our ship designs as a purely proactive measure.
+MAIN_ADVISOR_COUNCIL              | Soon there will be a joyous meeting of the galaxy's greatest and powerful peoples. We should attend this Galactic Council and hear the wisdom of our celestial neighbors.
+MAIN_ADVISOR_RESIST_COUNCIL       | It troubles me that all our efforts have led to this war, but if the only alternative is to submit to this warmongering council than I can see no other choice for our people! 
+MAIN_ADVISOR_COUNCIL_RESISTED     | Does this not sadden you to see others reject peace so vehemently? Steel your resolve, High Councilor: this shall be the last war this galaxy ever sees.
+
+
+// This text is the %8 variable in some of the game over text... when this race wins the game
+GAME_OVER_ALLIANCE_WIN3           | the iron rule of the Psilons
+GAME_OVER_REBELLION_LOSS3         | the iron rule of the Psilons overwhelms

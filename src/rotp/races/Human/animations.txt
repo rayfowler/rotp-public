@@ -1,0 +1,21 @@
+
+HumanLaboratory    | races/Human/animationLaboratory.txt
+HumanHolograph     | races/Bulrathi/animationHolograph.txt
+HumanDiploMug      | races/Human/animationDiploMug.txt
+HumanSpyMug        | races/Human/animationSpyMug.txt
+HumanSoldierMug    | races/Human/animationSoldierMug.txt
+HumanDiplomat      | races/Human/animationDiplomat.txt
+HumanScientist     | races/Human/animationScientist.txt
+HumanSoldier       | races/Human/animationSoldier.txt
+HumanSoldier2      | races/Human/animationSoldier2.txt
+HumanSpy           | races/Human/animationSpy.txt
+HumanCombat        | races/Human/animCombat.txt
+HumanDeath1        | races/Human/animDeath1.txt
+HumanDeath2        | races/Human/animDeath2.txt
+HumanDeath3        | races/Human/animDeath3.txt
+HumanDeath4        | races/Human/animDeath4.txt
+HumanGNN           | races/Human/animationGNN.txt
+HumanGNNHost       | races/Human/animationGNNHost.txt
+
+HumanTransportDesc | races/Human/animationTransportDescending.txt
+HumanTransportOpen | races/Human/animationTransportOpening.txt

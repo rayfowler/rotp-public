@@ -1,0 +1,77 @@
+[tech]
+seq:    0
+name:   MISSWPN_0_NAME
+brief:  MISSWPN_0_BRIEF
+brief2: MISSWPN_0_BRIEF2
+detail: MISSWPN_0_DETAIL
+
+[tech]
+seq:    1
+name:   MISSWPN_1_NAME
+brief:  MISSWPN_1_BRIEF
+brief2: MISSWPN_1_BRIEF2
+detail: MISSWPN_1_DETAIL
+
+[tech]
+seq:    2
+name:   MISSWPN_2_NAME
+brief:  MISSWPN_2_BRIEF
+brief2: MISSWPN_2_BRIEF2
+detail: MISSWPN_2_DETAIL
+
+[tech]
+seq:    3
+name:   MISSWPN_3_NAME
+brief:  MISSWPN_3_BRIEF
+brief2: MISSWPN_3_BRIEF2
+detail: MISSWPN_3_DETAIL
+
+[tech]
+seq:    4
+name:   MISSWPN_4_NAME
+brief:  MISSWPN_4_BRIEF
+brief2: MISSWPN_4_BRIEF2
+detail: MISSWPN_4_DETAIL
+
+[tech]
+seq:    5
+name:   MISSWPN_5_NAME
+brief:  MISSWPN_5_BRIEF
+brief2: MISSWPN_5_BRIEF2
+detail: MISSWPN_5_DETAIL
+
+[tech]
+seq:    6
+name:   MISSWPN_6_NAME
+brief:  MISSWPN_6_BRIEF
+brief2: MISSWPN_6_BRIEF2
+detail: MISSWPN_6_DETAIL
+
+[tech]
+seq:    7
+name:   MISSWPN_7_NAME
+brief:  MISSWPN_7_BRIEF
+brief2: MISSWPN_7_BRIEF2
+detail: MISSWPN_7_DETAIL
+
+[tech]
+seq:    8
+name:   MISSWPN_8_NAME
+brief:  MISSWPN_8_BRIEF
+brief2: MISSWPN_8_BRIEF2
+detail: MISSWPN_8_DETAIL
+
+[tech]
+seq:    9
+name:   MISSWPN_9_NAME
+brief:  MISSWPN_9_BRIEF
+brief2: MISSWPN_9_BRIEF2
+detail: MISSWPN_9_DETAIL
+
+[tech]
+seq:    10
+name:   MISSWPN_10_NAME
+brief:  MISSWPN_10_BRIEF
+brief2: MISSWPN_10_BRIEF2
+detail: MISSWPN_10_DETAIL
+

@@ -1,0 +1,24 @@
+#
+
+COMBAT_MISSILE            | images/missiles/missile.png
+
+MISSILE_NUCLEAR           | images/missiles/missile.png
+MISSILE_HYPER_V           | images/missiles/missile.png
+MISSILE_HYPER_X           | images/missiles/missile.png
+MISSILE_SCATTER_PACK_V    | images/missiles/missile.png
+MISSILE_MERCULITE         | images/missiles/missile.png
+MISSILE_STINGER           | images/missiles/missile.png
+MISSILE_SCATTER_PACK_VII  | images/missiles/missile.png
+MISSILE_PULSON            | images/missiles/missile.png
+MISSILE_HERCULAR          | images/missiles/missile.png
+MISSILE_ZEON              | images/missiles/missile.png
+MISSILE_SCATTER_PACK_X    | images/missiles/missile.png
+
+TORPEDO_ANTI_MATTER       | images/missiles/missile.png
+TORPEDO_HELLFIRE          | images/missiles/missile.png
+TORPEDO_PROTON            | images/missiles/missile.png
+TORPEDO_PLASMA            | images/missiles/missile.png
+
+SPACE_AMOEBA              | images/missiles/SpaceAmoeba.png
+SPACE_CRYSTAL             | images/missiles/SpaceCrystal.png
+ORION_GUARDIAN            | images/missiles/OrionGuardian.png

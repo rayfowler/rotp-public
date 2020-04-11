@@ -1,0 +1,8 @@
+#
+# Spy Animation
+Base,     _ALL_   , KlaSpy04:30:60+KlaSpy03+KlaSpy02+KlaSpy01:5:10+KlaSpy02+KlaSpy03
+
+Eye,    435@280  , KlaSpyA02:20:30+KlaSpyA01+NULL:3+KlaSpyA01
+M,   510@320     , KlaSpyB01:1:6+KlaSpyB02+KlaSpyB03:1:3+KlaSpyB02
+Arm, 510@568   , KlaSpyC01:20:60+KlaSpyC02+KlaSpyC03:3+KlaSpyC04:4:10+KlaSpyC05+KlaSpyC06:3+KlaSpyC05+KlaSpyC04:4:10+KlaSpyC03+KlaSpyC02
+

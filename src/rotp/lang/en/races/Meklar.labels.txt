@@ -1,0 +1,41 @@
+// race-specific variables (must start with _)
+_empire                           | Meklar Dominion, Mechanar Dominion, Cybernar Dominion, Digitar Dominion, Technar Dominion
+_race                             | Meklar, Mechanar, Cybernar, Digitar, Technar
+_race_plural                      | Meklars, Mechanars, Cybernars, Digitars, Technars
+_title                            | Supreme Arbiter
+_nameTitle                        | Supreme Arbiter 
+
+GOVT_EMPIRE                       | %1 Dominion 
+
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Advisor text
+MAIN_ADVISOR_TITLE                | %1 Advisor
+MAIN_ADVISOR_BUTTON_OK            | Dismiss
+MAIN_ADVISOR_SCOUT                | Fleet prepared for exploration and colonization. Awaiting directive to commence operations. 
+MAIN_ADVISOR_TRANSPORT            | First colony founded on nearby world. Designated "%1." Able to accommodate %2 additional population. Can transport population from %3 to supplement population. 
+MAIN_ADVISOR_DIPLOMACY            | New species detected. Designated "%1." Awaiting further instruction from Mainframe. 
+MAIN_ADVISOR_SHIP_ENGINE          | Research into improved means of propulsion complete. Confer with engineers on how best to implement new design. 
+MAIN_ADVISOR_RALLY_POINTS         | Species "%1" has acted to impede discovery of immortality protocol. Create rally point to centralize fleet and strike against them. 
+MAIN_ADVISOR_MISSILE_BASES        | Request from military division: construct defensive missile bases on surface of outer worlds. Will enable defense of worlds from external aggression.
+MAIN_ADVISOR_SHIP_WEAPON          | Research into high-powered weaponry complete. Confer with engineers on how best to implement new design. 
+MAIN_ADVISOR_COUNCIL              | Notification for convergence of interstellar empires. Designated "Galactic Council." Will send delegation to ensure will of Mainframe made clear. 
+MAIN_ADVISOR_REBELLION            | Warning. Rogue program infecting colony on %1. Must commence eradicating affected Meklar to ensure Dominion solidarity. 
+MAIN_ADVISOR_RESIST_COUNCIL       | New leader of Galactic Council noted as threat to Dominion objectives. Mobilize all forces to eliminate leader and allies
+MAIN_ADVISOR_COUNCIL_RESISTED     | Rebellion by enemy species ill-chosen. Dominion now rules known galaxy. Send all fleets to silence dissenters. 
+
+// This text is the %8 variable in some of the game over text... when this race wins the game
+GAME_OVER_ALLIANCE_WIN3           | the iron rule of the Meklar
+GAME_OVER_REBELLION_LOSS3         | the iron rule of the Meklar overwhelms

@@ -1,0 +1,15 @@
+#
+# Mrrshan Scientist Animation
+
+Base,   _ALL_  , MrrSci
+
+
+#   Blinking
+Eye,   300@170 , NULL:20:100+MrrSciEy01+MrrSciEy02+MrrSciEy03:3:5
+
+#   (null)-Closed, 1,2-Half-Open, 3-Open
+Mouth, 300@250 , NULL:2+MrrSciMo01:2+MrrSciMo02:2+MrrSciMo03:2+MrrSciMo02:2+MrrSciMo01:2+MrrSciMo02:2+MrrSciMo01:2
+
+# Hand Selection  null-none   1,2,3,4 null,   2,3,4,5,6
+Hand, 140@370 , NULL:10:100+MrrSciSe01:2+MrrSciSe02:2+MrrSciSe03:2+MrrSciSe04:6+NULL:10:100+MrrSciSe02:2+MrrSciSe03:2+MrrSciSe04:2+MrrSciSe05:2+MrrSciSe06:6
+

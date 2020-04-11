@@ -1,0 +1,20 @@
+[tech]
+seq:    0
+name:   BATTLESUIT_0_NAME
+detail: BATTLESUIT_0_DETAIL
+
+[tech]
+seq:    1
+name:   BATTLESUIT_1_NAME
+detail: BATTLESUIT_1_DETAIL
+
+[tech]
+seq:    2
+name:   BATTLESUIT_2_NAME
+detail: BATTLESUIT_2_DETAIL
+
+[tech]
+seq:    3
+name:   BATTLESUIT_3_NAME
+detail: BATTLESUIT_3_DETAIL
+

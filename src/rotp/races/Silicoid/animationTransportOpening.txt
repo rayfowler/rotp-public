@@ -1,0 +1,5 @@
+#
+# Silicoid Transport Ship Opening Animation
+
+// Starts closed and opens "permanently" 
+Open,  0@0, SilTrans02:1+SilTrans05:1+SilTrans06:1+SilTrans07:80+SilTrans11:10+SilTrans12:10+SilTrans13:10+SilTrans14:999999

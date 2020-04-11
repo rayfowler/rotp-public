@@ -1,0 +1,12 @@
+# listing of race directories
+
+Alkari
+Bulrathi
+Darlok
+Human
+Klackon
+Meklar
+Mrrshan
+Psilon
+Sakkra
+Silicoid

@@ -1,0 +1,35 @@
+// MOO1 Barren planet
+key: PLANET_BARREN
+
+descBiological: BARREN_DESC_BIOLOGICAL
+descSilicoid:   BARREN_DESC_BIOLOGICAL
+terrainImage:   TERRAIN_BARREN
+landscapeImage: LANDSCAPE_BARREN
+panoramaImage:  PANORAMA_BARREN
+atmoImage:      ATMO_TERRAN_THIN
+cloudImage:     
+
+hostility: 7
+minSize: 30
+maxSize: 55
+
+// leftX, bottomY & width of ships landing on planet
+ship0: 320, 640, 400
+ship1: 110, 475, 200
+ship2: 100, 425, 140
+ship3: 220, 400, 110
+
+// no water
+
+// land
+color:   -1.00, 240,223,145
+color:    0.01, 240,223,145
+color:    0.16, 233,180,119
+color:    0.30, 233,165,104
+color:    0.40, 218,153, 85
+color:    0.50, 200,120, 61
+color:    0.82, 172, 82, 29
+color:    0.90, 127, 37,  1
+color:    0.95,  93, 21,  7
+color:    1.00,  93, 21,  7
+

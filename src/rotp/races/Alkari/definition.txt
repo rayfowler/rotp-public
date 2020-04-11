@@ -1,0 +1,129 @@
+key:           RACE_ALKARI
+langKey:       Alkari
+year:          299
+
+homeStarType:  YELLOW
+homeworldType: PLANET_TERRAN
+homeworldSize: 100
+homeworldKey:  158332
+
+// animations
+mugshot:       AlkariDiplomat, 230@30|250x270
+setupImage:    AlkariDiploMug, 0@0|584x768
+spyMug:        AlkariSpyMug,  160@30|440x330
+soldierMug:    AlkariSoldierMug, 160@30|440x330
+diploProfile:  AlkariDiploMug, 100@30|630x480
+lab:           AlkariLaboratory
+embassy:       AlkariLaboratory
+holograph:     AlkariHolograph
+diplomat:      AlkariDiplomat
+scientist:     AlkariScientist
+trooper:       AlkariSoldier
+spy:           AlkariSpy
+leader:        AlkLeader
+diploTheme:    ThemeAlkari
+gnn:           AlkariGNN
+gnnHost:       AlkariGNNHost
+gnnColor:      Lavender
+gnnTextColor:  185,154,250
+winSplash:     ,255,255,255
+lossSplash:    ,255,255,255
+
+advisorScout:      AlkariDiplomat, 195@30|440x640
+advisorTransport:  AlkariDiplomat, 195@30|440x640
+advisorDiplomacy:  AlkariDiplomat, 195@30|440x640
+advisorShip:       AlkariDiplomat, 195@30|440x640
+advisorRally:      AlkariDiplomat, 195@30|440x640
+advisorMissile:    AlkariDiplomat, 195@30|440x640
+advisorWeapon:     AlkariDiplomat, 195@30|440x640
+advisorCouncil:    AlkariDiplomat, 195@30|440x640
+advisorRebellion:  AlkariDiplomat, 195@30|440x640
+advisorResistCouncil:   AlkariDiplomat, 195@30|440x640
+advisorCouncilResisted: AlkariDiplomat, 195@30|440x640
+
+transport:     AlkTransport
+transportDesc: AlkariTransportDesc, 1, 0@0|350x200
+transportOpen: AlkariTransportOpen, 13, 0@0|350x200
+transportW:    100
+transportYOff: 0
+transportLandingFrames: 100
+colonistWalk:  30, 150, 220@160>370@175
+landingAudio:  AlkariShip
+
+troopIcon:      AlkariCombat,    7/11
+troopHIcon:     AlkariCombatH,    7/11
+troopDeath1:    AlkariDeath1,    5
+troopDeath2:    AlkariDeath2,    6
+troopDeath3:    AlkariDeath3,    10
+troopDeath4:    AlkariDeath4,    8
+troopDeath1H:   AlkariDeath1H,   6
+troopDeath2H:   AlkariDeath2H,   6
+troopDeath3H:   AlkariDeath3H,   10
+troopDeath4H:   AlkariDeath4H,   8
+troopScale:     0.5, 35, 30
+troopFireXY:    173@59
+troopHFireXY:   195@93
+
+fortress:      AlkFort01|AlkFort02,  0@0|420x450
+council:       AlkCouncil
+shield:        AlkShield,    0@0|420x450
+introTextX:    680
+espionageXY:   0@0
+spyFactories:  0
+spyMissiles:   0
+spyRebellion:  0
+dialogTextX:   110,220
+dialogTextY:   580
+councilDiplo:  0.6, 75, 0, 0.6
+labFlagX:      0.81
+flagSize:      200x200
+flagWar:       AlkFlagWar
+flagNormal:    AlkFlagNorm
+flagPact:      AlkFlagPact
+dialogWar:     AlkDlgWar
+dialogNormal:  AlkDlgNorm
+dialogPact:    AlkDlgPact
+
+// sounds
+voice:     AlkariVoice
+ambience:  AlkariAmbience
+
+// species info:
+// field #1 - terran(1), aquatic(2), silicate(3) or robotic(4)
+// field #2 - ignoreEco(1), don't ignore eco (0)
+species: 1, 0
+
+// personality % (must=100) - erratic, pacifist, honorable, ruthless, aggressive, xenophobic
+personality:20,20,60,0,0,0
+// objective % (must=100) - militarist, ecologist, diplomat, industrialist, expansionist, technologist
+objective: 50,10,10,10,10,10
+
+// ship set & preferred size (0-small to 3-huge)
+preferredship: Alkari, 0
+
+// ship bonus - att, def, init
+shipmod: 0,3,3
+
+// ground mod - att
+groundmod: 0
+
+// spy mod - cost%, security adj%, infiltration adj%, telepathic?(1/0), mask relations?(1/0)
+spymod: 100, 0, 0, 0, 0
+
+// production mod - worker productivity, factory controls bonus, ignoreRefitCost?(1/0)
+prodmod: 100, 0, 0
+
+// tech mods - discovery %, research bonus
+techmod: 50, 100
+
+// pop mods - growth rate
+popmod: 100
+
+// diplomacy mods % - trade % bonus, positive DP mod, diplomacy bonus, council bonus
+diplomod: 0,100,0,0
+
+// research category mods % - computer, construction, force field, planetary, propulsion, weapon
+research: 100,100,125,100,60,100
+
+// race relations
+relations: DEFAULT=0,RACE_ALKARI=31,RACE_HUMAN=7,RACE_DARLOK=-7,RACE_KLACKON=-7,RACE_SAKKRA=-7,RACE_MRRSHAN=-31

@@ -1,0 +1,24 @@
+[tech]
+seq:    0
+name:   SCANNER_0_NAME
+detail: SCANNER_0_DETAIL
+brief:  SCANNER_0_BRIEF
+
+[tech]
+seq:    1
+name:   SCANNER_1_NAME
+detail: SCANNER_1_DETAIL
+brief:  SCANNER_1_BRIEF
+
+[tech]
+seq:    2
+name:   SCANNER_2_NAME
+detail: SCANNER_2_DETAIL
+brief:  SCANNER_2_BRIEF
+
+[tech]
+seq:    3
+name:   SCANNER_3_NAME
+detail: SCANNER_3_DETAIL
+brief:  SCANNER_3_BRIEF
+

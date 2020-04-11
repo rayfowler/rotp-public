@@ -1,0 +1,12 @@
+#
+# Alkari Scientist Animation
+
+Base,   _ALL_  , AlkSci
+
+
+#   Looking (2,3) and Blinking (4,5)
+Eye,   275@85 , NULL:8:20+AlkSciEy02:1+AlkSciEy03:6:12+NULL:8:20+AlkSciEy04:1+AlkSciEy05:3:5
+
+#   1(null)-Closed, 2,3-Half-Open, 4-Open
+Mouth, 300@150 , NULL:2+AlkSciMo02:2+AlkSciMo03:2+AlkSciMo04:2+AlkSciMo03:2+AlkSciMo02:2+AlkSciMo03:2+AlkSciMo02:2
+

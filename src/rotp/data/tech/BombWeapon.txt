@@ -1,0 +1,30 @@
+[tech]
+seq:    0
+name:   BOMB_0_NAME
+brief:  BOMB_0_BRIEF
+detail: BOMB_0_DETAIL
+
+[tech]
+seq:    1
+name:   BOMB_1_NAME
+brief:  BOMB_1_BRIEF
+detail: BOMB_1_DETAIL
+
+[tech]
+seq:    2
+name:   BOMB_2_NAME
+brief:  BOMB_2_BRIEF
+detail: BOMB_2_DETAIL
+
+[tech]
+seq:    3
+name:   BOMB_3_NAME
+brief:  BOMB_3_BRIEF
+detail: BOMB_3_DETAIL
+
+[tech]
+seq:    4
+name:   BOMB_4_NAME
+brief:  BOMB_4_BRIEF
+detail: BOMB_4_DETAIL
+

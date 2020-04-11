@@ -1,0 +1,11 @@
+#
+# Human Mugshot Animation (Setup & Races UI)
+Base, _ALL_    , HumLab
+Base, _ALL_    , HumDip
+
+// open-blink-open-squint-blink-squint
+Eye,    255@225   , NULL:30:60+HumDipEy03:2+NULL:10:20+HumDipEy02:4:10+HumDipEy03:2+HumDipEy02:3:10
+
+
+// closed-open1-open2-open1-open2-open1
+Mouth,  250@260   , NULL:2+HumDipMo02:2+HumDipMo03:2+HumDipMo02:2+HumDipMo03:2+HumDipMo02:2

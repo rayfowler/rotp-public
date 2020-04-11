@@ -1,0 +1,6 @@
+#
+# Sakkra GNN Host Frames
+
+Host,  _ALL_, SakGNN_1:10+SakGNN_2+SakGNN_1:1:3+SakGNN_2+SakGNN_1:1:3+SakGNN_2+SakGNN_1:1:3+SakGNN_2+SakGNN_1:1:3+SakGNN_2+SakGNN_1:1:3+SakGNN_2+SakGNN_1:99999
+Eye, 215@260, SakGNN_Eye1:10:30+SakGNN_Eye2+SakGNN_Eye3:1:3
+Bee,   _ALL_, SakGNN_Bee1+SakGNN_Bee2+SakGNN_Bee1+SakGNN_Bee2+SakGNN_Bee1+SakGNN_Bee2+SakGNN_Bee1+SakGNN_Bee2+SakGNN_Bee1+SakGNN_Bee2+SakGNN_Bee1+SakGNN_Bee2+SakGNN_Bee3+SakGNN_Bee4+SakGNN_Bee3+SakGNN_Bee4+SakGNN_Bee3+SakGNN_Bee4+SakGNN_Bee3+SakGNN_Bee4+SakGNN_Bee5+SakGNN_Bee6+SakGNN_Bee5+SakGNN_Bee6+SakGNN_Bee5+SakGNN_Bee6+SakGNN_Bee5+SakGNN_Bee6+SakGNN_Bee5+SakGNN_Bee6+SakGNN_Bee5+SakGNN_Bee6+SakGNN_Bee5+SakGNN_Bee6+SakGNN_Bee5+SakGNN_Bee6+SakGNN_Bee5+SakGNN_Bee6+SakGNN_Bee5+SakGNN_Bee6+SakGNN_Bee5+SakGNN_Bee6+SakGNN_Bee5+SakGNN_Bee6+SakGNN_Bee5+SakGNN_Bee6+SakGNN_Bee5+SakGNN_Bee6+SakGNN_Bee5+SakGNN_Bee6

@@ -1,0 +1,21 @@
+// all possible names
+name: Bulrathi, Bearathi, Ursinathi
+
+desc1: Agresywni militaryści
+desc2: Doskonali wojownicy naziemni
+desc3: Zagorzale lojalni Bulrathi cenią zarówno siłę jak i mądrość swego króla-filozofa.
+
+// possible home system names
+home: Ursa, Canis, Grizzla, Pandara, Bruin
+
+title:     Król
+fulltitle: Król
+
+// possible leader names
+leader: Bullux, Durpp, Grunk, Krungo, Monch, Smurch
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Łapa, Patrol, Pazur, Kieł, Ząb, Dzik, Ursyn
+ship2: Myśliwy, Gladiator, Strażnik, Łowca, Tropiciel, Mięsożerca, Panda
+ship3: Wojenny niedźwiedź, Bydlę, Drapieżnik, Zastraszacz, Zabójca, Strażnik, Protektor
+ship4: Grizzly, Karciciel, Nosorożec, Kodiak, Niszczyciel, Cerber, Masakrator

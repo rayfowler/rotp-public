@@ -1,0 +1,4 @@
+#
+# Sakkra Transport Ship Opening Animation
+// Starts closed and opens "permanently" 
+Open,  0@0, SakTrans01:1+SakTrans02:1+SakTrans03:1+SakTrans04:1+SakTrans05:1+SakTrans06:1+SakTrans11:1+SakTrans12:1+SakTrans13:1+SakTrans14:1+SakTrans15:1+SakTrans16:999999

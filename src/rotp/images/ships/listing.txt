@@ -1,0 +1,11 @@
+// a listing of ship sets
+Alkari     ,
+Bulrathi   ,
+Darlok     ,
+Human      ,
+Klackon    ,
+Meklar     ,
+Mrrshan    ,
+Psilon     ,
+Sakkra     ,
+Silicoid   ,

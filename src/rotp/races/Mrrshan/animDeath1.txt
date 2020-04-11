@@ -1,0 +1,5 @@
+#
+# Mrrshan  Hostile Combat Frames
+
+# falls over dead
+Base, _ALL_ , MrrDeath101:1+MrrDeath102:1+MrrDeath103:1+MrrDeath104:1+MrrDeath105:99999

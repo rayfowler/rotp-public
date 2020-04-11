@@ -1,0 +1,5 @@
+#
+# Darlok GNN Host Frames
+
+HostL, _ALL_, DarGNNHostL1:1:5+DarGNNHostL2:1:5+DarGNNHostL3:1:5+DarGNNHostL4:1:5+DarGNNHostL5:1:5+DarGNNHostL6:1:5
+HostR, 350@0, DarGNNHostR1:1:5+DarGNNHostR2:1:5+DarGNNHostR3:1:5+DarGNNHostR4:1:5+DarGNNHostR5:1:5+DarGNNHostR6:1:5

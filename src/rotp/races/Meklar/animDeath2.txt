@@ -1,0 +1,5 @@
+#
+# Meklar Hostile Combat Frames
+
+# Disrupted into nothingness
+Base, _ALL_ , MekDeath201:1+MekDeath202:1+MekDeath203:1+MekDeath204:1+null:99999

@@ -1,0 +1,4 @@
+#
+# Bulrathi Hostile Combat Frames
+
+Base, _ALL_ , BulHComb01:1+BulHComb02:1+BulHComb03:1+BulHComb04:1

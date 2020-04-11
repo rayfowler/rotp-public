@@ -1,0 +1,51 @@
+
+[tech]
+seq:    0
+name:   FUTUREWEAPON_0_NAME
+detail: FUTUREWEAPON_0_DETAIL
+
+[tech]
+seq:    1
+name:   FUTUREWEAPON_1_NAME
+detail: FUTUREWEAPON_1_DETAIL
+
+[tech]
+seq:    2
+name:   FUTUREWEAPON_2_NAME
+detail: FUTUREWEAPON_2_DETAIL
+
+[tech]
+seq:    3
+name:   FUTUREWEAPON_3_NAME
+detail: FUTUREWEAPON_3_DETAIL
+
+[tech]
+seq:    4
+name:   FUTUREWEAPON_4_NAME
+detail: FUTUREWEAPON_4_DETAIL
+
+[tech]
+seq:    5
+name:   FUTUREWEAPON_5_NAME
+detail: FUTUREWEAPON_5_DETAIL
+
+[tech]
+seq:    6
+name:   FUTUREWEAPON_6_NAME
+detail: FUTUREWEAPON_6_DETAIL
+
+[tech]
+seq:    7
+name:   FUTUREWEAPON_7_NAME
+detail: FUTUREWEAPON_7_DETAIL
+
+[tech]
+seq:    8
+name:   FUTUREWEAPON_8_NAME
+detail: FUTUREWEAPON_8_DETAIL
+
+[tech]
+seq:    9
+name:   FUTUREWEAPON_9_NAME
+detail: FUTUREWEAPON_9_DETAIL
+

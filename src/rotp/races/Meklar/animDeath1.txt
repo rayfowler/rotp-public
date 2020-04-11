@@ -1,0 +1,5 @@
+#
+# Meklar Hostile Combat Frames
+
+# falls over dead
+Base, _ALL_ , MekDeath101:1+MekDeath102:1+MekDeath103:1+MekDeath104:1+MekDeath105:1+MekDeath106:1+MekDeath107:1+MekDeath108:99999

@@ -1,0 +1,40 @@
+// MOO1 Steppe Planet
+key: PLANET_STEPPE
+
+descBiological: STEPPE_DESC_BIOLOGICAL
+descSilicoid:   STEPPE_DESC_BIOLOGICAL
+terrainImage:   TERRAIN_STEPPE
+landscapeImage: LANDSCAPE_STEPPE
+panoramaImage:  PANORAMA_STEPPE
+atmoImage:      ATMO_TERRAN_FULL
+cloudImage:     CLOUDS_THIN,CLOUDS_MED
+
+hostility: 4
+minSize: 45
+maxSize: 60
+
+// leftX, bottomY & width of ships landing on planet
+ship0: 320, 640, 400
+ship1: 110, 475, 200
+ship2: 100, 425, 140
+ship3: 240, 400, 110
+
+// water
+color: -1.00,  0,20,100
+color: -0.10,  0,40,120
+color: -0.00,  20,60,160
+
+// land
+color:    0.01,  46, 83, 39
+color:    0.03,  46, 83, 39
+color:    0.05,  41, 73, 32
+color:    0.19,  47, 95, 45
+color:    0.28, 102,140, 65
+color:    0.48, 142,120, 45
+color:    0.56, 172,151, 86
+color:    0.62, 142,120, 45
+color:    0.71, 172,151, 86
+color:    0.78, 161,140, 75
+color:    0.88, 151,138, 96
+color:    0.90,  88, 59,  0
+color:    1.00,  88, 59,  0

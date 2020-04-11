@@ -1,0 +1,5 @@
+#
+# Combat Frames
+
+# immolated. only ashes remain
+Base, _ALL_ , KlaDeath301+KlaDeath302+KlaDeath303+KlaDeath304+KlaDeath305+KlaDeath306:99999

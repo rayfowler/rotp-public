@@ -1,0 +1,8 @@
+#
+# Mrrshan Spy Mugshot Animation (Races Tech UI)
+
+Base, _ALL_  , MrrLab
+Base,   _ALL_  , MrrSpy12
+
+#   Ear
+Ears,   160@80 , MrrSpyEa00

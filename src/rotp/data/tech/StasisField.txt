@@ -1,0 +1,5 @@
+[tech]
+seq:    0
+name:   STASIS_0_NAME
+brief:  STASIS_0_BRIEF
+detail: STASIS_0_DETAIL

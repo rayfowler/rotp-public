@@ -1,0 +1,165 @@
+DarFlagWar    | races/Darlok/banner_war.png
+DarFlagNorm   | races/Darlok/banner_norm.png
+DarFlagPact   | races/Darlok/banner_pact.png
+
+DarDlgWar     | races/Darlok/dialogue_war.png
+DarDlgNorm    | races/Darlok/dialogue_norm.png
+DarDlgPact    | races/Darlok/dialogue_pact.png
+
+DarFort01     | races/Darlok/Fortress_01.png
+
+DarLab01      | races/Darlok/Laboratory_01.png
+DarLab02      | races/Darlok/Laboratory_02.png
+DarLab03      | races/Darlok/Laboratory_03.png
+DarLab04      | races/Darlok/Laboratory_04.png
+DarLab05      | races/Darlok/Laboratory_05.png
+DarLabFog01   | races/Darlok/LabFog_01.png
+DarLabFog02   | races/Darlok/LabFog_02.png
+DarLabFog03   | races/Darlok/LabFog_03.png
+DarLabFog04   | races/Darlok/LabFog_04.png
+DarLabFog05   | races/Darlok/LabFog_05.png
+DarCouncil01  | races/Darlok/Council_01.jpg
+DarCouncil02  | races/Darlok/Council_02.jpg
+
+DarLeader    | races/Darlok/CouncilLeader.png
+
+DarDip        | races/Darlok/Diplomat_base.png
+DarDipStaff01 | races/Darlok/Diplomat_Staff_01.png
+DarDipStaff02 | races/Darlok/Diplomat_Staff_02.png
+DarDipStaff03 | races/Darlok/Diplomat_Staff_03.png
+DarDipStaff04 | races/Darlok/Diplomat_Staff_04.png
+
+DarSci01      | races/Darlok/Scientist_01.png
+DarSci02      | races/Darlok/Scientist_02.png
+DarSci03      | races/Darlok/Scientist_03.png
+DarSci04      | races/Darlok/Scientist_04.png
+DarSci05      | races/Darlok/Scientist_05.png
+DarSci06      | races/Darlok/Scientist_06.png
+DarSci07      | races/Darlok/Scientist_07.png
+DarSci08      | races/Darlok/Scientist_08.png
+DarSci09      | races/Darlok/Scientist_09.png
+DarSci10      | races/Darlok/Scientist_10.png
+DarSci11      | races/Darlok/Scientist_11.png
+DarSci12      | races/Darlok/Scientist_12.png
+DarSci13      | races/Darlok/Scientist_13.png
+DarSci14      | races/Darlok/Scientist_14.png
+DarSci15      | races/Darlok/Scientist_15.png
+DarSci16      | races/Darlok/Scientist_16.png
+DarSci17      | races/Darlok/Scientist_17.png
+DarSci18      | races/Darlok/Scientist_18.png
+DarSci19      | races/Darlok/Scientist_19.png
+DarSci20      | races/Darlok/Scientist_20.png
+DarSci21      | races/Darlok/Scientist_21.png
+DarSci22      | races/Darlok/Scientist_22.png
+DarSci23      | races/Darlok/Scientist_23.png
+DarSci24      | races/Darlok/Scientist_24.png
+DarSci25      | races/Darlok/Scientist_25.png
+
+DarSol01      | races/Darlok/Soldier_01.png
+DarSol02      | races/Darlok/Soldier_02.png
+DarSol03      | races/Darlok/Soldier_03.png
+DarSol04      | races/Darlok/Soldier_04.png
+DarSol05      | races/Darlok/Soldier_05.png
+
+DarSpy00      | races/Darlok/Spy_00.png
+DarSpy01      | races/Darlok/Spy_01.png
+DarSpy02      | races/Darlok/Spy_02.png
+DarSpy03      | races/Darlok/Spy_03.png
+DarSpy04      | races/Darlok/Spy_04.png
+DarSpy05      | races/Darlok/Spy_05.png
+DarSpy06      | races/Darlok/Spy_06.png
+DarSpy07      | races/Darlok/Spy_07.png
+
+DarTransport  | races/Darlok/Transport_Transit.png
+DarTrans00    | races/Darlok/Transport_00.png
+DarTrans01    | races/Darlok/Transport_01.png
+DarTrans02    | races/Darlok/Transport_02.png
+DarTrans03    | races/Darlok/Transport_03.png
+DarTrans04    | races/Darlok/Transport_04.png
+DarTrans05    | races/Darlok/Transport_05.png
+DarTrans06    | races/Darlok/Transport_06.png
+DarTrans07    | races/Darlok/Transport_07.png
+DarTrans08    | races/Darlok/Transport_08.png
+DarTrans09    | races/Darlok/Transport_09.png
+DarTrans10    | races/Darlok/Transport_10.png
+DarTrans11    | races/Darlok/Transport_11.png
+DarTrans12    | races/Darlok/Transport_12.png
+DarTrans13    | races/Darlok/Transport_13.png
+DarTrans14    | races/Darlok/Transport_14.png
+DarTrans15    | races/Darlok/Transport_15.png
+
+DarComb01     | races/Darlok/Combat_13.png
+DarComb02     | races/Darlok/Combat_14.png
+DarComb03     | races/Darlok/Combat_16.png
+DarComb04     | races/Darlok/Combat_17.png
+
+DarGNNB_01    | races/Darlok/GNN_Back_01.jpg
+DarGNNB_02    | races/Darlok/GNN_Back_02.jpg
+DarGNNB_03    | races/Darlok/GNN_Back_03.jpg
+DarGNNB_04    | races/Darlok/GNN_Back_04.jpg
+DarGNNB_05    | races/Darlok/GNN_Back_05.jpg
+DarGNNB_06    | races/Darlok/GNN_Back_06.jpg
+DarGNNB_07    | races/Darlok/GNN_Back_07.jpg
+DarGNNB_08    | races/Darlok/GNN_Back_08.jpg
+DarGNNB_09    | races/Darlok/GNN_Back_09.jpg
+DarGNNB_10    | races/Darlok/GNN_Back_10.jpg
+DarGNNB_11    | races/Darlok/GNN_Back_11.jpg
+DarGNNB_12    | races/Darlok/GNN_Back_12.jpg
+DarGNNB_13    | races/Darlok/GNN_Back_13.jpg
+DarGNNB_14    | races/Darlok/GNN_Back_14.jpg
+DarGNNB_15    | races/Darlok/GNN_Back_15.jpg
+DarGNNB_16    | races/Darlok/GNN_Back_16.jpg
+DarGNNB_17    | races/Darlok/GNN_Back_17.jpg
+DarGNNB_18    | races/Darlok/GNN_Back_18.jpg
+DarGNNB_19    | races/Darlok/GNN_Back_19.jpg
+DarGNNB_20    | races/Darlok/GNN_Back_20.jpg
+DarGNNB_21    | races/Darlok/GNN_Back_21.jpg
+DarGNNB_22    | races/Darlok/GNN_Back_22.jpg
+
+DarGNNHostL1  | races/Darlok/GNN_Host_L1.png
+DarGNNHostL2  | races/Darlok/GNN_Host_L2.png
+DarGNNHostL3  | races/Darlok/GNN_Host_L3.png
+DarGNNHostL4  | races/Darlok/GNN_Host_L4.png
+DarGNNHostL5  | races/Darlok/GNN_Host_L5.png
+DarGNNHostL6  | races/Darlok/GNN_Host_L6.png
+DarGNNHostR1  | races/Darlok/GNN_Host_R1.png
+DarGNNHostR2  | races/Darlok/GNN_Host_R2.png
+DarGNNHostR3  | races/Darlok/GNN_Host_R3.png
+DarGNNHostR4  | races/Darlok/GNN_Host_R4.png
+DarGNNHostR5  | races/Darlok/GNN_Host_R5.png
+DarGNNHostR6  | races/Darlok/GNN_Host_R6.png
+
+
+DarComb01     | races/Darlok/Combat_13.png
+DarComb02     | races/Darlok/Combat_14.png
+DarComb03     | races/Darlok/Combat_16.png
+DarComb04     | races/Darlok/Combat_17.png
+
+DarDeath101  | races/Darlok/Death1-01.png
+DarDeath102  | races/Darlok/Death1-02.png
+DarDeath103  | races/Darlok/Death1-03.png
+DarDeath104  | races/Darlok/Death1-04.png
+DarDeath105  | races/Darlok/Death1-05.png
+DarDeath106  | races/Darlok/Death1-06.png
+DarDeath107  | races/Darlok/Death1-07.png
+DarDeath108  | races/Darlok/Death1-08.png
+DarDeath109  | races/Darlok/Death1-09.png
+DarDeath110  | races/Darlok/Death1-10.png
+DarDeath201  | races/Darlok/Death2-01.png
+DarDeath202  | races/Darlok/Death2-02.png
+DarDeath203  | races/Darlok/Death2-03.png
+DarDeath204  | races/Darlok/Death2-04.png
+DarDeath301  | races/Darlok/Death3-01.png
+DarDeath302  | races/Darlok/Death3-02.png
+DarDeath303  | races/Darlok/Death3-03.png
+DarDeath304  | races/Darlok/Death3-04.png
+DarDeath305  | races/Darlok/Death3-05.png
+DarDeath306  | races/Darlok/Death3-06.png
+DarDeath307  | races/Darlok/Death3-07.png
+DarDeath401  | races/Darlok/Death4-01.png
+DarDeath402  | races/Darlok/Death4-02.png
+DarDeath403  | races/Darlok/Death4-03.png
+DarDeath404  | races/Darlok/Death4-04.png
+DarDeath405  | races/Darlok/Death4-05.png
+DarDeath406  | races/Darlok/Death4-06.png
+DarDeath407  | races/Darlok/Death4-07.png

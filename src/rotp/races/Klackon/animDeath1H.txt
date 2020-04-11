@@ -1,0 +1,5 @@
+#
+#  Combat Frames
+
+# falls over dead
+Base, _ALL_ , KlaDeathH101+KlaDeathH102+KlaDeathH103+KlaDeathH104:99999

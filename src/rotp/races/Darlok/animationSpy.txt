@@ -1,0 +1,4 @@
+#
+# Darlok Spy Animation
+
+Base,   _ALL_  , DarSpy00:7+DarSpy01:3+DarSpy02:2+DarSpy03:2+DarSpy04+DarSpy05+DarSpy06+DarSpy07:9999

@@ -1,0 +1,5 @@
+#
+# Bulrathi  Hostile Combat Frames
+
+# falls over dead
+Base, _ALL_ , BulDeath101:1+BulDeath102:1+BulDeath103:1+BulDeath104:1+BulDeath105:1+BulDeath106:1+BulDeath107:1+BulDeath108:1+BulDeath109:99999

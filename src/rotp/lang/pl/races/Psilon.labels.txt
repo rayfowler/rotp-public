@@ -1,0 +1,15 @@
+// race-specific variables (must start with _)
+_empire                    | Republika Psilonów, Republika Mentalonów, Republika Psychonów
+_race                      | Psilon, Mentalon, Psychon
+
+// Advisor text
+MAIN_ADVISOR_TITLE         | Doradca rasy %1
+MAIN_ADVISOR_BUTTON_OK     | Odpraw
+MAIN_ADVISOR_SCOUT         | Wielki Kanclerzu, nasza flota eksploracyjna jest gotowa. Czy uważasz za roztropne znalezienie nowego świata i zasiedlenie go?
+MAIN_ADVISOR_TRANSPORT     | Nasza nowa kolonia została założona. Rada obraduje teraz nad tym ilu mieszkańców powinniśmy tam przetransportować, jeśli w ogóle.
+MAIN_ADVISOR_DIPLOMACY     | Z głębin kosmosu nadeszła nowa cywilizacja! Zanoszę modły by wybrała pokojową współegzystencję zamiast rozwiązań militarnych.
+MAIN_ADVISOR_SHIP_ENGINE   | Nasi naukowcy utrzymują stały wzrost ulepszeń silników statków kosmicznych. Rada wysłuchuje teraz propozycji ich najlepszego zastosowania.
+MAIN_ADVISOR_RALLY_POINTS  | Niestety, Republika znalazła się w obliczu wojny. Rada musi wybrać Punkty Zborne dla naszej floty w celu zapewnienia bezpieczeństwa kolonistom.
+MAIN_ADVISOR_MISSILE_BASES | Zamiast komasować flotę statków wojennych, możemy skonstruować obronne bazy rakietowe na powierzchni planet w celu ochrony kolonii przed inwazją. Rada pragnie wysłuchać Twoich przemyśleń odnośnie najlepszych dla nich lokalizacji.
+MAIN_ADVISOR_SHIP_WEAPON   | Rada gorączkowo debatuje nad najnowszymi projektami broni dla statków. Część chce ich natychmiastowego zniszczenia ale będąc proaktywnym być może warto zmodyfikować projekty naszych statków.
+MAIN_ADVISOR_COUNCIL       | Wkrótce nastąpi radosne zebranie największych i najpotężniejszych władców galaktyki. Powinniśmy wziąć udział w tej Radzie Galaktycznej i wysłuchać mądrości naszych boskich sąsiadów.

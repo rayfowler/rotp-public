@@ -1,0 +1,5 @@
+#
+# Silicoid Hostile Combat Frames
+
+# falls over dead
+Base, _ALL_ , SilDeath101:1+SilDeath102:1+SilDeath103:1+SilDeath104:1+SilDeath105:1+SilDeath106:1+SilDeath107:99999

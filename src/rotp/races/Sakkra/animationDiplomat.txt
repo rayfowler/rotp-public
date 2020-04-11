@@ -1,0 +1,12 @@
+#
+# Sakkra Diplomat Animation
+
+Base, _ALL_  , SakDip
+
+
+#   1(null)-Open, Closing 2 and Closed 3
+Eye,   310@145 , NULL:30:80+SakDipEy02:1:2+SakDipEy03:2:4
+
+#   1(null)-Closed, 2,3-Half-Open, 4-Open
+Mouth, 300@220 , NULL:1+SakDipMo04:10:30+SakDipMo03:5:10+SakDipMo04:10:30+SakDipMo03:5:10+SakDipMo04:10:30+SakDipMo03:5:10+SakDipMo04:10:30+SakDipMo03:5:10
+

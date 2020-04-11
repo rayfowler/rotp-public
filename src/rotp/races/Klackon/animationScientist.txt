@@ -1,0 +1,8 @@
+#
+# Scientist Animation
+
+
+AntA,   _ALL_   , KlaSciA01:6:24+KlaSciA02+KlaSciA03+KlaSciA04:6:24+KlaSciA03+KlaSciA02
+AntB,   _ALL_   , KlaSciB01:6:24+KlaSciB02+KlaSciB03+KlaSciB04:6:24+KlaSciB03+KlaSciB02
+
+Base,   _ALL_   , KlaSci01:12:18+KlaSci02+KlaSci03+KlaSci04:30:50+KlaSci03+KlaSci02

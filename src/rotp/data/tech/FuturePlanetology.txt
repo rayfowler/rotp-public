@@ -1,0 +1,50 @@
+[tech]
+seq:    0
+name:   FUTUREPLANET_0_NAME
+detail: FUTUREPLANET_0_DETAIL
+
+[tech]
+seq:    1
+name:   FUTUREPLANET_1_NAME
+detail: FUTUREPLANET_1_DETAIL
+
+[tech]
+seq:    2
+name:   FUTUREPLANET_2_NAME
+detail: FUTUREPLANET_2_DETAIL
+
+[tech]
+seq:    3
+name:   FUTUREPLANET_3_NAME
+detail: FUTUREPLANET_3_DETAIL
+
+[tech]
+seq:    4
+name:   FUTUREPLANET_4_NAME
+detail: FUTUREPLANET_4_DETAIL
+
+[tech]
+seq:    5
+name:   FUTUREPLANET_5_NAME
+detail: FUTUREPLANET_5_DETAIL
+
+[tech]
+seq:    6
+name:   FUTUREPLANET_6_NAME
+detail: FUTUREPLANET_6_DETAIL
+
+[tech]
+seq:    7
+name:   FUTUREPLANET_7_NAME
+detail: FUTUREPLANET_7_DETAIL
+
+[tech]
+seq:    8
+name:   FUTUREPLANET_8_NAME
+detail: FUTUREPLANET_8_DETAIL
+
+[tech]
+seq:    9
+name:   FUTUREPLANET_9_NAME
+detail: FUTUREPLANET_9_DETAIL
+

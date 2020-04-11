@@ -1,0 +1,6 @@
+#
+# Sakkra Hostile Combat Frames
+
+# immolated. only ashes remain
+Base, _ALL_ , SakDeath3H01+SakDeath3H02+SakDeath3H03+SakDeath3H04+SakDeath3H05+SakDeath3H06+SakDeath3H07+SakDeath3H08+SakDeath3H09+SakDeath3H10:99999
+

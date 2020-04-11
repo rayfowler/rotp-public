@@ -1,0 +1,22 @@
+
+
+SilicoidLaboratory    | races/Silicoid/animationLaboratory.txt
+SilicoidHolograph     | races/Silicoid/animationHolograph.txt
+SilicoidDiploMug      | races/Silicoid/animationMugshot.txt
+SilicoidSpyMug        | races/Silicoid/animationSpyMug.txt
+SilicoidSoldierMug    | races/Silicoid/animationSoldierMug.txt
+SilicoidDiplomat      | races/Silicoid/animationDiplomat.txt
+SilicoidScientist     | races/Silicoid/animationScientist.txt
+SilicoidSoldier       | races/Silicoid/animationSoldier.txt
+SilicoidSpy           | races/Silicoid/animationSpy.txt
+SilicoidCombat        | races/Silicoid/animCombat.txt
+SilicoidDeath1        | races/Silicoid/animDeath1.txt
+SilicoidDeath2        | races/Silicoid/animDeath2.txt
+SilicoidDeath3        | races/Silicoid/animDeath3.txt
+SilicoidDeath4        | races/Silicoid/animDeath4.txt
+SilicoidGNN           | races/Silicoid/animationGNN.txt
+SilicoidGNNHost       | races/Silicoid/animationGNNHost.txt
+
+SilicoidTransportDesc | races/Silicoid/animationTransportDescending.txt
+SilicoidTransportOpen | races/Silicoid/animationTransportOpening.txt
+

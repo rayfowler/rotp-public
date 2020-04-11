@@ -1,0 +1,50 @@
+[tech]
+seq:    0
+name:   FUTURECONST_0_NAME
+detail: FUTURECONST_0_DETAIL
+
+[tech]
+seq:    1
+name:   FUTURECONST_1_NAME
+detail: FUTURECONST_1_DETAIL
+
+[tech]
+seq:    2
+name:   FUTURECONST_2_NAME
+detail: FUTURECONST_2_DETAIL
+
+[tech]
+seq:    3
+name:   FUTURECONST_3_NAME
+detail: FUTURECONST_3_DETAIL
+
+[tech]
+seq:    4
+name:   FUTURECONST_4_NAME
+detail: FUTURECONST_4_DETAIL
+
+[tech]
+seq:    5
+name:   FUTURECONST_5_NAME
+detail: FUTURECONST_5_DETAIL
+
+[tech]
+seq:    6
+name:   FUTURECONST_6_NAME
+detail: FUTURECONST_6_DETAIL
+
+[tech]
+seq:    7
+name:   FUTURECONST_7_NAME
+detail: FUTURECONST_7_DETAIL
+
+[tech]
+seq:    8
+name:   FUTURECONST_8_NAME
+detail: FUTURECONST_8_DETAIL
+
+[tech]
+seq:    9
+name:   FUTURECONST_9_NAME
+detail: FUTURECONST_9_DETAIL
+

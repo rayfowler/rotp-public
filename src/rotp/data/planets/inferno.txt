@@ -1,0 +1,41 @@
+// MOO1 Inferno Planet
+key: PLANET_INFERNO
+
+descBiological: INFERNO_DESC_BIOLOGICAL
+descSilicoid:   INFERNO_DESC_BIOLOGICAL
+terrainImage:   TERRAIN_INFERNO
+landscapeImage: LANDSCAPE_INFERNO
+panoramaImage:  PANORAMA_INFERNO
+atmoImage:      ATMO_INFERNO
+cloudImage:     CLOUDS_INFERNO
+
+hostility: 10
+minSize: 10
+maxSize: 40
+
+// leftX, bottomY & width of ships landing on planet
+ship0: 320, 640, 400
+ship1: 190, 525, 200
+ship2: 180, 475, 140
+ship3: 320, 450, 110
+
+// no water
+
+// land
+color:   -1.00, 235,195, 97
+color:    0.01, 235,195, 97
+color:    0.03, 235,195, 97
+color:    0.05, 222,161, 55
+color:    0.08, 222,161, 55
+color:    0.12, 199,134, 40
+color:    0.24, 199,134, 40
+color:    0.32, 188,118, 33
+color:    0.40, 188,118, 33
+color:    0.52, 166, 94, 18
+color:    0.64, 166, 94, 18
+color:    0.72, 137, 60, 18
+color:    0.88, 108, 46,  9
+color:    0.95,  93, 43,  6
+color:    0.98,  39, 28,  6
+color:    1.00,  39, 28,  6
+

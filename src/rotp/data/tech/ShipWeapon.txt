@@ -1,0 +1,138 @@
+[tech]
+seq:    0
+name:   SHIPWPN_0_NAME
+item2:  SHIPWPN_0_ITEM2
+detail: SHIPWPN_0_DETAIL
+
+[tech]
+seq:    1
+name:   SHIPWPN_1_NAME
+brief:  SHIPWPN_1_BRIEF
+detail: SHIPWPN_1_DETAIL
+
+[tech]
+seq:    2
+name:   SHIPWPN_2_NAME
+brief:  SHIPWPN_2_BRIEF
+detail: SHIPWPN_2_DETAIL
+
+[tech]
+seq:    3
+name:   SHIPWPN_3_NAME
+item2:  SHIPWPN_3_ITEM2
+detail: SHIPWPN_3_DETAIL
+
+[tech]
+seq:    4
+name:   SHIPWPN_4_NAME
+brief:  SHIPWPN_4_BRIEF
+detail: SHIPWPN_4_DETAIL
+
+[tech]
+seq:    5
+name:   SHIPWPN_5_NAME
+item2:  SHIPWPN_5_ITEM2
+detail: SHIPWPN_5_DETAIL
+
+[tech]
+seq:    6
+name:   SHIPWPN_6_NAME
+brief:  SHIPWPN_6_BRIEF
+detail: SHIPWPN_6_DETAIL
+
+[tech]
+seq:    7
+name:   SHIPWPN_7_NAME
+brief:  SHIPWPN_7_BRIEF
+detail: SHIPWPN_7_DETAIL
+
+[tech]
+seq:    8
+name:   SHIPWPN_8_NAME
+item2:  SHIPWPN_8_ITEM2
+detail: SHIPWPN_8_DETAIL
+
+[tech]
+seq:    9
+name:   SHIPWPN_9_NAME
+brief:  SHIPWPN_9_BRIEF
+detail: SHIPWPN_9_DETAIL
+
+[tech]
+seq:    10
+name:   SHIPWPN_10_NAME
+item2:  SHIPWPN_10_ITEM2
+detail: SHIPWPN_10_DETAIL
+
+[tech]
+seq:    11
+name:   SHIPWPN_11_NAME
+brief:  SHIPWPN_11_BRIEF
+detail: SHIPWPN_11_DETAIL
+
+[tech]
+seq:    12
+name:   SHIPWPN_12_NAME
+brief:  SHIPWPN_12_BRIEF
+detail: SHIPWPN_12_DETAIL
+
+[tech]
+seq:    13
+name:   SHIPWPN_13_NAME
+brief:  SHIPWPN_13_BRIEF
+detail: SHIPWPN_13_DETAIL
+
+[tech]
+seq:    14
+name:   SHIPWPN_14_NAME
+brief:  SHIPWPN_14_BRIEF
+detail: SHIPWPN_14_DETAIL
+
+[tech]
+seq:    15
+name:   SHIPWPN_15_NAME
+detail: SHIPWPN_15_DETAIL
+
+[tech]
+seq:    16
+name:   SHIPWPN_16_NAME
+detail: SHIPWPN_16_DETAIL
+
+[tech]
+seq:    17
+name:   SHIPWPN_17_NAME
+detail: SHIPWPN_17_DETAIL
+
+[tech]
+seq:    18
+name:   SHIPWPN_18_NAME
+brief:  SHIPWPN_18_BRIEF
+detail: SHIPWPN_18_DETAIL
+
+[tech]
+seq:    19
+name:   SHIPWPN_19_NAME
+detail: SHIPWPN_19_DETAIL
+
+[tech]
+seq:    20
+name:   SHIPWPN_20_NAME
+brief:  SHIPWPN_20_BRIEF
+detail: SHIPWPN_20_DETAIL
+
+[tech]
+seq:    21
+name:   SHIPWPN_21_NAME
+detail: SHIPWPN_21_DETAIL
+
+//[tech]
+//seq:    22
+//name:   SHIPWPN_22_NAME
+//detail: SHIPWPN_22_DETAIL
+
+//[tech]
+//seq:    23
+//name:   SHIPWPN_23_NAME
+//detail: SHIPWPN_23_DETAIL
+
+

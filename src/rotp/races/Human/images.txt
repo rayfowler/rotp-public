@@ -1,0 +1,137 @@
+
+HumFlagWar    | races/Human/banner_war.png
+HumFlagNorm   | races/Human/banner_norm.png
+HumFlagPact   | races/Human/banner_pact.png
+
+HumDlgWar     | races/Human/dialogue_war.png
+HumDlgNorm    | races/Human/dialogue_norm.png
+HumDlgPact    | races/Human/dialogue_pact.png
+
+HumLab        | races/Human/Laboratory.jpg
+HumLabEff01   | races/Human/Lab_Effect_01.png
+HumLabEff02   | races/Human/Lab_Effect_02.png
+HumLabEff03   | races/Human/Lab_Effect_03.png
+HumCouncil    | races/Human/Council.jpg
+
+HumFort01     | races/Human/Fortress_01.png
+HumFort02     | races/Human/Fortress_02.png
+HumShield     | races/Human/Fortress_shield.png
+
+HumLeader    | races/Human/CouncilLeader.png
+
+HumDip        | races/Human/Diplomat_Base.png
+HumDipEy02    | races/Human/Diplomat_Eye_02.png
+HumDipEy03    | races/Human/Diplomat_Eye_03.png
+HumDipMo02    | races/Human/Diplomat_Mouth_02.png
+HumDipMo03    | races/Human/Diplomat_Mouth_03.png
+
+HumSci        | races/Human/Scientist_Base.png
+HumSci01      | races/Human/Scientist_01.png
+HumSci02      | races/Human/Scientist_02.png
+HumSci03      | races/Human/Scientist_03.png
+HumSci04      | races/Human/Scientist_04.png
+HumSci05      | races/Human/Scientist_05.png
+HumSci06      | races/Human/Scientist_06.png
+HumSci07      | races/Human/Scientist_07.png
+HumSci08      | races/Human/Scientist_08.png
+HumSci09      | races/Human/Scientist_09.png
+HumSci10      | races/Human/Scientist_10.png
+HumSci11      | races/Human/Scientist_11.png
+HumSci12      | races/Human/Scientist_12.png
+HumSci13      | races/Human/Scientist_13.png
+HumSci14      | races/Human/Scientist_14.png
+
+HumSol        | races/Human/Soldier_Base.png
+HumSol02      | races/Human/Soldier_02.png
+HumSol03      | races/Human/Soldier_03.png
+HumSol04      | races/Human/Soldier_04.png
+HumSol05      | races/Human/Soldier_05.png
+HumSol06      | races/Human/Soldier_06.png
+HumSol07      | races/Human/Soldier_07.png
+HumSol08      | races/Human/Soldier_08.png
+HumSol09      | races/Human/Soldier_09.png
+HumSol10      | races/Human/Soldier_10.png
+HumSol11      | races/Human/Soldier_11.png
+HumSol12      | races/Human/Soldier_12.png
+HumSol13      | races/Human/Soldier_13.png
+HumSol14      | races/Human/Soldier_14.png
+HumSolEy02    | races/Human/Soldier_15.png
+HumSolEy03    | races/Human/Soldier_16.png
+
+HumSpy        | races/Human/Spy_Base.png
+HumSpyEy01    | races/Human/Spy_03.png
+HumSpyEy02    | races/Human/Spy_04.png
+
+HumTransport  | races/Human/Transport_00e.png
+HumTrans00    | races/Human/Transport_00e.png
+HumTrans01    | races/Human/Transport_01.png
+HumTrans02    | races/Human/Transport_02.png
+HumTrans03    | races/Human/Transport_03.png
+HumTrans04    | races/Human/Transport_04.png
+HumTrans05    | races/Human/Transport_05.png
+HumTrans06    | races/Human/Transport_06.png
+
+HumGNNB_01    | races/Human/GNN_Back_01.jpg
+HumGNNB_02    | races/Human/GNN_Back_02.jpg
+HumGNNB_03    | races/Human/GNN_Back_03.jpg
+HumGNNB_04    | races/Human/GNN_Back_04.jpg
+HumGNNB_05    | races/Human/GNN_Back_05.jpg
+HumGNNB_06    | races/Human/GNN_Back_06.jpg
+HumGNNB_07    | races/Human/GNN_Back_07.jpg
+HumGNNB_08    | races/Human/GNN_Back_08.jpg
+HumGNNB_09    | races/Human/GNN_Back_09.jpg
+HumGNNB_10    | races/Human/GNN_Back_10.jpg
+HumGNNB_11    | races/Human/GNN_Back_11.jpg
+HumGNNB_12    | races/Human/GNN_Back_12.jpg
+HumGNNB_13    | races/Human/GNN_Back_13.jpg
+HumGNNB_14    | races/Human/GNN_Back_14.jpg
+HumGNNB_15    | races/Human/GNN_Back_15.jpg
+HumGNNB_16    | races/Human/GNN_Back_16.jpg
+HumGNNB_17    | races/Human/GNN_Back_17.jpg
+HumGNNB_18    | races/Human/GNN_Back_18.jpg
+HumGNNB_19    | races/Human/GNN_Back_19.jpg
+HumGNNB_20    | races/Human/GNN_Back_20.jpg
+HumGNNB_21    | races/Human/GNN_Back_21.jpg
+HumGNNB_22    | races/Human/GNN_Back_22.jpg
+HumGNNB_23    | races/Human/GNN_Back_23.jpg
+
+HumGNNHA_0    | races/Human/GNN_HostA_00.png
+HumGNNHA_1    | races/Human/GNN_HostA_01.png
+HumGNNHA_2    | races/Human/GNN_HostA_02.png
+HumGNNHA_3    | races/Human/GNN_HostA_03.png
+HumGNNHA_4    | races/Human/GNN_HostA_04.png
+HumGNNHA_5    | races/Human/GNN_HostA_05.png
+HumGNNHA_6    | races/Human/GNN_HostA_06.png
+HumGNNHA_7    | races/Human/GNN_HostA_07.png
+HumGNNHA_8    | races/Human/GNN_HostA_08.png
+
+HumComb01      | races/Human/Combat_01.png
+HumComb02      | races/Human/Combat_02.png
+HumComb03      | races/Human/Combat_03.png
+HumDeath101    | races/Human/Death1-01.png
+HumDeath102    | races/Human/Death1-02.png
+HumDeath103    | races/Human/Death1-03.png
+HumDeath104    | races/Human/Death1-04.png
+HumDeath105    | races/Human/Death1-05.png
+HumDeath106    | races/Human/Death1-06.png
+HumDeath201    | races/Human/Death2-01.png
+HumDeath202    | races/Human/Death2-02.png
+HumDeath203    | races/Human/Death2-03.png
+HumDeath204    | races/Human/Death2-04.png
+HumDeath301    | races/Human/Death3-01.png
+HumDeath302    | races/Human/Death3-02.png
+HumDeath303    | races/Human/Death3-03.png
+HumDeath304    | races/Human/Death3-04.png
+HumDeath305    | races/Human/Death3-05.png
+HumDeath306    | races/Human/Death3-06.png
+HumDeath307    | races/Human/Death3-07.png
+HumDeath308    | races/Human/Death3-08.png
+HumDeath309    | races/Human/Death3-09.png
+HumDeath310    | races/Human/Death3-10.png
+HumDeath401    | races/Human/Death4-01.png
+HumDeath402    | races/Human/Death4-02.png
+HumDeath403    | races/Human/Death4-03.png
+HumDeath404    | races/Human/Death4-04.png
+HumDeath405    | races/Human/Death4-05.png
+HumDeath406    | races/Human/Death4-06.png
+HumDeath407    | races/Human/Death4-07.png

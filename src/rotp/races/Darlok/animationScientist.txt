@@ -1,0 +1,5 @@
+#
+# Darlok Scientist Animation
+
+Base,   _ALL_  , DarSci01:5:10+DarSci02:1+DarSci03:1+DarSci04:1+DarSci05:30:60+DarSci06:1+DarSci07:1+DarSci08:1+DarSci09:1+DarSci10:30:60+DarSci11:1+DarSci12:1+DarSci13:1+DarSci14:1+DarSci15:5+DarSci16:5+DarSci17:5+DarSci16:3+DarSci17:3+DarSci18:5+DarSci17:3+DarSci18:3+DarSci19:5+DarSci18:3+DarSci19:3+DarSci20:10:30+DarSci19:3+DarSci20:5:10+DarSci19:3+DarSci20:5:10+DarSci19:3+DarSci20:5:10+DarSci19:3+DarSci20:5:10+DarSci19:3+DarSci20:5:10+DarSci19:3+DarSci20:5:10+DarSci19:3+DarSci20:5:10+DarSci19:3+DarSci20:5:10+DarSci19:3+DarSci20:5:10+DarSci19:3+DarSci20:5:10+DarSci19:3+DarSci20:5:10+DarSci19:3+DarSci20:5:10+DarSci19:3+DarSci20:5:10+DarSci21:5+DarSci22:5+DarSci23:5+DarSci24:5+DarSci25:3
+

@@ -1,0 +1,5 @@
+#
+# Psilon Hostile Combat Frames
+
+# vaporized into nothingness
+Base, _ALL_ , PsiDeath401:1+PsiDeath402:1+PsiDeath403:1+PsiDeath404:1+PsiDeath405:1+PsiDeath406:1+PsiDeath407:1+null:99999

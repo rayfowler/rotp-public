@@ -1,0 +1,179 @@
+BulWin        | races/Bulrathi/WinSplash.jpg
+BulLoss       | races/Bulrathi/LossSplash.jpg
+
+BulFlagWar  | races/Bulrathi/banner_war.png
+BulFlagNorm | races/Bulrathi/banner_norm.png
+BulFlagPact | races/Bulrathi/banner_pact.png
+
+BulDlgWar   | races/Bulrathi/dialogue_war.png
+BulDlgNorm  | races/Bulrathi/dialogue_norm.png
+BulDlgPact  | races/Bulrathi/dialogue_pact.png
+
+BulLab      | races/Bulrathi/Bulrathi_Laboratory.jpg
+BulLab01    | races/Bulrathi/Bulrathi_Laboratory_holograph.png
+BulCouncil  | races/Bulrathi/Council_01.jpg
+
+BulLeader    | races/Bulrathi/CouncilLeader.png
+
+BulDip      | races/Bulrathi/Diplomat_Base.png
+BulDipEy02  | races/Bulrathi/Diplomat_Eye_02.png
+BulDipEy03  | races/Bulrathi/Diplomat_Eye_03.png
+BulDipMo02  | races/Bulrathi/Diplomat_Mouth_02.png
+BulDipMo03  | races/Bulrathi/Diplomat_Mouth_03.png
+BulDipMo04  | races/Bulrathi/Diplomat_Mouth_04.png
+BulDipFi02  | races/Bulrathi/Diplomat_Finger_02.png
+BulDipFi03  | races/Bulrathi/Diplomat_Finger_03.png
+
+BulSci      | races/Bulrathi/Scientist_Base.png
+BulSciEy02  | races/Bulrathi/Scientist_Eye_02.png
+BulSciEy03  | races/Bulrathi/Scientist_Eye_03.png
+BulSciEy04  | races/Bulrathi/Scientist_Eye_04.png
+BulSciMo02  | races/Bulrathi/Scientist_Mouth_02.png
+BulSciMo03  | races/Bulrathi/Scientist_Mouth_03.png
+
+BulSol         | races/Bulrathi/Soldier_Base.png
+BulSolEy02     | races/Bulrathi/Soldier_Eye_02.png
+BulSolMo02     | races/Bulrathi/Soldier_Mouth_02.png
+BulSolMo03     | races/Bulrathi/Soldier_Mouth_03.png
+
+BulSpy         | races/Bulrathi/Spy_Base.png
+BulSpyEy02     | races/Bulrathi/Spy_Eye_02.png
+BulSpyEy03     | races/Bulrathi/Spy_Eye_03.png
+BulSpyMo02     | races/Bulrathi/Spy_Mouth_02.png
+BulSpyMo03     | races/Bulrathi/Spy_Mouth_03.png
+BulSpyCr02     | races/Bulrathi/Spy_Critter_02.png
+BulSpyCr03     | races/Bulrathi/Spy_Critter_03.png
+BulSpyCr04     | races/Bulrathi/Spy_Critter_04.png
+BulSpyCr05     | races/Bulrathi/Spy_Critter_05.png
+
+BulFort01      | races/Bulrathi/Fortress_01.png
+BulFort02      | races/Bulrathi/Fortress_02.png
+BulFortShield  | races/Bulrathi/Fortress_shield.png
+
+BulTransport   | races/Bulrathi/Transport_Transit.png
+BulTrans01     | races/Bulrathi/Transport01.png
+BulTrans07     | races/Bulrathi/Transport07.png
+BulTrans11     | races/Bulrathi/Transport11.png
+BulTrans12     | races/Bulrathi/Transport12.png
+BulTrans13     | races/Bulrathi/Transport13.png
+BulTrans14     | races/Bulrathi/Transport14.png
+BulTrans15     | races/Bulrathi/Transport15.png
+
+BulGNNB_01    | races/Bulrathi/GNN_Back_01.jpg
+BulGNNB_02    | races/Bulrathi/GNN_Back_02.jpg
+BulGNNB_03    | races/Bulrathi/GNN_Back_03.jpg
+BulGNNB_04    | races/Bulrathi/GNN_Back_04.jpg
+BulGNNB_05    | races/Bulrathi/GNN_Back_05.jpg
+BulGNNB_06    | races/Bulrathi/GNN_Back_06.jpg
+BulGNNB_07    | races/Bulrathi/GNN_Back_07.jpg
+BulGNNB_08    | races/Bulrathi/GNN_Back_08.jpg
+BulGNNB_09    | races/Bulrathi/GNN_Back_09.jpg
+BulGNNB_10    | races/Bulrathi/GNN_Back_10.jpg
+BulGNNB_11    | races/Bulrathi/GNN_Back_11.jpg
+BulGNNB_12    | races/Bulrathi/GNN_Back_12.jpg
+BulGNNB_13    | races/Bulrathi/GNN_Back_13.jpg
+BulGNNB_14    | races/Bulrathi/GNN_Back_14.jpg
+BulGNNB_15    | races/Bulrathi/GNN_Back_15.jpg
+BulGNNB_16    | races/Bulrathi/GNN_Back_16.jpg
+BulGNNB_17    | races/Bulrathi/GNN_Back_17.jpg
+BulGNNB_18    | races/Bulrathi/GNN_Back_18.jpg
+BulGNNB_19    | races/Bulrathi/GNN_Back_19.jpg
+BulGNNB_20    | races/Bulrathi/GNN_Back_20.jpg
+BulGNNB_21    | races/Bulrathi/GNN_Back_21.jpg
+BulGNNB_22    | races/Bulrathi/GNN_Back_22.jpg
+BulGNNB_23    | races/Bulrathi/GNN_Back_23.jpg
+
+BulGNNHA_0    | races/Bulrathi/GNN_HostA_00.png
+BulGNNHA_1    | races/Bulrathi/GNN_HostA_01.png
+BulGNNHA_2    | races/Bulrathi/GNN_HostA_02.png
+BulGNNHA_3    | races/Bulrathi/GNN_HostA_03.png
+BulGNNHA_4    | races/Bulrathi/GNN_HostA_04.png
+BulGNNHA_5    | races/Bulrathi/GNN_HostA_05.png
+BulGNNHB_1    | races/Bulrathi/GNN_HostB_01.png
+BulGNNHB_2    | races/Bulrathi/GNN_HostB_02.png
+BulGNNHB_3    | races/Bulrathi/GNN_HostB_03.png
+BulGNNHB_4    | races/Bulrathi/GNN_HostB_04.png
+BulGNNHB_5    | races/Bulrathi/GNN_HostB_05.png
+BulGNNHB_6    | races/Bulrathi/GNN_HostB_06.png
+BulGNNHB_7    | races/Bulrathi/GNN_HostB_07.png
+BulGNNHB_8    | races/Bulrathi/GNN_HostB_08.png
+BulGNNHB_9    | races/Bulrathi/GNN_HostB_09.png
+
+
+BulComb01      | races/Bulrathi/Combat_01.png
+BulComb02      | races/Bulrathi/Combat_02.png
+BulComb03      | races/Bulrathi/Combat_03.png
+BulComb04      | races/Bulrathi/Combat_04.png
+
+BulHComb01     | races/Bulrathi/HCombat_01.png
+BulHComb02     | races/Bulrathi/HCombat_02.png
+BulHComb03     | races/Bulrathi/HCombat_03.png
+BulHComb04     | races/Bulrathi/HCombat_04.png
+
+BulDeath101    | races/Bulrathi/Death1-01.png
+BulDeath102    | races/Bulrathi/Death1-02.png
+BulDeath103    | races/Bulrathi/Death1-03.png
+BulDeath104    | races/Bulrathi/Death1-04.png
+BulDeath105    | races/Bulrathi/Death1-05.png
+BulDeath106    | races/Bulrathi/Death1-06.png
+BulDeath107    | races/Bulrathi/Death1-07.png
+BulDeath108    | races/Bulrathi/Death1-08.png
+BulDeath109    | races/Bulrathi/Death1-09.png
+BulDeath201    | races/Bulrathi/Death2-01.png
+BulDeath202    | races/Bulrathi/Death2-02.png
+BulDeath203    | races/Bulrathi/Death2-03.png
+BulDeath204    | races/Bulrathi/Death2-04.png
+BulDeath301    | races/Bulrathi/Death3-01.png
+BulDeath302    | races/Bulrathi/Death3-02.png
+BulDeath303    | races/Bulrathi/Death3-03.png
+BulDeath304    | races/Bulrathi/Death3-04.png
+BulDeath305    | races/Bulrathi/Death3-05.png
+BulDeath306    | races/Bulrathi/Death3-06.png
+BulDeath307    | races/Bulrathi/Death3-07.png
+BulDeath308    | races/Bulrathi/Death3-08.png
+BulDeath309    | races/Bulrathi/Death3-09.png
+BulDeath310    | races/Bulrathi/Death3-10.png
+BulDeath311    | races/Bulrathi/Death3-11.png
+BulDeath401    | races/Bulrathi/Death4-01.png
+BulDeath402    | races/Bulrathi/Death4-02.png
+BulDeath403    | races/Bulrathi/Death4-03.png
+BulDeath404    | races/Bulrathi/Death4-04.png
+BulDeath405    | races/Bulrathi/Death4-05.png
+BulDeath406    | races/Bulrathi/Death4-06.png
+BulDeath407    | races/Bulrathi/Death4-07.png
+
+BulDeath1H01   | races/Bulrathi/Death1H-01.png
+BulDeath1H02   | races/Bulrathi/Death1H-02.png
+BulDeath1H03   | races/Bulrathi/Death1H-03.png
+BulDeath1H04   | races/Bulrathi/Death1H-04.png
+BulDeath1H05   | races/Bulrathi/Death1H-05.png
+BulDeath1H06   | races/Bulrathi/Death1H-06.png
+BulDeath1H07   | races/Bulrathi/Death1H-07.png
+BulDeath1H08   | races/Bulrathi/Death1H-08.png
+BulDeath1H09   | races/Bulrathi/Death1H-09.png
+BulDeath2H01   | races/Bulrathi/Death2H-01.png
+BulDeath2H02   | races/Bulrathi/Death2H-02.png
+BulDeath2H03   | races/Bulrathi/Death2H-03.png
+BulDeath2H04   | races/Bulrathi/Death2H-04.png
+BulDeath3H01   | races/Bulrathi/Death3H-01.png
+BulDeath3H02   | races/Bulrathi/Death3H-02.png
+BulDeath3H03   | races/Bulrathi/Death3H-03.png
+BulDeath3H04   | races/Bulrathi/Death3H-04.png
+BulDeath3H05   | races/Bulrathi/Death3H-05.png
+BulDeath3H06   | races/Bulrathi/Death3H-06.png
+BulDeath3H07   | races/Bulrathi/Death3H-07.png
+BulDeath3H08   | races/Bulrathi/Death3H-08.png
+BulDeath3H09   | races/Bulrathi/Death3H-09.png
+BulDeath3H10   | races/Bulrathi/Death3H-10.png
+BulDeath3H11   | races/Bulrathi/Death3H-11.png
+BulDeath4H01   | races/Bulrathi/Death4H-01.png
+BulDeath4H02   | races/Bulrathi/Death4H-02.png
+BulDeath4H03   | races/Bulrathi/Death4H-03.png
+BulDeath4H04   | races/Bulrathi/Death4H-04.png
+BulDeath4H05   | races/Bulrathi/Death4H-05.png
+BulDeath4H06   | races/Bulrathi/Death4H-06.png
+BulDeath4H07   | races/Bulrathi/Death4H-07.png
+
+
+
+

@@ -1,0 +1,107 @@
+This is the License file for the various intellectual property assets within this game. 
+
+These licenses are all legally enforceable, so please understand them before modifying for distributing the game. 
+
+
+===========
+SOURCE CODE
+===========
+All *.java files in this game contain a copyright notice. There are THREE different types:
+
+All java files created by Ray Fowler:
+ * Licensed under the GNU General Public License, Version 3 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     https://www.gnu.org/licenses/gpl-3.0.html
+ *
+
+What this essentially means (read the license for full info):
+ 1. You are free to edit this source code and create a new game from it, with the following requirements:
+    - a. You must make all of your source code available with the game (just like this game)
+    - b. You cannot protect your source code with a license more restrictive than this one.
+ 
+
+The /src/rotp/model/planet/PlanetHeightMap.java file:
+ * This file is a Java-rewrite of the "Planet Generator" code (originally in C)
+ * available from the following site:
+ * 
+ *     http://hjemmesider.diku.dk/~torbenm/Planet
+ * 
+ * That page includes the following statement: "Both the program itself and 
+ * maps created by the program are free for use, modification and reproduction,
+ * both privately and for commercial purposes, as long as this does not limit
+ * what other people may do with the program and the images they produce with
+ * the program"
+ *
+
+
+All Java files in the src/rotp/apachemath folder:
+ * Licensed to the Apache Software Foundation (ASF) under one or more
+ * contributor license agreements.  See the NOTICE file distributed with
+ * this work for additional information regarding copyright ownership.
+ * The ASF licenses this file to You under the Apache License, Version 2.0
+ * (the "License"); you may not use this file except in compliance with
+ * the License.  You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+
+=======
+ARTWORK
+=======
+All image files in this game are copyright by Peter Penev. They are:
+
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+
+What this essentially means (read the license for full info): 
+ 1. you can distribute a game with these assets, but you cannot sell the game. 
+ 2. These assets cannot be altered. 
+ 3. Credits to Petar Penev must be preserved.
+
+
+
+===========
+SOUND/MUSIC
+===========
+All sound files in this game are copyright by Remi Agullo. They are:
+
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+
+What this essentially means (read the license for full info): 
+ 1. you can distribute a game with these assets, but you cannot sell the game. 
+ 2. These assets cannot be altered. 
+ 3. Credits to Remi Agullo must be preserved.
+
+
+
+=======
+WRITING
+=======
+Various *.txt files in this game that contain a license notice are copyright by 
+Jeff Colucci. They are:
+
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+
+What this essentially means: 
+ 1. you can distribute a game with these assets, but you cannot sell the game. 
+ 2. These assets cannot be altered. 
+ 3. Credits to Jeff Colucci must be preserved.

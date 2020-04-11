@@ -1,0 +1,36 @@
+// MOO1 Dead Planet
+key: PLANET_DEAD
+
+descBiological: DEAD_DESC_BIOLOGICAL
+descSilicoid:   DEAD_DESC_BIOLOGICAL
+terrainImage:   TERRAIN_DEAD
+landscapeImage: LANDSCAPE_DEAD
+panoramaImage:  PANORAMA_DEAD
+atmoImage:      
+cloudImage:     
+
+hostility: 9
+minSize: 20
+maxSize: 50
+
+// leftX, bottomY & width of ships landing on planet
+ship0: 320, 640, 400
+ship1: 110, 475, 200
+ship2: 100, 425, 140
+ship3: 240, 400, 110
+
+// no water
+
+// land
+color:   -1.00,  59, 41, 39
+color:    0.01,  59, 41, 39
+color:    0.08,  68, 47, 44
+color:    0.16,  81, 57, 53
+color:    0.24,  97, 66, 61
+color:    0.32, 103, 70, 61
+color:    0.40, 130, 93, 87
+color:    0.44, 133, 77, 60  
+color:    0.60, 147, 83, 58
+color:    0.75, 170, 101, 75
+color:    0.95, 201, 124, 96
+color:    1.00, 241, 148, 114

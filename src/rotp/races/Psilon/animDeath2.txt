@@ -1,0 +1,5 @@
+#
+# Psilon Hostile Combat Frames
+
+# Disrupted into nothingness
+Base, _ALL_ , PsiDeath201:1+PsiDeath202:1+PsiDeath203:1+PsiDeath204:1+PsiDeath205:1+null:99999

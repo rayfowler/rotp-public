@@ -1,0 +1,5 @@
+#
+# Meklar Hostile Combat Frames
+
+# vaporized into nothingness
+Base, _ALL_ , MekDeath401:1+MekDeath402:1+MekDeath403:1+MekDeath404:1+MekDeath405:1+MekDeath406:1+MekDeath407:1+MekDeath408:1+null:99999

@@ -1,0 +1,21 @@
+// all possible names
+name: Meklar, Mechanar, Cybernar
+
+desc1: Ksenofobiczni technokraci
+desc2: Ulepszona kontrola fabryk
+desc3: Społeczeństwo Korporacji Meklarów dąży do perfekcji i nieśmiertelności poprzez rozwój technologii.
+
+// possible home system names
+home: Meklon, Collosson, Calculon, Bender, Optimus
+
+title:     Imperator
+fulltitle: Najwyższy Arbiter
+
+// possible leader names
+leader: CB-715, INT-986, MS-35, QX-537, TVC-15, TX-1138
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Bajt, Tranzystor, Przełącznik, Komponent, Obwód, Cyfra, Logika
+ship2: Procesor, Kalkulator, Komputer, Algorytm, Sieć, Liczydło
+ship3: Dynamo, Bateria, Ajax, Tornado, Ogniwo, Maruder, Drachma
+ship4: Nemezis, Niszczyciel, Likwidator, Najeźdźca, Hiperion, Penetrator, Dręczyciel

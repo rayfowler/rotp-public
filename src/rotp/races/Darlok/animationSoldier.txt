@@ -1,0 +1,4 @@
+#
+# Darlok Soldier Animation
+
+Base,   _ALL_  , DarSol01

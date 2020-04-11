@@ -1,0 +1,42 @@
+// MOO1 Tundra Planet
+key: PLANET_TUNDRA
+
+descBiological: TUNDRA_DESC_BIOLOGICAL
+descSilicoid:   TUNDRA_DESC_BIOLOGICAL
+terrainImage:   TERRAIN_TUNDRA
+landscapeImage: LANDSCAPE_TUNDRA
+panoramaImage:  PANORAMA_TUNDRA
+atmoImage:      ATMO_TERRAN_MED,ATMO_TERRAN_FULL
+cloudImage:     CLOUDS_THIN,CLOUDS_MED
+
+hostility: 8
+minSize: 20
+maxSize: 50
+
+// leftX, bottomY & width of ships landing on planet
+ship0: 320, 640, 400
+ship1: 130, 450, 200
+ship2: 120, 400, 140
+ship3: 260, 375, 110
+
+// water
+color: -1.00,   27, 96,197
+color: -0.98,   27, 96,197
+color: -0.95,   31,100,201
+color: -0.85,   31,100,201
+color: -0.30,   39,109,205
+color: -0.00,   39,109,205
+
+
+// land
+color:    0.01,  57,122,206
+color:    0.06,  57,122,206
+color:    0.20, 109,129,156
+color:    0.25, 109,129,156
+color:    0.35, 116,162,195
+color:    0.40, 116,162,195
+color:    0.55, 143,179,201
+color:    0.65, 143,179,201
+color:    0.70, 161,174,183
+color:    1.00, 172,201,240
+

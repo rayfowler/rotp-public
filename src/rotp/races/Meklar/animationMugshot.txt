@@ -1,0 +1,8 @@
+#
+# Meklar Diplomat Animation
+# #1 : Blinking mouth
+
+Base,   _ALL_        , MekLab
+Base,   _ALL_        , MekDip
+
+Mouth, 280@190 , NULL:1:5+MekDipMo02:1+MekDipMo03:1+MekDipMo04:1+MekDipMo05:1+MekDipMo06:1+MekDipMo07:1+MekDipMo08:1+MekDipMo09:1+MekDipMo10:1+MekDipMo11:3:10

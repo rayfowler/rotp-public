@@ -1,0 +1,14 @@
+#
+# Mrrshan GNN Host Frames
+
+#
+#  host talking
+Host, _ALL_, MrrGNNH_1:5:10+MrrGNNH_2:2+MrrGNNH_3:2+MrrGNNH_2:2+MrrGNNH_3
+
+#
+#
+Arms, _ALL_, MrrGNNR_01:20:50+MrrGNNR_02+MrrGNNR_03+MrrGNNR_04+MrrGNNR_05+MrrGNNR_06+MrrGNNR_07+MrrGNNR_08+MrrGNNR_09+MrrGNNR_10:20:50+MrrGNNR_09+MrrGNNR_08+MrrGNNR_07+MrrGNNR_06+MrrGNNR_05+MrrGNNR_04+MrrGNNR_03+MrrGNNR_02
+
+#
+# aura
+Aura,  _ALL_, MrrGNNA_1+MrrGNNA_2+MrrGNNA_3

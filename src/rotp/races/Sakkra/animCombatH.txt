@@ -1,0 +1,5 @@
+#
+# Sakkra Hostile Combat Frames
+
+# leaps and shoots on frame 4 (of 9), then descends
+Base, _ALL_ , SakHComb06:1+SakHComb05:1+SakHComb03:2+SakHComb02:1+SakHComb00:1+SakHComb04:1+SakHComb05:1+SakHComb06:1

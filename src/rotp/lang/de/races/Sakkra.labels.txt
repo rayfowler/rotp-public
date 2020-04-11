@@ -1,0 +1,18 @@
+// race-specific variables (must start with _)
+_empire                    | Sakkran-Konklave, Reptaran-Konklave, Sauran-Konklave
+_race                      | Sakkra, Reptara, Saura
+
+// Advisor text
+MAIN_ADVISOR_TITLE         | %1 Berater
+MAIN_ADVISOR_BUTTON_OK     | Entlassen
+MAIN_ADVISOR_SCOUT         | Endlich können wir anfangen die Umwelt anderer Planeten zu perfektionieren. Prime Magister, sende unsere Scouts und Kolonieschiffe so schnell wie möglich zu den nächsten Sternen.
+MAIN_ADVISOR_TRANSPORT     | Wir haben unsere erst Kolonie auf einem Planeten gegründet. Sobald du einen Transport schickst, können wir unsere Zahl dort vergrößernund die Mysterien von %1 schneller lösen! 
+MAIN_ADVISOR_DIPLOMACY     | Ein anderes raumfahrendes Volk hat mit der Konklave Kontakt aufgenommen. Lasst uns mit Ihnen reden und schauen, wie gut sie mit Ihren Welten umgehen. 
+MAIN_ADVISOR_SHIP_ENGINE   | Wir haben einen neuen Antrieb erschaffen, der effizienter ist als der alte. Lasst uns diesen so schnell wie möglich in unsere Schiffe einbauen!
+MAIN_ADVISOR_RALLY_POINTS  | Unsere Nachbarn scheinen unseren Weg... nicht zu bevorzugen.Wir können Routenpunkte setzen um unsere Schiffe an einem Ort zu bündeln, um Schaden von unseren schönen neuen Welten zu verhindern. 
+MAIN_ADVISOR_MISSILE_BASES | Es schmerzt mich, dass wir unsere Welten in einer solchen Weise verschandeln müssen, aber wir können den Raum für Raketenbasen nutzen, um sie vor noch unansehnlicheren Schäden zu schützen.
+MAIN_ADVISOR_SHIP_WEAPON   | Es gibt eine Entdeckung in Bezug auf stärkere Möglichkeiten, um feindliche Schiffe zu beschädigen. Ich schlage vor, Prime Magister, dass wir diese Technologie auf alle neuen Schiffe anwenden, die wir produzieren wollen.
+MAIN_ADVISOR_COUNCIL       | Es gibt ein Treffen namens "Galaktischer Rat", den alle fortgeschrittenen Zivilisationen wahrscheinlich besuchen werden. Das könnte eine großartige Gelegenheit für uns sein zu sehen, welche anderen Reiche sich gegen die ... ... Expansion des Konklave wenden würden.
+
+
+

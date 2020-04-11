@@ -1,0 +1,11 @@
+[tech]
+seq:    0
+name:   SHIPNULLIFIER_0_NAME
+brief:  SHIPNULLIFIER_0_BRIEF
+detail: SHIPNULLIFIER_0_DETAIL
+
+[tech]
+seq:    1
+name:   SHIPNULLIFIER_1_NAME
+brief:  SHIPNULLIFIER_1_BRIEF
+detail: SHIPNULLIFIER_1_DETAIL

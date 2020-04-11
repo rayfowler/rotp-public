@@ -1,0 +1,9 @@
+#
+# Silicoid Scientist Animation
+# #1 - Eye
+# #2 - Hand
+Base,  _ALL_     , SilSci
+
+Eye,    290@110  , NULL:2:6+SilSciEy02:2:6+SilSciEy03:2:6+SilSciEy04:2:6+SilSciEy03:2:6+SilSciEy02:2:6
+
+Cube,   370@378  , SilSciCu01:1+SilSciCu02:1+SilSciCu03:1+SilSciCu04:1+SilSciCu05:1+SilSciCu06:1+SilSciCu07:1+SilSciCu06:1+SilSciCu05:1+SilSciCu04:1+SilSciCu03:1+SilSciCu02:1

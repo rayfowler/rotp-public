@@ -1,0 +1,1127 @@
+// This is the label text file for Java MOO
+// comment lines should start with '/'  they are ignored
+//  
+// the format for each line is   key | label
+//    where 'key' is the code used by the game to retrieve the label
+//    You cannot create new keys! The game will not use them
+//    You can only use keys that the game is looking for.
+//
+
+// Star descriptions
+RED_STAR_DESCRIPTION              | Οι Κόκκινοι ΄Ηλιοι είναι γηραιά και θαμπά άστρα που συνήθως έχουν φτωχούς πλανήτες.
+YELLOW_STAR_DESCRIPTION           | Οι Κίτρινοι Ήλιοι έχουν την ισχυρότερη πιθανότητα ανακάλυψης πλανητών γήινων και υπογήινων.
+ORANGE_STAR_DESCRIPTION           | Οι Πορτοκαλί Ήλιοι είναι μετρίως λαμπερά άστρα και έχουν ευρύ πλήθος πλανητικών τύπων.
+BLUE_STAR_DESCRIPTION             | Οι Κυανοί ΄Ηλιοι είναι σχετικά νεαρά άστρα με πλούσιους σε μέταλλα αλλά χωρίς ζωή πλανήτες.
+WHITE_STAR_DESCRIPTION            | Οι Λευκοί 'Ηλιοι καίγονται σε πολύ υψηλές θερμοκρασίες και γενικά έχουν εχθρικούς προς τη ζωή πλανήτες.
+PURPLE_STAR_DESCRIPTION           | Τα Άστρα Νετρονίων απαντώνται σπάνια και έχουν την υψηλότερη πιθανότητα ανεύρεσης πλούσιων πλανητών.
+
+// Planet Types
+PLANET_ARID                       | Άνυδρος
+PLANET_BARREN                     | Άγονος
+PLANET_DEAD                       | Νεκρός
+PLANET_DESERT                     | Ερημώδης
+PLANET_INFERNO                    | Κολαστήριο
+PLANET_JUNGLE                     | Ζούγκλα
+PLANET_MINIMAL                    | Μηδαμινός
+PLANET_NONE                       | Μη Διαθέσιμο
+PLANET_OCEAN                      | Ωκεάνιος
+PLANET_RADIATED                   | Ραδιενεργός
+PLANET_STEPPE                     | Στέπα
+PLANET_TERRAN                     | Γήινος
+PLANET_TOXIC                      | Τοξικός
+PLANET_TUNDRA                     | Τούντρα
+
+ARID_DESC_BIOLOGICAL              | Οι Άνυδροι Πλανήτες είναι ξηροί, χερσαίοι κόσμοι με περιορισμένη βλάστηση και όχι περισσότερο από το 40% της επιφάνειας τους να αποτελείται απο νερό.
+BARREN_DESC_BIOLOGICAL            | Οι Άγονοι Πλανήτες είναι ξηροί, αμμώδεις κόσμοι με λεπτές ατμόσφαιρες και χωρίς νερό στην επιφάνεια τους.
+DEAD_DESC_BIOLOGICAL              | Οι Νεκροί Πλανήτες είναι ψυχροί, από καιρό πεθαμένοι χερσαίοι κόσμοι με λεπτές ατμόσφαιρες και χωρίς νερό στην επιφάνεια τους. 
+DESERT_DESC_BIOLOGICAL            | Οι Ερημώδεις Πλανήτες είναι ξηροί, χερσαίοι κόσμοι με πολύ αραιή βλάστηση και όχι περισσότερο από το 20% της επιφάνειας τους να αποτελείται απο νερό.
+INFERNO_DESC_BIOLOGICAL           | Οι Πλανήτες Κολαστήρια είναι εξαιρετικά καυτοί κόσμοι με πυκνή ατμόσφαιρα και βίαιες καταιγίδες.
+JUNGLE_DESC_BIOLOGICAL            | Οι Πλανήτες Ζούγκλες είναι θαλεροί, τροπικοί κόσμοι που καλύπτονται από πυκνά δάση, ζούγκλες και βάλτους.
+MINIMAL_DESC_BIOLOGICAL           | Οι Μηδαμινοί Πλανήτες είναι ξεραμένοι, ερημωμένοι χερσαίοι κόσμοι στο όριο της κατοίκησης.
+NONE_DESC_BIOLOGICAL              | Δεν υπάρχουν κατοικήσιμοι κόσμοι.
+OCEAN_DESC_BIOLOGICAL             | Οι Ωκεάνιοι Πλανήτες είναι σχεδόν τελείως σκεπασμένοι από νερό, με αποτέλεσμα συχνά να καθίσταται δύσκολη η πρόσβαση σε πλουτοπαραγωγικές πηγές.
+RADIATED_DESC_BIOLOGICAL          | Οι Ραδιενεργοί Πλανήτες είναι πνιγηροί, άψυχοι κόσμοι λουσμένοι στην ακτινοβολία κοντινών άστρων.
+STEPPE_DESC_BIOLOGICAL            | Οι Πλανήτες Στέπα είναι ψυχροί, χερσαίοι κόσμοι που μαστίζονται από σκληρούς χειμώνες και αρκτικό κλίμα.
+TERRAN_DESC_BIOLOGICAL            | Οι Γήινοι Πλανήτες είναι επίγειοι παράδεισοι, με μεγάλες εύκρατες ζώνες που υποστηρίζουν ευρεία περιβαλλοντική ποικιλία.
+TOXIC_DESC_BIOLOGICAL             | Οι Τοξικοί Πλανήτες είναι δηλητηριώδεις κόσμοι με ψυχρά, βασισμένα στο μεθάνιο οικοσυστήματα.
+TUNDRA_DESC_BIOLOGICAL            | Οι Πλανήτες Τούντρα είναι αδρανείς χερσαίοι κόσμοι, κολλημένοι στο πολικό κλίμα.// Planet Specials
+PLANET_ARTIFACTS                  | Τεχνουργήματα
+PLANET_ULTRA_POOR                 | Πάμπτωχος
+PLANET_POOR                       | Πτωχός
+PLANET_RICH                       | Πλούσιος
+PLANET_ULTRA_RICH                 | Πάμπλουτος
+PLANET_HOSTILE                    | Εχθρικός
+PLANET_FERTILE                    | Γόνιμος
+PLANET_GAIA                       | Γαία
+
+// Planet Descriptors for Race
+PLANET_HOMEWORLD                  | Πλανήτης Έδρα - %1 
+PLANET_WORLD                      | Κόσμος - %1
+PLANET_COLONY                     | Αποικία - %1
+
+// Government names
+GOVT_EMPIRE                       | Αυτοκρατορία - %1 
+
+// Personality types (adjective)
+LEADER_ERRATIC                    | Αλλοπρόσαλλος
+LEADER_DIPLOMAT                   | Διπλωματικός
+LEADER_PACIFIST                   | Ειρηνιστής
+LEADER_HONORABLE                  | Αξιότιμος
+LEADER_RUTHLESS                   | Αδίστακτος
+LEADER_AGGRESSIVE                 | Επιθετικός
+LEADER_XENOPHOBIC                 | Ξενόφοβος
+
+// Leader Objective Types (noun)
+LEADER_ECONOMIST                  | Οικονομολόγος
+LEADER_MILITARIST                 | Στρατοκράτης
+LEADER_ECOLOGIST                  | Οικολόγος
+LEADER_INDUSTRIALIST              | Βιομήχανος
+LEADER_EXPANSIONIST               | Επεκτατικός
+LEADER_TECHNOLOGIST               | Τεχνολόγος
+// Leader Personality & Objective displayed together
+LEADER_PERSONALITY_FORMAT         | %1 %2
+
+// Technology names and descriptions 
+TECH_COMPUTERS                    | Υπολογιστές
+TECH_CONSTRUCTION                 | Κατασκευές
+TECH_FORCE_FIELDS                 | Ενεργειακά Πεδία
+TECH_PLANETOLOGY                  | Πλανητολογία
+TECH_PROPULSION                   | Πρόωση
+TECH_WEAPONS                      | Οπλισμός
+
+// Random Events
+EVENT_DONATION                    | A wealthy merchant willing to support the cause makes a substantial donation of [amt] BC to the [target_race] Planetary Reserve.
+
+// Diplomatic Incident titles & descriptions
+INC_ATTACKED_ALLY_TITLE           | Επίθεση σε Σύμμαχο: %1
+INC_ATTACKED_ALLY_DESC            | [year]: Οι [attacker_empire] επιτέθηκαν στους [defender_empire], που είναι σύμμαχοι των [my_race].
+INC_ATTACKED_ENEMY_TITLE          | Επίθεση σε Εχθρό: %1
+INC_ATTACKED_ENEMY_DESC           | [year]: Οι [attacker_empire] επιτέθηκαν στους [defender_empire], που είναι εχθροί των [my_race].
+INC_USED_BIOWEAPONS_TITLE         | Χρησιμοποιήθηκαν Βιολογικά Όπλα
+INC_USED_BIOWEAPONS_DESC          | [year]: Οι [attacker_empire] χρησιμοποίησαν βιολογικά όπλα εναντίων των [defender_empire] επί του [system].
+INC_NO_RELATIONS_TITLE            | Ανύπαρκτες Διπλωματικές Σχέσεις
+INC_NO_RELATIONS_DESC             | [year]: Δεν υπάρχουν επί του παρόντος διπλωματικές σχέσεις μεταξύ των [your_race] και [my_race].
+INC_CLOSED_EMBASSY_TITLE          | Ανάκληση Πρεσβευτού
+INC_CLOSED_EMBASSY_DESC           | [year]: Οι [your_empire] σταμάτησαν τις διπλωματικές τους σχέσεις με τους [my_empire].
+INC_BROKE_ALLIANCE_TITLE          | Λήξη Συμμαχίας
+INC_BROKE_ALLIANCE_DESC           | [year]: Οι [your_empire] διέκοψαν τη Συμμαχία που είχαν με τους [my_empire].
+INC_BROKE_PACT_TITLE              | Λήξη Συμφώνου μη επιθετικότητας
+INC_BROKE_PACT_DESC               | [year]: Οι [your_empire] έληξαν το σύμωνο μη επιθετικότητας που είχαν με τους [my_empire].
+INC_BROKE_TRADE_TITLE             | Λήξη Εμπορικής Συνθήκης
+INC_BROKE_TRADE_DESC              | [year]: H [your_empire] έσπασε την Εμπορική Συνθήκη που είχε με την [my_empire].
+INC_ATTACKED_COLONY_TITLE         | Επίθεση σε Αποικία: %1
+INC_ATTACKED_COLONY_DESC          | [year]: Στόλος των [attacker_race] επιτέθηκε σττην αποικία των [defender_race] επί του [system]. [amt] εκατομμύρια πολίτες απεβίωσαν.
+INC_CAPTURED_COLONY_TITLE         | Κατακτημένη Aποικία: %1
+INC_CAPTURED_COLONY_DESC          | [year]: Στρατεύματα των [attacker_race] εισέβαλαν και κατέκτησαν την αποικία των [defender_race] επί του [system]. [amt] εκατομμύρια πολίτες απεβίωσαν.
+INC_DESTROYED_COLONY_TITLE        | Κατεστραμμένη Αποικία: %1
+INC_DESTROYED_COLONY_DESC         | [year]: Στόλος των [attacker_race] κατέστρεψε εντελώς την αποικία των [defender_race] επί του [system]. [amt] εκατομμύρια πολίτες απεβίωσαν.
+INC_INVADED_COLONY_TITLE          | Εισβολή σε Αποικία: %1
+INC_INVADED_COLONY_DESC           | [year]: Στρατεύματα των [attacker_race] εισέβαλλαν, αλλά απέτυχαν να κατακτήσουν την αποικία των [defender_race] επί του [system]. [amt] εκατομμύρια πολίτες απεβίωσαν.
+INC_COUNCIL_VOTE_TITLE            | Ψήφος Συμβουλίου
+INC_COUNCIL_VOTE_FOR_DESC         | [year]: Οι [voter_race] ψήφισαν υπέρ [candidate_name], ηγέτη των [candidate_race].
+INC_COUNCIL_VOTE_AGAINST_DESC     | [year]: Οι [voter_race] ψήφισαν εναντίον [candidate_name], ηγέτη των [candidate_race].
+INC_COUNCIL_ABSTAIN_DESC          | [year]: Οι [voter_race] απείχαν των Εκλογών του Γαλαξιακού Συμβουλίου, αρνούμενοι να ψηφίσουν υπέρ [candidate_name], ηγέτη των [candidate_race].
+INC_DECLARED_WAR_TITLE            | Κήρυξη Πολέμου
+INC_DECLARED_WAR_DESC             | [year]: Οι [aggressor_empire] κύρηξαν πόλεμο ενάντια στους [victim_empire].
+INC_ERRATIC_WAR_TITLE             | Αλλοπρόσαλλη Συμπεριφορά
+INC_ERRATIC_WAR_DESC              | [year]: Οι [aggressor_empire] αναστατώθηκαν και κύρηξαν πόλεμο ενάντια στους [victim_empire], και κανείς δεν είναι απόλυτα σίγουρος για το λόγο.
+INC_DEMANDED_TRIBUTE_TITLE        | Απαίτηση Εισφοράς
+INC_ENCROACHING_TITLE             | Καταπάτηση
+INC_ENCROACHING_DESC              | [year]: Οι [your_race] αποίκησαν το σύστημα [system], καταπατώντας τα εδαφικά όρια των [my_race].
+INC_TECH_STOLEN_TITLE             | Κλοπή Τεχνολογίας
+INC_TECH_STOLEN_DESC              | [year]: Κατάσκοποι της [spy_race] έκλεψαν τα μυστικά [tech] από τους [victim_race].
+INC_TECH_FRAMED_DESC              | [year]: Άγνωστοι κατάσκοποι έκλεψαν τα μυστικά [tech] από τους [victim_race]. (σε ενοχοποίησαν)
+INC_TECH_EXCHANGE_TITLE           | Ανταλλαγή Τεχνολογίας
+INC_TECH_EXCHANGE_DESC            | [year]: Η [my_race] δίδαξε τα μυστικά: [techGiven] στην [your_race] με αντάλλαγμα των μυστικών: [techReceived].
+INC_EXPANSION_TITLE               | Επέκταση
+INC_EXPANSION_DESC                | [year]: Ελέγχοντας [num] συστήματα, οι [your_empire] έχουν γιγαντωθεί.
+INC_GENOCIDE_TITLE                | Γενοκτονία
+INC_GENOCIDE_DESC                 | [year]: Οι [attacker_empire] κατέστρεψαν τελείως τη φυλή των [victim_race].
+INC_FINAL_WAR_TITLE               | Τελικός Πόλεμος!
+INC_FINAL_WAR_DESC                | [year]: Οι [rebel_empire] επαναστάτησαν εναντίον του ψηφίσματος του Γαλαξιακού Συμβουλίου, με αποτέλεσμα να καλέσουν σε ολοκληρωτική τους εξολόθρευση απο τις εναπομείνασες συμμαχικές δυνάμεις του Γαλαξία.
+INC_MILITARY_BUILDUP_TITLE        | Συγκέντρωση Στόλου
+INC_MILITARY_BUILDUP_DESC         | [year]: Οι [your_empire] συγκεντρώνουν έναν μάχιμο στόλο επί του [system].
+INC_OATHBREAKER_TITLE             | Καταπάτηση Όρκου
+INC_DESTROYED_BASES_TITLE         | Κατεστραμμένες Στρατιωτικές Βάσεις
+INC_DESTROYED_BASES_DESC          | [year]: Σαμποτέρ των [spy_empire] κατέστρεψαν [amt] αμυντικές πυραυλικές βάσεις επί του συστήματος [system].
+INC_DESTROYED_FACTORIES_TITLE     | Κατεστραμμένα Εργοστάσια
+INC_DESTROYED_FACTORIES_DESC      | [year]: Σαμποτέρ των [spy_empire] κατέστρεψαν [amt] βιομηχανικές εγκαταστάσεις επί του συστήματος [system].
+INC_INCITED_REBELLION_TITLE       | Προκληθείσα Εξέγερση
+INC_INCITED_REBELLION_DESC        | [year]: Στασιαστές των [spy_empire] εκπαίδευσαν [amt] εκαττομύρια επαναστάτες επί του συστήματος [system].
+INC_SIGNED_ALLIANCE_TITLE         | Συμμαχία
+INC_SIGNED_ALLIANCE_DESC          | [year]: Οι [my_empire] και [your_empire] αποφάσισαν να ενωθούν σε Συμμαχία, υποσχόμενοι να αλληλοπροστατεύονται από εξωτερικές απειλές. 
+INC_JOINT_WAR_TITLE               | Κήρυξη Πολέμου: %1
+INC_LEFT_ALLIANCE_TITLE           | Λήξη Συμμαχίας: %1
+INC_SIGNED_PACT_TITLE             | Σύμφωνο Μη Επιθετικότητας
+INC_SIGNED_PACT_DESC              | [year]: Οι [my_empire] και [your_empire] υπέγραψαν Σύμφωνο μη Επιθετικότητας, και θα αποφεύγουν συρράξεις μεταξύ σκαφών σε ουδέτερα συστήματα.
+INC_SIGNED_PEACE_TITLE            | Σύμφωνο Ειρήνης
+INC_SIGNED_PEACE_DESC             | [year]: Οι [my_empire] και [your_empire] υπέγραψαν Σύμφωνο Ειρήνης, τερματίζοντας παροδικά όλες τις εχθρότητες έως [endYear].
+INC_SIGNED_TRADE_TITLE            | Εμπορική Συμφωνία
+INC_SIGNED_TRADE_DESC             | [year]: Οι [my_empire] και [your_empire] συμφώνησαν να συνάψουν Εμπορική Συνθήκη μέγιστου ύψους [amt] ΔΙΣ.
+INC_SKIRMISH_TITLE                | Αψιμαχία: %1
+INC_SKIRMISH_DESC                 | [year]: Στόλοι των [my_race] και [your_race] ενεπλάκησαν σε μάχη επί του συστήματος %4 .
+INC_SPY_CONFESSION_TITLE          | Ομολογία Κατασκόπου
+INC_SPY_CONFESS_ESPIONAGE_DESC    | [year]: Κατάσκοπος των [spy_empire] συνελήφθη και ομολόγησε κατασκοπευτικές ενέργειες εναντίων της [my_race].
+INC_SPY_CONFESS_SABOTAGE_DESC     | [year]: Κατάσκοπος των [spy_empire] συνελήφθη και ομολόγησε σχεδιαζόμενες κατασκοπευτικές δραστηριότητες εναντίων της [my_race].
+INC_TRADE_INCOME_TITLE            | Εμπορικό Κέρδος
+INC_TRADE_INCOME_DESC             | [year]: Το Εμπόριο μεταξύ των [your_empire] και [my_empire] απέδωσε κέρδη ύψους [amt] ΔΙΣ.
+INC_TRESPASSING_TITLE             | Εδαφική Παραβίαση: %1
+INC_TRESPASSING_DESC              | [year]: Στόλοι της [your_race] εισήλθαν παράνομα επί του συστήματος [system], εδαφών της [my_empire].
+
+// Kλικάρετε με το ποντίκι για να  παραλείψετε ή να συνεχίσετε την ανάγνωση μηνυμάτων
+CLICK_SKIP                        | Πατήστε το Πλήκτρο Esc για να παραλείψετε την Κινούμενη Απεικόνιση
+
+CLICK_CONTINUE                    | Κλικάρετε ή Πατήστε Esc για να Συνεχίσετε...
+BUTTON_EXIT                       | Έξοδος
+
+// GAME/SETUP UI 
+GAME_TITLE_LINE_1                 | Τα Απομεινάρια
+GAME_TITLE_LINE_2                 | των
+GAME_TITLE_LINE_3                 | Προκατόχων
+GAME_MENU_CONTINUE                | Συνέχεια
+GAME_MENU_NEW_GAME                | Νέο Παιχνίδι
+GAME_MENU_LOAD_GAME               | Επαναφορά
+GAME_MENU_SAVE_GAME               | Αποθήκευση
+GAME_MENU_EXIT                    | Έξοδος
+GAME_CREDITS                      | Συντελεστές 
+GAME_VERSION                      | Έκδοση: %1
+GAME_LANGUAGE                     | Γλώσσα: %1
+GAME_SOUNDS_ON                    | Ήχος: ΝΑΙ
+GAME_SOUNDS_OFF                   | Ήχος: ΟΧΙ 
+GAME_SOUNDS_DISABLED              | Ήχος: Ανενεργό
+GAME_MUSIC_ON                     | Μουσική: ΝΑΙ 
+GAME_MUSIC_OFF                    | Μουσική: ΟΧΙ 
+GAME_TEXTURES_ON                  | Ύφανση Επιφανειών: ΝΑΙ
+GAME_TEXTURES_OFF                 | Ύφανση Επιφανειών: ΟΧΙ
+GAME_ANIMATIONS_ON                | Κινούμενη Απεικόνιση: ΝΑΙ 
+GAME_ANIMATIONS_OFF               | Κινούμενη Απεικόνιση: ΟΧΙ
+GAME_ANIMATIONS_DISABLED          | Κινούμενη Απεικόνιση: Ανενεργό
+GAME_MEMORY_SHOW                  | Χρήση Μνήμης: ΕΜΦΑΝΗΣ
+GAME_MEMORY_HIDE                  | Χρήση Μνήμης: ΑΦΑΝΗΣ
+
+// Εισαγωγή UI
+INTRO_BEGIN                       | Έναρξη
+
+// MAIN UI - Bottom Navigation options
+MAIN_NAVIGATION_GAME              | Μενού
+MAIN_NAVIGATION_DESIGN            | Σχεδίαση
+MAIN_NAVIGATION_FLEETS            | Στόλοι
+MAIN_NAVIGATION_SYSTEMS           | Χάρτης
+MAIN_NAVIGATION_RACES             | Φυλές
+MAIN_NAVIGATION_COLONIES          | Αποικίες
+MAIN_NAVIGATION_TECH              | Τεχνολογία
+MAIN_NAVIGATION_NEXT_TURN         | Επόμενος   Γύρος
+MAIN_YEAR_DISPLAY                 | Έτος  %1
+MAIN_TURN_DISPLAY                 | Γύρος  %1
+
+MAIN_UNEXPLORED_SYSTEM            | Ανεξερεύνητο
+MAIN_SYSTEM_RANGE                 | %1 Έτη Φωτός
+MAIN_OUT_OF_RANGE_DESC            | Εκτός Εμβέλειας
+MAIN_SCOUT_RANGE_DESC             | Απαιτούνται Εφεδρικές Δεξαμενές Καυσίμου
+MAIN_IN_RANGE_DESC                | Εντός Εμβέλειας
+MAIN_NO_PLANETS                   | Μη Κατοικίσημοι Πλανήτες
+MAIN_NO_COLONIES                  | Άνευ Αποικιών
+MAIN_ALIEN_COLONY                 | Αποικία %1
+MAIN_UNKNOWN_COLONY               | Εξώκοσμη Αποικία
+MAIN_PLANET_SIZE                  | Μέγεθος %1
+MAIN_PLANET_SIZE+                 | Μέγεθος %1+
+MAIN_PLANET_POP                   | Πληθ. %1
+MAIN_PLANET_POP_SIZE              | Πληθ. %1/%2
+MAIN_PLANET_REBELLION             | Σε Επανάσταση
+MAIN_ADVANCING_YEAR               | Προχωρώντας στο Έτος  %1...
+MAIN_ADVANCING_TURN               | Προχωρώντας στον Γύρο  %1...
+TURN_SAVING                       | Αποθηκεύοντας το Παιχνίδι
+TURN_LAUNCHING_FLEETS             | Εκκίνηση Στόλων
+TURN_SHIP_COMBAT                  | Σύρραξη Σκαφών
+TURN_BOMBARDMENT                  | Πλανητικός Βομβαρδισμός
+TURN_TRANSPORTS                   | Μεταγωγικά
+TURN_COLONIES                     | Αποίκιση
+TURN_SPIES                        | Κατασκοπία
+TURN_REBELLION                    | Επαναστάσεις 
+TURN_COUNCIL                      | Κατάσταση Συμβουλίου
+TURN_RESEARCH                     | Έρευνα
+TURN_ASSESS                       | Εσωτερικά Θέματα
+TURN_DIPLOMACY                    | Διπλωματία
+TURN_ACQUIRE_TECHS                | Μαθαίνοντας Ανταλαχθείσες Τεχνολογίες
+TURN_MAKE_DECISIONS               | Παίρνοντας Αποφάσεις
+TURN_RECALC_DISTANCES             | Επαναυπολογίζοντας Αποστάσεις Συστημάτων
+TURN_REFRESHING                   | Ανανεώνοντας τις Προβολές
+TURN_SCRAP_SHIPS                  | Διάλυση Σκαφών
+TURN_FLEET_PLANS                  | Ρότες Σκαφών
+TURN_DEPLOY_FLEETS                | Αποστολή Σκαφών
+TURN_DEPLOY_FLEET_X               | Αποστολή Σκαφών (%1/%2 ολοκληρώθηκε)
+TURN_RETREAT_FLEETS               | Αποσύροντας Στόλους
+TURN_DESIGN_SHIPS                 | Δημιουργώντας Σκάφη
+TURN_COLONY_SPENDING              | Κατανομή Αποικιών
+
+// Fleet labels
+MAIN_FLEET_TITLE                  | Στόλος %1
+MAIN_FLEET_IN_ORBIT               | Σε τροχιά
+MAIN_FLEET_DEPLOYED               | Αποστολή
+MAIN_FLEET_IN_TRANSIT             | Σε πορεία
+MAIN_FLEET_LOCATION               | επί %1
+MAIN_FLEET_ORIGIN                 | από %1
+MAIN_FLEET_DESTINATION            | προς %1
+MAIN_FLEET_DEST_UNSCOUTED         | προς Ανεξερεύνητο
+MAIN_FLEET_ALLY                   | Σύμμαχος
+MAIN_FLEET_ENEMY                  | Εχθρός
+MAIN_FLEET_DEPLOYMENT             | Αποστολή Στόλου
+MAIN_FLEET_DISPLAY                | Κατεύθυνση Στόλου
+MAIN_FLEET_CHOOSE_DEST            | Επιλέξτε προορισμό και αριθμό σκαφών για αποστολή.
+MAIN_FLEET_OUT_OF_RANGE_DESC      | Ο Προορισμός είναι εκτός εμβέλειας στόλου, %1 έτη φωτός απο την κοντινότερη αποικία.
+MAIN_FLEET_INVALID_RETREAT        | Οπισθοχωρούντες στόλοι μπορούν να αποσταλούν μόνο σε φιλικές αποικίες
+MAIN_FLEET_ETA_UNNAMED            | Χρόνος άφιξης στον προορισμό: %1 Έτη
+MAIN_FLEET_ETA_NAMED              | Χρόνος άφιξης %1: %2 Έτη
+MAIN_FLEET_ETA_UNKNOWN            | Ο έλεγχος δεν μπορεί να προσδιορίσει τον προορισμό
+MAIN_FLEET_THROUGH_NEBULA         | Περιορισμός ταχύτητας λόγω Νεφελώματος
+
+MAIN_FLEET_CANCEL                 | Ακύρωση
+MAIN_FLEET_OUT_OF_RANGE           | Εκτός Εμβέλειας
+MAIN_FLEET_DEPLOY_FLEET           | Αποστολή Στόλου
+MAIN_FLEET_UNDEPLOY_FLEET         | Απόσυρση Στόλου
+
+// Rally Point labels
+MAIN_RALLY_TITLE                  | Ορισμός Σημείου Συγκέντρωσης
+MAIN_RALLY_PROMPT                 | Επιλέξτε ένα σύστημα υπό τον έλεγχο σας όπου θα αποστέλλονται τα νεοκατασκευασθέντα σκάφη.
+MAIN_RALLY_TRAVEL_TIME            | Χρόνος Ταξιδίου προς %1: %2 Έτη
+MAIN_RALLY_INSTANT_TIME           | Χρόνος Ταξιδίου προς %1: Στιγμιαίος
+MAIN_RALLY_WILL_CANCEL            | Η Επιλογή αυτού του προορισμού θα διαγράψει οποιδήποτε υπάρχον σημείο συγκέντρωσης.
+MAIN_RALLY_ERROR                  | Πρέπει να επιλέξετε ένα σύστημα υπο τον έλεγχο σας.
+MAIN_RALLY_NO_SELECTION           | Χωρίς Επιλογή
+MAIN_RALLY_CANCEL                 | Ακύρωση
+MAIN_RALLY_START                  | Αρχίστε τη Συγκέντρωση
+MAIN_RALLY_STOP                   | Σταματήστε τη Συγκέντρωση
+
+// Transport labels
+MAIN_TRANSPORTS_EMPIRE            | Μεταγωγικά %1
+MAIN_TRANSPORTS_COUNT             | Μεταγωγικά %1
+MAIN_TRANSPORTS_CANCEL            | Ακύρωση
+MAIN_TRANSPORTS_SHOW_DEST         | Χρόνος άφιξης προς %1: %2 έτη
+MAIN_TRANSPORT_TITLE              | Αποστολή Μεταγωγικών
+MAIN_TRANSPORT_PROMPT             | Επιλέξτε αποικισμένο σύστημα όπου θα αποσταλούν πολιτικά ή στρατιωτικά μεταγωγικά.
+MAIN_TRANSPORT_SELECT_POP         | Επιλέξτε πληθυσμό πολιτών που θα σταλεί (έως το μισό του  πληθυσμού του %1).
+MAIN_TRANSPORT_SELECT_TROOPS      | Επιλέξτε αριθμό στρατευμάτων που θα σταλεί (έως το μισό του  πληθυσμού του %1).
+MAIN_TRANSPORT_POP_LABEL          | Πληθυσμός
+MAIN_TRANSPORT_ETA                | Χρόνος Ταξιδίου προς %1: %2 Έτη
+MAIN_TRANSPORT_ERROR              | Πρέπει να επιλέξετε αποικισμένο σύστημα.
+MAIN_TRANSPORT_OUT_OF_RANGE       | Αυτό το σύστημα βρίσκεται εκτός εμβέλειας των στρατιωτικών μεταγωγικών μας.
+MAIN_TRANSPORT_UNSCOUTED          | Δεν δυνάμεθα να στείλουμε μεταγωγικά σε μη ανιχνευμένα συστήματα.
+MAIN_TRANSPORT_HOSTILE            | Δεν κατέχουμε τεχνολογία που θα μας επιτρέψει να προσγειωθούμε εδώ.
+MAIN_TRANSPORT_NO_ROOM            | Προειδοποίηση - Ο Επιλεγμένος πλανήτης έχει μέγιστο πληθυσμό ήδη!
+MAIN_TRANSPORT_SIZE_WARNING       | Προειδοποίηση - Ο Επιλεγμένος πλανήτης μπορεί να υποστηρίξει μόνο %1 εκατομμύρια!
+MAIN_TRANSPORT_NO_SELECTION       | Χωρίς Επιλογή
+MAIN_TRANSPORT_CANCEL             | Ακύρωση
+MAIN_TRANSPORT_SEND               | Στείλτε Μεταγωγικά
+MAIN_TRANSPORT_CLEAR              | Διαγράψτε Μεταφορά
+
+// Colony labels
+MAIN_COLONY_HOMEWORLD             | Πλανήτης Προέλευσης %1 
+MAIN_COLONY_FOUNDED               | Αποικία %1
+MAIN_COLONY_POPULATION            | Πληθυσμός
+MAIN_COLONY_FACTORIES             | Εργοστάσια
+MAIN_COLONY_SHIELD                | Επίπεδο Ασπίδας 
+MAIN_COLONY_BASES                 | Βάσεις
+MAIN_COLONY_PRODUCTION            | Παράγει - Καθαρό (Μεικτό)
+MAIN_COLONY_SHIP                  | Σκάφος 
+MAIN_COLONY_DEFENSE               | Άμυνα 
+MAIN_COLONY_INDUSTRY              | Βιομηχ
+MAIN_COLONY_ECOLOGY               | Οικολ
+MAIN_COLONY_TECHNOLOGY            | Τεχνολ
+MAIN_COLONY_ALLOCATE_SPENDING     | Κατανομή Δαπανών
+MAIN_COLONY_SPENDING_NONE         | Καμμία
+MAIN_COLONY_SPENDING_RESERVE      | Απόθεμα
+MAIN_COLONY_SPENDING_CONVERT      | Μετατροπή
+MAIN_COLONY_SPENDING_REFIT        | Αναβάθμιση
+MAIN_COLONY_SPENDING_MAX_FACT     | Μέγιστο
+MAIN_COLONY_SPENDING_WASTE        | Σπατάλη
+MAIN_COLONY_SPENDING_WASTE_POP    | Σπατάλη +%1
+MAIN_COLONY_SPENDING_ATMOSPHERE   | Ατμο
+MAIN_COLONY_SPENDING_ENRICH_SOIL  | Εμπλουτισμός
+MAIN_COLONY_SPENDING_TERRAFORM    | Γ-Πλασία
+MAIN_COLONY_SPENDING_CLEANUP      | Καθάρισμα
+MAIN_COLONY_SPENDING_NEW_POP      | +%1 Πληθ
+MAIN_COLONY_SPENDING_SHIELD       | Ασπίδα
+MAIN_COLONY_SPENDING_UPG_BASES    | Αναβάθμιση
+MAIN_COLONY_SPENDING_RP           | %1 ΠΤ
+MAIN_COLONY_COMPLETION_YEAR       | 1 Έτος
+MAIN_COLONY_COMPLETION_YEARS      | %1 Έτη
+MAIN_COLONY_COMPLETION_CENTURY    | %1 Έτη
+MAIN_COLONY_COMPLETION_PER_YEAR   | %1/Έτος
+MAIN_COLONY_SHIPYARD_COMPLETED    | Ολοκλήρωση: %1
+MAIN_COLONY_SHIPYARD_CONSTRUCTION | Σειρά  Κατασκευής  Σκαφών
+MAIN_COLONY_RELOCATE_LABEL        | Ορίστε Σημείο Συγκέντ
+MAIN_COLONY_TRANSPORTS_LABEL      | Στείλτε Μεταγωγικά
+MAIN_COLONY_SHIP_SCRAPPED         | Διαλύθηκαν
+MAIN_COLONY_NO_SHIELD             | Νεφέλωμα
+
+// Advisor text
+MAIN_ADVISOR_TITLE                | Σύμβουλος %1
+MAIN_ADVISOR_BUTTON_OK            | Απόρριψη
+MAIN_ADVISOR_SCOUT                | Έχουμε δύο ανιχνευτικά σκάφη με εφεδρικά ντεπόσιτα καυσίμων και ένα σκάφος αποικισμού. Αυτή θα ήταν μία καλή στιγμή νε εξερευνήσουμε κοντινά συστήματα για να αποικίσουμε κάποιο κατοικήσιμο πλανήτη.
+MAIN_ADVISOR_TRANSPORT            | Ιδρύσαμε μια νέα αποικία! Μπορούμε να επιταχύνουμε την ανάπτυξη της στέλνοντας μεταγωγικά απο τον πλανήτη έδρα.
+MAIN_ADVISOR_DIPLOMACY            | Κάναμε απαφή με μία εξωκοσμική φυλή! Αυτή θα ήταν μια καλή στιγμή να αναθεωρήσουμε τα διπλωματικά και πληροφοριακά μας εργαλεία.
+MAIN_ADVISOR_SHIP_ENGINE          | Οι επιστήμονες μας εφυήραν γρηγορότερους κινητήρες σκαφών! Αυτή θα ήταν μια καλή στιγμή να δημιουργήσουμε νέα σχέδια σκαφών ώστε να τους αξιοποιήσουμε.
+MAIN_ADVISOR_RALLY_POINTS         | Βρισκόμαστε σε καιρό πολέμου! Στις αποικίες που κατασκευάζουν σκάφη, μπορούμε να ορίσουμε σημεία συγκέντρωσης, ώστε να στέλνουμε αυτόματα σκάφη σε πλανήτες που θέλουμε να υπερασπίσουμε.
+MAIN_ADVISOR_MISSILE_BASES        | Θα ήταν καλό να χτίσουμε αμυντικές πυραυλικές βάσεις σε αποικία που βρίσκονται στην εμβέλεια πιθανών επιθέσεων.
+MAIN_ADVISOR_SHIP_WEAPON          | Οι επιστήμονες μας ανέπτυξαν πιό ισχυρά όπλα σκαφών! Αυτή θα ήταν μια καλή στιγμή να δημιουργήσουμε νέα σχέδια πολεμικών σκαφών που να τα χρησιμοποιούν.
+MAIN_ADVISOR_COUNCIL              | Το πρώτο Γαλαξιακό Συμβούλιο συνέρχεται σε 5 έτη. Οι ψήφοι είναι αναλογικοί του πληθυσμού. Χρησιμοποίησε διπλωματία για να βελτιώσεις την κατάταξη σου μεταξύ των φυλών.
+
+// System Scouted Notification
+MAIN_SCOUT_TITLE                  | Τα ανιχνευτικά σκάφη εξερεύνησαν νέο σύστημα! 
+MAIN_SCOUT_TYPE                   | Κατάταξη: %1      Μέγεθος: %2
+MAIN_SCOUT_NO_PLANET              | Δεν βρέθηκαν κατοικήσιμοι πλανήτες.
+MAIN_SCOUT_HOSTILE_DESC           | Περιβάλλον: Εχθρικό - Η αύξηση του πληθυσμού διαιρείται στη μέση.
+MAIN_SCOUT_FERTILE_DESC           | Περιβάλλον: Γόνιμο - Η αύξηση του πληθυσμού είναι +50% της κανονικής.
+MAIN_SCOUT_GAIA_DESC              | Περιβάλλον: Γαία - Η αύξηση του πληθυσμού είναι +100% της κανονικής.
+MAIN_SCOUT_ARTIFACTS_DESC         | Αρχαία Ερείπια: Οι πόντοι Τεχνολογίας από την έρευνα διπλασιάζονται.
+MAIN_SCOUT_ANCIENTS_DESC          | Αρχαίος Πλανήτης: Οι πόντοι Τεχνολογίας από την έρευνα τριπλασιάζονται.
+MAIN_SCOUT_ULTRA_POOR_DESC        | Πόροι: Πάμπτωχος - Το βιομηχανικό προΐόν μειώνεται στο ένα-τρίτο.
+MAIN_SCOUT_POOR_DESC              | Πόροι: Πτωχός - Το βιομηχανικό προΐόν μειώνεται στο μισό.
+MAIN_SCOUT_RICH_DESC              | Πόροι: Πλούσιος - Το βιομηχανικό προΐόν διπλασιάζεται.
+MAIN_SCOUT_ULTRA_RICH_DESC        | Πόροι: Πάμπλουτος - Το βιομηχανικό προΐόν τριπλασιάζεται.
+
+// Colonization prompt
+MAIN_COLONIZE_TITLE               | Αποικιστές μας είναι σε τροχιά επί %1, μη αποικισμένο σύστημα.
+MAIN_COLONIZE_PROMPT              | Δημιουργία Αποικίας?
+MAIN_COLONIZE_YES                 | Ναί
+MAIN_COLONIZE_NO                  | Όχι
+MAIN_COLONIZE_ANIMATION_TITLE     | Το Έτος %1, η αυτοκρατορία των %2 ιδρύει μια νέα αποικία.
+MAIN_COLONIZE_NAME_PROMPT         | Όνομα Αποικίας 
+MAIN_COLONIZE_NAME_OK             | OK
+
+// Reasons to ask player to reallocate a system (during next turn)
+MAIN_ALLOCATE_TITLE               | Αναδιάρθρωση Δαπανών
+MAIN_ALLOCATE_DESIGN_SCRAPPED     | Το σκάφος που κατασκευαζόταν επί του %1 διαλύθηκε.
+MAIN_ALLOCATE_STARGATE_COMPLETE   | • Ο %1 ολοκλήρωσε την κατασκευή μιας Αστροπύλης.
+MAIN_ALLOCATE_SHIELD_COMPLETE     | • Ο %1 ολοκλήρωσε την κατασκευή: %2.
+MAIN_ALLOCATE_BASES_COMPLETE      | • Ο %1 ολοκλήρωσε το χτίσιμο %2 πυραυλικών βάσεων.
+MAIN_ALLOCATE_BASES_UPGRADED      | • Ο %1 ολοκλήρωσε την αναβάθμιση βάσεων με: %2.
+MAIN_ALLOCATE_MAX_FACTORIES       | • Ο %1 έφτασε στο βιομηχανικό μέγιστο, αριθμού %2 εργοστασίων.
+MAIN_ALLOCATE_MAX_POPULATION      | • Ο %1 έφτασε στο μέγιστο του πληθυσμού, ύψους %2 εκατομμυρίων.
+MAIN_ALLOCATE_ATMOSPHERE_COMPLETE | • Ο %1 γεωδιαμορφώθηκε σε κανονικό περιβάλλον με το συνήθη ρυθμό ανάπτυξης.
+MAIN_ALLOCATE_FERTILE_COMPLETE    | • Ο %1 γεωδιαμορφώθηκε σε γόνιμο περιβάλλον με 150% του συνήθους ρυθμού ανάπτυξης.
+MAIN_ALLOCATE_GAIA_COMPLETE       | • Ο %1 γεωδιαμορφώθηκε σε περιβάλλον Γαίας με διπλάσιο του συνήθους ρυθμό ανάπτυξης.
+MAIN_ALLOCATE_SABOTAGE_BASES      | • Ο %1 υπέστει καταστροφή %2 πυραυλικών βάσεων από %3 σαμποτέρ.
+MAIN_ALLOCATE_SABOTAGE_FACTORIES  | • Ο %1 υπέστη καταστροφή %2 εργοστασίων από %3 σαμποτέρ.
+MAIN_ALLOCATE_CHANGE_SPENDING     | Οι Δαπάνες συστημάτων μπορούν να ανακατανεμηθούν.
+MAIN_ALLOCATE_NOTICE_NUMBER       | Ειδοποίηση %1 από %2
+MAIN_ALLOCATE_BRIEF_NUMBER        | %1 από %2
+MAIN_ALLOCATE_PREV_SYSTEM         | Προηγούμενο
+MAIN_ALLOCATE_NEXT_SYSTEM         | Επόμενο
+MAIN_ALLOCATE_FINISHED            | Ενημερώθηκα
+
+// Fleet Production display (during next turn)
+MAIN_FLEET_PRODUCTION_TITLE       | Σύνοψη Παραγωγής Στόλου
+MAIN_FLEET_SHIP_COUNT             | %1/%2
+
+// Spy Capture display (during next turn)
+MAIN_SPIES_CAUGHT_TITLE           | Συλληφθέντες Κατάσκοποι
+MAIN_SPIES_CAUGHT_YOURS           | Δικοί σου
+MAIN_SPIES_CAUGHT_THEIRS          | Δικοί τους
+
+// Alerts
+MAIN_ALERT_TITLE                  | Συναγερμός 
+MAIN_ALERT_TITLE_COUNT            | Συναγερμός - %1 από %2
+MAIN_ALERT_TECH_STOLEN            | Η Εσωτερική Ασφάλεια αναφέρει ότι ένας κατάσκοπος της αυτοκρατορίας των %1 έκλεψε τα μυστικά %2.
+MAIN_ALERT_SPY_CAPTURED           | Συλλάβαμε κατάσκοπο της αυτοκρατορίας των %1, υποχρεώνοντας ομολογία δραστηριοτήτων στον τομέα %2.
+MAIN_ALERT_FACTORIES_DESTROYED    | Πράκτορες στην υπηρεσία των %1 κατέστρεψαν %2 εργοστάσια στο σύστημα %3.
+MAIN_ALERT_BASES_DESTROYED        | Πράκτορες στην υπηρεσία των %1 κατέστρεψαν %2 πυραυλικές βάσεις που υπεραμύνονταν του συστήματος %3.
+MAIN_ALERT_FACTORIES_DESTROYED2   | Άγνωστοι σαμποτέρ κατέστρεψαν %1 εργοστάσια στο σύστημα %2.
+MAIN_ALERT_BASES_DESTROYED2       | Άγνωστοι σαμποτέρ κατέστρεψαν %1 πυραυλικές βάσεις που αμύνονταν του συστήματος %2.
+MAIN_ALERT_TRANSPORTS_PERISHED    | Η αποικία %1 επί του %2 καταστράφηκε. Τα μεταγωγικά μας που επιχειρούσαν να προσεδαφιστούν εκεί αφανίστηκαν.
+MAIN_ALERT_TRANSPORTS_KILLED      | Τα μεταγωγικά μας που επιχειρούσαν να φτάσουν στο %2 καταστράφηκαν από τις αμυντικές δυνάμεις των %1.
+MAIN_ALERT_INVADERS_KILLED        | %1 μεταγωγικά που επιχειρούσαν να εισβάλλουν σε %2 καταστράφηκαν εντελώς απο τις αμυντικές μας δυνάμεις.
+
+// Colony Listing UI
+PLANETS_TITLE                     | Αποικίες %1 
+PLANETS_VIEW_ECOLOGY              | Οικολογική Άποψη
+PLANETS_VIEW_INDUSTRY             | Βιομηχανική Άποψη
+PLANETS_VIEW_MILITARY             | Στρατιωτική Άποψη
+PLANETS_SPENDING_COSTS            | Αυτοκρατορικές Δαπάνες 
+PLANETS_COSTS_DESC                | Κάθε αποικία πληρώνει ένα ποσοστό της παραγωγής της για να υποστηρίξει τις δαπάνες της αυτοκρατορίας.
+PLANETS_COSTS_SHIPS               | Συντήρηση Σκαφών
+PLANETS_COSTS_BASES               | Πυραυλικές Βάσεις
+PLANETS_COSTS_SPYING              | Κατασκοπία
+PLANETS_COSTS_SECURITY            | Ασφάλεια
+PLANETS_TOTAL_INCOME              | Ετήσια Πρόσοδος
+PLANETS_INCOME_TRADE              | Εμπορικό Εισόδημα
+PLANETS_INCOME_PLANETS            | Παραγωγή Αποικίας
+PLANETS_INCOME_TOTAL              | Σύνολο 
+PLANETS_TREASURY                  | Αυτοκρατορικό Θησαυροφυλάκιο
+PLANETS_TREASURY_FUNDS            | Αποθεματικά Διαθέσιμα
+PLANETS_TAX_DESC                  | Φορολόγησε τις αποικίες σου για να αυξήσεις τα εισοδήματα της αυτοκρατορίας.
+PLANETS_RESERVE_TAX               | Απόθεμα Φόρων
+PLANETS_RESERVE_INCREASE          | +%1 ΔΙΣ/Έτος
+PLANETS_RESERVE_NO_TAX            | Καθόλου Φόροι 
+PLANETS_BUTTON_TRANSFER           | Μεταφορά
+PLANETS_BUTTON_EXIT               | Έξοδος
+PLANETS_AMT_PCT                   | %1%
+PLANETS_AMT_BC                    | %1 ΔΙΣ
+PLANETS_TRANSFER_DESC             | Μετάφερε κονδύλια σε %1
+PLANETS_TRANSFER_CANCEL           | Ακύρωση
+PLANETS_TRANSFER_ACCEPT           | Μεταφορά
+PLANETS_COLONY_TRANSFER_TITLE     | ------- Μεταφορά Διαθεσίμων -------
+PLANETS_COLONY_TRANSFER_DETAIL    | Μετάφερε κονδύλια από το Θησαυροφυλάκιο της Αυτοκρατορίας ώστε να αυξήσεις την παραγωγή αποικίας.
+PLANETS_COLONY_TRANSFER_BUTTON    | Έμβασμα Θησαυροφυλακίου
+PLANETS_LIST_NUM                  | 
+PLANETS_LIST_NAME                 | Όνομα
+PLANETS_LIST_POPULATION           | Πληθυσμός
+PLANETS_LIST_POP                  | Πληθ.
+PLANETS_LIST_SIZE                 | Μέγεθος
+PLANETS_LIST_TYPE                 | Τύπος
+PLANETS_LIST_FACTORIES            | Εργοστάσια
+PLANETS_LIST_WASTE                | Απόβλητα
+PLANETS_LIST_BASES                | Βάσεις
+PLANETS_LIST_SHIELD               | Ασπίδα
+PLANETS_LIST_PRODUCTION           | Παράγει
+PLANETS_LIST_RESERVE              | Απόθεμα
+PLANETS_LIST_SHIPYARD             | Ναυπηγείο
+PLANETS_LIST_NOTES                | Σημειώσεις 
+PLANETS_LIST_TURNS                | Γύροι
+PLANETS_LIST_TRANSPORTS           | Μεταγωγές
+PLANETS_LIST_RESOURCES            | Πόροι
+
+// Bombardment prompt
+MAIN_BOMBARDED_TITLE             | %1 βομβαρδίστηκε  από δυνάμεις των %2.
+MAIN_BOMBARD_TITLE               | Οι δυνάμεις βρίσκονται σε τροχιά γύρω από %1, ένα εχθρικό %2 σύστημα.
+MAIN_BOMBARD_PROMPT              | Να βομβαρδίσουμε?
+MAIN_BOMBARD_YES                 | Ναί
+MAIN_BOMBARD_NO                  | Όχι
+MAIN_BOMBARD_POPULATION          | Πληθυσμός: %1
+MAIN_BOMBARD_FACTORIES           | Εργοστάσια: %1
+MAIN_BOMBARD_BASES               | Βάσεις: %1
+MAIN_BOMBARD_SHIELD              | Ασπίδα: %1
+MAIN_BOMBARD_COMPLETE            | Βομβαρδισμός Ολοκληρώθηκε.
+MAIN_BOMBARD_DESTROYED           | Αποικία Καταστράφηκε
+MAIN_BOMBARD_DMG                 | (%1)
+MAIN_BOMBARD_NAME_PROMPT         | Όνομα Αποικίας
+
+
+// Fleet listing UI
+FLEETS_TITLE                      | %1 Στόλοι
+FLEETS_SELECT_SYSTEMS             | Επιλέξτε Συστήματα
+FLEETS_SELECT_FLEETS              | Επιλέξτε Στόλους
+FLEETS_SELECT_ALL                 | Επιλέξτε όλα
+FLEETS_DESELECT_ALL               | Αποεπιλογή όλων
+FLEETS_FILTER_BY                  | Φιλτράρετε με χαρακτηριστικό:
+FLEETS_CONSTRUCTING_DESIGN        | Και φτιάχνει:
+FLEETS_INCLUDES_SHIP_TYPE         | Αναπτύξτε μόνο σκάφη τύπου:
+FLEETS_SELECTED_SHIPS             | Επιλέξτε για Αποστολή
+FLEETS_BUILDING_DESIGN            | %1
+FLEETS_HAS_STARGATE               | Το Σύστημα έχει Αστροπύλη
+FLEETS_HAS_NO_STARGATE            | Το Σύστημα δεν έχει Αστροπύλη
+FLEETS_HAS_RALLY_POINT            | Το Σύστημα έχει σημείο Συγκέντρωσης
+FLEETS_HAS_NO_RALLY_POINT         | Το σύστημα δεν έχει σημείο συγκέντρωσης
+FLEETS_SENDING_TRANSPORTS         | Το σύστημα στέλνει μεταγωγικά
+FLEETS_NOT_SENDING_TRANSPORTS     | Το σύστημα δεν στέλνει μεταγωγικά
+FLEETS_IS_RICH                    | Το σύστημα είναι πλούσιο ή πάμπλουτο
+FLEETS_IS_ULTRA_RICH              | Το σύστημα είναι πάμπλουτο
+FLEETS_IS_POOR                    | Το σύστημα είναι πτωχό ή πάμπτωχο
+FLEETS_IS_ULTRA_POOR              | Το σύστημα είναι πάμπτωχο
+FLEETS_SYSTEMS_SELECTED           | %1  Συστήματα Επιλέχτηκαν
+FLEETS_FLEETS_SELECTED            | %1  Στόλοι Επιλέχτηκαν
+FLEETS_MULTIPLE_DESIGNS           | Πολλαπλά
+FLEETS_RELOCATE_LABEL             | Θέσατε Συγκέντρωση
+FLEETS_TRANSPORTS_LABEL           | Στείλτε Μεταγωγικά
+FLEETS_HAS_ORDERS                 | Ο Στόλος είναι σε πλεύση
+FLEETS_HAS_NO_ORDERS              | Ο Στόλος είναι σε τροχιά
+FLEETS_DESIGN_COUNT               | %1 %2
+FLEETS_DEPLOY_FLEETS              | Αποστείλατε Στόλους
+FLEETS_SET_RALLY_POINTS           | Θέσατε Συγκέντρωση
+FLEETS_STOP_RALLIES_DESC          | %1 Επιλεγμένα συστήματα έχουν ήδη κατανεμημένα σημεία συγκέντρωσης
+FLEETS_STOP_RALLIES               | Σταμάτα Συγκεντρώσεις
+FLEETS_SETTING_RALLY_POINTS       | Άρχισε Συγκεντρώσεις
+FLEETS_START_RALLIES_DESC         | Επίλεξε ένα σύστημα που σου ανήκει για να στέλνεις νεοκατασκευαζόμενα σκάφη από όλα τα επιλεγμένα συστήματα.
+FLEETS_START_RALLIES              | Άρχισε Συγκεντρώσεις
+FLEETS_SEND_TRANSPORTS            | Στείλε Μεταγωγικά
+FLEETS_CANCEL_TRANSPORTS_DESC     | %1 Επιλεγμένα Συστήματα έχουν ήδη προγραμματισμό μεταφορών
+FLEETS_CANCEL_TRANSPORTS          | Ακύρωση Μεταφορών
+FLEETS_DEPLOYING_TRANSPORTS_DESC  | Επίλεξε ένα σύστημα εντός εμβέλειας για να στείλεις μεταγωγικά αποικιστών ή στρατεύματα προς.
+FLEETS_DEPLOY_TRANSPORTS          | Απόστειλε Μεταγωγικά
+FLEETS_FLEET_DEPLOYMENT           | Αποστολή Στόλων
+FLEETS_UNDEPLOYING_FLEETS         | %1 επιλεγμένοι στόλοι ήδη έχουν εντολές πλεύσης.
+FLEETS_CANCEL_DEPLOYMENTS         | Ανακάλεσε Αποστολές
+FLEETS_DEPLOYING_FLEETS           | Αποστέλλοντας Στόλους
+FLEETS_DEPLOYING_FLEETS_DESC      | Επίλεξε ένα σύστημα εντός εμβέλειας για να αποσταλούν όλοι οι επιλεγμένοι στόλοι.
+FLEETS_DEPLOY_FLEETS              | Αποστολή Στόλων
+FLEETS_TRANSPORTS_TITLE           | Στείλε Μεταγωγικά Από:
+FLEETS_TRANSPORTS_SEND            | Στείλε %1 Μεταγωγικά
+FLEETS_TRANSPORTS_SYNCH           | Συνχρονίστε
+FLEETS_TRANSPORTS_UNSYNCH         | Αποσυνχρονίστε
+FLEETS_TRANSPORT_NO_ROOM          | Προειδοποίηση - Ο Πλανήτης Στόχος έχει μέγιστο πληθυσμό!
+FLEETS_TRANSPORT_SIZE_WARNING     | Προειδοποίηση - Ο Πλανήτης Στόχος μπορεί να υποστηρίξει μόνο %1 εκατομμύρια!
+FLEETS_TRANSPORT_TIME             | Προγραμματισμένη άφιξη: %1 έτη
+FLEETS_TRANSPORT_TIME_RANGE       | Προγραμματισμένη άφιξη: %1 εως %2 έτη
+FLEETS_CANNOT_SEND_TRANSPORTS     | %1 δεν δύναται να στείλει μεταγωγικά
+FLEETS_EXISTING_TRANSPORT         | Αποστέλλω %1 μεταγωγικά σε %2
+FLEETS_EXISTING_STOP              | Παύση
+FLEETS_CANCEL                     | Ακύρωση
+
+// Select Next Tech to Research UI
+TECH_RESEARCH_COMPUTER            | Επιλέξτε την Επόμενη Τεχνολογία Υπολογιστών στην οποία θα αφοσιωθούν οι ερευνητές μας.
+TECH_RESEARCH_CONSTRUCTION        | Επιλέξτε την επόμενη Τεχνολογία Κατασκευών στην οποία θα αφοσιωθούν οι ερευνητές μας.
+TECH_RESEARCH_FORCE_FIELD         | Επιλέξτε την επόμενη Τεχνολογία Ενεργειακού πεδίου στην οποία θα αφοσιωθούν οι ερευνητές μας.
+TECH_RESEARCH_PLANETOLOGY         | Επιλέξτε την επόμενη Τεχνολογία Πλανητολογίας στην οποία θα αφοσιωθούν οι ερευνητές μας.
+TECH_RESEARCH_PROPULSION          | Επίλέξτε την επόμενη Τεχνολογία Πρόωσης στην οποία θα αφοσιωθούν οι ερευνητές μας.
+TECH_RESEARCH_WEAPON              | Επιλέξτε την επόμενη Τεχνολογία Οπλισμού στην οποία θα αφοσιωθούν οι ερευνητές μας.
+TECH_CHOOSE_RESEARCH_COST         | %1 ΠΤ
+TECH_CONFIRM_CHOICE               | Επιλέξτε
+TECH_DISCOVERY_TITLE              | Οι Επιστήμονες %1 ανακαλύπτουν, στον τομέα %2:
+TECH_SCOUTED_TITLE                | Ανιχνευτικά που εξερευνούσαν τα ερείπια του %1 ανακαλύπτουν:
+TECH_STOLEN_TITLE                 | Οι κατάσκοποι μας διείσδυσαν σε %1 ερευνητικά κέντρα επί του %2.
+TECH_TRADED_TITLE                 | Επιστήμονες %1 αποκτούν Τεχνολογία από Επιστήμονες %2:
+TECH_PLUNDERED_TITLE              | Στρατιώτες στα ερείπια του %1 λαφυραγωγούν:
+TECH_ALLOCATE_SHIELD              | Θα έπρεπε να αυξήσουμε τα αμυντικά ποσοστά όλων των αποικιών, ώστε να κατασκευαστούν οι νέες πλανητικές ασπίδες?
+TECH_ALLOCATE_MISSILE_BASES       | Θα έπρεπε να αυξήσουμε τα αμυντικά ποσοστά όλων των αποικιών, ώστε να αναβαθμίσουμε τις πυραυλικές μας βάσεις?
+TECH_ALLOCATE_FACTORIES           | Θα έπρεπε να αυξήσουμε τα βιομηχανικά ποσοστά όλων των αποικιών, ώστε να αναβαθμιστούν οι εργοστασιακοί έλεγχοι?
+TECH_ALLOCATE_CLEAN_WASTE         | Θα έπρεπε να μειώσουμε τα οικολογικά ποσοστά όλων των αποικιών στα χαμηλότερα δυνατά που διατηρούνται καθαρές?
+TECH_ALLOCATE_ENRICH_SOIL         | Θα έπρεπε να αυξήσουμε τα οικολογικά ποσοστά όλων των αποικιών με τα συνήθη περιβάλλοντα ώστε να αρχίσει η γεωπλασία των πλανητών μας?
+TECH_ALLOCATE_ATMOSPHERE          | Θα έπρεπε να αυξήσουμε τα οικολογικά ποσοστά όλων των αποικιών με εχθρικά περιβάλλοντα ώστε να αρχίσει η γεωπλασία των πλανητών μας?
+TECH_ALLOCATE_TERRAFORM           | Θα έπρεπε να αυξήσουμε τα οικολογικά ποσοστά όλων των αποικιών ώστε να αρχίσει η γεωπλασία των πλανητών μας?
+TECH_ALLOCATE_NO                  | No
+TECH_ALLOCATE_PCT                 | +%1%
+
+// prompt for espionage
+NOTICE_ESPIONAGE_TITLE            | Οι κατάσκοποί μας διείσδυσαν σε μια βάση %1.
+NOTICE_ESPIONAGE_SUBTITLE         | Επιλέξτε τύπο τεχνολογίας που θα κλαπεί.
+NOTICE_ESPIONAGE_FOOTER           | Εάν παρατηρηθεί, είναι πιθανόν να προκληθεί διπλωματικό γεγονός.
+NOTICE_ESPIONAGE_FRAME_TITLE      | Οι κατάσκοποι μας κατόρθωσαν να ενοχοποιήσουν μια άλλη φυλή για την κλοπή.
+NOTICE_ESPIONAGE_FRAME_SUBTITLE   | Επιλέξτε την φυλή-Θύμα:
+
+// Ground Combat UI
+INVASION_LANDING                  | %1 από τα %2 μεταγωγικά %3 περνούν τις αμυντικές οχυρώσεις των %4.
+INVASION_LANDING_REBELS           | %1 τα μεταγωγικά προσγειώνονται για να επαναδιεκδικήσουν %2 αποικία επί %3.
+INVASION_BATTLE                   | Το Έτος %1, οι %2 και %3 μάχονται για %4.
+INVASION_BATTLE_REBELS            | Το Έτος %1, οι %2 και οι επαναστάτες μάχονται για %3.
+INVASION_WIN                      | %1 μεταγωγικά καταλαμβάνουν %2.
+INVASION_LOSS                     | %1 στρατεύματα υπερασπίζονται επιτυχώς %2.
+INVASION_ATTACKERS_TITLE          | %1 %2 Στρατεύματα
+INVASION_DEFENDERS_TITLE          | %1 %2 Στρατεύματα
+INVASION_REBELS_TITLE             | %1 %2 Επαναστάτες
+INVASION_TROOP_ARMOR_DESC         | %1 %2
+
+// Bombard Planet prompt
+BOMBARD_TITLE                     | Οι δυνάμεις μας είναι σε τροχιά επί εχθρικού πλανήτη
+BOMBARD_PROMPT                    | Να βομβαρδίσουμε?
+BOMBARD_YES                       | ΝΑΙ
+BOMBARD_NO                        | ΟΧΙ
+BOMBARD_FINISHED                  | Βομβαρδισμός Πλήρης
+BOMBARD_DESTROYED                 | Αποικία κατεστράφει
+BOMBARD_POP_DESTROYED             | %1 %2 Κάτοικοι σκοτώθηκαν
+BOMBARD_FACTORIES_DESTROYED       | %1 Εργοστάσια καταστράφηκαν
+BOMBARD_BASES_DESTROYED           | %1 Πυραυλικές Βάσεις Καταστράφηκαν
+BOMBARDMENT_ENEMY_TITLE           | Τροχιακές δυνάμεις %1 βομβαρδίζουν %2
+BOMBARDMENT_COLONISTS             | %1 Άποικοι
+BOMBARDMENT_FACTORIES             | %1 Εργοστάσια
+BOMBARDMENT_BASES                 | %1 Πυραυλικές Βάσεις
+BOMBARDMENT_COLONY_DESTROYED      | Αποικία Καταστράφηκε
+BOMBARDMENT_COLONISTS_KILLED      | %1 Άποικοι σκοτώθηκαν
+BOMBARDMENT_FACTORIES_DESTROYED   | %1 Εργοστάσια καταστράφηκαν
+BOMBARDMENT_BASES_DESTROYED       | %1 Πυραλικες Βάσεις Καταστράφηκαν
+
+// GNN labels
+GNN_TITLE                         | Το Γαλαξιακό Κανάλι Ειδήσεων των %1 αναφέρει:
+GNN_EMPIRE_RANKING                | %1. %2
+GNN_KNOWN_SUBJECT                 | - %1
+GNN_KNOWN_PREDICATE               | - %1
+GNN_UNKNOWN_SUBJECT               | Ένας άγνωστος πολιτισμός, 
+GNN_UNKNOWN_PREDICATE             | Μια άγνωστη αυτοκρατορία, 
+GNN_EXPANSION_1                   | Η %1 τώρα κατοικεί σε %2 αστρικά συστήματα ξεπερνώντας όλες τις άλλες φυλές.
+GNN_EXPANSION_2                   | Οι %1 τώρα αριθμούν %2 αστρικά συστήματα. Εάν η επεκτασιμότητα τους δεν χαλιναγωγηθεί σύντομα θα κυριαρχήσουν στο γαλαξία.
+GNN_EXPANSION_3                   | Οι %1 ελέγχουν σχεδόν ολόκληρο το γαλαξία. Οι ηγεσίες προετοιμάζονται ήδη να ενσωματωθούν με την πανίσχυρη αυτοκρατορία.
+GNN_EXTINCTION                    | %1 καταστράφηκε ολοσχερώς από %2.
+GNN_EXTINCTION_UNKNOWN            | %1 καταστράφηκε εντελώς.
+GNN_FLEETS_RANKING                | Τρέχουσα κατάταξη ισχύος Διαστημικών Στόλων:
+GNN_CENSUS_RANKING                | Η Δημογραφική κατάταξη των Αυτοκρατορικών πληθυσμών:
+GNN_PRODUCTION_RANKING            | Τρέχουσα Κατάταξη Παραγωγής Αυτοκρατοριών:
+GNN_TECHNOLOGY_RANKING            | Τρέχοντες πρωτοπόροι εξελιγμένων τεχνολογιών:
+GNN_PLAYER_REBELLION              | Ο %1 επαναστάτησε και αρνείται να συνδράμει την Αυτοκρατορία. Τουλάχιστο %2 εκατομμύρια επαναστάτες ελέγχουν την αποικία. Στρατεύματα πρέπει να σταλούν για να καταπνίξουν την ανταρσία. 
+GNN_ALIEN_REBELLION               | Ο %1 επαναστάτησε και αρνείται να συνδράμει την αυτοκρατορία των %2. Τουλάχιστο %3 εκατομμύρια επαναστάτες ελέγχουν την αποικία.
+GNN_OVERTHROW                     | Ένας νέος ηγέτης προέκυψε στην αυτοκρατορία των  %1. Φήμες αναφέρουν ότι ο νέος ηγέτης είναι %2. Οι διάφορες σχέσεις έγιναν ουδέτερες και το εμπόριο δυσχεράνθηκε.
+GNN_END_COUNCIL                   | Με μονάχα δύο αυτοκρατορίες να παραμένουν, προσπάθειες για την ενοποίηση του Γαλαξία μέσω ενός Γαλακτικού Συμβουλίου τερματίστηκαν. Πολλοί ηγέτες τώρα συζητούν ποιού είδους τελευταία λύση θα επιφέρει μακροχρόνια ειρήνη.
+GNN_FORM_COUNCIL                  | Στην αναζήτηση της Ειρήνης, αντιπρόσωποι κάθε φυλής θα συνέλθουν σύντομα ώστε να εκλέξουν έναν Γαλαξιακό Αυτοκράτορα που θα επιλεχθεί από τους ηγέτες των δύο πιο πολυπληθών αυτοκρατοριών.
+
+// Error UI text
+ERROR_TITLE                       | Ένα Λάθος προέκυψε  :(
+ERROR_MESSAGE                     | Αν θα ήθελες να βοηθήσεις να διορθωθεί το πρόβλημα, παρακαλώ απέστειλε στιγμιότυπο οθόνης αυτού του Περιβάλλοντος Χρήσης συν του αρχείου 'recent.rotp' στον Ray Fowler, η εφέστησε του την προσοχή στο ROTP subreddit.
+ERROR_EMAIL                       | Email: rayfowler@fastmail.com
+ERROR_REDDIT                      | Reddit: www.Reddit.com/r/rotp
+
+// Load Game UI
+LOAD_GAME_TITLE                   | Επαναφορά
+LOAD_GAME_AUTOSAVE                | Πρόσφατη Αποθήκευση Εφαρμογής
+LOAD_GAME_LOADING                 | Επαναφέρω...
+LOAD_GAME_BAD_VERSION             | Αδύνατη η επαναφορά αποθηκευμένου αρχείου
+LOAD_GAME_CANCEL                  | Ακύρωση
+LOAD_GAME_OK                      | Επαναφορά
+
+// Save Game UI
+SAVE_GAME_TITLE                   | Αποθήκευση
+SAVE_GAME_SAVING                  | Σώζω...
+SAVE_GAME_CANCEL                  | Ακύρωση
+SAVE_GAME_OK                      | Αποθήκευση
+
+// Setup UI
+SETUP_SELECT_RACE                 | Eπέλεξε τη Φυλή σου
+SETUP_SELECT_OPPONENTS            | Επέλεξε Αντιπάλους
+SETUP_SELECT_GALAXY               | Επέλεξε Γαλαξία
+SETUP_SELECT_GALAXY_OPTIONS       | Επέλεξε Ρυθμίσεις
+SETUP_GALAXY_RULESET_LABEL        | Ρύθμιση Κανόνων
+SETUP_INSUFFICIENT_MEMORY         | Ανεπαρκής Μνήμη
+SETUP_CREATING_GALAXY             | Δημιουργία Γαλαξία...
+SETUP_RULESET_ORION               | Ωρίων
+SETUP_RULESET_ANTARES             | Αντάρης
+SETUP_RULESET_SIRIUS              | Σείριος
+SETUP_GALAXY_SIZE_LABEL           | Μέγεθος
+SETUP_RACE_MULTIPLIER             | x%1
+SETUP_GALAXY_SHAPE_LABEL          | Σχήμα
+SETUP_GALAXY_SIZE_TINY            | Μικροσκοπικός
+SETUP_GALAXY_SIZE_SMALL           | Μικρός
+SETUP_GALAXY_SIZE_AVERAGE         | Μέτριος
+SETUP_GALAXY_SIZE_LARGE           | Μεγάλος
+SETUP_GALAXY_SIZE_HUGE            | Τεράστιος
+SETUP_GALAXY_SIZE_MASSIVE         | Πελώριος
+SETUP_GALAXY_SIZE_INSANE          | Παλαβός
+SETUP_GALAXY_SIZE_LUDICROUS       | Φαιδρός
+SETUP_GALAXY_SIZE_MAXIMUM         | Μέγιστος
+SETUP_GALAXY_SHAPE_RECTANGLE      | Αστρικό Πεδίο
+SETUP_GALAXY_SHAPE_CIRCULAR       | Κυκλικός
+SETUP_GALAXY_SHAPE_RING           | Δακτυλοειδής
+SETUP_GALAXY_SHAPE_ELLIPSE        | Ελλειπτικός
+SETUP_GALAXY_SHAPE_SPIRAL         | Σπειροειδής
+SETUP_GALAXY_NUMBER_EMPIRES       | Αριθμός Αυτοκρατοριών: %1
+SETUP_GALAXY_NUMBER_SYSTEMS       | Αριθμός Συστημάτων: %1
+SETUP_GALAXY_MAX_OPPONENTS        | Όριο Αντιπάλων: %1
+SETUP_OPPONENTS_HEADER_1          | %1 εναντίον
+SETUP_OPPONENTS_HEADER_2          | Αντιπάλων
+SETUP_OPPONENT_RANDOM             | ???
+SETUP_GAME_DIFFICULTY_LABEL       | Δυσκολία
+SETUP_DIFFICULTY_EASIEST          | Easiest
+SETUP_DIFFICULTY_EASIER           | Easier
+SETUP_DIFFICULTY_EASY             | Easy
+SETUP_DIFFICULTY_NORMAL           | Normal
+SETUP_DIFFICULTY_HARD             | Hard
+SETUP_DIFFICULTY_HARDER           | Harder
+SETUP_DIFFICULTY_HARDEST          | Hardest
+SETUP_GAME_NUMBER_OPPONENTS       | Αντίπαλοι
+SETUP_RACE_LABEL                  | Διαθέσιμες Φυλές
+SETUP_RACE_COLOR                  | Χρώμα Αυτοκρατορίας:
+SETUP_HOMEWORLD_NAME_LABEL        | Όνομα Πλανήτη Έδρας:
+SETUP_LEADER_NAME_LABEL           | Όνομα Ηγέτη:
+SETUP_FLAG_LABEL                  | Λάβαρο
+SETUP_BUTTON_CANCEL               | Ακύρωση
+SETUP_BUTTON_BACK                 | Πίσω
+SETUP_BUTTON_NEXT                 | Επόμενο
+SETUP_BUTTON_START                | Έναρξη
+
+// Tech UI labels
+TECH_RESEARCH                     | Έρευνα
+TECH_RESEARCH_POINTS              | Πόντοι Έρευνας
+TECH_EMPIRE_SPENDING              | Τεχνολογική Δαπάνη
+TECH_EMPIRE_SPENDING_DESC         | Το συνολικό κόστος έρευνας όλων των αποικιών. 
+TECH_EMPIRE_BALANCED_DESC         | Η ισοκατανεμημένη δαπάνη αυξάνει το σύνολο πόντων έρευνας.
+TECH_EMPIRE_DETAIL_1              | %1 ΔΙΣ για 
+TECH_EMPIRE_DETAIL_2              | %2 ΠΕ / Έτος
+TECH_TOTAL_RP                     | %1 ΠΕ
+TECH_DISCOVERY_PCT                | %1%
+TECH_NEXT_TIER_TITLE              | Μη Προσβάσιμο επί του παρόντος.
+TECH_NEXT_TIER_DESC               | Ερευνήστε κάποια τεχνολογία προηγούμενου επιπέδου για να ξεκλειδωθεί.
+TECH_FIRST_TIER_DESC              | Δαπαμήστε πόντους έρευνας στην κατηγορία για να ξεκλειδωθεί.
+TECH_ALLOCATE_POINTS              | Κατανομή Πόντων Έρευνας
+TECH_EQUALIZE                     | Εξίσωση Κατανομής
+TECH_RESEARCHING                  | Ερευνάται:
+TECH_NONE_RESEARCHED              | Τίποτα
+TECH_PLANETARY_SHIELDS            | Πλανητικές Ασπίδες
+TECH_PLANETARY_SHIELDS_NONE       | Καθόλου
+TECH_PLANETARY_SHIELDS_CLASS      | Κλάσης %1
+TECH_GROUND_COMBAT                | Μάχη Εδάφους
+TECH_GROUND_COMBAT_NO_BONUS       | Χωρίς Πλεονέκτημα
+TECH_GROUND_COMBAT_BONUS          | +%1%
+TECH_TERRAFORM                    | Γεωπλασία
+TECH_TERRAFORM_NO_BONUS           | Χωρίς Πριμοδότηση
+TECH_TERRAFORM_BONUS              | +%1 Μεγ. Πλήθ.
+TECH_FACTORY_CONTROLS             | Εργοστασιακοί Έλεγχοι
+TECH_FACTORY_CONTROLS_BONUS       | %1/άποικο
+TECH_PLANET_SCANNER               | Εμβέλεια Σαρωτών
+TECH_PLANET_SCANNER_NONE          | Ανύπαρκτη
+TECH_PLANET_SCANNER_RANGE         | %1 έτη φωτός
+TECH_WASTE_REDUCTION              | Μείωση Αποβλήτων
+TECH_WASTE_REDUCTION_NONE         | Καμμία
+TECH_WASTE_REDUCTION_AMT          | -%1%
+TECH_WASTE_CLEANUP                | Καθάρισμα Αποβλήτων
+TECH_WASTE_CLEANUP_BONUS          | %1 Μονάδες/ΔΙΣ
+TECH_SHIP_RANGE                   | Εμβέλεια Σκαφών
+TECH_SHIP_RANGE_AMT               | %1 έτη Φωτός
+TECH_SHIP_SPEED                   | Μέγιστη Ταχύτης
+TECH_SHIP_SPEED_AMT               | Στρέβλωση %1
+TECH_BUTTON_EXIT                  | Έξοδος
+
+
+// =========================================================================
+//   DO NOT TRANSLATE BEYOND THIS POINT! THESE UI'S ARE NOT REDESIGNED YET
+// =========================================================================
+
+// Ship Combat UI
+SHIP_COMBAT_TITLE                 | Σύρραξη Σκαφών σε %1
+SHIP_COMBAT_BASES                 | %1 Πυραυλ Βάσεις
+SHIP_COMBAT_SHIELD                | Πλανητική Ασπίδα Επιπέδου %1
+SHIP_COMBAT_POPULATION            | %1 Πληθυσμός
+SHIP_COMBAT_FACTORIES             | %1 Εργοστάσια
+SHIP_COMBAT_PROMPT                | Να μπούμε σε μάχη?
+SHIP_COMBAT_PROMPT_YES            | Ναι
+SHIP_COMBAT_PROMPT_NO             | Όχι
+SHIP_COMBAT_RESULTS               | Ο Στόλος %1 νίκησε σε %2!
+SHIP_COMBAT_RETREATING            | Οπισθοχωρώντας
+SHIP_COMBAT_NEXT                  | Επόμενο
+SHIP_COMBAT_DONE                  | Ολοκληρώθηκε
+SHIP_COMBAT_RETREAT               | Οπισθοχώρηση
+SHIP_COMBAT_AUTO                  | Αυτόματα
+SHIP_COMBAT_EXIT                  | Έξοδος
+SHIP_COMBAT_MANUAL                | Χειροκίνητα
+
+// Ship Design UI
+SHIP_DESIGN_TITLE                 | ΣΧΕΔΙΑΣΗ ΣΚΑΦΩΝ
+SHIP_DESIGN_STARGATE_NAME         | Αστροπύλη
+SHIP_DESIGN_1ST_SCOUT_NAME        | Ανιχνευτικό
+SHIP_DESIGN_1ST_FIGHTER_NAME      | Μαχητικό
+SHIP_DESIGN_1ST_DESTROYER_NAME    | Καταστροφέας
+SHIP_DESIGN_1ST_BOMBER_NAME       | Βομβαρδιστικό
+SHIP_DESIGN_1ST_COLONY_NAME       | Αποικιστικό
+SHIP_DESIGN_EMPTY_SLOT            | ΔΙΑΘΕΣΙΜΑ
+SHIP_DESIGN_BUILD                 | ΦΤΙΑΞΕ
+SHIP_DESIGN_SCRAP                 | ΚΑΤΑΡΓΗΣΕ
+SHIP_DESIGN_EXIT                  | ΕΞΟΔΟΣ
+SHIP_DESIGN_SCRAP_CONFIRM1        | Μόνο 6 σκάφη μπορούν να ανατεθούν τη φορά. Αν διαλυθεί αυτό το σκάφος θα αποτεθούν %1 ΔΙΣ στα Πλανητικά Διαθέσιμα.
+SHIP_DESIGN_SCRAP_CONFIRM2        | Θέλεις να διαλύσεις αυτό το σκάφος?
+SHIP_DESIGN_SCRAP_PROMPT_YES      | Ναι
+SHIP_DESIGN_SCRAP_PROMPT_NO       | Όχι
+SHIP_DESIGN_SCRAP_BC              | %1 ΔΙΣ
+SHIP_DESIGN_ICON_LABEL            | ΕΙΚΟΝΙΔΙΟ
+SHIP_DESIGN_COLOR_LABEL           | ΧΡΩΜΑ
+SHIP_DESIGN_SIZE_LABEL            | ΜΕΓΕΘΟΣ
+SHIP_DESIGN_SIZE_SMALL            | ΜΙΚΡΟ
+SHIP_DESIGN_SIZE_MEDIUM           | ΜΕΤΡΙΟ
+SHIP_DESIGN_SIZE_LARGE            | ΜΕΓΑΛΟ
+SHIP_DESIGN_SIZE_HUGE             | ΤΕΡΑΣΤΙΟ
+SHIP_DESIGN_NAME                  | ΟΝΟΜΑ
+SHIP_DESIGN_COST                  | ΚΟΣΤΟΣ ΣΚΑΦΟΥΣ
+SHIP_DESIGN_SPACE                 | ΣΥΝΟΛΟ ΧΩΡΟΥ
+SHIP_DESIGN_AVAILABLE_SPACE       | ΔΙΑΘΕΣΙΜΟΣ ΧΩΡΟΣ
+SHIP_DESIGN_COST_VALUE            | %1 ΔΙΣ
+SHIP_DESIGN_COMPUTER_LABEL        | Υπολογιστής
+SHIP_DESIGN_SHIELD_LABEL          | Ασπίδα
+SHIP_DESIGN_ECM_LABEL             | Ηλκτ
+SHIP_DESIGN_ARMOR_LABEL           | Θωράκιση
+SHIP_DESIGN_ENGINE_LABEL          | Κινητήρας
+SHIP_DESIGN_MANEUVER_LABEL        | Ελιγμοί
+SHIP_DESIGN_WPN_COUNT_LABEL       | Ποσότητα
+SHIP_DESIGN_WPN_NAME_LABEL        | Όπλα Σκάφους
+SHIP_DESIGN_WPN_DAMAGE_LABEL      | Ζημιά
+SHIP_DESIGN_WPN_RANGE_LABEL       | Εμβλ
+SHIP_DESIGN_WPN_NOTES_LABEL       | Σημειώσεις
+SHIP_DESIGN_WEAPON1_LABEL         | Όπλο 1
+SHIP_DESIGN_WEAPON2_LABEL         | Όπλο 2
+SHIP_DESIGN_WEAPON3_LABEL         | Όπλο 3
+SHIP_DESIGN_WEAPON4_LABEL         | Όπλο 4
+SHIP_DESIGN_WEAPON_DMG_RANGE      | %1-%2
+SHIP_DESIGN_SPECIAL1_LABEL        | Εξειδικευμένο 1
+SHIP_DESIGN_SPECIAL2_LABEL        | Εξειδικευμένο 2
+SHIP_DESIGN_SPECIAL3_LABEL        | Εξειδικευμένο 3
+SHIP_DESIGN_COMP_ATTACK_LEVEL     | Επίπεδο Επίθεσης
+SHIP_DESIGN_ABSORBS_1_HIT         | Απορροφά 1 πλήγμα
+SHIP_DESIGN_ABSORBS_HITS          | Απορροφά %1 πλήγματα
+SHIP_DESIGN_MISSILE_DEFENSE       | Άμυνα Πυραυλ
+SHIP_DESIGN_HULL_HIT_POINTS       | Πόντοι Πλήγματος
+SHIP_DESIGN_ENGINE_WARP           | Ταχύτης
+SHIP_DESIGN_ENGINE_DEFENSE        | Άμυνα
+SHIP_DESIGN_MANV_COMBAT_SPEED     | Ταχύτης Μάχης
+SHIP_DESIGN_ABSORBS_1_HIT         | Απορροφά 1 πλήγμα
+SHIP_DESIGN_ABSORBS_HITS          | Απορροφά %1 πλήγματα
+// ship design selection dialogs
+SHIP_DESIGN_COMPONENT_NONE        | Κανένα
+SHIP_DESIGN_COMPUTER_TITLE        | ΥΠΟΛΟΓΙΣΤΕΣ
+SHIP_DESIGN_COMPUTER_TYPE         | ΕΙΔΟΣ Η/Υ
+SHIP_DESIGN_COMPUTER_COST         | ΚΟΣΤΟΣ
+SHIP_DESIGN_COMPUTER_SIZE         | ΜΕΓΕΘΟΣ
+SHIP_DESIGN_COMPUTER_POWER        | ΙΣΧΥΣ
+SHIP_DESIGN_COMPUTER_SPACE        | ΧΩΡΟΣ
+SHIP_DESIGN_SHIELD_TITLE          | ΑΣΠΙΔΕΣ
+SHIP_DESIGN_SHIELD_TYPE           | ΤΥΠΟΣ ΑΣΠΙΔΑΣ
+SHIP_DESIGN_SHIELD_COST           | ΚΟΣΤΟΣ
+SHIP_DESIGN_SHIELD_SIZE           | ΜΕΓΕΘΟΣ
+SHIP_DESIGN_SHIELD_POWER          | ΙΣΧΥΣ
+SHIP_DESIGN_SHIELD_SPACE          | ΧΩΡΟΣ
+SHIP_DESIGN_ECM_TITLE             | ΗΛΕΚΤ
+SHIP_DESIGN_ECM_TYPE              | ΤΥΠΟΣ ΗΛΕΚΤ
+SHIP_DESIGN_ECM_COST              | ΚΟΣΤΟΣ
+SHIP_DESIGN_ECM_SIZE              | ΜΕΓΕΘΟΣ
+SHIP_DESIGN_ECM_POWER             | ΙΣΧΥΣ
+SHIP_DESIGN_ECM_SPACE             | ΧΩΡΟΣ
+SHIP_DESIGN_ARMOR_TITLE           | ΘΩΡΑΚΙΣΗ
+SHIP_DESIGN_ARMOR_TYPE            | ΤΥΠΟΣ ΘΩΡΑΚ
+SHIP_DESIGN_ARMOR_COST            | ΚΟΣΤΟΣ
+SHIP_DESIGN_ARMOR_SIZE            | ΜΕΓΕΘΟΣ
+SHIP_DESIGN_ENGINE_TITLE          | ΚΙΝΗΤΗΡΑΣ
+SHIP_DESIGN_ENGINE_TYPE           | ΤΥΠΟΣ ΚΙΝΗΤ
+SHIP_DESIGN_ENGINE_COST           | ΚΟΣΤΟΣ
+SHIP_DESIGN_ENGINE_SIZE           | ΜΕΓΕΘΟΣ
+SHIP_DESIGN_ENGINE_NUM            | ΑΡΙΘ ΚΙΝΗΤ
+SHIP_DESIGN_ENGINE_SPACE          | ΧΩΡΟΣ
+SHIP_DESIGN_MANEUVER_TITLE        | ΚΙΝΗΤΙΚΟΤΗΤΑ
+SHIP_DESIGN_MANEUVER_TYPE         | ΕΛΙΓΜΟΙ
+SHIP_DESIGN_MANEUVER_SPEED        | ΤΑΧΥΤΗΣ
+SHIP_DESIGN_MANEUVER_COST         | ΚΟΣΤΟΣ
+SHIP_DESIGN_MANEUVER_POWER        | ΙΣΧΥΣ
+SHIP_DESIGN_MANEUVER_SPACE        | ΧΩΡΟΣ
+SHIP_DESIGN_WEAPON_TITLE          | ΟΠΛΑ
+SHIP_DESIGN_WEAPON_MAX            | ΜΕΓΙΣΤΟ
+SHIP_DESIGN_WEAPON_NAME           | ΟΝΟΜΑ ΟΠΛΟΥ
+SHIP_DESIGN_WEAPON_DESCRIPTION    | ΠΕΡΙΓΡΑΦΗ
+SHIP_DESIGN_WEAPON_DAMAGE         | ΖΗΜ
+SHIP_DESIGN_WEAPON_COST           | ΚΟΣΤΟΣ
+SHIP_DESIGN_WEAPON_SIZE           | ΜΕΓΕΘΟΣ
+SHIP_DESIGN_WEAPON_POWER          | ΙΣΧΥΣ
+SHIP_DESIGN_WEAPON_SPACE          | ΧΩΡΟΣ
+SHIP_DESIGN_SPECIAL_TITLE         | ΕΙΔΙΚΕΣ ΣΥΣΚΕΥΕΣ
+SHIP_DESIGN_SPECIAL_NAME          | ΟΝΟΜΑ ΕΙΔΙΚΗΣ ΣΥΣΚ
+SHIP_DESIGN_SPECIAL_DESCRIPTION   | ΠΕΡΙΓΡΑΦΗ
+SHIP_DESIGN_SPECIAL_COST          | ΚΟΣΤΟΣ
+SHIP_DESIGN_SPECIAL_SIZE          | ΜΕΓΕΘΟΣ
+SHIP_DESIGN_SPECIAL_POWER         | ΙΣΧΥΣ
+SHIP_DESIGN_SPECIAL_SPACE         | ΧΩΡΟΣ
+
+// Map UI
+GALAXY_MAP_TITLE                  | Χάρτης Γαλαξία
+GALAXY_MAP_DEFENSES               | Άμυνα
+GALAXY_MAP_RESOURCES              | Πόροι
+GALAXY_MAP_ENVIRONMENTS           | Περιβάλλον
+GALAXY_MAP_KEY_TITLE              | Επεξήγηση
+GALAXY_MAP_SHIELD_LEVEL_5         | Ασπίδα Κλάσης V
+GALAXY_MAP_SHIELD_LEVEL_10        | Ασπίδα Κλάσης X
+GALAXY_MAP_SHIELD_LEVEL_15        | Ασπίδα Κλάσης XV
+GALAXY_MAP_SHIELD_LEVEL_20        | Ασπίδα Κλάσης XX
+GALAXY_MAP_TERRAN_KEY             | Γ
+GALAXY_MAP_JUNGLE_KEY             | Ζ
+GALAXY_MAP_OCEAN_KEY              | Ω
+GALAXY_MAP_ARID_KEY               | ΑΝ
+GALAXY_MAP_STEPPE_KEY             | Σ
+GALAXY_MAP_DESERT_KEY             | Ε
+GALAXY_MAP_MINIMAL_KEY            | M
+GALAXY_MAP_BARREN_KEY             | ΑΓ
+GALAXY_MAP_TUNDRA_KEY             | Τ
+GALAXY_MAP_DEAD_KEY               | Ν
+GALAXY_MAP_INFERNO_KEY            | Κ
+GALAXY_MAP_TOXIC_KEY              | ΤΞ
+GALAXY_MAP_RADIATED_KEY           | Ρ
+GALAXY_MAP_NONE_KEY               | -
+GALAXY_MAP_CAN_RESEARCH           | Μπορεί να γίνει προσγείωση βάσει τεχνολογίας
+GALAXY_MAP_UNABLE_TO_LAND         | Δεν μπορεί να γίνει προσγείωση
+GALAXY_MAP_ULTRA_POOR             | Πάμπτωχος
+GALAXY_MAP_POOR                   | Πτωχός
+GALAXY_MAP_RICH                   | Πλούσιος
+GALAXY_MAP_ULTRA_RICH             | Πάμπλουτος
+GALAXY_MAP_ARTIFACTS              | Τεχνουργήματα
+GALAXY_MAP_ORION                  | Ωρίων
+GALAXY_MAP_ULTRA_POOR_EFFECT      | 1/3 Παραγ
+GALAXY_MAP_POOR_EFFECT            | 1/2 Παραγ
+GALAXY_MAP_RICH_EFFECT            | 2x  Παραγ
+GALAXY_MAP_ULTRA_RICH_EFFECT      | 3x  Παραγ
+GALAXY_MAP_ARTIFACTS_EFFECT       | 2x  Παραγ
+GALAXY_MAP_ORION_EFFECT           | 4x  Παραγ
+GALAXY_MAP_PRODUCTION_BONUSES     | Πριμοδότηση Παραγωγής για Βιομηχανία, Σκάφη και Άμυνα
+GALAXY_MAP_EXIT                   | ΕΞΟΔΟΣ
+
+// Races UI
+RACES_EMBASSY                     | ΠΡΕΣΒΕΙΑ
+RACES_MAP                         | ΧΑΡΤΗΣ
+RACES_INTEL                       | ΥΠΗΡΕΣΙΑ ΠΛΗΡΟΦΟΡ
+RACES_SHIPS                       | ΣΤΡΑΤΙΩΤΙΚΟΣ ΤΟΜΕΑΣ
+RACES_STATUS                      | ΚΑΤΑΤΑΞΗ
+RACES_FOREIGN_RELATIONS           | Εξώκοσμες Σχέσεις
+RACES_NO_CONTACT                  | Χωρίς Επαφές
+RACES_EMPIRE_SIZE                 | Μέγεθος Αυτοκρατορίας
+RACES_DIPLOMATIC_EVENTS_EMPIRES   | %1-%2
+RACES_DIPLOMATIC_EVENTS           | Διπλωματικά Γεγονότα
+RACES_COUNCIL_VOTE                | Ψήφος Συμβουλίου: %1
+RACES_COUNCIL_ABSTAIN             | Ψήφος Συμβουλίου: Αποχή
+RACES_TECH_SECURITY_TITLE         | Εσωτερική Ασφάλεια %1
+RACES_TECH_TECHNOLOGY_TITLE       | Γνωστή Τεχνολογία %1
+RACES_MILITARY_TITLE              | Στόλος Αστρόπλοιων %1
+RACES_MILITARY_SUBTITLE           | Σκάφη ανά Μέγεθος
+RACES_MILITARY_SMALL              | Μικρά
+RACES_MILITARY_MEDIUM             | Μέτρια
+RACES_MILITARY_LARGE              | Μεγάλα
+RACES_MILITARY_HUGE               | Τεράστια
+RACES_MILITARY_REPORT_CURRENT     | Τρέχουσα Αναφορά Στόλου
+RACES_MILITARY_REPORT_NONE        | Καμμία Πληρφ. Απαιτούνται επιπλέον Κατάσκοποι.
+RACES_MILITARY_REPORT_OLD         | Παλαιότης Ανφ Στόλου: %1 Έτη
+RACES_MILITARY_UNSCANNED          | ??
+RACES_MILITARY_UNSCANNED_LONG     | Δεν έχει ανιχνευτεί
+RACES_BUTTON_EXIT                 | ΕΞΟΔΟΣ
+RACES_NO_TREATY                   | Χωρίς Συνθήκη
+RACES_AT_FINAL_WAR                | Τελικός Πόλεμος
+RACES_AT_WAR                      | Πόλεμος
+RACES_PEACE                       | Ειρήνη
+RACES_PACT                        | Συνθήκη
+RACES_ALLY                        | Σύμμαχος
+RACES_HOMEWORLD_NAME              | Πλαν. Έδρα: %1
+RACES_LEADER_NAME                 | Ηγέτης: %1
+RACES_OUT_OF_RANGE                | Εκτός Εμβέλειας
+RACES_TRADE_LEVEL                 | Εμπόριο: %1 ΔΙΣ/Έτος
+RACES_TRADE_NONE                  | Εμπόριο Μηδέν
+RACES_KNOWN_POPULATION            | Γνωστοί Πληθυσμοί: %1
+RACES_KNOWN_SYSTEMS               | Γνωστά Συστήματα: %1
+RACES_NO_SPIES                    | Κανένας Κατάσκοπος
+RACES_1_SPY                       | 1 Κατάσκοπος
+RACES_N_SPIES                     | %1 Κατάσκοποι
+RACES_DIPLOMAT_RECALLED           | Διπλωμάτης Ανακλήθηκε
+RACES_BUTTON_CONTACT              | ΕΠΑΦΗ
+RACES_BUTTON_AUDIENCE             | ΑΚΡΟΑΣΗ
+RACES_BUTTON_REPORT               | ΑΝΦΟΡΑ
+RACES_BUTTON_HIDE                 | ΑΠΟΚΡΥΨΗ
+RACES_BUTTON_SABOTAGE             | ΣΑΜΠΟΤΑΖ
+RACES_BUTTON_ESPIONAGE            | ΚΑΤΑΣΚΟΠΙΑ
+RACES_NO_SHIPS                    | Δεν ανιχνεύτηκαν Σκάφη
+RACES_REPORT_AGE                  | Παλαιότητα Αναφοράς: %1 Έτη
+RACES_COLONY_POPULATION           | ΠΛΗΘ
+RACES_COLONY_FACTORIES            | ΕΡΓΟΣΤ
+RACES_COLONY_SHIELD               | ΑΣΠΙΔΑ
+RACES_COLONY_BASES                | ΒΑΣΕΙΣ
+RACES_UNKNOWN_DATA                | --
+RACES_REPORT_CURRENT              | ΤΡΕΧΟΥΣΑ ΑΝΑΦΟΡΑ
+RACES_REPORT_NONE                 | ΑΠΟΥΣΙΑ ΔΕΔΟΜΕΝΩΝ
+RACES_REPORT_OLD                  | ΠΑΛ ΑΝΑΦ: %1 ΕΤΗ
+SPY_SPENDING_NONE                 | Μηδέν
+SPY_COMPLETION_YEARS              | %1 Έτη
+SPY_COMPLETION_PER_YEAR           | %1/Έτος
+SPY_SECURITY_INTERNAL             | Εσωτερική Ασφάλεια
+SPY_SECURITY_PCT                  | +%1%
+SPY_SECURITY_DESC                 | Η Ασφάλεια αυξάνει την πιθανότητα να συλληφθούν όλοι οι κατάσκοποι εχθρού.
+SPY_TOTAL_ALLOCATIONS             | Σύνολο Εσωτερικών και Εξωτερικών Αναθέσεων: %1% Πόρων Αυτοκρατορίας
+SHIP_TITLE_TACTICAL               | Πληροφορίες Τακτικής
+SHIP_TITLE_WEAPONS                | Οπλισμός
+SHIP_TITLE_SPECIALS               | Ειδικές Συσκευές
+SHIP_ATTACK_LEVEL                 | Επίπεδο Επίθεσης
+SHIP_MISSILE_DEFENSE              | Πυραυλική Άμυνα
+SHIP_BEAM_DEFENSE                 | Άμυνα Ακτίνων
+SHIP_ARMOR                        | Θωράκιση
+SHIP_SHIELD                       | Ασπίδα
+SHIP_SPEED                        | Ταχύτης
+SHIP_ACTIVE                       | Ενεργό
+SHIP_INACTIVE                     | Μή Ενεργό
+SHIP_SCAN_DATE                    | Ειδώθηκε πριν: %1 Έτη
+RELATIONS_FEUD                    | ΒΕΝΤΕΤΑ
+RELATIONS_HATE                    | ΕΧΘΡΑ
+RELATIONS_DISCORD                 | ΔΙΧΟΝΟΙΑ
+RELATIONS_TROUBLED                | ΠΡΟΒΛΗΜΑΤΙΣΜΟΣ
+RELATIONS_TENSE                   | ΕΝΤΑΣΗ
+RELATIONS_RESTLESS                | ΑΝΗΣΥΧΙΑ
+RELATIONS_WARY                    | ΠΡΟΦΥΛΑΞΗ
+RELATIONS_UNEASE                  | ΝΕΥΡΙΚΟΤΗΤΑ
+RELATIONS_NEUTRAL                 | ΟΥΔΕΤΕΡΟΤΗΤΑ
+RELATIONS_RELAXED                 | ΧΑΛΑΡΟΤΗΣ
+RELATIONS_AMIABLE                 | ΕΥΓΕΝΕΙΑ
+RELATIONS_CALM                    | ΗΡΕΜΙΑ
+RELATIONS_AFFABLE                 | ΚΑΤΑΔΕΚΤΙΚΟΤΗΤΑ
+RELATIONS_PEACEFUL                | ΕΙΡΗΝΗ
+RELATIONS_FRIENDLY                | ΦΙΛΙΑ
+RELATIONS_UNITY                   | ΕΝΟΤΗΤΑ
+RELATIONS_HARMONY                 | ΑΡΜΟΝΙΑ
+
+// Status UI
+STATUS_NO_DATA                    | Μηδέν Δεδομένα
+STATUS_OLD_DATA                   | Παλαιά Δεδομένα
+STATUS_FLEET_STRENGTH             | Δύναμη Στόλων
+STATUS_POPULATION                 | Πληθυσμός
+STATUS_TECHNOLOGY                 | Τεχνολογία
+STATUS_PLANETS                    | Πλανήτες
+STATUS_PRODUCTION                 | Παραγωγή
+STATUS_TOTAL_POWER                | Σύνολο Ισχύος
+
+// Sabotage UI
+SABOTAGE_TITLE                    | Σαμποτάζ
+SABOTAGE_DESCRIPTION              | Οι κατάσκοποί μας επέτυχαν να διεισδύσουν σε αποικίες των %1 και περιμένουν διαταγές.
+SABOTAGE_PROMPT                   | Επιλέξτε στόχο
+SABOTAGE_PROMPT_2                 | Έναρξη Αποστολής
+SABOTAGE_BUTTON_FACTORIES         | Καταστρέψτε Εργοστάσια
+SABOTAGE_BUTTON_BASES             | Καταστρέψτε Πυραυλικές Βάσεις
+SABOTAGE_BUTTON_REBELLION         | Προξενήστε Επανάσταση
+SABOTAGE_BUTTON_NO_ACTION         | Να μη γίνει κάποια ενέργεια
+SABOTAGE_FACTORIES_RESULT         | Οι κατάσκοποί σου κατέστρεψαν %1 εργοστάσια.
+SABOTAGE_BASES_RESULT             | Οι κατάσκοποί σου κατέστρεψαν %1 πυραυλικές βάσεις.
+SABOTAGE_REBELS_RESULT            | Οι κατάσκοποί σου εκπαίδευσαν %1 επαναστάτες. 
+SABOTAGE_REBELS_TOTAL             | Οι κατάσκοποί σου εκπαίδευσαν %1 επαναστάτες. Επίπεδο αναταραχής %2%.
+SABOTAGE_REBELS_REVOLT            | Οι κατάσκοποί σου πρακάλεσαν εξέγερση!
+SABOTAGE_BASES                    | πυραυλικές βάσεις
+SABOTAGE_FACTORIES                | εργοστάσια
+
+COUNCIL_CONVENE                   | Το Ανώτατο Συμβούλιο συνήλθε για να εκλέξει έναν ηγέτη ώς Ηγέτη του Γαλαξία. Ο Αυτοκράτωρ των %2 %1 και ο Αυτοκράτωρ των %4 %3 έχουν προταθεί.
+COUNCIL_CAST_VOTE                 | %1 ψήφοι για τον %2, Αυτοκράτορα των %3
+COUNCIL_CAST_ABSTAIN              | Η Αυτοκρατορία των %1 απέχει (%2 των ψήφων)...
+COUNCIL_CAST_PROMPT               | Πρέπει να κάνουμε την επιλογή μας (%1 των ψήφων)...
+COUNCIL_CHOICE_CANDIDATE          | %1 των %2
+COUNCIL_CHOICE_ABSTAIN            | Απέχω
+COUNCIL_NO_VOTE_COUNT             | 0 Ψήφοι %1
+COUNCIL_VOTE_COUNT                | %1 ψήφοι %2
+COUNCIL_TOTAL_VOTES               | %1 σύνολο
+COUNCIL_ACKNOWLEDGE_VOTE          | Επικυρώστε την Ψηφοφορία
+COUNCIL_NO_WINNER                 | Κανείς Ηγέτης δεν έχει δύο-τρίτα των ψήφων...
+COUNCIL_WINNER                    | Κατά το Έτος %1, το Συμβούλιο επέλεξε τον %2 των %3 να γίνει Υψηλός Άρχων της Γαλαξιακής Δημοκρατίας. Αποδέχεσαι το ψήφισμα?
+COUNCIL_YES                       | Ναι
+COUNCIL_NO                        | Όχι
+COUNCIL_ADJOURN                   | Διακοπή του Συμβουλίου
+COUNCIL_FINAL_WAR                 | Αρνείσαι το ψήφισμα του Συμβουλίου? Τώρα θα νιώσεις την οργή της Γαλαξιακής Δημοκρατίας!
+COUNCIL_ACKNOWLEDGE_FINAL_WAR     | Ας είναι
+
+NOTICE_SPYING_MISSION_HIDE        | Διείσδυση
+NOTICE_SPYING_MISSION_ESPIONAGE   | Κατασκοπία
+NOTICE_SPYING_MISSION_SABOTAGE    | Σαμποτάζ
+
+DIPLOMACY_RECEIVING               | Μεταφράζοντας το Εισερχόμενο Μήνυμα...
+DIPLOMACY_MENU_CONTINUE           | Συνέχεια
+DIPLOMACY_MENU_ACKNOWLEDGE        | Επικύρωση
+DIPLOMACY_MENU_FORGET_IT          | Ξέχασε το
+DIPLOMACY_TRADE_LEVEL             | %1 ΔΙΣ / Έτος
+DIPLOMACY_MAIN_MENU_1             | Πρότεινε Συνθήκη
+DIPLOMACY_MAIN_MENU_2             | Κάνε Εμπορική Συμφωνία
+DIPLOMACY_MAIN_MENU_3             | Απείλησε/Σπάσιμο Συμφωνίας και Εμπορίου
+DIPLOMACY_MAIN_MENU_4             | Προσφορά Φόρου Υποτέλειας
+DIPLOMACY_MAIN_MENU_5             | Ανταλλαγή Τεχνολογίας
+DIPLOMACY_MAIN_MENU_6             | Αντίο
+DIPLOMACY_TREATY_MENU_1           | Σύμφωνο Μη-Επιθετικότητας
+DIPLOMACY_TREATY_MENU_2           | Συμμαχία
+DIPLOMACY_TREATY_MENU_3           | Συνθήκη Ειρήνευσης
+DIPLOMACY_TREATY_MENU_4           | Κήρυξη Πολέμου σε Άλλη Φυλή
+DIPLOMACY_TREATY_MENU_5           | Σπάσε Συμμαχία με Άλλη Φυλή
+DIPLOMACY_THREATEN_MENU_0         | Ανάκληση Πρεσβευτού
+DIPLOMACY_THREATEN_MENU_1         | Απαίτησε Φόρο Υποτέλειας 
+DIPLOMACY_THREATEN_MENU_2         | Σπάσε Σύμφωνο Μη-Επιθετικότητας
+DIPLOMACY_THREATEN_MENU_3         | Σπάσε Συμμαχία
+DIPLOMACY_THREATEN_MENU_4         | Σπάσε Εμπορική Συνθήκη
+DIPLOMACY_THREATEN_MENU_5         | Κήρυξε Πόλεμο
+DIPLOMACY_ACCEPT_OFFER            | Αποδοχή
+DIPLOMACY_DECLINE_OFFER           | Άρνηση
+
+
+//GameOver  vars
+GAME_OVER_FINAL_SCORE             | Τελικό Σκόρ: %1
+// %1 Game year, %2 player name, %3 player race, %4 victor name, %5 victor race
+GAME_OVER_OVERTHROWN_LOSS         | Κατά το Έτος %1 η ηγεσία του %2 έλαβε τέλος, αφού ανατράπηκε από επαναστατημένες αποικίες εντός της αυτοκρατορίας των %3. Τώρα εξόριστος και χωρίς εξουσία, έχασες τον έλεγχο της υπέρτατης μοίρας της προηγούμενης σου αυτοκρατορίας. Μακάρι ο διάδοχος σου να είναι καλύτερος ηγέτης!
+GAME_OVER_MILITARY_LOSS           | Κατά το Έτος %1, οι δυνάμεις των %5 συνέτριψαν κάθε αντίπαλο opposition και τερμάτισαν τη δυναστεία του μακαρίτη %2, πρώην ηγέτη της  έκπτωτης αυτοκρατορίας των %3. Η υπέρλαμπλρη ιστορία των θριάμβων και των αποτυχιών του πολιτισμού των %3 σβήστηκε, θεωρούμενη ώς άσχετη από τους κατακτητές %5.
+GAME_OVER_DIPLOMATIC_LOSS         | Ας γίνει γνωστό, ότι κατά το έτος %1, ο %2 της αυτοκρατορίας των %3 κατηύθυνε όλους τους πολίτες να ενωθούν με τις άλλες φυλές αναγνωρίζοντας τον %4 ηγέτη των %5 ως νόμιμο ηγέτη της Γαλαξιακής Αυτοκράτειας, εξασφαλίζοντας την ειρήνη στο Γαλαξία. Όλοι χαιρετήστε τον Αυτοκράτορα %4!
+GAME_OVER_NEW_REPUBLIC_LOSS       | Κατά το έτος %1, ο Γαλαξιακός Ηγεμόνας %2 καταγράφηκε ώς η μεγαλύτερη αποτυχία στην γαλαξιακή ιστορία, επιτρέποντας σε επαναστάτες των %5 να καταστρέψουν και την αυτοκρατορία των %3 και την Γαλαξιακή Αυτοκράτεια.
+GAME_OVER_REBELLION_LOSS          | Κατά το έτος %1, η προδοσία της Αυτοκρατορίας των %3 από τον %2 ολοκληρώθηκε. Η μάταιη επανάσταση εναντίον του πανίσχυρου αυτοκράτορα %4 της Γαλαξιακής Αυτοκράτειας απέτυχε οικτρά, με αποτέλεσμα την ολοκληρωτική καταστροφή του Πλανήτη Έδρα των %3 και την εξάλειψη όλου του λαού των %3.
+GAME_OVER_DIPLOMATIC_WIN          | Ας γίνει γνωστό ότι, κατά το έτος %1, ο %2 των %3 κατηύθυνε όλους τους πολίτες να ενωθούν με τις άλλες φυλές αναγνωρίζοντας την φυλή του %4 ώς νόμιμους ηγέτες της Γαλαξιακής Αυτοκράτειας, διασφαλίζωντας την ειρήνη στο γαλαξία. Όλοι χαιρετήστε τον Αυτοκράτορα %2!
+GAME_OVER_MILITARY_WIN            | Ας γίνει γνωστό ότι, κατά το έτος %1, αέναη διοίκηση των %3 θεσπίστηκε δια τον γαλαξία όταν δυνάμεις των %3 εξάλειψαν την εναπομείνουσα απειλή των %5. Ένα μέλλον ειρήνης, εξερεύνησης και κατορθωμάτων θα είναι το αναμενόμενο για τις μελλοντικές γενεές των %3. Χαιρετίστε όλοι τον Αυτοκράτορα %2!
+GAME_OVER_NEW_REPUBLIC_WIN        | Ας γίνει γνωστό ότι, κατά το έτος %1, μια μόνιμη ειρήνη εγγυήθηκε σε όλες τις φυλές με την εκλογή του %2 της αυτοκρατορίας των %3 ως Γαλαξιακού Ηγεμόνα. Με το τέλος του πολέμου, η ελεύθερη και ανοιχτή ανταλλαγή κουλτούρας και ιδεών κατέστη συνήθης. Χαιρετήστε όλοι τον Αυτοκράτορα %2!
+GAME_OVER_REBELLION_WIN           | Κατά το έτος %1, εναντίον αφάνταστων πιθανοτήτων,  ο %2 της αυτοκρατορίας των %3 ηγήθηκε επιτυχώς επανάστασης εναντίον του Γαλαξιακού Αυτοκράτορα %4 και ολόκληρης της Γαλαξιακής Αυτοκράτειας. Αυτή η νίκη σιγούρεψε μόνιμη φήμη αλλά και μια μακρόχρονη περίοδο ειρήνης και ανεξαρτησίας για όλο το λαό των %3. 
+GAME_OVER_ALLIANCE_WIN            | Κατά το έτος %1, ο Αυτοκράτωρ %2 έριξε την ψήφο των %3 για τον %4 της αυτοκρατορίας των %5, έναν έμπιστο σύμμαχο. Χάρις στην πολιτική του σοφία, η φυλή των %3 έχει εγγυημένη την ειρηνική της συνύπαρξη με τη φυλή των %5 υπό την διοίκηση τους. 
+
+// Credit text
+CREDITS_DEVELOPER                 | Ray Fowler, Προγραμματιστής
+CREDITS_ILLUSTRATOR               | Petar Penev, Εικονογράφος
+CREDITS_GRAPHIC_DESIGN            | Kaitlin Lindsay, Γραφίστας
+CREDITS_MUSIC                     | Efe Tozan, Μουσική
+CREDITS_WRITER                    | Jeff Colucci, Συγγραφέας
+CREDITS_TRANSLATOR                | Βαγγέλης Σκούπρας, Ελληνικά
+

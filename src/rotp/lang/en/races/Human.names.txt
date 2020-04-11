@@ -1,0 +1,22 @@
+// all possible names
+name: Human, Terran, Tellan, Priman, Midgardian
+
+desc1: Diplomatic Economists
+desc2: Expert Diplomats
+desc3: The silver-tongued Humans are masters at convincing others to serve Human interests.
+
+// possible home system names
+home: Earth, Terra, Tellus, Prime, Midgard
+
+title:     Triumvir
+fulltitle: Triumvir
+
+// possible leader names
+leader: Alexander, Bladrov II, Durash IV, Johann III, Lasitus, Strader
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Sentry, Survey, Courier, Explorer, Seeker, Messenger, Patrol
+ship2: Frigate, Corvette, Gunboat, Fighter, Brigade, Shrike, Commando
+ship3: Cruiser, Escort, Warship, Defender, Carrier, Vanguard, Harrier
+ship4: Dreadnought, Battleship, Dreadstar, Devastator, War Cruiser, Avenger, Destroyer
+

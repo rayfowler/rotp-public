@@ -1,0 +1,7 @@
+#
+# Human GNN Host Frames
+
+Host, _ALL_, HumGNNHA_0:5+HumGNNHA_1+HumGNNHA_2+HumGNNHA_3+HumGNNHA_4+HumGNNHA_5+HumGNNHA_6+HumGNNHA_7+HumGNNHA_8:999999
+
+
+

@@ -1,0 +1,10 @@
+[tech]
+seq:    0
+name:   SOILENRICH_0_NAME
+detail: SOILENRICH_0_DETAIL
+
+[tech]
+seq:    1
+name:   SOILENRICH_1_NAME
+detail: SOILENRICH_1_DETAIL
+

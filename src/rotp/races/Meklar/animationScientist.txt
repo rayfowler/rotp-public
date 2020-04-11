@@ -1,0 +1,16 @@
+#
+# Meklar Scientist Animation
+# #1 - Blinking eye
+# #2 - Hand
+# #3 - Bubbling Beaker
+
+Base , _ALL_  , MekSci
+
+// generally stays open (MekSci04): but periodically closes (MekSci01) briefly
+Hand,    40@80  , MekSciHa01:1:5+MekSciHa02:1+MekSciHa03:1+MekSciHa04:5:15+MekSciHa03:1+MekSciHa02:1
+
+// Flickers between off (NULL) and on (MekSci04)
+Eye,    530@290 , NULL:1:3+MekSciEy02:1+MekSciEy03:1+MekSciEy04:1:7
+
+// steady bubbling
+Beaker, 740@390, MekSciBe01:1+MekSciBe02:1+MekSciBe03:1+MekSciBe04:1+MekSciBe05:1+MekSciBe06:1

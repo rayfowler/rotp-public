@@ -1,0 +1,18 @@
+[tech]
+seq:    0
+name:   MISSDEF_0_NAME
+brief:  MISSDEF_0_BRIEF
+detail: MISSDEF_0_DETAIL
+
+[tech]
+seq:    1
+name:   MISSDEF_1_NAME
+brief:  MISSDEF_1_BRIEF
+detail: MISSDEF_1_DETAIL
+
+[tech]
+seq:    2
+name:   MISSDEF_2_NAME
+brief:  MISSDEF_2_BRIEF
+detail: MISSDEF_2_DETAIL
+

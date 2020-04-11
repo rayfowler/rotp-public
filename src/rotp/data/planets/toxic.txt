@@ -1,0 +1,36 @@
+// MOO1 Toxic Planet
+key: PLANET_TOXIC
+
+descBiological: TOXIC_DESC_BIOLOGICAL
+descSilicoid:   TOXIC_DESC_BIOLOGICAL
+terrainImage:   TERRAIN_TOXIC
+landscapeImage: LANDSCAPE_TOXIC
+panoramaImage:  PANORAMA_TOXIC
+atmoImage:      ATMO_TOXIC_FULL
+cloudImage:     
+
+hostility: 11
+minSize: 10
+maxSize: 40
+
+// leftX, bottomY & width of ships landing on planet
+ship0: 320, 640, 400
+ship1: 130, 450, 200
+ship2: 120, 400, 140
+ship3: 260, 375, 110
+
+// water
+color: -1.00,  41, 13,  1
+color: -0.20,  64, 28, 16
+color: -0.00,  98, 42, 15
+
+// land
+color:    0.01, 129, 56, 13
+color:    0.05, 129, 56, 13
+color:    0.20, 139, 66, 23
+color:    0.45, 153, 76, 30
+color:    0.60, 158, 78, 27
+color:    0.75, 216, 126, 63
+color:    0.85, 232, 126, 52
+color:    0.90, 232, 134, 61
+color:    1.00, 226, 143, 89

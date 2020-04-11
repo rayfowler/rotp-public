@@ -1,0 +1,6 @@
+
+[tech]
+seq:    0
+name:   ATMOSPHERE_0_NAME
+detail: ATMOSPHERE_0_DETAIL
+

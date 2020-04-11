@@ -1,0 +1,42 @@
+// race-specific variables (must start with _)
+_empire                           | Alkari Sovereignty, Aviari Sovereignty, Cluckari Sovereignty, Feathari Sovereignty, Fowlari Sovereignty
+_race                             | Alkari, Aviari, Cluckari, Feathari, Fowlari
+_race_plural                      | Alkaris, Aviaris, Cluckaris, Featharis, Fowlaris
+_title                            | Spire King
+_nameTitle                        | Spire King
+
+
+GOVT_EMPIRE                       | %1 Sovereignty
+
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Advisor text
+MAIN_ADVISOR_TITLE                | %1 Advisor
+MAIN_ADVISOR_BUTTON_OK            | Dismiss
+MAIN_ADVISOR_SCOUT                | My lord, our scouts stand at the ready to discover a new world for our colony ship to bring into the fold so that we may add the territory to our illustrious sovereignty. 
+MAIN_ADVISOR_TRANSPORT            | A new world bears our banner, but it grows at an inhibited rate. Sending a transport to the colony will enable it to grow at a much swifter rate.
+MAIN_ADVISOR_DIPLOMACY            | Another space-faring civilization has revealed itself! Our diplomats will observe all appropriate decorum in your name, and take careful note on if they respond in kind.
+MAIN_ADVISOR_SHIP_ENGINE          | Our greatest minds have crafted a new, more efficient engine design. They wish for you to review existing ship schematics and decide how best to apply the new engines to our fleets.
+MAIN_ADVISOR_RALLY_POINTS         | Our era of peace cannot continue while an undignified race wages war on our glorious empire. The 33 Houses stand united under you, and will assemble their fleets to wherever you rally them.
+MAIN_ADVISOR_MISSILE_BASES        | With the sovereign fleets engaged in battle, our outer worlds lie vulnerable to enemy aggression. We can begin our construction of defensive missile bases on any world you desire.
+MAIN_ADVISOR_SHIP_WEAPON          | Our researchers have had a breakthrough in regards to ship weaponry. The fleets can be outfitted with these devastating pieces of technology at any time.
+MAIN_ADVISOR_COUNCIL              | The Galactic Council will soon convene, and our presence will no doubt be highly desired. Our diplomats will take this chance to ensure all that is decided upon will further the good of the sovereignty. 
+MAIN_ADVISOR_REBELLION            | Ah, a rebellion on %1. How quaint. I suppose it was bound to happen at some point, my lord, but we should still bring it to heel before discontent spreads to our other colonies.
+MAIN_ADVISOR_RESIST_COUNCIL       | My lord! We stand with you! There shall be no peace in this galaxy until you take your rightful place upon its highest throne! 
+MAIN_ADVISOR_COUNCIL_RESISTED     | Pathetic. See how the fools struggle against the inevitable? Give us the order to crush these rebels, and we shall see it done! 
+
+// This text is the %8 variable in some of the game over text... when this race wins the game
+GAME_OVER_ALLIANCE_WIN3           | the iron rule of the Alkari
+GAME_OVER_REBELLION_LOSS3         | the iron rule of the Alkari overwhelms

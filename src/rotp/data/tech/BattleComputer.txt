@@ -1,0 +1,85 @@
+[tech]
+// this is the Ship Design entry for selecting no battle computer
+seq:    0
+name:   COMPUTER_0_NAME
+item:   COMPUTER_0_ITEM
+brief:  COMPUTER_0_BRIEF
+detail: COMPUTER_0_DETAIL
+
+[tech]
+seq:    1
+name:   COMPUTER_1_NAME
+item:   COMPUTER_1_ITEM
+brief:  COMPUTER_1_BRIEF
+detail: COMPUTER_1_DETAIL
+
+[tech]
+seq:    2
+name:   COMPUTER_2_NAME
+item:   COMPUTER_2_ITEM
+brief:  COMPUTER_2_BRIEF
+detail: COMPUTER_2_DETAIL
+
+[tech]
+seq:    3
+name:   COMPUTER_3_NAME
+item:   COMPUTER_3_ITEM
+brief:  COMPUTER_3_BRIEF
+detail: COMPUTER_3_DETAIL
+
+[tech]
+seq:    4
+name:   COMPUTER_4_NAME
+item:   COMPUTER_4_ITEM
+brief:  COMPUTER_4_BRIEF
+detail: COMPUTER_4_DETAIL
+
+[tech]
+seq:    5
+name:   COMPUTER_5_NAME
+item:   COMPUTER_5_ITEM
+brief:  COMPUTER_5_BRIEF
+detail: COMPUTER_5_DETAIL
+
+[tech]
+seq:    6
+name:   COMPUTER_6_NAME
+item:   COMPUTER_6_ITEM
+brief:  COMPUTER_6_BRIEF
+detail: COMPUTER_6_DETAIL
+
+[tech]
+seq:    7
+name:   COMPUTER_7_NAME
+item:   COMPUTER_7_ITEM
+brief:  COMPUTER_7_BRIEF
+detail: COMPUTER_7_DETAIL
+
+[tech]
+seq:    8
+name:   COMPUTER_8_NAME
+item:   COMPUTER_8_ITEM
+brief:  COMPUTER_8_BRIEF
+detail: COMPUTER_8_DETAIL
+
+[tech]
+seq:    9
+name:   COMPUTER_9_NAME
+item:   COMPUTER_9_ITEM
+brief:  COMPUTER_9_BRIEF
+detail: COMPUTER_9_DETAIL
+
+[tech]
+seq:    10
+name:   COMPUTER_10_NAME
+item:   COMPUTER_10_ITEM
+brief:  COMPUTER_10_BRIEF
+detail: COMPUTER_10_DETAIL
+
+[tech]
+seq:    11
+name:   COMPUTER_11_NAME
+item:   COMPUTER_11_ITEM
+brief:  COMPUTER_11_BRIEF
+detail: COMPUTER_11_DETAIL
+

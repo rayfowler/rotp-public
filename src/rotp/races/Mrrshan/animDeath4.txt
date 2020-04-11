@@ -1,0 +1,5 @@
+#
+# Mrrshan Hostile Combat Frames
+
+# vaporized into nothingness
+Base, _ALL_ , MrrDeath401:1+MrrDeath402:1+MrrDeath403:1+MrrDeath404:1+MrrDeath405:1+MrrDeath406:1+MrrDeath407:1+null:99999

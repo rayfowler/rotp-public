@@ -1,0 +1,5 @@
+#
+# Sakkra Hostile Combat Frames
+
+# falls over dead
+Base, _ALL_ , SakDeath1H01+SakDeath1H02+SakDeath1H03:99999

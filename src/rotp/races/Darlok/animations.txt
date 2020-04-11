@@ -1,0 +1,21 @@
+
+DarlokLaboratory    | races/Darlok/animationLaboratory.txt
+DarlokEmbassy       | races/Darlok/animationEmbassy.txt
+DarlokDiploMug      | races/Darlok/animationMugshot.txt
+DarlokSpyMug        | races/Darlok/animationSpyMug.txt
+DarlokSoldierMug    | races/Darlok/animationSoldierMug.txt
+DarlokDiplomat      | races/Darlok/animationDiplomat.txt
+DarlokScientist     | races/Darlok/animationScientist.txt
+DarlokSoldier       | races/Darlok/animationSoldier.txt
+DarlokSpy           | races/Darlok/animationSpy.txt
+DarlokCombat        | races/Darlok/animCombat.txt
+DarlokDeath1        | races/Darlok/animDeath1.txt
+DarlokDeath2        | races/Darlok/animDeath2.txt
+DarlokDeath3        | races/Darlok/animDeath3.txt
+DarlokDeath4        | races/Darlok/animDeath4.txt
+DarlokGNN           | races/Darlok/animationGNN.txt
+DarlokGNNHost       | races/Darlok/animationGNNHost.txt
+
+DarlokTransportDesc | races/Darlok/animationTransportDescending.txt
+DarlokTransportOpen | races/Darlok/animationTransportOpening.txt
+

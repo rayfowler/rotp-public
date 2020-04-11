@@ -1,0 +1,13 @@
+#
+# Bulrathi Mugshot Animation (Setup & Races UI)
+Base, _ALL_  , BulLab
+Base,  _ALL_    , BulDip
+
+// open-blink-open-squint-blink-squint
+Eye,    320@50    , NULL:3:6+BulDipEy03:1+NULL:2:4+BulDipEy02:2:4+BulDipEy03:1+BulDipEy02:1:3
+
+// closed-open1-open2-open3-open2-open3-open2-open1
+Mouth,  320@120   , NULL:2+BulDipMo02:2+BulDipMo03:2+BulDipMo04:2+BulDipMo03:2+BulDipMo04:2+BulDipMo03:2+BulDipMo02:2
+
+// finger down-up-down-up-down-up (triple tap)
+Hand,   190@325   , NULL:5:9+BulDipFi02:1+NULL:1+BulDipFi02:1+NULL:1+BulDipFi02:1

@@ -1,0 +1,15 @@
+// race-specific variables (must start with _)
+_empire                    | Niepodlegli Alkari, Niepodlegli Aviari, Niepodlegli Cluckari
+_race                      | Alkari, Aviari, Cluckari
+
+// Advisor text
+MAIN_ADVISOR_TITLE         | Doradca rasy %1
+MAIN_ADVISOR_BUTTON_OK     | Odpraw
+MAIN_ADVISOR_SCOUT         | Panie, nasi zwiadowcy są gotowi do poszukiwań nowego świata gdzie moglibyśmy wysłać statek kolonizacyjny w celu powiększenia naszego terytorium.
+MAIN_ADVISOR_TRANSPORT     | Nasza flaga powiewa na nowej ziemi, lecz tempo rozwoju kolonii jest niskie. Wysłanie tam transportu kolonistów pozwoli na jego zwiększenie.
+MAIN_ADVISOR_DIPLOMACY     | Dała o sobie znać inna cywilizacja podróżników kosmicznych! Nasi dyplomaci zastosują prokotół dyplomatyczny w Twoim imieniu i ocenią jej odpowiedź.
+MAIN_ADVISOR_SHIP_ENGINE   | Najtęższe umysły opracowały nowy, bardziej efektywny projekt silnika. Zostałeś poproszony o przejrzenie istniejących schematów statków aby zdecydować jak najlepiej wykorzystać nowe silniki w naszej flocie.
+MAIN_ADVISOR_RALLY_POINTS  | Pokój nie może trwać podczas gdy obca rasa prowadzi działania zaczepne wobec naszego imperium. 33 Rody są z Tobą i zbiorą swe floty gdziekolwiek wybierzesz.
+MAIN_ADVISOR_MISSILE_BASES | Podczas gdy niepodległa flota prowadzi działania wojenne, nasze graniczne kolonie pozostają otwarte na agresję. Jesteśmy gotowi rozpocząć konstrukcjć obronnych baz rakietowych gdziekolwiek sobie tego zażyczysz.
+MAIN_ADVISOR_SHIP_WEAPON   | Nasi naukowcy osiągnęli przełom w uzbrojeniu statków. Flota może w każdej chwili zostać wyposażona w te śmiercionośną technologię.
+MAIN_ADVISOR_COUNCIL       | Rada Galaktyczna wkrótce zbierze się na obrady a nasza obecność będzie z pewnością bardzo pożądana. Nasi dymplomaci wykorzystają tę szansę by upewnić się, że podjęte decyzje będą zgodne z dobrem naszego państwa.

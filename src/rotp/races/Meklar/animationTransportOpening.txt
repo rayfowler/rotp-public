@@ -1,0 +1,4 @@
+#
+# Meklar Transport Ship Opening Animation
+
+Open,  0@0, MekTrans07:1+MekTrans11:1+MekTrans12:1+MekTrans13:1+MekTrans14:1+MekTrans21:1+MekTrans22:1+MekTrans23:999999

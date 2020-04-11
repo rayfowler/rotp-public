@@ -1,0 +1,5 @@
+#
+# Silicoid Combat Animation
+
+// Actual firing of weapon is on 5th of 7 frames
+Firing, _ALL_ , SilCombat01:1+SilCombat02:1+SilCombat03:1+SilCombat04:1+SilCombat05:1+SilCombat03:1+SilCombat01:1

@@ -1,0 +1,5 @@
+[tech]
+seq:    0
+name:   REPULSOR_0_NAME
+brief:  REPULSOR_0_BRIEF
+detail: REPULSOR_0_DETAIL

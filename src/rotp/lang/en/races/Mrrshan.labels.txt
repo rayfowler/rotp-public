@@ -1,0 +1,43 @@
+// race-specific variables (must start with _)
+_empire                           | Mrrshan Clan, Prrshan Clan, Meowshan Clan, Clawshan Clan, Hisshan Clan
+_race                             | Mrrshan, Prrshan, Meowshan, Clawshan, Hisshan
+_race_plural                      | Mrrshan, Prrshan, Meowshan, Clawshan, Hisshan
+_title                            | Khan
+_nameTitle                        | Khan
+
+
+GOVT_EMPIRE                       | %1 Khanate
+
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Advisor text
+MAIN_ADVISOR_TITLE                | %1 Advisor
+MAIN_ADVISOR_BUTTON_OK            | Dismiss
+MAIN_ADVISOR_SCOUT                | Ah-ha! Our first fleet is ready! Let's use it to find a world with enemies who've much treasure for the taking.
+MAIN_ADVISOR_TRANSPORT            | We've taken new territory on %1. The more of us we transport from %3, the faster we'll find any loot this world has.
+MAIN_ADVISOR_DIPLOMACY            | We've made contact with a new alien race! Think they'll prove to be strong enemies, or will their treasures be easy pickings?
+MAIN_ADVISOR_SHIP_ENGINE          | We've found a way to improve our engines and make our ships even faster! If we incorporate them into our ship designs, our raids on enemy worlds will become even more efficient!
+MAIN_ADVISOR_RALLY_POINTS         | Khan! War is upon us! The Khanates will honor their pledge to unite with you at this time, so set a rally point to tell 'em where to send their fleets!
+MAIN_ADVISOR_MISSILE_BASES        | The rim worlds under our control are vulnerable to enemy attack! Let's construct missile bases to prevent 'em from falling into enemy hands.
+MAIN_ADVISOR_SHIP_WEAPON          | We've managed to develop powerful new weapons for use on our ships. These are sure to cause a rout among the forces of our enemies once we include 'em on our ship designs.
+MAIN_ADVISOR_COUNCIL              | A meeting of peoples will soon be upon us, but they say it's for diplomacy instead of war. Strange isn't it? Still, we should attend this "Galactic Council", if for nothing else then to placate the more skittish empires.
+MAIN_ADVISOR_REBELLION            | Are you feeling unwell, Khan? There's a rebellion on %1 and you haven't given orders to put 'em down.
+MAIN_ADVISOR_RESIST_COUNCIL       | Did they think we'd just lay down and let 'em put a coward's peace over the galaxy like that? Let's start the raids, Khan: our people are itching for some treasure! 
+MAIN_ADVISOR_COUNCIL_RESISTED     | Those rebel fools refuse our ruling! Let's show 'em our dictum: the strong take, the weak give! 
+
+
+// This text is the %8 variable in some of the game over text... when this race wins the game
+GAME_OVER_ALLIANCE_WIN3           | the iron rule of the Mrrshan
+GAME_OVER_REBELLION_LOSS3         | the iron rule of the Mrrshan overwhelms

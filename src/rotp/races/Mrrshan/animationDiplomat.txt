@@ -1,0 +1,14 @@
+#
+# Mrrshan Diplomat Animation
+
+Base,   _ALL_  , MrrDip
+
+#   1(null)-Closed, 2,3-Half-Open, 4-Open
+Claws, 0@0 , NULL:20:35+MrrDipCl01:1+MrrDipCl02:1+MrrDipCl03:10:15
+
+#   1(null)-Open, Closing (2,3) and Closed 4
+Eye,   0@0 , NULL:8:20+MrrDipEy01:1+MrrDipEy02:1+MrrDipEy03:12+NULL:8:20+MrrDipEy04:2:4
+
+#   1(null)-Closed, 2,3-Half-Open, 4-Open
+Mouth, 0@0 , NULL:2+MrrDipMo02:2+MrrDipMo03:2+MrrDipMo04:2+MrrDipMo03:2+MrrDipMo02:2+MrrDipMo03:2+MrrDipMo02:2
+

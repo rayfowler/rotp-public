@@ -1,0 +1,16 @@
+// listing of planet files
+
+terran.txt
+jungle.txt
+ocean.txt
+arid.txt
+steppe.txt
+desert.txt
+minimal.txt
+barren.txt
+tundra.txt
+dead.txt
+inferno.txt
+toxic.txt
+radiated.txt
+none.txt

@@ -1,0 +1,9 @@
+#
+# Soldier Animation
+Base,     _ALL_   , KlaLab
+Mouth,     _ALL_   , KlaSol01:2:5+KlaSol02+KlaSol03:2+KlaSol02
+
+Weapon,    _ALL_   , KlaSolA02:30:80+NULL:20+NULL:6:10+KlaSolA01
+
+#EyeBeam,   _ALL_  , NULL:20:30+KlaSolB01+KlaSolB02+KlaSolB03+KlaSolB04+KlaSolB06+KlaSolB06+KlaSolB07+KlaSolB08+NULL:50
+

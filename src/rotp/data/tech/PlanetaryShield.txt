@@ -1,0 +1,20 @@
+[tech]
+seq:    0
+name:   PLANETSHIELD_0_NAME
+detail: PLANETSHIELD_0_DETAIL
+
+[tech]
+seq:    1
+name:   PLANETSHIELD_1_NAME
+detail: PLANETSHIELD_1_DETAIL
+
+[tech]
+seq:    2
+name:   PLANETSHIELD_2_NAME
+detail: PLANETSHIELD_2_DETAIL
+
+[tech]
+seq:    3
+name:   PLANETSHIELD_3_NAME
+detail: PLANETSHIELD_3_DETAIL
+

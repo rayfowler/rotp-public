@@ -1,0 +1,17 @@
+// race-specific variables (must start with _)
+_empire                    | Alkari Souveränität, Aviari Souveränität, Cluckari Souveränität
+_race                      | Alkari, Aviari, Cluckari
+
+// Advisor text
+MAIN_ADVISOR_TITLE         | %1 Berater
+MAIN_ADVISOR_BUTTON_OK     | Entlassen
+MAIN_ADVISOR_SCOUT         | Mein Herr, unsere Scouts stehen bereit um neue Welten zu bereisen und Kolonien zu gründen, die wir unserem Herrschaftsgebiet hinzufügen können
+MAIN_ADVISOR_TRANSPORT     | Eine neue Welt trägt unsere Flagge, aber sie wächst nur langsam. Wenn wir Transporte schicken würden, könnte die Welt deutlich schneller wachsen.
+MAIN_ADVISOR_DIPLOMACY     | Eine andere raumfahrende Zivilisation hat sich zu erkennen gegeben! Unsere Diplomaten werden alle passenden Anlässe in Ihrem Namen beobachten und sorgfältig beachten, ob sie in freundlicher Art antworten.
+MAIN_ADVISOR_SHIP_ENGINE   | Unsere schlausten Köpfe haben ein neues, effizienteres Antriebs-Design entworfen. Sie geben Ihnen die Möglichkeit, bestehende Schiffschemata zu überprüfen und zu entscheiden, wie man die neuen Motoren anwenden kann.
+MAIN_ADVISOR_RALLY_POINTS  | Unsere Ära des Friedens kann nicht weitergehen, während eine unwürdige Rasse den Krieg gegen unser herrliches Reich führt. Die 33 Häuser stehen unter euch und werden ihre Flotten zusammenstellen, wo du sie brauchst.
+MAIN_ADVISOR_MISSILE_BASES | Mit der Flotte in der Schlacht, liegen unsere äußeren Kolonien verwundbar für unseren Gegner dar. Wir sollten Raketenbasen bauen!
+MAIN_ADVISOR_SHIP_WEAPON   | Unsere Wissenschaftler haben eine neue Waffe entwickelt!Unsere Flotte kann nun mit dieser neuen Waffe ausgestattet werden.
+MAIN_ADVISOR_COUNCIL       | Der galaktische Rat trifft bald zusammen und unsere Anwesenheit ist erwünscht!Unsere Diplomaten werden die Chance nutzen, um alle Entscheidungen zum Wohle des Reiches zu treffen.
+
+

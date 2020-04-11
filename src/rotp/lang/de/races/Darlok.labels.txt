@@ -1,0 +1,16 @@
+// race-specific variables (must start with _)
+_empire                    | Darloks, Sarloks, Spyloks
+_race                      | Darlok, Sarlok, Spylok
+
+// Advisor text
+MAIN_ADVISOR_TITLE         | %1 Berater
+MAIN_ADVISOR_BUTTON_OK     | Entlassen
+MAIN_ADVISOR_SCOUT         | Wir haben die Konstruktion von 2 Scouts und einem Kolonieschiff fertig gestellt.Hoffen wir, dass wir die Antworten auf den nächsten Planeten finden.
+MAIN_ADVISOR_TRANSPORT     | Keine Antworten auf dem Planeten %1. Wir sollten die Kolonie dennoch mit einem Transport verstärken.
+MAIN_ADVISOR_DIPLOMACY     | Repräsentanten eines anderen Volkes haben sich vorgestellt.Wir müssen alles dafür tun, damit wir alle Antworten, die sie kennen, lernen. 
+MAIN_ADVISOR_SHIP_ENGINE   | Wir haben einen Weg gefunden, Antriebe effektiver zu machen. Wir müssen einen Konsens finden, wie es am sinnvollsten ist, unsere Schiffsdesigns zu aktualisieren, um diese neue Technologie zu nutzen ...
+MAIN_ADVISOR_RALLY_POINTS  | Ein Konflikt hat begonnen! Unsere Produktionsstätten können ihre neu gebauten Schiffe auf einer einzigen Welt versammeln und dort eine Flotte bilden, um uns von den Aggressoren zu verteidigen ...
+MAIN_ADVISOR_MISSILE_BASES | Wir haben zu viel verloren als wir in dieses Universum gekommen sind, dass wir jetzt nicht noch mehr verlieren sollten. Unsere Kolonien könnten sich mit Raketenbasen selbst verteidigen.
+MAIN_ADVISOR_SHIP_WEAPON   | Wir haben eine neue Technologie entdeckt, die die Offensivfertigkeiten unsere Schiffe verbessert.Wir müssen uns wieder entscheiden, ob wir schnellstmöglich ein Schiffsdesign anpassen sollten.
+MAIN_ADVISOR_COUNCIL       | Es gibt Gerüchte um die Versammlung des Galaktischen Rats , der bald sein wird. Unsere Spione hoffen, dass sich dadurch Gelegenheiten ergeben, möglichst viele Informationen zu sammeln. Unsere Zukunft hängt davon ab!
+

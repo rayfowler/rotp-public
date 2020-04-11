@@ -1,0 +1,25 @@
+[tech]
+seq:    0
+name:   INDWASTE_0_NAME
+detail: INDWASTE_0_DETAIL
+
+[tech]
+seq:    1
+name:   INDWASTE_1_NAME
+detail: INDWASTE_1_DETAIL
+
+[tech]
+seq:    2
+name:   INDWASTE_2_NAME
+detail: INDWASTE_2_DETAIL
+
+[tech]
+seq:    3
+name:   INDWASTE_3_NAME
+detail: INDWASTE_3_DETAIL
+
+[tech]
+seq:    4
+name:   INDWASTE_4_NAME
+detail: INDWASTE_4_DETAIL
+

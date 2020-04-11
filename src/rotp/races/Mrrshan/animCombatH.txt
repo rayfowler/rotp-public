@@ -1,0 +1,5 @@
+#
+# Combat Frames
+
+# leans and fires on frame 3 of 4
+Base, _ALL_ , MrrHComb01+MrrHComb02+MrrHComb03+MrrHComb02

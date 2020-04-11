@@ -1,0 +1,12 @@
+[tech]
+seq:    0
+name:   AUTOREPAIR_0_NAME
+brief:  AUTOREPAIR_0_BRIEF
+detail: AUTOREPAIR_0_DETAIL
+
+[tech]
+seq:    1
+name:   AUTOREPAIR_1_NAME
+brief:  AUTOREPAIR_1_BRIEF
+detail: AUTOREPAIR_1_DETAIL
+

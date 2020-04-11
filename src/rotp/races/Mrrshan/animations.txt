@@ -1,0 +1,25 @@
+
+MrrshanLaboratory    | races/Mrrshan/animationLaboratory.txt
+MrrshanDiploMug      | races/Mrrshan/animationMugshot.txt
+MrrshanSpyMug        | races/Mrrshan/animationSpyMug.txt
+MrrshanSoldierMug    | races/Mrrshan/animationSoldierMug.txt
+MrrshanDiplomat      | races/Mrrshan/animationDiplomat.txt
+MrrshanScientist     | races/Mrrshan/animationScientist.txt
+MrrshanSoldier       | races/Mrrshan/animationSoldier.txt
+MrrshanSpy           | races/Mrrshan/animationSpy.txt
+MrrshanCombat        | races/Mrrshan/animCombat.txt
+MrrshanCombatH       | races/Mrrshan/animCombatH.txt
+MrrshanDeath1        | races/Mrrshan/animDeath1.txt
+MrrshanDeath2        | races/Mrrshan/animDeath2.txt
+MrrshanDeath3        | races/Mrrshan/animDeath3.txt
+MrrshanDeath4        | races/Mrrshan/animDeath4.txt
+MrrshanDeath1H       | races/Mrrshan/animDeath1H.txt
+MrrshanDeath2H       | races/Mrrshan/animDeath2H.txt
+MrrshanDeath3H       | races/Mrrshan/animDeath3H.txt
+MrrshanDeath4H       | races/Mrrshan/animDeath4H.txt
+MrrshanGNN           | races/Mrrshan/animationGNN.txt
+MrrshanGNNHost       | races/Mrrshan/animationGNNHost.txt
+
+MrrshanTransportDesc | races/Mrrshan/animationTransportDescending.txt
+MrrshanTransportOpen | races/Mrrshan/animationTransportOpening.txt
+

@@ -1,0 +1,5 @@
+#
+# Bulrathi Hostile Combat Frames
+
+# vaporized into nothingness
+Base, _ALL_ , BulDeath401:1+BulDeath402:1+BulDeath403:1+BulDeath404:1+BulDeath405:1+BulDeath406:1+BulDeath407:1+null:99999

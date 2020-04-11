@@ -1,0 +1,5 @@
+#
+# Meklar Hostile Combat Frames
+
+# immolated. only ashes remain
+Base, _ALL_ , MekDeath301:1+MekDeath302:1+MekDeath303:1+MekDeath304:1+MekDeath305:1+MekDeath306:1+MekDeath307:1+MekDeath308:1+MekDeath309:1+MekDeath310:99999

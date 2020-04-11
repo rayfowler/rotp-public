@@ -1,0 +1,24 @@
+[tech]
+seq:    0
+name:   TORPEDO_0_NAME
+brief:  TORPEDO_0_BRIEF
+detail: TORPEDO_0_DETAIL
+
+[tech]
+seq:    1
+name:   TORPEDO_1_NAME
+brief:  TORPEDO_1_BRIEF
+detail: TORPEDO_1_DETAIL
+
+[tech]
+seq:    2
+name:   TORPEDO_2_NAME
+brief:  TORPEDO_2_BRIEF
+detail: TORPEDO_2_DETAIL
+
+[tech]
+seq:    3
+name:   TORPEDO_3_NAME
+brief:  TORPEDO_3_BRIEF
+detail: TORPEDO_3_DETAIL
+

@@ -1,0 +1,15 @@
+// race-specific variables (must start with _)
+_empire                    | Korporacja Meklarów, Korporacja Mechanarów, Korporacja Cybernarów
+_race                      | Meklar, Mechanar, Cybernar
+
+// Advisor text
+MAIN_ADVISOR_TITLE         | Doradca rasy %1
+MAIN_ADVISOR_BUTTON_OK     | Odpraw
+MAIN_ADVISOR_SCOUT         | Flota przygotowana do eksploracji i kolonizacji. Oczekiwanie na dyrektywę by rozpocząć operację.
+MAIN_ADVISOR_TRANSPORT     | Pierwsza kolonia założona na pobliskim świecie. Nazwana “%1”. Zdolna do przyjęcia %2 dodatkowej populacji. Można wspomóc proces wzrostu transportując populację z %3.
+MAIN_ADVISOR_DIPLOMACY     | Wykryto nowy gatunek. Nazwany “%1”. Oczekiwanie na dalsze instrukcje Komputera Głównego.
+MAIN_ADVISOR_SHIP_ENGINE   | Zakończono badania nad ulepszonym napędem. Skonsultować się z inżynierami jak zastosować nowy projekt.
+MAIN_ADVISOR_RALLY_POINTS  | Działania gatunku “%1” zagrażają poszukiwaniom odkrycia nieśmiertelności. Użyć Punktów Zbornych by skomasować flotę i na niego uderzyć.
+MAIN_ADVISOR_MISSILE_BASES | Żądanie seksji militarnej: skonstruować obronne bazy rakietowe na powierzchni światów granicznych. Umożliwi to obronę przed agresją z zewnątrz.
+MAIN_ADVISOR_SHIP_WEAPON   | Zakończono badania nad lepszą bronią. Skonsultować się z inżynierami jak zastosować nowy projekt.
+MAIN_ADVISOR_COUNCIL       | Informacja o zebraniu się międzygwiezdnych imperiów. Nazwa to “Rada Galaktyczna”. Zostanie wysłana delegacja w celu wyjaśnienia woli Komputera Głównego.

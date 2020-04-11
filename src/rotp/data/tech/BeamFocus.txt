@@ -1,0 +1,10 @@
+[tech]
+seq:    0
+name:   BEAMFOCUS_0_NAME
+detail: BEAMFOCUS_0_DETAIL
+
+[tech]
+seq:    1
+name:   BEAMFOCUS_1_NAME
+detail: BEAMFOCUS_1_DETAIL
+

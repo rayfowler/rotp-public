@@ -1,0 +1,6 @@
+
+[tech]
+seq:    0
+name:   RSRVFUEL_0_NAME
+brief:  RSRVFUEL_0_BRIEF
+detail: RSRVFUEL_0_DETAIL

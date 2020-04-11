@@ -1,0 +1,21 @@
+// all possible names
+name: Alkari, Aviari, Cluckari
+
+desc1: Honorowi militaryści
+desc2: Doskonali piloci
+desc3: Niepodlegli Alkari są zorganizowanym społeczeństwem wojowników ceniącym honor w bitwie.
+
+// possible home system names
+home: Altair, Aegir, Aviar, Volary, Aerie
+
+title:     Król
+fulltitle: Król Iglicy
+
+// possible leader names
+leader: Ariel, Dalekowidzący, Podniebny, Czerwonoskrzydły, Ostry Pazur, Pan Niebios
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Lisonietoperz, Jastrząb, Pelikan, Zięba, Strzyżyk, Kruk, Pióro
+ship2: Sokół, Podniebny Jastrząb, Gwiezdna Mewa, Sowa Bojowa, Puffin, Gwiezdne Skrzydło
+ship3: Wojenny Ptak, Wojenny Jastrząb, Wojenny Orzeł, Rybołów, Sęp, Harpia, Kondor
+ship4: Ptasi Grom, Skrzydło Strachu, Podniebny Mistrz, Rok, Rodan, Gryf, Feniks

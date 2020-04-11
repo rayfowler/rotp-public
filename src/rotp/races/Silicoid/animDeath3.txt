@@ -1,0 +1,5 @@
+#
+# Silicoid Hostile Combat Frames
+
+# immolated. only ashes remain
+Base, _ALL_ , SilDeath301:1+SilDeath302:1+SilDeath303:1+SilDeath304:1+SilDeath305:1+SilDeath306:1+SilDeath307:1+SilDeath308:1+SilDeath309:99999

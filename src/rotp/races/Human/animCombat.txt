@@ -1,0 +1,4 @@
+#
+# Combat Frames
+
+Base, _ALL_ , HumComb01+HumComb02+HumComb03

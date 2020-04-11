@@ -1,0 +1,4 @@
+[tech]
+seq:    0
+name:   SUBSPACEINT_0_NAME
+detail: SUBSPACEINT_0_DETAIL

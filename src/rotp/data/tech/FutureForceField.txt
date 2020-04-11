@@ -1,0 +1,51 @@
+
+[tech]
+seq:    0
+name:   FUTUREFORCE_0_NAME
+detail: FUTUREFORCE_0_DETAIL
+
+[tech]
+seq:    1
+name:   FUTUREFORCE_1_NAME
+detail: FUTUREFORCE_1_DETAIL
+
+[tech]
+seq:    2
+name:   FUTUREFORCE_2_NAME
+detail: FUTUREFORCE_2_DETAIL
+
+[tech]
+seq:    3
+name:   FUTUREFORCE_3_NAME
+detail: FUTUREFORCE_3_DETAIL
+
+[tech]
+seq:    4
+name:   FUTUREFORCE_4_NAME
+detail: FUTUREFORCE_4_DETAIL
+
+[tech]
+seq:    5
+name:   FUTUREFORCE_5_NAME
+detail: FUTUREFORCE_5_DETAIL
+
+[tech]
+seq:    6
+name:   FUTUREFORCE_6_NAME
+detail: FUTUREFORCE_6_DETAIL
+
+[tech]
+seq:    7
+name:   FUTUREFORCE_7_NAME
+detail: FUTUREFORCE_7_DETAIL
+
+[tech]
+seq:    8
+name:   FUTUREFORCE_8_NAME
+detail: FUTUREFORCE_8_DETAIL
+
+[tech]
+seq:    9
+name:   FUTUREFORCE_9_NAME
+detail: FUTUREFORCE_9_DETAIL
+

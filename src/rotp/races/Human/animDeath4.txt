@@ -1,0 +1,5 @@
+#
+# Combat Frames
+
+# vaporized into nothingness
+Base, _ALL_ , HumDeath401+HumDeath402+HumDeath403+HumDeath404+HumDeath405+HumDeath406+HumDeath407+null:99999

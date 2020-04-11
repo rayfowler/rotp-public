@@ -1,0 +1,47 @@
+// MOO1 Terran Planet
+key: PLANET_TERRAN
+
+descBiological: TERRAN_DESC_BIOLOGICAL
+descSilicoid:   TERRAN_DESC_BIOLOGICAL
+terrainImage:   TERRAIN_TERRAN
+landscapeImage: LANDSCAPE_TERRAN
+panoramaImage:  PANORAMA_TERRAN
+atmoImage:      ATMO_TERRAN_FULL
+cloudImage:     CLOUDS_THIN,CLOUDS_MED
+
+hostility: 0
+minSize: 85
+maxSize: 100
+
+// leftX, bottomY & width of ships landing on planet
+ship0: 320, 640, 400
+ship1: 160, 525, 200
+ship2: 150, 475, 140
+ship3: 290, 450, 110
+
+// water
+color: -1.00,  0,20,100
+color: -0.05,  0,40,120
+color: -0.00,  20,60,160
+
+// land
+color:    0.01,  46, 83, 39
+color:    0.03,  46, 83, 39
+color:    0.05,  41, 73, 32
+color:    0.11,  41, 73, 32
+color:    0.20,  47, 95, 45
+color:    0.26,  47, 95, 45
+color:    0.33, 117,140, 79
+color:    0.38, 117,140, 79
+color:    0.43, 142,120, 45
+color:    0.47, 142,120, 45
+color:    0.53, 172,151, 86
+color:    0.57, 172,151, 86
+color:    0.65, 142,120, 45
+color:    0.73, 172,151, 86
+color:    0.78, 161,140, 75
+color:    0.82, 161,140, 75
+color:    0.88, 151,138, 96
+color:    0.93,  88, 59,  0
+color:    1.00,  88, 59,  0
+

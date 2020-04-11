@@ -1,0 +1,8 @@
+#
+# Soldier Animation
+
+Base,   _ALL_  , MrrLab
+Base,   _ALL_  , MrrSol
+
+# Wpn
+Wpn,   _ALL_, MrrSolWe15

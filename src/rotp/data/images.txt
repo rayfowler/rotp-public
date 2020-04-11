@@ -1,0 +1,10 @@
+#
+# These image references are automatically loaded in by the 
+# ImageManager class at startup, allowing images to be 
+# more easily referenced in animation files
+# 
+FlagPole            | images/flagPole.png
+LANGUAGE_ICON       | images/language_icon-red.png
+TEXTURE_BROWN       | images/texture_brown.jpg
+TEXTURE_GRAY        | images/texture_gray.jpg
+DERELICT_SHIP       | images/Derelict_Ship.jpg

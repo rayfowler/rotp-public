@@ -1,0 +1,23 @@
+
+
+MeklarLaboratory      | races/Meklar/animationLaboratory.txt
+MeklarHolograph       | races/Meklar/animationHolograph.txt
+MeklarSpyMug          | races/Meklar/animationSpyMug.txt
+MeklarSoldierMug      | races/Meklar/animationSoldierMug.txt
+MeklarDiploMug        | races/Meklar/animationMugshot.txt
+MeklarDiplomat        | races/Meklar/animationDiplomat.txt
+MeklarScientist       | races/Meklar/animationScientist.txt
+MeklarSoldier         | races/Meklar/animationSoldier.txt
+MeklarSpy             | races/Meklar/animationSpy.txt
+MeklarCombat          | races/Meklar/animCombat.txt
+MeklarDeath1          | races/Meklar/animDeath1.txt
+MeklarDeath2          | races/Meklar/animDeath2.txt
+MeklarDeath3          | races/Meklar/animDeath3.txt
+MeklarDeath4          | races/Meklar/animDeath4.txt
+
+MeklarGNN             | races/Meklar/animationGNN.txt
+MeklarGNNHost         | races/Meklar/animationGNNHost.txt
+
+MeklarTransportDesc   | races/Meklar/animationTransportDescending.txt
+MeklarTransportOpen   | races/Meklar/animationTransportOpening.txt
+

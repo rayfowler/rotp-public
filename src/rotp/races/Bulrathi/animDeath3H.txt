@@ -1,0 +1,6 @@
+#
+# Bulrathi Hostile Combat Frames
+
+# immolated. only ashes remain
+Base, _ALL_ , BulDeath3H01:1+BulDeath3H02:1+BulDeath3H03:1+BulDeath3H04:1+BulDeath3H05:1+BulDeath3H06:1+BulDeath3H07:1+BulDeath3H08:1+BulDeath3H09:1+BulDeath3H10:1+BulDeath3H11:99999
+

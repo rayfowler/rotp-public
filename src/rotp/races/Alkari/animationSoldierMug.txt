@@ -1,0 +1,15 @@
+#
+# Alkari Soldier Animation
+
+Base,   _ALL_  , AlkLab
+Base,   _ALL_  , AlkSol
+
+# Gun
+Gun,   425@290, AlkSolGu01:8:20+AlkSolGu02:1+AlkSolGu03:1+AlkSolGu04:1+AlkSolGu05:1+AlkSolGu06:1+AlkSolGu05:1+AlkSolGu04:1+AlkSolGu03:1+AlkSolGu02:1
+
+#   Rotating and stopping
+Eye,   330@85 , NULL:8:20+AlkSolEy02:1+AlkSolEy03:1+AlkSolEy04:1+AlkSolEy05:1+AlkSolEy06:1
+
+#   1-Closed, 2-Half-Open, 3-Open
+Mouth, 360@125 , AlkSolMo01:2+AlkSolMo02:2+AlkSolMo03:2+AlkSolMo04:2+AlkSolMo03:2+AlkSolMo02:2+AlkSolMo03:2+AlkSolMo02:2
+

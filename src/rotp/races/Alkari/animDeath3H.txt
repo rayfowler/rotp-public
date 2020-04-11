@@ -1,0 +1,6 @@
+#
+# Alkari Hostile Combat Frames
+
+# immolated. only ashes remain
+Base, _ALL_ , AlkDeath3H01:1+AlkDeath3H02:1+AlkDeath3H03:1+AlkDeath3H04:1+AlkDeath3H05:1+AlkDeath3H06:1+AlkDeath3H07:1+AlkDeath3H08:1+AlkDeath3H09:1+AlkDeath3H10:99999
+

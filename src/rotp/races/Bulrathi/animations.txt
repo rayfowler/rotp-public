@@ -1,0 +1,26 @@
+
+
+BulrathiLaboratory    | races/Bulrathi/animationLaboratory.txt
+BulrathiHolograph     | races/Bulrathi/animationHolograph.txt
+BulrathiDiploMug      | races/Bulrathi/animationMugshot.txt
+BulrathiSpyMug        | races/Bulrathi/animationSpyMug.txt
+BulrathiSoldierMug    | races/Bulrathi/animationSoldierMug.txt
+BulrathiDiplomat      | races/Bulrathi/animationDiplomat.txt
+BulrathiScientist     | races/Bulrathi/animationScientist.txt
+BulrathiSoldier       | races/Bulrathi/animationSoldier.txt
+BulrathiSpy           | races/Bulrathi/animationSpy.txt
+BulrathiCombat        | races/Bulrathi/animCombat.txt
+BulrathiCombatH       | races/Bulrathi/animCombatH.txt
+BulrathiDeath1        | races/Bulrathi/animDeath1.txt
+BulrathiDeath2        | races/Bulrathi/animDeath2.txt
+BulrathiDeath3        | races/Bulrathi/animDeath3.txt
+BulrathiDeath4        | races/Bulrathi/animDeath4.txt
+BulrathiDeath1H       | races/Bulrathi/animDeath1H.txt
+BulrathiDeath2H       | races/Bulrathi/animDeath2H.txt
+BulrathiDeath3H       | races/Bulrathi/animDeath3H.txt
+BulrathiDeath4H       | races/Bulrathi/animDeath4H.txt
+BulrathiGNN           | races/Bulrathi/animationGNN.txt
+BulrathiGNNHost       | races/Bulrathi/animationGNNHost.txt
+
+BulrathiTransportDesc | races/Bulrathi/animationTransportDescending.txt
+BulrathiTransportOpen | races/Bulrathi/animationTransportOpening.txt

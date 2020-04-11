@@ -1,0 +1,49 @@
+[tech]
+seq:    0
+name:   ARMOR_0_NAME
+item:   ARMOR_0_ITEM 
+brief:  ARMOR_0_BRIEF 
+detail: ARMOR_0_DETAIL
+
+[tech]
+seq:    1
+name:   ARMOR_1_NAME
+item:   ARMOR_1_ITEM 
+brief:  ARMOR_1_BRIEF 
+detail: ARMOR_1_DETAIL
+
+[tech]
+seq:    2
+name:   ARMOR_2_NAME
+item:   ARMOR_2_ITEM 
+brief:  ARMOR_2_BRIEF 
+detail: ARMOR_2_DETAIL
+
+[tech]
+seq:    3
+name:   ARMOR_3_NAME
+item:   ARMOR_3_ITEM 
+brief:  ARMOR_3_BRIEF 
+detail: ARMOR_3_DETAIL
+
+[tech]
+seq:    4
+name:   ARMOR_4_NAME
+item:   ARMOR_4_ITEM 
+brief:  ARMOR_4_BRIEF 
+detail: ARMOR_4_DETAIL
+
+[tech]
+seq:    5
+name:   ARMOR_5_NAME
+item:   ARMOR_5_ITEM 
+brief:  ARMOR_5_BRIEF 
+detail: ARMOR_5_DETAIL
+
+[tech]
+seq:    6
+name:   ARMOR_6_NAME
+item:   ARMOR_6_ITEM 
+brief:  ARMOR_6_BRIEF 
+detail: ARMOR_6_DETAIL
+

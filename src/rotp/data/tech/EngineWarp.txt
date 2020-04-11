@@ -1,0 +1,81 @@
+[tech]
+seq:    0
+name:   ENGINE_0_NAME
+item:   ENGINE_0_ITEM
+item2:  ENGINE_0_ITEM2
+brief:  ENGINE_0_BRIEF
+brief2: ENGINE_0_BRIEF2
+detail: ENGINE_0_DETAIL
+
+[tech]
+seq:    1
+name:   ENGINE_1_NAME
+item:   ENGINE_1_ITEM
+item2:  ENGINE_1_ITEM2
+brief:  ENGINE_1_BRIEF
+brief2: ENGINE_1_BRIEF2
+detail: ENGINE_1_DETAIL
+
+[tech]
+seq:    2
+name:   ENGINE_2_NAME
+item:   ENGINE_2_ITEM
+item2:  ENGINE_2_ITEM2
+brief:  ENGINE_2_BRIEF
+brief2: ENGINE_2_BRIEF2
+detail: ENGINE_2_DETAIL
+
+[tech]
+seq:    3
+name:   ENGINE_3_NAME
+item:   ENGINE_3_ITEM
+item2:  ENGINE_3_ITEM2
+brief:  ENGINE_3_BRIEF
+brief2: ENGINE_3_BRIEF2
+detail: ENGINE_3_DETAIL
+
+[tech]
+seq:    4
+name:   ENGINE_4_NAME
+item:   ENGINE_4_ITEM
+item2:  ENGINE_4_ITEM2
+brief:  ENGINE_4_BRIEF
+brief2: ENGINE_4_BRIEF2
+detail: ENGINE_4_DETAIL
+
+[tech]
+seq:    5
+name:   ENGINE_5_NAME
+item:   ENGINE_5_ITEM
+item2:  ENGINE_5_ITEM2
+brief:  ENGINE_5_BRIEF
+brief2: ENGINE_5_BRIEF2
+detail: ENGINE_5_DETAIL
+
+[tech]
+seq:    6
+name:   ENGINE_6_NAME
+item:   ENGINE_6_ITEM
+item2:  ENGINE_6_ITEM2
+brief:  ENGINE_6_BRIEF
+brief2: ENGINE_6_BRIEF2
+detail: ENGINE_6_DETAIL
+
+[tech]
+seq:    7
+name:   ENGINE_7_NAME
+item:   ENGINE_7_ITEM
+item2:  ENGINE_7_ITEM2
+brief:  ENGINE_7_BRIEF
+brief2: ENGINE_7_BRIEF2
+detail: ENGINE_7_DETAIL
+
+[tech]
+seq:    8
+name:   ENGINE_8_NAME
+item:   ENGINE_8_ITEM
+item2:  ENGINE_8_ITEM2
+brief:  ENGINE_8_BRIEF
+brief2: ENGINE_8_BRIEF2
+detail: ENGINE_8_DETAIL
+

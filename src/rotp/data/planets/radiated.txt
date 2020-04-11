@@ -1,0 +1,35 @@
+// MOO1 Radiated Planet
+key: PLANET_RADIATED
+
+descBiological: RADIATED_DESC_BIOLOGICAL
+descSilicoid:   RADIATED_DESC_BIOLOGICAL
+terrainImage:   TERRAIN_RADIATED
+landscapeImage: LANDSCAPE_RADIATED_01, LANDSCAPE_RADIATED_02
+panoramaImage:  PANORAMA_RADIATED
+atmoImage:      
+cloudImage:     
+
+hostility: 12
+minSize: 10
+maxSize: 40
+
+// leftX, bottomY & width of ships landing on planet
+ship0: 320, 700, 400
+ship1: 110, 475, 200
+ship2: 100, 425, 140
+ship3: 240, 400, 110
+
+// no water
+
+// land
+color:   -1.00, 214,206,181
+color:    0.01, 214,206,181
+color:    0.08, 214,198,173
+color:    0.28, 198,173,140
+color:    0.40, 181,156,114
+color:    0.52, 173,148,115
+color:    0.64, 156,132, 90
+color:    0.76, 148,123, 82
+color:    0.88, 140,107, 66
+color:    1.00, 115, 74, 41
+

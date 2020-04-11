@@ -1,0 +1,13 @@
+
+[tech]
+seq:    0
+name:   PULSAR_0_NAME
+brief:  PULSAR_0_BRIEF
+detail: PULSAR_0_DETAIL
+
+[tech]
+seq:    1
+name:   PULSAR_1_NAME
+brief:  PULSAR_1_BRIEF
+detail: PULSAR_1_DETAIL
+

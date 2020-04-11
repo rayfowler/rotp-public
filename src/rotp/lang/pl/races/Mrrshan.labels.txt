@@ -1,0 +1,15 @@
+// race-specific variables (must start with _)
+_empire                    | Klany Mrrshan, Klany Prrshan, Klany Meowshan
+_race                      | Mrrshan, Prrshan, Meowshan
+
+// Advisor text
+MAIN_ADVISOR_TITLE         | Doradca rasy %1
+MAIN_ADVISOR_BUTTON_OK     | Odpraw
+MAIN_ADVISOR_SCOUT         | Aha! Nasza pierwsza flota jest gotowa, mój Khanie! Użyjmy jej do znalezienia wroga, który posiada wielkie bogactwa.
+MAIN_ADVISOR_TRANSPORT     | Podbiliśmy nowe terytoria na planecie [colony_name]. Im więcej przetransportujemy mieszkańców z planety [homeworld_name], tym szybciej odnajdziemy skarby tego świata.
+MAIN_ADVISOR_DIPLOMACY     | Nawiązaliśmy kontakt z obcą rasą! Czy okażą się potężni, czy też będzie to łatwy łup?
+MAIN_ADVISOR_SHIP_ENGINE   | Opracowaliśmy metodę ulepszenia silników, która sprawi że nasze statki będą jeszcze szybsze! Jeśli wykorzystamy je w projektach statków, nasze najazdy na wrogie światy staną się jeszcze bardziej efektywne!
+MAIN_ADVISOR_RALLY_POINTS  | Mój Khanie! Stoimy w obliczu otwartej wojny! Możnowładcy dotrzymali obietnicy zjednoczenia sił w obliczu wspólnego wroga i czekają na rozkazy dotyczące wyznaczenia punktu zbornego, dokąd będzie wysyłana nowo budowana flota!
+MAIN_ADVISOR_MISSILE_BASES | Światy brzegowe naszego terytorium są narażone na wrogie ataki! Zbudujmy obronne bazy rakietowe na ich powierzchni aby zapobiec zakusom wroga.
+MAIN_ADVISOR_SHIP_WEAPON   | Udało się nam opracować nową potężną broń do wykorzystania na statkach. Po uwzględnieniu jej w projektach, nasza flota zapewne zasieje popłoch wśród sił wroga.
+MAIN_ADVISOR_COUNCIL       | Nieuchronnie zbliża się spotkanie potężnych cywilizacji, jednak będzie miało ono charakter dyplomatyczny a nie militarny. Dziwny to sposób ale powinniśmy wziąć udział w tej “Radzie Galaktycznej” - choćby po to aby ułagodzić co bardziej nerwowych rywali.

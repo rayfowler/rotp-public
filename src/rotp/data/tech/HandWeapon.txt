@@ -1,0 +1,30 @@
+[tech]
+seq:    0
+name:   HANDWEAPON_0_NAME
+detail: HANDWEAPON_0_DETAIL
+
+[tech]
+seq:    1
+name:   HANDWEAPON_1_NAME
+detail: HANDWEAPON_1_DETAIL
+
+[tech]
+seq:    2
+name:   HANDWEAPON_2_NAME
+detail: HANDWEAPON_2_DETAIL
+
+[tech]
+seq:    3
+name:   HANDWEAPON_3_NAME
+detail: HANDWEAPON_3_DETAIL
+
+[tech]
+seq:    4
+name:   HANDWEAPON_4_NAME
+detail: HANDWEAPON_4_DETAIL
+
+[tech]
+seq:    5
+name:   HANDWEAPON_5_NAME
+detail: HANDWEAPON_5_DETAIL
+
