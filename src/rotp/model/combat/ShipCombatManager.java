@@ -275,8 +275,9 @@ public class ShipCombatManager implements Base {
         }
         return false;
     }
-    public void setupBombardment(StarSystem system, ShipFleet fleet) {
+    public void setupBombardment(StarSystem sys, ShipFleet fleet) {
         ui = null;
+        system = sys;
         checkDeclareWar(fleet.empire(), system.empire());
 
         beginInSystem(system, fleet.empire(), null);
