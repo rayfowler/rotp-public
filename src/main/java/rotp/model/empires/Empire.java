@@ -735,6 +735,13 @@ public final class Empire implements Base, NamedObject, Serializable {
         NoticeMessage.setSubstatus(text("TURN_COLONY_SPENDING"));
         setAllocations();
 
+        // If planets are governed, redo allocations now
+        for (int i = 0; i < this.sv.count(); ++i) {
+            if (this.sv.empire(i) == this && this.sv.isColonized(i)) {
+                this.sv.colony(i).governIfNeeded();
+            }
+        }
+
         //long tm3 = System.currentTimeMillis();
         //log("remainder: "+(tm3-tm2)+"ms");
     }

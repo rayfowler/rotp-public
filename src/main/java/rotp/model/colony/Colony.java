@@ -16,8 +16,8 @@
 package rotp.model.colony;
 
 import java.io.Serializable;
-import java.util.EnumMap;
-import java.util.List;
+import java.util.*;
+
 import static rotp.model.colony.ColonySpendingCategory.MAX_TICKS;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
@@ -31,6 +31,7 @@ import rotp.model.galaxy.Transport;
 import rotp.model.incidents.ColonyCapturedIncident;
 import rotp.model.incidents.ColonyInvadedIncident;
 import rotp.model.planet.Planet;
+import rotp.model.ships.Design;
 import rotp.model.ships.ShipDesign;
 import rotp.model.tech.Tech;
 import rotp.model.tech.TechTree;
@@ -776,6 +777,11 @@ public final class Colony implements Base, IMappedObject, Serializable {
         // reset ship views
         if (empire.isPlayer())
             empire.setVisibleShips();
+
+        // recalculate governor if transports are sent
+        if (!this.isAutopilot() && this.isGovernor()) {
+            govern();
+        }
     }
     public void acceptTransport(Transport t) {
         setPopulation(min(planet.currentSize(), (population() + t.size())));
@@ -1055,4 +1061,215 @@ public final class Colony implements Base, IMappedObject, Serializable {
         for (ShipFleet fl : fleets)
             fl.empire().sv.refreshFullScan(starSystem().id);
     }
+
+    private boolean governor = false;
+
+    public boolean isGovernor() {
+        return governor;
+    }
+
+    public void setGovernor(boolean governor) {
+        this.governor = governor;
+    }
+
+    /**
+     * Increment slider. Stop moving when results no longer contains "stopWhenDisappears".
+     * Stop when results contain "stopWhenAppears".
+     * If moving slider doesn't change production, stop as well.
+     */
+    private void moveSlider(int category, String stopWhenDisappears, String stopWhenAppears) {
+        ColonySpendingCategory cat = category(category);
+        int previousAllocaton = -1;
+        for (;;) {
+            String result = cat.upcomingResult();
+            if (stopWhenDisappears != null && !result.contains(stopWhenDisappears)) {
+                break;
+            }
+            if (stopWhenAppears != null) {
+                if (result.contains(stopWhenAppears)) {
+                    break;
+                }
+            }
+            increment(category, 1);
+            if (previousAllocaton == cat.allocation()) {
+                break;
+            }
+            previousAllocaton = cat.allocation();
+        }
+    }
+
+    public void governIfNeeded() {
+        if (!this.isAutopilot() && this.isGovernor()) {
+            govern();
+        }
+    }
+    /**
+     * Govern the colony.
+     * - First, set ecology to minimum.
+     * - Then set industry to maximum. Skip a turn if there are more factories than population can control to
+     * spend production on ecology instead.
+     * - Then set ecology to maximum.
+     * - Then set defence to maximum.
+     *
+     * This is quite crude- works by moving slider by 1 tick until desired results happen.
+     * Better way would be to calculate and set each slider directly to the right percentage.
+     *
+     */
+    public void govern() {
+        if (!"false".equalsIgnoreCase(System.getProperty("autotransport"))) {
+            autotransport();
+        }
+        // unlock all sliders
+        for (int i = 0; i <= 4; i++) {
+            locked(i, false);
+        }
+        // start from scratch
+        clearSpending();
+        // Add minimum ecology
+        moveSlider(Colony.ECOLOGY, "Waste", null);
+        locked(Colony.ECOLOGY, true);
+        // Add maximum industry if factories would actually get used
+        float canBeUsed = workingPopulation() * (float)industry().effectiveRobotControls();
+        // if we can refit, we need to spend on industry anyway
+        boolean refit = industry().effectiveRobotControls() < empire().maxRobotControls();
+        if (!industry().isCompleted() && (refit || industry().factories() <= canBeUsed)) {
+            moveSlider(Colony.INDUSTRY, null, "Reserve");
+        }
+        locked(Colony.INDUSTRY, true);
+        // Add maximum ecology
+        if (!ecology().isCompleted() || ecology().enrichSoilCost() > 0.0 || planet().canTerraformAtmosphere(this.empire())) {
+            locked(Colony.ECOLOGY, false);
+            moveSlider(Colony.ECOLOGY, null, "Reserve");
+            locked(Colony.ECOLOGY, true);
+        }
+        // add maximum defence
+        if (!defense().isCompleted()) {
+            moveSlider(Colony.DEFENSE, null, "Reserve");
+        }
+        // Build gate if tech is available. Also add a system property to turn it off.
+        if (!"false".equalsIgnoreCase(System.getProperty("autogate"))) {
+            if (this.shipyard().canBuildStargate()) {
+                Design first = this.shipyard().design();
+                Design current = this.shipyard().design();
+                while (!this.empire.shipLab().stargateDesign().equals(current)) {
+                    this.shipyard().goToNextDesign();
+                    current = this.shipyard().design();
+                    if (current.equals(first)) {
+                        System.out.println("unable to cycle to Shargate design");
+                        break;
+                    }
+                }
+                if (this.empire.shipLab().stargateDesign().equals(current)) {
+                    locked(Colony.SHIP, false);
+                    moveSlider(Colony.SHIP, null, "Reserve");
+                }
+            }
+        }
+
+        // if all sliders are set to 0, increase research.
+        boolean noSpending = true;
+        for (int i = Colony.SHIP; i <= Colony.RESEARCH; i++) {
+            if (allocation[i] > 0) {
+                noSpending = false;
+                break;
+            }
+        }
+        if (noSpending) {
+//            System.out.println("NO SPENDING "+this.name());
+            moveSlider(Colony.RESEARCH, null, "Reserve");
+        }
+        // unlock industry slider. Thanks DM666a
+        locked(Colony.INDUSTRY, false);
+    }
+
+    public float unrestrictedPopGrowth() {
+        // assume we send out 2 population, calc growth then
+        float baseGrowthRate = this.max(0.0f, (1.0f - this.workingPopulation() / (this.planet.currentSize()-2)) / 10.0f);
+        baseGrowthRate *= this.empire.race().growthRateMod();
+        if (!this.empire.race().ignoresPlanetEnvironment()) {
+            baseGrowthRate *= this.planet.growthAdj();
+        }
+        float newGrownPopulation = this.max(0.1f, this.workingPopulation() * baseGrowthRate);
+        return newGrownPopulation;
+    }
+    // Try to transport extra population to other plants.
+    // Let's not do complex pop growth calculations. Send 1 transport at max pop, assume planets don't grow
+    // on their own
+    // TODO: add a toggle to make this optional
+    private void autotransport() {
+        if (transporting() || !canTransport() || maxTransportsAllowed() <= 0) {
+            return;
+        }
+        // we don't have excess population
+        if (expectedPopulation() < planet.currentSize()) {
+            return;
+        }
+        float floatExcess = this.workingPopulation() + unrestrictedPopGrowth() + incomingTransports() - planet().currentSize();
+        // if we are at max pop, send out transports even if growth is between 0 and 1, so always round up
+        int excess = (int)Math.ceil(floatExcess);
+//        System.out.println("autotransport "+this.name()+" excess "+excess);
+//        System.out.println("autotransport "+this.name()+" growth "+normalPopGrowth());
+//        System.out.println("autotransport "+this.name()+" ugrowth "+unrestrictedPopGrowth());
+        // find a suitable target. Closest colony that needs population
+        List<StarSystem> targets = new ArrayList<>(empire().allColonizedSystems().size());
+        Map<StarSystem, Float> transportTimes = new HashMap<>();
+        Map<StarSystem, Float> populationFractions = new HashMap<>();
+        for (StarSystem ss: empire().allColonizedSystems()) {
+            // don't transport to self
+            if (ss.colony() == this) {
+                continue;
+            }
+            // don't transport to systems that have 80% population already
+            if (ss.colony().expectedPopulation() >= ss.planet().currentSize()*0.8) {
+                continue;
+            }
+            float transportTime = ss.travelTime(this, ss, this.empire().tech().transportSpeed());
+            double expectedPopAtTransportTime = ss.colony().population() +
+                    Math.pow(1+ss.colony().normalPopGrowth() / ss.colony().population(), transportTime);
+            float popFraction = ss.colony().population() / ss.planet().currentSize();
+//            System.out.println("autotransport "+this.name()+" to "+ss.name()+" time "+transportTime+" exp growth "+expectedPopAtTransportTime+" pop % "+popFraction);
+            if (expectedPopAtTransportTime >= ss.planet().currentSize()*0.9) {
+                continue;
+            }
+            targets.add(ss);
+            transportTimes.put(ss, transportTime);
+            populationFractions.put(ss, popFraction);
+        }
+        // no viable targets for pop transport
+        if (targets.isEmpty()) {
+            return;
+        }
+
+        // Turn distance into relative distance (% of distance to furthest possible target).
+
+        // Turn distance % and population size % into rank.
+        // Lets use distance% linear and pop% linear
+        float maxTransportTime = transportTimes.values().stream().max(Float::compare).get();
+        Map<StarSystem, Float> ranks = new HashMap<>();
+        for (StarSystem ss: transportTimes.keySet()) {
+            float absolute = transportTimes.get(ss);
+            float relativeTransportTime = absolute / maxTransportTime;
+
+            float populationFraction = populationFractions.get(ss);
+
+            float rank = relativeTransportTime + populationFraction;
+            ranks.put(ss, rank);
+        }
+
+        Collections.sort(targets, (o1, o2) -> {
+            float rank1 = ranks.get(o1);
+            float rank2 = ranks.get(o2);
+            return (int) Math.signum(rank1-rank2);
+        });
+//        for (StarSystem ss: targets) {
+//            System.out.println("autotransport target from "+this.name()+" to "+ss.name()+" rank "+ranks.get(ss));
+//        }
+        // round excess down
+        int toTransport = Math.min(maxTransportsAllowed(), excess);
+        // let's make sure we don't trigger governor in scheduleTransportsToSystem, otherwise we get endless recursion
+        governor = false;
+        scheduleTransportsToSystem(targets.get(0), toTransport);
+        governor = true;
+    }
+
 }
