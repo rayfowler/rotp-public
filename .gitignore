@@ -4,3 +4,6 @@ test
 build
 build.xml
 manifest.mf
+target/
+.idea/
+*.iml
