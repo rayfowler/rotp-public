@@ -181,7 +181,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             name = n;
         return planet().becomeColonized(e);
     }
-
+    public float population()   { return isColonized() ? colony().population() : 0.0f; }
     public Planet planet() {
         if (planet == null)
             planet = PlanetFactory.createPlanet(this, session().populationBonus());
@@ -360,13 +360,15 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     public static Comparator<StarSystem> SHIELD             = (StarSystem sys1, StarSystem sys2) -> Base.compare(sys1.colony().defense().shieldLevel(),sys2.colony().defense().shieldLevel());
     public static Comparator<StarSystem> INVASION_PRIORITY  = (StarSystem sys1, StarSystem sys2) -> Base.compare(sys1.empire().generalAI().invasionPriority(sys1),sys2.empire().generalAI().invasionPriority(sys2));
     public static Comparator<StarSystem> TRANSPORT_PRIORITY = (StarSystem sys1, StarSystem sys2) -> Base.compare(sys1.empire().fleetCommanderAI().transportPriority(sys1),sys2.empire().fleetCommanderAI().transportPriority(sys2));
-    public static Comparator<StarSystem> DISTANCE = (StarSystem sys1, StarSystem sys2) -> {
-        Empire emp = sys1.empire();
-        return Base.compare(emp.sv.distance(sys1.id),emp.sv.distance(sys2.id));
+    public static Empire VIEWING_EMPIRE;
+    public static Comparator<StarSystem> VDISTANCE = (StarSystem sys1, StarSystem sys2) -> {
+        return Base.compare(VIEWING_EMPIRE.sv.distance(sys1.id),VIEWING_EMPIRE.sv.distance(sys2.id));
+    };
+    public static Comparator<StarSystem> VPOPULATION = (StarSystem sys1, StarSystem sys2) -> {
+        return Base.compare(VIEWING_EMPIRE.sv.population(sys1.id),VIEWING_EMPIRE.sv.population(sys2.id));
     };
     public static Comparator<StarSystem> POPULATION = (StarSystem sys1, StarSystem sys2) -> {
-        Empire emp = sys1.empire();
-        return Base.compare(emp.sv.population(sys1.id),emp.sv.population(sys2.id));
+        return Base.compare(sys1.population(),sys2.population());
     };
     public static Comparator<StarSystem> CURRENT_SIZE = (StarSystem sys1, StarSystem sys2) -> {
         Empire emp = sys1.empire();

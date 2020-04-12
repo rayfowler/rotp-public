@@ -1564,7 +1564,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         Galaxy gal = galaxy();
         List<StarSystem> systems = new ArrayList<>();
         for (int i=0;i<sv.count();i++) {
-            if (sv.empire(i) == emp)
+            if (sv.empire(i) == emp) 
                 systems.add(gal.system(i));
         }
         return systems;

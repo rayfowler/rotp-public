@@ -161,18 +161,20 @@ public class AICSpyMaster implements Base, SpyMaster {
         // invoked when a Sabotage attempt is successful
         // choice: 1 - factories, 2 - missiles, 3 - rebellion
 
-        List<StarSystem> targets = v.owner().systemsForCiv(v.empire());
+        List<StarSystem> targets = v.empire().allColonizedSystems();
 
         switch(choice){
             case FACTORIES:
-                Collections.sort(targets, StarSystem.DISTANCE);
+                StarSystem.VIEWING_EMPIRE = empire;
+                Collections.sort(targets, StarSystem.VDISTANCE);
                 for (StarSystem tgt: targets) {
                     if (empire.sv.canSabotageFactories(tgt.id))
                         return tgt;
                 }
                 return null;
             case MISSILES:
-                Collections.sort(targets, StarSystem.DISTANCE);
+                StarSystem.VIEWING_EMPIRE = empire;
+                Collections.sort(targets, StarSystem.VDISTANCE);
                 for (StarSystem tgt: targets) {
                     if (empire.sv.canSabotageBases(tgt.id))
                         return tgt;
@@ -180,7 +182,8 @@ public class AICSpyMaster implements Base, SpyMaster {
                 return null;
             case REBELS:
             default:
-                Collections.sort(targets, StarSystem.POPULATION);
+                StarSystem.VIEWING_EMPIRE = empire;
+                Collections.sort(targets, StarSystem.VPOPULATION);
                 for (int i=(targets.size()-1);i>=0;i--) {
                     StarSystem tgt = targets.get(i);
                     if (empire.sv.canInciteRebellion(tgt.id))
