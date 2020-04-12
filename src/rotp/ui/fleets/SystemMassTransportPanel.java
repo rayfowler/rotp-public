@@ -52,9 +52,14 @@ public class SystemMassTransportPanel  extends SystemPanel {
         if (target == null)
             target = topParent.targetSystem;
 
-        return !topParent.filteredSystems.isEmpty()
-            && (target != null)
-            && player().canSendTransportsTo(target);
+        if (topParent.filteredSystems.isEmpty())
+            return false;
+        if (target == null)
+            return false;
+        if ((topParent.filteredSystems.size() ==1) 
+        && topParent.filteredSystems.contains(target))
+            return false;
+        return player().canSendTransportsTo(target);
     }
     @Override
     protected Color backgroundColor()   { return FleetUI.backLoC; }
