@@ -125,6 +125,11 @@ public class EmpireColonySpendingPane extends BasePanel {
                     case 2: researchSlider.toggleLock();    break;
                     default:  break;
                 }
+            case KeyEvent.VK_Q:
+            {
+                toggleGovernor();
+                break;
+            }
         }
     }
     class EmpireSliderPane extends BasePanel implements MouseListener, MouseMotionListener, MouseWheelListener {
@@ -167,10 +172,17 @@ public class EmpireColonySpendingPane extends BasePanel {
             int w = getWidth();
 
             if (category < 0) {
+                Color color;
+                if (colony.isGovernor()) {
+                    color = Color.green;
+                } else {
+                    color = MainUI.shadeBorderC();
+                }
+
                 g.setFont(narrowFont(20));
                 String titleText = text("MAIN_COLONY_ALLOCATE_SPENDING");
                 int titleY = getHeight() - s6;
-                drawShadowedString(g, titleText, 2, s5, titleY, MainUI.shadeBorderC(), textC);
+                drawShadowedString(g, titleText, 2, s5, titleY, color, textC);
                 return;
             }
             String text = text(Colony.categoryName(category));
@@ -351,6 +363,9 @@ public class EmpireColonySpendingPane extends BasePanel {
             else if (rightArrow.contains(x,y))
                 increment(true);
             else {
+                if (this.category < 0) {
+                    toggleGovernor();
+                }
                 float pct = pctBoxSelected(x,y);
                 if (pct >= 0) {
                     Colony colony = parent.systemViewToDisplay().colony();
@@ -410,6 +425,16 @@ public class EmpireColonySpendingPane extends BasePanel {
             float num = x - minX;
             float den = maxX-minX;
             return num/den;
+        }
+    }
+    private void toggleGovernor() {
+        if (parent.systemViewToDisplay() != null && parent.systemViewToDisplay().colony() != null) {
+            Colony colony = parent.systemViewToDisplay().colony();
+            colony.setGovernor(!colony.isGovernor());
+            if (colony.isGovernor()) {
+                colony.govern();
+            }
+            parent.repaint();
         }
     }
 }
