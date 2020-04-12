@@ -15,6 +15,7 @@
  */
 package rotp.util;
 
+import org.apache.commons.math3.util.FastMath;
 import rotp.util.sound.SoundManager;
 import java.awt.AlphaComposite;
 import java.awt.Color;
@@ -55,7 +56,6 @@ import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
 
 import rotp.Rotp;
-import rotp.apachemath.FastMath;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.Galaxy;
 import rotp.model.galaxy.StarSystem;
