@@ -139,6 +139,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
                 system().addEvent(new SystemScoutedEvent(player().id));
         }
         scoutTime = galaxy().currentYear();
+        spyTime = galaxy().currentYear();
         setName();
         setEmpire();
         setPlanetData();
