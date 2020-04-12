@@ -58,12 +58,14 @@ public class WavClip  implements SoundClip, Base {
         volume = vol;
         loaded = false;
         
-        BufferedInputStream is = null;
+        AudioInputStream ais = null;
         try {
             if (!loaded) {
-                clip = AudioSystem.getClip();
-                is = new BufferedInputStream(wavFileStream(fn));
-                clip.open(AudioSystem.getAudioInputStream(is));
+                BufferedInputStream is = new BufferedInputStream(wavFileStream(fn));
+                ais = AudioSystem.getAudioInputStream(is);
+                DataLine.Info info = new DataLine.Info(Clip.class, ais.getFormat());
+                clip = (Clip)AudioSystem.getLine(info);
+                clip.open(ais);
                 if (vol < 1) {
                     log("setting volume for sound: "+fn+"  to "+(int)(vol*100));
                     FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
@@ -77,8 +79,8 @@ public class WavClip  implements SoundClip, Base {
             System.err.println(e.getStackTrace());
         }
         finally {
-            if (is != null)
-                try { is.close(); } catch (IOException e) {} 
+            if (ais != null)
+                try { ais.close(); } catch (IOException e) {}
         }
     }
     public void play() {
