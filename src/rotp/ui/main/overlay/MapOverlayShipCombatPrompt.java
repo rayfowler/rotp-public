@@ -55,7 +55,7 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
         Empire pl = player();
         StarSystem sys = galaxy().system(sysId);
         fleet = null;
-        //pl.sv.refreshFullScan(sysId);
+        planetImg = null;
         pop = pl.sv.population(sysId);
         bases = pl.sv.bases(sysId);
         fact = pl.sv.factories(sysId);
