@@ -888,9 +888,9 @@ public void paintAllImmediately() {
         String lbl1 = text("SHIP_COMBAT_SCAN_HIT_POINTS");
         String lbl2 = text("SHIP_COMBAT_SCAN_SHIELD_CLASS");
         int currHits = (int) Math.ceil(target.hits);
-        int maxHits = (int) target.maxHits;
+        int maxHits = (int) Math.ceil(target.maxHits);
         String val1 = currHits == maxHits ? "" + maxHits : ""+currHits+"/"+maxHits;
-        String val2 = view.shieldKnown() ? ""+view.shield().level() : unk;
+        String val2 = view.shieldKnown() ? ""+target.shieldLevel() : unk;
         int sw1 = g.getFontMetrics().stringWidth(val1);
         int sw2 = g.getFontMetrics().stringWidth(val2);
         g.setColor(textColor);
@@ -909,8 +909,8 @@ public void paintAllImmediately() {
         g.setColor(textColor);
         g.drawString(lbl1, x1a,y2+s12);
         g.drawString(lbl2, x1b,y2+s12);
-        val1 = view.missileDefenseKnown() ? "" +view.missileDefense() : unk;
-        val2 = view.attackLevelKnown() ? ""+view.attackLevel() : unk;
+        val1 = view.missileDefenseKnown() ? "" +target.missileDefense() : unk;
+        val2 = view.attackLevelKnown() ? ""+target.attackLevel() : unk;
         sw1 = g.getFontMetrics().stringWidth(val1);
         sw2 = g.getFontMetrics().stringWidth(val2);
         g.setColor(textColor);
@@ -929,8 +929,8 @@ public void paintAllImmediately() {
         g.setColor(textColor);
         g.drawString(lbl1, x1a,y2+s12);
         g.drawString(lbl2, x1b,y2+s12);
-        val1 = view.beamDefenseKnown() ? "" +view.beamDefense() : unk;
-        val2 = view.combatSpeedKnown() ? ""+view.combatSpeed() : unk;
+        val1 = view.beamDefenseKnown() ? ""+target.beamDefense() : unk;
+        val2 = view.combatSpeedKnown() ? ""+target.maxMove() : unk;
         sw1 = g.getFontMetrics().stringWidth(val1);
         sw2 = g.getFontMetrics().stringWidth(val2);
         g.setColor(textColor);
