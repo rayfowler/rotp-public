@@ -229,7 +229,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         return galaxy().ships.anyFleetAtSystem(emp.id, id) != null;
     }
     public ShipFleet orbitingFleetForEmpire(Empire emp) {
-        return galaxy().ships.orbitingFleet(emp.id, id);
+        return emp == null ? null : galaxy().ships.orbitingFleet(emp.id, id);
     }
     public ShipFleet retreatingFleetForEmpire(Empire emp, StarSystem s) {
         return galaxy().ships.retreatingFleet(emp.id, id, s.id);
