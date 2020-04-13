@@ -244,6 +244,7 @@ public final class GameSession implements Base, Serializable {
         if (performingTurn())
             return;
 
+        performingTurn = true;
         nextTurnThread = new Thread(nextTurnProcess());
         nextTurnThread.start();
     }
@@ -365,13 +366,13 @@ public final class GameSession implements Base, Serializable {
                 exception(e);
             }
             finally {
-                performingTurn = false;
                 RotPUI.instance().mainUI().restoreMapState();
                 if (Rotp.memoryLow())
                     RotPUI.instance().mainUI().showMemoryLowPrompt();
                 // handle game over possibility
                 if (!session().status().inProgress())
                     RotPUI.instance().selectGameOverPanel();
+                performingTurn = false;
             }
         };
     }
