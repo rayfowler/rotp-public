@@ -280,7 +280,7 @@ public class AICDiplomat implements Base, Diplomat {
                 List<Tech> previouslyOffered = v.embassy().alreadyOfferedTechs(wantedTech);
                 // simplified logic so that if we have ever asked for wantedTech before, don't ask again
                 if (previouslyOffered == null) {
-                    v.embassy().logTechExchangeRequest(wantedTech, counterTechs);
+                     v.embassy().logTechExchangeRequest(wantedTech, counterTechs);
                     // there are counters available.. send request
                     DiplomaticReply reply = v.empire().diplomatAI().receiveRequestTech(empire, wantedTech);
                     if ((reply != null) && reply.accepted()) {
@@ -704,6 +704,11 @@ public class AICDiplomat implements Base, Diplomat {
         // never willing to declare war on an NAP partner if we are honorable
         if (empire.pactWith(target.id) && empire.leader().isHonorable())
             return v.refuse(DialogueManager.DECLINE_OFFER, target);
+        
+        // if a peacy treaty is in effect with the target, then refuse
+        if (empire.viewForEmpire(target.id).embassy().atPeace()) {
+            return v.refuse(DialogueManager.DECLINE_PEACE_TREATY, target);
+        }
 
          // will always declare war if allied with the requestor and he is already at war with the target
         if (requestor.alliedWith(id(empire)) && requestor.atWarWith(target.id))

@@ -220,6 +220,7 @@ DeclineTechTrade    |  77  | DECLINE_TECH_TRADE_01
 DeclineEnemyAlly     |  77  | DECLINE_ENEMY_ALLY_01
 DeclineAlreadyAllied |  77  | DECLINE_ALREADY_ALLIED_01
 DeclineNoWarOnAlly   |  77  | DECLINE_NO_WAR_ON_ALLY_01
+DeclinePeaceTreaty   |  77  | DECLINE_PEACE_TREATY_01
 
 OfferJointWar        |  77  | OFFER_JOINT_WAR_01
 AcceptJointWar       |  77  | ACCEPT_JOINT_WAR_01

@@ -704,6 +704,11 @@ public class AIDiplomat implements Base, Diplomat {
         // never willing to declare war on an NAP partner if we are honorable
         if (empire.pactWith(target.id) && empire.leader().isHonorable())
             return v.refuse(DialogueManager.DECLINE_OFFER, target);
+        
+        // if a peacy treaty is in effect with the target, then refuse
+        if (empire.viewForEmpire(target.id).embassy().atPeace()) {
+            return v.refuse(DialogueManager.DECLINE_PEACE_TREATY, target);
+        }
 
          // will always declare war if allied with the requestor and he is already at war with the target
         if (requestor.alliedWith(id(empire)) && requestor.atWarWith(target.id))

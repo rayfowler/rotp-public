@@ -102,6 +102,7 @@ DECLINE_OFFER_09           | Request denied.
 
 DECLINE_ENEMY_ALLY_01      | Request denied.
 DECLINE_NO_WAR_ON_ALLY_01  | Request denied.
+DECLINE_PEACE_TREATY_01    | Request denied.
 
 
 DECLINE_ANNOYED_01         | Request denied.

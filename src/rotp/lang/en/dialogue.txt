@@ -279,6 +279,7 @@ DECLINE_OFFER_09           | We are afraid we must decline.
 DECLINE_ENEMY_ALLY_01      | The [my_race] would never deal with allies of the hated [other_race].
 DECLINE_ALREADY_ALLIED_01  | The [my_race] and our allies cannot consider your request as long as you are allied with other empires.
 DECLINE_NO_WAR_ON_ALLY_01  | We will not declare war on our allies.
+DECLINE_PEACE_TREATY_01    | We will not break our peace treaty with the [other_race].
 
 DECLINE_ANNOYED_01         | The [your_race] are creatures of much wind and little action. We tire of your prattle.
 DECLINE_ANNOYED_01         | [your_nameTitle] [your_name], you try our patience. Perhaps you should speak again later.

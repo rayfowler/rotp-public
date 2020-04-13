@@ -161,6 +161,7 @@ DECLINE_TECH_TRADE_01      | [your_nameTitle] [your_name], I have little need fo
 DECLINE_TECH_TRADE_01      | I see little of interest in your technology.
 
 DECLINE_NO_WAR_ON_ALLY_01  | I will not declare war on an ally.
+DECLINE_PEACE_TREATY_01    | I will not break my peace treaty with the [other_race].
 
 OFFER_TECH_EXCHANGE_01     | I am in great need of your [tech] technology. Perhaps you are willing to exchange it for some of my technology.
 OFFER_TECH_EXCHANGE_01     | I know you have learned the secrets of [tech]. Can I offer you some of my technology in exchange?

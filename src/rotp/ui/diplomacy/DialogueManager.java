@@ -60,6 +60,7 @@ public class DialogueManager implements Base {
     public static final String DECLINE_ENEMY_ALLY       = "DeclineEnemyAlly";
     public static final String DECLINE_ALREADY_ALLIED   = "DeclineAlreadyAllied";
     public static final String DECLINE_NO_WAR_ON_ALLY   = "DeclineNoWarOnAlly";
+    public static final String DECLINE_PEACE_TREATY     = "DeclinePeaceTreaty";
     public static final String OFFER_TRADE              = "OfferTrade";
     public static final String ANNOUNCE_TRADE           = "AnnounceTrade";
     public static final String ACCEPT_TRADE             = "AcceptTrade";
@@ -198,6 +199,7 @@ public class DialogueManager implements Base {
         addMessage(new SimpleMessage(DECLINE_BIOWEAPONS));
         addMessage(new SimpleMessage(DECLINE_ENEMY_ALLY));
         addMessage(new SimpleMessage(DECLINE_NO_WAR_ON_ALLY));
+        addMessage(new SimpleMessage(DECLINE_PEACE_TREATY));
         addMessage(new SimpleMessage(ACCEPT_TRADE));
         addMessage(new SimpleMessage(ACCEPT_TECH_EXCHANGE));
         addMessage(new SimpleMessage(ACCEPT_FINANCIAL_AID));
