@@ -98,8 +98,7 @@ public class MassTransportsDialog extends BasePanel {
     void sendTransports() {
         List<StarSystem> launchPoints = new ArrayList<>();
         for (StarSystem sys : sourceSystems) {
-            if ((sys.transportSprite().starSystem() == null)
-            && (sys.transportSprite().amt() > 0)) {
+            if (sys.transportSprite().amt() > 0) {
                 sys.transportSprite().clickedDest(topParent.targetSystem);
                 launchPoints.add(sys);
             }
