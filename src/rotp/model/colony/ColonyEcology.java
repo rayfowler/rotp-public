@@ -341,61 +341,43 @@ public class ColonyEcology extends ColonySpendingCategory {
             return text(reserveText);
     }
     public float maxSpendingNeeded() {
-        // try to convert hostile atmosphere
-        float hostileCost = 0;
-
-        if (planet().canTerraformAtmosphere(empire()))
-            hostileCost = Math.max(0, atmosphereTerraformCost() - hostileBC);
-
-        // don't count enrichSoil cost unless not hostile or civ can terraform hostile
-        float enrichCost = 0;
-        if (!planet().isEnvironmentHostile() || planet().canTerraformAtmosphere(empire())) {
-            if (tech().enrichSoil() && (tech().topSoilEnrichmentTech().environment > planet().environment())) {
-                enrichCost = ((tech().topSoilEnrichmentTech().environment - planet().environment()) * 150) - soilEnrichBC;
-                enrichCost = max(0,enrichCost);
-            }
-        }
-
-        // try to terraform planet to maxSize (currently not counting incr from previous terraforms)
-        float roomToGrow = colony().maxSize() - planet().currentSize();
-        float terraformCost = 0;
-
-        if (roomToGrow > 0) {
-            terraformCost = roomToGrow * tech().popIncreaseCost();
-            terraformCost = max(0,terraformCost);
-        }
-
+        // cost to terraform planet
+        float tform = terraformSpendingNeeded();
         // try to buy new population
         float newPopCost = (colony().maxSize() - colony().workingPopulation() - colony().normalPopGrowth()) * tech().populationCost();
         newPopCost = max(0,newPopCost);
-        return terraformSpendingNeeded() + newPopCost;
+        return tform + newPopCost;
     }
     public float terraformSpendingNeeded() {
+        Empire emp = empire();
+        TechTree tech = emp.tech();
+        Planet planet = planet();
         // try to convert hostile atmosphere
         float hostileCost = 0;
 
-        if (planet().canTerraformAtmosphere(empire()))
-            hostileCost = Math.max(0, atmosphereTerraformCost() - hostileBC);
+        if (planet.canTerraformAtmosphere(emp))
+            hostileCost = max(0, atmosphereTerraformCost() - hostileBC);
 
         // don't count enrichSoil cost unless not hostile or civ can terraform hostile
         float enrichCost = 0;
-        if (!planet().isEnvironmentHostile() || planet().canTerraformAtmosphere(empire())) {
-            if (tech().enrichSoil() && (tech().topSoilEnrichmentTech().environment > planet().environment())) {
-                enrichCost = ((tech().topSoilEnrichmentTech().environment - planet().environment()) * 150) - soilEnrichBC;
-                enrichCost = Math.max(0,enrichCost);
+        if (!emp.race().ignoresPlanetEnvironment()) {
+            if (!planet.isEnvironmentHostile() || planet.canTerraformAtmosphere(emp)) {
+                if (tech.enrichSoil() && (tech.topSoilEnrichmentTech().environment > planet.environment())) {
+                    enrichCost = ((tech.topSoilEnrichmentTech().environment - planet.environment()) * 150) - soilEnrichBC;
+                    enrichCost = max(0,enrichCost);
+                }
             }
         }
-
         // try to terraform planet to maxSize (currently not counting incr from previous terraforms)
-        float roomToGrow = colony().maxSize() - planet().currentSize();
+        float roomToGrow = colony().maxSize() - planet.currentSize();
         float terraformCost = 0;
 
         if (roomToGrow > 0) {
-            terraformCost = roomToGrow * tech().popIncreaseCost();
-            terraformCost = Math.max(0,terraformCost);
+            terraformCost = roomToGrow * tech.popIncreaseCost();
+            terraformCost = max(0,terraformCost);
         }
 
-        return (hostileCost + enrichCost + terraformCost);
+        return hostileCost + enrichCost + terraformCost;
     }
     public int terraformAllocationNeeded() {
         float needed = terraformSpendingNeeded();
