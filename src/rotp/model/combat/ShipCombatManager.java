@@ -496,7 +496,8 @@ public class ShipCombatManager implements Base {
     public void retreatEmpire(Empire e) {
         List<CombatStack> retreatingFleets = new ArrayList<>();
 
-        for (CombatStack st : results.activeStacks()) {
+        List<CombatStack> activeStacks = new ArrayList<>(results.activeStacks());
+        for (CombatStack st : activeStacks) {
             if ((st.empire == e) && !st.isColony()) {
                 if (st.retreat())
                     retreatingFleets.add(st);
