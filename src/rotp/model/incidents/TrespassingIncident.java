@@ -43,9 +43,12 @@ public class TrespassingIncident extends DiplomaticIncident {
         float fleetPower = fl.firepower(player().sv.shieldLevel(sysId))/100.0f;
         severity = multiplier* max(1.0f, fleetPower);
         severity = max(-30, severity);
-        if (ev.owner().isPlayer() || ev.empire().isPlayer())
+        // notify player if hostile ships are orbiting his colony
+        if (ev.owner().isPlayer())
             TrespassingAlert.create(empMe, empYou, sysId);
-
+        // if it is player's ships in orbit, notify player only if not at war
+        else if (ev.empire().isPlayer() && !ev.embassy().anyWar())
+            TrespassingAlert.create(empMe, empYou, sysId);
     }
     private String systemName()         { return player().sv.name(sysId); }
     @Override
