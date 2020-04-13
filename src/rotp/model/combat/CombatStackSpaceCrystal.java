@@ -64,6 +64,8 @@ public class CombatStackSpaceCrystal extends CombatStack {
                     if (st.isShip() || st.isMonster() || st.isColony()) {
                         st.drawDamageTaken(dam, attackText);
                         st.takePulsarDamage(dam, 1);
+                        st.attackLevel = max(0, st.attackLevel-1);
+                        st.repairPct = max(0, st.repairPct-0.05f);
                     }
                 }
             }
