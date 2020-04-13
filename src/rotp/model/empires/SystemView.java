@@ -126,8 +126,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
     public void raiseHostility()                   { hostilityLevel++; }
     public void resetSystemData()                  { setLocationSecurity(); }
     public void refreshSystemEntryScan() {
-        vGuarded = system().hasMonster();
-        
+        vGuarded = system().hasMonster();      
         if (vGuarded)
             setName();
     }
@@ -197,7 +196,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
     private void setOrbitingFleets() {
         orbitingFleets().clear();
         exitingFleets().clear();
-        vGuarded = system().isGuarded();
+        vGuarded = system().hasMonster();
         vOrbitingFleets.clear();
         vOrbitingFleets.addAll(system().orbitingFleets());
         vExitingFleets.clear();

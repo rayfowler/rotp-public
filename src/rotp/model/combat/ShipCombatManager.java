@@ -234,7 +234,7 @@ public class ShipCombatManager implements Base {
     }
     public void continueToNextPlayerStack() {
         log("Continuing To Next Player Stack");
-        if (combatIsFinished())
+        if (combatIsFinished()) 
             return;
         
         performingStackTurn = true;
@@ -245,10 +245,8 @@ public class ShipCombatManager implements Base {
                 playerTurn = true;
             else
                 performNextStackTurn();
-            if (combatIsFinished()) {
-                endOfCombat(true);
+            if (combatIsFinished()) 
                 return;
-            }
         }
 
         performingStackTurn = false;
@@ -422,8 +420,8 @@ public class ShipCombatManager implements Base {
         addInitialStacks(emp2);
         scanShips();
 
-        // unless system is guarded, remove any stacks that want to retreat
-        if (system.isGuarded())
+        // unless system has monster, remove any stacks that want to retreat
+        if (system.hasMonster())
             return;
 
         boolean retreating = true;
@@ -464,8 +462,8 @@ public class ShipCombatManager implements Base {
                 addStackToCombat(st);
         }
 
-        // unless system is guarded, remove any stacks that want to retreat
-        if (system.isGuarded())
+        // unless system has monster, remove any stacks that want to retreat
+        if (system.hasMonster())
             return;
 
         boolean retreating = true;
@@ -741,6 +739,7 @@ public class ShipCombatManager implements Base {
             finished = true;
             if (showAnimations())
                 ui.showResult();
+            endOfCombat(true);
             return true;
         }
         return false;

@@ -166,8 +166,6 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             starType = StarType.keyed(starTypeKey);
         return starType;
     }
-    public boolean isGuarded()                  { return isGuarded; }
-    public void setGuarded()                    { isGuarded = true; }
     public boolean piracy()                     { return piracy; }
     public void piracy(boolean b)               { piracy = b; }
 

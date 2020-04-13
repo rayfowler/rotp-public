@@ -40,6 +40,20 @@ public class OrionGuardianShip extends SpaceMonster {
         Empire emp = this.lastAttacker();
         for (String techId: techs)
             emp.plunderShipTech(tech(techId), -2); 
+        
+        // find the system with this monster and remove it
+        int sysId = StarSystem.NULL_ID;
+        for (StarSystem sys: galaxy().starSystems()) {
+            if (sys.monster() == this) {
+                sys.monster(null);
+                sysId = sys.id;
+                break;
+            }
+        }
+        
+        // all empires now know this system is no longer guarded
+        for (Empire emp1: galaxy().empires()) 
+            emp1.sv.view(sysId).refreshSystemEntryScan();
     } 
     @Override
     protected DiplomaticIncident killIncident(Empire emp) { return KillGuardianIncident.create(emp.id, lastAttackerId, nameKey); }
