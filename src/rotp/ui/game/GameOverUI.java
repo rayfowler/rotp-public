@@ -40,6 +40,7 @@ public final class GameOverUI extends FadeInPanel implements MouseListener, Mous
     private static Composite[] trans;
     private int transIndex;
     BufferedImage backImg;
+    int fadeDelay = 0;
     public GameOverUI() {
         init0();
     }
@@ -57,10 +58,14 @@ public final class GameOverUI extends FadeInPanel implements MouseListener, Mous
         Race r = player().race();
         Image gameOverImage = session().status().lost() ? image(r.lossSplashKey) : image(r.winSplashKey);
         
-        if (gameOverImage == null)
+        if (gameOverImage == null) {
             backImg = GalaxyMapPanel.sharedStarBackground;
-        else
+            fadeDelay = 1000;
+        }
+        else {
             backImg = newBufferedImage(gameOverImage);
+            fadeDelay = 3000;
+        }
             
         if (trans == null) {
             trans = new Composite[20];
@@ -134,7 +139,7 @@ public final class GameOverUI extends FadeInPanel implements MouseListener, Mous
             // wait 3 seconds to let the background image linger
             // before fading in text over it
             if (transIndex < 0) {
-                sleep(3000);
+                sleep(fadeDelay);
                 transIndex = 0;
             }
             transIndex = Math.min(transIndex+1, trans.length-1);
@@ -179,9 +184,9 @@ public final class GameOverUI extends FadeInPanel implements MouseListener, Mous
         String pRace = pl.raceName();
         String pEmpire = pl.name();
         Empire ruler = galaxy().council().leader();
-        String rName = ruler.leader().name();
-        String rRace = ruler.raceName();
-        String rEmpire = ruler.label("_race_plural");
+        String rName = ruler == null ? "" : ruler.leader().name();
+        String rRace = ruler == null ? "" : ruler.raceName();
+        String rEmpire = ruler == null ? "" :ruler.label("_race_plural");
 
         if (session().status().lostOverthrown())
             return text("GAME_OVER_OVERTHROWN_LOSS2", year, pName, pRace, pEmpire, rName, rRace, rEmpire);
