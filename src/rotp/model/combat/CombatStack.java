@@ -600,9 +600,6 @@ public class CombatStack implements Base {
         int w1 = (int)(scale0*w0);
         int h1 = (int)(scale0*h0);
 
-        int s1 = scaled(1);
-        int s2 = scaled(2);
-
         if (scale != 1.0f) {
             int prevW = w1;
             int prevH = h1;
@@ -618,14 +615,14 @@ public class CombatStack implements Base {
             overlayImg = newBufferedImage(w1,h1);
             Graphics2D g0 = (Graphics2D) overlayImg.getGraphics();
             if (transparency < 1) {
-                AlphaComposite ac = java.awt.AlphaComposite.getInstance(AlphaComposite.SRC_OVER,transparency);
+                AlphaComposite ac = java.awt.AlphaComposite.getInstance(AlphaComposite.SRC_OVER,max(0,transparency));
                 g0.setComposite(ac);
             }
             if (reversed)  // XOR
                 g0.drawImage(img, 0, 0, w1, h1, w0, 0, 0, h0, ui);
             else
                 g0.drawImage(img, 0, 0, w1, h1, 0, 0, w0, h0, ui);
-            AlphaComposite ac = java.awt.AlphaComposite.getInstance(AlphaComposite.SRC_IN,brighten);
+            AlphaComposite ac = java.awt.AlphaComposite.getInstance(AlphaComposite.SRC_IN,min(1,brighten));
             g0.setComposite(ac);
             g0.setColor(Color.white);
             g0.fillRect(0, 0, w1, h1);
@@ -634,7 +631,7 @@ public class CombatStack implements Base {
         }
         
         if (transparency < 1) {
-            AlphaComposite ac = java.awt.AlphaComposite.getInstance(AlphaComposite.SRC_OVER,transparency);
+            AlphaComposite ac = java.awt.AlphaComposite.getInstance(AlphaComposite.SRC_OVER,max(0,transparency));
             g.setComposite(ac);
         }
         if (reversed)  // XOR
