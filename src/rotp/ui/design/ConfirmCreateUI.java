@@ -258,6 +258,8 @@ public final class ConfirmCreateUI extends BasePanel implements MouseListener, M
             targetDesign.name(text("SHIP_DESIGN_UNNAMED_DESIGN"));
         else
             targetDesign.name(name);
+        
+        targetDesign.clearEmptyWeapons();
 
         hoverTarget = null;
         disableGlassPane();
