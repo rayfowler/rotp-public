@@ -128,7 +128,10 @@ public class SystemGraphicPane extends BasePanel implements MouseMotionListener,
     @Override
     public void mousePressed(MouseEvent e) { }
     @Override
-    public void mouseReleased(MouseEvent e) { }
+    public void mouseReleased(MouseEvent e) {
+        if (e.getClickCount() == 2) 
+            parent.recenterMap();
+    }
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
         boolean up = e.getWheelRotation() > 0;

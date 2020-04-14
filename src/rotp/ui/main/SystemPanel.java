@@ -177,6 +177,9 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
     protected abstract BasePanel detailPane();
     protected BasePanel bottomPane()  { return null; }
 
+    public void recenterMap() {
+        spritePanel().parent.map().recenterMapOn(systemViewToDisplay());
+    }
     public void scrollToNextSystem(boolean forward) {
        StarSystem sys = systemViewToDisplay();
         if (sys == null)
