@@ -1083,7 +1083,7 @@ SHIPWPN_12_DETAIL      | Fires an intense stream of tachyon particles that strik
 
 SHIPWPN_13_NAME        | Gauss Autocannon
 SHIPWPN_13_BRIEF       | 1/2 Shields, Fires 4x
-SHIPWPN_13_DETAIL      | An advanced linear accelerator capable of firing 4 explosive rounds per turn that inflict 7 to 10 points of damage each. These projectile rounds also halve the effectiveness of enemy shields.
+SHIPWPN_13_DETAIL      | An advanced linear accelerator firing 4 explosive rounds per turn that inflict 7 to 10 points of damage each. These rounds also halve the effectiveness of enemy shields.
 
 SHIPWPN_14_NAME        | Particle Beam
 SHIPWPN_14_BRIEF       | Halves Shield Strength
