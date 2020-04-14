@@ -139,6 +139,8 @@ public class RandomEventPiracy implements Base, Serializable, RandomEvent {
         sys.clearEvent();
         sys.piracy(false);
         emp.tradePiracyRate(0.0f);
+        
+        session().removePendingNotification("GNN_Event_Piracy");
         if (player().knowsOf(empId))
             GNNNotification.notifyRandomEvent(endText(), "GNN_Event_Piracy");
     }

@@ -26,6 +26,8 @@ public class GNNRandomEventNotification implements TurnNotification {
         eventId = id;
     }
     @Override
+    public String key()          { return eventId; }
+    @Override
     public String displayOrder() { return RANDOM_EVENT; }
     @Override
     public void notifyPlayer() {

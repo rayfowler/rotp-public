@@ -39,6 +39,7 @@ public interface TurnNotification extends Comparable<TurnNotification> {
     public default int compareTo(TurnNotification notif) {
         return displayOrder().compareTo(notif.displayOrder());
     }
+    public default String key()  { return ""; }
     abstract String displayOrder();
     abstract void notifyPlayer();
 }

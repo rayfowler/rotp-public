@@ -187,6 +187,14 @@ public final class GameSession implements Base, Serializable {
     public void addTurnNotification(TurnNotification notif) {
         notifications().add(notif);
     }
+    public void removePendingNotification(String key) {
+        List<TurnNotification> notifs = new ArrayList<>(notifications());
+        for (TurnNotification notif: notifs) {
+            if (notif.key().equals(key))
+                notifications.remove(notif);
+        }
+            
+    }
     public GameSession() {
         options(RulesetManager.current().defaultRuleset());
     }

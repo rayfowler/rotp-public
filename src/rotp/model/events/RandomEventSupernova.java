@@ -143,6 +143,8 @@ public class RandomEventSupernova implements Base, Serializable, RandomEvent, Co
         galaxy().events().removeActiveEvent(this);
         targetSystem.clearEvent();
         Colony col = targetSystem.colony();
+        
+        session().removePendingNotification("GNN_Event_Supernova");
         // possible colony is destroyed before supernova
         if (col != null) {
             col.research().endProject();

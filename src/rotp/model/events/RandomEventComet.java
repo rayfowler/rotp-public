@@ -126,6 +126,8 @@ public class RandomEventComet implements Base, Serializable, RandomEvent {
         galaxy().events().removeActiveEvent(this);
         StarSystem sys = galaxy().system(sysId);
         sys.clearEvent();
+        
+        session().removePendingNotification("GNN_Event_Comet");
         if (player().knowsOf(empId)) 
             GNNNotification.notifyRandomEvent(goodEndText(), "GNN_Event_Comet");
     }

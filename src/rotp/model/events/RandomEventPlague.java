@@ -140,6 +140,8 @@ public class RandomEventPlague implements Base, Serializable, RandomEvent, Colon
         sys.addEvent(new SystemRandomEvent("SYSEVENT_PLAGUE_ENDED"));
         Colony col = sys.colony();
         // possible colony is destroyed before plague ends
+        
+        session().removePendingNotification("GNN_Event_Plague");
         if (col != null) {
             col.research().endProject();
             col.clearQuarantine();
