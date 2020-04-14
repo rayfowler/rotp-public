@@ -1033,11 +1033,12 @@ public final class Colony implements Base, IMappedObject, Serializable {
         if (population() <= 0)
             destroy();
     }
-     public void destroy() {
+    public void destroy() {
         if (isCapital())
-            empire().chooseNewCapital();
+            empire.chooseNewCapital();
         
-        starSystem().addEvent(new SystemDestroyedEvent(empire().lastAttacker()));
+        StarSystem sys = starSystem();
+        sys.addEvent(new SystemDestroyedEvent(empire.lastAttacker()));
 
         setPopulation(0);
         rebels = 0;
@@ -1047,12 +1048,17 @@ public final class Colony implements Base, IMappedObject, Serializable {
 
         transport = null;
         clearReserveIncome();
-        empire.removeColonizedSystem(starSystem());
+        empire.removeColonizedSystem(sys);
         planet.setColony(null);
         // update system views of civs that would notice
-        empire.sv.refreshFullScan(starSystem().id);
-        List<ShipFleet> fleets = starSystem().orbitingFleets();
-        for (ShipFleet fl : fleets)
-            fl.empire().sv.refreshFullScan(starSystem().id);
+        empire.sv.refreshFullScan(sys.id);
+        List<ShipFleet> fleets = sys.orbitingFleets();
+        for (ShipFleet fl : fleets) 
+            fl.empire().sv.refreshFullScan(sys.id);
+        
+        for (Empire emp: galaxy().empires()) {
+            if (emp.knowsOf(empire) && !emp.sv.name(sys.id).isEmpty()) 
+                emp.sv.view(sys.id).setEmpire();                   
+        }
     }
 }

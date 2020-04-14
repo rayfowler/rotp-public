@@ -167,7 +167,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
         setEmpire();
         setColonyData();
     }
-    private void setEmpire() {
+    public void setEmpire() {
         vEmpire = system().empire();
         if (!owner().aggressiveWith(id(vEmpire)))
             clearHostility();
