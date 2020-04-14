@@ -24,6 +24,7 @@ import java.awt.Rectangle;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -38,7 +39,7 @@ import rotp.ui.main.MainUI;
 import rotp.ui.main.SystemPanel;
 import rotp.util.Palette;
 
-public class SystemInfoPanel extends SystemPanel {
+public class SystemInfoPanel extends SystemPanel implements MouseMotionListener {
     private static final long serialVersionUID = 1L;
     private static final Color selectedC = new Color(178,124,87);
     private static final Color unselectedC = new Color(112,85,68);
@@ -65,6 +66,8 @@ public class SystemInfoPanel extends SystemPanel {
         setLayout(layout);
         add(topPane(), BorderLayout.NORTH);
         add(detailPane, BorderLayout.CENTER);
+        
+        addMouseMotionListener(this);
     }
     @Override
     public String subPanelTextureName()    { return TEXTURE_BROWN; }
@@ -99,6 +102,13 @@ public class SystemInfoPanel extends SystemPanel {
     StarSystem selectedSystem() {
         return parent.systemToDisplay();
     }
+
+    @Override
+    public void mouseDragged(MouseEvent e) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    @Override
+    public void mouseMoved(MouseEvent e) {}
     class EmpireInfoGraphicPane extends BasePanel implements ActionListener {
         private static final long serialVersionUID = 1L;
         SystemPanel parent;
