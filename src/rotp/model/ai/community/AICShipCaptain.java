@@ -140,7 +140,8 @@ public class AICShipCaptain implements Base, ShipCaptain {
             else
                 threatLevel = rangeAdj * target.estimatedKillPct(ward);  
             if (killPct > 0) {
-                float desirability = max((threatLevel * killPct), .001f);
+                killPct = min(1,killPct);
+                float desirability = max((10000* threatLevel * threatLevel * killPct), .01f);
                 if (desirability > maxDesirability) {  // this might be a better target, adjust desirability for pathing
                     if (stack.mgr.autoResolve) {
                         bestTarget = target;
@@ -173,7 +174,7 @@ public class AICShipCaptain implements Base, ShipCaptain {
         if (!st.canMove())
             return null;
 
-        int targetDist = st.maxFiringRange(tgt);
+        int targetDist = st.optimalFiringRange(tgt);
         if (tgt.isColony() && st.hasBombs())
             targetDist = 1;
 
@@ -218,7 +219,7 @@ public class AICShipCaptain implements Base, ShipCaptain {
     public static FlightPath findBestPathToAttack(CombatStack st, CombatStack tgt) {
         if (!st.isArmed())
             return null;
-        int r = st.maxFiringRange(tgt);
+        int r = st.optimalFiringRange(tgt);
         return findBestPathToAttack(st, tgt, r);
     }
     public static FlightPath findBestPathToAttack(CombatStack st, CombatStack tgt, int range) {
@@ -282,7 +283,7 @@ public class AICShipCaptain implements Base, ShipCaptain {
             if (st.isMonster()) 
                 enemies.add(st);
             else {
-                if (stack.empire.alliedWith(st.empire.id))
+                if (stack.empire.alliedWith(id(st.empire)))
                     allies().add(st);
                 else if (stack.empire.aggressiveWith(st.empire, combat().system()))
                     enemies().add(st);

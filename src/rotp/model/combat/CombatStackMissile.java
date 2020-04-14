@@ -68,6 +68,8 @@ public class CombatStackMissile extends CombatStack implements Base {
     @Override
     public int maxFiringRange(CombatStack tgt)           { return 0; }
     @Override
+    public int optimalFiringRange(CombatStack tgt)       { return 0; }
+    @Override
     public int minFiringRange()           { return 0; }
     @Override
     public boolean isMissile()            { return true; }

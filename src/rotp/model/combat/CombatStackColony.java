@@ -195,7 +195,7 @@ public class CombatStackColony extends CombatStack {
         return true;
     }
     @Override
-    public boolean shipComponentIsOutOfAmmo(int index)                 { return false; }
+    public boolean shipComponentIsOutOfMissiles(int index)                 { return false; }
     @Override
     public int wpnCount(int i)          { return num; }
     @Override

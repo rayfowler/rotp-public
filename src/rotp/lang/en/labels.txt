@@ -1066,6 +1066,7 @@ SHIP_COMBAT_ACTION_MOVE           | Move here
 SHIP_COMBAT_ACTION_TELEPORT       | Teleport here
 SHIP_COMBAT_ACTION_RANGE          | Out of Range
 SHIP_COMBAT_ACTION_NO_MISSILES    | No missiles remaining
+SHIP_COMBAT_ACTION_NO_BOMBS       | No bombs remaining
 SHIP_COMBAT_ACTION_FIRED          | Already fired
 SHIP_COMBAT_ACTION_USED           | Already used
 SHIP_COMBAT_ACTION_BAD_TARGET     | Invalid target

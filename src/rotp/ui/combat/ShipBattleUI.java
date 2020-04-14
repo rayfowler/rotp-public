@@ -306,7 +306,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         newCombatBackground.getGraphics().drawImage(starBackground(),0,0,null);
         combatBackground = newCombatBackground;
     }
-public void paintAllImmediately() {
+    public void paintAllImmediately() {
         paintImmediately(s10,s10,getWidth()-s20,getHeight()-s20);
     }
     public void paintAllImmediately(int minTime) {
@@ -1206,7 +1206,7 @@ public void paintAllImmediately() {
                 buttX = buttX - buttW - s10;
                 if (mgr.autoComplete) {
                     String autoText = text("SHIP_COMBAT_PAUSE_BATTLE");
-                    drawButton(g, playPauseBackC, autoText, playPauseBox, redButtonEdgeC, redButtonCenterC, buttX, buttY, buttW, buttH, performingTurn);
+                    drawButton(g, playPauseBackC, autoText, playPauseBox, redButtonEdgeC, redButtonCenterC, buttX, buttY, buttW, buttH, false);
                 } else {
                     String autoText = text("SHIP_COMBAT_PLAY_BATTLE");
                     drawButton(g, playPauseBackC, autoText, playPauseBox, greenButtonEdgeC, greenButtonCenterC, buttX, buttY, buttW, buttH, performingTurn);
@@ -1889,8 +1889,10 @@ public void paintAllImmediately() {
             CombatStack current = mgr.currentStack();
             if (!current.shipComponentValidTarget(index,ship))
                 return text("SHIP_COMBAT_ACTION_RANGE");
-            else if (current.shipComponentIsOutOfAmmo(index))
+            else if (current.shipComponentIsOutOfMissiles(index)) 
                 return text("SHIP_COMBAT_ACTION_NO_MISSILES");
+            else if (current.shipComponentIsOutOfBombs(index)) 
+                return text("SHIP_COMBAT_ACTION_NO_BOMBS");
             else if (current.shipComponentIsUsed(index))
                 return text("SHIP_COMBAT_ACTION_FIRED");
             else if (!current.shipComponentInRange(index,ship))
@@ -1934,8 +1936,10 @@ public void paintAllImmediately() {
             CombatStack current = mgr.currentStack();
             if (!current.shipComponentValidTarget(weaponIndex,ship))
                 return text("SHIP_COMBAT_ACTION_BAD_TARGET");
-            else if (current.shipComponentIsOutOfAmmo(weaponIndex))
+            else if (current.shipComponentIsOutOfMissiles(weaponIndex))
                 return text("SHIP_COMBAT_ACTION_NO_MISSILES");
+            else if (current.shipComponentIsOutOfBombs(weaponIndex))
+                return text("SHIP_COMBAT_ACTION_NO_BOMBS");
             else if (current.shipComponentIsUsed(weaponIndex))
                 return text("SHIP_COMBAT_ACTION_FIRED");
             else if (!current.shipComponentInRange(weaponIndex,ship))

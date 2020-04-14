@@ -164,6 +164,7 @@ public class CombatStack implements Base {
     public int weaponIndex()                         { return 0; }
     public int shots()                               { return 1; }
     public int maxFiringRange(CombatStack tgt)       { return 1; }
+    public int optimalFiringRange(CombatStack tgt)   { return 1; }
     public int minFiringRange()                      { return 1; }
     public float maxDamage()                         { return 0; }
     public float shieldLevel()                       { return shield; }
@@ -471,7 +472,8 @@ public class CombatStack implements Base {
             mgr.destroyStack(this);
     }
     public boolean shipComponentIsUsed(int index)                          { return true; }
-    public boolean shipComponentIsOutOfAmmo(int index)                     { return true; }
+    public boolean shipComponentIsOutOfMissiles(int index)                 { return false; }
+    public boolean shipComponentIsOutOfBombs(int index)                    { return false; }
     public boolean shipComponentValidTarget(int index, CombatStack target) {
         return empire != target.empire ? false : weapon(index).validTarget(target);
     }
@@ -542,7 +544,7 @@ public class CombatStack implements Base {
         int xleft = x0 < x1 ? x : max(0, x-1);
         Rectangle rTopLeft = mgr.ui.combatGrids[xleft][max(0,y-1)];
         
-        int FRAMES = 12;
+        int FRAMES = mgr.autoComplete ? 1 : 12;
         int dx = x0 <= x1 ? BasePanel.s1 : -BasePanel.s1;
         int dy = -BasePanel.s1;
         int dFont = 1;

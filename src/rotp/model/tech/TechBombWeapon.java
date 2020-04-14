@@ -151,6 +151,7 @@ public final class TechBombWeapon extends Tech {
         Stroke prev = g.getStroke();
         g.setColor(Color.white);
 
+        int FRAMES = source.mgr.autoComplete ? 1 : 4;
         int lineSpacing = BasePanel.s3;
         int ySpacing = source.x == target.x ? 0: lineSpacing;
         int xSpacing = source.y == target.y ? 0: lineSpacing;
@@ -165,7 +166,7 @@ public final class TechBombWeapon extends Tech {
         int bombLinePhase = BasePanel.s2 + BasePanel.s20;
         // "bombing" is 5 parallel and randomly staggered dash lines
         // animation is doing this 4 times
-        for (int n=0;n<4;n++) {
+        for (int n=0;n<FRAMES;n++) {
             ui.paintAllImmediately();
             for (int i = -2; i < 3; i++) {
                 int xAdj = i * xSpacing;

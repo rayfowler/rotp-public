@@ -467,16 +467,12 @@ public final class TechShipWeapon extends Tech {
                 g.drawLine(x0, y0, x1+(xMod*adj), y1+(yMod*adj));
             }
         }
-        else if (attacksPerRound == 1)
-            g.drawLine(x0, y0, x1, y1);
         else {
-            for (int n = 0; n < attacksPerRound; n++) {
-                ui.paintCellsImmediately(source.x,target.x,source.y,target.y);
-                int xAdj = scaled(roll(-4,4)*4);
-                int yAdj = scaled(roll(-4,4)*4);
-                g.drawLine(x0, y0, x1+xAdj, y1+yAdj);
-                sleep(50);
-            }
+            int xAdj = scaled(roll(-4,4)*2);
+            int yAdj = scaled(roll(-4,4)*2);
+            g.drawLine(x0, y0, x1+xAdj, y1+yAdj);
+            sleep(100);
+            ui.paintAllImmediately();
         }
 
         g.setStroke(prev);

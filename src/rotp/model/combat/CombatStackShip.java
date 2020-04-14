@@ -156,6 +156,24 @@ public class CombatStackShip extends CombatStack {
         }
         return maxRange;
     }
+    @Override
+    public int optimalFiringRange(CombatStack tgt) {
+        // if only missile weapons, use that range
+        // else use beam weapon range;
+        int missileRange = -1;
+        int weaponRange = -1;
+        for (int i=0;i<weapons.size();i++) {
+            ShipComponent wpn = weapons.get(i);
+            // if we are bombing a planet, ignore other weapons
+            if (tgt.isColony() || wpn.groundAttacksOnly())
+                return 1;
+            else if (wpn.isMissileWeapon()) 
+                missileRange = max(missileRange, weaponRange(wpn));
+            else
+                weaponRange = max(weaponRange,weaponRange(wpn));
+        }
+        return weaponRange < 0 ? missileRange: weaponRange;
+    }
     public float missileInterceptPct(ShipWeaponMissileType wpn)   {
         return design.missileInterceptPct(wpn);
     }
@@ -287,6 +305,7 @@ public class CombatStackShip extends CombatStack {
         if (targetStack == null)
             return;
 
+        selectedWeaponIndex = index;
         target = targetStack;
         target.damageSustained = 0;
         // only fire if we have shots remaining... this is a missile concern
@@ -295,8 +314,7 @@ public class CombatStackShip extends CombatStack {
             uncloak();
             ShipComponent selectedWeapon = selectedWeapon();
             // some weapons (beams) can fire multiple per round
-            int shots = (int) selectedWeapon.attacksPerRound();
-            int count = num*shots*weaponCount[index];
+            int count = num*weaponCount[index];
             if (selectedWeapon.isMissileWeapon()) {
                 CombatStackMissile missile = new CombatStackMissile(this, (ShipWeaponMissileType) selectedWeapon, count);
                 log(fullName(), " launching ", missile.fullName(), " at ", targetStack.fullName());
@@ -408,11 +426,15 @@ public class CombatStackShip extends CombatStack {
     }
     @Override
     public boolean shipComponentIsUsed(int index) {
-        return shotsRemaining[index] < 1;
+        return (shotsRemaining[index] < 1)  || (roundsRemaining[index] < 1);
     }
     @Override
-    public boolean shipComponentIsOutOfAmmo(int index) {
-        return roundsRemaining[index] == 0;
+    public boolean shipComponentIsOutOfMissiles(int index) {
+        return weapon(index).isMissileWeapon() && roundsRemaining[index] == 0;
+    }
+    @Override
+    public boolean shipComponentIsOutOfBombs(int index) {
+        return weapon(index).groundAttacksOnly() && roundsRemaining[index] == 0;
     }
     @Override
     public String wpnName(int i) {
