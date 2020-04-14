@@ -31,7 +31,7 @@ public class CombatStackShip extends CombatStack {
     static Color healthBorderC = new Color(64,192,64);
     public ShipDesign design;
     public ShipFleet fleet;
-    public ShipComponent selectedWeapon;
+    public int selectedWeaponIndex;
     public final List<ShipComponent> weapons = new ArrayList<>();
     public float displacementPct = 0;
 
@@ -114,7 +114,7 @@ public class CombatStackShip extends CombatStack {
     @Override
     public float autoMissPct()      { return displacementPct; }
     @Override
-    public ShipComponent selectedWeapon() { return selectedWeapon; }
+    public ShipComponent selectedWeapon() { return weapons.get(selectedWeaponIndex); }
     @Override
     public boolean canDamage(CombatStack target) { return estimatedKills(target) > 0; }
     @Override
@@ -197,7 +197,7 @@ public class CombatStackShip extends CombatStack {
         System.arraycopy(weaponAttacks, 0, shotsRemaining, 0, shotsRemaining.length);
 
         if (weapons.size() > 0)
-            selectedWeapon = weapons.get(0);
+            selectedWeaponIndex = 0;
     }
     @Override
     public int wpnCount(int i) { return design.wpnCount(i); }
@@ -253,32 +253,30 @@ public class CombatStackShip extends CombatStack {
     public boolean selectBestWeapon(CombatStack target) {
         if (target.destroyed())
             return false;
-        if (currentWeaponCanAttack(target))
+        if (shipComponentCanAttack(target, selectedWeaponIndex))
             return true;
 
         rotateToUsableWeapon(target);
-        return currentWeaponCanAttack(target);
+        return shipComponentCanAttack(target, selectedWeaponIndex);
     }
     @Override
     public void rotateToUsableWeapon(CombatStack target) {
-        if (selectedWeapon == null)
-            return;
-        int i = weapons.indexOf(selectedWeapon);
+        int i = selectedWeaponIndex;
         int j = i;
         boolean looking = true;
-
+        
         while (looking) {
             j++;
             if (j == weapons.size())
                 j = 0;
-            selectedWeapon = weapons.get(j);
-            if ((j == i) || currentWeaponCanAttack(target))
+            selectedWeaponIndex = j;
+            if ((j == i) || shipComponentCanAttack(target, j))
                 looking = false;
         }
     }
     @Override
     public int weaponIndex() {
-        return weapons.indexOf(selectedWeapon);
+        return selectedWeaponIndex;
     }
     @Override
     public void fireWeapon(CombatStack targetStack) {
@@ -295,7 +293,7 @@ public class CombatStackShip extends CombatStack {
         if ((roundsRemaining[index] > 0) && (shotsRemaining[index] > 0)) {
             shotsRemaining[index]--;
             uncloak();
-            selectedWeapon = weapons.get(index);
+            ShipComponent selectedWeapon = selectedWeapon();
             // some weapons (beams) can fire multiple per round
             int shots = (int) selectedWeapon.attacksPerRound();
             int count = num*shots*weaponCount[index];
@@ -353,26 +351,26 @@ public class CombatStackShip extends CombatStack {
     @Override
     public float estimatedKills(CombatStack target) {
         float kills = 0;
-        int i = 0;
-        for (ShipComponent comp : weapons) {
-            float wpnKills = comp.estimatedKills(this, target, num * roundsRemaining[i++]);
-            kills += wpnKills;
-    }
+        for (int i=0;i<weapons.size();i++) {
+            ShipComponent comp = weapons.get(i);
+            if (!comp.isLimitedShotWeapon() || (roundsRemaining[i] > 0)) 
+                kills += comp.estimatedKills(this, target, num * roundsRemaining[i]);
+        }
         return kills;
     }
     @Override
     public boolean currentWeaponCanAttack(CombatStack target) {
-        if (selectedWeapon() == null)
+        if (selectedWeapon() == null) 
             return false;
 
         if (target.inStasis || target.isMissile())
             return false;
 
-        int wpn = weapons.indexOf(selectedWeapon());
-        if (shotsRemaining[wpn] < 1)
+        int wpn = selectedWeaponIndex;
+        if (shotsRemaining[wpn] < 1) 
             return false;
 
-        if (roundsRemaining[wpn]< 1)
+        if (roundsRemaining[wpn]< 1) 
             return false;
 
         return shipComponentCanAttack(target, wpn);
@@ -381,9 +379,12 @@ public class CombatStackShip extends CombatStack {
         if (target == null)
             return false;
 
+        if (target.inStasis || target.isMissile())
+            return false;
+
         ShipComponent shipWeapon = weapons.get(index);
 
-        if (!shipWeapon.isWeapon())
+        if ((shipWeapon == null) || !shipWeapon.isWeapon())
             return false;
 
         if (shotsRemaining[index] < 1)
