@@ -18,6 +18,7 @@ package rotp.util.sound;
 import java.io.BufferedInputStream;
 import rotp.util.Base;
 import javax.sound.sampled.*;
+import static javax.sound.sampled.FloatControl.Type.MASTER_GAIN;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -66,9 +67,9 @@ public class WavClip  implements SoundClip, Base {
                 DataLine.Info info = new DataLine.Info(Clip.class, ais.getFormat());
                 clip = (Clip)AudioSystem.getLine(info);
                 clip.open(ais);
-                if (vol < 1) {
+                if (vol < 1 && clip.isControlSupported(MASTER_GAIN)) {
                     log("setting volume for sound: "+fn+"  to "+(int)(vol*100));
-                    FloatControl gain = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);
+                    FloatControl gain = (FloatControl) clip.getControl(MASTER_GAIN);
                     gain.setValue(20f * (float) Math.log10(vol));
                 }
                 loaded = true;
