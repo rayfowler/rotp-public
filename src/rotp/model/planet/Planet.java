@@ -210,6 +210,7 @@ public class Planet implements Base, IMappedObject, Serializable {
         }
         environment = ENVIRONMENT_HOSTILE;
         terraformLevel = 0;
+        waste = min(waste, maxWaste());
     }
     public void sufferImpactEvent() {
         Empire systemEmp = null;

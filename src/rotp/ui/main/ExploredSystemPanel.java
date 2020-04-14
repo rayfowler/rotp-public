@@ -96,16 +96,15 @@ public class ExploredSystemPanel extends SystemPanel {
             drawShadowedString(g, label, 2, s10, topH-s15, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
 
             // draw planet terrain background
-            BufferedImage img = pl.sv.planetTerrain(sys.id);
-            if (img != null)
-                g.drawImage(img, 0, topH, w, h, 0, 0, img.getWidth(), img.getHeight(), null);
+            PlanetType pt = sys.planet().type();
 
-            g.setFont(narrowFont(16));
-            g.setColor(grayText);
-
-            PlanetType pt = pl.sv.planetType(sys.id);
             if (pt != null) {
-                String desc = pl.sv.planetType(sys.id).description(player());
+                BufferedImage img = pt.terrainImage();
+                if (img != null)
+                    g.drawImage(img, 0, topH, w, h, 0, 0, img.getWidth(), img.getHeight(), null);
+                g.setFont(narrowFont(16));
+                g.setColor(grayText);
+                String desc = pt.description(player());
                 List<String> descLines =  wrappedLines(g, text(desc), getWidth()-s12);
 
                 int ydelta = s18;
