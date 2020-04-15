@@ -291,6 +291,8 @@ public class SystemView implements IMappedObject, Base, Serializable {
         if (!isColonized()) {
             if (!scouted()) 
                 return text("MAIN_UNSCOUTED");
+            else if (system().planet().isEnvironmentNone())
+                return text("MAIN_NO_PLANETS");
             else
                 return text("MAIN_NO_COLONIES");
         }

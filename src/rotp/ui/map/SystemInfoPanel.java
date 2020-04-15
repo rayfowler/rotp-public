@@ -332,11 +332,7 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
                 }
                 y0 += s3;
             }
-            
-            
-            
             g.setClip(null);
-
         }
         @Override
         public void mouseClicked(MouseEvent e) { }
