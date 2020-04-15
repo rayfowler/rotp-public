@@ -167,7 +167,7 @@ public class CombatStackOrionGuardian extends CombatStack {
         if (shipWeapon.isLimitedShotWeapon() && (roundsRemaining[index] < 1))
             return false;
 
-        if (shipWeapon.groundAttacksOnly() && target.isShip())
+        if (shipWeapon.groundAttacksOnly() && !target.isColony())
             return false;
 
         int minMove = movePointsTo(target);

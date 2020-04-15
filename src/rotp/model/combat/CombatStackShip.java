@@ -452,7 +452,7 @@ public class CombatStackShip extends CombatStack {
             return false;
         if (empire == target.empire)
             return false;
-        if (shipWeapon.groundAttacksOnly() && target.isShip())
+        if (shipWeapon.groundAttacksOnly() && !target.isColony())
             return false;
         return true;
     }
