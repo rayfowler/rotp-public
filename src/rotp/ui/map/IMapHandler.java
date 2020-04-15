@@ -85,7 +85,7 @@ public interface IMapHandler {
     default public void drawAlerts(Graphics2D g)         { }
 
     default Empire empireBoundaries()                    { return Galaxy.current().player(); }
-    default public float systemClickRadius()             { return 0.5f; }
+    default public float systemClickRadius()             { return 1.0f; }
     default public boolean showYear()                    { return true; }
     default boolean drawBanner(StarSystem s)             { return false; }
     default boolean drawStar(StarSystem s)               { return true; }

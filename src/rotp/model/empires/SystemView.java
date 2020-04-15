@@ -271,7 +271,6 @@ public class SystemView implements IMappedObject, Base, Serializable {
     public int desiredMissileBases() {
         return (empire() == owner()) ? colony().defense().maxBases() : 0;
     }
-
     public boolean innerSystem()             { return locationSecurity() == INNER_SYSTEM; }
     public boolean supportSystem()           { return false; }
     public boolean borderSystem()            { return locationSecurity() == BORDER_SYSTEM; }
