@@ -70,7 +70,7 @@ public final class ShipWeaponBeam extends ShipWeapon {
         }
         float totalDamage = 0;
         float shieldMod = source.targetShieldMod(this)*shieldMod();
-
+        
         // use attack/defense values to determine chance that weapon will hit
         int minDamage = minDamage();
         int maxDamage = maxDamage();
@@ -80,8 +80,10 @@ public final class ShipWeaponBeam extends ShipWeapon {
         float hitPct = (5 + attack - defense) / 10;
         hitPct = max(.05f, hitPct);
 
+        boolean successfullyHit = false;
         for (int i=0;i<count;i++) {
             if (random() < hitPct) {
+                successfullyHit = true;
                 float damage = roll(minDamage, maxDamage);
                 if (isStreamingWeapon())
                     damage = target.takeStreamingDamage(damage, shieldMod);
@@ -90,10 +92,10 @@ public final class ShipWeaponBeam extends ShipWeapon {
                 totalDamage += damage;
             }
         }
-
-        // check for hit
         if (totalDamage > 0)
             drawSuccessfulAttack(source, target, totalDamage);
+        else if (successfullyHit)
+            drawIneffectiveAttack(source, target);
         else
             drawUnsuccessfulAttack(source, target);
     }

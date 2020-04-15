@@ -56,21 +56,24 @@ public final class ShipWeaponBomb extends ShipWeapon {
         float pct = (5 + attack - defense) / 10;
         pct = max(.05f, pct);
 
-        // check for hit
-        if (random() > pct) {
-            drawUnsuccessfulAttack(source, target);
-            return;
-        }
-
         float totalDamage = 0;
         float shieldMod = source.targetShieldMod(this)*shieldMod();
+        boolean successfullyHit = false;
         for (int i=0;i<count;i++) {
-            if (!target.destroyed()) {
-                float damage = roll(minDamage(), maxDamage());
-                damage = target.takeBombDamage(damage, shieldMod);
-                totalDamage += damage;
+            if (random() < pct) { 
+                successfullyHit = true;
+                if (!target.destroyed()) {
+                    float damage = roll(minDamage(), maxDamage());
+                    damage = target.takeBombDamage(damage, shieldMod);
+                    totalDamage += damage;
+                }
             }
         }
-        drawSuccessfulAttack(source, target, totalDamage);
+        if (totalDamage > 0)
+            drawSuccessfulAttack(source, target, totalDamage);
+        else if (successfullyHit)
+            drawIneffectiveAttack(source, target);
+        else
+            drawUnsuccessfulAttack(source, target);
     }
 }

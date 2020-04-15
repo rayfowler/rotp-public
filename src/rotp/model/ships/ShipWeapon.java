@@ -91,6 +91,12 @@ public class ShipWeapon extends ShipComponent {
         }
         return "";
     }
+    public void drawIneffectiveAttack(CombatStack source, CombatStack target) {
+        try {
+            tech().drawIneffectiveAttack(source, target, source.weaponNum(this));
+        }
+        catch(Exception e) { }
+    }
     public void drawUnsuccessfulAttack(CombatStack source, CombatStack target) {
         try {
             tech().drawUnsuccessfulAttack(source, target, source.weaponNum(this));

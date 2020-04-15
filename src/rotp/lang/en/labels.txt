@@ -1037,6 +1037,7 @@ SHIP_COMBAT_PROMPT                | Enter combat?
 SHIP_COMBAT_PROMPT_YES            | Yes
 SHIP_COMBAT_PROMPT_NO             | No
 SHIP_COMBAT_MISS                  | Miss
+SHIP_COMBAT_DEFLECTED             | Deflected
 SHIP_COMBAT_DESTROYED             | Destroyed!
 SHIP_COMBAT_STASIS                | Stasis
 SHIP_COMBAT_RESULTS               | The %1 fleet was victorious at %2!

@@ -48,13 +48,11 @@ public final class ShipWeaponBiological extends ShipWeapon {
         float pct = (5 + attack - defense) / 10;
         pct = max(.05f, pct);
 
-        // check for hit
-        if (random() > pct) 
-            return;
-
         float totalDamage = 0;
-        for (int i=0;i<count;i++)
-            totalDamage += roll(minDamage(), maxDamage());
+        for (int i=0;i<count;i++) {
+            if (random() < pct) 
+                totalDamage += roll(minDamage(), maxDamage());
+        }
         target.takeBioweaponDamage(totalDamage);
     }
 }

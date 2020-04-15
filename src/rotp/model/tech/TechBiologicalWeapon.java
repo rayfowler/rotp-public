@@ -100,6 +100,25 @@ public final class TechBiologicalWeapon extends Tech {
         return 0;
     }
     @Override
+    public void drawIneffectiveAttack(CombatStack source, CombatStack target, int wpnNum) {
+        ShipBattleUI ui = source.mgr.ui;
+        if (ui == null)
+            return;
+
+        int stW = ui.stackW();
+        int stH = ui.stackH();
+        int st0X = ui.stackX(source);
+        int st0Y = ui.stackY(source);
+        int st1X = ui.stackX(target);
+        int st1Y = ui.stackY(target);
+
+        int x0 = st0X > st1X ? st0X+(stW/3) :st0X+(stW*2/3);
+        int y0 = st0Y+stH/2;
+        int x1 = st1X+stW/2;
+        int y1 = st1Y+stH/2;
+        drawAttack(source, target, x0, y0, x1, y1, wpnNum, -1);
+    }
+    @Override
     public void drawUnsuccessfulAttack(CombatStack source, CombatStack target, int wpnNum) {
         ShipBattleUI ui = source.mgr.ui;
         if (ui == null)
@@ -178,7 +197,8 @@ public final class TechBiologicalWeapon extends Tech {
             sleep(200);
         }
         g.setStroke(prev);
-        target.drawAttackResult(g, x1,y1,x0, dmg,text("SHIP_COMBAT_MISS"));   
+        String missLabel = dmg < 0 ? text("SHIP_COMBAT_DEFLECTED") : text("SHIP_COMBAT_MISS");
+        target.drawAttackResult(g, x1,y1,x0, dmg,missLabel);   
         ui.paintAllImmediately();
         sleep(250);
 

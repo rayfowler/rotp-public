@@ -165,6 +165,7 @@ public class Tech implements Base {
     public float basePower(ShipDesign d)   { return power; }
 
 
+    public void drawIneffectiveAttack(CombatStack source, CombatStack target, int wpnNum) {  }
     public void drawUnsuccessfulAttack(CombatStack source, CombatStack target, int wpnNum) {  }
     public void drawSuccessfulAttack(CombatStack source, CombatStack target, int wpnNum, float dmg) { }
 
