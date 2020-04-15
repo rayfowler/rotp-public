@@ -248,10 +248,11 @@ public class SpriteDisplayPanel extends BasePanel implements SystemViewer {
     public void paint(Graphics g) {
         selectBestPanel(spriteToDisplay());
         
-        try { super.paint(g); }
-        catch(Exception e) {
-            log("sprite panel display error: "+e.toString());
-        }
+        super.paint(g);
+//        try { super.paint(g); }
+//        catch(Exception e) {
+//            log("sprite panel display error: "+e.toString());
+//        }
     }
     @Override
     public void animate() {

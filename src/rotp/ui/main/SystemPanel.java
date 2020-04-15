@@ -463,7 +463,7 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
                 return;
             int range = (int) Math.ceil(pl.sv.distance(sys.id));
             
-            String label = pl.alliedWith(sys.empire().id) ?  text("MAIN_ALLIED_COLONY") : text("MAIN_SYSTEM_RANGE", range);
+            String label = pl.alliedWith(id(sys.empire())) ?  text("MAIN_ALLIED_COLONY") : text("MAIN_SYSTEM_RANGE", range);
             String desc;
             Color c0;
             if (pl.sv.inShipRange(sys.id)) {
