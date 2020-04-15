@@ -264,15 +264,24 @@ public class DesignUI extends BasePanel {
 
         if (design.active()) {
             if (k == KeyEvent.VK_S) {
-                configPanel.openScrapDialog();
+                if (player().shipLab().canScrapADesign())
+                    configPanel.openScrapDialog();
                 return;
-        }
+            }
+            else if (k == KeyEvent.VK_R) {
+                    configPanel.openRenameDialog();
+                return;
+            }
         }
         else {
-            if (k == KeyEvent.VK_S) {
+            if (k == KeyEvent.VK_D) {
                 configPanel.openCreateDialog();
                 return;
             }
+            else if (k == KeyEvent.VK_C) {
+                configPanel.clearDesign();
+                return;
+            }            
         }
     }
     private void exit(boolean pauseNextTurn) {
