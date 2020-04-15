@@ -125,6 +125,10 @@ public class CombatStackShip extends CombatStack {
     public void recordKills(int num) { empire.shipLab().recordKills(design, num); }
     @Override
     public void becomeDestroyed()    {
+        fleet.removeShips(design.id(), num, true);
+        empire.shipLab().recordDestruction(design, num);
+        mgr.currentStack().recordKills(num);
+
         super.becomeDestroyed();
         for (ShipComponent c: weapons)
             c.becomeDestroyed();

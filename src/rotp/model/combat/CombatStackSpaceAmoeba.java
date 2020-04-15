@@ -72,12 +72,14 @@ public class CombatStackSpaceAmoeba extends CombatStack {
         if (!st.isShip() && !st.isColony())
             return;
         
-        st.num = 0;
         // only eats ships
         if (st.isShip()) {
             st.drawFadeOut(.025f);
             st.mgr.destroyStack(st); 
         }
+
+        st.num = 0;
+
         // stop and enjoy the meal
         move = 0;
         if (st.mgr.ui != null)
