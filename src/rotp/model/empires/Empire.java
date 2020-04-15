@@ -362,6 +362,13 @@ public final class Empire implements Base, NamedObject, Serializable {
         
         return cost * SHIP_MAINTENANCE_PCT;
     }
+    public float totalStargateCost() {
+        float totalCostBC = 0;
+        List<StarSystem> allSystems = new ArrayList<>(allColonizedSystems());
+        for (StarSystem sys: allSystems)
+            totalCostBC += sys.colony().shipyard().stargateMaintenanceCost();
+        return totalCostBC;
+    }
     @Override
     public String toString()   { return concat("Empire: ", raceName()); }
 
@@ -645,6 +652,11 @@ public final class Empire implements Base, NamedObject, Serializable {
     public float shipMaintCostPerBC() {
         float empireBC = totalPlanetaryProduction();
         float shipMaint = totalShipMaintenanceCost();
+        return shipMaint / empireBC;
+    }
+    public float stargateCostPerBC() {
+        float empireBC = totalPlanetaryProduction();
+        float shipMaint = totalStargateCost();
         return shipMaint / empireBC;
     }
     public void nextTurn() {
@@ -1782,7 +1794,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         return bookFormula * race().workerProductivityMod();
     }
     public float totalIncome()                { return netTradeIncome() + totalPlanetaryIncome(); }
-    public float netIncome()                  { return totalIncome() - totalShipMaintenanceCost(); }
+    public float netIncome()                  { return totalIncome() - totalShipMaintenanceCost() - totalStargateCost(); }
     public float empireTaxRevenue()           { return totalTaxablePlanetaryProduction() * empireTaxPct() / 2; }
     public float empireInternalSecurityCost() { return totalTaxablePlanetaryProduction() * internalSecurityCostPct(); }
     public float empireExternalSpyingCost()   { return totalTaxablePlanetaryProduction() * totalSpyCostPct(); }
@@ -1935,6 +1947,14 @@ public final class Empire implements Base, NamedObject, Serializable {
         List<StarSystem> allSystems = new ArrayList<>(allColonizedSystems());
         for (StarSystem sys: allSystems)
             totalCostBC += sys.colony().defense().missileBaseMaintenanceCost();
+        return totalCostBC / empireBC;
+    }
+    public float totalStargateCostPct() {
+        float empireBC = totalPlanetaryProduction();
+        float totalCostBC = 0;
+        List<StarSystem> allSystems = new ArrayList<>(allColonizedSystems());
+        for (StarSystem sys: allSystems)
+            totalCostBC += sys.colony().shipyard().stargateMaintenanceCost();
         return totalCostBC / empireBC;
     }
     public float totalPlanetaryIndustrialSpending() {

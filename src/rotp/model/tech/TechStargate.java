@@ -18,7 +18,7 @@ package rotp.model.tech;
 import rotp.model.empires.Empire;
 
 public final class TechStargate extends Tech {
-    public static float maintenance = 300;
+    public static float MAINTENANCE = 300;
     public TechStargate(String typeId, int lv, int seq, boolean b, TechCategory c) {
         id(typeId, seq);
         typeSeq = seq;

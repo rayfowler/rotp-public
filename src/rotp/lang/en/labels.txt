@@ -576,6 +576,7 @@ PLANETS_SPENDING_COSTS            | Empire Spending
 PLANETS_COSTS_DESC                | Each colony pays a percent of its production to support empire spending.
 PLANETS_COSTS_SHIPS               | Ship Maintenance
 PLANETS_COSTS_BASES               | Missile Bases
+PLANETS_COSTS_STARGATES           | Stargates
 PLANETS_COSTS_SPYING              | Spying
 PLANETS_COSTS_SECURITY            | Security
 PLANETS_TOTAL_INCOME              | Annual Income

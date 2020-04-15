@@ -116,10 +116,10 @@ public class ColonyShipyard extends ColonySpendingCategory {
         return (d.cost() - alreadyDone) / planetProd;
     }
     public float stargateMaintenanceCost() {
-        return hasStargate ? TechStargate.maintenance : 0;
+        return hasStargate ? TechStargate.MAINTENANCE : 0;
     }
     public float maintenanceCost() {
-        return stargateMaintenanceCost();
+        return 0;
     }
     @Override
     public void nextTurn(float totalProd, float totalReserve) {

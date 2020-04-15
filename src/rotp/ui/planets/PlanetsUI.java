@@ -1191,11 +1191,11 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                 y1 += s16;
             }
 
-            g.setFont(narrowFont(20));
+            g.setFont(narrowFont(18));
 
             // LEFT COLUMN
             w1 = (w*3/5)-x1-s5;
-            y1 = h-s50;
+            y1 = h-s60;
             int midX = x1+w1-s50;
             String lbl = text("PLANETS_COSTS_SHIPS");
             sw = g.getFontMetrics().stringWidth(lbl);
@@ -1206,8 +1206,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             g.setColor(palette.black);
             g.drawString(val, midX+s50-sw, y1);
 
-            y1 = h-s25;
-
+            y1 = h-s40;
             lbl = text("PLANETS_COSTS_BASES");
             sw = g.getFontMetrics().stringWidth(lbl);
             drawShadowedString(g, lbl, 2, midX-sw, y1, SystemPanel.textShadowC, SystemPanel.whiteText);
@@ -1216,9 +1215,19 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             g.setColor(palette.black);
             g.drawString(val, midX+s50-sw, y1);
 
+
+            y1 = h-s20;
+            lbl = text("PLANETS_COSTS_STARGATES");
+            sw = g.getFontMetrics().stringWidth(lbl);
+            drawShadowedString(g, lbl, 2, midX-sw, y1, SystemPanel.textShadowC, SystemPanel.whiteText);
+            val = text("PLANETS_AMT_PCT", fmt(100*player().totalStargateCostPct(),1));
+            sw = g.getFontMetrics().stringWidth(val);
+            g.setColor(palette.black);
+            g.drawString(val, midX+s50-sw, y1);
+
             // RIGHT COLUMN
             x1 = (w*2/3)+s20; w1 = w-x1-border-margin;
-            y1 = h-s50;
+            y1 = h-s60;
             midX = x1+w1-s50;
             lbl = text("PLANETS_COSTS_SPYING");
             sw = g.getFontMetrics().stringWidth(lbl);
@@ -1229,8 +1238,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             g.setColor(palette.black);
             g.drawString(val, midX+s50-sw, y1);
 
-            y1 = h-s25;
-
+            y1 = h-s40;
             lbl = text("PLANETS_COSTS_SECURITY");
             sw = g.getFontMetrics().stringWidth(lbl);
             drawShadowedString(g, lbl, 2, midX-sw, y1, SystemPanel.textShadowC, SystemPanel.whiteText);
