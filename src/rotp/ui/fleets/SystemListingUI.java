@@ -107,7 +107,18 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
     protected Color selectedRedC()  { return selectedRedC; }
     protected Color unselectedRedC(){ return unselectedRedC; }
     protected int dataFontSize()    { return 20; }
-    public void open() { startY = 0; }
+    public void open() { 
+        int rowH = rowHeight();
+        int listH = getHeight()-rowH;
+        float displayedRows = (float) listH/rowH;
+        
+        int selectedIndex = systems().indexOf(selectedSystem());
+        int rowIndex = selectedIndex+1;
+        if (rowIndex <= displayedRows)
+            startY = 0;
+        else
+            startY = (int) (rowH * (rowIndex - displayedRows));
+    }
     public void close() { }
     private void initModel() {
         initPalette();
@@ -218,7 +229,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             y0 += rowH;
             rowNum++;
         }
-        
+       
         int selectedIndex = selectedIndex();
         if (selectedIndex < minSelectableIndex)
             selectedSystem(systems().get(minSelectableIndex),true);
