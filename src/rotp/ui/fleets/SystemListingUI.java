@@ -260,12 +260,30 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
     public boolean scrollUp()    { 
         int prevY = startY;
         startY = max(0, startY-s10);
-        return startY != prevY;
+        boolean changed = startY != prevY;
+        if ((startY == 0) && (startY == prevY)) {
+            int index = selectedIndex();
+            if (index > 0) {
+                index--;
+                selectedSystem(systems().get(index), true);
+                changed = true;
+            }
+        }
+        return changed;
     }
     public boolean scrollDown()  { 
         int prevY = startY;
         startY = min(maxY, startY+s10);
-        return startY != prevY;
+        boolean changed = startY != prevY;
+        if ((startY == maxY) && (startY == prevY)) {
+            int index = selectedIndex();
+            if (index < systems().size()-1) {
+                index++;
+                selectedSystem(systems().get(index), true);
+                changed = true;
+            }
+        }
+        return changed;
     }
     private int selectedIndex()         { return systems().indexOf(selectedSystem()); }
     private void scrollY(int deltaY) {
