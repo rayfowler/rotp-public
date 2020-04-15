@@ -52,11 +52,6 @@ public class CombatStackSpaceAmoeba extends CombatStack {
     @Override
     public boolean ignoreRepulsors()    { return true; }
     @Override
-    public void attemptToHeal()         { 
-        float healAmt = 0.25f * (maxHits - hits);
-        hits = min(maxHits, hits+healAmt);
-    };
-    @Override
     public boolean canAttack(CombatStack target)  { 
         if (target.destroyed()) 
             return false;
