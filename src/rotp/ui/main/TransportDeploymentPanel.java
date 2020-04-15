@@ -78,17 +78,18 @@ public class TransportDeploymentPanel extends SystemPanel {
     public boolean hoverOverFlightPaths()          { return false; }
     @Override
     public boolean useHoveringSprite(Sprite o) {
-        SystemTransportSprite sprite = (SystemTransportSprite) parentSpritePanel.spriteToDisplay();
         if (!canConsume(o)) 
             return false;
 
+        Sprite sprite =  parentSpritePanel.spriteToDisplay();
         if (!(sprite instanceof SystemTransportSprite))
             return false;
 
+        SystemTransportSprite transportSprite = (SystemTransportSprite) sprite;
         if (o instanceof StarSystem)
-            sprite.hoveringDest((StarSystem) o);
+            transportSprite.hoveringDest((StarSystem) o);
         else
-            sprite.hoveringDest(null);
+            transportSprite.hoveringDest(null);
 
         return true;
     }
