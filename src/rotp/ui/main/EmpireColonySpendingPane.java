@@ -244,17 +244,15 @@ public class EmpireColonySpendingPane extends BasePanel {
             if (hoverBox == sliderBox) {
                 if (category == Colony.ECOLOGY)  {
                     int popGrowth = colony.ecology().upcomingPopGrowth();
-                    if (popGrowth != 0) {
-                        g.setFont(narrowFont(14));
-                        if (popGrowth < 0)
-                            g.setColor(SystemPanel.orangeText);
-                        else
-                            g.setColor(Color.lightGray);
-                        String popStr = text("MAIN_COLONY_SPENDING_ECO_GROWTH",String.format("%+3d", popGrowth));
-                        int sw1 = g.getFontMetrics().stringWidth(popStr);
-                        int x1 = (boxW-sw1)/2;
-                        g.drawString(popStr, boxL+x1, boxTopY+boxH-s4);
-                    }
+                    g.setFont(narrowFont(14));
+                    if (popGrowth < 0)
+                        g.setColor(SystemPanel.orangeText);
+                    else
+                        g.setColor(Color.lightGray);
+                    String popStr = text("MAIN_COLONY_SPENDING_ECO_GROWTH",String.format("%+3d", popGrowth));
+                    int sw1 = g.getFontMetrics().stringWidth(popStr);
+                    int x1 = (boxW-sw1)/2;
+                    g.drawString(popStr, boxL+x1, boxTopY+boxH-s4);
                 }
                 g.setColor(SystemPanel.yellowText);
                 Stroke prev = g.getStroke();
