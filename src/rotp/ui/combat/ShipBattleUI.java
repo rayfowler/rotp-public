@@ -1370,12 +1370,12 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         mouseGridX = st.x;
         mouseGridY = st.y;
         currentGrid = combatGrids[mouseGridX][mouseGridY];
-        int destX = currentGrid.x+(currentGrid.width/3);
-        int destY = currentGrid.y+(currentGrid.height/3);
         Point p = MouseInfo.getPointerInfo().getLocation();
-        Point p0 = this.getLocationOnScreen();
-        int currX = p.x-p0.x;
-        int currY = p.y-p0.y;
+        Point frame = this.getLocationOnScreen();
+        int destX = currentGrid.x+frame.x+s30;
+        int destY = currentGrid.y+frame.y+s15;
+        int currX = p.x-frame.x;
+        int currY = p.y-frame.y;
         for (int i=0;i<=10;i++) {
             int x = currX+ ((destX-currX)*i/10);
             int y = currY+ ((destY-currY)*i/10);
@@ -1383,6 +1383,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             mouseMovedTo(destX, destY);
             sleep(25);
         }
+        paintCellImmediately(mouseGridX, mouseGridY);
     }
     public void showResult() {
         mode = Display.RESULT;
