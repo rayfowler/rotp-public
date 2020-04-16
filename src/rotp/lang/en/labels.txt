@@ -1065,6 +1065,7 @@ SHIP_COMBAT_FIRE_WEAPON           | Fire weapon.
 SHIP_COMBAT_ACTION_NEXT_SHIP      | Next ship
 SHIP_COMBAT_ACTION_TURN_DONE      | Turn done
 SHIP_COMBAT_ACTION_RETREAT        | Retreat
+SHIP_COMBAT_ACTION_FIRE_ALL       | Fire All Weapons
 SHIP_COMBAT_ACTION_CLOAK          | Cloak
 SHIP_COMBAT_ACTION_MOVE           | Move here
 SHIP_COMBAT_ACTION_TELEPORT       | Teleport here

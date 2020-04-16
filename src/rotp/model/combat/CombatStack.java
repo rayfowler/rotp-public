@@ -159,7 +159,8 @@ public class CombatStack implements Base {
     public float estimatedKills(CombatStack target)           { return 0; }
     public float estimatedKillPct(CombatStack target)         { return target.num == 0 ? 0 : estimatedKills(target) / target.num; }
     public void rotateToUsableWeapon(CombatStack target)      {  }
-    public void fireWeapon(CombatStack target, int i) { }
+    public void fireWeapon(CombatStack target, int i, boolean shots) { }
+    public void fireWeapon(CombatStack target, int i) { fireWeapon(target,i,false); }
     public void fireWeapon(CombatStack target)       {  }
     public int weaponIndex()                         { return 0; }
     public int shots()                               { return 1; }

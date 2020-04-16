@@ -490,7 +490,7 @@ public final class TechShipWeapon extends Tech {
             int xAdj = scaled(roll(-4,4)*2);
             int yAdj = scaled(roll(-4,4)*2);
             g.drawLine(x0, y0, x1+xAdj, y1+yAdj);
-            sleep(100);
+            sleep(50);
             ui.paintAllImmediately();
         }
 

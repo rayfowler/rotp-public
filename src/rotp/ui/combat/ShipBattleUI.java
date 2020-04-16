@@ -83,7 +83,6 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     Image[] asteroids = new Image[16];
     public int[][] asteroidRoll = new int[GRID_COUNT_X][GRID_COUNT_Y];
 
-
     private LinearGradientPaint menuBackC;
     private LinearGradientPaint moveBackC;
     private LinearGradientPaint resolveButtonBackC;
@@ -105,7 +104,6 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     ShipCombatManager  mgr;
 
     Rectangle planetBox = new Rectangle();
-
     Rectangle hoverBox;
     Rectangle currentGrid;
     Rectangle resolveBox = new Rectangle();
@@ -119,6 +117,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     FlightPath shipTravelPath = null;
     ShipDoneButton shipDoneButton = new ShipDoneButton();
     ShipMoveButton shipMoveButton = new ShipMoveButton();
+    ShipFireAllButton shipFireAllButton = new ShipFireAllButton();
     ShipTeleportButton shipTeleportButton = new ShipTeleportButton();
     ShipRetreatButton shipRetreatButton = new ShipRetreatButton();
     ShipWeaponButton[] shipWeaponButton = new ShipWeaponButton[ShipDesign.maxWeapons];
@@ -507,6 +506,9 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         else if (targetStack.isMonster() || (targetStack.empire != currentStack.empire)) {
             int wpnI = 0;
             int spcI = 0;
+            shipFireAllButton.reset();
+            if (currentStack.numWeapons() > 0)
+                shipFireAllButton.setData(targetStack, hoveringX, hoveringY);
             for (int i=0;i<currentStack.numWeapons();i++) {
                 ShipComponent wpn = currentStack.weapon(i);
                 if (wpn.isSpecial()) {
@@ -751,14 +753,14 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             actions.clear();
          
         Rectangle grid = combatGrids[target.x][target.y];
+        int gridW = grid.width;
+        int gridH = grid.height;
+        int buttonW = gridW*9/20;
+        int buttonH = (gridH-s21)/4;
        
         List<Rectangle> quickButtons = new ArrayList<>();
         for (int i=0;i<actions.size();i++) {
-            int gridW = grid.width;
-            int gridH = grid.height;
-            int buttonW = gridW*9/20;
             int buttonX = i%2==0 ? grid.x+(gridW/20) : grid.x+(gridW*10/20);
-            int buttonH = (gridH-s21)/4;
             int buttonY = grid.y+s6+(((i/2)%4)*(buttonH+s3));
             quickButtons.add(new Rectangle(buttonX,buttonY,buttonW, buttonH));
         }
@@ -767,7 +769,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         boolean drawUpper = target.y > 5;
         boolean drawLeft = target.reversed ? target.x > 6 : target.x > 2;
         int buttonRows = (actions.size()+1)/2;
-        int buttonH = s25;
+        buttonH = s25;
         int buttonGap = s5;
         int overlayHeaderH = actions.isEmpty() ? s10 : s30;
         int overlayButtonH = buttonRows*(buttonH+buttonGap);
@@ -1626,7 +1628,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         boolean draw = false;
         String numKey;
         int x, y;
-        boolean canUse;
+        private boolean canUse;
         Rectangle quick = new Rectangle();
         public void reset() {
             draw = false;
@@ -1638,7 +1640,10 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         public boolean contains(int x, int y) {
             return super.contains(x, y) || quick.contains(x,y);
         }
-        String hoverLabel()  { return label(); }
+        String hoverLabel()    { return label(); }
+        boolean hovering()     { return hoverBox == this; }
+        boolean canUse()       { return canUse; }
+        void canUse(boolean b) { canUse = b; }
         public void setData(CombatStack st, int x0, int y0) {
             draw = true;
             canUse = true;
@@ -1657,6 +1662,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             setBounds(x2,y2,w2,h2);
         }
         public void clickAction(boolean rightClick) {  }
+        public void clickAllAction(boolean rightClick) {  }
         public void draw(Graphics2D g, int i, int n) {
             if (!draw)
                 return;
@@ -1685,7 +1691,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             g.setPaint(moveBackC);
             g.fillRoundRect(x0, y0, w0, h0, bdr, bdr);
             g.setStroke(stroke1);
-            Color c0 = hoverBox == this ? SystemPanel.yellowText : grayBorderC;
+            Color c0 = hovering() ? SystemPanel.yellowText : grayBorderC;
             g.setColor(c0);
             g.drawRoundRect(x0, y0, w0, h0, bdr, bdr);
             g.setStroke(prev);
@@ -1694,7 +1700,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             int sw = g.getFontMetrics().stringWidth(label);
             int x1 = x0+((w0-sw)/2);
             int y1 = y0+h0-s10;
-            Color c1 = hoverBox == this ? SystemPanel.yellowText : SystemPanel.blackText;
+            Color c1 = hovering() ? SystemPanel.yellowText : SystemPanel.blackText;
             g.setColor(c1);
             g.drawString(label, x1, y1);
         }
@@ -1704,18 +1710,18 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             quick.setBounds(q.x, q.y, q.width, q.height);
             String label = text("SHIP_COMBAT_ACTION_FMT", numKey, label());
             String hoverLabel = text("SHIP_COMBAT_ACTION_FMT", numKey, hoverLabel());
-            canUse = label.equals(hoverLabel);
+            canUse(label.equals(hoverLabel));
 
             LinearGradientPaint backC;
             // create background gradient if needed
             if (isLeftColumn) {
-                if (canUse)
+                if (canUse())
                     backC = createLeftGreenGradient(x,y,w,h);
                 else
                     backC = createLeftGrayGradient(x,y,w,h);
-        }
-        else {
-                if (canUse)
+            }
+            else {
+                if (canUse())
                     backC = createRightGreenGradient(x,y,w,h);
                 else
                     backC = createRightGrayGradient(x,y,w,h);
@@ -1731,11 +1737,11 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             g.setPaint(backC);
             g.fillRoundRect(x,y,w,h,cnr,cnr);
 
-            if (canUse && (numActions == 1) && (current != target))
+            if (canUse() && (numActions == 1) && (current != target))
                 hoverBox = this;
-            Color c0 = hoverBox == this ? Color.yellow : SystemPanel.whiteText;
-            Color c1 = canUse && (hoverBox == this) ? Color.yellow : SystemPanel.whiteText;
-            String text = hoverBox == this ? hoverLabel : label;
+            Color c0 = hovering() ? Color.yellow : SystemPanel.whiteText;
+            Color c1 = canUse() && hovering() ? Color.yellow : SystemPanel.whiteText;
+            String text = hovering() ? hoverLabel : label;
             g.setColor(c0);
             g.setStroke(stroke1);
             g.drawRoundRect(x,y,w,h,cnr,cnr);
@@ -1747,8 +1753,8 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             int y1 = y+h-s8;
             drawShadowedString(g, text, 3, x1, y1, SystemPanel.textShadowC, c1);
             
-            Color c2 = canUse ? greenQuickButtonC : grayQuickButtonC;
-            Color c4 = canUse && (hoverBox == this) ? Color.yellow : SystemPanel.whiteText;
+            Color c2 = canUse() ? greenQuickButtonC : grayQuickButtonC;
+            Color c4 = canUse() && hovering() ? Color.yellow : SystemPanel.whiteText;
             g.setStroke(stroke1);
             g.setColor(c2);
             g.fill(quick);
@@ -1760,7 +1766,6 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             x1 = quick.x+((quick.width-sw)/2);
             y1 = quick.y+quick.height-s4;
             drawShadowedString(g, numKey, 3, x1, y1, SystemPanel.textShadowC, c1);
-            
         }
         protected LinearGradientPaint createLeftGreenGradient(int x, int y, int w, int h) {
             if (leftGreenActionBackC == null) {
@@ -1818,7 +1823,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         String label()   { return text("SHIP_COMBAT_ACTION_MOVE"); }
         @Override
         public void clickAction(boolean rightClick) {
-            if (!canUse)
+            if (!canUse())
                 return;
             if (mgr.performingStackTurn)
                 return;
@@ -1847,7 +1852,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         String label()   { return text("SHIP_COMBAT_ACTION_TELEPORT"); }
         @Override
         public void clickAction(boolean rightClick) {
-            if (!canUse)
+            if (!canUse())
                 return;
             if (mgr.performingStackTurn)
                 return;
@@ -1868,9 +1873,29 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             retreatStack(mgr.currentStack());
         }
     }
+    class ShipFireAllButton extends ShipActionButton {
+        private static final long serialVersionUID = 1L;
+        @Override
+        String label()   { return mgr.currentStack().canFireWeapon() ? text("SHIP_COMBAT_ACTION_FIRE_ALL") : text("SHIP_COMBAT_ACTION_TURN_DONE"); }
+        @Override
+        boolean canUse() { return true; }
+        @Override
+        public void clickAction(boolean rightClick) {
+            if (!mgr.currentStack().canFireWeapon()) {
+                nextStack();
+                return;
+            }
+            List<ShipActionButton> buttons = new ArrayList<>(shipActionButtons);
+            for (ShipActionButton butt: buttons) {
+                if (butt != this)
+                    butt.clickAllAction(rightClick);
+            }
+        }
+    }
     class ShipWeaponButton extends ShipActionButton {
         private static final long serialVersionUID = 1L;
         int index;
+        boolean allShots;
         public void setData(CombatStack st, int i, int x0, int y0) {
             super.setData(st,x0,y0);
             index = i;
@@ -1882,8 +1907,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             if (shots < 2 )
                 return text("SHIP_COMBAT_ACTION_WPN_COUNT", current.wpnName(index), str(current.wpnCount(index)));
             else
-                return text("SHIP_COMBAT_ACTION_WPN_COUNT_SHOTS", current.wpnName(index), str(current.wpnCount(index)), str(shots));
-                
+                return text("SHIP_COMBAT_ACTION_WPN_COUNT_SHOTS", current.wpnName(index), str(current.wpnCount(index)), str(shots));            
         }
         @Override
         String hoverLabel()   {
@@ -1902,8 +1926,12 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
                 return label();
         }
         @Override
+        boolean hovering() {
+            return super.hovering() || (hoverBox == shipFireAllButton); 
+        }
+        @Override
         public void clickAction(boolean rightClick) {
-            if (!canUse)
+            if (!canUse())
                 return;
             if (mgr.performingStackTurn)
                 return;
@@ -1913,12 +1941,18 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             mgr.performingStackTurn = true;
             paintAllImmediately();
             CombatStack current = mgr.currentStack();
-            current.fireWeapon(ship, index);
+            current.fireWeapon(ship, index, allShots);
             mgr.performingStackTurn = false;
             mgr.showAnimations = prevAnimations;
             repaint();
             if (mgr.currentStack().isTurnComplete())
                 nextStack();
+        }
+        @Override
+        public void clickAllAction(boolean rightClick) {
+            allShots = true;
+            clickAction(rightClick);
+            allShots = false;
         }
     }
     class ShipSpecialButton extends ShipActionButton {
@@ -1949,8 +1983,12 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
                 return label();
         }
         @Override
+        boolean hovering() {
+            return super.hovering() || (hoverBox == shipFireAllButton); 
+        }
+        @Override
         public void clickAction(boolean rightClick) {
-            if (!canUse)
+            if (!canUse())
                 return;
             if (mgr.performingStackTurn)
                 return;
@@ -1965,6 +2003,10 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             repaint();
             if (mgr.currentStack().isTurnComplete())
                 nextStack();
+        }
+        @Override
+        public void clickAllAction(boolean rightClick) {
+            clickAction(rightClick);
         }
     }
 }
