@@ -157,28 +157,28 @@ WARN_INVADED_07            | We are not fools. Surely you do not expect the [my_
 WARN_INVADED_08            | The ruthless storming of the [my_race] colony at [system] has destroyed whatever future our two empires may have had.
 WARN_INVADED_09            | Whereas the destruction of our ships can be endured, the wholesale slaughtering of [my_race] colonists will certainly guarantee war.
 
-WARN_ESPIONAGE_01          | [spy_nameTitle] [spy_name], the ungrateful one. You risk expulsion from our benevolent graces with your continued espionage attempts against the [victim_empire].
-WARN_ESPIONAGE_02          | Children are wise who ask for gifts from their parents, rather than taking them. Cease your espionage activities against the [victim_empire] immediately or face punishment.
-WARN_ESPIONAGE_03          | Your insolent leader will only lead the [spy_race] race to ruin with your pathetic attempts at espionage within the [victim_empire].
-WARN_ESPIONAGE_04          | The [victim_race] have known of your espionage operations for quite some time, and our patience wears thin.
-WARN_ESPIONAGE_05          | Watch yourself, [spy_nameTitle] [spy_name]. We will no longer tolerate espionage attempts against the [victim_empire].
-WARN_ESPIONAGE_06          | We have had great restraint thus far tolerating your bungling espionage attempts, but soon you shall feel the wrath of the [victim_empire].
-WARN_ESPIONAGE_07          | The [victim_empire] is compelled to protest your persistent [spy_race] espionage attempts.
-WARN_ESPIONAGE_08          | Your espionage attempts are creating tension between the [victim_empire] and [spy_empire].
-WARN_ESPIONAGE_09          | Obviously you have overestimated [victim_race] patience in dealing with [spy_race] espionage. If you continue, it will most certainly lead to open hostilities.
+WARN_ESPIONAGE_01          | [spy_nameTitle] [spy_name], the ungrateful one. You risk expulsion from our benevolent graces with your continued espionage attempts against the [victim_empire]. [framed]
+WARN_ESPIONAGE_02          | Children are wise who ask for gifts from their parents, rather than taking them. Cease your espionage activities against the [victim_empire] immediately or face punishment. [framed]
+WARN_ESPIONAGE_03          | Your insolent leader will only lead the [spy_race] race to ruin with your pathetic attempts at espionage within the [victim_empire]. [framed]
+WARN_ESPIONAGE_04          | The [victim_race] have known of your espionage operations for quite some time, and our patience wears thin. [framed]
+WARN_ESPIONAGE_05          | Watch yourself, [spy_nameTitle] [spy_name]. We will no longer tolerate espionage attempts against the [victim_empire]. [framed]
+WARN_ESPIONAGE_06          | We have had great restraint thus far tolerating your bungling espionage attempts, but soon you shall feel the wrath of the [victim_empire]. [framed]
+WARN_ESPIONAGE_07          | The [victim_empire] is compelled to protest your persistent [spy_race] espionage attempts. [framed]
+WARN_ESPIONAGE_08          | Your espionage attempts are creating tension between the [victim_empire] and [spy_empire]. [framed]
+WARN_ESPIONAGE_09          | Obviously you have overestimated [victim_race] patience in dealing with [spy_race] espionage. If you continue, it will most certainly lead to open hostilities. [framed]
 
-WARN_SABOTAGE_01           | In the past, the [my_empire] has been kind to inferior species, but if you persist in the sabotage of our colonies we will eliminate the [your_race] threat once and for all.
-WARN_SABOTAGE_02           | Surely [your_nameTitle] [your_name], you must realize that sabotage will surely jeopardize any future relations with the [my_empire].
-WARN_SABOTAGE_03           | Excellent! Your acts of sabotage against the [my_empire] provide a convenient excuse to eliminate your wretched species from existence. 
-WARN_SABOTAGE_04           | The [my_race] bear no malice towards you, but your pointless sabotage attempts risks starting a war that could consume both of our empires.
-WARN_SABOTAGE_04           | [your_nameTitle] [your_name], hear this. Discontinue any further attempts of sabotage against the [my_empire] or face the consequences of your actions.
-WARN_SABOTAGE_05           | Continued sabotage against [my_race] colonies will soon place our empires precariously close to the brink of war.
-WARN_SABOTAGE_05           | Continue to sabotage [my_race] colonies and you will plunge us into a foolish and costly war.
-WARN_SABOTAGE_05           | Your bungling attempts to sabotage [my_race] colonies is shattering what little peace we still have.
-WARN_SABOTAGE_06           | So, the vile [your_race] race wishes to start a war of mutual extermination? After your recent sabotage attempts, the [my_empire] is dangerously close to accommodating you.
-WARN_SABOTAGE_07           | Emperor [your_name], if you wish to avert a senseless war, please immediately discontinue all sabotage operations launched against the [my_empire].
-WARN_SABOTAGE_08           | The [my_empire] will not long stand for acts of terrorism and sabotage from the mighty [your_empire]. Wars have begun over less.
-WARN_SABOTAGE_09           | The noble [my_race] will always stand against the tyrant [your_empire] and its wanton acts of terrorism.
+WARN_SABOTAGE_01           | In the past, the [my_empire] has been kind to inferior species, but if you persist in the sabotage of our colonies we will eliminate the [your_race] threat once and for all.  [framed]
+WARN_SABOTAGE_02           | Surely [your_nameTitle] [your_name], you must realize that sabotage will surely jeopardize any future relations with the [my_empire]. [framed]
+WARN_SABOTAGE_03           | Excellent! Your acts of sabotage against the [my_empire] provide a convenient excuse to eliminate your wretched species from existence.  [framed]
+WARN_SABOTAGE_04           | The [my_race] bear no malice towards you, but your pointless sabotage attempts risks starting a war that could consume both of our empires. [framed]
+WARN_SABOTAGE_04           | [your_nameTitle] [your_name], hear this. Discontinue any further attempts of sabotage against the [my_empire] or face the consequences of your actions. [framed]
+WARN_SABOTAGE_05           | Continued sabotage against [my_race] colonies will soon place our empires precariously close to the brink of war. [framed]
+WARN_SABOTAGE_05           | Continue to sabotage [my_race] colonies and you will plunge us into a foolish and costly war. [framed]
+WARN_SABOTAGE_05           | Your bungling attempts to sabotage [my_race] colonies is shattering what little peace we still have. [framed]
+WARN_SABOTAGE_06           | So, the vile [your_race] race wishes to start a war of mutual extermination? After your recent sabotage attempts, the [my_empire] is dangerously close to accommodating you. [framed]
+WARN_SABOTAGE_07           | Emperor [your_name], if you wish to avert a senseless war, please immediately discontinue all sabotage operations launched against the [my_empire]. [framed]
+WARN_SABOTAGE_08           | The [my_empire] will not long stand for acts of terrorism and sabotage from the mighty [your_empire]. Wars have begun over less. [framed]
+WARN_SABOTAGE_09           | The noble [my_race] will always stand against the tyrant [your_empire] and its wanton acts of terrorism. [framed]
 
 WARN_GENOCIDE_04           | [attacker_nameTitle] [attacker_name], you go too far! The mighty [my_race] do not look kindly upon your genocide of the [victim_race].
 WARN_GENOCIDE_05           | Remember [your_name], that genocide is often a sword with two edges.

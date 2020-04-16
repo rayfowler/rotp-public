@@ -34,6 +34,9 @@ public class EspionageTechIncident extends DiplomaticIncident {
 
         dateOccurred = galaxy().currentYear();
         duration = 20;
+        
+        // empSpy is the actual spy
+        // empThief is the suspected spy (the one who was framed)
         empSpy = m.spyEmpire().id;
         empVictim = ev.owner().id;
         empThief = m.thief().id;
@@ -64,10 +67,12 @@ public class EspionageTechIncident extends DiplomaticIncident {
     }
     @Override
     public String decode(String s) {
+        String frameMessage = empThief == empSpy ? "" : text("SPY_FRAMED");
         String s1 = super.decode(s);
-        s1 = galaxy().empire(empSpy).replaceTokens(s1, "spy");
+        s1 = galaxy().empire(empThief).replaceTokens(s1, "spy");
         s1 = galaxy().empire(empVictim).replaceTokens(s1, "victim");
         s1 = s1.replace("[tech]", tech(techId).name());
+        s1 = s1.replace("[framed]", frameMessage);
         return s1;
     }
 }

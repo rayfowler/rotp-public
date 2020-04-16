@@ -54,7 +54,7 @@ WARN_BUILDUP_01            | Do you intend to use such a powerful fleet to make 
 WARN_SKIRMISH_01           | What have you to say about the skirmish in the [system] system? We hope for your sake that you mistook us for another empire. Otherwise the consequences may be dire. Very dire indeed.
 WARN_ATTACKED_01           | You dare launch an attack against our people, ambassador?! Count yourself fortunate our attention lies elsewhere: next time your boldness will not go unanswered! 
 WARN_INVADED_01            | You move into our space as if it is yours. A bold ploy, but know that we foresaw your coming and allow you to maneuver this way... for now. 
-WARN_ESPIONAGE_01          | Your plodding attempt at espionage has proven most humorous to us. We allow your spy to return to you this time, but know that we will find additional attempts to be far less entertaining.
+WARN_ESPIONAGE_01          | Your plodding attempt at espionage has proven most humorous to us. We allow your spy to return to you this time, but know that we will find additional attempts to be far less entertaining. [framed]
 WARN_SABOTAGE_01           | So the [spy_empire] means to sabotage? Your endeavor was too insignificant to force our retaliation, but should you try this again we may opt to treat you like the pest you insist on being! 
 WARN_BIOWEAPON_01          | An ugly thing, that weapon. Even uglier is the one who chooses to use it on helpless civilians. Their screams of agony will echo through space for centuries, and we will join that lilting refrain as it curses your despicable name.
 WARN_GENOCIDE_01           | The threat of genocide is not unknown to my people, but to see it so casually realized... you disgust us in ways I doubt we will ever forgive, ambassador. 

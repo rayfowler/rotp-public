@@ -54,7 +54,7 @@ WARN_BUILDUP_01            | To build up your fleets this way could prove an... 
 WARN_SKIRMISH_01           | The skirmish at the [system] is... troublesome. Are we to interpret this as a temporary leave of sanity? Or a sign that something far more dangerous may soon occur? 
 WARN_ATTACKED_01           | This is outrageous! Such attacks cannot be allowed to continue! I warn you ambassador: do not endanger the peace between the [attacker_empire] and the Republic so lightly. 
 WARN_INVADED_01            | Ambassador, what is the meaning of your encroachment into [defender_race] territory!? Surely you do not intend to break our peace by acting so aggressively? 
-WARN_ESPIONAGE_01          | Spying, ambassador? Would it not have been more prudent to merely... negotiate for the things you seek? We will allow this in the name of harmonious co-existence, but we may not be so forgiving next time...
+WARN_ESPIONAGE_01          | Spying, ambassador? Would it not have been more prudent to merely... negotiate for the things you seek? We will allow this in the name of harmonious co-existence, but we may not be so forgiving next time... [framed]
 WARN_SABOTAGE_01           | I never would have dreamed the [spy_empire] was capable of such... despicable sabotage. In the name of peace, I pray you do not repeat this foolish mistake again. 
 WARN_BIOWEAPON_01          | This is... unheard of, ambassador. To use a bioweapon on civilian targets even a single time forces us to reconsider in every possible way how we perceive you! 
 WARN_GENOCIDE_01           | And just like that, a voice in the chorus of the galaxy is lost forever. For a people to be capable of such evil... I fear we may not be able to form a lasting peace with you in the end.

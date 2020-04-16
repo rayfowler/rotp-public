@@ -55,7 +55,7 @@ WARN_BUILDUP_01            | You have grown your fleet to an impressive size, [y
 WARN_SKIRMISH_01           | The incident at [system] unsettles me. Was it merely a misunderstanding on your part? Ensure that it does not happen again: I don't want to fight the [your_name] if I don't have to. 
 WARN_ATTACKED_01           | What is there to gain by attacking me so? Cease your aggression at once, or you'll force me to repay it back onto you one-hundred fold! 
 WARN_INVADED_01            | Why have you invaded my space at the [system] system?! Do you intend to start a conflict or have you merely lost control of your bodies? 
-WARN_ESPIONAGE_01          | I don't understand you, [spy_name]. You act as though you don't want conflict but then try to steal my secrets? If you insist on continuing this way, I promise to make you sorry! 
+WARN_ESPIONAGE_01          | I don't understand you, [spy_name]. You act as though you don't want conflict but then try to steal my secrets? If you insist on continuing this way, I promise to make you sorry! [framed]
 WARN_SABOTAGE_01           | You make a mockery of me with this act of sabotage! My quest takes precedence over all else, but if this happens again I will pause my search to deal with you personally! 
 WARN_BIOWEAPON_01          | This weapon of yours is absolutely horrifying. To use it at all speaks of what you really are, but to use it on the bodies of another living thing makes me completely mortified! 
 WARN_GENOCIDE_01           | How callous! I never expected that you would go so far as to completely destroy the one known as [victim_name]. I will never forget the barbarity you've shown this day. 

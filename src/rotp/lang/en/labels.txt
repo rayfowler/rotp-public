@@ -35,6 +35,7 @@ PLANET_TUNDRA                     | Tundra
 SPY_HIDE                          | Hide
 SPY_ESPIONAGE                     | Espionage
 SPY_SABOTAGE                      | Sabotage
+SPY_FRAMED                        | [You were framed.]
 
 ARID_DESC_BIOLOGICAL              | Arid Planets are dry, terrestrial worlds with limited vegetation and no more than 40% water surface area.
 BARREN_DESC_BIOLOGICAL            | Barren planets are dry, dusty worlds with thin atmospheres and no surface water.
