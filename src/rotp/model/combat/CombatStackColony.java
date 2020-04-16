@@ -163,6 +163,10 @@ public class CombatStackColony extends CombatStack {
     }
     @Override
     public void fireWeapon(CombatStack newTarget, int i) {
+        fireWeapon(newTarget, i, false);
+    }
+    @Override
+    public void fireWeapon(CombatStack newTarget, int i, boolean b) {
         if (missileFired)
             return;
         target = newTarget;
