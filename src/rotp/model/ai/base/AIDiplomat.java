@@ -551,9 +551,12 @@ public class AIDiplomat implements Base, Diplomat {
 
         v.embassy().resetPactTimer();
         
+        int erraticLeaderPenalty = requestor.leader().isErratic() ? -40 : 0;
+ 
         float adjustedRelations = v.embassy().otherRelations();
         adjustedRelations += empire.leader().acceptPactMod();
         adjustedRelations += requestor.race().diplomacyBonus();
+        adjustedRelations += erraticLeaderPenalty;
         if (adjustedRelations < 20)
             return refuseOfferPact(requestor);
 
@@ -622,12 +625,14 @@ public class AIDiplomat implements Base, Diplomat {
             if (!requestor.atWarWith(enemy.id) && requestor.inEconomicRange(enemy.id))
                 joinWarBonus = 30;
         }
+        int erraticLeaderPenalty = requestor.leader().isErratic() ? -40 : 0;
  
         // if we don't like the requestor well enough, refuse now
         float adjustedRelations = v.embassy().otherRelations();
         adjustedRelations += empire.leader().acceptAllianceMod();
         adjustedRelations += requestor.race().diplomacyBonus();
         adjustedRelations += joinWarBonus;
+        adjustedRelations += erraticLeaderPenalty;
         if (adjustedRelations < 60)
             return refuseOfferAlliance(requestor);
         
@@ -864,7 +869,6 @@ public class AIDiplomat implements Base, Diplomat {
         
         float adjustedRelations = v.embassy().otherRelations();
         adjustedRelations += empire.leader().preserveTreatyMod();
-        
         return adjustedRelations < 20;
     }
     private boolean decidedToBreakPact(EmpireView view) {
