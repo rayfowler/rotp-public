@@ -91,7 +91,7 @@ public class RandomEventPlague implements Base, Serializable, RandomEvent, Colon
         affectColony();
         turnCount++;
 
-        if ((turnCount % 5 == 0) && galaxy().empire(empId).isPlayer())
+        if ((turnCount % 5 == 0) && (player().id == empId))
             GNNNotification.notifyRandomEvent(continuingText(), "GNN_Event_Plague");
     }
     private void affectColony() {
