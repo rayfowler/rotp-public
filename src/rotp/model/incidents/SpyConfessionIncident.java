@@ -90,6 +90,7 @@ public class SpyConfessionIncident extends DiplomaticIncident {
         s1 = galaxy().empire(empVictim).replaceTokens(s1, "victim");
         s1 = s1.replace("[mission]", mission);
         s1 = s1.replace("[numspies]", str(remainingSpies));
+        s1 = s1.replace("[framed]", "");
         return s1;
     }
 }
