@@ -254,6 +254,15 @@ public class AIShipCaptain implements Base, ShipCaptain {
         if (!stack.canMove())
             return false;
 
+        // don't retreat if we still have missiles in flight
+        List<CombatStack> stacks = new ArrayList<>(stack.mgr.activeStacks());
+        for (CombatStack st: stacks) {
+            for (CombatStackMissile miss: st.missiles()) {
+                if (miss.owner == stack)
+                    return false;
+            }
+        }
+        
         // if stack is pacted with colony and doesn't want war, then retreat
         if (combat().results().colonyStack != null) {
             EmpireView cv = stack.empire.viewForEmpire(combat().results().colonyStack.empire);
