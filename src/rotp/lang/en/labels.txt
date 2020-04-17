@@ -148,6 +148,7 @@ SYSEVENT_COLONIZED                | Colonized by the %1.
 SYSEVENT_CAPTURED                 | Captured by %1 forces.
 SYSEVENT_DESTROYED                | Destroyed by orbiting %1 forces.
 SYSEVENT_DESTROYED_MONSTER        | Destroyed by the %1.
+SYSEVENT_DESTROYED_UNKNOWN        | Destroyed.
 SYSEVENT_ATMOSPHERE_TERRAFORMED   | The planet's atmosphere has been terraformed.
 SYSEVENT_SOIL_ENRICHED            | The planet's soil has been enriched, making it fertile.
 SYSEVENT_GAIA_TERRAFORMING        | The planet has been converted to a gaia world.

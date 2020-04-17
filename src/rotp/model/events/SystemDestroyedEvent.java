@@ -39,8 +39,9 @@ public class SystemDestroyedEvent implements Base, Serializable, StarSystemEvent
             Empire emp = (Empire) attacker;
             return text("SYSEVENT_DESTROYED", emp.raceName());
         }
-        else {
+        else if (attacker instanceof NamedObject) 
             return text("SYSEVENT_DESTROYED_MONSTER", attacker.name());
-        }
+        else
+            return text("SYSEVENT_DESTROYED_UNKNOWN");
     } 
 }
