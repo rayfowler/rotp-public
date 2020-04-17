@@ -488,6 +488,8 @@ public class Ships implements Base, Serializable {
         
         for (ShipFleet fl: fleetsAll) {
             // NPE was found on a map repaint during next turn. 
+            // unsure how this is possible since allFleets var is private with no accessor
+            // all allFleets.add() calls are in this class and only add new ShipFleet().
             if (fl != null) {
                 if ((id(fl.system()) == sysId) && fl.isOrbiting())
                     fleets.add(fl);

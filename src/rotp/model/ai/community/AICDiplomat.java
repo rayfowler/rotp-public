@@ -1027,13 +1027,16 @@ public class AICDiplomat implements Base, Diplomat {
         log("cumulative severity: "+cumulativeSeverity);
         view.embassy().warningSent();
         
-        // UGH.. this was done to avoid adding a new var and breaking saves
-        if (maxIncident instanceof ExpansionIncident) 
-            view.embassy().giveExpansionWarning();
-        
-        if (view.empire().isPlayer())
+        // if we are warning player, send a notification
+        if (view.empire().isPlayer()) {
+            // we will only give one expansion warning
+            if (maxIncident instanceof ExpansionIncident) {
+                if (view.embassy().gaveExpansionWarning())
+                    return true;
+                view.embassy().giveExpansionWarning();
+            }
             DiplomaticNotification.create(view, maxIncident, maxIncident.warningMessageId());
-        cumulativeSeverity = 0;
+        }
         return true;
     }
     private boolean decidedToDeclareWar(EmpireView view) {
@@ -1307,9 +1310,6 @@ public class AICDiplomat implements Base, Diplomat {
     }
     @Override
     public void noticeExpansionIncidents(EmpireView view, List<DiplomaticIncident> events) {
-        if (view.embassy().gaveExpansionWarning()) 
-            return;
-        
         int numberSystems = view.empire().numSystemsForCiv(view.empire());
         if (numberSystems < 6)
             return;
@@ -1319,7 +1319,6 @@ public class AICDiplomat implements Base, Diplomat {
         int numCivs = gal.numActiveEmpires();
 
         int maxSystemsWithoutPenalty = max(5, (allSystems /numCivs)+1);
-        int adj = 1;
 
         if (numberSystems > maxSystemsWithoutPenalty)
             events.add(ExpansionIncident.create(view,numberSystems, maxSystemsWithoutPenalty));
