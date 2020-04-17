@@ -507,7 +507,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             int wpnI = 0;
             int spcI = 0;
             shipFireAllButton.reset();
-            if (currentStack.numWeapons() > 0)
+            if ((currentStack.numWeapons() > 0) && !currentStack.isColony())
                 shipFireAllButton.setData(targetStack, hoveringX, hoveringY);
             for (int i=0;i<currentStack.numWeapons();i++) {
                 ShipComponent wpn = currentStack.weapon(i);
