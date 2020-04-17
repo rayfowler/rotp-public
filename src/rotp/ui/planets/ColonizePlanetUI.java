@@ -529,7 +529,8 @@ public class ColonizePlanetUI extends FadeInPanel implements MouseListener, Mous
                 landingY = stopLandingY;
                 showAstronaut = false;
                 displayMode = Display.CLAIMING;
-                shipLanding.endPlaying();
+                if (shipLanding != null)
+                    shipLanding.endPlaying();
                 break;
             case CLAIMING:
                 claimingX = stopClaimingX;
