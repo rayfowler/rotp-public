@@ -403,6 +403,7 @@ public class ShipDesignLab implements Base, Serializable {
         // remove scrapped design from list of designs and replace with new, inactive design
         designs[designId] = newBlankDesign(ShipDesign.SMALL);
         designs[designId].id(designId);
+        designs[designId].copyFrom(d);
     }
     public String nextAvailableIconKey(int size, String currIconKey) {
         int newNum;
