@@ -174,7 +174,7 @@ public class AIDiplomat implements Base, Diplomat {
         if (empire.isPlayer()) {
             EmpireView v = diplomat.viewForEmpire(empire);
             // 1st, create the reply for the AI asking the player for the tech
-            DiplomaticReply reply = v.accept(DialogueManager.OFFER_TECH_EXCHANGE);
+            DiplomaticReply reply = v.otherView().accept(DialogueManager.OFFER_TECH_EXCHANGE);
             // decode the [tech] field in the reply text
             reply.decode("[tech]", tech.name());
             // 2nd, create the counter-offer menu that the player would present to the AI
