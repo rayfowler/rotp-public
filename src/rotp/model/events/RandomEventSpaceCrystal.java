@@ -111,6 +111,8 @@ public class RandomEventSpaceCrystal implements Base, Serializable, RandomEvent 
                 GNNNotification.notifyRandomEvent(notificationText("EVENT_SPACE_CRYSTAL_2", targetSystem.empire()), "GNN_Event_Crystal");
             targetSystem.empire().lastAttacker(monster);
             targetSystem.planet().degradeToType(PlanetType.DEAD);
+            float maxWaste = targetSystem.planet().maxWaste();
+            targetSystem.planet().addWaste(maxWaste);
             col.destroy();
         }
         moveToNextSystem();

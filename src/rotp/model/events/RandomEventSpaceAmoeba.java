@@ -111,6 +111,9 @@ public class RandomEventSpaceAmoeba implements Base, Serializable, RandomEvent {
                 GNNNotification.notifyRandomEvent(notificationText("EVENT_SPACE_AMOEBA_2", targetSystem.empire()), "GNN_Event_Amoeba");
             targetSystem.empire().lastAttacker(monster);
             targetSystem.planet().degradeToType(PlanetType.BARREN);
+            float prevFact = col.industry().factories();
+            col.industry().factories(prevFact*0.1f);
+            targetSystem.planet().resetWaste();
             col.destroy();
         }
         moveToNextSystem(); 
