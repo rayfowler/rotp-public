@@ -422,7 +422,11 @@ public class MainUI extends BasePanel implements IMapHandler {
     }
     @Override
     public Sprite hoveringSprite()           { return (Sprite) sessionVar("MAINUI_HOVERING_SPRITE"); }
-    public void hoveringSprite(Sprite s)     { sessionVar("MAINUI_HOVERING_SPRITE", s); }
+    public void hoveringSprite(Sprite s)     { 
+        sessionVar("MAINUI_HOVERING_SPRITE", s); 
+        if (!session().performingTurn())
+            showDisplayPanel(); 
+    }
     public Sprite lastHoveringSprite()       { return (Sprite) sessionVar("MAINUI_LAST_HOVERING_SPRITE"); }
     public void lastHoveringSprite(Sprite s) { sessionVar("MAINUI_LAST_HOVERING_SPRITE", s); }
     @Override
