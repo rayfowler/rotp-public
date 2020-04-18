@@ -43,6 +43,7 @@ public class ShipCombatManager implements Base {
     public boolean autoResolve = false;
     public boolean performingStackTurn = false;
     public boolean showAnimations = true;
+    public boolean playerInBattle = false;
     private CombatStack currentStack;
     private ShipCombatResults results;
     private boolean finished = false;
@@ -59,7 +60,7 @@ public class ShipCombatManager implements Base {
     public CombatStack currentStack()          { return currentStack; }
     public List<CombatStack> activeStacks()    { return results.activeStacks(); }
     public void ui(ShipBattleUI panel)         { ui = panel; }
-    public boolean showAnimations()            { return showAnimations && (ui != null) && playerInBattle(); }
+    public boolean showAnimations()            { return showAnimations && (ui != null) && playerInBattle; }
     public List<CombatStack> allStacks()       { return allStacks; }
 
     public boolean involves(Empire emp) {
@@ -67,6 +68,7 @@ public class ShipCombatManager implements Base {
     }
     public boolean redrawMap = false;
     public void battle(StarSystem sys) {
+        playerInBattle = false;
         if (sys.hasMonster()) {
             battle(sys, sys.monster());
             return;                   
@@ -136,6 +138,7 @@ public class ShipCombatManager implements Base {
     }
     public void battle(StarSystem sys, SpaceMonster monster) {
         monster.initCombat();
+        playerInBattle = false;
         finished = false;
         empiresInConflict = sys.empiresInConflict();
         List<Empire> empires = new ArrayList<>(empiresInConflict);
@@ -153,6 +156,7 @@ public class ShipCombatManager implements Base {
     }
     private void battle(StarSystem sys, Empire emp1, Empire emp2) {
         finished = false;
+        playerInBattle = emp1.isPlayer() || emp2.isPlayer();
         
         ShipFleet fl1 = sys.orbitingFleetForEmpire(emp1);
         ShipFleet fl2 = sys.orbitingFleetForEmpire(emp2);
@@ -182,6 +186,7 @@ public class ShipCombatManager implements Base {
         }
     }
     private void battle(StarSystem sys, Empire emp, SpaceMonster monster) {
+        playerInBattle = emp.isPlayer();
         system = sys;
         results = new ShipCombatResults(this, system, emp, monster);
         if (system.empire() == emp)

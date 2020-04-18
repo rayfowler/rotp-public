@@ -449,7 +449,7 @@ public final class TechShipWeapon extends Tech {
     }
     private void drawAttack(CombatStack source, CombatStack target, int x0, int y0, int x1, int y1, int wpnNum, float dmg) {
         ShipBattleUI ui = source.mgr.ui;
-        if (!source.mgr.showAnimations())
+        if (!source.mgr.showAnimations()) 
             return;
 
         ShipComponent wpn = source.weapon(wpnNum);
