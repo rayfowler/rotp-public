@@ -73,7 +73,7 @@ public class CombatStackSpaceCrystal extends CombatStack {
     }
     @Override
     public float initiativeRank() {
-        return 0;
+        return 100;
     }
     public void drawAttack() { 
         if (mgr.ui == null)
