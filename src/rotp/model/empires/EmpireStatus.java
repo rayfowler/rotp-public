@@ -21,12 +21,12 @@ import rotp.util.Base;
 public class EmpireStatus implements Base, Serializable {
     private static final long serialVersionUID = 1L;
     private static final int TURNS = 100;
-    final public static int FLEET = 1;
-    final public static int POPULATION = 2;
-    final public static int TECHNOLOGY = 3;
-    final public static int PLANETS = 4;
-    final public static int PRODUCTION = 5;
-    final public static int POWER = 6;
+    final public static int FLEET = 0;
+    final public static int POPULATION = 1;
+    final public static int TECHNOLOGY = 2;
+    final public static int PLANETS = 3;
+    final public static int PRODUCTION = 4;
+    final public static int POWER = 5;
 
     private final Empire empire;
     private int[] fleetStrength = new int[TURNS];

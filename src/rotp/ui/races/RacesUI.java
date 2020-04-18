@@ -89,6 +89,7 @@ public class RacesUI extends BasePanel {
     public void init() {
         diploPanel.init();
         intelPanel.init();
+        statusPanel.init();
         empires.clear();
         empires.add(player());
         List<EmpireView> contacts = player().contacts();
