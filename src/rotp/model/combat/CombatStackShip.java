@@ -355,6 +355,8 @@ public class CombatStackShip extends CombatStack {
     }
     @Override
     public boolean canAttack(CombatStack st) {
+        if (st == null)
+            return false;
         if (st.inStasis)
             return false;
         if (isShip()) {
@@ -423,7 +425,7 @@ public class CombatStackShip extends CombatStack {
         if (shipWeapon.isLimitedShotWeapon() && (roundsRemaining[index] < 1))
             return false;
 
-        if (shipWeapon.groundAttacksOnly() && target.isShip())
+        if (shipWeapon.groundAttacksOnly() && !target.isColony())
             return false;
 
         int minMove = movePointsTo(target);

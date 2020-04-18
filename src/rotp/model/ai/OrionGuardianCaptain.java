@@ -43,13 +43,12 @@ public class OrionGuardianCaptain implements Base, ShipCaptain {
 
         CombatStack prevTarget = null;
         while (stack.move > 0) {
+            float prevMove = stack.move;
+            prevTarget = stack.target;
             FlightPath bestPathToTarget = chooseTarget(stack);
             // if we need to move towards target, do it now
-            if ((bestPathToTarget == null) || (bestPathToTarget.size() == 0)) 
-                break;
-        
-            float prevMove = stack.move;
-            mgr.performMoveStackAlongPath(stack, bestPathToTarget);
+            if ((bestPathToTarget != null) && (bestPathToTarget.size() > 0)) 
+                mgr.performMoveStackAlongPath(stack, bestPathToTarget);
 
             // if can attack target this turn, fire when ready
             if (stack.canAttack(stack.target)) 
@@ -57,13 +56,11 @@ public class OrionGuardianCaptain implements Base, ShipCaptain {
             
             // SANITY CHECK:
             // make sure we fall out if we haven't moved 
-            // or if we are still picking the same target
-            if (prevMove == stack.move)
-                stack.move = 0;
-            if (prevTarget == stack.target)
+            // and we are still picking the same target
+            if ((prevMove == stack.move) && (prevTarget == stack.target))
                 stack.move = 0;
         }
-        stack.mgr.turnDone(stack);
+        mgr.turnDone(stack);
     }
     @Override
     public FlightPath pathTo(CombatStack st, int x, int y) { return null; }

@@ -47,66 +47,68 @@ public class AIShipCaptain implements Base, ShipCaptain {
     private ShipCombatManager combat()    { return galaxy().shipCombat(); }
     @Override
     public void performTurn(CombatStack stack) {
+        ShipCombatManager mgr = galaxy().shipCombat();
         // missiles move during their target's turn
         // check if stack is still alive!
-        if (stack.destroyed())
-            combat().turnDone(stack);
+        if (stack.destroyed()) {
+            mgr.turnDone(stack);
+            return;
+        }
 
-        if (stack.isMissile())
-            combat().turnDone(stack);
+        if (stack.isMissile()) {
+            mgr.turnDone(stack);
+            return;
+        }
 
         if (stack.inStasis) {
-            combat().turnDone(stack);
+            mgr.turnDone(stack);
             return;
         }
 
         if (empire.isPlayerControlled() && !combat().autoComplete) {
-            combat().turnDone(stack);
+            mgr.turnDone(stack);
             return;
         }
-
-        // look for a potential target to attack
-        FlightPath bestPathToTarget = chooseTarget(stack);
 
         // check for retreating
         if (wantToRetreat(stack)) {
             CombatStackShip shipStack = (CombatStackShip) stack;
             StarSystem dest = retreatSystem(shipStack.mgr.system());
             if (dest != null) {
-                combat().retreatStack(shipStack, dest);
+                mgr.retreatStack(shipStack, dest);
                 return;
             }
         }
-
-        // if no suitable target, then retreat or skip turn
-        if (!stack.hasTarget()) {
-            combat().turnDone(stack);
-            return;
-        }
-
-        if (stack.mgr.autoResolve) {
-            Point destPt = findClosestPoint(stack, stack.target);
-            if (destPt != null)
-                combat().performMoveStackToPoint(stack, destPt.x, destPt.y);
-            if (stack.canAttack(stack.target))
-                combat().performAttackTarget(stack);
-        }
-        else {
+        
+        CombatStack prevTarget = null;
+        while (stack.move > 0) {
+            float prevMove = stack.move;
+            prevTarget = stack.target;
+            FlightPath bestPathToTarget = chooseTarget(stack);
             // if we need to move towards target, do it now
-            if (bestPathToTarget != null)
-                combat().performMoveStackAlongPath(stack, bestPathToTarget);
-            // if can attack target this turn, fire when ready
-            if (stack.canAttack(stack.target))
-                combat().performAttackTarget(stack);
+            if (stack.target != null) {
+                if (stack.mgr.autoResolve) {
+                    Point destPt = findClosestPoint(stack, stack.target);
+                    if (destPt != null)
+                        mgr.performMoveStackToPoint(stack, destPt.x, destPt.y);
+                }
+                else if ((bestPathToTarget != null) && (bestPathToTarget.size() > 0)) {
+                    mgr.performMoveStackAlongPath(stack, bestPathToTarget);
+                }
+            }
 
-            if (stack.move > 0) {
-                FlightPath path2 = findSafestSpace(stack);
-                if (path2 != null)
-                    combat().performMoveStackAlongPath(stack, path2);
+            // if can attack target this turn, fire when ready
+            if (stack.canAttack(stack.target)) 
+                mgr.performAttackTarget(stack);
+         
+            // SANITY CHECK:
+            // make sure we fall out if we haven't moved 
+            // and we are still picking the same target
+            if ((prevMove == stack.move) && (prevTarget == stack.target)) {
+                stack.move = 0;
             }
         }
-
-        combat().turnDone(stack);
+        mgr.turnDone(stack);
     }
     private  FlightPath chooseTarget(CombatStack stack) {
         if (!stack.canChangeTarget())
@@ -116,7 +118,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         List<CombatStack> activeStacks = new ArrayList<>(combat().activeStacks());
 
         for (CombatStack st: activeStacks) {
-            if (stack.aggressiveWith(st) && !st.inStasis)
+            if (stack.hostileTo(st, st.mgr.system()) && !st.inStasis)
                 potentialTargets.add(st);
         }
         FlightPath bestPath = null;

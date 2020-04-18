@@ -129,6 +129,8 @@ public class CombatStackOrionGuardian extends CombatStack {
     }
     @Override
     public boolean canAttack(CombatStack st) {
+        if (st == null)
+            return false;
         if (st.inStasis)
             return false;
         for (int i=0;i<weapons.size();i++) {
