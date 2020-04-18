@@ -81,7 +81,9 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
         
         CombatStack prevTarget = null;
-        while (stack.move > 0) {
+        
+        boolean turnActive = true;
+        while (turnActive) {
             float prevMove = stack.move;
             prevTarget = stack.target;
             FlightPath bestPathToTarget = chooseTarget(stack);
@@ -105,7 +107,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             // make sure we fall out if we haven't moved 
             // and we are still picking the same target
             if ((prevMove == stack.move) && (prevTarget == stack.target)) {
-                stack.move = 0;
+                turnActive = false;
             }
         }
         mgr.turnDone(stack);

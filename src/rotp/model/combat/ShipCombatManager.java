@@ -754,7 +754,7 @@ public class ShipCombatManager implements Base {
         log(st.fullName(), " - Done");
         st.endTurn();
 
-        List<CombatStack> stacks = results.activeStacks();
+        List<CombatStack> stacks = new ArrayList<>(results.activeStacks());
         if (stacks.isEmpty()) {
             endOfCombat(true);
             return;
