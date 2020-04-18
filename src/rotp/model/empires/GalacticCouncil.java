@@ -184,12 +184,11 @@ public class GalacticCouncil implements Base, Serializable {
     }
     private void end() {
         currentStatus = DISBANDED;
-        boolean playerWasAllied = player().alliedWith(leader.id);
-
-        // council ends if not enough empires
         if (leader == null)
             return;
         
+        boolean playerWasAllied = player().alliedWith(leader.id);
+
         boolean electedLeaderIsCrazy = rebels.contains(leader);
         if (electedLeaderIsCrazy) {
             Empire crazyEmpire = leader;

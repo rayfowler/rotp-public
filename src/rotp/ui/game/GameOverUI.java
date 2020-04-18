@@ -204,16 +204,16 @@ public final class GameOverUI extends FadeInPanel implements MouseListener, Mous
             return text("GAME_OVER_DIPLOMATIC_WIN2", year, pName, pRace, pEmpire, rName, rRace, rEmpire);
         else if (session().status().wonMilitary())
             return text("GAME_OVER_MILITARY_WIN2", year, pName, pRace, pEmpire, rName, rRace, rEmpire);
-        else if (session().status().wonMilitaryAlliance()) {
-            String special = ruler.text("GAME_OVER_ALLIANCE_WIN3");
-            return text("GAME_OVER_MILITARY_ALLIANCE_WIN2", year, pName, pRace, pEmpire, rName, rRace, rEmpire, special);
-        }
+        else if (session().status().wonMilitaryAlliance()) 
+            return text("GAME_OVER_MILITARY_ALLIANCE_WIN2", year, pName, pRace, pEmpire, rName, rRace, rEmpire);
         else if (session().status().wonNewRepublic())
             return text("GAME_OVER_NEW_REPUBLIC_WIN2", year, pName, pRace, pEmpire, rName, rRace, rEmpire);
         else if (session().status().wonRebellion())
             return text("GAME_OVER_REBELLION_WIN2", year, pName, pRace, pEmpire, rName, rRace, rEmpire);
-        else if (session().status().wonCouncilAlliance())
-            return text("GAME_OVER_ALLIANCE_WIN2", year, pName, pRace, pEmpire, rName, rRace, rEmpire);
+        else if (session().status().wonCouncilAlliance()) {
+            String special = ruler.text("GAME_OVER_ALLIANCE_WIN3");
+            return text("GAME_OVER_ALLIANCE_WIN2", year, pName, pRace, pEmpire, rName, rRace, rEmpire, special);
+        }
         else if (session().status().wonRebellionAlliance())
             return text("GAME_OVER_REBEL_ALLIANCE_WIN2", year, pName, pRace, pEmpire, rName, rRace, rEmpire);
 
