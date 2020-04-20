@@ -520,7 +520,7 @@ MAIN_ALLOCATE_DESIGN_SCRAPPED     | The ship design under construction at %1 has
 MAIN_ALLOCATE_STARGATE_COMPLETE   | • %1 has completed building a Stargate.
 MAIN_ALLOCATE_SHIELD_COMPLETE     | • %1 has completed building %2.
 MAIN_ALLOCATE_BASES_COMPLETE      | • %1 has completed building %2 missile bases.
-MAIN_ALLOCATE_BASES_UPGRADED      | • %1 has completed upgrading its missile bases to use %2.
+MAIN_ALLOCATE_BASES_UPGRADED      | • %1 has completed upgrading its missile bases.
 MAIN_ALLOCATE_MAX_FACTORIES       | • %1 has reached its industry maximum of %2 factories. 
 MAIN_ALLOCATE_MAX_POPULATION      | • %1 has reached its population maximum of %2 colonists.
 MAIN_ALLOCATE_ATMOSPHERE_COMPLETE | • %1 has been terraformed to a normal environment with the standard growth rate.
