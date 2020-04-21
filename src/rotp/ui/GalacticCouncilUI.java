@@ -625,7 +625,7 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         int x3a = x1+s10;
        
         BufferedImage backImg = wideBackImg();
-        BufferedImage img1 = c.candidate1().race().councilLeader();
+        BufferedImage img1 = c.leader().race().councilLeader();
 
         g.drawImage(backImg, x3a, y3, w3, h3, null);
         g.drawImage(img1, x3a, y3, w3, h3, null);
