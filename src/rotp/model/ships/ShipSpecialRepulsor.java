@@ -15,6 +15,9 @@
  */
 package rotp.model.ships;
 
+import rotp.model.combat.CombatStack;
+import rotp.model.combat.CombatStackColony;
+import rotp.model.combat.CombatStackShip;
 import rotp.model.tech.TechRepulsor;
 
 public final class ShipSpecialRepulsor extends ShipSpecial {
@@ -26,7 +29,20 @@ public final class ShipSpecialRepulsor extends ShipSpecial {
     @Override
     public int repulsorRange()           { return 1; }
     @Override
-    public String name()      { return tech().name(); }
+    public String name()                 { return tech().name(); }
     @Override
-    public String desc()      { return tech().brief(); }
+    public String desc()                 { return tech().brief(); }
+    @Override
+    public boolean isWeapon()            { return true; }
+    @Override
+    public int range()                   { return 1; }
+    @Override
+    public void fireUpon(CombatStack source, CombatStack target, int count) {
+        makeSuccessfulAttack(source, target);
+    }
+    private void makeSuccessfulAttack(CombatStack source, CombatStack target) {
+        if (target.isShip()|| target.isMonster()) {
+            tech().drawSpecialAttack(source, target, 1, 0);
+        }
+    }
 }
