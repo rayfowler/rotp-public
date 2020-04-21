@@ -96,6 +96,7 @@ public interface IMapHandler {
     default boolean shouldDrawSprite(Sprite s)           { return true; }
     default boolean canChangeMapScales()                 { return true; }
     default boolean displayNextTurnNotice()              { return false; }
+    default boolean suspendAnimationsDuringNextTurn()    { return true; }
     default void paintOverMap(GalaxyMapPanel ui, Graphics2D g) { }
     default Color alertColor(SystemView sv)              { return null; }
 

@@ -807,6 +807,8 @@ public final class SabotageUI extends BasePanel implements MouseListener {
             g.drawString(title, (w-sw)/2, s24);
         }
         @Override
+        public boolean suspendAnimationsDuringNextTurn()    { return false; }
+        @Override
         public Color shadeC()                          { return Color.darkGray; }
         @Override
         public Color backC()                           { return Color.gray; }
