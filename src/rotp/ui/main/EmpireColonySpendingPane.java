@@ -235,25 +235,40 @@ public class EmpireColonySpendingPane extends BasePanel {
             else
                 g.setColor(c1);
             
-            if (pct == 1)
-                g.fillRect(boxL+boxBorderW(), boxTopY+s2, boxW-(2*boxBorderW()), boxH-s3);
+            Rectangle fillRect;
+            
+            
+            if (pct == 1)           
+                fillRect = new Rectangle(boxL+boxBorderW(), boxTopY+s2, boxW-(2*boxBorderW()), boxH-s3);
             else
-                g.fillRect(boxL+boxBorderW(), boxTopY+s2, (int) (pct*(boxW-(2*boxBorderW()))), boxH-s3);
+                fillRect = new Rectangle(boxL+boxBorderW(), boxTopY+s2, (int) (pct*(boxW-(2*boxBorderW()))), boxH-s3);
+                
+            g.fill(fillRect);
 
+            if (category == Colony.ECOLOGY)  {
+                int popGrowth = colony.ecology().upcomingPopGrowth();
+                g.setFont(narrowFont(14));
+                String popStr = text("MAIN_COLONY_SPENDING_ECO_GROWTH",String.format("%+3d", popGrowth));
+                int sw1 = g.getFontMetrics().stringWidth(popStr);
+                int x1 = (boxW-sw1)/2;
+                
+                if (popGrowth < 0)
+                    g.setColor(SystemPanel.darkOrangeText);
+                else
+                    g.setColor(Color.gray);
+                 g.drawString(popStr, boxL+x1, boxTopY+boxH-s4);
+                
+                if (popGrowth < 0)
+                    g.setColor(SystemPanel.orangeText);
+                else
+                    g.setColor(Color.lightGray);
+                Shape prevClip = g.getClip();
+                g.setClip(fillRect);
+                g.drawString(popStr, boxL+x1, boxTopY+boxH-s4);
+                g.setClip(prevClip);
+            }
 
             if (hoverBox == sliderBox) {
-                if (category == Colony.ECOLOGY)  {
-                    int popGrowth = colony.ecology().upcomingPopGrowth();
-                    g.setFont(narrowFont(14));
-                    if (popGrowth < 0)
-                        g.setColor(SystemPanel.orangeText);
-                    else
-                        g.setColor(Color.lightGray);
-                    String popStr = text("MAIN_COLONY_SPENDING_ECO_GROWTH",String.format("%+3d", popGrowth));
-                    int sw1 = g.getFontMetrics().stringWidth(popStr);
-                    int x1 = (boxW-sw1)/2;
-                    g.drawString(popStr, boxL+x1, boxTopY+boxH-s4);
-                }
                 g.setColor(SystemPanel.yellowText);
                 Stroke prev = g.getStroke();
                 g.setStroke(stroke2);
