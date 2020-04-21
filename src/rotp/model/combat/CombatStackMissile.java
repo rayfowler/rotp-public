@@ -115,6 +115,9 @@ public class CombatStackMissile extends CombatStack implements Base {
         mgr.destroyStack(this);
     }
     public boolean pursue(float tgtMoveDist) {
+        if (!target.visible)
+            return true;
+        
         float targetDist = distanceTo(target.x(), target.y());
         float moveDist = min(move, moveRate * tgtMoveDist);
 

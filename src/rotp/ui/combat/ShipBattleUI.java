@@ -419,6 +419,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     }
     private void paintShipsToImage(Graphics2D g, int x, int y, int w, int h, int hoveringX, int hoveringY) {
         CombatStack currStack = mgr.currentStack();
+        
         // unless we are in auto-complete mode, color grid squares blue that are in reach
         if ((!mgr.performingStackTurn) && (mode != Display.RESULT)) {
             g.setColor(new Color(0, 0, 255, 64));
@@ -458,8 +459,10 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         // draw ship stacks
         showPlanet = false;
         for (CombatStack stack: stacks) {
-            Rectangle rect = combatGrids[stack.x][stack.y];
-            drawStack(g, stack, stackX(stack), stackY(stack), rect.width, rect.height);
+            if (stack.visible) {
+                Rectangle rect = combatGrids[stack.x][stack.y];
+                drawStack(g, stack, stackX(stack), stackY(stack), rect.width, rect.height);
+            }
         }
 
         // draw any overlying messages
@@ -2006,7 +2009,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         }
         @Override
         public void clickAllAction(boolean rightClick) {
-            clickAction(rightClick);
+            // specials are not used with the fire all weapons action
         }
     }
 }

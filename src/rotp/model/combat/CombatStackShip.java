@@ -580,7 +580,7 @@ public class CombatStackShip extends CombatStack {
     }
     public void drawRetreat() {
         if (!mgr.showAnimations())
-                return;
+            return;
 
         ShipBattleUI ui = mgr.ui;
         Graphics2D g = (Graphics2D) ui.getGraphics();
