@@ -15,7 +15,10 @@
  */
 package rotp.model.galaxy;
 
+import rotp.model.colony.Colony;
 import rotp.model.combat.CombatStackSpaceAmoeba;
+import static rotp.model.events.RandomEventSpaceAmoeba.monster;
+import rotp.model.planet.PlanetType;
 
 public class SpaceAmoeba extends SpaceMonster {
     private static final long serialVersionUID = 1L;
@@ -26,5 +29,16 @@ public class SpaceAmoeba extends SpaceMonster {
     public void initCombat() {
         combatStacks().clear();
         addCombatStack(new CombatStackSpaceAmoeba());       
+    }
+    public void destroyColony(StarSystem sys) {
+        Colony col = sys.colony();
+        if (col != null) {
+            sys.empire().lastAttacker(monster);
+            sys.planet().degradeToType(PlanetType.BARREN);
+            float prevFact = col.industry().factories();
+            col.industry().factories(prevFact*0.1f);
+            sys.planet().resetWaste();
+            col.destroy();
+        }        
     }
 }

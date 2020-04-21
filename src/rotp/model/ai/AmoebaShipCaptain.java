@@ -76,12 +76,16 @@ public class AmoebaShipCaptain implements Base, ShipCaptain {
     public FlightPath pathTo(CombatStack st, int x, int y) { return null; }
 
     public void splitAmoeba(CombatStackSpaceAmoeba st) {
+        float newScale = st.scale == 1.5f ? 1.0f : st.scale*2/3;
+
         CombatStackSpaceAmoeba newStack = new CombatStackSpaceAmoeba();
         newStack.maxHits = st.maxHits;
         newStack.hits = st.maxHits;
         newStack.x = st.x;
-        newStack.y = st.y;
-        newStack.justSpawned = true;
+        newStack.y = st.y;        
+        
+        st.scale = newScale;
+        newStack.scale = newScale;
         
         // add to the event so this new stack can carry over to potential
         // combats with other fleets later in this turn

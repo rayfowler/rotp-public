@@ -385,7 +385,9 @@ public class ShipCombatManager implements Base {
             results.addBasesDestroyed(stack.num);
 
         stack.becomeDestroyed();
-        removeFromCombat(stack);
+        
+        if (!stack.isColony())
+           removeFromCombat(stack);
         if (stack == currentStack)
             turnDone(stack);
     }

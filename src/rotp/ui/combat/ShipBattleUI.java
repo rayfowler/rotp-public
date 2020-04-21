@@ -1190,7 +1190,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             nextBox.setBounds(0,0,0,0);
             String exitText = text("SHIP_COMBAT_EXIT");
             int buttX = x+w-buttW-s10;
-            drawButton(g, exitBackC, exitText, exitBox, redButtonEdgeC, redButtonCenterC, buttX, buttY, buttW, buttH, performingTurn);
+            drawButton(g, exitBackC, exitText, exitBox, redButtonEdgeC, redButtonCenterC, buttX, buttY, buttW, buttH, false);
         }
         else {
             exitBox.setBounds(0,0,0,0);
