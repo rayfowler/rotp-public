@@ -79,27 +79,41 @@ public class ShipDestroyerTemplate implements Base {
     }
     private ShipDesign bestDesign(ShipDesigner ai) {
         List<EnemyShipTarget> targets = buildTargetList(ai.empire());
-        ShipDesign des = newDesign(ai, ai.optimalShipDestroyerSize(), targets);
-        while (ineffective(des) && (des.size() < ShipDesign.LARGE))
+        int preferredSize = ai.optimalShipDestroyerSize();
+        ShipDesign des = newDesign(ai, preferredSize, targets);
+        while (ineffective(des) && (des.size() < ShipDesign.HUGE))
             des = newDesign(ai, des.size() + 1, targets);
         return des;
     }
     private ShipDesign newDesign(ShipDesigner ai, int size, List<EnemyShipTarget> targets) {
         ShipDesign d = ai.lab().newBlankDesign(size);
         setFastestEngine(ai, d);
-        setMinimumManeuverability(ai, d);
+        float totalSpace = d.availableSpace();
+        setBestBattleComputer(ai, d);
+        setBestCombatSpeed(ai, d);
+        
+        if (d.size() == ShipDesign.HUGE)
+            setBestReinforcedArmor(ai,d);
+        else if (d.size() >= ShipDesign.MEDIUM) 
+            setBestNormalArmor(ai, d);
+            
         if (d.size() >= ShipDesign.LARGE) {
             setBattleScanner(ai, d);
-            setBestNormalArmor(ai, d);
-            setBestBattleComputer(ai, d);
             setBestShield(ai, d);
         }
 
+        float weaponSpace = d.availableSpace();
+
+        // if ship is large or smaller and more than 50% of space is already going
+        // to computer & manv, then quit and try a larger hull size
+        if ((d.size() < ShipDesign.HUGE) && (weaponSpace < (totalSpace/2))) {
+            d.perTurnDamage(0);
+            return d;
+        }
+
         setOptimalWeapon(ai, d, targets);
-        upgradeBattleComputer(ai, d);
         upgradeShipManeuverSpecial(ai, d, targets);
         upgradeBeamRangeSpecial(ai, d);
-        upgradeShipManeuver(ai, d);
 
         ai.lab().nameDesign(d);
         ai.lab().iconifyDesign(d);
@@ -108,13 +122,14 @@ public class ShipDestroyerTemplate implements Base {
     private void setFastestEngine(ShipDesigner ai, ShipDesign d) {
         d.engine(ai.lab().fastestEngine());
     }
-    private void setMinimumManeuverability(ShipDesigner ai, ShipDesign d) {
-        if (d.maneuverability() < 2) {
-            for (ShipManeuver manv : ai.lab().maneuvers()) {
-                d.maneuver(manv);
-                if (d.combatSpeed() >= 2)
-                    return;
-            }
+    private void setBestCombatSpeed(ShipDesigner ai, ShipDesign d) {
+        for (ShipManeuver manv : ai.lab().maneuvers()) {
+            ShipManeuver prevManv = d.maneuver();
+            int prevSpeed = d.combatSpeed();
+            float prevSpace = d.availableSpace();
+            d.maneuver(manv);
+            if ((d.combatSpeed() == prevSpeed) && (d.availableSpace() < prevSpace))
+                d.maneuver(prevManv);
         }
     }
     private void setBattleScanner(ShipDesigner ai, ShipDesign d) {
@@ -143,6 +158,17 @@ public class ShipDestroyerTemplate implements Base {
         for (int i=armors.size()-1; i >=0; i--) {
             ShipArmor arm = armors.get(i);
             if (!arm.reinforced()) {
+                d.armor(armors.get(i));
+                if (d.availableSpace() >= 0)
+                    return;
+            }
+        }
+    }
+    private void setBestReinforcedArmor(ShipDesigner ai, ShipDesign d) {
+        List<ShipArmor> armors = ai.lab().armors();
+        for (int i=armors.size()-1; i >=0; i--) {
+            ShipArmor arm = armors.get(i);
+            if (arm.reinforced()) {
                 d.armor(armors.get(i));
                 if (d.availableSpace() >= 0)
                     return;
@@ -249,26 +275,6 @@ public class ShipDestroyerTemplate implements Base {
         }
         return spec;
     }
-    private void upgradeBattleComputer(ShipDesigner ai, ShipDesign d) {
-        List<ShipComputer> computers = ai.lab().computers();
-        float wpnCompFactor = 0.75f;
-
-        for (ShipComputer comp: computers) {
-            int levelDiff = comp.level() - d.computer().level();
-            if (levelDiff > 0) {
-                int wpnCount = d.wpnCount(0);
-                int minNewWpnCount = (int) Math.ceil(wpnCount*Math.pow(wpnCompFactor, levelDiff));
-                // calc reduction in space and how many weapons need to be removed
-                float spaceLost = d.availableSpace() + d.computer().space(d) - comp.space(d);
-                int wpnRemoved = (int) Math.floor(spaceLost/ d.weapon(0).space(d));
-                int newWpnCount = wpnCount+wpnRemoved;
-                if (newWpnCount >= minNewWpnCount) {
-                    d.computer(comp);
-                    d.wpnCount(0,newWpnCount);
-                }
-            }
-        }
-    }
     private void upgradeShipManeuverSpecial(ShipDesigner ai, ShipDesign d, List<EnemyShipTarget> targets) {
         // if we already have added teleporters, we can skip
         if (d.allowsTeleporting())
@@ -358,30 +364,6 @@ public class ShipDestroyerTemplate implements Base {
                 if (newWpnCount >= minNewWpnCount) {
                     addlRange = rangeBonus;
                     d.special(slot1,spec);
-                    d.wpnCount(0,newWpnCount);
-                }
-            }
-        }
-    }
-    private void upgradeShipManeuver(ShipDesigner ai, ShipDesign d) {
-        // if we already have added teleporters, we can skip
-        if (d.allowsTeleporting())
-            return;
-
-        List<ShipManeuver> maneuvers = ai.lab().maneuvers();
-        float wpnManvFactor = 0.85f;
-
-        for (ShipManeuver manv: maneuvers) {
-            int levelDiff = manv.level() - d.maneuver().level();
-            if (levelDiff > 0) {
-                int wpnCount = d.wpnCount(0);
-                int minNewWpnCount = (int) Math.ceil(wpnCount*Math.pow(wpnManvFactor, levelDiff));
-                // calc reduction in space and how many weapons need to be removed
-                float spaceLost = d.availableSpace() + d.computer().space(d) - manv.space(d);
-                int wpnRemoved = (int) Math.floor(spaceLost/ d.weapon(0).space(d));
-                int newWpnCount = wpnCount+wpnRemoved;
-                if (newWpnCount >= minNewWpnCount) {
-                    d.maneuver(manv);
                     d.wpnCount(0,newWpnCount);
                 }
             }
