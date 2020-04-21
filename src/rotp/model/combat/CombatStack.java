@@ -104,7 +104,7 @@ public class CombatStack implements Base {
     public boolean isMonster()          { return false; }
     public boolean isPlayer()           { return (empire != null) && empire.isPlayer(); }
     public boolean isMissile()          { return false; }
-    public boolean destroyed()          { return ((num < 1) || (maxHits < 1)); }
+    public boolean destroyed()          { return ((num < 1) || (maxHits <= 0)); }
     public boolean isArmed()            { return false; }
     public boolean hasTarget()          { return target != null; }
     public CombatStack ward()           { return null; }
