@@ -388,7 +388,6 @@ public class Ships implements Base, Serializable {
         for (ShipFleet fl: fleetsAll) {
             if (fl.isDeployed() && fl.isRallied()) {
                 fl.destSysId(fl.rallySysId());
-                fl.rallySysId(StarSystem.NULL_ID);
                 fl.launch();
             }
         }

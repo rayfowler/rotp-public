@@ -98,6 +98,9 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
     public void setXY(StarSystem sys)   { fromX = sys.x(); fromY = sys.y(); }
     @Override
     public boolean isRallied()          { return rallySysId != StarSystem.NULL_ID; }
+    public boolean isRalliedThisTurn()  {
+        return isRallied() && (launchTime == galaxy().currentTime()); 
+    }
     public boolean hasDestination()     { return destSysId != StarSystem.NULL_ID; }
     
     public Rectangle selectBox() {
@@ -494,7 +497,7 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
         return hasShips() && !inTransit();
     }
     public boolean canSend() {
-        return hasShips() && (!inTransit() || inOrbit() || empire().tech().hyperspaceCommunications());
+        return hasShips() && (!inTransit() || isRalliedThisTurn() || inOrbit() || empire().tech().hyperspaceCommunications());
     }
     @Override
     public boolean canSendTo(int id) {
