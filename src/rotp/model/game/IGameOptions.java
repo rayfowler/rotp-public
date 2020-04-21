@@ -58,7 +58,7 @@ public interface IGameOptions {
     public static final String DIFFICULTY_HARDER  = "SETUP_DIFFICULTY_HARDER";
     public static final String DIFFICULTY_HARDEST = "SETUP_DIFFICULTY_HARDEST";
 
-    public default boolean isAutoPlay()          { return true; }
+    public default boolean isAutoPlay()          { return false; }
     public default boolean communityAI()         { return false; }
     public default void communityAI(boolean b)   { }
     public default int maxOpponents()            { return MAX_OPPONENTS; }
