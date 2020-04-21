@@ -27,8 +27,8 @@ public class SignTradeIncident extends DiplomaticIncident {
         return inc;
     }
     private SignTradeIncident(Empire e1, Empire e2, int amt) {
-        empMe = e1.id;
-        empYou = e2.id;
+        empMe = e2.id;
+        empYou = e1.id;
         amount = amt;
         severity = 5;
 
