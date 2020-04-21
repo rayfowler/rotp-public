@@ -39,6 +39,8 @@ public class CombatStackOrionGuardian extends CombatStack {
     public final ShipSpecial[] specials = new ShipSpecial[3];
     public int[] roundsRemaining = new int[4]; // how many rounds you can fire (i.e. missiles)
     public int[] shotsRemaining = new int[4]; // how many uses (shots) left onthe current turn
+    public int[] baseTurnsToFire = new int[4];    // how many turns to wait before you can fire again
+    public int[] wpnTurnsToFire = new int[4];    // how many turns to wait before you can fire again
     public ShipComponent selectedWeapon;
     public CombatStackOrionGuardian() {
         num = 1;
@@ -71,6 +73,14 @@ public class CombatStackOrionGuardian extends CombatStack {
         shotsRemaining[1] = 1;
         shotsRemaining[2] = 1;
         shotsRemaining[3] = 1;
+        baseTurnsToFire[0] = 1;
+        baseTurnsToFire[1] = 1;
+        baseTurnsToFire[2] = 2; // torps every other round
+        baseTurnsToFire[3] = 1;
+        wpnTurnsToFire[0] = 1;
+        baseTurnsToFire[1] = 1;
+        wpnTurnsToFire[2] = 1;
+        wpnTurnsToFire[3] = 1;
         if (weapons.size() > 0)
             selectedWeapon = weapons.get(0);
     }    
@@ -109,6 +119,12 @@ public class CombatStackOrionGuardian extends CombatStack {
 
         rotateToUsableWeapon(target);
         return currentWeaponCanAttack(target);
+    }
+    @Override
+    public void endTurn() {
+        super.endTurn();
+        for (int i=0;i<shotsRemaining.length;i++) 
+            wpnTurnsToFire[i] = shotsRemaining[i] == 0 ? baseTurnsToFire[i] : wpnTurnsToFire[i]-1;          
     }
     @Override
     public void rotateToUsableWeapon(CombatStack target) {
@@ -158,6 +174,9 @@ public class CombatStackOrionGuardian extends CombatStack {
         if (shotsRemaining[index] < 1)
             return false;
         
+        if (wpnTurnsToFire[index] > 1)
+            return false;
+
         if (target.inStasis || target.isMissile())
             return false;
 
