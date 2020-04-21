@@ -67,9 +67,9 @@ public class MainUI extends BasePanel implements IMapHandler {
     public static Color textBoxBackground = new Color(47,46,89);
     public static final Color transC = new Color(0,0,0,0);
 
-    public static final Color greenAlertC  = new Color(0,255,0);
-    public static final Color redAlertC    = new Color(255,0,0);
-    public static final Color yellowAlertC = new Color(255,255,0);
+    public static final Color greenAlertC  = new Color(0,255,0,192);
+    public static final Color redAlertC    = new Color(255,0,0,192);
+    public static final Color yellowAlertC = new Color(255,255,0,192);
     
     public static int panelWidth, panelHeight;
     static LinearGradientPaint alertBack;

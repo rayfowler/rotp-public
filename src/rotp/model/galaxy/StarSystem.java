@@ -24,6 +24,9 @@ import java.awt.Image;
 import java.awt.Polygon;
 import java.awt.Rectangle;
 import java.awt.Stroke;
+import java.awt.geom.Area;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.RoundRectangle2D;
 import java.awt.image.BufferedImage;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -595,15 +598,15 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         g.fillRect(x, y-h-sp, w, h);
     }
     private void drawAlert(GalaxyMapPanel map, Graphics2D g2, Color alertC, int x, int y) {
-        int r = map.scale(0.8f);
-        int r1 = map.scale(0.3f);
+        int r = map.scale(0.75f);
+        int r1 = map.scale(0.25f);
         
         if (!map.parent().animating() ||(map.animationCount() % 20 > 0)) {
             g2.setColor(alertC);
-            g2.fillRect(x-r, y-(r/8), r-r1, r/4);
-            g2.fillRect(x+r1, y-(r/8), r-r1, r/4);
-            g2.fillRect(x-(r/8), y-r, r/4, r-r1);
-            g2.fillRect(x-(r/8), y+r1, r/4, r-r1);
+            Area a = new Area(new RoundRectangle2D.Float(x-r, y-(r/6), r+r, r/3, r1/3, r1/3));
+            a.add(new Area(new RoundRectangle2D.Float(x-(r/6), y-r, r/3, r+r, r1/3, r1/3)));
+            a.subtract(new Area(new Ellipse2D.Float(x-r1,y-r1,r1+r1,r1+r1)));
+            g2.fill(a);
         }      
     }
     public void drawStar(GalaxyMapPanel map, Graphics2D g2, int x, int y) {

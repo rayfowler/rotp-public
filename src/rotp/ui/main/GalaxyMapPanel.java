@@ -700,6 +700,8 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     }
     @Override
     public void animate() {
+        if (session().performingTurn())
+            return;
         if (zoomTimer.isRunning())
             return;
 
