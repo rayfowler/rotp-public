@@ -761,7 +761,7 @@ HANDWEAPON_5_DETAIL    | The most devastating hand-held weapon available. Adds 3
 // Hyperspace Communication tech
 //
 HYPERSPACE_0_NAME      | Hyperspace Communications
-HYPERSPACE_0_DETAIL    | Allows you to communicate with ships and transports in hyperspace, and change their destinations while en route.
+HYPERSPACE_0_DETAIL    | Allows you to communicate with ship fleets in hyperspace, and change their destinations while en route.
 
 
 //
