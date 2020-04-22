@@ -705,6 +705,8 @@ TECH_RESEARCH_PLANETOLOGY         | Select the next planetology technology our r
 TECH_RESEARCH_PROPULSION          | Select the next propulsion technology our researchers should focus on.
 TECH_RESEARCH_WEAPON              | Select the next weapon technology our researchers should focus on.
 TECH_CHOOSE_RESEARCH_COST         | %1 RP
+TECH_CHOOSE_RESEARCH_TIER         | Tier %1
+TECH_TRADE_TIER_COST_INFO         | (Tier %1 - %2 RP)
 TECH_CONFIRM_CHOICE               | Select
 TECH_DISCOVERY_TITLE              | %1 Scientists Achieve a %2 Breakthrough
 TECH_SCOUTED_TITLE                | Scouts Exploring the Ruins of %1 Discover

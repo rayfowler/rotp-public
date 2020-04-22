@@ -35,11 +35,21 @@ public class DiplomacyTechRequestMenu extends DiplomaticMessage {
     public int numReplies()       		{ return choices.size()+1; }
     @Override
     public String reply(int i)          { 
-        if (i < choices.size())
-            return text(choices.get(i).name());
+        if (i < choices.size()){
+            Tech tech = choices.get(i);
+            return  text(tech.name());
+        }
         if (i == choices.size())
             return text("DIPLOMACY_MENU_FORGET_IT");
         return ""; 
+    }
+    @Override
+    public String replyDetail(int i)          {
+        if (i < choices.size()){
+            Tech tech = choices.get(i);
+            return text("TECH_TRADE_TIER_COST_INFO", str(tech.quintile+1), str((int) tech.researchCost()));
+        }
+        return "";
     }
     @Override
     public boolean enabled(int i) { 

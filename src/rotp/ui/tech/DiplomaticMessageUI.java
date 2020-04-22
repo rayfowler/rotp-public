@@ -323,26 +323,34 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
         }
         // draw options, smaller text & indented
         y1 += yGap;
-        g.setFont(narrowFont(fontSize));
         x1 += s20;
-        Color c0;
+        Color c0, c0b;
         Color c1 = new Color(255,255,0,64);
         for (int i=0;i<message.numReplies();i++) {
+            c0b = disabledOptionC;
+            g.setFont(narrowFont(fontSize));
             y1 += (lineH+s2);
             if (!message.enabled(i))
                 c0 = disabledOptionC;
             else if (i == selectHover) {
                 c0 = hoverOptionC;
+                c0b = hoverOptionC;
                 g.setColor(c1);
                 g.fillRoundRect(x,y1-lineH+s5, w, lineH, lineH, lineH);
             }
-            else
+            else 
                 c0 = optionC;
             g.setColor(c0);
             g.drawString(""+(i+1), x1-s15, y1);
-            String reply = message.reply(i);
             g.fillOval(x1, y1-s9, s3, s3);
+            String reply = message.reply(i);
+            String replyDetail = message.replyDetail(i);
+            int sw1 = g.getFontMetrics().stringWidth(reply);
             drawBorderedString(g, reply, 1, x1+s10, y1, textBgC, c0);
+            if (!replyDetail.isEmpty()) {
+                g.setFont(narrowFont(fontSize-4));
+                drawBorderedString(g, replyDetail, 1, x1+s30+sw1, y1, textBgC, c0b);
+            }
             selectBoxes[i].setBounds(x1-s15, y1-lineH+s5, w, lineH);
         }
         findAndSetMouse();

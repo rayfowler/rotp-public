@@ -51,6 +51,7 @@ public abstract class DiplomaticMessage implements Base {
     public int numReplies()                      { return 1; }
     public int numDataLines()                    { return 0; }
     public String reply(int i)                   { return text("DIPLOMACY_MENU_CONTINUE"); }
+    public String replyDetail(int i)             { return ""; }
     public String dataLine(int i)                { return ""; }
     public boolean enabled(int i)                { return true; }
     public void escape()                         { }

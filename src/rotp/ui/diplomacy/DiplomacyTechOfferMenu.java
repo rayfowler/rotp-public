@@ -47,11 +47,21 @@ public class DiplomacyTechOfferMenu extends DiplomacyRequestReply {
     public int numReplies()       		{ return counterOffers.size()+1; }
     @Override
     public String reply(int i)          { 
-        if (i < counterOffers.size())
-            return text(counterOffers.get(i).name());
+        if (i < counterOffers.size()){
+            Tech tech = counterOffers.get(i);
+            return text(tech.name());
+        }
         if (i == counterOffers.size())
             return text("DIPLOMACY_MENU_FORGET_IT");
         return ""; 
+    }
+    @Override
+    public String replyDetail(int i)          {
+        if (i < counterOffers.size()){
+            Tech tech = counterOffers.get(i);
+            return text("TECH_TRADE_TIER_COST_INFO", str(tech.quintile+1), str((int) tech.researchCost()));
+        }
+        return "";
     }
     @Override
     public boolean enabled(int i) { 

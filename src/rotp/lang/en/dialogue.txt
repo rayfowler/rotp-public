@@ -353,10 +353,10 @@ DECLINE_TECH_TRADE_01      | The [my_race] are far beyond your technology.
 DECLINE_TECH_TRADE_01      | [your_nameTitle] [your_name], we have little need for what your scientists offer us.
 DECLINE_TECH_TRADE_01      | [my_nameTitle] [my_name] sees little of interest in your technology.
 
-OFFER_TECH_EXCHANGE_01     | The [my_race] empire is in great need of your [tech] technology. Perhaps you are willing to exchange it for some of our technology.
-OFFER_TECH_EXCHANGE_01     | The [my_race] know you have learned the secrets of [tech]. Can we offer you some of our technology in exchange?
-OFFER_TECH_EXCHANGE_01     | [my_nameTitle] [my_name] of the [my_race] wishes for the secret of the [tech] technology. Will you exchange it for one of our advances?
-OFFER_TECH_EXCHANGE_01     | The [my_race] race is awed by the scientific wonders of [tech]. What can we offer you for its secret?
+OFFER_TECH_EXCHANGE_01     | The [your_empire] is in great need of your [tech] technology. Perhaps you are willing to exchange it for some of our technology.
+OFFER_TECH_EXCHANGE_01     | The [your_empire] knows you have learned the secrets of [tech]. Can we offer you some of our technology in exchange?
+OFFER_TECH_EXCHANGE_01     | [your_nameTitle] [your_name] of the [your_empire] wishes for the secret of the [tech] technology. Will you exchange it for one of our advances?
+OFFER_TECH_EXCHANGE_01     | The [your_race] race is awed by the scientific wonders of [tech]. What can we offer you for its secret?
 
 ACCEPT_TECH_EXCHANGE_01    | Very well. [my_nameTitle] [my_name] agrees to exchange the wondrous [my_race] secrets of [techGiven] for the technology [techReceived].
 ACCEPT_FINANCIAL_AID_01    | [my_nameTitle] [my_name] accepts your gift of [amt] BC.
