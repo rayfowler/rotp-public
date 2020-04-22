@@ -56,7 +56,7 @@ public final class ConfirmCreateUI extends BasePanel implements MouseListener, M
     boolean setNameBounds = true;
 
     public ConfirmCreateUI() {
-        setOpaque(false);
+        setOpaque(true);
         initTextFields();
         add(nameField);
     }
@@ -73,6 +73,7 @@ public final class ConfirmCreateUI extends BasePanel implements MouseListener, M
         Graphics2D g = (Graphics2D) g0;
         super.paintComponent(g);
         
+        DesignUI.instance.paint(g0);
         nameField.requestFocus();
         int w = getWidth();
         int h = getHeight();
