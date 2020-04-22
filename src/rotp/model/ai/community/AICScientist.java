@@ -126,17 +126,17 @@ public class AICScientist implements Base, Scientist {
             empire.tech().weapon().allocation(10);
         }
         else if (empire.leader().isMilitarist()) {
-            empire.tech().computer().allocation(9);
+            empire.tech().computer().allocation(11);
             empire.tech().construction().allocation(9);
-            empire.tech().forceField().allocation(11);
-            empire.tech().planetology().allocation(9);
+            empire.tech().forceField().allocation(10);
+            empire.tech().planetology().allocation(8);
             empire.tech().propulsion().allocation(10);
             empire.tech().weapon().allocation(12);
         }
         else if (empire.leader().isEcologist()) {
-            empire.tech().computer().allocation(9);
+            empire.tech().computer().allocation(10);
             empire.tech().construction().allocation(10);
-            empire.tech().forceField().allocation(11);
+            empire.tech().forceField().allocation(10);
             empire.tech().planetology().allocation(12);
             empire.tech().propulsion().allocation(9);
             empire.tech().weapon().allocation(9);
@@ -150,37 +150,37 @@ public class AICScientist implements Base, Scientist {
             empire.tech().weapon().allocation(9);
         }
         else if (empire.leader().isExpansionist()) {
-            empire.tech().computer().allocation(9);
+            empire.tech().computer().allocation(10);
             empire.tech().construction().allocation(9);
             empire.tech().forceField().allocation(9);
             empire.tech().planetology().allocation(10);
             empire.tech().propulsion().allocation(12);
-            empire.tech().weapon().allocation(11);
+            empire.tech().weapon().allocation(10);
         }
         else if (empire.leader().isTechnologist()) {
-            empire.tech().computer().allocation(12);
-            empire.tech().construction().allocation(9);
-            empire.tech().forceField().allocation(11);
-            empire.tech().planetology().allocation(9);
-            empire.tech().propulsion().allocation(9);
+            empire.tech().computer().allocation(10);
+            empire.tech().construction().allocation(10);
+            empire.tech().forceField().allocation(10);
+            empire.tech().planetology().allocation(10);
+            empire.tech().propulsion().allocation(10);
             empire.tech().weapon().allocation(10);
         }
         // if in special mode, change ratios
         if (empire.generalAI().inWarMode()) {
-            empire.tech().computer().adjustAllocation(-2);
-            empire.tech().construction().adjustAllocation(-2);
-            empire.tech().forceField().adjustAllocation(0);
-            empire.tech().planetology().adjustAllocation(-8);
-            empire.tech().propulsion().adjustAllocation(-2);
-            empire.tech().weapon().adjustAllocation(14);
+            empire.tech().computer().adjustAllocation(4);
+            empire.tech().construction().adjustAllocation(-3);
+            empire.tech().forceField().adjustAllocation(1);
+            empire.tech().planetology().adjustAllocation(-3);
+            empire.tech().propulsion().adjustAllocation(-3);
+            empire.tech().weapon().adjustAllocation(4);
         }
         else if (empire.fleetCommanderAI().inExpansionMode()) {
-            empire.tech().computer().adjustAllocation(-6);
-            empire.tech().construction().adjustAllocation(-6);
-            empire.tech().forceField().adjustAllocation(-6);
-            empire.tech().planetology().adjustAllocation(14);
-            empire.tech().propulsion().adjustAllocation(14);
-            empire.tech().weapon().adjustAllocation(-10);
+            empire.tech().computer().adjustAllocation(1);
+            empire.tech().construction().adjustAllocation(-3);
+            empire.tech().forceField().adjustAllocation(-3);
+            empire.tech().planetology().adjustAllocation(4);
+            empire.tech().propulsion().adjustAllocation(4);
+            empire.tech().weapon().adjustAllocation(-3);
         }
     }
     @Override
@@ -304,12 +304,17 @@ public class AICScientist implements Base, Scientist {
             return 0;
 
         // scale add'l prevention assuming mark 15 is best (level 50)
-        float val = 50 / 11.0f * (t.mark - currMark);
+        // note there is no reduction in value for existing battle computers
+        // since older computer levels become worthless
+        float val = 50 / 11.0f * t.mark;
 
-        if (empire.leader().isTechnologist())
+        // battle computers more highly valued by more aggressive leader types
+        if (empire.leader().isAggressive())
             val *= 1.5;
-        if (empire.leader().isMilitarist())
+        else if (empire.leader().isRuthless())
             val *= 1.5;
+        else if (empire.leader().isMilitarist())
+            val *= 2;
 
         return val;
     }
