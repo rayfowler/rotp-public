@@ -327,33 +327,31 @@ public class CombatStackShip extends CombatStack {
         int shotsTaken = allShots ? shotsRemaining[index] : 1;
 
         // only fire if we have shots remaining... this is a missile concern
-        for (int shot=0;shot<shotsTaken; shot++) {
-            if ((roundsRemaining[index] > 0) && (shotsRemaining[index] > 0)) {
-                shotsRemaining[index]--;
-                uncloak();
-                ShipComponent selectedWeapon = selectedWeapon();
-                // some weapons (beams) can fire multiple per round
-                int count = num*shotsTaken*weaponCount[index];
-                if (selectedWeapon.isMissileWeapon()) {
-                    CombatStackMissile missile = new CombatStackMissile(this, (ShipWeaponMissileType) selectedWeapon, count);
-                    log(fullName(), " launching ", missile.fullName(), " at ", targetStack.fullName());
-                    mgr.addStackToCombat(missile);
-                }
-                else {
-                    log(fullName(), " firing ", str(count), " ", selectedWeapon.name(), " at ", targetStack.fullName());
-                    selectedWeapon.fireUpon(this, target, count);
-                }
-                if (target == null) 
-                    log("TARGET IS NULL AFTER BEING FIRED UPON!");
-                if (selectedWeapon.isLimitedShotWeapon())
-                    roundsRemaining[index] = max(0, roundsRemaining[index]-1);
-                if (target.damageSustained > 0)
-                    log("weapon damage: ", str(target.damageSustained));
+        if ((roundsRemaining[index] > 0) && (shotsRemaining[index] > 0)) {
+            shotsRemaining[index] = shotsRemaining[index]-shotsTaken;
+            uncloak();
+            ShipComponent selectedWeapon = selectedWeapon();
+            // some weapons (beams) can fire multiple per round
+            int count = num*shotsTaken*weaponCount[index];
+            if (selectedWeapon.isMissileWeapon()) {
+                CombatStackMissile missile = new CombatStackMissile(this, (ShipWeaponMissileType) selectedWeapon, count);
+                log(fullName(), " launching ", missile.fullName(), " at ", targetStack.fullName());
+                mgr.addStackToCombat(missile);
             }
-            if (target.destroyed())
-                break;
+            else {
+                log(fullName(), " firing ", str(count), " ", selectedWeapon.name(), " at ", targetStack.fullName());
+                selectedWeapon.fireUpon(this, target, count);
+            }
+            if (target == null) 
+                log("TARGET IS NULL AFTER BEING FIRED UPON!");
+            if (selectedWeapon.isLimitedShotWeapon())
+                roundsRemaining[index] = max(0, roundsRemaining[index]-1);
+            if (target.damageSustained > 0)
+                log("weapon damage: ", str(target.damageSustained));
         }
-        rotateToUsableWeapon(targetStack);
+
+        if (shotsRemaining[index] == 0)
+            rotateToUsableWeapon(targetStack);
         target.damageSustained = 0;
         
         if (targetStack.isColony())
