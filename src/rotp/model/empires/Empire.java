@@ -170,9 +170,9 @@ public final class Empire implements Base, NamedObject, Serializable {
     public void lastAttacker(NamedObject e)       { lastAttacker = e; }
     public List<ShipFleet> assignableFleets()     {
         if (tech().hyperspaceCommunications())
-            return galaxy().ships.notInTransitFleets(id);
-        else
             return galaxy().ships.allFleets(id);
+        else
+            return galaxy().ships.notInTransitFleets(id);
     }
     public List<Ship> visibleShips()              { return visibleShips; }
     public EmpireView[] empireViews()             { return empireViews; }

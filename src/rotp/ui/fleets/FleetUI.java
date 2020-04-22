@@ -166,6 +166,8 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
     public void showTransportPanel()       { showPanel(TRANSPORT_PANEL, transportPanel); }
     @Override
     public boolean allowsDragSelect()      { return true; }
+    @Override
+    public boolean hoverOverFleets()       { return currentPane.equals(QUERY_PANEL); }
 
     private boolean mapIsMasked() {
         return massTransportDialog.isVisible();
