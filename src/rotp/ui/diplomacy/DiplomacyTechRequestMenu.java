@@ -50,7 +50,7 @@ public class DiplomacyTechRequestMenu extends DiplomaticMessage {
         if (!enabled(i))
             return;
 
-        log("DiplomacyTechMenu - selected: ", str(i));
+        log("DiplomacyTechRequestMenu - selected: ", str(i));
 
         if (i == choices.size()) {
             escape();

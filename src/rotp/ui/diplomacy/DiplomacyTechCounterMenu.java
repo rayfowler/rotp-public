@@ -62,7 +62,7 @@ public class DiplomacyTechCounterMenu extends DiplomacyRequestReply {
         if (!enabled(i))
                 return;
 
-        log("DiplomacyTechMenu - selected: ", str(i));
+        log("DiplomacyTechCounterMenu - selected: ", str(i));
 
         if (i > counterOffers.size())
             return;
