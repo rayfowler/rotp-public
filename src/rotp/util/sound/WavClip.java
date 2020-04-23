@@ -92,8 +92,13 @@ public class WavClip  implements SoundClip, Base {
         continuous = true;
         if (style.equals("L"))
             clip.setFramePosition(0);
-        else
-            clip.setFramePosition(position);
+        else {
+            try { clip.setFramePosition(position); }
+            catch(IllegalArgumentException e) {
+                // thrown if invalid frame position
+                clip.setFramePosition(0);
+            }
+        }
         clip.start();
         clip.loop(Clip.LOOP_CONTINUOUSLY);
     }
