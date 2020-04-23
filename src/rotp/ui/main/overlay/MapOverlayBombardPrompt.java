@@ -65,7 +65,7 @@ public class MapOverlayBombardPrompt extends MapOverlay {
         bases = endBases = pl.sv.bases(sysId);
         fact = endFact = pl.sv.factories(sysId);
         shield = sys.colony().defense().shieldLevel();
-        transports = player().transportsToSystem(sys);
+        transports = player().transportsInTransit(sys);
         noButton.reset();
         yesButton.reset();
         parent.hideDisplayPanel();

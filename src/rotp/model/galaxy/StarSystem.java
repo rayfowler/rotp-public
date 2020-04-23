@@ -173,6 +173,13 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     public void piracy(boolean b)               { piracy = b; }
 
     public List<Transport> transports()         { return orbitingTransports; }
+    public int orbitingTransports(int empId) {
+        for (Transport tr: orbitingTransports) {
+            if (tr.empId() == empId)
+                return tr.size();
+        }
+        return 0;
+    }
     public List<ShipFleet> orbitingFleets()     { return galaxy().ships.orbitingFleets(id); }
     public List<ShipFleet> exitingFleets()      { return galaxy().ships.deployedFleets(id); }
 

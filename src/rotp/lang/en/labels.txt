@@ -623,7 +623,7 @@ PLANETS_LIST_RESOURCES            | Resources
 // Bombardment prompt
 MAIN_BOMBARDED_TITLE             | %1 has been bombarded by %2 forces.
 MAIN_BOMBARD_TITLE               | Our forces are orbiting an enemy %2 colony.
-MAIN_BOMBARD_TROOPS              | %1 %2 troops are in transit to this colony.
+MAIN_BOMBARD_TROOPS              | %1 %2 troops are orbiting or in transit to this colony.
 MAIN_BOMBARD_PROMPT              | Bombard the planet?
 MAIN_BOMBARD_YES                 | Yes
 MAIN_BOMBARD_NO                  | No

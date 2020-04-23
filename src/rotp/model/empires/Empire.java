@@ -772,23 +772,13 @@ public final class Empire implements Base, NamedObject, Serializable {
     }
     public int transportsInTransit(StarSystem s) {
         Galaxy gal = galaxy();
-        int transports = 0;
+        int transports = s.orbitingTransports(id);
+        
         for (Transport tr: gal.transports()) {
-            if (tr.empId() == id) {
-                if (tr.destSysId() == s.id)
-                    transports += tr.size();
-            }
+            if ((tr.empId() == id) && (tr.destSysId() == s.id))
+                transports += tr.size();
         }
         return transports;
-    }
-    public int transportsToSystem(StarSystem s) {
-        Galaxy gal = galaxy();
-        int pop = 0;
-        for (Transport tr: gal.transports()) {
-            if ((tr.empire() == this) && (tr.destSysId() == s.id))
-                pop += tr.size();
-        }
-        return pop;
     }
     public float transportSpeed(IMappedObject fr, IMappedObject to) {
         float time = fr.travelTime(fr, to, tech().transportSpeed());
