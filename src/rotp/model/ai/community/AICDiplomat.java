@@ -153,7 +153,7 @@ public class AICDiplomat implements Base, Diplomat {
         }
         EmpireView view = donor.viewForEmpire(empire);
         DiplomaticIncident inc = FinancialAidIncident.create(empire, donor, amt);
-        return view.otherView().accept(DialogueManager.ACCEPT_FINANCIAL_AID, inc);
+        return view.accept(DialogueManager.ACCEPT_FINANCIAL_AID, inc);
     }
     @Override
     public DiplomaticReply receiveTechnologyAid(Empire donor, String techId) {
@@ -161,7 +161,7 @@ public class AICDiplomat implements Base, Diplomat {
 
         EmpireView view = donor.viewForEmpire(empire);
         DiplomaticIncident inc = TechnologyAidIncident.create(empire, donor, techId);
-        return view.otherView().accept(DialogueManager.ACCEPT_TECHNOLOGY_AID, inc);
+        return view.accept(DialogueManager.ACCEPT_TECHNOLOGY_AID, inc);
     }
     //-----------------------------------
     //  EXCHANGE TECHNOLOGY

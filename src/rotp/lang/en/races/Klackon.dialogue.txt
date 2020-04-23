@@ -170,7 +170,7 @@ OFFER_TECH_EXCHANGE_01     | I am awed by the scientific wonders of [tech]. What
 
 ACCEPT_TECH_EXCHANGE_01    | Very well. I agree to exchange the wondrous [my_race] secrets of [techGiven] for the technology [techReceived].
 ACCEPT_FINANCIAL_AID_01    | I accept your gift of [amt] BC.
-ACCEPT_FINANCIAL_AID_01    | I accept your gift of [tech].
+ACCEPT_TECHNOLOGY_AID_01   | I accept your gift of [tech].
 
 BREAK_TRADE_01             | I have no further desire for the trade goods from the [your_empire].
 ANNOUNCE_TRADE_01          | Effective [year], I and the [your_empire] agree to trade [amt] BC per year.
