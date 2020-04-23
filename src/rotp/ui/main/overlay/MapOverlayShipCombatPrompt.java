@@ -146,7 +146,7 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
                 int planetW = planetImg.getWidth();
                 int planetH = planetImg.getHeight();
                 Graphics imgG = planetImg.getGraphics();
-                Empire emp = pl.sv.empire(sysId);
+                Empire emp = sys.empire();
                 if (emp != null) {
                     BufferedImage fortImg = emp.race().fortress(sys.colony().fortressNum());
                     int fortW = scaled(fortImg.getWidth());
