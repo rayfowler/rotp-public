@@ -18,6 +18,11 @@ package rotp.ui.main;
 import java.awt.CardLayout;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 import rotp.model.Sprite;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.Ship;
@@ -31,7 +36,7 @@ import rotp.ui.sprites.FlightPathSprite;
 import rotp.ui.sprites.ShipRelocationSprite;
 import rotp.ui.sprites.SystemTransportSprite;
 
-public class SpriteDisplayPanel extends BasePanel implements SystemViewer {
+public class SpriteDisplayPanel extends BasePanel implements SystemViewer, MouseListener, MouseMotionListener, MouseWheelListener {
     private static final long serialVersionUID = 1L;
     private static final String PLAYER_SYSTEM = "PlayerSystem";
     private static final String ALIEN_SYSTEM = "AlienSystem";
@@ -267,7 +272,6 @@ public class SpriteDisplayPanel extends BasePanel implements SystemViewer {
     private void initModel() {
         setBackground(MainUI.paneBackground());
         setLayout(layout);
-
         playerSystemPane = new EmpireSystemPanel(this);
         alienSystemPane = new AlienSystemPanel(this);
         unexploredAlienPane = new UnexploredAlienSystemPanel(this);
@@ -287,5 +291,25 @@ public class SpriteDisplayPanel extends BasePanel implements SystemViewer {
         add(transportDeployPane, DEPLOY_TRANSPORTS);
         add(transportDisplayPane, DISPLAY_TRANSPORTS);
         add(shipRelocationPane, RELOCATE_SHIPS);
+        
+        addMouseListener(this);
+        addMouseMotionListener(this);
+        addMouseWheelListener(this);
     }
+    @Override
+    public void mouseClicked(MouseEvent e) { }
+    @Override
+    public void mousePressed(MouseEvent e) { }
+    @Override
+    public void mouseReleased(MouseEvent e) { }
+    @Override
+    public void mouseEntered(MouseEvent e) { }
+    @Override
+    public void mouseExited(MouseEvent e) { }
+    @Override
+    public void mouseDragged(MouseEvent e) { }
+    @Override
+    public void mouseMoved(MouseEvent e) { }
+    @Override
+    public void mouseWheelMoved(MouseWheelEvent e) { }
 }
