@@ -322,6 +322,12 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         return fl;
     }
     public Transport acceptTransport(Transport tr) {
+        // friendly transports always immediately land
+        Colony col = colony();
+        if ((col != null) && (col.empire() == tr.empire())) {
+            colony().acceptTransport(tr);
+            return null;
+        }
         for (Transport trans : orbitingTransports) {
             if (tr.empire() == trans.empire()) {
                 trans.joinWith(tr);
