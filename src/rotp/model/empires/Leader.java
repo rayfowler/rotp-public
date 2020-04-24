@@ -146,6 +146,17 @@ public class Leader implements Base, Serializable {
             default:         return 1;
         }
     }
+    public float bioweaponMod() {
+        switch(personality) {
+            case PACIFIST:   return 1;
+            case HONORABLE:  return 2;
+            case XENOPHOBIC: return 0.5f;
+            case RUTHLESS:   return 0;
+            case AGGRESSIVE: return 0.5f;
+            case ERRATIC:    return 0.5f;
+            default:         return 1;
+        }
+    }
     public float oathBreakerMod() {
         switch(personality) {
             case PACIFIST:   return 1;

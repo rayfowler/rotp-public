@@ -174,7 +174,7 @@ public class AICDiplomat implements Base, Diplomat {
         if (empire.isPlayer()) {
             EmpireView v = diplomat.viewForEmpire(empire);
             // 1st, create the reply for the AI asking the player for the tech
-            DiplomaticReply reply = v.accept(DialogueManager.OFFER_TECH_EXCHANGE);
+            DiplomaticReply reply = v.otherView().accept(DialogueManager.OFFER_TECH_EXCHANGE);
             // decode the [tech] field in the reply text
             reply.decode("[tech]", tech.name());
             // 2nd, create the counter-offer menu that the player would present to the AI
@@ -965,9 +965,9 @@ public class AICDiplomat implements Base, Diplomat {
         }
     }
     private boolean decidedToIssuePraise(EmpireView view) {
-        // no warnings if at war
-        //if (view.embassy().atWar())
-        //	   return false;
+        if (!view.inEconomicRange())
+            return false;
+
         log(view+": checkIssuePraise");
         DiplomaticIncident maxIncident = null;
         for (DiplomaticIncident ev: view.embassy().newIncidents()) {
@@ -1002,6 +1002,8 @@ public class AICDiplomat implements Base, Diplomat {
             return warnLevel;
     }
     private boolean decidedToIssueWarning(EmpireView view) {
+        if (!view.inEconomicRange())
+            return false;
         // no warnings if at war
         DiplomaticEmbassy emb = view.embassy();
         if (emb.anyWar() || emb.unity())

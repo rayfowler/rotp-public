@@ -263,8 +263,8 @@ public class AIDiplomat implements Base, Diplomat {
         return topFiveTechs;
     }
     private boolean decidedToExchangeTech(EmpireView v) {
-        //if (!willingToOfferTechExchange(v))
-        //    return false;
+        if (!willingToOfferTechExchange(v))
+            return false;
 
         List<Tech> availableTechs = v.spies().unknownTechs();
         if (availableTechs.isEmpty())
@@ -965,9 +965,9 @@ public class AIDiplomat implements Base, Diplomat {
         }
     }
     private boolean decidedToIssuePraise(EmpireView view) {
-        // no warnings if at war
-        //if (view.embassy().atWar())
-        //	   return false;
+        if (!view.inEconomicRange())
+            return false;
+
         log(view+": checkIssuePraise");
         DiplomaticIncident maxIncident = null;
         for (DiplomaticIncident ev: view.embassy().newIncidents()) {
@@ -1002,6 +1002,8 @@ public class AIDiplomat implements Base, Diplomat {
             return warnLevel;
     }
     private boolean decidedToIssueWarning(EmpireView view) {
+        if (!view.inEconomicRange())
+            return false;
         // no warnings if at war
         DiplomaticEmbassy emb = view.embassy();
         if (emb.anyWar() || emb.unity())
