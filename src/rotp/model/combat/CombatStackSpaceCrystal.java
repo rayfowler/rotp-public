@@ -16,6 +16,7 @@
 package rotp.model.combat;
 
 import rotp.model.ai.CrystalShipCaptain;
+import rotp.model.events.RandomEventSpaceCrystal;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.ships.ShipWeaponMissileType;
 
@@ -66,6 +67,12 @@ public class CombatStackSpaceCrystal extends CombatStack {
                         st.takePulsarDamage(dam, 1);
                         st.attackLevel = max(0, st.attackLevel-1);
                         st.repairPct = max(0, st.repairPct-0.05f);
+                    }
+                    if (st.isColony() && st.destroyed()) {
+                        CombatStackColony cStack = (CombatStackColony) st;
+                        st.mgr.destroyStack(st);
+                        RandomEventSpaceCrystal.monster.destroyColony(st.mgr.system());                   
+                        cStack.colonyDestroyed = true;
                     }
                 }
             }

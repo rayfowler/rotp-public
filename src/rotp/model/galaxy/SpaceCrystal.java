@@ -15,7 +15,10 @@
  */
 package rotp.model.galaxy;
 
+import rotp.model.colony.Colony;
 import rotp.model.combat.CombatStackSpaceCrystal;
+import rotp.model.events.RandomEventSpaceCrystal;
+import rotp.model.planet.PlanetType;
 
 public class SpaceCrystal extends SpaceMonster {
     private static final long serialVersionUID = 1L;
@@ -26,5 +29,15 @@ public class SpaceCrystal extends SpaceMonster {
     public void initCombat() {
         combatStacks().clear();
         addCombatStack(new CombatStackSpaceCrystal());       
+    }
+    public void destroyColony(StarSystem sys) {
+        Colony col = sys.colony();
+        if (col != null) {
+            sys.empire().lastAttacker(RandomEventSpaceCrystal.monster);
+            sys.planet().degradeToType(PlanetType.DEAD);
+            float maxWaste = sys.planet().maxWaste();
+            sys.planet().addWaste(maxWaste);
+            col.destroy();  
+        }        
     }
 }

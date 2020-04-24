@@ -19,7 +19,6 @@ import java.io.Serializable;
 import rotp.model.colony.Colony;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.SpaceCrystal;
-import rotp.model.galaxy.SpaceMonster;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.planet.PlanetType;
 import rotp.ui.notifications.GNNNotification;
@@ -27,7 +26,7 @@ import rotp.util.Base;
 
 public class RandomEventSpaceCrystal implements Base, Serializable, RandomEvent {
     private static final long serialVersionUID = 1L;
-    public static SpaceMonster monster;
+    public static SpaceCrystal monster;
     private int empId;
     private int sysId;
     private int turnCount = 0;
@@ -103,18 +102,14 @@ public class RandomEventSpaceCrystal implements Base, Serializable, RandomEvent 
             GNNNotification.notifyRandomEvent(notificationText("EVENT_SPACE_CRYSTAL_1", null), "GNN_Event_Crystal");   
     }
     private void destroyColony() {
-        StarSystem targetSystem = galaxy().system(sysId);
-        Colony col = targetSystem.colony();
-        if (col != null) {
-            Empire pl = player();
-            if (pl.knowsOf(targetSystem.empire()) || !pl.sv.name(sysId).isEmpty())
-                GNNNotification.notifyRandomEvent(notificationText("EVENT_SPACE_CRYSTAL_2", targetSystem.empire()), "GNN_Event_Crystal");
-            targetSystem.empire().lastAttacker(monster);
-            targetSystem.planet().degradeToType(PlanetType.DEAD);
-            float maxWaste = targetSystem.planet().maxWaste();
-            targetSystem.planet().addWaste(maxWaste);
-            col.destroy();
-        }
+        StarSystem targetSystem = galaxy().system(sysId);             
+        // colony may have already been destroyed in combat
+        if (targetSystem.isColonized()) 
+            monster.destroyColony(targetSystem);
+        
+        Empire pl = player();
+        if (pl.knowsOf(targetSystem.empire()) || !pl.sv.name(sysId).isEmpty())
+            GNNNotification.notifyRandomEvent(notificationText("EVENT_SPACE_CRYSTAL_2", targetSystem.empire()), "GNN_Event_Crystal");
         moveToNextSystem();
     }
     private void crystalDestroyed() {
