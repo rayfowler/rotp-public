@@ -1965,6 +1965,8 @@ public class DesignUI extends BasePanel {
             int index = weapons.indexOf(des.weapon(i));
             if (index > 0) {
                 des.weapon(i, weapons.get(index - 1));
+                if (des.weapon(i).isNone())
+                    des.wpnCount(i,0);
                 repaint();
             }
         }
