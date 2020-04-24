@@ -138,8 +138,6 @@ public class ShipCombatManager implements Base {
     }
     public void battle(StarSystem sys, SpaceMonster monster) {
         monster.initCombat();
-        playerInBattle = false;
-        finished = false;
         empiresInConflict = sys.empiresInConflict();
         List<Empire> empires = new ArrayList<>(empiresInConflict);
         Collections.shuffle(empires);
@@ -186,6 +184,7 @@ public class ShipCombatManager implements Base {
         }
     }
     private void battle(StarSystem sys, Empire emp, SpaceMonster monster) {
+        finished = false;
         playerInBattle = emp.isPlayer();
         system = sys;
         results = new ShipCombatResults(this, system, emp, monster);
