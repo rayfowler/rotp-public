@@ -81,7 +81,9 @@ public class AICShipCaptain implements Base, ShipCaptain {
         }
         
         CombatStack prevTarget = null;
-        while (stack.move > 0) {
+        
+        boolean turnActive = true;
+        while (turnActive) {
             float prevMove = stack.move;
             prevTarget = stack.target;
             FlightPath bestPathToTarget = chooseTarget(stack);
@@ -105,7 +107,7 @@ public class AICShipCaptain implements Base, ShipCaptain {
             // make sure we fall out if we haven't moved 
             // and we are still picking the same target
             if ((prevMove == stack.move) && (prevTarget == stack.target)) {
-                stack.move = 0;
+                turnActive = false;
             }
         }
         mgr.turnDone(stack);
@@ -125,7 +127,7 @@ public class AICShipCaptain implements Base, ShipCaptain {
         CombatStack bestTarget = null;
         float maxDesirability = -1;
         float threatLevel = 0;
-
+        boolean currentCanBomb = false;
         for (CombatStack target : potentialTargets) {
             // pct of target that this stack thinks it can kill
             float killPct = max(stack.estimatedKillPct(target), expectedPopLossPct(stack, target)); 
@@ -133,14 +135,36 @@ public class AICShipCaptain implements Base, ShipCaptain {
             CombatStack ward = stack.hasWard() ? stack.ward() : stack;
             // want to adjust threat upward as target gets closer to ward
             int distAfterMove = target.canTeleport() ? 1 : (int) max(1,target.movePointsTo(ward)-target.maxMove());
-            float rangeAdj = 10.0f/distAfterMove;
+            // treat those who can move to bombing range (distAfterMove == 1) as maximum threats
             if (ward.isColony()) {
-                // threat to colonies is based on expected pop loss
                 CombatStackColony colony = (CombatStackColony) ward;
-                threatLevel = rangeAdj * expectedPopLossPct(target, colony); 
+                float popLossPct  =  expectedPopLossPct(target, colony); 
+                float baseLossPct = target.estimatedKillPct(colony);
+                float maxLossPct = max(popLossPct,baseLossPct);
+                // if this is the first potential target that can reach and damage the colony, 
+                // ignore any previous selected targets
+                if ((!currentCanBomb) && (distAfterMove <= 1) && (maxLossPct > 0.05f)) {
+                    threatLevel = maxLossPct;                     
+                    currentCanBomb = true;
+                    bestTarget = null;
+                    maxDesirability = -1;
+                }
+                // if we have a target that can actually bomb us, ignore any future
+                // targets that cannot yet
+                else if (currentCanBomb && (distAfterMove > 1)) {
+                    threatLevel = 0;
+                }
+                // this and no previous targets can yet bomb our colony, so evaluate
+                // based on threat and distance
+                else {
+                    float rangeAdj = 10.0f/distAfterMove;
+                    threatLevel = rangeAdj * maxLossPct;                     
+                } 
             }
-            else
+            else {
+                float rangeAdj = 10.0f/distAfterMove;
                 threatLevel = rangeAdj * target.estimatedKillPct(ward);  
+            }
             if (killPct > 0) {
                 killPct = min(1,killPct);
                 float desirability = max((10000* threatLevel * threatLevel * killPct), .01f);
@@ -501,12 +525,26 @@ public class AICShipCaptain implements Base, ShipCaptain {
             damage += d.special(j).estimatedBombardDamage(d, colony);
         return damage;
     }
+    public float expectedBioweaponDamage(CombatStackShip ship, CombatStackColony colony) {
+        int num = ship.num;
+        float popLoss = 0.0f;
+
+        ShipDesign d = ship.design();
+        for (int j=0;j<ShipDesign.maxWeapons();j++)
+            popLoss += (num * d.wpnCount(j) * d.weapon(j).estimatedBioweaponDamage(ship, colony));
+        return popLoss;
+    }
     public float expectedPopulationLoss(CombatStackShip ship, CombatStackColony colony) {
-        float damage = expectedBombardDamage(ship, colony);
+        float popLost = 0;
+        float bombDamage = expectedBombardDamage(ship, colony);
         if (colony.num == 0)
-            return damage / 200;
+            popLost = bombDamage / 200;
         else
-            return damage / 400;
+            popLost = bombDamage / 400;
+        
+        float bioDamage = expectedBioweaponDamage(ship, colony);
+
+        return popLost+bioDamage;
     }
     public float expectedPopLossPct(CombatStack source, CombatStack target) {
         if (!source.isShip())
@@ -521,6 +559,6 @@ public class AICShipCaptain implements Base, ShipCaptain {
             return 0;
         
         float popLoss = expectedPopulationLoss(ship, colony);
-        return min(1.0f, popLoss/colony.colony.population());
+        return popLoss/colony.colony.population();
     }
 }

@@ -128,6 +128,11 @@ public class CombatStackColony extends CombatStack {
     @Override
     public void takeBioweaponDamage(float damage) {
         colony.takeBioweaponDamage(damage);
+        
+        if (colony.destroyed()) {
+            mgr.destroyStack(this);
+            colonyDestroyed = true;
+        }
     }
     @Override
     public void loseShip() {

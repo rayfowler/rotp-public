@@ -16,6 +16,7 @@
 package rotp.model.ships;
 
 import rotp.model.combat.CombatStack;
+import rotp.model.combat.CombatStackColony;
 import rotp.model.tech.TechBiologicalWeapon;
 
 public final class ShipWeaponBiological extends ShipWeapon {
@@ -41,6 +42,16 @@ public final class ShipWeaponBiological extends ShipWeapon {
     @Override
     public boolean isLimitedShotWeapon()    { return true; }
     @Override
+    public float estimatedBioweaponDamage(CombatStack source, CombatStackColony target) {
+        float antidote = target.empire.tech().antidoteLevel();
+        // this is simplified and inexact when antidote > 1
+        // and doesn't consider att vs def
+        float min = max(0, minDamage()-antidote);
+        float max = max(0, maxDamage()-antidote);
+        float avg = (min+max)/2;
+        return bombardAttacks()*avg;
+    }
+    @Override
     public void fireUpon(CombatStack source, CombatStack target, int count) {
         source.usedBioweapons();
         float defense = target.bioweaponDefense();
@@ -53,6 +64,10 @@ public final class ShipWeaponBiological extends ShipWeapon {
             if (random() < pct) 
                 totalDamage += roll(minDamage(), maxDamage());
         }
+        if (totalDamage > 0)
+            drawSuccessfulAttack(source, target, totalDamage);
+        else
+            drawUnsuccessfulAttack(source, target);
         target.takeBioweaponDamage(totalDamage);
     }
 }

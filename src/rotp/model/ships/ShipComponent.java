@@ -55,6 +55,7 @@ public class ShipComponent implements Base, Serializable {
     public void drawAttack    (CombatStack source, CombatStack target, Component ui) { }
     public void drawAttackEffect(CombatStack source, CombatStack target, Component ui) { }
     public int bombardAttacks()          { return 0; }
+    public float estimatedBioweaponDamage(CombatStack source, CombatStackColony stack) { return 0;}
     public float estimatedBombardDamage(CombatStack source, CombatStackColony stack) { return 0;}
     public float estimatedBombardDamage(ShipDesign d, CombatStackColony stack) { return 0;}
 
