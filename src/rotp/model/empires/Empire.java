@@ -467,6 +467,11 @@ public final class Empire implements Base, NamedObject, Serializable {
                 from.transportSprite().accept();
         }
     }
+    public int travelTurns(StarSystem from, StarSystem dest, float speed) {
+        if (from.hasStargate(this) && dest.hasStargate(this))
+            return 1;
+        return (int) Math.ceil(from.travelTime(from,dest,speed));
+    }
     public void stopRalliesWithSystem(StarSystem dest) {
         List<StarSystem> systems = allColonizedSystems();
         sv.stopRally(dest.id);

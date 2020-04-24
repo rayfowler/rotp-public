@@ -83,10 +83,22 @@ public class Ships implements Base, Serializable {
         }
             
         // else we create a new deployed fleet 
-        ShipFleet deployedFleet = deployedFleet(empId, sysId, destSysId);    
+        // else we create a new deployed subfleet from the source 
+        StarSystem sys = galaxy().system(sysId);
+        StarSystem destSys = galaxy().system(destSysId);
+        
+        // calculate warp speed of new fleet and travel turns to the destination
+        int minSpeed = 9;
+        Empire sourceEmp = orbitingFleet.empire();
+        for (int i=0; i<actual.length; i++) {
+            if (counts[i] > 0) 
+                minSpeed = min(minSpeed, sourceEmp.shipLab().design(i).warpSpeed());
+        }   
+        int turns = sourceEmp.travelTurns(sys, destSys, minSpeed);
+        // find any existing deployed fleets to that dest with the same travel turns
+        ShipFleet deployedFleet = deployedFleet(empId, sysId, destSysId, turns);    
         
         if (deployedFleet == null) {
-            StarSystem sys = galaxy().system(sysId);
             deployedFleet = new ShipFleet(empId, sys);
             deployedFleet.destSysId(destSysId);
             deployedFleet.makeDeployed();
@@ -118,8 +130,11 @@ public class Ships implements Base, Serializable {
         // returns the deployed fleet
         int sysId = id(sourceFleet.system());
         
+        StarSystem destSys = galaxy().system(destSysId);
+        int turns = sourceFleet.travelTurns(destSys);
+        
         // get deployed fleet to add ships to
-        ShipFleet deployedFleet = deployedFleet(sourceFleet.empId, sysId, destSysId);   
+        ShipFleet deployedFleet = deployedFleet(sourceFleet.empId, sysId, destSysId, turns);   
         
         // if no deployed fleet, use this one
         if (deployedFleet == null) {
@@ -177,10 +192,22 @@ public class Ships implements Base, Serializable {
         if (sourceFleet.inTransit()) 
             return false;
               
-        // else we creat a new deployed subfleet from the source 
+        // else we create a new deployed subfleet from the source 
         StarSystem sys = sourceFleet.system();
+        StarSystem destSys = galaxy().system(destSysId);
+        
+        // calculate warp speed of new fleet and travel turns to the destination
+        int minSpeed = 9;
+        Empire sourceEmp = sourceFleet.empire();
+        for (int i=0; i<actual.length; i++) {
+            if (counts[i] > 0) 
+                minSpeed = min(minSpeed, sourceEmp.shipLab().design(i).warpSpeed());
+        }   
+        int turns = sourceEmp.travelTurns(sys, destSys, minSpeed);
+        
+        // find any existing deployed fleets to that dest with the same travel turns
         int empId = sourceFleet.empId;
-        ShipFleet deployedFleet = deployedFleet(empId, sys.id, destSysId);    
+        ShipFleet deployedFleet = deployedFleet(empId, sys.id, destSysId, turns);    
         
         if (deployedFleet == null) {
             // if entire source fleet is being deployed just use it
@@ -479,13 +506,16 @@ public class Ships implements Base, Serializable {
         }
         return null;
     }
-    public ShipFleet deployedFleet(int empId, int sysId, int destSysId) {
+    public ShipFleet deployedFleet(int empId, int sysId, int destSysId, int turns) {
         List<ShipFleet> fleetsAll = allFleetsCopy();
         
         for (ShipFleet fl: fleetsAll) {
             if ((fl.empId == empId) && (fl.sysId() == sysId) 
-            && fl.isDeployed() && (fl.destSysId() == destSysId))
-                return fl;
+            && fl.isDeployed() && (fl.destSysId() == destSysId)) {
+                StarSystem destSys = galaxy().system(destSysId);
+                if (fl.travelTurns(destSys) == turns)
+                    return fl;
+            }
         }
         return null;
     }
