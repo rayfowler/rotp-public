@@ -284,7 +284,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         List<CombatStack> stacks = new ArrayList<>(stack.mgr.activeStacks());
         for (CombatStack st: stacks) {
             for (CombatStackMissile miss: st.missiles()) {
-                if (miss.owner == stack)
+                if (miss.owner == stack) 
                     return false;
             }
         }
@@ -297,7 +297,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
 
         // if stack has ward still in combat, don't retreat
-        if (stack.hasWard()) {
+        if (stack.hasWard() && stack.isArmed()) {
             if (combat().activeStacks().contains(stack.ward()))
                 return false;
         }
