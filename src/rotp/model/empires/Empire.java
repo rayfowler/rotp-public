@@ -467,6 +467,14 @@ public final class Empire implements Base, NamedObject, Serializable {
                 from.transportSprite().accept();
         }
     }
+    public void stopRalliesWithSystem(StarSystem dest) {
+        List<StarSystem> systems = allColonizedSystems();
+        sv.stopRally(dest.id);
+        for (StarSystem sys: systems) {
+            if (sv.rallySystem(sys.id) == dest) 
+                sv.stopRally(sys.id);
+        }
+    }
     public void validate() {
         validateColonizedSystems();
         for (StarSystem sys: colonizedSystems)

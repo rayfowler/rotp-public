@@ -1050,6 +1050,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         transport = null;
         clearReserveIncome();
         empire.removeColonizedSystem(sys);
+        empire.stopRalliesWithSystem(sys);
         planet.setColony(null);
         // update system views of civs that would notice
         empire.sv.refreshFullScan(sys.id);
