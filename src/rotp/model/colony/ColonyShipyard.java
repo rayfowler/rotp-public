@@ -146,7 +146,7 @@ public class ColonyShipyard extends ColonySpendingCategory {
         else if (buildingStargate) {
             stargateBC += newBC;
             stargateCompleted = (maxSpendingNeeded() <= 0);
-        if (stargateBC >= cost) {
+            if (stargateBC >= cost) {
                 hasStargate = true;
                 newShips++;
                 empire().addReserve(stargateBC - cost);
@@ -210,23 +210,24 @@ public class ColonyShipyard extends ColonySpendingCategory {
         float tmpShipReserveBC = shipReserveBC;
         float tmpShipBC = shipBC;
         float tmpStargateBC = stargateBC;
+        float accumBC = buildingStargate ? stargateBC : shipBC;
         // if we switched designs, send previous ship BC to shipyard reserve
         if (design != prevDesign) {
             if (prevDesign instanceof DesignStargate)
-                tmpStargateBC += tmpShipBC;
+                tmpShipReserveBC += tmpStargateBC;
             else
                 tmpShipReserveBC += tmpShipBC;
-            tmpShipBC = 0;
+            accumBC = 0;
         }
         float prodBC = pct()* colony().totalProductionIncome() * planet().productionAdj();
         float rsvBC = pct() * colony().maxReserveIncome();
         float newBC = prodBC+rsvBC;
-        float totalBC = Math.max(newBC+tmpShipBC,0);
+        float totalBC =max(newBC+accumBC, 0);
         float cost = design.cost();
 
-        // add BC from stargate or shipyard reserve (ship rsv is capped by prod)
-        float accumBC = buildingStargate ? tmpStargateBC :  Math.min(tmpShipReserveBC,prodBC);
-        totalBC += accumBC;
+        // add BC fromshipyard reserve if buildlign s(ship rsv is capped by prod)
+        if (!buildingStargate) 
+            totalBC = totalBC+min(tmpShipReserveBC,prodBC);
 
         if (totalBC >= cost)
             return buildingStargate ? 1 : (int) (totalBC / cost);
@@ -241,23 +242,24 @@ public class ColonyShipyard extends ColonySpendingCategory {
         float tmpShipReserveBC = shipReserveBC;
         float tmpShipBC = shipBC;
         float tmpStargateBC = stargateBC;
+        float accumBC = buildingStargate ? stargateBC : shipBC;
         // if we switched designs, send previous ship BC to shipyard reserve
         if (design != prevDesign) {
             if (prevDesign instanceof DesignStargate)
-                tmpStargateBC += tmpShipBC;
+                tmpShipReserveBC += tmpStargateBC;
             else
                 tmpShipReserveBC += tmpShipBC;
-            tmpShipBC = 0;
+            accumBC = 0;
         }
         float prodBC = pct()* colony().totalProductionIncome() * planet().productionAdj();
         float rsvBC = pct() * colony().maxReserveIncome();
         float newBC = prodBC+rsvBC;
-        float totalBC = Math.max(newBC+tmpShipBC,0);
+        float totalBC = max(newBC+accumBC, 0);
         float cost = design.cost();
 
-        // add BC from stargate or shipyard reserve (ship rsv is capped by prod)
-        float accumBC = buildingStargate ? tmpStargateBC :  Math.min(tmpShipReserveBC,prodBC);
-        totalBC += accumBC;
+        // add BC from shipyard reserve if buildling ship (ship rsv is capped by prod)
+        if (!buildingStargate) 
+            totalBC = totalBC+min(tmpShipReserveBC,prodBC);
 
         if (totalBC == 0)
             return text(noneText);
@@ -269,7 +271,7 @@ public class ColonyShipyard extends ColonySpendingCategory {
             if (newBC == 0)
                 return text(noneText);
             else {
-                int turns = (int) Math.ceil((cost - tmpShipBC) / newBC);
+                int turns = (int) Math.ceil((cost - accumBC) / newBC);
                 if (turns == 1)
                     return text(yearText, 1);
                 else if (turns > 99)
