@@ -790,9 +790,10 @@ public class ShipCombatManager implements Base {
         }
     }
     public void performMoveStackToPoint(CombatStack st, int x, int y) {
-        if ((x == st.x) && (y == st.y))
+        if (!st.canMove())
             return;
-
+        else if ((x == st.x) && (y == st.y))
+            return;
         else if (st.canMoveTo(x, y))
             moveStack(st, x, y);
         else

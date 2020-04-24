@@ -143,9 +143,11 @@ public class CombatStackColony extends CombatStack {
         return (num > 0) && currentWeaponCanAttack(target);
     }
     @Override
+    public boolean canMove()               { return false; }
+    @Override
     public boolean canMoveTo(int x, int y) { return false; }
     @Override
-    public boolean canTeleport()     { return false; }
+    public boolean canTeleport()           { return false; }
     @Override
     public boolean currentWeaponCanAttack(CombatStack target) {
         if (target == null)
