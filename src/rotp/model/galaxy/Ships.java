@@ -327,7 +327,7 @@ public class Ships implements Base, Serializable {
         return retreatingFleet;
     }
     public boolean undeployFleet(ShipFleet sourceFleet) {
-        if (!sourceFleet.deployed())
+        if (!sourceFleet.deployed() && !sourceFleet.isRalliedThisTurn())
             return false;
         // returns true if the source fleet was scrapped
         StarSystem sys = sourceFleet.system();

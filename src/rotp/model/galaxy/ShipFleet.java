@@ -177,11 +177,8 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
         destX = f.destX;
         destY = f.destY;
         status = f.status;
+        launchTime = f.launchTime;
         
-        // can only already be launched if hyperspace comms
-        if (f.launched())
-            launchTime = galaxy().currentTime();
-            
         reloadBombs();
     }
     public ShipFleet(ShipFleet fl) {
@@ -280,7 +277,11 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
     @Override
     public boolean deployed()       { return isDeployed(); }
     public boolean launched()       { return launchTime > NOT_LAUNCHED; }
-    public boolean canUndeploy()    { return isDeployed() && !retreating(); }
+    public boolean canUndeploy()    { 
+        if (isRalliedThisTurn())
+            return true;
+        return isDeployed() && !retreating(); 
+    }
     @Override
     public boolean inTransit()      { return isInTransit(); }
     public boolean isActive()       { return hasShips(); }
