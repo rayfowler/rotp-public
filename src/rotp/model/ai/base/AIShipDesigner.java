@@ -110,7 +110,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
             log("Scrapping obsolete design: "+d.name());
         }
     }
-     public void updateScoutDesign() {
+    public void updateScoutDesign() {
         ShipDesignLab lab = lab();
         
         // if we are not using scouts anymore, quit

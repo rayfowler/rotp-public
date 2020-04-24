@@ -148,53 +148,20 @@ public class ShipDesignLab implements Base, Serializable {
         }
         ShipDesign design;
 
-        design = empire.shipDesignerAI().newScoutDesign();
+        design = empire.isPlayer() ? startingPlayerScoutDesign() : empire.shipDesignerAI().newScoutDesign();
         setScoutDesign(design, 0);
-        if (empire.isPlayer())
-            design.name(text("SHIP_DESIGN_1ST_SCOUT_NAME"));
 
-        design = empire.shipDesignerAI().newFighterDesign(ShipDesign.SMALL);
+        design = empire.isPlayer() ? startingPlayerFighterDesign() : empire.shipDesignerAI().newFighterDesign(ShipDesign.SMALL);
         setFighterDesign(design, 1);
-        if (empire.isPlayer())
-            design.name(text("SHIP_DESIGN_1ST_FIGHTER_NAME"));
 
-        // bomber
-        design = newBlankDesign(ShipDesign.MEDIUM);
-        design.addWeapon(bombWeapon(0), 2);
-        design.addWeapon(beamWeapon(0, false), 2);
-        nameDesign(design);
-        iconifyDesign(design);
+        design = empire.isPlayer() ? startingPlayerBomberDesign() : empire.shipDesignerAI().newBomberDesign(ShipDesign.MEDIUM);
         setBomberDesign(design, 2);
-        if (empire.isPlayer())
-            design.name(text("SHIP_DESIGN_1ST_BOMBER_NAME"));
 
-        // destroyer
-        design = newBlankDesign(ShipDesign.MEDIUM);
-        design.mission(ShipDesign.DESTROYER);
-        design.addWeapon(missileWeapon(0, 2), 1);
-        design.addWeapon(beamWeapon(0, false), 3);
-        nameDesign(design);
-        iconifyDesign(design);
+        design = empire.isPlayer() ? startingPlayerDestroyerDesign() : empire.shipDesignerAI().newDestroyerDesign(ShipDesign.MEDIUM);
         setDestroyerDesign(design, 3);
-        if (empire.isPlayer())
-            design.name(text("SHIP_DESIGN_1ST_DESTROYER_NAME"));
 
-        // colony ship
-        design = newBlankDesign(ShipDesign.LARGE);
-        design.special(0, empire.shipDesignerAI().bestColonySpecial());
-        // added for testing
-        //design.special(1, specialReserveFuel());
-        //design.special(2, specialBattleScanner());
-        //design.weapon(0, missileWeapon(0, 2), 1);
-        //design.weapon(1, beamWeapon(0, false), 3);
-        //design.weapon(2, missileWeapon(0, 5), 1);
-        //design.weapon(3, beamWeapon(0, true), 3);
-        // end add
-        nameDesign(design);
-        iconifyDesign(design);
+        design = startingPlayerColonyDesign();
         setColonyDesign(design, 4);
-        if (empire.isPlayer())
-            design.name(text("SHIP_DESIGN_1ST_COLONY_NAME"));
     }
     public void nextTurn() {
         // update opp shield level (for fighter designs)
@@ -279,8 +246,48 @@ public class ShipDesignLab implements Base, Serializable {
             scrapDesign(mostOutdated);
         }
     }
-    private boolean isRacialShipName(int size, String s) {
-        return empire().race().shipNames(size).contains(s);
+    public ShipDesign startingPlayerScoutDesign() {
+        ShipDesign design = newBlankDesign(ShipDesign.SMALL);
+        design.special(0, specialReserveFuel());
+        design.mission(ShipDesign.SCOUT);
+        design.name(text("SHIP_DESIGN_1ST_SCOUT_NAME"));
+        iconifyDesign(design);
+        return design;
+    }
+    public ShipDesign startingPlayerFighterDesign() {
+        ShipDesign design = newBlankDesign(ShipDesign.SMALL);
+        design.engine(engines().get(0));
+        design.addWeapon(beamWeapon(0, false), 1);
+        design.mission(ShipDesign.FIGHTER);
+        design.name(text("SHIP_DESIGN_1ST_FIGHTER_NAME"));
+        iconifyDesign(design);
+        return design;
+    }
+    public ShipDesign startingPlayerBomberDesign() {
+        ShipDesign design = newBlankDesign(ShipDesign.MEDIUM);
+        design.addWeapon(bombWeapon(0), 2);
+        design.addWeapon(beamWeapon(0, false), 2);
+        design.mission(ShipDesign.BOMBER);
+        design.name(text("SHIP_DESIGN_1ST_BOMBER_NAME"));
+        iconifyDesign(design);
+        return design;
+    }
+    public ShipDesign startingPlayerDestroyerDesign() {
+        ShipDesign design = newBlankDesign(ShipDesign.MEDIUM);
+        design.mission(ShipDesign.DESTROYER);
+        design.addWeapon(missileWeapon(0, 2), 1);
+        design.addWeapon(beamWeapon(0, false), 3);
+        design.name(text("SHIP_DESIGN_1ST_DESTROYER_NAME"));
+        iconifyDesign(design);
+        return design;
+    }
+    public ShipDesign startingPlayerColonyDesign() {
+        ShipDesign design = newBlankDesign(ShipDesign.LARGE);
+        design.mission(ShipDesign.COLONY);
+        design.special(0, empire.shipDesignerAI().bestColonySpecial());
+        design.name(text("SHIP_DESIGN_1ST_COLONY_NAME"));
+        iconifyDesign(design);
+        return design;
     }
     public void nameDesign(ShipDesign d) {
         List<String> shipNames = empire.race().shipNames(d.size());
