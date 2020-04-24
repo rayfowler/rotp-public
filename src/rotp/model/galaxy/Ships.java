@@ -136,6 +136,9 @@ public class Ships implements Base, Serializable {
         // get deployed fleet to add ships to
         ShipFleet deployedFleet = deployedFleet(sourceFleet.empId, sysId, destSysId, turns);   
         
+        if (deployedFleet == sourceFleet) 
+            return sourceFleet;
+        
         // if no deployed fleet, use this one
         if (deployedFleet == null) {
             sourceFleet.destSysId(destSysId);
