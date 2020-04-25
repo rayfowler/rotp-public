@@ -80,8 +80,11 @@ public class RandomEventSpaceAmoeba implements Base, Serializable, RandomEvent {
         else if ((col != null) && col.defense().isArmed())
             startCombat();
         
-        if (monster.alive() && (col != null)) 
-            destroyColony(col);
+        if (monster.alive()) {
+            if (col != null)
+                destroyColony(col);
+            moveToNextSystem(); 
+        }
         else 
             amoebaDestroyed();         
     }
@@ -101,8 +104,7 @@ public class RandomEventSpaceAmoeba implements Base, Serializable, RandomEvent {
             GNNNotification.notifyRandomEvent(notificationText("EVENT_SPACE_AMOEBA_1", null), "GNN_Event_Amoeba");   
     }
     private void destroyColony(Colony col) {
-        StarSystem targetSystem = galaxy().system(sysId);
-       
+        StarSystem targetSystem = galaxy().system(sysId);       
         // colony may have already been destroyed in combat
         if (targetSystem.isColonized()) 
             monster.destroyColony(targetSystem);
@@ -110,8 +112,6 @@ public class RandomEventSpaceAmoeba implements Base, Serializable, RandomEvent {
         Empire pl = player();
         if (pl.knowsOf(col.empire()) || !pl.sv.name(sysId).isEmpty())
             GNNNotification.notifyRandomEvent(notificationText("EVENT_SPACE_AMOEBA_2", col.empire()), "GNN_Event_Amoeba");
-
-        moveToNextSystem(); 
     }
     private void amoebaDestroyed() {
         galaxy().events().removeActiveEvent(this);

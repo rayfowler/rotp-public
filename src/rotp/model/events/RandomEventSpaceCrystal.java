@@ -81,8 +81,11 @@ public class RandomEventSpaceCrystal implements Base, Serializable, RandomEvent 
         else if ((col != null) && col.defense().isArmed())
             startCombat();
         
-        if (monster.alive()) 
-            destroyColony(col);
+        if (monster.alive()) {
+            if (col != null)
+                destroyColony(col);
+            moveToNextSystem();
+        }
         else 
             crystalDestroyed();         
     }
@@ -110,7 +113,6 @@ public class RandomEventSpaceCrystal implements Base, Serializable, RandomEvent 
         Empire pl = player();
         if (pl.knowsOf(col.empire()) || !pl.sv.name(sysId).isEmpty())
             GNNNotification.notifyRandomEvent(notificationText("EVENT_SPACE_CRYSTAL_2", col.empire()), "GNN_Event_Crystal");
-        moveToNextSystem();
     }
     private void crystalDestroyed() {
         galaxy().events().removeActiveEvent(this);
