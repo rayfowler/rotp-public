@@ -325,7 +325,8 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         // friendly transports always immediately land
         Colony col = colony();
         if ((col != null) && (col.empire() == tr.empire())) {
-            colony().acceptTransport(tr);
+            if (!colony().inRebellion())
+                colony().acceptTransport(tr);
             return null;
         }
         for (Transport trans : orbitingTransports) {
