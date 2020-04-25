@@ -273,6 +273,8 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
 
         StarSystem sys = (StarSystem) o;
         // if the player cannot send the selected fleet, quit and do nothing
+        if (!adjustedFleet().empire().isPlayer())
+            return false;
         if (!adjustedFleet().canSendTo(sys.id)) 
             return false;
 
