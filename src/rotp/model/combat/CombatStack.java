@@ -138,6 +138,7 @@ public class CombatStack implements Base {
     public float totalHits()        { return maxHits * num; }
     public boolean canMove()        { return (move > 0) || canTeleport(); }
     public boolean canFireWeapon()  { return false; }
+    public boolean canFireWeaponAtTarget(CombatStack st)  { return false; }
     public boolean immuneToStasis() { return false; }
     public float autoMissPct()      { return 0; } 
     public boolean interceptsMissile(ShipWeapon wpn)  { return random() < missileInterceptPct(wpn);}

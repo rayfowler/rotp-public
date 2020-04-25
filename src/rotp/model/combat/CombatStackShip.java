@@ -144,6 +144,19 @@ public class CombatStackShip extends CombatStack {
         return false;
     }
     @Override
+    public boolean canFireWeaponAtTarget(CombatStack st) {
+        if (st == null)
+            return false;
+        if (st.inStasis)
+            return false;
+        for (int i=0;i<weapons.size();i++) {
+            ShipComponent comp = weapons.get(i);
+            if (!comp.isSpecial() && shipComponentCanAttack(st, i))
+                return true;
+        }
+        return false;
+    }
+    @Override
     public boolean hasBombs() {
         for (int i=0; i<weapons.size();i++) {
             ShipComponent comp = weapons.get(i);
@@ -367,11 +380,9 @@ public class CombatStackShip extends CombatStack {
             return false;
         if (st.inStasis)
             return false;
-        if (isShip()) {
-            for (int i=0;i<weapons.size();i++) {
-                if (shipComponentCanAttack(st, i))
-                    return true;
-            }
+        for (int i=0;i<weapons.size();i++) {
+            if (shipComponentCanAttack(st, i))
+                return true;
         }
         return false;
     }

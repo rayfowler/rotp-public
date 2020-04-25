@@ -1879,12 +1879,12 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     class ShipFireAllButton extends ShipActionButton {
         private static final long serialVersionUID = 1L;
         @Override
-        String label()   { return mgr.currentStack().canFireWeapon() ? text("SHIP_COMBAT_ACTION_FIRE_ALL") : text("SHIP_COMBAT_ACTION_TURN_DONE"); }
+        String label()   { return mgr.currentStack().canFireWeaponAtTarget(ship) ? text("SHIP_COMBAT_ACTION_FIRE_ALL") : text("SHIP_COMBAT_ACTION_TURN_DONE"); }
         @Override
         boolean canUse() { return true; }
         @Override
         public void clickAction(boolean rightClick) {
-            if (!mgr.currentStack().canFireWeapon()) {
+            if (!mgr.currentStack().canFireWeaponAtTarget(ship)) {
                 nextStack();
                 return;
             }
