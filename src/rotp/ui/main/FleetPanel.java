@@ -133,7 +133,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         ShipFleet fl = selectedFleet();
         if (fl == null)
             fl = parent.shipFleetToDisplay();
-        return (fl != null) && fl.canBeSentBy(player());
+        return (fl != null);
     }
      private boolean canSendFleet() {
         if (selectedDest() == null)
@@ -271,13 +271,13 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         if (!(o instanceof StarSystem))
             return false;
 
+        StarSystem sys = (StarSystem) o;
         // if the player cannot send the selected fleet, quit and do nothing
-        if (!adjustedFleet().canBeSentBy(player()))
+        if (!adjustedFleet().canSendTo(sys.id)) 
             return false;
 
         // if we are hovering over a system that the selected fleet
         // is orbiting, then consume the event but do nothing
-        StarSystem sys = (StarSystem) o;
         if (adjustedFleet().system() == sys)
             return true;
 
@@ -1079,7 +1079,6 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             }
 
             StarSystem dest = parent.displayedDestination();
-
             if (dest != null) {
                 if (!fleet.canReach(dest))  {
                     drawFullOutOfRangeButton(g);

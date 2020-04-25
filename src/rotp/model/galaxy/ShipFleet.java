@@ -101,6 +101,9 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
     public boolean isRalliedThisTurn()  {
         return isRallied() && (launchTime == galaxy().currentTime()); 
     }
+    public boolean isRetreatingThisTurn() {
+        return retreating() && (launchTime == galaxy().currentTime()); 
+    }
     public boolean hasDestination()     { return destSysId != StarSystem.NULL_ID; }
     
     public Rectangle selectBox() {
@@ -504,17 +507,18 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
     public boolean canSendTo(int id) {
         if (id == StarSystem.NULL_ID)
             return false;
+
+        // retreating fleets can only go to different systems, colonized by friendly empire
+        if (retreating)  {
+            StarSystem sys = galaxy().system(id);
+            return isRetreatingThisTurn() && (id != sysId) && sys.isColonized() && sys.empire().alliedWith(empId());
+        }
         //cannot send if already orbiting the sv.system
         if (!inTransit() && (sysId == id))
             return false;
         if (!empire().sv.withinRange(id, range()))
             return false;
         
-        // retreating fleets can only go to different systems, colonized by friendly empire
-        if (retreating)  {
-            StarSystem sys = galaxy().system(id);
-            return (id != sysId) && sys.isColonized() && sys.empire().friendlyWith(empId());
-        }
         return true;
     }
     public boolean canSend(Empire c) {
