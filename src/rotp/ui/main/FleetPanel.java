@@ -273,7 +273,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
 
         StarSystem sys = (StarSystem) o;
         // if the player cannot send the selected fleet, quit and do nothing
-        if (!adjustedFleet().empire().isPlayer())
+        if (adjustedFleet().empire() != player())
             return false;
         if (!adjustedFleet().canSendTo(sys.id)) 
             return false;
@@ -297,6 +297,9 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
     }
     @Override
     public boolean useClickedSprite(Sprite o, int count, boolean rightClick) {
+        if (count == 2) 
+            return true;
+        
         // we have clicked on a system view at this point
         if (rightClick) {
             cancelFleet();
