@@ -128,14 +128,9 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         return parent.parent.isClicked(displayedFleet());
     }
     private boolean canConsume(Sprite s) {
-        if ((s != null) && !(s instanceof ShipFleet) && !(s instanceof StarSystem))
-            return false;
-        ShipFleet fl = selectedFleet();
-        if (fl == null)
-            fl = parent.shipFleetToDisplay();
-        return (fl != null);
+        return (s == null) || (s instanceof ShipFleet) || (s instanceof StarSystem);
     }
-     private boolean canSendFleet() {
+    private boolean canSendFleet() {
         if (selectedDest() == null)
             return false;
 
@@ -271,17 +266,8 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         if (!(o instanceof StarSystem))
             return false;
 
-        StarSystem sys = (StarSystem) o;
-        // if the player cannot send the selected fleet, quit and do nothing
         if (adjustedFleet().empire() != player())
             return false;
-        if (!adjustedFleet().canSendTo(sys.id)) 
-            return false;
-
-        // if we are hovering over a system that the selected fleet
-        // is orbiting, then consume the event but do nothing
-        if (adjustedFleet().system() == sys)
-            return true;
 
         adjustedFleet().use(o, parent.parent);
         tentativeDest((StarSystem) o);
@@ -297,9 +283,6 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
     }
     @Override
     public boolean useClickedSprite(Sprite o, int count, boolean rightClick) {
-        if (count == 2) 
-            return true;
-        
         // we have clicked on a system view at this point
         if (rightClick) {
             cancelFleet();
@@ -309,6 +292,8 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         // use clicked Fleets that can be sent... just reset vars
         if (o instanceof ShipFleet) {
             ShipFleet clickedFleet = (ShipFleet) o;
+            if (clickedFleet.empire() != player())
+                return false;
             if (clickedFleet != selectedFleet())
                 selectNewFleet(clickedFleet);
             return false;
@@ -326,6 +311,9 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         // on Cancel, then selected fleet is null and we get
         // here when the last selected system is reselected
         if (selectedFleet() == null) 
+            return false;
+        
+        if (selectedFleet().empire() != player())
             return false;
         
         StarSystem sys = (StarSystem) o;
@@ -644,9 +632,17 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             String text2 = null;
             g.setFont(narrowFont(16));
             if (displayFl.canBeSentBy(player())) {
-                if (displayFl.retreating() && !displayFl.canSendTo(id(dest))) {
-                    g.setColor(SystemPanel.redText);
-                    text = text("MAIN_FLEET_INVALID_RETREAT");
+                if (!displayFl.canSendTo(id(dest))) {
+                    g.setColor(SystemPanel.blackText);
+                    if (dest == null)
+                        text = "";
+                    else {
+                        String name = player().sv.name(dest.id);
+                        if (name.isEmpty())
+                            text = text("MAIN_FLEET_INVALID_DESTINATION2");
+                        else 
+                            text = text("MAIN_FLEET_INVALID_DESTINATION", name);
+                    }
                 }
                 else if (displayFl.isDeployed() || displayFl.isInTransit()) {
                     dest = dest == null ? displayFl.destination() : dest;
@@ -661,7 +657,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 }
                 else if (displayFl.canSendTo(id(dest))) {
                     if (displayFl.canReach(dest)) {
-                        g.setColor(Color.black);
+                        g.setColor(SystemPanel.blackText);
                         int dist = displayFl.travelTurns(dest);
                         String destName = player().sv.name(dest.id);
                         if (destName.isEmpty())
@@ -671,14 +667,14 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                     }
                     else {
                         int dist = player().rangeTo(dest);
-                        g.setColor(SystemPanel.redText);
+                        g.setColor(SystemPanel.blackText);
                         text = text("MAIN_FLEET_OUT_OF_RANGE_DESC", dist);
                     }
                     if (displayFl.passesThroughNebula(dest))
                         text2 = text("MAIN_FLEET_THROUGH_NEBULA");
                 }
                 else if (displayFl.isOrbiting()) {
-                    g.setColor(Color.black);
+                    g.setColor(SystemPanel.blackText);
                     text = text("MAIN_FLEET_CHOOSE_DEST");
                 }
             }
@@ -1090,7 +1086,10 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                     return;
                 }
                 else if (!fleet.canSendTo(id(dest))) {
-                    drawFullCancelButton(g);
+                    if (fleet.retreating()) 
+                        drawFullInvalidRetreatButton(g);
+                    else
+                        drawFullCancelButton(g);
                     return;
                 }
                 else {
@@ -1113,6 +1112,9 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         }
         private void drawFullOutOfRangeButton(Graphics2D g) {
             drawButton(g,fullGrayBackC,text("MAIN_FLEET_OUT_OF_RANGE"), cancelBox, leftM, rightM);
+        }
+        private void drawFullInvalidRetreatButton(Graphics2D g) {
+            drawButton(g,fullGrayBackC,text("MAIN_FLEET_INVALID_RETREAT"), cancelBox, leftM, rightM);
         }
         private void drawFullCancelButton(Graphics2D g) {
             drawButton(g,fullGrayBackC,text("MAIN_FLEET_CANCEL"), cancelBox, leftM, rightM);

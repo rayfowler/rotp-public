@@ -156,7 +156,7 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
     }
     
     @Override
-    public boolean persistOnClick()             { return true; }
+    public boolean persistOnClick()             { return empire() == player(); }
     public static ShipFleet copy(ShipFleet fl) {
         // returns a new ship fleet with identical stacks & count
         ShipFleet temp = new ShipFleet(fl.empId, fl);
@@ -513,6 +513,9 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
             StarSystem sys = galaxy().system(id);
             return isRetreatingThisTurn() && (id != sysId) && sys.isColonized() && sys.empire().alliedWith(empId());
         }
+        if (!canSend())
+            return false;
+
         //cannot send if already orbiting the sv.system
         if (!inTransit() && (sysId == id))
             return false;
@@ -809,6 +812,12 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
     @Override
     public boolean isSelectableAt(GalaxyMapPanel map, int mapX, int mapY) {
         return displayed && selectBox().contains(mapX, mapY);
+    }
+    @Override
+    public float selectDistance(GalaxyMapPanel map, int mapX, int mapY)  { 
+        float centerX = selectBox().x+(selectBox().width/2);
+        float centerY = selectBox().y+(selectBox().height/2);
+        return distance(mapX, mapY, centerX, centerY);
     }
     @Override
     public int mapX(GalaxyMapPanel map) {

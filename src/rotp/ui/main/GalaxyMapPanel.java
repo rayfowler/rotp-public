@@ -635,14 +635,25 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         if (scaleX() <= MAX_FLEET_HUGE_SCALE) {
             if (parent.hoverOverFleets()) {
                 ships = new ArrayList<>(pl.visibleShips());
+                float minDistance = Float.MAX_VALUE;
+                Sprite closestShip = null;
                 for (Ship sh: ships) {
                     if (sh.displayed()) {
                         Sprite spr = (Sprite) sh;
                         if (parent.shouldDrawSprite(spr)
-                        && spr.isSelectableAt(this, x1, y1))
-                            return spr;
+                        && spr.isSelectableAt(this, x1, y1)) {
+                            float dist = spr.selectDistance(this, x1, y1);
+                            if (dist == 0)
+                               return spr;
+                            if (dist < minDistance) {
+                                minDistance = dist;
+                                closestShip = spr;
+                            }
+                        }
                     }
                 }
+                if (closestShip != null)
+                    return closestShip;
             }
         }
         if (parent.hoverOverSystems()) {
@@ -802,10 +813,12 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
 
         if (e.getButton() > 3)
             return;
+        int cnt = e.getClickCount();
+        if (cnt > 1)
+            return;
         boolean rightClick = SwingUtilities.isRightMouseButton(e);
         int x1 = e.getX();
         int y1 = e.getY();
-        int cnt = e.getClickCount();
         Sprite newSelection = spriteAt(x1,y1);
         
         if (newSelection == null) 

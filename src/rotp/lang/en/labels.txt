@@ -399,6 +399,9 @@ MAIN_FLEET_CANCEL                 | Cancel
 MAIN_FLEET_OUT_OF_RANGE           | Out of Range
 MAIN_FLEET_DEPLOY_FLEET           | Deploy Fleet
 MAIN_FLEET_UNDEPLOY_FLEET         | Undeploy Fleet
+MAIN_FLEET_INVALID_RETREAT        | Invalid Retreat
+MAIN_FLEET_INVALID_DESTINATION    | Cannot send fleet to %1
+MAIN_FLEET_INVALID_DESTINATION2   | Cannot send fleet to this system
 
 // Rally Point labels
 MAIN_RALLY_TITLE                  | Setting Rally Point

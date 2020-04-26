@@ -26,6 +26,7 @@ public interface Sprite {
     void hovering(boolean b);
     void draw(GalaxyMapPanel map, Graphics2D g2);
     boolean isSelectableAt(GalaxyMapPanel map, int mapX, int mapY);
+    default float selectDistance(GalaxyMapPanel map, int mapX, int mapY)  { return 0.0f; }
 
     default boolean persistOnClick()             { return false; }
     default void repaint(GalaxyMapPanel map)     { map.repaint(); }
