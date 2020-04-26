@@ -107,7 +107,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         return parent.shipFleetToDisplay();
     }
     @Override
-    public boolean hoverOverFleets()               { return ((selectedFleet() == null) || !selectedFleet().canSend()); }
+    public boolean hoverOverFleets()               { return (selectedFleet() == null) || (selectedFleet().empire() != player()); }
     @Override
     public boolean hoverOverFlightPaths()          { return selectedFleet() == null; }
     public StarSystem displayedDestination() {
