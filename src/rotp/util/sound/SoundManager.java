@@ -29,10 +29,14 @@ public enum SoundManager implements Base {
     public static SoundManager current() { return INSTANCE; }
     private boolean soundsDisabled = false;
     private static final String soundListDir = "data/sounds/";
-    private static final String listFileName = "audio.txt";
+    private static final String soundsFileName = "audio_sounds.txt";
+    private static final String musicFileName = "audio_music.txt";
     public static String errorString = "";
+    private static int soundLevel = 10;
+    private static int musicLevel = 10;
 
     private final HashMap<String, Sound> sounds = new HashMap<>();
+    private final HashMap<String, Sound> music = new HashMap<>();
     private String currentAmbienceKey = "";
     private SoundClip currentAmbience;
 
@@ -51,6 +55,7 @@ public enum SoundManager implements Base {
         long st = System.currentTimeMillis();
         try {
             loadSoundFiles(soundListDir);
+            loadMusicFiles(soundListDir);
         }
         catch(Exception | NoClassDefFoundError e) {
             log("SoundManager.init error: "+e.getMessage());
@@ -58,6 +63,10 @@ public enum SoundManager implements Base {
         }
         log("SoundManager loaded: ", str(System.currentTimeMillis()-st), "ms");
     }
+    public static int soundLevel()       { return soundLevel; }
+    public static void soundLevel(int v) { soundLevel = Math.max(0, Math.min(10,v)); }
+    public static int musicLevel()       { return musicLevel; }
+    public static void musicLevel(int v) { musicLevel = Math.max(0, Math.min(10,v)); }
     public boolean disabled()     { return soundsDisabled; }
     public boolean playSounds()   { return !soundsDisabled && UserPreferences.playSounds(); }
     public boolean playMusic()    { return !soundsDisabled && UserPreferences.playMusic(); }
@@ -83,6 +92,36 @@ public enum SoundManager implements Base {
             log("SoundManager.music error1: "+e.getMessage());
             disableOnError("on toggle:"+e.getMessage());
         }
+    }
+    public void increaseMusicLevel()    { 
+        musicLevel = min(10, musicLevel+1); 
+        resetMusicVolumes();
+        UserPreferences.save();
+    }
+    public void decreaseMusicLevel()    { 
+        musicLevel = max(0, musicLevel-1); 
+        resetMusicVolumes(); 
+        UserPreferences.save();
+    };
+    public void increaseSoundLevel()    { 
+        soundLevel = min(10, soundLevel+1); 
+        resetSoundVolumes(); 
+        UserPreferences.save();
+    }
+    public void decreaseSoundLevel()    { 
+        soundLevel = max(0, soundLevel-1); 
+        resetSoundVolumes(); 
+        UserPreferences.save();
+    }
+    private void resetSoundVolumes() {
+        float vol = soundLevel/10.0f;
+        for (Sound s: sounds.values())
+            s.setVolume(vol);
+    }
+    private void resetMusicVolumes() {
+        float vol = musicLevel/10.0f;
+        for (Sound s: music.values())
+            s.setVolume(vol);
     }
     private void pauseAmbience() {
         if (currentAmbience != null)
@@ -149,13 +188,13 @@ public enum SoundManager implements Base {
         return null;
     }
     private SoundClip playContinuously(String key) {
-        Sound s = sounds.get(key);
+        Sound s = music.get(key);
         return (s == null) ? null : s.playContinuously(s.gain);
     }
     public List<String> loadSoundFiles(String dir) {
         log("Loading Sounds: ", dir);
         List<String> soundKeysAdded = new ArrayList<>();
-        BufferedReader in = reader(dir+listFileName);
+        BufferedReader in = reader(dir+soundsFileName);
         if (in == null)
             return soundKeysAdded;
 
@@ -163,6 +202,27 @@ public enum SoundManager implements Base {
             String input;
             while ((input = in.readLine()) != null) {
                 String goodKey = loadSoundDataFile(input.trim());
+                if (goodKey != null)
+                    soundKeysAdded.add(goodKey);
+            }
+            in.close();
+        }
+        catch (IOException e) {
+            err("SoundManager.loadSoundFiles -- IOException: " + e);
+        }
+        return soundKeysAdded;
+    }
+    public List<String> loadMusicFiles(String dir) {
+        log("Loading Music: ", dir);
+        List<String> soundKeysAdded = new ArrayList<>();
+        BufferedReader in = reader(dir+musicFileName);
+        if (in == null)
+            return soundKeysAdded;
+
+        try {
+            String input;
+            while ((input = in.readLine()) != null) {
+                String goodKey = loadMusicDataFile(input.trim());
                 if (goodKey != null)
                     soundKeysAdded.add(goodKey);
             }
@@ -186,27 +246,55 @@ public enum SoundManager implements Base {
         String filename = vals.get(1);
         float gain = parseInt(vals.get(2))/100f;
         String playStyle = vals.get(3);
-        sounds.put(key, new Sound(filename, gain, playStyle));
+        sounds.put(key, new Sound(filename, gain, playStyle, false));
+        return key;
+    }
+    private String loadMusicDataFile(String line) {
+        if (isComment(line))
+            return null;
+
+        List<String> vals = substrings(line, ',');
+        if (vals.size() < 4) {
+            err("Not enough fields for music line: ", line);
+            return null;
+        }
+        String key = vals.get(0);
+        String filename = vals.get(1);
+        float gain = parseInt(vals.get(2))/100f;
+        String playStyle = vals.get(3);
+        music.put(key, new Sound(filename, gain, playStyle,true));
         return key;
     }
     private class Sound {
         private final String filename;
         private float gain = 0;
         public String style;
-        public Sound(String fn, float g, String s) {
+        boolean music = false;
+        public Sound(String fn, float g, String s, boolean b) {
             filename = fn;
             gain = g;
             style = s;
+            music = b;
+        }
+        public float masterVolume() {
+            if (music)
+                return SoundManager.musicLevel / 10.0f;
+            else
+                return SoundManager.soundLevel/ 10.0f;
+        }
+        public void setVolume(float vol) {
+            if (filename.endsWith("wav"))
+                WavClip.setVolume(filename, vol);
         }
         public SoundClip play(float gain) {
             if (filename.endsWith("wav"))
-                return WavClip.play(filename, gain);
+                return WavClip.play(filename, gain, masterVolume());
             else
                 return null;
         }
         public SoundClip playContinuously(float gain) {
             if (filename.endsWith("wav"))
-                return WavClip.playContinuously(filename, gain, style);
+                return WavClip.playContinuously(filename, gain, style, masterVolume());
             else
                 return null;
         }

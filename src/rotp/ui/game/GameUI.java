@@ -27,6 +27,8 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 import java.awt.geom.Point2D;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -46,7 +48,7 @@ import rotp.util.LanguageManager;
 import rotp.util.sound.SoundManager;
 import rotp.util.ThickBevelBorder;
 
-public class GameUI  extends BasePanel implements MouseListener, MouseMotionListener, ActionListener {
+public class GameUI  extends BasePanel implements MouseListener, MouseMotionListener, MouseWheelListener, ActionListener {
     private static final long serialVersionUID = 1L;
     public static String AMBIENCE_KEY = "IntroAmbience";
     protected static RoundGradientPaint rgp;
@@ -327,6 +329,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     private void initModel() {
         setOpaque(false);
         addMouseListener(this);
+        addMouseWheelListener(this);
         addMouseMotionListener(this);
         languagePanel.setVisible(false);
         add(languagePanel);
@@ -585,7 +588,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         if (SoundManager.current().disabled())
             return text("GAME_SOUNDS_DISABLED", "");
         else if (SoundManager.current().playSounds())
-            return text("GAME_SOUNDS_ON");
+            return text("GAME_SOUNDS_ON", str(SoundManager.soundLevel()));
         else
             return text("GAME_SOUNDS_OFF");
     }
@@ -596,7 +599,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             return soundsStr();
     }
     private String musicStr() {
-        return SoundManager.current().playMusic() ? text("GAME_MUSIC_ON") : text("GAME_MUSIC_OFF");
+        return SoundManager.current().playMusic() ? text("GAME_MUSIC_ON",str(SoundManager.musicLevel())) : text("GAME_MUSIC_OFF");
     }
     private String memoryStr() {
         return UserPreferences.showMemory() ? text("GAME_MEMORY_SHOW") : text("GAME_MEMORY_HIDE");
@@ -614,10 +617,24 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         memoryText.repaint(memoryStr());
         repaint();
     }
+    private void scrollSounds(boolean up) {
+        if (up)
+            SoundManager.current().increaseSoundLevel();
+        else
+            SoundManager.current().decreaseSoundLevel();
+        soundsText.repaint(soundsStr(), soundsHoverStr());
+    }
     private void toggleSounds() {
         softClick();
         SoundManager.current().toggleSounds();
         soundsText.repaint(soundsStr(), soundsHoverStr());
+    }
+    private void scrollMusic(boolean up) {
+        if (up)
+            SoundManager.current().increaseMusicLevel();
+        else
+            SoundManager.current().decreaseMusicLevel();
+        musicText.repaint(musicStr());
     }
     private void toggleMusic() {
         softClick();
@@ -750,6 +767,14 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
                     hoverBox.mouseEnter();
             }
         }
+    }
+    @Override
+    public void mouseWheelMoved(MouseWheelEvent e) {
+        boolean up = e.getWheelRotation() < 0;
+        if (hoverBox == soundsText)
+            scrollSounds(up);
+        else if (hoverBox == musicText)
+            scrollMusic(up);
     }
     public class GameLanguagePane extends BasePanel implements MouseListener, MouseMotionListener {
         private static final long serialVersionUID = 1L;

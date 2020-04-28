@@ -1,0 +1,34 @@
+# key                   , filename                           , gain (0 to 100), playtype
+
+# UI click sounds
+ButtonClick             , data/sounds/click_button.wav       , 100            ,
+SoftClick               , data/sounds/click_soft.wav         , 50             ,
+MisClick                , data/sounds/click_invalid.wav      , 100            ,
+MapClick                , data/sounds/click_map.wav          , 50             ,
+MenuClick               , data/sounds/click_menu.wav         , 100            ,
+
+#Ship Landings
+AlkariShip               , data/sounds/ship_alkari.wav        , 100            ,
+BulrathiShip             , data/sounds/ship_bulrathi.wav      , 100            ,
+DarlokShip               , data/sounds/ship_darlok.wav        , 100            ,
+HumanShip                , data/sounds/ship_human.wav         , 100            ,
+KlackonShip              , data/sounds/ship_klackon.wav       , 100            ,
+MeklarShip               , data/sounds/ship_meklar.wav        , 100            ,
+MrrshanShip              , data/sounds/ship_mrrshan.wav       , 100            ,
+PsilonShip               , data/sounds/ship_psilon.wav        , 100            ,
+SakkraShip               , data/sounds/ship_sakkra.wav        , 100            ,
+SilicoidShip             , data/sounds/ship_silicoid.wav      , 100            ,
+
+#Ground Combat
+GroundBattle             , data/sounds/groundcombat_battle.wav   , 100            , L
+
+#ShipCombat
+ShipRetreat              , data/sounds/shipcombat_retreat.wav    , 100            ,
+ShipExplosion            , data/sounds/shipcombat_destroyed.wav  , 200            ,
+ShipLaser                , data/sounds/shipcombat_laser.wav      ,  50            ,
+ShipMultiLaser           , data/sounds/shipcombat_gatling.wav    , 100            ,
+
+#Sabotage
+SabotageRiot             , data/sounds/sabotage_riot.wav         , 100            ,
+SabotageExplosion        , data/sounds/sabotage_explosion.wav    , 100            , 
+

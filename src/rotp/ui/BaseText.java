@@ -99,7 +99,7 @@ public class BaseText implements Base {
         displayText(s);
         int newW = stringWidth(g);
         g.dispose();
-        bounds.width = max(oldW, newW);
+        bounds.width = max(oldW, newW)+scaled(5);
         repaint();
     }
     public void repaint(String s1, String s2) {
@@ -109,7 +109,7 @@ public class BaseText implements Base {
         hoverText(s2);
         int newW = stringWidth(g);
         g.dispose();
-        bounds.width = max(oldW, newW);
+        bounds.width = max(oldW, newW)+scaled(5);
         repaint();
     }
     public void repaint() {

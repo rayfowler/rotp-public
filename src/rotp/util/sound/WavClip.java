@@ -32,31 +32,40 @@ public class WavClip  implements SoundClip, Base {
     Clip clip;
     boolean loaded = false;
     String filename;
-    float volume;
+    float gain;
     int position = 0;
     boolean continuous = false;
     String style = "";
     
-    public static WavClip play(String fn, float vol) {
+    public static WavClip play(String fn, float clipGain, float masterVolume) {
         if (!loadedClips.containsKey(fn)) 
-            loadedClips.put(fn, new WavClip(fn, vol));
+            loadedClips.put(fn, new WavClip(fn, clipGain));
         
         WavClip wc = loadedClips.get(fn);
+        wc.setVolume(masterVolume);
         wc.play();
         return wc;
     }
-    public static WavClip playContinuously(String fn, float vol, String s) {
+    public static WavClip playContinuously(String fn, float clipGain, String s, float masterVolume) {
          if (!loadedClips.containsKey(fn)) 
-            loadedClips.put(fn, new WavClip(fn, vol));
+            loadedClips.put(fn, new WavClip(fn, clipGain));
         
         WavClip wc = loadedClips.get(fn);
+        wc.setVolume(masterVolume);
         wc.style = s;
         wc.playContinuously();
         return wc;
     }          
-    public  WavClip(String fn, float vol) {
+    public static void setVolume(String fn, float vol) {
+         if (!loadedClips.containsKey(fn))
+             return;
+        
+        WavClip wc = loadedClips.get(fn);
+        wc.setVolume(vol);
+    }          
+    public WavClip(String fn, float vol) {
         filename = fn;
-        volume = vol;
+        gain = vol;
         loaded = false;
         
         AudioInputStream ais = null;
@@ -68,7 +77,7 @@ public class WavClip  implements SoundClip, Base {
                 clip = (Clip)AudioSystem.getLine(info);
                 clip.open(ais);
                 if (vol < 1 && clip.isControlSupported(MASTER_GAIN)) {
-                    log("setting volume for sound: "+fn+"  to "+(int)(vol*100));
+                    log("setting gain for sound: "+filename+"  to "+(int)(gain*100));
                     FloatControl gain = (FloatControl) clip.getControl(MASTER_GAIN);
                     gain.setValue(20f * (float) Math.log10(vol));
                 }
@@ -83,6 +92,15 @@ public class WavClip  implements SoundClip, Base {
             if (ais != null)
                 try { ais.close(); } catch (IOException e) {}
         }
+    }
+    public void setVolume(float masterVolume) {
+        if (!clip.isControlSupported(MASTER_GAIN))
+            return;
+        
+        float volume = min(1.0f, masterVolume*gain);
+        log("setting volume*gain for sound: "+filename+"  to "+(int)(volume*100));
+        FloatControl gain = (FloatControl) clip.getControl(MASTER_GAIN);
+        gain.setValue(20f * (float) Math.log10(volume));
     }
     public void play() {
         clip.setFramePosition(position);

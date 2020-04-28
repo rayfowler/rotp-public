@@ -28,6 +28,7 @@ import java.util.HashMap;
 import java.util.List;
 import rotp.Rotp;
 import rotp.util.LanguageManager;
+import rotp.util.sound.SoundManager;
 
 public class UserPreferences {
     private static final String PREFERENCES_FILE = "Remnants.cfg";
@@ -90,6 +91,8 @@ public class UserPreferences {
             out.println(keyFormat("ANIMATIONS")+ yesOrNo(playAnimations));
             out.println(keyFormat("MUSIC")+ yesOrNo(playMusic));
             out.println(keyFormat("SOUNDS")+ yesOrNo(playSounds));
+            out.println(keyFormat("MUSIC_VOLUME")+ SoundManager.musicLevel());
+            out.println(keyFormat("SOUND_VOLUME")+ SoundManager.soundLevel());
             out.println(keyFormat("SHOW_MEMORY")+ yesOrNo(showMemory));
             out.println(keyFormat("DISPLAY_YEAR")+ yesOrNo(displayYear));
             out.println(keyFormat("SCREEN_SIZE_PCT")+ screenSizePct());
@@ -123,6 +126,8 @@ public class UserPreferences {
             case "ANIMATIONS":   playAnimations = yesOrNo(val); return;
             case "MUSIC":        playMusic = yesOrNo(val); return;
             case "SOUNDS":       playSounds = yesOrNo(val); return;
+            case "MUSIC_VOLUME": SoundManager.musicLevel(Integer.valueOf(val)); return;
+            case "SOUND_VOLUME": SoundManager.soundLevel(Integer.valueOf(val)); return;
             case "SHOW_MEMORY":  showMemory = yesOrNo(val); return;
             case "DISPLAY_YEAR": displayYear = yesOrNo(val); return;
             case "SCREEN_SIZE_PCT": screenSizePct(Integer.valueOf(val)); return;
