@@ -30,6 +30,8 @@ public class SwingExceptionHandler implements Thread.UncaughtExceptionHandler {
                 Thread.currentThread().interrupt();
             } catch (InvocationTargetException ite) {
                 ite.getCause().printStackTrace();
+            } catch (IllegalArgumentException ite) {
+                ite.getCause().printStackTrace();
             }
         }
     }

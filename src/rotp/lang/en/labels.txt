@@ -284,7 +284,7 @@ GAME_VERSION                      | Version: %1
 GAME_LANGUAGE                     | Language: %1
 GAME_SOUNDS_ON                    | Sounds: ON
 GAME_SOUNDS_OFF                   | Sounds: OFF
-GAME_SOUNDS_DISABLED              | Sounds: DISABLED
+GAME_SOUNDS_DISABLED              | Sounds: ERROR %1
 GAME_MUSIC_ON                     | Music: ON
 GAME_MUSIC_OFF                    | Music: OFF
 GAME_TEXTURES_ON                  | Textures: ON

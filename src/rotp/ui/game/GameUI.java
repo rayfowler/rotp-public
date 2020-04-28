@@ -322,9 +322,9 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         translatorText.disabled(true);
         versionText.disabled(true);
         setTextValues();
-        init();
+        initModel();
     }
-    private void init() {
+    private void initModel() {
         setOpaque(false);
         addMouseListener(this);
         addMouseMotionListener(this);
@@ -341,6 +341,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         restartText.displayText(text("GAME_MENU_RESTART"));
 
         soundsText.displayText(soundsStr());
+        soundsText.hoverText(soundsHoverStr());
         musicText.displayText(musicStr());
         texturesText.displayText(texturesStr());
         animationsText.displayText(animationsStr());
@@ -582,11 +583,17 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     }
     private String soundsStr() {
         if (SoundManager.current().disabled())
-            return text("GAME_SOUNDS_DISABLED");
+            return text("GAME_SOUNDS_DISABLED", "");
         else if (SoundManager.current().playSounds())
             return text("GAME_SOUNDS_ON");
         else
             return text("GAME_SOUNDS_OFF");
+    }
+    private String soundsHoverStr() {
+        if (SoundManager.current().disabled())
+            return text("GAME_SOUNDS_DISABLED", SoundManager.errorString);
+        else 
+            return soundsStr();
     }
     private String musicStr() {
         return SoundManager.current().playMusic() ? text("GAME_MUSIC_ON") : text("GAME_MUSIC_OFF");
@@ -610,7 +617,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     private void toggleSounds() {
         softClick();
         SoundManager.current().toggleSounds();
-        soundsText.repaint(soundsStr());
+        soundsText.repaint(soundsStr(), soundsHoverStr());
     }
     private void toggleMusic() {
         softClick();
@@ -630,6 +637,12 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             UserPreferences.toggleAnimations();
             animationsText.repaint(animationsStr());
         }
+    }
+    @Override
+    public void playAmbience() {
+        // in case playing ambience causes a sound error
+        super.playAmbience();
+        setTextValues();
     }
     @Override
     public void mouseClicked(MouseEvent e) { }

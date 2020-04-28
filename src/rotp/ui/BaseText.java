@@ -34,7 +34,7 @@ public class BaseText implements Base {
     private final Color enabledC, disabledC, hoverC, depressedC, shadeC;
     private final int topLBdr, btmRBdr, bdrStep;
     private final Rectangle bounds = new Rectangle();
-    private String text;
+    private String text, hoverText;
     private int x,y;
     private boolean disabled;
     private boolean depressed = false;
@@ -72,6 +72,7 @@ public class BaseText implements Base {
     @Override
     public String toString()  { return concat("Text:", text, "  at:", bounds.toString()); }
     public void displayText(String s) { text = s; }
+    public void hoverText(String s)   { hoverText = s; }
     public int x()                    { return bounds.x; }
     public int y()                    { return bounds.y; }
     public int w()                    { return bounds.width; }
@@ -96,6 +97,16 @@ public class BaseText implements Base {
         Graphics g = panel.getGraphics();
         int oldW = stringWidth(g);
         displayText(s);
+        int newW = stringWidth(g);
+        g.dispose();
+        bounds.width = max(oldW, newW);
+        repaint();
+    }
+    public void repaint(String s1, String s2) {
+        Graphics g = panel.getGraphics();
+        int oldW = stringWidth(g);
+        displayText(s1);
+        hoverText(s2);
         int newW = stringWidth(g);
         g.dispose();
         bounds.width = max(oldW, newW);
@@ -138,7 +149,9 @@ public class BaseText implements Base {
         repaint();
     }
     public int stringWidth(Graphics g) {
-        return g.getFontMetrics(font()).stringWidth(text);
+        int sw1 = g.getFontMetrics(font()).stringWidth(text);
+        int sw2 = hoverText == null ? sw1 : g.getFontMetrics(font()).stringWidth(hoverText);
+        return max(sw1,sw2);
     }
     private Color textColor() {
         if (disabled)
@@ -149,6 +162,12 @@ public class BaseText implements Base {
             return hoverC;
         else
             return enabledC;
+    }
+    private String displayText() {
+        if (hovered && (hoverText != null))
+            return hoverText;
+        else
+            return text;
     }
     public int draw() {
         return draw(panel.getGraphics());
@@ -167,8 +186,8 @@ public class BaseText implements Base {
         g.setColor(textColor());
         int sw = stringWidth(g);
         int fontH = g.getFontMetrics().getHeight();
-        setBounds(x1,y1-fontH,sw+scaled(5),fontH);
-        g.drawString(text, x1, y1);
+        setBounds(x1,y1-fontH,sw+scaled(5),fontH+(fontH/5));
+        g.drawString(displayText(), x1, y1);
         return x1+sw;
     }
     public int drawCentered(Graphics g) {
@@ -206,7 +225,7 @@ public class BaseText implements Base {
         Color c0 = textColor();
         g.setColor(c0);
         g.drawImage(textShadow, x1-hPad, y1-fontH, null);
-        g.drawString(text, x1, y1);
+        g.drawString(displayText(), x1, y1);
         return x1+sw;
     }
 }

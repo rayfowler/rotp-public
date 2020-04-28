@@ -30,6 +30,7 @@ public enum SoundManager implements Base {
     private boolean soundsDisabled = false;
     private static final String soundListDir = "data/sounds/";
     private static final String listFileName = "audio.txt";
+    public static String errorString = "";
 
     private final HashMap<String, Sound> sounds = new HashMap<>();
     private String currentAmbienceKey = "";
@@ -53,7 +54,7 @@ public enum SoundManager implements Base {
         }
         catch(Exception | NoClassDefFoundError e) {
             log("SoundManager.init error: "+e.getMessage());
-            disableSounds();
+            disableOnError("on init: "+e.getMessage());
         }
         log("SoundManager loaded: ", str(System.currentTimeMillis()-st), "ms");
     }
@@ -61,6 +62,10 @@ public enum SoundManager implements Base {
     public boolean playSounds()   { return !soundsDisabled && UserPreferences.playSounds(); }
     public boolean playMusic()    { return !soundsDisabled && UserPreferences.playMusic(); }
     public void disableSounds()   { soundsDisabled = true; }
+    private void disableOnError(String s) {
+        disableSounds();
+        errorString = s;
+    }
 
     public void toggleSounds()    { UserPreferences.toggleSounds(); }
     public void toggleMusic()     {
@@ -76,7 +81,7 @@ public enum SoundManager implements Base {
         }
         catch (Exception e) {
             log("SoundManager.music error1: "+e.getMessage());
-            disableSounds();
+            disableOnError("on toggle:"+e.getMessage());
         }
     }
     private void pauseAmbience() {
@@ -112,7 +117,13 @@ public enum SoundManager implements Base {
             currentAmbience.pausePlaying();
 
         currentAmbienceKey = key;
-        currentAmbience = playContinuously(key);
+        try {
+            currentAmbience = playContinuously(key);
+        }
+        catch (IllegalArgumentException e) {
+            log("error: "+e.toString());
+            disableOnError("on ambience:"+e.getMessage());
+        }
     }
     @Override
     public SoundClip playAudioClip(String key) {
@@ -127,7 +138,7 @@ public enum SoundManager implements Base {
         }
         catch (Exception e) {
             log("SoundManager.audio error1: "+e.getMessage());
-                disableSounds();
+            disableOnError("on play:"+e.getMessage());
         }
         return null;
     }
