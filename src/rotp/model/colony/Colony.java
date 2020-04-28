@@ -142,6 +142,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         // production vs its maximum possible formula
         float factories = industry().factories();
         float maxFactories = industry().maxFactories();
+        factories = factories > maxFactories ? maxFactories : factories;
         float pop = population();
         float maxPop = planet().maxSize();
         
