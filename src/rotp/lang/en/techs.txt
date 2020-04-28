@@ -143,9 +143,11 @@ BATTLESUIT_3_DETAIL  | Combines high mobility, anti-grav flight, and heavy armor
 // Energy Focus techs for beam weapons
 // 
 BEAMFOCUS_0_NAME    | High Energy Focus
+BEAMFOCUS_0_BRIEF   | Adds +3 to energy weapon range
 BEAMFOCUS_0_DETAIL  | Increases the firing range of all energy weapons by three.
 
 BEAMFOCUS_1_NAME    | Oracle Interface
+BEAMFOCUS_1_BRIEF   | Concentrate beam weapons, halve enemy's shield
 BEAMFOCUS_1_DETAIL  | Coordinates all beam weapon attacks into one simultaneous burst of concentrated fire, halving the enemy's shield strength.
 
 
