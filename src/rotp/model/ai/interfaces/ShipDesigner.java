@@ -30,6 +30,7 @@ public interface ShipDesigner {
     
     int optimalShipDestroyerSize();
     int optimalShipFighterSize();
+    int optimalShipBomberSize();
     
     ShipDesign newScoutDesign();
     ShipDesign newFighterDesign(int size);

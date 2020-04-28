@@ -17,6 +17,7 @@ package rotp.model.ai.community;
 
 import java.util.ArrayList;
 import java.util.List;
+import rotp.model.ai.ShipBomberTemplate;
 import rotp.model.ai.ShipDestroyerTemplate;
 import rotp.model.ai.ShipFighterTemplate;
 import rotp.model.ai.interfaces.ShipDesigner;
@@ -47,7 +48,7 @@ public class AICShipDesigner implements Base, ShipDesigner {
     public AICShipDesigner (Empire c) {
         empire = c;
     }
-   @Override
+    @Override
     public String toString()   { return concat("ShipDesigner: ", empire.raceName()); }
     @Override
     public Empire empire()     { return empire; }
@@ -110,7 +111,7 @@ public class AICShipDesigner implements Base, ShipDesigner {
             log("Scrapping obsolete design: "+d.name());
         }
     }
-     public void updateScoutDesign() {
+    public void updateScoutDesign() {
         ShipDesignLab lab = lab();
         
         // if we are not using scouts anymore, quit
@@ -210,14 +211,13 @@ public class AICShipDesigner implements Base, ShipDesigner {
         boolean betterArmor = (newDesign.armor().sequence() > currDesign.armor().sequence());
 
         float computerAdj = (newDesign.computer().level()+1) / (currDesign.computer().level()+1);
-        float shieldAdj = (newDesign.shield().level()+1) / (currDesign.computer().level()+1);
         float manvAdj = (newDesign.maneuver().level()+1) / (currDesign.maneuver().level()+1);
         float dmgRatio = newDesign.firepower(oppShield)/ currDesign.firepower(oppShield);
 
         // multiply various upgrade conditions... (1.05 * 1.25 * ... etc)
         // more willing to upgrade when not at war
         float upgradeThreshold = empire.atWar() ? 2 : 1.5f;
-        float upgradeChance = dmgRatio * computerAdj * shieldAdj * manvAdj;
+        float upgradeChance = dmgRatio * computerAdj * manvAdj;
 
         if (!betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) )
             return;
@@ -439,81 +439,6 @@ public class AICShipDesigner implements Base, ShipDesigner {
         return design;
     }
     @Override
-    public ShipDesign newBomberDesign(int size) {
-        ShipDesignLab lab = lab();
-        ShipDesign design = lab.newBlankDesign(size);
-        design.engine(lab.fastestEngine());
-        design.armor(lab.bestArmor());
-        design.mission(ShipDesign.BOMBER);
-        design.maxUnusedTurns(OBS_BOMBER_TURNS);
-
-        //int slot = 0;
-        ShipWeapon bestWpn = lab.bestPlanetWeapon(design, 1);
-
-        // if best weapon is a missile, put at least 1 of the best non-missile on the ship
-        if (bestWpn.isLimitedShotWeapon())
-            bestWpn = lab.bestUnlimitedShotWeapon(design, 1);
-
-        design.addWeapon(bestWpn, 1);
-
-        // go through loop. upgrade comp. add wpn. upgrd manvr. add wpn. upgrd shield. add wpn
-        boolean finished = false;
-        int wpnCount = 0;
-        int maxFitCount = 0;
-
-        while (!finished) {
-            wpnCount++;
-            finished = true;
-            ShipManeuver nextManv = lab.nextBestManeuver(design, .25f);
-            if (nextManv != null) {
-                design.maneuver(nextManv);
-                finished = false;
-            }
-            bestWpn = lab.bestPlanetWeapon(design, 1);
-            if (bestWpn != null) {
-                maxFitCount = (int) Math.floor(design.availableSpace() / bestWpn.space(design));
-                if (maxFitCount > 0) {
-                    design.addWeapon(bestWpn, Math.min(wpnCount, maxFitCount));
-                    finished = false;
-                }
-            }
-            ShipECM nextECM = lab.nextBestECM(design, .25f);
-            if (nextECM != null) {
-                design.ecm(nextECM);
-                finished = false;
-            }
-            bestWpn = lab.bestPlanetWeapon(design, 1);
-            if (bestWpn != null) {
-                maxFitCount = (int) Math.floor(design.availableSpace() / bestWpn.space(design));
-                if (maxFitCount > 0) {
-                    design.addWeapon(bestWpn, Math.min(wpnCount, maxFitCount));
-                    finished = false;
-                }
-            }
-            ShipShield nextShield = lab.nextBestShield(design, .25f);
-            if (nextShield != null) {
-                design.shield(nextShield);
-                finished = false;
-            }
-            bestWpn = lab.bestPlanetWeapon(design, 1);
-            if (bestWpn != null) {
-                maxFitCount = (int) Math.floor(design.availableSpace() / bestWpn.space(design));
-                if (maxFitCount > 0) {
-                    design.addWeapon(bestWpn, Math.min(wpnCount, maxFitCount));
-                    finished = false;
-                }
-            }
-            ShipComputer nextComp = lab.nextBestComputer(design, .25f);
-            if (nextComp != null) {
-                design.computer(nextComp);
-                finished = false;
-            }
-        }
-        lab.nameDesign(design);
-        lab.iconifyDesign(design);
-        return design;
-    }
-    @Override
     public int optimalShipFighterSize() {
         int preferredSize = empire.race().preferredShipSize();
         if (preferredSize == ShipDesign.SMALL)
@@ -533,6 +458,7 @@ public class AICShipDesigner implements Base, ShipDesigner {
             maxSize = ShipDesign.MEDIUM;
         return min(preferredSize, maxSize);
     }
+    @Override
     public int optimalShipBomberSize() {
         int preferredSize = empire.race().preferredShipSize()+1;
         if (preferredSize == ShipDesign.LARGE)
@@ -573,6 +499,13 @@ public class AICShipDesigner implements Base, ShipDesigner {
         ShipDesign design = ShipFighterTemplate.newDesign(this);
         design.mission(ShipDesign.FIGHTER);
         design.maxUnusedTurns(OBS_FIGHTER_TURNS);
+        return design;
+    }
+    @Override
+    public ShipDesign newBomberDesign(int size) {
+        ShipDesign design = ShipBomberTemplate.newDesign(this);
+        design.mission(ShipDesign.BOMBER);
+        design.maxUnusedTurns(OBS_BOMBER_TURNS);
         return design;
     }
     @Override
