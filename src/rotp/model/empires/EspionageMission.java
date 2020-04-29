@@ -50,18 +50,24 @@ public class EspionageMission implements Base, Serializable {
                 techChoices.put(catId, t.id());
         }
 
-        List<Empire> commonContacts = new ArrayList<>();
-        for (Empire emp1 : sn.owner().contactedEmpires()) {
-            EmpireView  eview2 = sn.empire().viewForEmpire(emp1);
-            if ((eview2 != null) && eview2.embassy().contact())
-                commonContacts.add(emp1);
+        // build a list of potential empires to frame. Both the spy and victim
+        // empire must be in a contact with the framed empire, and the framed
+        // empire must be in economic range (i.e. able to spy) of the victim
+        List<Empire> potentialFrames = new ArrayList<>();
+        Empire spyEmp = sn.owner();
+        Empire victimEmp = sn.empire();
+        List<Empire> spyContacts = spyEmp.contactedEmpires();
+        List<Empire> victimContacts = victimEmp.contactedEmpires();
+        for (Empire framedEmp : spyContacts) {
+            if (victimContacts.contains(framedEmp) && victimEmp.inEconomicRange(framedEmp.id))
+                potentialFrames.add(framedEmp);
         }
 
-        if (commonContacts.size() > 1) {
-            Empire frame1 = random(commonContacts);
-            commonContacts.remove(frame1);
+        if (potentialFrames.size() > 1) {
+            Empire frame1 = random(potentialFrames);
+            potentialFrames.remove(frame1);
             empiresToFrame.add(frame1);
-            empiresToFrame.add(random(commonContacts));
+            empiresToFrame.add(random(potentialFrames));
         }
     }
     public void incident(EspionageTechIncident inc)  { incident = inc; }
