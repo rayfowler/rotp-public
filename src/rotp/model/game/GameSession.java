@@ -211,7 +211,7 @@ public final class GameSession implements Base, Serializable {
             systemsToAllocate().clear();
             shipsConstructed().clear();
             galaxy().startGame();
-            saveRecentSession();
+            saveRecentSession(false);
         }
         RotPUI.instance().mainUI().checkMapInitialized();
         RotPUI.instance().selectIntroPanel();
@@ -277,7 +277,7 @@ public final class GameSession implements Base, Serializable {
                 RotPUI.instance().mainUI().saveMapState();
                 log("Next Turn - BEGIN: ", str(galaxy.currentYear()));
                 log("Autosaving pre-turn");
-                instance.saveRecentSession();
+                instance.saveRecentSession(false);
                 
                 long startMs = timeMs();
                 systemsToAllocate().clear();
@@ -355,7 +355,7 @@ public final class GameSession implements Base, Serializable {
                 log("Autosaving post-turn");
                 log("NEXT TURN PROCESSING TIME: ", str(timeMs()-startMs));
                 NoticeMessage.resetSubstatus(text("TURN_SAVING"));
-                instance.saveRecentSession();
+                instance.saveRecentSession(true);
                 log("Reselecting main panel");
                 RotPUI.instance().mainUI().showDisplayPanel();
                 RotPUI.instance().selectMainPanel();
@@ -699,12 +699,14 @@ public final class GameSession implements Base, Serializable {
     public File recentSaveFile() {
         return new File(Rotp.jarPath(), GameSession.RECENT_SAVEFILE);
     }
-    public void saveRecentSession() {
+    public void saveRecentSession(boolean showWarning) {
         try {
             saveSession(RECENT_SAVEFILE);
         }
         catch(Exception e) {
             err("Error saving: ", RECENT_SAVEFILE, " - ", e.getMessage());
+            if (showWarning)
+                RotPUI.instance().mainUI().showAutosaveFailedPrompt(e.getMessage());
         }
     }
     public boolean hasRecentSession() {
@@ -734,7 +736,7 @@ public final class GameSession implements Base, Serializable {
             buffer.close();
             file.close();
             loadPreviousSession(newSession, startUp);
-            saveRecentSession();
+            saveRecentSession(false);
         }
         catch(IOException | ClassNotFoundException e) {
             throw new RuntimeException(text("LOAD_GAME_BAD_VERSION", filename));

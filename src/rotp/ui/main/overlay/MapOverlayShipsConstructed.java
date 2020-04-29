@@ -159,16 +159,19 @@ public class MapOverlayShipsConstructed extends MapOverlay {
         g.drawString(d.name(), x0, y);
 
         Image img = d.image();
-        int imgW = img.getWidth(null);
-        int imgH = img.getHeight(null);
-        float scale = min((float)w/imgW, (float)h/imgH);
+        
+        if (img != null) {
+            int imgW = img.getWidth(null);
+            int imgH = img.getHeight(null);
+            float scale = min((float)w/imgW, (float)h/imgH);
 
-        int w1 = (int)(scale*imgW);
-        int h1 = (int)(scale*imgH);
+            int w1 = (int)(scale*imgW);
+            int h1 = (int)(scale*imgH);
 
-        int x1 = x+((w-w1)/2);
-        int y1 = y+((h-h1)/2);
-        g.drawImage(img, x1, y1, x1+w1, y1+h1, 0, 0, imgW, imgH, parent);
+            int x1 = x+((w-w1)/2);
+            int y1 = y+((h-h1)/2);
+            g.drawImage(img, x1, y1, x1+w1, y1+h1, 0, 0, imgW, imgH, parent);
+        }
 
         int count = session().shipsConstructed().containsKey(d) ? session().shipsConstructed().get(d) : 0;
         String s = str(count);

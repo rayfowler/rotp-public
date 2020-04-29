@@ -552,6 +552,13 @@ MAIN_MEMORY_LOW_DESC_3            | If you see this message repeatedly, try clos
 MAIN_MEMORY_LOW_RESTART           | Restart
 MAIN_MEMORY_LOW_SKIP              | Skip
 
+// Autosave Failed Warning
+MAIN_AUTOSAVE_FAILED_TITLE        | Warning! Autosave Failed
+MAIN_AUTOSAVE_FAILED_DESC         | The automatic Autosave feature that is triggered when pressing "Next Turn" has failed. This could be a momentary glitch in the matrix, but please save this game manually before continuing.
+MAIN_AUTOSAVE_FAILED_DESC_2       | The message provided to the game for this error is: %1
+MAIN_AUTOSAVE_FAILED_DESC_3       | If you see this message frequently, please go online to www.reddit.com/r/rotp and post this screenshot.
+MAIN_AUTOSAVE_FAILED_OK           | OK
+
 // Spy Capture display (during next turn)
 MAIN_SPIES_CAUGHT_TITLE           | Spies Caught
 MAIN_SPIES_CAUGHT_YOURS           | Yours
