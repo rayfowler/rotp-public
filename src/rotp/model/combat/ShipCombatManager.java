@@ -231,8 +231,12 @@ public class ShipCombatManager implements Base {
     public void toggleAutoComplete() {
         autoComplete = !autoComplete;
         log("Toggling Auto Complete: "+autoComplete);
-        autoRunThread = new Thread(autoRunProcess());
-        autoRunThread.start();
+        if (autoComplete) {
+            autoRunThread = new Thread(autoRunProcess());
+            autoRunThread.start();
+        }
+        else
+            continueToNextPlayerStack();
     }
     public void resolveAllCombat() {
         autoComplete = true;
