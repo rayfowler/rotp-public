@@ -497,7 +497,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                     g.drawString(str2, w-sw2-s10, y0);
                     y0 -= s25;
                 }
-                String str3 = text("MAIN_FLEET_IN_TRANSIT");
+                String str3 = fl.retreating() ? text("MAIN_FLEET_RETREATING") : text("MAIN_FLEET_IN_TRANSIT");
                 int sw3 = g.getFontMetrics().stringWidth(str3);
                 g.drawString(str3, w-sw3-s10, y0);
                 y0 -= s25;

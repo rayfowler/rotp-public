@@ -379,6 +379,7 @@ MAIN_FLEET_TITLE                  | %1 Fleet
 MAIN_FLEET_IN_ORBIT               | In orbit
 MAIN_FLEET_DEPLOYED               | Deployed
 MAIN_FLEET_IN_TRANSIT             | In transit
+MAIN_FLEET_RETREATING             | Retreating
 MAIN_FLEET_LOCATION               | by %1
 MAIN_FLEET_ORIGIN                 | from %1
 MAIN_FLEET_DESTINATION            | to %1

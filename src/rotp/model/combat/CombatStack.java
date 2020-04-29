@@ -156,6 +156,7 @@ public class CombatStack implements Base {
     public boolean selectBestWeapon(CombatStack target)       { return false; }
     public boolean currentWeaponCanAttack(CombatStack target) { return false; }
     public boolean canAttack(CombatStack target)              { return false; }
+    public boolean canPotentiallyAttack(CombatStack target)   { return false; }
     public boolean canDamage(CombatStack target)              { return maxDamage() > target.shieldLevel(); }
     public float estimatedKills(CombatStack target)           { return 0; }
     public float estimatedKillPct(CombatStack target)         { return target.num == 0 ? 0 : estimatedKills(target) / target.num; }

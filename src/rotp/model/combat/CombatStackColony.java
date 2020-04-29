@@ -148,6 +148,8 @@ public class CombatStackColony extends CombatStack {
         return (num > 0) && currentWeaponCanAttack(target);
     }
     @Override
+    public boolean canPotentiallyAttack(CombatStack target)   { return (num > 0) && !empire.alliedWith(id(target.empire)); }
+    @Override
     public boolean canMove()               { return false; }
     @Override
     public boolean canMoveTo(int x, int y) { return false; }

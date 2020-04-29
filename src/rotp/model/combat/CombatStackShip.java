@@ -387,6 +387,18 @@ public class CombatStackShip extends CombatStack {
         return false;
     }
     @Override
+    public boolean canPotentiallyAttack(CombatStack st) {
+        if (st == null)
+            return false;
+        if (empire.alliedWith(id(st.empire)))
+            return false;
+        for (int i=0;i<weapons.size();i++) {
+            if (shipComponentCanPotentiallyAttack(st, i))
+                return true;
+        }
+        return false;
+    }
+    @Override
     public boolean isArmed() {
         for (int i=0;i<weapons.size();i++) {
             if (roundsRemaining[i] > 0) {
@@ -452,6 +464,26 @@ public class CombatStackShip extends CombatStack {
 
         int minMove = movePointsTo(target);
         if (weaponRange(shipWeapon) < minMove)
+            return false;
+
+        return true;
+    }
+    private boolean shipComponentCanPotentiallyAttack(CombatStack target, int index) {
+        if (target == null)
+            return false;
+
+        if (target.isMissile())
+            return false;
+
+        ShipComponent shipWeapon = weapons.get(index);
+
+        if ((shipWeapon == null) || !shipWeapon.isWeapon())
+            return false;
+
+        if (shipWeapon.isLimitedShotWeapon() && (roundsRemaining[index] < 1))
+            return false;
+
+        if (shipWeapon.groundAttacksOnly() && !target.isColony())
             return false;
 
         return true;

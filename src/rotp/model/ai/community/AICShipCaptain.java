@@ -269,41 +269,51 @@ public class AICShipCaptain implements Base, ShipCaptain {
         return validPaths.get(0);
     }
     @Override
-    public boolean wantToRetreat(CombatStack stack) {
+    public boolean wantToRetreat(CombatStack currStack) {
         // armed stacks controlled by players will never retreat
         // when the player is auto-resolving
-        if (!stack.usingAI() && stack.isArmed())
+        if (!currStack.usingAI() && currStack.isArmed())
             return false;
 
-        if (!stack.canRetreat())
+        if (!currStack.canRetreat()) 
             return false;
-        if (!stack.canMove())
+        
+        if (!currStack.canMove()) 
             return false;
 
         // don't retreat if we still have missiles in flight
-        List<CombatStack> stacks = new ArrayList<>(stack.mgr.activeStacks());
-        for (CombatStack st: stacks) {
+        List<CombatStack> activeStacks = new ArrayList<>(currStack.mgr.activeStacks());
+        for (CombatStack st: activeStacks) {
             for (CombatStackMissile miss: st.missiles()) {
-                if (miss.owner == stack) 
+                if (miss.owner == currStack) 
                     return false;
             }
         }
         
         // if stack is pacted with colony and doesn't want war, then retreat
         if (combat().results().colonyStack != null) {
-            EmpireView cv = stack.empire.viewForEmpire(combat().results().colonyStack.empire);
-            if ((cv != null) && cv.embassy().pact() && !cv.embassy().wantWar())
+            EmpireView cv = currStack.empire.viewForEmpire(combat().results().colonyStack.empire);
+            if ((cv != null) && cv.embassy().pact() && !cv.embassy().wantWar())  
                 return true;
         }
 
         // if stack has ward still in combat, don't retreat
-        if (stack.hasWard() && stack.isArmed()) {
-            if (combat().activeStacks().contains(stack.ward()))
+        if (currStack.hasWard() && currStack.isArmed()) {
+            if (activeStacks.contains(currStack.ward())) 
                 return false;
         }
 
-        if (facingOverwhelmingForce(stack)) {
-            log(stack.toString()+" retreating from overwhelming force");
+        // don't retreat if all enemies can only target planets
+        boolean canBeTargeted = false;
+        for (CombatStack st: activeStacks) {
+            if (st.canPotentiallyAttack(currStack))
+                canBeTargeted = true;
+        }
+        if (!canBeTargeted)
+            return false;
+        
+        if (facingOverwhelmingForce(currStack)) {
+            log(currStack.toString()+" retreating from overwhelming force");
             return true;
         }
 
