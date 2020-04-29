@@ -140,8 +140,8 @@ public final class Colony implements Base, IMappedObject, Serializable {
     public float currentProductionCapacity() {
         // returns a pct (0 to 1) representing the colony's current
         // production vs its maximum possible formula
-        float factories = industry().factories();
         float maxFactories = industry().maxFactories();
+        float factories = min(maxFactories, industry().factories());
         float pop = population();
         float maxPop = planet().maxSize();
         
