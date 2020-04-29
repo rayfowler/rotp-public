@@ -418,24 +418,27 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         list1.add(5);
 
         //secondary color list
-        List<Integer> list2 = new ArrayList<>();
-        list2.add(6);
-        list2.add(7);
-        list2.add(8);
-        list2.add(9);
+        List<Integer> list1a = new ArrayList<>();
+        list1a.add(6);
+        list1a.add(7);
+        list1a.add(8);
+        list1a.add(9);
 
         // start repeating the 10-color list for copies of races (up to 5 per race)
-        List<Integer> list3 = new ArrayList<>(list1);
-        list3.addAll(list2);
-        List<Integer> list4 = new ArrayList<>(list3);
-        List<Integer> list5 = new ArrayList<>(list3);
+        List<Integer> list2 = new ArrayList<>(list1);
+        list2.addAll(list1a);
+        List<Integer> list3 = new ArrayList<>(list2);
+        List<Integer> list4 = new ArrayList<>(list2);
+        List<Integer> list5 = new ArrayList<>(list2);
             
         Collections.shuffle(list1);
+        Collections.shuffle(list1a);
         Collections.shuffle(list2);
         Collections.shuffle(list3);
         Collections.shuffle(list4);
         Collections.shuffle(list5);
         colors.addAll(list1);
+        colors.addAll(list1a);
         colors.addAll(list2);
         colors.addAll(list3);
         colors.addAll(list4);
