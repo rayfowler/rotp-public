@@ -1,10 +1,12 @@
 [tech]
 seq:    0
 name:   BEAMFOCUS_0_NAME
+brief:  BEAMFOCUS_0_BRIEF
 detail: BEAMFOCUS_0_DETAIL
 
 [tech]
 seq:    1
 name:   BEAMFOCUS_1_NAME
+brief:  BEAMFOCUS_1_BRIEF
 detail: BEAMFOCUS_1_DETAIL
 
