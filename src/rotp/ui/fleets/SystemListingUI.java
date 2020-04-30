@@ -908,10 +908,11 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             int w1 = w*2/3;
             int w2 = w - w1;
             int x0 = x+w1;
+            int yb = y-s5;
             switch(align) {
-                case LEFT:    g.drawString(val1, x+s5, y-s5); break;
-                case RIGHT:   g.drawString(val1, x+w1-s10-sw1, y-s5); break;
-                case CENTER:  g.drawString(val1, x+((w1-sw1)/2), y-s5); break;
+                case LEFT:    g.drawString(val1, x+s5, yb); break;
+                case RIGHT:   g.drawString(val1, x+w1-s10-sw1, yb); break;
+                case CENTER:  g.drawString(val1, x+((w1-sw1)/2), yb); break;
             }
             if (delta != 0) {
                 int x1 = 0;
@@ -937,19 +938,23 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
                     c = delta < 0 ? palette.red : palette.green;
 
                 g.setColor(c);
-                g.drawString(val2, x1, y-s5);
+                g.drawString(val2, x1, yb);
 
-                px[0]=x2; px[1]=x2+s10; px[2]=x2+s5;
+                // arrow (up or down)
+                int xHalfHead=s10/2;
+                int xHalfTail=s10/5;
+                int xMid=x2+xHalfHead;
+                int sh=s14-xHalfHead;
+                px[0]=xMid-xHalfHead; px[1]=xMid+xHalfHead; px[2]=xMid;
                 if (delta < 0) {
-                    py[0]=y-s10; py[1]=y-s10; py[2]=y-s5;
-                    g.fillRect(x2+s3, y-s20, s4, s10);
-                    g.fillPolygon(px, py, 3);
+                    py[0]=yb-xHalfHead; py[1]=yb-xHalfHead; py[2]=yb;
+                    g.fillRect(xMid-xHalfTail, yb-sh-xHalfHead, xHalfTail*2, sh);
                 }
                 else {
-                    py[0]=y-s15; py[1]=y-s15; py[2]=y-s20;
-                    g.fillRect(x2+s3, y-s15, s4, s10);
-                    g.fillPolygon(px, py, 3);
+                    py[0]=yb-sh+1; py[1]=yb-sh+1; py[2]=yb-sh-xHalfHead;
+                    g.fillRect(xMid-xHalfTail, yb-sh, xHalfTail*2, sh);
                 }
+                g.fillPolygon(px, py, 3);
             }
         }
     }
