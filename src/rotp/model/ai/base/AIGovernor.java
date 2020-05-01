@@ -112,8 +112,7 @@ public class AIGovernor implements Base, Governor {
         col.clearUnlockedSpending();
         col.hasNewOrders(false);
         
-        // spend ECO for cleaning before everything else
-        
+        // spend ECO for cleaning before anything else
         if (!col.locked(ECOLOGY))
             col.addAllocation(ECOLOGY, min(col.allocationRemaining(), cleanEco-col.allocation(ECOLOGY)));
 
@@ -145,6 +144,16 @@ public class AIGovernor implements Base, Governor {
             col.setAllocation(RESEARCH, prevRes);
         
         // SPEND THE EXCESS
+        // if there is industry left to build, go there first
+        if (!col.locked(INDUSTRY))
+            col.setAllocation(INDUSTRY, maxInd);
+        // if there is terraforming left to build, go there first
+        if (!col.locked(ECOLOGY))
+            col.setAllocation(ECOLOGY, maxEco);
+        // if there is defense left to build, go there next
+        if (!col.locked(DEFENSE))
+            col.setAllocation(DEFENSE, maxDef);
+
         // if research not locked go there
         if (!col.locked(RESEARCH))
             col.addAllocation(RESEARCH, col.allocationRemaining());
