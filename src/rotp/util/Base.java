@@ -199,27 +199,33 @@ public interface Base {
     }
     public default void err(String... text) {
         String output = concat(text);
-        System.err.println(output);
-        if (RotPUI.useDebugFile) {
-            PrintWriter debugFile = RotPUI.debugFile();
-            if (debugFile != null) {
-                debugFile.println(output);
-                debugFile.flush();
+        try {
+            System.err.println(output);
+            if (RotPUI.useDebugFile) {
+                PrintWriter debugFile = RotPUI.debugFile();
+                if (debugFile != null) {
+                    debugFile.println(output);
+                    debugFile.flush();
+                }
             }
         }
+        catch(Exception e) { }
     }
     public default void log(String... text) {
         if (!Rotp.logging)
             return;
         String output = concat(text);
-        System.out.println(output);
-        if (RotPUI.useDebugFile) {
-            PrintWriter debugFile = RotPUI.debugFile();
-            if (debugFile != null) {
-                debugFile.println(output);
-                debugFile.flush();
+        try {
+            System.out.println(output);
+            if (RotPUI.useDebugFile) {
+                PrintWriter debugFile = RotPUI.debugFile();
+                if (debugFile != null) {
+                    debugFile.println(output);
+                    debugFile.flush();
+                }
             }
         }
+        catch(Exception e) { }
     }
     public default int maximumSystems()                { return (int) (240*(Rotp.maxHeapMemory-250)); }
     public default boolean veryLowMemory() {

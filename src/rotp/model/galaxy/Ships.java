@@ -279,10 +279,9 @@ public class Ships implements Base, Serializable {
     }
     public ShipFleet retreatSubfleet(ShipFleet sourceFleet, int designId, int destSysId) {
         int retreatCount = sourceFleet.num(designId);
-        if (retreatCount == 0) {
-            err("Trying to retreat zero ships");
+        if (retreatCount == 0) 
             return null;
-        }
+        
         int allCount = sourceFleet.numShips();
         
         StarSystem sys = sourceFleet.system();

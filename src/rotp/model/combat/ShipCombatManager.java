@@ -511,19 +511,19 @@ public class ShipCombatManager implements Base {
         }
     }
     public void retreatEmpire(Empire e) {
-        List<CombatStack> retreatingFleets = new ArrayList<>();
+        List<CombatStack> retreatingStacks = new ArrayList<>();
 
         List<CombatStack> activeStacks = new ArrayList<>(results.activeStacks());
         for (CombatStack st : activeStacks) {
             if ((st.empire == e) && st.isShip()) {
                 CombatStackShip ship = (CombatStackShip) st;
                 if (ship.retreat()) {
-                    retreatingFleets.add(ship);
+                    retreatingStacks.add(ship);
                     ship.drawRetreat();
                 }
             }
         }
-        results.activeStacks().removeAll(retreatingFleets);
+        results.activeStacks().removeAll(retreatingStacks);
     }
     public void addEmpiresToCombat() {
         boolean playerInCombat = false;
