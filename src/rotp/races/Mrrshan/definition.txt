@@ -1,6 +1,6 @@
 key:           RACE_MRRSHAN
 langKey:       Mrrshan
-year:          299
+year:          2861
 
 homeStarType:  YELLOW
 homeworldType: PLANET_TERRAN

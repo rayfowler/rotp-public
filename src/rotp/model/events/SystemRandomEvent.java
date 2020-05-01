@@ -29,7 +29,7 @@ public class SystemRandomEvent implements Base, Serializable, StarSystemEvent {
     }
     @Override
     public String year() {
-        return UserPreferences.displayYear() ? str(galaxy().beginningYear() + turn) : str(turn);
+        return UserPreferences.displayYear() ? str(galaxy().beginningYear() + turn) : str(turn+1);
     }
     @Override
     public String description() {
