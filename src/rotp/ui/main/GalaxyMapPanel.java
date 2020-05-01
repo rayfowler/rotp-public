@@ -166,7 +166,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     public boolean showFleetsOnly()             { return flightPathDisplay == SHOW_NO_FLIGHTPATHS; }
     public boolean showImportantFlightPaths()   { return flightPathDisplay != SHOW_NO_FLIGHTPATHS; }
     public boolean showAllFlightPaths()         { return flightPathDisplay == SHOW_ALL_FLIGHTPATHS; }
-    public boolean showTransports()             { return shipDisplay != SHOW_ONLY_ARMED_SHIPS; }
+    public boolean showFriendlyTransports()     { return shipDisplay != SHOW_ONLY_ARMED_SHIPS; }
     public boolean showUnarmedShips()           { return shipDisplay == SHOW_ALL_SHIPS; }
     public boolean showArmedShips()             { return true; }
     public boolean showSystemNames()            { return showSystemNames; }
