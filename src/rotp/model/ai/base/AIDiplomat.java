@@ -766,7 +766,7 @@ public class AIDiplomat implements Base, Diplomat {
         if (!requestor.atWarWith(targetId))
             requestor.viewForEmpire(targetId).embassy().declareWar();
  
-        DiplomaticIncident inc =  empire.viewForEmpire(targetId).embassy().declareWar();
+        DiplomaticIncident inc =  empire.viewForEmpire(targetId).embassy().declareJointWar();
         return empire.viewForEmpire(requestor).accept(DialogueManager.ACCEPT_JOINT_WAR, inc);   
     }
     private float bribeAmountToJointWar(Empire target) {
@@ -784,7 +784,7 @@ public class AIDiplomat implements Base, Diplomat {
         if (!requestor.atWarWith(targetId))
             requestor.viewForEmpire(targetId).embassy().declareWar();
  
-        DiplomaticIncident inc = empire.viewForEmpire(targetId).embassy().declareWar();
+        DiplomaticIncident inc = empire.viewForEmpire(targetId).embassy().declareJointWar();
         return empire.viewForEmpire(requestor).accept(DialogueManager.ACCEPT_JOINT_WAR, inc);   
     }
     @Override

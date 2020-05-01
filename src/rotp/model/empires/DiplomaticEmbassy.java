@@ -358,6 +358,15 @@ public class DiplomaticEmbassy implements Base, Serializable {
         otherEmbassy().addIncident(DemandTributeIncident.create(empire(), owner(), false));
         return inc;
     }
+    public DiplomaticIncident declareJointWar() {
+        // when we are declaring a war as a result of a joint war request, ignore
+        // any existing casus belli. This ensures that a DeclareWarIncident is returned 
+        // instead of some existing casus belli incident. This ensures that [other...]
+        // tags are replaced properly in the war announcement to the player
+        casusBelli = null;
+        casusBelliInc = null;
+        return declareWar();
+    }
     public DiplomaticIncident declareWar() {
         endTreaty();
         int oathBreakType = 0;
