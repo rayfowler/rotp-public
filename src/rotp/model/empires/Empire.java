@@ -1520,6 +1520,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         List<StarSystem> colonies = allySystems();
         colonies.remove(sys);
 
+        // build list of allied systems closest to sys, in travel turns (not distance)
         List<StarSystem> closestSystems = new ArrayList<>();
         int minTurns = Integer.MAX_VALUE;
         for (StarSystem colony: colonies) {
@@ -1532,7 +1533,16 @@ public final class Empire implements Base, NamedObject, Serializable {
             else if (turns == minTurns)
                 closestSystems.add(colony);
         }
-        return closestSystems.isEmpty() ? StarSystem.NULL_ID : closestSystems.get(0).id;
+        if (closestSystems.isEmpty())
+            return StarSystem.NULL_ID;
+        if (closestSystems.size() == 1)
+            return closestSystems.get(0).id;
+       
+        // if there is more than one system within the minimum travel turns, 
+        // choose the one closest, by distance
+        StarSystem.TARGET_SYSTEM = sys;
+        Collections.sort(closestSystems, StarSystem.DISTANCE_TO_TARGET_SYSTEM);
+        return closestSystems.get(0).id;
     }
     public int optimalStagingPoint(StarSystem target, float speed) {
         List<StarSystem> colonies = allySystems();
