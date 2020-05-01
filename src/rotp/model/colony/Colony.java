@@ -874,7 +874,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         // add firepower for each allied ship in orbit
         List<ShipFleet> fleets = starSystem().orbitingFleets();
         for (ShipFleet fl : fleets) {
-            if (empire.alliedWith(fl.empId()))
+            if (fl.empire().aggressiveWith(tr.empId()))
                 defenderDmg += fl.firepower(0);
         }
 
