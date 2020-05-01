@@ -42,7 +42,7 @@ public final class TechECMJammer extends Tech {
 
         switch(typeSeq) {
             case 0:
-                mark = 1;
+                mark = 0;
                 baseECM.baseCost(0);
                 break;
             case 1:
