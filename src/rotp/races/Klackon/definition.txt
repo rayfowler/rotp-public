@@ -126,7 +126,7 @@ popmod: 100
 diplomod: 0,100,0,0
 
 // research category mods % - computer, construction, force field, planetary, propulsion, weapon
-research: 80,100,100,100,100,100
+research: 100,60,100,100,125,100
 
 // race relations
 relations: DEFAULT=0,RACE_KLACKON=31,RACE_HUMAN=7,RACE_DARLOK=-7,RACE_MRRSHAN=-7,RACE_ALKARI=-7,RACE_SAKKRA=-7,RACE_SILICOID=7
