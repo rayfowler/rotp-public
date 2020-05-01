@@ -42,9 +42,9 @@ import rotp.util.Base;
 
 public final class Colony implements Base, IMappedObject, Serializable {
     private static final long serialVersionUID = 1L;
-    private static final int[] validationSeq = { 3, 2, 0, 1, 4, 5 };
-    private static final int[] spendingSeq = { 4, 0, 1, 2, 3, 5 };
-    private static final int[] cleanupSeq =  { 2, 4, 1, 0, 3, 5 };
+    private static final int[] validationSeq = { 3, 2, 0, 1, 4 };
+    private static final int[] spendingSeq = { 4, 0, 1, 2, 3 };
+    private static final int[] cleanupSeq =  { 2, 4, 1, 0, 3 };
     private static final String[] categoryNames = { "MAIN_COLONY_SHIP", "MAIN_COLONY_DEFENSE", "MAIN_COLONY_INDUSTRY",
                     "MAIN_COLONY_ECOLOGY", "MAIN_COLONY_TECHNOLOGY" };
 
@@ -97,6 +97,8 @@ public final class Colony implements Base, IMappedObject, Serializable {
 
     private boolean underSiege = false;
     private transient boolean hasNewOrders = false;
+    private transient int cleanupAllocation = 0;
+    private transient boolean keepEcoLockedToClean;
 
     public boolean underSiege()                { return underSiege; }
     public float reserveIncome()              { return reserveIncomeBC; }
@@ -154,6 +156,11 @@ public final class Colony implements Base, IMappedObject, Serializable {
         int needed = ecology().cleanupAllocationNeeded();
         int curr = ecology().allocation();
         return curr < needed;
+    }
+    private int cleanupAllocation() {
+        if (cleanupAllocation < 0)
+            cleanupAllocation = ecology().cleanupAllocationNeeded();
+        return cleanupAllocation;
     }
     @Override
     public String toString()                   { return "Colony: " + name();  }
@@ -391,6 +398,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
             planet.resetWaste();
             planet.addWaste(planet.maxWaste());
         }
+        cleanupAllocation = -1;
     }
 
     public void nextTurn() {
@@ -404,6 +412,9 @@ public final class Colony implements Base, IMappedObject, Serializable {
         if (inRebellion())
             return;
 
+        // after turn is over, we may need to reset ECO spending to adjust for cleanup
+        keepEcoLockedToClean = !locked[ECOLOGY] && empire().isPlayer() && (allocation[ECOLOGY] == cleanupAllocation());
+        
         // make sure that the colony's expenses aren't too high
         empire().governorAI().lowerExpenses(this);
 
@@ -447,6 +458,14 @@ public final class Colony implements Base, IMappedObject, Serializable {
         industry().assessTurn();
         ecology().assessTurn();
         research().assessTurn();
+        
+        if (keepEcoLockedToClean) {
+            int newAlloc = ecology().cleanupAllocationNeeded();
+            if (allocation[ECOLOGY] != newAlloc) {
+                allocation[ECOLOGY] = cleanupAllocation = newAlloc;
+                empire().ai().governor().setColonyAllocations(this);
+            }
+        }
     }
     public boolean canLowerMaintenance() { return transporting(); }
 

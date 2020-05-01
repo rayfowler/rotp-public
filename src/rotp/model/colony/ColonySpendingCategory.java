@@ -33,7 +33,7 @@ public abstract class ColonySpendingCategory implements Base, Serializable {
     public static String enrichSoilText = "MAIN_COLONY_SPENDING_ENRICH_SOIL";
     public static String terraformText = "MAIN_COLONY_SPENDING_TERRAFORM";
     public static String cleanupText = "MAIN_COLONY_SPENDING_CLEANUP";
-    public static String newPopText = "MAIN_COLONY_SPENDING_NEW_POP";
+    public static String growthText = "MAIN_COLONY_SPENDING_GROWTH";
     public static String shieldText = "MAIN_COLONY_SPENDING_SHIELD";
     public static String upgradeBasesText = "MAIN_COLONY_SPENDING_UPG_BASES";
     public static String researchPointsText = "MAIN_COLONY_SPENDING_RP";

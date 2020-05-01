@@ -47,7 +47,6 @@ public class ColonyEcology extends ColonySpendingCategory {
         hostileBC = 0;
         soilEnrichBC = 0;
     }
-
     public void init() {
         hostileBC = 0;
         soilEnrichBC = 0;
@@ -328,7 +327,7 @@ public class ColonyEcology extends ColonySpendingCategory {
         if (newBC < cost) {
             int newPop = (int) (workingPop+expGrowth+(newBC / newPopCost)) - (int) currentPop;
             expectedPopGrowth = newPop;
-            return text(cleanupText);
+            return text(growthText);
         }
 
         newBC -= cost;
@@ -336,7 +335,7 @@ public class ColonyEcology extends ColonySpendingCategory {
 
         // if less <1% of income, show "Clean", else show "Reserve"
         if (newBC <= (c.totalIncome()/100))
-            return text(cleanupText);
+            return text(growthText);
         else
             return text(reserveText);
     }
