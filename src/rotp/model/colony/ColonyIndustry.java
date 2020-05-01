@@ -233,25 +233,35 @@ public class ColonyIndustry extends ColonySpendingCategory {
     public float maxSpendingNeeded() {
         float refitFactoriesCost = 0;
         float convertFactoriesCost = 0;
+        float newFactoriesCost = 0;
+        float plannedFactories = factories;
+        int colonyControls = robotControls;
 
         // cost to upgrade existing factories
         if (hasAlienFactories()) {
-            convertFactoriesCost = totalAlienConversionCost() - industryReserveBC;
+            convertFactoriesCost = totalAlienConversionCost();
             convertFactoriesCost = Math.max(0, convertFactoriesCost);
         }
 
+        newFactoriesCost += Math.max(0, maxBuildableFactories(colonyControls) - plannedFactories) * tech().newFactoryCost(colonyControls);
+        plannedFactories = Math.max(maxBuildableFactories(colonyControls), plannedFactories);
+
         // cost to upgrade existing factories
-        if (effectiveRobotControls() < empire().maxRobotControls()) {
-            refitFactoriesCost = ((empire().maxRobotControls() - robotControls()) * factories / 2);
-            refitFactoriesCost = Math.max(0, refitFactoriesCost);
+        while (colonyControls < tech().baseRobotControls()) {
+            if (!empire().race().ignoresFactoryRefit)
+                refitFactoriesCost += maxBuildableFactories(colonyControls) * tech().baseFactoryCost() / 2;
+            colonyControls++;
+            // cost to build up for new control level
+            newFactoriesCost += Math.max(0, maxBuildableFactories(colonyControls) - plannedFactories) * tech().newFactoryCost(colonyControls);
+            plannedFactories = Math.max(maxBuildableFactories(colonyControls), plannedFactories);
         }
 
-        float newFactoriesCost = ((maxBuildableFactories() - factories) * tech().maxFactoryCost());
-        newFactoriesCost = max(0, newFactoriesCost);
-        return ((convertFactoriesCost + refitFactoriesCost + newFactoriesCost) / planet().productionAdj());
+        refitFactoriesCost = Math.max(0, refitFactoriesCost);
+        newFactoriesCost = Math.max(0, newFactoriesCost);
+        return Math.max(0, convertFactoriesCost + refitFactoriesCost + newFactoriesCost - industryReserveBC);
     }
     public int maxAllocationNeeded() {
-        float needed = maxSpendingNeeded() - industryReserveBC;
+        float needed = maxSpendingNeeded();
         if (needed <= 0)
             return 0;
         float prod = (colony().totalProductionIncome() * planet().productionAdj()) + colony().maxReserveIncome();
