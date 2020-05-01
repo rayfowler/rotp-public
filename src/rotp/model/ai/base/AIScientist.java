@@ -772,8 +772,8 @@ public class AIScientist implements Base, Scientist {
 
         // turns out this effectiveness formula equals about 50 for the
         // highest value, so no need for a scaling factor to make it 50
-        float currVal = curr.damageHigh() * curr.attacksPerRound;
-        float tVal = t.damageHigh()*t.attacksPerRound;
+        float currVal = (curr.damageHigh() * curr.attacksPerRound) / curr.size;
+        float tVal = (t.damageHigh()*t.attacksPerRound) / t.size;
 
         if (tVal <= currVal)
             return 0;

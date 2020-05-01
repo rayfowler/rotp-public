@@ -373,12 +373,22 @@ public final class TechShipWeapon extends Tech {
     @Override
     public float basePower()   { return power; }
     @Override
+    public boolean isObsolete(Empire c) {
+        TechShipWeapon top = c.tech().topShipWeaponTech();
+        float currVal = (damageHigh() * attacksPerRound) / size;
+        float tVal = (top.damageHigh()*top.attacksPerRound) / top.size;
+
+        return tVal >= currVal;
+    }
+    @Override
     public void provideBenefits(Empire c) {
         super.provideBenefits(c);
 
         ShipWeaponBeam sh = new ShipWeaponBeam(this, false);
         c.shipLab().addWeapon(sh);
-        c.tech().topShipWeaponTech(this);
+        if (!isObsolete(c))
+            c.tech().topShipWeaponTech(this);
+        
         if (heavyAllowed) {
             ShipWeaponBeam sh2 = new ShipWeaponBeam(this, true);
             c.shipLab().addWeapon(sh2);
