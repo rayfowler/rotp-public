@@ -46,6 +46,7 @@ public class MapOverlayBombardPrompt extends MapOverlay {
     int sysId;
     ShipFleet fleet;
     int pop, endPop, bases, endBases, fact, endFact, shield, transports;
+    boolean drawSprites = false;
     ClickToContinueSprite clickSprite;
     BombardNoSprite noButton = new BombardNoSprite();
     BombardYesSprite yesButton = new BombardYesSprite();
@@ -54,6 +55,7 @@ public class MapOverlayBombardPrompt extends MapOverlay {
         clickSprite = new ClickToContinueSprite(parent);
     }
     public void init(int systemId, ShipFleet fl) {
+        drawSprites = true;
         planetImg = null;
         Empire pl = player();
         StarSystem sys = galaxy().system(systemId);
@@ -76,12 +78,14 @@ public class MapOverlayBombardPrompt extends MapOverlay {
         parent.repaint();
     }
     public void bombardYes() {
+        drawSprites = false;
         mask = null;
         softClick();
         bombard();
         parent.map().repaint();
     }
     public void bombardCancel() {
+        drawSprites = false;
         mask = null;
         //softClick();
         advanceMap();
@@ -98,6 +102,8 @@ public class MapOverlayBombardPrompt extends MapOverlay {
             endFact = pl.sv.factories(sysId);
         }
     }
+    @Override
+    public boolean drawSprites()   { return drawSprites; }
     @Override
     public boolean masksMouseOver(int x, int y)   { return true; }
     @Override

@@ -42,6 +42,7 @@ public class MapOverlayAllocateSystems extends MapOverlay {
     int systemIndex = 0;
     int x[] = new int[9];
     int y[] = new int[9];
+    boolean drawSprites = false;
     PreviousSystemButtonSprite prevSystemButton = new PreviousSystemButtonSprite();
     NextSystemButtonSprite nextSystemButton = new NextSystemButtonSprite();
     ContinueButtonSprite continueButton = new ContinueButtonSprite();
@@ -49,6 +50,7 @@ public class MapOverlayAllocateSystems extends MapOverlay {
         parent = p;
     }
     public void init(HashMap<StarSystem,List<String>> newSystems) {
+        drawSprites = true;
         systemsToAllocate = newSystems;
         orderedSystems.clear();
         systemIndex = 0;
@@ -85,11 +87,14 @@ public class MapOverlayAllocateSystems extends MapOverlay {
         mapSelectIndex(systemIndex);
     }
     @Override
+    public boolean drawSprites()   { return drawSprites; }
+    @Override
     public boolean masksMouseOver(int x, int y)   { return true; }
     @Override
     public boolean hoveringOverSprite(Sprite o) { return false; }
     @Override
     public void advanceMap() {
+        drawSprites = false;
         if (!systemsToAllocate.isEmpty()) {
             systemsToAllocate.clear();
             orderedSystems.clear();
@@ -286,6 +291,8 @@ class PreviousSystemButtonSprite extends MapSprite {
     }
     @Override
     public void draw(GalaxyMapPanel map, Graphics2D g) {
+        if (!parent.drawSprites())
+            return;
         if (background == null) {
             float[] dist = {0.0f, 0.5f, 1.0f};
             Point2D start = new Point2D.Float(mapX, 0);
@@ -320,7 +327,7 @@ class PreviousSystemButtonSprite extends MapSprite {
         parent.previousSystem();
     };
 }
-class NextSystemButtonSprite extends MapSprite {
+ class NextSystemButtonSprite extends MapSprite {
     private LinearGradientPaint background;
     private final Color edgeC = new Color(44,59,30);
     private final Color midC = new Color(70,93,48);
@@ -354,6 +361,8 @@ class NextSystemButtonSprite extends MapSprite {
     }
     @Override
     public void draw(GalaxyMapPanel map, Graphics2D g) {
+        if (!parent.drawSprites())
+            return;
         if (background == null) {
             float[] dist = {0.0f, 0.5f, 1.0f};
             Point2D start = new Point2D.Float(mapX, 0);
@@ -431,6 +440,8 @@ class ContinueButtonSprite extends MapSprite {
     }
     @Override
     public void draw(GalaxyMapPanel map, Graphics2D g) {
+        if (!parent.drawSprites())
+            return;
         if (background == null) {
             float[] dist = {0.0f, 0.5f, 1.0f};
             Point2D start = new Point2D.Float(mapX, 0);

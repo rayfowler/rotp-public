@@ -57,6 +57,8 @@ public class BombardYesSprite extends MapSprite {
     }
     @Override
     public void draw(GalaxyMapPanel map, Graphics2D g) {
+        if (!parent.drawSprites())
+            return;
         if (background == null) {
             float[] dist = {0.0f, 0.5f, 1.0f};
             Point2D yesStart = new Point2D.Float(mapX, 0);

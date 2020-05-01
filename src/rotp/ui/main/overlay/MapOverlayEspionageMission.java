@@ -55,6 +55,7 @@ public class MapOverlayEspionageMission extends MapOverlay {
     private int empId;
     TechCategorySprite[] categorySprites = new TechCategorySprite[6];
     int techCategoryHoverButton = -1;
+    boolean drawSprites = false;
 
     public MapOverlayEspionageMission(MainUI p) {
         parent = p;
@@ -65,6 +66,7 @@ public class MapOverlayEspionageMission extends MapOverlay {
         return (mission.inCategory(TechCategory.id(catNum)) != null);
     }
     public void espionageCategorySelected() {
+        drawSprites = false;
         parent.clearOverlay();
         RotPUI.instance().selectStealTechPanel(mission, empId);
     }
@@ -73,7 +75,10 @@ public class MapOverlayEspionageMission extends MapOverlay {
         mission = esp;
         empId = id;
         techCategoryHoverButton = -1;
+        drawSprites = true;
     }
+    @Override
+    public boolean drawSprites()   { return drawSprites; }
     @Override
     public boolean masksMouseOver(int x, int y)   { return true; }
     @Override
@@ -95,7 +100,7 @@ public class MapOverlayEspionageMission extends MapOverlay {
     public boolean handleKeyPress(KeyEvent e) {
         switch(e.getKeyCode()) {
             case KeyEvent.VK_1:
-                if (this.canSelect(0))
+                if (this.canSelect(0))  
                     categorySprites[0].click(parent.map(), 1, false, true);
                 break;
             case KeyEvent.VK_2:
@@ -125,11 +130,14 @@ public class MapOverlayEspionageMission extends MapOverlay {
     }
     @Override
     public void paintOverMap(MainUI parent, GalaxyMapPanel ui, Graphics2D g) {
+        if (!drawSprites)
+            return;
+        
         int w = ui.getWidth()-scaled(150);
         int h = ui.getHeight()-BasePanel.s50;
         Galaxy gal = galaxy();
         Empire emp = gal.empire(empId);
-
+        
         for (TechCategorySprite spr: categorySprites) {
             spr.espionage(mission);
             parent.addNextTurnControl(spr);
