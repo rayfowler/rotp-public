@@ -20,7 +20,6 @@ import rotp.model.colony.Colony;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.SpaceCrystal;
 import rotp.model.galaxy.StarSystem;
-import rotp.model.planet.PlanetType;
 import rotp.ui.notifications.GNNNotification;
 import rotp.util.Base;
 
@@ -155,7 +154,8 @@ public class RandomEventSpaceCrystal implements Base, Serializable, RandomEvent 
     
         log("Space Crystal moving to system: "+nextSysId);
         StarSystem nextSys = galaxy().system(nextSysId);
-        turnCount = (int) Math.ceil(1.5*nextSys.distanceTo(targetSystem));
+        float slowdownEffect = max(1, 100.0f / galaxy().maxNumStarSystems());
+        turnCount = (int) Math.ceil(1.5*slowdownEffect*nextSys.distanceTo(targetSystem));
         sysId = nextSys.id;        
     }
     private String notificationText(String key, Empire emp)    {
