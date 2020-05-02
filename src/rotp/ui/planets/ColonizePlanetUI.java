@@ -498,6 +498,8 @@ public class ColonizePlanetUI extends FadeInPanel implements MouseListener, Mous
 
     @Override
     public void animate() {
+        if (displayMode == Display.NAMING)
+            return;
         if (playAnimations()) {
             advanceFade();
             switch(displayMode) {
