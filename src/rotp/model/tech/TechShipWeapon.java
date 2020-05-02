@@ -375,6 +375,8 @@ public final class TechShipWeapon extends Tech {
     @Override
     public boolean isObsolete(Empire c) {
         TechShipWeapon top = c.tech().topShipWeaponTech();
+        if (top == null)
+            return false;
         float currVal = (damageHigh() * attacksPerRound) / size;
         float tVal = (top.damageHigh()*top.attacksPerRound) / top.size;
 
