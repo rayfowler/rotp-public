@@ -1347,7 +1347,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         if (mode != Display.INTRO)
             return;
         mgr.toggleAutoComplete();
-        repaintButtonArea();
+        paintAllImmediately();
     }
     private void nextStack() {
         if (mode != Display.INTRO)
