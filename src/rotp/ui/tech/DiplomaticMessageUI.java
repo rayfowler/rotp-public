@@ -65,7 +65,7 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
     Empire diplomatEmpire;
     Image flag, dialogBox;
     DiplomaticMessage message;
-    String messageRemark;
+    String remarkTitle, messageRemark;
 
     int talkTimeMs = 5000;
     long startTimeMs;
@@ -103,6 +103,7 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
 
         diplomatEmpire.race().resetDiplomat();
         message = DialogueManager.current().message(notif.type(), notif.incident(), diplomatEmpire, notif.otherEmpire());
+        remarkTitle = diplomatEmpire.race().text("RACES_DIPLOMACY_DIALOGUE_TITLE", diplomatEmpire.raceName(), diplomatEmpire.leader().name());
         messageRemark = "";
         if (message == null)
             messageRemark = concat("Message type not defined: ", notif.type());
@@ -266,6 +267,8 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
         // data lines will draw two items per line
         int nonRemarkLines = message.numReplies()+(message.numDataLines()+1)/2;
         int maxLinesForText = nonRemarkLines > 3 ? 2 : 6-nonRemarkLines;
+        g.setFont(narrowFont(18));
+        drawBorderedString(g, remarkTitle, 1, x1, y1, textBgC,  textC);
         List<String> remarkLines = scaledDialogueWrappedLines(g, displayText, w1, maxLinesForText, 26, 16);
         int lineH = g.getFontMetrics().getHeight();
         //List<String> remarkLines = wrappedLines(g, displayText, w1);

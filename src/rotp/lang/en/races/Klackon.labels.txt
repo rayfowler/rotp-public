@@ -63,6 +63,8 @@ TECH_ALLOCATE_ENRICH_SOIL         | Should I increase the ecology ratios of my c
 TECH_ALLOCATE_ATMOSPHERE          | Should I increase the ecology ratios of my colonies with hostile environments in order to begin terraforming my planets?
 TECH_ALLOCATE_TERRAFORM           | Should I increase the ecology ratios of all of my colonies in order to begin terraforming my planets?
 
+RACES_DIPLOMACY_DIALOGUE_TITLE    | [The %1]
+
 NOTICE_ESPIONAGE_TITLE            | I have infiltrated a %1 base.
 NOTICE_ESPIONAGE_FRAME_TITLE      | I have managed to frame another race for the theft.
 

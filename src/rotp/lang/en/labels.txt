@@ -1172,6 +1172,7 @@ RACES_DIPLOMACY_RECALLED_DIPLOMAT | Recalled Diplomats
 RACES_DIPLOMACY_MANAGE_DIPLOMATS  | Manage Diplomats
 RACES_DIPLOMACY_AUDIENCE          | Audience
 RACES_DIPLOMACY_CONTACT           | Establish Contact
+RACES_DIPLOMACY_DIALOGUE_TITLE    | [%1 Diplomat]
 RACES_DIPLOMACY_TRADE_SUMMARY     | Trade Summary
 RACES_DIPLOMACY_TRADE_DESC        | Contact the %1 ambassador to negotiate a trade treaty. Trade networks take time and money to set up, but once mature bring money into your empire's treasury.
 RACES_DIPLOMACY_TRADE_DESC_RANGE  | We cannot establish trade networks with the %1 while they are out of ship range.

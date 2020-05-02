@@ -76,7 +76,9 @@ TransportsKilled          |  77  | NOTICE_TRANSPORTS_KILLED
 EnemyTransportsKilled     |  77  | NOTICE_ENEMY_TRANSPORTS_KILLED
 
 // Menu prompt: displayed when showing diplomacy options
-DiplomacyMainMenu        |  77  | DIPLO_MAIN_MENU_01
+DiplomacyMainMenu        |  47  | DIPLO_MAIN_MENU_01
+DiplomacyMainMenu        |  27  | DIPLO_MAIN_MENU_02
+DiplomacyMainMenu        |  17  | DIPLO_MAIN_MENU_03
 DiplomacyTradeMenu       |  77  | DIPLO_TRADE_MENU_01
 DiplomacyTechRequestMenu |  77  | DIPLO_TECH_REQUEST_MENU_01
 DiplomacyTechCounterMenu |  77  | DIPLO_TECH_COUNTER_MENU_01

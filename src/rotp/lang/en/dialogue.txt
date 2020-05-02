@@ -255,7 +255,9 @@ WARN_REBELLING_AGAINST_01    | The [my_race] are a free and independent people a
 
 PRAISE_REBELLING_WITH_01     | The [my_race] join you in your righteous rebellion against the tyrannical rule of the New Republic.
 
-DIPLO_MAIN_MENU_01           | How may our Empire serve you
+DIPLO_MAIN_MENU_01           | How may our empire serve you?
+DIPLO_MAIN_MENU_02           | Speak, but do not try our patience.
+DIPLO_MAIN_MENU_03           | Speak quickly and then leave.
 DIPLO_TECH_REQUEST_MENU_01   | What type of technology interests you?
 DIPLO_TECH_COUNTER_MENU_01   | What will you trade for it?
 DIPLO_TRADE_MENU_01          | You propose a trade agreement for:

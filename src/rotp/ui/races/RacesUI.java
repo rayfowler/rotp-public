@@ -90,6 +90,7 @@ public class RacesUI extends BasePanel {
         diploPanel.init();
         intelPanel.init();
         statusPanel.init();
+        raceListingPanel.init();
         empires.clear();
         empires.add(player());
         List<EmpireView> contacts = player().contacts();
@@ -470,6 +471,9 @@ public class RacesUI extends BasePanel {
             addMouseListener(this);
             addMouseMotionListener(this);
             addMouseWheelListener(this);
+        }
+        public void init() { 
+            contactsY = 0;
         }
         @Override
         public String textureName()            { return TEXTURE_BROWN; }

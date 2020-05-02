@@ -79,6 +79,8 @@ PRAISE_REBELLING_WITH_01     | Dominion agrees Galactic Council ruler untrustwor
  
 
 DIPLO_MAIN_MENU_01           | Specify request.
+DIPLO_MAIN_MENU_02           | Specify request.
+DIPLO_MAIN_MENU_03           | Specify request.
 DIPLO_TECH_REQUEST_MENU_01   | Specify technology.
 DIPLO_TECH_COUNTER_MENU_01   | Specify compensation.
 DIPLO_TRADE_MENU_01          | Specify magnitude.

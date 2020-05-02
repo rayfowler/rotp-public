@@ -76,7 +76,9 @@ PRAISE_TRADE_01            | We have only managed to come so far by working toge
 PRAISE_TRADE_02            | It pleases me how much our trade agreement aids us both. You're pleased by this as well, aren't you, [your_name]?  
 PRAISE_REBELLING_WITH_01   | The [your_name] calls for aid! I will join you in taking up arms against this ridiculous council! You are my friend, and that means you will never fight alone!
 
-DIPLO_MAIN_MENU_01           | How may I serve you
+DIPLO_MAIN_MENU_01           | How may I serve you?
+DIPLO_MAIN_MENU_02           | Speak, but do not try my patience.
+DIPLO_MAIN_MENU_03           | Speak quickly and then leave.
 DIPLO_TECH_REQUEST_MENU_01   | What type of technology interests you?
 DIPLO_TECH_COUNTER_MENU_01   | What will you trade for it?
 DIPLO_TRADE_MENU_01          | You propose a trade agreement for:
