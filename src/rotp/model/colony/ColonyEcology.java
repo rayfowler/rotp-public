@@ -283,12 +283,13 @@ public class ColonyEcology extends ColonySpendingCategory {
         if (newBC < cost) 
             return text(wasteText);
         
+        expectedPopGrowth = (int) (workingPop+expGrowth) - (int) currentPop;
+        
         if (colony().allocation(categoryType()) == 0)
             return text(noneText);
         if (allocation() == cleanupAllocationNeeded())
             return text(cleanupText);
 
-        expectedPopGrowth = (int) (workingPop+expGrowth) - (int) currentPop;
         newBC -= cost;
         // check for atmospheric terraforming
         cost = 0;
