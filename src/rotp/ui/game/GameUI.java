@@ -103,7 +103,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     int diff = s60;
     int languageX;
     BaseText discussText, continueText, newGameText, loadGameText, saveGameText, exitText, restartText;
-    BaseText soundsText, musicText, animationsText, texturesText, versionText, memoryText;
+    BaseText soundsText, musicText, animationsText, antialiasingText, texturesText, versionText, memoryText;
     BaseText developerText, artistText, graphicDsnrText, writerText, soundText, translatorText;
     BaseText shrinkText, enlargeText;
     BaseText hoverBox;
@@ -304,9 +304,10 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         restartText     = new BaseText(this, true, 50,   0, 420,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
         versionText     = new BaseText(this, false,16, w/2, -35,  enabledC,  enabledC, hoverC, depressedC, shadedC, 2, 0, 0);
         discussText     = new BaseText(this, false,22, w/2, -10,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 0);
-        soundsText      = new BaseText(this, false,16,   20,-78,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
-        musicText       = new BaseText(this, false,16,   20,-61,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
-        animationsText  = new BaseText(this, false,16,   20,-44,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
+        soundsText      = new BaseText(this, false,16,   20,-95,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
+        musicText       = new BaseText(this, false,16,   20,-78,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
+        animationsText  = new BaseText(this, false,16,   20,-61,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
+        antialiasingText= new BaseText(this, false,16,   20,-44,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         texturesText    = new BaseText(this, false,16,   20,-27,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         memoryText      = new BaseText(this, false,16,   20,-10,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         developerText   = new BaseText(this, false,16, -220,-95,  enabledC,  enabledC, hoverC, depressedC, shadedC, 0, 0, 0);
@@ -348,6 +349,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         musicText.displayText(musicStr());
         texturesText.displayText(texturesStr());
         animationsText.displayText(animationsStr());
+        antialiasingText.displayText(antialiasingStr());
         shrinkText.displayText(text("GAME_SHRINK"));
         enlargeText.displayText(text("GAME_ENLARGE"));
         memoryText.displayText(memoryStr());
@@ -463,6 +465,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         shrinkText.draw(g);
         enlargeText.draw(g);
         animationsText.draw(g);
+        antialiasingText.draw(g);
         musicText.draw(g);
         soundsText.draw(g);
     }
@@ -584,6 +587,12 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         else
             return text("GAME_ANIMATIONS_OFF")+"     ";
     }
+    private String antialiasingStr() {
+        if (UserPreferences.antialiasing())
+            return text("GAME_ANTIALIASING_ON")+"     ";
+        else
+            return text("GAME_ANTIALIASING_OFF")+"     ";
+    }
     private String soundsStr() {
         if (SoundManager.current().disabled())
             return text("GAME_SOUNDS_DISABLED", "");
@@ -655,6 +664,11 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             animationsText.repaint(animationsStr());
         }
     }
+    private void toggleAntialiasing() {
+        softClick();
+        UserPreferences.toggleAntialiasing();
+        antialiasingText.repaint(antialiasingStr());
+    }
     @Override
     public void playAmbience() {
         // in case playing ambience causes a sound error
@@ -705,6 +719,8 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             toggleTextures();
         else if (animationsText.contains(x,y))
             toggleAnimations();
+        else if (antialiasingText.contains(x, y))
+            toggleAntialiasing();
         else if (shrinkText.contains(x,y))
             shrinkFrame();
         else if (enlargeText.contains(x,y))
@@ -749,6 +765,8 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             newHover = texturesText;
         else if (animationsText.contains(x,y))
             newHover = animationsText;
+        else if (antialiasingText.contains(x,y))
+            newHover = antialiasingText;
         else if (shrinkText.contains(x,y))
             newHover = shrinkText;
         else if (enlargeText.contains(x,y))

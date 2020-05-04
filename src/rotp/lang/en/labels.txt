@@ -292,6 +292,8 @@ GAME_TEXTURES_OFF                 | Textures: OFF
 GAME_ANIMATIONS_ON                | Animations: ON
 GAME_ANIMATIONS_OFF               | Animations: OFF
 GAME_ANIMATIONS_DISABLED          | Animations: DISABLED
+GAME_ANTIALIASING_ON              | Anti-aliasing: ON
+GAME_ANTIALIASING_OFF             | Anti-aliasing: OFF
 GAME_SHRINK                       | Shrink -
 GAME_ENLARGE                      | Expand
 GAME_MEMORY_SHOW                  | Memory Use: SHOW
