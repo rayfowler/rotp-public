@@ -70,6 +70,7 @@ public class ShipLibrary implements Base {
         
         BufferedImage destImg = newBufferedImage(destW, destH);
         Graphics2D g = (Graphics2D) destImg.getGraphics();
+        setFontHints(g);
         Color c0 = options().color(colorId);
         g.setColor(c0);
         g.fillPolygon(pX, pY, 3);
@@ -100,6 +101,7 @@ public class ShipLibrary implements Base {
         
         BufferedImage destImg = newBufferedImage(destW, destH);
         Graphics2D g = (Graphics2D) destImg.getGraphics();
+        setFontHints(g);
         Color c0 = options().color(colorId);
         g.setColor(c0);
         g.fillPolygon(pX, pY, 3);
@@ -135,6 +137,7 @@ public class ShipLibrary implements Base {
         
         BufferedImage destImg = newBufferedImage(destW, destH);
         Graphics2D g = (Graphics2D) destImg.getGraphics();
+        setFontHints(g);
         Color c0 = options().color(colorId);
         g.setColor(c0);
         g.fillPolygon(pX, pY, 3);
@@ -172,6 +175,7 @@ public class ShipLibrary implements Base {
         
         BufferedImage destImg = newBufferedImage(destW, destH);
         Graphics2D g = (Graphics2D) destImg.getGraphics();
+        setFontHints(g);
         Color c0 = options().color(colorId);
         g.setColor(c0);
         g.fillPolygon(pX, pY, 3);
@@ -196,6 +200,7 @@ public class ShipLibrary implements Base {
         int crv = BasePanel.s4;
         BufferedImage destImg = newBufferedImage(destW, destH);
         Graphics2D g = (Graphics2D) destImg.getGraphics();
+        setFontHints(g);
         Color c0 = options().color(colorId);
         g.setColor(c0);
         g.fillRoundRect(s1,s1,destW-s2,destH-s2,crv,crv);
