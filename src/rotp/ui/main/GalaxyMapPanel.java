@@ -384,6 +384,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             if (redrawRangeMap) {
                 redrawRangeMap = false;
                 Graphics2D g0 =  (Graphics2D) rangeMapBuffer.getGraphics();
+                setFontHints(g0);
                 g0.setColor(unreachableBackground);
                 g0.fillRect(0,0,getWidth(),getHeight());
                 drawExtendedRangeDisplay(g0);
