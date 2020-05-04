@@ -293,13 +293,25 @@ public class ColonyShipyard extends ColonySpendingCategory {
         }
     }
     public float maxSpendingNeeded() {
+        float totalCost = 0;
         if (buildingStargate)
-            return max(0, design.cost() - stargateBC);
+            totalCost = max(0, design.cost() - stargateBC);
+        else {
+            float shipCost = design.cost() * desiredShips;
+            if (design == prevDesign)
+                shipCost -= shipBC;
 
-        float shipCost = design.cost() * desiredShips;
-        if (design == prevDesign)
-            shipCost -= shipBC;
+            totalCost = max(0, shipCost);
+        }
 
-        return max(0, shipCost);
+        // adjust cost for planetary production
+        // assume any amount over current production comes from reserve (no adjustment)
+        float totalBC = (colony().totalProductionIncome() * planet().productionAdj()) + colony().maxReserveIncome();
+        if (totalCost > totalBC)
+            totalCost += colony().totalProductionIncome() * (1 - planet().productionAdj());
+        else
+            totalCost *= colony().totalIncome() / totalBC;
+
+        return totalCost;
     }
 }
