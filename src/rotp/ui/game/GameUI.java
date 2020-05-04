@@ -668,6 +668,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         softClick();
         UserPreferences.toggleAntialiasing();
         antialiasingText.repaint(antialiasingStr());
+        this.repaint();
     }
     @Override
     public void playAmbience() {
