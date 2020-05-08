@@ -211,7 +211,7 @@ public class ColonyIndustry extends ColonySpendingCategory {
             //after refitting, build up to max useable factories at current robot controls level
             factoriesToBuild = max(0, maxBuildableFactories(colonyControls)-factories-possibleNewFactories);
             if (factoriesToBuild > 0) {
-                costPerFactory = newFactoryCost();
+                costPerFactory = tech().newFactoryCost(colonyControls);
                 float buildCost = factoriesToBuild * costPerFactory;
                 float bcSpent = Math.min(newBC, buildCost);
                 possibleNewFactories += (bcSpent/costPerFactory);
