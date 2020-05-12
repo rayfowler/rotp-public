@@ -103,7 +103,6 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
 
         diplomatEmpire.race().resetDiplomat();
         message = DialogueManager.current().message(notif.type(), notif.incident(), diplomatEmpire, notif.otherEmpire());
-        remarkTitle = diplomatEmpire.race().text("RACES_DIPLOMACY_DIALOGUE_TITLE", diplomatEmpire.raceName(), diplomatEmpire.leader().name());
         messageRemark = "";
         if (message == null)
             messageRemark = concat("Message type not defined: ", notif.type());
@@ -136,6 +135,7 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
             return;
         }
 
+        remarkTitle = diplomatEmpire.race().text("RACES_DIPLOMACY_DIALOGUE_TITLE", diplomatEmpire.raceName(), diplomatEmpire.leader().name());
         if (message.showTalking() && playAnimations())
             startFadeTimer();
         else
