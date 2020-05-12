@@ -395,7 +395,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         return raceNameIndex < values.size() ? values.get(raceNameIndex) : values.get(0);      
     }
     public boolean canSendTransportsFrom(StarSystem sys) {
-        return (sys != null) && (sv.empire(sys.id) == this) && (sv.maxTransportsToSend(sys.id) > 0)  && (allColonizedSystems().size() > 1) && !sys.colony().quarantined();
+        return (sys != null) && (sv.empire(sys.id) == this) && (sv.maxTransportsToSend(sys.id) > 0)  && (allColonizedSystems().size() > 1) && !sys.colony().inRebellion() && !sys.colony().quarantined();
     }
     public boolean canSendTransportsTo(StarSystem sys) {
         if (sys == null)

@@ -576,19 +576,30 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         public void draw(Graphics g, RowSprite row, StarSystem sys, int x, int y, int w) {
             super.draw(g, row, sys, x, y, w);
 
-            g.setColor(Color.black);
+            Graphics2D g2 = (Graphics2D) g;
+            g2.setColor(Color.black);
             if (targetSystem == null)
                 return;
 
-            if (!player().canSendTransportsFrom(sys))
+            if (!player().canSendTransportsFrom(sys)) {
+                if (sys.colony().inRebellion())
+                    drawErrorString(g2, text("MAIN_PLANET_REBELLION"), x+s10, y-s6);
+                else if (sys.colony().quarantined())
+                    drawErrorString(g2, text("MAIN_PLANET_QUARANTINE"), x+s10, y-s6);
                 return;
+            }
 
             StarSystem dest = sys.colony().transportDestination();
             if ((dest == null) || (dest == targetSystem)) {
-                drawSliderBox((Graphics2D) g, row, sys, x, y - s23, w);
+                drawSliderBox(g2, row, sys, x, y - s23, w);
             } else {
-                drawExistingTransports((Graphics2D) g, row, sys, x, y - s26, w);
+                drawExistingTransports(g2, row, sys, x, y - s26, w);
             }
+        }
+        private void drawErrorString(Graphics2D g, String err, int x0, int y1) {
+            g.setFont(narrowFont(18));
+            g.setColor(SystemPanel.blackText);
+            g.drawString(err,x0,y1);
         }
         private void drawSliderBox(Graphics2D g, RowSprite row, StarSystem sys, int x0, int y1, int w) {
             int amt = sys.transportSprite().amt();

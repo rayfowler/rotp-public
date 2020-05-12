@@ -346,6 +346,7 @@ MAIN_PLANET_SIZE+                 | Size %1+
 MAIN_PLANET_POP                   | Pop %1
 MAIN_PLANET_POP_SIZE              | Pop %1/%2
 MAIN_PLANET_REBELLION             | In Rebellion
+MAIN_PLANET_QUARANTINE            | In Quarantine
 MAIN_PLANET_EVENT_COMET           | Comet
 MAIN_PLANET_EVENT_PIRACY          | Piracy
 MAIN_PLANET_EVENT_PLAGUE          | Plague
