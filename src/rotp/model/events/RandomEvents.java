@@ -37,6 +37,9 @@ public class RandomEvents implements Base, Serializable {
     public void addActiveEvent(RandomEvent ev)     { activeEvents.add(ev); }
     public void removeActiveEvent(RandomEvent ev)  { activeEvents.remove(ev); }
     public void nextTurn() {
+        if (options().disableRandomEvents()) 
+            return;
+
         // possible that next-turn logic may remove an active event
         List<RandomEvent> tempEvents = new ArrayList<>(activeEvents);
         for (RandomEvent ev: tempEvents)

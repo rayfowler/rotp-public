@@ -43,8 +43,8 @@ public class BaseText implements Base {
     private int bufferedLanguage = -1;
     private boolean logoFont = false;
     private int fontSize = 10;
-    private final int xOrig;
-    private final int yOrig;
+    private int xOrig;
+    private int yOrig;
     BaseText preceder;
 
     public BaseText(BasePanel p, boolean logo, int fSize, int x1, int y1, Color c1, Color c2, Color c3, Color c4, Color c5, int i1, int i2, int i3) {
@@ -65,6 +65,12 @@ public class BaseText implements Base {
         topLBdr = i2;
         btmRBdr = i3;
     }
+    public void setScaledXY(int x1, int y1) {
+        xOrig = unscaled(x1);
+        yOrig = unscaled(y1);
+        x = x1;
+        y = y1;
+    }
     private Font font() {
         return logoFont ? logoFont(fontSize) : narrowFont(fontSize);
     }
@@ -78,6 +84,7 @@ public class BaseText implements Base {
     public int w()                    { return bounds.width; }
     public int h()                    { return bounds.height; }
     public int bottomY()              { return bounds.y + bounds.height; }
+    public Rectangle bounds()         { return bounds; }
     public void disabled(boolean b)   { disabled = b; }
     public void preceder(BaseText t)  { preceder = t; }
     public void setBounds(int x, int y, int w, int h) {

@@ -40,8 +40,10 @@ import rotp.model.empires.Race;
 import rotp.model.galaxy.GalaxyShape;
 import rotp.model.game.GameSession;
 import rotp.ui.BasePanel;
+import rotp.ui.BaseText;
 import rotp.ui.NoticeMessage;
 import rotp.ui.RotPUI;
+import rotp.ui.main.SystemPanel;
 
 public final class SetupGalaxyUI  extends BasePanel implements MouseListener, MouseMotionListener, MouseWheelListener {
     private static final long serialVersionUID = 1L;
@@ -62,6 +64,7 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
     Rectangle oppBox = new Rectangle();
     Polygon  oppBoxU = new Polygon();
     Polygon oppBoxD = new Polygon();
+    BaseText randomEventsText;
 
     Rectangle[] oppSet = new Rectangle[MAX_DISPLAY_OPPS];
 
@@ -79,8 +82,11 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         addMouseWheelListener(this);
         for (int i=0;i<oppSet.length;i++)
             oppSet[i] = new Rectangle();
+        Color textC = SystemPanel.blackText;
+        randomEventsText = new BaseText(this, false, 17, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
     }
     public void init() {
+        randomEventsText.displayText(randomEventsStr());
     }
     private void release() {
         backImg = null;
@@ -160,7 +166,7 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         g.setColor(Color.black);
         g.setFont(narrowFont(18));
         int galaxyBoxW = boxW-s40;
-        int y3 = boxY+rightBoxH-s100-s30;
+        int y3 = galaxyY+galaxyH+s20;
         String systemsLbl = text("SETUP_GALAXY_NUMBER_SYSTEMS", options().numberStarSystems());
         int sw3 = g.getFontMetrics().stringWidth(systemsLbl);
         int x3 = rightBoxX+s20+((galaxyBoxW/2)-sw3)/2;
@@ -249,6 +255,13 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
             NoticeMessage.setStatus(text("SETUP_CREATING_GALAXY"));
             drawNotice(g, 30);
         }
+        randomEventsText.setScaledXY(rightBoxX+s40, boxY+rightBoxH-s30);
+        randomEventsText.draw(g);
+    }
+    private void toggleRandomEvents() {
+        softClick();
+        options().disableRandomEvents(!options().disableRandomEvents());
+        randomEventsText.repaint(randomEventsStr());
     }
     private void drawGalaxyShape(Graphics g, GalaxyShape sh, int x, int y, int w, int h) {
         float factor = min((float)h/sh.height(), (float)w/sh.width());
@@ -397,7 +410,7 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         boxW = scaled(505);
         boxY = s95;
         leftBoxH = scaled(615);
-        rightBoxH = scaled(515);
+        rightBoxH = scaled(535);
         // draw opponents title
         String title1 = text("SETUP_SELECT_OPPONENTS");
         g.setFont(narrowFont(50));
@@ -469,12 +482,12 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         galaxyX = rightBoxX+s40;
         galaxyY = boxY+s40;
         galaxyW = boxW-s80;
-        galaxyH = rightBoxH-scaled(190);
+        galaxyH = scaled(325);
         g.fillRect(galaxyX, galaxyY, galaxyW, galaxyH);
 
         // draw 3 galaxy option labels
         int sectionW = (boxW-s40) / 3;
-        int y5 = boxY+rightBoxH-s80;
+        int y5 = galaxyY+galaxyH+s55;
         g.setFont(narrowFont(24));
         String shapeLbl = text("SETUP_GALAXY_SHAPE_LABEL");
         int shapeSW = g.getFontMetrics().stringWidth(shapeLbl);
@@ -538,8 +551,6 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         diffBox.setBounds(sliderX, sliderY, sliderW, sliderH);
         g.fill(diffBox);
 
-
-
         int cnr = s5;
         int buttonH = s45;
         int buttonW = scaled(220);
@@ -576,6 +587,12 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         g.fillRect(0, 0, w, h);
         g.dispose();
     }
+    private String randomEventsStr() {
+        if (options().disableRandomEvents())
+            return text("GAME_RANDOM_EVENTS_OFF")+"     ";
+        else
+            return text("GAME_RANDOM_EVENTS_ON")+"    ";
+    }
     @Override
     public String ambienceSoundKey() { 
         return GameUI.AMBIENCE_KEY;
@@ -600,7 +617,9 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         int y = e.getY();
         Shape prevHover = hoverBox;
         hoverBox = null;
-        if (startBox.contains(x,y))
+        if (randomEventsText.contains(x,y))
+            hoverBox = randomEventsText.bounds();
+        else if (startBox.contains(x,y))
             hoverBox = startBox;
         else if (backBox.contains(x,y))
             hoverBox = backBox;
@@ -637,8 +656,13 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
             }
         }
 
-        if (hoverBox != prevHover)
+        if (hoverBox != prevHover) {
+            if (prevHover == randomEventsText.bounds())
+                randomEventsText.mouseExit();
+            else if (hoverBox == randomEventsText.bounds())
+                randomEventsText.mouseEnter();
             repaint();
+        }
     }
     @Override
     public void mouseClicked(MouseEvent e) { }
@@ -652,7 +676,9 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
             return;
         int x = e.getX();
         int y = e.getY();
-        if (hoverBox == backBox)
+        if (hoverBox == randomEventsText.bounds())
+            toggleRandomEvents();
+        else if (hoverBox == backBox)
             goToRaceSetup();
         else if (hoverBox == startBox)
             startGame();

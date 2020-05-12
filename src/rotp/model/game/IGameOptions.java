@@ -78,6 +78,8 @@ public interface IGameOptions {
     public GalaxyShape galaxyShape();
     public int numColors();
     public Color color(int i);
+    public boolean disableRandomEvents();
+    public void disableRandomEvents(boolean b);
 
     // selectable options
     public List<String> galaxySizeOptions();

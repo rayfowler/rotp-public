@@ -298,6 +298,8 @@ GAME_SHRINK                       | Shrink -
 GAME_ENLARGE                      | Expand
 GAME_MEMORY_SHOW                  | Memory Use: SHOW
 GAME_MEMORY_HIDE                  | Memory Use: HIDE
+GAME_RANDOM_EVENTS_ON             | Random Events: ON
+GAME_RANDOM_EVENTS_OFF            | Random Events: OFF
 
 // Load Game UI
 LOAD_GAME_TITLE                   | Load Game

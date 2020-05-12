@@ -46,6 +46,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private String selectedGameDifficulty;
     private int selectedNumberOpponents;
     private boolean communityAI = false;
+    private boolean disableRandomEvents = false;
 
     private transient GalaxyShape galaxyShape;
 
@@ -62,15 +63,19 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
             selectedOpponentRace(i,null);
     }
     @Override
-    public int numPlayers()            { return 1; }
+    public int numPlayers()                      { return 1; }
     @Override
-    public int numColors()             { return 10; }
+    public int numColors()                       { return 10; }
     @Override
-    public NewPlayer selectedPlayer()  { return player; }
+    public NewPlayer selectedPlayer()            { return player; }
     @Override
-    public boolean communityAI()       { return communityAI; }
+    public boolean communityAI()                 { return communityAI; }
     @Override
-    public void communityAI(boolean b) { communityAI = b; }
+    public void communityAI(boolean b)           { communityAI = b; }
+    @Override
+    public boolean disableRandomEvents()           { return disableRandomEvents; }
+    @Override
+    public void disableRandomEvents(boolean b)     { disableRandomEvents = b; }
     @Override
     public String selectedGalaxySize()           { return selectedGalaxySize; }
     @Override
