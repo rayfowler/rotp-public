@@ -39,6 +39,7 @@ public class UserPreferences {
     private static boolean playSounds = true;
     private static boolean displayYear = true;
     private static boolean textures = true;
+    private static boolean antialiasing = false;
     private static float uiTexturePct = 0.20f;
     private static int screenSizePct = 93;
     private static final HashMap<String, String> raceNames = new HashMap<>();
@@ -47,6 +48,9 @@ public class UserPreferences {
     public static void toggleMemory()       { showMemory = !showMemory; save(); }
     public static boolean playAnimations()  { return playAnimations; }
     public static void toggleAnimations()   { playAnimations = !playAnimations; save();  }
+
+    public static void toggleAntialiasing()        { antialiasing = !antialiasing; save();  }
+    public static boolean antialiasing()        { return antialiasing; }
     public static boolean playSounds()      { return playSounds; }
     public static void toggleSounds()       { playSounds = !playSounds;	save(); }
     public static boolean playMusic()       { return playMusic; }
@@ -89,6 +93,7 @@ public class UserPreferences {
         try (FileOutputStream fout = new FileOutputStream(new File(path, PREFERENCES_FILE));
             PrintWriter out = new PrintWriter(fout); ) {
             out.println(keyFormat("ANIMATIONS")+ yesOrNo(playAnimations));
+            out.println(keyFormat("ANTIALIASING")+ yesOrNo(antialiasing));
             out.println(keyFormat("MUSIC")+ yesOrNo(playMusic));
             out.println(keyFormat("SOUNDS")+ yesOrNo(playSounds));
             out.println(keyFormat("MUSIC_VOLUME")+ SoundManager.musicLevel());
@@ -124,6 +129,7 @@ public class UserPreferences {
         System.out.println("Key:"+key+"  value:"+val);
         switch(key) {
             case "ANIMATIONS":   playAnimations = yesOrNo(val); return;
+            case "ANTIALIASING":   antialiasing = yesOrNo(val); return;
             case "MUSIC":        playMusic = yesOrNo(val); return;
             case "SOUNDS":       playSounds = yesOrNo(val); return;
             case "MUSIC_VOLUME": SoundManager.musicLevel(Integer.valueOf(val)); return;
