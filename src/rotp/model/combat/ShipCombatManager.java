@@ -787,7 +787,8 @@ public class ShipCombatManager implements Base {
         
         int i = stacks.indexOf(st);
         if (i+1 == stacks.size()) {
-            Collections.sort(stacks, CombatStack.INITIATIVE);
+            Collections.sort(results.activeStacks(), CombatStack.INITIATIVE);
+            stacks = new ArrayList<>(results.activeStacks());
             currentStack = stacks.get(0);
             turnCounter++;
             trimAsteroids();
