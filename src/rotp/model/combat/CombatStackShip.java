@@ -181,13 +181,22 @@ public class CombatStackShip extends CombatStack {
         // else use beam weapon range;
         int missileRange = -1;
         int weaponRange = -1;
+        
+        int maxX = ShipCombatManager.maxX;
+        int maxY = ShipCombatManager.maxY;
+        float maxRetreatMove = 2*tgt.maxMove; // allow 2 turns to retreat before missiles hit
+        if (maxRetreatMove > 0) {
+            // won't retreat more than the distance to the nearest corner of the map
+            float moveToCorner = min(distance(tgt.x,tgt.y,0,0), distance(tgt.x,tgt.y,0,maxY), distance(tgt.x,tgt.y,maxX,0), distance(tgt.x,tgt.y,maxX,maxY));
+            maxRetreatMove = min(maxRetreatMove, moveToCorner);
+        }
         for (int i=0;i<weapons.size();i++) {
             ShipComponent wpn = weapons.get(i);
             // if we are bombing a planet, ignore other weapons
             if (tgt.isColony() || wpn.groundAttacksOnly())
                 return 1;
             else if (wpn.isMissileWeapon()) 
-                missileRange = max(missileRange, weaponRange(wpn));
+                missileRange = (int) max(1, missileRange, weaponRange(wpn)-maxRetreatMove);
             else
                 weaponRange = max(weaponRange,weaponRange(wpn));
         }
