@@ -53,6 +53,7 @@ public class ShipCombatManager implements Base {
     private final int[] startingPosn = { 30,40,20,50,10,60,0 };
     private final double[][] riskMap = new double[maxX+1][maxY+1];
     public boolean[][] asteroidMap = new boolean[maxX+1][maxY+1];
+    private boolean initialPause;
 
     public boolean interdiction()              { return interdiction; }
     public ShipCombatResults results()         { return results; }
@@ -62,7 +63,8 @@ public class ShipCombatManager implements Base {
     public void ui(ShipBattleUI panel)         { ui = panel; }
     public boolean showAnimations()            { return showAnimations && (ui != null) && playerInBattle; }
     public List<CombatStack> allStacks()       { return allStacks; }
-
+    public void setInitialPause()              { initialPause = true; }
+    
     public boolean involves(Empire emp) {
         return (results.attacker() == emp) || (results.defender() == emp);
     }
@@ -254,6 +256,13 @@ public class ShipCombatManager implements Base {
             return;
         
         performingStackTurn = true;
+        
+        
+        if (initialPause) {
+            initialPause = false;
+            ui.paintAllImmediately();     
+            sleep(1000);
+        }
         currentStack.performTurn();
         boolean playerTurn = false;
         while (!playerTurn) {

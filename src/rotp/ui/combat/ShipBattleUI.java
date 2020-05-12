@@ -231,9 +231,11 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     public void init(ShipCombatManager m) {
         mgr = m;
         mgr.ui(this);
+        mgr.setInitialPause();
         exited = false;
         mode = Display.INTRO;
-        renderedPlanetImage = null;
+        renderedPlanetImage = mgr.system().planet().image(planetR, 135);
+
         planetDrawn = false;
         showPlanet = false;
 
