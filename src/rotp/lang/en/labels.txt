@@ -289,11 +289,11 @@ GAME_MUSIC_ON                     | Music: %1/10
 GAME_MUSIC_OFF                    | Music: MUTED
 GAME_TEXTURES_ON                  | Textures: ON
 GAME_TEXTURES_OFF                 | Textures: OFF
-GAME_ANIMATIONS_ON                | Animations: ON
-GAME_ANIMATIONS_OFF               | Animations: OFF
-GAME_ANIMATIONS_DISABLED          | Animations: DISABLED
-GAME_ANTIALIASING_ON              | Anti-aliasing: ON
-GAME_ANTIALIASING_OFF             | Anti-aliasing: OFF
+GAME_GRAPHICS_NORMAL              | Graphics: NORMAL
+GAME_GRAPHICS_MEDIUM              | Graphics: MEDIUM
+GAME_GRAPHICS_LOW                 | Graphics: LOW
+GAME_GRAPHICS_MEDIUM_HOVER        | Graphics: MEDIUM - Anti-Aliasing is OFF.
+GAME_GRAPHICS_LOW_HOVER           | Graphics: LOW - Anti-Aliasing is OFF. Animations are OFF.
 GAME_SHRINK                       | Shrink -
 GAME_ENLARGE                      | Expand
 GAME_MEMORY_SHOW                  | Memory Use: SHOW

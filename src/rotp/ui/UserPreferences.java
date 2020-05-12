@@ -31,26 +31,24 @@ import rotp.util.LanguageManager;
 import rotp.util.sound.SoundManager;
 
 public class UserPreferences {
+    public enum GraphicsSetting { NORMAL, MEDIUM, LOW;  }
     private static final String PREFERENCES_FILE = "Remnants.cfg";
     private static final String keyFormat = "%-20s: ";
     private static boolean showMemory = false;
-    private static boolean playAnimations = true;
     private static boolean playMusic = true;
     private static boolean playSounds = true;
     private static boolean displayYear = true;
     private static boolean textures = true;
-    private static boolean antialiasing = false;
     private static float uiTexturePct = 0.20f;
     private static int screenSizePct = 93;
     private static final HashMap<String, String> raceNames = new HashMap<>();
+    private static GraphicsSetting graphicsLevel = GraphicsSetting.NORMAL;
 
     public static boolean showMemory()      { return showMemory; }
     public static void toggleMemory()       { showMemory = !showMemory; save(); }
-    public static boolean playAnimations()  { return playAnimations; }
-    public static void toggleAnimations()   { playAnimations = !playAnimations; save();  }
+    public static boolean playAnimations()  { return graphicsLevel != GraphicsSetting.LOW; }
 
-    public static void toggleAntialiasing()        { antialiasing = !antialiasing; save();  }
-    public static boolean antialiasing()        { return antialiasing; }
+    public static boolean antialiasing()    { return graphicsLevel == GraphicsSetting.NORMAL; }
     public static boolean playSounds()      { return playSounds; }
     public static void toggleSounds()       { playSounds = !playSounds;	save(); }
     public static boolean playMusic()       { return playMusic; }
@@ -64,6 +62,7 @@ public class UserPreferences {
     public static boolean displayYear()       { return displayYear; }
     public static void uiTexturePct(int i)    { uiTexturePct = i / 100.0f; }
     public static float uiTexturePct()        { return uiTexturePct; }
+    public static GraphicsSetting graphicsLevel()    { return graphicsLevel; }
 
     public static void loadAndSave() {
         load();
@@ -92,8 +91,7 @@ public class UserPreferences {
         Collections.sort(raceKeys);
         try (FileOutputStream fout = new FileOutputStream(new File(path, PREFERENCES_FILE));
             PrintWriter out = new PrintWriter(fout); ) {
-            out.println(keyFormat("ANIMATIONS")+ yesOrNo(playAnimations));
-            out.println(keyFormat("ANTIALIASING")+ yesOrNo(antialiasing));
+            out.println(keyFormat("GRAPHICS")+ graphicsLevel.toString());
             out.println(keyFormat("MUSIC")+ yesOrNo(playMusic));
             out.println(keyFormat("SOUNDS")+ yesOrNo(playSounds));
             out.println(keyFormat("MUSIC_VOLUME")+ SoundManager.musicLevel());
@@ -128,8 +126,7 @@ public class UserPreferences {
 
         System.out.println("Key:"+key+"  value:"+val);
         switch(key) {
-            case "ANIMATIONS":   playAnimations = yesOrNo(val); return;
-            case "ANTIALIASING":   antialiasing = yesOrNo(val); return;
+            case "GRAPHICS":     graphicsLevel(val); return;
             case "MUSIC":        playMusic = yesOrNo(val); return;
             case "SOUNDS":       playSounds = yesOrNo(val); return;
             case "MUSIC_VOLUME": SoundManager.musicLevel(Integer.valueOf(val)); return;
@@ -168,6 +165,21 @@ public class UserPreferences {
         int oldSize = screenSizePct;
         setScreenSizePct(screenSizePct+5);
         return oldSize != screenSizePct;
+    }
+    public static void graphicsLevel(String s) {
+        String level = s.toUpperCase();
+        switch(level) {
+            case "NORMAL" : graphicsLevel = GraphicsSetting.NORMAL; break;
+            case "MEDIUM" : graphicsLevel = GraphicsSetting.MEDIUM; break;
+            case "LOW"    : graphicsLevel = GraphicsSetting.LOW; break;
+        }
+    }
+    public static void toggleGraphicsLevel() {
+        switch(graphicsLevel) {
+            case NORMAL:  graphicsLevel = GraphicsSetting.MEDIUM; save(); break;
+            case MEDIUM:  graphicsLevel = GraphicsSetting.LOW; save(); break;
+            case LOW:     graphicsLevel = GraphicsSetting.NORMAL; save(); break;
+        }
     }
     public static String raceNames(String id, String defaultNames) {
         String idUpper = id.toUpperCase();
