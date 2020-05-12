@@ -532,7 +532,8 @@ public class ShipCombatManager implements Base {
                 }
             }
         }
-        results.activeStacks().removeAll(retreatingStacks);
+        for (CombatStack st: retreatingStacks)
+            results.activeStacks().remove(st);
     }
     public void addEmpiresToCombat() {
         boolean playerInCombat = false;
