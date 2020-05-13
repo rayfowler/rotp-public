@@ -224,7 +224,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
     @Override
     public boolean drawMemory()            { return true; }
     @Override
-    public boolean drawBanner(StarSystem s)             { return !s.notes().isEmpty(); }
+    public Color flagColor(StarSystem s)             { return s.notes().isEmpty() ? null : Color.yellow; }
     @Override
     public GalaxyMapPanel map()         { return map; }
     private void initModel() {

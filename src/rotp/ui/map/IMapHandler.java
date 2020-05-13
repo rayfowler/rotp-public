@@ -84,14 +84,14 @@ public interface IMapHandler {
     default public IMappedObject gridOrigin()            { return null; }
     default public void drawAlerts(Graphics2D g)         { }
 
-    default Empire empireBoundaries()                    { return Galaxy.current().player(); }
+    default Empire empireBoundaries()                    { return Empire.thePlayer(); }
     default public float systemClickRadius()             { return 1.0f; }
     default public boolean showYear()                    { return true; }
-    default boolean drawBanner(StarSystem s)             { return false; }
+    default Color flagColor(StarSystem s)                { return Empire.thePlayer().sv.flagColor(s.id); }
     default boolean drawStar(StarSystem s)               { return true; }
     default boolean showOwnerReach(StarSystem s)         { return false; }
     default boolean showOwnership(StarSystem s)          { return true; }
-    default float ownerReach(StarSystem s)              { return 0; }
+    default float ownerReach(StarSystem s)               { return 0; }
     default boolean drawShield(StarSystem s)             { return false; }
     default boolean shouldDrawSprite(Sprite s)           { return true; }
     default boolean canChangeMapScales()                 { return true; }

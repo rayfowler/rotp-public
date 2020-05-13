@@ -15,6 +15,7 @@
  */
 package rotp.model.empires;
 
+import java.awt.Color;
 import java.awt.image.BufferedImage;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -35,6 +36,11 @@ public class SystemView implements IMappedObject, Base, Serializable {
     protected static final int INNER_SYSTEM = 1;
     protected static final int BORDER_SYSTEM = 2;
     protected static final int ATTACK_TARGET = 3;
+    
+    static final int FLAG_NONE = 0;
+    static final int FLAG_WHITE = 1;
+    static final int FLAG_RED = 2;
+    static final int FLAG_BLUE = 3;
 
     public static SystemView create(int sysId, int empId) {
         return new SystemView(sysId,empId);
@@ -63,6 +69,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
     private int vCurrentSize = 0;
     private int vArtifacts = 0;
     private boolean vStargate = false;
+    private int flagColor = FLAG_NONE;
 
     private transient Empire owner;
     private transient PlanetType vPlanetType;
@@ -92,9 +99,9 @@ public class SystemView implements IMappedObject, Base, Serializable {
     public boolean stargate()                { return vStargate; }
     public Planet planet()                   { return vPlanet; }
     public int locationSecurity()            { return locationSecurity; }
-    public float hostilityLevel()           { return hostilityLevel; }
-    public float spyTime()                  { return spyTime; }
-    public float scoutTime()                { return scoutTime; }
+    public float hostilityLevel()            { return hostilityLevel; }
+    public float spyTime()                   { return spyTime; }
+    public float scoutTime()                 { return scoutTime; }
     public boolean isGuarded()               { return vGuarded; }
     public StarSystem rallySystem()          { return relocationSystem; }
     public void rallySystem(StarSystem sys)  {
@@ -103,7 +110,15 @@ public class SystemView implements IMappedObject, Base, Serializable {
             system().rallySprite().clear();
         }
     }
-    public void stopRally()                  { rallySystem(system()); }
+    public void stopRally()                 { rallySystem(system()); }
+    public Color flagColor() { 
+        switch(flagColor) {
+            case FLAG_RED:   return Color.red;
+            case FLAG_WHITE: return Color.white;
+            case FLAG_BLUE:  return Color.blue;
+        }
+        return null; 
+    }
     public PlanetType planetType() {
         if (vPlanetTypeKey == null)
             return null;
@@ -223,6 +238,14 @@ public class SystemView implements IMappedObject, Base, Serializable {
     public boolean artifact()                { return (planet() != null) && planet().isArtifact(); }
     public boolean orionArtifact()           { return (planet() != null) && planet().isOrionArtifact(); }
 
+    public void toggleFlagColor() {
+        switch(flagColor) {
+            case FLAG_NONE:  flagColor = FLAG_WHITE; return;
+            case FLAG_WHITE: flagColor = FLAG_RED; return;
+            case FLAG_RED:   flagColor = FLAG_BLUE; return;
+            case FLAG_BLUE:  flagColor = FLAG_NONE; return;
+        }
+    }
     public String resourceType() {
         if (artifact() || orionArtifact())
             return "PLANET_ARTIFACTS";

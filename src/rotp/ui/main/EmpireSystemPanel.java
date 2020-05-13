@@ -138,7 +138,7 @@ public class EmpireSystemPanel extends SystemPanel {
         layout.setVgap(s1);
         detailTopPane.setLayout(layout);
         detailTopPane.setPreferredSize(new Dimension(getWidth(),scaled(110)));
-        detailTopPane.add(new EmpireColonyFoundedPane(this, MainUI.paneBackground()), BorderLayout.NORTH);
+        detailTopPane.add(new EmpireColonyFoundedPane(this, parentSpritePanel.parent, MainUI.paneBackground()), BorderLayout.NORTH);
         detailTopPane.add(new EmpireColonyInfoPane(this, MainUI.paneBackground(), dataBorders, SystemPanel.yellowText, darkText), BorderLayout.CENTER);
         Color textC = new Color(204,204,204);
         spendingPane = new EmpireColonySpendingPane(this, MainUI.paneBackground(), textC, labelBorderHi, labelBorderLo);

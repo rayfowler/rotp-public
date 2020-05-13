@@ -579,7 +579,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             empireDetailTopPane.setBorder(new ShadowBorder(palette.bdrHiOut, palette.bdrLoIn));
             empireDetailTopPane.setLayout(new BorderLayout(0,s1));
             empireDetailTopPane.setPreferredSize(new Dimension(getWidth(),scaled(120)));
-            empireDetailTopPane.add(new EmpireColonyFoundedPane(this, unselectedC), BorderLayout.NORTH);
+            empireDetailTopPane.add(new EmpireColonyFoundedPane(this, null, unselectedC), BorderLayout.NORTH);
             empireDetailTopPane.add(new EmpireColonyInfoPane(this, unselectedC, palette.bdrHiIn, palette.yellow, palette.bdrLoIn), BorderLayout.CENTER);
 
             BasePanel empireDetailBottomPane = new BasePanel();

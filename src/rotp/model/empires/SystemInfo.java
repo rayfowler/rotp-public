@@ -91,13 +91,13 @@ public class SystemInfo implements Serializable, Base {
     public boolean isRich(int i)         { return missing(i) ? false : view(i).resourceRich(); }
     public boolean isPoor(int i)         { return missing(i) ? false : view(i).resourcePoor(); }
     public boolean isResourceNormal(int i)         { return missing(i) ? false : view(i).resourceNormal(); }
-    public boolean isUltraPoor(int i)    { return missing(i) ? false : view(i).resourceUltraPoor(); }
-    public boolean hasRallyPoint(int i)  { return missing(i) ? false : view(i).hasRallyPoint(); }
-    public boolean hasActiveTransport(int i)  { return missing(i) ? false : view(i).hasActiveTransport(); }
-    public boolean canSabotageBases(int i)  { return missing(i) ? false : view(i).canSabotageBases(); }
+    public boolean isUltraPoor(int i)          { return missing(i) ? false : view(i).resourceUltraPoor(); }
+    public boolean hasRallyPoint(int i)        { return missing(i) ? false : view(i).hasRallyPoint(); }
+    public boolean hasActiveTransport(int i)   { return missing(i) ? false : view(i).hasActiveTransport(); }
+    public boolean canSabotageBases(int i)     { return missing(i) ? false : view(i).canSabotageBases(); }
     public boolean canSabotageFactories(int i) { return missing(i) ? false : view(i).canSabotageFactories(); }
-    public boolean canInciteRebellion(int i)  { return missing(i) ? false : view(i).canInciteRebellion(); }
-
+    public boolean canInciteRebellion(int i)   { return missing(i) ? false : view(i).canInciteRebellion(); }
+    public Color flagColor(int i)              { return missing(i) ? null  : view(i).flagColor(); }
 
     public FleetPlan fleetPlan(int i)            { return view(i).fleetPlan(); }
     public ShipFleet orbitingFleet(int i)        { return system(i).orbitingFleetForEmpire(empire()); }

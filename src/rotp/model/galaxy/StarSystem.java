@@ -465,9 +465,6 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             drawStar(map, g2, x0, y0);
         }
         
-        if (map.parent().drawBanner(this)) 
-            drawBanner(g2, map, emp, x0, y0);
-
         boolean drewSelectionBox = false;
         // draw selection box if this system is selected or we are transporting from it
         if (map.parent().isClicked(this)
@@ -492,6 +489,10 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
                 g2.drawImage(img, x1, y1, x1+BasePanel.s14, y1+BasePanel.s14, 0, 0, w, h, map);
             }
         }
+        Color flagColor = map.parent().flagColor(this);
+        if (flagColor != null)
+            drawBanner(g2, flagColor, Color.white, x0, y0);
+
         // draw star name
         Rectangle box = nameBox();
         box.width = 0;
@@ -597,20 +598,29 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         g.setColor(emp.reachColor());
         g.fillOval(x-r, y-r, r+r, r+r);
     }
-    private void drawBanner(Graphics2D g, GalaxyMapPanel map, Empire emp, int x, int y) {
+    public void drawBanner(Graphics2D g, Color c0, Color c1, int x, int y) {
         int w=scaled(2);
         int sp=scaled(10);
         int h=scaled(20);
         int flagW=scaled(16);
         int flagH=scaled(8);
-        g.setColor(Color.yellow);
         Polygon p = new Polygon();
         p.addPoint(x-flagW, y-h-sp+(flagH/2));
         p.addPoint(x, y-h-sp);
         p.addPoint(x, y-h-sp+flagH);
-        g.fill(p);
-        g.setColor(Color.white);
-        g.fillRect(x, y-h-sp, w, h);
+        
+        // if c is null, just draw a black outline (for the colony info panel)
+        if (c0 == null) {
+            g.setColor(c1);
+            g.draw(p);
+            g.fillRect(x, y-h-sp, w, h);
+        }
+        else {
+            g.setColor(c0);
+            g.fill(p);
+            g.setColor(c1);
+            g.fillRect(x, y-h-sp, w, h);
+        }
     }
     private void drawAlert(GalaxyMapPanel map, Graphics2D g2, Color alertC, int x, int y) {
         int r = map.scale(0.75f);
