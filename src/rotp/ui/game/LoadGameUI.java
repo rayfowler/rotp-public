@@ -159,8 +159,6 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
         cancelBackC[1] = new LinearGradientPaint(start2, end2, dist, grayColors);
     }
     @Override
-    public String ambienceSoundKey()       { return "IntroAmbience"; }
-    @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (loadBackC == null)

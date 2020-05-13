@@ -144,8 +144,6 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
             return true;
     }
     @Override
-    public String ambienceSoundKey()       { return "IntroAmbience"; }
-    @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         if (saveBackC == null)
