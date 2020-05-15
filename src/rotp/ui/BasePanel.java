@@ -131,7 +131,12 @@ public class BasePanel extends JPanel implements Base {
         p.setVisible(true);
     }
     public void disableGlassPane()  { frame().getGlassPane().setVisible(false); }
-
+    
+    public void showError(String s) {
+        disableGlassPane();
+        ErrorDialogPanel err = new ErrorDialogPanel(s);
+        enableGlassPane(err);
+    }
     public void cancel()   { }
     public void handleNextTurn()    { }
     @Override
