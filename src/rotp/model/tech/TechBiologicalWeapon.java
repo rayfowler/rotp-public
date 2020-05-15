@@ -120,9 +120,9 @@ public final class TechBiologicalWeapon extends Tech {
     }
     @Override
     public void drawUnsuccessfulAttack(CombatStack source, CombatStack target, int wpnNum) {
-        ShipBattleUI ui = source.mgr.ui;
-        if (ui == null)
+         if (!source.mgr.showAnimations())
             return;
+        ShipBattleUI ui = source.mgr.ui;
 
         int stW = ui.stackW();
         int stH = ui.stackH();
@@ -143,9 +143,9 @@ public final class TechBiologicalWeapon extends Tech {
     }
     @Override
     public void drawSuccessfulAttack(CombatStack source, CombatStack target, int wpnNum, float dmg) {
-        ShipBattleUI ui = source.mgr.ui;
-        if (ui == null)
+         if (!source.mgr.showAnimations())
             return;
+        ShipBattleUI ui = source.mgr.ui;
 
         int stW = ui.stackW();
         int stH = ui.stackH();
@@ -161,9 +161,9 @@ public final class TechBiologicalWeapon extends Tech {
         drawAttack(source, target, x0, y0, x1, y1, wpnNum, dmg);
     }
     public void drawAttack(CombatStack source, CombatStack target, int x0, int y0, int x1, int y1, int wpnNum, float dmg) {
-        ShipBattleUI ui = source.mgr.ui;
-        if (ui == null)
+         if (!source.mgr.showAnimations())
             return;
+        ShipBattleUI ui = source.mgr.ui;
         
         Graphics2D g = (Graphics2D) ui.getGraphics();
         Stroke prev = g.getStroke();
