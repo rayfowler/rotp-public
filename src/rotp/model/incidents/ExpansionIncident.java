@@ -36,20 +36,24 @@ public class ExpansionIncident extends DiplomaticIncident {
         duration = 1;
 
         float multiplier = 1.0f;
+        // penalty doubled for xenophobes
         if (ev.owner().leader().isXenophobic())
             multiplier *= 2;
-        // if not allied, increase denominator
+        // allies are more tolerant of growth, NAPS less so
         if (!ev.owner().alliedWith(empYou))
-            multiplier /= 2;
-
-        if (ev.owner().atWarWith(empYou))
-            multiplier *= 1.5;
+            multiplier /= 3;
+        else if (!ev.owner().pactWith(empYou))
+            multiplier /= 1.5;
         
         // if you are bigger than average but the viewer is 
-        // even larger, the penalty is lessened SOMEWHAT
+        // even larger, the penalty is lessened by the square
+        // of the proportion... i.e. if you are 1/2 the size
+        // the penalty is 1/4th
         int ownerNum = ev.owner().numColonizedSystems();
-        if (ownerNum > numSystems) 
-            multiplier = multiplier * numSystems / ownerNum;
+        if (ownerNum > numSystems) {
+            float ratio = (float) numSystems / ownerNum;
+            multiplier = multiplier * ratio * ratio;
+        }
         
         float n = -10*((num*num/max/max) - 1);
 
