@@ -576,7 +576,7 @@ public class ShipCombatManager implements Base {
             int num = 0;
             for (int y=0;y<=maxY;y++) {
                 asteroidMap[x][y] = false;
-                if ((num < 4) && (random() < 0.375)) {
+                if ((num < 3) && (random() < 0.375)) {
                     num++;
                     asteroidMap[x][y] = true;
                 }
@@ -586,7 +586,7 @@ public class ShipCombatManager implements Base {
     private void trimAsteroids() {
         for (int x=0; x<=maxX; x++) {
             for (int y=0;y<=maxY; y++) {
-                if (asteroidMap[x][y] && (random() < .03)) {
+                if (asteroidMap[x][y] && (random() < .05)) {
                     asteroidMap[x][y] = false;
                     redrawMap = true;
                     break;
