@@ -908,6 +908,8 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 return;
 
             ShipDesign d = fl.visibleDesign(player().id, hoverStackNum);
+            if (d == null)
+                return;
             int index = d.id();
             int stackNum = fl.num(index);
             int currAdj = stackAdjustment[index];
