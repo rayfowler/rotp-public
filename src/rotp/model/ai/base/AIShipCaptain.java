@@ -265,7 +265,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             return null;
 
         Collections.sort(validPaths,FlightPath.SORT);
-        System.out.println("Paths found: "+validPaths.size());
+        //System.out.println("Paths found: "+validPaths.size());
         return validPaths.get(0);
     }
     @Override

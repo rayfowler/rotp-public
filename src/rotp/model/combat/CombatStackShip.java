@@ -454,6 +454,9 @@ public class CombatStackShip extends CombatStack {
         if (target.inStasis || target.isMissile())
             return false;
 
+        if (index >= weapons.size())
+            return false;
+        
         ShipComponent shipWeapon = weapons.get(index);
 
         if ((shipWeapon == null) || !shipWeapon.isWeapon())

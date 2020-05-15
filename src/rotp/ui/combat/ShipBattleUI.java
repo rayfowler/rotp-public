@@ -626,7 +626,8 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
                 boolean isLeftColumn = i % 2 == 0;
                 int x1 = isLeftColumn ? x + s10 : x + (w / 2);
                 int w1 = (w - s20 - s5) / 2;
-                actions.get(i).draw(g, currentStack, target, isLeftColumn, x1, y1, w1, buttonH, actions.size(), quickButtons.get(i));
+                if ((i < actions.size()) && (i < quickButtons.size()))
+                    actions.get(i).draw(g, currentStack, target, isLeftColumn, x1, y1, w1, buttonH, actions.size(), quickButtons.get(i));
                 if (i % 2 == 1)
                     y1 = y1 + buttonH + buttonGap;
             }
