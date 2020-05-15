@@ -104,9 +104,7 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
     }
 
     @Override
-    public void mouseDragged(MouseEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    public void mouseDragged(MouseEvent e) { }
     @Override
     public void mouseMoved(MouseEvent e) {}
     class EmpireInfoGraphicPane extends BasePanel implements ActionListener {
