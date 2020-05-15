@@ -234,7 +234,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
     @Override
     public void keyPressed(KeyEvent e) {
         boolean repaint = false;
-        int mods = e.getModifiersEx();
+        boolean shift = e.isShiftDown();
         switch(e.getKeyCode()) {
             case KeyEvent.VK_ESCAPE:
                 if (frame().getGlassPane().isVisible())
@@ -243,9 +243,9 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                     finish(false);
                 return;
             case KeyEvent.VK_TAB:
-                if (mods == 0)
+                if (!shift)
                     viewSelectionPane.selectNextTab();
-                else if (mods == 1)
+                else
                     viewSelectionPane.selectPreviousTab();
                 return;
             case KeyEvent.VK_UP:     repaint = listingUI.scrollUp(); break;

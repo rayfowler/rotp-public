@@ -333,6 +333,7 @@ public class Planet implements Base, IMappedObject, Serializable {
             int incr = (int) (20*session().populationBonus());
             increaseBaseSize(incr);
             starSystem().addEvent(new SystemTerraformingEvent("SYSEVENT_ATMOSPHERE_TERRAFORMED"));
+            colony.empire().sv.refreshFullScan(starSystem().id);
         }
     }
     public void terraformBiosphere(float amt) {

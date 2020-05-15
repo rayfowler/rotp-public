@@ -718,7 +718,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
                 else
                     return text("SYSTEMS_ENVIRONMENT_SIZE", sv.planetType().name(), str(sv.currentSize()));
             case exploitTab: 
-                return text(sv.resourceType());
+                return text("SYSTEMS_ENVIRONMENT_TYPE", text(sv.resourceType()), text(sv.ecologyType()));
             case exterminateTab: 
                 int bases = sv.bases();
                 int shield = sv.shieldLevel();
@@ -728,41 +728,49 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
                 String str2 = bases == 0 ? "" : text("SYSTEMS_BASES", str(bases));
                 return shield == 0 ? str2 : str1+" "+str2;
         }
-        return "";     }
+        return "";
+    }
     @Override
     public void keyPressed(KeyEvent e) {
+        boolean shift = e.isShiftDown();
         switch(e.getKeyCode()) {
-                case KeyEvent.VK_ESCAPE:
-                    clearMapSelections();
-                    buttonClick();
-                    RotPUI.instance().selectMainPanel(false);
-                    return;
-                case KeyEvent.VK_EQUALS:
-                    if (e.isShiftDown())  {
-                        softClick();
-                        map().adjustZoom(-1);
-                    }
-                    return;
-                case KeyEvent.VK_MINUS:
+            case KeyEvent.VK_TAB:
+                if (!shift)
+                    titlePanel.selectNextTab();
+                else 
+                    titlePanel.selectPreviousTab();
+                return;
+            case KeyEvent.VK_ESCAPE:
+                clearMapSelections();
+                buttonClick();
+                RotPUI.instance().selectMainPanel(false);
+                return;
+            case KeyEvent.VK_EQUALS:
+                if (e.isShiftDown())  {
                     softClick();
-                    map().adjustZoom(1);
-                    return;
-                case KeyEvent.VK_UP:
-                    softClick();
-                    map().dragMap(0, s40);
-                    return;
-                case KeyEvent.VK_DOWN:
-                    softClick();
-                    map().dragMap(0, -s40);
-                    return;
-                case KeyEvent.VK_LEFT:
-                    softClick();
-                    map().dragMap(s40, 0);
-                    return;
-                case KeyEvent.VK_RIGHT:
-                    softClick();
-                    map().dragMap(-s40, 0);
-                    return;
+                    map().adjustZoom(-1);
+                }
+                return;
+            case KeyEvent.VK_MINUS:
+                softClick();
+                map().adjustZoom(1);
+                return;
+            case KeyEvent.VK_UP:
+                softClick();
+                map().dragMap(0, s40);
+                return;
+            case KeyEvent.VK_DOWN:
+                softClick();
+                map().dragMap(0, -s40);
+                return;
+            case KeyEvent.VK_LEFT:
+                softClick();
+                map().dragMap(s40, 0);
+                return;
+            case KeyEvent.VK_RIGHT:
+                softClick();
+                map().dragMap(-s40, 0);
+                return;
         }
     }
     @Override

@@ -1350,6 +1350,7 @@ SYSTEMS_TAB_EXPLOIT               | Exploit
 SYSTEMS_TAB_EXTERMINATE           | Exterminate
 SYSTEMS_RANGE                     | %1 ly
 SYSTEMS_ENVIRONMENT_SIZE          | %1 %2
+SYSTEMS_ENVIRONMENT_TYPE          | %1 %2
 SYSTEMS_SHIELD                    | Shield %1
 SYSTEMS_BASES                     | Bases %1
 SYSTEMS_ENTER_NOTES               | Enter system notes here.

@@ -237,6 +237,10 @@ public class SystemView implements IMappedObject, Base, Serializable {
     public boolean resourceUltraPoor()       { return (planet() != null) && planet().isResourceUltraPoor(); }
     public boolean artifact()                { return (planet() != null) && planet().isArtifact(); }
     public boolean orionArtifact()           { return (planet() != null) && planet().isOrionArtifact(); }
+    
+    public boolean environmentHostile()     { return (planet() != null) && planet().isEnvironmentHostile(); }
+    public boolean environmentFertile()     { return (planet() != null) && planet().isEnvironmentFertile(); }
+    public boolean environmentGaia()        { return (planet() != null) && planet().isEnvironmentGaia(); }
 
     public void toggleFlagColor() {
         switch(flagColor) {
@@ -260,7 +264,16 @@ public class SystemView implements IMappedObject, Base, Serializable {
         else
             return "";
     }
-
+    public String ecologyType() {
+        if (environmentHostile())
+            return "PLANET_HOSTILE";
+        else if (environmentFertile())
+            return "PLANET_FERTILE";
+        if (environmentGaia())
+            return "PLANET_GAIA";
+        else
+            return "";
+    }
     public boolean canSabotageBases()        { return bases() > 0; }
     public boolean canSabotageFactories()    { return factories() > 0; }
     public boolean canInciteRebellion()      { 
