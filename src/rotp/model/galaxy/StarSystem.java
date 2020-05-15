@@ -273,7 +273,8 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             return true;
         int i=0;
         for (ShipFleet fleet1: fleets) {
-            // if this planet is colonized, has bases & is aggressive with the fleet
+            // if this planet is colonized, has bases & is aggressive with the fleet, trigger combat
+            // if aggressive but the colony is unarmed, then combat is handled by planetary bombardment
             if (planet().isColonized()
             && planet().colony().defense().isArmed()
             && empire().aggressiveWith(fleet1.empire(), this))
@@ -281,7 +282,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             for (int j=i+1;j<fleets.size();j++) {
                 ShipFleet fleet2 = fleets.get(j);
                 if (fleet1.aggressiveWith(fleet2, this)
-                && (fleet1.isArmed() || fleet2.isArmed()))
+                && (fleet1.isArmedForShipCombat() || fleet2.isArmedForShipCombat()))
                     return true;
             }
             i++;

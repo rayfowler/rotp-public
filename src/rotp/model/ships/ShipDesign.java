@@ -342,6 +342,17 @@ public final class ShipDesign extends Design {
         }
         return false;
     }
+    public boolean isArmedForShipCombat() {
+        for (int i=0;i<maxWeapons();i++) {
+            if (weapon(i).canAttackShips() && (wpnCount(i)>0))
+                return true;
+        }
+        for (int i=0;i<maxSpecials();i++) {
+            if (special(i).canAttackShips())
+                return true;
+        }
+        return false;
+    }
     public boolean isExtendedRange() {
         for (int i=0;i<maxSpecials();i++) {
             if (special(i).isFuelRange())

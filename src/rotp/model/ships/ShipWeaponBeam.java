@@ -59,6 +59,8 @@ public final class ShipWeaponBeam extends ShipWeapon {
     @Override
     public int bombardAttacks()        { return 10; }
     @Override
+    public boolean canAttackShips()   { return true; }
+    @Override
     public float estimatedBombardDamage(CombatStack source, CombatStackColony target) {
         return super.estimatedBombardDamage(source, target) * target.beamDamageMod();
     }

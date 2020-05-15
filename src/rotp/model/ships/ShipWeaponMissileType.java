@@ -27,15 +27,17 @@ public class ShipWeaponMissileType extends ShipWeapon {
     @Override
     public boolean isLimitedShotWeapon()  { return false; }
     @Override
-    public float planetDamageMod()       { return 1; }
+    public float planetDamageMod()        { return 1; }
     @Override
     public int bombardAttacks()           { return 1;}
-    public float damageLoss(float dist) { return 0; }
+    public float damageLoss(float dist)   { return 0; }
+    @Override
+    public boolean canAttackShips()       { return true; }
     @Override
     public int range()                    { return 0; }
     @Override
     public int shots()                    { return 1; }
-    public float speed()                    { return 1; }
+    public float speed()                  { return 1; }
     public Image image(int num)           { return null; }
     public void dealDamage(CombatStack target, float damage, float shieldMod) {
         target.takeMissileDamage(damage, shieldMod);

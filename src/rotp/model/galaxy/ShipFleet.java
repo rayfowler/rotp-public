@@ -425,20 +425,30 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
         }
         return false;
     }
+    public boolean isArmedForShipCombat() {
+        for (int i=0;i<num.length;i++) {
+            if (num[i] > 0) {
+                ShipDesign d = design(i);
+                if ((d != null) && d.isArmedForShipCombat())
+                    return true;
+            }
+        }
+        return false;
+    }
     public boolean isArmed(StarSystem sys) {
         for (int i=0;i<num.length;i++) {
             ShipDesign d = design(i);
             if ((num[i]>0) && (d != null)) {
                 for (int j=0;j<ShipDesign.maxWeapons();j++) {
                     if (!d.weapon(j).isNone()) {
-                        if (!d.weapon(j).groundAttacksOnly())
+                        if (d.weapon(j).canAttackShips())
                             return true;
-                        if (sys.isColonized() && !empire().alliedWith(sys.empire().id))
+                        if (sys.isColonized() && !empire().alliedWith(sys.empire().id) & d.weapon(j).canAttackPlanets())
                             return true;
                     }
                 }
                 for (int j=0;j<ShipDesign.maxSpecials();j++) {
-                    if (d.special(j).isWeapon()) {
+                    if (d.special(j).canAttackShips()) {
                         return true;
                     }
                 }

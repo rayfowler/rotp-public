@@ -43,6 +43,7 @@ public class ShipComponent implements Base, Serializable {
     public boolean isSpecial()           { return false; }
     public boolean isWeapon()            { return false; }
     public boolean groundAttacksOnly()   { return false; }
+    public boolean canAttackShips()      { return false; } // can a ship armed with only this item successfully destroy another ship?
     public boolean isMissileWeapon()     { return false; }
     public boolean isBeamWeapon()        { return false; }
     public boolean isLimitedShotWeapon() { return false; }
