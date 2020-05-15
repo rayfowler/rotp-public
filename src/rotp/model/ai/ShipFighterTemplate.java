@@ -109,7 +109,7 @@ public class ShipFighterTemplate implements Base {
             return d;
         }
         
-        setOptimalWeapon(ai, d, targets);
+        setOptimalShipCombatWeapon(ai, d, targets);
         upgradeShipManeuverSpecial(ai, d, targets);
         upgradeBeamRangeSpecial(ai, d);
 
@@ -191,7 +191,7 @@ public class ShipFighterTemplate implements Base {
 
         return targets;
     }
-    private void setOptimalWeapon(ShipDesigner ai, ShipDesign d, List<EnemyShipTarget> targets) {
+    private void setOptimalShipCombatWeapon(ShipDesigner ai, ShipDesign d, List<EnemyShipTarget> targets) {
         List<ShipWeapon> allWeapons = ai.lab().weapons();
         List<ShipSpecial> allSpecials = ai.lab().specials();
 
@@ -205,15 +205,17 @@ public class ShipFighterTemplate implements Base {
 
         DesignDamageSpec maxDmgSpec = newDamageSpec();
         for (ShipWeapon wpn: allWeapons) {
-            DesignDamageSpec minDmgSpec = newDamageSpec();
-            minDmgSpec.damage = Float.MAX_VALUE;
-            for (EnemyShipTarget tgt: targets) {
-                DesignDamageSpec spec = simulateDamage(d, wpn, rangeSpecials, tgt);
-                if (minDmgSpec.damage > spec.damage)
-                    minDmgSpec.set(spec);
+            if (wpn.canAttackShips()) {
+                DesignDamageSpec minDmgSpec = newDamageSpec();
+                minDmgSpec.damage = Float.MAX_VALUE;
+                for (EnemyShipTarget tgt: targets) {
+                    DesignDamageSpec spec = simulateDamage(d, wpn, rangeSpecials, tgt);
+                    if (minDmgSpec.damage > spec.damage)
+                        minDmgSpec.set(spec);
+                }
+                if (maxDmgSpec.damage < minDmgSpec.damage)
+                    maxDmgSpec.set(minDmgSpec);
             }
-            if (maxDmgSpec.damage < minDmgSpec.damage)
-                maxDmgSpec.set(minDmgSpec);
         }
 
         // at this point, maxDmgSpec is the optimum

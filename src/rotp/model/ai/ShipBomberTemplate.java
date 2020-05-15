@@ -103,7 +103,8 @@ public class ShipBomberTemplate implements Base {
             return d;
         }
         
-        setOptimalWeapon(ai, d, targets);
+        setShipCombatWeapon(ai, d);
+        setOptimalBombardmentWeapon(ai, d, targets);
 
         ai.lab().nameDesign(d);
         ai.lab().iconifyDesign(d);
@@ -178,7 +179,34 @@ public class ShipBomberTemplate implements Base {
 
         return targets;
     }
-    private void setOptimalWeapon(ShipDesigner ai, ShipDesign d, List<EnemyColonyTarget> targets) {
+    private void setShipCombatWeapon(ShipDesigner ai, ShipDesign d) {
+        List<ShipWeapon> allWeapons = ai.lab().weapons();
+
+        int maxDmg = 0;
+        int maxDmgNum = 0;
+        float spaceForWeapons = d.availableSpace();
+        ShipWeapon maxDmgWeapon = null;
+        
+        // find the highest max damage weapon that can attack ships
+        // range 2 whenever possible
+        for (ShipWeapon wpn: allWeapons) {
+            if (wpn.canAttackShips() && (wpn.range() > 1) && (wpn.maxDamage() > maxDmg)) {
+                int numWeapons = (int) (spaceForWeapons/wpn.space(d));
+                if (numWeapons > 0) {
+                    maxDmg = wpn.maxDamage();
+                    maxDmgNum = numWeapons;
+                    maxDmgWeapon = wpn;
+                }
+            }
+        }
+
+        // ship combat weapons go in slot 1
+        if (maxDmgWeapon != null) {
+            d.weapon(1, maxDmgWeapon);
+            d.wpnCount(1, maxDmgNum);
+        }
+    }
+    private void setOptimalBombardmentWeapon(ShipDesigner ai, ShipDesign d, List<EnemyColonyTarget> targets) {
         List<ShipWeapon> allWeapons = ai.lab().weapons();
         List<ShipSpecial> allSpecials = ai.lab().specials();
 
@@ -202,21 +230,10 @@ public class ShipBomberTemplate implements Base {
                 maxDmgSpec.set(minDmgSpec);
         }
 
-        // at this point, maxDmgSpec is the optimum
-        // spread out the weapon count across all 4 weapon slots
-        // using (int) Math.ceil((float)num/(maxSlots-slot)) ensures
-        // equal distribution with highest first.. i.e 22 = 6 6 5 5
+        // bombardment weapons go in slot 0
         if (maxDmgSpec.weapon != null) {
-            int num = maxDmgSpec.numWeapons;
-            int maxSlots = ShipDesign.maxWeapons;
-            for (int slot=0;slot<maxSlots;slot++) {
-                int numSlot = (int) Math.ceil((float)num/(maxSlots-slot));
-                if (numSlot > 0) {
-                    d.weapon(slot, maxDmgSpec.weapon);
-                    d.wpnCount(slot, numSlot);
-                    num -= numSlot;
-                }
-            }
+            d.weapon(0, maxDmgSpec.weapon);
+            d.wpnCount(0, maxDmgSpec.numWeapons);
         }
         if (maxDmgSpec.special != null) {
             int spSlot = d.nextEmptySpecialSlot();
@@ -233,7 +250,8 @@ public class ShipBomberTemplate implements Base {
         mockDesign.copyFrom(d);
         int wpnSlot = mockDesign.nextEmptyWeaponSlot();
         int specSlot = mockDesign.nextEmptySpecialSlot();
-        int numWeapons = (int) (d.availableSpace()/wpn.space(d));
+        float spaceForBombs = 0.75f * d.availableSpace();
+        int numWeapons = (int) (spaceForBombs/wpn.space(d));
 
         mockDesign.wpnCount(wpnSlot, numWeapons);
         mockDesign.weapon(wpnSlot, wpn);
