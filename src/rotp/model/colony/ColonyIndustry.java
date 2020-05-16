@@ -211,7 +211,7 @@ public class ColonyIndustry extends ColonySpendingCategory {
             //after refitting, build up to max useable factories at current robot controls level
             factoriesToBuild = max(0, maxBuildableFactories(colonyControls)-factories-possibleNewFactories);
             if (factoriesToBuild > 0) {
-                costPerFactory = newFactoryCost();
+                costPerFactory = tech().newFactoryCost(colonyControls);
                 float buildCost = factoriesToBuild * costPerFactory;
                 float bcSpent = Math.min(newBC, buildCost);
                 possibleNewFactories += (bcSpent/costPerFactory);
@@ -258,14 +258,23 @@ public class ColonyIndustry extends ColonySpendingCategory {
 
         refitFactoriesCost = Math.max(0, refitFactoriesCost);
         newFactoriesCost = Math.max(0, newFactoriesCost);
-        return Math.max(0, convertFactoriesCost + refitFactoriesCost + newFactoriesCost - industryReserveBC);
+        float totalCost = Math.max(0, convertFactoriesCost + refitFactoriesCost + newFactoriesCost - industryReserveBC);
+
+        // adjust cost for planetary production
+        // assume any amount over current production comes from reserve (no adjustment)
+        float totalBC = (colony().totalProductionIncome() * planet().productionAdj()) + colony().maxReserveIncome();
+        if (totalCost > totalBC)
+            totalCost += colony().totalProductionIncome() * (1 - planet().productionAdj());
+        else
+            totalCost *= colony().totalIncome() / totalBC;
+
+        return totalCost;
     }
     public int maxAllocationNeeded() {
         float needed = maxSpendingNeeded();
         if (needed <= 0)
             return 0;
-        float prod = (colony().totalProductionIncome() * planet().productionAdj()) + colony().maxReserveIncome();
-        float pctNeeded = min(1, needed / prod);
+        float pctNeeded = min(1, needed / colony().totalIncome());
         int ticks = (int) Math.ceil(pctNeeded * MAX_TICKS);
         return ticks;
     }   

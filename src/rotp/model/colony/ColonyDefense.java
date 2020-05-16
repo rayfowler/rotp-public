@@ -134,10 +134,10 @@ public class ColonyDefense extends ColonySpendingCategory {
         newBaseUpgradeCost = 0;
         float newBaseCost = tech().newMissileBaseCost();
 
-        if (missileBase != tech().bestMissileBase()) {
+        if (bases > 0 && missileBase != tech().bestMissileBase()) {
             newBaseUpgradeCost = (bases * max(0,newBaseCost-baseCost)) - baseUpgradeBC;
             newBaseUpgradeCost = min(newBC, newBaseUpgradeCost);
-            newBaseUpgradeCost = max(1, newBaseUpgradeCost);
+            newBaseUpgradeCost = max(0, newBaseUpgradeCost);
             newBC -= newBaseUpgradeCost;
         }
 
@@ -264,18 +264,27 @@ public class ColonyDefense extends ColonySpendingCategory {
     public float maxSpendingNeeded() {
         float buildShieldCost = (maxShieldLevel() - shield) * 100;
         buildShieldCost = Math.max(0, buildShieldCost);
-        float refitMissileBasesCost = 0;
+        float upgradeMissileBasesCost = missileUpgradeCost() - baseUpgradeBC;
+        upgradeMissileBasesCost = Math.max(0, upgradeMissileBasesCost);
         float newMissileBasesCost =  (maxBases() - bases) * tech().newMissileBaseCost();
         newMissileBasesCost = Math.max(0, newMissileBasesCost);
+        float totalCost = buildShieldCost + upgradeMissileBasesCost + newMissileBasesCost;
 
-        return ((buildShieldCost + refitMissileBasesCost + newMissileBasesCost) / planet().productionAdj());
+        // adjust cost for planetary production
+        // assume any amount over current production comes from reserve (no adjustment)
+        float totalBC = (colony().totalProductionIncome() * planet().productionAdj()) + colony().maxReserveIncome();
+        if (totalCost > totalBC)
+            totalCost += colony().totalProductionIncome() * (1 - planet().productionAdj());
+        else
+            totalCost *= colony().totalIncome() / totalBC;
+
+        return totalCost;
     }
     public int maxAllocationNeeded() {
         float needed = maxSpendingNeeded();
         if (needed <= 0)
             return 0;
-        float prod = (colony().totalProductionIncome() * planet().productionAdj()) + colony().maxReserveIncome();
-        float pctNeeded = min(1, needed / prod);
+        float pctNeeded = min(1, needed / colony().totalIncome());
         int ticks = (int) Math.ceil(pctNeeded * MAX_TICKS);
         return ticks;
     }
