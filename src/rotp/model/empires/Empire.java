@@ -198,7 +198,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     public float minY()                           { return minY; }
     public float maxY()                           { return maxY; }
     
-    private boolean canSeeShips(int empId) {
+    public boolean canSeeShips(int empId) {
         if (canSeeShips == null) {
             canSeeShips = new boolean[galaxy().numEmpires()];
             for (int i=0;i<canSeeShips.length;i++) 
@@ -676,7 +676,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         return shipMaint / empireBC;
     }
     public void nextTurn() {
-        log(this + ": NextTurn");
+        log(this + ": NextTurn");       
         shipBuildingSystems.clear();
         newSystems.clear();
         recalcPlanetaryProduction();
@@ -686,7 +686,6 @@ public final class Empire implements Base, NamedObject, Serializable {
                 d.preNextTurn();
         }
         
-        refreshViews();
         List<StarSystem> allColonies = allColonizedSystems();
         List<Transport> transports = transports();
 
@@ -749,11 +748,6 @@ public final class Empire implements Base, NamedObject, Serializable {
             sv.calculateSystemDistances();
             recalcDistances = false;
         }
-
-        NoticeMessage.setSubstatus(text("TURN_REFRESHING"));
-        refreshViews();
-        //long tm2 = System.currentTimeMillis();
-        //log("refreshViews: "+(tm2-tm0)+"ms");
 
         NoticeMessage.setSubstatus(text("TURN_SCRAP_SHIPS"));
         shipLab.nextTurn();
@@ -936,6 +930,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     }
     public void startGame() {
         refreshViews();
+        setVisibleShips();
         StarSystem home = galaxy().system(homeSysId);
         governorAI().setInitialAllocations(home.colony());
     }
@@ -964,7 +959,6 @@ public final class Empire implements Base, NamedObject, Serializable {
         for (int n=0;n<sv.count();n++)
             sv.resetSystemData(n);
 
-        setVisibleShips();
     }
     public void setVisibleShips(int sysId) {
         addVisibleShips(sv.orbitingFleets(sysId));
@@ -975,34 +969,42 @@ public final class Empire implements Base, NamedObject, Serializable {
         visibleShips.clear();
         
         float scanRange = planetScanningRange();
-        int numEmps = gal.numEmpires();
         // get ships orbiting visible systems
+
         for (int sysId=0;sysId<sv.count();sysId++) {
-            StarSystem sys = sv.system(sysId);
+            // is the system in scanning range?
             boolean canScan = sv.withinRange(sysId, scanRange);
+            List<ShipFleet> systemFleets = null;
+            // if not, see if we own or are unity with any ships
+            // currently in the system. If so, we can see all ships here
             if (!canScan)  {
-                for (int empId=0;empId<numEmps;empId++) {
-                    if (!canScan && canSeeShips(empId) && (gal.ships.anyFleetAtSystem(empId,sysId) != null))
+                systemFleets = gal.ships.allFleetsAtSystem(sysId);
+                for (ShipFleet fl: systemFleets) {
+                    if (canSeeShips(fl.empId))
                         canScan = true;
                 }
             }
             if (canScan) {
-                addVisibleShips(sys.orbitingFleets());
-                addVisibleShips(sys.exitingFleets());
+                if (systemFleets == null)
+                    systemFleets = gal.ships.allFleetsAtSystem(sysId);
+                visibleShips.addAll(systemFleets);
             }
         }
+
+        List<ShipFleet> myShips = galaxy().ships.allFleets(id);
+        List<StarSystem> mySystems = this.allColonizedSystems();
 
         // get transports in transit
         for (Transport tr : gal.transports()) {
             if (canSeeShips(tr.empId())
-            || (tr.visibleTo(id) && canScanTo(tr) ))
+            || (tr.visibleTo(id) && canScanTo(tr, mySystems, myShips) ))
                 addVisibleShip(tr);
         }
 
         // get fleets in transit
         for (ShipFleet sh : gal.ships.inTransitFleets()) {
             if (canSeeShips(sh.empId())
-            || (sh.visibleTo(id) && canScanTo(sh) ))
+            || (sh.visibleTo(id) && canScanTo(sh, mySystems, myShips) ))
                 addVisibleShip(sh);
         }
 
@@ -1023,6 +1025,24 @@ public final class Empire implements Base, NamedObject, Serializable {
         for (int i=0; i<sv.count(); i++) {
             if ((sv.empire(i) == this) && (gal.system(i).distanceTo(loc) <= planetScanningRange()))
                 return true;
+        }
+        return false;
+    }
+    public boolean canScanTo(IMappedObject loc, List<StarSystem> systems, List<ShipFleet> ships) {
+        float planetRange = planetScanningRange();
+        if (planetRange > 0) {
+            for (StarSystem sys: systems) {
+                if (sys.distanceTo(loc) <= planetRange)
+                    return true;
+            }
+        }
+        
+        float shipRange = shipScanningRange();
+        if (shipRange > 0) {
+            for (Ship sh: ships) {
+                if (sh.distanceTo(loc) <= shipRange)
+                    return true;
+            }
         }
         return false;
     }

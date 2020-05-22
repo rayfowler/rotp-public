@@ -469,6 +469,16 @@ public class Ships implements Base, Serializable {
         List<ShipFleet> fleets = new ArrayList<>();
         return fleets;
     }
+    public List<ShipFleet> allFleetsAtSystem(int sysId) {
+        List<ShipFleet> fleetsAll = allFleetsCopy();
+        List<ShipFleet> fleets = new ArrayList<>();
+        
+        for (ShipFleet fl: fleetsAll) {
+            if ((fl.sysId() == sysId))
+                fleets.add(fl);
+        }
+        return fleets;
+    }
     public ShipFleet anyFleetAtSystem(int empId, int sysId) {
         List<ShipFleet> fleetsAll = allFleetsCopy();
         

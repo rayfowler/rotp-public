@@ -83,7 +83,6 @@ public final class TechScanner extends Tech {
         c.planetScanningRange(max(c.planetScanningRange(), planetRange));
         c.knowShipETA(knowETA);
         c.scanPlanets(scanPlanets);
-        c.setVisibleShips();
         if (special) {
             ShipSpecialScanner sh = new ShipSpecialScanner(this);
             c.shipLab().addSpecial(sh);

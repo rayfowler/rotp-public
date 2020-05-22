@@ -206,9 +206,63 @@ public class Galaxy implements Base, Serializable {
             gal.ships.disembarkRalliedFleets();
         }
 
-        // update system views
+        refreshEmpireViews();
+    }
+    public void refreshEmpireViews() {
+        NoticeMessage.setSubstatus(text("TURN_REFRESHING"));
         for (Empire e: empires)
             e.refreshViews();
+        
+        setEmpireVisibleShips();
+    }
+    public void setEmpireVisibleShips() {
+       // setting visible ships...
+        for (Empire e: empires)
+            e.visibleShips().clear();
+        
+        // check each systemm for orbiting fleets
+        boolean canScan[] = new boolean[numEmpires()];
+        for (int sysId=0;sysId<systemCount;sysId++) {
+            List<ShipFleet> systemFleets = ships.allFleetsAtSystem(sysId);
+            if (!systemFleets.isEmpty()) {
+                // check if system is automatically in planet scannign range
+                for (int i=0;i<canScan.length;i++)
+                    canScan[i] = empire(i).sv.withinRange(sysId, empire(i).planetScanningRange());
+                // if not, check if system contains an empire fleet (or one with unity);
+                for (int i=0;i<canScan.length;i++) {
+                    if (!canScan[i]) {
+                        for (ShipFleet fl: systemFleets) {
+                            canScan[i] = canScan[i] || empire(i).canSeeShips(fl.empId);
+                        }
+                    }
+                }
+                // add visible fleets for empires than can scan them
+                for (int i=0;i<canScan.length;i++) {
+                    if (canScan[i]) {
+                        empire(i).visibleShips().addAll(systemFleets);
+                    }
+                }
+            }
+        }
+        
+        // for each empire, see if in-transit transports and fleets are in range of their systems
+        List<Transport> allTransports = transports();
+        List<ShipFleet> inTransitFleets = ships.inTransitFleets();
+        
+        for (Empire emp: empires()) {
+            List<ShipFleet> empShips = ships.allFleets(emp.id);
+            List<StarSystem> empSystems = emp.allColonizedSystems();
+            for (Transport tr : allTransports) {
+                if (emp.canSeeShips(tr.empId())
+                || (tr.visibleTo(emp.id) && emp.canScanTo(tr, empSystems, empShips) ))
+                    emp.visibleShips().add(tr);
+            }            
+            for (ShipFleet sh : inTransitFleets) {
+                if (emp.canSeeShips(sh.empId())
+                || (sh.visibleTo(emp.id) && emp.canScanTo(sh, empSystems, empShips) ))
+                    emp.visibleShips().add(sh);
+            }
+        }        
     }
     public void postNextTurn2() {
         // check bombardment
@@ -282,6 +336,7 @@ public class Galaxy implements Base, Serializable {
             e.acquireTradedTechs();
     }
     public void makeNextTurnDecisions() {
+        refreshEmpireViews();
         int num = empires.length;
         for (int i=0;i<num;i++) {
             NoticeMessage.setSubstatus(text("TURN_MAKE_DECISIONS"), (i+1), num);
@@ -343,6 +398,8 @@ public class Galaxy implements Base, Serializable {
     public void removeShipInTransit(Transport sh) { transports.remove(sh); }
     public void addShipInTransit(Transport sh)    { transports.add(sh); }
     public void nextEmpireTurns() {
+        refreshEmpireViews();
+        
         for (Empire e: empires) {
             if (!e.extinct())
                 e.nextTurn();
