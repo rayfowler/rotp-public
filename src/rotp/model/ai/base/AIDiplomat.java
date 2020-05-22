@@ -526,7 +526,19 @@ public class AIDiplomat implements Base, Diplomat {
     //-----------------------------------
     //  PACT
     //-----------------------------------
-    public boolean canOfferPact(Empire e)         { return diplomats(id(e)) && empire.hasTradeWith(e) && !empire.atWarWith(id(e)) && !empire.pactWith(id(e)) && !empire.alliedWith(id(e)); }
+    public boolean canOfferPact(Empire e){ 
+        if (!diplomats(id(e)))
+            return false;
+        if (!empire.inEconomicRange(id(e)))
+            return false; 
+        if (empire.atWarWith(id(e)))
+            return false;
+        if (!empire.hasTradeWith(e))
+            return false;
+        if (empire.pactWith(id(e)) || empire.alliedWith(id(e)))
+            return false;
+        return true;
+   }
 
     @Override
     public DiplomaticReply receiveOfferPact(Empire requestor) {
@@ -592,7 +604,19 @@ public class AIDiplomat implements Base, Diplomat {
     //-----------------------------------
     //  ALLIANCE
     //-----------------------------------
-    public boolean canOfferAlliance(Empire e)              { return diplomats(id(e)) && empire.hasTradeWith(e) && !empire.atWarWith(id(e)) && !empire.alliedWith(id(e)); }
+    public boolean canOfferAlliance(Empire e) { 
+        if (!diplomats(id(e)))
+            return false;
+        if (!empire.inEconomicRange(id(e)))
+            return false; 
+        if (empire.atWarWith(id(e)))
+            return false;
+        if (!empire.hasTradeWith(e))
+            return false;
+        if (empire.alliedWith(id(e)))
+            return false;
+        return true;
+    }
     @Override
     public DiplomaticReply receiveOfferAlliance(Empire requestor) {
         log(empire.name(), " receiving offer of Alliance from: ", requestor.name());
