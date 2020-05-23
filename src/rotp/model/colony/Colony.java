@@ -900,7 +900,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
 
         float startingPop = population();
         if (population() > 0) {
-            if (empire.isPlayer() || tr.empire().isPlayer())
+            if (empire.isPlayerControlled() || tr.empire().isPlayerControlled())
                 RotPUI.instance().selectGroundBattlePanel(this, tr);
             else
                 completeDefenseAgainstTransports(tr);
@@ -956,7 +956,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
             return;
         }
         Empire pl = player();
-        if (tr.empire() == pl)
+        if (tr.empire().isPlayerControlled())
             session().addSystemToAllocate(starSystem(), text("MAIN_ALLOCATE_COLONY_CAPTURED", pl.sv.name(starSystem().id), pl.raceName()));
 
         // list of possible techs that could be recovered from factories

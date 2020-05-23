@@ -47,9 +47,9 @@ public class BombardSystemNotification implements TurnNotification, Base {
         emp1.sv.refreshFullScan(sysId);
         Empire emp2 = emp1.sv.empire(sysId);
 
-        if (emp1 == pl)
+        if (emp1.isPlayerControlled())
             RotPUI.instance().promptForBombardment(sysId, fl);
-        else if (emp2 == pl)
+        else if ((emp2 != null) && emp2.isPlayerControlled())
             RotPUI.instance().showBombardmentNotice(sysId, fl);
         else
             fl.bombard();

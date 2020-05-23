@@ -344,7 +344,7 @@ public final class SpyNetwork implements Base, Serializable {
         EspionageMission eMission = new EspionageMission(this, spy, techs, randomSystem);
 
         // ai will choose now.. player choice is deferred until UI is displayed
-        if (owner().isAI ()) {
+        if (owner().isAIControlled()) {
             eMission.stealTech(owner().ai().scientist().mostDesirableTech(techs));
             if (eMission.canFrame())
                 eMission.frameEmpire(owner().spyMasterAI().suggestToFrame(eMission.empiresToFrame()));

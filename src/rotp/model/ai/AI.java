@@ -219,7 +219,7 @@ public class AI implements Base {
     }
     public boolean promptForBombardment(StarSystem sys, ShipFleet fl) {
         // if player, prompt for decision to bomb instead of deciding here
-        if (isPlayer()) {
+        if (empire.isPlayerControlled()) {
             BombardSystemNotification.create(id(sys), fl);
             return false;
         }

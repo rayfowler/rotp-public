@@ -74,6 +74,8 @@ public final class Empire implements Base, NamedObject, Serializable {
     public static final int SHAPE_TRIANGLE2 = 4;
 
     public static Empire thePlayer() { return Galaxy.current().player(); }
+    
+    public static long[] times = new long[6];
 
     public final int id;
     private Leader leader;
@@ -124,6 +126,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     private transient Color shipBorderColor;
     private transient Color scoutBorderColor;
     private transient Color empireRangeColor;
+    private transient float totalEmpireProduction;
 
     public AI ai()                                {
         if (ai == null)
@@ -676,6 +679,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         log(this + ": NextTurn");
         shipBuildingSystems.clear();
         newSystems.clear();
+        recalcPlanetaryProduction();
 
         for (ShipDesign d : shipLab.designs()) {
             if (d != null)
@@ -699,6 +703,7 @@ public final class Empire implements Base, NamedObject, Serializable {
             addReserve(col.production() * empireTaxPct());
             col.nextTurn();
         }
+        recalcPlanetaryProduction();
     }
     public void postNextTurn() {
         log(this + ": postNextTurn");
@@ -712,6 +717,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     }
     public void assessTurn() {
         log(this + ": AssessTurn");
+        recalcPlanetaryProduction();
 
         if (status() != null)
             status().assessTurn();
@@ -735,15 +741,13 @@ public final class Empire implements Base, NamedObject, Serializable {
         tech.acquireTradedTechs();
     }
     public void makeNextTurnDecisions() {
-        //long tm0 = System.currentTimeMillis();
+        recalcPlanetaryProduction();
+        
         log(this + ": make NextTurnDecisions");
         if (recalcDistances) {
             NoticeMessage.setSubstatus(text("TURN_RECALC_DISTANCES"));
             sv.calculateSystemDistances();
             recalcDistances = false;
-            //long tm1 = System.currentTimeMillis();
-            //log("recalcDistances: "+(tm1-tm0)+"ms");
-            //tm0 = tm1;
         }
 
         NoticeMessage.setSubstatus(text("TURN_REFRESHING"));
@@ -753,15 +757,32 @@ public final class Empire implements Base, NamedObject, Serializable {
 
         NoticeMessage.setSubstatus(text("TURN_SCRAP_SHIPS"));
         shipLab.nextTurn();
+        
+        if (!isAIControlled())
+            return;
 
+        // empire settings
+        scientistAI().setTechTreeAllocations();
+        securityAllocation = spyMasterAI().suggestedInternalSecurityLevel();
+        empireTaxLevel = governorAI().suggestedEmpireTaxLevel();
         fleetCommanderAI().nextTurn();
         NoticeMessage.setSubstatus(text("TURN_DESIGN_SHIPS"));
         shipDesignerAI().nextTurn();
-        NoticeMessage.setSubstatus(text("TURN_COLONY_SPENDING"));
-        setAllocations();
+        ai().sendTransports();
 
-        //long tm3 = System.currentTimeMillis();
-        //log("remainder: "+(tm3-tm2)+"ms");
+        // colony development (sometimes done for player if auto-pilot)
+        NoticeMessage.setSubstatus(text("TURN_COLONY_SPENDING"));
+        for (int n=0; n<sv.count(); n++) {
+            if (sv.empId(n) == id)
+                governorAI().setColonyAllocations(sv.colony(n));
+        }
+
+        ai().treasurer().allocateReserve();
+        // diplomatic activities
+        for (EmpireView ev : empireViews()) {
+            if ((ev != null) && ev.embassy().contact())
+                ev.setSuggestedAllocations();
+        }
     }
     public String decode(String s, Empire listener) {
         String s1 = this.replaceTokens(s, "my");
@@ -797,30 +818,6 @@ public final class Empire implements Base, NamedObject, Serializable {
         float time = fr.travelTime(fr, to, tech().transportSpeed());
         float dist = fr.distanceTo(to);
         return dist/time;
-    }
-    private void setAllocations() {
-        if (isAIControlled())
-            ai().sendTransports();
-
-        // colony development (sometimes done for player if auto-pilot)
-        for (int n=0; n<sv.count(); n++) {
-            if (sv.empId(n) == id)
-                governorAI().setColonyAllocations(sv.colony(n));
-        }
-
-        if (!isAIControlled())
-            return;
-
-        ai().treasurer().allocateReserve();
-        // diplomatic activities
-        for (EmpireView ev : empireViews()) {
-            if ((ev != null) && ev.embassy().contact())
-                ev.setSuggestedAllocations();
-        }
-        // empire settings
-        ai().scientist().setTechTreeAllocations();
-        securityAllocation = spyMasterAI().suggestedInternalSecurityLevel();
-        empireTaxLevel = governorAI().suggestedEmpireTaxLevel();
     }
     public void checkForRebellionSpread() {
         if (extinct)
@@ -1749,7 +1746,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     }
     public void learnTech(String techId) {
         boolean newTech = tech().learnTech(techId);
-        if (newTech && isPlayer()) {
+        if (newTech && isPlayerControlled()) {
             log("Tech: ", techId, " researched");
             DiscoverTechNotification.create(techId);
         }
@@ -1936,12 +1933,18 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
         return totalProductionBC;
     }
+    public void recalcPlanetaryProduction() {
+        totalEmpireProduction = -999;
+    }
     public Float totalPlanetaryProduction() {
-        float totalProductionBC = 0;
-        List<StarSystem> systems = new ArrayList<>(allColonizedSystems());
-        for (StarSystem sys: systems)
-            totalProductionBC += sys.colony().production();
-        return totalProductionBC;
+ //       if (totalEmpireProduction <= 0) {
+            float totalProductionBC = 0;
+            List<StarSystem> systems = new ArrayList<>(allColonizedSystems());
+            for (StarSystem sys: systems)
+                totalProductionBC += sys.colony().production();
+            totalEmpireProduction = totalProductionBC;
+//        }
+        return totalEmpireProduction;
     }
     public float totalPlanetaryProduction(Empire emp) {
         if (emp == this)

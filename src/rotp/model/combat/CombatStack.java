@@ -103,6 +103,7 @@ public class CombatStack implements Base {
     public boolean isColony()           { return false; }
     public boolean isMonster()          { return false; }
     public boolean isPlayer()           { return (empire != null) && empire.isPlayer(); }
+    public boolean isPlayerControlled() { return (empire != null) && empire.isPlayerControlled(); }
     public boolean isMissile()          { return false; }
     public boolean destroyed()          { return ((num < 1) || (maxHits <= 0)); }
     public boolean isArmed()            { return false; }

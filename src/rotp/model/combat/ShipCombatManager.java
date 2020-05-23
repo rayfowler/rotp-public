@@ -167,7 +167,7 @@ public class ShipCombatManager implements Base {
     }
     private void battle(StarSystem sys, Empire emp1, Empire emp2) {
         finished = false;
-        playerInBattle = emp1.isPlayer() || emp2.isPlayer();
+        playerInBattle = emp1.isPlayerControlled() || emp2.isPlayerControlled();
         
         ShipFleet fl1 = sys.orbitingFleetForEmpire(emp1);
         ShipFleet fl2 = sys.orbitingFleetForEmpire(emp2);
@@ -198,7 +198,7 @@ public class ShipCombatManager implements Base {
     }
     private void battle(StarSystem sys, Empire emp, SpaceMonster monster) {
         finished = false;
-        playerInBattle = emp.isPlayer();
+        playerInBattle = emp.isPlayerControlled();
         system = sys;
         results = new ShipCombatResults(this, system, emp, monster);
         if (system.empire() == emp)
@@ -209,7 +209,7 @@ public class ShipCombatManager implements Base {
         if (combatIsFinished())
             return;
 
-        if (emp.isPlayer())
+        if (emp.isPlayerControlled())
             RotPUI.instance().promptForShipCombat(this);
         else {
             resolveAllCombat();
@@ -228,7 +228,7 @@ public class ShipCombatManager implements Base {
     }
     private boolean playerInBattle() {
         for (CombatStack st : results.activeStacks()) {
-            if (st.isPlayer())
+            if (st.isPlayerControlled())
                 return true;
         }
         return false;
@@ -318,7 +318,7 @@ public class ShipCombatManager implements Base {
     }
     private void checkDeclareWar(Empire emp1, Empire emp2) {
         // decide if we should declare war
-        if (emp1.isPlayer())
+        if (emp1.isPlayerControlled())
             return;  // player can declare his own wars
         
         // dont automaticall trigger war over uncolonized systems
@@ -542,7 +542,7 @@ public class ShipCombatManager implements Base {
         boolean playerInCombat = false;
         List<Empire> empiresInCombat = new ArrayList<>();
         for (CombatStack st : results.activeStacks()) {
-            if (st.isPlayer())
+            if (st.isPlayerControlled())
                 playerInCombat = true;
             if (!empiresInCombat.contains(st.empire))
                 empiresInCombat.add(st.empire);
@@ -567,7 +567,7 @@ public class ShipCombatManager implements Base {
             startX = 1;
         else if (colony == null)
             startX = 3;
-        else if (colony.isPlayer())
+        else if (colony.isPlayerControlled())
             startX = 4;
         else
             startX = 2;
