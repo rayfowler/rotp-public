@@ -61,9 +61,9 @@ public class AIGeneral implements Base, General {
         rushShipSystems.clear();
 
         Galaxy gal = galaxy();
-        for (int id=0;id<empire.sv.count();id++)
+        for (int id=0;id<empire.sv.count();id++) 
             reviseFleetPlan(gal.system(id));
-    }
+   }
     @Override
     public float invasionPriority(StarSystem sys) {
         int sysId = sys.id;

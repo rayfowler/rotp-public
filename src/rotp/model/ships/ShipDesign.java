@@ -59,6 +59,7 @@ public final class ShipDesign extends Design {
     private float perTurnDmg = 0;
     private String iconKey;
     private transient ImageIcon icon;
+    private transient float costBC;
 
     public static float hullPoints(int size)   { return Galaxy.current().pow(6, size); }
 
@@ -153,7 +154,9 @@ public final class ShipDesign extends Design {
             seq = 5;
         setIconKey();
     }
-
+    public void recalculateCost() {
+        costBC = -1;
+    }
     public void copyFrom(ShipDesign d) {
         seq = d.seq();
         lab(d.lab());
@@ -243,19 +246,21 @@ public final class ShipDesign extends Design {
     }
     @Override
     public int cost() {
-        float cost = baseCost();
-        cost += computer().cost(this);
-        cost += shield().cost(this);
-        cost += ecm().cost(this);
-        cost += armor().cost(this);
-        cost += (enginesRequired() * engine().cost(this));
+        if (costBC <= 0) {
+            float cost = baseCost();
+            cost += computer().cost(this);
+            cost += shield().cost(this);
+            cost += ecm().cost(this);
+            cost += armor().cost(this);
+            cost += (enginesRequired() * engine().cost(this));
 
-        for (int i=0; i<maxWeapons(); i++)
-            cost += (wpnCount(i) * weapon(i).cost(this));
-        for (int i=0; i<maxSpecials(); i++)
-            cost += special(i).cost(this);
-
-        return (int) cost;
+            for (int i=0; i<maxWeapons(); i++)
+                cost += (wpnCount(i) * weapon(i).cost(this));
+            for (int i=0; i<maxSpecials(); i++)
+                cost += special(i).cost(this);
+            costBC = cost;
+        }
+        return (int) Math.ceil(costBC);
     }
     public float hullPoints() { return hullPoints(size()); }
     public float totalSpace() { return totalSpace(size()); }
