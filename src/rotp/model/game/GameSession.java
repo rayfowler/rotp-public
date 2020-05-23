@@ -269,7 +269,6 @@ public final class GameSession implements Base, Serializable {
     private Runnable nextTurnProcess() {
         return () -> {
             try {
-                long t0 = System.currentTimeMillis();
                 performingTurn = true;
                 Galaxy gal = galaxy();
                 String turnTitle = nextTurnTitle();
@@ -280,9 +279,6 @@ public final class GameSession implements Base, Serializable {
                 log("Autosaving pre-turn");
                 instance.saveRecentSession(false);
                 
-                long t1 = System.currentTimeMillis();
-                log("Game Block 1: "+(t1-t0)+"ms");
-                
                 long startMs = timeMs();
                 systemsToAllocate().clear();
                 systemsScouted().clear();
@@ -291,9 +287,6 @@ public final class GameSession implements Base, Serializable {
                 RotPUI.instance().repaint();
                 processNotifications();
                 gal.preNextTurn();
-                
-                long t2 = System.currentTimeMillis();
-                log("Game Block 2: "+(t2-t1)+"ms");
                 
                 // REMOVE THIS CODE
                 //markSpiesCaptured();
@@ -313,9 +306,6 @@ public final class GameSession implements Base, Serializable {
                 // test game over conditions
                 //randomlyEndGame();
                 
-                long t3 = System.currentTimeMillis();
-                log("Game Block 3: "+(t3-t2)+"ms");
-                
                 if (!inProgress())
                     return;
                 
@@ -324,9 +314,6 @@ public final class GameSession implements Base, Serializable {
                     //RotPUI.instance().selectMainPanel();
                 }
                 gal.postNextTurn1();
-                long t4 = System.currentTimeMillis();
-                log("Game Block 4: "+(t4-t3)+"ms");
-                
                 if (!inProgress())
                     return;
                 
@@ -335,8 +322,6 @@ public final class GameSession implements Base, Serializable {
                 RotPUI.instance().selectMainPanel();
                 log("Notifications processed 2 - back to MainPanel");
                 gal.postNextTurn2();
-                long t5 = System.currentTimeMillis();
-                log("Game Block 5: "+(t5-t4)+"ms");
                 
                 if (!inProgress())
                     return;
@@ -346,15 +331,11 @@ public final class GameSession implements Base, Serializable {
                 }
                 // all diplomatic fallout: praise, warnings, treaty offers, war declarations
                 gal.assessTurn();
-                long t6 = System.currentTimeMillis();
-                log("Game Block 6: "+(t6-t5)+"ms");
                 
                 processNotifications();
                 gal.refreshAllEmpireViews();
 
                 gal.makeNextTurnDecisions();
-                long t7 = System.currentTimeMillis();
-                log("Game Block 7: "+(t7-t6)+"ms");
                 
                 if (!systemsToAllocate().isEmpty())
                     RotPUI.instance().allocateSystems();
@@ -363,15 +344,11 @@ public final class GameSession implements Base, Serializable {
                 NoticeMessage.resetSubstatus(text("TURN_REFRESHING"));
                 validate();
                 gal.refreshEmpireViews(player());
-                long t8 = System.currentTimeMillis();
-                log("Game Block 8: "+(t8-t7)+"ms");
                 
                 log("Autosaving post-turn");
                 log("NEXT TURN PROCESSING TIME: ", str(timeMs()-startMs));
                 NoticeMessage.resetSubstatus(text("TURN_SAVING"));
                 instance.saveRecentSession(true);
-                long t9 = System.currentTimeMillis();
-                log("Game Block 9: "+(t9-t8)+"ms");
                 
                 log("Reselecting main panel");
                 RotPUI.instance().mainUI().showDisplayPanel();
