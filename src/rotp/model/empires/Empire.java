@@ -743,12 +743,6 @@ public final class Empire implements Base, NamedObject, Serializable {
         recalcPlanetaryProduction();
         
         log(this + ": make NextTurnDecisions");
-        if (recalcDistances) {
-            NoticeMessage.setSubstatus(text("TURN_RECALC_DISTANCES"));
-            sv.calculateSystemDistances();
-            recalcDistances = false;
-        }
-
         NoticeMessage.setSubstatus(text("TURN_SCRAP_SHIPS"));
         shipLab.nextTurn();
         
@@ -935,6 +929,13 @@ public final class Empire implements Base, NamedObject, Serializable {
         governorAI().setInitialAllocations(home.colony());
     }
     public void refreshViews() {
+        log(this + ": refresh views");
+        if (recalcDistances) {
+            NoticeMessage.setSubstatus(text("TURN_RECALC_DISTANCES"));
+            sv.calculateSystemDistances();
+            recalcDistances = false;
+        }
+
         Galaxy gal = galaxy();
         for (int i=0;i<sv.count();i++) {
             StarSystem sys = gal.system(i);
@@ -1957,13 +1958,13 @@ public final class Empire implements Base, NamedObject, Serializable {
         totalEmpireProduction = -999;
     }
     public Float totalPlanetaryProduction() {
- //       if (totalEmpireProduction <= 0) {
+        if (totalEmpireProduction <= 0) {
             float totalProductionBC = 0;
             List<StarSystem> systems = new ArrayList<>(allColonizedSystems());
             for (StarSystem sys: systems)
                 totalProductionBC += sys.colony().production();
             totalEmpireProduction = totalProductionBC;
-//        }
+        }
         return totalEmpireProduction;
     }
     public float totalPlanetaryProduction(Empire emp) {
