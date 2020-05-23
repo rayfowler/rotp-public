@@ -205,10 +205,14 @@ public class Galaxy implements Base, Serializable {
             gal.system(i).resolveAnyShipConflict();
             gal.ships.disembarkRalliedFleets();
         }
-
-        refreshEmpireViews();
     }
-    public void refreshEmpireViews() {
+    public void refreshEmpireViews(Empire e) {
+        NoticeMessage.setSubstatus(text("TURN_REFRESHING"));
+        e.refreshViews();
+        
+        e.setVisibleShips();
+    }
+    public void refreshAllEmpireViews() {
         NoticeMessage.setSubstatus(text("TURN_REFRESHING"));
         for (Empire e: empires)
             e.refreshViews();
@@ -336,7 +340,6 @@ public class Galaxy implements Base, Serializable {
             e.acquireTradedTechs();
     }
     public void makeNextTurnDecisions() {
-        refreshEmpireViews();
         int num = empires.length;
         for (int i=0;i<num;i++) {
             NoticeMessage.setSubstatus(text("TURN_MAKE_DECISIONS"), (i+1), num);
@@ -398,8 +401,6 @@ public class Galaxy implements Base, Serializable {
     public void removeShipInTransit(Transport sh) { transports.remove(sh); }
     public void addShipInTransit(Transport sh)    { transports.add(sh); }
     public void nextEmpireTurns() {
-        refreshEmpireViews();
-        
         for (Empire e: empires) {
             if (!e.extinct())
                 e.nextTurn();
