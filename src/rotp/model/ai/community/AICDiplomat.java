@@ -1213,11 +1213,11 @@ public class AICDiplomat implements Base, Diplomat {
         if (cv2.embassy().alliance() && !cv1.embassy().alliance())
             return castVoteFor(civ2);
 
-        // if at war with one, vote for other if pact/ally, else abstain
+        // if at war with one, vote for other
         if (cv1.embassy().anyWar() && !cv2.embassy().anyWar())
-            return conditionallyCastVoteFor(cv2);
+            return castVoteFor(civ2);
         if (cv2.embassy().anyWar() && !cv1.embassy().anyWar())
-            return conditionallyCastVoteFor(cv1);
+            return castVoteFor(civ1);
 
         // decide to vote for/against civ1
         pct = cv1.embassy().relations() + civ1.race().councilBonus() + civ1.orionCouncilBonus() + previousVoteBonus(civ1);
