@@ -369,8 +369,8 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
             g2.setFont(textF);
             String popStr;
             boolean ignoreWaste = planet.isColonized() && planet.empire().race().ignoresPlanetEnvironment();
-            int planetSize = (int) sys.colony().maxSize();
-            int population = (int) sys.colony().displayPopulation();
+            int planetSize = (int) pl.sv.currentSize(sys.id);
+            int population = (int) pl.sv.population(sys.id);
             g2.setColor(greenText);
             if (pl.sv.isColonized(id) && pl.sv.colony(id).inRebellion()) {
                 popStr = text("MAIN_PLANET_REBELLION");
@@ -398,7 +398,12 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
             g2.setFont(textF);
             String popStr;
             boolean ignoreWaste = planet.isColonized() && planet.empire().race().ignoresPlanetEnvironment();
-            int planetSize = ignoreWaste ? (int) planet.currentSize() : (int) planet.sizeAfterWaste();
+            
+            int planetSize = 0;
+            if (planet.empire() != pl)
+                planetSize = pl.sv.currentSize(id);
+            else 
+                planetSize = ignoreWaste ? (int) planet.currentSize() : (int) planet.sizeAfterWaste();
             if (ignoreWaste || (planet.waste() == 0))
                 g2.setColor(greenText);
             else

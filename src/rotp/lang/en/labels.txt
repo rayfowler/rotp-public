@@ -220,8 +220,8 @@ INC_FINANCIAL_AID_DESC            | The [your_empire] has freely given [amt] BC 
 INC_TECHNOLOGY_AID_TITLE          | Technological Aid
 INC_TECHNOLOGY_AID_DESC           | The [your_empire] has freely shared the secrets of [tech] to the [my_empire].
 INC_ENEMY_AID_TITLE               | Aid to Enemy 
-INC_ENEMY_AID_MONEY_DESC          | The [your_empire] has given [amt] BC in aid to the [enemy_race], an enemy of the [my_empire].
-INC_ENEMY_AID_TECH_DESC           | The [your_empire] has given the secrets of [tech] to the [enemy_race], an enemy of the [my_empire].
+INC_ENEMY_AID_MONEY_DESC          | The [your_empire] has given [amt] BC in aid to the [enemy_empire], an enemy of the [my_empire].
+INC_ENEMY_AID_TECH_DESC           | The [your_empire] has given the secrets of [tech] to the [enemy_empire], an enemy of the [my_empire].
 INC_PARANOIA_TITLE                | Paranoia
 INC_PARANOIA_DESC1                | A radical fringe of conspiracy theorists in the [my_empire] ludicrously believe that the [your_race] represent an existential threat to their species.
 INC_PARANOIA_DESC2                | A marginal faction within the [my_empire] believes that the [your_race] represent an existential threat to their species.

@@ -206,6 +206,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
             vFactories = (int) col.industry().factories();
             vPopulation = actualPop < 1 ? (int) Math.ceil(actualPop) : (int) actualPop;
             vShieldLevel = col.defense().shieldLevel();
+            vCurrentSize = (int) system().planet().currentSize();
         }
     }
     private void setOrbitingFleets() {
