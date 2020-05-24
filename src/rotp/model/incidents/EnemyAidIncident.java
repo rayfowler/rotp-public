@@ -46,8 +46,8 @@ public class EnemyAidIncident extends DiplomaticIncident {
         return inc;
     }
     private EnemyAidIncident(Empire emp, Empire enemy, Empire donor, int amt) {
-        empMe = donor.id;
-        empYou = emp.id;
+        empMe = emp.id;
+        empYou = donor.id;
         empEnemy = enemy.id;
         float pct = (float) amt / emp.totalPlanetaryProduction();
         float sev = min(15,10*pct);
@@ -59,8 +59,8 @@ public class EnemyAidIncident extends DiplomaticIncident {
     }
     private EnemyAidIncident(Empire emp, Empire enemy, Empire donor, String tId) {
         log("creating enemy aid incident: "+enemy.raceName()+"  tech:"+tech(tId).name());
-        empMe = donor.id;
-        empYou = emp.id;
+        empMe = emp.id;
+        empYou = donor.id;
         empEnemy = enemy.id;
         techId = tId;
         amount = 0;
