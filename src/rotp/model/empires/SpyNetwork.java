@@ -210,6 +210,9 @@ public final class SpyNetwork implements Base, Serializable {
     public void nextTurn(float prod) {
         Collections.sort(shipViews, ShipView.VIEW_DATE);
 
+        if (!view().inEconomicRange())
+            return;
+        
         // auto-update everything at no cost if unity 
         if (view.embassy().unity()) {
             lastSpyDate = galaxy().currentYear();
