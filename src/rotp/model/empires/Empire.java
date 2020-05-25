@@ -118,6 +118,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     private transient BufferedImage shipImageHuge;
     private transient BufferedImage scoutImage;
     private transient BufferedImage transportImage;
+    private transient BufferedImage raceBackImage;    
     private transient Color ownershipColor;
     private transient Color selectionColor;
     private transient Color reachColor;
@@ -234,6 +235,15 @@ public final class Empire implements Base, NamedObject, Serializable {
             transportImage = ShipLibrary.current().transportImage(shipColorId());
         return transportImage;
     }
+    
+    public BufferedImage raceBackImage() {
+        return raceBackImage;
+    }  
+    
+    public void setRaceBackImage(BufferedImage image) {
+        raceBackImage = image;
+    }  
+    
     public Color ownershipColor() {
         if (ownershipColor == null) {
             Color c = color();
