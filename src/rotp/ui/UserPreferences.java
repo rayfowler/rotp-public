@@ -41,6 +41,7 @@ public class UserPreferences {
     private static boolean textures = true;
     private static float uiTexturePct = 0.20f;
     private static int screenSizePct = 93;
+    private static boolean fullScreenMode = false;
     private static final HashMap<String, String> raceNames = new HashMap<>();
     private static GraphicsSetting graphicsLevel = GraphicsSetting.NORMAL;
 
@@ -63,6 +64,7 @@ public class UserPreferences {
     public static void uiTexturePct(int i)    { uiTexturePct = i / 100.0f; }
     public static float uiTexturePct()        { return uiTexturePct; }
     public static GraphicsSetting graphicsLevel()    { return graphicsLevel; }
+    public static boolean fullScreenMode()        { return fullScreenMode; }
 
     public static void loadAndSave() {
         load();
@@ -102,6 +104,7 @@ public class UserPreferences {
             out.println(keyFormat("UI_TEXTURES")+ yesOrNo(textures));
             out.println(keyFormat("UI_TEXTURE_LEVEL")+(int) (uiTexturePct()*100));
             out.println(keyFormat("LANGUAGE")+ languageDir());
+            out.println(keyFormat("FULL_SCREEN")+ yesOrNo(fullScreenMode));
             for (String raceKey: raceKeys) 
               out.println(keyFormat(raceKey)+raceNames.get(raceKey));
         }
@@ -137,10 +140,42 @@ public class UserPreferences {
             case "UI_TEXTURES":  textures = yesOrNo(val); return;
             case "UI_TEXTURE_LEVEL": uiTexturePct(Integer.valueOf(val)); return;
             case "LANGUAGE":     selectLanguage(val); return;
+            case "FULL_SCREEN":    fullScreenMode = yesOrNo(val); return;
             default:
                 raceNames.put(key, val); break;
         }
     }
+    
+    public static String getPreferenceValueFromFile(String key){
+   
+        String path = Rotp.jarPath();
+        try (FileReader fileReader = new FileReader(new File(path, PREFERENCES_FILE));
+            BufferedReader in = new BufferedReader(fileReader); ) {
+            String input;
+            if (in != null) {
+                while ((input = in.readLine()) != null)
+                    if (input.contains(key) && input.contains(":") )
+                        return input.split(":")[1].trim();
+            }
+        }
+        catch (FileNotFoundException e) {
+            System.err.println(path + PREFERENCES_FILE + " not found.");
+        }
+        catch (IOException e) {
+            System.err.println("UserPreferences.load -- IOException: " + e.toString());
+        }        
+        
+        return "";
+        
+    }  
+
+    public static void toggleFullScreenMode() { 
+        if (!fullScreenMode) setScreenSizePct(100);
+        fullScreenMode = !fullScreenMode;  
+        save(); 
+    }
+    
+    
     private static String yesOrNo(boolean b) {
         return b ? "YES" : "NO";
     }
