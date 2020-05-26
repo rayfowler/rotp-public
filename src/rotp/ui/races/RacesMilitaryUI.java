@@ -490,18 +490,27 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         int y0 = y;
         int x0 = x+s10;
         g.setColor(SystemPanel.blackText);
+        int totalWpnCount = 0;
+        boolean wpnScanned = false;
         for (int i=0;i<ShipDesign.maxWeapons();i++) {
-            y0 += lineH;
-            if (view.weaponKnown(i)) {
-                if (view.hasWeapon(i)) {
-                    g.drawString(text("RACES_MILITARY_WEAPON_CNT", str(d.wpnCount(i)), d.weapon(i).name()), x0, y0);
+            wpnScanned = wpnScanned || view.weaponKnown(i);
+            totalWpnCount += d.wpnCount(i);
+        }
+        
+        y0 += lineH;
+        if (!wpnScanned)
+            g.drawString(text("RACES_MILITARY_UNSCANNED_LONG"), x0, y0);
+        else if (totalWpnCount == 0)
+            g.drawString(text("RACES_MILITARY_NO_WEAPONS"), x0, y0);
+        else {
+            for (int i=0;i<ShipDesign.maxWeapons();i++) {
+                if (view.weaponKnown(i)) {
+                    if (view.hasWeapon(i)) 
+                        g.drawString(text("RACES_MILITARY_WEAPON_CNT", str(d.wpnCount(i)), d.weapon(i).name()), x0, y0);
                 }
-                else if (i == 0)
-                    g.drawString(text("RACES_MILITARY_NO_WEAPONS"), x0, y0);
-            }
-            else if (i == 0)
-                g.drawString(text("RACES_MILITARY_UNSCANNED_LONG"), x0, y0);
-        }    
+                y0 += lineH;
+            }    
+        }
     }
     private void  drawShipSpecials(Graphics2D g, ShipView view, int x, int y, int w, int h) { 
         ShipDesign d = view.design();

@@ -961,12 +961,15 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             g.setColor(textColor);
             g.drawString(lbl1, x1a,y2+s12);
             List<ShipWeapon> wpns = view.weapons();
-            for (int i=0; i<wpns.size(); i++) {
-                ShipWeapon wpn = wpns.get(i);
-                val2 = text("SHIP_COMBAT_SCAN_WEAPON_CNT", str(view.wpnCount(i)), wpn.name());
-                sw2 = g.getFontMetrics().stringWidth(val2);
-                g.drawString(val2, x1+w1-sw2-s5, y2+s12);
-                y2 += s13;
+            for (int i=0; i<ShipDesign.maxWeapons(); i++) {
+                int num = view.wpnCount(i);
+                if (num > 0) {
+                    ShipWeapon wpn = view.weapon(i);
+                    val2 = text("SHIP_COMBAT_SCAN_WEAPON_CNT", str(num), wpn.name());
+                    sw2 = g.getFontMetrics().stringWidth(val2);
+                    g.drawString(val2, x1+w1-sw2-s5, y2+s12);
+                    y2 += s13;
+                }
             }
             y2 += s5;
             g.setColor(lineColor);

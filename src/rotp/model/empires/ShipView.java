@@ -90,6 +90,7 @@ public class ShipView implements Base,Serializable {
     public boolean hasManeuver()        { return maneuver != null; }
     public boolean maneuverKnown()      { return maneuverKnown; }
     public boolean hasWeapon(int i)     { return (weapon[i] != null) && !weapon[i].noWeapon(); }
+    public ShipWeapon weapon(int i)     { return weapon[i]; }
     public boolean weaponKnown(int i)   { return wpnKnown[i]; }
     public boolean hasSpecial(int i)    { return (special[i] != null) && !special[i].isNone(); }
     public boolean specialKnown(int i)  { return spcKnown[i]; }
