@@ -180,6 +180,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         setPopulation(2);
         shipyard().goToNextDesign();
         defense().updateMissileBase();
+        cleanupAllocation = -1;
     }
     public boolean isBuildingShip() { return shipyard().design() instanceof ShipDesign; }
     private void buildFortress()    { fortressNum = empire.race().randomFortress(); }
@@ -414,7 +415,6 @@ public final class Colony implements Base, IMappedObject, Serializable {
 
         // after turn is over, we may need to reset ECO spending to adjust for cleanup
         keepEcoLockedToClean = !locked[ECOLOGY] && empire().isPlayer() && (allocation[ECOLOGY] == cleanupAllocation());
-        
         // make sure that the colony's expenses aren't too high
         empire().governorAI().lowerExpenses(this);
 
@@ -700,7 +700,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
             return 0;
         
         float mod = empire().isPlayer() ? 1.0f : options().aiWasteModifier();
-        return mod*(min(planet.maxWaste(), planet.waste() + newWaste())) / tech().wasteElimination();
+        return mod*(min(planet.maxWaste(), planet.waste()) + newWaste()) / tech().wasteElimination();
     }
     public float minimumCleanupCost() {
         return min(wasteCleanupCost(), totalIncome());

@@ -153,7 +153,7 @@ public class ColonyIndustry extends ColonySpendingCategory {
                     c.addColonyOrder(Colony.Orders.SHIELD, orderAmt);
                 else if (!c.defense().missileBasesCompleted())
                     c.addColonyOrder(Colony.Orders.BASES, orderAmt*2/5);
-            }
+            }        
         }
     }
     public void commitTurn() {

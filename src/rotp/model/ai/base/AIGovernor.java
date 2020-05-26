@@ -89,7 +89,7 @@ public class AIGovernor implements Base, Governor {
             else
                 session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_FERTILE_COMPLETE", name));
         }
-        if (col.hasNewOrders() || session().awaitingAllocation(sys))
+        if (col.hasNewOrders() || (col.allocationRemaining() != 0) || session().awaitingAllocation(sys))
             baseSetPlayerAllocations(col);
     }
     private void baseSetPlayerAllocations(Colony col) {

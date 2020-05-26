@@ -746,17 +746,16 @@ public final class Empire implements Base, NamedObject, Serializable {
         NoticeMessage.setSubstatus(text("TURN_SCRAP_SHIPS"));
         shipLab.nextTurn();
         
-        if (!isAIControlled())
-            return;
-
         // empire settings
-        scientistAI().setTechTreeAllocations();
-        securityAllocation = spyMasterAI().suggestedInternalSecurityLevel();
-        empireTaxLevel = governorAI().suggestedEmpireTaxLevel();
-        fleetCommanderAI().nextTurn();
-        NoticeMessage.setSubstatus(text("TURN_DESIGN_SHIPS"));
-        shipDesignerAI().nextTurn();
-        ai().sendTransports();
+        if (isAIControlled()) {
+            scientistAI().setTechTreeAllocations();
+            securityAllocation = spyMasterAI().suggestedInternalSecurityLevel();
+            empireTaxLevel = governorAI().suggestedEmpireTaxLevel();
+            fleetCommanderAI().nextTurn();
+            NoticeMessage.setSubstatus(text("TURN_DESIGN_SHIPS"));
+            shipDesignerAI().nextTurn();
+            ai().sendTransports();
+        }
 
         // colony development (sometimes done for player if auto-pilot)
         NoticeMessage.setSubstatus(text("TURN_COLONY_SPENDING"));
@@ -765,11 +764,13 @@ public final class Empire implements Base, NamedObject, Serializable {
                 governorAI().setColonyAllocations(sv.colony(n));
         }
 
-        ai().treasurer().allocateReserve();
-        // diplomatic activities
-        for (EmpireView ev : empireViews()) {
-            if ((ev != null) && ev.embassy().contact())
-                ev.setSuggestedAllocations();
+        if (isAIControlled()) {
+            ai().treasurer().allocateReserve();
+            // diplomatic activities
+            for (EmpireView ev : empireViews()) {
+                if ((ev != null) && ev.embassy().contact())
+                    ev.setSuggestedAllocations();
+            }
         }
     }
     public String decode(String s, Empire listener) {
