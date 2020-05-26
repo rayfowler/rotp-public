@@ -44,6 +44,7 @@ public class CombatStackMissile extends CombatStack implements Base {
         y = ship.y;
         offsetX = ship.offsetX;
         offsetY = ship.offsetY;
+        attackLevel = ship.attackLevel();
         Image missileImg = image(miss.tech().imageKey());
 
         int imgW = BasePanel.s60;
