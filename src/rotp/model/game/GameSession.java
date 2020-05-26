@@ -76,7 +76,7 @@ public final class GameSession implements Base, Serializable {
 
     private static final int MINIMUM_NEXT_TURN_TIME = 500;
     private static Thread nextTurnThread;
-    private static boolean suspendNextTurn = false;
+    private static volatile boolean suspendNextTurn = false;
     private static final ThreadFactory minThreadFactory = GameSession.minThreadFactory();
     private static ExecutorService smallSphereService = Executors.newSingleThreadExecutor(minThreadFactory);
 
