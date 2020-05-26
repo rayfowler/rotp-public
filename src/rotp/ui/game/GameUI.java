@@ -106,6 +106,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     BaseText soundsText, musicText, graphicsText, texturesText, versionText, memoryText;
     BaseText developerText, artistText, graphicDsnrText, writerText, soundText, translatorText;
     BaseText shrinkText, enlargeText;
+    BaseText fullScreenText;
     BaseText hoverBox;
     Rectangle languageBox = new Rectangle();
     boolean mouseDepressed = false;
@@ -315,6 +316,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         writerText      = new BaseText(this, false,16, -220,-44,  enabledC,  enabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         soundText       = new BaseText(this, false,16, -220,-27,  enabledC,  enabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         translatorText  = new BaseText(this, false,16, -220,-10,  enabledC,  enabledC, hoverC, depressedC, shadedC, 0, 0, 0);
+        fullScreenText  = new BaseText(this, false,16,   20,-95,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
 
         developerText.disabled(true);
         artistText.disabled(true);
@@ -359,6 +361,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         soundText.displayText(text("CREDITS_SOUND"));
         translatorText.displayText(text("CREDITS_TRANSLATOR"));
         versionText.displayText(text("GAME_VERSION", str(Rotp.releaseId)));
+        fullScreenText.displayText(fullScreenStr());
     }
     @Override
     public boolean drawMemory()       { return true; }
@@ -466,6 +469,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         graphicsText.draw(g);
         musicText.draw(g);
         soundsText.draw(g);
+        fullScreenText.draw(g);
     }
     private boolean canContinue()    { return session().status().inProgress() || session().hasRecentSession(); }
     private boolean canNewGame()     { return true; }
@@ -571,6 +575,16 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     public void restartGame() {
         Rotp.restart();
     }
+    
+    private void toggleFullScreen(){
+            UserPreferences.toggleFullScreenMode();
+            restartGame();
+    }
+    
+    private String fullScreenStr() {
+        return "Full Screen: " + (UserPreferences.fullScreenMode()? "ON" : "OFF");
+    }    
+
     private String texturesStr() {
         if (UserPreferences.textures())
             return text("GAME_TEXTURES_ON")+"     ";
@@ -723,6 +737,9 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             expandFrame();
         else if (memoryText.contains(x,y))
             toggleMemory();
+        else if (fullScreenText.contains(x,y))
+            toggleFullScreen();         
+         
     }
     @Override
     public void mouseDragged(MouseEvent e) {
@@ -767,6 +784,8 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             newHover = enlargeText;
         else if (memoryText.contains(x,y))
             newHover = memoryText;
+         else if (fullScreenText.contains(x,y))
+            newHover = fullScreenText;          
 
         if (hoverBox != newHover) {
             if (hoverBox != null)

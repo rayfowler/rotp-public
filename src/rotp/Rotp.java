@@ -33,6 +33,8 @@ import rotp.ui.RotPUI;
 import rotp.ui.SwingExceptionHandler;
 import rotp.ui.UserPreferences;
 import rotp.util.FontManager;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 
 public class Rotp {
     private static final int MB = 1048576;
@@ -49,9 +51,18 @@ public class Rotp {
     private static float resizeAmt =  -1.0f;
     public static int actualAlloc = -1;
     public static boolean reloadRecentSave = false;
+    private static GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0];
     
     public static void main(String[] args) {
         frame = new JFrame("Remnants of the Precursors");
+        
+       if (UserPreferences.getPreferenceValueFromFile("FULL_SCREEN").equalsIgnoreCase("YES"))
+        {
+           frame.setUndecorated(true);
+           device.setFullScreenWindow(frame);
+        }
+
+
         if (args.length == 0) {
             if (restartWithMoreMemory(frame, false))
                 return;
