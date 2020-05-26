@@ -1398,6 +1398,8 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         repaint();
     }
     private void retreatStack(CombatStack stack) {
+        if (mgr.combatIsFinished() || mgr.autoResolve)
+            return; 
         if (!stack.canRetreat() || !stack.empire.isPlayer())
             return;
         StarSystem dest = player().ai().shipCaptain().retreatSystem(mgr.system());
