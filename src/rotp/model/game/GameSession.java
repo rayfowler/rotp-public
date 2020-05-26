@@ -779,6 +779,7 @@ public final class GameSession implements Base, Serializable {
         minY = max(0,minY-r);
         maxY = min(gal.height(), maxY+r);
         pl.setBounds(minX, maxX, minY, maxY);
+        pl.setVisibleShips();
     }
     static ThreadFactory minThreadFactory() {
         return (Runnable r) -> {

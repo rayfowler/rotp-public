@@ -903,7 +903,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         return 0;
     }
     public void addVisibleShip(Ship sh) {
-        if (!visibleShips.contains(sh))
+        if (sh.visibleTo(id) && !visibleShips.contains(sh))
             visibleShips.add(sh);
     }
     public void addVisibleShips(List<? extends Ship> ships) {
@@ -976,20 +976,20 @@ public final class Empire implements Base, NamedObject, Serializable {
         for (int sysId=0;sysId<sv.count();sysId++) {
             // is the system in scanning range?
             boolean canScan = sv.withinRange(sysId, scanRange);
-            List<ShipFleet> systemFleets = null;
+            List<ShipFleet> systemFleets = gal.ships.allFleetsAtSystem(sysId);
             // if not, see if we own or are unity with any ships
             // currently in the system. If so, we can see all ships here
             if (!canScan)  {
-                systemFleets = gal.ships.allFleetsAtSystem(sysId);
                 for (ShipFleet fl: systemFleets) {
                     if (canSeeShips(fl.empId))
                         canScan = true;
                 }
             }
             if (canScan) {
-                if (systemFleets == null)
-                    systemFleets = gal.ships.allFleetsAtSystem(sysId);
-                visibleShips.addAll(systemFleets);
+                for (ShipFleet fl: systemFleets) {
+                    if (fl.visibleTo(this))
+                        visibleShips.add(fl);
+                }
             }
         }
 

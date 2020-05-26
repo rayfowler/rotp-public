@@ -243,7 +243,10 @@ public class Galaxy implements Base, Serializable {
                 // add visible fleets for empires than can scan them
                 for (int i=0;i<canScan.length;i++) {
                     if (canScan[i]) {
-                        empire(i).visibleShips().addAll(systemFleets);
+                        for (ShipFleet fl: systemFleets) {
+                            if (fl.visibleTo(empire(i)))
+                                empire(i).visibleShips().add(fl);
+                        }
                     }
                 }
             }

@@ -304,7 +304,7 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
             return 0;
     }
     public boolean visibleTo(Empire emp) {
-        if (emp.id == empId)
+        if (emp.canSeeShips(empId))
             return true;
 
         for (int i=0;i<num.length;i++) {
