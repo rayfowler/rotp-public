@@ -299,9 +299,10 @@ public class Planet implements Base, IMappedObject, Serializable {
 
     public float waste()           { return waste; }
     public void resetWaste()       { waste = 0; }
-    public void addWaste(float w)  { waste = min(maxWaste(), waste+w); }
+    public void addWaste(float w)  { waste = waste+w; }
     public float maxWaste()        { return currentSize() * 0.9f; }
-    public float sizeAfterWaste()  { return currentSize() - waste(); }
+    public float sizeAfterWaste()  { return currentSize() - min(maxWaste(), waste()); }
+    public void removeExcessWaste() { waste = min(maxWaste(), waste); }
 
     public void resetBiosphere()    {
         terraformLevel= 0;

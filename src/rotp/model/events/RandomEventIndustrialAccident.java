@@ -59,6 +59,7 @@ public class RandomEventIndustrialAccident implements Base, Serializable, Random
         targetSystem.planet().irradiateEnvironment();
         float maxWaste = targetSystem.planet().maxWaste(); // calc max waste after irradiation
         targetSystem.planet().addWaste(maxWaste);
+        targetSystem.planet().removeExcessWaste();
         if (player().knowsOf(empId))
             GNNNotification.notifyRandomEvent(notificationText(), "GNN_Event_Accident");
     }

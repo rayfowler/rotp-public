@@ -37,6 +37,7 @@ public class SpaceCrystal extends SpaceMonster {
             sys.planet().degradeToType(PlanetType.DEAD);
             float maxWaste = sys.planet().maxWaste();
             sys.planet().addWaste(maxWaste);
+            sys.planet().removeExcessWaste();
             col.destroy();  
         }        
     }

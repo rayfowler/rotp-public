@@ -439,6 +439,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         ecology().commitTurn();
         research().commitTurn();
 
+        planet().removeExcessWaste();
         adjustReserveIncome(-usedReserve);
 
         if ((shipyard().allocation() < 0) || (defense().allocation() < 0) || (industry().allocation() < 0)
@@ -1049,6 +1050,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
 
         float newWaste = popLost * 10;
         ecology().addWaste(newWaste);
+        planet().removeExcessWaste();
 
         if (population() <= 0)
             destroy();
