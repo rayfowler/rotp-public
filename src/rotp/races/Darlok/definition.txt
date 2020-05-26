@@ -26,8 +26,8 @@ gnn:           DarlokGNN
 gnnHost:       DarlokGNNHost
 gnnColor:      Lavender
 gnnTextColor:  185,154,250
-winSplash:     ,255,255,255
-lossSplash:    ,255,255,255
+winSplash:     DarWin,255,255,255
+lossSplash:    DarLoss,255,255,255
 
 advisorScout:      DarlokDiplomat, 160@0|440x640
 advisorTransport:  DarlokDiplomat, 160@0|440x640
