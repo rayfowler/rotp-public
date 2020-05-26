@@ -321,10 +321,16 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         paintImmediately(ptX[x], ptY[y], boxW, boxH);
     }
     public void paintCellsImmediately(int x0, int x1, int y0, int y1) {
-        int x = min(ptX[min(x0,x1)]);
-        int w = abs(ptX[x0]-ptX[x1])+boxW;
-        int y = min(ptY[min(y0,y1)]);
-        int h = abs(ptY[y0]-ptY[y1])+boxH;
+        // need to bounds-check the input
+        int x0a = max(0,min(x0,ptX.length-1));
+        int x1a = max(0,min(x1,ptX.length-1));
+        int y0a = max(0,min(y0,ptY.length-1));
+        int y1a = max(0,min(y1,ptY.length-1));
+        
+        int x = ptX[min(x0a,x1a)];
+        int w = abs(ptX[x0a]-ptX[x1a])+boxW;
+        int y = ptY[min(y0a,y1a)];
+        int h = abs(ptY[y0a]-ptY[y1a])+boxH;
         paintImmediately(x,y,w,h);
     }
     public void repaintButtonArea() {
