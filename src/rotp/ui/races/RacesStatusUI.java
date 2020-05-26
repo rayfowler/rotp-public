@@ -312,7 +312,7 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
                 int barW = (int) (w2 * (rv.value / maxValue));
                 g.fillRect(x2, y2, barW, barH);
                 g.setColor(RacesUI.brown);
-                float pct = 100*rv.value/sumValues;
+                float pct = (float)100*rv.value/sumValues;
                 String val = pct >= 10 ? str(Math.round(pct)) : df1.format(pct); 
                 g.drawString(val, x2+barW+s5, y2+barH-yAdj);
             }

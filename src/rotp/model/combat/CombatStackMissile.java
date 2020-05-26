@@ -152,6 +152,7 @@ public class CombatStackMissile extends CombatStack implements Base {
             return true;
         return false;
     }
+    @Override
     public void drawStack(ShipBattleUI ui, Graphics2D g, int origCount, int x, int y, int stackW, int stackH) {
         int x0 = (int) ((x()+0.5f)*stackW);
         int y0 = (int) ((y()+0.5f)*stackH);
