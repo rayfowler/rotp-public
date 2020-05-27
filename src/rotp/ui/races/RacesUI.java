@@ -569,6 +569,7 @@ public class RacesUI extends BasePanel {
             int y1 = y0+s25;
             g.setFont(narrowFont(22));
             drawShadowedString(g, emp.raceName(), 1, x1, y1, blackC, whiteC);
+            emp.drawShape(g,x+w-s30,y0+s10,s20,s20);
 
             if (emp.isPlayer()) {
                 List<EmpireView> views = player().contacts();

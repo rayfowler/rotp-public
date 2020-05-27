@@ -16,6 +16,8 @@
 package rotp.model.empires;
 
 import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.Polygon;
 import java.awt.image.BufferedImage;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -2102,6 +2104,39 @@ public final class Empire implements Base, NamedObject, Serializable {
         for (int i=0;i<visible.length;i++) {
             if (visible[i] > 0)
                 cv.spies().detectShip(fl.empire().shipLab().design(i));
+        }
+    }
+    public void drawShape(Graphics2D g, int x, int y, int w, int h) {
+        Color c = this.color();
+        Color c1 = new Color(c.getRed(),c.getGreen(),c.getBlue(),192);
+        g.setColor(c);
+        int m = w/10;
+        switch(shape()) {
+            case Empire.SHAPE_SQUARE:
+                g.fillRect(x+m,y+m,w-m-m,h-m-m); break;
+            case Empire.SHAPE_DIAMOND:
+                Polygon p = new Polygon();
+                p.addPoint(x, y+h/2);
+                p.addPoint(x+w/2, y);
+                p.addPoint(x+w, y+h/2);
+                p.addPoint(x+w/2, y+h);
+                g.fill(p); break;
+            case Empire.SHAPE_TRIANGLE1:
+                Polygon p1 = new Polygon();
+                p1.addPoint(x+w/2, y);
+                p1.addPoint(x, y+h);
+                p1.addPoint(x+w,y+h);
+                g.fill(p1); break;
+            case Empire.SHAPE_TRIANGLE2:
+                Polygon p2 = new Polygon();
+                p2.addPoint(x+w/2, y+h);
+                p2.addPoint(x, y);
+                p2.addPoint(x+w,y);
+                g.fill(p2);
+                break;
+            case Empire.SHAPE_CIRCLE:
+            default:
+                g.fillOval(x,y,w,h); break;
         }
     }
     public void encounterFleet(ShipFleet fl) {
