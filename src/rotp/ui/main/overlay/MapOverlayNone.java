@@ -250,7 +250,7 @@ public class MapOverlayNone extends MapOverlay {
                 }
                 break;
             case KeyEvent.VK_F7:
-                systems = player().orderedUnderAttackSystems();
+                systems = player().orderedUnderAttackSystems(parent.map().showUnarmedShips(), !parent.map().showFleetsOnly());
                 currSys = null;
                 if (systems.isEmpty())
                     misClick();
@@ -274,7 +274,7 @@ public class MapOverlayNone extends MapOverlay {
                 }
                 break;
             case KeyEvent.VK_F8:
-                systems = player().orderedUnderAttackSystems();
+                systems = player().orderedUnderAttackSystems(parent.map().showUnarmedShips(), !parent.map().showFleetsOnly());
                 currSys = null;
                 if (systems.isEmpty())
                     misClick();

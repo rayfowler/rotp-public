@@ -2221,7 +2221,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         Collections.sort(list, IMappedObject.MAP_ORDER);
         return list;
     }
-    public List<StarSystem> orderedUnderAttackSystems() {
+    public List<StarSystem> orderedUnderAttackSystems(boolean showUnarmed, boolean showTransports) {
         List<StarSystem> list = new ArrayList<>();
         Galaxy g = galaxy();
         Empire pl = player();
@@ -2230,32 +2230,27 @@ public final class Empire implements Base, NamedObject, Serializable {
                 list.add(sys);
         }
         if (knowShipETA) {
-            List<Transport> ships = g.transports();
-            for (Transport ship: ships) {
-                if (ship.empId() != pl.id) { // don't care about player ships
-                    StarSystem sys = g.system(ship.destSysId());
-                    // don't care about ships going to already-added systems or AI systems
-                    if (!list.contains(sys) && (sys.empire() == pl)) { 
-                        Empire emp = g.empire(ship.empId());
-                        // add if incoming fleet is hostile to player
-                        if (emp.aggressiveWith(pl.id))
-                            list.add(sys);
-                    }
-                }
-            }
-            for (ShipFleet ship: g.ships.inTransitFleets()) {
-                if (ship.empId() != pl.id) { // don't care about player ships
-                    StarSystem sys = g.system(ship.destSysId());
-                    // don't care about ships going to already-added systems or AI systems
-                    if (!list.contains(sys) && (sys.empire() == pl)) { 
-                        Empire emp = g.empire(ship.empId());
-                        // add if incoming fleet is hostile to player
-                        if (emp.aggressiveWith(pl.id))
-                            list.add(sys);
+            List<Ship> vShips = player().visibleShips();
+            for (Ship sh: vShips) {
+                if (sh.empId() != pl.id) {
+                    StarSystem sys = g.system(sh.destSysId());
+                    if (sys != null) {
+                        // don't care about ships going to already-added systems or AI systems
+                        if (!list.contains(sys) && (sys.empire() == pl)) { 
+                            Empire emp = g.empire(sh.empId());
+                            // add if incoming fleet is hostile to player
+                            if (emp.aggressiveWith(pl.id)) {
+                                boolean showShip = showUnarmed 
+                                        || (showTransports && (sh instanceof Transport)) || sh.isPotentiallyArmed(pl);
+                                if (showShip)
+                                    list.add(sys);
+                            }
+                        }
                     }
                 }
             }
         }
+        Collections.sort(list, IMappedObject.MAP_ORDER);
         return list;
     }
     public static Set<Empire> allContacts(Empire e1, Empire e2) {
