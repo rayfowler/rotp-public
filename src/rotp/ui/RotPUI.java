@@ -476,7 +476,7 @@ public void promptForColonization(int sysId, ShipFleet fl, ShipDesign d) {
     }
     private void initModel() {
         setFocusTraversalKeysEnabled(false);
-        setBackground(Color.CYAN);
+        setBackground(Color.BLACK);
         setLayout(layout);
 
         add(gameUI, GAME_PANEL);

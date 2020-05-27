@@ -16,6 +16,7 @@
 package rotp;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
@@ -51,7 +52,7 @@ public class Rotp {
     private static float resizeAmt =  -1.0f;
     public static int actualAlloc = -1;
     public static boolean reloadRecentSave = false;
-    private static GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0];
+    private static GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
     
     public static void main(String[] args) {
         frame = new JFrame("Remnants of the Precursors");
@@ -78,6 +79,7 @@ public class Rotp {
             }
         });
         frame.setLayout(new BorderLayout());
+        frame.getContentPane().setBackground(Color.BLACK);
         frame.add(RotPUI.instance(), BorderLayout.CENTER);
 
 
