@@ -15,6 +15,8 @@
  */
 package rotp.ui.main;
 
+import java.awt.BasicStroke;
+import java.awt.Shape;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -28,6 +30,8 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
+import java.awt.geom.Area;
+import java.awt.geom.Ellipse2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
@@ -473,35 +477,35 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         float scale = getWidth()/scaleX();
 
         int extR = (int) (scoutRange*scale);
-        int extR2 = extR-s2;
         int baseR = (int) (shipRange*scale);
-        int baseR2 = baseR-s2;
-
+        Area clusterArea = new Area();
+                       
+        for (StarSystem sv: alliedSystems)
+            clusterArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-extR, mapY(sv.y())-extR, 2*extR, 2*extR) ));       
+        
+        for (StarSystem sv: systems)
+            clusterArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-extR, mapY(sv.y())-extR, 2*extR, 2*extR) ));       
+           
         g.setColor(extendedBorder);
-        for (StarSystem sv: alliedSystems)
-            g.fillOval(mapX(sv.x())-extR, mapY(sv.y())-extR, 2*extR, 2*extR);
-        for (StarSystem sv: systems)
-            g.fillOval(mapX(sv.x())-extR, mapY(sv.y())-extR, 2*extR, 2*extR);
-
+        g.setStroke(new BasicStroke(4));
+        g.draw(clusterArea);   
         g.setColor(emptyBackground);
+        g.fill(clusterArea);
+        clusterArea.reset();
+        
+        
         for (StarSystem sv: alliedSystems)
-            g.fillOval(mapX(sv.x())-extR2, mapY(sv.y())-extR2, 2*extR2, 2*extR2);
-        g.setColor(emptyBackground);
+            clusterArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-baseR, mapY(sv.y())-baseR, 2*baseR, 2*baseR) ));       
+        
         for (StarSystem sv: systems)
-            g.fillOval(mapX(sv.x())-extR2, mapY(sv.y())-extR2, 2*extR2, 2*extR2);
-
+            clusterArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-baseR, mapY(sv.y())-baseR, 2*baseR, 2*baseR) ));       
+                   
         g.setColor(normalBorder);
-        for (StarSystem sv: alliedSystems)
-            g.fillOval(mapX(sv.x())-baseR, mapY(sv.y())-baseR, 2*baseR, 2*baseR);
-        for (StarSystem sv: systems)
-            g.fillOval(mapX(sv.x())-baseR, mapY(sv.y())-baseR, 2*baseR, 2*baseR);
-
-        g.setColor(emptyBackground);
-        for (StarSystem sv: alliedSystems)
-            g.fillOval(mapX(sv.x())-baseR2, mapY(sv.y())-baseR2, 2*baseR2, 2*baseR2);
+        g.setStroke(new BasicStroke(4));
+        g.draw(clusterArea);   
         g.setColor(normalBackground);
-        for (StarSystem sv: systems)
-            g.fillOval(mapX(sv.x())-baseR2, mapY(sv.y())-baseR2, 2*baseR2, 2*baseR2);
+        g.fill(clusterArea);
+
     }
     private void drawGridCircularDisplayDark(Graphics2D g) {
         Galaxy gal = galaxy();
