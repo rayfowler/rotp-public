@@ -17,9 +17,9 @@ package rotp.model.ai.community;
 
 import java.util.ArrayList;
 import java.util.List;
-import rotp.model.ai.ShipBomberTemplate;
-import rotp.model.ai.ShipDestroyerTemplate;
-import rotp.model.ai.ShipFighterTemplate;
+import rotp.model.ai.ShipBomberTemplateC;
+import rotp.model.ai.ShipDestroyerTemplateC;
+import rotp.model.ai.ShipFighterTemplateC;
 import rotp.model.ai.interfaces.ShipDesigner;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.ShipFleet;
@@ -194,7 +194,7 @@ public class AICShipDesigner implements Base, ShipDesigner {
 
         float oppShield = lab.bestEnemyPlanetaryShieldLevel();
         float bcValue = currDesign.cost()*shipCounts[currDesign.id()];
-        boolean easyToReplace = bcValue <= 100;
+        boolean easyToReplace = bcValue <= 500; // scrap easier, change from 100
         
         if (easyToReplace) {
             newDesign.name(currDesign.name());
@@ -251,7 +251,7 @@ public class AICShipDesigner implements Base, ShipDesigner {
         // recalculate current design's damage vs. current targets
         ShipDesign currDesign = lab.fighterDesign();
         int currSlot = currDesign.id();
-        ShipFighterTemplate.setPerTurnDamage(currDesign, empire());
+        ShipFighterTemplateC.setPerTurnDamage(currDesign, empire());
 
         // find best hypothetical design vs current targets
         ShipDesign newDesign = newFighterDesign(currDesign.size());
@@ -269,7 +269,7 @@ public class AICShipDesigner implements Base, ShipDesigner {
         // if we have very few fighters actually in use, go ahead and
         // scrap/replace now
         float bcValue = currDesign.cost()*shipCounts[currDesign.id()];
-        boolean easyToReplace = bcValue <= 100;
+        boolean easyToReplace = bcValue <= 500; // scrap easier, change from 100
         
         if (easyToReplace) {
             newDesign.name(currDesign.name());
@@ -324,7 +324,7 @@ public class AICShipDesigner implements Base, ShipDesigner {
         // recalculate current design's damage vs. current targets
         ShipDesign currDesign = lab.destroyerDesign();
         int currSlot = currDesign.id();
-        ShipDestroyerTemplate.setPerTurnDamage(currDesign, empire());
+        ShipDestroyerTemplateC.setPerTurnDamage(currDesign, empire());
 
         // find best hypothetical design vs current targets
         ShipDesign newDesign = newDestroyerDesign(currDesign.size());
@@ -343,7 +343,7 @@ public class AICShipDesigner implements Base, ShipDesigner {
         // if we have very few destroyers actually in use, go ahead and
         // scrap/replace now
         float bcValue = currDesign.cost()*shipCounts[currDesign.id()];
-        boolean easyToReplace = bcValue <= 1000;
+        boolean easyToReplace = bcValue <= 2000; // scrap easier, change from 1000
         
         if (easyToReplace) {
             newDesign.name(currDesign.name());
@@ -423,7 +423,7 @@ public class AICShipDesigner implements Base, ShipDesigner {
                 design.addWeapon(bestWpn, 1);
         }
 
-        // if we don't need regular-range colony shi[
+        // if we don't need regular-range colony ship
         if (extendedRangeNeeded) {
             ShipSpecial prevSpecial = design.special(1);
             ShipSpecial special = lab.specialReserveFuel();
@@ -452,9 +452,9 @@ public class AICShipDesigner implements Base, ShipDesigner {
         int maxSize = ShipDesign.SMALL;
         if (maxProd >= 1500)
             maxSize = ShipDesign.HUGE;
-        else if (maxProd >= 300)
+        else if (maxProd >= 700) // change from 300, keep fighters smaller
             maxSize = ShipDesign.LARGE;
-        else if (maxProd >= 60)
+        else if (maxProd >= 300) // change from 60 (!), keep fighters smaller
             maxSize = ShipDesign.MEDIUM;
         return min(preferredSize, maxSize);
     }
@@ -470,9 +470,9 @@ public class AICShipDesigner implements Base, ShipDesigner {
             maxProd = max(sys.colony().production(), maxProd);
 
         int maxSize = ShipDesign.MEDIUM;
-        if (maxProd >= 1000)
+        if (maxProd >= 1500) // change from 1000, keep pure bombers smaller
             maxSize = ShipDesign.HUGE;
-        else if (maxProd >= 200)
+        else if (maxProd >= 450) // change from 200, keep pure bombers smaller
             maxSize = ShipDesign.LARGE;
         return min(preferredSize, maxSize);
     }
@@ -488,29 +488,29 @@ public class AICShipDesigner implements Base, ShipDesigner {
             maxProd = max(sys.colony().production(), maxProd);
 
         int maxSize = ShipDesign.MEDIUM;
-        if (maxProd >= 1000)
+        if (maxProd >= 800) // change from 1000, pump out HUGE destroyers sooner, 800 is around soil/terraform+40/robo-4
             maxSize = ShipDesign.HUGE;
-        else if (maxProd >= 200)
+        else if (maxProd >= 350) // change from 200, keep destroyer smaller in beginning
             maxSize = ShipDesign.LARGE;
         return min(preferredSize, maxSize);
     }
     @Override
     public ShipDesign newFighterDesign(int size) {
-        ShipDesign design = ShipFighterTemplate.newDesign(this);
+        ShipDesign design = ShipFighterTemplateC.newDesign(this);
         design.mission(ShipDesign.FIGHTER);
         design.maxUnusedTurns(OBS_FIGHTER_TURNS);
         return design;
     }
     @Override
     public ShipDesign newBomberDesign(int size) {
-        ShipDesign design = ShipBomberTemplate.newDesign(this);
+        ShipDesign design = ShipBomberTemplateC.newDesign(this);
         design.mission(ShipDesign.BOMBER);
         design.maxUnusedTurns(OBS_BOMBER_TURNS);
         return design;
     }
     @Override
     public ShipDesign newDestroyerDesign(int size) {
-        ShipDesign design = ShipDestroyerTemplate.newDesign(this);
+        ShipDesign design = ShipDestroyerTemplateC.newDesign(this);
         design.mission(ShipDesign.DESTROYER);
         design.maxUnusedTurns(OBS_DESTROYER_TURNS);
         return design;
