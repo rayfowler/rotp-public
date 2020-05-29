@@ -65,6 +65,7 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
     Polygon  oppBoxU = new Polygon();
     Polygon oppBoxD = new Polygon();
     BaseText randomEventsText;
+    BaseText aiText;
 
     Rectangle[] oppSet = new Rectangle[MAX_DISPLAY_OPPS];
 
@@ -84,9 +85,11 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
             oppSet[i] = new Rectangle();
         Color textC = SystemPanel.blackText;
         randomEventsText = new BaseText(this, false, 17, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        aiText = new BaseText(this, false, 17, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
     }
     public void init() {
         randomEventsText.displayText(randomEventsStr());
+        aiText.displayText(aiStr());
     }
     private void release() {
         backImg = null;
@@ -257,11 +260,23 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         }
         randomEventsText.setScaledXY(rightBoxX+s40, boxY+rightBoxH-s30);
         randomEventsText.draw(g);
+        int sw = g.getFontMetrics().stringWidth(aiStr());
+        aiText.setScaledXY(galaxyX+galaxyW-sw, boxY+rightBoxH-s30);
+        aiText.draw(g);
     }
     private void toggleRandomEvents() {
         softClick();
         options().disableRandomEvents(!options().disableRandomEvents());
         randomEventsText.repaint(randomEventsStr());
+    }
+    private void toggleAI() {
+        softClick();
+        options().communityAI(!options().communityAI());
+        int sw = getGraphics().getFontMetrics().stringWidth(aiStr());
+        
+        aiText.setScaledXY(galaxyX+galaxyW-sw, boxY+rightBoxH-s30);
+        aiText.repaint(aiStr());
+        repaint();
     }
     private void drawGalaxyShape(Graphics g, GalaxyShape sh, int x, int y, int w, int h) {
         float factor = min((float)h/sh.height(), (float)w/sh.width());
@@ -593,6 +608,12 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         else
             return text("GAME_RANDOM_EVENTS_ON")+"    ";
     }
+    private String aiStr() {
+        if (options().communityAI())
+            return text("GAME_AI_DEVELOPMENT")+"     ";
+        else
+            return text("GAME_AI_BASE")+"    ";
+    }
     @Override
     public String ambienceSoundKey() { 
         return GameUI.AMBIENCE_KEY;
@@ -619,6 +640,8 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         hoverBox = null;
         if (randomEventsText.contains(x,y))
             hoverBox = randomEventsText.bounds();
+        if (aiText.contains(x,y))
+            hoverBox = aiText.bounds();
         else if (startBox.contains(x,y))
             hoverBox = startBox;
         else if (backBox.contains(x,y))
@@ -661,6 +684,10 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
                 randomEventsText.mouseExit();
             else if (hoverBox == randomEventsText.bounds())
                 randomEventsText.mouseEnter();
+            else if (prevHover == aiText.bounds())
+                aiText.mouseExit();
+            else if (hoverBox == aiText.bounds())
+                aiText.mouseEnter();
             repaint();
         }
     }
@@ -678,6 +705,8 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         int y = e.getY();
         if (hoverBox == randomEventsText.bounds())
             toggleRandomEvents();
+        else if (hoverBox == aiText.bounds())
+            toggleAI();
         else if (hoverBox == backBox)
             goToRaceSetup();
         else if (hoverBox == startBox)

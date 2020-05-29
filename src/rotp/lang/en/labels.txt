@@ -300,6 +300,8 @@ GAME_MEMORY_SHOW                  | Memory Use: SHOW
 GAME_MEMORY_HIDE                  | Memory Use: HIDE
 GAME_RANDOM_EVENTS_ON             | Random Events: ON
 GAME_RANDOM_EVENTS_OFF            | Random Events: OFF
+GAME_AI_BASE                      | Base AI
+GAME_AI_DEVELOPMENT               | Development AI
 
 // Load Game UI
 LOAD_GAME_TITLE                   | Load Game
