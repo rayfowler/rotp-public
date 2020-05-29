@@ -19,9 +19,9 @@ import rotp.model.tech.Tech;
 import rotp.model.tech.TechTree;
 
 public class EnemyColonyTarget {
-    int shieldLevel = 0;
-    boolean hasInterdictors = false;
-    float damageTaken = 0;
+    public int shieldLevel = 0;
+    public boolean hasInterdictors = false;
+    public float damageTaken = 0;
     public EnemyColonyTarget(TechTree tree) {
         if (tree.topDeflectorShieldTech() != null)
             shieldLevel += tree.topDeflectorShieldTech().damage;

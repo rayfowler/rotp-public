@@ -19,10 +19,10 @@ import rotp.model.tech.Tech;
 import rotp.model.tech.TechTree;
 
 public class EnemyShipTarget {
-    int shieldLevel = 0;
-    boolean hasRepulsors = false;
-    boolean hasInterdictors = false;
-    float damageTaken = 0;
+    public int shieldLevel = 0;
+    public boolean hasRepulsors = false;
+    public boolean hasInterdictors = false;
+    public float damageTaken = 0;
     public EnemyShipTarget(TechTree tree) {
         if (tree.topDeflectorShieldTech() != null)
             shieldLevel = tree.topDeflectorShieldTech().damage;

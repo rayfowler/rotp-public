@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package rotp.model.ai;
+package rotp.model.ai.community;
 
 import java.util.ArrayList;
 import java.util.List;
+import rotp.model.ai.EnemyShipTarget;
 import rotp.model.ai.interfaces.ShipDesigner;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
@@ -27,11 +28,12 @@ import rotp.model.ships.ShipManeuver;
 import rotp.model.ships.ShipShield;
 import rotp.model.ships.ShipSpecial;
 import rotp.model.ships.ShipWeapon;
+import rotp.model.tech.Tech;
 import rotp.util.Base;
 
-public class ShipFighterTemplate implements Base {
+public class ShipDestroyerTemplateC implements Base {
     private static final List<DesignDamageSpec> dmgSpecs = new ArrayList<>();
-    private static final ShipFighterTemplate instance = new ShipFighterTemplate();
+    private static final ShipDestroyerTemplateC instance = new ShipDestroyerTemplateC();
     private static final ShipDesign mockDesign = new ShipDesign();
 
     public static ShipDesign newDesign(ShipDesigner ai) {
@@ -79,39 +81,43 @@ public class ShipFighterTemplate implements Base {
     }
     private ShipDesign bestDesign(ShipDesigner ai) {
         List<EnemyShipTarget> targets = buildTargetList(ai.empire());
-        int preferredSize = ai.optimalShipFighterSize();
+        int preferredSize = ai.optimalShipDestroyerSize();
         ShipDesign des = newDesign(ai, preferredSize, targets);
-        while (ineffective(des) && (des.size() < ShipDesign.LARGE))
+        while (ineffective(des) && (des.size() < ShipDesign.HUGE))
             des = newDesign(ai, des.size() + 1, targets);
-        
         return des;
     }
     private ShipDesign newDesign(ShipDesigner ai, int size, List<EnemyShipTarget> targets) {
         ShipDesign d = ai.lab().newBlankDesign(size);
         setFastestEngine(ai, d);
         float totalSpace = d.availableSpace();
-        setBestBattleComputer(ai, d);
         setBestCombatSpeed(ai, d);
+        
+        if (d.size() == ShipDesign.HUGE)
+            upgradeRepairSpecial(ai, d); // give HUGE repair special
         if (d.size() >= ShipDesign.MEDIUM) 
-            setBestNormalArmor(ai, d);
+            setBestNormalArmor(ai, d); // still use normal armor for all, including HUGE
+            setBestShield(ai, d); // set 2nd best battle computer for MEDIUM
+            set2ndBestBattleComputer(ai, d); // set 2nd best battle computer for MEDIUM
             
         if (d.size() >= ShipDesign.LARGE) {
             setBattleScanner(ai, d);
             setBestShield(ai, d);
+            setBestBattleComputer(ai, d);
         }
 
         float weaponSpace = d.availableSpace();
-        
-        // if ship is medium or small and more than 50% of space is already going
+
+        // if ship is large or smaller and more than 50% of space is already going
         // to computer & manv, then quit and try a larger hull size
-        if ((d.size() < ShipDesign.LARGE) && (weaponSpace < (totalSpace/2))) {
+        if ((d.size() < ShipDesign.HUGE) && (weaponSpace < (totalSpace/2))) {
             d.perTurnDamage(0);
             return d;
         }
-        
-        setOptimalShipCombatWeapon(ai, d, targets);
-        upgradeShipManeuverSpecial(ai, d, targets);
+
+        setOptimalWeapon(ai, d, targets);
         upgradeBeamRangeSpecial(ai, d);
+        upgradeShipManeuverSpecial(ai, d, targets);
 
         ai.lab().nameDesign(d);
         ai.lab().iconifyDesign(d);
@@ -151,6 +157,15 @@ public class ShipFighterTemplate implements Base {
                 return;
         }
     }
+ // add 2nd best battle computer option
+    private void set2ndBestBattleComputer(ShipDesigner ai, ShipDesign d) {
+        List<ShipComputer> comps = ai.lab().computers();
+        for (int i=comps.size()-2; i >=0; i--) {
+            d.computer(comps.get(i));
+            if (d.availableSpace() >= 0)
+                return;
+        }
+    }
     private void setBestNormalArmor(ShipDesigner ai, ShipDesign d) {
         List<ShipArmor> armors = ai.lab().armors();
         for (int i=armors.size()-1; i >=0; i--) {
@@ -162,9 +177,29 @@ public class ShipFighterTemplate implements Base {
             }
         }
     }
+    private void setBestReinforcedArmor(ShipDesigner ai, ShipDesign d) {
+        List<ShipArmor> armors = ai.lab().armors();
+        for (int i=armors.size()-1; i >=0; i--) {
+            ShipArmor arm = armors.get(i);
+            if (arm.reinforced()) {
+                d.armor(armors.get(i));
+                if (d.availableSpace() >= 0)
+                    return;
+            }
+        }
+    }
     private void setBestShield(ShipDesigner ai, ShipDesign d) {
         List<ShipShield> shields = ai.lab().shields();
         for (int i=shields.size()-1; i >=0; i--) {
+            d.shield(shields.get(i));
+            if (d.availableSpace() >= 0)
+                return;
+        }
+    }
+ // add 2nd best shield option
+    private void set2ndBestShield(ShipDesigner ai, ShipDesign d) {
+        List<ShipShield> shields = ai.lab().shields();
+        for (int i=shields.size()-2; i >=0; i--) {
             d.shield(shields.get(i));
             if (d.availableSpace() >= 0)
                 return;
@@ -191,7 +226,7 @@ public class ShipFighterTemplate implements Base {
 
         return targets;
     }
-    private void setOptimalShipCombatWeapon(ShipDesigner ai, ShipDesign d, List<EnemyShipTarget> targets) {
+    private void setOptimalWeapon(ShipDesigner ai, ShipDesign d, List<EnemyShipTarget> targets) {
         List<ShipWeapon> allWeapons = ai.lab().weapons();
         List<ShipSpecial> allSpecials = ai.lab().specials();
 
@@ -205,34 +240,22 @@ public class ShipFighterTemplate implements Base {
 
         DesignDamageSpec maxDmgSpec = newDamageSpec();
         for (ShipWeapon wpn: allWeapons) {
-            if (wpn.canAttackShips()) {
-                DesignDamageSpec minDmgSpec = newDamageSpec();
-                minDmgSpec.damage = Float.MAX_VALUE;
-                for (EnemyShipTarget tgt: targets) {
-                    DesignDamageSpec spec = simulateDamage(d, wpn, rangeSpecials, tgt);
-                    if (minDmgSpec.damage > spec.damage)
-                        minDmgSpec.set(spec);
-                }
-                if (maxDmgSpec.damage < minDmgSpec.damage)
-                    maxDmgSpec.set(minDmgSpec);
+            DesignDamageSpec minDmgSpec = newDamageSpec();
+            minDmgSpec.damage = Float.MAX_VALUE;
+            for (EnemyShipTarget tgt: targets) {
+                DesignDamageSpec spec = simulateDamage(d, wpn, rangeSpecials, tgt);
+                if (minDmgSpec.damage > spec.damage)
+                    minDmgSpec.set(spec);
             }
+            if (maxDmgSpec.damage < minDmgSpec.damage)
+                maxDmgSpec.set(minDmgSpec);
         }
 
         // at this point, maxDmgSpec is the optimum
-        // spread out the weapon count across all 4 weapon slots
-        // using (int) Math.ceil((float)num/(maxSlots-slot)) ensures
-        // equal distribution with highest first.. i.e 22 = 6 6 5 5
         if (maxDmgSpec.weapon != null) {
-            int num = maxDmgSpec.numWeapons;
-            int maxSlots = ShipDesign.maxWeapons;
-            for (int slot=0;slot<maxSlots;slot++) {
-                int numSlot = (int) Math.ceil((float)num/(maxSlots-slot));
-                if (numSlot > 0) {
-                    d.weapon(slot, maxDmgSpec.weapon);
-                    d.wpnCount(slot, numSlot);
-                    num -= numSlot;
-                }
-            }
+            int wpnSlot = d.nextEmptyWeaponSlot();
+            d.weapon(wpnSlot, maxDmgSpec.weapon);
+            d.wpnCount(wpnSlot, maxDmgSpec.numWeapons);
         }
         if (maxDmgSpec.special != null) {
             int spSlot = d.nextEmptySpecialSlot();
@@ -266,7 +289,7 @@ public class ShipFighterTemplate implements Base {
             mockDesign.special(specSlot, sp);
             wpnDamage = estimatedDamage(mockDesign, target);
             if (wpnDamage > spec.damage) {
-                spec.special = sp;
+                spec.special = null;
                 spec.weapon = wpn;
                 spec.numWeapons = numWeapons;
                 spec.damage = wpnDamage;
@@ -367,6 +390,23 @@ public class ShipFighterTemplate implements Base {
                 }
             }
         }
+    }
+// add ship repair special
+    private boolean upgradeRepairSpecial(ShipDesigner ai, ShipDesign d) {
+        int slot1 = d.nextEmptySpecialSlot();
+        if (slot1 < 0)
+            return false;
+
+        Tech repairBonus = ai.empire().tech().topAutomatedRepairTech();
+        if (repairBonus == null)
+            return false;
+
+        List<ShipSpecial> specials = ai.lab().specials();
+        for (ShipSpecial spec: specials) {
+            if (spec.tech() == repairBonus)
+                d.special(slot1,spec);
+        }
+        return true;
     }
     private DesignDamageSpec newDamageSpec() {
         if (dmgSpecs.isEmpty())
