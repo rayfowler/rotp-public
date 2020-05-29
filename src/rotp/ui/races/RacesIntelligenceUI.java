@@ -902,8 +902,8 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         Empire pl = player();
         TechTree plTree = pl.tech();
         List<String> tradedTechs = new ArrayList<>();
-        for (Tech t: pl.tech().tradedTechs())
-            tradedTechs.add(t.id);
+        for (String techId: pl.tech().tradedTechs())
+            tradedTechs.add(techId);
         List<Empire> empires = pl.contactedEmpires();
         for (Empire emp: empires) {
             TechTree empTree = pl.viewForEmpire(emp).spies().tech();
@@ -927,8 +927,8 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         
         TechTree empTree = pl.viewForEmpire(emp).spies().tech();
         List<String> tradedTechs = new ArrayList<>();
-        for (Tech t: pl.tech().tradedTechs())
-            tradedTechs.add(t.id);
+        for (String techId: pl.tech().tradedTechs())
+            tradedTechs.add(techId);
         TechTree plTree = pl.tech();
         for (int i=0;i<TechTree.NUM_CATEGORIES;i++) {
             List<String> aiKnown = new ArrayList<>(empTree.category(i).knownTechs());

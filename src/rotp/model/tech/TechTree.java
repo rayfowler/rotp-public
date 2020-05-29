@@ -69,9 +69,9 @@ public final class TechTree implements Base, Serializable {
     private String topSubspaceInterdictorTech;
     private String topShipWeaponTech;
 
-    private List<Tech> tradedTechs;
-    private transient List<String> newTechs;
-    private transient List<TradeTechNotification> tradedTechNotifs;
+    private List<String> tradedTechs;
+    private List<String> newTechs;
+    private List<TradeTechNotification> tradedTechNotifs;
 
     public Empire empire()                                            { return empire; }
     public TechCategory category(int i)                               { return category[i]; }
@@ -82,7 +82,7 @@ public final class TechTree implements Base, Serializable {
     public void canBuildStargate(boolean b)                           { canBuildStargate = b; }
     public boolean hyperspaceCommunications()                         { return hyperspaceCommunications; }
     public void hyperspaceCommunications(boolean b)                   { hyperspaceCommunications = b; }
-    public List<Tech> tradedTechs() {
+    public List<String> tradedTechs() {
         if (tradedTechs == null)
             tradedTechs = new ArrayList<>();
         return tradedTechs;
@@ -228,7 +228,7 @@ public final class TechTree implements Base, Serializable {
     public TechCategory propulsion()   { return category[4]; }
     public TechCategory weapon()       { return category[5]; }
     public void acquireTradedTechs() {
-        if (empire().isPlayer()) {
+        if (empire().isPlayerControlled()) {
             for (TradeTechNotification notif: tradedTechNotifs()) {
                 boolean newTech = learnTech(notif.techId);
                 if (newTech)
@@ -236,9 +236,10 @@ public final class TechTree implements Base, Serializable {
             }
         }
         else {
-            for (Tech t: tradedTechs())
-                learnTech(t.id());
+            for (String techId: tradedTechs()) 
+                learnTech(techId);
         }
+
         tradedTechNotifs().clear();
         tradedTechs().clear();
         newTechs().clear();
@@ -592,7 +593,7 @@ public final class TechTree implements Base, Serializable {
     }
     public void acquireTechThroughTrade(String techId, int empId) {
         Tech t = tech(techId);
-        tradedTechs().add(t);
+        tradedTechs().add(techId);
         if (empire().isPlayer())
             tradedTechNotifs().add(TradeTechNotification.create(techId, empId));
     }

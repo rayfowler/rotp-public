@@ -15,9 +15,11 @@
  */
 package rotp.ui.notifications;
 
+import java.io.Serializable;
 import rotp.ui.RotPUI;
 
-public class TradeTechNotification implements TurnNotification {
+public class TradeTechNotification implements TurnNotification, Serializable {
+    private static final long serialVersionUID = 1L;
     public String techId;
     public int empId;
 
