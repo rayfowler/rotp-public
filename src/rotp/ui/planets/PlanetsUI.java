@@ -50,6 +50,7 @@ import javax.swing.InputMap;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.KeyStroke;
+import javax.swing.SwingUtilities;
 import rotp.model.colony.Colony;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.StarSystem;
@@ -927,13 +928,20 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                 return;
             int x = e.getX();
             int y = e.getY();
+            boolean rightClick = SwingUtilities.isRightMouseButton(e);
 
             if (shipDesignBox.contains(x,y)){
-                nextShipDesign(true);
+                if (rightClick)
+                    prevShipDesign(true);
+                else
+                    nextShipDesign(true);
                 parent.repaint();
             }
             else if (shipNameBox.contains(x,y)){
-                nextShipDesign(true);
+                if (rightClick)
+                    prevShipDesign(true);
+                else
+                    nextShipDesign(true);
                 parent.repaint();
             }
             else if (nextDesign.contains(x,y)){
