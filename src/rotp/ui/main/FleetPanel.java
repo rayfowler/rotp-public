@@ -43,6 +43,7 @@ import rotp.model.galaxy.StarSystem;
 import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipDesignLab;
 import rotp.ui.BasePanel;
+import rotp.ui.map.IMapHandler;
 import rotp.ui.sprites.FlightPathSprite;
 
 public class FleetPanel extends BasePanel implements MapSpriteViewer {
@@ -431,7 +432,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         bottomPane.setBackground(MainUI.shadeBorderC());
         return bottomPane;
     }
-    public class FleetGraphicPane extends BasePanel {
+    public class FleetGraphicPane extends BasePanel implements MouseWheelListener {
         private static final long serialVersionUID = 1L;
         private final FleetPanel parent;
         public FleetGraphicPane(FleetPanel p){
@@ -440,6 +441,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         }
         private void init() {
             setBackground(Color.black);
+            addMouseWheelListener(this);
         }
         @Override
         public void paintComponent(Graphics g0) {
@@ -544,6 +546,29 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             }
             g.setColor(MainUI.shadeBorderC());
             g.fillRect(0, h-s5, w, s5);
+        }
+        public void scrollToNextFleet(boolean forward) {
+            ShipFleet fl = parent.fleetToDisplay();
+            if (fl == null)
+                return;
+
+            List<ShipFleet> fleets = fl.empire().orderedFleets();
+
+            int index = fleets.indexOf(fl);
+            if (forward) 
+                index = (index == (fleets.size()-1)) ? 0 : index + 1;
+            else 
+                index = (index == 0) ? fleets.size()-1 : index -1;
+
+            IMapHandler topPanel = parent.parent.parent;
+            topPanel.clickingOnSprite(fleets.get(index), 1, false, true);
+            topPanel.map().recenterMapOn(fleets.get(index));
+            topPanel.repaint();
+        }
+        @Override
+        public void mouseWheelMoved(MouseWheelEvent e) {
+            boolean up = e.getWheelRotation() > 0;
+            scrollToNextFleet(up);
         }
     }
     public class FleetDetailPane extends BasePanel implements MouseListener, MouseMotionListener, MouseWheelListener {
