@@ -35,6 +35,7 @@ import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.awt.image.BufferedImage;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 import rotp.model.colony.Colony;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.ships.Design;
@@ -455,13 +456,20 @@ public class EmpireSystemPanel extends SystemPanel {
                 return;
             int x = e.getX();
             int y = e.getY();
+            boolean rightClick = SwingUtilities.isRightMouseButton(e);
 
             if (shipDesignBox.contains(x,y)){
-                nextShipDesign();
+                if (rightClick)
+                    prevShipDesign();
+                else
+                    nextShipDesign();
                 parent.repaint();
             }
             else if (shipNameBox.contains(x,y)){
-                nextShipDesign();
+                if (rightClick)
+                    prevShipDesign();
+                else
+                    nextShipDesign();
                 parent.repaint();
             }
             else if (nextDesign.contains(x,y)){
