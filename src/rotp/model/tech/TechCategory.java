@@ -146,7 +146,7 @@ public final class TechCategory implements Base, Serializable {
         int highestLevel = 0;
         for (String id: knownTechs()) {
             Tech t = tech(id);
-            highestLevel = Math.max(highestLevel, t.level());
+            highestLevel = max(highestLevel, t.level());
         }
 
         // add the level diff, don't select tech levels > 50 (future techs)
@@ -156,7 +156,7 @@ public final class TechCategory implements Base, Serializable {
         List<Tech> techList = new ArrayList<>();
         for (String id: allTechs()) {
             Tech t = tech(id);
-            if (!knownTechs().contains(id) && (t.level() >= minLevel) && (t.level() <= maxLevel))
+            if (!knownTechs().contains(id) && !t.restricted && (t.level() >= minLevel) && (t.level() <= maxLevel))
                 techList.add(t);
         }
         return random(techList);
