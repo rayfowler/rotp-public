@@ -78,9 +78,8 @@ public class AICScientist implements Base, Scientist {
     public void setTechTreeAllocations() {
         // invoked after nextTurn() processing is complete on each civ's turn
     	// Let our opening book decide if it wants to make tech allocations
-    	if (openingBookTechTreeAllocations()) {
-    		return;
-    	}
+    	if (openingBookTechTreeAllocations()) 
+            return;
     	
     	// Otherwise, go for the defaults modulo future tech adjustments
         int futureTechs = 0;
@@ -130,14 +129,13 @@ public class AICScientist implements Base, Scientist {
     	
     	// We already have one
     	if (tree.topIndustrialWasteTech() != null
-        || tree.topEcoRestorationTech() != null) {
+        || tree.topEcoRestorationTech() != null) 
     		return false;
-    	}
+    	
     	// We already tried and failed
     	if (tree.construction().techLevel() > 2
-        || tree.planetology().techLevel() > 2) {
+        || tree.planetology().techLevel() > 2) 
     		return false;
-    	}
     	
     	// We've never researched construction/planetology, so open evenly
     	if (tree.construction().currentTech() == null
