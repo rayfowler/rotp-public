@@ -773,6 +773,7 @@ public class DesignUI extends BasePanel {
             str = text("SHIP_DESIGN_SPEED_VALUE", (int)des.warpSpeed());
             sw = g.getFontMetrics().stringWidth(str);
             g.drawString(str, x2-s20-sw, y3);
+            des.recalculateCost();
             str = text("SHIP_DESIGN_COST_VALUE", (int)des.cost());
             sw = g.getFontMetrics().stringWidth(str);
             g.drawString(str, x2-s20-sw, y4);

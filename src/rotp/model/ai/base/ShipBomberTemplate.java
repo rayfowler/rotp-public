@@ -104,8 +104,8 @@ public class ShipBomberTemplate implements Base {
             return d;
         }
         
-        setShipCombatWeapon(ai, d);
         setOptimalBombardmentWeapon(ai, d, targets);
+        setShipCombatWeapon(ai, d);
 
         ai.lab().nameDesign(d);
         ai.lab().iconifyDesign(d);
