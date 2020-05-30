@@ -123,8 +123,6 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
                 case ACCEPT_RULING:     paintAcceptRulingMessage(g2); break;
             }
         }
-        if (exited)
-            drawNextTurnNotice(g2);
 
         drawOverlay(g2);
     }

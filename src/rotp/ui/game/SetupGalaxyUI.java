@@ -394,6 +394,8 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         final Runnable save = () -> {
             long start = System.currentTimeMillis();
             GameSession.instance().startGame();
+            RotPUI.instance().mainUI().checkMapInitialized();
+            RotPUI.instance().selectIntroPanel();
             log("TOTAL GAME START TIME:" +(System.currentTimeMillis()-start));
             log("Game Name; "+GameUI.gameName);
             starting = false;

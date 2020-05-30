@@ -226,8 +226,6 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
 
         drawText(g, receiving, textBoxX, textBoxY, textBoxW, textBoxH);
 
-        if (exited)
-            drawNextTurnNotice(g);
         g.dispose();
         return screenBuffer();
     }

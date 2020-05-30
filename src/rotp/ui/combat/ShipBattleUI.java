@@ -476,8 +476,6 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         // draw any overlying messages
         if (mode != Display.INTRO)
             drawResults(g, 0, 0, w, h);
-        if (exited)
-            drawNextTurnNotice(g);
     }
     private void paintStackActions(Graphics2D g, int  hoveringX, int hoveringY) {
         if (mgr.performingStackTurn)
