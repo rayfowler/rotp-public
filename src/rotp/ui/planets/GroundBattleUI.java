@@ -462,9 +462,6 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
         y0 += s30;
         drawBorderedString(g, subtitle, 1, x0, y0, Color.black, Color.yellow);
         
-        if (exited)
-            drawNextTurnNotice(g);
-
         drawSkipText(g, !battleInProgress());
 
         g.dispose();

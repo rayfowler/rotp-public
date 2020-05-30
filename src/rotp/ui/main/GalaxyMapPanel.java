@@ -319,8 +319,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         drawControlSprites(g2);
         drawNextTurnSprites(g2);
         drawRangeSelect(g2);
-        if (parent.displayNextTurnNotice())
-            drawNextTurnNotice(g2);
         g2.dispose();
     }
     private Image mapBuffer() {

@@ -233,8 +233,6 @@ public class ColonizePlanetUI extends FadeInPanel implements MouseListener, Mous
         }
 
         drawMapBuffer(g);
-        if (exited)
-            drawNextTurnNotice(g);
 
         // draw name box over image if necesary
         if (displayMode == Display.NAMING) {

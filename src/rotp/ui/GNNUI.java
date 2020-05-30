@@ -124,8 +124,6 @@ public class GNNUI extends FadeInPanel implements Base, MouseListener, MouseMoti
         }
         g.drawImage(hostImg, 0, 0, resizedW, resizedH, 0, 0, hostImg.getWidth(), hostImg.getHeight(), null);
         drawTitle(g, w, h);
-        if (exited)
-                drawNextTurnNotice(g);
         g.dispose();
         return screenImg;
     }

@@ -295,9 +295,6 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         else if (mode == MODE_FRAME_EMPIRE)
             drawFrameEmpire(g);
 
-        if (finished)
-            drawNextTurnNotice(g);
-
         g.dispose();
     }
     private void drawTechDiscovery(Graphics2D g, String title) {
