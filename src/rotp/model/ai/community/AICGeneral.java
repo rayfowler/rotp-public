@@ -64,6 +64,35 @@ public class AICGeneral implements Base, General {
         for (int id=0;id<empire.sv.count();id++)
             reviseFleetPlan(gal.system(id));
     }
+    
+    // Value to take planet, in pop-multiplied units
+    public float takePlanetValue(StarSystem sys) {
+        int sysId = sys.id;
+        if (!empire.sv.inShipRange(sysId))  return 0.0f;
+        if (!empire.sv.isScouted(sysId))    return 0.0f;
+        if (!empire.sv.isColonized(sysId))  return 0.0f;
+        
+        float val = empire.sv.currentSize(sysId);
+
+        if (empire.sv.isUltraPoor(sysId))
+            val *= 0.25;
+        else if (empire.sv.isPoor(sysId))
+            val *= 0.5;
+        else if (empire.sv.isResourceNormal(sysId))
+            val *= 1;
+        else if (empire.sv.isRich(sysId))
+            val *= 2;
+        else if (empire.sv.isUltraRich(sysId))
+            val *= 3;
+
+        //float for artifacts, triple for super-artifacts
+        if (empire.sv.isArtifact(sysId))
+            val *= 2;
+        else if (empire.sv.isOrionArtifact(sysId))
+            val *= 3;
+
+        return val;
+    }
     @Override
     public float invasionPriority(StarSystem sys) {
         int sysId = sys.id;
@@ -184,7 +213,9 @@ public class AICGeneral implements Base, General {
             return false;
         float pop = empire.sv.population(sys.id);
         float needed = troopsNecessaryToTakePlanet(v, sys);   
-        return needed < pop;
+        // Willing to take 2:1 odds on a 100-pop planet, 4:1 if it's rich, etc.
+        float value = takePlanetValue(sys) / 50;
+        return needed < pop * value;
     }
     public void orderRebellionFleet(StarSystem sys, float enemyFleetSize) {
         if (enemyFleetSize == 0)
@@ -239,8 +270,8 @@ public class AICGeneral implements Base, General {
         for (StarSystem sys : allSystems) {
             if (troopsAvailable < troopsDesired) {
                 float travelTime = sys.colony().transport().travelTime(target);
-                // only consider systems within 3 travel turns
-                if ((travelTime <= 3) && sys.colony().canTransport()) {
+                // only consider systems within 10 travel turns
+                if ((travelTime <= 10) && sys.colony().canTransport()) {
                     launchPoints.add(sys);
                     maxTravelTime = max(maxTravelTime, travelTime);
                     troopsAvailable += sys.colony().maxTransportsAllowed();

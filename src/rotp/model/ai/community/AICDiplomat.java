@@ -1156,7 +1156,13 @@ public class AICDiplomat implements Base, Diplomat {
         // 4 fighters and you have 1.
         int basePower = 500;
         
-        float otherPower = basePower+v.owner().militaryPowerLevel(v.empire());
+        // the defender's advantage is particularly high in the early game, where
+       // our ships take forever to get there and the entire combat can be swayed
+        // by a single large ship, so add a constant defender bonus (it'll matter
+        // less as the game goes on)
+        int defendersAdvantage = 500;
+
+        float otherPower = basePower+v.owner().militaryPowerLevel(v.empire()) + defendersAdvantage;
         float myPower = basePower+v.owner().militaryPowerLevel();
         
         

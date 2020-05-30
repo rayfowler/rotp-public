@@ -75,7 +75,7 @@ public class AICShipDesigner implements Base, ShipDesigner {
                 if (empire.race().ignoresPlanetEnvironment()
                 || (special.tech().canColonize(sys.planet())) ) {
                     if ((bestDesign == null)
-                    || (design.engine().warp() < bestDesign.engine().warp()))
+                    || (design.engine().warp() > bestDesign.engine().warp()))
                         bestDesign = design;
                     else if (design.engine().warp() == bestDesign.engine().warp()) {
                         if (special.tech().environment() > bestDesign.colonySpecial().tech().environment())
@@ -130,12 +130,9 @@ public class AICShipDesigner implements Base, ShipDesigner {
         ShipDesign currDesign = lab.colonyDesign();
         int currSlot = currDesign.id();
         
-        // weapons needed on colony ships if we've made AI contact
-        boolean weaponsNeeded = !empire.contactedEmpires().isEmpty();
-        // current design is "properlyArmed" if it is armed &weapons needed or unarmed & weapons unneeded
-        boolean extendedFuelNeeded = !lab.needColonyShips && lab.needExtendedColonyShips;
-
-        ShipDesign newDesign = newColonyDesign(weaponsNeeded, extendedFuelNeeded);
+        // weapons desirable on colony ships if we've made AI contact
+        boolean weaponsWanted = !empire.contactedEmpires().isEmpty();
+        ShipDesign newDesign = newColonyDesign(weaponsWanted, lab.needColonyShips, lab.needExtendedColonyShips);
 
         // if currDesign is obsolete, replace it immediately with new design
         if (currDesign.obsolete() && (currDesign.remainingLife() < 1)) {
@@ -398,34 +395,34 @@ public class AICShipDesigner implements Base, ShipDesigner {
         lab.iconifyDesign(design);
         return design;
     }
-    public ShipDesign newColonyDesign() {
-        return newColonyDesign(!empire.contactedEmpires().isEmpty(), false);
-    }
-    public ShipDesign newColonyDesign(boolean weaponNeeded, boolean extendedRangeNeeded) {
+    public ShipDesign newColonyDesign(boolean weaponDesired, boolean regularRangeNeeded, boolean extendedRangeNeeded) {
         ShipDesignLab lab = lab();
         ShipDesign design = lab.newBlankDesign(ShipDesign.LARGE);
         design.special(0, bestColonySpecial());
         design.engine(lab.fastestEngine());
         design.mission(ShipDesign.COLONY);
         design.maxUnusedTurns(OBS_COLONY_TURNS);
+        design.setSmallestSize();
+        int standardSize = design.size();
+
+        // Try to fit extended range it
+        if (extendedRangeNeeded) {
+            ShipSpecial extRangeSpecial = lab.specialReserveFuel();
+            design.special(1, extRangeSpecial);
+            design.setSmallestSize();
+            // Cancel that if we made the ship bigger, unless the only candidate planets require it
+            boolean desperateForRange = !regularRangeNeeded && extendedRangeNeeded;
+            if (design.size() > standardSize && !desperateForRange) 
+                design.special(1, lab.noSpecial());            	
+        }
 
         // AIs will always put 1 beam weapon on their colony ships if AI contact made
-        if (weaponNeeded) {
+        if (weaponDesired) {
             ShipWeapon bestWpn = lab.bestUnlimitedShotWeapon(design, 1);
-            if (bestWpn != null)
+            if (bestWpn != null) 
                 design.addWeapon(bestWpn, 1);
         }
-
-        // if we don't need regular-range colony ship
-        if (extendedRangeNeeded) {
-            ShipSpecial prevSpecial = design.special(1);
-            ShipSpecial special = lab.specialReserveFuel();
-            design.special(1, special);
-            design.setSmallestSize();
-            if (design.size() > ShipDesign.LARGE)
-                design.special(1, prevSpecial);
-        }
-
+        
         design.setSmallestSize();
         lab.nameDesign(design);
         lab.iconifyDesign(design);

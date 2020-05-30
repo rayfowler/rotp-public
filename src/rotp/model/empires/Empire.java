@@ -1660,6 +1660,16 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
         return systems;
     }
+    public List<StarSystem> uncolonizedPlanetsInRange(int range) {
+        Galaxy gal = galaxy();
+        List<StarSystem> systems = new ArrayList<>();
+        for (int i=0;i<sv.count();i++) {
+            StarSystem sys = gal.system(i);
+            if (sv.isScouted(i) && (sv.distance(i) <= range) && canColonize(sys.planet()))
+                systems.add(sys);
+        }
+        return systems;
+    }
     public PlanetType minUncolonizedPlanetTypeInShipRange(boolean checkHabitable) {
         // of all uncolonized planets in range that we can colonize
         // find the most hostile type... this guides the colony ship design
