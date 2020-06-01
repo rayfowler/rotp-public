@@ -382,7 +382,7 @@ public class AICScientist implements Base, Scientist {
         if (currMark >= t.mark)
             return 0;
 
-        // scale add'l prevention assuming mark 15 is best (level 50)
+        // scale add'l prevention assuming mark 11 is best (level 50)
         // note there is no reduction in value for existing battle computers
         // since older computer levels become worthless
         float val = 50 / 11.0f * t.mark;
@@ -464,7 +464,6 @@ public class AICScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechBlackHole t) {
-        // scale add'l prevention assuming 70 dmg is best (level 50)
         float val = t.level;
 
         if (empire.leader().isAggressive())
@@ -472,7 +471,7 @@ public class AICScientist implements Base, Scientist {
         if (empire.leader().isMilitarist())
             val *= 1.5;
 
-        // bombs have wartime value: multiply by current war enemies
+        // BHG has wartime value: multiply by current war enemies
         val *= Math.sqrt(empire.numEnemies()+1);
 
         return val;
@@ -518,13 +517,13 @@ public class AICScientist implements Base, Scientist {
         // extra important for races with ground attack bonuses
         if (empire.race().groundAttackBonus() > 0)
             val *= 1.5;
-        // pacifists love shields! xenos, too
+        // Combat Transporter is priority for aggressive and militarist
         if (empire.leader().isAggressive())
             val *= 2;
         if (empire.leader().isMilitarist())
             val *= 1.5;
 
-        // shields have wartime value: multiply by current war enemies
+        // Combat Transporter have wartime value: multiply by current war enemies
         val *= Math.sqrt(empire.numEnemies()+1);
 
         return val;
@@ -571,6 +570,9 @@ public class AICScientist implements Base, Scientist {
         if (empire.leader().isMilitarist())
             val *= 1.5;
 
+        // Shields have wartime value: multiply by current war enemies
+        val *= Math.sqrt(empire.numEnemies()+1);
+
         return val;
     }
     @Override
@@ -600,7 +602,9 @@ public class AICScientist implements Base, Scientist {
         float adj = 1.0f;
         if (empire.leader().isEcologist())
             adj *= 2;
-
+        // wasteCleanupTechMod() = 4 * factoryWasteMod() / wasteElimination()
+		// in TechTree.java
+		// wasteCleanupTechMod goes from 1.6 (initially) to 0 (best)
         return adj * t.level() * empire.tech().wasteCleanupTechMod();
     }
     @Override
@@ -620,13 +624,15 @@ public class AICScientist implements Base, Scientist {
         // The first warp above 2 significantly aids troops and expansion
         if (curr.warp() == 2) {
             if (empire.leader().isAggressive())
-                adj *= 1.5;
-            if (empire.leader().isEcologist())
-                adj *= 1.5;
+                adj *= 1.25;
+        //    if (empire.leader().isEcologist())
+        //        adj *= 1.25;
             if (empire.leader().isExpansionist())
-                adj *= 2.0;
+                adj *= 1.5;
         }
-        // Even numbered warps have significant military value
+        // Even numbered warps have military value
+		// NOTE: debatable, very limited value, commenting out
+		/*
         if (t.warp() % 2 == 0) {
             if (empire.leader().isAggressive())
                 adj *= 1.5;
@@ -635,7 +641,8 @@ public class AICScientist implements Base, Scientist {
             if (empire.leader().isMilitarist())
                 adj *= 1.5;
         }
-
+        */
+		
         return adj * val;
     }
     @Override
@@ -651,7 +658,7 @@ public class AICScientist implements Base, Scientist {
         List<StarSystem> newPossible = empire.uncolonizedPlanetsInRange(t.range());
         int newPlanets = newPossible.size() - possible.size();
 
-        // New planets from fuel cells are very high value (don't even need to deisgn new colony ships).
+        // New planets from fuel cells are very high value (don't even need to design new colony ships).
         // Otherwise they have occasional tiny incremental values, but barely more than 0.
         int val = 7 * newPlanets + 1;
 
@@ -682,7 +689,7 @@ public class AICScientist implements Base, Scientist {
         if (empire.leader().isMilitarist())
             val *= 1.5;
 
-        // shields have wartime value: multiply by current war enemies
+        // troop weapons have wartime value: multiply by current war enemies
         val *= Math.sqrt(empire.numEnemies()+1);
 
         return val;
@@ -733,7 +740,10 @@ public class AICScientist implements Base, Scientist {
         float adj = 1.0f;
         if (empire.leader().isEcologist())
             adj *= 2;
-
+		
+        // wasteCleanupTechMod() = 4 * factoryWasteMod() / wasteElimination()
+		// in TechTree.java
+		// wasteCleanupTechMod goes from 1.6 (initially) to 0 (best)
         return adj * t.level() * empire.tech().wasteCleanupTechMod();
     }
     @Override
@@ -775,7 +785,7 @@ public class AICScientist implements Base, Scientist {
         if (empire.leader().isMilitarist())
             val *= 1.5;
 
-        // bombs have wartime value: multiply by current war enemies
+        // missiles have wartime value: multiply by current war enemies
         val *= Math.sqrt(empire.numEnemies()+1);
 
         return val;
@@ -810,7 +820,7 @@ public class AICScientist implements Base, Scientist {
         if (empire.leader().isMilitarist())
             val *= 1.5;
 
-        // shields have wartime value: multiply by current war enemies
+        // troop shields have wartime value: multiply by current war enemies
         val *= sqrt(empire.numEnemies()+1);
 
         return val;
@@ -833,7 +843,7 @@ public class AICScientist implements Base, Scientist {
         if (empire.leader().isXenophobic())
             val *= 1.5;
 
-        // shields have wartime value: multiply by current war enemies
+        // planet shields have wartime value: multiply by current war enemies
         val *= sqrt(empire.numEnemies()+1);
 
         return val;
@@ -847,9 +857,9 @@ public class AICScientist implements Base, Scientist {
             return 0;
 
         // scale add'l prevention assuming Mark 7 (starts with 2) prevented is best (level 50)
-        float val = 5 * (t.mark-currMark);
+        float val = 10 * (t.mark-currMark);
         // robotic controls are just a generally valuable tech
-        val *= 3;
+        val *= 2;
         // industrialists love factories! economists, too
         if (empire.leader().isIndustrialist())
             val *= 2;
@@ -879,10 +889,13 @@ public class AICScientist implements Base, Scientist {
     public float baseValue(TechShipWeapon t) {
         TechShipWeapon curr = empire.tech().topShipWeaponTech();
 
-        // turns out this effectiveness formula equals about 50 for the
-        // highest value, so no need for a scaling factor to make it 50
-        float currVal = curr.damageHigh() * curr.attacksPerRound;
-        float tVal = t.damageHigh()*t.attacksPerRound;
+		// normalize weapon damage by size, power, attacks, and enemyShieldMod (0.5)
+		// (average damage) * attacks / enemyShieldMod / (size + power); gives 0.1~0.2 for most weapons
+		// then scale by tech level * 7 to reach factor ~50 for best
+		// This method give ranking of: 1)GAUSS AUTO-CANNON , 2)PULSE PHASOR, 3)STELLAR CONVERTOR
+		// 4)TRI-FOCUS PLASMA CANNON, 5)MAULER DEVICE, 6)PARTICLE BEAM, 7)DEATH RAY
+        float currVal = 7.0f* curr.level * 0.5f*(curr.damageLow() + curr.damageHigh()) * curr.attacksPerRound / curr.enemyShieldMod / (curr.size + curr.power);
+        float tVal = 7.0f* t.level * 0.5f*(t.damageLow() + t.damageHigh()) * t.attacksPerRound / t.enemyShieldMod / (t.size + t.power);
 
         if (tVal <= currVal)
             return 0;
@@ -894,7 +907,7 @@ public class AICScientist implements Base, Scientist {
         if (empire.leader().isMilitarist())
             val *= 1.5;
 
-        // bombs have wartime value: multiply by current war enemies
+        // weapons have wartime value: multiply by current war enemies
         val *= Math.sqrt(empire.numEnemies()+1);
 
         return val;
