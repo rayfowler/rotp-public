@@ -89,7 +89,7 @@ public class AICGovernor implements Base, Governor {
             else
                 session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_FERTILE_COMPLETE", name));
         }
-        if (col.hasNewOrders() || session().awaitingAllocation(sys))
+        if (col.hasNewOrders() || (col.allocationRemaining() != 0) || session().awaitingAllocation(sys))
             baseSetPlayerAllocations(col);
     }
     private void baseSetPlayerAllocations(Colony col) {
@@ -112,8 +112,7 @@ public class AICGovernor implements Base, Governor {
         col.clearUnlockedSpending();
         col.hasNewOrders(false);
         
-        // spend ECO for cleaning before everything else
-        
+        // spend ECO for cleaning before anything else
         if (!col.locked(ECOLOGY))
             col.addAllocation(ECOLOGY, min(col.allocationRemaining(), cleanEco-col.allocation(ECOLOGY)));
 
@@ -145,6 +144,16 @@ public class AICGovernor implements Base, Governor {
             col.setAllocation(RESEARCH, prevRes);
         
         // SPEND THE EXCESS
+        // if there is industry left to build, go there first
+        if (!col.locked(INDUSTRY))
+            col.setAllocation(INDUSTRY, maxInd);
+        // if there is terraforming left to build, go there first
+        if (!col.locked(ECOLOGY))
+            col.setAllocation(ECOLOGY, maxEco);
+        // if there is defense left to build, go there next
+        if (!col.locked(DEFENSE))
+            col.setAllocation(DEFENSE, maxDef);
+
         // if research not locked go there
         if (!col.locked(RESEARCH))
             col.addAllocation(RESEARCH, col.allocationRemaining());
@@ -171,7 +180,7 @@ public class AICGovernor implements Base, Governor {
             return;
         }
 
-        // for systems that are flagged as rush defense, do that
+        // for systems that are flagged as rush defense, do that and forget
         // everything else until the project is done
         if (empire.generalAI().rushDefenseSystems().contains(col.starSystem())) {
             if (col.defense().maxSpendingNeeded() > 0) {
@@ -184,7 +193,7 @@ public class AICGovernor implements Base, Governor {
             return;
         }
         
-        // for systems that are flagged as rush defense, do that
+        // for systems that are flagged as rush defense, do that and forget
         // everything else until the project is done
         if (empire.generalAI().rushShipSystems().contains(col.starSystem())) {
             float totalProd = col.totalIncome();
