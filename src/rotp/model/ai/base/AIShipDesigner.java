@@ -75,7 +75,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
                 if (empire.race().ignoresPlanetEnvironment()
                 || (special.tech().canColonize(sys.planet())) ) {
                     if ((bestDesign == null)
-                    || (design.engine().warp() < bestDesign.engine().warp()))
+                    || (design.engine().warp() > bestDesign.engine().warp()))
                         bestDesign = design;
                     else if (design.engine().warp() == bestDesign.engine().warp()) {
                         if (special.tech().environment() > bestDesign.colonySpecial().tech().environment())
