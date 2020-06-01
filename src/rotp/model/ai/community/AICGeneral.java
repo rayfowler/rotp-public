@@ -65,7 +65,11 @@ public class AICGeneral implements Base, General {
             reviseFleetPlan(gal.system(id));
     }
     
-    // Value to take planet, in pop-multiplied units
+    // Desire value to invade planet, normalized to normal 100-pop size planet
+	// Higher desire value for Rich, Ultra-Rich, Artifacts
+	// Lower desire value for Poor, Ultra-Poor
+	// TODO: Factor in factorie count (empire.sv.factories),
+	// weigh it more heavily then planet size (empire.sv.currentSize)
     public float takePlanetValue(StarSystem sys) {
         int sysId = sys.id;
         if (!empire.sv.inShipRange(sysId))  return 0.0f;
@@ -74,6 +78,8 @@ public class AICGeneral implements Base, General {
         
         float val = empire.sv.currentSize(sysId);
 
+        // Higher desire value for Rich, Ultra-Rich, Artifacts
+	    // Lower desire value for Poor, Ultra-Poor
         if (empire.sv.isUltraPoor(sysId))
             val *= 0.25;
         else if (empire.sv.isPoor(sysId))
@@ -91,7 +97,7 @@ public class AICGeneral implements Base, General {
         else if (empire.sv.isOrionArtifact(sysId))
             val *= 3;
 
-        return val;
+        return val/100; // normalized to normal 100-pop size planet
     }
     @Override
     public float invasionPriority(StarSystem sys) {
@@ -213,8 +219,11 @@ public class AICGeneral implements Base, General {
             return false;
         float pop = empire.sv.population(sys.id);
         float needed = troopsNecessaryToTakePlanet(v, sys);   
-        // Willing to take 2:1 odds on a 100-pop planet, 4:1 if it's rich, etc.
-        float value = takePlanetValue(sys) / 50;
+        // Willing to take 1.33:1 losses to invade normal 100-pop size planet.
+		// For invading normal 70-pop size planet, be willing to take ~1:1 losses.
+		// TODO: takePlanetValue may be changed to factor in factories more heavily,
+		// that may change the numerical value of this scaling factor
+        float value = takePlanetValue(sys) * 1.33f;
         return needed < pop * value;
     }
     public void orderRebellionFleet(StarSystem sys, float enemyFleetSize) {
@@ -270,8 +279,8 @@ public class AICGeneral implements Base, General {
         for (StarSystem sys : allSystems) {
             if (troopsAvailable < troopsDesired) {
                 float travelTime = sys.colony().transport().travelTime(target);
-                // only consider systems within 10 travel turns
-                if ((travelTime <= 10) && sys.colony().canTransport()) {
+                // only consider systems within 8 travel turns
+                if ((travelTime <= 8) && sys.colony().canTransport()) {
                     launchPoints.add(sys);
                     maxTravelTime = max(maxTravelTime, travelTime);
                     troopsAvailable += sys.colony().maxTransportsAllowed();
