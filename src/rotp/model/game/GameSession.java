@@ -93,16 +93,21 @@ public final class GameSession implements Base, Serializable {
     private Galaxy galaxy;
     private final GameStatus status = new GameStatus();
     private long id;
-    private transient List<GameListener> gameListeners = new ArrayList<>();
+    private transient List<GameListener> gameListeners;
     public GameStatus status()                   { return status; }
     public long id()                             { return id; }
     public ExecutorService smallSphereService()  { return smallSphereService; }
 
+    public List<GameListener> gameListeners() {
+        if (gameListeners == null)
+            gameListeners = new ArrayList<>();
+        return gameListeners;
+    }
     public void addGameListener(GameListener gameListener) {
-        gameListeners.add(gameListener);
+        gameListeners().add(gameListener);
     }
     public void removeGameListener(GameListener gameListener) {
-        gameListeners.remove(gameListener);
+        gameListeners().remove(gameListener);
     }
 
     public void pauseNextTurnProcessing(String s)   {
@@ -226,7 +231,7 @@ public final class GameSession implements Base, Serializable {
         smallSphereService = Executors.newSingleThreadExecutor();
     }
     private void stopCurrentGame() {
-        gameListeners.forEach(gl -> gl.clearAdvice());
+        gameListeners().forEach(gl -> gl.clearAdvice());
         vars().clear();
         clearAlerts();
         // shut down any threads running from previous game
@@ -344,7 +349,7 @@ public final class GameSession implements Base, Serializable {
                 gal.makeNextTurnDecisions();
 
                 if (!systemsToAllocate().isEmpty())
-                    gameListeners.forEach(l -> l.allocateSystems());
+                    gameListeners().forEach(l -> l.allocateSystems());
 
                 log("Refreshing Player Views");
                 NoticeMessage.resetSubstatus(text("TURN_REFRESHING"));
@@ -394,7 +399,7 @@ public final class GameSession implements Base, Serializable {
         Collections.sort(notifs);
         notifications().clear();
 
-        gameListeners.forEach(l -> l.processNotifications(notifs));
+        gameListeners().forEach(l -> l.processNotifications(notifs));
         systemsScouted().clear();
         return true;
     }
