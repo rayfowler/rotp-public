@@ -99,6 +99,11 @@ public final class GameSession implements Base, Serializable {
     public ExecutorService smallSphereService()  { return smallSphereService; }
 
     public void addGameListener(GameListener gameListener) {
+        // workaround around deserialization not calling constructors. I could override readObject but
+        // I don't think that works well on the web version.
+        if (this.gameListeners == null) {
+            this.gameListeners = new ArrayList<>();
+        }
         gameListeners.add(gameListener);
     }
     public void removeGameListener(GameListener gameListener) {
