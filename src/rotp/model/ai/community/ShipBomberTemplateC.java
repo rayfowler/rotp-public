@@ -88,14 +88,18 @@ public class ShipBomberTemplateC implements Base {
         float totalSpace = d.availableSpace();
         set2ndBestBattleComputer(ai, d); // give bombers 2nd best battle computer
         setBestCombatSpeed(ai, d);
+		
         boolean missileDef = upgradeMissileDefenseSpecial(ai, d);
         set2ndBestECMJammer(ai, d); // give bombers 2nd best ECM, even with anti-missile
         if (!missileDef)
             setBestECMJammer(ai, d);
+		
         setBestManeuverSpecial(ai, d, targets);
-        if (d.size() >= ShipDesign.MEDIUM)             
+		
+        if (d.size() >= ShipDesign.MEDIUM) {
             setBestNormalArmor(ai, d);
-            
+        }
+		
         float weaponSpace = d.availableSpace();
         
         // if ship is medium or small and more than 50% of space is already going
