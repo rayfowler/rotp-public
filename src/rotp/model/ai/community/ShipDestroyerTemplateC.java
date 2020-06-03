@@ -24,6 +24,7 @@ import rotp.model.empires.EmpireView;
 import rotp.model.ships.ShipArmor;
 import rotp.model.ships.ShipComputer;
 import rotp.model.ships.ShipDesign;
+import rotp.model.ships.ShipECM;
 import rotp.model.ships.ShipManeuver;
 import rotp.model.ships.ShipShield;
 import rotp.model.ships.ShipSpecial;
@@ -92,20 +93,23 @@ public class ShipDestroyerTemplateC implements Base {
         setFastestEngine(ai, d);
         float totalSpace = d.availableSpace();
         setBestCombatSpeed(ai, d);
-        
+        setBestNormalArmor(ai, d); // still use normal armor for all, including HUGE
+		
         if (d.size() == ShipDesign.HUGE)
             upgradeRepairSpecial(ai, d); // give HUGE repair special
-        if (d.size() >= ShipDesign.MEDIUM) 
-            setBestNormalArmor(ai, d); // still use normal armor for all, including HUGE
-            setBestShield(ai, d); // set 2nd best battle computer for MEDIUM
-            set2ndBestBattleComputer(ai, d); // set 2nd best battle computer for MEDIUM
-            
-        if (d.size() >= ShipDesign.LARGE) {
-            setBattleScanner(ai, d);
-            setBestShield(ai, d);
-            setBestBattleComputer(ai, d);
-        }
 
+        if (d.size() >= ShipDesign.LARGE) {
+            setBattleScanner(ai, d); // give LARGE and HUGE BattleScanner
+            setBestShield(ai, d); // give best shield to LARGE and HUGE
+            setBestBattleComputer(ai, d); // give best battle computer to LARGE and HUGE
+            set2ndBestECMJammer(ai, d); // give 2nd best ECM to LARGE and HUGE
+        }
+		
+        if (d.size() == ShipDesign.MEDIUM) {
+            set2ndBestShield(ai, d); // give 2nd best shield for MEDIUM
+            set2ndBestBattleComputer(ai, d); // give 2nd best battle computer for MEDIUM
+        }
+		
         float weaponSpace = d.availableSpace();
 
         // if ship is large or smaller and more than 50% of space is already going
@@ -162,6 +166,23 @@ public class ShipDestroyerTemplateC implements Base {
         List<ShipComputer> comps = ai.lab().computers();
         for (int i=comps.size()-2; i >=0; i--) {
             d.computer(comps.get(i));
+            if (d.availableSpace() >= 0)
+                return;
+        }
+    }
+	private void setBestECMJammer(ShipDesigner ai, ShipDesign d) {
+        List<ShipECM> comps = ai.lab().ecms();
+        for (int i=comps.size()-1; i >=0; i--) {
+            d.ecm(comps.get(i));
+            if (d.availableSpace() >= 0)
+                return;
+        }
+    }
+ // add 2nd best ECM option
+    private void set2ndBestECMJammer(ShipDesigner ai, ShipDesign d) {
+        List<ShipECM> comps = ai.lab().ecms();
+        for (int i=comps.size()-2; i >=0; i--) {
+            d.ecm(comps.get(i));
             if (d.availableSpace() >= 0)
                 return;
         }
@@ -368,7 +389,7 @@ public class ShipDestroyerTemplateC implements Base {
         if (slot1 < 0)
             return;
 
-        // go through specials that improve compat speed (inertials)
+        // calculate whether or not to take less weapons to add the range special
         int addlRange = 0;
         float wpnRangeFactor = 0.95f;
 

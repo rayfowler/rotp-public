@@ -24,6 +24,7 @@ import rotp.model.empires.EmpireView;
 import rotp.model.ships.ShipArmor;
 import rotp.model.ships.ShipComputer;
 import rotp.model.ships.ShipDesign;
+import rotp.model.ships.ShipECM;
 import rotp.model.ships.ShipManeuver;
 import rotp.model.ships.ShipShield;
 import rotp.model.ships.ShipSpecial;
@@ -92,14 +93,20 @@ public class ShipFighterTemplateC implements Base {
         setFastestEngine(ai, d);
         float totalSpace = d.availableSpace();
         setBestCombatSpeed(ai, d);
-        if (d.size() >= ShipDesign.SMALL) // change from MEDIUM to SMALL for best armor
-            setBestNormalArmor(ai, d);
+        if (d.size() >= ShipDesign.SMALL) {
+            setBestNormalArmor(ai, d);  // normal armor for all sizes
             set2ndBestBattleComputer(ai, d); // set 2nd best battle computer for smaller ships
-        
+        }
+		
+		if (d.size() == ShipDesign.MEDIUM) {
+            set2ndBestShield(ai, d); // give 2nd best shield for MEDIUM
+        }
+		
         if (d.size() >= ShipDesign.LARGE) {
             setBestBattleComputer(ai, d);
             setBattleScanner(ai, d);
             setBestShield(ai, d);
+            set2ndBestECMJammer(ai, d); // give 2nd best ECM to LARGE and HUGE
         }
 
         float weaponSpace = d.availableSpace();
@@ -162,6 +169,23 @@ public class ShipFighterTemplateC implements Base {
                 return;
         }
     }
+	private void setBestECMJammer(ShipDesigner ai, ShipDesign d) {
+        List<ShipECM> comps = ai.lab().ecms();
+        for (int i=comps.size()-1; i >=0; i--) {
+            d.ecm(comps.get(i));
+            if (d.availableSpace() >= 0)
+                return;
+        }
+    }
+ // add 2nd best ECM option
+    private void set2ndBestECMJammer(ShipDesigner ai, ShipDesign d) {
+        List<ShipECM> comps = ai.lab().ecms();
+        for (int i=comps.size()-2; i >=0; i--) {
+            d.ecm(comps.get(i));
+            if (d.availableSpace() >= 0)
+                return;
+        }
+    }
     private void setBestNormalArmor(ShipDesigner ai, ShipDesign d) {
         List<ShipArmor> armors = ai.lab().armors();
         for (int i=armors.size()-1; i >=0; i--) {
@@ -176,6 +200,15 @@ public class ShipFighterTemplateC implements Base {
     private void setBestShield(ShipDesigner ai, ShipDesign d) {
         List<ShipShield> shields = ai.lab().shields();
         for (int i=shields.size()-1; i >=0; i--) {
+            d.shield(shields.get(i));
+            if (d.availableSpace() >= 0)
+                return;
+        }
+    }
+	 // add 2nd best shield option
+    private void set2ndBestShield(ShipDesigner ai, ShipDesign d) {
+        List<ShipShield> shields = ai.lab().shields();
+        for (int i=shields.size()-2; i >=0; i--) {
             d.shield(shields.get(i));
             if (d.availableSpace() >= 0)
                 return;
