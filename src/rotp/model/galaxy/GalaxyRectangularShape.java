@@ -63,7 +63,7 @@ public class GalaxyRectangularShape extends GalaxyShape {
             case IGameOptions.SIZE_MASSIVE4:  return 28; 
             case IGameOptions.SIZE_MASSIVE5:  return 29; 
             case IGameOptions.SIZE_INSANE:    return 32; 
-            case IGameOptions.SIZE_LUDICROUS: return 26; 
+            case IGameOptions.SIZE_LUDICROUS: return 36; 
             default:             return 19; 
         }
     }

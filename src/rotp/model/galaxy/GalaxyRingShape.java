@@ -31,8 +31,9 @@ public class GalaxyRingShape extends GalaxyShape {
         super.init(n);
         int w = galaxyWidthLY();
         int h = galaxyHeightLY();
-        circle = new Ellipse2D.Float(0,0,w,h);
-        hole =   new Ellipse2D.Float(w*3/10,h*3/10,w*4/10,h*4/10);
+        // add galaxyEdgeBuffer() as upper left corner to prevent cutoff
+        circle = new Ellipse2D.Float(galaxyEdgeBuffer(),galaxyEdgeBuffer(),w,h);
+        hole =   new Ellipse2D.Float(w*3/10+galaxyEdgeBuffer(),h*3/10+galaxyEdgeBuffer(),w*4/10,h*4/10);
     }
     @Override
     public float maxScaleAdj()               { return 1.1f; }
