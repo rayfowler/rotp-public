@@ -49,6 +49,9 @@ public interface IGameOptions {
     public static final String SHAPE_RING = "SETUP_GALAXY_SHAPE_RING";
     public static final String SHAPE_ELLIPTICAL = "SETUP_GALAXY_SHAPE_ELLIPSE";
     public static final String SHAPE_SPIRAL = "SETUP_GALAXY_SHAPE_SPIRAL";
+    public static final String SHAPE_STAR = "SETUP_GALAXY_SHAPE_STAR";
+	public static final String SHAPE_CLUSTER = "SETUP_GALAXY_SHAPE_CLUSTER";
+	public static final String SHAPE_SPARSE = "SETUP_GALAXY_SHAPE_SPARSE";
 
     public static final String DIFFICULTY_EASIEST = "SETUP_DIFFICULTY_EASIEST";
     public static final String DIFFICULTY_EASIER  = "SETUP_DIFFICULTY_EASIER";

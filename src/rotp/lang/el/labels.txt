@@ -689,6 +689,9 @@ SETUP_GALAXY_SHAPE_CIRCULAR       | Κυκλικός
 SETUP_GALAXY_SHAPE_RING           | Δακτυλοειδής
 SETUP_GALAXY_SHAPE_ELLIPSE        | Ελλειπτικός
 SETUP_GALAXY_SHAPE_SPIRAL         | Σπειροειδής
+SETUP_GALAXY_SHAPE_STAR           | EN:Star
+SETUP_GALAXY_SHAPE_CLUSTER        | EN:Cluster
+SETUP_GALAXY_SHAPE_SPARSE         | EN:Sparse
 SETUP_GALAXY_NUMBER_EMPIRES       | Αριθμός Αυτοκρατοριών: %1
 SETUP_GALAXY_NUMBER_SYSTEMS       | Αριθμός Συστημάτων: %1
 SETUP_GALAXY_MAX_OPPONENTS        | Όριο Αντιπάλων: %1
