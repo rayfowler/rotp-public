@@ -31,7 +31,8 @@ public class GalaxyEllipticalShape extends GalaxyShape {
     @Override
     public void init(int n) {
         super.init(n);
-        ellipse = new Ellipse2D.Float(0,0,galaxyWidthLY(),galaxyHeightLY());
+        // add galaxyEdgeBuffer() as upper left corner to prevent cutoff
+        ellipse = new Ellipse2D.Float(galaxyEdgeBuffer(),galaxyEdgeBuffer(),galaxyWidthLY(),galaxyHeightLY());
     }
     @Override
     protected int galaxyWidthLY() { 

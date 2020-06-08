@@ -29,7 +29,8 @@ public class GalaxyCircularShape extends GalaxyShape {
     @Override
     public void init(int n) {
         super.init(n);
-        circle = new Ellipse2D.Float(0,0,galaxyWidthLY(), galaxyHeightLY());
+        // add galaxyEdgeBuffer() as upper left corner to prevent cutoff
+        circle = new Ellipse2D.Float(galaxyEdgeBuffer(),galaxyEdgeBuffer(),galaxyWidthLY(), galaxyHeightLY());
     }
     @Override
     public float maxScaleAdj()               { return 1.1f; }
