@@ -3,4 +3,5 @@ nbproject
 test
 build
 build.xml
-manifest.mf
+manifest.mftarget
+.idea
