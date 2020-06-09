@@ -3,5 +3,6 @@ nbproject
 test
 build
 build.xml
-manifest.mftarget
+manifest.mf
 .idea
+target
