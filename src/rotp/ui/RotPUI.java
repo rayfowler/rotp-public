@@ -239,6 +239,9 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener, Ga
         gameSession.removeGameListener(this);
         gameSession.addGameListener(this);
     }
+    public final void unregisterOnSession(GameSession gameSession) {
+        gameSession.removeGameListener(this);
+    }
     @Override
     public void clearAdvice() {
         RotPUI.this.mainUI().clearAdvice();
