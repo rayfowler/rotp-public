@@ -15,53 +15,30 @@
  */
 package rotp.model.game;
 
-import java.io.BufferedInputStream;
-import java.io.BufferedOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.ObjectInput;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutput;
-import java.io.ObjectOutputStream;
-import java.io.OutputStream;
-import java.io.Serializable;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadFactory;
 import rotp.Rotp;
-import rotp.model.empires.Empire;
-import rotp.model.empires.EmpireView;
-import rotp.model.empires.EspionageMission;
-import rotp.model.empires.SabotageMission;
-import rotp.model.empires.Spy;
+import rotp.model.empires.*;
 import rotp.model.galaxy.*;
+import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipManeuver;
 import rotp.model.ships.ShipSpecial;
-import rotp.ui.notifications.GNNExpansionEvent;
-import rotp.ui.notifications.GNNRankingNoticeCheck;
-import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipWeapon;
 import rotp.model.tech.Tech;
 import rotp.model.tech.TechTree;
 import rotp.ui.NoticeMessage;
 import rotp.ui.RotPUI;
 import rotp.ui.UserPreferences;
-import rotp.ui.notifications.GameAlert;
-import rotp.ui.notifications.SabotageNotification;
-import rotp.ui.notifications.ShipConstructionNotification;
-import rotp.ui.notifications.StealTechNotification;
-import rotp.ui.notifications.SystemsScoutedNotification;
-import rotp.ui.notifications.TurnNotification;
+import rotp.ui.notifications.*;
 import rotp.ui.sprites.FlightPathSprite;
 import rotp.util.Base;
+
+import java.io.*;
+import java.nio.file.Files;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ThreadFactory;
 
 public final class GameSession implements Base, Serializable {
     private static final long serialVersionUID = 1L;
@@ -697,6 +674,7 @@ public final class GameSession implements Base, Serializable {
     }
     public void saveRecentSession(boolean showWarning) {
         try {
+            autoBackup();
             saveSession(RECENT_SAVEFILE);
         }
         catch(Exception e) {
@@ -705,6 +683,24 @@ public final class GameSession implements Base, Serializable {
                 RotPUI.instance().mainUI().showAutosaveFailedPrompt(e.getMessage());
         }
     }
+
+    private void autoBackup() {
+        File recentSaveFile = recentSaveFile();
+        if (recentSaveFile.exists() && (galaxy.currentTurn() % 5 == 0)) {
+            TimeZone tz = TimeZone.getTimeZone("UTC");
+            DateFormat df = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss'Z'");
+            df.setTimeZone(tz);
+            String timestampTemplate = String.format("autosave-%s.rotp", df.format(new Date()));
+            File backup = new File(Rotp.jarPath(), timestampTemplate);
+            try {
+                Files.copy(recentSaveFile.toPath(), backup.toPath());
+                log("'", recentSaveFile.getName(), "' copied to '", backup.getName(), "'");
+            } catch (IOException e) {
+                err("Failed to create an autosave file: ", e.getMessage());
+            }
+        }
+    }
+
     public boolean hasRecentSession() {
         try {
             InputStream file = new FileInputStream(RECENT_SAVEFILE);
