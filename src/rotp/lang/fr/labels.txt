@@ -692,6 +692,7 @@ SETUP_GALAXY_SHAPE_SPIRAL         | Spirale
 SETUP_GALAXY_SHAPE_STAR           | EN:Star
 SETUP_GALAXY_SHAPE_CLUSTER        | EN:Cluster
 SETUP_GALAXY_SHAPE_SPARSE         | EN:Sparse
+SETUP_GALAXY_SHAPE_SWIRLCLUSTERS  | EN:Swirl Clusters
 SETUP_GALAXY_NUMBER_EMPIRES       | Nombre d'empires: %1
 SETUP_GALAXY_NUMBER_SYSTEMS       | Nombre de systèmes: %1
 SETUP_GALAXY_MAX_OPPONENTS        | Maximum d'adversaires: %1

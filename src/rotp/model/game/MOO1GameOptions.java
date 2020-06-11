@@ -30,6 +30,7 @@ import rotp.model.galaxy.GalaxySpiralShape;
 import rotp.model.galaxy.GalaxyStarShape;
 import rotp.model.galaxy.GalaxyClusterShape;
 import rotp.model.galaxy.GalaxySparseShape;
+import rotp.model.galaxy.GalaxySwirlClustersShape;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.galaxy.StarType;
 import rotp.model.planet.Planet;
@@ -162,6 +163,9 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
                 return;
 			case SHAPE_SPARSE:
                 galaxyShape = new GalaxySparseShape(this);
+                return;
+			case SHAPE_SWIRLCLUSTERS:
+                galaxyShape = new GalaxySwirlClustersShape(this);
                 return;
             case SHAPE_RECTANGLE:
             default:
@@ -367,6 +371,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         list.add(SHAPE_STAR);
 		list.add(SHAPE_CLUSTER);
 		list.add(SHAPE_SPARSE);
+		list.add(SHAPE_SWIRLCLUSTERS);
         return list;
     }
     @Override
