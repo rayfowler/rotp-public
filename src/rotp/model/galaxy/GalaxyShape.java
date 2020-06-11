@@ -27,7 +27,7 @@ public abstract class GalaxyShape implements Base, Serializable {
     static final int GALAXY_EDGE_BUFFER = 12;
     static final float ORION_BUFFER = 8;
     static final float EMPIRE_BUFFER = 6;
-    static final float SYSTEM_BUFFER = 1.5f; // allow closer systems
+    static final float SYSTEM_BUFFER = 1.9f; // allow closer systems
     float[] x;
     float[] y;
     ShapeRegion[][] regions;
