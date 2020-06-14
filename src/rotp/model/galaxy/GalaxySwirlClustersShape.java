@@ -16,98 +16,83 @@
 package rotp.model.galaxy;
 
 import java.awt.Point;
-import java.awt.Shape;
-import java.awt.geom.Area;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Path2D;
+import java.util.concurrent.ThreadLocalRandom;
 import rotp.model.game.IGameOptions;
 
 public class GalaxySwirlClustersShape extends GalaxyShape {
     private static final long serialVersionUID = 1L;
-    Path2D swirl;
-	Shape clusters;
-	Area clusterSwirl, swirlArea, clustersArea;
     public GalaxySwirlClustersShape(IGameOptions options) {
         opts = options;
     }
     @Override
     public void init(int n) {
         super.init(n);
-		
-		float gW = (float) galaxyWidthLY();
-		float gH = (float) galaxyHeightLY();
-		
-		// create swirl shape, with width independent of map size, and extends out towards the boundary
-        swirl = new Path2D.Float();
-		swirl.moveTo(0.5f*gW, 0.5f*gH);
-		
-		// scale up the swirl size with size of map
-		// scale up number of clusters with size of map
-		float numSwirls = (float) Math.sqrt(Math.sqrt(maxStars)) - 1;
-		float numClusters = (float) Math.floor(Math.sqrt(maxStars)*Math.log(maxStars)/10 - 1);
-		int numSteps = (int) Math.round(2*Math.sqrt(maxStars));
-		// drop a cluster every clusterSteps, "skip" first numSwirls clusters  for being too close to center
-		int clusterSteps = (int) Math.round(2*numSteps / (numSwirls+numClusters));
-		int ncount = (int) -Math.floor(numSwirls*clusterSteps) + 2;
-		// scale cluster radius with ~numSwirls
-		float clusterR = (float) (numSwirls + 6.0f) / 2.0f;
-		
-		clusters = new Ellipse2D.Float(0.5f*gW-clusterR, 0.5f*gH-clusterR, 2*clusterR, 2*clusterR);
-		clustersArea = new Area(clusters);
-		clusterSwirl = new Area(clusters);
-		
-		// swirl out from center, slightly larger
-		for (int i = 0; i < 2*numSteps; i++)
-		{
-			// offsetSwirl tries to maintain ~constant swirl width
-			float offsetSwirl = 6.0f / (1 + 17.0f*i/(2.0f*numSteps));
-			float x = (float) (0.5f*gW + (0.225f*gW+offsetSwirl)*i*Math.cos(numSwirls*i*Math.PI/numSteps)/numSteps);
-			float y = (float) (0.5f*gH + (0.225f*gH+offsetSwirl)*i*Math.sin(numSwirls*i*Math.PI/numSteps)/numSteps);
-			swirl.lineTo(x, y);
-			
-			// make new clusters at regular intervals
-			// add area to total area
-			if (ncount == clusterSteps){
-				clusters = new Ellipse2D.Float(x-clusterR, y-clusterR, 2*clusterR, 2*clusterR);
-				clustersArea = new Area(clusters);
-				clusterSwirl.add(clustersArea);
-				ncount = 0;
-			}
-			ncount++;
-		}
-		// swirl into center, slightly smaller
-		for (int i = 2*numSteps; i > 1; i--)
-		{
-			// offsetSwirl tries to maintain ~constant swirl width
-			float offsetSwirl = 6.0f / (1 + 17.0f*i/(2.0f*numSteps));
-			float x = (float) (0.5f*gW + (0.225f*gW-offsetSwirl)*i*Math.cos(numSwirls*i*Math.PI/numSteps)/numSteps);
-			float y = (float) (0.5f*gH + (0.225f*gH-offsetSwirl)*i*Math.sin(numSwirls*i*Math.PI/numSteps)/numSteps);
-			swirl.lineTo(x, y);
-		}
-		swirl.closePath();
-		
-		// add swirl area to total area
-		swirlArea = new Area(swirl);
-		clusterSwirl.add(swirlArea);
     }
     @Override
     public float maxScaleAdj()               { return 1.1f; }
     @Override
     protected int galaxyWidthLY() { 
-        return (int) (Math.sqrt(1.5*maxStars*adjustedSizeFactor()));
+        return (int) (Math.sqrt(1.5*opts.numberStarSystems()*adjustedSizeFactor()));
     }
     @Override
     protected int galaxyHeightLY() { 
-        return (int) (Math.sqrt(1.5*maxStars*adjustedSizeFactor()));
+        return (int) (Math.sqrt(1.5*opts.numberStarSystems()*adjustedSizeFactor()));
     }
     @Override
     public void setRandom(Point.Float pt) {
-        pt.x = randomLocation(width, galaxyEdgeBuffer());
-        pt.y = randomLocation(height, galaxyEdgeBuffer());
+		
+		float gW = (float) galaxyWidthLY();
+		float gH = (float) galaxyHeightLY();
+		
+		// scale up the swirl size with size of map
+		// scale up number of clusters with size of map
+		float numSwirls = (float) Math.sqrt(Math.sqrt(opts.numberStarSystems())) - 1;
+		int numClusters = (int) Math.floor(Math.sqrt(opts.numberStarSystems())*Math.log(opts.numberStarSystems())/10);
+		
+		int numSteps = (int) (200*numSwirls*numSwirls);
+		// drop a cluster "every" clusterSteps
+		// not quite since distance along swirl is not uniform with steps
+		int clusterSteps = (int) Math.floor(2*numSteps / (numClusters-1));
+		
+		// scale cluster radius with ~numSwirls
+		float clusterR = (float) (numSwirls + 4.0f) / 1.5f;
+		float swirlWidth = 0.05f;
+		
+		int stepSelect = ThreadLocalRandom.current().nextInt(2*numSteps)+1;
+		// select cluster position non-uniformally
+		int clusterRandom = ThreadLocalRandom.current().nextInt(numClusters);
+		int clusterSelect = (int) Math.floor(Math.sqrt(clusterRandom)*Math.sqrt(numClusters-1)*clusterSteps);
+		
+		// switch between populating the swirl vs cluster
+		switch (ThreadLocalRandom.current().nextInt(2)) {
+            case 0:
+                float xSwirl = (float) (0.5f*gW + galaxyEdgeBuffer() + 0.225f*gW*stepSelect*Math.cos(numSwirls*stepSelect*Math.PI/numSteps)/numSteps);
+				float ySwirl = (float) (0.5f*gW + galaxyEdgeBuffer() + 0.225f*gW*stepSelect*Math.sin(numSwirls*stepSelect*Math.PI/numSteps)/numSteps);
+				
+				double phiSwirl = random() * 2 * Math.PI;
+				double radiusSwirl = Math.sqrt(random()) * swirlWidth;
+				
+				pt.x = (float) (radiusSwirl * Math.cos(phiSwirl) + xSwirl);
+				pt.y = (float) (radiusSwirl * Math.sin(phiSwirl) + ySwirl);
+		
+                break;
+            case 1:
+                float xCluster = (float) (0.5f*gW + galaxyEdgeBuffer() + 0.225f*gW*clusterSelect*Math.cos(numSwirls*clusterSelect*Math.PI/numSteps)/numSteps);
+				float yCluster = (float) (0.5f*gW + galaxyEdgeBuffer() + 0.225f*gW*clusterSelect*Math.sin(numSwirls*clusterSelect*Math.PI/numSteps)/numSteps);
+				
+				double phiCluster = random() * 2 * Math.PI;
+				double radiusSelect = Math.sqrt(random()) * clusterR;
+				
+				pt.x = (float) (radiusSelect * Math.cos(phiCluster) + xCluster);
+				pt.y = (float) (radiusSelect * Math.sin(phiCluster) + yCluster);
+				
+                break;
+        }
+		
     }
     @Override
     public boolean valid(Point.Float pt) {
-        return clusterSwirl.contains(pt.x, pt.y);
+        return true;
     }
     float randomLocation(float max, float buff) {
         return buff + (random() * (max-buff-buff));
