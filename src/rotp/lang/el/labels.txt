@@ -694,6 +694,7 @@ SETUP_GALAXY_SHAPE_CLUSTER        | EN:Cluster
 SETUP_GALAXY_SHAPE_SPARSE         | EN:Sparse
 SETUP_GALAXY_SHAPE_SWIRLCLUSTERS  | EN:Swirl Clusters
 SETUP_GALAXY_SHAPE_GRID           | EN:Grid
+SETUP_GALAXY_SHAPE_SPIRALARMS     | EN:Spiral Arms
 SETUP_GALAXY_NUMBER_EMPIRES       | Αριθμός Αυτοκρατοριών: %1
 SETUP_GALAXY_NUMBER_SYSTEMS       | Αριθμός Συστημάτων: %1
 SETUP_GALAXY_MAX_OPPONENTS        | Όριο Αντιπάλων: %1
