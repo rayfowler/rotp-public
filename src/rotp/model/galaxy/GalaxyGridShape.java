@@ -16,10 +16,7 @@
 package rotp.model.galaxy;
 
 import java.awt.Point;
-import java.awt.Shape;
-import java.awt.geom.Area;
-import java.awt.geom.Ellipse2D;
-import java.awt.geom.Path2D;
+import java.util.concurrent.ThreadLocalRandom;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -27,87 +24,15 @@ import rotp.model.game.IGameOptions;
 
 public class GalaxyGridShape extends GalaxyShape {
     private static final long serialVersionUID = 1L;
-	Path2D grid;
-	Shape clusters;
-	Area totalArea, gridArea, clustersArea;
     public GalaxyGridShape(IGameOptions options) {
         opts = options;
     }
 	    @Override
     public void init(int n) {
         super.init(n);
-		
-		float gCorner = 10.0f;
-		float gW = (float) galaxyWidthLY() - gCorner;
-		float gH = (float) galaxyHeightLY() - gCorner;
-		
-		// scale up the number of grid lines with size of map
-		// scale up number of clusters with size of map
-		float nGrid = (float) Math.floor(Math.sqrt(Math.sqrt(maxStars)) - 1);
-		float nClusters = (float) Math.floor(Math.sqrt(maxStars)*Math.log(maxStars)/12);
-		
-		// scale cluster radius with ~nGrid
-		float clusterR = (float) (nGrid + 9.0f) / 2.0f;
-		
-		clusters = new Ellipse2D.Float(gCorner, gCorner, 1.0f, 1.0f); // dummy cluster
-		//clusters = new Ellipse2D.Float(gCorner - clusterR, gCorner - clusterR, 2.0f*clusterR, 2.0f*clusterR);
-		clustersArea = new Area(clusters);
-		totalArea = new Area(clusters);
-		
-		// grid out both horizontal and vertical
-		for (int i = 0; i <= nGrid; i++)
-		{
-			// vertical
-			grid = new Path2D.Float();
-			grid.moveTo((i/nGrid)*gW + gCorner-0.75f, gCorner);
-			grid.lineTo((i/nGrid)*gW + gCorner+0.75f, gCorner);
-			grid.lineTo((i/nGrid)*gW + gCorner+0.75f, gH + gCorner);
-			grid.lineTo((i/nGrid)*gW + gCorner-0.75f, gH + gCorner);
-			grid.lineTo((i/nGrid)*gW + gCorner-0.75f, gCorner);
-			grid.closePath();
-			
-			// add grid area to total area
-			gridArea = new Area(grid);
-			totalArea.add(gridArea);
-			
-			// horizontal
-			grid = new Path2D.Float();
-			grid.moveTo(gCorner, (i/nGrid)*gH-0.75f + gCorner);
-			grid.lineTo(gCorner, (i/nGrid)*gH+0.75f + gCorner);
-			grid.lineTo(gW + gCorner, (i/nGrid)*gH+0.75f + gCorner);
-			grid.lineTo(gW + gCorner, (i/nGrid)*gH-0.75f + gCorner);
-			grid.lineTo(gCorner, (i/nGrid)*gH-0.75f + gCorner);
-			grid.closePath();
-			
-			// add grid area to total area
-			gridArea = new Area(grid);
-			totalArea.add(gridArea);
-		}
-		
-		
-		// randomly place clusters at intersections
-		// but use map size as seed to ensure same sequence for same map size
-		// use shuffle list to ensure unique draws
-		ArrayList<Integer> clusterList = new ArrayList<Integer>();
-		for(int i = 0; i < (nGrid+1)*(nGrid+1); i++){
-			clusterList.add(i);
-		}
-		Collections.shuffle(clusterList, new Random(maxStars));
-		
-		for (int i = 0; i < nClusters; i++)
-		{
-			int clusterPos = clusterList.get(i);
-			int clusterX = (int) (clusterPos % (nGrid+1));
-			int clusterY = (int) Math.floor(clusterPos / (nGrid+1));
-			
-			clusters = new Ellipse2D.Float((clusterX/nGrid)*gW + gCorner - clusterR, (clusterY/nGrid)*gH + gCorner - clusterR, 2.0f*clusterR, 2.0f*clusterR);
-			clustersArea = new Area(clusters);
-			totalArea.add(clustersArea);
-		}
-		
     }
     @Override
-    public float maxScaleAdj()               { return 0.95f; }
+    public float maxScaleAdj()               { return 1.1f; }
     @Override
     protected int galaxyWidthLY() { 
         return (int) (Math.sqrt(1.5*4.0/3.0*opts.numberStarSystems()*adjustedSizeFactor()));
@@ -118,12 +43,82 @@ public class GalaxyGridShape extends GalaxyShape {
     }
     @Override
     public void setRandom(Point.Float pt) {
-        pt.x = randomLocation(width, galaxyEdgeBuffer());
-        pt.y = randomLocation(height, galaxyEdgeBuffer());
+		
+		// scale up the number of grid lines with size of map
+		// scale up number of clusters with size of map
+		float nGrid = (float) Math.floor(Math.sqrt(Math.sqrt(opts.numberStarSystems())) - 1);
+		float nClusters = (float) min((nGrid+1)*(nGrid+1)-1, (float) Math.floor(Math.sqrt(opts.numberStarSystems())/1.5));
+		
+		// scale cluster radius with ~nGrid
+		float clusterR = (float) (nGrid + 5.0f) / 2.0f;
+		
+		float gW = (float) galaxyWidthLY() - 2.0f*clusterR - 2.0f*galaxyEdgeBuffer();
+		float gH = (float) galaxyHeightLY() - 2.0f*clusterR - 2.0f*galaxyEdgeBuffer();
+		
+		// scale the resolution of the grid with map dimensions and number of grids
+		int numSteps = (int) (10*(gW+gH)*(nGrid+1));
+		int horizontalSteps = (int) (10*gW*(nGrid+1));
+		
+		// randomly assign clusters at intersections
+		// but use map size as seed to ensure same sequence for same map size
+		// use shuffle list to ensure unique draws
+		ArrayList<Integer> clusterList = new ArrayList<Integer>();
+		for(int i = 0; i < (nGrid+1)*(nGrid+1); i++){
+			clusterList.add(i);
+		}
+		Collections.shuffle(clusterList, new Random(opts.numberStarSystems()));
+		
+		
+		// switch between populating the grid vs cluster
+		switch (ThreadLocalRandom.current().nextInt(2)) {
+            case 0:
+				
+				int stepSelect = (int) Math.floor(random()*numSteps);
+				
+				// horizontal grids
+				if (stepSelect < horizontalSteps) { 
+				
+					int gridRow = (int) Math.floor(stepSelect/(10*gW));
+					
+					pt.x = (float) (clusterR + galaxyEdgeBuffer() + gW*(stepSelect-gridRow*(10*gW))/(10*gW));
+					pt.y = (float) (clusterR + galaxyEdgeBuffer() + gH*(gridRow/nGrid));
+					
+					break;
+				}
+				
+				// vertical grids
+				else {
+				
+					int gridColumn = (int) Math.floor((stepSelect - horizontalSteps)/(10*gH));
+					
+					pt.x = (float) (clusterR + galaxyEdgeBuffer() + gW*(gridColumn/nGrid));
+					pt.y = (float) (clusterR + galaxyEdgeBuffer() + gH*(stepSelect-horizontalSteps-gridColumn*(10*gH))/(10*gH));
+					
+					break;
+				}
+            case 1:
+				
+				int clusterSelect = (int) Math.floor(random()*nClusters);
+				
+				int clusterPos = clusterList.get(clusterSelect);
+                int clusterX = (int) (clusterPos % (nGrid+1));
+				int clusterY = (int) Math.floor(clusterPos / (nGrid+1));
+				
+				float xCluster = (float) ((clusterX/nGrid)*gW + clusterR + galaxyEdgeBuffer());
+				float yCluster = (float) ((clusterY/nGrid)*gH + clusterR + galaxyEdgeBuffer());
+				
+				double phiCluster = random() * 2 * Math.PI;
+				double radiusSelect = Math.sqrt(random()) * clusterR;
+				
+				pt.x = (float) (radiusSelect * Math.cos(phiCluster) + xCluster);
+				pt.y = (float) (radiusSelect * Math.sin(phiCluster) + yCluster);
+				
+                break;
+        }
     }
     @Override
     public boolean valid(Point.Float pt) {
-        return totalArea.contains(pt.x, pt.y);
+        return true;
     }
     float randomLocation(float max, float buff) {
         return buff + (random() * (max-buff-buff));
