@@ -22,6 +22,10 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.FileInputStream;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
@@ -70,8 +74,9 @@ public class UserPreferences {
     }
     public static void load() {
         String path = Rotp.jarPath();
-        try (FileReader fileReader = new FileReader(new File(path, PREFERENCES_FILE));
-            BufferedReader in = new BufferedReader(fileReader); ) {
+        File configFile = new File(path, PREFERENCES_FILE);
+		// modnar: change to InputStreamReader, force UTF-8
+		try ( BufferedReader in = new BufferedReader( new InputStreamReader( new FileInputStream(configFile), "UTF-8"));) {
             String input;
             if (in != null) {
                 while ((input = in.readLine()) != null)
@@ -90,7 +95,8 @@ public class UserPreferences {
         List<String> raceKeys = new ArrayList<>(raceNames.keySet());
         Collections.sort(raceKeys);
         try (FileOutputStream fout = new FileOutputStream(new File(path, PREFERENCES_FILE));
-            PrintWriter out = new PrintWriter(fout); ) {
+            // modnar: change to OutputStreamWriter, force UTF-8
+			PrintWriter out = new PrintWriter(new OutputStreamWriter(fout, "UTF-8")); ) {
             out.println(keyFormat("GRAPHICS")+ graphicsLevel.toString());
             out.println(keyFormat("MUSIC")+ yesOrNo(playMusic));
             out.println(keyFormat("SOUNDS")+ yesOrNo(playSounds));
