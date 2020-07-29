@@ -33,6 +33,9 @@ import rotp.model.game.IGameOptions;
 public class GalaxyTextShape extends GalaxyShape {
     private static final long serialVersionUID = 1L;
 	
+	float adjust_densityX = 4.0f;
+	float adjust_densityY = 1.5f;
+	
     public GalaxyTextShape(IGameOptions options) {
         opts = options;
     }
@@ -55,7 +58,6 @@ public class GalaxyTextShape extends GalaxyShape {
 		
 		// modnar: choose text string with setMapOption
 		// TODO: work out multi-line text
-		// TODO: user-input text (?)
 		// some text strings will have issues with connectivity regardless of TextAttribute.TRACKING
 		if (opts.setMapOption() == 1) {
 			// "ROTP"
@@ -69,11 +71,15 @@ public class GalaxyTextShape extends GalaxyShape {
         }
 		else if (opts.setMapOption() == 3) {
 			// User-input Homeworld name, user can change colony name afterwards in-game
-			//GlyphVector v = font2.createGlyphVector(g2.getFontRenderContext(), "ŧēśţìñĝ");
 			String custStr = text(options().selectedHomeWorldName());
 			GlyphVector v = font2.createGlyphVector(g2.getFontRenderContext(), custStr);
 			textShape = v.getOutline();
         }
+		
+		// set galaxy aspect ratio to the textShape aspect ratio
+		// this accommodates very long or short text strings
+		// and multi-line texts in the future
+		adjust_densityX = (float) (adjust_densityY * textShape.getBounds().getWidth() / textShape.getBounds().getHeight());
 		
 		// rescale textShape to fit galaxy map, then move into map center
 		AffineTransform scaleText = new AffineTransform();
@@ -98,11 +104,11 @@ public class GalaxyTextShape extends GalaxyShape {
     public float maxScaleAdj()               { return 0.95f; }
     @Override
     protected int galaxyWidthLY() { 
-        return (int) (Math.sqrt(8*opts.numberStarSystems()*adjustedSizeFactor()));
+        return (int) (Math.sqrt(adjust_densityX*opts.numberStarSystems()*adjustedSizeFactor()));
     }
     @Override
     protected int galaxyHeightLY() { 
-        return (int) (Math.sqrt(2*opts.numberStarSystems()*adjustedSizeFactor()));
+        return (int) (Math.sqrt(adjust_densityY*opts.numberStarSystems()*adjustedSizeFactor()));
     }
     @Override
     public void setRandom(Point.Float pt) {
