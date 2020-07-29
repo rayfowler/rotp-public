@@ -55,6 +55,12 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
     Rectangle shapeBox = new Rectangle();
     Polygon shapeBoxL = new Polygon();
     Polygon shapeBoxR = new Polygon();
+	// modnar:
+	// add new map option UI
+	// mapOption
+	Rectangle mapOptionBox = new Rectangle();
+    Polygon mapOptionBoxL = new Polygon();
+    Polygon mapOptionBoxR = new Polygon();			 
     Rectangle sizeBox = new Rectangle();
     Polygon sizeBoxL = new Polygon();
     Polygon sizeBoxR = new Polygon();
@@ -184,11 +190,13 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         if ((hoverBox == shapeBoxL) || (hoverBox == shapeBoxR)
             ||  (hoverBox == sizeBoxL)  || (hoverBox == sizeBoxR)
             ||  (hoverBox == diffBoxL)  || (hoverBox == diffBoxR)
+			||  (hoverBox == mapOptionBoxL)   || (hoverBox == mapOptionBoxR) // modnar: mapOptionBox
             ||  (hoverBox == oppBoxU)   || (hoverBox == oppBoxD)) {
             g.setColor(Color.yellow);
             g.fill(hoverBox);
         }
         else if ((hoverBox == shapeBox) || (hoverBox == sizeBox)
+			|| (hoverBox == mapOptionBox) // modnar: mapOptionBox
             || (hoverBox == diffBox)   || (hoverBox == oppBox)) {
             Stroke prev = g.getStroke();
             g.setStroke(stroke2);
@@ -217,6 +225,12 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         int shapeSW = g.getFontMetrics().stringWidth(shapeLbl);
         int x5a =shapeBox.x+((shapeBox.width-shapeSW)/2);
         g.drawString(shapeLbl, x5a, y5);
+		
+		// modnar: mapOptionLbl, may not be needed?
+		String mapOptionLbl = text(options().selectedMapOption());
+        int mapOptionSW = g.getFontMetrics().stringWidth(mapOptionLbl);
+        int x5d =mapOptionBox.x+((mapOptionBox.width-mapOptionSW)/2);
+        g.drawString(mapOptionLbl, x5d, y5+s20);
 
         String sizeLbl = text(options().selectedGalaxySize());
         int sizeSW = g.getFontMetrics().stringWidth(sizeLbl);
@@ -336,13 +350,31 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
     public void nextGalaxyShape(boolean click) {
         if (click) softClick();
         options().selectedGalaxyShape(options().nextGalaxyShape());
+		options().galaxyShape().quickGenerate(); // modnar: "hack", do a quickgen to get correct map preview
         repaint();
     }
     public void prevGalaxyShape(boolean click) {
         if (click) softClick();
         options().selectedGalaxyShape(options().prevGalaxyShape());
+		options().galaxyShape().quickGenerate(); // modnar: "hack", do a quickgen to get correct map preview
         repaint();
     }
+	
+	// modnar: mapOption, next/prev selections
+	public void nextMapOption(boolean click) {
+        if (click) softClick();
+        options().selectedMapOption(options().nextMapOption());
+		options().galaxyShape().quickGenerate(); // modnar: "hack", do a quickgen to get correct map preview
+        repaint();
+    }
+    public void prevMapOption(boolean click) {
+        if (click) softClick();
+        options().selectedMapOption(options().prevMapOption());
+		options().galaxyShape().quickGenerate(); // modnar: "hack", do a quickgen to get correct map preview
+        repaint();
+    }
+	
+	
     public void nextGameDifficulty(boolean click) {
         if (click) softClick();
         options().selectedGameDifficulty(options().nextGameDifficulty());
@@ -510,6 +542,17 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         int shapeSW = g.getFontMetrics().stringWidth(shapeLbl);
         int x5a = rightBoxX+s20+((sectionW-shapeSW)/2);
         drawBorderedString(g, shapeLbl, 1, x5a, y5, Color.black, Color.white);
+		
+		// modnar: mapOptionLbl
+		// map shape option label not needed?
+		/*
+		g.setFont(narrowFont(16));
+		String mapOptionLbl = text("SETUP_GALAXY_MAP_OPTION_LABEL");
+        int mapOptionSW = g.getFontMetrics().stringWidth(mapOptionLbl);
+        int x5d = rightBoxX+s20+((sectionW-mapOptionSW)/2);
+        drawBorderedString(g, mapOptionLbl, 1, x5d, y5+s20, Color.black, Color.white);
+		g.setFont(narrowFont(24));
+		*/
 
         String sizeLbl = text("SETUP_GALAXY_SIZE_LABEL");
         int sizeSW = g.getFontMetrics().stringWidth(sizeLbl);
@@ -539,6 +582,20 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         g.fill(shapeBoxR);
         shapeBox.setBounds(sliderX, sliderY, sliderW, sliderH);
         g.fill(shapeBox);
+		
+		// modnar: mapOptionBox
+		mapOptionBoxL.reset();
+        mapOptionBoxL.addPoint(sliderX-s4,sliderY+s1+s20);
+        mapOptionBoxL.addPoint(sliderX-s4,sliderY+sliderH-s2+s20);
+        mapOptionBoxL.addPoint(sliderX-s13,sliderY+(sliderH/2)+s20);
+        g.fill(mapOptionBoxL);
+        mapOptionBoxR.reset();
+        mapOptionBoxR.addPoint(sliderX+sliderW+s4,sliderY+s1+s20);
+        mapOptionBoxR.addPoint(sliderX+sliderW+s4,sliderY+sliderH-s2+s20);
+        mapOptionBoxR.addPoint(sliderX+sliderW+s13,sliderY+(sliderH/2)+s20);
+        g.fill(mapOptionBoxR);
+        mapOptionBox.setBounds(sliderX, sliderY+s20, sliderW, sliderH);
+        g.fill(mapOptionBox);
 
         sliderX += sectionW;
         sizeBoxL.reset();
@@ -654,6 +711,15 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
             hoverBox = shapeBoxR;
         else if (shapeBox.contains(x,y))
             hoverBox = shapeBox;
+		
+		// modnar: mapOptionBox
+		else if (mapOptionBoxL.contains(x,y))
+            hoverBox = mapOptionBoxL;
+        else if (mapOptionBoxR.contains(x,y))
+            hoverBox = mapOptionBoxR;
+        else if (mapOptionBox.contains(x,y))
+            hoverBox = mapOptionBox;
+		
         else if (sizeBoxL.contains(x,y))
             hoverBox = sizeBoxL;
         else if (sizeBoxR.contains(x,y))
@@ -719,6 +785,15 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
             nextGalaxyShape(true);
         else if (hoverBox == shapeBoxR)
             nextGalaxyShape(true);
+		
+		// modnar: mapOptionBox
+		else if (hoverBox == mapOptionBoxL)
+            prevMapOption(true);
+        else if (hoverBox == mapOptionBox)
+            nextMapOption(true);
+        else if (hoverBox == mapOptionBoxR)
+            nextMapOption(true);
+		
         else if (hoverBox == sizeBoxL)
             prevGalaxySize(false, true);
         else if (hoverBox == sizeBox)
@@ -765,6 +840,15 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
             else
                 nextGalaxyShape(false);
         }
+		
+		// modnar: mapOptionBox
+		else if (hoverBox == mapOptionBox) {
+            if (up)
+                prevMapOption(false);
+            else
+                nextMapOption(false);
+        }
+		
         else if (hoverBox == sizeBox) {
             if (up)
                 prevGalaxySize(true, false);

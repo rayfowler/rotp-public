@@ -19,6 +19,7 @@ import java.awt.Point;
 import java.util.concurrent.ThreadLocalRandom;
 import rotp.model.game.IGameOptions;
 
+// modnar: custom map shape, Spiral Arms
 public class GalaxySpiralArmsShape extends GalaxyShape {
     private static final long serialVersionUID = 1L;
     public GalaxySpiralArmsShape(IGameOptions options) {
@@ -44,14 +45,32 @@ public class GalaxySpiralArmsShape extends GalaxyShape {
 		float gW = (float) galaxyWidthLY();
 		float gH = (float) galaxyHeightLY();
 		
-		// scale up the number of spirals with size of map
-		// maybe (?) scale up the spiral swirl size with size of map (?)
-		int numSpirals = (int) Math.floor(Math.sqrt(Math.sqrt(opts.numberStarSystems())));
-		float numSwirls = (float) 2.0f; //Math.round(Math.sqrt(Math.sqrt(Math.sqrt(opts.numberStarSystems()))));
-		int numSteps = (int) 50*numSpirals;
-		
-		// scale max spiral arm width (2*armRadius) with map size
+		float numSwirls = (float) 2.0f;
 		float armRadius = (float) max(1.5f, 0.03f*gW);
+		
+		// choose spiral swirl size and max spiral arm width with setMapOption
+		// // maybe (?) scale up the spiral swirl size with size of map (?)
+		// // Math.round(Math.sqrt(Math.sqrt(Math.sqrt(opts.numberStarSystems()))));
+		// scale max spiral arm width (2*armRadius) with map size
+		if (opts.setMapOption() == 1) {
+			// normal swirls, medium swirl arm width
+			numSwirls = (float) 2.0f;
+			armRadius = (float) max(1.5f, 0.03f*gW);
+		}
+		else if (opts.setMapOption() == 2) {
+			// loose swirls, large swirl arm width
+			numSwirls = (float) 1.0f;
+			armRadius = (float) max(1.5f, 0.05f*gW);
+		}
+		else if (opts.setMapOption() == 3) {
+			// tight swirls, small swirl arm width
+			numSwirls = (float) 3.0f;
+			armRadius = (float) max(1.5f, 0.02f*gW);
+		}
+		
+		// scale up the number of spirals with size of map
+		int numSpirals = (int) Math.floor(Math.sqrt(Math.sqrt(opts.numberStarSystems())));
+		int numSteps = (int) 50*numSpirals;
 		
 		int armSelect = ThreadLocalRandom.current().nextInt(numSpirals);
 		int stepSelect = ThreadLocalRandom.current().nextInt(numSteps);

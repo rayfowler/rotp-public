@@ -27,6 +27,8 @@ public class GalaxySpiralShape extends GalaxyShape {
     static final float rotationFactor = 3;
     static final float armSeparationDistance = 2 * (float)Math.PI / numArms;
     Shape circle;
+	float adjust_density = 1.0f; // modnar: adjust stellar density
+	
     float randomX = 0;
     float randomY = 0;
     public GalaxySpiralShape(IGameOptions options) {
@@ -35,17 +37,29 @@ public class GalaxySpiralShape extends GalaxyShape {
     @Override
     public void init(int n) {
         super.init(n);
+		
+		// modnar: choose different stellar densities (map areas) with setMapOption
+		if (opts.setMapOption() == 1) {
+			adjust_density = 1.0f;
+		}
+		else if (opts.setMapOption() == 2) {
+			adjust_density = 1.5f;
+		}
+		else if (opts.setMapOption() == 3) {
+			adjust_density = 2.0f;
+		}
+		
         circle = new Ellipse2D.Float(0,0,galaxyWidthLY(), galaxyHeightLY());
     }
     @Override
     public float maxScaleAdj()               { return 1.1f; }
     @Override
     protected int galaxyWidthLY() { 
-        return (int) (Math.sqrt(maxStars*adjustedSizeFactor()));
+        return (int) (Math.sqrt(adjust_density*maxStars*adjustedSizeFactor()));
     }
     @Override
     protected int galaxyHeightLY() { 
-        return (int) (Math.sqrt(maxStars*adjustedSizeFactor()));
+        return (int) (Math.sqrt(adjust_density*maxStars*adjustedSizeFactor()));
     }
     @Override
     public void setRandom(Point.Float pt) {

@@ -19,6 +19,7 @@ import java.awt.Point;
 import java.util.concurrent.ThreadLocalRandom;
 import rotp.model.game.IGameOptions;
 
+// modnar: custom map shape, Swirl Clusters
 public class GalaxySwirlClustersShape extends GalaxyShape {
     private static final long serialVersionUID = 1L;
     public GalaxySwirlClustersShape(IGameOptions options) {
@@ -44,20 +45,42 @@ public class GalaxySwirlClustersShape extends GalaxyShape {
 		float gW = (float) galaxyWidthLY();
 		float gH = (float) galaxyHeightLY();
 		
+		// modnar: choose swirl size, number of clusters, and cluster radii with setMapOption
 		// scale up the swirl size with size of map
 		// scale up number of clusters with size of map
+		// scale cluster radius with ~numSwirls
 		float numSwirls = (float) Math.sqrt(Math.sqrt(opts.numberStarSystems())) - 1;
 		int numClusters = (int) Math.floor(Math.sqrt(opts.numberStarSystems())*Math.log(opts.numberStarSystems())/10);
+		float clusterR = (float) (numSwirls + 4.0f) / 1.5f;
+		float swirlWidth = 0.05f;
+		float clusterDelta = 0.0f; // distance to displace cluster
+		
+		if (opts.setMapOption() == 1) {
+			// clusters distributed along spiral
+			numSwirls = (float) Math.sqrt(Math.sqrt(opts.numberStarSystems())) - 1;
+			numClusters = (int) Math.floor(Math.sqrt(opts.numberStarSystems())*Math.log(opts.numberStarSystems())/10);
+			clusterR = (float) (numSwirls + 4.0f) / 1.5f;
+			clusterDelta = 0.0f;
+		}
+		else if (opts.setMapOption() == 2) {
+			// clusters spanning across tighter spirals
+			numSwirls = (float) Math.sqrt(Math.sqrt(opts.numberStarSystems()))*1.5f - 1;
+			numClusters = (int) Math.floor(Math.sqrt(opts.numberStarSystems())*Math.log(opts.numberStarSystems())/10);
+			clusterR = (float) (numSwirls + 4.0f) / 1.5f;
+			clusterDelta = clusterR; 
+		}
+		else if (opts.setMapOption() == 3) {
+			// very tight spiral only, no visible clusters
+			numSwirls = (float) (Math.sqrt(opts.numberStarSystems()))/3.0f;
+			numClusters = 5;
+			clusterR = 0.1f;
+			clusterDelta = 0.0f;
+		}
 		
 		int numSteps = (int) (200*numSwirls*numSwirls);
 		// drop a cluster "every" clusterSteps
 		// not quite since distance along swirl is not uniform with steps
 		int clusterSteps = (int) Math.floor(2*numSteps / (numClusters-1));
-		
-		// scale cluster radius with ~numSwirls
-		float clusterR = (float) (numSwirls + 4.0f) / 1.5f;
-		float swirlWidth = 0.05f;
-		
 		int stepSelect = ThreadLocalRandom.current().nextInt(2*numSteps)+1;
 		// select cluster position non-uniformally
 		int clusterRandom = ThreadLocalRandom.current().nextInt(numClusters);
@@ -77,8 +100,20 @@ public class GalaxySwirlClustersShape extends GalaxyShape {
 		
                 break;
             case 1:
-                float xCluster = (float) (0.5f*gW + galaxyEdgeBuffer() + 0.225f*gW*clusterSelect*Math.cos(numSwirls*clusterSelect*Math.PI/numSteps)/numSteps);
-				float yCluster = (float) (0.5f*gW + galaxyEdgeBuffer() + 0.225f*gW*clusterSelect*Math.sin(numSwirls*clusterSelect*Math.PI/numSteps)/numSteps);
+                float xDelta = (float) (0.225f*gW*clusterSelect*Math.cos(numSwirls*clusterSelect*Math.PI/numSteps)/numSteps);
+				float yDelta = (float) (0.225f*gW*clusterSelect*Math.sin(numSwirls*clusterSelect*Math.PI/numSteps)/numSteps);
+				
+				float xCluster = (float) (0.5f*gW + galaxyEdgeBuffer() + xDelta);
+				float yCluster = (float) (0.5f*gW + galaxyEdgeBuffer() + yDelta);
+				
+				float dCluster = (float) Math.sqrt(xDelta*xDelta + yDelta*yDelta);
+				
+				// move cluster a distance clusterDelta closer to center, if they are sufficently far away
+				if ((dCluster > clusterR) && (clusterDelta > 0.1f)) {
+					
+					xCluster = (float) ((clusterDelta/dCluster)*(0.5f*gW + galaxyEdgeBuffer()) + (1.0f - (clusterDelta/dCluster))*(0.5f*gW + galaxyEdgeBuffer() + xDelta));
+					yCluster = (float) ((clusterDelta/dCluster)*(0.5f*gW + galaxyEdgeBuffer()) + (1.0f - (clusterDelta/dCluster))*(0.5f*gW + galaxyEdgeBuffer() + yDelta));
+				}
 				
 				double phiCluster = random() * 2 * Math.PI;
 				double radiusSelect = Math.sqrt(random()) * clusterR;

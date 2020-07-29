@@ -23,6 +23,8 @@ import rotp.model.game.IGameOptions;
 public class GalaxyEllipticalShape extends GalaxyShape {
     private static final long serialVersionUID = 1L;
     Shape ellipse;
+	float adjust_density = 1.0f; // modnar: adjust stellar density
+	
     public GalaxyEllipticalShape(IGameOptions options) {
         opts = options;
     }
@@ -31,16 +33,28 @@ public class GalaxyEllipticalShape extends GalaxyShape {
     @Override
     public void init(int n) {
         super.init(n);
-        // add galaxyEdgeBuffer() as upper left corner to prevent cutoff
+		
+		// modnar: choose different stellar densities (map areas) with setMapOption
+		if (opts.setMapOption() == 1) {
+			adjust_density = 1.0f;
+		}
+		else if (opts.setMapOption() == 2) {
+			adjust_density = 1.5f;
+		}
+		else if (opts.setMapOption() == 3) {
+			adjust_density = 2.0f;
+		}
+		
+		// modnar: add galaxyEdgeBuffer() as upper left corner to prevent cutoff
         ellipse = new Ellipse2D.Float(galaxyEdgeBuffer(),galaxyEdgeBuffer(),galaxyWidthLY(),galaxyHeightLY());
     }
     @Override
     protected int galaxyWidthLY() { 
-        return (int) (sqrt(2*maxStars*adjustedSizeFactor()));
+        return (int) (sqrt(adjust_density*2*maxStars*adjustedSizeFactor()));
     }
     @Override
     protected int galaxyHeightLY() { 
-        return (int) (Math.sqrt(0.5*maxStars*adjustedSizeFactor()));
+        return (int) (Math.sqrt(adjust_density*0.5*maxStars*adjustedSizeFactor()));
     }
     @Override
     public void setRandom(Point.Float pt) {
