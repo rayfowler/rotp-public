@@ -68,8 +68,10 @@ public class GalaxyTextShape extends GalaxyShape {
 			textShape = v.getOutline();
         }
 		else if (opts.setMapOption() == 3) {
-			// "testing", using unicode homoglyphs
-			GlyphVector v = font2.createGlyphVector(g2.getFontRenderContext(), "ŧēśţìñĝ");
+			// User-input Homeworld name, user can change colony name afterwards in-game
+			//GlyphVector v = font2.createGlyphVector(g2.getFontRenderContext(), "ŧēśţìñĝ");
+			String custStr = text(options().selectedHomeWorldName());
+			GlyphVector v = font2.createGlyphVector(g2.getFontRenderContext(), custStr);
 			textShape = v.getOutline();
         }
 		
