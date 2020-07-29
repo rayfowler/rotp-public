@@ -22,8 +22,10 @@ import java.util.Collections;
 import java.util.Random;
 import rotp.model.game.IGameOptions;
 
+// modnar: custom map shape, Grid
 public class GalaxyGridShape extends GalaxyShape {
     private static final long serialVersionUID = 1L;
+	
     public GalaxyGridShape(IGameOptions options) {
         opts = options;
     }
@@ -35,22 +37,40 @@ public class GalaxyGridShape extends GalaxyShape {
     public float maxScaleAdj()               { return 1.1f; }
     @Override
     protected int galaxyWidthLY() { 
-        return (int) (Math.sqrt(1.5*4.0/3.0*opts.numberStarSystems()*adjustedSizeFactor()));
+        return (int) (Math.sqrt(1.5*opts.numberStarSystems()*adjustedSizeFactor()));
     }
     @Override
     protected int galaxyHeightLY() { 
-        return (int) (Math.sqrt(1.5*3.0/4.0*opts.numberStarSystems()*adjustedSizeFactor()));
+        return (int) (Math.sqrt(1.5*opts.numberStarSystems()*adjustedSizeFactor()));
     }
     @Override
     public void setRandom(Point.Float pt) {
 		
+		// choose number of grids, clusters, and cluster radii with setMapOption
 		// scale up the number of grid lines with size of map
 		// scale up number of clusters with size of map
-		float nGrid = (float) Math.floor(Math.sqrt(Math.sqrt(opts.numberStarSystems())) - 1);
-		float nClusters = (float) min((nGrid+1)*(nGrid+1)-1, (float) Math.floor(Math.sqrt(opts.numberStarSystems())/1.5));
-		
 		// scale cluster radius with ~nGrid
-		float clusterR = (float) (nGrid + 5.0f) / 2.0f;
+		float nGrid = (float) Math.floor(Math.sqrt(Math.sqrt(opts.numberStarSystems())) - 1);
+		float nClusters = 0.0f;
+		float clusterR = 0.1f;
+		if (opts.setMapOption() == 1) {
+			// rough grid, some clusters at intersections
+			nGrid = (float) Math.floor(Math.sqrt(Math.sqrt(opts.numberStarSystems())) - 1);
+			nClusters = (float) min((nGrid+1)*(nGrid+1)-1, (float) Math.floor(Math.sqrt(opts.numberStarSystems())/1.5));
+			clusterR = (float) (nGrid + 5.0f) / 2.0f;
+		}
+		else if (opts.setMapOption() == 2) {
+			// rough grid, clusters at all intersections
+			nGrid = (float) Math.floor(Math.sqrt(Math.sqrt(opts.numberStarSystems())) - 1);
+			nClusters = (float) (nGrid+1)*(nGrid+1);
+			clusterR = (float) (nGrid + 5.0f) / 2.0f;
+		}
+		else if (opts.setMapOption() == 3) {
+			// fine grid, no clusters
+			nGrid = (float) Math.floor(2.0f*Math.sqrt(Math.sqrt(opts.numberStarSystems())) - 1);
+			nClusters = 0.0f;
+			clusterR = 0.1f;
+		}
 		
 		float gW = (float) galaxyWidthLY() - 2.0f*clusterR - 2.0f*galaxyEdgeBuffer();
 		float gH = (float) galaxyHeightLY() - 2.0f*clusterR - 2.0f*galaxyEdgeBuffer();

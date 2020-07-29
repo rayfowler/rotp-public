@@ -18,18 +18,33 @@ package rotp.model.galaxy;
 import java.awt.Point;
 import java.awt.Shape;
 import java.awt.geom.Path2D;
-import java.awt.geom.AffineTransform; // TODO: perhaps add in some kind of rotation
+import java.awt.geom.AffineTransform; // modnar: TODO: perhaps add in some kind of rotation
 import rotp.model.game.IGameOptions;
 
+// modnar: custom map shape, Star
 public class GalaxyStarShape extends GalaxyShape {
     private static final long serialVersionUID = 1L;
     private Path2D star;
+	float adjust_density = 1.0f; // modnar: adjust stellar density
+	
     public GalaxyStarShape(IGameOptions options) {
         opts = options;
     }
     @Override
     public void init(int n) {
         super.init(n);
+		
+		// modnar: choose different stellar densities (map areas) with setMapOption
+		if (opts.setMapOption() == 1) {
+			adjust_density = 1.0f;
+		}
+		else if (opts.setMapOption() == 2) {
+			adjust_density = 1.5f;
+		}
+		else if (opts.setMapOption() == 3) {
+			adjust_density = 2.0f;
+		}
+		
 		star = new Path2D.Float();
 		
 		// create star shape, just with points
@@ -48,7 +63,7 @@ public class GalaxyStarShape extends GalaxyShape {
 		star.closePath();
 		
 		/*
-		// TODO: rotate the star shape by using modulo
+		// modnar: TODO: rotate the star shape by using modulo (?)
 		AffineTransform rot = new AffineTransform();
 		rot.rotate(galaxyWidthLY() % 11); // need to modify to keep within galaxy bounds
 		Path2D star = rot.createTransformedShape(star);
@@ -58,11 +73,11 @@ public class GalaxyStarShape extends GalaxyShape {
     public float maxScaleAdj()               { return 1.1f; }
     @Override
     protected int galaxyWidthLY() { 
-        return (int) (1.5*Math.sqrt(maxStars*adjustedSizeFactor()));
+        return (int) (adjust_density*1.3*Math.sqrt(opts.numberStarSystems()*adjustedSizeFactor()));
     }
     @Override
     protected int galaxyHeightLY() { 
-        return (int) (1.5*Math.sqrt(maxStars*adjustedSizeFactor()));
+        return (int) (adjust_density*1.3*Math.sqrt(opts.numberStarSystems()*adjustedSizeFactor()));
     }
     @Override
     public void setRandom(Point.Float pt) {

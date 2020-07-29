@@ -18,44 +18,59 @@ package rotp.model.galaxy;
 import java.awt.Point;
 import rotp.model.game.IGameOptions;
 
-public class GalaxyRectangularShape extends GalaxyShape {
+// modnar: custom map shape, Lorenz 2
+public class GalaxyLorenz2Shape extends GalaxyShape {
     private static final long serialVersionUID = 1L;
-	
-	float adjust_density = 1.0f; // modnar: adjust stellar density
-	
-    public GalaxyRectangularShape(IGameOptions options) {
+	private double dt=0.02; // integration time interval;
+	private double a=1.5, b=0.5, c=5.0; // Lorenz-2 coefficients values
+    public GalaxyLorenz2Shape(IGameOptions options) {
         opts = options;
     }
     @Override
     public float maxScaleAdj()               { return 0.95f; }
-	
-	public void init(int n) {
-        super.init(n);
-		
-		// modnar: choose different stellar densities (map areas) with setMapOption
-		if (opts.setMapOption() == 1) {
-			adjust_density = 1.0f;
-		}
-		else if (opts.setMapOption() == 2) {
-			adjust_density = 1.5f;
-		}
-		else if (opts.setMapOption() == 3) {
-			adjust_density = 2.0f;
-		}
-    }
-	
     @Override
     protected int galaxyWidthLY() { 
-        return (int) (Math.sqrt(adjust_density*4.0/3.0*opts.numberStarSystems()*adjustedSizeFactor()));
+        return (int) (Math.sqrt(2.0*4.0/3.0*opts.numberStarSystems()*adjustedSizeFactor()));
     }
     @Override
     protected int galaxyHeightLY() { 
-        return (int) (Math.sqrt(adjust_density*3.0/4.0*opts.numberStarSystems()*adjustedSizeFactor()));
+        return (int) (Math.sqrt(2.0*3.0/4.0*opts.numberStarSystems()*adjustedSizeFactor()));
     }
     @Override
     public void setRandom(Point.Float pt) {
-        pt.x = randomLocation(width, galaxyEdgeBuffer());
-        pt.y = randomLocation(height, galaxyEdgeBuffer());
+		
+		// iterate over the Lorenz attractor function a random
+		// number of steps to get a random point on the function.
+		double x = 0.5; double y = 1.0; double z = 0.5; //starting point for Lorenz-2
+		int maxsteps = Math.max(2000, 1 * maxStars); // scale number of iterations with stars
+		int n = (int) Math.ceil(random() * maxsteps);
+		for (int i = 0; i < n; i++) {
+			double x1 = x + dt * y; 
+			double y1 = y + dt * (-a*x - b*y + y*z); 
+			double z1 = z + dt * (-c*x*y - x*x + y*y); 
+			x = x1;
+			y = y1;
+			z = z1;
+		}
+		
+		float xf = (float) x;
+		float yf = (float) y;
+		float zf = (float) z;
+		
+		// choose Lorenz-2 view-point with setMapOption
+		if (opts.setMapOption() == 1) {
+			pt.x = galaxyEdgeBuffer() + ((xf+2.1f)/4.2f)*galaxyWidthLY() + (random()-0.5f)*2.0f;
+			pt.y = galaxyEdgeBuffer() + ((yf+2.9f)/5.8f)*galaxyHeightLY() + (random()-0.5f)*2.0f;
+        }
+		else if (opts.setMapOption() == 2) {
+			pt.x = galaxyEdgeBuffer() + ((xf-yf+2.5f)/5.0f)*galaxyWidthLY() + (random()-0.5f)*2.0f;
+			pt.y = galaxyEdgeBuffer() + ((zf+5.1f)/7.5f)*galaxyHeightLY() + (random()-0.5f)*2.0f;
+        }
+		else if (opts.setMapOption() == 3) {
+			pt.x = galaxyEdgeBuffer() + ((yf+xf+3.8f)/8.0f)*galaxyWidthLY() + (random()-0.5f)*2.0f;
+			pt.y = galaxyEdgeBuffer() + ((zf+5.1f)/7.5f)*galaxyHeightLY() + (random()-0.5f)*2.0f;
+        }
+		
     }
     @Override
     public boolean valid(Point.Float pt) {

@@ -17,22 +17,29 @@ package rotp.model.galaxy;
 
 import java.awt.Point;
 import java.awt.Shape;
+import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Arc2D;
+import java.awt.geom.AffineTransform;
 import rotp.model.game.IGameOptions;
 
-public class GalaxyCircularShape extends GalaxyShape {
+// modnar: custom map shape, Bar Spiral
+public class GalaxyBarSpiralShape extends GalaxyShape {
     private static final long serialVersionUID = 1L;
-    Shape circle;
-	float adjust_density = 1.0f; // modnar: adjust stellar density
 	
-    public GalaxyCircularShape(IGameOptions options) {
+    Shape barcircle, outArm, inArm;
+	Area totalArea, barArea, barcircleArea, armsArea;
+	float adjust_density = 1.0f;
+	
+    public GalaxyBarSpiralShape(IGameOptions options) {
         opts = options;
     }
     @Override
     public void init(int n) {
         super.init(n);
+		float buff = galaxyEdgeBuffer();
 		
-		// modnar: choose different stellar densities (map areas) with setMapOption
+		// choose different stellar densities with setMapOption
 		if (opts.setMapOption() == 1) {
 			adjust_density = 1.0f;
 		}
@@ -43,18 +50,47 @@ public class GalaxyCircularShape extends GalaxyShape {
 			adjust_density = 2.0f;
 		}
 		
-		// modnar: add galaxyEdgeBuffer() as upper left corner to prevent cutoff
-        circle = new Ellipse2D.Float(galaxyEdgeBuffer(),galaxyEdgeBuffer(),galaxyWidthLY(), galaxyHeightLY());
+		// create central bar/lob region
+        barcircle = new Ellipse2D.Float(-0.325f*galaxyWidthLY(), -0.15f*galaxyHeightLY(), 0.65f*galaxyWidthLY(), 0.3f*galaxyHeightLY());
+		
+		// rotate and shift into center of map
+		AffineTransform rotateShape = new AffineTransform();
+		AffineTransform moveShape = new AffineTransform();
+		rotateShape.rotate(0.85);
+		moveShape.translate(buff+0.5f*galaxyWidthLY(), buff+0.5f*galaxyHeightLY());
+		barcircle = rotateShape.createTransformedShape(barcircle);
+		barcircle = moveShape.createTransformedShape(barcircle);
+		
+		barcircleArea = new Area(barcircle);
+		totalArea = new Area(barcircle);
+		
+		// create left spiral arm
+		outArm = new Arc2D.Float(buff+0.05f*galaxyWidthLY(), buff+0.075f*galaxyHeightLY(), 1.1f*galaxyWidthLY(), 0.9f*galaxyHeightLY(), 120, 200, Arc2D.CHORD);
+		inArm = new Arc2D.Float(buff+0.17f*galaxyWidthLY(), buff+0.175f*galaxyHeightLY(), 1.0f*galaxyWidthLY(), 0.75f*galaxyHeightLY(), 120, 200, Arc2D.CHORD);
+		
+		armsArea = new Area(outArm);
+		armsArea.subtract(new Area(inArm));
+		totalArea.add(armsArea);
+		
+		// create right spiral arm
+		outArm = new Arc2D.Float(buff-0.15f*galaxyWidthLY(), buff+0.025f*galaxyHeightLY(), 1.1f*galaxyWidthLY(), 0.9f*galaxyHeightLY(), 300, 200, Arc2D.CHORD);
+		inArm = new Arc2D.Float(buff-0.17f*galaxyWidthLY(), buff+0.075f*galaxyHeightLY(), 1.0f*galaxyWidthLY(), 0.75f*galaxyHeightLY(), 300, 200, Arc2D.CHORD);
+		
+		armsArea = new Area(outArm);
+		armsArea.subtract(new Area(inArm));
+		totalArea.add(armsArea);
+		
     }
     @Override
     public float maxScaleAdj()               { return 1.1f; }
+	
     @Override
     protected int galaxyWidthLY() { 
-        return (int) (Math.sqrt(adjust_density*maxStars*adjustedSizeFactor()));
+        return (int) (Math.sqrt(adjust_density*1.5*4.0/3.0*maxStars*adjustedSizeFactor()));
     }
     @Override
     protected int galaxyHeightLY() { 
-        return (int) (Math.sqrt(adjust_density*maxStars*adjustedSizeFactor()));
+        return (int) (Math.sqrt(adjust_density*1.5*3.0/4.0*maxStars*adjustedSizeFactor()));
     }
     @Override
     public void setRandom(Point.Float pt) {
@@ -63,7 +99,7 @@ public class GalaxyCircularShape extends GalaxyShape {
     }
     @Override
     public boolean valid(Point.Float pt) {
-        return circle.contains(pt.x, pt.y);
+        return totalArea.contains(pt.x, pt.y);
     }
     float randomLocation(float max, float buff) {
         return buff + (random() * (max-buff-buff));

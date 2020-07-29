@@ -49,12 +49,23 @@ public interface IGameOptions {
     public static final String SHAPE_RING = "SETUP_GALAXY_SHAPE_RING";
     public static final String SHAPE_ELLIPTICAL = "SETUP_GALAXY_SHAPE_ELLIPSE";
     public static final String SHAPE_SPIRAL = "SETUP_GALAXY_SHAPE_SPIRAL";
+	// modnar: custom map shapes
     public static final String SHAPE_STAR = "SETUP_GALAXY_SHAPE_STAR";
+	public static final String SHAPE_BARSPIRAL = "SETUP_GALAXY_SHAPE_BARSPIRAL";
+	public static final String SHAPE_TEXT = "SETUP_GALAXY_SHAPE_TEXT";
 	public static final String SHAPE_CLUSTER = "SETUP_GALAXY_SHAPE_CLUSTER";
-	public static final String SHAPE_SPARSE = "SETUP_GALAXY_SHAPE_SPARSE";
 	public static final String SHAPE_SWIRLCLUSTERS = "SETUP_GALAXY_SHAPE_SWIRLCLUSTERS";
 	public static final String SHAPE_GRID = "SETUP_GALAXY_SHAPE_GRID";
 	public static final String SHAPE_SPIRALARMS = "SETUP_GALAXY_SHAPE_SPIRALARMS";
+	public static final String SHAPE_LORENZ = "SETUP_GALAXY_SHAPE_LORENZ";
+	public static final String SHAPE_LORENZ2 = "SETUP_GALAXY_SHAPE_LORENZ2";
+	public static final String SHAPE_FRACTAL = "SETUP_GALAXY_SHAPE_FRACTAL";
+	public static final String SHAPE_CHAOSGAME = "SETUP_GALAXY_SHAPE_CHAOSGAME";
+	
+	// modnar: new map option text labels
+	public static final String MAP_OPTION_A = "SETUP_GALAXY_MAP_OPTION_A";
+    public static final String MAP_OPTION_B = "SETUP_GALAXY_MAP_OPTION_B";
+    public static final String MAP_OPTION_C = "SETUP_GALAXY_MAP_OPTION_C";
 
     public static final String DIFFICULTY_EASIEST = "SETUP_DIFFICULTY_EASIEST";
     public static final String DIFFICULTY_EASIER  = "SETUP_DIFFICULTY_EASIER";
@@ -82,6 +93,10 @@ public interface IGameOptions {
     public Planet orionPlanet(StarSystem s);
     public void randomizeColors();
     public GalaxyShape galaxyShape();
+	
+	// modnar: new map option, setMapOption
+	public int setMapOption();
+	
     public int numColors();
     public Color color(int i);
     public boolean disableRandomEvents();
@@ -90,6 +105,10 @@ public interface IGameOptions {
     // selectable options
     public List<String> galaxySizeOptions();
     public List<String> galaxyShapeOptions();
+	
+	// modnar: new map option, MapOptionOptions
+	public List<String> MapOptionOptions();
+	
     public List<String> gameDifficultyOptions();
     public int maximumOpponentsOptions();
     public List<String> startingRaceOptions();
@@ -98,6 +117,11 @@ public interface IGameOptions {
     public void selectedGalaxySize(String s);
     public String selectedGalaxyShape();
     public void selectedGalaxyShape(String s);
+	
+	// modnar: new map option, selectedMapOption
+	public String selectedMapOption();
+    public void selectedMapOption(String s);
+	
     public String selectedGameDifficulty();
     public void selectedGameDifficulty(String s);
     public int selectedNumberOpponents();
@@ -141,6 +165,19 @@ public interface IGameOptions {
         int index = opts.indexOf(selectedGalaxyShape())-1;
         return index < 0 ? opts.get(opts.size()-1) : opts.get(index);
     }
+	
+	// modnar: new map option, next/prev selections
+	default String nextMapOption() {
+        List<String> opts = MapOptionOptions();
+        int index = opts.indexOf(selectedMapOption())+1;
+        return index >= opts.size() ? opts.get(0) : opts.get(index);
+    }
+    default String prevMapOption() {
+        List<String> opts = MapOptionOptions();
+        int index = opts.indexOf(selectedMapOption())-1;
+        return index < 0 ? opts.get(opts.size()-1) : opts.get(index);
+    }
+	
     default String nextGameDifficulty() {
         List<String> opts = gameDifficultyOptions();
         int index = opts.indexOf(selectedGameDifficulty())+1;

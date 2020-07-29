@@ -18,9 +18,12 @@ package rotp.model.galaxy;
 import java.awt.Point;
 import rotp.model.game.IGameOptions;
 
-public class GalaxySparseShape extends GalaxyShape {
+// modnar: custom map shape, Lorenz
+public class GalaxyLorenzShape extends GalaxyShape {
     private static final long serialVersionUID = 1L;
-    public GalaxySparseShape(IGameOptions options) {
+	private double dt=0.005; // integration time interval;
+	private double sigma=10.0, rho=28.0, beta=8.0/3.0; // Lorenz coefficients values
+    public GalaxyLorenzShape(IGameOptions options) {
         opts = options;
     }
     @Override
@@ -35,8 +38,39 @@ public class GalaxySparseShape extends GalaxyShape {
     }
     @Override
     public void setRandom(Point.Float pt) {
-        pt.x = randomLocation(width, galaxyEdgeBuffer());
-        pt.y = randomLocation(height, galaxyEdgeBuffer());
+		
+		// iterate over the Lorenz attractor function a random
+		// number of steps to get a random point on the function.
+		double x = 10.0; double y = 10.0; double z = 10.0; //starting point for Lorenz
+		int maxsteps = (int) Math.max(1000, Math.ceil(1.5 * maxStars)); // scale number of iterations with stars
+		int n = (int) Math.ceil(random() * maxsteps);
+		for (int i = 0; i < n; i++) {
+			double x1 = x + dt * sigma*(y-x); 
+			double y1 = y + dt * (rho*x - y - x*z); 
+			double z1 = z + dt * (x*y - beta*z); 
+			x = x1;
+			y = y1;
+			z = z1;
+		}
+		
+		float xf = (float) x;
+		float yf = (float) y;
+		float zf = (float) z;
+		
+		// choose lorenz view-point with setMapOption
+		if (opts.setMapOption() == 1) {
+			pt.x = galaxyEdgeBuffer() + ((xf+22.0f)/44.0f)*galaxyWidthLY() + (random()-0.5f)*1.0f;
+			pt.y = galaxyEdgeBuffer() + ((yf+30.0f)/60.0f)*galaxyHeightLY() + (random()-0.5f)*1.0f;
+        }
+		else if (opts.setMapOption() == 2) {
+			pt.x = galaxyEdgeBuffer() + ((xf+22.0f)/44.0f)*galaxyWidthLY() + (random()-0.5f)*1.0f;
+			pt.y = galaxyEdgeBuffer() + ((zf+0.0f)/55.0f)*galaxyHeightLY() + (random()-0.5f)*1.0f;
+        }
+		else if (opts.setMapOption() == 3) {
+			pt.x = galaxyEdgeBuffer() + ((yf+30.0f)/60.0f)*galaxyWidthLY() + (random()-0.5f)*1.0f;
+			pt.y = galaxyEdgeBuffer() + ((zf+0.0f)/55.0f)*galaxyHeightLY() + (random()-0.5f)*1.0f;
+        }
+		
     }
     @Override
     public boolean valid(Point.Float pt) {
