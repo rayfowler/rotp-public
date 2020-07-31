@@ -51,6 +51,18 @@ public class ShipWeapon extends ShipComponent {
         float shieldMod = source.targetShieldMod(this);
         float shieldLevel = shieldMod * target.shieldLevel();
         float dmg = firepower(shieldLevel);
+		
+		// modnar: account for planetDamageMod()
+		// correctly calculate damage estimate for attacking colony (in round-about way)
+		// beams and torpedoes do half damage against colonies, planetDamageMod() = 0.5f
+		// other weapons have planetDamageMod() = 1.0f, so this correction would have no effect for them
+		// average(beamMax/2-shield, beamMin/2-shield)  // correct formula
+		// = average(beamMax-2*shield, beamMin-2*shield)/2  // equivalent formula used here
+		if (target.isColony()) {
+		    shieldLevel = shieldMod * target.shieldLevel() / planetDamageMod();
+			dmg = firepower(shieldLevel) * planetDamageMod();
+		}
+		
         if (dmg == 0)
             return 0;
 

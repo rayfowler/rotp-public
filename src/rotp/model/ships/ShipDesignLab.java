@@ -636,7 +636,14 @@ public class ShipDesignLab implements Base, Serializable {
         for (ShipWeapon wpn : weapons()) {
             if (!wpn.noWeapon()) {
                 numWeapons = (int) (space/wpn.space(d));
-                wpnDamage = numWeapons * wpn.firepower(shieldLevel) * wpn.planetDamageMod();
+				
+				// modnar: accounting for planetDamageMod()
+				// correctly calculate damage estimate for attacking colony (in round-about way)
+				// beams and torpedoes do half damage against colonies, planetDamageMod() = 0.5f
+				// other weapons have planetDamageMod() = 1.0f, so this correction would have no effect for them
+				// average(beamMax/2-shield, beamMin/2-shield)  // correct formula
+				// = average(beamMax-2*shield, beamMin-2*shield)/2  // equivalent formula used here
+                wpnDamage = numWeapons * wpn.firepower(shieldLevel/wpn.planetDamageMod()) * wpn.planetDamageMod();
                 if (wpn.isLimitedShotWeapon()) {
                     float base = pow(2,wpn.shots());
                     adjDamage = (base -1)/base * wpnDamage;
