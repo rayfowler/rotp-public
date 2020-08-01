@@ -35,6 +35,9 @@ public class AICSpyMaster implements Base, SpyMaster {
         // invoked after nextTurn() processing is complete on each civ's turn
         // also invoked when contact is made in mid-turn
         // return from 0 to 40, which translates to 0% to 20% of total prod
+		//
+		// modnar: is it not 0% to 10% of total prod, for a max of +20% security bonus, with 0 to 10 ticks/clicks?
+		// MAX_SECURITY_TICKS = 10 in model/empires/Empire.java
 
         int paranoia = 0;
         boolean alone = true;
@@ -51,7 +54,7 @@ public class AICSpyMaster implements Base, SpyMaster {
             paranoia++;
         if (empire.leader().isXenophobic())
             paranoia *= 2;
-        return min(40, paranoia);
+        return min(10, paranoia); // modnar: change max to 10, MAX_SECURITY_TICKS = 10
     }
     public void setSpyingAllocation(EmpireView v) {
         // invoked after nextTurn() processing is complete on each civ's turn
@@ -77,11 +80,12 @@ public class AICSpyMaster implements Base, SpyMaster {
         else   // unity() or alliance()
             maxSpiesNeeded = 0;
 
-        // 1% (2 ticks) spending for each spy needed
+        // modnar: reduce allocation to 1 tick per spy needed, better for larger games with more empires
+		// 0.5% (1 tick) spending for each spy needed
         if (v.spies().numActiveSpies() >= maxSpiesNeeded)
             v.spies().allocation(0);
         else
-            v.spies().allocation(maxSpiesNeeded * 2);
+            v.spies().allocation(maxSpiesNeeded * 1);
     }
     public void setSpyingMission(EmpireView v) {
         // invoked for each CivView for each civ after nextTurn() processing is complete on each civ's turn
