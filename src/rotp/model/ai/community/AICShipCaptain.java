@@ -356,7 +356,7 @@ public class AICShipCaptain implements Base, ShipCaptain {
         for (CombatStack st1 : friends) {
             float maxKillValue = -1;
             for (CombatStack st2: foes) {
-                float killPct = min(100,st1.estimatedKillPct(st2));
+                float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
                 float killValue = killPct*st2.num*st2.designCost();
 //                log(st1.name()+"="+killPct+"    "+st2.name());
                 if (killValue > maxKillValue)
@@ -367,7 +367,7 @@ public class AICShipCaptain implements Base, ShipCaptain {
        for (CombatStack st1 : foes) {
             float maxKillValue = -1;
             for (CombatStack st2: friends) {
-                float killPct = min(100,st1.estimatedKillPct(st2));
+                float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
                 float killValue = killPct*st2.num*st2.designCost();
 //                log(st1.name()+"="+killPct+"    "+st2.name());
                 if (killValue > maxKillValue)

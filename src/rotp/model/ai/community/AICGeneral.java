@@ -240,7 +240,7 @@ public class AICGeneral implements Base, General {
 
         float baseBCPresent = empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost();
         float bcMultiplier = 1 + (empire.sv.hostilityLevel(sys.id));
-        float bcNeeded = (baseBCPresent*4) +bcMultiplier*civProd/10;
+        float bcNeeded = (baseBCPresent*4) +bcMultiplier*civProd/6; // modnar: larger fleet as ratio of production
         
         // use up to half of BC for Destroyers... rest for fighters
         int destroyersNeeded = (int) Math.ceil((bcNeeded/2)/empire.shipLab().destroyerDesign().cost());
@@ -347,7 +347,7 @@ public class AICGeneral implements Base, General {
         float baseBCPresent = empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost();
         // set fleet orders for bombardment...
         float bcMultiplier = 1 + (empire.sv.hostilityLevel(sys.id)/2);
-        float bcNeeded = (baseBCPresent*4)+bcMultiplier*civProd/20;
+        float bcNeeded = (baseBCPresent*4)+bcMultiplier*civProd/12; // modnar: larger fleet as ratio of production
         int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost());
         int bombersNeeded = (int) Math.ceil(4*bcNeeded/empire.shipLab().bomberDesign().cost());
 
@@ -365,7 +365,7 @@ public class AICGeneral implements Base, General {
     public void orderBombEncroachmentFleet(EmpireView v, StarSystem sys, float fleetSize) {
         // set fleet orders for bombardment...
         float bcMultiplier = 1 + (empire.sv.hostilityLevel(sys.id)/2);
-        float bcNeeded = bcMultiplier*civProd/20;
+        float bcNeeded = bcMultiplier*civProd/12; // modnar: larger fleet as ratio of production
         int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost());
         int bombersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().bomberDesign().cost());
 

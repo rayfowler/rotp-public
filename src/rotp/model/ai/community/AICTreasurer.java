@@ -121,7 +121,7 @@ public class AICTreasurer implements Base, Treasurer {
         // check for poor first, then normal. If we need reserve then for each planet, 
         // collect 1/4th of the amount we spend on research.
         float totalProd = empire.totalPlanetaryProduction();
-        float desiredRsv = totalProd * 0.2f;
+        float desiredRsv = totalProd * 0.1f; // modnar: reduce reserve collection, less is more efficient in general
         int maxAlloc = ColonySpendingCategory.MAX_TICKS; 
         if (empire.totalReserve() < desiredRsv) {
             systems.addAll(poorSystems);
