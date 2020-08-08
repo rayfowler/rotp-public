@@ -65,18 +65,32 @@ public class AICGeneral implements Base, General {
             reviseFleetPlan(gal.system(id));
     }
     
-    // Desire value to invade planet, normalized to normal 100-pop size planet
+	// modnar: adjustments to invasion valuation
+    // Desire value to invade planet, factor in both planet size and factories
 	// Higher desire value for Rich, Ultra-Rich, Artifacts
 	// Lower desire value for Poor, Ultra-Poor
-	// TODO: Factor in factorie count (empire.sv.factories),
-	// weigh it more heavily then planet size (empire.sv.currentSize)
     public float takePlanetValue(StarSystem sys) {
         int sysId = sys.id;
         if (!empire.sv.inShipRange(sysId))  return 0.0f;
         if (!empire.sv.isScouted(sysId))    return 0.0f;
         if (!empire.sv.isColonized(sysId))  return 0.0f;
         
-        float val = empire.sv.currentSize(sysId);
+        float size = empire.sv.currentSize(sysId); // planet size
+		float fact = empire.sv.factories(sysId); // factory count
+		
+		// increase planet value depending on factories
+		// Normal,   size-100,    0 factories:  val = 100
+		// Normal,   size-100,  100 factories:  val = 105
+		// Normal,   size-100,  200 factories:  val = 110
+		// Normal,   size-100,  300 factories:  val = 115
+		// Normal,   size-140,  560 factories:  val = 168
+		// Normal,   size-220, 1540 factories:  val = 297
+		// Normal,   size-70,   140 factories:  val =  77
+		// Normal,   size-70,   210 factories:  val =  84
+		// Poor,     size-100,  200 factories:  val =  55
+		// Rich,     size-50,    50 factories:  val = 105
+		// Artifact, size-80,   240 factories:  val = 184
+		float val = size + fact/20.0f;
 
         // Higher desire value for Rich, Ultra-Rich, Artifacts
 	    // Lower desire value for Poor, Ultra-Poor
@@ -96,8 +110,9 @@ public class AICGeneral implements Base, General {
             val *= 2;
         else if (empire.sv.isOrionArtifact(sysId))
             val *= 3;
-
-        return val/100; // normalized to normal 100-pop size planet
+		
+        // normalized to normal size-100 planet with 200 factories (110)
+        return val/110;
     }
     @Override
     public float invasionPriority(StarSystem sys) {
@@ -106,8 +121,9 @@ public class AICGeneral implements Base, General {
         if (!empire.sv.isScouted(sysId))    return 0.0f;
         if (!empire.sv.isColonized(sysId))  return 0.0f;
         if (!empire.canColonize(sys.planet()))  return 0.0f;
-
-        float pr = empire.sv.currentSize(sysId);
+		
+		// increase invasion priority with planet size and factory count
+        float pr = empire.sv.currentSize(sysId) + empire.sv.factories(sysId)/20.0f;
 
         if (empire.sv.isPoor(sysId))
             pr *= 2;
@@ -172,10 +188,13 @@ public class AICGeneral implements Base, General {
             else if (targetedSystems.keySet().contains(sys))
                 setInterceptFleetPlan(sys, enemyFleetSize);
             else if (empire.sv.isAttackTarget(sysId))
-                setMinimumFighterGuard(sys, FleetPlan.GUARD_ATTACK_TARGET+value);
+				// modnar: if under attack, more fighters on top of missle bases
+                setHighFighterGuard(sys, FleetPlan.GUARD_ATTACK_TARGET+value);
             else if (empire.sv.isBorderSystem(sysId))
-                setMinimumFighterGuard(sys, FleetPlan.GUARD_BORDER_COLONY+value);
+				// modnar: if on border, slightly more fighters
+                setNormalFighterGuard(sys, FleetPlan.GUARD_BORDER_COLONY+value);
             else
+				// modnar: for inner system, minimum fighter guard adjusted lower
                 setMinimumFighterGuard(sys, FleetPlan.GUARD_INNER_COLONY+value);
             return;
         }
@@ -219,11 +238,10 @@ public class AICGeneral implements Base, General {
             return false;
         float pop = empire.sv.population(sys.id);
         float needed = troopsNecessaryToTakePlanet(v, sys);   
-        // Willing to take 1.33:1 losses to invade normal 100-pop size planet.
-		// For invading normal 70-pop size planet, be willing to take ~1:1 losses.
-		// TODO: takePlanetValue may be changed to factor in factories more heavily,
-		// that may change the numerical value of this scaling factor
-        float value = takePlanetValue(sys) * 1.33f;
+		// modnar: scale back willingness to take losses
+        // Willing to take 1.25:1 losses to invade normal 100-pop size planet with 200 factories.
+		// For invading normal 80-pop size planet with 160 factories, be willing to take ~1:1 losses.
+        float value = takePlanetValue(sys) * 1.25f;
         return needed < pop * value;
     }
     public void orderRebellionFleet(StarSystem sys, float enemyFleetSize) {
@@ -233,14 +251,19 @@ public class AICGeneral implements Base, General {
             setRepelFleetPlan(sys, enemyFleetSize);      
     }
     public void orderInvasionFleet(EmpireView v, StarSystem sys, float enemyFleetSize) {
+		// modnar: slightly scale up invasion multiplier with factories
+		float size = empire.sv.currentSize(sys.id); // planet size
+		float fact = empire.sv.factories(sys.id); // factory count
+		float mult = (1.0f + fact/(50.0f*size)); // invasion multiplier
+		
         if (empire.sv.hasFleetForEmpire(sys.id, empire))
-            launchGroundTroops(v, sys, 1);
+            launchGroundTroops(v, sys, mult);
         else if (empire.combatTransportPct() > 0)
-            launchGroundTroops(v, sys, 1/empire.combatTransportPct());
+            launchGroundTroops(v, sys, mult/empire.combatTransportPct());
 
         float baseBCPresent = empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost();
         float bcMultiplier = 1 + (empire.sv.hostilityLevel(sys.id));
-        float bcNeeded = (baseBCPresent*4) +bcMultiplier*civProd/6; // modnar: larger fleet as ratio of production
+        float bcNeeded = (baseBCPresent*4) +bcMultiplier*civProd/8; // modnar: larger fleet as ratio of production
         
         // use up to half of BC for Destroyers... rest for fighters
         int destroyersNeeded = (int) Math.ceil((bcNeeded/2)/empire.shipLab().destroyerDesign().cost());
@@ -279,7 +302,8 @@ public class AICGeneral implements Base, General {
         for (StarSystem sys : allSystems) {
             if (troopsAvailable < troopsDesired) {
                 float travelTime = sys.colony().transport().travelTime(target);
-                // only consider systems within 8 travel turns
+                // modnar: only consider systems within 8 travel turns
+				// TODO: scale with warp speed (?), lower acceptable travel time with faster warp (?)
                 if ((travelTime <= 8) && sys.colony().canTransport()) {
                     launchPoints.add(sys);
                     maxTravelTime = max(maxTravelTime, travelTime);
@@ -347,9 +371,9 @@ public class AICGeneral implements Base, General {
         float baseBCPresent = empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost();
         // set fleet orders for bombardment...
         float bcMultiplier = 1 + (empire.sv.hostilityLevel(sys.id)/2);
-        float bcNeeded = (baseBCPresent*4)+bcMultiplier*civProd/12; // modnar: larger fleet as ratio of production
-        int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost());
-        int bombersNeeded = (int) Math.ceil(4*bcNeeded/empire.shipLab().bomberDesign().cost());
+        float bcNeeded = (baseBCPresent*4)+bcMultiplier*civProd/16; // modnar: larger fleet as ratio of production
+        int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost()); // modnar: balance fighter/bomber
+        int bombersNeeded = (int) Math.ceil(3*bcNeeded/empire.shipLab().bomberDesign().cost()); // modnar: balance fighter/bomber
 
         ShipDesignLab lab = empire.shipLab();
         float speed = max(lab.bomberDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
@@ -365,7 +389,7 @@ public class AICGeneral implements Base, General {
     public void orderBombEncroachmentFleet(EmpireView v, StarSystem sys, float fleetSize) {
         // set fleet orders for bombardment...
         float bcMultiplier = 1 + (empire.sv.hostilityLevel(sys.id)/2);
-        float bcNeeded = bcMultiplier*civProd/12; // modnar: larger fleet as ratio of production
+        float bcNeeded = bcMultiplier*civProd/16; // modnar: larger fleet as ratio of production
         int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost());
         int bombersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().bomberDesign().cost());
 
@@ -404,6 +428,26 @@ public class AICGeneral implements Base, General {
             empire.sv.fleetPlan(sys.id).priority = FleetPlan.BOMB_UNDEFENDED;
         }
     }
+	// modnar: setHighFighterGuard added for most threatened
+	private void setHighFighterGuard(StarSystem sys, float priority) {
+        float basesWanted = empire.sv.desiredMissileBases(sys.id);
+        float baseCost = empire.tech().newMissileBase().cost(empire);
+        FleetPlan fp = empire.sv.fleetPlan(sys.id);
+        fp.priority = priority;
+        // modnar: fighter guard on top of any bases, 8 base BC = 1 fighter BC
+        fp.addShipBC(empire.shipLab().fighterDesign(), basesWanted*baseCost/8);
+    }
+	// modnar: setNormalFighterGuard added for possibly threatened
+	private void setNormalFighterGuard(StarSystem sys, float priority) {
+        float basesNeeded = empire.sv.desiredMissileBases(sys.id) - empire.sv.bases(sys.id);
+        if (basesNeeded <= 0) 
+            return;
+        float baseCost = empire.tech().newMissileBase().cost(empire);
+        FleetPlan fp = empire.sv.fleetPlan(sys.id);
+        fp.priority = priority;
+        // modnar: normal fighter guard, 8 base BC = 1 fighter BC
+        fp.addShipBC(empire.shipLab().fighterDesign(), basesNeeded*baseCost/8);
+    }
     private void setMinimumFighterGuard(StarSystem sys, float priority) {
         float basesNeeded = empire.sv.desiredMissileBases(sys.id) - empire.sv.bases(sys.id);
         if (basesNeeded <= 0) 
@@ -411,8 +455,8 @@ public class AICGeneral implements Base, General {
         float baseCost = empire.tech().newMissileBase().cost(empire);
         FleetPlan fp = empire.sv.fleetPlan(sys.id);
         fp.priority = priority;
-        // one base BC = 10 fighter BC
-        fp.addShipBC(empire.shipLab().fighterDesign(), basesNeeded*baseCost/10);
+        // modnar: adjust minium fighter guard, 20 base BC = 1 fighter BC (previous one base BC = 10 fighter BC, typo(?), equation is 10:1)
+        fp.addShipBC(empire.shipLab().fighterDesign(), basesNeeded*baseCost/20); // modnar: reduce minium fighter guard needed
     }
     private void setRepelFleetPlan(StarSystem sys, float fleetSize) {
         float baseBCPresent = empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost();
