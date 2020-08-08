@@ -119,7 +119,7 @@ public class AICTreasurer implements Base, Treasurer {
         
         // now we need to add to the empire reserve from everyone else, large to small
         // check for poor first, then normal. If we need reserve then for each planet, 
-        // collect 1/4th of the amount we spend on research.
+        // modnar: reduce reserve collection to 1/6th of research (previous 1/4)
         float totalProd = empire.totalPlanetaryProduction();
         float desiredRsv = totalProd * 0.1f; // modnar: reduce reserve collection, less is more efficient in general
         int maxAlloc = ColonySpendingCategory.MAX_TICKS; 
@@ -134,14 +134,14 @@ public class AICTreasurer implements Base, Treasurer {
                     if (pl.isResourcePoor() || pl.isResourceUltraPoor()) {
                         if (col.population() >= pl.maxSize()) {
                             int eco = col.ecology().allocation();
-                            int ecoAdj = min(res, maxAlloc - eco)/4;
+                            int ecoAdj = min(res, maxAlloc - eco)/6; // modnar: reduce to 1/6th
                             col.research().adjustValue(-ecoAdj);
                             col.ecology().adjustValue(ecoAdj);                            
                         }
                     } else if (!pl.isArtifact()) {
                         if (col.industry().factories() >= col.industry().maxFactories()) {
                             int ind = col.industry().allocation();
-                            int indAdj = min(res, maxAlloc - ind)/4;
+                            int indAdj = min(res, maxAlloc - ind)/6; // modnar: reduce to 1/6th
                             col.research().adjustValue(-indAdj);
                             col.industry().adjustValue(indAdj);                            
                         }                        

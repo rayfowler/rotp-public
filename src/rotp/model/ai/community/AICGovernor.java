@@ -193,7 +193,7 @@ public class AICGovernor implements Base, Governor {
             return;
         }
         
-        // for systems that are flagged as rush defense, do that and forget
+        // for systems that are flagged as rush ship, do that and forget
         // everything else until the project is done
         if (empire.generalAI().rushShipSystems().contains(col.starSystem())) {
             float totalProd = col.totalIncome();
@@ -282,8 +282,8 @@ public class AICGovernor implements Base, Governor {
         if (col.totalAmountAllocated() >= maxAllocation)
             return;
 
-        // def spending gets up to 50% of planet's remaining net prod
-        float defCost = min((netProd * .5f), col.defense().maxSpendingNeeded());
+        // modnar: reduce defense spending, "up to 30%" (previous 50%)
+        float defCost = min((netProd * .3f), col.defense().maxSpendingNeeded());
         col.pct(DEFENSE, defCost/totalProd);
         defCost = col.pct(DEFENSE) * totalProd;
 
@@ -295,8 +295,9 @@ public class AICGovernor implements Base, Governor {
         col.allocation(RESEARCH, maxAllocation - totalAlloc);
 
         // check to allocate reserve
+		// modnar: reduce to 0%, since it's taken care of by the AICTreasurer (?)
         if (col.planet().noArtifacts() && (col.pct(RESEARCH) > 0.5) ) {
-            int rsvAmt = (int) Math.min(.05, col.pct(RESEARCH) - 0.5);
+            int rsvAmt = (int) Math.min(0.0, col.pct(RESEARCH) - 0.5);
             col.addPct(RESEARCH, -rsvAmt);
             col.addPct(INDUSTRY, rsvAmt);
         }

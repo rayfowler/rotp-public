@@ -72,7 +72,7 @@ public class AICFleetCommander implements Base, FleetCommander {
     }
     @Override
     public boolean inExpansionMode() {
-        return empire.tech().shipRange() < 5;
+        return ((empire.tech().shipRange() < 5) || (empire.contacts().isEmpty())); // modnar: keep in expansion mode if not in any contact
     }
     @Override
     public float transportPriority(StarSystem sv) {

@@ -160,22 +160,24 @@ public class AICScientist implements Base, Scientist {
             tree.weapon().allocation(0);
             return true;    		
     	}
+		// modnar: spread out allocation
     	if (construction) {
-            tree.computer().allocation(0);
-            tree.construction().allocation(50);
-            tree.forceField().allocation(0);
-            tree.planetology().allocation(10);
-            tree.propulsion().allocation(0);
-            tree.weapon().allocation(0);
+            tree.computer().allocation(4);
+            tree.construction().allocation(40);
+            tree.forceField().allocation(4);
+            tree.planetology().allocation(4);
+            tree.propulsion().allocation(4);
+            tree.weapon().allocation(4);
             return true;    		
     	}
+		// modnar: spread out allocation
     	if (planetology) {
-            tree.computer().allocation(0);
-            tree.construction().allocation(10);
-            tree.forceField().allocation(0);
-            tree.planetology().allocation(50);
-            tree.propulsion().allocation(0);
-            tree.weapon().allocation(0);
+            tree.computer().allocation(4);
+            tree.construction().allocation(4);
+            tree.forceField().allocation(4);
+            tree.planetology().allocation(40);
+            tree.propulsion().allocation(4);
+            tree.weapon().allocation(4);
             return true;    		
     	}
 
@@ -570,7 +572,8 @@ public class AICScientist implements Base, Scientist {
         if (empire.leader().isMilitarist())
             val *= 1.5;
 
-        // Shields have wartime value: multiply by current war enemies
+        // modnar: add in wartime scaling
+		// Shields have wartime value: multiply by current war enemies
         val *= Math.sqrt(empire.numEnemies()+1);
 
         return val;
@@ -602,7 +605,7 @@ public class AICScientist implements Base, Scientist {
         float adj = 1.0f;
         if (empire.leader().isEcologist())
             adj *= 2;
-        // wasteCleanupTechMod() = 4 * factoryWasteMod() / wasteElimination()
+        // modnar: wasteCleanupTechMod() = 4 * factoryWasteMod() / wasteElimination()
 		// in TechTree.java
 		// wasteCleanupTechMod goes from 1.6 (initially) to 0 (best)
         return adj * t.level() * empire.tech().wasteCleanupTechMod();
@@ -614,13 +617,13 @@ public class AICScientist implements Base, Scientist {
         if (curr.warp() >= t.warp())
             return 0;
 
-        float  val = t.level * t.warp() / curr.warp();
+        float val = t.level * t.warp() / curr.warp();
         float adj = 1.0f;
         
         // Major breakpoints in warp technology:
         // The first warp tech you find is a critical tech
         if (curr.warp() == 1)
-            adj *= 2;
+            adj *= 3;
         // The first warp above 2 significantly aids troops and expansion
         if (curr.warp() == 2) {
             if (empire.leader().isAggressive())
@@ -631,7 +634,7 @@ public class AICScientist implements Base, Scientist {
                 adj *= 1.5;
         }
         // Even numbered warps have military value
-		// NOTE: debatable, very limited value, commenting out
+		// modnar: debatable, very limited value, commenting out
 		/*
         if (t.warp() % 2 == 0) {
             if (empire.leader().isAggressive())
@@ -652,7 +655,10 @@ public class AICScientist implements Base, Scientist {
         // obsolete?
         if (currRange >= t.range())
             return 0;
-
+		
+		// limit max range, use 13 instead of 10, for Range-inf scaling
+		int newRange = min(13,t.range());
+		
         // Count new planets this gets us to
         List<StarSystem> possible = empire.uncolonizedPlanetsInRange(currRange);
         List<StarSystem> newPossible = empire.uncolonizedPlanetsInRange(t.range());
@@ -660,8 +666,10 @@ public class AICScientist implements Base, Scientist {
 
         // New planets from fuel cells are very high value (don't even need to design new colony ships).
         // Otherwise they have occasional tiny incremental values, but barely more than 0.
-        int val = 7 * newPlanets + 1;
-
+		// modnar: the incremental value may not be tiny (invading other empires, etc.)
+		// modnar: combine both valuations, approx scaling up to Range-10 (level 29) and Range-inf (level 41)
+        float val = 4 * (newRange-currRange) + 4 * newPlanets;
+		
         float adj = 1.0f;
         if (empire.leader().isExpansionist())
             adj *= 2;
@@ -741,7 +749,7 @@ public class AICScientist implements Base, Scientist {
         if (empire.leader().isEcologist())
             adj *= 2;
 		
-        // wasteCleanupTechMod() = 4 * factoryWasteMod() / wasteElimination()
+        // modnar: wasteCleanupTechMod() = 4 * factoryWasteMod() / wasteElimination()
 		// in TechTree.java
 		// wasteCleanupTechMod goes from 1.6 (initially) to 0 (best)
         return adj * t.level() * empire.tech().wasteCleanupTechMod();
@@ -857,9 +865,11 @@ public class AICScientist implements Base, Scientist {
             return 0;
 
         // scale add'l prevention assuming Mark 7 (starts with 2) prevented is best (level 50)
+		// modnar: scale robotic control tech correctly
         float val = 10 * (t.mark-currMark);
         // robotic controls are just a generally valuable tech
-        val *= 2;
+		// modnar: with corrected scaling, adjust up by *1.5 should be fine
+        val *= 1.5;
         // industrialists love factories! economists, too
         if (empire.leader().isIndustrialist())
             val *= 2;
@@ -889,6 +899,7 @@ public class AICScientist implements Base, Scientist {
     public float baseValue(TechShipWeapon t) {
         TechShipWeapon curr = empire.tech().topShipWeaponTech();
 
+		// modnar: renormalize weapon tech valuation by weapon damage
 		// normalize weapon damage by size, power, attacks, and enemyShieldMod (0.5)
 		// (average damage) * attacks / enemyShieldMod / (size + power); gives 0.1~0.2 for most weapons
 		// then scale by tech level * 7 to reach factor ~50 for best

@@ -1220,11 +1220,21 @@ public class AICDiplomat implements Base, Diplomat {
             return castVoteFor(civ2);
 
         // if at war with one, vote for other
-        if (cv1.embassy().anyWar() && !cv2.embassy().anyWar())
-            return castVoteFor(civ2);
-        if (cv2.embassy().anyWar() && !cv1.embassy().anyWar())
-            return castVoteFor(civ1);
-
+		// modnar: add in condition to at least have contact with candidate B
+		// otherwise abstain, even if in war with candidate A
+        if (cv1.embassy().anyWar() && !cv2.embassy().anyWar()) {
+			if (cv2.embassy().contact())
+				return castVoteFor(civ2);
+			else
+				return castVoteFor(null);
+		}
+        if (cv2.embassy().anyWar() && !cv1.embassy().anyWar()) {
+			if (cv1.embassy().contact())
+				return castVoteFor(civ1);
+			else
+				return castVoteFor(null);
+		}
+		
         // decide to vote for/against civ1
         pct = cv1.embassy().relations() + civ1.race().councilBonus() + civ1.orionCouncilBonus() + previousVoteBonus(civ1);
         if (random() <= Math.abs(pct)) {
@@ -1350,7 +1360,29 @@ public class AICDiplomat implements Base, Diplomat {
         int allSystems = gal.numColonizedSystems();
         int numCivs = gal.numActiveEmpires();
 
-        int maxSystemsWithoutPenalty = max(5, (allSystems /numCivs)+1);
+        // modnar: scale expansion penalty with ~1/[(numCivs)^(0.75)] rather than 1/numCivs
+		// this allows empires to be somewhat bigger than average before the diplomatic size penalty kicks in
+		// not linear with numCivs to account for expected fluctuation of empire sizes with larger number of empires
+		// at the max number of empires (50), you can be ~2 times as large as average before being penalized
+		// use a denominator coefficient factor of ~1.44225 (3^(1/3)) to maps the expression
+		// back to the equal 1/3 "share" of planets when only three empires are remaining
+		// (and when only two are remaining, they won't like you even if you have slightly less planets than they do)
+		//
+		// numCivs(X)	1/X		1/[(1.44225*X)^(0.75)]
+		// 		2		50.00%	45.18%
+		// 		3		33.33%	33.33%
+		// 		4		25.00%	26.86%
+		// 		5		20.00%	22.72%
+		// 		6		16.67%	19.82%
+		// 		8		12.50%	15.97%
+		// 		10		10.00%	13.51%
+		// 		15		6.67%	9.97%
+		// 		20		5.00%	8.03%
+		// 		30		3.33%	5.93%
+		// 		50		2.00%	4.04%
+		//
+		//int maxSystemsWithoutPenalty = max(5, (allSystems /numCivs)+1);
+		int maxSystemsWithoutPenalty = max(5, (int) Math.ceil(allSystems / Math.pow(1.44225*numCivs, 0.75)));
 
         if (numberSystems > maxSystemsWithoutPenalty)
             events.add(ExpansionIncident.create(view,numberSystems, maxSystemsWithoutPenalty));
