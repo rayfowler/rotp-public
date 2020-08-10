@@ -78,19 +78,24 @@ public class AICGeneral implements Base, General {
         float size = empire.sv.currentSize(sysId); // planet size
 		float fact = empire.sv.factories(sysId); // factory count
 		
-		// increase planet value depending on factories
+		// increase planet value depending on size and factories (val is normalized below)
+		// (4*pow(SIZE, 0.7) + min(20, sqrt(FACTORIES)))
+		// min(20) is ballpark max invasion tech chances (400 factories)
+		// 
 		// Normal,   size-100,    0 factories:  val = 100
-		// Normal,   size-100,  100 factories:  val = 105
-		// Normal,   size-100,  200 factories:  val = 110
-		// Normal,   size-100,  300 factories:  val = 115
-		// Normal,   size-140,  560 factories:  val = 168
-		// Normal,   size-220, 1540 factories:  val = 297
-		// Normal,   size-70,   140 factories:  val =  77
-		// Normal,   size-70,   210 factories:  val =  84
-		// Poor,     size-100,  200 factories:  val =  55
-		// Rich,     size-50,    50 factories:  val = 105
-		// Artifact, size-80,   240 factories:  val = 184
-		float val = size + fact/20.0f;
+		// Normal,   size-100,  100 factories:  val = 110
+		// Normal,   size-100,  200 factories:  val = 115
+		// Normal,   size-100,  300 factories:  val = 118
+		// Normal,   size-100,  400 factories:  val = 120
+		// Normal,   size-140,  560 factories:  val = 147
+		// Normal,   size-220, 1540 factories:  val = 194
+		// Normal,   size-70,   140 factories:  val =  90
+		// Normal,   size-70,   210 factories:  val =  93
+		// Poor,     size-100,    0 factories:  val =  50
+		// Poor,     size-100,  200 factories:  val =  57
+		// Rich,     size-50,    50 factories:  val = 138
+		// Artifact, size-80,   240 factories:  val = 203
+		float val = (float) (4.0f*Math.pow(size, 0.7f) + Math.min(20.0f, Math.sqrt(fact)));
 
         // Higher desire value for Rich, Ultra-Rich, Artifacts
 	    // Lower desire value for Poor, Ultra-Poor
@@ -111,8 +116,15 @@ public class AICGeneral implements Base, General {
         else if (empire.sv.isOrionArtifact(sysId))
             val *= 3;
 		
-        // normalized to normal size-100 planet with 200 factories (110)
-        return val/110;
+		// modnar: killer instinct
+		// higher value for the last few planets of an empire
+		int remainingSystems = galaxy().empire(empire.sv.empId(sysId)).numColonies();
+		if (remainingSystems <=3) {
+			val *= ((remainingSystems + 3)/(remainingSystems + 1));
+		}
+		
+        // normalized to normal size-100 planet with 200 factories (115)
+        return val/115;
     }
     @Override
     public float invasionPriority(StarSystem sys) {
@@ -124,7 +136,14 @@ public class AICGeneral implements Base, General {
 		
 		// increase invasion priority with planet size and factory count
         float pr = empire.sv.currentSize(sysId) + empire.sv.factories(sysId)/20.0f;
-
+		
+		// modnar: killer instinct
+		// higher priority to take out the last few planets of an empire
+		int remainingSystems = galaxy().empire(empire.sv.empId(sysId)).numColonies();
+		if (remainingSystems <=3) {
+			pr *= ((remainingSystems + 3)/(remainingSystems + 1));
+		}
+		
         if (empire.sv.isPoor(sysId))
             pr *= 2;
         else if (empire.sv.isResourceNormal(sysId))
@@ -239,9 +258,9 @@ public class AICGeneral implements Base, General {
         float pop = empire.sv.population(sys.id);
         float needed = troopsNecessaryToTakePlanet(v, sys);   
 		// modnar: scale back willingness to take losses
-        // Willing to take 1.25:1 losses to invade normal 100-pop size planet with 200 factories.
-		// For invading normal 80-pop size planet with 160 factories, be willing to take ~1:1 losses.
-        float value = takePlanetValue(sys) * 1.25f;
+        // Willing to take 1.1:1 losses to invade normal 100-pop size planet with 200 factories.
+		// For invading normal 80-pop size planet with 320 factories, be willing to take ~1:1 losses.
+        float value = takePlanetValue(sys) * 1.1f;
         return needed < pop * value;
     }
     public void orderRebellionFleet(StarSystem sys, float enemyFleetSize) {
@@ -251,10 +270,11 @@ public class AICGeneral implements Base, General {
             setRepelFleetPlan(sys, enemyFleetSize);      
     }
     public void orderInvasionFleet(EmpireView v, StarSystem sys, float enemyFleetSize) {
-		// modnar: slightly scale up invasion multiplier with factories
+		// modnar: scale up invasion multiplier with factories
+		// to account for natural pop growth (enemy transport, etc.) with invasion troop travel time
 		float size = empire.sv.currentSize(sys.id); // planet size
 		float fact = empire.sv.factories(sys.id); // factory count
-		float mult = (1.0f + fact/(50.0f*size)); // invasion multiplier
+		float mult = (1.0f + fact/(20.0f*size)); // invasion multiplier
 		
         if (empire.sv.hasFleetForEmpire(sys.id, empire))
             launchGroundTroops(v, sys, mult);
@@ -303,11 +323,15 @@ public class AICGeneral implements Base, General {
             if (troopsAvailable < troopsDesired) {
                 float travelTime = sys.colony().transport().travelTime(target);
                 // modnar: only consider systems within 8 travel turns
-				// TODO: scale with warp speed (?), lower acceptable travel time with faster warp (?)
+				// TODO: scale down with warp speed (?), lower acceptable travel time with faster warp (?)
                 if ((travelTime <= 8) && sys.colony().canTransport()) {
                     launchPoints.add(sys);
                     maxTravelTime = max(maxTravelTime, travelTime);
-                    troopsAvailable += sys.colony().maxTransportsAllowed();
+					// modnar: keep planets at least 60% full
+					// to prevent complete draining of planets
+					// TODO: modify with leader personality and source planet fertility
+                    //troopsAvailable += sys.colony().maxTransportsAllowed();
+					troopsAvailable += Math.max(0.0f, sys.colony().population() - 0.6f*sys.colony().planet().currentSize());
                 }
             }
         }
@@ -321,7 +345,11 @@ public class AICGeneral implements Base, General {
 
         // send transports from launch points
         for (StarSystem sys : launchPoints) {
-            int troops = sys.colony().maxTransportsAllowed();
+			// modnar: keep planets at least 60% full
+			// to prevent complete draining of planets
+			// TODO: modify with leader personality and source planet fertility
+            // int troops = sys.colony().maxTransportsAllowed();
+			int troops = (int) Math.floor(Math.max(0.0f, sys.colony().population() - 0.6f*sys.colony().planet().currentSize()));
             sys.colony().scheduleTransportsToSystem(target, troops, maxTravelTime);
         }
     }
