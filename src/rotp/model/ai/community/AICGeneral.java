@@ -120,7 +120,7 @@ public class AICGeneral implements Base, General {
 		// higher value for the last few planets of an empire
 		int remainingSystems = galaxy().empire(empire.sv.empId(sysId)).numColonies();
 		if (remainingSystems <=3) {
-			val *= ((remainingSystems + 3)/(remainingSystems + 1));
+			val *= ((remainingSystems + 7)/(remainingSystems + 1));
 		}
 		
         // normalized to normal size-100 planet with 200 factories (115)
@@ -141,7 +141,7 @@ public class AICGeneral implements Base, General {
 		// higher priority to take out the last few planets of an empire
 		int remainingSystems = galaxy().empire(empire.sv.empId(sysId)).numColonies();
 		if (remainingSystems <=3) {
-			pr *= ((remainingSystems + 3)/(remainingSystems + 1));
+			pr *= ((remainingSystems + 7)/(remainingSystems + 1));
 		}
 		
         if (empire.sv.isPoor(sysId))
@@ -274,7 +274,7 @@ public class AICGeneral implements Base, General {
 		// to account for natural pop growth (enemy transport, etc.) with invasion troop travel time
 		float size = empire.sv.currentSize(sys.id); // planet size
 		float fact = empire.sv.factories(sys.id); // factory count
-		float mult = (1.0f + fact/(20.0f*size)); // invasion multiplier
+		float mult = (1.0f + fact/(10.0f*size)); // invasion multiplier
 		
         if (empire.sv.hasFleetForEmpire(sys.id, empire))
             launchGroundTroops(v, sys, mult);
@@ -393,7 +393,23 @@ public class AICGeneral implements Base, General {
     }
     public float troopsNecessaryToTakePlanet(EmpireView ev, StarSystem sys) {
         int id = sys.id;
-        return empire.sv.population(id) * (50 + ev.spies().tech().troopCombatAdj(true)) / (50 + empire.tech().troopCombatAdj(false));
+		
+		// modnar: (?) this old estimate gives completely wrong results for ground combat
+        //return empire.sv.population(id) * (50 + ev.spies().tech().troopCombatAdj(true)) / (50 + empire.tech().troopCombatAdj(false));
+		
+		// modnar: correct ground combat ratio estimates for troopsNecessary
+		if (ev.spies().tech().troopCombatAdj(true) >= empire.tech().troopCombatAdj(false)) {
+			float defAdv = ev.spies().tech().troopCombatAdj(true) - empire.tech().troopCombatAdj(false);
+			// killRatio = attackerCasualties / defenderCasualties
+			float killRatio = (float) ((Math.pow(100,2) - Math.pow(100-defAdv,2)/2) / (Math.pow(100-defAdv,2)/2));
+			return empire.sv.population(id) * killRatio;
+		}
+		else {
+			float atkAdv = empire.tech().troopCombatAdj(false) - ev.spies().tech().troopCombatAdj(true);
+			// killRatio = attackerCasualties / defenderCasualties
+			float killRatio = (float) ((Math.pow(100-atkAdv,2)/2) / (Math.pow(100,2) - Math.pow(100-atkAdv,2)/2));
+			return empire.sv.population(id) * killRatio;
+		}
     }
     public void orderBombardmentFleet(EmpireView v, StarSystem sys, float fleetSize) {
         float baseBCPresent = empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost();
