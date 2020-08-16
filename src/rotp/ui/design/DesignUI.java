@@ -1994,6 +1994,47 @@ public class DesignUI extends BasePanel {
                 repaint();
             }
         }
+		// modnar: add shift/ctrl modifiers for +5/+20
+		private void shipWeaponCountDecrement5(int i) {
+            ShipDesign des =  shipDesign();
+            if ((des.wpnCount(i) > 5) && !des.weapon(i).isNone()) {
+                des.wpnCount(i, des.wpnCount(i) - 5);
+                repaint();
+            }
+			else {
+				des.wpnCount(i, 0);
+                repaint();
+			}
+        }
+		// modnar: add shift/ctrl modifiers for +5/+20
+        private void shipWeaponCountIncrement5(int i) {
+            ShipDesign des =  shipDesign();
+            if (!des.weapon(i).isNone()) {
+                des.wpnCount(i, des.wpnCount(i) + 5);
+                repaint();
+            }
+        }
+		// modnar: add shift/ctrl modifiers for +5/+20
+		private void shipWeaponCountDecrement20(int i) {
+            ShipDesign des =  shipDesign();
+            if ((des.wpnCount(i) > 20) && !des.weapon(i).isNone()) {
+                des.wpnCount(i, des.wpnCount(i) - 20);
+                repaint();
+            }
+			else {
+				des.wpnCount(i, 0);
+                repaint();
+			}
+        }
+		// modnar: add shift/ctrl modifiers for +5/+20
+        private void shipWeaponCountIncrement20(int i) {
+            ShipDesign des =  shipDesign();
+            if (!des.weapon(i).isNone()) {
+                des.wpnCount(i, des.wpnCount(i) + 20);
+                repaint();
+            }
+			
+        }
         private void openShipSpecialsDialog(int i) {
             specialSelectionUI.selectedDesign = shipDesign();
             specialSelectionUI.bank(i);
@@ -2235,10 +2276,24 @@ public class DesignUI extends BasePanel {
                 if (hoverTarget == weaponFieldIncr[i]) {
                     softClick(); shipWeaponIncrement(i); return;
                 }
+				// modnar: add shift/ctrl modifiers for +5/+20
                 if (hoverTarget == weaponCountDecr[i]) {
+					if((mouseEvent.getModifiers() & InputEvent.SHIFT_MASK) != 0 ) {
+						softClick(); shipWeaponCountDecrement5(i); return;
+					}
+					if((mouseEvent.getModifiers() & InputEvent.CTRL_MASK) != 0 ) {
+						softClick(); shipWeaponCountDecrement20(i); return;
+					}
                     softClick(); shipWeaponCountDecrement(i); return;
                 }
+				// modnar: add shift/ctrl modifiers for +5/+20
                 if (hoverTarget == weaponCountIncr[i]) {
+					if((mouseEvent.getModifiers() & InputEvent.SHIFT_MASK) != 0 ) {
+						softClick(); shipWeaponCountIncrement5(i); return;
+					}
+					if((mouseEvent.getModifiers() & InputEvent.CTRL_MASK) != 0 ) {
+						softClick(); shipWeaponCountIncrement20(i); return;
+					}
                     softClick(); shipWeaponCountIncrement(i); return;
                 }
             }
@@ -2334,10 +2389,29 @@ public class DesignUI extends BasePanel {
                     return;
                 }
                 if (hoverTarget == weaponCountArea[i]) {
-                    if (count > 0)
-                        shipWeaponCountDecrement(i);
-                    else
-                        shipWeaponCountIncrement(i);
+					// modnar: add shift/ctrl modifiers for +5/+20
+                    if (count > 0) {
+						if((e.getModifiers() & InputEvent.SHIFT_MASK) != 0 ) {
+							shipWeaponCountDecrement5(i);
+						}
+						else if((e.getModifiers() & InputEvent.CTRL_MASK) != 0 ) {
+							shipWeaponCountDecrement20(i);
+						}
+                        else {
+							shipWeaponCountDecrement(i);
+						}
+					}
+                    else {
+						if((e.getModifiers() & InputEvent.SHIFT_MASK) != 0 ) {
+							shipWeaponCountIncrement5(i);
+						}
+						else if((e.getModifiers() & InputEvent.CTRL_MASK) != 0 ) {
+							shipWeaponCountIncrement20(i);
+						}
+                        else {
+							shipWeaponCountIncrement(i);
+						}
+					}
                     return;
                 }
             }
