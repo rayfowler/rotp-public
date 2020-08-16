@@ -80,13 +80,13 @@ public class GalaxyGridShape extends GalaxyShape {
 		int horizontalSteps = (int) (10*gW*(nGrid+1));
 		
 		// randomly assign clusters at intersections
-		// but use map size as seed to ensure same sequence for same map size
+		// but use map size and number of opponents as seed to ensure same sequence
 		// use shuffle list to ensure unique draws
 		ArrayList<Integer> clusterList = new ArrayList<Integer>();
 		for(int i = 0; i < (nGrid+1)*(nGrid+1); i++){
 			clusterList.add(i);
 		}
-		Collections.shuffle(clusterList, new Random(opts.numberStarSystems()));
+		Collections.shuffle(clusterList, new Random(opts.numberStarSystems()+opts.selectedNumberOpponents()));
 		
 		
 		// switch between populating the grid vs cluster

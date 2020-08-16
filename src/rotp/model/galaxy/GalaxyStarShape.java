@@ -18,14 +18,14 @@ package rotp.model.galaxy;
 import java.awt.Point;
 import java.awt.Shape;
 import java.awt.geom.Path2D;
-import java.awt.geom.AffineTransform; // modnar: TODO: perhaps add in some kind of rotation
+import java.awt.geom.AffineTransform;
 import rotp.model.game.IGameOptions;
 
 // modnar: custom map shape, Star
 public class GalaxyStarShape extends GalaxyShape {
     private static final long serialVersionUID = 1L;
     private Path2D star;
-	float adjust_density = 1.0f; // modnar: adjust stellar density
+	int numPoints = 5;
 	
     public GalaxyStarShape(IGameOptions options) {
         opts = options;
@@ -34,50 +34,67 @@ public class GalaxyStarShape extends GalaxyShape {
     public void init(int n) {
         super.init(n);
 		
-		// modnar: choose different stellar densities (map areas) with setMapOption
+		float gE = (float) galaxyEdgeBuffer();
+		float gW = (float) galaxyWidthLY();
+		float gH = (float) galaxyHeightLY();
+		
+		float innerRadius = 0.2f*gH;
+		
+		// modnar: choose different number of star points with setMapOption
 		if (opts.setMapOption() == 1) {
-			adjust_density = 1.0f;
+			numPoints = 5;
+			innerRadius = 0.2f*gH;
 		}
 		else if (opts.setMapOption() == 2) {
-			adjust_density = 1.5f;
+			numPoints = 3;
+			innerRadius = 0.12f*gH;
 		}
 		else if (opts.setMapOption() == 3) {
-			adjust_density = 2.0f;
+			numPoints = 8;
+			innerRadius = 0.18f*gH;
 		}
 		
 		star = new Path2D.Float();
 		
-		// create star shape, just with points
-		star.moveTo(0.50*galaxyWidthLY(), 0.05*galaxyHeightLY());
-		star.lineTo(0.38*galaxyWidthLY(), 0.39*galaxyHeightLY());
-		star.lineTo(0.03*galaxyWidthLY(), 0.39*galaxyHeightLY());
-		star.lineTo(0.30*galaxyWidthLY(), 0.59*galaxyHeightLY());
-		star.lineTo(0.16*galaxyWidthLY(), 0.95*galaxyHeightLY());
-		star.lineTo(0.50*galaxyWidthLY(), 0.73*galaxyHeightLY());
-		star.lineTo(0.84*galaxyWidthLY(), 0.95*galaxyHeightLY());
-		star.lineTo(0.70*galaxyWidthLY(), 0.59*galaxyHeightLY());
-		star.lineTo(0.97*galaxyWidthLY(), 0.39*galaxyHeightLY());
-		star.lineTo(0.62*galaxyWidthLY(), 0.39*galaxyHeightLY());
-		star.lineTo(0.50*galaxyWidthLY(), 0.05*galaxyHeightLY());
-		
-		star.closePath();
-		
-		/*
-		// modnar: TODO: rotate the star shape by using modulo (?)
-		AffineTransform rot = new AffineTransform();
-		rot.rotate(galaxyWidthLY() % 11); // need to modify to keep within galaxy bounds
-		Path2D star = rot.createTransformedShape(star);
-		*/
+		// create star shape, just with points/path
+		float deltaAngle = (float) Math.PI/numPoints;
+		for (int i = 0; i < 2*numPoints; i++)
+        {
+			// offsetAngle, spins star with number of opponents
+			float offsetAngle = (float) (opts.selectedNumberOpponents()*Math.PI/15);
+            float pathX = (float) Math.cos(offsetAngle + i*deltaAngle);
+            float pathY = (float) Math.sin(offsetAngle + i*deltaAngle);
+			
+            if ((i % 2) == 0)
+            {
+                pathX *= 0.5f*gH; // outerRadius
+                pathY *= 0.5f*gH; // outerRadius
+            }
+            else
+            {
+                pathX *= innerRadius;
+                pathY *= innerRadius;
+            }
+            if (i == 0)
+            {
+                star.moveTo(gE + 0.5f*gW + pathX, gE + 0.5f*gH + pathY); // initial start
+            }
+            else
+            {
+                star.lineTo(gE + 0.5f*gW + pathX, gE + 0.5f*gH + pathY);
+            }
+        }
+        star.closePath();
     }
     @Override
     public float maxScaleAdj()               { return 1.1f; }
     @Override
     protected int galaxyWidthLY() { 
-        return (int) (adjust_density*1.3*Math.sqrt(opts.numberStarSystems()*adjustedSizeFactor()));
+        return (int) (1.3*Math.sqrt(opts.numberStarSystems()*adjustedSizeFactor()));
     }
     @Override
     protected int galaxyHeightLY() { 
-        return (int) (adjust_density*1.3*Math.sqrt(opts.numberStarSystems()*adjustedSizeFactor()));
+        return (int) (1.3*Math.sqrt(opts.numberStarSystems()*adjustedSizeFactor()));
     }
     @Override
     public void setRandom(Point.Float pt) {
