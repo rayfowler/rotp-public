@@ -34,6 +34,9 @@ import rotp.model.galaxy.GalaxyClusterShape; // modnar, custom shape
 import rotp.model.galaxy.GalaxySwirlClustersShape; // modnar, custom shape
 import rotp.model.galaxy.GalaxyGridShape; // modnar, custom shape
 import rotp.model.galaxy.GalaxySpiralArmsShape; // modnar, custom shape
+import rotp.model.galaxy.GalaxyMazeShape; // modnar, custom shape
+import rotp.model.galaxy.GalaxyVoidShape; // modnar, custom shape
+import rotp.model.galaxy.GalaxyShurikenShape; // modnar, custom shape
 import rotp.model.galaxy.GalaxyLorenzShape; // modnar, custom shape, long generation times
 import rotp.model.galaxy.GalaxyLorenz2Shape; // modnar, custom shape, long generation times
 import rotp.model.galaxy.GalaxyFractalShape; // modnar, custom shape, long generation times
@@ -193,6 +196,15 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
                 return;
 			case SHAPE_SPIRALARMS:
                 galaxyShape = new GalaxySpiralArmsShape(this);
+                return;
+			case SHAPE_MAZE:
+                galaxyShape = new GalaxyMazeShape(this);
+                return;
+			case SHAPE_VOID:
+                galaxyShape = new GalaxyVoidShape(this);
+                return;
+			case SHAPE_SHURIKEN:
+                galaxyShape = new GalaxyShurikenShape(this);
                 return;
 			case SHAPE_LORENZ:
                 galaxyShape = new GalaxyLorenzShape(this);
@@ -427,12 +439,26 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
 		list.add(SHAPE_SWIRLCLUSTERS);
 		list.add(SHAPE_GRID);
 		list.add(SHAPE_SPIRALARMS);
+		list.add(SHAPE_MAZE);
+		list.add(SHAPE_VOID);
+		list.add(SHAPE_SHURIKEN);
 		list.add(SHAPE_LORENZ);
 		list.add(SHAPE_LORENZ2);
 		list.add(SHAPE_FRACTAL);
 		list.add(SHAPE_CHAOSGAME);
         return list;
     }
+	
+	// modnar: MapOptionOptions
+	@Override
+    public List<String> MapOptionOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(MAP_OPTION_A);
+        list.add(MAP_OPTION_B);
+        list.add(MAP_OPTION_C);
+        return list;
+    }
+	
     @Override
     public List<String> gameDifficultyOptions() {
         List<String> list = new ArrayList<>();

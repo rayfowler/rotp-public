@@ -18,15 +18,20 @@ package rotp.model.galaxy;
 import java.awt.Point;
 import java.awt.Shape;
 import java.awt.geom.Area;
-import java.awt.geom.Ellipse2D;
+import java.awt.geom.Path2D;
+import java.awt.geom.AffineTransform;
+import java.util.Random;
 import rotp.model.game.IGameOptions;
 
-public class GalaxyCircularShape extends GalaxyShape {
+// modnar: custom map shape, Shuriken
+public class GalaxyShurikenShape extends GalaxyShape {
     private static final long serialVersionUID = 1L;
-    Shape circle;
-	Area totalArea, circleArea;
+    Path2D flake;
+	Shape flakeROT;
+	Area totalArea, flakeArea;
+	int numPoints = 16;
 	
-    public GalaxyCircularShape(IGameOptions options) {
+    public GalaxyShurikenShape(IGameOptions options) {
         opts = options;
     }
     @Override
@@ -37,56 +42,67 @@ public class GalaxyCircularShape extends GalaxyShape {
 		float gW = (float) galaxyWidthLY();
 		float gH = (float) galaxyHeightLY();
 		
-		// modnar: different circle configurations with setMapOption
+		// modnar: choose different number of points for the flake polygon with setMapOption
 		if (opts.setMapOption() == 1) {
-			// single circle
-			// modnar: add galaxyEdgeBuffer() as upper left corner to prevent cutoff
-			circle = new Ellipse2D.Float(gE,gE,gW,gH);
-			circleArea = new Area(circle);
-			totalArea = circleArea;
+			numPoints = 9;
 		}
 		else if (opts.setMapOption() == 2) {
-			// close-packing 3 circles (triangle)
-			circle = new Ellipse2D.Float(gE+0.25f*gW, gE+0.03f*gH, 0.5f*gW, 0.5f*gH);
-			circleArea = new Area(circle);
-			totalArea = circleArea;
-			
-			circle = new Ellipse2D.Float(gE+0.0f*gW, gE+0.465f*gH, 0.5f*gW, 0.5f*gH);
-			circleArea = new Area(circle);
-			totalArea.add(circleArea);
-			
-			circle = new Ellipse2D.Float(gE+0.5f*gW, gE+0.465f*gH, 0.5f*gW, 0.5f*gH);
-			circleArea = new Area(circle);
-			totalArea.add(circleArea);
+			numPoints = 11;
 		}
 		else if (opts.setMapOption() == 3) {
-			// 4 circles (square)
-			circle = new Ellipse2D.Float(gE+0.0f*gW, gE+0.0f*gH, 0.5f*gW, 0.5f*gH);
-			circleArea = new Area(circle);
-			totalArea = circleArea;
-			
-			circle = new Ellipse2D.Float(gE+0.5f*gW, gE+0.0f*gH, 0.5f*gW, 0.5f*gH);
-			circleArea = new Area(circle);
-			totalArea.add(circleArea);
-			
-			circle = new Ellipse2D.Float(gE+0.0f*gW, gE+0.5f*gH, 0.5f*gW, 0.5f*gH);
-			circleArea = new Area(circle);
-			totalArea.add(circleArea);
-			
-			circle = new Ellipse2D.Float(gE+0.5f*gW, gE+0.5f*gH, 0.5f*gW, 0.5f*gH);
-			circleArea = new Area(circle);
-			totalArea.add(circleArea);
+			numPoints = 13;
 		}
+		
+		Random randnum = new Random();
+		// keep same random number seed
+		// modified by numberStarSystems, UI_option, and selectedNumberOpponents
+		randnum.setSeed(opts.numberStarSystems()*numPoints + opts.selectedNumberOpponents());
+		
+		flake = new Path2D.Float();
+		// initial flake polygon start, ensure polygon extent
+		flake.moveTo(gE + 0.5f*gW, gE + 0.65f*gH);
+		flake.lineTo(gE + 0.4f*gW, gE + 0.02f*gH);
+		
+		// points to define triangular slice within which to draw flake polygon
+		Point.Float p1 = new Point.Float(gE + 0.5f*gW, gE + 0.65f*gH);
+		Point.Float p2 = new Point.Float(gE + 0.35f*gW, gE + 0.02f*gH);
+		Point.Float p3 = new Point.Float(gE + 0.65f*gW, gE + 0.02f*gH);
+		
+		// create flake polygon shape, with random points/path
+		for (int i = 0; i < numPoints; i++)
+        {
+			// uniform random point within triangle slice
+			float rand1 = randnum.nextFloat();
+			float rand2 = randnum.nextFloat();
+			float px = p1.x*(1-rand1) + p2.x*((float) Math.sqrt(rand1)*(1-rand2)) + p3.x*((float) Math.sqrt(rand1)*rand2);
+			float py = p1.y*(1-rand1) + p2.y*((float) Math.sqrt(rand1)*(1-rand2)) + p3.y*((float) Math.sqrt(rand1)*rand2);
+			flake.lineTo(px, py);
+        }
+        flake.closePath();
+		
+		flakeArea = new Area(flake);
+		totalArea = flakeArea;
+		
+		// rotate flakes and combine together
+		for (int i = 1; i < 6; i++)
+        {
+		AffineTransform rotate = AffineTransform.getRotateInstance(i*Math.PI/3, gE + 0.5f*gW, gE + 0.5f*gH);
+		flakeROT = rotate.createTransformedShape(flake);
+		
+		flakeArea = new Area(flakeROT);
+		totalArea.add(flakeArea);
+		}
+		
     }
     @Override
     public float maxScaleAdj()               { return 1.1f; }
     @Override
     protected int galaxyWidthLY() { 
-        return (int) (Math.sqrt(maxStars*adjustedSizeFactor()));
+        return (int) (Math.sqrt(1.2*opts.numberStarSystems()*adjustedSizeFactor()));
     }
     @Override
     protected int galaxyHeightLY() { 
-        return (int) (Math.sqrt(maxStars*adjustedSizeFactor()));
+        return (int) (Math.sqrt(1.2*opts.numberStarSystems()*adjustedSizeFactor()));
     }
     @Override
     public void setRandom(Point.Float pt) {
