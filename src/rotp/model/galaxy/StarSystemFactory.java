@@ -34,7 +34,8 @@ public class StarSystemFactory implements Base {
     public StarSystem newOrionSystem(Galaxy gal) {
         String type = StarType.YELLOW;
         StarSystem sys = StarSystem.create(type, gal);
-        sys.planet(PlanetFactory.createOrion(sys, session().populationBonus()));
+		// modnar: change Orion to MoO1 size-120, by using 1.2f population bonus multiplier
+        sys.planet(PlanetFactory.createOrion(sys, 1.2f));
         sys.monster(new OrionGuardianShip());
         sys.name(text("PLANET_ORION"));
         return sys;

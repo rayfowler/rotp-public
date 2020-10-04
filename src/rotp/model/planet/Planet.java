@@ -356,7 +356,7 @@ public class Planet implements Base, IMappedObject, Serializable {
 
     public float researchAdj() {
         switch (artifacts) {
-            case RUINS_ORION:    return 3; // Orion ruins
+            case RUINS_ORION:    return 4; // Orion ruins  // modnar: change Orion to MoO1 4X Tech
             case RUINS_ANTARAN:  return 2; // Antaran ruins
             default: return 1;
         }

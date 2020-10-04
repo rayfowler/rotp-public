@@ -510,7 +510,7 @@ MAIN_SCOUT_HOSTILE_DESC           | Environment: Hostile - Population growth is 
 MAIN_SCOUT_FERTILE_DESC           | Environment: Fertile - Population growth is +50% normal.
 MAIN_SCOUT_GAIA_DESC              | Environment: Gaia - Population growth is +100% normal.
 MAIN_SCOUT_ARTIFACTS_DESC         | Ancient Ruins: Technology points from research are doubled.
-MAIN_SCOUT_ANCIENTS_DESC          | Ancient Homeworld: Technology points from research are tripled.
+MAIN_SCOUT_ANCIENTS_DESC          | Ancient Homeworld: Technology points from research are quadrupled.
 MAIN_SCOUT_ULTRA_POOR_DESC        | Resources: Ultra-Poor - Output from industry is cut to one-third.
 MAIN_SCOUT_POOR_DESC              | Resources: Poor - Output from industry is halved.
 MAIN_SCOUT_RICH_DESC              | Resources: Rich - Output from industry is doubled.
