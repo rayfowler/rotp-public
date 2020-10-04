@@ -60,6 +60,7 @@ public interface IGameOptions {
 	public static final String SHAPE_MAZE = "SETUP_GALAXY_SHAPE_MAZE";
 	public static final String SHAPE_VOID = "SETUP_GALAXY_SHAPE_VOID";
 	public static final String SHAPE_SHURIKEN = "SETUP_GALAXY_SHAPE_SHURIKEN";
+	public static final String SHAPE_BULLSEYE = "SETUP_GALAXY_SHAPE_BULLSEYE";
 	public static final String SHAPE_LORENZ = "SETUP_GALAXY_SHAPE_LORENZ";
 	public static final String SHAPE_LORENZ2 = "SETUP_GALAXY_SHAPE_LORENZ2";
 	public static final String SHAPE_FRACTAL = "SETUP_GALAXY_SHAPE_FRACTAL";
