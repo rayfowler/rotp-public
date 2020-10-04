@@ -205,7 +205,7 @@ public final class TechMissileWeapon extends Tech {
                 cost = 36;
                 computer = 6;
                 shots = 2;  shots2 = 5;
-                range = 9;  range2 = 7;
+                range = 10;  range2 = 10; // modnar: correct missile range
                 baseMissile = new MissileBaseMissile(this, 162);
                 imageKey = "MISSILE_ZEON";
                 break;
@@ -218,7 +218,7 @@ public final class TechMissileWeapon extends Tech {
                 computer = 3;
                 attacks = 10;
                 shots = 2;  shots2 = 5;
-                range = 10;  range2 = 10;
+                range = 9;  range2 = 7; // modnar: correct missile range
                 baseMissile = new MissileBaseMissile(this, 162);
                 imageKey = "MISSILE_SCATTER_PACK_X";
                 break;
