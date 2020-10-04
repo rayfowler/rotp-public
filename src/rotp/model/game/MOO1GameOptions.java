@@ -36,7 +36,8 @@ import rotp.model.galaxy.GalaxyGridShape; // modnar, custom shape
 import rotp.model.galaxy.GalaxySpiralArmsShape; // modnar, custom shape
 import rotp.model.galaxy.GalaxyMazeShape; // modnar, custom shape
 import rotp.model.galaxy.GalaxyVoidShape; // modnar, custom shape
-import rotp.model.galaxy.GalaxyShurikenShape; // modnar, custom shape
+import rotp.model.galaxy.GalaxyShurikenShape; // modnar, custom shape, long generation times
+import rotp.model.galaxy.GalaxyBullseyeShape; // modnar, custom shape, long generation times
 import rotp.model.galaxy.GalaxyLorenzShape; // modnar, custom shape, long generation times
 import rotp.model.galaxy.GalaxyLorenz2Shape; // modnar, custom shape, long generation times
 import rotp.model.galaxy.GalaxyFractalShape; // modnar, custom shape, long generation times
@@ -206,6 +207,9 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
 			case SHAPE_SHURIKEN:
                 galaxyShape = new GalaxyShurikenShape(this);
                 return;
+			case SHAPE_BULLSEYE:
+                galaxyShape = new GalaxyBullseyeShape(this);
+				return;
 			case SHAPE_LORENZ:
                 galaxyShape = new GalaxyLorenzShape(this);
                 return;
@@ -442,6 +446,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
 		list.add(SHAPE_MAZE);
 		list.add(SHAPE_VOID);
 		list.add(SHAPE_SHURIKEN);
+		list.add(SHAPE_BULLSEYE);
 		list.add(SHAPE_LORENZ);
 		list.add(SHAPE_LORENZ2);
 		list.add(SHAPE_FRACTAL);
