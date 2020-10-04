@@ -15,6 +15,7 @@
  */
 package rotp.model.ships;
 
+import rotp.model.empires.Empire;
 import rotp.model.tech.TechEngineWarp;
 
 public final class ShipEngine extends ShipComponent {
@@ -30,7 +31,11 @@ public final class ShipEngine extends ShipComponent {
     public TechEngineWarp tech()      { return (TechEngineWarp) super.tech(); }
     public float powerOutput()       { return tech().powerOutput(); }
     @Override
-    public float cost(ShipDesign d)  { return tech().baseCost(); }
+	// modnar: add in cost miniaturization for Ship Engine
+    public float cost(ShipDesign d)  {
+		Empire emp = d == null ? null : d.empire();
+        return tech().costMiniaturization(emp) * tech().baseCost();
+	}
     @Override
     public float space(ShipDesign d) { return d.enginesRequired()* size(d); }
     public int warp()                 { return tech().warp();  }

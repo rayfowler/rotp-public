@@ -46,7 +46,11 @@ public final class ShipArmor extends ShipComponent {
     @Override
     public String desc(ShipDesign d) { return text(desc(), (int) hits(d)); }
     @Override
-    public float cost(ShipDesign d) { return tech().baseCost(d.size(), reinforced); }
+	// modnar: add in cost miniaturization for Armor
+    public float cost(ShipDesign d) {
+		Empire emp = d == null ? null : d.empire();
+        return tech().costMiniaturization(emp) * tech().baseCost(d.size(), reinforced);
+	}
     @Override
     public float size(ShipDesign d) {
         Empire emp = d == null ? null : d.empire();
