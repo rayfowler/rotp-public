@@ -873,10 +873,12 @@ public final class Colony implements Base, IMappedObject, Serializable {
         float defenderDmg = defense().missileBases() * missileDmg;
 
         // add firepower for each allied ship in orbit
+		// modnar: use firepowerAntiShip to only count ship weapons that can hit ships
+		// to prevent ground bombs from being able to damage transports
         List<ShipFleet> fleets = starSystem().orbitingFleets();
         for (ShipFleet fl : fleets) {
             if (fl.empire().aggressiveWith(tr.empId()))
-                defenderDmg += fl.firepower(0);
+                defenderDmg += fl.firepowerAntiShip(0);
         }
 
         // run the gauntlet
