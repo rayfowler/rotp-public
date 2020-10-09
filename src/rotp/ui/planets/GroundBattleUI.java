@@ -40,6 +40,8 @@ import rotp.util.sound.SoundClip;
 
 public class GroundBattleUI extends BasePanel implements MouseListener {
     private static final long serialVersionUID = 1L;
+	// modnar: MAX_SOLDIERS = 500 causes bugs when troops > 500
+	// other parts of the code has been changed to work around having any such max value
     private static final int MAX_SOLDIERS = 500;
     private static final int MAX_COUNTDOWN = 50;
     private static final int MAX_SHIPS = 3;
@@ -375,7 +377,9 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
         ColonyDefense defense = colony.defense();
         int x0 = (w/2)+s40;
         int y0 = textY;
-        drawTroops(g, totalDefenders, false, x0, y0-s40);
+		// modnar: use Math.min(MAX_SOLDIERS,totalDefenders) to draw defenders
+		// avoid bug with more than 500 troops
+        drawTroops(g, Math.min(MAX_SOLDIERS,totalDefenders), false, x0, y0-s40);
 
         if (!landing()) {
             String attArmorDesc = text("INVASION_TROOP_ARMOR_DESC", transport.armorDesc(), transport.battleSuitDesc());
@@ -386,7 +390,9 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
             // draw attacker15s
             x0 = s40;
             y0 = textY;
-            drawTroops(g, totalAttackers, true, x0, y0-s40);
+			// modnar: use Math.min(MAX_SOLDIERS,totalAttackers) to draw defenders
+			// avoid bug with more than 500 attackers
+            drawTroops(g, Math.min(MAX_SOLDIERS,totalAttackers), true, x0, y0-s40);
             // draw attacker info
             g.setFont(narrowFont(40));
             String str1 = text("INVASION_ATTACKERS_TITLE", str(transport.size()), transport.empire().raceName());
@@ -471,7 +477,9 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
         landingCount++;
         if (!landing()) {
             if (battleInProgress()) {
-                allStartFiring(totalAttackers, totalDefenders);
+				// modnar: use Math.min(MAX_SOLDIERS,totalAttackers) and Math.min(MAX_SOLDIERS,totalDefenders)
+				// avoid bug with more than 500 attackers
+                allStartFiring(Math.min(MAX_SOLDIERS,totalAttackers), Math.min(MAX_SOLDIERS,totalDefenders));
                 if (animationCount() % 3 == 0) {
                     attackerDead = colony.singleCombatAgainstTransports(transport);
                     deathThisTurn = assignRandomVictim(attackerDead);
@@ -487,14 +495,28 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
     private int assignRandomVictim(boolean attacker) {
         Integer deadIndex;
         if (attacker) {
-            deadIndex = random(remainingAttackers);
+			// modnar: kill off attackers with index higher than 500 first
+			// to prevent >500 troop bug
+			if (remainingAttackers.size() >= MAX_SOLDIERS) {
+				deadIndex = remainingAttackers.size() - 1;
+			}
+			else {
+				deadIndex = random(remainingAttackers);
+			}
             if (deadIndex < attackerState.length)
                 attackerState[deadIndex] = BEGIN_DYING;
             remainingAttackers.remove(deadIndex);
             //log("Dead: Attacker - "+deadIndex+"   "+remainingAttackers.size()+" remaining");
         }
         else {
-            deadIndex = random(remainingDefenders);
+			// modnar: kill off attackers with index higher than 500 first
+			// to prevent >500 troop bug
+			if (remainingDefenders.size() >= MAX_SOLDIERS) {
+				deadIndex = remainingDefenders.size() - 1;
+			}
+			else {
+				deadIndex = random(remainingDefenders);
+			}
             if (deadIndex < defenderState.length)
                 defenderState[deadIndex] = BEGIN_DYING;
             remainingDefenders.remove(deadIndex);
@@ -637,8 +659,18 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
         else
                 victim = random(remainingDefenders);
 
-        int victimX = defenderX[victim]-(defenderImgW/2);
-        int victimY = defenderY[victim]+(defenderImgH/2);
+		int victimX = defenderX[0]-(defenderImgW/2);
+        int victimY = defenderY[0]+(defenderImgH/2);
+		
+		// modnar: adjust firing to prevent >500 troop bug
+		if (victim >= MAX_SOLDIERS) {
+			victimX = defenderX[MAX_SOLDIERS-1]-(defenderImgW/2);
+			victimY = defenderY[MAX_SOLDIERS-1]+(defenderImgH/2);
+		}
+		else {
+			victimX = defenderX[victim]-(defenderImgW/2);
+			victimY = defenderY[victim]+(defenderImgH/2);
+		}
 
         //log("firing at defender#"+victim+"  from:"+gunX+"@"+gunY+"  to:"+victimX+"@"+victimY+"  gun:"+attackerGunX+"@"+attackerGunY);
         attackerWeapon.drawEffect(g, gunX, gunY, victimX, victimY);
@@ -660,8 +692,18 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
         else
             victim = random(remainingAttackers);
 
-        int victimX = attackerX[victim]+(attackerImgW/2);
-        int victimY = attackerY[victim]+(attackerImgH/2);
+        int victimX = attackerX[0]+(attackerImgW/2);
+        int victimY = attackerY[0]+(attackerImgH/2);
+		
+		// modnar: adjust firing to prevent >500 troop bug
+		if (victim >= MAX_SOLDIERS) {
+			victimX = attackerX[MAX_SOLDIERS-1]+(attackerImgW/2);
+			victimY = attackerY[MAX_SOLDIERS-1]+(attackerImgH/2);
+		}
+		else {
+			victimX = attackerX[victim]+(attackerImgW/2);
+			victimY = attackerY[victim]+(attackerImgH/2);
+		}
 
         //log("firing at attacker#"+victim+"  from:"+gunX+"@"+gunY+"  to:"+victimX+"@"+victimY+"  gun:"+defenderGunX+"@"+defenderGunY);
         defenderWeapon.drawEffect(g, gunX, gunY, victimX, victimY);
