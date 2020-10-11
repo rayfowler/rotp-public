@@ -1168,7 +1168,16 @@ public class AICDiplomat implements Base, Diplomat {
         
         float baseThreshold = v.owner().atWar() ? 20.0f : 10.0f;
         float treatyMod = v.embassy().pact() || v.embassy().alliance() ? 1.5f : 1.0f;
-        float warThreshold = baseThreshold *  treatyMod * v.owner().leader().exploitWeakerEmpiresRatio();
+		
+		// modnar: factor in own empire average tech level
+		// suppress war in early game when average tech level is below 10
+		float myTechLvl = v.owner().tech().avgTechLevel(); // minimum average tech level is 1.0
+		float techMod = 1.0f;
+		if (myTechLvl < 10.0f) {
+			techMod = 10.0f / myTechLvl; // inverse change with tech level (range from 10.0 to 1.0)
+		}
+		
+        float warThreshold = baseThreshold * techMod * treatyMod * v.owner().leader().exploitWeakerEmpiresRatio();
         
         return (myPower/otherPower) > warThreshold;
     }
