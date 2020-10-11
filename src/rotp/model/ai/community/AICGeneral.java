@@ -34,6 +34,7 @@ import rotp.util.Base;
 public class AICGeneral implements Base, General {
     private final Empire empire;
     private float civProd = 0;
+	private float civTech = 0;
     private final HashMap<StarSystem, List<Ship>> targetedSystems;
     private final List<StarSystem> rushDefenseSystems;
     private final List<StarSystem> rushShipSystems;
@@ -56,6 +57,7 @@ public class AICGeneral implements Base, General {
     @Override
     public void nextTurn() {
         civProd = empire.totalPlanetaryProduction();
+		civTech = empire.tech().avgTechLevel();
         resetTargetedSystems();
         rushDefenseSystems.clear();
         rushShipSystems.clear();
@@ -206,7 +208,9 @@ public class AICGeneral implements Base, General {
                 setRepelFleetPlan(sys, enemyFleetSize);
             else if (targetedSystems.keySet().contains(sys))
                 setInterceptFleetPlan(sys, enemyFleetSize);
-            else if (empire.sv.isAttackTarget(sysId))
+			
+			// modnar: stop double fleetplan when enemy is in orbit of colony
+            else if (empire.sv.isAttackTarget(sysId) && !enemyFleetInOrbit)
 				// modnar: if under attack, more fighters on top of missle bases
                 setHighFighterGuard(sys, FleetPlan.GUARD_ATTACK_TARGET+value);
             else if (empire.sv.isBorderSystem(sysId))
@@ -276,6 +280,10 @@ public class AICGeneral implements Base, General {
 		float fact = empire.sv.factories(sys.id); // factory count
 		float mult = (1.0f + fact/(10.0f*size)); // invasion multiplier
 		
+		int sysId = sys.id;
+		EmpireView ev = empire.viewForEmpire(empire.sv.empId(sysId));
+		float targetTech = ev.spies().tech().avgTechLevel(); // modnar: target tech level
+		
         if (empire.sv.hasFleetForEmpire(sys.id, empire))
             launchGroundTroops(v, sys, mult);
         else if (empire.combatTransportPct() > 0)
@@ -283,18 +291,22 @@ public class AICGeneral implements Base, General {
 
         float baseBCPresent = empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost();
         float bcMultiplier = 1 + (empire.sv.hostilityLevel(sys.id));
-        float bcNeeded = (baseBCPresent*4) +bcMultiplier*civProd/8; // modnar: larger fleet as ratio of production
+		
+		// modnar: include enemyFleetSize, factoring in relative tech levels
+        float bcNeeded = (baseBCPresent*4) + enemyFleetSize*(targetTech+10.0f)/(civTech+10.0f) + bcMultiplier*civProd/8;
         
-        // use up to half of BC for Destroyers... rest for fighters
-        int destroyersNeeded = (int) Math.ceil((bcNeeded/2)/empire.shipLab().destroyerDesign().cost());
-        bcNeeded -= (destroyersNeeded * empire.shipLab().destroyerDesign().cost());
-        int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost());
+        // modnar: balance invasion fleet to use 50% destroyers, 30% fighters, and 20% bombers
+        int destroyersNeeded = (int) Math.ceil(0.5f*bcNeeded/empire.shipLab().destroyerDesign().cost());
+        int bombersNeeded = (int) Math.ceil(0.3f*bcNeeded/empire.shipLab().bomberDesign().cost());
+        int fightersNeeded = (int) Math.ceil(0.2f*bcNeeded/empire.shipLab().fighterDesign().cost());
 
         // set fleet orders for invasion...
         ShipDesignLab lab = empire.shipLab();
-        float speed = max(lab.destroyerDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
+		// modnar: should use min speed here (?)
+        float speed = min(lab.destroyerDesign().warpSpeed(), lab.bomberDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
         FleetPlan fp = empire.sv.fleetPlan(sys.id);
         fp.addShips(empire.shipLab().destroyerDesign(), destroyersNeeded);
+		fp.addShips(empire.shipLab().bomberDesign(), bombersNeeded);
         fp.addShips(empire.shipLab().fighterDesign(), fightersNeeded);
         if (v.embassy().finalWar()) 
             fp.priority = FleetPlan.INVADE_FINAL_WAR+ invasionPriority(sys)/100;
@@ -322,9 +334,16 @@ public class AICGeneral implements Base, General {
         for (StarSystem sys : allSystems) {
             if (troopsAvailable < troopsDesired) {
                 float travelTime = sys.colony().transport().travelTime(target);
-                // modnar: only consider systems within 8 travel turns
-				// TODO: scale down with warp speed (?), lower acceptable travel time with faster warp (?)
-                if ((travelTime <= 8) && sys.colony().canTransport()) {
+                // modnar: only consider systems within 8 travel turns at the start of the game
+				// decrease with faster warp (faster transport speed)
+				// down to 3 travel turns with warp-9
+				// warp (topSpeed): 1, 2, 3, 4, 5, 6, 7, 8, 9
+				// transport speed: 1, 1, 2, 3, 4, 5, 6, 7, 8
+				// allowableTurns:  8, 8, 8, 6 ,5, 4, 4, 3, 3
+				// max distance:    8, 8,16,18,20,20,24,21,24
+				float topSpeed = empire.tech().topSpeed();
+				float allowableTurns = (float) (1 + Math.min(7, Math.floor(22 / topSpeed)));
+                if ((travelTime <= allowableTurns) && sys.colony().canTransport()) {
                     launchPoints.add(sys);
                     maxTravelTime = max(maxTravelTime, travelTime);
 					// modnar: keep planets at least 60% full
@@ -412,16 +431,27 @@ public class AICGeneral implements Base, General {
 		}
     }
     public void orderBombardmentFleet(EmpireView v, StarSystem sys, float fleetSize) {
+		
+		int sysId = sys.id;
+		EmpireView ev = empire.viewForEmpire(empire.sv.empId(sysId));
+		float targetTech = ev.spies().tech().avgTechLevel(); // modnar: target tech level
+		
         float baseBCPresent = empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost();
-        // set fleet orders for bombardment...
         float bcMultiplier = 1 + (empire.sv.hostilityLevel(sys.id)/2);
-        float bcNeeded = (baseBCPresent*4)+bcMultiplier*civProd/16; // modnar: larger fleet as ratio of production
-        int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost()); // modnar: balance fighter/bomber
-        int bombersNeeded = (int) Math.ceil(3*bcNeeded/empire.shipLab().bomberDesign().cost()); // modnar: balance fighter/bomber
+        
+		// modnar: test fleet sizes, include enemyFleetSize, factoring in relative tech levels
+        float bcNeeded = (baseBCPresent*4) + fleetSize*(targetTech+10.0f)/(civTech+10.0f) + bcMultiplier*civProd/12;
+		
+		// modnar: bombing fleet to use 40% bombers, 30% destroyers, and 30% fighters
+		int destroyersNeeded = (int) Math.ceil(0.3f*bcNeeded/empire.shipLab().destroyerDesign().cost());
+        int bombersNeeded = (int) Math.ceil(0.4f*bcNeeded/empire.shipLab().bomberDesign().cost());
+        int fightersNeeded = (int) Math.ceil(0.3f*bcNeeded/empire.shipLab().fighterDesign().cost());
 
         ShipDesignLab lab = empire.shipLab();
-        float speed = max(lab.bomberDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
+		// modnar: should use min speed here (?)
+        float speed = min(lab.destroyerDesign().warpSpeed(), lab.bomberDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
         FleetPlan fp = empire.sv.fleetPlan(sys.id);
+		fp.addShips(empire.shipLab().destroyerDesign(), destroyersNeeded);
         fp.addShips(empire.shipLab().bomberDesign(), bombersNeeded);
         fp.addShips(empire.shipLab().fighterDesign(), fightersNeeded);
         fp.stagingPointId = empire.optimalStagingPoint(sys, speed);
@@ -431,15 +461,27 @@ public class AICGeneral implements Base, General {
             fp.priority = FleetPlan.BOMB_ENEMY+ invasionPriority(sys)/100;
     }
     public void orderBombEncroachmentFleet(EmpireView v, StarSystem sys, float fleetSize) {
-        // set fleet orders for bombardment...
+        
+		int sysId = sys.id;
+		EmpireView ev = empire.viewForEmpire(empire.sv.empId(sysId));
+		float targetTech = ev.spies().tech().avgTechLevel(); // modnar: target tech level
+		
+		float baseBCPresent = empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost();
         float bcMultiplier = 1 + (empire.sv.hostilityLevel(sys.id)/2);
-        float bcNeeded = bcMultiplier*civProd/16; // modnar: larger fleet as ratio of production
-        int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost());
-        int bombersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().bomberDesign().cost());
+		
+        // modnar: test fleet sizes, include enemyFleetSize, factoring in relative tech levels
+        float bcNeeded = (baseBCPresent*4) + fleetSize*(targetTech+10.0f)/(civTech+10.0f) + bcMultiplier*civProd/16;
+		
+        // modnar: bombing fleet to use 40% bombers, 30% destroyers, and 30% fighters
+		int destroyersNeeded = (int) Math.ceil(0.3f*bcNeeded/empire.shipLab().destroyerDesign().cost());
+        int bombersNeeded = (int) Math.ceil(0.4f*bcNeeded/empire.shipLab().bomberDesign().cost());
+        int fightersNeeded = (int) Math.ceil(0.3f*bcNeeded/empire.shipLab().fighterDesign().cost());
 
         ShipDesignLab lab = empire.shipLab();
-        float speed = max(lab.bomberDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
+		// modnar: should use min speed here (?)
+        float speed = min(lab.destroyerDesign().warpSpeed(), lab.bomberDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
         FleetPlan fp = empire.sv.fleetPlan(sys.id);
+		fp.addShips(empire.shipLab().destroyerDesign(), destroyersNeeded);
         fp.addShips(empire.shipLab().bomberDesign(), bombersNeeded);
         fp.addShips(empire.shipLab().fighterDesign(), fightersNeeded);
         fp.stagingPointId = empire.optimalStagingPoint(sys, speed);
@@ -462,6 +504,15 @@ public class AICGeneral implements Base, General {
         // lower sneak attack chance on planet we can't capture
         if (!empire.canColonize(sys.planet().type()))
                 baseChance -= 0.3f;
+		
+		// modnar: factor in own empire average tech level
+		// suppress sneak attack war in early game when average tech level is below 10
+		float myTechLvl = empire.tech().avgTechLevel(); // minimum average tech level is 1.0
+		float techMod = 1.0f;
+		if (myTechLvl < 10.0f) {
+			techMod = myTechLvl / 20.0f + 0.5f; // linear change with tech level (range from 0.55 to 1.0)
+		}
+		baseChance *= techMod;
 
         float value = (empire.sv.factories(sys.id) * 10);
         float cost = fleetSize + (empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost());
@@ -478,8 +529,8 @@ public class AICGeneral implements Base, General {
         float baseCost = empire.tech().newMissileBase().cost(empire);
         FleetPlan fp = empire.sv.fleetPlan(sys.id);
         fp.priority = priority;
-        // modnar: fighter guard on top of any bases, 8 base BC = 1 fighter BC
-        fp.addShipBC(empire.shipLab().fighterDesign(), basesWanted*baseCost/8);
+        // modnar: fighter guard on top of any bases, 4 base BC = 1 fighter BC
+        fp.addShipBC(empire.shipLab().fighterDesign(), basesWanted*baseCost/4);
     }
 	// modnar: setNormalFighterGuard added for possibly threatened
 	private void setNormalFighterGuard(StarSystem sys, float priority) {
@@ -504,7 +555,7 @@ public class AICGeneral implements Base, General {
     }
     private void setRepelFleetPlan(StarSystem sys, float fleetSize) {
         float baseBCPresent = empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost();
-        float bcNeeded = max(empire.shipLab().fighterDesign().cost(), fleetSize*10);
+        float bcNeeded = max(empire.shipLab().fighterDesign().cost(), fleetSize*3); // modnar: reduce repel fleet
         bcNeeded -= baseBCPresent;
         if (bcNeeded <= 0)
             return;
@@ -517,7 +568,8 @@ public class AICGeneral implements Base, General {
         int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost());
 
         ShipDesignLab lab = empire.shipLab();
-        float speed = max(lab.destroyerDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
+		// modnar: should use min speed here (?)
+        float speed = min(lab.destroyerDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
         FleetPlan fp = empire.sv.fleetPlan(sys.id);
         fp.priority = FleetPlan.REPEL + invasionPriority(sys)/100;
         fp.stagingPointId = empire.optimalStagingPoint(sys, speed);
@@ -526,7 +578,7 @@ public class AICGeneral implements Base, General {
     }
     private void setInterceptFleetPlan(StarSystem sys, float fleetSize) {
         float baseBCPresent = empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost();
-        float bcNeeded = max(empire.shipLab().fighterDesign().cost(), fleetSize*6);
+        float bcNeeded = max(empire.shipLab().fighterDesign().cost(), fleetSize*2); // modnar: reduce intercept fleet
         bcNeeded -= baseBCPresent;
         if (bcNeeded <= 0)
             return;
@@ -538,7 +590,8 @@ public class AICGeneral implements Base, General {
         int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost());
 
         ShipDesignLab lab = empire.shipLab();
-        float speed = max(lab.destroyerDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
+		// modnar: should use min speed here (?)
+        float speed = min(lab.destroyerDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
         FleetPlan fp = empire.sv.fleetPlan(sys.id);
         fp.priority = FleetPlan.INTERCEPT + invasionPriority(sys)/100;
         fp.addShips(empire.shipLab().destroyerDesign(), destroyersNeeded);
@@ -546,7 +599,7 @@ public class AICGeneral implements Base, General {
     }
     private void setExpelFleetPlan(StarSystem sys, float fleetSize) {
         float baseBCPresent = empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost();
-        float bcNeeded = max(empire.shipLab().fighterDesign().cost(), fleetSize*10);
+        float bcNeeded = max(empire.shipLab().fighterDesign().cost(), fleetSize*3); // modnar: reduce expel fleet
         bcNeeded -= baseBCPresent;
         if (bcNeeded <= 0)
             return;
@@ -557,7 +610,8 @@ public class AICGeneral implements Base, General {
         int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost());
 
         ShipDesignLab lab = empire.shipLab();
-        float speed = max(lab.destroyerDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
+		// modnar: should use min speed here (?)
+        float speed = min(lab.destroyerDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
         FleetPlan fp = empire.sv.fleetPlan(sys.id);
         fp.priority = FleetPlan.EXPEL + invasionPriority(sys)/100;
         fp.stagingPointId = empire.optimalStagingPoint(sys, speed);
@@ -598,7 +652,8 @@ public class AICGeneral implements Base, General {
         int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost());
 
         ShipDesignLab lab = empire.shipLab();
-        float speed = max(lab.destroyerDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
+		// modnar: should use min speed here (?)
+        float speed = min(lab.destroyerDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
         FleetPlan fp = empire.sv.fleetPlan(sys.id);
         fp.priority = FleetPlan.ASSIST_ALLY + invasionPriority(sys)/100;
         fp.stagingPointId = empire.optimalStagingPoint(sys, speed);

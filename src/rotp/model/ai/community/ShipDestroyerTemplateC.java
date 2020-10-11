@@ -112,14 +112,15 @@ public class ShipDestroyerTemplateC implements Base {
 		
         float weaponSpace = d.availableSpace();
 
-        // if ship is large or smaller and more than 50% of space is already going
-        // to computer & manv, then quit and try a larger hull size
-        if ((d.size() < ShipDesign.HUGE) && (weaponSpace < (totalSpace/2))) {
+        // if ship is medium or small and more than 60% of space is already going
+        // to components, then quit and try a larger hull size
+        if ((d.size() < ShipDesign.LARGE) && (weaponSpace < (0.4f*totalSpace))) {
             d.perTurnDamage(0);
             return d;
         }
 
-        setOptimalWeapon(ai, d, targets);
+        setBombardmentWeapon(ai, d); // modnar: give destroyers some bombs too
+		setOptimalWeapon(ai, d, targets);
         upgradeBeamRangeSpecial(ai, d);
         upgradeShipManeuverSpecial(ai, d, targets);
 
@@ -246,6 +247,33 @@ public class ShipDestroyerTemplateC implements Base {
             targets.add(new EnemyShipTarget(emp.tech()));
 
         return targets;
+    }
+	private void setBombardmentWeapon(ShipDesigner ai, ShipDesign d) {
+        List<ShipWeapon> allWeapons = ai.lab().weapons();
+
+        int maxDmg = 0;
+        int maxDmgNum = 0;
+		// modnar: set 15% space for bombs, up to max of 300
+        float spaceForWeapons = Math.min(0.15f * d.availableSpace(), 300);
+        ShipWeapon maxDmgWeapon = null;
+        
+        // find the highest max damage bomb (groundAttacksOnly)
+        for (ShipWeapon wpn: allWeapons) {
+            if (wpn.groundAttacksOnly() && (wpn.maxDamage() > maxDmg)) {
+                int numWeapons = (int) (spaceForWeapons/wpn.space(d));
+                if (numWeapons > 0) {
+                    maxDmg = wpn.maxDamage();
+                    maxDmgNum = numWeapons;
+                    maxDmgWeapon = wpn;
+                }
+            }
+        }
+
+        // bombardment weapons go in slot 0
+        if (maxDmgWeapon != null) {
+            d.weapon(0, maxDmgWeapon);
+            d.wpnCount(0, maxDmgNum);
+        }
     }
     private void setOptimalWeapon(ShipDesigner ai, ShipDesign d, List<EnemyShipTarget> targets) {
         List<ShipWeapon> allWeapons = ai.lab().weapons();
