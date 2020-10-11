@@ -1590,14 +1590,17 @@ public final class Empire implements Base, NamedObject, Serializable {
         List<StarSystem> closestSystems = new ArrayList<>();
         int minTurns = Integer.MAX_VALUE;
         for (StarSystem stagingPoint: colonies) {
-            int turns = (int) Math.ceil(stagingPoint.travelTimeTo(target, speed));
-            if (turns < minTurns) {
-                closestSystems.clear();
-                closestSystems.add(stagingPoint);
-                minTurns = turns;
-            }
-            else if (turns == minTurns)
-                closestSystems.add(stagingPoint);
+			// modnar: don't allow colonies with enemy fleet in orbit be considered for stagingPoint
+			if (!stagingPoint.enemyShipsInOrbit(stagingPoint.empire())) {
+				int turns = (int) Math.ceil(stagingPoint.travelTimeTo(target, speed));
+				if (turns < minTurns) {
+					closestSystems.clear();
+					closestSystems.add(stagingPoint);
+					minTurns = turns;
+				}
+				else if (turns == minTurns)
+					closestSystems.add(stagingPoint);
+			}
         }
         if (closestSystems.isEmpty())
             return StarSystem.NULL_ID;
