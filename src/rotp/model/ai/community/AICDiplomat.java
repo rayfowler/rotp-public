@@ -192,7 +192,12 @@ public class AICDiplomat implements Base, Diplomat {
 
         if (v.embassy().tooManyRequests())
             return v.refuse(DialogueManager.DECLINE_ANNOYED);
-
+		
+		// modnar: add in readyForTech check, limits one tech trade per turn per empire
+		// this also prevents trading the same tech multiple times to the same empire
+		if (!v.embassy().readyForTech())
+			return v.refuse(DialogueManager.DECLINE_OFFER);
+		
         v.embassy().resetTechTimer();
 
         List<Tech> counterTechs = empire.diplomatAI().techsRequestedForCounter(diplomat, tech);
@@ -313,11 +318,11 @@ public class AICDiplomat implements Base, Diplomat {
     }
     private float techDealValue(EmpireView v) {
         if (v.embassy().alliance())
-            return 1.0f;
+            return 0.95f; // modnar: reduce acceptable tech value
         else if (v.embassy().pact())
-            return 0.9f;
+            return 0.85f; // modnar: reduce acceptable tech value
         else
-            return 0.8f;
+            return 0.75f; // modnar: reduce acceptable tech value
     }
     //-----------------------------------
     //  TRADE TREATIES
@@ -1229,7 +1234,7 @@ public class AICDiplomat implements Base, Diplomat {
             return castVoteFor(civ2);
 
         // if at war with one, vote for other
-		// modnar: add in condition to at least have contact with candidate B
+		// modnar: add in condition to at least have contact with candidate B (most useful in first vote)
 		// otherwise abstain, even if in war with candidate A
         if (cv1.embassy().anyWar() && !cv2.embassy().anyWar()) {
 			if (cv2.embassy().contact())
@@ -1244,8 +1249,20 @@ public class AICDiplomat implements Base, Diplomat {
 				return castVoteFor(null);
 		}
 		
+		// modnar: add empire power bonus for voting
+		// more likely to vote for very powerful empires (relative to the whole galaxy)
+		// only what own empire can see (through spies)
+		float allEmpirePower = 0.0f;
+		for (Empire e: galaxy().activeEmpires()) {
+			allEmpirePower += empire.militaryPowerLevel(e) + empire.industrialPowerLevel(e);
+		}
+		// powerBonus1/powerBonus2 vary from 0 to 1
+		float powerBonus1 = (empire.militaryPowerLevel(civ1) + empire.industrialPowerLevel(civ1)) / allEmpirePower;
+		float powerBonus2 = (empire.militaryPowerLevel(civ2) + empire.industrialPowerLevel(civ2)) / allEmpirePower;
+		
         // decide to vote for/against civ1
-        pct = cv1.embassy().relations() + civ1.race().councilBonus() + civ1.orionCouncilBonus() + previousVoteBonus(civ1);
+		// modnar: add proper normalization for embassy().relations() and race().councilBonus()
+        pct = cv1.embassy().relations()/100.0f + civ1.race().councilBonus()/100.0f + civ1.orionCouncilBonus() + previousVoteBonus(civ1) + powerBonus1;
         if (random() <= Math.abs(pct)) {
             if (pct > 0)
                 return conditionallyCastVoteFor(cv1);
@@ -1254,7 +1271,8 @@ public class AICDiplomat implements Base, Diplomat {
         }
 
         // decide to vote for/against civ2
-        pct = cv2.embassy().relations() + civ2.race().councilBonus() + civ2.orionCouncilBonus() + previousVoteBonus(civ2);
+		// modnar: add proper normalization for embassy().relations() and race().councilBonus()
+        pct = cv2.embassy().relations()/100.0f + civ2.race().councilBonus()/100.0f + civ2.orionCouncilBonus() + previousVoteBonus(civ2) + powerBonus2;
         if (random() <= Math.abs(pct)) {
             if (pct > 0)
                 return conditionallyCastVoteFor(cv2);
@@ -1280,6 +1298,12 @@ public class AICDiplomat implements Base, Diplomat {
             c.defyRuling(empire);
     }
     private boolean giveLoyaltyTo(Empire c) {
+		// modnar: add empire power bonus relative to own power for accepting winner
+		// only what own empire can see (through spies)
+		// more likely to accept more powerful empire, less likely to accept less powerful empire
+		// powerBonus vary from -0.25 to 0.25
+		float powerBonus = 0.5f * (empire.powerLevel(c) / (empire.powerLevel(c) + empire.powerLevel(empire)) - 0.5f);
+		
         if (empire.lastCouncilVoteEmpId() == c.id)
             return true;
 
@@ -1296,19 +1320,19 @@ public class AICDiplomat implements Base, Diplomat {
         
         if (cv1.embassy().anyWar()) {
             if (empire.leader().isXenophobic())
-                return false;
+                return random() < powerBonus; // modnar: add powerBonus
             else if (empire.leader().isAggressive())
-                return random() < 0.5f;
+                return random() < 0.50f + powerBonus; // modnar: add powerBonus
             else
-                return random() < 0.75f;
+                return random() < 0.75f + powerBonus; // modnar: add powerBonus
         }
         
         if (empire.leader().isXenophobic())
-            return random() < 0.50f;
+            return random() < 0.50f + powerBonus; // modnar: add powerBonus
         else if (empire.leader().isErratic())
-            return random() < 0.75f;
+            return random() < 0.75f + powerBonus; // modnar: add powerBonus
 
-        return random() < 0.90f;
+        return random() < 0.90f + powerBonus; // modnar: add powerBonus
     }
     // ----------------------------------------------------------
 // PRIVATE METHODS
