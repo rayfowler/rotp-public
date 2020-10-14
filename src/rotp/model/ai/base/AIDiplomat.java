@@ -1220,8 +1220,8 @@ public class AIDiplomat implements Base, Diplomat {
             return castVoteFor(civ1);
 
         // decide to vote for/against civ1
-		// modnar: add proper normalization for embassy().relations() and race().councilBonus()
-        pct = cv1.embassy().relations()/100.0f + civ1.race().councilBonus()/100.0f + civ1.orionCouncilBonus() + previousVoteBonus(civ1);
+		// modnar: add proper normalization for embassy().relations()
+        pct = cv1.embassy().relations()/100.0f + civ1.race().councilBonus() + civ1.orionCouncilBonus() + previousVoteBonus(civ1);
         if (random() <= Math.abs(pct)) {
             if (pct > 0)
                 return conditionallyCastVoteFor(cv1);
@@ -1230,8 +1230,8 @@ public class AIDiplomat implements Base, Diplomat {
         }
 
         // decide to vote for/against civ2
-		// modnar: add proper normalization for embassy().relations() and race().councilBonus()
-        pct = cv2.embassy().relations()/100.0f + civ2.race().councilBonus()/100.0f + civ2.orionCouncilBonus() + previousVoteBonus(civ2);
+		// modnar: add proper normalization for embassy().relations()
+        pct = cv2.embassy().relations()/100.0f + civ2.race().councilBonus() + civ2.orionCouncilBonus() + previousVoteBonus(civ2);
         if (random() <= Math.abs(pct)) {
             if (pct > 0)
                 return conditionallyCastVoteFor(cv2);
