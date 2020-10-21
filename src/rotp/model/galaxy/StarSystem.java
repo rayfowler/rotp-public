@@ -111,7 +111,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     }
     private void initNearbySystems() {
         TARGET_SYSTEM = this;
-        float maxDist = 2 * TechEngineWarp.MAX_SPEED;
+        float maxDist = 8; // 2 * TechEngineWarp.MAX_SPEED; // modnar: change nearby distance to be more reasonable
         Galaxy gal = galaxy();
         List<StarSystem> nearSystems = new ArrayList<>();
         for (int n=0;n<gal.numStarSystems();n++) {
