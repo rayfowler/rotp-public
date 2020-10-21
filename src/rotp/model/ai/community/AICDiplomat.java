@@ -1105,6 +1105,14 @@ public class AICDiplomat implements Base, Diplomat {
             beginErraticWar(view);
             return true;
         }
+		
+		// modnar: no war when number of enemies > 2
+		// check after incident war and erratic war, but before all else
+		if (empire.numEnemies() > 2)
+            return false;
+		// modnar: less likely war when already in some wars
+		if (empire.numEnemies()/3 > random())
+            return false;
         // automatic war of hate if relations less < -90
         // and not currently in a timed peace treaty
         if (wantToDeclareWarOfHate(view)){
@@ -1127,6 +1135,11 @@ public class AICDiplomat implements Base, Diplomat {
         // from -70 to -90
         float warThreshold = v.empire().leader().hateWarThreshold();
         
+		// modnar: change war threshold by number of our wars vs. number of their wars
+		// try not to get into too many wars, and pile on if target is in many wars
+		float enemyMod = (float) (10 * (v.empire().numEnemies() - empire.numEnemies()));
+		warThreshold += enemyMod;
+		
         // allied with an enemy? not good
         if (v.embassy().alliedWithEnemy())
             warThreshold += 30;
@@ -1150,6 +1163,13 @@ public class AICDiplomat implements Base, Diplomat {
         && (v.embassy().pact() ||v.embassy().alliance()))
             return false;
         
+		// modnar: no war when number of enemies > 2
+		if (empire.numEnemies() > 2)
+            return false;
+		// modnar: less likely war when already in some wars
+		if (empire.numEnemies()/3 > random())
+            return false;
+		
         // don't declare if we have no spy data or data is too old
         int reportAge = v.spies().reportAge();
         if ((reportAge < 0) || (reportAge > 10))
@@ -1159,30 +1179,36 @@ public class AICDiplomat implements Base, Diplomat {
         // keep their power ratios from wildly fluctuating early in the game when
         // everyone has small fleets, so that wars aren't triggered because I have 
         // 4 fighters and you have 1.
-        int basePower = 500;
+		// modnar: reduce basePower due to other changes (techMod, enemyMod)
+        int basePower = 200;
         
         // the defender's advantage is particularly high in the early game, where
        // our ships take forever to get there and the entire combat can be swayed
         // by a single large ship, so add a constant defender bonus (it'll matter
         // less as the game goes on)
-        int defendersAdvantage = 500;
+		// modnar: remove defendersAdvantage due to other changes (techMod, enemyMod)
+        int defendersAdvantage = 0;
 
         float otherPower = basePower+v.owner().militaryPowerLevel(v.empire()) + defendersAdvantage;
         float myPower = basePower+v.owner().militaryPowerLevel();
         
-        
-        float baseThreshold = v.owner().atWar() ? 20.0f : 10.0f;
+        // modnar: due to other changes (techMod, enemyMod), reduce baseThreshold
+        float baseThreshold = v.owner().atWar() ? 8.0f : 4.0f;
         float treatyMod = v.embassy().pact() || v.embassy().alliance() ? 1.5f : 1.0f;
 		
 		// modnar: factor in own empire average tech level
-		// suppress war in early game when average tech level is below 10
+		// suppress war in early game when average tech level is below 8
 		float myTechLvl = v.owner().tech().avgTechLevel(); // minimum average tech level is 1.0
 		float techMod = 1.0f;
-		if (myTechLvl < 10.0f) {
-			techMod = 10.0f / myTechLvl; // inverse change with tech level (range from 10.0 to 1.0)
+		if (myTechLvl < 8.0f) {
+			techMod = 8.0f / myTechLvl; // inverse change with tech level (range from 8.0 to 1.0)
 		}
 		
-        float warThreshold = baseThreshold * techMod * treatyMod * v.owner().leader().exploitWeakerEmpiresRatio();
+		// modnar: scale war threshold by number of our wars vs. number of their wars
+		// try not to get into too many wars, and pile on if target is in many wars
+		float enemyMod = (float) ((empire.numEnemies() + 1) / (v.empire().numEnemies() + 1));
+		
+        float warThreshold = baseThreshold * techMod * enemyMod * treatyMod * v.owner().leader().exploitWeakerEmpiresRatio();
         
         return (myPower/otherPower) > warThreshold;
     }
@@ -1531,16 +1557,21 @@ public class AICDiplomat implements Base, Diplomat {
         if (v.embassy().finalWar())
             return false;
         
+		// modnar: scale warWeary by number of our wars vs. number of their wars
+		// more weary (willing to take less losses) if we are in more wars than they are
+		// willing to take at least 15% losses
+		float enemyMod = (float) ((empire.numEnemies() + 10) / (v.empire().numEnemies() + 10));
+		
         Empire emp = v.owner();
         TreatyWar treaty = (TreatyWar) v.embassy().treaty();
-        if (treaty.colonyChange(emp) < warColonyLossLimit(v))
+        if (treaty.colonyChange(emp) < (int)Math.min(0.85, enemyMod*warColonyLossLimit(v)))
             return true;
-        if (treaty.populationChange(emp) < warPopulationLossLimit(v))
-            return true;       
-        if (treaty.productionChange(emp) < warProductionLossLimit(v))
-            return true;  
-        if (treaty.fleetSizeChange(emp) < warFleetSizeLossLimit(v))
-            return true;  
+        if (treaty.populationChange(emp) < (int)Math.min(0.85, enemyMod*warPopulationLossLimit(v)))
+            return true;
+        if (treaty.productionChange(emp) < (int)Math.min(0.85, enemyMod*warProductionLossLimit(v)))
+            return true;
+        if (treaty.fleetSizeChange(emp) < (int)Math.min(0.85, enemyMod*warFleetSizeLossLimit(v)))
+            return true;
         return false;        
     }
     private float warColonyLossLimit(EmpireView v) {

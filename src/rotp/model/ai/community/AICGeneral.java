@@ -93,18 +93,19 @@ public class AICGeneral implements Base, General {
 		// Normal,   size-220, 1540 factories:  val = 194
 		// Normal,   size-70,   140 factories:  val =  90
 		// Normal,   size-70,   210 factories:  val =  93
-		// Poor,     size-100,    0 factories:  val =  50
-		// Poor,     size-100,  200 factories:  val =  57
+		// Poor,     size-100,    0 factories:  val =  75
+		// Poor,     size-100,  200 factories:  val =  86
 		// Rich,     size-50,    50 factories:  val = 138
 		// Artifact, size-80,   240 factories:  val = 203
 		float val = (float) (4.0f*Math.pow(size, 0.7f) + Math.min(20.0f, Math.sqrt(fact)));
 
         // Higher desire value for Rich, Ultra-Rich, Artifacts
 	    // Lower desire value for Poor, Ultra-Poor
+		// modnar: increase values for poor/ultra-poor
         if (empire.sv.isUltraPoor(sysId))
-            val *= 0.25;
+            val *= 0.6;
         else if (empire.sv.isPoor(sysId))
-            val *= 0.5;
+            val *= 0.75;
         else if (empire.sv.isResourceNormal(sysId))
             val *= 1;
         else if (empire.sv.isRich(sysId))
@@ -121,7 +122,7 @@ public class AICGeneral implements Base, General {
 		// modnar: killer instinct
 		// higher value for the last few planets of an empire
 		int remainingSystems = galaxy().empire(empire.sv.empId(sysId)).numColonies();
-		if (remainingSystems <=3) {
+		if (remainingSystems <=4) {
 			val *= ((remainingSystems + 7)/(remainingSystems + 1));
 		}
 		
@@ -293,7 +294,7 @@ public class AICGeneral implements Base, General {
         float bcMultiplier = 1 + (empire.sv.hostilityLevel(sys.id));
 		
 		// modnar: include enemyFleetSize, factoring in relative tech levels
-        float bcNeeded = (baseBCPresent*4) + enemyFleetSize*(targetTech+10.0f)/(civTech+10.0f) + bcMultiplier*civProd/8;
+        float bcNeeded = (baseBCPresent*4 + 2*enemyFleetSize)*(targetTech+10.0f)/(civTech+10.0f) + bcMultiplier*civProd/20;
         
         // modnar: balance invasion fleet to use 50% destroyers, 30% fighters, and 20% bombers
         int destroyersNeeded = (int) Math.ceil(0.5f*bcNeeded/empire.shipLab().destroyerDesign().cost());
@@ -440,7 +441,7 @@ public class AICGeneral implements Base, General {
         float bcMultiplier = 1 + (empire.sv.hostilityLevel(sys.id)/2);
         
 		// modnar: test fleet sizes, include enemyFleetSize, factoring in relative tech levels
-        float bcNeeded = (baseBCPresent*4) + fleetSize*(targetTech+10.0f)/(civTech+10.0f) + bcMultiplier*civProd/12;
+        float bcNeeded = (baseBCPresent*4 + 2*fleetSize)*(targetTech+10.0f)/(civTech+10.0f) + bcMultiplier*civProd/20;
 		
 		// modnar: bombing fleet to use 40% bombers, 30% destroyers, and 30% fighters
 		int destroyersNeeded = (int) Math.ceil(0.3f*bcNeeded/empire.shipLab().destroyerDesign().cost());
@@ -470,7 +471,7 @@ public class AICGeneral implements Base, General {
         float bcMultiplier = 1 + (empire.sv.hostilityLevel(sys.id)/2);
 		
         // modnar: test fleet sizes, include enemyFleetSize, factoring in relative tech levels
-        float bcNeeded = (baseBCPresent*4) + fleetSize*(targetTech+10.0f)/(civTech+10.0f) + bcMultiplier*civProd/16;
+        float bcNeeded = (baseBCPresent*4 + 2*fleetSize)*(targetTech+10.0f)/(civTech+10.0f) + bcMultiplier*civProd/30;
 		
         // modnar: bombing fleet to use 40% bombers, 30% destroyers, and 30% fighters
 		int destroyersNeeded = (int) Math.ceil(0.3f*bcNeeded/empire.shipLab().destroyerDesign().cost());
@@ -491,6 +492,11 @@ public class AICGeneral implements Base, General {
         // pacifist/honorable never sneak attack
         if (empire.leader().isPacifist()
         || empire.leader().isHonorable())
+            return;
+		
+		// modnar: no sneak attack when number of enemies > 2
+		// same as regular war declaration check, significant factor in extra wars
+		if (empire.numEnemies() > 2)
             return;
 
         float baseChance = 0.3f - (empire.numEnemies()*0.3f);
@@ -513,6 +519,11 @@ public class AICGeneral implements Base, General {
 			techMod = myTechLvl / 20.0f + 0.5f; // linear change with tech level (range from 0.55 to 1.0)
 		}
 		baseChance *= techMod;
+		
+		// modnar: change sneak attack chance by number of our wars vs. number of their wars
+		// try not to get into too many wars, and pile on if target is in many wars
+		float enemyMod = (float) (0.2f * (v.empire().numEnemies() - empire.numEnemies()));
+		baseChance += enemyMod;
 
         float value = (empire.sv.factories(sys.id) * 10);
         float cost = fleetSize + (empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost());

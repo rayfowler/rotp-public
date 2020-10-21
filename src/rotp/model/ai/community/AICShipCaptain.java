@@ -291,9 +291,11 @@ public class AICShipCaptain implements Base, ShipCaptain {
         }
         
         // if stack is pacted with colony and doesn't want war, then retreat
+		// modnar: change condition to only "doesn't want war"
         if (combat().results().colonyStack != null) {
             EmpireView cv = currStack.empire.viewForEmpire(combat().results().colonyStack.empire);
-            if ((cv != null) && cv.embassy().pact() && !cv.embassy().wantWar())  
+			//if ((cv != null) && cv.embassy().pact() && !cv.embassy().wantWar())
+            if ((cv != null) && !cv.embassy().wantWar())  
                 return true;
         }
 
@@ -382,7 +384,7 @@ public class AICShipCaptain implements Base, ShipCaptain {
         else {
             float retreatRatio = stack.empire.leader().retreatRatio(combat().system().empire());
             log("retreat ratio: "+retreatRatio+"   enemyKillValue:"+enemyKills+"  allyKillValue:"+allyKills);
-            return (enemyKills / allyKills) > retreatRatio;
+            return ((enemyKills / allyKills) > retreatRatio/1.2f); // modnar: adjust AI to accept less losses, more likely to retreat
         }
     }
     @Override
