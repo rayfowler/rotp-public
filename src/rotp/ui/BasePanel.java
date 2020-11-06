@@ -195,13 +195,6 @@ public class BasePanel extends JPanel implements Base {
             g.drawImage(stars, w-scroll, 0, w, h, 0, 0, scroll, h, null);
         }
     }
-    public void drawNextTurnNotice(Graphics g) {
-        // sets a global flag to true so that the parent UI will draw
-        // the notice on its next paint
-        if (session().performingTurn())
-            RotPUI.drawNextTurnNotice = true;
-    }
-
     protected BufferedImage newStarBackground() {
         initializeStarBackgroundImage(this,getWidth(),getHeight());
         return starBackground;

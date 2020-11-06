@@ -37,6 +37,8 @@ import rotp.model.empires.EspionageMission;
 import rotp.model.empires.SabotageMission;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.Transport;
+import rotp.model.game.GameListener;
+import rotp.model.game.GameSession;
 import rotp.model.planet.PlanetFactory;
 import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipLibrary;
@@ -57,6 +59,7 @@ import rotp.ui.game.SetupGalaxyUI;
 import rotp.ui.game.SetupRaceUI;
 import rotp.ui.main.MainUI;
 import rotp.ui.notifications.DiplomaticNotification;
+import rotp.ui.notifications.TurnNotification;
 import rotp.ui.planets.ColonizePlanetUI;
 import rotp.ui.planets.GroundBattleUI;
 import rotp.ui.planets.PlanetsUI;
@@ -70,15 +73,17 @@ import rotp.ui.util.planets.PlanetImager;
 import rotp.util.AnimationManager;
 import rotp.util.ImageManager;
 import rotp.util.LanguageManager;
+import rotp.util.Logger;
 import rotp.util.sound.SoundManager;
 
-public class RotPUI extends BasePanel implements ActionListener, KeyListener {
+public class RotPUI extends BasePanel implements ActionListener, KeyListener, GameListener {
     private static final long serialVersionUID = 1L;
     private static int FPS = 10;
     private static int ANIMATION_TIMER = 100;
-    public static boolean drawNextTurnNotice = false;
+    private boolean drawNextTurnNotice = false;
     private static Throwable startupException;
     static {
+        Logger.registerLogListener(Logger::logToFile);
         // needed for opening ui
         try { UserPreferences.load(); }
         catch (Throwable t) { startupException = t; System.out.println("Err: UserPreferences init "+t.getMessage()); }
@@ -227,7 +232,29 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     public RotPUI() {
         timer = new Timer(ANIMATION_TIMER, this);
         init();
+        registerOnSession(session());
     }
+    // should be called ONCE on any time new game session is created/loaded
+    public final void registerOnSession(GameSession gameSession) {
+        gameSession.removeGameListener(this);
+        gameSession.addGameListener(this);
+    }
+    @Override
+    public void clearAdvice() {
+        RotPUI.this.mainUI().clearAdvice();
+    }
+    @Override
+    public void processNotifications(List<TurnNotification> notifications) {
+        for (TurnNotification tn: notifications) {
+            try {
+                drawNextTurnNotice = false;
+                tn.notifyPlayer();
+            } finally {
+                drawNextTurnNotice = true;
+            }
+        }
+    }
+
     private void resetTimer() {
         if (timer != null)
             timer.stop();
@@ -259,9 +286,8 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     @Override
     public void paint(Graphics g) {
         super.paint(g);
-        if (drawNextTurnNotice) {
+        if (drawNextTurnNotice && session().performingTurn()) {
             drawNotice(g, 28, -s100);
-            drawNextTurnNotice = false;
         }
         requestFocusInWindow();
     }
@@ -352,13 +378,15 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         session().waitUntilNextTurnCanProceed();
     }
     public void promptForShipCombat(ShipCombatManager mgr) {
-        boolean prevNotice = drawNextTurnNotice;
-        drawNextTurnNotice = false;
-        session().pauseNextTurnProcessing("Show Ship Combat Prompt");
-        mainUI().showShipCombatPrompt(mgr);
-        selectMainPanel();
-        session().waitUntilNextTurnCanProceed();
-        drawNextTurnNotice = prevNotice;
+        try {
+            drawNextTurnNotice = false;
+            session().pauseNextTurnProcessing("Show Ship Combat Prompt");
+            mainUI().showShipCombatPrompt(mgr);
+            selectMainPanel();
+            session().waitUntilNextTurnCanProceed();
+        } finally {
+            drawNextTurnNotice = true;
+        }
     }
     public void selectShipBattlePanel(ShipCombatManager mgr) {
         shipBattleUI.init(mgr);
@@ -445,15 +473,18 @@ public void promptForColonization(int sysId, ShipFleet fl, ShipDesign d) {
     public void showTransportAlert(String title, String subtitle, String text) {  }
     public void showSpyAlert(String title, String subtitle, String text) {  }
     public void showRandomEventAlert(String title, String subtitle, String text, ImageIcon splash) { }
+    @Override
     public void allocateSystems() {
-        boolean prevNotice = RotPUI.drawNextTurnNotice;
-        RotPUI.drawNextTurnNotice = false;
-        session().pauseNextTurnProcessing("Show Allocate Systems");
-        log("==MAIN UI==   allocate systems");
-        mainUI().allocateSystems(session().systemsToAllocate());
-        selectMainPanel();
-        session().waitUntilNextTurnCanProceed();
-        RotPUI.drawNextTurnNotice = prevNotice;
+        try {
+            drawNextTurnNotice = false;
+            session().pauseNextTurnProcessing("Show Allocate Systems");
+            log("==MAIN UI==   allocate systems");
+            mainUI().allocateSystems(session().systemsToAllocate());
+            selectMainPanel();
+            session().waitUntilNextTurnCanProceed();
+        } finally {
+            drawNextTurnNotice = true;
+        }
     }
     public void showSystemsScouted() {
         session().pauseNextTurnProcessing("Show Systems Scouted");

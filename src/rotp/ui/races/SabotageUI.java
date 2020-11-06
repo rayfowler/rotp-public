@@ -703,8 +703,7 @@ public final class SabotageUI extends BasePanel implements MouseListener {
                 drawBorderedString(g, msg, x0, y0, Color.black, Color.white);
             }
             drawSkipText(g, (currentState == SHOW_RESULTS));
-            if (exited)
-                drawNextTurnNotice(g);
+
             g.dispose();
         }
         private Image panelBuffer() {
