@@ -15,21 +15,30 @@
  */
 package rotp.model.incidents;
 
+import java.util.List;
 import rotp.model.empires.EmpireView;
+import rotp.model.galaxy.StarSystem;
 
 public class ParanoiaIncident extends DiplomaticIncident {
     private static final long serialVersionUID = 1L;
     final int empMe;
     final int empYou;
-    public static ParanoiaIncident create(EmpireView ev) {
+    int numOccupiedSystems = 0;
+     public static ParanoiaIncident create(EmpireView ev) {
         return new ParanoiaIncident(ev);
     }
     private ParanoiaIncident(EmpireView ev) {
         empMe = ev.owner().id;
         empYou = ev.empire().id;
-        int num = ev.empire().numColonizedSystems();
-        int all = galaxy().numColonizedSystems();  // all colonies in galaxy
-        int aliens = galaxy().numEmpires() - 1;
+        
+        List<StarSystem> yourSystems = ev.owner().systemsForCiv(ev.empire());   
+        for (StarSystem sys: yourSystems) {
+            if (sys.planet().founderId() == empMe)
+                numOccupiedSystems++;
+        }
+        
+        int numColonies = ev.owner().numColonizedSystems();
+        
         dateOccurred = galaxy().currentYear();
         duration = 1;
 
@@ -47,10 +56,14 @@ public class ParanoiaIncident extends DiplomaticIncident {
         else if (ev.owner().atWarWith(empYou))
             multiplier *= 2;
 
-        float n = -50.0f*num/all/(aliens*aliens);
-
-        severity = multiplier*n;
+        // if you have occupied as many of our systems as we still
+        // have colonizied, that's a -50 to relations. If you are
+        // not occupying any of our founded systems, then no paranoia!
+        severity = -50.0f*multiplier*numOccupiedSystems/numColonies;
         
+        // can't be worse than -100 to relations
+        severity = max(severity,-100);
+
         // no listing if too close to zero
         if (severity > -0.2)
             severity = 0;
@@ -79,6 +92,7 @@ public class ParanoiaIncident extends DiplomaticIncident {
     @Override
     public String decode(String s) {
         String s1 = super.decode(s);
+        s1 = s1.replace("[num]", ""+numOccupiedSystems);
         s1 = galaxy().empire(empMe).replaceTokens(s1, "my");
         s1 = galaxy().empire(empYou).replaceTokens(s1, "your");
         return s1;
