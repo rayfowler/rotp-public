@@ -183,9 +183,13 @@ public abstract class GalaxyShape implements Base, Serializable {
     }
     protected int addUncolonizedSystems() {
         int maxAttempts = maxStars * 10;
-        int attempts = 0;
+        
+        // we've already generated 3 stars for every empire so reduce their
+        // total from the count of remaining stars to create ("too many stars" bug)
+        int nonEmpireStars = maxStars - (empSystems.size() *3);
+         int attempts = 0;
         Point.Float pt = new Point.Float();
-        while ((num < maxStars) && (attempts++ < maxAttempts)) {
+        while ((num < nonEmpireStars) && (attempts++ < maxAttempts)) {
             findAnyValidLocation(pt);
             if (!isTooNearExistingSystem(pt.x,pt.y,false))
                 addSystem(pt);
