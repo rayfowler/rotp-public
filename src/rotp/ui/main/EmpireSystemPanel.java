@@ -178,6 +178,7 @@ public class EmpireSystemPanel extends SystemPanel {
         private final Rectangle shipDesignBox = new Rectangle();
         private final Rectangle rallyPointBox = new Rectangle();
         private final Rectangle transportBox  = new Rectangle();
+        private final Rectangle abandonBox  = new Rectangle();
         private final Rectangle shipNameBox = new Rectangle();
         private final Polygon prevDesign = new Polygon();
         private final Polygon nextDesign = new Polygon();
@@ -225,7 +226,14 @@ public class EmpireSystemPanel extends SystemPanel {
             drawShipCompletion(g, col, midMargin,h-scaled(116),w-s10-midMargin,s30);
             drawNameSelector(g, col, midMargin,h-scaled(103),w-s10-midMargin,s30);
             drawRallyPointButton(g,midMargin,h-s70,w-s10-midMargin,s25);
-            drawTransportButton(g,0,h-s35,w,s35);
+            
+            // 60:40 width ratio for "Send Transports" & "Abandon" buttons
+            int w0 = (w-s5)*12/20;
+            int w1 = (w-s5)*8/20;
+            g.setColor(MainUI.shadeBorderC());
+            g.fillRect(0, h-s35, w, s35);
+            drawTransportButton(g,0,h-s35,w0,s35);
+            drawAbandonButton(g,w0+s5,h-s35,w1,s35);
         }
         private void drawTitle(Graphics g) {
             g.setColor(MainUI.shadeBorderC());
@@ -398,8 +406,6 @@ public class EmpireSystemPanel extends SystemPanel {
                 return;
 
             transportBox.setBounds(x, y, w, h);
-            g.setColor(MainUI.shadeBorderC());
-            g.fillRect(x, y, w, h);
             g.setColor(darkShadingC);
             g.fillRect(x+s2,y+s5,w-s2,h-s5);
             g.setColor(gray190C);
@@ -412,10 +418,49 @@ public class EmpireSystemPanel extends SystemPanel {
                 g.setColor(SystemPanel.yellowText);
             else
                 g.setColor(textColor);
-            g.setFont(narrowFont(20));
             String s = text("MAIN_COLONY_TRANSPORTS_LABEL");
-            g.drawString(s, x+s10, y+s25);
+            int fontSize = scaledFont(g, s, w-s10,20, 14);
+            
+            g.setFont(narrowFont(fontSize));
+            int sw = g.getFontMetrics().stringWidth(s);
+            g.drawString(s, x+((w-sw)/2),y+s25);
             if ((hoverBox == transportBox)
+            && player().canSendTransportsFrom(sys)) {
+                Stroke prevStroke = g.getStroke();
+                g.setStroke(stroke2);
+                g.setColor(SystemPanel.yellowText);
+                g.drawRect(x+s2,y+s5,w-s2,h-s7);
+                g.setStroke(prevStroke);
+            }
+        }
+        private void drawAbandonButton(Graphics2D g, int x, int y, int w, int h) {
+            StarSystem sys = parentSpritePanel.systemViewToDisplay();
+            if (sys == null)
+                return;
+
+            abandonBox.setBounds(x, y, w, h);
+            g.setColor(MainUI.shadeBorderC());
+            g.fillRect(x, y, w, h);
+            g.setColor(darkShadingC);
+            g.fillRect(x+s2,y+s5,w-s2,h-s5);
+            g.setColor(gray190C);
+            g.fillRect(x+s2,y+s5, w-s3, h-s7);
+            g.setColor(buttonC);
+            g.fillRect(x+s3,y+s6, w-s5, h-s9);
+            if (!player().canSendTransportsFrom(sys))
+                g.setColor(gray70C);
+            else if (hoverBox == abandonBox)
+                g.setColor(SystemPanel.yellowText);
+            else
+                g.setColor(textColor);
+
+            String s = text("MAIN_COLONY_ABANDON_LABEL");
+            int fontSize = scaledFont(g, s, w-s10,20, 14);
+            
+            g.setFont(narrowFont(fontSize));
+            int sw = g.getFontMetrics().stringWidth(s);
+            g.drawString(s, x+((w-sw)/2),y+s25);
+            if ((hoverBox == abandonBox)
             && player().canSendTransportsFrom(sys)) {
                 Stroke prevStroke = g.getStroke();
                 g.setStroke(stroke2);
@@ -491,8 +536,20 @@ public class EmpireSystemPanel extends SystemPanel {
             else if (transportBox.contains(x,y)){
                 if (transportEnabled()) {
                     StarSystem sys =  parentSpritePanel.systemViewToDisplay();
-                    if (sys != null)
+                    if (sys != null) {
+                        TransportDeploymentPanel.enableAbandon = false; 
                         parentSpritePanel.parent.clickedSprite(sys.transportSprite());
+                    }
+                    parentSpritePanel.repaint();
+                }
+            }
+            else if (abandonBox.contains(x,y)){
+                if (transportEnabled()) {
+                    StarSystem sys =  parentSpritePanel.systemViewToDisplay();
+                    if (sys != null)  {
+                        TransportDeploymentPanel.enableAbandon = true; 
+                        parentSpritePanel.parent.clickedSprite(sys.transportSprite());
+                    }
                     parentSpritePanel.repaint();
                 }
             }
@@ -519,6 +576,8 @@ public class EmpireSystemPanel extends SystemPanel {
                 hoverBox = rallyPointBox;
             else if (transportBox.contains(x,y))
                 hoverBox = transportBox;
+            else if (abandonBox.contains(x,y))
+                hoverBox = abandonBox;
 
             if (prevHover != hoverBox)
                 repaint();

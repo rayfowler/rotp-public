@@ -402,6 +402,13 @@ public final class Empire implements Base, NamedObject, Serializable {
     public boolean canSendTransportsFrom(StarSystem sys) {
         return (sys != null) && (sv.empire(sys.id) == this) && (sv.maxTransportsToSend(sys.id) > 0)  && (allColonizedSystems().size() > 1) && !sys.colony().inRebellion() && !sys.colony().quarantined();
     }
+    public boolean canAbandonTo(StarSystem sys) {
+        if (sys == null)
+            return false;
+        if (sys.empire() == this)
+            return true;
+        return false;
+    }
     public boolean canSendTransportsTo(StarSystem sys) {
         if (sys == null)
             return false;

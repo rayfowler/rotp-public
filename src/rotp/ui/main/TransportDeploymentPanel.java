@@ -44,6 +44,7 @@ import rotp.ui.sprites.SystemTransportSprite;
 
 public class TransportDeploymentPanel extends SystemPanel {
     private static final long serialVersionUID = 1L;
+    public static boolean enableAbandon = false;
     protected BasePanel topPane;
     protected BasePanel detailPane;
     protected BasePanel bottomPane;
@@ -110,7 +111,11 @@ public class TransportDeploymentPanel extends SystemPanel {
         SystemTransportSprite sprite = (SystemTransportSprite) parentSpritePanel.spriteToDisplay();
         if (o instanceof StarSystem) {
             StarSystem sys = (StarSystem) o;
-            if (player().canSendTransportsTo(sys))
+            if (enableAbandon) {
+                if (player().canAbandonTo(sys))
+                    sprite.clickedDest((StarSystem) o);
+            }
+            else if (player().canSendTransportsTo(sys))
                 sprite.clickedDest((StarSystem) o);
             else {
                 sprite.clickedDest(null);
@@ -331,7 +336,7 @@ public class TransportDeploymentPanel extends SystemPanel {
             g.fillRect(0, s8, w, s72);
 
             int leftM = s5;
-            String title = text("MAIN_TRANSPORT_TITLE");
+            String title = enableAbandon ? text("MAIN_TRANSPORT_ABANDON_TITLE") : text("MAIN_TRANSPORT_TITLE");
             g.setFont(narrowFont(24));
             drawShadowedString(g, title, 3, leftM, s30, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
 
@@ -349,7 +354,7 @@ public class TransportDeploymentPanel extends SystemPanel {
             // draw main prompt, can be more than 2 lines - shrink font if necessary
             String prompt;
             if (!pl.canSendTransportsTo(dest))
-                prompt = text("MAIN_TRANSPORT_PROMPT");
+                prompt = enableAbandon ? text("MAIN_TRANSPORT_ABANDON_PROMPT") : text("MAIN_TRANSPORT_PROMPT");
             else if (transportSprite().amt() > maxAllowed) {
                 if (maxAllowed == 0)
                     prompt = text("MAIN_TRANSPORT_NO_ROOM");
@@ -385,73 +390,77 @@ public class TransportDeploymentPanel extends SystemPanel {
 
             textureClip = new Rectangle2D.Float(0,s8,w,scaled(108));
             int maxDestSize = pl.sv.maxTransportsToReceive(dest.id);
-            maxSendingSize = pl.sv.maxTransportsToSend(from.id);
+            maxSendingSize = enableAbandon? pl.sv.population(from.id): pl.sv.maxTransportsToSend(from.id);
             int turns = (int) Math.ceil(from.transportTimeTo(dest));
 
             g.setColor(MainUI.paneBackground());
             g.fillRect(0, s79, w, s37);
 
             g.setColor(SystemPanel.blackText);
-            String popLabel = text("MAIN_TRANSPORT_POP_LABEL");
+            String popLabel = enableAbandon ? text("MAIN_TRANSPORT_TOTAL_POP_LABEL", maxSendingSize): text("MAIN_TRANSPORT_POP_LABEL");
             int sw2 = g.getFontMetrics().stringWidth(popLabel);
             y0 += s21;
             g.setFont(narrowFont(16));
             g.drawString(popLabel, leftM, y0);
 
             // draw slider
-            float pct = (float) transportSprite().amt() / maxSendingSize;
-            int button1X = s15+sw2;
-            int button2X = w - s45;
-            int buttonW = s10;
-            int buttonH = s18;
-            int buttonY = y0 - buttonH+s5;
-            int buttonMidY = buttonY+(buttonH/2);
+            if (enableAbandon) 
+                transportSprite().amt(maxSendingSize);
+            else {
+                float pct = (float) transportSprite().amt() / maxSendingSize;
+                int button1X = s15+sw2;
+                int button2X = w - s45;
+                int buttonW = s10;
+                int buttonH = s18;
+                int buttonY = y0 - buttonH+s5;
+                int buttonMidY = buttonY+(buttonH/2);
 
-            leftButtonX[0] = button1X; leftButtonX[1] = button1X+buttonW; leftButtonX[2] = button1X+buttonW;
-            leftButtonY[0] = buttonMidY; leftButtonY[1] = buttonY; leftButtonY[2] = buttonY+buttonH;
-            leftArrow.reset();
-            for (int i=0;i<leftButtonX.length;i++)
-                leftArrow.addPoint(leftButtonX[i], leftButtonY[i]);
+                leftButtonX[0] = button1X; leftButtonX[1] = button1X+buttonW; leftButtonX[2] = button1X+buttonW;
+                leftButtonY[0] = buttonMidY; leftButtonY[1] = buttonY; leftButtonY[2] = buttonY+buttonH;
+                leftArrow.reset();
+                for (int i=0;i<leftButtonX.length;i++)
+                    leftArrow.addPoint(leftButtonX[i], leftButtonY[i]);
 
-            rightButtonX[0] = button2X; rightButtonX[1] = button2X-buttonW; rightButtonX[2] = button2X-buttonW;
-            rightButtonY[0] = buttonMidY; rightButtonY[1] = buttonY; rightButtonY[2] = buttonY+buttonH;
-            rightArrow.reset();
-            for (int i=0;i<leftButtonX.length;i++)
-                rightArrow.addPoint(rightButtonX[i], rightButtonY[i]);
+                rightButtonX[0] = button2X; rightButtonX[1] = button2X-buttonW; rightButtonX[2] = button2X-buttonW;
+                rightButtonY[0] = buttonMidY; rightButtonY[1] = buttonY; rightButtonY[2] = buttonY+buttonH;
+                rightArrow.reset();
+                for (int i=0;i<leftButtonX.length;i++)
+                    rightArrow.addPoint(rightButtonX[i], rightButtonY[i]);
 
-            Color c0 = hoverBox == leftArrow ? SystemPanel.yellowText : sliderBackEnabled;
-            g.setColor(c0);
-            g.fillPolygon(leftButtonX, leftButtonY, 3);
+                Color c0 = hoverBox == leftArrow ? SystemPanel.yellowText : sliderBackEnabled;
+                g.setColor(c0);
+                g.fillPolygon(leftButtonX, leftButtonY, 3);
 
-            Color c1 = hoverBox == rightArrow ? SystemPanel.yellowText : sliderBackEnabled;
-            g.setColor(c1);
-            g.fillPolygon(rightButtonX, rightButtonY, 3);
+                Color c1 = hoverBox == rightArrow ? SystemPanel.yellowText : sliderBackEnabled;
+                g.setColor(c1);
+                g.fillPolygon(rightButtonX, rightButtonY, 3);
 
-            int boxL = button1X+buttonW+s3;
-            int boxW = (button2X-buttonW-s3) - boxL;
-            int boxTopY = buttonY;
-            int boxBottomY = buttonY+buttonH;
-            int boxH = boxBottomY - boxTopY;
-            int boxBorderW = s3;
+                int boxL = button1X+buttonW+s3;
+                int boxW = (button2X-buttonW-s3) - boxL;
+                int boxTopY = buttonY;
+                int boxBottomY = buttonY+buttonH;
+                int boxH = boxBottomY - boxTopY;
+                int boxBorderW = s3;
 
-            sliderBox.setBounds(boxL+boxBorderW, boxTopY+boxBorderW, boxW-(2*boxBorderW), boxH-(2*boxBorderW));
+                sliderBox.setBounds(boxL+boxBorderW, boxTopY+boxBorderW, boxW-(2*boxBorderW), boxH-(2*boxBorderW));
 
-            g.setColor(sliderBackEnabled);
-            g.fillRect(boxL, boxTopY, boxW, boxH);
-            g.setColor(sliderBoxEnabled);
-            g.fillRect(boxL, boxTopY+s2, (int) (pct*boxW), boxH-s3);
+                g.setColor(sliderBackEnabled);
+                g.fillRect(boxL, boxTopY, boxW, boxH);
+                g.setColor(sliderBoxEnabled);
+                g.fillRect(boxL, boxTopY+s2, (int) (pct*boxW), boxH-s3);
 
-            if (hoverBox == sliderBox) {
-                g.setColor(SystemPanel.yellowText);
-                Stroke prev = g.getStroke();
-                g.setStroke(stroke2);
-                g.drawRect(boxL+boxBorderW-s2, boxTopY+boxBorderW-s2, boxW-(2*boxBorderW)+s4, boxH-(2*boxBorderW)+s4);
-                g.setStroke(prev);
+                if (hoverBox == sliderBox) {
+                    g.setColor(SystemPanel.yellowText);
+                    Stroke prev = g.getStroke();
+                    g.setStroke(stroke2);
+                    g.drawRect(boxL+boxBorderW-s2, boxTopY+boxBorderW-s2, boxW-(2*boxBorderW)+s4, boxH-(2*boxBorderW)+s4);
+                    g.setStroke(prev);
+                }
+                // draw amt
+                g.setColor(SystemPanel.blackText);
+                g.setFont(narrowFont(18));
+                g.drawString(str(transportSprite().amt()), button2X+buttonW+s5, y0);
             }
-            // draw amt
-            g.setColor(SystemPanel.blackText);
-            g.setFont(narrowFont(18));
-            g.drawString(str(transportSprite().amt()), button2X+buttonW+s5, y0);
 
             // draw ETA line under slider
             String destName = pl.sv.name(dest.id);
@@ -559,11 +568,12 @@ public class TransportDeploymentPanel extends SystemPanel {
             StarSystem sys = destination();
 
             // no destination selected
+            String abandonError = text("MAIN_TRANSPORT_ABANDON_ERROR", player().raceName());
             if (sys == null) {
                 String name = text("MAIN_TRANSPORT_NO_SELECTION");
                 drawShadowedString(g, name, 2, leftM, s22, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
                 g.setFont(narrowFont(18));
-                String prompt = text("MAIN_TRANSPORT_ERROR");
+                String prompt = enableAbandon ? abandonError : text("MAIN_TRANSPORT_ERROR");
                 g.setColor(SystemPanel.redText);
                 List<String> lines = wrappedLines(g, prompt, getWidth()-leftM-s20);
                 for (String line: lines) {
@@ -579,7 +589,7 @@ public class TransportDeploymentPanel extends SystemPanel {
                 String name = pl.sv.descriptiveName(id);
                 drawShadowedString(g, name, 2, leftM, s22, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
                 g.setFont(narrowFont(18));
-                String prompt = text("MAIN_TRANSPORT_ERROR");
+                String prompt = enableAbandon ? abandonError : text("MAIN_TRANSPORT_ERROR");
                 g.setColor(SystemPanel.redText);
                 List<String> lines = wrappedLines(g, prompt, getWidth()-leftM-s20);
                 for (String line: lines) {
@@ -604,6 +614,8 @@ public class TransportDeploymentPanel extends SystemPanel {
             else if (!player().canColonize(sys.planet()))
                 error = text("MAIN_TRANSPORT_HOSTILE");
             if (error != null) {
+                if (enableAbandon)
+                    error = abandonError ;
                 g.setFont(narrowFont(18));
                 g.setColor(SystemPanel.redText);
                 List<String> lines = wrappedLines(g, error, getWidth()-leftM-s20);
@@ -732,7 +744,10 @@ public class TransportDeploymentPanel extends SystemPanel {
             else if (system() == destination())
                 drawFullCancelButton(g);
             else if (transportSprite().canAccept()) {
-                drawLargeSendButton(g);
+                if (enableAbandon)
+                    drawLargeAbandonButton(g);
+                else
+                    drawLargeSendButton(g);
                 drawSmallCancelButton(g);
             }
             else if (transportSprite().canClear()) {
@@ -746,6 +761,9 @@ public class TransportDeploymentPanel extends SystemPanel {
             cancelBox.setBounds(0,0,0,0);
             sendBox.setBounds(0,0,0,0);
             clearBox.setBounds(0,0,0,0);
+        }
+        private void drawLargeAbandonButton(Graphics2D g) {
+            drawButton(g,largeRedBackC,text("MAIN_TRANSPORT_ABANDON"), sendBox, leftM, midM1);
         }
         private void drawLargeSendButton(Graphics2D g) {
             drawButton(g,largeGreenBackC,text("MAIN_TRANSPORT_SEND"), sendBox, leftM, midM1);

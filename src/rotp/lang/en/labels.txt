@@ -146,6 +146,7 @@ SYSEVENT_HOMEWORLD                | Homeworld for the %1.
 SYSEVENT_SCOUTED                  | First scouted by the %1.
 SYSEVENT_COLONIZED                | Colonized by the %1.
 SYSEVENT_CAPTURED                 | Captured by %1 forces.
+SYSEVENT_ABANDONED                | Abandoned by the %1.
 SYSEVENT_DESTROYED                | Destroyed by orbiting %1 forces.
 SYSEVENT_DESTROYED_MONSTER        | Destroyed by the %1.
 SYSEVENT_DESTROYED_UNKNOWN        | Destroyed.
@@ -429,12 +430,16 @@ MAIN_TRANSPORTS_COUNT             | %1 Transports
 MAIN_TRANSPORTS_CANCEL            | Cancel
 MAIN_TRANSPORTS_SHOW_DEST         | ETA to %1: %2 years
 MAIN_TRANSPORT_TITLE              | Sending Transports
+MAIN_TRANSPORT_ABANDON_TITLE      | Abandoning System
 MAIN_TRANSPORT_PROMPT             | Select a colonized system to send civilian or military transport ships to.
+MAIN_TRANSPORT_ABANDON_PROMPT     | Select a colonized system to evacuate all civilian transport ships to.
 MAIN_TRANSPORT_SELECT_POP         | Select civilian population to send (up to half of %1's population).
 MAIN_TRANSPORT_SELECT_TROOPS      | Select number of military units to send (up to half of %1's population).
 MAIN_TRANSPORT_POP_LABEL          | Population
+MAIN_TRANSPORT_TOTAL_POP_LABEL    | Total Population: %1
 MAIN_TRANSPORT_ETA                | Travel Time to %1: %2 Years
 MAIN_TRANSPORT_ERROR              | You must select a colonized system.
+MAIN_TRANSPORT_ABANDON_ERROR      | You must select a %1 system.
 MAIN_TRANSPORT_OUT_OF_RANGE       | This system is out of range of our military transports.
 MAIN_TRANSPORT_UNSCOUTED          | We cannot send transports to unscouted systems.
 MAIN_TRANSPORT_HOSTILE            | We do not have the technology to land in this environment.
@@ -443,6 +448,7 @@ MAIN_TRANSPORT_SIZE_WARNING       | Warning - Target planet can only support %1 
 MAIN_TRANSPORT_NO_SELECTION       | No Selection
 MAIN_TRANSPORT_CANCEL             | Cancel
 MAIN_TRANSPORT_SEND               | Send Transports
+MAIN_TRANSPORT_ABANDON            | Abandon
 MAIN_TRANSPORT_CLEAR              | Clear Transports
 
 // Colony labels
@@ -484,6 +490,7 @@ MAIN_COLONY_SHIPYARD_COMPLETED    | Completed: %1
 MAIN_COLONY_SHIPYARD_CONSTRUCTION | Ship Build Queue
 MAIN_COLONY_RELOCATE_LABEL        | Set Rally Point
 MAIN_COLONY_TRANSPORTS_LABEL      | Send Transports
+MAIN_COLONY_ABANDON_LABEL         | Abandon
 MAIN_COLONY_SHIP_SCRAPPED         | Scrapped
 MAIN_COLONY_NO_SHIELD             | Nebula
 

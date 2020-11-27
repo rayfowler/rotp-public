@@ -162,7 +162,7 @@ public class Transport implements Base, Ship, Sprite, Serializable {
         }
 
         // one last sanity check on size
-        size = min(size, from.colony().maxTransportsAllowed());
+        size = min(size, (int) Math.ceil(from.colony().population()));
         originalSize = size;
         launchTime = gal.currentTime();
         targetEmp = dest.empire();

@@ -24,7 +24,6 @@ import javax.swing.border.Border;
 import rotp.model.Sprite;
 import rotp.model.empires.Empire;
 import rotp.model.empires.SystemView;
-import rotp.model.galaxy.Galaxy;
 import rotp.model.galaxy.IMappedObject;
 import rotp.model.galaxy.Location;
 import rotp.model.galaxy.StarSystem;
