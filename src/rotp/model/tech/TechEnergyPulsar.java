@@ -28,8 +28,7 @@ public final class TechEnergyPulsar extends Tech {
     private static final int FRAME_MS = 20;
     public int type;
     public int firstShipDamage;
-    public int extraShipDamage;
-	public int shipsPerExtraDamage; // modnar: correct Pulsar damage
+    public float extraShipDamage;
     public int range = 1;
     private transient BufferedImage[] frames;
 
@@ -57,16 +56,14 @@ public final class TechEnergyPulsar extends Tech {
                 size = 150;
                 power = 250;
                 firstShipDamage = 5;
-                extraShipDamage = 1;
-				shipsPerExtraDamage = 2; // modnar: correct Pulsar damage
+                extraShipDamage = 0.5f;
                 break;
             case 1:
                 cost = 150;
                 size = 400;
                 power = 750;
                 firstShipDamage = 10;
-                extraShipDamage = 1;
-				shipsPerExtraDamage = 1; // modnar: correct Pulsar damage
+                extraShipDamage = 1.0f;
                 break;
         }
     }

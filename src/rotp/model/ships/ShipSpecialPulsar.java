@@ -34,14 +34,13 @@ public final class ShipSpecialPulsar extends ShipSpecial {
     public int range()             { return tech().range; }
     @Override
     public float estimatedKills(CombatStack source, CombatStack target, int num) {
-        float maxDam = tech().firstShipDamage + (tech().extraShipDamage * (num-1));
+        float maxDam = tech().firstShipDamage + (int)((tech().extraShipDamage * (num-1)));
         float dam = maxDam/2;
         return target.num * Math.min(1,(dam/target.maxHits));
     }
     @Override
     public void fireUpon(CombatStack source, CombatStack target, int count) {
-		 // modnar: correct Pulsar damage with shipsPerExtraDamage
-        float maxDam = tech().firstShipDamage + (tech().extraShipDamage * (source.num-1) / tech().shipsPerExtraDamage);
+        float maxDam = tech().firstShipDamage + (int)((tech().extraShipDamage * (source.num-1)));
         float dam = roll(1,(int)maxDam);
 
         tech().drawSpecialAttack(source, target, count, dam);
