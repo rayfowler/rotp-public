@@ -42,8 +42,7 @@ public final class ShipSpecialBlackHole extends ShipSpecial {
         pct -= (target.shieldLevel() / 50);
         // - effect of inertial specials
         pct -= target.blackHoleDef();
-		// modnar: bug fix for negative pct, force pct to be at least 0.0
-		pct = (float)Math.max(0.0f, pct);
+        pct = max(0,pct);
         return target.num * pct;
     }
     @Override

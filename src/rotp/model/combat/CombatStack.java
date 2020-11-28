@@ -468,8 +468,7 @@ public class CombatStack implements Base {
             return;
         attacked = true;
         float pctLoss = pct - (shieldLevel() /50) - blackHoleDef();
-		// modnar: bug fix for negative pctLoss, force pctLoss to be at least 0.0
-		pctLoss = (float)Math.max(0.0f, pctLoss);
+        pctLoss = max(0,pctLoss);
         num = (int) (num * (1-pctLoss));
         if (destroyed() && (mgr != null))
             mgr.destroyStack(this);
