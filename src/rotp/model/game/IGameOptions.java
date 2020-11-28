@@ -98,8 +98,8 @@ public interface IGameOptions {
     public void randomizeColors();
     public GalaxyShape galaxyShape();
 	
-	// modnar: new map option, setMapOption
-	public int setMapOption();
+    // modnar: new map option, setMapOption
+    public int setMapOption();
 	
     public int numColors();
     public Color color(int i);
@@ -170,8 +170,8 @@ public interface IGameOptions {
         return index < 0 ? opts.get(opts.size()-1) : opts.get(index);
     }
 	
-	// modnar: new map option, next/prev selections
-	default String nextMapOption() {
+    // modnar: new map option, next/prev selections
+    default String nextMapOption() {
         List<String> opts = MapOptionOptions();
         int index = opts.indexOf(selectedMapOption())+1;
         return index >= opts.size() ? opts.get(0) : opts.get(index);

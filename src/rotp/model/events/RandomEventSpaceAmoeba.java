@@ -20,6 +20,7 @@ import rotp.model.colony.Colony;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.SpaceAmoeba;
 import rotp.model.galaxy.StarSystem;
+import rotp.model.game.IGameOptions;
 import rotp.ui.notifications.GNNNotification;
 import rotp.util.Base;
 
@@ -42,7 +43,19 @@ public class RandomEventSpaceAmoeba implements Base, Serializable, RandomEvent {
     @Override
     public boolean repeatable()    		{ return false; }
     @Override
-    public int minimumTurn()                    { return RandomEvents.START_TURN + 50; }
+    public int minimumTurn()                    { 
+        // space monsters can be a challenge... delay their entry in the easier game settings
+        switch (options().selectedGameDifficulty()) {
+            case IGameOptions.DIFFICULTY_EASIEST:
+                return RandomEvents.START_TURN + 200;
+            case IGameOptions.DIFFICULTY_EASIER:
+                return RandomEvents.START_TURN + 150;
+            case IGameOptions.DIFFICULTY_EASY:
+                return RandomEvents.START_TURN + 100;
+            default:
+                return RandomEvents.START_TURN + 50;
+        }
+    }
     @Override
     public String notificationText()    {
         String s1 = text("EVENT_SPACE_AMOEBA");
