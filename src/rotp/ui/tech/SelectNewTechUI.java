@@ -29,7 +29,6 @@ import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -40,7 +39,6 @@ import rotp.ui.main.SystemPanel;
 
 public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMotionListener, MouseWheelListener, ActionListener {
     private static final long serialVersionUID = 1L;
-    private static final Color brown = new Color(110,79,56);
     private static final Color darkBrown = new Color(112,85,68);
     private static final Color darkBrownShade = new Color(112,85,68,128);
     static Color grayShade = new Color(123,123,123,160);
@@ -59,6 +57,8 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
     Rectangle hoverBox;
     Rectangle selectTechBox = new Rectangle();
     private LinearGradientPaint greenBackC;
+
+    int techsY, techsYMax;
 
     int techIndex = 0;
     int talkTimeMs = 5000;
@@ -166,8 +166,10 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
         techListBox.setBounds(boxLeftX+s20, y0+s20, boxWidth-s40, boxBottomY-y0-s40);
         g.fill(techListBox);
         g.setClip(techListBox);
-        int y1 = y0 + s25;
+        int y1 = y0 + s25 - techsY;
         int x1 = x0 + s10;
+        int listH = techListBox.height;
+        int fullListH = s5;
         int techWidth = boxWidth-s45;
 
         g.setFont(narrowFont(20));
@@ -191,7 +193,7 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
             int th = techHeight+((lines.size())*s15);
             g.fillRoundRect(x1-s5, y1, techWidth-s5, th, s10, s10);
             techBoxes.put(id, new Rectangle(x1, y1, techWidth, th));
-            g.setColor(Color.white);
+            g.setColor(dimWhite);
             g.setFont(narrowFont(16));
             g.drawString(text(t.name()),x1+5, y1+s15);
 
@@ -207,8 +209,10 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
             }
             y1 += th;
             y1 += s5;
+            fullListH = fullListH + th + s5;
         }
         g.setClip(null);
+        techsYMax = max(0, fullListH-listH);
         return screenImg;
     }
     private void scrollList(int i) {
@@ -259,53 +263,7 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
         log("Tech: ", t.name(), " selected for research");
         session().resumeNextTurnProcessing();
     }
-    @Override
-    public void mouseClicked(MouseEvent e) { }
-    @Override
-    public void mouseEntered(MouseEvent e) { }
-    @Override
-    public void mouseExited(MouseEvent e) { }
-    @Override
-    public void mousePressed(MouseEvent e) { }
-    @Override
-    public void mouseReleased(MouseEvent e) {
-        if (e.getButton() > 3)
-            return;
-        int x = e.getX();
-        int y = e.getY();
-        boolean repaint = false;
-        int clickCount = e.getClickCount();
-
-        if (selectTechBox.contains(x,y)) {
-            selectTech(hoverTech);
-            return;
-        }
-        String selectedTech = selectedTech(x,y);
-
-        if (selectedTech != null) {
-            softClick();
-            if (clickCount >= 1) {
-                if (!selectedTech.equals(hoverTech)) {
-                    hoverTech = selectedTech;
-                    repaint = true;
-                }
-            }
-            if (clickCount == 2) {
-                selectTech(hoverTech);
-                return;
-            }
-        }
-
-        if (repaint)
-            repaint();
-    }
-    @Override
-    public void mouseDragged(MouseEvent arg0) {}
-    @Override
-    public void mouseMoved(MouseEvent e) {
-        int x = e.getX();
-        int y = e.getY();
-
+    private void mouseAt(int x, int y) {
         Rectangle prevHover = hoverBox;
         hoverBox = null;
         hoverTech = "";
@@ -321,25 +279,65 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
         }
 
         if (hoverBox != prevHover)
-            repaint();
+            repaint();        
+    }
+    @Override
+    public void mouseClicked(MouseEvent e) { }
+    @Override
+    public void mouseEntered(MouseEvent e) { }
+    @Override
+    public void mouseExited(MouseEvent e) { }
+    @Override
+    public void mousePressed(MouseEvent e) { }
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        if (e.getButton() > 3)
+            return;
+
+        if (hoverTech != null) {
+            softClick();
+            selectTech(hoverTech);
+            return;
+        }
+    }
+    @Override
+    public void mouseDragged(MouseEvent arg0) {}
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
+
+        mouseAt(x,y);
     }
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
         int count = e.getUnitsToScroll();
-        if (count > 0)
-            scrollList(1);
-        else
-            scrollList(-1);
+        int x = e.getX();
+        int y = e.getY();
+        int prevY = techsY;
+        if (count < 0)
+            techsY = max(0,techsY-s10);
+        else 
+            techsY = min(techsYMax,techsY+s10);
+        if (techsY != prevY) {
+            repaint(techListBox);
+            mouseAt(x,y);
+        }
     }
     @Override
     public void keyPressed(KeyEvent e) {
         int k = e.getKeyCode();
+        int prevY = techsY;
         switch(k){
             case KeyEvent.VK_UP: scrollList(-1); return;
             case KeyEvent.VK_DOWN: scrollList(1); return;
+            case KeyEvent.VK_PAGE_UP: techsY = techsY = max(0,techsY-s100);; break;
+            case KeyEvent.VK_PAGE_DOWN: techsY = min(techsYMax,techsY+s100); break;
             case KeyEvent.VK_S:
             case KeyEvent.VK_ENTER:
                 selectTech(hoverTech); return;
         }
+        if (techsY != prevY) 
+            repaint(techListBox);
     }
 }
