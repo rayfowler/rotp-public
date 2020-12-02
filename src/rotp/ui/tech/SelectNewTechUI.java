@@ -21,7 +21,6 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.LinearGradientPaint;
 import java.awt.Rectangle;
-import java.awt.Stroke;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -29,8 +28,8 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
-import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -41,6 +40,9 @@ import rotp.ui.main.SystemPanel;
 
 public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMotionListener, MouseWheelListener, ActionListener {
     private static final long serialVersionUID = 1L;
+    private static final Color brown = new Color(110,79,56);
+    private static final Color darkBrown = new Color(112,85,68);
+    private static final Color darkBrownShade = new Color(112,85,68,128);
     static Color grayShade = new Color(123,123,123,160);
     static Color dimWhite = new Color(225,225,255);
     static Color gray2 = new Color(123,123,123);
@@ -51,6 +53,7 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
     private String hoverTech;
 
     HashMap<String, Rectangle> techBoxes = new HashMap<>();
+    Rectangle techListBox = new Rectangle();
     List<String> availableTechs;
 
     Rectangle hoverBox;
@@ -104,9 +107,9 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
         techBoxes.clear();
 
         int bdr = s10;
-        int techHeight = s20;
+        int techHeight = s25;
         int titleLineH = s26;
-        int techListSize = max(MIN_LIST_SIZE, min(availableTechs.size(), MAX_LIST_SIZE));
+        String addlDesc = text("TECH_TOP_TIER_DETAIL");
         String title = text(category.researchKey());
 
         BufferedImage backImg = player().race().laboratory();
@@ -140,13 +143,13 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
 
         // calculate vertical size of text box
         int boxTopY = scaled(200);
-        int boxBottomY = boxTopY+s20+titleH+s20+(techHeight*techListSize)+s20+s70;
+        int boxBottomY = boxTopY+s20+titleH+s20+scaled(300);
         int boxHeight = boxBottomY - boxTopY;
 
         // draw main box with shaded borders
-        g.setColor(grayShade);
+        g.setColor(darkBrownShade);
         g.fillRect(boxLeftX-bdr, boxTopY-bdr, boxWidth+bdr+bdr, boxHeight+bdr+bdr);
-        g.setColor(gray2);
+        g.setColor(darkBrown);
         g.fillRect(boxLeftX, boxTopY, boxWidth, boxHeight);
 
         // draw title for main box
@@ -159,12 +162,13 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
         }
 
         // draw dark background for list of techs
-        g.setColor(grayDark);
-        g.fillRect(boxLeftX+s20, y0+s20, boxWidth-s40, (techHeight*techListSize)+s10);
-
+        g.setColor(AllocateTechUI.tierBackC);
+        techListBox.setBounds(boxLeftX+s20, y0+s20, boxWidth-s40, boxBottomY-y0-s40);
+        g.fill(techListBox);
+        g.setClip(techListBox);
         int y1 = y0 + s25;
         int x1 = x0 + s10;
-        int techWidth = boxWidth-s50;
+        int techWidth = boxWidth-s45;
 
         g.setFont(narrowFont(20));
 
@@ -173,74 +177,38 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
         for (int i=0;i<techDisplaySize;i++) {
             String id = availableTechs.get(i+techIndex);
             Tech t = tech(id);
-            if (id.equals(hoverTech)) {
-                g.setColor(grayLight);
-                g.fillRect(x1-s5, y1, techWidth-s5, techHeight);
-            }
-            techBoxes.put(id, new Rectangle(x1, y1, techWidth, techHeight));
-            g.setColor(Color.black);
-            g.setFont(narrowFont(17));
-            g.drawString(text(t.name()),x1+5, y1+techHeight-s4);
+            boolean topTier = t.quintile() == category.maxResearchableQuintile();
+            String detail = t.detail();
+            if (topTier)
+                detail = detail + " "+addlDesc;
+            g.setFont(narrowFont(14));
+            List<String> lines = wrappedLines(g, detail, techWidth-s20);
+             if (id.equals(hoverTech)) 
+                g.setColor(AllocateTechUI.currentTechC);
+            else
+                g.setColor(darkBrown);
+            
+            int th = techHeight+((lines.size())*s15);
+            g.fillRoundRect(x1-s5, y1, techWidth-s5, th, s10, s10);
+            techBoxes.put(id, new Rectangle(x1, y1, techWidth, th));
+            g.setColor(Color.white);
+            g.setFont(narrowFont(16));
+            g.drawString(text(t.name()),x1+5, y1+s15);
 
             String cost = text("TECH_CHOOSE_RESEARCH_COST", (int)(t.researchCost()));
             int sw1 = g.getFontMetrics().stringWidth(cost);
-            g.drawString(cost, boxRightX-s35-sw1, y1+techHeight-s4);
-            y1 += techHeight;
+            g.drawString(cost, boxRightX-s35-sw1, y1+s15);
+            int y2 = y1 + s17;
+            g.setColor(Color.black);
+            g.setFont(narrowFont(14));
+            for (String line: lines) {
+                y2 += s15;
+                g.drawString(line, x1+s5, y2);
+            }
+            y1 += th;
+            y1 += s5;
         }
-
-        // draw highlighted tech detail
-        g.setFont(narrowFont(16));
-        String detail = tech(hoverTech).detail();
-        List<String> lines = wrappedLines(g, detail, techWidth);
-        int y2 = boxBottomY-s100;
-        g.setColor(Color.black);
-        for (String line: lines) {
-            y2 += s17;
-            g.drawString(line, x1, y2);
-        }
-
-        int buttonW = scaled(150);
-        int buttonX = boxRightX-s20-buttonW;
-        int buttonH = s30;
-        int buttonY = boxBottomY-buttonH-s10;
-        // draw select button
-        if (greenBackC == null) {
-            Point2D start = new Point2D.Float(buttonX, 0);
-            Point2D end = new Point2D.Float(buttonX+buttonW, 0);
-            float[] dist = {0.0f, 0.5f, 1.0f};
-            Color greenEdgeC = new Color(44,59,30);
-            Color greenMidC = new Color(71,93,48);
-            Color[] greenColors = {greenEdgeC, greenMidC, greenEdgeC };
-            greenBackC = new LinearGradientPaint(start, end, dist, greenColors);
-        }
-        selectTechBox.setBounds(buttonX, buttonY, buttonW, buttonH);
-        boolean hovering = hoverBox == selectTechBox;
-
-        int cnr = s3;
-        g.setColor(Color.darkGray);
-        g.fillRoundRect(buttonX+s3, buttonY+s3, buttonW, buttonH, cnr, cnr);
-        g.setPaint(greenBackC);
-        g.fillRoundRect(buttonX, buttonY, buttonW, buttonH, cnr, cnr);
-
-        if (hovering)
-            g.setColor(Color.yellow);
-        else
-            g.setColor(Color.lightGray);
-        Stroke prevStr = g.getStroke();
-        g.setStroke(stroke2);
-        g.drawRoundRect(buttonX, buttonY, buttonW, buttonH, cnr, cnr);
-        g.setStroke(prevStr);
-
-        if (hovering)
-            g.setColor(Color.yellow);
-        else
-            g.setColor(Color.white);
-        String buttonText = text("TECH_CONFIRM_CHOICE");
-        g.setFont(narrowFont(20));
-        int sw2 = g.getFontMetrics().stringWidth(buttonText);
-        int x3 = buttonX+((buttonW-sw2)/2);
-        g.drawString(buttonText, x3, buttonY+buttonH-s9);
-
+        g.setClip(null);
         return screenImg;
     }
     private void scrollList(int i) {
@@ -340,9 +308,17 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
 
         Rectangle prevHover = hoverBox;
         hoverBox = null;
+        hoverTech = "";
 
-        if (selectTechBox.contains(x,y))
-            hoverBox = selectTechBox;
+        if (techListBox.contains(x,y)) {
+            for (String t: techBoxes.keySet()) {
+                Rectangle r = techBoxes.get(t);
+                if (r.contains(x, y)) {
+                    hoverBox = r;
+                    hoverTech = t;
+                }
+            }
+        }
 
         if (hoverBox != prevHover)
             repaint();

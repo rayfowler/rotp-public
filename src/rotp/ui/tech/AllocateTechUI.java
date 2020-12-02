@@ -58,9 +58,9 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
     static final Color sliderTextEnabled = Color.black;
     static final Color sliderTextDisabled = new Color(65,65,65);
     static final Color eqButtonBorderC = new Color(166,153,145);
-    static final Color tierBackC = new Color(24,18,14);
-    static final Color currentTechC = new Color(217,164,0);
-    static final Color unknownTechC = new Color(145,102,72);
+    public static final Color tierBackC = new Color(24,18,14);
+    public static final Color currentTechC = new Color(217,164,0);
+    public static final Color unknownTechC = new Color(145,102,72);
     static final Color knownTechC = new Color(75,99,51);
     static final Color techUnderscoreC = new Color(255,255,255,90);
 

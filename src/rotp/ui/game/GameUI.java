@@ -62,12 +62,12 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     private static final Color menuDisabled[] = { new Color(156,96,77), new Color(110,110,110) };
     private static final Color menuShade[] = { new Color(16,10,8,6), new Color(12,12,12,6) };
 
-    private static final Color logoFore[] = { new Color(255,220,181), new Color(255,255,240) };
+    private static final Color logoFore[] = { new Color(255,220,181), new Color(240,240,240) };
     private static final Color logoShade[] = { new Color(65,30,24,24), new Color(40,40,40,24) };
     private static final Color setupShade[] = { new Color(65,30,24,128), new Color(40,40,40,128) };
     private static final Color setupFrame[] = { new Color(254,204,153), new Color(195,205,205) };
 
-    private static final Color[] titleColor = { new Color(255,220,181), new Color(255,255,240)  };
+    private static final Color[] titleColor = { new Color(255,220,181), new Color(240,240,240)  };
     private static final Color[] titleShade = { new Color(25,25,25), new Color(25,25,25) };
     private static final Color[] labelColor = { new Color(79,52,33), new Color(39,44,44) };
     private static final Color[] raceEdgeColor = { new Color(114,75,49), new Color(44,48,47) };
@@ -78,7 +78,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     private static final Color[] paneBackgroundColor = { new Color(240,182,132), new Color(172,181,181) };
     private static final Color[] saveGameBackgroundColor = { new Color(26,17,17), new Color(26,17,17) };
     private static final Color[] buttonBackgroundColor = { new Color(93,61,40), new Color(53,60,60) };
-    private static final Color[] buttonTextColor = { new Color(255,255,240), new Color(196,196,196) };
+    private static final Color[] buttonTextColor = { new Color(240,240,240), new Color(196,196,196) };
     private static final Color[] disabledTextColor = { new Color(160,160,150), new Color(128,128,128) };
     private static final Color[] textColor = { new Color(246,197,130), new Color(196,196,196) };
     private static final Color[] textHoverColor = { new Color(250,247,140), new Color(253,219,180) };
