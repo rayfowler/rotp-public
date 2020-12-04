@@ -79,10 +79,14 @@ public interface IGameOptions {
     public static final String DIFFICULTY_HARDER  = "SETUP_DIFFICULTY_HARDER";
     public static final String DIFFICULTY_HARDEST = "SETUP_DIFFICULTY_HARDEST";
     
-    public static final String RESEARCH_NORMAL = "SETUP_RESEARCH_RATE_NORMAL";
-    public static final String RESEARCH_SLOW = "SETUP_RESEARCH_RATE_SLOW";
-    public static final String RESEARCH_SLOWER = "SETUP_RESEARCH_RATE_SLOWER";
+    public static final String RESEARCH_NORMAL  = "SETUP_RESEARCH_RATE_NORMAL";
+    public static final String RESEARCH_SLOW    = "SETUP_RESEARCH_RATE_SLOW";
+    public static final String RESEARCH_SLOWER  = "SETUP_RESEARCH_RATE_SLOWER";
     public static final String RESEARCH_SLOWEST = "SETUP_RESEARCH_RATE_SLOWEST";
+    
+    public static final String GALAXY_AGE_NORMAL = "SETUP_GALAXY_AGE_NORMAL";
+    public static final String GALAXY_AGE_YOUNG  = "SETUP_GALAXY_AGE_YOUNG";
+    public static final String GALAXY_AGE_OLD    = "SETUP_GALAXY_AGE_OLD";
 
     public default boolean isAutoPlay()          { return false; }
     public default boolean communityAI()         { return false; }
@@ -116,10 +120,11 @@ public interface IGameOptions {
     // selectable options
     public List<String> galaxySizeOptions();
     public List<String> galaxyShapeOptions();
+    public List<String> galaxyAgeOptions();
     public List<String> researchRateOptions();
 	
-	// modnar: new map option, MapOptionOptions
-	public List<String> MapOptionOptions();
+    // modnar: new map option, MapOptionOptions
+    public List<String> MapOptionOptions();
 	
     public List<String> gameDifficultyOptions();
     public int maximumOpponentsOptions();
@@ -129,6 +134,8 @@ public interface IGameOptions {
     public void selectedGalaxySize(String s);
     public String selectedGalaxyShape();
     public void selectedGalaxyShape(String s);
+    public String selectedGalaxyAge();
+    public void selectedGalaxyAge(String s);
     public String selectedResearchRate();
     public void selectedResearchRate(String s);
 	
@@ -191,7 +198,11 @@ public interface IGameOptions {
         int index = opts.indexOf(selectedMapOption())-1;
         return index < 0 ? opts.get(opts.size()-1) : opts.get(index);
     }
-	
+    default String nextGalaxyAge() {
+        List<String> opts = galaxyAgeOptions();
+        int index = opts.indexOf(selectedGalaxyAge())+1;
+        return index >= opts.size() ? opts.get(0) : opts.get(index);
+    }
     default String nextGameDifficulty() {
         List<String> opts = gameDifficultyOptions();
         int index = opts.indexOf(selectedGameDifficulty())+1;

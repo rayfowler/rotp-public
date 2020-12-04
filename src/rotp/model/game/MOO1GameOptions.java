@@ -58,6 +58,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
 
     private String selectedGalaxySize;
     private String selectedGalaxyShape;
+    private String selectedGalaxyAge;
     // modnar: new map option
     // selectedMapOption, setMapOption
     private String selectedMapOption;
@@ -115,12 +116,16 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     @Override
     public void selectedGalaxyShape(String s)    { selectedGalaxyShape = s; setGalaxyShape(); generateGalaxy(); }
 	
-	// modnar: selectedMapOption, setMapOption
-	@Override
-	public String selectedMapOption()           { return selectedMapOption; }
+    // modnar: selectedMapOption, setMapOption
     @Override
-	public void selectedMapOption(String s)    { selectedMapOption = s; setMapOption(); generateGalaxy(); }
+    public String selectedMapOption()           { return selectedMapOption; }
+    @Override
+    public void selectedMapOption(String s)    { selectedMapOption = s; setMapOption(); generateGalaxy(); }
 	
+    @Override
+    public String selectedGalaxyAge()           { return selectedGalaxyAge; }
+    @Override
+    public void selectedGalaxyAge(String s)     { selectedGalaxyAge = s; }
     @Override
     public String selectedGameDifficulty()       { return selectedGameDifficulty; }
     @Override
@@ -321,20 +326,37 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     }
     @Override
     public String randomStarType() {
-        // distribution per MOO1 Official Strategy Guide
+        float[] pcts;
+
+        // normalPcts represents star type distribution per MOO1 Official Strategy Guide
+        //                     RED, ORANG, YELL, BLUE,WHITE, PURP
+        float[] normalPcts = { .30f, .55f, .70f, .85f, .95f, 1.0f };
+        float[] youngPcts  = { .20f, .40f, .55f, .85f, .95f, 1.0f };
+        float[] oldPcts    = { .50f, .65f, .75f, .80f, .85f, 1.0f };
+
+        int typeIndex = 0;
+        switch(selectedGalaxyAge()) {
+            case GALAXY_AGE_YOUNG:  pcts = youngPcts; break;
+            case GALAXY_AGE_OLD:    pcts = oldPcts; break;
+            default:                pcts = normalPcts; break;
+        }
         float r = random();
-        if (r <= .30)
-            return StarType.RED;
-        else if (r <= .55)
-            return StarType.ORANGE;
-        else if (r <= .70)
-            return StarType.YELLOW;
-        else if (r <= .85)
-            return StarType.BLUE;
-        else if (r <= .95)
-            return StarType.WHITE;
-        else
-            return StarType.PURPLE;
+        for (int i=0;i<pcts.length;i++) {
+            if (r <= pcts[i]) {
+                typeIndex = i;
+                break;
+            }
+        }
+
+        switch(typeIndex) {
+            case 0:  return StarType.RED;
+            case 1:  return StarType.ORANGE;
+            case 2:  return StarType.YELLOW;
+            case 3:  return StarType.BLUE;
+            case 4:  return StarType.WHITE;
+            case 5:  return StarType.PURPLE;
+            default: return StarType.RED;
+        }
     }
     @Override
     public Planet randomPlanet(StarSystem s) {
@@ -451,27 +473,27 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         list.add(SHAPE_RING);
         list.add(SHAPE_ELLIPTICAL);
         list.add(SHAPE_SPIRAL);
-		// modnar, custom shapes
+        // modnar, custom shapes
         list.add(SHAPE_STAR);
         list.add(SHAPE_BARSPIRAL);
-		list.add(SHAPE_TEXT);
-		list.add(SHAPE_CLUSTER);
-		list.add(SHAPE_SWIRLCLUSTERS);
-		list.add(SHAPE_GRID);
-		list.add(SHAPE_SPIRALARMS);
-		list.add(SHAPE_MAZE);
-		list.add(SHAPE_VOID);
-		list.add(SHAPE_SHURIKEN);
-		list.add(SHAPE_BULLSEYE);
-		list.add(SHAPE_LORENZ);
-		list.add(SHAPE_LORENZ2);
-		list.add(SHAPE_FRACTAL);
-		list.add(SHAPE_CHAOSGAME);
+        list.add(SHAPE_TEXT);
+        list.add(SHAPE_CLUSTER);
+        list.add(SHAPE_SWIRLCLUSTERS);
+        list.add(SHAPE_GRID);
+        list.add(SHAPE_SPIRALARMS);
+        list.add(SHAPE_MAZE);
+        list.add(SHAPE_VOID);
+        list.add(SHAPE_SHURIKEN);
+        list.add(SHAPE_BULLSEYE);
+        list.add(SHAPE_LORENZ);
+        list.add(SHAPE_LORENZ2);
+        list.add(SHAPE_FRACTAL);
+        list.add(SHAPE_CHAOSGAME);
         return list;
     }
 	
-	// modnar: MapOptionOptions
-	@Override
+    // modnar: MapOptionOptions
+    @Override
     public List<String> MapOptionOptions() {
         List<String> list = new ArrayList<>();
         list.add(MAP_OPTION_A);
@@ -479,7 +501,14 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         list.add(MAP_OPTION_C);
         return list;
     }
-	
+    @Override
+    public List<String> galaxyAgeOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(GALAXY_AGE_YOUNG);
+        list.add(GALAXY_AGE_NORMAL);
+        list.add(GALAXY_AGE_OLD);
+        return list;
+    }
     @Override
     public List<String> gameDifficultyOptions() {
         List<String> list = new ArrayList<>();
@@ -523,6 +552,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     protected void setDefaultOptionValues() {
         selectedGalaxySize = SIZE_SMALL;
         selectedGalaxyShape = galaxyShapeOptions().get(0);
+        selectedGalaxyAge = galaxyAgeOptions().get(1);
         // modnar: selectedMapOption
         selectedMapOption = MapOptionOptions().get(0);
         selectedGameDifficulty(gameDifficultyOptions().get(0));

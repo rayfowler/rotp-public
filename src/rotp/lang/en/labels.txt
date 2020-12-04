@@ -304,6 +304,7 @@ GAME_RANDOM_EVENTS_OFF            | Random Events: OFF
 GAME_COLONIZE_PROMPT_ON           | Prompt to Colonize: YES
 GAME_COLONIZE_PROMPT_OFF          | Prompt to Colonize: NO
 GAME_RESEARCH_RATE                | Research Rate: %1
+GAME_GALAXY_AGE                   | Galaxy Age: %1
 GAME_AI_BASE                      | Base AI
 GAME_AI_DEVELOPMENT               | Development AI
 
@@ -880,6 +881,9 @@ SETUP_GALAXY_MAP_OPTION_LABEL     | Option
 SETUP_GALAXY_MAP_OPTION_A         | Option A
 SETUP_GALAXY_MAP_OPTION_B         | Option B
 SETUP_GALAXY_MAP_OPTION_C         | Option C
+SETUP_GALAXY_AGE_NORMAL           | Normal
+SETUP_GALAXY_AGE_YOUNG            | Young
+SETUP_GALAXY_AGE_OLD              | Old
 SETUP_GALAXY_NUMBER_EMPIRES       | Total Empires: %1
 SETUP_GALAXY_NUMBER_SYSTEMS       | Total Systems: %1
 SETUP_GALAXY_MAX_OPPONENTS        | Maximum Opponents: %1
