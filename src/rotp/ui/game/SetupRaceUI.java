@@ -354,6 +354,7 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         int h = getHeight();
         backImg = newOpaqueImage(w, h);
         Graphics2D g = (Graphics2D) backImg.getGraphics();
+        setFontHints(g);
 
         // background image
         Image back = GameUI.background();
