@@ -25,9 +25,12 @@ import rotp.util.Base;
 public abstract class GalaxyShape implements Base, Serializable {
     private static final long serialVersionUID = 1L;
     static final int GALAXY_EDGE_BUFFER = 12;
-    static final float ORION_BUFFER = 8;
-    static final float EMPIRE_BUFFER = 6;
-    static final float SYSTEM_BUFFER = 1.9f; // allow closer systems
+    static final float MIN_ORION_BUFFER = 8;
+    static final float MIN_EMPIRE_BUFFER = 6;
+    static final float MAX_MIN_EMPIRE_BUFFER = 30;
+    static final float SYSTEM_BUFFER = 1.9f;
+    static float orionBuffer = 8;
+    static float empireBuffer = 6;
     float[] x;
     float[] y;
     ShapeRegion[][] regions;
@@ -120,11 +123,21 @@ public abstract class GalaxyShape implements Base, Serializable {
         generate(false);
     }
     public void generate(boolean full) {
-        log("Galaxy shape: "+maxStars+ " stars"+ "  regionScale: "+regionScale);
-        long tm0 = System.currentTimeMillis();
         int numOpps = opts.selectedNumberOpponents()+1;
+        log("Galaxy shape: "+maxStars+ " stars"+ "  regionScale: "+regionScale+"   emps:"+numOpps);
+        long tm0 = System.currentTimeMillis();
         genAttempt = 0;
         empSystems.clear();
+        
+        
+        // the stars/empires ratio for the most "densely" populated galaxy is about 8:1
+        // we want to set the minimum distance between empires to half that in ly, with a minimum 
+        // of 6 ly... this means that it will not increase until there is at least a 12:1
+        // ratio. However, the minimum buffer will never exceed the "MAX_MIN", to ensure that 
+        // massive maps don't always GUARANTEE hundreds of light-years of space to expand uncontested
+        empireBuffer = min(MAX_MIN_EMPIRE_BUFFER, max(MIN_EMPIRE_BUFFER, (maxStars/(numOpps*2))));
+        // Orion buffer is 50% greater with minimum of 8 ly.
+        orionBuffer = max(MIN_ORION_BUFFER, empireBuffer*3/2);
 
         // add systems needed for empires
         while (empSystems.size() < numOpps) {
@@ -221,10 +234,10 @@ public abstract class GalaxyShape implements Base, Serializable {
     }
     protected boolean isTooNearExistingSystem(float x0, float y0, boolean isHomeworld) {
         if (isHomeworld) {
-            if (distance(x0,y0,orionXY.x,orionXY.y) <= ORION_BUFFER)
+            if (distance(x0,y0,orionXY.x,orionXY.y) <= orionBuffer)
                 return true;
             for (EmpireSystem emp: empSystems) {
-                if (distance(x0,y0,emp.colonyX(),emp.colonyY()) <= EMPIRE_BUFFER)
+                if (distance(x0,y0,emp.colonyX(),emp.colonyY()) <= empireBuffer)
                     return true;
             }
         }

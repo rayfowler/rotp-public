@@ -300,7 +300,7 @@ public final class GameSession implements Base, Serializable {
                 gal.preNextTurn();
                 
                 // REMOVE THIS CODE
-                //markSpiesCaptured();
+                //playerViewAllHomeSystems();
                 
                 // all intra-empire events: civ turns, ship movement, etc
                 gal.advanceTime();
@@ -657,6 +657,16 @@ public final class GameSession implements Base, Serializable {
             Spy spy = (new Spy(view.spies())).makeSuper();
             SabotageMission mission = new SabotageMission(view.spies(), spy);
             SabotageNotification.addMission(mission, sys.id);
+        }
+    }
+    public void playerViewAllHomeSystems() {
+        // for testing the minimum empire distance code
+        for (Empire emp: galaxy().empires()) {
+            player().sv.refreshFullScan(emp.homeSysId());
+        }
+        for (StarSystem sys: galaxy().starSystems()) {
+            if (sys.hasMonster())
+                player().sv.refreshFullScan(sys.id);
         }
     }
     private String nextTurnTitle() {
