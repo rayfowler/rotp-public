@@ -71,6 +71,7 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
     Polygon  oppBoxU = new Polygon();
     Polygon oppBoxD = new Polygon();
     BaseText randomEventsText;
+    BaseText colonizePromptText;
     BaseText researchRateText;
     BaseText aiText;
 
@@ -93,11 +94,13 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         Color textC = SystemPanel.blackText;
         randomEventsText = new BaseText(this, false, 17, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         researchRateText = new BaseText(this, false, 17, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        colonizePromptText = new BaseText(this, false, 17, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         aiText =           new BaseText(this, false, 17, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
     }
     public void init() {
         randomEventsText.displayText(randomEventsStr());
         researchRateText.displayText(researchRateStr());
+        colonizePromptText.displayText(colonizePromptStr());
         aiText.displayText(aiStr());
     }
     private void release() {
@@ -275,18 +278,26 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
             NoticeMessage.setStatus(text("SETUP_CREATING_GALAXY"));
             drawNotice(g, 30);
         }
+        
+        int w1 = galaxyW*6/10;
         randomEventsText.setScaledXY(rightBoxX+s40, boxY+rightBoxH-s50);
         randomEventsText.draw(g);
         researchRateText.setScaledXY(rightBoxX+s40, boxY+rightBoxH-s30);
         researchRateText.draw(g);
-        int sw = g.getFontMetrics().stringWidth(aiStr());
-        aiText.setScaledXY(galaxyX+galaxyW-sw, boxY+rightBoxH-s30);
+        aiText.setScaledXY(galaxyX+w1, boxY+rightBoxH-s50);
         aiText.draw(g);
+        colonizePromptText.setScaledXY(galaxyX+w1, boxY+rightBoxH-s30);
+        colonizePromptText.draw(g);
     }
     private void toggleRandomEvents() {
         softClick();
         options().disableRandomEvents(!options().disableRandomEvents());
         randomEventsText.repaint(randomEventsStr());
+    }
+    private void toggleColonizePrompt() {
+        softClick();
+        options().disableColonizePrompt(!options().disableColonizePrompt());
+        colonizePromptText.repaint(colonizePromptStr());
     }
     private void toggleResearchRate(MouseEvent e) {
         softClick();
@@ -396,11 +407,6 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
     public void nextResearchRate(boolean click) {
         if (click) softClick();
         options().selectedResearchRate(options().nextResearchRate());
-        repaint();
-    }
-    public void prevResearchRatae(boolean click) {
-        if (click) softClick();
-        options().selectedResearchRate(options().prevResearchRate());
         repaint();
     }
     public void increaseOpponents(boolean click) {
@@ -685,6 +691,12 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         else
             return text("GAME_RANDOM_EVENTS_ON")+"    ";
     }
+    private String colonizePromptStr() {
+        if (options().disableColonizePrompt())
+            return text("GAME_COLONIZE_PROMPT_OFF")+"     ";
+        else
+            return text("GAME_COLONIZE_PROMPT_ON")+"    ";
+    }
     private String researchRateStr() {
         String opt = text(options().selectedResearchRate());
         return text("GAME_RESEARCH_RATE", opt)+"     ";
@@ -721,6 +733,8 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         hoverBox = null;
         if (randomEventsText.contains(x,y))
             hoverBox = randomEventsText.bounds();
+        else if (colonizePromptText.contains(x,y))
+            hoverBox = colonizePromptText.bounds();
         else if (researchRateText.contains(x,y))
             hoverBox = researchRateText.bounds();
         else if (aiText.contains(x,y))
@@ -774,12 +788,16 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         if (hoverBox != prevHover) {
             if (prevHover == randomEventsText.bounds())
                 randomEventsText.mouseExit();
+            else if (prevHover == colonizePromptText.bounds())
+                colonizePromptText.mouseExit();
             else if (prevHover == researchRateText.bounds())
                 researchRateText.mouseExit();
             else if (prevHover == aiText.bounds())
                 aiText.mouseExit();
             if (hoverBox == randomEventsText.bounds())
                 randomEventsText.mouseEnter();
+            else if (hoverBox == colonizePromptText.bounds())
+                colonizePromptText.mouseEnter();
             else if (hoverBox == researchRateText.bounds())
                 researchRateText.mouseEnter();
             else if (hoverBox == aiText.bounds())
@@ -801,6 +819,8 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         int y = e.getY();
         if (hoverBox == randomEventsText.bounds())
             toggleRandomEvents();
+        else if (hoverBox == colonizePromptText.bounds())
+            toggleColonizePrompt();
         else if (hoverBox == researchRateText.bounds())
             toggleResearchRate(e);
         else if (hoverBox == aiText.bounds())

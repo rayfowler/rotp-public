@@ -110,6 +110,8 @@ public interface IGameOptions {
     public Color color(int i);
     public boolean disableRandomEvents();
     public void disableRandomEvents(boolean b);
+    public boolean disableColonizePrompt();
+    public void disableColonizePrompt(boolean b);
 
     // selectable options
     public List<String> galaxySizeOptions();

@@ -58,14 +58,15 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
 
     private String selectedGalaxySize;
     private String selectedGalaxyShape;
-	// modnar: new map option
-	// selectedMapOption, setMapOption
-	private String selectedMapOption;
+    // modnar: new map option
+    // selectedMapOption, setMapOption
+    private String selectedMapOption;
     private String selectedGameDifficulty;
     private String selectedResearchRate;
     private int selectedNumberOpponents;
     private boolean communityAI = false;
     private boolean disableRandomEvents = false;
+    private boolean disableColonizePrompt = false;
 
     private transient GalaxyShape galaxyShape;
 
@@ -92,9 +93,13 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     @Override
     public void communityAI(boolean b)           { communityAI = b; }
     @Override
-    public boolean disableRandomEvents()           { return disableRandomEvents; }
+    public boolean disableRandomEvents()         { return disableRandomEvents; }
     @Override
-    public void disableRandomEvents(boolean b)     { disableRandomEvents = b; }
+    public void disableRandomEvents(boolean b)   { disableRandomEvents = b; }
+    @Override
+    public boolean disableColonizePrompt()       { return disableColonizePrompt; }
+    @Override
+    public void disableColonizePrompt(boolean b) { disableColonizePrompt = b; }
     @Override
     public String selectedGalaxySize()           { return selectedGalaxySize; }
     @Override
@@ -518,8 +523,8 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     protected void setDefaultOptionValues() {
         selectedGalaxySize = SIZE_SMALL;
         selectedGalaxyShape = galaxyShapeOptions().get(0);
-		// modnar: selectedMapOption
-		selectedMapOption = MapOptionOptions().get(0);
+        // modnar: selectedMapOption
+        selectedMapOption = MapOptionOptions().get(0);
         selectedGameDifficulty(gameDifficultyOptions().get(0));
         selectedNumberOpponents = maximumOpponentsOptions();
         selectedPlayerRace(random(startingRaceOptions()));

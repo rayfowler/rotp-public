@@ -301,6 +301,8 @@ GAME_MEMORY_SHOW                  | Memory Use: SHOW
 GAME_MEMORY_HIDE                  | Memory Use: HIDE
 GAME_RANDOM_EVENTS_ON             | Random Events: ON
 GAME_RANDOM_EVENTS_OFF            | Random Events: OFF
+GAME_COLONIZE_PROMPT_ON           | Prompt to Colonize: YES
+GAME_COLONIZE_PROMPT_OFF          | Prompt to Colonize: NO
 GAME_RESEARCH_RATE                | Research Rate: %1
 GAME_AI_BASE                      | Base AI
 GAME_AI_DEVELOPMENT               | Development AI
