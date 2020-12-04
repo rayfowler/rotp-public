@@ -71,6 +71,7 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
     Polygon  oppBoxU = new Polygon();
     Polygon oppBoxD = new Polygon();
     BaseText randomEventsText;
+    BaseText researchRateText;
     BaseText aiText;
 
     Rectangle[] oppSet = new Rectangle[MAX_DISPLAY_OPPS];
@@ -91,10 +92,12 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
             oppSet[i] = new Rectangle();
         Color textC = SystemPanel.blackText;
         randomEventsText = new BaseText(this, false, 17, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
-        aiText = new BaseText(this, false, 17, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        researchRateText = new BaseText(this, false, 17, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        aiText =           new BaseText(this, false, 17, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
     }
     public void init() {
         randomEventsText.displayText(randomEventsStr());
+        researchRateText.displayText(researchRateStr());
         aiText.displayText(aiStr());
     }
     private void release() {
@@ -226,8 +229,8 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         int x5a =shapeBox.x+((shapeBox.width-shapeSW)/2);
         g.drawString(shapeLbl, x5a, y5);
 		
-		// modnar: mapOptionLbl, may not be needed?
-		String mapOptionLbl = text(options().selectedMapOption());
+        // modnar: mapOptionLbl, may not be needed?
+        String mapOptionLbl = text(options().selectedMapOption());
         int mapOptionSW = g.getFontMetrics().stringWidth(mapOptionLbl);
         int x5d =mapOptionBox.x+((mapOptionBox.width-mapOptionSW)/2);
         g.drawString(mapOptionLbl, x5d, y5+s20);
@@ -272,8 +275,10 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
             NoticeMessage.setStatus(text("SETUP_CREATING_GALAXY"));
             drawNotice(g, 30);
         }
-        randomEventsText.setScaledXY(rightBoxX+s40, boxY+rightBoxH-s30);
+        randomEventsText.setScaledXY(rightBoxX+s40, boxY+rightBoxH-s50);
         randomEventsText.draw(g);
+        researchRateText.setScaledXY(rightBoxX+s40, boxY+rightBoxH-s30);
+        researchRateText.draw(g);
         int sw = g.getFontMetrics().stringWidth(aiStr());
         aiText.setScaledXY(galaxyX+galaxyW-sw, boxY+rightBoxH-s30);
         aiText.draw(g);
@@ -282,6 +287,11 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         softClick();
         options().disableRandomEvents(!options().disableRandomEvents());
         randomEventsText.repaint(randomEventsStr());
+    }
+    private void toggleResearchRate(MouseEvent e) {
+        softClick();
+        options().selectedResearchRate(options().nextResearchRate());
+        researchRateText.repaint(researchRateStr());
     }
     private void toggleAI() {
         softClick();
@@ -360,8 +370,8 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         repaint();
     }
 	
-	// modnar: mapOption, next/prev selections
-	public void nextMapOption(boolean click) {
+    // modnar: mapOption, next/prev selections
+    public void nextMapOption(boolean click) {
         if (click) softClick();
         options().selectedMapOption(options().nextMapOption());
 		options().galaxyShape().quickGenerate(); // modnar: "hack", do a quickgen to get correct map preview
@@ -373,8 +383,6 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
 		options().galaxyShape().quickGenerate(); // modnar: "hack", do a quickgen to get correct map preview
         repaint();
     }
-	
-	
     public void nextGameDifficulty(boolean click) {
         if (click) softClick();
         options().selectedGameDifficulty(options().nextGameDifficulty());
@@ -383,6 +391,16 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
     public void prevGameDifficulty(boolean click) {
         if (click) softClick();
         options().selectedGameDifficulty(options().prevGameDifficulty());
+        repaint();
+    }
+    public void nextResearchRate(boolean click) {
+        if (click) softClick();
+        options().selectedResearchRate(options().nextResearchRate());
+        repaint();
+    }
+    public void prevResearchRatae(boolean click) {
+        if (click) softClick();
+        options().selectedResearchRate(options().prevResearchRate());
         repaint();
     }
     public void increaseOpponents(boolean click) {
@@ -459,7 +477,7 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         boxW = scaled(505);
         boxY = s95;
         leftBoxH = scaled(615);
-        rightBoxH = scaled(535);
+        rightBoxH = scaled(575);
         // draw opponents title
         String title1 = text("SETUP_SELECT_OPPONENTS");
         g.setFont(narrowFont(50));
@@ -667,6 +685,10 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         else
             return text("GAME_RANDOM_EVENTS_ON")+"    ";
     }
+    private String researchRateStr() {
+        String opt = text(options().selectedResearchRate());
+        return text("GAME_RESEARCH_RATE", opt)+"     ";
+    }
     private String aiStr() {
         if (options().communityAI())
             return text("GAME_AI_DEVELOPMENT")+"     ";
@@ -699,7 +721,9 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         hoverBox = null;
         if (randomEventsText.contains(x,y))
             hoverBox = randomEventsText.bounds();
-        if (aiText.contains(x,y))
+        else if (researchRateText.contains(x,y))
+            hoverBox = researchRateText.bounds();
+        else if (aiText.contains(x,y))
             hoverBox = aiText.bounds();
         else if (startBox.contains(x,y))
             hoverBox = startBox;
@@ -750,10 +774,14 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         if (hoverBox != prevHover) {
             if (prevHover == randomEventsText.bounds())
                 randomEventsText.mouseExit();
-            else if (hoverBox == randomEventsText.bounds())
-                randomEventsText.mouseEnter();
+            else if (prevHover == researchRateText.bounds())
+                researchRateText.mouseExit();
             else if (prevHover == aiText.bounds())
                 aiText.mouseExit();
+            if (hoverBox == randomEventsText.bounds())
+                randomEventsText.mouseEnter();
+            else if (hoverBox == researchRateText.bounds())
+                researchRateText.mouseEnter();
             else if (hoverBox == aiText.bounds())
                 aiText.mouseEnter();
             repaint();
@@ -773,6 +801,8 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         int y = e.getY();
         if (hoverBox == randomEventsText.bounds())
             toggleRandomEvents();
+        else if (hoverBox == researchRateText.bounds())
+            toggleResearchRate(e);
         else if (hoverBox == aiText.bounds())
             toggleAI();
         else if (hoverBox == backBox)

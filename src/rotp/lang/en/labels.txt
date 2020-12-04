@@ -301,6 +301,7 @@ GAME_MEMORY_SHOW                  | Memory Use: SHOW
 GAME_MEMORY_HIDE                  | Memory Use: HIDE
 GAME_RANDOM_EVENTS_ON             | Random Events: ON
 GAME_RANDOM_EVENTS_OFF            | Random Events: OFF
+GAME_RESEARCH_RATE                | Research Rate: %1
 GAME_AI_BASE                      | Base AI
 GAME_AI_DEVELOPMENT               | Development AI
 
@@ -891,6 +892,10 @@ SETUP_DIFFICULTY_NORMAL           | Normal
 SETUP_DIFFICULTY_HARD             | Hard
 SETUP_DIFFICULTY_HARDER           | Harder
 SETUP_DIFFICULTY_HARDEST          | Hardest
+SETUP_RESEARCH_RATE_NORMAL        | Normal
+SETUP_RESEARCH_RATE_SLOW          | Slow
+SETUP_RESEARCH_RATE_SLOWER        | Slower
+SETUP_RESEARCH_RATE_SLOWEST       | Slowest
 SETUP_GAME_NUMBER_OPPONENTS       | Opponents
 SETUP_RACE_LABEL                  | Available Races
 SETUP_RACE_COLOR                  | Empire Color:

@@ -104,7 +104,7 @@ public final class TechCategory implements Base, Serializable {
         }
         allocation(MAX_ALLOCATION_TICKS);
     }
-    public float baseResearchCost()  { return options().researchCostBase()*session().researchMapSizeAdjustment();}
+    public float baseResearchCost(int techLevel)  { return options().researchCostBase(techLevel)*session().researchMapSizeAdjustment();}
     private void init() {
         if (!tree.spy())
             buildResearchList();
@@ -396,7 +396,7 @@ public final class TechCategory implements Base, Serializable {
         return r;
     }
     public float costForTech(Tech t) {
-        return baseResearchCost() * t.level * t.level * racialMod();
+        return baseResearchCost(t.level) * t.level * t.level * racialMod();
     }
     private float discoveryChance() {
         if (currentTech == null)

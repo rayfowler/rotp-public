@@ -49,25 +49,25 @@ public interface IGameOptions {
     public static final String SHAPE_RING = "SETUP_GALAXY_SHAPE_RING";
     public static final String SHAPE_ELLIPTICAL = "SETUP_GALAXY_SHAPE_ELLIPSE";
     public static final String SHAPE_SPIRAL = "SETUP_GALAXY_SHAPE_SPIRAL";
-	// modnar: custom map shapes
+    // modnar: custom map shapes
     public static final String SHAPE_STAR = "SETUP_GALAXY_SHAPE_STAR";
-	public static final String SHAPE_BARSPIRAL = "SETUP_GALAXY_SHAPE_BARSPIRAL";
-	public static final String SHAPE_TEXT = "SETUP_GALAXY_SHAPE_TEXT";
-	public static final String SHAPE_CLUSTER = "SETUP_GALAXY_SHAPE_CLUSTER";
-	public static final String SHAPE_SWIRLCLUSTERS = "SETUP_GALAXY_SHAPE_SWIRLCLUSTERS";
-	public static final String SHAPE_GRID = "SETUP_GALAXY_SHAPE_GRID";
-	public static final String SHAPE_SPIRALARMS = "SETUP_GALAXY_SHAPE_SPIRALARMS";
-	public static final String SHAPE_MAZE = "SETUP_GALAXY_SHAPE_MAZE";
-	public static final String SHAPE_VOID = "SETUP_GALAXY_SHAPE_VOID";
-	public static final String SHAPE_SHURIKEN = "SETUP_GALAXY_SHAPE_SHURIKEN";
-	public static final String SHAPE_BULLSEYE = "SETUP_GALAXY_SHAPE_BULLSEYE";
-	public static final String SHAPE_LORENZ = "SETUP_GALAXY_SHAPE_LORENZ";
-	public static final String SHAPE_LORENZ2 = "SETUP_GALAXY_SHAPE_LORENZ2";
-	public static final String SHAPE_FRACTAL = "SETUP_GALAXY_SHAPE_FRACTAL";
-	public static final String SHAPE_CHAOSGAME = "SETUP_GALAXY_SHAPE_CHAOSGAME";
-	
-	// modnar: new map option text labels
-	public static final String MAP_OPTION_A = "SETUP_GALAXY_MAP_OPTION_A";
+    public static final String SHAPE_BARSPIRAL = "SETUP_GALAXY_SHAPE_BARSPIRAL";
+    public static final String SHAPE_TEXT = "SETUP_GALAXY_SHAPE_TEXT";
+    public static final String SHAPE_CLUSTER = "SETUP_GALAXY_SHAPE_CLUSTER";
+    public static final String SHAPE_SWIRLCLUSTERS = "SETUP_GALAXY_SHAPE_SWIRLCLUSTERS";
+    public static final String SHAPE_GRID = "SETUP_GALAXY_SHAPE_GRID";
+    public static final String SHAPE_SPIRALARMS = "SETUP_GALAXY_SHAPE_SPIRALARMS";
+    public static final String SHAPE_MAZE = "SETUP_GALAXY_SHAPE_MAZE";
+    public static final String SHAPE_VOID = "SETUP_GALAXY_SHAPE_VOID";
+    public static final String SHAPE_SHURIKEN = "SETUP_GALAXY_SHAPE_SHURIKEN";
+    public static final String SHAPE_BULLSEYE = "SETUP_GALAXY_SHAPE_BULLSEYE";
+    public static final String SHAPE_LORENZ = "SETUP_GALAXY_SHAPE_LORENZ";
+    public static final String SHAPE_LORENZ2 = "SETUP_GALAXY_SHAPE_LORENZ2";
+    public static final String SHAPE_FRACTAL = "SETUP_GALAXY_SHAPE_FRACTAL";
+    public static final String SHAPE_CHAOSGAME = "SETUP_GALAXY_SHAPE_CHAOSGAME";
+
+    // modnar: new map option text labels
+    public static final String MAP_OPTION_A = "SETUP_GALAXY_MAP_OPTION_A";
     public static final String MAP_OPTION_B = "SETUP_GALAXY_MAP_OPTION_B";
     public static final String MAP_OPTION_C = "SETUP_GALAXY_MAP_OPTION_C";
 
@@ -78,6 +78,11 @@ public interface IGameOptions {
     public static final String DIFFICULTY_HARD    = "SETUP_DIFFICULTY_HARD";
     public static final String DIFFICULTY_HARDER  = "SETUP_DIFFICULTY_HARDER";
     public static final String DIFFICULTY_HARDEST = "SETUP_DIFFICULTY_HARDEST";
+    
+    public static final String RESEARCH_NORMAL = "SETUP_RESEARCH_RATE_NORMAL";
+    public static final String RESEARCH_SLOW = "SETUP_RESEARCH_RATE_SLOW";
+    public static final String RESEARCH_SLOWER = "SETUP_RESEARCH_RATE_SLOWER";
+    public static final String RESEARCH_SLOWEST = "SETUP_RESEARCH_RATE_SLOWEST";
 
     public default boolean isAutoPlay()          { return false; }
     public default boolean communityAI()         { return false; }
@@ -88,7 +93,7 @@ public interface IGameOptions {
     public int numberStarSystems();
     public int numberNebula();
     public List<Integer> possibleColors();
-    public float researchCostBase();
+    public float researchCostBase(int techLevel);
     public String randomStarType();
     public String randomPlayerStarType(Race r);
     public String randomRaceStarType(Race r);
@@ -109,6 +114,7 @@ public interface IGameOptions {
     // selectable options
     public List<String> galaxySizeOptions();
     public List<String> galaxyShapeOptions();
+    public List<String> researchRateOptions();
 	
 	// modnar: new map option, MapOptionOptions
 	public List<String> MapOptionOptions();
@@ -121,6 +127,8 @@ public interface IGameOptions {
     public void selectedGalaxySize(String s);
     public String selectedGalaxyShape();
     public void selectedGalaxyShape(String s);
+    public String selectedResearchRate();
+    public void selectedResearchRate(String s);
 	
 	// modnar: new map option, selectedMapOption
 	public String selectedMapOption();
@@ -191,6 +199,11 @@ public interface IGameOptions {
         List<String> opts = gameDifficultyOptions();
         int index = opts.indexOf(selectedGameDifficulty())-1;
         return index < 0 ? opts.get(0) : opts.get(index);
+    }
+    default String nextResearchRate() {
+        List<String> opts = researchRateOptions();
+        int index = opts.indexOf(selectedResearchRate())+1;
+        return index >= opts.size() ? opts.get(0) : opts.get(index);
     }
     default void nextOpponent(int i) {
         String player = selectedPlayerRace();

@@ -62,6 +62,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
 	// selectedMapOption, setMapOption
 	private String selectedMapOption;
     private String selectedGameDifficulty;
+    private String selectedResearchRate;
     private int selectedNumberOpponents;
     private boolean communityAI = false;
     private boolean disableRandomEvents = false;
@@ -120,6 +121,10 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     @Override
     public void selectedGameDifficulty(String s) { selectedGameDifficulty = s; }
     @Override
+    public String selectedResearchRate()         { return selectedResearchRate; }
+    @Override
+    public void selectedResearchRate(String s)   { selectedResearchRate = s; }
+    @Override
     public int selectedNumberOpponents()         { return selectedNumberOpponents; }
     @Override
     public void selectedNumberOpponents(int i)   { selectedNumberOpponents = i; generateGalaxy(); }
@@ -176,50 +181,50 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
             case SHAPE_SPIRAL:
                 galaxyShape = new GalaxySpiralShape(this);
                 return;
-			// modnar, custom shapes
-			case SHAPE_STAR:
+            // modnar, custom shapes
+            case SHAPE_STAR:
                 galaxyShape = new GalaxyStarShape(this);
                 return;
-			case SHAPE_BARSPIRAL:
+            case SHAPE_BARSPIRAL:
                 galaxyShape = new GalaxyBarSpiralShape(this);
                 return;
-			case SHAPE_TEXT:
+            case SHAPE_TEXT:
                 galaxyShape = new GalaxyTextShape(this);
                 return;
-			case SHAPE_CLUSTER:
+            case SHAPE_CLUSTER:
                 galaxyShape = new GalaxyClusterShape(this);
                 return;
-			case SHAPE_SWIRLCLUSTERS:
+            case SHAPE_SWIRLCLUSTERS:
                 galaxyShape = new GalaxySwirlClustersShape(this);
                 return;
-			case SHAPE_GRID:
+            case SHAPE_GRID:
                 galaxyShape = new GalaxyGridShape(this);
                 return;
-			case SHAPE_SPIRALARMS:
+            case SHAPE_SPIRALARMS:
                 galaxyShape = new GalaxySpiralArmsShape(this);
                 return;
-			case SHAPE_MAZE:
+            case SHAPE_MAZE:
                 galaxyShape = new GalaxyMazeShape(this);
                 return;
-			case SHAPE_VOID:
+            case SHAPE_VOID:
                 galaxyShape = new GalaxyVoidShape(this);
                 return;
-			case SHAPE_SHURIKEN:
+            case SHAPE_SHURIKEN:
                 galaxyShape = new GalaxyShurikenShape(this);
                 return;
-			case SHAPE_BULLSEYE:
+            case SHAPE_BULLSEYE:
                 galaxyShape = new GalaxyBullseyeShape(this);
-				return;
-			case SHAPE_LORENZ:
+                return;
+            case SHAPE_LORENZ:
                 galaxyShape = new GalaxyLorenzShape(this);
                 return;
-			case SHAPE_LORENZ2:
+            case SHAPE_LORENZ2:
                 galaxyShape = new GalaxyLorenz2Shape(this);
                 return;
-			case SHAPE_FRACTAL:
+            case SHAPE_FRACTAL:
                 galaxyShape = new GalaxyFractalShape(this);
                 return;
-			case SHAPE_CHAOSGAME:
+            case SHAPE_CHAOSGAME:
                 galaxyShape = new GalaxyChaosGameShape(this);
                 return;
             case SHAPE_RECTANGLE:
@@ -290,18 +295,24 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         return roll(n/50, n/25);
     }
     @Override
-    public float researchCostBase() {
-        return 30.0f;
-        /*
-        switch (selectedGameDifficulty()) {
-        case DIFFICULTY_SIMPLE:      return 20;
-        case DIFFICULTY_EASY:        return 25;
-        case DIFFICULTY_AVERAGE:     return 30;
-        case DIFFICULTY_HARD:        return 35;
-        case DIFFICULTY_IMPOSSIBLE:  return 40;
-        default:                     return 25;
+    public float researchCostBase(int techLevel) {
+        // this is a flat research rate adjustment. The method that calls this to calculate
+        // the research cost already factors in the tech level (squared), the map sizes, and
+        // the number of opponents.
+        
+        // the various "slowing" options increase the research cost for higher tech levels
+        
+        float amt = 30.0f;                    // default adjustment
+        switch(selectedResearchRate()) {
+            case RESEARCH_SLOW:
+                return amt*sqrt(techLevel/3); // approx. 4x slower for level 50
+            case RESEARCH_SLOWER:
+                return amt*sqrt(techLevel);   // approx. 7x slower for level 50
+            case RESEARCH_SLOWEST:
+                return amt*sqrt(techLevel*5); // approx. 16x slower for level 50
+            default:  
+                return amt;                   // no additional slowing. 
         }
-        */
     }
     @Override
     public String randomStarType() {
@@ -477,6 +488,15 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         return list;
     }
     @Override
+    public List<String> researchRateOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(RESEARCH_NORMAL);
+        list.add(RESEARCH_SLOW);
+        list.add(RESEARCH_SLOWER);
+        list.add(RESEARCH_SLOWEST);
+        return list;
+    }
+    @Override
     public List<String> startingRaceOptions() {
         List<String> list = new ArrayList<>();
         list.add("RACE_HUMAN");
@@ -504,6 +524,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedNumberOpponents = maximumOpponentsOptions();
         selectedPlayerRace(random(startingRaceOptions()));
         selectedGameDifficulty = DIFFICULTY_NORMAL;
+        selectedResearchRate = RESEARCH_NORMAL;
         generateGalaxy();
     }
     private void generateGalaxy() {
