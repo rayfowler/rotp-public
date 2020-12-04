@@ -21,6 +21,8 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.LinearGradientPaint;
 import java.awt.Rectangle;
+import java.awt.Shape;
+import java.awt.Stroke;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -41,6 +43,7 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
     private static final long serialVersionUID = 1L;
     private static final Color darkBrown = new Color(112,85,68);
     private static final Color darkBrownShade = new Color(112,85,68,128);
+    private static final Color scrollBarC = new Color(211,166,125);
     static Color grayShade = new Color(123,123,123,160);
     static Color dimWhite = new Color(225,225,255);
     static Color gray2 = new Color(123,123,123);
@@ -54,11 +57,14 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
     Rectangle techListBox = new Rectangle();
     List<String> availableTechs;
 
-    Rectangle hoverBox;
+    Shape hoverShape;
     Rectangle selectTechBox = new Rectangle();
     private LinearGradientPaint greenBackC;
 
     int techsY, techsYMax;
+    int dragY;
+    Rectangle contactsListBox = new Rectangle();
+    Rectangle contactsScroller = new Rectangle();
 
     int techIndex = 0;
     int talkTimeMs = 5000;
@@ -162,13 +168,17 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
         }
 
         // draw dark background for list of techs
+        int w0 = boxWidth-s40;
+        int y0b = y0+s20;
+        int listH = boxBottomY-y0-s40;
         g.setColor(AllocateTechUI.tierBackC);
-        techListBox.setBounds(boxLeftX+s20, y0+s20, boxWidth-s40, boxBottomY-y0-s40);
+        techListBox.setBounds(x0, y0b, w0, listH);
         g.fill(techListBox);
         g.setClip(techListBox);
-        int y1 = y0 + s25 - techsY;
+        int y1 = y0b +s5 - techsY;
         int x1 = x0 + s10;
-        int listH = techListBox.height;
+        int w1 = w0 - s10;
+        int h1 = listH;
         int fullListH = s5;
         int techWidth = boxWidth-s45;
 
@@ -212,7 +222,31 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
             fullListH = fullListH + th + s5;
         }
         g.setClip(null);
+        
         techsYMax = max(0, fullListH-listH);
+        if (techsYMax == 0)
+            contactsScroller.setBounds(0,0,0,0);
+        else {
+            int scrollW = s12;
+            int scrollH = (int) ((float)listH*listH/(listH+techsYMax));
+            int scrollX = x1+w1;
+            int scrollY =(int) (y0b+s5+(float)listH*techsY/(techsYMax+listH));
+            g.setColor(AllocateTechUI.tierBackC);
+            
+            g.fillRect(scrollX, y0b, scrollW+s3, listH);
+            g.setClip(scrollX,y0b+s5,scrollW,h1-s8);
+            g.setColor(scrollBarC);
+            g.fillRect(scrollX, scrollY, scrollW, scrollH);
+            contactsScroller.setBounds(scrollX, scrollY, scrollW, scrollH);
+            if (hoverShape == contactsScroller) {
+                Stroke prev = g.getStroke();
+                g.setColor(Color.yellow);
+                g.setStroke(stroke2);
+                g.drawRect(scrollX, scrollY, scrollW, scrollH);
+                g.setStroke(prev);
+            }
+        }
+        g.setClip(null);
         return screenImg;
     }
     private void scrollList(int i) {
@@ -264,21 +298,23 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
         session().resumeNextTurnProcessing();
     }
     private void mouseAt(int x, int y) {
-        Rectangle prevHover = hoverBox;
-        hoverBox = null;
+        Shape prevHover = hoverShape;
+        hoverShape = null;
         hoverTech = "";
 
         if (techListBox.contains(x,y)) {
             for (String t: techBoxes.keySet()) {
                 Rectangle r = techBoxes.get(t);
                 if (r.contains(x, y)) {
-                    hoverBox = r;
+                    hoverShape = r;
                     hoverTech = t;
                 }
             }
         }
-
-        if (hoverBox != prevHover)
+        if (contactsScroller.contains(x,y)) 
+            hoverShape = contactsScroller;
+ 
+        if (hoverShape != prevHover)
             repaint();        
     }
     @Override
@@ -288,20 +324,41 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
     @Override
     public void mouseExited(MouseEvent e) { }
     @Override
-    public void mousePressed(MouseEvent e) { }
+    public void mousePressed(MouseEvent e) {   
+        dragY = e.getY();
+    }
     @Override
     public void mouseReleased(MouseEvent e) {
         if (e.getButton() > 3)
             return;
-
-        if (hoverTech != null) {
+        dragY = 0;
+        if (hoverShape == null)
+            return;
+        if (!hoverTech.isEmpty()) {
             softClick();
             selectTech(hoverTech);
             return;
         }
     }
     @Override
-    public void mouseDragged(MouseEvent arg0) {}
+    public void mouseDragged(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
+        int dY = y-dragY;
+        dragY = y;
+        if (contactsScroller == hoverShape) {
+            if ((y >= contactsListBox.y) || (y <= (contactsListBox.y+techListBox.height))) { 
+                int h = (int) techListBox.getHeight();
+                int dListY = (int)((float)dY*(h+techsYMax)/h);
+                if (dY < 0)
+                    techsY = max(0,techsY+dListY);
+                else 
+                    techsY = min(techsYMax,techsY+dListY);
+            }
+            repaint(techListBox);
+            return;
+        }
+    }
     @Override
     public void mouseMoved(MouseEvent e) {
         int x = e.getX();
