@@ -539,6 +539,7 @@ MAIN_COLONIZE_NAME_OK             | OK
 // Reasons to ask player to reallocate a system (during next turn)
 MAIN_ALLOCATE_TITLE               | Spending Adjustments
 MAIN_ALLOCATE_DESIGN_SCRAPPED     | The ship design under construction at %1 has been scrapped.
+MAIN_ALLOCATE_COLONIZED           | • %1 has been colonized.
 MAIN_ALLOCATE_STARGATE_COMPLETE   | • %1 has completed building a Stargate.
 MAIN_ALLOCATE_SHIELD_COMPLETE     | • %1 has completed building %2.
 MAIN_ALLOCATE_BASES_COMPLETE      | • %1 has completed building %2 missile bases.

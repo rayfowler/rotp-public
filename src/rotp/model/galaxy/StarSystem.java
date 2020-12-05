@@ -43,7 +43,6 @@ import rotp.model.planet.PlanetFactory;
 import rotp.model.ships.Design;
 import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipLibrary;
-import rotp.model.tech.TechEngineWarp;
 import rotp.ui.BasePanel;
 import rotp.ui.main.GalaxyMapPanel;
 import rotp.ui.sprites.ShipRelocationSprite;
