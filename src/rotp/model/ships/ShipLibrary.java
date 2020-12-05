@@ -43,6 +43,7 @@ public class ShipLibrary implements Base {
     private static final String[] sizeKey = { "A", "B", "C", "D" };
     private static final String[] designKey = { "01", "02", "03", "04", "05", "06" };
     private static final String[] frameKey = { "a", "b", "c", "d", "e", "f", "g", "h"};
+    private static final String shipImageExtension = ".png";
 
     static {
         current().loadData();
@@ -274,11 +275,11 @@ public class ShipLibrary implements Base {
     }
     private String fileName(int i, int j, int k) {
         String setName = styles.get(i);
-        return imageDir+setName+"/"+sizeKey[j]+designKey[k]+".png";
+        return imageDir+setName+"/"+sizeKey[j]+designKey[k]+shipImageExtension;
     }
     private String fileName(int i, int j, int k, String f) {
         String setName = styles.get(i);
-        return imageDir+setName+"/"+sizeKey[j]+designKey[k]+f+".png";
+        return imageDir+setName+"/"+sizeKey[j]+designKey[k]+f+shipImageExtension;
     }
     private void loadSetFile() {
         BufferedReader in = reader(imageDir+setFilename);
