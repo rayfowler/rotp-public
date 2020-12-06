@@ -506,9 +506,10 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         if (map.hideSystemNames())
             return;
 
-        Colony col = colony();
+        boolean scouted = pl.sv.isScouted(id);
+        Colony col = pl.sv.isColonized(id) ? colony() : null;
         int mapFontSize = fontSize(map);
-        if (map.showSystemNames() || (col == null) || (mapFontSize < 14)) {
+        if (map.showSystemNames() || !scouted || (col == null) || (mapFontSize < 14)) {
             String s1 = map.parent().systemLabel(this);
             String s2 = map.parent().systemLabel2(this);
             if (s2.isEmpty())
@@ -539,9 +540,9 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             }
         }
         else if (map.showSystemData()) {
-            String pop = ""+(int) Math.ceil(col.population());
-            String fact = ""+(int) col.industry().factories();
-            int miss = (int) col.defense().bases();
+            String pop = ""+player().sv.population(id);
+            String fact = ""+player().sv.factories(id);
+            int miss = player().sv.bases(id);
             String lbl = miss > 0 ? text("MAIN_SYSTEM_DETAIL_PFM",pop,fact,""+miss) : text("MAIN_SYSTEM_DETAIL_PF",pop,fact);
             String s1 = map.parent().systemLabel(this);
             String s2 = map.parent().systemLabel2(this);
