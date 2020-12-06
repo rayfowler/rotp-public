@@ -59,6 +59,8 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     private static final Color shield15C = new Color(160,48,240); // original: Color(24,96,24)
     private static final Color shield20C = new Color(255,128,0); // original: Color(160,160,48)
     private static final Color selectionC = new Color(160,160,0);
+    public static final Color systemNameBackC = new Color(40,40,40);
+    public static final Color systemDataBackC = new Color(160,160,160);
     public static final int NULL_ID = -1;
 
     private String name = "";
@@ -501,7 +503,12 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         Rectangle box = nameBox();
         box.width = 0;
         box.height = 0;
-        if (map.showSystemNames()) {
+        if (map.hideSystemNames())
+            return;
+
+        Colony col = colony();
+        int mapFontSize = fontSize(map);
+        if (map.showSystemNames() || (col == null) || (mapFontSize < 14)) {
             String s1 = map.parent().systemLabel(this);
             String s2 = map.parent().systemLabel2(this);
             if (s2.isEmpty())
@@ -524,6 +531,57 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
                     g2.drawString(s2, x0-(sw2/2), y0+yAdj);
                 }
 
+                g2.setFont(prevFont);
+                box.x = x0-(sw/2);
+                box.y = y0+yAdj - BasePanel.s20;
+                box.width = sw;
+                box.height = BasePanel.s20;
+            }
+        }
+        else if (map.showSystemData()) {
+            String pop = ""+(int) Math.ceil(col.population());
+            String fact = ""+(int) col.industry().factories();
+            int miss = (int) col.defense().bases();
+            String lbl = miss > 0 ? text("MAIN_SYSTEM_DETAIL_PFM",pop,fact,""+miss) : text("MAIN_SYSTEM_DETAIL_PF",pop,fact);
+            String s1 = map.parent().systemLabel(this);
+            String s2 = map.parent().systemLabel2(this);
+            if (s2.isEmpty())
+                s2 = name2(map);
+            if (!s1.isEmpty() || !s2.isEmpty()) {
+                Font prevFont = g2.getFont();
+                int fontSize = mapFontSize;
+                g2.setFont(narrowFont(fontSize));
+                int sw = g2.getFontMetrics().stringWidth(s1);
+                g2.setFont(narrowFont(fontSize*3/5));
+                int swData = g2.getFontMetrics().stringWidth(lbl);
+                int boxW = max(sw, swData);
+                int boxSize = drewSelectionBox ? r0+s7 : r0;
+                int yAdj = scaled(fontSize)+boxSize;
+                int fontH = scaled(fontSize);
+                g2.setColor(systemNameBackC);
+                Stroke prevStroke = g2.getStroke();
+                g2.setStroke(BasePanel.stroke1);
+                g2.fillRoundRect(x0-(boxW*3/5), y0+yAdj-(fontH*4/5), boxW*6/5, fontH*8/5, fontH,fontH);
+                g2.setColor(systemDataBackC);
+                g2.drawRoundRect(x0-(boxW*3/5), y0+yAdj-(fontH*4/5), boxW*6/5, fontH*8/5, fontH,fontH);
+                g2.fillRoundRect(x0-(boxW*3/5), y0+yAdj+(fontH/5), (boxW*6/5)+scaled(1), fontH*4/5, fontH, fontH);
+                g2.fillRect(x0-(boxW*3/5), y0+yAdj+(fontH/5), (boxW*6/5)+scaled(1), fontH*2/5);
+                g2.setStroke(prevStroke);
+                g2.setColor(map.parent().systemLabelColor(this));
+                if (!s1.isEmpty()) {
+                    g2.setFont(narrowFont(fontSize));
+                    g2.drawString(s1, x0-(sw/2), y0+yAdj+BasePanel.s1);
+                    y0 += scaled(fontSize-2);
+                    g2.setFont(narrowFont(fontSize*3/5));
+                    g2.setColor(Color.black);
+                    g2.drawString(lbl, x0-(swData/2), y0+yAdj-(fontH/5));
+                }
+                if (!s2.isEmpty()) {
+                    g2.setColor(map.parent().systemLabelColor(this));
+                    g2.setFont(narrowFont(fontSize-2));
+                    int sw2 = g2.getFontMetrics().stringWidth(s2);
+                    g2.drawString(s2, x0-(sw2/2), y0+yAdj+fontH);
+                }
                 g2.setFont(prevFont);
                 box.x = x0-(sw/2);
                 box.y = y0+yAdj - BasePanel.s20;

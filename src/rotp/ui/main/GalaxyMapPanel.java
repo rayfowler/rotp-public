@@ -16,7 +16,6 @@
 package rotp.ui.main;
 
 import java.awt.BasicStroke;
-import java.awt.Shape;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -59,6 +58,11 @@ import rotp.ui.sprites.ZoomOutWidgetSprite;
 
 public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseListener, MouseWheelListener, MouseMotionListener {
     private static final long serialVersionUID = 1L;
+    
+    public static final int HIDE_SYSTEM_NAME = 0;
+    public static final int SHOW_SYSTEM_NAME = 1;
+    public static final int SHOW_SYSTEM_DATA = 2;
+    
     public static final int SHOW_ALL_FLIGHTPATHS = 0;
     public static final int SHOW_IMPORTANT_FLIGHTPATHS = 1;
     public static final int SHOW_NO_FLIGHTPATHS = 2;
@@ -93,7 +97,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     private static float scaleX, scaleY;
     private static float sizeX, sizeY;
     private static final List<Sprite> baseControls = new ArrayList<>();
-    private static boolean showSystemNames = true;
+    private static int systemNameDisplay = SHOW_SYSTEM_DATA;
     private static int flightPathDisplay = SHOW_IMPORTANT_FLIGHTPATHS;
     private static int shipDisplay = SHOW_ALL_SHIPS;
     private static int showShipRanges = SHOW_STARS_AND_RANGES;
@@ -114,7 +118,22 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
 
     public IMapHandler parent()                 { return parent; }
 
-    public void toggleSystemNameDisplay()       { showSystemNames = !showSystemNames; }
+    public void toggleSystemNameDisplay(boolean reverse)       { 
+        if (reverse) {
+                switch(systemNameDisplay) {
+                case HIDE_SYSTEM_NAME: systemNameDisplay = SHOW_SYSTEM_DATA; break;
+                case SHOW_SYSTEM_NAME: systemNameDisplay = HIDE_SYSTEM_NAME; break;
+                case SHOW_SYSTEM_DATA: systemNameDisplay = SHOW_SYSTEM_NAME; break;
+            }
+        }
+        else {
+            switch(systemNameDisplay) {
+                case HIDE_SYSTEM_NAME: systemNameDisplay = SHOW_SYSTEM_NAME; break;
+                case SHOW_SYSTEM_NAME: systemNameDisplay = SHOW_SYSTEM_DATA; break;
+                case SHOW_SYSTEM_DATA: systemNameDisplay = HIDE_SYSTEM_NAME; break;
+            }
+        }
+    }
     public void toggleFlightPathDisplay(boolean reverse)       {
         if (reverse) {
             switch(flightPathDisplay) {
@@ -173,7 +192,9 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     public boolean showFriendlyTransports()     { return shipDisplay != SHOW_ONLY_ARMED_SHIPS; }
     public boolean showUnarmedShips()           { return shipDisplay == SHOW_ALL_SHIPS; }
     public boolean showArmedShips()             { return true; }
-    public boolean showSystemNames()            { return showSystemNames; }
+    public boolean hideSystemNames()            { return systemNameDisplay == HIDE_SYSTEM_NAME; }
+    public boolean showSystemNames()            { return systemNameDisplay == SHOW_SYSTEM_NAME; }
+    public boolean showSystemData()             { return systemNameDisplay == SHOW_SYSTEM_DATA; }
     public boolean showShipRanges()             { return (showShipRanges == SHOW_RANGES) || (showShipRanges == SHOW_STARS_AND_RANGES); }
     public boolean showStars()                  { return (showShipRanges == SHOW_STARS)  || (showShipRanges == SHOW_STARS_AND_RANGES); }
 

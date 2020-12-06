@@ -564,7 +564,7 @@ FUTURECOMP_8_NAME    | Future Computer IX
 FUTURECOMP_8_DETAIL  | General Improvements in Computer Technology.
 
 FUTURECOMP_9_NAME    | Future Computer X
-FUTURECOMP_9_DETAIL  | General Improvements in Computer Technology.
+FUTURECOMP_9_DETAIL  | General Improvements in Computer Technology. 
 
 
 //
@@ -598,7 +598,7 @@ FUTURECONST_8_NAME    | Future Construction IX
 FUTURECONST_8_DETAIL  | General Improvements in Construction Technology.
 
 FUTURECONST_9_NAME    | Future Construction X
-FUTURECONST_9_DETAIL  | General Improvements in Construction Technology.
+FUTURECONST_9_DETAIL  | General Improvements in Construction Technology. 
 
 
 //
@@ -734,7 +734,7 @@ FUTUREWEAPON_8_NAME    | Future Weapon IX
 FUTUREWEAPON_8_DETAIL  | General Improvements in Weapon Technology.
 
 FUTUREWEAPON_9_NAME    | Future Weapon X
-FUTUREWEAPON_9_DETAIL  | General Improvements in Weapon Technology.
+FUTUREWEAPON_9_DETAIL  | General Improvements in Weapon Technology. 
 
 
 //

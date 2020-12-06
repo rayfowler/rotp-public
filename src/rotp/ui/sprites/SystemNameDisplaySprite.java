@@ -17,6 +17,8 @@ package rotp.ui.sprites;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Shape;
+import java.awt.geom.RoundRectangle2D;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
 import rotp.ui.main.GalaxyMapPanel;
@@ -38,34 +40,51 @@ public class SystemNameDisplaySprite  extends MapControlSprite  {
     }
     @Override
     public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
-        map.toggleSystemNameDisplay();
+        map.toggleSystemNameDisplay(rightClick);
     }
     @Override
     public void draw(GalaxyMapPanel map, Graphics2D g2) {
         StarSystem home = galaxy().system(player().capitalSysId());
         drawBackground(map,g2);
         int x2 = startX+width/2;
-        int y2 = startY+scaled(5);
+        int y2 = startY+scaled(2);
 
         Color c0 = g2.getColor();
         int cnr = BasePanel.s12;        
         g2.setColor(background);
+        
         g2.fillRoundRect(startX, startY, width, height, cnr, cnr);
 
+        int s1 = scaled(1);
         int s2 = scaled(2);
         int s4 = scaled(4);
-        g2.setClip(startX+s2,startY+s2,width-s4,height-s4);
+        
+        Shape clipArea = new RoundRectangle2D.Float(startX, startY, width, height, cnr, cnr);
+        g2.setClip(clipArea);
+
         home.drawStar(map, g2, x2, y2);
 
-        g2.setFont(narrowFont(16));
 
-        Color textC = map.showSystemNames() ? greenC : darkGreenC;
+        if (map.showSystemData()) {
+            g2.setColor(StarSystem.systemNameBackC);
+            g2.fillRect(startX, y2+scaled(12), width, height);
+            g2.setColor(StarSystem.systemDataBackC);
+            g2.fillRect(startX, y2+scaled(12), width, s1);
+        }
+        g2.setFont(narrowFont(12));
+
+        Color textC = map.hideSystemNames() ? darkGreenC : greenC;
 
         g2.setColor(textC);
         String name = map.parent().systemLabel(home);
         int sw = g2.getFontMetrics().stringWidth(name);
 
-        g2.drawString(name, x2-(sw/2), y2+scaled(22));
+        g2.drawString(name, x2-(sw/2), y2+scaled(24));
+        
+        if (map.showSystemData()) {
+            g2.setColor(StarSystem.systemDataBackC);
+            g2.fillRect(startX, y2+scaled(26), width, height);
+        }
         g2.setClip(null);
         g2.setColor(c0);
         drawBorder(map, g2);

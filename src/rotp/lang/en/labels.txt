@@ -337,6 +337,9 @@ MAIN_NAVIGATION_NEXT_TURN         | Next Turn
 MAIN_YEAR_DISPLAY                 | Year  %1
 MAIN_TURN_DISPLAY                 | Turn  %1
 
+MAIN_SYSTEM_DETAIL_PFM            | Pop %1    Fact %2    Miss %3
+MAIN_SYSTEM_DETAIL_PF             | Pop %1    Fact %2 
+
 MAIN_UNEXPLORED_SYSTEM            | Unexplored
 MAIN_ALLIED_COLONY                | Allied Colony
 MAIN_SYSTEM_RANGE                 | %1 Light-Years
