@@ -74,6 +74,7 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
     BaseText randomEventsText;
     BaseText colonizePromptText;
     BaseText researchRateText;
+    BaseText techTradingText;
     BaseText aiText;
 
     Rectangle[] oppSet = new Rectangle[MAX_DISPLAY_OPPS];
@@ -96,12 +97,14 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         randomEventsText = new BaseText(this, false, 17, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         researchRateText = new BaseText(this, false, 17, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         galaxyAgeText = new BaseText(this, false, 17, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        techTradingText = new BaseText(this, false, 17, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         colonizePromptText = new BaseText(this, false, 17, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         aiText =           new BaseText(this, false, 17, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
     }
     public void init() {
         randomEventsText.displayText(randomEventsStr());
         researchRateText.displayText(researchRateStr());
+        techTradingText.displayText(techTradingStr());
         galaxyAgeText.displayText(galaxyAgeStr());
         colonizePromptText.displayText(colonizePromptStr());
         aiText.displayText(aiStr());
@@ -289,8 +292,10 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         randomEventsText.draw(g);
         researchRateText.setScaledXY(rightBoxX+s40, boxY+rightBoxH-s30);
         researchRateText.draw(g);
-        aiText.setScaledXY(galaxyX+w1, boxY+rightBoxH-s50);
+        aiText.setScaledXY(galaxyX+w1, boxY+rightBoxH-s70);
         aiText.draw(g);
+        techTradingText.setScaledXY(galaxyX+w1, boxY+rightBoxH-s50);
+        techTradingText.draw(g);
         colonizePromptText.setScaledXY(galaxyX+w1, boxY+rightBoxH-s30);
         colonizePromptText.draw(g);
     }
@@ -313,6 +318,11 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         softClick();
         options().selectedResearchRate(options().nextResearchRate());
         researchRateText.repaint(researchRateStr());
+    }
+    private void toggleTechTrading(MouseEvent e) {
+        softClick();
+        options().selectedTechTradeOption(options().nextTechTradeOption());
+        techTradingText.repaint(techTradingStr());
     }
     private void toggleAI() {
         softClick();
@@ -712,6 +722,10 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         String opt = text(options().selectedResearchRate());
         return text("GAME_RESEARCH_RATE", opt)+"     ";
     }
+    private String techTradingStr() {
+        String opt = text(options().selectedTechTradeOption());
+        return text("GAME_TECH_TRADING", opt)+"     ";
+    }
     private String galaxyAgeStr() {
         String opt = text(options().selectedGalaxyAge());
         return text("GAME_GALAXY_AGE", opt)+"     ";
@@ -754,6 +768,8 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
             hoverBox = galaxyAgeText.bounds();
         else if (researchRateText.contains(x,y))
             hoverBox = researchRateText.bounds();
+        else if (techTradingText.contains(x,y))
+            hoverBox = techTradingText.bounds();
         else if (aiText.contains(x,y))
             hoverBox = aiText.bounds();
         else if (startBox.contains(x,y))
@@ -811,6 +827,8 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
                 colonizePromptText.mouseExit();
             else if (prevHover == researchRateText.bounds())
                 researchRateText.mouseExit();
+            else if (prevHover == techTradingText.bounds())
+                techTradingText.mouseExit();
             else if (prevHover == aiText.bounds())
                 aiText.mouseExit();
             if (hoverBox == randomEventsText.bounds())
@@ -821,6 +839,8 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
                 colonizePromptText.mouseEnter();
             else if (hoverBox == researchRateText.bounds())
                 researchRateText.mouseEnter();
+            else if (hoverBox == techTradingText.bounds())
+                techTradingText.mouseEnter();
             else if (hoverBox == aiText.bounds())
                 aiText.mouseEnter();
             repaint();
@@ -846,6 +866,8 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
             toggleColonizePrompt();
         else if (hoverBox == researchRateText.bounds())
             toggleResearchRate(e);
+        else if (hoverBox == techTradingText.bounds())
+            toggleTechTrading(e);
         else if (hoverBox == aiText.bounds())
             toggleAI();
         else if (hoverBox == backBox)

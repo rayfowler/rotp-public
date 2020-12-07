@@ -20,6 +20,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import rotp.model.empires.Empire;
 import rotp.model.empires.Race;
 import rotp.model.galaxy.GalaxyCircularShape;
 import rotp.model.galaxy.GalaxyEllipticalShape;
@@ -64,6 +65,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private String selectedMapOption;
     private String selectedGameDifficulty;
     private String selectedResearchRate;
+    private String selectedTechTradeOption;
     private int selectedNumberOpponents;
     private boolean communityAI = false;
     private boolean disableRandomEvents = false;
@@ -134,6 +136,10 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     public String selectedResearchRate()         { return selectedResearchRate; }
     @Override
     public void selectedResearchRate(String s)   { selectedResearchRate = s; }
+    @Override
+    public String selectedTechTradeOption()         { return selectedTechTradeOption; }
+    @Override
+    public void selectedTechTradeOption(String s)   { selectedTechTradeOption = s; }
     @Override
     public int selectedNumberOpponents()         { return selectedNumberOpponents; }
     @Override
@@ -323,6 +329,15 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
             default:  
                 return amt;                   // no additional slowing. 
         }
+    }
+    @Override
+    public boolean canTradeTechs(Empire e1, Empire e2) {
+        switch(selectedTechTradeOption()) {
+            case TECH_TRADING_YES: return true;
+            case TECH_TRADING_NO:  return false;
+            case TECH_TRADING_ALLIES: return e1.alliedWith(e2.id);
+        }
+        return true;
     }
     @Override
     public String randomStarType() {
@@ -531,6 +546,14 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         return list;
     }
     @Override
+    public List<String> techTradingOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(TECH_TRADING_YES);
+        list.add(TECH_TRADING_ALLIES);
+        list.add(TECH_TRADING_NO);
+        return list;
+    }
+    @Override
     public List<String> startingRaceOptions() {
         List<String> list = new ArrayList<>();
         list.add("RACE_HUMAN");
@@ -560,6 +583,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedPlayerRace(random(startingRaceOptions()));
         selectedGameDifficulty = DIFFICULTY_NORMAL;
         selectedResearchRate = RESEARCH_NORMAL;
+        selectedTechTradeOption = TECH_TRADING_YES;
         generateGalaxy();
     }
     private void generateGalaxy() {

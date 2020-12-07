@@ -167,8 +167,19 @@ public class AICDiplomat implements Base, Diplomat {
     //  EXCHANGE TECHNOLOGY
     //-----------------------------------
     @Override
-    public boolean canExchangeTechnology(Empire e)         { return diplomats(id(e)) && !empire.atWarWith(id(e)) && empire.inEconomicRange(id(e)) && !empire.viewForEmpire(id(e)).spies().unknownTechs().isEmpty(); }
-
+    public boolean canExchangeTechnology(Empire e) { 
+        // to trade technology with another empire, all of the following must be true:
+        // 1 - the game setup options allow it 
+        // 2 - we have diplomats active
+        // 3 - we are not at war
+        // 4 - we are in economic range
+        // 5 - our spies tell us they have technologies that are unknown to us
+        return options().canTradeTechs(empire, e) 
+                && diplomats(id(e)) 
+                && !empire.atWarWith(id(e)) 
+                && empire.inEconomicRange(id(e)) 
+                && !empire.viewForEmpire(id(e)).spies().unknownTechs().isEmpty(); 
+    }
     @Override
     public DiplomaticReply receiveRequestTech(Empire diplomat, Tech tech) {
         if (empire.isPlayer()) {

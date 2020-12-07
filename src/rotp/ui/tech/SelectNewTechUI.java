@@ -105,6 +105,8 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
         Collections.sort(availableTechs, Tech.LEVEL);
         hoverTech = availableTechs.get(0);
         startTimeMs = System.currentTimeMillis();
+        dragY = 0;
+        techsY = 0;
         repaint();
     }
     public TechCategory category()        { return category; }

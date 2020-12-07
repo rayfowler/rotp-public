@@ -299,11 +299,12 @@ GAME_SHRINK                       | Shrink -
 GAME_ENLARGE                      | Expand
 GAME_MEMORY_SHOW                  | Memory Use: SHOW
 GAME_MEMORY_HIDE                  | Memory Use: HIDE
-GAME_RANDOM_EVENTS_ON             | Random Events: ON
-GAME_RANDOM_EVENTS_OFF            | Random Events: OFF
-GAME_COLONIZE_PROMPT_ON           | Prompt to Colonize: YES
-GAME_COLONIZE_PROMPT_OFF          | Prompt to Colonize: NO
+GAME_RANDOM_EVENTS_ON             | Random Events: On
+GAME_RANDOM_EVENTS_OFF            | Random Events: Off
+GAME_COLONIZE_PROMPT_ON           | Prompt to Colonize: Yes
+GAME_COLONIZE_PROMPT_OFF          | Prompt to Colonize: No
 GAME_RESEARCH_RATE                | Research Rate: %1
+GAME_TECH_TRADING                 | Tech Trading: %1
 GAME_GALAXY_AGE                   | Galaxy Age: %1
 GAME_AI_BASE                      | Base AI
 GAME_AI_DEVELOPMENT               | Development AI
@@ -906,6 +907,9 @@ SETUP_RESEARCH_RATE_NORMAL        | Normal
 SETUP_RESEARCH_RATE_SLOW          | Slow
 SETUP_RESEARCH_RATE_SLOWER        | Slower
 SETUP_RESEARCH_RATE_SLOWEST       | Slowest
+SETUP_TECH_TRADING_YES            | Yes
+SETUP_TECH_TRADING_ALLIES         | Allies Only
+SETUP_TECH_TRADING_NO             | No
 SETUP_GAME_NUMBER_OPPONENTS       | Opponents
 SETUP_RACE_LABEL                  | Available Races
 SETUP_RACE_COLOR                  | Empire Color:

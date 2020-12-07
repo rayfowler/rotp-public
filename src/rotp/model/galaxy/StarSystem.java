@@ -508,8 +508,9 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
 
         boolean scouted = pl.sv.isScouted(id);
         Colony col = pl.sv.isColonized(id) ? colony() : null;
+        int pop = pl.sv.population(id);
         int mapFontSize = fontSize(map);
-        if (map.showSystemNames() || !scouted || (col == null) || (mapFontSize < 14)) {
+        if (map.showSystemNames() || (pop == 0) || (mapFontSize < 14)) {
             String s1 = map.parent().systemLabel(this);
             String s2 = map.parent().systemLabel2(this);
             if (s2.isEmpty())
@@ -540,10 +541,10 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             }
         }
         else if (map.showSystemData()) {
-            String pop = ""+player().sv.population(id);
-            String fact = ""+player().sv.factories(id);
-            int miss = player().sv.bases(id);
-            String lbl = miss > 0 ? text("MAIN_SYSTEM_DETAIL_PFM",pop,fact,""+miss) : text("MAIN_SYSTEM_DETAIL_PF",pop,fact);
+            String popStr = ""+pop;
+            String fact = ""+pl.sv.factories(id);
+            int miss = pl.sv.bases(id);
+            String lbl = miss > 0 ? text("MAIN_SYSTEM_DETAIL_PFM",popStr,fact,""+miss) : text("MAIN_SYSTEM_DETAIL_PF",popStr,fact);
             String s1 = map.parent().systemLabel(this);
             String s2 = map.parent().systemLabel2(this);
             if (s2.isEmpty())

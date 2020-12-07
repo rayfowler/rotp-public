@@ -17,6 +17,7 @@ package rotp.model.game;
 
 import java.awt.Color;
 import java.util.List;
+import rotp.model.empires.Empire;
 import rotp.model.empires.Race;
 import rotp.model.galaxy.GalaxyShape;
 import rotp.model.galaxy.StarSystem;
@@ -84,6 +85,10 @@ public interface IGameOptions {
     public static final String RESEARCH_SLOWER  = "SETUP_RESEARCH_RATE_SLOWER";
     public static final String RESEARCH_SLOWEST = "SETUP_RESEARCH_RATE_SLOWEST";
     
+    public static final String TECH_TRADING_YES     = "SETUP_TECH_TRADING_YES";
+    public static final String TECH_TRADING_ALLIES  = "SETUP_TECH_TRADING_ALLIES";
+    public static final String TECH_TRADING_NO      = "SETUP_TECH_TRADING_NO";
+    
     public static final String GALAXY_AGE_NORMAL = "SETUP_GALAXY_AGE_NORMAL";
     public static final String GALAXY_AGE_YOUNG  = "SETUP_GALAXY_AGE_YOUNG";
     public static final String GALAXY_AGE_OLD    = "SETUP_GALAXY_AGE_OLD";
@@ -98,6 +103,7 @@ public interface IGameOptions {
     public int numberNebula();
     public List<Integer> possibleColors();
     public float researchCostBase(int techLevel);
+    public boolean canTradeTechs(Empire e1, Empire e2);
     public String randomStarType();
     public String randomPlayerStarType(Race r);
     public String randomRaceStarType(Race r);
@@ -122,6 +128,7 @@ public interface IGameOptions {
     public List<String> galaxyShapeOptions();
     public List<String> galaxyAgeOptions();
     public List<String> researchRateOptions();
+    public List<String> techTradingOptions();
 	
     // modnar: new map option, MapOptionOptions
     public List<String> MapOptionOptions();
@@ -138,6 +145,8 @@ public interface IGameOptions {
     public void selectedGalaxyAge(String s);
     public String selectedResearchRate();
     public void selectedResearchRate(String s);
+    public String selectedTechTradeOption();
+    public void selectedTechTradeOption(String s);
 	
 	// modnar: new map option, selectedMapOption
 	public String selectedMapOption();
@@ -216,6 +225,11 @@ public interface IGameOptions {
     default String nextResearchRate() {
         List<String> opts = researchRateOptions();
         int index = opts.indexOf(selectedResearchRate())+1;
+        return index >= opts.size() ? opts.get(0) : opts.get(index);
+    }
+    default String nextTechTradeOption() {
+        List<String> opts = techTradingOptions();
+        int index = opts.indexOf(selectedTechTradeOption())+1;
         return index >= opts.size() ? opts.get(0) : opts.get(index);
     }
     default void nextOpponent(int i) {
