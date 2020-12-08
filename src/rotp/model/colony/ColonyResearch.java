@@ -18,6 +18,7 @@ package rotp.model.colony;
 public class ColonyResearch extends ColonySpendingCategory {
     private static final long serialVersionUID = 1L;
     private float projectBC = 0;
+    private float unallocatedBC = 0;
     private ColonyResearchProject project;
 
     public ColonyResearchProject project()         { return project; }
@@ -37,12 +38,14 @@ public class ColonyResearch extends ColonySpendingCategory {
     public float projectRemainingBC()   { return project == null ? 0 : project.remainingResearchBC(); }
     @Override
     public void nextTurn(float totalProd, float totalReserve) {
+        unallocatedBC = totalBC();
         projectBC = 0;
         // there may be a special project at this colony that consumes research
         if (project != null) {
-            projectBC = min(totalBC(), project.remainingResearchBC());
+            projectBC = min(unallocatedBC, project.remainingResearchBC());
             project.addResearchBC(projectBC);
-        }
+            unallocatedBC -= projectBC;
+        }       
     }
     private float researchBonus() { return  planet().researchAdj() * empire().race().researchBonusPct() * session().researchBonus(); }
     @Override
@@ -59,9 +62,18 @@ public class ColonyResearch extends ColonySpendingCategory {
             if (bc <= 0)
                 return text(project.projectKey());
         }
+        
+        if (colony().empire().tech().researchCompleted())
+            return text(reserveText);
+
         return text(researchPointsText, (int)bc);
     }
     @Override
     public void assessTurn() { }
-    public void commitTurn() { }
+    public void commitTurn() { 
+        if (empire().tech().researchCompleted()) {
+            empire().addReserve(unallocatedBC);
+            unallocatedBC = 0;
+        }         
+    }
 }

@@ -760,6 +760,15 @@ TECH_ALLOCATE_ATMOSPHERE          | Should we increase the ecology ratios of our
 TECH_ALLOCATE_TERRAFORM           | Should we increase the ecology ratios of all of our colonies in order to begin terraforming our planets?
 TECH_ALLOCATE_NO                  | No
 TECH_ALLOCATE_PCT                 | +%1%
+TECH_COMPLETED_TITLE              | Research Completed!
+TECH_COMPLETED_COMPUTER           | We have completed all possible research in Computer technology! No further research in this field is possible.
+TECH_COMPLETED_CONSTRUCTION       | We have completed all possible research in Construction technology! No further research in this field is possible.
+TECH_COMPLETED_FORCE_FIELD        | We have completed all possible research in Force Field technology! No further research in this field is possible.
+TECH_COMPLETED_PLANETOLOGY        | We have completed all possible research in Planetology technology! No further research in this field is possible.
+TECH_COMPLETED_PROPULSION         | We have completed all possible research in Propulsion technology! No further research in this field is possible.
+TECH_COMPLETED_WEAPON             | We have completed all possible research in Weapon technology! No further research in this field is possible.
+TECH_COMPLETED_ALL                | We have completed all possible scientific research. The time for study is over. All future funding into research will be transferred into the empire treasury.
+TECH_COMPLETED_VERIFY             | Verify that spending allocations in the remaining research fields are set properly.
 
 // prompt for espionage
 NOTICE_ESPIONAGE_TITLE            | Our spies have infiltrated a %1 base.
@@ -938,6 +947,7 @@ TECH_NEXT_TIER_DESC               | Learn a technology in previous tier to unloc
 TECH_FUTURE_TIER_DESC             | Learn all technologies in previous tiers to unlock.
 TECH_ALLOCATE_POINTS              | Allocate Research Points
 TECH_EQUALIZE                     | Equalize Allocations
+TECH_RESEARCH_COMPLETED           | Research Completed
 TECH_RESEARCHING                  | Researching:
 TECH_NONE_RESEARCHED              | None
 TECH_PLANETARY_SHIELDS            | Planetary Shields

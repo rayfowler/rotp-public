@@ -405,38 +405,42 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         String title = text(TechCategory.id(catNum));
         drawShadowedString(g, title, 1, x+s20, y0, Color.black, whiteTextC);
 
-        float chance = cat.upcomingDiscoveryChance(totalPlanetaryResearch);
-        int x0 = x+scaled(180);
-        int r = s19;
-        if (chance <= 1) {
-            g.setColor(Color.black);
-            g.fillOval(x0-s10, y0-s16, r, r);
-            int lvl = (int)(chance*r);
-            g.setColor(blueBucketC);
-            g.setClip(x0-s10,y0+s4-lvl,r+r,r);
-            g.fillOval(x0-s10, y0-s16, r, r);
-            g.setClip(null);
-        }
-        else {
-            int pct = (int) (100* (chance -1));
-            String strPct = text("TECH_DISCOVERY_PCT",pct);
-            g.setFont(narrowFont(18));
-            g.setColor(Color.black);
-            int swPct = g.getFontMetrics().stringWidth(strPct);
-            g.drawString(strPct, x0-(swPct/2), y0);
+        if (!cat.researchCompleted()) {
+            float chance = cat.upcomingDiscoveryChance(totalPlanetaryResearch);
+            int x0 = x+scaled(180);
+            int r = s19;
+            if (chance <= 1) {
+                g.setColor(Color.black);
+                g.fillOval(x0-s10, y0-s16, r, r);
+                int lvl = (int)(chance*r);
+                g.setColor(blueBucketC);
+                g.setClip(x0-s10,y0+s4-lvl,r+r,r);
+                g.fillOval(x0-s10, y0-s16, r, r);
+                g.setClip(null);
+            }
+            else {
+                int pct = (int) (100* (chance -1));
+                String strPct = text("TECH_DISCOVERY_PCT",pct);
+                g.setFont(narrowFont(18));
+                g.setColor(Color.black);
+                int swPct = g.getFontMetrics().stringWidth(strPct);
+                g.drawString(strPct, x0-(swPct/2), y0);
+            }
         }
 
         int fontSize = 18;
         g.setColor(Color.black);
         g.setFont(narrowFont(fontSize));
-        String researching = text("TECH_RESEARCHING");
+        String researching = cat.researchCompleted() ? text("TECH_RESEARCH_COMPLETED") : text("TECH_RESEARCHING");
         int sw1 = g.getFontMetrics().stringWidth(researching);
         int x1 =x+scaled(200);
         g.drawString(researching, x1, y0);
 
-        g.setFont(plainFont(fontSize));
-        String techName = tech == null ? text("TECH_NONE_RESEARCHED") : tech.name();
-        g.drawString(techName, x1+sw1+s5, y0);
+        if (!cat.researchCompleted()) {
+            g.setFont(plainFont(fontSize));
+            String techName = tech == null ? text("TECH_NONE_RESEARCHED") : tech.name();
+            g.drawString(techName, x1+sw1+s5, y0);
+        }
 
         g.setFont(narrowFont(fontSize));
         String detail1Key = cat.techDescription1(true);

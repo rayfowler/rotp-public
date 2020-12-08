@@ -82,6 +82,14 @@ public final class TechTree implements Base, Serializable {
     public void canBuildStargate(boolean b)                           { canBuildStargate = b; }
     public boolean hyperspaceCommunications()                         { return hyperspaceCommunications; }
     public void hyperspaceCommunications(boolean b)                   { hyperspaceCommunications = b; }
+    
+    public boolean researchCompleted() {
+        for (TechCategory cat: category) {
+            if (!cat.researchCompleted())
+                return false;
+        }
+        return true;
+    }
     public List<String> tradedTechs() {
         if (tradedTechs == null)
             tradedTechs = new ArrayList<>();
@@ -245,8 +253,16 @@ public final class TechTree implements Base, Serializable {
         newTechs().clear();
     }
     public boolean adjustTechAllocation(int index, int adj) {
+        return adjustTechAllocation(index,adj,false);
+    }
+    public boolean adjustTechAllocation(int index, int adj, boolean ignoreLock) {
         TechCategory changedCat = category[index];
-        if (changedCat.locked())
+        
+        // this method can be called internally when a category completes research
+        // and it needs to be reallocated to 0.
+        // completed cats are considered "locked" so we want to ignore this locked
+        // check when reallocating a completed category
+        if (!ignoreLock && changedCat.locked())
             return false;
 
         int MAX = TechCategory.MAX_ALLOCATION_TICKS;
@@ -497,6 +513,18 @@ public final class TechTree implements Base, Serializable {
     public void allocateResearch() {
         for (int j=0; j<category.length; j++)
             category[j].allocateResearchBC();
+        
+        // if all categories are completed, no need to check
+        // for reallocation of completed categories
+        if (researchCompleted())
+            return;
+        
+        // check to see if any categories are completed but
+        // still have spending (not reallocated yet, so do it now)
+        for (TechCategory cat: category) {
+            if (cat.researchCompleted() && (cat.allocation() > 0)) 
+                adjustTechAllocation(cat.index(), 0-cat.allocation(), true);
+        }
     }
     public String randomKnownTech() {
         return random(category).randomKnownTech();

@@ -31,12 +31,14 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
+import java.util.ArrayList;
 import java.util.List;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EspionageMission;
 import rotp.model.galaxy.Galaxy;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.tech.Tech;
+import rotp.model.tech.TechCategory;
 import rotp.ui.FadeInPanel;
 import rotp.ui.main.SystemPanel;
 
@@ -49,6 +51,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
     static final int MODE_SHOW_TECH = 0;
     static final int MODE_FRAME_EMPIRE = 1;
     static final int MODE_REALLOCATE = 2;
+    static final int MODE_COMPLETED = 3;
 
     static final int BACKGROUND_LABORATORY = 0;
     static final int BACKGROUND_ALIEN_LAB = 1;
@@ -69,6 +72,8 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
     static Color yellowText = new Color(226,173,26);
     static Color backShadingC = new Color(0,0,0,192);
 
+    private static final Color darkBrown = new Color(112,85,68);
+    private static final Color darkBrownShade = new Color(112,85,68,128);
     static Color dimWhite = new Color(225,225,255);
     static Color gray2 = new Color(123,123,123);
     static Color grayShade = new Color(123,123,123,160);
@@ -97,6 +102,10 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
 
     private boolean shouldReallocate()  { return player().isPlayerControlled() && tech.promptToReallocate() && !tech.isObsolete(player()); }
     private boolean shouldFrameEmpire() { return (mission != null) && (frameEmpire1 != null) && (frameEmpire2 != null); }
+    private boolean showCompletion() {
+        TechCategory cat = player().tech().category(tech.cat.index());
+        return player().isPlayerControlled() && (background == BACKGROUND_LABORATORY) && cat.researchCompleted(); 
+    }
 
     public DiscoverTechUI() {
         init();
@@ -292,6 +301,8 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
             drawTechDiscovery(g, title);
         else if (mode == MODE_REALLOCATE)
             drawReallocation(g);
+        else if (mode == MODE_COMPLETED)
+            drawCompletion(g);
         else if (mode == MODE_FRAME_EMPIRE)
             drawFrameEmpire(g);
 
@@ -405,7 +416,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         int boxWidth = boxRightX - boxLeftX;
 
         // break title into multiple lines based on width
-        g.setFont(narrowFont(20));
+        g.setFont(narrowFont(22));
         List<String> titleLines = wrappedLines(g, title2, boxWidth-s40);
         int titleH = titleLines.size()*titleLineH;
 
@@ -415,9 +426,9 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         int boxHeight = boxBottomY - boxTopY;
 
         // draw main box with shaded borders
-        g.setColor(grayShade);
+        g.setColor(darkBrownShade);
         g.fillRect(boxLeftX-bdr, boxTopY-bdr, boxWidth+bdr+bdr, boxHeight+bdr+bdr);
-        g.setColor(gray2);
+        g.setColor(darkBrown);
         g.fillRect(boxLeftX, boxTopY, boxWidth, boxHeight);
 
         // draw title for main box
@@ -475,6 +486,96 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         g.drawRoundRect(x1+s1,y,w-s2,h,cnr,cnr);
         g.setStroke(prev2);
     }
+    private void drawCompletion(Graphics2D g) {
+        int w = getWidth();
+        int h = getHeight();
+
+        int bdr = s10;
+        int titleLineH = s25;
+        int detailLineH = s18;
+     
+        String titleLine = text("TECH_COMPLETED_TITLE");
+        
+        String detail, detail2;
+        if (player().tech().researchCompleted()) {
+            detail = text("TECH_COMPLETED_ALL");
+            detail2 = "";
+        }
+        else {
+           switch (tech.cat.index()) {
+               case 0: detail = text("TECH_COMPLETED_COMPUTER"); break;
+               case 1: detail = text("TECH_COMPLETED_CONSTRUCTION"); break;
+               case 2: detail = text("TECH_COMPLETED_FORCE_FIELD"); break;
+               case 3: detail = text("TECH_COMPLETED_PLANETOLOGY"); break;
+               case 4: detail = text("TECH_COMPLETED_PROPULSION"); break;
+               case 5: detail = text("TECH_COMPLETED_WEAPON"); break;
+               default: detail = "Unknown tech category: "+tech.cat.index(); break;
+           }
+           detail2 = text("TECH_COMPLETED_VERIFY"); 
+        }
+
+        int sideMgn = scaled(150);
+        // get width of text box
+        int boxLeftX = (getWidth()/2)+sideMgn;
+        int boxRightX = getWidth() - sideMgn;
+        int boxWidth = boxRightX - boxLeftX;
+
+        // break title into multiple lines based on width
+        g.setFont(narrowFont(22));
+        List<String> titleLines = wrappedLines(g, titleLine, boxWidth-s40);
+        int titleH = titleLines.size()*titleLineH;
+
+        // break detail into multiple lines based on width
+        g.setFont(narrowFont(16));
+        List<String> detailLines = wrappedLines(g, detail, boxWidth-s40);
+        int detailH = detailLines.size()*detailLineH;
+
+        // break detail into multiple lines based on width
+
+        List<String> detail2Lines = new ArrayList<>();
+        // calculate vertical size of text box
+        int boxTopY = scaled(200);
+        int boxBottomY = boxTopY+s20+titleH+s20+detailH+s20;
+        if (!detail2.isEmpty()) {
+            g.setFont(narrowFont(16));
+            detail2Lines = wrappedLines(g, detail2, boxWidth-s40);
+            int detail2H = detail2Lines.size()*detailLineH;
+            boxBottomY = boxBottomY+detail2H+s20;
+        }
+        
+        int boxHeight = boxBottomY - boxTopY;
+
+        // draw main box with shaded borders
+        g.setColor(darkBrownShade);
+        g.fillRect(boxLeftX-bdr, boxTopY-bdr, boxWidth+bdr+bdr, boxHeight+bdr+bdr);
+        g.setColor(darkBrown);
+        g.fillRect(boxLeftX, boxTopY, boxWidth, boxHeight);
+
+        // draw title for main box
+        int y0 = boxTopY+s10;
+        int x0 = boxLeftX+s20;
+        g.setFont(narrowFont(22));
+        for (String line: titleLines) {
+            y0 += titleLineH;
+            drawShadowedString(g, line, 4, x0, y0, SystemPanel.textShadowC, dimWhite);
+        }
+
+        y0 = y0+s20;
+        g.setColor(SystemPanel.blackText);
+        g.setFont(narrowFont(16));
+        for (String line: detailLines) {
+            y0 += detailLineH;
+            g.drawString(line, x0, y0);
+        }
+        
+        if (!detail2.isEmpty()) {
+            y0 = y0+s20;
+            for (String line: detail2Lines) {
+                y0 += detailLineH;
+                g.drawString(line, x0, y0);
+            }
+        }
+    }
     private void initFrameButtonGradients(int x1, int x2, int w) {
         Point2D left1 = new Point2D.Float(x1, 0);
         Point2D left2 = new Point2D.Float(x2, 0);
@@ -526,6 +627,11 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
             repaint();
             return;
         }
+        else if (showCompletion()) {
+            mode = MODE_COMPLETED;
+            repaint();
+            return;
+        }
         finish();
     }
     private void handleFrameEmpireAction(int buttonId) {
@@ -546,21 +652,28 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
     }
     private void handleReallocateSystemsAction(int buttonId) {
         float amt = tech().baseReallocateAmount();
-        if (buttonId == 1) {
-            finish();
+        
+        softClick();
+        
+        // add appropriate colony spending orders based on button
+        switch (buttonId) {
+            case 1: break;
+            case 2: player().addColonyOrder(tech().followup(), amt); break;
+            case 3: player().addColonyOrder(tech().followup(), amt*2); break;
+            case 4: player().addColonyOrder(tech().followup(), amt*3); break;
         }
-        else if (buttonId == 2) {
-            player().addColonyOrder(tech().followup(), amt);
-            finish();
+        
+        // if we have completed research, go to that mode
+        if (showCompletion()) {
+            mode = MODE_COMPLETED;
+            repaint();
+            return;
         }
-        else if (buttonId == 3) {
-            player().addColonyOrder(tech().followup(), amt*2);
-            finish();
-        }
-        else if (buttonId == 4) {
-            player().addColonyOrder(tech().followup(), amt*3);
-            finish();
-        }
+        finish();
+    }
+    private void handleModeCompletedAction() {
+        softClick();
+        finish();
     }
     @Override
     public void mouseClicked(MouseEvent e) { }
@@ -599,6 +712,9 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
                 handleReallocateSystemsAction(3);
             else if (button4.contains(x,y))
                 handleReallocateSystemsAction(4);
+        }
+        else if (mode == MODE_COMPLETED) {
+            handleModeCompletedAction();
         }
     }
     @Override

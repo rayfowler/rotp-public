@@ -57,7 +57,7 @@ public final class TechCategory implements Base, Serializable {
     private TechTree tree;
     private float discoveryPct = 1;
     private float totalBC = 0;
-    private int futureTechLevel = 0;
+    private boolean researchCompleted = false;
 
     public int index()                     { return index; }
     public void index(int i)               { index = i; }
@@ -65,7 +65,7 @@ public final class TechCategory implements Base, Serializable {
     public String currentTech()            { return currentTech; }
     public String currentTechName()        { return tech(currentTech).name(); }
     public void currentTech(Tech t)        { currentTech = t.id(); }
-    public boolean locked()                { return locked; }
+    public boolean locked()                { return researchCompleted || locked; }
     public void toggleLock()               { locked = !locked; }
     public String id()                     { return id(index); }
     public float totalBC()                 { return totalBC; }
@@ -85,6 +85,7 @@ public final class TechCategory implements Base, Serializable {
         init();
     }
 
+    public boolean researchCompleted() { return researchCompleted; }
     public int allocation()            { return allocation; }
     public void allocation(int i)      { allocation = bounds(0,i,MAX_ALLOCATION_TICKS); }
     public float allocationPct()      { return (float) allocation/MAX_ALLOCATION_TICKS; }
@@ -207,7 +208,7 @@ public final class TechCategory implements Base, Serializable {
         }
     }
     public boolean studyingFutureTech() {
-        return (futureTechLevel > 0);
+        return false;
     }
     public String techDescription1(boolean key) {
         switch(index) {
@@ -475,7 +476,9 @@ public final class TechCategory implements Base, Serializable {
         if (id.equals(currentTech())) {
             resetResearchBC();
             List<String> techs = techIdsAvailableForResearch();
-            if (!techs.isEmpty())
+            if (techs.isEmpty())
+                researchCompleted = true;
+            else
                 setTechToResearch();
         }
         return newTech;

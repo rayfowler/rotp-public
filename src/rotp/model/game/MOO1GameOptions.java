@@ -318,7 +318,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         
         // the various "slowing" options increase the research cost for higher tech levels
         
-        float amt = 30.0f;                    // default adjustment
+        float amt = 1.0f;                    // default adjustment
         switch(selectedResearchRate()) {
             case RESEARCH_SLOW:
                 return amt*sqrt(techLevel/3); // approx. 4x slower for level 50

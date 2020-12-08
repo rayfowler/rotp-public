@@ -2072,6 +2072,8 @@ public final class Empire implements Base, NamedObject, Serializable {
         return totalIndustrialSpendingBC;
     }
     public float totalPlanetaryResearch() {
+        if (tech().researchCompleted())
+            return 0;
         float totalResearchBC = 0;
         List<StarSystem> systems = new ArrayList<>(allColonizedSystems());
         for (StarSystem sys: systems)
@@ -2079,8 +2081,10 @@ public final class Empire implements Base, NamedObject, Serializable {
         return totalResearchBC;
     }
     public float totalEmpireResearch(float totalRp) {
-        float total = 0.0f;
         TechTree t = tech();
+        if (t.researchCompleted())
+            return 0;
+        float total = 0.0f;
         total += t.computer().currentResearch(totalRp);
         total += t.construction().currentResearch(totalRp);
         total += t.forceField().currentResearch(totalRp);
@@ -2090,6 +2094,8 @@ public final class Empire implements Base, NamedObject, Serializable {
         return total;
     }
     public float totalPlanetaryResearchSpending() {
+        if (tech().researchCompleted())
+            return 0;
         float totalResearchBC = 0;
         List<StarSystem> systems = new ArrayList<>(allColonizedSystems());
         for (StarSystem sys: systems)
