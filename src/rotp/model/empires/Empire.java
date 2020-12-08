@@ -110,6 +110,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     private float combatTransportPct = 0;
     private int securityAllocation = 0;
     private int empireTaxLevel = 0;
+    private boolean empireTaxOnlyDeveloped = true;
     private float totalReserve = 0;
     private float tradePiracyRate = 0;
     private NamedObject lastAttacker;
@@ -709,7 +710,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         // assign planetary funds/costs & enact development
         for (StarSystem s: allColonies) {
             Colony col = s.planet().colony();
-            addReserve(col.production() * empireTaxPct());
+            addReserve(col.production() * col.colonyTaxPct());
             col.nextTurn();
         }
         recalcPlanetaryProduction();
@@ -1864,7 +1865,12 @@ public final class Empire implements Base, NamedObject, Serializable {
     }
     public float totalIncome()                { return netTradeIncome() + totalPlanetaryIncome(); }
     public float netIncome()                  { return totalIncome() - totalShipMaintenanceCost() - totalStargateCost(); }
-    public float empireTaxRevenue()           { return totalTaxablePlanetaryProduction() * empireTaxPct() / 2; }
+    public float empireTaxRevenue()           { 
+        if (empireTaxOnlyDeveloped())
+            return totalTaxableDevelopedPlanetaryProduction() * empireTaxPct() / 2; 
+        else
+            return totalTaxablePlanetaryProduction() * empireTaxPct() / 2; 
+    }
     public float empireInternalSecurityCost() { return totalTaxablePlanetaryProduction() * internalSecurityCostPct(); }
     public float empireExternalSpyingCost()   { return totalTaxablePlanetaryProduction() * totalSpyCostPct(); }
     
@@ -1873,6 +1879,8 @@ public final class Empire implements Base, NamedObject, Serializable {
     public float empireTaxPct()               { return (float) empireTaxLevel / 100; }
     public float maxEmpireTaxPct()            { return (float) maxEmpireTaxLevel()/100; }
     public int empireTaxLevel()               { return empireTaxLevel; }
+    public boolean empireTaxOnlyDeveloped()   { return empireTaxOnlyDeveloped; }
+    public void toggleEmpireTaxOnlyDeveloped(){ empireTaxOnlyDeveloped = !empireTaxOnlyDeveloped; }
     public int maxEmpireTaxLevel()            { return 20; }
     public boolean empireTaxLevel(int i)      {
         int prevLevel = empireTaxLevel;
@@ -1988,6 +1996,16 @@ public final class Empire implements Base, NamedObject, Serializable {
         for (StarSystem sys: systems) {
             Colony col = sys.colony();
             if (!col.embargoed())
+                totalProductionBC += col.production();
+        }
+        return totalProductionBC;
+    }
+    public float totalTaxableDevelopedPlanetaryProduction() {
+        float totalProductionBC = 0;
+        List<StarSystem> systems = new ArrayList<>(allColonizedSystems());
+        for (StarSystem sys: systems) {
+            Colony col = sys.colony();
+            if (!col.embargoed() && col.isDeveloped())
                 totalProductionBC += col.production();
         }
         return totalProductionBC;

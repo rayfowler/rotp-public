@@ -626,6 +626,7 @@ PLANETS_TAX_DESC                  | Tax your colonies to add to the empire's tre
 PLANETS_RESERVE_TAX               | Reserve Tax
 PLANETS_RESERVE_INCREASE          | +%1 BC/Year
 PLANETS_RESERVE_NO_TAX            | No Taxes
+PLANETS_RESERVE_ONLY_DEVELOPED    | Tax only fully developed colonies
 PLANETS_BUTTON_TRANSFER           | TRANSFER
 PLANETS_BUTTON_EXIT               | EXIT
 PLANETS_AMT_PCT                   | %1%

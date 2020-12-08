@@ -60,6 +60,7 @@ import rotp.ui.BaseTextField;
 import rotp.ui.ExitButton;
 import rotp.ui.RotPUI;
 import rotp.ui.SystemViewer;
+import rotp.ui.fleets.FleetUI;
 import rotp.ui.fleets.SystemListingUI;
 import rotp.ui.fleets.SystemListingUI.Column;
 import rotp.ui.fleets.SystemListingUI.DataView;
@@ -1337,6 +1338,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         final Color sliderBackEnabled = Color.black;
         private final Polygon leftArrow = new Polygon();
         private final Polygon rightArrow = new Polygon();
+        private final Rectangle reserveBox = new Rectangle();
         private final Rectangle sliderBox = new Rectangle();
         private Shape hoverBox;
         // polygon coordinates for left & right increment buttons
@@ -1419,6 +1421,32 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             g.setColor(palette.black);
             x1 = x1+boxW+s5;
             g.drawString(result, x1, y1);
+            
+
+             // draw check box
+            y1 += s25;
+            int checkW = s12;
+            int checkX = s20;
+            reserveBox.setBounds(checkX, y1-checkW, checkW, checkW);
+            int labelX = checkX+checkW+s6;
+            Stroke prev = g.getStroke();
+            g.setStroke(stroke2);
+            g.setColor(FleetUI.backHiC);
+            g.fill(reserveBox);
+            if (hoverBox == reserveBox) {
+                g.setColor(Color.yellow);
+                g.draw(reserveBox);
+            }
+            if (player().empireTaxOnlyDeveloped()) {
+                g.setColor(SystemPanel.whiteText);
+                g.drawLine(checkX-s1, y1-s6, checkX+s3, y1-s3);
+                g.drawLine(checkX+s3, y1-s3, checkX+checkW, y1-s12);
+            }
+            g.setStroke(prev);
+            g.setFont(narrowFont(14));
+            g.setColor(palette.black);
+            String opt = text("PLANETS_RESERVE_ONLY_DEVELOPED");            
+            g.drawString(opt,labelX,y1);
         }
         private void drawSliderBox(Graphics2D g, int x, int y, int w, int h) {
             int leftMargin = x;
@@ -1543,7 +1571,11 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                 return;
             int x = e.getX();
             int y = e.getY();
-            if (leftArrow.contains(x,y))
+            if (reserveBox.contains(x,y)) {
+                player().toggleEmpireTaxOnlyDeveloped();
+                repaint();
+            }
+            else if (leftArrow.contains(x,y))
                 decrement(true);
             else if (rightArrow.contains(x,y))
                 increment(true);
@@ -1577,6 +1609,8 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             Shape newHover = null;
             if (sliderBox.contains(x,y))
                 newHover = sliderBox;
+            else if (reserveBox.contains(x,y))
+                newHover = reserveBox;
             else if (leftArrow.contains(x,y))
                 newHover = leftArrow;
             else if (rightArrow.contains(x,y))

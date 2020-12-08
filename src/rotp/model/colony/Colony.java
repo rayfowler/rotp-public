@@ -237,6 +237,10 @@ public final class Colony implements Base, IMappedObject, Serializable {
     public boolean inRebellion()             { return rebellion && (rebels > 0); }
     public float rebellionPct()             { return rebels / population(); }
     public boolean hasOrders()               { return !orders.isEmpty(); }
+    
+    public boolean isDeveloped()  {
+        return defense().isCompleted() && industry().isCompleted() && ecology().isCompleted(); 
+    }
 
     public float orderAmount(Colony.Orders order) {
         Colony.Orders priorityOrder = empire.priorityOrders();
@@ -656,12 +660,22 @@ public final class Colony implements Base, IMappedObject, Serializable {
     public float totalIncome() {
         return totalProductionIncome() + maxReserveIncome();
     }
+    public float colonyTaxPct() {
+        // we are taxed at the empire rate if the empire is taxing all colonies, or we are finished developing
+        float empireTaxPct = empire.empireTaxPct();
+        float colonyTaxPct = 0.0f;
+        if (empireTaxPct > 0) { // let's avoid unnecessary calls to isDeveloped()
+            if (!empire.empireTaxOnlyDeveloped() || isDeveloped())
+                colonyTaxPct = empireTaxPct;
+        }
+        return colonyTaxPct;
+    }
     public float totalProductionIncome() {
         if (inRebellion())
             return 0.1f;
 
-        float prod = production();
-        float reserveCost = prod * empire.empireTaxPct();
+        float prod = production();       
+        float reserveCost = prod * colonyTaxPct();
         float securityCost = prod * empire.totalSecurityCostPct();
         float shipCost = prod * empire.shipMaintCostPerBC();
         float stargateCost = prod * empire.stargateCostPerBC();
