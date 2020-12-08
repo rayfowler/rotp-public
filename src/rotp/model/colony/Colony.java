@@ -826,7 +826,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
             transport().setDest(dest);
             transport().setDefaultTravelSpeed();
         }
-
+        toggleRecalcSpending();
         // reset ship views
         if (empire.isPlayer())
             empire.setVisibleShips();
