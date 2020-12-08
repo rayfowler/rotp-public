@@ -1574,6 +1574,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             if (reserveBox.contains(x,y)) {
                 player().toggleEmpireTaxOnlyDeveloped();
                 repaint();
+                planetDisplayPane.repaint();
             }
             else if (leftArrow.contains(x,y))
                 decrement(true);

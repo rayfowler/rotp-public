@@ -97,14 +97,16 @@ public final class Colony implements Base, IMappedObject, Serializable {
             new ColonyIndustry(), new ColonyEcology(), new ColonyResearch() };
 
     private boolean underSiege = false;
+    private boolean keepEcoLockedToClean;
     private transient boolean hasNewOrders = false;
     private transient int cleanupAllocation = 0;
-    private transient boolean keepEcoLockedToClean;
+    private transient boolean recalcSpendingForNewTaxRate;
 
+    public void toggleRecalcSpending()         { recalcSpendingForNewTaxRate = true; }
     public boolean underSiege()                { return underSiege; }
-    public float reserveIncome()              { return reserveIncomeBC; }
+    public float reserveIncome()               { return reserveIncomeBC; }
     public void clearReserveIncome()           { reserveIncomeBC = 0; }
-    public void adjustReserveIncome(float bc) { reserveIncomeBC += bc; }
+    public void adjustReserveIncome(float bc)  { reserveIncomeBC += bc; }
     public boolean quarantined()               { return quarantined; }
     public void becomeQuarantined()            { quarantined = true; }
     public void clearQuarantine()              { quarantined = false; }
@@ -413,6 +415,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
                     , str(research().allocation()) , "]");
         previousPopulation = population;
 
+        ensureProperSpendingRates();
         // if rebelling, nothing happens (only enough prod assumed to clean new
         // waste and maintain existing structures)
         if (inRebellion())
@@ -465,12 +468,15 @@ public final class Colony implements Base, IMappedObject, Serializable {
         ecology().assessTurn();
         research().assessTurn();
         
+        checkEcoAtClean();
+    }
+    public void checkEcoAtClean() {
         if (keepEcoLockedToClean) {
             int newAlloc = ecology().cleanupAllocationNeeded();
             if (allocation[ECOLOGY] != newAlloc) {
                 allocation[ECOLOGY] = cleanupAllocation = newAlloc;
                 empire().ai().governor().setColonyAllocations(this);
-            }
+            }        
         }
     }
     public boolean canLowerMaintenance() { return transporting(); }
@@ -670,9 +676,17 @@ public final class Colony implements Base, IMappedObject, Serializable {
         }
         return colonyTaxPct;
     }
+    public void ensureProperSpendingRates() {
+        if (recalcSpendingForNewTaxRate) {
+            recalcSpendingForNewTaxRate = false;
+            checkEcoAtClean();
+        }        
+    }
     public float totalProductionIncome() {
         if (inRebellion())
             return 0.1f;
+        
+        ensureProperSpendingRates();
 
         float prod = production();       
         float reserveCost = prod * colonyTaxPct();

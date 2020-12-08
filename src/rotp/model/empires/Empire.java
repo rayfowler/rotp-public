@@ -1880,12 +1880,26 @@ public final class Empire implements Base, NamedObject, Serializable {
     public float maxEmpireTaxPct()            { return (float) maxEmpireTaxLevel()/100; }
     public int empireTaxLevel()               { return empireTaxLevel; }
     public boolean empireTaxOnlyDeveloped()   { return empireTaxOnlyDeveloped; }
-    public void toggleEmpireTaxOnlyDeveloped(){ empireTaxOnlyDeveloped = !empireTaxOnlyDeveloped; }
+    public void toggleEmpireTaxOnlyDeveloped(){ 
+        empireTaxOnlyDeveloped = !empireTaxOnlyDeveloped;
+        if (empireTaxLevel > 0)
+            flagColoniesToRecalcSpending();
+    }
     public int maxEmpireTaxLevel()            { return 20; }
     public boolean empireTaxLevel(int i)      {
         int prevLevel = empireTaxLevel;
         empireTaxLevel = bounds(0,i,maxEmpireTaxLevel());
+        
+        if (empireTaxLevel != prevLevel)
+            flagColoniesToRecalcSpending();
         return empireTaxLevel != prevLevel;
+    }
+    private void flagColoniesToRecalcSpending() {
+        // tax rate has changed in some way... flag colonies so they
+        // recalc properly
+        List<StarSystem> allSystems = allColonizedSystems();
+        for (StarSystem sys: allSystems)
+            sys.colony().toggleRecalcSpending();
     }
     public boolean hasTrade() {
         for (EmpireView v : empireViews()) {
