@@ -957,9 +957,9 @@ public final class Empire implements Base, NamedObject, Serializable {
             && !sys.orbitingShipsInConflict())
                 sv.refreshFullScan(i);
             else if (colonyCanScan(sys))
-                sv.refreshLongRangeScan(i);
+                sv.refreshLongRangePlanetScan(i);
             else if (fleetCanScan(sys))
-                sv.refreshLongRangeScan(i);
+                sv.refreshLongRangeShipScan(i);
             else if (sv.isScouted(i)) // don't keep stale fleet info
                 sv.view(i).clearFleetInfo();
         }

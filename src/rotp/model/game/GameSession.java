@@ -30,9 +30,11 @@ import java.io.OutputStream;
 import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
@@ -84,7 +86,7 @@ public final class GameSession implements Base, Serializable {
     private static boolean performingTurn;
     private static final List<TurnNotification> notifications = new ArrayList<>();
     private static HashMap<StarSystem, List<String>> systemsToAllocate;
-    private static List<StarSystem> systemsScouted;
+    private static HashMap<String, List<StarSystem>> systemsScouted;
     private static HashMap<ShipDesign, Integer> shipsConstructed;
     private static final List<GameAlert> alerts = new ArrayList<>();
     private static int viewedAlerts;
@@ -128,9 +130,13 @@ public final class GameSession implements Base, Serializable {
             systemsToAllocate = new HashMap<>();
         return systemsToAllocate;
     }
-    public List<StarSystem> systemsScouted() {
-        if (systemsScouted == null)
-            systemsScouted = new ArrayList<>();
+    public HashMap<String, List<StarSystem>> systemsScouted() {
+        if (systemsScouted == null) {
+            systemsScouted = new HashMap<>();
+            systemsScouted.put("Scouts", new ArrayList<>());
+            systemsScouted.put("Allies", new ArrayList<>());
+            systemsScouted.put("Astronomers", new ArrayList<>());
+        }
         return systemsScouted;
     }
     private List<TurnNotification> notifications() {
@@ -184,7 +190,25 @@ public final class GameSession implements Base, Serializable {
         shipsConstructed().put(design, existingCount+newCount);
     }
     public void addSystemScouted(StarSystem sys) {
-        systemsScouted().add(sys);
+        systemsScouted().get("Scouts").add(sys);
+    }
+    public void addSystemScoutedByAllies(StarSystem sys) {
+        systemsScouted().get("Allies").add(sys);
+    }
+    public void addSystemScoutedByAstronomers(StarSystem sys) {
+        systemsScouted().get("Astronomers").add(sys);
+    }
+    private void clearScoutedSystems() {
+        systemsScouted().get("Scouts").clear();
+        systemsScouted().get("Allies").clear();
+        systemsScouted().get("Astronomers").clear();
+    }
+    private boolean haveScoutedSystems() {
+        for (Collection<StarSystem> systems : systemsScouted().values()) {
+            if (!systems.isEmpty())
+                return true;
+        }
+        return false;
     }
     public void addSystemToAllocate(StarSystem sys, String reason) {
         log("Re-allocate: ", sys.name(), " :", reason);
@@ -220,7 +244,7 @@ public final class GameSession implements Base, Serializable {
             GalaxyFactory.current().newGalaxy();
             log("Galaxy complete");
             status().startGame();
-            systemsScouted().clear();
+            clearScoutedSystems();
             systemsToAllocate().clear();
             shipsConstructed().clear();
             galaxy().startGame();
@@ -292,7 +316,7 @@ public final class GameSession implements Base, Serializable {
                 
                 long startMs = timeMs();
                 systemsToAllocate().clear();
-                systemsScouted().clear();
+                clearScoutedSystems();
                 shipsConstructed().clear();
                 clearAlerts();
                 RotPUI.instance().repaint();
@@ -391,7 +415,7 @@ public final class GameSession implements Base, Serializable {
     }
     public boolean processNotifications() {
         log("Processing player notifications: ", str(notifications().size()));
-        if (!session().systemsScouted().isEmpty()) 
+        if (haveScoutedSystems()) 
             session().addTurnNotification(new SystemsScoutedNotification());
 
         // received a concurrent modification here... iterate over temp array
@@ -400,7 +424,7 @@ public final class GameSession implements Base, Serializable {
         notifications().clear();
 
         gameListeners().forEach(l -> l.processNotifications(notifs));
-        systemsScouted().clear();
+        clearScoutedSystems();
         return true;
     }
     public void startGroundCombat() {

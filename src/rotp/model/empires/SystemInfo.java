@@ -117,7 +117,8 @@ public class SystemInfo implements Serializable, Base {
 
     public void refreshFullScan(int i)           { view(i).refreshFullScan(); }
     public void refreshSpyScan(int i)            { view(i).refreshSpyScan(); }
-    public void refreshLongRangeScan(int i)      { view(i).refreshLongRangeScan(); }
+    public void refreshLongRangePlanetScan(int i) { view(i).refreshLongRangePlanetScan(); }
+    public void refreshLongRangeShipScan(int i)  { view(i).refreshLongRangeShipScan(); }
     public void resetSystemData(int i)           { if (!missing(i)) view(i).resetSystemData(); }
 
     public SystemInfo(Empire e) {

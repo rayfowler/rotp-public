@@ -164,9 +164,21 @@ public class SystemView implements IMappedObject, Base, Serializable {
         if (system().hasBonusTechs())
             owner().plunderAncientTech(system());
     }
-    public void refreshLongRangeScan() {
+    public void refreshLongRangePlanetScan() {
         if (owner().isPlayer() && !scouted()) {
             log("Long range planet scan scouts new system: ", system().name());
+            session().addSystemScoutedByAstronomers(system());
+        }
+
+        scoutTime = galaxy().currentYear();
+        setName();
+        setEmpire();
+        setPlanetData();
+        setOrbitingFleets();
+    }
+    public void refreshLongRangeShipScan() {
+        if (owner().isPlayer() && !scouted()) {
+            log("Long range ship scan scouts new system: ", system().name());
             session().addSystemScouted(system());
         }
 

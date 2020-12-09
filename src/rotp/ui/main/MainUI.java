@@ -245,7 +245,7 @@ public class MainUI extends BasePanel implements IMapHandler {
         else
             repaint();
     }
-    public void showSystemsScouted(List<StarSystem> newSystems) {
+    public void showSystemsScouted(HashMap<String, List<StarSystem>> newSystems) {
         overlay = overlaySystemsScouted;
         overlaySystemsScouted.init(newSystems);
     }

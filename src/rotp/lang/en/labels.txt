@@ -518,7 +518,10 @@ MAIN_ADVISOR_RESIST_COUNCIL       | My lord! We stand with you! There shall be n
 MAIN_ADVISOR_COUNCIL_RESISTED     | Pathetic. See how the fools struggle against the inevitable? Give us the order to crush these rebels, and we shall see it done! 
 
 // System Scouted Notification
-MAIN_SCOUT_TITLE                  | Scouts Explore A New Star System
+MAIN_SCOUT_TITLE                  | Scientists Catalogue A New Star System
+MAIN_SCOUT_SUBTITLE_1             | Our ships have scouted this system
+MAIN_SCOUT_SUBTITLE_2             | Our astronomers have collected this data
+MAIN_SCOUT_SUBTITLE_3             | Our allies have shared this data
 MAIN_SCOUT_TYPE                   | Classification: %1      Size: %2
 MAIN_SCOUT_NO_PLANET              | No Habitable Planets Found
 MAIN_SCOUT_HOSTILE_DESC           | Environment: Hostile - Population growth is halved.
