@@ -300,6 +300,9 @@ public final class TechTree implements Base, Serializable {
                 numLocks++;
             }
         }
+        // if every category is locked, don't try to equalize
+        if (category.length == numLocks)
+            return;
         int allocPerCategory = freeAlloc / (category.length - numLocks);
         int categoriesSet = numLocks;
 
