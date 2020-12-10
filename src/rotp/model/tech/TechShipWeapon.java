@@ -270,6 +270,7 @@ public final class TechShipWeapon extends Tech {
                 heavyStroke = 5;
                 break;
             case 16: // DEATH RAY
+                range = 4;
                 damageLow = 200;
                 damageHigh = 1000;
                 weaponWidth = 10;
