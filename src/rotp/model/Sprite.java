@@ -28,6 +28,7 @@ public interface Sprite {
     boolean isSelectableAt(GalaxyMapPanel map, int mapX, int mapY);
     default float selectDistance(GalaxyMapPanel map, int mapX, int mapY)  { return 0.0f; }
 
+    default int displayPriority()                { return 10; }
     default boolean persistOnClick()             { return false; }
     default void repaint(GalaxyMapPanel map)     { map.repaint(); }
     default StarSystem starSystem()              { return null; }

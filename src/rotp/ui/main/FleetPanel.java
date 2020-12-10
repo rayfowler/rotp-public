@@ -129,7 +129,22 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         return parent.parent.isClicked(displayedFleet());
     }
     private boolean canConsume(Sprite s) {
-        return (s == null) || (s instanceof ShipFleet) || (s instanceof StarSystem);
+        // to "consume" a hovered sprite means that this FleetPanel may
+        // (or may not) use it but we don't want to relinquish focus
+        // to whatever panel is used to display that sprite
+        if (s == null)
+            return true;
+        if (s instanceof ShipFleet)
+            return true;
+        
+        // relinquish focus to star system if the displayed fleet
+        // cannot be sent to it
+        if (s instanceof StarSystem) {
+            ShipFleet fleet = adjustedFleet();
+            return (fleet != null) && fleet.canBeSentBy(player());
+        }
+        
+        return false;
     }
     private boolean canSendFleet() {
         if (selectedDest() == null)

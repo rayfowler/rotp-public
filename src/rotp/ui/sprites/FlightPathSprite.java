@@ -122,6 +122,8 @@ public class FlightPathSprite extends MapSprite {
 
     public void to(StarSystem sv)              { to = sv; }
     @Override
+    public int displayPriority()               { return 3; }
+    @Override
     public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
         // clicking on a flight path is really clicking on its fleetsprite
         if (ship() != null)

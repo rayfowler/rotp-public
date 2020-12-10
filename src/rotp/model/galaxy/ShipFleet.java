@@ -78,6 +78,8 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
         destX = x;
         destY = y;
     }
+    @Override
+    public int displayPriority()        { return 8; }
     public int rallySysId()             { return rallySysId; }
     public void rallySysId(int i)       { rallySysId = i; }
     public Empire empire()              { return galaxy().empire(empId); }

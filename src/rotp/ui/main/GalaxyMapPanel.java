@@ -799,8 +799,28 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
 
         Sprite prevHover = hoverSprite;
         hoverSprite = spriteAt(x,y);
-        if (hoverSprite != prevHover)
-            parent.hoveringOverSprite(hoverSprite);
+        
+        // still hovering over same sprite... do nothing
+        if (hoverSprite == prevHover)
+            return;
+        
+        // if sprite changed, but we are also still over the prevHover
+        // if the prevHover is higher display priority than the new,
+        // then do nothing. What is the point of this? If a fleet is in 
+        // the same area as a system (lower priority), then we want to 
+        // display the fleet until we mouse away from it because it is
+        // drawn over the system.
+        if ((prevHover != null) && prevHover.isSelectableAt(this,x,y)) {
+            int prevPriority = prevHover.displayPriority();
+            int hoverPriority = (hoverSprite == null) ? 0 : hoverSprite.displayPriority();
+            if (hoverPriority <= prevPriority) {
+                hoverSprite = prevHover;
+                return;
+            }
+        }
+            
+        // sprite has changed, so pass it to the parent UI for proper handling
+        parent.hoveringOverSprite(hoverSprite);
     }
     @Override
     public void mouseClicked(MouseEvent e) {}

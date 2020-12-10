@@ -140,6 +140,8 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         id = num;
     }
     @Override
+    public int displayPriority()           { return 6; }
+    @Override
     public float x()                       { return x;  }
     @Override
     public float y()                       { return y;  }
