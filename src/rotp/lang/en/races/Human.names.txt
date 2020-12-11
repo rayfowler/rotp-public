@@ -1,8 +1,8 @@
 // all possible names
 name: Human, Terran, Tellan, Priman, Midgardian
 
-desc1: Diplomatic Economists
-desc2: Expert Diplomats
+desc1: Honorable Diplomats
+desc2: Expert Traders and Magnificent Diplomats
 desc3: The silver-tongued Humans are masters at convincing others to serve Human interests.
 
 // possible home system names

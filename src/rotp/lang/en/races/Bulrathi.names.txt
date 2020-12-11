@@ -1,7 +1,7 @@
 // all possible names
 name: Bulrathi, Bearathi, Ursinathi, Pawrathi, Grizzlathi
 
-desc1: Aggressive Militarists
+desc1: Aggressive Ecologists
 desc2: Terrific Ground Fighters
 desc3: The fiercely loyal [race] value both strength and wisdom in their philosopher-king.
 

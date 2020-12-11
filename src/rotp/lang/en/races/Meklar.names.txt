@@ -1,7 +1,7 @@
 // all possible names
 name: Meklar, Mechanar, Cybernar, Digitar, Technar
 
-desc1: Xenophobic Technologists
+desc1: Erratic Industrialists
 desc2: Enhanced Factory Controls
 desc3: The citizens of the [race] Dominion seek perfection and immortality through technology.
 
