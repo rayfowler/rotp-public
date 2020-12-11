@@ -273,18 +273,20 @@ public class FlightPathSprite extends MapSprite {
         float f4 = BasePanel.s4;
         float f10 = BasePanel.s10;
         float f3 = BasePanel.s3;
+		float f12 = BasePanel.s12; // modnar: line dash change
+        float f6 = BasePanel.s6; // modnar: line dash change
 
         for (int i=0;i<9;i++) {
-            rallyStroke[i] = new BasicStroke(BasePanel.s2, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND,    // Join style
-                            f10, new float[] {f14, f4}, i * BasePanel.s2);
+            rallyStroke[i] = new BasicStroke(BasePanel.s3, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND,    // Join style
+                            f10, new float[] {f12, f6}, i * BasePanel.s3); // modnar: line phase change, mod%6 animation
         }
 
         for (int i=0;i<6;i++) {
             for (int j=0;j<6;j++) {
-                int w = scaled(i+1);
+                int w = scaled(i+2); // modnar: line width change
                 float dashPhase = j * BasePanel.s3;
                 lines[i][j] = new BasicStroke(w, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND,    // Join style
-                                f10, new float[] {f15, f3}, dashPhase);
+                                f10, new float[] {f12, f6}, dashPhase);
             }
         }
     }
