@@ -299,10 +299,9 @@ GAME_SHRINK                       | Shrink -
 GAME_ENLARGE                      | Expand
 GAME_MEMORY_SHOW                  | Memory Use: SHOW
 GAME_MEMORY_HIDE                  | Memory Use: HIDE
-GAME_RANDOM_EVENTS_ON             | Random Events: On
-GAME_RANDOM_EVENTS_OFF            | Random Events: Off
 GAME_COLONIZE_PROMPT_ON           | Prompt to Colonize: Yes
 GAME_COLONIZE_PROMPT_OFF          | Prompt to Colonize: No
+GAME_RANDOM_EVENTS                | Random Events: %1
 GAME_RESEARCH_RATE                | Research Rate: %1
 GAME_TECH_TRADING                 | Tech Trading: %1
 GAME_GALAXY_AGE                   | Galaxy Age: %1
@@ -337,6 +336,32 @@ MAIN_NAVIGATION_TECH              | Tech
 MAIN_NAVIGATION_NEXT_TURN         | Next Turn
 MAIN_YEAR_DISPLAY                 | Year  %1
 MAIN_TURN_DISPLAY                 | Turn  %1
+MAIN_HELP_ALL                     | Click to cycle through help information for a particular screen. Hit escape to cancel.
+MAIN_HELP_1A                      | Each star system divides its production into five areas. Grayed bars indicate that the production bar has been locked and will not change. Click on the name to lock/unlock.
+MAIN_HELP_1B                      | Ship Production - constructs the selected ship design. Large ships may take multiple turns.
+MAIN_HELP_1C                      | Defense Production - builds and upgrades missile bases up to the specified limit and planetary shields when available.
+MAIN_HELP_1D                      | Industry Production - builds factories which increase overall colony production.
+MAIN_HELP_1E                      | Ecology Production - cleans industrial waste, terraforms the planet, and can increase population growth.
+MAIN_HELP_1F                      | Technology Production - adds to the empire's overall research.
+MAIN_HELP_1G                      | Ratio bars show the breakdown of a planet's production.  The spending for each bar can be adjusted by mousewheel, clicking within the bar, or clicking on the left/right arrows for each bar.
+MAIN_HELP_1H                      | The expected result of spending for an area is displayed to the right of each bar. Overflow spending will be sent to the empire's treasury reserve.
+MAIN_HELP_2A                      | Planetary shield level for the colony. Shields cannot be constructed on planets within a nebula.
+MAIN_HELP_2B                      | Number of missile bases and the maximum desired for this planet. Click or use the mousewheel to change the maximum.
+MAIN_HELP_2C                      | Total planetary production from industry and population.
+MAIN_HELP_2D                      | Actual production adjusted for empire-wide trade income, spy and security costs, as well as missile base and ship maintenance.
+MAIN_HELP_2E                      | Change ship design to build in the planet's orbiting shipyard. Production accrued for unfinished ships will accelerate production of new ships by 50% until spent. Click or use the mousewheel to change the ship design.
+MAIN_HELP_2F                      | Set a rally point to automatically send newly constructed ships to another colony.
+MAIN_HELP_2G                      | Transport population to fortify another colony or send troops to invade an enemy planet. The colony incurs a one-time production cost for transporting.
+MAIN_HELP_2H                      | Completely abandon a planet by transferring all population from it to another colony.
+MAIN_HELP_2I                      | Number of colonists, where '100' represents a full home planet that has not yet been terraformed.
+MAIN_HELP_3A                      | Save/load games. Music and sound effects settings
+MAIN_HELP_3B                      | Fleet report and ship design specifications
+MAIN_HELP_3C                      | Diplomacy and intelligence information
+MAIN_HELP_3D                      | Change research priorities. Reports on current technology
+MAIN_HELP_4A                      | Create new ship designs to take advantage of current technology.
+MAIN_HELP_4B                      | View reduced galaxy map with ship and planetary data.
+MAIN_HELP_4C                      | Overview of your colonies.
+MAIN_HELP_4D                      | Advance to next year.
 
 MAIN_SYSTEM_DETAIL_PFM            | Pop %1    Fact %2    Miss %3
 MAIN_SYSTEM_DETAIL_PF             | Pop %1    Fact %2 
@@ -902,6 +927,9 @@ SETUP_GALAXY_MAP_OPTION_C         | Option C
 SETUP_GALAXY_AGE_NORMAL           | Normal
 SETUP_GALAXY_AGE_YOUNG            | Young
 SETUP_GALAXY_AGE_OLD              | Old
+SETUP_RANDOM_EVENTS_ON            | On
+SETUP_RANDOM_EVENTS_OFF           | Off
+SETUP_RANDOM_EVENTS_NO_MONSTERS   | No Monsters
 SETUP_GALAXY_NUMBER_EMPIRES       | Total Empires: %1
 SETUP_GALAXY_NUMBER_SYSTEMS       | Total Systems: %1
 SETUP_GALAXY_MAX_OPPONENTS        | Maximum Opponents: %1

@@ -41,12 +41,16 @@ import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.ships.ShipDesign;
 import rotp.ui.BasePanel;
+import rotp.ui.RotPUI;
+import rotp.ui.game.HelpUI;
+import rotp.ui.game.HelpUI.HelpSpec;
 import rotp.ui.main.overlay.*;
 import rotp.ui.map.IMapHandler;
 import rotp.ui.notifications.GameAlert;
 import rotp.ui.sprites.AlertDismissSprite;
 import rotp.ui.sprites.ClickToContinueSprite;
 import rotp.ui.sprites.FlightPathSprite;
+import rotp.ui.sprites.HelpSprite;
 import rotp.ui.sprites.YearDisplaySprite;
 import rotp.util.ThickBevelBorder;
 
@@ -91,6 +95,7 @@ public class MainUI extends BasePanel implements IMapHandler {
     MapOverlayShipCombatPrompt overlayShipCombatPrompt;
     MapOverlayAdvice overlayAdvice;
     AlertDismissSprite alertDismissSprite;
+    HelpSprite helpSprite;
     MapOverlay overlay;
 
     private final List<Sprite> nextTurnControls = new ArrayList<>();
@@ -105,6 +110,7 @@ public class MainUI extends BasePanel implements IMapHandler {
     private float saveX;
     private float saveY;
     private boolean showAdvice = false;
+    private int helpFrame = 0;
 
     public Border paneBorder()               { return null;   }
     public static Color shadeBorderC()       { return shadeBorderC; }
@@ -176,9 +182,11 @@ public class MainUI extends BasePanel implements IMapHandler {
     }
     public void addNextTurnControl(Sprite ms) { nextTurnControls.add(ms); }
     final protected void addMapControls() {
+        helpSprite = new HelpSprite(this);
         alertDismissSprite = new AlertDismissSprite(this);
         baseControls.add(new YearDisplaySprite(this));
         baseControls.add(alertDismissSprite);
+        baseControls.add(helpSprite);
     }
     public boolean showAlerts() {
         return (session().currentAlert() != null) && displayPanel.isVisible();
@@ -197,6 +205,27 @@ public class MainUI extends BasePanel implements IMapHandler {
         overlay = overlayAdvice;
         overlayAdvice.init(key, var1, var2, var3);
         showAdvice = true;
+        repaint();
+    }
+    @Override
+    public void cancelHelp() {
+        helpFrame = 0;
+        RotPUI.helpUI().close();
+    }
+    @Override
+    public void showHelp() {
+        helpFrame = 1;
+        loadHelpUI();
+        repaint();   
+    }
+    @Override 
+    public void advanceHelp() {
+        if (helpFrame == 0)
+            return;
+        helpFrame++;
+        if (helpFrame > 4) 
+            cancelHelp();
+        loadHelpUI();
         repaint();
     }
     public void showMemoryLowPrompt() {
@@ -300,6 +329,117 @@ public class MainUI extends BasePanel implements IMapHandler {
         map.centerY(avg(emp.minY(), emp.maxY()));
         map.setBounds(emp.minX()-3, emp.maxX()+3, emp.minY()-3, emp.maxY()+3);
         repaint();
+    }
+    private void loadHelpUI() {
+        HelpUI helpUI = RotPUI.helpUI();
+        if (helpFrame == 0)
+            return;
+        
+        if (helpFrame == 1) {
+            helpUI.clear();
+            HelpSpec s0 = helpUI.addBlueHelpText(s100, s20, scaled(250), 3, text("MAIN_HELP_ALL"));
+            s0.setLine(s100, s20+(s0.height()/3), s35, s25);
+            int x1 = scaled(450);
+            int w1 = scaled(400);
+            int y1 = scaled(100);
+            HelpSpec sp1 = helpUI.addBlueHelpText(x1, y1, w1, 3, text("MAIN_HELP_1A"));
+            y1 += (sp1.height()+s40);
+            HelpSpec sp2 = helpUI.addBlueHelpText(x1, y1, w1, 2, text("MAIN_HELP_1B"));
+            sp2.setLine(x1+w1, y1+(sp2.height()/2), scaled(975), scaled(327));
+            y1 += (sp2.height()+s10);
+            HelpSpec sp3 = helpUI.addBlueHelpText(x1, y1, w1, 2, text("MAIN_HELP_1C"));
+            sp3.setLine(x1+w1, y1+(sp3.height()/2), scaled(975), scaled(357));
+            y1 += (sp3.height()+s10);
+            HelpSpec sp4 = helpUI.addBlueHelpText(x1, y1, w1, 2, text("MAIN_HELP_1D"));
+            sp4.setLine(x1+w1, y1+(sp4.height()/2), scaled(975), scaled(387));
+            y1 += (sp4.height()+s10);
+            HelpSpec sp5 = helpUI.addBlueHelpText(x1, y1, w1, 2, text("MAIN_HELP_1E"));
+            sp5.setLine(x1+w1, y1+(sp5.height()/2), scaled(975), scaled(417));
+            y1 += (sp5.height()+s10);
+            HelpSpec sp6 = helpUI.addBlueHelpText(x1, y1, w1, 2, text("MAIN_HELP_1F"));
+            sp6.setLine(x1+w1, y1+(sp6.height()/2), scaled(975), scaled(447));
+            
+            int x2 = scaled(900);
+            int y2 = s100;
+            int w2 = scaled(300);
+            HelpSpec sp7 = helpUI.addBlueHelpText(x2,y2,w2, 5, text("MAIN_HELP_1G"));
+            sp7.setLine(x2+(w2/2), y2+sp7.height(), scaled(1075), scaled(320));
+            
+            int x3 = scaled(900);
+            int y3 = scaled(500);
+            int w3 = scaled(300);
+            HelpSpec sp8 = helpUI.addBlueHelpText(x3,y3,w3, 4, text("MAIN_HELP_1H"));
+            sp8.setLine(x3+(w2/2), y3, scaled(1175), scaled(455));
+        }
+        else if (helpFrame == 2) {
+            helpUI.clear();
+            HelpSpec s0 = helpUI.addBlueHelpText(s100, s20, scaled(250), 3, text("MAIN_HELP_ALL"));
+            s0.setLine(s100, s20+(s0.height()/3), s35, s25);
+
+            int x1= scaled(530);
+            int y1 = scaled(190);
+            int w1= scaled(400);
+            HelpSpec sp1 = helpUI.addBlueHelpText(x1, y1, w1, 2, text("MAIN_HELP_2A"));
+            sp1.setLine(x1+w1, y1+sp1.height()-s5, scaled(1060), y1+sp1.height()-s5, scaled(1070), scaled(245));
+            
+            int x2= scaled(530);
+            int y2 = scaled(250);
+            int w2= scaled(400);
+            HelpSpec sp2 = helpUI.addBlueHelpText(x2, y2, w2, 2, text("MAIN_HELP_2B"));
+            sp2.setLine(x2+w2, y2+s15, scaled(1150), y2+s15, scaled(1180), scaled(255));
+            
+            int x4= scaled(530);
+            int y4 = scaled(310);
+            int w4= scaled(400);
+            HelpSpec sp4 = helpUI.addBlueHelpText(x4, y4, w4, 2, text("MAIN_HELP_2D"));
+            sp4.setLine(x4+w4, y4+(sp4.height()/2), scaled(1145), scaled(280));
+            
+            int x3= scaled(530);
+            int y3 = scaled(370);
+            int w3= scaled(400);
+            HelpSpec sp3 = helpUI.addBlueHelpText(x3, y3, w3, 2, text("MAIN_HELP_2C"));
+            sp3.setLine(x3+w3, y3+(sp3.height()/2), scaled(1180), scaled(285));
+
+             
+            int x5= scaled(530);
+            int y5 = scaled(430);
+            int w5 = scaled(400);
+            HelpSpec sp5 = helpUI.addBlueHelpText(x5, y5, w5, 4, text("MAIN_HELP_2E"));
+            sp5.setLine(x5+w5, y5+(sp5.height()/2), scaled(1015), scaled(517));
+            
+            int x6= scaled(580);
+            int y6 = scaled(540);
+            int w6 = scaled(350);
+            HelpSpec sp6 = helpUI.addBlueHelpText(x6, y6, w6, 2, text("MAIN_HELP_2F"));
+            sp6.setLine(x6+w6, y6+(sp6.height()/2), scaled(1060), y6+(sp6.height()/2), scaled(1070), scaled(560));
+            
+            int x7 = scaled(650);
+            int y7 = scaled(600);
+            int w7 = scaled(280);
+            HelpSpec sp7 = helpUI.addBlueHelpText(x7,y7,w7, 4, text("MAIN_HELP_2G"));
+            sp7.setLine(x7+w7, y7+(sp7.height()/4), scaled(970), scaled(595));
+            
+            int x8 = scaled(960);
+            int y8 = scaled(620);
+            int w8 = scaled(250);
+            HelpSpec sp8 = helpUI.addBlueHelpText(x8,y8,w8, 3, text("MAIN_HELP_2H"));
+            sp8.setLine(x8+(w8*2/3), y8, scaled(1165), scaled(610));
+        }
+        else if (helpFrame == 3) {
+            helpUI.clear();
+            int x1 = scaled(200);
+            int w1 = scaled(400);
+            int y1 = scaled(100);
+            helpUI.addBlueHelpText(x1, y1, w1, 3, text("MAIN_HELP_3A"));
+        }
+        else if (helpFrame == 4) {
+            helpUI.clear();
+            int x1 = scaled(200);
+            int w1 = scaled(400);
+            int y1 = scaled(100);
+            helpUI.addBlueHelpText(x1, y1, w1, 3, text("MAIN_HELP_4A"));
+        }
+        helpUI.open(this);
     }
     @Override
     public Color shadeC()                          { return Color.darkGray; }

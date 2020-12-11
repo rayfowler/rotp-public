@@ -46,6 +46,7 @@ import rotp.model.tech.TechCategory;
 import rotp.model.tech.TechLibrary;
 import rotp.ui.combat.ShipBattleUI;
 import rotp.ui.design.DesignUI;
+import rotp.ui.game.HelpUI;
 import rotp.ui.diplomacy.DialogueManager;
 import rotp.ui.diplomacy.DiplomacyRequestReply;
 import rotp.ui.fleets.FleetUI;
@@ -210,6 +211,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener, Ga
     private final GalacticCouncilUI galacticCouncilUI = new GalacticCouncilUI();
     private final GameOverUI gameOverUI = new GameOverUI();
     private final ErrorUI errorUI = new ErrorUI();
+    private final HelpUI helpUI = new HelpUI();
 
     private final CardLayout layout = new CardLayout();
     private String currentPane = GAME_PANEL;
@@ -281,7 +283,8 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener, Ga
         else
             timer.stop();
     }
-     public static RotPUI instance()            { return instance; }
+    public static RotPUI instance()            { return instance; }
+    public static HelpUI helpUI()              { return instance.helpUI; } 
 
     @Override
     public void paint(Graphics g) {

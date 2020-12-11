@@ -813,7 +813,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         if ((prevHover != null) && prevHover.isSelectableAt(this,x,y)) {
             int prevPriority = prevHover.displayPriority();
             int hoverPriority = (hoverSprite == null) ? 0 : hoverSprite.displayPriority();
-            if (hoverPriority <= prevPriority) {
+            if (hoverPriority < prevPriority) {
                 hoverSprite = prevHover;
                 return;
             }

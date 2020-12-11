@@ -89,7 +89,10 @@ public class BasePanel extends JPanel implements Base {
     public void setScrapCursor()           {  }
     public void setToCursor()              { }
     public void setPromptCursor()          {  }
-
+    public void showHelp()                 {  }
+    public void cancelHelp()               {  }
+    public void advanceHelp()              { }
+    
     public boolean hasStarBackground()     { return false; }
     public final boolean hasTexture()      { return textureName() != null; }
     public boolean isAlpha()               { return false; }
