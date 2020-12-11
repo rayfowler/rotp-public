@@ -22,6 +22,7 @@ import java.util.Collections;
 import java.util.List;
 import rotp.model.empires.Empire;
 import rotp.model.empires.Race;
+import rotp.model.events.RandomEvent;
 import rotp.model.galaxy.GalaxyCircularShape;
 import rotp.model.galaxy.GalaxyEllipticalShape;
 import rotp.model.galaxy.GalaxyRectangularShape;
@@ -66,6 +67,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private String selectedGameDifficulty;
     private String selectedResearchRate;
     private String selectedTechTradeOption;
+    private String selectedRandomEventOption;
     private int selectedNumberOpponents;
     private boolean communityAI = false;
     private boolean disableRandomEvents = false;
@@ -140,6 +142,10 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     public String selectedTechTradeOption()         { return selectedTechTradeOption; }
     @Override
     public void selectedTechTradeOption(String s)   { selectedTechTradeOption = s; }
+    @Override
+    public String selectedRandomEventOption()       { return selectedRandomEventOption; }
+    @Override
+    public void selectedRandomEventOption(String s) { selectedRandomEventOption = s; }
     @Override
     public int selectedNumberOpponents()         { return selectedNumberOpponents; }
     @Override
@@ -318,7 +324,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         
         // the various "slowing" options increase the research cost for higher tech levels
         
-        float amt = 1.0f;                    // default adjustment
+        float amt = 30.0f;                    // default adjustment
         switch(selectedResearchRate()) {
             case RESEARCH_SLOW:
                 return amt*sqrt(techLevel/3); // approx. 4x slower for level 50
@@ -336,6 +342,15 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
             case TECH_TRADING_YES: return true;
             case TECH_TRADING_NO:  return false;
             case TECH_TRADING_ALLIES: return e1.alliedWith(e2.id);
+        }
+        return true;
+    }
+    @Override
+    public boolean allowRandomEvent(RandomEvent ev) {
+        switch(selectedTechTradeOption()) {
+            case RANDOM_EVENTS_ON:  return true;
+            case RANDOM_EVENTS_OFF: return false;
+            case RANDOM_EVENTS_NO_MONSTERS: return !ev.monsterEvent();
         }
         return true;
     }
@@ -554,6 +569,14 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         return list;
     }
     @Override
+    public List<String> randomEventOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(RANDOM_EVENTS_ON);
+        list.add(RANDOM_EVENTS_NO_MONSTERS);
+        list.add(RANDOM_EVENTS_OFF);
+        return list;
+    }
+    @Override
     public List<String> startingRaceOptions() {
         List<String> list = new ArrayList<>();
         list.add("RACE_HUMAN");
@@ -584,6 +607,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedGameDifficulty = DIFFICULTY_NORMAL;
         selectedResearchRate = RESEARCH_NORMAL;
         selectedTechTradeOption = TECH_TRADING_YES;
+        selectedRandomEventOption = RANDOM_EVENTS_ON;
         generateGalaxy();
     }
     private void generateGalaxy() {

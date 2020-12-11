@@ -77,22 +77,26 @@ public class RandomEvents implements Base, Serializable {
     private void loadEvents() {
         activeEvents = new ArrayList<>();
         events = new ArrayList<>();
-        events.add(new RandomEventDonation());
-        events.add(new RandomEventDepletedPlanet());
-        events.add(new RandomEventEnrichedPlanet());
-        events.add(new RandomEventFertilePlanet());
-        events.add(new RandomEventComputerVirus());
-        events.add(new RandomEventEarthquake());
-        events.add(new RandomEventIndustrialAccident());
-        events.add(new RandomEventRebellion());
-        events.add(new RandomEventAncientDerelict());
-        events.add(new RandomEventAssassination());
-        events.add(new RandomEventPlague());
-        events.add(new RandomEventSupernova());
-        events.add(new RandomEventPiracy());
-        events.add(new RandomEventComet());
-        events.add(new RandomEventSpaceAmoeba());
-        events.add(new RandomEventSpaceCrystal());
+        addEvent(new RandomEventDonation());
+        addEvent(new RandomEventDepletedPlanet());
+        addEvent(new RandomEventEnrichedPlanet());
+        addEvent(new RandomEventFertilePlanet());
+        addEvent(new RandomEventComputerVirus());
+        addEvent(new RandomEventEarthquake());
+        addEvent(new RandomEventIndustrialAccident());
+        addEvent(new RandomEventRebellion());
+        addEvent(new RandomEventAncientDerelict());
+        addEvent(new RandomEventAssassination());
+        addEvent(new RandomEventPlague());
+        addEvent(new RandomEventSupernova());
+        addEvent(new RandomEventPiracy());
+        addEvent(new RandomEventComet());
+        addEvent(new RandomEventSpaceAmoeba());
+        addEvent(new RandomEventSpaceCrystal());
+    }
+    private void addEvent(RandomEvent ev) {
+        if (options().allowRandomEvent(ev))
+            events.add(ev);
     }
     private Empire empireForBadEvent() {
         // chance of empires for bad events is based power for each empire

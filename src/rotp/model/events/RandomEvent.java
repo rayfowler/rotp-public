@@ -26,4 +26,5 @@ public interface RandomEvent {
     default int minimumTurn()  { return RandomEvents.START_TURN; }
     default String systemKey() { return ""; }
     default String statusMessage() { return ""; }
+    default boolean monsterEvent() { return false; }
 }

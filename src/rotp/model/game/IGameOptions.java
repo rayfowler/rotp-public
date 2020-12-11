@@ -19,6 +19,7 @@ import java.awt.Color;
 import java.util.List;
 import rotp.model.empires.Empire;
 import rotp.model.empires.Race;
+import rotp.model.events.RandomEvent;
 import rotp.model.galaxy.GalaxyShape;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.planet.Planet;
@@ -93,6 +94,10 @@ public interface IGameOptions {
     public static final String GALAXY_AGE_YOUNG  = "SETUP_GALAXY_AGE_YOUNG";
     public static final String GALAXY_AGE_OLD    = "SETUP_GALAXY_AGE_OLD";
 
+    public static final String RANDOM_EVENTS_ON  = "SETUP_RANDOM_EVENTS_ON";
+    public static final String RANDOM_EVENTS_OFF = "SETUP_RANDOM_EVENTS_OFF";
+    public static final String RANDOM_EVENTS_NO_MONSTERS = "SETUP_RANDOM_EVENTS_NO_MONSTERS";
+    
     public default boolean isAutoPlay()          { return false; }
     public default boolean communityAI()         { return false; }
     public default void communityAI(boolean b)   { }
@@ -104,6 +109,7 @@ public interface IGameOptions {
     public List<Integer> possibleColors();
     public float researchCostBase(int techLevel);
     public boolean canTradeTechs(Empire e1, Empire e2);
+    public boolean allowRandomEvent(RandomEvent ev);
     public String randomStarType();
     public String randomPlayerStarType(Race r);
     public String randomRaceStarType(Race r);
@@ -129,6 +135,7 @@ public interface IGameOptions {
     public List<String> galaxyAgeOptions();
     public List<String> researchRateOptions();
     public List<String> techTradingOptions();
+    public List<String> randomEventOptions();
 	
     // modnar: new map option, MapOptionOptions
     public List<String> MapOptionOptions();
@@ -147,9 +154,11 @@ public interface IGameOptions {
     public void selectedResearchRate(String s);
     public String selectedTechTradeOption();
     public void selectedTechTradeOption(String s);
+    public String selectedRandomEventOption();
+    public void selectedRandomEventOption(String s);
 	
-	// modnar: new map option, selectedMapOption
-	public String selectedMapOption();
+    // modnar: new map option, selectedMapOption
+    public String selectedMapOption();
     public void selectedMapOption(String s);
 	
     public String selectedGameDifficulty();
@@ -230,6 +239,11 @@ public interface IGameOptions {
     default String nextTechTradeOption() {
         List<String> opts = techTradingOptions();
         int index = opts.indexOf(selectedTechTradeOption())+1;
+        return index >= opts.size() ? opts.get(0) : opts.get(index);
+    }
+    default String nextRandomEventOption() {
+        List<String> opts = randomEventOptions();
+        int index = opts.indexOf(selectedRandomEventOption())+1;
         return index >= opts.size() ? opts.get(0) : opts.get(index);
     }
     default void nextOpponent(int i) {

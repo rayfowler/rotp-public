@@ -43,6 +43,8 @@ public class RandomEventSpaceAmoeba implements Base, Serializable, RandomEvent {
     @Override
     public boolean repeatable()    		{ return false; }
     @Override
+    public boolean monsterEvent()               { return true; }
+    @Override
     public int minimumTurn()                    { 
         // space monsters can be a challenge... delay their entry in the easier game settings
         switch (options().selectedGameDifficulty()) {

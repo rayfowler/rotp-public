@@ -306,7 +306,7 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
     }
     private void toggleRandomEvents() {
         softClick();
-        options().disableRandomEvents(!options().disableRandomEvents());
+        options().selectedRandomEventOption(options().nextRandomEventOption());
         randomEventsText.repaint(randomEventsStr());
     }
     private void toggleColonizePrompt() {
@@ -707,10 +707,8 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         g.dispose();
     }
     private String randomEventsStr() {
-        if (options().disableRandomEvents())
-            return text("GAME_RANDOM_EVENTS_OFF")+"     ";
-        else
-            return text("GAME_RANDOM_EVENTS_ON")+"    ";
+        String opt = text(options().selectedRandomEventOption());
+        return text("GAME_RANDOM_EVENTS", opt)+"     ";
     }
     private String colonizePromptStr() {
         if (options().disableColonizePrompt())
