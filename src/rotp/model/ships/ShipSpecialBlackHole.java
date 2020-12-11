@@ -42,12 +42,16 @@ public final class ShipSpecialBlackHole extends ShipSpecial {
         pct -= (target.shieldLevel() / 50);
         // - effect of inertial specials
         pct -= target.blackHoleDef();
+		// modnar: bug fix for negative pct, force pct to be at least 0.0
+		pct = (float)Math.max(0.0f, pct);
         return target.num * pct;
     }
     @Override
     public void fireUpon(CombatStack source, CombatStack target, int count) {
         float pct = (random()*.75f) + .25f;
-        int dmg = (int) (pct*target.maxHits*target.num);
+		// modnar: bug fix for Black Hole damage numbers
+		float pctLoss = (float)Math.max(0.0f, pct - (target.shieldLevel() / 50) - target.blackHoleDef());
+        int dmg = (int) (pctLoss*target.maxHits*target.num);
         tech().drawSpecialAttack(source, target, count, dmg);
         target.takeBlackHoleDamage(pct);
     }
