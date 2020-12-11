@@ -248,9 +248,10 @@ public class AICDiplomat implements Base, Diplomat {
 
         // include only those techs which have a research value >= the trade value
         // of the requestedTech we would be trading away
+		// modnar: add condition to also check for equivalent tech quintile
         List<Tech> worthyTechs = new ArrayList<>(allTechs.size());
         for (Tech t: allTechs) {
-            if (t.baseValue(empire) >= maxTechValue)
+            if ((t.baseValue(empire) >= maxTechValue) && (t.quintile() == tech.quintile()))
                 worthyTechs.add(t);
         }
 
@@ -1108,10 +1109,11 @@ public class AICDiplomat implements Base, Diplomat {
 		
 		// modnar: no war when number of enemies > 2
 		// check after incident war and erratic war, but before all else
-		if (empire.numEnemies() > 2)
-            return false;
+		//if (empire.numEnemies() > 2)
+        //    return false;
 		// modnar: less likely war when already in some wars
-		if (empire.numEnemies()/3 > random())
+		// linear x/4 or asymptotic x/(1+abs(x))
+		if (empire.numEnemies()/(1+Math.abs(empire.numEnemies())) > random())
             return false;
         // automatic war of hate if relations less < -90
         // and not currently in a timed peace treaty
@@ -1164,10 +1166,11 @@ public class AICDiplomat implements Base, Diplomat {
             return false;
         
 		// modnar: no war when number of enemies > 2
-		if (empire.numEnemies() > 2)
-            return false;
+		//if (empire.numEnemies() > 2)
+        //    return false;
 		// modnar: less likely war when already in some wars
-		if (empire.numEnemies()/3 > random())
+		// linear x/4 or asymptotic x/(1+abs(x))
+		if (empire.numEnemies()/(1+Math.abs(empire.numEnemies())) > random())
             return false;
 		
         // don't declare if we have no spy data or data is too old

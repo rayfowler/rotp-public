@@ -294,9 +294,9 @@ public class AICGeneral implements Base, General {
         float bcMultiplier = 1 + (empire.sv.hostilityLevel(sys.id));
 		
 		// modnar: include enemyFleetSize, factoring in relative tech levels
-        float bcNeeded = (baseBCPresent*4 + 2*enemyFleetSize)*(targetTech+10.0f)/(civTech+10.0f) + bcMultiplier*civProd/20;
+        float bcNeeded = (baseBCPresent*4 + 2*enemyFleetSize)*(targetTech+10.0f)/(civTech+10.0f) + bcMultiplier*civProd/16;
         
-        // modnar: balance invasion fleet to use 50% destroyers, 30% fighters, and 20% bombers
+        // modnar: balance invasion fleet to use 50% destroyers, 30% bombers, and 20% fighters
         int destroyersNeeded = (int) Math.ceil(0.5f*bcNeeded/empire.shipLab().destroyerDesign().cost());
         int bombersNeeded = (int) Math.ceil(0.3f*bcNeeded/empire.shipLab().bomberDesign().cost());
         int fightersNeeded = (int) Math.ceil(0.2f*bcNeeded/empire.shipLab().fighterDesign().cost());
@@ -441,12 +441,12 @@ public class AICGeneral implements Base, General {
         float bcMultiplier = 1 + (empire.sv.hostilityLevel(sys.id)/2);
         
 		// modnar: test fleet sizes, include enemyFleetSize, factoring in relative tech levels
-        float bcNeeded = (baseBCPresent*4 + 2*fleetSize)*(targetTech+10.0f)/(civTech+10.0f) + bcMultiplier*civProd/20;
+        float bcNeeded = (baseBCPresent*4 + 2*fleetSize)*(targetTech+10.0f)/(civTech+10.0f) + bcMultiplier*civProd/16;
 		
-		// modnar: bombing fleet to use 40% bombers, 30% destroyers, and 30% fighters
-		int destroyersNeeded = (int) Math.ceil(0.3f*bcNeeded/empire.shipLab().destroyerDesign().cost());
-        int bombersNeeded = (int) Math.ceil(0.4f*bcNeeded/empire.shipLab().bomberDesign().cost());
-        int fightersNeeded = (int) Math.ceil(0.3f*bcNeeded/empire.shipLab().fighterDesign().cost());
+		// modnar: bombing fleet to use 50% destroyers, 30% bombers, and 20% fighters
+		int destroyersNeeded = (int) Math.ceil(0.5f*bcNeeded/empire.shipLab().destroyerDesign().cost());
+        int bombersNeeded = (int) Math.ceil(0.3f*bcNeeded/empire.shipLab().bomberDesign().cost());
+        int fightersNeeded = (int) Math.ceil(0.2f*bcNeeded/empire.shipLab().fighterDesign().cost());
 
         ShipDesignLab lab = empire.shipLab();
 		// modnar: should use min speed here (?)
@@ -471,12 +471,12 @@ public class AICGeneral implements Base, General {
         float bcMultiplier = 1 + (empire.sv.hostilityLevel(sys.id)/2);
 		
         // modnar: test fleet sizes, include enemyFleetSize, factoring in relative tech levels
-        float bcNeeded = (baseBCPresent*4 + 2*fleetSize)*(targetTech+10.0f)/(civTech+10.0f) + bcMultiplier*civProd/30;
+        float bcNeeded = (baseBCPresent*4 + 2*fleetSize)*(targetTech+10.0f)/(civTech+10.0f) + bcMultiplier*civProd/24;
 		
-        // modnar: bombing fleet to use 40% bombers, 30% destroyers, and 30% fighters
-		int destroyersNeeded = (int) Math.ceil(0.3f*bcNeeded/empire.shipLab().destroyerDesign().cost());
-        int bombersNeeded = (int) Math.ceil(0.4f*bcNeeded/empire.shipLab().bomberDesign().cost());
-        int fightersNeeded = (int) Math.ceil(0.3f*bcNeeded/empire.shipLab().fighterDesign().cost());
+        // modnar: bombing fleet to use 50% destroyers, 30% bombers, and 20% fighters
+		int destroyersNeeded = (int) Math.ceil(0.5f*bcNeeded/empire.shipLab().destroyerDesign().cost());
+        int bombersNeeded = (int) Math.ceil(0.3f*bcNeeded/empire.shipLab().bomberDesign().cost());
+        int fightersNeeded = (int) Math.ceil(0.2f*bcNeeded/empire.shipLab().fighterDesign().cost());
 
         ShipDesignLab lab = empire.shipLab();
 		// modnar: should use min speed here (?)

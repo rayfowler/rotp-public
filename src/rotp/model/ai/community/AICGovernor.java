@@ -45,7 +45,7 @@ public class AICGovernor implements Base, Governor {
         float estProd = col.industry().factories()*col.planet().productionAdj();
         if (pct > 0.9)  // modnar: change to 90% to build anything
             return true;
-        else if (pct > 0.8) // modnar: change to 80%, colonize is the lowest priority we can build
+        else if (pct > 0.75) // modnar: change to 75%, colonize is the lowest priority we can build
             return sh.plan.priority() >= FleetPlan.COLONIZE;
         
         return estProd > designCost*5;
