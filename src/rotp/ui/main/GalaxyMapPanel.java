@@ -243,13 +243,13 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         showGridCircular = parent.defaultGridCircularDisplay();
 
         if (baseControls.isEmpty()) {
-            baseControls.add(new ZoomOutWidgetSprite(20,270,30,30));
-            baseControls.add(new ZoomInWidgetSprite(20,235,30,30));
-            baseControls.add(new RangeDisplaySprite(20,200,30,30));
-            baseControls.add(new GridCircularDisplaySprite(20,165,30,30));
-            baseControls.add(new FlightPathDisplaySprite(20,130,30,30));
-            baseControls.add(new ShipDisplaySprite(20,95,30,30));
-            baseControls.add(new SystemNameDisplaySprite(20,60,30,30));
+            baseControls.add(new ZoomOutWidgetSprite(10,270,30,30));
+            baseControls.add(new ZoomInWidgetSprite(10,235,30,30));
+            baseControls.add(new RangeDisplaySprite(10,200,30,30));
+            baseControls.add(new GridCircularDisplaySprite(10,165,30,30));
+            baseControls.add(new FlightPathDisplaySprite(10,130,30,30));
+            baseControls.add(new ShipDisplaySprite(10,95,30,30));
+            baseControls.add(new SystemNameDisplaySprite(10,60,30,30));
         }
         
         addMouseListener(this);

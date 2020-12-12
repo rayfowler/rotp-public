@@ -327,22 +327,22 @@ INTRO_BEGIN                       | Begin
 
 // MAIN UI - Bottom Navigation options
 MAIN_NAVIGATION_GAME              | Game
-MAIN_NAVIGATION_DESIGN            | Design
+MAIN_NAVIGATION_DESIGN            | Designs
 MAIN_NAVIGATION_FLEETS            | Fleets
 MAIN_NAVIGATION_SYSTEMS           | Systems
 MAIN_NAVIGATION_RACES             | Races
 MAIN_NAVIGATION_COLONIES          | Colonies
 MAIN_NAVIGATION_TECH              | Tech
-MAIN_NAVIGATION_NEXT_TURN         | Next Turn
+MAIN_NAVIGATION_NEXT_TURN         | Next Year
 MAIN_YEAR_DISPLAY                 | Year  %1
 MAIN_TURN_DISPLAY                 | Turn  %1
-MAIN_HELP_ALL                     | Click to cycle through help information for a particular screen. Hit escape to cancel.
+MAIN_HELP_ALL                     | Help - click to cycle through help information for a particular screen. Hit escape to cancel.
 MAIN_HELP_1A                      | Each star system divides its production into five areas. Grayed bars indicate that the production bar has been locked and will not change. Click on the name to lock/unlock.
-MAIN_HELP_1B                      | Ship Production - constructs the selected ship design. Large ships may take multiple turns.
-MAIN_HELP_1C                      | Defense Production - builds and upgrades missile bases up to the specified limit and planetary shields when available.
-MAIN_HELP_1D                      | Industry Production - builds factories which increase overall colony production.
-MAIN_HELP_1E                      | Ecology Production - cleans industrial waste, terraforms the planet, and can increase population growth.
-MAIN_HELP_1F                      | Technology Production - adds to the empire's overall research.
+MAIN_HELP_1B                      | Shipyard - constructs the selected ship design. Large ships may take multiple turns.
+MAIN_HELP_1C                      | Defenses - builds and upgrades missile bases up to the specified limit and planetary shields when available.
+MAIN_HELP_1D                      | Industry - builds factories which increase overall colony production.
+MAIN_HELP_1E                      | Ecology  - cleans industrial waste, terraforms the planet, and can increase population growth.
+MAIN_HELP_1F                      | Technology - adds to the empire's overall research.
 MAIN_HELP_1G                      | Ratio bars show the breakdown of a planet's production.  The spending for each bar can be adjusted by mousewheel, clicking within the bar, or clicking on the left/right arrows for each bar.
 MAIN_HELP_1H                      | The expected result of spending for an area is displayed to the right of each bar. Overflow spending will be sent to the empire's treasury reserve.
 MAIN_HELP_2A                      | Planetary shield level for the colony. Shields cannot be constructed on planets within a nebula.
@@ -353,15 +353,18 @@ MAIN_HELP_2E                      | Change ship design to build in the planet's 
 MAIN_HELP_2F                      | Set a rally point to automatically send newly constructed ships to another colony.
 MAIN_HELP_2G                      | Transport population to fortify another colony or send troops to invade an enemy planet. The colony incurs a one-time production cost for transporting.
 MAIN_HELP_2H                      | Completely abandon a planet by transferring all population from it to another colony.
-MAIN_HELP_2I                      | Number of colonists, where '100' represents a full home planet that has not yet been terraformed.
-MAIN_HELP_3A                      | Save/load games. Music and sound effects settings
-MAIN_HELP_3B                      | Fleet report and ship design specifications
-MAIN_HELP_3C                      | Diplomacy and intelligence information
-MAIN_HELP_3D                      | Change research priorities. Reports on current technology
-MAIN_HELP_4A                      | Create new ship designs to take advantage of current technology.
-MAIN_HELP_4B                      | View reduced galaxy map with ship and planetary data.
-MAIN_HELP_4C                      | Overview of your colonies.
-MAIN_HELP_4D                      | Advance to next year.
+MAIN_HELP_2I                      | Current and maximum planet population. 100 represents a full home planet that has not been terraformed.
+MAIN_HELP_2J                      | Current and maximum factories allowed. Maximum factories based on population and robotic controls technology.
+MAIN_HELP_2K                      | Place a flag on the system to help it stand out on the galaxy map.
+MAIN_HELP_3A                      | Game - returns to the opening menu. Allows you to adjust settings or save, load, and start games.
+MAIN_HELP_3B                      | Systems - galaxy map showing the status of systems in the galaxy by different criteria.
+MAIN_HELP_3C                      | Fleets - allows large-scale control of your fleets and shipbuilding within your empire.
+MAIN_HELP_3D                      | Designs - create ship designs for your fleet using your latest technology. Unwanted designs can be scrapped.
+MAIN_HELP_3E                      | Races - detailed information and diplomatic options for any alien races you have encountered.
+MAIN_HELP_3F                      | Colonies - detailed and sortable listing of your colonies. Also provides empire income and costs.
+MAIN_HELP_3G                      | Tech - shows available technologies. Allows you to focus or balance research on up to six technologies.
+MAIN_HELP_3H                      | Next Year - advances the game to the next year.
+MAIN_HELP_3I                      | Map controls - click to cycle through various display settings for the galaxy map.
 
 MAIN_SYSTEM_DETAIL_PFM            | Pop %1    Fact %2    Miss %3
 MAIN_SYSTEM_DETAIL_PF             | Pop %1    Fact %2 
