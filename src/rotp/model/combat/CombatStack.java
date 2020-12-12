@@ -94,7 +94,12 @@ public class CombatStack implements Base {
     public float initiativeRank() {
         if (cloaked)
             return 200+initiative();
-        else if (canTeleport)
+        // modnar: replace canTeleport from this 'if' check
+		// In ShipCombatManager.java, the CombatStack.INITIATIVE comparison/sort in setupBattle
+		// is called before currentStack.beginTurn(). So while beginTurn() in this file
+		// sets the correct value for canTeleport, it won't be used for initiative ordering.
+		// This change correctly gives boosted turn/initiative order for ship stacks with teleporters.
+        else if (hasTeleporting() && !mgr.interdiction())
             return 100+initiative();
         else
             return initiative();
@@ -463,6 +468,8 @@ public class CombatStack implements Base {
             return;
         attacked = true;
         float pctLoss = pct - (shieldLevel() /50) - blackHoleDef();
+		// modnar: bug fix for negative pctLoss, force pctLoss to be at least 0.0
+		pctLoss = (float)Math.max(0.0f, pctLoss);
         num = (int) (num * (1-pctLoss));
         if (destroyed() && (mgr != null))
             mgr.destroyStack(this);

@@ -57,7 +57,7 @@ public class CombatStackOrionGuardian extends CombatStack {
         image = image("ORION_GUARDIAN");
         specials[0] = new ShipSpecialBeamFocus((TechBeamFocus)tech("BeamFocus:0"));
         specials[1] = new ShipSpecialRepair((TechAutomatedRepair)tech("AutomatedRepair:1"));
-        weapons.add(new ShipWeaponMissile((TechMissileWeapon) tech("MissileWeapon:10"), false, 5, 10, 3.5f)); // scatter pack X missiles
+        weapons.add(new ShipWeaponMissile((TechMissileWeapon) tech("MissileWeapon:10"), false, 5, 7, 3.5f)); // scatter pack X missiles, modnar: fix missile range
         weapons.add(new ShipWeaponBeam((TechShipWeapon) tech("ShipWeapon:20"), false)); // stellar converters
         weapons.add(new ShipWeaponTorpedo((TechTorpedoWeapon) tech("TorpedoWeapon:3"))); // plasma torpedos
         weapons.add(new ShipWeaponBeam((TechShipWeapon) tech("ShipWeapon:16"), false)); // death ray

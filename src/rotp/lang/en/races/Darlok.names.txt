@@ -1,7 +1,7 @@
 // all possible names
 name: Darlok, Sarlok, Spylok, Shadelok, Nazlok
 
-desc1: Aggressive Technologists
+desc1: Aggressive Diplomats
 desc2: Supreme Spies
 desc3: The [race]s are unnatural and secretive wraiths, originating from another dimension  
 

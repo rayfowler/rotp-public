@@ -98,7 +98,7 @@ species: 1, 0
 // personality % (must=100) - erratic, pacifist, honorable, ruthless, aggressive, xenophobic
 personality:20,0,0,20,60,0
 // objective % (must=100) - militarist, ecologist, diplomat, industrialist, expansionist, technologist
-objective: 50,10,10,10,10,10
+objective: 10,50,10,10,10,10
 
 // ship set & preferred size (0-small to 3-huge)
 preferredship: Bulrathi, 2
