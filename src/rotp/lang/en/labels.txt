@@ -1470,6 +1470,14 @@ SYSTEMS_EXT_ENEMY_FLEET_ALLY      | Enemy fleet orbiting an allied colony.
 SYSTEMS_EXT_INC_FLEET_PLAYER      | Enemy fleet in transit to our colony.
 SYSTEMS_EXT_INC_FLEET_ALLY        | Enemy fleet in transit to an allied colony.
 SYSTEMS_EXT_NEED_DEFENSE          | Defenses at this colony are not fully upgraded.
+SYSTEMS_HELP_1A                   | The purpose of this screen is to highlight systems in the galaxy that warrant attention by the player. Urgency or danger is denoted by color: flashing red is the highest, and green is the lowest.
+SYSTEMS_HELP_1B                   | Explore - shows unexplored systems within reach of scouts, or potentially with unresearched technologies.
+SYSTEMS_HELP_1C                   | Expand - shows colonizable systems within reach of ships, or potentially with unresearched technologies.
+SYSTEMS_HELP_1D                   | Exploit - shows colonies based lacking economic development. Also shows uncolonized systems with resources.
+SYSTEMS_HELP_1E                   | Exterminate - shows colonies that are under attack or have incoming enemy fleets.
+SYSTEMS_HELP_1F                   | System Alert - describes the system alert, if any, for the selected system
+SYSTEMS_HELP_1G                   | System Notes - text field for player to leave notes.
+SYSTEMS_HELP_1H                   | System History - a chronological list of significant events that have occurred in this system.
 
 SYSTEMS_STATUS_REBELLION          | The colony is in rebellion.
 SYSTEMS_STATUS_COMET              | A comet will strike this planet in %1 years.

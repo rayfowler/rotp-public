@@ -54,6 +54,7 @@ import rotp.model.tech.Tech;
 import rotp.ui.BasePanel;
 import rotp.ui.ExitButton;
 import rotp.ui.RotPUI;
+import rotp.ui.game.HelpUI;
 import rotp.ui.main.GalaxyMapPanel;
 import rotp.ui.main.MainUI;
 import rotp.ui.main.SystemPanel;
@@ -204,15 +205,15 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         if (backGradient == null) {
             Color c0 = Color.black;
             Color c1 = new Color(71,53,39);
-            Point2D start = new Point2D.Float(s10, h-scaled(200));
-            Point2D end = new Point2D.Float(s10, h-s20);
+            Point2D start = new Point2D.Float(s5, h-scaled(200));
+            Point2D end = new Point2D.Float(s5, h-s20);
             float[] dist = {0.0f, 0.7f, 1.0f};
             Color[] colors = {c0, c0, c1 };
             backGradient = new LinearGradientPaint(start, end, dist, colors);
         }
         g.setPaint(backGradient);
         Area a = new Area(new Rectangle(0,0,w,h));
-        a.subtract(new Area(new Rectangle(s10, s40,w-scaled(295), h-s70)));
+        a.subtract(new Area(new Rectangle(s5, s40,w-scaled(285), h-s70)));
         g.fill(a);
     }
     @Override
@@ -240,7 +241,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         map.setBorder(null);
         map.setBounds(0,0,w,h);
 
-        titlePanel = new MainTitlePanel("SYSTEMS_TITLE");
+        titlePanel = new MainTitlePanel(this, "SYSTEMS_TITLE");
         titlePanel.setBounds(0,0,w-rightPaneW-s25, s45);
         
         displayPanel = new SystemInfoPanel(this);
@@ -404,6 +405,72 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
     public void animate() {
         if (animate)
             map.animate();
+    }
+    @Override
+    public void cancelHelp() {
+        RotPUI.helpUI().close();
+    }
+    @Override
+    public void showHelp() {
+        loadHelpUI();
+        repaint();   
+    }
+    private void loadHelpUI() {
+        HelpUI helpUI = RotPUI.helpUI();
+
+        helpUI.clear();
+        int x1 = scaled(150);
+        int w1 = scaled(400);
+        int y1 = scaled(300);
+        HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 4, text("SYSTEMS_HELP_1A"));
+
+        int x2 = scaled(180);
+        int w2 = scaled(190);
+        int y2 = scaled(80);
+        HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 5, text("SYSTEMS_HELP_1B"));
+        sp2.setLine(scaled(340), y2, scaled(340), scaled(54));
+        
+        int x3 = scaled(380);
+        int w3 = scaled(190);
+        int y3 = scaled(80);
+        HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 5, text("SYSTEMS_HELP_1C"));
+        sp3.setLine(scaled(515), y3, scaled(515), scaled(54));
+        
+        int x4 = scaled(580);
+        int w4 = scaled(190);
+        int y4 = scaled(80);
+        HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y4, w4, 5, text("SYSTEMS_HELP_1D"));
+        sp4.setLine(scaled(690), y4, scaled(690), scaled(54));
+        
+        int x5 = scaled(780);
+        int w5 = scaled(190);
+        int y5 = scaled(80);
+        HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y5, w5, 5, text("SYSTEMS_HELP_1E"));
+        sp5.setLine(scaled(865), y5, scaled(865), scaled(54));
+        
+        int x6 = scaled(735);
+        int w6 = scaled(210);
+        int y6 = scaled(220);
+        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 4, text("SYSTEMS_HELP_1F"));
+        sp6.setLine(x6+w6, y6+(sp6.height()/2), scaled(970), y6+(sp6.height()/2));
+        
+        int x7 = scaled(735);
+        int w7 = scaled(210);
+        int y7 = scaled(335);
+        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7,y7,w7, 4, text("SYSTEMS_HELP_1G"));
+        sp7.setLine(x7+w7, y7+(sp7.height()/2), scaled(970), y7+(sp7.height()/2));
+        
+        int x8 = scaled(735);
+        int w8 = scaled(210);
+        int y8 = scaled(470);
+        HelpUI.HelpSpec sp8 = helpUI.addBrownHelpText(x8,y8,w8, 4, text("SYSTEMS_HELP_1H"));
+        sp8.setLine(x8+w8, y8+(sp8.height()/2), scaled(970), y8+(sp8.height()/2));
+
+        helpUI.open(this);
+    }
+    @Override 
+    public void advanceHelp() {
+        cancelHelp();
     }
     private String randomEventStatus(SystemView sv) {
         if (!sv.scouted())
@@ -779,12 +846,15 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
     }
     class MainTitlePanel extends BasePanel implements MouseMotionListener, MouseListener {
         private static final long serialVersionUID = 1L;
+        SystemsUI parent;
         String titleKey;
-        public MainTitlePanel(String s) {
+        public MainTitlePanel(SystemsUI p, String s) {
+            parent = p;
             titleKey = s;
             initModel();
         }
         Rectangle hoverBox;
+        Rectangle helpBox = new Rectangle();
         Rectangle exploreBox = new Rectangle();
         Rectangle expandBox = new Rectangle();
         Rectangle exploitBox = new Rectangle();
@@ -809,21 +879,24 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
             int w = getWidth();
             int h = getHeight();
             int gap = s10;
-            int x0 = gap;
-            int y0 = h - s10;
+            int helpW = s30;
+            int x0 = gap+helpW;
+            int y0 = h - s12;
             String title = text(titleKey);
             String dipLabel = text("SYSTEMS_TAB_EXPLORE");
             String intLabel = text("SYSTEMS_TAB_EXPAND");
             String milLabel = text("SYSTEMS_TAB_EXPLOIT");
             String statusLabel = text("SYSTEMS_TAB_EXTERMINATE");
 
+            drawHelpButton(g);
+            
             g.setColor(SystemPanel.orangeText);
             g.setFont(narrowFont(32));
             int titleW = g.getFontMetrics().stringWidth(title);
             int titleSpacing = s60+s60;
             g.drawString(title, x0,y0);
 
-            int tabW = (w-titleW-titleSpacing-(6*gap))/4;
+            int tabW = (w-titleW-titleSpacing-(6*gap)-helpW)/4;
 
             x0 += (titleW+titleSpacing);
             drawTab(g,x0,0,tabW,h,dipLabel, exploreBox, selectedTab.equals(exploreTab));
@@ -845,7 +918,19 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
             textureArea.add(tab4Area);
             
             g.setColor(selectedTabC);
-            g.fillRect(s10, h-s5, w-s20, s5);
+            g.fillRect(s5, h-s5, w-s10, s5);
+        }
+        public void drawHelpButton(Graphics2D g) {
+            helpBox.setBounds(s10,s10,s20,s25);
+            g.setColor(unselectedTabC);
+            g.fillOval(s10, s10, s20, s25);
+            g.setFont(narrowFont(25));
+            if (helpBox == hoverBox)
+                g.setColor(Color.yellow);
+            else
+                g.setColor(Color.white);
+
+            g.drawString("?", s16, s30);
         }
         private void drawTab(Graphics2D g, int x, int y, int w, int h, String label, Rectangle box, boolean selected) {
             g.setFont(narrowFont(22));
@@ -929,6 +1014,8 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
                     selectTab(exploitTab);
                 else if (hoverBox == exterminateBox)
                     selectTab(exterminateTab);
+                else if (hoverBox == helpBox)
+                    parent.showHelp();
             }
         }
         @Override
@@ -946,6 +1033,8 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
                 hoverBox = exploitBox;
            else if (exterminateBox.contains(x,y))
                 hoverBox = exterminateBox;
+           else if (helpBox.contains(x,y))
+                hoverBox = helpBox;
 
             if (hoverBox != prevHover)
                 repaint();

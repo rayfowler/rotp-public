@@ -31,6 +31,8 @@ public class HelpUI extends BasePanel implements MouseListener {
     private static final long serialVersionUID = 1L;
     private static final Color backgroundHaze = new Color(0,0,0,40);
     private final Color blueBackC = new Color(78,101,155);
+    private final Color brownBackC = new Color(240,240,240);
+    private final Color brownTextC = new Color(45,14,5);
     
     List<HelpSpec> specs = new ArrayList<>();
     BasePanel parent;
@@ -52,6 +54,12 @@ public class HelpUI extends BasePanel implements MouseListener {
     }
     public void clear() {
         specs.clear();
+    }
+    public HelpSpec addBrownHelpText(int x, int y, int w, int num, String text) {
+        HelpSpec sp = addBlueHelpText(x,y,w,num,text);
+        sp.backC = brownBackC;
+        sp.textC = brownTextC;
+        return sp;
     }
     public HelpSpec addBlueHelpText(int x, int y, int w, int num, String text) {
         return addBlueHelpText(x,y,w,num,text,-1,-1,-1,-1,-1,-1);
