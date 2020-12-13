@@ -765,19 +765,15 @@ FLEETS_CANCEL                     | Cancel
 FLEETS_HELP_ALL                   | OVERVIEW - This screen allows the management of fleets, transports and shipbuilding on a large scale. In general, you will select a group of fleets or systems to manage, filter them to a smaller set, and then choose the action to perform on them.
 FLEETS_HELP_1A                    | Select Systems - there are three ways to select systems: 1) by clicking systems on the map, 2) by right-click dragging over the map, and 3) by using the "Select All" and "Deselect All" buttons.
 FLEETS_HELP_1B                    | Filter By - select check boxes to narrow down the list of selected systems. Filters can also be clicked to cycle through related options.
-FLEETS_HELP_1C                    | And building - filter systems according to the ship design being constructed. Can choose multiple designs.
+FLEETS_HELP_1C                    | And building - filter systems according to the ship design being constructed. 
 FLEETS_HELP_1D                    | Ship Design - change the ship design to build in the selected systems. A blank image means that the selected systems are currently building different designs. Caution! There is no confirmation prompt for this action.
 FLEETS_HELP_1E                    | Send Transports - send transports from the selected systems to a single target system.
 FLEETS_HELP_1F                    | Set Rally Points - set the rally points for the selected systems to a single target system. 
-FLEETS_HELP_2A                    | 2The purpose of this screen is to allow the use of fleets, transports and shipbuilding on a large scale. In general, you will select a group of fleets or systems to manage, optionally filter them down to a smaller set, and the choose the action to perform on that set.
-FLEETS_HELP_2B                    | 2Explore - shows unexplored systems within reach of scouts, or potentially with unresearched technologies.
-FLEETS_HELP_2C                    | 2Expand - shows colonizable systems within reach of ships, or potentially with unresearched technologies.
-FLEETS_HELP_2D                    | 2Exploit - shows colonies based lacking economic development. Also shows uncolonized systems with resources.
-FLEETS_HELP_2E                    | 2Exterminate - shows colonies that are under attack or have incoming enemy fleets.
-FLEETS_HELP_2F                    | 2System Alert - describes the system alert, if any, for the selected system
-FLEETS_HELP_2G                    | 2System Notes - text field for player to leave notes.
-FLEETS_HELP_2H                    | 2System History - a chronological list of significant events that have occurred in this system.
-
+FLEETS_HELP_2A                    | Select Fleets - there are three ways to select fleets: 1) by clicking fleets on the map, 2) by right-click dragging over the map, and 3) by using the "Select All" and "Deselect All" buttons.
+FLEETS_HELP_2B                    | Filter By - select check boxes to narrow down the list of selected fleets. Filters can also be clicked to cycle through related options.
+FLEETS_HELP_2C                    | Only Deploy Ships of Type - restrict the types of ships you want to deploy from your fleets.
+FLEETS_HELP_2D                    | Selected for Deployment - a count of ships, by type, that will be deployed.
+FLEETS_HELP_2E                    | Deploy Fleets - deploy the selected fleets to a single target system.
 
 // Select Next Tech to Research UI
 TECH_RESEARCH_COMPUTER            | Select the next computer technology our researchers should focus on.
@@ -1486,7 +1482,7 @@ SYSTEMS_EXT_ENEMY_FLEET_ALLY      | Enemy fleet orbiting an allied colony.
 SYSTEMS_EXT_INC_FLEET_PLAYER      | Enemy fleet in transit to our colony.
 SYSTEMS_EXT_INC_FLEET_ALLY        | Enemy fleet in transit to an allied colony.
 SYSTEMS_EXT_NEED_DEFENSE          | Defenses at this colony are not fully upgraded.
-SYSTEMS_HELP_1A                   | The purpose of this screen is to highlight systems in the galaxy that warrant attention by the player. Urgency or danger is denoted by color: flashing red is the highest, and green is the lowest.
+SYSTEMS_HELP_1A                   | OVERVIEW - The purpose of this screen is to highlight systems in the galaxy that warrant attention by the player. Urgency or danger is denoted by color: flashing red is the highest, and green is the lowest.
 SYSTEMS_HELP_1B                   | Explore - shows unexplored systems within reach of scouts, or potentially with unresearched technologies.
 SYSTEMS_HELP_1C                   | Expand - shows colonizable systems within reach of ships, or potentially with unresearched technologies.
 SYSTEMS_HELP_1D                   | Exploit - shows colonies based lacking economic development. Also shows uncolonized systems with resources.
