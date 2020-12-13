@@ -185,9 +185,9 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
 
         // draw info under galaxy map
         g.setColor(Color.black);
-        g.setFont(narrowFont(18));
+        g.setFont(narrowFont(16));
         int galaxyBoxW = boxW-s40;
-        int y3 = galaxyY+galaxyH+s20;
+        int y3 = galaxyY+galaxyH+s16;
         String systemsLbl = text("SETUP_GALAXY_NUMBER_SYSTEMS", options().numberStarSystems());
         int sw3 = g.getFontMetrics().stringWidth(systemsLbl);
         int x3 = rightBoxX+s20+((galaxyBoxW/2)-sw3)/2;
@@ -202,13 +202,13 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         if ((hoverBox == shapeBoxL) || (hoverBox == shapeBoxR)
             ||  (hoverBox == sizeBoxL)  || (hoverBox == sizeBoxR)
             ||  (hoverBox == diffBoxL)  || (hoverBox == diffBoxR)
-			||  (hoverBox == mapOptionBoxL)   || (hoverBox == mapOptionBoxR) // modnar: mapOptionBox
+            ||  (hoverBox == mapOptionBoxL)   || (hoverBox == mapOptionBoxR) // modnar: mapOptionBox
             ||  (hoverBox == oppBoxU)   || (hoverBox == oppBoxD)) {
             g.setColor(Color.yellow);
             g.fill(hoverBox);
         }
         else if ((hoverBox == shapeBox) || (hoverBox == sizeBox)
-			|| (hoverBox == mapOptionBox) // modnar: mapOptionBox
+            || (hoverBox == mapOptionBox) // modnar: mapOptionBox
             || (hoverBox == diffBox)   || (hoverBox == oppBox)) {
             Stroke prev = g.getStroke();
             g.setStroke(stroke2);
@@ -581,7 +581,7 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
 
         // draw 3 galaxy option labels
         int sectionW = (boxW-s40) / 3;
-        int y5 = galaxyY+galaxyH+s55;
+        int y5 = galaxyY+galaxyH+s45;
         g.setFont(narrowFont(24));
         String shapeLbl = text("SETUP_GALAXY_SHAPE_LABEL");
         int shapeSW = g.getFontMetrics().stringWidth(shapeLbl);

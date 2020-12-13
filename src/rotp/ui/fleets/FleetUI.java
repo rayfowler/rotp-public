@@ -28,6 +28,9 @@ import java.awt.Shape;
 import java.awt.Stroke;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.awt.geom.Area;
@@ -52,6 +55,7 @@ import rotp.model.ships.ShipDesignLab;
 import rotp.ui.BasePanel;
 import rotp.ui.ExitButton;
 import rotp.ui.RotPUI;
+import rotp.ui.game.HelpUI;
 import rotp.ui.main.GalaxyMapPanel;
 import rotp.ui.main.MainUI;
 import rotp.ui.main.SystemPanel;
@@ -72,6 +76,7 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
     public static final Color brown = new Color(64,24,13);
     public static final Color sliderBoxBlue = new Color(34,140,142);
     public static final Color mapMask = new Color(0,0,0,192);
+    public static final Color unselectedTabC = new Color(112,85,68);
 
     private final String QUERY_PANEL = "Query";
     private final String RALLY_PANEL = "Rally";
@@ -82,6 +87,7 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
     private MainTitlePanel titlePanel;
     private final CardLayout cardLayout = new CardLayout();
     private String currentPane = QUERY_PANEL;
+    private int helpFrame = 0;
 
     public HashMap<ShipDesign, BufferedImage> designImageCache = new HashMap<>();
     private int pad = 10;
@@ -547,7 +553,7 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         map.setBorder(null);
         map.setBounds(0,0,w,h);
 
-        titlePanel = new MainTitlePanel("FLEETS_TITLE");
+        titlePanel = new MainTitlePanel(this, "FLEETS_TITLE");
         titlePanel.setBounds(0,0,w-rightPaneW-s25, s45);
         
         massTransportDialog = new MassTransportsDialog(this);
@@ -820,6 +826,131 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         queryPanel.animate();
     }
     @Override
+    public void cancelHelp() {
+        helpFrame = 0;
+        RotPUI.helpUI().close();
+    }
+    @Override
+    public void showHelp() {
+        helpFrame = 1;
+        loadHelpUI();
+        repaint();   
+    }
+    @Override 
+    public void advanceHelp() {
+        if (helpFrame == 0)
+            return;
+        helpFrame++;
+        if (helpFrame > 2) 
+            cancelHelp();
+        loadHelpUI();
+        repaint();
+    }
+    private void loadHelpUI() {
+        switch(helpFrame) {
+            case 1: loadHelpFrame1(); return;
+            case 2: loadHelpFrame2(); return;
+        }
+    }    
+    private void loadHelpFrame1() {
+        HelpUI helpUI = RotPUI.helpUI();
+        helpUI.clear();
+        int x0 = scaled(75);
+        int w0 = scaled(400);
+        int y0 = scaled(200);
+        HelpUI.HelpSpec sp0 = helpUI.addBrownHelpText(x0, y0, w0, 5, text("FLEETS_HELP_ALL"));
+
+        int x1 = scaled(530);
+        int w1 = scaled(415);
+        int y1 = scaled(20);
+        HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 4, text("FLEETS_HELP_A"));
+        sp1.setLine(x1+w1, y1+(sp1.height()/2), scaled(980), scaled(80));
+        
+        int x2 = scaled(585);
+        int w2 = scaled(360);
+        int y2 = scaled(120);
+        HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 3, text("FLEETS_HELP_B"));
+        sp2.setLine(x2+w2, y2+(sp2.height()/2), scaled(980), scaled(145));
+        
+        int x3 = scaled(585);
+        int w3 = scaled(360);
+        int y3 = scaled(200);
+        HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 2, text("FLEETS_HELP_C"));
+        sp3.setLine(x3+w3, y3+(sp3.height()/2), scaled(980), scaled(215));
+        
+        int x4 = scaled(585);
+        int w4 = scaled(360);
+        int y4 = scaled(265);
+        HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y4, w4, 4, text("FLEETS_HELP_D"));
+        sp4.setLine(x4+w4, scaled(280), scaled(980), scaled(270));
+        
+        int x5 = scaled(735);
+        int w5 = scaled(210);
+        int y5 = scaled(370);
+        HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5,y5,w5, 4, text("FLEETS_HELP_E"));
+        sp5.setLine(x5+w5, scaled(385), scaled(970),scaled(345));
+        
+        int x6 = scaled(985);
+        int w6 = scaled(210);
+        int y6 = scaled(370);
+        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6,y6,w6, 4, text("FLEETS_HELP_F"));
+        sp6.setLine(scaled(1180), y6, scaled(1180), scaled(305));
+
+        helpUI.open(this);
+    }
+    private void loadHelpFrame2() {
+        HelpUI helpUI = RotPUI.helpUI();
+        helpUI.clear();
+        int x1 = scaled(150);
+        int w1 = scaled(400);
+        int y1 = scaled(300);
+        HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 6, text("FLEETS_HELP_2A"));
+
+        int x2 = scaled(180);
+        int w2 = scaled(190);
+        int y2 = scaled(80);
+        HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 5, text("FLEETS_HELP_2B"));
+        sp2.setLine(scaled(340), y2, scaled(340), scaled(54));
+        
+        int x3 = scaled(380);
+        int w3 = scaled(190);
+        int y3 = scaled(80);
+        HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 5, text("FLEETS_HELP_2C"));
+        sp3.setLine(scaled(515), y3, scaled(515), scaled(54));
+        
+        int x4 = scaled(580);
+        int w4 = scaled(190);
+        int y4 = scaled(80);
+        HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y4, w4, 5, text("FLEETS_HELP_2D"));
+        sp4.setLine(scaled(690), y4, scaled(690), scaled(54));
+        
+        int x5 = scaled(780);
+        int w5 = scaled(190);
+        int y5 = scaled(80);
+        HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y5, w5, 5, text("FLEETS_HELP_2E"));
+        sp5.setLine(scaled(865), y5, scaled(865), scaled(54));
+        
+        int x6 = scaled(735);
+        int w6 = scaled(210);
+        int y6 = scaled(220);
+        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 4, text("FLEETS_HELP_2F"));
+        sp6.setLine(x6+w6, y6+(sp6.height()/2), scaled(970), y6+(sp6.height()/2));
+        
+        int x7 = scaled(735);
+        int w7 = scaled(210);
+        int y7 = scaled(335);
+        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7,y7,w7, 4, text("FLEETS_HELP_2G"));
+        sp7.setLine(x7+w7, y7+(sp7.height()/2), scaled(970), y7+(sp7.height()/2));
+        
+        int x8 = scaled(735);
+        int w8 = scaled(210);
+        int y8 = scaled(470);
+        HelpUI.HelpSpec sp8 = helpUI.addBrownHelpText(x8,y8,w8, 4, text("FLEETS_HELP_2H"));
+        sp8.setLine(x8+w8, y8+(sp8.height()/2), scaled(970), y8+(sp8.height()/2));
+
+        helpUI.open(this);
+    }
+    @Override
     public void keyPressed(KeyEvent e) {
         switch(e.getKeyCode()) {
                 case KeyEvent.VK_ESCAPE:
@@ -864,17 +995,22 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         if (massTransportDialog.isVisible())
             massTransportDialog.mouseWheelMoved(e);
     }
-    class MainTitlePanel extends BasePanel {
+    class MainTitlePanel extends BasePanel implements MouseMotionListener, MouseListener {
         private static final long serialVersionUID = 1L;
         String titleKey;
-        public MainTitlePanel(String s) {
+        FleetUI parent;
+        Rectangle hoverBox;
+        Rectangle helpBox = new Rectangle();
+        public MainTitlePanel(FleetUI p, String s) {
+            parent = p;
             titleKey = s;
             initModel();
         }
-
         private void initModel() {
             setOpaque(false);
             setPreferredSize(new Dimension(getWidth(),s45));
+            addMouseListener(this);
+            addMouseMotionListener(this);
         }
         @Override
         public void paintComponent(Graphics g0) {
@@ -884,8 +1020,13 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
             int w = getWidth();
             int h = getHeight();
             int gap = s10;
-            int x0 = gap;
+            int helpW = s30;
+            int x0 = gap+helpW;
             int y0 = h - s10;
+
+
+            drawHelpButton(g);
+            
             String title = text(titleKey);
             g.setColor(SystemPanel.orangeText);
             g.setFont(narrowFont(32));
@@ -894,7 +1035,57 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
             g.setColor(backHiC);
             g.fillRect(s10, h-s5, w-s20, s5);
         }
+        public void drawHelpButton(Graphics2D g) {
+            helpBox.setBounds(s10,s10,s20,s25);
+            g.setColor(unselectedTabC);
+            g.fillOval(s10, s10, s20, s25);
+            g.setFont(narrowFont(25));
+            if (helpBox == hoverBox)
+                g.setColor(Color.yellow);
+            else
+                g.setColor(Color.white);
 
+            g.drawString("?", s16, s30);
+        }
+        @Override
+        public void mouseClicked(MouseEvent e) {}
+        @Override
+        public void mouseEntered(MouseEvent e) {}
+        @Override
+        public void mouseExited(MouseEvent e) {
+            if (hoverBox != null) {
+                hoverBox = null;
+                repaint();
+            }
+        }
+        @Override
+        public void mousePressed(MouseEvent e) {}
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            if (e.getButton() > 3)
+                return;
+            int x = e.getX();
+            int y = e.getY();
+            if (hoverBox == null)
+                misClick();
+            else {
+                if (hoverBox == helpBox)
+                    parent.showHelp();
+            }
+        }
+        @Override
+        public void mouseDragged(MouseEvent e) {}
+        @Override
+        public void mouseMoved(MouseEvent e) {
+            int x = e.getX();
+            int y = e.getY();
+            Rectangle prevHover = hoverBox;
+            if (helpBox.contains(x,y))
+                hoverBox = helpBox;
+
+            if (hoverBox != prevHover)
+                repaint();
+        }
     }
     class ExitFleetsButton extends ExitButton {
         private static final long serialVersionUID = 1L;
