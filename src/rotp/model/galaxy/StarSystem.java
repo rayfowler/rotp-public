@@ -54,10 +54,10 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
 	// modnar: change shield colors to color-coded loot rarity
 	// shield-5 --> shield-10 --> shield-15 --> shield-20
 	//    green -->      blue -->    purple --> orange
-    private static final Color shield5C = new Color(32,255,0); // original: Color(64,64,64)
-    private static final Color shield10C = new Color(0,112,224); // original: Color(24,24,96)
-    private static final Color shield15C = new Color(160,48,240); // original: Color(24,96,24)
-    private static final Color shield20C = new Color(255,128,0); // original: Color(160,160,48)
+    private static final Color shield5C = new Color(32,255,0); 
+    private static final Color shield10C = new Color(0,112,224); 
+    private static final Color shield15C = new Color(160,48,240);
+    private static final Color shield20C = new Color(255,128,0);
     private static final Color selectionC = new Color(160,160,0);
     public static final Color systemNameBackC = new Color(40,40,40);
     public static final Color systemDataBackC = new Color(160,160,160);
@@ -775,9 +775,21 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         if (shieldLevel == 0)
             return;
 
+        if (r < 10)
+            return;
+        
         Stroke prevStroke = g.getStroke();
         Stroke shieldStroke = BasePanel.stroke4; // modnar: thicker shield strokes
-        Stroke shieldBorderStroke = BasePanel.stroke7; // modnar: thicker shield strokes
+        Stroke shieldBorderStroke = BasePanel.stroke6; // modnar: thicker shield strokes
+        
+        if (r < 16) {
+            shieldStroke = BasePanel.stroke2;
+            shieldBorderStroke = BasePanel.stroke3;
+        }
+        else if (r < 24) {
+            shieldStroke = BasePanel.stroke3;
+            shieldBorderStroke = BasePanel.stroke5;
+        }
         g.setStroke(shieldStroke);
         switch (shieldLevel) {
             case 5:
