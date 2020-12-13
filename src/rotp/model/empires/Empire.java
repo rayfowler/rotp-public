@@ -326,7 +326,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     public boolean isAI()                { return !isPlayer(); };
     public boolean isPlayerControlled()  { return !isAIControlled(); }
     public boolean isAIControlled()      { return isAI() || options().isAutoPlay(); }
-    public Color color()                 { return options().color(4); }
+    public Color color()                 { return options().color(bannerColor); }
     public int shipColorId()             { return colorId(); }
     @Override
     public String name()                 { return race().text("GOVT_EMPIRE", raceName()); }
