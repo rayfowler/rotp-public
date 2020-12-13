@@ -112,7 +112,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     private int selectX0, selectY0, selectX1, selectY1;
     private int lastMouseX, lastMouseY;
     private boolean redrawRangeMap = true;
-    private Sprite hoverSprite;
+    public Sprite hoverSprite;
 
     private final Timer zoomTimer;
 
@@ -801,7 +801,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         hoverSprite = spriteAt(x,y);
         
         // still hovering over same sprite... do nothing
-        if (hoverSprite == prevHover)
+        if (hoverSprite == prevHover) 
             return;
         
         // if sprite changed, but we are also still over the prevHover

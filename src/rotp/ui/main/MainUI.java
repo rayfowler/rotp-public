@@ -539,6 +539,7 @@ public class MainUI extends BasePanel implements IMapHandler {
     public void advanceMap() {
         log("Advancing Main UI Map");
         overlay.advanceMap();
+        map.hoverSprite = clickedSprite();
     }
     public void resumeTurn() {
         clearOverlay();
