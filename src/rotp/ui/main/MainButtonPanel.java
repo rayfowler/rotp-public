@@ -29,6 +29,7 @@ import java.awt.event.MouseMotionListener;
 import java.awt.geom.Point2D;
 import rotp.ui.BasePanel;
 import rotp.ui.RotPUI;
+import rotp.ui.UserPreferences;
 
 public final class MainButtonPanel extends BasePanel implements MouseListener, MouseMotionListener {
     private static final long serialVersionUID = 1L;
@@ -162,7 +163,7 @@ public final class MainButtonPanel extends BasePanel implements MouseListener, M
         g.drawRoundRect(x,y,w,h,s10,s10);
         g.setStroke(prevS);
 
-        String label = text("MAIN_NAVIGATION_NEXT_TURN");
+        String label = UserPreferences.displayYear() ? text("MAIN_NAVIGATION_NEXT_YEAR") : text("MAIN_NAVIGATION_NEXT_TURN");
         g.setFont(narrowFont(28));
         int sw = g.getFontMetrics().stringWidth(label);
         int x0 = x+((w-sw)/2);

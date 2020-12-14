@@ -333,7 +333,8 @@ MAIN_NAVIGATION_SYSTEMS           | Systems
 MAIN_NAVIGATION_RACES             | Races
 MAIN_NAVIGATION_COLONIES          | Colonies
 MAIN_NAVIGATION_TECH              | Tech
-MAIN_NAVIGATION_NEXT_TURN         | Next Year
+MAIN_NAVIGATION_NEXT_TURN         | Next Turn
+MAIN_NAVIGATION_NEXT_YEAR         | Next Year
 MAIN_YEAR_DISPLAY                 | Year  %1
 MAIN_TURN_DISPLAY                 | Turn  %1
 MAIN_HELP_ALL                     | Help - click to cycle through help information for a particular screen. Hit escape to cancel.
@@ -364,7 +365,8 @@ MAIN_HELP_3E                      | Races - detailed information and diplomatic 
 MAIN_HELP_3F                      | Colonies - detailed and sortable listing of your colonies. Also provides empire income and costs.
 MAIN_HELP_3G                      | Tech - shows available technologies. Allows you to focus or balance research on up to six technologies.
 MAIN_HELP_3H                      | Next Year - advances the game to the next year.
-MAIN_HELP_3I                      | Map controls - click to cycle through various display settings for the galaxy map.
+MAIN_HELP_3I                      | Current Turn - displays the game's current turn or your empire's current year. Click to toggle.
+MAIN_HELP_3J                      | Map controls - click to cycle through various display settings for the galaxy map.
 
 MAIN_SYSTEM_DETAIL_PFM            | Pop %1    Fact %2    Miss %3
 MAIN_SYSTEM_DETAIL_PF             | Pop %1    Fact %2 

@@ -746,15 +746,21 @@ public class MainUI extends BasePanel implements IMapHandler {
         HelpSpec sp7 = helpUI.addBlueHelpText(x7, y1, w1, 4, text("MAIN_HELP_3G"));
         sp7.setLine(x7+(w1/2), y1+sp7.height(), x7+(w1/2), scaled(702));
 
-        int x8 = scaled(935);
-        HelpSpec sp8 = helpUI.addBlueHelpText(x8, y2+s40, w1, 2, text("MAIN_HELP_3H"));
-        sp8.setLine(x8+(w1/2), y2+s40+sp8.height(), x8+(w1/2), scaled(702));
+        int x8 = scaled(915);
+        int w8 = scaled(150);
+        HelpSpec sp8 = helpUI.addBlueHelpText(x8, y2, w8, 3, text("MAIN_HELP_3H"));
+        sp8.setLine(x8+(w8/2), y2+sp8.height(), x8+(w8/2), scaled(702));
 
-        int x9 = scaled(115);
-        int y9 = scaled(125);
-        int w9 = scaled(250);
-        HelpSpec sp9 = helpUI.addBlueHelpText(x9, y9, w9, 3, text("MAIN_HELP_3I"));
-        sp9.setLine(x9, y9+(sp9.height()/2), s55, y9+(sp9.height()/2));
+        int x9 = scaled(1030);
+        int w9 = scaled(200);
+        HelpSpec sp9 = helpUI.addBlueHelpText(x9, y1, w9, 4, text("MAIN_HELP_3I"));
+        sp8.setLine(scaled(1150), y1+sp9.height(), scaled(1150), scaled(680));
+
+        int x10 = scaled(115);
+        int y10 = scaled(125);
+        int w10 = scaled(250);
+        HelpSpec sp10 = helpUI.addBlueHelpText(x10, y10, w10, 3, text("MAIN_HELP_3J"));
+        sp10.setLine(x10, y10+(sp10.height()/2), s55, y10+(sp10.height()/2));
 
     }
     @Override
