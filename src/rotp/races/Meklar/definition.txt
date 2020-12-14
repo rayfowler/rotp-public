@@ -26,8 +26,8 @@ gnn:           MeklarGNN
 gnnHost:       MeklarGNNHost
 gnnColor:      Lavender
 gnnTextColor:  185,154,250
-winSplash:     ,255,255,255
-lossSplash:    ,255,255,255
+winSplash:     MekWin,255,255,255
+lossSplash:    MekLoss,255,255,255
 
 advisorScout:      MeklarDiplomat, 120@30|440x640
 advisorTransport:  MeklarDiplomat, 120@30|440x640
@@ -42,9 +42,9 @@ advisorResistCouncil:   MeklarDiplomat, 120@30|440x640
 advisorCouncilResisted: MeklarDiplomat, 120@30|440x640
 
 espionageXY:   0@0
-spyFactories:  0
-spyMissiles:   0
-spyRebellion:  0
+spyFactories:  52
+spyMissiles:   50
+spyRebellion:  51
 dialogTextX:   230,320
 dialogTextY:   550
 transport:     MekTransport

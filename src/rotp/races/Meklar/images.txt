@@ -1,3 +1,6 @@
+MekWin        | races/Meklar/WinSplash.jpg
+MekLoss       | races/Meklar/LossSplash.jpg
+
 MekFlagWar  | races/Meklar/banner_war.png
 MekFlagNorm | races/Meklar/banner_norm.png
 MekFlagPact | races/Meklar/banner_pact.png
