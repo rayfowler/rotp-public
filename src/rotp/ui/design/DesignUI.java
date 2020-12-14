@@ -183,15 +183,15 @@ public class DesignUI extends BasePanel {
         int rightPaneW = scaled(250);
 
         setBackground(Color.black);
-        Border emptyBorder = newEmptyBorder(0, pad, pad, pad);
+        Border emptyBorder = newEmptyBorder(0, 8, pad, pad);
         setBorder(emptyBorder);
 
         // create center panel
-        DesignTitlePanel titlePanel = new DesignTitlePanel("SHIP_DESIGN_TITLE");
+        DesignTitlePanel titlePanel = new DesignTitlePanel(this, "SHIP_DESIGN_TITLE");
         configPanel = new DesignConfigPanel();
         BasePanel mainPanel = new BasePanel();
         mainPanel.setOpaque(false);
-        mainPanel.setBorder(newEmptyBorder(20,0,0,0));
+        mainPanel.setBorder(newEmptyBorder(10,0,0,0));
         mainPanel.setLayout(new BorderLayout(0, s5));
         mainPanel.add(titlePanel, BorderLayout.NORTH);
         mainPanel.add(configPanel, BorderLayout.CENTER);
@@ -199,10 +199,10 @@ public class DesignUI extends BasePanel {
         // create design slot panel on right side of UI
         designSlotsPanel = new DesignSlotsPanel();
 
-        DesignTitlePanel slotsTitlePanel = new DesignTitlePanel("SHIP_DESIGN_SLOTS");
+        SlotTitlePanel slotsTitlePanel = new SlotTitlePanel("SHIP_DESIGN_SLOTS");
         BasePanel rightPanel = new BasePanel();
         rightPanel.setPreferredSize(new Dimension(rightPaneW, getHeight()));
-        rightPanel.setBorder(newEmptyBorder(20,0,0,0));
+        rightPanel.setBorder(newEmptyBorder(10,0,0,0));
         rightPanel.setOpaque(false);
         rightPanel.setLayout(new BorderLayout(0, s5));
         rightPanel.add(slotsTitlePanel, BorderLayout.NORTH);
@@ -290,10 +290,91 @@ public class DesignUI extends BasePanel {
         buttonClick();
         RotPUI.instance().selectMainPanel(pauseNextTurn);
     }
-    class DesignTitlePanel extends BasePanel {
+    class DesignTitlePanel extends BasePanel implements MouseMotionListener, MouseListener {
         private static final long serialVersionUID = 1L;
         String titleKey;
-        public DesignTitlePanel(String s) {
+        Rectangle hoverBox;
+        Rectangle helpBox = new Rectangle();
+        DesignUI parent;
+        public DesignTitlePanel(DesignUI p, String s) {
+            parent = p;
+            titleKey = s;
+            init();
+        }
+        private void init() {
+            setPreferredSize(new Dimension(getWidth(), s45));
+            setOpaque(false);
+            addMouseListener(this);
+            addMouseMotionListener(this);
+        }
+        @Override
+        public void paintComponent(Graphics g0) {
+            super.paintComponent(g0);
+            Graphics2D g = (Graphics2D) g0;
+            String title = text(titleKey);
+            int helpW = s30;
+            drawHelpButton(g);
+            
+            g.setFont(narrowFont(32));
+            g.setColor(SystemPanel.orangeText);
+            g.drawString(title, helpW+s10, s32);
+        }
+        public void drawHelpButton(Graphics2D g) {
+            helpBox.setBounds(s10,s10,s20,s25);
+            g.setColor(darkBrown);
+            g.fillOval(s10, s10, s20, s25);
+            g.setFont(narrowFont(25));
+            if (helpBox == hoverBox)
+                g.setColor(Color.yellow);
+            else
+                g.setColor(Color.white);
+
+            g.drawString("?", s16, s30);
+        }
+        @Override
+        public void mouseClicked(MouseEvent e) {}
+        @Override
+        public void mouseEntered(MouseEvent e) {}
+        @Override
+        public void mouseExited(MouseEvent e) {
+            if (hoverBox != null) {
+                hoverBox = null;
+                repaint();
+            }
+        }
+        @Override
+        public void mousePressed(MouseEvent e) {}
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            if (e.getButton() > 3)
+                return;
+            int x = e.getX();
+            int y = e.getY();
+            if (hoverBox == null)
+                misClick();
+            else {
+                if (hoverBox == helpBox)
+                    parent.showHelp();
+            }
+        }
+        @Override
+        public void mouseDragged(MouseEvent e) {}
+        @Override
+        public void mouseMoved(MouseEvent e) {
+            int x = e.getX();
+            int y = e.getY();
+            Rectangle prevHover = hoverBox;
+            if (helpBox.contains(x,y))
+                hoverBox = helpBox;
+
+            if (hoverBox != prevHover)
+                repaint();
+        }
+    }
+    class SlotTitlePanel extends BasePanel {
+        private static final long serialVersionUID = 1L;
+        String titleKey;
+        public SlotTitlePanel(String s) {
             titleKey = s;
             init();
         }
@@ -305,9 +386,10 @@ public class DesignUI extends BasePanel {
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
             String title = text(titleKey);
+            
             g.setFont(narrowFont(32));
             g.setColor(SystemPanel.orangeText);
-            g.drawString(title, s10, s35);
+            g.drawString(title, s10, s32);
         }
     }
     final class DesignSlotPanel extends BasePanel implements MouseListener, MouseMotionListener {
