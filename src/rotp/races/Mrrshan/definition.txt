@@ -26,8 +26,8 @@ gnn:           MrrshanGNN
 gnnHost:       MrrshanGNNHost
 gnnColor:      Orange
 gnnTextColor:  255,93,0
-winSplash:     ,255,255,255
-lossSplash:    ,255,255,255
+winSplash:     MrrWin,255,255,255
+lossSplash:    MrrLoss,255,255,255
 
 advisorScout:      MrrshanDiplomat, 195@30|440x640
 advisorTransport:  MrrshanDiplomat, 195@30|440x640
@@ -69,9 +69,9 @@ council:       MrrCouncil
 shield:        MeklarShield,    0@0|420x450
 introTextX:    695
 espionageXY:   0@20
-spyFactories:  0
-spyMissiles:   0
-spyRebellion:  0
+spyFactories:  50
+spyMissiles:   50
+spyRebellion:  37
 dialogTextX:   200,200
 dialogTextY:   530
 councilDiplo:  0.6, 75, 0, 0.6

@@ -1,3 +1,5 @@
+MrrWin        | races/Mrrshan/WinSplash.jpg
+MrrLoss       | races/Mrrshan/LossSplash.jpg
 
 MrrFlagWar   | races/Mrrshan/banner_war.png
 MrrFlagNorm  | races/Mrrshan/banner_norm.png
