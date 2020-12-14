@@ -109,22 +109,30 @@ public class AISpyMaster implements Base, SpyMaster {
                 v.spies().beginEspionage();
             else if (leader.isPacifist() || leader.isHonorable())
                 v.spies().beginHide();
-            else if ((relations > 0) && canEspionage)
+            else if ((relations > 30) && canEspionage)
                 v.spies().beginEspionage();
             else
                 v.spies().beginHide();
         }
          else if (v.embassy().noTreaty()) {
-            if (relations < 0)
+            if (leader.isAggressive() || leader.isRuthless() || leader.isErratic()) {
+                if (canEspionage)
+                    v.spies().beginEspionage();
+                else if (canSabotage)
+                    v.spies().beginSabotage();
+                else
+                    v.spies().beginHide();
+            }
+            else if (leader.isXenophobic() && canEspionage)
+                v.spies().beginEspionage();
+            else if (relations < -20) 
                 v.spies().beginHide();
-            if (leader.isTechnologist() && canEspionage)
+            else if (leader.isTechnologist() && canEspionage)
                 v.spies().beginEspionage();
             else if (leader.isPacifist() || leader.isHonorable())
                 v.spies().beginHide();
-            else if (v.spies().possibleTechs().isEmpty() && canSabotage) 
-                v.spies().beginSabotage();
             else
-                v.spies().beginEspionage();
+                v.spies().beginHide();
         }
          // if at war, defer to war strategy: 1) steal war techs, 2) sabotage, 3) steal techs
         else if (v.embassy().anyWar()) {
