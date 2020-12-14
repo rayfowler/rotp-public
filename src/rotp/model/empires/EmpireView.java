@@ -18,10 +18,9 @@ package rotp.model.empires;
 import java.awt.Image;
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.incidents.DiplomaticIncident;
 import rotp.ui.diplomacy.DialogueManager;
@@ -159,11 +158,43 @@ public final class EmpireView implements Base, Serializable {
         setSuggestedAllocations();
     }
     public void refreshSystemSpyViews() {
+        // this method is called once during the SpyNetwork nextTurn method
+        // it is responsible for updating the spy views for an empire
+        
+        // if in unity, it refreshes views for all of the empire's colonies
+        
+        // all other cases, it only refreshes the views for the empire's 
+        // known colonies, PLUS one additional previously-unknown colony
+        // per spy network. Unknown colonies closest in distance to this
+        // empire are learned first
+        
+        
         // get all #empire views AND all views we think belong to #empire
-        // keeps us from sabotaging #empire colonies that have been destroyed
-        Set<StarSystem> allSystems = new HashSet<>(empire.allColonizedSystems());
-        allSystems.addAll(owner.systemsForCiv(empire));
-        for (StarSystem sys : allSystems)
+        // this keeps us from sabotaging #empire colonies that have been destroyed
+        List<StarSystem> allKnownSystems = owner.systemsForCiv(empire);
+        
+        // build list of unknown systems  (all minus known)
+        List<StarSystem> allUnknownSystems = new ArrayList<>(empire.allColonizedSystems());
+        allUnknownSystems.removeAll(allKnownSystems);
+        
+        // if there are some unknown, all add if unity else sort by distance
+        // and add 1 for each spy network
+        if (!allUnknownSystems.isEmpty()) {
+            if (this.embassy().unity()) 
+                allKnownSystems.addAll(allUnknownSystems);
+            else {
+                int spyNetworks = spies().activeSpies().size();
+                int numDiscoveredSystems = min(spyNetworks, allUnknownSystems.size());
+                if (numDiscoveredSystems > 0) {
+                    StarSystem.TARGET_EMPIRE = owner;
+                    Collections.sort(allUnknownSystems, StarSystem.DISTANCE_TO_TARGET_EMPIRE);
+                    for (int i=0;i<numDiscoveredSystems;i++)
+                        allKnownSystems.add(allUnknownSystems.get(i));
+                }
+            }
+        }
+        
+        for (StarSystem sys : allKnownSystems)
             owner.sv.refreshSpyScan(sys.id);
     }
     public void nextTurn(float prod) {

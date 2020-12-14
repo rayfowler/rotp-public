@@ -216,7 +216,7 @@ public final class SpyNetwork implements Base, Serializable {
         // auto-update everything at no cost if unity 
         if (view.embassy().unity()) {
             lastSpyDate = galaxy().currentYear();
-            view().refreshSystemSpyViews();
+            view.refreshSystemSpyViews();
             updateTechList();
             allocation(0);
             activeSpies.clear();
@@ -226,7 +226,7 @@ public final class SpyNetwork implements Base, Serializable {
         
         log(view+" Spies: nextTurn");
         if (!activeSpies().isEmpty())
-            view().refreshSystemSpyViews();
+            view.refreshSystemSpyViews();
         
         baseTargets = sabotageBaseTargets();
         factoryTargets = sabotageFactoryTargets();
