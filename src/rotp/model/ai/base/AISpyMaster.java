@@ -21,6 +21,7 @@ import java.util.List;
 import rotp.model.ai.interfaces.SpyMaster;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
+import rotp.model.empires.Leader;
 import rotp.model.empires.SpyNetwork.Sabotage;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.tech.Tech;
@@ -93,6 +94,8 @@ public class AISpyMaster implements Base, SpyMaster {
 
         Sabotage sabMission = bestSabotageChoice(v);
         boolean canSabotage = v.spies().canSabotage() && (sabMission != null);
+        boolean canEspionage = !v.spies().possibleTechs().isEmpty();
+        Leader leader = v.owner().leader();
 
         float relations = v.embassy().relations();
         if (v.empire().extinct())
@@ -102,7 +105,11 @@ public class AISpyMaster implements Base, SpyMaster {
         else if (v.embassy().alliance() || v.embassy().unity())
             v.spies().beginHide();
         else if (v.embassy().pact()) {
-            if ((relations > 0) && !v.spies().possibleTechs().isEmpty())
+            if (leader.isTechnologist() && canEspionage)
+                v.spies().beginEspionage();
+            else if (leader.isPacifist() || leader.isHonorable())
+                v.spies().beginHide();
+            else if ((relations > 0) && canEspionage)
                 v.spies().beginEspionage();
             else
                 v.spies().beginHide();
@@ -110,8 +117,12 @@ public class AISpyMaster implements Base, SpyMaster {
          else if (v.embassy().noTreaty()) {
             if (relations < 0)
                 v.spies().beginHide();
+            if (leader.isTechnologist() && canEspionage)
+                v.spies().beginEspionage();
+            else if (leader.isPacifist() || leader.isHonorable())
+                v.spies().beginHide();
             else if (v.spies().possibleTechs().isEmpty() && canSabotage) 
-                    v.spies().beginSabotage();
+                v.spies().beginSabotage();
             else
                 v.spies().beginEspionage();
         }
