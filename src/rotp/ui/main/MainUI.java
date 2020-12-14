@@ -604,36 +604,36 @@ public class MainUI extends BasePanel implements IMapHandler {
         s0.setLine(s100, s30, s40, s30);
 
         int x1 = scaled(450);
-        int w1 = scaled(400);
-        int y1 = scaled(100);
+        int w1 = scaled(430);
+        int y1 = scaled(170);
         HelpSpec sp1 = helpUI.addBlueHelpText(x1, y1, w1, 3, text("MAIN_HELP_1A"));
-        y1 += (sp1.height()+s40);
+        y1 += (sp1.height()+s10);
         HelpSpec sp2 = helpUI.addBlueHelpText(x1, y1, w1, 2, text("MAIN_HELP_1B"));
         sp2.setLine(x1+w1, y1+(sp2.height()/2), scaled(975), scaled(327));
-        y1 += (sp2.height()+s10);
+        y1 += (sp2.height()+s5);
         HelpSpec sp3 = helpUI.addBlueHelpText(x1, y1, w1, 2, text("MAIN_HELP_1C"));
         sp3.setLine(x1+w1, y1+(sp3.height()/2), scaled(975), scaled(357));
-        y1 += (sp3.height()+s10);
+        y1 += (sp3.height()+s5);
         HelpSpec sp4 = helpUI.addBlueHelpText(x1, y1, w1, 2, text("MAIN_HELP_1D"));
         sp4.setLine(x1+w1, y1+(sp4.height()/2), scaled(975), scaled(387));
-        y1 += (sp4.height()+s10);
+        y1 += (sp4.height()+s5);
         HelpSpec sp5 = helpUI.addBlueHelpText(x1, y1, w1, 2, text("MAIN_HELP_1E"));
         sp5.setLine(x1+w1, y1+(sp5.height()/2), scaled(975), scaled(417));
-        y1 += (sp5.height()+s10);
+        y1 += (sp5.height()+s5);
         HelpSpec sp6 = helpUI.addBlueHelpText(x1, y1, w1, 2, text("MAIN_HELP_1F"));
         sp6.setLine(x1+w1, y1+(sp6.height()/2), scaled(975), scaled(447));
 
-        int x2 = scaled(900);
-        int y2 = s100;
-        int w2 = scaled(300);
+        int x2 = scaled(930);
+        int y2 = scaled(180);
+        int w2 = scaled(280);
         HelpSpec sp7 = helpUI.addBlueHelpText(x2,y2,w2, 5, text("MAIN_HELP_1G"));
         sp7.setLine(x2+(w2/2), y2+sp7.height(), scaled(1075), scaled(320));
 
-        int x3 = scaled(900);
+        int x3 = scaled(925);
         int y3 = scaled(500);
         int w3 = scaled(300);
         HelpSpec sp8 = helpUI.addBlueHelpText(x3,y3,w3, 4, text("MAIN_HELP_1H"));
-        sp8.setLine(x3+(w2/2), y3, scaled(1175), scaled(455));        
+        sp8.setLine(x3+(w2*3/4), y3, scaled(1175), scaled(455));        
     }
     private void loadEmpireColonyHelpFrame2() {
         HelpUI helpUI = RotPUI.helpUI();
@@ -746,7 +746,7 @@ public class MainUI extends BasePanel implements IMapHandler {
         HelpSpec sp7 = helpUI.addBlueHelpText(x7, y1, w1, 4, text("MAIN_HELP_3G"));
         sp7.setLine(x7+(w1/2), y1+sp7.height(), x7+(w1/2), scaled(702));
 
-        int x8 = scaled(915);
+        int x8 = scaled(965);
         int w8 = scaled(150);
         HelpSpec sp8 = helpUI.addBlueHelpText(x8, y2, w8, 3, text("MAIN_HELP_3H"));
         sp8.setLine(x8+(w8/2), y2+sp8.height(), x8+(w8/2), scaled(702));
@@ -754,7 +754,7 @@ public class MainUI extends BasePanel implements IMapHandler {
         int x9 = scaled(1030);
         int w9 = scaled(200);
         HelpSpec sp9 = helpUI.addBlueHelpText(x9, y1, w9, 4, text("MAIN_HELP_3I"));
-        sp8.setLine(scaled(1150), y1+sp9.height(), scaled(1150), scaled(680));
+        sp9.setLine(scaled(1150), y1+sp9.height(), scaled(1150), scaled(680));
 
         int x10 = scaled(115);
         int y10 = scaled(125);
