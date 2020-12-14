@@ -72,7 +72,8 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
     static Color yellowText = new Color(226,173,26);
     static Color backShadingC = new Color(0,0,0,192);
 
-    private static final Color darkBrown = new Color(112,85,68);
+    private static final Color darkBrown = new Color(64,24,13);
+    private static final Color brown = new Color(112,85,68);
     private static final Color darkBrownShade = new Color(112,85,68,128);
     static Color dimWhite = new Color(225,225,255);
     static Color gray2 = new Color(123,123,123);
@@ -428,7 +429,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         // draw main box with shaded borders
         g.setColor(darkBrownShade);
         g.fillRect(boxLeftX-bdr, boxTopY-bdr, boxWidth+bdr+bdr, boxHeight+bdr+bdr);
-        g.setColor(darkBrown);
+        g.setColor(brown);
         g.fillRect(boxLeftX, boxTopY, boxWidth, boxHeight);
 
         // draw title for main box
@@ -548,7 +549,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         // draw main box with shaded borders
         g.setColor(darkBrownShade);
         g.fillRect(boxLeftX-bdr, boxTopY-bdr, boxWidth+bdr+bdr, boxHeight+bdr+bdr);
-        g.setColor(darkBrown);
+        g.setColor(brown);
         g.fillRect(boxLeftX, boxTopY, boxWidth, boxHeight);
 
         // draw title for main box
@@ -595,11 +596,9 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         Point2D end1 = new Point2D.Float(x1+w, 0);
         float[] dist = {0.0f, 0.5f, 1.0f};
 
-        Color grayEdgeC = new Color(59,59,59);
-        Color grayMidC = new Color(90,90,90);
-        Color[] grayColors = {grayEdgeC, grayMidC, grayEdgeC };
+        Color[] colors = {darkBrown, brown, darkBrown };
 
-        allocateBackC = new LinearGradientPaint(left1, end1, dist, grayColors);
+        allocateBackC = new LinearGradientPaint(left1, end1, dist, colors);
     }
     public float scaleFactor(int imgWidth, int imgHeight, int uiWidth, int uiHeight) {
         float widthRatio = (float)uiWidth/imgWidth;
