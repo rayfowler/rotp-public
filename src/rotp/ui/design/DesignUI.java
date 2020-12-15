@@ -241,7 +241,7 @@ public class DesignUI extends BasePanel {
         if (helpFrame == 0)
             return;
         helpFrame++;
-        if (helpFrame > 3) 
+        if (helpFrame > 4) 
             cancelHelp();
         loadHelpUI();
         repaint();
@@ -251,10 +251,16 @@ public class DesignUI extends BasePanel {
         if (helpFrame == 0)
             return;
         
+        ShipDesign des = player().shipLab().design(selectedSlot);
         switch(helpFrame) {
             case 1: loadHelpFrame1(); break;
             case 2: loadHelpFrame2(); break;
             case 3: loadHelpFrame3(); break;
+            case 4: if (des.active())
+                        loadHelpFrame4A();
+                    else
+                        loadHelpFrame4B();
+                    break;
         }
 
         helpUI.open(this);
@@ -450,14 +456,122 @@ public class DesignUI extends BasePanel {
    
         int x7 = scaled(440);
         int w7 = scaled(330);
-        int y7 = scaled(500);
+        int y7 = scaled(495);
         HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7,y7,w7, 4, text("SHIP_DESIGN_HELP_3F"));
+        sp7.setLine(x7, y7+(sp7.height()/2), scaled(400), y7+(sp7.height()/2));
         
         int x8 = scaled(440);
         int w8 = scaled(330);
         int y8 = scaled(640);
         HelpUI.HelpSpec sp8 = helpUI.addBrownHelpText(x8,y8,w8, 3, text("SHIP_DESIGN_HELP_3G"));
+        sp8.setLine(x8, y8+(sp8.height()/2), scaled(400), y8+(sp8.height()/2));
+    }
+    private void loadHelpFrame4A() {
+        HelpUI helpUI = RotPUI.helpUI();
 
+        helpUI.clear();
+        int x1 = scaled(50);
+        int w1 = scaled(430);
+        int y1 = scaled(80);
+        HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 8, text("SHIP_DESIGN_HELP_ALL"));
+
+        int x2 = scaled(30);
+        int w2 = scaled(280);
+        int y2 = scaled(350);
+        HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 3, text("SHIP_DESIGN_HELP_4A"));
+        sp2.setLine(scaled(280), y2+sp2.height(), scaled(290), scaled(363));
+        
+        int x3 = scaled(380);
+        int w3 = scaled(280);
+        int y3 = scaled(350);
+        HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 3, text("SHIP_DESIGN_HELP_4B"));
+        sp3.setLine(scaled(430), y3+sp3.height(), scaled(345), scaled(400));
+        
+        int y[] = { 60, 168, 276, 384, 492, 600 };
+        int firstActive = -1;
+        int firstAvailable = -1;
+        for (int i=0;i<ShipDesignLab.MAX_DESIGNS;i++) {
+            ShipDesign des = player().shipLab().design(i);
+            if ((firstActive < 0) && des.active())
+               firstActive = i;     
+            if ((firstAvailable < 0) && !des.active())
+               firstAvailable = i;     
+        }
+        
+        if (firstActive >= 0) {
+            int topY = scaled(y[firstActive]);
+            int x4 = scaled(670);
+            int w4 = scaled(280);
+            int y4 = topY;
+            HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y4, w4, 2, text("SHIP_DESIGN_HELP_4C"));
+            sp4.setLine(x4+w4, y4+(sp4.height()/2), scaled(1000), y4+(sp4.height()/2));
+        }
+        
+        if (firstAvailable >= 0) {
+            int topY = scaled(y[firstAvailable]);
+            int x5 = scaled(670);
+            int w5 = scaled(280);
+            int y5 = topY;
+            HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y5, w5, 2, text("SHIP_DESIGN_HELP_4D"));
+            sp5.setLine(x5+w5, y5+(sp5.height()/2), scaled(1000), y5+(sp5.height()/2));
+        }
+    }
+    private void loadHelpFrame4B() {
+        HelpUI helpUI = RotPUI.helpUI();
+
+        helpUI.clear();
+        int x1 = scaled(50);
+        int w1 = scaled(430);
+        int y1 = scaled(80);
+        HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 8, text("SHIP_DESIGN_HELP_ALL"));
+
+        int x2 = scaled(30);
+        int w2 = scaled(280);
+        int y2 = scaled(350);
+        HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 3, text("SHIP_DESIGN_HELP_4F"));
+        sp2.setLine(scaled(280), y2+sp2.height(), scaled(290), scaled(363));
+        
+        int x3 = scaled(380);
+        int w3 = scaled(280);
+        int y3 = scaled(350);
+        HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 3, text("SHIP_DESIGN_HELP_4G"));
+        sp3.setLine(scaled(430), y3+sp3.height(), scaled(345), scaled(400));
+        
+        int y[] = { 60, 168, 276, 384, 492, 600 };
+        int firstActive = -1;
+        int firstAvailable = -1;
+        for (int i=0;i<ShipDesignLab.MAX_DESIGNS;i++) {
+            ShipDesign des = player().shipLab().design(i);
+            if ((firstActive < 0) && des.active())
+               firstActive = i;     
+            if ((firstAvailable < 0) && !des.active())
+               firstAvailable = i;     
+        }
+        
+        if (firstActive >= 0) {
+            int topY = scaled(y[firstActive]);
+            int x4 = scaled(670);
+            int w4 = scaled(280);
+            int y4 = topY;
+            HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y4, w4, 2, text("SHIP_DESIGN_HELP_4C"));
+            sp4.setLine(x4+w4, y4+(sp4.height()/2), scaled(1000), y4+(sp4.height()/2));
+            int x6 = scaled(670);
+            int w6 = scaled(280);
+            int y6 = y4+(sp4.height()+s10);
+            HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 2, text("SHIP_DESIGN_HELP_4E"));
+            sp6.setLine(x6, y6+(sp6.height()/2), scaled(345), scaled(430));
+            sp6.setLine(x6+w6, y6+(sp6.height()/2), scaled(1095), y4+scaled(77));
+        }
+        
+        if (firstAvailable >= 0) {
+            int topY = scaled(y[firstAvailable]);
+            int x5 = scaled(670);
+            int w5 = scaled(280);
+            int y5 = topY;
+            HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y5, w5, 2, text("SHIP_DESIGN_HELP_4D"));
+            sp5.setLine(x5+w5, y5+(sp5.height()/2), scaled(1000), y5+(sp5.height()/2));
+        }
+        
     }
     @Override
     public boolean hasStarBackground()     { return true; }
