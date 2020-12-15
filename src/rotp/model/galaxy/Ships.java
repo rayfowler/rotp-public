@@ -187,8 +187,8 @@ public class Ships implements Base, Serializable {
             return false;
         }
         if (totalDeployed == sourceFleet.numShips()) {
-            deployFleet(sourceFleet, destSysId);
-            return true;
+            ShipFleet deployedFleet = deployFleet(sourceFleet, destSysId);
+            return deployedFleet != sourceFleet;
         }
         
         // cannot redirect a partial fleet, even with HC
