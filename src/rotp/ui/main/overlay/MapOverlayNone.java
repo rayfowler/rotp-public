@@ -60,6 +60,11 @@ public class MapOverlayNone extends MapOverlay {
         StarSystem currSys;
         ShipFleet currFleet;
         int index;
+        
+        if (e.getKeyChar() == '?') {
+            parent.showHelp();
+            return true;
+        }
 
         switch(e.getKeyCode()) {
             case KeyEvent.VK_ESCAPE:
@@ -173,6 +178,9 @@ public class MapOverlayNone extends MapOverlay {
                 //softClick();
                 parent.handleNextTurn();
                 session().nextTurn();
+                break;
+            case KeyEvent.VK_F1:
+                parent.showHelp();
                 break;
             case KeyEvent.VK_F2:
                 //softClick();

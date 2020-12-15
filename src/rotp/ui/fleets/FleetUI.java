@@ -940,42 +940,50 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
     }
     @Override
     public void keyPressed(KeyEvent e) {
+        if (e.getKeyChar() == '?') {
+            showHelp();
+            return;
+        }
+
         switch(e.getKeyCode()) {
-                case KeyEvent.VK_ESCAPE:
-                    if (massTransportDialog.isVisible())
-                        closeTransportsDialog();
-                    else {
-                        clearMapSelections();
-                        buttonClick();
-                        RotPUI.instance().selectMainPanel(false);
-                        return;
-                    }
-                case KeyEvent.VK_EQUALS:
-                    if (e.isShiftDown())  {
-                        softClick();
-                        map().adjustZoom(-1);
-                    }
+            case KeyEvent.VK_F1:
+                showHelp();
+                return;
+            case KeyEvent.VK_ESCAPE:
+                if (massTransportDialog.isVisible())
+                    closeTransportsDialog();
+                else {
+                    clearMapSelections();
+                    buttonClick();
+                    RotPUI.instance().selectMainPanel(false);
                     return;
-                case KeyEvent.VK_MINUS:
+                }
+            case KeyEvent.VK_EQUALS:
+                if (e.isShiftDown())  {
                     softClick();
-                    map().adjustZoom(1);
-                    return;
-                case KeyEvent.VK_UP:
-                    softClick();
-                    map().dragMap(0, s40);
-                    return;
-                case KeyEvent.VK_DOWN:
-                    softClick();
-                    map().dragMap(0, -s40);
-                    return;
-                case KeyEvent.VK_LEFT:
-                    softClick();
-                    map().dragMap(s40, 0);
-                    return;
-                case KeyEvent.VK_RIGHT:
-                    softClick();
-                    map().dragMap(-s40, 0);
-                    return;
+                    map().adjustZoom(-1);
+                }
+                return;
+            case KeyEvent.VK_MINUS:
+                softClick();
+                map().adjustZoom(1);
+                return;
+            case KeyEvent.VK_UP:
+                softClick();
+                map().dragMap(0, s40);
+                return;
+            case KeyEvent.VK_DOWN:
+                softClick();
+                map().dragMap(0, -s40);
+                return;
+            case KeyEvent.VK_LEFT:
+                softClick();
+                map().dragMap(s40, 0);
+                return;
+            case KeyEvent.VK_RIGHT:
+                softClick();
+                map().dragMap(-s40, 0);
+                return;
         }
     }
     @Override

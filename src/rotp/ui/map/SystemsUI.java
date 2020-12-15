@@ -800,7 +800,14 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
     @Override
     public void keyPressed(KeyEvent e) {
         boolean shift = e.isShiftDown();
+        if (e.getKeyChar() == '?') {
+            showHelp();
+            return;
+        }
         switch(e.getKeyCode()) {
+            case KeyEvent.VK_F1:
+                showHelp();
+                return;
             case KeyEvent.VK_TAB:
                 if (!shift)
                     titlePanel.selectNextTab();

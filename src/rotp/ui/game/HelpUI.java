@@ -139,6 +139,7 @@ public class HelpUI extends BasePanel implements MouseListener {
             case KeyEvent.VK_ESCAPE:
                 parent.cancelHelp();
                 break;
+            case KeyEvent.VK_SPACE:
             case KeyEvent.VK_ENTER:
                 parent.advanceHelp();
                 break;

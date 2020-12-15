@@ -26,13 +26,6 @@ import java.util.List;
 import rotp.Rotp;
 import rotp.model.ships.*;
 import rotp.ui.*;
-import static rotp.ui.BasePanel.s10;
-import static rotp.ui.BasePanel.s100;
-import static rotp.ui.BasePanel.s15;
-import static rotp.ui.BasePanel.s30;
-import static rotp.ui.BasePanel.s40;
-import static rotp.ui.BasePanel.s5;
-import static rotp.ui.BasePanel.s55;
 import rotp.ui.combat.ShipBattleUI;
 import rotp.ui.game.HelpUI;
 import rotp.ui.main.SystemPanel;
@@ -479,13 +472,13 @@ public class DesignUI extends BasePanel {
         int w2 = scaled(280);
         int y2 = scaled(350);
         HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 3, text("SHIP_DESIGN_HELP_4A"));
-        sp2.setLine(scaled(280), y2+sp2.height(), scaled(290), scaled(363));
+        sp2.setLine(x2+w2, y2, scaled(342), scaled(320));
         
         int x3 = scaled(380);
         int w3 = scaled(280);
         int y3 = scaled(350);
         HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 3, text("SHIP_DESIGN_HELP_4B"));
-        sp3.setLine(scaled(430), y3+sp3.height(), scaled(345), scaled(400));
+        sp3.setLine(x3+(w3*2/3), y3, scaled(580), scaled(320));
         
         int y[] = { 60, 168, 276, 384, 492, 600 };
         int firstActive = -1;
@@ -529,13 +522,13 @@ public class DesignUI extends BasePanel {
         int w2 = scaled(280);
         int y2 = scaled(350);
         HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 3, text("SHIP_DESIGN_HELP_4F"));
-        sp2.setLine(scaled(280), y2+sp2.height(), scaled(290), scaled(363));
+        sp2.setLine(x2+w2, y2, scaled(342), scaled(320));
         
         int x3 = scaled(380);
         int w3 = scaled(280);
         int y3 = scaled(350);
         HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 3, text("SHIP_DESIGN_HELP_4G"));
-        sp3.setLine(scaled(430), y3+sp3.height(), scaled(345), scaled(400));
+        sp3.setLine(x3+(w3*2/3), y3, scaled(580), scaled(320));
         
         int y[] = { 60, 168, 276, 384, 492, 600 };
         int firstActive = -1;
@@ -600,9 +593,12 @@ public class DesignUI extends BasePanel {
             return;
         }
         int k = e.getKeyCode();
-        ShipDesign design = configPanel.shipDesign();
         if (k == KeyEvent.VK_ESCAPE) {
             exit(false);
+            return;
+        }
+        else if ((k == KeyEvent.VK_F1)  || (e.getKeyChar() == '?')) {
+            showHelp();
             return;
         }
         else if (k == KeyEvent.VK_DOWN) {
@@ -617,9 +613,10 @@ public class DesignUI extends BasePanel {
                 selectedSlot--;
                 configPanel.loadShipImages();
                 repaint();
-        }
+            }
         }
 
+        ShipDesign design = configPanel.shipDesign();
         if (design.active()) {
             if (k == KeyEvent.VK_S) {
                 if (player().shipLab().canScrapADesign())
