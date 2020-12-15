@@ -1,0 +1,323 @@
+/*
+ * Copyright 2015-2020 Ray Fowler
+ * 
+ * Licensed under the GNU General Public License, Version 3 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * 
+ *     https://www.gnu.org/licenses/gpl-3.0.html
+ * 
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+package rotp.ui.game;
+
+import java.awt.Color;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.Rectangle;
+import java.awt.Shape;
+import java.awt.Stroke;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+import rotp.ui.BasePanel;
+import rotp.ui.BaseText;
+import rotp.ui.main.SystemPanel;
+
+public class StartSettingsUI extends BasePanel implements MouseListener, MouseMotionListener {
+    private static final long serialVersionUID = 1L;
+    private static final Color backgroundHaze = new Color(0,0,0,160);
+    
+    public static final Color hoverC = Color.yellow;
+    public static final Color depressedC = new Color(208,160,0);
+
+    public static final Color lightBrown = new Color(178,124,87);
+    public static final Color brown = new Color(141,101,76);
+    public static final Color darkBrown = new Color(112,85,68);
+    public static final Color darkerBrown = new Color(75,55,39);
+    
+    Shape hoverBox;
+    Rectangle okBox = new Rectangle();
+    BasePanel parent;
+    BaseText galaxyAgeText;
+    BaseText randomEventsText;
+    BaseText colonizePromptText;
+    BaseText researchRateText;
+    BaseText techTradingText;
+    
+    public StartSettingsUI() {
+        init0();
+    }
+    private void init0() {
+        setOpaque(false);
+        Color textC = SystemPanel.blackText;
+        randomEventsText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        researchRateText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        galaxyAgeText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        techTradingText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        colonizePromptText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        addMouseListener(this);
+        addMouseMotionListener(this);
+    }
+    public void init() {
+        randomEventsText.displayText(randomEventsStr());
+        researchRateText.displayText(researchRateStr());
+        techTradingText.displayText(techTradingStr());
+        galaxyAgeText.displayText(galaxyAgeStr());
+        colonizePromptText.displayText(colonizePromptStr());
+    }
+    public void open(BasePanel p) {
+        parent = p;
+        init();
+        enableGlassPane(this);
+    }
+    public void close() {
+        disableGlassPane();
+    }
+    @Override
+    public void paintComponent(Graphics g0) {
+        super.paintComponent(g0);
+        
+        int w = getWidth();
+        int h = getHeight();
+        Graphics2D g = (Graphics2D) g0;
+        
+        
+        // draw background "haze"
+        g.setColor(backgroundHaze);
+        g.fillRect(0, 0, w, h);
+        
+        int leftM = scaled(300);
+        int rightM = s100;
+        int topM = s90;
+        int w1 = w-leftM-rightM;
+        int h1 = h-topM-s90;
+        g.setPaint(GameUI.settingsSetupBackground());
+        g.fillRect(leftM, topM, w1, h1);
+        String title = text("SETTINGS_TITLE");
+        g.setFont(narrowFont(30));
+        int sw = g.getFontMetrics().stringWidth(title);
+        int x1 = leftM+((w1-sw)/2);
+        int y1 = topM+s40;
+        drawBorderedString(g, title, 1, x1, y1, Color.black, Color.white);
+        
+        Stroke prev = g.getStroke();
+        g.setStroke(stroke3);
+
+        int y2 = scaled(200);
+        int x2 = leftM+s10;
+        int w2 = (w1-s40)/2;
+        int h2 = s90;
+        g.setColor(SystemPanel.blackText);
+        g.drawRect(x2, y2, w2, h2);
+        g.setPaint(GameUI.settingsSetupBackground());
+        g.fillRect(x2+s10, y2-s10, galaxyAgeText.stringWidth(g)+s10,s30);
+        galaxyAgeText.setScaledXY(x2+s20, y2+s7);
+        galaxyAgeText.draw(g);
+       
+        y2 += (h2+s20);
+        g.setColor(SystemPanel.blackText);
+        g.drawRect(x2, y2, w2, h2);
+        g.setPaint(GameUI.settingsSetupBackground());
+        g.fillRect(x2+s10, y2-s10, randomEventsText.stringWidth(g)+s10,s30);
+        randomEventsText.setScaledXY(x2+s20, y2+s10);
+        randomEventsText.draw(g);
+        
+        y2 += (h2+s20);
+        g.setColor(SystemPanel.blackText);
+        g.drawRect(x2, y2, w2, h2);
+        g.setPaint(GameUI.settingsSetupBackground());
+        g.fillRect(x2+s10, y2-s10, researchRateText.stringWidth(g)+s10,s30);
+        researchRateText.setScaledXY(x2+s20, y2+s10);
+        researchRateText.draw(g);
+        
+        y2 += (h2+s20);
+        g.setColor(SystemPanel.blackText);
+        g.drawRect(x2, y2, w2, h2);
+        g.setPaint(GameUI.settingsSetupBackground());
+        g.fillRect(x2+s10, y2-s10, techTradingText.stringWidth(g)+s10,s30);
+        techTradingText.setScaledXY(x2+s20, y2+s10);
+        techTradingText.draw(g);
+        
+        
+        // right side
+        y2 = scaled(200);
+        w2 = (w1-s40)/2;
+        h2 = s90;
+        x2 = leftM+s10+w2+s20;
+        g.setColor(SystemPanel.blackText);
+        g.drawRect(x2, y2, w2, h2);
+        g.setPaint(GameUI.settingsSetupBackground());
+        g.fillRect(x2+s10, y2-s10, colonizePromptText.stringWidth(g)+s10,s30);
+        colonizePromptText.setScaledXY(x2+s20, y2+s10);
+        colonizePromptText.draw(g);
+        
+        g.setStroke(prev);
+
+        // draw settings button
+        int cnr = s5;
+        int smallButtonH = s30;
+        int smallButtonW = scaled(180);
+        okBox.setBounds(scaled(945), scaled(645), smallButtonW, smallButtonH);
+        g.setPaint(GameUI.buttonLeftBackground());
+        g.fillRoundRect(okBox.x, okBox.y, smallButtonW, smallButtonH, cnr, cnr);
+        g.setFont(narrowFont(20));
+        String text6 = text("SETTINGS_ACCEPT");
+        int sw6 = g.getFontMetrics().stringWidth(text6);
+        int x6 = okBox.x+((okBox.width-sw6)/2);
+        int y6 = okBox.y+okBox.height-s8;
+        Color c6 = hoverBox == okBox ? Color.yellow : GameUI.borderBrightColor();
+        drawShadowedString(g, text6, 2, x6, y6, GameUI.borderDarkColor(), c6);
+        prev = g.getStroke();
+        g.setStroke(stroke1);
+        g.drawRoundRect(okBox.x, okBox.y, okBox.width, okBox.height, cnr, cnr);
+        g.setStroke(prev);
+
+    }
+    private String randomEventsStr() {
+        String opt = text(options().selectedRandomEventOption());
+        return text("GAME_RANDOM_EVENTS", opt)+"     ";
+    }
+    private String colonizePromptStr() {
+        if (options().disableColonizePrompt())
+            return text("GAME_COLONIZE_PROMPT_OFF")+"     ";
+        else
+            return text("GAME_COLONIZE_PROMPT_ON")+"    ";
+    }
+    private String researchRateStr() {
+        String opt = text(options().selectedResearchRate());
+        return text("GAME_RESEARCH_RATE", opt)+"     ";
+    }
+    private String techTradingStr() {
+        String opt = text(options().selectedTechTradeOption());
+        return text("GAME_TECH_TRADING", opt)+"     ";
+    }
+    private String galaxyAgeStr() {
+        String opt = text(options().selectedGalaxyAge());
+        return text("GAME_GALAXY_AGE", opt)+"     ";
+    }
+    private void toggleGalaxyAge() {
+        softClick();
+        options().selectedGalaxyAge(options().nextGalaxyAge());
+        galaxyAgeText.repaint(galaxyAgeStr());
+        repaint();
+    }
+    private void toggleRandomEvents() {
+        softClick();
+        options().selectedRandomEventOption(options().nextRandomEventOption());
+        randomEventsText.repaint(randomEventsStr());
+    }
+    private void toggleColonizePrompt() {
+        softClick();
+        options().disableColonizePrompt(!options().disableColonizePrompt());
+        colonizePromptText.repaint(colonizePromptStr());
+    }
+    private void toggleResearchRate(MouseEvent e) {
+        softClick();
+        options().selectedResearchRate(options().nextResearchRate());
+        researchRateText.repaint(researchRateStr());
+    }
+    private void toggleTechTrading(MouseEvent e) {
+        softClick();
+        options().selectedTechTradeOption(options().nextTechTradeOption());
+        techTradingText.repaint(techTradingStr());
+    }
+
+    @Override
+    public void keyPressed(KeyEvent e) {
+        switch(e.getKeyCode()) {
+            case KeyEvent.VK_ESCAPE:
+                close();
+                break;
+            case KeyEvent.VK_SPACE:
+            case KeyEvent.VK_ENTER:
+                parent.advanceHelp();
+                break;
+        }
+    }
+    @Override
+    public void mouseDragged(MouseEvent e) {  }
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
+        Shape prevHover = hoverBox;
+        hoverBox = null;
+        if (randomEventsText.contains(x,y))
+            hoverBox = randomEventsText.bounds();
+        else if (colonizePromptText.contains(x,y))
+            hoverBox = colonizePromptText.bounds();
+        else if (galaxyAgeText.contains(x,y))
+            hoverBox = galaxyAgeText.bounds();
+        else if (researchRateText.contains(x,y))
+            hoverBox = researchRateText.bounds();
+        else if (techTradingText.contains(x,y))
+            hoverBox = techTradingText.bounds();
+        else if (okBox.contains(x,y))
+            hoverBox = okBox;
+		
+        if (hoverBox != prevHover) {
+            if (prevHover == randomEventsText.bounds())
+                randomEventsText.mouseExit();
+            else if (prevHover == galaxyAgeText.bounds())
+                galaxyAgeText.mouseExit();
+            else if (prevHover == colonizePromptText.bounds())
+                colonizePromptText.mouseExit();
+            else if (prevHover == researchRateText.bounds())
+                researchRateText.mouseExit();
+            else if (prevHover == techTradingText.bounds())
+                techTradingText.mouseExit();
+            if (hoverBox == randomEventsText.bounds())
+                randomEventsText.mouseEnter();
+            else if (hoverBox == galaxyAgeText.bounds())
+                galaxyAgeText.mouseEnter();
+            else if (hoverBox == colonizePromptText.bounds())
+                colonizePromptText.mouseEnter();
+            else if (hoverBox == researchRateText.bounds())
+                researchRateText.mouseEnter();
+            else if (hoverBox == techTradingText.bounds())
+                techTradingText.mouseEnter();
+           repaint();
+        }
+    }
+    @Override
+    public void mouseClicked(MouseEvent e) { }
+    @Override
+    public void mousePressed(MouseEvent e) { }
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        if (e.getButton() > 3)
+            return;
+        if (hoverBox == null)
+            return;
+        int x = e.getX();
+        int y = e.getY();
+        if (hoverBox == randomEventsText.bounds())
+            toggleRandomEvents();
+        else if (hoverBox == galaxyAgeText.bounds())
+            toggleGalaxyAge();
+        else if (hoverBox == colonizePromptText.bounds())
+            toggleColonizePrompt();
+        else if (hoverBox == researchRateText.bounds())
+            toggleResearchRate(e);
+        else if (hoverBox == techTradingText.bounds())
+            toggleTechTrading(e);
+        else if (hoverBox == okBox)
+            close();
+    }
+    @Override
+    public void mouseEntered(MouseEvent e) { }
+    @Override
+    public void mouseExited(MouseEvent e) {
+        if (hoverBox != null) {
+            hoverBox = null;
+            repaint();
+        }
+    }
+
+}

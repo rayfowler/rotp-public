@@ -978,6 +978,11 @@ SETUP_BUTTON_CANCEL               | Cancel
 SETUP_BUTTON_BACK                 | Back
 SETUP_BUTTON_NEXT                 | Next
 SETUP_BUTTON_START                | Start
+SETUP_BUTTON_SETTINGS             | Advanced Settings
+
+// Advanced Settings
+SETTINGS_TITLE                    | Advanced Settings
+SETTINGS_ACCEPT                   | Accept
 
 // Tech UI labels
 TECH_RESEARCH                     | Technology Research
