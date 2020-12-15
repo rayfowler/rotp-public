@@ -1152,6 +1152,42 @@ SHIP_DESIGN_SPECIAL_SIZE          | Size
 SHIP_DESIGN_SPECIAL_POWER         | Power
 SHIP_DESIGN_SPECIAL_SPACE         | Space
 
+// Ship Design help
+SHIP_DESIGN_HELP_ALL              | OVERVIEW - an empire can have up to six active ship designs. For each design, choose a hull size then fill it with various components such as armor, shields and weapons. Each component has a size, power and cost. The total space required for a component is its size plus the size of the number of engines needed to power it. Once deployed, a ship design can be constructed in any of your colonies.
+SHIP_DESIGN_HELP_1A               | Size - larger hull sizes add cost but provide more space.
+SHIP_DESIGN_HELP_1B               | Range - how far the ship can travel from your systems.
+SHIP_DESIGN_HELP_1C               | Speed - travel speed in space between stars. 
+SHIP_DESIGN_HELP_1D               | Cost  - total cost to build this ship.
+SHIP_DESIGN_HELP_1E               | Total Space - total space used by the components on this ship design.
+SHIP_DESIGN_HELP_1F               | Available Space - unused space on this ship design.
+SHIP_DESIGN_HELP_1G               | Hit Points - damage required to destroy this ship in combat.
+SHIP_DESIGN_HELP_1H               | Missile Defense - defense level vs. missile weapons in combat.
+SHIP_DESIGN_HELP_1I               | Beam Defense - defense level vs. beam weapons in combat.
+SHIP_DESIGN_HELP_1J               | Attack Level - attack level for weapons in combat. 
+SHIP_DESIGN_HELP_1K               | Combat Speed - distance the ship can travel in combat, per turn.
+SHIP_DESIGN_HELP_2A               | Engine Type - the type of engine used to power this ship design.
+SHIP_DESIGN_HELP_2B               | Speed - travel speed provided by the engine.
+SHIP_DESIGN_HELP_2C               | Cost - the cost of each engine needed for power.
+SHIP_DESIGN_HELP_2D               | Size - hull space required per engine.
+SHIP_DESIGN_HELP_2E               | Power - the power output per engine.
+SHIP_DESIGN_HELP_2F               | Power Requirement - total power required for all ship components.
+SHIP_DESIGN_HELP_2G               | Engines Required - number of engines needed to meet the power requirement.
+SHIP_DESIGN_HELP_2H               | Total Size - total hull space needed for all engines.
+SHIP_DESIGN_HELP_2I               | Total Cost - total construction cost for all engines.
+SHIP_DESIGN_HELP_2J               | Image - The image assigned to the selected ship design. There are six different images per hull size, for 24 images total. When creating a new ship design, click to cycle through options.
+SHIP_DESIGN_HELP_2K               | Name - the name of the ship design.
+SHIP_DESIGN_HELP_3A               | Game - returns to the opening menu. Allows you to adjust settings or save, load, and start games.
+SHIP_DESIGN_HELP_3B               | Systems - galaxy map showing the status of systems in the galaxy by different criteria.
+SHIP_DESIGN_HELP_3C               | Fleets - allows large-scale control of your fleets and shipbuilding within your empire.
+SHIP_DESIGN_HELP_3D               | Designs - create ship designs for your fleet using your latest technology. Unwanted designs can be scrapped.
+SHIP_DESIGN_HELP_3E               | Races - detailed information and diplomatic options for any alien races you have encountered.
+SHIP_DESIGN_HELP_3F               | Colonies - detailed and sortable listing of your colonies. Also provides empire income and costs.
+SHIP_DESIGN_HELP_3G               | Tech - shows available technologies. Allows you to focus or balance research on up to six technologies.
+SHIP_DESIGN_HELP_3H               | Next Year - advances the game to the next year.
+SHIP_DESIGN_HELP_3I               | Current Turn - displays the game's current turn or your empire's current year. Click to toggle.
+SHIP_DESIGN_HELP_3J               | Map controls - click to cycle through various display settings for the galaxy map.
+
+
 // Ship Combat UI
 SHIP_COMBAT_TITLE_SYSTEM          | Ship Combat at %1!
 SHIP_COMBAT_TITLE_UNSCOUTED       | Ship Combat in unexplored system!
