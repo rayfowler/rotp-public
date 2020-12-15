@@ -977,6 +977,7 @@ SETUP_BUTTON_SETTINGS             | Advanced Settings
 
 // Advanced Settings
 SETTINGS_TITLE                    | Advanced Settings
+SETTINGS_DESCRIPTION              | Click to toggle each game setting.
 SETTINGS_ACCEPT                   | Accept
 SETTINGS_COLONIZE_PROMPT_ON       | Prompt to Colonize: Yes
 SETTINGS_COLONIZE_PROMPT_OFF      | Prompt to Colonize: No
@@ -985,6 +986,12 @@ SETTINGS_RESEARCH_RATE            | Research Rate: %1
 SETTINGS_TECH_TRADING             | Tech Trading: %1
 SETTINGS_GALAXY_AGE               | Galaxy Age: %1
 SETTINGS_WARP_SPEED               | Warp Speed: %1
+SETTINGS_RANDOM_EVENTS_DESC       | Random events can be turned off completely or only the space monsters can be removed.
+SETTINGS_WARP_SPEED_DESC          | Increasing the values of warp speed technologies is often desired on very large maps.
+SETTINGS_GALAXY_AGE_DESC          | Young galaxies will have more white and blue stars, while old galaxies will have more red and neutron stars.
+SETTINGS_TECH_TRADING_DESC        | The trading of technologies between empires can be turned off completely or restricted to between allies.
+SETTINGS_COLONIZE_PROMPT_DESC     | Turning off this prompt will auto-colonize and name planets when your colony ships arrive, saving time.
+SETTINGS_RESEARCH_RATE_DESC       | The research rate can be slowed dramatically, lengthening the useful life of new technologies.
 
 // Tech UI labels
 TECH_RESEARCH                     | Technology Research

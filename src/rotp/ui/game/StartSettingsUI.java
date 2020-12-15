@@ -25,6 +25,7 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.util.List;
 import rotp.ui.BasePanel;
 import rotp.ui.BaseText;
 import rotp.ui.main.SystemPanel;
@@ -109,6 +110,12 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         int y1 = topM+s40;
         drawBorderedString(g, title, 1, x1, y1, Color.black, Color.white);
         
+        
+        g.setFont(narrowFont(18));
+        String expl = text("SETTINGS_DESCRIPTION");
+        g.setColor(SystemPanel.blackText);
+        g.drawString(expl, leftM+s10, y1+s20);
+        
         Stroke prev = g.getStroke();
         g.setStroke(stroke3);
 
@@ -122,31 +129,67 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         g.fillRect(x2+s10, y2-s10, galaxyAgeText.stringWidth(g)+s10,s30);
         galaxyAgeText.setScaledXY(x2+s20, y2+s7);
         galaxyAgeText.draw(g);
+        String desc = text("SETTINGS_GALAXY_AGE_DESC");
+        g.setColor(SystemPanel.blackText);
+        g.setFont(narrowFont(18));
+        List<String> lines = this.wrappedLines(g,desc, w2-s30);
+        int y3 = y2+s10;
+        for (String line: lines) {
+            y3 += s20;
+            g.drawString(line, x2+s20, y3);
+        }
+       
        
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
         g.setPaint(GameUI.settingsSetupBackground());
         g.fillRect(x2+s10, y2-s10, randomEventsText.stringWidth(g)+s10,s30);
-        randomEventsText.setScaledXY(x2+s20, y2+s10);
+        randomEventsText.setScaledXY(x2+s20, y2+s7);
         randomEventsText.draw(g);
-        
-        y2 += (h2+s20);
+        desc = text("SETTINGS_RANDOM_EVENTS_DESC");
         g.setColor(SystemPanel.blackText);
-        g.drawRect(x2, y2, w2, h2);
-        g.setPaint(GameUI.settingsSetupBackground());
-        g.fillRect(x2+s10, y2-s10, researchRateText.stringWidth(g)+s10,s30);
-        researchRateText.setScaledXY(x2+s20, y2+s10);
-        researchRateText.draw(g);
+        g.setFont(narrowFont(18));
+        lines = this.wrappedLines(g,desc, w2-s30);
+        y3 = y2+s10;
+        for (String line: lines) {
+            y3 += s20;
+            g.drawString(line, x2+s20, y3);
+        }
         
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
         g.setPaint(GameUI.settingsSetupBackground());
         g.fillRect(x2+s10, y2-s10, techTradingText.stringWidth(g)+s10,s30);
-        techTradingText.setScaledXY(x2+s20, y2+s10);
+        techTradingText.setScaledXY(x2+s20, y2+s7);
         techTradingText.draw(g);
+        desc = text("SETTINGS_TECH_TRADING_DESC");
+        g.setColor(SystemPanel.blackText);
+        g.setFont(narrowFont(18));
+        lines = this.wrappedLines(g,desc, w2-s30);
+        y3 = y2+s10;
+        for (String line: lines) {
+            y3 += s20;
+            g.drawString(line, x2+s20, y3);
+        }
         
+        y2 += (h2+s20);
+        g.setColor(SystemPanel.blackText);
+        g.drawRect(x2, y2, w2, h2);
+        g.setPaint(GameUI.settingsSetupBackground());
+        g.fillRect(x2+s10, y2-s10, colonizePromptText.stringWidth(g)+s10,s30);
+        colonizePromptText.setScaledXY(x2+s20, y2+s7);
+        colonizePromptText.draw(g);
+        desc = text("SETTINGS_COLONIZE_PROMPT_DESC");
+        g.setColor(SystemPanel.blackText);
+        g.setFont(narrowFont(18));
+        lines = this.wrappedLines(g,desc, w2-s30);
+        y3 = y2+s10;
+        for (String line: lines) {
+            y3 += s20;
+            g.drawString(line, x2+s20, y3);
+        }
         
         // right side
         y2 = scaled(200);
@@ -156,17 +199,35 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
         g.setPaint(GameUI.settingsSetupBackground());
-        g.fillRect(x2+s10, y2-s10, warpSpeedText.stringWidth(g)+s10,s30);
-        warpSpeedText.setScaledXY(x2+s20, y2+s10);
-        warpSpeedText.draw(g);
-
+        g.fillRect(x2+s10, y2-s10, researchRateText.stringWidth(g)+s10,s30);
+        researchRateText.setScaledXY(x2+s20, y2+s7);
+        researchRateText.draw(g);
+        desc = text("SETTINGS_RESEARCH_RATE_DESC");
+        g.setColor(SystemPanel.blackText);
+        g.setFont(narrowFont(18));
+        lines = this.wrappedLines(g,desc, w2-s30);
+        y3 = y2+s10;
+        for (String line: lines) {
+            y3 += s20;
+            g.drawString(line, x2+s20, y3);
+        }
+        
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
         g.setPaint(GameUI.settingsSetupBackground());
-        g.fillRect(x2+s10, y2-s10, colonizePromptText.stringWidth(g)+s10,s30);
-        colonizePromptText.setScaledXY(x2+s20, y2+s10);
-        colonizePromptText.draw(g);
+        g.fillRect(x2+s10, y2-s10, warpSpeedText.stringWidth(g)+s10,s30);
+        warpSpeedText.setScaledXY(x2+s20, y2+s7);
+        warpSpeedText.draw(g);
+        desc = text("SETTINGS_WARP_SPEED_DESC");
+        g.setColor(SystemPanel.blackText);
+        g.setFont(narrowFont(18));
+        lines = this.wrappedLines(g,desc, w2-s30);
+        y3 = y2+s10;
+        for (String line: lines) {
+            y3 += s20;
+            g.drawString(line, x2+s20, y3);
+        }
         
         g.setStroke(prev);
 
