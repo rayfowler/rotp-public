@@ -49,6 +49,7 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
     BaseText colonizePromptText;
     BaseText researchRateText;
     BaseText techTradingText;
+    BaseText warpSpeedText;
     
     public StartSettingsUI() {
         init0();
@@ -61,6 +62,7 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         galaxyAgeText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         techTradingText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         colonizePromptText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        warpSpeedText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         addMouseListener(this);
         addMouseMotionListener(this);
     }
@@ -70,6 +72,7 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         techTradingText.displayText(techTradingStr());
         galaxyAgeText.displayText(galaxyAgeStr());
         colonizePromptText.displayText(colonizePromptStr());
+        warpSpeedText.displayText(warpSpeedStr());
     }
     public void open(BasePanel p) {
         parent = p;
@@ -153,6 +156,14 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
         g.setPaint(GameUI.settingsSetupBackground());
+        g.fillRect(x2+s10, y2-s10, warpSpeedText.stringWidth(g)+s10,s30);
+        warpSpeedText.setScaledXY(x2+s20, y2+s10);
+        warpSpeedText.draw(g);
+
+        y2 += (h2+s20);
+        g.setColor(SystemPanel.blackText);
+        g.drawRect(x2, y2, w2, h2);
+        g.setPaint(GameUI.settingsSetupBackground());
         g.fillRect(x2+s10, y2-s10, colonizePromptText.stringWidth(g)+s10,s30);
         colonizePromptText.setScaledXY(x2+s20, y2+s10);
         colonizePromptText.draw(g);
@@ -181,31 +192,35 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
     }
     private String randomEventsStr() {
         String opt = text(options().selectedRandomEventOption());
-        return text("GAME_RANDOM_EVENTS", opt)+"     ";
+        return text("SETTINGS_RANDOM_EVENTS", opt)+"     ";
     }
     private String colonizePromptStr() {
         if (options().disableColonizePrompt())
-            return text("GAME_COLONIZE_PROMPT_OFF")+"     ";
+            return text("SETTINGS_COLONIZE_PROMPT_OFF")+"     ";
         else
-            return text("GAME_COLONIZE_PROMPT_ON")+"    ";
+            return text("SETTINGS_COLONIZE_PROMPT_ON")+"    ";
     }
     private String researchRateStr() {
         String opt = text(options().selectedResearchRate());
-        return text("GAME_RESEARCH_RATE", opt)+"     ";
+        return text("SETTINGS_RESEARCH_RATE", opt)+"     ";
     }
     private String techTradingStr() {
         String opt = text(options().selectedTechTradeOption());
-        return text("GAME_TECH_TRADING", opt)+"     ";
+        return text("SETTINGS_TECH_TRADING", opt)+"     ";
     }
     private String galaxyAgeStr() {
         String opt = text(options().selectedGalaxyAge());
-        return text("GAME_GALAXY_AGE", opt)+"     ";
+        return text("SETTINGS_GALAXY_AGE", opt)+"     ";
+    }
+    private String warpSpeedStr() {
+        String opt = text(options().selectedWarpSpeedOption());
+        return text("SETTINGS_WARP_SPEED", opt)+"     ";
     }
     private void toggleGalaxyAge() {
         softClick();
         options().selectedGalaxyAge(options().nextGalaxyAge());
         galaxyAgeText.repaint(galaxyAgeStr());
-        repaint();
+    //    repaint();
     }
     private void toggleRandomEvents() {
         softClick();
@@ -226,6 +241,11 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         softClick();
         options().selectedTechTradeOption(options().nextTechTradeOption());
         techTradingText.repaint(techTradingStr());
+    }
+    private void toggleWarpSpeed(MouseEvent e) {
+        softClick();
+        options().selectedWarpSpeedOption(options().nextWarpSpeedOption());
+        warpSpeedText.repaint(warpSpeedStr());
     }
 
     @Override
@@ -258,6 +278,8 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
             hoverBox = researchRateText.bounds();
         else if (techTradingText.contains(x,y))
             hoverBox = techTradingText.bounds();
+        else if (warpSpeedText.contains(x,y))
+            hoverBox = warpSpeedText.bounds();
         else if (okBox.contains(x,y))
             hoverBox = okBox;
 		
@@ -272,6 +294,8 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
                 researchRateText.mouseExit();
             else if (prevHover == techTradingText.bounds())
                 techTradingText.mouseExit();
+            else if (prevHover == warpSpeedText.bounds())
+                warpSpeedText.mouseExit();
             if (hoverBox == randomEventsText.bounds())
                 randomEventsText.mouseEnter();
             else if (hoverBox == galaxyAgeText.bounds())
@@ -282,6 +306,8 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
                 researchRateText.mouseEnter();
             else if (hoverBox == techTradingText.bounds())
                 techTradingText.mouseEnter();
+            else if (hoverBox == warpSpeedText.bounds())
+                warpSpeedText.mouseEnter();
            repaint();
         }
     }
@@ -307,6 +333,8 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
             toggleResearchRate(e);
         else if (hoverBox == techTradingText.bounds())
             toggleTechTrading(e);
+        else if (hoverBox == warpSpeedText.bounds())
+            toggleWarpSpeed(e);
         else if (hoverBox == okBox)
             close();
     }

@@ -299,14 +299,7 @@ GAME_SHRINK                       | Shrink -
 GAME_ENLARGE                      | Expand
 GAME_MEMORY_SHOW                  | Memory Use: SHOW
 GAME_MEMORY_HIDE                  | Memory Use: HIDE
-GAME_COLONIZE_PROMPT_ON           | Prompt to Colonize: Yes
-GAME_COLONIZE_PROMPT_OFF          | Prompt to Colonize: No
-GAME_RANDOM_EVENTS                | Random Events: %1
-GAME_RESEARCH_RATE                | Research Rate: %1
-GAME_TECH_TRADING                 | Tech Trading: %1
-GAME_GALAXY_AGE                   | Galaxy Age: %1
-GAME_AI_BASE                      | Base AI
-GAME_AI_DEVELOPMENT               | Development AI
+
 
 // Load Game UI
 LOAD_GAME_TITLE                   | Load Game
@@ -968,6 +961,8 @@ SETUP_RESEARCH_RATE_SLOWEST       | Slowest
 SETUP_TECH_TRADING_YES            | Yes
 SETUP_TECH_TRADING_ALLIES         | Allies Only
 SETUP_TECH_TRADING_NO             | No
+SETUP_WARP_SPEED_NORMAL           | Normal
+SETUP_WARP_SPEED_FAST             | Fast
 SETUP_GAME_NUMBER_OPPONENTS       | Opponents
 SETUP_RACE_LABEL                  | Available Races
 SETUP_RACE_COLOR                  | Empire Color:
@@ -983,6 +978,13 @@ SETUP_BUTTON_SETTINGS             | Advanced Settings
 // Advanced Settings
 SETTINGS_TITLE                    | Advanced Settings
 SETTINGS_ACCEPT                   | Accept
+SETTINGS_COLONIZE_PROMPT_ON       | Prompt to Colonize: Yes
+SETTINGS_COLONIZE_PROMPT_OFF      | Prompt to Colonize: No
+SETTINGS_RANDOM_EVENTS            | Random Events: %1
+SETTINGS_RESEARCH_RATE            | Research Rate: %1
+SETTINGS_TECH_TRADING             | Tech Trading: %1
+SETTINGS_GALAXY_AGE               | Galaxy Age: %1
+SETTINGS_WARP_SPEED               | Warp Speed: %1
 
 // Tech UI labels
 TECH_RESEARCH                     | Technology Research

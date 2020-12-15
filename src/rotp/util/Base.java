@@ -299,6 +299,16 @@ public interface Base {
         else
             return  n1*(n1+1)/2;
     }
+    public default int fibonacci(int n) {
+        int a = 0;
+        int b = 1;
+        for (int i=0;i<n;i++) {
+            int sum = a+b;
+            a=b;
+            b=sum;
+        }
+        return b;
+    }
     public default List<String> varTokens(String s, String key) {
         String startKey = concat("[",key,"_");
         int keySize = startKey.length();

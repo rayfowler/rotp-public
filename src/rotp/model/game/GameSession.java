@@ -170,7 +170,6 @@ public final class GameSession implements Base, Serializable {
     public void galaxy(Galaxy g)         { galaxy = g; }
 
     public float populationBonus()      { return 1.0f; }
-    public float propulsionBonus()      { return 1.0f; }
     public float damageBonus()          { return 1.0f; }
     public float researchBonus()        { return 1.0f; }
     public float researchMapSizeAdjustment() {

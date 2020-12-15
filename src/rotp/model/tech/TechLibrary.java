@@ -217,66 +217,63 @@ public final class TechLibrary implements Base {
     	loadTechLangFile(Tech.FUTURE_WEAPON, "FutureWeapon.txt", dataDir);
     }
     private void loadTechLangFile(int techType, String filename, String langDir) {
-       // try to open the race file
-       BufferedReader in = reader(concat(langDir, "tech/", filename));
-       if (in == null) 
-          return;
+        // try to open the race file
+        BufferedReader in = reader(concat(langDir, "tech/", filename));
+        if (in == null) 
+            return;
 
-       try {
-          String input;
-          loadingTech = null;
-          log("Loading tech file:",filename);
-          while ((input = in.readLine()) != null) 
-             loadTechLangLine(techType, input.trim());
-          in.close();
-       } 
-       catch (IOException e) {
-          err("TechTree.loadTechLangFile(", filename, ") -- IOException: ", e.toString());
-       }
+        try {
+            String input;
+            loadingTech = null;
+            log("Loading tech file:",filename);
+            while ((input = in.readLine()) != null) 
+                loadTechLangLine(techType, input.trim());
+            in.close();
+        } 
+        catch (IOException e) {
+            err("TechTree.loadTechLangFile(", filename, ") -- IOException: ", e.toString());
+        }
     }
     private void loadTechLangLine(int techType, String input) {
     	if (isComment(input))
-    		return;
+            return;
 
-       if (input.equalsIgnoreCase("[tech]"))
-    	   return;
-       
-       int techSeq = 0;
-       List<String> strings1 = substrings(input, ':');
-       
-       if (strings1.size() < 2) 
-    	   return;
-       
-       String key = strings1.get(0);
-       String value = strings1.get(1);
+        if (input.equalsIgnoreCase("[tech]"))
+            return;
 
-       // if a tech sequence number, then retrieve the tech we are loading into & load the default description
-       if (key.equalsIgnoreCase("seq")) { 
-          try { techSeq = parseInt(value); }
-          catch (NumberFormatException e) {
-             err("TechTree.loadTechLangLine -- NumberFormatException for tech seq: " + value);
-          }
-          loadingTech = tech(TechLibrary.techMatching(techType, techSeq));
-          if (loadingTech == null)
-        	  err("Could not find a tech matching type:", str(techType), " and seq:", str(techSeq));
-          return; 
-       }
+        int techSeq = 0;
+        List<String> strings1 = substrings(input, ':');
 
-       // if no matching tech has been found to load into, ignore the remaining keys
-       if (loadingTech == null)
-          return;
+        if (strings1.size() < 2) 
+            return;
 
-       switch(key) {
-        case "name"   : loadingTech.name = value;    break;
-        case "brief"  : loadingTech.shDesc = value;  break;
-        case "brief2" : loadingTech.shDesc2 = value; break;
-        case "detail" : loadingTech.detail = value;  break;
-        case "item"   : loadingTech.item = value;    break;
-        case "item2"  : loadingTech.item2 = value;   break;
-        default       : log("unknown key->", input);  return;
-       }
+        String key = strings1.get(0);
+        String value = strings1.get(1);
+
+        // if a tech sequence number, then retrieve the tech we are loading into & load the default description
+        if (key.equalsIgnoreCase("seq")) { 
+            try { techSeq = parseInt(value); }
+            catch (NumberFormatException e) {
+                err("TechTree.loadTechLangLine -- NumberFormatException for tech seq: " + value);
+            }
+            loadingTech = tech(TechLibrary.techMatching(techType, techSeq));
+            if (loadingTech == null)
+                err("Could not find a tech matching type:", str(techType), " and seq:", str(techSeq));
+            return; 
+        }
+
+        // if no matching tech has been found to load into, ignore the remaining keys
+        if (loadingTech == null)
+            return;
+
+        switch(key) {
+            case "name"   : loadingTech.name = value;    break;
+            case "brief"  : loadingTech.shDesc = value;  break;
+            case "brief2" : loadingTech.shDesc2 = value; break;
+            case "detail" : loadingTech.detail = value;  break;
+            case "item"   : loadingTech.item = value;    break;
+            case "item2"  : loadingTech.item2 = value;   break;
+            default       : log("unknown key->", input);  return;
+        }
     }
-  
-
-
 }

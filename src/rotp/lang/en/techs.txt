@@ -439,63 +439,63 @@ PULSAR_1_DETAIL   | A powerful engine modification capable of generating a spher
 // Engine techs
 //
 ENGINE_0_NAME    | Retro Engines 
-ENGINE_0_DETAIL  | Moves ships at Warp 1, and allows a maximum maneuverability of class I in combat.
+ENGINE_0_DETAIL  | Moves ships at Warp %1, and allows a maximum maneuverability of class I in combat.
 ENGINE_0_ITEM    | Retros
 ENGINE_0_ITEM2   | Class 1
 ENGINE_0_BRIEF   | Warp 1  Def %1
 ENGINE_0_BRIEF2  | Combat Speed %1
 
 ENGINE_1_NAME    | Nuclear Engines 
-ENGINE_1_DETAIL  | Moves ships at Warp 2, and allows a maximum maneuverability of class II in combat.
+ENGINE_1_DETAIL  | Moves ships at Warp %1, and allows a maximum maneuverability of class II in combat.
 ENGINE_1_ITEM    | Nuclear
 ENGINE_1_ITEM2   | Class 2
 ENGINE_1_BRIEF   | Warp 2  Def %1
 ENGINE_1_BRIEF2  | Combat Speed %1
 
 ENGINE_2_NAME    | SubLight Drives 
-ENGINE_2_DETAIL  | Moves ships at Warp 3, and allows a maximum maneuverability of class III in combat.
+ENGINE_2_DETAIL  | Moves ships at Warp %1, and allows a maximum maneuverability of class III in combat.
 ENGINE_2_ITEM    | SubLight
 ENGINE_2_ITEM2   | Class 3
 ENGINE_2_BRIEF   | Warp 3  Def %1
 ENGINE_2_BRIEF2  | Combat Speed %1
 
 ENGINE_3_NAME    | Fusion Drives 
-ENGINE_3_DETAIL  | Moves ships at Warp 4, and allows a maximum maneuverability of class IV in combat.
+ENGINE_3_DETAIL  | Moves ships at Warp %1, and allows a maximum maneuverability of class IV in combat.
 ENGINE_3_ITEM    | Fusion
 ENGINE_3_ITEM2   | Class 4
 ENGINE_3_BRIEF   | Warp 4  Def %1
 ENGINE_3_BRIEF2  | Combat Speed %1
 
 ENGINE_4_NAME    | Impulse Engines 
-ENGINE_4_DETAIL  | Moves ships at Warp 5, and allows a maximum maneuverability of class V in combat.
+ENGINE_4_DETAIL  | Moves ships at Warp %1, and allows a maximum maneuverability of class V in combat.
 ENGINE_4_ITEM    | Impulse
 ENGINE_4_ITEM2   | Class 5
 ENGINE_4_BRIEF   | Warp 5  Def %1
 ENGINE_4_BRIEF2  | Combat Speed %1
 
 ENGINE_5_NAME    | Ion Drives 
-ENGINE_5_DETAIL  | Moves ships at Warp 6, and allows a maximum maneuverability of class VI in combat.
+ENGINE_5_DETAIL  | Moves ships at Warp %1, and allows a maximum maneuverability of class VI in combat.
 ENGINE_5_ITEM    | Ion
 ENGINE_5_ITEM2   | Class 6
 ENGINE_5_BRIEF   | Warp 6  Def %1
 ENGINE_5_BRIEF2  | Combat Speed %1
 
 ENGINE_6_NAME    | Anti-Matter Engines
-ENGINE_6_DETAIL  | Moves ships at Warp 7, and allows a maximum maneuverability of class VII in combat.
+ENGINE_6_DETAIL  | Moves ships at Warp %1, and allows a maximum maneuverability of class VII in combat.
 ENGINE_6_ITEM    | Anti-Matter
 ENGINE_6_ITEM2   | Class 7
 ENGINE_6_BRIEF   | Warp 7  Def %1
 ENGINE_6_BRIEF2  | Combat Speed %1
 
 ENGINE_7_NAME    | Inter-Phased Drives
-ENGINE_7_DETAIL  | Moves ships at Warp 8, and allows a maximum maneuverability of class VIII in combat.
+ENGINE_7_DETAIL  | Moves ships at Warp %1, and allows a maximum maneuverability of class VIII in combat.
 ENGINE_7_ITEM    | Inter-Phased
 ENGINE_7_ITEM2   | Class 8
 ENGINE_7_BRIEF   | Warp 8  Def %1
 ENGINE_7_BRIEF2  | Combat Speed %1
 
 ENGINE_8_NAME    | Hyper Drives
-ENGINE_8_DETAIL  | Moves ships at Warp 9, and allows a maximum maneuverability of class IX in combat.
+ENGINE_8_DETAIL  | Moves ships at Warp %1, and allows a maximum maneuverability of class IX in combat.
 ENGINE_8_ITEM    | Hyper
 ENGINE_8_ITEM2   | Class 9
 ENGINE_8_BRIEF   | Warp 9  Def %1
