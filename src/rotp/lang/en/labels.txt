@@ -1174,18 +1174,15 @@ SHIP_DESIGN_HELP_2F               | Power Requirement - total power required for
 SHIP_DESIGN_HELP_2G               | Engines Required - number of engines needed to meet the power requirement.
 SHIP_DESIGN_HELP_2H               | Total Size - total hull space needed for all engines.
 SHIP_DESIGN_HELP_2I               | Total Cost - total construction cost for all engines.
-SHIP_DESIGN_HELP_2J               | Image - The image assigned to the selected ship design. There are six different images per hull size, for 24 images total. When creating a new ship design, click to cycle through options.
-SHIP_DESIGN_HELP_2K               | Name - the name of the ship design.
-SHIP_DESIGN_HELP_3A               | Game - returns to the opening menu. Allows you to adjust settings or save, load, and start games.
-SHIP_DESIGN_HELP_3B               | Systems - galaxy map showing the status of systems in the galaxy by different criteria.
-SHIP_DESIGN_HELP_3C               | Fleets - allows large-scale control of your fleets and shipbuilding within your empire.
-SHIP_DESIGN_HELP_3D               | Designs - create ship designs for your fleet using your latest technology. Unwanted designs can be scrapped.
-SHIP_DESIGN_HELP_3E               | Races - detailed information and diplomatic options for any alien races you have encountered.
-SHIP_DESIGN_HELP_3F               | Colonies - detailed and sortable listing of your colonies. Also provides empire income and costs.
-SHIP_DESIGN_HELP_3G               | Tech - shows available technologies. Allows you to focus or balance research on up to six technologies.
-SHIP_DESIGN_HELP_3H               | Next Year - advances the game to the next year.
-SHIP_DESIGN_HELP_3I               | Current Turn - displays the game's current turn or your empire's current year. Click to toggle.
-SHIP_DESIGN_HELP_3J               | Map controls - click to cycle through various display settings for the galaxy map.
+SHIP_DESIGN_HELP_2J               | The image assigned to the selected ship design. There are six different images for each of the four hull sizes. When creating a new ship design, click to cycle through options.
+SHIP_DESIGN_HELP_2K               | The name of the ship design.
+SHIP_DESIGN_HELP_3A               | Computers - affect your ship's attack level in combat.
+SHIP_DESIGN_HELP_3B               | Armor - affects your ship's hit points. Heavy armor increases this by 50%.
+SHIP_DESIGN_HELP_3C               | Shields - reduce damage from incoming attacks.
+SHIP_DESIGN_HELP_3D               | ECM Jammer - electronic counter measures improve your missile defense.
+SHIP_DESIGN_HELP_3E               | Maneuver - increases combat speed and the ship's defenses.
+SHIP_DESIGN_HELP_3F               | Weapons - can deal damage to enemy ships and colonies. Up to four different types of weapons can be added to a ship design.
+SHIP_DESIGN_HELP_3G               | Specials - devices that provide unique capabilities to your ship. Up to three special devices can be added to a ship design.
 
 
 // Ship Combat UI

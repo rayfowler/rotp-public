@@ -403,64 +403,60 @@ public class DesignUI extends BasePanel {
         HelpUI.HelpSpec sp11 = helpUI.addBrownHelpText(x11,y11,w11, 6, text("SHIP_DESIGN_HELP_2J"));
         sp11.setLine(x11+(w11/2), y11, x11+(w11/2), scaled(300));        
 
-        int x12 = scaled(230);
-        int w12 = scaled(280);
+        int x12 = scaled(270);
+        int w12 = scaled(240);
         int y12 = scaled(10);
         HelpUI.HelpSpec sp12 = helpUI.addBrownHelpText(x12,y12,w12, 2, text("SHIP_DESIGN_HELP_2K"));
         sp12.setLine(scaled(490), y12+sp12.height(), scaled(490), scaled(80));        
     }
     private void loadHelpFrame3() {
         HelpUI helpUI = RotPUI.helpUI();
+
         helpUI.clear();
-        HelpUI.HelpSpec s0 = helpUI.addBrownHelpText(s100, s10, scaled(350), 2, text("SHIP_DESIGN_HELP_ALL"));
-        s0.setLine(s100, s30, s40, s30);
+        int x1 = scaled(50);
+        int w1 = scaled(430);
+        int y1 = scaled(80);
+        HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 8, text("SHIP_DESIGN_HELP_ALL"));
 
-        int x1 = scaled(25);
-        int y1 = scaled(480);
-        int w1 = scaled(210);
-        HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 4, text("SHIP_DESIGN_HELP_3A"));
-        sp1.setLine(x1+(w1/4), y1+sp1.height(), x1+(w1/4), scaled(702));
-
-        int x2 = scaled(115);
-        int y2 = scaled(590);
-        HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w1, 4, text("SHIP_DESIGN_HELP_3B"));
-        sp2.setLine(x2+(w1/2), y2+sp2.height(), x2+(w1/2), scaled(702));
-
-        int x3 = scaled(250);
-        HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y1, w1, 4, text("SHIP_DESIGN_HELP_3C"));
-        sp3.setLine(x3+(w1/2), y1+sp3.height(), x3+(w1/2), scaled(702));
-
-        int x4 = scaled(385);
-        HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y2, w1, 4, text("SHIP_DESIGN_HELP_3D"));
-        sp4.setLine(x4+(w1/2), y2+sp4.height(), x4+(w1/2), scaled(702));
-
-        int x5 = scaled(520);
-        HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y1, w1, 4, text("SHIP_DESIGN_HELP_3E"));
-        sp5.setLine(x5+(w1/2), y1+sp5.height(), x5+(w1/2), scaled(702));
-
-        int x6 = scaled(655);
-        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y2, w1, 4, text("SHIP_DESIGN_HELP_3F"));
-        sp6.setLine(x6+(w1/2), y2+sp6.height(), x6+(w1/2), scaled(702));
-
-        int x7 = scaled(790);
-        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7, y1, w1, 4, text("SHIP_DESIGN_HELP_3G"));
-        sp7.setLine(x7+(w1/2), y1+sp7.height(), x7+(w1/2), scaled(702));
-
-        int x8 = scaled(965);
-        int w8 = scaled(150);
-        HelpUI.HelpSpec sp8 = helpUI.addBrownHelpText(x8, y2, w8, 3, text("SHIP_DESIGN_HELP_3H"));
-        sp8.setLine(x8+(w8/2), y2+sp8.height(), x8+(w8/2), scaled(702));
-
-        int x9 = scaled(1030);
-        int w9 = scaled(200);
-        HelpUI.HelpSpec sp9 = helpUI.addBrownHelpText(x9, y1, w9, 4, text("SHIP_DESIGN_HELP_3I"));
-        sp9.setLine(scaled(1150), y1+sp9.height(), scaled(1150), scaled(680));
-
-        int x10 = scaled(115);
-        int y10 = scaled(125);
-        int w10 = scaled(250);
-        HelpUI.HelpSpec sp10 = helpUI.addBrownHelpText(x10, y10, w10, 3, text("SHIP_DESIGN_HELP_3J"));
-        sp10.setLine(x10, y10+(sp10.height()/2), s55, y10+(sp10.height()/2));
+        int x2 = scaled(30);
+        int w2 = scaled(280);
+        int y2 = scaled(280);
+        HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 2, text("SHIP_DESIGN_HELP_3A"));
+        sp2.setLine(scaled(280), y2+sp2.height(), scaled(290), scaled(363));
+        
+        int x3 = scaled(380);
+        int w3 = scaled(280);
+        int y3 = scaled(280);
+        HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 2, text("SHIP_DESIGN_HELP_3B"));
+        sp3.setLine(scaled(430), y3+sp3.height(), scaled(345), scaled(400));
+        
+        int x4 = scaled(390);
+        int w4 = scaled(280);
+        int y4 = scaled(420);
+        HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y4, w4, 2, text("SHIP_DESIGN_HELP_3C"));
+        sp4.setLine(x4, y4+(sp4.height()/2), scaled(345), scaled(430));
+        
+        int x5 = scaled(730);
+        int w5 = scaled(280);
+        int y5 = scaled(280);
+        HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y5, w5, 2, text("SHIP_DESIGN_HELP_3D"));
+        sp5.setLine(scaled(800),  y5+sp5.height(), scaled(770), scaled(363));
+        
+        int x6 = scaled(720);
+        int w6 = scaled(280);
+        int y6 = scaled(420);
+        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 2, text("SHIP_DESIGN_HELP_3E"));
+        sp6.setLine(scaled(800), y6, scaled(770), scaled(412));
+   
+        int x7 = scaled(440);
+        int w7 = scaled(330);
+        int y7 = scaled(500);
+        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7,y7,w7, 4, text("SHIP_DESIGN_HELP_3F"));
+        
+        int x8 = scaled(440);
+        int w8 = scaled(330);
+        int y8 = scaled(640);
+        HelpUI.HelpSpec sp8 = helpUI.addBrownHelpText(x8,y8,w8, 3, text("SHIP_DESIGN_HELP_3G"));
 
     }
     @Override
