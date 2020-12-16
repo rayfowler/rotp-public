@@ -1,3 +1,5 @@
+SakWin        | races/Sakkra/WinSplash.jpg
+SakLoss       | races/Sakkra/LossSplash.jpg
 
 SakFlagWar   | races/Sakkra/banner_war.png
 SakFlagNorm  | races/Sakkra/banner_norm.png

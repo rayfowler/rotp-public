@@ -26,8 +26,8 @@ gnn:            SakkraGNN
 gnnHost:        SakkraGNNHost
 gnnColor:       Green
 gnnTextColor:   218,237,171
-winSplash:     ,255,255,255
-lossSplash:    ,255,255,255
+winSplash:      SakWin,255,255,255
+lossSplash:     SakLoss,255,255,255
 
 advisorScout:      SakkraDiplomat, 100@20|440x640
 advisorTransport:  SakkraDiplomat, 100@20|440x640
@@ -70,9 +70,9 @@ council:        SakCouncil
 shield:         MeklarShield,    0@0|420x450
 introTextX:     680
 espionageXY:    0@0
-spyFactories:   0
-spyMissiles:    0
-spyRebellion:   0
+spyFactories:   49
+spyMissiles:    50
+spyRebellion:   45
 dialogTextX:    160,160
 dialogTextY:    550
 councilDiplo:   0.4, -180, 70, 0.6
