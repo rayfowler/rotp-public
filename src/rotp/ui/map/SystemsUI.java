@@ -415,6 +415,10 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         loadHelpUI();
         repaint();   
     }
+    @Override 
+    public void advanceHelp() {
+        cancelHelp();
+    }
     private void loadHelpUI() {
         HelpUI helpUI = RotPUI.helpUI();
 
@@ -467,10 +471,6 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         sp8.setLine(x8+w8, y8+(sp8.height()/2), scaled(970), y8+(sp8.height()/2));
 
         helpUI.open(this);
-    }
-    @Override 
-    public void advanceHelp() {
-        cancelHelp();
     }
     private String randomEventStatus(SystemView sv) {
         if (!sv.scouted())
@@ -927,7 +927,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
             g.setColor(selectedTabC);
             g.fillRect(s5, h-s5, w-s10, s5);
         }
-        public void drawHelpButton(Graphics2D g) {
+        private void drawHelpButton(Graphics2D g) {
             helpBox.setBounds(s10,s10,s20,s25);
             g.setColor(unselectedTabC);
             g.fillOval(s10, s10, s20, s25);

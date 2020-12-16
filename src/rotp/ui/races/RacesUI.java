@@ -31,6 +31,7 @@ import rotp.Rotp;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.ui.*;
+import rotp.ui.game.HelpUI;
 import rotp.ui.main.SystemPanel;
 import rotp.util.AnimationManager;
 
@@ -85,6 +86,26 @@ public class RacesUI extends BasePanel {
         if (animationCount() % 3 != 0)
             return;
         diploPanel.animate();
+    }
+    @Override
+    public void cancelHelp() {
+        RotPUI.helpUI().close();
+    }
+    @Override
+    public void showHelp() {
+        loadHelpUI();
+        repaint();   
+    }
+    @Override 
+    public void advanceHelp() {
+        cancelHelp();
+    }
+    private void loadHelpUI() {
+        HelpUI helpUI = RotPUI.helpUI();
+
+        helpUI.clear();
+
+        helpUI.open(this);
     }
     public void init() {
         diploPanel.init();
@@ -149,7 +170,7 @@ public class RacesUI extends BasePanel {
         int rightPaneW = scaled(250);
 
         setBackground(Color.black);
-        Border emptyBorder = newEmptyBorder(0, pad, pad, pad);
+        Border emptyBorder = newEmptyBorder(0, 8, pad, pad);
         setBorder(emptyBorder);
 
         diploPanel = new RacesDiplomacyUI(this);
@@ -158,7 +179,7 @@ public class RacesUI extends BasePanel {
         statusPanel = new RacesStatusUI(this);
 
         // create center panel
-        MainTitlePanel titlePanel = new MainTitlePanel("RACES_TITLE");
+        MainTitlePanel titlePanel = new MainTitlePanel(this, "RACES_TITLE");
         
         cardPanel = new BasePanel();
         cardPanel.setBorder(BorderFactory.createMatteBorder(scaled(5), 0,0,0, lightBrown));
@@ -171,7 +192,7 @@ public class RacesUI extends BasePanel {
         
         BasePanel mainPanel = new BasePanel();
         mainPanel.setOpaque(false);
-        mainPanel.setBorder(newEmptyBorder(20,10,10,0));
+        mainPanel.setBorder(newEmptyBorder(10,0,10,0));
         mainPanel.setLayout(new BorderLayout());
         mainPanel.add(titlePanel, BorderLayout.NORTH);
         mainPanel.add(cardPanel, BorderLayout.CENTER);
@@ -181,7 +202,7 @@ public class RacesUI extends BasePanel {
         EmpireTitlePanel slotsTitlePanel = new EmpireTitlePanel("RACES_SELECTOR_TITLE");
         BasePanel rightPanel = new BasePanel();
         rightPanel.setPreferredSize(new Dimension(rightPaneW, getHeight()));
-        rightPanel.setBorder(newEmptyBorder(20,0,0,0));
+        rightPanel.setBorder(newEmptyBorder(10,0,0,0));
         rightPanel.setOpaque(false);
         rightPanel.setLayout(new BorderLayout(0, s5));
         rightPanel.add(slotsTitlePanel, BorderLayout.NORTH);
@@ -266,12 +287,15 @@ public class RacesUI extends BasePanel {
     }
     class MainTitlePanel extends BasePanel implements MouseMotionListener, MouseListener {
         private static final long serialVersionUID = 1L;
+        RacesUI parent;
         String titleKey;
-        public MainTitlePanel(String s) {
+        public MainTitlePanel(RacesUI p, String s) {
+            parent = p;
             titleKey = s;
             initModel();
         }
         Rectangle hoverBox;
+        Rectangle helpBox = new Rectangle();
         Rectangle diplomacyBox = new Rectangle();
         Rectangle intelligenceBox = new Rectangle();
         Rectangle militaryBox = new Rectangle();
@@ -296,7 +320,8 @@ public class RacesUI extends BasePanel {
             int w = getWidth();
             int h = getHeight();
             int gap = s10;
-            int x0 = gap;
+            int helpW = s30;
+            int x0 = gap+helpW;
             int y0 = h - s10;
             String title = text(titleKey);
             String dipLabel = text("RACES_TAB_DIPLOMACY");
@@ -304,13 +329,15 @@ public class RacesUI extends BasePanel {
             String milLabel = text("RACES_TAB_MILITARY");
             String statusLabel = text("RACES_TAB_STATUS");
 
+            drawHelpButton(g);
+
             g.setColor(SystemPanel.orangeText);
             g.setFont(narrowFont(32));
             int titleW = g.getFontMetrics().stringWidth(title);
             int titleSpacing = s60+s60;
             g.drawString(title, x0,y0);
 
-            int tabW = (w-titleW-titleSpacing-(5*gap))/4;
+            int tabW = (w-titleW-helpW-titleSpacing-(5*gap))/4;
 
             x0 += (titleW+titleSpacing);
             drawTab(g,x0,0,tabW,h,dipLabel, diplomacyBox, selectedPanel.equals(DIPLOMACY_PANEL));
@@ -330,6 +357,18 @@ public class RacesUI extends BasePanel {
             drawTab(g,x0,0,tabW,h,statusLabel, statusBox, selectedPanel.equals(STATUS_PANEL));
             Area tab4Area = new Area(new RoundRectangle2D.Float(x0,s10,tabW,h-s10,h/4,h/4));
             textureArea.add(tab4Area);
+        }
+        private void drawHelpButton(Graphics2D g) {
+            helpBox.setBounds(s10,s10,s20,s25);
+            g.setColor(darkBrown);
+            g.fillOval(s10, s10, s20, s25);
+            g.setFont(narrowFont(25));
+            if (helpBox == hoverBox)
+                g.setColor(Color.yellow);
+            else
+                g.setColor(Color.white);
+
+            g.drawString("?", s16, s30);
         }
         private void drawTab(Graphics2D g, int x, int y, int w, int h, String label, Rectangle box, boolean selected) {
             g.setFont(narrowFont(22));
@@ -414,6 +453,8 @@ public class RacesUI extends BasePanel {
                     selectTab(MILITARY_PANEL);
                 else if (hoverBox == statusBox)
                     selectTab(STATUS_PANEL);
+                else if (hoverBox == helpBox)
+                    parent.showHelp();
             }
         }
         @Override
@@ -431,6 +472,8 @@ public class RacesUI extends BasePanel {
                 hoverBox = militaryBox;
            else if (statusBox.contains(x,y))
                 hoverBox = statusBox;
+           else if (helpBox.contains(x,y))
+                hoverBox = helpBox;
 
             if (hoverBox != prevHover)
                 repaint();
