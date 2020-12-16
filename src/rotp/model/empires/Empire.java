@@ -1720,19 +1720,15 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
         return true;
     }
-    public boolean hasContacted(Empire e) {
-        EmpireView ev = this.viewForEmpire(e);
-        return (ev != null) && ev.embassy().contact();
-    }
     public boolean knowsOf(Empire e) {
         if (e == null)
             return false;
         if (e == this)
             return true;
-        if (hasContacted(e))
+        if (hasContacted(e.id))
             return true;
         for (Empire emp : contactedEmpires()) {
-            if (emp.hasContacted(e))
+            if (emp.hasContacted(e.id))
                 return true;
         }
         return false;

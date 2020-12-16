@@ -42,6 +42,7 @@ import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipDesignLab;
+import rotp.model.ships.ShipLibrary;
 import rotp.ui.BasePanel;
 import rotp.ui.map.IMapHandler;
 import rotp.ui.sprites.FlightPathSprite;
@@ -486,8 +487,9 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 drawStar(g, sys.starType(), s80, w/3, s70);
                 sys.planet().draw(g, w, h, s20, s70, s80, 45);
             }
+            boolean contact = pl.hasContacted(fl.empId());
             // draw ship image
-            Image shipImg = fl.empire().race().transport();
+            Image shipImg = contact ? fl.empire().race().transport() : pl.race().transport();
             int imgW = shipImg.getWidth(null);
             int imgH = shipImg.getHeight(null);
             float scale = (float) s80 / Math.max(imgW, imgH);
@@ -499,7 +501,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
 
             // draw title
             g.setFont(narrowFont(36));
-            String str1 = text("MAIN_FLEET_TITLE", fl.empire().raceName());
+            String str1 = contact ? text("MAIN_FLEET_TITLE", fl.empire().raceName()) : text("MAIN_FLEET_TITLE_UNKNOWN");
             drawBorderedString(g, str1, 2, s15, s42, Color.black, SystemPanel.orangeText);
 
             // draw orbiting data, bottom up
@@ -794,49 +796,47 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             
             boolean sameFleet = (origFl.empId() == displayFl.empId()) && (origFl.sysId() == displayFl.sysId()) && (origFl.destSysId() == displayFl.destSysId());
             boolean showAdjust = canAdjust && sameFleet;
-            if (origFl != displayFl) {
-                int i = 0;
-            }
+            boolean contact = player().hasContacted(origFl.empId());
             switch(num) {
                 case 0:
                     break;
                 case 1:
-                    drawShip(g, origFl, displayFl, showAdjust, 0, midX, midY, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 0, midX, midY, shipW, shipH);
                     break;
                 case 2:
-                    drawShip(g, origFl, displayFl, showAdjust, 0, leftX+xAdj, topY+yAdj, shipW, shipH);
-                    drawShip(g, origFl, displayFl, showAdjust, 1, rightX-xAdj, botY-yAdj, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 0, leftX+xAdj, topY+yAdj, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 1, rightX-xAdj, botY-yAdj, shipW, shipH);
                     break;
                 case 3:
-                    drawShip(g, origFl, displayFl, showAdjust, 0, leftX, topY, shipW, shipH);
-                    drawShip(g, origFl, displayFl, showAdjust, 1, midX, midY, shipW, shipH);
-                    drawShip(g, origFl, displayFl, showAdjust, 2, rightX, botY, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 0, leftX, topY, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 1, midX, midY, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 2, rightX, botY, shipW, shipH);
                     break;
                 case 4:
-                    drawShip(g, origFl, displayFl, showAdjust, 0, leftX+xAdj, topY+yAdj, shipW, shipH);
-                    drawShip(g, origFl, displayFl, showAdjust, 1, rightX-xAdj, topY+yAdj, shipW, shipH);
-                    drawShip(g, origFl, displayFl, showAdjust, 2, leftX+xAdj, botY-yAdj, shipW, shipH);
-                    drawShip(g, origFl, displayFl, showAdjust, 3, rightX-xAdj, botY-yAdj, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 0, leftX+xAdj, topY+yAdj, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 1, rightX-xAdj, topY+yAdj, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 2, leftX+xAdj, botY-yAdj, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 3, rightX-xAdj, botY-yAdj, shipW, shipH);
                     break;
                 case 5:
-                    drawShip(g, origFl, displayFl, showAdjust, 0, leftX, topY, shipW, shipH);
-                    drawShip(g, origFl, displayFl, showAdjust, 1, rightX, topY, shipW, shipH);
-                    drawShip(g, origFl, displayFl, showAdjust, 2, midX, midY, shipW, shipH);
-                    drawShip(g, origFl, displayFl, showAdjust, 3, leftX, botY, shipW, shipH);
-                    drawShip(g, origFl, displayFl, showAdjust, 4, rightX, botY, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 0, leftX, topY, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 1, rightX, topY, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 2, midX, midY, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 3, leftX, botY, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 4, rightX, botY, shipW, shipH);
                     break;
                 case 6:
                 default:
-                    drawShip(g, origFl, displayFl, showAdjust, 0, leftX+xAdj, topY, shipW, shipH);
-                    drawShip(g, origFl, displayFl, showAdjust, 1, rightX-xAdj, topY, shipW, shipH);
-                    drawShip(g, origFl, displayFl, showAdjust, 2, leftX+xAdj, midY, shipW, shipH);
-                    drawShip(g, origFl, displayFl, showAdjust, 3, rightX-xAdj, midY, shipW, shipH);
-                    drawShip(g, origFl, displayFl, showAdjust, 4, leftX+xAdj, botY, shipW, shipH);
-                    drawShip(g, origFl, displayFl, showAdjust, 5, rightX-xAdj, botY, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 0, leftX+xAdj, topY, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 1, rightX-xAdj, topY, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 2, leftX+xAdj, midY, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 3, rightX-xAdj, midY, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 4, leftX+xAdj, botY, shipW, shipH);
+                    drawShip(g, origFl, displayFl, showAdjust, contact, 5, rightX-xAdj, botY, shipW, shipH);
                     break;
             }
         }
-        private void drawShip(Graphics2D g, ShipFleet origFl, ShipFleet displayFl, boolean canAdjust, int i, int x0, int y0, int w, int h) {
+        private void drawShip(Graphics2D g, ShipFleet origFl, ShipFleet displayFl, boolean canAdjust, boolean contact, int i, int x0, int y0, int w, int h) {
             int x = x0-w/2;
             int y = y0-h/2;
             g.setColor(fleetBackC);
@@ -845,8 +845,13 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             g.drawRoundRect(x,y-s10,w,h+s20,s20,s20);
             g.setStroke(prev);
 
-            ShipDesign d = origFl.visibleDesign(player().id,i);
+            Empire pl = player();
+            ShipDesign d = origFl.visibleDesign(pl.id,i);
             Image img = d.image();
+            if (!contact) {
+                String iconKey = ShipLibrary.current().shipKey(pl.shipLab().shipStyleIndex(), d.size(), 0);
+                img = icon(iconKey).getImage();
+            }
             int imgW = img.getWidth(null);
             int imgH = img.getHeight(null);
             float scale = min((float)w/imgW, (float)h/imgH);

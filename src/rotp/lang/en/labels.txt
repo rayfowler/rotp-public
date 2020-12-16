@@ -415,6 +415,7 @@ TURN_COLONY_SPENDING              | Colony Allocations
 
 // Fleet labels
 MAIN_FLEET_TITLE                  | %1 Fleet
+MAIN_FLEET_TITLE_UNKNOWN          | Unknown Fleet
 MAIN_FLEET_IN_ORBIT               | In orbit
 MAIN_FLEET_DEPLOYED               | Deployed
 MAIN_FLEET_IN_TRANSIT             | In transit
