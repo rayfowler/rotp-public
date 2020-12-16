@@ -1,3 +1,6 @@
+SilWin        | races/Silicoid/WinSplash.jpg
+SilLoss       | races/Silicoid/LossSplash.jpg
+
 SilFlagWar   | races/Silicoid/banner_war.png
 SilFlagNorm  | races/Silicoid/banner_norm.png
 SilFlagPact  | races/Silicoid/banner_pact.png
