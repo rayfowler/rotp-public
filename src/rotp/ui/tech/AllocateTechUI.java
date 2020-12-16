@@ -40,6 +40,7 @@ import rotp.model.tech.TechCategory;
 import rotp.model.tech.TechTree;
 import rotp.ui.BasePanel;
 import rotp.ui.RotPUI;
+import rotp.ui.game.HelpUI;
 import rotp.ui.main.SystemPanel;
 
 public class AllocateTechUI extends BasePanel implements MouseListener, MouseMotionListener, MouseWheelListener {
@@ -68,6 +69,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
     private ExitTechButton exitButton;
     private final Rectangle equalizeButton = new Rectangle();
     private Shape hoverBox;
+    Rectangle helpBox = new Rectangle();
     private final Rectangle[] catBox = new Rectangle[TechTree.NUM_CATEGORIES];
     private final Polygon[] leftArrow = new Polygon[TechTree.NUM_CATEGORIES];
     private final Polygon[] rightArrow = new Polygon[TechTree.NUM_CATEGORIES];
@@ -117,6 +119,25 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         // this UI will manually override
     }
     @Override
+    public void cancelHelp() {
+        RotPUI.helpUI().close();
+    }
+    @Override
+    public void showHelp() {
+        loadHelpUI();
+        repaint();   
+    }
+    @Override 
+    public void advanceHelp() {
+        cancelHelp();
+    }
+    private void loadHelpUI() {
+        HelpUI helpUI = RotPUI.helpUI();
+        helpUI.clear();
+
+        helpUI.open(this);
+    }
+    @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);
         paintToImage(screenBuffer());
@@ -143,17 +164,19 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         g.setPaint(backGradient);
         g.fillRect(s10,getHeight()-scaled(200),getWidth()-s20, scaled(190));
 
+        drawHelpButton(g);
+        
         String title = text("TECH_RESEARCH");
-        g.setFont(narrowFont(40));
+        g.setFont(narrowFont(32));
         g.setColor(yellowTextC);
-        g.drawString(title, s30, s60);
+        g.drawString(title,s50, s40);
 
         int cats = TechTree.NUM_CATEGORIES;
         int gap = s5;
         int catH = s22;
-        int topM = s70;
+        int topM = s50;
         int bottomM = s25;
-        int leftM = s30;
+        int leftM = s20;
         int rightM = scaled(265);
         int openCatH = h-topM-bottomM-((cats-1)*gap)-((cats-1)*catH);
 
@@ -175,7 +198,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         // draw right-side panel
         int subPanelX = scaled(980);
         int subPanelW = scaled(233);
-        int subPanelY = s100;
+        int subPanelY = s50;
         int subPanelH = scaled(535);
         String subtitle = text("TECH_RESEARCH_POINTS");
         g.setFont(narrowFont(28));
@@ -278,6 +301,18 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         drawShadowedString(g, eqText, 1, x9, y9, Color.black, c9);
         drawTexture(g, subPanelX, subPanelY,subPanelW, subPanelH);
         g.dispose();
+    }
+    private void drawHelpButton(Graphics2D g) {
+        helpBox.setBounds(s20,s20,s20,s25);
+        g.setColor(darkBrownC);
+        g.fillOval(s20, s20, s20, s25);
+        g.setFont(narrowFont(25));
+        if (helpBox == hoverBox)
+            g.setColor(Color.yellow);
+        else
+            g.setColor(Color.white);
+
+        g.drawString("?", s26, s40);
     }
     private void drawCategorySlider(Graphics2D g, int catNum, int x, int y, int w, int h) {
         TechCategory cat = player().tech().category(catNum);
@@ -816,6 +851,10 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
     public void mouseReleased(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
+        if (hoverBox == helpBox) {
+            showHelp();
+            return;
+        }
         if (hoverBox == equalizeButton) {
             equalize();
             return;
@@ -916,6 +955,8 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
     private Shape hoverShape(int x, int y) {
         if (equalizeButton.contains(x,y))
             return equalizeButton;
+        if (helpBox.contains(x,y))
+            return helpBox;
         for (int i=0;i<catBox.length;i++) {
             if (catBox[i].contains(x,y))
                 return catBox[i];
