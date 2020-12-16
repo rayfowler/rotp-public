@@ -1511,6 +1511,11 @@ public final class Empire implements Base, NamedObject, Serializable {
     public void shareSystemInfoWithAlly(Empire c) {
         sv.shareAllyData(c.sv);
     }
+    public void shareSystemInfoWithAllies(SystemView v) {
+        for (Empire ally: allies()) {
+            ally.sv.refreshAllySharingScan(v.sysId);
+        }
+    }
     public List<StarSystem> systemsNeedingTransports(int minTransport) {
         List<StarSystem> systems = new ArrayList<>();
         for (StarSystem sys: colonizedSystems) {

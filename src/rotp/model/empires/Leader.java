@@ -173,7 +173,7 @@ public class Leader implements Base, Serializable {
         int addl = max(0, v.embassy().requestCount()-1);
         switch(personality) {
             case XENOPHOBIC: return -20*addl;
-            case ERRATIC:    return 10*roll(0,2)*addl;
+            case ERRATIC:    return -10*addl;
             case PACIFIST:   return -10*addl;
             case HONORABLE:  return -10*addl;
             case RUTHLESS:   return -10*addl;
@@ -211,7 +211,7 @@ public class Leader implements Base, Serializable {
             case XENOPHOBIC:    a = 5; break;
             case RUTHLESS:      a = -5; break;
             case AGGRESSIVE:    a = -10; break;
-            case ERRATIC:       a = 5*roll(-2,2); break;
+            case ERRATIC:       a = 0; break;
             default:            a = 0; break;
         }
         switch(objective) {
@@ -233,7 +233,7 @@ public class Leader implements Base, Serializable {
             case XENOPHOBIC:    a = 0; break;
             case RUTHLESS:      a = -10; break;
             case AGGRESSIVE:    a = -20; break;
-            case ERRATIC:       a = 10*roll(-2,2); break;
+            case ERRATIC:       a = 0; break;
             default:            a = 0; break;
         }
         switch(objective) {
@@ -255,7 +255,7 @@ public class Leader implements Base, Serializable {
             case XENOPHOBIC:    a = -20; break;
             case RUTHLESS:      a = -10; break;
             case AGGRESSIVE:    a = 0; break;
-            case ERRATIC:       a = 10*roll(-2,2); break;
+            case ERRATIC:       a = 0; break;
             default:            a = 0; break;
         }
         switch(objective) {
@@ -277,7 +277,7 @@ public class Leader implements Base, Serializable {
             case XENOPHOBIC:    a = -20; break;
             case RUTHLESS:      a = 0; break;
             case AGGRESSIVE:    a = 0; break;
-            case ERRATIC:       a = 10*roll(-2,2); break;
+            case ERRATIC:       a = 0; break;
             default:            a = 0; break;
         }
         switch(objective) {
@@ -310,7 +310,7 @@ public class Leader implements Base, Serializable {
             case XENOPHOBIC:    a = -10; break;
             case RUTHLESS:      a = 10; break;
             case AGGRESSIVE:    a = 20; break;
-            case ERRATIC:       a = 10*roll(-2,2); break;
+            case ERRATIC:       a = 0; break;
             default:            a = 0; break;
         }
         switch(objective) {
@@ -332,7 +332,7 @@ public class Leader implements Base, Serializable {
             case XENOPHOBIC:    a = 0; break;
             case RUTHLESS:      a = 0; break;
             case AGGRESSIVE:    a = 0; break;
-            case ERRATIC:       a = 10*roll(-2,2); break;
+            case ERRATIC:       a = 0; break;
             default:            a = 0; break;
         }
         switch(objective) {

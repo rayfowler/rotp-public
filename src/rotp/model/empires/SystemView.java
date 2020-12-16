@@ -151,6 +151,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
             session().addSystemScouted(system());
             if (system().empire() != player())
                 system().addEvent(new SystemScoutedEvent(player().id));
+            owner().shareSystemInfoWithAllies(this);
         }
         scoutTime = galaxy().currentYear();
         spyTime = galaxy().currentYear();
@@ -179,6 +180,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
         if (owner().isPlayer() && !scouted()) {
             log("Long range planet scan scouts new system: ", system().name());
             session().addSystemScoutedByAstronomers(system());
+            owner().shareSystemInfoWithAllies(this);
         }
 
         scoutTime = galaxy().currentYear();
@@ -191,6 +193,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
         if (owner().isPlayer() && !scouted()) {
             log("Long range ship scan scouts new system: ", system().name());
             session().addSystemScouted(system());
+            owner().shareSystemInfoWithAllies(this);
         }
 
         scoutTime = galaxy().currentYear();
