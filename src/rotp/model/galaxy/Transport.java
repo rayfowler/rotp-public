@@ -72,6 +72,10 @@ public class Transport implements Base, Ship, Sprite, Serializable {
     public void hovering(boolean b)             { hovering = b; }
     @Override
     public boolean displayed()                  { return displayed; }
+    @Override
+    public int displayPriority()                { return 8; }
+    @Override
+    public boolean hasDisplayPanel()            { return true; }
 
     public Rectangle selectBox() {
         if (selectBox == null)

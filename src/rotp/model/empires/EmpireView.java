@@ -145,7 +145,7 @@ public final class EmpireView implements Base, Serializable {
         if (owner.extinct() || empire.extinct())
             return;
         // when civ is within propulsion range
-        if (!owner.hasContacted(empire))
+        if (!owner.hasContacted(empire.id))
             embassy.makeFirstContact();
         else
             embassy.setContact();

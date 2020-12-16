@@ -80,6 +80,8 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
     }
     @Override
     public int displayPriority()        { return 8; }
+    @Override
+    public boolean hasDisplayPanel()       { return true; }
     public int rallySysId()             { return rallySysId; }
     public void rallySysId(int i)       { rallySysId = i; }
     public Empire empire()              { return galaxy().empire(empId); }

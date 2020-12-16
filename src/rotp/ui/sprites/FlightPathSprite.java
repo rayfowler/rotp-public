@@ -124,6 +124,8 @@ public class FlightPathSprite extends MapSprite {
     @Override
     public int displayPriority()               { return 3; }
     @Override
+    public boolean hasDisplayPanel()            { return true; }
+    @Override
     public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
         // clicking on a flight path is really clicking on its fleetsprite
         if (ship() != null)

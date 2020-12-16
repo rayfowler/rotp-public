@@ -107,7 +107,11 @@ public class MapOverlaySystemsScouted extends MapOverlay {
     public void advanceMap() {
         drawSprites = false;
         orderedSystems.clear();
-        parent.resumeTurn();
+        
+        if (session().performingTurn())
+            parent.resumeTurn();
+        else
+            parent.resumeOutsideTurn();
     }
     @Override
     public boolean drawSprites()   { return drawSprites; }

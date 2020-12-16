@@ -119,6 +119,7 @@ public class SystemInfo implements Serializable, Base {
     public void refreshSpyScan(int i)            { view(i).refreshSpyScan(); }
     public void refreshLongRangePlanetScan(int i) { view(i).refreshLongRangePlanetScan(); }
     public void refreshLongRangeShipScan(int i)  { view(i).refreshLongRangeShipScan(); }
+    public void refreshAllySharingScan(int i)    { view(i).refreshAllySharingScan(); }
     public void resetSystemData(int i)           { if (!missing(i)) view(i).resetSystemData(); }
 
     public SystemInfo(Empire e) {
@@ -126,6 +127,17 @@ public class SystemInfo implements Serializable, Base {
         int n = galaxy().maxNumStarSystems();
         views = new SystemView[n];
         distances = new float[n];
+    }
+    public void shareAllyData(SystemInfo you) {
+        int n = count();
+        for (int i=0;i<n;i++) {
+            boolean iKnow = isScouted(i);
+            boolean youKnow = you.isScouted(i);
+            if (iKnow && !youKnow)
+                you.refreshAllySharingScan(i);
+            else if (youKnow && !iKnow)
+                refreshAllySharingScan(i);
+        }
     }
     public void calculateSystemDistances() {
         Galaxy gal = galaxy();

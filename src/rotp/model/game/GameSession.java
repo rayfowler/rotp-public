@@ -202,7 +202,7 @@ public final class GameSession implements Base, Serializable {
         systemsScouted().get("Allies").clear();
         systemsScouted().get("Astronomers").clear();
     }
-    private boolean haveScoutedSystems() {
+    public boolean haveScoutedSystems() {
         for (Collection<StarSystem> systems : systemsScouted().values()) {
             if (!systems.isEmpty())
                 return true;

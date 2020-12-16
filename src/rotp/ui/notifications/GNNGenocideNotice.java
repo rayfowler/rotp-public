@@ -26,7 +26,7 @@ public class GNNGenocideNotice implements Base {
     }
     private GNNGenocideNotice(Empire victim, NamedObject killer) {
         Empire pl = player();
-        boolean knowsVictim = (victim == pl) || pl.hasContacted(victim);
+        boolean knowsVictim = (victim == pl) || pl.hasContacted(victim.id);
         boolean knowsKiller = false;
         
         if (killer instanceof Empire) {

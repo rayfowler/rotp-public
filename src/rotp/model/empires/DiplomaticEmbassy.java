@@ -481,6 +481,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
         setTreaty(new TreatyAlliance(view.owner(), view.empire()));
         owner().setRecalcDistances();
         empire().setRecalcDistances();
+        owner().shareSystemInfoWithAlly(empire());
         DiplomaticIncident inc = SignAllianceIncident.create(owner(), empire());
         addIncident(inc);
         otherEmbassy().addIncident(SignAllianceIncident.create(empire(), owner()));
@@ -522,6 +523,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
         empire().setRecalcDistances();
         owner().joinGalacticAlliance();
         empire().joinGalacticAlliance();
+        owner().shareSystemInfoWithAlly(empire());
         
         // stop spying
         view.spies().activeSpies().clear();

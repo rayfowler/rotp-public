@@ -32,6 +32,7 @@ public interface Sprite {
     default boolean persistOnClick()             { return false; }
     default void repaint(GalaxyMapPanel map)     { map.repaint(); }
     default StarSystem starSystem()              { return null; }
+    default boolean hasDisplayPanel()            { return false; }
 
     default void click(GalaxyMapPanel map, int count, boolean rightClick, boolean sound)        { }
 

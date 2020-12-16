@@ -142,6 +142,8 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     @Override
     public int displayPriority()           { return 6; }
     @Override
+    public boolean hasDisplayPanel()       { return true; }
+    @Override
     public float x()                       { return x;  }
     @Override
     public float y()                       { return y;  }

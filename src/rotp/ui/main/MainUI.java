@@ -158,6 +158,13 @@ public class MainUI extends BasePanel implements IMapHandler {
         map.clearRangeMap();
         if (pauseNextTurn)
             buttonPanel.init();
+        
+        // if we are being opened not during the next turn process
+        // but we have scouted systems (from forming an alliance)
+        // bring up the overlay
+        if (!session().performingTurn() && session().haveScoutedSystems()) {
+            showSystemsScouted(session().systemsScouted());
+        }
     }
     @Override
     public void cancel() {
@@ -496,7 +503,9 @@ public class MainUI extends BasePanel implements IMapHandler {
     public Sprite hoveringSprite()           { return (Sprite) sessionVar("MAINUI_HOVERING_SPRITE"); }
     public void hoveringSprite(Sprite s)     { 
         sessionVar("MAINUI_HOVERING_SPRITE", s); 
-        if (!session().performingTurn())
+        if (s == null)
+           return; 
+        if (s.hasDisplayPanel() && !!session().performingTurn()) 
             showDisplayPanel(); 
     }
     public Sprite lastHoveringSprite()       { return (Sprite) sessionVar("MAINUI_LAST_HOVERING_SPRITE"); }
@@ -542,8 +551,13 @@ public class MainUI extends BasePanel implements IMapHandler {
         map.hoverSprite = clickedSprite();
     }
     public void resumeTurn() {
-        clearOverlay();
+        clearOverlay();        
         session().resumeNextTurnProcessing();
+        repaint();
+    }
+    public void resumeOutsideTurn() {
+        clearOverlay();        
+        showDisplayPanel();
         repaint();
     }
     @Override
