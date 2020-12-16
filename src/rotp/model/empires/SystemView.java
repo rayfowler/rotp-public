@@ -131,7 +131,8 @@ public class SystemView implements IMappedObject, Base, Serializable {
             fleetPlan.clear();
     }
     public boolean hasFleetPlan() {
-        return (fleetPlan != null) && fleetPlan.needsShips();
+        return (fleetPlan != null) 
+           && (fleetPlan.needsShips() || fleetPlan.isRetreating());
     }
     public FleetPlan fleetPlan()  {
         if (fleetPlan == null)

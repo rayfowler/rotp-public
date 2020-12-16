@@ -193,6 +193,7 @@ public class FleetPlan implements Base, Serializable {
         }
         return false;
     }
+    public boolean isRetreating()   { return priority == RETREAT; }
     public void eliminateCommonShips(FleetOrders orders) {
         // this is used for the FleetPlan, FleetOrders logic
         for (int designId=0;designId<needed.length;designId++) {

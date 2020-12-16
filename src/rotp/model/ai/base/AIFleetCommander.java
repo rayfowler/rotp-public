@@ -208,7 +208,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             }
         }
     }
-    private void reviseFleetPlan(int sysId) {
+    private void reviseFleetPlan(int sysId) {        
         Galaxy gal = galaxy();
         int scoutRange = empire.scoutRange();
         int shipRange = empire.shipRange();
@@ -274,8 +274,10 @@ public class AIFleetCommander implements Base, FleetCommander {
         float range = empire.tech().scoutRange();
         for (ShipFleet fl: fleets) {
             int sysId = fl.sysId();
-            if (!empire.sv.withinRange(sysId, range)) 
+            if (!empire.sv.withinRange(sysId, range))  {
                 setRetreatFleetPlan(sysId);
+                fleetPlans.add(empire.sv.fleetPlan(sysId));
+            }
         }
     }
     private void setRetreatFleetPlan(int id) {
