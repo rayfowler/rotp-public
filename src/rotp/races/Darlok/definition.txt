@@ -70,9 +70,9 @@ council:       DarCouncil01
 shield:        MeklarShield,    0@0|420x450
 introTextX:    680
 espionageXY:   0@0
-spyFactories:  0
-spyMissiles:   0
-spyRebellion:  0
+spyFactories:  59
+spyMissiles:   59
+spyRebellion:  45
 dialogTextX:   230,120
 dialogTextY:   560
 councilDiplo:  0.30, 300, -100, 0.5
