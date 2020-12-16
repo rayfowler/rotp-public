@@ -66,6 +66,7 @@ import rotp.ui.fleets.SystemListingUI.Column;
 import rotp.ui.fleets.SystemListingUI.DataView;
 import static rotp.ui.fleets.SystemListingUI.LEFT;
 import static rotp.ui.fleets.SystemListingUI.RIGHT;
+import rotp.ui.game.HelpUI;
 import rotp.ui.main.EmpireColonyFoundedPane;
 import rotp.ui.main.EmpireColonyInfoPane;
 import rotp.ui.main.EmpireColonySpendingPane;
@@ -100,7 +101,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
 
     private final TransferReserveUI transferReservePane;
     private final PlanetDisplayPanel planetDisplayPane;
-    private final PlanetViewSelectionPanel viewSelectionPane = new PlanetViewSelectionPanel();
+    private PlanetViewSelectionPanel viewSelectionPane;
     private EmpireColonySpendingPane spendingPane;
 
     private final PlanetsUI instance;
@@ -115,6 +116,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
 
         initTextFields();
 
+        viewSelectionPane = new PlanetViewSelectionPanel(this);
         transferReservePane = new TransferReserveUI();
         planetDisplayPane = new PlanetDisplayPanel(this);
         planetListing = new PlanetListingUI(this);
@@ -215,6 +217,25 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         if (!playAnimations())
             return;
         planetListing.animate();
+    }
+    @Override
+    public void cancelHelp() {
+        RotPUI.helpUI().close();
+    }
+    @Override
+    public void showHelp() {
+        loadHelpUI();
+        repaint();   
+    }
+    @Override 
+    public void advanceHelp() {
+        cancelHelp();
+    }
+    private void loadHelpUI() {
+        HelpUI helpUI = RotPUI.helpUI();
+        helpUI.clear();
+
+        helpUI.open(this);
     }
     @Override
     public void paintComponent(Graphics g0) {
@@ -390,12 +411,15 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
     }
     class PlanetViewSelectionPanel extends BasePanel implements MouseMotionListener, MouseListener {
         private static final long serialVersionUID = 1L;
+        PlanetsUI parent;
         Rectangle hoverBox;
+        Rectangle helpBox = new Rectangle();
         Rectangle ecologyBox = new Rectangle();
         Rectangle industryBox = new Rectangle();
         Rectangle militaryBox = new Rectangle();
         Area textureArea;
-        public PlanetViewSelectionPanel() {
+        public PlanetViewSelectionPanel(PlanetsUI p) {
+            parent = p;
             initModel();
         }
         private void initModel() {
@@ -416,16 +440,19 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             int w = getWidth();
             int h = getHeight();
             int gap = s20;
-            int tabW = (w-(6*gap))/4;
+            int helpW = s30;
+            int x0 = gap+helpW;
+            int tabW = (w-helpW-(6*gap))/4;
             String title = text("PLANETS_TITLE", player().raceName());
             String ecoLabel = text("PLANETS_VIEW_ECOLOGY");
             String indLabel =  text("PLANETS_VIEW_INDUSTRY");
             String milLabel =  text("PLANETS_VIEW_MILITARY");
 
+            drawHelpButton(g);
+
             g.setColor(SystemPanel.orangeText);
             g.setFont(narrowFont(30));
 
-            int x0 = gap;
             int y0 = h - s10;
             g.drawString(title, x0,y0);
             x0 += (tabW+gap);
@@ -441,6 +468,18 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             drawTab(g,x0,0,tabW,h,milLabel, militaryBox, selectedMode == MILITARY_MODE);
             Area tab3Area = new Area(new RoundRectangle2D.Float(x0,s10,tabW,h-s10,h/4,h/4));
             textureArea.add(tab3Area);
+        }
+        private void drawHelpButton(Graphics2D g) {
+            helpBox.setBounds(s10,s10,s20,s25);
+            g.setColor(unselectedC);
+            g.fillOval(s10, s10, s20, s25);
+            g.setFont(narrowFont(25));
+            if (helpBox == hoverBox)
+                g.setColor(Color.yellow);
+            else
+                g.setColor(Color.white);
+
+            g.drawString("?", s16, s30);
         }
         private void drawTab(Graphics2D g, int x, int y, int w, int h, String label, Rectangle box, boolean selected) {
             g.setFont(narrowFont(20));
@@ -521,6 +560,8 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                     selectTab(INDUSTRY_MODE);
                 else if (hoverBox == militaryBox)
                     selectTab(MILITARY_MODE);
+                else if (hoverBox == helpBox)
+                    parent.showHelp();
             }
         }
         @Override
@@ -536,6 +577,8 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                 hoverBox = industryBox;
             else if (militaryBox.contains(x,y))
                 hoverBox = militaryBox;
+           else if (helpBox.contains(x,y))
+                hoverBox = helpBox;
 
             if (hoverBox != prevHover)
                 repaint();

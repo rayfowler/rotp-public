@@ -421,8 +421,8 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
     }
     private void loadHelpUI() {
         HelpUI helpUI = RotPUI.helpUI();
-
         helpUI.clear();
+        
         int x1 = scaled(150);
         int w1 = scaled(400);
         int y1 = scaled(300);

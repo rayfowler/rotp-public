@@ -102,7 +102,6 @@ public class RacesUI extends BasePanel {
     }
     private void loadHelpUI() {
         HelpUI helpUI = RotPUI.helpUI();
-
         helpUI.clear();
 
         helpUI.open(this);
