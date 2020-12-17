@@ -681,6 +681,37 @@ PLANETS_LIST_NOTES                | Notes
 PLANETS_LIST_TURNS                | Turns
 PLANETS_LIST_TRANSPORTS           | Transports
 PLANETS_LIST_RESOURCES            | Resources
+PLANETS_HELP_ALL                  | OVERVIEW - This screen shows your empire's economic data along with a listing of your colonies sortable by various data.
+PLANETS_HELP_1A                   | Ecology - Click this tab to show ecological data for colonies.
+PLANETS_HELP_1B                   | Industry - Click this tab to show industrial data for colonies.
+PLANETS_HELP_1C                   | Military - Click this tab to show military data for colonies.
+PLANETS_HELP_1D                   | Colony spending can be adjusted as on main screen.
+PLANETS_HELP_1E                   | Increase colony production by up to 50% by transferring funds from the empire treasury.
+PLANETS_HELP_1F                   | Total Income for your empire.
+PLANETS_HELP_1G                   | Total Spending for your empire expressed as a pct of income.
+PLANETS_HELP_1H                   | Levy a tax on your colonies to add to the empire treasury. Optionally restrict this tax to only colonies that have completed their Ecology, Industry and Defense spending.
+PLANETS_HELP_2A                   | Name - The name for your system. Editable.
+PLANETS_HELP_2B                   | Population - Current population, including change from previous turn.
+PLANETS_HELP_2C                   | Type - Terrain type of planet. Green for Fertile planets.
+PLANETS_HELP_2D                   | Resources - for Rich, Poor and Artifact planets.
+PLANETS_HELP_2E                   | Size - Current size of planet.
+PLANETS_HELP_2F                   | Waste - level of industrial waste on planet.
+PLANETS_HELP_2G                   | Notes - Player system notes. Editable.
+PLANETS_HELP_3A                   | Name - The name for your system. Editable.
+PLANETS_HELP_3B                   | Population - Current population, including change from previous turn.
+PLANETS_HELP_3C                   | Resources - for Rich, Poor and Artifact planets.
+PLANETS_HELP_3D                   | Factories - Number of factories, including change from previous turn.
+PLANETS_HELP_3E                   | Production - total production for colony.
+PLANETS_HELP_3F                   | Reserve - total reserve currently stored on colony.
+PLANETS_HELP_3G                   | Notes - Player system notes. Editable.
+PLANETS_HELP_4A                   | Name - The name for your system. Editable.
+PLANETS_HELP_4B                   | Population - Current population, including change from previous turn.
+PLANETS_HELP_4C                   | Resources - for Rich, Poor and Artifact planets.
+PLANETS_HELP_4D                   | Production - total production for colony.
+PLANETS_HELP_4E                   | Shield - planetary shield level.
+PLANETS_HELP_4F                   | Bases - missile bases on planet. Red if outdated technology.
+PLANETS_HELP_4G                   | Shipyard - ship design being constructed.
+PLANETS_HELP_4H                   | Notes - Player system notes. Editable.
 
 // Bombardment prompt
 MAIN_BOMBARDED_TITLE             | %1 has been bombarded by %2 forces.

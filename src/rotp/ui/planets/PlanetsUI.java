@@ -96,12 +96,13 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
     final static String CANCEL_ACTION = "cancel-input";
 
     private int pad = 10;
+    private int helpFrame = 0;
     private List<StarSystem> displayedSystems;
     private final HashMap<Integer, DataView> views = new HashMap<>();
 
     private final TransferReserveUI transferReservePane;
     private final PlanetDisplayPanel planetDisplayPane;
-    private PlanetViewSelectionPanel viewSelectionPane;
+    private final PlanetViewSelectionPanel viewSelectionPane;
     private EmpireColonySpendingPane spendingPane;
 
     private final PlanetsUI instance;
@@ -220,22 +221,256 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
     }
     @Override
     public void cancelHelp() {
+        helpFrame = 0;
         RotPUI.helpUI().close();
     }
     @Override
     public void showHelp() {
+        helpFrame = 1;
         loadHelpUI();
         repaint();   
     }
     @Override 
     public void advanceHelp() {
-        cancelHelp();
+        if (helpFrame == 0)
+            return;
+        helpFrame++;
+        if (helpFrame > 2) 
+            cancelHelp();
+        loadHelpUI();
+        repaint();
     }
     private void loadHelpUI() {
         HelpUI helpUI = RotPUI.helpUI();
         helpUI.clear();
 
+        if (helpFrame == 0)
+            return;
+
+        switch(helpFrame) {
+            case 1: loadHelpUI1(); break;
+            case 2:
+                switch(selectedMode) {
+                    case ECOLOGY_MODE: loadHelpUI2a(); break;
+                    case INDUSTRY_MODE: loadHelpUI2b(); break;
+                    case MILITARY_MODE: loadHelpUI2c(); break;
+                }
+                break;
+        }
         helpUI.open(this);
+    }
+    private void loadHelpUI1() {
+        HelpUI helpUI = RotPUI.helpUI();
+
+        int x1 = scaled(150);
+        int w1 = scaled(400);
+        int y1 = scaled(270);
+        HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 4, text("PLANETS_HELP_ALL"));
+
+        int x2 = scaled(285);
+        int w2 = scaled(200);
+        int y2 = scaled(80);
+        HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 3, text("PLANETS_HELP_1A"));
+        sp2.setLine(scaled(340), y2, scaled(340), scaled(52));
+        
+        int x3 = scaled(505);
+        int w3 = scaled(200);
+        int y3 = scaled(80);
+        HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 3, text("PLANETS_HELP_1B"));
+        sp3.setLine(scaled(575), y3, scaled(575), scaled(52));
+        
+        int x4 = scaled(725);
+        int w4 = scaled(200);
+        int y4 = scaled(80);
+        HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y4, w4, 3, text("PLANETS_HELP_1C"));
+        sp4.setLine(scaled(850), y4, scaled(850), scaled(52));
+        
+        int x5 = scaled(740);
+        int w5 = scaled(210);
+        int y5 = scaled(330);
+        HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y5, w5, 3, text("PLANETS_HELP_1D"));
+        sp5.setLine(x5+w5, y5+(sp5.height()/2), scaled(985), y5+(sp5.height()/2));
+        
+        int x6 = scaled(740);
+        int w6 = scaled(210);
+        int y6 = scaled(500);
+        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 4, text("PLANETS_HELP_1E"));
+        sp6.setLine(x6+w6, y6+sp6.height(), scaled(1000), scaled(645));
+        
+        int x7 = scaled(30);
+        int w7 = scaled(210);
+        int y7 = scaled(500);
+        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7,y7,w7, 3, text("PLANETS_HELP_1F"));
+        sp7.setLine(scaled(80), y7+sp7.height(), scaled(80), scaled(660));
+        
+        int x8 = scaled(260);
+        int w8 = scaled(210);
+        int y8 = scaled(500);
+        HelpUI.HelpSpec sp8 = helpUI.addBrownHelpText(x8,y8,w8, 3, text("PLANETS_HELP_1G"));
+        sp8.setLine(scaled(400), y8+sp8.height(), scaled(400), scaled(660));
+        
+        int x9 = scaled(490);
+        int w9 = scaled(230);
+        int y9 = scaled(470);
+        HelpUI.HelpSpec sp9 = helpUI.addBrownHelpText(x9,y9,w9, 6, text("PLANETS_HELP_1H"));
+        sp9.setLine(x9+(w9/2), y9+sp9.height(), scaled(750), scaled(710));
+       
+    }
+    private void loadHelpUI2a() {
+        HelpUI helpUI = RotPUI.helpUI();
+
+        int x1 = scaled(200);
+        int w1 = scaled(400);
+        int y1 = scaled(350);
+        HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 4, text("PLANETS_HELP_ALL"));
+
+        int x2 = scaled(30);
+        int w2 = scaled(190);
+        int y2 = scaled(100);
+        HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 3, text("PLANETS_HELP_2A"));
+        sp2.setLine(scaled(130), y2, scaled(130), s77);
+        
+        int x3 = scaled(150);
+        int w3 = scaled(190);
+        int y3 = scaled(190);
+        HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 3, text("PLANETS_HELP_2B"));
+        sp3.setLine(scaled(240), y3, scaled(240), s77);
+        
+        int x4 = scaled(255);
+        int w4 = scaled(190);
+        int y4 = scaled(100);
+        HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y4, w4, 3, text("PLANETS_HELP_2C"));
+        sp4.setLine(scaled(385), y4, scaled(385), s77);
+        
+        int x5 = scaled(370);
+        int w5 = scaled(190);
+        int y5 = scaled(190);
+        HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y5, w5, 3, text("PLANETS_HELP_2D"));
+        sp5.setLine(scaled(460), y5, scaled(460), s77);
+        
+        int x6 = scaled(475);
+        int w6 = scaled(140);
+        int y6 = scaled(100);
+        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 3, text("PLANETS_HELP_2E"));
+        sp6.setLine(scaled(550), y6, scaled(550), s77);
+        
+        int x7 = scaled(590);
+        int w7 = scaled(210);
+        int y7 = scaled(190);
+        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7,y7,w7, 3, text("PLANETS_HELP_2F"));
+        sp7.setLine(scaled(630), y7, scaled(630), s77);
+        
+        int x8 = scaled(700);
+        int w8 = scaled(210);
+        int y8 = scaled(100);
+        HelpUI.HelpSpec sp8 = helpUI.addBrownHelpText(x8,y8,w8, 3, text("PLANETS_HELP_2G"));
+        sp8.setLine(scaled(805), y8, scaled(805), s77);
+    }
+    private void loadHelpUI2b() {
+        HelpUI helpUI = RotPUI.helpUI();
+
+        int x1 = scaled(200);
+        int w1 = scaled(400);
+        int y1 = scaled(350);
+        HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 4, text("PLANETS_HELP_ALL"));
+
+        int x2 = scaled(30);
+        int w2 = scaled(190);
+        int y2 = scaled(100);
+        HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 3, text("PLANETS_HELP_3A"));
+        sp2.setLine(scaled(130), y2, scaled(130), s77);
+        
+        int x3 = scaled(150);
+        int w3 = scaled(190);
+        int y3 = scaled(190);
+        HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 3, text("PLANETS_HELP_3B"));
+        sp3.setLine(scaled(240), y3, scaled(240), s77);
+        
+        int x4 = scaled(255);
+        int w4 = scaled(190);
+        int y4 = scaled(100);
+        HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y4, w4, 3, text("PLANETS_HELP_3C"));
+        sp4.setLine(scaled(385), y4, scaled(385), s77);
+        
+        int x5 = scaled(370);
+        int w5 = scaled(190);
+        int y5 = scaled(190);
+        HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y5, w5, 3, text("PLANETS_HELP_3D"));
+        sp5.setLine(scaled(460), y5, scaled(460), s77);
+        
+        int x6 = scaled(475);
+        int w6 = scaled(140);
+        int y6 = scaled(100);
+        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 3, text("PLANETS_HELP_3E"));
+        sp6.setLine(scaled(565), y6, scaled(565), s77);
+        
+        int x7 = scaled(590);
+        int w7 = scaled(210);
+        int y7 = scaled(190);
+        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7,y7,w7, 3, text("PLANETS_HELP_3F"));
+        sp7.setLine(scaled(630), y7, scaled(630), s77);
+        
+        int x8 = scaled(700);
+        int w8 = scaled(210);
+        int y8 = scaled(100);
+        HelpUI.HelpSpec sp8 = helpUI.addBrownHelpText(x8,y8,w8, 3, text("PLANETS_HELP_3G"));
+        sp8.setLine(scaled(805), y8, scaled(805), s77);
+    }
+    private void loadHelpUI2c() {
+        HelpUI helpUI = RotPUI.helpUI();
+
+        int x1 = scaled(200);
+        int w1 = scaled(400);
+        int y1 = scaled(350);
+        HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 4, text("PLANETS_HELP_ALL"));
+
+        int x2 = scaled(30);
+        int w2 = scaled(190);
+        int y2 = scaled(100);
+        HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 3, text("PLANETS_HELP_4A"));
+        sp2.setLine(scaled(130), y2, scaled(130), s77);
+        
+        int x3 = scaled(140);
+        int w3 = scaled(190);
+        int y3 = scaled(190);
+        HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 3, text("PLANETS_HELP_4B"));
+        sp3.setLine(scaled(240), y3, scaled(240), s77);
+        
+        int x4 = scaled(255);
+        int w4 = scaled(190);
+        int y4 = scaled(100);
+        HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y4, w4, 3, text("PLANETS_HELP_4C"));
+        sp4.setLine(scaled(385), y4, scaled(385), s77);
+        
+        int x5 = scaled(350);
+        int w5 = scaled(190);
+        int y5 = scaled(190);
+        HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y5, w5, 3, text("PLANETS_HELP_4D"));
+        sp5.setLine(scaled(460), y5, scaled(460), s77);
+        
+        int x6 = scaled(475);
+        int w6 = scaled(140);
+        int y6 = scaled(100);
+        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 3, text("PLANETS_HELP_4E"));
+        sp6.setLine(scaled(530), y6, scaled(530), s77);
+        
+        int x7 = scaled(560);
+        int w7 = scaled(200);
+        int y7 = scaled(190);
+        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7,y7,w7, 3, text("PLANETS_HELP_4F"));
+        sp7.setLine(scaled(630), y7, scaled(630), s92, scaled(600), s77);
+        
+        int x8 = scaled(650);
+        int w8 = scaled(200);
+        int y8 = scaled(100);
+        HelpUI.HelpSpec sp8 = helpUI.addBrownHelpText(x8,y8,w8, 3, text("PLANETS_HELP_4G"));
+        sp8.setLine(scaled(670), y8, scaled(670), s77);
+        
+        int x9 = scaled(795);
+        int w9 = scaled(210);
+        int y9 = scaled(190);
+        HelpUI.HelpSpec sp9 = helpUI.addBrownHelpText(x9,y9,w9, 3, text("PLANETS_HELP_4H"));
+        sp9.setLine(scaled(865), y9, scaled(865), s77);
     }
     @Override
     public void paintComponent(Graphics g0) {
