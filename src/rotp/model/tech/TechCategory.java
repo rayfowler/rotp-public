@@ -396,19 +396,36 @@ public final class TechCategory implements Base, Serializable {
 
         return r;
     }
-    public float costForTech(Tech t) {
-        return baseResearchCost(t.level) * t.level * t.level * racialMod();
+    public int costForTech(Tech t) {
+        float rawCost = baseResearchCost(t.level) * t.level * t.level * racialMod();
+        if (rawCost > 1000000000) 
+            return (int)Math.ceil(rawCost/100000000)*100000000;
+        else if (rawCost > 100000000) 
+            return (int)Math.ceil(rawCost/10000000)*10000000;
+        else if (rawCost > 10000000) 
+            return (int)Math.ceil(rawCost/1000000)*1000000;
+        else if (rawCost > 1000000) 
+            return (int)Math.ceil(rawCost/100000)*100000;
+        else if (rawCost > 100000) 
+            return (int)Math.ceil(rawCost/10000)*10000;
+        else if (rawCost > 10000) 
+            return (int)Math.ceil(rawCost/1000)*1000;
+        else if (rawCost > 1000) 
+            return (int)Math.ceil(rawCost/100)*100;
+        else if (rawCost > 100) 
+            return (int)Math.ceil(rawCost/10)*10;
+        else
+            return (int) Math.ceil(rawCost);
     }
     private float discoveryChance() {
         if (currentTech == null)
             return 0;
 
         float cost = costForTech(tech(currentTech));
-        float nextTurnBC = totalBC + currentResearch();
-        if (nextTurnBC <= cost)
+        if (totalBC <= cost)
             return 0;
 
-        return (nextTurnBC - cost) / (cost * 2);
+        return (totalBC - cost) / (cost * 2);
     }
     public float upcomingDiscoveryChance(float totalRP) {
         if (currentTech == null)
@@ -448,7 +465,7 @@ public final class TechCategory implements Base, Serializable {
             else
                 setTechToResearch();
         }
-
+        
         if (random() < discoveryChance()) 
             tree.empire().learnTech(currentTech);
     }
