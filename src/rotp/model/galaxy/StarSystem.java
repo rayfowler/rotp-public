@@ -609,7 +609,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         IMappedObject obj = map.parent().gridOrigin();
         if (obj == null)
             return "";
-        float dist = distanceTo(obj);
+        float dist = (float)Math.ceil(distanceTo(obj)*10)/10;
         if (dist == 0)
             return "";
         String dist1 = df1.format(dist);

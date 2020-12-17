@@ -284,14 +284,6 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
         else
             return max(widthRatio, heightRatio);
     }
-    private String selectedTech(int x, int y) {
-        for (String t: techBoxes.keySet()) {
-            Rectangle r = techBoxes.get(t);
-            if (r.contains(x, y))
-                return t;
-        }
-        return null;
-    }
     private void selectTech(String id) {
         Tech t = tech(id);
         category().currentTech(t);

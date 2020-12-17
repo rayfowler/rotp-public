@@ -467,9 +467,9 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
             StarSystem sys = parent.parentSpritePanel.systemViewToDisplay();
             if (sys == null)
                 return;
-            int range = (int) Math.ceil(pl.sv.distance(sys.id));
+            float range = (float) Math.ceil(pl.sv.distance(sys.id)*10)/10;
             
-            String label = pl.alliedWith(id(sys.empire())) ?  text("MAIN_ALLIED_COLONY") : text("MAIN_SYSTEM_RANGE", range);
+            String label = pl.alliedWith(id(sys.empire())) ?  text("MAIN_ALLIED_COLONY") : text("MAIN_SYSTEM_RANGE", df1.format(range));
             String desc;
             Color c0;
             if (pl.sv.inShipRange(sys.id)) {
