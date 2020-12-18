@@ -99,6 +99,7 @@ public class RandomEventPlague implements Base, Serializable, RandomEvent, Colon
         StarSystem sys = galaxy().system(sysId);
         Colony targetColony = sys.colony();
         if (targetColony == null) {
+            sys.abandoned(false);
             endPlague();
             return;
         }

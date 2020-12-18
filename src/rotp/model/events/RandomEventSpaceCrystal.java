@@ -98,6 +98,7 @@ public class RandomEventSpaceCrystal implements Base, Serializable, RandomEvent 
         if (monster.alive()) {
             if (col != null)
                 destroyColony(col);
+            targetSystem.abandoned(false);
             moveToNextSystem();
         }
         else 

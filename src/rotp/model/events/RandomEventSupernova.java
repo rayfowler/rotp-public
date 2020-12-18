@@ -159,10 +159,11 @@ public class RandomEventSupernova implements Base, Serializable, RandomEvent, Co
         targetSystem.clearEvent();
         targetSystem.planet().baseSize(roll(11,20)); // reset size first... irradiate will reset pop
         targetSystem.planet().irradiateEnvironment();
+        targetSystem.abandoned(false);
         targetSystem.addEvent(new SystemRandomEvent("SYSEVENT_SUPERNOVA"));
 
         Colony col = targetSystem.colony();
-
+        
         // possible colony is destroyed before supernova
         if (col != null) {
             col.research().endProject();

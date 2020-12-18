@@ -225,6 +225,7 @@ public class Planet implements Base, IMappedObject, Serializable {
             baseSize(type().randomSize());
         }
 
+        starSystem().abandoned(false);
         environment = ENVIRONMENT_HOSTILE;
         terraformLevel = 0;
 
