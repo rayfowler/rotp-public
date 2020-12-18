@@ -1702,9 +1702,14 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             
 
              // draw check box
-            y1 += s25;
+            g.setFont(narrowFont(14));
+            String opt = text("PLANETS_RESERVE_ONLY_DEVELOPED"); 
+            int optSW = g.getFontMetrics().stringWidth(opt);
             int checkW = s12;
-            int checkX = s20;
+            int totalW = checkW+s6+optSW;
+            int checkX=(w-totalW)/2;
+            
+            y1 += s25;
             reserveBox.setBounds(checkX, y1-checkW, checkW, checkW);
             int labelX = checkX+checkW+s6;
             Stroke prev = g.getStroke();
@@ -1721,9 +1726,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                 g.drawLine(checkX+s3, y1-s3, checkX+checkW, y1-s12);
             }
             g.setStroke(prev);
-            g.setFont(narrowFont(14));
             g.setColor(palette.black);
-            String opt = text("PLANETS_RESERVE_ONLY_DEVELOPED");            
             g.drawString(opt,labelX,y1);
         }
         private void drawSliderBox(Graphics2D g, int x, int y, int w, int h) {
