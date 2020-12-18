@@ -351,22 +351,25 @@ public final class GameSession implements Base, Serializable {
                 if (!inProgress())
                     return;
 
-                processNotifications();
-
-                RotPUI.instance().selectMainPanel();
-                log("Notifications processed 2 - back to MainPanel");
+                if (processNotifications()) {
+                    log("Notifications processed 2 - back to MainPanel");
+                    RotPUI.instance().selectMainPanel();
+                }
                 gal.postNextTurn2();
 
                 if (!inProgress())
                     return;
                 if (processNotifications()) {
                     log("Notifications processed 3 - back to MainPanel");
-                    //RotPUI.instance().selectMainPanel();
+                    RotPUI.instance().selectMainPanel();
                 }
                 // all diplomatic fallout: praise, warnings, treaty offers, war declarations
                 gal.assessTurn();
 
-                processNotifications();
+                if (processNotifications()){
+                    log("Notifications processed 4 - back to MainPanel");
+                    RotPUI.instance().selectMainPanel();
+                }
                 gal.refreshAllEmpireViews();
 
                 gal.makeNextTurnDecisions();
@@ -417,6 +420,9 @@ public final class GameSession implements Base, Serializable {
         if (haveScoutedSystems()) 
             session().addTurnNotification(new SystemsScoutedNotification());
 
+        
+        if (notifications().isEmpty())
+            return false;
         // received a concurrent modification here... iterate over temp array
         List<TurnNotification> notifs = new ArrayList<>(notifications());
         Collections.sort(notifs);

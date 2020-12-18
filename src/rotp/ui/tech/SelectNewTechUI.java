@@ -289,6 +289,7 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
         category().currentTech(t);
         finished = true;
         log("Tech: ", t.name(), " selected for research");
+        repaint();
         session().resumeNextTurnProcessing();
     }
     private void mouseAt(int x, int y) {
@@ -357,6 +358,9 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
     public void mouseMoved(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
+        
+        if (finished)
+            return;
 
         mouseAt(x,y);
     }
