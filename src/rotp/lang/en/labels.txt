@@ -1378,6 +1378,7 @@ RACES_DIPLOMACY_TRADE_DESC_RANGE  | We cannot establish trade networks with the 
 RACES_DIPLOMACY_TRADE_DESC_FINAL  | We are engaged in a final war with the New Republic. Trade is no longer possible. 
 RACES_DIPLOMACY_TRADE_TREATY      | Trade Treaty
 RACES_DIPLOMACY_FOREIGN_RELATIONS | Foreign Relations
+RACES_DIPLOMACY_FOREIGN_RANGE     | We cannot know the foreign relations of the %1 until we have established diplomatic contact.
 RACES_DIPLOMACY_FOREIGN_DESC      | The %1 are in contact with the following races:
 RACES_DIPLOMACY_COUNTER_BUREAU    | Counter-Intelligence Bureau
 RACES_DIPLOMACY_COUNTER_DESC      | Security spending increases your spending and chance of discovering foreign spies.

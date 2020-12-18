@@ -1736,7 +1736,8 @@ public final class Empire implements Base, NamedObject, Serializable {
         if (hasContacted(e.id))
             return true;
         for (Empire emp : contactedEmpires()) {
-            if (emp.hasContacted(e.id))
+            EmpireView v = this.viewForEmpire(emp.id);
+            if (v.inEconomicRange() && emp.hasContacted(e.id)) 
                 return true;
         }
         return false;

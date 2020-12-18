@@ -1079,16 +1079,25 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         int x0 = x+((w-sw)/2);
         int y0 = y+s25;
         drawShadowedString(g, title, 1, x0, y0, SystemPanel.blackText, SystemPanel.whiteText);
-        
+
+        boolean outOfRange = !player().viewForEmpire(emp).inEconomicRange();
+
         g.setColor(SystemPanel.blackText);
         g.setFont(narrowFont(15));
-        String desc = text("RACES_DIPLOMACY_FOREIGN_DESC", emp.raceName());
+        String desc;
+        if (outOfRange)
+            desc = text("RACES_DIPLOMACY_FOREIGN_RANGE", emp.name());
+        else
+            desc = text("RACES_DIPLOMACY_FOREIGN_DESC", emp.raceName());
         List<String> lines = wrappedLines(g, desc, w-s30);
         int y1 = y0+s10;
         for (String line: lines) {
             y1 += s16;
             g.drawString(line, x+s15, y1);
         }
+        
+        if (outOfRange)
+            return;
         
         int x2 = x+s10;
         int y2 = y1+s10;
