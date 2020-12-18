@@ -49,6 +49,7 @@ public class Galaxy implements Base, Serializable {
     private final Empire[] empires;
     private final List<String> adviceGiven = new ArrayList<>();
     private final List<Transport> transports = new ArrayList<>();
+    private final List<StarSystem> abandonedSystems = new ArrayList<>();
 
     private Empire playerEmpire;
     private Empire orionEmpire;
@@ -70,6 +71,7 @@ public class Galaxy implements Base, Serializable {
     public int maxNumStarSystems()           { return starSystems.length; }
     public int numStarSystems()              { return systemCount; }
     public StarSystem[] starSystems()        { return starSystems; }
+    public List<StarSystem> abandonedSystems() { return abandonedSystems; }
     public void addStarSystem(StarSystem s)  {
         starSystems[systemCount] = s;
         systemCount++;

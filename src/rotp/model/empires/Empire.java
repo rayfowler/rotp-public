@@ -404,7 +404,25 @@ public final class Empire implements Base, NamedObject, Serializable {
         return raceNameIndex < values.size() ? values.get(raceNameIndex) : values.get(0);      
     }
     public boolean canSendTransportsFrom(StarSystem sys) {
-        return (sys != null) && (sv.empire(sys.id) == this) && (sv.maxTransportsToSend(sys.id) > 0)  && (allColonizedSystems().size() > 1) && !sys.colony().inRebellion() && !sys.colony().quarantined();
+        if (sys == null)
+            return false;
+        if (sys.empire() != this)
+            return false;
+        if (sv.maxTransportsToSend(sys.id) == 0)
+            return false;
+        if (sys.colony().inRebellion())
+            return false;
+        if (sys.colony().quarantined())
+            return false;
+        if (allColonizedSystems().size() > 1)
+            return true;
+        
+        for (StarSystem abSys: galaxy().abandonedSystems()) {
+            if (sv.inShipRange(abSys.id) && canColonize(abSys))
+                return true;
+        }
+            
+        return false;
     }
     public boolean canAbandonTo(StarSystem sys) {
         if (sys == null)
@@ -418,7 +436,7 @@ public final class Empire implements Base, NamedObject, Serializable {
             return false;
         if (!sv.isScouted(sys.id))
             return false;
-        if (!sv.isColonized(sys.id))
+        if (!sv.isColonized(sys.id) && !sv.isAbandoned(sys.id))
             return false;
         if (!sv.inShipRange(sys.id))
             return false;

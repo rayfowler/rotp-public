@@ -69,7 +69,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     private final String starTypeKey;
     public final int id;
 
-    private boolean isGuarded = false;
+    private boolean abandoned = false;
     private boolean piracy = false;
     private final List<Transport> orbitingTransports = new ArrayList<>();
     private int[] nearbySystems;
@@ -171,6 +171,15 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     public boolean hasMonster()                 { return monster != null; }
     public void addEvent(StarSystemEvent e)     { events.add(e); }
     public List<StarSystemEvent> events()       { return events; }
+    public boolean abandoned()                  { return abandoned; }
+    public void abandoned(boolean b) { 
+        if (!abandoned && b) 
+            galaxy().abandonedSystems().add(this);
+        else if (abandoned && !b) 
+            galaxy().abandonedSystems().remove(this);
+           
+        abandoned = b; 
+    }
 
     public StarType starType()                  {
         if (starType == null)
@@ -195,6 +204,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     public Colony becomeColonized(String n, Empire e) {
         if (unnamed())
             name = n;
+        abandoned(false);
         return planet().becomeColonized(e);
     }
     public float population()   { return isColonized() ? colony().population() : 0.0f; }

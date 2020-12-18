@@ -373,6 +373,7 @@ MAIN_IN_RANGE_DESC                | In Range
 MAIN_NO_PLANETS                   | No Colonizable Planets
 MAIN_NO_COLONIES                  | Uncolonized
 MAIN_UNSCOUTED                    | Unscouted
+MAIN_ABANDONED                    | Abandoned
 MAIN_ALIEN_COLONY                 | %1 Colony
 MAIN_UNKNOWN_COLONY               | Alien Colony
 MAIN_PLANET_SIZE                  | Size %1

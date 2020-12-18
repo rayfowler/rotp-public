@@ -253,6 +253,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
     public float distance()                 { return owner().sv.distance(system().id); }
     public boolean hasRallyPoint()           { return rallySystem() != null; }
     public Colony colony()                   { return system() == null ? null : system().colony(); }
+    public boolean abandoned()               { return system() == null ? false : system().abandoned(); }
     public Integer deltaPopulation()         { return isColonized() ? colony().deltaPopulation() : 0; }
     public Integer deltaFactories()          { return isColonized() ? colony().industry().deltaFactories() : 0; }
     public Integer deltaBases()              { return isColonized() ? colony().defense().deltaBases() : 0; }
@@ -356,6 +357,8 @@ public class SystemView implements IMappedObject, Base, Serializable {
                 return text("MAIN_UNSCOUTED");
             else if (system().planet().isEnvironmentNone())
                 return text("MAIN_NO_PLANETS");
+            else if (abandoned())
+                return text("MAIN_ABANDONED");
             else
                 return text("MAIN_NO_COLONIES");
         }

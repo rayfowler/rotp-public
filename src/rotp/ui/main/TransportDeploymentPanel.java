@@ -585,7 +585,7 @@ public class TransportDeploymentPanel extends SystemPanel {
             int id = sys.id;
             Empire pl = player();
             // uncolonized destination selected
-            if (!pl.sv.isColonized(id)) {
+            if (!pl.sv.isColonized(id) && !pl.sv.isAbandoned(id)) {
                 String name = pl.sv.descriptiveName(id);
                 drawShadowedString(g, name, 2, leftM, s22, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
                 g.setFont(narrowFont(18));
@@ -600,10 +600,14 @@ public class TransportDeploymentPanel extends SystemPanel {
             }
 
             // draw panel for alien colonies
-            GradientPaint back = new GradientPaint(0,0,pl.sv.empire(id).color(),w, 0,MainUI.transC);
-            g.setPaint(back);
-            g.fillRect(0, 0, w, s29);
-            g.setPaint(null);
+            Empire destEmpire = pl.sv.empire(id);
+            // can be null for abandoned systems
+            if (destEmpire != null) {
+                GradientPaint back = new GradientPaint(0,0,destEmpire.color(),w, 0,MainUI.transC);
+                g.setPaint(back);
+                g.fillRect(0, 0, w, s29);
+                g.setPaint(null);
+            }
             String name = pl.sv.descriptiveName(id);
             drawShadowedString(g, name, 2, leftM, s22, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
             String error = null;
@@ -624,7 +628,7 @@ public class TransportDeploymentPanel extends SystemPanel {
                     g.drawString(line, leftM, y0);
                 }
             }
-            else {
+            else if (destEmpire != null) {
                 // colony data
                 String unknown = text("RACES_UNKNOWN_DATA");
                 String factLbl = text("MAIN_COLONY_FACTORIES");

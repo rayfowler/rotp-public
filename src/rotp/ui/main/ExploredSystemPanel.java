@@ -91,7 +91,14 @@ public class ExploredSystemPanel extends SystemPanel {
 
             textureClip = new Rectangle2D.Float(0,0,w,topH-s5);
 
-            String label = sys.planet().isEnvironmentNone() ? text("MAIN_NO_PLANETS") : text("MAIN_NO_COLONIES");
+            String label;
+            
+            if (sys.planet().isEnvironmentNone())
+                label = text("MAIN_NO_PLANETS");
+            else if (sys.abandoned())
+                label = text("MAIN_ABANDONED");
+            else
+                label = text("MAIN_NO_COLONIES");
             g.setFont(narrowFont(24));
             drawShadowedString(g, label, 2, s10, topH-s15, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
 

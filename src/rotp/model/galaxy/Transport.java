@@ -281,10 +281,17 @@ public class Transport implements Base, Ship, Sprite, Serializable {
     }
     public void land() {
         if (!dest.isColonized()) {
-            log(concat(str(size), " ", empire.name(), " transports perished at ", dest.name()));
-            if (empire.isPlayer())
-                TransportsPerishedAlert.create(targetEmp, dest);
-            size = 0;
+            if (dest.abandoned() && !dest.unnamed() && empire.canColonize(dest)) {
+                dest.becomeColonized(dest.name(), empire);
+                dest.colony().setPopulation(size);
+                size = 0;
+            }
+            else {
+                log(concat(str(size), " ", empire.name(), " transports perished at ", dest.name()));
+                if (empire.isPlayer())
+                    TransportsPerishedAlert.create(targetEmp, dest);
+                size = 0;
+            }
         }
         else if (dest.empire() != empire)
             dest.colony().resistTransport(this);

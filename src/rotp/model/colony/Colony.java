@@ -1116,6 +1116,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         
         StarSystem sys = starSystem();
         sys.addEvent(new SystemAbandonedEvent(empire.id));
+        sys.abandoned(true);
 
         setPopulation(0);
         rebels = 0;

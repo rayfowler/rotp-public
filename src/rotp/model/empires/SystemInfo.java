@@ -80,6 +80,7 @@ public class SystemInfo implements Serializable, Base {
     public boolean isScouted(int i)      { return missing(i) ? false : view(i).scouted(); }
     public boolean isSpied(int i)        { return missing(i) ? false : view(i).spied(); }
     public boolean isColonized(int i)    { return missing(i) ? false : view(i).isColonized(); }
+    public boolean isAbandoned(int i)    { return missing(i) ? false : view(i).abandoned(); }
     public boolean isAttackTarget(int i) { return missing(i) ? false : view(i).attackTarget(); }
     public boolean isBorderSystem(int i) { return missing(i) ? false : view(i).borderSystem(); }
     public boolean isInnerSystem(int i)  { return missing(i) ? false : view(i).innerSystem(); }
