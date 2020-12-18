@@ -89,6 +89,8 @@ public class AIGovernor implements Base, Governor {
             else
                 session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_FERTILE_COMPLETE", name));
         }
+        if (col.ecology().terraformCompleted()) 
+            session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_TERRAFORM_COMPLETE", name));
         if (col.hasNewOrders() || (col.allocationRemaining() != 0) || session().awaitingAllocation(sys))
             baseSetPlayerAllocations(col);
     }
