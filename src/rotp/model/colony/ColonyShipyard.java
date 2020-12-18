@@ -143,13 +143,15 @@ public class ColonyShipyard extends ColonySpendingCategory {
 
         if (buildingObsoleteDesign())
             empire().addReserve(newBC);
+        
         else if (buildingStargate) {
             stargateBC += newBC;
             stargateCompleted = (maxSpendingNeeded() <= 0);
             if (stargateBC >= cost) {
                 hasStargate = true;
                 newShips++;
-                empire().addReserve(stargateBC - cost);
+                if (!empire().divertColonyExcessToResearch())
+                    empire().addReserve(stargateBC - cost);
                 goToNextDesign();
                 prevDesign = design;
                 return;
@@ -238,6 +240,28 @@ public class ColonyShipyard extends ColonySpendingCategory {
         return text("MAIN_COLONY_SHIPYARD_COMPLETED",upcomingResult());
     }
     @Override
+    public float excessSpending() {
+        // no possible overflow except when building a stargate
+        if (colony().allocation(categoryType()) == 0)
+            return 0;
+        
+        float prodBC = pct()* colony().totalProductionIncome() * planet().productionAdj();
+        float rsvBC = pct() * colony().maxReserveIncome();
+        float totalBC = prodBC+rsvBC;   
+        
+        if (!buildingStargate)
+            return 0;
+        
+        totalBC += stargateBC;        
+        
+        float buildCost = design.cost();
+        
+        if (buildCost > totalBC)
+            return 0;
+        
+        return totalBC - buildCost;
+    }
+    @Override
     public String upcomingResult() {
         float tmpShipReserveBC = shipReserveBC;
         float tmpShipBC = shipBC;
@@ -265,7 +289,7 @@ public class ColonyShipyard extends ColonySpendingCategory {
             return text(noneText);
 
         if (buildingObsoleteDesign())
-            return text(reserveText);
+            return overflowText();
 
         if (totalBC < cost) {
             if (newBC == 0)
@@ -282,7 +306,7 @@ public class ColonyShipyard extends ColonySpendingCategory {
         }
         else {
             if (buildingStargate)
-                return text(reserveText);
+                return overflowText();
             else {
                 int  ships = (int) (totalBC / cost);
                 if (ships == 1)

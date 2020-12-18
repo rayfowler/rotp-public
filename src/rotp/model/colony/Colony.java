@@ -216,8 +216,28 @@ public final class Colony implements Base, IMappedObject, Serializable {
 
         return amt;
     }
-    public int allocationRemaining()  { return MAX_TICKS - totalAmountAllocated(); }
-
+    public int allocationRemaining()              { return MAX_TICKS - totalAmountAllocated(); }
+    public float totalPlanetaryResearch()         { 
+        float totalBC = research().totalSpending();
+        if (empire.divertColonyExcessToResearch()) {
+            totalBC += shipyard().excessSpending();
+            totalBC += defense().excessSpending();
+            totalBC += industry().excessSpending();
+            totalBC += ecology().excessSpending();
+        }        
+        float totalRP = totalBC * research().researchBonus();
+        return max(0, totalRP-research().projectRemainingBC());
+    }
+    public float totalPlanetaryResearchSpending() { 
+        float totalBC = research().totalSpending(); 
+        if (empire.divertColonyExcessToResearch()) {
+            totalBC += shipyard().excessSpending();
+            totalBC += defense().excessSpending();
+            totalBC += industry().excessSpending();
+            totalBC += ecology().excessSpending();
+        }
+        return totalBC;
+    }  
     public String printString() {
         return empire.sv.name(starSystem().id) + "-- pop:"
                 + (float) Math.round(population() * 100) / 100 + " reb:"

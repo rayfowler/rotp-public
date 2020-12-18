@@ -240,7 +240,8 @@ public class ColonyEcology extends ColonySpendingCategory {
         if (colony().population() < 0)
             err("ERROR: bad pop for ", colony().name(), " pop:"+colony().population(), " newGrown:", str(newGrownPopulation), " newPurchased:", str(newPurchasedPopulation));
 
-        empire().addReserve(unallocatedBC);
+        if (!empire().divertColonyExcessToResearch())
+            empire().addReserve(unallocatedBC);
         unallocatedBC = 0;
     }
     public int upcomingPopGrowth() {
@@ -261,10 +262,7 @@ public class ColonyEcology extends ColonySpendingCategory {
     @Override
     public String upcomingResult(){
         Colony c = colony();
-        Planet p = c.planet();
-        Empire emp = c.empire();
-        TechTree tr = emp.tech();
-
+        
         float prodBC = pct()* c.totalProductionIncome();
         float rsvBC = pct() * c.maxReserveIncome();
         float newBC = prodBC+rsvBC;
@@ -272,72 +270,146 @@ public class ColonyEcology extends ColonySpendingCategory {
 
         // new population
         float currentPop = c.population();
-        float expGrowth = c.normalPopGrowth();
-        float newPopCost = tr.populationCost();
         float workingPop = c.workingPopulation(); // currentpop - transports away
-        float newPopPurchaseable = c.maxSize() - workingPop - expGrowth;
         expectedPopGrowth = (int) workingPop - (int) currentPop;
-        
+
         // check for waste cleanup
         cost = c.wasteCleanupCost();
         if (newBC < cost) 
             return text(wasteText);
         
-        if (colony().allocation(categoryType()) == 0)
+        if (c.allocation(categoryType()) == 0)
             return text(noneText);
         if (allocation() == cleanupAllocationNeeded())
             return text(cleanupText);
 
+        float expGrowth = c.normalPopGrowth();
         expectedPopGrowth = (int) (workingPop+expGrowth) - (int) currentPop;
         newBC -= cost;
         // check for atmospheric terraforming
-        cost = 0;
-        if (planet().canTerraformAtmosphere(empire()))
+        Empire emp = c.empire();
+        Planet p = c.planet();
+        boolean canTerraformAtmosphere = p.canTerraformAtmosphere(emp);
+        if (canTerraformAtmosphere) {
             cost = atmosphereTerraformCost() - hostileBC;
-
-        if (newBC < cost)
-            return text(atmosphereText);
-
-        newBC -= cost;
-
-        // check for soil enrichment, not for silicoids
-        if (!emp.race().ignoresPlanetEnvironment()) {
-            cost = 0;
-            if ((! p.isEnvironmentHostile()) || p.canTerraformAtmosphere(empire())) {
-                if (tr.enrichSoil() && (tr.topSoilEnrichmentTech().environment > p.environment()))
-                    cost = ((tr.topSoilEnrichmentTech().environment - p.environment()) * SOIL_UPGRADE_BC) - soilEnrichBC;
-            }
             if (newBC < cost)
-                return text(enrichSoilText);
+                return text(atmosphereText);
             newBC -= cost;
         }
 
-        // check for terraforming
-        float roomToGrow = c.maxSize() - p.currentSize();
-        cost = 0;
-        if (roomToGrow > 0)
-            cost = roomToGrow * tr.topTerraformingTech().costPerMillion;
-
-        if (newBC < cost) 
-             return text(terraformText);
- 
-        newBC -= cost;
-
-        cost = max(0, newPopPurchaseable * newPopCost);
-        if (newBC < cost) {
-            int newPop = (int) (workingPop+expGrowth+(newBC / newPopCost)) - (int) currentPop;
-            expectedPopGrowth = newPop;
-            return text(growthText);
+        // check for soil enrichment, not for silicoids
+        TechTree tr = emp.tech();
+        if (!emp.race().ignoresPlanetEnvironment()) {
+            if ((! p.isEnvironmentHostile()) || canTerraformAtmosphere) {
+                if (tr.enrichSoil()) {
+                    int envUpgrade = tr.topSoilEnrichmentTech().environment - p.environment();
+                    if (envUpgrade > 0) {
+                        cost = ((tr.topSoilEnrichmentTech().environment - p.environment()) * SOIL_UPGRADE_BC) - soilEnrichBC;
+                        if (newBC < cost)
+                            return text(enrichSoilText);
+                        newBC -= cost;
+                    }
+                }
+            }
         }
 
-        newBC -= cost;
-        expectedPopGrowth = (int) c.maxSize() - (int) currentPop;
+        // check for terraforming
+        float maxPopSize = c.maxSize();
+        float roomToGrow = maxPopSize - p.currentSize();
+        if (roomToGrow > 0) {
+            cost = roomToGrow * tr.topTerraformingTech().costPerMillion;
+            if (newBC < cost) 
+                 return text(terraformText);
+            newBC -= cost;
+        }
+
+        // check for purchasing new pop
+        float newPopPurchaseable = maxPopSize - workingPop - expGrowth;
+        float newPopCost = tr.populationCost();
+        if (newPopPurchaseable > 0) {
+            cost = newPopPurchaseable * newPopCost;
+            int newPop = (int) (workingPop+expGrowth+(newBC / newPopCost)) - (int) currentPop;
+            expectedPopGrowth = newPop;
+            if (newBC < cost)
+                return text(growthText);
+            newBC -= cost;
+        }
+
+        expectedPopGrowth = (int) maxPopSize - (int) currentPop;
 
         // if less <1% of income, show "Clean", else show "Reserve"
         if (newBC <= (c.totalIncome()/100))
             return text(growthText);
         else
-            return text(reserveText);
+            return overflowText();
+    }
+    @Override
+    public float excessSpending() {
+        Colony c = colony();
+        if (c.allocation(categoryType()) == 0)
+            return 0;
+        
+        float prodBC = pct()* c.totalProductionIncome();
+        float rsvBC = pct() * c.maxReserveIncome();
+        float totalBC = prodBC+rsvBC;        
+        
+        // deduct cost to clean industrial waste
+        float cleanCost = c.wasteCleanupCost();
+        if (totalBC <= cleanCost)
+            return 0;
+
+        totalBC -= cleanCost;
+        
+        Planet p = c.planet();
+        Empire emp = c.empire();
+        boolean canTerraformAtmosphere = p.canTerraformAtmosphere(emp);
+        // deduct cost for atmospheric terraforing
+        if (canTerraformAtmosphere) {
+            float atmoCost = atmosphereTerraformCost() - hostileBC;
+            if (totalBC <= atmoCost)
+                return 0;
+            totalBC -= atmoCost;
+        }
+
+        // deduct cost for soil enrichment
+        TechTree tr = emp.tech();
+        if (!emp.race().ignoresPlanetEnvironment()) {
+            if ((! p.isEnvironmentHostile()) || canTerraformAtmosphere) {
+                if (tr.enrichSoil()) {
+                    int envUpgrade = tr.topSoilEnrichmentTech().environment - p.environment();
+                    if (envUpgrade > 0) {
+                        float enrichCost = (envUpgrade * SOIL_UPGRADE_BC) - soilEnrichBC;
+                        if (totalBC < enrichCost)
+                            return 0;
+                        totalBC -= enrichCost;
+                    }
+                }
+            }
+        }        
+        
+        // deduct cost for size terraforming
+        float maxPopSize = c.maxSize();
+        float roomToGrow = maxPopSize - p.currentSize();
+        if (roomToGrow > 0) {
+            float tformCost = roomToGrow * tr.topTerraformingTech().costPerMillion;
+            if (totalBC < tformCost) 
+                return 0;
+            totalBC -= tformCost;
+        }
+        
+        // deduct cost for purchasing new pop
+        float expGrowth = c.normalPopGrowth();
+        float workingPop = c.workingPopulation(); // currentpop - transports away
+        float newPopPurchaseable = maxPopSize - workingPop - expGrowth;
+        if (newPopPurchaseable > 0) {
+            float newPopCost = tr.populationCost();
+            float growthCost = newPopPurchaseable * newPopCost;
+            if (totalBC < growthCost)
+                return 0;
+            totalBC -= growthCost;
+        } 
+        
+        return max(0,totalBC);
     }
     public float maxSpendingNeeded() {
         // cost to terraform planet

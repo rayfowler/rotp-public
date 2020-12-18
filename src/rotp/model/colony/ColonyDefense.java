@@ -190,7 +190,8 @@ public class ColonyDefense extends ColonySpendingCategory {
         }
 
         // remainder goes into reserve
-        empire().addReserve(unallocatedBC);
+        if (!empire().divertColonyExcessToResearch())
+            empire().addReserve(unallocatedBC);
         unallocatedBC = 0;
     }
     public float maxShieldLevel()      { return colony().starSystem().inNebula() ? 0 : tech().maxPlanetaryShieldLevel(); }
@@ -209,6 +210,49 @@ public class ColonyDefense extends ColonySpendingCategory {
     }
     public int missileShieldLevel() {
         return empire() == null ? 0 : shieldLevel() + (int) tech().maxDeflectorShieldLevel();
+    }
+    @Override
+    public float excessSpending() {
+        if (colony().allocation(categoryType()) == 0)
+            return 0;
+        
+        float prodBC = pct()* colony().totalProductionIncome() * planet().productionAdj();
+        float rsvBC = pct() * colony().maxReserveIncome();
+        float totalBC = prodBC+rsvBC;        
+        
+        // deduct cost to finish shield
+        float shieldCost = (maxShieldLevel() - shield) * 100;
+        if (shieldCost >= totalBC)
+            return 0;
+        
+        totalBC -= shieldCost;      
+        if (maxBases == 0)
+            return totalBC;
+               
+        // deduct cost to upgrade existing bases
+        float bestBaseCost = 0;
+        if ((bases > 0) && (missileBase != tech().bestMissileBase())) {
+            float baseCost = missileBase.cost(empire());
+            bestBaseCost = tech().bestMissileBase().cost(empire());
+            if (bestBaseCost > baseCost) {
+                float upgradeCost = (bases*(bestBaseCost-baseCost))-baseUpgradeBC;
+                if (upgradeCost > totalBC)
+                    return 0;
+                totalBC -= upgradeCost;
+            }
+        }
+        
+        // deduct cost to build remaining bses
+        if (bases < maxBases) {
+            if (bestBaseCost == 0)
+                bestBaseCost = tech().bestMissileBase().cost(empire());
+            float buildCost = (maxBases - bases) * bestBaseCost;
+            if (buildCost > totalBC)
+                return 0;
+            totalBC -= buildCost;
+        }
+        
+        return max(0,totalBC);
     }
     @Override
     public String upcomingResult() {
@@ -259,7 +303,7 @@ public class ColonyDefense extends ColonySpendingCategory {
             else
                 return text(perYearText, delta);
         }
-        return text(reserveText);
+        return overflowText();
     }
     public float maxSpendingNeeded() {
         float buildShieldCost = (maxShieldLevel() - shield) * 100;

@@ -25,6 +25,7 @@ public abstract class ColonySpendingCategory implements Base, Serializable {
     private static final long serialVersionUID = 1L;
     public static String noneText = "MAIN_COLONY_SPENDING_NONE";
     public static String reserveText = "MAIN_COLONY_SPENDING_RESERVE";
+    public static String techText = "MAIN_COLONY_SPENDING_TECH";
     public static String convertAlienFactoriesText = "MAIN_COLONY_SPENDING_CONVERT";
     public static String refitFactoriesText = "MAIN_COLONY_SPENDING_REFIT";
     public static String maximumFactoriesText = "MAIN_COLONY_SPENDING_MAX_FACT";
@@ -60,6 +61,14 @@ public abstract class ColonySpendingCategory implements Base, Serializable {
     public int allocation()             { return colony.allocation(categoryType()); }
     public float pct()                  { return (float)allocation()/ MAX_TICKS; }
     public boolean warning()            { return false; }
+    public String overflowText()        { 
+        if (!empire().divertColonyExcessToResearch())
+            return text(reserveText);
+        else if (empire().tech().researchCompleted())
+            return text(reserveText);
+        else
+            return text(techText);
+    }
     public void init(Colony c) {
         colony = c;
     }
@@ -80,4 +89,5 @@ public abstract class ColonySpendingCategory implements Base, Serializable {
         colony.allocation(categoryType(), bounds(0,oldValue+amt,MAX_TICKS));
         return allocation() - oldValue;
     }
+    public float excessSpending()     { return 0; }
 }

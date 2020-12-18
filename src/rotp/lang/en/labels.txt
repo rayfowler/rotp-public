@@ -499,6 +499,7 @@ MAIN_COLONY_TECHNOLOGY            | Tech
 MAIN_COLONY_ALLOCATE_SPENDING     | Allocate Spending
 MAIN_COLONY_SPENDING_NONE         | None
 MAIN_COLONY_SPENDING_RESERVE      | Reserve
+MAIN_COLONY_SPENDING_TECH         | Tech
 MAIN_COLONY_SPENDING_CONVERT      | Convert
 MAIN_COLONY_SPENDING_REFIT        | Refit
 MAIN_COLONY_SPENDING_MAX_FACT     | Max
@@ -1031,6 +1032,7 @@ TECH_RESEARCH                     | Technology Research
 TECH_RESEARCH_POINTS              | Research Points
 TECH_EMPIRE_SPENDING              | Empire Tech Spending
 TECH_EMPIRE_SPENDING_DESC         | Sum of all colonies' tech spending. 
+TECH_EMPIRE_TECH_RESERVE_OPT      | Divert excess colony spending from treasury reserve to research
 TECH_EMPIRE_BALANCED_DESC         | Balanced spending increases overall research points.
 TECH_EMPIRE_DETAIL_1              | %1 BC for 
 TECH_EMPIRE_DETAIL_2              | %2 RP / Year

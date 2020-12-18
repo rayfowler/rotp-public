@@ -69,6 +69,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
     private ExitTechButton exitButton;
     private final Rectangle equalizeButton = new Rectangle();
     private Shape hoverBox;
+    Rectangle techBox = new Rectangle();
     Rectangle helpBox = new Rectangle();
     private final Rectangle[] catBox = new Rectangle[TechTree.NUM_CATEGORIES];
     private final Polygon[] leftArrow = new Polygon[TechTree.NUM_CATEGORIES];
@@ -199,7 +200,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         int subPanelX = scaled(980);
         int subPanelW = scaled(233);
         int subPanelY = s50;
-        int subPanelH = scaled(535);
+        int subPanelH = scaled(585);
         String subtitle = text("TECH_RESEARCH_POINTS");
         g.setFont(narrowFont(28));
         int subSW = g.getFontMetrics().stringWidth(subtitle);
@@ -212,7 +213,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         g.fillRect(subPanelX, subPanelY, subPanelW, subPanelH);
 
         g.setColor(darkBrownC);
-        int topSubPaneH = scaled(123);
+        int topSubPaneH = scaled(173);
         g.fillRect(subPanelX+s10, subPanelY+s10, subPanelW-s20, topSubPaneH);
 
         int botSubPaneY = subPanelY+topSubPaneH+s18;
@@ -252,7 +253,37 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         y6 += s28;
         x6 = subPanelX+((subPanelW-detSW)/2);
         g.drawString(detailLine2, x6, y6);
-
+        
+        int y6a = y6+s10;
+        g.setFont(plainFont(16));
+        String divertLine = text("TECH_EMPIRE_TECH_RESERVE_OPT");
+        int indent = s18;
+        List<String> divertLines = wrappedLines(g, divertLine, subPanelW-s30-indent);
+        for (String line: divertLines) {
+            y6a += s15;
+            g.drawString(line, subPanelX+s20+indent, y6a);
+        }
+     
+        int checkW = s12;
+        int checkX= subPanelX+s20;
+            
+        int y6b = y6+s18+(max(2,divertLines.size())*s15/2);
+        techBox.setBounds(checkX, y6b-checkW, checkW, checkW);
+        Stroke prev = g.getStroke();
+        g.setStroke(stroke2);
+        g.setColor(subpanelBackC);
+        g.fill(techBox);
+        if (hoverBox == techBox) {
+            g.setColor(Color.yellow);
+            g.draw(techBox);
+        }
+        if (player().divertColonyExcessToResearch()) {
+            g.setColor(SystemPanel.whiteText);
+            g.drawLine(checkX-s1, y6b-s6, checkX+s3, y6b-s3);
+            g.drawLine(checkX+s3, y6b-s3, checkX+checkW, y6b-s12);
+        }
+        g.setStroke(prev);
+    
         // draw tech spending area
         String allocateTitle = text("TECH_ALLOCATE_POINTS");
         g.setFont(narrowFont(20));
@@ -282,7 +313,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         int eqW = subPanelW-s22;
         equalizeButton.setBounds(eqX, eqY, eqW, eqH);
         Color c9 = hoverBox == equalizeButton ? Color.yellow : eqButtonBorderC;
-        Stroke prev = g.getStroke();
+        prev = g.getStroke();
         g.setStroke(stroke2);
         g.setColor(darkBrownC.darker());
         g.drawRect(eqX+s2, eqY+s2, eqW, eqH);
@@ -710,6 +741,13 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         player().tech().equalizeAllocations();
         repaint();
     }
+    private void toggleOverflowSpending() {
+        softClick();
+        player().toggleColonyExcessToResearch();
+        totalPlanetaryResearch = player().totalPlanetaryResearch();
+        totalPlanetaryResearchSpending = player().totalPlanetaryResearchSpending();
+        repaint();
+    }
     @Override
     public void keyPressed(KeyEvent e) {
         int k = e.getKeyCode();
@@ -855,6 +893,10 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             showHelp();
             return;
         }
+        if (hoverBox == techBox) {
+            toggleOverflowSpending();
+            return;
+        }
         if (hoverBox == equalizeButton) {
             equalize();
             return;
@@ -957,6 +999,8 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             return equalizeButton;
         if (helpBox.contains(x,y))
             return helpBox;
+        else if (techBox.contains(x,y))
+            return techBox;                    
         for (int i=0;i<catBox.length;i++) {
             if (catBox[i].contains(x,y))
                 return catBox[i];

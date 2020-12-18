@@ -111,6 +111,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     private int securityAllocation = 0;
     private int empireTaxLevel = 0;
     private boolean empireTaxOnlyDeveloped = true;
+    private boolean divertColonyExcessToResearch = false;
     private float totalReserve = 0;
     private float tradePiracyRate = 0;
     private NamedObject lastAttacker;
@@ -200,6 +201,8 @@ public final class Empire implements Base, NamedObject, Serializable {
     public float maxX()                           { return maxX; }
     public float minY()                           { return minY; }
     public float maxY()                           { return maxY; }
+    public boolean divertColonyExcessToResearch() { return divertColonyExcessToResearch; }
+    public void toggleColonyExcessToResearch()    { divertColonyExcessToResearch = !divertColonyExcessToResearch; }
     
     public boolean canSeeShips(int empId) {
         if (canSeeShips == null) {
@@ -2082,7 +2085,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         float totalResearchBC = 0;
         List<StarSystem> systems = new ArrayList<>(allColonizedSystems());
         for (StarSystem sys: systems)
-            totalResearchBC += sys.colony().research().totalBCForEmpire(); // some research BC may stay with colony
+            totalResearchBC += sys.colony().totalPlanetaryResearch(); // some research BC may stay with colony
         return totalResearchBC;
     }
     public float totalEmpireResearch(float totalRp) {
@@ -2104,7 +2107,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         float totalResearchBC = 0;
         List<StarSystem> systems = new ArrayList<>(allColonizedSystems());
         for (StarSystem sys: systems)
-            totalResearchBC += sys.colony().research().totalSpending();
+            totalResearchBC += sys.colony().totalPlanetaryResearchSpending();
         return totalResearchBC;
     }
     public void allocateReserve(Colony col, int amount) {
