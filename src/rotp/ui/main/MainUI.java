@@ -332,7 +332,7 @@ public class MainUI extends BasePanel implements IMapHandler {
         setBorder(compound1);
         setOpaque(false);
     }
-    public boolean enableButtons()   { return true; }
+    public boolean enableButtons()   { return !session().performingTurn(); }
     private void selectPlayerHomeSystem() {
         Empire pl = player();
         StarSystem sys = galaxy().system(pl.capitalSysId());
