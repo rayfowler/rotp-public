@@ -1075,7 +1075,7 @@ TECH_BUTTON_EXIT                  | EXIT
 
 // Tech UI help
 TECH_HELP_1A                      | OVERVIEW - This screen allows you to adjust spending across the six areas of technology that you can study. You can review technologies already learned (green), current in research (yellow) or available for future research (brown). 
-TECH_HELP_1B                      | Click to view the technologies for an area of research. 
+TECH_HELP_1B                      | Click or scroll with the mousewheel to view the technologies for an area of research. 
 TECH_HELP_1C                      | Fills up when research points (RP) are spent in an area. Once filled, there is an increasing chance each turn to learn the technology.
 TECH_HELP_1D                      | Technology currently being researched. See its description for benefits.
 TECH_HELP_1E                      | General benefits provided by technologies already learned in this area.
