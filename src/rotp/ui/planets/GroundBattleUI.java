@@ -719,7 +719,7 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
     public void mousePressed(MouseEvent e) { }
     @Override
     public void mouseReleased(MouseEvent e) {
-        if (e.getButton() > 3)
+        if ((e.getButton() > 3) || e.getClickCount() > 1)
             return;
         advanceScreen();
     }

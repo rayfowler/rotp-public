@@ -324,7 +324,7 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
     }
     @Override
     public void mouseReleased(MouseEvent e) {
-        if (e.getButton() > 3)
+        if ((e.getButton() > 3) || e.getClickCount() > 1)
             return;
         dragY = 0;
         if (hoverShape == null)

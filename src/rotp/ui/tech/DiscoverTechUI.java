@@ -684,9 +684,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
     public void mousePressed(MouseEvent e) { }
     @Override
     public void mouseReleased(MouseEvent e) {
-        if (e.getButton() > 3)
-            return;
-        if (e.getClickCount() > 1)
+        if ((e.getButton() > 3) || e.getClickCount() > 1)
             return;
         if (stillFading())
             return;

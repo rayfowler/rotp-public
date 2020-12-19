@@ -1095,7 +1095,7 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
     @Override
     public void mouseReleased(MouseEvent e) {
         dragY = 0;
-        if (e.getButton() > 3)
+        if ((e.getButton() > 3) || e.getClickCount() > 1)
             return;
         
         if (showVoterSummary && (hoverTarget == continueBox)) {

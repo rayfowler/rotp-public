@@ -855,7 +855,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             return;               
         }       
 
-        if (e.getButton() > 3)
+        if ((e.getButton() > 3) || e.getClickCount() > 1)
             return;
         boolean rightClick = SwingUtilities.isRightMouseButton(e);
         int x1 = e.getX();

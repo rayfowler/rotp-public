@@ -458,6 +458,8 @@ public class ColonizePlanetUI extends FadeInPanel implements MouseListener, Mous
     }
     @Override
     public void mouseReleased(MouseEvent e) {
+        if ((e.getButton() > 3) || e.getClickCount() > 1)
+            return;
         switch(displayMode) {
             case LANDING:
             case CLAIMING:

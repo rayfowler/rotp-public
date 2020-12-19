@@ -1522,7 +1522,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     }
     @Override
     public void mouseReleased(MouseEvent e) {
-        if (e.getButton() > 3)
+        if ((e.getButton() > 3) || e.getClickCount() > 1)
             return;
         boolean rightClick = SwingUtilities.isRightMouseButton(e);
         if (mgr.combatIsFinished())
