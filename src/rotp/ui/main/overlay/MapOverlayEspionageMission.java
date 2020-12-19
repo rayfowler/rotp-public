@@ -66,9 +66,11 @@ public class MapOverlayEspionageMission extends MapOverlay {
         return (mission.inCategory(TechCategory.id(catNum)) != null);
     }
     public void espionageCategorySelected() {
-        drawSprites = false;
-        parent.clearOverlay();
-        RotPUI.instance().selectStealTechPanel(mission, empId);
+        if (drawSprites) {
+            drawSprites = false;
+            parent.clearOverlay();
+            RotPUI.instance().selectStealTechPanel(mission, empId);
+        }
     }
     public void init(EspionageMission esp, int id) {
         labImg = null;

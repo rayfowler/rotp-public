@@ -117,6 +117,10 @@ public final class GameSession implements Base, Serializable {
         suspendNextTurn = true;
     }
     public void resumeNextTurnProcessing()  {
+        if (!suspendNextTurn) {
+            int i = 0;
+            int j = 3/i;
+        }
         log("Resuming Next Turn");
         suspendNextTurn = false;
     }

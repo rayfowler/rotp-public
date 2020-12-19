@@ -105,13 +105,15 @@ public class MapOverlaySystemsScouted extends MapOverlay {
     }
     @Override
     public void advanceMap() {
-        drawSprites = false;
-        orderedSystems.clear();
-        
-        if (session().performingTurn())
-            parent.resumeTurn();
-        else
-            parent.resumeOutsideTurn();
+        if (drawSprites) {
+            drawSprites = false;
+            orderedSystems.clear();
+
+            if (session().performingTurn())
+                parent.resumeTurn();
+            else
+                parent.resumeOutsideTurn();
+        }        
     }
     @Override
     public boolean drawSprites()   { return drawSprites; }

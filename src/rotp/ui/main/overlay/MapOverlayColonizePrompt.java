@@ -73,20 +73,23 @@ public class MapOverlayColonizePrompt extends MapOverlay {
     @Override
     public boolean drawSprites()   { return drawSprites; }
     public void colonizeYes() {
-        mask = null;
-        planetImg = null;
-        drawSprites = false;
-        softClick();
-        parent.clearOverlay();
-        parent.repaintAllImmediately();
-        RotPUI.instance().selectColonizationPanel(sysId, fleet, design);
+        if (drawSprites) {
+            drawSprites = false;
+            mask = null;
+            planetImg = null;
+            softClick();
+            parent.clearOverlay();
+            parent.repaintAllImmediately();
+            RotPUI.instance().selectColonizationPanel(sysId, fleet, design);
+        }
     }
     public void colonizeNo() {
-        mask = null;
-        planetImg = null;
-        drawSprites = false;
-        //softClick();
-        advanceMap();
+        if (drawSprites) {
+            drawSprites = false;
+            mask = null;
+            planetImg = null;
+            advanceMap();
+        }
     }
     @Override
     public boolean masksMouseOver(int x, int y)   { return true; }

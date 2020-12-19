@@ -94,13 +94,15 @@ public class MapOverlayAllocateSystems extends MapOverlay {
     public boolean hoveringOverSprite(Sprite o) { return false; }
     @Override
     public void advanceMap() {
-        drawSprites = false;
-        if (!systemsToAllocate.isEmpty()) {
-            systemsToAllocate.clear();
-            orderedSystems.clear();
+        if (drawSprites) {
+            drawSprites = false;
+            if (!systemsToAllocate.isEmpty()) {
+                systemsToAllocate.clear();
+                orderedSystems.clear();
+            }
+            parent.hideDisplayPanel();
+            parent.resumeTurn();
         }
-        parent.hideDisplayPanel();
-        parent.resumeTurn();
     }
     @Override
     public void paintOverMap(MainUI parent, GalaxyMapPanel ui, Graphics2D g) {

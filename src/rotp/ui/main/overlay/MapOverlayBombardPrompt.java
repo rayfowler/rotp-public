@@ -78,17 +78,20 @@ public class MapOverlayBombardPrompt extends MapOverlay {
         parent.repaint();
     }
     public void bombardYes() {
-        drawSprites = false;
-        mask = null;
-        softClick();
-        bombard();
-        parent.map().repaint();
+        if (drawSprites) {
+            drawSprites = false;
+            mask = null;
+            softClick();
+            bombard();
+            parent.map().repaint();
+        }
     }
     public void bombardCancel() {
-        drawSprites = false;
-        mask = null;
-        //softClick();
-        advanceMap();
+        if (drawSprites) {
+            drawSprites = false;
+            mask = null;
+            advanceMap();
+        }
     }
     private void bombard() {
         // avoid multiple bombings triggered by
