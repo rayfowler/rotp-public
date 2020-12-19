@@ -580,12 +580,9 @@ public class AICDiplomat implements Base, Diplomat {
 
         v.embassy().resetPactTimer();
         
-        int erraticLeaderPenalty = requestor.leader().isErratic() ? -40 : 0;
- 
         float adjustedRelations = v.embassy().otherRelations();
-        adjustedRelations += empire.leader().acceptPactMod();
+        adjustedRelations += empire.leader().acceptPactMod(requestor);
         adjustedRelations += requestor.race().diplomacyBonus();
-        adjustedRelations += erraticLeaderPenalty;
         if (adjustedRelations < 20)
             return refuseOfferPact(requestor);
 
@@ -614,7 +611,7 @@ public class AICDiplomat implements Base, Diplomat {
             return false;
         // how do we feel about them
         float adjustedRelations = v.embassy().otherRelations();
-        adjustedRelations += empire.leader().acceptPactMod();
+        adjustedRelations += empire.leader().acceptPactMod(v.empire());
         adjustedRelations += v.embassy().alliedWithEnemy() ? -50 : 0;
         return adjustedRelations > 20;
     }
@@ -670,7 +667,7 @@ public class AICDiplomat implements Base, Diplomat {
  
         // if we don't like the requestor well enough, refuse now
         float adjustedRelations = v.embassy().otherRelations();
-        adjustedRelations += empire.leader().acceptAllianceMod();
+        adjustedRelations += empire.leader().acceptAllianceMod(requestor);
         adjustedRelations += requestor.race().diplomacyBonus();
         adjustedRelations += joinWarBonus;
         adjustedRelations += erraticLeaderPenalty;
@@ -713,7 +710,7 @@ public class AICDiplomat implements Base, Diplomat {
             return false;
         // do we like the other to want to join an alliance
         float adjustedRelations = v.embassy().otherRelations();
-        adjustedRelations += empire.leader().acceptAllianceMod();
+        adjustedRelations += empire.leader().acceptAllianceMod(e);
         return adjustedRelations > 60;
     }
 //-----------------------------------
