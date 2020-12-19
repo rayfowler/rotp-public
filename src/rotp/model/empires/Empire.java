@@ -2161,8 +2161,12 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
         else { 
             List<Empire> activeEmpires = galaxy().activeEmpires();
+            // if no empires left, the player has been killed in a solo game
+            // by a monster or by abandoning all of his colonies simultaneously 
+            if (activeEmpires.isEmpty())
+                session().status().loseMilitary();
             // if only one empire is left...
-            if (activeEmpires.size() == 1) {
+            else if (activeEmpires.size() == 1) {
                 if (isPlayer())
                     session().status().loseMilitary();
                 else
