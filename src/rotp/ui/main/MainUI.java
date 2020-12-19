@@ -120,7 +120,12 @@ public class MainUI extends BasePanel implements IMapHandler {
     public static Color namePaneHighlight()  { return namePaneBackgroundHighlight; }
 
     public SpriteDisplayPanel displayPanel() { return displayPanel; }
-    public void hideDisplayPanel()           { displayPanel.setVisible(false); }
+    public void hideDisplayPanel()           { 
+        // only hide the display panel if we are in the middle of performing the next turn
+        // or we have scouted systems to show (which can be out of turn)
+        if (session().performingTurn() || !session().systemsScouted().isEmpty())
+            displayPanel.setVisible(false); 
+    }
     public void showDisplayPanel()           { displayPanel.setVisible(true); }
     public void clearOverlay()               { overlay = showAdvice ? overlayAdvice : overlayNone; }
 
