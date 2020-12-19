@@ -1648,10 +1648,6 @@ DIPLOMACY_ACCEPT_ESTABLISH_TRADE  | Accept (Establishes Trade)
 DIPLOMACY_DECLINE_OFFER           | Decline
 DIPLOMACY_DECLINE_BREAK_ALLIANCE  | Decline (Breaks Alliance)
 
-
-//GameOver  vars
-GAME_OVER_FINAL_SCORE             | Final Score: %1
-
 // types of endings
 GAME_OVER_OVERTHROWN_LOSS         | Overthrown Loss
 GAME_OVER_MILITARY_LOSS           | Military Loss

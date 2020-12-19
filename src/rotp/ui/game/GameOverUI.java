@@ -93,9 +93,6 @@ public final class GameOverUI extends FadeInPanel implements MouseListener, Mous
         g.setColor(Color.lightGray);
         String title = gameOverTitle();
         g.drawString(title, s10, s35);
-        String score = text("GAME_OVER_FINAL_SCORE", session().status().finalScore());
-        int sw0 = g.getFontMetrics().stringWidth(score);
-        g.drawString(score, w-sw0-s30, s35);
         
         if (transIndex >= 0) {
             int lineH = s30;

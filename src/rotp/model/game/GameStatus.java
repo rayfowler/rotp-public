@@ -61,11 +61,6 @@ public class GameStatus implements Base, Serializable {
     public void winRebellionAlliance()    { status = Status.WIN_REBELLION_ALLIANCE; }
     public void winCouncilAlliance()      { status = Status.WIN_COUNCIL_ALLIANCE; }
     
-    public int finalScore() {
-    	if (numTurns() == 0)
-    		return 0;
-    	return (int) (sizeVal()*opponentsVal()*difficultyVal()*endConditionVal()/numTurns());
-    }
     private float sizeVal() {
     	switch(options().selectedGalaxySize()) {
     	case IGameOptions.SIZE_TINY:       return 100;
