@@ -1491,6 +1491,42 @@ RACES_STATUS_PRODUCTION           | Production
 RACES_STATUS_TOTAL_POWER          | Total Power
 RACES_UNKNOWN_DATA                | ???
 
+// Races UI help
+RACES_HELP_0A                     | OVERVIEW: This screen provides detailed information about each of the alien races that you have encountered.
+RACES_HELP_0B                     | Diplomacy - Engage in diplomacy with the selected empire. 
+RACES_HELP_0C                     | Intelligence - Display alien technology and manage your spy networks.
+RACES_HELP_0D                     | Military - Display fleet and ship designs.
+RACES_HELP_0E                     | Status - Comparison across several categories.
+RACES_HELP_0F                     | Selecting your empire allows you to manage information for all contacted races on each tab.
+RACES_HELP_0G                     | Selecting an alien empire shows more detailed information for that race on each tab.
+RACES_HELP_1A                     | General information for selected empire.
+RACES_HELP_1B                     | Provides direct access to diplomats for all contacted empires.
+RACES_HELP_1C                     | Increase the security tax to improve your chances of thwarting enemy spies.
+RACES_HELP_1D                     | Provides direct access to manage your spies in all contacted empires.
+RACES_HELP_1E                     | Diplomat incidents that affect how other empires react to you. The effects will move towards zero over time.
+RACES_HELP_2A                     | General information for selected empire.
+RACES_HELP_2B                     | Grants an audience with a diplomat for the selected empire.
+RACES_HELP_2C                     | Information about trade treaties signed with the selected empire.
+RACES_HELP_2D                     | Other empires that the selected empire has contacted.
+RACES_HELP_2E                     | Diplomat incidents that affect how the selected empire reacts to you.
+RACES_HELP_2F                     | A measure of the current state of relations with the selected empire. 
+RACES_HELP_3A                     | Increase the security tax to improve your chances of thwarting enemy spies.
+RACES_HELP_3B                     | Provides direct access to manage your spies in all contacted empires.
+RACES_HELP_3C                     | All technologies known by other empires, as gathered by your spies. Technologies that you do not know are shown in yellow.
+RACES_HELP_4A                     | Set the number of spy networks you want to establish in the selected empire, and the amount you wish to spend annually.
+RACES_HELP_4B                     | Set the orders for the spies infitrating the selected empire. Hide - gather data. Espionage - attempt to steal technology. Sabotage - incite rebellions or destroy factories and missile bases.
+RACES_HELP_4C                     | All technologies known by the selected empire. Technologies that you do not know are shown in yellow.
+RACES_HELP_5A                     | The known number of ships in the fleet of the selected race, by hull size. 
+RACES_HELP_5B                     | The known capabilities of ship designs. Older designs may be out of service.
+RACES_HELP_6A                     | A comparison in various categories of our empire to other known empires.
+RACES_HELP_6A2                    | A timeline comparison in various categories to the selected empire.
+RACES_HELP_6B                     | Fleet Strength - combines number and size of ships.
+RACES_HELP_6C                     | Population - total population of all colonized systems.
+RACES_HELP_6D                     | Technology - average level of technology in all areas of research.
+RACES_HELP_6E                     | Planets - the number of colonized systems.
+RACES_HELP_6F                     | Production - total industrial production for the empire.
+RACES_HELP_6G                     | Total Power - a combination of fleet strength, technology and production levels.
+
 // Sabotage UI
 SABOTAGE_TITLE                    | Our spies have infiltrated %1 colonies and are ready to carry out orders.
 SABOTAGE_SELECT_TARGET            | Select a target
