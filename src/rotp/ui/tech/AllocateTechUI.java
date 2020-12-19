@@ -136,6 +136,59 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         HelpUI helpUI = RotPUI.helpUI();
         helpUI.clear();
 
+        int x1 = scaled(150);
+        int w1 = scaled(400);
+        int y1 = scaled(330);
+        HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 5, text("TECH_HELP_1A"));
+
+        int x2 = scaled(20);
+        int w2 = scaled(150);
+        int y2 = scaled(100);
+        HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 4, text("TECH_HELP_1B"));
+        sp2.setLine(scaled(60), y2, s60, s70);
+        
+        int x3 = scaled(180);
+        int w3 = scaled(190);
+        int y3 = scaled(100);
+        HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 6, text("TECH_HELP_1C"));
+        sp3.setLine(scaled(200), y3, scaled(200), s70);
+        
+        int x4 = scaled(380);
+        int w4 = scaled(190);
+        int y4 = scaled(100);
+        HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y4, w4, 5, text("TECH_HELP_1D"));
+        sp4.setLine(scaled(390), y4, scaled(340), s70);
+        
+        int x5 = scaled(580);
+        int w5 = scaled(190);
+        int y5 = scaled(100);
+        HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y5, w5, 5, text("TECH_HELP_1E"));
+        sp5.setLine(scaled(575), s70, scaled(675), y5, scaled(755), s70);
+        
+        int x6 = scaled(780);
+        int w6 = scaled(190);
+        int y6 = scaled(80);
+        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 5, text("TECH_HELP_1F"));
+        sp6.setLine(x6+w6, scaled(140), scaled(1040), scaled(140));
+        
+        int x7 = scaled(780);
+        int w7 = scaled(190);
+        int y7 = scaled(210);
+        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7,y7,w7, 5, text("TECH_HELP_1G"));
+        sp7.setLine(x7+w7, y7, scaled(995), scaled(195));
+        
+        int x8 = scaled(780);
+        int w8 = scaled(190);
+        int y8 = scaled(360);
+        HelpUI.HelpSpec sp8 = helpUI.addBrownHelpText(x8,y8,w8, 6, text("TECH_HELP_1H"));
+        sp8.setLine(x8+w8, y8+(sp8.height()/2), scaled(995), y8+(sp8.height()/2));
+
+        int x9 = scaled(740);
+        int w9 = scaled(190);
+        int y9 = scaled(580);
+        HelpUI.HelpSpec sp9 = helpUI.addBrownHelpText(x9,y9,w9, 4, text("TECH_HELP_1I"));
+        sp9.setLine(x9+w9, scaled(610), scaled(990), scaled(610));
+
         helpUI.open(this);
     }
     @Override

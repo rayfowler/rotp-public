@@ -1016,7 +1016,7 @@ SHIPINERTIAL_0_DETAIL   | Reduces the inertia of ships, adding 2 classes of mane
 
 SHIPINERTIAL_1_NAME     | Inertial Nullifier
 SHIPINERTIAL_1_BRIEF    | Adds +4 to maneuverability
-SHIPINERTIAL_1_DETAIL   | Negates the inertia of ships, adding 2 classes of maneuverability in combat. Also reduces the effect of Black Hole attacks by -30%.
+SHIPINERTIAL_1_DETAIL   | Negates the inertia of ships, adding 4 classes of maneuverability in combat. Also reduces the effect of Black Hole attacks by -30%.
 
 
 //
