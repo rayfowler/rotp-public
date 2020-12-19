@@ -83,7 +83,9 @@ public enum RaceFactory implements Base {
     }
     private void loadRaceLangFiles(Race r, String langDir) {
         String dir = concat("lang/", langDir, "/races/");
-        r.systemNames = readSystemNames(dir+r.langKey+".systems.txt");
+        List<String> sNames = readSystemNames(dir+r.langKey+".systems.txt");
+        if (sNames != null)
+            r.systemNames = sNames;
         r.raceLabels().labelFile(r.langKey+".labels.txt");
         r.raceLabels().dialogueFile(r.langKey+".dialogue.txt");
         r.raceLabels().introFile(r.langKey+".intro.txt");
