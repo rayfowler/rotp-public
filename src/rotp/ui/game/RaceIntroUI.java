@@ -63,7 +63,7 @@ public class RaceIntroUI extends BasePanel implements MouseListener {
             introBack = null;
             fadeLab = null;
             button.reset();
-            RotPUI.instance().selectMainPanel(true);
+            RotPUI.instance().selectMainPanelNewGame();
         }
         galaxy().system(player().homeSysId()).planet().rotate(1);
         repaint();

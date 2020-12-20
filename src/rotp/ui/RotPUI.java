@@ -319,6 +319,13 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener, Ga
         selectPanel(MAIN_PANEL, mainUI());
         repaint();
     }
+    public void selectMainPanelNewGame()      {
+        disableGlassPane();
+        mainUI.init(true);
+        mainUI.showHelp();
+        selectPanel(MAIN_PANEL, mainUI());
+        repaint();
+    }
     public void selectGamePanel()      { selectPanel(GAME_PANEL,  gameUI); }
     public void selectDesignPanel()    { designUI.init(); selectPanel(DESIGN_PANEL, designUI); }
     public void selectFleetPanel()     { fleetUI.init(); selectPanel(FLEET_PANEL, fleetUI); }
