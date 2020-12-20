@@ -1506,12 +1506,12 @@ RACES_HELP_1A                     | General information for selected empire.
 RACES_HELP_1B                     | Provides direct access to diplomats for all contacted empires.
 RACES_HELP_1C                     | Increase the security tax to improve your chances of thwarting enemy spies.
 RACES_HELP_1D                     | Provides direct access to manage your spies in all contacted empires.
-RACES_HELP_1E                     | Diplomat incidents that affect how other empires react to you. The effects will move towards zero over time.
+RACES_HELP_1E                     | Diplomatic incidents that affect how other empires react to you. The effects will move towards zero over time.
 RACES_HELP_2A                     | General information for selected empire.
 RACES_HELP_2B                     | Grants an audience with a diplomat for the selected empire.
 RACES_HELP_2C                     | Information about trade treaties signed with the selected empire.
 RACES_HELP_2D                     | Other empires that the selected empire has contacted.
-RACES_HELP_2E                     | Diplomat incidents that affect how the selected empire reacts to you.
+RACES_HELP_2E                     | Diplomatic incidents that affect how the selected empire reacts to you. The effects will move towards zero over time.
 RACES_HELP_2F                     | A measure of the current state of relations with the selected empire. 
 RACES_HELP_3A                     | Increase the security tax to improve your chances of thwarting enemy spies.
 RACES_HELP_3B                     | Provides direct access to manage your spies in all contacted empires.

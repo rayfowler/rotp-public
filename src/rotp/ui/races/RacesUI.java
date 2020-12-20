@@ -193,74 +193,74 @@ public class RacesUI extends BasePanel {
     private void loadHelpUI1() {
         HelpUI helpUI = RotPUI.helpUI();
 
-        int x2 = scaled(285);
+        int x2 = scaled(30);
         int w2 = scaled(200);
-        int y2 = scaled(80);
+        int y2 = scaled(140);
         HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 3, text("RACES_HELP_1A"));
-        sp2.setLine(scaled(340), y2, scaled(340), scaled(52));
+        sp2.setLine(x2+w2, y2+(sp2.height()/2), scaled(280), y2+(sp2.height()/2));
         
-        int x3 = scaled(505);
+        int x3 = scaled(480);
         int w3 = scaled(200);
-        int y3 = scaled(80);
+        int y3 = scaled(65);
         HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 3, text("RACES_HELP_1B"));
-        sp3.setLine(scaled(575), y3, scaled(575), scaled(52));
+        sp3.setLine(x3+w3-s30, y3+sp3.height(), scaled(705), scaled(225));
         
-        int x4 = scaled(725);
+        int x4 = scaled(480);
         int w4 = scaled(200);
-        int y4 = scaled(80);
+        int y4 = scaled(450);
         HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y4, w4, 3, text("RACES_HELP_1C"));
-        sp4.setLine(scaled(850), y4, scaled(850), scaled(52));
+        sp4.setLine(x4+w4, y4+(sp4.height()/2), scaled(780), scaled(470));
         
-        int x5 = scaled(740);
-        int w5 = scaled(210);
-        int y5 = scaled(330);
+        int x5 = scaled(480);
+        int w5 = scaled(200);
+        int y5 = scaled(630);
         HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y5, w5, 3, text("RACES_HELP_1D"));
-        sp5.setLine(x5+w5, y5+(sp5.height()/2), scaled(985), y5+(sp5.height()/2));
+        sp5.setLine(x5+w5, y5+(sp5.height()/2), scaled(705),  y5+(sp5.height()/2));
         
-        int x6 = scaled(740);
-        int w6 = scaled(210);
-        int y6 = scaled(500);
-        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 4, text("RACES_HELP_1E"));
-        sp6.setLine(x6+w6, y6+sp6.height(), scaled(1000), scaled(645));
+        int x6 = scaled(150);
+        int w6 = scaled(300);
+        int y6 = scaled(460);
+        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 5, text("RACES_HELP_1E"));
+        sp6.setLine(x6+(w6/2), y6, x6+(w6/2), scaled(400));
     }
     private void loadHelpUI2() {
         HelpUI helpUI = RotPUI.helpUI();
 
         int x2 = scaled(30);
-        int w2 = scaled(190);
-        int y2 = scaled(100);
+        int w2 = scaled(200);
+        int y2 = scaled(140);
         HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 3, text("RACES_HELP_2A"));
-        sp2.setLine(scaled(130), y2, scaled(130), s77);
+        sp2.setLine(x2+w2, y2+(sp2.height()/2), scaled(280), y2+(sp2.height()/2));
         
-        int x3 = scaled(150);
-        int w3 = scaled(190);
-        int y3 = scaled(190);
+        int x3 = scaled(480);
+        int w3 = scaled(200);
+        int y3 = scaled(65);
         HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 3, text("RACES_HELP_2B"));
-        sp3.setLine(scaled(240), y3, scaled(240), s77);
+        sp3.setLine(x3+w3, y3+sp3.height(), scaled(705), scaled(165));
         
-        int x4 = scaled(255);
-        int w4 = scaled(190);
-        int y4 = scaled(100);
+        int x4 = scaled(480);
+        int w4 = scaled(200);
+        int y4 = scaled(350);
         HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y4, w4, 3, text("RACES_HELP_2C"));
-        sp4.setLine(scaled(385), y4, scaled(385), s77);
+        sp4.setLine(x4+w4, y4+(sp4.height()/2), scaled(780), scaled(370));
         
-        int x5 = scaled(370);
-        int w5 = scaled(190);
-        int y5 = scaled(190);
+        int x5 = scaled(480);
+        int w5 = scaled(200);
+        int y5 = scaled(450);
         HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y5, w5, 3, text("RACES_HELP_2D"));
-        sp5.setLine(scaled(460), y5, scaled(460), s77);
+        sp5.setLine(x5+w5, y5+(sp5.height()/2), scaled(705),  y5+(sp5.height()/2));
         
-        int x6 = scaled(475);
-        int w6 = scaled(140);
-        int y6 = scaled(100);
-        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 3, text("RACES_HELP_2E"));
-        sp6.setLine(scaled(550), y6, scaled(550), s77);
+        int x6 = scaled(150);
+        int w6 = scaled(300);
+        int y6 = scaled(460);
+        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 5, text("RACES_HELP_2E"));
+        sp6.setLine(x6+(w6/2), y6, x6+(w6/2), scaled(400));
         
-        int x7 = scaled(590);
-        int w7 = scaled(210);
-        int y7 = scaled(190);
-        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7,y7,w7, 3, text("RACES_HELP_2F"));
-        sp7.setLine(scaled(630), y7, scaled(630), s77);
+        int x7 = scaled(340);
+        int w7 = scaled(300);
+        int y7 = scaled(250);
+        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7,y7,w7, 2, text("RACES_HELP_2F"));
+        sp7.setLine(x7+(w7/2), y7+sp7.height(), x7+(w7/2), scaled(315));
     }
     private void loadHelpUI3() {
         HelpUI helpUI = RotPUI.helpUI();
