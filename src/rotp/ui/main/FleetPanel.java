@@ -229,8 +229,8 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         for (int i=0;i<stackAdjustment.length;i++) {
             if (selected.num(i) <= deployed.num(i)) 
                 stackAdjustment[i] = 0;
-        else
-                    stackAdjustment[i] = deployed.num(i) - selected.num(i);
+            else
+                stackAdjustment[i] = deployed.num(i) - selected.num(i);
             selectedCount += (selected.num(i)+stackAdjustment[i]);
         }
         // if what remains is a selected fleet adjusted down to 0, then
@@ -676,13 +676,25 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             String text = null;
             String text2 = null;
             g.setFont(narrowFont(16));
+            g.setColor(SystemPanel.blackText);
             if (displayFl.canBeSentBy(player())) {
                 if (!displayFl.canSendTo(id(dest))) {
-                    g.setColor(SystemPanel.blackText);
-                    if (dest == null)
-                        text = "";
+                    if (dest == null) {
+                        StarSystem currDest = displayFl.destination();
+                        if (currDest == null)
+                            text = "";
+                        else {
+                            int dist = displayFl.travelTurns(currDest);
+                            String destName = player().sv.name(currDest.id);
+                            if (destName.isEmpty())
+                                text = text("MAIN_FLEET_ETA_UNNAMED", dist);
+                            else
+                                text = text("MAIN_FLEET_ETA_NAMED", destName, dist);  
+                        }
+                    }
                     else {
                         String name = player().sv.name(dest.id);
+                        g.setColor(SystemPanel.redText);
                         if (name.isEmpty())
                             text = text("MAIN_FLEET_INVALID_DESTINATION2");
                         else 
@@ -702,7 +714,6 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 }
                 else if (displayFl.canSendTo(id(dest))) {
                     if (displayFl.canReach(dest)) {
-                        g.setColor(SystemPanel.blackText);
                         int dist = displayFl.travelTurns(dest);
                         String destName = player().sv.name(dest.id);
                         if (destName.isEmpty())
@@ -712,20 +723,17 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                     }
                     else {
                         int dist = player().rangeTo(dest);
-                        g.setColor(SystemPanel.blackText);
                         text = text("MAIN_FLEET_OUT_OF_RANGE_DESC", dist);
                     }
                     if (displayFl.passesThroughNebula(dest))
                         text2 = text("MAIN_FLEET_THROUGH_NEBULA");
                 }
                 else if (displayFl.isOrbiting()) {
-                    g.setColor(SystemPanel.blackText);
                     text = text("MAIN_FLEET_CHOOSE_DEST");
                 }
             }
             else if (displayFl.isInTransit()) {
                 if (player().knowETA(displayFl)) {
-                    g.setColor(Color.black);
                     int dist = displayFl.travelTurnsRemaining();
                     if (displayFl.hasDestination()) {
                         String destName = player().sv.name(displayFl.destSysId());
