@@ -76,6 +76,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     public static final int SHOW_STARS = 2;
     public static final int SHOW_NO_STARS_AND_RANGES = 3;
 
+    public static final int MAX_FLAG_SCALE = 80;
     public static final int MAX_STARGATE_SCALE = 40;
     public static final int MAX_RALLY_SCALE = 100;
     public static final int MAX_FLEET_UNARMED_SCALE = 40;

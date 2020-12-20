@@ -41,6 +41,8 @@ public class SystemView implements IMappedObject, Base, Serializable {
     static final int FLAG_WHITE = 1;
     static final int FLAG_RED = 2;
     static final int FLAG_BLUE = 3;
+    static final int FLAG_GREEN = 4;
+    static final int FLAG_YELLOW = 5;
 
     public static SystemView create(int sysId, int empId) {
         return new SystemView(sysId,empId);
@@ -113,9 +115,11 @@ public class SystemView implements IMappedObject, Base, Serializable {
     public void stopRally()                 { rallySystem(system()); }
     public Color flagColor() { 
         switch(flagColor) {
-            case FLAG_RED:   return Color.red;
-            case FLAG_WHITE: return Color.white;
-            case FLAG_BLUE:  return Color.blue;
+            case FLAG_RED:    return Color.red;
+            case FLAG_WHITE:  return Color.white;
+            case FLAG_BLUE:   return Color.blue;
+            case FLAG_GREEN:  return Color.green;
+            case FLAG_YELLOW: return Color.yellow;
         }
         return null; 
     }
@@ -273,10 +277,12 @@ public class SystemView implements IMappedObject, Base, Serializable {
 
     public void toggleFlagColor() {
         switch(flagColor) {
-            case FLAG_NONE:  flagColor = FLAG_WHITE; return;
-            case FLAG_WHITE: flagColor = FLAG_RED; return;
-            case FLAG_RED:   flagColor = FLAG_BLUE; return;
-            case FLAG_BLUE:  flagColor = FLAG_NONE; return;
+            case FLAG_NONE:   flagColor = FLAG_WHITE; return;
+            case FLAG_WHITE:  flagColor = FLAG_RED; return;
+            case FLAG_RED:    flagColor = FLAG_BLUE; return;
+            case FLAG_BLUE:   flagColor = FLAG_GREEN; return;
+            case FLAG_GREEN:  flagColor = FLAG_YELLOW; return;
+            case FLAG_YELLOW: flagColor = FLAG_NONE; return;
         }
     }
     public String resourceType() {

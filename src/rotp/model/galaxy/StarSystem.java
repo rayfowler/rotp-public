@@ -518,9 +518,12 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
                 g2.drawImage(img, x1, y1, x1+BasePanel.s14, y1+BasePanel.s14, 0, 0, w, h, map);
             }
         }
-        Color flagColor = map.parent().flagColor(this);
-        if (flagColor != null)
-            drawBanner(g2, flagColor, Color.white, x0, y0);
+        
+        if (map.scaleX() <= GalaxyMapPanel.MAX_FLAG_SCALE) {
+            Color flagColor = map.parent().flagColor(this);
+            if (flagColor != null)
+                drawBanner(g2, flagColor, Color.lightGray, x0+BasePanel.s3, y0);
+        }
 
         // draw star name
         Rectangle box = nameBox();
@@ -690,7 +693,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         int sp=scaled(10);
         int h=scaled(20);
         int flagW=scaled(16);
-        int flagH=scaled(8);
+        int flagH=scaled(10);
         Polygon p = new Polygon();
         p.addPoint(x-flagW, y-h-sp+(flagH/2));
         p.addPoint(x, y-h-sp);
