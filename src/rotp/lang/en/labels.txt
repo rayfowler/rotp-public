@@ -1609,6 +1609,8 @@ SYSTEMS_UNSCOUTED_ENEMY           | System is unscouted and controlled by an ene
 SYSTEMS_UNSCOUTED_GUARDED         | Unable to scout while system is guarded.
 SYSTEMS_UNSCOUTED_UNREACHABLE     | System is unscouted and currently unreachable.
 SYSTEMS_CAN_COLONIZE              | System can be reached and colonized with our current technology.
+SYSTEMS_CAN_COLONIZE_EN_ROUTE     | A colony ship is en route to this system. ETA is %1 turns.
+SYSTEMS_CAN_COLONIZE_ENEMY        | System can be colonized but is orbited by a hostile fleet.
 SYSTEMS_UNCOLONIZED_NEED_TECH     | System can be colonized after research in "%1" is completed.
 SYSTEMS_UNCOLONIZED_NEED_TECHS    | System can be colonized after research in "%1" and "%2" is completed.
 SYSTEMS_UNCOLONIZEABLE            | System cannot be colonized.

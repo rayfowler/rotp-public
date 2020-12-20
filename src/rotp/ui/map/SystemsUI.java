@@ -35,7 +35,9 @@ import java.awt.geom.Area;
 import java.awt.geom.Point2D;
 import java.awt.geom.RoundRectangle2D;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import javax.swing.BorderFactory;
 import javax.swing.JLayeredPane;
 import javax.swing.border.Border;
@@ -90,6 +92,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
     private LinearGradientPaint backGradient;
     private SystemInfoPanel displayPanel;
     private final List<Sprite> controls = new ArrayList<>();
+    private final Map<Integer,Integer> expandEnRouteSystems = new HashMap<>();
 
     // public for all
     public StarSystem hoverSystem;
@@ -117,6 +120,24 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         sessionVar("SYSTEMUI_MAP_INITIALIZED", false);
         targetSystem = null;
         map.clearRangeMap();
+        
+        // on opening, build list of systems that we have colony ships 
+        // in transport to. This is too expensive to do real-time
+        expandEnRouteSystems.clear();
+        for (ShipFleet fl: player().orderedFleets()) {
+            StarSystem sys = fl.destination();
+            if (fl.canColonizeSystem(sys)) {
+                int fleetTurns = fl.travelTurns(sys);
+                if (expandEnRouteSystems.containsKey(sys.id)) {
+                    int prevTurns = expandEnRouteSystems.get(sys.id);
+                    if (fleetTurns < prevTurns)
+                        expandEnRouteSystems.put(sys.id, fleetTurns);
+                }
+                else
+                    expandEnRouteSystems.put(sys.id, fleetTurns);
+            }
+        }
+        
     }
     public void clickSystem(StarSystem v, int count) {
 
@@ -530,8 +551,12 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         
         float sysDistance = sv.distance();
         Empire pl = player();
-        if ((sysDistance <= pl.shipRange()) && pl.canColonize(sv.sysId)) 
-            return MainUI.greenAlertC;
+        if ((sysDistance <= pl.shipRange()) && pl.canColonize(sv.sysId)) {
+            if (expandEnRouteSystems.containsKey(sv.sysId))
+                return null;
+            else
+                return MainUI.greenAlertC;
+        }
         
         String rangeTech = pl.rangeTechNeededToReach(sv.sysId);
         String envTech = pl.environmentTechNeededToColonize(sv.sysId);   
@@ -672,8 +697,13 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         
         float sysDistance = sv.distance();
         Empire pl = player();
-        if ((sysDistance <= pl.shipRange()) && pl.canColonize(sv.sysId)) 
+        if ((sysDistance <= pl.shipRange()) && pl.canColonize(sv.sysId)) { 
+            if (expandEnRouteSystems.containsKey(sv.sysId)) {
+                int turns = expandEnRouteSystems.get(sv.sysId);
+                return text("SYSTEMS_CAN_COLONIZE_EN_ROUTE", turns);
+            }
             return text("SYSTEMS_CAN_COLONIZE");
+        }
         
         String rangeTech = pl.rangeTechNeededToReach(sv.sysId);
         String envTech = pl.environmentTechNeededToColonize(sv.sysId);  
@@ -775,8 +805,9 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         SystemView sv = pl.sv.view(sys.id);
         switch(selectedTab) {
             case exploreTab:
-                int dist = (int) Math.ceil(sv.distance());
-                return (dist > 0) && (dist < rng+rng) ? text("SYSTEMS_RANGE", str(dist)) : "";
+                float dist = sv.distance();
+                String distStr = df1.format(Math.ceil(10*dist)/10);
+                return (dist > 0) && (dist < rng+rng) ? text("SYSTEMS_RANGE", distStr) : "";
             case expandTab:
                 if (!sv.scouted())
                     return "";
