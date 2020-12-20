@@ -57,7 +57,7 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
     }
     private void init0() {
         setOpaque(false);
-        Color textC = SystemPanel.blackText;
+        Color textC = SystemPanel.whiteText;
         randomEventsText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         researchRateText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         galaxyAgeText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
