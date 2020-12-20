@@ -252,60 +252,60 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
 
     }
     private String randomEventsStr() {
-        String opt = text(options().selectedRandomEventOption());
+        String opt = text(newGameOptions().selectedRandomEventOption());
         return text("SETTINGS_RANDOM_EVENTS", opt)+"     ";
     }
     private String colonizePromptStr() {
-        if (options().disableColonizePrompt())
+        if (newGameOptions().disableColonizePrompt())
             return text("SETTINGS_COLONIZE_PROMPT_OFF")+"     ";
         else
             return text("SETTINGS_COLONIZE_PROMPT_ON")+"    ";
     }
     private String researchRateStr() {
-        String opt = text(options().selectedResearchRate());
+        String opt = text(newGameOptions().selectedResearchRate());
         return text("SETTINGS_RESEARCH_RATE", opt)+"     ";
     }
     private String techTradingStr() {
-        String opt = text(options().selectedTechTradeOption());
+        String opt = text(newGameOptions().selectedTechTradeOption());
         return text("SETTINGS_TECH_TRADING", opt)+"     ";
     }
     private String galaxyAgeStr() {
-        String opt = text(options().selectedGalaxyAge());
+        String opt = text(newGameOptions().selectedGalaxyAge());
         return text("SETTINGS_GALAXY_AGE", opt)+"     ";
     }
     private String warpSpeedStr() {
-        String opt = text(options().selectedWarpSpeedOption());
+        String opt = text(newGameOptions().selectedWarpSpeedOption());
         return text("SETTINGS_WARP_SPEED", opt)+"     ";
     }
     private void toggleGalaxyAge() {
         softClick();
-        options().selectedGalaxyAge(options().nextGalaxyAge());
+        newGameOptions().selectedGalaxyAge(newGameOptions().nextGalaxyAge());
         galaxyAgeText.repaint(galaxyAgeStr());
     //    repaint();
     }
     private void toggleRandomEvents() {
         softClick();
-        options().selectedRandomEventOption(options().nextRandomEventOption());
+        newGameOptions().selectedRandomEventOption(newGameOptions().nextRandomEventOption());
         randomEventsText.repaint(randomEventsStr());
     }
     private void toggleColonizePrompt() {
         softClick();
-        options().disableColonizePrompt(!options().disableColonizePrompt());
+        newGameOptions().disableColonizePrompt(!newGameOptions().disableColonizePrompt());
         colonizePromptText.repaint(colonizePromptStr());
     }
     private void toggleResearchRate(MouseEvent e) {
         softClick();
-        options().selectedResearchRate(options().nextResearchRate());
+        newGameOptions().selectedResearchRate(newGameOptions().nextResearchRate());
         researchRateText.repaint(researchRateStr());
     }
     private void toggleTechTrading(MouseEvent e) {
         softClick();
-        options().selectedTechTradeOption(options().nextTechTradeOption());
+        newGameOptions().selectedTechTradeOption(newGameOptions().nextTechTradeOption());
         techTradingText.repaint(techTradingStr());
     }
     private void toggleWarpSpeed(MouseEvent e) {
         softClick();
-        options().selectedWarpSpeedOption(options().nextWarpSpeedOption());
+        newGameOptions().selectedWarpSpeedOption(newGameOptions().nextWarpSpeedOption());
         warpSpeedText.repaint(warpSpeedStr());
     }
 

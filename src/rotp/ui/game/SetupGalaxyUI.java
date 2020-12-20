@@ -106,8 +106,8 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         g.drawImage(backImg(), 0, 0, w, h, this);
 
         // draw number of opponents
-        int maxOpp = options().maximumOpponentsOptions();
-        int numOpp = options().selectedNumberOpponents();
+        int maxOpp = newGameOptions().maximumOpponentsOptions();
+        int numOpp = newGameOptions().selectedNumberOpponents();
         
         boolean smallImages = maxOpp > 25;
         BufferedImage mugBack = smallImages ? smallRaceBackImg() : SetupRaceUI.raceBackImg();
@@ -141,7 +141,7 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
             int x2 = leftBoxX+s30+(col*spaceW);
             oppSet[i].setBounds(x2,y2,mugW,mugH);
             g.drawImage(mugBack, x2, y2, this);
-            String selOpp = options().selectedOpponentRace(i);
+            String selOpp = newGameOptions().selectedOpponentRace(i);
             if (selOpp == null) {
                 int x2b = x2+((mugW-randSW)/2);
                 int y2b = smallImages ? y2+mugH-s20 : y2+mugH-s31;
@@ -161,19 +161,19 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         }
 
         // draw galaxy
-        drawGalaxyShape(g, options().galaxyShape(), galaxyX, galaxyY, galaxyW, galaxyH);
+        drawGalaxyShape(g, newGameOptions().galaxyShape(), galaxyX, galaxyY, galaxyW, galaxyH);
 
         // draw info under galaxy map
         g.setColor(Color.black);
         g.setFont(narrowFont(16));
         int galaxyBoxW = boxW-s40;
         int y3 = galaxyY+galaxyH+s16;
-        String systemsLbl = text("SETUP_GALAXY_NUMBER_SYSTEMS", options().numberStarSystems());
+        String systemsLbl = text("SETUP_GALAXY_NUMBER_SYSTEMS", newGameOptions().numberStarSystems());
         int sw3 = g.getFontMetrics().stringWidth(systemsLbl);
         int x3 = rightBoxX+s20+((galaxyBoxW/2)-sw3)/2;
         g.drawString(systemsLbl, x3,y3);
 
-        String maxOppsLbl = text("SETUP_GALAXY_MAX_OPPONENTS", options().maximumOpponentsOptions());
+        String maxOppsLbl = text("SETUP_GALAXY_MAX_OPPONENTS", newGameOptions().maximumOpponentsOptions());
         int sw4 = g.getFontMetrics().stringWidth(maxOppsLbl);
         int x4 = rightBoxX+s20+(galaxyBoxW/2)+((galaxyBoxW/2)-sw4)/2;
         g.drawString(maxOppsLbl, x4,y3);
@@ -213,23 +213,23 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         g.setColor(Color.black);
         g.setFont(narrowFont(17));
         int y5 = shapeBox.y+shapeBox.height-s4;
-        String shapeLbl = text(options().selectedGalaxyShape());
+        String shapeLbl = text(newGameOptions().selectedGalaxyShape());
         int shapeSW = g.getFontMetrics().stringWidth(shapeLbl);
         int x5a =shapeBox.x+((shapeBox.width-shapeSW)/2);
         g.drawString(shapeLbl, x5a, y5);
 		
         // modnar: mapOptionLbl, may not be needed?
-        String mapOptionLbl = text(options().selectedMapOption());
+        String mapOptionLbl = text(newGameOptions().selectedMapOption());
         int mapOptionSW = g.getFontMetrics().stringWidth(mapOptionLbl);
         int x5d =mapOptionBox.x+((mapOptionBox.width-mapOptionSW)/2);
         g.drawString(mapOptionLbl, x5d, y5+s20);
 
-        String sizeLbl = text(options().selectedGalaxySize());
+        String sizeLbl = text(newGameOptions().selectedGalaxySize());
         int sizeSW = g.getFontMetrics().stringWidth(sizeLbl);
         int x5b =sizeBox.x+((sizeBox.width-sizeSW)/2);
         g.drawString(sizeLbl, x5b, y5);
 
-        String diffLbl = text(options().selectedGameDifficulty());
+        String diffLbl = text(newGameOptions().selectedGameDifficulty());
         int diffSW = g.getFontMetrics().stringWidth(diffLbl);
         int x5c =diffBox.x+((diffBox.width-diffSW)/2);
         g.drawString(diffLbl, x5c, y5);
@@ -307,100 +307,100 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
     }
     private BufferedImage playerRaceImg() {
         if (playerRaceImg == null) {
-            String selRace = options().selectedPlayerRace();
+            String selRace = newGameOptions().selectedPlayerRace();
             playerRaceImg = newBufferedImage(Race.keyed(selRace).diploMug());
         }
         return playerRaceImg;
     }
     public void nextGalaxySize(boolean bounded, boolean click) {
-        String nextSize = options().nextGalaxySize(bounded);
-        if (nextSize.equals(options().selectedGalaxySize()))
+        String nextSize = newGameOptions().nextGalaxySize(bounded);
+        if (nextSize.equals(newGameOptions().selectedGalaxySize()))
             return;
         if (click) softClick();
-        options().selectedGalaxySize(options().nextGalaxySize(bounded));
+        newGameOptions().selectedGalaxySize(newGameOptions().nextGalaxySize(bounded));
         repaint();
     }
     public void prevGalaxySize(boolean bounded, boolean click) {
-        String prevSize = options().prevGalaxySize(bounded);
-        if (prevSize.equals(options().selectedGalaxySize()))
+        String prevSize = newGameOptions().prevGalaxySize(bounded);
+        if (prevSize.equals(newGameOptions().selectedGalaxySize()))
             return;
         if (click) softClick();
-        options().selectedGalaxySize(options().prevGalaxySize(bounded));
-        int numOpps = options().selectedNumberOpponents();
-        int maxOpps = options().maximumOpponentsOptions();
+        newGameOptions().selectedGalaxySize(newGameOptions().prevGalaxySize(bounded));
+        int numOpps = newGameOptions().selectedNumberOpponents();
+        int maxOpps = newGameOptions().maximumOpponentsOptions();
         if (maxOpps < numOpps) {
             for (int i=maxOpps;i<numOpps;i++)
-                options().selectedOpponentRace(i,null);
-            options().selectedNumberOpponents(maxOpps);
+                newGameOptions().selectedOpponentRace(i,null);
+            newGameOptions().selectedNumberOpponents(maxOpps);
         }
         repaint();
     }
     public void nextGalaxyShape(boolean click) {
         if (click) softClick();
-        options().selectedGalaxyShape(options().nextGalaxyShape());
-		options().galaxyShape().quickGenerate(); // modnar: "hack", do a quickgen to get correct map preview
+        newGameOptions().selectedGalaxyShape(newGameOptions().nextGalaxyShape());
+		newGameOptions().galaxyShape().quickGenerate(); // modnar: "hack", do a quickgen to get correct map preview
         repaint();
     }
     public void prevGalaxyShape(boolean click) {
         if (click) softClick();
-        options().selectedGalaxyShape(options().prevGalaxyShape());
-		options().galaxyShape().quickGenerate(); // modnar: "hack", do a quickgen to get correct map preview
+        newGameOptions().selectedGalaxyShape(newGameOptions().prevGalaxyShape());
+		newGameOptions().galaxyShape().quickGenerate(); // modnar: "hack", do a quickgen to get correct map preview
         repaint();
     }
 	
     // modnar: mapOption, next/prev selections
     public void nextMapOption(boolean click) {
         if (click) softClick();
-        options().selectedMapOption(options().nextMapOption());
-		options().galaxyShape().quickGenerate(); // modnar: "hack", do a quickgen to get correct map preview
+        newGameOptions().selectedMapOption(newGameOptions().nextMapOption());
+		newGameOptions().galaxyShape().quickGenerate(); // modnar: "hack", do a quickgen to get correct map preview
         repaint();
     }
     public void prevMapOption(boolean click) {
         if (click) softClick();
-        options().selectedMapOption(options().prevMapOption());
-		options().galaxyShape().quickGenerate(); // modnar: "hack", do a quickgen to get correct map preview
+        newGameOptions().selectedMapOption(newGameOptions().prevMapOption());
+		newGameOptions().galaxyShape().quickGenerate(); // modnar: "hack", do a quickgen to get correct map preview
         repaint();
     }
     public void nextGameDifficulty(boolean click) {
         if (click) softClick();
-        options().selectedGameDifficulty(options().nextGameDifficulty());
+        newGameOptions().selectedGameDifficulty(newGameOptions().nextGameDifficulty());
         repaint();
     }
     public void prevGameDifficulty(boolean click) {
         if (click) softClick();
-        options().selectedGameDifficulty(options().prevGameDifficulty());
+        newGameOptions().selectedGameDifficulty(newGameOptions().prevGameDifficulty());
         repaint();
     }
     public void nextResearchRate(boolean click) {
         if (click) softClick();
-        options().selectedResearchRate(options().nextResearchRate());
+        newGameOptions().selectedResearchRate(newGameOptions().nextResearchRate());
         repaint();
     }
     public void increaseOpponents(boolean click) {
-        int numOpps = options().selectedNumberOpponents();
-        if (numOpps >= options().maximumOpponentsOptions())
+        int numOpps = newGameOptions().selectedNumberOpponents();
+        if (numOpps >= newGameOptions().maximumOpponentsOptions())
             return;
         if (click) softClick();
-        options().selectedNumberOpponents(numOpps+1);
+        newGameOptions().selectedNumberOpponents(numOpps+1);
         repaint();
     }
     public void decreaseOpponents(boolean click) {
-        int numOpps = options().selectedNumberOpponents();
+        int numOpps = newGameOptions().selectedNumberOpponents();
         if (numOpps <= 0)
             return;
         if (click) softClick();
-        options().selectedOpponentRace(numOpps-1,null);
-        options().selectedNumberOpponents(numOpps-1);
+        newGameOptions().selectedOpponentRace(numOpps-1,null);
+        newGameOptions().selectedNumberOpponents(numOpps-1);
         repaint();
     }
     public void nextOpponent(int i, boolean click) {
         if (click) softClick();
-        options().nextOpponent(i);
+        newGameOptions().nextOpponent(i);
         repaint();
     }
     public void prevOpponent(int i, boolean click) {
         if (click) softClick();
-        options().prevOpponent(i);
+        newGameOptions().prevOpponent(i);
         repaint();
     }
     public void goToSettings() {
@@ -416,13 +416,13 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
     }
     public void startGame() {
         starting = true;
-        Race r = Race.keyed(options().selectedPlayerRace());
-        GameUI.gameName = r.setupName()+ " - "+text(options().selectedGalaxySize())+ " - "+text(options().selectedGameDifficulty());
+        Race r = Race.keyed(newGameOptions().selectedPlayerRace());
+        GameUI.gameName = r.setupName()+ " - "+text(newGameOptions().selectedGalaxySize())+ " - "+text(newGameOptions().selectedGameDifficulty());
         repaint();
         buttonClick();
         final Runnable save = () -> {
             long start = System.currentTimeMillis();
-            GameSession.instance().startGame();
+            GameSession.instance().startGame(newGameOptions());
             RotPUI.instance().mainUI().checkMapInitialized();
             RotPUI.instance().selectIntroPanel();
             log("TOTAL GAME START TIME:" +(System.currentTimeMillis()-start));
@@ -443,7 +443,7 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         backImg = newOpaqueImage(w, h);
         Graphics2D g = (Graphics2D) backImg.getGraphics();
         setFontHints(g);
-        Race race = Race.keyed(options().selectedPlayerRace());
+        Race race = Race.keyed(newGameOptions().selectedPlayerRace());
 
         // background image
         Image back = GameUI.background();
@@ -667,29 +667,29 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         g.dispose();
     }
     private String randomEventsStr() {
-        String opt = text(options().selectedRandomEventOption());
+        String opt = text(newGameOptions().selectedRandomEventOption());
         return text("GAME_RANDOM_EVENTS", opt)+"     ";
     }
     private String colonizePromptStr() {
-        if (options().disableColonizePrompt())
+        if (newGameOptions().disableColonizePrompt())
             return text("GAME_COLONIZE_PROMPT_OFF")+"     ";
         else
             return text("GAME_COLONIZE_PROMPT_ON")+"    ";
     }
     private String researchRateStr() {
-        String opt = text(options().selectedResearchRate());
+        String opt = text(newGameOptions().selectedResearchRate());
         return text("GAME_RESEARCH_RATE", opt)+"     ";
     }
     private String techTradingStr() {
-        String opt = text(options().selectedTechTradeOption());
+        String opt = text(newGameOptions().selectedTechTradeOption());
         return text("GAME_TECH_TRADING", opt)+"     ";
     }
     private String galaxyAgeStr() {
-        String opt = text(options().selectedGalaxyAge());
+        String opt = text(newGameOptions().selectedGalaxyAge());
         return text("GAME_GALAXY_AGE", opt)+"     ";
     }
     private String aiStr() {
-        if (options().communityAI())
+        if (newGameOptions().communityAI())
             return text("GAME_AI_DEVELOPMENT")+"     ";
         else
             return text("GAME_AI_BASE")+"    ";

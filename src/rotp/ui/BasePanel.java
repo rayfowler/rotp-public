@@ -125,7 +125,7 @@ public class BasePanel extends JPanel implements Base {
 
     public boolean useNullClick(int cnt, boolean right) { return false; }
     public boolean useClickedSprite(Sprite o, int count, boolean rightClick)   { return false; }
-    public boolean useHoveringSprite(Sprite o)             { return false; }
+    public boolean useHoveringSprite(Sprite o)          { return false; }
 
     public JFrame frame()                  { return (JFrame) SwingUtilities.getRoot(RotPUI.instance()); }
     public void enableGlassPane(BasePanel p) {

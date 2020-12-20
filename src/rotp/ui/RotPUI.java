@@ -39,6 +39,8 @@ import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.Transport;
 import rotp.model.game.GameListener;
 import rotp.model.game.GameSession;
+import rotp.model.game.IGameOptions;
+import rotp.model.game.MOO1GameOptions;
 import rotp.model.planet.PlanetFactory;
 import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipLibrary;
@@ -120,6 +122,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener, Ga
     }
 
     public static boolean useDebugFile = false;
+    public static IGameOptions newGameOptions;
 
     private static final String SETUP_RACE_PANEL = "SetupRace";
     private static final String SETUP_GALAXY_PANEL = "SetupGalaxy";
@@ -278,6 +281,9 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener, Ga
         //toggleAnimations();
         repaint();
     }
+    public static IGameOptions newOptions()             { return newGameOptions; }
+    public static void createNewOptions()               { newGameOptions = new MOO1GameOptions(); }
+    public static void clearNewOptions()                { newGameOptions = null; }
 
     public void toggleAnimations() {
         if (playAnimations())

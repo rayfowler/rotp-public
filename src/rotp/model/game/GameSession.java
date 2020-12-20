@@ -234,8 +234,10 @@ public final class GameSession implements Base, Serializable {
     public GameSession() {
         options(RulesetManager.current().defaultRuleset());
     }
-    public void startGame() {
+    public void startGame(IGameOptions newGameOptions) {
         stopCurrentGame();
+        
+        options = newGameOptions;
         startExecutors();
         
         synchronized(ONE_GAME_AT_A_TIME) {
@@ -248,6 +250,7 @@ public final class GameSession implements Base, Serializable {
             shipsConstructed().clear();
             galaxy().startGame();
             saveRecentSession(false);
+            clearNewGameOptions();
         }
     }
     private void  startExecutors() {

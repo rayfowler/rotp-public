@@ -34,6 +34,8 @@ import java.awt.image.BufferedImage;
 import java.util.List;
 import javax.swing.JTextField;
 import rotp.model.empires.Race;
+import rotp.model.game.IGameOptions;
+import rotp.model.game.MOO1GameOptions;
 import rotp.ui.BasePanel;
 import rotp.ui.RotPUI;
 
@@ -75,8 +77,9 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         initTextField(leaderName);
     }
     public void init() {
+        createNewGameOptions();
         raceChanged();
-        options().galaxyShape().quickGenerate();
+        newGameOptions().galaxyShape().quickGenerate();
     }
     @Override
     public void paintComponent(Graphics g0) {
@@ -101,8 +104,8 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         g.drawImage(raceImg(), scaled(425), scaled(108), scaled(385), scaled(489), null);
 
         // selected race box
-        List<String> races = options().startingRaceOptions();
-        String selRace = options().selectedPlayerRace();
+        List<String> races = newGameOptions().startingRaceOptions();
+        String selRace = newGameOptions().selectedPlayerRace();
         for (int i=0;i<races.size();i++) {
             if (races.get(i).equals(selRace)) {
                 Rectangle box = raceBox[i];
@@ -131,7 +134,7 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         int x0 = colorBox[0].x;
 
         // race icon
-        Race race = Race.keyed(options().selectedPlayerRace());
+        Race race = Race.keyed(newGameOptions().selectedPlayerRace());
         int iconH = scaled(115);
         BufferedImage icon = newBufferedImage(race.flagNorm());
         int imgX = scaled(855);
@@ -220,7 +223,7 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
             int yC = colorBox[i].y;
             int wC = colorBox[i].width;
             int hC = colorBox[i].height;
-            Color c = options().color(i);
+            Color c = newGameOptions().color(i);
             if (hoverBox == colorBox[i]) {
                 Stroke prev = g.getStroke();
                 g.setStroke(BasePanel.stroke2);
@@ -228,7 +231,7 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
                 g.drawRect(xC, yC, wC, hC);
                 g.setStroke(prev);
             }
-            if (options().selectedPlayerColor() == i) {
+            if (newGameOptions().selectedPlayerColor() == i) {
                 g.setColor(c);
                 g.fillRect(xC, yC, wC, hC);
                 Stroke prev = g.getStroke();
@@ -278,30 +281,30 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         raceImg = null;
     }
     public void selectRace(int i) {
-        String selRace = options().selectedPlayerRace();
-        List<String> races = options().startingRaceOptions();
+        String selRace = newGameOptions().selectedPlayerRace();
+        List<String> races = newGameOptions().startingRaceOptions();
         if (i <= races.size()) {
             if (!selRace.equals(races.get(i))) {
-                options().selectedPlayerRace(races.get(i));
+                newGameOptions().selectedPlayerRace(races.get(i));
                 raceChanged();
                 repaint();
             }
         }
     }
     public void raceChanged() {
-        Race r =  Race.keyed(options().selectedPlayerRace());
+        Race r =  Race.keyed(newGameOptions().selectedPlayerRace());
         r.resetMugshot();
         r.resetSetupImage();
         leaderName.setText(r.randomLeaderName());
-        options().selectedLeaderName(leaderName.getText());
+        newGameOptions().selectedLeaderName(leaderName.getText());
         homeWorld.setText(r.defaultHomeworldName());
-        options().selectedHomeWorldName(homeWorld.getText());
+        newGameOptions().selectedHomeWorldName(homeWorld.getText());
         raceImg = null;
     }
     public void selectColor(int i) {
-        int selColor = options().selectedPlayerColor();
+        int selColor = newGameOptions().selectedPlayerColor();
         if (selColor != i) {
-            options().selectedPlayerColor(i);
+            newGameOptions().selectedPlayerColor(i);
             repaint();
         }
     }
@@ -319,7 +322,7 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
     }
     private BufferedImage raceImg() {
         if (raceImg == null) {
-            String selRace = options().selectedPlayerRace();
+            String selRace = newGameOptions().selectedPlayerRace();
             raceImg = newBufferedImage(Race.keyed(selRace).setupImage());
         }
         return raceImg;
@@ -412,7 +415,7 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         int hC = s15;
         for (int i=0;i<MAX_COLORS;i++) {
             int yC1 = i%2 == 0 ? yC : yC+hC+s5;
-            Color c = options().color(i);
+            Color c = newGameOptions().color(i);
             Color c0 = new Color(c.getRed(), c.getGreen(), c.getBlue(), 128);
             g.setColor(c0);
             g.fillRect(xC, yC1, wC, hC);
@@ -438,7 +441,7 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         BufferedImage back = raceBackImg();
         g.drawImage(back, x, y, null);
 
-        List<String> races = options().startingRaceOptions();
+        List<String> races = newGameOptions().startingRaceOptions();
         if (num >= races.size())
             return;
 
@@ -556,11 +559,11 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
     @Override
     public void mouseExited(MouseEvent e) {
         if (e.getComponent() == leaderName) {
-            options().selectedLeaderName(leaderName.getText());
+            newGameOptions().selectedLeaderName(leaderName.getText());
             RotPUI.instance().requestFocus();
         }
         else if (e.getComponent() == homeWorld) {
-            options().selectedHomeWorldName(homeWorld.getText());
+            newGameOptions().selectedHomeWorldName(homeWorld.getText());
             RotPUI.instance().requestFocus();
         }
         if (hoverBox != null) {
