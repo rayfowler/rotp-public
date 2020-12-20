@@ -678,6 +678,7 @@ PLANETS_LIST_WASTE                | Waste
 PLANETS_LIST_BASES                | Bases
 PLANETS_LIST_SHIELD               | Shield
 PLANETS_LIST_PRODUCTION           | Prod
+PLANETS_LIST_CAPACITY             | Capacity
 PLANETS_LIST_RESERVE              | Reserve
 PLANETS_LIST_SHIPYARD             | Shipyard
 PLANETS_LIST_NOTES                | Notes
@@ -707,6 +708,7 @@ PLANETS_HELP_3D                   | Factories - Number of factories, including c
 PLANETS_HELP_3E                   | Production - total production for colony.
 PLANETS_HELP_3F                   | Reserve - total reserve currently stored on colony.
 PLANETS_HELP_3G                   | Notes - Player system notes. Editable.
+PLANETS_HELP_3H                   | Capacity - pct of maximum possible production.
 PLANETS_HELP_4A                   | Name - The name for your system. Editable.
 PLANETS_HELP_4B                   | Population - Current population, including change from previous turn.
 PLANETS_HELP_4C                   | Resources - for Rich, Poor and Artifact planets.

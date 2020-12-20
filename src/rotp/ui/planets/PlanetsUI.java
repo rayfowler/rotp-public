@@ -404,17 +404,23 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 3, text("PLANETS_HELP_3E"));
         sp6.setLine(scaled(565), y6, scaled(565), s77);
         
-        int x7 = scaled(590);
-        int w7 = scaled(210);
-        int y7 = scaled(190);
-        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7,y7,w7, 3, text("PLANETS_HELP_3F"));
-        sp7.setLine(scaled(630), y7, scaled(630), s77);
+        int x9 = scaled(590);
+        int w9 = scaled(210);
+        int y9 = scaled(190);
+        HelpUI.HelpSpec sp9 = helpUI.addBrownHelpText(x9,y9,w9, 3, text("PLANETS_HELP_3H"));
+        sp9.setLine(scaled(630), y9, scaled(630), s77);
         
-        int x8 = scaled(700);
+        int x7 = scaled(640);
+        int w7 = scaled(180);
+        int y7 = scaled(100);
+        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7,y7,w7, 3, text("PLANETS_HELP_3F"));
+        sp7.setLine(scaled(690), y7, scaled(690), s77);
+        
+        int x8 = scaled(810);
         int w8 = scaled(210);
-        int y8 = scaled(100);
+        int y8 = scaled(190);
         HelpUI.HelpSpec sp8 = helpUI.addBrownHelpText(x8,y8,w8, 3, text("PLANETS_HELP_3G"));
-        sp8.setLine(scaled(805), y8, scaled(805), s77);
+        sp8.setLine(scaled(835), y8, scaled(835), s77);
     }
     private void loadHelpUI2c() {
         HelpUI helpUI = RotPUI.helpUI();
@@ -573,6 +579,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         Column notesCol = listingUI.newSystemNotesColumn(notesField, "PLANETS_LIST_NOTES", "NOTES", 999, palette.black);
         Column factoriesCol = listingUI.newSystemDeltaDataColumn("PLANETS_LIST_FACTORIES", "FACTORIES", 110, palette.black, StarSystem.FACTORIES, RIGHT);
         Column productionCol = listingUI.newSystemDataColumn("PLANETS_LIST_PRODUCTION", "INCOME", 60, palette.black, StarSystem.INCOME, RIGHT);
+        Column capacityCol = listingUI.newSystemDataColumn("PLANETS_LIST_CAPACITY", "CAPACITY", 60, palette.black, StarSystem.CAPACITY, RIGHT);
         Column indRsvCol = listingUI.newSystemDataColumn("PLANETS_LIST_RESERVE", "RESERVE", 60, palette.black, StarSystem.INDUSTRY_RESERVE, RIGHT);
         Column basesCol = listingUI.newSystemDeltaDataColumn("PLANETS_LIST_BASES", "BASES", 70, palette.black, StarSystem.BASES, RIGHT);
         Column shieldCol = listingUI.newSystemDataColumn("PLANETS_LIST_SHIELD", "SHIELD", 70, palette.black, StarSystem.SHIELD, RIGHT);
@@ -597,6 +604,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         indView.addColumn(resourceCol);
         indView.addColumn(factoriesCol);
         indView.addColumn(productionCol);
+        indView.addColumn(capacityCol);
         indView.addColumn(indRsvCol);
         indView.addColumn(notesCol);
         views.put(INDUSTRY_MODE, indView);

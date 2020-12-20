@@ -34,8 +34,6 @@ import java.awt.image.BufferedImage;
 import java.util.List;
 import javax.swing.JTextField;
 import rotp.model.empires.Race;
-import rotp.model.game.IGameOptions;
-import rotp.model.game.MOO1GameOptions;
 import rotp.ui.BasePanel;
 import rotp.ui.RotPUI;
 
@@ -119,7 +117,7 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
             }
         }
 
-        // hovering race box outline
+        // hovering race b`ox outline
         for (int i=0;i<raceBox.length;i++) {
             if (raceBox[i] == hoverBox) {
                 Stroke prev = g.getStroke();
