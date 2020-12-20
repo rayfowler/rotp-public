@@ -425,7 +425,7 @@ public final class SabotageUI extends BasePanel implements MouseListener {
         
         public SabotageButtonsPanel() {
             init();
-            setPreferredSize(new Dimension(getWidth(),scaled(140)));
+            setPreferredSize(new Dimension(getWidth(),scaled(200)));
         }
         private void init() {
             setBackground(MainUI.paneBackground());
@@ -441,10 +441,28 @@ public final class SabotageUI extends BasePanel implements MouseListener {
             int w = getWidth();
             int h = getHeight();
             
+            int messageH = s60;
+
+            Empire pl = player();
+            StarSystem sys = instance.systemToDisplay();
+            boolean treatyBreak = pl.pactWith(mission.target().id) || pl.alliedWith(mission.target().id);
+            String prompt = treatyBreak ? text("SABOTAGE_WARNING", mission.target().name()) : text("SABOTAGE_PROMPT",mission.target().name(), sys.name());
+            
+            if (treatyBreak)
+                g.setColor(SystemPanel.redText);
+            else
+                g.setColor(SystemPanel.blackText);
+            g.setFont(narrowFont(15));
+            List<String> lines = this.wrappedLines(g, prompt, w-s20);
+            int y0 = s10;
+            for (String line: lines) {
+                y0 += s16;
+                g.drawString(line, s10, y0);
+            }
             int buttonW = w-s3;
-            int buttonH = (h-s25)/4; // -s25 is because 4 buttons at -s5 spacing/button
+            int buttonH = (h-messageH-s25)/4; // -s25 is because 4 buttons at -s5 spacing/button
             int buttonX = s1;
-            int buttonY = s5;
+            int buttonY = s10+messageH;
             if (greenBackground == null) {
                 float[] dist = {0.0f, 0.5f, 1.0f};
                 Point2D ptStart = new Point2D.Float(buttonX, 0);

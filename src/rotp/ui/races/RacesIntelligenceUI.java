@@ -645,12 +645,19 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         drawManageSpiesButton(g, x+s20,y+h-s45,w-s40,s25);
     }
     private void drawAISpyOrders(Graphics2D g, Empire emp, int x, int y, int w, int h) {
-        EmpireView view = player().viewForEmpire(emp);
+        Empire pl = player();
+        EmpireView view = pl.viewForEmpire(emp);
         
         // no spy orders for new republic allies
         if (view.embassy().unity())
             return;
         
+        boolean treatyBreak = false;
+        if (!view.spies().isHide() && pl.alliedWith(emp.id))
+            treatyBreak = true;
+        else if (view.spies().isSabotage() && pl.pactWith(emp.id))
+            treatyBreak = true;           
+
         g.setColor(RacesUI.darkBrown);
         g.fillRect(x, y, w, h);
 
@@ -662,9 +669,9 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         int y0 = y+s25;
         drawShadowedString(g, title, 1, x0, y0, SystemPanel.blackText, SystemPanel.whiteText);
        
-        int y1 = y0+s20;
+        int y1 = y0+s10;
         int sliderH = s20;
-        drawSpiesMissionButton(g, emp, x+s40,y1,w-s80,sliderH);
+        drawSpiesMissionButton(g, emp, treatyBreak, x+s40,y1,w-s80,sliderH);
         
         int y2 = y1+sliderH+s10;
 
@@ -675,6 +682,18 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         for (String line: lines) {
             y2 += s16;
             g.drawString(line, x+s15, y2);
+        }
+        
+        if (treatyBreak) {
+            g.setColor(SystemPanel.yellowText);
+            String desc2 = text("RACES_INTEL_SPY_WARNING", emp.raceName());
+            y2 += s5;
+            List<String> lines2 = wrappedLines(g, desc2, w-s30);
+            for (String line: lines2) {
+                y2 += s16;
+                g.drawString(line, x+s15, y2);
+            }
+            
         }
     }
     private void drawSecuritySliderBar(Graphics2D g, int x, int y, int w, int h) {
@@ -731,7 +750,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
             g.drawString(spyCost, xa, ya);
         }
     }
-    private void drawSpiesMissionButton(Graphics2D g, Empire emp, int x, int y, int w, int h) {
+    private void drawSpiesMissionButton(Graphics2D g, Empire emp, boolean treatyBreak, int x, int y, int w, int h) {
         int leftM = x;
         int rightM = x+w;
         int buttonW = s10;
@@ -772,9 +791,13 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         g.setColor(Color.black);
         g.fillRect(barX, barY, barW, barH);
         spyMissionBox.setBounds(barX, barY, barW, barH);
-
-        EmpireView view = player().viewForEmpire(emp);
-        g.setColor(sliderBoxBlue);
+       
+        if (treatyBreak)
+            g.setColor(SystemPanel.redText);
+        else
+            g.setColor(sliderBoxBlue);
+        
+        EmpireView view = player().viewForEmpire(emp.id);
         String name = view.spies().missionName();
         scaledFont(g, name, barW-s5, 18, 14);
         int sw = g.getFontMetrics().stringWidth(name);

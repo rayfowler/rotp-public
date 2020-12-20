@@ -250,6 +250,9 @@ public final class SpyNetwork implements Base, Serializable {
 
         boolean spyConfessed = sendSpiesToInfiltrate();
 
+        if (spyConfessed)
+            checkForTreatyBreak();
+
         if (spyConfessed || activeSpies.isEmpty() || isHide())
             return;
 
@@ -338,6 +341,8 @@ public final class SpyNetwork implements Base, Serializable {
             if (victimView != null)
                 victimView.embassy().addIncident(new EspionageTechIncident(victimView, eMission));
         }
+        if (bestSpy.caught())
+            checkForTreatyBreak();
     }
     private EspionageMission chooseTechToSteal(Spy spy, List<Tech> techs) {
         if (techs.isEmpty())
@@ -360,6 +365,24 @@ public final class SpyNetwork implements Base, Serializable {
         }
 
         return eMission;
+    }
+    public void checkForTreatyBreak() {
+        Empire victim = empire();
+        
+        // player can declare his own wars
+        if (victim.isPlayerControlled())
+            return;
+        
+        if (!isHide() && owner().alliedWith(victim.id)) {
+            view.embassy().breakAlliance();
+            view.breakAllTreaties();
+            return;
+        }
+        if (isSabotage() && owner().pactWith(victim.id)) {
+            view.embassy().breakPact();
+            view.breakAllTreaties();
+            return;
+        }
     }
     public void setSuggestedAllocations() {
         owner().spyMasterAI().setSpyingAllocation(view);
@@ -457,7 +480,7 @@ public final class SpyNetwork implements Base, Serializable {
                 eMission.destroyFactories(chosenSystem); break;
             case MISSILES:
                 eMission.destroyMissileBases(chosenSystem); break;
-         case REBELS:
+            case REBELS:
                 eMission.inciteRebellion(chosenSystem); break;
         }
     }

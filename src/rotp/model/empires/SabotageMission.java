@@ -87,6 +87,7 @@ public class SabotageMission implements Base, Serializable {
         if (factoriesDestroyed > 0) {
             sys.colony().industry().factories(factories-factoriesDestroyed);
             SabotageFactoriesIncident.addIncident(this);
+            spies.checkForTreatyBreak();
         }
     }
     public void destroyMissileBases(StarSystem sys) {
@@ -106,6 +107,7 @@ public class SabotageMission implements Base, Serializable {
         if (missileBasesDestroyed > 0) {
             sys.colony().defense().destroyBases(missileBasesDestroyed);
             SabotageBasesIncident.addIncident(this);
+            spies.checkForTreatyBreak();
         }
     }
     public void inciteRebellion(StarSystem sys) {
@@ -121,8 +123,10 @@ public class SabotageMission implements Base, Serializable {
         float pct = roll(2,10)/100.0f;
         rebelsIncited = col.inciteRebels(pct, "GNN_PLAYER_REBELLION");
 
-        if (rebelsIncited > 0)
+        if (rebelsIncited > 0) {
             SabotageRebellionIncident.addIncident(this);
+            spies.checkForTreatyBreak();
+        }
     }
     public void cancelMission() {
         missionType = NO_ACTION;

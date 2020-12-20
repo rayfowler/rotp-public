@@ -1444,6 +1444,7 @@ RACES_INTEL_BUREAU_MANAGE         | Manage Spies
 RACES_INTEL_BUREAU_SPENDING       | Total Spending
 RACES_INTEL_SPY_ORDERS            | Spy Orders
 RACES_INTEL_SPY_ORDERS_DESC       | Assign your spies to hide, steal secrets, or sabotage %1 colonies. The larger your spy network, the greater chance of success each turn as long as none of your spies is captured and confesses.
+RACES_INTEL_SPY_WARNING           | If discovered, this mission will break our treaty with the %1.
 RACES_INTEL_KNOWN_TECHNOLOGY      | %1 Known Technology
 RACES_INTEL_KNOWN_TECH_DESC       | Our spies report the %1 have mastered the following technologies. Any technology unknown to us is highlighted.
 RACES_INTEL_UNKNOWN_TECHNOLOGY    | Unknown Technology Report
@@ -1531,6 +1532,8 @@ RACES_HELP_6G                     | Total Power - a combination of fleet strengt
 
 // Sabotage UI
 SABOTAGE_TITLE                    | Our spies have infiltrated %1 colonies and are ready to carry out orders.
+SABOTAGE_PROMPT                   | Select the form of sabotage to commit against the %1 in the %2 system.
+SABOTAGE_WARNING                  | Warning! Any act of sabotage will break our treaty with the %1.
 SABOTAGE_SELECT_TARGET            | Select a target
 SABOTAGE_BUTTON_FACTORIES         | Destroy Factories
 SABOTAGE_BUTTON_BASES             | Destroy Missile Bases
