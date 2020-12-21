@@ -55,7 +55,7 @@ public class ColonyIndustry extends ColonySpendingCategory {
     public int maxUseableFactories()     { return maxUseableFactories(robotControls()); }
     public int maxUseableFactories(int rc) { return (int) colony().population() * (rc+empire().race().robotControlsAdj()); }
     @Override
-    public boolean isCompleted()         { return factories >= maxFactories(); }
+    public boolean isCompleted()         { return factories >= maxBuildableFactories(); }
     public boolean isCompletedThisTurn() { return isCompleted() && (newFactories > 0); }
     @Override
     public float orderedValue()         { return max(super.orderedValue(), colony().orderAmount(Colony.Orders.FACTORIES)); }
@@ -144,16 +144,20 @@ public class ColonyIndustry extends ColonySpendingCategory {
     }
     @Override
     public void assessTurn() {
-        if (isCompleted()) {
+        if (isCompletedThisTurn()) {
             Colony c = colony();
             float orderAmt = c.orderAmount(Colony.Orders.FACTORIES);
             if (orderAmt > 0) {
                 c.removeColonyOrder(Colony.Orders.FACTORIES);
-                if (!c.defense().shieldAtMaxLevel())
-                    c.addColonyOrder(Colony.Orders.SHIELD, orderAmt);
-                else if (!c.defense().missileBasesCompleted())
-                    c.addColonyOrder(Colony.Orders.BASES, orderAmt*2/5);
-            }        
+                //if (!c.defense().shieldAtMaxLevel())
+                //    c.addColonyOrder(Colony.Orders.SHIELD, orderAmt);
+                //else if (!c.defense().missileBasesCompleted())
+                //    c.addColonyOrder(Colony.Orders.BASES, orderAmt*2/5);
+            }   
+            else {
+                empire().governorAI().setColonyAllocations(c);
+                c.validate();
+            }
         }
     }
     public void commitTurn() {

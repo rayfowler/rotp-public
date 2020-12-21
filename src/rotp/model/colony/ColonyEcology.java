@@ -177,7 +177,7 @@ public class ColonyEcology extends ColonySpendingCategory {
                 float orderAmt = c.orderAmount(Colony.Orders.TERRAFORM);
                 if (orderAmt > 0) {
                     c.removeColonyOrder(Colony.Orders.TERRAFORM);
-                    c.addColonyOrder(Colony.Orders.FACTORIES, orderAmt);
+                    //c.addColonyOrder(Colony.Orders.FACTORIES, orderAmt);
                 }
             }
         }
@@ -213,12 +213,17 @@ public class ColonyEcology extends ColonySpendingCategory {
     }
     @Override
     public void assessTurn() {
-        populationGrowthCompleted = ((newGrownPopulation+newPurchasedPopulation) > 0) && (colony().population() >= colony().maxSize());
+        Colony c = colony();
+        populationGrowthCompleted = ((newGrownPopulation+newPurchasedPopulation) > 0) && (c.population() >= c.maxSize());
         if (populationGrowthCompleted) {
-            float orderAmt = colony().orderAmount(Colony.Orders.TERRAFORM);
+            float orderAmt = c.orderAmount(Colony.Orders.TERRAFORM);
             if (orderAmt > 0) {
-                colony().removeColonyOrder(Colony.Orders.TERRAFORM);
-                colony().addColonyOrder(Colony.Orders.FACTORIES, orderAmt);
+                c.removeColonyOrder(Colony.Orders.TERRAFORM);
+                //colony().addColonyOrder(Colony.Orders.FACTORIES, orderAmt);
+            }
+            else {
+                c.empire().governorAI().setColonyAllocations(c);
+                c.validate();
             }
         }
     }
