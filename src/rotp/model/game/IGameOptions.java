@@ -102,6 +102,13 @@ public interface IGameOptions {
     public static final String WARP_SPEED_NORMAL = "SETUP_WARP_SPEED_NORMAL";
     public static final String WARP_SPEED_FAST   = "SETUP_WARP_SPEED_FAST";
     
+    public static final String NEBULAE_NONE      = "SETUP_NEBULA_NONE";
+    public static final String NEBULAE_RARE      = "SETUP_NEBULA_RARE";
+    public static final String NEBULAE_NORMAL    = "SETUP_NEBULA_NORMAL";
+    
+    public static final String COUNCIL_IMMEDIATE = "SETUP_COUNCIL_IMMEDIATE";
+    public static final String COUNCIL_REBELS    = "SETUP_COUNCIL_REBELS";
+    
     public default boolean isAutoPlay()          { return false; }
     public default boolean communityAI()         { return false; }
     public default void communityAI(boolean b)   { }
@@ -142,6 +149,8 @@ public interface IGameOptions {
     public List<String> techTradingOptions();
     public List<String> randomEventOptions();
     public List<String> warpSpeedOptions();
+    public List<String> nebulaeOptions();
+    public List<String> councilWinOptions();
 	
     // modnar: new map option, MapOptionOptions
     public List<String> MapOptionOptions();
@@ -164,6 +173,10 @@ public interface IGameOptions {
     public void selectedRandomEventOption(String s);
     public String selectedWarpSpeedOption();
     public void selectedWarpSpeedOption(String s);
+    public String selectedNebulaeOption();
+    public void selectedNebulaeOption(String s);
+    public String selectedCouncilWinOption();
+    public void selectedCouncilWinOption(String s);
 	
     // modnar: new map option, selectedMapOption
     public String selectedMapOption();
@@ -188,6 +201,9 @@ public interface IGameOptions {
     public String selectedOpponentRace(int i);
     public void selectedOpponentRace(int i, String s);
 
+    
+    default boolean immediateCouncilWin()   { return selectedCouncilWinOption().equals(COUNCIL_IMMEDIATE); }
+    
     default String nextGalaxySize(boolean bounded) {
         List<String> opts = galaxySizeOptions();
         int index = opts.indexOf(selectedGalaxySize())+1;
@@ -257,6 +273,16 @@ public interface IGameOptions {
     default String nextWarpSpeedOption() {
         List<String> opts = warpSpeedOptions();
         int index = opts.indexOf(selectedWarpSpeedOption())+1;
+        return index >= opts.size() ? opts.get(0) : opts.get(index);
+    }
+    default String nextNebulaeOption() {
+        List<String> opts = nebulaeOptions();
+        int index = opts.indexOf(selectedNebulaeOption())+1;
+        return index >= opts.size() ? opts.get(0) : opts.get(index);
+    }
+    default String nextCouncilWinOption() {
+        List<String> opts = councilWinOptions();
+        int index = opts.indexOf(selectedCouncilWinOption())+1;
         return index >= opts.size() ? opts.get(0) : opts.get(index);
     }
     default void nextOpponent(int i) {

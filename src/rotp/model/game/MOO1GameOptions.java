@@ -70,6 +70,8 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private String selectedTechTradeOption;
     private String selectedRandomEventOption;
     private String selectedWarpSpeedOption;
+    private String selectedNebulaeOption;
+    private String selectedCouncilWinOption;
     private int selectedNumberOpponents;
     private boolean communityAI = false;
     private boolean disableRandomEvents = false;
@@ -152,6 +154,14 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     public String selectedWarpSpeedOption()         { return selectedWarpSpeedOption; }
     @Override
     public void selectedWarpSpeedOption(String s)   { selectedWarpSpeedOption = s; }
+    @Override
+    public String selectedNebulaeOption()           { return selectedNebulaeOption; }
+    @Override
+    public void selectedNebulaeOption(String s)     { selectedNebulaeOption = s; }
+    @Override
+    public String selectedCouncilWinOption()        { return selectedCouncilWinOption; }
+    @Override
+    public void selectedCouncilWinOption(String s)  { selectedCouncilWinOption = s; }
     @Override
     public int selectedNumberOpponents()         { return selectedNumberOpponents; }
     @Override
@@ -308,6 +318,12 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     }
     @Override
     public int numberNebula() {
+        if (selectedNebulaeOption().equals(NEBULAE_NONE))
+            return 0;
+        
+        float freq = 1.0f;
+        if (selectedNebulaeOption().equals(NEBULAE_RARE))
+            freq = 0.25f;
         // MOO Strategy Guide, Table 3-3, p.51
         /*
         switch (selectedGalaxySize()) {
@@ -319,8 +335,8 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         default: return roll(1,2);
         }
         */
-        int n = this.numberStarSystems();
-        return roll(n/50, n/25);
+        int n = numberStarSystems();
+        return (int) (freq*roll(n/50, n/25));
     }
     @Override
     public float researchCostBase(int techLevel) {
@@ -598,6 +614,21 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         return list;
     }
     @Override
+    public List<String> nebulaeOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(NEBULAE_NONE);
+        list.add(NEBULAE_RARE);
+        list.add(NEBULAE_NORMAL);
+        return list;
+    }
+    @Override
+    public List<String> councilWinOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(COUNCIL_IMMEDIATE);
+        list.add(COUNCIL_REBELS);
+        return list;
+    }
+    @Override
     public List<String> startingRaceOptions() {
         List<String> list = new ArrayList<>();
         list.add("RACE_HUMAN");
@@ -630,6 +661,8 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedTechTradeOption = TECH_TRADING_YES;
         selectedRandomEventOption = RANDOM_EVENTS_ON;
         selectedWarpSpeedOption = WARP_SPEED_NORMAL;
+        selectedNebulaeOption = NEBULAE_NORMAL;
+        selectedCouncilWinOption = COUNCIL_REBELS;
         generateGalaxy();
     }
     private void generateGalaxy() {

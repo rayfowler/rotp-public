@@ -51,6 +51,8 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
     BaseText researchRateText;
     BaseText techTradingText;
     BaseText warpSpeedText;
+    BaseText nebulaeText;
+    BaseText councilWinText;
     
     public StartSettingsUI() {
         init0();
@@ -64,6 +66,8 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         techTradingText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         colonizePromptText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         warpSpeedText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        nebulaeText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        councilWinText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         addMouseListener(this);
         addMouseMotionListener(this);
     }
@@ -74,6 +78,8 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         galaxyAgeText.displayText(galaxyAgeStr());
         colonizePromptText.displayText(colonizePromptStr());
         warpSpeedText.displayText(warpSpeedStr());
+        nebulaeText.displayText(nebulaeStr());
+        councilWinText.displayText(councilWinStr());
     }
     public void open(BasePanel p) {
         parent = p;
@@ -138,7 +144,23 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
             y3 += s20;
             g.drawString(line, x2+s20, y3);
         }
-       
+        
+        y2 += (h2+s20);
+        g.setColor(SystemPanel.blackText);
+        g.drawRect(x2, y2, w2, h2);
+        g.setPaint(GameUI.settingsSetupBackground());
+        g.fillRect(x2+s10, y2-s10, nebulaeText.stringWidth(g)+s10,s30);
+        nebulaeText.setScaledXY(x2+s20, y2+s7);
+        nebulaeText.draw(g);
+        desc = text("SETTINGS_NEBULAE_DESC");
+        g.setColor(SystemPanel.blackText);
+        g.setFont(narrowFont(18));
+        lines = this.wrappedLines(g,desc, w2-s30);
+        y3 = y2+s10;
+        for (String line: lines) {
+            y3 += s20;
+            g.drawString(line, x2+s20, y3);
+        }       
        
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
@@ -165,23 +187,6 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         techTradingText.setScaledXY(x2+s20, y2+s7);
         techTradingText.draw(g);
         desc = text("SETTINGS_TECH_TRADING_DESC");
-        g.setColor(SystemPanel.blackText);
-        g.setFont(narrowFont(18));
-        lines = this.wrappedLines(g,desc, w2-s30);
-        y3 = y2+s10;
-        for (String line: lines) {
-            y3 += s20;
-            g.drawString(line, x2+s20, y3);
-        }
-        
-        y2 += (h2+s20);
-        g.setColor(SystemPanel.blackText);
-        g.drawRect(x2, y2, w2, h2);
-        g.setPaint(GameUI.settingsSetupBackground());
-        g.fillRect(x2+s10, y2-s10, colonizePromptText.stringWidth(g)+s10,s30);
-        colonizePromptText.setScaledXY(x2+s20, y2+s7);
-        colonizePromptText.draw(g);
-        desc = text("SETTINGS_COLONIZE_PROMPT_DESC");
         g.setColor(SystemPanel.blackText);
         g.setFont(narrowFont(18));
         lines = this.wrappedLines(g,desc, w2-s30);
@@ -228,7 +233,41 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
             y3 += s20;
             g.drawString(line, x2+s20, y3);
         }
-        
+          
+        y2 += (h2+s20);
+        g.setColor(SystemPanel.blackText);
+        g.drawRect(x2, y2, w2, h2);
+        g.setPaint(GameUI.settingsSetupBackground());
+        g.fillRect(x2+s10, y2-s10, councilWinText.stringWidth(g)+s30,s30);
+        councilWinText.setScaledXY(x2+s20, y2+s7);
+        councilWinText.draw(g);
+        desc = text("SETTINGS_COUNCIL_DESC");
+        g.setColor(SystemPanel.blackText);
+        g.setFont(narrowFont(18));
+        lines = this.wrappedLines(g,desc, w2-s30);
+        y3 = y2+s10;
+        for (String line: lines) {
+            y3 += s20;
+            g.drawString(line, x2+s20, y3);
+        }
+
+        y2 += (h2+s20);
+        g.setColor(SystemPanel.blackText);
+        g.drawRect(x2, y2, w2, h2);
+        g.setPaint(GameUI.settingsSetupBackground());
+        g.fillRect(x2+s10, y2-s10, colonizePromptText.stringWidth(g)+s10,s30);
+        colonizePromptText.setScaledXY(x2+s20, y2+s7);
+        colonizePromptText.draw(g);
+        desc = text("SETTINGS_COLONIZE_PROMPT_DESC");
+        g.setColor(SystemPanel.blackText);
+        g.setFont(narrowFont(18));
+        lines = this.wrappedLines(g,desc, w2-s30);
+        y3 = y2+s10;
+        for (String line: lines) {
+            y3 += s20;
+            g.drawString(line, x2+s20, y3);
+        }
+
         g.setStroke(prev);
 
         // draw settings button
@@ -277,6 +316,14 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         String opt = text(newGameOptions().selectedWarpSpeedOption());
         return text("SETTINGS_WARP_SPEED", opt)+"     ";
     }
+    private String nebulaeStr() {
+        String opt = text(newGameOptions().selectedNebulaeOption());
+        return text("SETTINGS_NEBULAE", opt)+"     ";
+    }
+    private String councilWinStr() {
+        String opt = text(newGameOptions().selectedCouncilWinOption());
+        return text("SETTINGS_COUNCIL_WIN", opt)+"     ";
+    }
     private void toggleGalaxyAge() {
         softClick();
         newGameOptions().selectedGalaxyAge(newGameOptions().nextGalaxyAge());
@@ -307,6 +354,16 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         softClick();
         newGameOptions().selectedWarpSpeedOption(newGameOptions().nextWarpSpeedOption());
         warpSpeedText.repaint(warpSpeedStr());
+    }
+    private void toggleNebulae(MouseEvent e) {
+        softClick();
+        newGameOptions().selectedNebulaeOption(newGameOptions().nextNebulaeOption());
+        nebulaeText.repaint(nebulaeStr());
+    }
+    private void toggleCouncilWin(MouseEvent e) {
+        softClick();
+        newGameOptions().selectedCouncilWinOption(newGameOptions().nextCouncilWinOption());
+        councilWinText.repaint(councilWinStr());
     }
 
     @Override
@@ -341,6 +398,10 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
             hoverBox = techTradingText.bounds();
         else if (warpSpeedText.contains(x,y))
             hoverBox = warpSpeedText.bounds();
+        else if (nebulaeText.contains(x,y))
+            hoverBox = nebulaeText.bounds();
+        else if (councilWinText.contains(x,y))
+            hoverBox = councilWinText.bounds();
         else if (okBox.contains(x,y))
             hoverBox = okBox;
 		
@@ -357,6 +418,10 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
                 techTradingText.mouseExit();
             else if (prevHover == warpSpeedText.bounds())
                 warpSpeedText.mouseExit();
+            else if (prevHover == nebulaeText.bounds())
+                nebulaeText.mouseExit();
+            else if (prevHover == councilWinText.bounds())
+                councilWinText.mouseExit();
             if (hoverBox == randomEventsText.bounds())
                 randomEventsText.mouseEnter();
             else if (hoverBox == galaxyAgeText.bounds())
@@ -369,6 +434,10 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
                 techTradingText.mouseEnter();
             else if (hoverBox == warpSpeedText.bounds())
                 warpSpeedText.mouseEnter();
+            else if (hoverBox == nebulaeText.bounds())
+                nebulaeText.mouseEnter();
+            else if (hoverBox == councilWinText.bounds())
+                councilWinText.mouseEnter();
            repaint();
         }
     }
@@ -396,6 +465,10 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
             toggleTechTrading(e);
         else if (hoverBox == warpSpeedText.bounds())
             toggleWarpSpeed(e);
+        else if (hoverBox == nebulaeText.bounds())
+            toggleNebulae(e);
+        else if (hoverBox == councilWinText.bounds())
+            toggleCouncilWin(e);
         else if (hoverBox == okBox)
             close();
     }

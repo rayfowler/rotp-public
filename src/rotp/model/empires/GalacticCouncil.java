@@ -203,9 +203,11 @@ public class GalacticCouncil implements Base, Serializable {
         }
         
         // if player won the vote and no rebels, game over
-        if (leader.isPlayer() && rebels.isEmpty()) {
-            session().status().winDiplomatic();
-            return;
+        if (leader.isPlayer()) {
+            if (rebels.isEmpty() || options().immediateCouncilWin()) {
+                session().status().winDiplomatic();
+                return;
+            }
         }
         // if player accepted ruling, also game over
         else if (!leader.isPlayer() && allies.contains(player())) {
