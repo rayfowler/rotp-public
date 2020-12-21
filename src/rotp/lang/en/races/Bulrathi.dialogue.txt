@@ -15,7 +15,7 @@
 // Bulrathi specific dialogue
 
 CONTACT_AGGRESSIVE         | I am ambassador of the [my_empire]. I advise you to stay on the good side of the [my_title], little [your_race]. For he needs only to say the word and your kind will perish beneath a fury you couldn't possibly imagine.
-CONTACT_RUTHLESS           | Such small creatures you are! You need only know two things: first that we are called "[my_race]", and second that opposing our conquest only guarantees your demise!
+CONTACT_RUTHLESS           | Such small creatures you are! You need only know two things: first, that we are called "[my_race]", and second, that opposing our conquest only guarantees your demise!
 CONTACT_ERRATIC            | We of the [my_empire] greet you, little ones. Our destiny lies somewhere among these scattered worlds and burning stars. It'll be interesting to see where you will fit in our grand design.
 //
 GREETING_01                | So you have acted with honor, and so we shall act to honor you. Tell us what you need, little friend. 
