@@ -58,11 +58,20 @@ public class EspionageMission implements Base, Serializable {
         Empire victimEmp = sn.empire();
         List<Empire> spyContacts = spyEmp.contactedEmpires();
         List<Empire> victimContacts = victimEmp.contactedEmpires();
+        
+        // a frameable empire must be:
+        //  1) in contact with the victim
+        //  2) in economic range of the victim
+        //  3) not an ally of the victim
         for (Empire framedEmp : spyContacts) {
-            if (victimContacts.contains(framedEmp) && victimEmp.inEconomicRange(framedEmp.id))
+            if (victimContacts.contains(framedEmp) 
+             && victimEmp.inEconomicRange(framedEmp.id) 
+             && !victimEmp.alliedWith(framedEmp.id))
                 potentialFrames.add(framedEmp);
         }
 
+        // of all of the potential empires we can frame, we 
+        // have the opportunity to choose between two to frame
         if (potentialFrames.size() > 1) {
             Empire frame1 = random(potentialFrames);
             potentialFrames.remove(frame1);
