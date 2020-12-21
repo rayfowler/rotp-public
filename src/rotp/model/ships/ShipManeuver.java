@@ -30,9 +30,9 @@ public final class ShipManeuver extends ShipComponent {
     public TechEngineWarp tech()      { return (TechEngineWarp) super.tech(); }
     @Override
     public String name()              { return tech().item2(); }
-    public int level()                { return tech().warp(); }
+    public int level()                { return tech().baseWarp(); }
     @Override
-    public float power(ShipDesign d) { return tech().baseManeuverPower(d.size(), d.engine().warp()); }
+    public float power(ShipDesign d) { return tech().baseManeuverPower(d.size(), d.engine().baseWarp()); }
     @Override
     public String desc()             { return tech().brief2(); }
     @Override
@@ -41,7 +41,7 @@ public final class ShipManeuver extends ShipComponent {
     public float size(ShipDesign d)  { return 0; }
     @Override
     public float cost(ShipDesign d)  { return (enginesRequired(d) * d.engine().cost(d)); }
-    public int combatSpeed()          { return tech() == null ? 0 : (int) ((tech().warp() + 2) / 2); }
+    public int combatSpeed()          { return tech() == null ? 0 : (int) ((tech().baseWarp() + 2) / 2); }
     @Override
     public String fieldValue(int n, ShipDesign d, int bank) {
         switch(n) {

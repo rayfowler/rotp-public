@@ -44,6 +44,7 @@ public class Transport implements Base, Ship, Sprite, Serializable {
     private int originalSize;
     private float hitPoints;
     private float speed;
+    private float combatSpeed;
     private float combatTransportPct;
     private float combatAdj = 0;
     private float launchTime = NOT_LAUNCHED;
@@ -170,7 +171,8 @@ public class Transport implements Base, Ship, Sprite, Serializable {
         originalSize = size;
         launchTime = gal.currentTime();
         targetEmp = dest.empire();
-        speed = empire.tech().transportSpeed();
+        speed = empire.tech().transportTravelSpeed();
+        combatSpeed = empire.tech().transportCombatSpeed();
         setArrivalTime();
 
         gal.addShipInTransit(this);
@@ -186,7 +188,7 @@ public class Transport implements Base, Ship, Sprite, Serializable {
         troopShieldId = tech.topPersonalShieldTech().id;
     }
     public void setDefaultTravelSpeed() {
-        travelSpeed = from.canStargateTravelTo(dest) ? distanceTo(dest) : empire.transportSpeed(from, dest);
+        travelSpeed = from.canStargateTravelTo(dest) ? distanceTo(dest) : empire.transportTravelSpeed(from, dest);
     }
     @Override
     public boolean canSendTo(int sysId) {
@@ -197,7 +199,7 @@ public class Transport implements Base, Ship, Sprite, Serializable {
         return empire.sv.isScouted(sysId) && empire.sv.isColonized(sysId) && empire.canColonize(sysId) && canSendTo(sysId);
     }
     public int gauntletRounds() {
-        switch((int)speed) {
+        switch((int)combatSpeed) {
             case 0: case 1: case 2: case 3: case 4:
                 return 4;
             case 5: case 6:
@@ -213,7 +215,7 @@ public class Transport implements Base, Ship, Sprite, Serializable {
     public float travelTime(StarSystem dest)    { 
         float normalTime;
         if (speed == 0)
-            normalTime = travelTime(this, dest, empire().tech().transportSpeed());
+            normalTime = travelTime(this, dest, empire().tech().transportTravelSpeed());
         else
             normalTime = travelTime(this, dest, speed); 
         
@@ -258,7 +260,8 @@ public class Transport implements Base, Ship, Sprite, Serializable {
         size += tr.size;
         originalSize += tr.originalSize;
         hitPoints = Math.max(hitPoints, tr.hitPoints);
-        speed = Math.max(speed, tr.speed);
+        speed = max(speed, tr.speed);
+        combatSpeed = max(combatSpeed, tr.combatSpeed);
         combatAdj = Math.max(combatAdj, tr.combatAdj);
         combatTransportPct = Math.max(combatTransportPct, tr.combatTransportPct);
 

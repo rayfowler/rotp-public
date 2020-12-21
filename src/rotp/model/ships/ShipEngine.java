@@ -39,6 +39,7 @@ public final class ShipEngine extends ShipComponent {
     @Override
     public float space(ShipDesign d) { return d.enginesRequired()* size(d); }
     public int warp()                 { return tech().warp();  }
+    public int baseWarp()             { return tech().baseWarp();  }
     @Override
     public String fieldValue(int n, ShipDesign d, int bank) {
         switch(n) {

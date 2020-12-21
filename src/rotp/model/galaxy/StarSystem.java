@@ -226,7 +226,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         if (canStargateTravelTo(s))
             return 1.0f;
         else
-            return distanceTo(s) / empire().transportSpeed(this, s); 
+            return distanceTo(s) / empire().transportTravelSpeed(this, s); 
     }
     public float rallyTimeTo(StarSystem s) {
         Design d = colony().shipyard().design();

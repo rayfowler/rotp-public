@@ -835,8 +835,8 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
         return transports;
     }
-    public float transportSpeed(IMappedObject fr, IMappedObject to) {
-        float time = fr.travelTime(fr, to, tech().transportSpeed());
+    public float transportTravelSpeed(IMappedObject fr, IMappedObject to) {
+        float time = fr.travelTime(fr, to, tech().transportTravelSpeed());
         float dist = fr.distanceTo(to);
         return dist/time;
     }
