@@ -320,56 +320,37 @@ public class RacesUI extends BasePanel {
     private void loadHelpUI6() {
         HelpUI helpUI = RotPUI.helpUI();
 
-        if (selectedEmpire().isPlayer()) {
-            int x2 = scaled(30);
-            int w2 = scaled(190);
+        boolean playerSelected = selectedEmpire().isPlayer();
+        if (playerSelected) {
+            int x2 = scaled(350);
+            int w2 = scaled(300);
             int y2 = scaled(100);
-            HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 3, text("RACES_HELP_6A"));
-            sp2.setLine(scaled(130), y2, scaled(130), s77);
+            HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 5, text("RACES_HELP_6A"));
         }
         else {
-            int x2 = scaled(30);
-            int w2 = scaled(190);
+            int x2 = scaled(350);
+            int w2 = scaled(300);
             int y2 = scaled(100);
-            HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 3, text("RACES_HELP_6A2"));
-            sp2.setLine(scaled(130), y2, scaled(130), s77);
+            HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 5, text("RACES_HELP_6A2"));
         }
         
-        int x3 = scaled(140);
+        int x3 = playerSelected ? scaled(140) : scaled(115);
         int w3 = scaled(190);
-        int y3 = scaled(190);
+        int y3 = scaled(405);
         HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 3, text("RACES_HELP_6B"));
-        sp3.setLine(scaled(240), y3, scaled(240), s77);
         
-        int x4 = scaled(255);
-        int w4 = scaled(190);
-        int y4 = scaled(100);
-        HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y4, w4, 3, text("RACES_HELP_6C"));
-        sp4.setLine(scaled(385), y4, scaled(385), s77);
+        int x4 = playerSelected ? scaled(415) : scaled(395);
+        HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y3, w3, 3, text("RACES_HELP_6C"));
         
-        int x5 = scaled(350);
-        int w5 = scaled(190);
-        int y5 = scaled(190);
-        HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y5, w5, 3, text("RACES_HELP_6D"));
-        sp5.setLine(scaled(460), y5, scaled(460), s77);
+        int x5 = playerSelected ? scaled(690) : scaled(665);
+        HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y3, w3, 3, text("RACES_HELP_6D"));
         
-        int x6 = scaled(475);
-        int w6 = scaled(140);
-        int y6 = scaled(100);
-        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 3, text("RACES_HELP_6E"));
-        sp6.setLine(scaled(530), y6, scaled(530), s77);
+        int y6 = scaled(620);
+        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x3, y6, w3, 3, text("RACES_HELP_6E"));
         
-        int x7 = scaled(560);
-        int w7 = scaled(200);
-        int y7 = scaled(190);
-        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7,y7,w7, 3, text("RACES_HELP_6F"));
-        sp7.setLine(scaled(630), y7, scaled(630), s92, scaled(600), s77);
+        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x4, y6, w3, 3, text("RACES_HELP_6F"));
         
-        int x8 = scaled(650);
-        int w8 = scaled(200);
-        int y8 = scaled(100);
-        HelpUI.HelpSpec sp8 = helpUI.addBrownHelpText(x8,y8,w8, 3, text("RACES_HELP_6G"));
-        sp8.setLine(scaled(670), y8, scaled(670), s77);
+        HelpUI.HelpSpec sp8 = helpUI.addBrownHelpText(x5, y6, w3, 3, text("RACES_HELP_6G"));
     }
     public void init() {
         diploPanel.init();
