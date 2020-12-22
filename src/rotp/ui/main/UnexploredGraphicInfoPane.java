@@ -57,6 +57,11 @@ public class UnexploredGraphicInfoPane extends BasePanel implements MouseListene
 
         Empire pl = player();
         g.drawImage(pl.sv.starBackground(this), 0, 0, null);
+        
+        if (sys.inNebula()) {
+            g.setColor(SystemPanel.nebulaC);
+            g.fillRect(0, 0, w, h);
+        }
 
         int adjW = min(w,h*3/2);
         drawStar(g, sys.starType(), adjW*2/5, w*2/5, h/3);

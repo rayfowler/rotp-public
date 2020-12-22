@@ -21,6 +21,7 @@ import java.awt.Graphics2D;
 import java.util.List;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
+import static rotp.ui.main.SystemPanel.grayText;
 
 public class UnexploredSystemPanel extends SystemPanel {
     private static final long serialVersionUID = 1L;
@@ -64,14 +65,34 @@ public class UnexploredSystemPanel extends SystemPanel {
                 return;
 
             super.paintComponent(g);
+            int w = getWidth();
             int h = getHeight();
 
+            
+            if (sys.inNebula()) {
+                g.setColor(SystemPanel.nebulaC);
+                g.fillRect(0,0,w,h);
+            }
+                
             Graphics2D g2 = (Graphics2D) g;
             drawStar(g2, sys.starType(), s40, getWidth()/2, getHeight()/2);
 
             g.setFont(narrowFont(36));
             String label = text("MAIN_UNEXPLORED_SYSTEM");
             drawBorderedString(g, label, 2, s25, s42, Color.black, SystemPanel.orangeText);
+            
+            if (sys.inNebula()) {
+                g.setFont(narrowFont(16));
+                g.setColor(grayText);
+                List<String> nebLines =  wrappedLines(g, text("MAIN_NEBULA_DESC"), getWidth()-s12);
+                int ydelta = s18;
+                int y0=s70;
+                for (String line: nebLines) {
+                    g.drawString(line, s8, y0);
+                    y0 += ydelta;
+                }
+            } 
+           
 
             g.setFont(narrowFont(16));
             g.setColor(grayText);

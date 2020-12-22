@@ -43,6 +43,7 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
     public static final Color labelBorderHi = new Color(175,175,175);
     public static final Color dataBorders = new Color(160,160,160);
 
+    public static final Color nebulaC = new Color(190,0,190,64);
     public static final Color yellowText = new Color(251,251,127);
     public static final Color orangeText = new Color(255,192,0);
     public static final Color darkOrangeText = new Color(160,96,0);

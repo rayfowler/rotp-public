@@ -117,6 +117,7 @@ public interface IGameOptions {
 
     public int numberStarSystems();
     public int numberNebula();
+    public default float nebulaSizeMult()                { return 1.0f; }
     public List<Integer> possibleColors();
     public float researchCostBase(int techLevel);
     public boolean canTradeTechs(Empire e1, Empire e2);

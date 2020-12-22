@@ -75,6 +75,11 @@ public class Galaxy implements Base, Serializable {
     public void addStarSystem(StarSystem s)  {
         starSystems[systemCount] = s;
         systemCount++;
+        
+        Nebula neb = nebulaContaining(s);
+        s.inNebula(neb != null);
+        if (neb != null)
+            neb.noteStarSystem(s);
     }
     public StarSystem system(int i)          { return (i < 0) || (i >= numStarSystems()) ? null : starSystems[i]; }
 
@@ -118,30 +123,36 @@ public class Galaxy implements Base, Serializable {
         // after we have created 5 nebulas, start cloning
         // existing nebulas (add their images) when making
         // new nebulas
-        int MAX_UNIQUE_NEBULAS = 8;
+        int MAX_UNIQUE_NEBULAS = 16;
 
         float buffer = 2.0f;
-        float rightBuffer = buffer+6;
-        float bottomBuffer = buffer+6;
 
+        float nebSize = options().nebulaSizeMult();
         Point.Float pt = new Point.Float();
         shape.setRandom(pt);
-        if (shape.valid(pt)) {
-            Nebula neb;
-            if (nebulas.size() < MAX_UNIQUE_NEBULAS)
-                neb = new Nebula(true);
-            else
-                neb = random(nebulas).copy();
-            neb.setXY(pt.x, pt.y);
-            boolean containsSystem = false;
-            for (EmpireSystem sys : shape.empSystems) {
-                if (sys.inNebula(neb))
-                    containsSystem = true;
-            }
-            if (!containsSystem)
-                nebulas.add(neb);
-            //log("Adding nebula: ", fmt(neb.x(),2), "@", fmt(neb.y(),2), "    ", fmt(neb.width(),2), "x", fmt(neb.height(),2));
+        
+        if (!shape.valid(pt))
+            return;
+        
+        Nebula neb;
+        if (nebulas.size() < MAX_UNIQUE_NEBULAS)
+            neb = new Nebula(true, nebSize);
+        else
+            neb = random(nebulas).copy();
+        neb.setXY(pt.x, pt.y);
+        Point.Float pt2 = new Point.Float(neb.centerX(), neb.centerY());
+        
+        // nebula center must be a valid point
+        if (!shape.valid(pt2))
+            return;
+        
+        boolean containsSystem = false;
+        for (EmpireSystem sys : shape.empSystems) {
+            if (sys.inNebula(neb))
+                containsSystem = true;
         }
+        if (!containsSystem)
+            nebulas.add(neb);
     }
     public List<StarSystem> systemsNamed(String name) {
         List<StarSystem> systems = new ArrayList<>();
@@ -185,12 +196,24 @@ public class Galaxy implements Base, Serializable {
             AdviceNotification.create(key, s1, s2, s3);
         }
     }
+    public boolean inNebula(IMappedObject obj) {
+        return inNebula(obj.x(), obj.y());
+    }
     public boolean inNebula (float x, float y) {
         for (Nebula neb: nebulas) {
             if (neb.contains(x,y))
                 return true;
         }
         return false;
+    }
+    public Nebula nebulaContaining(IMappedObject obj) {
+        float x = obj.x();
+        float y = obj.y();
+        for (Nebula neb: nebulas) {
+            if (neb.contains(x,y))
+                return neb;
+        }        
+        return null;
     }
     public void preNextTurn() {
         NoticeMessage.resetSubstatus(text("TURN_LAUNCHING_FLEETS"));

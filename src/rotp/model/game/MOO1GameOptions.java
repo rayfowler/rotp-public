@@ -335,8 +335,19 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         default: return roll(1,2);
         }
         */
-        int n = numberStarSystems();
-        return (int) (freq*roll(n/50, n/25));
+        int nStars = numberStarSystems();
+        float sizeMult = nebulaSizeMult();
+        int nNeb = (int) roll(nStars/50, nStars/25);
+        
+        return (int) (freq*nNeb/sizeMult/sizeMult);
+    }
+    @Override
+    public float nebulaSizeMult() {
+        int nStars = numberStarSystems();
+        if (nStars < 200)
+            return 1;
+        else 
+            return min(5,sqrt(nStars/200f));
     }
     @Override
     public float researchCostBase(int techLevel) {

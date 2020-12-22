@@ -69,6 +69,10 @@ PLANET_COLONY                     | %1 Colony
 PLANET_ORION                      | Orion
 PLANET_ORION_GUARDIAN             | Guardian
 
+// Nebula names  ("starName" Nebula)
+NEBULA_NAME                       | %1 Nebula
+NEBULA_ID                         | NCG %1
+
 // Government names
 GOVT_EMPIRE                       | %1 Empire
 TITLE_LEADERNAME                  | %1 %2
@@ -376,6 +380,7 @@ MAIN_UNSCOUTED                    | Unscouted
 MAIN_ABANDONED                    | Abandoned
 MAIN_ALIEN_COLONY                 | %1 Colony
 MAIN_UNKNOWN_COLONY               | Alien Colony
+MAIN_NEBULA_DESC                  | Ship travel speed through nebulae is limited to Warp 1
 MAIN_PLANET_SIZE                  | Size %1
 MAIN_PLANET_SIZE+                 | Size %1+
 MAIN_PLANET_POP                   | Pop %1

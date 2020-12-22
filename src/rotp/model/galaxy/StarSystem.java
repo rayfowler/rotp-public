@@ -71,6 +71,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
 
     private boolean abandoned = false;
     private boolean piracy = false;
+    private boolean inNebula = false;
     private final List<Transport> orbitingTransports = new ArrayList<>();
     private int[] nearbySystems;
     private String notes;
@@ -218,7 +219,8 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     public boolean hasBonusTechs()              { return planet().hasBonusTechs(); }
     public Color color()                        { return starType().color(); }
 
-    public boolean inNebula()                   { return galaxy().inNebula(x(), y()); }
+    public boolean inNebula()                   { return inNebula; }
+    public void inNebula(boolean b)             { inNebula = b; }
     public boolean canStargateTravelTo(StarSystem s) {
         return isColonized() && s.isColonized() && (s.empire() == empire()) && colony().hasStargate() && s.colony().hasStargate();
     }

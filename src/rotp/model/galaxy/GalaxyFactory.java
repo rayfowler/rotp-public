@@ -68,6 +68,18 @@ public class GalaxyFactory implements Base {
         empires.remove(empires.get(0));
         addAlienRaceSystemsForGalaxy(g, 1, empires, alienRaces);
         addUnsettledSystemsForGalaxy(g, shape);
+        
+        // remove empty nebula
+        List<Nebula> allNebula = new ArrayList<>(g.nebulas());
+        for (Nebula neb: allNebula) {
+            if (neb.noStars())
+                g.nebulas().remove(neb);
+        }
+        
+        // for larger nebula (>= 3 contained stars), enrich the center-most system
+        // typical need larger maps (>200 stars) for this to happen
+        for (Nebula n: g.nebulas())
+            n.enrichCentralSystem();
 
         long tm2 = System.currentTimeMillis();
         log(str(g.numStarSystems()) ," Systems, ",str(Planet.COUNT)," Planets: "+(tm2-tm1)+"ms");
