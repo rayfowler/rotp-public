@@ -285,6 +285,8 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
             return max(widthRatio, heightRatio);
     }
     private void selectTech(String id) {
+        if (id.isEmpty())
+            return;
         Tech t = tech(id);
         category().currentTech(t);
         finished = true;
