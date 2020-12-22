@@ -26,6 +26,7 @@ public enum FontManager implements Base {
     INSTANCE;
     public static FontManager current()  { return INSTANCE; }
 
+    private static int MAX_FONT_SIZE = 200;
     private Font logoFont;
     private Font introFont;
     private Font dlgFont;
@@ -39,41 +40,46 @@ public enum FontManager implements Base {
     private Font[] createdIntroFonts;
 
     @Override
-    public Font dlgFont(int i) {
+    public Font dlgFont(int n) {
+        int i = min(MAX_FONT_SIZE, n);
         if (createdDlgFont[i] == null)
             createdDlgFont[i] = dlgFont.deriveFont((float) scaled(i*dlgSize/100));
         return createdDlgFont[i];
     }
     @Override
-    public Font narrowFont(int i) {
+    public Font narrowFont(int n) {
+        int i = min(MAX_FONT_SIZE, n);
         if (createdNarrowFonts[i] == null)
             createdNarrowFonts[i] = narrowFont.deriveFont((float) scaled(i*narrowSize/100));
         return createdNarrowFonts[i];
     }
     @Override
-    public Font plainFont(int i) {
+    public Font plainFont(int n) {
+        int i = min(MAX_FONT_SIZE, n);
         if (createdPlainFonts[i] == null)
             createdPlainFonts[i] = plainFont.deriveFont((float) scaled(i*plainSize/100));
         return createdPlainFonts[i];
     }
     @Override
-    public Font font(int i) {
+    public Font font(int n) {
+        int i = min(MAX_FONT_SIZE, n);
         if (createdIntroFonts[i] == null)
             createdIntroFonts[i] = introFont.deriveFont((float) scaled(i*introSize/100));
         return createdIntroFonts[i];
     }
     @Override
-    public Font logoFont(int i) {
+    public Font logoFont(int n) {
+        int i = min(MAX_FONT_SIZE, n);
         if (createdLogoFont[i] == null)
             createdLogoFont[i] = logoFont.deriveFont((float) scaled(i*logoSize/100));
         return createdLogoFont[i];
     }
     private void initFonts() {
-        createdLogoFont = new Font[100];
-        createdDlgFont = new Font[100];
-        createdNarrowFonts = new Font[100];
-        createdPlainFonts = new Font[100];
-        createdIntroFonts = new Font[100];
+        createdLogoFont = new Font[MAX_FONT_SIZE+1];
+        createdDlgFont = new Font[MAX_FONT_SIZE+1];
+        createdNarrowFonts = new Font[MAX_FONT_SIZE+1];
+        createdPlainFonts = new Font[MAX_FONT_SIZE+1];
+        createdIntroFonts = new Font[MAX_FONT_SIZE+1];
     }
     public void resetFonts() {
         initFonts();

@@ -146,6 +146,12 @@ public class Galaxy implements Base, Serializable {
         if (!shape.valid(pt2))
             return;
         
+        // don't add nebulas whose center point is in an existing nebula
+        for (Nebula existingNeb: nebulas) {
+            if (existingNeb.contains(neb.centerX(), neb.centerY()))
+                return;
+        }
+            
         boolean containsSystem = false;
         for (EmpireSystem sys : shape.empSystems) {
             if (sys.inNebula(neb))

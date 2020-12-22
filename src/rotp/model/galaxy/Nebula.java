@@ -173,15 +173,17 @@ public class Nebula extends MapSprite implements Base, IMappedObject, Serializab
         Rectangle mShape = mapShape(map);
         g2.drawImage(image(), mShape.x, mShape.y, mShape.x+mShape.width, mShape.y+mShape.height, 0, 0, image().getWidth(), image().getHeight(), map);
         float scale = map.scaleX();
-        if (scale < 200) {
+        
+        // use smaller font when we have the full name
+        int fontSize = sysId <= 0 ? (int) (size*1800/scale) : (int) (size*1200/scale);
+        if (fontSize >= 14) {
             String name = name();
             if (!name.isEmpty()) {
-                int fontSize = (int) min(100, 1800/scale);
                 g2.setFont(narrowFont(fontSize));
                 g2.setColor(labelColor);
                 int sw = g2.getFontMetrics().stringWidth(name);
                 int x0 = mShape.x+((mShape.width-sw)/2);
-                int y0 = mShape.y+((mShape.width-fontSize)/2);
+                int y0 = mShape.y+((mShape.height-fontSize)/2);
                 g2.drawString(name, x0, y0);
             }
         }
