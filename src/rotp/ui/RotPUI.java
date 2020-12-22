@@ -385,16 +385,26 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener, Ga
         selectMainPanel();
     }
     public void showBombardmentNotice(int sysId, ShipFleet fl) {
-        session().pauseNextTurnProcessing("Show Bombard Notice");
-        mainUI().showBombardmentNotice(sysId, fl);
-        selectMainPanel();
-        session().waitUntilNextTurnCanProceed();
+        try {
+            drawNextTurnNotice = false;
+            session().pauseNextTurnProcessing("Show Bombard Notice");
+            mainUI().showBombardmentNotice(sysId, fl);
+            selectMainPanel();
+            session().waitUntilNextTurnCanProceed();
+        } finally {
+            drawNextTurnNotice = true;
+        }
     }
     public void promptForBombardment(int sysId, ShipFleet fl) {
-        session().pauseNextTurnProcessing("Show Bombard Prompt");
-        mainUI().showBombardmentPrompt(sysId, fl);
-        selectMainPanel();
-        session().waitUntilNextTurnCanProceed();
+        try {
+            drawNextTurnNotice = false;
+            session().pauseNextTurnProcessing("Show Bombard Prompt");
+            mainUI().showBombardmentPrompt(sysId, fl);
+            selectMainPanel();
+            session().waitUntilNextTurnCanProceed();
+        } finally {
+            drawNextTurnNotice = true;
+        }
     }
     public void promptForShipCombat(ShipCombatManager mgr) {
         try {
@@ -411,11 +421,16 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener, Ga
         shipBattleUI.init(mgr);
         selectPanel(SHIP_BATTLE_PANEL, shipBattleUI);
     }
-public void promptForColonization(int sysId, ShipFleet fl, ShipDesign d) {
-        session().pauseNextTurnProcessing("Show Colonize Prompt");
-        mainUI().showColonizationPrompt(sysId, fl, d);
-        selectMainPanel();
-        session().waitUntilNextTurnCanProceed();
+    public void promptForColonization(int sysId, ShipFleet fl, ShipDesign d) {
+        try {
+            drawNextTurnNotice = false;
+            session().pauseNextTurnProcessing("Show Colonize Prompt");
+            mainUI().showColonizationPrompt(sysId, fl, d);
+            selectMainPanel();
+            session().waitUntilNextTurnCanProceed();
+        } finally {
+            drawNextTurnNotice = true;
+        }
     }
     public void selectColonizationPanel(int sysId, ShipFleet fl, ShipDesign d) {
         colonizePlanetUI.init(sysId, fl, d);
@@ -452,11 +467,16 @@ public void promptForColonization(int sysId, ShipFleet fl, ShipDesign d) {
         session().waitUntilNextTurnCanProceed();
     }
     public void selectEspionageMissionPanel(EspionageMission mission, int empId) {
-        session().pauseNextTurnProcessing("Show Espionage");
-        log("==MAIN UI==   espionage mission");
-        mainUI().showEspionageMission(mission, empId);
-        selectMainPanel();
-        session().waitUntilNextTurnCanProceed();
+       try {
+            drawNextTurnNotice = false;
+            session().pauseNextTurnProcessing("Show Espionage");
+            log("==MAIN UI==   espionage mission");
+            mainUI().showEspionageMission(mission, empId);
+            selectMainPanel();
+            session().waitUntilNextTurnCanProceed();
+        } finally {
+            drawNextTurnNotice = true;
+        }      
     }
     public void selectStealTechPanel(EspionageMission mission, int empId) {
         discoverTechUI.stealTech(mission, empId);
