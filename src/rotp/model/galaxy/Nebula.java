@@ -42,7 +42,7 @@ public class Nebula extends MapSprite implements Base, IMappedObject, Serializab
     public float height()                 { return height; }
     public Rectangle.Float shape()        { return shape; }
     public String name() {
-        if (sysId < 0)
+        if (sysId < 1)
             return "";
         
         String sysName = player().sv.name(sysId);
@@ -67,8 +67,8 @@ public class Nebula extends MapSprite implements Base, IMappedObject, Serializab
     @Override
     public float y()                      { return y; }
     
-    private float adjWidth()                { return size*width; }
-    private float adjHeight()                { return size*height; }
+    private float adjWidth()                { return size == 0 ? width : size*width; }
+    private float adjHeight()                { return size == 0 ? height : size*height; }
     
     public float centerX()                { return x+(adjWidth()/2); }
     public float centerY()                { return y+(adjHeight()/2); }
