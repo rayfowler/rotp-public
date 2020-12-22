@@ -93,6 +93,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
     private SystemInfoPanel displayPanel;
     private final List<Sprite> controls = new ArrayList<>();
     private final Map<Integer,Integer> expandEnRouteSystems = new HashMap<>();
+    private final Map<Integer,Integer> expandGuardedSystems = new HashMap<>();
 
     // public for all
     public StarSystem hoverSystem;
@@ -136,7 +137,24 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
                 else
                     expandEnRouteSystems.put(sys.id, fleetTurns);
             }
-        }
+        }     
+        // on opening, build list of systems that we have colony ships 
+        // in transport to. This is too expensive to do real-time
+        expandGuardedSystems.clear();
+        Empire pl = player();
+        for (Ship sh: pl.visibleShips()) {
+            if (sh instanceof ShipFleet) {
+                ShipFleet fl = (ShipFleet) sh;
+                if (fl.inOrbit()) {
+                    StarSystem sys = fl.system();
+                    if (pl.sv.inShipRange(sys.id) && !sys.isColonized() && pl.canColonize(sys)) {
+                        if (fl.empire().aggressiveWith(pl, sys)) {
+                            expandGuardedSystems.put(sys.id, fl.empId);
+                        }
+                    }
+                }
+            }
+        }     
         
     }
     public void clickSystem(StarSystem v, int count) {
@@ -552,7 +570,9 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         float sysDistance = sv.distance();
         Empire pl = player();
         if ((sysDistance <= pl.shipRange()) && pl.canColonize(sv.sysId)) {
-            if (expandEnRouteSystems.containsKey(sv.sysId))
+            if (this.expandGuardedSystems.containsKey(sv.sysId))
+                return MainUI.redAlertC;
+            else if (expandEnRouteSystems.containsKey(sv.sysId))
                 return null;
             else
                 return MainUI.greenAlertC;
@@ -698,6 +718,10 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         float sysDistance = sv.distance();
         Empire pl = player();
         if ((sysDistance <= pl.shipRange()) && pl.canColonize(sv.sysId)) { 
+            if (expandGuardedSystems.containsKey(sv.sysId)) {
+                Empire enemyEmp = galaxy().empire(expandGuardedSystems.get(sv.sysId));
+                return text("SYSTEMS_CAN_COLONIZE_ENEMY", enemyEmp.raceName());
+            }
             if (expandEnRouteSystems.containsKey(sv.sysId)) {
                 int turns = expandEnRouteSystems.get(sv.sysId);
                 return text("SYSTEMS_CAN_COLONIZE_EN_ROUTE", turns);

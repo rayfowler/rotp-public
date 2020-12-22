@@ -243,32 +243,32 @@ CONTROLENV_0_DETAIL  | Permits the colonization of standard planets.
 CONTROLENV_1_NAME    | Controlled Barren Environment
 CONTROLENV_1_ITEM    | Barren Colony Base
 CONTROLENV_1_BRIEF   | Allows Barren Planet Landings
-CONTROLENV_1_DETAIL  | Permits the colonization of barren planets.
+CONTROLENV_1_DETAIL  | Permits the colonization of barren and less hostile planets.
 
 CONTROLENV_2_NAME    | Controlled Tundra Environment
 CONTROLENV_2_ITEM    | Tundra Colony Base
 CONTROLENV_2_BRIEF   | Allows Tundra Planet Landings
-CONTROLENV_2_DETAIL  | Permits the colonization of tundra planets.
+CONTROLENV_2_DETAIL  | Permits the colonization of tundra and less hostile planets.
 
 CONTROLENV_3_NAME    | Controlled Dead Environment
 CONTROLENV_3_ITEM    | Dead Colony Base
 CONTROLENV_3_BRIEF   | Allows Dead Planet Landings
-CONTROLENV_3_DETAIL  | Permits the colonization of dead planets.
+CONTROLENV_3_DETAIL  | Permits the colonization of dead and less hostile planets.
 
 CONTROLENV_4_NAME    | Controlled Inferno Environment
 CONTROLENV_4_ITEM    | Inferno Colony Base
 CONTROLENV_4_BRIEF   | Allows Inferno Planet Landings
-CONTROLENV_4_DETAIL  | Permits the colonization of inferno planets.
+CONTROLENV_4_DETAIL  | Permits the colonization of inferno and less hostile planets.
 
 CONTROLENV_5_NAME    | Controlled Toxic Environment
 CONTROLENV_5_ITEM    | Toxic Colony Base
 CONTROLENV_5_BRIEF   | Allows Toxic Planet Landings
-CONTROLENV_5_DETAIL  | Permits the colonization of toxic planets.
+CONTROLENV_5_DETAIL  | Permits the colonization of toxic and less hostile planets.
 
 CONTROLENV_6_NAME    | Controlled Irradiated Environment
 CONTROLENV_6_ITEM    | Radiated Colony Base
 CONTROLENV_6_BRIEF   | Allows Irradiated Planet Landings
-CONTROLENV_6_DETAIL  | Permits the colonization of irradiated planets.
+CONTROLENV_6_DETAIL  | Permits the colonization of irradiated and less hostile planets.
 
 
 //
