@@ -554,7 +554,7 @@ public class CombatStack implements Base {
         int xleft = x0 < x1 ? x : max(0, x-1);
         Rectangle rTopLeft = mgr.ui.combatGrids[xleft][max(0,y-1)];
         
-        int FRAMES = mgr.autoComplete ? 1 : 12;
+        int FRAMES = mgr.autoComplete ? 12 : 12;
         int dx = x0 <= x1 ? BasePanel.s1 : -BasePanel.s1;
         int dy = -BasePanel.s1;
         int dFont = 1;
