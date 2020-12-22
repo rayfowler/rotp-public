@@ -84,7 +84,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener, Ga
     private static final long serialVersionUID = 1L;
     private static int FPS = 10;
     private static int ANIMATION_TIMER = 100;
-    private boolean drawNextTurnNotice = false;
+    private boolean drawNextTurnNotice = true;
     private static Throwable startupException;
     static {
         Logger.registerLogListener(Logger::logToFile);
