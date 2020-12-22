@@ -184,6 +184,7 @@ public class MainUI extends BasePanel implements IMapHandler {
         map.centerX(saveX);
         map.centerY(saveY);
         map.clearRangeMap();
+        map.clearHoverSprite();
         clickedSprite((Sprite) sessionVar("MAINUI_SAVE_CLICKED"));
         showDisplayPanel();
     }

@@ -199,6 +199,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     public boolean showShipRanges()             { return (showShipRanges == SHOW_RANGES) || (showShipRanges == SHOW_STARS_AND_RANGES); }
     public boolean showStars()                  { return (showShipRanges == SHOW_STARS)  || (showShipRanges == SHOW_STARS_AND_RANGES); }
 
+    public void clearHoverSprite()              { hoverSprite = null; }
     public Location currentFocus()        { return parent.mapFocus();  }
     public void currentFocus(IMappedObject o)  { parent.mapFocus(o); }
     private Location center()              { return center; }
