@@ -44,7 +44,7 @@ public class ColonyCapturedIncident extends DiplomaticIncident {
 
         severity = -20 + max(-130, -5*popLost);
         dateOccurred = galaxy().currentYear();
-        duration = 60;
+        duration = 30;
     }
     private String systemName() { return player().sv.name(sysId); }
     @Override

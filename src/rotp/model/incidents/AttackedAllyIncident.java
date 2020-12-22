@@ -45,7 +45,7 @@ public class AttackedAllyIncident extends DiplomaticIncident {
         empMe = e3.id;
         severity = sev;
         dateOccurred = galaxy().currentYear();
-        duration = 10;
+        duration = 5;
     }
     @Override
     public String title()            { return text("INC_ATTACKED_ALLY_TITLE", galaxy().empire(empAlly).raceName()); }

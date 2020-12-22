@@ -29,7 +29,7 @@ public class SignPeaceIncident extends DiplomaticIncident {
     private SignPeaceIncident(Empire e1, Empire e2, int dur) {
         empMe = e1.id;
         empYou = e2.id;
-        severity = 30;
+        severity = 20;
 
         dateOccurred = galaxy().currentYear();
         endDate = dateOccurred+dur;

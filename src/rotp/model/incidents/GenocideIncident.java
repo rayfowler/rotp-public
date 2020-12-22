@@ -34,7 +34,7 @@ public class GenocideIncident extends DiplomaticIncident {
         empVictim = v.id;
         severity = -50*n.leader().genocideMod();
         dateOccurred = galaxy().currentYear();
-        duration = 200;
+        duration = 100;
     }
     @Override
     public String title()            { return text("INC_GENOCIDE_TITLE"); }

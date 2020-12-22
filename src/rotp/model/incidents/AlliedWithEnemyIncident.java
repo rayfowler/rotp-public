@@ -30,7 +30,7 @@ public class AlliedWithEnemyIncident extends DiplomaticIncident {
         empOther = other.id;
         dateOccurred = galaxy().currentYear();
         duration = 1;
-        severity = -20;
+        severity = -10;
     }
     @Override
     public String title()            { return text("INC_ALLIED_WITH_ENEMY_TITLE"); }

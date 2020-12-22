@@ -42,7 +42,7 @@ public class CouncilVoteIncident extends DiplomaticIncident {
         empRival = rival.id;
         severity = calculateSeverity();
         dateOccurred = galaxy().currentYear();
-        duration = 20;
+        duration = 10;
     }
     @Override
     public String title()               { return text("INC_COUNCIL_VOTE_TITLE"); }

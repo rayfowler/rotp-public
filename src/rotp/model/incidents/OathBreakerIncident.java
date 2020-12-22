@@ -50,7 +50,7 @@ public class OathBreakerIncident extends DiplomaticIncident {
         severity = sev * obs.leader().oathBreakerMod();
         dateOccurred = galaxy().currentYear();
         // longer duration for the victim of the oathbreaking
-        duration = (vic == obs) ? 100 : 50;
+        duration = (vic == obs) ? 50 : 25;
     }
     @Override
     public String title()        { return text("INC_OATHBREAKER_TITLE"); }

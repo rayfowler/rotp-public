@@ -35,7 +35,7 @@ public class AssassinationIncident extends DiplomaticIncident {
         empVictim = def.id;
         severity = -100;
         dateOccurred = galaxy().currentYear();
-        duration = 40;
+        duration = 20;
     }
     @Override
     public String title()            { return text("INC_ASSASSINATION_TITLE"); }

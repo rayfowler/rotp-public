@@ -30,7 +30,7 @@ public class CloseEmbassyIncident extends DiplomaticIncident {
         empMe = e2.id;
         severity = -10;
         dateOccurred = galaxy().currentYear();
-        duration = 20;
+        duration = 5;
     }
     @Override
     public String title()            { return text("INC_CLOSED_EMBASSY_TITLE"); }

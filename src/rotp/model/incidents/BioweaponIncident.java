@@ -53,7 +53,7 @@ public class BioweaponIncident extends DiplomaticIncident {
         sysId = sys.id;
         severity = -30*n.leader().bioweaponMod();
         dateOccurred = galaxy().currentYear();
-        duration = 100;
+        duration = 50;
     }
     private String systemName() { return player().sv.name(sysId); }
     @Override

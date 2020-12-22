@@ -30,7 +30,7 @@ public class DeclareWarIncident extends DiplomaticIncident {
         empAggressor = e1.id;
         empVictim = e2.id;
         dateOccurred = galaxy().currentYear();
-        duration = 20;
+        duration = 10;
     }
     @Override
     public String title()            { return text("INC_DECLARED_WAR_TITLE"); }

@@ -55,7 +55,7 @@ public class EnemyAidIncident extends DiplomaticIncident {
         amount = amt;
         techId = null;
         dateOccurred = galaxy().currentYear();
-        duration = 10;
+        duration = 5;
     }
     private EnemyAidIncident(Empire emp, Empire enemy, Empire donor, String tId) {
         log("creating enemy aid incident: "+enemy.raceName()+"  tech:"+tech(tId).name());
@@ -70,7 +70,7 @@ public class EnemyAidIncident extends DiplomaticIncident {
         float sev = min(25,100*pct);
         severity = -sev;
         dateOccurred = galaxy().currentYear();
-        duration = 10;
+        duration = 5;
     }
     @Override
     public String title()        { return text("INC_ENEMY_AID_TITLE"); }

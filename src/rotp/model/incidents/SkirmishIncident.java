@@ -41,7 +41,7 @@ public class SkirmishIncident extends DiplomaticIncident {
         severity = sev;
 
         dateOccurred = galaxy().currentYear();
-        duration = 20;
+        duration = 5;
     }
     private String systemName() { return player().sv.name(sysId); }
     @Override

@@ -49,7 +49,7 @@ public class SabotageBasesIncident extends DiplomaticIncident {
     private SabotageBasesIncident(EmpireView ev, SabotageMission m) {
 
         dateOccurred = galaxy().currentYear();
-        duration = 20;
+        duration = 10;
 
         empVictim = ev.owner().id;
         empSpy = ev.empire().id;

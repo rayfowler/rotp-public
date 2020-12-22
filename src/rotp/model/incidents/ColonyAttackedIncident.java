@@ -36,7 +36,7 @@ public class ColonyAttackedIncident extends DiplomaticIncident {
         popLost = r.popDestroyed();
         severity = -5 + max(-95, -5*popLost);
         dateOccurred = galaxy().currentYear();
-        duration = 30;
+        duration = 10;
     }
     private String systemName() { return player().sv.name(sysId); }
     @Override
