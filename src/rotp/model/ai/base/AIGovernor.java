@@ -60,7 +60,7 @@ public class AIGovernor implements Base, Governor {
 
         StarSystem sys = col.starSystem();
         String name = empire.sv.name(sys.id);
-        ensureMinimumCleanup(col);
+        boolean cleanupOK = ensureMinimumCleanup(col);
         int bases = (int) col.defense().bases();
         int maxBases = col.defense().maxBases();
         if (col.shipyard().design().scrapped()) {
@@ -79,6 +79,8 @@ public class AIGovernor implements Base, Governor {
             session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_BASES_COMPLETE", name, col.defense().maxBases()));
         if (col.industry().isCompletedThisTurn())
             session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_MAX_FACTORIES", name, (int)col.industry().maxFactories()));
+        if (!cleanupOK)
+            session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_ECO_LOCKED_WASTE", name));
         if (col.ecology().populationGrowthCompleted())
             session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_MAX_POPULATION", name, (int)col.maxSize()));
         if (col.ecology().atmosphereCompleted())
@@ -363,19 +365,23 @@ public class AIGovernor implements Base, Governor {
     //
 // PRIVATE
 //
-    private void ensureMinimumCleanup(Colony col) {
-        if (col.locked(ECOLOGY))
-            return;
+    private boolean ensureMinimumCleanup(Colony col) {
+        // return true if eco spending is set to enough for waste
         float totalProd = col.totalIncome();
         float minEco = col.minimumCleanupCost();
         float minPct = minEco/totalProd;
         minPct = min(minPct, 1.0f);
 
+        // if locked and insufficient ECO spending, return false
+        if (col.locked(ECOLOGY))
+            return col.pct(ECOLOGY) >= minPct;
+        
         if (minPct < 0)
             err("Minimum cleanup pct: ", str(minPct), "  totalProd:",str(totalProd), "   minEco:", str(minEco));
 
         if (col.pct(ECOLOGY) < minPct)
             col.setCleanupPct(minPct);
+        return true;
     }
     private float shipPctForColony(Colony col) {
         // 20% or research spending, whichever is greater
