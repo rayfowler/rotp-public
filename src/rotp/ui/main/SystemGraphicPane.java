@@ -68,6 +68,11 @@ public class SystemGraphicPane extends BasePanel implements MouseMotionListener,
         Empire pl = player();
         int adjW = min(w,h*3/2);
         g.drawImage(pl.sv.starBackground(this), 0, 0, null);
+        
+        if (sys.inNebula()) {
+            g.setColor(SystemPanel.nebulaC);
+            g.fillRect(0,0,w,h);
+        }
         drawStar(g, sys.starType(), adjW*2/5, w*2/5, h/3);
         starCircle.setFrame((w/3)-s20, s10, s40, s40);
 

@@ -239,17 +239,14 @@ public class MapOverlayAllocateSystems extends MapOverlay {
     public boolean handleKeyPress(KeyEvent e) {
         switch(e.getKeyCode()) {
             case KeyEvent.VK_N:
-                //softClick();
                 nextSystem();
                 break;
             case KeyEvent.VK_P:
-                //softClick();
                 previousSystem();
                 break;
             case KeyEvent.VK_F:
             case KeyEvent.VK_ENTER:
             case KeyEvent.VK_ESCAPE:
-                //softClick();
                 advanceMap();
                 break;
             default:

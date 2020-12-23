@@ -368,9 +368,15 @@ public class MapOverlaySystemsScouted extends MapOverlay {
     @Override
     public boolean handleKeyPress(KeyEvent e) {
         switch(e.getKeyCode()) {
+            case KeyEvent.VK_N:
+                nextSystem();
+                break;
+            case KeyEvent.VK_P:
+                previousSystem();
+                break;
+            case KeyEvent.VK_F:
+            case KeyEvent.VK_ENTER:
             case KeyEvent.VK_ESCAPE:
-                //
-                softClick();
                 advanceMap();
                 break;
             default:
@@ -378,7 +384,7 @@ public class MapOverlaySystemsScouted extends MapOverlay {
         }
         return true;
     }
-class PreviousSystemButtonSprite extends MapSprite {
+    class PreviousSystemButtonSprite extends MapSprite {
         private LinearGradientPaint background;
         private final Color edgeC = new Color(59,59,59);
         private final Color midC = new Color(93,93,93);
