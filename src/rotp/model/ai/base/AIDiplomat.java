@@ -257,8 +257,10 @@ public class AIDiplomat implements Base, Diplomat {
         // of the requestedTech we would be trading away
         List<Tech> worthyTechs = new ArrayList<>(allTechs.size());
         for (Tech t: allTechs) {
-            if (t.baseValue(empire) >= maxTechValue)
-                worthyTechs.add(t);
+            if (t.quintile() == tech.quintile()) {
+                if (t.baseValue(empire) < maxTechValue)
+                    worthyTechs.add(t);
+            }
         }
 
         // sort techs by the diplomat's research priority (hi to low)
