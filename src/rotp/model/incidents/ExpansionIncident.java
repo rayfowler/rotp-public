@@ -55,7 +55,7 @@ public class ExpansionIncident extends DiplomaticIncident {
             multiplier = multiplier * ratio * ratio;
         }
         
-        float n = -10*((num*num/max/max) - 1);
+        float n = -20*((num*num/max/max) - 1);
 
         severity = multiplier*n;
     }
