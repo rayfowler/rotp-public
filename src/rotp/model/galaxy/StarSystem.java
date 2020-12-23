@@ -497,8 +497,6 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             drawStar(map, g2, x0, y0);
         }
         
-        boolean drewSelectionBox = false;
-        // draw selection box if this system is selected or we are transporting from it
         if (map.parent().isClicked(this)
         || map.parent().isClicked(transportSprite())) 
             drawSelection(g2, map, emp, x0, y0);
@@ -506,7 +504,6 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             drawHovering(g2, map, x0, y0);
 
         // draw shield?
-		// modnar: change shield size to scale with zoom, original: BasePanel.s15
         if (map.parent().drawShield(this))
             drawShield(g2, pl.sv.shieldLevel(id), x0, y0, map.scale(0.25f));
 
@@ -539,19 +536,18 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         boolean scouted = pl.sv.isScouted(id);
         Colony col = pl.sv.isColonized(id) ? colony() : null;
         int pop = pl.sv.population(id);
-        int mapFontSize = fontSize(map);
-        if (map.showSystemNames() || (pop == 0) || (mapFontSize < 14)) {
+        int fontSize = fontSize(map);
+        if (map.showSystemNames() || (pop == 0) || (fontSize < 12)) {
             String s1 = map.parent().systemLabel(this);
             String s2 = map.parent().systemLabel2(this);
             if (s2.isEmpty())
                 s2 = name2(map);
             if (!s1.isEmpty() || !s2.isEmpty()) {
                 Font prevFont = g2.getFont();
-                int fontSize = fontSize(map);
                 g2.setFont(narrowFont(fontSize));
                 g2.setColor(map.parent().systemLabelColor(this));
                 int sw = g2.getFontMetrics().stringWidth(s1);
-                int boxSize = drewSelectionBox ? r0+s7 : r0;
+                int boxSize = r0;
                 int yAdj = scaled(fontSize)+boxSize;
                 if (!s1.isEmpty()) {
                     g2.drawString(s1, x0-(sw/2), y0+yAdj);
@@ -581,13 +577,12 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
                 s2 = name2(map);
             if (!s1.isEmpty() || !s2.isEmpty()) {
                 Font prevFont = g2.getFont();
-                int fontSize = mapFontSize;
                 g2.setFont(narrowFont(fontSize));
                 int sw = g2.getFontMetrics().stringWidth(s1);
                 g2.setFont(narrowFont(fontSize*3/5));
                 int swData = g2.getFontMetrics().stringWidth(lbl);
                 int boxW = max(sw, swData);
-                int boxSize = drewSelectionBox ? r0+s7 : r0;
+                int boxSize = r0;
                 int yAdj = scaled(fontSize)+boxSize;
                 int fontH = scaled(fontSize);
                 g2.setColor(systemNameBackC);
@@ -612,7 +607,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
                     g2.setColor(map.parent().systemLabelColor(this));
                     g2.setFont(narrowFont(fontSize-2));
                     int sw2 = g2.getFontMetrics().stringWidth(s2);
-                    g2.drawString(s2, x0-(sw2/2), y0+yAdj+fontH);
+                    g2.drawString(s2, x0-(sw2/2), y0+yAdj+fontH+BasePanel.s2);
                 }
                 g2.setFont(prevFont);
                 box.x = x0-(sw/2);
@@ -858,6 +853,6 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     private int fontSize(GalaxyMapPanel map) {
         int maxFont = 72;
         int minFont = 4;
-        return bounds(minFont, (int)(maxFont * 8 / map.scaleX()), maxFont);
+        return bounds(minFont, (int)(maxFont * 10 / map.scaleX()), maxFont);
     }
 }
