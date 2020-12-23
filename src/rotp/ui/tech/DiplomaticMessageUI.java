@@ -65,7 +65,7 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
     Empire diplomatEmpire;
     Image flag, dialogBox;
     DiplomaticMessage message;
-    String remarkTitle, messageRemark;
+    String remarkTitle, messageRemark, messageRemarkDetail;
 
     int talkTimeMs = 5000;
     long startTimeMs;
@@ -136,6 +136,7 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
         }
 
         remarkTitle = diplomatEmpire.race().text("RACES_DIPLOMACY_DIALOGUE_TITLE", diplomatEmpire.raceName(), diplomatEmpire.leader().name());
+        messageRemarkDetail = message.requestDetail();
         if (message.showTalking() && playAnimations())
             startFadeTimer();
         else
@@ -162,7 +163,7 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
     }
     public Image paintToImage() {
         if (message == null) 
-                err(messageRemark);
+            err(messageRemark);
         
         clearSelections();
         boolean talking = message.showTalking() && ((System.currentTimeMillis() - startTimeMs) < talkTimeMs);
@@ -252,7 +253,7 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
 
         boolean showRemarkOnly = false;
         // draw remark
-        String displayText = messageRemark;
+        String displayText = messageRemarkDetail.isEmpty() ? messageRemark : messageRemark+" "+messageRemarkDetail;
         if (!diplomatEmpire.isPlayer() && message.showTalking()) {
             showRemarkOnly = true;
             if (receiving)
@@ -267,12 +268,30 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
         int maxLinesForText = nonRemarkLines > 3 ? 2 : 6-nonRemarkLines;
         g.setFont(narrowFont(18));
         drawBorderedString(g, remarkTitle, 1, x1, y1, textBgC,  textC);
-        List<String> remarkLines = scaledDialogueWrappedLines(g, displayText, w1, maxLinesForText, 26, 16);
+        // need to calculate correct font size to fit full text (remark & detail) onto allowed # of lines
+        List<String> displayTextLines = scaledDialogueWrappedLines(g, displayText, w1, maxLinesForText, 26, 16);
+        // now split just the remark text 
+        List<String> remarkLines = wrappedLines(g, messageRemark, w1);
         int lineH = g.getFontMetrics().getHeight();
-        //List<String> remarkLines = wrappedLines(g, displayText, w1);
+        int lastLineW = 0;
+        // print the remark text
         for (String line: remarkLines) {
             y1 += lineH;
             drawBorderedString(g, line, 1, x1, y1, textBgC,  textC);
+            lastLineW = g.getFontMetrics().stringWidth(line);
+        }
+        
+        if (!messageRemarkDetail.isEmpty()) {
+            g.setColor(Color.lightGray);
+            int fontH = unscaled(g.getFontMetrics().getHeight());
+            g.setFont(narrowFont(max(14,fontH-4)));
+            int detailW = g.getFontMetrics().stringWidth(messageRemarkDetail);
+            int x1a = x1+lastLineW+s10;
+            if ((detailW+x1a) > w1) {
+                x1a = x1;
+                y1 += lineH;
+            }
+            g.drawString(messageRemarkDetail, x1a, y1);
         }
 
         y1 += s10;

@@ -64,6 +64,10 @@ public class DiplomacyTechOfferMenu extends DiplomacyRequestReply {
         return "";
     }
     @Override
+    public String requestDetail()          {
+        return text("TECH_TRADE_TIER_COST_INFO", str(requestedTech.quintile+1), str((int) requestedTech.researchCost()));
+    }
+    @Override
     public boolean enabled(int i) { 
         return i <= counterOffers.size();
     }
