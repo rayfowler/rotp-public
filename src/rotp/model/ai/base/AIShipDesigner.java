@@ -67,19 +67,20 @@ public class AIShipDesigner implements Base, ShipDesigner {
         // find the best colony design in the fleet
         ShipDesignLab lab = lab();
         ShipDesign bestDesign = null;
-        int[] colonyShips = fl.colonyShips();
-        for (int i=0;i<colonyShips.length;i++) {
-            if (colonyShips[i] > 0) {
+        for (int i=0;i<fl.num.length;i++) {
+            if (fl.num[i] > 0) {
                 ShipDesign design = lab.design(i);
                 ShipSpecialColony special = design.colonySpecial();
-                if (empire.race().ignoresPlanetEnvironment()
-                || (special.tech().canColonize(sys.planet())) ) {
-                    if ((bestDesign == null)
-                    || (design.engine().warp() > bestDesign.engine().warp()))
-                        bestDesign = design;
-                    else if (design.engine().warp() == bestDesign.engine().warp()) {
-                        if (special.tech().environment() > bestDesign.colonySpecial().tech().environment())
+                if (special != null) {
+                    if (empire.race().ignoresPlanetEnvironment()
+                    || (special.tech().canColonize(sys.planet())) ) {
+                        if ((bestDesign == null)
+                        || (design.engine().warp() > bestDesign.engine().warp()))
                             bestDesign = design;
+                        else if (design.engine().warp() == bestDesign.engine().warp()) {
+                            if (special.tech().environment() > bestDesign.colonySpecial().tech().environment())
+                                bestDesign = design;
+                        }
                     }
                 }
             }
