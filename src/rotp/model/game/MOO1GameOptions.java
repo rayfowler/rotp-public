@@ -23,27 +23,10 @@ import java.util.List;
 import rotp.model.empires.Empire;
 import rotp.model.empires.Race;
 import rotp.model.events.RandomEvent;
-import rotp.model.galaxy.GalaxyCircularShape;
 import rotp.model.galaxy.GalaxyEllipticalShape;
 import rotp.model.galaxy.GalaxyRectangularShape;
-import rotp.model.galaxy.GalaxyRingShape;
 import rotp.model.galaxy.GalaxyShape;
 import rotp.model.galaxy.GalaxySpiralShape;
-import rotp.model.galaxy.GalaxyStarShape; // modnar, custom shape
-import rotp.model.galaxy.GalaxyBarSpiralShape; // modnar, custom shape
-import rotp.model.galaxy.GalaxyTextShape; // modnar, custom shape
-import rotp.model.galaxy.GalaxyClusterShape; // modnar, custom shape
-import rotp.model.galaxy.GalaxySwirlClustersShape; // modnar, custom shape
-import rotp.model.galaxy.GalaxyGridShape; // modnar, custom shape
-import rotp.model.galaxy.GalaxySpiralArmsShape; // modnar, custom shape
-import rotp.model.galaxy.GalaxyMazeShape; // modnar, custom shape
-import rotp.model.galaxy.GalaxyVoidShape; // modnar, custom shape
-import rotp.model.galaxy.GalaxyShurikenShape; // modnar, custom shape, long generation times
-import rotp.model.galaxy.GalaxyBullseyeShape; // modnar, custom shape, long generation times
-import rotp.model.galaxy.GalaxyLorenzShape; // modnar, custom shape, long generation times
-import rotp.model.galaxy.GalaxyLorenz2Shape; // modnar, custom shape, long generation times
-import rotp.model.galaxy.GalaxyFractalShape; // modnar, custom shape, long generation times
-import rotp.model.galaxy.GalaxyChaosGameShape; // modnar, custom shape, long generation times
 import rotp.model.galaxy.StarSystem;
 import rotp.model.galaxy.StarType;
 import rotp.model.planet.Planet;
@@ -212,43 +195,8 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         switch(selectedGalaxyShape) {
             case SHAPE_ELLIPTICAL:
                 galaxyShape = new GalaxyEllipticalShape(this); break;
-            case SHAPE_CIRCULAR:
-                galaxyShape = new GalaxyCircularShape(this); break;
-            case SHAPE_RING:
-                galaxyShape = new GalaxyRingShape(this); break;
             case SHAPE_SPIRAL:
                 galaxyShape = new GalaxySpiralShape(this); break;
-            // modnar, custom shapes
-            case SHAPE_STAR:
-                galaxyShape = new GalaxyStarShape(this); break;
-            case SHAPE_BARSPIRAL:
-                galaxyShape = new GalaxyBarSpiralShape(this); break;
-            case SHAPE_TEXT:
-                galaxyShape = new GalaxyTextShape(this); break;
-            case SHAPE_CLUSTER:
-                galaxyShape = new GalaxyClusterShape(this); break;
-            case SHAPE_SWIRLCLUSTERS:
-                galaxyShape = new GalaxySwirlClustersShape(this); break;
-            case SHAPE_GRID:
-                galaxyShape = new GalaxyGridShape(this); break;
-            case SHAPE_SPIRALARMS:
-                galaxyShape = new GalaxySpiralArmsShape(this); break;
-            case SHAPE_MAZE:
-                galaxyShape = new GalaxyMazeShape(this); break;
-            case SHAPE_VOID:
-                galaxyShape = new GalaxyVoidShape(this); break;
-            case SHAPE_SHURIKEN:
-                galaxyShape = new GalaxyShurikenShape(this); break;
-            case SHAPE_BULLSEYE:
-                galaxyShape = new GalaxyBullseyeShape(this); break;
-            case SHAPE_LORENZ:
-                galaxyShape = new GalaxyLorenzShape(this); break;
-            case SHAPE_LORENZ2:
-                galaxyShape = new GalaxyLorenz2Shape(this); break;
-            case SHAPE_FRACTAL:
-                galaxyShape = new GalaxyFractalShape(this); break;
-            case SHAPE_CHAOSGAME:
-                galaxyShape = new GalaxyChaosGameShape(this); break;
             case SHAPE_RECTANGLE:
             default:
                 galaxyShape = new GalaxyRectangularShape(this);
@@ -338,7 +286,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         float amt = 30.0f;                    // default adjustment
         switch(selectedResearchRate()) {
             case RESEARCH_SLOW:
-                return amt*sqrt(techLevel/3); // approx. 4x slower for level 50
+                return amt*sqrt(techLevel/3.0f); // approx. 4x slower for level 50
             case RESEARCH_SLOWER:
                 return amt*sqrt(techLevel);   // approx. 7x slower for level 50
             case RESEARCH_SLOWEST:
