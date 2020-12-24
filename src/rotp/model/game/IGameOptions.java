@@ -69,11 +69,6 @@ public interface IGameOptions {
     public static final String SHAPE_FRACTAL = "SETUP_GALAXY_SHAPE_FRACTAL";
     public static final String SHAPE_CHAOSGAME = "SETUP_GALAXY_SHAPE_CHAOSGAME";
 
-    // modnar: new map option text labels
-    public static final String MAP_OPTION_A = "SETUP_GALAXY_MAP_OPTION_A";
-    public static final String MAP_OPTION_B = "SETUP_GALAXY_MAP_OPTION_B";
-    public static final String MAP_OPTION_C = "SETUP_GALAXY_MAP_OPTION_C";
-
     public static final String DIFFICULTY_EASIEST = "SETUP_DIFFICULTY_EASIEST";
     public static final String DIFFICULTY_EASIER  = "SETUP_DIFFICULTY_EASIER";
     public static final String DIFFICULTY_EASY    = "SETUP_DIFFICULTY_EASY";
@@ -131,10 +126,7 @@ public interface IGameOptions {
     public Planet orionPlanet(StarSystem s);
     public void randomizeColors();
     public GalaxyShape galaxyShape();
-	
-    // modnar: new map option, setMapOption
-    public int setMapOption();
-	
+   
     public int numColors();
     public Color color(int i);
     public boolean disableRandomEvents();
@@ -145,6 +137,8 @@ public interface IGameOptions {
     // selectable options
     public List<String> galaxySizeOptions();
     public List<String> galaxyShapeOptions();
+    public List<String> galaxyShapeOptions1();
+    public List<String> galaxyShapeOptions2();
     public List<String> galaxyAgeOptions();
     public List<String> researchRateOptions();
     public List<String> techTradingOptions();
@@ -152,9 +146,6 @@ public interface IGameOptions {
     public List<String> warpSpeedOptions();
     public List<String> nebulaeOptions();
     public List<String> councilWinOptions();
-	
-    // modnar: new map option, MapOptionOptions
-    public List<String> MapOptionOptions();
 	
     public List<String> gameDifficultyOptions();
     public int maximumOpponentsOptions();
@@ -179,10 +170,14 @@ public interface IGameOptions {
     public String selectedCouncilWinOption();
     public void selectedCouncilWinOption(String s);
 	
-    // modnar: new map option, selectedMapOption
-    public String selectedMapOption();
-    public void selectedMapOption(String s);
-	
+    public String selectedGalaxyShapeOption1();
+    public void selectedGalaxyShapeOption1(String s);
+    public String selectedGalaxyShapeOption2();
+    public void selectedGalaxyShapeOption2(String s);
+
+    public int numGalaxyShapeOption1();
+    public int numGalaxyShapeOption2();
+    
     public String selectedGameDifficulty();
     public void selectedGameDifficulty(String s);
     public int selectedNumberOpponents();
@@ -229,16 +224,32 @@ public interface IGameOptions {
         int index = opts.indexOf(selectedGalaxyShape())-1;
         return index < 0 ? opts.get(opts.size()-1) : opts.get(index);
     }
-	
-    // modnar: new map option, next/prev selections
-    default String nextMapOption() {
-        List<String> opts = MapOptionOptions();
-        int index = opts.indexOf(selectedMapOption())+1;
+    default String nextGalaxyShapeOption1() {
+        List<String> opts = galaxyShapeOptions1();
+        if (opts.isEmpty())
+            return "";
+        int index = opts.indexOf(selectedGalaxyShapeOption1())+1;
         return index >= opts.size() ? opts.get(0) : opts.get(index);
     }
-    default String prevMapOption() {
-        List<String> opts = MapOptionOptions();
-        int index = opts.indexOf(selectedMapOption())-1;
+    default String prevGalaxyShapeOption1() {
+        List<String> opts = galaxyShapeOptions1();
+        if (opts.isEmpty())
+            return "";
+        int index = opts.indexOf(selectedGalaxyShapeOption1())-1;
+        return index < 0 ? opts.get(opts.size()-1) : opts.get(index);
+    }
+    default String nextGalaxyShapeOption2() {
+        List<String> opts = galaxyShapeOptions2();
+        if (opts.isEmpty())
+            return "";
+        int index = opts.indexOf(selectedGalaxyShapeOption2())+1;
+        return index >= opts.size() ? opts.get(0) : opts.get(index);
+    }
+    default String prevGalaxyShapeOption2() {
+        List<String> opts = galaxyShapeOptions2();
+        if (opts.isEmpty())
+            return "";
+        int index = opts.indexOf(selectedGalaxyShapeOption2())-1;
         return index < 0 ? opts.get(opts.size()-1) : opts.get(index);
     }
     default String nextGalaxyAge() {

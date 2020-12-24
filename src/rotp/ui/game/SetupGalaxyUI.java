@@ -54,12 +54,12 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
     Rectangle shapeBox = new Rectangle();
     Polygon shapeBoxL = new Polygon();
     Polygon shapeBoxR = new Polygon();
-    // modnar:
-    // add new map option UI
-    // mapOption
-    Rectangle mapOptionBox = new Rectangle();
-    Polygon mapOptionBoxL = new Polygon();
-    Polygon mapOptionBoxR = new Polygon();			 
+    Rectangle mapOption1Box = new Rectangle();
+    Polygon mapOption1BoxL = new Polygon();
+    Polygon mapOption1BoxR = new Polygon();			 
+    Rectangle mapOption2Box = new Rectangle();
+    Polygon mapOption2BoxL = new Polygon();
+    Polygon mapOption2BoxR = new Polygon();			 
     Rectangle sizeBox = new Rectangle();
     Polygon sizeBoxL = new Polygon();
     Polygon sizeBoxR = new Polygon();
@@ -182,13 +182,14 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         if ((hoverBox == shapeBoxL) || (hoverBox == shapeBoxR)
             ||  (hoverBox == sizeBoxL)  || (hoverBox == sizeBoxR)
             ||  (hoverBox == diffBoxL)  || (hoverBox == diffBoxR)
-            ||  (hoverBox == mapOptionBoxL)   || (hoverBox == mapOptionBoxR) // modnar: mapOptionBox
+            ||  (hoverBox == mapOption1BoxL)  || (hoverBox == mapOption1BoxR)
+            ||  (hoverBox == mapOption2BoxL)  || (hoverBox == mapOption2BoxR)
             ||  (hoverBox == oppBoxU)   || (hoverBox == oppBoxD)) {
             g.setColor(Color.yellow);
             g.fill(hoverBox);
         }
         else if ((hoverBox == shapeBox) || (hoverBox == sizeBox)
-            || (hoverBox == mapOptionBox) // modnar: mapOptionBox
+            || (hoverBox == mapOption1Box) || (hoverBox == mapOption2Box) 
             || (hoverBox == diffBox)   || (hoverBox == oppBox)) {
             Stroke prev = g.getStroke();
             g.setStroke(stroke2);
@@ -218,11 +219,18 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         int x5a =shapeBox.x+((shapeBox.width-shapeSW)/2);
         g.drawString(shapeLbl, x5a, y5);
 		
-        // modnar: mapOptionLbl, may not be needed?
-        String mapOptionLbl = text(newGameOptions().selectedMapOption());
-        int mapOptionSW = g.getFontMetrics().stringWidth(mapOptionLbl);
-        int x5d =mapOptionBox.x+((mapOptionBox.width-mapOptionSW)/2);
-        g.drawString(mapOptionLbl, x5d, y5+s20);
+        if (newGameOptions().numGalaxyShapeOption1() > 0) {
+            String label1 = text(newGameOptions().selectedGalaxyShapeOption1());
+            int sw1 = g.getFontMetrics().stringWidth(label1);
+            int x5d =mapOption1Box.x+((mapOption1Box.width-sw1)/2);
+            g.drawString(label1, x5d, y5+s20);
+            if (newGameOptions().numGalaxyShapeOption2() > 0) {
+                String label2 = text(newGameOptions().selectedGalaxyShapeOption2());
+                int sw2 = g.getFontMetrics().stringWidth(label2);
+                int x5e =mapOption2Box.x+((mapOption2Box.width-sw2)/2);
+                g.drawString(label2, x5e, y5+s40);           
+            }         
+        }
 
         String sizeLbl = text(newGameOptions().selectedGalaxySize());
         int sizeSW = g.getFontMetrics().stringWidth(sizeLbl);
@@ -277,8 +285,6 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
             NoticeMessage.setStatus(text("SETUP_CREATING_GALAXY"));
             drawNotice(g, 30);
         }
-        
-        int w1 = galaxyW*6/10;
     }
     private void drawGalaxyShape(Graphics g, GalaxyShape sh, int x, int y, int w, int h) {
         float factor = min((float)h/sh.height(), (float)w/sh.width());
@@ -338,27 +344,40 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
     public void nextGalaxyShape(boolean click) {
         if (click) softClick();
         newGameOptions().selectedGalaxyShape(newGameOptions().nextGalaxyShape());
-		newGameOptions().galaxyShape().quickGenerate(); // modnar: "hack", do a quickgen to get correct map preview
+        newGameOptions().galaxyShape().quickGenerate(); 
+        backImg = null;
         repaint();
     }
     public void prevGalaxyShape(boolean click) {
         if (click) softClick();
         newGameOptions().selectedGalaxyShape(newGameOptions().prevGalaxyShape());
-		newGameOptions().galaxyShape().quickGenerate(); // modnar: "hack", do a quickgen to get correct map preview
+        newGameOptions().galaxyShape().quickGenerate(); 
+        backImg = null;
         repaint();
     }
 	
-    // modnar: mapOption, next/prev selections
-    public void nextMapOption(boolean click) {
+    public void nextMapOption1(boolean click) {
         if (click) softClick();
-        newGameOptions().selectedMapOption(newGameOptions().nextMapOption());
-		newGameOptions().galaxyShape().quickGenerate(); // modnar: "hack", do a quickgen to get correct map preview
+        newGameOptions().selectedGalaxyShapeOption1(newGameOptions().nextGalaxyShapeOption1());
+        newGameOptions().galaxyShape().quickGenerate(); 
         repaint();
     }
-    public void prevMapOption(boolean click) {
+    public void prevMapOption1(boolean click) {
         if (click) softClick();
-        newGameOptions().selectedMapOption(newGameOptions().prevMapOption());
-		newGameOptions().galaxyShape().quickGenerate(); // modnar: "hack", do a quickgen to get correct map preview
+        newGameOptions().selectedGalaxyShapeOption1(newGameOptions().prevGalaxyShapeOption1());
+        newGameOptions().galaxyShape().quickGenerate(); 
+        repaint();
+    }
+    public void nextMapOption2(boolean click) {
+        if (click) softClick();
+        newGameOptions().selectedGalaxyShapeOption2(newGameOptions().nextGalaxyShapeOption2());
+        newGameOptions().galaxyShape().quickGenerate(); 
+        repaint();
+    }
+    public void prevMapOption2(boolean click) {
+        if (click) softClick();
+        newGameOptions().selectedGalaxyShapeOption2(newGameOptions().prevGalaxyShapeOption2());
+        newGameOptions().galaxyShape().quickGenerate(); 
         repaint();
     }
     public void nextGameDifficulty(boolean click) {
@@ -581,19 +600,37 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         shapeBox.setBounds(sliderX, sliderY, sliderW, sliderH);
         g.fill(shapeBox);
 		
-		// modnar: mapOptionBox
-		mapOptionBoxL.reset();
-        mapOptionBoxL.addPoint(sliderX-s4,sliderY+s1+s20);
-        mapOptionBoxL.addPoint(sliderX-s4,sliderY+sliderH-s2+s20);
-        mapOptionBoxL.addPoint(sliderX-s13,sliderY+(sliderH/2)+s20);
-        g.fill(mapOptionBoxL);
-        mapOptionBoxR.reset();
-        mapOptionBoxR.addPoint(sliderX+sliderW+s4,sliderY+s1+s20);
-        mapOptionBoxR.addPoint(sliderX+sliderW+s4,sliderY+sliderH-s2+s20);
-        mapOptionBoxR.addPoint(sliderX+sliderW+s13,sliderY+(sliderH/2)+s20);
-        g.fill(mapOptionBoxR);
-        mapOptionBox.setBounds(sliderX, sliderY+s20, sliderW, sliderH);
-        g.fill(mapOptionBox);
+	mapOption1BoxL.reset();
+        mapOption1BoxR.reset();
+        mapOption1Box.setBounds(0,0,0,0);
+        if (newGameOptions().numGalaxyShapeOption1() > 0) {
+            mapOption1BoxL.addPoint(sliderX-s4,sliderY+s1+s20);
+            mapOption1BoxL.addPoint(sliderX-s4,sliderY+sliderH-s2+s20);
+            mapOption1BoxL.addPoint(sliderX-s13,sliderY+(sliderH/2)+s20);
+            g.fill(mapOption1BoxL);
+            mapOption1BoxR.addPoint(sliderX+sliderW+s4,sliderY+s1+s20);
+            mapOption1BoxR.addPoint(sliderX+sliderW+s4,sliderY+sliderH-s2+s20);
+            mapOption1BoxR.addPoint(sliderX+sliderW+s13,sliderY+(sliderH/2)+s20);
+            g.fill(mapOption1BoxR);
+            mapOption1Box.setBounds(sliderX, sliderY+s20, sliderW, sliderH);
+            g.fill(mapOption1Box);
+        }
+
+	mapOption2BoxL.reset();
+        mapOption2BoxR.reset();
+        mapOption2Box.setBounds(0,0,0,0);
+        if (newGameOptions().numGalaxyShapeOption2() > 0) {
+            mapOption2BoxL.addPoint(sliderX-s4,sliderY+s1+s40);
+            mapOption2BoxL.addPoint(sliderX-s4,sliderY+sliderH-s2+s40);
+            mapOption2BoxL.addPoint(sliderX-s13,sliderY+(sliderH/2)+s40);
+            g.fill(mapOption2BoxL);
+            mapOption2BoxR.addPoint(sliderX+sliderW+s4,sliderY+s1+s40);
+            mapOption2BoxR.addPoint(sliderX+sliderW+s4,sliderY+sliderH-s2+s40);
+            mapOption2BoxR.addPoint(sliderX+sliderW+s13,sliderY+(sliderH/2)+s40);
+            g.fill(mapOption2BoxR);
+            mapOption2Box.setBounds(sliderX, sliderY+s40, sliderW, sliderH);
+            g.fill(mapOption2Box);
+        }
 
         sliderX += sectionW;
         sizeBoxL.reset();
@@ -730,15 +767,18 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
             hoverBox = shapeBoxR;
         else if (shapeBox.contains(x,y))
             hoverBox = shapeBox;
-		
-		// modnar: mapOptionBox
-		else if (mapOptionBoxL.contains(x,y))
-            hoverBox = mapOptionBoxL;
-        else if (mapOptionBoxR.contains(x,y))
-            hoverBox = mapOptionBoxR;
-        else if (mapOptionBox.contains(x,y))
-            hoverBox = mapOptionBox;
-		
+	else if (mapOption1BoxL.contains(x,y))
+            hoverBox = mapOption1BoxL;
+        else if (mapOption1BoxR.contains(x,y))
+            hoverBox = mapOption1BoxR;
+        else if (mapOption1Box.contains(x,y))
+            hoverBox = mapOption1Box;		
+	else if (mapOption2BoxL.contains(x,y))
+            hoverBox = mapOption2BoxL;
+        else if (mapOption2BoxR.contains(x,y))
+            hoverBox = mapOption2BoxR;
+        else if (mapOption2Box.contains(x,y))
+            hoverBox = mapOption2Box;		
         else if (sizeBoxL.contains(x,y))
             hoverBox = sizeBoxL;
         else if (sizeBoxR.contains(x,y))
@@ -792,16 +832,19 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         else if (hoverBox == shapeBox)
             nextGalaxyShape(true);
         else if (hoverBox == shapeBoxR)
-            nextGalaxyShape(true);
-		
-		// modnar: mapOptionBox
-		else if (hoverBox == mapOptionBoxL)
-            prevMapOption(true);
-        else if (hoverBox == mapOptionBox)
-            nextMapOption(true);
-        else if (hoverBox == mapOptionBoxR)
-            nextMapOption(true);
-		
+            nextGalaxyShape(true);		
+	else if (hoverBox == mapOption1BoxL)
+            prevMapOption1(true);
+        else if (hoverBox == mapOption1Box)
+            nextMapOption1(true);
+        else if (hoverBox == mapOption1BoxR)
+            nextMapOption1(true);
+	else if (hoverBox == mapOption2BoxL)
+            prevMapOption2(true);
+        else if (hoverBox == mapOption2Box)
+            nextMapOption2(true);
+        else if (hoverBox == mapOption2BoxR)
+            nextMapOption2(true);
         else if (hoverBox == sizeBoxL)
             prevGalaxySize(false, true);
         else if (hoverBox == sizeBox)
@@ -848,15 +891,18 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
             else
                 nextGalaxyShape(false);
         }
-		
-		// modnar: mapOptionBox
-		else if (hoverBox == mapOptionBox) {
+	else if (hoverBox == mapOption1Box) {
             if (up)
-                prevMapOption(false);
+                prevMapOption1(false);
             else
-                nextMapOption(false);
+                nextMapOption1(false);
         }
-		
+	else if (hoverBox == mapOption2Box) {
+            if (up)
+                prevMapOption2(false);
+            else
+                nextMapOption2(false);
+        }
         else if (hoverBox == sizeBox) {
             if (up)
                 prevGalaxySize(true, false);

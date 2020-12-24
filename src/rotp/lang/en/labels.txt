@@ -1021,7 +1021,33 @@ SETUP_BUTTON_CANCEL               | Cancel
 SETUP_BUTTON_BACK                 | Back
 SETUP_BUTTON_NEXT                 | Next
 SETUP_BUTTON_START                | Start
-SETUP_BUTTON_SETTINGS             | Advanced Settings
+SETUP_BUTTON_SETTINGS             | Advanced Options
+
+SETUP_SPIRAL_2_ARMS               | Two Arms
+SETUP_SPIRAL_3_ARMS               | Three Arms
+SETUP_SPIRAL_4_ARMS               | Four Arms
+SETUP_SPIRAL_5_ARMS               | Five Arms
+SETUP_SPIRAL_6_ARMS               | Six Arms
+SETUP_SPIRAL_7_ARMS               | Seven Arms
+SETUP_SPIRAL_8_ARMS               | Eight Arms
+SETUP_SPIRAL_ROTATION_0           | No Rotation
+SETUP_SPIRAL_ROTATION_1           | Rotation 1
+SETUP_SPIRAL_ROTATION_2           | Rotation 2
+SETUP_SPIRAL_ROTATION_3           | Rotation 3
+SETUP_SPIRAL_ROTATION_4           | Rotation 4
+SETUP_SPIRAL_ROTATION_5           | Rotation 5
+SETUP_SPIRAL_ROTATION_6           | Rotation 6
+SETUP_ELLIPSE_0                   | Circular
+SETUP_ELLIPSE_1                   | Ellipse 1
+SETUP_ELLIPSE_2                   | Ellipse 2
+SETUP_ELLIPSE_3                   | Ellipse 3
+SETUP_ELLIPSE_4                   | Ellipse 4
+SETUP_VOID_0                      | No Void
+SETUP_VOID_1                      | Void 1
+SETUP_VOID_2                      | Void 2
+SETUP_VOID_3                      | Void 3
+SETUP_VOID_4                      | Void 4
+
 
 // Advanced Settings
 SETTINGS_TITLE                    | Advanced Settings

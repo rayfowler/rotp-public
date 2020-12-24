@@ -29,21 +29,6 @@ public class GalaxyRectangularShape extends GalaxyShape {
     @Override
     public float maxScaleAdj()               { return 0.95f; }
 	
-	public void init(int n) {
-        super.init(n);
-		
-		// modnar: choose different stellar densities (map areas) with setMapOption
-		if (opts.setMapOption() == 1) {
-			adjust_density = 1.0f;
-		}
-		else if (opts.setMapOption() == 2) {
-			adjust_density = 1.5f;
-		}
-		else if (opts.setMapOption() == 3) {
-			adjust_density = 2.0f;
-		}
-    }
-	
     @Override
     protected int galaxyWidthLY() { 
         return (int) (Math.sqrt(adjust_density*4.0/3.0*opts.numberStarSystems()*adjustedSizeFactor()));

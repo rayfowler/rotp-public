@@ -19,83 +19,95 @@ import java.awt.Point;
 import java.awt.Shape;
 import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
-import java.awt.geom.AffineTransform;
+import java.util.ArrayList;
+import java.util.List;
 import rotp.model.game.IGameOptions;
 
 public class GalaxyEllipticalShape extends GalaxyShape {
+    public static final List<String> options1;
+    public static final List<String> options2;
     private static final long serialVersionUID = 1L;
-    Shape ellipse;
-	Area totalArea, ellipseArea;
+    static {
+        options1 = new ArrayList<>();
+        options1.add("SETUP_ELLIPSE_0");
+        options1.add("SETUP_ELLIPSE_1");
+        options1.add("SETUP_ELLIPSE_2");
+        options1.add("SETUP_ELLIPSE_3");
+        options1.add("SETUP_ELLIPSE_4");
+        options2 = new ArrayList<>();
+        options2.add("SETUP_VOID_0");
+        options2.add("SETUP_VOID_1");
+        options2.add("SETUP_VOID_2");
+        options2.add("SETUP_VOID_3");
+        options2.add("SETUP_VOID_4");
+    }
+
+    Shape ellipse, hole;
+    float ellipseRatio = 2.0f;
+    float voidSize = 0.0f;
 	
     public GalaxyEllipticalShape(IGameOptions options) {
         opts = options;
     }
     @Override
+    public List<String> options1()  { return options1; }
+    @Override
+    public List<String> options2()  { return options2; }
+    @Override
+    public String defaultOption1()  { return options1.get(2); }
+    @Override
+    public String defaultOption2()  { return options2.get(0); }
+    @Override
     public float maxScaleAdj()               { return 0.8f; }
     @Override
     public void init(int n) {
         super.init(n);
-		
-		float gE = (float) galaxyEdgeBuffer();
-		float gW = (float) galaxyWidthLY();
-		float gH = (float) galaxyHeightLY();
-		
-		// modnar: different ellipse configurations with setMapOption
-		if (opts.setMapOption() == 1) {
-			// single ellipse
-			// modnar: add galaxyEdgeBuffer() as upper left corner to prevent cutoff
-			ellipse = new Ellipse2D.Float(gE,gE,gW,gH);
-			ellipseArea = new Area(ellipse);
-			totalArea = ellipseArea;
-		}
-		else if (opts.setMapOption() == 2) {
-			// 2 ellipses (x-shape)
-			ellipse = new Ellipse2D.Float(-1.1f*gW/2,-0.4f*gH/2,1.1f*gW,0.4f*gH);
-			// rotate and shift ellipse
-			AffineTransform rotateShape = new AffineTransform();
-			AffineTransform moveShape = new AffineTransform();
-			rotateShape.rotate(0.45);
-			moveShape.translate(gE+gW/2,gE+gH/2);
-			ellipse = rotateShape.createTransformedShape(ellipse);
-			ellipse = moveShape.createTransformedShape(ellipse);
-			ellipseArea = new Area(ellipse);
-			totalArea = ellipseArea;
-			
-			ellipse = new Ellipse2D.Float(-1.1f*gW/2,-0.4f*gH/2,1.1f*gW,0.4f*gH);
-			// rotate and shift ellipse
-			rotateShape.rotate(-0.9);
-			ellipse = rotateShape.createTransformedShape(ellipse);
-			ellipse = moveShape.createTransformedShape(ellipse);
-			ellipseArea = new Area(ellipse);
-			totalArea.add(ellipseArea);
-		}
-		else if (opts.setMapOption() == 3) {
-			// 4 ellipses (upright, side-by-side)
-			ellipse = new Ellipse2D.Float(gE,gE,0.25f*gW,gH);
-			ellipseArea = new Area(ellipse);
-			totalArea = ellipseArea;
-			
-			ellipse = new Ellipse2D.Float(gE+0.25f*gW,gE,0.25f*gW,gH);
-			ellipseArea = new Area(ellipse);
-			totalArea.add(ellipseArea);
-			
-			ellipse = new Ellipse2D.Float(gE+0.5f*gW,gE,0.25f*gW,gH);
-			ellipseArea = new Area(ellipse);
-			totalArea.add(ellipseArea);
-			
-			ellipse = new Ellipse2D.Float(gE+0.75f*gW,gE,0.25f*gW,gH);
-			ellipseArea = new Area(ellipse);
-			totalArea.add(ellipseArea);
-		}
-		
+
+        int option1 = max(0, options1.indexOf(opts.selectedGalaxyShapeOption1()));
+        int option2 = max(0, options2.indexOf(opts.selectedGalaxyShapeOption2()));
+        
+        switch(option1) {
+            case 0: ellipseRatio = 1.0f; break;
+            case 1: ellipseRatio = 1.5f; break;
+            case 2: ellipseRatio = 2.0f; break;
+            case 3: ellipseRatio = 3.0f; break;
+            case 4: ellipseRatio = 5.0f; break;
+            default: ellipseRatio = 2.0f; break;
+        }
+        
+        switch(option2) {
+            case 0: voidSize = 0.0f; break;
+            case 1: voidSize = 0.2f; break;
+            case 2: voidSize = 0.4f; break;
+            case 3: voidSize = 0.6f; break;
+            case 4: voidSize = 0.8f; break;
+            default: voidSize = 0.0f; break;
+        }
+        // reset w/h vars since aspect ratio may have changed
+        initWidthHeight();
+        
+        float gE = (float) galaxyEdgeBuffer();
+        float gW = (float) galaxyWidthLY();
+        float gH = (float) galaxyHeightLY();
+        
+        ellipse = new Ellipse2D.Float(gE,gE,gW,gH);
+        
+        hole = null;
+        if (voidSize > 0) {
+            float vW = voidSize*gW;
+            float vH = voidSize*gH;
+            float vX = gE+((gW-vW)/2);
+            float vY = gE+((gH-vH)/2);
+            hole = new Ellipse2D.Float(vX, vY,vW,vH);
+        }
     }
     @Override
     protected int galaxyWidthLY() { 
-        return (int) (Math.sqrt(2*maxStars*adjustedSizeFactor()));
+        return (int) (Math.sqrt(ellipseRatio*maxStars*adjustedSizeFactor()));
     }
     @Override
     protected int galaxyHeightLY() { 
-        return (int) (Math.sqrt(0.5*maxStars*adjustedSizeFactor()));
+        return (int) (Math.sqrt((1/ellipseRatio)*maxStars*adjustedSizeFactor()));
     }
     @Override
     public void setRandom(Point.Float pt) {
@@ -104,7 +116,10 @@ public class GalaxyEllipticalShape extends GalaxyShape {
     }
     @Override
     public boolean valid(Point.Float pt) {
-        return totalArea.contains(pt.x, pt.y);
+        if (hole == null)
+            return ellipse.contains(pt.x, pt.y);
+        else
+            return ellipse.contains(pt.x, pt.y) && !hole.contains(pt.x, pt.y);
     }
     float randomLocation(float max, float buff) {
         return buff + (random() * (max-buff-buff));

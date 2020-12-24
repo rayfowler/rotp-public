@@ -61,10 +61,10 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
 
     private String selectedGalaxySize;
     private String selectedGalaxyShape;
+    private String selectedGalaxyShapeOption1;
+    private String selectedGalaxyShapeOption2;
+    
     private String selectedGalaxyAge;
-    // modnar: new map option
-    // selectedMapOption, setMapOption
-    private String selectedMapOption;
     private String selectedGameDifficulty;
     private String selectedResearchRate;
     private String selectedTechTradeOption;
@@ -123,13 +123,14 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     public String selectedGalaxyShape()          { return selectedGalaxyShape; }
     @Override
     public void selectedGalaxyShape(String s)    { selectedGalaxyShape = s; setGalaxyShape(); generateGalaxy(); }
-	
-    // modnar: selectedMapOption, setMapOption
     @Override
-    public String selectedMapOption()           { return selectedMapOption; }
+    public String selectedGalaxyShapeOption1()       { return selectedGalaxyShapeOption1; }
     @Override
-    public void selectedMapOption(String s)    { selectedMapOption = s; setMapOption(); generateGalaxy(); }
-	
+    public void selectedGalaxyShapeOption1(String s) { selectedGalaxyShapeOption1 = s; }
+    @Override
+    public String selectedGalaxyShapeOption2()       { return selectedGalaxyShapeOption2; }
+    @Override
+    public void selectedGalaxyShapeOption2(String s) { selectedGalaxyShapeOption2 = s; }
     @Override
     public String selectedGalaxyAge()           { return selectedGalaxyAge; }
     @Override
@@ -208,81 +209,56 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private void setGalaxyShape() {
         switch(selectedGalaxyShape) {
             case SHAPE_ELLIPTICAL:
-                galaxyShape = new GalaxyEllipticalShape(this);
-                return;
+                galaxyShape = new GalaxyEllipticalShape(this); break;
             case SHAPE_CIRCULAR:
-                galaxyShape = new GalaxyCircularShape(this);
-                return;
+                galaxyShape = new GalaxyCircularShape(this); break;
             case SHAPE_RING:
-                galaxyShape = new GalaxyRingShape(this);
-                return;
+                galaxyShape = new GalaxyRingShape(this); break;
             case SHAPE_SPIRAL:
-                galaxyShape = new GalaxySpiralShape(this);
-                return;
+                galaxyShape = new GalaxySpiralShape(this); break;
             // modnar, custom shapes
             case SHAPE_STAR:
-                galaxyShape = new GalaxyStarShape(this);
-                return;
+                galaxyShape = new GalaxyStarShape(this); break;
             case SHAPE_BARSPIRAL:
-                galaxyShape = new GalaxyBarSpiralShape(this);
-                return;
+                galaxyShape = new GalaxyBarSpiralShape(this); break;
             case SHAPE_TEXT:
-                galaxyShape = new GalaxyTextShape(this);
-                return;
+                galaxyShape = new GalaxyTextShape(this); break;
             case SHAPE_CLUSTER:
-                galaxyShape = new GalaxyClusterShape(this);
-                return;
+                galaxyShape = new GalaxyClusterShape(this); break;
             case SHAPE_SWIRLCLUSTERS:
-                galaxyShape = new GalaxySwirlClustersShape(this);
-                return;
+                galaxyShape = new GalaxySwirlClustersShape(this); break;
             case SHAPE_GRID:
-                galaxyShape = new GalaxyGridShape(this);
-                return;
+                galaxyShape = new GalaxyGridShape(this); break;
             case SHAPE_SPIRALARMS:
-                galaxyShape = new GalaxySpiralArmsShape(this);
-                return;
+                galaxyShape = new GalaxySpiralArmsShape(this); break;
             case SHAPE_MAZE:
-                galaxyShape = new GalaxyMazeShape(this);
-                return;
+                galaxyShape = new GalaxyMazeShape(this); break;
             case SHAPE_VOID:
-                galaxyShape = new GalaxyVoidShape(this);
-                return;
+                galaxyShape = new GalaxyVoidShape(this); break;
             case SHAPE_SHURIKEN:
-                galaxyShape = new GalaxyShurikenShape(this);
-                return;
+                galaxyShape = new GalaxyShurikenShape(this); break;
             case SHAPE_BULLSEYE:
-                galaxyShape = new GalaxyBullseyeShape(this);
-                return;
+                galaxyShape = new GalaxyBullseyeShape(this); break;
             case SHAPE_LORENZ:
-                galaxyShape = new GalaxyLorenzShape(this);
-                return;
+                galaxyShape = new GalaxyLorenzShape(this); break;
             case SHAPE_LORENZ2:
-                galaxyShape = new GalaxyLorenz2Shape(this);
-                return;
+                galaxyShape = new GalaxyLorenz2Shape(this); break;
             case SHAPE_FRACTAL:
-                galaxyShape = new GalaxyFractalShape(this);
-                return;
+                galaxyShape = new GalaxyFractalShape(this); break;
             case SHAPE_CHAOSGAME:
-                galaxyShape = new GalaxyChaosGameShape(this);
-                return;
+                galaxyShape = new GalaxyChaosGameShape(this); break;
             case SHAPE_RECTANGLE:
             default:
                 galaxyShape = new GalaxyRectangularShape(this);
-                return;
         }
+        selectedGalaxyShapeOption1 = galaxyShape.defaultOption1();
+        selectedGalaxyShapeOption2 = galaxyShape.defaultOption2();
+
     }
-	
-	// modnar: setMapOption values
-	@Override
-    public int setMapOption() {
-        switch (selectedMapOption()) {
-            case MAP_OPTION_A:      return 1;
-            case MAP_OPTION_B:      return 2;
-            case MAP_OPTION_C:      return 3;
-			default:                return 1;
-        }
-    }
-	
+    @Override
+    public int numGalaxyShapeOption1() {  return galaxyShape.numOptions1(); }
+    @Override
+    public int numGalaxyShapeOption2() {  return galaxyShape.numOptions2(); }
     @Override
     public int numberStarSystems() {
             // MOO Strategy Guide, Table 3-2, p.50
@@ -540,38 +516,15 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     public List<String> galaxyShapeOptions() {
         List<String> list = new ArrayList<>();
         list.add(SHAPE_RECTANGLE);
-        list.add(SHAPE_CIRCULAR);
-        list.add(SHAPE_RING);
         list.add(SHAPE_ELLIPTICAL);
         list.add(SHAPE_SPIRAL);
-        // modnar, custom shapes
-        list.add(SHAPE_STAR);
-        list.add(SHAPE_BARSPIRAL);
-        list.add(SHAPE_TEXT);
-        list.add(SHAPE_CLUSTER);
-        list.add(SHAPE_SWIRLCLUSTERS);
-        list.add(SHAPE_GRID);
-        list.add(SHAPE_SPIRALARMS);
-        list.add(SHAPE_MAZE);
-        list.add(SHAPE_VOID);
-        list.add(SHAPE_SHURIKEN);
-        list.add(SHAPE_BULLSEYE);
-        list.add(SHAPE_LORENZ);
-        list.add(SHAPE_LORENZ2);
-        list.add(SHAPE_FRACTAL);
-        list.add(SHAPE_CHAOSGAME);
         return list;
     }
 	
-    // modnar: MapOptionOptions
     @Override
-    public List<String> MapOptionOptions() {
-        List<String> list = new ArrayList<>();
-        list.add(MAP_OPTION_A);
-        list.add(MAP_OPTION_B);
-        list.add(MAP_OPTION_C);
-        return list;
-    }
+    public List<String> galaxyShapeOptions1() { return galaxyShape.options1(); }
+    @Override
+    public List<String> galaxyShapeOptions2() { return galaxyShape.options2(); }
     @Override
     public List<String> galaxyAgeOptions() {
         List<String> list = new ArrayList<>();
@@ -662,8 +615,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedGalaxySize = SIZE_SMALL;
         selectedGalaxyShape = galaxyShapeOptions().get(0);
         selectedGalaxyAge = galaxyAgeOptions().get(1);
-        // modnar: selectedMapOption
-        selectedMapOption = MapOptionOptions().get(0);
         selectedGameDifficulty(gameDifficultyOptions().get(0));
         selectedNumberOpponents = maximumOpponentsOptions();
         selectedPlayerRace(random(startingRaceOptions()));

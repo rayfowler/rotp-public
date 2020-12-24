@@ -18,16 +18,40 @@ package rotp.model.galaxy;
 import java.awt.Point;
 import java.awt.Shape;
 import java.awt.geom.Ellipse2D;
+import java.util.ArrayList;
+import java.util.List;
 import rotp.model.game.IGameOptions;
 
 public class GalaxySpiralShape extends GalaxyShape {
     private static final long serialVersionUID = 1L;
-    static final float numArms = 5;
-    static final float armOffsetMax = 0.7f;
-    static final float rotationFactor = 3;
-    static final float armSeparationDistance = 2 * (float)Math.PI / numArms;
+    public static final List<String> options1;
+    public static final List<String> options2;
+    static {
+        options1 = new ArrayList<>();
+        options1.add("SETUP_SPIRAL_2_ARMS");
+        options1.add("SETUP_SPIRAL_3_ARMS");
+        options1.add("SETUP_SPIRAL_4_ARMS");
+        options1.add("SETUP_SPIRAL_5_ARMS");
+        options1.add("SETUP_SPIRAL_6_ARMS");
+        options1.add("SETUP_SPIRAL_7_ARMS");
+        options1.add("SETUP_SPIRAL_8_ARMS");
+        options2 = new ArrayList<>();
+        options2.add("SETUP_SPIRAL_ROTATION_0");
+        options2.add("SETUP_SPIRAL_ROTATION_1");
+        options2.add("SETUP_SPIRAL_ROTATION_2");
+        options2.add("SETUP_SPIRAL_ROTATION_3");
+        options2.add("SETUP_SPIRAL_ROTATION_4");
+        options2.add("SETUP_SPIRAL_ROTATION_5");
+        options2.add("SETUP_SPIRAL_ROTATION_6");
+    }
+    public static int numOptions1 = 7;
+    public static int numOptions2 = 7;
+    float numArms = 8;
+    float armOffsetMax = 0.7f;
+    float rotationFactor = 0;
+    float armSeparationDistance = 2 * (float)Math.PI / numArms;
     Shape circle;
-	float adjust_density = 1.0f; // modnar: adjust stellar density
+    float adjust_density = 1.0f; // modnar: adjust stellar density
 	
     float randomX = 0;
     float randomY = 0;
@@ -35,20 +59,23 @@ public class GalaxySpiralShape extends GalaxyShape {
         opts = options;
     }
     @Override
+    public List<String> options1()  { return options1; }
+    @Override
+    public List<String> options2()  { return options2; }
+    @Override
+    public String defaultOption1()  { return options1.get(2); }
+    @Override
+    public String defaultOption2()  { return options2.get(3); }
+    @Override
     public void init(int n) {
         super.init(n);
-		
-		// modnar: choose different stellar densities (map areas) with setMapOption
-		if (opts.setMapOption() == 1) {
-			adjust_density = 1.0f;
-		}
-		else if (opts.setMapOption() == 2) {
-			adjust_density = 1.5f;
-		}
-		else if (opts.setMapOption() == 3) {
-			adjust_density = 2.0f;
-		}
-		
+        int option1 = max(0, options1.indexOf(opts.selectedGalaxyShapeOption1()));
+        int option2 = max(0, options2.indexOf(opts.selectedGalaxyShapeOption2()));
+
+        numArms = option1+2;
+        rotationFactor = option2;
+        armSeparationDistance = 2 * (float)Math.PI / numArms;
+        
         circle = new Ellipse2D.Float(0,0,galaxyWidthLY(), galaxyHeightLY());
     }
     @Override
