@@ -48,26 +48,8 @@ public interface IGameOptions {
     public static final String SIZE_MAXIMUM = "SETUP_GALAXY_SIZE_MAXIMUM";
 
     public static final String SHAPE_RECTANGLE = "SETUP_GALAXY_SHAPE_RECTANGLE";
-    public static final String SHAPE_CIRCULAR = "SETUP_GALAXY_SHAPE_CIRCULAR";
-    public static final String SHAPE_RING = "SETUP_GALAXY_SHAPE_RING";
     public static final String SHAPE_ELLIPTICAL = "SETUP_GALAXY_SHAPE_ELLIPSE";
     public static final String SHAPE_SPIRAL = "SETUP_GALAXY_SHAPE_SPIRAL";
-    // modnar: custom map shapes
-    public static final String SHAPE_STAR = "SETUP_GALAXY_SHAPE_STAR";
-    public static final String SHAPE_BARSPIRAL = "SETUP_GALAXY_SHAPE_BARSPIRAL";
-    public static final String SHAPE_TEXT = "SETUP_GALAXY_SHAPE_TEXT";
-    public static final String SHAPE_CLUSTER = "SETUP_GALAXY_SHAPE_CLUSTER";
-    public static final String SHAPE_SWIRLCLUSTERS = "SETUP_GALAXY_SHAPE_SWIRLCLUSTERS";
-    public static final String SHAPE_GRID = "SETUP_GALAXY_SHAPE_GRID";
-    public static final String SHAPE_SPIRALARMS = "SETUP_GALAXY_SHAPE_SPIRALARMS";
-    public static final String SHAPE_MAZE = "SETUP_GALAXY_SHAPE_MAZE";
-    public static final String SHAPE_VOID = "SETUP_GALAXY_SHAPE_VOID";
-    public static final String SHAPE_SHURIKEN = "SETUP_GALAXY_SHAPE_SHURIKEN";
-    public static final String SHAPE_BULLSEYE = "SETUP_GALAXY_SHAPE_BULLSEYE";
-    public static final String SHAPE_LORENZ = "SETUP_GALAXY_SHAPE_LORENZ";
-    public static final String SHAPE_LORENZ2 = "SETUP_GALAXY_SHAPE_LORENZ2";
-    public static final String SHAPE_FRACTAL = "SETUP_GALAXY_SHAPE_FRACTAL";
-    public static final String SHAPE_CHAOSGAME = "SETUP_GALAXY_SHAPE_CHAOSGAME";
 
     public static final String DIFFICULTY_EASIEST = "SETUP_DIFFICULTY_EASIEST";
     public static final String DIFFICULTY_EASIER  = "SETUP_DIFFICULTY_EASIER";
