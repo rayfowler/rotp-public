@@ -46,7 +46,6 @@ public class Nebula extends MapSprite implements Base, IMappedObject, Serializab
             return "";
         
         String sysName = player().sv.name(sysId);
-        
         if (sysName.isEmpty())
             return text("NEBULA_ID", sysId);
         else
@@ -67,8 +66,8 @@ public class Nebula extends MapSprite implements Base, IMappedObject, Serializab
     @Override
     public float y()                      { return y; }
     
-    private float adjWidth()                { return size == 0 ? width : size*width; }
-    private float adjHeight()                { return size == 0 ? height : size*height; }
+    public float adjWidth()                { return size == 0 ? width : size*width; }
+    public float adjHeight()                { return size == 0 ? height : size*height; }
     
     public float centerX()                { return x+(adjWidth()/2); }
     public float centerY()                { return y+(adjHeight()/2); }
@@ -109,11 +108,15 @@ public class Nebula extends MapSprite implements Base, IMappedObject, Serializab
     public void enrichCentralSystem() {
         if (numStars < 3)
             return;
+        if (galaxy().numStarSystems() <= 100)
+            return;
+        
         StarSystem sys = galaxy().system(sysId);
         if (sys.planet().isEnvironmentNone())
             return;
         
-        if (numStars >= 10)
+        float ultraPct = numStars * .07f;
+        if (random() < ultraPct)
             sys.planet().setResourceUltraRich();
         else if (!sys.planet().isResourceUltraRich())
             sys.planet().setResourceRich();

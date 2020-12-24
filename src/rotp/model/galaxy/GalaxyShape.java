@@ -53,9 +53,10 @@ public abstract class GalaxyShape implements Base, Serializable {
     protected abstract int galaxyWidthLY();
     protected abstract int galaxyHeightLY();
     public abstract void setRandom(Point.Float p);
-    public abstract boolean valid(Point.Float p);
+    public abstract boolean valid(float x, float y);
     protected abstract float sizeFactor(String size);
 
+    public boolean valid(Point.Float p) { return valid(p.x, p.y); }
     public float maxScaleAdj()               { return 1.0f; }
     public void coords(int n, Point.Float pt) {
         int i = n;

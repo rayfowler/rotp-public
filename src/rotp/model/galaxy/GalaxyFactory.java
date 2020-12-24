@@ -272,8 +272,23 @@ public class GalaxyFactory implements Base {
         // creates a star system for each race, and then additional star
         // systems based on the galaxy size selected at startup
         int numNebula= opts.numberNebula();
+        float nebSize = options().nebulaSizeMult();
         g.initNebulas(numNebula);
-        for (int i=0;i<numNebula;i++)
-            g.addNebula(shape);
+        
+        // add the nebulas
+        // for each nebula, try to create it at the options size
+        // in unsuccessful, decrease option size until it is
+        // less than 1 or less than half of the optoin size
+        for (int i=0;i<numNebula;i++) {
+            float size = nebSize;
+            boolean added = false;
+            while(!added) {
+                added = g.addNebula(shape,size);
+                if (!added) {
+                    size--;
+                    added = size < 1;
+                }
+            }
+        }
     }
 }

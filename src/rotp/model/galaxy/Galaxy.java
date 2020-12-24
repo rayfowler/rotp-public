@@ -118,21 +118,18 @@ public class Galaxy implements Base, Serializable {
         empires = new Empire[options().selectedNumberOpponents()+1];
     }
     public void advanceTime() { currentTime += TIME_PER_TURN; }
-    public void addNebula(GalaxyShape shape) {
+    public boolean addNebula(GalaxyShape shape, float nebSize) {
         // each nebula creates a buffered image for display
         // after we have created 5 nebulas, start cloning
         // existing nebulas (add their images) when making
         // new nebulas
         int MAX_UNIQUE_NEBULAS = 16;
 
-        float buffer = 2.0f;
-
-        float nebSize = options().nebulaSizeMult();
         Point.Float pt = new Point.Float();
         shape.setRandom(pt);
         
         if (!shape.valid(pt))
-            return;
+            return false;
         
         Nebula neb;
         if (nebulas.size() < MAX_UNIQUE_NEBULAS)
@@ -140,25 +137,32 @@ public class Galaxy implements Base, Serializable {
         else
             neb = random(nebulas).copy();
         neb.setXY(pt.x, pt.y);
-        Point.Float pt2 = new Point.Float(neb.centerX(), neb.centerY());
         
-        // nebula center must be a valid point
-        if (!shape.valid(pt2))
-            return;
+        float x = pt.x;
+        float y = pt.y;
+        float w = neb.adjWidth();
+        float h = neb.adjHeight();
         
+        if (!shape.valid(x+w,y))
+            return false;
+        if (!shape.valid(x+w,y+h))
+            return false;
+        if (!shape.valid(x,y+h))
+            return false;
+                
         // don't add nebulas whose center point is in an existing nebula
         for (Nebula existingNeb: nebulas) {
             if (existingNeb.contains(neb.centerX(), neb.centerY()))
-                return;
+                return false;
         }
             
-        boolean containsSystem = false;
         for (EmpireSystem sys : shape.empSystems) {
             if (sys.inNebula(neb))
-                containsSystem = true;
+                return false;
         }
-        if (!containsSystem)
-            nebulas.add(neb);
+        
+        nebulas.add(neb);
+        return true;
     }
     public List<StarSystem> systemsNamed(String name) {
         List<StarSystem> systems = new ArrayList<>();

@@ -115,11 +115,11 @@ public class GalaxyEllipticalShape extends GalaxyShape {
         pt.y = randomLocation(height, galaxyEdgeBuffer());
     }
     @Override
-    public boolean valid(Point.Float pt) {
+    public boolean valid(float x, float y) {
         if (hole == null)
-            return ellipse.contains(pt.x, pt.y);
+            return ellipse.contains(x, y);
         else
-            return ellipse.contains(pt.x, pt.y) && !hole.contains(pt.x, pt.y);
+            return ellipse.contains(x, y) && !hole.contains(x, y);
     }
     float randomLocation(float max, float buff) {
         return buff + (random() * (max-buff-buff));

@@ -43,7 +43,16 @@ public class GalaxyRectangularShape extends GalaxyShape {
         pt.y = randomLocation(height, galaxyEdgeBuffer());
     }
     @Override
-    public boolean valid(Point.Float pt) {
+    public boolean valid(float x, float y) {
+        float buff = galaxyEdgeBuffer();
+        if (x > (width-buff))
+            return false;
+        if (x < buff)
+            return false;
+        if (y > (height-buff))
+            return false;
+        if (y < buff)
+            return false;
         return true;
     }
     float randomLocation(float max, float buff) {

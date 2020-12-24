@@ -111,7 +111,7 @@ public class GalaxySpiralShape extends GalaxyShape {
         pt.y = buff+(adjH*(1+rY)/2);
     }
     @Override
-    public boolean valid(Point.Float pt) {
+    public boolean valid(float x, float y) {
         return true;
     }
     float randomLocation(float max, float buff) {
