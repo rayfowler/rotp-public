@@ -36,6 +36,7 @@ SPY_HIDE                          | Hide
 SPY_ESPIONAGE                     | Espionage
 SPY_SABOTAGE                      | Sabotage
 SPY_FRAMED                        | [You were framed.]
+SPY_WARNING                       | [You have been warned.]
 
 ARID_DESC_BIOLOGICAL              | Arid Planets are dry, terrestrial worlds with limited vegetation and no more than 40% water surface area.
 BARREN_DESC_BIOLOGICAL            | Barren planets are dry, dusty worlds with thin atmospheres and no surface water.
@@ -365,7 +366,7 @@ MAIN_HELP_3H                      | Next Year - advances the game to the next ye
 MAIN_HELP_3I                      | Current Turn - displays the game's current turn or your empire's current year. Click to toggle.
 MAIN_HELP_3J                      | Map controls - click to cycle through various display settings for the galaxy map.
 
-MAIN_SYSTEM_DETAIL_PFM            | Pop %1    Fact %2    Miss %3
+MAIN_SYSTEM_DETAIL_PFB            | Pop %1    Fact %2    Base %3
 MAIN_SYSTEM_DETAIL_PF             | Pop %1    Fact %2 
 
 MAIN_UNEXPLORED_SYSTEM            | Unexplored

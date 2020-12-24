@@ -570,7 +570,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             String popStr = ""+pop;
             String fact = ""+pl.sv.factories(id);
             int miss = pl.sv.bases(id);
-            String lbl = miss > 0 ? text("MAIN_SYSTEM_DETAIL_PFM",popStr,fact,""+miss) : text("MAIN_SYSTEM_DETAIL_PF",popStr,fact);
+            String lbl = miss > 0 ? text("MAIN_SYSTEM_DETAIL_PFB",popStr,fact,str(miss)) : text("MAIN_SYSTEM_DETAIL_PF",popStr,fact);
             String s1 = map.parent().systemLabel(this);
             String s2 = map.parent().systemLabel2(this);
             if (s2.isEmpty())
