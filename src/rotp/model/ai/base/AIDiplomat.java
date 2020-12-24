@@ -1479,11 +1479,29 @@ public class AIDiplomat implements Base, Diplomat {
             return true;
         if (treaty.populationChange(emp) < warPopulationLossLimit(v))
             return true;       
-        if (treaty.productionChange(emp) < warProductionLossLimit(v))
+        if (treaty.factoryChange(emp) < warFactoryLossLimit(v))
             return true;  
         if (treaty.fleetSizeChange(emp) < warFleetSizeLossLimit(v))
             return true;  
-        return false;        
+
+        // for pop, factories and ships, calculate the pct lost vs the
+        // pct we were willing to lose (1-limit). If any of those are >1
+        // or if they total up to > 2, then we are tired.
+        
+        // Example: Pacifist will quit at 20% pop loss,
+        float popPct = treaty.populationLostPct(emp) / (1-warPopulationLossLimit(v));
+        if (popPct >= 1)
+            return true;
+        
+        float factPct = treaty.factoryLostPct(emp) / (1-warFactoryLossLimit(v));
+        if (factPct >= 1)
+            return true;
+        
+        float fleetPct = treaty.fleetSizeLostPct(emp) / (1-warFleetSizeLossLimit(v));
+        if (fleetPct >= 1)
+            return true;
+        
+        return (popPct + factPct + fleetPct) > 2;        
     }
     private float warColonyLossLimit(EmpireView v) {
         switch(v.owner().leader().objective) {
@@ -1507,7 +1525,7 @@ public class AIDiplomat implements Base, Diplomat {
             default:         return 0.6f;
         }        
     }
-    private float warProductionLossLimit(EmpireView v) {
+    private float warFactoryLossLimit(EmpireView v) {
         switch(v.owner().leader().objective) {
             case MILITARIST:    return 0.6f;
             case ECOLOGIST:     return 0.4f;

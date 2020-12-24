@@ -1268,8 +1268,8 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
         return r;
     }
-    public DiplomaticTreaty treatyForCiv(Empire c) {
-        EmpireView v = viewForEmpire(c);
+    public DiplomaticTreaty treaty(Empire e) {
+        EmpireView v = viewForEmpire(e.id);
         if (v == null)
             return null;
         else
@@ -2127,6 +2127,13 @@ public final class Empire implements Base, NamedObject, Serializable {
         for (StarSystem sys: systems)
             totalResearchBC += sys.colony().totalPlanetaryResearchSpending();
         return totalResearchBC;
+    }
+    public Float totalPlanetaryFactories() {
+        float factories = 0;
+        List<StarSystem> systems = new ArrayList<>(allColonizedSystems());
+        for (StarSystem sys: systems)
+            factories += sys.colony().industry().factories();
+        return factories;
     }
     public void allocateReserve(Colony col, int amount) {
         float amt = min(totalReserve, amount);

@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import rotp.model.empires.DiplomaticEmbassy;
+import rotp.model.empires.DiplomaticTreaty;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.SpaceMonster;
@@ -385,6 +386,17 @@ public class ShipCombatManager implements Base {
         results.killRebels();
 
         results.refreshSystemScans();
+        
+        // update treaty with results
+        Empire defender = results.defender();
+        Empire attacker = results.attacker();
+        DiplomaticTreaty treaty = defender.treaty(attacker);
+        treaty.loseFleet(attacker, results.shipHullPointsDestroyed(attacker));
+        treaty.loseFleet(defender, results.shipHullPointsDestroyed(defender));
+        if (results.colonyStack != null) {
+            treaty.losePopulation(defender, results.popDestroyed());
+            treaty.loseFactories(defender, results.factoriesDestroyed());
+        }
 
         if (logIncidents)
             results.logIncidents();

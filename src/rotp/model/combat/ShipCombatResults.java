@@ -58,6 +58,17 @@ public final class ShipCombatResults implements Base {
     public Map<ShipDesign, Integer> shipsDamaged()    { return shipsDamaged; }
     public Map<ShipDesign, Integer> shipsRetreated()  { return shipsRetreated; }
 
+    public float shipHullPointsDestroyed(Empire e) {
+        float bc = 0;
+        for (ShipDesign d: shipsDestroyed.keySet()) {
+            if (d.empire() == e) {
+                int num = shipsDestroyed.get(d);
+                if (num > 0)
+                    bc += (num * d.hullPoints());
+            }
+        }
+        return bc;
+    }
     public boolean isMonsterAttack()  { return monster != null; }
     public boolean isMonsterVictory() { return isMonsterAttack() && victor() == null; }
     public String aiRaceName()  {

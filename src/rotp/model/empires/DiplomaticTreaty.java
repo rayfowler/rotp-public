@@ -43,4 +43,7 @@ public class DiplomaticTreaty implements Base, Serializable {
     public boolean isUnity()              { return false; }
     public boolean isPeace()              { return false; }
     public int listOrder()                { return 0; }
+    public void losePopulation(Empire e, float amt) {  }
+    public void loseFactories(Empire e, float amt)  {  }
+    public void loseFleet(Empire e, float amt)    {  }
 }
