@@ -34,6 +34,7 @@ public interface Sprite {
     default StarSystem starSystem()              { return null; }
     default boolean hasDisplayPanel()            { return false; }
 
+    default boolean acceptDoubleClicks()         { return false; }
     default void click(GalaxyMapPanel map, int count, boolean rightClick, boolean sound)        { }
 
     default int mapX(GalaxyMapPanel map)         { return map.mapX(source().x()); }

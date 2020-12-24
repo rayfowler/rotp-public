@@ -29,6 +29,8 @@ public class ZoomOutWidgetSprite extends MapControlSprite {
         height = scaled(h);
     }
     @Override
+    public boolean acceptDoubleClicks()         { return true; }
+    @Override
     public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
         map.adjustZoom(1);
     }
