@@ -394,6 +394,8 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
             empire().ai().checkColonize(system(), this);
     }
     public boolean canColonizeSystem(StarSystem sys) {
+        if (sys == null)
+            return false;
         ShipDesign d = empire().shipDesignerAI().bestDesignToColonize(this, sys);
         return d != null;
     }
