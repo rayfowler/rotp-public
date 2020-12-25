@@ -237,7 +237,11 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
         loading = true;
         repaint();
         buttonClick();
-        final Runnable load = () -> { GameSession.instance().loadRecentSession(false); };
+        final Runnable load = () -> {
+            RotPUI.instance().unregisterOnSession(session());
+            GameSession.instance().loadRecentSession(false);
+            RotPUI.instance().registerOnSession(session());
+        };
         SwingUtilities.invokeLater(load);
     }
     public void loadGame(String s) {
@@ -248,6 +252,7 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
         repaint();
         buttonClick();
         final Runnable load = () -> {
+            RotPUI.instance().unregisterOnSession(session());
             GameSession.instance().loadSession(s, false);
             RotPUI.instance().registerOnSession(session());
         };

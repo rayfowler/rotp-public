@@ -72,8 +72,11 @@ public class Rotp {
 
         setFrameSize();
 
-        if (reloadRecentSave) 
+        if (reloadRecentSave) {
+            RotPUI.instance().unregisterOnSession(GameSession.instance());
             GameSession.instance().loadRecentSession(false);
+            RotPUI.instance().registerOnSession(GameSession.instance());
+        }
         frame.setResizable(false);
         frame.setVisible(true);
     }
