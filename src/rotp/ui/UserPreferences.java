@@ -96,7 +96,7 @@ public class UserPreferences {
         Collections.sort(raceKeys);
         try (FileOutputStream fout = new FileOutputStream(new File(path, PREFERENCES_FILE));
             // modnar: change to OutputStreamWriter, force UTF-8
-			PrintWriter out = new PrintWriter(new OutputStreamWriter(fout, "UTF-8")); ) {
+            PrintWriter out = new PrintWriter(new OutputStreamWriter(fout, "UTF-8")); ) {
             out.println(keyFormat("GRAPHICS")+ graphicsLevel.toString());
             out.println(keyFormat("MUSIC")+ yesOrNo(playMusic));
             out.println(keyFormat("SOUNDS")+ yesOrNo(playSounds));
@@ -130,7 +130,8 @@ public class UserPreferences {
         if (key.isEmpty() || val.isEmpty())
                 return;
 
-        System.out.println("Key:"+key+"  value:"+val);
+        if (Rotp.logging)
+            System.out.println("Key:"+key+"  value:"+val);
         switch(key) {
             case "GRAPHICS":     graphicsLevel(val); return;
             case "MUSIC":        playMusic = yesOrNo(val); return;

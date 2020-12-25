@@ -555,7 +555,7 @@ public class Planet implements Base, IMappedObject, Serializable {
         if (type().sphereResolution(this) >= radius)
             return;
 
-        System.out.println("Generate2DSphere()  sphereResolution:" + type().sphereResolution(this)+", radius:" + radius);
+        log("Generate2DSphere()  sphereResolution:" + type().sphereResolution(this)+", radius:" + radius);
         // generate height map and resultant terrain grayscale image
         //long start = System.currentTimeMillis();
         //log("Generating height map, raidus: ", str(radius), " for planet ", planet.starSystem().name());
