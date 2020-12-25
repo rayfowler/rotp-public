@@ -443,7 +443,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
             return;
 
         // after turn is over, we may need to reset ECO spending to adjust for cleanup
-        keepEcoLockedToClean = !locked[ECOLOGY] && empire().isPlayer() && (allocation[ECOLOGY] == cleanupAllocation());
+        keepEcoLockedToClean = empire().isPlayer() && (allocation[ECOLOGY] >= cleanupAllocation());
         // make sure that the colony's expenses aren't too high
         empire().governorAI().lowerExpenses(this);
 
@@ -492,9 +492,10 @@ public final class Colony implements Base, IMappedObject, Serializable {
         checkEcoAtClean();
     }
     public void checkEcoAtClean() {
-        if (keepEcoLockedToClean) {
+        recalcSpendingForNewTaxRate = false;
+        if ((keepEcoLockedToClean) && !locked[ECOLOGY]) {
             int newAlloc = ecology().cleanupAllocationNeeded();
-            if (allocation[ECOLOGY] != newAlloc) {
+            if (allocation[ECOLOGY] < newAlloc) {
                 allocation[ECOLOGY] = cleanupAllocation = newAlloc;
                 empire().ai().governor().setColonyAllocations(this);
             }        
@@ -698,10 +699,8 @@ public final class Colony implements Base, IMappedObject, Serializable {
         return colonyTaxPct;
     }
     public void ensureProperSpendingRates() {
-        if (recalcSpendingForNewTaxRate) {
-            recalcSpendingForNewTaxRate = false;
+        if (recalcSpendingForNewTaxRate) 
             checkEcoAtClean();
-        }        
     }
     public float totalProductionIncome() {
         if (inRebellion())
@@ -847,7 +846,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
             transport().setDest(dest);
             transport().setDefaultTravelSpeed();
         }
-        toggleRecalcSpending();
+        checkEcoAtClean();
         // reset ship views
         if (empire.isPlayer())
             empire.setVisibleShips();
