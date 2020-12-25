@@ -19,6 +19,7 @@ import java.io.Serializable;
 import java.util.EnumMap;
 import java.util.List;
 import static rotp.model.colony.ColonySpendingCategory.MAX_TICKS;
+import rotp.model.empires.DiplomaticTreaty;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.events.SystemAbandonedEvent;
@@ -971,6 +972,12 @@ public final class Colony implements Base, IMappedObject, Serializable {
         int popLost = (int) startingPop -  (int) population();
         int rebelsLost = (int) Math.ceil(pctLost*rebels);
         rebels = rebels - rebelsLost;
+        
+        DiplomaticTreaty treaty = empire().treaty(tr.empire());
+        if (treaty != null) {
+            treaty.losePopulation(empire(), startingPop-population());
+            treaty.losePopulation(tr.empire(), tr.originalSize()-tr.size());
+        }
 
         // did planet ownership change?
         if (tr.size() > 0) {
