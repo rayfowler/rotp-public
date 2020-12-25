@@ -399,7 +399,7 @@ public class AIDiplomat implements Base, Diplomat {
         }
 
         v.otherView().embassy().tradeAccepted();
-        DiplomaticIncident inc = v.embassy().establishTradeTreaty(level);
+        DiplomaticIncident inc = v.otherView().embassy().establishTradeTreaty(level);
         return v.otherView().accept(DialogueManager.ACCEPT_TRADE, inc);
     }
     @Override
