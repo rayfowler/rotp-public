@@ -249,7 +249,6 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
         buttonClick();
         final Runnable load = () -> {
             GameSession.instance().loadSession(s, false);
-            RotPUI.instance().registerOnSession(session());
         };
         SwingUtilities.invokeLater(load);
     }

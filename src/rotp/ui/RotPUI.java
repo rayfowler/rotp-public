@@ -37,8 +37,6 @@ import rotp.model.empires.EspionageMission;
 import rotp.model.empires.SabotageMission;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.Transport;
-import rotp.model.game.GameListener;
-import rotp.model.game.GameSession;
 import rotp.model.game.IGameOptions;
 import rotp.model.game.MOO1GameOptions;
 import rotp.model.planet.PlanetFactory;
@@ -80,7 +78,7 @@ import rotp.util.LanguageManager;
 import rotp.util.Logger;
 import rotp.util.sound.SoundManager;
 
-public class RotPUI extends BasePanel implements ActionListener, KeyListener, GameListener {
+public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     private static final long serialVersionUID = 1L;
     private static int FPS = 10;
     private static int ANIMATION_TIMER = 100;
@@ -239,18 +237,10 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener, Ga
     public RotPUI() {
         timer = new Timer(ANIMATION_TIMER, this);
         init();
-        registerOnSession(session());
     }
-    // should be called ONCE on any time new game session is created/loaded
-    public final void registerOnSession(GameSession gameSession) {
-        gameSession.removeGameListener(this);
-        gameSession.addGameListener(this);
-    }
-    @Override
     public void clearAdvice() {
         RotPUI.this.mainUI().clearAdvice();
     }
-    @Override
     public void processNotifications(List<TurnNotification> notifications) {
         for (TurnNotification tn: notifications) {
             try {
@@ -512,7 +502,6 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener, Ga
     public void showTransportAlert(String title, String subtitle, String text) {  }
     public void showSpyAlert(String title, String subtitle, String text) {  }
     public void showRandomEventAlert(String title, String subtitle, String text, ImageIcon splash) { }
-    @Override
     public void allocateSystems() {
         try {
             drawNextTurnNotice = false;
