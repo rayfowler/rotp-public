@@ -655,6 +655,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         // is there any overlay covering the map and preventing a search
         if (parent.masksMouseOver(x1,y1))
             return null;
+
         Galaxy gal = galaxy();
         Empire pl = player();
         List<Ship> ships = null;

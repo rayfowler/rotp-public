@@ -450,7 +450,7 @@ public class MainUI extends BasePanel implements IMapHandler {
 
         if (overlay.hoveringOverSprite(o))
             return;
-
+        
         boolean used = (displayPanel != null) && displayPanel.useHoveringSprite(o);
         if (!used) {
             if (hoveringSprite() != null)
@@ -508,7 +508,7 @@ public class MainUI extends BasePanel implements IMapHandler {
         sessionVar("MAINUI_HOVERING_SPRITE", s); 
         if (s == null)
            return; 
-        if (s.hasDisplayPanel() && !!session().performingTurn()) 
+        if (s.hasDisplayPanel() && !session().performingTurn()) 
             showDisplayPanel(); 
     }
     public Sprite lastHoveringSprite()       { return (Sprite) sessionVar("MAINUI_LAST_HOVERING_SPRITE"); }
