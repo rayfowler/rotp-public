@@ -229,6 +229,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         return mainUI;
     }
     public RaceIntroUI raceIntroUI()  { return raceIntroUI; }
+    public AllocateTechUI techUI()    { return allocateTechUI; }
     @Override
     public int animationCount()     { return animationCount; }
     @Override

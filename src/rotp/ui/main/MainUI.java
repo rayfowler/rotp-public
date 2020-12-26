@@ -202,6 +202,8 @@ public class MainUI extends BasePanel implements IMapHandler {
     public boolean showAlerts() {
         return (session().currentAlert() != null) && displayPanel.isVisible();
     }
+    @Override
+    public boolean showAdvice()  { return overlay == overlayAdvice; }
     public void setOverlay(MapOverlay lay) {
         overlay = lay;
     }
@@ -725,6 +727,18 @@ public class MainUI extends BasePanel implements IMapHandler {
         int w11 = scaled(170);
         HelpSpec sp11 = helpUI.addBlueHelpText(x11, y11, w11, 4, text("MAIN_HELP_2K"));
         sp11.setLine(scaled(1195), y11+sp11.height(), scaled(1195), scaled(185));
+
+        int x12 = scaled(115);
+        int y12 = scaled(440);
+        int w12 = scaled(220);
+        HelpSpec sp12 = helpUI.addBlueHelpText(x12, y12, w12, 3, text("MAIN_HELP_2L"));
+        sp12.setLine(x12, y12+(sp12.height()/2), s55, scaled(470));
+
+        int x13 = scaled(120);
+        int y13 = scaled(540);
+        int w13 = scaled(220);
+        HelpSpec sp13 = helpUI.addBlueHelpText(x13, y13, w13, 3, text("MAIN_HELP_2M"));
+        sp13.setLine(x13, y13+(sp13.height()/2), s55, scaled(595));
     }
     private void loadButtonBarHelpFrame() {
         HelpUI helpUI = RotPUI.helpUI();

@@ -50,6 +50,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
     private final Color whiteTextC = new Color(239,239,239);
     private final Color darkBrownC = new Color(112,85,68);
     private final Color blueBucketC = new Color(32,132,132);
+    private final Color blueBucketBackC = new Color(16,66,66);
     private final Color subpanelBackC = new Color(178,124,87);
     static final Color sliderHighlightColor = new Color(255,255,255);
     static final Color sliderBoxEnabled = new Color(34,140,142);
@@ -81,7 +82,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
     private BufferedImage visualTree;
     int treeX, treeY;
     int dragX, dragY;
-    float totalPlanetaryResearch = 0;
+    float totalPlanetaryResearch = -1;
     float totalPlanetaryResearchSpending = 0;
     
     public AllocateTechUI() {
@@ -109,9 +110,14 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         addMouseWheelListener(this);
     }
     public void init() {
-        totalPlanetaryResearch = player().totalPlanetaryResearch();
+        totalPlanetaryResearch = -1;
         totalPlanetaryResearchSpending = player().totalPlanetaryResearchSpending();
         resetData();
+    }
+    public float totalPlanetaryResearch() {
+        if (totalPlanetaryResearch < 0)
+            totalPlanetaryResearch = player().totalPlanetaryResearch();
+        return totalPlanetaryResearch;
     }
     @Override
     public String textureName()     { return TEXTURE_BROWN; }
@@ -293,7 +299,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         int totalSpending = (int) totalPlanetaryResearchSpending;
         int totalResearch = 0;       
         for (int i=0;i<cats;i++)
-             totalResearch += tree.category(i).currentResearch(totalPlanetaryResearch);
+             totalResearch += tree.category(i).currentResearch(totalPlanetaryResearch());
 
         int y6 = subPanelY+s93;
         g.setFont(plainFont(25));
@@ -466,7 +472,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         g.setColor(c3);
         g.fillPolygon(rightArrow[catNum]);
 
-        String rpText = text("TECH_TOTAL_RP",(int)cat.currentResearch(totalPlanetaryResearch));
+        String rpText = text("TECH_TOTAL_RP",(int)cat.currentResearch(totalPlanetaryResearch()));
         g.setColor(Color.black);
         g.setFont(plainFont(18));
         int rpSW = g.getFontMetrics().stringWidth(rpText);
@@ -524,8 +530,10 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         String title = text(TechCategory.id(catNum));
         drawShadowedString(g, title, 1, x+s20, y0, Color.black, whiteTextC);
 
+        drawResearchBubble(g, cat, Color.black, blueBucketC, blueBucketBackC, x+scaled(180), y0);
+        /*
         if (!cat.researchCompleted()) {
-            float chance = cat.upcomingDiscoveryChance(totalPlanetaryResearch);
+            float chance = cat.upcomingDiscoveryChance(totalPlanetaryResearch());
             int x0 = x+scaled(180);
             int r = s19;
             if (chance <= 1) {
@@ -546,7 +554,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
                 g.drawString(strPct, x0-(swPct/2), y0);
             }
         }
-
+        */
         int fontSize = 18;
         g.setColor(Color.black);
         g.setFont(narrowFont(fontSize));
@@ -583,6 +591,30 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             g.setFont(plainFont(fontSize));
             g.drawString(detail2Value, x3b, y0);
         }
+    }
+    public void drawResearchBubble(Graphics2D g, TechCategory cat, Color textC, Color backC1, Color backC2, int x, int y) {
+        if (!cat.researchCompleted()) {
+            float chance = cat.upcomingDiscoveryChance(totalPlanetaryResearch());
+            int r = s19;
+            if (chance <= 1) {
+                g.setColor(backC2);
+                g.fillOval(x-s10, y-s16, r, r);
+                int lvl = (int)(chance*r);
+                g.setColor(backC1);
+                g.setClip(x-s10,y+s4-lvl,r+r,r);
+                g.fillOval(x-s10, y-s16, r, r);
+                g.setClip(null);
+            }
+            else {
+                int pct = (int) (100* (chance -1));
+                String strPct = text("TECH_DISCOVERY_PCT",pct);
+                g.setFont(narrowFont(18));
+                g.setColor(textC);
+                int swPct = g.getFontMetrics().stringWidth(strPct);
+                g.drawString(strPct, x-(swPct/2), y);
+            }
+        }
+
     }
     private BufferedImage visualTree() {
         if (visualTree == null) 
@@ -765,7 +797,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             y0+= lineH;
         }
     }
-    private void selectTechCategory(int i) {
+    public void selectTechCategory(int i) {
         if ((i < 0) || (i >= catBox.length))
             return;
         if (selectedCategory == i)
@@ -1077,6 +1109,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         return null;
     }
     class ExitTechButton extends rotp.ui.ExitButton {
+        private static final long serialVersionUID = 1L;
         public ExitTechButton(int w, int h, int vMargin, int hMargin) {
             super(w, h, vMargin, hMargin);
         }

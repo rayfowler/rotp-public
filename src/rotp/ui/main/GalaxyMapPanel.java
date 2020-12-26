@@ -44,6 +44,7 @@ import rotp.model.galaxy.Location;
 import rotp.model.galaxy.Nebula;
 import rotp.model.galaxy.Ship;
 import rotp.model.galaxy.StarSystem;
+import rotp.model.tech.TechCategory;
 import rotp.ui.BasePanel;
 import rotp.ui.RotPUI;
 import rotp.ui.map.IMapHandler;
@@ -53,6 +54,8 @@ import rotp.ui.sprites.GridCircularDisplaySprite;
 import rotp.ui.sprites.RangeDisplaySprite;
 import rotp.ui.sprites.ShipDisplaySprite;
 import rotp.ui.sprites.SystemNameDisplaySprite;
+import rotp.ui.sprites.TechStatusSprite;
+import rotp.ui.sprites.TreasurySprite;
 import rotp.ui.sprites.ZoomInWidgetSprite;
 import rotp.ui.sprites.ZoomOutWidgetSprite;
 
@@ -252,6 +255,15 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             baseControls.add(new FlightPathDisplaySprite(10,130,30,30));
             baseControls.add(new ShipDisplaySprite(10,95,30,30));
             baseControls.add(new SystemNameDisplaySprite(10,60,30,30));
+
+            int y0 = 445;
+            baseControls.add(new TreasurySprite(10,y0, 30,30));
+            baseControls.add(new TechStatusSprite(TechCategory.COMPUTER,     10,y0+35, 30,30));
+            baseControls.add(new TechStatusSprite(TechCategory.CONSTRUCTION, 10,y0+70, 30,30));
+            baseControls.add(new TechStatusSprite(TechCategory.FORCE_FIELD,  10,y0+105, 30,30));
+            baseControls.add(new TechStatusSprite(TechCategory.PLANETOLOGY,  10,y0+140,30,30));
+            baseControls.add(new TechStatusSprite(TechCategory.PROPULSION,   10,y0+175,30,30));
+            baseControls.add(new TechStatusSprite(TechCategory.WEAPON,       10,y0+210,30,30));
         }
         
         addMouseListener(this);
