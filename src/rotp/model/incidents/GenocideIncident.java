@@ -29,12 +29,12 @@ public class GenocideIncident extends DiplomaticIncident {
             emp.diplomatAI().noticeIncident(inc, attacker);
         }
     }
-    private GenocideIncident(Empire n, Empire a, Empire v) {
-        empAttacker = a.id;
-        empVictim = v.id;
-        severity = -50*n.leader().genocideMod();
+    private GenocideIncident(Empire obs, Empire att, Empire vic) {
+        empAttacker = att.id;
+        empVictim = vic.id;
+        severity = -50;
         dateOccurred = galaxy().currentYear();
-        duration = 100;
+        duration = obs.leader().genocideDurationMod();
     }
     @Override
     public String title()            { return text("INC_GENOCIDE_TITLE"); }

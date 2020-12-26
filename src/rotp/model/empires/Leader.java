@@ -135,21 +135,21 @@ public class Leader implements Base, Serializable {
         else
             return ((1/power)-1)*-20;
     }
-    public float genocideMod() {
+    public int genocideDurationMod() {
         switch(personality) {
-            case PACIFIST:   return 2;
-            case HONORABLE:  return 1;
-            case XENOPHOBIC: return 2;
-            case RUTHLESS:   return 0;
+            case PACIFIST:   return 999999;
+            case HONORABLE:  return 50;
+            case XENOPHOBIC: return 100;
+            case RUTHLESS:   return 10;
             case AGGRESSIVE: return 0;
-            case ERRATIC:    return 1;
-            default:         return 1;
+            case ERRATIC:    return 25;
+            default:         return 25;
         }
     }
     public float bioweaponMod() {
         switch(personality) {
             case PACIFIST:   return 1;
-            case HONORABLE:  return 2;
+            case HONORABLE:  return 1.5f;
             case XENOPHOBIC: return 0.5f;
             case RUTHLESS:   return 0;
             case AGGRESSIVE: return 0.5f;
@@ -157,14 +157,14 @@ public class Leader implements Base, Serializable {
             default:         return 1;
         }
     }
-    public float oathBreakerMod() {
+    public int oathBreakerDuration() {
         switch(personality) {
-            case PACIFIST:   return 1;
-            case HONORABLE:  return 2;
-            case XENOPHOBIC: return 1;
+            case PACIFIST:   return 50;
+            case HONORABLE:  return 999999;
+            case XENOPHOBIC: return 50;
             case RUTHLESS:   return 0;
-            case AGGRESSIVE: return 1;
-            case ERRATIC:    return 0;
+            case AGGRESSIVE: return 50;
+            case ERRATIC:    return 25;
             default:         return 1;
         }
     }

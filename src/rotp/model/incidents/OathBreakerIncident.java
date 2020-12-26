@@ -47,10 +47,15 @@ public class OathBreakerIncident extends DiplomaticIncident {
         empBreaker = brk.id;
         empVictim = vic.id;
         oathBreakType = type;
-        severity = sev * obs.leader().oathBreakerMod();
         dateOccurred = galaxy().currentYear();
+        
+        duration = obs.leader().oathBreakerDuration();
         // longer duration for the victim of the oathbreaking
-        duration = (vic == obs) ? 50 : 25;
+        if (vic == obs)
+            duration *= 2;
+
+        // zero duration means zero severity. That's ruthless!
+        severity = duration == 0 ? 0 : sev;
     }
     @Override
     public String title()        { return text("INC_OATHBREAKER_TITLE"); }
