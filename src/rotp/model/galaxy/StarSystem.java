@@ -567,47 +567,51 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             }
         }
         else if (map.showSystemData()) {
+            int mgn = BasePanel.s6;
+            int s1 = BasePanel.s1;
             String popStr = ""+pop;
             String fact = ""+pl.sv.factories(id);
             int miss = pl.sv.bases(id);
             String lbl = miss > 0 ? text("MAIN_SYSTEM_DETAIL_PFB",popStr,fact,str(miss)) : text("MAIN_SYSTEM_DETAIL_PF",popStr,fact);
-            String s1 = map.parent().systemLabel(this);
-            String s2 = map.parent().systemLabel2(this);
-            if (s2.isEmpty())
-                s2 = name2(map);
-            if (!s1.isEmpty() || !s2.isEmpty()) {
+            String label1 = map.parent().systemLabel(this);
+            String label2 = map.parent().systemLabel2(this);
+            if (label2.isEmpty())
+                label2 = name2(map);
+            if (!label1.isEmpty() || !label2.isEmpty()) {
                 Font prevFont = g2.getFont();
                 g2.setFont(narrowFont(fontSize));
-                int sw = g2.getFontMetrics().stringWidth(s1);
+                int sw = g2.getFontMetrics().stringWidth(label1);
                 g2.setFont(narrowFont(fontSize*3/5));
                 int swData = g2.getFontMetrics().stringWidth(lbl);
-                int boxW = max(sw, swData);
+                int boxW = max(sw, swData)+mgn;
                 int boxSize = r0;
                 int yAdj = scaled(fontSize)+boxSize;
                 int fontH = scaled(fontSize);
+                int cnr = fontH/2;
+                int x0a = x0-(boxW/2);
                 g2.setColor(systemNameBackC);
                 Stroke prevStroke = g2.getStroke();
                 g2.setStroke(BasePanel.stroke1);
-                g2.fillRoundRect(x0-(boxW*3/5), y0+yAdj-(fontH*4/5), boxW*6/5, fontH*8/5, fontH,fontH);
+                g2.fillRoundRect(x0a, y0+yAdj-(fontH*3/4), boxW, fontH*3/2, cnr,cnr);
                 g2.setColor(systemDataBackC);
-                g2.drawRoundRect(x0-(boxW*3/5), y0+yAdj-(fontH*4/5), boxW*6/5, fontH*8/5, fontH,fontH);
-                g2.fillRoundRect(x0-(boxW*3/5), y0+yAdj+(fontH/5), (boxW*6/5)+scaled(1), fontH*4/5, fontH, fontH);
-                g2.fillRect(x0-(boxW*3/5), y0+yAdj+(fontH/5), (boxW*6/5)+scaled(1), fontH*2/5);
+                g2.drawRoundRect(x0a, y0+yAdj-(fontH*3/4), boxW, fontH*3/2, cnr,cnr);
+                g2.fillRoundRect(x0a, y0+yAdj+(fontH*3/16), boxW+s1, fontH*3/4, cnr, cnr);
+                g2.fillRect(x0a, y0+yAdj+(fontH*3/16), boxW+s1, fontH*3/8);
                 g2.setStroke(prevStroke);
                 g2.setColor(map.parent().systemLabelColor(this));
-                if (!s1.isEmpty()) {
+                if (!label1.isEmpty()) {
                     g2.setFont(narrowFont(fontSize));
-                    g2.drawString(s1, x0-(sw/2), y0+yAdj+BasePanel.s1);
+                    g2.drawString(label1, x0-(sw/2), y0+yAdj+BasePanel.s1);
                     y0 += scaled(fontSize-2);
                     g2.setFont(narrowFont(fontSize*3/5));
                     g2.setColor(Color.black);
-                    g2.drawString(lbl, x0-(swData/2), y0+yAdj-(fontH/5));
+                    g2.drawString(lbl, x0-(swData/2), y0+yAdj-(fontH*3/16));
                 }
-                if (!s2.isEmpty()) {
+                if (!label2.isEmpty()) {
                     g2.setColor(map.parent().systemLabelColor(this));
                     g2.setFont(narrowFont(fontSize-2));
-                    int sw2 = g2.getFontMetrics().stringWidth(s2);
-                    g2.drawString(s2, x0-(sw2/2), y0+yAdj+fontH+BasePanel.s2);
+                    int sw2 = g2.getFontMetrics().stringWidth(label2);
+                    g2.drawString(label2, x0-(sw2/2), y0+yAdj+fontH+BasePanel.s2);
                 }
                 g2.setFont(prevFont);
                 box.x = x0-(sw/2);

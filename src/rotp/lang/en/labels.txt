@@ -376,8 +376,8 @@ MAIN_HELP_3H                      | Next Year - advances the game to the next ye
 MAIN_HELP_3I                      | Current Turn - displays the game's current turn or your empire's current year. Click to toggle.
 MAIN_HELP_3J                      | Map controls - click to cycle through various display settings for the galaxy map.
 
-MAIN_SYSTEM_DETAIL_PFB            | Pop %1    Fact %2    Base %3
-MAIN_SYSTEM_DETAIL_PF             | Pop %1    Fact %2 
+MAIN_SYSTEM_DETAIL_PFB            | Pop %1  Fac %2  Base %3
+MAIN_SYSTEM_DETAIL_PF             | Pop %1  Fac %2
 
 MAIN_UNEXPLORED_SYSTEM            | Unexplored
 MAIN_ALLIED_COLONY                | Allied Colony

@@ -41,7 +41,6 @@ public class EmpireColonyInfoPane extends BasePanel {
     static final Color sliderHighlightColor = new Color(255,255,255);
     static final Color productionGreenColor = new Color(89, 240, 46);
     static final Color dataBorders = new Color(160,160,160);
-    static final Color textColor = new Color(20,20,20);
 
     Color borderC;
     Color darkC;
@@ -132,7 +131,7 @@ public class EmpireColonyInfoPane extends BasePanel {
                 fontSize--;
                 g.setFont(narrowFont(fontSize));
             }
-            g.setColor(textColor);
+            g.setColor(SystemPanel.blackText);
             g.drawString(strTitle, x0, y0);
 
             if (strDataLabel != null) {
@@ -402,7 +401,7 @@ public class EmpireColonyInfoPane extends BasePanel {
             String str3 = concat("(", str((int)c.production()), ")");
 
             int y0 = getHeight()-s6;
-            g.setColor(textColor);
+            g.setColor(SystemPanel.blackText);
             g.setFont(narrowFont(16));
             g.drawString(str1, s5, y0);
             int sw2 = g.getFontMetrics().stringWidth(str2);

@@ -50,7 +50,6 @@ public class EmpireSystemPanel extends SystemPanel {
 
     static final Color darkBrown = new Color(45,14,5);
     static final Color brown = new Color(64,24,13);
-    static final Color darkText = new Color(40,40,40);
     static final Color sliderBoxBlue = new Color(34,140,142);
 
     private SystemViewInfoPane topPane;
@@ -140,7 +139,7 @@ public class EmpireSystemPanel extends SystemPanel {
         detailTopPane.setLayout(layout);
         detailTopPane.setPreferredSize(new Dimension(getWidth(),scaled(110)));
         detailTopPane.add(new EmpireColonyFoundedPane(this, parentSpritePanel.parent, MainUI.paneBackground()), BorderLayout.NORTH);
-        detailTopPane.add(new EmpireColonyInfoPane(this, MainUI.paneBackground(), dataBorders, SystemPanel.yellowText, darkText), BorderLayout.CENTER);
+        detailTopPane.add(new EmpireColonyInfoPane(this, MainUI.paneBackground(), dataBorders, SystemPanel.yellowText, SystemPanel.blackText), BorderLayout.CENTER);
         Color textC = new Color(204,204,204);
         spendingPane = new EmpireColonySpendingPane(this, MainUI.paneBackground(), textC, labelBorderHi, labelBorderLo);
         shipPane = new EmpireShipPane(this);
