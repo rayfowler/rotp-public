@@ -108,6 +108,9 @@ public class MapOverlaySystemsScouted extends MapOverlay {
         if (drawSprites) {
             drawSprites = false;
             orderedSystems.clear();
+            scoutSystems.clear();
+            allySystems.clear();
+            astronomerSystems.clear();
 
             if (session().performingTurn())
                 parent.resumeTurn();
