@@ -92,7 +92,7 @@ public class TreasurySprite extends MapControlSprite {
         else
             g2.setFont(narrowFont(12));
         
-        g2.setColor(SystemPanel.yellowText);
+        g2.setColor(SystemPanel.orangeText);
         if (label2.isEmpty()) {
             int sw = g2.getFontMetrics().stringWidth(label);
             int x0 = startX+((width-sw)/2);

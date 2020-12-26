@@ -50,7 +50,6 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
     private final Color whiteTextC = new Color(239,239,239);
     private final Color darkBrownC = new Color(112,85,68);
     private final Color blueBucketC = new Color(32,132,132);
-    private final Color blueBucketBackC = new Color(16,66,66);
     private final Color subpanelBackC = new Color(178,124,87);
     static final Color sliderHighlightColor = new Color(255,255,255);
     static final Color sliderBoxEnabled = new Color(34,140,142);
@@ -530,31 +529,8 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         String title = text(TechCategory.id(catNum));
         drawShadowedString(g, title, 1, x+s20, y0, Color.black, whiteTextC);
 
-        drawResearchBubble(g, cat, Color.black, blueBucketC, blueBucketBackC, x+scaled(180), y0);
-        /*
-        if (!cat.researchCompleted()) {
-            float chance = cat.upcomingDiscoveryChance(totalPlanetaryResearch());
-            int x0 = x+scaled(180);
-            int r = s19;
-            if (chance <= 1) {
-                g.setColor(Color.black);
-                g.fillOval(x0-s10, y0-s16, r, r);
-                int lvl = (int)(chance*r);
-                g.setColor(blueBucketC);
-                g.setClip(x0-s10,y0+s4-lvl,r+r,r);
-                g.fillOval(x0-s10, y0-s16, r, r);
-                g.setClip(null);
-            }
-            else {
-                int pct = (int) (100* (chance -1));
-                String strPct = text("TECH_DISCOVERY_PCT",pct);
-                g.setFont(narrowFont(18));
-                g.setColor(Color.black);
-                int swPct = g.getFontMetrics().stringWidth(strPct);
-                g.drawString(strPct, x0-(swPct/2), y0);
-            }
-        }
-        */
+        drawResearchBubble(g, cat, false, Color.black, blueBucketC, Color.black, x+scaled(180), y0);
+
         int fontSize = 18;
         g.setColor(Color.black);
         g.setFont(narrowFont(fontSize));
@@ -592,9 +568,11 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             g.drawString(detail2Value, x3b, y0);
         }
     }
-    public void drawResearchBubble(Graphics2D g, TechCategory cat, Color textC, Color backC1, Color backC2, int x, int y) {
+    public void drawResearchBubble(Graphics2D g, TechCategory cat, boolean showMinimum, Color textC, Color backC1, Color backC2, int x, int y) {
         if (!cat.researchCompleted()) {
             float chance = cat.upcomingDiscoveryChance(totalPlanetaryResearch());
+            if (showMinimum)
+                chance = max(.15f, chance);
             int r = s19;
             if (chance <= 1) {
                 g.setColor(backC2);

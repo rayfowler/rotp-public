@@ -257,13 +257,13 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             baseControls.add(new SystemNameDisplaySprite(10,60,30,30));
 
             int y0 = 445;
-            baseControls.add(new TreasurySprite(10,y0, 30,30));
-            baseControls.add(new TechStatusSprite(TechCategory.COMPUTER,     10,y0+35, 30,30));
-            baseControls.add(new TechStatusSprite(TechCategory.CONSTRUCTION, 10,y0+70, 30,30));
-            baseControls.add(new TechStatusSprite(TechCategory.FORCE_FIELD,  10,y0+105, 30,30));
-            baseControls.add(new TechStatusSprite(TechCategory.PLANETOLOGY,  10,y0+140,30,30));
-            baseControls.add(new TechStatusSprite(TechCategory.PROPULSION,   10,y0+175,30,30));
             baseControls.add(new TechStatusSprite(TechCategory.WEAPON,       10,y0+210,30,30));
+            baseControls.add(new TechStatusSprite(TechCategory.PROPULSION,   10,y0+175,30,30));
+            baseControls.add(new TechStatusSprite(TechCategory.PLANETOLOGY,  10,y0+140,30,30));
+            baseControls.add(new TechStatusSprite(TechCategory.FORCE_FIELD,  10,y0+105, 30,30));
+            baseControls.add(new TechStatusSprite(TechCategory.CONSTRUCTION, 10,y0+70, 30,30));
+            baseControls.add(new TechStatusSprite(TechCategory.COMPUTER,     10,y0+35, 30,30));
+            baseControls.add(new TreasurySprite(10,y0, 30,30));
         }
         
         addMouseListener(this);

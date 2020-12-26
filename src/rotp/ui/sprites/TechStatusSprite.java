@@ -86,7 +86,7 @@ public class TechStatusSprite extends MapControlSprite {
 
         
         if (tech != null)
-            RotPUI.instance().techUI().drawResearchBubble(g2, cat, Color.lightGray, blueBucketC, blueBucketBackC, startX+BasePanel.s1+(width/2), startY+BasePanel.s7+(height/2));
+            RotPUI.instance().techUI().drawResearchBubble(g2, cat, true, Color.lightGray, blueBucketC, blueBucketBackC, startX+BasePanel.s1+(width/2), startY+BasePanel.s7+(height/2));
 
         if (hovering) {
             g2.setColor(Color.lightGray);
