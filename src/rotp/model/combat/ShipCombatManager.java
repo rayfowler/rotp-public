@@ -390,7 +390,7 @@ public class ShipCombatManager implements Base {
         // update treaty with results
         Empire defender = results.defender();
         Empire attacker = results.attacker();
-        if (attacker != null) {
+        if ((attacker != null) && (defender != null)) {
             DiplomaticTreaty treaty = defender.treaty(attacker);
             treaty.loseFleet(attacker, results.shipHullPointsDestroyed(attacker));
             treaty.loseFleet(defender, results.shipHullPointsDestroyed(defender));
