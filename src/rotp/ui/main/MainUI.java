@@ -203,7 +203,7 @@ public class MainUI extends BasePanel implements IMapHandler {
         return (session().currentAlert() != null) && displayPanel.isVisible();
     }
     @Override
-    public boolean showAdvice()  { return overlay == overlayAdvice; }
+    public boolean showTreasuryResearchBar()       { return overlay != overlayAdvice; }
     public void setOverlay(MapOverlay lay) {
         overlay = lay;
     }

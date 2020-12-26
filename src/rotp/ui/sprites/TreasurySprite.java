@@ -46,7 +46,7 @@ public class TreasurySprite extends MapControlSprite {
     }
     @Override
     public void draw(GalaxyMapPanel map, Graphics2D g2) {
-        if (map.parent().showAdvice())
+        if (!map.parent().showTreasuryResearchBar())
             return;
         
         int amt = (int)player().totalReserve();

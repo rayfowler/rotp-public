@@ -65,6 +65,7 @@ public interface IMapHandler {
     default public boolean isHovering(Sprite s)            { return hoveringSprite() == s; }
     default public boolean isHighlighting(Sprite s)        { return false; }
     default public boolean isLowlighting(Sprite s)         { return false; }
+    default public boolean showTreasuryResearchBar()       { return false; }
     default public boolean allowsDragSelect()              { return false; }
     default public boolean hoverOverFleets()               { return true; }
     default public boolean hoverOverSystems()              { return true; }
@@ -86,7 +87,6 @@ public interface IMapHandler {
     default Empire empireBoundaries()                    { return Empire.thePlayer(); }
     default public float systemClickRadius()             { return 1.0f; }
     default public boolean showYear()                    { return true; }
-    default public boolean showAdvice()                  { return false; }
     default Color flagColor(StarSystem s)                { return Empire.thePlayer().sv.flagColor(s.id); }
     default boolean drawStar(StarSystem s)               { return true; }
     default boolean showOwnerReach(StarSystem s)         { return false; }

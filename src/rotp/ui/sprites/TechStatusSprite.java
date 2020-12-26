@@ -46,7 +46,7 @@ public class TechStatusSprite extends MapControlSprite {
     }
     @Override
     public void draw(GalaxyMapPanel map, Graphics2D g2) {
-        if (map.parent().showAdvice())
+        if (!map.parent().showTreasuryResearchBar())
             return;
         
         TechCategory cat = player().tech().category(category);
