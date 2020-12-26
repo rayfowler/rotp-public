@@ -28,21 +28,16 @@ import rotp.ui.main.SystemPanel;
 
 
 public class TreasurySprite extends MapControlSprite {
-    private static  final Color blueBucketC = new Color(100,100,255);
-    private static final Color blueBucketBackC = new Color(50,50,128);
-    private final int category;
     public TreasurySprite(int xOff, int yOff, int w, int h) {
-        category = 1;
         xOffset = scaled(xOff);
         yOffset = scaled(yOff);
         width = scaled(w);
         height = scaled(h);
     }
     @Override
-    public boolean acceptDoubleClicks()         { return true; }
-    @Override
     public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
         RotPUI.instance().selectPlanetsPanel();
+        map.parent().hoveringOverSprite(null);
     }
     @Override
     public void draw(GalaxyMapPanel map, Graphics2D g2) {

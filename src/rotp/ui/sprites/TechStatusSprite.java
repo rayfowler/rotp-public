@@ -38,11 +38,10 @@ public class TechStatusSprite extends MapControlSprite {
         height = scaled(h);
     }
     @Override
-    public boolean acceptDoubleClicks()         { return true; }
-    @Override
     public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
         RotPUI.instance().selectTechPanel();
         RotPUI.instance().techUI().selectTechCategory(category);
+        map.parent().hoveringOverSprite(null);
     }
     @Override
     public void draw(GalaxyMapPanel map, Graphics2D g2) {
@@ -120,7 +119,6 @@ public class TechStatusSprite extends MapControlSprite {
         g2.setStroke(BasePanel.stroke1);
         g2.setColor(map.parent().backC());
         g2.drawRoundRect(startX, startY, width, height, cnr, cnr);
-        
         
         if (hovering) {
             g2.setStroke(BasePanel.stroke2);

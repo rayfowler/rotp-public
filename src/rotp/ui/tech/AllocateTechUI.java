@@ -750,7 +750,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             float costRP = cat.costForTech(tech);
             if ((cat.currentTech() != null) && cat.currentTech().equals(tech.id))
                 costRP -= cat.totalBC();
-            int cost = (int) max(0,costRP);
+            int cost = max(0,(int)Math.ceil(costRP));
             if (cost > 0)
                 costLbl = text("TECH_TOTAL_RP",cost);
             else {
