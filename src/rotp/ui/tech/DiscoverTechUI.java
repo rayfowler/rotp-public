@@ -223,7 +223,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
     }
     public void paintToImage(Image dataImg) {
         Graphics2D g = (Graphics2D) dataImg.getGraphics();
-
+        setFontHints(g);
         Image techImg = null;
         Image raceImg;
         BufferedImage labImg;
