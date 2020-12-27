@@ -363,6 +363,10 @@ public final class GameSession implements Base, Serializable {
 
                 gal.makeNextTurnDecisions();
 
+                if (processNotifications()){
+                    log("Notifications processed 5 - back to MainPanel");
+                    RotPUI.instance().selectMainPanel();
+                }
                 if (!systemsToAllocate().isEmpty())
                     RotPUI.instance().allocateSystems();
 
