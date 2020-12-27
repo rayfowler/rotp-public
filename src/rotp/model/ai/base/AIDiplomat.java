@@ -1224,15 +1224,33 @@ public class AIDiplomat implements Base, Diplomat {
         if (cv2.embassy().alliance() && !cv1.embassy().alliance())
             return castVoteFor(civ2);
 
-        // if at war with one, vote for other
-        if (cv1.embassy().anyWar() && !cv2.embassy().anyWar())
-            return castVoteFor(civ2);
-        if (cv2.embassy().anyWar() && !cv1.embassy().anyWar())
-            return castVoteFor(civ1);
+        // if at war with one, vote for other (if contacted)
+        if (cv1.embassy().anyWar() && !cv2.embassy().anyWar()) {
+            if (cv2.embassy().contact())
+                return castVoteFor(civ2);
+            else
+                return castVoteFor(null);
+        }
+        if (cv2.embassy().anyWar() && !cv1.embassy().anyWar()) {
+            if (cv1.embassy().contact())
+                return castVoteFor(civ1);
+            else
+                return castVoteFor(null);
+        }
 
+        // modnar: add empire power bonus for voting
+        // more likely to vote for very powerful empires (relative to the whole galaxy)
+        // only what own empire can see (through spies)
+        float allEmpirePower = 0.0f;
+        for (Empire e: galaxy().activeEmpires()) 
+                allEmpirePower += (empire.militaryPowerLevel(e) + empire.industrialPowerLevel(e));
+        
+        // powerBonus1/powerBonus2 vary from 0 to 1
+        float powerBonus1 = (empire.militaryPowerLevel(civ1) + empire.industrialPowerLevel(civ1)) / allEmpirePower;
+        float powerBonus2 = (empire.militaryPowerLevel(civ2) + empire.industrialPowerLevel(civ2)) / allEmpirePower;
+		
         // decide to vote for/against civ1
-		// modnar: add proper normalization for embassy().relations()
-        pct = cv1.embassy().relations()/100.0f + civ1.race().councilBonus() + civ1.orionCouncilBonus() + previousVoteBonus(civ1);
+        pct = cv1.embassy().relations()/100.0f + civ1.race().councilBonus() + civ1.orionCouncilBonus() + previousVoteBonus(civ1) + powerBonus1;
         if (random() <= Math.abs(pct)) {
             if (pct > 0)
                 return conditionallyCastVoteFor(cv1);
@@ -1241,8 +1259,7 @@ public class AIDiplomat implements Base, Diplomat {
         }
 
         // decide to vote for/against civ2
-		// modnar: add proper normalization for embassy().relations()
-        pct = cv2.embassy().relations()/100.0f + civ2.race().councilBonus() + civ2.orionCouncilBonus() + previousVoteBonus(civ2);
+        pct = cv2.embassy().relations()/100.0f + civ2.race().councilBonus() + civ2.orionCouncilBonus() + previousVoteBonus(civ2) + powerBonus2;
         if (random() <= Math.abs(pct)) {
             if (pct > 0)
                 return conditionallyCastVoteFor(cv2);
