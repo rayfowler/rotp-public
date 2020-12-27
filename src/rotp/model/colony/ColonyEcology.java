@@ -425,6 +425,7 @@ public class ColonyEcology extends ColonySpendingCategory {
         return tform + newPopCost;
     }
     public float terraformSpendingNeeded() {
+        float cleanCost = colony().minimumCleanupCost();
         Empire emp = empire();
         TechTree tech = emp.tech();
         Planet planet = planet();
@@ -453,7 +454,7 @@ public class ColonyEcology extends ColonySpendingCategory {
             terraformCost = max(0,terraformCost);
         }
 
-        return hostileCost + enrichCost + terraformCost;
+        return cleanCost + hostileCost + enrichCost + terraformCost;
     }
     public int terraformAllocationNeeded() {
         float needed = terraformSpendingNeeded();
