@@ -555,6 +555,14 @@ public final class Empire implements Base, NamedObject, Serializable {
         if (colonizedSystems.isEmpty())
             goExtinct();
     }
+    public void takeAbandonedSystem(StarSystem sys, Transport tr) {
+        sys.addEvent(new SystemColonizedEvent(id));
+        newSystems.add(sys);
+        addColonizedSystem(sys);
+        sys.becomeColonized(sys.name(), this);
+        sys.colony().setPopulation(tr.size());
+        tr.size(0);
+    }
     public Colony colonize(String sysName, StarSystem sys) {
         StarSystem home = galaxy().system(capitalSysId);
         sys.addEvent(new SystemColonizedEvent(id));
