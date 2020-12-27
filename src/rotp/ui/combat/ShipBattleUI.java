@@ -228,7 +228,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             }
         }
     }
-    public void init(ShipCombatManager m) {
+    public void init(ShipCombatManager m, boolean autoResolve) {
         mgr = m;
         mgr.ui(this);
         mgr.setInitialPause();
@@ -276,13 +276,22 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         initFleetStacks(leftEmpire, leftFleet);
         if (!mgr.results().isMonsterAttack())
             initFleetStacks(rightEmpire, rightFleet);
-        if (mgr.currentStack().usingAI()) {
-            final Runnable aiShips = () -> {
-                nextStack();
-            };
-            invokeLater(aiShips);
+        
+        if (autoResolve) {
+            mgr.autoResolve = true;
+            mgr.autoComplete = true;
+            mgr.showAnimations = false;
+            finish();
         }
-        rotateAndRenderPlanet();
+        else {
+            if (mgr.currentStack().usingAI()) {
+                final Runnable aiShips = () -> {
+                    nextStack();
+                };
+                invokeLater(aiShips);
+            }
+            rotateAndRenderPlanet();
+        }
     }
     @Override
     public String ambienceSoundKey()     { return "ShipCombatAmbience"; }
@@ -1540,10 +1549,13 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         }
 
         if (hoverBox == resolveBox) {
-            mgr.autoComplete = true;
-            mgr.autoResolve = true;
-            paintAllImmediately();
-            finish();
+            if (!mgr.autoResolve) {
+                mgr.autoComplete = true;
+                mgr.autoResolve = true;
+                mgr.showAnimations = false;
+                paintAllImmediately();
+                finish();
+            }
         }
         else if (hoverBox == retreatBox) {
             // retreat all player ships  - TODO

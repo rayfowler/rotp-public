@@ -1316,9 +1316,7 @@ SHIP_COMBAT_BASES                 | %1 Missile Bases
 SHIP_COMBAT_SHIELD                | Level %1 Planetary Shield
 SHIP_COMBAT_POPULATION            | %1 Population
 SHIP_COMBAT_FACTORIES             | %1 Factories
-SHIP_COMBAT_PROMPT                | Enter combat?
-SHIP_COMBAT_PROMPT_YES            | Yes
-SHIP_COMBAT_PROMPT_NO             | No
+SHIP_COMBAT_ENTER_BATTLE          | Enter battle
 SHIP_COMBAT_MISS                  | Miss
 SHIP_COMBAT_DEFLECTED             | Deflected
 SHIP_COMBAT_DESTROYED             | Destroyed!
