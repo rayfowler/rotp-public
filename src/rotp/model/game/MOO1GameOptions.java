@@ -306,7 +306,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     }
     @Override
     public boolean allowRandomEvent(RandomEvent ev) {
-        switch(selectedTechTradeOption()) {
+        switch(selectedRandomEventOption()) {
             case RANDOM_EVENTS_ON:  return true;
             case RANDOM_EVENTS_OFF: return false;
             case RANDOM_EVENTS_NO_MONSTERS: return !ev.monsterEvent();
