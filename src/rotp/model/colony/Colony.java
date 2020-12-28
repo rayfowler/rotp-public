@@ -493,7 +493,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
     }
     public void checkEcoAtClean() {
         recalcSpendingForNewTaxRate = false;
-        if ((keepEcoLockedToClean) && !locked[ECOLOGY]) {
+        if (!locked[ECOLOGY]) {
             int newAlloc = ecology().cleanupAllocationNeeded();
             if (allocation[ECOLOGY] < newAlloc) {
                 allocation[ECOLOGY] = cleanupAllocation = newAlloc;
