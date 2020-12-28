@@ -726,7 +726,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         int focusY = mapY(parent.mapFocus().y());
         recenterMap(objX(focusX-deltaX), objY(focusY-deltaY));
         clearRangeMap();
-        parent.repaint();
+        repaint();
     }
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -744,7 +744,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             zoomAdj = 1.0f/zoomAmt;
 
         setScale(currentScale*zoomAdj);
-        parent.repaint();
+        repaint();
     }
     @Override
     public void animate() {
@@ -754,7 +754,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             return;
 
         if (playAnimations() && (animationCount() % 5 == 0)) 
-            parent.repaint();	
+            repaint();	
     }
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {

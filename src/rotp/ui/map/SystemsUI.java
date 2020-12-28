@@ -295,9 +295,9 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         setLayout(new BorderLayout());
         add(layers, BorderLayout.CENTER);
         
-        layers.add(titlePanel, new Integer(3));
-        layers.add(rightPanel,new Integer(2));
-        layers.add(map, new Integer(0));
+        layers.add(titlePanel, JLayeredPane.PALETTE_LAYER);
+        layers.add(rightPanel, JLayeredPane.PALETTE_LAYER);
+        layers.add(map, JLayeredPane.DEFAULT_LAYER);
         Border line1 = newLineBorder(newColor(60,60,60),2);
         Border line2 = newLineBorder(newColor(0,0,0),8);
         Border compound1 = BorderFactory.createCompoundBorder(line2, line1);

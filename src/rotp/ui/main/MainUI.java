@@ -328,9 +328,9 @@ public class MainUI extends BasePanel implements IMapHandler {
         setLayout(new BorderLayout());
         add(layers, BorderLayout.CENTER);
 
-        layers.add(buttonPanel, 0);
-        layers.add(displayPanel, 0);
-        layers.add(map, -1);
+        layers.add(buttonPanel, JLayeredPane.PALETTE_LAYER);
+        layers.add(displayPanel, JLayeredPane.PALETTE_LAYER);
+        layers.add(map, JLayeredPane.DEFAULT_LAYER);
         Border line1 = newLineBorder(newColor(60,60,60),2);
         Border line2 = newLineBorder(newColor(0,0,0),8);
         Border compound1 = BorderFactory.createCompoundBorder(line2, line1);
