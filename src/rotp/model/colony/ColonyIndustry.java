@@ -149,10 +149,10 @@ public class ColonyIndustry extends ColonySpendingCategory {
             float orderAmt = c.orderAmount(Colony.Orders.FACTORIES);
             if (orderAmt > 0) {
                 c.removeColonyOrder(Colony.Orders.FACTORIES);
-                //if (!c.defense().shieldAtMaxLevel())
-                //    c.addColonyOrder(Colony.Orders.SHIELD, orderAmt);
-                //else if (!c.defense().missileBasesCompleted())
-                //    c.addColonyOrder(Colony.Orders.BASES, orderAmt*2/5);
+                if (!c.defense().shieldAtMaxLevel())
+                    c.addColonyOrder(Colony.Orders.SHIELD, orderAmt);
+                else if (!c.defense().missileBasesCompleted())
+                    c.addColonyOrder(Colony.Orders.BASES, orderAmt*2/5);
             }   
             else {
                 empire().governorAI().setColonyAllocations(c);

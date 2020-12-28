@@ -121,7 +121,7 @@ public class ColonyEcology extends ColonySpendingCategory {
 
         // try to convert hostile atmosphere
         atmosphereCompleted = false;
-        if (p.canTerraformAtmosphere(emp))  {
+        if (p.canTerraformAtmosphere(emp))  { 
             float hostileCost = min((atmosphereTerraformCost() - hostileBC), newBC);
             hostileCost = max(hostileCost,0);
             hostileBC += hostileCost;
@@ -177,7 +177,7 @@ public class ColonyEcology extends ColonySpendingCategory {
                 float orderAmt = c.orderAmount(Colony.Orders.TERRAFORM);
                 if (orderAmt > 0) {
                     c.removeColonyOrder(Colony.Orders.TERRAFORM);
-                    //c.addColonyOrder(Colony.Orders.FACTORIES, orderAmt);
+                    c.addColonyOrder(Colony.Orders.FACTORIES, orderAmt);
                 }
             }
         }
@@ -219,7 +219,7 @@ public class ColonyEcology extends ColonySpendingCategory {
             float orderAmt = c.orderAmount(Colony.Orders.TERRAFORM);
             if (orderAmt > 0) {
                 c.removeColonyOrder(Colony.Orders.TERRAFORM);
-                //colony().addColonyOrder(Colony.Orders.FACTORIES, orderAmt);
+                colony().addColonyOrder(Colony.Orders.FACTORIES, orderAmt);
             }
             else {
                 c.empire().governorAI().setColonyAllocations(c);
