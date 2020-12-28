@@ -499,8 +499,6 @@ public class TransportDeploymentPanel extends SystemPanel {
         public void mouseReleased(MouseEvent e) {
             if (e.getButton() > 3)
                 return;
-            if (e.getClickCount() > 1)
-                return;;
             int x = e.getX();
             int y = e.getY();
 
