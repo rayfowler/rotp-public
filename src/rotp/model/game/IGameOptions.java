@@ -179,7 +179,7 @@ public interface IGameOptions {
     public String selectedOpponentRace(int i);
     public void selectedOpponentRace(int i, String s);
 
-    
+    default void copyOptions(IGameOptions opt) { }
     default boolean immediateCouncilWin()   { return selectedCouncilWinOption().equals(COUNCIL_IMMEDIATE); }
     
     default String nextGalaxySize(boolean bounded) {

@@ -32,4 +32,10 @@ public class NewPlayer implements Serializable {
         homeWorldName = def.defaultHomeworldName();
         color = 0;	
     }
+    public void copy(NewPlayer p) {
+        race = p.race;
+        leaderName = p.leaderName;
+        homeWorldName = p.homeWorldName;
+        color = p.color;
+    }
 }

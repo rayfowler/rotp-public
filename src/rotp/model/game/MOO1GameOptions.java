@@ -40,7 +40,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private final String[] opponentRaces = new String[MAX_OPPONENTS];
     private final List<Integer> colors = new ArrayList<>();
     private final List<Color> empireColors = new ArrayList<>();
-    private final static NewPlayer player = new NewPlayer();
+    private final NewPlayer player = new NewPlayer();
 
     private String selectedGalaxySize;
     private String selectedGalaxyShape;
@@ -185,6 +185,38 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     }
     @Override
     public String name()                 { return "SETUP_RULESET_ORION"; }
+    @Override
+    public void copyOptions(IGameOptions o) { 
+        if (!(o instanceof MOO1GameOptions))
+            return;
+        
+        // copy only the options that are immediately visible
+        // .. not the advanced options
+        MOO1GameOptions opt = (MOO1GameOptions) o;
+        
+        selectedGalaxySize = opt.selectedGalaxySize;
+        selectedGalaxyShape = opt.selectedGalaxyShape;
+        selectedGalaxyShapeOption1 = opt.selectedGalaxyShapeOption1;
+        selectedGalaxyShapeOption2 = opt.selectedGalaxyShapeOption2;
+        selectedGameDifficulty = opt.selectedGameDifficulty;
+        selectedNumberOpponents = opt.selectedNumberOpponents;
+
+        selectedGalaxyAge = opt.selectedGalaxyAge;
+        selectedResearchRate = opt.selectedResearchRate;
+        selectedTechTradeOption = opt.selectedTechTradeOption;
+        selectedRandomEventOption = opt.selectedRandomEventOption;
+        selectedWarpSpeedOption = opt.selectedWarpSpeedOption;
+        selectedNebulaeOption = opt.selectedNebulaeOption;
+        selectedCouncilWinOption = opt.selectedCouncilWinOption;
+        disableColonizePrompt = opt.disableColonizePrompt;
+
+        if (opt.player != null) 
+            player.copy(opt.player);
+        
+         setGalaxyShape(); 
+         generateGalaxy(); 
+    }
+
     @Override
     public GalaxyShape galaxyShape()   {
         if (galaxyShape == null)
