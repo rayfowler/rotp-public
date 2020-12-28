@@ -520,10 +520,8 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             clusterArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-extR, mapY(sv.y())-extR, 2*extR, 2*extR) ));       
            
         g.setColor(extendedBorder);
-        g.setStroke(new BasicStroke(4));
+        g.setStroke(stroke2);
         g.draw(clusterArea);   
-        g.setColor(emptyBackground);
-        g.fill(clusterArea);
         clusterArea.reset();
         
         
@@ -533,11 +531,11 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         for (StarSystem sv: systems)
             clusterArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-baseR, mapY(sv.y())-baseR, 2*baseR, 2*baseR) ));       
                    
-        g.setColor(normalBorder);
-        g.setStroke(new BasicStroke(4));
-        g.draw(clusterArea);   
         g.setColor(normalBackground);
         g.fill(clusterArea);
+        g.setColor(normalBorder);
+        g.setStroke(stroke2);
+        g.draw(clusterArea);   
 
     }
     private void drawGridCircularDisplayDark(Graphics2D g) {

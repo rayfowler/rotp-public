@@ -386,13 +386,13 @@ public class BasePanel extends JPanel implements Base {
         s81 = scaled(81); s82 = scaled(82); s83 = scaled(83); s84 = scaled(84); s85 = scaled(85); s86 = scaled(86); s87 = scaled(87); s88 = scaled(88); s89 = scaled(89); s90 = scaled(90);
         s91 = scaled(91); s92 = scaled(92); s93 = scaled(93); s94 = scaled(94); s95 = scaled(95); s96 = scaled(96); s97 = scaled(97); s98 = scaled(98); s99 = scaled(99); s100 = scaled(100);
 
-        stroke1 = new BasicStroke(s1);
-        stroke2 = new BasicStroke(s2);
-        stroke3 = new BasicStroke(s3);
-        stroke4 = new BasicStroke(s4);
-        stroke5 = new BasicStroke(s5);
-        stroke6 = new BasicStroke(s6);
-        stroke7 = new BasicStroke(s7);
+        stroke1 = new BasicStroke(s1,BasicStroke.CAP_BUTT,BasicStroke.JOIN_BEVEL);
+        stroke2 = new BasicStroke(s2,BasicStroke.CAP_BUTT,BasicStroke.JOIN_BEVEL);
+        stroke3 = new BasicStroke(s3,BasicStroke.CAP_BUTT,BasicStroke.JOIN_BEVEL);
+        stroke4 = new BasicStroke(s4,BasicStroke.CAP_BUTT,BasicStroke.JOIN_BEVEL);
+        stroke5 = new BasicStroke(s5,BasicStroke.CAP_BUTT,BasicStroke.JOIN_BEVEL);
+        stroke6 = new BasicStroke(s6,BasicStroke.CAP_BUTT,BasicStroke.JOIN_BEVEL);
+        stroke7 = new BasicStroke(s7,BasicStroke.CAP_BUTT,BasicStroke.JOIN_BEVEL);
     }
     public static Stroke baseStroke(int n) {
         switch(n) {
