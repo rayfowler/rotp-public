@@ -60,7 +60,7 @@ public class ColonyIndustry extends ColonySpendingCategory {
     @Override
     public float orderedValue()         { return max(super.orderedValue(), colony().orderAmount(Colony.Orders.FACTORIES)); }
     @Override
-    public void removeSpendingOrders()   { colony().removeColonyOrder(Colony.Orders.FACTORIES); }
+    public void removeSpendingOrders()   { colony().removeColonyOrder(Colony.Orders.FACTORIES, false); }
     public void capturedBy(Empire newCiv) {
         if (newCiv == empire())
             return;

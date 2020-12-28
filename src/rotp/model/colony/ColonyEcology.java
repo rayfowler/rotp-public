@@ -74,9 +74,9 @@ public class ColonyEcology extends ColonySpendingCategory {
     }
     @Override
     public void removeSpendingOrders()   {
-        colony().removeColonyOrder(Colony.Orders.SOIL);
-        colony().removeColonyOrder(Colony.Orders.ATMOSPHERE);
-        colony().removeColonyOrder(Colony.Orders.TERRAFORM);
+        colony().removeColonyOrder(Colony.Orders.SOIL, false);
+        colony().removeColonyOrder(Colony.Orders.ATMOSPHERE, false);
+        colony().removeColonyOrder(Colony.Orders.TERRAFORM, false);
     }
     public void capturedBy(Empire newCiv) {
         hostileBC = 0;

@@ -103,8 +103,8 @@ public class ColonyDefense extends ColonySpendingCategory {
     }
     @Override
     public void removeSpendingOrders()   {
-        colony().removeColonyOrder(Colony.Orders.BASES);
-        colony().removeColonyOrder(Colony.Orders.SHIELD);
+        colony().removeColonyOrder(Colony.Orders.BASES, false);
+        colony().removeColonyOrder(Colony.Orders.SHIELD, false);
     }
     public void capturedBy(Empire newCiv) {
         bases = 0;
