@@ -367,7 +367,13 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             case "NAME":             return empire().sv.name(id);
             case "POPULATION":       return str(empire().sv.population(id));
             case "DELTA_POPULATION": return str(empire().sv.deltaPopulation(id));
-            case "SIZE":             return str(empire().sv.currentSize(id));
+            case "SIZE":
+                int maxSize = (int)this.colony().maxSize();
+                int currSize =empire().sv.currentSize(id);
+                if (maxSize == currSize)
+                    return str(currSize)+" ";
+                else
+                    return concat(str(currSize),"+");
             case "PLANET_TYPE":      return planet().type().name();
             case "NOTES":            return notes();
             case "FACTORIES":        return str(empire().sv.factories(id));

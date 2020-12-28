@@ -591,8 +591,8 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         ecoView.addColumn(nameCol);
         ecoView.addColumn(populationCol);
         ecoView.addColumn(pTypeCol);
-        ecoView.addColumn(resourceCol);
         ecoView.addColumn(sizeCol);
+        ecoView.addColumn(resourceCol);
         ecoView.addColumn(wasteCol);
         ecoView.addColumn(notesCol);
         views.put(ECOLOGY_MODE, ecoView);
