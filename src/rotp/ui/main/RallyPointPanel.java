@@ -93,6 +93,7 @@ public class RallyPointPanel extends SystemPanel {
                 cancelRelocation();
                 return;
             case KeyEvent.VK_SPACE:
+            case KeyEvent.VK_ENTER:
                 if (isCancellingRally())
                     cancelRelocationPath();
                 else if (canRelocateShips())
@@ -137,6 +138,10 @@ public class RallyPointPanel extends SystemPanel {
     }
     private boolean canRelocateShips() {
         return (destination() != null) && player().canRallyFleetsTo(id(destination()));
+    }
+    private boolean isStartingRally() {
+        StarSystem sys = system();
+        return (destination() != null) && (destination() != player().sv.rallySystem(sys.id));
     }
     private boolean isCancellingRally() {
         StarSystem sys = system();
@@ -383,9 +388,13 @@ public class RallyPointPanel extends SystemPanel {
             if (parent.isCancellingRally()) {
                 drawLargeUndeployButton(g);
                 drawSmallCancelButton(g);
-                return;
             }
-            drawFullCancelButton(g);
+            else if (parent.isStartingRally()) {
+                drawLargeDeployButton(g);
+                drawSmallCancelButton(g);
+            }
+            else 
+                drawFullCancelButton(g);
         }
         private void clearButtons() {
             cancelBox.setBounds(0,0,0,0);

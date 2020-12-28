@@ -836,49 +836,49 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             case KeyEvent.VK_1:
                 if (mods == 0)
                     increment(0, true);
-                else if (mods == 1)
+                else if (mods == 64)
                     decrement(0, true);
-                else if (mods == 2)
+                else if (mods == 128)
                     toggleCategoryLock(0);
                 return;
             case KeyEvent.VK_2:
                 if (mods == 0)
                     increment(1, true);
-                else if (mods == 1)
+                else if (mods == 64)
                     decrement(1, true);
-                else if (mods == 2)
+                else if (mods == 128)
                     toggleCategoryLock(1);
                 return;
             case KeyEvent.VK_3:
                 if (mods == 0)
                     increment(2, true);
-                else if (mods == 1)
+                else if (mods == 64)
                     decrement(2, true);
-                else if (mods == 2)
+                else if (mods == 128)
                     toggleCategoryLock(2);
                 return;
             case KeyEvent.VK_4:
                 if (mods == 0)
                     increment(3, true);
-                else if (mods == 1)
+                else if (mods == 64)
                     decrement(3, true);
-                else if (mods == 2)
+                else if (mods == 128)
                     toggleCategoryLock(3);
                 return;
             case KeyEvent.VK_5:
                 if (mods == 0)
                     increment(4, true);
-                else if (mods == 1)
+                else if (mods == 64)
                     decrement(4, true);
-                else if (mods == 2)
+                else if (mods == 128)
                     toggleCategoryLock(4);
                 return;
             case KeyEvent.VK_6:
                 if (mods == 0)
                     increment(5, true);
-                else if (mods == 1)
+                else if (mods == 64)
                     decrement(5, true);
-                else if (mods == 2)
+                else if (mods == 128)
                     toggleCategoryLock(5);
                 return;
             case KeyEvent.VK_ESCAPE:

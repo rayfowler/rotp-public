@@ -89,40 +89,40 @@ public class EmpireColonySpendingPane extends BasePanel {
             case KeyEvent.VK_1:
                 switch (mods) {
                     case 0: shipSlider.increment(true); break;
-                    case 1: shipSlider.decrement(true); break;
-                    case 2: shipSlider.toggleLock();    break;
+                    case 64: shipSlider.decrement(true); break;
+                    case 128: shipSlider.toggleLock();    break;
                     default:  break;
                 }
                 return;
             case KeyEvent.VK_2:
                 switch (mods) {
                     case 0: defSlider.increment(true); break;
-                    case 1: defSlider.decrement(true); break;
-                    case 2: defSlider.toggleLock();    break;
+                    case 64: defSlider.decrement(true); break;
+                    case 128: defSlider.toggleLock();    break;
                     default: break;
                 }
                 return;
             case KeyEvent.VK_3:
                 switch (mods) {
                     case 0: indSlider.increment(true); break;
-                    case 1: indSlider.decrement(true); break;
-                    case 2: indSlider.toggleLock();    break;
+                    case 64: indSlider.decrement(true); break;
+                    case 128: indSlider.toggleLock();    break;
                     default: break;
                 }
                 return;
             case KeyEvent.VK_4:
                 switch (mods) {
                     case 0: ecoSlider.increment(true); break;
-                    case 1: ecoSlider.decrement(true); break;
-                    case 2: ecoSlider.toggleLock();    break;
+                    case 64: ecoSlider.decrement(true); break;
+                    case 128: ecoSlider.toggleLock();    break;
                     default: break;
                 }
                 return;
             case KeyEvent.VK_5:
                 switch (mods) {
                     case 0: researchSlider.increment(true); break;
-                    case 1: researchSlider.decrement(true); break;
-                    case 2: researchSlider.toggleLock();    break;
+                    case 64: researchSlider.decrement(true); break;
+                    case 128: researchSlider.toggleLock();    break;
                     default:  break;
                 }
         }
