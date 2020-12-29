@@ -15,6 +15,7 @@
  */
 package rotp.model.colony;
 
+import java.util.Map;
 import rotp.model.empires.Empire;
 
 public class ColonyDefense extends ColonySpendingCategory {
@@ -195,9 +196,15 @@ public class ColonyDefense extends ColonySpendingCategory {
         unallocatedBC = 0;
     }
     public float maxShieldLevel()      { return colony().starSystem().inNebula() ? 0 : tech().maxPlanetaryShieldLevel(); }
-    public float missileBaseMaintenanceCost(float bestBaseCost) { 
-        float cost = missileBase == tech().bestMissileBase() ? bestBaseCost : missileBase.cost(empire());
-        return ((int) bases * cost * .02f); 
+    public float missileBaseMaintenanceCost(Map<MissileBase, Float> knownBaseCosts) { 
+        float baseCost = 0;
+        if (knownBaseCosts.containsKey(missileBase))
+            baseCost = knownBaseCosts.get(missileBase);
+        else {
+            baseCost = missileBase.cost(player());
+            knownBaseCosts.put(missileBase, baseCost);
+        }
+        return ((int) bases * baseCost * .02f); 
     }
     private float missileUpgradeCost()  { return bases * (tech().newMissileBaseCost() - missileBase.cost(empire())); }
     public boolean isArmed()             { return missileBases() >= 1; }

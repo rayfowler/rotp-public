@@ -23,8 +23,10 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 import rotp.model.ai.AI;
 import rotp.model.ai.interfaces.Diplomat;
@@ -36,6 +38,7 @@ import rotp.model.ai.interfaces.ShipDesigner;
 import rotp.model.ai.interfaces.SpyMaster;
 import rotp.model.colony.Colony;
 import rotp.model.colony.ColonyShipyard;
+import rotp.model.colony.MissileBase;
 import rotp.model.empires.SpyNetwork.FleetView;
 import rotp.model.events.SystemColonizedEvent;
 import rotp.model.events.SystemHomeworldEvent;
@@ -2090,9 +2093,9 @@ public final class Empire implements Base, NamedObject, Serializable {
         float empireBC = totalPlanetaryProduction();
         float totalCostBC = 0;
         List<StarSystem> allSystems = new ArrayList<>(allColonizedSystems());
-        float bestBaseCost = player().tech().bestMissileBase().cost(player());
+        Map<MissileBase, Float> baseCosts = new HashMap<>();
         for (StarSystem sys: allSystems)
-            totalCostBC += sys.colony().defense().missileBaseMaintenanceCost(bestBaseCost);
+            totalCostBC += sys.colony().defense().missileBaseMaintenanceCost(baseCosts);
         return totalCostBC / empireBC;
     }
     public float totalStargateCostPct() {
