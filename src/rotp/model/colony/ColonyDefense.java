@@ -94,7 +94,6 @@ public class ColonyDefense extends ColonySpendingCategory {
     private float orderedShieldValue() {
         return shieldAtMaxLevel() ? 0 : colony().orderAmount(Colony.Orders.SHIELD);
     }
-    public float maintenanceCost() { return missileBaseMaintenanceCost(); }
     @Override
     public float orderedValue() {
         return max(super.orderedValue(),
@@ -196,7 +195,10 @@ public class ColonyDefense extends ColonySpendingCategory {
         unallocatedBC = 0;
     }
     public float maxShieldLevel()      { return colony().starSystem().inNebula() ? 0 : tech().maxPlanetaryShieldLevel(); }
-    public float missileBaseMaintenanceCost() { return ((int) bases * missileBase.cost(empire()) * .02f); }
+    public float missileBaseMaintenanceCost(float bestBaseCost) { 
+        float cost = missileBase == tech().bestMissileBase() ? bestBaseCost : missileBase.cost(empire());
+        return ((int) bases * cost * .02f); 
+    }
     private float missileUpgradeCost()  { return bases * (tech().newMissileBaseCost() - missileBase.cost(empire())); }
     public boolean isArmed()             { return missileBases() >= 1; }
     public int shieldLevel()             { return (int) (shield / 5) * 5; }

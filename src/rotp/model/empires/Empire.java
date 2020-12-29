@@ -2090,8 +2090,9 @@ public final class Empire implements Base, NamedObject, Serializable {
         float empireBC = totalPlanetaryProduction();
         float totalCostBC = 0;
         List<StarSystem> allSystems = new ArrayList<>(allColonizedSystems());
+        float bestBaseCost = player().tech().bestMissileBase().cost(player());
         for (StarSystem sys: allSystems)
-            totalCostBC += sys.colony().defense().missileBaseMaintenanceCost();
+            totalCostBC += sys.colony().defense().missileBaseMaintenanceCost(bestBaseCost);
         return totalCostBC / empireBC;
     }
     public float totalStargateCostPct() {
