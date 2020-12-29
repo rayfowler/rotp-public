@@ -71,7 +71,12 @@ public final class TechCategory implements Base, Serializable {
     public List<String> knownTechs()       { return knownTechs; }
     public String currentTech()            { return currentTech; }
     public String currentTechName()        { return tech(currentTech).name(); }
-    public void currentTech(Tech t)        { currentTech = t.id(); }
+    public boolean currentTech(Tech t)        { 
+        if (!id().equals(t.cat.id()))
+            return false;
+        currentTech = t.id(); 
+        return true;
+    }
     public boolean locked()                { return researchCompleted || locked; }
     public void toggleLock()               { locked = !locked; }
     public String id()                     { return id(index); }

@@ -288,7 +288,9 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
         if (id.isEmpty())
             return;
         Tech t = tech(id);
-        category().currentTech(t);
+        if (!category().currentTech(t))
+            return;
+        
         finished = true;
         log("Tech: ", t.name(), " selected for research");
         repaint();
