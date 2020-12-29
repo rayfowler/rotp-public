@@ -14,13 +14,16 @@
  * limitations under the License.
  */
 package rotp.ui.main;
-
 import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.Stroke;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.List;
@@ -47,14 +50,21 @@ public class AlienSystemPanel extends SystemPanel {
     protected BasePanel detailPane() {
         return new DetailPane(this);
     }
-    private class DetailPane extends BasePanel {
+    private class DetailPane extends BasePanel implements MouseMotionListener, MouseListener {
         private static final long serialVersionUID = 1L;
         SystemPanel parent;
         Shape textureClip;
+        Rectangle flagBox = new Rectangle();
+        Shape hoverBox;
 
         DetailPane(SystemPanel p) {
             parent = p;
+            init();
+        }
+        private void init() {
             setOpaque(false);
+            addMouseMotionListener(this);
+            addMouseListener(this);
         }
         @Override
         public String textureName()            { return TEXTURE_GRAY; }
@@ -97,6 +107,16 @@ public class AlienSystemPanel extends SystemPanel {
             g.setFont(narrowFont(24));
             drawShadowedString(g, pl.sv.descriptiveName(id), 2, s10, topH1-s15, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
 
+            // draw system banner
+            Color flagC = parentSpritePanel.parent.flagColor(sys);
+            if (hoverBox == flagBox) 
+                sys.drawBanner(g, flagC, SystemPanel.yellowText, w-s10,topH1);
+            else {
+                Color c1 = flagC == null ? SystemPanel.blackText : SystemPanel.whiteText;
+                sys.drawBanner(g, flagC, c1, w-s10,topH1);
+            }
+            flagBox.setBounds(w-s30,topH1-s60,s20,s60);
+            
             // colony data
             String unknown = text("RACES_UNKNOWN_DATA");
             String factLbl = text("MAIN_COLONY_FACTORIES");
@@ -152,6 +172,41 @@ public class AlienSystemPanel extends SystemPanel {
             for (String line: descLines) {
                 drawBorderedString(g, line, s8, y2, Color.black, whiteText);
                 y2 += ydelta;
+            }
+        }
+        @Override
+        public void mouseDragged(MouseEvent e) { }
+        @Override
+        public void mouseMoved(MouseEvent e) {
+            int x = e.getX();
+            int y = e.getY();
+            Shape prevHover = hoverBox;
+            hoverBox = null;
+            if (flagBox.contains(x,y))
+                hoverBox = flagBox;
+
+            if (prevHover != hoverBox)
+                repaint();
+        }
+        @Override
+        public void mouseClicked(MouseEvent e) { }
+        @Override
+        public void mousePressed(MouseEvent e) { }
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            if (hoverBox == flagBox) {
+                StarSystem sys = parentSpritePanel.systemViewToDisplay();
+                player().sv.view(sys.id).toggleFlagColor();
+                parentSpritePanel.parent.repaint();
+            }
+        }
+        @Override
+        public void mouseEntered(MouseEvent e) { }
+        @Override
+        public void mouseExited(MouseEvent e) { 
+            if (hoverBox != null) {
+                hoverBox = null;
+                repaint();
             }
         }
     }
