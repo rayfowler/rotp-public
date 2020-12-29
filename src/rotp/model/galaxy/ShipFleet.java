@@ -584,7 +584,7 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
         return empire().tech().scoutRange();
     }
     private float slowestStackSpeed() {
-        float maxSpeed = TechEngineWarp.MAX_SPEED;
+        float maxSpeed = Integer.MAX_VALUE;
         for (int i=0;i<num.length;i++) {
             if (num[i]>0) {
                 ShipDesign des = design(i);

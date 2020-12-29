@@ -21,7 +21,6 @@ import rotp.model.ships.ShipEngine;
 import rotp.model.ships.ShipManeuver;
 
 public final class TechEngineWarp extends Tech {
-    public static int MAX_SPEED = 9;
     private int baseWarp;
     public String shName;
 
