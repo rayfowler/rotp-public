@@ -1509,6 +1509,14 @@ RACES_MILITARY_MEDIUM             | Medium
 RACES_MILITARY_LARGE              | Large
 RACES_MILITARY_HUGE               | Huge
 RACES_MILITARY_REPORT_CURRENT     | Fleet report is current.
+RACES_MILITARY_DEFENSE            | Defenses
+RACES_MILITARY_DEF_PLANET_SHIELD  | Planetary Shields
+RACES_MILITARY_DEF_DEFL_SHIELD    | Deflector Shields
+RACES_MILITARY_DEF_ARMOR          | Armor
+RACES_MILITARY_TROOP_BONUS        | Ground Troop Bonus
+RACES_MILITARY_DEF_MISSILE        | Missile Base
+RACES_MILITARY_DEF_MISSILE_MAX    | Default Maximum Missile Bases for New Colonies
+RACES_MILITARY_NO_SHIELD          | None
 RACES_MILITARY_REPORT_NONE        | No data. Need additional spies to infiltrate.
 RACES_MILITARY_REPORT_OLD         | Fleet report age: %1 years.
 RACES_MILITARY_NO_SHIPS           | No Ships Detected

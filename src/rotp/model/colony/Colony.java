@@ -185,6 +185,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         setPopulation(2);
         shipyard().goToNextDesign();
         defense().updateMissileBase();
+        defense().maxBases(empire().defaultMaxBases());
         cleanupAllocation = -1;
     }
     public boolean isBuildingShip() { return shipyard().design() instanceof ShipDesign; }

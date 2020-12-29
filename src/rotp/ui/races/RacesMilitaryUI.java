@@ -20,6 +20,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.LinearGradientPaint;
+import java.awt.Polygon;
 import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.Stroke;
@@ -38,6 +39,7 @@ import rotp.model.empires.EmpireView;
 import rotp.model.empires.ShipView;
 import rotp.model.empires.SpyNetwork;
 import rotp.model.ships.ShipDesign;
+import rotp.model.tech.TechTree;
 import rotp.ui.BasePanel;
 import rotp.ui.UserPreferences;
 import rotp.ui.main.SystemPanel;
@@ -56,6 +58,11 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
     public static BufferedImage shipIconBackImg;
 
     private Shape hoverShape;
+    private final Polygon maxBasesIncr = new Polygon();
+    private final Polygon maxBasesDecr = new Polygon();
+    private final Rectangle maxBasesBox = new Rectangle();
+    int[] ptX = new int[3];
+    int[] ptY = new int[3];
 
     public RacesMilitaryUI(RacesUI p) {
         parent = p;
@@ -126,15 +133,19 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         int s220 = scaled(220);
         int s260 = scaled(260);
         int s265 = scaled(265);
-        int s370 = scaled(370);
+        int baseW = scaled(290);
+        int defX = scaled(650);
+        int defW = scaled(255);
         drawRaceIconBase(g, emp, s55, s25, s210, s210);
-        drawPlayerBaseInfo(g, emp, s260, s80, s370, scaled(130));
+        drawPlayerBaseInfo(g, emp, s260, s80, baseW, scaled(130));
+        drawPlayerDefenseInfo(g, emp, defX, s80, defW, scaled(140));
         drawShipDesignTitle(g, emp, s20, s220, w-s20-s20, s40);
         drawShipDesignListing(g, emp, s20, s265, w-s20-s20, h-s265-s10);
         if (UserPreferences.textures()) 
             drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
-        drawFleetTitle(g, emp, s260, s30, s370, s50);
+        drawFleetTitle(g, emp, s260, s30, baseW, s50);
+        drawDefenseTitle(g, emp, defX, s30, defW, s50);
     }
     private void paintAIData(Graphics2D g) {
         Empire emp = parent.selectedEmpire();
@@ -146,15 +157,19 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         int s220 = scaled(220);
         int s260 = scaled(260);
         int s265 = scaled(265);
-        int s370 = scaled(370);
+        int baseW = scaled(320);
+        int defX = scaled(650);
+        int defW = scaled(255);
         drawRaceIconBase(g, emp, s55, s25, s210, s210);
-        drawAIBaseInfo(g, emp, s260, s80, s370, scaled(130));
+        drawAIBaseInfo(g, emp, s260, s80, baseW, scaled(130));
+        drawAIDefenseInfo(g, emp, defX, s80, defW, scaled(140));
         drawShipDesignTitle(g, emp, s20, s220, w-s20-s20, s40);
         drawShipDesignListing(g, emp, s20, s265, w-s20-s20, h-s265-s10);
         if (UserPreferences.textures()) 
             drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
-        drawFleetTitle(g, emp, s260, s30, s370, s50);
+        drawFleetTitle(g, emp, s260, s30, baseW, s50);
+        drawDefenseTitle(g, emp, defX, s30, defW, s50);
     }
     private void drawRaceIconBase(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(RacesUI.darkBrown);
@@ -184,6 +199,11 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         g.setFont(narrowFont(32));
         g.drawString(text("RACES_MILITARY_TITLE", emp.raceName()), x+s10, y+h-s15);
     }
+    private void drawDefenseTitle(Graphics2D g, Empire emp, int x, int y, int w, int h) {
+        g.setColor(SystemPanel.orangeText);
+        g.setFont(narrowFont(32));
+        g.drawString(text("RACES_MILITARY_DEFENSE"), x+s10, y+h-s15);
+    }
     private void drawPlayerBaseInfo(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(RacesUI.darkBrown);
         g.fillRect(x, y, w, h);
@@ -197,9 +217,9 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         int mgn = s20;
         y0 += s15;
         int y1 = y0+s25;
-        int x1 = x0 + s10;
+        int x1 = x0;
         int boxW = (x+w - (3*mgn) - x1) / 2;
-        int x2 = x1 + s30 + mgn + boxW;
+        int x2 = x1 + s20 + mgn + boxW;
         drawSizeBox(g, text("RACES_MILITARY_SMALL"),  pl.shipCount(ShipDesign.SMALL),  x1, y0, boxW, s25, false);
         drawSizeBox(g, text("RACES_MILITARY_LARGE"),  pl.shipCount(ShipDesign.LARGE),  x2, y0, boxW, s25, false);
         drawSizeBox(g, text("RACES_MILITARY_MEDIUM"), pl.shipCount(ShipDesign.MEDIUM), x1, y1, boxW, s25, false);
@@ -239,6 +259,160 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
             g.drawString(text("RACES_MILITARY_REPORT_CURRENT"), x0, y2);
         else
             g.drawString(text("RACES_MILITARY_REPORT_OLD", str(age)), x0, y2);
+    }
+    private void drawPlayerDefenseInfo(Graphics2D g, Empire emp, int x, int y, int w, int h) {
+        g.setColor(RacesUI.darkBrown);
+        g.fillRect(x, y, w, h-s40);
+        int y0 = y + s20;
+
+        Empire pl = player();
+        TechTree tech = pl.tech();
+        int x0 = x + s10;
+        
+        g.setColor(SystemPanel.blackText);
+        g.setFont(narrowFont(16));
+        g.drawString(text("RACES_MILITARY_DEF_PLANET_SHIELD"), x0, y0);
+        g.setFont(narrowFont(15));
+        int shieldLvl = tech.topPlanetaryShieldTech() == null ? 0 : tech.topPlanetaryShieldTech().damage;
+        String shieldLvlStr = shieldLvl > 0 ? str(shieldLvl) : text("RACES_MILITARY_NO_SHIELD");
+        int sw = g.getFontMetrics().stringWidth(shieldLvlStr);
+        g.drawString(shieldLvlStr, x+w-s10-sw, y0);
+            
+        y0 += s17;
+        g.setFont(narrowFont(16));
+        g.drawString(text("RACES_MILITARY_DEF_DEFL_SHIELD"), x0, y0);
+        g.setFont(narrowFont(15));
+        shieldLvl = tech.topDeflectorShieldTech().damage;
+        shieldLvlStr = shieldLvl > 0 ? str(shieldLvl) : text("RACES_MILITARY_NO_SHIELD");
+        sw = g.getFontMetrics().stringWidth(shieldLvlStr);
+        g.drawString(shieldLvlStr, x+w-s10-sw, y0);
+        
+        y0 += s17;
+        g.setFont(narrowFont(16));
+        g.drawString(text("RACES_MILITARY_DEF_ARMOR"), x0, y0);
+        g.setFont(narrowFont(15));
+        String armor = tech.topArmorTech().shortName();
+        sw = g.getFontMetrics().stringWidth(armor);
+        g.drawString(armor, x+w-s10-sw, y0);
+        
+        y0 += s17;
+        g.setFont(narrowFont(16));
+        g.drawString(text("RACES_MILITARY_DEF_MISSILE"), x0, y0);
+        g.setFont(narrowFont(15));
+        String miss = pl.tech().topBaseMissileTech().name();
+        sw = g.getFontMetrics().stringWidth(miss);
+        g.drawString(miss, x+w-s10-sw, y0);
+        
+        y0 += s17;
+        g.setFont(narrowFont(16));
+        g.drawString(text("RACES_MILITARY_TROOP_BONUS"), x0, y0);
+        g.setFont(narrowFont(15));
+        String bonus = concat("+",str((int)tech.troopCombatAdj(false)));
+        sw = g.getFontMetrics().stringWidth(bonus);
+        g.drawString(bonus, x+w-s10-sw, y0);      
+        
+        g.setColor(RacesUI.darkBrown);
+        g.fillRect(x, y+h-s35, w, s35);
+        
+        y0 += s32;        
+        int y1 = y0+s8;
+        int x1 = x0+s35;
+        String maxBaseStr = text("RACES_MILITARY_DEF_MISSILE_MAX");
+        List<String> maxBaseLines = wrappedLines(g, maxBaseStr, w-s60);
+        for (String line: maxBaseLines) {
+            drawShadowedString(g, line, x0+s40, y0, Color.black, SystemPanel.whiteText);
+            y0 += s16;
+        }
+        
+        // draw arrows to incr/decr default missile bases
+        g.setFont(narrowFont(20));
+        g.setColor(SystemPanel.blackText);
+        String numBases = str(player().defaultMaxBases());
+        int sw1 = g.getFontMetrics().stringWidth(numBases);
+        g.drawString(numBases, x0+s18-sw1, y1);
+        
+        
+        int sz = s10;
+        // draw incr button
+        ptX[0]=x1-s3-sz; ptX[1]=ptX[0]+sz; ptX[2]=ptX[0]+sz/2;
+        ptY[0]=y1-s9;  ptY[1]=ptY[0];    ptY[2]=y1-s16;
+        maxBasesIncr.reset();
+        for (int i=0;i<ptX.length;i++) 
+            maxBasesIncr.addPoint(ptX[i], ptY[i]);
+        Color buttonC = hoverShape == maxBasesIncr ? SystemPanel.yellowText :  Color.black;
+        drawShadedPolygon(g, ptX, ptY, buttonC, s1, -s1);
+
+        // draw lower decr button
+        ptX[0]=x1-s3-sz; ptX[1]=ptX[0]+sz; ptX[2]=ptX[0]+sz/2;
+        ptY[0]=y1-s6;    ptY[1]=ptY[0];    ptY[2]=y1+s1;
+        maxBasesDecr.reset();
+        for (int i=0;i<ptX.length;i++) 
+            maxBasesDecr.addPoint(ptX[i], ptY[i]);
+        buttonC = hoverShape == maxBasesDecr ? SystemPanel.yellowText :  Color.black;
+        drawShadedPolygon(g, ptX, ptY, buttonC, s1, -s1);
+
+        maxBasesBox.setBounds(x1-s5-sz, y1-s18, sz+6, s20);
+        if ((hoverShape == maxBasesBox) || (hoverShape == maxBasesDecr) || (hoverShape == maxBasesIncr)) {
+            Stroke prev = g.getStroke();
+            g.setStroke(stroke2);
+            g.setColor(SystemPanel.yellowText);
+            g.draw(maxBasesBox);
+            g.setStroke(prev);
+        }       
+    }
+    private void drawAIDefenseInfo(Graphics2D g, Empire emp, int x, int y, int w, int h) {
+        g.setColor(RacesUI.darkBrown);
+        g.fillRect(x, y, w, h-s40);
+        int y0 = y + s20;
+
+        Empire pl = player();
+        EmpireView v = player().viewForEmpire(emp.id);
+        if (v == null)
+            return;
+        TechTree tech = v.spies().tech();
+        int x0 = x + s10;
+        
+        g.setColor(SystemPanel.blackText);
+        g.setFont(narrowFont(16));
+        g.drawString(text("RACES_MILITARY_DEF_PLANET_SHIELD"), x0, y0);
+        g.setFont(narrowFont(15));
+        int shieldLvl = tech.topPlanetaryShieldTech() == null ? 0 : tech.topPlanetaryShieldTech().damage;
+        String shieldLvlStr = shieldLvl > 0 ? str(shieldLvl) : text("RACES_MILITARY_NO_SHIELD");
+        int sw = g.getFontMetrics().stringWidth(shieldLvlStr);
+        g.drawString(shieldLvlStr, x+w-s10-sw, y0);
+            
+        y0 += s17;
+        g.setFont(narrowFont(16));
+        g.drawString(text("RACES_MILITARY_DEF_DEFL_SHIELD"), x0, y0);
+        g.setFont(narrowFont(15));
+        shieldLvl = tech.topDeflectorShieldTech().damage;
+        shieldLvlStr = shieldLvl > 0 ? str(shieldLvl) : text("RACES_MILITARY_NO_SHIELD");
+        sw = g.getFontMetrics().stringWidth(shieldLvlStr);
+        g.drawString(shieldLvlStr, x+w-s10-sw, y0);
+        
+        y0 += s17;
+        g.setFont(narrowFont(16));
+        g.drawString(text("RACES_MILITARY_DEF_ARMOR"), x0, y0);
+        g.setFont(narrowFont(15));
+        String armor = tech.topArmorTech().shortName();
+        sw = g.getFontMetrics().stringWidth(armor);
+        g.drawString(armor, x+w-s10-sw, y0);
+        
+        y0 += s17;
+        g.setFont(narrowFont(16));
+        g.drawString(text("RACES_MILITARY_DEF_MISSILE"), x0, y0);
+        g.setFont(narrowFont(15));
+        String miss = pl.tech().topBaseMissileTech().name();
+        sw = g.getFontMetrics().stringWidth(miss);
+        g.drawString(miss, x+w-s10-sw, y0);
+        
+        y0 += s17;
+        g.setFont(narrowFont(16));
+        g.drawString(text("RACES_MILITARY_TROOP_BONUS"), x0, y0);
+        g.setFont(narrowFont(15));
+        String bonus = concat("+",str((int)tech.troopCombatAdj(false)));
+        sw = g.getFontMetrics().stringWidth(bonus);
+        g.drawString(bonus, x+w-s10-sw, y0);
     }
     private void drawShipDesignTitle(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         int y0 = y+h-s5;
@@ -581,7 +755,13 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         int y = e.getY();
         Shape prevHover = hoverShape;
         hoverShape = null;
-        if (shipScroller.contains(x,y))
+        if (maxBasesIncr.contains(x,y))
+            hoverShape = maxBasesIncr;
+        else if (maxBasesDecr.contains(x,y))
+            hoverShape = maxBasesDecr;
+        else if (maxBasesBox.contains(x,y))
+            hoverShape = maxBasesBox;
+        else if (shipScroller.contains(x,y))
             hoverShape = shipScroller;
         else if (shipListBox.contains(x,y))
             hoverShape = shipListBox;
@@ -600,7 +780,19 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         dragY = 0;
         if (e.getButton() > 3)
             return;
+        if (hoverShape == maxBasesDecr) {
+            if (player().decrDefaultMaxBases())
+               repaint();
+            return;
+        }
+        else if (hoverShape == maxBasesIncr) {
+            if (player().incrDefaultMaxBases())
+                repaint();
+            return;
+        }
+
     }
+    
     @Override
     public void mouseEntered(MouseEvent e) {}
     @Override
@@ -613,6 +805,8 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
         int count = e.getUnitsToScroll();
+        int x = e.getX();
+        int y = e.getY();
         if ((hoverShape == shipListBox)
         || (hoverShape == shipScroller)) {
             int prevY = shipY;
@@ -623,6 +817,15 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
             if (shipY != prevY)
                 repaint(shipListBox);
             return;
+        }
+        else if (maxBasesBox.contains(x,y)) {
+            boolean repaint;
+            if (count < 0)
+                repaint = player().incrDefaultMaxBases();
+            else
+                repaint = player().decrDefaultMaxBases();
+            if (repaint)
+                repaint();
         }
     }
 }

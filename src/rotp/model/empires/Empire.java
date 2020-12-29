@@ -118,6 +118,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     private float totalReserve = 0;
     private float tradePiracyRate = 0;
     private NamedObject lastAttacker;
+    private int defaultMaxBases = 1;
 
     private transient AI ai;
     private transient boolean[] canSeeShips;
@@ -194,6 +195,20 @@ public final class Empire implements Base, NamedObject, Serializable {
     public boolean scanPlanets()                  { return scanPlanets; }
     public void scanPlanets(boolean b)            { scanPlanets = (scanPlanets || b); }
     public void setRecalcDistances()              { recalcDistances = true; }
+    public int defaultMaxBases()                  { return defaultMaxBases; }
+    public boolean incrDefaultMaxBases()  { 
+        int maxBase=999;
+        if (defaultMaxBases == maxBase)
+            return false;
+        defaultMaxBases = min(maxBase, defaultMaxBases+1);
+        return true;
+    }
+    public boolean decrDefaultMaxBases() { 
+        if (defaultMaxBases == 0) 
+            return false;
+        defaultMaxBases = max(0, defaultMaxBases-1); 
+        return true;
+    }
 
     public Colony.Orders priorityOrders()         { return priorityOrders; }
     public void priorityOrders(Colony.Orders o)   { priorityOrders = o; }

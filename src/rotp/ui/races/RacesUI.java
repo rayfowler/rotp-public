@@ -60,6 +60,7 @@ public class RacesUI extends BasePanel {
     private final List<Empire> empires = new ArrayList<>();
 
     BasePanel cardPanel;
+    MainTitlePanel titlePanel;
     RacesDiplomacyUI diploPanel;
     RacesIntelligenceUI intelPanel;
     RacesMilitaryUI militaryPanel;
@@ -424,7 +425,7 @@ public class RacesUI extends BasePanel {
         statusPanel = new RacesStatusUI(this);
 
         // create center panel
-        MainTitlePanel titlePanel = new MainTitlePanel(this, "RACES_TITLE");
+        titlePanel = new MainTitlePanel(this, "RACES_TITLE");
         
         cardPanel = new BasePanel();
         cardPanel.setBorder(BorderFactory.createMatteBorder(scaled(5), 0,0,0, lightBrown));
@@ -520,10 +521,18 @@ public class RacesUI extends BasePanel {
             selectionPane.keyPressed(e);
             return;
         }
+        boolean shift = e.isShiftDown();
         int k = e.getKeyCode();
-        if (k == KeyEvent.VK_ESCAPE) {
-            exit(false);
-            return;
+        switch(k) {
+            case KeyEvent.VK_ESCAPE:
+                exit(false);
+                return;
+            case KeyEvent.VK_TAB:
+                if (!shift)
+                    titlePanel.selectNextTab();
+                else
+                    titlePanel.selectPreviousTab();
+                return;
         }
     }
     private void exit(boolean pauseNextTurn) {
