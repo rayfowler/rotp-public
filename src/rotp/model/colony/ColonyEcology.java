@@ -74,9 +74,9 @@ public class ColonyEcology extends ColonySpendingCategory {
     }
     @Override
     public void removeSpendingOrders()   {
-        colony().removeColonyOrder(Colony.Orders.SOIL, false);
-        colony().removeColonyOrder(Colony.Orders.ATMOSPHERE, false);
-        colony().removeColonyOrder(Colony.Orders.TERRAFORM, false);
+        colony().removeColonyOrder(Colony.Orders.SOIL);
+        colony().removeColonyOrder(Colony.Orders.ATMOSPHERE);
+        colony().removeColonyOrder(Colony.Orders.TERRAFORM);
     }
     public void capturedBy(Empire newCiv) {
         hostileBC = 0;
@@ -219,11 +219,7 @@ public class ColonyEcology extends ColonySpendingCategory {
             float orderAmt = c.orderAmount(Colony.Orders.TERRAFORM);
             if (orderAmt > 0) {
                 c.removeColonyOrder(Colony.Orders.TERRAFORM);
-                colony().addColonyOrder(Colony.Orders.FACTORIES, orderAmt);
-            }
-            else {
-                c.empire().governorAI().setColonyAllocations(c);
-                c.validate();
+                c.addColonyOrder(Colony.Orders.FACTORIES, orderAmt);
             }
         }
     }

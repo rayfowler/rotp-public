@@ -535,8 +535,12 @@ public final class Empire implements Base, NamedObject, Serializable {
             from.transportSprite().clear();
     }
     public void addColonyOrder(Colony.Orders order, float amt) {
-        for (StarSystem sys: allColonizedSystems())
-            sys.colony().addColonyOrder(order, amt);
+        for (StarSystem sys: allColonizedSystems()) {
+            Colony col = sys.colony();
+            col.addColonyOrder(order, amt);
+            if (col.reallocationRequired)
+                governorAI().setColonyAllocations(col);     
+        }
     }
     public void addColonizedSystem(StarSystem s) {
         if (!colonizedSystems.contains(s)) {

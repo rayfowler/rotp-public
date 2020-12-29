@@ -60,7 +60,7 @@ public class ColonyIndustry extends ColonySpendingCategory {
     @Override
     public float orderedValue()         { return max(super.orderedValue(), colony().orderAmount(Colony.Orders.FACTORIES)); }
     @Override
-    public void removeSpendingOrders()   { colony().removeColonyOrder(Colony.Orders.FACTORIES, false); }
+    public void removeSpendingOrders()   { colony().removeColonyOrder(Colony.Orders.FACTORIES); }
     public void capturedBy(Empire newCiv) {
         if (newCiv == empire())
             return;
@@ -154,10 +154,6 @@ public class ColonyIndustry extends ColonySpendingCategory {
                 else if (!c.defense().missileBasesCompleted())
                     c.addColonyOrder(Colony.Orders.BASES, orderAmt*2/5);
             }   
-            else {
-                empire().governorAI().setColonyAllocations(c);
-                c.validate();
-            }
         }
     }
     public void commitTurn() {

@@ -103,8 +103,8 @@ public class ColonyDefense extends ColonySpendingCategory {
     }
     @Override
     public void removeSpendingOrders()   {
-        colony().removeColonyOrder(Colony.Orders.BASES, false);
-        colony().removeColonyOrder(Colony.Orders.SHIELD, false);
+        colony().removeColonyOrder(Colony.Orders.BASES);
+        colony().removeColonyOrder(Colony.Orders.SHIELD);
     }
     public void capturedBy(Empire newCiv) {
         bases = 0;
@@ -162,7 +162,8 @@ public class ColonyDefense extends ColonySpendingCategory {
             float orderAmt = c.orderAmount(Colony.Orders.SHIELD);
             if (orderAmt > 0) {
                 c.removeColonyOrder(Colony.Orders.SHIELD);
-                c.addColonyOrder(Colony.Orders.BASES, orderAmt*2/5);
+                if (!missileBasesCompleted()) 
+                    c.addColonyOrder(Colony.Orders.BASES, orderAmt*2/5);
             }
         }
         if (missileBasesCompleted()) 
