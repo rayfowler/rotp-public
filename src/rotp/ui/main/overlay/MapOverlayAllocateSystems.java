@@ -237,6 +237,7 @@ public class MapOverlayAllocateSystems extends MapOverlay {
     }
     @Override
     public boolean handleKeyPress(KeyEvent e) {
+        int code = e.getModifiersEx();
         switch(e.getKeyCode()) {
             case KeyEvent.VK_N:
                 nextSystem();
@@ -245,13 +246,16 @@ public class MapOverlayAllocateSystems extends MapOverlay {
                 previousSystem();
                 break;
             case KeyEvent.VK_F:
+                if ((code == 128) || (code == 64))
+                    return false; // pass Shift|Ctrl-F to system pane to update flag
+                advanceMap();
+                break;
             case KeyEvent.VK_ENTER:
             case KeyEvent.VK_ESCAPE:
                 advanceMap();
                 break;
             default:
-                misClick();
-                break;
+                return false;
         }
         return true;
     }

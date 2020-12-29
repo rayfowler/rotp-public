@@ -47,6 +47,7 @@ public class EmpireColonyInfoPane extends BasePanel {
     Color textC;
     Color backC;
     SystemViewer parentUI;
+    EmpireBasesPane basesPane;
     public EmpireColonyInfoPane(SystemViewer p, Color backColor, Color borderColor, Color textColor, Color darkTextColor) {
         parentUI = p;
         borderC = borderColor;
@@ -71,11 +72,12 @@ public class EmpireColonyInfoPane extends BasePanel {
         JPanel shieldBasesPane = new JPanel();
         shieldBasesPane.setOpaque(false);
 
+        basesPane = new EmpireBasesPane();
         GridLayout layout2 = new GridLayout(0,2);
         layout2.setHgap(s1);
         shieldBasesPane.setLayout(layout2);
         shieldBasesPane.add(new EmpireShieldPane());
-        shieldBasesPane.add(new EmpireBasesPane());
+        shieldBasesPane.add(basesPane);
 
         GridLayout layout0 = new GridLayout(3,0);
         layout0.setVgap(s1);
@@ -83,6 +85,12 @@ public class EmpireColonyInfoPane extends BasePanel {
         add(popFactoriesPane);
         add(shieldBasesPane);
         add(new EmpireProductionPane());
+    }
+    public void incrementBases() {
+        basesPane.incrementBases();
+    }
+    public void decrementBases() {
+        basesPane.decrementBases();
     }
     abstract class EmpireDataPane extends BasePanel {
         private static final long serialVersionUID = 1L;

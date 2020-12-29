@@ -76,6 +76,11 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
         
         flagBox.setBounds(w-s30,h-s60,s20,s60);
     }
+    public void toggleFlagColor() {
+        StarSystem sys = parent.systemViewToDisplay();
+        player().sv.view(sys.id).toggleFlagColor();
+        topParent.repaint();
+    }
     @Override
     public void mouseDragged(MouseEvent e) { }
     @Override
@@ -97,10 +102,8 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
     @Override
     public void mouseReleased(MouseEvent e) {
         if (hoverBox == flagBox) {
-            StarSystem sys = parent.systemViewToDisplay();
-            player().sv.view(sys.id).toggleFlagColor();
-            topParent.repaint();
-        }
+            toggleFlagColor();
+       }
     }
     @Override
     public void mouseEntered(MouseEvent e) { }

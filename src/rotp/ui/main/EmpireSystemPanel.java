@@ -55,7 +55,9 @@ public class EmpireSystemPanel extends SystemPanel {
     private SystemViewInfoPane topPane;
     private EmpireColonySpendingPane spendingPane;
     private EmpireShipPane shipPane;
-
+    private EmpireColonyFoundedPane foundedPane;
+    private EmpireColonyInfoPane infoPane;
+    
     public EmpireSystemPanel(SpriteDisplayPanel p) {
         parentSpritePanel = p;
         init();
@@ -79,7 +81,17 @@ public class EmpireSystemPanel extends SystemPanel {
     @Override
     public void keyPressed(KeyEvent e) {
         int k = e.getKeyCode();
+        int code = e.getModifiersEx();
         switch (k) {
+            case KeyEvent.VK_B:
+                if (code == 0)
+                    infoPane.incrementBases();
+                else if (code == 64)
+                    infoPane.decrementBases();
+                return;
+            case KeyEvent.VK_F:
+                foundedPane.toggleFlagColor();
+                return;
             case KeyEvent.VK_S:
                 nextShipDesign();
                 return;
@@ -134,12 +146,14 @@ public class EmpireSystemPanel extends SystemPanel {
         detailTopPane.setOpaque(true);
         detailTopPane.setBackground(dataBorders);
 
+        foundedPane = new EmpireColonyFoundedPane(this, parentSpritePanel.parent, MainUI.paneBackground());
+        infoPane = new EmpireColonyInfoPane(this, MainUI.paneBackground(), dataBorders, SystemPanel.yellowText, SystemPanel.blackText);
         BorderLayout layout = new BorderLayout();
         layout.setVgap(s1);
         detailTopPane.setLayout(layout);
         detailTopPane.setPreferredSize(new Dimension(getWidth(),scaled(110)));
-        detailTopPane.add(new EmpireColonyFoundedPane(this, parentSpritePanel.parent, MainUI.paneBackground()), BorderLayout.NORTH);
-        detailTopPane.add(new EmpireColonyInfoPane(this, MainUI.paneBackground(), dataBorders, SystemPanel.yellowText, SystemPanel.blackText), BorderLayout.CENTER);
+        detailTopPane.add(foundedPane, BorderLayout.NORTH);
+        detailTopPane.add(infoPane, BorderLayout.CENTER);
         Color textC = new Color(204,204,204);
         spendingPane = new EmpireColonySpendingPane(this, MainUI.paneBackground(), textC, labelBorderHi, labelBorderLo);
         shipPane = new EmpireShipPane(this);

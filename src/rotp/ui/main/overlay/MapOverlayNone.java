@@ -51,8 +51,10 @@ public class MapOverlayNone extends MapOverlay {
     @Override
     public boolean handleKeyPress(KeyEvent e) {
         if (session().performingTurn()) {
-            misClick();
-            return false;
+            // allocate systems overlay should pass keystrokes
+            if (parent.displayPanel().isVisible())
+                parent.displayPanel().keyPressed(e);
+            return true;
         }
         int s40 = BasePanel.s40;
         List<StarSystem> systems;
