@@ -118,7 +118,6 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
             initGradients();
 
         // reset map everytime we open
-        sessionVar("SYSTEMUI_MAP_INITIALIZED", false);
         targetSystem = null;
         map.clearRangeMap();
         
@@ -232,11 +231,6 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         redBackC = new LinearGradientPaint(start, end, dist, redColors);
     }
     @Override
-    public void paint(Graphics g) {
-        checkMapInitialized();
-        super.paint(g);
-    }
-    @Override
     public void paintOverMap(GalaxyMapPanel ui, Graphics2D g) {
         int w = ui.getWidth();
         int h = ui.getHeight();
@@ -313,15 +307,6 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         hoverSystem = null;
         List<FlightPathSprite> paths = FlightPathSprite.workingPaths();
         paths.clear();
-    }
-    @Override
-    public void checkMapInitialized() {
-        Boolean inited = (Boolean) sessionVar("SYSTEMSUI_MAP_INITIALIZED");
-        if ((inited == null) || (inited == false)) {
-            // init appropriate scale and bounds
-            //map.toggleFlightPathDisplay(false);
-            sessionVar("SYSTEMSUI_MAP_INITIALIZED", true);
-        }
     }
     @Override
     public Color alertColor(SystemView sv) { 

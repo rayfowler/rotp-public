@@ -39,7 +39,7 @@ public interface IMapHandler {
 
     public Border mapBorder();
     public float startingScalePct();
-    public void checkMapInitialized();
+    public default void checkMapInitialized() { };
 
     public Location mapFocus();
 

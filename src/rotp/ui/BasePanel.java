@@ -147,8 +147,6 @@ public class BasePanel extends JPanel implements Base {
         super.paint(g);
         if (hasTexture())
             drawTexture(g);
-        if (isAlpha()) 
-            drawAlpha(g);
         if (drawMemory())
             drawMemory(g);
     }

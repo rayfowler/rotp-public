@@ -147,7 +147,6 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
             initGradients();
 
         // reset map everytime we open
-        sessionVar("FLEETUI_MAP_INITIALIZED", false);
         targetSystem = null;
         map.clearRangeMap();
 
@@ -503,11 +502,6 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         redBackC = new LinearGradientPaint(start, end, dist, redColors);
     }
     @Override
-    public void paint(Graphics g) {
-        checkMapInitialized();
-        super.paint(g);
-    }
-    @Override
     public void paintOverMap(GalaxyMapPanel ui, Graphics2D g) {
         int w = ui.getWidth();
         int h = ui.getHeight();
@@ -667,15 +661,6 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         if (target != null) {
             for (StarSystem sys: filteredSystems)
                 sprites.add(new FlightPathSprite(sys, target));
-        }
-    }
-    @Override
-    public void checkMapInitialized() {
-        Boolean inited = (Boolean) sessionVar("FLEETUI_MAP_INITIALIZED");
-        if ((inited == null) || (inited == false)) {
-            // init appropriate scale and bounds
-            //map.toggleFlightPathDisplay(false);
-            sessionVar("FLEETUI_MAP_INITIALIZED", true);
         }
     }
     @Override
