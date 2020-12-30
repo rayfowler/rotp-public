@@ -271,7 +271,7 @@ public class ColonizePlanetUI extends FadeInPanel implements MouseListener, Mous
         int w = getWidth();
         int h = getHeight();
         Graphics2D g = (Graphics2D) img.getGraphics();
-
+        setFontHints(g);
         g.drawImage(landscapeImg, 0, 0, null);
 
         // draw landing ship
