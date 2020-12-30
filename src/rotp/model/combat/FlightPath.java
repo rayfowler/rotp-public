@@ -15,6 +15,7 @@
  */
 package rotp.model.combat;
 
+import java.util.ArrayList;
 import rotp.util.Base;
 import java.util.Comparator;
 import java.util.List;
@@ -58,6 +59,10 @@ public class FlightPath implements Base {
     public FlightPath(List<Integer> pts, int w) {
         points = pts;
         gridW = w;
+    }
+    public FlightPath() {
+        points = new ArrayList<>();
+        gridW = mapW;
     }
     public int destX() {
         return mapX(size()-1);

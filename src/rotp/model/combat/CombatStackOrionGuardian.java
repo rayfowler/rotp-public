@@ -88,6 +88,8 @@ public class CombatStackOrionGuardian extends CombatStack {
         return max(0, 0.75f - (0.01f * wpn.tech().level));
     }
     @Override
+    public int optimalFiringRange(CombatStack tgt)   { return 6; }
+    @Override
     public String name()                { return text("PLANET_ORION_GUARDIAN"); }
     @Override
     public boolean isMonster()          { return true; }

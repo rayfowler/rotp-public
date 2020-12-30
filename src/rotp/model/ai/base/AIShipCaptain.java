@@ -249,18 +249,53 @@ public class AIShipCaptain implements Base, ShipCaptain {
         return findBestPathToAttack(st, tgt, r);
     }
     public static FlightPath findBestPathToAttack(CombatStack st, CombatStack tgt, int range) {
+        if (st.movePointsTo(tgt) <= range) {
+            return new FlightPath();
+        }        
         int r = range;
         if (tgt.isColony() && st.hasBombs())
             r = 1;
 
         List<FlightPath> validPaths = new ArrayList<>();
         FlightPath bestPath = null;
-        for (int x1=tgt.x+r; x1>=tgt.x-r; x1--) {
-            for (int y1=tgt.y-r; y1<=tgt.y+r; y1++) {
-                if (st.mgr.validSquare(x1,y1))
-                    bestPath = allValidPaths(st.x,st.y,x1,y1,14,st, validPaths, bestPath); // get all valid paths to this point
+        
+        if (st.x > tgt.x) {
+            if (st.y > tgt.y) {
+                for (int x1=tgt.x+r; x1>=tgt.x-r; x1--) {
+                    for (int y1=tgt.y+r; y1>=tgt.y-r; y1--) {
+                        if (st.mgr.validSquare(x1,y1))
+                            bestPath = allValidPaths(st.x,st.y,x1,y1,14,st, validPaths, bestPath); // get all valid paths to this point
+                    }
+                }
+            } 
+            else {
+                for (int x1=tgt.x+r; x1>=tgt.x-r; x1--) {
+                    for (int y1=tgt.y-r; y1<=tgt.y+r; y1++) {
+                        if (st.mgr.validSquare(x1,y1))
+                            bestPath = allValidPaths(st.x,st.y,x1,y1,14,st, validPaths, bestPath); // get all valid paths to this point
+                    }
+                }
+            }
+        } 
+        else {
+            if (st.y > tgt.y) {
+                for (int x1=tgt.x-r; x1<=tgt.x+r; x1++) {
+                    for (int y1=tgt.y+r; y1>=tgt.y-r; y1--) {
+                        if (st.mgr.validSquare(x1,y1))
+                            bestPath = allValidPaths(st.x,st.y,x1,y1,14,st, validPaths, bestPath); // get all valid paths to this point
+                    }
+                }
+            } 
+            else {
+                for (int x1=tgt.x-r; x1<=tgt.x+r; x1++) {
+                    for (int y1=tgt.y-r; y1<=tgt.y+r; y1++) {
+                        if (st.mgr.validSquare(x1,y1))
+                            bestPath = allValidPaths(st.x,st.y,x1,y1,14,st, validPaths, bestPath); // get all valid paths to this point
+                    }
+                }
             }
         }
+            
         if (validPaths.isEmpty())  // there is no path to get in firing range of target!
             return null;
 
