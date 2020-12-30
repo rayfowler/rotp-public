@@ -282,7 +282,7 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         g.setFont(narrowFont(16));
         g.drawString(text("RACES_MILITARY_DEF_DEFL_SHIELD"), x0, y0);
         g.setFont(narrowFont(15));
-        shieldLvl = tech.topDeflectorShieldTech().damage;
+        shieldLvl = tech.topDeflectorShieldTech() == null ? 0 : tech.topDeflectorShieldTech().damage;
         shieldLvlStr = shieldLvl > 0 ? str(shieldLvl) : text("RACES_MILITARY_NO_SHIELD");
         sw = g.getFontMetrics().stringWidth(shieldLvlStr);
         g.drawString(shieldLvlStr, x+w-s10-sw, y0);
@@ -291,7 +291,7 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         g.setFont(narrowFont(16));
         g.drawString(text("RACES_MILITARY_DEF_ARMOR"), x0, y0);
         g.setFont(narrowFont(15));
-        String armor = tech.topArmorTech().shortName();
+        String armor = tech.topArmorTech() == null ? "" : tech.topArmorTech().shortName();
         sw = g.getFontMetrics().stringWidth(armor);
         g.drawString(armor, x+w-s10-sw, y0);
         
@@ -299,7 +299,7 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         g.setFont(narrowFont(16));
         g.drawString(text("RACES_MILITARY_DEF_MISSILE"), x0, y0);
         g.setFont(narrowFont(15));
-        String miss = pl.tech().topBaseMissileTech().name();
+        String miss = tech.topBaseMissileTech() == null ? "" : tech.topBaseMissileTech().name();
         sw = g.getFontMetrics().stringWidth(miss);
         g.drawString(miss, x+w-s10-sw, y0);
         
@@ -385,7 +385,7 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         g.setFont(narrowFont(16));
         g.drawString(text("RACES_MILITARY_DEF_DEFL_SHIELD"), x0, y0);
         g.setFont(narrowFont(15));
-        shieldLvl = tech.topDeflectorShieldTech().damage;
+        shieldLvl = tech.topDeflectorShieldTech() == null ? 0 : tech.topDeflectorShieldTech().damage;
         shieldLvlStr = shieldLvl > 0 ? str(shieldLvl) : text("RACES_MILITARY_NO_SHIELD");
         sw = g.getFontMetrics().stringWidth(shieldLvlStr);
         g.drawString(shieldLvlStr, x+w-s10-sw, y0);
@@ -394,7 +394,7 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         g.setFont(narrowFont(16));
         g.drawString(text("RACES_MILITARY_DEF_ARMOR"), x0, y0);
         g.setFont(narrowFont(15));
-        String armor = tech.topArmorTech().shortName();
+        String armor = tech.topArmorTech() == null ? "" : tech.topArmorTech().shortName();
         sw = g.getFontMetrics().stringWidth(armor);
         g.drawString(armor, x+w-s10-sw, y0);
         
@@ -402,7 +402,7 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         g.setFont(narrowFont(16));
         g.drawString(text("RACES_MILITARY_DEF_MISSILE"), x0, y0);
         g.setFont(narrowFont(15));
-        String miss = pl.tech().topBaseMissileTech().name();
+        String miss = tech.topBaseMissileTech() == null ? "" : tech.topBaseMissileTech().name();
         sw = g.getFontMetrics().stringWidth(miss);
         g.drawString(miss, x+w-s10-sw, y0);
         
