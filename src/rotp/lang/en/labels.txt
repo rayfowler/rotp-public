@@ -340,6 +340,9 @@ MAIN_TECH_COMPLETED               | Research Completed
 MAIN_TECH_RP_REMAINING            | %1 RP Remaining
 MAIN_TECH_RP_DISCOVERY            | Discovery Imminent
 MAIN_TECH_RESERVE_BC              | %1 BC
+MAIN TECH_RESERVE_BC_THOUSANDS    | %1K
+MAIN TECH_RESERVE_BC_MILLIONS     | %1M
+MAIN TECH_RESERVE_BC_BILLIONS     | %1B
 MAIN_TECH_RESERVE_TAX_ALL         | Taxing %1% of production on all colonies
 MAIN_TECH_RESERVE_TAX             | Taxing %1% of production on developed colonies
 MAIN_TECH_RESERVE_TAX_NONE        | No tax levied on colony production

@@ -46,8 +46,33 @@ public class TreasurySprite extends MapControlSprite {
         
         int amt = (int)player().totalReserve();
         int tax = player().empireTaxLevel();
-        String label = amt < 100 ? text("MAIN_TECH_RESERVE_BC", str(amt)) : str(amt);
         String label2 = amt >= 100 ? text("MAIN_TECH_RESERVE_BC", "") : "";
+        String label = str(amt);
+        if (amt < 100)
+            label = text("MAIN_TECH_RESERVE_BC", str(amt));
+        else if (amt < 1e4)
+            label = str(amt);
+        else if (amt < 1e6) {
+            amt = amt/1000;
+            label = text("MAIN TECH_RESERVE_BC_THOUSANDS", amt);            
+        }
+        else if (amt < 1e7) {
+            String amtStr =df1.format((float) amt/1e6);
+            label = text("MAIN TECH_RESERVE_BC_MILLIONS", amtStr);
+        }   
+        else if (amt < 1e9) {
+            amt = amt / 1000000;
+            label = text("MAIN TECH_RESERVE_BC_MILLIONS", amt);
+        }
+        else if (amt < 1e10) {
+            String amtStr =df1.format((float) amt/1000000000);
+            label = text("MAIN TECH_RESERVE_BC_BILLIONS", amtStr);
+        }
+        else  {
+            amt = amt/1000000000;
+            label = text("MAIN TECH_RESERVE_BC_BILLIONS", amt);
+        }
+
         String detail;
         List<String> detailLines = null;
         int fontSize = 13;
