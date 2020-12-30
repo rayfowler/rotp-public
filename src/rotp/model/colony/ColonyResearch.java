@@ -20,11 +20,18 @@ public class ColonyResearch extends ColonySpendingCategory {
     private float projectBC = 0;
     private float unallocatedBC = 0;
     private ColonyResearchProject project;
+    private transient ColonyResearchProject completedProject;
 
     public ColonyResearchProject project()         { return project; }
     public boolean hasProject()                    { return project != null; }
     public void project(ColonyResearchProject p)   { project = p; }
-    public void endProject()                       { project = null; }
+    public void endProject()                       { 
+        completedProject = project; 
+        project = null; 
+        colony().reallocationRequired = true;
+    }
+    public boolean hasCompletedProject()           { return completedProject != null; }
+    public ColonyResearchProject completedProject() { return completedProject; }
 
     @Override
     public int categoryType()           { return Colony.RESEARCH; }
@@ -38,6 +45,7 @@ public class ColonyResearch extends ColonySpendingCategory {
     public float projectRemainingBC()   { return project == null ? 0 : project.remainingResearchBC(); }
     @Override
     public void nextTurn(float totalProd, float totalReserve) {
+        completedProject = null;
         unallocatedBC = totalBC();
         projectBC = 0;
         // there may be a special project at this colony that consumes research

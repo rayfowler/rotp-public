@@ -93,6 +93,9 @@ public class AIGovernor implements Base, Governor {
         }
         if (col.ecology().terraformCompleted()) 
             session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_TERRAFORM_COMPLETE", name));
+        if (col.research().hasCompletedProject()) 
+            session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_PROJECT_ENDED", name, col.research().completedProject().projectKey()));
+            
         if (col.hasNewOrders() || (col.allocationRemaining() != 0) || session().awaitingAllocation(sys)) {
             baseSetPlayerAllocations(col);
             col.validate();
@@ -149,10 +152,6 @@ public class AIGovernor implements Base, Governor {
         if (!col.locked(DEFENSE))
             col.setAllocation(DEFENSE,  min(prevDef, maxDef));
 
-        // try to maintain previous research for players when possible
-        if (!col.locked(RESEARCH))
-            col.setAllocation(RESEARCH, prevRes);
-        
         // SPEND THE EXCESS
         // if there is industry left to build, go there first
         if (!col.locked(INDUSTRY))

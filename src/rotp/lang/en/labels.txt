@@ -603,6 +603,7 @@ MAIN_ALLOCATE_SABOTAGE_BASES      | • %1 has had %2 missile bases destroyed by
 MAIN_ALLOCATE_SABOTAGE_FACTORIES  | • %1 has had %2 factories destroyed by %3 saboteurs.
 MAIN_ALLOCATE_COLONY_CAPTURED     | • %1 was recently captured by %2 troops.
 MAIN_ALLOCATE_ECO_LOCKED_WASTE    | • %1 has ecological spending manually locked at a level insufficient to clean pollution.
+MAIN_ALLOCATE_PROJECT_ENDED       | • %1 is no longer researching a special project: %2
 MAIN_ALLOCATE_CHANGE_SPENDING     | System spending allocations may be adjusted at this time.
 MAIN_ALLOCATE_NOTICE_NUMBER       | Notice %1 of %2
 MAIN_ALLOCATE_BRIEF_NUMBER        | %1 of %2

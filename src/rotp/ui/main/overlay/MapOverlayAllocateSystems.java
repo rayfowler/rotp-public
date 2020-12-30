@@ -57,6 +57,7 @@ public class MapOverlayAllocateSystems extends MapOverlay {
         continueButton.reset();
         prevSystemButton.reset();
         nextSystemButton.reset();
+        parent.hoveringOverSprite(null);
         if (newSystems.isEmpty())
             advanceMap();
         else {
