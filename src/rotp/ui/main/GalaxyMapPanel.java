@@ -328,6 +328,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     @Override
     public void paintComponent(Graphics g) {
         Graphics2D g2 = (Graphics2D) g;
+        setFontHints(g2);
         parent.checkMapInitialized();
         paintToImage(mapBuffer());
         g.drawImage(mapBuffer,0,0,null);
