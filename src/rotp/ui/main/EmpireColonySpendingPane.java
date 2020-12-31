@@ -373,9 +373,9 @@ public class EmpireColonySpendingPane extends BasePanel {
                         softClick();
                         // clicks near the edge of the box are typically trying
                         // to zero or max them out. Assume that.
-                        if (pct < .1)
+                        if (pct < .05)
                             pct = 0;
-                        else if (pct > .9)
+                        else if (pct > .95)
                             pct = 1;
                         colony.forcePct(category, pct);
                         parent.repaint();

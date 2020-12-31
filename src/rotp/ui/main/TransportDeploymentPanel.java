@@ -446,7 +446,7 @@ public class TransportDeploymentPanel extends SystemPanel {
                 int boxH = boxBottomY - boxTopY;
                 int boxBorderW = s3;
 
-                sliderBox.setBounds(boxL+boxBorderW, boxTopY+boxBorderW, boxW-(2*boxBorderW), boxH-(2*boxBorderW));
+                sliderBox.setBounds(boxL+boxBorderW, boxTopY-boxBorderW, boxW-(2*boxBorderW), boxH+(2*boxBorderW));
 
                 g.setColor(sliderBackEnabled);
                 g.fillRect(boxL, boxTopY, boxW, boxH);
@@ -513,6 +513,10 @@ public class TransportDeploymentPanel extends SystemPanel {
             else if (sliderBox.contains(x,y)) {
                 float pct = (float) (x -sliderBox.x) / sliderBox.width;
                 if (pct >= 0) {
+                    if (pct < .05)
+                       pct = 0;
+                    else if (pct > .95)
+                       pct = 1;
                     transportSprite().amt(bounds(0, (int)(pct*maxSendingSize), maxSendingSize));
                     parentSpritePanel.repaint();
                 }
