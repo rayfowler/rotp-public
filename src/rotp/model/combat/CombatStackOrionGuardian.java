@@ -78,7 +78,7 @@ public class CombatStackOrionGuardian extends CombatStack {
         baseTurnsToFire[2] = 2; // torps every other round
         baseTurnsToFire[3] = 1;
         wpnTurnsToFire[0] = 1;
-        baseTurnsToFire[1] = 1;
+        wpnTurnsToFire[1] = 1;
         wpnTurnsToFire[2] = 1;
         wpnTurnsToFire[3] = 1;
         if (weapons.size() > 0)
@@ -88,7 +88,16 @@ public class CombatStackOrionGuardian extends CombatStack {
         return max(0, 0.75f - (0.01f * wpn.tech().level));
     }
     @Override
-    public int optimalFiringRange(CombatStack tgt)   { return 6; }
+    public int optimalFiringRange(CombatStack tgt)   { return 3; }
+    @Override
+    public int maxFiringRange(CombatStack tgt) {
+        if (roundsRemaining[0]>0)
+            return 9;
+        else if (wpnTurnsToFire[2] < 2)
+            return 10;
+        else
+            return optimalFiringRange(tgt);
+    }
     @Override
     public String name()                { return text("PLANET_ORION_GUARDIAN"); }
     @Override

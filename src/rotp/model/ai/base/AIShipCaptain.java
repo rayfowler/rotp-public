@@ -296,8 +296,13 @@ public class AIShipCaptain implements Base, ShipCaptain {
             }
         }
             
-        if (validPaths.isEmpty())  // there is no path to get in firing range of target!
+         // there is no path to get in optimal firing range of target!
+        if (validPaths.isEmpty()) {
+            // are we within max firing range? if so, go with that
+            if (st.movePointsTo(tgt) <= st.maxFiringRange(tgt)) 
+                return new FlightPath();          
             return null;
+        }  
 
         Collections.sort(validPaths,FlightPath.SORT);
         //System.out.println("Paths found: "+validPaths.size());
