@@ -553,7 +553,7 @@ public class TransportDeploymentPanel extends SystemPanel {
             }
         }
     }
-    class ToSystemDetailPane extends BasePanel  implements MouseMotionListener, MouseListener {
+    class ToSystemDetailPane extends BasePanel implements MouseMotionListener, MouseListener {
         private static final long serialVersionUID = 1L;
         Shape hoverBox;
         Rectangle flagBox = new Rectangle();

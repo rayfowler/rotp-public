@@ -21,6 +21,7 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
+import java.awt.Shape;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -102,7 +103,6 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
     StarSystem selectedSystem() {
         return parent.systemToDisplay();
     }
-
     @Override
     public void mouseDragged(MouseEvent e) { }
     @Override
@@ -163,15 +163,21 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
             }
         }
     }
-    final class SystemSummaryPane extends BasePanel {
+    final class SystemSummaryPane extends BasePanel implements MouseMotionListener, MouseListener {
         private static final long serialVersionUID = 1L;
+        Shape hoverBox;
+        Rectangle flagBox = new Rectangle();
         SystemSummaryPane() {
             setBackground(unselectedC);
             setPreferredSize(new Dimension(getWidth(), s40));
+            addMouseListener(this);
+            addMouseMotionListener(this);
         }
         @Override
-        public void paintComponent(Graphics g) {
+        public void paintComponent(Graphics g0) {
+            Graphics2D g = (Graphics2D) g0;
             super.paintComponent(g);
+            int w = getWidth();
             StarSystem sys = systemViewToDisplay();
             if (sys == null)
                 return;
@@ -179,6 +185,54 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
             String name = player().sv.descriptiveName(id);
             g.setFont(narrowFont(24));
             drawShadowedString(g, name, 2, s10, s30, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
+            
+            Color flagC = parent.flagColor(sys);
+            if (hoverBox == flagBox) 
+                sys.drawBanner(g, flagC, SystemPanel.yellowText, w-s10,s40);
+            else {
+                Color c1 = flagC == null ? SystemPanel.blackText : SystemPanel.whiteText;
+                sys.drawBanner(g, flagC, c1, w-s10,s40);
+            }
+
+            flagBox.setBounds(w-s30,s10,s20,s60);              
+        }
+        private void toggleFlagColor() {
+            StarSystem sys = systemViewToDisplay();
+            player().sv.view(sys.id).toggleFlagColor();
+            parent.repaint();
+        }
+        @Override
+        public void mouseDragged(MouseEvent e) { }
+        @Override
+        public void mouseMoved(MouseEvent e) {
+            int x = e.getX();
+            int y = e.getY();
+            Shape prevHover = hoverBox;
+            hoverBox = null;
+            if (flagBox.contains(x,y))
+                hoverBox = flagBox;
+
+            if (prevHover != hoverBox)
+                repaint();
+        }
+        @Override
+        public void mouseClicked(MouseEvent e) { }
+        @Override
+        public void mousePressed(MouseEvent e) { }
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            if (hoverBox == flagBox) {
+                toggleFlagColor();
+           }
+        }
+        @Override
+        public void mouseEntered(MouseEvent e) { }
+        @Override
+        public void mouseExited(MouseEvent e) { 
+            if (hoverBox != null) {
+                hoverBox = null;
+                repaint();
+            }
         }
     }
     final class SystemFlagsPane extends BasePanel implements MouseListener {
