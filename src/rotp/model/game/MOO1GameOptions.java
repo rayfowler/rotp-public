@@ -213,8 +213,11 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         if (opt.player != null) 
             player.copy(opt.player);
         
-         setGalaxyShape(); 
-         generateGalaxy(); 
+        setGalaxyShape(); 
+        selectedGalaxyShapeOption1 = opt.selectedGalaxyShapeOption1;
+        selectedGalaxyShapeOption2 = opt.selectedGalaxyShapeOption2;
+
+        generateGalaxy(); 
     }
 
     @Override
