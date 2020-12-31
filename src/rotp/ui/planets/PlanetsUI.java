@@ -1676,7 +1676,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             drawShadowedString(g, label, 2, midP-sw, y1, SystemPanel.textShadowC, SystemPanel.whiteText);
 
             g.setColor(palette.black);
-            String text = text("PLANETS_AMT_BC", (int)player().totalReserve());
+            String text = text("PLANETS_AMT_BC", shortFmt(player().totalReserve()));
             g.drawString(text, midP+s10, y1);
 
             y1 += s10;
@@ -1699,8 +1699,15 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             drawSliderBox(g, x1, y1-s15, boxW, s18);
 
             String result;
-            if (player().empireTaxLevel() > 0)
-                result = text("PLANETS_RESERVE_INCREASE", fmt(player().empireTaxRevenue(),1));
+            if (player().empireTaxLevel() > 0) {
+                float revenue = player().empireTaxRevenue();
+                String revStr;
+                if (revenue < 100)
+                    revStr = fmt(player().empireTaxRevenue(),1);
+                else
+                    revStr = shortFmt(revenue);
+                result = text("PLANETS_RESERVE_INCREASE", revStr);
+            }
             else
                 result = text("PLANETS_RESERVE_NO_TAX");
             g.setFont(narrowFont(16));

@@ -435,6 +435,31 @@ public interface Base {
         else
             return str((int)d);
     }
+   public default String shortFmt(float d) {
+        int amt = (int) d;
+        if (amt < 1e4)
+            return str(amt);
+        else if (amt < 1e6) {
+            amt = amt/1000;
+            return text("NUM_FORMAT_THOUSANDS", amt);            
+        }
+        else if (amt < 1e7) {
+            String amtStr =df1.format((float) amt/1e6);
+            return text("NUM_FORMAT_MILLIONS", amtStr);
+        }   
+        else if (amt < 1e9) {
+            amt = amt / 1000000;
+            return text("NUM_FORMAT_MILLIONS", amt);
+        }
+        else if (amt < 1e10) {
+            String amtStr =df1.format((float) amt/1000000000);
+            return text("NUM_FORMAT_BILLIONS", amtStr);
+        }
+        else  {
+            amt = amt/1000000000;
+            return text("NUM_FORMAT_BILLIONS", amt);
+        }
+    }
     public default float round(float val, float precision) {
         return ((int)((val+(precision/2.0))/precision)) * precision;
     }
