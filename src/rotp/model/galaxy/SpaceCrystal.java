@@ -30,15 +30,16 @@ public class SpaceCrystal extends SpaceMonster {
         combatStacks().clear();
         addCombatStack(new CombatStackSpaceCrystal());       
     }
-    public void destroyColony(StarSystem sys) {
+    public void degradePlanet(StarSystem sys) {
         Colony col = sys.colony();
         if (col != null) {
             sys.empire().lastAttacker(RandomEventSpaceCrystal.monster);
-            sys.planet().degradeToType(PlanetType.DEAD);
-            float maxWaste = sys.planet().maxWaste();
-            sys.planet().addWaste(maxWaste);
-            sys.planet().removeExcessWaste();
             col.destroy();  
-        }        
+        }  
+        sys.planet().degradeToType(PlanetType.DEAD);
+        float maxWaste = sys.planet().maxWaste();
+        sys.planet().addWaste(maxWaste);
+        sys.planet().removeExcessWaste();
+        sys.abandoned(false);
     }
 }

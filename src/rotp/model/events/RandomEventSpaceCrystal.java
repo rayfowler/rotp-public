@@ -96,9 +96,7 @@ public class RandomEventSpaceCrystal implements Base, Serializable, RandomEvent 
             startCombat();
         
         if (monster.alive()) {
-            if (col != null)
-                destroyColony(col);
-            targetSystem.abandoned(false);
+            degradePlanet(targetSystem);
             moveToNextSystem();
         }
         else 
@@ -119,15 +117,17 @@ public class RandomEventSpaceCrystal implements Base, Serializable, RandomEvent 
         else if (pl.sv.isScouted(sysId))
             GNNNotification.notifyRandomEvent(notificationText("EVENT_SPACE_CRYSTAL_1", null), "GNN_Event_Crystal");   
     }
-    private void destroyColony(Colony col) {
-        StarSystem targetSystem = galaxy().system(sysId);  
+    private void degradePlanet(StarSystem targetSystem) {
+        Empire emp = targetSystem.empire();
         // colony may have already been destroyed in combat
-        if (targetSystem.isColonized()) 
-            monster.destroyColony(targetSystem);
+        if (targetSystem.isColonized() || targetSystem.abandoned())
+            monster.degradePlanet(targetSystem);
         
+        if (emp == null)
+            return;
         Empire pl = player();
-        if (pl.knowsOf(col.empire()) || !pl.sv.name(sysId).isEmpty())
-            GNNNotification.notifyRandomEvent(notificationText("EVENT_SPACE_CRYSTAL_2", col.empire()), "GNN_Event_Crystal");
+        if (pl.knowsOf(emp) || !pl.sv.name(sysId).isEmpty())
+            GNNNotification.notifyRandomEvent(notificationText("EVENT_SPACE_CRYSTAL_2", emp), "GNN_Event_Crystal");
     }
     private void crystalDestroyed() {
         galaxy().events().removeActiveEvent(this);

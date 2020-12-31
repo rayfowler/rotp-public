@@ -30,15 +30,16 @@ public class SpaceAmoeba extends SpaceMonster {
         combatStacks().clear();
         addCombatStack(new CombatStackSpaceAmoeba());       
     }
-    public void destroyColony(StarSystem sys) {
+    public void degradePlanet(StarSystem sys) {
         Colony col = sys.colony();
         if (col != null) {
-            sys.empire().lastAttacker(monster);
-            sys.planet().degradeToType(PlanetType.BARREN);
             float prevFact = col.industry().factories();
             col.industry().factories(prevFact*0.1f);
-            sys.planet().resetWaste();
+            sys.empire().lastAttacker(monster);
             col.destroy();
-        }        
+        }
+        sys.planet().degradeToType(PlanetType.BARREN);
+        sys.planet().resetWaste();     
+        sys.abandoned(false);
     }
 }

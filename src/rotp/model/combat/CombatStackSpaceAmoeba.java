@@ -83,7 +83,7 @@ public class CombatStackSpaceAmoeba extends CombatStack {
         else if (st.isColony()) {
             CombatStackColony cStack = (CombatStackColony) st;
             st.mgr.destroyStack(st);
-            RandomEventSpaceAmoeba.monster.destroyColony(st.mgr.system());
+            RandomEventSpaceAmoeba.monster.degradePlanet(st.mgr.system());
             cStack.colonyDestroyed = true;
         }
 

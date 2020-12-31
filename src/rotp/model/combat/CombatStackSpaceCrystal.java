@@ -71,7 +71,7 @@ public class CombatStackSpaceCrystal extends CombatStack {
                     if (st.isColony() && st.destroyed()) {
                         CombatStackColony cStack = (CombatStackColony) st;
                         st.mgr.destroyStack(st);
-                        RandomEventSpaceCrystal.monster.destroyColony(st.mgr.system());                   
+                        RandomEventSpaceCrystal.monster.degradePlanet(st.mgr.system());                   
                         cStack.colonyDestroyed = true;
                     }
                 }
