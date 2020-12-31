@@ -117,7 +117,7 @@ public class MapOverlayNone extends MapOverlay {
                     RotPUI.instance().selectRacesPanel();
                     break;
                 }
-                else if (e.getModifiersEx() == 64) {
+                else if (e.getModifiersEx() == 512) {
                     if (parent.clickedSprite() instanceof StarSystem) {
                         StarSystem sys = (StarSystem) parent.clickedSprite();
                         if (player().canRallyFleetsTo(id(sys))) {
