@@ -314,6 +314,9 @@ GAME_MEMORY_HIDE                  | Memory Use: HIDE
 // Load Game UI
 LOAD_GAME_TITLE                   | Load Game
 LOAD_GAME_AUTOSAVE                | Most Recent Autosave
+LOAD_GAME_FILENAME                | Sort by Filename
+LOAD_GAME_DATE                    | by Date
+LOAD_GAME_SIZE                    | by Size
 LOAD_GAME_LOADING                 | Loading...
 LOAD_GAME_BAD_VERSION             | Cannot load saved game file: %1. This file may be corrupt or outdated.
 LOAD_GAME_CANCEL                  | Cancel
@@ -321,6 +324,9 @@ LOAD_GAME_OK                      | Load
 
 // Save Game UI
 SAVE_GAME_TITLE                   | Save Game
+SAVE_GAME_FILENAME                | Sort by Filename
+SAVE_GAME_DATE                    | by Date
+SAVE_GAME_SIZE                    | by Size
 SAVE_GAME_SAVING                  | Saving...
 SAVE_GAME_CANCEL                  | Cancel
 SAVE_GAME_OK                      | Save

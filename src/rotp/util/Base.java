@@ -435,8 +435,10 @@ public interface Base {
         else
             return str((int)d);
     }
-   public default String shortFmt(float d) {
-        int amt = (int) d;
+    public default String shortFmt(float d) {
+        return shortFmt((int) d);
+    }
+    public default String shortFmt(int amt) {
         if (amt < 1e4)
             return str(amt);
         else if (amt < 1e6) {
@@ -459,7 +461,7 @@ public interface Base {
             amt = amt/1000000000;
             return text("NUM_FORMAT_BILLIONS", amt);
         }
-    }
+    } 
     public default float round(float val, float precision) {
         return ((int)((val+(precision/2.0))/precision)) * precision;
     }

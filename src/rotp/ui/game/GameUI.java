@@ -86,6 +86,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     private static final Color[] textShade = { new Color(25,25,25), new Color(25,25,25) };
     private static final Color[] loadHoverBackgroundColor = { new Color(219,167,122), new Color(160,172,170) };
     private static final Color[] loadListMask = { new Color(0,0,0,80), new Color(0,0,0,80) };
+    private static final Color[] sortLabelBackColor = { new Color(100,70,50), new Color(59,66,65) };
     private static LinearGradientPaint[] loadBackground;
     private static LinearGradientPaint[] raceLeftBackground;
     private static LinearGradientPaint[] raceRightBackground;
@@ -136,12 +137,13 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     public static Color borderDarkColor()         { return borderDarkColor[opt()]; }
     public static Color loadHoverBackground()     { return loadHoverBackgroundColor[opt()]; }
     public static Color loadListMask()            { return loadListMask[opt()]; }
+    public static Color sortLabelBackColor()      { return sortLabelBackColor[opt()]; }
     public static LinearGradientPaint loadBackground() {
         if (loadBackground == null) {
             loadBackground = new LinearGradientPaint[2];
             Point2D start = new Point2D.Float(RotPUI.scaledSize(350), 0);
             Point2D end = new Point2D.Float(RotPUI.scaledSize(879), 0);
-            float[] dist = {0.0f, 0.4f, 0.6f, 1.0f};
+            float[] dist = {0.0f, 0.1f, 0.9f, 1.0f};
             Color edge0 = new Color(113,74,49);
             Color mid0 = new Color(188,123,81);
             Color[] colors0 = {edge0, mid0,  mid0, edge0 };

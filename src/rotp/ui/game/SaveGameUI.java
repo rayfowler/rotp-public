@@ -36,6 +36,8 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import javax.swing.AbstractAction;
 import javax.swing.ActionMap;
@@ -53,7 +55,13 @@ import rotp.ui.main.SystemPanel;
 
 public final class SaveGameUI extends BasePanel implements MouseListener, MouseWheelListener {
     private static final long serialVersionUID = 1L;
-    private static final int  MAX_FILES = 10;
+    private static final int  MAX_FILES = 20;
+    private static final int SORT_FN_UP = 1;
+    private static final int SORT_FN_DN = 2;
+    private static final int SORT_DT_UP = 3;
+    private static final int SORT_DT_DN = 4;
+    private static final int SORT_SZ_UP = 5;
+    private static final int SORT_SZ_DN = 6;
     private final static String CANCEL_ACTION = "cancel-input";
     private final static String SAVE_ACTION   = "save-input";
     private static final SimpleDateFormat fileDateFmt = new SimpleDateFormat("MMM dd, HH:mm");
@@ -63,6 +71,7 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
 
     FileListingPanel listingPanel;
     List<String> saveFiles = new ArrayList<>();
+    List<Long> saveSizes = new ArrayList<>();
     List<String> saveDates = new ArrayList<>();
     int selectIndex = -1;
     Rectangle hoverBox;
@@ -70,9 +79,14 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
     int start = 0;
     int end = 0;
     boolean saving = false;
+
+    int sortOrder = SORT_FN_UP;
     int buttonW, button1X, button2X;
     private final Rectangle cancelBox = new Rectangle();
     private final Rectangle saveBox = new Rectangle();
+    private final Rectangle fileNameBox = new Rectangle();
+    private final Rectangle fileSizeBox = new Rectangle();
+    private final Rectangle fileDateBox = new Rectangle();
     private LinearGradientPaint[] saveBackC;
     private LinearGradientPaint[] cancelBackC;
 
@@ -91,14 +105,29 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
         newFileField.setText(GameUI.gameName);                
         saving = false;
 
+        sortListing();
+    }
+    private void sortListing() {
+        saveFiles.clear();
+        saveSizes.clear();
+        saveDates.clear();
         String ext = GameSession.SAVEFILE_EXTENSION;
 
         saveFiles.add("");
+        saveSizes.add(0L);
         saveDates.add("");
 
         File curDir = new File(Rotp.jarPath());
         File[] filesList = curDir.listFiles();
-        Arrays.sort(filesList, LoadGameUI.FILE_NAME);
+        
+        switch(sortOrder) {
+            case SORT_FN_UP : Arrays.sort(filesList, FILE_NAME); break;
+            case SORT_FN_DN : Arrays.sort(filesList, Collections.reverseOrder(FILE_NAME)); break;
+            case SORT_DT_UP : Arrays.sort(filesList, FILE_DATE); break;
+            case SORT_DT_DN : Arrays.sort(filesList, Collections.reverseOrder(FILE_DATE)); break;
+            case SORT_SZ_UP : Arrays.sort(filesList, FILE_SIZE); break;
+            case SORT_SZ_DN : Arrays.sort(filesList, Collections.reverseOrder(FILE_SIZE)); break;
+        }
         for (File f : filesList){
             if (f.isFile()) {
                 String name = f.getName();
@@ -106,6 +135,7 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
                 && !name.equalsIgnoreCase(GameSession.RECENT_SAVEFILE)) {
                     saveFiles.add(name.substring(0, name.length()-ext.length()));
                     saveDates.add(fileDateFmt.format(f.lastModified()));
+                    saveSizes.add(f.length());
                 }
             }
         }
@@ -177,6 +207,30 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
             selectIndex = max(selectIndex-1, 1);
         if ((prevStart != start) || (prevSelect != selectIndex))
             repaint();
+    }
+    private void sortByFileName() {
+        switch (sortOrder) {
+            case SORT_FN_UP : sortOrder = SORT_FN_DN; break;
+            default         : sortOrder = SORT_FN_UP; break;
+        }
+        sortListing();
+        repaint();
+    }
+    private void sortByDate() {
+        switch (sortOrder) {
+            case SORT_DT_UP : sortOrder = SORT_DT_DN; break;
+            default         : sortOrder = SORT_DT_UP; break;
+        }
+        sortListing();
+        repaint();
+    }
+    private void sortBySize() {
+        switch (sortOrder) {
+            case SORT_SZ_UP : sortOrder = SORT_SZ_DN; break;
+            default         : sortOrder = SORT_SZ_UP; break;
+        }
+        sortListing();
+        repaint();
     }
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
@@ -275,7 +329,7 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
 
             newFileField.setBackground(GameUI.loadHoverBackground());
             newFileField.setBorder(this.newEmptyBorder(5,0,0,0));
-            newFileField.setFont(narrowFont(26));
+            newFileField.setFont(narrowFont(20));
             newFileField.setForeground(Color.black);
             newFileField.setCaretColor(Color.black);
             newFileField.putClientProperty("caretWidth", s4);
@@ -300,7 +354,7 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
                 gameBox[i].setBounds(0,0,0,0);
 
             int w = getWidth();
-            lineH = s30;
+            lineH = s22;
 
             String title = text("SAVE_GAME_TITLE");
             g.setFont(font(60));
@@ -308,33 +362,39 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
             drawShadowedString(g, title, 1, 3, (w-sw)/2, scaled(140), GameUI.titleShade(), GameUI.titleColor());
 
             end = min(saveFiles.size(), start+saveFiles.size());
-            g.setFont(narrowFont(24));
 
-            int w0 = getWidth()-scaled(700);
-            int x0 = scaled(350);
+            int w0 = getWidth()-scaled(680);
+            int x0 = (w-w0)/2;
             int h0 = s5+(MAX_FILES*lineH);
             int y0 = scaled(180);
 
             // draw back mask
             int wTop = s10;
-            int wSide = s50;
+            int wSide = s40;
             int wBottom = s80;
             g.setColor(GameUI.loadListMask());
-            g.fillRect(x0-wSide, y0-wTop, w0+wSide+wSide, h0+wTop+wBottom);
+            g.fillRect(x0-wSide, y0-wTop, w0+wSide+wSide, h0+lineH+wTop+wBottom);
 
             g.setPaint(GameUI.loadBackground());
-            g.fillRect(x0, y0, w0, h0);
-            int lineY = y0+s5;
+            g.fillRect(x0, y0, w0, h0+lineH);
+            
+            g.setColor(GameUI.sortLabelBackColor());
+            g.fillRect(x0, y0, w0, lineH);
+            drawFilenameButton(g, x0+s30, y0+lineH);
+            drawSizeButton(g, x0+w0-scaled(150), y0+lineH);
+            drawDateButton(g, x0+w0-s30, y0+lineH);
+            // draw list of games to load
+            int lineY = y0+s5+lineH;
             listBox.setBounds(x0, y0, w0, h0);
             if ((start+MAX_FILES) >= 1) {
                 for (int i=start+1;i<start+MAX_FILES;i++) {
                     int boxIndex = i-start;
                     if (boxIndex == selectIndex) {
                         g.setPaint(GameUI.loadHoverBackground());
-                        g.fillRect(x0+s20, lineY+s2, w0-s40, lineH-s4);
+                        g.fillRect(x0+s20, lineY-s4, w0-s40, lineH);
                     }
                     if (i<end) {
-                        drawSaveGame(g, boxIndex, saveFiles.get(i), saveDates.get(i), x0, lineY, w0, lineH);
+                        drawSaveGame(g, boxIndex, saveFiles.get(i), saveSizes.get(i), saveDates.get(i), x0, lineY, w0, lineH);
                         gameBox[boxIndex].setBounds(x0,lineY,w0,lineH);
                     }
                     lineY += lineH;
@@ -342,7 +402,7 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
             }
 
             // always draw the first entry (the blank entry for a new save file)
-            drawSaveGame(g, 0, saveFiles.get(0), saveDates.get(0), x0, y0, w0, lineH);
+            drawSaveGame(g, 0, saveFiles.get(0), saveSizes.get(0), saveDates.get(0), x0, y0, w0, lineH);
             gameBox[0].setBounds(x0,lineY+s5,w0,lineH);
             if (!newFileField.isVisible()) {
                 newFileField.setMargin(new Insets(s2,s30,0,0));
@@ -405,6 +465,33 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
                 drawNotice(g,30);
             }
         }
+        private void drawFilenameButton(Graphics g, int x, int y) {
+            Color textC = fileNameBox == hoverBox ? GameUI.textHoverColor() : GameUI.textColor();
+            g.setFont(narrowFont(20));
+            String title = text("SAVE_GAME_FILENAME");
+            int sw = g.getFontMetrics().stringWidth(title);
+            fileNameBox.setBounds(x, y-lineH,sw,lineH);
+            g.setColor(textC);
+            g.drawString(title, x, y-(lineH/5));
+        }
+        private void drawSizeButton(Graphics g, int x, int y) {
+            Color textC = fileSizeBox == hoverBox ? GameUI.textHoverColor() : GameUI.textColor();
+            g.setFont(narrowFont(20));
+            String title = text("SAVE_GAME_SIZE");
+            int sw = g.getFontMetrics().stringWidth(title);
+            fileSizeBox.setBounds(x-sw, y-lineH, sw, lineH);
+            g.setColor(textC);
+            g.drawString(title, x-sw, y-(lineH/5));
+        }
+        private void drawDateButton(Graphics g, int x, int y) {
+            Color textC = fileDateBox == hoverBox ? GameUI.textHoverColor() : GameUI.textColor();
+            g.setFont(narrowFont(20));
+            String title = text("SAVE_GAME_DATE");
+            int sw = g.getFontMetrics().stringWidth(title);
+            fileDateBox.setBounds(x-sw, y-lineH, sw, lineH);
+            g.setColor(textC);
+            g.drawString(title, x-sw, y-(lineH/5));
+        }
         private void scrollY(int deltaY) {
             yOffset += deltaY;
             if (yOffset > lineH) {
@@ -416,13 +503,18 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
                 scrollDown();
             }
         }
-        private void drawSaveGame(Graphics2D g, int index, String s, String dt, int x, int y, int w, int h) {
+        private void drawSaveGame(Graphics2D g, int index, String s, long sz, String dt, int x, int y, int w, int h) {
             Color c0 = (index != selectIndex) && (hoverBox == gameBox[index]) ? GameUI.loadHoverBackground() : Color.black;
             g.setColor(c0);
-            g.setFont(narrowFont(24));
+            g.setFont(narrowFont(20));
             g.drawString(s, x+s30, y+h-s8);
 
-            g.setFont(font(22));
+            if (sz > 0) {
+                String szStr = shortFmt(sz);
+                int sw0 = g.getFontMetrics().stringWidth(szStr);
+                g.drawString(szStr, x+w-scaled(150)-sw0, y+h-s8);
+            }
+
             int sw = g.getFontMetrics().stringWidth(dt);
             g.drawString(dt, x+w-s30-sw, y+h-s8);
         }
@@ -447,6 +539,12 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
                 hoverBox = saveBox;
             else if (cancelBox.contains(x,y))
                 hoverBox = cancelBox;
+            else if (fileNameBox.contains(x,y))
+                hoverBox = fileNameBox;
+            else if (fileDateBox.contains(x,y))
+                hoverBox = fileDateBox;
+            else if (fileSizeBox.contains(x,y))
+                hoverBox = fileSizeBox;
             else {
                 for (int i=0;i<gameBox.length;i++) {
                     if (gameBox[i].contains(x,y))
@@ -487,6 +585,18 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
                 saveGame(fullSelectedFileName());
                 return;
             }
+            if (hoverBox == fileNameBox) {
+                sortByFileName();
+                return;
+            }
+            if (hoverBox == fileSizeBox) {
+                sortBySize();
+                return;
+            }
+            if (hoverBox == fileDateBox) {
+                sortByDate();
+                return;
+            }
             if (hoverBox == cancelBox) {
                 cancelSave();
                 return;
@@ -522,4 +632,7 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
             saveGame();
         }
     }
+    public static Comparator<File> FILE_NAME = (File f1, File f2) -> f1.getName().toLowerCase().compareTo(f2.getName().toLowerCase());
+    public static Comparator<File> FILE_DATE = (File f1, File f2) -> Long.valueOf(f2.lastModified()).compareTo(f1.lastModified());
+    public static Comparator<File> FILE_SIZE = (File f1, File f2) -> Long.valueOf(f2.length()).compareTo(f1.length());
 }
