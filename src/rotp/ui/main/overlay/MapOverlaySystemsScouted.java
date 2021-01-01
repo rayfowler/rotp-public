@@ -35,8 +35,6 @@ import rotp.model.Sprite;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
-import static rotp.ui.BasePanel.s10;
-import static rotp.ui.BasePanel.s35;
 import rotp.ui.main.GalaxyMapPanel;
 import rotp.ui.main.MainUI;
 import rotp.ui.main.SystemPanel;
@@ -95,7 +93,7 @@ public class MapOverlaySystemsScouted extends MapOverlay {
         parent.clickedSprite(nextSystem);
         parent.repaint();
     }
-    public StarSystem starSystem() {
+    private StarSystem starSystem() {
         return orderedSystems.get(systemIndex);
     }
     public void nextSystem() {
@@ -110,7 +108,7 @@ public class MapOverlaySystemsScouted extends MapOverlay {
             systemIndex = orderedSystems.size()-1;
         mapSelectIndex(systemIndex);
     }
-    public void toggleFlagColor() {
+    private void toggleFlagColor() {
         StarSystem sys = orderedSystems.get(systemIndex);
         player().sv.view(sys.id).toggleFlagColor();
         parent.repaint();
