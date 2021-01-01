@@ -72,6 +72,7 @@ public final class TechTree implements Base, Serializable {
     private List<String> tradedTechs;
     private List<String> newTechs;
     private List<TradeTechNotification> tradedTechNotifs;
+    public transient float totalResearchThisTurn = 0;
 
     public Empire empire()                                            { return empire; }
     public TechCategory category(int i)                               { return category[i]; }
@@ -512,6 +513,9 @@ public final class TechTree implements Base, Serializable {
         for (TechCategory cat: category)
             sum += cat.techLevel();
         return sum/category.length;
+    }
+    public void preNextTurn() {
+        totalResearchThisTurn = empire().totalPlanetaryResearch();
     }
     public void allocateResearch() {
         for (int j=0; j<category.length; j++)
