@@ -135,7 +135,7 @@ public class TransportDeploymentPanel extends SystemPanel {
             case KeyEvent.VK_1:
                 switch (mods) {
                     case 0: increment(true); break;
-                    case 1: decrement(true); break;
+                    case 64: decrement(true); break;
                     default:  break;
                 }
                 return;

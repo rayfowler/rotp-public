@@ -68,6 +68,7 @@ public class MapOverlayNone extends MapOverlay {
             return true;
         }
 
+        int code = e.getModifiersEx();
         switch(e.getKeyCode()) {
             case KeyEvent.VK_ESCAPE:
                 parent.displayPanel().keyPressed(e);
@@ -100,6 +101,14 @@ public class MapOverlayNone extends MapOverlay {
                 RotPUI.instance().selectDesignPanel();
                 break;
             case KeyEvent.VK_F:
+                if (e.getModifiersEx() == 128) {
+                    Sprite spr = parent.displayPanel().spriteToDisplay();
+                    if (spr instanceof StarSystem) {
+                        StarSystem sys = (StarSystem) spr;
+                        player().sv.view(sys.id).toggleFlagColor();
+                        break;
+                    }
+                }
                 buttonClick();
                 RotPUI.instance().selectFleetPanel();
                 break;
@@ -112,12 +121,7 @@ public class MapOverlayNone extends MapOverlay {
                 }
                 break;
             case KeyEvent.VK_R:
-                if  (e.getModifiersEx() == 0) {
-                    buttonClick();
-                    RotPUI.instance().selectRacesPanel();
-                    break;
-                }
-                else if (e.getModifiersEx() == 512) {
+                if (e.getModifiersEx() == 512) {
                     if (parent.clickedSprite() instanceof StarSystem) {
                         StarSystem sys = (StarSystem) parent.clickedSprite();
                         if (player().canRallyFleetsTo(id(sys))) {
@@ -139,7 +143,11 @@ public class MapOverlayNone extends MapOverlay {
                         }
                     }
                 }
-                misClick();
+                else {
+                    buttonClick();
+                    RotPUI.instance().selectRacesPanel();
+                    break;
+                }
                 break;
             case KeyEvent.VK_C:
                 buttonClick();
@@ -213,6 +221,7 @@ public class MapOverlayNone extends MapOverlay {
                     parent.hoveringOverSprite(systems.get(index));
                 }
                 else {
+                    parent.hoveringOverSprite(systems.get(index));
                     parent.clickedSprite(systems.get(index));
                     parent.map().recenterMapOn(systems.get(index));
                 }
@@ -245,6 +254,7 @@ public class MapOverlayNone extends MapOverlay {
                     parent.hoveringOverSprite(systems.get(index));
                 }
                 else {
+                    parent.hoveringOverSprite(systems.get(index));
                     parent.clickedSprite(systems.get(index));
                     parent.map().recenterMapOn(systems.get(index));
                 }

@@ -395,9 +395,9 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
             initFrameButtonGradients(x3a, x3b, buttonW);
 
         if (frameEmpire1 != null)
-            drawButton(g, frameBackC1, frameEmpire1.name(), frameButton1, x3a, y3, buttonW, buttonH);
+            drawButton(g, frameBackC1, "1", frameEmpire1.name(), frameButton1, x3a, y3, buttonW, buttonH);
         if (frameEmpire2 != null)
-            drawButton(g, frameBackC2, frameEmpire2.name(), frameButton2, x3b, y3, buttonW, buttonH);
+            drawButton(g, frameBackC2, "2", frameEmpire2.name(), frameButton2, x3b, y3, buttonW, buttonH);
     }
     private void drawReallocation(Graphics2D g) {
         int w = getWidth();
@@ -449,18 +449,18 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         int amt = (int) (tech().baseReallocateAmount()*100);
 
         y0 = y0+s30;
-        drawButton(g, allocateBackC, text("TECH_ALLOCATE_NO"), button1, x0, y0, buttonW, optionH);
+        drawButton(g, allocateBackC, "1", text("TECH_ALLOCATE_NO"), button1, x0, y0, buttonW, optionH);
 
         y0 += (optionH+s15);
-        drawButton(g, allocateBackC, text("TECH_ALLOCATE_PCT", str(amt)), button2, x0, y0, buttonW, optionH);
+        drawButton(g, allocateBackC, "2", text("TECH_ALLOCATE_PCT", str(amt)), button2, x0, y0, buttonW, optionH);
 
         y0 += (optionH+s15);
-        drawButton(g, allocateBackC, text("TECH_ALLOCATE_PCT", str(2*amt)), button3, x0, y0, buttonW, optionH);
+        drawButton(g, allocateBackC, "3", text("TECH_ALLOCATE_PCT", str(2*amt)), button3, x0, y0, buttonW, optionH);
 
         y0 += (optionH+s15);
-        drawButton(g, allocateBackC, text("TECH_ALLOCATE_PCT", str(3*amt)), button4, x0, y0, buttonW, optionH);
+        drawButton(g, allocateBackC, "4", text("TECH_ALLOCATE_PCT", str(3*amt)), button4, x0, y0, buttonW, optionH);
     }
-    private void drawButton(Graphics2D g, LinearGradientPaint gradient, String label, Rectangle actionBox, int x1, int y, int w, int h) {
+    private void drawButton(Graphics2D g, LinearGradientPaint gradient, String key, String label, Rectangle actionBox, int x1, int y, int w, int h) {
         if (actionBox != null)
             actionBox.setBounds(x1,y,w,h);
         int cnr = s2;
@@ -476,6 +476,9 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         boolean hovering = (actionBox != null) && (actionBox == hoverBox);
         Color c0 = hovering ? SystemPanel.yellowText : SystemPanel.whiteText;
 
+        g.setFont(narrowFont(16));
+        drawShadowedString(g, key, 1, x1+s10, y+h-s11, SystemPanel.textShadowC, c0);
+        
         g.setFont(narrowFont(20));
         int sw = g.getFontMetrics().stringWidth(label);
         int x0 = x1+((w-sw)/2);
@@ -762,6 +765,26 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
             case KeyEvent.VK_SPACE:
                 if (mode == MODE_SHOW_TECH)
                     handleShowTechAction();
+                return;
+            case KeyEvent.VK_1:
+                if (mode == MODE_REALLOCATE)
+                    handleReallocateSystemsAction(1);
+                else if (mode == MODE_FRAME_EMPIRE)
+                    handleFrameEmpireAction(1);
+                return;
+            case KeyEvent.VK_2:
+                if (mode == MODE_REALLOCATE)
+                    handleReallocateSystemsAction(2);
+                else if (mode == MODE_FRAME_EMPIRE)
+                    handleFrameEmpireAction(2);
+                return;
+            case KeyEvent.VK_3:
+                if (mode == MODE_REALLOCATE)
+                    handleReallocateSystemsAction(3);
+                return;
+            case KeyEvent.VK_4:
+                if (mode == MODE_REALLOCATE)
+                    handleReallocateSystemsAction(4);
                 return;
         }
     }
