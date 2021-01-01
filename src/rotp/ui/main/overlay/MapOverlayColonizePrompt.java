@@ -339,6 +339,9 @@ public class MapOverlayColonizePrompt extends MapOverlay {
             case KeyEvent.VK_Y:
                 colonizeYes();
                 break;
+            case KeyEvent.VK_F:
+                toggleFlagColor();
+                break;
             default:
                 misClick();
                 break;

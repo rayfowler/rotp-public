@@ -620,7 +620,7 @@ MAIN_ALLOCATE_NOTICE_NUMBER       | Notice %1 of %2
 MAIN_ALLOCATE_BRIEF_NUMBER        | %1 of %2
 MAIN_ALLOCATE_PREV_SYSTEM         | Previous
 MAIN_ALLOCATE_NEXT_SYSTEM         | Next
-MAIN_ALLOCATE_FINISHED            | Finish
+MAIN_ALLOCATE_CLOSE               | Close
 
 // Fleet Production display (during next turn)
 MAIN_FLEET_PRODUCTION_TITLE       | Fleet Production Summary

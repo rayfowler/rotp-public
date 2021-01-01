@@ -393,10 +393,13 @@ public class MapOverlaySystemsScouted extends MapOverlay {
             case KeyEvent.VK_P:
                 previousSystem();
                 break;
-            case KeyEvent.VK_F:
+            case KeyEvent.VK_C:
             case KeyEvent.VK_ENTER:
             case KeyEvent.VK_ESCAPE:
                 advanceMap();
+                break;
+            case KeyEvent.VK_F:
+                toggleFlagColor();
                 break;
             default:
                 misClick(); break;
@@ -559,7 +562,7 @@ public class MapOverlaySystemsScouted extends MapOverlay {
 
         public int width()        { return buttonW; }
         public int height()       { return buttonH; }
-        private String label()    { return text("MAIN_ALLOCATE_FINISHED"); }
+        private String label()    { return text("MAIN_ALLOCATE_CLOSE"); }
         private Font font()       { return narrowFont(18); }
         public void reset()       { background = null; }
 

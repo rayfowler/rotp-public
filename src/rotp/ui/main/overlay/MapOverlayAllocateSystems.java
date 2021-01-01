@@ -238,7 +238,6 @@ public class MapOverlayAllocateSystems extends MapOverlay {
     }
     @Override
     public boolean handleKeyPress(KeyEvent e) {
-        int code = e.getModifiersEx();
         switch(e.getKeyCode()) {
             case KeyEvent.VK_N:
                 nextSystem();
@@ -246,11 +245,7 @@ public class MapOverlayAllocateSystems extends MapOverlay {
             case KeyEvent.VK_P:
                 previousSystem();
                 break;
-            case KeyEvent.VK_F:
-                if ((code == 128) || (code == 64))
-                    return false; // pass Shift|Ctrl-F to system pane to update flag
-                advanceMap();
-                break;
+            case KeyEvent.VK_C:
             case KeyEvent.VK_ENTER:
             case KeyEvent.VK_ESCAPE:
                 advanceMap();
@@ -417,7 +412,7 @@ class ContinueButtonSprite extends MapSprite {
 
     public int width()        { return buttonW; }
     public int height()       { return buttonH; }
-    private String label()    { return text("MAIN_ALLOCATE_FINISHED"); }
+    private String label()    { return text("MAIN_ALLOCATE_CLOSE"); }
     private Font font()       { return narrowFont(18); }
     public void reset()       { background = null; }
 
