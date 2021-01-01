@@ -521,7 +521,7 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
         return hasShips() && !inTransit();
     }
     public boolean canSend() {
-        return hasShips() && (!inTransit() || isRalliedThisTurn() || inOrbit() || empire().tech().hyperspaceCommunications());
+        return hasShips() && (!inTransit() || isRetreatingThisTurn() || isRalliedThisTurn() || inOrbit() || empire().tech().hyperspaceCommunications());
     }
     @Override
     public boolean canSendTo(int id) {

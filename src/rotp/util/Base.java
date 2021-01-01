@@ -61,7 +61,6 @@ import rotp.model.galaxy.Galaxy;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.game.GameSession;
 import rotp.model.game.IGameOptions;
-import rotp.model.game.MOO1GameOptions;
 import rotp.model.tech.Tech;
 import rotp.model.tech.TechLibrary;
 import rotp.ui.BasePanel;
