@@ -718,7 +718,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         float shipCost = prod * empire.shipMaintCostPerBC();
         float stargateCost = prod * empire.stargateCostPerBC();
         float tradeIncome = actualTradeIncome();
-        float defenseCost = prod * empire.totalMissileBaseCostPct();
+        float defenseCost = prod * empire.missileBaseCostPerBC();
         float shipyardCost = shipyard().maintenanceCost();
         float transportCost = transportCost();
 

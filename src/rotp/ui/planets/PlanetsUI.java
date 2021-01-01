@@ -1505,7 +1505,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             lbl = text("PLANETS_COSTS_BASES");
             sw = g.getFontMetrics().stringWidth(lbl);
             drawShadowedString(g, lbl, 2, midX-sw, y1, SystemPanel.textShadowC, SystemPanel.whiteText);
-            val = text("PLANETS_AMT_PCT", fmt(100*player().totalMissileBaseCostPct(),1));
+            val = text("PLANETS_AMT_PCT", fmt(100*player().missileBaseCostPerBC(),1));
             sw = g.getFontMetrics().stringWidth(val);
             g.setColor(palette.black);
             g.drawString(val, midX+s50-sw, y1);
@@ -1515,7 +1515,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             lbl = text("PLANETS_COSTS_STARGATES");
             sw = g.getFontMetrics().stringWidth(lbl);
             drawShadowedString(g, lbl, 2, midX-sw, y1, SystemPanel.textShadowC, SystemPanel.whiteText);
-            val = text("PLANETS_AMT_PCT", fmt(100*player().totalStargateCostPct(),1));
+            val = text("PLANETS_AMT_PCT", fmt(100*player().stargateCostPerBC(),1));
             sw = g.getFontMetrics().stringWidth(val);
             g.setColor(palette.black);
             g.drawString(val, midX+s50-sw, y1);
