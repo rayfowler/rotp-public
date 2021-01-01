@@ -321,7 +321,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         status = new EmpireStatus(this);
         sv = new SystemInfo(this);
         // many things need to know if this is the player civ, so set it early
-        if (options().selectedPlayerRace().equals(rk))
+        if (empId == 0)
             g.player(this);
 
         colorId(cId);
