@@ -35,6 +35,8 @@ import rotp.model.Sprite;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
+import static rotp.ui.BasePanel.s10;
+import static rotp.ui.BasePanel.s35;
 import rotp.ui.main.GalaxyMapPanel;
 import rotp.ui.main.MainUI;
 import rotp.ui.main.SystemPanel;
@@ -55,6 +57,7 @@ public class MapOverlaySystemsScouted extends MapOverlay {
     PreviousSystemButtonSprite prevSystemButton = new PreviousSystemButtonSprite();
     NextSystemButtonSprite nextSystemButton = new NextSystemButtonSprite();
     ContinueButtonSprite continueButton = new ContinueButtonSprite();
+    SystemFlagSprite flagButton = new SystemFlagSprite();
     public MapOverlaySystemsScouted(MainUI p) {
         parent = p;
     }
@@ -68,6 +71,7 @@ public class MapOverlaySystemsScouted extends MapOverlay {
         continueButton.reset();
         prevSystemButton.reset();
         nextSystemButton.reset();
+        flagButton.reset();
         if (newSystems.isEmpty())
             advanceMap();
         else {
@@ -91,6 +95,9 @@ public class MapOverlaySystemsScouted extends MapOverlay {
         parent.clickedSprite(nextSystem);
         parent.repaint();
     }
+    public StarSystem starSystem() {
+        return orderedSystems.get(systemIndex);
+    }
     public void nextSystem() {
         systemIndex++;
         if (systemIndex >= orderedSystems.size())
@@ -102,6 +109,11 @@ public class MapOverlaySystemsScouted extends MapOverlay {
         if (systemIndex < 0)
             systemIndex = orderedSystems.size()-1;
         mapSelectIndex(systemIndex);
+    }
+    public void toggleFlagColor() {
+        StarSystem sys = orderedSystems.get(systemIndex);
+        player().sv.view(sys.id).toggleFlagColor();
+        parent.repaint();
     }
     @Override
     public void advanceMap() {
@@ -138,7 +150,6 @@ public class MapOverlaySystemsScouted extends MapOverlay {
         int s25 = BasePanel.s25;
         int s30 = BasePanel.s30;
         int s40 = BasePanel.s40;
-        int s50 = BasePanel.s50;
         int s60 = BasePanel.s60;
 
         int w = ui.getWidth();
@@ -335,6 +346,13 @@ public class MapOverlaySystemsScouted extends MapOverlay {
         g.setColor(SystemPanel.orangeText);
         g.setFont(narrowFont(40));
         drawBorderedString(g, sysName, 1, x2, y2, Color.darkGray, SystemPanel.orangeText);
+        
+        // planet flag
+        parent.addNextTurnControl(flagButton);
+        flagButton.init(this, g);
+        flagButton.mapX(boxX+boxW-flagButton.width()-s10);
+        flagButton.mapY(boxY+boxH-flagButton.height()-s10);
+        flagButton.draw(parent.map(), g);
 
         // init and draw continue button sprite
         parent.addNextTurnControl(continueButton);
@@ -604,6 +622,82 @@ public class MapOverlaySystemsScouted extends MapOverlay {
             //if (click)
             //    softClick();
             parent.advanceMap();
+        };
+    }
+    class SystemFlagSprite extends MapSprite {
+        private LinearGradientPaint background;
+        private final Color edgeC = new Color(59,59,59);
+        private final Color midC = new Color(93,93,93);
+        private int mapX, mapY, buttonW, buttonH;
+        private int selectX, selectY, selectW, selectH;
+
+        private MapOverlaySystemsScouted parent;
+
+        protected int mapX()      { return mapX; }
+        protected int mapY()      { return mapY; }
+        public void mapX(int i)   { selectX = mapX = i; }
+        public void mapY(int i)   { selectY = mapY = i; }
+
+        public int width()        { return buttonW; }
+        public int height()       { return buttonH; }
+        public void reset()       { background = null; }
+
+        public void init(MapOverlaySystemsScouted p, Graphics2D g)  {
+            parent = p;
+            buttonW = BasePanel.s30;
+            buttonH = BasePanel.s35;
+            selectW = buttonW;
+            selectH = buttonH;
+        }
+        public void setSelectionBounds(int x, int y, int w, int h) {
+            selectX = x;
+            selectY = y;
+            selectW = w;
+            selectH = h;
+        }
+        @Override
+        public boolean isSelectableAt(GalaxyMapPanel map, int x, int y) {
+            hovering = x >= selectX
+                        && x <= selectX+selectW
+                        && y >= selectY
+                        && y <= selectY+selectH;
+            return hovering;
+        }
+        @Override
+        public void draw(GalaxyMapPanel map, Graphics2D g) {
+            if (!parent.drawSprites())
+                return;
+            if (background == null) {
+                float[] dist = {0.0f, 0.3f, 0.7f, 1.0f};
+                Point2D start = new Point2D.Float(mapX, 0);
+                Point2D end = new Point2D.Float(mapX+buttonW, 0);
+                Color[] colors = {edgeC, midC, midC, edgeC };
+                background = new LinearGradientPaint(start, end, dist, colors);
+            }
+            int s3 = BasePanel.s3;
+            int s5 = BasePanel.s5;
+            int s10 = BasePanel.s10;
+            g.setColor(SystemPanel.blackText);
+            g.fillRoundRect(mapX+s3, mapY+s3, buttonW,buttonH,s10,s10);
+            g.setPaint(background);
+            g.fillRoundRect(mapX, mapY, buttonW,buttonH,s5,s5);
+            Color c0 = hovering ? SystemPanel.yellowText : SystemPanel.whiteText;
+            g.setColor(c0);
+            g.setStroke(BasePanel.stroke2);
+            g.drawRoundRect(mapX, mapY, buttonW,buttonH,s5,s5);
+            
+            StarSystem sys = parent.starSystem();
+            Color flagC = parent.parent.flagColor(sys);
+            if (hovering) 
+                sys.drawBanner(g, flagC, SystemPanel.yellowText, mapX+buttonW-s10,mapY+buttonH+s3);
+            else {
+                Color c1 = flagC == null ? SystemPanel.blackText : SystemPanel.whiteText;
+                sys.drawBanner(g, flagC, c1, mapX+buttonW-s10,mapY+buttonH+s3);
+            }
+        }
+        @Override
+        public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
+            parent.toggleFlagColor();
         };
     }
 }

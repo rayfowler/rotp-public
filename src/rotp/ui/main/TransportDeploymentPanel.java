@@ -393,7 +393,7 @@ public class TransportDeploymentPanel extends SystemPanel {
             }
 
             textureClip = new Rectangle2D.Float(0,s8,w,scaled(108));
-            int maxDestSize = pl.sv.maxTransportsToReceive(dest.id);
+            //int maxDestSize = pl.sv.maxTransportsToReceive(dest.id);
             maxSendingSize = enableAbandon? pl.sv.population(from.id): pl.sv.maxTransportsToSend(from.id);
             int turns = (int) Math.ceil(from.transportTimeTo(dest));
 
