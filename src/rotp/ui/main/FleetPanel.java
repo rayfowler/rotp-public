@@ -69,6 +69,8 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
     }
     @Override
     public void cancel()                            { removeSessionVar("ADJUSTED_FLEET"); clearStackAdjustments(); }
+    @Override
+    public boolean canEscape()                      { return true; }
     private void selectedFleet(ShipFleet s)         { sessionVar("SELECTED_FLEET", s); }
     private ShipFleet adjustedFleet() {
         ShipFleet adjFleet = (ShipFleet) sessionVar("ADJUSTED_FLEET");

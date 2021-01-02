@@ -65,6 +65,8 @@ public class TransportDeploymentPanel extends SystemPanel {
         topPane.animate();
         detailPane.animate();
     }
+    @Override
+    public boolean canEscape()                      { return true; }
     private boolean canConsume(Sprite s) {
         if (s == null)
             return true;

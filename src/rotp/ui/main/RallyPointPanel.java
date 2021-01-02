@@ -54,6 +54,8 @@ public class RallyPointPanel extends SystemPanel {
         detailPane.animate();
     }
     @Override
+    public boolean canEscape()                      { return true; }
+    @Override
     public boolean useHoveringSprite(Sprite o) {
         if (!(parentSpritePanel.spriteToDisplay() instanceof ShipRelocationSprite))
             return false;

@@ -71,7 +71,10 @@ public class MapOverlayNone extends MapOverlay {
         int code = e.getModifiersEx();
         switch(e.getKeyCode()) {
             case KeyEvent.VK_ESCAPE:
-                parent.displayPanel().keyPressed(e);
+                if (parent.displayPanel().canEscape())
+                    parent.displayPanel().keyPressed(e);
+                else
+                    RotPUI.instance().selectGamePanel();
                 break;
             case KeyEvent.VK_EQUALS:
                 if (e.isShiftDown())  

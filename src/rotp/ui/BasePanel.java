@@ -103,6 +103,7 @@ public class BasePanel extends JPanel implements Base {
     public int minStarDist()               { return 50; }
     public int varStarDist()               { return 100; }
 
+    public boolean canEscape()             { return false; }
     public Color starBackgroundC()         { return Color.black; }
     public Border buttonBevelBorder() {
         if (buttonBevelBorder == null)
