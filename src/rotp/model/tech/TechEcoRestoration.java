@@ -50,6 +50,8 @@ public final class TechEcoRestoration extends Tech {
         }
     }
     @Override
+    public boolean reducesEcoSpending()    { return true; }
+    @Override
     public boolean isObsolete(Empire c) {
         return wasteEliminated < c.tech().wasteElimination();
     }

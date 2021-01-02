@@ -613,6 +613,8 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
             return max(widthRatio, heightRatio);
     }
     private void finish() {
+        if (tech().reducesEcoSpending())
+            player().lowerECOToCleanIfEcoComplete();
         finished = true;
         repaint();
         session().resumeNextTurnProcessing();

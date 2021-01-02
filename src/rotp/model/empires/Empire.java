@@ -766,7 +766,13 @@ public final class Empire implements Base, NamedObject, Serializable {
             if ((sv.empire(i) == this) && sv.isColonized(i))
                 sv.colony(i).assessTurn();
         }
-
+    }
+    public void lowerECOToCleanIfEcoComplete() {
+        List<StarSystem> systems = new ArrayList<>(colonizedSystems);
+        for (StarSystem sys: systems) {
+            if (sys.isColonized())
+                sys.colony().lowerECOToCleanIfEcoComplete();
+        }
     }
     public void makeDiplomaticOffers() {
         for (EmpireView v : empireViews()) {

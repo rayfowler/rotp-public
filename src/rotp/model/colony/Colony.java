@@ -505,6 +505,35 @@ public final class Colony implements Base, IMappedObject, Serializable {
             }        
         }
     }
+    public void lowerECOToCleanIfEcoComplete() {
+        // this will NOT adjust ECO spending if it is locked
+        // or manually set to level lower than clean
+        if (locked[ECOLOGY])
+            return;
+        
+        int cleanAlloc = ecology().cleanupAllocationNeeded();
+        if (allocation[ECOLOGY] < cleanAlloc)
+            return;
+        
+        // if ECO spending is complete, just lower ECO to clean
+        // and auto-realign the other categories
+        if (ecology().isCompleted()) {
+            if (allocation[ECOLOGY] != cleanAlloc) {
+                allocation(ECOLOGY, cleanAlloc);
+                realignSpending(ecology());
+            }
+            return;
+        }
+            
+        // if ECO is not complete, then if it exceeds
+        // maxAlloc, then lower it to that and realign
+        int maxAlloc = ecology().maxAllocationNeeded();
+        if (allocation[ECOLOGY] > maxAlloc) {
+                allocation(ECOLOGY, maxAlloc);
+                realignSpending(ecology());
+        }
+        
+    }
     public boolean canLowerMaintenance() { return transporting(); }
 
     public void lowerMaintenance() {

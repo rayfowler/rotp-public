@@ -52,6 +52,8 @@ public final class TechIndustrialWaste extends Tech {
         return wasteModifier > c.tech().factoryWasteMod();
     }
     @Override
+    public boolean reducesEcoSpending()    { return true; }
+    @Override
     public float baseValue(Empire c) { return c.ai().scientist().baseValue(this); }
     @Override
     public void provideBenefits(Empire c) {
