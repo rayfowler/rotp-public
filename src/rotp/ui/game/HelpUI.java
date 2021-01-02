@@ -111,8 +111,9 @@ public class HelpUI extends BasePanel implements MouseListener {
             int fontSize = 16;
             g.setFont(narrowFont(fontSize));
             List<String> lines = this.wrappedLines(g, spec.text, spec.w - s30);
-            while ((lines.size() > spec.lines)&& (fontSize > 11)) {
+            while ((lines.size() > spec.lines) && (fontSize > 11)) {
                 fontSize--;
+                g.setFont(narrowFont(fontSize));
                 lines = this.wrappedLines(g, spec.text, spec.w - s30);
             }
             int x0 = spec.x + s15;
