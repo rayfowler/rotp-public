@@ -37,6 +37,7 @@ public class BaseText implements Base {
     private String text, hoverText;
     private int x,y;
     private boolean disabled;
+    private boolean visible = true;
     private boolean depressed = false;
     private boolean hovered = false;
     private BufferedImage textShadow;
@@ -86,6 +87,7 @@ public class BaseText implements Base {
     public int bottomY()              { return bounds.y + bounds.height; }
     public Rectangle bounds()         { return bounds; }
     public void disabled(boolean b)   { disabled = b; }
+    public void visible(boolean b)    { visible = b; }
     public void preceder(BaseText t)  { preceder = t; }
     public void setBounds(int x, int y, int w, int h) {
         bounds.setBounds(x,y,w,h);
@@ -98,7 +100,7 @@ public class BaseText implements Base {
         y = scaled(yOrig);
     }
     public boolean contains(int x, int y) {
-        return bounds.contains(x, y);
+        return visible && bounds.contains(x, y);
     }
     public void repaint(String s) {
         Graphics g = panel.getGraphics();
@@ -183,6 +185,8 @@ public class BaseText implements Base {
         return drawCentered(panel.getGraphics());
     }
     public int draw(Graphics g) {
+        if (!visible)
+            return 0;
         int x1 = x >= 0 ? x : panel.getWidth()+x;
         int y1 = y >= 0 ? y : panel.getHeight()+y;
         
@@ -198,6 +202,8 @@ public class BaseText implements Base {
         return x1+sw;
     }
     public int drawCentered(Graphics g) {
+        if (!visible)
+            return 0;
         g.setFont(font());
         int w = panel.getWidth();
         int sw = stringWidth(g);

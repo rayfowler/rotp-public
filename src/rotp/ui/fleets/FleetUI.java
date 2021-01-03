@@ -56,6 +56,7 @@ import rotp.model.ships.ShipDesignLab;
 import rotp.ui.BasePanel;
 import rotp.ui.ExitButton;
 import rotp.ui.RotPUI;
+import rotp.ui.UserPreferences;
 import rotp.ui.game.HelpUI;
 import rotp.ui.main.GalaxyMapPanel;
 import rotp.ui.main.MainUI;
@@ -538,7 +539,7 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
     public GalaxyMapPanel map()         { return map; }
     private void initModel() {
         int w, h;
-        if (Rotp.fullScreen) {
+        if (UserPreferences.fullScreen()) {
             Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
             w = size.width;
             h = size.height;

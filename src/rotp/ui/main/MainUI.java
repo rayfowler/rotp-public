@@ -44,6 +44,7 @@ import rotp.model.galaxy.StarSystem;
 import rotp.model.ships.ShipDesign;
 import rotp.ui.BasePanel;
 import rotp.ui.RotPUI;
+import rotp.ui.UserPreferences;
 import rotp.ui.game.HelpUI;
 import rotp.ui.game.HelpUI.HelpSpec;
 import rotp.ui.main.overlay.*;
@@ -311,7 +312,7 @@ public class MainUI extends BasePanel implements IMapHandler {
     public void handleNextTurn()    { displayPanel.handleNextTurn(); }
     private void initModel() {
         int w, h;
-        if (Rotp.fullScreen) {
+        if (UserPreferences.fullScreen()) {
             Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
             w = size.width;
             h = size.height;

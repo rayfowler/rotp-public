@@ -107,12 +107,13 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     BaseText discussText, continueText, newGameText, loadGameText, saveGameText, exitText, restartText;
     BaseText soundsText, musicText, graphicsText, texturesText, versionText, memoryText;
     BaseText developerText, artistText, graphicDsnrText, writerText, soundText, translatorText;
-    BaseText shrinkText, enlargeText;
+    BaseText shrinkText, enlargeText, fullScreenText, windowedText;
     BaseText hoverBox;
     Rectangle languageBox = new Rectangle();
     boolean mouseDepressed = false;
     boolean hideText = false;
     int startingScale = 100;
+    boolean startingFullScreen = true;
     private final GameLanguagePane languagePanel = new GameLanguagePane();
 
     public static Color langShade()               { return langShade[opt()]; }
@@ -306,6 +307,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
 
     public GameUI() {
         startingScale = UserPreferences.screenSizePct();
+        startingFullScreen = UserPreferences.fullScreen();
         Color enabledC = menuEnabled[opt()];
         Color disabledC = menuDisabled[opt()];
         Color hoverC = menuHover[opt()];
@@ -316,6 +318,9 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         shrinkText      = new BaseText(this, false,20,   10,24,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         enlargeText     = new BaseText(this, false,20,    0,24,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         enlargeText.preceder(shrinkText);
+        fullScreenText  = new BaseText(this, false,20,    0,24,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
+        fullScreenText.preceder(enlargeText);
+        windowedText    = new BaseText(this, false,20,   10,24,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         continueText    = new BaseText(this, true, 50,   0, 300,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
         newGameText     = new BaseText(this, true, 50,   0, 360,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
         loadGameText    = new BaseText(this, true, 50,   0, 420,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
@@ -371,6 +376,8 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         graphicsText.hoverText(graphicsLevelHoverStr());
         shrinkText.displayText(text("GAME_SHRINK"));
         enlargeText.displayText(text("GAME_ENLARGE"));
+        fullScreenText.displayText(text("GAME_FULLSCREEN"));
+        windowedText.displayText(text("GAME_WINDOWED"));
         memoryText.displayText(memoryStr());
         developerText.displayText(text("CREDITS_DEVELOPER"));
         artistText.displayText(text("CREDITS_ILLUSTRATOR"));
@@ -481,18 +488,27 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         versionText.drawCentered(g);
         memoryText.draw(g);
         texturesText.draw(g);
-        shrinkText.draw(g);
-        enlargeText.draw(g);
         graphicsText.draw(g);
         musicText.draw(g);
         soundsText.draw(g);
+        
+        windowedText.visible(UserPreferences.fullScreen());
+        shrinkText.visible(!UserPreferences.fullScreen());
+        enlargeText.visible(!UserPreferences.fullScreen());
+        fullScreenText.visible(!UserPreferences.fullScreen());
+        windowedText.draw(g);
+        shrinkText.draw(g);
+        enlargeText.draw(g);
+        fullScreenText.draw(g);
+
     }
     private boolean canContinue()    { return session().status().inProgress() || session().hasRecentSession(); }
     private boolean canNewGame()     { return true; }
     private boolean canLoadGame()    { return true; }
     private boolean canSaveGame()    { return session().status().inProgress(); }
     private boolean canExit()        { return true; }
-    private boolean canRestart()     { return UserPreferences.screenSizePct() != startingScale; }
+    private boolean canRestart()     { return (UserPreferences.fullScreen() != startingFullScreen) 
+            || (UserPreferences.screenSizePct() != startingScale); }
 
     private void rescaleMenuOptions() {
         restartText.rescale();
@@ -535,7 +551,9 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         }
     }
     private void shrinkFrame() {
-       if (UserPreferences.shrinkFrame()) {
+        if (UserPreferences.fullScreen())
+            return;
+        if (UserPreferences.shrinkFrame()) {
             Rotp.setFrameSize();
             rescaleMenuOptions();
             UserPreferences.save();
@@ -543,6 +561,8 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
        }
     }
     private void expandFrame() {
+        if (UserPreferences.fullScreen())
+            return;
        if (UserPreferences.expandFrame()) {
             Rotp.setFrameSize();
             rescaleMenuOptions();
@@ -678,6 +698,11 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         UserPreferences.toggleTextures();
         texturesText.repaint(texturesStr());
     }
+    private void toggleFullScreen() {
+        softClick();
+        UserPreferences.toggleFullScreen();
+        repaint();
+    }
     private void toggleGraphicsLevel() {
         if (AnimationManager.current().animationsDisabled())
             misClick();
@@ -742,6 +767,10 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             shrinkFrame();
         else if (enlargeText.contains(x,y))
             expandFrame();
+        else if (fullScreenText.contains(x,y))
+            toggleFullScreen();
+        else if (windowedText.contains(x,y))
+            toggleFullScreen();
         else if (memoryText.contains(x,y))
             toggleMemory();
     }
@@ -786,6 +815,10 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             newHover = shrinkText;
         else if (enlargeText.contains(x,y))
             newHover = enlargeText;
+        else if (fullScreenText.contains(x,y))
+            newHover = fullScreenText;
+        else if (windowedText.contains(x,y))
+            newHover = windowedText;
         else if (memoryText.contains(x,y))
             newHover = memoryText;
 
