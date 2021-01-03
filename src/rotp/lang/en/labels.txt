@@ -1773,7 +1773,7 @@ GAME_OVER_MILITARY_ALLIANCE_WIN   | Military Alliance Win
 GAME_OVER_NEW_REPUBLIC_WIN        | New Republic Win
 GAME_OVER_REBELLION_WIN           | Rebellion Win
 GAME_OVER_REBEL_ALLIANCE_WIN      | Rebel Alliance Win
-GAME_OVER_ALLIANCE_WIN    
+GAME_OVER_ALLIANCE_WIN            | Alliance Win
 
 // text for endings
 // %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 special text
