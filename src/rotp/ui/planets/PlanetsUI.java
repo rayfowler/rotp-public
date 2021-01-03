@@ -104,6 +104,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
     private final PlanetDisplayPanel planetDisplayPane;
     private final PlanetViewSelectionPanel viewSelectionPane;
     private EmpireColonySpendingPane spendingPane;
+    private EmpireColonyFoundedPane colonyFoundedPane;
 
     private final PlanetsUI instance;
     private final PlanetListingUI planetListing;
@@ -138,7 +139,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         BasePanel rightPanel = new BasePanel();
         rightPanel.setOpaque(false);
         rightPanel.setLayout(new BorderLayout(0,s22));
-        rightPanel.add(planetDisplayPane, BorderLayout.CENTER);
+        rightPanel.add(planetDisplayPane, BorderLayout.NORTH);
         rightPanel.add(new ExitPlanetsButton(getWidth(), s60, s10, s2), BorderLayout.SOUTH);
 
         setBackground(Color.black);
@@ -520,6 +521,8 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             case KeyEvent.VK_4:
             case KeyEvent.VK_5:
                 spendingPane.keyPressed(e); return;
+            case KeyEvent.VK_F:
+                colonyFoundedPane.toggleFlagColor(); return;
         }
         if (repaint)
             repaint();
@@ -839,7 +842,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             setOpaque(true);
             setBackground(selectedC);
             setBorder(newEmptyBorder(6,6,6,6));
-            setPreferredSize(new Dimension(scaled(250), getHeight()));
+            setPreferredSize(new Dimension(scaled(250), scaled(670)));
 
             graphicPane = new EmpireInfoGraphicPane(this);
             graphicPane.setPreferredSize(new Dimension(getWidth(),scaled(140)));
@@ -867,7 +870,8 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             empireDetailTopPane.setBorder(new ShadowBorder(palette.bdrHiOut, palette.bdrLoIn));
             empireDetailTopPane.setLayout(new BorderLayout(0,s1));
             empireDetailTopPane.setPreferredSize(new Dimension(getWidth(),scaled(120)));
-            empireDetailTopPane.add(new EmpireColonyFoundedPane(this, null, unselectedC), BorderLayout.NORTH);
+            colonyFoundedPane = new EmpireColonyFoundedPane(this, null, unselectedC);
+            empireDetailTopPane.add(colonyFoundedPane, BorderLayout.NORTH);
             empireDetailTopPane.add(new EmpireColonyInfoPane(this, unselectedC, palette.bdrHiIn, palette.yellow, palette.bdrLoIn), BorderLayout.CENTER);
 
             BasePanel empireDetailBottomPane = new BasePanel();

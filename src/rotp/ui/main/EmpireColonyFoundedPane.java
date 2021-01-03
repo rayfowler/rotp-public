@@ -63,10 +63,8 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
         String name = player().sv.descriptiveName(id);
         g.setFont(narrowFont(24));
         drawShadowedString(g, name, 2, s10, s30, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
-        if (topParent == null)
-            return;
 
-        Color flagC = topParent.flagColor(sys);
+        Color flagC = player().sv.flagColor(sys.id);
         if (hoverBox == flagBox) 
             sys.drawBanner(g, flagC, SystemPanel.yellowText, w-s10,h);
         else {
@@ -79,7 +77,10 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
     public void toggleFlagColor() {
         StarSystem sys = parent.systemViewToDisplay();
         player().sv.view(sys.id).toggleFlagColor();
-        topParent.repaint();
+        if (topParent != null)
+            topParent.repaint();
+        else
+            parent.repaint();
     }
     @Override
     public void mouseDragged(MouseEvent e) { }

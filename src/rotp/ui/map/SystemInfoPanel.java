@@ -47,6 +47,7 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
     private static Palette palette;
     EmpireInfoGraphicPane graphicPane;
     SystemsUI parent;
+    SystemSummaryPane summaryPane;
     public SystemInfoPanel(SystemsUI p) {
         parent = p;
         init();
@@ -70,6 +71,9 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
         
         addMouseMotionListener(this);
     }
+    public void toggleFlagColor() {
+        summaryPane.toggleFlagColor();
+    }
     @Override
     public String subPanelTextureName()    { return TEXTURE_BROWN; }
     @Override
@@ -85,7 +89,7 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
     }
     @Override
     protected BasePanel detailPane() {
-        BasePanel summaryPane = new SystemSummaryPane();
+        summaryPane = new SystemSummaryPane();
 
         BasePanel systemFlagsPane = new SystemFlagsPane();
 
@@ -196,7 +200,7 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
 
             flagBox.setBounds(w-s30,s10,s20,s60);              
         }
-        private void toggleFlagColor() {
+        public void toggleFlagColor() {
             StarSystem sys = systemViewToDisplay();
             player().sv.view(sys.id).toggleFlagColor();
             parent.repaint();
