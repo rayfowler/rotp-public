@@ -17,9 +17,11 @@ package rotp.ui.main;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.LinearGradientPaint;
 import java.awt.Stroke;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
@@ -308,9 +310,17 @@ public class MainUI extends BasePanel implements IMapHandler {
     @Override
     public void handleNextTurn()    { displayPanel.handleNextTurn(); }
     private void initModel() {
-        int w = scaled(Rotp.IMG_W);
-        int h = scaled(Rotp.IMG_H);
-
+        int w, h;
+        if (Rotp.fullScreen) {
+            Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
+            w = size.width;
+            h = size.height;
+        }
+        else {
+            w = scaled(Rotp.IMG_W);
+            h = scaled(Rotp.IMG_H);
+        }
+ 
         int displayW = panelWidth;
         int displayH = panelHeight;
         displayPanel = new SpriteDisplayPanel(this);

@@ -15,7 +15,6 @@
  */
 package rotp.ui.main;
 
-import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -256,7 +255,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             baseControls.add(new ShipDisplaySprite(10,95,30,30));
             baseControls.add(new SystemNameDisplaySprite(10,60,30,30));
 
-            int y0 = 445;
+            int y0 = unscaled(getHeight())-322;
             baseControls.add(new TechStatusSprite(TechCategory.WEAPON,       10,y0+210,30,30));
             baseControls.add(new TechStatusSprite(TechCategory.PROPULSION,   10,y0+175,30,30));
             baseControls.add(new TechStatusSprite(TechCategory.PLANETOLOGY,  10,y0+140,30,30));

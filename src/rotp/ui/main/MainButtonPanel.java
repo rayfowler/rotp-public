@@ -33,11 +33,11 @@ import rotp.ui.UserPreferences;
 
 public final class MainButtonPanel extends BasePanel implements MouseListener, MouseMotionListener {
     private static final long serialVersionUID = 1L;
-    private final LinearGradientPaint buttonBackground;
-    private final GradientPaint nextTurnBackground;
-    private final GradientPaint nextTurnDisableBackground;
-    private final GradientPaint nextTurnHoverBackground;
-    private final GradientPaint nextTurnDepressedBackground;
+    private LinearGradientPaint buttonBackground;
+    private GradientPaint nextTurnBackground;
+    private GradientPaint nextTurnDisableBackground;
+    private GradientPaint nextTurnHoverBackground;
+    private GradientPaint nextTurnDepressedBackground;
 
     private final Color buttonEdgeC = new Color(34,53,102);
     private final Color buttonMidC = new Color(78,101,155);
@@ -52,8 +52,8 @@ public final class MainButtonPanel extends BasePanel implements MouseListener, M
 
     private boolean allowNextTurn = true;
     int leftM;
-    int midM;
-    int rightM;
+    int midM = -1;
+    int rightM = -1;
     int botM;
     String[] buttons = { "MAIN_NAVIGATION_GAME",
                     "MAIN_NAVIGATION_SYSTEMS",
@@ -70,11 +70,17 @@ public final class MainButtonPanel extends BasePanel implements MouseListener, M
     private final MainUI parent;
 
     public MainButtonPanel(MainUI p) {
+        int w = getWidth();
         parent = p;
         leftM = s3;
-        midM = scaled(955);
-        rightM = scaled(1206);
         botM = s8;
+
+        addMouseListener(this);
+        addMouseMotionListener(this);
+    }
+    private void initGradients(int w) {
+        midM = w-scaled(273);
+        rightM = w-s23;
 
         for (int i=0;i<buttonBox.length;i++)
             buttonBox[i] = new Rectangle();
@@ -86,9 +92,7 @@ public final class MainButtonPanel extends BasePanel implements MouseListener, M
         nextTurnBackground = new GradientPaint(midM,0,nextTurnLightC,rightM,0,nextTurnDarkC);
         nextTurnDisableBackground = new GradientPaint(midM,0,nextTurnDisableLightC,rightM,0,nextTurnDisableDarkC);
         nextTurnHoverBackground = new GradientPaint(midM,0,nextTurnLightC,rightM,0,hoverC);
-        nextTurnDepressedBackground = new GradientPaint(midM,0,nextTurnLightC,rightM,0,depressedC);
-        addMouseListener(this);
-        addMouseMotionListener(this);
+        nextTurnDepressedBackground = new GradientPaint(midM,0,nextTurnLightC,rightM,0,depressedC);        
     }
     @Override
     public String textureName()            { return TEXTURE_GRAY; }
@@ -108,7 +112,11 @@ public final class MainButtonPanel extends BasePanel implements MouseListener, M
         super.paintComponent(g0);
         int w = getWidth();
         int h = getHeight();
+        
         Graphics2D g = (Graphics2D) g0;
+        
+        if (buttonBackground == null) 
+            initGradients(w);
         g.setColor(Color.black);
         g.fillRect(0, 0, w, h);
 

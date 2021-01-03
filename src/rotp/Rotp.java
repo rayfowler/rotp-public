@@ -36,6 +36,7 @@ import rotp.util.FontManager;
 
 public class Rotp {
     private static final int MB = 1048576;
+    public static boolean fullScreen = true;
     public static int IMG_W = 1229;
     public static int IMG_H = 768;
     public static String jarFileName = "Remnants.jar";
@@ -71,11 +72,17 @@ public class Rotp {
         frame.add(RotPUI.instance(), BorderLayout.CENTER);
 
 
-        setFrameSize();
+        if (fullScreen) {
+            frame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
+            frame.setUndecorated(true);
+        }
+        else {
+            setFrameSize();
+            frame.setResizable(false);
+        }
 
         if (reloadRecentSave) 
             GameSession.instance().loadRecentSession(false);
-        frame.setResizable(false);
         frame.setVisible(true);
     }
     public static boolean containsArg(String[] argList, String key) {
