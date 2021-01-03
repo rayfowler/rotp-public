@@ -165,6 +165,7 @@ public enum AnimationManager implements Base {
             int w = targetImg.getWidth();
             int h = targetImg.getHeight();
             Graphics g = targetImg.getGraphics();
+            setFontHints(g);
             g.drawImage(baseImg,0,0,w,h,null);
             g.dispose();
             result.add(targetImg);
@@ -392,6 +393,7 @@ public enum AnimationManager implements Base {
                 return resultImg;
 
             Graphics2D g = resultImg.createGraphics();
+            setFontHints(g);
             // draws correct image frame on img
             if (area == null)
                 //resultImg.drawImage(frameImg, 0, 0);
@@ -483,6 +485,7 @@ public enum AnimationManager implements Base {
                 @Override
                 public void run() {
                     Graphics2D g = (Graphics2D) newImg.getGraphics();
+                    setFontHints(g);
                     g.drawImage(srcImg, 0, 0, w, h, 0, 0, srcImg.getWidth(null), srcImg.getHeight(null), null);
                     g.dispose();
                 }

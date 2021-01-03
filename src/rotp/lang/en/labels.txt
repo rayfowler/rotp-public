@@ -307,8 +307,8 @@ GAME_GRAPHICS_MEDIUM_HOVER        | Graphics: MEDIUM - Anti-Aliasing is OFF.
 GAME_GRAPHICS_LOW_HOVER           | Graphics: LOW - Anti-Aliasing is OFF. Animations are OFF.
 GAME_SHRINK                       | Shrink -
 GAME_ENLARGE                      | Expand -
-GAME_FULLSCREEN                   | Full Screen
-GAME_WINDOWED                     | Windowed
+GAME_FULLSCREEN                   | Use Full Screen
+GAME_WINDOWED                     | Make Windowed
 GAME_MEMORY_SHOW                  | Memory Use: SHOW
 GAME_MEMORY_HIDE                  | Memory Use: HIDE
 
