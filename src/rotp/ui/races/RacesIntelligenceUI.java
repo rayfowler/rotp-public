@@ -151,7 +151,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         drawRaceIconBase(g, emp, s55, s25, s210, s210);
         drawPlayerBaseInfo(g, emp, s260, s80, s370, scaled(130));
         drawUnknownTechnologyLists(g, emp, s20, s310, w-s40, h-s310-s10);
-        drawPlayerIntelligenceBureau(g, emp, s680, s30, w-s680-s30, s200);
+        drawPlayerIntelligenceBureau(g, emp, w-scaled(349), s30, scaled(329), s200);
         drawTechnologyTitle(g, emp, s80, s260, w-s80-s90, s40);
         if (UserPreferences.textures()) 
             drawTexture(g,0,0,w,h);
@@ -172,7 +172,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         drawRaceIconBase(g, emp, s55, s25, s210, s210);
         drawAIBaseInfo(g, emp, s260, s80, s370, scaled(130));
         drawTechnologyLists(g, emp, s20, s310, w-s40, h-s310-s10);
-        drawAISpyOrders(g, emp, s680, s30, w-s680-s30, s200);
+        drawAISpyOrders(g, emp, w-scaled(349), s30, scaled(329), s200);
         drawTechnologyTitle(g, emp, s80, s260, w-s80-s90, s40);
         if (UserPreferences.textures()) 
             drawTexture(g,0,0,w,h);

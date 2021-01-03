@@ -127,7 +127,7 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         drawRaceIcon(g, emp, s60, s30, s200, s200);
         drawOpponentIcon(g, null, w-s60-s200, s30, s200, s200);
         drawPlayerTitle(g, emp, s260, s30, s370, s50);
-        drawVS(g, emp, s260, s90, s370, s50);
+        drawVS(g, emp, s260, s90, w-scaled(520), s50); 
         drawKnownEmpiresTitle(g, emp, w-s60-s200, s30+s200, 0, s50);
     }
     private void paintAIData(Graphics2D g) {
@@ -147,7 +147,7 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         drawRaceIcon(g, emp, s60, s30, s200, s200);
         drawOpponentIcon(g, emp, w-s60-s200, s30, s200, s200);
         drawPlayerTitle(g, emp, s260, s30, s370, s50);
-        drawVS(g, emp, s260, s90, s370, s50);
+        drawVS(g, emp, s260, s90, w-scaled(520), s50);
         drawAITitle(g, emp, w-s60-s200, s30+s200, 0, s50);
     }
     private void drawRaceIconBase(Graphics2D g, Empire emp, int x, int y, int w, int h) {

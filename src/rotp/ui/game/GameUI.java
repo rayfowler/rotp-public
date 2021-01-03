@@ -526,12 +526,12 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             case KeyEvent.VK_N:  newGame();      return;
             case KeyEvent.VK_L:  loadGame();     return;
             case KeyEvent.VK_S:  saveGame();     return;
-            case KeyEvent.VK_E:  exitGame();     return;
+            case KeyEvent.VK_E:
+            case KeyEvent.VK_X:
+                exitGame();     return;
             case KeyEvent.VK_ESCAPE:
                 if (canContinue())
                     continueGame();
-                else
-                    exitGame();
         }
     }
     private void shrinkFrame() {

@@ -156,14 +156,17 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         int s260 = scaled(260);
         int s370 = scaled(370);
         int s435 = scaled(435);
-        int s655 = scaled(655);
-        int s680 = scaled(680);
+        int x0 = s20;
+        int x1 = w-scaled(349);
+        int w0 = x1-x0-s20;
+        int w1 = scaled(329);
+
         drawRaceIconBase(g, emp, s55, s25, s210, s210);
         drawPlayerBaseInfo(g, emp, s260, s80, s370, scaled(130));
-        drawPlayerDiplomaticEvents(g, emp, s20, s245, s655, h-s245-s10);
-        drawPlayerDiplomacyBureau(g, emp, s680, s10, w-s680-s10, s200);
-        drawPlayerCounterIntelligenceBureau(g, emp, s680, s215, w-s680-s10, s215);
-        drawPlayerIntelligenceBureau(g, emp, s680, s435, w-s680-s10, s200);
+        drawPlayerDiplomaticEvents(g, emp, x0, s245, w0, h-s245-s10);
+        drawPlayerDiplomacyBureau(g, emp, x1, s10, w1, s200);
+        drawPlayerCounterIntelligenceBureau(g, emp, x1, s215, w1, s215);
+        drawPlayerIntelligenceBureau(g, emp, x1, s435, w1, s200);
         if (UserPreferences.textures()) 
             drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
@@ -184,15 +187,19 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         int s295 = scaled(295);
         int s330 = scaled(330);
         int s370 = scaled(370);
-        int s655 = scaled(655);
-        int s680 = scaled(680);
+        
+        int x0 = s20;
+        int x1 = w-scaled(349);
+        int w0 = x1-x0-s20;
+        int w1 = scaled(329);
+
         drawRaceIconBase(g, emp, s55, s25, s210, s210);
         drawAIBaseInfo(g, emp, s260, s80, s370, scaled(130));
-        drawRelationsMeter(g, emp, s20, s245, s655, s40);
-        drawAIDiplomaticEvents(g, emp, s20, s295, s655, h-s295-s10);
-        drawAIDiplomacyBureau(g, emp, s680, s10, w-s680-s10, s135);
-        drawAITradeSummary(g, emp, s680, s150, w-s680-s10, s175);
-        drawAIForeignRelations(g, emp, s680, s330, w-s680-s10, h-s330-s10);          
+        drawRelationsMeter(g, emp, x0, s245, w0, s40);
+        drawAIDiplomaticEvents(g, emp, x0, s295, w0, h-s295-s10);
+        drawAIDiplomacyBureau(g, emp, x1, s10, w1, s135);
+        drawAITradeSummary(g, emp, x1, s150, w1, s175);
+        drawAIForeignRelations(g, emp, x1, s330, w1, h-s330-s10);          
         if (UserPreferences.textures()) 
             drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);

@@ -134,7 +134,7 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         int s260 = scaled(260);
         int s265 = scaled(265);
         int baseW = scaled(290);
-        int defX = scaled(650);
+        int defX = w-scaled(275);
         int defW = scaled(255);
         drawRaceIconBase(g, emp, s55, s25, s210, s210);
         drawPlayerBaseInfo(g, emp, s260, s80, baseW, scaled(130));
@@ -158,7 +158,7 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         int s260 = scaled(260);
         int s265 = scaled(265);
         int baseW = scaled(320);
-        int defX = scaled(650);
+        int defX = w-scaled(275);
         int defW = scaled(255);
         drawRaceIconBase(g, emp, s55, s25, s210, s210);
         drawAIBaseInfo(g, emp, s260, s80, baseW, scaled(130));
