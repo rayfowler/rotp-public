@@ -592,7 +592,7 @@ public final class TechTree implements Base, Serializable {
                 Tech t = tech(id);
                 // if empire doesn't know tech and hasn't trade for it
                 if (!empire.tech().knows(t)
-                && (!empire.tech().tradedTechs().contains(t)))
+                && (!empire.tech().tradedTechs().contains(id)))
                     result.add(t);
             }
         }
