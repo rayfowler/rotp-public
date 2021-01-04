@@ -116,7 +116,7 @@ public class MapOverlayAllocateSystems extends MapOverlay {
         int s30 = BasePanel.s30;
         int s35 = BasePanel.s35;
 
-        int x0 = scaled(530);
+        int x0 = ui.getWidth()-scaled(680);
         int y0 = scaled(215);
         int w0 = scaled(420);
         int h0 = scaled(235);

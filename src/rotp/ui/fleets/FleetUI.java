@@ -40,7 +40,6 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import javax.swing.BorderFactory;
 import javax.swing.JLayeredPane;
 import javax.swing.border.Border;
 import rotp.Rotp;
@@ -92,7 +91,6 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
     private int helpFrame = 0;
 
     public HashMap<ShipDesign, BufferedImage> designImageCache = new HashMap<>();
-    private int pad = 10;
     private GalaxyMapPanel map;
     private LinearGradientPaint backGradient;
 
@@ -138,7 +136,6 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
 
     public FleetUI() {
         instance = this;
-        pad = s10;
         for (int i=0;i<systemDesignFilters.length;i++)
             systemDesignFilters[i] = new ShipDesignFilter(i);
         for (int i=0;i<fleetDesignFilters.length;i++)
@@ -551,11 +548,8 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         int rightPaneW = scaled(250);
 
         setBackground(Color.black);
-        Border emptyBorder = newEmptyBorder(0,pad,pad,pad);
-        setBorder(emptyBorder);
 
         map = new GalaxyMapPanel(this);
-        map.setBorder(null);
         map.setBounds(0,0,w,h);
 
         titlePanel = new MainTitlePanel(this, "FLEETS_TITLE");
@@ -577,7 +571,7 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         dataPanel.add(rallyPanel, RALLY_PANEL);
         dataPanel.add(deployPanel, DEPLOY_PANEL);
         dataPanel.add(transportPanel, TRANSPORT_PANEL);
-        dataPanel.setBounds(w-rightPaneW-s20,s10,rightPaneW,scaled(673));
+        dataPanel.setBounds(w-rightPaneW-s5,s5,rightPaneW,scaled(673));
         
         exitButton = new ExitFleetsButton(rightPaneW, s60, s10, s2);
         exitButton.setBounds(w-rightPaneW-s20,h-s83,rightPaneW,s60);
@@ -590,10 +584,6 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         layers.add(massTransportDialog, JLayeredPane.PALETTE_LAYER);
         layers.add(exitButton, JLayeredPane.PALETTE_LAYER);
         layers.add(map, JLayeredPane.DEFAULT_LAYER);
-        Border line1 = newLineBorder(newColor(60,60,60),2);
-        Border line2 = newLineBorder(newColor(0,0,0),8);
-        Border compound1 = BorderFactory.createCompoundBorder(line2, line1);
-        setBorder(compound1);
         setOpaque(false);
 
         addMouseWheelListener(this);

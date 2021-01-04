@@ -247,15 +247,15 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         showGridCircular = parent.defaultGridCircularDisplay();
 
         if (baseControls.isEmpty()) {
-            baseControls.add(new ZoomOutWidgetSprite(10,270,30,30));
-            baseControls.add(new ZoomInWidgetSprite(10,235,30,30));
-            baseControls.add(new RangeDisplaySprite(10,200,30,30));
-            baseControls.add(new GridCircularDisplaySprite(10,165,30,30));
-            baseControls.add(new FlightPathDisplaySprite(10,130,30,30));
-            baseControls.add(new ShipDisplaySprite(10,95,30,30));
-            baseControls.add(new SystemNameDisplaySprite(10,60,30,30));
+            baseControls.add(new ZoomOutWidgetSprite(10,260,30,30));
+            baseControls.add(new ZoomInWidgetSprite(10,225,30,30));
+            baseControls.add(new RangeDisplaySprite(10,190,30,30));
+            baseControls.add(new GridCircularDisplaySprite(10,155,30,30));
+            baseControls.add(new FlightPathDisplaySprite(10,120,30,30));
+            baseControls.add(new ShipDisplaySprite(10,85,30,30));
+            baseControls.add(new SystemNameDisplaySprite(10,50,30,30));
 
-            int y0 = unscaled(getHeight())-322;
+            int y0 = unscaled(getHeight())-310;
             baseControls.add(new TechStatusSprite(TechCategory.WEAPON,       10,y0+210,30,30));
             baseControls.add(new TechStatusSprite(TechCategory.PROPULSION,   10,y0+175,30,30));
             baseControls.add(new TechStatusSprite(TechCategory.PLANETOLOGY,  10,y0+140,30,30));

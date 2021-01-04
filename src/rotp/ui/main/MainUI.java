@@ -27,7 +27,6 @@ import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import javax.swing.BorderFactory;
 import javax.swing.JLayeredPane;
 import javax.swing.border.Border;
 import rotp.Rotp;
@@ -326,15 +325,14 @@ public class MainUI extends BasePanel implements IMapHandler {
         int displayH = panelHeight;
         displayPanel = new SpriteDisplayPanel(this);
         displayPanel.setBorder(newLineBorder(shadeBorderC,5));
-        displayPanel.setBounds(w-displayW-s25,s15,displayW,displayH);
+        displayPanel.setBounds(w-displayW-s5,s5,displayW,displayH);
 
         map = new GalaxyMapPanel(this);
-        map.setBorder(paneBorder());
         map.setBounds(0,0,w,h);
 
         int buttonH = s60;
         buttonPanel = new MainButtonPanel(this);
-        buttonPanel.setBounds(0,h-s15-buttonH,w,buttonH);
+        buttonPanel.setBounds(s5,h-s5-buttonH,w-s10,buttonH);
 
         setLayout(new BorderLayout());
         add(layers, BorderLayout.CENTER);
@@ -342,10 +340,6 @@ public class MainUI extends BasePanel implements IMapHandler {
         layers.add(buttonPanel, JLayeredPane.PALETTE_LAYER);
         layers.add(displayPanel, JLayeredPane.PALETTE_LAYER);
         layers.add(map, JLayeredPane.DEFAULT_LAYER);
-        Border line1 = newLineBorder(newColor(60,60,60),2);
-        Border line2 = newLineBorder(newColor(0,0,0),8);
-        Border compound1 = BorderFactory.createCompoundBorder(line2, line1);
-        setBorder(compound1);
         setOpaque(false);
     }
     public boolean enableButtons()   { return !session().performingTurn(); }
@@ -582,10 +576,10 @@ public class MainUI extends BasePanel implements IMapHandler {
             return;
         GameAlert alert = session().currentAlert();
 
-        int x = getWidth() - scaled(282);
+        int x = getWidth() - scaled(255);
         int y = getHeight() - scaled(168);
         int w = scaled(250);
-        int h = s80;
+        int h = s100;
 
         if (alertBack == null) {
             float[] dist = {0.0f, 1.0f};

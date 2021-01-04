@@ -70,17 +70,16 @@ public final class MainButtonPanel extends BasePanel implements MouseListener, M
     private final MainUI parent;
 
     public MainButtonPanel(MainUI p) {
-        int w = getWidth();
         parent = p;
-        leftM = s3;
-        botM = s8;
+        leftM = s1;
+        botM = s2;
 
         addMouseListener(this);
         addMouseMotionListener(this);
     }
     private void initGradients(int w) {
         midM = w-scaled(273);
-        rightM = w-s23;
+        rightM = w-s2;
 
         for (int i=0;i<buttonBox.length;i++)
             buttonBox[i] = new Rectangle();

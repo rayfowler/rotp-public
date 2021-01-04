@@ -65,7 +65,7 @@ public class AlertDismissSprite extends MapSprite {
         else
             g.setStroke(BasePanel.stroke2);
 
-        int x1 = parent.getWidth() - scaled(49);
+        int x1 = parent.getWidth() - scaled(24);
         int y1 = parent.getHeight() - scaled(162);
 
         int x2 = x1+w1;

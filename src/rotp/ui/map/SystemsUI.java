@@ -39,7 +39,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import javax.swing.BorderFactory;
 import javax.swing.JLayeredPane;
 import javax.swing.border.Border;
 import rotp.Rotp;
@@ -89,7 +88,6 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
     private MainTitlePanel titlePanel;
     public static SystemsUI instance;
 
-    private int pad = 10;
     private GalaxyMapPanel map;
     private LinearGradientPaint backGradient;
     private SystemInfoPanel displayPanel;
@@ -113,7 +111,6 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
 
     public SystemsUI() {
         instance = this;
-        pad = s10;
         initModel();
     }
     public void init() {
@@ -277,18 +274,15 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         int rightPaneW = scaled(250);
 
         setBackground(Color.black);
-        Border emptyBorder = newEmptyBorder(0,pad,pad,pad);
-        setBorder(emptyBorder);
 
         map = new GalaxyMapPanel(this);
-        map.setBorder(null);
         map.setBounds(0,0,w,h);
 
         titlePanel = new MainTitlePanel(this, "SYSTEMS_TITLE");
         titlePanel.setBounds(0,0,w-rightPaneW-s25, s45);
         
         displayPanel = new SystemInfoPanel(this);
-        displayPanel.setBounds(w-rightPaneW-s20,s10,rightPaneW,scaled(673));
+        displayPanel.setBounds(w-rightPaneW-s5,s5,rightPaneW,scaled(673));
         
         exitButton = new ExitFleetsButton(rightPaneW, s60, s10, s2);
         exitButton.setBounds(w-rightPaneW-s20,h-s83,rightPaneW,s60);
@@ -300,10 +294,6 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         layers.add(displayPanel, JLayeredPane.PALETTE_LAYER);
         layers.add(exitButton, JLayeredPane.PALETTE_LAYER);
         layers.add(map, JLayeredPane.DEFAULT_LAYER);
-        Border line1 = newLineBorder(newColor(60,60,60),2);
-        Border line2 = newLineBorder(newColor(0,0,0),8);
-        Border compound1 = BorderFactory.createCompoundBorder(line2, line1);
-        setBorder(compound1);
         setOpaque(false);
 
         addMouseWheelListener(this);

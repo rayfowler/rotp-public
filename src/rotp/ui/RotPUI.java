@@ -15,9 +15,12 @@
  */
 package rotp.ui;
 
+import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
@@ -147,6 +150,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     private static final String GAME_OVER_PANEL = "GameOver,Man,GameOver";
     private static final String CREDITS_PANEL = "Credits";
     private static final String ERROR_PANEL = "Error";
+    private static final String DIALOG_PANEL = "Dialog";
 
     private static final RotPUI instance = new RotPUI();
 
@@ -215,6 +219,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     private final ErrorUI errorUI = new ErrorUI();
     private final HelpUI helpUI = new HelpUI();
     private final StartSettingsUI startSettingsUI = new StartSettingsUI();
+    private final LargeDialogPane dialogPane = new LargeDialogPane();
 
     private final CardLayout layout = new CardLayout();
     private String currentPane = GAME_PANEL;
@@ -327,12 +332,18 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     public void selectCouncilPanel()   {
         session().pauseNextTurnProcessing("Show Council");
         galacticCouncilUI.init();
-        selectPanel(COUNCIL_PANEL, galacticCouncilUI);
+        if (UserPreferences.fullScreen())
+            selectDialogPanel(COUNCIL_PANEL, galacticCouncilUI);
+        else
+            selectPanel(COUNCIL_PANEL, galacticCouncilUI);
         session().waitUntilNextTurnCanProceed();
     }
     public void selectGameOverPanel()  {
         gameOverUI.init();
-        selectPanel(GAME_OVER_PANEL, gameOverUI);
+        if (UserPreferences.fullScreen())
+            selectDialogPanel(GAME_OVER_PANEL, gameOverUI);
+        else
+            selectPanel(GAME_OVER_PANEL, gameOverUI);
     }
     public void selectErrorPanel(Throwable e)  {
         // ignore low-level mp3 errors from the Java FX library
@@ -356,7 +367,10 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     public void selectGNNPanel(String title, String id, List<Empire> empires) {
         session().pauseNextTurnProcessing("Show GNN");
         gnnUI.init(title, id, empires);
-        selectPanel(GNN_PANEL, gnnUI);
+        if (UserPreferences.fullScreen())
+            selectDialogPanel(GNN_PANEL, gnnUI);
+        else
+            selectPanel(GNN_PANEL, gnnUI);
         session().waitUntilNextTurnCanProceed();
     }
     public void selectSabotagePanel(SabotageMission m, int sysId) {
@@ -368,7 +382,10 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     public void selectGroundBattlePanel(Colony c, Transport tr) {
         session().pauseNextTurnProcessing("Show Ground Battle");
         groundBattleUI.init(c, tr);
-        selectPanel(GROUND_BATTLE_PANEL, groundBattleUI);
+        if (UserPreferences.fullScreen())
+            selectDialogPanel(GROUND_BATTLE_PANEL, groundBattleUI);
+        else
+            selectPanel(GROUND_BATTLE_PANEL, groundBattleUI);
         session().waitUntilNextTurnCanProceed();
     }
     public void showAdvice(String key, String var1, String var2, String var3) {
@@ -425,37 +442,62 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     }
     public void selectColonizationPanel(int sysId, ShipFleet fl, ShipDesign d) {
         colonizePlanetUI.init(sysId, fl, d);
-        selectPanel(COLONIZE_PROMPT_PANEL, colonizePlanetUI);
+        if (UserPreferences.fullScreen()) 
+            selectDialogPanel(COLONIZE_PROMPT_PANEL, colonizePlanetUI);
+        else
+            selectPanel(COLONIZE_PROMPT_PANEL, colonizePlanetUI);
     }
     public void selectSelectNewTechPanel(TechCategory cat) {
         session().pauseNextTurnProcessing("Show Select Tech");
         selectNewTechUI.category(cat);
-        selectPanel(SELECT_NEW_TECH_PANEL, selectNewTechUI);
+        if (UserPreferences.fullScreen()) 
+            selectDialogPanel(SELECT_NEW_TECH_PANEL, selectNewTechUI);
+        else
+            selectPanel(SELECT_NEW_TECH_PANEL, selectNewTechUI);
         session().waitUntilNextTurnCanProceed();
     }
     public void selectPlunderShipTechPanel(String techId, int empId) {
         session().pauseNextTurnProcessing("Show Plunder Tech");
         discoverTechUI.plunderShipTech(techId, empId);
-        selectPanel(DISCOVER_TECH_PANEL, discoverTechUI);
+        if (UserPreferences.fullScreen())
+            selectDialogPanel(DISCOVER_TECH_PANEL, discoverTechUI);
+        else
+            selectPanel(DISCOVER_TECH_PANEL, discoverTechUI);
         session().waitUntilNextTurnCanProceed();
     }
     public void selectPlunderTechPanel(String techId, int sysId, int empId) {
         session().pauseNextTurnProcessing("Show Plunder Tech");
         discoverTechUI.plunderTech(techId, sysId, empId);
-        selectPanel(DISCOVER_TECH_PANEL, discoverTechUI);
+        if (UserPreferences.fullScreen())
+            selectDialogPanel(DISCOVER_TECH_PANEL, discoverTechUI);
+        else
+            selectPanel(DISCOVER_TECH_PANEL, discoverTechUI);
         session().waitUntilNextTurnCanProceed();
     }
     public void selectDiscoverTechPanel(String techId) {
         session().pauseNextTurnProcessing("Show Discover Tech");
         discoverTechUI.discoverTech(techId);
-        selectPanel(DISCOVER_TECH_PANEL, discoverTechUI);
+        if (UserPreferences.fullScreen())
+            selectDialogPanel(DISCOVER_TECH_PANEL, discoverTechUI);
+        else
+            selectPanel(DISCOVER_TECH_PANEL, discoverTechUI);
         session().waitUntilNextTurnCanProceed();
     }
     public void selectTradeTechPanel(String techId, int empId) {
         session().pauseNextTurnProcessing("Show Trade Tech");
         discoverTechUI.tradeTech(techId, empId);
-        selectPanel(DISCOVER_TECH_PANEL, discoverTechUI);
+        if (UserPreferences.fullScreen())
+            selectDialogPanel(DISCOVER_TECH_PANEL, discoverTechUI);
+        else
+            selectPanel(DISCOVER_TECH_PANEL, discoverTechUI);
         session().waitUntilNextTurnCanProceed();
+    }
+    public void selectStealTechPanel(EspionageMission mission, int empId) {
+        discoverTechUI.stealTech(mission, empId);
+        if (UserPreferences.fullScreen())
+            selectDialogPanel(DISCOVER_TECH_PANEL, discoverTechUI);
+        else
+            selectPanel(DISCOVER_TECH_PANEL, discoverTechUI);
     }
     public void selectEspionageMissionPanel(EspionageMission mission, int empId) {
        try {
@@ -469,35 +511,44 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
             drawNextTurnNotice = true;
         }      
     }
-    public void selectStealTechPanel(EspionageMission mission, int empId) {
-        discoverTechUI.stealTech(mission, empId);
-        selectPanel(DISCOVER_TECH_PANEL, discoverTechUI);
-    }
+
     public void selectDiplomaticMessagePanel(DiplomaticNotification notif) {
         session().pauseNextTurnProcessing("Show Diplomatic Message");
         log("==MAIN UI==   selectDiplomaticMessagePanel");
         diplomaticMessageUI.init(notif);
-        selectPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
+        if (UserPreferences.fullScreen()) 
+            selectDialogPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
+        else
+            selectPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
         session().waitUntilNextTurnCanProceed();
     }
     public void selectDiplomaticDialoguePanel(DiplomaticNotification notif) {
         log("==MAIN UI==   selectDiplomaticDialoguePanel");
         diplomaticMessageUI.init(notif);
         diplomaticMessageUI.endFade();
-        selectPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
+        if (UserPreferences.fullScreen()) 
+            selectDialogPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
+        else
+            selectPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
     }
     public void selectDiplomaticReplyPanel(DiplomacyRequestReply reply) {
         log("==MAIN UI==   selectDiplomaticReplyPanel");
         diplomaticMessageUI.initReply(reply);
         diplomaticMessageUI.endFade();
-        selectPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
+        if (UserPreferences.fullScreen()) 
+            selectDialogPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
+        else
+            selectPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
     }
     public void selectDiplomaticReplyModalPanel(DiplomacyRequestReply reply) {
         session().pauseNextTurnProcessing("Show Diplomatic Reply");
         log("==MAIN UI==   selectDiplomaticReplyModalPanel");
         diplomaticMessageUI.initReply(reply);
         diplomaticMessageUI.endFade();
-        selectPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
+        if (UserPreferences.fullScreen()) 
+            selectDialogPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
+        else
+            selectPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
         session().waitUntilNextTurnCanProceed();
     }
     public void showTransportAlert(String title, String subtitle, String text) {  }
@@ -552,19 +603,38 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         add(racesUI, RACES_PANEL);
         add(planetsUI, PLANETS_PANEL);
         add(allocateTechUI, TECH_PANEL);
-        add(selectNewTechUI, SELECT_NEW_TECH_PANEL);
-        add(discoverTechUI, DISCOVER_TECH_PANEL);
-        add(shipBattleUI, SHIP_BATTLE_PANEL);
-        add(groundBattleUI, GROUND_BATTLE_PANEL);
         add(sabotageUI, SABOTAGE_PANEL);
-        add(gnnUI, GNN_PANEL);
-        add(colonizePlanetUI, COLONIZE_PROMPT_PANEL);
-        add(diplomaticMessageUI, DIPLOMATIC_MESSAGE_PANEL);
-        add(galacticCouncilUI, COUNCIL_PANEL);
-        add(gameOverUI, GAME_OVER_PANEL);
+            add(shipBattleUI, SHIP_BATTLE_PANEL);
         add(errorUI, ERROR_PANEL);
+        add(dialogPane, DIALOG_PANEL);
 
+        if (UserPreferences.fullScreen()) {
+            dialogPane.addToLayout(diplomaticMessageUI, DIPLOMATIC_MESSAGE_PANEL);
+            dialogPane.addToLayout(selectNewTechUI, SELECT_NEW_TECH_PANEL);
+            dialogPane.addToLayout(colonizePlanetUI, COLONIZE_PROMPT_PANEL);
+            dialogPane.addToLayout(discoverTechUI, DISCOVER_TECH_PANEL);
+            dialogPane.addToLayout(groundBattleUI, GROUND_BATTLE_PANEL);
+            dialogPane.addToLayout(gnnUI, GNN_PANEL);
+            dialogPane.addToLayout(galacticCouncilUI, COUNCIL_PANEL);
+            dialogPane.addToLayout(gameOverUI, GAME_OVER_PANEL);        }
+        else {
+            add(diplomaticMessageUI, DIPLOMATIC_MESSAGE_PANEL);
+            add(selectNewTechUI, SELECT_NEW_TECH_PANEL);
+            add(colonizePlanetUI, COLONIZE_PROMPT_PANEL);
+            add(discoverTechUI, DISCOVER_TECH_PANEL);
+            add(groundBattleUI, GROUND_BATTLE_PANEL);
+            add(gnnUI, GNN_PANEL);
+            add(galacticCouncilUI, COUNCIL_PANEL);
+            add(gameOverUI, GAME_OVER_PANEL);
+        }
         selectGamePanel();
+    }
+    private void selectDialogPanel(String panelName, BasePanel panel)   {
+        currentPane = panelName;
+        selectedPanel = panel;
+        selectedPanel.playAmbience();
+        dialogPane.selectPanel(panelName, panel);
+        layout.show(this, DIALOG_PANEL);
     }
     private void selectPanel(String panelName, BasePanel panel)   {
         currentPane = panelName;
@@ -622,5 +692,78 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
             glassPane().keyTyped(e);
         else if (selectedPanel != null)
             selectedPanel.keyTyped(e);
+    }
+    public class LargeDialogPane extends BasePanel { 
+        private static final long serialVersionUID = 1L;
+        private final CardLayout dialogLayout = new CardLayout();
+        private final BasePanel dialogHolder = new BasePanel();
+        public LargeDialogPane() {
+            initModel();
+        }
+        @Override
+        public boolean hasStarBackground()   { return true; }
+        private void initModel() {
+            setOpaque(true);
+            setBackground(Color.black);
+            dialogHolder.setLayout(dialogLayout);            
+            
+            Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
+            int border = s10;
+            int w = size.width-border-border;
+            int h = size.height-border-border;
+            
+            BasePanel barTop    = new BasePanel();
+            BasePanel barBottom = new BasePanel();
+            BasePanel barLeft   = new BasePanel();
+            BasePanel barRight  = new BasePanel();
+            barTop.setOpaque(false);
+            barBottom.setOpaque(false);
+            barLeft.setOpaque(false);
+            barRight.setOpaque(false);
+            
+            int barW = 0;
+            int barH = 0;
+            boolean sideBars = w > (h*8/5);
+        
+            if (sideBars) {
+                barW = (w-(h*8/5))/2;
+                barH = h;
+                barTop.setPreferredSize(new Dimension(w+border+border, border));
+                barBottom.setPreferredSize(new Dimension(w+border+border, border));
+                barLeft.setPreferredSize(new Dimension(barW+border, barH));
+                barRight.setPreferredSize(new Dimension(barW+border, barH));
+            }
+            else {
+                barH = (h-(w*5/8))/2;
+                barW = w;
+                barTop.setPreferredSize(new Dimension(w+border+border, barH));
+                barBottom.setPreferredSize(new Dimension(w+border+border, barH));
+                barLeft.setPreferredSize(new Dimension(border, barH));
+                barRight.setPreferredSize(new Dimension(border, barH));
+            }
+            
+            setLayout(new BorderLayout());
+            add(barTop, BorderLayout.NORTH);
+            add(barBottom, BorderLayout.SOUTH);
+            add(barLeft, BorderLayout.WEST);
+            add(barRight, BorderLayout.EAST);
+            add(dialogHolder, BorderLayout.CENTER);
+        }
+        public void addToLayout(BasePanel panel, String key) {
+            dialogHolder.add(panel, key);
+        }
+        public void selectPanel(String panelName, BasePanel panel)   {
+            log("showing dialog panel: ", panelName);
+            dialogLayout.show(dialogHolder, panelName);
+        }
+    }
+    public class SideBarPane extends BasePanel {
+        private static final long serialVersionUID = 1L;
+        private final Color hazeC = new Color(0,0,0,64);
+        public SideBarPane() {
+            setOpaque(false);
+            setBackground(Color.black);
+        }
+
     }
 }
