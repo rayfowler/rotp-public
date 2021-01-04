@@ -135,10 +135,10 @@ public class AIGovernor implements Base, Governor {
         if (!col.locked(DEFENSE))
             col.setAllocation(DEFENSE,  min(orderedDef, maxDef));
         
-        // 3. Ensure SHIP spending is maintained. Ship spending is never allocaated 
-        // for player colonies by the AI Governor so any spending here must be treated
-        // similarly to a player order
-        if (!col.locked(SHIP))
+        // 3. Unless we have just completed building a stargate, ensure that SHIP spending 
+        // is maintained. Ship spending is never allocated for player colonies by the AI 
+        //Governor so any spending here must be treated similarly to a player order
+        if (!col.locked(SHIP) && !col.shipyard().stargateCompleted())
             col.setAllocation(SHIP, prevShip);
  
         // 4. now fill any remaining build requirements for ind/eco/def
