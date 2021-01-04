@@ -307,7 +307,12 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     public void selectSetupGalaxyPanel() { setupGalaxyUI.init(); selectPanel(SETUP_GALAXY_PANEL, setupGalaxyUI);  }
     public void selectLoadGamePanel()  { loadGameUI.init(); selectPanel(LOAD_PANEL, loadGameUI);  }
     public void selectSaveGamePanel()  { saveGameUI.init(); selectPanel(SAVE_PANEL, saveGameUI);  }
-    public void selectIntroPanel()     { mainUI.init(false); selectPanel(MAIN_PANEL, mainUI()); enableGlassPane(raceIntroUI); repaint(); }
+    public void selectIntroPanel()     { 
+        mainUI.init(false); 
+        selectPanel(MAIN_PANEL, mainUI()); 
+        enableGlassPane(raceIntroUI); 
+        repaint(); 
+    }
     public void selectMainPanel()      { selectMainPanel(false); }
     public void selectMainPanel(boolean pauseNextTurn)      {
         disableGlassPane();
@@ -604,7 +609,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         add(planetsUI, PLANETS_PANEL);
         add(allocateTechUI, TECH_PANEL);
         add(sabotageUI, SABOTAGE_PANEL);
-            add(shipBattleUI, SHIP_BATTLE_PANEL);
+        add(shipBattleUI, SHIP_BATTLE_PANEL);
         add(errorUI, ERROR_PANEL);
         add(dialogPane, DIALOG_PANEL);
 
@@ -616,7 +621,8 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
             dialogPane.addToLayout(groundBattleUI, GROUND_BATTLE_PANEL);
             dialogPane.addToLayout(gnnUI, GNN_PANEL);
             dialogPane.addToLayout(galacticCouncilUI, COUNCIL_PANEL);
-            dialogPane.addToLayout(gameOverUI, GAME_OVER_PANEL);        }
+            dialogPane.addToLayout(gameOverUI, GAME_OVER_PANEL);
+        }
         else {
             add(diplomaticMessageUI, DIPLOMATIC_MESSAGE_PANEL);
             add(selectNewTechUI, SELECT_NEW_TECH_PANEL);

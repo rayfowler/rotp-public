@@ -328,7 +328,7 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
             addMouseMotionListener(this);
 
             newFileField.setBackground(GameUI.loadHoverBackground());
-            newFileField.setBorder(this.newEmptyBorder(5,0,0,0));
+            newFileField.setBorder(this.newEmptyBorder(0,0,0,0));
             newFileField.setFont(narrowFont(20));
             newFileField.setForeground(Color.black);
             newFileField.setCaretColor(Color.black);

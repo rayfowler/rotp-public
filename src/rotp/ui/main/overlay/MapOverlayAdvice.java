@@ -98,7 +98,7 @@ public class MapOverlayAdvice extends MapOverlay {
         int h = ui.getHeight();
 
         int mgn = BasePanel.s3;
-        int buttonBarH = BasePanel.s78;
+        int buttonBarH = BasePanel.s68;
         int boxW = scaled(380);
         int boxH = scaled(200);
 
