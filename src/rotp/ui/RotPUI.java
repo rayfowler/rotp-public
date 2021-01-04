@@ -61,7 +61,7 @@ import rotp.ui.game.RaceIntroUI;
 import rotp.ui.game.SaveGameUI;
 import rotp.ui.game.SetupGalaxyUI;
 import rotp.ui.game.SetupRaceUI;
-import rotp.ui.game.StartSettingsUI;
+import rotp.ui.game.StartOptionsUI;
 import rotp.ui.main.MainUI;
 import rotp.ui.notifications.DiplomaticNotification;
 import rotp.ui.notifications.TurnNotification;
@@ -218,7 +218,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     private final GameOverUI gameOverUI = new GameOverUI();
     private final ErrorUI errorUI = new ErrorUI();
     private final HelpUI helpUI = new HelpUI();
-    private final StartSettingsUI startSettingsUI = new StartSettingsUI();
+    private final StartOptionsUI startOptionsUI = new StartOptionsUI();
     private final LargeDialogPane dialogPane = new LargeDialogPane();
 
     private final CardLayout layout = new CardLayout();
@@ -289,7 +289,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     }
     public static RotPUI instance()                  { return instance; }
     public static HelpUI helpUI()                    { return instance.helpUI; } 
-    public static StartSettingsUI startSettingsUI()  { return instance.startSettingsUI; } 
+    public static StartOptionsUI startOptionsUI()  { return instance.startOptionsUI; } 
 
     @Override
     public void paint(Graphics g) {

@@ -424,7 +424,7 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
     }
     public void goToSettings() {
         buttonClick();
-        StartSettingsUI settingsUI = RotPUI.startSettingsUI();
+        StartOptionsUI settingsUI = RotPUI.startOptionsUI();
         settingsUI.open(this);
         release();
     }

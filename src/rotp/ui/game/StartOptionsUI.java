@@ -30,7 +30,7 @@ import rotp.ui.BasePanel;
 import rotp.ui.BaseText;
 import rotp.ui.main.SystemPanel;
 
-public class StartSettingsUI extends BasePanel implements MouseListener, MouseMotionListener {
+public class StartOptionsUI extends BasePanel implements MouseListener, MouseMotionListener {
     private static final long serialVersionUID = 1L;
     private static final Color backgroundHaze = new Color(0,0,0,160);
     
@@ -54,7 +54,7 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
     BaseText nebulaeText;
     BaseText councilWinText;
     
-    public StartSettingsUI() {
+    public StartOptionsUI() {
         init0();
     }
     private void init0() {
@@ -107,7 +107,7 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         int topM = s90;
         int w1 = w-leftM-rightM;
         int h1 = h-topM-s90;
-        g.setPaint(GameUI.settingsSetupBackground());
+        g.setPaint(GameUI.settingsSetupBackground(w));
         g.fillRect(leftM, topM, w1, h1);
         String title = text("SETTINGS_TITLE");
         g.setFont(narrowFont(30));
@@ -115,7 +115,6 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         int x1 = leftM+((w1-sw)/2);
         int y1 = topM+s40;
         drawBorderedString(g, title, 1, x1, y1, Color.black, Color.white);
-        
         
         g.setFont(narrowFont(18));
         String expl = text("SETTINGS_DESCRIPTION");
@@ -131,7 +130,7 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         int h2 = s90;
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
-        g.setPaint(GameUI.settingsSetupBackground());
+        g.setPaint(GameUI.settingsSetupBackground(w));
         g.fillRect(x2+s10, y2-s10, galaxyAgeText.stringWidth(g)+s10,s30);
         galaxyAgeText.setScaledXY(x2+s20, y2+s7);
         galaxyAgeText.draw(g);
@@ -148,7 +147,7 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
-        g.setPaint(GameUI.settingsSetupBackground());
+        g.setPaint(GameUI.settingsSetupBackground(w));
         g.fillRect(x2+s10, y2-s10, nebulaeText.stringWidth(g)+s10,s30);
         nebulaeText.setScaledXY(x2+s20, y2+s7);
         nebulaeText.draw(g);
@@ -165,7 +164,7 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
-        g.setPaint(GameUI.settingsSetupBackground());
+        g.setPaint(GameUI.settingsSetupBackground(w));
         g.fillRect(x2+s10, y2-s10, randomEventsText.stringWidth(g)+s10,s30);
         randomEventsText.setScaledXY(x2+s20, y2+s7);
         randomEventsText.draw(g);
@@ -182,7 +181,7 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
-        g.setPaint(GameUI.settingsSetupBackground());
+        g.setPaint(GameUI.settingsSetupBackground(w));
         g.fillRect(x2+s10, y2-s10, techTradingText.stringWidth(g)+s10,s30);
         techTradingText.setScaledXY(x2+s20, y2+s7);
         techTradingText.draw(g);
@@ -203,7 +202,7 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         x2 = leftM+s10+w2+s20;
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
-        g.setPaint(GameUI.settingsSetupBackground());
+        g.setPaint(GameUI.settingsSetupBackground(w));
         g.fillRect(x2+s10, y2-s10, researchRateText.stringWidth(g)+s10,s30);
         researchRateText.setScaledXY(x2+s20, y2+s7);
         researchRateText.draw(g);
@@ -220,7 +219,7 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
-        g.setPaint(GameUI.settingsSetupBackground());
+        g.setPaint(GameUI.settingsSetupBackground(w));
         g.fillRect(x2+s10, y2-s10, warpSpeedText.stringWidth(g)+s10,s30);
         warpSpeedText.setScaledXY(x2+s20, y2+s7);
         warpSpeedText.draw(g);
@@ -237,7 +236,7 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
-        g.setPaint(GameUI.settingsSetupBackground());
+        g.setPaint(GameUI.settingsSetupBackground(w));
         g.fillRect(x2+s10, y2-s10, councilWinText.stringWidth(g)+s30,s30);
         councilWinText.setScaledXY(x2+s20, y2+s7);
         councilWinText.draw(g);
@@ -254,7 +253,7 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
-        g.setPaint(GameUI.settingsSetupBackground());
+        g.setPaint(GameUI.settingsSetupBackground(w));
         g.fillRect(x2+s10, y2-s10, colonizePromptText.stringWidth(g)+s10,s30);
         colonizePromptText.setScaledXY(x2+s20, y2+s7);
         colonizePromptText.draw(g);
@@ -274,7 +273,7 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
         int cnr = s5;
         int smallButtonH = s30;
         int smallButtonW = scaled(180);
-        okBox.setBounds(scaled(945), scaled(645), smallButtonW, smallButtonH);
+        okBox.setBounds(w-scaled(289), scaled(640), smallButtonW, smallButtonH);
         g.setPaint(GameUI.buttonLeftBackground());
         g.fillRoundRect(okBox.x, okBox.y, smallButtonW, smallButtonH, cnr, cnr);
         g.setFont(narrowFont(20));
@@ -292,37 +291,37 @@ public class StartSettingsUI extends BasePanel implements MouseListener, MouseMo
     }
     private String randomEventsStr() {
         String opt = text(newGameOptions().selectedRandomEventOption());
-        return text("SETTINGS_RANDOM_EVENTS", opt)+"     ";
+        return text("SETTINGS_RANDOM_EVENTS", opt)+"   ";
     }
     private String colonizePromptStr() {
         if (newGameOptions().disableColonizePrompt())
-            return text("SETTINGS_COLONIZE_PROMPT_OFF")+"     ";
+            return text("SETTINGS_COLONIZE_PROMPT_OFF")+"   ";
         else
-            return text("SETTINGS_COLONIZE_PROMPT_ON")+"    ";
+            return text("SETTINGS_COLONIZE_PROMPT_ON")+"  ";
     }
     private String researchRateStr() {
         String opt = text(newGameOptions().selectedResearchRate());
-        return text("SETTINGS_RESEARCH_RATE", opt)+"     ";
+        return text("SETTINGS_RESEARCH_RATE", opt)+"   ";
     }
     private String techTradingStr() {
         String opt = text(newGameOptions().selectedTechTradeOption());
-        return text("SETTINGS_TECH_TRADING", opt)+"     ";
+        return text("SETTINGS_TECH_TRADING", opt)+"   ";
     }
     private String galaxyAgeStr() {
         String opt = text(newGameOptions().selectedGalaxyAge());
-        return text("SETTINGS_GALAXY_AGE", opt)+"     ";
+        return text("SETTINGS_GALAXY_AGE", opt)+"   ";
     }
     private String warpSpeedStr() {
         String opt = text(newGameOptions().selectedWarpSpeedOption());
-        return text("SETTINGS_WARP_SPEED", opt)+"     ";
+        return text("SETTINGS_WARP_SPEED", opt)+"   ";
     }
     private String nebulaeStr() {
         String opt = text(newGameOptions().selectedNebulaeOption());
-        return text("SETTINGS_NEBULAE", opt)+"     ";
+        return text("SETTINGS_NEBULAE", opt)+"   ";
     }
     private String councilWinStr() {
         String opt = text(newGameOptions().selectedCouncilWinOption());
-        return text("SETTINGS_COUNCIL_WIN", opt)+"     ";
+        return text("SETTINGS_COUNCIL_WIN", opt)+"   ";
     }
     private void toggleGalaxyAge() {
         softClick();
