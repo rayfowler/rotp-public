@@ -397,6 +397,20 @@ public class RacesUI extends BasePanel {
             statusPanel.changedEmpire();
         }
     }
+    private boolean selectPrevEmpire() {
+        int index = empires.indexOf(selectedEmpire());
+        if (index <= 0)
+            return false;
+        selectedEmpire(empires.get(index-1));
+        return true;    
+    }
+    private boolean selectNextEmpire() {
+        int index = empires.indexOf(selectedEmpire());
+        if ((index + 1) >= empires.size())
+            return false;
+        selectedEmpire(empires.get(index+1));
+        return true;    
+    }
     public EmpireView selectedView() {
         Empire selectedEmpire = selectedEmpire();
         if (selectedEmpire == player())
@@ -524,6 +538,24 @@ public class RacesUI extends BasePanel {
         boolean shift = e.isShiftDown();
         int k = e.getKeyCode();
         switch(k) {
+            case KeyEvent.VK_A:
+                if (selectedPanel.equals(DIPLOMACY_PANEL)) {
+                    if (!selectedEmpire().isPlayer())
+                        diploPanel.openEmbassy();
+                }
+                return;
+            case KeyEvent.VK_D:
+                if (selectedPanel.equals(DIPLOMACY_PANEL)) {
+                    if (selectedEmpire().isPlayer())
+                        diploPanel.openManageDiplomatsPane();
+                }
+                return;
+            case KeyEvent.VK_S:
+                if (selectedPanel.equals(DIPLOMACY_PANEL)) {
+                    if (selectedEmpire().isPlayer())
+                        diploPanel.openManageSpiesPane();
+                }
+                return;
             case KeyEvent.VK_ESCAPE:
                 exit(false);
                 return;
@@ -532,6 +564,14 @@ public class RacesUI extends BasePanel {
                     titlePanel.selectNextTab();
                 else
                     titlePanel.selectPreviousTab();
+                return;
+            case KeyEvent.VK_UP:
+                if (selectPrevEmpire())
+                    repaint();
+                return;
+            case KeyEvent.VK_DOWN:
+                if (selectNextEmpire())
+                    repaint();
                 return;
         }
     }

@@ -1210,7 +1210,7 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         g.drawRect(x,y,w,h);
         g.setStroke(prev);
     }
-    private void openEmbassy() {
+    public void openEmbassy() {
         EmpireView view = player().viewForEmpire(parent.selectedEmpire());
         if (view == null)
             return;
@@ -1226,13 +1226,13 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         
         DiplomaticMessage.show(parent.selectedEmpire().viewForEmpire(player()), DialogueManager.DIPLOMACY_GREETING);     
     }
-    private void openManageDiplomatsPane() {
+    public void openManageDiplomatsPane() {
         softClick();
         manageDiplomatsPane.init();
         enableGlassPane(manageDiplomatsPane);
         return;
     }
-    private void openManageSpiesPane() {
+    public void openManageSpiesPane() {
         softClick();
         manageSpiesPane.init();
         enableGlassPane(manageSpiesPane);
