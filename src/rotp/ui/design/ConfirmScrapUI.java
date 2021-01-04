@@ -200,6 +200,10 @@ public final class ConfirmScrapUI extends BasePanel implements MouseListener, Mo
     }
     private void scrapAction() {
         player().shipLab().scrapDesign(targetDesign);
+        
+        // mark the player's empire economic stats to be
+        // recalculated since ship maint costs may change
+        player().recalcPlanetaryProduction();
         DesignUI.instance.init();
         hoverTarget = null;
         disableGlassPane();
