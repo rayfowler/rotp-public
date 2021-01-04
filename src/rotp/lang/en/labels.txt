@@ -1776,22 +1776,8 @@ GAME_OVER_NEW_REPUBLIC_WIN        | New Republic Win
 GAME_OVER_REBELLION_WIN           | Rebellion Win
 GAME_OVER_REBEL_ALLIANCE_WIN      | Rebel Alliance Win
 GAME_OVER_ALLIANCE_WIN            | Alliance Win
+GAME_OVER_NO_COLONIES_LOSS        | Societal Collapse Loss
 
-// text for endings
+// text for race-generic endings
 // %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 special text
-GAME_OVER_OVERTHROWN_LOSS2        | In the year %1 the rule of %2 has ended, overthrown by rebelling colonies within the %4.#Now exiled and powerless, you have lost control over the ultimate fate of your former empire. May your successor be a better leader!
-GAME_OVER_MILITARY_LOSS2          | In year %1, %6 forces crushed all opposition and ended the dynasty of the late %2, former leader of the fallen %4.#The illustrious history of triumphs and failures for the %3 civilization has been erased, considered irrelevant by its %6 conquerors.
-GAME_OVER_DIPLOMATIC_LOSS2        | Let it be known that, in the year %1, %2 of the %4 directed all citizens to join every race in recognizing %5 of the %6 as the rightful leader of the Galactic Imperium, ensuring  peace throughout the galaxy. All Hail Lord %5!
-GAME_OVER_NEW_REPUBLIC_LOSS2      | In the year %1, Galactic Overlord %2 was recorded as the greatest failure in galactic history, allowing %6 rebels to destroy both the %4 and the Galactic Imperium.
-GAME_OVER_REBELLION_LOSS2         | In the year %1, the betrayal of the %4 by %2 was complete.#The futile rebellion against all-powerful Emperor %5 of the Galactic Imperium was disastrous, resulting in both the utter destruction of the %3 homeworld and extermination of all %3 citizens.
-GAME_OVER_MILITARY_WIN2           | Let it be known that, in the year %1, perpetual %3 rule was enacted across the galaxy when %3 forces eradicated the remaining %6 threat. A future of peace, exploration and achievement is promised for future %3 generations.#All Hail %2!
-GAME_OVER_MILITARY_ALLIANCE_WIN2  | Let it be known that, in the year %1, perpetual %3 rule was enacted across the galaxy when the %4 and allied forces eradicated their remaining rivals. A future of peace, exploration and achievement is promised for future %3 generations.#All Hail %2!
-GAME_OVER_DIPLOMATIC_WIN2         | Let it be known that, in the year %1, %2 of the %4 directed all citizens to join every race in recognizing the %3 race as the rightful rulers of the Galactic Imperium, ensuring  peace throughout the galaxy.#All Hail Lord %2!
-GAME_OVER_ALLIANCE_WIN2           | In the year %1, Emperor %2 cast the %3 vote for %5 of the %6, a trusted ally.#Thanks to his political wisdom, the %3 race is guaranteed a peaceful existence under %6 rule. 
-GAME_OVER_NEW_REPUBLIC_WIN2       | Let it be known that, in the year %1, a permanent peace was guaranteed to all races with the election of %2 from the %4 as Galactic Overlord.#With the end of war, the free and open interchange of cultures and ideas has become the norm. All Hail %2!
-GAME_OVER_REBELLION_WIN2          | In the year %1, against unimaginable odds, %2 of the %4 successfully led a rebellion against Galactic Emperor %5 and the entire Galactic Imperium.#This victory ensured permanent fame along with a lasting peace and independence for all %3 citizens. 
-GAME_OVER_REBEL_ALLIANCE_WIN2     | In the year %1, against unimaginable odds, %2 of the %4 successfully led a rebellion against Galactic Emperor %5 and the entire Galactic Imperium.#This victory ensured permanent fame along with a lasting peace and independence for all %3 citizens. 
-
-// This text is the %8 variable in some of the game over text... when this race wins the game
-GAME_OVER_ALLIANCE_WIN3           | the iron rule of the xx
-GAME_OVER_REBELLION_LOSS3         | the iron rule of the xx overwhelms
+GAME_OVER_NO_COLONIES_LOSS2       | The rule of %2 has ended, undone by imperial incompetence.#With no civilized worlds on which to land safely, any surviving %3 transports are unable to sustain the technological progress made by your society.#Barbarism is the natural state of society. Civilization is unnatural. It is a whim of circumstance. And barbarism must ultimately triumph.

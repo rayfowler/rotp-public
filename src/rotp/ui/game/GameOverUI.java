@@ -157,6 +157,8 @@ public final class GameOverUI extends FadeInPanel implements MouseListener, Mous
             return text("GAME_OVER_NEW_REPUBLIC_LOSS");
         else if (session().status().lostRebellion())
             return text("GAME_OVER_REBELLION_LOSS");
+        else if (session().status().lostNoColonies())
+            return text("GAME_OVER_NO_COLONIES_LOSS");
         else if (session().status().wonDiplomatic())
             return text("GAME_OVER_DIPLOMATIC_WIN");
         else if (session().status().wonMilitary())
@@ -197,6 +199,8 @@ public final class GameOverUI extends FadeInPanel implements MouseListener, Mous
             String special = ruler.text("GAME_OVER_REBELLION_LOSS3");
             return text("GAME_OVER_REBELLION_LOSS2", year, pName, pRace, pEmpire, rName, rRace, rEmpire, special);
         }
+        else if (session().status().lostNoColonies())
+            return text("GAME_OVER_NO_COLONIES_LOSS2", year, pName, pRace, pEmpire, rName, rRace, rEmpire);
         else if (session().status().wonDiplomatic())
             return text("GAME_OVER_DIPLOMATIC_WIN2", year, pName, pRace, pEmpire, rName, rRace, rEmpire);
         else if (session().status().wonMilitary())

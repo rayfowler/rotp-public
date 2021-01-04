@@ -2218,6 +2218,8 @@ public final class Empire implements Base, NamedObject, Serializable {
             // by a monster or by abandoning all of his colonies simultaneously 
             if (activeEmpires.isEmpty())
                 session().status().loseMilitary();
+            else if (isPlayer() && (lastAttacker == null))
+                session().status().loseNoColonies();                
             // if only one empire is left...
             else if (activeEmpires.size() == 1) {
                 if (isPlayer())

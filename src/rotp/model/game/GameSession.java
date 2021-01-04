@@ -311,6 +311,9 @@ public final class GameSession implements Base, Serializable {
                 processNotifications();
                 gal.preNextTurn();
                 
+                if (!inProgress())
+                    return;
+
                 // REMOVE THIS CODE
                 //playerViewAllHomeSystems();
                 
