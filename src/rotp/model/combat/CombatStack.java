@@ -395,6 +395,9 @@ public class CombatStack implements Base {
     public float takeHullDamage(float damage) {
         if (inStasis)
             return 0;
+        
+        if (damage <= 0)
+            return 0;
         attacked = true;
         maxHits = max(0,maxHits - damage);
         hits = min(hits,maxHits);
