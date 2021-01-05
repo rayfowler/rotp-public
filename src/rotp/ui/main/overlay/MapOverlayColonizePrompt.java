@@ -380,6 +380,8 @@ public class MapOverlayColonizePrompt extends MapOverlay {
             selectH = h;
         }
         @Override
+        public boolean acceptDoubleClicks()         { return true; }
+        @Override
         public boolean isSelectableAt(GalaxyMapPanel map, int x, int y) {
             hovering = x >= selectX
                         && x <= selectX+selectW
