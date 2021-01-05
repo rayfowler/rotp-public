@@ -15,9 +15,7 @@
  */
 package rotp;
 
-import java.awt.BorderLayout;
-import java.awt.Dimension;
-import java.awt.Toolkit;
+import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.io.File;
@@ -49,7 +47,10 @@ public class Rotp {
     private static float resizeAmt =  -1.0f;
     public static int actualAlloc = -1;
     public static boolean reloadRecentSave = false;
-    
+
+    static GraphicsDevice device = GraphicsEnvironment
+            .getLocalGraphicsEnvironment().getDefaultScreenDevice();
+
     public static void main(String[] args) {
         frame = new JFrame("Remnants of the Precursors");
         if (args.length == 0) {
@@ -76,9 +77,11 @@ public class Rotp {
         if (UserPreferences.fullScreen()) {
             frame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
             frame.setUndecorated(true);
+            device.setFullScreenWindow(frame);
         }
         else {
             frame.setResizable(false);
+            device.setFullScreenWindow(null);
         }
         setFrameSize();
 
