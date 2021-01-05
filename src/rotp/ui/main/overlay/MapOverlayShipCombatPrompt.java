@@ -32,6 +32,7 @@ import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
+import rotp.ui.combat.ShipBattleUI;
 
 public class MapOverlayShipCombatPrompt extends MapOverlay {
     static final Color destroyedTextC = new Color(255,32,32,192);
@@ -47,7 +48,9 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
     boolean drawSprites = false;
     public ShipCombatManager mgr;
     AutoResolveBattleSprite resolveButton = new AutoResolveBattleSprite();
+    RetreatAllBattleSprite retreatButton = new RetreatAllBattleSprite();
     EnterBattleSprite battleButton = new EnterBattleSprite();
+    SystemFlagSprite flagButton = new SystemFlagSprite();
     public MapOverlayShipCombatPrompt(MainUI p) {
         parent = p;
     }
@@ -55,6 +58,7 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
         mgr = m;
         sysId = mgr.system().id;
         Empire pl = player();
+        flagButton.reset();
         StarSystem sys = galaxy().system(sysId);
         fleet = null;
         planetImg = null;
@@ -70,11 +74,18 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
         parent.clickedSprite(sys);
         parent.repaint();
     }
-    public void startCombat(boolean autoResolve) {
+    public void startCombat(int combatFlag) {
         drawSprites = false;
         parent.clearOverlay();
         parent.repaintAllImmediately();
-        RotPUI.instance().selectShipBattlePanel(mgr, autoResolve);
+        RotPUI.instance().selectShipBattlePanel(mgr, combatFlag);
+    }
+    private StarSystem starSystem() {
+        return galaxy().system(sysId);
+    }
+    private void toggleFlagColor() {
+        player().sv.view(sysId).toggleFlagColor();
+        parent.repaint();
     }
     @Override
     public boolean drawSprites()   { return drawSprites; }
@@ -84,7 +95,7 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
     public boolean hoveringOverSprite(Sprite o) { return false; }
     @Override
     public void advanceMap() {
-        startCombat(false);
+        startCombat(ShipBattleUI.ENTER_COMBAT);
     }
     @Override
     public void paintOverMap(MainUI parent, GalaxyMapPanel ui, Graphics2D g) {
@@ -209,6 +220,12 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
         resolveButton.mapY(battleButton.mapY());
         resolveButton.draw(parent.map(), g);
 
+        parent.addNextTurnControl(retreatButton);
+        retreatButton.init(this, g);
+        retreatButton.mapX(resolveButton.mapX()+resolveButton.width()+s10);
+        retreatButton.mapY(battleButton.mapY());
+        retreatButton.draw(parent.map(), g);
+
         // if unscouted, no planet info
         if (!scouted)
             return;
@@ -313,13 +330,28 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
         g.setFont(narrowFont(40));
         drawBorderedString(g, sysName, 1, x1, y1, Color.darkGray, SystemPanel.orangeText);
         
-
+        // planet flag
+        parent.addNextTurnControl(flagButton);
+        flagButton.init(this, g);
+        flagButton.mapX(boxX+boxW-flagButton.width()-scaled(5));
+        flagButton.mapY(boxY+boxH-flagButton.height()-s40);
+        flagButton.draw(parent.map(), g);
     }
     @Override
     public boolean handleKeyPress(KeyEvent e) {
         switch(e.getKeyCode()) {
             case KeyEvent.VK_ESCAPE:
-                startCombat(false);
+            case KeyEvent.VK_E:
+                startCombat(ShipBattleUI.ENTER_COMBAT);
+                break;
+            case KeyEvent.VK_A:
+                startCombat(ShipBattleUI.AUTO_RESOLVE);
+                break;
+            case KeyEvent.VK_R:
+                startCombat(ShipBattleUI.RETREAT_ALL);
+                break;
+            case KeyEvent.VK_F:
+                toggleFlagColor();
                 break;
             default:
                 misClick();
@@ -401,7 +433,84 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
         }
         @Override
         public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
-            startCombat(true);
+            startCombat(ShipBattleUI.AUTO_RESOLVE);
+        };
+    }
+    class RetreatAllBattleSprite extends MapSprite {
+        private LinearGradientPaint background;
+        private final Color edgeC = new Color(59,59,59);
+        private final Color midC = new Color(93,93,93);
+        private int mapX, mapY, buttonW, buttonH;
+        private int selectX, selectY, selectW, selectH;
+
+        private MapOverlayShipCombatPrompt parent;
+
+        protected int mapX()      { return mapX; }
+        protected int mapY()      { return mapY; }
+        public void mapX(int i)   { selectX = mapX = i; }
+        public void mapY(int i)   { selectY = mapY = i; }
+
+        public int width()        { return buttonW; }
+        public int height()       { return buttonH; }
+        private String label()    { return text("SHIP_COMBAT_RETREAT_ALL"); }
+        private Font font()       { return narrowFont(18); }
+        public void reset()       { background = null; }
+
+        public void init(MapOverlayShipCombatPrompt p, Graphics2D g)  {
+            parent = p;
+            buttonW = BasePanel.s40 + g.getFontMetrics(font()).stringWidth(label());
+            buttonH = BasePanel.s30;
+            selectW = buttonW;
+            selectH = buttonH;
+        }
+        public void setSelectionBounds(int x, int y, int w, int h) {
+            selectX = x;
+            selectY = y;
+            selectW = w;
+            selectH = h;
+        }
+        @Override
+        public boolean isSelectableAt(GalaxyMapPanel map, int x, int y) {
+            hovering = x >= selectX
+                        && x <= selectX+selectW
+                        && y >= selectY
+                        && y <= selectY+selectH;
+            return hovering;
+        }
+        @Override
+        public void draw(GalaxyMapPanel map, Graphics2D g) {
+            if (!parent.drawSprites())
+                return;
+            if (background == null) {
+                float[] dist = {0.0f, 0.5f, 1.0f};
+                Point2D start = new Point2D.Float(mapX, 0);
+                Point2D end = new Point2D.Float(mapX+buttonW, 0);
+                Color[] colors = {edgeC, midC, edgeC };
+                background = new LinearGradientPaint(start, end, dist, colors);
+            }
+            int s3 = BasePanel.s3;
+            int s5 = BasePanel.s5;
+            int s10 = BasePanel.s10;
+            g.setColor(SystemPanel.blackText);
+            g.fillRoundRect(mapX+s3, mapY+s3, buttonW,buttonH,s10,s10);
+            g.setPaint(background);
+            g.fillRoundRect(mapX, mapY, buttonW,buttonH,s5,s5);
+            Color c0 = hovering ? SystemPanel.yellowText : SystemPanel.whiteText;
+            g.setColor(c0);
+            Stroke prevStr =g.getStroke();
+            g.setStroke(BasePanel.stroke2);
+            g.drawRoundRect(mapX, mapY, buttonW,buttonH,s5,s5);
+            g.setStroke(prevStr);
+            g.setFont(font());
+
+            String str = label();
+            int sw = g.getFontMetrics().stringWidth(str);
+            int x2a = mapX+((buttonW-sw)/2);
+            drawBorderedString(g, str, x2a, mapY+buttonH-s10, SystemPanel.textShadowC, c0);
+        }
+        @Override
+        public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
+            startCombat(ShipBattleUI.RETREAT_ALL);
         };
     }
     class EnterBattleSprite extends MapSprite {
@@ -478,7 +587,83 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
         }
         @Override
         public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
-            startCombat(false);
+            startCombat(ShipBattleUI.ENTER_COMBAT);
+        };
+    }
+    class SystemFlagSprite extends MapSprite {
+        private LinearGradientPaint background;
+        private final Color edgeC = new Color(59,59,59);
+        private final Color midC = new Color(93,93,93);
+        private int mapX, mapY, buttonW, buttonH;
+        private int selectX, selectY, selectW, selectH;
+
+        private MapOverlayShipCombatPrompt parent;
+
+        protected int mapX()      { return mapX; }
+        protected int mapY()      { return mapY; }
+        public void mapX(int i)   { selectX = mapX = i; }
+        public void mapY(int i)   { selectY = mapY = i; }
+
+        public int width()        { return buttonW; }
+        public int height()       { return buttonH; }
+        public void reset()       { background = null; }
+
+        public void init(MapOverlayShipCombatPrompt p, Graphics2D g)  {
+            parent = p;
+            buttonW = BasePanel.s30;
+            buttonH = BasePanel.s35;
+            selectW = buttonW;
+            selectH = buttonH;
+        }
+        public void setSelectionBounds(int x, int y, int w, int h) {
+            selectX = x;
+            selectY = y;
+            selectW = w;
+            selectH = h;
+        }
+        @Override
+        public boolean isSelectableAt(GalaxyMapPanel map, int x, int y) {
+            hovering = x >= selectX
+                        && x <= selectX+selectW
+                        && y >= selectY
+                        && y <= selectY+selectH;
+            return hovering;
+        }
+        @Override
+        public void draw(GalaxyMapPanel map, Graphics2D g) {
+            if (!parent.drawSprites())
+                return;
+            if (background == null) {
+                float[] dist = {0.0f, 0.3f, 0.7f, 1.0f};
+                Point2D start = new Point2D.Float(mapX, 0);
+                Point2D end = new Point2D.Float(mapX+buttonW, 0);
+                Color[] colors = {edgeC, midC, midC, edgeC };
+                background = new LinearGradientPaint(start, end, dist, colors);
+            }
+            int s3 = BasePanel.s3;
+            int s5 = BasePanel.s5;
+            int s10 = BasePanel.s10;
+            g.setColor(SystemPanel.blackText);
+            g.fillRoundRect(mapX+s3, mapY+s3, buttonW,buttonH,s10,s10);
+            g.setPaint(background);
+            g.fillRoundRect(mapX, mapY, buttonW,buttonH,s5,s5);
+            Color c0 = hovering ? SystemPanel.yellowText : SystemPanel.whiteText;
+            g.setColor(c0);
+            g.setStroke(BasePanel.stroke2);
+            g.drawRoundRect(mapX, mapY, buttonW,buttonH,s5,s5);
+            
+            StarSystem sys = parent.starSystem();
+            Color flagC = parent.parent.flagColor(sys);
+            if (hovering) 
+                sys.drawBanner(g, flagC, SystemPanel.yellowText, mapX+buttonW-s10,mapY+buttonH+s3);
+            else {
+                Color c1 = flagC == null ? SystemPanel.blackText : SystemPanel.whiteText;
+                sys.drawBanner(g, flagC, c1, mapX+buttonW-s10,mapY+buttonH+s3);
+            }
+        }
+        @Override
+        public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
+            parent.toggleFlagColor();
         };
     }
 }

@@ -40,6 +40,9 @@ import javax.swing.border.Border;
 
 public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, MouseMotionListener {
     private static final long serialVersionUID = 1L;
+    public static final int ENTER_COMBAT = 0;
+    public static final int AUTO_RESOLVE = 1;
+    public static final int RETREAT_ALL = 2;
     private enum Display { INTRO, RESULT }
     static final Color shipCountTextC = new Color(255,240,78);
     static final Color grayBackC = new Color(123,123,123);
@@ -228,7 +231,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             }
         }
     }
-    public void init(ShipCombatManager m, boolean autoResolve) {
+    public boolean init(ShipCombatManager m, int combatFlag) {
         mgr = m;
         mgr.ui(this);
         mgr.setInitialPause();
@@ -277,21 +280,24 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         if (!mgr.results().isMonsterAttack())
             initFleetStacks(rightEmpire, rightFleet);
         
-        if (autoResolve) {
-            mgr.autoResolve = true;
-            mgr.autoComplete = true;
+        if (combatFlag == AUTO_RESOLVE) {
+            autoResolve();
+            return true;
+        }
+        if (combatFlag == RETREAT_ALL) {
             mgr.showAnimations = false;
-            finish();
+            retreatAllPlayerShips(false);
+            return false;
         }
-        else {
-            if (mgr.currentStack().usingAI()) {
-                final Runnable aiShips = () -> {
-                    nextStack();
-                };
-                invokeLater(aiShips);
-            }
-            rotateAndRenderPlanet();
+
+        if (mgr.currentStack().usingAI()) {
+            final Runnable aiShips = () -> {
+                nextStack();
+            };
+            invokeLater(aiShips);
         }
+        rotateAndRenderPlanet();
+        return true;
     }
     @Override
     public String ambienceSoundKey()     { return "ShipCombatAmbience"; }
@@ -1413,14 +1419,16 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         mode = Display.RESULT;
         repaint();
     }
-    private void retreatStack(CombatStack stack) {
+    private void retreatStack(CombatStack stack, boolean inCombat) {
         if (mgr.combatIsFinished() || mgr.autoResolve)
             return; 
         if (!stack.canRetreat() || !stack.empire.isPlayer())
             return;
         StarSystem dest = player().ai().shipCaptain().retreatSystem(mgr.system());
         mgr.retreatStack((CombatStackShip)stack, dest);
-        mgr.continueToNextPlayerStack();
+        
+        if (inCombat)
+            mgr.continueToNextPlayerStack();
     }
     public void finish() {
         if (mgr.combatIsFinished()) {
@@ -1453,6 +1461,23 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         rightGreenActionBackC = null;
         rightGrayActionBackC = null;
         moveBackC = null;
+    }
+    private void autoResolve() {
+        mgr.autoComplete = true;
+        mgr.autoResolve = true;
+        mgr.showAnimations = false;
+        paintAllImmediately();
+        finish();
+    }
+    private void retreatAllPlayerShips(boolean inCombat) {
+        List<CombatStack> stacks = new ArrayList<>(mgr.activeStacks());
+        for (CombatStack stack: stacks) 
+            retreatStack(stack, inCombat);
+        mgr.showAnimations = true;
+        mgr.autoComplete = true;
+        hoverBox = null;
+        paintAllImmediately();
+        finish();
     }
     @Override
     public void keyPressed(KeyEvent e) {
@@ -1506,7 +1531,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
                     nextStack();
                 return;
             case KeyEvent.VK_R:
-                retreatStack(mgr.currentStack());
+                retreatStack(mgr.currentStack(),true);
                 return;
             case KeyEvent.VK_E:
             case KeyEvent.VK_ESCAPE:
@@ -1549,24 +1574,11 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         }
 
         if (hoverBox == resolveBox) {
-            if (!mgr.autoResolve) {
-                mgr.autoComplete = true;
-                mgr.autoResolve = true;
-                mgr.showAnimations = false;
-                paintAllImmediately();
-                finish();
-            }
+            if (!mgr.autoResolve) 
+                autoResolve();
         }
-        else if (hoverBox == retreatBox) {
-            // retreat all player ships  - TODO
-            List<CombatStack> stacks = new ArrayList<>(mgr.activeStacks());
-            for (CombatStack stack: stacks) 
-                retreatStack(stack);
-            mgr.autoComplete = true;
-            hoverBox = null;
-            paintAllImmediately();
-            finish();
-        }
+        else if (hoverBox == retreatBox) 
+            retreatAllPlayerShips(true);
         if (hoverBox == playPauseBox)
             togglePlayPause();
         else if (hoverBox == exitBox)
@@ -1898,7 +1910,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         String label()   { return text("SHIP_COMBAT_ACTION_RETREAT"); }
         @Override
         public void clickAction(boolean rightClick) {
-            retreatStack(mgr.currentStack());
+            retreatStack(mgr.currentStack(), true);
         }
     }
     class ShipFireAllButton extends ShipActionButton {

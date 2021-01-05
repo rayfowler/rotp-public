@@ -430,9 +430,10 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
             drawNextTurnNotice = true;
         }
     }
-    public void selectShipBattlePanel(ShipCombatManager mgr, boolean autoResolve) {
-        shipBattleUI.init(mgr, autoResolve);
-        selectPanel(SHIP_BATTLE_PANEL, shipBattleUI);
+    public void selectShipBattlePanel(ShipCombatManager mgr, int combatFlag) {
+        boolean showBattle = shipBattleUI.init(mgr, combatFlag);
+        if (showBattle)
+            selectPanel(SHIP_BATTLE_PANEL, shipBattleUI);
     }
     public void promptForColonization(int sysId, ShipFleet fl, ShipDesign d) {
         try {

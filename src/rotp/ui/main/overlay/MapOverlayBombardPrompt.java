@@ -18,10 +18,12 @@ package rotp.ui.main.overlay;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.LinearGradientPaint;
 import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
+import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import rotp.model.Sprite;
 import rotp.model.empires.Empire;
@@ -34,6 +36,7 @@ import rotp.ui.main.SystemPanel;
 import rotp.ui.sprites.BombardNoSprite;
 import rotp.ui.sprites.BombardYesSprite;
 import rotp.ui.sprites.ClickToContinueSprite;
+import rotp.ui.sprites.MapSprite;
 
 public class MapOverlayBombardPrompt extends MapOverlay {
     static final Color destroyedTextC = new Color(255,32,32,192);
@@ -50,6 +53,7 @@ public class MapOverlayBombardPrompt extends MapOverlay {
     ClickToContinueSprite clickSprite;
     BombardNoSprite noButton = new BombardNoSprite();
     BombardYesSprite yesButton = new BombardYesSprite();
+    SystemFlagSprite flagButton = new SystemFlagSprite();
     public MapOverlayBombardPrompt(MainUI p) {
         parent = p;
         clickSprite = new ClickToContinueSprite(parent);
@@ -58,6 +62,7 @@ public class MapOverlayBombardPrompt extends MapOverlay {
         drawSprites = true;
         planetImg = null;
         Empire pl = player();
+        flagButton.reset();
         StarSystem sys = galaxy().system(systemId);
         sysId = systemId;
         fleet = fl;
@@ -75,6 +80,13 @@ public class MapOverlayBombardPrompt extends MapOverlay {
         parent.map().recenterMapOn(sys);
         parent.mapFocus(sys);
         parent.clickedSprite(sys);
+        parent.repaint();
+    }
+    private StarSystem starSystem() {
+        return galaxy().system(sysId);
+    }
+    private void toggleFlagColor() {
+        player().sv.view(sysId).toggleFlagColor();
         parent.repaint();
     }
     public void bombardYes() {
@@ -419,6 +431,13 @@ public class MapOverlayBombardPrompt extends MapOverlay {
         g.setFont(narrowFont(32));
         drawBorderedString(g, sysName, 1, x1, y1, Color.darkGray, SystemPanel.orangeText);
 
+        // planet flag
+        parent.addNextTurnControl(flagButton);
+        flagButton.init(this, g);
+        flagButton.mapX(boxX+boxW-flagButton.width()-scaled(5));
+        flagButton.mapY(boxY+boxH-flagButton.height()-s10);
+        flagButton.draw(parent.map(), g);
+
         if (sys.empire() == null) {
             g.setColor(destroyedMaskC);
             g.fillRect(boxX, boxY+boxH1, boxW, boxH-boxH1);
@@ -441,10 +460,89 @@ public class MapOverlayBombardPrompt extends MapOverlay {
             case KeyEvent.VK_Y:
                 bombardYes();
                 break;
+            case KeyEvent.VK_F:
+                toggleFlagColor();
+                break;
             default:
                 misClick();
                 break;
         }
         return true;
+    }
+    class SystemFlagSprite extends MapSprite {
+        private LinearGradientPaint background;
+        private final Color edgeC = new Color(59,59,59);
+        private final Color midC = new Color(93,93,93);
+        private int mapX, mapY, buttonW, buttonH;
+        private int selectX, selectY, selectW, selectH;
+
+        private MapOverlayBombardPrompt parent;
+
+        protected int mapX()      { return mapX; }
+        protected int mapY()      { return mapY; }
+        public void mapX(int i)   { selectX = mapX = i; }
+        public void mapY(int i)   { selectY = mapY = i; }
+
+        public int width()        { return buttonW; }
+        public int height()       { return buttonH; }
+        public void reset()       { background = null; }
+
+        public void init(MapOverlayBombardPrompt p, Graphics2D g)  {
+            parent = p;
+            buttonW = BasePanel.s30;
+            buttonH = BasePanel.s35;
+            selectW = buttonW;
+            selectH = buttonH;
+        }
+        public void setSelectionBounds(int x, int y, int w, int h) {
+            selectX = x;
+            selectY = y;
+            selectW = w;
+            selectH = h;
+        }
+        @Override
+        public boolean isSelectableAt(GalaxyMapPanel map, int x, int y) {
+            hovering = x >= selectX
+                        && x <= selectX+selectW
+                        && y >= selectY
+                        && y <= selectY+selectH;
+            return hovering;
+        }
+        @Override
+        public void draw(GalaxyMapPanel map, Graphics2D g) {
+            if (!parent.drawSprites())
+                return;
+            if (background == null) {
+                float[] dist = {0.0f, 0.3f, 0.7f, 1.0f};
+                Point2D start = new Point2D.Float(mapX, 0);
+                Point2D end = new Point2D.Float(mapX+buttonW, 0);
+                Color[] colors = {edgeC, midC, midC, edgeC };
+                background = new LinearGradientPaint(start, end, dist, colors);
+            }
+            int s3 = BasePanel.s3;
+            int s5 = BasePanel.s5;
+            int s10 = BasePanel.s10;
+            g.setColor(SystemPanel.blackText);
+            g.fillRoundRect(mapX+s3, mapY+s3, buttonW,buttonH,s10,s10);
+            g.setPaint(background);
+            g.fillRoundRect(mapX, mapY, buttonW,buttonH,s5,s5);
+            Color c0 = hovering ? SystemPanel.yellowText : SystemPanel.whiteText;
+            g.setColor(c0);
+            g.setStroke(BasePanel.stroke2);
+            g.drawRoundRect(mapX, mapY, buttonW,buttonH,s5,s5);
+            
+            StarSystem sys = parent.starSystem();
+            Color flagC = parent.parent.flagColor(sys);
+            if (hovering) 
+                sys.drawBanner(g, flagC, SystemPanel.yellowText, mapX+buttonW-s10,mapY+buttonH+s3);
+            else {
+                Color c1 = flagC == null ? SystemPanel.blackText : SystemPanel.whiteText;
+                sys.drawBanner(g, flagC, c1, mapX+buttonW-s10,mapY+buttonH+s3);
+            }
+        }
+        @Override
+        public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
+            parent.toggleFlagColor();
+        };
     }
 }
