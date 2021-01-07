@@ -55,6 +55,7 @@ public final class MainButtonPanel extends BasePanel implements MouseListener, M
     int midM = -1;
     int rightM = -1;
     int botM;
+    int buttonW;
     String[] buttons = { "MAIN_NAVIGATION_GAME",
                     "MAIN_NAVIGATION_SYSTEMS",
                     "MAIN_NAVIGATION_FLEETS",
@@ -77,6 +78,7 @@ public final class MainButtonPanel extends BasePanel implements MouseListener, M
         addMouseListener(this);
         addMouseMotionListener(this);
     }
+    public int buttonW()      { return buttonW; }
     private void initGradients(int w) {
         midM = w-scaled(273);
         rightM = w-s2;
@@ -119,7 +121,7 @@ public final class MainButtonPanel extends BasePanel implements MouseListener, M
         g.setColor(Color.black);
         g.fillRect(0, 0, w, h);
 
-        int buttonW = (midM-leftM)/buttons.length;
+        buttonW = (midM-leftM)/buttons.length;
 
         for (int i=0;i<buttons.length;i++)
             drawButton(g, i, leftM+(i*buttonW), s2, buttonW-s2, h-s2-botM);

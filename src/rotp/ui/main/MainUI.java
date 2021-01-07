@@ -623,183 +623,194 @@ public class MainUI extends BasePanel implements IMapHandler {
     private void loadEmpireColonyHelpFrame1() {
         HelpUI helpUI = RotPUI.helpUI();
 
+        int w = getWidth();
+        int h = getHeight();
         helpUI.clear();
         HelpSpec s0 = helpUI.addBlueHelpText(s100, s10, scaled(350), 2, text("MAIN_HELP_ALL"));
-        s0.setLine(s100, s30, s40, s30);
+        s0.setLine(s100, s25, s30, s25);
 
-        int x1 = scaled(450);
+        int x1 = w-scaled(779);
         int w1 = scaled(430);
-        int y1 = scaled(170);
+        int y1 = scaled(160);
         HelpSpec sp1 = helpUI.addBlueHelpText(x1, y1, w1, 3, text("MAIN_HELP_1A"));
         y1 += (sp1.height()+s10);
         HelpSpec sp2 = helpUI.addBlueHelpText(x1, y1, w1, 2, text("MAIN_HELP_1B"));
-        sp2.setLine(x1+w1, y1+(sp2.height()/2), scaled(975), scaled(327));
+        sp2.setLine(x1+w1, y1+(sp2.height()/2), w-scaled(244), scaled(312));
         y1 += (sp2.height()+s5);
         HelpSpec sp3 = helpUI.addBlueHelpText(x1, y1, w1, 2, text("MAIN_HELP_1C"));
-        sp3.setLine(x1+w1, y1+(sp3.height()/2), scaled(975), scaled(357));
+        sp3.setLine(x1+w1, y1+(sp3.height()/2), w-scaled(244), scaled(342));
         y1 += (sp3.height()+s5);
         HelpSpec sp4 = helpUI.addBlueHelpText(x1, y1, w1, 2, text("MAIN_HELP_1D"));
-        sp4.setLine(x1+w1, y1+(sp4.height()/2), scaled(975), scaled(387));
+        sp4.setLine(x1+w1, y1+(sp4.height()/2), w-scaled(244), scaled(372));
         y1 += (sp4.height()+s5);
         HelpSpec sp5 = helpUI.addBlueHelpText(x1, y1, w1, 2, text("MAIN_HELP_1E"));
-        sp5.setLine(x1+w1, y1+(sp5.height()/2), scaled(975), scaled(417));
+        sp5.setLine(x1+w1, y1+(sp5.height()/2), w-scaled(244), scaled(402));
         y1 += (sp5.height()+s5);
         HelpSpec sp6 = helpUI.addBlueHelpText(x1, y1, w1, 2, text("MAIN_HELP_1F"));
-        sp6.setLine(x1+w1, y1+(sp6.height()/2), scaled(975), scaled(447));
+        sp6.setLine(x1+w1, y1+(sp6.height()/2), w-scaled(244), scaled(432));
 
-        int x2 = scaled(930);
-        int y2 = scaled(180);
+        int x2 = w-scaled(299);
+        int y2 = scaled(170);
         int w2 = scaled(280);
         HelpSpec sp7 = helpUI.addBlueHelpText(x2,y2,w2, 5, text("MAIN_HELP_1G"));
-        sp7.setLine(x2+(w2/2), y2+sp7.height(), scaled(1075), scaled(320));
+        sp7.setLine(x2+(w2/2), y2+sp7.height(), w-scaled(154), scaled(310));
 
-        int x3 = scaled(925);
-        int y3 = scaled(500);
+        int x3 = w-scaled(304);
+        int y3 = scaled(490);
         int w3 = scaled(300);
         HelpSpec sp8 = helpUI.addBlueHelpText(x3,y3,w3, 4, text("MAIN_HELP_1H"));
-        sp8.setLine(x3+(w2*3/4), y3, scaled(1175), scaled(455));        
+        sp8.setLine(x3+(w2*3/4), y3, w-scaled(54), scaled(430));        
 
         if (showTreasuryResearchBar()) {
             int x12 = scaled(115);
             int y12 = scaled(440);
             int w12 = scaled(220);
             HelpSpec sp12 = helpUI.addBlueHelpText(x12, y12, w12, 3, text("MAIN_HELP_2L"));
-            sp12.setLine(x12, y12+(sp12.height()/2), s55, scaled(470));
+            sp12.setLine(x12, y12+(sp12.height()/2), s45, h-scaled(298));
 
             int x13 = scaled(120);
             int y13 = scaled(540);
             int w13 = scaled(220);
             HelpSpec sp13 = helpUI.addBlueHelpText(x13, y13, w13, 3, text("MAIN_HELP_2M"));
-            sp13.setLine(x13, y13+(sp13.height()/2), s55, scaled(595));
+            sp13.setLine(x13, y13+(sp13.height()/2), s45, h-scaled(173));
         }
     }
     private void loadEmpireColonyHelpFrame2() {
         HelpUI helpUI = RotPUI.helpUI();
+        
+        int w = getWidth();
 
         helpUI.clear();
         HelpSpec s0 = helpUI.addBlueHelpText(s100, s10, scaled(350), 2, text("MAIN_HELP_ALL"));
-        s0.setLine(s100, s30, s40, s30);
+        s0.setLine(s100, s25, s30, s25);
 
-        int x1= scaled(530);
-        int y1 = scaled(190);
+        int x1= w-scaled(700);
+        int y1 = scaled(175);
         int w1= scaled(400);
         HelpSpec sp1 = helpUI.addBlueHelpText(x1, y1, w1, 2, text("MAIN_HELP_2A"));
-        sp1.setLine(x1+w1, y1+sp1.height()-s5, scaled(1060), y1+sp1.height()-s5, scaled(1070), scaled(245));
+        sp1.setLine(x1+w1, y1+sp1.height()-s5, w-scaled(169), y1+sp1.height()-s5, w-scaled(159), scaled(230));
 
-        int x2= scaled(530);
-        int y2 = scaled(250);
+        int x2= x1;
+        int y2 = scaled(235);
         int w2= scaled(400);
         HelpSpec sp2 = helpUI.addBlueHelpText(x2, y2, w2, 2, text("MAIN_HELP_2B"));
-        sp2.setLine(x2+w2, y2+s15, scaled(1150), y2+s15, scaled(1165), scaled(260));
+        sp2.setLine(x2+w2, y2+s15, w-scaled(64), y2+s15, w-scaled(49), scaled(245));
 
-        int x4= scaled(530);
-        int y4 = scaled(310);
+        int x4= x1;
+        int y4 = scaled(295);
         int w4= scaled(400);
         HelpSpec sp4 = helpUI.addBlueHelpText(x4, y4, w4, 2, text("MAIN_HELP_2D"));
-        sp4.setLine(x4+w4, y4+(sp4.height()/2), scaled(1145), scaled(280));
+        sp4.setLine(x4+w4, y4+(sp4.height()/2), w-scaled(74), scaled(265));
 
-        int x3= scaled(530);
-        int y3 = scaled(370);
+        int x3= x1;
+        int y3 = scaled(355);
         int w3= scaled(400);
         HelpSpec sp3 = helpUI.addBlueHelpText(x3, y3, w3, 2, text("MAIN_HELP_2C"));
-        sp3.setLine(x3+w3, y3+(sp3.height()/2), scaled(1180), scaled(285));
+        sp3.setLine(x3+w3, y3+(sp3.height()/2), w-scaled(49), scaled(270));
 
-
-        int x5= scaled(530);
-        int y5 = scaled(430);
+        int x5= x1;
+        int y5 = scaled(415);
         int w5 = scaled(400);
         HelpSpec sp5 = helpUI.addBlueHelpText(x5, y5, w5, 4, text("MAIN_HELP_2E"));
-        sp5.setLine(x5+w5, y5+(sp5.height()/2), scaled(1015), scaled(517));
+        sp5.setLine(x5+w5, y5+(sp5.height()/2), w-scaled(214), scaled(502));
 
-        int x6 = scaled(580);
-        int y6 = scaled(540);
+        int x6 = x1;
+        int y6 = scaled(525);
         int w6 = scaled(350);
         HelpSpec sp6 = helpUI.addBlueHelpText(x6, y6, w6, 2, text("MAIN_HELP_2F"));
-        sp6.setLine(x6+w6, y6+(sp6.height()/2), scaled(1060), y6+(sp6.height()/2), scaled(1070), scaled(560));
+        sp6.setLine(x6+w6, y6+(sp6.height()/2), w-scaled(154), y6+(sp6.height()/2), w-scaled(144), scaled(545));
 
-        int x7 = scaled(650);
-        int y7 = scaled(600);
+        int x7 = w-scaled(579);
+        int y7 = scaled(585);
         int w7 = scaled(280);
         HelpSpec sp7 = helpUI.addBlueHelpText(x7,y7,w7, 4, text("MAIN_HELP_2G"));
-        sp7.setLine(x7+w7, y7+(sp7.height()/4), scaled(970), scaled(595));
+        sp7.setLine(x7+w7, y7+(sp7.height()/4), w-scaled(244), scaled(580));
 
-        int x8 = scaled(960);
-        int y8 = scaled(620);
+        int x8 = w-scaled(269);
+        int y8 = scaled(605);
         int w8 = scaled(250);
         HelpSpec sp8 = helpUI.addBlueHelpText(x8,y8,w8, 3, text("MAIN_HELP_2H"));
-        sp8.setLine(scaled(1165), y8, scaled(1165), scaled(607));    
+        sp8.setLine(w-scaled(64), y8, w-scaled(64), scaled(582));    
 
-        int x9 = scaled(530);
-        int y9 = scaled(130);
+        int x9 = x1;
+        int y9 = scaled(115);
         int w9 = scaled(400);
         HelpSpec sp9 = helpUI.addBlueHelpText(x9, y9, w9, 2, text("MAIN_HELP_2I"));
-        sp9.setLine(x9+w9, y9+(sp9.height()/2), scaled(1040), scaled(220));
+        sp9.setLine(x9+w9, y9+(sp9.height()/2), w-scaled(174), scaled(205));
 
-        int x10 = scaled(530);
-        int y10 = scaled(70);
+        int x10 = x1;
+        int y10 = scaled(55);
         int w10 = scaled(400);
         HelpSpec sp10 = helpUI.addBlueHelpText(x10, y10, w10, 2, text("MAIN_HELP_2J"));
-        sp10.setLine(x10+w10, y10+(sp10.height()/2), scaled(1165), scaled(220));
+        sp10.setLine(x10+w10, y10+(sp10.height()/2), w-scaled(49), scaled(205));
 
-        int x11 = scaled(1050);
-        int y11 = scaled(40);
+        int x11 = w-scaled(179);
+        int y11 = scaled(25);
         int w11 = scaled(170);
         HelpSpec sp11 = helpUI.addBlueHelpText(x11, y11, w11, 4, text("MAIN_HELP_2K"));
-        sp11.setLine(scaled(1195), y11+sp11.height(), scaled(1195), scaled(185));
+        sp11.setLine(w-scaled(34), y11+sp11.height(), w-scaled(25), scaled(170));
 
     }
     private void loadButtonBarHelpFrame() {
         HelpUI helpUI = RotPUI.helpUI();
         helpUI.clear();
         HelpSpec s0 = helpUI.addBlueHelpText(s100, s10, scaled(350), 2, text("MAIN_HELP_ALL"));
-        s0.setLine(s100, s30, s40, s30);
+        s0.setLine(s100, s25, s30, s25);
 
+        int h = getHeight();
+        int w = getWidth();
+        
+        int buttonW = buttonPanel.buttonW();
+        
         int x1 = scaled(25);
         int y1 = scaled(480);
         int w1 = scaled(210);
+        int y1a = h - scaled(65);
+        int x1a = x1+(w1/4);
         HelpSpec sp1 = helpUI.addBlueHelpText(x1, y1, w1, 4, text("MAIN_HELP_3A"));
-        sp1.setLine(x1+(w1/4), y1+sp1.height(), x1+(w1/4), scaled(702));
+        sp1.setLine(x1a, y1+sp1.height(), x1a, y1a);
 
-        int x2 = scaled(115);
+        int x2 = x1+(buttonW*2/3);
         int y2 = scaled(590);
+        int x2a = x2+(w1/2);
         HelpSpec sp2 = helpUI.addBlueHelpText(x2, y2, w1, 4, text("MAIN_HELP_3B"));
-        sp2.setLine(x2+(w1/2), y2+sp2.height(), x2+(w1/2), scaled(702));
+        sp2.setLine(x2a, y2+sp2.height(), x2a, y1a);
 
-        int x3 = scaled(250);
+        int x3 = x2+buttonW;
         HelpSpec sp3 = helpUI.addBlueHelpText(x3, y1, w1, 4, text("MAIN_HELP_3C"));
-        sp3.setLine(x3+(w1/2), y1+sp3.height(), x3+(w1/2), scaled(702));
+        sp3.setLine(x3+(w1/2), y1+sp3.height(), x3+(w1/2), y1a);
 
-        int x4 = scaled(385);
+        int x4 = x3+buttonW;
         HelpSpec sp4 = helpUI.addBlueHelpText(x4, y2, w1, 4, text("MAIN_HELP_3D"));
-        sp4.setLine(x4+(w1/2), y2+sp4.height(), x4+(w1/2), scaled(702));
+        sp4.setLine(x4+(w1/2), y2+sp4.height(), x4+(w1/2), y1a);
 
-        int x5 = scaled(520);
+        int x5 = x4+buttonW;
         HelpSpec sp5 = helpUI.addBlueHelpText(x5, y1, w1, 4, text("MAIN_HELP_3E"));
-        sp5.setLine(x5+(w1/2), y1+sp5.height(), x5+(w1/2), scaled(702));
+        sp5.setLine(x5+(w1/2), y1+sp5.height(), x5+(w1/2), y1a);
 
-        int x6 = scaled(655);
+        int x6 = x5+buttonW;
         HelpSpec sp6 = helpUI.addBlueHelpText(x6, y2, w1, 4, text("MAIN_HELP_3F"));
-        sp6.setLine(x6+(w1/2), y2+sp6.height(), x6+(w1/2), scaled(702));
+        sp6.setLine(x6+(w1/2), y2+sp6.height(), x6+(w1/2), y1a);
 
-        int x7 = scaled(790);
+        int x7 = x6+buttonW;
         HelpSpec sp7 = helpUI.addBlueHelpText(x7, y1, w1, 4, text("MAIN_HELP_3G"));
-        sp7.setLine(x7+(w1/2), y1+sp7.height(), x7+(w1/2), scaled(702));
+        sp7.setLine(x7+(w1/2), y1+sp7.height(), x7+(w1/2), y1a);
 
-        int x8 = scaled(965);
+        int x8 = w-scaled(264);
         int w8 = scaled(150);
         HelpSpec sp8 = helpUI.addBlueHelpText(x8, y2, w8, 3, text("MAIN_HELP_3H"));
-        sp8.setLine(x8+(w8/2), y2+sp8.height(), x8+(w8/2), scaled(702));
+        sp8.setLine(x8+(w8/2), y2+sp8.height(), x8+(w8/2), y1a);
 
-        int x9 = scaled(1030);
+        int x9 = w-scaled(220);
         int w9 = scaled(200);
         HelpSpec sp9 = helpUI.addBlueHelpText(x9, y1, w9, 4, text("MAIN_HELP_3I"));
-        sp9.setLine(scaled(1150), y1+sp9.height(), scaled(1150), scaled(680));
+        sp9.setLine(w-scaled(79), y1+sp9.height(), w-scaled(79), h-scaled(100));
 
         int x10 = scaled(115);
         int y10 = scaled(125);
         int w10 = scaled(250);
         HelpSpec sp10 = helpUI.addBlueHelpText(x10, y10, w10, 3, text("MAIN_HELP_3J"));
-        sp10.setLine(x10, y10+(sp10.height()/2), s55, y10+(sp10.height()/2));
+        sp10.setLine(x10, y10+(sp10.height()/2), s45, y10+(sp10.height()/2));
 
     }
     @Override
