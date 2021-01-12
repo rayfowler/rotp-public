@@ -41,13 +41,13 @@ public final class ShipSpecialProjector extends ShipSpecial {
         float armorMod = tech().armorMod(count);
         if (target.isShip()) {
             CombatStackShip st = (CombatStackShip) target;
-            st.maxHits = st.maxHits*armorMod;
-            st.hits = min(st.hits, st.maxHits);
+            st.maxHits = (int) st.maxHits*armorMod;
+            st.hits = min(st.hits-1, st.maxHits);
         }
         else if (target.isColony()) {
             CombatStackColony st = (CombatStackColony) target;
-            st.maxHits = st.maxHits*armorMod;
-            st.hits = min(st.hits, st.maxHits);
+            st.maxHits = (int) st.maxHits*armorMod;
+            st.hits = min(st.hits-1, st.maxHits);
         }
         if (source.mgr.showAnimations())
             tech().drawSuccessfulAttack(source, target, source.weaponNum(this), 0);
