@@ -434,6 +434,8 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         boolean showBattle = shipBattleUI.init(mgr, combatFlag);
         if (showBattle)
             selectPanel(SHIP_BATTLE_PANEL, shipBattleUI);
+        else
+            session().resumeNextTurnProcessing();
     }
     public void promptForColonization(int sysId, ShipFleet fl, ShipDesign d) {
         try {
