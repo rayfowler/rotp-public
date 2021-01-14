@@ -284,7 +284,7 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
         if (!messageRemarkDetail.isEmpty()) {
             g.setColor(Color.lightGray);
             int fontH = unscaled(g.getFontMetrics().getHeight());
-            g.setFont(narrowFont(max(14,fontH-4)));
+            g.setFont(narrowFont(max(12,fontH-4)));
             int detailW = g.getFontMetrics().stringWidth(messageRemarkDetail);
             int x1a = x1+lastLineW+s10;
             if ((detailW+x1a) > w1) {
@@ -320,8 +320,10 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
         // calculate option font size based on line height
         int fontSize = unscaled(optionLineH) - 2;
 
-        if (fontSize < 10) 
-            err("Font too small. size:", str(fontSize), "  for messageText:  ", displayText);
+        if (fontSize < 10) {
+            //err("Font too small. size:", str(fontSize), "  for messageText:  ", displayText);
+            fontSize = 10;
+        }
 
         // draw data lines, smaller text & indented
         int dataLines = message.numDataLines();
