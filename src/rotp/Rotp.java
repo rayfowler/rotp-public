@@ -17,6 +17,8 @@ package rotp;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
 import java.awt.Toolkit;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -50,6 +52,7 @@ public class Rotp {
     public static int actualAlloc = -1;
     public static boolean reloadRecentSave = false;
     
+    static GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
     public static void main(String[] args) {
         frame = new JFrame("Remnants of the Precursors");
         if (args.length == 0) {
@@ -76,11 +79,14 @@ public class Rotp {
         if (UserPreferences.fullScreen()) {
             frame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
             frame.setUndecorated(true);
+            device.setFullScreenWindow(frame);
+            resizeAmt();
         }
         else {
             frame.setResizable(false);
+            device.setFullScreenWindow(null);
+            setFrameSize();
         }
-        setFrameSize();
 
         if (reloadRecentSave) 
             GameSession.instance().loadRecentSession(false);
