@@ -143,7 +143,7 @@ public final class MainButtonPanel extends BasePanel implements MouseListener, M
         g.setFont(narrowFont(28));
         int sw = g.getFontMetrics().stringWidth(label);
         int x0 = x+((w-sw)/2);
-        drawShadowedString(g, label, 3, x0, y+h-s15, textShadowC, c0);
+        drawShadowedString(g, label, 3, x0, y+h-s18, textShadowC, c0);
 
         if ((hoverBox == buttonBox[i])
         || (depressedBox == buttonBox[i])) {
@@ -177,7 +177,7 @@ public final class MainButtonPanel extends BasePanel implements MouseListener, M
         int sw = g.getFontMetrics().stringWidth(label);
         int x0 = x+((w-sw)/2);
         g.setColor(buttonTextC);
-        drawShadowedString(g, label, 3, x0, y+h-s15, textShadowC, nextTurnTextC);
+        drawShadowedString(g, label, 3, x0, y+h-s18, textShadowC, nextTurnTextC);
     }
     private void clickButton(int i) {
         RotPUI.instance().mainUI().cancel();
