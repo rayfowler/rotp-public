@@ -157,9 +157,9 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         int s370 = scaled(370);
         int s435 = scaled(435);
         int x0 = s20;
-        int x1 = w-scaled(349);
+        int x1 = w-scaled(299);
         int w0 = x1-x0-s20;
-        int w1 = scaled(329);
+        int w1 = scaled(279);
 
         drawRaceIconBase(g, emp, s55, s25, s210, s210);
         drawPlayerBaseInfo(g, emp, s260, s80, s370, scaled(130));
@@ -189,9 +189,9 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         int s370 = scaled(370);
         
         int x0 = s20;
-        int x1 = w-scaled(349);
+        int x1 = w-scaled(299);
         int w0 = x1-x0-s20;
-        int w1 = scaled(329);
+        int w1 = scaled(279);
 
         drawRaceIconBase(g, emp, s55, s25, s210, s210);
         drawAIBaseInfo(g, emp, s260, s80, s370, scaled(130));
