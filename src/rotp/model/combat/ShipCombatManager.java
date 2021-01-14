@@ -573,6 +573,12 @@ public class ShipCombatManager implements Base {
             results.addEmpire(c);
     }
     private void placeAsteroids() {
+        // clear the asteroid map before starting
+        for (int x=0;x<=maxX;x++) {
+            for (int y=0;y<=maxY;y++)
+                asteroidMap[x][y] = false;
+        }
+        
         boolean isAsteroidSystem = system().planet().type().isAsteroids();
         CombatStackColony colony = results().colonyStack;
         int beltW = isAsteroidSystem ? 8: 4;
