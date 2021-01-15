@@ -138,6 +138,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         cancelHelp();
     }
     private void loadHelpUI() {
+        int w = getWidth();
         HelpUI helpUI = RotPUI.helpUI();
         helpUI.clear();
 
@@ -170,29 +171,24 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y5, w5, 5, text("TECH_HELP_1E"));
         sp5.setLine(scaled(575), s70, scaled(675), y5, scaled(755), s70);
         
-        int x6 = scaled(780);
+        int x6 = w-scaled(450);
         int w6 = scaled(190);
         int y6 = scaled(80);
         HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 5, text("TECH_HELP_1F"));
-        sp6.setLine(x6+w6, scaled(140), scaled(1040), scaled(140));
+        sp6.setLine(x6+w6, scaled(140), w-scaled(190), scaled(140));
         
-        int x7 = scaled(780);
-        int w7 = scaled(190);
         int y7 = scaled(210);
-        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7,y7,w7, 5, text("TECH_HELP_1G"));
-        sp7.setLine(x7+w7, y7, scaled(995), scaled(195));
+        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x6,y7,w6, 5, text("TECH_HELP_1G"));
+        sp7.setLine(x6+w6, y7, w-scaled(235), scaled(195));
         
-        int x8 = scaled(780);
-        int w8 = scaled(190);
         int y8 = scaled(360);
-        HelpUI.HelpSpec sp8 = helpUI.addBrownHelpText(x8,y8,w8, 6, text("TECH_HELP_1H"));
-        sp8.setLine(x8+w8, y8+(sp8.height()/2), scaled(995), y8+(sp8.height()/2));
+        HelpUI.HelpSpec sp8 = helpUI.addBrownHelpText(x6,y8,w6, 6, text("TECH_HELP_1H"));
+        sp8.setLine(x6+w6, y8+(sp8.height()/2), w-scaled(235), y8+(sp8.height()/2));
 
-        int x9 = scaled(740);
-        int w9 = scaled(190);
+        int x9 = w-scaled(490);
         int y9 = scaled(580);
-        HelpUI.HelpSpec sp9 = helpUI.addBrownHelpText(x9,y9,w9, 4, text("TECH_HELP_1I"));
-        sp9.setLine(x9+w9, scaled(610), scaled(990), scaled(610));
+        HelpUI.HelpSpec sp9 = helpUI.addBrownHelpText(x9,y9,w6, 4, text("TECH_HELP_1I"));
+        sp9.setLine(x9+w6, scaled(610), w-scaled(240), scaled(610));
 
         helpUI.open(this);
     }
@@ -820,6 +816,9 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         int k = e.getKeyCode();
         int mods = e.getModifiersEx();
         switch (k) {
+            case KeyEvent.VK_F1:
+                showHelp();
+                return;
             case KeyEvent.VK_EQUALS:
                 equalize();
                 return;
