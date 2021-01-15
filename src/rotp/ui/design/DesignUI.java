@@ -460,6 +460,7 @@ public class DesignUI extends BasePanel {
         sp8.setLine(x8, y8+(sp8.height()/2), scaled(400), y8+(sp8.height()/2));
     }
     private void loadHelpFrame4A() {
+        int w = getWidth();
         HelpUI helpUI = RotPUI.helpUI();
 
         helpUI.clear();
@@ -493,20 +494,20 @@ public class DesignUI extends BasePanel {
         
         if (firstActive >= 0) {
             int topY = scaled(y[firstActive]);
-            int x4 = scaled(670);
+            int x4 = w-scaled(560);
             int w4 = scaled(280);
             int y4 = topY;
             HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y4, w4, 2, text("SHIP_DESIGN_HELP_4C"));
-            sp4.setLine(x4+w4, y4+(sp4.height()/2), scaled(1000), y4+(sp4.height()/2));
+            sp4.setLine(x4+w4, y4+(sp4.height()/2), w-scaled(230), y4+(sp4.height()/2));
         }
         
         if (firstAvailable >= 0) {
             int topY = scaled(y[firstAvailable]);
-            int x5 = scaled(670);
+            int x5 = w-scaled(560);
             int w5 = scaled(280);
             int y5 = topY;
             HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y5, w5, 2, text("SHIP_DESIGN_HELP_4D"));
-            sp5.setLine(x5+w5, y5+(sp5.height()/2), scaled(1000), y5+(sp5.height()/2));
+            sp5.setLine(x5+w5, y5+(sp5.height()/2), w-scaled(230), y5+(sp5.height()/2));
         }
     }
     private void loadHelpFrame4B() {
