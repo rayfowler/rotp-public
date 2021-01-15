@@ -1473,7 +1473,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             int x0 = (w-sw)/2;
             drawShadowedString(g, title, 2, x0, s35, palette.black, SystemPanel.orangeText);
 
-            int margin = s10;
             int border = s10;
             int x1 = border; int w1 = w-x1-border;
             int y1 = s45; int h1 = h-y1-s10;
@@ -1495,59 +1494,69 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
 
             g.setFont(narrowFont(18));
 
+            // calculate column widthss
+            String lbl1 = text("PLANETS_COSTS_SHIPS");
+            int sw1 = g.getFontMetrics().stringWidth(lbl1);
+            String lbl2 = text("PLANETS_COSTS_BASES");
+            int sw2 = g.getFontMetrics().stringWidth(lbl2);
+            String lbl3 = text("PLANETS_COSTS_STARGATES");
+            int sw3 = g.getFontMetrics().stringWidth(lbl3);
+            int col1W = max(sw1,sw2,sw3);
+
+            String lbl4 = text("PLANETS_COSTS_SPYING");
+            int sw4 = g.getFontMetrics().stringWidth(lbl4);
+            String lbl5 = text("PLANETS_COSTS_SECURITY");
+            int sw5 = g.getFontMetrics().stringWidth(lbl5);
+            int col2W = max(sw4,sw5);
+
+            // s50 is width for data columns.. s20 is spacing
+            int totalW = col1W+col2W+s50+s50;
+            int spacing = (w-totalW)/3;
+            
             // LEFT COLUMN
-            w1 = (w*3/5)-x1-s5;
+            x1 = spacing;
+            w1 = col1W+s50;
             y1 = h-s60;
-            int midX = x1+w1-s50;
-            String lbl = text("PLANETS_COSTS_SHIPS");
-            sw = g.getFontMetrics().stringWidth(lbl);
-            drawShadowedString(g, lbl, 2, midX-sw, y1, SystemPanel.textShadowC, SystemPanel.whiteText);
+            int midX = x1+col1W;
+            drawShadowedString(g, lbl1, 2, midX-sw1, y1, SystemPanel.textShadowC, SystemPanel.whiteText);
 
             String val = text("PLANETS_AMT_PCT", fmt(100*player().shipMaintCostPerBC(),1));
             sw = g.getFontMetrics().stringWidth(val);
             g.setColor(palette.black);
-            g.drawString(val, midX+s50-sw, y1);
+            g.drawString(val, x1+w1-sw, y1);
 
             y1 = h-s40;
-            lbl = text("PLANETS_COSTS_BASES");
-            sw = g.getFontMetrics().stringWidth(lbl);
-            drawShadowedString(g, lbl, 2, midX-sw, y1, SystemPanel.textShadowC, SystemPanel.whiteText);
+            drawShadowedString(g, lbl2, 2, midX-sw2, y1, SystemPanel.textShadowC, SystemPanel.whiteText);
             val = text("PLANETS_AMT_PCT", fmt(100*player().missileBaseCostPerBC(),1));
             sw = g.getFontMetrics().stringWidth(val);
             g.setColor(palette.black);
-            g.drawString(val, midX+s50-sw, y1);
+            g.drawString(val, x1+w1-sw, y1);
 
 
             y1 = h-s20;
-            lbl = text("PLANETS_COSTS_STARGATES");
-            sw = g.getFontMetrics().stringWidth(lbl);
-            drawShadowedString(g, lbl, 2, midX-sw, y1, SystemPanel.textShadowC, SystemPanel.whiteText);
+            drawShadowedString(g, lbl3, 2, midX-sw3, y1, SystemPanel.textShadowC, SystemPanel.whiteText);
             val = text("PLANETS_AMT_PCT", fmt(100*player().stargateCostPerBC(),1));
             sw = g.getFontMetrics().stringWidth(val);
             g.setColor(palette.black);
-            g.drawString(val, midX+s50-sw, y1);
+            g.drawString(val, x1+w1-sw, y1);
 
             // RIGHT COLUMN
-            x1 = (w*2/3)+s20; w1 = w-x1-border-margin;
+            int x2 = x1+w1+spacing;
+            int w2 = col2W+s50;
             y1 = h-s60;
-            midX = x1+w1-s50;
-            lbl = text("PLANETS_COSTS_SPYING");
-            sw = g.getFontMetrics().stringWidth(lbl);
-            drawShadowedString(g, lbl, 2, midX-sw, y1, SystemPanel.textShadowC, SystemPanel.whiteText);
-
+            midX = x2+col2W;
+            drawShadowedString(g, lbl4, 2, midX-sw4, y1, SystemPanel.textShadowC, SystemPanel.whiteText);
             val = text("PLANETS_AMT_PCT", fmt(100*player().totalSpyCostPct(),1));
             sw = g.getFontMetrics().stringWidth(val);
             g.setColor(palette.black);
-            g.drawString(val, midX+s50-sw, y1);
+            g.drawString(val, x2+w2-sw, y1);
 
             y1 = h-s40;
-            lbl = text("PLANETS_COSTS_SECURITY");
-            sw = g.getFontMetrics().stringWidth(lbl);
-            drawShadowedString(g, lbl, 2, midX-sw, y1, SystemPanel.textShadowC, SystemPanel.whiteText);
+            drawShadowedString(g, lbl5, 2, midX-sw5, y1, SystemPanel.textShadowC, SystemPanel.whiteText);
             val = text("PLANETS_AMT_PCT", fmt(100*player().internalSecurityCostPct(),1));
             sw = g.getFontMetrics().stringWidth(val);
             g.setColor(palette.black);
-            g.drawString(val, midX+s50-sw, y1);
+            g.drawString(val, x2+w2-sw, y1);
         }
     }
     class TotalIncomeUI extends BasePanel {
