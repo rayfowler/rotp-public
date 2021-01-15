@@ -63,7 +63,7 @@ public final class TechEngineWarp extends Tech {
     public boolean providesShipComponent()  { return true; }
     @Override
     public boolean isObsolete(Empire c) {
-            return baseWarp < c.tech().topSpeed();
+            return warp() < c.tech().topSpeed();
     }
     @Override
     public float baseValue(Empire c) { return c.ai().scientist().baseValue(this); }
