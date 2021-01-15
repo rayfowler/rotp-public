@@ -95,6 +95,10 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
     private final List<Sprite> controls = new ArrayList<>();
     private final Map<Integer,Integer> expandEnRouteSystems = new HashMap<>();
     private final Map<Integer,Integer> expandGuardedSystems = new HashMap<>();
+    Rectangle exploreBox = new Rectangle();
+    Rectangle expandBox = new Rectangle();
+    Rectangle exploitBox = new Rectangle();
+    Rectangle exterminateBox = new Rectangle();
 
     // public for all
     public StarSystem hoverSystem;
@@ -285,7 +289,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         displayPanel.setBounds(w-rightPaneW-s5,s5,rightPaneW,scaled(673));
         
         exitButton = new ExitFleetsButton(rightPaneW, s60, s10, s2);
-        exitButton.setBounds(w-rightPaneW-s20,h-s83,rightPaneW,s60);
+        exitButton.setBounds(w-rightPaneW-s5,h-s83,rightPaneW,s60);
         
         setLayout(new BorderLayout());
         add(layers, BorderLayout.CENTER);
@@ -445,52 +449,46 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         HelpUI helpUI = RotPUI.helpUI();
         helpUI.clear();
         
+        int w = getWidth();
+        
         int x1 = scaled(150);
         int w1 = scaled(400);
         int y1 = scaled(300);
         HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 4, text("SYSTEMS_HELP_1A"));
 
-        int x2 = scaled(180);
+        int x2 = exploreBox.x;
         int w2 = scaled(190);
-        int y2 = scaled(80);
+        int y2 = s80;
+        int y2a = s44;
         HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 5, text("SYSTEMS_HELP_1B"));
-        sp2.setLine(scaled(340), y2, scaled(340), scaled(54));
+        sp2.setLine(x2+(w2/2), y2, x2+(w2/2), y2a);
         
-        int x3 = scaled(380);
-        int w3 = scaled(190);
-        int y3 = scaled(80);
-        HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 5, text("SYSTEMS_HELP_1C"));
-        sp3.setLine(scaled(515), y3, scaled(515), scaled(54));
+        int x3 = expandBox.x;
+        HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y2, w2, 5, text("SYSTEMS_HELP_1C"));
+        sp3.setLine(x3+(w2/2), y2, x3+(w2/2), y2a);
         
-        int x4 = scaled(580);
-        int w4 = scaled(190);
-        int y4 = scaled(80);
-        HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y4, w4, 5, text("SYSTEMS_HELP_1D"));
-        sp4.setLine(scaled(690), y4, scaled(690), scaled(54));
+        int x4 = exploitBox.x;
+        HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y2, w2, 5, text("SYSTEMS_HELP_1D"));
+        sp4.setLine(x4+(w2/2), y2, x4+(w2/2), y2a);
         
-        int x5 = scaled(780);
-        int w5 = scaled(190);
-        int y5 = scaled(80);
-        HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y5, w5, 5, text("SYSTEMS_HELP_1E"));
-        sp5.setLine(scaled(865), y5, scaled(865), scaled(54));
+        int x5 = exterminateBox.x;
+        HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y2, w2, 5, text("SYSTEMS_HELP_1E"));
+        sp5.setLine(x5+(w2/2), y2, x5+(w2/2), y2a);
         
-        int x6 = scaled(735);
+        int x6 = w-scaled(494);
+        int x6a = w-scaled(245);
         int w6 = scaled(210);
         int y6 = scaled(220);
         HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 4, text("SYSTEMS_HELP_1F"));
-        sp6.setLine(x6+w6, y6+(sp6.height()/2), scaled(970), y6+(sp6.height()/2));
+        sp6.setLine(x6+w6, y6+(sp6.height()/2), x6a, y6+(sp6.height()/2));
         
-        int x7 = scaled(735);
-        int w7 = scaled(210);
         int y7 = scaled(335);
-        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7,y7,w7, 4, text("SYSTEMS_HELP_1G"));
-        sp7.setLine(x7+w7, y7+(sp7.height()/2), scaled(970), y7+(sp7.height()/2));
+        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x6,y7,w6, 4, text("SYSTEMS_HELP_1G"));
+        sp7.setLine(x6+w6, y7+(sp7.height()/2), x6a, y7+(sp7.height()/2));
         
-        int x8 = scaled(735);
-        int w8 = scaled(210);
         int y8 = scaled(470);
-        HelpUI.HelpSpec sp8 = helpUI.addBrownHelpText(x8,y8,w8, 4, text("SYSTEMS_HELP_1H"));
-        sp8.setLine(x8+w8, y8+(sp8.height()/2), scaled(970), y8+(sp8.height()/2));
+        HelpUI.HelpSpec sp8 = helpUI.addBrownHelpText(x6,y8,w6, 4, text("SYSTEMS_HELP_1H"));
+        sp8.setLine(x6+w6, y8+(sp8.height()/2), x6a, y8+(sp8.height()/2));
 
         helpUI.open(this);
     }
@@ -903,10 +901,6 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         }
         Rectangle hoverBox;
         Rectangle helpBox = new Rectangle();
-        Rectangle exploreBox = new Rectangle();
-        Rectangle expandBox = new Rectangle();
-        Rectangle exploitBox = new Rectangle();
-        Rectangle exterminateBox = new Rectangle();
         Area textureArea;
 
         private void initModel() {
@@ -945,22 +939,23 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
             g.drawString(title, x0,y0);
 
             int tabW = (w-titleW-titleSpacing-(6*gap)-helpW)/4;
+            int tabSpacing = tabW+gap;
 
             x0 += (titleW+titleSpacing);
             drawTab(g,x0,0,tabW,h,dipLabel, exploreBox, selectedTab.equals(exploreTab));
             textureArea = new Area(new RoundRectangle2D.Float(x0,s10,tabW,h-s10,h/4,h/4));
 
-            x0 += (tabW+gap);
+            x0 += tabSpacing;
             drawTab(g,x0,0,tabW,h,intLabel, expandBox, selectedTab.equals(expandTab));
             Area tab2Area = new Area(new RoundRectangle2D.Float(x0,s10,tabW,h-s10,h/4,h/4));
             textureArea.add(tab2Area);
 
-            x0 += (tabW+gap);
+            x0 += tabSpacing;
             drawTab(g,x0,0,tabW,h,milLabel, exploitBox, selectedTab.equals(exploitTab));
             Area tab3Area = new Area(new RoundRectangle2D.Float(x0,s10,tabW,h-s10,h/4,h/4));
             textureArea.add(tab3Area);
 
-            x0 += (tabW+gap);
+            x0 += tabSpacing;
             drawTab(g,x0,0,tabW,h,statusLabel, exterminateBox, selectedTab.equals(exterminateTab));
             Area tab4Area = new Area(new RoundRectangle2D.Float(x0,s10,tabW,h-s10,h/4,h/4));
             textureArea.add(tab4Area);
