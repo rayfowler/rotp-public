@@ -455,20 +455,23 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         int y1 = scaled(300);
         HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 4, text("SYSTEMS_HELP_1A"));
 
-        int x2 = exploreBox.x;
+        int x2 = exploreBox.x-s90;
         int w2 = scaled(190);
+        int x2a = x2+(w2/2)+s45;
         int y2 = s80;
         int y2a = s44;
         HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 5, text("SYSTEMS_HELP_1B"));
-        sp2.setLine(x2+(w2/2), y2, x2+(w2/2), y2a);
+        sp2.setLine(x2a, y2, x2a, y2a);
         
-        int x3 = expandBox.x;
+        int x3 = expandBox.x-s60;
+        int x3a = x3+(w2/2)+s30;
         HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y2, w2, 5, text("SYSTEMS_HELP_1C"));
-        sp3.setLine(x3+(w2/2), y2, x3+(w2/2), y2a);
+        sp3.setLine(x3a, y2, x3a, y2a);
         
-        int x4 = exploitBox.x;
+        int x4 = exploitBox.x-s30;
+        int x4a = x4+(w2/2)+s15;
         HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y2, w2, 5, text("SYSTEMS_HELP_1D"));
-        sp4.setLine(x4+(w2/2), y2, x4+(w2/2), y2a);
+        sp4.setLine(x4a, y2, x4a, y2a);
         
         int x5 = exterminateBox.x;
         HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y2, w2, 5, text("SYSTEMS_HELP_1E"));
