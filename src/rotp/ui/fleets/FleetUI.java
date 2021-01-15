@@ -574,7 +574,7 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         dataPanel.setBounds(w-rightPaneW-s5,s5,rightPaneW,scaled(673));
         
         exitButton = new ExitFleetsButton(rightPaneW, s60, s10, s2);
-        exitButton.setBounds(w-rightPaneW-s20,h-s83,rightPaneW,s60);
+        exitButton.setBounds(w-rightPaneW-s5,h-s83,rightPaneW,s60);
 
         setLayout(new BorderLayout());
         add(layers, BorderLayout.CENTER);
@@ -837,6 +837,7 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         }
     }    
     private void loadHelpFrame1() {
+        int w = getWidth();
         HelpUI helpUI = RotPUI.helpUI();
         helpUI.clear();
         int x0 = scaled(75);
@@ -844,45 +845,44 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         int y0 = scaled(200);
         HelpUI.HelpSpec sp0 = helpUI.addBrownHelpText(x0, y0, w0, 5, text("FLEETS_HELP_ALL"));
 
-        int x1 = scaled(530);
+        int x1 = w-scaled(700);
         int w1 = scaled(415);
-        int y1 = scaled(20);
+        int y1 = s20;
+        int x1a = w-scaled(250);
         HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 4, text("FLEETS_HELP_1A"));
-        sp1.setLine(x1+w1, y1+(sp1.height()/2), scaled(980), scaled(80));
+        sp1.setLine(x1+w1, y1+(sp1.height()/2), x1a, s80);
         
-        int x2 = scaled(585);
+        int x2 = w-scaled(650);
         int w2 = scaled(360);
         int y2 = scaled(120);
         HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 3, text("FLEETS_HELP_1B"));
-        sp2.setLine(x2+w2, y2+(sp2.height()/2), scaled(980), scaled(145));
+        sp2.setLine(x2+w2, y2+(sp2.height()/2), x1a, scaled(145));
         
-        int x3 = scaled(585);
-        int w3 = scaled(360);
         int y3 = scaled(200);
-        HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 2, text("FLEETS_HELP_1C"));
-        sp3.setLine(x3+w3, y3+(sp3.height()/2), scaled(980), scaled(215));
+        HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x2, y3, w2, 2, text("FLEETS_HELP_1C"));
+        sp3.setLine(x2+w2, y3+(sp3.height()/2), x1a, scaled(215));
         
-        int x4 = scaled(585);
-        int w4 = scaled(360);
         int y4 = scaled(265);
-        HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y4, w4, 4, text("FLEETS_HELP_1D"));
-        sp4.setLine(x4+w4, scaled(280), scaled(980), scaled(270));
+        HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x2, y4, w2, 4, text("FLEETS_HELP_1D"));
+        sp4.setLine(x2+w2, scaled(280), x1a, scaled(270));
         
-        int x5 = scaled(735);
+        int x5 = w-scaled(494);
         int w5 = scaled(210);
         int y5 = scaled(370);
         HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5,y5,w5, 4, text("FLEETS_HELP_1E"));
-        sp5.setLine(x5+w5, scaled(385), scaled(970),scaled(345));
+        sp5.setLine(x5+w5, y5, x1a, scaled(335));
         
-        int x6 = scaled(985);
+        int x6 = w-scaled(244);
         int w6 = scaled(210);
         int y6 = scaled(370);
+        int x6a = w-scaled(50);
         HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6,y6,w6, 4, text("FLEETS_HELP_1F"));
-        sp6.setLine(scaled(1180), y6, scaled(1180), scaled(305));
+        sp6.setLine(x6a, y6, x6a, scaled(300));
 
         helpUI.open(this);
     }
     private void loadHelpFrame2() {
+        int w = getWidth();
         HelpUI helpUI = RotPUI.helpUI();
         helpUI.clear();
         int x0 = scaled(75);
@@ -890,35 +890,33 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         int y0 = scaled(200);
         HelpUI.HelpSpec sp0 = helpUI.addBrownHelpText(x0, y0, w0, 5, text("FLEETS_HELP_ALL"));
 
-        int x1 = scaled(530);
+        int x1 = w-scaled(700);
         int w1 = scaled(415);
         int y1 = scaled(330);
+        int x1a = w-scaled(244);
         HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 4, text("FLEETS_HELP_2A"));
-        sp1.setLine(x1+w1, scaled(385), scaled(985), scaled(415));
+        sp1.setLine(x1+w1, scaled(385), x1a, scaled(405));
         
-        int x2 = scaled(585);
+        int x2 = w-scaled(650);
         int w2 = scaled(360);
         int y2 = scaled(430);
+        int x2a = w-scaled(240);
         HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 3, text("FLEETS_HELP_2B"));
-        sp2.setLine(x2+w2, scaled(465), scaled(980), scaled(465));
+        sp2.setLine(x2+w2, scaled(455), x2a, scaled(455));
         
-        int x3 = scaled(585);
-        int w3 = scaled(360);
         int y3 = scaled(510);
-        HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 2, text("FLEETS_HELP_2C"));
-        sp3.setLine(x3+w3, scaled(525), scaled(980), scaled(525));
+        HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x2, y3, w2, 2, text("FLEETS_HELP_2C"));
+        sp3.setLine(x2+w2, scaled(515), x2a, scaled(515));
         
-        int x4 = scaled(585);
-        int w4 = scaled(360);
         int y4 = scaled(575);
-        HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x4, y4, w4, 4, text("FLEETS_HELP_2D"));
-        sp4.setLine(x4+w4, scaled(625), scaled(980), scaled(625));
+        HelpUI.HelpSpec sp4 = helpUI.addBrownHelpText(x2, y4, w2, 4, text("FLEETS_HELP_2D"));
+        sp4.setLine(x2+w2, scaled(615), x2a, scaled(615));
         
-        int x5 = scaled(735);
+        int x5 = w-scaled(495);
         int w5 = scaled(210);
         int y5 = scaled(670);
         HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5,y5,w5, 4, text("FLEETS_HELP_2E"));
-        sp5.setLine(x5+w5, scaled(685), scaled(970),scaled(680));
+        sp5.setLine(x5+w5, scaled(685), x2a-s10, scaled(670));
 
         helpUI.open(this);
     }

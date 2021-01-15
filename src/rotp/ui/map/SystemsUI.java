@@ -355,7 +355,6 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
     public void hoveringOverSprite(Sprite o) {
         if (o == lastHoveringSprite())
             return;
-
         
         if (lastHoveringSprite() != null)
             lastHoveringSprite().mouseExit(map);
