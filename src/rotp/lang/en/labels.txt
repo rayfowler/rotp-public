@@ -1589,10 +1589,11 @@ RACES_HELP_3A                     | Increase the security tax to improve your ch
 RACES_HELP_3B                     | Provides direct access to manage your spies in all contacted empires.
 RACES_HELP_3C                     | All technologies known by other empires, as gathered by your spies. Technologies that you do not know are shown in yellow.
 RACES_HELP_4A                     | Set the number of spy networks you want to establish in the selected empire, and the amount you wish to spend annually.
-RACES_HELP_4B                     | Set the orders for the spies infitrating the selected empire. Hide - gather data. Espionage - attempt to steal technology. Sabotage - incite rebellions or destroy factories and missile bases.
+RACES_HELP_4B                     | Set the orders for the spies infiltrating the selected empire. Hide - gather data. Espionage - attempt to steal technology. Sabotage - incite rebellions or destroy factories and missile bases.
 RACES_HELP_4C                     | All technologies known by the selected empire. Technologies that you do not know are shown in yellow.
 RACES_HELP_5A                     | The known number of ships in the fleet of the selected race, by hull size. This information will remain current as long as you have an active spy network in the selected empire.
 RACES_HELP_5B                     | The known capabilities of ship designs. Older designs may be out of service. This information is primarily gathered during ship combat.
+RACES_HELP_5C                     | The known defensive capabilities of the selected empire. 
 RACES_HELP_6A                     | This screen provides a current ranking, in various categories, of our empire compared to other known empires. This data is gathered from our spy networks within those empires.
 RACES_HELP_6A2                    | This screen provides a historical comparison, in various categories, of our empire to a selected empire. This data is gathered from our spy networks within those empires.
 RACES_HELP_6B                     | Fleet Strength - combines number and size of ships.
