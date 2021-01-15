@@ -851,8 +851,11 @@ public final class Empire implements Base, NamedObject, Serializable {
         return transports;
     }
     public float transportTravelSpeed(IMappedObject fr, IMappedObject to) {
-        float time = fr.travelTime(fr, to, tech().transportTravelSpeed());
+        if (!fr.passesThroughNebula(fr, to))
+            return tech().transportTravelSpeed();
+        
         float dist = fr.distanceTo(to);
+        float time = fr.travelTime(fr, to, tech().transportTravelSpeed());
         return dist/time;
     }
     public void checkForRebellionSpread() {
