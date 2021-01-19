@@ -75,6 +75,9 @@ public final class MainButtonPanel extends BasePanel implements MouseListener, M
         leftM = s1;
         botM = s2;
 
+        for (int i=0;i<buttonBox.length;i++)
+            buttonBox[i] = new Rectangle();
+
         addMouseListener(this);
         addMouseMotionListener(this);
     }
@@ -83,8 +86,6 @@ public final class MainButtonPanel extends BasePanel implements MouseListener, M
         midM = w-scaled(273);
         rightM = w-s2;
 
-        for (int i=0;i<buttonBox.length;i++)
-            buttonBox[i] = new Rectangle();
         Point2D start = new Point2D.Float(leftM, 0);
         Point2D end = new Point2D.Float(midM, 0);
         float[] dist = {0.0f, 0.5f, 1.0f};

@@ -214,12 +214,14 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         drawShadowedString(g, title2, 1, x0, y0, SystemPanel.blackText, Color.white);
 
         Empire pl = player();
-        int mgn = s20;
+        int leftM = 0;
+        int rightM = s40;
+        int centerSpace = s30;
         y0 += s15;
         int y1 = y0+s25;
-        int x1 = x0;
-        int boxW = (x+w - (3*mgn) - x1) / 2;
-        int x2 = x1 + s20 + mgn + boxW;
+        int x1 = x0 + leftM;
+        int boxW = (w-leftM-rightM-centerSpace) / 2;
+        int x2 = x1 + boxW + centerSpace;
         drawSizeBox(g, text("RACES_MILITARY_SMALL"),  pl.shipCount(ShipDesign.SMALL),  x1, y0, boxW, s25, false);
         drawSizeBox(g, text("RACES_MILITARY_LARGE"),  pl.shipCount(ShipDesign.LARGE),  x2, y0, boxW, s25, false);
         drawSizeBox(g, text("RACES_MILITARY_MEDIUM"), pl.shipCount(ShipDesign.MEDIUM), x1, y1, boxW, s25, false);
@@ -238,12 +240,14 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         EmpireView view = pl.viewForEmpire(emp);
         SpyNetwork.FleetView fv = view.spies().fleetView();
 
-        int mgn = s20;
+        int leftM = 0;
+        int rightM = s40;
+        int centerSpace = s30;
         y0 += s15;
         int y1 = y0+s25;
-        int x1 = x0 + s10;
-        int boxW = (x+w - (3*mgn) - x1) / 2;
-        int x2 = x1 + s30 + mgn + boxW;
+        int x1 = x0 + leftM;
+        int boxW = (w-leftM-rightM-centerSpace) / 2;
+        int x2 = x1 + boxW + centerSpace;
         drawSizeBox(g, text("RACES_MILITARY_SMALL"),  fv.small(),  x1, y0, boxW, s25, fv.noReport());
         drawSizeBox(g, text("RACES_MILITARY_LARGE"),  fv.large(),  x2, y0, boxW, s25, fv.noReport());
         drawSizeBox(g, text("RACES_MILITARY_MEDIUM"), fv.medium(), x1, y1, boxW, s25, fv.noReport());
@@ -710,12 +714,12 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
     private void drawSizeBox(Graphics g, String size, int count, int x, int y, int w, int h, boolean hideVal) {
         g.setColor(SystemPanel.blackText);
         g.setFont(narrowFont(20));
-        g.drawString(size, x+s8, y+h-s10);
+        g.drawString(size, x, y+h-s10);
 
         if (!hideVal) {
             String c = str(count);
             int sw = g.getFontMetrics().stringWidth(c);
-            g.drawString(c, x+w-sw-s10, y+h-s10);
+            g.drawString(c, x+w-sw, y+h-s10);
         }
     }
     @Override
