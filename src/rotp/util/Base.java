@@ -438,14 +438,22 @@ public interface Base {
         return shortFmt((int) d);
     }
     public default String shortFmt(int amt) {
+        // shows integer until 9999, then shows 3 digits of precision for higher numbers
+        // using K/M/B for thousands, millions and billions
         if (amt < 1e4)
             return str(amt);
+        else if (amt < 1e5) 
+            return text("NUM_FORMAT_THOUSANDS", df1.format(amt/1000f));       
         else if (amt < 1e6) {
             amt = amt/1000;
             return text("NUM_FORMAT_THOUSANDS", amt);            
         }
         else if (amt < 1e7) {
-            String amtStr =df1.format((float) amt/1e6);
+            String amtStr =df2.format(amt/1000000f);
+            return text("NUM_FORMAT_MILLIONS", amtStr);
+        }   
+        else if (amt < 1e8) {
+            String amtStr =df1.format(amt/1000000f);
             return text("NUM_FORMAT_MILLIONS", amtStr);
         }   
         else if (amt < 1e9) {
@@ -453,7 +461,11 @@ public interface Base {
             return text("NUM_FORMAT_MILLIONS", amt);
         }
         else if (amt < 1e10) {
-            String amtStr =df1.format((float) amt/1000000000);
+            String amtStr =df2.format(amt/1000000000f);
+            return text("NUM_FORMAT_BILLIONS", amtStr);
+        }
+        else if (amt < 1e11) {
+            String amtStr =df1.format(amt/1000000000f);
             return text("NUM_FORMAT_BILLIONS", amtStr);
         }
         else  {

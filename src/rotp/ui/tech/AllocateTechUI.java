@@ -300,11 +300,13 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
 
         int y6 = subPanelY+s93;
         g.setFont(plainFont(25));
-        String detailLine1 = text("TECH_EMPIRE_DETAIL_1", str(totalSpending), str(totalResearch));
+        String spending = shortFmt(totalSpending);
+        String research = shortFmt(totalResearch);
+        String detailLine1 = text("TECH_EMPIRE_DETAIL_1", spending, research);
         int detSW = g.getFontMetrics().stringWidth(detailLine1);
         int x6 = subPanelX+((subPanelW-detSW)/2);
         g.drawString(detailLine1, x6, y6);
-        String detailLine2 = text("TECH_EMPIRE_DETAIL_2", str(totalSpending), str(totalResearch));
+        String detailLine2 = text("TECH_EMPIRE_DETAIL_2", spending, research);
         detSW = g.getFontMetrics().stringWidth(detailLine2);
         y6 += s28;
         x6 = subPanelX+((subPanelW-detSW)/2);
@@ -469,7 +471,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         g.setColor(c3);
         g.fillPolygon(rightArrow[catNum]);
 
-        String rpText = text("TECH_TOTAL_RP",(int)cat.currentResearch(totalPlanetaryResearch()));
+        String rpText = text("TECH_TOTAL_RP",shortFmt(cat.currentResearch(totalPlanetaryResearch())));
         g.setColor(Color.black);
         g.setFont(plainFont(18));
         int rpSW = g.getFontMetrics().stringWidth(rpText);
