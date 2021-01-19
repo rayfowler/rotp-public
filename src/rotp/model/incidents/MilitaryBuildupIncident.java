@@ -31,7 +31,7 @@ public class MilitaryBuildupIncident extends DiplomaticIncident {
         empYou = ev.empire().id;
         dateOccurred = galaxy().currentYear();
         duration = 3;
-        severity = sev;
+        severity = max(-10, sev);
     }
     private String systemName() { return player().sv.name(sysId); }
     @Override

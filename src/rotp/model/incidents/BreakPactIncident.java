@@ -28,7 +28,7 @@ public class BreakPactIncident extends DiplomaticIncident {
     private BreakPactIncident(Empire e1, Empire e2) {
         empBreaker = e1.id;
         empMe = e2.id;
-        severity = -20;
+        severity = -15;
         dateOccurred = galaxy().currentYear();
         duration = 10;
     }

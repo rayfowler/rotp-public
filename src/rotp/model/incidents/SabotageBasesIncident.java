@@ -55,7 +55,7 @@ public class SabotageBasesIncident extends DiplomaticIncident {
         empSpy = ev.empire().id;
         sysId = m.starSystem().id;
         destroyed = m.missileBasesDestroyed();
-        severity = max(-60, (-5 * destroyed) + ev.embassy().currentSpyIncidentSeverity());
+        severity = max(-30, (-2 * destroyed) + ev.embassy().currentSpyIncidentSeverity());
         
         if (ev.owner().isPlayer()
         && !ev.owner().isAIControlled()

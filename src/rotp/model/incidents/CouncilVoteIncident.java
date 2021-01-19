@@ -69,8 +69,8 @@ public class CouncilVoteIncident extends DiplomaticIncident {
         if (candidate.alliedWith(empVoter)) {
             switch(type) {
                 case FOR: return 5;
-                case ABSTAIN: return -10;
-                case AGAINST: return -25;
+                case ABSTAIN: return -5;
+                case AGAINST: return -15;
             }
         }
         if (candidate.atWarWith(empVoter)) {
@@ -84,7 +84,7 @@ public class CouncilVoteIncident extends DiplomaticIncident {
             switch(type) {
                 case FOR: return 25;
                 case ABSTAIN: return 0;
-                case AGAINST: return -25;
+                case AGAINST: return -15;
             }
         }
         return 0;

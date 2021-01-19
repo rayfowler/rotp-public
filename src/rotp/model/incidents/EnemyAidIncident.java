@@ -50,7 +50,7 @@ public class EnemyAidIncident extends DiplomaticIncident {
         empYou = donor.id;
         empEnemy = enemy.id;
         float pct = (float) amt / emp.totalPlanetaryProduction();
-        float sev = min(15,10*pct);
+        float sev = min(10,10*pct);
         severity = -sev;
         amount = amt;
         techId = null;

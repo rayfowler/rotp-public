@@ -40,13 +40,13 @@ public class SpyConfessionIncident extends DiplomaticIncident {
         }
         else if (spies.isSabotage()) {
             mission = text("NOTICE_SPYING_MISSION_SABOTAGE");
-            severity = max(-40, -10+ev.embassy().currentSpyIncidentSeverity());
+            severity = max(-20, -10+ev.embassy().currentSpyIncidentSeverity());
             missionType = 2;
             duration = 10;
         }
         else {
             mission = text("NOTICE_SPYING_MISSION_HIDE");
-            severity = max(-10, -2+ev.embassy().currentSpyIncidentSeverity());
+            severity = max(-5, -2+ev.embassy().currentSpyIncidentSeverity());
             missionType = 0;
             duration = 2;
         }

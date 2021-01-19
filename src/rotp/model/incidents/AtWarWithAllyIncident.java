@@ -32,7 +32,7 @@ public class AtWarWithAllyIncident extends DiplomaticIncident {
         empOther = other.id;
         dateOccurred = galaxy().currentYear();
         duration = 1;
-        severity = -20;
+        severity = -10;
     }
     @Override
     public String title()            { return text("INC_AT_WAR_WITH_ALLY_TITLE"); }

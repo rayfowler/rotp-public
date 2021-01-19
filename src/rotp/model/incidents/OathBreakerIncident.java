@@ -55,7 +55,7 @@ public class OathBreakerIncident extends DiplomaticIncident {
             duration *= 2;
 
         // zero duration means zero severity. That's ruthless!
-        severity = duration == 0 ? 0 : sev;
+        severity = duration == 0 ? 0 : max(-30,sev);
     }
     @Override
     public String title()        { return text("INC_OATHBREAKER_TITLE"); }

@@ -36,7 +36,7 @@ public class ExchangeTechnologyIncident extends DiplomaticIncident {
         severity = 5;
 
         dateOccurred = galaxy().currentYear();
-        duration = 10;
+        duration = 3;
     }
     @Override
     public String title()        { return text("INC_TECH_EXCHANGE_TITLE"); }

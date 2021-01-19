@@ -34,8 +34,7 @@ public class FinancialAidIncident extends DiplomaticIncident {
         empYou = donor.id;
         empMe = emp.id;
         float pct = (float) amt / emp.totalPlanetaryProduction();
-        float sev = min(15,20*pct);
-        severity = sev;
+        severity = min(15,20*pct);
         amount = amt;
         dateOccurred = galaxy().currentYear();
         duration = 3;

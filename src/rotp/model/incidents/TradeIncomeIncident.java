@@ -30,7 +30,7 @@ public class TradeIncomeIncident extends DiplomaticIncident {
     }
     public TradeIncomeIncident(EmpireView ev, float p, float pct) {
         profit = p;
-        severity = min(40, max(0,pct*50));
+        severity = min(30, max(0,pct*50));
         dateOccurred = galaxy().currentYear();
         duration = 3;
         empMe = ev.owner().id;

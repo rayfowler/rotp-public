@@ -30,7 +30,7 @@ public class FirstContactIncident extends DiplomaticIncident {
         empMe = e2.id;
         severity = -30;
         dateOccurred = galaxy().currentYear();
-        duration = 20;
+        duration = 10;
     }
     @Override
     public String title()            { return text("INC_FIRST_CONTACT_TITLE"); }

@@ -45,7 +45,7 @@ public class SabotageRebellionIncident extends DiplomaticIncident {
         empSpy = ev.empire().id;
         sysId = m.starSystem().id;
         incited = m.rebelsIncited();
-        severity = max(-60,(-5*incited)+ev.embassy().currentSpyIncidentSeverity());
+        severity = max(-25,(-2*incited)+ev.embassy().currentSpyIncidentSeverity());
     }
     private String systemName()      { return player().sv.name(sysId); }
     @Override

@@ -30,7 +30,7 @@ public class EspionageTechIncident extends DiplomaticIncident {
 
     public EspionageTechIncident(EmpireView ev, EspionageMission m) {
         ev.embassy().resetAllianceTimer();
-        severity = max(-30,-15 + ev.embassy().currentSpyIncidentSeverity());
+        severity = max(-20,ev.embassy().currentSpyIncidentSeverity());
 
         dateOccurred = galaxy().currentYear();
         duration = 10;

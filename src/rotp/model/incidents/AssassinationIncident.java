@@ -33,7 +33,7 @@ public class AssassinationIncident extends DiplomaticIncident {
     public AssassinationIncident(Empire att, Empire def) {
         empAssassin = att.id;
         empVictim = def.id;
-        severity = -100;
+        severity = -50;
         dateOccurred = galaxy().currentYear();
         duration = 20;
     }
@@ -44,7 +44,7 @@ public class AssassinationIncident extends DiplomaticIncident {
     @Override
     public String declareWarId()     { return DialogueManager.DECLARE_ASSASSIN_WAR; }
     @Override
-    public boolean triggersWar()     { return true; }
+    public boolean triggersWar()     { return !galaxy().empire(empVictim).alliedWith(empAssassin); }
     @Override
     public String key() {
         return concat("Assassination:", str(empVictim));

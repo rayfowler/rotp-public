@@ -33,7 +33,7 @@ public class EncroachmentIncident extends DiplomaticIncident {
         empYou = ev.empire().id;
         sysId = sys.id;
         dateOccurred = galaxy().currentYear();
-        severity = sev;
+        severity = max(-10, sev);
         duration = 3;
         if (ev.owner().leader().isXenophobic())
             duration *= 2;

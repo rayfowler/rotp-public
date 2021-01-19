@@ -38,7 +38,7 @@ public class SkirmishIncident extends DiplomaticIncident {
         sysId = res.system().id;
         empMe = ev.owner().id;
         empYou = ev.empire().id;
-        severity = sev;
+        severity = max(-10, sev);
 
         dateOccurred = galaxy().currentYear();
         duration = 5;

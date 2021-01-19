@@ -61,7 +61,7 @@ public class ExpansionIncident extends DiplomaticIncident {
         
         float n = -20*((num*num/max/max) - 1);
 
-        severity = multiplier*n;
+        severity = max(-50, multiplier*n);
     }
     @Override
     public String title()            { return text("INC_EXPANSION_TITLE"); }

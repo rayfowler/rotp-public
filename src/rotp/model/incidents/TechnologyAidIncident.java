@@ -38,10 +38,9 @@ public class TechnologyAidIncident extends DiplomaticIncident {
         Tech tech = tech(tId);
         float rpValue = emp.ai().scientist().researchValue(tech);
         float pct = rpValue / emp.totalPlanetaryProduction();
-        float sev = min(25,100*pct);
-        severity = sev;
+        severity = min(25,100*pct);
         dateOccurred = galaxy().currentYear();
-        duration = 3;
+        duration = 10;
     }
     @Override
     public String title()        { return text("INC_TECHNOLOGY_AID_TITLE"); }

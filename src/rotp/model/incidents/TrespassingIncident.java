@@ -42,7 +42,7 @@ public class TrespassingIncident extends DiplomaticIncident {
 
         float fleetPower = fl.firepower(player().sv.shieldLevel(sysId))/100.0f;
         severity = multiplier* max(1.0f, fleetPower);
-        severity = max(-30, severity);
+        severity = max(-10, severity);
         // notify player if hostile ships are orbiting his colony
         if (ev.owner().isPlayer())
             TrespassingAlert.create(empMe, empYou, sysId);

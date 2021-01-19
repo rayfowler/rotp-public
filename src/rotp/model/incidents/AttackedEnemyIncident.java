@@ -49,7 +49,7 @@ public class AttackedEnemyIncident extends DiplomaticIncident {
         empAttacker = e1.id;
         empEnemy = e2.id;
         empMe = e3.id;
-        severity = sev;
+        severity = max(-10, sev);
         dateOccurred = galaxy().currentYear();
         duration = 5;
     }
