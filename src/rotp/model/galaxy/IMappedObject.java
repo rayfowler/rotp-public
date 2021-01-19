@@ -72,7 +72,14 @@ public interface IMappedObject {
             x0 = x1;
             y0 = y1;
         }
-        return travelTime;
+        // deduct calculated travel time by a small amount to account for 
+        // potential rounding errors upward when summing the times of 
+        // individual segments. Why? Because reporting a slightly too high
+        // travel time can mistakenly result in a full additional turn of travel 
+        // since all travel turns are Math.ceil(). (i.e. 4.0001 estimated turns
+        // to travel takes 5 runs in game). .01f is a small time but far greater
+        // than the potential rounding error
+        return travelTime-0.01f;
     }
     default public float travelTimeTo(IMappedObject to, float speed) {
         float dist = distanceTo(to);
