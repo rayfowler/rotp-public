@@ -62,7 +62,7 @@ public class AISpyMaster implements Base, SpyMaster {
         // how much allocation for the spyNetwork?
         // each pt of allocatoin represents .005 of total civ production
         // max allocation is 25, or 10% of total civ production
-        if (!v.embassy().contact() || v.empire().extinct()) {
+        if (!v.embassy().contact() || v.empire().extinct() || !v.inEconomicRange()) {
             v.spies().allocation(0);
             return;
         }
