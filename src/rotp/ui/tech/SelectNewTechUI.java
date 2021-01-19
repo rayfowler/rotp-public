@@ -19,7 +19,6 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.LinearGradientPaint;
 import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.Stroke;
@@ -59,7 +58,6 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
 
     Shape hoverShape;
     Rectangle selectTechBox = new Rectangle();
-    private LinearGradientPaint greenBackC;
 
     int techsY, techsYMax;
     int dragY;
@@ -138,10 +136,12 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
         // draw race
         g.drawImage(raceImage, 0,0, w, h, 0, 0, raceImage.getWidth(this), raceImage.getHeight(this), null);
 
-        int sideMgn = scaled(130);
+        int techDisplaySize = availableTechs.size();
+        int rightM = techDisplaySize > 9 ? s50 : s100;
+
         // get width of text box
-        int boxLeftX = (getWidth()/2)+sideMgn;
-        int boxRightX = getWidth() - sideMgn;
+        int boxLeftX = (getWidth()/2)+s100;
+        int boxRightX = getWidth() - rightM;
         int boxWidth = boxRightX - boxLeftX;
 
         // break title into multiple lines based on width
@@ -150,10 +150,10 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
         int titleH = titleLines.size()*titleLineH;
 
         // calculate vertical size of text box
-        int boxTopY = scaled(200);
-        int boxBottomY = boxTopY+s20+titleH+s20+scaled(300);
-        int boxHeight = boxBottomY - boxTopY;
-
+        int boxHeight = min(h-s30, s20+titleH+s20+max(s100+s100, s40*min(15,techDisplaySize)));
+        int boxTopY = min(scaled(200), (h-boxHeight)*2/3);
+        int boxBottomY = boxHeight+boxTopY;
+        
         // draw main box with shaded borders
         g.setColor(darkBrownShade);
         g.fillRect(boxLeftX-bdr, boxTopY-bdr, boxWidth+bdr+bdr, boxHeight+bdr+bdr);
@@ -186,7 +186,6 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
 
         g.setFont(narrowFont(20));
 
-        int techDisplaySize = min(MAX_LIST_SIZE, availableTechs.size());
         // limit tech list size to 10, starting at tech index
         for (int i=0;i<techDisplaySize;i++) {
             String id = availableTechs.get(i+techIndex);

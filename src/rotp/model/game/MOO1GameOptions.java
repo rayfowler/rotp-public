@@ -37,6 +37,7 @@ import rotp.util.Base;
 
 public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private static final long serialVersionUID = 1L;
+    private static final float BASE_RESEARCH_MOD = 30f;
     private final String[] opponentRaces = new String[MAX_OPPONENTS];
     private final List<Integer> colors = new ArrayList<>();
     private final List<Color> empireColors = new ArrayList<>();
@@ -318,7 +319,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         
         // the various "slowing" options increase the research cost for higher tech levels
         
-        float amt = 30.0f;                    // default adjustment
+        float amt = BASE_RESEARCH_MOD;                  // default adjustment
         switch(selectedResearchRate()) {
             case RESEARCH_SLOW:
                 return amt*sqrt(techLevel/3.0f); // approx. 4x slower for level 50
