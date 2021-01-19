@@ -42,7 +42,7 @@ DECLAREWAR_ATTACK_01       | At last you have exposed yourself, Children of Quar
 DECLAREWAR_ATTACK_02       | Long have we suspected you were the spawn of our ancient foe! With this strike you have confirmed this fact for all time! At last, our prophecy will be fulfilled!
 DECLAREWAR_ATTACK_03       | Villain! Scourge! In our darkest hour you launch such an attack against us?! Now that you have made yourself known as our eternal enemy, no difference in our strength will prevent us from annihilating you!
 DECLAREWAR_OPPORTUNITY_01  | As we continue across the galaxy in our holy crusade, we must take every opportunity to increase our advantage. That time is now, and wiping your kind out is the opportunity. Farewell, pathetic [your_race].
-DECLAREWAR_ASSASSIN_01     | How dare you slay an ambassador of the Empire!? Only one of Quaralon's spawn could act with such an evil mind! Prepare your fleets for war! 
+DECLAREWAR_ASSASSIN_01     | How dare you slay an ambassador of the Imperium!? Only one of Quaralon's spawn could act with such an evil mind! Prepare your fleets for war! 
 
 OFFER_PEACE_01             | They say that to know someone you must first fight them. We have fought, and we see that you are not the children of the beast Quaralon. We would have peace with you now, so that we may focus our attention on those who deserve to feel our fury. 
 OFFER_TRADE_01             | To explore the depths of space is a costly venture. The Imperium wishes to propose open trade. [amt] BC per year will both fund our holy crusade and accrue more wealth for your people. What say you? 
