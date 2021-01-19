@@ -26,7 +26,7 @@ public abstract class MapOverlay implements Base {
     abstract public boolean hoveringOverSprite(Sprite o);
     abstract public void advanceMap();
     abstract public void paintOverMap(MainUI parent, GalaxyMapPanel ui, Graphics2D g2);
-     abstract public boolean handleKeyPress(KeyEvent e);
+    abstract public boolean handleKeyPress(KeyEvent e);
 
     public boolean consumesClicks(Sprite spr)      { return true; }
     public boolean masksMouseOver(int x, int y)    { return false; }

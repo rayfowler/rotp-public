@@ -92,7 +92,9 @@ public interface IMapHandler {
     default boolean showOwnerReach(StarSystem s)         { return false; }
     default boolean showOwnership(StarSystem s)          { return true; }
     default float ownerReach(StarSystem s)               { return 0; }
-    default boolean drawShield(StarSystem s)             { return true; } // modnar: always draw shields
+    default boolean drawShield(StarSystem s)             { return true; } 
+    default boolean showSystemName(StarSystem s)         { return map().showSystemNames(); } 
+    default boolean showSystemData(StarSystem s)         { return map().showSystemData(); } 
     default boolean shouldDrawSprite(Sprite s)           { return true; }
     default boolean canChangeMapScales()                 { return true; }
     default boolean displayNextTurnNotice()              { return false; }

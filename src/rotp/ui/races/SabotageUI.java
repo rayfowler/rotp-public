@@ -80,6 +80,7 @@ public final class SabotageUI extends BasePanel implements MouseListener {
     static final int SHOW_ANIMATION = 2;
     static final int SHOW_RESULTS = 3;
 
+    LinearGradientPaint backGradient;
     private BasePanel cardPane;
     private final CardLayout cardLayout = new CardLayout();
     private SabotageMission mission;
@@ -110,6 +111,7 @@ public final class SabotageUI extends BasePanel implements MouseListener {
         destroyCount = 0;
         explosionFrame = 0;
         inciteAudioPlayed = false;
+        backGradient = null;
         // reset map everytime we open
         removeSessionVar("SABOTAGEUI_MAP_INITIALIZED");
         mapPane.checkMapInitialized();
@@ -262,15 +264,13 @@ public final class SabotageUI extends BasePanel implements MouseListener {
             showUnexplored();
         }
         @Override
-        public void paint(Graphics g0) {
+        public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
             if (player().sv.isScouted(systemViewToDisplay().id))
                 showExplored();
             else
                 showUnexplored();
-            super.paint(g);
-            int w = getWidth();
-            int h = getHeight();
+            super.paintComponent(g);
         } 
         @Override
         public void animate() {
@@ -660,8 +660,9 @@ public final class SabotageUI extends BasePanel implements MouseListener {
             else if (noActionBox.contains(x,y))
                 hoverTarget = noActionBox;
 
-            if (prevHover != hoverTarget)
-                repaint();
+            if (prevHover != hoverTarget) {
+               repaint();
+            }
         }
     }
     class SabotageResultPanel extends BasePanel {
@@ -763,7 +764,6 @@ public final class SabotageUI extends BasePanel implements MouseListener {
     }
     class SpyParentPanel extends BasePanel {
         private static final long serialVersionUID = 1L;
-        LinearGradientPaint backGradient;
         @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
@@ -776,6 +776,10 @@ public final class SabotageUI extends BasePanel implements MouseListener {
                 float[] dist = {0.0f, 1.0f};
                 Color[] colors = {shadeBorderC, MainUI.paneBackground};
                 backGradient = new LinearGradientPaint(start, end, dist, colors);
+                spySystemPanel.repaint();
+                spyDetailPanel.repaint();
+                spyButtonsPanel.repaint();
+                titlePanel.repaint();
             }
             g.setPaint(backGradient);
             g.fillRect(0,0,w, h);     
@@ -824,6 +828,10 @@ public final class SabotageUI extends BasePanel implements MouseListener {
             g.setColor(SystemPanel.whiteText);
             g.drawString(title, (w-sw)/2, s24);
         }
+        @Override
+        public boolean showSystemName(StarSystem s)         { return s.empire() != mission.target();  } 
+        @Override
+        public boolean showSystemData(StarSystem s)         { return s.empire() == mission.target(); } 
         @Override
         public boolean suspendAnimationsDuringNextTurn()    { return false; }
         @Override
@@ -927,6 +935,10 @@ public final class SabotageUI extends BasePanel implements MouseListener {
                 float[] dist = {0.0f, 1.0f};
                 Color[] colors = {Color.black, MainUI.paneBackground};
                 backGradient = new LinearGradientPaint(start, end, dist, colors);
+                spySystemPanel.repaint();
+                spyDetailPanel.repaint();
+                spyButtonsPanel.repaint();
+                titlePanel.repaint();
             }
             g.setPaint(backGradient);
             g.fillRect(0,h/2,w, h/2);
