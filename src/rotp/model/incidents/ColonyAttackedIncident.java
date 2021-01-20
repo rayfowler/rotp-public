@@ -48,7 +48,7 @@ public class ColonyAttackedIncident extends DiplomaticIncident {
     @Override
     public String declareWarId()        { return DialogueManager.DECLARE_ATTACKED_WAR; }
     @Override
-    public boolean triggersWar()        { return popLost >= 10; }
+    public boolean triggersWar()        { return popLost >= 20; }
     @Override
     public String key() {
         return concat(systemName(), ":", str(dateOccurred));
