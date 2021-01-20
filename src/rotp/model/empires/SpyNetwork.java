@@ -297,6 +297,14 @@ public final class SpyNetwork implements Base, Serializable {
             spy.attemptMission(adj);
     }
     private void startEspionageMission() {
+        // make sure we don't try to steal any techs that we just traded for
+        // but haven't received yet
+        List<String> recentlyTradedTechs = owner().tech().tradedTechs();
+        for (String techId: recentlyTradedTechs) {
+            Tech traded = tech(techId);
+            possibleTechs().remove(traded);
+        }
+        
         // no unknown techs to potentially steal
         if (possibleTechs().isEmpty())
             return;
