@@ -1509,6 +1509,7 @@ RACES_INTEL_BUREAU_SPENDING       | Total Spending
 RACES_INTEL_SPY_ORDERS            | Spy Orders
 RACES_INTEL_SPY_ORDERS_DESC       | Assign your spies to hide, steal secrets, or sabotage %1 colonies. The larger your spy network, the greater chance of success each turn as long as none of your spies is captured and confesses.
 RACES_INTEL_SPY_WARNING           | If discovered, this mission will break our treaty with the %1.
+RACES_INTEL_SPY_WARNING_WAR       | If discovered, this mission could trigger a war with the %1.
 RACES_INTEL_KNOWN_TECHNOLOGY      | %1 Known Technology
 RACES_INTEL_KNOWN_TECH_DESC       | Our spies report the %1 have mastered the following technologies. Any technology unknown to us is highlighted.
 RACES_INTEL_UNKNOWN_TECHNOLOGY    | Unknown Technology Report
@@ -1763,6 +1764,8 @@ DIPLOMACY_ACCEPT_FORM_ALLIANCE    | Accept (Forms Alliance)
 DIPLOMACY_ACCEPT_ESTABLISH_TRADE  | Accept (Establishes Trade)
 DIPLOMACY_DECLINE_OFFER           | Decline
 DIPLOMACY_DECLINE_BREAK_ALLIANCE  | Decline (Breaks Alliance)
+DIPLOMACY_IGNORE_THREAT           | Ignore Threat
+DIPLOMACY_HIDE_SPIES              | Order all spies in the %1 to Hide
 
 // types of endings
 GAME_OVER_OVERTHROWN_LOSS         | Overthrown Loss

@@ -780,6 +780,11 @@ public final class Empire implements Base, NamedObject, Serializable {
                 v.makeDiplomaticOffers();
         }
     }
+    public void stopSpyingAgainst(int empId) {
+        EmpireView v = viewForEmpire(empId);
+        if (v != null)
+            v.spies().beginHide();
+    }
     public void completeResearch() {
         tech.allocateResearch();
     }

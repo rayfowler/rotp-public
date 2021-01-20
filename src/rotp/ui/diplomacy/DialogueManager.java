@@ -116,7 +116,7 @@ public class DialogueManager implements Base {
     public static final String DECLARE_ATTACKED_WAR     = "DeclareWar-Attack";
     public static final String DECLARE_HATE_WAR         = "DeclareWar-Hate";
     public static final String DECLARE_OPPORTUNITY_WAR  = "DeclareWar-Opportunity";
-    public static final String DECLARE_SPYING_WAR       = "DeclareWar-Spies";
+    public static final String DECLARE_SPYING_WAR       = "DeclareWar-Spying";
     public static final String DECLARE_ERRATIC_WAR      = "DeclareWar-Erratic"; 
     public static final String DECLARE_MILITARY_WAR     = "DeclareWar-Military"; 
     public static final String DECLARE_ALLIANCE_WAR     = "DeclareWar-Alliance"; 
@@ -236,8 +236,8 @@ public class DialogueManager implements Base {
         addMessage(new TurnNotificationMessage(WARNING_EXPANSION));
         addMessage(new TurnNotificationMessage(WARNING_BUILDUP));
         addMessage(new TurnNotificationMessage(WARNING_SKIRMISH));
-        addMessage(new TurnNotificationMessage(WARNING_ESPIONAGE));
-        addMessage(new TurnNotificationMessage(WARNING_SABOTAGE));
+        addMessage(new ThreatForSpying(WARNING_ESPIONAGE));
+        addMessage(new ThreatForSpying(WARNING_SABOTAGE));
         addMessage(new TurnNotificationMessage(WARNING_COLONY_INVADED));
         addMessage(new TurnNotificationMessage(WARNING_COLONY_ATTACKED));
         addMessage(new TurnNotificationMessage(WARNING_BIOWEAPON));

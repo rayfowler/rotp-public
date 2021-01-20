@@ -59,6 +59,8 @@ public class SpyConfessionIncident extends DiplomaticIncident {
     @Override
     public boolean isSpying()           { return missionType > 0; }
     @Override
+    public int timerKey()          { return SPY_WARNING; }
+    @Override
     public String title()               { return text("INC_SPY_CONFESSION_TITLE"); }
     @Override
     public String description() {
@@ -67,6 +69,8 @@ public class SpyConfessionIncident extends DiplomaticIncident {
         else
             return decode(text("INC_SPY_CONFESS_ESPIONAGE_DESC"));
     }
+    @Override
+    public boolean triggersWar()        { return false; } // war is only triggered after a warning
     @Override
     public boolean triggersWarning()    { return true; }
     @Override
@@ -78,6 +82,8 @@ public class SpyConfessionIncident extends DiplomaticIncident {
         else
             return DialogueManager.WARNING_ESPIONAGE;
     }
+    @Override
+    public String declareWarId()     { return DialogueManager.DECLARE_SPYING_WAR; }
     @Override
     public String key() {
         return concat(str(dateOccurred), ":SpyConfession");

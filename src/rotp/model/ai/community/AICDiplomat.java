@@ -1065,7 +1065,7 @@ public class AICDiplomat implements Base, Diplomat {
             return false;
 
         log("cumulative severity: "+cumulativeSeverity);
-        view.embassy().warningSent();
+        view.embassy().warningSent(maxIncident);
         
         // if we are warning player, send a notification
         if (view.empire().isPlayer()) {

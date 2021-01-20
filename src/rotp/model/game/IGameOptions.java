@@ -88,6 +88,7 @@ public interface IGameOptions {
     
     public default boolean isAutoPlay()          { return false; }
     public default boolean communityAI()         { return false; }
+    public default boolean usingExtendedRaces()  { return (selectedNumberOpponents()+1) > startingRaceOptions().size(); }
     public default void communityAI(boolean b)   { }
     public default int maxOpponents()            { return MAX_OPPONENTS; }
     public String name();
