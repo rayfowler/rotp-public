@@ -100,10 +100,10 @@ public final class SabotageUI extends BasePanel implements MouseListener {
     boolean inciteAudioPlayed = false;
     boolean exited = false;
     SoundClip audioClip = null;
+    int repaintCount = 0;
 
     @Override
     public boolean drawMemory()            { return true; }
-
     public void init(SabotageMission sm, int sysId)       {
         mission = sm;
         exited = false;
@@ -117,6 +117,7 @@ public final class SabotageUI extends BasePanel implements MouseListener {
         mapPane.checkMapInitialized();
         mapPane.selectTargetSystem(galaxy().system(sysId));
         audioClip = null;
+        repaintCount = 3;
         selectMapPanel();
     }
     public StarSystem systemToDisplay() {
@@ -185,8 +186,16 @@ public final class SabotageUI extends BasePanel implements MouseListener {
     public void selectResultPanel()  { cardLayout.show(cardPane, RESULT_PANEL); }
     @Override
     public void animate() {
-        if ((currentState == REQUEST_MISSION))
+        repaintCount--;
+        if ((currentState == REQUEST_MISSION)) {
             map.animate();
+            if (repaintCount == 0) {
+                titlePanel.repaint();
+                spySystemPanel.repaint();
+                spyDetailPanel.repaint();
+                spyButtonsPanel.repaint();
+            }
+        }
         else if (currentState == SHOW_ANIMATION)
             resultPanel.animate();
     }
@@ -776,10 +785,6 @@ public final class SabotageUI extends BasePanel implements MouseListener {
                 float[] dist = {0.0f, 1.0f};
                 Color[] colors = {shadeBorderC, MainUI.paneBackground};
                 backGradient = new LinearGradientPaint(start, end, dist, colors);
-                spySystemPanel.repaint();
-                spyDetailPanel.repaint();
-                spyButtonsPanel.repaint();
-                titlePanel.repaint();
             }
             g.setPaint(backGradient);
             g.fillRect(0,0,w, h);     
@@ -935,10 +940,6 @@ public final class SabotageUI extends BasePanel implements MouseListener {
                 float[] dist = {0.0f, 1.0f};
                 Color[] colors = {Color.black, MainUI.paneBackground};
                 backGradient = new LinearGradientPaint(start, end, dist, colors);
-                spySystemPanel.repaint();
-                spyDetailPanel.repaint();
-                spyButtonsPanel.repaint();
-                titlePanel.repaint();
             }
             g.setPaint(backGradient);
             g.fillRect(0,h/2,w, h/2);
