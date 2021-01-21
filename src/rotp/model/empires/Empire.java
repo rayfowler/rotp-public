@@ -34,6 +34,7 @@ import rotp.model.ai.interfaces.FleetCommander;
 import rotp.model.ai.interfaces.General;
 import rotp.model.ai.interfaces.Governor;
 import rotp.model.ai.interfaces.Scientist;
+import rotp.model.ai.interfaces.ShipCaptain;
 import rotp.model.ai.interfaces.ShipDesigner;
 import rotp.model.ai.interfaces.SpyMaster;
 import rotp.model.colony.Colony;
@@ -49,6 +50,7 @@ import rotp.model.galaxy.Location;
 import rotp.model.galaxy.NamedObject;
 import rotp.model.galaxy.Ship;
 import rotp.model.galaxy.ShipFleet;
+import rotp.model.galaxy.Ships;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.galaxy.Transport;
 import rotp.model.incidents.GenocideIncident;
@@ -146,6 +148,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     }
     public Diplomat diplomatAI()                  { return ai().diplomat(); }
     public FleetCommander fleetCommanderAI()      { return ai().fleetCommander(); }
+    public ShipCaptain shipCaptainAI()            { return ai().shipCaptain(); }
     public General generalAI()                    { return ai().general(); }
     public Governor governorAI()                  { return ai().governor(); }
     public SpyMaster spyMasterAI()                { return ai().spyMaster(); }
@@ -433,7 +436,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     public boolean canAbandonTo(StarSystem sys) {
         if (sys == null)
             return false;
-        if (sys.empire() == this)
+        if (sys.empId() == id)
             return true;
         return false;
     }
@@ -784,6 +787,32 @@ public final class Empire implements Base, NamedObject, Serializable {
         EmpireView v = viewForEmpire(empId);
         if (v != null)
             v.spies().beginHide();
+    }
+    public StarSystem retreatSystem(StarSystem from) {
+        return shipCaptainAI().retreatSystem(from);
+    }
+    public void retreatShipsFrom(int empId) {
+        ShipCaptain shipCaptain = shipCaptainAI();
+        Ships shipMgr = galaxy().ships;
+        List<ShipFleet> fleets = shipMgr.allFleets(id);
+        for (ShipFleet fl: fleets) {
+            // if orbiting a system colonized by empId, then retreat it
+            if (fl.isOrbiting()) {
+                StarSystem orbitSys = fl.system();
+                if (orbitSys.empId() == empId) {
+                    StarSystem dest = shipCaptain.retreatSystem(orbitSys); 
+                    if (dest != null)
+                        shipMgr.retreatFleet(fl, dest.id);
+                }
+            }
+            // if in transit to a system colonized by empId, then
+            // set it to retreat on arrival
+            else if (fl.isInTransit()) {
+                StarSystem dest = fl.destination();
+                if (dest.empId() == empId)
+                    fl.makeRetreatOnArrival();
+            }
+        }
     }
     public void completeResearch() {
         tech.allocateResearch();

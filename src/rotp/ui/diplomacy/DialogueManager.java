@@ -232,14 +232,14 @@ public class DialogueManager implements Base {
         addMessage(new TurnNotificationMessage(WARNING_COUNCIL_VOTE));
         addMessage(new TurnNotificationMessage(WARNING_OATHBREAKER));
         addMessage(new TurnNotificationMessage(WARNING_ATTACKED_ALLY));
-        addMessage(new TurnNotificationMessage(WARNING_TRESPASSING));
+        addMessage(new ThreatForAttack(WARNING_TRESPASSING));
         addMessage(new TurnNotificationMessage(WARNING_EXPANSION));
         addMessage(new TurnNotificationMessage(WARNING_BUILDUP));
-        addMessage(new TurnNotificationMessage(WARNING_SKIRMISH));
+        addMessage(new ThreatForAttack(WARNING_SKIRMISH));
         addMessage(new ThreatForSpying(WARNING_ESPIONAGE));
         addMessage(new ThreatForSpying(WARNING_SABOTAGE));
-        addMessage(new TurnNotificationMessage(WARNING_COLONY_INVADED));
-        addMessage(new TurnNotificationMessage(WARNING_COLONY_ATTACKED));
+        addMessage(new ThreatForAttack(WARNING_COLONY_INVADED));
+        addMessage(new ThreatForAttack(WARNING_COLONY_ATTACKED));
         addMessage(new TurnNotificationMessage(WARNING_BIOWEAPON));
         addMessage(new TurnNotificationMessage(WARNING_GENOCIDE));
         addMessage(new TurnNotificationMessage(WARNING_FINAL_WAR));

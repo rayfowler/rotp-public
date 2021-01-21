@@ -244,6 +244,10 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     }
 
     public Empire empire()                      { return planet().empire(); }
+    public int empId() {
+        Empire e = empire();
+        return e == null ? Empire.NULL_ID : e.id;
+    }
     public boolean hasColonyForEmpire(Empire c) { return empire() == c; }
     public boolean hasOrbitingTransports()      { return !orbitingTransports.isEmpty(); }
     public boolean hasStargate(Empire e)        { return isColonized() && colony().hasStargate(e); }

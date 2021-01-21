@@ -6,7 +6,6 @@
 //    You cannot create new keys! The game will not use them
 //    You can only use keys that the game is looking for.
 //
-
 // Large number formatting
 NUM_FORMAT_THOUSANDS              | %1K
 NUM_FORMAT_MILLIONS               | %1M
@@ -463,6 +462,7 @@ MAIN_FLEET_OUT_OF_RANGE_DESC      | Destination is out of fleet range, %1 light-
 MAIN_FLEET_INVALID_RETREAT        | Retreating fleets can only be sent to friendly colonies
 MAIN_FLEET_ETA_UNNAMED            | ETA to destination: %1 Year 
 MAIN_FLEET_ETA_NAMED              | ETA to %1: %2 Years 
+MAIN_FLEET_AUTO_RETREAT           | Automatically retreat upon arrival
 MAIN_FLEET_ETA_UNKNOWN            | Scanners cannot determine destination
 MAIN_FLEET_THROUGH_NEBULA         | Maximum speed limited to Warp 1 by nebula
 
@@ -1766,6 +1766,7 @@ DIPLOMACY_DECLINE_OFFER           | Decline
 DIPLOMACY_DECLINE_BREAK_ALLIANCE  | Decline (Breaks Alliance)
 DIPLOMACY_IGNORE_THREAT           | Ignore Threat
 DIPLOMACY_HIDE_SPIES              | Order all spies in the %1 to Hide
+DIPLOMACY_RETREAT_SHIPS           | Order all ships orbiting or in transit to %1 systems to Retreat
 
 // types of endings
 GAME_OVER_OVERTHROWN_LOSS         | Overthrown Loss

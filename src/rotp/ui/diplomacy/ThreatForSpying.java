@@ -29,11 +29,11 @@ public class ThreatForSpying extends TurnNotificationMessage {
     public int numReplies()       		{ return 2; }
     @Override
     public boolean enabled(int i)       { return true; }
-    @Override
+     @Override
     public String reply(int i)          { 
         switch (i) {
-            case 0 : return text("DIPLOMACY_HIDE_SPIES", diplomat().name());
-            case 1 : return text("DIPLOMACY_IGNORE_THREAT");
+            case 0 : return text("DIPLOMACY_IGNORE_THREAT");
+            case 1 : return text("DIPLOMACY_HIDE_SPIES", diplomat().name());
         }
         return ""; 
     }
@@ -41,11 +41,11 @@ public class ThreatForSpying extends TurnNotificationMessage {
     public void select(int i) {
         log("ThreatForSpying - selected: ", str(i));
         switch(i) {
-        case 0: 
+        case 1: 
             player().stopSpyingAgainst(diplomat().id);
             escape();
             break;
-        case 1: 
+        case 0: 
         default:
             escape(); break;
         }

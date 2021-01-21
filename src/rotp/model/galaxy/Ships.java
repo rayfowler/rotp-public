@@ -432,10 +432,17 @@ public class Ships implements Base, Serializable {
     public boolean arriveFleet(ShipFleet fleet) {
         StarSystem sys = galaxy().system(fleet.destSysId());
         
+        if (fleet.retreatOnArrival()) {
+            fleet.arrive(sys, false);
+            StarSystem destSys = fleet.empire().retreatSystem(sys);
+            retreatFleet(fleet, destSys.id);
+            return false;
+        }
+        
         // if an orbiting fleet already exists, merge with it
         ShipFleet orbitingFleet = orbitingFleet(fleet.empId, sys.id);       
         if (orbitingFleet == null) {
-            fleet.arrive(sys);
+            fleet.arrive(sys, true);
             orbitingFleet = fleet;
         }
         else {

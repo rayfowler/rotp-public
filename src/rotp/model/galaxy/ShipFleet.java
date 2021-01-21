@@ -32,7 +32,6 @@ import rotp.model.empires.Empire;
 import rotp.model.empires.ShipView;
 import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipDesignLab;
-import rotp.model.tech.TechEngineWarp;
 import rotp.ui.BasePanel;
 import rotp.ui.main.GalaxyMapPanel;
 import rotp.ui.map.IMapHandler;
@@ -41,7 +40,7 @@ import rotp.util.Base;
 
 public class ShipFleet implements Base, Sprite, Ship, Serializable {
     private static final long serialVersionUID = 1L;
-    enum Status { ORBITING, DEPLOYED, IN_TRANSIT };
+    enum Status { ORBITING, DEPLOYED, IN_TRANSIT, RETREAT_ON_ARRIVAL };
     public final int empId;
     private int sysId;
     private int destSysId = StarSystem.NULL_ID;
@@ -95,9 +94,17 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
     public void makeOrbiting()          { status = Status.ORBITING; }
     public void makeDeployed()          { status = Status.DEPLOYED; }
     public void makeInTransit()         { status = Status.IN_TRANSIT; }
+    public void makeRetreatOnArrival()  { status = Status.RETREAT_ON_ARRIVAL; }
     public boolean isOrbiting()         { return status == Status.ORBITING; }
     public boolean isDeployed()         { return status == Status.DEPLOYED; }
-    public boolean isInTransit()        { return status == Status.IN_TRANSIT; }
+    public boolean isInTransit()        { return (status == Status.IN_TRANSIT) || (status == Status.RETREAT_ON_ARRIVAL); }
+    public boolean retreatOnArrival()   { return status == Status.RETREAT_ON_ARRIVAL; }
+    public void toggleRetreatOnArrival() {
+        switch (status) {
+            case IN_TRANSIT:         status = Status.RETREAT_ON_ARRIVAL; break;
+            case RETREAT_ON_ARRIVAL: status = Status.IN_TRANSIT; break;
+        }
+    }
     public void setXY(float x, float y) { fromX = x; fromY = y; }
     public void setXY(StarSystem sys)   { fromX = sys.x(); fromY = sys.y(); }
     @Override
@@ -269,7 +276,7 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
         setArrivalTime();
         makeInTransit();
     }
-    public void arrive(StarSystem sys) {
+    public void arrive(StarSystem sys, boolean scan) {
         sysId = sys.id;
         destSysId = StarSystem.NULL_ID;
         rallySysId = StarSystem.NULL_ID;
@@ -278,7 +285,8 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
         retreating = false;
         launchTime = NOT_LAUNCHED;
         makeOrbiting();
-        empire().sv.view(sys.id).refreshSystemEntryScan();
+        if (scan)
+            empire().sv.view(sys.id).refreshSystemEntryScan();
     }
     public boolean inOrbit()        { return isOrbiting(); }
     @Override

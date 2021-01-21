@@ -17,8 +17,8 @@ package rotp.ui.diplomacy;
 
 import rotp.model.empires.Empire;
 
-public class ThreatForSpying extends TurnNotificationMessage {
-    public ThreatForSpying(String  s) {
+public class ThreatForAttack extends TurnNotificationMessage {
+    public ThreatForAttack(String  s) {
         messageType = s;
     }
     @Override
@@ -32,20 +32,20 @@ public class ThreatForSpying extends TurnNotificationMessage {
     @Override
     public String reply(int i)          { 
         switch (i) {
-            case 0 : return text("DIPLOMACY_HIDE_SPIES", diplomat().name());
-            case 1 : return text("DIPLOMACY_IGNORE_THREAT");
+            case 0 : return text("DIPLOMACY_IGNORE_THREAT");
+            case 1 : return text("DIPLOMACY_RETREAT_SHIPS", diplomat().raceName());
         }
         return ""; 
     }
     @Override
     public void select(int i) {
-        log("ThreatForSpying - selected: ", str(i));
+        log("ThreatForAttack - selected: ", str(i));
         switch(i) {
-        case 0: 
-            player().stopSpyingAgainst(diplomat().id);
+        case 1: 
+            player().retreatShipsFrom(diplomat().id);
             escape();
             break;
-        case 1: 
+        case 0: 
         default:
             escape(); break;
         }

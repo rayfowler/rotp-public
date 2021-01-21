@@ -550,7 +550,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 int sw3 = g.getFontMetrics().stringWidth(str3);
                 g.drawString(str3, w-sw3-s10, y0);
                 y0 -= s25;
-                String str4 = text("MAIN_FLEET_DEPLOYED");
+                String str4 = fl.retreating() && fl.empire().isPlayer() ? text("MAIN_FLEET_RETREATING") :text("MAIN_FLEET_DEPLOYED");
                 int sw4 = g.getFontMetrics().stringWidth(str4);
                 g.drawString(str4, w-sw4-s10, y0);
             }
@@ -601,6 +601,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         private final Color buttonBackC = new Color(30,30,30);
         private int hoverStackNum = -1;
         private Shape hoverBox, hoverBox2;
+        private final Rectangle retreatBox = new Rectangle();
         private final Rectangle shipBox[] = new Rectangle[ShipDesignLab.MAX_DESIGNS];
         private final Polygon minBox[] = new Polygon[ShipDesignLab.MAX_DESIGNS];
         private final Polygon maxBox[] = new Polygon[ShipDesignLab.MAX_DESIGNS];
@@ -668,20 +669,20 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             g.fillRect(x, y, w, h);
 
             int x0 =s10;
-            int y0 = s23;
-            int lineH = s18;
+            int y0 = s20;
+            int lineH = s16;
             String title = displayFl.canBeSentBy(player()) ? text("MAIN_FLEET_DEPLOYMENT") : text("MAIN_FLEET_DISPLAY");
-            g.setFont(narrowFont(26));
+            g.setFont(narrowFont(22));
             drawShadowedString(g, title, 4, x0, y0, SystemPanel.textShadowC, Color.white);
 
-            y0 += s5;
+            y0 += s6;
             y0 += lineH;
 
             StarSystem dest = parent.displayedDestination();
-            String text = null;
-            String text2 = null;
-            g.setFont(narrowFont(16));
             g.setColor(SystemPanel.blackText);
+            String text = null;
+            String nebulaText = null;
+            String retreatText = null;
             if (displayFl.canBeSentBy(player())) {
                 if (!displayFl.canSendTo(id(dest))) {
                     if (dest == null) {
@@ -715,7 +716,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                     else
                         text = text("MAIN_FLEET_ETA_NAMED", destName, dist);
                     if (displayFl.passesThroughNebula(dest))
-                        text2 = text("MAIN_FLEET_THROUGH_NEBULA");
+                        nebulaText = text("MAIN_FLEET_THROUGH_NEBULA");
                 }
                 else if (displayFl.canSendTo(id(dest))) {
                     if (displayFl.canReach(dest)) {
@@ -731,13 +732,15 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                         text = text("MAIN_FLEET_OUT_OF_RANGE_DESC", dist);
                     }
                     if (displayFl.passesThroughNebula(dest))
-                        text2 = text("MAIN_FLEET_THROUGH_NEBULA");
+                        nebulaText = text("MAIN_FLEET_THROUGH_NEBULA");
                 }
                 else if (displayFl.isOrbiting()) {
                     text = text("MAIN_FLEET_CHOOSE_DEST");
                 }
             }
             else if (displayFl.isInTransit() || displayFl.isDeployed()) {
+                if (displayFl.empire().isPlayer())
+                    retreatText = text("MAIN_FLEET_AUTO_RETREAT");
                 if (player().knowETA(displayFl)) {
                     int dist = displayFl.travelTurnsRemaining();
                     if (displayFl.hasDestination()) {
@@ -753,6 +756,8 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                     text = text("MAIN_FLEET_ETA_UNKNOWN");
                 }
             }
+            g.setFont(narrowFont(16));
+            
             if (text != null) {
                 List<String> lines = wrappedLines(g, text, w-s30);
                 for (String line: lines) {
@@ -760,9 +765,37 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                     y0 += lineH;
                 }
             }
-            if (text2 != null) {
+            if (retreatText != null) {
+                y0 += lineH/2;
+                int checkW = s12;
+                int checkX = x0;
+                retreatBox.setBounds(checkX, y0-checkW, checkW, checkW);
+                Stroke prev = g.getStroke();
+                g.setStroke(stroke2);
+                g.setColor(MainUI.shadeBorderC());
+                g.fill(retreatBox);
+                if (hoverBox == retreatBox) {
+                    g.setColor(Color.yellow);
+                    g.draw(retreatBox);
+                }
+                if (displayFl.retreatOnArrival()) {
+                    g.setColor(SystemPanel.whiteText);
+                    g.drawLine(checkX-s1, y0-s6, checkX+s3, y0-s3);
+                    g.drawLine(checkX+s3, y0-s3, checkX+checkW, y0-s12);
+                }
+               g.setStroke(prev);
+                g.setColor(SystemPanel.blackText);
+                int indent = checkW+s6;
+                List<String> lines = wrappedLines(g, retreatText, w-s30, indent);
+                for (String line: lines) {
+                    g.drawString(line, x0+indent, y0);
+                    indent = 0;
+                    y0 += lineH;
+                }
+            }
+            if (nebulaText != null) {
                 g.setColor(SystemPanel.redText);
-                List<String> lines = wrappedLines(g, text2, w-s30);
+                List<String> lines = wrappedLines(g, nebulaText, w-s30);
                 for (String line: lines) {
                     g.drawString(line, x0, y0);
                     y0 += lineH;
@@ -997,6 +1030,10 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             Shape prevHover2 = hoverBox2;
             hoverBox = null;
             hoverBox2 = null;
+            
+            if (retreatBox.contains(x,y)) {
+                hoverBox = retreatBox;
+            }
             hoverStackNum = -1;
             for (int i=0;i<shipBox.length;i++) {
                 if (shipBox[i].contains(x,y)) {
@@ -1038,8 +1075,18 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             int y = e.getY();
             ShipFleet fl = selectedFleet();
             // selectedFleet can be null if hovering with mouse
-            if ((fl == null) || (hoverStackNum < 0) )
+            if (fl == null)
                 return;
+            
+            if (retreatBox.contains(x,y)) {
+                fl.toggleRetreatOnArrival();
+                softClick();
+                repaint();
+                return;
+            }
+            if (hoverStackNum < 0)
+                return;
+            
             ShipDesign d = fl.visibleDesign(player().id, hoverStackNum);
             int index = d.id();
             int stackNum = fl.num(index);
