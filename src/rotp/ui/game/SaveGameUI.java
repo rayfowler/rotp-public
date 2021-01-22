@@ -80,7 +80,7 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
     int end = 0;
     boolean saving = false;
 
-    int sortOrder = SORT_FN_UP;
+    int sortOrder = SORT_DT_UP;
     int buttonW, button1X, button2X;
     private final Rectangle cancelBox = new Rectangle();
     private final Rectangle saveBox = new Rectangle();

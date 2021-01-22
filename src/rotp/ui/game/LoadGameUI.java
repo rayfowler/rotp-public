@@ -71,7 +71,7 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
     int start = 0;
     int end = 0;
     
-    int sortOrder = SORT_FN_UP;
+    int sortOrder = SORT_DT_UP;
     int buttonW, button1X, button2X;
 
     boolean hasAutosave = false;
