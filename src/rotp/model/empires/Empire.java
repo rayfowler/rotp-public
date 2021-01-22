@@ -469,7 +469,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         if (!canSendTransportsTo(sys))
             return 0;
         else if (sys.empire() == this)
-            return (int)(sv.currentSize(sys.id) - (int) sv.population(sys.id));
+            return (int)(sv.currentSize(sys.id) - (int) sv.population(sys.id))+sys.transportSprite().amt();
         else
             return (int) sv.currentSize(sys.id);
     }
