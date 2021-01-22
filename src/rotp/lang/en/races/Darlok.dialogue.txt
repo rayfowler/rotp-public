@@ -35,8 +35,8 @@ DECLAREWAR_ALLIANCE_01     | Fool! You have made an enemy of our ally, and as su
 DECLAREWAR_ALLIANCE_02     | It is rare we meddle directly in the affairs of others. But, when an ally who has aided our quest begs for our assistance, we will do what we can to help them.
 DECLAREWAR_ALLIANCE_03     | We are pleased to watch your empires fight amongst themselves, but we know the threat you present to us. We will gladly aid the [defender_race] to remove the impediment your existence poses.
 DECLAREWAR_SPYING_01       | It is amusing that you would pursue such actions against those who have so mastered secrecy. The punishment for failure, however, will be significantly less so.
-DECLAREWAR_SPYING_02       | Admirable, to try and outmaneuver us in matters of espionage. I wonder, will your military power prove to be as commendable as your daring?
-DECLAREWAR_SPYING_03       | Did you believe this cloddish bumbling would escape our vigilant gaze? If you are so arrogant that you believe this espionage could go unnoticed, you are arrogant enough for us to crush in battle.
+DECLAREWAR_SPYING_02       | Admirable, to try and outmaneuver us in matters of secrecy. I wonder, will your military power prove to be as commendable as your daring?
+DECLAREWAR_SPYING_03       | Did you believe this cloddish bumbling would escape our vigilant gaze? If you are so arrogant that you believe your spying could go unnoticed, you are arrogant enough for us to crush in battle.
 DECLAREWAR_ATTACK_01       | Impudence! To attack us so openly can only mean that you wish for total annihilation!
 DECLAREWAR_ATTACK_02       | Insufferable louts! We will soon find out if the confidence that comes from striking against us is accompanied by strength to match!
 DECLAREWAR_ATTACK_03       | Scourge! Villains! We will not yield to you or anyone else until our great work is finished! Prepare for our retribution!

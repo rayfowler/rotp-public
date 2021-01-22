@@ -38,7 +38,7 @@ DECLAREWAR_SPYING_01       | [your_race] species engages in secret action agains
 DECLAREWAR_SPYING_02       | Subterfuge detected in Dominion territory. Source confirmed as [your_race] species. Dominion protocols require war as response. 
 DECLAREWAR_SPYING_03       | Dominion detects obvious attempt at destabilization by [your_empire]. Cannot allow [your_race] species to continue interference with objectives. Dominion must retaliate at any cost.
 DECLAREWAR_ATTACK_01       | [your_race] species proven hostile despite evident [my_race] superiority. Dominion moving to remove threat entirely.
-DECLAREWAR_ATTACK_02       | [your_empire] impedes Dominion objectives by attacking directly. Confrontation unavoidable.
+DECLAREWAR_ATTACK_02       | [your_race] species impedes Dominion objectives by attacking directly. Confrontation unavoidable.
 DECLAREWAR_ATTACK_03       | [your_race] species attempts to prevent Dominion from reaching objectives by wiping out [my_race]. Dominion will retaliate with all available military strength.
 DECLAREWAR_OPPORTUNITY_01  | [my_title] believes [your_race] species will ultimately prove detrimental in attaining primary directive. Dominion will eradicate [your_race] species before threat is fully realized.
 DECLAREWAR_ASSASSIN_01     | Dominion Ambassador rendered inoperable by [your_race] species before being re-integrated into Mainframe. [your_race] actions demand violent retaliation.
@@ -62,7 +62,7 @@ WARN_FINAL_WAR_01          | All known species create agreement to ensure lastin
 WARN_COUNCIL_VOTE_01       | Dominion aware of [voter_race] actions in council. Meaning irrelevant. Result assessed as detrimental to [candidate_race] goals. Diplomatic standing adjusted accordingly.  
 WARN_OATHBREAKER_01        | [my_title] passes judgment: [your_race] species no longer deemed trustworthy. All future dealings subject to revision based on [your_race] species breaking binding agreement. 
 WARN_ATTACKED_ALLY_01      | Conflict recorded between [your_race] species and [defender_race] species. [defender_race] species known ally of Dominion. Cease fighting or prepare for consequences. 
-WARN_REBELLING_AGAINST_01   | [your_race] species now obstacle of Dominion objectives. Galactic Council ruling unacceptable. Awaiting response from Supreme Arbiter. 
+WARN_REBELLING_AGAINST_01  | [your_race] species now obstacle of Dominion objectives. Galactic Council ruling unacceptable. Awaiting response from Supreme Arbiter. 
 
 
 PRAISE_COUNCIL_VOTE_01     | Ambassador of [voter_race] species continues to provide aid in advancing [candidate_race] objectives. Dominion recognizes benefit of continued relationship with [voter_race] species. Dominion will repay favor as needed. 

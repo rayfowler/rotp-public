@@ -652,7 +652,7 @@ MAIN_SPIES_CAUGHT_THEIRS          | Theirs
 // Alerts
 MAIN_ALERT_TITLE                  | Alert 
 MAIN_ALERT_TITLE_COUNT            | Alert - %1 of %2
-MAIN_ALERT_TECH_STOLEN            | Internal security reports that a spy for the %1 has stolen the secrets of %2.
+MAIN_ALERT_TECH_STOLEN            | Internal security has uncovered espionage activities by %1 spies.
 MAIN_ALERT_SPY_CAPTURED           | We have captured a spy from the %1, forcing a confession of their %2 activities.
 MAIN_ALERT_SPY_CONFESSED          | The %1 have captured one of our spies, forcing a confession of our %2 activities.
 MAIN_ALERT_FACTORIES_DESTROYED    | Agents working for the %1 have destroyed %2 factories in the %3 system.
