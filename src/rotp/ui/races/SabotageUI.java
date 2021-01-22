@@ -457,6 +457,7 @@ public final class SabotageUI extends BasePanel implements MouseListener {
         private final Rectangle rebellionBox = new Rectangle();
         private final Rectangle noActionBox = new Rectangle();
         private Shape hoverTarget;
+        Shape textureClip;
         
         public SabotageButtonsPanel() {
             init();
@@ -469,6 +470,10 @@ public final class SabotageUI extends BasePanel implements MouseListener {
             addMouseMotionListener(this);
         }
         @Override
+        public String textureName()            { return TEXTURE_GRAY; }
+        @Override
+        public Shape textureClip()             { return textureClip; }
+        @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
             super.paintComponent(g);
@@ -476,6 +481,8 @@ public final class SabotageUI extends BasePanel implements MouseListener {
             int w = getWidth();
             int h = getHeight();
             
+            textureClip = new Rectangle2D.Float(0, 0, w, h);
+
             int messageH = s60;
 
             Empire pl = player();
