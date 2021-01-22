@@ -26,6 +26,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.lang.management.ManagementFactory;
+import java.net.URISyntaxException;
 import java.net.URLDecoder;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -134,11 +135,9 @@ public class Rotp {
     public static String jarPath()  {
         if (jarPath == null) {
             try {
-                String path = Rotp.class.getProtectionDomain().getCodeSource().getLocation().getPath();
-                System.out.println("Jar Path: "+path);
-                path = URLDecoder.decode(path, "UTF-8");
-                jarPath = (new File(path)).getParentFile().getPath();
-            } catch (UnsupportedEncodingException ex) {
+                File jarFile = new File(Rotp.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath());
+                jarPath = jarFile.getParentFile().getPath();
+            } catch (URISyntaxException ex) {
                 System.out.println("Unable to resolve jar path: "+ex.toString());
                 jarPath = ".";
             }
