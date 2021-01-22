@@ -117,8 +117,8 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
         exited = false;
         initLandscapeImage(colony);
         
-        if (tr.size() < tr.originalSize()) 
-            subtitle = text("INVASION_SOME_TROOPS_LANDED", str(tr.size()), str(tr.originalSize()), tr.empire().raceName());
+        if (tr.size() < tr.launchSize()) 
+            subtitle = text("INVASION_SOME_TROOPS_LANDED", str(tr.size()), str(tr.launchSize()), tr.empire().raceName());
         else
             subtitle = text("INVASION_TROOPS_LANDED", str(tr.size()), tr.empire().raceName());
 

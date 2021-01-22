@@ -543,7 +543,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
                 // log("reducing transport levels from ", planet.name(), " to ",
                 // str(transport().originalSize), " to avoid income loss");
                 transport().size(maxSize);
-                transport().originalSize(maxSize);
+                transport().launchSize(maxSize);
             } else {
                 // log("cancelling transports from ", planet.name(), " to
                 // avoid income loss");
@@ -979,11 +979,11 @@ public final class Colony implements Base, IMappedObject, Serializable {
         // neither of these incidents are added to the embassies. They are for
         // player notification only.
         if (tr.size() == 0) {
-            log(concat(str(tr.originalSize()), " ", tr.empire().raceName(), " transports perished at ", name()));
+            log(concat(str(tr.launchSize()), " ", tr.empire().raceName(), " transports perished at ", name()));
             if (tr.empire().isPlayer()) 
-                TransportsKilledAlert.create(empire(), starSystem(), tr.originalSize());
+                TransportsKilledAlert.create(empire(), starSystem(), tr.launchSize());
             else if (empire().isPlayer()) 
-                InvadersKilledAlert.create(tr.empire(), starSystem(), tr.originalSize());
+                InvadersKilledAlert.create(tr.empire(), starSystem(), tr.launchSize());
             return;
         }
 
@@ -1008,7 +1008,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         DiplomaticTreaty treaty = empire().treaty(tr.empire());
         if (treaty != null) {
             treaty.losePopulation(empire(), startingPop-population());
-            treaty.losePopulation(tr.empire(), tr.originalSize()-tr.size());
+            treaty.losePopulation(tr.empire(), tr.launchSize()-tr.size());
         }
 
         // did planet ownership change?

@@ -792,6 +792,11 @@ public final class Empire implements Base, NamedObject, Serializable {
         return shipCaptainAI().retreatSystem(from);
     }
     public void retreatShipsFrom(int empId) {
+        List<Transport> transports = transports();
+        for (Transport tr: transports) {
+            if (tr.destination().empId() == empId)
+                tr.orderToSurrenderOnArrival();
+        }
         ShipCaptain shipCaptain = shipCaptainAI();
         Ships shipMgr = galaxy().ships;
         List<ShipFleet> fleets = shipMgr.allFleets(id);

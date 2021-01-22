@@ -512,6 +512,7 @@ MAIN_TRANSPORT_CANCEL             | Cancel
 MAIN_TRANSPORT_SEND               | Send Transports
 MAIN_TRANSPORT_ABANDON            | Abandon
 MAIN_TRANSPORT_CLEAR              | Clear Transports
+MAIN_TRANSPORT_SURRENDER          | Automatically surrender upon arrival
 
 // Colony labels
 MAIN_COLONY_HOMEWORLD             | %1 Homeworld
@@ -659,7 +660,9 @@ MAIN_ALERT_BASES_DESTROYED        | Agents working for the %1 have destroyed %2 
 MAIN_ALERT_FACTORIES_DESTROYED2   | Unknown saboteurs have destroyed %1 factories in the %2 system.
 MAIN_ALERT_BASES_DESTROYED2       | Unknown saboteurs have destroyed %1 missile bases defending the %2 system.
 MAIN_ALERT_TRANSPORTS_PERISHED    | The %1 colony in %2 has been destroyed. Our transports attempting to land there have perished.
+MAIN_ALERT_TRANSPORTS_CAPTURED    | Our %3 transports arriving in the %2 system have surrendered to %1 forces.
 MAIN_ALERT_TRANSPORTS_KILLED      | Our %3 transports attempting to reach %2 have been destroyed by defending %1 forces.
+MAIN_ALERT_INVADERS_CAPTURED      | %3 %1 transports arriving in the %2 system have surrendered to our defensive forces.
 MAIN_ALERT_INVADERS_KILLED        | %3 %1 transports attempting to invade %2 have been completely destroyed by our defensive forces.
 MAIN_ALERT_TRESPASSING1           | %1 ships have been spotted trespassing near our colony in the %2 system.
 MAIN_ALERT_TRESPASSING2           | The %1 ambassador protests our ships trespassing in the %2 system.

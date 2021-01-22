@@ -30,11 +30,18 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.Point2D;
 import java.awt.geom.RoundRectangle2D;
+import java.util.List;
 import rotp.model.empires.Empire;
 import rotp.model.empires.Race;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.galaxy.Transport;
 import rotp.ui.BasePanel;
+import static rotp.ui.BasePanel.s1;
+import static rotp.ui.BasePanel.s12;
+import static rotp.ui.BasePanel.s3;
+import static rotp.ui.BasePanel.s30;
+import static rotp.ui.BasePanel.s6;
+import static rotp.ui.BasePanel.stroke2;
 
 public class TransportPanel extends BasePanel {
     private static final long serialVersionUID = 1L;
@@ -42,6 +49,8 @@ public class TransportPanel extends BasePanel {
     protected BasePanel topPane;
     protected BasePanel detailPane;
     protected BasePanel bottomPane;
+    private Shape hoverBox;
+    private final Rectangle retreatBox = new Rectangle();
 
     public TransportPanel(SpriteDisplayPanel p) {
         parent = p;
@@ -143,7 +152,7 @@ public class TransportPanel extends BasePanel {
             g.fillRect(0, h-s5, w, s5);
         }
     }
-    public class TransportDetailPane extends BasePanel  {
+    public class TransportDetailPane extends BasePanel implements MouseListener, MouseMotionListener {
         private static final long serialVersionUID = 1L;
         final int MAX_DISPLAY = 30;
         int randX[] = { 48,344,393,229,534,599,586,536,286,368,460, 67,414,355,296,466,405,653,777,794,290,645,281,145,  2,498,290,391,603,151 };
@@ -151,6 +160,11 @@ public class TransportPanel extends BasePanel {
         private final TransportPanel parent;
         public TransportDetailPane(TransportPanel p) {
             parent = p;
+            init();
+        }
+        private void init() {
+            addMouseListener(this);
+            addMouseMotionListener(this);
         }
         @Override
         public boolean hasStarBackground()     { return true; }
@@ -166,18 +180,56 @@ public class TransportPanel extends BasePanel {
             if (tr == null)
                 return;
 
-            drawTransports(g,tr,0,0,w,h);
+           
+            drawTransports(g,tr,0,0,w,h-s80);
 
             // draw title
             g.setFont(narrowFont(20));
-            String str1 = text("MAIN_TRANSPORTS_COUNT", tr.size());
+            String str1 = text("MAIN_TRANSPORTS_COUNT", tr.launchSize());
             int sw = g.getFontMetrics().stringWidth(str1);
             int x0 = (w-sw)/2;
             drawBorderedString(g, str1, 2, x0, s24, Color.black, SystemPanel.orangeText);
+            
+            if (!tr.empire().isPlayer())
+                return;
+            
+            g.setColor(MainUI.shadeBorderC());
+            g.fillRect(0, h-s50, w, s50);
+            
+            x0 = s10;
+            int y0 = h-s30;
+            int lineH = s18;
+            int checkW = s12;
+            int checkX = x0;
+            String retreatText = text("MAIN_TRANSPORT_SURRENDER");
+            g.setFont(narrowFont(16));
+            retreatBox.setBounds(checkX, y0-checkW, checkW, checkW);
+            Stroke prev = g.getStroke();
+            g.setStroke(stroke2);
+            g.setColor(MainUI.paneBackground());
+            g.fill(retreatBox);
+            if (hoverBox == retreatBox) {
+                g.setColor(Color.yellow);
+                g.draw(retreatBox);
+            }
+            if (tr.surrenderOnArrival()) {
+                g.setColor(SystemPanel.whiteText);
+                g.drawLine(checkX-s1, y0-s6, checkX+s3, y0-s3);
+                g.drawLine(checkX+s3, y0-s3, checkX+checkW, y0-s12);
+            }
+            g.setStroke(prev);
+            g.setColor(SystemPanel.blackText);
+            int indent = checkW+s6;
+            List<String> lines = wrappedLines(g, retreatText, w-s20, indent);
+            for (String line: lines) {
+                g.drawString(line, x0+indent, y0);
+                indent = 0;
+                y0 += lineH;
+            }
         }
         private void drawTransports(Graphics2D g, Transport tr, int x, int y, int w, int h) {
             Image img = tr.empire().race().transport();
-            int n = min(tr.size(),MAX_DISPLAY);
+            int n = min(tr.launchSize(),MAX_DISPLAY);
             for (int i=n-1;i>=0;i--)
                 drawTransport(g, img, w, h, i);
         }
@@ -190,6 +242,46 @@ public class TransportPanel extends BasePanel {
             int y0 = (int) (h*randY[n]/1000.0);
             int x0 = (int) (w*randX[n]/1000.0);
             g.drawImage(img, x0, y0, x0+dispW, y0+dispH, 0, 0, imgW, imgH, null);
+        }
+        @Override
+        public void mouseDragged(MouseEvent e) { }
+        @Override
+        public void mouseMoved(MouseEvent e) {
+            int x = e.getX();
+            int y = e.getY();
+
+            Shape prevHover = hoverBox;
+            hoverBox = null;
+            if (retreatBox.contains(x,y))
+                hoverBox = retreatBox;
+
+            if (hoverBox != prevHover)
+                repaint();
+        }
+        @Override
+        public void mouseClicked(MouseEvent e) { }
+        @Override
+        public void mouseEntered(MouseEvent e) { }
+        @Override
+        public void mouseExited(MouseEvent e) {
+            if (hoverBox != null) {
+                hoverBox = null;
+                repaint();
+            }
+        }
+        @Override
+        public void mousePressed(MouseEvent e) { }
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            if (e.getButton() > 3)
+                return;
+            int x = e.getX();
+            int y = e.getY();
+
+            if (retreatBox.contains(x,y)) {
+                parent.transport().toggleSurrenderOnArrival();
+                repaint();
+            }
         }
     }
     public class TransportButtonPane extends BasePanel implements MouseListener, MouseMotionListener {

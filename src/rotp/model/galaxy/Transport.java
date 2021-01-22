@@ -30,6 +30,7 @@ import rotp.model.tech.TechPersonalShield;
 import rotp.model.tech.TechTree;
 import rotp.ui.BasePanel;
 import rotp.ui.main.GalaxyMapPanel;
+import rotp.ui.notifications.TransportsCapturedAlert;
 import rotp.ui.notifications.TransportsPerishedAlert;
 import rotp.ui.sprites.FlightPathSprite;
 import rotp.util.Base;
@@ -77,6 +78,17 @@ public class Transport implements Base, Ship, Sprite, Serializable {
     public int displayPriority()                { return 8; }
     @Override
     public boolean hasDisplayPanel()            { return true; }
+    @Override
+    public boolean persistOnClick()             { return empire() == player(); }    
+    public boolean surrenderOnArrival()         { return size < 0; }
+    
+    public void orderToSurrenderOnArrival()    {  size = -1; }
+    public void toggleSurrenderOnArrival() {
+        if (surrenderOnArrival())
+            size = originalSize;
+        else 
+            orderToSurrenderOnArrival();
+    }
 
     public Rectangle selectBox() {
         if (selectBox == null)
@@ -102,9 +114,9 @@ public class Transport implements Base, Ship, Sprite, Serializable {
     public StarSystem from()          { return from; }
     public int size()                 { return size; }
     public void size(int s)           { size = s; }
-    public int originalSize()         { return originalSize; }
-    public void originalSize(int s)   { originalSize = s; }
-    public float hitPoints()         { return hitPoints; }
+    public int launchSize()           { return originalSize; }
+    public void launchSize(int s  )   { originalSize = s; }
+    public float hitPoints()          { return hitPoints; }
     public float combatTransportPct() { return combatTransportPct; }
     public float combatAdj()          { return combatAdj; }
     public float launchTime()         { return launchTime; }
@@ -293,8 +305,16 @@ public class Transport implements Base, Ship, Sprite, Serializable {
                 size = 0;
             }
         }
-        else if (dest.empire() != empire)
-            dest.colony().resistTransport(this);
+        else if (dest.empire() != empire) {
+            if (surrenderOnArrival()) {
+                log(concat(str(size), " ", empire.name(), " transports surrendered at ", dest.name()));
+                if (empire.isPlayer() || dest.empire().isPlayer())
+                    TransportsCapturedAlert.create(empire, dest.empire(), dest, originalSize);
+                size = 0;
+            }
+            else
+                dest.colony().resistTransport(this);
+        }
         else if (dest.colony().inRebellion())
             dest.colony().resistTransportWithRebels(this);
         else
