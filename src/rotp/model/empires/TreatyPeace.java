@@ -28,7 +28,10 @@ public class TreatyPeace extends DiplomaticTreaty implements Base {
     public void nextTurn(Empire emp)      { 
         duration--;
         if (duration <= 0) {
-            galaxy().empire(empire1).viewForEmpire(empire2).embassy().setNoTreaty();
+            if (empire1 == emp.id)
+                galaxy().empire(empire2).viewForEmpire(empire1).embassy().setNoTreaty();
+            else
+                galaxy().empire(empire1).viewForEmpire(empire2).embassy().setNoTreaty();
         }
     }
     @Override
