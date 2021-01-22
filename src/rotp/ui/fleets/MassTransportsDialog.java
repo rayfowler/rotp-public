@@ -38,6 +38,7 @@ import rotp.model.empires.Empire;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
 import rotp.ui.main.SystemPanel;
+import rotp.ui.sprites.SystemTransportSprite;
 import rotp.util.Palette;
 
 public class MassTransportsDialog extends BasePanel {
@@ -98,7 +99,8 @@ public class MassTransportsDialog extends BasePanel {
     void sendTransports() {
         List<StarSystem> launchPoints = new ArrayList<>();
         for (StarSystem sys : sourceSystems) {
-            if (sys.transportSprite().amt() > 0) {
+            SystemTransportSprite spr = sys.transportSprite();
+            if ((spr.amt() > 0) && (spr.starSystem() == null)) {
                 sys.transportSprite().clickedDest(topParent.targetSystem);
                 launchPoints.add(sys);
             }

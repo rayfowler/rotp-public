@@ -729,8 +729,16 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             SystemTransportSprite spr = sys.transportSprite();
             String sysName = player().sv.name(spr.starSystem().id);
             String detail = text("FLEETS_EXISTING_TRANSPORT", str(spr.amt()), sysName);
-            this.scaledFont(g, detail, boxL-s5-x0, 20, 12);
-            g.drawString(detail, x0+s10, boxTopY+boxH-s2);
+            List<String> detailLines = scaledWrappedLines(g, detail, boxL-s25-x0, 2, 14, 12);
+
+
+            //this.scaledFont(g, detail, boxL-s5-x0, 20, 12);
+            if (detailLines.size() == 1)
+                g.drawString(detail, x0+s10, boxTopY+boxH-s2);
+            else {
+                g.drawString(detailLines.get(0), x0+s10, y1+boxH-s12);
+                g.drawString(detailLines.get(1), x0+s10, y1+boxH+s1);            
+            }
         }
     }
     public class SystemDataColumn extends Column {

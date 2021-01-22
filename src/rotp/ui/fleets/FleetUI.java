@@ -151,8 +151,9 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         map.clearRangeMap();
 
         selectedSystems.clear();
-        selectedSystems.addAll(player().allColonizedSystems());
-        for (StarSystem sys: selectedSystems)
+        
+        List<StarSystem> playerSystems = player().allColonizedSystems();
+        for (StarSystem sys: playerSystems)
             sys.transportSprite().cancel();
         resetAllSystemFilters();
         filterSelectedSystems();
