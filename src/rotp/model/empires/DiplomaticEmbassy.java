@@ -77,7 +77,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
 
     private final int[] timers = new int[20];
     private float relations = 0;
-    private int peaceDuration = 0;
+    private int peaceDuration = 0; // obsolete - sunset at some point
     private int tradeTimer = 0;
     private int lastRequestedTradeLevel = 0;
     private int tradeRefusalCount = 0;
@@ -137,6 +137,9 @@ public class DiplomaticEmbassy implements Base, Serializable {
     }
     public DiplomaticEmbassy(EmpireView v) {
         view = v;
+        setNoTreaty();
+    }
+    public final void setNoTreaty() {
         treaty = new TreatyNone(view.owner(), view.empire());
     }
     public float currentSpyIncidentSeverity() {
@@ -148,6 +151,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
         return max(-100,sev);
     }
     public void nextTurn(float prod) {
+        peaceDuration--;
         evaluateWarPreparations();
         treaty.nextTurn(empire());
     }
@@ -332,7 +336,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
             return s.hasColonyForEmpire(owner());
         return false;
     }
-    public boolean peaceTreatyInEffect()   { return peaceDuration > 0; }
+    public boolean peaceTreatyInEffect()   { return treaty.isPeace() || (peaceDuration > 0); }
     private void setTreaty(DiplomaticTreaty tr) {
         treaty = tr;
         otherEmbassy().treaty = tr;
@@ -658,8 +662,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
     }
     private void beginPeace(int duration) {
         beginTreaty();
-        peaceDuration = duration;
-        treaty = new TreatyNone(view.empire(), view.owner());
+        treaty = new TreatyPeace(view.empire(), view.owner(), duration);
         view.setSuggestedAllocations();
     }
 }
