@@ -522,7 +522,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
             int newAlloc = ecology().cleanupAllocationNeeded();
             if (allocation[ECOLOGY] < newAlloc) {
                 allocation[ECOLOGY] = cleanupAllocation = newAlloc;
-                empire().ai().governor().setColonyAllocations(this);
+                cleanupSpending(ecology());
             }        
         }
     }
