@@ -35,6 +35,7 @@ import rotp.model.incidents.ColonyInvadedIncident;
 import rotp.model.planet.Planet;
 import rotp.model.ships.ShipDesign;
 import rotp.model.tech.Tech;
+import rotp.model.tech.TechMissileWeapon;
 import rotp.model.tech.TechTree;
 import rotp.ui.RotPUI;
 import rotp.ui.notifications.GNNNotification;
@@ -972,15 +973,24 @@ public final class Colony implements Base, IMappedObject, Serializable {
         }
 
         num -= passed;
-        int missileDmg = tech().topBaseMissileTech().damage() * 3;
+
+        // choose most effective missile dmg
+        int missileDmg = 0;
+        TechMissileWeapon scatter = tech().topBaseScatterPackTech();
+        TechMissileWeapon missile = tech().topBaseMissileTech();
+        if (scatter != null)
+            missileDmg = 3*max(missile.damage(), scatter.damage() * scatter.scatterAttacks());
+        else 
+            missileDmg = 3*missile.damage();
+
         int lost = 0;
 
         // start with base missile damage
         float defenderDmg = defense().missileBases() * missileDmg;
 
         // add firepower for each allied ship in orbit
-		// modnar: use firepowerAntiShip to only count ship weapons that can hit ships
-		// to prevent ground bombs from being able to damage transports
+            // modnar: use firepowerAntiShip to only count ship weapons that can hit ships
+            // to prevent ground bombs from being able to damage transports
         List<ShipFleet> fleets = starSystem().orbitingFleets();
         for (ShipFleet fl : fleets) {
             if (fl.empire().aggressiveWith(tr.empId()))
@@ -991,7 +1001,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         for (int j = 0; j < tr.gauntletRounds(); j++)
             lost += (int) (defenderDmg / tr.hitPoints());
 
-        passed += Math.max(0, (num - lost));
+        passed += max(0, (num - lost));
 
         tr.size(passed);
 

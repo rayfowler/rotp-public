@@ -52,6 +52,7 @@ public final class TechMissileWeapon extends Tech {
     public int range2 = 0;
     public int damageLoss = 0;
 
+    public int scatterAttacks()  { return attacks; }
     public int damage()   { return (int) (session().damageBonus() * damage); }
 
     @Override

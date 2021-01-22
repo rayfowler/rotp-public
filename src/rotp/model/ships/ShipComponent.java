@@ -48,7 +48,7 @@ public class ShipComponent implements Base, Serializable {
     public boolean isBeamWeapon()        { return false; }
     public boolean isLimitedShotWeapon() { return false; }
     public int attacksPerRound()         { return 1; }
-    public int multiAttacks()            { return 1; } // for scatter packs
+    public int scatterAttacks()            { return 1; } // for scatter packs
     public boolean isStreamingWeapon()   { return false; }
     public int repulsorRange()           { return 0; }
     public int range()                   { return 0; }
