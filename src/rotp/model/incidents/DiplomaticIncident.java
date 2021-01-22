@@ -23,6 +23,7 @@ import rotp.util.Base;
 public abstract class DiplomaticIncident implements Base, Serializable {
     public static final int NO_WARNING = -1;
     public static final int SPY_WARNING = 0;
+    public static final int ATTACK_WARNING = 1;
     private static final long serialVersionUID = 1L;
     protected float severity;
     protected int duration;

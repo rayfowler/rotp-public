@@ -205,6 +205,11 @@ public class DiplomaticEmbassy implements Base, Serializable {
     public boolean warningAlreadySent(int timerKey) {
         return (timerKey >= 0) && (timers[timerKey] > 0);
     }
+    public void resetTimer(int index) {
+        if ((index <0) || (index >= timers.length))
+            return;
+        timers[index] = 0;
+    }
     public void giveExpansionWarning()      { warningLevel = 1; }
     public boolean gaveExpansionWarning()   { return warningLevel > 0; }
     public void noteRequest() {
@@ -404,6 +409,8 @@ public class DiplomaticEmbassy implements Base, Serializable {
             }
         }
 
+        resetTimer(DiplomaticIncident.SPY_WARNING);
+        resetTimer(DiplomaticIncident.ATTACK_WARNING);
         resetPeaceTimer(3);
         withdrawAmbassador();
         otherEmbassy().withdrawAmbassador();

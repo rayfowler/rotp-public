@@ -51,6 +51,8 @@ public class SkirmishIncident extends DiplomaticIncident {
     @Override
     public String warningMessageId() {  return DialogueManager.WARNING_SKIRMISH; }
     @Override
+    public int timerKey()               { return ATTACK_WARNING; }
+    @Override
     public String key() {
         return concat(systemName(), ":", str(dateOccurred));
     }

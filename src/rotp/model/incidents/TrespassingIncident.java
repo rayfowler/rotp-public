@@ -40,7 +40,7 @@ public class TrespassingIncident extends DiplomaticIncident {
         if (sys.empire().leader().isXenophobic())
             multiplier *= 2;
 
-        float fleetPower = fl.firepower(player().sv.shieldLevel(sysId))/100.0f;
+        float fleetPower = fl.firepower(sys.colony().defense().shieldLevel())/100.0f;
         severity = multiplier* max(1.0f, fleetPower);
         severity = max(-10, severity);
         // notify player if hostile ships are orbiting his colony
@@ -56,7 +56,9 @@ public class TrespassingIncident extends DiplomaticIncident {
     @Override
     public String description()         { return decode(text("INC_TRESPASSING_DESC")); }
     @Override
-    public String warningMessageId()    {  return DialogueManager.WARNING_TRESPASSING; }
+    public String warningMessageId()    { return DialogueManager.WARNING_TRESPASSING; }
+    @Override
+    public int timerKey()               { return ATTACK_WARNING; }
     @Override
     public String key() {
         return concat(systemName(), ":", str(dateOccurred));
