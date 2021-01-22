@@ -72,7 +72,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
     public enum Orders {
         NONE(""), SHIELD("TECH_ALLOCATE_SHIELD"), BASES("TECH_ALLOCATE_MISSILE_BASES"), FACTORIES(
                         "TECH_ALLOCATE_FACTORIES"), SOIL("TECH_ALLOCATE_ENRICH_SOIL"), ATMOSPHERE(
-                        "TECH_ALLOCATE_ATMOSPHERE"), TERRAFORM("TECH_ALLOCATE_TERRAFORM");
+                        "TECH_ALLOCATE_ATMOSPHERE"), TERRAFORM("TECH_ALLOCATE_TERRAFORM"), POPULATION("TECH_ALLOCATE_POPULATION");
         private final String label;
         Orders(String s) { label = s; }
         @Override
@@ -494,6 +494,26 @@ public final class Colony implements Base, IMappedObject, Serializable {
         if (reallocationRequired)
             empire().governorAI().setColonyAllocations(this);            
 
+    }
+    public void addFollowUpSpendingOrder(float orderAmt) {
+        if (orderAmt <= 0)
+            return;
+
+        // a spending order has completed, ripple it down to the next priority
+        // so the colony progresses to completion
+        ColonyEcology eco = ecology();
+        ColonyIndustry ind = industry();
+        ColonyDefense def = defense();
+        if (!eco.terraformCompleted()) 
+            addColonyOrder(Colony.Orders.TERRAFORM, orderAmt);
+        else if (!ind.isCompleted())
+            addColonyOrder(Colony.Orders.FACTORIES, orderAmt);
+        else if (!eco.populationGrowthCompleted())
+            addColonyOrder(Colony.Orders.POPULATION, orderAmt);
+        else if (!def.shieldAtMaxLevel())
+            addColonyOrder(Colony.Orders.SHIELD, orderAmt);
+        else if (!def.missileBasesCompleted())
+            addColonyOrder(Colony.Orders.BASES, orderAmt/5);
     }
     public void checkEcoAtClean() {
         recalcSpendingForNewTaxRate = false;

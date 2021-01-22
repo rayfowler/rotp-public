@@ -38,10 +38,12 @@ public class ColonyEcology extends ColonySpendingCategory {
     private boolean populationGrowthCompleted = false;
     private int expectedPopGrowth = 0;
 
-    public boolean atmosphereCompleted()         { return atmosphereCompleted; }
-    public boolean soilEnrichCompleted()         { return soilEnrichCompleted; }
-    public boolean terraformCompleted()         { return terraformCompleted; }
-    public boolean populationGrowthCompleted()   { return populationGrowthCompleted; }
+    public boolean atmosphereCompletedThisTurn()        { return atmosphereCompleted; }
+    public boolean soilEnrichCompletedThisTurn()        { return soilEnrichCompleted; }
+    public boolean terraformCompletedThisTurn()         { return terraformCompleted; }
+    public boolean populationGrowthCompletedThisTurn()  { return populationGrowthCompleted; }
+    public boolean populationGrowthCompleted()          { return colony().population() >= colony().maxSize(); }
+    public boolean terraformCompleted()                 { return planet().currentSize() >= colony().maxSize(); }
 
     public void resetBiosphere() {
         hostileBC = 0;
@@ -126,15 +128,10 @@ public class ColonyEcology extends ColonySpendingCategory {
             hostileCost = max(hostileCost,0);
             hostileBC += hostileCost;
             newBC -= hostileCost;
-            if (hostileBC >= atmosphereTerraformCost()) {
-                atmosphereCompleted = true;
+            atmosphereCompleted = hostileBC >= atmosphereTerraformCost();
+            if (atmosphereCompleted) {
                 hostileBC = 0;
                 p.terraformAtmosphere();
-                float orderAmt = c.orderAmount(Colony.Orders.ATMOSPHERE);
-                if (orderAmt > 0) {
-                    c.removeColonyOrder(Colony.Orders.ATMOSPHERE);
-                    c.addColonyOrder(Colony.Orders.TERRAFORM, orderAmt);
-                }
             }
         }
 
@@ -152,13 +149,6 @@ public class ColonyEcology extends ColonySpendingCategory {
                     p.enrichSoil();
                 }
                 soilEnrichCompleted = p.environment() >= tr.topSoilEnrichmentTech().environment;
-                if (soilEnrichCompleted) {
-                    float orderAmt = c.orderAmount(Colony.Orders.SOIL);
-                    if (orderAmt > 0) {
-                        c.removeColonyOrder(Colony.Orders.SOIL);
-                        c.addColonyOrder(Colony.Orders.TERRAFORM, orderAmt);
-                    }
-                }
             }
         }
 
@@ -190,7 +180,15 @@ public class ColonyEcology extends ColonySpendingCategory {
             newPurchasedPopulation = min(newPurchasedPopulation,(p.currentSize() - c.population() + c.inTransport() - newGrownPopulation));
             newPurchasedPopulation = max(newPurchasedPopulation,0);
             newBC -= (newPurchasedPopulation* tr.populationCost());
-            populationGrowthCompleted = (newPurchasedPopulation > 0) && (c.population() >= c.maxSize());
+            populationGrowthCompleted = ((newGrownPopulation+newPurchasedPopulation) > 0) && (c.population() >= c.maxSize());
+            if (populationGrowthCompleted) {
+                float orderAmt = c.orderAmount(Colony.Orders.POPULATION);
+                if (orderAmt > 0) {
+                    c.removeColonyOrder(Colony.Orders.POPULATION);
+                    if (c.industry().isCompleted())
+                        c.addColonyOrder(Colony.Orders.FACTORIES, orderAmt);
+                }
+            }
         }
 
         // for poor planets, we want to assume that as much
@@ -214,14 +212,25 @@ public class ColonyEcology extends ColonySpendingCategory {
     @Override
     public void assessTurn() {
         Colony c = colony();
-        populationGrowthCompleted = ((newGrownPopulation+newPurchasedPopulation) > 0) && (c.population() >= c.maxSize());
-        if (populationGrowthCompleted) {
-            float orderAmt = c.orderAmount(Colony.Orders.TERRAFORM);
-            if (orderAmt > 0) {
-                c.removeColonyOrder(Colony.Orders.TERRAFORM);
-                c.addColonyOrder(Colony.Orders.FACTORIES, orderAmt);
-            }
+        float orderAmt = 0;
+        if (atmosphereCompletedThisTurn()) {
+            orderAmt = max(orderAmt, c.orderAmount(Colony.Orders.ATMOSPHERE));
+            c.removeColonyOrder(Colony.Orders.ATMOSPHERE);
         }
+        if (soilEnrichCompletedThisTurn()) {
+            orderAmt = max(orderAmt, c.orderAmount(Colony.Orders.SOIL));
+            c.removeColonyOrder(Colony.Orders.SOIL);
+        }
+        if (terraformCompletedThisTurn()) {
+            orderAmt = max(orderAmt, c.orderAmount(Colony.Orders.TERRAFORM));
+            c.removeColonyOrder(Colony.Orders.TERRAFORM);
+        }
+        if (populationGrowthCompletedThisTurn()) {
+            orderAmt = max(orderAmt, c.orderAmount(Colony.Orders.POPULATION));
+            c.removeColonyOrder(Colony.Orders.POPULATION);
+        }
+        
+        c.addFollowUpSpendingOrder(orderAmt);
     }
     public void commitTurn() {
         addWaste(-wasteCleaned);

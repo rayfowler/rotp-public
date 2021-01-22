@@ -144,17 +144,14 @@ public class ColonyIndustry extends ColonySpendingCategory {
     }
     @Override
     public void assessTurn() {
+        Colony c = colony();
+        float orderAmt = 0;
         if (isCompletedThisTurn()) {
-            Colony c = colony();
-            float orderAmt = c.orderAmount(Colony.Orders.FACTORIES);
-            if (orderAmt > 0) {
-                c.removeColonyOrder(Colony.Orders.FACTORIES);
-                if (!c.defense().shieldAtMaxLevel())
-                    c.addColonyOrder(Colony.Orders.SHIELD, orderAmt);
-                else if (!c.defense().missileBasesCompleted())
-                    c.addColonyOrder(Colony.Orders.BASES, orderAmt*2/5);
-            }   
+            orderAmt = max(orderAmt, c.orderAmount(Colony.Orders.FACTORIES));
+            c.removeColonyOrder(Colony.Orders.FACTORIES);
         }
+        
+        c.addFollowUpSpendingOrder(orderAmt);
     }
     public void commitTurn() {
         factories += newFactories;
