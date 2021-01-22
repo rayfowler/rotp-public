@@ -53,6 +53,7 @@ public interface Diplomat {
     DiplomaticReply receiveDeclareWar(Empire e);
     DiplomaticReply receiveOfferPeace(Empire e);
     DiplomaticReply receiveOfferTrade(Empire e, int level);
+    DiplomaticReply immediateRefusalToTrade(Empire requestor);
     DiplomaticReply receiveOfferPact(Empire e);
     DiplomaticReply receiveOfferAlliance(Empire e);
     DiplomaticReply receiveOfferJointWar(Empire e, Empire target);

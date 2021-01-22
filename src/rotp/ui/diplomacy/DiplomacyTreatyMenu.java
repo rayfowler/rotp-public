@@ -100,7 +100,15 @@ public class DiplomacyTreatyMenu extends DiplomaticMessage {
         DiplomaticReply reply;
         switch(choice) {
             case PROPOSE_PEACE          : reply = diplomat().diplomatAI().receiveOfferPeace(player());    break;
-            case PROPOSE_TRADE          : DiplomaticMessage.show(view(), DialogueManager.DIPLOMACY_TRADE_MENU); return;
+            case PROPOSE_TRADE          : 
+                DiplomaticReply refusal = diplomat().diplomatAI().immediateRefusalToTrade(player());
+                if (refusal != null) {
+                    refusal.returnMenu(DialogueManager.DIPLOMACY_MAIN_MENU);
+                    DiplomaticMessage.reply(DiplomacyRequestReply.create(diplomat(), refusal));
+                }
+                else
+                    DiplomaticMessage.show(view(), DialogueManager.DIPLOMACY_TRADE_MENU); 
+                return;
             case PROPOSE_PACT           : reply = diplomat().diplomatAI().receiveOfferPact(player());     break;
             case PROPOSE_ALLIANCE       : reply = diplomat().diplomatAI().receiveOfferAlliance(player()); break;
             case PROPOSE_JOINT_WAR      : DiplomaticMessage.show(view(), DialogueManager.DIPLOMACY_JOINT_WAR_MENU); return;
