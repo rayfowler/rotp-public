@@ -28,7 +28,6 @@ public class ShipWeapon extends ShipComponent {
     public int minDamage()            { return 0; }
     public int maxDamage()            { return 0; }
     public int shots()                { return 1; }
-
     public int turnsToFire()          { return 1; }
     public float computerLevel()      { return 0; }
     public boolean canAttackPlanets() { return (!noWeapon() && (maxDamage() > 0)); }

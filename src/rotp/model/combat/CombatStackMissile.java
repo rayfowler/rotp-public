@@ -34,7 +34,7 @@ public class CombatStackMissile extends CombatStack implements Base {
     public CombatStackMissile(CombatStack ship, ShipWeaponMissileType miss, int n) {
         missile = miss;
         range = ship.isColony() ? miss.range()*2 : miss.range();
-        origNum = num = n;
+        origNum = num = n*miss.multiAttacks();
         owner = ship;
         mgr = ship.mgr;
         empire = ship.empire;

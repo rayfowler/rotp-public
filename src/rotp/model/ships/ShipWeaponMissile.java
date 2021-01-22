@@ -57,6 +57,8 @@ public final class ShipWeaponMissile extends ShipWeaponMissileType {
     @Override
     public int shots()                    { return shots; }
     @Override
+    public int multiAttacks()             { return tech().attacks; }
+    @Override
     public int bombardAttacks()           { return shots; }
     @Override
     public float cost(ShipDesign n)      { return multi ? 1.5f * super.cost(n) : super.cost(n); }
