@@ -87,8 +87,8 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         leaderName.setLocation(x, y-s58);
         leaderBox.setBounds(x-s1, y-s59, FIELD_W+s2, FIELD_H+s2);
         homeWorld.setCaretPosition(homeWorld.getText().length());
-        homeWorld.setLocation(x, y-s100-s19);
-        homeWorldBox.setBounds(x-s1, y-scaled(119), FIELD_W+s2, FIELD_H+s2);
+        homeWorld.setLocation(x, y-s100-s10);
+        homeWorldBox.setBounds(x-s1, y-s100-s10, FIELD_W+s2, FIELD_H+s2);
 
         super.paintComponent(g0);
         Graphics2D g = (Graphics2D) g0;
@@ -178,7 +178,7 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         // draw homeword label
         String homeLbl = text("SETUP_HOMEWORLD_NAME_LABEL");
         int x3 = colorBox[0].x;
-        int y3 = colorBox[0].y-s100-s24;
+        int y3 = colorBox[0].y-s100-s14;
         g.setFont(narrowFont(20));
         g.setColor(Color.black);
         g.drawString(homeLbl, x3, y3);
