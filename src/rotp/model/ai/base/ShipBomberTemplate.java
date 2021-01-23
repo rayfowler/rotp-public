@@ -86,20 +86,43 @@ public class ShipBomberTemplate implements Base {
         ShipDesign d = ai.lab().newBlankDesign(size);
         setFastestEngine(ai, d);
         float totalSpace = d.availableSpace();
-        setBestBattleComputer(ai, d);
+        set2ndBestBattleComputer(ai, d); // give bombers 2nd best battle computer
         setBestCombatSpeed(ai, d);
+        
         boolean missileDef = upgradeMissileDefenseSpecial(ai, d);
+        set2ndBestECMJammer(ai, d); // give bombers 2nd best ECM, even with anti-missile
         if (!missileDef)
             setBestECMJammer(ai, d);
+        
         setBestManeuverSpecial(ai, d, targets);
-        if (d.size() >= ShipDesign.MEDIUM)             
+        
+        // best armor when larger than small
+        if (d.size() >= ShipDesign.MEDIUM) {
             setBestNormalArmor(ai, d);
-            
+        }
+        
+        // 2nd best shields for large
+        if (d.size() == ShipDesign.LARGE) {
+            set2ndBestShield(ai, d);
+        }
+        
+        // best shields for huge
+        if (d.size() == ShipDesign.HUGE) {
+            setBestShield(ai, d);
+        }
+        
         float weaponSpace = d.availableSpace();
         
-        // if ship is medium or small and more than 50% of space is already going
-        // to computer & manv, then quit and try a larger hull size
-        if ((d.size() < ShipDesign.LARGE) && (weaponSpace < (totalSpace/2))) {
+        // if ship is small and more than 60% of space is already going
+        // to components, then quit and try a larger hull size
+        if ((d.size() == ShipDesign.SMALL) && (weaponSpace < (0.4f*totalSpace))) {
+            d.perTurnDamage(0);
+            return d;
+        }
+        
+        // if ship is medium and less than 100 units of space is availible after
+        // factoring in ship components, then quit and try a larger hull size
+        if ((d.size() == ShipDesign.MEDIUM) && (weaponSpace < (100))) {
             d.perTurnDamage(0);
             return d;
         }
@@ -132,9 +155,27 @@ public class ShipBomberTemplate implements Base {
                 return;
         }
     }
+ // add 2nd best battle computer option
+    private void set2ndBestBattleComputer(ShipDesigner ai, ShipDesign d) {
+        List<ShipComputer> comps = ai.lab().computers();
+        for (int i=comps.size()-2; i >=0; i--) {
+            d.computer(comps.get(i));
+            if (d.availableSpace() >= 0)
+                return;
+        }
+    }
     private void setBestECMJammer(ShipDesigner ai, ShipDesign d) {
         List<ShipECM> comps = ai.lab().ecms();
         for (int i=comps.size()-1; i >=0; i--) {
+            d.ecm(comps.get(i));
+            if (d.availableSpace() >= 0)
+                return;
+        }
+    }
+ // add 2nd best ECM option
+    private void set2ndBestECMJammer(ShipDesigner ai, ShipDesign d) {
+        List<ShipECM> comps = ai.lab().ecms();
+        for (int i=comps.size()-2; i >=0; i--) {
             d.ecm(comps.get(i));
             if (d.availableSpace() >= 0)
                 return;
@@ -154,6 +195,15 @@ public class ShipBomberTemplate implements Base {
     private void setBestShield(ShipDesigner ai, ShipDesign d) {
         List<ShipShield> shields = ai.lab().shields();
         for (int i=shields.size()-1; i >=0; i--) {
+            d.shield(shields.get(i));
+            if (d.availableSpace() >= 0)
+                return;
+        }
+    }
+    // add 2nd best shield option
+    private void set2ndBestShield(ShipDesigner ai, ShipDesign d) {
+        List<ShipShield> shields = ai.lab().shields();
+        for (int i=shields.size()-2; i >=0; i--) {
             d.shield(shields.get(i));
             if (d.availableSpace() >= 0)
                 return;
@@ -185,7 +235,8 @@ public class ShipBomberTemplate implements Base {
 
         int maxDmg = 0;
         int maxDmgNum = 0;
-        float spaceForWeapons = d.availableSpace();
+        // modnar: set 2 types of weapons, 50% space for each
+        float spaceForWeapons = 0.5f * d.availableSpace();
         ShipWeapon maxDmgWeapon = null;
         
         // find the highest max damage weapon that can attack ships
@@ -201,10 +252,35 @@ public class ShipBomberTemplate implements Base {
             }
         }
 
-        // ship combat weapons go in slot 1
+        // first ship combat weapons (longer range) go in slot 1
         if (maxDmgWeapon != null) {
             d.weapon(1, maxDmgWeapon);
             d.wpnCount(1, maxDmgNum);
+        }
+        
+        // second weapon type, remaining space
+        maxDmg = 0;
+        maxDmgNum = 0;
+        spaceForWeapons = d.availableSpace();
+        maxDmgWeapon = null;
+        
+        // find the highest max damage weapon that can attack ships
+        // range 1 beams
+        for (ShipWeapon wpn: allWeapons) {
+            if (wpn.canAttackShips() && (wpn.range() == 1) && (wpn.maxDamage() > maxDmg)) {
+                int numWeapons = (int) (spaceForWeapons/wpn.space(d));
+                if (numWeapons > 0) {
+                    maxDmg = wpn.maxDamage();
+                    maxDmgNum = numWeapons;
+                    maxDmgWeapon = wpn;
+                }
+            }
+        }
+
+        // second ship combat weapons go in slot 2
+        if (maxDmgWeapon != null) {
+            d.weapon(2, maxDmgWeapon);
+            d.wpnCount(2, maxDmgNum);
         }
     }
     private void setOptimalBombardmentWeapon(ShipDesigner ai, ShipDesign d, List<EnemyColonyTarget> targets) {
@@ -251,7 +327,10 @@ public class ShipBomberTemplate implements Base {
         mockDesign.copyFrom(d);
         int wpnSlot = mockDesign.nextEmptyWeaponSlot();
         int specSlot = mockDesign.nextEmptySpecialSlot();
-        float spaceForBombs = 0.75f * d.availableSpace();
+        // modnar: use only 40% space for bombs
+        // with some minimum amount of space, 40 (or all of available space)
+        // and some maxium amount of space, 1000
+        float spaceForBombs = (float) Math.min(Math.max(0.4f * d.availableSpace(), Math.min(40, d.availableSpace())), 1000);
         int numWeapons = (int) (spaceForBombs/wpn.space(d));
 
         mockDesign.wpnCount(wpnSlot, numWeapons);

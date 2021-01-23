@@ -72,7 +72,7 @@ public class AIFleetCommander implements Base, FleetCommander {
     }
     @Override
     public boolean inExpansionMode() {
-        return empire.tech().shipRange() < 5;
+        return ((empire.tech().shipRange() < 5) || (empire.contacts().isEmpty())); // modnar: keep in expansion mode if not in any contact
     }
     @Override
     public float transportPriority(StarSystem sv) {
@@ -180,6 +180,11 @@ public class AIFleetCommander implements Base, FleetCommander {
             ShipFleet stagingFleet = empire.sv.orbitingFleet(fPlan.stagingPointId);
             if (fPlan.canBeFilledBy(stagingFleet)) 
                 fPlan.subtract(stagingFleet.orders());
+				
+				// modnar: if the fleet plan can be filled, fill and send out right away
+				// may conflict with other priorities, but trade-off for combined multi-design fleets
+				fPlan.fillFrom(stagingFleet);
+			}
             else
                 fPlan.switchToStagingPoint();
         }
