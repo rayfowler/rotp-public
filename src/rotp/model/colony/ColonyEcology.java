@@ -163,13 +163,6 @@ public class ColonyEcology extends ColonySpendingCategory {
             newBC -= terraformCost;
             p.terraformBiosphere(newBiosphereIncrease);
             terraformCompleted = (newBiosphereIncrease > 0) && (p.currentSize() >= c.maxSize());
-            if (terraformCompleted) {
-                float orderAmt = c.orderAmount(Colony.Orders.TERRAFORM);
-                if (orderAmt > 0) {
-                    c.removeColonyOrder(Colony.Orders.TERRAFORM);
-                    c.addColonyOrder(Colony.Orders.FACTORIES, orderAmt);
-                }
-            }
         }
 
         // try to buy new population
@@ -180,15 +173,6 @@ public class ColonyEcology extends ColonySpendingCategory {
             newPurchasedPopulation = min(newPurchasedPopulation,(p.currentSize() - c.population() + c.inTransport() - newGrownPopulation));
             newPurchasedPopulation = max(newPurchasedPopulation,0);
             newBC -= (newPurchasedPopulation* tr.populationCost());
-            populationGrowthCompleted = ((newGrownPopulation+newPurchasedPopulation) > 0) && (c.population() >= c.maxSize());
-            if (populationGrowthCompleted) {
-                float orderAmt = c.orderAmount(Colony.Orders.POPULATION);
-                if (orderAmt > 0) {
-                    c.removeColonyOrder(Colony.Orders.POPULATION);
-                    if (c.industry().isCompleted())
-                        c.addColonyOrder(Colony.Orders.FACTORIES, orderAmt);
-                }
-            }
         }
 
         // for poor planets, we want to assume that as much
@@ -233,9 +217,10 @@ public class ColonyEcology extends ColonySpendingCategory {
         c.addFollowUpSpendingOrder(orderAmt);
     }
     public void commitTurn() {
+        Colony c = colony();
         addWaste(-wasteCleaned);
-        colony().setPopulation(colony().population() + newGrownPopulation);
-        colony().setPopulation(colony().population() + newPurchasedPopulation);
+        c.setPopulation(c.population() + newGrownPopulation + newPurchasedPopulation);
+        populationGrowthCompleted = ((newGrownPopulation+newPurchasedPopulation) > 0) && (c.population() >= c.maxSize());
 
         // if affected by waste, deduct population due to decreased planet size
         if (!empire().race().ignoresPlanetEnvironment()) {
@@ -244,7 +229,7 @@ public class ColonyEcology extends ColonySpendingCategory {
             if (pop > size) {
                 float over = pop - size;
                 float loss= over/pop * .1f * over;
-                colony().setPopulation(colony().population()-loss);
+                c.setPopulation(c.population()-loss);
             }
         }
         if (colony().population() < 0)
