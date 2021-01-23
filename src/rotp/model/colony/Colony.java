@@ -976,8 +976,8 @@ public final class Colony implements Base, IMappedObject, Serializable {
 
         // choose most effective missile dmg
         int missileDmg = 0;
-        TechMissileWeapon scatter = tech().topBaseScatterPackTech();
-        TechMissileWeapon missile = tech().topBaseMissileTech();
+        TechMissileWeapon scatter = defense().missileBase().scatterPack().tech();
+        TechMissileWeapon missile = defense().missileBase().missile().tech();
         if (scatter != null)
             missileDmg = 3*max(missile.damage(), scatter.damage() * scatter.scatterAttacks());
         else 
