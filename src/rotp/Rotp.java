@@ -76,9 +76,12 @@ public class Rotp {
         frame.add(RotPUI.instance(), BorderLayout.CENTER);
 
         if (UserPreferences.fullScreen()) {
+            device.setFullScreenWindow(frame);
+            resizeAmt();
+        }
+        else if (UserPreferences.borderless()) {
             frame.setExtendedState(JFrame.MAXIMIZED_BOTH); 
             frame.setUndecorated(true);
-            device.setFullScreenWindow(frame);
             resizeAmt();
         }
         else {

@@ -55,6 +55,7 @@ import rotp.ui.diplomacy.DiplomacyRequestReply;
 import rotp.ui.fleets.FleetUI;
 import rotp.ui.map.SystemsUI;
 import rotp.ui.game.GameOverUI;
+import rotp.ui.game.GameSettingsUI;
 import rotp.ui.game.GameUI;
 import rotp.ui.game.LoadGameUI;
 import rotp.ui.game.RaceIntroUI;
@@ -219,6 +220,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     private final ErrorUI errorUI = new ErrorUI();
     private final HelpUI helpUI = new HelpUI();
     private final StartOptionsUI startOptionsUI = new StartOptionsUI();
+    private final GameSettingsUI gameSettingsUI = new GameSettingsUI();
     private final LargeDialogPane dialogPane = new LargeDialogPane();
 
     private final CardLayout layout = new CardLayout();
@@ -277,7 +279,11 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         //toggleAnimations();
         repaint();
     }
-    public static IGameOptions newOptions()             { return newGameOptions; }
+    public static IGameOptions newOptions() { 
+        if (newGameOptions == null)
+            createNewOptions();
+        return newGameOptions; 
+    }
     public static void createNewOptions()               { newGameOptions = new MOO1GameOptions(); }
     public static void clearNewOptions()                { newGameOptions = null; }
 
@@ -289,7 +295,8 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     }
     public static RotPUI instance()                  { return instance; }
     public static HelpUI helpUI()                    { return instance.helpUI; } 
-    public static StartOptionsUI startOptionsUI()  { return instance.startOptionsUI; } 
+    public static StartOptionsUI startOptionsUI()    { return instance.startOptionsUI; } 
+    public static GameSettingsUI gameSettingsUI()    { return instance.gameSettingsUI; } 
 
     @Override
     public void paint(Graphics g) {

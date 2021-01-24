@@ -422,10 +422,10 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         newGameOptions().prevOpponent(i);
         repaint();
     }
-    public void goToSettings() {
+    public void goToOptions() {
         buttonClick();
-        StartOptionsUI settingsUI = RotPUI.startOptionsUI();
-        settingsUI.open(this);
+        StartOptionsUI optionsUI = RotPUI.startOptionsUI();
+        optionsUI.open(this);
         release();
     }
     public void goToRaceSetup() {
@@ -703,34 +703,6 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         g.fillRect(0, 0, w, h);
         g.dispose();
     }
-    private String randomEventsStr() {
-        String opt = text(newGameOptions().selectedRandomEventOption());
-        return text("GAME_RANDOM_EVENTS", opt)+"     ";
-    }
-    private String colonizePromptStr() {
-        if (newGameOptions().disableColonizePrompt())
-            return text("GAME_COLONIZE_PROMPT_OFF")+"     ";
-        else
-            return text("GAME_COLONIZE_PROMPT_ON")+"    ";
-    }
-    private String researchRateStr() {
-        String opt = text(newGameOptions().selectedResearchRate());
-        return text("GAME_RESEARCH_RATE", opt)+"     ";
-    }
-    private String techTradingStr() {
-        String opt = text(newGameOptions().selectedTechTradeOption());
-        return text("GAME_TECH_TRADING", opt)+"     ";
-    }
-    private String galaxyAgeStr() {
-        String opt = text(newGameOptions().selectedGalaxyAge());
-        return text("GAME_GALAXY_AGE", opt)+"     ";
-    }
-    private String aiStr() {
-        if (newGameOptions().communityAI())
-            return text("GAME_AI_DEVELOPMENT")+"     ";
-        else
-            return text("GAME_AI_BASE")+"    ";
-    }
     @Override
     public String ambienceSoundKey() { 
         return GameUI.AMBIENCE_KEY;
@@ -824,7 +796,7 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         if (hoverBox == backBox)
             goToRaceSetup();
         else if (hoverBox == settingsBox)
-            goToSettings();
+            goToOptions();
         else if (hoverBox == startBox)
             startGame();
         else if (hoverBox == shapeBoxL)
