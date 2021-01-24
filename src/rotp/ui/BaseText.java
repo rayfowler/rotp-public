@@ -126,36 +126,16 @@ public class BaseText implements Base {
     }
     public void mousePressed() {
         depressed = true;
-        if (centered())
-            drawCentered();
-        else
-            draw();
-        repaint();
     }
     public void mouseReleased() {
         depressed = false;
-        if (centered())
-            drawCentered();
-        else
-            draw();
-        repaint();
     }
     public void mouseEnter() {
         hovered = true;
-        if (centered())
-            drawCentered();
-        else
-            draw();
-        repaint();
     }
     public void mouseExit() {
         hovered = false;
         depressed = false;
-        if (centered())
-            drawCentered();
-        else
-            draw();
-        repaint();
     }
     public int stringWidth(Graphics g) {
         int sw1 = g.getFontMetrics(font()).stringWidth(text);

@@ -440,7 +440,8 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             newGameText.reset();
             loadGameText.reset();
             saveGameText.reset();
-            settingsText.reset();
+            settingsText.disabled(false);
+            settingsText.drawCentered(g);
             exitText.reset();
             restartText.disabled(false);
             restartText.drawCentered(g);
@@ -684,14 +685,17 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             newHover = enlargeText;
 
         if (hoverBox != newHover) {
-            if (hoverBox != null)
+            if (hoverBox != null) {
                 hoverBox.mouseExit();
+                repaint(hoverBox.bounds());
+            }
             hoverBox = newHover;
             if (hoverBox != null) {
                 if (mouseDepressed)
                     hoverBox.mousePressed();
                 else
                     hoverBox.mouseEnter();
+                repaint(hoverBox.bounds());
             }
         }
     }

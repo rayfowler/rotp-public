@@ -43,7 +43,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
     public static final Color darkBrown = new Color(112,85,68);
     public static final Color darkerBrown = new Color(75,55,39);
     
-    Shape hoverBox;
+    Rectangle hoverBox;
     Rectangle okBox = new Rectangle();
     BasePanel parent;
     BaseText displayModeText;
@@ -416,7 +416,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
     public void mouseMoved(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
-        Shape prevHover = hoverBox;
+        Rectangle prevHover = hoverBox;
         hoverBox = null;
         if (texturesText.contains(x,y))
             hoverBox = texturesText.bounds();
@@ -464,7 +464,10 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
                 musicText.mouseEnter();
             else if (hoverBox == graphicsText.bounds())
                 graphicsText.mouseEnter();
-           repaint();
+            if (prevHover != null)
+                repaint(prevHover);
+            if (hoverBox != null)
+                repaint(hoverBox);
         }
     }
     @Override
