@@ -311,7 +311,7 @@ public class MainUI extends BasePanel implements IMapHandler {
     public void handleNextTurn()    { displayPanel.handleNextTurn(); }
     private void initModel() {
         int w, h;
-        if (UserPreferences.fullScreen()) {
+        if (!UserPreferences.windowed()) {
             Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
             w = size.width;
             h = size.height;

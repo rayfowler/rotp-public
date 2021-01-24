@@ -86,8 +86,10 @@ public interface IGameOptions {
     public static final String COUNCIL_IMMEDIATE = "SETUP_COUNCIL_IMMEDIATE";
     public static final String COUNCIL_REBELS    = "SETUP_COUNCIL_REBELS";
     
-    public static final String STAR_DENSITY_NORMAL = "SETUP_STAR_DENSITY_NORMAL";
-    public static final String STAR_DENSITY_HIGH   = "SETUP_STAR_DENSITY_HIGH";
+    public static final String STAR_DENSITY_NORMAL   = "SETUP_STAR_DENSITY_NORMAL";
+    public static final String STAR_DENSITY_HIGH     = "SETUP_STAR_DENSITY_HIGH";
+    public static final String STAR_DENSITY_HIGHER   = "SETUP_STAR_DENSITY_HIGHER";
+    public static final String STAR_DENSITY_HIGHEST  = "SETUP_STAR_DENSITY_HIGHEST";
     
     public default boolean isAutoPlay()          { return false; }
     public default boolean communityAI()         { return false; }

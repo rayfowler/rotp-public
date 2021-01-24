@@ -93,6 +93,14 @@ public abstract class GalaxyShape implements Base, Serializable {
     public String defaultOption1()            { return ""; }
     public String defaultOption2()            { return ""; }
 
+    public float systemBuffer() {
+        switch (opts.selectedStarDensityOption()) {
+            case IGameOptions.STAR_DENSITY_HIGH:    return 1.7f;
+            case IGameOptions.STAR_DENSITY_HIGHER:  return 1.5f;
+            case IGameOptions.STAR_DENSITY_HIGHEST: return 1.3f;
+        }
+        return 1.9f;
+    }
     public void fullInit() {
         fullyInit = true;
         init(opts.numberStarSystems());
@@ -252,19 +260,20 @@ public abstract class GalaxyShape implements Base, Serializable {
                     return true;
             }
         }
+        float buffer = systemBuffer();
         // not too close to other systems in galaxy
         if (usingRegions) {
             if (isTooNearSystemsInNeighboringRegions(x0,y0))
                 return true;
         }
         else {
-            if (isTooNearSystemsInEntireGalaxy(x0,y0))
+            if (isTooNearSystemsInEntireGalaxy(x0,y0, buffer))
                 return true;
         }
         // not too close to other systems in any empire system
         for (EmpireSystem emp: empSystems) {
             for (int i=0;i<emp.num;i++) {
-                if (distance(x0,y0,emp.x(i),emp.y(i)) <= SYSTEM_BUFFER)
+                if (distance(x0,y0,emp.x(i),emp.y(i)) <= buffer)
                     return true;
             }
         }
@@ -286,9 +295,9 @@ public abstract class GalaxyShape implements Base, Serializable {
         }
         return false;
     }
-    private boolean isTooNearSystemsInEntireGalaxy(float x0, float y0) {
+    private boolean isTooNearSystemsInEntireGalaxy(float x0, float y0, float buffer) {
         for (int i=0;i<num;i++) {
-            if (distance(x0,y0,x[i],y[i]) <= SYSTEM_BUFFER)
+            if (distance(x0,y0,x[i],y[i]) <= buffer)
                 return true;
         }
         return false;
@@ -302,8 +311,9 @@ public abstract class GalaxyShape implements Base, Serializable {
             y = new float[maxStars];
         }
         public boolean isTooNearSystems(float x0, float y0) {
+            float buffer = systemBuffer();
             for (int i=0;i<num;i++) {
-                if (distance(x0,y0,x[i],y[i]) <= SYSTEM_BUFFER)
+                if (distance(x0,y0,x[i],y[i]) <= buffer)
                     return true;
             }
             return false;
@@ -360,12 +370,13 @@ public abstract class GalaxyShape implements Base, Serializable {
             float y2 = y0+maxDistance;
             int attempts = 0;
             Point.Float pt = new Point.Float();
+            float buffer = systemBuffer();
             while (attempts < 100) {
                 attempts++;
                 pt.x = random(x1, x2);
                 pt.y = random(y1, y2);
                 if (sh.valid(pt)) {
-                    boolean tooCloseToAny = isTooNearExistingSystem(sh,pt.x,pt.y);
+                    boolean tooCloseToAny = isTooNearExistingSystem(sh,pt.x,pt.y, buffer);
                     boolean tooFarFromRef = distance(x0, y0, pt.x,pt.y) >= maxDistance;
                     if (!tooCloseToAny && !tooFarFromRef) {
                         addSystem(pt.x,pt.y);
@@ -375,9 +386,9 @@ public abstract class GalaxyShape implements Base, Serializable {
             }
             return false;
         }
-        private boolean isTooNearExistingSystem(GalaxyShape sh, float x0, float y0) {
+        private boolean isTooNearExistingSystem(GalaxyShape sh, float x0, float y0, float buffer) {
             for (int i=0;i<num;i++) {
-                if (distance(x0,y0,x[i],y[i]) <= SYSTEM_BUFFER)
+                if (distance(x0,y0,x[i],y[i]) <= buffer)
                     return true;
             }
             return sh.isTooNearExistingSystem(x0,y0,false);

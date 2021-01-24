@@ -76,6 +76,7 @@ public class Rotp {
         frame.add(RotPUI.instance(), BorderLayout.CENTER);
 
         if (UserPreferences.fullScreen()) {
+            frame.setUndecorated(true);
             device.setFullScreenWindow(frame);
             resizeAmt();
         }
@@ -115,7 +116,7 @@ public class Rotp {
         frame.pack();
     }
     public static float resizeAmt() {
-        int pct = UserPreferences.fullScreen() ? 100 : UserPreferences.screenSizePct();
+        int pct = UserPreferences.windowed() ? UserPreferences.screenSizePct() : 100;
         float sizeAdj = (float) pct / 100.0f;
         if (resizeAmt < 0) {
             Dimension size = Toolkit.getDefaultToolkit().getScreenSize();

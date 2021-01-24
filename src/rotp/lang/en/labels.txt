@@ -1059,6 +1059,8 @@ SETUP_COUNCIL_IMMEDIATE           | Immediate
 SETUP_COUNCIL_REBELS              | Allow Rebels
 SETUP_STAR_DENSITY_NORMAL         | Normal
 SETUP_STAR_DENSITY_HIGH           | High
+SETUP_STAR_DENSITY_HIGHER         | Higher
+SETUP_STAR_DENSITY_HIGHEST        | Highest
 SETUP_GAME_NUMBER_OPPONENTS       | Opponents
 SETUP_RACE_LABEL                  | Available Races
 SETUP_RACE_COLOR                  | Empire Color:

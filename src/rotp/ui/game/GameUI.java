@@ -109,7 +109,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     boolean mouseDepressed = false;
     boolean hideText = false;
     int startingScale = 100;
-    boolean startingFullScreen = true;
+    String startingDisplayMode;
     private final GameLanguagePane languagePanel = new GameLanguagePane();
 
     public static Color langShade()               { return langShade[opt()]; }
@@ -303,7 +303,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
 
     public GameUI() {
         startingScale = UserPreferences.screenSizePct();
-        startingFullScreen = UserPreferences.fullScreen();
+        startingDisplayMode = UserPreferences.displayMode();
         Color enabledC = menuEnabled[opt()];
         Color disabledC = menuDisabled[opt()];
         Color hoverC = menuHover[opt()];
@@ -320,7 +320,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         saveGameText    = new BaseText(this, true, 45,   0, 450,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
         settingsText    = new BaseText(this, true, 45,   0, 500,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
         exitText        = new BaseText(this, true, 45,   0, 550,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
-        restartText     = new BaseText(this, true, 45,   0, 600,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
+        restartText     = new BaseText(this, true, 45,   0, 400,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
         versionText     = new BaseText(this, false,16, w/2, -35,  enabledC,  enabledC, hoverC, depressedC, shadedC, 2, 0, 0);
         discussText     = new BaseText(this, false,22, w/2, -10,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 0);
         developerText   = new BaseText(this, false,16, -220,-95,  enabledC,  enabledC, hoverC, depressedC, shadedC, 0, 0, 0);
@@ -470,8 +470,8 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         translatorText.draw(g);
         versionText.drawCentered(g);
         
-        shrinkText.visible(!UserPreferences.fullScreen());
-        enlargeText.visible(!UserPreferences.fullScreen());
+        shrinkText.visible(UserPreferences.windowed());
+        enlargeText.visible(UserPreferences.windowed());
         shrinkText.draw(g);
         enlargeText.draw(g);
     }
@@ -480,7 +480,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     private boolean canLoadGame()    { return true; }
     private boolean canSaveGame()    { return session().status().inProgress(); }
     private boolean canExit()        { return true; }
-    private boolean canRestart()     { return (UserPreferences.fullScreen() != startingFullScreen) 
+    private boolean canRestart()     { return !UserPreferences.displayMode().equals(startingDisplayMode) 
             || (UserPreferences.screenSizePct() != startingScale); }
 
     private void rescaleMenuOptions() {
@@ -525,7 +525,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         }
     }
     private void shrinkFrame() {
-        if (UserPreferences.fullScreen())
+        if (!UserPreferences.windowed())
             return;
         if (UserPreferences.shrinkFrame()) {
             Rotp.setFrameSize();
@@ -535,7 +535,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
        }
     }
     private void expandFrame() {
-        if (UserPreferences.fullScreen())
+        if (!UserPreferences.windowed())
             return;
        if (UserPreferences.expandFrame()) {
             Rotp.setFrameSize();

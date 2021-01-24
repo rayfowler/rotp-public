@@ -17,7 +17,6 @@ package rotp.model.galaxy;
 
 import java.awt.Point;
 import java.awt.Shape;
-import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
 import java.util.List;
@@ -126,24 +125,30 @@ public class GalaxyEllipticalShape extends GalaxyShape {
     }
     @Override
     protected float sizeFactor(String size) {
+        float adj = 1.0f;
+        switch (opts.selectedStarDensityOption()) {
+            case IGameOptions.STAR_DENSITY_HIGH:    adj = 0.9f; break;
+            case IGameOptions.STAR_DENSITY_HIGHER:  adj = 0.8f; break;
+            case IGameOptions.STAR_DENSITY_HIGHEST: adj = 0.7f; break;
+        }
         switch (opts.selectedGalaxySize()) {
-            case IGameOptions.SIZE_TINY:      return 8; 
-            case IGameOptions.SIZE_SMALL:     return 10; 
-            case IGameOptions.SIZE_SMALL2:    return 12;
-            case IGameOptions.SIZE_MEDIUM:    return 13; 
-            case IGameOptions.SIZE_MEDIUM2:   return 14; 
-            case IGameOptions.SIZE_LARGE:     return 16; 
-            case IGameOptions.SIZE_LARGE2:    return 18; 
-            case IGameOptions.SIZE_HUGE:      return 20; 
-            case IGameOptions.SIZE_HUGE2:     return 22; 
-            case IGameOptions.SIZE_MASSIVE:   return 24; 
-            case IGameOptions.SIZE_MASSIVE2:  return 26; 
-            case IGameOptions.SIZE_MASSIVE3:  return 28; 
-            case IGameOptions.SIZE_MASSIVE4:  return 30; 
-            case IGameOptions.SIZE_MASSIVE5:  return 32; 
-            case IGameOptions.SIZE_INSANE:    return 36; 
-            case IGameOptions.SIZE_LUDICROUS: return 49; 
-            default:             return 19; 
+            case IGameOptions.SIZE_TINY:      return adj*8; 
+            case IGameOptions.SIZE_SMALL:     return adj*10; 
+            case IGameOptions.SIZE_SMALL2:    return adj*12;
+            case IGameOptions.SIZE_MEDIUM:    return adj*13; 
+            case IGameOptions.SIZE_MEDIUM2:   return adj*14; 
+            case IGameOptions.SIZE_LARGE:     return adj*16; 
+            case IGameOptions.SIZE_LARGE2:    return adj*18; 
+            case IGameOptions.SIZE_HUGE:      return adj*20; 
+            case IGameOptions.SIZE_HUGE2:     return adj*22; 
+            case IGameOptions.SIZE_MASSIVE:   return adj*24; 
+            case IGameOptions.SIZE_MASSIVE2:  return adj*26; 
+            case IGameOptions.SIZE_MASSIVE3:  return adj*28; 
+            case IGameOptions.SIZE_MASSIVE4:  return adj*30; 
+            case IGameOptions.SIZE_MASSIVE5:  return adj*32; 
+            case IGameOptions.SIZE_INSANE:    return adj*36; 
+            case IGameOptions.SIZE_LUDICROUS: return adj*49; 
+            default:             return adj*19; 
         }
     }
 }

@@ -31,11 +31,11 @@ public class GalaxyRectangularShape extends GalaxyShape {
 	
     @Override
     protected int galaxyWidthLY() { 
-        return (int) (Math.sqrt(adjust_density*4.0/3.0*opts.numberStarSystems()*adjustedSizeFactor()));
+        return (int) (Math.sqrt(4.0/3.0*opts.numberStarSystems()*adjustedSizeFactor()));
     }
     @Override
     protected int galaxyHeightLY() { 
-        return (int) (Math.sqrt(adjust_density*3.0/4.0*opts.numberStarSystems()*adjustedSizeFactor()));
+        return (int) (Math.sqrt(3.0/4.0*opts.numberStarSystems()*adjustedSizeFactor()));
     }
     @Override
     public void setRandom(Point.Float pt) {
@@ -60,24 +60,30 @@ public class GalaxyRectangularShape extends GalaxyShape {
     }
     @Override
     protected float sizeFactor(String size) {
+        float adj = 1.0f;
+        switch (opts.selectedStarDensityOption()) {
+            case IGameOptions.STAR_DENSITY_HIGH:    adj = 0.9f; break;
+            case IGameOptions.STAR_DENSITY_HIGHER:  adj = 0.8f; break;
+            case IGameOptions.STAR_DENSITY_HIGHEST: adj = 0.7f; break;
+        }
         switch (opts.selectedGalaxySize()) {
-            case IGameOptions.SIZE_TINY:      return 10; 
-            case IGameOptions.SIZE_SMALL:     return 15; 
-            case IGameOptions.SIZE_SMALL2:    return 17;
-            case IGameOptions.SIZE_MEDIUM:    return 19; 
-            case IGameOptions.SIZE_MEDIUM2:   return 20; 
-            case IGameOptions.SIZE_LARGE:     return 21; 
-            case IGameOptions.SIZE_LARGE2:    return 22; 
-            case IGameOptions.SIZE_HUGE:      return 23; 
-            case IGameOptions.SIZE_HUGE2:     return 24; 
-            case IGameOptions.SIZE_MASSIVE:   return 25; 
-            case IGameOptions.SIZE_MASSIVE2:  return 26; 
-            case IGameOptions.SIZE_MASSIVE3:  return 27; 
-            case IGameOptions.SIZE_MASSIVE4:  return 28; 
-            case IGameOptions.SIZE_MASSIVE5:  return 29; 
-            case IGameOptions.SIZE_INSANE:    return 32; 
-            case IGameOptions.SIZE_LUDICROUS: return 36; 
-            default:             return 19; 
+            case IGameOptions.SIZE_TINY:      return adj*10; 
+            case IGameOptions.SIZE_SMALL:     return adj*15; 
+            case IGameOptions.SIZE_SMALL2:    return adj*17;
+            case IGameOptions.SIZE_MEDIUM:    return adj*19; 
+            case IGameOptions.SIZE_MEDIUM2:   return adj*20; 
+            case IGameOptions.SIZE_LARGE:     return adj*21; 
+            case IGameOptions.SIZE_LARGE2:    return adj*22; 
+            case IGameOptions.SIZE_HUGE:      return adj*23; 
+            case IGameOptions.SIZE_HUGE2:     return adj*24; 
+            case IGameOptions.SIZE_MASSIVE:   return adj*25; 
+            case IGameOptions.SIZE_MASSIVE2:  return adj*26; 
+            case IGameOptions.SIZE_MASSIVE3:  return adj*27; 
+            case IGameOptions.SIZE_MASSIVE4:  return adj*28; 
+            case IGameOptions.SIZE_MASSIVE5:  return adj*29; 
+            case IGameOptions.SIZE_INSANE:    return adj*32; 
+            case IGameOptions.SIZE_LUDICROUS: return adj*36; 
+            default:             return adj*19; 
         }
     }
 

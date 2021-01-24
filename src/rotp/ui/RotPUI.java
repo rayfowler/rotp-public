@@ -344,7 +344,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     public void selectCouncilPanel()   {
         session().pauseNextTurnProcessing("Show Council");
         galacticCouncilUI.init();
-        if (UserPreferences.fullScreen())
+        if (!UserPreferences.windowed())
             selectDialogPanel(COUNCIL_PANEL, galacticCouncilUI);
         else
             selectPanel(COUNCIL_PANEL, galacticCouncilUI);
@@ -352,7 +352,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     }
     public void selectGameOverPanel()  {
         gameOverUI.init();
-        if (UserPreferences.fullScreen())
+        if (!UserPreferences.windowed())
             selectDialogPanel(GAME_OVER_PANEL, gameOverUI);
         else
             selectPanel(GAME_OVER_PANEL, gameOverUI);
@@ -379,7 +379,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     public void selectGNNPanel(String title, String id, List<Empire> empires) {
         session().pauseNextTurnProcessing("Show GNN");
         gnnUI.init(title, id, empires);
-        if (UserPreferences.fullScreen())
+        if (!UserPreferences.windowed())
             selectDialogPanel(GNN_PANEL, gnnUI);
         else
             selectPanel(GNN_PANEL, gnnUI);
@@ -394,7 +394,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     public void selectGroundBattlePanel(Colony c, Transport tr) {
         session().pauseNextTurnProcessing("Show Ground Battle");
         groundBattleUI.init(c, tr);
-        if (UserPreferences.fullScreen())
+        if (!UserPreferences.windowed())
             selectDialogPanel(GROUND_BATTLE_PANEL, groundBattleUI);
         else
             selectPanel(GROUND_BATTLE_PANEL, groundBattleUI);
@@ -457,7 +457,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     }
     public void selectColonizationPanel(int sysId, ShipFleet fl, ShipDesign d) {
         colonizePlanetUI.init(sysId, fl, d);
-        if (UserPreferences.fullScreen()) 
+        if (!UserPreferences.windowed())
             selectDialogPanel(COLONIZE_PROMPT_PANEL, colonizePlanetUI);
         else
             selectPanel(COLONIZE_PROMPT_PANEL, colonizePlanetUI);
@@ -465,7 +465,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     public void selectSelectNewTechPanel(TechCategory cat) {
         session().pauseNextTurnProcessing("Show Select Tech");
         selectNewTechUI.category(cat);
-        if (UserPreferences.fullScreen()) 
+        if (!UserPreferences.windowed())
             selectDialogPanel(SELECT_NEW_TECH_PANEL, selectNewTechUI);
         else
             selectPanel(SELECT_NEW_TECH_PANEL, selectNewTechUI);
@@ -474,7 +474,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     public void selectPlunderShipTechPanel(String techId, int empId) {
         session().pauseNextTurnProcessing("Show Plunder Tech");
         discoverTechUI.plunderShipTech(techId, empId);
-        if (UserPreferences.fullScreen())
+        if (!UserPreferences.windowed())
             selectDialogPanel(DISCOVER_TECH_PANEL, discoverTechUI);
         else
             selectPanel(DISCOVER_TECH_PANEL, discoverTechUI);
@@ -483,7 +483,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     public void selectPlunderTechPanel(String techId, int sysId, int empId) {
         session().pauseNextTurnProcessing("Show Plunder Tech");
         discoverTechUI.plunderTech(techId, sysId, empId);
-        if (UserPreferences.fullScreen())
+        if (!UserPreferences.windowed())
             selectDialogPanel(DISCOVER_TECH_PANEL, discoverTechUI);
         else
             selectPanel(DISCOVER_TECH_PANEL, discoverTechUI);
@@ -492,7 +492,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     public void selectDiscoverTechPanel(String techId) {
         session().pauseNextTurnProcessing("Show Discover Tech");
         discoverTechUI.discoverTech(techId);
-        if (UserPreferences.fullScreen())
+        if (!UserPreferences.windowed())
             selectDialogPanel(DISCOVER_TECH_PANEL, discoverTechUI);
         else
             selectPanel(DISCOVER_TECH_PANEL, discoverTechUI);
@@ -501,7 +501,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     public void selectTradeTechPanel(String techId, int empId) {
         session().pauseNextTurnProcessing("Show Trade Tech");
         discoverTechUI.tradeTech(techId, empId);
-        if (UserPreferences.fullScreen())
+        if (!UserPreferences.windowed())
             selectDialogPanel(DISCOVER_TECH_PANEL, discoverTechUI);
         else
             selectPanel(DISCOVER_TECH_PANEL, discoverTechUI);
@@ -509,7 +509,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     }
     public void selectStealTechPanel(EspionageMission mission, int empId) {
         discoverTechUI.stealTech(mission, empId);
-        if (UserPreferences.fullScreen())
+        if (!UserPreferences.windowed())
             selectDialogPanel(DISCOVER_TECH_PANEL, discoverTechUI);
         else
             selectPanel(DISCOVER_TECH_PANEL, discoverTechUI);
@@ -531,7 +531,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         session().pauseNextTurnProcessing("Show Diplomatic Message");
         log("==MAIN UI==   selectDiplomaticMessagePanel");
         diplomaticMessageUI.init(notif);
-        if (UserPreferences.fullScreen()) 
+        if (!UserPreferences.windowed())
             selectDialogPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
         else
             selectPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
@@ -541,7 +541,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         log("==MAIN UI==   selectDiplomaticDialoguePanel");
         diplomaticMessageUI.init(notif);
         diplomaticMessageUI.endFade();
-        if (UserPreferences.fullScreen()) 
+        if (!UserPreferences.windowed())
             selectDialogPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
         else
             selectPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
@@ -550,7 +550,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         log("==MAIN UI==   selectDiplomaticReplyPanel");
         diplomaticMessageUI.initReply(reply);
         diplomaticMessageUI.endFade();
-        if (UserPreferences.fullScreen()) 
+        if (!UserPreferences.windowed())
             selectDialogPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
         else
             selectPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
@@ -560,7 +560,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         log("==MAIN UI==   selectDiplomaticReplyModalPanel");
         diplomaticMessageUI.initReply(reply);
         diplomaticMessageUI.endFade();
-        if (UserPreferences.fullScreen()) 
+        if (!UserPreferences.windowed())
             selectDialogPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
         else
             selectPanel(DIPLOMATIC_MESSAGE_PANEL, diplomaticMessageUI);
@@ -623,7 +623,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         add(errorUI, ERROR_PANEL);
         add(dialogPane, DIALOG_PANEL);
 
-        if (UserPreferences.fullScreen()) {
+        if (!UserPreferences.windowed()) {
             dialogPane.addToLayout(diplomaticMessageUI, DIPLOMATIC_MESSAGE_PANEL);
             dialogPane.addToLayout(selectNewTechUI, SELECT_NEW_TECH_PANEL);
             dialogPane.addToLayout(colonizePlanetUI, COLONIZE_PROMPT_PANEL);
