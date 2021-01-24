@@ -1300,7 +1300,7 @@ public class AIDiplomat implements Base, Diplomat {
         pct = cv1.embassy().relations()/100.0f + civ1.race().councilBonus() + civ1.orionCouncilBonus() + previousVoteBonus(civ1) + powerBonus1;
         if (random() <= Math.abs(pct)) {
             if (pct > 0)
-                return castVoteFor(cv1);
+                return castVoteFor(civ1);
         }
 
         // decide to vote for civ2
@@ -1308,7 +1308,7 @@ public class AIDiplomat implements Base, Diplomat {
         pct = cv2.embassy().relations()/100.0f + civ2.race().councilBonus() + civ2.orionCouncilBonus() + previousVoteBonus(civ2) + powerBonus2;
         if (random() <= Math.abs(pct)) {
             if (pct > 0)
-                return castVoteFor(cv2);
+                return castVoteFor(civ2);
         }
 
         // return undecided
