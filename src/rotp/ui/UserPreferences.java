@@ -33,7 +33,17 @@ import rotp.util.LanguageManager;
 import rotp.util.sound.SoundManager;
 
 public class UserPreferences {
-    public enum GraphicsSetting { NORMAL, MEDIUM, LOW;  }
+    private static final String WINDOW_MODE = "GAME_SETTINGS_WINDOWED";
+    private static final String BORDERLESS_MODE = "GAME_SETTINGS_BORDERLESS";
+    private static final String FULLSCREEN_MODE = "GAME_SETTINGS_FULLSCREEN";
+    private static final String GRAPHICS_LOW = "GAME_SETTINGS_GRAPHICS_LOW";
+    private static final String GRAPHICS_MEDIUM = "GAME_SETTINGS_GRAPHICS_MED";
+    private static final String GRAPHICS_HIGH = "GAME_SETTINGS_GRAPHICS_HIGH";
+    private static final String TEXTURES_YES = "GAME_SETTINGS_TEXTURES_YES";
+    private static final String TEXTURES_NO = "GAME_SETTINGS_TEXTURES_NO";
+    private static final String AUTOCOLONIZE_YES = "GAME_SETTINGS_AUTOCOLONIZE_YES";
+    private static final String AUTOCOLONIZE_NO = "GAME_SETTINGS_AUTOCOLONIZE_NO";
+    
     private static final String PREFERENCES_FILE = "Remnants.cfg";
     private static final String keyFormat = "%-20s: ";
     private static boolean showMemory = false;
@@ -41,25 +51,52 @@ public class UserPreferences {
     private static boolean playSounds = true;
     private static boolean displayYear = true;
     private static boolean textures = true;
-    private static boolean fullScreen = true;
+    private static boolean autoColonize = false;
+    private static String displayMode = WINDOW_MODE;
+    private static String graphicsMode = GRAPHICS_HIGH;
     private static float uiTexturePct = 0.20f;
     private static int screenSizePct = 93;
     private static final HashMap<String, String> raceNames = new HashMap<>();
-    private static GraphicsSetting graphicsLevel = GraphicsSetting.NORMAL;
 
     public static boolean showMemory()      { return showMemory; }
     public static void toggleMemory()       { showMemory = !showMemory; save(); }
-    public static boolean fullScreen()      { return fullScreen; }
-    public static void toggleFullScreen()   { fullScreen = !fullScreen; save(); }
-    public static boolean playAnimations()  { return graphicsLevel != GraphicsSetting.LOW; }
-
-    public static boolean antialiasing()    { return graphicsLevel == GraphicsSetting.NORMAL; }
+    public static boolean fullScreen()      { return displayMode.equals(FULLSCREEN_MODE); }
+    public static boolean windowed()        { return displayMode.equals(WINDOW_MODE); }
+    public static boolean borderless()      { return displayMode.equals(BORDERLESS_MODE); }
+    public static String displayMode()      { return displayMode; }
+    public static void toggleDisplayMode()   { 
+        switch(displayMode) {
+            case WINDOW_MODE:     displayMode = BORDERLESS_MODE; break;
+            case BORDERLESS_MODE: displayMode = FULLSCREEN_MODE; break;
+            case FULLSCREEN_MODE: displayMode = WINDOW_MODE; break;
+            default:              displayMode = WINDOW_MODE; break;
+        }
+        save();
+    }
+    public static String graphicsMode()     { return graphicsMode; }
+    public static void toggleGraphicsMode()   { 
+        switch(graphicsMode) {
+            case GRAPHICS_HIGH:   graphicsMode = GRAPHICS_MEDIUM; break;
+            case GRAPHICS_MEDIUM: graphicsMode = GRAPHICS_LOW; break;
+            case GRAPHICS_LOW:    graphicsMode = GRAPHICS_HIGH; break;
+            default :             graphicsMode = GRAPHICS_HIGH; break;
+        }
+        save();
+    }
+    public static String texturesMode()     { return textures ? TEXTURES_YES : TEXTURES_NO; }
+    public static void toggleTextures()     { textures = !textures; save();  }
+    public static boolean textures()        { return textures; }
+    
+    public static String autoColonizeMode()     { return autoColonize ? AUTOCOLONIZE_YES : AUTOCOLONIZE_NO; }
+    public static void toggleAutoColonize()     { autoColonize = !autoColonize; save();  }
+    public static boolean autoColonize()        { return autoColonize; }
+    
+    public static boolean playAnimations()  { return !graphicsMode.equals(GRAPHICS_LOW); }
+    public static boolean antialiasing()    { return graphicsMode.equals(GRAPHICS_MEDIUM); }
     public static boolean playSounds()      { return playSounds; }
     public static void toggleSounds()       { playSounds = !playSounds;	save(); }
     public static boolean playMusic()       { return playMusic; }
     public static void toggleMusic()        { playMusic = !playMusic; save();  }
-    public static boolean textures()        { return textures; }
-    public static void toggleTextures()     { textures = !textures; save();  }
     public static int screenSizePct()       { return screenSizePct; }
     public static void screenSizePct(int i) { setScreenSizePct(i); }
 
@@ -67,8 +104,8 @@ public class UserPreferences {
     public static boolean displayYear()       { return displayYear; }
     public static void uiTexturePct(int i)    { uiTexturePct = i / 100.0f; }
     public static float uiTexturePct()        { return uiTexturePct; }
-    public static GraphicsSetting graphicsLevel()    { return graphicsLevel; }
 
+    
     public static void loadAndSave() {
         load();
         save();
@@ -98,14 +135,14 @@ public class UserPreferences {
         try (FileOutputStream fout = new FileOutputStream(new File(path, PREFERENCES_FILE));
             // modnar: change to OutputStreamWriter, force UTF-8
             PrintWriter out = new PrintWriter(new OutputStreamWriter(fout, "UTF-8")); ) {
-            out.println(keyFormat("GRAPHICS")+ graphicsLevel.toString());
+            out.println(keyFormat("DISPLAY_MODE")+displayModeToSettingName(displayMode));
+            out.println(keyFormat("GRAPHICS")+graphicsModeToSettingName(graphicsMode));
             out.println(keyFormat("MUSIC")+ yesOrNo(playMusic));
             out.println(keyFormat("SOUNDS")+ yesOrNo(playSounds));
             out.println(keyFormat("MUSIC_VOLUME")+ SoundManager.musicLevel());
             out.println(keyFormat("SOUND_VOLUME")+ SoundManager.soundLevel());
             out.println(keyFormat("SHOW_MEMORY")+ yesOrNo(showMemory));
             out.println(keyFormat("DISPLAY_YEAR")+ yesOrNo(displayYear));
-            out.println(keyFormat("FULL_SCREEN")+ yesOrNo(fullScreen));
             out.println(keyFormat("SCREEN_SIZE_PCT")+ screenSizePct());
             out.println(keyFormat("UI_TEXTURES")+ yesOrNo(textures));
             out.println(keyFormat("UI_TEXTURE_LEVEL")+(int) (uiTexturePct()*100));
@@ -135,14 +172,14 @@ public class UserPreferences {
         if (Rotp.logging)
             System.out.println("Key:"+key+"  value:"+val);
         switch(key) {
-            case "GRAPHICS":     graphicsLevel(val); return;
+            case "DISPLAY_MODE":  displayMode = displayModeFromSettingName(val); return;
+            case "GRAPHICS":     graphicsMode = graphicsModeFromSettingName(val); return;
             case "MUSIC":        playMusic = yesOrNo(val); return;
             case "SOUNDS":       playSounds = yesOrNo(val); return;
             case "MUSIC_VOLUME": SoundManager.musicLevel(Integer.valueOf(val)); return;
             case "SOUND_VOLUME": SoundManager.soundLevel(Integer.valueOf(val)); return;
             case "SHOW_MEMORY":  showMemory = yesOrNo(val); return;
             case "DISPLAY_YEAR": displayYear = yesOrNo(val); return;
-            case "FULL_SCREEN":  fullScreen = yesOrNo(val); return;
             case "SCREEN_SIZE_PCT": screenSizePct(Integer.valueOf(val)); return;
             case "UI_TEXTURES":  textures = yesOrNo(val); return;
             case "UI_TEXTURE_LEVEL": uiTexturePct(Integer.valueOf(val)); return;
@@ -176,21 +213,6 @@ public class UserPreferences {
         setScreenSizePct(screenSizePct+5);
         return oldSize != screenSizePct;
     }
-    public static void graphicsLevel(String s) {
-        String level = s.toUpperCase();
-        switch(level) {
-            case "NORMAL" : graphicsLevel = GraphicsSetting.NORMAL; break;
-            case "MEDIUM" : graphicsLevel = GraphicsSetting.MEDIUM; break;
-            case "LOW"    : graphicsLevel = GraphicsSetting.LOW; break;
-        }
-    }
-    public static void toggleGraphicsLevel() {
-        switch(graphicsLevel) {
-            case NORMAL:  graphicsLevel = GraphicsSetting.MEDIUM; save(); break;
-            case MEDIUM:  graphicsLevel = GraphicsSetting.LOW; save(); break;
-            case LOW:     graphicsLevel = GraphicsSetting.NORMAL; save(); break;
-        }
-    }
     public static String raceNames(String id, String defaultNames) {
         String idUpper = id.toUpperCase();
         if (raceNames.containsKey(idUpper))
@@ -198,5 +220,37 @@ public class UserPreferences {
         
         raceNames.put(idUpper, defaultNames);
         return defaultNames;
+    }
+    public static String displayModeToSettingName(String s) {
+        switch(s) {
+            case WINDOW_MODE:     return "Windowed";
+            case BORDERLESS_MODE: return "Borderless";
+            case FULLSCREEN_MODE: return "Fullscreen";
+        }
+        return "Windowed";
+    }
+    public static String displayModeFromSettingName(String s) {
+        switch(s) {
+            case "Windowed":   return WINDOW_MODE;
+            case "Borderless": return BORDERLESS_MODE;
+            case "Fullscreen": return FULLSCREEN_MODE;
+        }
+        return WINDOW_MODE;
+    }
+    public static String graphicsModeToSettingName(String s) {
+        switch(s) {
+            case GRAPHICS_LOW:    return "Low";
+            case GRAPHICS_MEDIUM: return "Medium";
+            case GRAPHICS_HIGH:   return "High";
+        }
+        return "High";
+    }
+    public static String graphicsModeFromSettingName(String s) {
+        switch(s) {
+            case "Low":    return GRAPHICS_LOW;
+            case "Medium": return GRAPHICS_MEDIUM;
+            case "High":   return GRAPHICS_HIGH;
+        }
+        return GRAPHICS_HIGH;
     }
 }

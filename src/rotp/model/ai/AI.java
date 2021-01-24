@@ -55,6 +55,7 @@ import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.planet.Planet;
 import rotp.model.ships.ShipDesign;
+import rotp.ui.UserPreferences;
 import rotp.ui.notifications.BombardSystemNotification;
 import rotp.ui.notifications.ColonizeSystemNotification;
 import rotp.util.Base;
@@ -212,7 +213,7 @@ public class AI implements Base {
 
         // AT THIS POINT, the fleet can definitely colonize the planet
         // confirm if player controlled & if colonize prompt is disabled
-        if (empire.isAIControlled() || options().disableColonizePrompt())
+        if (empire.isAIControlled() || UserPreferences.autoColonize())
             fl.colonizeSystem(sys, bestDesign);
         else
             ColonizeSystemNotification.create(sys.id, fl, bestDesign);

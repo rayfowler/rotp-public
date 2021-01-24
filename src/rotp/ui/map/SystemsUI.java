@@ -265,7 +265,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
     public GalaxyMapPanel map()         { return map; }
     private void initModel() {
         int w, h;
-        if (UserPreferences.fullScreen()) {
+        if (!UserPreferences.windowed()) {
             Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
             w = size.width;
             h = size.height;

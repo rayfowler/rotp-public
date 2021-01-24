@@ -86,6 +86,11 @@ public interface IGameOptions {
     public static final String COUNCIL_IMMEDIATE = "SETUP_COUNCIL_IMMEDIATE";
     public static final String COUNCIL_REBELS    = "SETUP_COUNCIL_REBELS";
     
+    public static final String STAR_DENSITY_NORMAL   = "SETUP_STAR_DENSITY_NORMAL";
+    public static final String STAR_DENSITY_HIGH     = "SETUP_STAR_DENSITY_HIGH";
+    public static final String STAR_DENSITY_HIGHER   = "SETUP_STAR_DENSITY_HIGHER";
+    public static final String STAR_DENSITY_HIGHEST  = "SETUP_STAR_DENSITY_HIGHEST";
+    
     public default boolean isAutoPlay()          { return false; }
     public default boolean communityAI()         { return false; }
     public default boolean usingExtendedRaces()  { return (selectedNumberOpponents()+1) > startingRaceOptions().size(); }
@@ -114,8 +119,6 @@ public interface IGameOptions {
     public Color color(int i);
     public boolean disableRandomEvents();
     public void disableRandomEvents(boolean b);
-    public boolean disableColonizePrompt();
-    public void disableColonizePrompt(boolean b);
 
     // selectable options
     public List<String> galaxySizeOptions();
@@ -129,6 +132,7 @@ public interface IGameOptions {
     public List<String> warpSpeedOptions();
     public List<String> nebulaeOptions();
     public List<String> councilWinOptions();
+    public List<String> starDensityOptions();
 	
     public List<String> gameDifficultyOptions();
     public int maximumOpponentsOptions();
@@ -152,6 +156,8 @@ public interface IGameOptions {
     public void selectedNebulaeOption(String s);
     public String selectedCouncilWinOption();
     public void selectedCouncilWinOption(String s);
+    public String selectedStarDensityOption();
+    public void selectedStarDensityOption(String s);
 	
     public String selectedGalaxyShapeOption1();
     public void selectedGalaxyShapeOption1(String s);
@@ -278,6 +284,11 @@ public interface IGameOptions {
     default String nextCouncilWinOption() {
         List<String> opts = councilWinOptions();
         int index = opts.indexOf(selectedCouncilWinOption())+1;
+        return index >= opts.size() ? opts.get(0) : opts.get(index);
+    }
+    default String nextStarDensityOption() {
+        List<String> opts = starDensityOptions();
+        int index = opts.indexOf(selectedStarDensityOption())+1;
         return index >= opts.size() ? opts.get(0) : opts.get(index);
     }
     default void nextOpponent(int i) {

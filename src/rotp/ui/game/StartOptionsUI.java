@@ -42,12 +42,12 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
     public static final Color darkBrown = new Color(112,85,68);
     public static final Color darkerBrown = new Color(75,55,39);
     
-    Shape hoverBox;
+    Rectangle hoverBox;
     Rectangle okBox = new Rectangle();
     BasePanel parent;
     BaseText galaxyAgeText;
     BaseText randomEventsText;
-    BaseText colonizePromptText;
+    BaseText starDensityText;
     BaseText researchRateText;
     BaseText techTradingText;
     BaseText warpSpeedText;
@@ -64,7 +64,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         researchRateText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         galaxyAgeText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         techTradingText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
-        colonizePromptText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        starDensityText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         warpSpeedText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         nebulaeText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         councilWinText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
@@ -76,7 +76,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         researchRateText.displayText(researchRateStr());
         techTradingText.displayText(techTradingStr());
         galaxyAgeText.displayText(galaxyAgeStr());
-        colonizePromptText.displayText(colonizePromptStr());
+        starDensityText.displayText(starDensityStr());
         warpSpeedText.displayText(warpSpeedStr());
         nebulaeText.displayText(nebulaeStr());
         councilWinText.displayText(councilWinStr());
@@ -148,10 +148,10 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
         g.setPaint(GameUI.settingsSetupBackground(w));
-        g.fillRect(x2+s10, y2-s10, nebulaeText.stringWidth(g)+s10,s30);
-        nebulaeText.setScaledXY(x2+s20, y2+s7);
-        nebulaeText.draw(g);
-        desc = text("SETTINGS_NEBULAE_DESC");
+        g.fillRect(x2+s10, y2-s10, starDensityText.stringWidth(g)+s10,s30);
+        starDensityText.setScaledXY(x2+s20, y2+s7);
+        starDensityText.draw(g);
+        desc = text("SETTINGS_STAR_DENSITY_DESC");
         g.setColor(SystemPanel.blackText);
         g.setFont(narrowFont(18));
         lines = this.wrappedLines(g,desc, w2-s30);
@@ -165,11 +165,11 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
         g.setPaint(GameUI.settingsSetupBackground(w));
-        g.fillRect(x2+s10, y2-s10, randomEventsText.stringWidth(g)+s10,s30);
-        randomEventsText.setScaledXY(x2+s20, y2+s7);
-        randomEventsText.draw(g);
-        desc = text("SETTINGS_RANDOM_EVENTS_DESC");
-        g.setColor(SystemPanel.blackText);
+        g.fillRect(x2+s10, y2-s10, nebulaeText.stringWidth(g)+s10,s30);
+        nebulaeText.setScaledXY(x2+s20, y2+s7);
+        nebulaeText.draw(g);
+        desc = text("SETTINGS_NEBULAE_DESC");
+         g.setColor(SystemPanel.blackText);
         g.setFont(narrowFont(18));
         lines = this.wrappedLines(g,desc, w2-s30);
         y3 = y2+s10;
@@ -182,10 +182,10 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
         g.setPaint(GameUI.settingsSetupBackground(w));
-        g.fillRect(x2+s10, y2-s10, techTradingText.stringWidth(g)+s10,s30);
-        techTradingText.setScaledXY(x2+s20, y2+s7);
-        techTradingText.draw(g);
-        desc = text("SETTINGS_TECH_TRADING_DESC");
+        g.fillRect(x2+s10, y2-s10, randomEventsText.stringWidth(g)+s10,s30);
+        randomEventsText.setScaledXY(x2+s20, y2+s7);
+        randomEventsText.draw(g);
+        desc = text("SETTINGS_RANDOM_EVENTS_DESC");
         g.setColor(SystemPanel.blackText);
         g.setFont(narrowFont(18));
         lines = this.wrappedLines(g,desc, w2-s30);
@@ -254,10 +254,10 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
         g.setPaint(GameUI.settingsSetupBackground(w));
-        g.fillRect(x2+s10, y2-s10, colonizePromptText.stringWidth(g)+s10,s30);
-        colonizePromptText.setScaledXY(x2+s20, y2+s7);
-        colonizePromptText.draw(g);
-        desc = text("SETTINGS_COLONIZE_PROMPT_DESC");
+        g.fillRect(x2+s10, y2-s10, techTradingText.stringWidth(g)+s10,s30);
+        techTradingText.setScaledXY(x2+s20, y2+s7);
+        techTradingText.draw(g);
+        desc = text("SETTINGS_TECH_TRADING_DESC");
         g.setColor(SystemPanel.blackText);
         g.setFont(narrowFont(18));
         lines = this.wrappedLines(g,desc, w2-s30);
@@ -293,11 +293,9 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         String opt = text(newGameOptions().selectedRandomEventOption());
         return text("SETTINGS_RANDOM_EVENTS", opt)+"   ";
     }
-    private String colonizePromptStr() {
-        if (newGameOptions().disableColonizePrompt())
-            return text("SETTINGS_COLONIZE_PROMPT_OFF")+"   ";
-        else
-            return text("SETTINGS_COLONIZE_PROMPT_ON")+"  ";
+    private String starDensityStr() {
+        String opt = text(newGameOptions().selectedStarDensityOption());
+        return text("SETTINGS_STAR_DENSITY", opt)+"   ";
     }
     private String researchRateStr() {
         String opt = text(newGameOptions().selectedResearchRate());
@@ -334,10 +332,10 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         newGameOptions().selectedRandomEventOption(newGameOptions().nextRandomEventOption());
         randomEventsText.repaint(randomEventsStr());
     }
-    private void toggleColonizePrompt() {
+    private void toggleStarDensity() {
         softClick();
-        newGameOptions().disableColonizePrompt(!newGameOptions().disableColonizePrompt());
-        colonizePromptText.repaint(colonizePromptStr());
+        newGameOptions().selectedStarDensityOption(newGameOptions().nextStarDensityOption());
+        starDensityText.repaint(starDensityStr());
     }
     private void toggleResearchRate(MouseEvent e) {
         softClick();
@@ -383,12 +381,12 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
     public void mouseMoved(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
-        Shape prevHover = hoverBox;
+        Rectangle prevHover = hoverBox;
         hoverBox = null;
         if (randomEventsText.contains(x,y))
             hoverBox = randomEventsText.bounds();
-        else if (colonizePromptText.contains(x,y))
-            hoverBox = colonizePromptText.bounds();
+        else if (starDensityText.contains(x,y))
+            hoverBox = starDensityText.bounds();
         else if (galaxyAgeText.contains(x,y))
             hoverBox = galaxyAgeText.bounds();
         else if (researchRateText.contains(x,y))
@@ -409,8 +407,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
                 randomEventsText.mouseExit();
             else if (prevHover == galaxyAgeText.bounds())
                 galaxyAgeText.mouseExit();
-            else if (prevHover == colonizePromptText.bounds())
-                colonizePromptText.mouseExit();
+            else if (prevHover == starDensityText.bounds())
+                starDensityText.mouseExit();
             else if (prevHover == researchRateText.bounds())
                 researchRateText.mouseExit();
             else if (prevHover == techTradingText.bounds())
@@ -425,8 +423,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
                 randomEventsText.mouseEnter();
             else if (hoverBox == galaxyAgeText.bounds())
                 galaxyAgeText.mouseEnter();
-            else if (hoverBox == colonizePromptText.bounds())
-                colonizePromptText.mouseEnter();
+            else if (hoverBox == starDensityText.bounds())
+                starDensityText.mouseEnter();
             else if (hoverBox == researchRateText.bounds())
                 researchRateText.mouseEnter();
             else if (hoverBox == techTradingText.bounds())
@@ -437,7 +435,10 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
                 nebulaeText.mouseEnter();
             else if (hoverBox == councilWinText.bounds())
                 councilWinText.mouseEnter();
-           repaint();
+            if (prevHover != null)
+                repaint(prevHover);
+            if (hoverBox != null)
+                repaint(hoverBox);
         }
     }
     @Override
@@ -456,8 +457,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             toggleRandomEvents();
         else if (hoverBox == galaxyAgeText.bounds())
             toggleGalaxyAge();
-        else if (hoverBox == colonizePromptText.bounds())
-            toggleColonizePrompt();
+        else if (hoverBox == starDensityText.bounds())
+            toggleStarDensity();
         else if (hoverBox == researchRateText.bounds())
             toggleResearchRate(e);
         else if (hoverBox == techTradingText.bounds())

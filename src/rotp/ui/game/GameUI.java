@@ -27,8 +27,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
-import java.awt.event.MouseWheelEvent;
-import java.awt.event.MouseWheelListener;
 import java.awt.geom.Point2D;
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -42,13 +40,11 @@ import rotp.ui.BaseText;
 import rotp.ui.RotPUI;
 import rotp.ui.UserPreferences;
 import rotp.ui.sprites.RoundGradientPaint;
-import rotp.util.AnimationManager;
 import rotp.util.ImageManager;
 import rotp.util.LanguageManager;
-import rotp.util.sound.SoundManager;
 import rotp.util.ThickBevelBorder;
 
-public class GameUI  extends BasePanel implements MouseListener, MouseMotionListener, MouseWheelListener, ActionListener {
+public class GameUI  extends BasePanel implements MouseListener, MouseMotionListener, ActionListener {
     private static final long serialVersionUID = 1L;
     public static String AMBIENCE_KEY = "IntroAmbience";
     protected static RoundGradientPaint rgp;
@@ -104,16 +100,16 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     int fuzzSc = 2;
     int diff = s60;
     int languageX;
-    BaseText discussText, continueText, newGameText, loadGameText, saveGameText, exitText, restartText;
-    BaseText soundsText, musicText, graphicsText, texturesText, versionText, memoryText;
+    BaseText discussText, continueText, newGameText, loadGameText, saveGameText, settingsText, exitText, restartText;
+    BaseText versionText;
     BaseText developerText, artistText, graphicDsnrText, writerText, soundText, translatorText;
-    BaseText shrinkText, enlargeText, fullScreenText, windowedText;
+    BaseText shrinkText, enlargeText;
     BaseText hoverBox;
     Rectangle languageBox = new Rectangle();
     boolean mouseDepressed = false;
     boolean hideText = false;
     int startingScale = 100;
-    boolean startingFullScreen = true;
+    String startingDisplayMode;
     private final GameLanguagePane languagePanel = new GameLanguagePane();
 
     public static Color langShade()               { return langShade[opt()]; }
@@ -307,7 +303,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
 
     public GameUI() {
         startingScale = UserPreferences.screenSizePct();
-        startingFullScreen = UserPreferences.fullScreen();
+        startingDisplayMode = UserPreferences.displayMode();
         Color enabledC = menuEnabled[opt()];
         Color disabledC = menuDisabled[opt()];
         Color hoverC = menuHover[opt()];
@@ -318,22 +314,15 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         shrinkText      = new BaseText(this, false,20,   10,24,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         enlargeText     = new BaseText(this, false,20,    0,24,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         enlargeText.preceder(shrinkText);
-        fullScreenText  = new BaseText(this, false,20,    0,24,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
-        fullScreenText.preceder(enlargeText);
-        windowedText    = new BaseText(this, false,20,   10,24,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
-        continueText    = new BaseText(this, true, 50,   0, 300,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
-        newGameText     = new BaseText(this, true, 50,   0, 360,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
-        loadGameText    = new BaseText(this, true, 50,   0, 420,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
-        saveGameText    = new BaseText(this, true, 50,   0, 480,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
-        exitText        = new BaseText(this, true, 50,   0, 540,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
-        restartText     = new BaseText(this, true, 50,   0, 420,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
+        continueText    = new BaseText(this, true, 45,   0, 300,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
+        newGameText     = new BaseText(this, true, 45,   0, 350,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
+        loadGameText    = new BaseText(this, true, 45,   0, 400,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
+        saveGameText    = new BaseText(this, true, 45,   0, 450,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
+        settingsText    = new BaseText(this, true, 45,   0, 500,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
+        exitText        = new BaseText(this, true, 45,   0, 550,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
+        restartText     = new BaseText(this, true, 45,   0, 400,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
         versionText     = new BaseText(this, false,16, w/2, -35,  enabledC,  enabledC, hoverC, depressedC, shadedC, 2, 0, 0);
         discussText     = new BaseText(this, false,22, w/2, -10,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 0);
-        soundsText      = new BaseText(this, false,16,   20,-78,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
-        musicText       = new BaseText(this, false,16,   20,-61,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
-        graphicsText    = new BaseText(this, false,16,   20,-44,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
-        texturesText    = new BaseText(this, false,16,   20,-27,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
-        memoryText      = new BaseText(this, false,16,   20,-10,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         developerText   = new BaseText(this, false,16, -220,-95,  enabledC,  enabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         artistText      = new BaseText(this, false,16, -220,-78,  enabledC,  enabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         graphicDsnrText = new BaseText(this, false,16, -220,-61,  enabledC,  enabledC, hoverC, depressedC, shadedC, 0, 0, 0);
@@ -354,7 +343,6 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     private void initModel() {
         setOpaque(false);
         addMouseListener(this);
-        addMouseWheelListener(this);
         addMouseMotionListener(this);
         languagePanel.setVisible(false);
         add(languagePanel);
@@ -365,20 +353,12 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         newGameText.displayText(text("GAME_MENU_NEW_GAME"));
         loadGameText.displayText(text("GAME_MENU_LOAD_GAME"));
         saveGameText.displayText(text("GAME_MENU_SAVE_GAME"));
+        settingsText.displayText(text("GAME_MENU_SETTINGS"));
         exitText.displayText(text("GAME_MENU_EXIT"));
         restartText.displayText(text("GAME_MENU_RESTART"));
 
-        soundsText.displayText(soundsStr());
-        soundsText.hoverText(soundsHoverStr());
-        musicText.displayText(musicStr());
-        texturesText.displayText(texturesStr());
-        graphicsText.displayText(graphicsLevelStr());
-        graphicsText.hoverText(graphicsLevelHoverStr());
         shrinkText.displayText(text("GAME_SHRINK"));
         enlargeText.displayText(text("GAME_ENLARGE"));
-        fullScreenText.displayText(text("GAME_FULLSCREEN"));
-        windowedText.displayText(text("GAME_WINDOWED"));
-        memoryText.displayText(memoryStr());
         developerText.displayText(text("CREDITS_DEVELOPER"));
         artistText.displayText(text("CREDITS_ILLUSTRATOR"));
         graphicDsnrText.displayText(text("CREDITS_GRAPHIC_DESIGN"));
@@ -460,6 +440,8 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             newGameText.reset();
             loadGameText.reset();
             saveGameText.reset();
+            settingsText.disabled(false);
+            settingsText.drawCentered(g);
             exitText.reset();
             restartText.disabled(false);
             restartText.drawCentered(g);
@@ -474,6 +456,8 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             loadGameText.drawCentered(g);
             saveGameText.disabled(!canSaveGame());
             saveGameText.drawCentered(g);
+            settingsText.disabled(false);
+            settingsText.drawCentered(g);
             exitText.disabled(!canExit());
             exitText.drawCentered(g);
         }
@@ -486,28 +470,18 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         soundText.draw(g);
         translatorText.draw(g);
         versionText.drawCentered(g);
-        memoryText.draw(g);
-        texturesText.draw(g);
-        graphicsText.draw(g);
-        musicText.draw(g);
-        soundsText.draw(g);
         
-        windowedText.visible(UserPreferences.fullScreen());
-        shrinkText.visible(!UserPreferences.fullScreen());
-        enlargeText.visible(!UserPreferences.fullScreen());
-        fullScreenText.visible(!UserPreferences.fullScreen());
-        windowedText.draw(g);
+        shrinkText.visible(UserPreferences.windowed());
+        enlargeText.visible(UserPreferences.windowed());
         shrinkText.draw(g);
         enlargeText.draw(g);
-        fullScreenText.draw(g);
-
     }
     private boolean canContinue()    { return session().status().inProgress() || session().hasRecentSession(); }
     private boolean canNewGame()     { return true; }
     private boolean canLoadGame()    { return true; }
     private boolean canSaveGame()    { return session().status().inProgress(); }
     private boolean canExit()        { return true; }
-    private boolean canRestart()     { return (UserPreferences.fullScreen() != startingFullScreen) 
+    private boolean canRestart()     { return !UserPreferences.displayMode().equals(startingDisplayMode) 
             || (UserPreferences.screenSizePct() != startingScale); }
 
     private void rescaleMenuOptions() {
@@ -516,6 +490,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         newGameText.rescale();
         loadGameText.rescale();
         saveGameText.rescale();
+        settingsText.rescale();
         exitText.rescale();
     }
     @Override
@@ -551,7 +526,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         }
     }
     private void shrinkFrame() {
-        if (UserPreferences.fullScreen())
+        if (!UserPreferences.windowed())
             return;
         if (UserPreferences.shrinkFrame()) {
             Rotp.setFrameSize();
@@ -561,7 +536,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
        }
     }
     private void expandFrame() {
-        if (UserPreferences.fullScreen())
+        if (!UserPreferences.windowed())
             return;
        if (UserPreferences.expandFrame()) {
             Rotp.setFrameSize();
@@ -612,50 +587,6 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     public void restartGame() {
         Rotp.restart();
     }
-    private String texturesStr() {
-        if (UserPreferences.textures())
-            return text("GAME_TEXTURES_ON")+"     ";
-        else
-            return text("GAME_TEXTURES_OFF")+"     ";
-    }
-    private String graphicsLevelStr() {
-        UserPreferences.GraphicsSetting graphics = UserPreferences.graphicsLevel();
-        switch(graphics) {
-            case NORMAL: return text("GAME_GRAPHICS_NORMAL")+"     ";
-            case MEDIUM: return text("GAME_GRAPHICS_MEDIUM")+"     ";
-            case LOW:    return text("GAME_GRAPHICS_LOW")+"     ";
-        }
-        return text("GAME_GRAPHICS_NORMAL")+"     ";
-    }
-    private String graphicsLevelHoverStr() {
-        UserPreferences.GraphicsSetting graphics = UserPreferences.graphicsLevel();
-        switch(graphics) {
-            case NORMAL: return text("GAME_GRAPHICS_NORMAL")+"     ";
-            case MEDIUM: return text("GAME_GRAPHICS_MEDIUM_HOVER")+"     ";
-            case LOW:    return text("GAME_GRAPHICS_LOW_HOVER")+"     ";
-        }
-        return graphicsLevelStr();
-    }  
-    private String soundsStr() {
-        if (SoundManager.current().disabled())
-            return text("GAME_SOUNDS_DISABLED", "");
-        else if (SoundManager.current().playSounds())
-            return text("GAME_SOUNDS_ON", str(SoundManager.soundLevel()));
-        else
-            return text("GAME_SOUNDS_OFF");
-    }
-    private String soundsHoverStr() {
-        if (SoundManager.current().disabled())
-            return text("GAME_SOUNDS_DISABLED", SoundManager.errorString);
-        else 
-            return soundsStr();
-    }
-    private String musicStr() {
-        return SoundManager.current().playMusic() ? text("GAME_MUSIC_ON",str(SoundManager.musicLevel())) : text("GAME_MUSIC_OFF");
-    }
-    private String memoryStr() {
-        return UserPreferences.showMemory() ? text("GAME_MEMORY_SHOW") : text("GAME_MEMORY_HIDE");
-    }
     private void selectLanguage(int i) {
         softClick();
         LanguageManager.current().selectLanguage(i);
@@ -663,55 +594,10 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         setTextValues();
         repaint();
     }
-    private void toggleMemory() {
-        softClick();
-        UserPreferences.toggleMemory();
-        memoryText.repaint(memoryStr());
-        repaint();
-    }
-    private void scrollSounds(boolean up) {
-        if (up)
-            SoundManager.current().increaseSoundLevel();
-        else
-            SoundManager.current().decreaseSoundLevel();
-        soundsText.repaint(soundsStr(), soundsHoverStr());
-    }
-    private void toggleSounds() {
-        softClick();
-        SoundManager.current().toggleSounds();
-        soundsText.repaint(soundsStr(), soundsHoverStr());
-    }
-    private void scrollMusic(boolean up) {
-        if (up)
-            SoundManager.current().increaseMusicLevel();
-        else
-            SoundManager.current().decreaseMusicLevel();
-        musicText.repaint(musicStr());
-    }
-    private void toggleMusic() {
-        softClick();
-        SoundManager.current().toggleMusic();
-        musicText.repaint(musicStr());
-    }
-    private void toggleTextures() {
-        softClick();
-        UserPreferences.toggleTextures();
-        texturesText.repaint(texturesStr());
-    }
-    private void toggleFullScreen() {
-        softClick();
-        UserPreferences.toggleFullScreen();
-        repaint();
-    }
-    private void toggleGraphicsLevel() {
-        if (AnimationManager.current().animationsDisabled())
-            misClick();
-        else {
-            softClick();
-            UserPreferences.toggleGraphicsLevel();
-            graphicsText.repaint(graphicsLevelStr(), graphicsLevelHoverStr());
-            repaint();
-        }
+    public void goToSettings() {
+        buttonClick();
+        GameSettingsUI settingsUI = RotPUI.gameSettingsUI();
+        settingsUI.open(this);
     }
     @Override
     public void playAmbience() {
@@ -751,28 +637,16 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             loadGame();
         else if (saveGameText.contains(x,y))
             saveGame();
+        else if (settingsText.contains(x,y))
+            goToSettings();
         else if (exitText.contains(x,y))
             exitGame();
         else if (restartText.contains(x,y))
             restartGame();
-        else if (soundsText.contains(x,y))
-            toggleSounds();
-        else if (musicText.contains(x,y))
-            toggleMusic();
-        else if (texturesText.contains(x,y))
-            toggleTextures();
-        else if (graphicsText.contains(x,y))
-            toggleGraphicsLevel();
         else if (shrinkText.contains(x,y))
             shrinkFrame();
         else if (enlargeText.contains(x,y))
             expandFrame();
-        else if (fullScreenText.contains(x,y))
-            toggleFullScreen();
-        else if (windowedText.contains(x,y))
-            toggleFullScreen();
-        else if (memoryText.contains(x,y))
-            toggleMemory();
     }
     @Override
     public void mouseDragged(MouseEvent e) {
@@ -799,48 +673,31 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             newHover = loadGameText;
         else if (canSaveGame() && saveGameText.contains(x,y))
             newHover = saveGameText;
+        else if (settingsText.contains(x,y))
+            newHover = settingsText;
         else if (canExit() && exitText.contains(x,y))
             newHover = exitText;
         else if (canRestart() && restartText.contains(x,y))
             newHover = restartText;
-        else if (soundsText.contains(x,y))
-            newHover = soundsText;
-        else if (musicText.contains(x,y))
-            newHover = musicText;
-        else if (texturesText.contains(x,y))
-            newHover = texturesText;
-        else if (graphicsText.contains(x,y))
-            newHover = graphicsText;
         else if (shrinkText.contains(x,y))
             newHover = shrinkText;
         else if (enlargeText.contains(x,y))
             newHover = enlargeText;
-        else if (fullScreenText.contains(x,y))
-            newHover = fullScreenText;
-        else if (windowedText.contains(x,y))
-            newHover = windowedText;
-        else if (memoryText.contains(x,y))
-            newHover = memoryText;
 
         if (hoverBox != newHover) {
-            if (hoverBox != null)
+            if (hoverBox != null) {
                 hoverBox.mouseExit();
+                repaint(hoverBox.bounds());
+            }
             hoverBox = newHover;
             if (hoverBox != null) {
                 if (mouseDepressed)
                     hoverBox.mousePressed();
                 else
                     hoverBox.mouseEnter();
+                repaint(hoverBox.bounds());
             }
         }
-    }
-    @Override
-    public void mouseWheelMoved(MouseWheelEvent e) {
-        boolean up = e.getWheelRotation() < 0;
-        if (hoverBox == soundsText)
-            scrollSounds(up);
-        else if (hoverBox == musicText)
-            scrollMusic(up);
     }
     public class GameLanguagePane extends BasePanel implements MouseListener, MouseMotionListener {
         private static final long serialVersionUID = 1L;

@@ -57,9 +57,10 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private String selectedNebulaeOption;
     private String selectedCouncilWinOption;
     private int selectedNumberOpponents;
-    private boolean communityAI = false;
+    private boolean communityAI = false;  // unused
     private boolean disableRandomEvents = false;
-    private boolean disableColonizePrompt = false;
+    private boolean disableColonizePrompt = false; // unused
+    private String selectedStarDensityOption;
 
     private transient GalaxyShape galaxyShape;
 
@@ -91,10 +92,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     public boolean disableRandomEvents()         { return disableRandomEvents; }
     @Override
     public void disableRandomEvents(boolean b)   { disableRandomEvents = b; }
-    @Override
-    public boolean disableColonizePrompt()       { return disableColonizePrompt; }
-    @Override
-    public void disableColonizePrompt(boolean b) { disableColonizePrompt = b; }
     @Override
     public String selectedGalaxySize()           { return selectedGalaxySize; }
     @Override
@@ -149,6 +146,10 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     public String selectedCouncilWinOption()        { return selectedCouncilWinOption; }
     @Override
     public void selectedCouncilWinOption(String s)  { selectedCouncilWinOption = s; }
+    @Override
+    public String selectedStarDensityOption()       { return selectedStarDensityOption == null ? STAR_DENSITY_NORMAL : selectedStarDensityOption; }
+    @Override
+    public void selectedStarDensityOption(String s) { selectedStarDensityOption = s; }
     @Override
     public int selectedNumberOpponents()         { return selectedNumberOpponents; }
     @Override
@@ -209,7 +210,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedWarpSpeedOption = opt.selectedWarpSpeedOption;
         selectedNebulaeOption = opt.selectedNebulaeOption;
         selectedCouncilWinOption = opt.selectedCouncilWinOption;
-        disableColonizePrompt = opt.disableColonizePrompt;
+        selectedStarDensityOption = opt.selectedStarDensityOption;
 
         if (opt.player != null) 
             player.copy(opt.player);
@@ -579,6 +580,15 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         return list;
     }
     @Override
+    public List<String> starDensityOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(STAR_DENSITY_NORMAL);
+        list.add(STAR_DENSITY_HIGH);
+        list.add(STAR_DENSITY_HIGHER);
+        list.add(STAR_DENSITY_HIGHEST);
+        return list;
+    }
+    @Override
     public List<String> startingRaceOptions() {
         List<String> list = new ArrayList<>();
         list.add("RACE_HUMAN");
@@ -611,6 +621,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedWarpSpeedOption = WARP_SPEED_NORMAL;
         selectedNebulaeOption = NEBULAE_NORMAL;
         selectedCouncilWinOption = COUNCIL_REBELS;
+        selectedStarDensityOption = STAR_DENSITY_NORMAL;
         generateGalaxy();
     }
     private void generateGalaxy() {
