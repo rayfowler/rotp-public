@@ -34,7 +34,7 @@ public class ColonyAttackedIncident extends DiplomaticIncident {
         empDefender = r.defender().id;
         empAttacker = r.attacker().id;
         popLost = r.popDestroyed();
-        severity = -5 + max(-40, popLost);
+        severity = -5 + max(-40, -popLost);
         dateOccurred = galaxy().currentYear();
         duration = 10;
     }

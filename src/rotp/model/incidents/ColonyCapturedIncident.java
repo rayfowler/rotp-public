@@ -42,7 +42,7 @@ public class ColonyCapturedIncident extends DiplomaticIncident {
         sysId = sys.id;
         popLost = p;
 
-        severity = -20 + max(-30, popLost);
+        severity = -20 + max(-30, -popLost);
         dateOccurred = galaxy().currentYear();
         duration = 30;
     }
