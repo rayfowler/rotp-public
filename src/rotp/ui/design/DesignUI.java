@@ -837,7 +837,7 @@ public class DesignUI extends BasePanel {
                 int sw = g.getFontMetrics().stringWidth(str);
                 int buttonW = sw + s40;
                 int buttonH = s25;
-                int buttonX = leftM;
+                int buttonX = (leftM-buttonW)/2;
                 int buttonY = boxH - s30;
                 copyButtonArea[designNum].setBounds(buttonX, buttonY, buttonW, buttonH);
 
@@ -1203,13 +1203,17 @@ public class DesignUI extends BasePanel {
             else {
                 sizeFieldArea.setBounds(boxX, boxY, boxW,boxH);
                 sizeFieldDecr.reset();
-                sizeFieldDecr.addPoint(boxX-s11, boxY+(boxH/2));
-                sizeFieldDecr.addPoint(boxX-s3, boxY);
-                sizeFieldDecr.addPoint(boxX-s3, boxY+boxH);
+                if (des.size() != ShipDesign.SMALL) {
+                    sizeFieldDecr.addPoint(boxX-s11, boxY+(boxH/2));
+                    sizeFieldDecr.addPoint(boxX-s3, boxY);
+                    sizeFieldDecr.addPoint(boxX-s3, boxY+boxH);
+                }
                 sizeFieldIncr.reset();
-                sizeFieldIncr.addPoint(boxX+boxW+s11, boxY+(boxH/2));
-                sizeFieldIncr.addPoint(boxX+boxW+s3, boxY);
-                sizeFieldIncr.addPoint(boxX+boxW+s3, boxY+boxH);
+                if (des.size() != ShipDesign.HUGE) {
+                    sizeFieldIncr.addPoint(boxX+boxW+s11, boxY+(boxH/2));
+                    sizeFieldIncr.addPoint(boxX+boxW+s3, boxY);
+                    sizeFieldIncr.addPoint(boxX+boxW+s3, boxY+boxH);
+                }
                 g.fill(sizeFieldArea);
                 g.fill(sizeFieldDecr);
                 g.fill(sizeFieldIncr);
@@ -1466,15 +1470,22 @@ public class DesignUI extends BasePanel {
                 g.setColor(SystemPanel.whiteText);
             }
             else {
+                List<ShipEngine> comps = player().shipLab().engines();
+                ShipEngine first = comps.get(0);
+                ShipEngine last = comps.get(comps.size()-1);
                 engineFieldArea.setBounds(boxX, boxY, boxW, boxH);
                 engineFieldDecr.reset();
-                engineFieldDecr.addPoint(boxX - s11, boxY + (boxH / 2));
-                engineFieldDecr.addPoint(boxX - s3, boxY);
-                engineFieldDecr.addPoint(boxX - s3, boxY + boxH);
+                if (des.engine() != first) {
+                    engineFieldDecr.addPoint(boxX - s11, boxY + (boxH / 2));
+                    engineFieldDecr.addPoint(boxX - s3, boxY);
+                    engineFieldDecr.addPoint(boxX - s3, boxY + boxH);
+                }
                 engineFieldIncr.reset();
-                engineFieldIncr.addPoint(boxX + boxW + s11, boxY + (boxH / 2));
-                engineFieldIncr.addPoint(boxX + boxW + s3, boxY);
-                engineFieldIncr.addPoint(boxX + boxW + s3, boxY + boxH);
+                if (des.engine() != last) {
+                    engineFieldIncr.addPoint(boxX + boxW + s11, boxY + (boxH / 2));
+                    engineFieldIncr.addPoint(boxX + boxW + s3, boxY);
+                    engineFieldIncr.addPoint(boxX + boxW + s3, boxY + boxH);
+                }
                 g.fill(engineFieldArea);
                 g.fill(engineFieldDecr);
                 g.fill(engineFieldIncr);
@@ -1611,15 +1622,22 @@ public class DesignUI extends BasePanel {
                 g.setColor(SystemPanel.whiteText);
             }
             else {
+                List<ShipComputer> comps = player().shipLab().computers();
+                ShipComputer first = comps.get(0);
+                ShipComputer last = comps.get(comps.size()-1);
                 computerFieldArea.setBounds(boxX, boxY, boxW, boxH);
                 computerFieldDecr.reset();
-                computerFieldDecr.addPoint(boxX - s11, boxY + (boxH / 2));
-                computerFieldDecr.addPoint(boxX - s3, boxY);
-                computerFieldDecr.addPoint(boxX - s3, boxY + boxH);
+                if (comp != first) {
+                    computerFieldDecr.addPoint(boxX - s11, boxY + (boxH / 2));
+                    computerFieldDecr.addPoint(boxX - s3, boxY);
+                    computerFieldDecr.addPoint(boxX - s3, boxY + boxH);
+                }
                 computerFieldIncr.reset();
-                computerFieldIncr.addPoint(boxX + boxW + s11, boxY + (boxH / 2));
-                computerFieldIncr.addPoint(boxX + boxW + s3, boxY);
-                computerFieldIncr.addPoint(boxX + boxW + s3, boxY + boxH);
+                if (comp != last) {
+                    computerFieldIncr.addPoint(boxX + boxW + s11, boxY + (boxH / 2));
+                    computerFieldIncr.addPoint(boxX + boxW + s3, boxY);
+                    computerFieldIncr.addPoint(boxX + boxW + s3, boxY + boxH);
+                }
                 g.fill(computerFieldArea);
                 g.fill(computerFieldDecr);
                 g.fill(computerFieldIncr);
@@ -1679,15 +1697,22 @@ public class DesignUI extends BasePanel {
                 g.setColor(SystemPanel.whiteText);
             }
             else {
+                List<ShipArmor> comps = player().shipLab().armors();
+                ShipArmor first = comps.get(0);
+                ShipArmor last = comps.get(comps.size()-1);
                 armorFieldArea.setBounds(boxX, boxY, boxW, boxH);
                 armorFieldDecr.reset();
-                armorFieldDecr.addPoint(boxX - s11, boxY + (boxH / 2));
-                armorFieldDecr.addPoint(boxX - s3, boxY);
-                armorFieldDecr.addPoint(boxX - s3, boxY + boxH);
+                if (armor != first) {
+                    armorFieldDecr.addPoint(boxX - s11, boxY + (boxH / 2));
+                    armorFieldDecr.addPoint(boxX - s3, boxY);
+                    armorFieldDecr.addPoint(boxX - s3, boxY + boxH);
+                }
                 armorFieldIncr.reset();
-                armorFieldIncr.addPoint(boxX + boxW + s11, boxY + (boxH / 2));
-                armorFieldIncr.addPoint(boxX + boxW + s3, boxY);
-                armorFieldIncr.addPoint(boxX + boxW + s3, boxY + boxH);
+                if (armor != last) {
+                    armorFieldIncr.addPoint(boxX + boxW + s11, boxY + (boxH / 2));
+                    armorFieldIncr.addPoint(boxX + boxW + s3, boxY);
+                    armorFieldIncr.addPoint(boxX + boxW + s3, boxY + boxH);
+                }
                 g.fill(armorFieldArea);
                 g.fill(armorFieldDecr);
                 g.fill(armorFieldIncr);
@@ -1746,15 +1771,22 @@ public class DesignUI extends BasePanel {
                 g.setColor(SystemPanel.whiteText);
             }
             else {
+                List<ShipShield> comps = player().shipLab().shields();
+                ShipShield first = comps.get(0);
+                ShipShield last = comps.get(comps.size()-1);
                 shieldsFieldArea.setBounds(boxX, boxY, boxW, boxH);
                 shieldsFieldDecr.reset();
-                shieldsFieldDecr.addPoint(boxX - s11, boxY + (boxH / 2));
-                shieldsFieldDecr.addPoint(boxX - s3, boxY);
-                shieldsFieldDecr.addPoint(boxX - s3, boxY + boxH);
+                if (shield != first) {
+                    shieldsFieldDecr.addPoint(boxX - s11, boxY + (boxH / 2));
+                    shieldsFieldDecr.addPoint(boxX - s3, boxY);
+                    shieldsFieldDecr.addPoint(boxX - s3, boxY + boxH);
+                }
                 shieldsFieldIncr.reset();
-                shieldsFieldIncr.addPoint(boxX + boxW + s11, boxY + (boxH / 2));
-                shieldsFieldIncr.addPoint(boxX + boxW + s3, boxY);
-                shieldsFieldIncr.addPoint(boxX + boxW + s3, boxY + boxH);
+                if (shield != last) {
+                    shieldsFieldIncr.addPoint(boxX + boxW + s11, boxY + (boxH / 2));
+                    shieldsFieldIncr.addPoint(boxX + boxW + s3, boxY);
+                    shieldsFieldIncr.addPoint(boxX + boxW + s3, boxY + boxH);
+                }
                 g.fill(shieldsFieldArea);
                 g.fill(shieldsFieldDecr);
                 g.fill(shieldsFieldIncr);
@@ -1862,15 +1894,22 @@ public class DesignUI extends BasePanel {
                 g.setColor(SystemPanel.whiteText);
             }
             else {
+                List<ShipECM> comps = player().shipLab().ecms();
+                ShipECM first = comps.get(0);
+                ShipECM last = comps.get(comps.size()-1);
                 ecmFieldArea.setBounds(boxX, boxY, boxW, boxH);
                 ecmFieldDecr.reset();
-                ecmFieldDecr.addPoint(boxX - s11, boxY + (boxH / 2));
-                ecmFieldDecr.addPoint(boxX - s3, boxY);
-                ecmFieldDecr.addPoint(boxX - s3, boxY + boxH);
+                if (ecm != first) {
+                    ecmFieldDecr.addPoint(boxX - s11, boxY + (boxH / 2));
+                    ecmFieldDecr.addPoint(boxX - s3, boxY);
+                    ecmFieldDecr.addPoint(boxX - s3, boxY + boxH);
+                }
                 ecmFieldIncr.reset();
-                ecmFieldIncr.addPoint(boxX + boxW + s11, boxY + (boxH / 2));
-                ecmFieldIncr.addPoint(boxX + boxW + s3, boxY);
-                ecmFieldIncr.addPoint(boxX + boxW + s3, boxY + boxH);
+                if (ecm != last) {
+                    ecmFieldIncr.addPoint(boxX + boxW + s11, boxY + (boxH / 2));
+                    ecmFieldIncr.addPoint(boxX + boxW + s3, boxY);
+                    ecmFieldIncr.addPoint(boxX + boxW + s3, boxY + boxH);
+                }
                 g.fill(ecmFieldArea);
                 g.fill(ecmFieldDecr);
                 g.fill(ecmFieldIncr);
@@ -1928,15 +1967,22 @@ public class DesignUI extends BasePanel {
                 g.setColor(SystemPanel.whiteText);
             }
             else {
+                List<ShipManeuver> comps = player().shipLab().maneuvers();
+                ShipManeuver first = comps.get(0);
+                ShipManeuver last = comps.get(comps.size()-1);
                 maneuverFieldArea.setBounds(boxX, boxY, boxW, boxH);
                 maneuverFieldDecr.reset();
-                maneuverFieldDecr.addPoint(boxX - s11, boxY + (boxH / 2));
-                maneuverFieldDecr.addPoint(boxX - s3, boxY);
-                maneuverFieldDecr.addPoint(boxX - s3, boxY + boxH);
+                if (manv != first) {
+                    maneuverFieldDecr.addPoint(boxX - s11, boxY + (boxH / 2));
+                    maneuverFieldDecr.addPoint(boxX - s3, boxY);
+                    maneuverFieldDecr.addPoint(boxX - s3, boxY + boxH);
+                }
                 maneuverFieldIncr.reset();
-                maneuverFieldIncr.addPoint(boxX + boxW + s11, boxY + (boxH / 2));
-                maneuverFieldIncr.addPoint(boxX + boxW + s3, boxY);
-                maneuverFieldIncr.addPoint(boxX + boxW + s3, boxY + boxH);
+                if (manv != last) {
+                    maneuverFieldIncr.addPoint(boxX + boxW + s11, boxY + (boxH / 2));
+                    maneuverFieldIncr.addPoint(boxX + boxW + s3, boxY);
+                    maneuverFieldIncr.addPoint(boxX + boxW + s3, boxY + boxH);
+                }
                 g.fill(maneuverFieldArea);
                 g.fill(maneuverFieldDecr);
                 g.fill(maneuverFieldIncr);
@@ -2019,8 +2065,12 @@ public class DesignUI extends BasePanel {
             g.setFont(narrowFont(20));
             drawShadowedString(g, title1, 3, x1, y2, SystemPanel.textShadowC, SystemPanel.whiteText);
 
-           if (UserPreferences.textures()) 
+            if (UserPreferences.textures()) 
                 drawTexture(g,x, y+s25, w0, h-s25);
+
+            List<ShipWeapon> comps = player().shipLab().weapons();
+            ShipWeapon first = comps.get(0);
+            ShipWeapon last = comps.get(comps.size()-1);
 
             for (int i=0;i<ShipDesign.maxWeapons;i++) {
                 ShipWeapon wpn = des.weapon(i);
@@ -2088,13 +2138,17 @@ public class DesignUI extends BasePanel {
                 else {
                     weaponCountArea[i].setBounds(boxX, boxY, boxW, boxH);
                     weaponCountDecr[i].reset();
-                    weaponCountDecr[i].addPoint(boxX - s11, boxY + (boxH / 2));
-                    weaponCountDecr[i].addPoint(boxX - s3, boxY);
-                    weaponCountDecr[i].addPoint(boxX - s3, boxY + boxH);
+                    if (wpn != first) {
+                        weaponCountDecr[i].addPoint(boxX - s11, boxY + (boxH / 2));
+                        weaponCountDecr[i].addPoint(boxX - s3, boxY);
+                        weaponCountDecr[i].addPoint(boxX - s3, boxY + boxH);
+                    }
                     weaponCountIncr[i].reset();
-                    weaponCountIncr[i].addPoint(boxX + boxW + s11, boxY + (boxH / 2));
-                    weaponCountIncr[i].addPoint(boxX + boxW + s3, boxY);
-                    weaponCountIncr[i].addPoint(boxX + boxW + s3, boxY + boxH);
+                    if (wpn != last) {
+                        weaponCountIncr[i].addPoint(boxX + boxW + s11, boxY + (boxH / 2));
+                        weaponCountIncr[i].addPoint(boxX + boxW + s3, boxY);
+                        weaponCountIncr[i].addPoint(boxX + boxW + s3, boxY + boxH);
+                    }
                     g.fill(weaponCountArea[i]);
                     g.fill(weaponCountDecr[i]);
                     g.fill(weaponCountIncr[i]);
@@ -2191,15 +2245,22 @@ public class DesignUI extends BasePanel {
                     g.setColor(SystemPanel.whiteText);
                 }
                 else {
+                    List<ShipSpecial> specials = des.availableSpecialsForSlot(i);
+                    ShipSpecial first = specials.get(0);
+                    ShipSpecial last = specials.get(specials.size()-1);
                     specialsFieldArea[i].setBounds(boxX, boxY, boxW, boxH);
                     specialsFieldDecr[i].reset();
-                    specialsFieldDecr[i].addPoint(boxX - s11, boxY + (boxH / 2));
-                    specialsFieldDecr[i].addPoint(boxX - s3, boxY);
-                    specialsFieldDecr[i].addPoint(boxX - s3, boxY + boxH);
+                    if (wpn != first) {
+                        specialsFieldDecr[i].addPoint(boxX - s11, boxY + (boxH / 2));
+                        specialsFieldDecr[i].addPoint(boxX - s3, boxY);
+                        specialsFieldDecr[i].addPoint(boxX - s3, boxY + boxH);
+                    }
                     specialsFieldIncr[i].reset();
-                    specialsFieldIncr[i].addPoint(boxX + boxW + s11, boxY + (boxH / 2));
-                    specialsFieldIncr[i].addPoint(boxX + boxW + s3, boxY);
-                    specialsFieldIncr[i].addPoint(boxX + boxW + s3, boxY + boxH);
+                    if (wpn != last) {
+                        specialsFieldIncr[i].addPoint(boxX + boxW + s11, boxY + (boxH / 2));
+                        specialsFieldIncr[i].addPoint(boxX + boxW + s3, boxY);
+                        specialsFieldIncr[i].addPoint(boxX + boxW + s3, boxY + boxH);
+                    }
                     g.fill(specialsFieldArea[i]);
                     g.fill(specialsFieldDecr[i]);
                     g.fill(specialsFieldIncr[i]);
