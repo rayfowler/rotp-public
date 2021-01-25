@@ -129,6 +129,8 @@ public class DesignUI extends BasePanel {
     BufferedImage shipPaneImg;
 
     int[] shipCounts;
+    int[] orbitCounts;
+    int[] inTransitCounts;
     int displayShipW = -1;
     int displayShipH = -1;
 
@@ -166,6 +168,12 @@ public class DesignUI extends BasePanel {
     }
     public void init() {
         shipCounts = galaxy().ships.shipDesignCounts(player().id);
+        orbitCounts = shipCounts;
+        inTransitCounts = galaxy().ships.shipDesignInTransitCounts(player().id);
+        orbitCounts = new int[shipCounts.length];
+        for (int i=0;i<shipCounts.length;i++) {
+            orbitCounts[i] = shipCounts[i] - inTransitCounts[i];
+        }
     }
     @Override
     public boolean drawMemory()            { return true; }
@@ -797,9 +805,29 @@ public class DesignUI extends BasePanel {
                 g.setFont(narrowFont(14));
                 g.setColor(SystemPanel.blackText);
                 String desc = text("SHIP_DESIGN_SLOT_DESC");
-                int sw = g.getFontMetrics().stringWidth(desc);
+                int sw1 = g.getFontMetrics().stringWidth(desc);
+                
+                String desc2 = text("SHIP_DESIGN_SLOT_DESC2");
+                int sw2 = g.getFontMetrics().stringWidth(desc2);
+                
+                String desc3 = text("SHIP_DESIGN_SLOT_DESC3");
+                int sw3 = g.getFontMetrics().stringWidth(desc3);
+                
+                String val1= str(shipCounts[des.id()]);
+                int sw1a = g.getFontMetrics().stringWidth(val1);
+                String val2= str(orbitCounts[des.id()]);
+                int sw2a = g.getFontMetrics().stringWidth(val2);
+                String val3= str(inTransitCounts[des.id()]);
+                int sw3a = g.getFontMetrics().stringWidth(val3);
+                
+                int maxSw = max(sw1,sw2,sw3);
+                int maxSwa = max(sw1a,sw2a,sw3a);
                 g.drawString(desc, leftM, s40);
-                g.drawString(str(shipCounts[des.id()]), leftM+sw+s5, s40);
+                g.drawString(desc2, leftM, s60);
+                g.drawString(desc3, leftM, s75);
+                g.drawString(str(shipCounts[des.id()]), leftM+maxSw+s5+maxSwa-sw1a, s40);
+                g.drawString(str(orbitCounts[des.id()]), leftM+maxSw+s5+maxSwa-sw2a, s60);
+                g.drawString(str(inTransitCounts[des.id()]), leftM+maxSw+s5+maxSwa-sw3a, s75);
             }
             // draw copy button
             copyButtonArea[designNum].setBounds(0, 0, 0, 0);

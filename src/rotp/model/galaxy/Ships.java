@@ -642,6 +642,19 @@ public class Ships implements Base, Serializable {
         }
         return count;
     }
+    public int[] shipDesignInTransitCounts(int empireId) {
+        int[] count = new int[ShipDesignLab.MAX_DESIGNS];
+        List<ShipFleet> fleetsAll = allFleetsCopy();
+        
+        for (ShipFleet fl: fleetsAll) {
+            if ((fl.empId == empireId)
+            && (fl.inTransit() || fl.deployed())) {
+                for (int i=0;i<count.length;i++)
+                    count[i] += fl.num(i);
+            }
+        }
+        return count;
+    }
     public int shipDesignCount(int empireId, int designId) {
         int count = 0;
         List<ShipFleet> fleetsAll = allFleetsCopy();

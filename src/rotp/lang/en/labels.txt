@@ -1192,7 +1192,9 @@ SHIP_DESIGN_SLOTS                 | Design Slots
 SHIP_DESIGN_AVAILABLE             | Available
 SHIP_DESIGN_AVAILABLE_DESC        | Select this design slot to begin work on a new ship design.
 SHIP_DESIGN_AVAILABLE_DESC2       | Deploy this design to allow construction on colonies.
-SHIP_DESIGN_SLOT_DESC             | Currently in fleet:
+SHIP_DESIGN_SLOT_DESC             | Total in fleet:
+SHIP_DESIGN_SLOT_DESC2            | In Orbit:
+SHIP_DESIGN_SLOT_DESC3            | In Transit:
 SHIP_DESIGN_NEW                   | New Ship Design
 SHIP_DESIGN_SIZE_SMALL            | Small
 SHIP_DESIGN_SIZE_MEDIUM           | Medium
