@@ -1056,6 +1056,7 @@ SETUP_WARP_SPEED_FAST             | Fast
 SETUP_NEBULA_NONE                 | None
 SETUP_NEBULA_RARE                 | Rare
 SETUP_NEBULA_NORMAL               | Normal
+SETUP_COUNCIL_NONE                | No Council
 SETUP_COUNCIL_IMMEDIATE           | Immediate
 SETUP_COUNCIL_REBELS              | Allow Rebels
 SETUP_STAR_DENSITY_NORMAL         | Normal
@@ -1119,7 +1120,7 @@ SETTINGS_TECH_TRADING_DESC        | Turn off all technology trades or restrict t
 SETTINGS_STAR_DENSITY_DESC        | Set to high to reduce the chance of empires being stranded early in the game.
 SETTINGS_RESEARCH_RATE_DESC       | Slow the research rate of new technologies, lengthening the useful life of current technologies.
 SETTINGS_NEBULAE_DESC             | Nebulae slow down ship travel and render shields useless. Increase or decrease their frequency.
-SETTINGS_COUNCIL_DESC             | When the player wins the council vote, declare an immediate victory or give AI players the option to rebel against the vote.
+SETTINGS_COUNCIL_DESC             | Disable the council victory condition or allow enemy empires to rebel against a player victory.
 
 // Tech UI labels
 TECH_RESEARCH                     | Technology Research

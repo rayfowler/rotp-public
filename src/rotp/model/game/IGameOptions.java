@@ -85,6 +85,7 @@ public interface IGameOptions {
     
     public static final String COUNCIL_IMMEDIATE = "SETUP_COUNCIL_IMMEDIATE";
     public static final String COUNCIL_REBELS    = "SETUP_COUNCIL_REBELS";
+    public static final String COUNCIL_NONE      = "SETUP_COUNCIL_NONE";
     
     public static final String STAR_DENSITY_NORMAL   = "SETUP_STAR_DENSITY_NORMAL";
     public static final String STAR_DENSITY_HIGH     = "SETUP_STAR_DENSITY_HIGH";
@@ -189,6 +190,7 @@ public interface IGameOptions {
 
     default void copyOptions(IGameOptions opt) { }
     default boolean immediateCouncilWin()   { return selectedCouncilWinOption().equals(COUNCIL_IMMEDIATE); }
+    default boolean noGalacticCouncil()   { return selectedCouncilWinOption().equals(COUNCIL_NONE); }
     
     default String nextGalaxySize(boolean bounded) {
         List<String> opts = galaxySizeOptions();

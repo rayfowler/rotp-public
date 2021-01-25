@@ -586,6 +586,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         List<String> list = new ArrayList<>();
         list.add(COUNCIL_IMMEDIATE);
         list.add(COUNCIL_REBELS);
+        list.add(COUNCIL_NONE);
         return list;
     }
     @Override
