@@ -92,7 +92,7 @@ public class UserPreferences {
     public static boolean autoColonize()        { return autoColonize; }
     
     public static boolean playAnimations()  { return !graphicsMode.equals(GRAPHICS_LOW); }
-    public static boolean antialiasing()    { return graphicsMode.equals(GRAPHICS_MEDIUM); }
+    public static boolean antialiasing()    { return graphicsMode.equals(GRAPHICS_HIGH); }
     public static boolean playSounds()      { return playSounds; }
     public static void toggleSounds()       { playSounds = !playSounds;	save(); }
     public static boolean playMusic()       { return playMusic; }
