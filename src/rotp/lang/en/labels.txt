@@ -809,6 +809,7 @@ FLEETS_IS_RICH                    | System is rich or ultra-rich
 FLEETS_IS_ULTRA_RICH              | System is ultra-rich
 FLEETS_IS_POOR                    | System is poor or ultra-poor
 FLEETS_IS_ULTRA_POOR              | System is ultra-poor
+FLEETS_IS_STANDARD                | System has standard resources
 FLEETS_SYSTEMS_SELECTED           | %1  Systems Selected
 FLEETS_FLEETS_SELECTED            | %1  Fleets Selected
 FLEETS_MULTIPLE_DESIGNS           | Multiple

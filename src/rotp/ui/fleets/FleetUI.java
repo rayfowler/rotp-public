@@ -1280,15 +1280,16 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
             switch(queryType) {
                 case 0: return text("FLEETS_IS_ULTRA_RICH");
                 case 1: return text("FLEETS_IS_RICH");
-                case 2: return text("FLEETS_IS_POOR");
-                case 3:
+                case 2: return text("FLEETS_IS_STANDARD");
+                case 3: return text("FLEETS_IS_POOR");
+                case 4:
                 default: return text("FLEETS_IS_ULTRA_POOR");
             }
         }
         @Override
         public boolean clickText() {
             queryType++;
-            if (queryType > 3)
+            if (queryType > 4)
                 queryType = 0;
             return true;
         }
@@ -1302,8 +1303,9 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
             switch(queryType) {
                 case 0: return pl.sv.isUltraRich(sys.id);
                 case 1: return pl.sv.isRich(sys.id) || pl.sv.isUltraRich(sys.id);
-                case 2: return pl.sv.isPoor(sys.id) || pl.sv.isUltraPoor(sys.id);
-                case 3:
+                case 2: return pl.sv.isResourceNormal(sys.id);
+                case 3: return pl.sv.isPoor(sys.id) || pl.sv.isUltraPoor(sys.id);
+                case 4:
                 default: return pl.sv.isUltraPoor(sys.id);
             }
         }
