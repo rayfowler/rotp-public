@@ -859,9 +859,10 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     }
     @Override
     public void mouseReleased(MouseEvent e) {
+        boolean shift = e.isShiftDown();
         if (dragSelecting) {
             if ((selectX0 != selectX1) && (selectY0 != selectY1)) 
-                parent.dragSelect(selectX0, selectY0, selectX1, selectY1);
+                parent.dragSelect(selectX0, selectY0, selectX1, selectY1, shift);
             selectX0 = selectX1 = selectY0 = selectY1 = 0;
             dragSelecting = false;
             repaint();

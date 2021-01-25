@@ -46,13 +46,16 @@ public class GridCircularDisplaySprite extends MapControlSprite  {
 
         Stroke str0 = g2.getStroke();
         g2.setStroke(BasePanel.stroke1);
-        g2.setColor(GalaxyMapPanel.gridDark);
+        if (map.showGridCircular())
+            g2.setColor(GalaxyMapPanel.gridLight);
+        else
+            g2.setColor(GalaxyMapPanel.gridDark);
 
         g2.setClip(startX, startY, width, height);
         int centerX= startX+(width/2);
         int centerY = startY+(height/2);
 
-        float max = 1.4f * Math.max(width, height);
+        float max = 1.4f * max(width, height);
 
         int s5 = scaled(5);
         for (int i=s5; i<=max; i+=s5)

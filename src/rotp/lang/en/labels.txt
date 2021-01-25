@@ -735,6 +735,7 @@ PLANETS_LIST_RESERVE              | Reserve
 PLANETS_LIST_SHIPYARD             | Shipyard
 PLANETS_LIST_NOTES                | Notes
 PLANETS_LIST_TURNS                | Turns
+PLANETS_LIST_YEARS                | Years
 PLANETS_LIST_TRANSPORTS           | Transports
 PLANETS_LIST_RESOURCES            | Resources
 PLANETS_HELP_ALL                  | OVERVIEW - This screen shows your empire's economic data along with a listing of your colonies sortable by various data.
