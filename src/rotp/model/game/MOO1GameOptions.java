@@ -599,6 +599,9 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     @Override
     public List<String> starDensityOptions() {
         List<String> list = new ArrayList<>();
+        list.add(STAR_DENSITY_LOWEST);
+        list.add(STAR_DENSITY_LOWER);
+        list.add(STAR_DENSITY_LOW);
         list.add(STAR_DENSITY_NORMAL);
         list.add(STAR_DENSITY_HIGH);
         list.add(STAR_DENSITY_HIGHER);

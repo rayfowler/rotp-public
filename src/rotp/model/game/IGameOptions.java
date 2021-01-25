@@ -90,6 +90,9 @@ public interface IGameOptions {
     public static final String COUNCIL_REBELS    = "SETUP_COUNCIL_REBELS";
     public static final String COUNCIL_NONE      = "SETUP_COUNCIL_NONE";
     
+    public static final String STAR_DENSITY_LOWEST   = "SETUP_STAR_DENSITY_LOWEST";
+    public static final String STAR_DENSITY_LOWER    = "SETUP_STAR_DENSITY_LOWER";
+    public static final String STAR_DENSITY_LOW      = "SETUP_STAR_DENSITY_LOW";
     public static final String STAR_DENSITY_NORMAL   = "SETUP_STAR_DENSITY_NORMAL";
     public static final String STAR_DENSITY_HIGH     = "SETUP_STAR_DENSITY_HIGH";
     public static final String STAR_DENSITY_HIGHER   = "SETUP_STAR_DENSITY_HIGHER";

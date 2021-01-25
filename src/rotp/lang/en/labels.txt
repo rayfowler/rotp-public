@@ -1063,6 +1063,9 @@ SETUP_NEBULA_FREQUENT             | Frequent
 SETUP_COUNCIL_NONE                | No Council
 SETUP_COUNCIL_IMMEDIATE           | Immediate
 SETUP_COUNCIL_REBELS              | Allow Rebels
+SETUP_STAR_DENSITY_LOWEST         | Lowest
+SETUP_STAR_DENSITY_LOWER          | Lower
+SETUP_STAR_DENSITY_LOW            | Low
 SETUP_STAR_DENSITY_NORMAL         | Normal
 SETUP_STAR_DENSITY_HIGH           | High
 SETUP_STAR_DENSITY_HIGHER         | Higher
