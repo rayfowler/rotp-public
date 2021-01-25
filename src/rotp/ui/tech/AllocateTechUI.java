@@ -831,10 +831,10 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
                 dragTree(s10,0);
                 return;
             case KeyEvent.VK_UP:
-                dragTree(0,s10);
+                selectTechCategory(selectedCategory-1);
                 return;
             case KeyEvent.VK_DOWN:
-                dragTree(0,-s10);
+                selectTechCategory(selectedCategory+1);
                 return;
             case KeyEvent.VK_TAB:
                 return;
