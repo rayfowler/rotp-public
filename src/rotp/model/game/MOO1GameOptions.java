@@ -450,6 +450,15 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         return random(types); 
     }
     @Override
+    public String randomOrionStarType()       { 
+        List<String> types = new ArrayList<>();
+        types.add(StarType.RED);
+        types.add(StarType.ORANGE);
+        types.add(StarType.YELLOW);
+
+        return random(types); 
+    }
+    @Override
     public Planet orionPlanet(StarSystem s) {
         Planet p = new Planet(s);
         p.initPlanetType("PLANET_TERRAN");
