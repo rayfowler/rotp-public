@@ -1056,7 +1056,10 @@ SETUP_WARP_SPEED_NORMAL           | Normal
 SETUP_WARP_SPEED_FAST             | Fast
 SETUP_NEBULA_NONE                 | None
 SETUP_NEBULA_RARE                 | Rare
+SETUP_NEBULA_UNCOMMON             | Uncommon
 SETUP_NEBULA_NORMAL               | Normal
+SETUP_NEBULA_COMMON               | Common
+SETUP_NEBULA_FREQUENT             | Frequent
 SETUP_COUNCIL_NONE                | No Council
 SETUP_COUNCIL_IMMEDIATE           | Immediate
 SETUP_COUNCIL_REBELS              | Allow Rebels

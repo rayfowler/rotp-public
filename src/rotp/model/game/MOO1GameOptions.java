@@ -285,8 +285,12 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
             return 0;
         
         float freq = 1.0f;
-        if (selectedNebulaeOption().equals(NEBULAE_RARE))
-            freq = 0.25f;
+        switch(selectedNebulaeOption()) {
+            case NEBULAE_RARE:     freq = 0.25f; break;
+            case NEBULAE_UNCOMMON: freq = 0.5f; break;
+            case NEBULAE_COMMON:   freq = 2.0f; break;
+            case NEBULAE_FREQUENT: freq = 4.0f; break;
+        }
         // MOO Strategy Guide, Table 3-3, p.51
         /*
         switch (selectedGalaxySize()) {
@@ -578,7 +582,10 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         List<String> list = new ArrayList<>();
         list.add(NEBULAE_NONE);
         list.add(NEBULAE_RARE);
+        list.add(NEBULAE_UNCOMMON);
         list.add(NEBULAE_NORMAL);
+        list.add(NEBULAE_COMMON);
+        list.add(NEBULAE_FREQUENT);
         return list;
     }
     @Override

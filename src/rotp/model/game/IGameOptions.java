@@ -81,7 +81,10 @@ public interface IGameOptions {
     
     public static final String NEBULAE_NONE      = "SETUP_NEBULA_NONE";
     public static final String NEBULAE_RARE      = "SETUP_NEBULA_RARE";
+    public static final String NEBULAE_UNCOMMON  = "SETUP_NEBULA_UNCOMMON";
     public static final String NEBULAE_NORMAL    = "SETUP_NEBULA_NORMAL";
+    public static final String NEBULAE_COMMON    = "SETUP_NEBULA_COMMON";
+    public static final String NEBULAE_FREQUENT  = "SETUP_NEBULA_FREQUENT";
     
     public static final String COUNCIL_IMMEDIATE = "SETUP_COUNCIL_IMMEDIATE";
     public static final String COUNCIL_REBELS    = "SETUP_COUNCIL_REBELS";
