@@ -231,6 +231,9 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         boolean talking = (System.currentTimeMillis() - startTimeMs) < talkTimeMs;
         Empire pl = player();
         
+        if (mode == MODE_REALLOCATE)
+            sourceEmpire = pl;
+
         switch(background) {
             case BACKGROUND_ALIEN_LAB:
                 labImg = sourceEmpire.race().laboratory();
@@ -300,7 +303,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
 
         if (mode == MODE_SHOW_TECH)
             drawTechDiscovery(g, title);
-        else if (mode == MODE_REALLOCATE)
+        else if (mode == MODE_REALLOCATE) 
             drawReallocation(g);
         else if (mode == MODE_COMPLETED)
             drawCompletion(g);
