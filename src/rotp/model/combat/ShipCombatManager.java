@@ -833,7 +833,10 @@ public class ShipCombatManager implements Base {
             allStacks.remove(st);
         if (st.isMissile()) {
             CombatStackMissile miss = (CombatStackMissile) st;
-            miss.target.missiles().remove(miss);
+            List missList = miss.target.missiles();
+            synchronized(missList) {
+                missList.remove(miss);
+            }
         }
     }
     public void performMoveStackToPoint(CombatStack st, int x, int y) {
