@@ -1144,7 +1144,7 @@ SETTINGS_WARP_SPEED               | Warp Speed: %1
 SETTINGS_NEBULAE                  | Nebulae: %1
 SETTINGS_COUNCIL_WIN              | Council Win: %1
 SETTINGS_PLANET_QUALITY           | Planet Quality: %1
-SETTINGS_TERRAFORMING             | Terraforming Improvements: %1
+SETTINGS_TERRAFORMING             | Hostile Terraforming: %1
 SETTINGS_FUEL_RANGE               | Fuel Range: %1
 SETTINGS_RANDOM_EVENTS_DESC       | Space Monsters are random events and considerable mid-game threats. Turn off space monsters or all random events. 
 SETTINGS_WARP_SPEED_DESC          | Increase the speed of more advanced warp technologies. This can be desirable on very large maps.
