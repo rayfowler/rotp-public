@@ -344,7 +344,7 @@ public class Galaxy implements Base, Serializable {
                         // cannot bombard if alliance or unity
                         if (fleetEmp.aggressiveWith(home.id)) {
                             if (fleetEmp.ai().promptForBombardment(sys, fl))
-                                BombardSystemNotification.create(sys.id, fl);
+                                BombardSystemNotification.create(sys.id, fl, true);
                         }
                     }                
                 }

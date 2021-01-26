@@ -311,7 +311,7 @@ GAME_SETTINGS_TEXTURES            | Textures: %1
 GAME_SETTINGS_TEXTURES_YES        | Yes
 GAME_SETTINGS_TEXTURES_NO         | No
 GAME_SETTINGS_TEXTURES_DESC       | Toggle the use of textures on the various screens throughout the game.
-GAME_SETTINGS_MEMORY              | Memory: %1
+GAME_SETTINGS_MEMORY              | Show Memory Usage: %1
 GAME_SETTINGS_MEMORY_YES          | Yes
 GAME_SETTINGS_MEMORY_NO           | No
 GAME_SETTINGS_MEMORY_DESC         | Toggles the display of memory usage statistics at the bottom right corner of the game. Useful for monitoring memory usage.
@@ -328,7 +328,13 @@ GAME_SETTINGS_MUSIC_DESC          | Click to mute or unmute music within the gam
 GAME_SETTINGS_AUTOCOLONIZE        | Auto-Colonize: %1
 GAME_SETTINGS_AUTOCOLONIZE_YES    | Yes
 GAME_SETTINGS_AUTOCOLONIZE_NO     | No
-GAME_SETTINGS_AUTOCOLONIZE_DESC   | Toggle to auto-colonize and name planets immediately when colony ships arrive. This can time-saving on very large maps.
+GAME_SETTINGS_AUTOCOLONIZE_DESC   | Toggle to auto-colonize and name planets immediately when colony ships arrive. This can be time-saving on very large maps.
+GAME_SETTINGS_AUTOBOMBARD         | Auto-Bombard: %1
+GAME_SETTINGS_AUTOBOMBARD_YES     | Yes
+GAME_SETTINGS_AUTOBOMBARD_WAR     | Only at War
+GAME_SETTINGS_AUTOBOMBARD_INVADE  | Only War and not Invading
+GAME_SETTINGS_AUTOBOMBARD_NO      | No
+GAME_SETTINGS_AUTOBOMBARD_DESC    | Toggle to auto-bombard always, or only when at war, or only when at war with no invasion forces en route. This can be time-saving on very large maps.
 
 // Load Game UI
 LOAD_GAME_TITLE                   | Load Game
