@@ -823,6 +823,7 @@ FLEETS_RELOCATE_LABEL             | Set Rally Points
 FLEETS_TRANSPORTS_LABEL           | Send Transports
 FLEETS_HAS_ORDERS                 | Fleet is in transit
 FLEETS_HAS_NO_ORDERS              | Fleet is in orbit
+FLEETS_IS_RALLYING                | Fleet is rallying
 FLEETS_DESIGN_COUNT               | %1 %2
 FLEETS_DEPLOY_FLEETS              | Deploy Fleets
 FLEETS_SET_RALLY_POINTS           | Set Rally Points

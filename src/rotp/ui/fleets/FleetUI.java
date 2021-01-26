@@ -1311,26 +1311,39 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         }
     }
     public class FleetHasOrdersFilter extends QueryFilter {
-        boolean negated = false;
+        final int IN_ORBIT = 0;
+        final int IN_TRANSIT = 1;
+        final int RALLYING = 2;
+        int status = IN_ORBIT;
         @Override
         protected boolean hasAlternateText()          { return true; }
         @Override
         public String text() {
-            return negated ? text("FLEETS_HAS_NO_ORDERS") : text("FLEETS_HAS_ORDERS");
+            switch(status) {
+                case IN_ORBIT: return text("FLEETS_HAS_NO_ORDERS");
+                case IN_TRANSIT: return text("FLEETS_HAS_ORDERS");
+                case RALLYING: return text("FLEETS_IS_RALLYING");
+            }
+            return text("FLEETS_HAS_NO_ORDERS");
         }
         @Override
         public boolean clickText() {
-            negated = !negated;
+            status++;
+            if (status > RALLYING)
+                status = IN_ORBIT;
             return true;
         }
         @Override
         public boolean matchesFleet(ShipFleet fl) {
             if (!checked)
                 return true;
-            if (negated)
-                return !fl.inTransit();
-            else
-                return fl.inTransit();
+            switch(status) {
+                case IN_ORBIT: return !fl.inTransit();
+                case IN_TRANSIT: return fl.inTransit();
+                case RALLYING: return fl.isRallied();
+            }
+                
+            return true;
         }
     }
 }
