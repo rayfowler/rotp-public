@@ -63,6 +63,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private String selectedStarDensityOption;
     private String selectedPlanetQualityOption;
     private String selectedTerraformingOption;
+    private String selectedFuelRangeOption;
 
     private transient GalaxyShape galaxyShape;
 
@@ -160,6 +161,10 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     public String selectedTerraformingOption()       { return selectedTerraformingOption == null ? TERRAFORMING_NORMAL : selectedTerraformingOption; }
     @Override
     public void selectedTerraformingOption(String s) { selectedTerraformingOption = s; }
+    @Override
+    public String selectedFuelRangeOption()       { return selectedFuelRangeOption == null ? FUEL_RANGE_NORMAL : selectedFuelRangeOption; }
+    @Override
+    public void selectedFuelRangeOption(String s) { selectedFuelRangeOption = s; }
     @Override
     public int selectedNumberOpponents()         { return selectedNumberOpponents; }
     @Override
@@ -642,6 +647,15 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         List<String> list = new ArrayList<>();
         list.add(TERRAFORMING_NORMAL);
         list.add(TERRAFORMING_RESTRICTED);
+        return list;
+    }
+    @Override
+    public List<String> fuelRangeOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(FUEL_RANGE_NORMAL);
+        list.add(FUEL_RANGE_HIGH);
+        list.add(FUEL_RANGE_HIGHER);
+        list.add(FUEL_RANGE_HIGHEST);
         return list;
     }
     @Override

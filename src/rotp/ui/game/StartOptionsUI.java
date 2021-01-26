@@ -51,6 +51,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
     BaseText randomEventsText;
     BaseText planetQualityText;
     BaseText terraformingText;
+    BaseText fuelRangeText;
     BaseText researchRateText;
     BaseText techTradingText;
     BaseText warpSpeedText;
@@ -68,6 +69,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         randomEventsText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         planetQualityText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         terraformingText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        fuelRangeText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         researchRateText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         techTradingText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         warpSpeedText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
@@ -82,6 +84,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         randomEventsText.displayText(randomEventsStr());
         planetQualityText.displayText(planetQualityStr());
         terraformingText.displayText(terraformingStr());
+        fuelRangeText.displayText(fuelRangeStr());
         researchRateText.displayText(researchRateStr());
         techTradingText.displayText(techTradingStr());
         warpSpeedText.displayText(warpSpeedStr());
@@ -243,15 +246,15 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             g.drawString(line, x2+s20, y3);
         }       
        
-/*
+
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
         g.setPaint(GameUI.settingsSetupBackground(w));
-        g.fillRect(x2+s10, y2-s10, nebulaeText.stringWidth(g)+s10,s30);
-        nebulaeText.setScaledXY(x2+s20, y2+s7);
-        nebulaeText.draw(g);
-        desc = text("SETTINGS_NEBULAE_DESC");
+        g.fillRect(x2+s10, y2-s10, fuelRangeText.stringWidth(g)+s10,s30);
+        fuelRangeText.setScaledXY(x2+s20, y2+s7);
+        fuelRangeText.draw(g);
+        desc = text("SETTINGS_FUEL_RANGE_DESC");
          g.setColor(SystemPanel.blackText);
         g.setFont(descFont);
         lines = this.wrappedLines(g,desc, w2-s30);
@@ -260,7 +263,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             y3 += s20;
             g.drawString(line, x2+s20, y3);
         }
-        
+ 
+        /*
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
@@ -395,6 +399,10 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         String opt = text(newGameOptions().selectedTerraformingOption());
         return text("SETTINGS_TERRAFORMING", opt)+"   ";
     }
+    private String fuelRangeStr() {
+        String opt = text(newGameOptions().selectedFuelRangeOption());
+        return text("SETTINGS_FUEL_RANGE", opt)+"   ";
+    }
     private String researchRateStr() {
         String opt = text(newGameOptions().selectedResearchRate());
         return text("SETTINGS_RESEARCH_RATE", opt)+"   ";
@@ -409,7 +417,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
     }
     private String councilWinStr() {
         String opt = text(newGameOptions().selectedCouncilWinOption());
-        return text("SETTINGS_COUNCIL_WIN", opt)+"   ";
+        return text("SETTINGS_COUNCIL_WIN", opt)+"       ";
     }
     private void toggleGalaxyAge() {
         softClick();
@@ -440,6 +448,11 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         softClick();
         newGameOptions().selectedTerraformingOption(newGameOptions().nextTerraformingOption());
         terraformingText.repaint(terraformingStr());
+    }
+    private void toggleFuelRange() {
+        softClick();
+        newGameOptions().selectedFuelRangeOption(newGameOptions().nextFuelRangeOption());
+        fuelRangeText.repaint(fuelRangeStr());
     }
     private void toggleResearchRate(MouseEvent e) {
         softClick();
@@ -494,6 +507,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             hoverBox = planetQualityText.bounds();
         else if (terraformingText.contains(x,y))
             hoverBox = terraformingText.bounds();
+        else if (fuelRangeText.contains(x,y))
+            hoverBox = fuelRangeText.bounds();
         else if (researchRateText.contains(x,y))
             hoverBox = researchRateText.bounds();
         else if (techTradingText.contains(x,y))
@@ -518,6 +533,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
                 planetQualityText.mouseExit();
             else if (prevHover == terraformingText.bounds())
                 terraformingText.mouseExit();
+            else if (prevHover == fuelRangeText.bounds())
+                fuelRangeText.mouseExit();
             else if (prevHover == researchRateText.bounds())
                 researchRateText.mouseExit();
             else if (prevHover == techTradingText.bounds())
@@ -538,6 +555,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
                 planetQualityText.mouseEnter();
             else if (hoverBox == terraformingText.bounds())
                 terraformingText.mouseEnter();
+            else if (hoverBox == fuelRangeText.bounds())
+                fuelRangeText.mouseEnter();
             else if (hoverBox == researchRateText.bounds())
                 researchRateText.mouseEnter();
             else if (hoverBox == techTradingText.bounds())
@@ -576,6 +595,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             togglePlanetQuality();
         else if (hoverBox == terraformingText.bounds())
             toggleTerraforming();
+        else if (hoverBox == fuelRangeText.bounds())
+            toggleFuelRange();
         else if (hoverBox == researchRateText.bounds())
             toggleResearchRate(e);
         else if (hoverBox == techTradingText.bounds())

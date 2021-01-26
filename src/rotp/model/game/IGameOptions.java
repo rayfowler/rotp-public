@@ -107,6 +107,11 @@ public interface IGameOptions {
     public static final String TERRAFORMING_NORMAL      = "SETUP_TERRAFORMING_NORMAL";
     public static final String TERRAFORMING_RESTRICTED  = "SETUP_TERRAFORMING_RESTRICTED";
 
+    public static final String FUEL_RANGE_NORMAL   = "SETUP_FUEL_RANGE_NORMAL";
+    public static final String FUEL_RANGE_HIGH     = "SETUP_FUEL_RANGE_HIGH";
+    public static final String FUEL_RANGE_HIGHER   = "SETUP_FUEL_RANGE_HIGHER";
+    public static final String FUEL_RANGE_HIGHEST  = "SETUP_FUEL_RANGE_HIGHEST";
+    
     public default boolean isAutoPlay()          { return false; }
     public default boolean communityAI()         { return false; }
     public default boolean usingExtendedRaces()  { return (selectedNumberOpponents()+1) > startingRaceOptions().size(); }
@@ -152,6 +157,7 @@ public interface IGameOptions {
     public List<String> starDensityOptions();
     public List<String> planetQualityOptions();
     public List<String> terraformingOptions();
+    public List<String> fuelRangeOptions();
 	
     public List<String> gameDifficultyOptions();
     public int maximumOpponentsOptions();
@@ -181,6 +187,8 @@ public interface IGameOptions {
     public void selectedPlanetQualityOption(String s);
     public String selectedTerraformingOption();
     public void selectedTerraformingOption(String s);
+    public String selectedFuelRangeOption();
+    public void selectedFuelRangeOption(String s);
 	
     public String selectedGalaxyShapeOption1();
     public void selectedGalaxyShapeOption1(String s);
@@ -213,6 +221,15 @@ public interface IGameOptions {
     default boolean immediateCouncilWin()    { return selectedCouncilWinOption().equals(COUNCIL_IMMEDIATE); }
     default boolean noGalacticCouncil()      { return selectedCouncilWinOption().equals(COUNCIL_NONE); }
     default boolean canTerraformHostile()    { return selectedTerraformingOption().equals(TERRAFORMING_NORMAL); }
+    default int fuelRangeMultiplier() {
+        switch(selectedFuelRangeOption()) {
+            case FUEL_RANGE_NORMAL: return 1;
+            case FUEL_RANGE_HIGH: return 2;
+            case FUEL_RANGE_HIGHER: return 3;
+            case FUEL_RANGE_HIGHEST: return 5;
+            default: return 1;
+        }
+    }
     default String nextGalaxySize(boolean bounded) {
         List<String> opts = galaxySizeOptions();
         int index = opts.indexOf(selectedGalaxySize())+1;
@@ -323,6 +340,11 @@ public interface IGameOptions {
     default String nextTerraformingOption() {
         List<String> opts = terraformingOptions();
         int index = opts.indexOf(selectedTerraformingOption())+1;
+        return index >= opts.size() ? opts.get(0) : opts.get(index);
+    }
+    default String nextFuelRangeOption() {
+        List<String> opts = fuelRangeOptions();
+        int index = opts.indexOf(selectedFuelRangeOption())+1;
         return index >= opts.size() ? opts.get(0) : opts.get(index);
     }
     default void nextOpponent(int i) {

@@ -21,7 +21,7 @@ public final class TechFuelRange extends Tech {
     private int range;
     public boolean unlimited = false;
 
-    public int range()  { return (int) range; }
+    public int range()  { return range*options().fuelRangeMultiplier(); }
 
     public TechFuelRange(String typeId, int lv, int seq, boolean b, TechCategory c) {
         id(typeId, seq);
@@ -51,6 +51,8 @@ public final class TechFuelRange extends Tech {
         }
     }
     @Override
+    public String detail()                { return text(detail, range()); }
+    @Override
     public boolean isFuelRangeTech()     { return true; }
     @Override
     public float expansionModeFactor()  { return 3; }
@@ -58,7 +60,7 @@ public final class TechFuelRange extends Tech {
     public boolean providesShipComponent()  { return true; }
     @Override
     public boolean isObsolete(Empire c) {
-        return range < c.tech().shipRange();
+        return range() < c.tech().shipRange();
     }
     @Override
     public float baseValue(Empire c) { return c.ai().scientist().baseValue(this); }
