@@ -24,6 +24,7 @@ import java.awt.Shape;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import javax.swing.SwingUtilities;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
 import rotp.ui.SystemViewer;
@@ -74,9 +75,9 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
         
         flagBox.setBounds(w-s30,h-s60,s20,s60);
     }
-    public void toggleFlagColor() {
+    public void toggleFlagColor(boolean rightClick) {
         StarSystem sys = parent.systemViewToDisplay();
-        player().sv.view(sys.id).toggleFlagColor();
+        player().sv.view(sys.id).toggleFlagColor(rightClick);
         if (topParent != null)
             topParent.repaint();
         else
@@ -102,8 +103,9 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
     public void mousePressed(MouseEvent e) { }
     @Override
     public void mouseReleased(MouseEvent e) {
+        boolean rightClick = SwingUtilities.isRightMouseButton(e);
         if (hoverBox == flagBox) {
-            toggleFlagColor();
+            toggleFlagColor(rightClick);
        }
     }
     @Override

@@ -31,6 +31,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import javax.swing.JTextArea;
+import javax.swing.SwingUtilities;
 import rotp.model.empires.Empire;
 import rotp.model.empires.SystemView;
 import rotp.model.events.StarSystemEvent;
@@ -71,8 +72,8 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
         
         addMouseMotionListener(this);
     }
-    public void toggleFlagColor() {
-        summaryPane.toggleFlagColor();
+    public void toggleFlagColor(boolean rightClick) {
+        summaryPane.toggleFlagColor(rightClick);
     }
     @Override
     public String subPanelTextureName()    { return TEXTURE_BROWN; }
@@ -200,9 +201,9 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
 
             flagBox.setBounds(w-s30,s10,s20,s60);              
         }
-        public void toggleFlagColor() {
+        public void toggleFlagColor(boolean rightClick) {
             StarSystem sys = systemViewToDisplay();
-            player().sv.view(sys.id).toggleFlagColor();
+            player().sv.view(sys.id).toggleFlagColor(rightClick);
             parent.repaint();
         }
         @Override
@@ -225,8 +226,9 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
         public void mousePressed(MouseEvent e) { }
         @Override
         public void mouseReleased(MouseEvent e) {
+            boolean rightClick = SwingUtilities.isRightMouseButton(e);
             if (hoverBox == flagBox) {
-                toggleFlagColor();
+                toggleFlagColor(rightClick);
            }
         }
         @Override

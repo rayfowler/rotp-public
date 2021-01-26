@@ -108,9 +108,9 @@ public class MapOverlaySystemsScouted extends MapOverlay {
             systemIndex = orderedSystems.size()-1;
         mapSelectIndex(systemIndex);
     }
-    private void toggleFlagColor() {
+    private void toggleFlagColor(boolean rightClick) {
         StarSystem sys = orderedSystems.get(systemIndex);
-        player().sv.view(sys.id).toggleFlagColor();
+        player().sv.view(sys.id).toggleFlagColor(rightClick);
         parent.repaint();
     }
     @Override
@@ -386,6 +386,7 @@ public class MapOverlaySystemsScouted extends MapOverlay {
     }
     @Override
     public boolean handleKeyPress(KeyEvent e) {
+        boolean shift = e.isShiftDown();
         switch(e.getKeyCode()) {
             case KeyEvent.VK_N:
                 nextSystem();
@@ -399,7 +400,7 @@ public class MapOverlaySystemsScouted extends MapOverlay {
                 advanceMap();
                 break;
             case KeyEvent.VK_F:
-                toggleFlagColor();
+                toggleFlagColor(shift);
                 break;
             default:
                 misClick(); break;
@@ -700,7 +701,7 @@ public class MapOverlaySystemsScouted extends MapOverlay {
         }
         @Override
         public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
-            parent.toggleFlagColor();
+            parent.toggleFlagColor(rightClick);
         };
     }
 }

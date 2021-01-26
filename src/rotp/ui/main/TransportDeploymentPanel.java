@@ -36,6 +36,7 @@ import java.awt.geom.Rectangle2D;
 import java.awt.geom.RoundRectangle2D;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.SwingUtilities;
 import rotp.model.Sprite;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.StarSystem;
@@ -697,9 +698,9 @@ public class TransportDeploymentPanel extends SystemPanel {
                 g.setStroke(prevStroke);
             }
         }
-        public void toggleFlagColor() {
+        public void toggleFlagColor(boolean rightClick) {
             StarSystem sys = destination();
-            player().sv.view(sys.id).toggleFlagColor();
+            player().sv.view(sys.id).toggleFlagColor(rightClick);
             parentSpritePanel.parent.repaint();
         }
         @Override
@@ -722,8 +723,9 @@ public class TransportDeploymentPanel extends SystemPanel {
         public void mousePressed(MouseEvent e) { }
         @Override
         public void mouseReleased(MouseEvent e) {
+            boolean rightClick = SwingUtilities.isRightMouseButton(e);
             if (hoverBox == flagBox) {
-                toggleFlagColor();
+                toggleFlagColor(rightClick);
            }
         }
         @Override

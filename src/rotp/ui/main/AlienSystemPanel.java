@@ -27,6 +27,7 @@ import java.awt.event.MouseMotionListener;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.List;
+import javax.swing.SwingUtilities;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
@@ -194,9 +195,10 @@ public class AlienSystemPanel extends SystemPanel {
         public void mousePressed(MouseEvent e) { }
         @Override
         public void mouseReleased(MouseEvent e) {
+            boolean rightClick = SwingUtilities.isRightMouseButton(e);
             if (hoverBox == flagBox) {
                 StarSystem sys = parentSpritePanel.systemViewToDisplay();
-                player().sv.view(sys.id).toggleFlagColor();
+                player().sv.view(sys.id).toggleFlagColor(rightClick);
                 parentSpritePanel.parent.repaint();
             }
         }

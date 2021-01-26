@@ -884,7 +884,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
                 map().dragMap(-s40, 0);
                 return;
             case KeyEvent.VK_F:
-                displayPanel.toggleFlagColor();
+                displayPanel.toggleFlagColor(shift);
                 return;
         }
     }
