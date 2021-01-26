@@ -137,7 +137,8 @@ public class AISpyMaster implements Base, SpyMaster {
          // if at war, defer to war strategy: 1) steal war techs, 2) sabotage, 3) steal techs
         else if (v.embassy().anyWar()) {
             List<Tech> warTechs = new ArrayList<>();
-            for (Tech t: v.spies().possibleTechs()) {
+            for (String tId: v.spies().possibleTechs()) {
+                Tech t = tech(tId);
                 if ((t.warModeFactor() > 1) && !t.isObsolete(v.owner()))
                     warTechs.add(t);
             }

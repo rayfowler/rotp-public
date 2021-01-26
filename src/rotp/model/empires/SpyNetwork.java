@@ -27,6 +27,7 @@ import rotp.model.tech.Tech;
 import rotp.model.tech.TechTree;
 import rotp.ui.RotPUI;
 import rotp.ui.notifications.SabotageNotification;
+import rotp.ui.notifications.SpyNewTechAlert;
 import rotp.util.Base;
 
 public final class SpyNetwork implements Base, Serializable {
@@ -58,8 +59,8 @@ public final class SpyNetwork implements Base, Serializable {
     private Mission mission = Mission.HIDE;
     private int lastSpyDate = -1;
 
-    private transient List<Tech> possibleTechs = new ArrayList<>();
     private final FleetView fleetView  = new FleetView();
+    private List<String> possibleTechs = new ArrayList<>();
     private transient int spiesLost = 0;
     private transient List<StarSystem> baseTargets;
     private transient List<StarSystem> factoryTargets;
@@ -141,7 +142,7 @@ public final class SpyNetwork implements Base, Serializable {
     public int numActiveSpies()      { return activeSpies().size(); }
     public int spiesLost()           { return spiesLost; }
 
-    public List<Tech> possibleTechs() {
+    public List<String> possibleTechs() {
         if (possibleTechs == null)
             possibleTechs = new ArrayList<>();
         return possibleTechs;
@@ -269,9 +270,22 @@ public final class SpyNetwork implements Base, Serializable {
         return view.owner().numSystemsForCiv(view.empire()) > 0;
     }
     public void updateTechList() {
-        tech.spyOnTechs(empire().tech());
-        float maxTech = owner().tech().maxTechLevel();
-        possibleTechs = empire().tech().worseTechsUnknownToCiv(owner().tech(), maxTech);
+        
+        Empire emp = view().empire();
+        Empire owner = view().owner();
+        
+        List<String> prevPossible = owner.isPlayer() ? new ArrayList<>(possibleTechs()) : null;
+
+        tech.spyOnTechs(emp.tech());
+        float maxTech = owner.tech().maxTechLevel();
+        possibleTechs = emp.tech().worseTechsUnknownToCiv(owner.tech(), maxTech);
+        
+        if (owner.isPlayer()) {
+            List<String> newPossible = new ArrayList<>(possibleTechs());
+            newPossible.removeAll(prevPossible);
+            for (String tId : newPossible) 
+                SpyNewTechAlert.create(emp.id, tId);
+        }  
     }
     private boolean sendSpiesToInfiltrate() {
         boolean confession = false;
@@ -330,7 +344,8 @@ public final class SpyNetwork implements Base, Serializable {
 
         // build list of techs at or below the steal number
         List<Tech> espionageChoices = new ArrayList<>();
-        for (Tech pTech: possibleTechs()) {
+        for (String tId: possibleTechs()) {
+            Tech pTech = tech(tId);
             if (pTech.level() <= bestStealNumber)
                 espionageChoices.add(pTech);
         }

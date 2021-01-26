@@ -691,6 +691,7 @@ MAIN_ALERT_INVADERS_KILLED        | %3 %1 transports attempting to invade %2 hav
 MAIN_ALERT_TRESPASSING1           | %1 ships have been spotted trespassing near our colony in the %2 system.
 MAIN_ALERT_TRESPASSING2           | The %1 ambassador protests our ships trespassing in the %2 system.
 MAIN_ALERT_TRADE_MATURED          | Our trade treaty with the %1 has reached its maximum value of %2 BC.
+MAIN_ALERT_SPY_NEW_TECH           | Our spies inform us that the %1 knows the secrets of %2.
 
 
 // Colony Listing UI

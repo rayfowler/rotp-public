@@ -610,14 +610,14 @@ public final class TechTree implements Base, Serializable {
         }
         return result;
     }
-    public List<Tech> worseTechsUnknownToCiv(TechTree tree, float maxLevel) {
-        List<Tech> r = new ArrayList<>();
+    public List<String> worseTechsUnknownToCiv(TechTree tree, float maxLevel) {
+        List<String> r = new ArrayList<>();
 
         for (TechCategory cat : category) {
             for (String id: cat.knownTechs()) {
                 Tech t = tech(id);
                 if (!t.isFutureTech() && (t.level <= maxLevel) && !tree.knows(t))
-                    r.add(t);
+                    r.add(id);
             }
         }
         return r;
