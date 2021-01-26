@@ -690,6 +690,7 @@ MAIN_ALERT_INVADERS_CAPTURED      | %3 %1 transports arriving in the %2 system h
 MAIN_ALERT_INVADERS_KILLED        | %3 %1 transports attempting to invade %2 have been completely destroyed by our defensive forces.
 MAIN_ALERT_TRESPASSING1           | %1 ships have been spotted trespassing near our colony in the %2 system.
 MAIN_ALERT_TRESPASSING2           | The %1 ambassador protests our ships trespassing in the %2 system.
+MAIN_ALERT_TRADE_MATURED          | Our trade treaty with the %1 has reached its maximum value of %2 BC.
 
 
 // Colony Listing UI
