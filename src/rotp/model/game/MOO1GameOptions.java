@@ -61,6 +61,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private boolean disableRandomEvents = false;
     private boolean disableColonizePrompt = false; // unused
     private String selectedStarDensityOption;
+    private String selectedPlanetQualityOption;
 
     private transient GalaxyShape galaxyShape;
 
@@ -151,6 +152,10 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     @Override
     public void selectedStarDensityOption(String s) { selectedStarDensityOption = s; }
     @Override
+    public String selectedPlanetQualityOption()       { return selectedPlanetQualityOption == null ? PLANET_QUALITY_NORMAL : selectedPlanetQualityOption; }
+    @Override
+    public void selectedPlanetQualityOption(String s) { selectedPlanetQualityOption = s; }
+    @Override
     public int selectedNumberOpponents()         { return selectedNumberOpponents; }
     @Override
     public void selectedNumberOpponents(int i)   { selectedNumberOpponents = i; generateGalaxy(); }
@@ -211,6 +216,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedNebulaeOption = opt.selectedNebulaeOption;
         selectedCouncilWinOption = opt.selectedCouncilWinOption;
         selectedStarDensityOption = opt.selectedStarDensityOption;
+        selectedPlanetQualityOption = opt.selectedPlanetQualityOption;
 
         if (opt.player != null) 
             player.copy(opt.player);
@@ -399,7 +405,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     @Override
     public Planet randomPlanet(StarSystem s) {
         Planet p = new Planet(s);
-        float r = random();
         String[] planetTypes = { "PLANET_NONE", "PLANET_RADIATED", "PLANET_TOXIC", "PLANET_INFERNO",
                         "PLANET_DEAD", "PLANET_TUNDRA", "PLANET_BARREN", "PLANET_MINIMAL", "PLANET_DESERT",
                         "PLANET_STEPPE", "PLANET_ARID", "PLANET_OCEAN", "PLANET_JUNGLE", "PLANET_TERRAN" };
@@ -425,6 +430,15 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
                 pcts = redPcts; break;
         }
 
+        float r = random();
+        switch(selectedPlanetQualityOption()) {
+            case PLANET_QUALITY_POOR:     r = random() * 0.8f; break;
+            case PLANET_QUALITY_MEDIOCRE: r = random() * 0.9f; break;
+            case PLANET_QUALITY_NORMAL:   r = random(); break;
+            case PLANET_QUALITY_GOOD:     r = 0.1f + (random() * 0.9f); break;
+            case PLANET_QUALITY_GREAT:    r = 0.2f + (random() * 0.8f); break;
+        }
+        
         for (int i=0;i<pcts.length;i++) {
             if (r <= pcts[i]) {
                 typeIndex = i;
@@ -606,6 +620,16 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         list.add(STAR_DENSITY_HIGH);
         list.add(STAR_DENSITY_HIGHER);
         list.add(STAR_DENSITY_HIGHEST);
+        return list;
+    }
+    @Override
+    public List<String> planetQualityOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(PLANET_QUALITY_POOR);
+        list.add(PLANET_QUALITY_MEDIOCRE);
+        list.add(PLANET_QUALITY_NORMAL);
+        list.add(PLANET_QUALITY_GOOD);
+        list.add(PLANET_QUALITY_GREAT);
         return list;
     }
     @Override

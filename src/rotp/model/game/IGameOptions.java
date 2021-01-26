@@ -98,6 +98,12 @@ public interface IGameOptions {
     public static final String STAR_DENSITY_HIGHER   = "SETUP_STAR_DENSITY_HIGHER";
     public static final String STAR_DENSITY_HIGHEST  = "SETUP_STAR_DENSITY_HIGHEST";
     
+    public static final String PLANET_QUALITY_POOR   = "SETUP_PLANET_QUALITY_POOR";
+    public static final String PLANET_QUALITY_MEDIOCRE  = "SETUP_PLANET_QUALITY_MEDIOCRE";
+    public static final String PLANET_QUALITY_NORMAL = "SETUP_PLANET_QUALITY_NORMAL";
+    public static final String PLANET_QUALITY_GOOD   = "SETUP_PLANET_QUALITY_GOOD";
+    public static final String PLANET_QUALITY_GREAT  = "SETUP_PLANET_QUALITY_GREAT";
+        
     public default boolean isAutoPlay()          { return false; }
     public default boolean communityAI()         { return false; }
     public default boolean usingExtendedRaces()  { return (selectedNumberOpponents()+1) > startingRaceOptions().size(); }
@@ -141,6 +147,7 @@ public interface IGameOptions {
     public List<String> nebulaeOptions();
     public List<String> councilWinOptions();
     public List<String> starDensityOptions();
+    public List<String> planetQualityOptions();
 	
     public List<String> gameDifficultyOptions();
     public int maximumOpponentsOptions();
@@ -166,6 +173,8 @@ public interface IGameOptions {
     public void selectedCouncilWinOption(String s);
     public String selectedStarDensityOption();
     public void selectedStarDensityOption(String s);
+    public String selectedPlanetQualityOption();
+    public void selectedPlanetQualityOption(String s);
 	
     public String selectedGalaxyShapeOption1();
     public void selectedGalaxyShapeOption1(String s);
@@ -298,6 +307,11 @@ public interface IGameOptions {
     default String nextStarDensityOption() {
         List<String> opts = starDensityOptions();
         int index = opts.indexOf(selectedStarDensityOption())+1;
+        return index >= opts.size() ? opts.get(0) : opts.get(index);
+    }
+    default String nextPlanetQualityOption() {
+        List<String> opts = planetQualityOptions();
+        int index = opts.indexOf(selectedPlanetQualityOption())+1;
         return index >= opts.size() ? opts.get(0) : opts.get(index);
     }
     default void nextOpponent(int i) {
