@@ -204,6 +204,7 @@ public class CombatStackShip extends CombatStack {
         }
         return weaponRange < 0 ? missileRange: weaponRange;
     }
+    @Override
     public float missileInterceptPct(ShipWeaponMissileType wpn)   {
         return design.missileInterceptPct(wpn);
     }
