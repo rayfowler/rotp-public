@@ -19,8 +19,10 @@ import rotp.util.Base;
 
 public class TreatyAlliance extends DiplomaticTreaty implements Base {
     private static final long serialVersionUID = 1L;
+    private int standing = 50;
     public TreatyAlliance(Empire e1, Empire e2) {
         super(e1,e2,"RACES_ALLY");
+        standing = 50;
     }    
     @Override
     public boolean isAlliance()               { return true; }
