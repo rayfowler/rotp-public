@@ -36,6 +36,7 @@ import rotp.ui.BasePanel;
 import rotp.ui.main.GalaxyMapPanel;
 import rotp.ui.map.IMapHandler;
 import rotp.ui.sprites.FlightPathSprite;
+import rotp.ui.sprites.ShipRelocationSprite;
 import rotp.util.Base;
 
 public class ShipFleet implements Base, Sprite, Ship, Serializable {
@@ -278,11 +279,12 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
     }
     public void arrive(StarSystem sys, boolean scan) {
         sysId = sys.id;
-        destSysId = StarSystem.NULL_ID;
-        rallySysId = StarSystem.NULL_ID;
         fromX = sys.x();
         fromY = sys.y();
         retreating = false;
+        
+        destSysId = StarSystem.NULL_ID;
+        rallySysId = StarSystem.NULL_ID;
         launchTime = NOT_LAUNCHED;
         makeOrbiting();
         if (scan)

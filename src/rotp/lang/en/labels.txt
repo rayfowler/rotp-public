@@ -501,6 +501,7 @@ MAIN_FLEET_INVALID_DESTINATION2   | Cannot send fleet to this system
 // Rally Point labels
 MAIN_RALLY_TITLE                  | Setting Rally Point
 MAIN_RALLY_PROMPT                 | Select a system under your control to send newly built ships to.
+MAIN_RALLY_FORWARD                | Forward incoming rallies
 MAIN_RALLY_TRAVEL_TIME            | Travel time to %1: %2 Years
 MAIN_RALLY_INSTANT_TIME           | Travel time to %1: Instantaneous
 MAIN_RALLY_WILL_CANCEL            | Selecting this destination will clear any existing rally point.

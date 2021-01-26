@@ -72,6 +72,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
     private int vArtifacts = 0;
     private boolean vStargate = false;
     private int flagColor = FLAG_NONE;
+    private boolean forwardRallies = false;
 
     private transient Empire owner;
     private transient PlanetType vPlanetType;
@@ -112,7 +113,12 @@ public class SystemView implements IMappedObject, Base, Serializable {
             system().rallySprite().clear();
         }
     }
-    public void stopRally()                 { rallySystem(system()); }
+    public boolean forwardRallies()          { return forwardRallies; }
+    public void toggleForwardRallies()       { forwardRallies = !forwardRallies; }
+    public void stopRally() { 
+        relocationSystem = null;
+        system().rallySprite().stop(); 
+    }
     public Color flagColor() { 
         switch(flagColor) {
             case FLAG_RED:    return Color.red;
