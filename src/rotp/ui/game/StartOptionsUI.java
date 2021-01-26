@@ -50,6 +50,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
     BaseText nebulaeText;
     BaseText randomEventsText;
     BaseText planetQualityText;
+    BaseText terraformingText;
     BaseText researchRateText;
     BaseText techTradingText;
     BaseText warpSpeedText;
@@ -66,6 +67,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         nebulaeText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         randomEventsText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         planetQualityText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        terraformingText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         researchRateText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         techTradingText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         warpSpeedText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
@@ -79,6 +81,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         nebulaeText.displayText(nebulaeStr());
         randomEventsText.displayText(randomEventsStr());
         planetQualityText.displayText(planetQualityStr());
+        terraformingText.displayText(terraformingStr());
         researchRateText.displayText(researchRateStr());
         techTradingText.displayText(techTradingStr());
         warpSpeedText.displayText(warpSpeedStr());
@@ -221,16 +224,16 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         for (String line: lines) {
             y3 += s20;
             g.drawString(line, x2+s20, y3);
-        }/*
+        }
         
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
         g.setPaint(GameUI.settingsSetupBackground(w));
-        g.fillRect(x2+s10, y2-s10, starDensityText.stringWidth(g)+s10,s30);
-        starDensityText.setScaledXY(x2+s20, y2+s7);
-        starDensityText.draw(g);
-        desc = text("SETTINGS_STAR_DENSITY_DESC");
+        g.fillRect(x2+s10, y2-s10, terraformingText.stringWidth(g)+s10,s30);
+        terraformingText.setScaledXY(x2+s20, y2+s7);
+        terraformingText.draw(g);
+        desc = text("SETTINGS_TERRAFORMING_DESC");
         g.setColor(SystemPanel.blackText);
         g.setFont(descFont);
         lines = this.wrappedLines(g,desc, w2-s30);
@@ -240,6 +243,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             g.drawString(line, x2+s20, y3);
         }       
        
+/*
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
@@ -387,6 +391,10 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         String opt = text(newGameOptions().selectedPlanetQualityOption());
         return text("SETTINGS_PLANET_QUALITY", opt)+"   ";
     }
+    private String terraformingStr() {
+        String opt = text(newGameOptions().selectedTerraformingOption());
+        return text("SETTINGS_TERRAFORMING", opt)+"   ";
+    }
     private String researchRateStr() {
         String opt = text(newGameOptions().selectedResearchRate());
         return text("SETTINGS_RESEARCH_RATE", opt)+"   ";
@@ -427,6 +435,11 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         softClick();
         newGameOptions().selectedPlanetQualityOption(newGameOptions().nextPlanetQualityOption());
         planetQualityText.repaint(planetQualityStr());
+    }
+    private void toggleTerraforming() {
+        softClick();
+        newGameOptions().selectedTerraformingOption(newGameOptions().nextTerraformingOption());
+        terraformingText.repaint(terraformingStr());
     }
     private void toggleResearchRate(MouseEvent e) {
         softClick();
@@ -479,6 +492,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             hoverBox = randomEventsText.bounds();
         else if (planetQualityText.contains(x,y))
             hoverBox = planetQualityText.bounds();
+        else if (terraformingText.contains(x,y))
+            hoverBox = terraformingText.bounds();
         else if (researchRateText.contains(x,y))
             hoverBox = researchRateText.bounds();
         else if (techTradingText.contains(x,y))
@@ -501,6 +516,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
                 randomEventsText.mouseExit();
             else if (prevHover == planetQualityText.bounds())
                 planetQualityText.mouseExit();
+            else if (prevHover == terraformingText.bounds())
+                terraformingText.mouseExit();
             else if (prevHover == researchRateText.bounds())
                 researchRateText.mouseExit();
             else if (prevHover == techTradingText.bounds())
@@ -519,6 +536,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
                 randomEventsText.mouseEnter();
             else if (hoverBox == planetQualityText.bounds())
                 planetQualityText.mouseEnter();
+            else if (hoverBox == terraformingText.bounds())
+                terraformingText.mouseEnter();
             else if (hoverBox == researchRateText.bounds())
                 researchRateText.mouseEnter();
             else if (hoverBox == techTradingText.bounds())
@@ -555,6 +574,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             toggleRandomEvents();
         else if (hoverBox == planetQualityText.bounds())
             togglePlanetQuality();
+        else if (hoverBox == terraformingText.bounds())
+            toggleTerraforming();
         else if (hoverBox == researchRateText.bounds())
             toggleResearchRate(e);
         else if (hoverBox == techTradingText.bounds())

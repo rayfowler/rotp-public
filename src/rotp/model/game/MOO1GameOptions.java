@@ -62,6 +62,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private boolean disableColonizePrompt = false; // unused
     private String selectedStarDensityOption;
     private String selectedPlanetQualityOption;
+    private String selectedTerraformingOption;
 
     private transient GalaxyShape galaxyShape;
 
@@ -155,6 +156,10 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     public String selectedPlanetQualityOption()       { return selectedPlanetQualityOption == null ? PLANET_QUALITY_NORMAL : selectedPlanetQualityOption; }
     @Override
     public void selectedPlanetQualityOption(String s) { selectedPlanetQualityOption = s; }
+    @Override
+    public String selectedTerraformingOption()       { return selectedTerraformingOption == null ? TERRAFORMING_NORMAL : selectedTerraformingOption; }
+    @Override
+    public void selectedTerraformingOption(String s) { selectedTerraformingOption = s; }
     @Override
     public int selectedNumberOpponents()         { return selectedNumberOpponents; }
     @Override
@@ -630,6 +635,13 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         list.add(PLANET_QUALITY_NORMAL);
         list.add(PLANET_QUALITY_GOOD);
         list.add(PLANET_QUALITY_GREAT);
+        return list;
+    }
+    @Override
+    public List<String> terraformingOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(TERRAFORMING_NORMAL);
+        list.add(TERRAFORMING_RESTRICTED);
         return list;
     }
     @Override

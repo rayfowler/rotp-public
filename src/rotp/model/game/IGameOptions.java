@@ -104,6 +104,9 @@ public interface IGameOptions {
     public static final String PLANET_QUALITY_GOOD   = "SETUP_PLANET_QUALITY_GOOD";
     public static final String PLANET_QUALITY_GREAT  = "SETUP_PLANET_QUALITY_GREAT";
         
+    public static final String TERRAFORMING_NORMAL      = "SETUP_TERRAFORMING_NORMAL";
+    public static final String TERRAFORMING_RESTRICTED  = "SETUP_TERRAFORMING_RESTRICTED";
+
     public default boolean isAutoPlay()          { return false; }
     public default boolean communityAI()         { return false; }
     public default boolean usingExtendedRaces()  { return (selectedNumberOpponents()+1) > startingRaceOptions().size(); }
@@ -148,6 +151,7 @@ public interface IGameOptions {
     public List<String> councilWinOptions();
     public List<String> starDensityOptions();
     public List<String> planetQualityOptions();
+    public List<String> terraformingOptions();
 	
     public List<String> gameDifficultyOptions();
     public int maximumOpponentsOptions();
@@ -175,6 +179,8 @@ public interface IGameOptions {
     public void selectedStarDensityOption(String s);
     public String selectedPlanetQualityOption();
     public void selectedPlanetQualityOption(String s);
+    public String selectedTerraformingOption();
+    public void selectedTerraformingOption(String s);
 	
     public String selectedGalaxyShapeOption1();
     public void selectedGalaxyShapeOption1(String s);
@@ -204,9 +210,9 @@ public interface IGameOptions {
     public void selectedOpponentRace(int i, String s);
 
     default void copyOptions(IGameOptions opt) { }
-    default boolean immediateCouncilWin()   { return selectedCouncilWinOption().equals(COUNCIL_IMMEDIATE); }
-    default boolean noGalacticCouncil()   { return selectedCouncilWinOption().equals(COUNCIL_NONE); }
-    
+    default boolean immediateCouncilWin()    { return selectedCouncilWinOption().equals(COUNCIL_IMMEDIATE); }
+    default boolean noGalacticCouncil()      { return selectedCouncilWinOption().equals(COUNCIL_NONE); }
+    default boolean canTerraformHostile()    { return selectedTerraformingOption().equals(TERRAFORMING_NORMAL); }
     default String nextGalaxySize(boolean bounded) {
         List<String> opts = galaxySizeOptions();
         int index = opts.indexOf(selectedGalaxySize())+1;
@@ -312,6 +318,11 @@ public interface IGameOptions {
     default String nextPlanetQualityOption() {
         List<String> opts = planetQualityOptions();
         int index = opts.indexOf(selectedPlanetQualityOption())+1;
+        return index >= opts.size() ? opts.get(0) : opts.get(index);
+    }
+    default String nextTerraformingOption() {
+        List<String> opts = terraformingOptions();
+        int index = opts.indexOf(selectedTerraformingOption())+1;
         return index >= opts.size() ? opts.get(0) : opts.get(index);
     }
     default void nextOpponent(int i) {
