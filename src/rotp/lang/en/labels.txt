@@ -875,6 +875,7 @@ TECH_RESEARCH_PLANETOLOGY         | Select the next planetology technology our r
 TECH_RESEARCH_PROPULSION          | Select the next propulsion technology our researchers should focus on.
 TECH_RESEARCH_WEAPON              | Select the next weapon technology our researchers should focus on.
 TECH_TOP_TIER_DETAIL              | Completing this research will make more advanced technologies available.
+TECH_OBSOLETE_DETAIL              | This technology is obsolete.
 TECH_CHOOSE_RESEARCH_COST         | %1 RP
 TECH_CHOOSE_RESEARCH_TIER         | Tier %1
 TECH_TRADE_TIER_COST_INFO         | (Tier %1 - %2 RP)
