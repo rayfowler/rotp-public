@@ -1088,7 +1088,8 @@ SETUP_PLANET_QUALITY_NORMAL       | Normal
 SETUP_PLANET_QUALITY_GOOD         | Good
 SETUP_PLANET_QUALITY_GREAT        | Great
 SETUP_TERRAFORMING_NORMAL         | Normal
-SETUP_TERRAFORMING_RESTRICTED     | Restricted
+SETUP_TERRAFORMING_REDUCED        | Reduced
+SETUP_TERRAFORMING_NONE           | None
 SETUP_FUEL_RANGE_NORMAL           | Normal
 SETUP_FUEL_RANGE_HIGH             | High
 SETUP_FUEL_RANGE_HIGHER           | Higher
@@ -1154,7 +1155,7 @@ SETTINGS_RESEARCH_RATE_DESC       | Slow the research rate of new technologies, 
 SETTINGS_NEBULAE_DESC             | Nebulae slow down ship travel and render shields useless. Increase or decrease their frequency.
 SETTINGS_COUNCIL_DESC             | Disable the council victory condition or allow enemy empires to rebel against a player victory.
 SETTINGS_PLANET_QUALITY_DESC      | Increases or decreases the frequency of higher quality planets.
-SETTINGS_TERRAFORMING_DESC        | Optionally restrict terraforming improvements to non-hostile environments.
+SETTINGS_TERRAFORMING_DESC        | Reduce or eliminate the benefits of the Improved Terraforming technologies on hostile planets.
 SETTINGS_FUEL_RANGE_DESC          | Increase the range of fuel range technologies and reserve fuel tanks.
 
 // Tech UI labels

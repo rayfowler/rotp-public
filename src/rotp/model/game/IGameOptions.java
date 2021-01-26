@@ -104,8 +104,9 @@ public interface IGameOptions {
     public static final String PLANET_QUALITY_GOOD   = "SETUP_PLANET_QUALITY_GOOD";
     public static final String PLANET_QUALITY_GREAT  = "SETUP_PLANET_QUALITY_GREAT";
         
-    public static final String TERRAFORMING_NORMAL      = "SETUP_TERRAFORMING_NORMAL";
-    public static final String TERRAFORMING_RESTRICTED  = "SETUP_TERRAFORMING_RESTRICTED";
+    public static final String TERRAFORMING_NORMAL   = "SETUP_TERRAFORMING_NORMAL";
+    public static final String TERRAFORMING_REDUCED  = "SETUP_TERRAFORMING_REDUCED";
+    public static final String TERRAFORMING_NONE     = "SETUP_TERRAFORMING_NONE";
 
     public static final String FUEL_RANGE_NORMAL   = "SETUP_FUEL_RANGE_NORMAL";
     public static final String FUEL_RANGE_HIGH     = "SETUP_FUEL_RANGE_HIGH";
@@ -117,6 +118,7 @@ public interface IGameOptions {
     public default boolean usingExtendedRaces()  { return (selectedNumberOpponents()+1) > startingRaceOptions().size(); }
     public default void communityAI(boolean b)   { }
     public default int maxOpponents()            { return MAX_OPPONENTS; }
+    public default float hostileTerraformingPct() { return 1.0f; }
     public String name();
 
     public int numberStarSystems();
@@ -220,7 +222,6 @@ public interface IGameOptions {
     default void copyOptions(IGameOptions opt) { }
     default boolean immediateCouncilWin()    { return selectedCouncilWinOption().equals(COUNCIL_IMMEDIATE); }
     default boolean noGalacticCouncil()      { return selectedCouncilWinOption().equals(COUNCIL_NONE); }
-    default boolean canTerraformHostile()    { return selectedTerraformingOption().equals(TERRAFORMING_NORMAL); }
     default int fuelRangeMultiplier() {
         switch(selectedFuelRangeOption()) {
             case FUEL_RANGE_NORMAL: return 1;

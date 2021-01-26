@@ -811,8 +811,8 @@ public final class Colony implements Base, IMappedObject, Serializable {
     }
     public float maxSize() {
         float terraformAdj = tech().terraformAdj();
-        if (planet.isEnvironmentHostile() && !options().canTerraformHostile())
-            terraformAdj = 0;
+        if (planet.isEnvironmentHostile())
+            terraformAdj *= options().hostileTerraformingPct();
         return max(planet.currentSize(), planet.baseSize()+terraformAdj);
     }
     public float maxUseableFactories() {

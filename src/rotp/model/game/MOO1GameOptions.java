@@ -227,6 +227,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedCouncilWinOption = opt.selectedCouncilWinOption;
         selectedStarDensityOption = opt.selectedStarDensityOption;
         selectedPlanetQualityOption = opt.selectedPlanetQualityOption;
+        selectedTerraformingOption = opt.selectedTerraformingOption;
 
         if (opt.player != null) 
             player.copy(opt.player);
@@ -331,6 +332,14 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
             return 1;
         else 
             return min(10,sqrt(nStars/200f));
+    }
+    @Override
+    public float hostileTerraformingPct() { 
+        switch(selectedTerraformingOption()) {
+            case TERRAFORMING_NONE:  return 0.0f;
+            case TERRAFORMING_REDUCED: return 0.5f;
+            default:  return 1.0f;
+        }
     }
     @Override
     public float researchCostBase(int techLevel) {
@@ -646,7 +655,8 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     public List<String> terraformingOptions() {
         List<String> list = new ArrayList<>();
         list.add(TERRAFORMING_NORMAL);
-        list.add(TERRAFORMING_RESTRICTED);
+        list.add(TERRAFORMING_REDUCED);
+        list.add(TERRAFORMING_NONE);
         return list;
     }
     @Override
