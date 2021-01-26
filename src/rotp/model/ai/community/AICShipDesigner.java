@@ -87,7 +87,7 @@ public class AICShipDesigner implements Base, ShipDesigner {
                 ShipDesign design = lab.design(i);
                 ShipSpecialColony special = design.colonySpecial();
                 if (empire.race().ignoresPlanetEnvironment()
-                || (special.tech().canColonize(sys.planet())) ) {
+                || (special.tech().canColonize(sys.planet().type())) ) {
                     if ((bestDesign == null)
                     || (design.engine().warp() > bestDesign.engine().warp())) //modnar: sign flipped from Base-AI
                         bestDesign = design;

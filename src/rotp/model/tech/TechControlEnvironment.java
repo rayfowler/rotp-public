@@ -54,7 +54,6 @@ public final class TechControlEnvironment extends Tech {
     public boolean isControlEnvironmentTech()    { return true; }
     public int environment()                     { return hostilityAllowed; }
     public int hostilityAllowed()                { return hostilityAllowed; }
-    public boolean canColonize(Planet p)         { return canColonize(p.type()); }
     public boolean canColonize(PlanetType pt)    { return pt.hostility() <= hostilityAllowed(); }
     @Override
     public boolean canBeResearched(Race r)  {

@@ -203,7 +203,7 @@ public class AI implements Base {
 
         if (empire.sv.isColonized(sys.id))
             return;
-        if (!empire.canColonize(sys.planet()))
+        if (!empire.canColonize(sys.planet().type()))
             return;
 
         ShipDesign bestDesign = shipDesigner().bestDesignToColonize(fl, sys);

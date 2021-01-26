@@ -21,6 +21,7 @@ import javax.swing.ImageIcon;
 import rotp.model.combat.CombatStack;
 import rotp.model.galaxy.Galaxy;
 import rotp.model.galaxy.StarSystem;
+import rotp.model.planet.PlanetType;
 
 public final class ShipDesign extends Design {
     private static final long serialVersionUID = 1L;
@@ -241,8 +242,9 @@ public final class ShipDesign extends Design {
         if (destId == StarSystem.NULL_ID)
             return false;
         StarSystem dest = galaxy().system(destId);
+        PlanetType pt = dest.planet().type();
         // return if ordersStack can colonize the destination planet
-        return empire().race().ignoresPlanetEnvironment() || colonySpecial.canColonize(dest.planet());
+        return empire().race().ignoresPlanetEnvironment() || (empire().canColonize(pt) && colonySpecial.canColonize(pt));
     }
     @Override
     public int cost() {

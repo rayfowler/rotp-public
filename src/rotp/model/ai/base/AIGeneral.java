@@ -70,7 +70,7 @@ public class AIGeneral implements Base, General {
         if (!empire.sv.inShipRange(sysId))  return 0.0f;
         if (!empire.sv.isScouted(sysId))    return 0.0f;
         if (!empire.sv.isColonized(sysId))  return 0.0f;
-        if (!empire.canColonize(sys.planet()))  return 0.0f;
+        if (!empire.canColonize(sys.planet().type()))  return 0.0f;
 
         float pr = empire.sv.currentSize(sysId);
 

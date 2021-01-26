@@ -245,7 +245,7 @@ public class AIFleetCommander implements Base, FleetCommander {
         
         // if we can colonize this, send a colony fleet if in ship range
         // else send colony if they can reach, other post a fighter/scout to watch
-        if (empire.canColonize(gal.system(sysId).planet())) {
+        if (empire.canColonize(gal.system(sysId).planet().type())) {
             if (empire.sv.withinRange(sysId, shipRange)) {
                 empire.shipLab().needColonyShips = true;
                 setColonyFleetPlan(sysId);
@@ -261,7 +261,7 @@ public class AIFleetCommander implements Base, FleetCommander {
         }
 
         // if we can't colonize this, station a fighter or scout to 'claim' the system
-        if (!empire.canColonize(gal.system(sysId).planet())) {
+        if (!empire.canColonize(gal.system(sysId).planet().type())) {
             if (empire.sv.withinRange(sysId, shipRange))
                 setClaimFleetPlan(sysId);
             else

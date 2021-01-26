@@ -640,7 +640,7 @@ public class TransportDeploymentPanel extends SystemPanel {
                 error = text("MAIN_TRANSPORT_OUT_OF_RANGE");
             else if (!pl.sv.isScouted(id))
                 error = text("MAIN_TRANSPORT_UNSCOUTED");
-            else if (!player().canColonize(sys.planet()))
+            else if (!pl.canColonize(sys.planet().type()))
                 error = text("MAIN_TRANSPORT_HOSTILE");
             if (error != null) {
                 if (enableAbandon)
