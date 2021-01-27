@@ -25,8 +25,8 @@ public class ShipRelocationSprite extends MapSprite {
     StarSystem clickedDest;
     StarSystem hoveringDest;
     FlightPathSprite pathSprite;
-
     public StarSystem from()                  { return from; }
+    public boolean isActive()                 { return rallySystem() != null; }
     public ShipRelocationSprite(StarSystem tr) {
         init(tr);
     }
@@ -39,11 +39,18 @@ public class ShipRelocationSprite extends MapSprite {
         clickedDest = null;
         hoveringDest = null;
     }
+    public void stop() {
+        pathSprite = null;
+        clickedDest = null;
+        hoveringDest = null;
+    }
     public boolean hasSelectedDestination()   { return clickedDest != null; }
     public void clickedDest(StarSystem sv)    { clickedDest = sv; }
     public void hoveringDest(StarSystem sv)   { hoveringDest = sv; }
     public StarSystem rallySystem()           { return player().sv.rallySystem(from.id); }
-    public StarSystem homeSystemView()        {  return (StarSystem) source(); }
+    public StarSystem homeSystemView()        { return (StarSystem) source(); }
+    public boolean forwardRallies()           { return player().sv.forwardRallies(from.id); }
+    public void toggleForwardRallies()        { player().sv.toggleForwardRallies(from.id); }
 
     private FlightPathSprite pathSprite() {
         if (pathSprite == null)

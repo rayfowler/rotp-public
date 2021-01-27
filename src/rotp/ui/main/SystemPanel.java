@@ -32,6 +32,7 @@ import javax.swing.border.Border;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.planet.Planet;
+import rotp.model.planet.PlanetType;
 import rotp.ui.BasePanel;
 import rotp.ui.SystemViewer;
 import rotp.ui.map.IMapHandler;
@@ -268,23 +269,24 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
         drawBorderedString(g2, player().sv.name(sys.id), 2, s15, h0-s10, Color.black, Color.white);
     }
     public void drawSystemPlanetType(Graphics2D g2, StarSystem sys, Font textF, int y, int w, int h) {
-        Planet planet = sys.planet();
+        PlanetType pt = sys.planet().type();
         int rightMargin = s10;
 
+        Empire pl = player();
         g2.setFont(textF);
-        if (player().canColonize(planet))
+        if (pl.canColonize(pt))
             g2.setColor(greenText);
-        else if (player().isLearningToColonize(planet))
+        else if (pl.isLearningToColonize(pt))
             g2.setColor(yellowText);
-        else if (player().canLearnToColonize(planet))
+        else if (pl.canLearnToColonize(pt))
             g2.setColor(orangeText);
         else
             g2.setColor(redText);
 
-        if (planet.type().isAsteroids())
+        if (pt.isAsteroids())
             return;
 
-        String typeStr = text(planet.type().key());
+        String typeStr = text(pt.key());
         int sw = g2.getFontMetrics().stringWidth(typeStr);
 
         int x0 = w-rightMargin-sw;

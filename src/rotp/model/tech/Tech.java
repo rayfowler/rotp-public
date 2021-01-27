@@ -131,7 +131,7 @@ public class Tech implements Base {
     public String item2()                 { return item2 == null ? item() : text(item2); }
     public String imageKey()              { return ""; }
 
-    public boolean isControlEnvironmentTech()    { return false; }
+    public boolean isControlEnvironmentTech() { return false; }
     public boolean isMissileWeaponTech()    { return false; }
     public boolean isMissileBaseWeapon()    { return false; }
     public boolean isRoboticControlsTech()  { return false; }

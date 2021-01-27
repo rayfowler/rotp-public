@@ -60,6 +60,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
     static final Color sliderTextDisabled = new Color(65,65,65);
     static final Color eqButtonBorderC = new Color(166,153,145);
     public static final Color tierBackC = new Color(24,18,14);
+    public static final Color tierNumC = new Color(48,36,28);
     public static final Color currentTechC = new Color(217,164,0);
     public static final Color unknownTechC = new Color(145,102,72);
     static final Color knownTechC = new Color(75,99,51);
@@ -629,6 +630,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         // draw quintiles from 1 to maxQ
         int x0=0;
         for (int i=0;i<=maxQ;i++) {
+            drawTierLevel(g,x0,tierGap,i);
             if (i > 0)
                 drawTierArrow(g,x0,tierGap,h);
             x0 += tierGap;
@@ -679,6 +681,13 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         int x[] = { x0+(w/2), x0+(w/2), x0+w };
         int y[] = { mid-s90, mid+s90, mid };
         g.fillPolygon(x, y, 3);
+    }
+    private void drawTierLevel(Graphics2D g, int x0, int w, int tierNum) {
+        g.setColor(tierNumC);
+        g.setFont(narrowFont(30));
+        String numStr = str(tierNum+1);
+        int sw = g.getFontMetrics().stringWidth(numStr);
+        g.drawString(numStr, x0+w-sw-s5, s25);
     }
     private void drawTechTier(Graphics2D g, Tech[] allT, List<String> knownT, String currentT, int minLevel, int maxLevel, int x, int w, int h) {
         g.setColor(tierBackC);
@@ -831,10 +840,10 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
                 dragTree(s10,0);
                 return;
             case KeyEvent.VK_UP:
-                dragTree(0,s10);
+                selectTechCategory(selectedCategory-1);
                 return;
             case KeyEvent.VK_DOWN:
-                dragTree(0,-s10);
+                selectTechCategory(selectedCategory+1);
                 return;
             case KeyEvent.VK_TAB:
                 return;

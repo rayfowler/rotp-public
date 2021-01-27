@@ -25,10 +25,6 @@ import rotp.util.Base;
 public abstract class GalaxyShape implements Base, Serializable {
     private static final long serialVersionUID = 1L;
     static final int GALAXY_EDGE_BUFFER = 12;
-    static final float MIN_ORION_BUFFER = 8;
-    static final float MIN_EMPIRE_BUFFER = 6;
-    static final float MAX_MIN_EMPIRE_BUFFER = 30;
-    static final float SYSTEM_BUFFER = 1.9f;
     static float orionBuffer = 8;
     static float empireBuffer = 6;
     float[] x;
@@ -95,6 +91,9 @@ public abstract class GalaxyShape implements Base, Serializable {
 
     public float systemBuffer() {
         switch (opts.selectedStarDensityOption()) {
+            case IGameOptions.STAR_DENSITY_LOWEST:  return 2.5f;
+            case IGameOptions.STAR_DENSITY_LOWER:   return 2.3f;
+            case IGameOptions.STAR_DENSITY_LOW:     return 2.1f;
             case IGameOptions.STAR_DENSITY_HIGH:    return 1.7f;
             case IGameOptions.STAR_DENSITY_HIGHER:  return 1.5f;
             case IGameOptions.STAR_DENSITY_HIGHEST: return 1.3f;
@@ -148,15 +147,20 @@ public abstract class GalaxyShape implements Base, Serializable {
         genAttempt = 0;
         empSystems.clear();
         
+        // systemBuffer() is minimum distance between any 2 stars
+        float sysBuffer = systemBuffer();
+        float minEmpireBuffer = 3*sysBuffer;
+        float maxMinEmpireBuffer = 15*sysBuffer;
+        float minOrionBuffer = 4*sysBuffer;
         
         // the stars/empires ratio for the most "densely" populated galaxy is about 8:1
         // we want to set the minimum distance between empires to half that in ly, with a minimum 
         // of 6 ly... this means that it will not increase until there is at least a 12:1
         // ratio. However, the minimum buffer will never exceed the "MAX_MIN", to ensure that 
         // massive maps don't always GUARANTEE hundreds of light-years of space to expand uncontested
-        empireBuffer = min(MAX_MIN_EMPIRE_BUFFER, max(MIN_EMPIRE_BUFFER, (maxStars/(numOpps*2))));
+        empireBuffer = min(maxMinEmpireBuffer, max(minEmpireBuffer, (maxStars/(numOpps*2))));
         // Orion buffer is 50% greater with minimum of 8 ly.
-        orionBuffer = max(MIN_ORION_BUFFER, empireBuffer*3/2);
+        orionBuffer = max(minOrionBuffer, empireBuffer*3/2);
 
         // add systems needed for empires
         while (empSystems.size() < numOpps) {

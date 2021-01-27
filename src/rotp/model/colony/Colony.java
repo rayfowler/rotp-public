@@ -810,7 +810,10 @@ public final class Colony implements Base, IMappedObject, Serializable {
         return min(wasteCleanupCost(), totalIncome());
     }
     public float maxSize() {
-        return max(planet.currentSize(), planet.baseSize()+tech().terraformAdj());
+        float terraformAdj = tech().terraformAdj();
+        if (planet.isEnvironmentHostile())
+            terraformAdj *= options().hostileTerraformingPct();
+        return max(planet.currentSize(), planet.baseSize()+terraformAdj);
     }
     public float maxUseableFactories() {
         return workingPopulation() * empire().maxRobotControls();

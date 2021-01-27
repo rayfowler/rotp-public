@@ -433,6 +433,14 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             return Base.compare(pr1, pr2);
         }
     };
+    public static Comparator<StarSystem> TRANSPORT_TIME_TO_TARGET_SYSTEM = new Comparator<StarSystem>() {
+        @Override
+        public int compare(StarSystem sys1, StarSystem sys2) {
+            float pr1 = sys1.transportTimeTo(TARGET_SYSTEM);
+            float pr2 = sys2.transportTimeTo(TARGET_SYSTEM);
+            return Base.compare(pr1, pr2);
+        }
+    };
     public static Empire TARGET_EMPIRE;
     public static Comparator<StarSystem> DISTANCE_TO_TARGET_EMPIRE = new Comparator<StarSystem>() {
         @Override
@@ -544,12 +552,11 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         if (map.hideSystemNames())
             return;
 
-        boolean scouted = pl.sv.isScouted(id);
-        Colony col = pl.sv.isColonized(id) ? colony() : null;
         int pop = pl.sv.population(id);
         int fontSize = fontSize(map);
         int realFontSize = unscaled(fontSize);
-        if (map.parent().showSystemName(this) || (pop == 0) || (realFontSize < 12)) {
+        boolean colonized = pl.sv.isColonized(id);
+        if (map.parent().showSystemName(this) || !colonized || (realFontSize < 12)) {
             String s1 = map.parent().systemLabel(this);
             String s2 = map.parent().systemLabel2(this);
             if (s2.isEmpty())

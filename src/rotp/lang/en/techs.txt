@@ -506,28 +506,28 @@ ENGINE_8_BRIEF2  | Combat Speed %1
 // Fuel Range techs
 //
 FUELRANGE_0_NAME   | Fuel Cells
-FUELRANGE_0_DETAIL | Fuel reserves allow ships to move up to 3 light-years away from colony planets.
+FUELRANGE_0_DETAIL | Fuel reserves allow ships to move up to %1 light-years away from colony planets.
 
 FUELRANGE_1_NAME   | Hydrogen Fuel Cells
-FUELRANGE_1_DETAIL | Fuel reserves allow ships to move up to 4 light-years away from colony planets.
+FUELRANGE_1_DETAIL | Fuel reserves allow ships to move up to %1 light-years away from colony planets.
 
 FUELRANGE_2_NAME   | Deuterium Fuel Cells
-FUELRANGE_2_DETAIL | Fuel reserves allow ships to move up to 5 light-years away from colony planets.
+FUELRANGE_2_DETAIL | Fuel reserves allow ships to move up to %1 light-years away from colony planets.
 
 FUELRANGE_3_NAME   | Irridium Fuel Cells
-FUELRANGE_3_DETAIL | Fuel reserves allow ships to move up to 6 light-years away from colony planets.
+FUELRANGE_3_DETAIL | Fuel reserves allow ships to move up to %1 light-years away from colony planets.
 
 FUELRANGE_4_NAME   | Dotomite Crystals
-FUELRANGE_4_DETAIL | Fuel reserves allow ships to move up to 7 light-years away from colony planets.
+FUELRANGE_4_DETAIL | Fuel reserves allow ships to move up to %1 light-years away from colony planets.
 
 FUELRANGE_5_NAME   | Uridium Fuel Cells
-FUELRANGE_5_DETAIL | Fuel reserves allow ships to move up to 8 light-years away from colony planets.
+FUELRANGE_5_DETAIL | Fuel reserves allow ships to move up to %1 light-years away from colony planets.
 
 FUELRANGE_6_NAME   | Reajax II Fuel Cells
-FUELRANGE_6_DETAIL | Fuel reserves allow ships to move up to 9 light-years away from colony planets.
+FUELRANGE_6_DETAIL | Fuel reserves allow ships to move up to %1 light-years away from colony planets.
 
 FUELRANGE_7_NAME   | Trilithium Crystals
-FUELRANGE_7_DETAIL | Fuel reserves allow ships to move up to 10 light-years away from colony planets.
+FUELRANGE_7_DETAIL | Fuel reserves allow ships to move up to %1 light-years away from colony planets.
 
 FUELRANGE_8_NAME   | Thorium Cells
 FUELRANGE_8_DETAIL | Fuel reserves allow ships to move any distance away from colony planets.
@@ -964,7 +964,7 @@ REPULSOR_0_DETAIL  | Repels enemy ships back one space away from the defending s
 // Reserve Fuel tech 
 //
 RSRVFUEL_0_NAME    | Reserve Fuel Tanks
-RSRVFUEL_0_BRIEF   | Extends Ship Range by 3 light-years
+RSRVFUEL_0_BRIEF   | Extends Ship Range by %1 light-years
 RSRVFUEL_0_DETAIL  | Reserve Fuel Tanks increase a ship's range.
 
 

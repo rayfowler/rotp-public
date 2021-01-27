@@ -315,8 +315,9 @@ public final class GameSession implements Base, Serializable {
                     return;
 
                 // REMOVE THIS CODE
+                //playerViewAllSystems();
                 //playerViewAllHomeSystems();
-                
+               
                 // all intra-empire events: civ turns, ship movement, etc
                 gal.advanceTime();
                 gal.moveShipsInTransit();
@@ -691,6 +692,12 @@ public final class GameSession implements Base, Serializable {
         }
         for (StarSystem sys: galaxy().starSystems()) {
             if (sys.hasMonster())
+                player().sv.refreshFullScan(sys.id);
+        }
+    }
+    public void playerViewAllSystems() {
+        // for testing the minimum empire distance code
+        for (StarSystem sys: galaxy().starSystems()) {
                 player().sv.refreshFullScan(sys.id);
         }
     }

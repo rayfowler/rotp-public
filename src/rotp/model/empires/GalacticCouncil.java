@@ -86,6 +86,8 @@ public class GalacticCouncil implements Base, Serializable {
     }
 
     public void nextTurn() {
+        if (options().noGalacticCouncil())
+            return;
         if (galaxy().numActiveEmpires() < 3)
             return;
         if (disbanded())

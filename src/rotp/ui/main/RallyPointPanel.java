@@ -213,8 +213,10 @@ public class RallyPointPanel extends SystemPanel {
         @Override
         protected BasePanel bottomPane() { return new ToSystemDetailPane(); }
     }
-    class FromSystemDetailPane extends BasePanel {
+    class FromSystemDetailPane extends BasePanel  implements MouseListener, MouseMotionListener {
         private static final long serialVersionUID = 1L;
+        private Shape hoverBox;
+        private final Rectangle retreatBox = new Rectangle();
         Shape arrow;
         Shape textureClip;
         public FromSystemDetailPane() {
@@ -223,6 +225,8 @@ public class RallyPointPanel extends SystemPanel {
         private void initModel() {
             setPreferredSize(new Dimension(getWidth(),scaled(175)));
             setBackground(Color.green);
+            addMouseListener(this);
+            addMouseMotionListener(this);
         }
         @Override
         public String textureName()            { return TEXTURE_GRAY; }
@@ -240,9 +244,9 @@ public class RallyPointPanel extends SystemPanel {
             g.setColor(MainUI.darkShadowC);
             g.fill(arrow());
             g.setColor(MainUI.paneBackground());
-            g.fillRect(0, s5, w, s80);
+            g.fillRect(0, s5, w, s100+s5);
 
-            textureClip = new Rectangle2D.Float(0,s5,w,s80);
+            textureClip = new Rectangle2D.Float(0,s5,w,s100+s5);
 
             int leftM = s5;
             String title = text("MAIN_RALLY_TITLE");
@@ -259,6 +263,29 @@ public class RallyPointPanel extends SystemPanel {
                 y0 += s18;
                 g.drawString(line, leftM, y0);
             }
+            
+            int checkW = s12;
+            int checkX = leftM;
+            y0 = y0+s25;
+            retreatBox.setBounds(checkX, y0-checkW, checkW, checkW);
+            Stroke prev = g.getStroke();
+            g.setStroke(stroke2);
+            g.setColor(MainUI.shadeBorderC());
+            g.fill(retreatBox);
+            if (hoverBox == retreatBox) {
+                g.setColor(Color.yellow);
+                g.draw(retreatBox);
+            }
+            if (relocationSprite().forwardRallies()) {
+                g.setColor(SystemPanel.whiteText);
+                g.drawLine(checkX-s1, y0-s6, checkX+s3, y0-s3);
+                g.drawLine(checkX+s3, y0-s3, checkX+checkW, y0-s12);
+            }
+            g.setStroke(prev);
+            String forward = text("MAIN_RALLY_FORWARD");
+            g.setFont(narrowFont(16));
+            g.setColor(MainUI.darkShadowC);
+            g.drawString(forward, leftM+s15, y0-s1);
         }
         private Shape arrow() {
             if (arrow == null) {
@@ -273,6 +300,47 @@ public class RallyPointPanel extends SystemPanel {
                 arrow = new Polygon(x,y,x.length);
             }
             return arrow;
+        }
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            if (e.getButton() > 3)
+                return;
+            int x = e.getX();
+            int y = e.getY();
+             if (retreatBox.contains(x,y)) {
+                relocationSprite().toggleForwardRallies();
+                softClick();
+                repaint();
+                return;
+            }
+        }
+        @Override
+        public void mousePressed(MouseEvent e) { }
+        @Override
+        public void mouseClicked(MouseEvent e) { }
+        @Override
+        public void mouseEntered(MouseEvent e) { }
+        @Override
+        public void mouseExited(MouseEvent e) {
+            if (hoverBox != null){
+                hoverBox = null;
+                repaint();
+            }
+        }
+        @Override
+        public void mouseDragged(MouseEvent e) { }
+        @Override
+        public void mouseMoved(MouseEvent e) {
+            int x = e.getX();
+            int y = e.getY();
+            Shape prevHover = hoverBox;
+            hoverBox = null;
+            
+            if (retreatBox.contains(x,y)) 
+                hoverBox = retreatBox;
+
+            if (hoverBox != prevHover)
+                repaint();
         }
     }
     class ToSystemDetailPane extends BasePanel {

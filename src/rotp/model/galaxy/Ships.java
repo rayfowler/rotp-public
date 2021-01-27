@@ -21,6 +21,7 @@ import java.util.List;
 import rotp.model.empires.Empire;
 import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipDesignLab;
+import rotp.ui.sprites.ShipRelocationSprite;
 import rotp.util.Base;
 
 public class Ships implements Base, Serializable {
@@ -40,6 +41,20 @@ public class Ships implements Base, Serializable {
             allFleets.add(existingFleet);
         }       
         existingFleet.addShips(designId, count);   
+    }
+    public void forwardRallyFleet(ShipFleet fl, int empId, int sysId, int rallySysId) {
+        ShipFleet existingFleet = rallyingFleet(empId, sysId, rallySysId);
+        
+        if (existingFleet == null) {
+            existingFleet = fl;
+            existingFleet.rallySysId(rallySysId);
+            existingFleet.destSysId(rallySysId);
+            existingFleet.makeDeployed();
+        }       
+        else {
+            existingFleet.addFleet(fl);
+            fl.disband();
+        }
     }
     public void buildShips(int empId, int sysId, int designId, int count) {
         // are we relocating new ships? If so, do so as long as dest is still allied with us
@@ -439,6 +454,16 @@ public class Ships implements Base, Serializable {
             return false;
         }
         
+        // no need to emp-check the fleet or system
+        // only players can set up rally points
+        if (fleet.isRallied()) {
+            ShipRelocationSprite spr = sys.rallySprite();
+            if (spr.isActive() && spr.forwardRallies()) {
+                fleet.arrive(sys, true);
+                forwardRallyFleet(fleet, fleet.empId(), sys.id, spr.rallySystem().id);
+                return false;
+            }
+        }
         // if an orbiting fleet already exists, merge with it
         ShipFleet orbitingFleet = orbitingFleet(fleet.empId, sys.id);       
         if (orbitingFleet == null) {
@@ -510,7 +535,7 @@ public class Ships implements Base, Serializable {
         
         for (ShipFleet fl: fleetsAll) {
             if ((fl.empId == empId) && (fl.sysId() == sysId) 
-            && fl.isOrbiting() && (fl.rallySysId() == rallySysId))
+            && fl.isDeployed() && (fl.rallySysId() == rallySysId))
                 return fl;
         }
         return null;
@@ -636,6 +661,19 @@ public class Ships implements Base, Serializable {
         
         for (ShipFleet fl: fleetsAll) {
             if (fl.empId == empireId) {
+                for (int i=0;i<count.length;i++)
+                    count[i] += fl.num(i);
+            }
+        }
+        return count;
+    }
+    public int[] shipDesignInTransitCounts(int empireId) {
+        int[] count = new int[ShipDesignLab.MAX_DESIGNS];
+        List<ShipFleet> fleetsAll = allFleetsCopy();
+        
+        for (ShipFleet fl: fleetsAll) {
+            if ((fl.empId == empireId)
+            && (fl.inTransit() || fl.deployed())) {
                 for (int i=0;i<count.length;i++)
                     count[i] += fl.num(i);
             }

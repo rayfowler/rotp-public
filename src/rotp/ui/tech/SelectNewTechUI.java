@@ -33,6 +33,7 @@ import java.awt.image.BufferedImage;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import rotp.model.empires.Empire;
 import rotp.model.tech.Tech;
 import rotp.model.tech.TechCategory;
 import rotp.ui.BasePanel;
@@ -42,6 +43,7 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
     private static final long serialVersionUID = 1L;
     private static final Color darkBrown = new Color(112,85,68);
     private static final Color darkBrownShade = new Color(112,85,68,128);
+    private static final Color grayBrown = new Color(190,157,134);
     private static final Color scrollBarC = new Color(211,166,125);
     static Color grayShade = new Color(123,123,123,160);
     static Color dimWhite = new Color(225,225,255);
@@ -112,10 +114,12 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
     private Image paintToImage() {
         techBoxes.clear();
 
+        Empire pl = player();
         int bdr = s10;
         int techHeight = s25;
         int titleLineH = s26;
         String addlDesc = text("TECH_TOP_TIER_DETAIL");
+        String obsDesc = text("TECH_OBSOLETE_DETAIL");
         String title = text(category.researchKey());
 
         BufferedImage backImg = player().race().laboratory();
@@ -191,9 +195,12 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
             String id = availableTechs.get(i+techIndex);
             Tech t = tech(id);
             boolean topTier = t.quintile() == category.maxResearchableQuintile();
+            boolean obsolete = t.isObsolete(pl);
             String detail = t.detail();
             if (topTier)
                 detail = detail + " "+addlDesc;
+            else if (obsolete)
+                detail = detail + " "+obsDesc;
             g.setFont(narrowFont(14));
             List<String> lines = wrappedLines(g, detail, techWidth-s20);
              if (id.equals(hoverTech)) 
@@ -204,7 +211,10 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
             int th = techHeight+((lines.size())*s15);
             g.fillRoundRect(x1-s5, y1, techWidth-s5, th, s10, s10);
             techBoxes.put(id, new Rectangle(x1, y1, techWidth, th));
-            g.setColor(dimWhite);
+            if (obsolete)
+                g.setColor(grayBrown);
+            else
+                g.setColor(dimWhite);
             g.setFont(narrowFont(16));
             g.drawString(text(t.name()),x1+5, y1+s15);
 

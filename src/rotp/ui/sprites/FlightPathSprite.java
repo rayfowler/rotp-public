@@ -251,18 +251,20 @@ public class FlightPathSprite extends MapSprite {
         g2.setStroke(prevStroke);
     }
     private Stroke workingLine(float scale, int index) {
-        return lines[0][index];
+        return lines[1][index];
     }
     private Stroke pathLine(float scale, int index) {
-        if (scale > 20)
+        Sprite fr = from();
+        if (fr == null)
             return lines[0][index];
-        else
-            return lines[1][index];
+        
+        if (fr.hovering())            
+            return hoveringLine(scale,index);
+
+        return lines[0][index];
     }
     private Stroke hoveringLine(float scale, int index) {
-        if (scale > 50)
-            return lines[0][index];
-        else if (scale > 40)
+        if (scale > 40)
             return lines[1][index];
         else if (scale > 20)
             return lines[2][index];
@@ -272,12 +274,8 @@ public class FlightPathSprite extends MapSprite {
     private void initStrokes() {
         lines = new BasicStroke[6][6];
         rallyStroke = new BasicStroke[9];
-        float f15 = BasePanel.s15;
-        float f14 = BasePanel.s14;
-        float f4 = BasePanel.s4;
         float f10 = BasePanel.s10;
-        float f3 = BasePanel.s3;
-		float f12 = BasePanel.s12; // modnar: line dash change
+        float f12 = BasePanel.s12; // modnar: line dash change
         float f6 = BasePanel.s6; // modnar: line dash change
 
         for (int i=0;i<9;i++) {
@@ -287,7 +285,7 @@ public class FlightPathSprite extends MapSprite {
 
         for (int i=0;i<6;i++) {
             for (int j=0;j<6;j++) {
-                int w = scaled(i+2); // modnar: line width change
+                int w = scaled(i+1); // modnar: line width change
                 float dashPhase = j * BasePanel.s3;
                 lines[i][j] = new BasicStroke(w, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND,    // Join style
                                 f10, new float[] {f12, f6}, dashPhase);

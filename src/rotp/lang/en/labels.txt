@@ -311,7 +311,7 @@ GAME_SETTINGS_TEXTURES            | Textures: %1
 GAME_SETTINGS_TEXTURES_YES        | Yes
 GAME_SETTINGS_TEXTURES_NO         | No
 GAME_SETTINGS_TEXTURES_DESC       | Toggle the use of textures on the various screens throughout the game.
-GAME_SETTINGS_MEMORY              | Memory: %1
+GAME_SETTINGS_MEMORY              | Show Memory Usage: %1
 GAME_SETTINGS_MEMORY_YES          | Yes
 GAME_SETTINGS_MEMORY_NO           | No
 GAME_SETTINGS_MEMORY_DESC         | Toggles the display of memory usage statistics at the bottom right corner of the game. Useful for monitoring memory usage.
@@ -328,7 +328,13 @@ GAME_SETTINGS_MUSIC_DESC          | Click to mute or unmute music within the gam
 GAME_SETTINGS_AUTOCOLONIZE        | Auto-Colonize: %1
 GAME_SETTINGS_AUTOCOLONIZE_YES    | Yes
 GAME_SETTINGS_AUTOCOLONIZE_NO     | No
-GAME_SETTINGS_AUTOCOLONIZE_DESC   | Toggle to auto-colonize and name planets immediately when colony ships arrive. This can time-saving on very large maps.
+GAME_SETTINGS_AUTOCOLONIZE_DESC   | Toggle to auto-colonize and name planets immediately when colony ships arrive. This can be time-saving on very large maps.
+GAME_SETTINGS_AUTOBOMBARD         | Auto-Bombard: %1
+GAME_SETTINGS_AUTOBOMBARD_YES     | Yes
+GAME_SETTINGS_AUTOBOMBARD_WAR     | Only at War
+GAME_SETTINGS_AUTOBOMBARD_INVADE  | Only War and not Invading
+GAME_SETTINGS_AUTOBOMBARD_NO      | No
+GAME_SETTINGS_AUTOBOMBARD_DESC    | Toggle to auto-bombard always, or only when at war, or only when at war with no invasion forces en route. This can be time-saving on very large maps.
 
 // Load Game UI
 LOAD_GAME_TITLE                   | Load Game
@@ -480,6 +486,7 @@ MAIN_FLEET_OUT_OF_RANGE_DESC      | Destination is out of fleet range, %1 light-
 MAIN_FLEET_INVALID_RETREAT        | Retreating fleets can only be sent to friendly colonies
 MAIN_FLEET_ETA_UNNAMED            | ETA to destination: %1 Year 
 MAIN_FLEET_ETA_NAMED              | ETA to %1: %2 Years 
+MAIN_FLEET_SET_RALLY              | Rallying
 MAIN_FLEET_AUTO_RETREAT           | Automatically retreat upon arrival
 MAIN_FLEET_ETA_UNKNOWN            | Scanners cannot determine destination
 MAIN_FLEET_THROUGH_NEBULA         | Maximum speed limited to Warp 1 by nebula
@@ -495,6 +502,7 @@ MAIN_FLEET_INVALID_DESTINATION2   | Cannot send fleet to this system
 // Rally Point labels
 MAIN_RALLY_TITLE                  | Setting Rally Point
 MAIN_RALLY_PROMPT                 | Select a system under your control to send newly built ships to.
+MAIN_RALLY_FORWARD                | Forward incoming rallies
 MAIN_RALLY_TRAVEL_TIME            | Travel time to %1: %2 Years
 MAIN_RALLY_INSTANT_TIME           | Travel time to %1: Instantaneous
 MAIN_RALLY_WILL_CANCEL            | Selecting this destination will clear any existing rally point.
@@ -684,6 +692,8 @@ MAIN_ALERT_INVADERS_CAPTURED      | %3 %1 transports arriving in the %2 system h
 MAIN_ALERT_INVADERS_KILLED        | %3 %1 transports attempting to invade %2 have been completely destroyed by our defensive forces.
 MAIN_ALERT_TRESPASSING1           | %1 ships have been spotted trespassing near our colony in the %2 system.
 MAIN_ALERT_TRESPASSING2           | The %1 ambassador protests our ships trespassing in the %2 system.
+MAIN_ALERT_TRADE_MATURED          | Our trade treaty with the %1 has reached its maximum value of %2 BC.
+MAIN_ALERT_SPY_NEW_TECH           | Our spies inform us that the %1 knows the secrets of %2.
 
 
 // Colony Listing UI
@@ -735,6 +745,7 @@ PLANETS_LIST_RESERVE              | Reserve
 PLANETS_LIST_SHIPYARD             | Shipyard
 PLANETS_LIST_NOTES                | Notes
 PLANETS_LIST_TURNS                | Turns
+PLANETS_LIST_YEARS                | Years
 PLANETS_LIST_TRANSPORTS           | Transports
 PLANETS_LIST_RESOURCES            | Resources
 PLANETS_HELP_ALL                  | OVERVIEW - This screen shows your empire's economic data along with a listing of your colonies sortable by various data.
@@ -808,6 +819,7 @@ FLEETS_IS_RICH                    | System is rich or ultra-rich
 FLEETS_IS_ULTRA_RICH              | System is ultra-rich
 FLEETS_IS_POOR                    | System is poor or ultra-poor
 FLEETS_IS_ULTRA_POOR              | System is ultra-poor
+FLEETS_IS_STANDARD                | System has standard resources
 FLEETS_SYSTEMS_SELECTED           | %1  Systems Selected
 FLEETS_FLEETS_SELECTED            | %1  Fleets Selected
 FLEETS_MULTIPLE_DESIGNS           | Multiple
@@ -815,6 +827,7 @@ FLEETS_RELOCATE_LABEL             | Set Rally Points
 FLEETS_TRANSPORTS_LABEL           | Send Transports
 FLEETS_HAS_ORDERS                 | Fleet is in transit
 FLEETS_HAS_NO_ORDERS              | Fleet is in orbit
+FLEETS_IS_RALLYING                | Fleet is rallying
 FLEETS_DESIGN_COUNT               | %1 %2
 FLEETS_DEPLOY_FLEETS              | Deploy Fleets
 FLEETS_SET_RALLY_POINTS           | Set Rally Points
@@ -867,6 +880,7 @@ TECH_RESEARCH_PLANETOLOGY         | Select the next planetology technology our r
 TECH_RESEARCH_PROPULSION          | Select the next propulsion technology our researchers should focus on.
 TECH_RESEARCH_WEAPON              | Select the next weapon technology our researchers should focus on.
 TECH_TOP_TIER_DETAIL              | Completing this research will make more advanced technologies available.
+TECH_OBSOLETE_DETAIL              | This technology is obsolete.
 TECH_CHOOSE_RESEARCH_COST         | %1 RP
 TECH_CHOOSE_RESEARCH_TIER         | Tier %1
 TECH_TRADE_TIER_COST_INFO         | (Tier %1 - %2 RP)
@@ -1054,14 +1068,33 @@ SETUP_WARP_SPEED_NORMAL           | Normal
 SETUP_WARP_SPEED_FAST             | Fast
 SETUP_NEBULA_NONE                 | None
 SETUP_NEBULA_RARE                 | Rare
+SETUP_NEBULA_UNCOMMON             | Uncommon
 SETUP_NEBULA_NORMAL               | Normal
+SETUP_NEBULA_COMMON               | Common
+SETUP_NEBULA_FREQUENT             | Frequent
+SETUP_COUNCIL_NONE                | No Council
 SETUP_COUNCIL_IMMEDIATE           | Immediate
 SETUP_COUNCIL_REBELS              | Allow Rebels
+SETUP_STAR_DENSITY_LOWEST         | Lowest
+SETUP_STAR_DENSITY_LOWER          | Lower
+SETUP_STAR_DENSITY_LOW            | Low
 SETUP_STAR_DENSITY_NORMAL         | Normal
 SETUP_STAR_DENSITY_HIGH           | High
 SETUP_STAR_DENSITY_HIGHER         | Higher
 SETUP_STAR_DENSITY_HIGHEST        | Highest
 SETUP_GAME_NUMBER_OPPONENTS       | Opponents
+SETUP_PLANET_QUALITY_POOR         | Poor
+SETUP_PLANET_QUALITY_MEDIOCRE     | Mediocre
+SETUP_PLANET_QUALITY_NORMAL       | Normal
+SETUP_PLANET_QUALITY_GOOD         | Good
+SETUP_PLANET_QUALITY_GREAT        | Great
+SETUP_TERRAFORMING_NORMAL         | Normal
+SETUP_TERRAFORMING_REDUCED        | Reduced
+SETUP_TERRAFORMING_NONE           | None
+SETUP_FUEL_RANGE_NORMAL           | Normal
+SETUP_FUEL_RANGE_HIGH             | High
+SETUP_FUEL_RANGE_HIGHER           | Higher
+SETUP_FUEL_RANGE_HIGHEST          | Highest
 SETUP_RACE_LABEL                  | Available Races
 SETUP_RACE_COLOR                  | Empire Color:
 SETUP_HOMEWORLD_NAME_LABEL        | Homeworld:
@@ -1111,6 +1144,9 @@ SETTINGS_GALAXY_AGE               | Galaxy Age: %1
 SETTINGS_WARP_SPEED               | Warp Speed: %1
 SETTINGS_NEBULAE                  | Nebulae: %1
 SETTINGS_COUNCIL_WIN              | Council Win: %1
+SETTINGS_PLANET_QUALITY           | Planet Quality: %1
+SETTINGS_TERRAFORMING             | Hostile Terraforming: %1
+SETTINGS_FUEL_RANGE               | Fuel Range: %1
 SETTINGS_RANDOM_EVENTS_DESC       | Space Monsters are random events and considerable mid-game threats. Turn off space monsters or all random events. 
 SETTINGS_WARP_SPEED_DESC          | Increase the speed of more advanced warp technologies. This can be desirable on very large maps.
 SETTINGS_GALAXY_AGE_DESC          | Compared to normal galaxies, young galaxies have more white and blue stars while old galaxies have more red and neutron stars.
@@ -1118,7 +1154,10 @@ SETTINGS_TECH_TRADING_DESC        | Turn off all technology trades or restrict t
 SETTINGS_STAR_DENSITY_DESC        | Set to high to reduce the chance of empires being stranded early in the game.
 SETTINGS_RESEARCH_RATE_DESC       | Slow the research rate of new technologies, lengthening the useful life of current technologies.
 SETTINGS_NEBULAE_DESC             | Nebulae slow down ship travel and render shields useless. Increase or decrease their frequency.
-SETTINGS_COUNCIL_DESC             | When the player wins the council vote, declare an immediate victory or give AI players the option to rebel against the vote.
+SETTINGS_COUNCIL_DESC             | Disable the council victory condition or allow enemy empires to rebel against a player victory.
+SETTINGS_PLANET_QUALITY_DESC      | Increases or decreases the frequency of higher quality planets.
+SETTINGS_TERRAFORMING_DESC        | Reduce or eliminate the benefits of the Improved Terraforming technologies on hostile planets.
+SETTINGS_FUEL_RANGE_DESC          | Increase the range of fuel range technologies and reserve fuel tanks.
 
 // Tech UI labels
 TECH_RESEARCH                     | Technology Research
@@ -1186,7 +1225,9 @@ SHIP_DESIGN_SLOTS                 | Design Slots
 SHIP_DESIGN_AVAILABLE             | Available
 SHIP_DESIGN_AVAILABLE_DESC        | Select this design slot to begin work on a new ship design.
 SHIP_DESIGN_AVAILABLE_DESC2       | Deploy this design to allow construction on colonies.
-SHIP_DESIGN_SLOT_DESC             | Currently in fleet:
+SHIP_DESIGN_SLOT_DESC             | Total in fleet:
+SHIP_DESIGN_SLOT_DESC2            | In Orbit:
+SHIP_DESIGN_SLOT_DESC3            | In Transit:
 SHIP_DESIGN_NEW                   | New Ship Design
 SHIP_DESIGN_SIZE_SMALL            | Small
 SHIP_DESIGN_SIZE_MEDIUM           | Medium

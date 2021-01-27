@@ -613,7 +613,7 @@ public class MainUI extends BasePanel implements IMapHandler {
         g.drawString(title, x1, y1);
 
         g.setFont(narrowFont(16));
-        List<String> descLines = wrappedLines(g, alert.description(), scaled(240));
+        List<String> descLines = wrappedLines(g, alert.description(), scaled(230));
         y1 += scaled(17);
         for (String line: descLines) {
             g.drawString(line, x1, y1);

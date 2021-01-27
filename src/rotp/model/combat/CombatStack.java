@@ -26,6 +26,7 @@ import rotp.model.galaxy.StarSystem;
 import rotp.model.ships.ShipComponent;
 import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipWeapon;
+import rotp.model.ships.ShipWeaponMissileType;
 import rotp.model.tech.TechCloaking;
 import rotp.model.tech.TechStasisField;
 import rotp.ui.BasePanel;
@@ -147,8 +148,8 @@ public class CombatStack implements Base {
     public boolean canFireWeaponAtTarget(CombatStack st)  { return false; }
     public boolean immuneToStasis() { return false; }
     public float autoMissPct()      { return 0; } 
-    public boolean interceptsMissile(ShipWeapon wpn)  { return random() < missileInterceptPct(wpn);}
-    public float missileInterceptPct(ShipWeapon wpn)  { return 0; }
+    public boolean interceptsMissile(ShipWeaponMissileType wpn)  { return random() < missileInterceptPct(wpn);}
+    public float missileInterceptPct(ShipWeaponMissileType wpn)  { return 0; }
     public float maneuverablity()     { return maneuverability; }
     public float missileDefense()     { return cloaked ? missileDefense +5 : missileDefense; }
     public float beamDefense()        { return cloaked ? beamDefense + 5 : beamDefense; }

@@ -38,6 +38,7 @@ import rotp.model.galaxy.StarSystem;
 import rotp.model.planet.Planet;
 import rotp.ui.BasePanel;
 import rotp.ui.BaseTextField;
+import rotp.ui.UserPreferences;
 import rotp.ui.main.SystemPanel;
 import rotp.ui.sprites.SystemTransportSprite;
 import rotp.util.Base;
@@ -469,6 +470,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         public void addColumn(Column c)   { columns.add(c); }
     }
     public abstract class Column implements Base {
+        public static final String YEARS_OR_TURNS = "YEARS_OR_TURNS";
         String headerKey;
         int width;
         int x, y;
@@ -499,7 +501,16 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
 
             int displayW = w;
 
-            String title = text(headerKey);
+            String title;
+            if (headerKey.equals(YEARS_OR_TURNS)) {
+                if (UserPreferences.displayYear())
+                    title = text("PLANETS_LIST_YEARS");
+                else
+                    title = text("PLANETS_LIST_TURNS");
+            }
+            else
+                title = text(headerKey);
+            
             int sw = Integer.MAX_VALUE;
             int fontSize = dataFontSize();
 

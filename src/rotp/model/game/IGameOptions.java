@@ -81,21 +81,44 @@ public interface IGameOptions {
     
     public static final String NEBULAE_NONE      = "SETUP_NEBULA_NONE";
     public static final String NEBULAE_RARE      = "SETUP_NEBULA_RARE";
+    public static final String NEBULAE_UNCOMMON  = "SETUP_NEBULA_UNCOMMON";
     public static final String NEBULAE_NORMAL    = "SETUP_NEBULA_NORMAL";
+    public static final String NEBULAE_COMMON    = "SETUP_NEBULA_COMMON";
+    public static final String NEBULAE_FREQUENT  = "SETUP_NEBULA_FREQUENT";
     
     public static final String COUNCIL_IMMEDIATE = "SETUP_COUNCIL_IMMEDIATE";
     public static final String COUNCIL_REBELS    = "SETUP_COUNCIL_REBELS";
+    public static final String COUNCIL_NONE      = "SETUP_COUNCIL_NONE";
     
+    public static final String STAR_DENSITY_LOWEST   = "SETUP_STAR_DENSITY_LOWEST";
+    public static final String STAR_DENSITY_LOWER    = "SETUP_STAR_DENSITY_LOWER";
+    public static final String STAR_DENSITY_LOW      = "SETUP_STAR_DENSITY_LOW";
     public static final String STAR_DENSITY_NORMAL   = "SETUP_STAR_DENSITY_NORMAL";
     public static final String STAR_DENSITY_HIGH     = "SETUP_STAR_DENSITY_HIGH";
     public static final String STAR_DENSITY_HIGHER   = "SETUP_STAR_DENSITY_HIGHER";
     public static final String STAR_DENSITY_HIGHEST  = "SETUP_STAR_DENSITY_HIGHEST";
+    
+    public static final String PLANET_QUALITY_POOR   = "SETUP_PLANET_QUALITY_POOR";
+    public static final String PLANET_QUALITY_MEDIOCRE  = "SETUP_PLANET_QUALITY_MEDIOCRE";
+    public static final String PLANET_QUALITY_NORMAL = "SETUP_PLANET_QUALITY_NORMAL";
+    public static final String PLANET_QUALITY_GOOD   = "SETUP_PLANET_QUALITY_GOOD";
+    public static final String PLANET_QUALITY_GREAT  = "SETUP_PLANET_QUALITY_GREAT";
+        
+    public static final String TERRAFORMING_NORMAL   = "SETUP_TERRAFORMING_NORMAL";
+    public static final String TERRAFORMING_REDUCED  = "SETUP_TERRAFORMING_REDUCED";
+    public static final String TERRAFORMING_NONE     = "SETUP_TERRAFORMING_NONE";
+
+    public static final String FUEL_RANGE_NORMAL   = "SETUP_FUEL_RANGE_NORMAL";
+    public static final String FUEL_RANGE_HIGH     = "SETUP_FUEL_RANGE_HIGH";
+    public static final String FUEL_RANGE_HIGHER   = "SETUP_FUEL_RANGE_HIGHER";
+    public static final String FUEL_RANGE_HIGHEST  = "SETUP_FUEL_RANGE_HIGHEST";
     
     public default boolean isAutoPlay()          { return false; }
     public default boolean communityAI()         { return false; }
     public default boolean usingExtendedRaces()  { return (selectedNumberOpponents()+1) > startingRaceOptions().size(); }
     public default void communityAI(boolean b)   { }
     public default int maxOpponents()            { return MAX_OPPONENTS; }
+    public default float hostileTerraformingPct() { return 1.0f; }
     public String name();
 
     public int numberStarSystems();
@@ -109,6 +132,7 @@ public interface IGameOptions {
     public String randomStarType();
     public String randomPlayerStarType(Race r);
     public String randomRaceStarType(Race r);
+    public String randomOrionStarType();
     public Planet randomPlanet(StarSystem s);
     public Planet randomPlayerPlanet(Race r, StarSystem s);
     public Planet orionPlanet(StarSystem s);
@@ -133,6 +157,9 @@ public interface IGameOptions {
     public List<String> nebulaeOptions();
     public List<String> councilWinOptions();
     public List<String> starDensityOptions();
+    public List<String> planetQualityOptions();
+    public List<String> terraformingOptions();
+    public List<String> fuelRangeOptions();
 	
     public List<String> gameDifficultyOptions();
     public int maximumOpponentsOptions();
@@ -158,6 +185,12 @@ public interface IGameOptions {
     public void selectedCouncilWinOption(String s);
     public String selectedStarDensityOption();
     public void selectedStarDensityOption(String s);
+    public String selectedPlanetQualityOption();
+    public void selectedPlanetQualityOption(String s);
+    public String selectedTerraformingOption();
+    public void selectedTerraformingOption(String s);
+    public String selectedFuelRangeOption();
+    public void selectedFuelRangeOption(String s);
 	
     public String selectedGalaxyShapeOption1();
     public void selectedGalaxyShapeOption1(String s);
@@ -187,8 +220,17 @@ public interface IGameOptions {
     public void selectedOpponentRace(int i, String s);
 
     default void copyOptions(IGameOptions opt) { }
-    default boolean immediateCouncilWin()   { return selectedCouncilWinOption().equals(COUNCIL_IMMEDIATE); }
-    
+    default boolean immediateCouncilWin()    { return selectedCouncilWinOption().equals(COUNCIL_IMMEDIATE); }
+    default boolean noGalacticCouncil()      { return selectedCouncilWinOption().equals(COUNCIL_NONE); }
+    default int fuelRangeMultiplier() {
+        switch(selectedFuelRangeOption()) {
+            case FUEL_RANGE_NORMAL: return 1;
+            case FUEL_RANGE_HIGH: return 2;
+            case FUEL_RANGE_HIGHER: return 3;
+            case FUEL_RANGE_HIGHEST: return 5;
+            default: return 1;
+        }
+    }
     default String nextGalaxySize(boolean bounded) {
         List<String> opts = galaxySizeOptions();
         int index = opts.indexOf(selectedGalaxySize())+1;
@@ -289,6 +331,21 @@ public interface IGameOptions {
     default String nextStarDensityOption() {
         List<String> opts = starDensityOptions();
         int index = opts.indexOf(selectedStarDensityOption())+1;
+        return index >= opts.size() ? opts.get(0) : opts.get(index);
+    }
+    default String nextPlanetQualityOption() {
+        List<String> opts = planetQualityOptions();
+        int index = opts.indexOf(selectedPlanetQualityOption())+1;
+        return index >= opts.size() ? opts.get(0) : opts.get(index);
+    }
+    default String nextTerraformingOption() {
+        List<String> opts = terraformingOptions();
+        int index = opts.indexOf(selectedTerraformingOption())+1;
+        return index >= opts.size() ? opts.get(0) : opts.get(index);
+    }
+    default String nextFuelRangeOption() {
+        List<String> opts = fuelRangeOptions();
+        int index = opts.indexOf(selectedFuelRangeOption())+1;
         return index >= opts.size() ? opts.get(0) : opts.get(index);
     }
     default void nextOpponent(int i) {

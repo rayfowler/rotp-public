@@ -150,7 +150,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
                 ShipFleet fl = (ShipFleet) sh;
                 if (fl.inOrbit()) {
                     StarSystem sys = fl.system();
-                    if (pl.sv.inShipRange(sys.id) && !sys.isColonized() && pl.canColonize(sys)) {
+                    if (pl.sv.inShipRange(fl.sysId()) && !sys.isColonized() && pl.canColonize(fl.sysId())) {
                         if (fl.empire().aggressiveWith(pl, sys)) {
                             expandGuardedSystems.put(sys.id, fl.empId);
                         }
@@ -884,7 +884,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
                 map().dragMap(-s40, 0);
                 return;
             case KeyEvent.VK_F:
-                displayPanel.toggleFlagColor();
+                displayPanel.toggleFlagColor(shift);
                 return;
         }
     }

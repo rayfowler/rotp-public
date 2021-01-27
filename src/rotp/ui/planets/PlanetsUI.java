@@ -528,7 +528,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             case KeyEvent.VK_5:
                 spendingPane.keyPressed(e); return;
             case KeyEvent.VK_F:
-                colonyFoundedPane.toggleFlagColor(); return;
+                colonyFoundedPane.toggleFlagColor(shift); return;
         }
         if (repaint)
             repaint();

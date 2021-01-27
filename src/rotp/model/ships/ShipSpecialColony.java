@@ -16,6 +16,7 @@
 package rotp.model.ships;
 
 import rotp.model.planet.Planet;
+import rotp.model.planet.PlanetType;
 import rotp.model.tech.TechControlEnvironment;
  
 public final class ShipSpecialColony extends ShipSpecial { 
@@ -30,5 +31,5 @@ public final class ShipSpecialColony extends ShipSpecial {
     public String designGroup()              { return "Colony"; }
     @Override
     public TechControlEnvironment tech()     { return (TechControlEnvironment) super.tech(); }
-    public boolean canColonize(Planet p)     { return tech().canColonize(p); }
+    public boolean canColonize(PlanetType pt)  { return tech().canColonize(pt); }
 }

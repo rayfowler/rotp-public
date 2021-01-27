@@ -125,7 +125,7 @@ public class MassTransportsDialog extends BasePanel {
         sourceSystems.clear();
         sourceSystems.addAll(topParent.filteredSystems);
         sourceSystems.remove(topParent.targetSystem);
-        Collections.sort(sourceSystems, StarSystem.DISTANCE_TO_TARGET_SYSTEM);
+        Collections.sort(sourceSystems, StarSystem.TRANSPORT_TIME_TO_TARGET_SYSTEM);
 
         int listSize = max(6, min(MAX_ROWS,sourceSystems.size()));
         int uiH = s100+s30+(listSize*listingUI.rowHeight());
@@ -237,7 +237,7 @@ public class MassTransportsDialog extends BasePanel {
             Column populationCol = newSystemDataColumn("PLANETS_LIST_POP", "POPULATION", 60, palette.black, StarSystem.POPULATION, RIGHT);
             Column sizeCol = newSystemDataColumn("PLANETS_LIST_SIZE", "SIZE", 60, palette.black, StarSystem.CURRENT_SIZE, RIGHT);
             Column pTypeCol = newPlanetTypeColumn("PLANETS_LIST_TYPE", "PLANET_TYPE", 90, StarSystem.PLANET_TYPE);
-            Column distCol = newSystemDataColumn("PLANETS_LIST_TURNS", "TRANSPORT_TURNS", 60, palette.black, StarSystem.DISTANCE_TO_TARGET_SYSTEM, RIGHT);
+            Column distCol = newSystemDataColumn(Column.YEARS_OR_TURNS, "TRANSPORT_TURNS", 60, palette.black, StarSystem.TRANSPORT_TIME_TO_TARGET_SYSTEM, RIGHT);
             transportsCol = newSystemSetTransportsColumn("PLANETS_LIST_TRANSPORTS", this, 999);
 
             view = new DataView();

@@ -320,10 +320,22 @@ public final class TechTree implements Base, Serializable {
             }
         }
     }
-    public int hostilityAllowed() {
+    public boolean canColonize(PlanetType pt) {
+        return pt.hostility() <= hostilityAllowed();
+    }
+    public boolean isLearningToColonize(PlanetType pt) {
+        return pt.hostility() <= researchingHostilityAllowed();
+    }
+    public boolean canLearnToColonize(PlanetType pt) {
+        return pt.hostility() <= learnableHostilityAllowed();
+    }
+    public float minColonyLevel() {
+        return topControlEnvironmentTech == null ? PlanetType.HOSTILITY_MINIMAL : topControlEnvironmentTech().environment();
+    }
+    private int hostilityAllowed() {
         return topControlEnvironmentTech != null ? topControlEnvironmentTech().hostilityAllowed() : 0;
     }
-    public int researchingHostilityAllowed() {
+    private int researchingHostilityAllowed() {
         int hostilityAllowed = hostilityAllowed();
 
         String id = planetology().currentTech();
@@ -337,7 +349,7 @@ public final class TechTree implements Base, Serializable {
         }
         return hostilityAllowed;
     }
-    public int learnableHostilityAllowed() {
+    private int learnableHostilityAllowed() {
         int hostilityAllowed = hostilityAllowed();
 
         String currId = planetology().currentTech();
@@ -598,14 +610,14 @@ public final class TechTree implements Base, Serializable {
         }
         return result;
     }
-    public List<Tech> worseTechsUnknownToCiv(TechTree tree, float maxLevel) {
-        List<Tech> r = new ArrayList<>();
+    public List<String> worseTechsUnknownToCiv(TechTree tree, float maxLevel) {
+        List<String> r = new ArrayList<>();
 
         for (TechCategory cat : category) {
             for (String id: cat.knownTechs()) {
                 Tech t = tech(id);
                 if (!t.isFutureTech() && (t.level <= maxLevel) && !tree.knows(t))
-                    r.add(t);
+                    r.add(id);
             }
         }
         return r;
@@ -725,12 +737,6 @@ public final class TechTree implements Base, Serializable {
     }
     public int baseRobotControls() {
         return topRoboticControlsTech == null ? TechRoboticControls.BASE_ROBOT_CONTROLS : topRoboticControlsTech().mark;
-    }
-    public boolean canColonize(Planet p) {
-        return topControlEnvironmentTech == null ? false : topControlEnvironmentTech().canColonize(p);
-    }
-    public float minColonyLevel() {
-        return topControlEnvironmentTech == null ? PlanetType.HOSTILITY_MINIMAL : topControlEnvironmentTech().environment();
     }
     public MissileBase newMissileBase() {
         MissileBase base = new MissileBase();

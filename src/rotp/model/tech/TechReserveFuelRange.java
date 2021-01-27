@@ -23,7 +23,7 @@ public final class TechReserveFuelRange extends Tech {
     private int range;
     public boolean unlimited = false;
 
-    public int range() { return (int) range; }
+    public int range() { return range*options().fuelRangeMultiplier(); }
 
     public TechReserveFuelRange (String typeId, int lv, int seq, boolean b, TechCategory c) {
         id(typeId, seq);
@@ -42,6 +42,10 @@ public final class TechReserveFuelRange extends Tech {
             case 0: range = 3; break;
         }
     }
+    @Override
+    public String detail()                { return text(detail, range()); }
+    @Override
+    public String brief()                 { return text(shDesc, range()); }
     @Override
     public boolean providesShipComponent()  { return true; }
     @Override

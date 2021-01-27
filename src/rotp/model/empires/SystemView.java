@@ -72,6 +72,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
     private int vArtifacts = 0;
     private boolean vStargate = false;
     private int flagColor = FLAG_NONE;
+    private boolean forwardRallies = false;
 
     private transient Empire owner;
     private transient PlanetType vPlanetType;
@@ -112,7 +113,12 @@ public class SystemView implements IMappedObject, Base, Serializable {
             system().rallySprite().clear();
         }
     }
-    public void stopRally()                 { rallySystem(system()); }
+    public boolean forwardRallies()          { return forwardRallies; }
+    public void toggleForwardRallies()       { forwardRallies = !forwardRallies; }
+    public void stopRally() { 
+        relocationSystem = null;
+        system().rallySprite().stop(); 
+    }
     public Color flagColor() { 
         switch(flagColor) {
             case FLAG_RED:    return Color.red;
@@ -275,14 +281,26 @@ public class SystemView implements IMappedObject, Base, Serializable {
     public boolean environmentFertile()     { return (planet() != null) && planet().isEnvironmentFertile(); }
     public boolean environmentGaia()        { return (planet() != null) && planet().isEnvironmentGaia(); }
 
-    public void toggleFlagColor() {
-        switch(flagColor) {
-            case FLAG_NONE:   flagColor = FLAG_WHITE; return;
-            case FLAG_WHITE:  flagColor = FLAG_RED; return;
-            case FLAG_RED:    flagColor = FLAG_BLUE; return;
-            case FLAG_BLUE:   flagColor = FLAG_GREEN; return;
-            case FLAG_GREEN:  flagColor = FLAG_YELLOW; return;
-            case FLAG_YELLOW: flagColor = FLAG_NONE; return;
+    public void toggleFlagColor(boolean reverse) {
+        if (reverse) {
+            switch(flagColor) {
+                case FLAG_NONE:   flagColor = FLAG_YELLOW; return;
+                case FLAG_WHITE:  flagColor = FLAG_NONE; return;
+                case FLAG_RED:    flagColor = FLAG_WHITE; return;
+                case FLAG_BLUE:   flagColor = FLAG_RED; return;
+                case FLAG_GREEN:  flagColor = FLAG_BLUE; return;
+                case FLAG_YELLOW: flagColor = FLAG_GREEN; return;
+            }
+        }
+        else {
+            switch(flagColor) {
+                case FLAG_NONE:   flagColor = FLAG_WHITE; return;
+                case FLAG_WHITE:  flagColor = FLAG_RED; return;
+                case FLAG_RED:    flagColor = FLAG_BLUE; return;
+                case FLAG_BLUE:   flagColor = FLAG_GREEN; return;
+                case FLAG_GREEN:  flagColor = FLAG_YELLOW; return;
+                case FLAG_YELLOW: flagColor = FLAG_NONE; return;
+            }
         }
     }
     public String resourceType() {

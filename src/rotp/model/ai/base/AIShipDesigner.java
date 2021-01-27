@@ -21,6 +21,7 @@ import rotp.model.ai.interfaces.ShipDesigner;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
+import rotp.model.planet.PlanetType;
 import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipDesignLab;
 import rotp.model.ships.ShipSpecial;
@@ -78,7 +79,11 @@ public class AIShipDesigner implements Base, ShipDesigner {
     }
     @Override
     public ShipDesign bestDesignToColonize(ShipFleet fl, StarSystem sys) {
-        // find the best colony design in the fleet
+        // in case there is more than one colony ship in this fleet,
+        // find the best one to use at this planet. And by "best" we
+        // mean the ship that we want to most get rid of by using 
+        // it to colonize the planet... pick the slowest one first.
+        // if that ties, pick the one with the worst colony module.
         ShipDesignLab lab = lab();
         ShipDesign bestDesign = null;
         for (int i=0;i<fl.num.length;i++) {
@@ -86,13 +91,14 @@ public class AIShipDesigner implements Base, ShipDesigner {
                 ShipDesign design = lab.design(i);
                 ShipSpecialColony special = design.colonySpecial();
                 if (special != null) {
+                    PlanetType pt = sys.planet().type();
                     if (empire.race().ignoresPlanetEnvironment()
-                    || (special.tech().canColonize(sys.planet())) ) {
+                    || (empire.canColonize(pt) && special.tech().canColonize(pt)) ) {
                         if ((bestDesign == null)
-                        || (design.engine().warp() > bestDesign.engine().warp()))
+                        || (design.engine().warp() < bestDesign.engine().warp()))
                             bestDesign = design;
                         else if (design.engine().warp() == bestDesign.engine().warp()) {
-                            if (special.tech().environment() > bestDesign.colonySpecial().tech().environment())
+                            if (special.tech().environment() < bestDesign.colonySpecial().tech().environment())
                                 bestDesign = design;
                         }
                     }

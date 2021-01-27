@@ -362,8 +362,8 @@ public class Transport implements Base, Ship, Sprite, Serializable {
         int w = img.getWidth();
         int h = img.getHeight();
 
-        int sW = scaled(w);
-        int sH = scaled(h);
+        int sW = w;
+        int sH = h;
 
 
         if ((destination() == null)
@@ -377,12 +377,12 @@ public class Transport implements Base, Ship, Sprite, Serializable {
         int s20 = BasePanel.s20;
         int cnr = BasePanel.s10;
 
-        selectBox().setBounds(x-s10,y-s10,sW+s20,sH+s20);
+        selectBox().setBounds(x-s5,y-s5,sW+s10,sH+s10);
 
         if (map.parent().isClicked(this))
-            drawSelection(g2, map, this, x-s5, y-s5, w+s20, h+s10, cnr);
+            drawSelection(g2, map, this, x-s5, y-s5, sW+s10, sH+s10, cnr);
         else if (map.parent().isHovering(this))
-            drawHovering(g2, map, this, x-s5, y-s5, w+s20, h+s10, cnr);
+            drawHovering(g2, map, this, x-s5, y-s5, sW+s10, sH+s10, cnr);
 
         if (hoveringDest != null) {
             FlightPathSprite path = pathSpriteTo(starSystem());

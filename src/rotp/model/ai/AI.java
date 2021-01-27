@@ -203,7 +203,7 @@ public class AI implements Base {
 
         if (empire.sv.isColonized(sys.id))
             return;
-        if (!empire.canColonize(sys.planet()))
+        if (!empire.canColonize(sys.planet().type()))
             return;
 
         ShipDesign bestDesign = shipDesigner().bestDesignToColonize(fl, sys);
@@ -221,7 +221,19 @@ public class AI implements Base {
     public boolean promptForBombardment(StarSystem sys, ShipFleet fl) {
         // if player, prompt for decision to bomb instead of deciding here
         if (empire.isPlayerControlled()) {
-            BombardSystemNotification.create(id(sys), fl);
+            boolean autoBomb = false;
+            // user preference auto-bombard set to always?
+            if (UserPreferences.autoBombardYes())
+                autoBomb = true;
+            // auto-bombard set to whenever at war?
+            boolean atWar = empire.atWarWith(sys.empId());
+            if (UserPreferences.autoBombardWar() && atWar) 
+                autoBomb = true;
+            // auto-bombard set to whenever at war and not invading?
+            int transports = empire.transportsInTransit(sys);
+            if (UserPreferences.autoBombardInvading() && atWar && (transports == 0))
+                autoBomb = true;
+            BombardSystemNotification.create(id(sys), fl, autoBomb);
             return false;
         }
         
@@ -234,16 +246,15 @@ public class AI implements Base {
         if (popLoss < (sysPop * .9))
             return true;
 
-        Empire fleetEmp = fl.empire();
         // determine number of troops in transit
-        int transports = fleetEmp.transportsInTransit(sys);
+        int transports = empire.transportsInTransit(sys);
 
         // if none in transit, then bombs away!
         if (transports < 1)
             return true;
 
         // determine population troop loss in combat
-        float killRatio = fleetEmp.troopKillRatio(sys);
+        float killRatio = empire.troopKillRatio(sys);
 
         // if troops in transit CANNOT capture planet and will die anyway, then bombs away!
         if ((transports * killRatio) < sysPop)

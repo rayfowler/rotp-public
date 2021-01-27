@@ -113,7 +113,7 @@ public class ManageSpiesUI extends BasePanel implements MouseListener, MouseWhee
             List<EmpireView> allContacts = player().contacts();
             empireViews.clear();
             for (EmpireView v: allContacts) {
-                if (!v.embassy().unity())
+                if (!v.embassy().unity() && v.inEconomicRange())
                     empireViews.add(v);
             }
             Collections.sort(empireViews, EmpireView.BY_RACENAME);

@@ -61,6 +61,9 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private boolean disableRandomEvents = false;
     private boolean disableColonizePrompt = false; // unused
     private String selectedStarDensityOption;
+    private String selectedPlanetQualityOption;
+    private String selectedTerraformingOption;
+    private String selectedFuelRangeOption;
 
     private transient GalaxyShape galaxyShape;
 
@@ -151,6 +154,18 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     @Override
     public void selectedStarDensityOption(String s) { selectedStarDensityOption = s; }
     @Override
+    public String selectedPlanetQualityOption()       { return selectedPlanetQualityOption == null ? PLANET_QUALITY_NORMAL : selectedPlanetQualityOption; }
+    @Override
+    public void selectedPlanetQualityOption(String s) { selectedPlanetQualityOption = s; }
+    @Override
+    public String selectedTerraformingOption()       { return selectedTerraformingOption == null ? TERRAFORMING_NORMAL : selectedTerraformingOption; }
+    @Override
+    public void selectedTerraformingOption(String s) { selectedTerraformingOption = s; }
+    @Override
+    public String selectedFuelRangeOption()       { return selectedFuelRangeOption == null ? FUEL_RANGE_NORMAL : selectedFuelRangeOption; }
+    @Override
+    public void selectedFuelRangeOption(String s) { selectedFuelRangeOption = s; }
+    @Override
     public int selectedNumberOpponents()         { return selectedNumberOpponents; }
     @Override
     public void selectedNumberOpponents(int i)   { selectedNumberOpponents = i; generateGalaxy(); }
@@ -211,6 +226,8 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedNebulaeOption = opt.selectedNebulaeOption;
         selectedCouncilWinOption = opt.selectedCouncilWinOption;
         selectedStarDensityOption = opt.selectedStarDensityOption;
+        selectedPlanetQualityOption = opt.selectedPlanetQualityOption;
+        selectedTerraformingOption = opt.selectedTerraformingOption;
 
         if (opt.player != null) 
             player.copy(opt.player);
@@ -285,8 +302,12 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
             return 0;
         
         float freq = 1.0f;
-        if (selectedNebulaeOption().equals(NEBULAE_RARE))
-            freq = 0.25f;
+        switch(selectedNebulaeOption()) {
+            case NEBULAE_RARE:     freq = 0.25f; break;
+            case NEBULAE_UNCOMMON: freq = 0.5f; break;
+            case NEBULAE_COMMON:   freq = 2.0f; break;
+            case NEBULAE_FREQUENT: freq = 4.0f; break;
+        }
         // MOO Strategy Guide, Table 3-3, p.51
         /*
         switch (selectedGalaxySize()) {
@@ -311,6 +332,14 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
             return 1;
         else 
             return min(10,sqrt(nStars/200f));
+    }
+    @Override
+    public float hostileTerraformingPct() { 
+        switch(selectedTerraformingOption()) {
+            case TERRAFORMING_NONE:  return 0.0f;
+            case TERRAFORMING_REDUCED: return 0.5f;
+            default:  return 1.0f;
+        }
     }
     @Override
     public float researchCostBase(int techLevel) {
@@ -395,7 +424,6 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     @Override
     public Planet randomPlanet(StarSystem s) {
         Planet p = new Planet(s);
-        float r = random();
         String[] planetTypes = { "PLANET_NONE", "PLANET_RADIATED", "PLANET_TOXIC", "PLANET_INFERNO",
                         "PLANET_DEAD", "PLANET_TUNDRA", "PLANET_BARREN", "PLANET_MINIMAL", "PLANET_DESERT",
                         "PLANET_STEPPE", "PLANET_ARID", "PLANET_OCEAN", "PLANET_JUNGLE", "PLANET_TERRAN" };
@@ -421,6 +449,15 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
                 pcts = redPcts; break;
         }
 
+        float r = random();
+        switch(selectedPlanetQualityOption()) {
+            case PLANET_QUALITY_POOR:     r = random() * 0.8f; break;
+            case PLANET_QUALITY_MEDIOCRE: r = random() * 0.9f; break;
+            case PLANET_QUALITY_NORMAL:   r = random(); break;
+            case PLANET_QUALITY_GOOD:     r = 0.1f + (random() * 0.9f); break;
+            case PLANET_QUALITY_GREAT:    r = 0.2f + (random() * 0.8f); break;
+        }
+        
         for (int i=0;i<pcts.length;i++) {
             if (r <= pcts[i]) {
                 typeIndex = i;
@@ -442,6 +479,15 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     public String randomPlayerStarType(Race r)     { return StarType.YELLOW; }
     @Override
     public String randomRaceStarType(Race r)       { 
+        List<String> types = new ArrayList<>();
+        types.add(StarType.RED);
+        types.add(StarType.ORANGE);
+        types.add(StarType.YELLOW);
+
+        return random(types); 
+    }
+    @Override
+    public String randomOrionStarType()       { 
         List<String> types = new ArrayList<>();
         types.add(StarType.RED);
         types.add(StarType.ORANGE);
@@ -569,7 +615,10 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         List<String> list = new ArrayList<>();
         list.add(NEBULAE_NONE);
         list.add(NEBULAE_RARE);
+        list.add(NEBULAE_UNCOMMON);
         list.add(NEBULAE_NORMAL);
+        list.add(NEBULAE_COMMON);
+        list.add(NEBULAE_FREQUENT);
         return list;
     }
     @Override
@@ -577,15 +626,46 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         List<String> list = new ArrayList<>();
         list.add(COUNCIL_IMMEDIATE);
         list.add(COUNCIL_REBELS);
+        list.add(COUNCIL_NONE);
         return list;
     }
     @Override
     public List<String> starDensityOptions() {
         List<String> list = new ArrayList<>();
+        list.add(STAR_DENSITY_LOWEST);
+        list.add(STAR_DENSITY_LOWER);
+        list.add(STAR_DENSITY_LOW);
         list.add(STAR_DENSITY_NORMAL);
         list.add(STAR_DENSITY_HIGH);
         list.add(STAR_DENSITY_HIGHER);
         list.add(STAR_DENSITY_HIGHEST);
+        return list;
+    }
+    @Override
+    public List<String> planetQualityOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(PLANET_QUALITY_POOR);
+        list.add(PLANET_QUALITY_MEDIOCRE);
+        list.add(PLANET_QUALITY_NORMAL);
+        list.add(PLANET_QUALITY_GOOD);
+        list.add(PLANET_QUALITY_GREAT);
+        return list;
+    }
+    @Override
+    public List<String> terraformingOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(TERRAFORMING_NORMAL);
+        list.add(TERRAFORMING_REDUCED);
+        list.add(TERRAFORMING_NONE);
+        return list;
+    }
+    @Override
+    public List<String> fuelRangeOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(FUEL_RANGE_NORMAL);
+        list.add(FUEL_RANGE_HIGH);
+        list.add(FUEL_RANGE_HIGHER);
+        list.add(FUEL_RANGE_HIGHEST);
         return list;
     }
     @Override

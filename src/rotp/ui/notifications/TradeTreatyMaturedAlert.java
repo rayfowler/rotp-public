@@ -13,19 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package rotp.model.empires;
+package rotp.ui.notifications;
 
-import rotp.util.Base;
+import rotp.model.game.GameSession;
 
-public class TreatyAlliance extends DiplomaticTreaty implements Base {
-    private static final long serialVersionUID = 1L;
-    private int standing = 50;
-    public TreatyAlliance(Empire e1, Empire e2) {
-        super(e1,e2,"RACES_ALLY");
-        standing = 50;
-    }    
+public class TradeTreatyMaturedAlert extends GameAlert {
+    private final int empId;
+    private final int amt;
+     public static void create(int id, int tradeAmt) {
+        GameSession.instance().addAlert(new TradeTreatyMaturedAlert(id, tradeAmt));
+    }
     @Override
-    public boolean isAlliance()               { return true; }
-    @Override
-    public int listOrder()                      { return 3; }
+    public String description() {
+        String name = galaxy().empire(empId).name();
+        return text("MAIN_ALERT_TRADE_MATURED", name, str(amt));
+    }
+    private TradeTreatyMaturedAlert(int id, int tradeAmt) {
+        empId = id;
+        amt = tradeAmt;
+    }
 }

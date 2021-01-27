@@ -25,7 +25,7 @@ public class BombardSystemNotification implements TurnNotification, Base {
     private final ShipFleet fleet;
     private final int sysId;
 
-    public static void create(int systemId, ShipFleet fl) {
+    public static void create(int systemId, ShipFleet fl, boolean autoBomb) {
         Empire pl = GameSession.instance().player();
         int sysId = systemId;
         // sanity check to avoid unallowable bombings
@@ -47,7 +47,7 @@ public class BombardSystemNotification implements TurnNotification, Base {
         emp1.sv.refreshFullScan(sysId);
         Empire emp2 = emp1.sv.empire(sysId);
 
-        if (emp1.isPlayerControlled())
+        if (emp1.isPlayerControlled() && !autoBomb)
             RotPUI.instance().promptForBombardment(sysId, fl);
         else if ((emp2 != null) && emp2.isPlayerControlled())
             RotPUI.instance().showBombardmentNotice(sysId, fl);

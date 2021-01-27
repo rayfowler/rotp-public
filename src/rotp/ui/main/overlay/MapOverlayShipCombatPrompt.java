@@ -83,8 +83,8 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
     private StarSystem starSystem() {
         return galaxy().system(sysId);
     }
-    private void toggleFlagColor() {
-        player().sv.view(sysId).toggleFlagColor();
+    private void toggleFlagColor(boolean rightClick) {
+        player().sv.view(sysId).toggleFlagColor(rightClick);
         parent.repaint();
     }
     @Override
@@ -339,6 +339,7 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
     }
     @Override
     public boolean handleKeyPress(KeyEvent e) {
+        boolean shift = e.isShiftDown();
         switch(e.getKeyCode()) {
             case KeyEvent.VK_ESCAPE:
             case KeyEvent.VK_E:
@@ -351,7 +352,7 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
                 startCombat(ShipBattleUI.RETREAT_ALL);
                 break;
             case KeyEvent.VK_F:
-                toggleFlagColor();
+                toggleFlagColor(shift);
                 break;
             default:
                 misClick();
@@ -665,7 +666,7 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
         }
         @Override
         public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
-            parent.toggleFlagColor();
+            parent.toggleFlagColor(rightClick);
         };
     }
 }

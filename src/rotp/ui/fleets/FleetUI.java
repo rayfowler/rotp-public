@@ -295,33 +295,61 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         repaint();
     }
     @Override
-    public boolean dragSelect(int x0, int y0, int x1, int y1) {
+    public boolean dragSelect(int x0, int y0, int x1, int y1, boolean shift) {
         Rectangle box = new Rectangle(x0,y0,x1-x0,y1-y0);
-        boolean added = false;
-        List<StarSystem> allSystems = new ArrayList<>(player().allColonizedSystems());
-        allSystems.removeAll(selectedSystems);
-        for (StarSystem s: allSystems) {
-            int mapX = s.mapX(map);    
-            int mapY = s.mapY(map);
-            if (box.contains(mapX,mapY)) {
-                selectedSystems.add(s);
-                filteredSystems.add(s);
-                added = true;
-            }
-        }            
-
-        List<ShipFleet> allFleets = player().assignableFleets();
-        allFleets.removeAll(selectedFleets);
-        for (ShipFleet fl: allFleets) {
-            int mapX = fl.mapX(map);   
-            int mapY = fl.mapY(map);
-            if (box.contains(mapX,mapY)) {
-                selectedFleets.add(fl);
-                filteredFleets.add(fl);
-                added = true;
+        boolean updated = false;
+        if (shift) {
+            List<StarSystem> allSystems = new ArrayList<>(selectedSystems);
+            for (StarSystem s: allSystems) {
+                int mapX = s.mapX(map);    
+                int mapY = s.mapY(map);
+                if (box.contains(mapX,mapY)) {
+                    selectedSystems.remove(s);
+                    filteredSystems.remove(s);
+                    updated = true;
+                }
             }
         }
-         return added; 
+        else {
+            List<StarSystem> allSystems = new ArrayList<>(player().allColonizedSystems());
+            allSystems.removeAll(selectedSystems);
+            for (StarSystem s: allSystems) {
+                int mapX = s.mapX(map);    
+                int mapY = s.mapY(map);
+                if (box.contains(mapX,mapY)) {
+                    selectedSystems.add(s);
+                    filteredSystems.add(s);
+                    updated = true;
+                }
+            }        
+        }
+
+        if (shift) {
+            List<ShipFleet> allFleets = new ArrayList<>(selectedFleets);
+            for (ShipFleet fl: allFleets) {
+                int mapX = fl.mapX(map);   
+                int mapY = fl.mapY(map);
+                if (box.contains(mapX,mapY)) {
+                    selectedFleets.remove(fl);
+                    filteredFleets.remove(fl);
+                    updated = true;
+                }
+            }
+        }
+        else {
+            List<ShipFleet> allFleets = player().assignableFleets();
+            allFleets.removeAll(selectedFleets);
+            for (ShipFleet fl: allFleets) {
+                int mapX = fl.mapX(map);   
+                int mapY = fl.mapY(map);
+                if (box.contains(mapX,mapY)) {
+                    selectedFleets.add(fl);
+                    filteredFleets.add(fl);
+                    updated = true;
+                }
+            }
+        }
+         return updated; 
     }
     public void removeDisbandedFleets() {
         selectedFleets.removeIf(fl->fl.isEmpty());
@@ -537,7 +565,7 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
     public GalaxyMapPanel map()         { return map; }
     private void initModel() {
         int w, h;
-        if (UserPreferences.fullScreen()) {
+        if (!UserPreferences.windowed()) {
             Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
             w = size.width;
             h = size.height;
@@ -790,7 +818,14 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         return false;
     }
     @Override
-    public Sprite clickedSprite()      { return (Sprite) sessionVar("FLEETUI_CLICKED_SPRITE"); }
+    public Sprite clickedSprite()      { 
+        if (filteredSystems.size() == 1) 
+            return filteredSystems.get(0);
+        else if (filteredSystems.isEmpty() && (filteredFleets.size() == 1))
+            return filteredFleets.get(0);
+        else
+            return null; 
+    }
     @Override
     public void clickedSprite(Sprite s) {
         sessionVar("FLEETUI_CLICKED_SPRITE", s);
@@ -1245,15 +1280,16 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
             switch(queryType) {
                 case 0: return text("FLEETS_IS_ULTRA_RICH");
                 case 1: return text("FLEETS_IS_RICH");
-                case 2: return text("FLEETS_IS_POOR");
-                case 3:
+                case 2: return text("FLEETS_IS_STANDARD");
+                case 3: return text("FLEETS_IS_POOR");
+                case 4:
                 default: return text("FLEETS_IS_ULTRA_POOR");
             }
         }
         @Override
         public boolean clickText() {
             queryType++;
-            if (queryType > 3)
+            if (queryType > 4)
                 queryType = 0;
             return true;
         }
@@ -1267,33 +1303,47 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
             switch(queryType) {
                 case 0: return pl.sv.isUltraRich(sys.id);
                 case 1: return pl.sv.isRich(sys.id) || pl.sv.isUltraRich(sys.id);
-                case 2: return pl.sv.isPoor(sys.id) || pl.sv.isUltraPoor(sys.id);
-                case 3:
+                case 2: return pl.sv.isResourceNormal(sys.id);
+                case 3: return pl.sv.isPoor(sys.id) || pl.sv.isUltraPoor(sys.id);
+                case 4:
                 default: return pl.sv.isUltraPoor(sys.id);
             }
         }
     }
     public class FleetHasOrdersFilter extends QueryFilter {
-        boolean negated = false;
+        final int IN_ORBIT = 0;
+        final int IN_TRANSIT = 1;
+        final int RALLYING = 2;
+        int status = IN_ORBIT;
         @Override
         protected boolean hasAlternateText()          { return true; }
         @Override
         public String text() {
-            return negated ? text("FLEETS_HAS_NO_ORDERS") : text("FLEETS_HAS_ORDERS");
+            switch(status) {
+                case IN_ORBIT: return text("FLEETS_HAS_NO_ORDERS");
+                case IN_TRANSIT: return text("FLEETS_HAS_ORDERS");
+                case RALLYING: return text("FLEETS_IS_RALLYING");
+            }
+            return text("FLEETS_HAS_NO_ORDERS");
         }
         @Override
         public boolean clickText() {
-            negated = !negated;
+            status++;
+            if (status > RALLYING)
+                status = IN_ORBIT;
             return true;
         }
         @Override
         public boolean matchesFleet(ShipFleet fl) {
             if (!checked)
                 return true;
-            if (negated)
-                return !fl.inTransit();
-            else
-                return fl.inTransit();
+            switch(status) {
+                case IN_ORBIT: return !fl.inTransit();
+                case IN_TRANSIT: return fl.inTransit();
+                case RALLYING: return fl.isRallied();
+            }
+                
+            return true;
         }
     }
 }

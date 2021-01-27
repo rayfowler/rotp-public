@@ -17,6 +17,7 @@ package rotp.model.empires;
 
 import java.io.Serializable;
 import rotp.model.incidents.TradeIncomeIncident;
+import rotp.ui.notifications.TradeTreatyMaturedAlert;
 import rotp.util.Base;
 
 public class TradeRoute implements Base, Serializable {
@@ -44,7 +45,12 @@ public class TradeRoute implements Base, Serializable {
         float pct = (roll(1,200) + view.embassy().relations() + 25) / 6000.0f;
         civProd = view.empire().totalPlanetaryProduction();
         ownerProd = view.owner().totalPlanetaryProduction();
-        profit = Math.min(maxProfit(), profit + (pct * level) );
+        float prevProfit = profit;
+        profit = min(maxProfit(), profit + (pct * level) );
+        if ((profit == level) && (profit > prevProfit)) {
+            if (view.owner().isPlayer())
+               TradeTreatyMaturedAlert.create(view.empId(), level);
+        }
         if (active())
             TradeIncomeIncident.create(view, profit, profit/ownerProd);
         log(view+" Trade level: ", str(level), "  pct: ", str(pct), "  profit: ", str(profit));

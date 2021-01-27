@@ -18,6 +18,7 @@ package rotp.ui.main.overlay;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.util.List;
+import javax.swing.SwingUtilities;
 import rotp.model.Sprite;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
@@ -56,6 +57,7 @@ public class MapOverlayNone extends MapOverlay {
                 parent.displayPanel().keyPressed(e);
             return true;
         }
+        boolean shift = e.isShiftDown();
         int s40 = BasePanel.s40;
         List<StarSystem> systems;
         List<ShipFleet> fleets;
@@ -108,7 +110,7 @@ public class MapOverlayNone extends MapOverlay {
                     Sprite spr = parent.displayPanel().spriteToDisplay();
                     if (spr instanceof StarSystem) {
                         StarSystem sys = (StarSystem) spr;
-                        player().sv.view(sys.id).toggleFlagColor();
+                        player().sv.view(sys.id).toggleFlagColor(shift);
                         break;
                     }
                 }

@@ -135,7 +135,7 @@ public class AICGeneral implements Base, General {
         if (!empire.sv.inShipRange(sysId))  return 0.0f;
         if (!empire.sv.isScouted(sysId))    return 0.0f;
         if (!empire.sv.isColonized(sysId))  return 0.0f;
-        if (!empire.canColonize(sys.planet()))  return 0.0f;
+        if (!empire.canColonize(sys.planet().type()))  return 0.0f;
 		
 		// increase invasion priority with planet size and factory count
         float pr = empire.sv.currentSize(sysId) + empire.sv.factories(sysId)/20.0f;
