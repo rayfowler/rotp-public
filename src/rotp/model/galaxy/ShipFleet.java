@@ -84,6 +84,12 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
     public boolean hasDisplayPanel()       { return true; }
     public int rallySysId()             { return rallySysId; }
     public void rallySysId(int i)       { rallySysId = i; }
+    public void toggleRally() {
+        if (rallySysId == StarSystem.NULL_ID)
+            rallySysId = destSysId;
+        else
+            rallySysId = StarSystem.NULL_ID;
+    }
     public Empire empire()              { return galaxy().empire(empId); }
     @Override
     public boolean retreating()         { return retreating; }

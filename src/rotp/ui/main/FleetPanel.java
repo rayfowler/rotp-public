@@ -601,6 +601,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         private final Color buttonBackC = new Color(30,30,30);
         private int hoverStackNum = -1;
         private Shape hoverBox, hoverBox2;
+        private final Rectangle rallyBox = new Rectangle();
         private final Rectangle retreatBox = new Rectangle();
         private final Rectangle shipBox[] = new Rectangle[ShipDesignLab.MAX_DESIGNS];
         private final Polygon minBox[] = new Polygon[ShipDesignLab.MAX_DESIGNS];
@@ -683,6 +684,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             String text = null;
             String nebulaText = null;
             String retreatText = null;
+            String rallyText = null;
             if (displayFl.canBeSentBy(player())) {
                 if (!displayFl.canSendTo(id(dest))) {
                     if (dest == null) {
@@ -690,6 +692,10 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                         if (currDest == null)
                             text = "";
                         else {
+                            if (displayFl.empire().isPlayer()) {
+                                retreatText = text("MAIN_FLEET_AUTO_RETREAT");
+                                rallyText = text("MAIN_FLEET_SET_RALLY");
+                            }
                             int dist = displayFl.travelTurns(currDest);
                             String destName = player().sv.name(currDest.id);
                             if (destName.isEmpty())
@@ -708,6 +714,10 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                     }
                 }
                 else if (displayFl.isDeployed() || displayFl.isInTransit()) {
+                    if (displayFl.empire().isPlayer()) {
+                        retreatText = text("MAIN_FLEET_AUTO_RETREAT");
+                        rallyText = text("MAIN_FLEET_SET_RALLY");
+                    }
                     dest = dest == null ? displayFl.destination() : dest;
                     int dist = displayFl.travelTurns(dest);
                     String destName = player().sv.name(dest.id);
@@ -739,8 +749,10 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 }
             }
             else if (displayFl.isInTransit() || displayFl.isDeployed()) {
-                if (displayFl.empire().isPlayer())
+                if (displayFl.empire().isPlayer()) {
                     retreatText = text("MAIN_FLEET_AUTO_RETREAT");
+                    rallyText = text("MAIN_FLEET_SET_RALLY");
+                }
                 if (player().knowETA(displayFl)) {
                     int dist = displayFl.travelTurnsRemaining();
                     if (displayFl.hasDestination()) {
@@ -765,8 +777,31 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                     y0 += lineH;
                 }
             }
-            if (retreatText != null) {
+            if (rallyText != null) {
                 y0 += lineH/2;
+                int checkW = s12;
+                int checkX = x0;
+                rallyBox.setBounds(checkX, y0-checkW, checkW, checkW);
+                Stroke prev = g.getStroke();
+                g.setStroke(stroke2);
+                g.setColor(MainUI.shadeBorderC());
+                g.fill(rallyBox);
+                if (hoverBox == rallyBox) {
+                    g.setColor(Color.yellow);
+                    g.draw(rallyBox);
+                }
+                if (displayFl.isRallied()) {
+                    g.setColor(SystemPanel.whiteText);
+                    g.drawLine(checkX-s1, y0-s6, checkX+s3, y0-s3);
+                    g.drawLine(checkX+s3, y0-s3, checkX+checkW, y0-s12);
+                }
+                g.setStroke(prev);
+                g.setColor(SystemPanel.blackText);
+                int indent = checkW+s6;
+                g.drawString(rallyText, x0+indent, y0);
+            }
+            if (retreatText != null) {
+                y0 += lineH;
                 int checkW = s12;
                 int checkX = x0;
                 retreatBox.setBounds(checkX, y0-checkW, checkW, checkW);
@@ -1031,9 +1066,10 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             hoverBox = null;
             hoverBox2 = null;
             
-            if (retreatBox.contains(x,y)) {
+            if (retreatBox.contains(x,y)) 
                 hoverBox = retreatBox;
-            }
+            else if (rallyBox.contains(x,y)) 
+                hoverBox = rallyBox;
             hoverStackNum = -1;
             for (int i=0;i<shipBox.length;i++) {
                 if (shipBox[i].contains(x,y)) {
@@ -1080,6 +1116,12 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             
             if (retreatBox.contains(x,y)) {
                 fl.toggleRetreatOnArrival();
+                softClick();
+                repaint();
+                return;
+            }
+            if (rallyBox.contains(x,y)) {
+                fl.toggleRally();
                 softClick();
                 repaint();
                 return;
