@@ -38,10 +38,14 @@ public class AITreasurer implements Base, Treasurer {
     public void allocateReserve() {
         List<StarSystem> allSystems = empire.allColonizedSystems();
         List<StarSystem> poorSystems = new ArrayList<>();
+        List<StarSystem> richSystems = new ArrayList<>(); // modnar: make richSystem list
         
         // remove all systems in rebellion and poor/ultra-poor. None of these
         // systems will receive reserve. However poor/ultra-poor will be added
         // back in so we can collect reserve from them.
+        // modnar: (???) poor/ultra-poor should be getting reserve to build factories
+        // they are terrible to collect reserve from...
+        // instead remove rich/ultra-rich from receiving reserves
         List<StarSystem> systems = new ArrayList<>(allSystems);
         for (StarSystem sys: allSystems) {
             if (sys.colony().inRebellion())
@@ -49,8 +53,11 @@ public class AITreasurer implements Base, Treasurer {
             else {
                 Planet pl = sys.planet();
                 if (pl.isResourcePoor() || pl.isResourceUltraPoor()) {
+                    poorSystems.add(sys); // modnar: still make poorSystems list
+                }
+                if (pl.isResourceRich() || pl.isResourceUltraRich()) {
                     systems.remove(sys);
-                    poorSystems.add(sys);
+                    richSystems.add(sys); // modnar: make richSystems list
                 }
             }
         }
@@ -119,29 +126,30 @@ public class AITreasurer implements Base, Treasurer {
         
         // now we need to add to the empire reserve from everyone else, large to small
         // check for poor first, then normal. If we need reserve then for each planet, 
-        // collect 1/4th of the amount we spend on research.
+        // modnar: reduce reserve collection to 1/6th of research (previous 1/4)
+        // check for rich first
         float totalProd = empire.totalPlanetaryProduction();
-        float desiredRsv = totalProd * 0.2f;
+        float desiredRsv = totalProd * 0.1f; // modnar: reduce reserve collection, less is more efficient in general
         int maxAlloc = ColonySpendingCategory.MAX_TICKS; 
         if (empire.totalReserve() < desiredRsv) {
-            systems.addAll(poorSystems);
+            systems.addAll(richSystems); // modnar: check for richSystems first to collect reserve
             Collections.reverse(systems);
             for (StarSystem sys : systems) {
                 Colony col = sys.colony();
                 int res = col.research().allocation();
                 if (res > 0) {
                     Planet pl = sys.planet();
-                    if (pl.isResourcePoor() || pl.isResourceUltraPoor()) {
+                    if (pl.isResourceRich() || pl.isResourceUltraRich()) {
                         if (col.population() >= pl.maxSize()) {
                             int eco = col.ecology().allocation();
-                            int ecoAdj = min(res, maxAlloc - eco)/4;
+                            int ecoAdj = min(res, maxAlloc - eco); // modnar: collect all we can from rich/ultra-rich
                             col.research().adjustValue(-ecoAdj);
                             col.ecology().adjustValue(ecoAdj);                            
                         }
                     } else if (!pl.isArtifact()) {
                         if (col.industry().factories() >= col.industry().maxFactories()) {
                             int ind = col.industry().allocation();
-                            int indAdj = min(res, maxAlloc - ind)/4;
+                            int indAdj = min(res, maxAlloc - ind)/6; // modnar: reduce to 1/6th
                             col.research().adjustValue(-indAdj);
                             col.industry().adjustValue(indAdj);                            
                         }                        

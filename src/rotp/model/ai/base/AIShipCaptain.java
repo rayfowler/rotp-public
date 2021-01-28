@@ -331,9 +331,11 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
         
         // if stack is pacted with colony and doesn't want war, then retreat
+        // modnar: change condition to only "doesn't want war"
         if (combat().results().colonyStack != null) {
             EmpireView cv = currStack.empire.viewForEmpire(combat().results().colonyStack.empire);
-            if ((cv != null) && cv.embassy().pact() && !cv.embassy().wantWar())  
+            //if ((cv != null) && cv.embassy().pact() && !cv.embassy().wantWar())
+            if ((cv != null) && !cv.embassy().wantWar())  
                 return true;
         }
 
@@ -396,7 +398,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         for (CombatStack st1 : friends) {
             float maxKillValue = -1;
             for (CombatStack st2: foes) {
-                float killPct = min(100,st1.estimatedKillPct(st2));
+                float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
                 float killValue = killPct*st2.num*st2.designCost();
 //                log(st1.name()+"="+killPct+"    "+st2.name());
                 if (killValue > maxKillValue)
@@ -407,7 +409,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
        for (CombatStack st1 : foes) {
             float maxKillValue = -1;
             for (CombatStack st2: friends) {
-                float killPct = min(100,st1.estimatedKillPct(st2));
+                float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
                 float killValue = killPct*st2.num*st2.designCost();
 //                log(st1.name()+"="+killPct+"    "+st2.name());
                 if (killValue > maxKillValue)
@@ -422,7 +424,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         else {
             float retreatRatio = stack.empire.leader().retreatRatio(combat().system().empire());
             log("retreat ratio: "+retreatRatio+"   enemyKillValue:"+enemyKills+"  allyKillValue:"+allyKills);
-            return (enemyKills / allyKills) > retreatRatio;
+            return ((enemyKills / allyKills) > retreatRatio/1.2f); // modnar: adjust AI to accept less losses, more likely to retreat
         }
     }
     @Override
