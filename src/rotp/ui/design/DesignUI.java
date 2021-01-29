@@ -1967,7 +1967,7 @@ public class DesignUI extends BasePanel {
                 g.setColor(SystemPanel.whiteText);
             }
             else {
-                List<ShipManeuver> comps = player().shipLab().maneuvers();
+                 List<ShipManeuver> comps = player().shipLab().availableManeuversForDesign(shipDesign());
                 ShipManeuver first = comps.get(0);
                 ShipManeuver last = comps.get(comps.size()-1);
                 maneuverFieldArea.setBounds(boxX, boxY, boxW, boxH);
@@ -2350,10 +2350,15 @@ public class DesignUI extends BasePanel {
         }
         private void shipEngineDecrement() {
             ShipDesign des =  shipDesign();
-            List<ShipEngine> engines = player().shipLab().engines();
+            ShipDesignLab lab = player().shipLab();
+            List<ShipEngine> engines = lab.engines();
             int index = engines.indexOf(des.engine());
             if (index > 0) {
                 des.engine(engines.get(index - 1));
+                // if we decrement engine, our selected maneuver may no longer be valid
+                List<ShipManeuver> manv = lab.availableManeuversForDesign(des);
+                if (!manv.contains(des.maneuver()))
+                    des.maneuver(manv.get(manv.size()-1));
                 repaint();
             }
         }
@@ -2465,7 +2470,7 @@ public class DesignUI extends BasePanel {
         }
         private void shipManeuverDecrement() {
             ShipDesign des =  shipDesign();
-            List<ShipManeuver> maneuvers = player().shipLab().maneuvers();
+            List<ShipManeuver> maneuvers = player().shipLab().availableManeuversForDesign(des);
             int index = maneuvers.indexOf(des.maneuver());
             if (index > 0) {
                 des.maneuver(maneuvers.get(index - 1));
@@ -2474,7 +2479,7 @@ public class DesignUI extends BasePanel {
         }
         private void shipManeuverIncrement() {
             ShipDesign des =  shipDesign();
-            List<ShipManeuver> maneuvers = player().shipLab().maneuvers();
+            List<ShipManeuver> maneuvers = player().shipLab().availableManeuversForDesign(des);
             int index = maneuvers.indexOf(des.maneuver());
             if (index < (maneuvers.size()-1)) {
                 des.maneuver(maneuvers.get(index + 1));

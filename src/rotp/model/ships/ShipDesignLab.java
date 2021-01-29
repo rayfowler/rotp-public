@@ -472,6 +472,15 @@ public class ShipDesignLab implements Base, Serializable {
         }
         return false;
     }
+    public List<ShipManeuver> availableManeuversForDesign(ShipDesign d) {
+        List<ShipManeuver> manvList = new ArrayList<>();
+        int engWarpLevel = d.engine().baseWarp();
+        for (ShipManeuver manv: maneuver) {
+            if (manv.level() <= engWarpLevel)
+                manvList.add(manv);
+        }
+        return manvList;
+    }
     public void addWeapon(ShipWeapon c) {
         weapons().add(c);
         Collections.sort(weapons(),ShipComponent.SELECTION_ORDER);
