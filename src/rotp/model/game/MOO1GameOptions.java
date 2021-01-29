@@ -228,7 +228,8 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedStarDensityOption = opt.selectedStarDensityOption;
         selectedPlanetQualityOption = opt.selectedPlanetQualityOption;
         selectedTerraformingOption = opt.selectedTerraformingOption;
-
+        selectedFuelRangeOption = opt.selectedFuelRangeOption;
+        
         if (opt.player != null) 
             player.copy(opt.player);
         
