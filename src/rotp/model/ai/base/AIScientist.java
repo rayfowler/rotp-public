@@ -77,9 +77,6 @@ public class AIScientist implements Base, Scientist {
     @Override
     public void setTechTreeAllocations() {
         // invoked after nextTurn() processing is complete on each civ's turn
-        // Let our opening book decide if it wants to make tech allocations
-        if (openingBookTechTreeAllocations()) 
-            return;
         
         // Otherwise, go for the defaults modulo future tech adjustments
         int futureTechs = 0;
@@ -108,81 +105,6 @@ public class AIScientist implements Base, Scientist {
                 totalFloatAllocation += floatAllocation;
             }
         }
-    }
-    // Sets hard-coded opening tech sliders, returning true if it found one, false if it's okay to resort to defaults
-    private boolean openingBookTechTreeAllocations() {
-        TechTree tree = empire.tech();
-        // Opening propulsion is mandatory
-        // TODO: Extremely rare case where you can cancel this if no early out of range planets exist
-        if (tree.topFuelRangeTech().range() < 4) {
-            tree.computer().allocation(0);
-            tree.construction().allocation(0);
-            tree.forceField().allocation(0);
-            tree.planetology().allocation(0);
-            tree.propulsion().allocation(60);
-            tree.weapon().allocation(0);
-            return true;            
-        }
-        
-        // We have a fuel cell, the rest of this method is looking for initial waste cleanup.
-        // TODO: Rare case where we should check for hand lasers too
-        
-        // We already have one
-        if (tree.topIndustrialWasteTech() != null
-        || tree.topEcoRestorationTech() != null) 
-            return false;
-        
-        // We already tried and failed
-        if (tree.construction().techLevel() > 2
-        || tree.planetology().techLevel() > 2) 
-            return false;
-        
-        // We've never researched construction/planetology, so open evenly
-        if (tree.construction().currentTech() == null
-        || tree.planetology().currentTech() == null) {
-            tree.computer().allocation(0);
-            tree.construction().allocation(30);
-            tree.forceField().allocation(0);
-            tree.planetology().allocation(30);
-            tree.propulsion().allocation(0);
-            tree.weapon().allocation(0);
-            return true;            
-        }
-
-        boolean construction = tech(tree.construction().currentTech()).isType(Tech.INDUSTRIAL_WASTE);
-        boolean planetology = tech(tree.planetology().currentTech()).isType(Tech.ECO_RESTORATION);      
-        if (construction && planetology) {
-            tree.computer().allocation(0);
-            tree.construction().allocation(30);
-            tree.forceField().allocation(0);
-            tree.planetology().allocation(30);
-            tree.propulsion().allocation(0);
-            tree.weapon().allocation(0);
-            return true;            
-        }
-        // modnar: spread out allocation
-        if (construction) {
-            tree.computer().allocation(4);
-            tree.construction().allocation(40);
-            tree.forceField().allocation(4);
-            tree.planetology().allocation(4);
-            tree.propulsion().allocation(4);
-            tree.weapon().allocation(4);
-            return true;            
-        }
-        // modnar: spread out allocation
-        if (planetology) {
-            tree.computer().allocation(4);
-            tree.construction().allocation(4);
-            tree.forceField().allocation(4);
-            tree.planetology().allocation(40);
-            tree.propulsion().allocation(4);
-            tree.weapon().allocation(4);
-            return true;            
-        }
-
-        // We've escaped the tyrany of the opening book
-        return false;
     }
     @Override
     public void setDefaultTechTreeAllocations() {
