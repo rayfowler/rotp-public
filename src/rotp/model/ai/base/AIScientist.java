@@ -825,8 +825,8 @@ public class AIScientist implements Base, Scientist {
         // then scale by tech level * 7 to reach factor ~50 for best
         // This method give ranking of: 1)GAUSS AUTO-CANNON , 2)PULSE PHASOR, 3)STELLAR CONVERTOR
         // 4)TRI-FOCUS PLASMA CANNON, 5)MAULER DEVICE, 6)PARTICLE BEAM, 7)DEATH RAY
-        float currVal = 7.0f* curr.level * 0.5f*(curr.damageLow() + curr.damageHigh()) * curr.attacksPerRound / curr.enemyShieldMod / (curr.size + curr.power);
-        float tVal = 7.0f* t.level * 0.5f*(t.damageLow() + t.damageHigh()) * t.attacksPerRound / t.enemyShieldMod / (t.size + t.power);
+        float currVal = curr.comparableDamageValue();
+        float tVal = t.comparableDamageValue();
 
         if (tVal <= currVal)
             return 0;

@@ -53,6 +53,9 @@ public final class TechShipWeapon extends Tech {
     public int heavyDamageLow()  { return (int) (session().damageBonus() * heavyDamageLow); }
     public int heavyDamageHigh() { return (int) (session().damageBonus() * heavyDamageHigh); }
     
+    public float comparableDamageValue() {
+        return 7.0f* level * 0.5f*(damageLow() + damageHigh()) * attacksPerRound / enemyShieldMod / (size + power);
+    }  
     protected String soundEffect() { return "ShipLaser"; }
 
     public TechShipWeapon(String typeId, int lv, int seq, boolean b, TechCategory c) {
@@ -378,8 +381,11 @@ public final class TechShipWeapon extends Tech {
         TechShipWeapon top = c.tech().topShipWeaponTech();
         if (top == null)
             return false;
-        float currVal = (damageHigh() * attacksPerRound) / size;
-        float tVal = (top.damageHigh()*top.attacksPerRound) / top.size;
+        
+        if (level > top.level)
+            return false;
+        float currVal = comparableDamageValue();
+        float tVal = top.comparableDamageValue();
 
         return tVal >= currVal;
     }
