@@ -571,13 +571,13 @@ public class AIScientist implements Base, Scientist {
     @Override
     public float baseValue(TechFuelRange t) {
         TechFuelRange curr = empire.tech().topFuelRangeTech();
-        int currRange = curr == null ? 3 : curr.range();
+        float currRange = curr == null ? 3 : curr.range();
         // obsolete?
         if (currRange >= t.range())
             return 0;
         
         // limit max range, use 13 instead of 10, for Range-inf scaling
-        int newRange = min(13,t.range());
+        float newRange = min(13,t.range());
         
         // Count new planets this gets us to
         List<StarSystem> possible = empire.uncolonizedPlanetsInRange(currRange);

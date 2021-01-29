@@ -486,7 +486,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     private void drawExtendedRangeDisplay(Graphics2D g) {
         Empire emp = parent.empireBoundaries();
         float shipRange = emp.shipRange();
-        int scoutRange = emp.scoutRange();
+        float scoutRange = emp.scoutRange();
         if (shipRange > galaxy().width())
             return;
 
@@ -552,8 +552,8 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         g.setColor(gridDark);
 
         Empire pl = player();
-        int rng1 = pl.shipRange();
-        int rng2 = pl.scoutRange();
+        float rng1 = pl.shipRange();
+        float rng2 = pl.scoutRange();
         
         for (int r=1;r<=gal.width();r++) {
             int x0 = mapX(x-r);

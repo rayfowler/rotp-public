@@ -1967,7 +1967,7 @@ public class DesignUI extends BasePanel {
                 g.setColor(SystemPanel.whiteText);
             }
             else {
-                 List<ShipManeuver> comps = player().shipLab().availableManeuversForDesign(shipDesign());
+                List<ShipManeuver> comps = player().shipLab().availableManeuversForDesign(shipDesign());
                 ShipManeuver first = comps.get(0);
                 ShipManeuver last = comps.get(comps.size()-1);
                 maneuverFieldArea.setBounds(boxX, boxY, boxW, boxH);

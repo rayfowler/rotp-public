@@ -639,12 +639,12 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
         return false;
     }
-    public int shipRange()              { return tech().shipRange(); }
-    public int scoutRange()             { return tech().scoutRange(); }
-    public int researchingShipRange()   { return tech().researchingShipRange(); }
-    public int researchingScoutRange()  { return tech().researchingScoutRange(); }
-    public int learnableShipRange()     { return tech().learnableShipRange(); }
-    public int learnableScoutRange()    { return tech().learnableScoutRange(); }
+    public float shipRange()              { return tech().shipRange(); }
+    public float scoutRange()             { return tech().scoutRange(); }
+    public float researchingShipRange()   { return tech().researchingShipRange(); }
+    public float researchingScoutRange()  { return tech().researchingScoutRange(); }
+    public float learnableShipRange()     { return tech().learnableShipRange(); }
+    public float learnableScoutRange()    { return tech().learnableScoutRange(); }
     public float shipReach(int turns)   { return min(shipRange(), turns*tech().topSpeed()); }
     public float scoutReach(int turns)  { return min(scoutRange(), turns*tech().topSpeed()); }
     
@@ -964,7 +964,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     }
     public boolean inEconomicRange(int empId) {
         Empire e = galaxy().empire(empId);
-        int range = max(e.scoutRange(), scoutRange());
+        float range = max(e.scoutRange(), scoutRange());
         for (StarSystem sys: e.allColonizedSystems()) {
             if (sv.distance(sys.id) <= range)
                 return true;
@@ -1773,7 +1773,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
         return systems;
     }
-    public List<StarSystem> uncolonizedPlanetsInRange(int range) {
+    public List<StarSystem> uncolonizedPlanetsInRange(float range) {
         Galaxy gal = galaxy();
         List<StarSystem> systems = new ArrayList<>();
         for (int i=0;i<sv.count();i++) {

@@ -222,12 +222,12 @@ public interface IGameOptions {
     default void copyOptions(IGameOptions opt) { }
     default boolean immediateCouncilWin()    { return selectedCouncilWinOption().equals(COUNCIL_IMMEDIATE); }
     default boolean noGalacticCouncil()      { return selectedCouncilWinOption().equals(COUNCIL_NONE); }
-    default int fuelRangeMultiplier() {
+    default float fuelRangeMultiplier() {
         switch(selectedFuelRangeOption()) {
             case FUEL_RANGE_NORMAL: return 1;
-            case FUEL_RANGE_HIGH: return 2;
-            case FUEL_RANGE_HIGHER: return 3;
-            case FUEL_RANGE_HIGHEST: return 5;
+            case FUEL_RANGE_HIGH: return 1.5f;
+            case FUEL_RANGE_HIGHER: return 2;
+            case FUEL_RANGE_HIGHEST: return 2.5f;
             default: return 1;
         }
     }

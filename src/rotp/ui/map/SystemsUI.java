@@ -808,7 +808,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
     @Override
     public String systemLabel2(StarSystem sys) {
         Empire pl = player();
-        int rng = pl.scoutRange();
+        float rng = pl.scoutRange();
         SystemView sv = pl.sv.view(sys.id);
         switch(selectedTab) {
             case exploreTab:

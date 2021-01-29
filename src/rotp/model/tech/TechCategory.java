@@ -246,7 +246,16 @@ public final class TechCategory implements Base, Serializable {
                         return text("TECH_TERRAFORM_NO_BONUS");
                     else
                         return text("TECH_TERRAFORM_BONUS", (int)tree.terraformAdj());
-                case 4: return key ? text("TECH_SHIP_RANGE") : text("TECH_SHIP_RANGE_AMT", (int)tree.shipRange());
+                case 4: 
+                    if (key)
+                        return text("TECH_SHIP_RANGE");
+                    else {
+                        float range = tree.shipRange();
+                        if (range == (int) range)
+                            return text("TECH_SHIP_RANGE_AMT", (int)tree.shipRange());
+                        else
+                            return text("TECH_SHIP_RANGE_AMT", df1.format(tree.shipRange()));
+                    }
                 case 5: 
                     if (key)
                         return text("TECH_GROUND_COMBAT");

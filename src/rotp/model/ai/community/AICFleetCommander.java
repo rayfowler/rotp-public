@@ -215,8 +215,8 @@ public class AICFleetCommander implements Base, FleetCommander {
     }
     private void reviseFleetPlan(int sysId) {
         Galaxy gal = galaxy();
-        int scoutRange = empire.scoutRange();
-        int shipRange = empire.shipRange();
+        float scoutRange = empire.scoutRange();
+        float shipRange = empire.shipRange();
         // if out of scout range, forget it
         if (!empire.sv.withinRange(sysId, scoutRange)) 
             return;
