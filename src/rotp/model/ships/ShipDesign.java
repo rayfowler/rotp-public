@@ -51,7 +51,7 @@ public final class ShipDesign extends Design {
     private final ShipWeapon[] weapon = new ShipWeapon[maxWeapons];
     private final int[] wpnCount = new int[maxWeapons];
     private final ShipSpecial[] special = new ShipSpecial[maxSpecials];
-    private int size;
+    private int size = SMALL;
     private int mission = SCOUT;
     private int unusedTurns = 0;     // # turns while built but unused by FleetCommander
     public int remainingLife = 999; // once obsolete, this is minimum num turns to survive before scrapping

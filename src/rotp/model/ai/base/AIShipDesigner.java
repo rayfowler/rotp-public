@@ -35,20 +35,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
     private static final int OBS_BOMBER_TURNS = 12;
     private static final int OBS_COLONY_TURNS = 8;
     private static final int OBS_SCOUT_TURNS = 1;
-    
-    // modnar: scale military ship obsolete turn counts using the current turn
-    // attempt to allow AI more opportunities to use fleet before scraping
-    // (currentTurn + 100) / (currentTurn + 40))
-    // approx. 2.5 times as long before obsolete at Turn 1
-    // approx. 2.0 times as long before obsolete at Turn 20
-    // approx. 1.5 times as long before obsolete at Turn 80
-    // approx. 1.25 times as long before obsolete at Turn 200
-    private int currentTurn = galaxy().currentTurn();
-    private float obsolete_scale = (float) (currentTurn + 100)/(currentTurn + 40);
-    
-    private int OBS_DESTROYER_TURNS_scale = (int) Math.ceil(OBS_DESTROYER_TURNS * obsolete_scale);
-    private int OBS_FIGHTER_TURNS_scale = (int) Math.ceil(OBS_FIGHTER_TURNS * obsolete_scale);
-    private int OBS_BOMBER_TURNS_scale = (int) Math.ceil(OBS_BOMBER_TURNS * obsolete_scale);
 
     private final Empire empire;
     private int[] shipCounts;
@@ -190,6 +176,19 @@ public class AIShipDesigner implements Base, ShipDesigner {
         
         // recalculate current design's damage vs. current targets
         ShipDesign currDesign = lab.bomberDesign();
+
+        // if we don't have any faster engines
+        if (currDesign.engine() == lab.fastestEngine()) {
+            // and if the design has less than 10% free space or has less than 25/50/75/100 free space, we assume the redesign has no sense
+            // 25/50/75/100 may be a too straight-line set of values
+            if ((currDesign.availableSpace()/(currDesign.totalSpace()) < 0.1f) || (currDesign.availableSpace() < (currDesign.size()+1) * 25)) {
+                // we're fairly certain AI packed the ship before and if the current modules haven't shrinked enough,
+                // that means we don't have enough new tech to make the new design markedly better            
+                currDesign.remainingLife++;
+                return;
+            }
+        }
+
         int currSlot = currDesign.id();
         
         // find best hypothetical design vs current targets
@@ -208,7 +207,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
 
         float oppShield = lab.bestEnemyPlanetaryShieldLevel();
         float bcValue = currDesign.cost()*shipCounts[currDesign.id()];
-        boolean easyToReplace = bcValue <= 500; // modnar: scrap easier, change from 100
+        boolean easyToReplace = bcValue <= 100;
         
         if (easyToReplace) {
             newDesign.name(currDesign.name());
@@ -237,7 +236,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
             return;
 
         // mark existing design obsolete
-        currDesign.becomeObsolete(OBS_BOMBER_TURNS_scale); // modnar: use scaled OBS_TURNS
+        currDesign.becomeObsolete(OBS_BOMBER_TURNS);
 
         // check for an available slot for the new design
         int slot = lab.availableDesignSlot();
@@ -264,8 +263,21 @@ public class AIShipDesigner implements Base, ShipDesigner {
         
         // recalculate current design's damage vs. current targets
         ShipDesign currDesign = lab.fighterDesign();
+
+        // if we don't have any faster engines
+        if (currDesign.engine() == lab.fastestEngine()) {
+            // and if the design has less than 10% free space or has less than 25/50/75/100 free space, we assume the redesign has no sense
+            // 25/50/75/100 may be a too straight-line set of values
+            if ((currDesign.availableSpace()/(currDesign.totalSpace()) < 0.1f) || (currDesign.availableSpace() < (currDesign.size()+1) * 25)) {
+                // we're fairly certain AI packed the ship before and if the current modules haven't shrinked enough,
+                // that means we don't have enough new tech to make the new design markedly better
+                return;
+            }
+        }
+
         int currSlot = currDesign.id();
-        ShipFighterTemplate.setPerTurnDamage(currDesign, empire());
+    //    ShipFighterTemplate.setPerTurnDamage(currDesign, empire());
+        NewShipTemplate.setPerTurnShipDamage(currDesign, empire());
 
         // find best hypothetical design vs current targets
         ShipDesign newDesign = newFighterDesign(currDesign.size());
@@ -283,7 +295,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         // if we have very few fighters actually in use, go ahead and
         // scrap/replace now
         float bcValue = currDesign.cost()*shipCounts[currDesign.id()];
-        boolean easyToReplace = bcValue <= 500; // modnar: scrap easier, change from 100
+        boolean easyToReplace = bcValue <= 100;
         
         if (easyToReplace) {
             newDesign.name(currDesign.name());
@@ -310,7 +322,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
             return;
 
         // mark existing design obsolete
-        currDesign.becomeObsolete(OBS_FIGHTER_TURNS_scale); // modnar: use scaled OBS_TURNS
+        currDesign.becomeObsolete(OBS_FIGHTER_TURNS);
 
         // check for an available slot for the new design
         int slot = lab.availableDesignSlot();
@@ -337,12 +349,29 @@ public class AIShipDesigner implements Base, ShipDesigner {
         
         // recalculate current design's damage vs. current targets
         ShipDesign currDesign = lab.destroyerDesign();
+
+        // if we don't have any faster engines
+        if (currDesign.engine() == lab.fastestEngine()) {
+            // and if the design has less than 10% free space or has less than 25/50/75/100 free space, we assume the redesign has no sense
+            // 25/50/75/100 may be a too straight-line set of values
+            if ((currDesign.availableSpace()/(currDesign.totalSpace()) < 0.1f) || (currDesign.availableSpace() < (currDesign.size()+1) * 25)) {
+                // we're fairly certain AI packed the ship before and if the current modules haven't shrinked enough,
+                // that means we don't have enough new tech to make the new design markedly better            
+                currDesign.remainingLife++;
+                return;
+            }
+        }
+
         int currSlot = currDesign.id();
-        ShipDestroyerTemplate.setPerTurnDamage(currDesign, empire());
+        // ShipDestroyerTemplate.setPerTurnDamage(currDesign, empire());
+        NewShipTemplate.setPerTurnShipDamage(currDesign, empire);
 
         // find best hypothetical design vs current targets
         ShipDesign newDesign = newDestroyerDesign(currDesign.size());
         
+        if (currDesign.matchesDesign(newDesign)) // moved above scrapping
+            return;
+
         // if currDesign is obsolete, replace it immediately with new design
         if (currDesign.obsolete() && (currDesign.remainingLife() < 1)) {
             lab.scrapDesign(currDesign);
@@ -351,13 +380,11 @@ public class AIShipDesigner implements Base, ShipDesigner {
             return;            
         }
 
-        if (currDesign.matchesDesign(newDesign))
-            return;
-
+        
         // if we have very few destroyers actually in use, go ahead and
         // scrap/replace now
         float bcValue = currDesign.cost()*shipCounts[currDesign.id()];
-        boolean easyToReplace = bcValue <= 2000; // modnar: scrap easier, change from 1000
+        boolean easyToReplace = bcValue <= 1000;
         
         if (easyToReplace) {
             newDesign.name(currDesign.name());
@@ -383,7 +410,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
             return;
      
         // mark existing design obsolete
-        currDesign.becomeObsolete(OBS_DESTROYER_TURNS_scale); // modnar: use scaled OBS_TURNS
+        currDesign.becomeObsolete(OBS_DESTROYER_TURNS);
 
         // check for an available slot for the new design
         int slot = lab.availableDesignSlot();
@@ -437,7 +464,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
                 design.addWeapon(bestWpn, 1);
         }
 
-        // if we don't need regular-range colony shi[
+        // if we don't need regular-range colony ship
         if (extendedRangeNeeded) {
             ShipSpecial prevSpecial = design.special(1);
             ShipSpecial special = lab.specialReserveFuel();
@@ -466,9 +493,9 @@ public class AIShipDesigner implements Base, ShipDesigner {
         int maxSize = ShipDesign.SMALL;
         if (maxProd >= 1500)
             maxSize = ShipDesign.HUGE;
-        else if (maxProd >= 700) // modnar: change from 300, keep fighters smaller
+        else if (maxProd >= 300)
             maxSize = ShipDesign.LARGE;
-        else if (maxProd >= 300) // modnar: change from 60 (!), keep fighters smaller
+        else if (maxProd >= 60)
             maxSize = ShipDesign.MEDIUM;
         return min(preferredSize, maxSize);
     }
@@ -484,9 +511,9 @@ public class AIShipDesigner implements Base, ShipDesigner {
             maxProd = max(sys.colony().production(), maxProd);
 
         int maxSize = ShipDesign.MEDIUM;
-        if (maxProd >= 1500) // modnar: change from 1000, keep bombers smaller
+        if (maxProd >= 1000)
             maxSize = ShipDesign.HUGE;
-        else if (maxProd >= 450) // modnar: change from 200, keep bombers smaller
+        else if (maxProd >= 200)
             maxSize = ShipDesign.LARGE;
         return min(preferredSize, maxSize);
     }
@@ -502,31 +529,34 @@ public class AIShipDesigner implements Base, ShipDesigner {
             maxProd = max(sys.colony().production(), maxProd);
 
         int maxSize = ShipDesign.MEDIUM;
-        if (maxProd >= 800) // modnar: change from 1000, pump out HUGE destroyers sooner, 800 is around soil/terraform+40/robo-4
+        if (maxProd >= 1000)
             maxSize = ShipDesign.HUGE;
-        else if (maxProd >= 350) // modnar: change from 200, keep destroyer smaller in beginning
+        else if (maxProd >= 200)
             maxSize = ShipDesign.LARGE;
         return min(preferredSize, maxSize);
     }
     @Override
     public ShipDesign newFighterDesign(int size) {
-        ShipDesign design = ShipFighterTemplate.newDesign(this);
+    //    ShipDesign design = ShipFighterTemplate.newDesign(this);
+        ShipDesign design = NewShipTemplate.newFighterDesign(this);
         design.mission(ShipDesign.FIGHTER);
-        design.maxUnusedTurns(OBS_FIGHTER_TURNS_scale); // modnar: use scaled OBS_TURNS
+        design.maxUnusedTurns(OBS_FIGHTER_TURNS);
         return design;
     }
     @Override
     public ShipDesign newBomberDesign(int size) {
-        ShipDesign design = ShipBomberTemplate.newDesign(this);
+    //    ShipDesign design = ShipBomberTemplate.newDesign(this);
+        ShipDesign design = NewShipTemplate.newBomberDesign(this);
         design.mission(ShipDesign.BOMBER);
-        design.maxUnusedTurns(OBS_BOMBER_TURNS_scale); // modnar: use scaled OBS_TURNS
+        design.maxUnusedTurns(OBS_BOMBER_TURNS);
         return design;
     }
     @Override
     public ShipDesign newDestroyerDesign(int size) {
-        ShipDesign design = ShipDestroyerTemplate.newDesign(this);
+    //    ShipDesign design = ShipDestroyerTemplate.newDesign(this);
+        ShipDesign design = NewShipTemplate.newDestroyerDesign(this);
         design.mission(ShipDesign.DESTROYER);
-        design.maxUnusedTurns(OBS_DESTROYER_TURNS_scale); // modnar: use scaled OBS_TURNS
+        design.maxUnusedTurns(OBS_DESTROYER_TURNS);
         return design;
     }
     @Override

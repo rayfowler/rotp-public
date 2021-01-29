@@ -27,11 +27,13 @@ public final class ShipSpecialPulsar extends ShipSpecial {
     @Override
     public String designGroup()              { return "Pulsar"; }
     @Override
-    public boolean isWeapon()      { return true; }
+    public boolean isWeapon()               { return true; }
     @Override
-    public TechEnergyPulsar tech() { return (TechEnergyPulsar) super.tech(); }
+    public boolean isPulsar()               { return true;  }
     @Override
-    public int range()             { return tech().range; }
+    public TechEnergyPulsar tech()          { return (TechEnergyPulsar) super.tech(); }
+    @Override
+    public int range()                      { return tech().range; }
     @Override
     public float estimatedKills(CombatStack source, CombatStack target, int num) {
         float maxDam = tech().firstShipDamage + (int)((tech().extraShipDamage * (num-1)));

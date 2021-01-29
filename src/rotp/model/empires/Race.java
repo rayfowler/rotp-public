@@ -180,6 +180,7 @@ public class Race implements Base, Serializable {
 
     public float[] personalityPct = new float[Personality.values().length];
     public float[] objectivePct = new float[Objective.values().length];
+    public float[] shipDesignMods = new float[21];
 
     private transient BufferedImage transportClosedImg;
     private transient Image transportImg;

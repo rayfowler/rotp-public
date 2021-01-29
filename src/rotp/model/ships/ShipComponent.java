@@ -46,6 +46,7 @@ public class ShipComponent implements Base, Serializable {
     public boolean canAttackShips()      { return false; } // can a ship armed with only this item successfully destroy another ship?
     public boolean isMissileWeapon()     { return false; }
     public boolean isBeamWeapon()        { return false; }
+    public boolean isBioWeapon()         { return false; }
     public boolean isLimitedShotWeapon() { return false; }
     public int attacksPerRound()         { return 1; }
     public int scatterAttacks()            { return 1; } // for scatter packs
