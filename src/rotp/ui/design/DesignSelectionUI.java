@@ -293,7 +293,7 @@ public abstract class DesignSelectionUI extends BasePanel implements MouseListen
     private void scrollDown() {
         int index = components().indexOf(selectedComponent());
         int bottomIndex = startIndex + MAX_LIST_SIZE;
-        if ((index < 0) || (bottomIndex >= components().size())) 
+        if (index < 0) 
             return;
 
         select(min(index+1, numComponents()-1));
