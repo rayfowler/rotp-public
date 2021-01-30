@@ -90,7 +90,7 @@ public class NewShipTemplate implements Base {
         List<EnemyShipTarget> shipTargets = buildShipTargetList(rivalsTech);
         List<EnemyColonyTarget> colonyTargets = buildColonyTargetList(rivalsTech);
         
-        Race race = ai.empire().race();
+        Race race = ai.empire().dataRace();
         
         // get the current design that we are considering replace
         ShipDesign currentDesign = null;
@@ -141,7 +141,7 @@ public class NewShipTemplate implements Base {
         setBestBattleComputer(ai, d); 
         
         float totalSpace = d.availableSpace();
-        Race race = ai.empire().race();
+        Race race = ai.empire().dataRace();
 
         // initial separation of the free space left onto weapons and non-weapons/specials
         float moduleSpaceRatio = race.shipDesignMods[MODULE_SPACE];        
@@ -334,7 +334,7 @@ public class NewShipTemplate implements Base {
 // ********** SPECIALS SELECTION AND FITTING FUNCTIONS ********** //
 
     private ArrayList<ShipSpecial> buildRacialSpecialsList(ShipDesigner ai) {
-        Race race = ai.empire().race();
+        Race race = ai.empire().dataRace();
         ArrayList<ShipSpecial> specials = new ArrayList<>();
         List<ShipSpecial> allSpecials = ai.lab().specials();
 

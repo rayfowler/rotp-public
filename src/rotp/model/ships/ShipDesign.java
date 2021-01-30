@@ -244,7 +244,7 @@ public final class ShipDesign extends Design {
         StarSystem dest = galaxy().system(destId);
         PlanetType pt = dest.planet().type();
         // return if ordersStack can colonize the destination planet
-        return empire().race().ignoresPlanetEnvironment() || (empire().canColonize(pt) && colonySpecial.canColonize(pt));
+        return empire().ignoresPlanetEnvironment() || (empire().canColonize(pt) && colonySpecial.canColonize(pt));
     }
     @Override
     public int cost() {

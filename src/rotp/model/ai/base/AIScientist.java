@@ -264,7 +264,7 @@ public class AIScientist implements Base, Scientist {
         // armor has both offensive & defensive benefits... everyone gets broad adj
         val *= 2;
         // extra important for races with ground attack bonuses
-        if (empire.race().groundAttackBonus() > 0)
+        if (empire.groundAttackBonus() > 0)
             val *= 1.5;
         // armor has wartime value: multiply by current war enemies
         val *= Math.sqrt(empire.numEnemies()+1);
@@ -430,15 +430,15 @@ public class AIScientist implements Base, Scientist {
         if (empire.leader().isTechnologist())
             adj *= 1.5;
         if (empire.tech().topCloningTech() == null)
-            return adj * t.level / empire.race().growthRateMod();
+            return adj * t.level / empire.growthRateMod();
         else
-            return adj * (t.level - empire.tech().topCloningTech().level) / empire.race().growthRateMod();
+            return adj * (t.level - empire.tech().topCloningTech().level) / empire.growthRateMod();
     }
     @Override
     public float baseValue(TechCombatTransporter t) {
         float val = t.level;
         // extra important for races with ground attack bonuses
-        if (empire.race().groundAttackBonus() > 0)
+        if (empire.groundAttackBonus() > 0)
             val *= 1.5;
         // Combat Transporter is priority for aggressive and militarist
         if (empire.leader().isAggressive())
@@ -453,7 +453,7 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechControlEnvironment t) {
-        if (empire.race().ignoresPlanetEnvironment())
+        if (empire.ignoresPlanetEnvironment())
             return 0;
         // obsolete?
         if (t.environment() <= empire.tech().minColonyLevel())
@@ -519,7 +519,7 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechEcoRestoration t) {
-        if (empire.race().ignoresPlanetEnvironment())
+        if (empire.ignoresPlanetEnvironment())
             return 0;
 
         float adj = 1.0f;
@@ -609,7 +609,7 @@ public class AIScientist implements Base, Scientist {
         // scale add'l prevention assuming 30 dmg is best (level 50)
         float val = 1.67f * (t.combatMod-topCombatMod);
         // extra important for races with ground attack bonuses
-        if (empire.race().groundAttackBonus() > 0)
+        if (empire.groundAttackBonus() > 0)
             val *= 1.5;
         // pacifists love shields! xenos, too
         if (empire.leader().isAggressive())
@@ -662,7 +662,7 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechIndustrialWaste t) {
-        if (empire.race().ignoresPlanetEnvironment())
+        if (empire.ignoresPlanetEnvironment())
             return 0;
 
         float adj = 1.0f;
@@ -739,7 +739,7 @@ public class AIScientist implements Base, Scientist {
         // scale add'l prevention assuming 30 dmg prevented is best (level 50)
         float val = 1.67f * (t.groundAttackBonus-topBonus);
         // extra important for races with ground attack bonuses
-        if (empire.race().groundAttackBonus() > 0)
+        if (empire.groundAttackBonus() > 0)
             val *= 1.5;
         if (empire.leader().isAggressive())
             val *= 2;
@@ -806,9 +806,9 @@ public class AIScientist implements Base, Scientist {
         // scale add'l prevention assuming 4 defense bonus is best (level 40)
         float val = 10 * (t.defenseBonus - topDefense);
         // ship combat centric races prefer this
-        if (empire.race().shipAttackBonus() > 0)
+        if (empire.shipAttackBonus() > 0)
             val *= 2.0;
-        if (empire.race().shipDefenseBonus() > 0)
+        if (empire.shipDefenseBonus() > 0)
             val *= 2.0;
         if (empire.leader().isMilitarist())
             val *= 1.5;
@@ -845,7 +845,7 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechSoilEnrichment t) {
-        if (empire.race().ignoresPlanetEnvironment())
+        if (empire.ignoresPlanetEnvironment())
             return 0;
         TechSoilEnrichment curr = empire.tech().topSoilEnrichmentTech();
         float topIncrease = curr == null ? 0 : curr.planetaryIncrease;

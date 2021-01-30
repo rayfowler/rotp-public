@@ -598,7 +598,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
         recalculateRelationsLevel();
     }
     private void recalculateRelationsLevel() {
-        float rel = owner().race().baseRelations(empire().race());
+        float rel = owner().baseRelations(empire());
         rel += treatyRelationsAdj();
         for (DiplomaticIncident ev: incidents.values()) 
             rel += ev.currentSeverity();       

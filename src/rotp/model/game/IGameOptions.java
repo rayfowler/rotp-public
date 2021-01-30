@@ -113,12 +113,35 @@ public interface IGameOptions {
     public static final String FUEL_RANGE_HIGHER   = "SETUP_FUEL_RANGE_HIGHER";
     public static final String FUEL_RANGE_HIGHEST  = "SETUP_FUEL_RANGE_HIGHEST";
     
+    public static final String RANDOMIZE_AI_NONE        = "SETUP_RANDOMIZE_AI_NONE";
+    public static final String RANDOMIZE_AI_PERSONALITY = "SETUP_RANDOMIZE_AI_PERSONALITY";
+    public static final String RANDOMIZE_AI_ABILITY     = "SETUP_RANDOMIZE_AI_ABILITY";
+    public static final String RANDOMIZE_AI_BOTH        = "SETUP_RANDOMIZE_AI_BOTH";
+
     public default boolean isAutoPlay()          { return false; }
     public default boolean communityAI()         { return false; }
     public default boolean usingExtendedRaces()  { return (selectedNumberOpponents()+1) > startingRaceOptions().size(); }
     public default void communityAI(boolean b)   { }
     public default int maxOpponents()            { return MAX_OPPONENTS; }
     public default float hostileTerraformingPct() { return 1.0f; }
+    public default boolean randomizeAIPersonality()  { 
+        switch (selectedRandomizeAIOption()) {
+            case RANDOMIZE_AI_PERSONALITY:
+            case RANDOMIZE_AI_BOTH:
+                return true;
+            default:
+                return false;
+        }
+    }
+    public default boolean randomizeAIAbility()  { 
+        switch (selectedRandomizeAIOption()) {
+            case RANDOMIZE_AI_ABILITY:
+            case RANDOMIZE_AI_BOTH:
+                return true;
+            default:
+                return false;
+        }
+    }
     public String name();
 
     public int numberStarSystems();
@@ -160,6 +183,7 @@ public interface IGameOptions {
     public List<String> planetQualityOptions();
     public List<String> terraformingOptions();
     public List<String> fuelRangeOptions();
+    public List<String> randomizeAIOptions();
 	
     public List<String> gameDifficultyOptions();
     public int maximumOpponentsOptions();
@@ -191,6 +215,8 @@ public interface IGameOptions {
     public void selectedTerraformingOption(String s);
     public String selectedFuelRangeOption();
     public void selectedFuelRangeOption(String s);
+    public String selectedRandomizeAIOption();
+    public void selectedRandomizeAIOption(String s);
 	
     public String selectedGalaxyShapeOption1();
     public void selectedGalaxyShapeOption1(String s);
@@ -346,6 +372,11 @@ public interface IGameOptions {
     default String nextFuelRangeOption() {
         List<String> opts = fuelRangeOptions();
         int index = opts.indexOf(selectedFuelRangeOption())+1;
+        return index >= opts.size() ? opts.get(0) : opts.get(index);
+    }
+    default String nextRandomizeAIOption() {
+        List<String> opts = randomizeAIOptions();
+        int index = opts.indexOf(selectedRandomizeAIOption())+1;
         return index >= opts.size() ? opts.get(0) : opts.get(index);
     }
     default void nextOpponent(int i) {

@@ -173,7 +173,7 @@ public final class TechTree implements Base, Serializable {
     public void init(Empire c, boolean spyFlag) {
         spy = spyFlag;
         empire = c;
-        float discoveryPct = empire.race().techDiscoveryPct();
+        float discoveryPct = empire.techDiscoveryPct();
         category = new TechCategory[TechTree.NUM_CATEGORIES];
         category[0] = new TechCategory(0, this, discoveryPct);
         category[1] = new TechCategory(1, this, discoveryPct);
@@ -664,7 +664,7 @@ public final class TechTree implements Base, Serializable {
         return topHandWeaponTech == null ? 0 : topHandWeaponTech().combatMod;
     }
     public float troopCombatAdj(boolean defendFlag) {
-        float adj = empire.race().groundAttackBonus() + armorGroundBonus() + battleSuitGroundBonus() + shieldGroundBonus() + weaponGroundBonus();
+        float adj = empire.groundAttackBonus() + armorGroundBonus() + battleSuitGroundBonus() + shieldGroundBonus() + weaponGroundBonus();
         if (defendFlag)
             adj += 5;
         return adj;
@@ -729,7 +729,7 @@ public final class TechTree implements Base, Serializable {
     }
     public float maxFactoryCost() {
         // ignoreFactoryRefit = always use RC2 has basis for factory cost
-        int controls = empire.race().ignoresFactoryRefit ?  TechRoboticControls.BASE_ROBOT_CONTROLS : baseRobotControls();
+        int controls = empire.ignoresFactoryRefit() ?  TechRoboticControls.BASE_ROBOT_CONTROLS : baseRobotControls();
         return newFactoryCost(controls);
     }
     public float newFactoryCost(int controls) {

@@ -65,7 +65,7 @@ public class ColonyEcology extends ColonySpendingCategory {
     @Override
     public boolean isCompleted() {
         return colony().population() >= colony().planet().maxSize()
-            && (empire().race().ignoresPlanetEnvironment() || waste() == 0);
+            && (empire().ignoresPlanetEnvironment() || waste() == 0);
     }
     @Override
     public float orderedValue() {
@@ -118,7 +118,7 @@ public class ColonyEcology extends ColonySpendingCategory {
 
         // add new waste created from this turn & clean it up
         addWaste(c.newWaste());
-        wasteCleaned = emp.race().ignoresPlanetEnvironment() ? 0 : max(0, min((newBC * tr.wasteElimination()), waste()));
+        wasteCleaned = emp.ignoresPlanetEnvironment() ? 0 : max(0, min((newBC * tr.wasteElimination()), waste()));
         newBC -= (wasteCleaned / tr.wasteElimination());
 
         // try to convert hostile atmosphere
@@ -137,7 +137,7 @@ public class ColonyEcology extends ColonySpendingCategory {
 
         //if not Hostile & civ has SoilEnrichment that will improvement this environment,
         // then try to pay for soil enrichment... silicoids cannot do this
-        if (!emp.race().ignoresPlanetEnvironment()) {
+        if (!emp.ignoresPlanetEnvironment()) {
             soilEnrichCompleted = false;
             if (!p.isEnvironmentHostile() && tr.enrichSoil() && (tr.topSoilEnrichmentTech().environment > p.environment()))  {
                 float enrichCost = min(newBC,enrichSoilCost() - soilEnrichBC);
@@ -223,7 +223,7 @@ public class ColonyEcology extends ColonySpendingCategory {
         populationGrowthCompleted = ((newGrownPopulation+newPurchasedPopulation) > 0) && (c.population() >= c.maxSize());
 
         // if affected by waste, deduct population due to decreased planet size
-        if (!empire().race().ignoresPlanetEnvironment()) {
+        if (!empire().ignoresPlanetEnvironment()) {
             float pop = colony().population();
             float size = planet().sizeAfterWaste();
             if (pop > size) {
@@ -245,7 +245,7 @@ public class ColonyEcology extends ColonySpendingCategory {
     }
     @Override
     public boolean warning() {
-        if (empire().race().ignoresPlanetEnvironment())
+        if (empire().ignoresPlanetEnvironment())
             return false;
         
         float prodBC = pct()* colony().totalProductionIncome();
@@ -294,7 +294,7 @@ public class ColonyEcology extends ColonySpendingCategory {
 
         // check for soil enrichment, not for silicoids
         TechTree tr = emp.tech();
-        if (!emp.race().ignoresPlanetEnvironment()) {
+        if (!emp.ignoresPlanetEnvironment()) {
             if ((! p.isEnvironmentHostile()) || canTerraformAtmosphere) {
                 if (tr.enrichSoil()) {
                     int envUpgrade = tr.topSoilEnrichmentTech().environment - p.environment();
@@ -368,7 +368,7 @@ public class ColonyEcology extends ColonySpendingCategory {
 
         // deduct cost for soil enrichment
         TechTree tr = emp.tech();
-        if (!emp.race().ignoresPlanetEnvironment()) {
+        if (!emp.ignoresPlanetEnvironment()) {
             if ((! p.isEnvironmentHostile()) || canTerraformAtmosphere) {
                 if (tr.enrichSoil()) {
                     int envUpgrade = tr.topSoilEnrichmentTech().environment - p.environment();
@@ -427,7 +427,7 @@ public class ColonyEcology extends ColonySpendingCategory {
 
         // don't count enrichSoil cost unless not hostile or civ can terraform hostile
         float enrichCost = 0;
-        if (!emp.race().ignoresPlanetEnvironment()) {
+        if (!emp.ignoresPlanetEnvironment()) {
             if (!planet.isEnvironmentHostile() || planet.canTerraformAtmosphere(emp)) {
                 if (tech.enrichSoil() && (tech.topSoilEnrichmentTech().environment > planet.environment())) {
                     enrichCost = ((tech.topSoilEnrichmentTech().environment - planet.environment()) * 150) - soilEnrichBC;

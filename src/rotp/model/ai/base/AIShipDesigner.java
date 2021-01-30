@@ -78,7 +78,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
                 ShipSpecialColony special = design.colonySpecial();
                 if (special != null) {
                     PlanetType pt = sys.planet().type();
-                    if (empire.race().ignoresPlanetEnvironment()
+                    if (empire.ignoresPlanetEnvironment()
                     || (empire.canColonize(pt) && special.tech().canColonize(pt)) ) {
                         if ((bestDesign == null)
                         || (design.engine().warp() < bestDesign.engine().warp()))
@@ -481,7 +481,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
     }
     @Override
     public int optimalShipFighterSize() {
-        int preferredSize = empire.race().preferredShipSize();
+        int preferredSize = empire.preferredShipSize();
         if (preferredSize == ShipDesign.SMALL)
             return preferredSize;
 
@@ -501,7 +501,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
     }
     @Override
     public int optimalShipBomberSize() {
-        int preferredSize = empire.race().preferredShipSize()+1;
+        int preferredSize = empire.preferredShipSize()+1;
         if (preferredSize == ShipDesign.LARGE)
             return ShipDesign.LARGE;
 
@@ -519,7 +519,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
     }
     @Override
     public int optimalShipDestroyerSize() {
-        int preferredSize = empire.race().preferredShipSize()+1;
+        int preferredSize = empire.preferredShipSize()+1;
         if (preferredSize == ShipDesign.LARGE)
             return ShipDesign.LARGE;
 
@@ -562,7 +562,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
     @Override
     public ShipSpecialColony bestColonySpecial() {
         ShipSpecialColony bestSpecial = null;
-        boolean ignoreEnv = empire.race().ignoresPlanetEnvironment();
+        boolean ignoreEnv = empire.ignoresPlanetEnvironment();
 
         for (ShipSpecial spec : empire.shipLab().specials()) {
             if (spec.isColonySpecial()) {

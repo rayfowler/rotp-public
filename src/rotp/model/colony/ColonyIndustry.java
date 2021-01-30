@@ -45,15 +45,15 @@ public class ColonyIndustry extends ColonySpendingCategory {
     public int deltaFactories()             { return (int)factories - (int)previousFactories; }
     public int robotControls()              { return robotControls; }
     public float newFactoryCost()          { return tech().newFactoryCost(robotControls()); }
-    public int effectiveRobotControls()     { return robotControls() + empire().race().robotControlsAdj(); }
-    public int maxRobotControls()           { return tech().baseRobotControls() + empire().race().robotControlsAdj(); }
+    public int effectiveRobotControls()     { return robotControls() + empire().robotControlsAdj(); }
+    public int maxRobotControls()           { return tech().baseRobotControls() + empire().robotControlsAdj(); }
     @Override
     public float totalBC()              { return super.totalBC() * planet().productionAdj(); }
     public float maxFactories()         { return planet().maxSize() * maxRobotControls(); }
     public int maxBuildableFactories()   { return (int) (planet().currentSize() * maxRobotControls()); }
-    public int maxBuildableFactories(int rc)   { return (int) (planet().currentSize() * (rc+empire().race().robotControlsAdj())); }
+    public int maxBuildableFactories(int rc)   { return (int) (planet().currentSize() * (rc+empire().robotControlsAdj())); }
     public int maxUseableFactories()     { return maxUseableFactories(robotControls()); }
-    public int maxUseableFactories(int rc) { return (int) colony().population() * (rc+empire().race().robotControlsAdj()); }
+    public int maxUseableFactories(int rc) { return (int) colony().population() * (rc+empire().robotControlsAdj()); }
     @Override
     public boolean isCompleted()         { return factories >= maxBuildableFactories(); }
     public boolean isCompletedThisTurn() { return isCompleted() && (newFactories > 0); }
@@ -117,7 +117,7 @@ public class ColonyIndustry extends ColonySpendingCategory {
             // calculate cost to refit existing factories
             float upgradeCost = 0;
             float factoriesToUpgrade = min(factories+newFactories, maxBuildableFactories(robotControls));
-            if (!empire().race().ignoresFactoryRefit)
+            if (!empire().ignoresFactoryRefit())
                 upgradeCost = factoriesToUpgrade * tech().baseFactoryCost() / 2;
             // not enough to upgrade? save off BC for next turn and exit
             if (upgradeCost > newBC) {
@@ -191,7 +191,7 @@ public class ColonyIndustry extends ColonySpendingCategory {
             // calculate cost to refit existing factories
             float upgradeCost = 0;
             float factoriesToUpgrade = min(factories+newFactories, maxBuildableFactories(colonyControls));
-            if (!empire().race().ignoresFactoryRefit)
+            if (!empire().ignoresFactoryRefit())
                 upgradeCost = factoriesToUpgrade * tech().baseFactoryCost() / 2;
             // not enough to upgrade? save off BC for next turn and exit
             if (upgradeCost > totalBC) 
@@ -249,7 +249,7 @@ public class ColonyIndustry extends ColonySpendingCategory {
             // calculate cost to refit existing factories
             float upgradeCost = 0;
             float factoriesToUpgrade = min(factories+possibleNewFactories, maxBuildableFactories(colonyControls));
-            if (!empire().race().ignoresFactoryRefit)
+            if (!empire().ignoresFactoryRefit())
                 upgradeCost = factoriesToUpgrade * tech().baseFactoryCost() / 2;
             // not enough to upgrade? save off BC for next turn and exit
             if (upgradeCost > newBC) 
@@ -299,7 +299,7 @@ public class ColonyIndustry extends ColonySpendingCategory {
 
         // cost to upgrade existing factories
         while (colonyControls < tech().baseRobotControls()) {
-            if (!empire().race().ignoresFactoryRefit)
+            if (!empire().ignoresFactoryRefit())
                 refitFactoriesCost += maxBuildableFactories(colonyControls) * tech().baseFactoryCost() / 2;
             colonyControls++;
             // cost to build up for new control level

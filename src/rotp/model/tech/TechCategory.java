@@ -19,6 +19,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import rotp.model.empires.Empire;
 import rotp.model.empires.Race;
 import rotp.util.Base;
 
@@ -85,7 +86,7 @@ public final class TechCategory implements Base, Serializable {
     public String researchKey()            { return researchKeys[index]; }
     public String key()                    { return categoryKeys[index]; }
     public boolean isWeaponTechCategory()  { return (this == tree.weapon()); }
-    private float racialMod()             { return tree == null? 1.0f : tree.empire().race().techMod[index]; }
+    private float racialMod()             { return tree == null? 1.0f : tree.empire().techMod(index); }
     public float discoveryPct()           { return discoveryPct; }
 
     public TechCategory() { }
@@ -181,7 +182,7 @@ public final class TechCategory implements Base, Serializable {
     private void buildResearchList() {
         TechCategory baseCat = TechLibrary.baseCategory[index];
 
-        Race race = tree.empire().race();
+        Empire emp = tree.empire();
         possibleTechs.clear();
 
         Object[] techsByQuintile =new Object[MAX_QUINTILES];
@@ -191,7 +192,7 @@ public final class TechCategory implements Base, Serializable {
         for (int i=0;i<baseCat.possibleTechs.size();i++) {
             String id = baseCat.possibleTechs.get(i);
             Tech t = tech(id);
-            if (!t.restricted && t.canBeResearched(race) && !t.free ) {
+            if (!t.restricted && emp.canResearch(t) && !t.free ) {
                 List<String> techs = (List<String>) techsByQuintile[t.quintile()-1];
                 techs.add(id);
             }

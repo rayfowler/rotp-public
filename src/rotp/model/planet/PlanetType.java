@@ -160,7 +160,7 @@ public class PlanetType implements Base {
     public boolean isAsteroids()              { return key.equals(NONE); }
 
     public String description(Empire emp) {
-        if (emp.race().ignoresPlanetEnvironment())
+        if (emp.ignoresPlanetEnvironment())
             return descSilicoid();
         else
             return descBiological();

@@ -800,7 +800,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         return max(0, usedFactories() * tech().factoryWasteMod());
     }
     public float wasteCleanupCost() {
-        if (empire.race().ignoresPlanetEnvironment())
+        if (empire.ignoresPlanetEnvironment())
             return 0;
         
         float mod = empire().isPlayer() ? 1.0f : options().aiWasteModifier();
@@ -822,8 +822,8 @@ public final class Colony implements Base, IMappedObject, Serializable {
         // calculate growth rate based on current pop, environment & race
         float maxNewPopulation = planet.currentSize() - workingPopulation();
         float baseGrowthRate = max(0, (1 - (workingPopulation() / planet.currentSize())) / 10);
-        baseGrowthRate *= empire.race().growthRateMod();
-        if (!empire.race().ignoresPlanetEnvironment())
+        baseGrowthRate *= empire.growthRateMod();
+        if (!empire.ignoresPlanetEnvironment())
             baseGrowthRate *= planet.growthAdj();
 
         // always at least .1 base growth in pop

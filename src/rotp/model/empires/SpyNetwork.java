@@ -437,7 +437,7 @@ public final class SpyNetwork implements Base, Serializable {
         float adj = empire().totalInternalSecurityPct();
 
         // adjust for their race
-        adj += empire().race().internalSecurityAdj();
+        adj += empire().internalSecurityAdj();
 
         // if spy is at a computer tech disadvantage, give bonus to them
         float techDiff = spyTechAdvantage();
@@ -453,7 +453,7 @@ public final class SpyNetwork implements Base, Serializable {
     }
     private float spyInfiltrationAdj() {
         // start with our racial bonus
-        float adj = owner().race().spyInfiltrationAdj();
+        float adj = owner().spyInfiltrationAdj();
         // if spy is at a computer tech advantage, give bonus to spy
         float techDiff = spyTechAdvantage();
         if (techDiff > 0)

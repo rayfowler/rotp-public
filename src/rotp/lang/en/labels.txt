@@ -1095,6 +1095,10 @@ SETUP_FUEL_RANGE_NORMAL           | Normal
 SETUP_FUEL_RANGE_HIGH             | High
 SETUP_FUEL_RANGE_HIGHER           | Higher
 SETUP_FUEL_RANGE_HIGHEST          | Highest
+SETUP_RANDOMIZE_AI_NONE           | None
+SETUP_RANDOMIZE_AI_PERSONALITY    | Personality
+SETUP_RANDOMIZE_AI_ABILITY        | Ability
+SETUP_RANDOMIZE_AI_BOTH           | Both
 SETUP_RACE_LABEL                  | Available Races
 SETUP_RACE_COLOR                  | Empire Color:
 SETUP_HOMEWORLD_NAME_LABEL        | Homeworld:
@@ -1139,11 +1143,12 @@ SETTINGS_ACCEPT                   | Accept
 SETTINGS_STAR_DENSITY             | Star Density: %1
 SETTINGS_RANDOM_EVENTS            | Random Events: %1
 SETTINGS_RESEARCH_RATE            | Research Rate: %1
+SETTINGS_COUNCIL_WIN              | Council Win: %1
+SETTINGS_RANDOMIZE_AI             | Randomize AI: %1
 SETTINGS_TECH_TRADING             | Tech Trading: %1
 SETTINGS_GALAXY_AGE               | Galaxy Age: %1
 SETTINGS_WARP_SPEED               | Warp Speed: %1
 SETTINGS_NEBULAE                  | Nebulae: %1
-SETTINGS_COUNCIL_WIN              | Council Win: %1
 SETTINGS_PLANET_QUALITY           | Planet Quality: %1
 SETTINGS_TERRAFORMING             | Hostile Terraforming: %1
 SETTINGS_FUEL_RANGE               | Fuel Range: %1
@@ -1154,9 +1159,10 @@ SETTINGS_TECH_TRADING_DESC        | Turn off all technology trades or restrict t
 SETTINGS_STAR_DENSITY_DESC        | Set to high to reduce the chance of empires being stranded early in the game.
 SETTINGS_RESEARCH_RATE_DESC       | Slow the research rate of new technologies, lengthening the useful life of current technologies.
 SETTINGS_NEBULAE_DESC             | Nebulae slow down ship travel and render shields useless. Increase or decrease their frequency.
-SETTINGS_COUNCIL_DESC             | Disable the council victory condition or allow enemy empires to rebel against a player victory.
 SETTINGS_PLANET_QUALITY_DESC      | Increases or decreases the frequency of higher quality planets.
 SETTINGS_TERRAFORMING_DESC        | Reduce or eliminate the benefits of the Improved Terraforming technologies on hostile planets.
+SETTINGS_COUNCIL_DESC             | Disable the council victory condition or allow enemy empires to rebel against a player victory.
+SETTINGS_RANDOMIZE_AI_DESC        | Randomize the AI player personalities, racial abilities, or both.
 SETTINGS_FUEL_RANGE_DESC          | Increase the range of fuel range technologies and reserve fuel tanks.
 
 // Tech UI labels

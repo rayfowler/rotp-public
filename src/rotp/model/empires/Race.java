@@ -301,6 +301,7 @@ public class Race implements Base, Serializable {
     public int diplomacyBonus()               { return diplomacyBonus; }
     public float councilBonus()               { return councilBonus; }
     public boolean ignoresPlanetEnvironment() { return ignoresPlanetEnvironment; }
+    public boolean ignoresFactoryRefit()      { return ignoresFactoryRefit; }
     public int homeworldKey()                 { return homeworldKey; }
     public void homeworldKey(int i)           { homeworldKey = i; }
     public String title()                     { return title; }
