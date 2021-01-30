@@ -909,7 +909,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         }
         else {
             EmpireView view = player().viewForEmpire(parent.selectedEmpire());
-            externalSpyingCost = player().totalTaxablePlanetaryProduction() * view.spies().allocationCostPct();
+            externalSpyingCost = player().totalTaxablePlanetaryProduction() * view.spies().allocationCostPct() * view.owner().spySpendingModifier();
         }
         loadTechMaps();
     }

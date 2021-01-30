@@ -1349,13 +1349,23 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
         return count;
     }
-    public float totalSpyCostPct() {
+    public float requestedTotalSpyCostPct() {
         float sum = 0;
         for (EmpireView ev : empireViews()) {
             if (ev != null)
                 sum += ev.spies().allocationCostPct();
         }
         return sum;
+    }
+    public float totalSpyCostPct() {
+        float requested = requestedTotalSpyCostPct();
+        return min(0.5f, requested);
+    }
+    public float spySpendingModifier() {
+        float requested = requestedTotalSpyCostPct();
+        if (requested > 0.5f)
+            return 0.5f / requested;
+        return 1.0f;
     }
     public int totalActiveSpies() {
         int sum = 0;

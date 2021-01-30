@@ -202,8 +202,9 @@ public final class EmpireView implements Base, Serializable {
         if (empire.extinct())
             return;
 
+        float spyMod = owner().spySpendingModifier();
         embassy.nextTurn(prod);
-        spies.nextTurn(prod);
+        spies.nextTurn(prod, spyMod);
     }
     public void makeDiplomaticOffers() {
         log(this+": assessTurn");

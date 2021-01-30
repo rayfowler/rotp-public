@@ -477,8 +477,7 @@ public final class TechCategory implements Base, Serializable {
     public void allocateResearchBC() {
         totalBC = totalBC + currentResearch();
         
-        if (allocation > 0)
-            researchStarted = false;
+        researchStarted = false;
        // currentTech == null should only happen at game start
         // and when all category techs have been research
         // knowntechs contains currentTech is an error condition
