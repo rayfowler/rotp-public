@@ -1176,6 +1176,7 @@ TECH_EMPIRE_DETAIL_1              | %1 BC for
 TECH_EMPIRE_DETAIL_2              | %2 RP / Year
 TECH_TOTAL_RP                     | %1 RP
 TECH_DISCOVERY_PCT                | %1%
+TECH_CHANGE_RESEARCH              | Click to Research this Technology
 TECH_NEXT_TIER_TITLE              | Not Available Yet.
 TECH_FIRST_TIER_DESC              | Spend research points in this category to unlock.
 TECH_NEXT_TIER_DESC               | Learn a technology in previous tier to unlock.

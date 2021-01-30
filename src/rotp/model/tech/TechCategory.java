@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import rotp.model.empires.Empire;
-import rotp.model.empires.Race;
 import rotp.util.Base;
 
 public final class TechCategory implements Base, Serializable {
@@ -66,6 +65,7 @@ public final class TechCategory implements Base, Serializable {
     private float discoveryPct = 1;
     private float totalBC = 0;
     private boolean researchCompleted = false;
+    private boolean researchStarted = false;
 
     public int index()                     { return index; }
     public void index(int i)               { index = i; }
@@ -75,6 +75,7 @@ public final class TechCategory implements Base, Serializable {
     public boolean currentTech(Tech t)        { 
         if (!id().equals(t.cat.id()))
             return false;
+        researchStarted = true;
         currentTech = t.id(); 
         return true;
     }
@@ -99,6 +100,7 @@ public final class TechCategory implements Base, Serializable {
     }
 
     public boolean researchCompleted() { return researchCompleted; }
+    public boolean researchStarted() { return researchStarted; }
     public int allocation()            { return allocation; }
     public void allocation(int i)      { allocation = bounds(0,i,MAX_ALLOCATION_TICKS); }
     public float allocationPct()      { return (float) allocation/MAX_ALLOCATION_TICKS; }
@@ -474,7 +476,9 @@ public final class TechCategory implements Base, Serializable {
     }
     public void allocateResearchBC() {
         totalBC = totalBC + currentResearch();
-
+        
+        if (allocation > 0)
+            researchStarted = false;
        // currentTech == null should only happen at game start
         // and when all category techs have been research
         // knowntechs contains currentTech is an error condition
