@@ -1021,16 +1021,16 @@ public class DesignUI extends BasePanel {
             Graphics2D g = (Graphics2D) g0;
             // draw the gradient background for the header row
             if (configGradient == null) {
-                Point2D start = new Point2D.Float(0, getHeight() / 2);
+                Point2D start = new Point2D.Float(0, 0);
                 Point2D end = new Point2D.Float(0, getHeight());
                 float[] dist = {0.0f, 1.0f};
                 Color[] colors = {darkerBrown, brown};
                 configGradient = new LinearGradientPaint(start, end, dist, colors);
             }
             g.setPaint(configGradient);
-            g.fillRect(0, getHeight() / 2, getWidth(), getHeight() / 2);
+            g.fillRect(0, 0, getWidth(), getHeight());
             if (UserPreferences.textures()) 
-                drawTexture(g0,0, getHeight() / 2, getWidth(), getHeight() / 2);
+                drawTexture(g0,0, 0, getWidth(), getHeight());
 
             ShipDesign des = shipDesign();
             int sect1H = scaled(255);
