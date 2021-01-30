@@ -120,7 +120,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     private float tradePiracyRate = 0;
     private NamedObject lastAttacker;
     private int defaultMaxBases = 1;
-    private String dataRaceKey;
+    private final String dataRaceKey;
 
     private transient AI ai;
     private transient boolean[] canSeeShips;

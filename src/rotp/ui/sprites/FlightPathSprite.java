@@ -28,6 +28,7 @@ import rotp.model.empires.Empire;
 import rotp.model.galaxy.Ship;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
+import rotp.model.galaxy.Transport;
 import rotp.model.game.GameSession;
 import rotp.ui.BasePanel;
 import rotp.ui.main.GalaxyMapPanel;
@@ -106,6 +107,8 @@ public class FlightPathSprite extends MapSprite {
             else if ((workingPaths().contains(this))
                 && ship.passesThroughNebula(sys))
                 c0 = Color.magenta;
+            else if ((to.empId() != ship.empId()) && (ship() instanceof Transport))
+                c0 = Color.yellow;
             else
                 c0 = Color.green;
         }
