@@ -304,8 +304,13 @@ public final class Colony implements Base, IMappedObject, Serializable {
         return true;
     }
     public String shipyardProject() {
-        if (shipyard().allocation() > 0)
-            return shipyard().design().name();
+        if (shipyard().allocation() > 0) {
+            int limit = shipyard().buildLimit();
+            if (limit == 0)
+                return shipyard().design().name();
+            else
+                return str(limit)+" "+shipyard().design().name();
+        }
         return "";
     }
     public void clearSpending() {
