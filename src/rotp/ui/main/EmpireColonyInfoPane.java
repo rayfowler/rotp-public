@@ -206,6 +206,10 @@ public class EmpireColonyInfoPane extends BasePanel {
         private static final long serialVersionUID = 1L;
         private final Polygon upArrow = new Polygon();
         private final Polygon downArrow = new Polygon();
+        private final int upButtonX[] = new int[3];
+        private final int upButtonY[] = new int[3];
+        private final int downButtonX[] = new int[3];
+        private final int downButtonY[] = new int[3];
         public EmpireBasesPane() {
             super();
             init();
@@ -215,10 +219,6 @@ public class EmpireColonyInfoPane extends BasePanel {
             addMouseMotionListener(this);
             addMouseWheelListener(this);
         }
-        private final int upButtonX[] = new int[3];
-        private final int upButtonY[] = new int[3];
-        private final int downButtonX[] = new int[3];
-        private final int downButtonY[] = new int[3];
         private void incrementBases() {
             StarSystem sys = parentUI.systemViewToDisplay();
             if (sys == null)
@@ -325,34 +325,10 @@ public class EmpireColonyInfoPane extends BasePanel {
                 return;
             int x = e.getX();
             int y = e.getY();
-            if (upArrow.contains(x,y)) {
-                StarSystem sys = parentUI.systemViewToDisplay();
-                if (sys == null)
-                    return;
-                Colony colony = sys.colony();
-                if (colony == null)
-                    return;
-                boolean updated = colony.defense().incrementMaxBases();
-                if (updated)
-                    softClick();
-                else
-                    misClick();
-                repaint();
-            }
-            else if (downArrow.contains(x,y)) {
-                StarSystem sys = parentUI.systemViewToDisplay();
-                if (sys == null)
-                    return;
-                Colony colony = sys.colony();
-                if (colony == null)
-                    return;
-                boolean updated = colony.defense().decrementMaxBases();
-                if (updated)
-                    softClick();
-                else
-                    misClick();
-                repaint();
-            }
+            if (upArrow.contains(x,y))
+                incrementBases();
+            else if (downArrow.contains(x,y)) 
+                decrementBases();
         }
         @Override
         public void mouseDragged(MouseEvent e) { }

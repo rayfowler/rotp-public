@@ -71,6 +71,8 @@ public class AIGovernor implements Base, Governor {
         }
         if (col.shipyard().stargateCompleted())
             session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_STARGATE_COMPLETE", name));
+        if (col.shipyard().shipLimitReached())
+            session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_SHIPS_COMPLETE", name, col.shipyard().design().name()));
         if (col.defense().shieldCompleted())
             session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_SHIELD_COMPLETE", name, col.empire().tech().topPlanetaryShieldTech().name()));
         if ((bases > 0) && (bases >= maxBases) && col.defense().missileBasesUpgraded())
@@ -135,10 +137,13 @@ public class AIGovernor implements Base, Governor {
         if (!col.locked(DEFENSE))
             col.setAllocation(DEFENSE,  min(orderedDef, maxDef));
         
-        // 3. Unless we have just completed building a stargate, ensure that SHIP spending 
+        // 3. Unless we have just completed building a stargate or reached a ship
+        // limit, ensure that SHIP spending 
         // is maintained. Ship spending is never allocated for player colonies by the AI 
         //Governor so any spending here must be treated similarly to a player order
-        if (!col.locked(SHIP) && !col.shipyard().stargateCompleted())
+        if (!col.locked(SHIP) 
+        && !col.shipyard().stargateCompleted()
+        && !col.shipyard().shipLimitReached())
             col.setAllocation(SHIP, prevShip);
  
         // 4. now fill any remaining build requirements for ind/eco/def
@@ -166,14 +171,14 @@ public class AIGovernor implements Base, Governor {
         // if research not locked go there
         if (!col.locked(RESEARCH))
             col.addAllocation(RESEARCH, col.allocationRemaining());
-        else if (!col.locked(SHIP)) // else try ships
-            col.addAllocation(SHIP, col.allocationRemaining());
         else if (!col.locked(INDUSTRY)) 
             col.addAllocation(INDUSTRY, col.allocationRemaining());
         else if (!col.locked(ECOLOGY)) 
             col.addAllocation(ECOLOGY, col.allocationRemaining());
         else if (!col.locked(DEFENSE))
             col.addAllocation(DEFENSE, col.allocationRemaining());
+        else if (!col.locked(SHIP))
+            col.addAllocation(SHIP, col.allocationRemaining());
     }
     private void baseSetColonyAllocations(Colony col) {                
         int maxAllocation = ColonySpendingCategory.MAX_TICKS;

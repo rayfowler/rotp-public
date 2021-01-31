@@ -577,6 +577,8 @@ MAIN_COLONY_COMPLETION_YEARS      | %1 Years
 MAIN_COLONY_COMPLETION_CENTURY    | %1 Yrs
 MAIN_COLONY_COMPLETION_PER_YEAR   | %1/Year
 MAIN_COLONY_SHIPYARD_COMPLETED    | Completed: %1
+MAIN_COLONY_SHIPYARD_LIMIT        | Build Limit:
+MAIN_COLONY_SHIPYARD_LIMIT_NONE   | None
 MAIN_COLONY_SHIPYARD_CONSTRUCTION | Ship Build Queue
 MAIN_COLONY_RELOCATE_LABEL        | Set Rally Point
 MAIN_COLONY_TRANSPORTS_LABEL      | Send Transports
@@ -630,6 +632,7 @@ MAIN_ALLOCATE_TITLE               | Spending Adjustments
 MAIN_ALLOCATE_DESIGN_SCRAPPED     | The ship design under construction at %1 has been scrapped.
 MAIN_ALLOCATE_COLONIZED           | • %1 has been colonized.
 MAIN_ALLOCATE_STARGATE_COMPLETE   | • %1 has completed building a Stargate.
+MAIN_ALLOCATE_SHIPS_COMPLETE      | • %1 has completed building the requested number of %2 ships.
 MAIN_ALLOCATE_SHIELD_COMPLETE     | • %1 has completed building %2.
 MAIN_ALLOCATE_BASES_COMPLETE      | • %1 has completed building %2 missile bases.
 MAIN_ALLOCATE_BASES_UPGRADED      | • %1 has completed upgrading its missile bases.
