@@ -1238,6 +1238,7 @@ SHIP_DESIGN_AVAILABLE_DESC2       | Deploy this design to allow construction on 
 SHIP_DESIGN_SLOT_DESC             | Total in fleet:
 SHIP_DESIGN_SLOT_DESC2            | In Orbit:
 SHIP_DESIGN_SLOT_DESC3            | In Transit:
+SHIP_DESIGN_SLOT_DESC4            | Colonies Building:
 SHIP_DESIGN_NEW                   | New Ship Design
 SHIP_DESIGN_SIZE_SMALL            | Small
 SHIP_DESIGN_SIZE_MEDIUM           | Medium

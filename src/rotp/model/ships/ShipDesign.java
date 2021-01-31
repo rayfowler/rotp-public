@@ -63,6 +63,8 @@ public final class ShipDesign extends Design {
     private transient float costBC;
 
     public static float hullPoints(int size)   { return Galaxy.current().pow(6, size); }
+    @Override
+    public boolean isShip()              { return true; }
 
     public ShipComputer computer()          { return computer; }
     public void computer(ShipComputer c)    { computer = c; }
