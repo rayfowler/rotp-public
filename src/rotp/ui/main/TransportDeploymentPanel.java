@@ -629,12 +629,12 @@ public class TransportDeploymentPanel extends SystemPanel {
             
             // draw system banner
             int sz = s60;
-            Image flagImage = parentSpritePanel.parent.flagImage(sys, true);
-            g.drawImage(flagImage, w-sz+s15, -s15, sz, sz, null);
             if (hoverBox == flagBox) {
                 Image hoverImage = parentSpritePanel.parent.flagHover(sys);
                 g.drawImage(hoverImage, w-sz+s15, -s15, sz, sz, null);
             }
+            Image flagImage = parentSpritePanel.parent.flagImage(sys);
+            g.drawImage(flagImage, w-sz+s15, -s15, sz, sz, null);
             flagBox.setBounds(w-sz+s25,-s15,sz-s20,sz-s10);
                 
             String error = null;

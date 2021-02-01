@@ -1,12 +1,11 @@
 
 Flag_Haze     | images/flags/haze.png
-Flag_Hover    | images/flags/bNone.png
+Flag_Hover    | images/flags/hover.png
 Flag_Aqua     | images/flags/bAqua.png
 Flag_Blue     | images/flags/bBlue.png
 Flag_Green    | images/flags/bGreen.png
 Flag_LtBlue   | images/flags/bLightBlue.png
-Flag_None     | images/flags/bNone.png
-Flag_Gray     | images/flags/bNone.png
+Flag_None     | images/flags/bGray.png
 Flag_Orange   | images/flags/bOrange.png
 Flag_Pink     | images/flags/bPink.png
 Flag_Purple   | images/flags/bPurple.png

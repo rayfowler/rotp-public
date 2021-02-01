@@ -152,25 +152,9 @@ public class SystemView implements IMappedObject, Base, Serializable {
             default:          return image("Flag_White");
         }
     }
-    public Image flagImage(boolean noneIsTransparent) {
-        switch(flagColor) {
-            case FLAG_NONE:   return noneIsTransparent ? image("Flag_None") : image("Flag_Gray");
-            case FLAG_RED:    return image("Flag_Red");
-            case FLAG_WHITE:  return image("Flag_White");
-            case FLAG_BLUE:   return image("Flag_Blue");
-            case FLAG_GREEN:  return image("Flag_Green");
-            case FLAG_YELLOW: return image("Flag_Yellow");
-            case FLAG_AQUA:   return image("Flag_Aqua");
-            case FLAG_ORANGE: return image("Flag_Orange");
-            case FLAG_LTBLUE: return image("Flag_LtBlue");
-            case FLAG_PURPLE: return image("Flag_Purple");
-            case FLAG_PINK:   return image("Flag_Pink");
-            default:          return image("Flag_White");
-        }
-    }
     public Image mapFlagImage() {
         switch(flagColor) {
-            case FLAG_NONE:   return image("Flag_None");
+            case FLAG_NONE:   return null;
             case FLAG_RED:    return image("Flag_RedM");
             case FLAG_WHITE:  return image("Flag_WhiteM");
             case FLAG_BLUE:   return image("Flag_BlueM");

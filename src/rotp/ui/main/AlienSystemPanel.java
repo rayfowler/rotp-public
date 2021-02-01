@@ -114,7 +114,7 @@ public class AlienSystemPanel extends SystemPanel {
 
             // draw system banner
             int sz = s70;
-            Image flagImage = parentSpritePanel.parent.flagImage(sys, true);
+            Image flagImage = parentSpritePanel.parent.flagImage(sys);
             g.drawImage(flagImage, w-sz+s15, topH1-sz+s10, sz, sz, null);
             if (hoverBox == flagBox) {
                 Image hoverImage = parentSpritePanel.parent.flagHover(sys);

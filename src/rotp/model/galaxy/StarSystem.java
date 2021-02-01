@@ -540,9 +540,11 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         }
         
         if (map.scaleX() <= GalaxyMapPanel.MAX_FLAG_SCALE) {
-            Color flagColor = map.parent().flagColor(this);
-            if (flagColor != null)
-                drawBanner(g2, flagColor, Color.lightGray, x0+BasePanel.s3, y0);
+            Image flag = pl.sv.mapFlagImage(id);
+            if (flag != null) {
+                int sz = BasePanel.s30;
+                g2.drawImage(flag, x0-BasePanel.s15, y0-BasePanel.s30, sz, sz,null);
+            }
         }
 
         // draw star name
@@ -710,30 +712,6 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         int r  = map.scale(reach);
         g.setColor(emp.reachColor());
         g.fillOval(x-r, y-r, r+r, r+r);
-    }
-    public void drawBanner(Graphics2D g, Color c0, Color c1, int x, int y) {
-        int w=scaled(2);
-        int sp=scaled(10);
-        int h=scaled(20);
-        int flagW=scaled(16);
-        int flagH=scaled(10);
-        Polygon p = new Polygon();
-        p.addPoint(x-flagW, y-h-sp+(flagH/2));
-        p.addPoint(x, y-h-sp);
-        p.addPoint(x, y-h-sp+flagH);
-        
-        // if c is null, just draw a black outline (for the colony info panel)
-        if (c0 == null) {
-            g.setColor(c1);
-            g.draw(p);
-            g.fillRect(x, y-h-sp, w, h);
-        }
-        else {
-            g.setColor(c0);
-            g.fill(p);
-            g.setColor(c1);
-            g.fillRect(x, y-h-sp, w, h);
-        }
     }
     private void drawAlert(GalaxyMapPanel map, Graphics2D g2, Color alertC, int x, int y) {
         int r = map.scale(0.75f);

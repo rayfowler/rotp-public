@@ -670,16 +670,14 @@ public class MapOverlaySystemsScouted extends MapOverlay {
             if (!parent.drawSprites())
                 return;
             StarSystem sys = parent.starSystem();
-            Image flagImage = parent.parent.flagImage(sys, false);
+            Image flagImage = parent.parent.flagImage(sys);
             Image flagHaze = parent.parent.flagHaze(sys);
             g.drawImage(flagHaze, mapX, mapY, buttonW, buttonH, null);
-            g.drawImage(flagHaze, mapX, mapY, buttonW, buttonH, null);
-            g.drawImage(flagHaze, mapX, mapY, buttonW, buttonH, null);
-            g.drawImage(flagImage, mapX, mapY, buttonW, buttonH, null);
             if (hovering) {
                 Image flagHover = parent.parent.flagHover(sys);
                 g.drawImage(flagHover, mapX, mapY, buttonW, buttonH, null);
             }
+            g.drawImage(flagImage, mapX, mapY, buttonW, buttonH, null);
         }
         @Override
         public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {

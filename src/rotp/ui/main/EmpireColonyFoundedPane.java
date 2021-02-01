@@ -71,12 +71,12 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
 
         // draw system banner
         int sz = s70;
-        Image flagImage = player().sv.flagImage(sys.id, true);
-        g.drawImage(flagImage, w-sz+s15, h-sz+s15, sz, sz, null);
         if (hoverBox == flagBox) {
             Image hoverImage = player().sv.flagHover(sys.id);
             g.drawImage(hoverImage, w-sz+s15, h-sz+s15, sz, sz, null);
         }
+        Image flagImage = player().sv.flagImage(sys.id);
+        g.drawImage(flagImage, w-sz+s15, h-sz+s15, sz, sz, null);
         flagBox.setBounds(w-sz+s25,h-sz+s15,sz-s20,sz-s10);
     }
     public void toggleFlagColor(boolean rightClick) {

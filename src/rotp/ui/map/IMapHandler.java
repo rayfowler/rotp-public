@@ -90,7 +90,7 @@ public interface IMapHandler {
     default public float systemClickRadius()             { return 1.0f; }
     default public boolean showYear()                    { return true; }
     default Color flagColor(StarSystem s)                { return Empire.thePlayer().sv.flagColor(s.id); }
-    default Image flagImage(StarSystem s, boolean b)     { return Empire.thePlayer().sv.flagImage(s.id, b); }
+    default Image flagImage(StarSystem s)                { return Empire.thePlayer().sv.flagImage(s.id); }
     default Image mapFlagImage(StarSystem s)             { return Empire.thePlayer().sv.mapFlagImage(s.id); }
     default Image flagHover(StarSystem s)                { return ImageManager.current().image("Flag_Hover"); }
     default Image flagHaze(StarSystem s)                 { return ImageManager.current().image("Flag_Haze"); }

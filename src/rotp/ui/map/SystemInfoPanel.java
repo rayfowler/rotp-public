@@ -197,12 +197,12 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
             drawShadowedString(g, name, 2, s10, s30, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
             
             int sz = s60;
-            Image flagImage = parent.flagImage(sys, true);
-            g.drawImage(flagImage, w-sz+s15, -s15, sz, sz, null);
             if (hoverBox == flagBox) {
                 Image hoverImage = parent.flagHover(sys);
                 g.drawImage(hoverImage, w-sz+s15, -s15, sz, sz, null);
             }
+            Image flagImage = parent.flagImage(sys);
+            g.drawImage(flagImage, w-sz+s15, -s15, sz, sz, null);
             flagBox.setBounds(w-sz+s25,-s15,sz-s20,sz-s10);
         }
         public void toggleFlagColor(boolean rightClick) {
