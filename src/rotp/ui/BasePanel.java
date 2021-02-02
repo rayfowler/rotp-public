@@ -273,11 +273,11 @@ public class BasePanel extends JPanel implements Base {
 
         g.setFont(narrowFont(fontSize));
         int y1 = y+scaled(fontSize)+bdrW-s5;
-        drawShadowedString(g, title, 4, x+((noticeW-sw1)/2), y1, SystemPanel.textShadowC, SystemPanel.whiteText);
+        drawShadowedString(g, title, 2, x+((noticeW-sw1)/2), y1, SystemPanel.textShadowC, SystemPanel.whiteText);
         if (!step.isEmpty()) {
             int y2 = y+noticeH-bdrW-s6;
             g.setFont(narrowFont(fontSize2));
-            drawShadowedString(g, step, 4, x+((noticeW-sw2)/2), y2, SystemPanel.textShadowC, SystemPanel.whiteText);
+            drawShadowedString(g, step, 2, x+((noticeW-sw2)/2), y2, SystemPanel.textShadowC, SystemPanel.whiteText);
         }
     }
     public void redrawMemory() {

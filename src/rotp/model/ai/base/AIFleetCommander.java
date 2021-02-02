@@ -178,13 +178,8 @@ public class AIFleetCommander implements Base, FleetCommander {
         // if this is a staged plan and is unfilled by fleet at staging point, all future ships go to staging point
         if (fPlan.isStaged() && fPlan.needsShips()) {
             ShipFleet stagingFleet = empire.sv.orbitingFleet(fPlan.stagingPointId);
-            if (fPlan.canBeFilledBy(stagingFleet)) {
+            if (fPlan.canBeFilledBy(stagingFleet)) 
                 fPlan.subtract(stagingFleet.orders());
-				
-				// modnar: if the fleet plan can be filled, fill and send out right away
-				// may conflict with other priorities, but trade-off for combined multi-design fleets
-				fPlan.fillFrom(stagingFleet);
-			}
             else
                 fPlan.switchToStagingPoint();
         }

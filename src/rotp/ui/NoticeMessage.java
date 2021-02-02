@@ -49,6 +49,7 @@ public class NoticeMessage {
         maxSteps = max;
         if (dataChanged)
             startTime = System.currentTimeMillis();
+        repaint();
     }
     public static void setStatus(String s1 ) {
         dataChanged = !s1.equals(title);
@@ -58,6 +59,7 @@ public class NoticeMessage {
         maxSteps = 1;
         if (dataChanged)
             startTime = System.currentTimeMillis();
+        repaint();
     }
     public static void setStatus(String s1, String s2) {
         dataChanged = !s1.equals(title) || !s2.equals(step);
@@ -67,6 +69,7 @@ public class NoticeMessage {
         maxSteps = 1;
         if (dataChanged)
             startTime = System.currentTimeMillis();
+        repaint();
     }
     public static void resetSubstatus(String s1 ) {
         dataChanged = !s1.equals(step);
@@ -75,12 +78,14 @@ public class NoticeMessage {
         maxSteps = 1;
         if (dataChanged)
             startTime = System.currentTimeMillis();
+        repaint();
     }
     public static void setSubstatus(String s1 ) {
         dataChanged = !s1.equals(step);
         step = s1;
         if (dataChanged)
-                    startTime = System.currentTimeMillis();
+            startTime = System.currentTimeMillis();
+        repaint();
     }
     public static void setSubstatus(String s1, int curr, int max) {
         dataChanged = !s1.equals(step) || (curr != currentStep) || (max != maxSteps);
@@ -89,11 +94,17 @@ public class NoticeMessage {
         maxSteps = max;
         if (dataChanged)
             startTime = System.currentTimeMillis();
+        repaint();
     }
     public static void setStep(int curr) {
         dataChanged = (curr != currentStep);
         currentStep = curr;
         if (dataChanged)
             startTime = System.currentTimeMillis();
+        repaint();
+    }
+    public static void repaint() {
+        if (redisplay()) 
+            RotPUI.instance().repaint();
     }
 }

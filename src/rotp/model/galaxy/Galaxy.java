@@ -28,7 +28,6 @@ import rotp.model.empires.Empire;
 import rotp.model.empires.GalacticCouncil;
 import rotp.model.empires.Race;
 import rotp.model.events.RandomEvents;
-import rotp.model.galaxy.GalaxyShape.EmpireSystem;
 import rotp.model.game.GameSession;
 import rotp.ui.NoticeMessage;
 import rotp.ui.notifications.AdviceNotification;
@@ -406,6 +405,13 @@ public class Galaxy implements Base, Serializable {
     public Empire empireForRace(Race r) {
         for (Empire e: empires) {
             if (e.race() == r)
+                return e;
+        }
+        return null;
+    }
+    public Empire empireNamed(String s) {
+        for (Empire e: empires) {
+            if (e.raceName().equals(s))
                 return e;
         }
         return null;

@@ -986,11 +986,15 @@ public class AIDiplomat implements Base, Diplomat {
             return;
         }
 
-        if (v.embassy().anyWar() || v.embassy().unity())
+        if (v.embassy().finalWar() || v.embassy().unity())
             return;
         
         if (decidedToIssuePraise(v))
             return;
+
+        if (v.embassy().war())
+            return;
+        
         if (decidedToExchangeTech(v))
             return;
 
@@ -1236,6 +1240,8 @@ public class AIDiplomat implements Base, Diplomat {
     private void beginIncidentWar(EmpireView view, DiplomaticIncident inc) {
         log(view.toString(), " - Declaring war based on incident: ", inc.toString(), " id:", inc.declareWarId());
         view.embassy().beginWarPreparations(inc.declareWarId(), inc);
+        if (inc.triggersImmediateWar())
+            view.embassy().declareWar();
     }
     private void beginOpportunityWar(EmpireView view) {
         log(view+" - Declaring war based on opportunity");
