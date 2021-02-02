@@ -18,7 +18,6 @@ package rotp.model.galaxy;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import rotp.model.colony.Colony;
 import rotp.model.colony.ColonyShipyard;
 import rotp.model.empires.Empire;
 import rotp.model.ships.ShipDesign;
