@@ -760,11 +760,12 @@ public final class Empire implements Base, NamedObject, Serializable {
     public void postNextTurn() {
         log(this + ": postNextTurn");
         float civProd = totalPlanetaryProduction();
+        float spyMod = spySpendingModifier();
 
         // assign funds/costs for diplomatic activities
         for (EmpireView v : empireViews()) {
           if ((v!= null) && v.embassy().contact())
-                v.nextTurn(civProd);
+                v.nextTurn(civProd, spyMod);
         }
     }
     public void assessTurn() {
