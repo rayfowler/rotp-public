@@ -283,8 +283,13 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         g.setColor(SystemPanel.blackText);
         String desc;
         
+        float spyMod = player().spySpendingModifier();
         if (view.embassy().unity())
             desc = text("RACES_INTEL_SPENDING_DESC_UNITY");
+        else if (spyMod < 1) {
+            int pct = (int) (Math.ceil((1-spyMod)*100));
+            desc = text("RACES_INTEL_SPENDING_CAPPED", pct);
+        }
         else if (view.inEconomicRange())
             desc = text("RACES_INTEL_SPENDING_DESC");
         else

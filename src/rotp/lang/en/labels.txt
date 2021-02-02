@@ -1565,6 +1565,7 @@ RACES_INTEL_SPY_NETWORK           | Spy Networks
 RACES_INTEL_SPENDING              | Spending
 RACES_INTEL_SPENDING_DESC         | Increase spending to add spies to the network over time. 
 RACES_INTEL_SPENDING_DESC_UNITY   | Spy networks are unnecessary as technology is shared freely among members of the New Republic. 
+RACES_INTEL_SPENDING_CAPPED       | Empire spy spending limit reached. Funding for spy networks reduced by %1%.
 RACES_INTEL_SPENDING_RANGE        | Cannot create spy networks for empires out of ship range.
 RACES_INTEL_PERCENT_AMT           | %1%
 RACES_INTEL_YEARS                 | %1 years
