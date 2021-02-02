@@ -167,6 +167,9 @@ public class AIGovernor implements Base, Governor {
         // if there is defense left to build, go there next
         if (!col.locked(DEFENSE))
             col.setAllocation(DEFENSE, maxDef);
+        // if there is population to grow, go there
+        if (!col.locked(ECOLOGY))
+            col.setAllocation(ECOLOGY, maxEco2);
 
         // if research not locked go there
         if (!col.locked(RESEARCH))
