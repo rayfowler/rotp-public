@@ -245,6 +245,8 @@ public class ShipCombatManager implements Base {
             continueToNextPlayerStack();
     }
     public void resolveAllCombat() {
+        clearAsteroids();
+
         autoComplete = true;
         autoResolve = true;
         performingStackTurn = true;
@@ -572,12 +574,15 @@ public class ShipCombatManager implements Base {
         for (Empire c : empiresInCombat)
             results.addEmpire(c);
     }
-    private void placeAsteroids() {
-        // clear the asteroid map before starting
+    private void clearAsteroids() {
         for (int x=0;x<=maxX;x++) {
             for (int y=0;y<=maxY;y++)
                 asteroidMap[x][y] = false;
         }
+    }
+    private void placeAsteroids() {
+        // clear the asteroid map before starting
+        clearAsteroids();
         
         boolean isAsteroidSystem = system().planet().type().isAsteroids();
         CombatStackColony colony = results().colonyStack;
