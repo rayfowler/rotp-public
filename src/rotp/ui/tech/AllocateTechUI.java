@@ -1053,6 +1053,12 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             if (sliderBox[i].contains(x,y)) {
                 float pct = (float)(x-sliderBox[i].x)/sliderBox[i].width;
                 if (pct >= 0) {
+                    // clicks near the edge of the box are typically trying
+                    // to zero or max them out. Assume that.
+                    if (pct < .05)
+                        pct = 0;
+                    else if (pct > .95)
+                        pct = 1;
                     TechCategory cat = player().tech().category(i);
                     int oldAllocation = cat.allocation();
                     cat.allocationPct(pct);
