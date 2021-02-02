@@ -414,7 +414,7 @@ MAIN_HELP_3J                      | Map controls - click to cycle through variou
 
 MAIN_SYSTEM_DETAIL_PFB            | Pop %1  Fac %2  Base %3
 MAIN_SYSTEM_DETAIL_PF             | Pop %1  Fac %2
-
+MAIN_SYSTEM_DETAIL_NO_DATA        | No Data
 MAIN_UNEXPLORED_SYSTEM            | Unexplored
 MAIN_ALLIED_COLONY                | Allied Colony
 MAIN_SYSTEM_RANGE                 | %1 Light-Years
