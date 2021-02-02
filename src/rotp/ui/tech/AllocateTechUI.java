@@ -32,9 +32,12 @@ import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.awt.geom.Point2D;
+import java.awt.geom.RoundRectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import rotp.model.tech.Tech;
 import rotp.model.tech.TechCategory;
 import rotp.model.tech.TechTree;
@@ -79,11 +82,13 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
     private final Rectangle[] sliderBox = new Rectangle[TechTree.NUM_CATEGORIES];
     private final Rectangle treeBox = new Rectangle();
     private final Rectangle catArea = new Rectangle();
+    private final Map<RoundRectangle2D.Float,String> techSelections = new HashMap<>();
     private BufferedImage visualTree;
     int treeX, treeY;
     int dragX, dragY;
     float totalPlanetaryResearch = -1;
     float totalPlanetaryResearchSpending = 0;
+    
     
     public AllocateTechUI() {
         initModel();
@@ -253,6 +258,18 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             y0 += gap;
         }
         catArea.setBounds(leftM,topM,catW,y0-topM);
+        
+        if (techSelections.keySet().contains(hoverBox)) {
+            RoundRectangle2D rect = (RoundRectangle2D) hoverBox;
+            Stroke prev = g.getStroke();
+            g.setStroke(stroke2);
+            g.setColor(Color.yellow);
+            g.setClip(leftM+s10,topM+s20,catW-s20,y0-topM-s40);
+            g.drawRoundRect((int)(rect.getX()-treeX+treeBox.x), (int)(rect.getY()-treeY+treeBox.y), (int) rect.getWidth(),(int) rect.getHeight(),(int)  rect.getArcWidth(), (int) rect.getArcHeight());
+            g.setClip(null);
+            g.setStroke(prev);
+        }
+
         // draw right-side panel
         int subPanelX = w-scaled(250);
         int subPanelW = scaled(233);
@@ -602,6 +619,8 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
     }
     private void initVisualTree() {
         TechCategory cat = player().tech().category(selectedCategory);
+        techSelections.clear();
+        boolean newResearch = cat.researchStarted();
         String currentT = cat.currentTech();
         int maxQ = currentT == null ? 0 : cat.maxResearchableQuintile();
         int maxTechLvl = maxQ*5;
@@ -639,7 +658,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             if (i==maxQ)
                 drawUnknownTechTier(g,cat, i, x0,tierW,h);
             else
-                drawTechTier(g,techs,knownT,currentT,minLevel,maxLevel,x0,tierW,h);
+                drawTechTier(g,techs,newResearch,knownT,currentT,minLevel,maxLevel,x0,tierW,h);
             x0 += tierW;
         }
         g.dispose();
@@ -689,7 +708,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         int sw = g.getFontMetrics().stringWidth(numStr);
         g.drawString(numStr, x0+w-sw-s5, s25);
     }
-    private void drawTechTier(Graphics2D g, Tech[] allT, List<String> knownT, String currentT, int minLevel, int maxLevel, int x, int w, int h) {
+    private void drawTechTier(Graphics2D g, Tech[] allT, boolean newResearch, List<String> knownT, String currentT, int minLevel, int maxLevel, int x, int w, int h) {
         g.setColor(tierBackC);
         g.fillRect(x,0,w,h);
         // get available techs in this tier
@@ -706,16 +725,17 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         int boxY = 0;
         for (Tech tech: displayT) {
             boxY += boxG;
-            drawTechBox(g, tech, knownT, currentT, boxX, boxY, boxW, boxH);
+            drawTechBox(g, tech, newResearch, knownT, currentT, boxX, boxY, boxW, boxH);
             boxY += boxH;
         }
     }
-    private void drawTechBox(Graphics2D g, Tech tech, List<String> knownT, String currentT, int x, int y, int w, int h) {
+    private void drawTechBox(Graphics2D g, Tech tech, boolean newResearch, List<String> knownT, String currentT, int x, int y, int w, int h) {
         TechCategory cat =  player().tech().category(selectedCategory);
         Color backC = unknownTechC;
         Color textC = Color.white;
-
+        
         boolean known = knownT.contains(tech.id);
+        boolean allowSelect = !known && newResearch && !tech.id().equals(currentT);
 
         if(known) {
             backC = knownTechC;
@@ -741,8 +761,9 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         int realH = descLines.size() < 4 ? h : h +s12;
 
         int cnr = min(w,realH)/5;
+        RoundRectangle2D.Float techDetailBox = new RoundRectangle2D.Float(x,y,w,realH,cnr,cnr);
         g.setPaint(backGradient1);
-        g.fillRoundRect(x, y, w, realH, cnr, cnr);
+        g.fill(techDetailBox);
 
         g.setColor(textC);
         String name = tech.name();
@@ -753,7 +774,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             g.drawString(name, x+s7, y0);
         else
             drawShadowedString(g, name, 2, x+s7, y0, SystemPanel.buttonShadowC, textC);
-
+        
         if (!known) {
             String costLbl;
             float costRP = cat.costForTech(tech);
@@ -784,6 +805,24 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         for (String desc: descLines) {
             g.drawString(desc, x+s7, y0);
             y0+= lineH;
+        }
+        
+        if (allowSelect) {
+            techSelections.put(techDetailBox, tech.id);
+            Stroke prev = g.getStroke();
+            g.setStroke(stroke2);
+            g.setColor(Color.yellow);
+            String select = text("TECH_CHANGE_RESEARCH");
+            g.setFont(narrowFont(16));
+            int sw1 = g.getFontMetrics().stringWidth(select);
+            int x1 = x+(w-sw1-s20)/2;
+            g.setColor(SystemPanel.blackText);
+            g.fillRoundRect(x1, y+hdr1+s45, sw1+s20, s20, s5, s5);
+            g.setColor(Color.yellow);
+            g.drawRoundRect(x1, y+hdr1+s45, sw1+s20, s20, s5, s5);
+            g.setStroke(prev);
+            g.setColor(SystemPanel.whiteText);
+            g.drawString(select, x1+s10, y+hdr1+s60);
         }
     }
     public void selectTechCategory(int i) {
@@ -970,6 +1009,14 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             showHelp();
             return;
         }
+        
+        if (techSelections.keySet().contains(hoverBox)) {
+            String techId = techSelections.get(hoverBox);
+            player().tech().category(selectedCategory).currentTech(tech(techId));
+            visualTree = null;
+            repaint();
+            return;
+        }
         if (hoverBox == techBox) {
             toggleOverflowSpending();
             return;
@@ -1006,6 +1053,12 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             if (sliderBox[i].contains(x,y)) {
                 float pct = (float)(x-sliderBox[i].x)/sliderBox[i].width;
                 if (pct >= 0) {
+                    // clicks near the edge of the box are typically trying
+                    // to zero or max them out. Assume that.
+                    if (pct < .05)
+                        pct = 0;
+                    else if (pct > .95)
+                        pct = 1;
                     TechCategory cat = player().tech().category(i);
                     int oldAllocation = cat.allocation();
                     cat.allocationPct(pct);
@@ -1045,6 +1098,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
     public void mouseMoved(MouseEvent e) {
         int x = e.getX();
         int y = e.getY();
+        dragX = dragY = 0;
         Shape prevHover = hoverBox;
         hoverBox = hoverShape(x,y);
 
@@ -1072,6 +1126,10 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         }
     }
     private Shape hoverShape(int x, int y) {
+        for (RoundRectangle2D.Float box: techSelections.keySet()) {
+            if (box.contains(x+treeX-treeBox.x,y+treeY-treeBox.y)) 
+                return box;
+        }
         if (equalizeButton.contains(x,y))
             return equalizeButton;
         if (helpBox.contains(x,y))

@@ -397,7 +397,7 @@ public class AIDiplomat implements Base, Diplomat {
             return v.refuse(DialogueManager.DECLINE_OFFER);
 
         v.embassy().resetTradeTimer(level);
-        int bonus = requestor.race().diplomacyBonus();
+        int bonus = requestor.diplomacyBonus();
         if ((baseChanceForTrade(v)+bonus) < 0) {
             v.otherView().embassy().tradeRefused();
             return refuseOfferTrade(requestor, level);
@@ -410,7 +410,7 @@ public class AIDiplomat implements Base, Diplomat {
     @Override
     public DiplomaticReply immediateRefusalToTrade(Empire requestor) {
         EmpireView v = empire.viewForEmpire(requestor);
-        int bonus = requestor.race().diplomacyBonus();
+        int bonus = requestor.diplomacyBonus();
         if ((baseChanceForTrade(v)+bonus) < 0) {
             return DiplomaticReply.answer(false, declineReasonText(v));
         }
@@ -452,7 +452,7 @@ public class AIDiplomat implements Base, Diplomat {
         // -50 relations is minimum allowed to accept trade
         float adjustedRelations = v.embassy().relations()+50;
         float leaderMod = empire.leader().acceptTradeMod();
-        float raceBonusMod = v.empire().race().tradePctBonus();
+        float raceBonusMod = v.empire().tradePctBonus();
         float allianceMod = v.embassy().alliedWithEnemy() ? -50 : 0;
         return adjustedRelations+leaderMod+raceBonusMod+allianceMod;
     }
@@ -506,7 +506,7 @@ public class AIDiplomat implements Base, Diplomat {
             return null;
         }
 
-        int bonus = requestor.race().diplomacyBonus();
+        int bonus = requestor.diplomacyBonus();
         EmpireView v = empire.viewForEmpire(requestor);
         if ((bonus+random(100)) < empire.leader().diplomacyAnnoyanceMod(v)) {
             v.embassy().withdrawAmbassador();
@@ -593,7 +593,7 @@ public class AIDiplomat implements Base, Diplomat {
         
         float adjustedRelations = v.embassy().otherRelations();
         adjustedRelations += empire.leader().acceptPactMod(requestor);
-        adjustedRelations += requestor.race().diplomacyBonus();
+        adjustedRelations += requestor.diplomacyBonus();
         if (adjustedRelations < 20)
             return refuseOfferPact(requestor);
 
@@ -679,7 +679,7 @@ public class AIDiplomat implements Base, Diplomat {
         // if we don't like the requestor well enough, refuse now
         float adjustedRelations = v.embassy().otherRelations();
         adjustedRelations += empire.leader().acceptAllianceMod(requestor);
-        adjustedRelations += requestor.race().diplomacyBonus();
+        adjustedRelations += requestor.diplomacyBonus();
         adjustedRelations += joinWarBonus;
         adjustedRelations += erraticLeaderPenalty;
         if (adjustedRelations < 60)
@@ -986,11 +986,15 @@ public class AIDiplomat implements Base, Diplomat {
             return;
         }
 
-        if (v.embassy().anyWar() || v.embassy().unity())
+        if (v.embassy().finalWar() || v.embassy().unity())
             return;
         
         if (decidedToIssuePraise(v))
             return;
+
+        if (v.embassy().war())
+            return;
+        
         if (decidedToExchangeTech(v))
             return;
 
@@ -1236,6 +1240,8 @@ public class AIDiplomat implements Base, Diplomat {
     private void beginIncidentWar(EmpireView view, DiplomaticIncident inc) {
         log(view.toString(), " - Declaring war based on incident: ", inc.toString(), " id:", inc.declareWarId());
         view.embassy().beginWarPreparations(inc.declareWarId(), inc);
+        if (inc.triggersImmediateWar())
+            view.embassy().declareWar();
     }
     private void beginOpportunityWar(EmpireView view) {
         log(view+" - Declaring war based on opportunity");
@@ -1297,7 +1303,7 @@ public class AIDiplomat implements Base, Diplomat {
         
         // decide to vote for civ1
         // modnar: don't force vote for civ2 if civ1 get the negative check
-        pct = cv1.embassy().relations()/100.0f + civ1.race().councilBonus() + civ1.orionCouncilBonus() + previousVoteBonus(civ1) + powerBonus1;
+        pct = cv1.embassy().relations()/100.0f + civ1.councilBonus() + civ1.orionCouncilBonus() + previousVoteBonus(civ1) + powerBonus1;
         if (random() <= Math.abs(pct)) {
             if (pct > 0)
                 return castVoteFor(civ1);
@@ -1305,7 +1311,7 @@ public class AIDiplomat implements Base, Diplomat {
 
         // decide to vote for civ2
         // modnar: don't force vote for civ1 if civ2 get the negative check
-        pct = cv2.embassy().relations()/100.0f + civ2.race().councilBonus() + civ2.orionCouncilBonus() + previousVoteBonus(civ2) + powerBonus2;
+        pct = cv2.embassy().relations()/100.0f + civ2.councilBonus() + civ2.orionCouncilBonus() + previousVoteBonus(civ2) + powerBonus2;
         if (random() <= Math.abs(pct)) {
             if (pct > 0)
                 return castVoteFor(civ2);

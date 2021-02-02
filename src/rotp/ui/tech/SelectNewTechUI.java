@@ -85,7 +85,8 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
     @Override
     public void paintComponent(Graphics g) {
         Image img = paintToImage();
-        g.drawImage(img,0,0,null);
+        if (img != null)
+            g.drawImage(img,0,0,null);
     }
     @Override
     public void animate() {
@@ -99,7 +100,6 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
     public void category(TechCategory c)  {
         player().race().resetScientist();
         category = c;
-        finished = false;
         techIndex = 0;
         availableTechs = category.techIdsAvailableForResearch();
         Collections.sort(availableTechs, Tech.LEVEL);
@@ -107,11 +107,14 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
         startTimeMs = System.currentTimeMillis();
         dragY = 0;
         techsY = 0;
+        finished = false;
         repaint();
     }
     public TechCategory category()        { return category; }
 
     private Image paintToImage() {
+        if (finished)
+            return null;
         techBoxes.clear();
 
         Empire pl = player();
@@ -152,9 +155,17 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
         g.setFont(narrowFont(22));
         List<String> titleLines = wrappedLines(g, title, boxWidth-s60);
         int titleH = titleLines.size()*titleLineH;
+        int footerH = 0;
+        List<String> footerLines = null;
+        if (availableTechs.size() > 1) {
+            g.setFont(narrowFont(14));
+            String changeDesc = text("TECH_CAN_CHANGE");
+            footerLines = wrappedLines(g, changeDesc, boxWidth-s60);
+            footerH = (footerLines.size()*s16);
+        }
 
         // calculate vertical size of text box
-        int boxHeight = min(h-s30, s20+titleH+s20+max(s100+s100, s40*min(15,techDisplaySize)));
+        int boxHeight = min(h-s30, s20+titleH+s20+max(s100+s100, s40*min(15,techDisplaySize))+footerH);
         int boxTopY = min(scaled(200), (h-boxHeight)*2/3);
         int boxBottomY = boxHeight+boxTopY;
         
@@ -172,11 +183,21 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
             y0 += titleLineH;
             drawShadowedString(g, titleLine, 4, x0, y0, SystemPanel.textShadowC, dimWhite);
         }
+        
+        if (footerH > 0) {
+            g.setFont(narrowFont(14));
+            int y1 = boxBottomY-footerH-s20;
+            g.setColor(dimWhite);
+            for (String line: footerLines) {
+                y1 += s16;
+                g.drawString(line, x0, y1);
+            }
+        }
 
         // draw dark background for list of techs
         int w0 = boxWidth-s40;
         int y0b = y0+s20;
-        int listH = boxBottomY-y0-s40;
+        int listH = boxBottomY-y0-s40-footerH;
         g.setColor(AllocateTechUI.tierBackC);
         techListBox.setBounds(x0, y0b, w0, listH);
         g.fill(techListBox);
@@ -190,7 +211,7 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
 
         g.setFont(narrowFont(20));
 
-        // limit tech list size to 10, starting at tech index
+        // limit tech list size to 10, starting at tech index     
         for (int i=0;i<techDisplaySize;i++) {
             String id = availableTechs.get(i+techIndex);
             Tech t = tech(id);
@@ -258,7 +279,7 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
                 g.setStroke(prev);
             }
         }
-        g.setClip(null);
+        g.setClip(null);      
         return screenImg;
     }
     private void scrollList(int i) {

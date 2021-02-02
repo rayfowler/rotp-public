@@ -35,6 +35,8 @@ public final class ShipSpecialBlackHole extends ShipSpecial {
     @Override
     public boolean canAttackShips()   { return true; }
     @Override
+    public boolean createsBlackHole()  { return true; }
+    @Override
     public float estimatedKills(CombatStack source, CombatStack target, int num) {
         //base pct is random from 25 to 100
         float pct = .625f;

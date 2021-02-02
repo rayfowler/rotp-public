@@ -61,6 +61,7 @@ public abstract class DiplomaticIncident implements Base, Serializable {
     public boolean triggersPraise()      { return !praiseMessageId().isEmpty(); }
     public boolean triggersWarning()     { return !warningMessageId().isEmpty(); }
     public boolean triggersBreakTreaty() { return false; }
+    public boolean triggersImmediateWar() { return false; }
     public boolean triggersWar()         { return !declareWarId().isEmpty(); }
 
     private float remainingTime() {

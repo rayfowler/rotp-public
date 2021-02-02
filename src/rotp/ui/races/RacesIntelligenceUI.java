@@ -60,6 +60,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
     private final ManageSpiesUI manageSpiesPane;
     private float internalSecurityCost = 0;
     private float externalSpyingCost = 0;
+    private boolean inRange = false;
 
     private final Polygon spyMaxIncr = new Polygon();
     private final Polygon spyMaxDecr = new Polygon();
@@ -229,6 +230,9 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         g.setFont(narrowFont(15));
         g.setColor(SystemPanel.blackText);
         String desc = text("RACES_INTEL_TAX_DESC");
+        if (!inRange)
+            desc = desc + " "+text("RACES_INTEL_TAX_OUT_OF_RANGE");
+        
         List<String> lines = wrappedLines(g, desc, w-s50);
         int y4 = y3+s20;
         if (lines.size() == 1)
@@ -252,7 +256,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         g.drawString(s, x+w-s20-sw, y2);
         
          // draw string on right for pct 
-        String cost = text("RACES_INTEL_PERCENT_AMT",(int)(player().internalSecurityCostPct()*100));
+        String cost = text("RACES_INTEL_PERCENT_AMT",(int)(player().requestedSecurityCostPct()*100));
         sw = g.getFontMetrics().stringWidth(cost);
         g.drawString(cost, x+w-s20-sw, y3);
         // need maxwidth so slider doesn't move as cost pct changes
@@ -283,8 +287,13 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         g.setColor(SystemPanel.blackText);
         String desc;
         
+        float spyMod = player().spySpendingModifier();
         if (view.embassy().unity())
             desc = text("RACES_INTEL_SPENDING_DESC_UNITY");
+        else if (spyMod < 1) {
+            int pct = (int) (Math.ceil((1-spyMod)*100));
+            desc = text("RACES_INTEL_SPENDING_CAPPED", pct);
+        }
         else if (view.inEconomicRange())
             desc = text("RACES_INTEL_SPENDING_DESC");
         else
@@ -903,13 +912,16 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         for (int i=0; i<techY.length; i++)
             techY[i] = 0;
         
+        Empire pl = player();
+        
+        inRange = pl.inRangeOfAnyEmpire();
         if (parent.selectedEmpire().isPlayer()) {
-            internalSecurityCost = player().empireInternalSecurityCost();
-            externalSpyingCost = player().empireExternalSpyingCost();
+            internalSecurityCost = pl.empireInternalSecurityCost();
+            externalSpyingCost = pl.empireExternalSpyingCost();
         }
         else {
-            EmpireView view = player().viewForEmpire(parent.selectedEmpire());
-            externalSpyingCost = player().totalTaxablePlanetaryProduction() * view.spies().allocationCostPct();
+            EmpireView view = pl.viewForEmpire(parent.selectedEmpire());
+            externalSpyingCost = pl.totalTaxablePlanetaryProduction() * view.spies().allocationCostPct() * view.owner().spySpendingModifier();
         }
         loadTechMaps();
     }

@@ -62,6 +62,7 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
     private int deathThisTurn = 0; // index of attacker/defender that died this turn
 
     private Colony colony;
+    Empire defenderEmp, attackerEmp;
     private Transport transport;
     private TechHandWeapon attackerWeapon;
     private TechHandWeapon defenderWeapon;
@@ -115,6 +116,9 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
         baseIconH = s70;  // standard width of troopers
         landingCount = 0;
         exited = false;
+        attackerEmp = transport.empire();
+        defenderEmp = colony.empire();
+
         initLandscapeImage(colony);
         
         if (tr.size() < tr.launchSize()) 
@@ -133,9 +137,6 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
 
         for (int i=0;i<ships.length;i++)
             ships[i] = new LandingShip(i);
-
-        Empire attackerEmp = transport.empire();
-        Empire defenderEmp = colony.empire();
 
         // determine which attack and death animations to use
         attackerWeapon = attackerEmp.tech().topHandWeaponTech();
@@ -247,7 +248,7 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
 
         // draw fortress
         //BufferedImage fortImg = colony.empire().race().fortress(colony.fortressNum());
-        BufferedImage fortImg = colony.empire().race().fortress(0);
+        BufferedImage fortImg = defenderEmp.race().fortress(0);
         int fortW = scaled(fortImg.getWidth());
         int fortH = scaled(fortImg.getHeight());
         int fortX = w-fortW;
@@ -255,8 +256,8 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
         g.drawImage(fortImg, fortX, fortY, fortX+fortW, fortY+fortH, 0, 0, fortImg.getWidth(), fortImg.getHeight(), null);
 
         // for hostile planets, draw shield
-        if (colony.empire().race().isHostile(colony.planet().type())) {
-            BufferedImage shieldImg = colony.empire().race().shield();
+        if (defenderEmp.race().isHostile(colony.planet().type())) {
+            BufferedImage shieldImg = defenderEmp.race().shield();
             g.drawImage(shieldImg, fortX, fortY, fortX+fortW, fortY+fortH, 0, 0, shieldImg.getWidth(), shieldImg.getHeight(), null);
         }
 
@@ -421,10 +422,10 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
         x0 = w-s40;
         y0 = textY;
         String str2;
-        if (colony.empire() == transport.empire())
-            str2 = text("INVASION_REBELS_TITLE", str(defense.troops()), colony.empire().raceName());
+        if (defenderEmp == attackerEmp)
+            str2 = text("INVASION_REBELS_TITLE", str(defense.troops()), defenderEmp.raceName());
         else
-            str2 = text("INVASION_DEFENDERS_TITLE", str(defense.troops()), colony.empire().raceName());
+            str2 = text("INVASION_DEFENDERS_TITLE", str(defense.troops()), defenderEmp.raceName());
         int sw2 = g.getFontMetrics().stringWidth(str2);
         drawBorderedString(g, str2, 2, x0-sw2, textY, Color.black, Color.white);
         String defArmorDesc = text("INVASION_TROOP_ARMOR_DESC", defense.armorDesc(), defense.battleSuitDesc());
@@ -527,15 +528,15 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
     }
     private String title() {
         int year = galaxy().currentYear();
-        String invaders = transport.empire().raceName();
-        String defenders = colony.empire().raceName();
+        String invaders = attackerEmp.raceName();
+        String defenders = defenderEmp.raceName();
         String name = player().sv.name(colony.starSystem().id);
-        if (colony.defense().troops() == 0)
-            return text("INVASION_WIN", invaders, name);
-        else if (transport.size() == 0)
+         if (transport.size() == 0)
             return text("INVASION_LOSS", defenders, name);
+         else if (remainingDefenders.isEmpty())
+            return text("INVASION_WIN", invaders, name);
         else {
-            if (colony.empire() == transport.empire())
+            if (defenderEmp == attackerEmp)
                 return text("INVASION_BATTLE_REBELS", str(year), invaders, name);
             else
                 return text("INVASION_BATTLE", str(year), invaders, defenders, name);

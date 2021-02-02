@@ -330,11 +330,12 @@ GAME_SETTINGS_AUTOCOLONIZE_YES    | Yes
 GAME_SETTINGS_AUTOCOLONIZE_NO     | No
 GAME_SETTINGS_AUTOCOLONIZE_DESC   | Toggle to auto-colonize and name planets immediately when colony ships arrive. This can be time-saving on very large maps.
 GAME_SETTINGS_AUTOBOMBARD         | Auto-Bombard: %1
-GAME_SETTINGS_AUTOBOMBARD_YES     | Yes
-GAME_SETTINGS_AUTOBOMBARD_WAR     | Only at War
+GAME_SETTINGS_AUTOBOMBARD_NO      | Always Prompt
+GAME_SETTINGS_AUTOBOMBARD_NEVER   | Never
+GAME_SETTINGS_AUTOBOMBARD_YES     | Always
+GAME_SETTINGS_AUTOBOMBARD_WAR     | Only War
 GAME_SETTINGS_AUTOBOMBARD_INVADE  | Only War and not Invading
-GAME_SETTINGS_AUTOBOMBARD_NO      | No
-GAME_SETTINGS_AUTOBOMBARD_DESC    | Toggle to auto-bombard always, or only when at war, or only when at war with no invasion forces en route. This can be time-saving on very large maps.
+GAME_SETTINGS_AUTOBOMBARD_DESC    | Toggle to always prompt to bombard, never bombard, always bombard, only auto-bombard when at war, or only auto-bombard when at war with no invasion forces en route. 
 
 // Load Game UI
 LOAD_GAME_TITLE                   | Load Game
@@ -414,7 +415,7 @@ MAIN_HELP_3J                      | Map controls - click to cycle through variou
 
 MAIN_SYSTEM_DETAIL_PFB            | Pop %1  Fac %2  Base %3
 MAIN_SYSTEM_DETAIL_PF             | Pop %1  Fac %2
-
+MAIN_SYSTEM_DETAIL_NO_DATA        | No Data
 MAIN_UNEXPLORED_SYSTEM            | Unexplored
 MAIN_ALLIED_COLONY                | Allied Colony
 MAIN_SYSTEM_RANGE                 | %1 Light-Years
@@ -577,6 +578,8 @@ MAIN_COLONY_COMPLETION_YEARS      | %1 Years
 MAIN_COLONY_COMPLETION_CENTURY    | %1 Yrs
 MAIN_COLONY_COMPLETION_PER_YEAR   | %1/Year
 MAIN_COLONY_SHIPYARD_COMPLETED    | Completed: %1
+MAIN_COLONY_SHIPYARD_LIMIT        | Build Limit:
+MAIN_COLONY_SHIPYARD_LIMIT_NONE   | None
 MAIN_COLONY_SHIPYARD_CONSTRUCTION | Ship Build Queue
 MAIN_COLONY_RELOCATE_LABEL        | Set Rally Point
 MAIN_COLONY_TRANSPORTS_LABEL      | Send Transports
@@ -630,6 +633,7 @@ MAIN_ALLOCATE_TITLE               | Spending Adjustments
 MAIN_ALLOCATE_DESIGN_SCRAPPED     | The ship design under construction at %1 has been scrapped.
 MAIN_ALLOCATE_COLONIZED           | • %1 has been colonized.
 MAIN_ALLOCATE_STARGATE_COMPLETE   | • %1 has completed building a Stargate.
+MAIN_ALLOCATE_SHIPS_COMPLETE      | • %1 has completed building the requested number of %2 ships.
 MAIN_ALLOCATE_SHIELD_COMPLETE     | • %1 has completed building %2.
 MAIN_ALLOCATE_BASES_COMPLETE      | • %1 has completed building %2 missile bases.
 MAIN_ALLOCATE_BASES_UPGRADED      | • %1 has completed upgrading its missile bases.
@@ -881,6 +885,7 @@ TECH_RESEARCH_PROPULSION          | Select the next propulsion technology our re
 TECH_RESEARCH_WEAPON              | Select the next weapon technology our researchers should focus on.
 TECH_TOP_TIER_DETAIL              | Completing this research will make more advanced technologies available.
 TECH_OBSOLETE_DETAIL              | This technology is obsolete.
+TECH_CAN_CHANGE                   | This choice can be changed on the Technology screen before advancing to the next turn.
 TECH_CHOOSE_RESEARCH_COST         | %1 RP
 TECH_CHOOSE_RESEARCH_TIER         | Tier %1
 TECH_TRADE_TIER_COST_INFO         | (Tier %1 - %2 RP)
@@ -1095,6 +1100,10 @@ SETUP_FUEL_RANGE_NORMAL           | Normal
 SETUP_FUEL_RANGE_HIGH             | High
 SETUP_FUEL_RANGE_HIGHER           | Higher
 SETUP_FUEL_RANGE_HIGHEST          | Highest
+SETUP_RANDOMIZE_AI_NONE           | None
+SETUP_RANDOMIZE_AI_PERSONALITY    | Personality
+SETUP_RANDOMIZE_AI_ABILITY        | Ability
+SETUP_RANDOMIZE_AI_BOTH           | Both
 SETUP_RACE_LABEL                  | Available Races
 SETUP_RACE_COLOR                  | Empire Color:
 SETUP_HOMEWORLD_NAME_LABEL        | Homeworld:
@@ -1139,11 +1148,12 @@ SETTINGS_ACCEPT                   | Accept
 SETTINGS_STAR_DENSITY             | Star Density: %1
 SETTINGS_RANDOM_EVENTS            | Random Events: %1
 SETTINGS_RESEARCH_RATE            | Research Rate: %1
+SETTINGS_COUNCIL_WIN              | Council Win: %1
+SETTINGS_RANDOMIZE_AI             | Randomize AI: %1
 SETTINGS_TECH_TRADING             | Tech Trading: %1
 SETTINGS_GALAXY_AGE               | Galaxy Age: %1
 SETTINGS_WARP_SPEED               | Warp Speed: %1
 SETTINGS_NEBULAE                  | Nebulae: %1
-SETTINGS_COUNCIL_WIN              | Council Win: %1
 SETTINGS_PLANET_QUALITY           | Planet Quality: %1
 SETTINGS_TERRAFORMING             | Hostile Terraforming: %1
 SETTINGS_FUEL_RANGE               | Fuel Range: %1
@@ -1154,9 +1164,10 @@ SETTINGS_TECH_TRADING_DESC        | Turn off all technology trades or restrict t
 SETTINGS_STAR_DENSITY_DESC        | Set to high to reduce the chance of empires being stranded early in the game.
 SETTINGS_RESEARCH_RATE_DESC       | Slow the research rate of new technologies, lengthening the useful life of current technologies.
 SETTINGS_NEBULAE_DESC             | Nebulae slow down ship travel and render shields useless. Increase or decrease their frequency.
-SETTINGS_COUNCIL_DESC             | Disable the council victory condition or allow enemy empires to rebel against a player victory.
 SETTINGS_PLANET_QUALITY_DESC      | Increases or decreases the frequency of higher quality planets.
 SETTINGS_TERRAFORMING_DESC        | Reduce or eliminate the benefits of the Improved Terraforming technologies on hostile planets.
+SETTINGS_COUNCIL_DESC             | Disable the council victory condition or allow enemy empires to rebel against a player victory.
+SETTINGS_RANDOMIZE_AI_DESC        | Randomize the AI player personalities, racial abilities, or both.
 SETTINGS_FUEL_RANGE_DESC          | Increase the range of fuel range technologies and reserve fuel tanks.
 
 // Tech UI labels
@@ -1170,6 +1181,7 @@ TECH_EMPIRE_DETAIL_1              | %1 BC for
 TECH_EMPIRE_DETAIL_2              | %2 RP / Year
 TECH_TOTAL_RP                     | %1 RP
 TECH_DISCOVERY_PCT                | %1%
+TECH_CHANGE_RESEARCH              | Click to Research this Technology
 TECH_NEXT_TIER_TITLE              | Not Available Yet.
 TECH_FIRST_TIER_DESC              | Spend research points in this category to unlock.
 TECH_NEXT_TIER_DESC               | Learn a technology in previous tier to unlock.
@@ -1228,6 +1240,7 @@ SHIP_DESIGN_AVAILABLE_DESC2       | Deploy this design to allow construction on 
 SHIP_DESIGN_SLOT_DESC             | Total in fleet:
 SHIP_DESIGN_SLOT_DESC2            | In Orbit:
 SHIP_DESIGN_SLOT_DESC3            | In Transit:
+SHIP_DESIGN_SLOT_DESC4            | Colonies Building:
 SHIP_DESIGN_NEW                   | New Ship Design
 SHIP_DESIGN_SIZE_SMALL            | Small
 SHIP_DESIGN_SIZE_MEDIUM           | Medium
@@ -1545,7 +1558,8 @@ RACES_COUNTER_INTEL_TITLE         | Counter-Intelligence Report
 RACES_INTEL_SECURITY_BONUS        | Security Bonus
 RACES_INTEL_TOTAL_SPENDING        | Total Spending
 RACES_INTEL_SECURITY_TAX          | Security Tax
-RACES_INTEL_TAX_DESC              | Tax your colonies to increase your spending and chance of discovering foreign spies.
+RACES_INTEL_TAX_DESC              | Tax your colonies to increase your chance of discovering foreign spies.
+RACES_INTEL_TAX_OUT_OF_RANGE      | Spending begins when in range of alien races.
 RACES_INTEL_SECURITY_BONUS_AMT    | +%1%
 RACES_INTEL_SECURITY_BONUS_NONE   | None
 RACES_INTEL_REPORT_AGE            | Report Age
@@ -1553,6 +1567,7 @@ RACES_INTEL_SPY_NETWORK           | Spy Networks
 RACES_INTEL_SPENDING              | Spending
 RACES_INTEL_SPENDING_DESC         | Increase spending to add spies to the network over time. 
 RACES_INTEL_SPENDING_DESC_UNITY   | Spy networks are unnecessary as technology is shared freely among members of the New Republic. 
+RACES_INTEL_SPENDING_CAPPED       | Empire spy spending limit reached. Funding for spy networks reduced by %1%.
 RACES_INTEL_SPENDING_RANGE        | Cannot create spy networks for empires out of ship range.
 RACES_INTEL_PERCENT_AMT           | %1%
 RACES_INTEL_YEARS                 | %1 years

@@ -173,7 +173,7 @@ public final class TechTree implements Base, Serializable {
     public void init(Empire c, boolean spyFlag) {
         spy = spyFlag;
         empire = c;
-        float discoveryPct = empire.race().techDiscoveryPct();
+        float discoveryPct = empire.techDiscoveryPct();
         category = new TechCategory[TechTree.NUM_CATEGORIES];
         category[0] = new TechCategory(0, this, discoveryPct);
         category[1] = new TechCategory(1, this, discoveryPct);
@@ -368,8 +368,8 @@ public final class TechTree implements Base, Serializable {
     public boolean canTerraformHostile() {
         return topAtmoEnrichmentTech() != null;
     }
-    public int researchingShipRange() {
-        int range = ((TechFuelRange) tech(topFuelRangeTech)).range();
+    public float researchingShipRange() {
+        float range = ((TechFuelRange) tech(topFuelRangeTech)).range();
 
         String id = propulsion().currentTech();
         if (id == null)
@@ -382,8 +382,8 @@ public final class TechTree implements Base, Serializable {
         }
         return range;
     }
-    public int learnableShipRange() {
-        int range = ((TechFuelRange) tech(topFuelRangeTech)).range();
+    public float learnableShipRange() {
+        float range = ((TechFuelRange) tech(topFuelRangeTech)).range();
 
         for (String id: propulsion().techIdsAvailableForResearch(true)) {
             Tech t = tech(id);
@@ -394,9 +394,9 @@ public final class TechTree implements Base, Serializable {
         }
         return range;
     }
-    public int researchingScoutRange() {
-        int rsv = topReserveFuelRangeTech().range();
-        int range = ((TechFuelRange) tech(topFuelRangeTech)).range()+rsv;
+    public float researchingScoutRange() {
+        float rsv = topReserveFuelRangeTech().range();
+        float range = ((TechFuelRange) tech(topFuelRangeTech)).range()+rsv;
 
         String id = propulsion().currentTech();
         if (id == null)
@@ -409,9 +409,9 @@ public final class TechTree implements Base, Serializable {
         }
         return range;
     }
-    public int learnableScoutRange() {
-        int rsv = topReserveFuelRangeTech().range();
-        int range = ((TechFuelRange) tech(topFuelRangeTech)).range()+rsv;
+    public float learnableScoutRange() {
+        float rsv = topReserveFuelRangeTech().range();
+        float range = ((TechFuelRange) tech(topFuelRangeTech)).range()+rsv;
 
         for (String id: propulsion().techIdsAvailableForResearch(true)) {
             Tech t = tech(id);
@@ -457,8 +457,8 @@ public final class TechTree implements Base, Serializable {
         // returns the id of the currently unknown propulsion tech we need 
         // to research in order for scout ships to reach range dist
         // if no tech is needed or it is impossible, return null
-        int rsv = topReserveFuelRangeTech().range();
-        int range = ((TechFuelRange) tech(topFuelRangeTech)).range()+rsv;
+        float rsv = topReserveFuelRangeTech().range();
+        float range = ((TechFuelRange) tech(topFuelRangeTech)).range()+rsv;
         if (range >= dist)
             return null;
         
@@ -488,7 +488,7 @@ public final class TechTree implements Base, Serializable {
         // returns the id of the currently unknown propulsion tech we need 
         // to research in order for normal ships to reach range dist
         // if no tech is needed or it is impossible, return null
-        int range = ((TechFuelRange) tech(topFuelRangeTech)).range();
+        float range = ((TechFuelRange) tech(topFuelRangeTech)).range();
         if (range >= dist)
             return null;
         
@@ -664,7 +664,7 @@ public final class TechTree implements Base, Serializable {
         return topHandWeaponTech == null ? 0 : topHandWeaponTech().combatMod;
     }
     public float troopCombatAdj(boolean defendFlag) {
-        float adj = empire.race().groundAttackBonus() + armorGroundBonus() + battleSuitGroundBonus() + shieldGroundBonus() + weaponGroundBonus();
+        float adj = empire.groundAttackBonus() + armorGroundBonus() + battleSuitGroundBonus() + shieldGroundBonus() + weaponGroundBonus();
         if (defendFlag)
             adj += 5;
         return adj;
@@ -712,10 +712,10 @@ public final class TechTree implements Base, Serializable {
     public float wasteElimination() {
         return topEcoRestorationTech == null ? TechEcoRestoration.BASE_WASTE_ELIMINATED : topEcoRestorationTech().wasteEliminated;
     }
-    public int shipRange() {
+    public float shipRange() {
         return topFuelRangeTech == null ? 1 : topFuelRangeTech().range();
     }
-    public int scoutRange() {
+    public float scoutRange() {
        return shipRange() + topReserveFuelRangeTech().range();
     }
     public float baseFactoryCost() {
@@ -729,7 +729,7 @@ public final class TechTree implements Base, Serializable {
     }
     public float maxFactoryCost() {
         // ignoreFactoryRefit = always use RC2 has basis for factory cost
-        int controls = empire.race().ignoresFactoryRefit ?  TechRoboticControls.BASE_ROBOT_CONTROLS : baseRobotControls();
+        int controls = empire.ignoresFactoryRefit() ?  TechRoboticControls.BASE_ROBOT_CONTROLS : baseRobotControls();
         return newFactoryCost(controls);
     }
     public float newFactoryCost(int controls) {

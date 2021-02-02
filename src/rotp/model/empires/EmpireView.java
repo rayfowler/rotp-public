@@ -197,13 +197,13 @@ public final class EmpireView implements Base, Serializable {
         for (StarSystem sys : allKnownSystems)
             owner.sv.refreshSpyScan(sys.id);
     }
-    public void nextTurn(float prod) {
+    public void nextTurn(float prod, float spyMod) {
         log(this+": nextTurn");
         if (empire.extinct())
             return;
 
         embassy.nextTurn(prod);
-        spies.nextTurn(prod);
+        spies.nextTurn(prod, spyMod);
     }
     public void makeDiplomaticOffers() {
         log(this+": assessTurn");

@@ -323,6 +323,7 @@ public final class GameSession implements Base, Serializable {
                 gal.moveShipsInTransit();
                 
                 gal.events().nextTurn();
+                RotPUI.instance().selectMainPanel();
 
                 gal.council().nextTurn();
                 GNNRankingNoticeCheck.nextTurn();
@@ -338,7 +339,7 @@ public final class GameSession implements Base, Serializable {
 
                 if (processNotifications()) {
                     log("Notifications processed 1 - back to MainPanel");
-                    //RotPUI.instance().selectMainPanel();
+                    RotPUI.instance().selectMainPanel();
                 }
                 gal.postNextTurn1();
                 if (!inProgress())

@@ -31,6 +31,7 @@ public enum ImageManager implements Base {
     static final String gnnListFile = "images/gnn/images.txt";
     static final String planetListFile = "images/planets/images.txt";
     static final String missileListFile = "images/missiles/images.txt";
+    static final String flagListFile = "images/flags/images.txt";
 
     private final HashMap<String, List<String>> imageFiles = new HashMap<>();
 
@@ -39,6 +40,7 @@ public enum ImageManager implements Base {
         loadImageList(gnnListFile);
         loadImageList(planetListFile);
         loadImageList(missileListFile);
+        loadImageList(flagListFile);
     }
     public boolean valid(String key)  {
         return key.equalsIgnoreCase("NULL") || imageFiles.containsKey(key);

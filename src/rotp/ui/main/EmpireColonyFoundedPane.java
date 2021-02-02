@@ -19,6 +19,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.event.MouseEvent;
@@ -27,6 +28,9 @@ import java.awt.event.MouseMotionListener;
 import javax.swing.SwingUtilities;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
+import static rotp.ui.BasePanel.s10;
+import static rotp.ui.BasePanel.s20;
+import static rotp.ui.BasePanel.s70;
 import rotp.ui.SystemViewer;
 import rotp.ui.map.IMapHandler;
 
@@ -65,15 +69,15 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
         g.setFont(narrowFont(24));
         drawShadowedString(g, name, 2, s10, s30, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
 
-        Color flagC = player().sv.flagColor(sys.id);
-        if (hoverBox == flagBox) 
-            sys.drawBanner(g, flagC, SystemPanel.yellowText, w-s10,h);
-        else {
-            Color c1 = flagC == null ? SystemPanel.blackText : SystemPanel.whiteText;
-            sys.drawBanner(g, flagC, c1, w-s10,h);
+        // draw system banner
+        int sz = s70;
+        if (hoverBox == flagBox) {
+            Image hoverImage = player().sv.flagHover(sys.id);
+            g.drawImage(hoverImage, w-sz+s15, h-sz+s15, sz, sz, null);
         }
-        
-        flagBox.setBounds(w-s30,h-s60,s20,s60);
+        Image flagImage = player().sv.flagImage(sys.id);
+        g.drawImage(flagImage, w-sz+s15, h-sz+s15, sz, sz, null);
+        flagBox.setBounds(w-sz+s25,h-sz+s15,sz-s20,sz-s10);
     }
     public void toggleFlagColor(boolean rightClick) {
         StarSystem sys = parent.systemViewToDisplay();

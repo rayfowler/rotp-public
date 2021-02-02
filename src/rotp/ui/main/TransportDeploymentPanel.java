@@ -20,6 +20,7 @@ import java.awt.Dimension;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.LinearGradientPaint;
 import java.awt.Polygon;
 import java.awt.Rectangle;
@@ -626,16 +627,16 @@ public class TransportDeploymentPanel extends SystemPanel {
             String name = pl.sv.descriptiveName(id);
             drawShadowedString(g, name, 2, leftM, s22, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
             
-            Color flagC = parentSpritePanel.parent.flagColor(sys);
-            if (hoverBox == flagBox) 
-                sys.drawBanner(g, flagC, SystemPanel.yellowText, w-s10,s35);
-            else {
-                Color c1 = flagC == null ? SystemPanel.blackText : SystemPanel.whiteText;
-                sys.drawBanner(g, flagC, c1, w-s10,s35);
+            // draw system banner
+            int sz = s60;
+            if (hoverBox == flagBox) {
+                Image hoverImage = parentSpritePanel.parent.flagHover(sys);
+                g.drawImage(hoverImage, w-sz+s15, -s15, sz, sz, null);
             }
-
-            flagBox.setBounds(w-s30,s5,s20,s60);            
-            
+            Image flagImage = parentSpritePanel.parent.flagImage(sys);
+            g.drawImage(flagImage, w-sz+s15, -s15, sz, sz, null);
+            flagBox.setBounds(w-sz+s25,-s15,sz-s20,sz-s10);
+                
             String error = null;
             if (!pl.sv.inShipRange(id))
                 error = text("MAIN_TRANSPORT_OUT_OF_RANGE");

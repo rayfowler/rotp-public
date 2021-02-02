@@ -18,6 +18,7 @@ package rotp.ui.main;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.event.MouseEvent;
@@ -114,14 +115,14 @@ public class ExploredSystemPanel extends SystemPanel {
             drawShadowedString(g, label, 2, s10, topH-s15, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
 
             // draw system banner
-            Color flagC = parentSpritePanel.parent.flagColor(sys);
-            if (hoverBox == flagBox) 
-                sys.drawBanner(g, flagC, SystemPanel.yellowText, w-s10,topH-s5);
-            else {
-                Color c1 = flagC == null ? SystemPanel.blackText : SystemPanel.whiteText;
-                sys.drawBanner(g, flagC, c1, w-s10,topH-s5);
+            int sz = s70;
+            Image flagImage = parentSpritePanel.parent.flagImage(sys);
+            g.drawImage(flagImage, w-sz+s15, topH-sz+s10, sz, sz, null);
+            if (hoverBox == flagBox) {
+                Image hoverImage = parentSpritePanel.parent.flagHover(sys);
+                g.drawImage(hoverImage, w-sz+s15, topH-sz+s10, sz, sz, null);
             }
-            flagBox.setBounds(w-s30,topH-s65,s20,s60);
+            flagBox.setBounds(w-sz+s25,topH-sz+s10,sz-s20,sz-s10);
             
             // draw planet terrain background
             PlanetType pt = sys.planet().type();

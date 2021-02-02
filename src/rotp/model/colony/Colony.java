@@ -304,8 +304,13 @@ public final class Colony implements Base, IMappedObject, Serializable {
         return true;
     }
     public String shipyardProject() {
-        if (shipyard().allocation() > 0)
-            return shipyard().design().name();
+        if (shipyard().allocation() > 0) {
+            int limit = shipyard().buildLimit();
+            if (limit == 0)
+                return shipyard().design().name();
+            else
+                return str(limit)+" "+shipyard().design().name();
+        }
         return "";
     }
     public void clearSpending() {
@@ -743,6 +748,8 @@ public final class Colony implements Base, IMappedObject, Serializable {
         return totalProductionIncome() + maxReserveIncome();
     }
     public float colonyTaxPct() {
+        if (embargoed())
+            return 0f;
         // we are taxed at the empire rate if the empire is taxing all colonies, or we are finished developing
         float empireTaxPct = empire.empireTaxPct();
         float colonyTaxPct = 0.0f;
@@ -800,7 +807,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         return max(0, usedFactories() * tech().factoryWasteMod());
     }
     public float wasteCleanupCost() {
-        if (empire.race().ignoresPlanetEnvironment())
+        if (empire.ignoresPlanetEnvironment())
             return 0;
         
         float mod = empire().isPlayer() ? 1.0f : options().aiWasteModifier();
@@ -822,8 +829,8 @@ public final class Colony implements Base, IMappedObject, Serializable {
         // calculate growth rate based on current pop, environment & race
         float maxNewPopulation = planet.currentSize() - workingPopulation();
         float baseGrowthRate = max(0, (1 - (workingPopulation() / planet.currentSize())) / 10);
-        baseGrowthRate *= empire.race().growthRateMod();
-        if (!empire.race().ignoresPlanetEnvironment())
+        baseGrowthRate *= empire.growthRateMod();
+        if (!empire.ignoresPlanetEnvironment())
             baseGrowthRate *= planet.growthAdj();
 
         // always at least .1 base growth in pop
@@ -1085,9 +1092,14 @@ public final class Colony implements Base, IMappedObject, Serializable {
             return;
         }
         Empire pl = player();
-        if (tr.empire().isPlayerControlled())
+        if (tr.empire().isPlayerControlled()) {
+            allocation(SHIP, 0);
+            allocation(DEFENSE,0);
+            allocation(INDUSTRY,0);
+            allocation(ECOLOGY,0);
+            allocation(RESEARCH,0);
             session().addSystemToAllocate(starSystem(), text("MAIN_ALLOCATE_COLONY_CAPTURED", pl.sv.name(starSystem().id), pl.raceName()));
-
+        }
         // list of possible techs that could be recovered from factories
         List<Tech> possibleTechs = empire().tech().techsUnknownTo(tr.empire());
         int techsCaptured = 0;

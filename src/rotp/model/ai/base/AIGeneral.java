@@ -38,6 +38,7 @@ public class AIGeneral implements Base, General {
     private final HashMap<StarSystem, List<Ship>> targetedSystems;
     private final List<StarSystem> rushDefenseSystems;
     private final List<StarSystem> rushShipSystems;
+    private float civTech = 0;
 
     public AIGeneral (Empire c) {
         empire = c;

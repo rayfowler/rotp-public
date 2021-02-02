@@ -83,10 +83,10 @@ public class TradeRoute implements Base, Serializable {
             otherView.trade().stopRoute();
     }
     private float maxProfit() {
-        return (level * (1+galaxy().empire(emp1).race().tradePctBonus()));
+        return (level * (1+galaxy().empire(emp1).tradePctBonus()));
     }
     private float startPct() {
-        return (-.3f + galaxy().empire(emp1).race().tradePctBonus());
+        return (-.3f + galaxy().empire(emp1).tradePctBonus());
     }
     private float smallerCivProd() {
         return Math.min(civProd,ownerProd);

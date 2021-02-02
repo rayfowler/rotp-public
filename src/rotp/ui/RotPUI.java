@@ -250,13 +250,15 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         RotPUI.this.mainUI().clearAdvice();
     }
     public void processNotifications(List<TurnNotification> notifications) {
-        for (TurnNotification tn: notifications) {
-            try {
-                drawNextTurnNotice = false;
-                tn.notifyPlayer();
-            } finally {
-                drawNextTurnNotice = true;
-            }
+        for (TurnNotification tn: notifications) 
+            processNotification(tn);
+    }
+    public void processNotification(TurnNotification tn) {
+        try {
+            drawNextTurnNotice = false;
+            tn.notifyPlayer();
+        } finally {
+            drawNextTurnNotice = true;
         }
     }
 
@@ -306,7 +308,13 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         }
         requestFocusInWindow();
     }
-
+    public void repaintNotice() {
+        int w0 = scaled(500);
+        int h0 = s100;
+        int x0 = (getWidth()-w0)/2;
+        int y0 = (getHeight()-h0)/2;
+        repaint(x0,y0,w0,h0);
+    }
     public void selectCurrentPanel()   { selectPanel(currentPane, selectedPanel); }
 
     // PLAYER-TRIGGERED ACTIONS

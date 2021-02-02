@@ -128,7 +128,8 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         // on opening, build list of systems that we have colony ships 
         // in transport to. This is too expensive to do real-time
         expandEnRouteSystems.clear();
-        for (ShipFleet fl: player().orderedFleets()) {
+        List<ShipFleet> allFleets = player().allFleets();
+        for (ShipFleet fl: allFleets) {
             StarSystem sys = fl.destination();
             if (fl.canColonizeSystem(sys)) {
                 int fleetTurns = fl.travelTurns(sys);
@@ -808,7 +809,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
     @Override
     public String systemLabel2(StarSystem sys) {
         Empire pl = player();
-        int rng = pl.scoutRange();
+        float rng = pl.scoutRange();
         SystemView sv = pl.sv.view(sys.id);
         switch(selectedTab) {
             case exploreTab:

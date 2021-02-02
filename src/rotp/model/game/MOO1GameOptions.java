@@ -64,6 +64,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private String selectedPlanetQualityOption;
     private String selectedTerraformingOption;
     private String selectedFuelRangeOption;
+    private String selectedRandomizeAIOption;
 
     private transient GalaxyShape galaxyShape;
 
@@ -166,6 +167,10 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     @Override
     public void selectedFuelRangeOption(String s) { selectedFuelRangeOption = s; }
     @Override
+    public String selectedRandomizeAIOption()       { return selectedRandomizeAIOption == null ? RANDOMIZE_AI_NONE : selectedRandomizeAIOption; }
+    @Override
+    public void selectedRandomizeAIOption(String s) { selectedRandomizeAIOption = s; }
+    @Override
     public int selectedNumberOpponents()         { return selectedNumberOpponents; }
     @Override
     public void selectedNumberOpponents(int i)   { selectedNumberOpponents = i; generateGalaxy(); }
@@ -228,7 +233,9 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedStarDensityOption = opt.selectedStarDensityOption;
         selectedPlanetQualityOption = opt.selectedPlanetQualityOption;
         selectedTerraformingOption = opt.selectedTerraformingOption;
-
+        selectedFuelRangeOption = opt.selectedFuelRangeOption;
+        selectedRandomizeAIOption = opt.selectedRandomizeAIOption;
+        
         if (opt.player != null) 
             player.copy(opt.player);
         
@@ -666,6 +673,15 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         list.add(FUEL_RANGE_HIGH);
         list.add(FUEL_RANGE_HIGHER);
         list.add(FUEL_RANGE_HIGHEST);
+        return list;
+    }
+    @Override
+    public List<String> randomizeAIOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(RANDOMIZE_AI_NONE);
+        list.add(RANDOMIZE_AI_PERSONALITY);
+        list.add(RANDOMIZE_AI_ABILITY);
+        list.add(RANDOMIZE_AI_BOTH);
         return list;
     }
     @Override

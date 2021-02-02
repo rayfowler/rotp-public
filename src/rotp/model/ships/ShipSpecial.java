@@ -22,6 +22,10 @@ public class ShipSpecial extends ShipComponent {
     public boolean isFuelRange()       { return false;  }
     public boolean isColonySpecial()   { return false;  }
     public boolean allowsCloaking()    { return false;  }
+    public boolean isPulsar()          { return false;  }
+    public boolean isInertial()        { return false;  }
+    public boolean isMissileShield()   { return false; }
+    public boolean createsBlackHole()  { return false; }
     public boolean allowsTeleporting() { return false;  }
     public boolean allowsScanning()    { return false;  }
     public boolean canAttackPlanets()  { return isWeapon(); }

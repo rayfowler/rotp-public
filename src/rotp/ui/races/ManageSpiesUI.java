@@ -94,7 +94,7 @@ public class ManageSpiesUI extends BasePanel implements MouseListener, MouseWhee
             p.reset();
         for (Polygon p: missionIncr)
             p.reset();
-        totalPlanetaryProduction = player().totalPlanetaryProduction();
+        totalPlanetaryProduction = player().totalTaxablePlanetaryProduction();
     }
     @Override
     public String textureName()     { return TEXTURE_BROWN; }
@@ -309,7 +309,7 @@ public class ManageSpiesUI extends BasePanel implements MouseListener, MouseWhee
         Polygon left = spendingDecr.get(index);
         Polygon right = spendingIncr.get(index);
         Rectangle box = spendingBoxes.get(index);
-        float cost = totalPlanetaryProduction * view.spies().allocationCostPct();
+        float cost = totalPlanetaryProduction * view.spies().allocationCostPct()*view.owner().spySpendingModifier();
         
         int labelW = s60;
         int leftM = x;

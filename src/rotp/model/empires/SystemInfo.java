@@ -16,6 +16,7 @@
 package rotp.model.empires;
 
 import java.awt.Color;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -28,6 +29,7 @@ import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.planet.PlanetType;
 import rotp.util.Base;
+import rotp.util.ImageManager;
 
 public class SystemInfo implements Serializable, Base {
     private static final long serialVersionUID = 1L;
@@ -85,7 +87,6 @@ public class SystemInfo implements Serializable, Base {
     public boolean isBorderSystem(int i) { return missing(i) ? false : view(i).borderSystem(); }
     public boolean isInnerSystem(int i)  { return missing(i) ? false : view(i).innerSystem(); }
     public boolean isGuarded(int i)      { return missing(i) ? false : view(i).isGuarded(); }
-    //public boolean isAlert(int i)        { return missing(i) ? false : view(i).isAlert(); }
     public boolean isArtifact(int i)     { return missing(i) ? false : view(i).artifact(); }
     public boolean isOrionArtifact(int i){ return missing(i) ? false : view(i).orionArtifact(); }
     public boolean isUltraRich(int i)    { return missing(i) ? false : view(i).resourceUltraRich(); }
@@ -99,7 +100,9 @@ public class SystemInfo implements Serializable, Base {
     public boolean canSabotageFactories(int i) { return missing(i) ? false : view(i).canSabotageFactories(); }
     public boolean canInciteRebellion(int i)   { return missing(i) ? false : view(i).canInciteRebellion(); }
     public Color flagColor(int i)              { return missing(i) ? null  : view(i).flagColor(); }
-
+    public Image flagImage(int i)              { return missing(i) ? null  : view(i).flagImage(); }
+    public Image mapFlagImage(int i)           { return missing(i) ? null  : view(i).mapFlagImage(); }
+    public Image flagHover(int i)              { return ImageManager.current().image("Flag_Hover"); }
     public FleetPlan fleetPlan(int i)            { return view(i).fleetPlan(); }
     public ShipFleet orbitingFleet(int i)        { return system(i).orbitingFleetForEmpire(empire()); }
     public List<ShipFleet> orbitingFleets(int i) { return missing(i) ? null : view(i).orbitingFleets(); }

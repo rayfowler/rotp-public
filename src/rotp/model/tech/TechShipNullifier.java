@@ -80,6 +80,10 @@ public final class TechShipNullifier extends Tech {
         }
     }
     @Override
+    public boolean isWarpDissipator()     { return speedRed > 0; }
+    @Override
+    public boolean isTechNullifier()      { return minComputerRed > 0; }
+    @Override
     public float warModeFactor()        { return 1.5f; }
     @Override
     public boolean providesShipComponent()  { return true; }

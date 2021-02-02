@@ -30,6 +30,8 @@ public final class ShipWeaponBiological extends ShipWeapon {
     @Override
     public boolean groundAttacksOnly()      { return true; }
     @Override
+    public boolean isBioWeapon()            { return true; }
+    @Override
     public int range()                      { return 1;  }
     @Override
     public int minDamage()                  { return tech().minDamage; }

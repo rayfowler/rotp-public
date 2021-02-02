@@ -17,6 +17,7 @@ package rotp.model.incidents;
 
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
+import rotp.model.galaxy.Galaxy;
 import rotp.ui.diplomacy.DialogueManager;
 
 public class AssassinationIncident extends DiplomaticIncident {
@@ -28,14 +29,30 @@ public class AssassinationIncident extends DiplomaticIncident {
 
         EmpireView ev = victim.viewForEmpire(assassin);
         ev.embassy().recallAmbassador(); // technically, he was recalled by the assassin..
-        assassin.diplomatAI().noticeIncident(inc, victim);
+        victim.diplomatAI().noticeIncident(inc, assassin);
+        
+        for (Empire vicEnemy: victim.enemies()) {
+            if (vicEnemy != assassin) {
+                AssassinationIncident inc2 = new AssassinationIncident(assassin, victim, vicEnemy);
+                EmpireView ev2 = vicEnemy.viewForEmpire(assassin);
+                ev2.embassy().openEmbassy();
+                vicEnemy.diplomatAI().noticeIncident(inc2, assassin);     
+            }
+        }
     }
-    public AssassinationIncident(Empire att, Empire def) {
-        empAssassin = att.id;
-        empVictim = def.id;
+    public AssassinationIncident(Empire ass, Empire vic) {
+        empAssassin = ass.id;
+        empVictim = vic.id;
         severity = -50;
         dateOccurred = galaxy().currentYear();
         duration = 20;
+    }
+    public AssassinationIncident(Empire ass, Empire vic, Empire vicEnemy) {
+        empAssassin = ass.id;
+        empVictim = vic.id;
+        severity = 50;
+        dateOccurred = galaxy().currentYear();
+        duration = 10;
     }
     @Override
     public String title()            { return text("INC_ASSASSINATION_TITLE"); }
@@ -44,7 +61,13 @@ public class AssassinationIncident extends DiplomaticIncident {
     @Override
     public String declareWarId()     { return DialogueManager.DECLARE_ASSASSIN_WAR; }
     @Override
-    public boolean triggersWar()     { return !galaxy().empire(empVictim).alliedWith(empAssassin); }
+    public boolean triggersWar()     { return severity < 0; } // only trigger war for the negative version of this incident
+    @Override
+    public boolean triggersImmediateWar() { return true; }
+    @Override
+    public boolean triggersPraise()   { return severity > 0; }
+    @Override
+    public String praiseMessageId()   { return DialogueManager.PRAISE_ATTACKED_ENEMY; }
     @Override
     public String key() {
         return concat("Assassination:", str(empVictim));
@@ -52,8 +75,9 @@ public class AssassinationIncident extends DiplomaticIncident {
     @Override
     public String decode(String s) {
         String s1 = super.decode(s);
-        s1 = galaxy().empire(empAssassin).replaceTokens(s1, "assassin");
-        s1 = galaxy().empire(empVictim).replaceTokens(s1, "victim");
+        Galaxy g = galaxy();
+        s1 = g.empire(empAssassin).replaceTokens(s1, "assassin");
+        s1 = g.empire(empVictim).replaceTokens(s1, "victim");
         return s1;
     }
 }

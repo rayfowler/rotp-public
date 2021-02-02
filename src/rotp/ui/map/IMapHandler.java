@@ -17,6 +17,7 @@ package rotp.ui.map;
 
 import java.awt.Color;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.event.MouseWheelEvent;
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,7 @@ import rotp.model.galaxy.IMappedObject;
 import rotp.model.galaxy.Location;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.main.GalaxyMapPanel;
+import rotp.util.ImageManager;
 
 public interface IMapHandler {
     public void repaint();
@@ -88,6 +90,10 @@ public interface IMapHandler {
     default public float systemClickRadius()             { return 1.0f; }
     default public boolean showYear()                    { return true; }
     default Color flagColor(StarSystem s)                { return Empire.thePlayer().sv.flagColor(s.id); }
+    default Image flagImage(StarSystem s)                { return Empire.thePlayer().sv.flagImage(s.id); }
+    default Image mapFlagImage(StarSystem s)             { return Empire.thePlayer().sv.mapFlagImage(s.id); }
+    default Image flagHover(StarSystem s)                { return ImageManager.current().image("Flag_Hover"); }
+    default Image flagHaze(StarSystem s)                 { return ImageManager.current().image("Flag_Haze"); }
     default boolean drawStar(StarSystem s)               { return true; }
     default boolean showOwnerReach(StarSystem s)         { return false; }
     default boolean showOwnership(StarSystem s)          { return true; }

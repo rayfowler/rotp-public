@@ -23,7 +23,7 @@ public final class TechReserveFuelRange extends Tech {
     private int range;
     public boolean unlimited = false;
 
-    public int range() { return range*options().fuelRangeMultiplier(); }
+    public float range() { return range*options().fuelRangeMultiplier(); }
 
     public TechReserveFuelRange (String typeId, int lv, int seq, boolean b, TechCategory c) {
         id(typeId, seq);
@@ -43,9 +43,21 @@ public final class TechReserveFuelRange extends Tech {
         }
     }
     @Override
-    public String detail()                { return text(detail, range()); }
+    public String detail() {
+        float rng = range();
+        if (rng == (int) rng) 
+            return text(detail, (int) rng);
+        else
+            return text(detail, df1.format(range())); 
+    }
     @Override
-    public String brief()                 { return text(shDesc, range()); }
+    public String brief() { 
+        float rng = range();
+        if (rng == (int) rng) 
+            return text(shDesc, (int) rng);
+        else
+            return text(shDesc, df1.format(range())); 
+    }
     @Override
     public boolean providesShipComponent()  { return true; }
     @Override

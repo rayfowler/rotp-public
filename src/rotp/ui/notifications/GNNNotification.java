@@ -42,6 +42,9 @@ public class GNNNotification implements TurnNotification {
     public static void notifyGenocide(String message) {
         GameSession.instance().addTurnNotification(new GNNNotification(message, "GNN_Genocide"));
     }
+    public static void notifyImmediateEvent(String message, String id) {
+        RotPUI.instance().processNotification(new GNNRandomEventNotification(message, id));
+    }
     public static void notifyRandomEvent(String message, String id) {
         GameSession.instance().addTurnNotification(new GNNRandomEventNotification(message, id));
     }

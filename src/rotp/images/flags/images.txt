@@ -1,0 +1,24 @@
+
+Flag_Haze     | images/flags/haze.png
+Flag_Hover    | images/flags/hover.png
+Flag_Aqua     | images/flags/bAqua.png
+Flag_Blue     | images/flags/bBlue.png
+Flag_Green    | images/flags/bGreen.png
+Flag_LtBlue   | images/flags/bLightBlue.png
+Flag_None     | images/flags/bGray.png
+Flag_Orange   | images/flags/bOrange.png
+Flag_Pink     | images/flags/bPink.png
+Flag_Purple   | images/flags/bPurple.png
+Flag_Red      | images/flags/bRed.png
+Flag_White    | images/flags/bWhite.png
+Flag_Yellow   | images/flags/bYellow.png
+Flag_AquaM    | images/flags/wAqua.png
+Flag_BlueM    | images/flags/wBlue.png
+Flag_GreenM   | images/flags/wGreen.png
+Flag_LtBlueM  | images/flags/wLightBlue.png
+Flag_OrangeM  | images/flags/wOrange.png
+Flag_PinkM    | images/flags/wPink.png
+Flag_PurpleM  | images/flags/wPurple.png
+Flag_RedM     | images/flags/wRed.png
+Flag_WhiteM   | images/flags/wWhite.png
+Flag_YellowM  | images/flags/wYellow.png

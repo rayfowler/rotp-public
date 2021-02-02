@@ -18,6 +18,7 @@ package rotp.model.galaxy;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import rotp.model.colony.ColonyShipyard;
 import rotp.model.empires.Empire;
 import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipDesignLab;
@@ -677,6 +678,17 @@ public class Ships implements Base, Serializable {
                 for (int i=0;i<count.length;i++)
                     count[i] += fl.num(i);
             }
+        }
+        return count;
+    }
+    public int[] shipDesignConstructionCounts(int empireId) {
+        int[] count = new int[ShipDesignLab.MAX_DESIGNS];
+        
+        List<StarSystem> colonies = galaxy().empire(empireId).allColonizedSystems();
+        for (StarSystem s: colonies) {
+            ColonyShipyard sy = s.colony().shipyard();            
+            if ((sy.allocation() > 0) && sy.design().isShip()) 
+                count[sy.design().id()]++;
         }
         return count;
     }

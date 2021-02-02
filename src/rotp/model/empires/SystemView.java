@@ -16,6 +16,7 @@
 package rotp.model.empires;
 
 import java.awt.Color;
+import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -43,6 +44,11 @@ public class SystemView implements IMappedObject, Base, Serializable {
     static final int FLAG_BLUE = 3;
     static final int FLAG_GREEN = 4;
     static final int FLAG_YELLOW = 5;
+    static final int FLAG_AQUA = 6;
+    static final int FLAG_ORANGE = 7;
+    static final int FLAG_LTBLUE = 8;
+    static final int FLAG_PURPLE = 9;
+    static final int FLAG_PINK = 10;
 
     public static SystemView create(int sysId, int empId) {
         return new SystemView(sysId,empId);
@@ -119,6 +125,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
         relocationSystem = null;
         system().rallySprite().stop(); 
     }
+    
     public Color flagColor() { 
         switch(flagColor) {
             case FLAG_RED:    return Color.red;
@@ -128,6 +135,38 @@ public class SystemView implements IMappedObject, Base, Serializable {
             case FLAG_YELLOW: return Color.yellow;
         }
         return null; 
+    }
+    public Image flagImage() {
+        switch(flagColor) {
+            case FLAG_NONE:   return image("Flag_None");
+            case FLAG_RED:    return image("Flag_Red");
+            case FLAG_WHITE:  return image("Flag_White");
+            case FLAG_BLUE:   return image("Flag_Blue");
+            case FLAG_GREEN:  return image("Flag_Green");
+            case FLAG_YELLOW: return image("Flag_Yellow");
+            case FLAG_AQUA:   return image("Flag_Aqua");
+            case FLAG_ORANGE: return image("Flag_Orange");
+            case FLAG_LTBLUE: return image("Flag_LtBlue");
+            case FLAG_PURPLE: return image("Flag_Purple");
+            case FLAG_PINK:   return image("Flag_Pink");
+            default:          return image("Flag_White");
+        }
+    }
+    public Image mapFlagImage() {
+        switch(flagColor) {
+            case FLAG_NONE:   return null;
+            case FLAG_RED:    return image("Flag_RedM");
+            case FLAG_WHITE:  return image("Flag_WhiteM");
+            case FLAG_BLUE:   return image("Flag_BlueM");
+            case FLAG_GREEN:  return image("Flag_GreenM");
+            case FLAG_YELLOW: return image("Flag_YellowM");
+            case FLAG_AQUA:   return image("Flag_AquaM");
+            case FLAG_ORANGE: return image("Flag_OrangeM");
+            case FLAG_LTBLUE: return image("Flag_LtBlueM");
+            case FLAG_PURPLE: return image("Flag_PurpleM");
+            case FLAG_PINK:   return image("Flag_PinkM");
+            default:          return image("Flag_WhiteM");
+        }
     }
     public PlanetType planetType() {
         if (vPlanetTypeKey == null)
@@ -284,12 +323,17 @@ public class SystemView implements IMappedObject, Base, Serializable {
     public void toggleFlagColor(boolean reverse) {
         if (reverse) {
             switch(flagColor) {
-                case FLAG_NONE:   flagColor = FLAG_YELLOW; return;
+                case FLAG_NONE:   flagColor = FLAG_PINK; return;
                 case FLAG_WHITE:  flagColor = FLAG_NONE; return;
                 case FLAG_RED:    flagColor = FLAG_WHITE; return;
                 case FLAG_BLUE:   flagColor = FLAG_RED; return;
                 case FLAG_GREEN:  flagColor = FLAG_BLUE; return;
                 case FLAG_YELLOW: flagColor = FLAG_GREEN; return;
+                case FLAG_AQUA:   flagColor = FLAG_YELLOW; return;
+                case FLAG_ORANGE: flagColor = FLAG_AQUA; return;
+                case FLAG_LTBLUE: flagColor = FLAG_ORANGE; return;
+                case FLAG_PURPLE: flagColor = FLAG_LTBLUE; return;
+                case FLAG_PINK:   flagColor = FLAG_PURPLE; return;
             }
         }
         else {
@@ -299,7 +343,12 @@ public class SystemView implements IMappedObject, Base, Serializable {
                 case FLAG_RED:    flagColor = FLAG_BLUE; return;
                 case FLAG_BLUE:   flagColor = FLAG_GREEN; return;
                 case FLAG_GREEN:  flagColor = FLAG_YELLOW; return;
-                case FLAG_YELLOW: flagColor = FLAG_NONE; return;
+                case FLAG_YELLOW: flagColor = FLAG_AQUA; return;
+                case FLAG_AQUA:   flagColor = FLAG_ORANGE; return;
+                case FLAG_ORANGE: flagColor = FLAG_LTBLUE; return;
+                case FLAG_LTBLUE: flagColor = FLAG_PURPLE; return;
+                case FLAG_PURPLE: flagColor = FLAG_PINK; return;
+                case FLAG_PINK:   flagColor = FLAG_NONE; return;
             }
         }
     }

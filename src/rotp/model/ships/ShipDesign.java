@@ -51,7 +51,7 @@ public final class ShipDesign extends Design {
     private final ShipWeapon[] weapon = new ShipWeapon[maxWeapons];
     private final int[] wpnCount = new int[maxWeapons];
     private final ShipSpecial[] special = new ShipSpecial[maxSpecials];
-    private int size;
+    private int size = SMALL;
     private int mission = SCOUT;
     private int unusedTurns = 0;     // # turns while built but unused by FleetCommander
     public int remainingLife = 999; // once obsolete, this is minimum num turns to survive before scrapping
@@ -63,6 +63,8 @@ public final class ShipDesign extends Design {
     private transient float costBC;
 
     public static float hullPoints(int size)   { return Galaxy.current().pow(6, size); }
+    @Override
+    public boolean isShip()              { return true; }
 
     public ShipComputer computer()          { return computer; }
     public void computer(ShipComputer c)    { computer = c; }
@@ -244,7 +246,7 @@ public final class ShipDesign extends Design {
         StarSystem dest = galaxy().system(destId);
         PlanetType pt = dest.planet().type();
         // return if ordersStack can colonize the destination planet
-        return empire().race().ignoresPlanetEnvironment() || (empire().canColonize(pt) && colonySpecial.canColonize(pt));
+        return empire().ignoresPlanetEnvironment() || (empire().canColonize(pt) && colonySpecial.canColonize(pt));
     }
     @Override
     public int cost() {

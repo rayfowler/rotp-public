@@ -26,6 +26,8 @@ public final class ShipSpecialInertial extends ShipSpecial {
     @Override
     public String designGroup()              { return "Inertial"; }
     @Override
+    public boolean isInertial()        { return true;  }
+    @Override
     public TechShipInertial tech() { return (TechShipInertial) super.tech(); }
     @Override
     public int speedBonus()        { return tech().combatSpeedBonus; }

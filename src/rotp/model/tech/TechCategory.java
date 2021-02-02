@@ -19,7 +19,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import rotp.model.empires.Race;
+import rotp.model.empires.Empire;
 import rotp.util.Base;
 
 public final class TechCategory implements Base, Serializable {
@@ -65,6 +65,7 @@ public final class TechCategory implements Base, Serializable {
     private float discoveryPct = 1;
     private float totalBC = 0;
     private boolean researchCompleted = false;
+    private boolean researchStarted = false;
 
     public int index()                     { return index; }
     public void index(int i)               { index = i; }
@@ -74,6 +75,7 @@ public final class TechCategory implements Base, Serializable {
     public boolean currentTech(Tech t)        { 
         if (!id().equals(t.cat.id()))
             return false;
+        researchStarted = true;
         currentTech = t.id(); 
         return true;
     }
@@ -85,7 +87,7 @@ public final class TechCategory implements Base, Serializable {
     public String researchKey()            { return researchKeys[index]; }
     public String key()                    { return categoryKeys[index]; }
     public boolean isWeaponTechCategory()  { return (this == tree.weapon()); }
-    private float racialMod()             { return tree == null? 1.0f : tree.empire().race().techMod[index]; }
+    private float racialMod()             { return tree == null? 1.0f : tree.empire().techMod(index); }
     public float discoveryPct()           { return discoveryPct; }
 
     public TechCategory() { }
@@ -98,6 +100,7 @@ public final class TechCategory implements Base, Serializable {
     }
 
     public boolean researchCompleted() { return researchCompleted; }
+    public boolean researchStarted() { return researchStarted; }
     public int allocation()            { return allocation; }
     public void allocation(int i)      { allocation = bounds(0,i,MAX_ALLOCATION_TICKS); }
     public float allocationPct()      { return (float) allocation/MAX_ALLOCATION_TICKS; }
@@ -181,7 +184,7 @@ public final class TechCategory implements Base, Serializable {
     private void buildResearchList() {
         TechCategory baseCat = TechLibrary.baseCategory[index];
 
-        Race race = tree.empire().race();
+        Empire emp = tree.empire();
         possibleTechs.clear();
 
         Object[] techsByQuintile =new Object[MAX_QUINTILES];
@@ -191,7 +194,7 @@ public final class TechCategory implements Base, Serializable {
         for (int i=0;i<baseCat.possibleTechs.size();i++) {
             String id = baseCat.possibleTechs.get(i);
             Tech t = tech(id);
-            if (!t.restricted && t.canBeResearched(race) && !t.free ) {
+            if (!t.restricted && emp.canResearch(t) && !t.free ) {
                 List<String> techs = (List<String>) techsByQuintile[t.quintile()-1];
                 techs.add(id);
             }
@@ -246,7 +249,16 @@ public final class TechCategory implements Base, Serializable {
                         return text("TECH_TERRAFORM_NO_BONUS");
                     else
                         return text("TECH_TERRAFORM_BONUS", (int)tree.terraformAdj());
-                case 4: return key ? text("TECH_SHIP_RANGE") : text("TECH_SHIP_RANGE_AMT", (int)tree.shipRange());
+                case 4: 
+                    if (key)
+                        return text("TECH_SHIP_RANGE");
+                    else {
+                        float range = tree.shipRange();
+                        if (range == (int) range)
+                            return text("TECH_SHIP_RANGE_AMT", (int)tree.shipRange());
+                        else
+                            return text("TECH_SHIP_RANGE_AMT", df1.format(tree.shipRange()));
+                    }
                 case 5: 
                     if (key)
                         return text("TECH_GROUND_COMBAT");
@@ -464,7 +476,8 @@ public final class TechCategory implements Base, Serializable {
     }
     public void allocateResearchBC() {
         totalBC = totalBC + currentResearch();
-
+        
+        researchStarted = false;
        // currentTech == null should only happen at game start
         // and when all category techs have been research
         // knowntechs contains currentTech is an error condition

@@ -24,17 +24,19 @@ import java.awt.Stroke;
 import java.util.ArrayList;
 import java.util.List;
 import rotp.model.Sprite;
+import rotp.model.colony.Colony;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.Ship;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
+import rotp.model.galaxy.Transport;
 import rotp.model.game.GameSession;
 import rotp.ui.BasePanel;
 import rotp.ui.main.GalaxyMapPanel;
 
 public class FlightPathSprite extends MapSprite {
     static Stroke[][] lines;
-    static Stroke[] rallyStroke;
+    static Stroke[][] rallyStroke;
     static final Color rallyColor = new Color(96,0,128);
     Ship ship;
     StarSystem fr;
@@ -106,6 +108,8 @@ public class FlightPathSprite extends MapSprite {
             else if ((workingPaths().contains(this))
                 && ship.passesThroughNebula(sys))
                 c0 = Color.magenta;
+            else if ((to.empId() != ship.empId()) && (ship() instanceof Transport))
+                c0 = Color.yellow;
             else
                 c0 = Color.green;
         }
@@ -232,8 +236,15 @@ public class FlightPathSprite extends MapSprite {
         Stroke prevStroke = g2.getStroke();
 
         int animationIndex = (animationCount/animationSpeed) %6;
-        if (isColonyRelocation) 
-            g2.setStroke(rallyStroke[animationIndex]);
+        if (isColonyRelocation) {
+            Colony c = fr.colony();
+            if (c == null)
+                return;
+            if (c.shipyard().allocation() == 0)
+                g2.setStroke(rallyStroke[0][animationIndex]);
+            else
+                g2.setStroke(rallyStroke[1][animationIndex]);
+        }
         else if (workingPaths().contains(this)) 
             g2.setStroke(workingLine(scale,animationIndex));
         else if (hovering) 
@@ -273,13 +284,15 @@ public class FlightPathSprite extends MapSprite {
     }
     private void initStrokes() {
         lines = new BasicStroke[6][6];
-        rallyStroke = new BasicStroke[9];
+        rallyStroke = new BasicStroke[2][9];
         float f10 = BasePanel.s10;
         float f12 = BasePanel.s12; // modnar: line dash change
         float f6 = BasePanel.s6; // modnar: line dash change
 
         for (int i=0;i<9;i++) {
-            rallyStroke[i] = new BasicStroke(BasePanel.s3, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND,    // Join style
+            rallyStroke[0][i] = new BasicStroke(BasePanel.s2, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND,    // Join style
+                            f10, new float[] {f12, f6}, i * BasePanel.s3); // modnar: line phase change, mod%6 animation
+            rallyStroke[1][i] = new BasicStroke(BasePanel.s3, BasicStroke.CAP_ROUND, BasicStroke.JOIN_ROUND,    // Join style
                             f10, new float[] {f12, f6}, i * BasePanel.s3); // modnar: line phase change, mod%6 animation
         }
 

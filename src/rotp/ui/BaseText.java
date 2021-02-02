@@ -122,7 +122,7 @@ public class BaseText implements Base {
         repaint();
     }
     public void repaint() {
-        panel.repaint(bounds);
+        panel.repaint(bounds.x, bounds.y, bounds.width+scaled(50), bounds.height);
     }
     public void mousePressed() {
         depressed = true;

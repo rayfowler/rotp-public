@@ -32,7 +32,7 @@ public final class TechSoilEnrichment extends Tech {
         init();
     }
     @Override
-    public boolean promptToReallocate()     { return super.promptToReallocate() && !player().race().ignoresPlanetEnvironment(); }
+    public boolean promptToReallocate()     { return super.promptToReallocate() && !player().ignoresPlanetEnvironment(); }
     @Override
     public Colony.Orders followup()         { return Colony.Orders.SOIL; }
     @Override

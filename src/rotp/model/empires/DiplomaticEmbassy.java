@@ -194,7 +194,13 @@ public class DiplomaticEmbassy implements Base, Serializable {
     public boolean readyForJointWar()       { return jointWarTimer <= 0; }
     public void resetJointWarTimer()        { jointWarTimer = empire().isPlayer() ? JOINT_WAR_DELAY : 1; }
     public boolean alreadyOfferedJointWar() { return jointWarTimer == JOINT_WAR_DELAY; }
-    public int minimumPraiseLevel()         { return max(10, minimumPraiseLevel); }
+    public int minimumPraiseLevel()         { 
+        // raise threshold for praise when at war
+        if (war())
+            return max(50, minimumPraiseLevel);
+        else
+            return max(10, minimumPraiseLevel); 
+    }
     public int minimumWarnLevel()           { return max(10, minimumWarnLevel); }
     public void praiseSent()                { minimumPraiseLevel = minimumPraiseLevel()+10;  }
     public void warningSent(DiplomaticIncident inc) { 
@@ -598,7 +604,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
         recalculateRelationsLevel();
     }
     private void recalculateRelationsLevel() {
-        float rel = owner().race().baseRelations(empire().race());
+        float rel = owner().baseRelations(empire());
         rel += treatyRelationsAdj();
         for (DiplomaticIncident ev: incidents.values()) 
             rel += ev.currentSeverity();       

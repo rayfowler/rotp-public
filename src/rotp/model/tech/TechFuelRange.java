@@ -21,7 +21,7 @@ public final class TechFuelRange extends Tech {
     private int range;
     public boolean unlimited = false;
 
-    public int range()  { return range*options().fuelRangeMultiplier(); }
+    public float range()  { return range*options().fuelRangeMultiplier(); }
 
     public TechFuelRange(String typeId, int lv, int seq, boolean b, TechCategory c) {
         id(typeId, seq);
@@ -51,7 +51,13 @@ public final class TechFuelRange extends Tech {
         }
     }
     @Override
-    public String detail()                { return text(detail, range()); }
+    public String detail() { 
+        float rng = range();
+        if (rng == (int) rng) 
+            return text(detail, (int) rng);
+        else
+            return text(detail, df1.format(range())); 
+    }
     @Override
     public boolean isFuelRangeTech()     { return true; }
     @Override

@@ -18,6 +18,7 @@ import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.Stroke;
@@ -31,6 +32,9 @@ import javax.swing.SwingUtilities;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
+import static rotp.ui.BasePanel.s10;
+import static rotp.ui.BasePanel.s20;
+import static rotp.ui.BasePanel.s70;
 
 public class AlienSystemPanel extends SystemPanel {
     private static final long serialVersionUID = 1L;
@@ -109,14 +113,14 @@ public class AlienSystemPanel extends SystemPanel {
             drawShadowedString(g, pl.sv.descriptiveName(id), 2, s10, topH1-s15, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
 
             // draw system banner
-            Color flagC = parentSpritePanel.parent.flagColor(sys);
-            if (hoverBox == flagBox) 
-                sys.drawBanner(g, flagC, SystemPanel.yellowText, w-s10,topH1);
-            else {
-                Color c1 = flagC == null ? SystemPanel.blackText : SystemPanel.whiteText;
-                sys.drawBanner(g, flagC, c1, w-s10,topH1);
+            int sz = s70;
+            Image flagImage = parentSpritePanel.parent.flagImage(sys);
+            g.drawImage(flagImage, w-sz+s15, topH1-sz+s10, sz, sz, null);
+            if (hoverBox == flagBox) {
+                Image hoverImage = parentSpritePanel.parent.flagHover(sys);
+                g.drawImage(hoverImage, w-sz+s15, topH1-sz+s10, sz, sz, null);
             }
-            flagBox.setBounds(w-s30,topH1-s60,s20,s60);
+            flagBox.setBounds(w-sz+s25,topH1-sz+s10,sz-s20,sz-s10);
             
             // colony data
             String unknown = text("RACES_UNKNOWN_DATA");

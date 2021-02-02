@@ -87,6 +87,8 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
     private static final Color darkBrown = new Color(45,14,5);
     private static final Color brown = new Color(64,24,13);
     private static final Color sliderBoxBlue = new Color(34,140,142);
+    static final Color enabledArrowColor = Color.black;
+    static final Color disabledArrowColor = new Color(65,65,65);
 
     private static Palette palette;
     private static BaseTextField notesField;
@@ -592,7 +594,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         Column indRsvCol = listingUI.newSystemDataColumn("PLANETS_LIST_RESERVE", "RESERVE", 60, palette.black, StarSystem.INDUSTRY_RESERVE, RIGHT);
         Column basesCol = listingUI.newSystemDeltaDataColumn("PLANETS_LIST_BASES", "BASES", 70, palette.black, StarSystem.BASES, RIGHT);
         Column shieldCol = listingUI.newSystemDataColumn("PLANETS_LIST_SHIELD", "SHIELD", 70, palette.black, StarSystem.SHIELD, RIGHT);
-        Column shipCol = listingUI.newSystemDataColumn("PLANETS_LIST_SHIPYARD", "SHIPYARD", 120, palette.black, StarSystem.SHIPYARD, LEFT);
+        Column shipCol = listingUI.newSystemDataColumn("PLANETS_LIST_SHIPYARD", "SHIPYARD", 140, palette.black, StarSystem.SHIPYARD, LEFT);
         Column resourceCol = listingUI.newSystemDataColumn("PLANETS_LIST_RESOURCES", "RESOURCES", 90, palette.black, StarSystem.RESOURCES, LEFT);
 
         DataView ecoView = listingUI.newDataView();
@@ -964,6 +966,14 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         private final Polygon prevDesign = new Polygon();
         private final Polygon nextDesign = new Polygon();
         private Shape hoverBox;
+        private final Polygon upArrow = new Polygon();
+        private final Polygon downArrow = new Polygon();
+        private final int upButtonX[] = new int[3];
+        private final int upButtonY[] = new int[3];
+        private final int downButtonX[] = new int[3];
+        private final int downButtonY[] = new int[3];
+        protected Rectangle limitBox = new Rectangle();
+
 
         private final Color textColor = newColor(204,204,204);
         ColonyShipPane(SystemPanel p) {
@@ -1095,10 +1105,65 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             if (c == null)
                 return;
 
-            String result = c.shipyard().shipCompletionResult();
-            g.setColor(Color.black);
             g.setFont(narrowFont(16));
-            g.drawString(result, x+s12, y+s10);
+            g.setColor(Color.black);
+            String label = text("MAIN_COLONY_SHIPYARD_LIMIT");
+            int sw1 = g.getFontMetrics().stringWidth(label);
+            String none = text("MAIN_COLONY_SHIPYARD_LIMIT_NONE");
+            int sw2 = g.getFontMetrics().stringWidth(none);           
+            String amt = c.shipyard().buildLimitStr();
+            int sw3 = g.getFontMetrics().stringWidth(amt);
+            
+            int x1 = x+s12;
+            int y1 = y+s8;
+            int x2 = x1+sw1+s5;
+            int x3 = x1+sw1+s5+max(sw2,sw3)+s5;
+            int y3 = y1+s2;
+            g.drawString(label, x1, y1);
+            g.drawString(amt, x2, y1);  
+            
+            limitBox.setBounds(x2-s3,y1-s12,sw3+s6,s15);
+            if (hoverBox == limitBox) {
+                Stroke prevStroke = g.getStroke();
+                g.setStroke(stroke2);
+                g.setColor(SystemPanel.yellowText);
+                g.draw(limitBox);
+                g.setStroke(prevStroke);
+            }
+
+            upButtonX[0] = x3+s6; upButtonX[1] = x3; upButtonX[2] = x3+s12;
+            upButtonY[0] = y3-s17; upButtonY[1] = y3-s9; upButtonY[2] = y3-s9;
+
+            downButtonX[0] = x3+s6; downButtonX[1] = x3; downButtonX[2] = x3+s12;
+            downButtonY[0] = y3; downButtonY[1] = y3-s8; downButtonY[2] = y3-s8;
+
+            g.setColor(enabledArrowColor);
+            g.fillPolygon(upButtonX, upButtonY, 3);
+
+            if (c.shipyard().buildLimit() == 0)
+                g.setColor(disabledArrowColor);
+            else
+                g.setColor(enabledArrowColor);
+            g.fillPolygon(downButtonX, downButtonY, 3);
+
+            upArrow.reset();
+            downArrow.reset();
+            for (int i=0;i<upButtonX.length;i++) {
+                upArrow.addPoint(upButtonX[i], upButtonY[i]);
+                downArrow.addPoint(downButtonX[i], downButtonY[i]);
+            }
+            Stroke prevStroke = g.getStroke();
+            g.setStroke(stroke2);
+            if (hoverBox == upArrow) {
+                g.setColor(SystemPanel.yellowText);
+                g.drawPolygon(upArrow);
+            }
+            else if ((hoverBox == downArrow)
+                && (c.shipyard().buildLimit() > 0)) {
+                g.setColor(SystemPanel.yellowText);
+                g.drawPolygon(downArrow);
+            }
+            g.setStroke(prevStroke);
         }
         private void drawNameSelector(Graphics2D g, int x, int y, int w, int h) {
             StarSystem sys = parent.systemViewToDisplay();
@@ -1203,6 +1268,45 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                 parent.repaint();
             }
         }
+        private void incrementBuildLimit() {
+            StarSystem sys = parent.systemViewToDisplay();
+            Colony col = sys == null ? null : sys.colony();
+            if (col == null)
+                return;
+            boolean updated = col.shipyard().incrementBuildLimit();
+            if (updated) {
+                softClick();
+                parent.repaint();
+            }
+            else
+                misClick();
+        }
+        private void decrementBuildLimit() {
+            StarSystem sys = parent.systemViewToDisplay();
+            Colony col = sys == null ? null : sys.colony();
+            if (col == null)
+                return;
+            boolean updated = col.shipyard().decrementBuildLimit();
+            if (updated) {
+                softClick();
+                parent.repaint();
+            }
+            else
+                misClick();
+        }
+        private void resetBuildLimit() {
+            StarSystem sys = parent.systemViewToDisplay();
+            Colony col = sys == null ? null : sys.colony();
+            if (col == null)
+                return;
+            boolean updated = col.shipyard().resetBuildLimit();
+            if (updated) {
+                softClick();
+                repaint();
+            }
+            else
+                misClick();
+        }
         @Override
         public void mouseClicked(MouseEvent arg0) { }
         @Override
@@ -1224,7 +1328,13 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             int y = e.getY();
             boolean rightClick = SwingUtilities.isRightMouseButton(e);
 
-            if (shipDesignBox.contains(x,y)){
+            if (upArrow.contains(x,y))
+                incrementBuildLimit();
+            else if (downArrow.contains(x,y)) 
+                decrementBuildLimit();
+            else if (limitBox.contains(x,y))
+                resetBuildLimit();
+            else if (shipDesignBox.contains(x,y)){
                 if (rightClick)
                     prevShipDesign(true);
                 else
@@ -1257,7 +1367,13 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
 
             hoverBox = null;
 
-            if (shipDesignBox.contains(x,y))
+            if (upArrow.contains(x,y))
+                hoverBox = upArrow;
+            else if (downArrow.contains(x,y))
+                hoverBox = downArrow;
+            else if (limitBox.contains(x,y))
+                hoverBox = limitBox;
+            else if (shipDesignBox.contains(x,y))
                 hoverBox = shipDesignBox;
             else if (shipNameBox.contains(x,y))
                 hoverBox = shipNameBox;
@@ -1271,12 +1387,23 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         }
         @Override
         public void mouseWheelMoved(MouseWheelEvent e) {
-            if (e.getWheelRotation() < 0)
-                nextShipDesign(false);
-            else
-                prevShipDesign(false);
-
-            parent.repaint();
+            int x = e.getX();
+            int y = e.getY();
+            
+            if (limitBox.contains(x,y)) {
+                if (e.getWheelRotation() < 0)
+                    incrementBuildLimit();
+                else
+                    decrementBuildLimit();
+                return;
+            }
+            if (shipDesignBox.contains(x,y)) {
+                if (e.getWheelRotation() < 0)
+                    nextShipDesign(false);
+                else
+                    prevShipDesign(false);
+                return;
+            }
         }
     }
     class ColonyTransferFunds extends BasePanel implements MouseListener, MouseMotionListener {

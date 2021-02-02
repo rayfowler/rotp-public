@@ -47,6 +47,7 @@ public class Design implements Base, Serializable {
     public void name(String s)           { name = s; }
     public boolean active()              { return active; }
     public void active(boolean b)        { active = b; }
+    public boolean isShip()              { return false; }
     public int id()                      { return id; }
     public void id(int i)                { id = i; }
     public int seq()                     { return seq; }

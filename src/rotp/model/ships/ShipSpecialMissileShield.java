@@ -26,6 +26,8 @@ public final class ShipSpecialMissileShield extends ShipSpecial {
     @Override
     public String designGroup()              { return "MissileShield"; }
     @Override
+    public boolean isMissileShield()         { return true; }
+    @Override
     public TechMissileShield tech()          { return (TechMissileShield) super.tech(); }
     @Override
     public float missileIntercept(ShipWeaponMissileType wpn) {

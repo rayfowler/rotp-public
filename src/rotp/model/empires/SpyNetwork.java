@@ -208,7 +208,7 @@ public final class SpyNetwork implements Base, Serializable {
         else
             return text(perYearText, newSpies);
     }
-    public void nextTurn(float prod) {
+    public void nextTurn(float prod, float spendingAdj) {
         Collections.sort(shipViews, ShipView.VIEW_DATE);
 
         if (!view().inEconomicRange())
@@ -239,7 +239,7 @@ public final class SpyNetwork implements Base, Serializable {
             return;
         }
 
-        allocateSpyBC(prod * allocationCostPct());
+        allocateSpyBC(prod * allocationCostPct()*spendingAdj);
         if (activeSpies.isEmpty())
             return;
 
@@ -415,6 +415,7 @@ public final class SpyNetwork implements Base, Serializable {
         return tech.techsUnknownTo(owner());
     }
     private void allocateSpyBC(float bc) {
+        log("Allocating spy bc: "+bc);
         allocationBC += bc;
         float cost = costForNextSpy();
 
@@ -437,7 +438,7 @@ public final class SpyNetwork implements Base, Serializable {
         float adj = empire().totalInternalSecurityPct();
 
         // adjust for their race
-        adj += empire().race().internalSecurityAdj();
+        adj += empire().internalSecurityAdj();
 
         // if spy is at a computer tech disadvantage, give bonus to them
         float techDiff = spyTechAdvantage();
@@ -453,7 +454,7 @@ public final class SpyNetwork implements Base, Serializable {
     }
     private float spyInfiltrationAdj() {
         // start with our racial bonus
-        float adj = owner().race().spyInfiltrationAdj();
+        float adj = owner().spyInfiltrationAdj();
         // if spy is at a computer tech advantage, give bonus to spy
         float techDiff = spyTechAdvantage();
         if (techDiff > 0)

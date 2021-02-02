@@ -20,6 +20,7 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.event.ActionListener;
@@ -37,6 +38,10 @@ import rotp.model.empires.SystemView;
 import rotp.model.events.StarSystemEvent;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
+import static rotp.ui.BasePanel.s10;
+import static rotp.ui.BasePanel.s15;
+import static rotp.ui.BasePanel.s20;
+import static rotp.ui.BasePanel.s70;
 import rotp.ui.main.MainUI;
 import rotp.ui.main.SystemPanel;
 import rotp.util.Palette;
@@ -191,15 +196,14 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
             g.setFont(narrowFont(24));
             drawShadowedString(g, name, 2, s10, s30, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
             
-            Color flagC = parent.flagColor(sys);
-            if (hoverBox == flagBox) 
-                sys.drawBanner(g, flagC, SystemPanel.yellowText, w-s10,s40);
-            else {
-                Color c1 = flagC == null ? SystemPanel.blackText : SystemPanel.whiteText;
-                sys.drawBanner(g, flagC, c1, w-s10,s40);
+            int sz = s60;
+            if (hoverBox == flagBox) {
+                Image hoverImage = parent.flagHover(sys);
+                g.drawImage(hoverImage, w-sz+s15, -s15, sz, sz, null);
             }
-
-            flagBox.setBounds(w-s30,s10,s20,s60);              
+            Image flagImage = parent.flagImage(sys);
+            g.drawImage(flagImage, w-sz+s15, -s15, sz, sz, null);
+            flagBox.setBounds(w-sz+s25,-s15,sz-s20,sz-s10);
         }
         public void toggleFlagColor(boolean rightClick) {
             StarSystem sys = systemViewToDisplay();

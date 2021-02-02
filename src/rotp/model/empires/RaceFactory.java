@@ -226,6 +226,7 @@ public enum RaceFactory implements Base {
         if (key.equalsIgnoreCase("personality"))   { parseRacePersonalityMods(r, value); return; }
         if (key.equalsIgnoreCase("objective"))     { parseRaceObjectiveMods(r, value); return; }
         if (key.equalsIgnoreCase("relations"))     { parseRaceRelationsMods(r, substrings(value,',')); return; }
+        if (key.equalsIgnoreCase("shipdesign"))    { parseShipDesignMods(r, substrings(value,',')); return; }
         if (key.equalsIgnoreCase("available"))     { parseRaceAvailableFlags(r, value); return; }
 
         err("unknown key->", input);
@@ -355,6 +356,17 @@ public enum RaceFactory implements Base {
                 r.defaultRaceRelations(parseInt(vals.get(1)));
             else
                 r.baseRelations(vals.get(0),parseInt(vals.get(1)));
+        }
+    }
+    private void parseShipDesignMods(Race r, List<String> mods) {
+        int maxMods = r.shipDesignMods.length;
+        
+        if (mods.size() > maxMods)
+            err("Too many ship design mods specified for "+r.name());
+        for (int i=0;i<mods.size();i++) {
+            float val = parseFloat(mods.get(i));
+            if (i < maxMods)
+            r.shipDesignMods[i] = val;
         }
     }
     private void parseRaceAvailableFlags(Race r, String input) {
