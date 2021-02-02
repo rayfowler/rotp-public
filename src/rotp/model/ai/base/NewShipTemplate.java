@@ -177,8 +177,11 @@ public class NewShipTemplate implements Base {
             specialsWeight += 1; 
 
         // xenophobes will bio-bomb regardless of racial preferences
-        if ((role == DesignType.BOMBER) && ai.empire().leader().isXenophobic())
-            allowBioWeapons = true;
+        if (role == DesignType.BOMBER) {
+            if (ai.empire().leader().isXenophobic()
+            || ai.empire().leader().isRuthless())
+                allowBioWeapons = true;
+        }
 
         // the sum of shield, ECM, maneuver and armor weights may be not exactly equal to modulesSpace
         // however, unless it isn't 1.0 or close to it of available space after engines and BC, it doesn't matter
