@@ -162,6 +162,8 @@ public class UserPreferences {
             out.println(keyFormat("SOUNDS")+ yesOrNo(playSounds));
             out.println(keyFormat("MUSIC_VOLUME")+ SoundManager.musicLevel());
             out.println(keyFormat("SOUND_VOLUME")+ SoundManager.soundLevel());
+            out.println(keyFormat("AUTOCOLONIZE")+ yesOrNo(autoColonize));
+            out.println(keyFormat("AUTOBOMBARD")+autoBombardToSettingName(autoBombardMode));
             out.println(keyFormat("SHOW_MEMORY")+ yesOrNo(showMemory));
             out.println(keyFormat("DISPLAY_YEAR")+ yesOrNo(displayYear));
             out.println(keyFormat("SCREEN_SIZE_PCT")+ screenSizePct());
@@ -199,6 +201,8 @@ public class UserPreferences {
             case "SOUNDS":       playSounds = yesOrNo(val); return;
             case "MUSIC_VOLUME": SoundManager.musicLevel(Integer.valueOf(val)); return;
             case "SOUND_VOLUME": SoundManager.soundLevel(Integer.valueOf(val)); return;
+            case "AUTOCOLONIZE": autoColonize = yesOrNo(val); return;
+            case "AUTOBOMBARD":  autoBombardMode = autoBombardFromSettingName(val); return;
             case "SHOW_MEMORY":  showMemory = yesOrNo(val); return;
             case "DISPLAY_YEAR": displayYear = yesOrNo(val); return;
             case "SCREEN_SIZE_PCT": screenSizePct(Integer.valueOf(val)); return;
@@ -273,5 +277,23 @@ public class UserPreferences {
             case "High":   return GRAPHICS_HIGH;
         }
         return GRAPHICS_HIGH;
+    }
+    public static String autoBombardToSettingName(String s) {
+        switch(s) {
+            case AUTOBOMBARD_NO:     return "No";
+            case AUTOBOMBARD_YES:    return "Yes";
+            case AUTOBOMBARD_WAR:    return "War";
+            case AUTOBOMBARD_INVADE: return "Invade";
+        }
+        return "Windowed";
+    }
+    public static String autoBombardFromSettingName(String s) {
+        switch(s) {
+            case "No":     return AUTOBOMBARD_NO;
+            case "Yes":    return AUTOBOMBARD_YES;
+            case "War":    return AUTOBOMBARD_WAR;
+            case "Invade": return AUTOBOMBARD_INVADE;
+        }
+        return AUTOBOMBARD_NO;
     }
 }
