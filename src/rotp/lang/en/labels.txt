@@ -1557,7 +1557,8 @@ RACES_COUNTER_INTEL_TITLE         | Counter-Intelligence Report
 RACES_INTEL_SECURITY_BONUS        | Security Bonus
 RACES_INTEL_TOTAL_SPENDING        | Total Spending
 RACES_INTEL_SECURITY_TAX          | Security Tax
-RACES_INTEL_TAX_DESC              | Tax your colonies to increase your spending and chance of discovering foreign spies.
+RACES_INTEL_TAX_DESC              | Tax your colonies to increase your chance of discovering foreign spies.
+RACES_INTEL_TAX_OUT_OF_RANGE      | Spending begins when in range of alien races.
 RACES_INTEL_SECURITY_BONUS_AMT    | +%1%
 RACES_INTEL_SECURITY_BONUS_NONE   | None
 RACES_INTEL_REPORT_AGE            | Report Age

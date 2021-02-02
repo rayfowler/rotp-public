@@ -141,6 +141,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     private transient float totalEmpireShipMaintenanceCost;
     private transient float totalEmpireStargateCost;
     private transient float totalEmpireMissileBaseCost;
+    private transient int inRange;
 
     public AI ai() {
         if (ai == null)
@@ -1317,6 +1318,16 @@ public final class Empire implements Base, NamedObject, Serializable {
     }
     public boolean hasAnyContact() {  return !contactedEmpires().isEmpty(); }
 
+    public boolean inRangeOfAnyEmpire() {
+        if (inRange < 0) {
+            inRange = 0;
+            for (EmpireView v: empireViews()) {
+                if ((v!= null) && v.embassy().contact() && v.inEconomicRange())
+                    inRange = 1;
+            }
+        }
+        return inRange == 1;        
+    }
     public List<Empire> contactedEmpires() {
         List<Empire> r = new ArrayList<>();
 
@@ -1394,8 +1405,11 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
         internalSecurity(MAX_SECURITY_TICKS);
     }
+    public float requestedSecurityCostPct() {
+        return MAX_SECURITY_PCT*securityAllocation/MAX_SECURITY_TICKS/2;
+    }
     public float totalInternalSecurityPct() {
-        return  MAX_SECURITY_PCT*securityAllocation/MAX_SECURITY_TICKS;
+        return inRangeOfAnyEmpire() ? MAX_SECURITY_PCT*securityAllocation/MAX_SECURITY_TICKS : 0;
     }
     public float internalSecurityCostPct() {
         return (totalInternalSecurityPct()/2);
@@ -1999,7 +2013,9 @@ public final class Empire implements Base, NamedObject, Serializable {
         else
             return totalTaxablePlanetaryProduction() * empireTaxPct() / 2; 
     }
-    public float empireInternalSecurityCost() { return totalTaxablePlanetaryProduction() * internalSecurityCostPct(); }
+    public float empireInternalSecurityCost() {
+        return inRangeOfAnyEmpire() ? totalTaxablePlanetaryProduction() * internalSecurityCostPct() : 0f;
+    }
     public float empireExternalSpyingCost()   { return totalTaxablePlanetaryProduction() * totalSpyCostPct(); }
     
     public boolean incrementEmpireTaxLevel()  { return empireTaxLevel(empireTaxLevel+1); }
@@ -2157,6 +2173,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         totalEmpireShipMaintenanceCost = -999;
         totalEmpireStargateCost = -999;
         totalEmpireMissileBaseCost = -999;
+        inRange = -1;
     }
     public Float totalPlanetaryProduction() {
         if (totalEmpireProduction <= 0) {
