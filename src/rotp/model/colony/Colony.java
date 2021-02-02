@@ -1092,9 +1092,14 @@ public final class Colony implements Base, IMappedObject, Serializable {
             return;
         }
         Empire pl = player();
-        if (tr.empire().isPlayerControlled())
+        if (tr.empire().isPlayerControlled()) {
+            allocation(SHIP, 0);
+            allocation(DEFENSE,0);
+            allocation(INDUSTRY,0);
+            allocation(ECOLOGY,0);
+            allocation(RESEARCH,0);
             session().addSystemToAllocate(starSystem(), text("MAIN_ALLOCATE_COLONY_CAPTURED", pl.sv.name(starSystem().id), pl.raceName()));
-
+        }
         // list of possible techs that could be recovered from factories
         List<Tech> possibleTechs = empire().tech().techsUnknownTo(tr.empire());
         int techsCaptured = 0;
