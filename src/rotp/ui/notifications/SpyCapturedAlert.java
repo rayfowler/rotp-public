@@ -23,7 +23,8 @@ public class SpyCapturedAlert extends GameAlert {
     private final Empire target;
     private final String mission;
      public static void create(Empire spyE, Empire targetE, String t) {
-        GameSession.instance().addAlert(new SpyCapturedAlert(spyE, targetE,t));
+        if (!spyE.atWarWith(targetE.id))
+            GameSession.instance().addAlert(new SpyCapturedAlert(spyE, targetE,t));
     }
     @Override
     public String description() {
