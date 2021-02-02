@@ -748,6 +748,8 @@ public final class Colony implements Base, IMappedObject, Serializable {
         return totalProductionIncome() + maxReserveIncome();
     }
     public float colonyTaxPct() {
+        if (embargoed())
+            return 0f;
         // we are taxed at the empire rate if the empire is taxing all colonies, or we are finished developing
         float empireTaxPct = empire.empireTaxPct();
         float colonyTaxPct = 0.0f;
