@@ -39,6 +39,7 @@ import rotp.model.ships.ShipManeuver;
 import rotp.model.ships.ShipShield;
 import rotp.model.ships.ShipSpecial;
 import rotp.model.ships.ShipWeapon;
+import rotp.model.tech.Tech;
 import rotp.model.tech.TechTree;
 import rotp.util.Base;
 
@@ -72,6 +73,12 @@ public class NewShipTemplate implements Base {
     private static final int PREF_REPAIR = 19;
     private static final int PREF_INTERTIAL = 20;
     private static final int PREF_MISS_SHIELD = 21;
+    private static final int PREF_REPULSOR = 22;
+    private static final int PREF_STASIS = 23;
+    private static final int PREF_STREAM_PROJECTOR = 24;
+    private static final int PREF_WARP_DISSIPATOR = 25;
+    private static final int PREF_TECH_NULLIFIER = 26;
+    private static final int PREF_BEAM_FOCUS = 27;
     
 
     public static ShipDesign newFighterDesign(ShipDesigner ai) {
@@ -346,9 +353,6 @@ public class NewShipTemplate implements Base {
         // 4. black hole or teleporters (always good, HEF is only good for beam ships and is added separately)
         // then it would be fitted on the design in backwards order, so it's ok if the list has some repeat entries
 
-        // I'm itching for tech level property in ShipSpecial class, because I just have to hope that the best modules are in the end,
-        // so I'll start trying to fit them from the end
-        
         // 0
         specials.add(new ShipSpecial());
 
@@ -359,9 +363,19 @@ public class NewShipTemplate implements Base {
             }
         }
 
-        // 2 - three best specials excluding Colonization and High Energy Focus
+        // create list of specials that we will not consider in the racials special list
+        // colony modules, reserve fuel tanks, and High Energy Focus (set elsewhere)
+        List<ShipSpecial> exclusionList1 = new ArrayList<>();
+        for (ShipSpecial spec: allSpecials) {
+            if (spec.isColonySpecial()
+            || spec.isFuelRange()
+            || (spec.beamRangeBonus() > 0))
+                exclusionList1.add(spec);
+        }
+        // 2 - three best specials not in the exclusion list
         for (int i=allSpecials.size()-1; (i >=0) && (i>allSpecials.size()-4); i--) {
-            if ((!allSpecials.get(i).isColonySpecial()) && (allSpecials.get(i).beamRangeBonus() == 0))
+            ShipSpecial spec = allSpecials.get(i);
+            if (!exclusionList1.contains(spec))
                 specials.add(allSpecials.get(i));
         }
 
@@ -375,18 +389,44 @@ public class NewShipTemplate implements Base {
         boolean preferInertial = race.shipDesignMods[PREF_INTERTIAL] > 0;
         // Sakkra, Bulrathi and Psilon
         boolean preferMissileShield = race.shipDesignMods[PREF_MISS_SHIELD] > 0;
+        // Psilon
+        boolean preferRepulsor = race.shipDesignMods[PREF_REPULSOR] > 0;
+        // Psilon
+        boolean preferStasisField = race.shipDesignMods[PREF_STASIS] > 0;
+        // Psilon
+        boolean preferStreamProjector = race.shipDesignMods[PREF_STREAM_PROJECTOR] > 0;
+        // Psilon
+        boolean preferWarpDissipator = race.shipDesignMods[PREF_WARP_DISSIPATOR] > 0;
+        // Psilon
+        boolean preferTechNullifier = race.shipDesignMods[PREF_TECH_NULLIFIER] > 0;
+        // Psilon
+        boolean preferBeamFocus = race.shipDesignMods[PREF_BEAM_FOCUS] > 0;
+        
         // 3 - Racially preferred specials
         for (ShipSpecial spec: allSpecials) {
-            if (!spec.isColonySpecial()) {
-                if (preferPulsars && spec.isPulsar())
+            Tech tech = spec.tech();
+            if ((tech != null) && !spec.isColonySpecial() && !spec.isFuelRange() ) {
+                if (preferPulsars && tech.isType(Tech.ENERGY_PULSAR))
                     specials.add(spec); 
-                if (preferCloak && spec.allowsCloaking())
+                if (preferCloak && tech.isType(Tech.CLOAKING))
                     specials.add(spec); 
-                if (preferRepair && (spec.shipRepairPct() >0))
+                if (preferRepair  && tech.isType(Tech.AUTOMATED_REPAIR))
                     specials.add(spec); 
-                if (preferInertial && spec.isInertial())
+                if (preferInertial && tech.isType(Tech.SHIP_INERTIAL))
                     specials.add(spec); 
-                if (preferMissileShield && spec.isMissileShield())
+                if (preferMissileShield && tech.isType(Tech.MISSILE_SHIELD))
+                    specials.add(spec); 
+                if (preferRepulsor && tech.isType(Tech.REPULSOR))
+                    specials.add(spec); 
+                if (preferStasisField && tech.isType(Tech.STASIS_FIELD))
+                    specials.add(spec); 
+                if (preferStreamProjector && tech.isType(Tech.STREAM_PROJECTOR))
+                    specials.add(spec); 
+                if (preferWarpDissipator && tech.isWarpDissipator())
+                    specials.add(spec); 
+                if (preferTechNullifier && tech.isTechNullifier())
+                    specials.add(spec); 
+                if (preferBeamFocus && tech.isType(Tech.BEAM_FOCUS))
                     specials.add(spec); 
             }
         }

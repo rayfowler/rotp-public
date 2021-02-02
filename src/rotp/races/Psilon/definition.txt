@@ -133,5 +133,6 @@ relations: DEFAULT=0,RACE_PSILON=31,RACE_HUMAN=7,RACE_DARLOK=-7
 // 5th = module space ratio (default 0.5)
 // 6 to 14 additional weights for shield-FD, shield-B, ecm-FD, ecm-B, maneuver-BD, manv-F, armor-FB, armor-D, specials
 // 15-16-17 flags (0 or 1) for speed matching, reinforced armor and bio weapon usage
-// 18-19-20-21-22 flags (0 or 1) for ship special preferences: Pulsar, Cloak, Repair, Inertial, MissileShield
-shipdesign: 1.25,1,1,1.25, 0.6, 2,4,1,3,2,4,2,3,1, 0,1,0, 1,1,1,1,1
+// 18 to 28 flags (0 or 1) for ship special preferences: 
+//  Pulsar, Cloak, Repair, Inertial, MissileShield, Repulsor, Stasis, StreamProj, Warp Diss, Tech Null, Oracle
+shipdesign: 1.25,1,1,1.25, 0.6, 2,4,1,3,2,4,2,3,1, 0,1,0, 1,1,1,1,1,1,1,1,1,1,1
