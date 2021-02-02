@@ -305,8 +305,8 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         super.paint(g);
         if (drawNextTurnNotice && session().performingTurn()) {
             drawNotice(g, 28, -s100);
-            requestFocusInWindow();
         }
+        requestFocusInWindow();
     }
     public void repaintNotice() {
         int w0 = scaled(500);
