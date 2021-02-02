@@ -28,6 +28,8 @@ public final class TechFuturePlanetology extends Tech {
     }
     @Override
     public boolean isFutureTech()  { return true; }
+    @Override
+    public int futureTechLevel()         { return typeSeq+1; } // number is zero-based
     // all future techs can always be research
     @Override
     public float discoveryPct()          { return 1.0f; }

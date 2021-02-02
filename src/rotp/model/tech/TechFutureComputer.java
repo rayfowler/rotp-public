@@ -27,7 +27,9 @@ public final class TechFutureComputer extends Tech {
         init();
     }
     @Override
-    public boolean isFutureTech()  { return true; }
+    public boolean isFutureTech()        { return true; }
+    @Override
+    public int futureTechLevel()         { return typeSeq+1; } // number is zero-based
     // all future techs can always be research
     @Override
     public float discoveryPct()          { return 1.0f; }

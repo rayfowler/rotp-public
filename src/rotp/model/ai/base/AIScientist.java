@@ -198,8 +198,12 @@ public class AIScientist implements Base, Scientist {
             return;
 
         if (empire.isPlayerControlled() ) {
-            session().addTurnNotification(new SelectTechNotification(cat));
-            return;
+            Tech firstTech = techs.get(0);
+            // we stop asking for user selection once we finished Future Tech 1
+            if (firstTech.futureTechLevel() < 2) {
+                session().addTurnNotification(new SelectTechNotification(cat));
+                return;
+            }
         }
 
         Tech.comparatorCiv = empire;
