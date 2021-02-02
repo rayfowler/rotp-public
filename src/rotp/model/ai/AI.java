@@ -221,6 +221,8 @@ public class AI implements Base {
     public boolean promptForBombardment(StarSystem sys, ShipFleet fl) {
         // if player, prompt for decision to bomb instead of deciding here
         if (empire.isPlayerControlled()) {
+            if (UserPreferences.autoBombardNever())
+                return false;
             boolean autoBomb = false;
             // user preference auto-bombard set to always?
             if (UserPreferences.autoBombardYes())

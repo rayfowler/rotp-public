@@ -330,11 +330,12 @@ GAME_SETTINGS_AUTOCOLONIZE_YES    | Yes
 GAME_SETTINGS_AUTOCOLONIZE_NO     | No
 GAME_SETTINGS_AUTOCOLONIZE_DESC   | Toggle to auto-colonize and name planets immediately when colony ships arrive. This can be time-saving on very large maps.
 GAME_SETTINGS_AUTOBOMBARD         | Auto-Bombard: %1
-GAME_SETTINGS_AUTOBOMBARD_YES     | Yes
-GAME_SETTINGS_AUTOBOMBARD_WAR     | Only at War
+GAME_SETTINGS_AUTOBOMBARD_NO      | Always Prompt
+GAME_SETTINGS_AUTOBOMBARD_NEVER   | Never
+GAME_SETTINGS_AUTOBOMBARD_YES     | Always
+GAME_SETTINGS_AUTOBOMBARD_WAR     | Only War
 GAME_SETTINGS_AUTOBOMBARD_INVADE  | Only War and not Invading
-GAME_SETTINGS_AUTOBOMBARD_NO      | No
-GAME_SETTINGS_AUTOBOMBARD_DESC    | Toggle to auto-bombard always, or only when at war, or only when at war with no invasion forces en route. This can be time-saving on very large maps.
+GAME_SETTINGS_AUTOBOMBARD_DESC    | Toggle to always prompt to bombard, never bombard, always bombard, only auto-bombard when at war, or only auto-bombard when at war with no invasion forces en route. 
 
 // Load Game UI
 LOAD_GAME_TITLE                   | Load Game

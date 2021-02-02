@@ -43,8 +43,9 @@ public class UserPreferences {
     private static final String TEXTURES_NO = "GAME_SETTINGS_TEXTURES_NO";
     private static final String AUTOCOLONIZE_YES = "GAME_SETTINGS_AUTOCOLONIZE_YES";
     private static final String AUTOCOLONIZE_NO = "GAME_SETTINGS_AUTOCOLONIZE_NO";
-    private static final String AUTOBOMBARD_YES = "GAME_SETTINGS_AUTOBOMBARD_YES";
     private static final String AUTOBOMBARD_NO = "GAME_SETTINGS_AUTOBOMBARD_NO";
+    private static final String AUTOBOMBARD_NEVER = "GAME_SETTINGS_AUTOBOMBARD_NEVER";
+    private static final String AUTOBOMBARD_YES = "GAME_SETTINGS_AUTOBOMBARD_YES";
     private static final String AUTOBOMBARD_WAR = "GAME_SETTINGS_AUTOBOMBARD_WAR";
     private static final String AUTOBOMBARD_INVADE = "GAME_SETTINGS_AUTOBOMBARD_INVADE";
     
@@ -98,7 +99,8 @@ public class UserPreferences {
     
     public static void toggleAutoBombard()     { 
         switch(autoBombardMode) {
-            case AUTOBOMBARD_NO:     autoBombardMode = AUTOBOMBARD_YES; break;
+            case AUTOBOMBARD_NO:     autoBombardMode = AUTOBOMBARD_NEVER; break;
+            case AUTOBOMBARD_NEVER:  autoBombardMode = AUTOBOMBARD_YES; break;
             case AUTOBOMBARD_YES:    autoBombardMode = AUTOBOMBARD_WAR; break;
             case AUTOBOMBARD_WAR:    autoBombardMode = AUTOBOMBARD_INVADE; break;
             case AUTOBOMBARD_INVADE: autoBombardMode = AUTOBOMBARD_NO; break;
@@ -108,6 +110,7 @@ public class UserPreferences {
     }
     public static String autoBombardMode()        { return autoBombardMode; }
     public static boolean autoBombardNo()         { return autoBombardMode.equals(AUTOBOMBARD_NO); }
+    public static boolean autoBombardNever()      { return autoBombardMode.equals(AUTOBOMBARD_NEVER); }
     public static boolean autoBombardYes()        { return autoBombardMode.equals(AUTOBOMBARD_YES); }
     public static boolean autoBombardWar()        { return autoBombardMode.equals(AUTOBOMBARD_WAR); }
     public static boolean autoBombardInvading()   { return autoBombardMode.equals(AUTOBOMBARD_INVADE); }
@@ -281,15 +284,17 @@ public class UserPreferences {
     public static String autoBombardToSettingName(String s) {
         switch(s) {
             case AUTOBOMBARD_NO:     return "No";
+            case AUTOBOMBARD_NEVER:  return "Never";
             case AUTOBOMBARD_YES:    return "Yes";
             case AUTOBOMBARD_WAR:    return "War";
             case AUTOBOMBARD_INVADE: return "Invade";
         }
-        return "Windowed";
+        return "No";
     }
     public static String autoBombardFromSettingName(String s) {
         switch(s) {
             case "No":     return AUTOBOMBARD_NO;
+            case "Never":  return AUTOBOMBARD_NEVER;
             case "Yes":    return AUTOBOMBARD_YES;
             case "War":    return AUTOBOMBARD_WAR;
             case "Invade": return AUTOBOMBARD_INVADE;
