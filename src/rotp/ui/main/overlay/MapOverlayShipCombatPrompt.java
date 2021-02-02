@@ -334,7 +334,7 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
         parent.addNextTurnControl(flagButton);
         flagButton.init(this, g);
         flagButton.mapX(boxX+boxW-flagButton.width()+s10);
-        flagButton.mapY(boxY+boxH-flagButton.height()+s10);
+        flagButton.mapY(boxY+boxH-buttonPaneH-flagButton.height()+s10);
         flagButton.draw(parent.map(), g);
     }
     @Override
