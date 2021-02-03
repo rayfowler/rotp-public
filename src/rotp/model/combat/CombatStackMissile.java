@@ -92,9 +92,9 @@ public class CombatStackMissile extends CombatStack implements Base {
     @Override
     public void endTurn() {
         turnsLeft--;
-        log(fullName(), " - Done. Turns left: ", str(turnsLeft));
+        //log(fullName(), " - Done. Turns left: ", str(turnsLeft));
         if (selfDestruct()) {
-            log(fullName(), " - Self Destructing!");
+            ///log(fullName(), " - Self Destructing!");
             mgr.removeFromCombat(this);
         }
     }
@@ -110,8 +110,8 @@ public class CombatStackMissile extends CombatStack implements Base {
     @Override
     public void fireWeapon(CombatStack target) {
         missile.fireUpon(this, target, num);
-        if (target.damageSustained > 0)
-            log("missile damage: ", str(target.damageSustained));
+        //if (target.damageSustained > 0)
+        //    log("missile damage: ", str(target.damageSustained));
 
         mgr.destroyStack(this);
     }

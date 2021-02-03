@@ -577,7 +577,7 @@ public class AIGeneral implements Base, General {
 
         // use up to half of BC for Destroyers... rest for fighters
         int destroyersNeeded = (int) Math.ceil((bcNeeded/2)/empire.shipLab().destroyerDesign().cost());
-        bcNeeded -= (destroyersNeeded * empire.shipLab().destroyerDesign().cost());
+        bcNeeded = max(0, bcNeeded-(destroyersNeeded * empire.shipLab().destroyerDesign().cost()));
         int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost());
 
         ShipDesignLab lab = empire.shipLab();
@@ -599,7 +599,7 @@ public class AIGeneral implements Base, General {
         rushDefenseSystems.add(sys);
         // use up to half of BC for Destroyers... rest for fighters
         int destroyersNeeded = (int) Math.ceil((bcNeeded/2)/empire.shipLab().destroyerDesign().cost());
-        bcNeeded -= (destroyersNeeded * empire.shipLab().destroyerDesign().cost());
+        bcNeeded = max(0, bcNeeded-(destroyersNeeded * empire.shipLab().destroyerDesign().cost()));
         int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost());
 
         ShipDesignLab lab = empire.shipLab();
@@ -619,7 +619,7 @@ public class AIGeneral implements Base, General {
 
         // use up to half of BC for Destroyers... rest for fighters
         int destroyersNeeded = (int) Math.ceil((bcNeeded/2)/empire.shipLab().destroyerDesign().cost());
-        bcNeeded -= (destroyersNeeded * empire.shipLab().destroyerDesign().cost());
+        bcNeeded = max(0, bcNeeded-(destroyersNeeded * empire.shipLab().destroyerDesign().cost()));
         int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost());
 
         ShipDesignLab lab = empire.shipLab();
@@ -661,7 +661,7 @@ public class AIGeneral implements Base, General {
 
         // use up to half of BC for Destroyers... rest for fighters
         int destroyersNeeded = (int) Math.ceil((bcNeeded/2)/empire.shipLab().destroyerDesign().cost());
-        bcNeeded -= (destroyersNeeded * empire.shipLab().destroyerDesign().cost());
+        bcNeeded = max(0, bcNeeded-(destroyersNeeded * empire.shipLab().destroyerDesign().cost()));
         int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost());
 
         ShipDesignLab lab = empire.shipLab();

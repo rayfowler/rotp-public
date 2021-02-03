@@ -177,8 +177,10 @@ public class FleetPlan implements Base, Serializable {
         }
     }
     public void addShips(ShipDesign design, int num) {
-        if (lab().design(design.id()) != design) 
+        if (lab().design(design.id()) != design) {
             log("Error: adding ship with invalid design");
+            return;
+        }
         
         needed[design.id()] += num;
     }

@@ -635,7 +635,7 @@ public class ShipCombatManager implements Base {
                     if (st.x > 5)
                         st.reverse();
                     stackIndex++;
-                    log("Ship Stack: "+st);
+                    //log("Ship Stack: "+st);
                 }
             }
             empIndex++;
@@ -804,7 +804,7 @@ public class ShipCombatManager implements Base {
         return false;
     }
     public void turnDone(CombatStack st) {
-        log(st.fullName(), " - Done");
+        //log(st.fullName(), " - Done");
         st.endTurn();
 
         List<CombatStack> stacks = new ArrayList<>(results.activeStacks());
@@ -874,11 +874,11 @@ public class ShipCombatManager implements Base {
         }
     }
     public boolean moveStack(CombatStack st, int x1, int y1) {
-        log(currentStack.fullName(), " moving to: ", str(x1), ",", str(y1));
+        //log(currentStack.fullName(), " moving to: ", str(x1), ",", str(y1));
         return st.moveTo(x1,y1);
     }
     public void teleportStack(CombatStack st, int x1, int y1) {
-        log(currentStack.fullName() + " teleporting to: " + x1 + "," + y1);
+        //log(currentStack.fullName() + " teleporting to: " + x1 + "," + y1);
         st.teleportTo(x1,y1, 0.1f);
     }
     public void performAttackTarget(CombatStack st) {

@@ -109,20 +109,20 @@ public class AIShipDesigner implements Base, ShipDesigner {
     }
     private void countdownObsoleteDesigns() {
         ShipDesignLab lab = lab();
-        List<ShipDesign> scrap = new ArrayList<>();
-        for (ShipDesign d: lab.designs()) {
+        for (int slot=0;slot<ShipDesignLab.MAX_DESIGNS;slot++) {
+            ShipDesign d = lab.design(slot);
             if (d.obsolete()) {
                 d.remainingLife--;
                 // if remainingLife < 0, then this design is not an
                 // active design waiting to be scrapped...it's a slot that
                 // needs to be freed up
-                if (d.remainingLife() < 0) 
-                    scrap.add(d);
-            } 
-        }
-        for (ShipDesign d: scrap) {
-            lab.scrapDesign(d);
-            log("Scrapping obsolete design: "+d.name());
+                if (d.remainingLife() < 0) {
+                    if (!lab.slotInUse(slot)) {
+                        log("Empire: "+empire.name()+ "  Scrapping obsolete design: "+d.name()+"  in slot:"+slot);
+                        lab.scrapDesign(d);
+                    }
+                }
+            }
         }
     }
     public void updateScoutDesign() {
@@ -383,10 +383,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         // find best hypothetical design vs current targets
         ShipDesign newDesign = newDestroyerDesign(currDesign.size());
         
-        if (currDesign.matchesDesign(newDesign)) // moved above scrapping
-            return;
-
-        // if currDesign is obsolete, replace it immediately with new design
+       // if currDesign is obsolete, replace it immediately with new design
         if (currDesign.obsolete() && (currDesign.remainingLife() < 1)) {
             lab.scrapDesign(currDesign);
             log("Replacing obsolete destroyer design");
@@ -394,6 +391,8 @@ public class AIShipDesigner implements Base, ShipDesigner {
             return;            
         }
 
+        if (currDesign.matchesDesign(newDesign)) 
+            return;
         
         // if we have very few destroyers actually in use, go ahead and
         // scrap/replace now
