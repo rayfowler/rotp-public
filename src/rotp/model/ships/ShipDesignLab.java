@@ -78,6 +78,11 @@ public class ShipDesignLab implements Base, Serializable {
 
     public ShipWeapon noWeapon()                  { return weapons().get(0); }
     public ShipSpecial noSpecial()                { return specials().get(0); }
+    
+    public boolean slotInUse(int slot) {
+        return (slot == scoutDesignId) || (slot == bomberDesignId) || (slot == fighterDesignId)
+                || (slot == colonyDesignId) || (slot == destroyerDesignId);
+    }
 
     public List<ShipDesign> outdatedDesigns() {
         if (outdatedDesigns == null)
@@ -125,6 +130,12 @@ public class ShipDesignLab implements Base, Serializable {
                 designs[i].id(i);
             }
         }
+        scoutDesignId = 0;
+        fighterDesignId = 1;
+        bomberDesignId = 2;
+        destroyerDesignId = 3;
+        colonyDesignId = 4;
+        
         ShipDesign design;
 
         design = empire.isPlayer() ? startingPlayerScoutDesign() : empire.shipDesignerAI().newScoutDesign();
@@ -145,7 +156,7 @@ public class ShipDesignLab implements Base, Serializable {
     public void nextTurn() {
         for (int i=0;i<designs.length;i++) {
             if (designs[i].id() != i)
-                System.err.println("design slot "+i+" has id:"+designs[i].id());
+                System.err.println("Empire: "+empire.name()+"  design slot "+i+" has id:"+designs[i].id());
         }
         // update opp shield level (for fighter designs)
         bestEnemyShieldLevel = empire.bestEnemyShieldLevel();
@@ -188,21 +199,21 @@ public class ShipDesignLab implements Base, Serializable {
     }
     public void setScoutDesign(ShipDesign d, int slot) {
         d.mission(ShipDesign.SCOUT);
+        empire().swapShipConstruction(scoutDesign(), d);
         designs[slot] = d;
         d.active(true);
         d.id(slot);
         d.seq(slot); 
-        empire().swapShipConstruction(scoutDesign(), d);
         scoutDesignId = slot;
         log("Empire: "+empire.name()+" creates scout design: "+d.name()+"  slot:"+slot);
     }
     public void setColonyDesign(ShipDesign d, int slot) {
         d.mission(ShipDesign.COLONY);
+        empire().swapShipConstruction(colonyDesign(), d);
         designs[slot] = d;
         d.active(true);
         d.id(slot);
         d.seq(slot); 
-        empire().swapShipConstruction(colonyDesign(), d);
         colonyDesignId = slot;
         log("Empire: "+empire.name()+" creates colony design: "+d.name()+"  slot:"+slot);
     }
@@ -218,34 +229,23 @@ public class ShipDesignLab implements Base, Serializable {
     }
     public void setBomberDesign(ShipDesign d, int slot) {
         d.mission(ShipDesign.BOMBER);
+        empire().swapShipConstruction(bomberDesign(), d);
         designs[slot] = d;
         d.active(true);
         d.id(slot);
         d.seq(slot); 
-        empire().swapShipConstruction(bomberDesign(), d);
         bomberDesignId = slot;
         log("Empire: "+empire.name()+" creates bomber design: "+d.name()+"  slot:"+slot);
     }
     public void setDestroyerDesign(ShipDesign d, int slot) {
         d.mission(ShipDesign.DESTROYER);
+        empire().swapShipConstruction(destroyerDesign(), d);
         designs[slot] = d;
         d.active(true);
         d.id(slot);
         d.seq(slot); 
-        empire().swapShipConstruction(destroyerDesign(), d);
         destroyerDesignId = slot;
         log("Empire: "+empire.name()+" creates destroyer design: "+d.name()+"  slot:"+slot);
-    }
-    public void scrapOutdatedDesign() {
-        ShipDesign mostOutdated = null;
-        for (ShipDesign d : outdatedDesigns()) {
-            if ((mostOutdated == null) || (d.remainingLife() < mostOutdated.remainingLife()))
-                mostOutdated = d;
-        }
-        if (mostOutdated != null) {
-            outdatedDesigns().remove(mostOutdated);
-            scrapDesign(mostOutdated);
-        }
     }
     public ShipDesign startingPlayerScoutDesign() {
         ShipDesign design = newBlankDesign(ShipDesign.SMALL);
@@ -398,7 +398,7 @@ public class ShipDesignLab implements Base, Serializable {
 
         // remove from existing fleets
         int scrappedCount = galaxy().ships.scrapDesign(empire.id, designId);
-        log("Scrapping design: ", d.name(), " count:", str(scrappedCount));
+        log("Empire: "+empire.name()+"  Scrapping design: ", d.name(), "  id: "+d.id()+"  count:", str(scrappedCount));
 
         d.scrapped(true);
         d.active(false);
