@@ -110,13 +110,6 @@ public class ShipDesignLab implements Base, Serializable {
         }
         return i;
     }
-    public boolean canAddDesign() {
-        for (ShipDesign d : designs) {
-            if (!d.active())
-                return true;
-        }
-        return false;
-    }
     public boolean canScrapADesign() {
         int numActive = 0;
         for (ShipDesign d : designs) {
@@ -124,20 +117,6 @@ public class ShipDesignLab implements Base, Serializable {
                 numActive++;
         }
         return numActive > 1;
-    }
-    private void addDesign(ShipDesign des)  {
-        boolean added = false;
-        for (int i=0;i<designs.length;i++) {
-            if (!designs[i].active()) {
-                designs[i] = des;
-                des.active(true);
-                des.id(i);
-                des.seq(i);
-                return;
-            }
-        }
-        if (!added)
-            throw new RuntimeException("Invalid attempt to add design");
     }
     private void loadInitialDesigns() {
         for (int i=0;i<designs.length;i++) {
@@ -164,6 +143,10 @@ public class ShipDesignLab implements Base, Serializable {
         setColonyDesign(design, 4);
     }
     public void nextTurn() {
+        for (int i=0;i<designs.length;i++) {
+            if (designs[i].id() != i)
+                System.err.println("design slot "+i+" has id:"+designs[i].id());
+        }
         // update opp shield level (for fighter designs)
         bestEnemyShieldLevel = empire.bestEnemyShieldLevel();
         bestEnemyPlanetaryShieldLevel = empire.bestEnemyPlanetaryShieldLevel();
@@ -205,37 +188,52 @@ public class ShipDesignLab implements Base, Serializable {
     }
     public void setScoutDesign(ShipDesign d, int slot) {
         d.mission(ShipDesign.SCOUT);
-        addDesign(d);
+        designs[slot] = d;
+        d.active(true);
+        d.id(slot);
+        d.seq(slot); 
         empire().swapShipConstruction(scoutDesign(), d);
-        scoutDesignId = d.id();
+        scoutDesignId = slot;
         log("Empire: "+empire.name()+" creates scout design: "+d.name()+"  slot:"+slot);
     }
     public void setColonyDesign(ShipDesign d, int slot) {
         d.mission(ShipDesign.COLONY);
-        addDesign(d);
+        designs[slot] = d;
+        d.active(true);
+        d.id(slot);
+        d.seq(slot); 
         empire().swapShipConstruction(colonyDesign(), d);
-        colonyDesignId = d.id();
+        colonyDesignId = slot;
         log("Empire: "+empire.name()+" creates colony design: "+d.name()+"  slot:"+slot);
     }
     public void setFighterDesign(ShipDesign d, int slot) {
         d.mission(ShipDesign.FIGHTER);
-        addDesign(d);
+        designs[slot] = d;
+        d.active(true);
+        d.id(slot);
+        d.seq(slot); 
         empire().swapShipConstruction(fighterDesign(), d);
-        fighterDesignId = d.id();
+        fighterDesignId = slot;
         log("Empire: "+empire.name()+" creates fighter design: "+d.name()+"  slot:"+slot);
     }
     public void setBomberDesign(ShipDesign d, int slot) {
         d.mission(ShipDesign.BOMBER);
-        addDesign(d);
+        designs[slot] = d;
+        d.active(true);
+        d.id(slot);
+        d.seq(slot); 
         empire().swapShipConstruction(bomberDesign(), d);
-        bomberDesignId = d.id();
+        bomberDesignId = slot;
         log("Empire: "+empire.name()+" creates bomber design: "+d.name()+"  slot:"+slot);
     }
     public void setDestroyerDesign(ShipDesign d, int slot) {
         d.mission(ShipDesign.DESTROYER);
-        addDesign(d);
+        designs[slot] = d;
+        d.active(true);
+        d.id(slot);
+        d.seq(slot); 
         empire().swapShipConstruction(destroyerDesign(), d);
-        destroyerDesignId = d.id();
+        destroyerDesignId = slot;
         log("Empire: "+empire.name()+" creates destroyer design: "+d.name()+"  slot:"+slot);
     }
     public void scrapOutdatedDesign() {

@@ -360,21 +360,21 @@ public class CombatStackShip extends CombatStack {
             int count = num*shotsTaken*weaponCount[index];
             if (selectedWeapon.isMissileWeapon()) {
                 CombatStackMissile missile = new CombatStackMissile(this, (ShipWeaponMissileType) selectedWeapon, count);
-                log(fullName(), " launching ", missile.fullName(), " at ", targetStack.fullName());
+                //log(fullName(), " launching ", missile.fullName(), " at ", targetStack.fullName());
                 mgr.addStackToCombat(missile);
             }
             else {
-                log(fullName(), " firing ", str(count), " ", selectedWeapon.name(), " at ", targetStack.fullName());
+                //log(fullName(), " firing ", str(count), " ", selectedWeapon.name(), " at ", targetStack.fullName());
                 selectedWeapon.fireUpon(this, target, count);
             }
             if (selectedWeapon.isLimitedShotWeapon())
                 roundsRemaining[index] = max(0, roundsRemaining[index]-1);
             if (target == null) {
-                log("TARGET IS NULL AFTER BEING FIRED UPON!");
+                //log("TARGET IS NULL AFTER BEING FIRED UPON!");
                 return;
             }
             if (target.damageSustained > 0)
-                log("weapon damage: ", str(target.damageSustained));
+               ; //log("weapon damage: ", str(target.damageSustained));
         }
 
         if (shotsRemaining[index] == 0)
