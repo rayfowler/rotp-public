@@ -1009,6 +1009,77 @@ public class DesignUI extends BasePanel {
                 Image img = icon(key).getImage();
                 int w0 = img.getWidth(null);
                 int h0 = img.getHeight(null);
+                
+                // modnar: START test ship color hue shift
+                
+                BufferedImage rawImg = new BufferedImage(w0, h0, BufferedImage.TYPE_INT_ARGB);
+                BufferedImage HueImg = new BufferedImage(w0, h0, BufferedImage.TYPE_INT_ARGB);
+                rawImg.getGraphics().drawImage(img, 0, 0 , null);
+                
+                int[] rgb = rawImg.getRGB(0, 0, w0, h0, null, 0, w0); // get array of RGB pixels as integers
+                
+                // Insert Hue Shift UI Control HERE
+                // get amount to shift the hue by, between 0 and 1
+                // not hard limit since later the floor will get subtracted to get between 0 and 1
+                float hueShift = (float)(shipDesign().wpnCount(0)/360.0f);
+                
+                // loop through every single pixel
+                for (int i = 0; i < rgb.length; i++) {
+                    int A = (rgb[i] >> 24) & 0xff; // Alpha value of pixel
+                    int R = (rgb[i] >> 16) & 0xff;
+                    int G = (rgb[i] >> 8) & 0xff;
+                    int B = (rgb[i]) & 0xff;
+                    
+                    // change pixel color to HSV (hue, saturation, value)
+                    float HSV[]=new float[3];
+                    Color.RGBtoHSB(R, G, B, HSV);
+                    
+                    // messy if-statement checking for select pixel color values for select Race
+                    if (((player().race().id.equalsIgnoreCase("RACE_HUMAN"))&&(R >= G)&&(R > B)) // check for red pixel values && "RACE_HUMAN" DONE
+                        || ((player().race().id.equalsIgnoreCase("RACE_ALKARI"))&&(R >= G)&&(R > B)) // check for yellow pixel values && "RACE_ALKARI" DONE
+                        || ((player().race().id.equalsIgnoreCase("RACE_BULRATHI"))&&(G >= 4*R/5)&&(G > B)&&!(R > 180)) // check for green-ish pixel values && "RACE_BULRATHI" DONE-ish, not perfect
+                        || ((player().race().id.equalsIgnoreCase("RACE_MEKLAR"))&&(B >= G)&&(B > R)) // check for blue pixel values && "RACE_MEKLAR" DONE
+                        || (player().race().id.equalsIgnoreCase("RACE_KLACKON")) // "RACE_KLACKON", full image hue shift DONE
+                        || (player().race().id.equalsIgnoreCase("RACE_MRRSHAN")) // "RACE_MRRSHAN", full image hue shift DONE
+                        || (player().race().id.equalsIgnoreCase("RACE_SAKKRA")) // "RACE_SAKKRA", full image hue shift DONE
+                        || (player().race().id.equalsIgnoreCase("RACE_PSILON")) // "RACE_PSILON", below
+                        || (player().race().id.equalsIgnoreCase("RACE_DARLOK")) // "RACE_DARLOK", below
+                        || ((player().race().id.equalsIgnoreCase("RACE_SILICOID"))&&((HSV[0]>0.58f)&&(HSV[0]<0.70f))) // check by gray hues && "RACE_SILICOID", below
+                        ) { 
+                        
+                        // add some colors to gray-ish, dark pixels for Darlok and Silicoid
+                        if ((((player().race().id.equalsIgnoreCase("RACE_DARLOK")))&&(HSV[1]<0.5f)) // check by low saturation && "RACE_DARLOK" DONE
+                            || (player().race().id.equalsIgnoreCase("RACE_SILICOID")) // check "RACE_SILICOID" DONE-ish
+                            ) { 
+                            Color.RGBtoHSB(5*R/4, 2*G/3, 2*B/3, HSV); // create some color out of gray, then pass to HSV
+                        }
+                        
+                        // create new RGB color values after adding on hueShift
+                        // sum of hueShift+HSV[0] will get its floor subtracted to create number between 0 and 1
+                        // so no need to force it manually
+                        int newRGB = Color.getHSBColor(hueShift+HSV[0],HSV[1],HSV[2]).getRGB();
+                        
+                        // messy and complex color selection for Psilon due to different ship elements having similar colors
+                        if ((player().race().id.equalsIgnoreCase("RACE_PSILON"))&&!(((HSV[0]<0.06f)||(HSV[0]>0.94f))||((HSV[0]<0.1f)&&(R > 225))||((R >= G)&&(R+G > 430)&&(R+G > 3.5f*B)))) { // check for NOT red-ish and NOT bright yellow pixel values && RACE_PSILON DONE-ish (SLOW)
+                            newRGB = Color.getHSBColor(HSV[0],HSV[1],HSV[2]).getRGB(); // revert those RGB without adding in hueShift
+                        }
+                        
+                        R = (newRGB >> 16) & 0xff;
+                        G = (newRGB >> 8) & 0xff;
+                        B = (newRGB) & 0xff;
+                    }
+                    
+                    // re-combine new RGB color with original Alpha value, and replace pixel
+                    rgb[i] = (A << 24) | (R << 16) | (G << 8) | B;
+                }
+                
+                // set the array of RGB pixels as hue shifted BufferedImage
+                HueImg.setRGB(0, 0, w0, h0, rgb, 0, w0);
+                img = HueImg; // replace img
+                
+                // modnar: NOTE: one additional line (~15 lines below) in animate() to force ship image reload after color change
+                // modnar: END test ship color hue shift
+                
                 float scale = min((float)(shipW-s20)/w0, (float)(shipH-s20)/h0);
 
                 int w1 = (int)(scale*w0);
@@ -1022,6 +1093,7 @@ public class DesignUI extends BasePanel {
         }
         @Override
         public void animate() {
+            loadShipImages(); // modnar: force reload ship images for hue shift test
             repaintShip();
         }
         @Override
