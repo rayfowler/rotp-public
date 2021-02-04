@@ -34,7 +34,6 @@ import rotp.util.Base;
 public class AIGeneral implements Base, General {
     private final Empire empire;
     private float civProd = 0;
-    private float civTech = 0;
     private final HashMap<StarSystem, List<Ship>> targetedSystems;
     private final List<StarSystem> rushDefenseSystems;
     private final List<StarSystem> rushShipSystems;
