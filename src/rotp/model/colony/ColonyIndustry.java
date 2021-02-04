@@ -343,6 +343,6 @@ public class ColonyIndustry extends ColonySpendingCategory {
         // select random race from alienFactories and convert 1 factory
         int randomEmpId = p.randomAlienFactoryEmpire();
         p.addAlienFactories(randomEmpId, -1);
-        factories++;
+        newFactories++;
     }
 }
