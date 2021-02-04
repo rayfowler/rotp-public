@@ -40,6 +40,7 @@ public class Rotp {
     public static int IMG_W = 1229;
     public static int IMG_H = 768;
     public static String jarFileName = "Remnants.jar";
+    public static boolean countWords = false;
     private static String jarPath;
     private static JFrame frame;
     public static String releaseId = "Beta 2.12a";
