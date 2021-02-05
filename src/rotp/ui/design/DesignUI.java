@@ -785,6 +785,7 @@ public class DesignUI extends BasePanel {
             super.paintComponent(g);
             g.setFont(narrowFont(32));
 
+            int w = getWidth();
             int boxH = getHeight()-s10;
             int boxW = boxH*6/5;
             drawShip(g);
@@ -805,8 +806,10 @@ public class DesignUI extends BasePanel {
                 }
             }
             else {
+                String name = des.name();
                 g.setFont(narrowFont(18));
-                drawShadowedString(g, des.name(), 3, leftM, s20, SystemPanel.textShadowC, SystemPanel.whiteText);
+                scaledFont(g, name, w-leftM-s10, 18, 14);
+                drawShadowedString(g, name, 3, leftM, s20, SystemPanel.textShadowC, SystemPanel.whiteText);
                 g.setFont(narrowFont(14));
                 g.setColor(SystemPanel.blackText);
                 String desc = text("SHIP_DESIGN_SLOT_DESC");

@@ -1213,6 +1213,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             g.setColor(sliderBoxBlue);
             g.setFont(narrowFont(18));
             String name = c.shipyard().design().name();
+            scaledFont(g, name, barW-s5, 18, 14);
             int sw = g.getFontMetrics().stringWidth(name);
             int x0 = barX+((barW-sw)/2);
             g.drawString(name, x0, barY+s16);
@@ -1397,7 +1398,8 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                     decrementBuildLimit();
                 return;
             }
-            if (shipDesignBox.contains(x,y)) {
+            if (shipDesignBox.contains(x,y) 
+            || shipNameBox.contains(x,y)) {
                 if (e.getWheelRotation() < 0)
                     nextShipDesign(false);
                 else

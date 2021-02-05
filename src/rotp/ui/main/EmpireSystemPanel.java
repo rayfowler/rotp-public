@@ -724,7 +724,8 @@ public class EmpireSystemPanel extends SystemPanel {
                     decrementBuildLimit();
                 return;
             }
-            if (shipDesignBox.contains(x,y)) {
+            if (shipDesignBox.contains(x,y) 
+            || shipNameBox.contains(x,y)) {
                 if (e.getWheelRotation() < 0)
                     nextShipDesign();
                 else
