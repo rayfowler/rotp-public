@@ -603,6 +603,9 @@ public class DiplomaticEmbassy implements Base, Serializable {
             incidents.put(k,inc);
         recalculateRelationsLevel();
     }
+    public DiplomaticIncident getIncidentWithKey(String key) {
+        return incidents.get(key);
+    }
     private void recalculateRelationsLevel() {
         float rel = owner().baseRelations(empire());
         rel += treatyRelationsAdj();

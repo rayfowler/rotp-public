@@ -57,6 +57,8 @@ public interface Scientist {
     
     float warTradeValue(Tech t);
     float researchValue(Tech t);
+    float warTradeBCValue(Tech t);
+    float researchBCValue(Tech t);
     float researchPriority(Tech t);
     float baseValue(TechArmor t);
     float baseValue(TechAtmosphereEnrichment t);

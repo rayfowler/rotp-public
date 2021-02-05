@@ -228,7 +228,9 @@ INC_TECH_EXCHANGE_DESC            | The [my_empire] taught the secrets of [techG
 INC_FINANCIAL_AID_TITLE           | Financial Aid
 INC_FINANCIAL_AID_DESC            | The [your_empire] has freely given [amt] BC to the [my_empire].
 INC_TECHNOLOGY_AID_TITLE          | Technological Aid
-INC_TECHNOLOGY_AID_DESC           | The [your_empire] has freely shared the secrets of [tech] to the [my_empire].
+INC_TECHNOLOGY_AID_DESC           | The [your_empire] has freely shared the secrets of [tech] with the [my_empire].
+INC_TECHNOLOGY_AID_DESC_MULT      | The [your_empire] has freely shared with the [my_empire] the secrets of the following technologies: [techs]
+INC_TECHNOLOGY_TECH_LIST_COMMA    | , 
 INC_ENEMY_AID_TITLE               | Aid to Enemy 
 INC_ENEMY_AID_MONEY_DESC          | The [your_empire] has given [amt] BC in aid to the [enemy_empire], an enemy of the [my_empire].
 INC_ENEMY_AID_TECH_DESC           | The [your_empire] has given the secrets of [tech] to the [enemy_empire], an enemy of the [my_empire].

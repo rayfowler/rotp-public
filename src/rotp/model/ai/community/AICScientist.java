@@ -312,10 +312,27 @@ public class AICScientist implements Base, Scientist {
         return researchValueBonus(t) + t.baseValue(empire);
     }
     @Override
+    public float researchBCValue(Tech t) {
+        if (t.isObsolete(empire))
+            return 0;
+
+        if (empire.generalAI().inWarMode())
+            return warTradeBCValue(t);
+
+        if (empire.fleetCommanderAI().inExpansionMode())
+            return t.expansionModeFactor() * t.researchCost();
+
+        return t.researchCost();
+    }
+    @Override
     public float warTradeValue(Tech t) {
         if (t.isObsolete(empire))
             return 0;
         return t.warModeFactor() * (researchValueBonus(t) + t.baseValue(empire));
+    }
+    @Override
+    public float warTradeBCValue(Tech t) {
+        return t.warModeFactor() * t.researchCost(); 
     }
     private float researchValueBonus(Tech t) {
         TechCategory cat = empire.tech().category(t.cat.index());

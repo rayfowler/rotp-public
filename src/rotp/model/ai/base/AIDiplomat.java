@@ -103,7 +103,9 @@ public class AIDiplomat implements Base, Diplomat {
     public List<Tech> offerableTechnologies(Empire e) {
         List<String> allMyTechIds = empire.tech().allKnownTechs();
         List<String> hisTechIds = e.tech().allKnownTechs();
+        List<String> hisTradedTechIds = e.tech().tradedTechs();
         allMyTechIds.removeAll(hisTechIds);
+        allMyTechIds.removeAll(hisTradedTechIds);
          
         List<Tech> allTechs = new ArrayList<>();
         for (String id: allMyTechIds)

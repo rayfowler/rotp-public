@@ -15,6 +15,7 @@
  */
 package rotp.model.incidents;
 
+import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.Empire;
 import rotp.model.tech.Tech;
 
@@ -31,8 +32,18 @@ public class EnemyAidIncident extends DiplomaticIncident {
         if (emp == donor)
             return null;
 
+        DiplomaticEmbassy emb = emp.viewForEmpire(donor).embassy();
+        
         EnemyAidIncident inc = new EnemyAidIncident(emp, enemy, donor, amt);
-        emp.viewForEmpire(donor).embassy().addIncident(inc);
+        // if we already have an enemy aid incident with this key, then add it to
+        // the existing one. Note: severity is eventually capped with no more ROE
+        DiplomaticIncident prev = emb.getIncidentWithKey(inc.key());
+        if (prev != null) {
+            EnemyAidIncident prevF = (EnemyAidIncident) prev;
+            prevF.setAmount(emp, prevF.amount+inc.amount);
+        }
+        else
+            emb.addIncident(inc);
         return inc;
     }
     public static EnemyAidIncident create(Empire emp, Empire enemy, Empire donor, String tId) {
@@ -49,13 +60,16 @@ public class EnemyAidIncident extends DiplomaticIncident {
         empMe = emp.id;
         empYou = donor.id;
         empEnemy = enemy.id;
+        setAmount(emp, amt);
+        techId = null;
+        dateOccurred = galaxy().currentYear();
+        duration = 5;
+    }
+    private void setAmount(Empire emp, int amt) {
         float pct = (float) amt / emp.totalPlanetaryProduction();
         float sev = min(10,10*pct);
         severity = -sev;
         amount = amt;
-        techId = null;
-        dateOccurred = galaxy().currentYear();
-        duration = 5;
     }
     private EnemyAidIncident(Empire emp, Empire enemy, Empire donor, String tId) {
         log("creating enemy aid incident: "+enemy.raceName()+"  tech:"+tech(tId).name());
@@ -65,9 +79,9 @@ public class EnemyAidIncident extends DiplomaticIncident {
         techId = tId;
         amount = 0;
         Tech tech = tech(tId);
-        float rpValue = enemy.ai().scientist().warTradeValue(tech);
+        float rpValue = enemy.ai().scientist().warTradeBCValue(tech);
         float pct = rpValue / enemy.totalPlanetaryProduction();
-        float sev = min(25,100*pct);
+        float sev = min(15,100*pct);
         severity = -sev;
         dateOccurred = galaxy().currentYear();
         duration = 5;
@@ -77,7 +91,7 @@ public class EnemyAidIncident extends DiplomaticIncident {
     @Override
     public String description()  { return techId == null ? decode(text("INC_ENEMY_AID_MONEY_DESC")) :  decode(text("INC_ENEMY_AID_TECH_DESC")); }
     @Override
-    public String key()          { return techId == null ? "Enemy Aid: "+str(amount) : "Enemy Aid: "+techId; }
+    public String key()          { return techId == null ? "Enemy Aid" : "Enemy Aid: "+techId; }
     @Override
     public String decode(String s) {
         String s1 = super.decode(s);

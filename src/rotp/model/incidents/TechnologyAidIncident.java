@@ -15,6 +15,9 @@
  */
 package rotp.model.incidents;
 
+import java.util.ArrayList;
+import java.util.List;
+import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.Empire;
 import rotp.model.tech.Tech;
 
@@ -23,9 +26,21 @@ public class TechnologyAidIncident extends DiplomaticIncident {
     final int empMe;
     final int empYou;
     private final String techId;
+    private List<String> techIds = new ArrayList<>();
     public static TechnologyAidIncident create(Empire emp, Empire donor, String techId) {
+        DiplomaticEmbassy emb = emp.viewForEmpire(donor).embassy();
         TechnologyAidIncident inc = new TechnologyAidIncident(emp, donor, techId);
-        emp.viewForEmpire(donor).embassy().addIncident(inc);
+        
+        // if we already have a financial incident with this key, then add it to
+        // the existing one. Note: severity is eventually capped with no more ROE
+        DiplomaticIncident prev = emb.getIncidentWithKey(inc.key());
+        if (prev != null) {
+            TechnologyAidIncident prevF = (TechnologyAidIncident) prev;
+            prevF.addTech(emp, techId);
+        }
+        else
+            emb.addIncident(inc);
+        
         for (Empire enemy: emp.enemies()) 
             EnemyAidIncident.create(enemy, emp, donor, techId);
 
@@ -35,25 +50,61 @@ public class TechnologyAidIncident extends DiplomaticIncident {
         empYou = donor.id;
         empMe = emp.id;
         techId = tId;
-        Tech tech = tech(tId);
-        float rpValue = emp.ai().scientist().researchValue(tech);
-        float pct = rpValue / emp.totalPlanetaryProduction();
-        severity = min(25,100*pct);
+        addTech(emp, tId);
         dateOccurred = galaxy().currentYear();
-        duration = 10;
+        duration = 5;
+    }
+    private List<String> techIds() {
+        if (techIds == null)
+            techIds = new ArrayList<>();
+        return techIds;
+    }
+    private void addTech(Empire emp, String tId) {
+        // handle legacy instances
+        if (techIds().isEmpty() && (techId != null))
+            techIds.add(techId);
+
+        if (!techIds.contains(tId))
+            techIds.add(tId);
+        
+        int rpValue = 0;
+        for (String id: techIds) {
+            Tech tech = tech(id);
+            rpValue += emp.ai().scientist().researchBCValue(tech);
+        }
+        float pct = rpValue / emp.totalPlanetaryProduction();
+        severity = min(25,100*pct); 
     }
     @Override
     public String title()        { return text("INC_TECHNOLOGY_AID_TITLE"); }
     @Override
-    public String description()  { return decode(text("INC_TECHNOLOGY_AID_DESC")); }
+    public String description()  { 
+        if (techIds().size() < 2)
+            return decode(text("INC_TECHNOLOGY_AID_DESC")); 
+        else
+            return decode(text("INC_TECHNOLOGY_AID_DESC_MULT")); 
+    }
     @Override
-    public String key()          { return "Technology Aid: "+techId; }
+    public String key()          { return "Technology Aid"; }
     @Override
     public String decode(String s) {
         String s1 = super.decode(s);
         s1 = galaxy().empire(empMe).replaceTokens(s1, "my");
         s1 = galaxy().empire(empYou).replaceTokens(s1, "your");
-        s1 = s1.replace("[tech]", tech(techId).name());
+        if ((techIds().size() < 2) && (techId != null))
+            s1 = s1.replace("[tech]", tech(techId).name());
+        else {
+            String comma = text("INC_TECHNOLOGY_TECH_LIST_COMMA")+ " ";
+            String list = "";
+            for (int i=0;i<techIds.size();i++) {
+                String id = techIds.get(i);
+                if (i > 0)
+                    list = list + comma;
+                list = list+tech(id).name();
+            }
+            s1 = s1.replace("[techs]", list);
+        }
+            
         return s1;
     }
 }

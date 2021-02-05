@@ -15,16 +15,28 @@
  */
 package rotp.model.incidents;
 
+import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.Empire;
 
 public class FinancialAidIncident extends DiplomaticIncident {
     private static final long serialVersionUID = 1L;
     final int empMe;
     final int empYou;
-    private final int amount;
+    private int amount;
     public static FinancialAidIncident create(Empire emp, Empire donor, int amt) {
+        DiplomaticEmbassy emb = emp.viewForEmpire(donor).embassy();
         FinancialAidIncident inc = new FinancialAidIncident(emp, donor, amt);
-        emp.viewForEmpire(donor).embassy().addIncident(inc);
+        
+        // if we already have a financial incident with this key, then add it to
+        // the existing one. Note: severity is eventually capped with no more ROE
+        DiplomaticIncident prev = emb.getIncidentWithKey(inc.key());
+        if (prev != null) {
+            FinancialAidIncident prevF = (FinancialAidIncident) prev;
+            prevF.setAmount(emp, prevF.amount+inc.amount);
+        }
+        else
+            emb.addIncident(inc);
+        
         for (Empire enemy: emp.enemies()) 
             EnemyAidIncident.create(enemy, emp, donor, amt);
 
@@ -33,18 +45,21 @@ public class FinancialAidIncident extends DiplomaticIncident {
     private FinancialAidIncident(Empire emp, Empire donor, int amt) {
         empYou = donor.id;
         empMe = emp.id;
+        setAmount(emp, amt);
+        dateOccurred = galaxy().currentYear();
+        duration = 3;
+    }
+    private void setAmount(Empire emp, int amt) {
         float pct = (float) amt / emp.totalPlanetaryProduction();
         severity = min(15,20*pct);
         amount = amt;
-        dateOccurred = galaxy().currentYear();
-        duration = 3;
     }
     @Override
     public String title()        { return text("INC_FINANCIAL_AID_TITLE"); }
     @Override
     public String description()  { return decode(text("INC_FINANCIAL_AID_DESC")); }
     @Override
-    public String key()          { return "Financial Aid"; }
+    public String key()          { return "Financial Aid:"+dateOccurred; }
     @Override
     public String decode(String s) {
         String s1 = super.decode(s);
