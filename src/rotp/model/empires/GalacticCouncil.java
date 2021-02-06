@@ -53,7 +53,7 @@ public class GalacticCouncil implements Base, Serializable {
     private final List<Empire> allies = new ArrayList<>();
 
     //convention variables - reset when convention starts
-    private transient List<Empire> empires;
+    private transient List<Empire> voters, empires;
     private transient int voteIndex = 0;
     private transient int[] votes;
     private transient int totalVotes, votes1, votes2, lastVotes;
@@ -67,6 +67,11 @@ public class GalacticCouncil implements Base, Serializable {
     public void addRebel(Empire e)     { rebels.add(e); }
     public boolean isAllied(Empire e)  { return allies.contains(e); }
 
+    public List<Empire> voters() {
+        if (voters == null) 
+            voters = new ArrayList<>(empires());
+        return voters;
+    }
     public List<Empire> empires() {
         if (empires == null) 
             initEmpires();
@@ -130,10 +135,10 @@ public class GalacticCouncil implements Base, Serializable {
         openConvention();
         CouncilVoteNotification.create();
     }
-    public boolean votingInProgress()  { return voteIndex < empires.size(); }
-    public boolean hasVoted(Empire e)  { return empires.indexOf(e) < voteIndex; }
-    public int votes(Empire e)         { return votes[empires.indexOf(e)]; }
-    public Empire nextVoter()  { return empires.get(voteIndex); }
+    public boolean votingInProgress()  { return voteIndex < voters().size(); }
+    public boolean hasVoted(Empire e)  { return voters().indexOf(e) < voteIndex; }
+    public int votes(Empire e)         { return votes[voters().indexOf(e)]; }
+    public Empire nextVoter()  { return voters().get(voteIndex); }
     public Empire candidate1() { return candidate1; }
     public Empire candidate2() { return candidate2; }
     public Empire lastVoter()  { return lastVoter; }
@@ -153,6 +158,10 @@ public class GalacticCouncil implements Base, Serializable {
     public void castPlayerVote(Empire chosen) {
         if (nextVoter().isPlayer())
             castNextVote(chosen);
+    }
+    public void continueNonPlayerVoting() {
+        while (votingInProgress() && !nextVoter().isPlayer())
+            castNextVote();
     }
     public boolean nextVoteWouldElect(Empire emp) {
         if ((emp != candidate1())

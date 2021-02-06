@@ -1714,7 +1714,11 @@ COUNCIL_ADJOURN_TITLE             | The High Council Adjourns
 COUNCIL_ADJOURN                   | Voting has concluded and neither candidate has collected two-thirds of votes. No ruler has been named. The High Council will reconvene for another vote in 25 years.
 COUNCIL_SUMMARY_TITLE             | Voter Summary
 COUNCIL_SUMMARY                   | Votes are cast in order of population. %1 votes are required to win election.
-COUNCIL_BEGIN_VOTING              | Continue to Voting
+COUNCIL_BEGIN_VOTING              | Begin Voting
+COUNCIL_SHOW_VOTING               | Continue Voting
+COUNCIL_SKIP_TO_PLAYER            | Skip to %1 Vote
+COUNCIL_COMPLETE_VOTING           | Complete All Voting
+COUNCIL_SHOW_RESULTS              | Show Results
 COUNCIL_VIEW_SUMMARY              | View Voter Summary
 COUNCIL_VOTES_REQUIRED            | %1 votes required to win election.
 COUNCIL_CAST_PROMPT               | We must cast our %1 votes.
