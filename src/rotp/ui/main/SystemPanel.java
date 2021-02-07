@@ -175,6 +175,7 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
         add(detailPane, BorderLayout.CENTER);
         if (bottomPane != null) 
             add(bottomPane, BorderLayout.SOUTH); 
+        setPreferredSize(new Dimension(getWidth(), scaled(300)));
     }
     protected abstract BasePanel topPane();
     protected abstract BasePanel detailPane();

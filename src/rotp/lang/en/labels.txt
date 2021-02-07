@@ -831,6 +831,7 @@ FLEETS_FLEETS_SELECTED            | %1  Fleets Selected
 FLEETS_MULTIPLE_DESIGNS           | Multiple
 FLEETS_RELOCATE_LABEL             | Set Rally Points
 FLEETS_TRANSPORTS_LABEL           | Send Transports
+FLEETS_SPENDING_LABEL             | Adjust Ship Spending
 FLEETS_HAS_ORDERS                 | Fleet is in transit
 FLEETS_HAS_NO_ORDERS              | Fleet is in orbit
 FLEETS_IS_RALLYING                | Fleet is rallying
@@ -843,6 +844,16 @@ FLEETS_SETTING_RALLY_POINTS       | Starting Rally Points
 FLEETS_START_RALLIES_DESC         | Select a system you control to send newly built ships from all selected systems.
 FLEETS_START_RALLIES              | Start Rallies
 FLEETS_SEND_TRANSPORTS            | Send Transports
+FLEETS_ADJUST_SPENDING_SELECT     | Select systems to set Ship spending 
+FLEETS_ADJUST_SPENDING_DESC       | Select the desired Ship spending levels for the %1 selected systems
+FLEETS_ADJUST_SPENDING_DESC2      | Other spending categories will be automatically adjusted.  Ecology will retain minimum spending required to clean pollution.
+FLEETS_ADJUST_SPENDING            | Adjust Ship Spending
+FLEETS_SPENDING_0                 | No Ship Spending
+FLEETS_SPENDING_25                | 25% Ship Spending
+FLEETS_SPENDING_50                | 50% Ship Spending
+FLEETS_SPENDING_75                | 75% Ship Spending
+FLEETS_SPENDING_MAX               | Maximum Ship Spending
+FLEETS_SPENDING_CANCEL            | Cancel
 FLEETS_CANCEL_TRANSPORTS_DESC     | %1 selected systems have already scheduled transports
 FLEETS_CANCEL_TRANSPORTS          | Cancel Transports
 FLEETS_DEPLOYING_TRANSPORTS_DESC  | Select a system within range to send colony transports or military troops to.

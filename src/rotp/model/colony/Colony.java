@@ -816,6 +816,11 @@ public final class Colony implements Base, IMappedObject, Serializable {
     public float minimumCleanupCost() {
         return min(wasteCleanupCost(), totalIncome());
     }
+    public void ensureMinimumCleanup() {
+        float pct = wasteCleanupCost()/totalIncome();
+        if (ecology().pct() < pct)
+            forcePct(ECOLOGY, pct);
+    }
     public float maxSize() {
         float terraformAdj = tech().terraformAdj();
         if (planet.isEnvironmentHostile())

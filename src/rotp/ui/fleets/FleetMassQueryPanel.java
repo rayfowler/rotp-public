@@ -47,6 +47,7 @@ public class FleetMassQueryPanel extends BasePanel {
         setLayout(new BorderLayout());
         add(fleetQueryPane, BorderLayout.CENTER);
         add(fleetActionPane, BorderLayout.SOUTH);
+        setPreferredSize(new Dimension(getWidth(), scaled(300)));
     }
     class FleetQuery extends BasePanel implements MouseMotionListener, MouseListener {
         private static final long serialVersionUID = 1L;
@@ -150,13 +151,13 @@ public class FleetMassQueryPanel extends BasePanel {
             }
 
             // design filters
-            y0 += s30;
+            y0 += s25;
             g.setFont(narrowFont(17));
             g.setColor(SystemPanel.blackText);
             g.drawString(cons, x0+s5, y0);
             g.setColor(Color.darkGray);
             g.setFont(narrowFont(14));
-            y0 += s2;
+            y0 += s4;
             int half = topParent.fleetDesignFilters.length / 2;
             for (int i=0;i<half;i++) {
                 y0 += s15;
@@ -246,7 +247,7 @@ public class FleetMassQueryPanel extends BasePanel {
             init();
         }
         private void init() {
-            setPreferredSize(new Dimension(getWidth(), scaled(120)));
+            setPreferredSize(new Dimension(getWidth(), scaled(110)));
             addMouseMotionListener(this);
             addMouseListener(this);
         }
@@ -264,7 +265,7 @@ public class FleetMassQueryPanel extends BasePanel {
             String ships = text("FLEETS_SELECTED_SHIPS");
             g.setFont(narrowFont(18));
             drawShadowedString(g0, ships, 3, s10, s25, SystemPanel.textShadowC, SystemPanel.whiteText);
-            drawFleetsToDeploy(g, 0, h-s95, w);
+            drawFleetsToDeploy(g, 0, h-s88, w);
             if (topParent.showingQueryPanel())
                 drawDeployFleetsButton(g,0,h-s35,w,s35);
             else {

@@ -34,7 +34,6 @@ import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
-import java.util.ArrayList;
 import java.util.List;
 import rotp.model.empires.Empire;
 import rotp.model.empires.GalacticCouncil;

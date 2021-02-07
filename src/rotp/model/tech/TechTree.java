@@ -21,7 +21,6 @@ import java.util.List;
 import rotp.model.colony.MissileBase;
 import rotp.model.empires.Empire;
 import rotp.model.game.GameSession;
-import rotp.model.planet.Planet;
 import rotp.model.planet.PlanetType;
 import rotp.ui.notifications.TradeTechNotification;
 import rotp.util.Base;
