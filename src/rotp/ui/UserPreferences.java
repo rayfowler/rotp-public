@@ -50,6 +50,7 @@ public class UserPreferences {
     private static final String AUTOBOMBARD_INVADE = "GAME_SETTINGS_AUTOBOMBARD_INVADE";
     
     private static final String PREFERENCES_FILE = "Remnants.cfg";
+    private static final int MAX_BACKUP_TURNS = 10;
     private static final String keyFormat = "%-20s: ";
     private static boolean showMemory = false;
     private static boolean playMusic = true;
@@ -63,6 +64,7 @@ public class UserPreferences {
     private static float uiTexturePct = 0.20f;
     private static int screenSizePct = 93;
     private static final HashMap<String, String> raceNames = new HashMap<>();
+    private static int backupTurns = 0;
 
     public static boolean showMemory()      { return showMemory; }
     public static void toggleMemory()       { showMemory = !showMemory; save(); }
@@ -123,6 +125,20 @@ public class UserPreferences {
     public static void toggleMusic()        { playMusic = !playMusic; save();  }
     public static int screenSizePct()       { return screenSizePct; }
     public static void screenSizePct(int i) { setScreenSizePct(i); }
+    public static int backupTurns()         { return backupTurns; }
+    public static boolean backupTurns(int i)   { 
+        int prev = backupTurns;
+        backupTurns = Math.min(Math.max(0,i),MAX_BACKUP_TURNS); 
+        save();
+        return prev != backupTurns;
+    }
+    public static void toggleBackupTurns() {
+        if (backupTurns >= MAX_BACKUP_TURNS)
+            backupTurns = 0;
+        else
+            backupTurns++;
+        save();
+    }
 
     public static void toggleYearDisplay()    { displayYear = !displayYear; save(); }
     public static boolean displayYear()       { return displayYear; }
@@ -165,6 +181,7 @@ public class UserPreferences {
             out.println(keyFormat("SOUNDS")+ yesOrNo(playSounds));
             out.println(keyFormat("MUSIC_VOLUME")+ SoundManager.musicLevel());
             out.println(keyFormat("SOUND_VOLUME")+ SoundManager.soundLevel());
+            out.println(keyFormat("BACKUP_TURNS")+ backupTurns);
             out.println(keyFormat("AUTOCOLONIZE")+ yesOrNo(autoColonize));
             out.println(keyFormat("AUTOBOMBARD")+autoBombardToSettingName(autoBombardMode));
             out.println(keyFormat("SHOW_MEMORY")+ yesOrNo(showMemory));
@@ -204,6 +221,7 @@ public class UserPreferences {
             case "SOUNDS":       playSounds = yesOrNo(val); return;
             case "MUSIC_VOLUME": SoundManager.musicLevel(Integer.valueOf(val)); return;
             case "SOUND_VOLUME": SoundManager.soundLevel(Integer.valueOf(val)); return;
+            case "BACKUP_TURNS": backupTurns  = Integer.valueOf(val); return;
             case "AUTOCOLONIZE": autoColonize = yesOrNo(val); return;
             case "AUTOBOMBARD":  autoBombardMode = autoBombardFromSettingName(val); return;
             case "SHOW_MEMORY":  showMemory = yesOrNo(val); return;

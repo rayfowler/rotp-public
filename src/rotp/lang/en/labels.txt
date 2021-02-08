@@ -338,6 +338,10 @@ GAME_SETTINGS_AUTOBOMBARD_YES     | Always
 GAME_SETTINGS_AUTOBOMBARD_WAR     | Only War
 GAME_SETTINGS_AUTOBOMBARD_INVADE  | Only War and not Invading
 GAME_SETTINGS_AUTOBOMBARD_DESC    | Toggle to always prompt to bombard, never bombard, always bombard, only auto-bombard when at war, or only auto-bombard when at war with no invasion forces en route. 
+GAME_SETTINGS_BACKUP_OFF          | Off
+GAME_SETTINGS_BACKUP_ON           | Every %1 turns
+GAME_SETTINGS_BACKUP              | Backup: %1
+GAME_SETTINGS_BACKUP_DESC         | Enable to have your current game periodically saved in the backups folder with a unique name, allowing you to reload from previous turns.
 
 // Load Game UI
 LOAD_GAME_TITLE                   | Load Game
@@ -1155,7 +1159,7 @@ SETUP_VOID_4                      | Void 4
 
 
 // Advanced Settings
-SETTINGS_TITLE                    | Advanced Settings
+SETTINGS_TITLE                    | Advanced Game Options
 SETTINGS_DESCRIPTION              | Click to toggle each game setting.
 SETTINGS_ACCEPT                   | Accept
 SETTINGS_STAR_DENSITY             | Star Density: %1
