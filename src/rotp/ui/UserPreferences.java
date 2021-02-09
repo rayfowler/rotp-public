@@ -139,7 +139,6 @@ public class UserPreferences {
             backupTurns++;
         save();
     }
-
     public static void toggleYearDisplay()    { displayYear = !displayYear; save(); }
     public static boolean displayYear()       { return displayYear; }
     public static void uiTexturePct(int i)    { uiTexturePct = i / 100.0f; }

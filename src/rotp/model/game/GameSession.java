@@ -68,6 +68,7 @@ public final class GameSession implements Base, Serializable {
     private static final long serialVersionUID = 1L;
     public static final int CURRENT_SAVE_VERSION = 1;
     public static final String SAVEFILE_DIRECTORY = ".";
+    public static final String BACKUP_DIRECTORY = "backup";
     public static final String SAVEFILE_EXTENSION = ".rotp";
     public static final String RECENT_SAVEFILE = "recent.rotp";
     public static final SimpleDateFormat dateFmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -236,6 +237,7 @@ public final class GameSession implements Base, Serializable {
             shipsConstructed().clear();
             galaxy().startGame();
             saveRecentSession(false);
+            saveBackupSession(1);
             clearNewGameOptions();
         }
     }
@@ -708,11 +710,14 @@ public final class GameSession implements Base, Serializable {
         else
             return text("MAIN_ADVANCING_TURN", galaxy().currentTurn()+1);
     }
-    public void saveSession(String filename) throws Exception {
-        log("Saving game as file: ", filename);
+    public void saveSession(String filename, String dir) throws Exception {
+        log("Saving game as file: ", dir+"/"+filename);
         GameSession currSession = GameSession.instance();        
         log("Session started");
-        File saveFile = saveFileNamed(filename);
+        File theDir = new File(concat(Rotp.jarPath(),"/",dir));
+        if (!theDir.exists())
+            theDir.mkdirs();
+        File saveFile = saveFileNamed(dir+"/"+filename);
         OutputStream fileOut = new FileOutputStream(saveFile);
         OutputStream buffer = new BufferedOutputStream(fileOut);
         ObjectOutput output = new ObjectOutputStream(buffer);
@@ -738,15 +743,47 @@ public final class GameSession implements Base, Serializable {
     public File recentSaveFile() {
         return new File(Rotp.jarPath(), GameSession.RECENT_SAVEFILE);
     }
-    public void saveRecentSession(boolean showWarning) {
+    private String backupFileName(int num) {
+        Empire pl = player();
+        String leader = pl.leader().name().replaceAll("\\s", "");
+        String race = pl.raceName();
+        String gShape = text(options().selectedGalaxyShape()).replaceAll("\\s", "");
+        String gSize = text(options().selectedGalaxySize());
+        String diff = text(options().selectedGameDifficulty());
+        String turn = "T"+pad4.format(num);
+        String opp = "vs"+options().selectedNumberOpponents();
+        String dash = "-";               
+        return concat(leader,dash,race,dash,gShape,dash,gSize,dash,diff,dash,opp,dash,turn,".rotp");
+    }
+    public void saveRecentSession(boolean endOfTurn) {
+        String filename = RECENT_SAVEFILE;
         try {
-            saveSession(RECENT_SAVEFILE);
+            saveSession(filename, SAVEFILE_DIRECTORY);
+            if (endOfTurn)
+               saveBackupSession(galaxy().currentTurn());
         }
         catch(Exception e) {
-            err("Error saving: ", RECENT_SAVEFILE, " - ", e.getMessage());
-            if (showWarning)
+            err("Error saving: ", filename, " - ", e.getMessage());
+            if (endOfTurn)
                 RotPUI.instance().mainUI().showAutosaveFailedPrompt(e.getMessage());
         }
+    }
+    public void saveBackupSession(int turn) {
+        String filename = "nofile";
+        try {
+            int backupTurns = UserPreferences.backupTurns();
+            if (backupTurns > 0) {
+                if ((turn == 1) || (turn % backupTurns == 0)) {
+                    filename = backupFileName(turn);
+                    saveSession(filename, SAVEFILE_DIRECTORY+"/"+BACKUP_DIRECTORY);
+                }
+            }
+        }
+        catch(Exception e) {
+            err("Error saving: ", filename, " - ", e.getMessage());
+            RotPUI.instance().mainUI().showAutosaveFailedPrompt(e.getMessage());
+        }
+        
     }
     public boolean hasRecentSession() {
         try {

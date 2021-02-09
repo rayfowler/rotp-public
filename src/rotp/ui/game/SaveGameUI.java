@@ -294,7 +294,7 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
         buttonClick();
         final Runnable save = () -> {
             try {
-                GameSession.instance().saveSession(s);
+                GameSession.instance().saveSession(s, GameSession.SAVEFILE_DIRECTORY);
                 RotPUI.instance().selectGamePanel();
             }
             catch(Exception e) {
