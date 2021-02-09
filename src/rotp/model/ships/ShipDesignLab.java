@@ -138,19 +138,19 @@ public class ShipDesignLab implements Base, Serializable {
         
         ShipDesign design;
 
-        design = empire.isPlayer() ? startingPlayerScoutDesign() : empire.shipDesignerAI().newScoutDesign();
+        design = startingScoutDesign();
         setScoutDesign(design, 0);
 
-        design = empire.isPlayer() ? startingPlayerFighterDesign() : empire.shipDesignerAI().newFighterDesign(ShipDesign.SMALL);
+        design = startingFighterDesign();
         setFighterDesign(design, 1);
 
-        design = empire.isPlayer() ? startingPlayerBomberDesign() : empire.shipDesignerAI().newBomberDesign(ShipDesign.MEDIUM);
+        design = startingBomberDesign();
         setBomberDesign(design, 2);
 
-        design = empire.isPlayer() ? startingPlayerDestroyerDesign() : empire.shipDesignerAI().newDestroyerDesign(ShipDesign.MEDIUM);
+        design = startingDestroyerDesign();
         setDestroyerDesign(design, 3);
 
-        design = startingPlayerColonyDesign();
+        design = startingColonyDesign();
         setColonyDesign(design, 4);
     }
     public void nextTurn() {
@@ -247,46 +247,61 @@ public class ShipDesignLab implements Base, Serializable {
         destroyerDesignId = slot;
         log("Empire: "+empire.name()+" creates destroyer design: "+d.name()+"  slot:"+slot);
     }
-    public ShipDesign startingPlayerScoutDesign() {
+    public ShipDesign startingScoutDesign() {
         ShipDesign design = newBlankDesign(ShipDesign.SMALL);
         design.special(0, specialReserveFuel());
         design.mission(ShipDesign.SCOUT);
-        design.name(text("SHIP_DESIGN_1ST_SCOUT_NAME"));
+        if (empire.isAI())
+            nameDesign(design);
+        else
+            design.name(text("SHIP_DESIGN_1ST_SCOUT_NAME"));
         iconifyDesign(design);
         return design;
     }
-    public ShipDesign startingPlayerFighterDesign() {
+    public ShipDesign startingFighterDesign() {
         ShipDesign design = newBlankDesign(ShipDesign.SMALL);
         design.engine(engines().get(0));
         design.addWeapon(beamWeapon(0, false), 1);
         design.mission(ShipDesign.FIGHTER);
-        design.name(text("SHIP_DESIGN_1ST_FIGHTER_NAME"));
+        if (empire.isAI())
+            nameDesign(design);
+        else
+            design.name(text("SHIP_DESIGN_1ST_FIGHTER_NAME"));
         iconifyDesign(design);
         return design;
     }
-    public ShipDesign startingPlayerBomberDesign() {
+    public ShipDesign startingBomberDesign() {
         ShipDesign design = newBlankDesign(ShipDesign.MEDIUM);
         design.addWeapon(bombWeapon(0), 2);
         design.addWeapon(beamWeapon(0, false), 2);
         design.mission(ShipDesign.BOMBER);
-        design.name(text("SHIP_DESIGN_1ST_BOMBER_NAME"));
+        if (empire.isAI())
+            nameDesign(design);
+        else
+            design.name(text("SHIP_DESIGN_1ST_BOMBER_NAME"));
         iconifyDesign(design);
         return design;
     }
-    public ShipDesign startingPlayerDestroyerDesign() {
+    public ShipDesign startingDestroyerDesign() {
         ShipDesign design = newBlankDesign(ShipDesign.MEDIUM);
         design.mission(ShipDesign.DESTROYER);
         design.addWeapon(missileWeapon(0, 2), 1);
         design.addWeapon(beamWeapon(0, false), 3);
-        design.name(text("SHIP_DESIGN_1ST_DESTROYER_NAME"));
+        if (empire.isAI())
+            nameDesign(design);
+        else
+            design.name(text("SHIP_DESIGN_1ST_DESTROYER_NAME"));
         iconifyDesign(design);
         return design;
     }
-    public ShipDesign startingPlayerColonyDesign() {
+    public ShipDesign startingColonyDesign() {
         ShipDesign design = newBlankDesign(ShipDesign.LARGE);
         design.mission(ShipDesign.COLONY);
         design.special(0, empire.shipDesignerAI().bestColonySpecial());
-        design.name(text("SHIP_DESIGN_1ST_COLONY_NAME"));
+        if (empire.isAI())
+            nameDesign(design);
+        else
+            design.name(text("SHIP_DESIGN_1ST_COLONY_NAME"));
         iconifyDesign(design);
         return design;
     }
