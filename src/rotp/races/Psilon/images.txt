@@ -1,3 +1,6 @@
+PsiWin        | races/Psilon/WinSplash.jpg
+PsiLoss       | races/Psilon/LossSplash.jpg
+
 
 PsiFlagWar  | races/Psilon/banner_war.png
 PsiFlagNorm | races/Psilon/banner_norm.png

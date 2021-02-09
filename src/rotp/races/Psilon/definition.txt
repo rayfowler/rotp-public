@@ -26,8 +26,8 @@ gnn:           PsilonGNN
 gnnHost:       PsilonGNNHost
 gnnColor:      Orange
 gnnTextColor:  255,93,0
-winSplash:     ,255,255,255
-lossSplash:    ,255,255,255
+winSplash:     PsiWin,255,255,255
+lossSplash:    PsiLoss,255,255,255
 
 advisorScout:      PsilonDiplomat, 70@0|440x640
 advisorTransport:  PsilonDiplomat, 70@0|440x640
@@ -69,9 +69,9 @@ council:       PsiCouncil
 shield:        MeklarShield,    0@0|420x450
 introTextX:    680
 espionageXY:   0@0
-spyFactories:  0
-spyMissiles:   0
-spyRebellion:  0
+spyFactories:  48
+spyMissiles:   49
+spyRebellion:  48
 dialogTextX:   100,320
 dialogTextY:   570
 councilDiplo:  0.5, 30, -40, 0.6

@@ -160,12 +160,13 @@ public enum SoundManager implements Base {
             currentAmbience = playContinuously(key);
         }
         catch (IllegalArgumentException e) {
-            log("error: "+e.toString());
+            err("error: "+e.toString());
             disableOnError("on ambience:"+e.getMessage());
         }
     }
     @Override
     public SoundClip playAudioClip(String key) {
+        log("play audio clip: "+key);
         if (!playSounds())
             return null;
         Sound s = sounds.get(key);
@@ -173,10 +174,10 @@ public enum SoundManager implements Base {
             if (s != null)
                 return s.play(s.gain);
             else
-                log("no sound found for key:"+key);
+                err("no sound found for key:"+key);
         }
         catch (Exception e) {
-            log("SoundManager.audio error1: "+e.getMessage());
+            err("SoundManager.audio error1: "+e.getMessage());
             disableOnError("on play:"+e.getMessage());
         }
         return null;

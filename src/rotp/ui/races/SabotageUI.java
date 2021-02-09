@@ -93,6 +93,7 @@ public final class SabotageUI extends BasePanel implements MouseListener {
     BasePanel promptPanel;
     SabotageResultPanel resultPanel;
     private final List<Sprite> controls = new ArrayList<>();
+    int animationIndex = 0;
     int currentState;
     int destroyCount = 0;
     boolean inRebellion = false;
@@ -116,6 +117,7 @@ public final class SabotageUI extends BasePanel implements MouseListener {
         removeSessionVar("SABOTAGEUI_MAP_INITIALIZED");
         mapPane.checkMapInitialized();
         mapPane.selectTargetSystem(galaxy().system(sysId));
+        animationIndex = 0;
         audioClip = null;
         repaintCount = 3;
         selectMapPanel();
@@ -718,7 +720,6 @@ public final class SabotageUI extends BasePanel implements MouseListener {
         private static final long serialVersionUID = 1L;
         private Image panelBuffer;
         private List<Image> animationFrames;
-        private int animationIndex = 0;
         public void init() {
             Race r = mission.target().race();
             if (mission.isDestroyBases()) 
@@ -732,7 +733,6 @@ public final class SabotageUI extends BasePanel implements MouseListener {
             if (animationFrames.isEmpty()) 
                 animationFrames.add(GalaxyMapPanel.sharedStarBackground);
             
-            animationIndex = 0;
         }
         @Override
         public void paintComponent(Graphics g) {
@@ -789,7 +789,7 @@ public final class SabotageUI extends BasePanel implements MouseListener {
                 return;
 
             if (currentState == SHOW_ANIMATION) {
-                if (animationIndex == 1) {
+                if (animationIndex == 0) {
                     sleep(1000);  // pause on the opening scene before the explosion
                     if (mission.isInciteRebellion())
                         audioClip = playAudioClip("SabotageRiot");
