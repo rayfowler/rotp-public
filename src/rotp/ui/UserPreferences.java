@@ -39,8 +39,6 @@ public class UserPreferences {
     private static final String GRAPHICS_LOW = "GAME_SETTINGS_GRAPHICS_LOW";
     private static final String GRAPHICS_MEDIUM = "GAME_SETTINGS_GRAPHICS_MED";
     private static final String GRAPHICS_HIGH = "GAME_SETTINGS_GRAPHICS_HIGH";
-    private static final String TEXTURES_YES = "GAME_SETTINGS_TEXTURES_YES";
-    private static final String TEXTURES_NO = "GAME_SETTINGS_TEXTURES_NO";
     private static final String AUTOCOLONIZE_YES = "GAME_SETTINGS_AUTOCOLONIZE_YES";
     private static final String AUTOCOLONIZE_NO = "GAME_SETTINGS_AUTOCOLONIZE_NO";
     private static final String AUTOBOMBARD_NO = "GAME_SETTINGS_AUTOBOMBARD_NO";
@@ -48,6 +46,11 @@ public class UserPreferences {
     private static final String AUTOBOMBARD_YES = "GAME_SETTINGS_AUTOBOMBARD_YES";
     private static final String AUTOBOMBARD_WAR = "GAME_SETTINGS_AUTOBOMBARD_WAR";
     private static final String AUTOBOMBARD_INVADE = "GAME_SETTINGS_AUTOBOMBARD_INVADE";
+    private static final String TEXTURES_NO = "GAME_SETTINGS_TEXTURES_NO";
+    private static final String TEXTURES_INTERFACE = "GAME_SETTINGS_TEXTURES_INTERFACE";
+    private static final String TEXTURES_MAP = "GAME_SETTINGS_TEXTURES_MAP";
+    private static final String TEXTURES_BOTH = "GAME_SETTINGS_TEXTURES_BOTH";
+    
     
     private static final String PREFERENCES_FILE = "Remnants.cfg";
     private static final int MAX_BACKUP_TURNS = 10;
@@ -56,11 +59,11 @@ public class UserPreferences {
     private static boolean playMusic = true;
     private static boolean playSounds = true;
     private static boolean displayYear = true;
-    private static boolean textures = true;
     private static boolean autoColonize = false;
     private static String autoBombardMode = AUTOBOMBARD_NO;
     private static String displayMode = WINDOW_MODE;
     private static String graphicsMode = GRAPHICS_HIGH;
+    private static String texturesMode = TEXTURES_BOTH;
     private static float uiTexturePct = 0.20f;
     private static int screenSizePct = 93;
     private static final HashMap<String, String> raceNames = new HashMap<>();
@@ -91,9 +94,19 @@ public class UserPreferences {
         }
         save();
     }
-    public static String texturesMode()     { return textures ? TEXTURES_YES : TEXTURES_NO; }
-    public static void toggleTextures()     { textures = !textures; save();  }
-    public static boolean textures()        { return textures; }
+    public static void toggleTexturesMode()   { 
+        switch(texturesMode) {
+            case TEXTURES_NO:        texturesMode = TEXTURES_INTERFACE; break;
+            case TEXTURES_INTERFACE: texturesMode = TEXTURES_MAP; break;
+            case TEXTURES_MAP:       texturesMode = TEXTURES_BOTH; break;
+            case TEXTURES_BOTH:      texturesMode = TEXTURES_NO; break;
+            default :                texturesMode = TEXTURES_BOTH; break;
+        }
+        save();
+    }
+    public static String texturesMode()     { return texturesMode; }
+    public static boolean texturesInterface() { return texturesMode.equals(TEXTURES_INTERFACE) || texturesMode.equals(TEXTURES_BOTH); }
+    public static boolean texturesMap()       { return texturesMode.equals(TEXTURES_MAP) || texturesMode.equals(TEXTURES_BOTH); }
     
     public static String autoColonizeMode()     { return autoColonize ? AUTOCOLONIZE_YES : AUTOCOLONIZE_NO; }
     public static void toggleAutoColonize()     { autoColonize = !autoColonize; save();  }
@@ -183,10 +196,10 @@ public class UserPreferences {
             out.println(keyFormat("BACKUP_TURNS")+ backupTurns);
             out.println(keyFormat("AUTOCOLONIZE")+ yesOrNo(autoColonize));
             out.println(keyFormat("AUTOBOMBARD")+autoBombardToSettingName(autoBombardMode));
+            out.println(keyFormat("TEXTURES")+texturesToSettingName(texturesMode));
             out.println(keyFormat("SHOW_MEMORY")+ yesOrNo(showMemory));
             out.println(keyFormat("DISPLAY_YEAR")+ yesOrNo(displayYear));
             out.println(keyFormat("SCREEN_SIZE_PCT")+ screenSizePct());
-            out.println(keyFormat("UI_TEXTURES")+ yesOrNo(textures));
             out.println(keyFormat("UI_TEXTURE_LEVEL")+(int) (uiTexturePct()*100));
             out.println(keyFormat("LANGUAGE")+ languageDir());
             for (String raceKey: raceKeys) 
@@ -223,10 +236,10 @@ public class UserPreferences {
             case "BACKUP_TURNS": backupTurns  = Integer.valueOf(val); return;
             case "AUTOCOLONIZE": autoColonize = yesOrNo(val); return;
             case "AUTOBOMBARD":  autoBombardMode = autoBombardFromSettingName(val); return;
+            case "TEXTURES":     texturesMode = texturesFromSettingName(val); return;
             case "SHOW_MEMORY":  showMemory = yesOrNo(val); return;
             case "DISPLAY_YEAR": displayYear = yesOrNo(val); return;
             case "SCREEN_SIZE_PCT": screenSizePct(Integer.valueOf(val)); return;
-            case "UI_TEXTURES":  textures = yesOrNo(val); return;
             case "UI_TEXTURE_LEVEL": uiTexturePct(Integer.valueOf(val)); return;
             case "LANGUAGE":     selectLanguage(val); return;
             default:
@@ -317,5 +330,23 @@ public class UserPreferences {
             case "Invade": return AUTOBOMBARD_INVADE;
         }
         return AUTOBOMBARD_NO;
+    }
+    public static String texturesToSettingName(String s) {
+        switch(s) {
+            case TEXTURES_NO:         return "No";
+            case TEXTURES_INTERFACE: return "Interface";
+            case TEXTURES_MAP:       return "Map";
+            case TEXTURES_BOTH:      return "Both";
+        }
+        return "Both";
+    }
+    public static String texturesFromSettingName(String s) {
+        switch(s) {
+            case "No":        return TEXTURES_NO;
+            case "Interface": return TEXTURES_INTERFACE;
+            case "Map":       return TEXTURES_MAP;
+            case "Both":      return TEXTURES_BOTH;
+        }
+        return TEXTURES_BOTH;
     }
 }

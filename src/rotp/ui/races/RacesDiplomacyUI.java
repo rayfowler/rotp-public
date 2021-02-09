@@ -167,7 +167,7 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         drawPlayerDiplomacyBureau(g, emp, x1, s10, w1, s200);
         drawPlayerCounterIntelligenceBureau(g, emp, x1, s215, w1, s215);
         drawPlayerIntelligenceBureau(g, emp, x1, s435, w1, s200);
-        if (UserPreferences.textures()) 
+        if (UserPreferences.texturesInterface()) 
             drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
         drawEmpireName(g, emp, s260, s30, s370, s50);
@@ -200,7 +200,7 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         drawAIDiplomacyBureau(g, emp, x1, s10, w1, s135);
         drawAITradeSummary(g, emp, x1, s150, w1, s175);
         drawAIForeignRelations(g, emp, x1, s330, w1, h-s330-s10);          
-        if (UserPreferences.textures()) 
+        if (UserPreferences.texturesInterface()) 
             drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
         drawEmpireName(g, emp, s260, s30, s370, s50);

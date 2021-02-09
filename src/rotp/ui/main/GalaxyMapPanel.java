@@ -15,7 +15,9 @@
  */
 package rotp.ui.main;
 
+import java.awt.AlphaComposite;
 import java.awt.Color;
+import java.awt.Composite;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -46,6 +48,7 @@ import rotp.model.galaxy.StarSystem;
 import rotp.model.tech.TechCategory;
 import rotp.ui.BasePanel;
 import rotp.ui.RotPUI;
+import rotp.ui.UserPreferences;
 import rotp.ui.map.IMapHandler;
 import rotp.ui.sprites.FlightPathDisplaySprite;
 import rotp.ui.sprites.FlightPathSprite;
@@ -110,12 +113,15 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     private Image mapBuffer;
     private Image rangeMapBuffer;
     public static BufferedImage sharedStarBackground;
+    public static BufferedImage sharedNebulaBackground;
     private final float zoomBase = 1.1f;
     boolean dragSelecting = false;
     private int selectX0, selectY0, selectX1, selectY1;
     private int lastMouseX, lastMouseY;
     private boolean redrawRangeMap = true;
     public Sprite hoverSprite;
+    int backOffsetX = 0;
+    int backOffsetY = 0;
 
     private final Timer zoomTimer;
 
@@ -340,8 +346,19 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         setScale(scaleY());
         //log("map scale:", fmt(scaleX(),2), "@", fmt(scaleY(),2), "  center:", fmt(center().x(),2), "@", fmt(center().y(),2), "  x-rng:", fmt(mapMinX()), "-", fmt(mapMaxX(),2), "  y-rng:", fmt(mapMinY()), "-", fmt(mapMaxY(),2));
         drawBackground(g2);
-        if ((scaleX() < 200) && showStars())
+        if (showStars()) {
+            float alpha = 8/5*sizeX()/scaleX();
+            Composite prev = g2.getComposite();
+            if (alpha < 1) {
+                Composite comp = AlphaComposite.getInstance(AlphaComposite.SRC_OVER , alpha);
+                g2.setComposite(comp );     
+            }
             drawBackgroundStars(g2);
+            g2.setComposite(prev);
+        }
+        if (UserPreferences.texturesMap())
+            drawBackgroundNebula(g2);
+        
         drawGrids(g2);
 
         drawNebulas(g2);
@@ -370,6 +387,10 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         if (sharedStarBackground == null) {
             sharedStarBackground = new BufferedImage(RotPUI.instance().getWidth(), RotPUI.instance().getHeight(), BufferedImage.TYPE_INT_ARGB);
             drawBackgroundStars(sharedStarBackground, this);
+        }
+        if (sharedNebulaBackground == null) {
+            sharedNebulaBackground = new BufferedImage(RotPUI.instance().getWidth(), RotPUI.instance().getHeight(), BufferedImage.TYPE_INT_ARGB);
+            drawBackgroundNebula(sharedNebulaBackground);
         }
     }
     public void clearRangeMap() {   redrawRangeMap = true; }
@@ -570,7 +591,61 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         g.setStroke(prevStroke);
     }
     private void drawBackgroundStars(Graphics2D g) {
-        g.drawImage(sharedStarBackground, 0, 0, null);
+        int w = sharedStarBackground.getWidth();
+        int h = sharedStarBackground.getHeight();
+        // java modulo does not handle negative numbers properly
+        int x0 = backOffsetX;
+        while (x0<0)   x0+=w;
+        int y0 = backOffsetY;
+        while (y0<0)  y0 +=h;
+        
+        int x = x0 % w;
+        int y = y0 % h;
+        
+        if ((x > 0) && (y > 0)) {
+            BufferedImage topL = sharedStarBackground.getSubimage(w-x,h-y,x, y);
+            g.drawImage(topL,0,0, null);
+        }
+        if (y > 0) {
+            BufferedImage topR = sharedStarBackground.getSubimage(0,h-y,w-x, y);
+            g.drawImage(topR,x,0, null);
+        }
+        if (x > 0) {
+            BufferedImage botL = sharedStarBackground.getSubimage(w-x,0,x, h-y);
+            g.drawImage(botL,0,y, null);
+        }
+        
+        BufferedImage botRight = sharedStarBackground.getSubimage(0,0,w-x, h-y);
+        g.drawImage(botRight,x,y,null);
+    }
+    private void drawBackgroundNebula(Graphics2D g) {
+        int w = sharedNebulaBackground.getWidth();
+        int h = sharedNebulaBackground.getHeight();
+        
+        // java modulo does not handle negative numbers properly
+        int x0 = backOffsetX;
+        while (x0<0)   x0+=w;
+        int y0 = backOffsetY;
+        while (y0<0)  y0 +=h;
+        
+        int x = x0 % w;
+        int y = y0 % h;
+        
+        if ((x > 0) && (y > 0)) {
+            BufferedImage topL = sharedNebulaBackground.getSubimage(w-x,h-y,x, y);
+            g.drawImage(topL,0,0, null);
+        }
+        if (y > 0) {
+            BufferedImage topR = sharedNebulaBackground.getSubimage(0,h-y,w-x, y);
+            g.drawImage(topR,x,0, null);
+        }
+        if (x > 0) {
+            BufferedImage botL = sharedNebulaBackground.getSubimage(w-x,0,x, h-y);
+            g.drawImage(botL,0,y, null);
+        }
+        
+        BufferedImage botRight = sharedNebulaBackground.getSubimage(0,0,w-x, h-y);
+        g.drawImage(botRight,x,y,null);
     }
     public void drawNebulas(Graphics2D g) {
         for (Nebula neb: galaxy().nebulas()) {
@@ -722,6 +797,8 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         return null;
     }
     public void dragMap(int deltaX, int deltaY) {
+        backOffsetX += deltaX/10;
+        backOffsetY += deltaY/10;
         int focusX = mapX(parent.mapFocus().x());
         int focusY = mapY(parent.mapFocus().y());
         recenterMap(objX(focusX-deltaX), objY(focusY-deltaY));

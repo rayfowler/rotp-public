@@ -66,6 +66,7 @@ import rotp.model.tech.TechLibrary;
 import rotp.ui.BasePanel;
 import rotp.ui.RotPUI;
 import rotp.ui.UserPreferences;
+import rotp.ui.util.planets.PlanetImager;
 import rotp.util.sound.SoundClip;
 
 public interface Base {
@@ -1175,5 +1176,50 @@ public interface Base {
             } catch (IOException e) {}
         }
         return names;
+    }
+    public default void drawBackgroundNebula(BufferedImage img) {
+        int imgW = img.getWidth();
+        int imgH = img.getHeight();
+        
+        int nebR = 0;
+        int nebG = 0;
+        int nebB = roll(160,255);
+
+        //int centerX = w/2;
+        //int centerY = h/2;
+        
+        FastImage fImg = PlanetImager.current().terrainBase().copy();
+        int w = fImg.getWidth();
+        int h = fImg.getHeight();
+        
+        int floor = 255;
+        int ceiling = 0;
+        for (int y=0;y<h;y++)    for (int x=0;x<w;x++) {
+            int pixel = fImg.getRGB(x, y);
+            floor = min(floor, pixel & 0xff);
+            ceiling = max(ceiling, pixel & 0xff);
+        }
+        for (int x=0;x<w;x++)   for (int y=0;y<h;y++) {
+            int pixel = fImg.getRGB(x, y);
+            int landLevel = pixel & 0xff;
+            landLevel = (int) (256*((float)(landLevel-floor)/(ceiling-floor)));
+            int distFromEdgeX = min(x, w-x);
+            int distFromEdgeY = min(y, h-y);
+            //int distFromEdge = min(distFromEdgeX, distFromEdgeY);
+            float pctFromEdge = min((float)distFromEdgeX/w, (float)distFromEdgeY/h);
+            //int distFromCenter = (int) Math.min(128,Math.sqrt(((x-centerX)*(x-centerX))+((y-centerY)*(y-centerY))));
+            //int alpha = min(distFromEdge/2, landLevel*3/5);
+            int alpha = landLevel/4;
+            //alpha = (int) (pctFromEdge * landLevel);
+            //alpha = min(alpha*3/2, (alpha+255)/2);
+            //alpha = Math.min(145-distFromCenter, landLevel/2);
+            int newPixel = (alpha << 24) | (nebR << 16) | (nebG << 8) | nebB;
+            fImg.setRGB(x, y, newPixel);
+        }
+        
+        BufferedImage back = fImg.image();
+        
+        Graphics g = img.getGraphics();
+        g.drawImage(back, 0, 0, imgW, imgH, null);
     }
 }

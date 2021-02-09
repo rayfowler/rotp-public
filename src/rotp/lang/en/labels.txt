@@ -310,9 +310,11 @@ GAME_SETTINGS_GRAPHICS_MED        | Medium
 GAME_SETTINGS_GRAPHICS_HIGH       | High
 GAME_SETTINGS_GRAPHICS_DESC       | Adjusts the graphics quality of game. Medium: Anti-Aliasing of images is off. Low: Animations are turned off.
 GAME_SETTINGS_TEXTURES            | Textures: %1
-GAME_SETTINGS_TEXTURES_YES        | Yes
 GAME_SETTINGS_TEXTURES_NO         | No
-GAME_SETTINGS_TEXTURES_DESC       | Toggle the use of textures on the various screens throughout the game.
+GAME_SETTINGS_TEXTURES_INTERFACE  | User Interface
+GAME_SETTINGS_TEXTURES_MAP        | Galaxy Map
+GAME_SETTINGS_TEXTURES_BOTH       | Interface and Map
+GAME_SETTINGS_TEXTURES_DESC       | Toggle the use of textures on the galaxy map or the various screens throughout the game.
 GAME_SETTINGS_MEMORY              | Show Memory Usage: %1
 GAME_SETTINGS_MEMORY_YES          | Yes
 GAME_SETTINGS_MEMORY_NO           | No

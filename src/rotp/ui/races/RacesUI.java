@@ -838,7 +838,7 @@ public class RacesUI extends BasePanel {
             int w1 = w;
             int h1 = h-y1-s10;
             g.fillRect(0,0,w,h);
-            if (UserPreferences.textures()) 
+            if (UserPreferences.texturesInterface()) 
                 drawTexture(g,0,0,w,h);
             for (Rectangle r: contactBoxes.values())
                 r.setBounds(0,0,0,0);
@@ -956,7 +956,7 @@ public class RacesUI extends BasePanel {
                     drawRelationsBar(g, emp, x1, y0+h0-s25, w0-x1-s10, s10, s10, s5);
             }
             
-            if (UserPreferences.textures()) 
+            if (UserPreferences.texturesInterface()) 
                 drawTextureWithExistingClip(g, x0,y0,w0,h0);
             drawRaceImage(g, emp, back, x0, y0, h0);
         }

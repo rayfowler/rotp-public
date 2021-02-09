@@ -388,7 +388,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
     }
     private void toggleTextures() {
         softClick();
-        UserPreferences.toggleTextures();
+        UserPreferences.toggleTexturesMode();
         texturesText.repaint(texturesStr());
     }
     private void toggleMemory() {

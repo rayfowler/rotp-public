@@ -122,7 +122,7 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         drawRaceIconBase(g, emp, s55, s25, s210, s210);
         drawRaceIconBase(g, emp, w-s65-s200, s25, s210, s210);
         drawAllRankingsLists(g, emp, s55, s260, w-s55-s55, h-s260-s10);
-        if (UserPreferences.textures()) 
+        if (UserPreferences.texturesInterface()) 
             drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
         drawOpponentIcon(g, null, w-s60-s200, s30, s200, s200);
@@ -142,7 +142,7 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         drawRaceIconBase(g, emp, s55, s25, s210, s210);
         drawRaceIconBase(g, emp, w-s65-s200, s25, s210, s210);
         drawVsRankingsLists(g, emp, s55, s260, w-s55-s55, h-s260-s10);
-        if (UserPreferences.textures()) 
+        if (UserPreferences.texturesInterface()) 
             drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
         drawOpponentIcon(g, emp, w-s60-s200, s30, s200, s200);

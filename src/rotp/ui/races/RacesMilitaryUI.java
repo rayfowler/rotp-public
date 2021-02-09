@@ -141,7 +141,7 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         drawPlayerDefenseInfo(g, emp, defX, s80, defW, scaled(140));
         drawShipDesignTitle(g, emp, s20, s220, w-s20-s20, s40);
         drawShipDesignListing(g, emp, s20, s265, w-s20-s20, h-s265-s10);
-        if (UserPreferences.textures()) 
+        if (UserPreferences.texturesInterface()) 
             drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
         drawFleetTitle(g, emp, s260, s30, baseW, s50);
@@ -165,7 +165,7 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         drawAIDefenseInfo(g, emp, defX, s80, defW, scaled(140));
         drawShipDesignTitle(g, emp, s20, s220, w-s20-s20, s40);
         drawShipDesignListing(g, emp, s20, s265, w-s20-s20, h-s265-s10);
-        if (UserPreferences.textures()) 
+        if (UserPreferences.texturesInterface()) 
             drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
         drawFleetTitle(g, emp, s260, s30, baseW, s50);

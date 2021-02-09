@@ -162,7 +162,8 @@ public class Nebula extends MapSprite implements Base, IMappedObject, Serializab
             //int distFromCenter = (int) Math.min(128,Math.sqrt(((x-centerX)*(x-centerX))+((y-centerY)*(y-centerY))));
             int alpha = min(distFromEdge/2, landLevel*3/5);
             alpha = (int) (pctFromEdge * landLevel);
-            //alpha = Math.min(145-distFromCenter, landLevel/2);
+            alpha = min(alpha*3/2, (alpha+255)/2);
+           //alpha = Math.min(145-distFromCenter, landLevel/2);
             int newPixel = (alpha << 24) | (nebR << 16) | (nebG << 8) | nebB;
             fImg.setRGB(x, y, newPixel);
         }
