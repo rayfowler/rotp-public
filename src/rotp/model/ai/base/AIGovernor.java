@@ -206,8 +206,8 @@ public class AIGovernor implements Base, Governor {
                 col.clearSpending();
                 col.pct(ECOLOGY, cleanCost/totalProd);
                 col.allocation(DEFENSE, maxAllocation - col.totalAmountAllocated());
+                return;
             }
-            return;
         }
         
         // for systems that are flagged as rush ship, do that and forget
