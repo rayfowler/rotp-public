@@ -34,12 +34,14 @@ import rotp.util.Base;
 
 public class AIFleetCommander implements Base, FleetCommander {
     private static final int DEFAULT_SIZE = 25;
+    private static final float MAX_ALLOWED_SHIP_MAINT = 0.35f;
     private final Empire empire;
 
     private boolean sendColonyMissions;
     private final List<FleetPlan> fleetPlans;
     private final List<Integer> systems;
     private final List<Integer> systemsCommitted;
+    private transient boolean canBuildShips = true;
 
     private List<FleetPlan> fleetPlans()      { return fleetPlans; }
     private List<Integer> systems()           { return systems;  }
@@ -60,6 +62,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             empire.shipLab().needColonyShips = false;
             empire.shipLab().needExtendedColonyShips = false;
             sendColonyMissions = !empire.shipLab().colonyDesign().obsolete();
+            canBuildShips = empire.shipMaintCostPerBC() < MAX_ALLOWED_SHIP_MAINT;
             NoticeMessage.setSubstatus(text("TURN_FLEET_PLANS"));
             buildFleetPlans();
             fillFleetPlans();
@@ -97,7 +100,8 @@ public class AIFleetCommander implements Base, FleetCommander {
             empire.sv.clearFleetPlan(id);
             if (empire.sv.empire(id) == empire) {
                 empire.sv.colony(id).shipyard().resetQueueData();
-                systems.add(id);
+                if (canBuildShips)
+                    systems.add(id);
             }
         }
 
