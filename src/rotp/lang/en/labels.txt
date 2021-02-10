@@ -329,11 +329,11 @@ GAME_SETTINGS_MUSIC               | Music: %1
 GAME_SETTINGS_MUSIC_OFF           | Muted
 GAME_SETTINGS_MUSIC_ON            | %1/10
 GAME_SETTINGS_MUSIC_DESC          | Click to mute or unmute music within the game. Use the mousewheel to raise or lower the volume.
-GAME_SETTINGS_AUTOCOLONIZE        | Auto-Colonize: %1
-GAME_SETTINGS_AUTOCOLONIZE_YES    | Yes
-GAME_SETTINGS_AUTOCOLONIZE_NO     | No
+GAME_SETTINGS_AUTOCOLONIZE        | Colonize: %1
+GAME_SETTINGS_AUTOCOLONIZE_YES    | Automatically
+GAME_SETTINGS_AUTOCOLONIZE_NO     | Always Prompt
 GAME_SETTINGS_AUTOCOLONIZE_DESC   | Toggle to auto-colonize and name planets immediately when colony ships arrive. This can be time-saving on very large maps.
-GAME_SETTINGS_AUTOBOMBARD         | Auto-Bombard: %1
+GAME_SETTINGS_AUTOBOMBARD         | Bombard: %1
 GAME_SETTINGS_AUTOBOMBARD_NO      | Always Prompt
 GAME_SETTINGS_AUTOBOMBARD_NEVER   | Never
 GAME_SETTINGS_AUTOBOMBARD_YES     | Always

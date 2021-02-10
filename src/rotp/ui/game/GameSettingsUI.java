@@ -112,6 +112,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         
         int numColumns = 3;
         int columnPad = s20;
+        int lineH = s17;
         Font descFont = narrowFont(15);
         int leftM = s100;
         int rightM = s100;
@@ -152,7 +153,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         List<String> lines = this.wrappedLines(g,desc, w2-s30);
         int y3 = y2+s10;
         for (String line: lines) {
-            y3 += s20;
+            y3 += lineH;
             g.drawString(line, x2+s20, y3);
         }
         
@@ -169,7 +170,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         lines = this.wrappedLines(g,desc, w2-s30);
         y3 = y2+s10;
         for (String line: lines) {
-            y3 += s20;
+            y3 += lineH;
             g.drawString(line, x2+s20, y3);
         }       
        
@@ -186,7 +187,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         lines = this.wrappedLines(g,desc, w2-s30);
         y3 = y2+s10;
         for (String line: lines) {
-            y3 += s20;
+            y3 += lineH;
             g.drawString(line, x2+s20, y3);
         }
         
@@ -206,7 +207,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         lines = this.wrappedLines(g,desc, w2-s30);
         y3 = y2+s10;
         for (String line: lines) {
-            y3 += s20;
+            y3 += lineH;
             g.drawString(line, x2+s20, y3);
         }
         
@@ -223,7 +224,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         lines = this.wrappedLines(g,desc, w2-s30);
         y3 = y2+s10;
         for (String line: lines) {
-            y3 += s20;
+            y3 += lineH;
             g.drawString(line, x2+s20, y3);
         }
         
@@ -240,7 +241,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         lines = this.wrappedLines(g,desc, w2-s30);
         y3 = y2+s10;
         for (String line: lines) {
-            y3 += s20;
+            y3 += lineH;
             g.drawString(line, x2+s20, y3);
         }
           
@@ -260,7 +261,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         lines = this.wrappedLines(g,desc, w2-s30);
         y3 = y2+s10;
         for (String line: lines) {
-            y3 += s20;
+            y3 += lineH;
             g.drawString(line, x2+s20, y3);
         }
 
@@ -278,7 +279,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         lines = this.wrappedLines(g,desc, w2-s30);
         y3 = y2+s10;
         for (String line: lines) {
-            y3 += s20;
+            y3 += lineH;
             g.drawString(line, x2+s20, y3);
         }
         
@@ -295,7 +296,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         lines = this.wrappedLines(g,desc, w2-s30);
         y3 = y2+s10;
         for (String line: lines) {
-            y3 += s20;
+            y3 += lineH;
             g.drawString(line, x2+s20, y3);
         }
         
@@ -525,7 +526,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
                 musicText.mouseEnter();
             else if (hoverBox == graphicsText.bounds())
                 graphicsText.mouseEnter();
-            else if (prevHover == backupTurnsText.bounds())
+            else if (hoverBox == backupTurnsText.bounds())
                 backupTurnsText.mouseEnter();
             if (prevHover != null)
                 repaint(prevHover);
