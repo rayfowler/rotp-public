@@ -47,7 +47,7 @@ DECLAREWAR_ATTACK_02       | Want to fight a war against us, huh? Don't worry, w
 DECLAREWAR_ATTACK_03       | Dirty! Dirty! Dirty! You've tarnished our planet with your horrid bloodlust! The Conclave will muster every bit of strength it has to drive you back to the dross pit you came from!
 //
 DECLAREWAR_OPPORTUNITY_01  | The [my_title] was thinking about your people recently. He came to the conclusion that it'll be best for us to prevent you from spreading across the galaxy sooner rather than later. That way, we won't have as many worlds to clean up after we eliminate you!
-DECLAREWAR_ASSASSIN_01     | What have you done?! I knew your kind couldn't be trusted! If you'd kill an unarmed ambassador SI shudder to think what you do to your ecosystems! Prepare for war, filthy [your_race].
+DECLAREWAR_ASSASSIN_01     | What have you done?! I knew your kind couldn't be trusted! If you'd kill an unarmed ambassador I shudder to think what you do to your ecosystems! Prepare for war, filthy [your_race].
 
 
 OFFER_PEACE_01             | Those poor planets! We just can't bear to see them scarred any longer by this stupid war! Let's put an end to the fighting now, ambassador, and begin to heal these worlds we've done so wrong by!  
