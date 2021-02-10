@@ -107,7 +107,14 @@ public class ColonyDefense extends ColonySpendingCategory {
         colony().removeColonyOrder(Colony.Orders.SHIELD);
     }
     public void capturedBy(Empire newCiv) {
+        if (newCiv == empire())
+            return;
         bases = 0;
+        shield = 0;
+        newBases = 0;
+        newShield = 0;
+        baseUpgradeBC = 0;
+        unallocatedBC = 0;
         maxBases = 1;
         missileBase = newCiv.tech().bestMissileBase();
     }

@@ -81,8 +81,11 @@ public class ColonyEcology extends ColonySpendingCategory {
         colony().removeColonyOrder(Colony.Orders.TERRAFORM);
     }
     public void capturedBy(Empire newCiv) {
+        if (newCiv == empire())
+            return;
         hostileBC = 0;
         soilEnrichBC = 0;
+        unallocatedBC = 0;
     }
     public float waste()           { return planet().waste(); }
     public void addWaste(float w)  { planet().addWaste(w); }

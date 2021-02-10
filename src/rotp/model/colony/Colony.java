@@ -1122,6 +1122,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
 
         setPopulation(tr.size());
         tr.size(0);
+        shipyard().capturedBy(tr.empire());
         industry().capturedBy(tr.empire());
         defense().capturedBy(tr.empire());
         ecology().capturedBy(tr.empire());
