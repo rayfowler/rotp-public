@@ -76,8 +76,8 @@ public class SystemGraphicPane extends BasePanel implements MouseMotionListener,
         drawStar(g, sys.starType(), adjW*2/5, w*2/5, h/3);
         starCircle.setFrame((w/3)-s20, s10, s40, s40);
 
-        g0.setFont(narrowFont(36*adjW/w));
         String str = player().sv.name(sys.id);
+        scaledFont(g,str,w-s30,36,24);
         int y0 = s42*adjW/w;
         int x0 = s25;
         drawBorderedString(g0, str, 1, x0, y0, Color.black, SystemPanel.orangeText);

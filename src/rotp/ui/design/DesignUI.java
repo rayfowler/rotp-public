@@ -808,7 +808,7 @@ public class DesignUI extends BasePanel {
             else {
                 String name = des.name();
                 g.setFont(narrowFont(18));
-                scaledFont(g, name, w-leftM-s10, 18, 14);
+                scaledFont(g, name, w-leftM-s20, 18, 10);
                 drawShadowedString(g, name, 3, leftM, s20, SystemPanel.textShadowC, SystemPanel.whiteText);
                 g.setFont(narrowFont(14));
                 g.setColor(SystemPanel.blackText);
@@ -1170,7 +1170,7 @@ public class DesignUI extends BasePanel {
         }
         private void drawSummaryInfo(Graphics2D g, ShipDesign des, int x, int y, int w, int h) {
             String name = des.active() ? des.name() : text("SHIP_DESIGN_NEW");
-            g.setFont(narrowFont(32));
+            scaledFont(g, name, w-s10, 32, 24);
             int titleW = g.getFontMetrics().stringWidth(name);
             int x0 = x+((w-titleW)/2);
             int y0 = y+s35;

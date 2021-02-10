@@ -525,6 +525,7 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         ShipDesign d = view.design();
         g.setFont(narrowFont(20));
         String s = d.name();
+        scaledFont(g,s,w0-s10,20,10);
         int sw = g.getFontMetrics().stringWidth(s);
         int x1 = x+((x0-x-sw)/2);
         int y1 = y+(h/2)-s10;

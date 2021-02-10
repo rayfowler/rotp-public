@@ -541,6 +541,7 @@ public class SystemMassQueryPanel extends BasePanel {
             g.setColor(FleetUI.sliderBoxBlue);
             g.setFont(narrowFont(18));
             String name = topParent.currDesign == null ? text("FLEETS_MULTIPLE_DESIGNS") : topParent.currDesign.name();
+            scaledFont(g,name,barW-s5,18,8);
             int sw = g.getFontMetrics().stringWidth(name);
             int x0 = barX+((barW-sw)/2);
             g.drawString(name, x0, barY+s16);

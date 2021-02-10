@@ -464,6 +464,8 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
             g.setColor(Color.yellow);
         else
             g.setColor(SystemPanel.blackText);
+        String str = filt.text();
+        instance.scaledFont(g,str,w-x-boxW-s10,14,8);
         g.drawString(filt.text(), labelX, y-s2);
     }
     public void drawBrownButton(Graphics2D g, String label, Rectangle actionBox, Shape hoverBox, int y) {

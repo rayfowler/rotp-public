@@ -34,6 +34,7 @@ import rotp.model.incidents.ColonyCapturedIncident;
 import rotp.model.incidents.ColonyInvadedIncident;
 import rotp.model.planet.Planet;
 import rotp.model.ships.ShipDesign;
+import rotp.model.ships.ShipDesignLab;
 import rotp.model.tech.Tech;
 import rotp.model.tech.TechMissileWeapon;
 import rotp.model.tech.TechTree;
@@ -365,8 +366,13 @@ public final class Colony implements Base, IMappedObject, Serializable {
         industry().previousFactories(30);
 
         Empire emp = empire();
-        galaxy().ships.buildShips(emp.id, starSystem().id, empire().shipLab().scoutDesign().id(), 2);
-        galaxy().ships.buildShips(emp.id, starSystem().id, empire().shipLab().colonyDesign().id(), 1);
+        ShipDesignLab lab = emp.shipLab();
+        ShipDesign scout = lab.scoutDesign();
+        ShipDesign colony = lab.colonyDesign();
+        galaxy().ships.buildShips(emp.id, starSystem().id, scout.id(), 2);
+        galaxy().ships.buildShips(emp.id, starSystem().id, colony.id(), 1);
+        lab.recordConstruction(scout, 2);
+        lab.recordConstruction(colony, 1);
     }
 
     public void spreadRebellion() {

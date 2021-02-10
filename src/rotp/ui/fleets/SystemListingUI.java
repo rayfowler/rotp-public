@@ -782,6 +782,8 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             super.draw(g, row, sys, x, y, w);
             String val = sys.getAttribute(attributeKey);
             int sw = g.getFontMetrics().stringWidth(val);
+            if (sw > w) 
+                scaledFont(g, val, w, dataFontSize()-1, 8);
             g.setColor(color(sys));
             switch(align) {
                 case LEFT:    g.drawString(val, x+s5, y-s5); break;

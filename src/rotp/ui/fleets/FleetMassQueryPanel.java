@@ -278,24 +278,33 @@ public class FleetMassQueryPanel extends BasePanel {
             int x1 = x0 + w/2;
             y0 += s5;
             g.setFont(narrowFont(15));
+            int maxCount = 0;
+            for (int i=0;i<ShipDesignLab.MAX_DESIGNS;i++) 
+                maxCount = max(maxCount,shipCount(i));
+            int swMax = g.getFontMetrics().stringWidth(str(maxCount));
             g.setColor(SystemPanel.blackText);
-            int swMax = g.getFontMetrics().stringWidth("99999");
             int half = ShipDesignLab.MAX_DESIGNS / 2;
             for (int i=0;i<half;i++) {
                 y0 += s15;
                 ShipDesign d1 = player().shipLab().design(i);
                 if (d1.active()) {
+                    g.setFont(narrowFont(15));
                     String str1 = str(shipCount(i));
                     int sw1 = g.getFontMetrics().stringWidth(str1);
-                    g.drawString(str1, x0+swMax-sw1, y0);
-                    g.drawString(d1.name(), x0+swMax+s5, y0);
+                    g.drawString(str1, x0+s5+swMax-sw1, y0);
+                    String str2 = d1.name();
+                    scaledFont(g,str2,w/2-swMax-s10,15,7);
+                    g.drawString(str2, x0+swMax+s10, y0);
                 }
                 ShipDesign d2 = player().shipLab().design(i+half);
                 if (d2.active()) {
+                    g.setFont(narrowFont(15));
                     String str1 = str(shipCount(i+half));
                     int sw1 = g.getFontMetrics().stringWidth(str1);
-                    g.drawString(str1, x1+swMax-sw1, y0);
-                    g.drawString(d2.name(), x1+swMax+s5, y0);
+                    g.drawString(str1, x1+s5+swMax-sw1, y0);
+                    String str2 = d2.name();
+                    scaledFont(g,str2,w/2-swMax-s10,15,7);
+                    g.drawString(str2, x1+swMax+s10, y0);
                 }
             }
         }

@@ -430,7 +430,7 @@ public class EmpireSystemPanel extends SystemPanel {
                     int i = 0;
                     name = "";
                 }
-                scaledFont(g, name, barW-s5, 18, 14);
+                scaledFont(g, name, barW-s5, 18, 8);
                 int sw = g.getFontMetrics().stringWidth(name);
                 int x0 = barX+((barW-sw)/2);
                 g.drawString(name, x0, barY+s16);
