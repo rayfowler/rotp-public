@@ -667,7 +667,8 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         else if (view.spies().isSabotage() && pl.pactWith(emp.id))
             treatyBreak = true;  
         
-        if (!view.spies().isHide() && view.otherView().embassy().warningAlreadySent(DiplomaticIncident.SPY_WARNING))
+        if (!view.spies().isHide() && !view.embassy().anyWar() 
+        && view.otherView().embassy().warningAlreadySent(DiplomaticIncident.SPY_WARNING))
             triggerWar = true;
 
         g.setColor(RacesUI.darkBrown);
