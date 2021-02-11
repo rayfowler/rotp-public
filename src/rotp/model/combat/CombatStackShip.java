@@ -618,6 +618,7 @@ public class CombatStackShip extends CombatStack {
         int y2 = y+stackH-BasePanel.s5;
         g.setFont(narrowFont(16));
         String name = text("SHIP_COMBAT_COUNT_NAME", str(num), design.name());
+        scaledFont(g, name, stackW-BasePanel.s5,16,8);
         int sw2 = g.getFontMetrics().stringWidth(name);
         int x2 = max(x1, x1+((stackW-sw2)/2));
 

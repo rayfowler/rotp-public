@@ -946,7 +946,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
 
             // draw ship name
             if (contact) {
-                scaledFont(g, d.name(), w-s5, 18, 14);
+                scaledFont(g, d.name(), w-s5, 18, 9);
                 //g.setFont(narrowFont(18));
                 int sw = g.getFontMetrics().stringWidth(d.name());
                 int x2 = x+((w-sw)/2);
