@@ -1861,7 +1861,7 @@ DIPLOMACY_THREATEN_MENU_BR        | Break Trade Treaty
 DIPLOMACY_THREATEN_MENU_5         | Declare War
 DIPLOMACY_ACCEPT_OFFER            | Accept
 DIPLOMACY_ACCEPT_JOIN_WAR         | Accept (Joins War)
-DIPLOMACY_ACCEPT_END_WAR          | Accept (Ends War)
+DIPLOMACY_ACCEPT_END_WAR          | Accept (Ends War, Recalls Forces)
 DIPLOMACY_ACCEPT_FORM_PACT        | Accept (Forms Pact)
 DIPLOMACY_ACCEPT_FORM_ALLIANCE    | Accept (Forms Alliance)
 DIPLOMACY_ACCEPT_ESTABLISH_TRADE  | Accept (Establishes Trade)
