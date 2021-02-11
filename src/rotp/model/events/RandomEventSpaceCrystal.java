@@ -173,6 +173,8 @@ public class RandomEventSpaceCrystal implements Base, Serializable, RandomEvent 
         float slowdownEffect = max(1, 100.0f / galaxy().maxNumStarSystems());
         turnCount = (int) Math.ceil(1.5*slowdownEffect*nextSys.distanceTo(targetSystem));
         sysId = nextSys.id;        
+        if (turnCount <= 3)
+            approachSystem();     
     }
     private String notificationText(String key, Empire emp)    {
         String s1 = text(key);
