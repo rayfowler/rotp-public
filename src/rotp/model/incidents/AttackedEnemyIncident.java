@@ -23,9 +23,9 @@ import rotp.ui.diplomacy.DialogueManager;
 
 public class AttackedEnemyIncident extends DiplomaticIncident {
     private static final long serialVersionUID = 1L;
-    final int empAttacker;
-    final int empEnemy;
-    final int empMe;
+    public final int empAttacker;
+    public final int empEnemy;
+    public final int empMe;
     public static void alert(Empire attacker, Empire defender, ShipCombatResults res) {
         List<Empire> allEnemies = new ArrayList<>();
         

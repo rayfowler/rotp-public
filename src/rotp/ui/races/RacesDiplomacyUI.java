@@ -302,7 +302,7 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         g.drawString(s, x+w-s20-sw, y3);
 
         EmpireView view = player().viewForEmpire(emp);
-        s = view.embassy().treaty().status();
+        s = view.embassy().treaty().status(player());
         sw = g.getFontMetrics().stringWidth(s);
         g.drawString(s, x+w-s20-sw, y4);
     }
@@ -1129,7 +1129,7 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
             g.setFont(narrowFont(18));
             g.drawString(contact.empire().raceName(), x3, y3);
             g.setFont(narrowFont(15));
-            String treaty = contact.embassy().treaty().status();
+            String treaty = contact.embassy().treaty().status(player());
             int sw1 = g.getFontMetrics().stringWidth(treaty);
             int x3b = x2+w2-sw1-rightM;
             g.drawString(treaty, x3b, y3);

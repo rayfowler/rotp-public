@@ -20,8 +20,8 @@ import rotp.model.empires.Empire;
 
 public class FinancialAidIncident extends DiplomaticIncident {
     private static final long serialVersionUID = 1L;
-    final int empMe;
-    final int empYou;
+    public final int empMe;
+    public final int empYou;
     private int amount;
     public static FinancialAidIncident create(Empire emp, Empire donor, int amt) {
         DiplomaticEmbassy emb = emp.viewForEmpire(donor).embassy();
@@ -51,7 +51,7 @@ public class FinancialAidIncident extends DiplomaticIncident {
     }
     private void setAmount(Empire emp, int amt) {
         float pct = (float) amt / emp.totalPlanetaryProduction();
-        severity = min(15,20*pct);
+        severity = min(10,10*pct);
         amount = amt;
     }
     @Override

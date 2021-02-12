@@ -21,9 +21,9 @@ import rotp.model.tech.Tech;
 
 public class EnemyAidIncident extends DiplomaticIncident {
     private static final long serialVersionUID = 1L;
-    final int empMe;
-    final int empYou;
-    final int empEnemy;
+    public final int empMe;
+    public final int empYou;
+    public final int empEnemy;
     private int amount;
     private String techId;
     public static EnemyAidIncident create(Empire emp, Empire enemy, Empire donor, int amt) {
@@ -67,7 +67,7 @@ public class EnemyAidIncident extends DiplomaticIncident {
     }
     private void setAmount(Empire emp, int amt) {
         float pct = (float) amt / emp.totalPlanetaryProduction();
-        float sev = min(10,10*pct);
+        float sev = min(5,5*pct);
         severity = -sev;
         amount = amt;
     }
@@ -81,7 +81,7 @@ public class EnemyAidIncident extends DiplomaticIncident {
         Tech tech = tech(tId);
         float rpValue = enemy.ai().scientist().warTradeBCValue(tech);
         float pct = rpValue / enemy.totalPlanetaryProduction();
-        float sev = min(15,100*pct);
+        float sev = min(10,15*pct);
         severity = -sev;
         dateOccurred = galaxy().currentYear();
         duration = 5;

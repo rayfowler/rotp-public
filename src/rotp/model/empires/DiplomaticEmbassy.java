@@ -617,8 +617,10 @@ public class DiplomaticEmbassy implements Base, Serializable {
         log("addIncident key:"+k);
         DiplomaticIncident matchingEvent = incidents.get(k);
         log(view.toString(), ": Adding incident- ", inc.key(), ":", str(inc.currentSeverity()), ":", inc.toString());
-        if (inc.moreSevere(matchingEvent))
+        if (inc.moreSevere(matchingEvent)) {
             incidents.put(k,inc);
+            treaty.noticeIncident(inc);
+        }
         recalculateRelationsLevel();
     }
     public DiplomaticIncident getIncidentWithKey(String key) {

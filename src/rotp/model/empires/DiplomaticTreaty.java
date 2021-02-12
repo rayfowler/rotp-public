@@ -16,6 +16,7 @@
 package rotp.model.empires;
 
 import java.io.Serializable;
+import rotp.model.incidents.DiplomaticIncident;
 import rotp.util.Base;
 
 public class DiplomaticTreaty implements Base, Serializable {
@@ -31,9 +32,11 @@ public class DiplomaticTreaty implements Base, Serializable {
         statusKey = key;
         date = galaxy().currentTime();
     }
-    public String status()                { return text(statusKey); }
+    public String status(Empire e)        { return text(statusKey); }
     public float date()                   { return date; }
     public void nextTurn(Empire emp)      { }
+    public void noticeIncident(DiplomaticIncident inc) { }
+    public boolean wantToBreak(Empire e)  { return false; }
     public boolean isFinalWar()           { return false; }
     public boolean isWar()                { return false; }
     public boolean isNoTreaty()           { return false; }

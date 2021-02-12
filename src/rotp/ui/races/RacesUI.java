@@ -941,7 +941,7 @@ public class RacesUI extends BasePanel {
                 if (inRange) {
                     // treaty status
                     y1 += s20;
-                    g.drawString(view.embassy().treaty().status(), x1, y1);
+                    g.drawString(view.embassy().treaty().status(player()), x1, y1);
                     // trade
                     y1 += s16;
                     int level = view.trade().level();
