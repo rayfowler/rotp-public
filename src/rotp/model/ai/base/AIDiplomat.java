@@ -747,6 +747,11 @@ public class AIDiplomat implements Base, Diplomat {
         // this method is called only for targets that we are at war with
         // or targets we are preparing for war with
         
+        if (friend.isPlayer()) {
+            EmpireView v = empire.viewForEmpire(friend);
+            if (!v.otherView().embassy().readyForJointWar())
+                return false;
+        }    
         // if he's already at war, don't bother
         if (friend.atWarWith(target.id))
             return false;
@@ -857,11 +862,11 @@ public class AIDiplomat implements Base, Diplomat {
         return empire.viewForEmpire(requestor).accept(DialogueManager.ACCEPT_JOINT_WAR, inc);   
     }
     @Override
-    public DiplomaticReply refuseOfferJointWar(Empire requestor) {
+    public DiplomaticReply refuseOfferJointWar(Empire requestor, Empire target) {
         EmpireView v = empire.viewForEmpire(requestor);
         v.embassy().resetJointWarTimer();
         
-        if (empire.alliedWith(requestor.id)) 
+        if (empire.alliedWith(requestor.id) && requestor.atWarWith(target.id)) 
             return requestor.diplomatAI().receiveBreakAlliance(empire);            
         return DiplomaticReply.answer(false, declineReasonText(v));
     }
