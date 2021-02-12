@@ -625,7 +625,7 @@ public class AIDiplomat implements Base, Diplomat {
         if (!canOfferPact(v.empire()))
             return false;
         // how do we feel about them
-        float adjustedRelations = v.embassy().otherRelations();
+        float adjustedRelations = v.embassy().relations();
         adjustedRelations += empire.leader().acceptPactMod(v.empire());
         adjustedRelations += v.embassy().alliedWithEnemy() ? -50 : 0;
         return adjustedRelations > 20;
@@ -724,7 +724,7 @@ public class AIDiplomat implements Base, Diplomat {
         if (v.embassy().alliedWithEnemy())
             return false;
         // do we like the other to want to join an alliance
-        float adjustedRelations = v.embassy().otherRelations();
+        float adjustedRelations = v.embassy().relations();
         adjustedRelations += empire.leader().acceptAllianceMod(e);
         return adjustedRelations > 60;
     }
@@ -936,7 +936,7 @@ public class AIDiplomat implements Base, Diplomat {
         if (wantToDeclareWarOfOpportunity(v)) 
             return true;
         
-        float adjustedRelations = v.embassy().otherRelations();
+        float adjustedRelations = v.embassy().relations();
         adjustedRelations += empire.leader().preserveTreatyMod();
         return adjustedRelations < 20;
     }
@@ -953,7 +953,7 @@ public class AIDiplomat implements Base, Diplomat {
         if (!v.embassy().pact())
             return false;
 
-        float adjustedRelations = v.embassy().otherRelations();
+        float adjustedRelations = v.embassy().relations();
         adjustedRelations += empire.leader().preserveTreatyMod();
         return adjustedRelations < -20;
     }
@@ -1215,9 +1215,7 @@ public class AIDiplomat implements Base, Diplomat {
         float contemptMod = 10 * v.scaleOfContempt();
         warThreshold += contemptMod;
         
-        // relations is how they feel about us
-        // otherrelations is how we feel about them
-        return (v.embassy().otherRelations() <= warThreshold);
+        return (v.embassy().relations() <= warThreshold);
     }
     @Override
     public boolean wantToDeclareWarOfOpportunity(EmpireView v) {
