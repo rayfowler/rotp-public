@@ -28,15 +28,6 @@ import rotp.model.ai.base.AIShipCaptain;
 import rotp.model.ai.base.AIShipDesigner;
 import rotp.model.ai.base.AISpyMaster;
 import rotp.model.ai.base.AITreasurer;
-import rotp.model.ai.community.AICDiplomat;
-import rotp.model.ai.community.AICFleetCommander;
-import rotp.model.ai.community.AICGeneral;
-import rotp.model.ai.community.AICGovernor;
-import rotp.model.ai.community.AICScientist;
-import rotp.model.ai.community.AICShipCaptain;
-import rotp.model.ai.community.AICShipDesigner;
-import rotp.model.ai.community.AICSpyMaster;
-import rotp.model.ai.community.AICTreasurer;
 import rotp.model.ai.interfaces.Diplomat;
 import rotp.model.ai.interfaces.FleetCommander;
 import rotp.model.ai.interfaces.General;
@@ -75,28 +66,15 @@ public class AI implements Base {
 
     public AI (Empire e) {
         empire = e;
-        if (options().communityAI()) {
-            general = new AICGeneral(empire);
-            captain = new AICShipCaptain(empire);
-            governor = new AICGovernor(empire);
-            scientist = new AICScientist(empire);
-            diplomat = new AICDiplomat(empire);
-            shipDesigner = new AICShipDesigner(empire);
-            fleetCommander = new AICFleetCommander(empire);
-            spyMaster = new AICSpyMaster(empire);
-            treasurer = new AICTreasurer(empire);
-        }
-        else {
-            general = new AIGeneral(empire);
-            captain = new AIShipCaptain(empire);
-            governor = new AIGovernor(empire);
-            scientist = new AIScientist(empire);
-            diplomat = new AIDiplomat(empire);
-            shipDesigner = new AIShipDesigner(empire);
-            fleetCommander = new AIFleetCommander(empire);
-            spyMaster = new AISpyMaster(empire);
-            treasurer = new AITreasurer(empire);
-        }
+        general = new AIGeneral(empire);
+        captain = new AIShipCaptain(empire);
+        governor = new AIGovernor(empire);
+        scientist = new AIScientist(empire);
+        diplomat = new AIDiplomat(empire);
+        shipDesigner = new AIShipDesigner(empire);
+        fleetCommander = new AIFleetCommander(empire);
+        spyMaster = new AISpyMaster(empire);
+        treasurer = new AITreasurer(empire);
     }
 
     // MISC INTERFACE
