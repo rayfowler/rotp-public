@@ -1522,6 +1522,7 @@ RACES_AT_WAR                      | At war
 RACES_PEACE                       | Peace treaty
 RACES_PACT                        | Non-aggression pact
 RACES_ALLY                        | Alliance
+RACES_ALLY_STANDING               | Alliance: %1
 RACES_UNITY                       | Unity
 RACES_OUT_OF_RANGE                | Out of Ship Range
 RACES_TRADE_LEVEL                 | %1 BC trade treaty

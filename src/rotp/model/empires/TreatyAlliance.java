@@ -40,16 +40,16 @@ public class TreatyAlliance extends DiplomaticTreaty implements Base {
     @Override
     public boolean wantToBreak(Empire emp)    { 
         int index = emp.id == empire1 ? 0 : 1;
-        //return wantToBreak[index];
-        return false;
+        return wantToBreak[index];
     }
     @Override
     public String status(Empire e)            { 
+        //if ((empire1 != Empire.PLAYER_ID) && (empire2 != Empire.PLAYER_ID))
+        //    return text(statusKey);
         initStandings(); // backwards-save compatibility
         int index = e.id == empire1 ? 1 : 0;
         int v = standings[index];
-        //return text(statusKey, str(v));
-        return text(statusKey);
+        return text("RACES_ALLY_STANDING", str(v));
     }
     @Override
     public void nextTurn(Empire emp)      { 
@@ -79,6 +79,16 @@ public class TreatyAlliance extends DiplomaticTreaty implements Base {
             case 2 : standings[index] -= 4; break;
             default: standings[index] -= 5; break;
         }    
+        
+        //normalize so that max stnading is at least 50
+        //this ensures that alliances break up only when there
+        //is an imbalance in effort
+        int maxStanding = max(standings[0], standings[1]);
+        if (maxStanding < 50) {
+            int adj = 50-maxStanding;
+            standings[0] += adj;
+            standings[1] += adj;
+        }
         
         float chance = chanceBreak(index);
         wantToBreak[index] = random() < chance;
