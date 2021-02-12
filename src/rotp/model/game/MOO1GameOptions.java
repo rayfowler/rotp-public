@@ -127,27 +127,27 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     @Override
     public void selectedGameDifficulty(String s) { selectedGameDifficulty = s; }
     @Override
-    public String selectedResearchRate()         { return selectedResearchRate; }
+    public String selectedResearchRate()         { return selectedResearchRate == null ? RESEARCH_NORMAL : selectedResearchRate; }
     @Override
     public void selectedResearchRate(String s)   { selectedResearchRate = s; }
     @Override
-    public String selectedTechTradeOption()         { return selectedTechTradeOption; }
+    public String selectedTechTradeOption()         { return selectedTechTradeOption == null ? TECH_TRADING_YES : selectedTechTradeOption; }
     @Override
     public void selectedTechTradeOption(String s)   { selectedTechTradeOption = s; }
     @Override
-    public String selectedRandomEventOption()       { return selectedRandomEventOption; }
+    public String selectedRandomEventOption()       { return selectedRandomEventOption == null ? RANDOM_EVENTS_ON : selectedRandomEventOption; }
     @Override
     public void selectedRandomEventOption(String s) { selectedRandomEventOption = s; }
     @Override
-    public String selectedWarpSpeedOption()         { return selectedWarpSpeedOption; }
+    public String selectedWarpSpeedOption()         { return selectedWarpSpeedOption == null ? WARP_SPEED_NORMAL : selectedWarpSpeedOption; }
     @Override
     public void selectedWarpSpeedOption(String s)   { selectedWarpSpeedOption = s; }
     @Override
-    public String selectedNebulaeOption()           { return selectedNebulaeOption; }
+    public String selectedNebulaeOption()           { return selectedNebulaeOption == null ? NEBULAE_NORMAL : selectedNebulaeOption; }
     @Override
     public void selectedNebulaeOption(String s)     { selectedNebulaeOption = s; }
     @Override
-    public String selectedCouncilWinOption()        { return selectedCouncilWinOption; }
+    public String selectedCouncilWinOption()        { return selectedCouncilWinOption == null ? COUNCIL_REBELS : selectedCouncilWinOption; }
     @Override
     public void selectedCouncilWinOption(String s)  { selectedCouncilWinOption = s; }
     @Override
