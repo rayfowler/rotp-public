@@ -119,10 +119,25 @@ public class DiplomaticEmbassy implements Base, Serializable {
         casusBelliInc = null;
     }
     private void evaluateWarPreparations() {
-        if (casusBelliInc == null)
+        // we are assessing turn and about to enter diplomacy. Are our reasons
+        // for going to war still relevant? If not, fuhgeddaboudit
+        if (casusBelliInc != null) {
+            if (!casusBelliInc.triggersWar())
+                endWarPreparations();
             return;
-        if (casusBelliInc.currentSeverity() == 0) 
-            endWarPreparations();
+        }
+        
+        // re-evaluate hate and opportunity
+        switch(casusBelli) {
+            case DialogueManager.DECLARE_HATE_WAR: 
+                if (!view.owner().diplomatAI().wantToDeclareWarOfHate(view))
+                    endWarPreparations();
+                break;
+            case DialogueManager.DECLARE_OPPORTUNITY_WAR:
+                if (!view.owner().diplomatAI().wantToDeclareWarOfOpportunity(view))
+                    endWarPreparations();
+                return;
+        }
     }
     public void contact(boolean b)                       { contact = b; }
     public List<DiplomaticIncident> newIncidents() {
@@ -152,7 +167,6 @@ public class DiplomaticEmbassy implements Base, Serializable {
     }
     public void nextTurn(float prod) {
         peaceDuration--;
-        evaluateWarPreparations();
         treaty.nextTurn(empire());
     }
     public boolean finalWar()               { return treaty.isFinalWar(); 	}
@@ -281,6 +295,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
     }
     public void assessTurn() {
         log(view+" Embassy: assess turn");
+        evaluateWarPreparations();
         checkForIncidents();
 
         recalculateRelationsLevel();
@@ -324,7 +339,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
     public boolean wantWar()           { return otherEmbassy().relations() < -50; }
     public boolean isAlly()            { return (alliance() || unity()); }
     public boolean alliedWithEnemy() {
-        List<Empire> myEnemies = owner().enemies();
+        List<Empire> myEnemies = owner().warEnemies();
         List<Empire> hisAllies = empire().allies();
         for (Empire cv1 : myEnemies) {
             for (Empire cv2 : hisAllies) {

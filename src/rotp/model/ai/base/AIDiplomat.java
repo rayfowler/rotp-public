@@ -593,7 +593,7 @@ public class AIDiplomat implements Base, Diplomat {
 
         v.embassy().resetPactTimer();
         
-        float adjustedRelations = v.embassy().otherRelations();
+        float adjustedRelations = v.embassy().relations();
         adjustedRelations += empire.leader().acceptPactMod(requestor);
         adjustedRelations += requestor.diplomacyBonus();
         if (adjustedRelations < 20)
@@ -662,7 +662,7 @@ public class AIDiplomat implements Base, Diplomat {
 
         v.embassy().noteRequest();
 
-        List<Empire> myEnemies = v.owner().enemies();
+        List<Empire> myEnemies = v.owner().warEnemies();
         List<Empire> hisAllies = v.empire().allies();
         for (Empire enemy: myEnemies) {
             if (hisAllies.contains(enemy))
@@ -679,7 +679,7 @@ public class AIDiplomat implements Base, Diplomat {
         int erraticLeaderPenalty = requestor.leader().isErratic() ? -40 : 0;
  
         // if we don't like the requestor well enough, refuse now
-        float adjustedRelations = v.embassy().otherRelations();
+        float adjustedRelations = v.embassy().relations();
         adjustedRelations += empire.leader().acceptAllianceMod(requestor);
         adjustedRelations += requestor.diplomacyBonus();
         adjustedRelations += joinWarBonus;
@@ -1147,14 +1147,15 @@ public class AIDiplomat implements Base, Diplomat {
         }
         
         // must break alliance before declaring war
-        if (!view.embassy().alliance() && wantToDeclareWarOfOpportunity(view)) {
+        if (wantToDeclareWarOfOpportunity(view)) {
             beginOpportunityWar(view);
             return true;          
         }
 
         return false;
     }
-    private boolean wantToDeclareWarOfHate(EmpireView v) {
+    @Override
+    public boolean wantToDeclareWarOfHate(EmpireView v) {
         if (v.embassy().atPeace())
             return false;
         
@@ -1180,13 +1181,16 @@ public class AIDiplomat implements Base, Diplomat {
         // otherrelations is how we feel about them
         return (v.embassy().otherRelations() <= warThreshold);
     }
-    private boolean wantToDeclareWarOfOpportunity(EmpireView v) {
+    @Override
+    public boolean wantToDeclareWarOfOpportunity(EmpireView v) {
         if (v.embassy().atPeace())
+            return false;
+        if (v.embassy().alliance())
             return false;
         if (v.owner().leader().isPacifist())
             return false;
         if (v.owner().leader().isHonorable()
-        && (v.embassy().pact() ||v.embassy().alliance()))
+        && (v.embassy().pact() || v.embassy().alliance()))
             return false;
         
         // modnar: less likely war when already in some wars
