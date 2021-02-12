@@ -127,16 +127,19 @@ public class DiplomaticEmbassy implements Base, Serializable {
             return;
         }
         
-        // re-evaluate hate and opportunity
-        switch(casusBelli) {
-            case DialogueManager.DECLARE_HATE_WAR: 
-                if (!view.owner().diplomatAI().wantToDeclareWarOfHate(view))
-                    endWarPreparations();
-                break;
-            case DialogueManager.DECLARE_OPPORTUNITY_WAR:
-                if (!view.owner().diplomatAI().wantToDeclareWarOfOpportunity(view))
-                    endWarPreparations();
-                return;
+        if (casusBelli != null) {
+            // re-evaluate hate and opportunity
+            switch(casusBelli) {
+                case DialogueManager.DECLARE_HATE_WAR: 
+                    if (!view.owner().diplomatAI().wantToDeclareWarOfHate(view))
+                        endWarPreparations();
+                    break;
+                case DialogueManager.DECLARE_OPPORTUNITY_WAR:
+                    if (!view.owner().diplomatAI().wantToDeclareWarOfOpportunity(view))
+                        endWarPreparations();
+                    break;
+            }
+            return;
         }
     }
     public void contact(boolean b)                       { contact = b; }

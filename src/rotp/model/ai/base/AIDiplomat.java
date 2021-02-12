@@ -298,23 +298,25 @@ public class AIDiplomat implements Base, Diplomat {
             availableTechs.remove(wantedTech);
             if (empire.ai().scientist().researchValue(wantedTech) > 0) {
                 List<Tech> counterTechs = v.empire().diplomatAI().techsRequestedForCounter(empire, wantedTech);
-                List<Tech> previouslyOffered = v.embassy().alreadyOfferedTechs(wantedTech);
-                // simplified logic so that if we have ever asked for wantedTech before, don't ask again
-                if (previouslyOffered == null) {
-                     v.embassy().logTechExchangeRequest(wantedTech, counterTechs);
-                    // there are counters available.. send request
-                    DiplomaticReply reply = v.empire().diplomatAI().receiveRequestTech(empire, wantedTech);
-                    if ((reply != null) && reply.accepted()) {
-                        // techs the AI is willing to consider in exchange for wantedTech
-                        // find the tech with the lowest trade value
-                        counterTechs.add(wantedTech);
-                        Collections.sort(counterTechs, Tech.TRADE_PRIORITY);
-                        Tech cheapestCounter = counterTechs.get(0);
-                        // if the lowest trade value tech is not the requested tech, then make the deal
-                        if (cheapestCounter != wantedTech)
-                            v.empire().diplomatAI().receiveCounterOfferTech(empire, cheapestCounter, wantedTech);
+                if (!counterTechs.isEmpty()) {
+                    List<Tech> previouslyOffered = v.embassy().alreadyOfferedTechs(wantedTech);
+                    // simplified logic so that if we have ever asked for wantedTech before, don't ask again
+                    if (previouslyOffered == null) {
+                         v.embassy().logTechExchangeRequest(wantedTech, counterTechs);
+                        // there are counters available.. send request
+                        DiplomaticReply reply = v.empire().diplomatAI().receiveRequestTech(empire, wantedTech);
+                        if ((reply != null) && reply.accepted()) {
+                            // techs the AI is willing to consider in exchange for wantedTech
+                            // find the tech with the lowest trade value
+                            counterTechs.add(wantedTech);
+                            Collections.sort(counterTechs, Tech.TRADE_PRIORITY);
+                            Tech cheapestCounter = counterTechs.get(0);
+                            // if the lowest trade value tech is not the requested tech, then make the deal
+                            if (cheapestCounter != wantedTech)
+                                v.empire().diplomatAI().receiveCounterOfferTech(empire, cheapestCounter, wantedTech);
+                        }
+                        return true;
                     }
-                    return true;
                 }
             }
         }
@@ -729,16 +731,32 @@ public class AIDiplomat implements Base, Diplomat {
 //-----------------------------------
 //  JOINT WARS
 //-----------------------------------
-    public boolean willingToOfferJointWar(Empire friend, Empire target) {
-        if (!empire.atWarWith(target.id))
-            return false;
+    public boolean willingToRequestAllyToJoinWar(Empire friend, Empire target) {
+        // this method is called only for targets that we are at explicit war with
+        // and the friend is our ALLY
+        
+        // if he's already at war, don't bother
         if (friend.atWarWith(target.id))
             return false;
+        // if he's not in economic range, don't bother
         if (!friend.inEconomicRange(target.id))
             return false;
-        if (empire.alliedWith(friend.id))
-            return true;
-        return false;
+        return true;
+    }
+    public boolean willingToOfferJointWar(Empire friend, Empire target) {
+        // this method is called only for targets that we are at war with
+        // or targets we are preparing for war with
+        
+        // if he's already at war, don't bother
+        if (friend.atWarWith(target.id))
+            return false;
+        // if he's allied with the target, don't bother
+        if (friend.alliedWith(target.id))
+            return false;
+        // if he's not in economic range, don't bother
+        if (!friend.inEconomicRange(target.id))
+            return false;
+        return true;
     }
     @Override
     public DiplomaticReply receiveOfferJointWar(Empire requestor, Empire target) {
@@ -991,10 +1009,14 @@ public class AIDiplomat implements Base, Diplomat {
         if (v.embassy().finalWar() || v.embassy().unity())
             return;
         
+        // we can issue praise even to people we don't like
         if (decidedToIssuePraise(v))
             return;
 
-        if (v.embassy().war())
+        // if this empire is at war with us or we are preparing
+        // for war, then stop now. No more Mr. Nice Guy.
+        List<Empire> enemies = empire.enemies();
+        if (enemies.contains(v.empire()))
             return;
         
         if (decidedToExchangeTech(v))
@@ -1012,10 +1034,26 @@ public class AIDiplomat implements Base, Diplomat {
             v.empire().diplomatAI().receiveOfferAlliance(v.owner());
             return;
         }
-        for (Empire target: empire.contactedEmpires()) {
-            if (willingToOfferJointWar(v.empire(), target)) {
-                v.empire().diplomatAI().receiveOfferJointWar(v.owner(), target); 
-                return;
+        // build a priority list for Joint War offers:
+        // 1. see if we can draw our ally into our existing war 
+        // 2. if not, what about the empire we are about to war with?
+        List<Empire> warEnemies = empire.warEnemies();
+        List<Empire> comingWarEnemies = empire.enemies();
+        comingWarEnemies.removeAll(warEnemies);
+
+        // ask only allies for now, to avoid spam
+        if (v.embassy().alliance()) {
+            for (Empire target: warEnemies) {
+                if (willingToRequestAllyToJoinWar(v.empire(), target)) {
+                    v.empire().diplomatAI().receiveOfferJointWar(v.owner(), target); 
+                    return;
+                }                
+            }            
+            for (Empire target: comingWarEnemies) {
+                if (willingToOfferJointWar(v.empire(), target)) {
+                    v.empire().diplomatAI().receiveOfferJointWar(v.owner(), target); 
+                    return;
+                }                
             }
         }
     }
