@@ -37,7 +37,7 @@ public class FinancialAidIncident extends DiplomaticIncident {
         else
             emb.addIncident(inc);
         
-        for (Empire enemy: emp.enemies()) 
+        for (Empire enemy: emp.warEnemies()) 
             EnemyAidIncident.create(enemy, emp, donor, amt);
 
         return inc;

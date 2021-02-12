@@ -41,7 +41,7 @@ public class TechnologyAidIncident extends DiplomaticIncident {
         else
             emb.addIncident(inc);
         
-        for (Empire enemy: emp.enemies()) 
+        for (Empire enemy: emp.warEnemies()) 
             EnemyAidIncident.create(enemy, emp, donor, techId);
 
         return inc;
@@ -85,7 +85,7 @@ public class TechnologyAidIncident extends DiplomaticIncident {
             return decode(text("INC_TECHNOLOGY_AID_DESC_MULT")); 
     }
     @Override
-    public String key()          { return "Technology Aid"; }
+    public String key()          { return "Technology Aid:"+dateOccurred; }
     @Override
     public String decode(String s) {
         String s1 = super.decode(s);
