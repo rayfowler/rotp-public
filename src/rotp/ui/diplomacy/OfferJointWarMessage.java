@@ -61,6 +61,11 @@ public class OfferJointWarMessage extends TurnNotificationMessage {
     @Override
     public void escape() {
         DiplomaticReply reply = player().diplomatAI().refuseOfferJointWar(diplomat(), target);
+        if (reply == null) {
+            session().resumeNextTurnProcessing();
+            return;
+        }
+            
         reply.resumeTurn(true);
         DiplomaticMessage.reply(DiplomacyRequestReply.create(diplomat(), reply));	
     }

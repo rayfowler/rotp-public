@@ -867,8 +867,8 @@ public class AIDiplomat implements Base, Diplomat {
         v.embassy().resetJointWarTimer();
         
         if (empire.alliedWith(requestor.id) && requestor.atWarWith(target.id)) 
-            return requestor.diplomatAI().receiveBreakAlliance(empire);            
-        return DiplomaticReply.answer(false, declineReasonText(v));
+            return requestor.diplomatAI().receiveBreakAlliance(empire);        
+        return null;
     }
     //-----------------------------------
     //  BREAK TREATIES
