@@ -1106,6 +1106,13 @@ SETUP_STAR_DENSITY_NORMAL         | Normal
 SETUP_STAR_DENSITY_HIGH           | High
 SETUP_STAR_DENSITY_HIGHER         | Higher
 SETUP_STAR_DENSITY_HIGHEST        | Highest
+SETUP_AI_HOSTILITY_LOWEST         | Nicest
+SETUP_AI_HOSTILITY_LOWER          | Nicer
+SETUP_AI_HOSTILITY_LOW            | Nice
+SETUP_AI_HOSTILITY_NORMAL         | Normal
+SETUP_AI_HOSTILITY_HIGH           | Angry
+SETUP_AI_HOSTILITY_HIGHER         | Angrier
+SETUP_AI_HOSTILITY_HIGHEST        | Angriest
 SETUP_GAME_NUMBER_OPPONENTS       | Opponents
 SETUP_PLANET_QUALITY_POOR         | Poor
 SETUP_PLANET_QUALITY_MEDIOCRE     | Mediocre
@@ -1176,6 +1183,7 @@ SETTINGS_NEBULAE                  | Nebulae: %1
 SETTINGS_PLANET_QUALITY           | Planet Quality: %1
 SETTINGS_TERRAFORMING             | Hostile Terraforming: %1
 SETTINGS_FUEL_RANGE               | Fuel Range: %1
+SETTINGS_AI_HOSTILITY             | Hostility: %1
 SETTINGS_RANDOM_EVENTS_DESC       | Space Monsters are random events and considerable mid-game threats. Turn off space monsters or all random events. 
 SETTINGS_WARP_SPEED_DESC          | Increase the speed of more advanced warp technologies. This can be desirable on very large maps.
 SETTINGS_GALAXY_AGE_DESC          | Compared to normal galaxies, young galaxies have more white and blue stars while old galaxies have more red and neutron stars.
@@ -1188,6 +1196,7 @@ SETTINGS_TERRAFORMING_DESC        | Reduce or eliminate the benefits of the Impr
 SETTINGS_COUNCIL_DESC             | Disable the council victory condition or allow enemy empires to rebel against a player victory.
 SETTINGS_RANDOMIZE_AI_DESC        | Randomize the AI player personalities, racial abilities, or both.
 SETTINGS_FUEL_RANGE_DESC          | Increase the range of fuel range technologies and reserve fuel tanks.
+SETTINGS_AI_HOSTILITY_DESC        | Increase or decrease the general level of hostility between alien races.
 
 // Tech UI labels
 TECH_RESEARCH                     | Technology Research

@@ -118,12 +118,21 @@ public interface IGameOptions {
     public static final String RANDOMIZE_AI_ABILITY     = "SETUP_RANDOMIZE_AI_ABILITY";
     public static final String RANDOMIZE_AI_BOTH        = "SETUP_RANDOMIZE_AI_BOTH";
 
+    public static final String AI_HOSTILITY_LOWEST   = "SETUP_AI_HOSTILITY_LOWEST";
+    public static final String AI_HOSTILITY_LOWER    = "SETUP_AI_HOSTILITY_LOWER";
+    public static final String AI_HOSTILITY_LOW      = "SETUP_AI_HOSTILITY_LOW";
+    public static final String AI_HOSTILITY_NORMAL   = "SETUP_AI_HOSTILITY_NORMAL";
+    public static final String AI_HOSTILITY_HIGH     = "SETUP_AI_HOSTILITY_HIGH";
+    public static final String AI_HOSTILITY_HIGHER   = "SETUP_AI_HOSTILITY_HIGHER";
+    public static final String AI_HOSTILITY_HIGHEST  = "SETUP_AI_HOSTILITY_HIGHEST";
+    
     public default boolean isAutoPlay()          { return false; }
     public default boolean communityAI()         { return false; }
     public default boolean usingExtendedRaces()  { return (selectedNumberOpponents()+1) > startingRaceOptions().size(); }
     public default void communityAI(boolean b)   { }
     public default int maxOpponents()            { return MAX_OPPONENTS; }
     public default float hostileTerraformingPct() { return 1.0f; }
+    public default int baseAIRelationsAdj()       { return 0; }
     public default boolean randomizeAIPersonality()  { 
         switch (selectedRandomizeAIOption()) {
             case RANDOMIZE_AI_PERSONALITY:
@@ -180,6 +189,7 @@ public interface IGameOptions {
     public List<String> nebulaeOptions();
     public List<String> councilWinOptions();
     public List<String> starDensityOptions();
+    public List<String> aiHostilityOptions();
     public List<String> planetQualityOptions();
     public List<String> terraformingOptions();
     public List<String> fuelRangeOptions();
@@ -209,6 +219,8 @@ public interface IGameOptions {
     public void selectedCouncilWinOption(String s);
     public String selectedStarDensityOption();
     public void selectedStarDensityOption(String s);
+    public String selectedAIHostilityOption();
+    public void selectedAIHostilityOption(String s);
     public String selectedPlanetQualityOption();
     public void selectedPlanetQualityOption(String s);
     public String selectedTerraformingOption();
@@ -357,6 +369,11 @@ public interface IGameOptions {
     default String nextStarDensityOption() {
         List<String> opts = starDensityOptions();
         int index = opts.indexOf(selectedStarDensityOption())+1;
+        return index >= opts.size() ? opts.get(0) : opts.get(index);
+    }
+    default String nextAIHostilityOption() {
+        List<String> opts = aiHostilityOptions();
+        int index = opts.indexOf(selectedAIHostilityOption())+1;
         return index >= opts.size() ? opts.get(0) : opts.get(index);
     }
     default String nextPlanetQualityOption() {

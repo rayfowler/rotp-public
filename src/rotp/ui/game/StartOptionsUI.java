@@ -54,6 +54,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
     BaseText warpSpeedText;
     BaseText fuelRangeText;
     BaseText techTradingText;
+    BaseText aiHostilityText;
     
     public StartOptionsUI() {
         init0();
@@ -73,6 +74,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         warpSpeedText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         fuelRangeText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         techTradingText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        aiHostilityText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         addMouseListener(this);
         addMouseMotionListener(this);
     }
@@ -89,6 +91,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         researchRateText.displayText(researchRateStr());
         techTradingText.displayText(techTradingStr());
         warpSpeedText.displayText(warpSpeedStr());
+        aiHostilityText.displayText(aiHostilityStr());
     }
     public void open(BasePanel p) {
         parent = p;
@@ -117,9 +120,9 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         Font descFont = narrowFont(15);
         int leftM = s100;
         int rightM = s100;
-        int topM = s90;
+        int topM = s45;
         int w1 = w-leftM-rightM;
-        int h1 = h-topM-s90;
+        int h1 = h-topM-s45;
         g.setPaint(GameUI.settingsSetupBackground(w));
         g.fillRect(leftM, topM, w1, h1);
         String title = text("SETTINGS_TITLE");
@@ -139,7 +142,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
 
         
         // left column
-        int y2 = scaled(200);
+        int y2 = topM+scaled(110);
         int x2 = leftM+s10;
         int w2 = (w1/numColumns)-columnPad;
         int h2 = s90;
@@ -197,26 +200,6 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
         g.setPaint(GameUI.settingsSetupBackground(w));
-        g.fillRect(x2+s10, y2-s10, randomEventsText.stringWidth(g)+s10,s30);
-        randomEventsText.setScaledXY(x2+s20, y2+s7);
-        randomEventsText.draw(g);
-        desc = text("SETTINGS_RANDOM_EVENTS_DESC");
-        g.setColor(SystemPanel.blackText);
-        g.setFont(descFont);
-        lines = this.wrappedLines(g,desc, w2-s30);
-        y3 = y2+s10;
-        for (String line: lines) {
-            y3 += lineH;
-            g.drawString(line, x2+s20, y3);
-        }
-        
-        // middle column
-        y2 = scaled(200);
-        x2 = x2+w2+s20;
-        h2 = s90;
-        g.setColor(SystemPanel.blackText);
-        g.drawRect(x2, y2, w2, h2);
-        g.setPaint(GameUI.settingsSetupBackground(w));
         g.fillRect(x2+s10, y2-s10, planetQualityText.stringWidth(g)+s10,s30);
         planetQualityText.setScaledXY(x2+s20, y2+s7);
         planetQualityText.draw(g);
@@ -230,6 +213,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             g.drawString(line, x2+s20, y3);
         }
         
+        
         y2 += (h2+s20);
         g.setColor(SystemPanel.blackText);
         g.drawRect(x2, y2, w2, h2);
@@ -238,6 +222,43 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         terraformingText.setScaledXY(x2+s20, y2+s7);
         terraformingText.draw(g);
         desc = text("SETTINGS_TERRAFORMING_DESC");
+        g.setColor(SystemPanel.blackText);
+        g.setFont(descFont);
+        lines = this.wrappedLines(g,desc, w2-s30);
+        y3 = y2+s10;
+        for (String line: lines) {
+            y3 += lineH;
+            g.drawString(line, x2+s20, y3);
+        }
+        
+        // middle column
+        y2 = topM+scaled(110);
+        x2 = x2+w2+s20;
+        h2 = s90;
+        g.setColor(SystemPanel.blackText);
+        g.drawRect(x2, y2, w2, h2);
+        g.setPaint(GameUI.settingsSetupBackground(w));
+        g.fillRect(x2+s10, y2-s10, randomEventsText.stringWidth(g)+s10,s30);
+        randomEventsText.setScaledXY(x2+s20, y2+s7);
+        randomEventsText.draw(g);
+        desc = text("SETTINGS_RANDOM_EVENTS_DESC");
+        g.setColor(SystemPanel.blackText);
+        g.setFont(descFont);
+        lines = this.wrappedLines(g,desc, w2-s30);
+        y3 = y2+s10;
+        for (String line: lines) {
+            y3 += lineH;
+            g.drawString(line, x2+s20, y3);
+        }
+        
+        y2 += (h2+s20);
+        g.setColor(SystemPanel.blackText);
+        g.drawRect(x2, y2, w2, h2);
+        g.setPaint(GameUI.settingsSetupBackground(w));
+        g.fillRect(x2+s10, y2-s10, aiHostilityText.stringWidth(g)+s10,s30);
+        aiHostilityText.setScaledXY(x2+s20, y2+s7);
+        aiHostilityText.draw(g);
+        desc = text("SETTINGS_AI_HOSTILITY_DESC");
         g.setColor(SystemPanel.blackText);
         g.setFont(descFont);
         lines = this.wrappedLines(g,desc, w2-s30);
@@ -284,7 +305,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         }
         
         // right side
-        y2 = scaled(200);
+        y2 = topM+scaled(110);
         h2 = s90;
         x2 = x2+w2+s20;
         g.setColor(SystemPanel.blackText);
@@ -416,6 +437,10 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         String opt = text(newGameOptions().selectedWarpSpeedOption());
         return text("SETTINGS_WARP_SPEED", opt)+"   ";
     }
+    private String aiHostilityStr() {
+        String opt = text(newGameOptions().selectedAIHostilityOption());
+        return text("SETTINGS_AI_HOSTILITY", opt)+"   ";
+    }
     private String fuelRangeStr() {
         String opt = text(newGameOptions().selectedFuelRangeOption());
         return text("SETTINGS_FUEL_RANGE", opt)+"   ";
@@ -433,6 +458,11 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         softClick();
         newGameOptions().selectedStarDensityOption(newGameOptions().nextStarDensityOption());
         starDensityText.repaint(starDensityStr());
+    }
+    private void toggleAIHostility() {
+        softClick();
+        newGameOptions().selectedAIHostilityOption(newGameOptions().nextAIHostilityOption());
+        aiHostilityText.repaint(aiHostilityStr());
     }
     private void toggleNebulae(MouseEvent e) {
         softClick();
@@ -511,14 +541,16 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             hoverBox = starDensityText.bounds();
         else if (nebulaeText.contains(x,y))
             hoverBox = nebulaeText.bounds();
-        else if (randomEventsText.contains(x,y))
-            hoverBox = randomEventsText.bounds();
         else if (planetQualityText.contains(x,y))
             hoverBox = planetQualityText.bounds();
         else if (terraformingText.contains(x,y))
             hoverBox = terraformingText.bounds();
+        else if (randomEventsText.contains(x,y))
+            hoverBox = randomEventsText.bounds();
         else if (councilWinText.contains(x,y))
             hoverBox = councilWinText.bounds();
+        else if (aiHostilityText.contains(x,y))
+            hoverBox = aiHostilityText.bounds();
         else if (randomizeAIText.contains(x,y))
             hoverBox = randomizeAIText.bounds();
         else if (researchRateText.contains(x,y))
@@ -539,12 +571,14 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
                 starDensityText.mouseExit();
             else if (prevHover == nebulaeText.bounds())
                 nebulaeText.mouseExit();
-            else if (prevHover == randomEventsText.bounds())
-                randomEventsText.mouseExit();
             else if (prevHover == planetQualityText.bounds())
                 planetQualityText.mouseExit();
             else if (prevHover == terraformingText.bounds())
                 terraformingText.mouseExit();
+            else if (prevHover == randomEventsText.bounds())
+                randomEventsText.mouseExit();
+            else if (prevHover == aiHostilityText.bounds())
+                aiHostilityText.mouseExit();
             else if (prevHover == councilWinText.bounds())
                 councilWinText.mouseExit();
             else if (prevHover == randomizeAIText.bounds())
@@ -563,12 +597,14 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
                 starDensityText.mouseEnter();
             else if (hoverBox == nebulaeText.bounds())
                 nebulaeText.mouseEnter();
-            else if (hoverBox == randomEventsText.bounds())
-                randomEventsText.mouseEnter();
             else if (hoverBox == planetQualityText.bounds())
                 planetQualityText.mouseEnter();
             else if (hoverBox == terraformingText.bounds())
                 terraformingText.mouseEnter();
+            else if (hoverBox == randomEventsText.bounds())
+                randomEventsText.mouseEnter();
+            else if (hoverBox == aiHostilityText.bounds())
+                aiHostilityText.mouseEnter();
             else if (hoverBox == councilWinText.bounds())
                 councilWinText.mouseEnter();
             else if (hoverBox == randomizeAIText.bounds())
@@ -605,12 +641,14 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             toggleStarDensity();
         else if (hoverBox == nebulaeText.bounds())
             toggleNebulae(e);
-        else if (hoverBox == randomEventsText.bounds())
-            toggleRandomEvents();
         else if (hoverBox == planetQualityText.bounds())
             togglePlanetQuality();
         else if (hoverBox == terraformingText.bounds())
             toggleTerraforming();
+        else if (hoverBox == randomEventsText.bounds())
+            toggleRandomEvents();
+        else if (hoverBox == aiHostilityText.bounds())
+            toggleAIHostility();
         else if (hoverBox == councilWinText.bounds())
             toggleCouncilWin(e);
         else if (hoverBox == randomizeAIText.bounds())

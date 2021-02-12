@@ -65,6 +65,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private String selectedTerraformingOption;
     private String selectedFuelRangeOption;
     private String selectedRandomizeAIOption;
+    private String selectedAIHostilityOption;
 
     private transient GalaxyShape galaxyShape;
 
@@ -171,6 +172,10 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     @Override
     public void selectedRandomizeAIOption(String s) { selectedRandomizeAIOption = s; }
     @Override
+    public String selectedAIHostilityOption()       { return selectedAIHostilityOption == null ? AI_HOSTILITY_NORMAL : selectedAIHostilityOption; }
+    @Override
+    public void selectedAIHostilityOption(String s) { selectedAIHostilityOption = s; }
+    @Override
     public int selectedNumberOpponents()         { return selectedNumberOpponents; }
     @Override
     public void selectedNumberOpponents(int i)   { selectedNumberOpponents = i; generateGalaxy(); }
@@ -235,6 +240,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedTerraformingOption = opt.selectedTerraformingOption;
         selectedFuelRangeOption = opt.selectedFuelRangeOption;
         selectedRandomizeAIOption = opt.selectedRandomizeAIOption;
+        selectedAIHostilityOption = opt.selectedAIHostilityOption;
         
         if (opt.player != null) 
             player.copy(opt.player);
@@ -368,6 +374,19 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
                 return amt;                   // no additional slowing. 
         }
     }
+    @Override
+    public  int baseAIRelationsAdj()       { 
+        switch(selectedAIHostilityOption()) {
+            case AI_HOSTILITY_LOWEST:  return 30;
+            case AI_HOSTILITY_LOWER:   return 20;
+            case AI_HOSTILITY_LOW:     return 10;
+            case AI_HOSTILITY_HIGH:    return -10;
+            case AI_HOSTILITY_HIGHER:  return -20;
+            case AI_HOSTILITY_HIGHEST: return -30;
+            default: return 0;
+        } 
+    }
+
     @Override
     public boolean canTradeTechs(Empire e1, Empire e2) {
         switch(selectedTechTradeOption()) {
@@ -649,6 +668,18 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         return list;
     }
     @Override
+    public List<String> aiHostilityOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(AI_HOSTILITY_LOWEST);
+        list.add(AI_HOSTILITY_LOWER);
+        list.add(AI_HOSTILITY_LOW);
+        list.add(AI_HOSTILITY_NORMAL);
+        list.add(AI_HOSTILITY_HIGH);
+        list.add(AI_HOSTILITY_HIGHER);
+        list.add(AI_HOSTILITY_HIGHEST);
+        return list;
+    }
+    @Override
     public List<String> planetQualityOptions() {
         List<String> list = new ArrayList<>();
         list.add(PLANET_QUALITY_POOR);
@@ -718,6 +749,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedNebulaeOption = NEBULAE_NORMAL;
         selectedCouncilWinOption = COUNCIL_REBELS;
         selectedStarDensityOption = STAR_DENSITY_NORMAL;
+        selectedAIHostilityOption = AI_HOSTILITY_NORMAL;
         generateGalaxy();
     }
     private void generateGalaxy() {
