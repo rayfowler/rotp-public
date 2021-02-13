@@ -355,6 +355,7 @@ LOAD_GAME_LOADING                 | Loading...
 LOAD_GAME_BAD_VERSION             | Cannot load saved game file: %1. This file may be corrupt or outdated.
 LOAD_GAME_CANCEL                  | Cancel
 LOAD_GAME_OK                      | Load
+LOAD_GAME_TOO_LONG                | ...
 
 // Save Game UI
 SAVE_GAME_TITLE                   | Save Game
