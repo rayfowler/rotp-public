@@ -100,7 +100,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
             new ColonyIndustry(), new ColonyEcology(), new ColonyResearch() };
 
     private boolean underSiege = false;
-    private boolean keepEcoLockedToClean;
+    private boolean keepEcoLockedToClean; // unused
     private transient boolean hasNewOrders = false;
     private transient int cleanupAllocation = 0;
     private transient boolean recalcSpendingForNewTaxRate;
@@ -224,10 +224,11 @@ public final class Colony implements Base, IMappedObject, Serializable {
     public int allocationRemaining()              { return MAX_TICKS - totalAmountAllocated(); }
     public float totalPlanetaryResearch()         { 
         float totalBC = research().totalSpending();
+        float productAdj = planet().productionAdj();
         if (empire.divertColonyExcessToResearch()) {
-            totalBC += shipyard().excessSpending();
-            totalBC += defense().excessSpending();
-            totalBC += industry().excessSpending();
+            totalBC += shipyard().excessSpending() / productAdj;
+            totalBC += defense().excessSpending() / productAdj;
+            totalBC += industry().excessSpending() / productAdj;
             totalBC += ecology().excessSpending();
         }        
         float totalRP = totalBC * research().researchBonus();
@@ -235,10 +236,11 @@ public final class Colony implements Base, IMappedObject, Serializable {
     }
     public float totalPlanetaryResearchSpending() { 
         float totalBC = research().totalSpending(); 
+        float productAdj = planet().productionAdj();
         if (empire.divertColonyExcessToResearch()) {
-            totalBC += shipyard().excessSpending();
-            totalBC += defense().excessSpending();
-            totalBC += industry().excessSpending();
+            totalBC += shipyard().excessSpending() / productAdj;
+            totalBC += defense().excessSpending() / productAdj;
+            totalBC += industry().excessSpending() / productAdj;
             totalBC += ecology().excessSpending();
         }
         return totalBC;
