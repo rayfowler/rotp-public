@@ -796,6 +796,7 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         
         String button2Text = null;
         int button2W = 0;
+        int button2X = x1;
         int sw2 = 0;
         if  (c.votingInProgress()) {
             button2Text = c.hasVoted(pl) ? text("COUNCIL_COMPLETE_VOTING"): text("COUNCIL_SKIP_TO_PLAYER", pl.raceName());
@@ -804,7 +805,26 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
             gap = (w1-button1W-button2W)/3;
         }
         
-        int button1X = x1+gap;       
+        if (c.votingInProgress()) {
+            button2X = x1+gap;
+            skipBox.setBounds(button2X, buttonY, button2W, buttonH);
+            Point2D ptStart = new Point2D.Float(button2X, 0);
+            Point2D ptEnd = new Point2D.Float(button2X + button2W, 0);
+            LinearGradientPaint back2 = new LinearGradientPaint(ptStart, ptEnd, dist, colors);
+            boolean hovering = hoverTarget == skipBox;
+            g.setPaint(back2);
+            g.fillRoundRect(button2X, buttonY, button2W, buttonH, s3, s3);
+            Color c0 = hovering ? SystemPanel.yellowText : SystemPanel.whiteText;
+            g.setColor(c0);
+            Stroke prevStr = g.getStroke();
+            g.setStroke(BasePanel.stroke1);
+            g.drawRoundRect(button2X, buttonY, button2W, buttonH, s3, s3);
+            g.setStroke(prevStr);
+            int x2a = button2X + ((button2W - sw2) / 2);
+            drawBorderedString(g, button2Text, x2a, buttonY + buttonH - s9, SystemPanel.textShadowC, c0);          
+        }
+
+        int button1X = button2X+button2W+gap;   
         continueBox.setBounds(button1X, buttonY, button1W, buttonH);
         Point2D ptStart = new Point2D.Float(button1X, 0);
         Point2D ptEnd = new Point2D.Float(button1X + button1W, 0);
@@ -820,25 +840,6 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         g.setStroke(prevStr);
         int x2a = button1X + ((button1W - sw1) / 2);
         drawBorderedString(g, button1Text, x2a, buttonY + buttonH - s9, SystemPanel.textShadowC, c0);          
-
-        if (c.votingInProgress()) {
-            int button2X = button1X+button1W+gap;
-            skipBox.setBounds(button2X, buttonY, button2W, buttonH);
-            ptStart = new Point2D.Float(button2X, 0);
-            ptEnd = new Point2D.Float(button2X + button2W, 0);
-            LinearGradientPaint back2 = new LinearGradientPaint(ptStart, ptEnd, dist, colors);
-            hovering = hoverTarget == skipBox;
-            g.setPaint(back2);
-            g.fillRoundRect(button2X, buttonY, button2W, buttonH, s3, s3);
-            c0 = hovering ? SystemPanel.yellowText : SystemPanel.whiteText;
-            g.setColor(c0);
-            prevStr = g.getStroke();
-            g.setStroke(BasePanel.stroke1);
-            g.drawRoundRect(button2X, buttonY, button2W, buttonH, s3, s3);
-            g.setStroke(prevStr);
-            x2a = button2X + ((button2W - sw2) / 2);
-            drawBorderedString(g, button2Text, x2a, buttonY + buttonH - s9, SystemPanel.textShadowC, c0);          
-        }
 
 
 
