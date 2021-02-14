@@ -737,8 +737,19 @@ public final class GameSession implements Base, Serializable {
             RotPUI.instance().selectMainPanel();
         }
     }
+    public String saveDir() {
+        return concat(Rotp.jarPath(), "/", GameSession.SAVEFILE_DIRECTORY);
+    }
+    public String backupDir() {
+        return concat(Rotp.jarPath(), "/", GameSession.SAVEFILE_DIRECTORY,"/",GameSession.BACKUP_DIRECTORY);
+    }
     public File saveFileNamed(String fileName) {
-        return new File(Rotp.jarPath(), fileName);
+        String dirPath = concat(Rotp.jarPath(), "/", GameSession.SAVEFILE_DIRECTORY);
+        return new File(dirPath, fileName);
+    }
+    public File backupFileNamed(String fileName) {
+        String dirPath = concat(Rotp.jarPath(), "/", GameSession.SAVEFILE_DIRECTORY,"/",GameSession.BACKUP_DIRECTORY);
+        return new File(dirPath, fileName);
     }
     public File recentSaveFile() {
         return new File(Rotp.jarPath(), GameSession.RECENT_SAVEFILE);
@@ -795,12 +806,12 @@ public final class GameSession implements Base, Serializable {
         return true;
     }
     public void loadRecentSession(boolean startUp) {
-        loadSession(RECENT_SAVEFILE, startUp);
+        loadSession(saveDir(), RECENT_SAVEFILE, startUp);
     }
-    public void loadSession(String filename, boolean startUp) {
+    public void loadSession(String dir, String filename, boolean startUp) {
         try {
             log("Loading game from file: ", filename);
-            File saveFile = saveFileNamed(filename);
+            File saveFile = new File(dir, filename);
             InputStream file = new FileInputStream(saveFile);
             InputStream buffer = new BufferedInputStream(file);
             ObjectInput input = new ObjectInputStream(buffer);

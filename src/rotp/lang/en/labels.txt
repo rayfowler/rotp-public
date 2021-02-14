@@ -350,6 +350,8 @@ GAME_SETTINGS_BACKUP_DESC         | Enable to have your current game periodicall
 // Load Game UI
 LOAD_GAME_TITLE                   | Load Game
 LOAD_GAME_AUTOSAVE                | Most Recent Autosave
+LOAD_GAME_BACKUP_DIR              | Backup Directory: %1 files
+LOAD_GAME_SAVE_DIR                | Save Directory: %1 files
 LOAD_GAME_FILENAME                | Sort by Filename
 LOAD_GAME_DATE                    | by Date
 LOAD_GAME_SIZE                    | by Size

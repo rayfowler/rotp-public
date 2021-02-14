@@ -76,6 +76,8 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
 
     boolean hasAutosave = false;
     boolean loading = false;
+    boolean hasBackupDir = false;
+    boolean showingBackups = false;
     private final Rectangle cancelBox = new Rectangle();
     private final Rectangle loadBox = new Rectangle();
     private final Rectangle fileNameBox = new Rectangle();
@@ -99,6 +101,8 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
         selectedFile = "";
         hasAutosave = false;
         loading = false;
+        hasBackupDir = false;
+        showingBackups = false;
 
         sortListing();
     }
@@ -109,16 +113,40 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
         saveDates.clear();
         String ext = GameSession.SAVEFILE_EXTENSION;
         // check for autosave
-        File curDir = new File(Rotp.jarPath());
-        File autoSave = new File(curDir, GameSession.RECENT_SAVEFILE);
-        if (autoSave.isFile()) {
-            hasAutosave = true;
-            saveFiles.add(text("LOAD_GAME_AUTOSAVE"));
-            saveDates.add(fileDateFmt.format(autoSave.lastModified()));
-            saveSizes.add(autoSave.length());
-        }
+        String rotpPath = Rotp.jarPath();
+        String saveDirPath = concat(rotpPath,"/",GameSession.SAVEFILE_DIRECTORY);
+        String backupDirPath = concat(saveDirPath,"/",GameSession.BACKUP_DIRECTORY);
+        File saveDir = new File(saveDirPath);
+        File backupDir = new File(backupDirPath);
+        hasBackupDir = backupDir.exists() && backupDir.isDirectory();
+        
+        if (hasBackupDir) {
+            if (showingBackups) {
+                long size = saveDir.listFiles().length;
+                saveFiles.add(text("LOAD_GAME_SAVE_DIR", (int)size));
+                saveDates.add("");
+                saveSizes.add(0L);            }
+            else {
+                long size = backupDir.listFiles().length;
+                saveFiles.add(text("LOAD_GAME_BACKUP_DIR", (int)size));
+                saveDates.add("");
+                saveSizes.add(0L);
+            }
+        }       
 
-        File[] filesList = curDir.listFiles();
+        File[] filesList;           
+        if (showingBackups) 
+            filesList = backupDir.listFiles();
+        else {
+            filesList = saveDir.listFiles();
+            File autoSave = new File(saveDir, GameSession.RECENT_SAVEFILE);
+            if (autoSave.isFile()) {
+                hasAutosave = true;
+                saveFiles.add(text("LOAD_GAME_AUTOSAVE"));
+                saveDates.add(fileDateFmt.format(autoSave.lastModified()));
+                saveSizes.add(autoSave.length());
+            }
+        }
         
         switch(sortOrder) {
             case SORT_FN_UP : Arrays.sort(filesList, FILE_NAME); break;
@@ -142,8 +170,9 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
                 }
             }
         }
+        int initialIndex = hasBackupDir ? 1 : 0;
         if (!saveDates.isEmpty()) {
-            selectIndex = 0;
+            selectIndex = initialIndex;
             if (hasAutosave)
                 selectedFile = GameSession.RECENT_SAVEFILE;
             else
@@ -300,8 +329,9 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
         GameUI.gameName = fileBaseName(s);
         repaint();
         buttonClick();
-        final Runnable load = () -> {
-            GameSession.instance().loadSession(s, false);
+        String dirName = showingBackups ? session().backupDir() : session().saveDir();
+        final Runnable load = () -> {           
+            GameSession.instance().loadSession(dirName, s, false);
         };
         SwingUtilities.invokeLater(load);
     }
@@ -587,7 +617,13 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
                         selectIndex = i;
                 }
                 int fileIndex = start+selectIndex;
-                if ((fileIndex == 0) && hasAutosave)
+                int autoSaveIndex = hasBackupDir ? 1 : 0;
+                if ((fileIndex == 0) && hasBackupDir) {
+                    showingBackups = !showingBackups;
+                    selectBox = null;
+                    sortListing();
+                }
+                else if ((fileIndex == autoSaveIndex) && hasAutosave)
                     selectedFile = GameSession.RECENT_SAVEFILE;
                 else
                     selectedFile = saveFiles.get(start+selectIndex)+GameSession.SAVEFILE_EXTENSION;
