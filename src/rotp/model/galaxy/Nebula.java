@@ -178,6 +178,9 @@ public class Nebula extends MapSprite implements Base, IMappedObject, Serializab
         g2.drawImage(image(), mShape.x, mShape.y, mShape.x+mShape.width, mShape.y+mShape.height, 0, 0, image().getWidth(), image().getHeight(), map);
         float scale = map.scaleX();
         
+        if (map.hideSystemNames())
+            return;
+        
         // use smaller font when we have the full name
         int fontSize = sysId <= 0 ? (int) (size*1800/scale) : (int) (size*1200/scale);
         if (fontSize >= 14) {
