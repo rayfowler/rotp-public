@@ -628,7 +628,7 @@ public class AIDiplomat implements Base, Diplomat {
         float adjustedRelations = v.embassy().relations();
         adjustedRelations += empire.leader().acceptPactMod(v.empire());
         adjustedRelations += v.embassy().alliedWithEnemy() ? -50 : 0;
-        return adjustedRelations > 20;
+        return adjustedRelations > 30;
     }
     //-----------------------------------
     //  ALLIANCE
@@ -726,7 +726,7 @@ public class AIDiplomat implements Base, Diplomat {
         // do we like the other to want to join an alliance
         float adjustedRelations = v.embassy().relations();
         adjustedRelations += empire.leader().acceptAllianceMod(e);
-        return adjustedRelations > 60;
+        return adjustedRelations > 70;
     }
 //-----------------------------------
 //  JOINT WARS
