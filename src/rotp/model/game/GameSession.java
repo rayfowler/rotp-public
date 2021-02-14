@@ -70,7 +70,7 @@ public final class GameSession implements Base, Serializable {
     public static final String SAVEFILE_DIRECTORY = ".";
     public static final String BACKUP_DIRECTORY = "backup";
     public static final String SAVEFILE_EXTENSION = ".rotp";
-    public static final String RECENT_SAVEFILE = "recent.rotp";
+    public static final String RECENT_SAVEFILE = "recent"+SAVEFILE_EXTENSION;
     public static final SimpleDateFormat dateFmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
     public static final Object ONE_GAME_AT_A_TIME = new Object();
     private static GameSession instance = new GameSession();
@@ -761,7 +761,7 @@ public final class GameSession implements Base, Serializable {
         String turn = "T"+pad4.format(num);
         String opp = "vs"+options().selectedNumberOpponents();
         String dash = "-";               
-        return concat(leader,dash,race,dash,gShape,dash,gSize,dash,diff,dash,opp,dash,turn,".rotp");
+        return concat(leader,dash,race,dash,gShape,dash,gSize,dash,diff,dash,opp,dash,turn,SAVEFILE_EXTENSION);
     }
     public void saveRecentSession(boolean endOfTurn) {
         String filename = RECENT_SAVEFILE;
