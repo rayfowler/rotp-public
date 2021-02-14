@@ -1,4 +1,4 @@
-/*
+ /*
  * Copyright 2015-2020 Ray Fowler
  * 
  * Licensed under the GNU General Public License, Version 3 (the "License");
@@ -86,9 +86,10 @@ public class AISpyMaster implements Base, SpyMaster {
                 maxSpiesNeeded = 0; // modnar: no spies if not in range
         }
         else if (v.embassy().pact())
-            // modnar: reduce spies needed for large number of active empires
-            maxSpiesNeeded = galaxy().numActiveEmpires() > 20 ? 0 : 1;
-        else   // unity() or alliance()
+            maxSpiesNeeded = 1;
+        else if (v.embassy().alliance()) 
+            maxSpiesNeeded = 1;
+        else // unity
             maxSpiesNeeded = 0;
 
         // modnar: reduce allocation to 1 tick per spy needed, better for larger games with more empires
