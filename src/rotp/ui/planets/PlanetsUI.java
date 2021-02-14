@@ -1022,45 +1022,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             Design d = c.shipyard().design();
             g.drawImage(initializedBackgroundImage(w, h), x,y, null);
 
-            int y0a = h/3;
-            int y0b = h*2/3;
-
-            // horizontal bars
-            g.setColor(darkBrown);
-            g.fillRect(x, y+s4,     w, s4);
-            g.fillRect(x, y+h-s8,   w, s4);
-            g.fillRect(x, y+y0a,    w, s4);
-            g.fillRect(x, y+y0b-s4, w, s4);
-
-            g.setColor(brown);
-            g.fillRect(x, y+s8,     w, s4);
-            g.fillRect(x, y+h-s12,  w, s4);
-            g.fillRect(x, y+y0a-s4, w, s4);
-            g.fillRect(x, y+y0b,    w, s4);
-
-            // vertical bars
-            g.setColor(darkBrown);
-            g.fillRect(x+w/8,   y+y0a+s4, s4, y0b-y0a-s8);
-            g.fillRect(x+w*3/8, y+y0a+s4, s4, y0b-y0a-s8);
-            g.fillRect(x+w*5/8, y+y0a+s4, s4, y0b-y0a-s8);
-            g.fillRect(x+w*7/8, y+y0a+s4, s4, y0b-y0a-s8);
-
-            Stroke prevStroke = g.getStroke();
-            g.setStroke(stroke2);
-            g.drawLine(x+s4,         y+s12,    x+(w/5)-s4,   y+y0a-s4);
-            g.drawLine(x+(w/5)+s4,   y+y0a-s4, x+(w*2/5)-s4, y+s12);
-            g.drawLine(x+(w*2/5)+s4, y+s12,    x+(w*3/5)-s4, y+y0a-s4);
-            g.drawLine(x+(w*3/5)+s4, y+y0a-s4, x+(w*4/5)-s4, y+s12);
-            g.drawLine(x+(w*4/5)+s4, y+s12,    x+w-s4,       y+y0a-s4);
-
-            g.drawLine(x+s4,         y+h-s12,  x+(w/5)-s4,   y+y0b+s4);
-            g.drawLine(x+(w/5)+s4,   y+y0b+s4, x+(w*2/5)-s4, y+h-s12);
-            g.drawLine(x+(w*2/5)+s4, y+h-s12,  x+(w*3/5)-s4, y+y0b+s4);
-            g.drawLine(x+(w*3/5)+s4, y+y0b+4,  x+(w*4/5)-4,  y+h-12);
-            g.drawLine(x+(w*4/5)+s4, y+h-s12,  x+w-s4,       y+y0b+s4);
-
-            g.setStroke(prevStroke);
-
             // draw design image
             Image img = d.image();
             int w0 = img.getWidth(null);
@@ -1074,7 +1035,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             g.drawImage(img, x1, y1, x1+w1, y1+h1, 0, 0, w0, h0, this);
 
             if (hoverBox == shipDesignBox) {
-                prevStroke = g.getStroke();
+                Stroke prevStroke = g.getStroke();
                 g.setStroke(stroke2);
                 g.setColor(SystemPanel.yellowText);
                 g.drawRect(x, y, w, h);
