@@ -275,6 +275,14 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
         sortListing();
         repaint();
     }
+    private void toggleSaveBackupListing() {
+        showingBackups = !showingBackups;
+        selectBox = null;
+        start = 0;
+        selectIndex = 0;
+        sortListing();
+        current.repaint();
+    }
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
         int count = e.getUnitsToScroll();
@@ -308,6 +316,10 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
                 if (canSelect())
                     loadGame(selectedFile);
                 return;
+            case KeyEvent.VK_TAB:
+                if (hasBackupDir)
+                    toggleSaveBackupListing();
+                break;
             case KeyEvent.VK_ESCAPE:
             case KeyEvent.VK_C:    cancelLoad();      return;
         }
@@ -645,20 +657,12 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
                 return;
             }
             if (hoverBox == backupDirBox) {
-                if (!showingBackups) {
-                    showingBackups = true;
-                    selectBox = null;
-                    sortListing();
-                    current.repaint();
-                }
+                if (!showingBackups) 
+                    toggleSaveBackupListing();
             }
             if (hoverBox == saveDirBox) {
-                if (showingBackups) {
-                    showingBackups = false;
-                    selectBox = null;
-                    sortListing();
-                    current.repaint();
-                }
+                if (showingBackups) 
+                    toggleSaveBackupListing();
             }
             if (count == 2)
                 loadGame(selectedFile);
