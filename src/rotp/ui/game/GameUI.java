@@ -67,7 +67,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     private static final Color[] titleShade = { new Color(25,25,25), new Color(25,25,25) };
     private static final Color[] labelColor = { new Color(79,52,33), new Color(39,44,44) };
     private static final Color[] raceEdgeColor = { new Color(114,75,49), new Color(44,48,47) };
-    private static final Color[] raceCenterColor = { new Color(179,117,77), new Color(78,86,85) };
+    private static final Color[] raceCenterColor = { new Color(179,117,77), new Color(86,96,95) };
     private static final Color[] borderBrightColor = { new Color(254,204,153), new Color(172,181,181) };
     private static final Color[] borderMidColor = { new Color(179,116,73), new Color(106,121,121) };
     private static final Color[] borderDarkColor = { new Color(79,52,33),  new Color(39,44,44) };
@@ -80,9 +80,9 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     private static final Color[] textHoverColor = { new Color(250,247,140), new Color(253,219,180) };
     private static final Color[] textSelectedColor = { new Color(153,196,153), new Color(151,136,205) };
     private static final Color[] textShade = { new Color(25,25,25), new Color(25,25,25) };
-    private static final Color[] loadHiBackgroundColor = { new Color(188,123,81), new Color(82,91,90) };
+    private static final Color[] loadHiBackgroundColor = { new Color(188,123,81), new Color(91,101,100) };
     private static final Color[] loadHoverBackgroundColor = { new Color(219,167,122), new Color(160,172,170) };
-    private static final Color[] loadListMask = { new Color(0,0,0,80), new Color(0,0,0,80) };
+    private static final Color[] loadListMask = { new Color(0,0,0,120), new Color(0,0,0,120) };
     private static final Color[] sortLabelBackColor = { new Color(100,70,50), new Color(59,66,65) };
     private static LinearGradientPaint[] loadBackground;
     private static LinearGradientPaint[] raceLeftBackground;

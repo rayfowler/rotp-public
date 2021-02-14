@@ -22,6 +22,7 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.LinearGradientPaint;
 import java.awt.Rectangle;
+import java.awt.Shape;
 import java.awt.Stroke;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -30,6 +31,7 @@ import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.awt.geom.Point2D;
+import java.awt.geom.RoundRectangle2D;
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -65,8 +67,8 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
     List<Long> saveSizes = new ArrayList<>();
     List<String> saveDates = new ArrayList<>();
     String selectedFile = "";
-    Rectangle hoverBox;
-    Rectangle selectBox;
+    Shape hoverBox;
+    Shape selectBox;
     int selectIndex;
     int start = 0;
     int end = 0;
@@ -78,11 +80,15 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
     boolean loading = false;
     boolean hasBackupDir = false;
     boolean showingBackups = false;
+    String backupDirInfo = "";
+    String saveDirInfo = "";
     private final Rectangle cancelBox = new Rectangle();
     private final Rectangle loadBox = new Rectangle();
     private final Rectangle fileNameBox = new Rectangle();
     private final Rectangle fileSizeBox = new Rectangle();
     private final Rectangle fileDateBox = new Rectangle();
+    private final RoundRectangle2D saveDirBox = new RoundRectangle2D.Float();
+    private final RoundRectangle2D backupDirBox = new RoundRectangle2D.Float();
     private LinearGradientPaint[] loadBackC;
     private LinearGradientPaint[] cancelBackC;
 
@@ -120,18 +126,12 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
         File backupDir = new File(backupDirPath);
         hasBackupDir = backupDir.exists() && backupDir.isDirectory();
         
+        long sSize = saveDir.listFiles().length;
+        saveDirInfo = text("LOAD_GAME_SAVE_DIR", (int)sSize);
+        
         if (hasBackupDir) {
-            if (showingBackups) {
-                long size = saveDir.listFiles().length;
-                saveFiles.add(text("LOAD_GAME_SAVE_DIR", (int)size));
-                saveDates.add("");
-                saveSizes.add(0L);            }
-            else {
-                long size = backupDir.listFiles().length;
-                saveFiles.add(text("LOAD_GAME_BACKUP_DIR", (int)size));
-                saveDates.add("");
-                saveSizes.add(0L);
-            }
+            long bSize = backupDir.listFiles().length;
+            backupDirInfo = text("LOAD_GAME_BACKUP_DIR", (int)bSize);
         }       
 
         File[] filesList;           
@@ -170,9 +170,8 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
                 }
             }
         }
-        int initialIndex = hasBackupDir ? 1 : 0;
         if (!saveDates.isEmpty()) {
-            selectIndex = initialIndex;
+            selectIndex = 0;
             if (hasAutosave)
                 selectedFile = GameSession.RECENT_SAVEFILE;
             else
@@ -371,7 +370,7 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
             String title = text("LOAD_GAME_TITLE");
             g.setFont(font(60));
             int sw = g.getFontMetrics().stringWidth(title);
-            drawShadowedString(g, title, 1, 3, (w-sw)/2, scaled(140), GameUI.titleShade(), GameUI.titleColor());
+            drawShadowedString(g, title, 1, 3, (w-sw)/2, scaled(120), GameUI.titleShade(), GameUI.titleColor());
 
             end = min(saveFiles.size(), start+MAX_FILES);
 
@@ -381,11 +380,45 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
             int y0 = scaled(180);
 
             // draw back mask
-            int wTop = s10;
+            int wTop = hasBackupDir ? s45 : s10;
             int wSide = s40;
             int wBottom = s80;
             g.setColor(GameUI.loadListMask());
             g.fillRect(x0-wSide, y0-wTop, w0+wSide+wSide, h0+lineH+wTop+wBottom);
+            
+            // draw dir info
+            if (hasBackupDir) {
+                g.setFont(narrowFont(20));
+                int sw0 = g.getFontMetrics().stringWidth(saveDirInfo);
+                saveDirBox.setRoundRect(x0, y0-s30, sw0+s20, s30, s8, s8);
+                if (showingBackups)
+                    g.setColor(GameUI.loadHiBackground());
+                else
+                    g.setColor(GameUI.loadHoverBackground());
+                g.fill(saveDirBox);
+                if (hoverBox == saveDirBox)
+                    g.setColor(Color.yellow);
+                else
+                    g.setColor(SystemPanel.blackText);
+                g.drawString(saveDirInfo, x0+s10, y0-s10);
+            
+                int sw1 = g.getFontMetrics().stringWidth(backupDirInfo);
+                int x1 = x0+sw0+s30;
+                backupDirBox.setRoundRect(x1, y0-s30, sw1+s20, s30, s8, s8);
+                if (!showingBackups)
+                    g.setColor(GameUI.loadHiBackground());
+                else
+                    g.setColor(GameUI.loadHoverBackground());
+                g.fill(backupDirBox);
+                if (hoverBox == backupDirBox)
+                    g.setColor(Color.yellow);
+                else
+                    g.setColor(SystemPanel.blackText);
+                g.drawString(backupDirInfo, x1+s10, y0-s10);
+                
+                g.setColor(GameUI.loadHoverBackground());
+                g.fillRect(x0,y0-s3,w0,s3);
+            }
 
             g.setColor(GameUI.raceCenterColor());
             g.fillRect(x0, y0, w0, h0+lineH);
@@ -540,7 +573,7 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
             if (dragging && listBox.contains(x,y))
                 scrollY(deltaY);
 
-            Rectangle oldHover = hoverBox;
+            Shape oldHover = hoverBox;
             hoverBox = null;
 
             if (loadBox.contains(x,y))
@@ -553,6 +586,10 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
                 hoverBox = fileDateBox;
             else if (fileSizeBox.contains(x,y))
                 hoverBox = fileSizeBox;
+            else if (saveDirBox.contains(x,y))
+                hoverBox = saveDirBox;
+            else if (backupDirBox.contains(x,y))
+                hoverBox = backupDirBox;
             else {
                 for (int i=0;i<gameBox.length;i++) {
                     if (gameBox[i].contains(x,y))
@@ -607,6 +644,22 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
                 cancelLoad();
                 return;
             }
+            if (hoverBox == backupDirBox) {
+                if (!showingBackups) {
+                    showingBackups = true;
+                    selectBox = null;
+                    sortListing();
+                    current.repaint();
+                }
+            }
+            if (hoverBox == saveDirBox) {
+                if (showingBackups) {
+                    showingBackups = false;
+                    selectBox = null;
+                    sortListing();
+                    current.repaint();
+                }
+            }
             if (count == 2)
                 loadGame(selectedFile);
             if (hoverBox != selectBox) {
@@ -617,13 +670,7 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
                         selectIndex = i;
                 }
                 int fileIndex = start+selectIndex;
-                int autoSaveIndex = hasBackupDir ? 1 : 0;
-                if ((fileIndex == 0) && hasBackupDir) {
-                    showingBackups = !showingBackups;
-                    selectBox = null;
-                    sortListing();
-                }
-                else if ((fileIndex == autoSaveIndex) && hasAutosave)
+                if ((fileIndex == 0) && hasAutosave)
                     selectedFile = GameSession.RECENT_SAVEFILE;
                 else
                     selectedFile = saveFiles.get(start+selectIndex)+GameSession.SAVEFILE_EXTENSION;

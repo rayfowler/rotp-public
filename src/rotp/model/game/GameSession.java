@@ -710,14 +710,13 @@ public final class GameSession implements Base, Serializable {
         else
             return text("MAIN_ADVANCING_TURN", galaxy().currentTurn()+1);
     }
-    public void saveSession(String filename, String dir) throws Exception {
-        log("Saving game as file: ", dir+"/"+filename);
+    public void saveSession(String filename, boolean backup) throws Exception {
+        log("Saving game as file: ", filename, "  backup: "+backup);
         GameSession currSession = GameSession.instance();        
-        log("Session started");
-        File theDir = new File(concat(Rotp.jarPath(),"/",dir));
+        File theDir = backup ? new File(backupDir()) : new File(saveDir());
         if (!theDir.exists())
             theDir.mkdirs();
-        File saveFile = saveFileNamed(dir+"/"+filename);
+        File saveFile = backup ? backupFileNamed(filename) : saveFileNamed(filename);
         OutputStream fileOut = new FileOutputStream(saveFile);
         OutputStream buffer = new BufferedOutputStream(fileOut);
         ObjectOutput output = new ObjectOutputStream(buffer);
@@ -741,18 +740,16 @@ public final class GameSession implements Base, Serializable {
         return concat(Rotp.jarPath(), "/", GameSession.SAVEFILE_DIRECTORY);
     }
     public String backupDir() {
-        return concat(Rotp.jarPath(), "/", GameSession.SAVEFILE_DIRECTORY,"/",GameSession.BACKUP_DIRECTORY);
+        return concat(saveDir(),"/",GameSession.BACKUP_DIRECTORY);
     }
     public File saveFileNamed(String fileName) {
-        String dirPath = concat(Rotp.jarPath(), "/", GameSession.SAVEFILE_DIRECTORY);
-        return new File(dirPath, fileName);
+        return new File(saveDir(), fileName);
     }
     public File backupFileNamed(String fileName) {
-        String dirPath = concat(Rotp.jarPath(), "/", GameSession.SAVEFILE_DIRECTORY,"/",GameSession.BACKUP_DIRECTORY);
-        return new File(dirPath, fileName);
+        return new File(backupDir(), fileName);
     }
     public File recentSaveFile() {
-        return new File(Rotp.jarPath(), GameSession.RECENT_SAVEFILE);
+        return new File(saveDir(), GameSession.RECENT_SAVEFILE);
     }
     private String backupFileName(int num) {
         Empire pl = player();
@@ -769,7 +766,7 @@ public final class GameSession implements Base, Serializable {
     public void saveRecentSession(boolean endOfTurn) {
         String filename = RECENT_SAVEFILE;
         try {
-            saveSession(filename, SAVEFILE_DIRECTORY);
+            saveSession(filename, false);
             if (endOfTurn)
                saveBackupSession(galaxy().currentTurn());
         }
@@ -786,7 +783,7 @@ public final class GameSession implements Base, Serializable {
             if (backupTurns > 0) {
                 if ((turn == 1) || (turn % backupTurns == 0)) {
                     filename = backupFileName(turn);
-                    saveSession(filename, SAVEFILE_DIRECTORY+"/"+BACKUP_DIRECTORY);
+                    saveSession(filename, true);
                 }
             }
         }
