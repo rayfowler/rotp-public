@@ -393,6 +393,10 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
                         g.setPaint(GameUI.loadHoverBackground());
                         g.fillRect(x0+s20, lineY-s4, w0-s40, lineH);
                     }
+                    else if (i % 2 == 1) {
+                        g.setPaint(GameUI.loadHiBackground());
+                        g.fillRect(x0+s20, lineY-s4, w0-s40, lineH);
+                    }
                     if (i<end) {
                         drawSaveGame(g, boxIndex, saveFiles.get(i), saveSizes.get(i), saveDates.get(i), x0, lineY, w0, lineH);
                         gameBox[boxIndex].setBounds(x0,lineY,w0,lineH);

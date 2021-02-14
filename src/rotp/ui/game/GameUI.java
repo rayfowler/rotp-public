@@ -80,6 +80,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     private static final Color[] textHoverColor = { new Color(250,247,140), new Color(253,219,180) };
     private static final Color[] textSelectedColor = { new Color(153,196,153), new Color(151,136,205) };
     private static final Color[] textShade = { new Color(25,25,25), new Color(25,25,25) };
+    private static final Color[] loadHiBackgroundColor = { new Color(188,123,81), new Color(82,91,90) };
     private static final Color[] loadHoverBackgroundColor = { new Color(219,167,122), new Color(160,172,170) };
     private static final Color[] loadListMask = { new Color(0,0,0,80), new Color(0,0,0,80) };
     private static final Color[] sortLabelBackColor = { new Color(100,70,50), new Color(59,66,65) };
@@ -132,6 +133,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     public static Color borderBrightColor()       { return borderBrightColor[opt()]; }
     public static Color borderMidColor()          { return borderMidColor[opt()]; }
     public static Color borderDarkColor()         { return borderDarkColor[opt()]; }
+    public static Color loadHiBackground()        { return loadHiBackgroundColor[opt()]; }
     public static Color loadHoverBackground()     { return loadHoverBackgroundColor[opt()]; }
     public static Color loadListMask()            { return loadListMask[opt()]; }
     public static Color sortLabelBackColor()      { return sortLabelBackColor[opt()]; }
