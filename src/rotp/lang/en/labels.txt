@@ -298,7 +298,9 @@ GAME_ENLARGE                      | Expand
 
 // Game Settings UI
 GAME_SETTINGS_TITLE               | Game Settings
-GAME_SETTINGS_DESCRIPTION         | Click to toggle each game setting. To reset settings, delete the Remnants.cfg file.
+GAME_SETTINGS_DESCRIPTION         | Click to toggle each game setting. 
+GAME_SETTINGS_EXIT                | Exit
+GAME_SETTINGS_DEFAULT             | Set to Default
 GAME_SETTINGS_DISPLAY_MODE        | Display Mode: %1
 GAME_SETTINGS_WINDOWED            | Windowed
 GAME_SETTINGS_BORDERLESS          | Borderless
@@ -1171,7 +1173,8 @@ SETUP_VOID_4                      | Void 4
 // Advanced Settings
 SETTINGS_TITLE                    | Advanced Game Options
 SETTINGS_DESCRIPTION              | Click to toggle each game setting.
-SETTINGS_ACCEPT                   | Accept
+SETTINGS_EXIT                     | Exit
+SETTINGS_DEFAULT                  | Set to Default
 SETTINGS_STAR_DENSITY             | Star Density: %1
 SETTINGS_RANDOM_EVENTS            | Random Events: %1
 SETTINGS_RESEARCH_RATE            | Research Rate: %1

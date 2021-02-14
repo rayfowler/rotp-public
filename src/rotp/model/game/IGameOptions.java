@@ -152,6 +152,7 @@ public interface IGameOptions {
         }
     }
     public String name();
+    public void setToDefault();
 
     public int numberStarSystems();
     public int numberNebula();

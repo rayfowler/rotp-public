@@ -48,6 +48,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
     
     Rectangle hoverBox;
     Rectangle okBox = new Rectangle();
+    Rectangle defaultBox = new Rectangle();
     BasePanel parent;
     BaseText displayModeText;
     BaseText texturesText;
@@ -96,6 +97,11 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
     }
     public void close() {
         disableGlassPane();
+    }
+    public void setToDefault() {
+        UserPreferences.setToDefault();
+        init();
+        repaint();
     }
     @Override
     public void paintComponent(Graphics g0) {
@@ -307,10 +313,10 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         int smallButtonH = s30;
         int smallButtonW = scaled(180);
         okBox.setBounds(w-scaled(289), scaled(640), smallButtonW, smallButtonH);
-        g.setPaint(GameUI.buttonLeftBackground());
+        g.setColor(GameUI.buttonBackgroundColor());
         g.fillRoundRect(okBox.x, okBox.y, smallButtonW, smallButtonH, cnr, cnr);
         g.setFont(narrowFont(20));
-        String text6 = text("SETTINGS_ACCEPT");
+        String text6 = text("GAME_SETTINGS_EXIT");
         int sw6 = g.getFontMetrics().stringWidth(text6);
         int x6 = okBox.x+((okBox.width-sw6)/2);
         int y6 = okBox.y+okBox.height-s8;
@@ -321,6 +327,21 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         g.drawRoundRect(okBox.x, okBox.y, okBox.width, okBox.height, cnr, cnr);
         g.setStroke(prev);
 
+        String text7 = text("GAME_SETTINGS_DEFAULT");
+        int sw7 = g.getFontMetrics().stringWidth(text7);
+        smallButtonW = sw7+s30;
+        defaultBox.setBounds(okBox.x-smallButtonW-s30, scaled(640), smallButtonW, smallButtonH);
+        g.setColor(GameUI.buttonBackgroundColor());
+        g.fillRoundRect(defaultBox.x, defaultBox.y, smallButtonW, smallButtonH, cnr, cnr);
+        g.setFont(narrowFont(20));
+        int x7 = defaultBox.x+((defaultBox.width-sw7)/2);
+        int y7 = defaultBox.y+defaultBox.height-s8;
+        Color c7 = hoverBox == defaultBox ? Color.yellow : GameUI.borderBrightColor();
+        drawShadowedString(g, text7, 2, x7, y7, GameUI.borderDarkColor(), c7);
+        prev = g.getStroke();
+        g.setStroke(stroke1);
+        g.drawRoundRect(defaultBox.x, defaultBox.y, defaultBox.width, defaultBox.height, cnr, cnr);
+        g.setStroke(prev);
     }
     private String texturesStr() {
         String opt = text(UserPreferences.texturesMode());
@@ -400,9 +421,9 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
     }
     private void scrollSounds(boolean up) {
         if (up)
-            SoundManager.current().increaseSoundLevel();
+            UserPreferences.increaseSoundLevel();
         else
-            SoundManager.current().decreaseSoundLevel();
+            UserPreferences.decreaseSoundLevel();
         soundsText.repaint(soundsStr());
     }
     private void toggleSounds() {
@@ -412,9 +433,9 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
     }
     private void scrollMusic(boolean up) {
         if (up)
-            SoundManager.current().increaseMusicLevel();
+            UserPreferences.increaseMusicLevel();
         else
-            SoundManager.current().decreaseMusicLevel();
+            UserPreferences.decreaseMusicLevel();
         musicText.repaint(musicStr());
     }
     private void toggleMusic() {
@@ -490,6 +511,8 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
             hoverBox = backupTurnsText.bounds();
         else if (okBox.contains(x,y))
             hoverBox = okBox;
+        else if (defaultBox.contains(x,y))
+            hoverBox = defaultBox;
 		
         if (hoverBox != prevHover) {
             if (prevHover == texturesText.bounds())
@@ -566,6 +589,8 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
             toggleBackupTurns();
         else if (hoverBox == okBox)
             close();
+        else if (hoverBox == defaultBox)
+            setToDefault();
     }
     @Override
     public void mouseEntered(MouseEvent e) { }

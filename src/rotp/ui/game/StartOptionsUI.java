@@ -41,6 +41,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
     
     Rectangle hoverBox;
     Rectangle okBox = new Rectangle();
+    Rectangle defaultBox = new Rectangle();
     BasePanel parent;
     BaseText galaxyAgeText;
     BaseText starDensityText;
@@ -100,6 +101,11 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
     }
     public void close() {
         disableGlassPane();
+    }
+    public void setToDefault() {
+        newGameOptions().setToDefault();
+        init();
+        repaint();
     }
     @Override
     public void paintComponent(Graphics g0) {
@@ -382,10 +388,10 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         int smallButtonH = s30;
         int smallButtonW = scaled(180);
         okBox.setBounds(w-scaled(289), scaled(640), smallButtonW, smallButtonH);
-        g.setPaint(GameUI.buttonLeftBackground());
+        g.setColor(GameUI.buttonBackgroundColor());
         g.fillRoundRect(okBox.x, okBox.y, smallButtonW, smallButtonH, cnr, cnr);
         g.setFont(narrowFont(20));
-        String text6 = text("SETTINGS_ACCEPT");
+        String text6 = text("SETTINGS_EXIT");
         int sw6 = g.getFontMetrics().stringWidth(text6);
         int x6 = okBox.x+((okBox.width-sw6)/2);
         int y6 = okBox.y+okBox.height-s8;
@@ -396,6 +402,21 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         g.drawRoundRect(okBox.x, okBox.y, okBox.width, okBox.height, cnr, cnr);
         g.setStroke(prev);
 
+        String text7 = text("SETTINGS_DEFAULT");
+        int sw7 = g.getFontMetrics().stringWidth(text7);
+        smallButtonW = sw7+s30;
+        defaultBox.setBounds(okBox.x-smallButtonW-s30, scaled(640), smallButtonW, smallButtonH);
+        g.setColor(GameUI.buttonBackgroundColor());
+        g.fillRoundRect(defaultBox.x, defaultBox.y, smallButtonW, smallButtonH, cnr, cnr);
+        g.setFont(narrowFont(20));
+        int x7 = defaultBox.x+((defaultBox.width-sw7)/2);
+        int y7 = defaultBox.y+defaultBox.height-s8;
+        Color c7 = hoverBox == defaultBox ? Color.yellow : GameUI.borderBrightColor();
+        drawShadowedString(g, text7, 2, x7, y7, GameUI.borderDarkColor(), c7);
+        prev = g.getStroke();
+        g.setStroke(stroke1);
+        g.drawRoundRect(defaultBox.x, defaultBox.y, defaultBox.width, defaultBox.height, cnr, cnr);
+        g.setStroke(prev);
     }
     private String galaxyAgeStr() {
         String opt = text(newGameOptions().selectedGalaxyAge());
@@ -563,6 +584,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             hoverBox = techTradingText.bounds();
         else if (okBox.contains(x,y))
             hoverBox = okBox;
+        else if (defaultBox.contains(x,y))
+            hoverBox = defaultBox;
 		
         if (hoverBox != prevHover) {
             if (prevHover == galaxyAgeText.bounds())
@@ -663,6 +686,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             toggleTechTrading(e);
         else if (hoverBox == okBox)
             close();
+        else if (hoverBox == defaultBox)
+            setToDefault();
     }
     @Override
     public void mouseEntered(MouseEvent e) { }

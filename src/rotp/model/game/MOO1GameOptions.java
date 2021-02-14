@@ -738,19 +738,27 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedGalaxySize = SIZE_SMALL;
         selectedGalaxyShape = galaxyShapeOptions().get(0);
         selectedGalaxyAge = galaxyAgeOptions().get(1);
-        selectedGameDifficulty(gameDifficultyOptions().get(0));
         selectedNumberOpponents = maximumOpponentsOptions();
         selectedPlayerRace(random(startingRaceOptions()));
         selectedGameDifficulty = DIFFICULTY_NORMAL;
+        setToDefault();
+        generateGalaxy();
+    }
+    @Override
+    public void setToDefault() {
+        selectedGalaxyAge = GALAXY_AGE_NORMAL;
+        selectedPlanetQualityOption = PLANET_QUALITY_NORMAL;
+        selectedTerraformingOption = TERRAFORMING_NORMAL;
         selectedResearchRate = RESEARCH_NORMAL;
         selectedTechTradeOption = TECH_TRADING_YES;
         selectedRandomEventOption = RANDOM_EVENTS_ON;
         selectedWarpSpeedOption = WARP_SPEED_NORMAL;
+        selectedFuelRangeOption = FUEL_RANGE_NORMAL;
         selectedNebulaeOption = NEBULAE_NORMAL;
         selectedCouncilWinOption = COUNCIL_REBELS;
         selectedStarDensityOption = STAR_DENSITY_NORMAL;
+        selectedRandomizeAIOption = RANDOMIZE_AI_NONE;
         selectedAIHostilityOption = AI_HOSTILITY_NORMAL;
-        generateGalaxy();
     }
     private void generateGalaxy() {
         galaxyShape().quickGenerate();

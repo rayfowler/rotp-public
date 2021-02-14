@@ -58,6 +58,8 @@ public class UserPreferences {
     private static boolean showMemory = false;
     private static boolean playMusic = true;
     private static boolean playSounds = true;
+    private static int musicVolume = 10;
+    private static int soundVolume = 10;
     private static boolean displayYear = true;
     private static boolean autoColonize = false;
     private static String autoBombardMode = AUTOBOMBARD_NO;
@@ -69,6 +71,27 @@ public class UserPreferences {
     private static final HashMap<String, String> raceNames = new HashMap<>();
     private static int backupTurns = 0;
 
+    public static void setToDefault() {
+        autoColonize = false;
+        autoBombardMode = AUTOBOMBARD_NO;
+        displayMode = WINDOW_MODE;
+        graphicsMode = GRAPHICS_HIGH;
+        texturesMode = TEXTURES_BOTH;
+        screenSizePct = 93;
+        backupTurns = 0;
+        uiTexturePct = 0.20f;
+        showMemory = false;
+        if (!playMusic) 
+            SoundManager.current().toggleMusic();
+        if (!playSounds) 
+            SoundManager.current().toggleSounds();
+        musicVolume = 10;
+        soundVolume = 10;
+        SoundManager.current().resetSoundVolumes(); 
+        save();
+    }
+    public static int musicVolume()         { return musicVolume; }
+    public static int soundVolume()         { return soundVolume; }
     public static boolean showMemory()      { return showMemory; }
     public static void toggleMemory()       { showMemory = !showMemory; save(); }
     public static boolean fullScreen()      { return displayMode.equals(FULLSCREEN_MODE); }
@@ -191,8 +214,8 @@ public class UserPreferences {
             out.println(keyFormat("GRAPHICS")+graphicsModeToSettingName(graphicsMode));
             out.println(keyFormat("MUSIC")+ yesOrNo(playMusic));
             out.println(keyFormat("SOUNDS")+ yesOrNo(playSounds));
-            out.println(keyFormat("MUSIC_VOLUME")+ SoundManager.musicLevel());
-            out.println(keyFormat("SOUND_VOLUME")+ SoundManager.soundLevel());
+            out.println(keyFormat("MUSIC_VOLUME")+ musicVolume);
+            out.println(keyFormat("SOUND_VOLUME")+ soundVolume);
             out.println(keyFormat("BACKUP_TURNS")+ backupTurns);
             out.println(keyFormat("AUTOCOLONIZE")+ yesOrNo(autoColonize));
             out.println(keyFormat("AUTOBOMBARD")+autoBombardToSettingName(autoBombardMode));
@@ -231,8 +254,8 @@ public class UserPreferences {
             case "GRAPHICS":     graphicsMode = graphicsModeFromSettingName(val); return;
             case "MUSIC":        playMusic = yesOrNo(val); return;
             case "SOUNDS":       playSounds = yesOrNo(val); return;
-            case "MUSIC_VOLUME": SoundManager.musicLevel(Integer.valueOf(val)); return;
-            case "SOUND_VOLUME": SoundManager.soundLevel(Integer.valueOf(val)); return;
+            case "MUSIC_VOLUME": setMusicVolume(val); return;
+            case "SOUND_VOLUME": setSoundVolume(val); return;
             case "BACKUP_TURNS": backupTurns  = Integer.valueOf(val); return;
             case "AUTOCOLONIZE": autoColonize = yesOrNo(val); return;
             case "AUTOBOMBARD":  autoBombardMode = autoBombardFromSettingName(val); return;
@@ -254,6 +277,14 @@ public class UserPreferences {
     }
     private static void selectLanguage(String s) {
         LanguageManager.selectLanguage(s);
+    }
+    private static void setMusicVolume(String s) {
+        int val = Integer.valueOf(s);
+        musicVolume = Math.max(0, Math.min(10,val));
+    }
+    private static void setSoundVolume(String s) {
+        int val = Integer.valueOf(s);
+        soundVolume = Math.max(0, Math.min(10,val));
     }
     private static String languageDir() {
         return LanguageManager.selectedLanguageDir();
@@ -348,5 +379,25 @@ public class UserPreferences {
             case "Both":      return TEXTURES_BOTH;
         }
         return TEXTURES_BOTH;
+    }
+    public static void increaseMusicLevel()    { 
+        musicVolume = Math.min(10, musicVolume+1); 
+        SoundManager.current().resetMusicVolumes();
+        save();
+    }
+    public static void decreaseMusicLevel()    { 
+        musicVolume = Math.max(0, musicVolume-1); 
+        SoundManager.current().resetMusicVolumes(); 
+        save();
+    };
+    public static void increaseSoundLevel()    { 
+        soundVolume = Math.min(10, soundVolume+1); 
+        SoundManager.current().resetSoundVolumes(); 
+        save();
+    }
+    public static void decreaseSoundLevel()    { 
+        soundVolume = Math.max(0, soundVolume-1); 
+        SoundManager.current().resetSoundVolumes(); 
+        save();
     }
 }
