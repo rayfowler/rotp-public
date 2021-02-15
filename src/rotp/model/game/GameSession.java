@@ -17,6 +17,7 @@ package rotp.model.game;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -37,6 +38,10 @@ import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
+import java.util.zip.ZipInputStream;
+import java.util.zip.ZipOutputStream;
 import rotp.Rotp;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
@@ -717,15 +722,26 @@ public final class GameSession implements Base, Serializable {
         if (!theDir.exists())
             theDir.mkdirs();
         File saveFile = backup ? backupFileNamed(filename) : saveFileNamed(filename);
-        OutputStream fileOut = new FileOutputStream(saveFile);
-        OutputStream buffer = new BufferedOutputStream(fileOut);
-        ObjectOutput output = new ObjectOutputStream(buffer);
+        ZipOutputStream out = new ZipOutputStream(new FileOutputStream(saveFile));
+        ZipEntry e = new ZipEntry("GameSession.dat");
+        out.putNextEntry(e);
 
-        output.writeObject(currSession);
-        output.flush();
-        output.close();
-        buffer.close();
-        fileOut.close();
+        ByteArrayOutputStream bos = new ByteArrayOutputStream();
+        ObjectOutputStream objOut = null;
+        try {
+            objOut = new ObjectOutputStream(bos);
+            objOut.writeObject(currSession);
+            objOut.flush();
+            byte[] data = bos.toByteArray();
+            out.write(data, 0, data.length);
+        }
+        finally {
+            try {
+            bos.close();
+            out.close();
+            }
+            catch(IOException ex) {}            
+        }
     }
     private void loadPreviousSession(GameSession gs, boolean startUp) {
         stopCurrentGame();
@@ -809,21 +825,44 @@ public final class GameSession implements Base, Serializable {
         try {
             log("Loading game from file: ", filename);
             File saveFile = new File(dir, filename);
-            InputStream file = new FileInputStream(saveFile);
-            InputStream buffer = new BufferedInputStream(file);
-            ObjectInput input = new ObjectInputStream(buffer);
-            GameSession newSession = (GameSession) input.readObject();
+            GameSession newSession;
+            // assume the file is not zipped, load it directly
+            try (InputStream file = new FileInputStream(saveFile)) {
+                newSession = loadObjectData(file);
+            }
+            
+            // if newSession is null, see if it is zipped
+            if (newSession == null) {
+                try (ZipFile zipFile = new ZipFile(saveFile)) {
+                    ZipEntry ze = zipFile.entries().nextElement();
+                    InputStream zis = zipFile.getInputStream(ze);
+                    newSession = loadObjectData(zis);
+                    if (newSession == null) 
+                        throw new RuntimeException(text("LOAD_GAME_BAD_VERSION", filename));
+                }
+            }
+            
             GameSession.instance = newSession;
             newSession.validate();
             newSession.validateOnLoadOnly();
-            input.close();
-            buffer.close();
-            file.close();
             loadPreviousSession(newSession, startUp);
             saveRecentSession(false);
         }
-        catch(IOException | ClassNotFoundException e) {
+        catch(IOException e) {
             throw new RuntimeException(text("LOAD_GAME_BAD_VERSION", filename));
+        }
+    }
+    private GameSession loadObjectData(InputStream is) {
+        try {
+            GameSession newSession;
+            try (InputStream buffer = new BufferedInputStream(is)) {
+                ObjectInput input = new ObjectInputStream(buffer);
+                newSession = (GameSession) input.readObject();
+            }
+            return newSession;
+        }
+        catch (IOException | ClassNotFoundException e) {
+            return null;
         }
     }
     private void validate() {
