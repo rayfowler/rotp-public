@@ -28,19 +28,29 @@ public class OathBreakerIncident extends DiplomaticIncident {
     final int empBreaker;
     final int empVictim;
     public static void alertBrokenAlliance(Empire breaker, Empire victim) {
+        alertBrokenAlliance(breaker,victim,null);
+    }
+    public static void alertBrokenAlliance(Empire breaker, Empire victim, Empire requestor) {
         Set<Empire> allContacts = Empire.allContacts(breaker, victim);
         allContacts.add(victim);
         for (Empire contact: allContacts) {
-            OathBreakerIncident inc = new OathBreakerIncident(breaker, victim, contact, 1,ALLIANCE_SEV);
-            contact.viewForEmpire(breaker).embassy().addIncident(inc);
+            if (contact != requestor) {
+                OathBreakerIncident inc = new OathBreakerIncident(breaker, victim, contact, 1,ALLIANCE_SEV);
+                contact.viewForEmpire(breaker).embassy().addIncident(inc);
+            }
         }
     }
     public static void alertBrokenPact(Empire breaker, Empire victim) {
+        alertBrokenPact(breaker,victim,null);
+    }
+    public static void alertBrokenPact(Empire breaker, Empire victim, Empire requestor) {
         Set<Empire> allContacts = Empire.allContacts(breaker, victim);
         allContacts.add(victim);
         for (Empire contact: allContacts) {
-            OathBreakerIncident inc = new OathBreakerIncident(breaker, victim, contact, 2,PACT_SEV);
-            contact.viewForEmpire(breaker).embassy().addIncident(inc);
+            if (contact != requestor) {
+                OathBreakerIncident inc = new OathBreakerIncident(breaker, victim, contact, 2,PACT_SEV);
+                contact.viewForEmpire(breaker).embassy().addIncident(inc);
+            }
         }
     }
     private OathBreakerIncident(Empire brk, Empire vic, Empire obs,int type, int sev) {

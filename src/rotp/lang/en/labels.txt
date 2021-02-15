@@ -196,7 +196,7 @@ INC_CLOSED_EMBASSY_DESC           | The [your_empire] ceased diplomatic relation
 INC_BROKE_ALLIANCE_TITLE          | Broke Alliance
 INC_BROKE_ALLIANCE_DESC           | The [your_empire] broke their Alliance with the [my_empire].
 INC_BROKE_PACT_TITLE              | Broke Non-Aggression Pact
-INC_BROKE_PACT_DESC               | The[your_empire] broke their Non-Aggression Pact with the [my_empire].
+INC_BROKE_PACT_DESC               | The [your_empire] broke their Non-Aggression Pact with the [my_empire].
 INC_BROKE_TRADE_TITLE             | Broke Trade Treaty
 INC_BROKE_TRADE_DESC              | The [your_empire] broke their Trade Treaty with the [my_empire].
 INC_ATTACKED_COLONY_TITLE         | Attacked Colony
