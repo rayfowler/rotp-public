@@ -110,7 +110,7 @@ public final class GameOverUI extends FadeInPanel implements MouseListener, Mous
             Composite preComp = g.getComposite();
             g.setComposite(trans[transIndex]);
             g.setColor(new Color(0,0,0,128));
-            g.fillRect(x0-s20, y0, lineW+s30, textBoxH);
+            g.fillRoundRect(x0-s20, y0, lineW+s30, textBoxH,s30,s30);
 
             g.setColor(Color.lightGray);
             y0 += lineH;

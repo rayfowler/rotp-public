@@ -2341,13 +2341,7 @@ public final class Empire implements Base, NamedObject, Serializable {
                     session().status().winMilitary();
             }
             else {
-                boolean allAlliedWithPlayer = true;
-                int playerId = player().id;
-                for (Empire emp: activeEmpires) {
-                    if (!emp.alliedWith(playerId))
-                        allAlliedWithPlayer = false;
-                }
-                if (allAlliedWithPlayer) 
+                if (galaxy().allAlliedWithPlayer()) 
                     session().status().winMilitaryAlliance();
             }
         }            

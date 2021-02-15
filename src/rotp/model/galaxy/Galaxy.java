@@ -527,6 +527,15 @@ public class Galaxy implements Base, Serializable {
         }
         return emps;
     }
+    public boolean allAlliedWithPlayer() {
+        List<Empire> activeEmpires = activeEmpires();
+        int playerId = player().id;
+        for (Empire emp: activeEmpires) {
+            if (!emp.alliedWith(playerId))
+                return false;
+        }
+        return true;
+    }
     public List<StarSystem> systemsInRange(IMappedObject xyz, float radius) {
         List<StarSystem> systems = new ArrayList<>();
         for (int i=0;i<numStarSystems();i++) {
