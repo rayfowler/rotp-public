@@ -42,6 +42,7 @@ import rotp.model.game.GameSession;
 import rotp.ui.BasePanel;
 import rotp.ui.NoticeMessage;
 import rotp.ui.RotPUI;
+import rotp.ui.UserPreferences;
 
 public final class SetupGalaxyUI  extends BasePanel implements MouseListener, MouseMotionListener, MouseWheelListener {
     private static final long serialVersionUID = 1L;
@@ -439,6 +440,7 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         GameUI.gameName = r.setupName()+ " - "+text(newGameOptions().selectedGalaxySize())+ " - "+text(newGameOptions().selectedGameDifficulty());
         repaint();
         buttonClick();
+        UserPreferences.setForNewGame();
         final Runnable save = () -> {
             long start = System.currentTimeMillis();
             GameSession.instance().startGame(newGameOptions());

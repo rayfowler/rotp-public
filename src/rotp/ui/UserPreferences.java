@@ -90,6 +90,11 @@ public class UserPreferences {
         SoundManager.current().resetSoundVolumes(); 
         save();
     }
+    public static void setForNewGame() {
+        autoColonize = false;
+        autoBombardMode = AUTOBOMBARD_NO;
+        save();
+    }
     public static int musicVolume()         { return musicVolume; }
     public static int soundVolume()         { return soundVolume; }
     public static boolean showMemory()      { return showMemory; }
