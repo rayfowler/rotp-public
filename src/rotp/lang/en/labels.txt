@@ -702,7 +702,7 @@ MAIN_ALERT_FACTORIES_DESTROYED    | Agents working for the %1 have destroyed %2 
 MAIN_ALERT_BASES_DESTROYED        | Agents working for the %1 have destroyed %2 missile bases defending the %3 system.
 MAIN_ALERT_FACTORIES_DESTROYED2   | Unknown saboteurs have destroyed %1 factories in the %2 system.
 MAIN_ALERT_BASES_DESTROYED2       | Unknown saboteurs have destroyed %1 missile bases defending the %2 system.
-MAIN_ALERT_TRANSPORTS_PERISHED    | The %1 colony in %2 has been destroyed. Our transports attempting to land there have perished.
+MAIN_ALERT_TRANSPORTS_PERISHED    | The colony in the %1 system has been destroyed. Our transports attempting to land there have perished.
 MAIN_ALERT_TRANSPORTS_CAPTURED    | Our %3 transports arriving in the %2 system have surrendered to %1 forces.
 MAIN_ALERT_TRANSPORTS_KILLED      | Our %3 transports attempting to reach %2 have been destroyed by defending %1 forces.
 MAIN_ALERT_INVADERS_CAPTURED      | %3 %1 transports arriving in the %2 system have surrendered to our defensive forces.
