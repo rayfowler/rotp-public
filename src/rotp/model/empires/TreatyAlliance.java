@@ -42,14 +42,10 @@ public class TreatyAlliance extends DiplomaticTreaty implements Base {
         int index = emp.id == empire1 ? 0 : 1;
         return wantToBreak[index];
     }
-    @Override
-    public String status(Empire e)            { 
-        //if ((empire1 != Empire.PLAYER_ID) && (empire2 != Empire.PLAYER_ID))
-        //    return text(statusKey);
+    public int standing(Empire e)            { 
         initStandings(); // backwards-save compatibility
         int index = e.id == empire1 ? 1 : 0;
-        int v = standings[index];
-        return text("RACES_ALLY_STANDING", str(v));
+        return standings[index];
     }
     @Override
     public void nextTurn(Empire emp)      { 

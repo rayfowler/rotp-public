@@ -35,8 +35,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import rotp.model.empires.DiplomaticTreaty;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
+import rotp.model.empires.TreatyAlliance;
 import rotp.model.incidents.DiplomaticIncident;
 import rotp.ui.BasePanel;
 import rotp.ui.UserPreferences;
@@ -302,9 +304,18 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         g.drawString(s, x+w-s20-sw, y3);
 
         EmpireView view = player().viewForEmpire(emp);
-        s = view.embassy().treaty().status(player());
+        DiplomaticTreaty treaty = view.embassy().treaty();
+        boolean isAlly = treaty.isAlliance();
+        int starW = s10;
+        int offset = isAlly ? (starW*5)+s5 : 0;
+        s = treaty.status(player());
         sw = g.getFontMetrics().stringWidth(s);
-        g.drawString(s, x+w-s20-sw, y4);
+        g.drawString(s, x+w-s20-offset-sw, y4);
+        if (isAlly) {
+            TreatyAlliance alliance = (TreatyAlliance) treaty;
+            int x1 = x+w-s20-offset+s5;
+            parent.drawAllianceStars(g,x1,y4-s3,alliance.standing(player()),starW);
+        }
     }
     private void drawRelationsMeter(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(RacesUI.darkBrown);

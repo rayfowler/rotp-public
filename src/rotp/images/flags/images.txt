@@ -22,3 +22,8 @@ Flag_PurpleM  | images/flags/wPurple.png
 Flag_RedM     | images/flags/wRed.png
 Flag_WhiteM   | images/flags/wWhite.png
 Flag_YellowM  | images/flags/wYellow.png
+
+Star_Empty    | images/flags/starEmpty.png
+Star_Half     | images/flags/starHalf.png
+Star_Full     | images/flags/starFull.png
+
