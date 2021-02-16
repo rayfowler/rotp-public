@@ -462,7 +462,7 @@ public class ColonyEcology extends ColonySpendingCategory {
         float needed = colony().minimumCleanupCost();
         if (needed == 0)
             return 0;
-        float prod = colony().totalProductionIncome() + colony().maxReserveIncome();
+        float prod = colony().totalIncome();
         float pctNeeded = min(1, needed / prod);
         int ticks = (int) Math.ceil(pctNeeded * MAX_TICKS);
         return ticks;

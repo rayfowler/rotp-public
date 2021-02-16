@@ -206,9 +206,7 @@ public final class EmpireView implements Base, Serializable {
         spies.nextTurn(prod, spyMod);
     }
     public void makeDiplomaticOffers() {
-        log(this+": assessTurn");
-        embassy.assessTurn();
-        trade.assessTurn();
+        log(this+": makeDiplomaticOffers");
         if (owner.isAI())
             owner.diplomatAI().makeDiplomaticOffers(this);
     }
