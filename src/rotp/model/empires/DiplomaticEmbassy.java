@@ -694,6 +694,10 @@ public class DiplomaticEmbassy implements Base, Serializable {
     private void endTreaty() {
         treatyDate = -1;
         otherEmbassy().treatyDate = -1;
+        resetPactTimer();
+        resetAllianceTimer();
+        otherEmbassy().resetPactTimer();
+        otherEmbassy().resetAllianceTimer();
         owner().setRecalcDistances();
         empire().setRecalcDistances();
     }
