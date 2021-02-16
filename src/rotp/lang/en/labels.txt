@@ -716,7 +716,8 @@ MAIN_ALERT_TRESPASSING1           | %1 ships have been spotted trespassing near 
 MAIN_ALERT_TRESPASSING2           | The %1 ambassador protests our ships trespassing in the %2 system.
 MAIN_ALERT_TRADE_MATURED          | Our trade treaty with the %1 has reached its maximum value of %2 BC.
 MAIN_ALERT_SPY_NEW_TECH           | Our spies inform us that the %1 knows the secrets of %2.
-
+MAIN_ALERT_ALLIANCE_WEAKENING     | Our alliance with the %1 is weakening.
+MAIN_ALERT_ALLIANCE_BREAKING      | Our alliance with the %1 is on the verge of collapse!
 
 // Colony Listing UI
 PLANETS_TITLE                     | %1 Colonies
