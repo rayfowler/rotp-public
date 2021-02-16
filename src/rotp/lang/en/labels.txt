@@ -677,6 +677,14 @@ MAIN_ALLOCATE_CLOSE               | Close
 MAIN_FLEET_PRODUCTION_TITLE       | Fleet Production Summary
 MAIN_FLEET_SHIP_COUNT             | %1/%2
 
+// 32-bit Java Warning
+MAIN_JAVA_32BIT_TITLE             | Warning! 32-bit Java in use
+MAIN_JAVA_32BIT_DESC              | You are running this game with a 32-bit version of Java. This can greatly reduce available memory and impact game performance.
+MAIN_JAVA_32BIT_DESC_2            | Although Remnants of the Precursors will function in this mode, upgrading to 64-bit Java will improve the gameplay experience.
+MAIN_JAVA_32BIT_DESC_3            | If you need assistance in upgrading Java, please go online to www.reddit.com/r/rotp and ask for assistance.
+MAIN_JAVA_32BIT_OK                | OK
+
+
 // Memory Low Warning
 MAIN_MEMORY_LOW_TITLE             | Warning! Game Memory Low
 MAIN_MEMORY_LOW_DESC              | Memory available for this game is running low. This can be caused by extended play or not starting with enough free memory.

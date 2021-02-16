@@ -94,6 +94,12 @@ public class Rotp {
 
         if (reloadRecentSave) 
             GameSession.instance().loadRecentSession(false);
+        
+        // this will not catch 32-bit JREs on all platforms, but better than nothing
+        String bits = System.getProperty("sun.arch.data.model").trim();
+        if (bits.equals("32"))
+            RotPUI.instance().mainUI().showJava32BitPrompt();
+
         frame.setVisible(true);
     }
     public static boolean containsArg(String[] argList, String key) {

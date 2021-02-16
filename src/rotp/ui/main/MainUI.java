@@ -82,6 +82,7 @@ public class MainUI extends BasePanel implements IMapHandler {
 
     MapOverlayNone overlayNone;
     MapOverlayMemoryLow overlayMemoryLow;
+    MapOverlayJava32Bit overlayJava32Bit;
     MapOverlayAutosaveFailed overlayAutosaveFailed;
     MapOverlayShipsConstructed overlayShipsConstructed;
     MapOverlaySpies overlaySpies;
@@ -142,6 +143,7 @@ public class MainUI extends BasePanel implements IMapHandler {
         addMapControls();
         overlayNone = new MapOverlayNone(this);
         overlayMemoryLow = new MapOverlayMemoryLow(this);
+        overlayJava32Bit = new MapOverlayJava32Bit(this);
         overlayAutosaveFailed = new MapOverlayAutosaveFailed(this);
         overlayShipsConstructed = new MapOverlayShipsConstructed(this);
         overlaySpies = new MapOverlaySpies(this);
@@ -253,6 +255,11 @@ public class MainUI extends BasePanel implements IMapHandler {
     public void showMemoryLowPrompt() {
         overlay = overlayMemoryLow;
         overlayMemoryLow.init();
+        repaint();
+    }
+    public void showJava32BitPrompt() {
+        overlay = overlayJava32Bit;
+        overlayJava32Bit.init();
         repaint();
     }
     public void showAutosaveFailedPrompt(String err) {
