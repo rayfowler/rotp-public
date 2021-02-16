@@ -324,6 +324,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         if ((button != null) && button.wantsMouseWheel()) {
             Sprite sprite = matchingSprite(x,y);
             button.mouseWheelMoved(sprite.system(), e);
+            topParent.repaint();
             return;
         }
         if (!scrolling)
