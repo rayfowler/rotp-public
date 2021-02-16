@@ -59,6 +59,7 @@ import rotp.ui.UserPreferences;
 import rotp.ui.notifications.GameAlert;
 import rotp.ui.notifications.SabotageNotification;
 import rotp.ui.notifications.ShipConstructionNotification;
+import rotp.ui.notifications.SpyCapturedNotification;
 import rotp.ui.notifications.StealTechNotification;
 import rotp.ui.notifications.SystemsScoutedNotification;
 import rotp.ui.notifications.TurnNotification;
@@ -96,13 +97,17 @@ public final class GameSession implements Base, Serializable {
     private Galaxy galaxy;
     private final GameStatus status = new GameStatus();
     private long id;
+    private transient boolean spiesCaptured = false;
+    
     public GameStatus status()                   { return status; }
     public long id()                             { return id; }
     public ExecutorService smallSphereService()  { return smallSphereService; }
 
     public void pauseNextTurnProcessing(String s)   {
-        log("Pausing Next Turn: ", s);
-        suspendNextTurn = true;
+        if (performingTurn) {
+            log("Pausing Next Turn: ", s);
+            suspendNextTurn = true;
+        }
     }
     public void resumeNextTurnProcessing()  {
         log("Resuming Next Turn");
@@ -176,6 +181,12 @@ public final class GameSession implements Base, Serializable {
         int existingCount = shipsConstructed().containsKey(design) ? shipsConstructed().get(design) : 0;
         shipsConstructed().put(design, existingCount+newCount);
     }
+    public void addSpiesCapturedNotification() {
+        if (!spiesCaptured) {
+            spiesCaptured = true;
+            addTurnNotification(new SpyCapturedNotification());
+        }
+    }
     public void addSystemScouted(StarSystem sys) {
         systemsScouted().get("Scouts").add(sys);
     }
@@ -236,6 +247,7 @@ public final class GameSession implements Base, Serializable {
             clearScoutedSystems();
             systemsToAllocate().clear();
             shipsConstructed().clear();
+            spiesCaptured = false;
             galaxy().startGame();
             saveRecentSession(false);
             saveBackupSession(1);
@@ -309,6 +321,7 @@ public final class GameSession implements Base, Serializable {
                 systemsToAllocate().clear();
                 clearScoutedSystems();
                 shipsConstructed().clear();
+                spiesCaptured = false;
                 clearAlerts();
                 RotPUI.instance().repaint();
                 processNotifications();

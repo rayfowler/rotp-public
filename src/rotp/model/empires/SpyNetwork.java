@@ -253,6 +253,11 @@ public final class SpyNetwork implements Base, Serializable {
 
         if (spyConfessed)
             checkForTreatyBreak();
+        
+        if (spiesLost > 0) {
+            if (view.owner().isPlayer() || view.empire().isPlayer())
+                session().addSpiesCapturedNotification();
+        }
 
         if (spyConfessed || activeSpies.isEmpty() || isHide())
             return;
@@ -296,6 +301,7 @@ public final class SpyNetwork implements Base, Serializable {
             if (spy.eliminated()) {
                 spiesLost++;
                 activeSpies().remove(spy);
+                
             }
             confession = confession || spy.confesses();
         }

@@ -601,9 +601,11 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         session().waitUntilNextTurnCanProceed();
     }
     public void showSpiesCaptured() {
+        session().pauseNextTurnProcessing("Show Spies Captured");
         log("==MAIN UI==   show spies captured");
         mainUI().showSpiesCaptured();
         selectMainPanel();
+        session().waitUntilNextTurnCanProceed();
     }
     public void showShipConstruction() {
         session().pauseNextTurnProcessing("Show Ship Construction");

@@ -53,8 +53,8 @@ public class SpyConfessionIncident extends DiplomaticIncident {
 
         dateOccurred = galaxy().currentYear();
 
-        if (ev.owner().isPlayer() || ev.empire().isPlayer())
-            SpyCapturedAlert.create(ev.empire(), ev.owner(), mission);
+        //if (ev.owner().isPlayer() || ev.empire().isPlayer())
+        //    SpyCapturedAlert.create(ev.empire(), ev.owner(), mission);
     }
     @Override
     public boolean isSpying()           { return missionType > 0; }

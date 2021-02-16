@@ -692,17 +692,12 @@ MAIN_AUTOSAVE_FAILED_DESC_2       | The message provided to the game for this er
 MAIN_AUTOSAVE_FAILED_DESC_3       | If you see this message frequently, please go online to www.reddit.com/r/rotp and post this screenshot.
 MAIN_AUTOSAVE_FAILED_OK           | OK
 
-// Spy Capture display (during next turn)
-MAIN_SPIES_CAUGHT_TITLE           | Spies Caught
-MAIN_SPIES_CAUGHT_YOURS           | Yours
-MAIN_SPIES_CAUGHT_THEIRS          | Theirs
-
 // Alerts
 MAIN_ALERT_TITLE                  | Alert 
 MAIN_ALERT_TITLE_COUNT            | Alert - %1 of %2
 MAIN_ALERT_TECH_STOLEN            | Internal security has uncovered espionage activities by %1 spies.
-MAIN_ALERT_SPY_CAPTURED           | We have captured a spy from the %1, forcing a confession of their %2 activities.
-MAIN_ALERT_SPY_CONFESSED          | The %1 have captured one of our spies, forcing a confession of our %2 activities.
+//MAIN_ALERT_SPY_CAPTURED           | We have captured a spy from the %1, forcing a confession of their %2 activities.
+//MAIN_ALERT_SPY_CONFESSED          | The %1 have captured one of our spies, forcing a confession of our %2 activities.
 MAIN_ALERT_FACTORIES_DESTROYED    | Agents working for the %1 have destroyed %2 factories in the %3 system.
 MAIN_ALERT_BASES_DESTROYED        | Agents working for the %1 have destroyed %2 missile bases defending the %3 system.
 MAIN_ALERT_FACTORIES_DESTROYED2   | Unknown saboteurs have destroyed %1 factories in the %2 system.
@@ -952,6 +947,13 @@ NOTICE_ESPIONAGE_SUBTITLE         | Select a technology type to steal.
 NOTICE_ESPIONAGE_FOOTER           | If noticed, this may cause a Diplomatic Incident.
 NOTICE_ESPIONAGE_FRAME_TITLE      | Our spies have managed to frame another race for the theft.
 NOTICE_ESPIONAGE_FRAME_SUBTITLE   | Choose the victim race:
+
+// Spy Capture display (during next turn)
+NOTICE_SPIES_TITLE             | Current Spy Report
+NOTICE_SPIES_CAUGHT               | Spies Captured
+NOTICE_SPIES_CAUGHT_OURS          | Ours
+NOTICE_SPIES_CAUGHT_THEIRS        | Theirs
+NOTICE_SPIES_CAUGHT_NONE          | No meaningful spy activity has been observed.
 
 // Ground Combat UI
 INVASION_LANDING                  | %1 out of %2 %3 transports penetrate %4 defenses.
