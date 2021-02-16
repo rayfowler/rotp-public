@@ -29,6 +29,7 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import rotp.Rotp;
+import rotp.model.game.GameSession;
 import rotp.util.LanguageManager;
 import rotp.util.sound.SoundManager;
 
@@ -50,6 +51,8 @@ public class UserPreferences {
     private static final String TEXTURES_INTERFACE = "GAME_SETTINGS_TEXTURES_INTERFACE";
     private static final String TEXTURES_MAP = "GAME_SETTINGS_TEXTURES_MAP";
     private static final String TEXTURES_BOTH = "GAME_SETTINGS_TEXTURES_BOTH";
+    private static final String SAVEDIR_DEFAULT = "GAME_SETTINGS_SAVEDIR_DEFAULT";
+    private static final String SAVEDIR_CUSTOM = "GAME_SETTINGS_SAVEDIR_CUSTOM";
     
     
     private static final String PREFERENCES_FILE = "Remnants.cfg";
@@ -66,6 +69,7 @@ public class UserPreferences {
     private static String displayMode = WINDOW_MODE;
     private static String graphicsMode = GRAPHICS_HIGH;
     private static String texturesMode = TEXTURES_BOTH;
+    private static String saveDir = "";
     private static float uiTexturePct = 0.20f;
     private static int screenSizePct = 93;
     private static final HashMap<String, String> raceNames = new HashMap<>();
@@ -79,6 +83,7 @@ public class UserPreferences {
         texturesMode = TEXTURES_BOTH;
         screenSizePct = 93;
         backupTurns = 0;
+        saveDir = "";
         uiTexturePct = 0.20f;
         showMemory = false;
         if (!playMusic) 
@@ -166,6 +171,23 @@ public class UserPreferences {
     public static void toggleMusic()        { playMusic = !playMusic; save();  }
     public static int screenSizePct()       { return screenSizePct; }
     public static void screenSizePct(int i) { setScreenSizePct(i); }
+    public static String saveDirectoryPath() {
+        if (saveDir.isEmpty())
+            return Rotp.jarPath();
+        else
+            return saveDir;
+    }
+    public static String backupDirectoryPath() {
+        return saveDirectoryPath()+"/"+GameSession.BACKUP_DIRECTORY;
+    }
+    public static String saveDir()          { return saveDir; }
+    public static void saveDir(String s)    { saveDir = s; save(); }
+    public static String saveDirStr()       {
+        if (saveDir.isEmpty())
+            return SAVEDIR_DEFAULT;
+        else
+            return SAVEDIR_CUSTOM;
+    }
     public static int backupTurns()         { return backupTurns; }
     public static boolean backupTurns(int i)   { 
         int prev = backupTurns;
@@ -221,6 +243,7 @@ public class UserPreferences {
             out.println(keyFormat("SOUNDS")+ yesOrNo(playSounds));
             out.println(keyFormat("MUSIC_VOLUME")+ musicVolume);
             out.println(keyFormat("SOUND_VOLUME")+ soundVolume);
+            out.println(keyFormat("SAVE_DIR")+ saveDir);
             out.println(keyFormat("BACKUP_TURNS")+ backupTurns);
             out.println(keyFormat("AUTOCOLONIZE")+ yesOrNo(autoColonize));
             out.println(keyFormat("AUTOBOMBARD")+autoBombardToSettingName(autoBombardMode));
@@ -249,6 +272,10 @@ public class UserPreferences {
 
         String key = args[0].toUpperCase().trim();
         String val = args[1].trim();
+        // for values that may have embedded :, like the save dir path
+        String fullVal = val;
+        for (int i=2;i<args.length;i++) 
+            fullVal = fullVal+":"+args[i];
         if (key.isEmpty() || val.isEmpty())
                 return;
 
@@ -261,6 +288,7 @@ public class UserPreferences {
             case "SOUNDS":       playSounds = yesOrNo(val); return;
             case "MUSIC_VOLUME": setMusicVolume(val); return;
             case "SOUND_VOLUME": setSoundVolume(val); return;
+            case "SAVE_DIR":     saveDir  = fullVal.trim(); return;
             case "BACKUP_TURNS": backupTurns  = Integer.valueOf(val); return;
             case "AUTOCOLONIZE": autoColonize = yesOrNo(val); return;
             case "AUTOBOMBARD":  autoBombardMode = autoBombardFromSettingName(val); return;

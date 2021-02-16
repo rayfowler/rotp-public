@@ -749,7 +749,7 @@ public final class GameSession implements Base, Serializable {
         }
     }
     public String saveDir() {
-        return concat(Rotp.jarPath(), "/", GameSession.SAVEFILE_DIRECTORY);
+        return UserPreferences.saveDirectoryPath();
     }
     public String backupDir() {
         return concat(saveDir(),"/",GameSession.BACKUP_DIRECTORY);

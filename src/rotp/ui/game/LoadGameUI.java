@@ -47,6 +47,7 @@ import rotp.model.game.GameSession;
 import rotp.ui.BasePanel;
 import rotp.ui.NoticeMessage;
 import rotp.ui.RotPUI;
+import rotp.ui.UserPreferences;
 import rotp.ui.main.SystemPanel;
 
 public final class LoadGameUI  extends BasePanel implements MouseListener, MouseWheelListener {
@@ -119,14 +120,15 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
         saveDates.clear();
         String ext = GameSession.SAVEFILE_EXTENSION;
         // check for autosave
-        String rotpPath = Rotp.jarPath();
-        String saveDirPath = concat(rotpPath,"/",GameSession.SAVEFILE_DIRECTORY);
-        String backupDirPath = concat(saveDirPath,"/",GameSession.BACKUP_DIRECTORY);
+        String saveDirPath = UserPreferences.saveDirectoryPath();
+        String backupDirPath = UserPreferences.backupDirectoryPath();
         File saveDir = new File(saveDirPath);
         File backupDir = new File(backupDirPath);
         hasBackupDir = backupDir.exists() && backupDir.isDirectory();
         
         long sSize = saveDir.listFiles().length;
+        if (hasBackupDir)
+            sSize--;
         saveDirInfo = text("LOAD_GAME_SAVE_DIR", (int)sSize);
         
         if (hasBackupDir) {

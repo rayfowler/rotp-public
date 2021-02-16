@@ -51,6 +51,7 @@ import rotp.ui.BasePanel;
 import rotp.ui.BaseTextField;
 import rotp.ui.NoticeMessage;
 import rotp.ui.RotPUI;
+import rotp.ui.UserPreferences;
 import rotp.ui.main.SystemPanel;
 
 public final class SaveGameUI extends BasePanel implements MouseListener, MouseWheelListener {
@@ -117,7 +118,7 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
         saveSizes.add(0L);
         saveDates.add("");
 
-        File curDir = new File(Rotp.jarPath());
+        File curDir = new File(UserPreferences.saveDirectoryPath());
         File[] filesList = curDir.listFiles();
         
         switch(sortOrder) {
@@ -294,7 +295,7 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
         buttonClick();
         final Runnable save = () -> {
             try {
-                GameSession.instance().saveSession(s, GameSession.SAVEFILE_DIRECTORY);
+                GameSession.instance().saveSession(s, false);
                 RotPUI.instance().selectGamePanel();
             }
             catch(Exception e) {

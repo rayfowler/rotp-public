@@ -346,6 +346,11 @@ GAME_SETTINGS_BACKUP_OFF          | Off
 GAME_SETTINGS_BACKUP_ON           | Every %1 turns
 GAME_SETTINGS_BACKUP              | Backup: %1
 GAME_SETTINGS_BACKUP_DESC         | Enable to have your current game periodically saved in the backup folder with a unique name, allowing you to reload from previous turns.
+GAME_SETTINGS_SAVEDIR             | Save Directory: %1
+GAME_SETTINGS_SAVEDIR_DEFAULT     | Default
+GAME_SETTINGS_SAVEDIR_CUSTOM      | Custom
+GAME_SETTINGS_SAVEDIR_DESC1       | The save directory is currently set to the same directory as the game.
+GAME_SETTINGS_SAVEDIR_DESC2       | The save directory is currently set to: %1
 
 // Load Game UI
 LOAD_GAME_TITLE                   | Load Game
