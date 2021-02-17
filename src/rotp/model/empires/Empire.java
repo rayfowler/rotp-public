@@ -805,10 +805,15 @@ public final class Empire implements Base, NamedObject, Serializable {
                 v.makeDiplomaticOffers();
         }
     }
-    public void stopSpyingAgainst(int empId) {
+    public void hideSpiesAgainst(int empId) {
         EmpireView v = viewForEmpire(empId);
         if (v != null)
             v.spies().beginHide();
+    }
+    public void shutdownSpyNetworksAgainst(int empId) {
+        EmpireView v = viewForEmpire(empId);
+        if (v != null)
+            v.spies().shutdownSpyNetworks();
     }
     public StarSystem retreatSystem(StarSystem from) {
         return shipCaptainAI().retreatSystem(from);
@@ -1279,6 +1284,12 @@ public final class Empire implements Base, NamedObject, Serializable {
                     shipyard.goToNextDesign();
             }
         }
+    }
+    public DiplomaticTreaty treatyWithEmpire(int empId) {
+        if ((empId < 0) || (empId >= empireViews.length) || (empId == id))
+            return null;
+        
+        return empireViews[empId].embassy().treaty();
     }
     public EmpireView viewForEmpire(Empire emp) {
         if ((emp != null) && (emp != this))

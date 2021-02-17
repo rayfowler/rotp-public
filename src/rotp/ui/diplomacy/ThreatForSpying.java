@@ -26,7 +26,7 @@ public class ThreatForSpying extends TurnNotificationMessage {
         super.diplomat(e);
     }
     @Override
-    public int numReplies()       		{ return 2; }
+    public int numReplies()       		{ return 3; }
     @Override
     public boolean enabled(int i)       { return true; }
      @Override
@@ -34,6 +34,7 @@ public class ThreatForSpying extends TurnNotificationMessage {
         switch (i) {
             case 0 : return text("DIPLOMACY_IGNORE_THREAT");
             case 1 : return text("DIPLOMACY_HIDE_SPIES", diplomat().name());
+            case 2 : return text("DIPLOMACY_SHUTDOWN_SPIES", diplomat().name());
         }
         return ""; 
     }
@@ -41,13 +42,18 @@ public class ThreatForSpying extends TurnNotificationMessage {
     public void select(int i) {
         log("ThreatForSpying - selected: ", str(i));
         switch(i) {
-        case 1: 
-            player().stopSpyingAgainst(diplomat().id);
-            escape();
-            break;
-        case 0: 
-        default:
-            escape(); break;
+            case 0: 
+                escape(); break;
+            case 1: 
+                player().hideSpiesAgainst(diplomat().id);
+                escape();
+                break;
+            case 2: 
+                player().shutdownSpyNetworksAgainst(diplomat().id);
+                escape();
+                break;
+            default:
+                escape(); break;
         }
     }
     @Override

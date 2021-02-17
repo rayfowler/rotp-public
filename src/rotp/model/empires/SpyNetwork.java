@@ -106,6 +106,13 @@ public final class SpyNetwork implements Base, Serializable {
     public void increaseMaxSpies()   { maxSpies++; }
     public void decreaseMaxSpies()   { maxSpies = max(0, maxSpies-1); }
     
+    public void shutdownSpyNetworks() {
+        maxSpies = 0;
+        allocation = 0;
+        activeSpies.clear();
+        beginHide();
+    }
+    
     public String numSpiesLabel() {
         int n = activeSpies.size();
         if (n == 0)

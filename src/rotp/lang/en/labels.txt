@@ -1899,6 +1899,7 @@ DIPLOMACY_ACCEPT_ESTABLISH_TRADE  | Accept (Establishes Trade)
 DIPLOMACY_DECLINE_OFFER           | Decline
 DIPLOMACY_DECLINE_BREAK_ALLIANCE  | Decline (Breaks Alliance)
 DIPLOMACY_IGNORE_THREAT           | Ignore Threat
+DIPLOMACY_SHUTDOWN_SPIES          | Shutdown all spy networks in the %1 
 DIPLOMACY_HIDE_SPIES              | Order all spies in the %1 to Hide
 DIPLOMACY_RETREAT_SHIPS           | Order all ships orbiting or in transit to %1 systems to Retreat
 
