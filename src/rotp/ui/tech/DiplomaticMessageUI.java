@@ -22,7 +22,6 @@ import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
-import java.awt.LinearGradientPaint;
 import java.awt.MouseInfo;
 import java.awt.MultipleGradientPaint.CycleMethod;
 import java.awt.Point;
@@ -202,12 +201,12 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
         super.paintComponent(g);
         g.drawImage(labImg, w, 0, 0, h, 0, 0, labImg.getWidth(), labImg.getHeight(), null);
 
-        Color c0 = Color.black;
+        Color c0 = new Color(0,0,0,128);
         Color c1 = new Color(0,0,0,0);
         float dist[] = new float[] { 0.0f, 1.0f };
         Color colors[] = new Color[] { c0, c1 };
-        int topPad = s60;
-        int hPad = s60;
+        int topPad = s100;
+        int hPad = s100;
         int boxH = fH+s100+s100;
         int boxW = fW-s60;
         int boxX = fX+s30;
@@ -215,21 +214,23 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
         g.setColor(c0);
         g.fillRect(boxX, boxY, boxW, boxH);
         // top gradient
-        g.setPaint(new GradientPaint(new Point2D.Float(boxX,boxY), c0, new Point2D.Float(boxX,boxY-topPad),c1));
+        g.setPaint(new GradientPaint(new Point2D.Float(boxX,boxY-topPad), c1, new Point2D.Float(boxX,boxY),c0));
         g.fillRect(boxX, boxY-topPad, boxW, topPad);
         // left gradient
         g.setPaint(new GradientPaint(new Point2D.Float(boxX-hPad,boxY), c1, new Point2D.Float(boxX,boxY),c0));
         g.fillRect(boxX-hPad, boxY, hPad, boxH);
         // right gradient
         g.setPaint(new GradientPaint(new Point2D.Float(boxX+boxW,boxY), c0, new Point2D.Float(boxX+boxW+hPad,boxY),c1));
-        g.fillRect(boxX+boxW, boxY, boxX+boxW+hPad, boxH);
+        g.fillRect(boxX+boxW, boxY, hPad, boxH);
         // top-left gradient
         g.setPaint(new RadialGradientPaint(new Rectangle2D.Float(boxX-hPad,boxY-topPad,hPad+topPad,hPad+topPad), dist, colors, CycleMethod.NO_CYCLE));
+        g.setClip(boxX-hPad, boxY-topPad, hPad, topPad);
         g.fillRect(boxX-hPad, boxY-topPad, hPad,topPad);
         // top-right gradient
         g.setPaint(new RadialGradientPaint(new Rectangle2D.Float(boxX+boxW-hPad,boxY-topPad,hPad+topPad,hPad+topPad), dist, colors, CycleMethod.NO_CYCLE));
+        g.setClip(boxX+boxW, boxY-topPad, hPad, topPad);
         g.fillRect(boxX+boxW, boxY-topPad, hPad,topPad);
-        
+        g.setClip(null);
         // draw oscillating holograph
         if (holoImg != null) {
             Composite prevComposite = g.getComposite();
@@ -252,17 +253,20 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
             g.setColor(SystemPanel.whiteText);
             String s = diplomatEmpire.name();
             int sw = g.getFontMetrics().stringWidth(s);
-            g.drawString(s, fX+(fW-sw)/2, empY);
+            drawBorderedString(g, s, fX+(fW-sw)/2, empY, Color.black, Color.white);
+            //g.drawString(s, fX+(fW-sw)/2, empY);
             empY += s20;
             g.setFont(narrowFont(18));
             s = text("LEADER_PERSONALITY_FORMAT", diplomatEmpire.leader().personality(), diplomatEmpire.leader().objective());
             sw = g.getFontMetrics().stringWidth(s); 
-            g.drawString(s, fX+(fW-sw)/2, empY);
+            drawBorderedString(g, s, fX+(fW-sw)/2, empY, Color.black, Color.white);
+//            g.drawString(s, fX+(fW-sw)/2, empY);
             empY += s20;
             DiplomaticTreaty treaty = player().treatyWithEmpire(diplomatEmpire.id);
             s = treaty.status(player());
             sw = g.getFontMetrics().stringWidth(s);
-            g.drawString(s, fX+(fW-sw)/2, empY);
+            drawBorderedString(g, s, fX+(fW-sw)/2, empY, Color.black, Color.white);
+//            g.drawString(s, fX+(fW-sw)/2, empY);
         }
 
         // draw diplomat
