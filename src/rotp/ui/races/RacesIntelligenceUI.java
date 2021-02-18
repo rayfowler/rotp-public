@@ -290,14 +290,14 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         float spyMod = player().spySpendingModifier();
         if (view.embassy().unity())
             desc = text("RACES_INTEL_SPENDING_DESC_UNITY");
+        else if (!view.inEconomicRange())
+            desc = text("RACES_INTEL_SPENDING_RANGE");
         else if (spyMod < 1) {
             int pct = (int) (Math.ceil((1-spyMod)*100));
             desc = text("RACES_INTEL_SPENDING_CAPPED", pct);
         }
-        else if (view.inEconomicRange())
-            desc = text("RACES_INTEL_SPENDING_DESC");
         else
-            desc = text("RACES_INTEL_SPENDING_RANGE");
+            desc = text("RACES_INTEL_SPENDING_DESC");
         List<String> lines = wrappedLines(g, desc, w-s50);
 
         int y4 = y3+s20;
