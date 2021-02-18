@@ -83,6 +83,7 @@ DiplomacyTradeMenu       |  77  | DIPLO_TRADE_MENU_01
 DiplomacyTechRequestMenu |  77  | DIPLO_TECH_REQUEST_MENU_01
 DiplomacyTechCounterMenu |  77  | DIPLO_TECH_COUNTER_MENU_01
 DiplomacyTreatyMenu      |  77  | DIPLO_TREATY_MENU_01
+DiplomacyThreatenMenu    |  77  | DIPLO_THREATEN_MENU_01
 DiplomacyDeclareWarMenu  |  77  | DIPLO_DECLARE_WAR_MENU_01
 DiplomacyJointWarMenu    |  77  | DIPLO_JOINT_WAR_MENU_01
 DiplomacyBreakAllyMenu   |  77  | DIPLO_BREAK_ALLIANCE_MENU_01 
@@ -233,6 +234,9 @@ RespondBreakTrade    |  77  | RESPOND_BREAK_TRADE_01
 RespondBreakPact     |  77  | RESPOND_BREAK_PACT_01
 RespondBreakAlliance |  77  | RESPOND_BREAK_ALLIANCE_01
 RespondDeclareWar    |  77  | RESPOND_DECLARE_WAR_01
+RespondIgnoreThreat  |  77  | RESPOND_IGNORE_THREAT_01
+RespondStopSpying    |  77  | RESPOND_STOP_SPYING_01
+RespondStopAttacking |  77  | RESPOND_STOP_ATTACKING_01
 
 Warning-AttackedAlly |  77  | WARN_ATTACKED_ALLY_01
 

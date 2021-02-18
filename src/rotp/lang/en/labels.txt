@@ -1866,13 +1866,16 @@ DIPLOMACY_MENU_ACCEPT             | Accept
 DIPLOMACY_MENU_ACCEPT_NEED_BC     | Accept (not enough funds)
 DIPLOMACY_MENU_FORGET_IT          | Forget It
 DIPLOMACY_TRADE_LEVEL             | %1 BC / Year
-DIPLOMACY_MENU_TREATIES           | Diplomatic Actions
+DIPLOMACY_MENU_TREATIES           | Propose Treaty
 DIPLOMACY_MENU_TRADE              | Trade Agreement
 DIPLOMACY_MENU_TECHNOLOGY         | Exchange Technology
 DIPLOMACY_MENU_OFFER_AID          | Offer Aid
 DIPLOMACY_MENU_AMT                | %1 BC
 DIPLOMACY_MENU_OFFER_TECHS        | Offer Technology
+DIPLOMACY_MENU_THREATEN           | Threaten
 DIPLOMACY_MENU_DECLARE_WAR        | Declare War
+DIPLOMACY_MENU_STOP_SPYING        | Stop Spying
+DIPLOMACY_MENU_STOP_ATTACKING     | Stop Attacking
 DIPLOMACY_MENU_GOODBYE            | Good Bye
 DIPLOMACY_MENU_PACT               | Propose Non-Aggression Pact
 DIPLOMACY_MENU_ALLIANCE           | Propose Alliance

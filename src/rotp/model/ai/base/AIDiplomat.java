@@ -26,6 +26,7 @@ import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.GalacticCouncil;
+import rotp.model.empires.SpyNetwork.Mission;
 import rotp.model.empires.TreatyWar;
 import rotp.model.galaxy.Galaxy;
 import rotp.model.galaxy.ShipFleet;
@@ -880,6 +881,27 @@ public class AIDiplomat implements Base, Diplomat {
     public boolean canBreakAlliance(Empire e)              { return empire.alliedWith(id(e)); }
     @Override
     public boolean canDeclareWar(Empire e)                 { return empire.inEconomicRange(id(e)) && !empire.atWarWith(id(e)) && !empire.alliedWith(id(e)); }
+    @Override
+    public boolean canThreaten(Empire e) { 
+        return canThreatenSpying(e) || canThreatenAttacking(e); 
+    }
+    @Override
+    public boolean canThreatenSpying(Empire e) { 
+        if (!empire.inEconomicRange(id(e)))
+            return false;
+        if (empire.atWarWith(id(e)))
+            return false;
+        
+        return e.viewForEmpire(empire).spies().spiesLost() > 0;
+    }
+    @Override
+    public boolean canThreatenAttacking(Empire e) { 
+        if (!empire.inEconomicRange(id(e)))
+            return false;
+        if (empire.atWarWith(id(e)))
+            return false;
+        return true; 
+    }
 
     public DiplomaticReply receiveDemandTribute(Empire e) {
         EmpireView v = empire.viewForEmpire(id(e));
@@ -918,12 +940,69 @@ public class AIDiplomat implements Base, Diplomat {
         return v.otherView().accept(DialogueManager.RESPOND_BREAK_TRADE, inc);
     }
     @Override
+    public DiplomaticReply receiveThreatStopSpying(Empire e) {
+        EmpireView v = empire.viewForEmpire(e);
+        
+        v.embassy().noteRequest();
+        v.embassy().withdrawAmbassador();
+        
+        if (empire.atWarWith(e.id) || v.embassy().onWarFooting())
+            return v.accept(DialogueManager.RESPOND_IGNORE_THREAT);
+
+        if (empire.leader().isPacifist() || empire.leader().isHonorable()) {
+            if (e.leader().isXenophobic())
+                empire.shutdownSpyNetworksAgainst(e.id);
+            else
+                empire.hideSpiesAgainst(e.id);
+            return v.accept(DialogueManager.RESPOND_STOP_SPYING);
+        }
+                   
+        float otherPower = empire.militaryPowerLevel(e);
+        float myPower = empire.militaryPowerLevel();
+        float powerRatio = myPower/otherPower;
+
+        if (powerRatio > 2)
+            return v.accept(DialogueManager.RESPOND_IGNORE_THREAT);
+            
+        if (e.leader().isXenophobic())
+            empire.shutdownSpyNetworksAgainst(e.id);
+        else
+            empire.hideSpiesAgainst(e.id);
+        return v.accept(DialogueManager.RESPOND_STOP_SPYING);
+    }
+    @Override
+    public DiplomaticReply receiveThreatStopAttacking(Empire e) {
+        EmpireView v = empire.viewForEmpire(e);
+
+        v.embassy().noteRequest();
+        v.embassy().withdrawAmbassador();
+        
+        if (empire.atWarWith(e.id) || v.embassy().onWarFooting())
+            return v.otherView().accept(DialogueManager.RESPOND_IGNORE_THREAT);
+
+        if (empire.leader().isPacifist()) {
+            empire.retreatShipsFrom(e.id);
+            return v.otherView().accept(DialogueManager.RESPOND_STOP_ATTACKING);
+        }
+                   
+        float otherPower = empire.militaryPowerLevel(e);
+        float myPower = empire.militaryPowerLevel();
+        float powerRatio = myPower/otherPower;
+
+        if (powerRatio > 2)
+            return v.otherView().accept(DialogueManager.RESPOND_IGNORE_THREAT);
+            
+        empire.retreatShipsFrom(e.id);
+        return v.otherView().accept(DialogueManager.RESPOND_STOP_ATTACKING);
+    }
+    @Override
     public DiplomaticReply receiveDeclareWar(Empire e) {
         EmpireView v = empire.viewForEmpire(e);
 
         v.embassy().noteRequest();
         DiplomaticIncident inc = v.otherView().embassy().declareWar();
-        return v.otherView().accept(DialogueManager.RESPOND_DECLARE_WAR, inc);
+
+        return v.otherView().accept(DialogueManager.DECLARE_HATE_WAR, inc);
     }
     private boolean decidedToBreakAlliance(EmpireView view) {
         if (!wantToBreakAlliance(view))

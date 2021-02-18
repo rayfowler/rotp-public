@@ -31,6 +31,9 @@ public interface Diplomat {
     boolean canExchangeTechnology(Empire e);
     boolean canOfferAid(Empire e);
     boolean canDeclareWar(Empire e);
+    boolean canThreaten(Empire e);
+    boolean canThreatenSpying(Empire e);
+    boolean canThreatenAttacking(Empire e);
     
     List<Integer> offerAidAmounts();
     List<Tech> offerableTechnologies(Empire emp);
@@ -50,6 +53,8 @@ public interface Diplomat {
     
     DiplomaticReply receiveFinancialAid(Empire e, int amt);
     DiplomaticReply receiveTechnologyAid(Empire e, String techId);
+    DiplomaticReply receiveThreatStopSpying(Empire e);
+    DiplomaticReply receiveThreatStopAttacking(Empire e);
     DiplomaticReply receiveDeclareWar(Empire e);
     DiplomaticReply receiveOfferPeace(Empire e);
     DiplomaticReply receiveOfferTrade(Empire e, int level);

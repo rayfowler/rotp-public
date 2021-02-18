@@ -62,6 +62,7 @@ public final class SpyNetwork implements Base, Serializable {
     private final FleetView fleetView  = new FleetView();
     private List<String> possibleTechs = new ArrayList<>();
     private transient int spiesLost = 0;
+    private transient Mission confessedMission;
     private transient List<StarSystem> baseTargets;
     private transient List<StarSystem> factoryTargets;
     private transient List<StarSystem> rebellionTargets;
@@ -148,6 +149,7 @@ public final class SpyNetwork implements Base, Serializable {
     public List<Spy> activeSpies()   { return activeSpies; }
     public int numActiveSpies()      { return activeSpies().size(); }
     public int spiesLost()           { return spiesLost; }
+    public Mission confessedMission() { return confessedMission; }
 
     public List<String> possibleTechs() {
         if (possibleTechs == null)
@@ -232,15 +234,17 @@ public final class SpyNetwork implements Base, Serializable {
             return;
         }
         
+        if (maxSpies() == 0) {
+            activeSpies.clear();
+            return;
+        }
+        
         log(view+" Spies: nextTurn");
         if (!activeSpies().isEmpty())
             view.refreshSystemSpyViews();
         
-        baseTargets = sabotageBaseTargets();
-        factoryTargets = sabotageFactoryTargets();
-        rebellionTargets = sabotageRebellionTargets();
-
         spiesLost = 0;
+        confessedMission = null;
         if (empire().extinct()) {
             activeSpies.clear();
             return;
@@ -250,6 +254,10 @@ public final class SpyNetwork implements Base, Serializable {
         if (activeSpies.isEmpty())
             return;
 
+        baseTargets = sabotageBaseTargets();
+        factoryTargets = sabotageFactoryTargets();
+        rebellionTargets = sabotageRebellionTargets();
+
         if (activeSpies.size() >= MIN_SPIES_FOR_FLEET_VIEW)
             updateFleetView(empire());
 
@@ -258,14 +266,18 @@ public final class SpyNetwork implements Base, Serializable {
 
         boolean spyConfessed = sendSpiesToInfiltrate();
 
-        if (spyConfessed)
+        if (spyConfessed) {
             checkForTreatyBreak();
+            confessedMission = mission;
+        }
+        
         
         if (spiesLost > 0) {
             if (view.owner().isPlayer() || view.empire().isPlayer())
                 session().addSpiesCapturedNotification();
         }
-
+        
+        
         if (spyConfessed || activeSpies.isEmpty() || isHide())
             return;
 

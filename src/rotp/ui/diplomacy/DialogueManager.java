@@ -42,6 +42,7 @@ public class DialogueManager implements Base {
     public static final String DIPLOMACY_TECH_REQ_MENU  = "DiplomacyTechRequestMenu";
     public static final String DIPLOMACY_TECH_CTR_MENU  = "DiplomacyTechCounterMenu";
     public static final String DIPLOMACY_TREATY_MENU    = "DiplomacyTreatyMenu";
+    public static final String DIPLOMACY_THREATEN_MENU  = "DiplomacyThreatenMenu";
     public static final String DIPLOMACY_DECLARE_WAR_MENU = "DiplomacyDeclareWarMenu";
     public static final String DIPLOMACY_JOINT_WAR_MENU = "DiplomacyJointWarMenu";
     public static final String DIPLOMACY_OFFER_AID_MENU = "DiplomacyOfferAidMenu";
@@ -89,6 +90,10 @@ public class DialogueManager implements Base {
     public static final String RESPOND_BREAK_PACT       = "RespondBreakPact";
     public static final String RESPOND_BREAK_ALLIANCE   = "RespondBreakAlliance";
     public static final String RESPOND_DECLARE_WAR      = "RespondDeclareWar";
+    public static final String RESPOND_IGNORE_THREAT    = "RespondIgnoreThreat";
+    public static final String RESPOND_STOP_SPYING      = "RespondStopSpying";
+    public static final String RESPOND_STOP_ATTACKING   = "RespondStopAttacking";
+    
     public static final String TRANSPORTS_PERISHED      = "TransportsPerished";
     public static final String TRANSPORTS_KILLED        = "TransportsKilled";
     public static final String ENEMY_TRANSPORTS_KILLED  = "EnemyTransportsKilled";
@@ -175,6 +180,7 @@ public class DialogueManager implements Base {
         addMessage(new DiplomacyTechRequestMenu(DIPLOMACY_TECH_REQ_MENU));
         addMessage(new DiplomacyTechCounterMenu(DIPLOMACY_TECH_CTR_MENU));
         addMessage(new DiplomacyTreatyMenu(DIPLOMACY_TREATY_MENU));
+        addMessage(new DiplomacyThreatenMenu(DIPLOMACY_THREATEN_MENU));
         addMessage(new DiplomacyDeclareWarMenu(DIPLOMACY_DECLARE_WAR_MENU));
         addMessage(new DiplomacyJointWarMenu(DIPLOMACY_JOINT_WAR_MENU));
         addMessage(new DiplomacyOfferAidMenu(DIPLOMACY_OFFER_AID_MENU));
