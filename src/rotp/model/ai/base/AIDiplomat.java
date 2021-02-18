@@ -1760,20 +1760,20 @@ public class AIDiplomat implements Base, Diplomat {
             case ECOLOGIST:     return 0.4f;
             case DIPLOMAT:      return 0.6f;
             case INDUSTRIALIST: return 0.8f;
-            case EXPANSIONIST:  return 0.8f;
+            case EXPANSIONIST:  return 0.6f;
             case TECHNOLOGIST:  return 0.6f;
             default:            return 0.6f;
         }        
     }
     private float warFleetSizeLossLimit(EmpireView v) {
         switch(v.owner().leader().objective) {
-            case MILITARIST:    return 0.4f;
-            case ECOLOGIST:     return 0.2f;
-            case DIPLOMAT:      return 0.2f;
-            case INDUSTRIALIST: return 0.2f;
-            case EXPANSIONIST:  return 0.2f;
-            case TECHNOLOGIST:  return 0.2f;
-            default:            return 0.2f;
+            case MILITARIST:    return 0.5f;
+            case ECOLOGIST:     return 0.3f;
+            case DIPLOMAT:      return 0.3f;
+            case INDUSTRIALIST: return 0.3f;
+            case EXPANSIONIST:  return 0.3f;
+            case TECHNOLOGIST:  return 0.3f;
+            default:            return 0.3f;
         }        
     }
 }

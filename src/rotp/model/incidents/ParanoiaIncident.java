@@ -44,7 +44,7 @@ public class ParanoiaIncident extends DiplomaticIncident {
 
         float multiplier = 1.0f;
         if (ev.owner().leader().isXenophobic())
-            multiplier *= 1.5;
+            multiplier *= 2;
         if (ev.owner().leader().isDiplomat())
             multiplier /= 1.5;
         

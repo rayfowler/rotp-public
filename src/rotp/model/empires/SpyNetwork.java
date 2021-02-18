@@ -267,16 +267,20 @@ public final class SpyNetwork implements Base, Serializable {
         boolean spyConfessed = sendSpiesToInfiltrate();
 
         if (spyConfessed) {
+            view.otherView().embassy().addIncident(new SpyConfessionIncident(view.otherView(), this));
             checkForTreatyBreak();
             confessedMission = mission;
         }
-        
+        else if ((spiesLost > 0) && view.empire().leader().isXenophobic()) {
+            view.otherView().embassy().addIncident(new SpyConfessionIncident(view.otherView(), this));
+            checkForTreatyBreak();
+            confessedMission = Mission.SABOTAGE;
+        }
         
         if (spiesLost > 0) {
             if (view.owner().isPlayer() || view.empire().isPlayer())
                 session().addSpiesCapturedNotification();
         }
-        
         
         if (spyConfessed || activeSpies.isEmpty() || isHide())
             return;
@@ -324,10 +328,6 @@ public final class SpyNetwork implements Base, Serializable {
             }
             confession = confession || spy.confesses();
         }
-        // spy confesses to enemy, who gets a Diplomatic Incident
-        if (confession)
-            view.otherView().embassy().addIncident(new SpyConfessionIncident(view.otherView(), this));
-
         return confession;
     }
     private void sendSpiesToAttemptMission() {

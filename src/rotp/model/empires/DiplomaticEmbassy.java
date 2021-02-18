@@ -166,7 +166,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
             if (inc.isSpying())
                 sev += inc.currentSeverity();
         }
-        return max(-100,sev);
+        return max(-50,sev);
     }
     public boolean hasCurrentSpyIncident() {
         for (DiplomaticIncident inc: allIncidents()) {

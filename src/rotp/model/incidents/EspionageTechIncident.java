@@ -33,7 +33,7 @@ public class EspionageTechIncident extends DiplomaticIncident {
         severity = max(-20,ev.embassy().currentSpyIncidentSeverity());
 
         dateOccurred = galaxy().currentYear();
-        duration = 10;
+        duration = ev.empire().leader().isTechnologist()? 20 : 10;
         
         // empSpy is the actual spy
         // empThief is the suspected spy (the one who was framed)

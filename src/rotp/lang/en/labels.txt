@@ -270,6 +270,7 @@ INC_SKIRMISH_DESC                 | [my_race] and [your_race] fleets engaged in 
 INC_SPY_CONFESSION_TITLE          | Spy Confession
 INC_SPY_CONFESS_ESPIONAGE_DESC    | A spy for the [spy_empire] was captured and confessed to ongoing espionage activities planned against the [victim_empire].
 INC_SPY_CONFESS_SABOTAGE_DESC     | A spy for the [spy_empire] was captured and confessed to ongoing sabotage activities planned against the [victim_empire].
+INC_SPY_CAPTURED_DESC             | A spy for the [spy_empire] was captured and forced to confess to ongoing sabotage activities planned against the [victim_empire].
 INC_TRADE_INCOME_TITLE            | Trade Profit
 INC_TRADE_INCOME_DESC             | Trade between the [your_empire] and [my_empire] has resulted in a profit of [amt] BC.
 INC_TRESPASSING_TITLE             | Trespass

@@ -99,7 +99,7 @@ public class Leader implements Base, Serializable {
         if (isAggressive())
             ratio /= 2;
         if (isMilitarist())
-            ratio /= 2;
+            ratio /= 1.5;
         if (isHonorable())
             ratio *= 2;
         if (isPacifist())
@@ -107,7 +107,7 @@ public class Leader implements Base, Serializable {
         if (isXenophobic())
             ratio *= 1.5;
         if (isExpansionist())
-            ratio /= 1.5;
+            ratio /= 2;
         return ratio;
     }
     public float retreatRatio(Empire c) {
@@ -153,25 +153,33 @@ public class Leader implements Base, Serializable {
         }
     }
     public float bioweaponMod() {
+        float objMod = 1.0f;
+        switch(objective) {
+            case ECOLOGIST:  objMod = 2.0f;
+        }
         switch(personality) {
-            case PACIFIST:   return 1;
-            case HONORABLE:  return 1.5f;
-            case XENOPHOBIC: return 0.5f;
+            case PACIFIST:   return objMod*1;
+            case HONORABLE:  return objMod*1.5f;
+            case XENOPHOBIC: return objMod*0.5f;
             case RUTHLESS:   return 0;
-            case AGGRESSIVE: return 0.5f;
-            case ERRATIC:    return 0.5f;
-            default:         return 1;
+            case AGGRESSIVE: return objMod*0.5f;
+            case ERRATIC:    return objMod*0.5f;
+            default:         return objMod*1;
         }
     }
     public int oathBreakerDuration() {
+        int objMod = 1;
+        switch(objective) {
+            case DIPLOMAT:  objMod = 2;
+        }
         switch(personality) {
-            case PACIFIST:   return 50;
+            case PACIFIST:   return objMod*50;
             case HONORABLE:  return 999999;
-            case XENOPHOBIC: return 50;
+            case XENOPHOBIC: return objMod*50;
             case RUTHLESS:   return 0;
-            case AGGRESSIVE: return 50;
-            case ERRATIC:    return 25;
-            default:         return 1;
+            case AGGRESSIVE: return objMod*50;
+            case ERRATIC:    return objMod*25;
+            default:         return objMod*1;
         }
     }
     public float diplomacyAnnoyanceMod(EmpireView v) {

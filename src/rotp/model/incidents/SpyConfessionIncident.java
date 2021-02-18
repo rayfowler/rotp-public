@@ -38,6 +38,12 @@ public class SpyConfessionIncident extends DiplomaticIncident {
             missionType = 1;
             duration = 5;
         }
+        else if (spies.isHide() && ev.owner().leader().isXenophobic()) {
+            mission = text("NOTICE_SPYING_MISSION_SABOTAGE");
+            severity = max(-20, -10+ev.embassy().currentSpyIncidentSeverity());
+            missionType = 0;
+            duration = 10;
+        }
         else if (spies.isSabotage()) {
             mission = text("NOTICE_SPYING_MISSION_SABOTAGE");
             severity = max(-20, -10+ev.embassy().currentSpyIncidentSeverity());
@@ -51,23 +57,28 @@ public class SpyConfessionIncident extends DiplomaticIncident {
             duration = 2;
         }
 
+        if (ev.owner().leader().isXenophobic())
+            duration *= 2;
+        
         dateOccurred = galaxy().currentYear();
 
         //if (ev.owner().isPlayer() || ev.empire().isPlayer())
         //    SpyCapturedAlert.create(ev.empire(), ev.owner(), mission);
     }
     @Override
-    public boolean isSpying()           { return missionType > 0; }
+    public boolean isSpying()           { return (missionType > 0) || galaxy().empire(empVictim).leader().isXenophobic() ; }
     @Override
-    public int timerKey()          { return SPY_WARNING; }
+    public int timerKey()               { return SPY_WARNING; }
     @Override
     public String title()               { return text("INC_SPY_CONFESSION_TITLE"); }
     @Override
     public String description() {
-        if (missionType == 2)
-            return decode(text("INC_SPY_CONFESS_SABOTAGE_DESC"));
-        else
-            return decode(text("INC_SPY_CONFESS_ESPIONAGE_DESC"));
+        switch(missionType) {
+            case 0: return decode(text("INC_SPY_CAPTURED_DESC"));
+            case 1: return decode(text("INC_SPY_CONFESS_ESPIONAGE_DESC"));
+            case 2: return decode(text("INC_SPY_CONFESS_SABOTAGE_DESC"));
+            default: return decode(text("INC_SPY_CAPTURED_DESC"));
+        }
     }
     @Override
     public boolean triggersWar()        { return false; } // war is only triggered after a warning
@@ -79,8 +90,10 @@ public class SpyConfessionIncident extends DiplomaticIncident {
             return "";
         else if (missionType == 2)
             return DialogueManager.WARNING_SABOTAGE;
-        else
+        else if (missionType == 1)
             return DialogueManager.WARNING_ESPIONAGE;
+        else
+            return DialogueManager.WARNING_SABOTAGE;        
     }
     @Override
     public String declareWarId()     { return DialogueManager.DECLARE_SPYING_WAR; }
