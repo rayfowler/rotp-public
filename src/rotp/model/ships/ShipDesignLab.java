@@ -52,6 +52,7 @@ public class ShipDesignLab implements Base, Serializable {
     public boolean needExtendedColonyShips = false;
     public boolean needScouts = true;
 
+    private ShipDesign prototypeDesign;
     private transient List<ShipDesign> outdatedDesigns;
 
     public ShipDesign[] designs()                 { return designs; }
@@ -79,6 +80,11 @@ public class ShipDesignLab implements Base, Serializable {
     public ShipWeapon noWeapon()                  { return weapons().get(0); }
     public ShipSpecial noSpecial()                { return specials().get(0); }
     
+    public ShipDesign prototypeDesign() {
+        if (prototypeDesign == null)
+            prototypeDesign = newBlankDesign(ShipDesign.SMALL);
+        return prototypeDesign;
+    }  
     public boolean slotInUse(int slot) {
         return (slot == scoutDesignId) || (slot == bomberDesignId) || (slot == fighterDesignId)
                 || (slot == colonyDesignId) || (slot == destroyerDesignId);

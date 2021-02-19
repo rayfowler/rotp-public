@@ -135,6 +135,7 @@ public class DesignUI extends BasePanel {
     int[] constructionCounts;
     int displayShipW = -1;
     int displayShipH = -1;
+    int shipSlotW = -1;
 
     public DesignUI() {
         instance = this;
@@ -257,7 +258,7 @@ public class DesignUI extends BasePanel {
         if (helpFrame == 0)
             return;
         
-        ShipDesign des = player().shipLab().design(selectedSlot);
+        ShipDesign des = configPanel.shipDesign();
         switch(helpFrame) {
             case 1: loadHelpFrame1(); break;
             case 2: loadHelpFrame2(); break;
@@ -740,25 +741,130 @@ public class DesignUI extends BasePanel {
                 repaint();
         }
     }
-    class SlotTitlePanel extends BasePanel {
+    class SlotTitlePanel extends BasePanel implements MouseListener, MouseMotionListener {
         private static final long serialVersionUID = 1L;
         String titleKey;
+        Rectangle hoverBox;
+        Rectangle prototypeBox = new Rectangle();
+        Rectangle copyButton= new Rectangle();
         public SlotTitlePanel(String s) {
             titleKey = s;
             init();
         }
         private void init() {
-            setPreferredSize(new Dimension(getWidth(), s45));
+            setPreferredSize(new Dimension(getWidth(), s100));
             setOpaque(false);
+            addMouseListener(this);
+            addMouseMotionListener(this);
         }
         @Override
-        public void paintComponent(Graphics g) {
+        public String textureName()     { return TEXTURE_BROWN; }
+        @Override
+        public Rectangle textureClip()  { return prototypeBox; }
+        @Override
+        public void paintComponent(Graphics g0) {
+            Graphics2D g = (Graphics2D) g0;
             super.paintComponent(g);
             String title = text(titleKey);
+            
+            int w = getWidth();
+            int h = getHeight();
+            copyButton.setBounds(0,0,0,0);
             
             g.setFont(narrowFont(32));
             g.setColor(SystemPanel.orangeText);
             g.drawString(title, s10, s32);
+            
+            prototypeBox.setBounds(0,s50,w,h-s55);
+            int shipW = shipSlotW < 0 ? s95 : shipSlotW;
+            g.setColor(lightBrown);
+            g.fillRect(0,s50,w,h-s55);
+            g.setColor(darkBrown);
+            g.fillRect(s5,s55,w-s10,h-s65);
+            g.setColor(Color.black);
+            g.fillRect(s10,s60,shipW,h-s75);
+            int leftM = s10+shipW+s10;
+            
+            if ((selectedSlot >= 0) && !configPanel.shipDesign().active()) {
+                g.setFont(narrowFont(16));
+                String str = text("SHIP_DESIGN_COPY_BUTTON");
+                int sw = g.getFontMetrics().stringWidth(str);
+                int buttonW = sw + s40;
+                int buttonH = s20;
+                int buttonX = (leftM-buttonW)/2;
+                int buttonY = h-buttonH-s18;
+                copyButton.setBounds(buttonX, buttonY, buttonW, buttonH);
+
+                if (copyBackground == null) {
+                    float[] dist = {0.0f, 0.5f, 1.0f};
+                    Point2D ptStart = new Point2D.Float(buttonX, 0);
+                    Point2D ptEnd = new Point2D.Float(buttonX + buttonW, 0);
+                    Color[] yesColors = {brownEdgeC, brownMidC, brownEdgeC};
+                    copyBackground = new LinearGradientPaint(ptStart, ptEnd, dist, yesColors);
+                }
+                boolean hovering = hoverTarget == copyButton;
+                g.setPaint(copyBackground);
+                g.fillRoundRect(buttonX, buttonY, buttonW, buttonH, s3, s3);
+                Color c0 = hovering ? SystemPanel.yellowText : SystemPanel.whiteText;
+                g.setColor(c0);
+                Stroke prevStr = g.getStroke();
+                g.setStroke(BasePanel.stroke1);
+                g.drawRoundRect(buttonX, buttonY, buttonW, buttonH, s3, s3);
+                g.setStroke(prevStr);
+                int x2a = buttonX + ((buttonW - sw) / 2);
+                drawBorderedString(g, str, x2a, buttonY + buttonH - s6, SystemPanel.textShadowC, c0);
+            }
+
+            
+            String s = text("SHIP_DESIGN_PROTOTYPE");
+            g.setFont(narrowFont(18));
+            drawShadowedString(g, s, 3, leftM, h-s20, SystemPanel.textShadowC, SystemPanel.whiteText);
+
+            if (selectedSlot < 0) {
+                int boxY = s52;
+                int boxX = s2;
+                g.setStroke(stroke5);
+                g.setColor(SystemPanel.yellowText);
+                g.drawRect(boxX, boxY, w-s4, h-s59);
+            }            
+        }
+        @Override
+        public void mouseClicked(MouseEvent e) { }
+        @Override
+        public void mousePressed(MouseEvent e) { }
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            if (hoverBox == copyButton) {
+                softClick();
+                configPanel.shipDesign().copyFrom(player().shipLab().prototypeDesign());
+                configPanel.loadShipImages();
+                instance.repaint();
+                return;
+            }
+            else if (hoverBox == prototypeBox) {
+                selectedSlot = -1;
+                instance.repaint();
+            }
+        }
+        @Override
+        public void mouseEntered(MouseEvent e) {         }
+        @Override
+        public void mouseExited(MouseEvent e) { }
+        @Override
+        public void mouseDragged(MouseEvent e) { }
+        @Override
+        public void mouseMoved(MouseEvent e) {
+            int x = e.getX();
+            int y = e.getY();
+            Rectangle prevHover = hoverBox;
+            hoverBox = null;
+            if (copyButton.contains(x,y))
+                hoverBox = copyButton;
+            else if (prototypeBox.contains(x,y))
+                hoverBox = prototypeBox;
+            
+            if (hoverBox != prevHover)
+                instance.repaint();
         }
     }
     final class DesignSlotPanel extends BasePanel implements MouseListener, MouseMotionListener {
@@ -787,11 +893,14 @@ public class DesignUI extends BasePanel {
 
             int w = getWidth();
             int boxH = getHeight()-s10;
-            int boxW = boxH*6/5;
+           
+            if (shipSlotW < 0)
+                shipSlotW = boxH*6/5;
+            int boxW = shipSlotW;
             drawShip(g);
 
             int leftM = boxW+s10;
-            ShipDesign des = shipDesign();
+            ShipDesign des = slotDesign();
             if (!des.active()) {
                 g.setFont(narrowFont(18));
                 drawShadowedString(g, text("SHIP_DESIGN_AVAILABLE"), 3, leftM, s20, SystemPanel.textShadowC, SystemPanel.whiteText);
@@ -847,7 +956,7 @@ public class DesignUI extends BasePanel {
             }
             // draw copy button
             copyButtonArea[designNum].setBounds(0, 0, 0, 0);
-            if (shipDesign().active() && !player().shipLab().design(selectedSlot).active()) {
+            if (slotDesign().active() && !configPanel.shipDesign().active()) {
                 g.setFont(narrowFont(18));
                 String str = text("SHIP_DESIGN_COPY_BUTTON");
                 int sw = g.getFontMetrics().stringWidth(str);
@@ -878,14 +987,14 @@ public class DesignUI extends BasePanel {
             }
 
         }
-        private ShipDesign shipDesign()   { return player().shipLab().design(designNum); }
+        private ShipDesign slotDesign()   { return player().shipLab().design(designNum); }
         private void drawShip(Graphics g) {
             int boxH = getHeight()-s10;
             int boxW = boxH*6/5;
             g.setColor(ShipBattleUI.spaceBlue);
             g.fillRect(s5,s5,boxW,boxH);
 
-            ShipDesign des = shipDesign();
+            ShipDesign des = slotDesign();
             if (!des.active())
                 return;
 
@@ -911,7 +1020,7 @@ public class DesignUI extends BasePanel {
         public void mouseReleased(MouseEvent mouseEvent) {
             if (hoverTarget == copyButtonArea[designNum]) {
                 softClick();
-                player().shipLab().design(selectedSlot).copyFrom(shipDesign());
+                configPanel.shipDesign().copyFrom(slotDesign());
                 configPanel.loadShipImages();
                 instance.repaint();
                 return;
@@ -968,11 +1077,13 @@ public class DesignUI extends BasePanel {
             int boxH = (getHeight() - s6)/designPanels.length;
             int boxW = (getWidth() - s6);
 
-            int boxY = s3+(selectedSlot*boxH);
-            int boxX = s3;
-            g.setStroke(stroke5);
-            g.setColor(SystemPanel.yellowText);
-            g.drawRect(boxX, boxY, boxW, boxH);
+            if (selectedSlot >= 0) {
+                int boxY = s3+(selectedSlot*boxH);
+                int boxX = s3;
+                g.setStroke(stroke5);
+                g.setColor(SystemPanel.yellowText);
+                g.drawRect(boxX, boxY, boxW, boxH);
+            }
         }
     }
     class ExitDesignButton extends ExitButton {
@@ -1001,7 +1112,10 @@ public class DesignUI extends BasePanel {
             addMouseListener(this);
             addMouseWheelListener(this);
         }
-        private ShipDesign shipDesign()   { return player().shipLab().design(selectedSlot); }
+        private ShipDesign shipDesign()   { 
+            ShipDesignLab lab = player().shipLab();
+            return selectedSlot < 0 ? lab.prototypeDesign() : lab.design(selectedSlot); 
+        }
         private void loadShipImages() {
             if (shipDesign() == null)
                 return;
@@ -1169,7 +1283,14 @@ public class DesignUI extends BasePanel {
             g0.setClip(null);
         }
         private void drawSummaryInfo(Graphics2D g, ShipDesign des, int x, int y, int w, int h) {
-            String name = des.active() ? des.name() : text("SHIP_DESIGN_NEW");
+            String name = "";
+            if (selectedSlot < 0) 
+                name = text("SHIP_DESIGN_PROTOTYPE_TITLE");
+            else if (des.active())
+                name = des.name();
+            else
+                name = text("SHIP_DESIGN_NEW");
+            
             scaledFont(g, name, w-s10, 32, 24);
             int titleW = g.getFontMetrics().stringWidth(name);
             int x0 = x+((w-titleW)/2);
@@ -1301,7 +1422,53 @@ public class DesignUI extends BasePanel {
             sw = g.getFontMetrics().stringWidth(str);
             g.drawString(str, x3-sw, y6);
 
-            if (des.active()) {
+            if (selectedSlot < 0) {
+                renameButtonArea.setBounds(0,0,0,0);
+                scrapButtonArea.setBounds(0,0,0,0);
+                // draw clear button
+                g.setFont(narrowFont(18));
+                str = text("SHIP_DESIGN_CLEAR_BUTTON");
+                sw = g.getFontMetrics().stringWidth(str);
+                int buttonW = sw + s40;
+                int buttonH = s25;
+                int buttonX = x + s10;
+                int buttonY = y + h - s30;
+                clearButtonArea.setBounds(buttonX, buttonY, buttonW, buttonH);
+
+                if (clearBackground == null) {
+                    float[] dist = {0.0f, 0.5f, 1.0f};
+                    Point2D ptStart = new Point2D.Float(buttonX, 0);
+                    Point2D ptEnd = new Point2D.Float(buttonX + buttonW, 0);
+                    Color[] yesColors = {brownEdgeC, brownMidC, brownEdgeC};
+                    clearBackground = new LinearGradientPaint(ptStart, ptEnd, dist, yesColors);
+                }
+
+                boolean hovering = hoverTarget == clearButtonArea;
+                g.setPaint(clearBackground);
+                g.fillRoundRect(buttonX, buttonY, buttonW, buttonH, s3, s3);
+                Color c0 = hovering ? SystemPanel.yellowText : SystemPanel.whiteText;
+                g.setColor(c0);
+                Stroke prevStr = g.getStroke();
+                g.setStroke(BasePanel.stroke1);
+                g.drawRoundRect(buttonX, buttonY, buttonW, buttonH, s3, s3);
+                g.setStroke(prevStr);
+                int x2a = buttonX + ((buttonW - sw) / 2);
+                drawBorderedString(g, str, x2a, buttonY + buttonH - s7, SystemPanel.textShadowC, c0);
+
+                g.setFont(narrowFont(15));
+                g.setColor(SystemPanel.whiteText);
+                str = text("SHIP_DESIGN_PROTOTYPE_DESC");
+                int labelW = g.getFontMetrics().stringWidth(str);
+                int maxLabelW = min(labelW, scaled(200));
+                List<String> lines = wrappedLines(g, str, maxLabelW);
+                int lineX = x+w-maxLabelW;
+                int lineY = lines.size() == 1 ? y+h-s15 : y+h-s25;
+                for (String line: lines) {
+                    g.drawString(line, lineX, lineY);
+                    lineY += s16;
+                }
+            }
+            else if (des.active()) {
                 clearButtonArea.setBounds(0,0,0,0);
                 createButtonArea.setBounds(0,0,0,0);
                 // draw rename button
@@ -1400,7 +1567,7 @@ public class DesignUI extends BasePanel {
                 int x2a = buttonX + ((buttonW - sw) / 2);
                 drawBorderedString(g, str, x2a, buttonY + buttonH - s7, SystemPanel.textShadowC, c0);
 
-                // draw create button
+                // draw deploy button
                 g.setFont(narrowFont(18));
                 str = text("SHIP_DESIGN_DEPLOY_BUTTON");
                 sw = g.getFontMetrics().stringWidth(str);
