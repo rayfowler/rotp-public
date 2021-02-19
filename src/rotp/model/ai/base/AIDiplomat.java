@@ -534,9 +534,9 @@ public class AIDiplomat implements Base, Diplomat {
     }
     @Override
     public DiplomaticReply acceptOfferPeace(Empire requestor) {
-        EmpireView v = empire.viewForEmpire(requestor);
+        EmpireView v = requestor.viewForEmpire(empire);
         DiplomaticIncident inc = v.embassy().signPeace();
-        return v.accept(DialogueManager.ANNOUNCE_PEACE, inc);
+        return v.otherView().accept(DialogueManager.ANNOUNCE_PEACE, inc);
     }
     @Override
     public DiplomaticReply refuseOfferPeace(Empire requestor) {
