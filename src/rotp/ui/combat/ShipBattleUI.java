@@ -85,6 +85,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     BufferedImage renderedPlanetImage;
     Image[] asteroids = new Image[16];
     public int[][] asteroidRoll = new int[GRID_COUNT_X][GRID_COUNT_Y];
+    private final Color shadeC = new Color(255,255,255,20);
 
     private LinearGradientPaint menuBackC;
     private LinearGradientPaint moveBackC;
@@ -386,7 +387,11 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             }
         }
 
-        paintShipsToImage(g,x,y,w,h-barH, hoveringX, hoveringY);
+        // draw any overlying messages
+        if (mode == Display.RESULT)
+            drawResults(g, 0, 0, getWidth(),getHeight());
+        else
+            paintShipsToImage(g,x,y,w,h-barH, hoveringX, hoveringY);
         paintMenuBarToImage(g,x,y+h-barH,w,barH);
         
         if (mode != Display.RESULT)
@@ -487,10 +492,6 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
                 drawStack(g, stack, stackX(stack), stackY(stack), rect.width, rect.height);
             }
         }
-
-        // draw any overlying messages
-        if (mode != Display.INTRO)
-            drawResults(g, 0, 0, w, h);
     }
     private void paintStackActions(Graphics2D g, int  hoveringX, int hoveringY) {
         if (mgr.performingStackTurn)
@@ -1348,25 +1349,159 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         Thread thread = new Thread(drawRunnable);
         thread.start();
     }
-    private void drawResults(Graphics g, int x, int y, int w, int h) {
-        g.setFont(narrowFont(40));
+    private void drawResults(Graphics2D g, int x, int y, int w, int h) {
+        g.setColor(shadeC);
+        g.fillRect(x,y,w,h);
         g.setColor(Color.lightGray);
         String sysName =  player().sv.name(mgr.system().id);
-        String victorName = mgr.results().victorName();
+        
+        Map<ShipDesign,Integer> destroyed = mgr.results().shipsDestroyed();
+        Map<ShipDesign,Integer> retreated = mgr.results().shipsRetreated();
+        
+        int w0 = scaled(700);
+        int x0 = x+((w-w0)/2);
+        int y0 = s100;
+        int h0 = s50;
+        int gap = s20;
+        int flagW = s80;
+        int shipW = scaled(120);
+        int shipH = shipW*3/4;
+        
+        g.setColor(Color.black);
+        g.fillRect(x0, y0, w0, h0);
+        
+        g.setFont(narrowFont(40));
         String prompt;
         if (sysName.isEmpty())
-            prompt = text("SHIP_COMBAT_RESULTS_UNNAMED", victorName);
+            prompt = text("SHIP_COMBAT_TITLE_UNNAMED");
+        else
+            prompt = text("SHIP_COMBAT_TITLE", sysName);
+        int sw = g.getFontMetrics().stringWidth(prompt);
+        int x1 = x0+(w0-sw)/2;
+        int y1 = y0+h0-s12;
+        g.setColor(Color.white);
+        g.drawString(prompt, x1, y1); 
+        
+        Empire victor = mgr.results().victor();
+        // left empire
+        boolean victorious = leftEmpire == victor;
+        String empName = leftEmpire.name();
+        
+        int x2 = x0;
+        int w2 = (w0-gap)/2;
+        int y2 = y0+h0+gap;
+        int h2 = scaled(400);
+        g.setColor(Color.black);
+        g.fillRect(x2,y2,w2,h2);
+        
+        if (victorious) {
+            String v = text("SHIP_COMBAT_TITLE_VICTORIOUS");
+            g.setFont(narrowFont(36));
+            g.setColor(SystemPanel.greenText);
+            g.drawString(v, x2+flagW, y2+s40);
+        }
+        
+        g.setFont(narrowFont(26));
+        g.setColor(SystemPanel.whiteText);
+        g.drawString(empName, x2+flagW, y2+s70);
+        
+        Image flag = leftEmpire.race().flagWar();
+        g.drawImage(flag,x2+s5,y2+s5,x2+flagW-s5,y2+flagW-s5,0,0,flag.getWidth(null),flag.getHeight(null), null);
+        
+        List<ShipDesign> ships = new ArrayList<>(leftFleet.keySet());
+        for (int i=0;i<ships.size();i++) {
+            ShipDesign design = ships.get(i);
+            int retr = retreated.containsKey(design) ? retreated.get(design): 0;
+            int start = leftFleet.containsKey(design) ? leftFleet.get(design): 0;
+            int dead = destroyed.containsKey(design) ? destroyed.get(design): 0;
+            int index = i/2;
+            int yAdj = y2+s100+(index*shipH);
+            int xAdj = i%2 == 0 ? x2+s20 : x2+w2-s50-shipW;
+            drawShipResult(g, xAdj, yAdj, shipW, shipH, design, start, dead, retr);
+        }
+        
+        
+        // right empire
+        victorious = rightEmpire == victor;
+        empName = rightEmpire.name();
+        int x3 = x2+w2+gap;
+        int w3 = w2;
+        int y3 = y2;
+        int h3 = h2;
+        g.setColor(Color.black);
+        g.fillRect(x3,y3,w3,h3);
+        
+        if (victorious) {
+            String v = text("SHIP_COMBAT_TITLE_VICTORIOUS");
+            g.setFont(narrowFont(36));
+            g.setColor(SystemPanel.greenText);
+            g.drawString(v, x3+flagW, y3+s40);
+        }
+        g.setFont(narrowFont(26));
+        g.setColor(SystemPanel.whiteText);
+        g.drawString(empName, x3+flagW, y3+s70);
+        flag = rightEmpire.race().flagWar();
+        g.drawImage(flag,x3+s5,y3+s5,x3+flagW-s5,y3+flagW-s5,0,0,flag.getWidth(null),flag.getHeight(null), null);
+        
+        ships = new ArrayList<>(rightFleet.keySet());
+        for (int i=0;i<ships.size();i++) {
+            ShipDesign design = ships.get(i);
+            int retr = retreated.containsKey(design) ? retreated.get(design): 0;
+            int start = rightFleet.containsKey(design) ? rightFleet.get(design): 0;
+            int dead = destroyed.containsKey(design) ? destroyed.get(design): 0;
+            int index = i/2;
+            int yAdj = y3+s100+(index*shipH);
+            int xAdj = i%2 == 0 ? x3+s20 : x3+w2-s50-shipW;
+            drawShipResult(g, xAdj, yAdj, shipW, shipH, design, start, dead, retr);
+        }
+        
+        
+        
+        /*
         else if (mgr.results().isMonsterVictory())
             prompt = text("SHIP_COMBAT_RESULTS_MONSTER", victorName, sysName);
         else 
             prompt = text("SHIP_COMBAT_RESULTS", victorName, sysName);
-        int sw = g.getFontMetrics().stringWidth(prompt);
+*/
 
-        int x0 = (w - sw) / 2;
-        int y0 = s80;
-        drawBorderedString(g, prompt, x0, y0, Color.black, Color.white);
+        //drawBorderedString(g, prompt, x1, y1, Color.black, Color.white);
 
         drawSkipText(g, true);
+    }
+    private void drawShipResult(Graphics2D g, int x, int y, int w, int h, ShipDesign d, int start, int dead, int retreat) {
+            Image img = d.image();
+            g.drawImage(img, x, y, x+w, y+h, img.getWidth(null), img.getHeight(null), 0,0,null);
+            if (retreat > 0) {
+                g.setFont(narrowFont(30));
+                String summary = text("SHIP_COMBAT_RESULTS_RETREATED");
+                int sw0 = g.getFontMetrics().stringWidth(summary);
+                drawBorderedString(g, summary, x+(w-sw0)/2, y+h/2+s5, Color.black, Color.yellow);              
+            }
+            else if (start == dead) {
+                g.setFont(narrowFont(30));
+                String summary = text("SHIP_COMBAT_RESULTS_DESTROYED");
+                int sw0 = g.getFontMetrics().stringWidth(summary);
+                drawBorderedString(g, summary, x+(w-sw0)/2, y+h/2+s5, Color.black, Color.red);              
+            }
+            g.setFont(narrowFont(20));
+            g.setColor(SystemPanel.whiteText);
+            String name = d.name();
+            int sw0 = g.getFontMetrics().stringWidth(name);
+            drawBorderedString(g, name, x+(w-sw0)/2, y+h, Color.black, Color.white);
+            String amt1 = str(start);
+            String amt2 = str(start-dead);
+            int sw1 = g.getFontMetrics().stringWidth(amt1);
+            int sw2 = g.getFontMetrics().stringWidth(amt2);
+            int xAdj1 = x+(w-sw1-sw2-s40)/2;
+            drawBorderedString(g, amt1, xAdj1, y+h+s20, Color.black, SystemPanel.whiteText);
+            //g.drawString("\u2192", xAdj1+sw1+s4, y+h+s12);
+            g.fillRect(xAdj1+sw1+s4, y+h+s12, s32, s3);
+            Polygon rightArrow = new Polygon();
+            rightArrow.addPoint(xAdj1+sw1+s35, y+h+s9);
+            rightArrow.addPoint(xAdj1+sw1+s35, y+h+s17);
+            rightArrow.addPoint(xAdj1+sw1+s39, y+h+s13);
+            g.fill(rightArrow);
+            drawBorderedString(g, amt2, xAdj1+sw1+s40, y+h+s20, Color.black, SystemPanel.whiteText);
     }
     private void togglePlayPause() {
         if (mode != Display.INTRO)

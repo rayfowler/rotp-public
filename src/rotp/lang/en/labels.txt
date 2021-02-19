@@ -1467,9 +1467,15 @@ SHIP_COMBAT_MISS                  | Miss
 SHIP_COMBAT_DEFLECTED             | Deflected
 SHIP_COMBAT_DESTROYED             | Destroyed!
 SHIP_COMBAT_STASIS                | Stasis
+SHIP_COMBAT_TITLE                 | Battle at %1
+SHIP_COMBAT_TITLE_UNNAMED         | Battle in unexplored system
+SHIP_COMBAT_TITLE_VICTORIOUS      | VICTORIOUS
 SHIP_COMBAT_RESULTS               | The %1 fleet was victorious at %2!
 SHIP_COMBAT_RESULTS_MONSTER       | The %1 was victorious at %2!
 SHIP_COMBAT_RESULTS_UNNAMED       | The %1 fleet was victorious!
+SHIP_COMBAT_SHIP_TOTALS           | %1 🡒 %2
+SHIP_COMBAT_RESULTS_RETREATED     | RETREATED
+SHIP_COMBAT_RESULTS_DESTROYED     | DESTROYED
 SHIP_COMBAT_RETREAT_ALL           | Retreat All
 SHIP_COMBAT_NEXT                  | Next Ship
 SHIP_COMBAT_AUTO_RESOLVE          | Auto-Resolve Battle
