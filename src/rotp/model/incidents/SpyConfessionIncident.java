@@ -103,6 +103,7 @@ public class SpyConfessionIncident extends DiplomaticIncident {
     }
     @Override
     public String decode(String s) {
+        String forceMessage = missionType > 0 ? "" : text("SPY_FORCED_CONFESSION");
         String s1 = super.decode(s);
         s1 = s1.replace("[spyrace]",  galaxy().empire(empSpy).raceName());
         s1 = galaxy().empire(empSpy).replaceTokens(s1, "spy");
@@ -110,6 +111,7 @@ public class SpyConfessionIncident extends DiplomaticIncident {
         s1 = s1.replace("[mission]", mission);
         s1 = s1.replace("[numspies]", str(remainingSpies));
         s1 = s1.replace("[framed]", "");
+        s1 = s1.replace("[forced]", forceMessage);
         return s1;
     }
 }

@@ -55,7 +55,7 @@ WARN_SKIRMISH_01           | Conflict between Dominion and [your_race] fleets de
 WARN_ATTACKED_01           | [attacker_race] aggression noted at [system]. [defender_title] gives message to ambassador: continuing to threaten Dominion security will result in extinction of [attacker_race] species. 
 WARN_INVADED_01            | Reminder from Dominion that [attacker_race] species has no claim on [defender_race] space. Remove fleets immediately or face total annihilation.
 WARN_ESPIONAGE_01          | [spy_race] espionage activity recorded in Dominion territory. Dominion security protocols greater than [spy_race] skill at espionage. Testing Dominion again may prove fatal. [framed]
-WARN_SABOTAGE_01           | Dominion aware of [spy_race] species involvement in recent sabotage. Attempt at chaos too menial to warrant response. Further attempts at sabotage will ensure swift retribution.  
+WARN_SABOTAGE_01           | Dominion aware of [spy_race] species involvement in recent sabotage. Attempt at chaos too menial to warrant response. Further attempts at sabotage will ensure swift retribution [forced]
 WARN_BIOWEAPON_01          | Dominion observes use of crude bioweapon. Effective armament. [attacker_race] species threat assessment increased by 3 levels. 
 WARN_GENOCIDE_01           | Genocide of [victim_race] species by [attacker_race] species recorded. Dominion unconcerned with possible cause or alternatives. [attacker_race] species threat assessment increased by 5 levels.  
 WARN_FINAL_WAR_01          | All known species create agreement to ensure lasting peace in galaxy. [rebel_race] species sole dissenter. Dominion will take appropriate action.
