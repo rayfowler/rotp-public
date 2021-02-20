@@ -662,14 +662,20 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         
         boolean treatyBreak = false;
         boolean triggerWar = false;
-        if (!view.spies().isHide() && pl.alliedWith(emp.id))
-            treatyBreak = true;
-        else if (view.spies().isSabotage() && pl.pactWith(emp.id))
-            treatyBreak = true;  
+        if (view.spies().maxSpies() > 0) {
+            if (!view.spies().isHide() && pl.alliedWith(emp.id))
+                treatyBreak = true;
+            else if (view.spies().isSabotage() && pl.pactWith(emp.id))
+                treatyBreak = true;  
+        }
         
-        if (!view.spies().isHide() && !view.embassy().anyWar() 
-        && view.otherView().embassy().warningAlreadySent(DiplomaticIncident.SPY_WARNING))
-            triggerWar = true;
+        if (!view.embassy().anyWar() && (view.spies().maxSpies() > 0)
+        && view.otherView().embassy().warningAlreadySent(DiplomaticIncident.SPY_WARNING)) {
+            if (!view.spies().isHide()
+            || (view.empire().leader().isXenophobic())) {
+                triggerWar = true;
+            }
+        }
 
         g.setColor(RacesUI.darkBrown);
         g.fillRect(x, y, w, h);
@@ -684,7 +690,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
        
         int y1 = y0+s10;
         int sliderH = s20;
-        drawSpiesMissionButton(g, emp, treatyBreak, x+s40,y1,w-s80,sliderH);
+        drawSpiesMissionButton(g, emp, treatyBreak || triggerWar, x+s40,y1,w-s80,sliderH);
         
         int y2 = y1+sliderH+s10;
 
