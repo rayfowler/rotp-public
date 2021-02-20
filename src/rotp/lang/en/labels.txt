@@ -1470,6 +1470,9 @@ SHIP_COMBAT_DESTROYED             | Destroyed!
 SHIP_COMBAT_STASIS                | Stasis
 SHIP_COMBAT_TITLE                 | Battle at %1
 SHIP_COMBAT_TITLE_UNNAMED         | Battle in unexplored system
+SHIP_COMBAT_SYSTEM_POP            | Population
+SHIP_COMBAT_SYSTEM_FACT           | Factories
+SHIP_COMBAT_SYSTEM_BASE           | Bases
 SHIP_COMBAT_TITLE_VICTORIOUS      | VICTORIOUS
 SHIP_COMBAT_RESULTS               | The %1 fleet was victorious at %2!
 SHIP_COMBAT_RESULTS_MONSTER       | The %1 was victorious at %2!

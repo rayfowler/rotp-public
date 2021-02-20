@@ -37,6 +37,7 @@ import rotp.ui.main.SystemPanel;
 import rotp.util.Base;
 import javax.swing.*;
 import javax.swing.border.Border;
+import rotp.model.colony.Colony;
 
 public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, MouseMotionListener {
     private static final long serialVersionUID = 1L;
@@ -1360,19 +1361,20 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         
         int w0 = scaled(700);
         int x0 = x+((w-w0)/2);
-        int y0 = s100;
+        int y0 = s20;
         int h0 = s50;
         int gap = s20;
         int flagW = s80;
         int shipW = scaled(120);
         int shipH = shipW*3/4;
+        int shipBoxH = shipH+s40;
         
         g.setColor(Color.black);
         g.fillRect(x0, y0, w0, h0);
         
         g.setFont(narrowFont(40));
         String prompt;
-        if (sysName.isEmpty())
+        if (sysName.isEmpty()) 
             prompt = text("SHIP_COMBAT_TITLE_UNNAMED");
         else
             prompt = text("SHIP_COMBAT_TITLE", sysName);
@@ -1383,18 +1385,20 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         g.drawString(prompt, x1, y1); 
         
         Empire victor = mgr.results().victor();
+        Empire colonyEmp = mgr.results().colonyStack == null ? null : mgr.results().colonyStack.empire;
         // left empire
-        boolean victorious = leftEmpire == victor;
         String empName = leftEmpire.name();
         
         int x2 = x0;
         int w2 = (w0-gap)/2;
         int y2 = y0+h0+gap;
-        int h2 = scaled(400);
+        int h2a = scaled(85);
+        int h2b = scaled(510);
         g.setColor(Color.black);
-        g.fillRect(x2,y2,w2,h2);
+        g.fillRect(x2,y2,w2,h2a);
+        g.fillRect(x2,y2+h2a+s5,w2,h2b);
         
-        if (victorious) {
+        if (leftEmpire == victor) {
             String v = text("SHIP_COMBAT_TITLE_VICTORIOUS");
             g.setFont(narrowFont(36));
             g.setColor(SystemPanel.greenText);
@@ -1415,23 +1419,25 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             int start = leftFleet.containsKey(design) ? leftFleet.get(design): 0;
             int dead = destroyed.containsKey(design) ? destroyed.get(design): 0;
             int index = i/2;
-            int yAdj = y2+s100+(index*shipH);
+            int yAdj = y2+s85+(index*shipBoxH);
             int xAdj = i%2 == 0 ? x2+s20 : x2+w2-s50-shipW;
             drawShipResult(g, xAdj, yAdj, shipW, shipH, design, start, dead, retr);
+        }  
+        if (colonyEmp == leftEmpire) {
+            int rows= (ships.size()+1)/2;
+            drawPlanetResult(g, sysName, false, x2+s20, y2+s80+(rows*shipBoxH), shipH);
         }
         
-        
         // right empire
-        victorious = rightEmpire == victor;
         empName = rightEmpire.name();
         int x3 = x2+w2+gap;
         int w3 = w2;
         int y3 = y2;
-        int h3 = h2;
         g.setColor(Color.black);
-        g.fillRect(x3,y3,w3,h3);
+        g.fillRect(x3,y2,w3,h2a);
+        g.fillRect(x3,y2+h2a+s5,w3,h2b);
         
-        if (victorious) {
+        if (rightEmpire == victor) {
             String v = text("SHIP_COMBAT_TITLE_VICTORIOUS");
             g.setFont(narrowFont(36));
             g.setColor(SystemPanel.greenText);
@@ -1450,11 +1456,14 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             int start = rightFleet.containsKey(design) ? rightFleet.get(design): 0;
             int dead = destroyed.containsKey(design) ? destroyed.get(design): 0;
             int index = i/2;
-            int yAdj = y3+s100+(index*shipH);
+            int yAdj = y3+s85+(index*shipBoxH);
             int xAdj = i%2 == 0 ? x3+s20 : x3+w2-s50-shipW;
             drawShipResult(g, xAdj, yAdj, shipW, shipH, design, start, dead, retr);
         }
-        
+        if (colonyEmp == rightEmpire) {
+            int rows= (ships.size()+1)/2;
+            drawPlanetResult(g, sysName, true, x3+w3-shipH-s20, y3+s80+(rows*shipBoxH), shipH);
+        }        
         
         
         /*
@@ -1467,6 +1476,56 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         //drawBorderedString(g, prompt, x1, y1, Color.black, Color.white);
 
         drawSkipText(g, true);
+    }
+    private void drawPlanetResult(Graphics2D g, String name, boolean reverse, int x, int y, int r) {
+        if (renderedPlanetImage == null)
+            return;
+        planetX = x;
+        planetY = y;
+        planetR = r;
+        int imgW = renderedPlanetImage.getWidth();
+        int imgH = renderedPlanetImage.getHeight();
+        g.drawImage(renderedPlanetImage, planetX, planetY, planetX+planetR, planetY+planetR, 0, 0, imgW, imgH, null);
+        
+        int dataW = s75;
+        int popX, factX, baseX;
+        if (reverse) {
+            popX = x-dataW;
+            factX = popX-dataW;
+            baseX = factX-dataW;
+        }
+        else {
+            popX = x+r+r;
+            factX = popX+dataW;
+            baseX = factX+dataW;
+        }
+        
+        int dataY = y+r-s20;
+        int headerY = dataY-s16;
+        
+        g.setFont(narrowFont(15));
+        g.setColor(SystemPanel.whiteText);
+        
+        Colony col = mgr.system().colony();
+        int popLost = mgr.results().popDestroyed();
+        int factLost = mgr.results().factoriesDestroyed();
+        int baseLost = mgr.results().basesDestroyed();
+        int currPop = col == null ? 0 : (int) Math.ceil(col.population());
+        int currFact = col == null ? 0 : (int) col.industry().factories();
+        int currBase = col == null ? 0 : (int) col.defense().bases();
+        
+        g.drawString(text("SHIP_COMBAT_SYSTEM_POP"), popX, headerY);
+        g.drawString(str(currPop+popLost), popX, dataY);
+
+        g.drawString(text("SHIP_COMBAT_SYSTEM_FACT"), factX, headerY);
+        g.drawString(str(currFact+factLost), factX, dataY);
+
+        if ((currBase+baseLost) > 0) {
+            g.drawString(text("SHIP_COMBAT_SYSTEM_BASE"), baseX, headerY); 
+            g.drawString(str(currBase+baseLost), baseX, dataY);
+        }
+        
+        
     }
     private void drawShipResult(Graphics2D g, int x, int y, int w, int h, ShipDesign d, int start, int dead, int retreat) {
             Image img = d.image();
@@ -1483,7 +1542,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
                 int sw0 = g.getFontMetrics().stringWidth(summary);
                 drawBorderedString(g, summary, x+(w-sw0)/2, y+h/2+s5, Color.black, Color.red);              
             }
-            g.setFont(narrowFont(20));
+            g.setFont(narrowFont(18));
             g.setColor(SystemPanel.whiteText);
             String name = d.name();
             int sw0 = g.getFontMetrics().stringWidth(name);
@@ -1493,15 +1552,15 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             int sw1 = g.getFontMetrics().stringWidth(amt1);
             int sw2 = g.getFontMetrics().stringWidth(amt2);
             int xAdj1 = x+(w-sw1-sw2-s40)/2;
-            drawBorderedString(g, amt1, xAdj1, y+h+s20, Color.black, SystemPanel.whiteText);
+            drawBorderedString(g, amt1, xAdj1, y+h+s18, Color.black, SystemPanel.whiteText);
             //g.drawString("\u2192", xAdj1+sw1+s4, y+h+s12);
-            g.fillRect(xAdj1+sw1+s4, y+h+s12, s32, s3);
+            g.fillRect(xAdj1+sw1+s4, y+h+s12, s30, s3);
             Polygon rightArrow = new Polygon();
-            rightArrow.addPoint(xAdj1+sw1+s35, y+h+s9);
-            rightArrow.addPoint(xAdj1+sw1+s35, y+h+s17);
-            rightArrow.addPoint(xAdj1+sw1+s39, y+h+s13);
+            rightArrow.addPoint(xAdj1+sw1+s33, y+h+s7);
+            rightArrow.addPoint(xAdj1+sw1+s33, y+h+s19);
+            rightArrow.addPoint(xAdj1+sw1+s37, y+h+s13);
             g.fill(rightArrow);
-            drawBorderedString(g, amt2, xAdj1+sw1+s40, y+h+s20, Color.black, SystemPanel.whiteText);
+            drawBorderedString(g, amt2, xAdj1+sw1+s40, y+h+s18, Color.black, SystemPanel.whiteText);
     }
     private void togglePlayPause() {
         if (mode != Display.INTRO)
