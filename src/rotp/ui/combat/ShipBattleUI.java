@@ -38,6 +38,7 @@ import rotp.util.Base;
 import javax.swing.*;
 import javax.swing.border.Border;
 import rotp.model.colony.Colony;
+import rotp.model.galaxy.SpaceMonster;
 
 public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, MouseMotionListener {
     private static final long serialVersionUID = 1L;
@@ -1430,7 +1431,11 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         }
         
         // right empire
-        empName = rightEmpire.name();
+        SpaceMonster monster = mgr.results().monster();
+        if (monster != null)
+            empName = monster.name();
+        else
+            empName = rightEmpire.name();
         int x3 = x2+w2+gap;
         int w3 = w2;
         int y3 = y2;
@@ -1438,7 +1443,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         g.fillRect(x3,y2,w3,h2a);
         g.fillRect(x3,y2+h2a+s5,w3,h2b);
         
-        if (rightEmpire == victor) {
+        if (mgr.results().isMonsterVictory() || (rightEmpire == victor)) {
             String v = text("SHIP_COMBAT_TITLE_VICTORIOUS");
             g.setFont(narrowFont(36));
             g.setColor(SystemPanel.greenText);
@@ -1447,26 +1452,30 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         g.setFont(narrowFont(26));
         g.setColor(SystemPanel.whiteText);
         g.drawString(empName, x3+flagW, y3+s70);
-        flag = rightEmpire.race().flagWar();
-        g.drawImage(flag,x3+s5,y3+s5,x3+flagW-s5,y3+flagW-s5,0,0,flag.getWidth(null),flag.getHeight(null), null);
-        
-        ships = new ArrayList<>(rightFleet.keySet());
-        for (int i=0;i<ships.size();i++) {
-            ShipDesign design = ships.get(i);
-            int retr = retreated.containsKey(design) ? retreated.get(design): 0;
-            int start = rightFleet.containsKey(design) ? rightFleet.get(design): 0;
-            int dead = destroyed.containsKey(design) ? destroyed.get(design): 0;
-            int index = i/2;
-            int yAdj = y3+s85+(index*shipBoxH);
-            int xAdj = i%2 == 0 ? x3+s20 : x3+w2-s50-shipW;
-            drawShipResult(g, xAdj, yAdj, shipW, shipH, design, start, dead, retr);
+        if (monster == null) {
+            flag = rightEmpire.race().flagWar();
+            g.drawImage(flag,x3+s5,y3+s5,x3+flagW-s5,y3+flagW-s5,0,0,flag.getWidth(null),flag.getHeight(null), null);
         }
-        if (colonyEmp == rightEmpire) {
-            int rows= (ships.size()+1)/2;
-            drawPlanetResult(g, sysName, true, x3+w3-shipH-s20, y3+s80+(rows*shipBoxH), shipH);
-        }        
         
-        
+        if (monster != null)
+            drawMonsterResult(g, monster, x3+s20, y3+s85, shipW*2, shipH*2);
+        else {
+            ships = new ArrayList<>(rightFleet.keySet());
+            for (int i=0;i<ships.size();i++) {
+                ShipDesign design = ships.get(i);
+                int retr = retreated.containsKey(design) ? retreated.get(design): 0;
+                int start = rightFleet.containsKey(design) ? rightFleet.get(design): 0;
+                int dead = destroyed.containsKey(design) ? destroyed.get(design): 0;
+                int index = i/2;
+                int yAdj = y3+s85+(index*shipBoxH);
+                int xAdj = i%2 == 0 ? x3+s20 : x3+w2-s50-shipW;
+                drawShipResult(g, xAdj, yAdj, shipW, shipH, design, start, dead, retr);
+            }
+            if (colonyEmp == rightEmpire) {
+                int rows= (ships.size()+1)/2;
+                drawPlanetResult(g, sysName, true, x3+w3-shipH-s20, y3+s80+(rows*shipBoxH), shipH);
+            }        
+        }
         /*
         else if (mgr.results().isMonsterVictory())
             prompt = text("SHIP_COMBAT_RESULTS_MONSTER", victorName, sysName);
@@ -1477,6 +1486,11 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         //drawBorderedString(g, prompt, x1, y1, Color.black, Color.white);
 
         drawSkipText(g, true);
+    }
+    private void drawMonsterResult(Graphics2D g, SpaceMonster monster, int x, int y, int w, int h) {
+        Image img = monster.image();
+        g.drawImage(img, x, y, x+w, y+h, img.getWidth(null), img.getHeight(null), 0,0,null);
+    
     }
     private void drawPlanetResult(Graphics2D g, String name, boolean reverse, int x, int y, int r) {
         if (renderedPlanetImage == null)
@@ -1496,7 +1510,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             baseX = factX-dataW;
         }
         else {
-            popX = x+r+r;
+            popX = x+r;
             factX = popX+dataW;
             baseX = factX+dataW;
         }

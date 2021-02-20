@@ -15,6 +15,7 @@
  */
 package rotp.model.galaxy;
 
+import java.awt.Image;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +41,7 @@ public class SpaceMonster implements Base, NamedObject, Serializable {
             combatStacks = new ArrayList<>();
         return combatStacks; 
     }
+    public Image image()  { return image(nameKey); }
     public void initCombat() { }
     public void addCombatStack(CombatStack c)  { combatStacks.add(c); }
     public SpaceMonster(String s) {
