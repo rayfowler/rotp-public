@@ -234,6 +234,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         }
     }
     public boolean init(ShipCombatManager m, int combatFlag) {
+        renderedPlanetImage = null;
         mgr = m;
         mgr.ui(this);
         mgr.setInitialPause();
@@ -1511,18 +1512,45 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         int factLost = mgr.results().factoriesDestroyed();
         int baseLost = mgr.results().basesDestroyed();
         int currPop = col == null ? 0 : (int) Math.ceil(col.population());
-        int currFact = col == null ? 0 : (int) col.industry().factories();
-        int currBase = col == null ? 0 : (int) col.defense().bases();
+        int currFact = (col == null) || (currPop == 0) ? 0 : (int) col.industry().factories();
+        int currBase = (col == null) || (currPop == 0) ? 0 : (int) col.defense().bases();
         
         g.drawString(text("SHIP_COMBAT_SYSTEM_POP"), popX, headerY);
-        g.drawString(str(currPop+popLost), popX, dataY);
+        String amt = str(currPop+popLost);
+        int sw = g.getFontMetrics().stringWidth(amt);
+        g.drawString(amt, popX, dataY);
+        g.fillRect(popX+sw+s4, dataY-s6, s12, s3);
+        Polygon rightArrow = new Polygon();
+        rightArrow.addPoint(popX+sw+s15, dataY-s1);
+        rightArrow.addPoint(popX+sw+s15, dataY-s9);
+        rightArrow.addPoint(popX+sw+s19, dataY-s5);
+        g.fill(rightArrow);
+        g.drawString(str(currPop), popX+sw+s22, dataY);
 
         g.drawString(text("SHIP_COMBAT_SYSTEM_FACT"), factX, headerY);
-        g.drawString(str(currFact+factLost), factX, dataY);
+        amt = str(currFact+factLost);
+        sw = g.getFontMetrics().stringWidth(amt);
+        g.drawString(amt, factX, dataY);
+        g.fillRect(factX+sw+s4, dataY-s6, s12, s3);
+        rightArrow.reset();
+        rightArrow.addPoint(factX+sw+s15, dataY-s1);
+        rightArrow.addPoint(factX+sw+s15, dataY-s9);
+        rightArrow.addPoint(factX+sw+s19, dataY-s5);
+        g.fill(rightArrow);
+        g.drawString(str(currFact), factX+sw+s22, dataY);
 
         if ((currBase+baseLost) > 0) {
             g.drawString(text("SHIP_COMBAT_SYSTEM_BASE"), baseX, headerY); 
-            g.drawString(str(currBase+baseLost), baseX, dataY);
+            amt = str(currBase+baseLost);
+            sw = g.getFontMetrics().stringWidth(amt);
+            g.drawString(amt, baseX, dataY);
+            g.fillRect(baseX+sw+s4, dataY-s6, s12, s3);
+            rightArrow.reset();
+            rightArrow.addPoint(baseX+sw+s15, dataY-s1);
+            rightArrow.addPoint(baseX+sw+s15, dataY-s9);
+            rightArrow.addPoint(baseX+sw+s19, dataY-s5);
+            g.fill(rightArrow);
+            g.drawString(str(currBase), baseX+sw+s22, dataY);
         }
         
         
@@ -1626,7 +1654,6 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     }
     public void finish() {
         if (mgr.combatIsFinished()) {
-            renderedPlanetImage = null;
             mode = Display.RESULT;
             exited = true;
             repaint();

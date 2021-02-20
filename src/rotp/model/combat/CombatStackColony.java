@@ -138,6 +138,7 @@ public class CombatStackColony extends CombatStack {
     public void loseShip() {
         super.loseShip();
         colony.defense().bases(num);
+        mgr.results().basesDestroyed = origNum - num;
     }
     @Override
     public float estimatedKills(CombatStack target) {
