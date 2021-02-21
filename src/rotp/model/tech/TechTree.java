@@ -71,6 +71,7 @@ public final class TechTree implements Base, Serializable {
     private List<String> tradedTechs;
     private List<String> newTechs;
     private List<TradeTechNotification> tradedTechNotifs;
+    private boolean[] colonizableHostility = new boolean[13];
     public transient float totalResearchThisTurn = 0;
 
     public Empire empire()                                            { return empire; }
@@ -169,8 +170,38 @@ public final class TechTree implements Base, Serializable {
     public TechSubspaceInterdictor topSubspaceInterdictorTech()       { return (TechSubspaceInterdictor) tech(topSubspaceInterdictorTech); }
     public void topSubspaceInterdictorTech(TechSubspaceInterdictor t) { topSubspaceInterdictorTech = t.id();	}
 
+    public boolean[] colonizableHostility() {
+        if (colonizableHostility == null) {
+            colonizableHostility = new boolean[13];
+            colonizableHostility[0] = true;
+            colonizableHostility[1] = true;
+            colonizableHostility[2] = true;
+            colonizableHostility[3] = true;
+            colonizableHostility[4] = true;
+            colonizableHostility[5] = true;
+            colonizableHostility[6] = true;
+            for (String tId: planetology().knownTechs()) {
+                Tech t = tech(tId);
+                if (t.isControlEnvironmentTech()) {
+                    TechControlEnvironment t0 = (TechControlEnvironment) t;
+                    int h = t0.hostilityAllowed();
+                    if (h < colonizableHostility.length)
+                        colonizableHostility[h] = true;
+                }
+            }
+        }
+        return colonizableHostility;
+    }
     public void init(Empire c, boolean spyFlag) {
         spy = spyFlag;
+        colonizableHostility[0] = true;
+        colonizableHostility[1] = true;
+        colonizableHostility[2] = true;
+        colonizableHostility[3] = true;
+        colonizableHostility[4] = true;
+        colonizableHostility[5] = true;
+        colonizableHostility[6] = true;
+
         empire = c;
         float discoveryPct = empire.techDiscoveryPct();
         category = new TechCategory[TechTree.NUM_CATEGORIES];
@@ -320,49 +351,70 @@ public final class TechTree implements Base, Serializable {
         }
     }
     public boolean canColonize(PlanetType pt) {
-        return pt.hostility() <= hostilityAllowed();
+        if (options().restrictedColonization())
+            return knowsTechForHostility(pt.hostility());
+        else
+            return pt.hostility() <= topHostilityAllowed();
     }
     public boolean isLearningToColonize(PlanetType pt) {
-        return pt.hostility() <= researchingHostilityAllowed();
+        int hostility = pt.hostility();
+        if (options().restrictedColonization()) 
+            return knowsTechForHostility(hostility) || (hostility == researchingHostilityAllowed());
+        
+        return (hostility <= topHostilityAllowed()) || (hostility <= researchingHostilityAllowed());
     }
     public boolean canLearnToColonize(PlanetType pt) {
-        return pt.hostility() <= learnableHostilityAllowed();
+        return learnableHostilityAllowed(pt.hostility(), options().restrictedColonization());
     }
     public float minColonyLevel() {
         return topControlEnvironmentTech == null ? PlanetType.HOSTILITY_MINIMAL : topControlEnvironmentTech().environment();
     }
-    private int hostilityAllowed() {
+    public boolean knowsTechForHostility(int h) {
+        boolean[] hostility = colonizableHostility();   
+        return (h < hostility.length) && hostility[h];
+    }
+    public void learnToColonizeHostility(int h) {
+        boolean[] hostility = colonizableHostility();     
+        if (h < hostility.length)
+            hostility[h] = true;
+    }
+    private int topHostilityAllowed() {
         return topControlEnvironmentTech != null ? topControlEnvironmentTech().hostilityAllowed() : 0;
     }
     private int researchingHostilityAllowed() {
-        int hostilityAllowed = hostilityAllowed();
-
         String id = planetology().currentTech();
         if (id == null)
-            return hostilityAllowed;
+            return 0;
         
         Tech t = tech(id);
         if (t.isControlEnvironmentTech()) {
             TechControlEnvironment t0 = (TechControlEnvironment) t;
-            hostilityAllowed = max(hostilityAllowed, t0.hostilityAllowed());
+            return t0.hostilityAllowed();
         }
-        return hostilityAllowed;
+        return 0;
     }
-    private int learnableHostilityAllowed() {
-        int hostilityAllowed = hostilityAllowed();
-
+    private boolean learnableHostilityAllowed(int h, boolean restricted) {
         String currId = planetology().currentTech();
-        if (currId == null)
-            return hostilityAllowed;
+        if (currId != null) {
+            Tech t = tech(currId);
+            if (t.isControlEnvironmentTech()) {
+                TechControlEnvironment t0 = (TechControlEnvironment) t;
+                if ((t0.hostilityAllowed() == h) 
+                || (!restricted && t0.hostilityAllowed() >= h))
+                    return true;
+            }
+        }
         
         for (String id: planetology().techIdsAvailableForResearch(true)) {
             Tech t = tech(id);
             if (t.isControlEnvironmentTech()) {
                 TechControlEnvironment t0 = (TechControlEnvironment) t;
-                hostilityAllowed = max(hostilityAllowed, t0.hostilityAllowed());
+                if ((t0.hostilityAllowed() == h) 
+                || (!restricted && t0.hostilityAllowed() >= h))
+                    return true;
             }
         }
-        return hostilityAllowed;
+        return false;
     }
     public boolean canTerraformHostile() {
         return topAtmoEnrichmentTech() != null;
@@ -422,12 +474,13 @@ public final class TechTree implements Base, Serializable {
         return range;
     }
     public String environmentTechNeededToColonize(int hostility) {
+        boolean restricted = options().restrictedColonization();
         // returns the id of the currently unknown ecology tech we need 
         // to research in order to colonize planets of a certain hostitily level
         // if no tech is needed or it is impossible, return null
-        int hostilityAllowed = hostilityAllowed();
+        int hostilityAllowed = topHostilityAllowed();
 
-        if (hostilityAllowed >= hostility)
+        if (!restricted && (hostilityAllowed >= hostility))
             return null;
         
         // check current research tech first
@@ -438,15 +491,17 @@ public final class TechTree implements Base, Serializable {
         Tech t = tech(currentId);
         if (t.isControlEnvironmentTech()) {
             TechControlEnvironment t0 = (TechControlEnvironment) t;
-            if (t0.hostilityAllowed() >= hostility)
-                return currentId;
+                if ((t0.hostilityAllowed() == hostility) 
+                || (!restricted && t0.hostilityAllowed() >= hostility))
+                    return currentId;
         }
         
         for (String id: planetology().techIdsAvailableForResearch(true)) {
             t = tech(id);
             if (t.isControlEnvironmentTech()) {
                 TechControlEnvironment t0 = (TechControlEnvironment) t;
-                if (t0.hostilityAllowed() >= hostility)
+                if ((t0.hostilityAllowed() == hostility) 
+                || (!restricted && t0.hostilityAllowed() >= hostility))
                     return id;            
             }
         }

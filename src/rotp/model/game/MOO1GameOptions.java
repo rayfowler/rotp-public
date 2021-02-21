@@ -66,6 +66,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private String selectedFuelRangeOption;
     private String selectedRandomizeAIOption;
     private String selectedAIHostilityOption;
+    private String selectedColonizingOption;
 
     private transient GalaxyShape galaxyShape;
 
@@ -164,6 +165,10 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     @Override
     public void selectedTerraformingOption(String s) { selectedTerraformingOption = s; }
     @Override
+    public String selectedColonizingOption()       { return selectedColonizingOption == null ? COLONIZING_NORMAL : selectedColonizingOption; }
+    @Override
+    public void selectedColonizingOption(String s) { selectedColonizingOption = s; }
+    @Override
     public String selectedFuelRangeOption()       { return selectedFuelRangeOption == null ? FUEL_RANGE_NORMAL : selectedFuelRangeOption; }
     @Override
     public void selectedFuelRangeOption(String s) { selectedFuelRangeOption = s; }
@@ -241,6 +246,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedFuelRangeOption = opt.selectedFuelRangeOption;
         selectedRandomizeAIOption = opt.selectedRandomizeAIOption;
         selectedAIHostilityOption = opt.selectedAIHostilityOption;
+        selectedColonizingOption = opt.selectedColonizingOption;
         
         if (opt.player != null) 
             player.copy(opt.player);
@@ -698,6 +704,13 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         return list;
     }
     @Override
+    public List<String> colonizingOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(COLONIZING_NORMAL);
+        list.add(COLONIZING_RESTRICTED);
+        return list;
+    }
+    @Override
     public List<String> fuelRangeOptions() {
         List<String> list = new ArrayList<>();
         list.add(FUEL_RANGE_NORMAL);
@@ -749,6 +762,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedGalaxyAge = GALAXY_AGE_NORMAL;
         selectedPlanetQualityOption = PLANET_QUALITY_NORMAL;
         selectedTerraformingOption = TERRAFORMING_NORMAL;
+        selectedColonizingOption = COLONIZING_NORMAL;
         selectedResearchRate = RESEARCH_NORMAL;
         selectedTechTradeOption = TECH_TRADING_YES;
         selectedRandomEventOption = RANDOM_EVENTS_ON;

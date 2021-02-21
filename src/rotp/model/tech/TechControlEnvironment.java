@@ -17,7 +17,6 @@ package rotp.model.tech;
 
 import rotp.model.empires.Empire;
 import rotp.model.empires.Race;
-import rotp.model.planet.Planet;
 import rotp.model.planet.PlanetType;
 import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipSpecialColony;
@@ -67,7 +66,10 @@ public final class TechControlEnvironment extends Tech {
     public float baseSize(ShipDesign d) { return 700; }
     @Override
     public boolean isObsolete(Empire c) {
-        TechControlEnvironment topTech = c.tech().topControlEnvironmentTech();
+        if (options().restrictedColonization())
+            return c.tech().knowsTechForHostility(hostilityAllowed);
+        
+        TechControlEnvironment topTech = c.tech().topControlEnvironmentTech();        
         return (topTech != null) && (topTech.environment() >= environment()) ;
     }
     @Override
@@ -75,8 +77,10 @@ public final class TechControlEnvironment extends Tech {
     @Override
     public void provideBenefits(Empire c) {
         super.provideBenefits(c);
-        if (!isObsolete(c))
+        if (!isObsolete(c)) {
             c.tech().topControlEnvironmentTech(this);
+            c.tech().learnToColonizeHostility(hostilityAllowed);
+        }
 
         ShipSpecialColony sh = new ShipSpecialColony(this);
         c.shipLab().addSpecial(sh);
