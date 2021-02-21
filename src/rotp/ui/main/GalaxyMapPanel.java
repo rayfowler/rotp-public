@@ -55,6 +55,7 @@ import rotp.ui.sprites.FlightPathSprite;
 import rotp.ui.sprites.GridCircularDisplaySprite;
 import rotp.ui.sprites.RangeDisplaySprite;
 import rotp.ui.sprites.ShipDisplaySprite;
+import rotp.ui.sprites.SpyReportSprite;
 import rotp.ui.sprites.SystemNameDisplaySprite;
 import rotp.ui.sprites.TechStatusSprite;
 import rotp.ui.sprites.TreasurySprite;
@@ -269,6 +270,8 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             baseControls.add(new TechStatusSprite(TechCategory.CONSTRUCTION, 10,y0+70, 30,30));
             baseControls.add(new TechStatusSprite(TechCategory.COMPUTER,     10,y0+35, 30,30));
             baseControls.add(new TreasurySprite(10,y0, 30,30));
+
+            baseControls.add(new SpyReportSprite(10,y0-70, 30,30));
         }
         
         addMouseListener(this);

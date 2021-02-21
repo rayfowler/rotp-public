@@ -22,6 +22,6 @@ public class SpyCapturedNotification implements TurnNotification {
     public String displayOrder() { return SPIES_CAPTURED; }
     @Override
     public void notifyPlayer() {
-            RotPUI.instance().showSpiesCaptured();
+            RotPUI.instance().showSpyReport();
     }
 }

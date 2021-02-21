@@ -205,6 +205,8 @@ public class MainUI extends BasePanel implements IMapHandler {
     }
     @Override
     public boolean showTreasuryResearchBar()       { return overlay != overlayAdvice; }
+    @Override
+    public boolean showSpyReportIcon()             { return (overlay != overlayAdvice) && session().spyActivity(); }
     public void setOverlay(MapOverlay lay) {
         overlay = lay;
     }
@@ -286,7 +288,7 @@ public class MainUI extends BasePanel implements IMapHandler {
         overlayColonizePrompt.init(sysId, fl, d);
         repaint();
     }
-    public void showSpiesCaptured() {
+    public void showSpyReport() {
         overlay = overlaySpies;
         overlaySpies.init();
         repaint();

@@ -59,7 +59,6 @@ import rotp.ui.UserPreferences;
 import rotp.ui.notifications.GameAlert;
 import rotp.ui.notifications.SabotageNotification;
 import rotp.ui.notifications.ShipConstructionNotification;
-import rotp.ui.notifications.SpyCapturedNotification;
 import rotp.ui.notifications.StealTechNotification;
 import rotp.ui.notifications.SystemsScoutedNotification;
 import rotp.ui.notifications.TurnNotification;
@@ -97,7 +96,7 @@ public final class GameSession implements Base, Serializable {
     private Galaxy galaxy;
     private final GameStatus status = new GameStatus();
     private long id;
-    private transient boolean spiesCaptured = false;
+    private boolean spyActivity = false;
     
     public GameStatus status()                   { return status; }
     public long id()                             { return id; }
@@ -182,11 +181,9 @@ public final class GameSession implements Base, Serializable {
         shipsConstructed().put(design, existingCount+newCount);
     }
     public void addSpiesCapturedNotification() {
-        if (!spiesCaptured) {
-            spiesCaptured = true;
-            addTurnNotification(new SpyCapturedNotification());
-        }
+        spyActivity = true;
     }
+    public boolean spyActivity()            { return spyActivity; }
     public void addSystemScouted(StarSystem sys) {
         systemsScouted().get("Scouts").add(sys);
     }
@@ -247,7 +244,7 @@ public final class GameSession implements Base, Serializable {
             clearScoutedSystems();
             systemsToAllocate().clear();
             shipsConstructed().clear();
-            spiesCaptured = false;
+            spyActivity = false;
             galaxy().startGame();
             saveRecentSession(false);
             saveBackupSession(1);
@@ -321,7 +318,7 @@ public final class GameSession implements Base, Serializable {
                 systemsToAllocate().clear();
                 clearScoutedSystems();
                 shipsConstructed().clear();
-                spiesCaptured = false;
+                spyActivity = false;
                 clearAlerts();
                 RotPUI.instance().repaint();
                 processNotifications();

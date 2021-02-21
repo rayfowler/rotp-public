@@ -18,7 +18,6 @@ package rotp.ui.main.overlay;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 import java.util.List;
-import javax.swing.SwingUtilities;
 import rotp.model.Sprite;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
@@ -119,7 +118,7 @@ public class MapOverlayNone extends MapOverlay {
                 break;
             case KeyEvent.VK_S:
                 if (e.isShiftDown())
-                    RotPUI.instance().showSpiesCaptured();
+                    RotPUI.instance().showSpyReport();
                 else {
                     buttonClick();
                     RotPUI.instance().selectSystemsPanel();
