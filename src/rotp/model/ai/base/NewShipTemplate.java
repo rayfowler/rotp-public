@@ -51,34 +51,34 @@ public class NewShipTemplate implements Base {
     enum DesignType { FIGHTER, BOMBER, DESTROYER };
 
     // indices for race shipDesignMods
-    private static final int COST_MULT_S = 0;
-    private static final int COST_MULT_M = 1;
-    private static final int COST_MULT_L = 2;
-    private static final int COST_MULT_H = 3;
-    private static final int MODULE_SPACE = 4;
-    private static final int SHIELD_WEIGHT_FB = 5;
-    private static final int SHIELD_WEIGHT_D = 6;
-    private static final int ECM_WEIGHT_FD = 7;
-    private static final int ECM_WEIGHT_B = 8;
-    private static final int MANEUVER_WEIGHT_BD = 9;
-    private static final int MANEUVER_WEIGHT_F = 10;
-    private static final int ARMOR_WEIGHT_FB = 11;
-    private static final int ARMOR_WEIGHT_D = 12;
-    private static final int SPECIALS_WEIGHT = 13;
-    private static final int SPEED_MATCHING = 14;
-    private static final int REINFORCED_ARMOR = 15;
-    private static final int BIO_WEAPONS = 16;
-    private static final int PREF_PULSARS = 17;
-    private static final int PREF_CLOAK = 18;
-    private static final int PREF_REPAIR = 19;
-    private static final int PREF_INTERTIAL = 20;
-    private static final int PREF_MISS_SHIELD = 21;
-    private static final int PREF_REPULSOR = 22;
-    private static final int PREF_STASIS = 23;
-    private static final int PREF_STREAM_PROJECTOR = 24;
-    private static final int PREF_WARP_DISSIPATOR = 25;
-    private static final int PREF_TECH_NULLIFIER = 26;
-    private static final int PREF_BEAM_FOCUS = 27;
+    public static final int COST_MULT_S = 0;
+    public static final int COST_MULT_M = 1;
+    public static final int COST_MULT_L = 2;
+    public static final int COST_MULT_H = 3;
+    public static final int MODULE_SPACE = 4;
+    public static final int SHIELD_WEIGHT_FB = 5;
+    public static final int SHIELD_WEIGHT_D = 6;
+    public static final int ECM_WEIGHT_FD = 7;
+    public static final int ECM_WEIGHT_B = 8;
+    public static final int MANEUVER_WEIGHT_BD = 9;
+    public static final int MANEUVER_WEIGHT_F = 10;
+    public static final int ARMOR_WEIGHT_FB = 11;
+    public static final int ARMOR_WEIGHT_D = 12;
+    public static final int SPECIALS_WEIGHT = 13;
+    public static final int SPEED_MATCHING = 14;
+    public static final int REINFORCED_ARMOR = 15;
+    public static final int BIO_WEAPONS = 16;
+    public static final int PREF_PULSARS = 17;
+    public static final int PREF_CLOAK = 18;
+    public static final int PREF_REPAIR = 19;
+    public static final int PREF_INERTIAL = 20;
+    public static final int PREF_MISS_SHIELD = 21;
+    public static final int PREF_REPULSOR = 22;
+    public static final int PREF_STASIS = 23;
+    public static final int PREF_STREAM_PROJECTOR = 24;
+    public static final int PREF_WARP_DISSIPATOR = 25;
+    public static final int PREF_TECH_NULLIFIER = 26;
+    public static final int PREF_BEAM_FOCUS = 27;
     
 
     public static ShipDesign newFighterDesign(ShipDesigner ai) {
@@ -178,8 +178,7 @@ public class NewShipTemplate implements Base {
 
         // xenophobes will bio-bomb regardless of racial preferences
         if (role == DesignType.BOMBER) {
-            if (ai.empire().leader().isXenophobic()
-            || ai.empire().leader().isRuthless())
+            if (ai.empire().leader().isRuthless())
                 allowBioWeapons = true;
         }
 
@@ -389,7 +388,7 @@ public class NewShipTemplate implements Base {
         // Meklar and Psilon
         boolean preferRepair = race.shipDesignMods[PREF_REPAIR] > 0;
         // Mrrshan and Psilon
-        boolean preferInertial = race.shipDesignMods[PREF_INTERTIAL] > 0;
+        boolean preferInertial = race.shipDesignMods[PREF_INERTIAL] > 0;
         // Sakkra, Bulrathi and Psilon
         boolean preferMissileShield = race.shipDesignMods[PREF_MISS_SHIELD] > 0;
         // Psilon
