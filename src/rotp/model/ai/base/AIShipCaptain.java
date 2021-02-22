@@ -310,11 +310,20 @@ public class AIShipCaptain implements Base, ShipCaptain {
     }
     @Override
     public boolean wantToRetreat(CombatStack currStack) {
-        // armed stacks controlled by players will never retreat
-        // when the player is auto-resolving
-        if (!currStack.usingAI() && currStack.isArmed())
-            return false;
-
+        CombatStackColony col = combat().results().colonyStack;
+        EmpireView colView = (col == null) ? null : currStack.empire.viewForEmpire(col.empire);
+        boolean inPact = (colView != null) && colView.embassy().pact();
+        
+        
+        // PLAYER STACKS
+        // 
+        // when auto-resolving, retreat player stacks ONLY when not
+        // retreating would violate a pact, or when the stack is unarmed
+        // armed stacks will otherwise fight to the death, per player expectations
+        if (!currStack.usingAI())
+            return inPact || !currStack.isArmed();
+     
+        // AI STACKS
         if (!currStack.canRetreat()) 
             return false;
         
@@ -332,12 +341,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
         
         // if stack is pacted with colony and doesn't want war, then retreat
         // modnar: change condition to only "doesn't want war"
-        if (combat().results().colonyStack != null) {
-            EmpireView cv = currStack.empire.viewForEmpire(combat().results().colonyStack.empire);
-            //if ((cv != null) && cv.embassy().pact() && !cv.embassy().wantWar())
-            if ((cv != null) && !cv.embassy().wantWar())  
-                return true;
-        }
+        if ((colView != null) && !colView.embassy().wantWar())  
+            return true;
 
         // if stack has ward still in combat, don't retreat
         if (currStack.hasWard() && currStack.isArmed()) {
