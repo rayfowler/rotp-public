@@ -19,9 +19,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import rotp.model.ai.interfaces.SpyMaster;
+import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.Leader;
+import rotp.model.empires.SpyNetwork;
 import rotp.model.empires.SpyNetwork.Sabotage;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.tech.Tech;
@@ -65,90 +67,115 @@ public class AISpyMaster implements Base, SpyMaster {
         // how much allocation for the spyNetwork?
         // each pt of allocatoin represents .005 of total civ production
         // max allocation is 25, or 10% of total civ production
-        if (!v.embassy().contact() || v.empire().extinct() || !v.inEconomicRange()) {
-            v.spies().allocation(0);
+
+        DiplomaticEmbassy emb = v.embassy();
+        SpyNetwork spies = v.spies();
+
+        // situations where no spies are ever needed
+        if (!emb.contact() || v.empire().extinct() || !v.inEconomicRange() || emb.unity()) {
+            spies.allocation(0);
             return;
         }
 
-        int maxSpiesNeeded;
-
-        if (v.embassy().finalWar())
-            // modnar: reduce spies needed for large number of active empires
-            maxSpiesNeeded = galaxy().numActiveEmpires() > 20 ? 2 : 3;
-        else if (v.embassy().war())
-            // modnar: reduce spies needed for large number of active empires
-            maxSpiesNeeded = galaxy().numActiveEmpires() > 20 ? 1 : 2;
-        else if (v.embassy().noTreaty()) {
-            // modnar: check if empire is in range or not
-            if (v.empire().inEconomicRange(id(empire)))
-                maxSpiesNeeded = 1;
-            else
-                maxSpiesNeeded = 0; // modnar: no spies if not in range
+        // if we are not in war preparations and we've received threats 
+        // about spying, then no spending
+        if (!emb.isEnemy() && spies.threatened()) {
+            spies.allocation(0);
+            return;
         }
-        else if (v.embassy().pact())
-            maxSpiesNeeded = 1;
-        else if (v.embassy().alliance()) 
-            maxSpiesNeeded = 1;
-        else // unity
-            maxSpiesNeeded = 0;
+            
+        int maxSpiesNeeded = 0;
 
-        // modnar: reduce allocation to 1 tick per spy needed, better for larger games with more empires
-        // 0.5% (1 tick) spending for each spy needed
-        if (v.spies().numActiveSpies() >= maxSpiesNeeded)
-            v.spies().allocation(0);
+        if (emb.finalWar())
+            maxSpiesNeeded = 3;
+        else if (emb.war())
+            maxSpiesNeeded = 2;
+        else if (emb.noTreaty()) 
+            maxSpiesNeeded = 1;
+        else if (emb.pact())
+            maxSpiesNeeded = 1;
+        else if (emb.atPeace())
+            maxSpiesNeeded = 1;
+        else if (emb.alliance()) 
+            maxSpiesNeeded = 1;
+
+        if (spies.numActiveSpies() >= maxSpiesNeeded)
+            spies.allocation(0);
         else
-            v.spies().allocation(maxSpiesNeeded * 1);
+            spies.allocation(maxSpiesNeeded * 2);
     }
     @Override
     public void setSpyingMission(EmpireView v) {
         // invoked for each CivView for each civ after nextTurn() processing is complete on each civ's turn
         // also invoked when contact is made in mid-turn
         // 0 = hide; 1 = sabotage; 2 = espionage
+        
+        DiplomaticEmbassy emb = v.embassy();
+        SpyNetwork spies = v.spies();
+
+        // extinct or no contact = hide
+        if (v.empire().extinct() || !emb.contact()) {
+            spies.beginHide();
+            return;
+        }
+
+        // they are our allies
+        if (emb.alliance() || emb.unity()) {
+            spies.beginHide();
+            return;
+        }
+
+        // we've been warned and they are not our enemy (i.e. no war preparations)
+        if (!emb.isEnemy() && spies.threatened()) {
+            spies.beginHide();
+            return;
+        }
+ 
+        boolean canEspionage = !spies.possibleTechs().isEmpty();
+        Leader leader = v.owner().leader();
+        float relations = emb.relations();
+        
+        // we are in a pact or at peace
+        if (emb.pact() || emb.atPeace()) {
+            if (leader.isTechnologist() && canEspionage)
+                spies.beginEspionage();
+            else if (leader.isPacifist() || leader.isHonorable())
+                spies.beginHide();
+            else if ((relations > 30) && canEspionage)
+                spies.beginEspionage();
+            else
+                spies.beginHide();
+            return;
+        }
 
         Sabotage sabMission = bestSabotageChoice(v);
-        boolean canSabotage = v.spies().canSabotage() && (sabMission != null);
-        boolean canEspionage = !v.spies().possibleTechs().isEmpty();
-        Leader leader = v.owner().leader();
-
-        float relations = v.embassy().relations();
-        if (v.empire().extinct())
-            v.spies().beginHide();
-        else if (!v.embassy().contact())
-            v.spies().beginHide();
-        else if (v.embassy().alliance() || v.embassy().unity())
-            v.spies().beginHide();
-        else if (v.embassy().pact()) {
-            if (leader.isTechnologist() && canEspionage)
-                v.spies().beginEspionage();
-            else if (leader.isPacifist() || leader.isHonorable())
-                v.spies().beginHide();
-            else if ((relations > 30) && canEspionage)
-                v.spies().beginEspionage();
-            else
-                v.spies().beginHide();
-        }
-         else if (v.embassy().noTreaty()) {
+        boolean canSabotage = spies.canSabotage() && (sabMission != null);
+        
+        // we have no treaty, we might want to sabotage!
+        if (emb.noTreaty()) {
             if (leader.isAggressive() || leader.isRuthless() || leader.isErratic()) {
                 if (canEspionage)
-                    v.spies().beginEspionage();
+                    spies.beginEspionage();
                 else if (canSabotage)
-                    v.spies().beginSabotage();
+                    spies.beginSabotage();
                 else
-                    v.spies().beginHide();
+                    spies.beginHide();
             }
             else if (leader.isXenophobic() && canEspionage)
-                v.spies().beginEspionage();
+                spies.beginEspionage();
             else if (relations < -20) 
-                v.spies().beginHide();
+                spies.beginHide();
             else if (leader.isTechnologist() && canEspionage)
-                v.spies().beginEspionage();
+                spies.beginEspionage();
             else if (leader.isPacifist() || leader.isHonorable())
-                v.spies().beginHide();
+                spies.beginHide();
             else
-                v.spies().beginHide();
+                spies.beginHide();
+            return;
         }
-         // if at war, defer to war strategy: 1) steal war techs, 2) sabotage, 3) steal techs
-        else if (v.embassy().anyWar()) {
+        
+        // if at war, defer to war strategy: 1) steal war techs, 2) sabotage, 3) steal techs
+        if (emb.anyWar()) {
             List<Tech> warTechs = new ArrayList<>();
             for (String tId: v.spies().possibleTechs()) {
                 Tech t = tech(tId);
@@ -156,17 +183,18 @@ public class AISpyMaster implements Base, SpyMaster {
                     warTechs.add(t);
             }
             if (!warTechs.isEmpty())
-                v.spies().beginEspionage();
+                spies.beginEspionage();
             else if (canSabotage)
-                v.spies().beginSabotage();
+                spies.beginSabotage();
             else if (!v.spies().possibleTechs().isEmpty())
-                v.spies().beginEspionage();
+                spies.beginEspionage();
             else
-                v.spies().beginHide();
+                spies.beginHide();
+            return;
         }
-        else
-            // default is to hide
-            v.spies().beginHide();
+        
+        // default for any other treaty state (??) is to hide
+       spies.beginHide();
     }
     @Override
     public Sabotage bestSabotageChoice(EmpireView v) {

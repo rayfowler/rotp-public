@@ -946,14 +946,17 @@ public class AIDiplomat implements Base, Diplomat {
         v.embassy().noteRequest();
         v.embassy().withdrawAmbassador();
         
-        if (empire.atWarWith(e.id) || v.embassy().onWarFooting())
+        if (empire.atWarWith(e.id) || v.embassy().onWarFooting()) {
+            v.spies().ignoreThreat();
             return v.accept(DialogueManager.RESPOND_IGNORE_THREAT);
+        }
 
         if (empire.leader().isPacifist() || empire.leader().isHonorable()) {
             if (e.leader().isXenophobic())
                 empire.shutdownSpyNetworksAgainst(e.id);
             else
                 empire.hideSpiesAgainst(e.id);
+            v.spies().heedThreat();
             return v.accept(DialogueManager.RESPOND_STOP_SPYING);
         }
                    
@@ -961,13 +964,16 @@ public class AIDiplomat implements Base, Diplomat {
         float myPower = empire.militaryPowerLevel();
         float powerRatio = myPower/otherPower;
 
-        if (powerRatio > 2)
+        if (powerRatio > 2) {
+            v.spies().ignoreThreat();
             return v.accept(DialogueManager.RESPOND_IGNORE_THREAT);
+        }
             
         if (e.leader().isXenophobic())
             empire.shutdownSpyNetworksAgainst(e.id);
         else
             empire.hideSpiesAgainst(e.id);
+        v.spies().heedThreat();
         return v.accept(DialogueManager.RESPOND_STOP_SPYING);
     }
     @Override
@@ -977,11 +983,14 @@ public class AIDiplomat implements Base, Diplomat {
         v.embassy().noteRequest();
         v.embassy().withdrawAmbassador();
         
-        if (empire.atWarWith(e.id) || v.embassy().onWarFooting())
+        if (empire.atWarWith(e.id) || v.embassy().onWarFooting()) {
+            v.embassy().ignoreThreat();
             return v.otherView().accept(DialogueManager.RESPOND_IGNORE_THREAT);
+        }
 
         if (empire.leader().isPacifist()) {
             empire.retreatShipsFrom(e.id);
+            v.embassy().heedThreat();
             return v.otherView().accept(DialogueManager.RESPOND_STOP_ATTACKING);
         }
                    
@@ -989,10 +998,13 @@ public class AIDiplomat implements Base, Diplomat {
         float myPower = empire.militaryPowerLevel();
         float powerRatio = myPower/otherPower;
 
-        if (powerRatio > 2)
+        if (powerRatio > 2) {
+            v.embassy().ignoreThreat();
             return v.otherView().accept(DialogueManager.RESPOND_IGNORE_THREAT);
+        }
             
         empire.retreatShipsFrom(e.id);
+        v.embassy().heedThreat();
         return v.otherView().accept(DialogueManager.RESPOND_STOP_ATTACKING);
     }
     @Override
@@ -1207,7 +1219,7 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
 
         log("cumulative severity: "+cumulativeSeverity);
-        view.embassy().warningSent(maxIncident);
+        view.embassy().logWarning(maxIncident);
         
         // if we are warning player, send a notification
         if (view.empire().isPlayer()) {
@@ -1243,9 +1255,9 @@ public class AIDiplomat implements Base, Diplomat {
                     if (ev.triggersWar()) {
                         float sev = ev.currentSeverity();
                         if (ev.triggersWarning() && (sev < worstNewSeverity))
-                                warIncident = ev;
+                            warIncident = ev;
                     }
-                    else if (view.embassy().warningAlreadySent(ev.timerKey()))
+                    else if (view.embassy().timerIsActive(ev.timerKey()))
                         warIncident = ev;
                 }
             }

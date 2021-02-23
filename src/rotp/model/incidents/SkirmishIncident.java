@@ -16,6 +16,7 @@
 package rotp.model.incidents;
 
 import rotp.model.combat.ShipCombatResults;
+import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.ui.diplomacy.DialogueManager;
@@ -51,7 +52,7 @@ public class SkirmishIncident extends DiplomaticIncident {
     @Override
     public String warningMessageId() {  return DialogueManager.WARNING_SKIRMISH; }
     @Override
-    public int timerKey()               { return ATTACK_WARNING; }
+    public int timerKey()               { return DiplomaticEmbassy.TIMER_ATTACK_WARNING; }
     @Override
     public String key() {
         return concat(systemName(), ":", str(dateOccurred));

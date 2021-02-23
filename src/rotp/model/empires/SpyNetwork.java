@@ -61,7 +61,8 @@ public final class SpyNetwork implements Base, Serializable {
 
     private final FleetView fleetView  = new FleetView();
     private List<String> possibleTechs = new ArrayList<>();
-    private transient int spiesLost = 0;
+    private int spiesLost = 0;
+    private boolean threatened = false;
     private transient Mission confessedMission;
     private transient List<StarSystem> baseTargets;
     private transient List<StarSystem> factoryTargets;
@@ -106,6 +107,10 @@ public final class SpyNetwork implements Base, Serializable {
     public void maxSpies(int n)      { maxSpies = max(0,n); }
     public void increaseMaxSpies()   { maxSpies++; }
     public void decreaseMaxSpies()   { maxSpies = max(0, maxSpies-1); }
+    
+    public void heedThreat()          { threatened = true; }
+    public void ignoreThreat()        { threatened = false; }
+    public boolean threatened()       { return threatened; }
     
     public void shutdownSpyNetworks() {
         maxSpies = 0;

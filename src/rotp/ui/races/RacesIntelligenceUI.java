@@ -36,6 +36,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.incidents.DiplomaticIncident;
@@ -670,7 +671,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         }
         
         if (!view.embassy().anyWar() && (view.spies().maxSpies() > 0)
-        && view.otherView().embassy().warningAlreadySent(DiplomaticIncident.SPY_WARNING)) {
+        && view.otherView().embassy().timerIsActive(DiplomaticEmbassy.TIMER_SPY_WARNING)) {
             if (!view.spies().isHide()
             || (view.empire().leader().isXenophobic())) {
                 triggerWar = true;

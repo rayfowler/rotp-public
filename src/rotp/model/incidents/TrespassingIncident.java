@@ -15,6 +15,7 @@
  */
 package rotp.model.incidents;
 
+import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.EmpireView;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
@@ -58,7 +59,7 @@ public class TrespassingIncident extends DiplomaticIncident {
     @Override
     public String warningMessageId()    { return DialogueManager.WARNING_TRESPASSING; }
     @Override
-    public int timerKey()               { return ATTACK_WARNING; }
+    public int timerKey()               { return DiplomaticEmbassy.TIMER_ATTACK_WARNING; }
     @Override
     public String key() {
         return concat(systemName(), ":", str(dateOccurred));

@@ -812,7 +812,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     }
     public void shutdownSpyNetworksAgainst(int empId) {
         EmpireView v = viewForEmpire(empId);
-        if (v != null)
+        if (v != null) 
             v.spies().shutdownSpyNetworks();
     }
     public StarSystem retreatSystem(StarSystem from) {

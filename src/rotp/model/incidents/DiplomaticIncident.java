@@ -21,15 +21,12 @@ import rotp.ui.notifications.TurnNotification;
 import rotp.util.Base;
 
 public abstract class DiplomaticIncident implements Base, Serializable {
-    public static final int NO_WARNING = -1;
-    public static final int SPY_WARNING = 0;
-    public static final int ATTACK_WARNING = 1;
     private static final long serialVersionUID = 1L;
     protected float severity;
     protected int duration;
     protected int dateOccurred;
 
-    public int timerKey()              { return NO_WARNING; }
+    public int timerKey()                { return -1; } // default -1 for timerKey index means no timer triggered
     public abstract String key();
     public abstract String title();
     public String description()          { return ""; }

@@ -15,6 +15,7 @@
  */
 package rotp.model.incidents;
 
+import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.SpyNetwork;
 import rotp.ui.diplomacy.DialogueManager;
@@ -68,7 +69,7 @@ public class SpyConfessionIncident extends DiplomaticIncident {
     @Override
     public boolean isSpying()           { return (missionType > 0) || galaxy().empire(empVictim).leader().isXenophobic() ; }
     @Override
-    public int timerKey()               { return SPY_WARNING; }
+    public int timerKey()               { return DiplomaticEmbassy.TIMER_SPY_WARNING; }
     @Override
     public String title()               { return text("INC_SPY_CONFESSION_TITLE"); }
     @Override

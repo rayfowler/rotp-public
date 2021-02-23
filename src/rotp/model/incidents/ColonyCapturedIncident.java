@@ -15,6 +15,7 @@
  */
 package rotp.model.incidents;
 
+import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.galaxy.StarSystem;
@@ -54,7 +55,7 @@ public class ColonyCapturedIncident extends DiplomaticIncident {
     @Override
     public String declareWarId()  { return DialogueManager.DECLARE_ATTACKED_WAR; }
     @Override
-    public int timerKey()               { return ATTACK_WARNING; }
+    public int timerKey()               { return DiplomaticEmbassy.TIMER_ATTACK_WARNING; }
     @Override
     public String key() {
         return concat(systemName(), ":", str(dateOccurred));

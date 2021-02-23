@@ -138,8 +138,9 @@ public final class EmpireView implements Base, Serializable {
         return values;
     }
     public void setSuggestedAllocations() {
-        if (owner.isAIControlled())
+        if (owner.isAIControlled()) {
             spies.setSuggestedAllocations();
+        }
     }
     public void setContact() {
         if (owner.extinct() || empire.extinct())

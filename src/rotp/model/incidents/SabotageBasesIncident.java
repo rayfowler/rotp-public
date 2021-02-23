@@ -15,6 +15,7 @@
  */
 package rotp.model.incidents;
 
+import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.SabotageMission;
@@ -70,7 +71,7 @@ public class SabotageBasesIncident extends DiplomaticIncident {
     @Override
     public boolean isSpying()   { return true; }
     @Override
-    public int timerKey()              { return SPY_WARNING; }
+    public int timerKey()              { return DiplomaticEmbassy.TIMER_SPY_WARNING; }
     @Override
     public String title()       { return text("INC_DESTROYED_BASES_TITLE"); }
     @Override

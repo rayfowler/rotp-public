@@ -234,7 +234,7 @@ public class AIGeneral implements Base, General {
         }
 
         // for empires we are at war with.. we always invade or bomb
-        if (ev.embassy().anyWar() || ev.embassy().onWarFooting()) {
+        if (ev.embassy().isEnemy()) {
             if (willingToInvade(ev, sys))
                 orderInvasionFleet(ev, sys, enemyFleetSize);
             else
@@ -249,8 +249,8 @@ public class AIGeneral implements Base, General {
             return;
         }
         
-        // for empires with no treaty
-        if (ev.embassy().noTreaty()) {
+        // for other empires that haven't threatened us
+        if (!ev.embassy().threatened()) {
             if (ev.embassy().encroaching(sys))
                 orderBombEncroachmentFleet(ev, sys, enemyFleetSize);
             else

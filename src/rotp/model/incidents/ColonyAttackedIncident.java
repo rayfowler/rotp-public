@@ -16,6 +16,7 @@
 package rotp.model.incidents;
 
 import rotp.model.combat.ShipCombatResults;
+import rotp.model.empires.DiplomaticEmbassy;
 import rotp.ui.diplomacy.DialogueManager;
 
 public class ColonyAttackedIncident extends DiplomaticIncident {
@@ -50,7 +51,7 @@ public class ColonyAttackedIncident extends DiplomaticIncident {
     @Override
     public boolean triggersWar()        { return popLost >= 30; }
     @Override
-    public int timerKey()               { return ATTACK_WARNING; }
+    public int timerKey()               { return DiplomaticEmbassy.TIMER_ATTACK_WARNING; }
     @Override
     public String key() {
         return concat(systemName(), ":", str(dateOccurred));
