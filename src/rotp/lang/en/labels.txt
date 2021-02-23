@@ -194,6 +194,8 @@ INC_AT_WAR_WITH_ALLY_TITLE        | At War with Ally
 INC_AT_WAR_WITH_ALLY_DESC         | You are at war with the [other_empire], an ally of the [my_empire].
 INC_CLOSED_EMBASSY_TITLE          | Recalled Ambassador
 INC_CLOSED_EMBASSY_DESC           | The [your_empire] ceased diplomatic relations with the [my_empire].
+INC_EVICTED_SPIES_TITLE           | Evicted Diplomats
+INC_EVICTED_SPIES_DESC            | The [your_empire] has evicted all non-essential diplomats from the [my_empire].
 INC_BROKE_ALLIANCE_TITLE          | Broke Alliance
 INC_BROKE_ALLIANCE_DESC           | The [your_empire] broke their Alliance with the [my_empire].
 INC_BROKE_PACT_TITLE              | Broke Non-Aggression Pact
@@ -1893,7 +1895,8 @@ DIPLOMACY_MENU_AMT                | %1 BC
 DIPLOMACY_MENU_OFFER_TECHS        | Offer Technology
 DIPLOMACY_MENU_THREATEN           | Threaten
 DIPLOMACY_MENU_DECLARE_WAR        | Declare War
-DIPLOMACY_MENU_STOP_SPYING        | Stop Spying
+DIPLOMACY_MENU_EVICT_SPIES        | Remove All Spies (lowers relations)
+DIPLOMACY_MENU_STOP_SPYING        | Stop Spying Activities
 DIPLOMACY_MENU_STOP_ATTACKING     | Stop Attacking
 DIPLOMACY_MENU_GOODBYE            | Good Bye
 DIPLOMACY_MENU_PACT               | Propose Non-Aggression Pact

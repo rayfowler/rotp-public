@@ -32,6 +32,7 @@ public interface Diplomat {
     boolean canOfferAid(Empire e);
     boolean canDeclareWar(Empire e);
     boolean canThreaten(Empire e);
+    boolean canEvictSpies(Empire e);
     boolean canThreatenSpying(Empire e);
     boolean canThreatenAttacking(Empire e);
     
@@ -53,6 +54,7 @@ public interface Diplomat {
     
     DiplomaticReply receiveFinancialAid(Empire e, int amt);
     DiplomaticReply receiveTechnologyAid(Empire e, String techId);
+    DiplomaticReply receiveThreatEvictSpies(Empire e);
     DiplomaticReply receiveThreatStopSpying(Empire e);
     DiplomaticReply receiveThreatStopAttacking(Empire e);
     DiplomaticReply receiveDeclareWar(Empire e);

@@ -36,8 +36,9 @@ public abstract class DiplomaticMessage implements Base {
     protected static final int DECLARE_WAR = 9;
     protected static final int OFFER_MONEY = 10;
     protected static final int OFFER_TECH = 11;
-    protected static final int STOP_SPYING = 12;
-    protected static final int STOP_ATTACKING = 13;
+    protected static final int STOP_ATTACKING = 12;
+    protected static final int STOP_SPYING = 13;
+    protected static final int EVICT_SPIES = 14;
     protected static final int TREATY_MENU = 91;
     protected static final int TRADE_MENU = 92;
     protected static final int TECHNOLOGY_MENU = 93;

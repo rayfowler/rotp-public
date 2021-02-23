@@ -18,7 +18,6 @@ package rotp.ui.diplomacy;
 import java.util.ArrayList;
 import java.util.List;
 import rotp.model.ai.interfaces.Diplomat;
-import rotp.model.empires.DiplomaticTreaty;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 
@@ -35,6 +34,8 @@ public class DiplomacyThreatenMenu extends DiplomaticMessage {
         Empire dip = diplomat();
         
         options.clear();
+        if (plAI.canEvictSpies(dip))
+            options.add(EVICT_SPIES);
         if (plAI.canThreatenSpying(dip))
             options.add(STOP_SPYING);
         if (plAI.canThreatenAttacking(dip))
@@ -55,6 +56,7 @@ public class DiplomacyThreatenMenu extends DiplomaticMessage {
         
         int choice = options.get(i);
         switch(choice) {
+            case EVICT_SPIES      : return text("DIPLOMACY_MENU_EVICT_SPIES");
             case STOP_SPYING      : return text("DIPLOMACY_MENU_STOP_SPYING");
             case STOP_ATTACKING   : return text("DIPLOMACY_MENU_STOP_ATTACKING");
             case WAR_MENU         : return text("DIPLOMACY_MENU_DECLARE_WAR");
@@ -74,6 +76,7 @@ public class DiplomacyThreatenMenu extends DiplomaticMessage {
         int choice = options.get(i);
         DiplomaticReply reply;
         switch(choice) {
+            case EVICT_SPIES     : reply = diplomat().diplomatAI().receiveThreatEvictSpies(player());    break;
             case STOP_SPYING     : reply = diplomat().diplomatAI().receiveThreatStopSpying(player());    break;
             case STOP_ATTACKING  : reply = diplomat().diplomatAI().receiveThreatStopAttacking(player());     break;
             case WAR_MENU        : DiplomaticMessage.show(view(), DialogueManager.DIPLOMACY_DECLARE_WAR_MENU); return;

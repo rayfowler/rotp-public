@@ -26,6 +26,7 @@ import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.GalacticCouncil;
+import rotp.model.empires.SpyNetwork;
 import rotp.model.empires.SpyNetwork.Mission;
 import rotp.model.empires.TreatyWar;
 import rotp.model.galaxy.Galaxy;
@@ -40,6 +41,7 @@ import rotp.model.incidents.ColonyInvadedIncident;
 import rotp.model.incidents.DiplomaticIncident;
 import rotp.model.incidents.EncroachmentIncident;
 import rotp.model.incidents.EspionageTechIncident;
+import rotp.model.incidents.EvictedSpiesIncident;
 import rotp.model.incidents.ExpansionIncident;
 import rotp.model.incidents.FinancialAidIncident;
 import rotp.model.incidents.MilitaryBuildupIncident;
@@ -883,7 +885,7 @@ public class AIDiplomat implements Base, Diplomat {
     public boolean canDeclareWar(Empire e)                 { return empire.inEconomicRange(id(e)) && !empire.atWarWith(id(e)) && !empire.alliedWith(id(e)); }
     @Override
     public boolean canThreaten(Empire e) { 
-        return canThreatenSpying(e) || canThreatenAttacking(e); 
+        return canEvictSpies(e) || canThreatenSpying(e) || canThreatenAttacking(e); 
     }
     @Override
     public boolean canThreatenSpying(Empire e) { 
@@ -892,7 +894,18 @@ public class AIDiplomat implements Base, Diplomat {
         if (empire.atWarWith(id(e)))
             return false;
         
-        return e.viewForEmpire(empire).spies().spiesLost() > 0;
+        SpyNetwork spies = e.viewForEmpire(empire).spies();
+        return (spies.spiesLost() > 0) && (spies.confessedMission() != Mission.HIDE);
+    }
+    @Override
+    public boolean canEvictSpies(Empire e) { 
+        if (!empire.inEconomicRange(id(e)))
+            return false;
+        if (empire.atWarWith(id(e)))
+            return false;
+       
+        SpyNetwork spies = e.viewForEmpire(empire).spies();
+        return spies.spiesLost() > 0;
     }
     @Override
     public boolean canThreatenAttacking(Empire e) { 
@@ -952,11 +965,14 @@ public class AIDiplomat implements Base, Diplomat {
         }
 
         if (empire.leader().isPacifist() || empire.leader().isHonorable()) {
-            if (e.leader().isXenophobic())
+            if (e.leader().isXenophobic()) {
                 empire.shutdownSpyNetworksAgainst(e.id);
-            else
+                v.spies().heedEviction();
+            }
+            else {
                 empire.hideSpiesAgainst(e.id);
-            v.spies().heedThreat();
+                v.spies().heedThreat();
+            }
             return v.accept(DialogueManager.RESPOND_STOP_SPYING);
         }
                    
@@ -969,11 +985,48 @@ public class AIDiplomat implements Base, Diplomat {
             return v.accept(DialogueManager.RESPOND_IGNORE_THREAT);
         }
             
-        if (e.leader().isXenophobic())
+        if (e.leader().isXenophobic()) {
             empire.shutdownSpyNetworksAgainst(e.id);
-        else
+            v.spies().heedEviction();
+        }
+        else {
             empire.hideSpiesAgainst(e.id);
-        v.spies().heedThreat();
+            v.spies().heedThreat();
+        }
+        return v.accept(DialogueManager.RESPOND_STOP_SPYING);
+    }
+    @Override
+    public DiplomaticReply receiveThreatEvictSpies(Empire e) {
+        EmpireView v = empire.viewForEmpire(e);
+        
+        v.embassy().noteRequest();
+        v.embassy().withdrawAmbassador();
+
+        EvictedSpiesIncident inc = EvictedSpiesIncident.create(v);
+        v.embassy().addIncident(inc);
+        
+        if (empire.atWarWith(e.id) || v.embassy().onWarFooting()) {
+            v.spies().ignoreThreat();
+            return v.accept(DialogueManager.RESPOND_IGNORE_THREAT);
+        }
+
+        if (empire.leader().isPacifist() || empire.leader().isHonorable()) {
+            empire.shutdownSpyNetworksAgainst(e.id);
+            v.spies().heedEviction();
+            return v.accept(DialogueManager.RESPOND_STOP_SPYING);
+        }
+                   
+        float otherPower = empire.militaryPowerLevel(e);
+        float myPower = empire.militaryPowerLevel();
+        float powerRatio = myPower/otherPower;
+
+        if (powerRatio > 2) {
+            v.spies().ignoreThreat();
+            return v.accept(DialogueManager.RESPOND_IGNORE_THREAT);
+        }
+            
+        empire.shutdownSpyNetworksAgainst(e.id);
+        v.spies().heedEviction();
         return v.accept(DialogueManager.RESPOND_STOP_SPYING);
     }
     @Override
