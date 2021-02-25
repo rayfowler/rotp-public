@@ -30,7 +30,6 @@ import rotp.model.incidents.DemandTributeIncident;
 import rotp.model.incidents.DiplomaticIncident;
 import rotp.model.incidents.EncroachmentIncident;
 import rotp.model.incidents.ErraticWarIncident;
-import rotp.model.incidents.EvictedSpiesIncident;
 import rotp.model.incidents.ExchangeTechnologyIncident;
 import rotp.model.incidents.FirstContactIncident;
 import rotp.model.incidents.OathBreakerIncident;

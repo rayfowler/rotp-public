@@ -195,7 +195,7 @@ INC_AT_WAR_WITH_ALLY_DESC         | You are at war with the [other_empire], an a
 INC_CLOSED_EMBASSY_TITLE          | Recalled Ambassador
 INC_CLOSED_EMBASSY_DESC           | The [your_empire] ceased diplomatic relations with the [my_empire].
 INC_EVICTED_SPIES_TITLE           | Evicted Diplomats
-INC_EVICTED_SPIES_DESC            | The [your_empire] has evicted all non-essential diplomats from the [my_empire].
+INC_EVICTED_SPIES_DESC            | The [your_empire] evicted all non-essential diplomats from the [my_empire].
 INC_BROKE_ALLIANCE_TITLE          | Broke Alliance
 INC_BROKE_ALLIANCE_DESC           | The [your_empire] broke their Alliance with the [my_empire].
 INC_BROKE_PACT_TITLE              | Broke Non-Aggression Pact
@@ -394,7 +394,7 @@ MAIN_NAVIGATION_NEXT_TURN         | Next Turn
 MAIN_NAVIGATION_NEXT_YEAR         | Next Year
 MAIN_YEAR_DISPLAY                 | Year  %1
 MAIN_TURN_DISPLAY                 | Turn  %1
-MAIN_SPY_REPORT                   | Spies
+MAIN_SPY_REPORT                   | Spy
 MAIN_TECH_NONE                    | No Research
 MAIN_TECH_COMPLETED               | Research Completed
 MAIN_TECH_RP_REMAINING            | %1 RP Remaining

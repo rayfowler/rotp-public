@@ -56,6 +56,7 @@ import rotp.ui.sprites.YearDisplaySprite;
 public class MainUI extends BasePanel implements IMapHandler {
     private static final long serialVersionUID = 1L;
     public static Color paneBackground = new Color(123,123,123);
+    public static Color paneBackgroundDk = new Color(100,100,100);
     public static Color paneShadeC = new Color(123,123,123,128);
     public static Color paneShadeC2 = new Color(100,100,100,192);
     private static final Color shadeBorderC = new Color(80,80,80);
