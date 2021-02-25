@@ -40,6 +40,8 @@ public class EvictedSpiesIncident extends DiplomaticIncident {
     @Override
     public String key()              { return "Evicted Spies"; }
     @Override
+    public float currentSeverity()   { return severity; } // does not degrade over time
+    @Override
     public String decode(String s) {
         String s1 = super.decode(s);
         s1 = galaxy().empire(empBreaker).replaceTokens(s1, "your");

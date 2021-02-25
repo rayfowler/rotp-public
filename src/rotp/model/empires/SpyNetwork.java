@@ -66,8 +66,7 @@ public final class SpyNetwork implements Base, Serializable {
     private final FleetView fleetView  = new FleetView();
     private List<String> possibleTechs = new ArrayList<>();
     private int threatened = 0;
-    private int spiesLost = 0;
-    private Mission confessedMission;
+    private SpyReport report = new SpyReport();
     private transient List<StarSystem> baseTargets;
     private transient List<StarSystem> factoryTargets;
     private transient List<StarSystem> rebellionTargets;
@@ -117,6 +116,11 @@ public final class SpyNetwork implements Base, Serializable {
     public void ignoreThreat()        { threatened = THREAT_NONE; }
     public boolean threatened()       { return threatened != THREAT_NONE; }
     public boolean evicted()          { return threatened == THREAT_EVICT; }
+    public SpyReport report() {
+        if (report == null)
+            report = new SpyReport();
+        return report;
+    }
     
     public void shutdownSpyNetworks() {
         maxSpies = 0;
@@ -159,8 +163,6 @@ public final class SpyNetwork implements Base, Serializable {
     public boolean hasSpies()        { return !activeSpies.isEmpty(); }
     public List<Spy> activeSpies()   { return activeSpies; }
     public int numActiveSpies()      { return activeSpies().size(); }
-    public int spiesLost()           { return spiesLost; }
-    public Mission confessedMission() { return confessedMission; }
 
     public List<String> possibleTechs() {
         if (possibleTechs == null)
@@ -254,8 +256,6 @@ public final class SpyNetwork implements Base, Serializable {
         if (!activeSpies().isEmpty())
             view.refreshSystemSpyViews();
         
-        spiesLost = 0;
-        confessedMission = null;
         if (empire().extinct()) {
             activeSpies.clear();
             return;
@@ -276,19 +276,21 @@ public final class SpyNetwork implements Base, Serializable {
         updateTechList();
 
         boolean spyConfessed = sendSpiesToInfiltrate();
+        
+        SpyReport rpt = report();
 
         if (spyConfessed) {
             view.otherView().embassy().addIncident(new SpyConfessionIncident(view.otherView(), this));
             checkForTreatyBreak();
-            confessedMission = mission;
+            rpt.confessedMission(mission);
         }
-        else if ((spiesLost > 0) && view.empire().leader().isXenophobic()) {
+        else if ((rpt.spiesLost() > 0) && view.empire().leader().isXenophobic()) {
             view.otherView().embassy().addIncident(new SpyConfessionIncident(view.otherView(), this));
             checkForTreatyBreak();
-            confessedMission = Mission.SABOTAGE;
+            rpt.confessedMission(Mission.SABOTAGE);
         }
         
-        if (spiesLost > 0) {
+        if (rpt.spiesLost() > 0) {
             if (view.owner().isPlayer() || view.empire().isPlayer())
                 session().addSpiesCapturedNotification();
         }
@@ -333,7 +335,8 @@ public final class SpyNetwork implements Base, Serializable {
         for (Spy spy: spiesAttempting) {
             spy.attemptInfiltration(adj);
             if (spy.eliminated()) {
-                spiesLost++;
+                report().addSpiesLost();
+                view.otherView().spies().report().addSpiesCaptured();
                 activeSpies().remove(spy);
                 
             }
@@ -391,6 +394,15 @@ public final class SpyNetwork implements Base, Serializable {
             return;
 
         EspionageMission eMission = chooseTechToSteal(bestSpy, espionageChoices);
+        
+        report().stolenTech(eMission.stolenTech());
+        Empire framedEmpire = eMission.framedEmpire();
+        // log which empire we framed on our spy report, and the 
+        // fact that they were framed on their spy report
+        if (framedEmpire != null) {
+            report().framedEmpire(framedEmpire);
+            framedEmpire.viewForEmpire(empire().id).spies().report().frame();
+        }
 
         // if spy caught or is going to frame an empire, create incident
         if (bestSpy.caught() || bestSpy.canFrame()) {

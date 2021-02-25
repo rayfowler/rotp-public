@@ -30,6 +30,8 @@ import rotp.Rotp;
 import rotp.model.Sprite;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
+import rotp.model.empires.SpyReport;
+import rotp.model.tech.Tech;
 import rotp.ui.BasePanel;
 import rotp.ui.main.GalaxyMapPanel;
 import rotp.ui.main.MainUI;
@@ -64,8 +66,8 @@ public class MapOverlaySpies extends MapOverlay {
         List<Empire> allEmpires = player().contactedEmpires();
         for (Empire emp: allEmpires) {
             EmpireView v = player().viewForEmpire(emp.id);
-            if ((v.spies().spiesLost() > 0)
-            || (v.otherView().spies().spiesLost() > 0)) 
+            SpyReport rpt = v.spies().report();
+            if (rpt.hasActivity()) 
                 empires.add(emp);               
         }
         Collections.sort(empires, Empire.RACE_NAME);
@@ -183,12 +185,87 @@ public class MapOverlaySpies extends MapOverlay {
         g.drawString(skipStr, x1a, y1+BasePanel.s85+BasePanel.s20);
 
         // draw title
+        int y2 = y1+BasePanel.s25;
         if (selectedEmpire != null) {
             g.setFont(narrowFont(26));
-            drawShadowedString(g, selectedEmpire.name(), 3, x2, y1+BasePanel.s25, SystemPanel.textShadowC, Color.white);
+            drawShadowedString(g, selectedEmpire.name(), 3, x2, y2, SystemPanel.textShadowC, Color.white);
         }
 
-    
+        int descW = infoW-BasePanel.s20;
+        int lineH = BasePanel.s18;
+        g.setColor(SystemPanel.blackText);
+        // draw spies caught
+        EmpireView v = pl.viewForEmpire(selectedEmpire.id);
+        SpyReport rpt = v.spies().report();
+        int ourSpiesLost = rpt.spiesLost();
+        if (ourSpiesLost > 0) {
+            y2 += lineH;
+            String desc = text("NOTICE_SPIES_LOST_DESC", str(ourSpiesLost), selectedEmpire.name());
+            if (rpt.confessedMission() != null) {
+                switch(rpt.confessedMission()) {
+                    case SABOTAGE: desc = concat(desc," ", text("NOTICE_SPIES_LOST_CONFESSED")); break;
+                    case ESPIONAGE: desc = concat(desc," ", text("NOTICE_SPIES_LOST_CONFESSED2")); break;
+                    case HIDE: 
+                        if (selectedEmpire.leader().isXenophobic())
+                            desc = concat(desc, " ", text("NOTICE_SPIES_LOST_CONFESSED3")); break;
+                }
+            }
+            g.setFont(narrowFont(15));
+            List<String> lines = wrappedLines(g, desc, descW); 
+            for (String line: lines) {
+                y2 += lineH;
+                g.drawString(line, x2, y2);
+            }
+        }
+        
+        // show enemy spies that we caught
+        int theirSpiesLost = rpt.spiesCaptured();
+        if (theirSpiesLost > 0) {
+            SpyReport theirRpt = v.otherView().spies().report();
+            y2 += lineH;
+            String desc = text("NOTICE_SPIES_CAUGHT_DESC", str(theirSpiesLost), selectedEmpire.name());
+            if (theirRpt.confessedMission() != null) {
+                switch(theirRpt.confessedMission()) {
+                    case SABOTAGE: desc = concat(desc," ", text("NOTICE_SPIES_CAUGHT_CONFESSED")); break;
+                    case ESPIONAGE: desc = concat(desc," ", text("NOTICE_SPIES_CAUGHT_CONFESSED2")); break;
+                }
+            }
+            g.setFont(narrowFont(15));
+            List<String> lines = wrappedLines(g, desc, descW); 
+            for (String line: lines) {
+                y2 += lineH;
+                g.drawString(line, x2, y2);
+            }
+        }
+        
+        // show any techs we stole
+        if (rpt.stolenTech() != null) {
+            y2 += lineH;
+            Tech t = tech(rpt.stolenTech());
+            Empire framed = rpt.framedEmpire();
+            String desc = text("NOTICE_SPIES_ESPIONAGE", t.name(), selectedEmpire.name());
+            if (framed != null)
+                desc = concat(desc, " ", text("NOTICE_SPIES_ESPIONAGE_FRAME", framed.name()));
+            g.setFont(narrowFont(15));
+            List<String> lines = wrappedLines(g, desc, descW); 
+            for (String line: lines) {
+                y2 += lineH;
+                g.drawString(line, x2, y2);
+            }
+        }
+                
+        // informs if we were framed
+        if (rpt.wasFramed()) {
+            y2 += lineH;
+            String desc = text("NOTICE_SPIES_FRAMED", selectedEmpire.name());
+            g.setFont(narrowFont(15));
+            List<String> lines = wrappedLines(g, desc, descW); 
+            for (String line: lines) {
+                y2 += lineH;
+                g.drawString(line, x2, y2);
+            }
+        }
+
         // draw tabs
         int y3 = y0+bdr;
         int tabSp = BasePanel.s2;
@@ -198,19 +275,8 @@ public class MapOverlaySpies extends MapOverlay {
             tab.draw(ui, g);
         }
             
-        /*
-        for (Empire emp: empires) {
-            if (emp == selectedEmpire)
-                g.setColor(MainUI.paneBackground);
-            else
-                g.setColor(MainUI.paneBackgroundDk);
-            g.fillRect(x3,y3,tabW,tabH);
-            g.setColor(SystemPanel.blackText);
-            g.drawString(emp.raceName(), x3+scaled(5), y3+tabH-scaled(3));
-            y3 = y3+tabH+tabSp;
-        }
-        */
         // draw header
+        /*
         if (empires.isEmpty()) {
             String noSpies = text("NOTICE_SPIES_CAUGHT_NONE");
             g.setFont(narrowFont(18));
@@ -253,7 +319,8 @@ public class MapOverlaySpies extends MapOverlay {
             }
         }
         
-
+        */
+        
         int xOff = scaled(pl.race().espionageX);
         int yOff = scaled(pl.race().espionageY);
         if (labImg == null) {

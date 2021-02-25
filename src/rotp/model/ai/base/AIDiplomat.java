@@ -28,6 +28,7 @@ import rotp.model.empires.EmpireView;
 import rotp.model.empires.GalacticCouncil;
 import rotp.model.empires.SpyNetwork;
 import rotp.model.empires.SpyNetwork.Mission;
+import rotp.model.empires.SpyReport;
 import rotp.model.empires.TreatyWar;
 import rotp.model.galaxy.Galaxy;
 import rotp.model.galaxy.ShipFleet;
@@ -894,8 +895,8 @@ public class AIDiplomat implements Base, Diplomat {
         if (empire.atWarWith(id(e)))
             return false;
         
-        SpyNetwork spies = e.viewForEmpire(empire).spies();
-        return (spies.spiesLost() > 0) && (spies.confessedMission() != Mission.HIDE);
+        SpyReport rpt = e.viewForEmpire(empire).spies().report();
+        return (rpt.spiesLost() > 0) && (rpt.confessedMission() != Mission.HIDE);
     }
     @Override
     public boolean canEvictSpies(Empire e) { 
@@ -904,8 +905,8 @@ public class AIDiplomat implements Base, Diplomat {
         if (empire.atWarWith(id(e)))
             return false;
        
-        SpyNetwork spies = e.viewForEmpire(empire).spies();
-        return spies.spiesLost() > 0;
+        SpyReport rpt = e.viewForEmpire(empire).spies().report();
+        return rpt.spiesLost() > 0;
     }
     @Override
     public boolean canThreatenAttacking(Empire e) { 

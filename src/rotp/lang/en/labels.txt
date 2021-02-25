@@ -962,11 +962,30 @@ NOTICE_ESPIONAGE_FRAME_TITLE      | Our spies have managed to frame another race
 NOTICE_ESPIONAGE_FRAME_SUBTITLE   | Choose the victim race:
 
 // Spy Capture display (during next turn)
-NOTICE_SPIES_TITLE             | Current Spy Report
+NOTICE_SPIES_TITLE                | Current Spy Report
 NOTICE_SPIES_CAUGHT               | Spies Captured
 NOTICE_SPIES_CAUGHT_OURS          | Ours
 NOTICE_SPIES_CAUGHT_THEIRS        | Theirs
 NOTICE_SPIES_CAUGHT_NONE          | No meaningful spy activity has been observed.
+NOTICE_SPIES_ACTIVITY             | Current Activity:
+NOTICE_SPIES_LOST_DESC            | • The %2 shut down %1 of our spy networks.
+NOTICE_SPIES_LOST_CONFESSED       | Our spies confessed to ongoing sabotage activities.
+NOTICE_SPIES_LOST_CONFESSED2      | Our spies confessed to ongoing espionage activities.
+NOTICE_SPIES_LOST_CONFESSED3      | Our spies were forced to confess to ongoing sabotage activities.
+NOTICE_SPIES_CAUGHT_DESC          | • %1: %2 spies captured by our internal security forces.
+NOTICE_SPIES_CAUGHT_CONFESSED     | Their spies confessed to ongoing sabotage activities.
+NOTICE_SPIES_CAUGHT_CONFESSED2    | Their spies confessed to ongoing espionage activities.
+NOTICE_SPIES_FRAMED               | • We were framed for espionage activities within the %2.
+NOTICE_SPIES_ESPIONAGE            | • Our spies stole the secrets of %1 from the %2.
+NOTICE_SPIES_ESPIONAGE_FRAME      | We successfully framed the %1 for this theft.
+NOTICE_SPIES_SABOTAGE_FACTORIES   | • Our spies successfully destroyed %1 factories in the %2 system.
+NOTICE_SPIES_SABOTAGE_BASES       | • Our spies successfully destroyed %1 missile bases protecting the %2 system.
+NOTICE_SPIES_SABOTAGE_REBELS      | • Our spies successfully incited rebels in the %2 system.
+NOTICE_SPIES_SABOTAGE_REBELLION   | • Our spies successfully triggered rebellion in the %2 system.
+NOTICE_SPIES_LEARNED_TECH         | • Our spies report that the %1 has recently learned the following technologies: %1
+NOTICE_SPIES_MULTIPLE_TECHS       | %1, %2
+NOTICE_SPIES_THREATEN             | Issue Threat
+NOTICE_SPIES_INTELLIGENCE         | View Intelligence
 
 // Ground Combat UI
 INVASION_LANDING                  | %1 out of %2 %3 transports penetrate %4 defenses.

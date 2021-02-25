@@ -740,6 +740,12 @@ public final class Empire implements Base, NamedObject, Serializable {
                 d.preNextTurn();
         }
         
+        // assign funds/costs for diplomatic activities
+        for (EmpireView v : empireViews()) {
+          if ((v!= null) && v.embassy().contact())
+                v.spies().report().clear();
+        }
+
         List<StarSystem> allColonies = allColonizedSystems();
         List<Transport> transports = transports();
 
