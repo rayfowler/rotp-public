@@ -1666,12 +1666,15 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         if (inCombat)
             mgr.continueToNextPlayerStack();
     }
+    public void finishAndResume() {
+        finish();
+         session().resumeNextTurnProcessing();
+    }
     public void finish() {
         if (mgr.combatIsFinished()) {
             mode = Display.RESULT;
             exited = true;
             repaint();
-            session().resumeNextTurnProcessing();
         }
         else {
             mgr.showAnimations = false;
@@ -1712,7 +1715,10 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         mgr.autoComplete = true;
         hoverBox = null;
         paintAllImmediately();
-        finish();
+        if (inCombat)
+            finish();
+        else
+            finishAndResume();
     }
     @Override
     public void keyPressed(KeyEvent e) {
@@ -1816,8 +1822,9 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             retreatAllPlayerShips(true);
         if (hoverBox == playPauseBox)
             togglePlayPause();
-        else if (hoverBox == exitBox)
-            finish();
+        else if (hoverBox == exitBox) {
+            finishAndResume();
+        }
         else if (hoverBox == nextBox)
             nextStack();
     }
