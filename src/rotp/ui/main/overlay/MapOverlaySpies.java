@@ -172,15 +172,15 @@ public class MapOverlaySpies extends MapOverlay {
         }
 
         int extraEmps = min(0, max(6,24-empires.size()));
+        int tabW = empires.isEmpty() ? 0 : scaled(100);
         int h0 = scaled(450) +(extraEmps*BasePanel.s24);
-        int x0 = scaled(170);
+        int x0 = scaled(170)+(tabW/2);
         int y0 = (h-h0)/2;
-        int w0 = scaled(680);
+        int w0 = scaled(580)+tabW;
         g.setColor(MainUI.paneShadeC2);
         g.fillRect(x0, y0, w0, h0);
 
         int leftW = scaled(250);
-        int tabW = scaled(100);
 
         int x1 = x0 + bdr;
         int y1 = y0 + bdr;
@@ -247,8 +247,21 @@ public class MapOverlaySpies extends MapOverlay {
         closeButton.draw(ui, g);
         parent.addNextTurnControl(closeButton);
 
-        if (selectedEmpire == null)
+        int descW = infoW-BasePanel.s20;
+        int lineH = BasePanel.s18;
+
+        if (selectedEmpire == null) {
+            int y1a = y1+BasePanel.s100;
+            String none = text("NOTICE_SPIES_NO_ACTIVITY");
+            g.setColor(SystemPanel.whiteText);
+            g.setFont(narrowFont(20));
+            List<String> lines = wrappedLines(g, none, descW); 
+            for (String line: lines) {
+                y1a += lineH;
+                g.drawString(line, x2, y1a);
+            }
             return;
+        }
         
         intelButton.draw(ui, g);
         parent.addNextTurnControl(intelButton);
@@ -271,8 +284,6 @@ public class MapOverlaySpies extends MapOverlay {
         g.setColor(SystemPanel.blackText);
         g.drawString(v.embassy().treatyStatus(), x2, y2);
 
-        int descW = infoW-BasePanel.s20;
-        int lineH = BasePanel.s18;
         g.setColor(SystemPanel.blackText);
         // draw spies caught
         SpyReport rpt = v.spies().report();
