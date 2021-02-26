@@ -19,11 +19,8 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.LinearGradientPaint;
-import java.awt.Rectangle;
 import java.awt.Stroke;
 import java.awt.event.KeyEvent;
-import java.awt.geom.Area;
-import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
@@ -48,7 +45,6 @@ import rotp.ui.sprites.MapSprite;
 
 public class MapOverlaySpies extends MapOverlay {
     Color maskC  = new Color(40,40,40,160);
-    Area mask;
     MainUI parent;
     BufferedImage labImg;
 
@@ -155,26 +151,16 @@ public class MapOverlaySpies extends MapOverlay {
         
         int bdr = BasePanel.s7;
         int s10 = BasePanel.s10;
-        int s60 = BasePanel.s60;
 
+        parent.hideDisplayPanel();
         // draw map mask
-        if (mask == null) {
-            int r = s60;
-            int centerX = w*2/5;
-            int centerY = h*2/5;
-            Ellipse2D window = new Ellipse2D.Float();
-            window.setFrame(centerX-r, centerY-r, r+r, r+r);
-            Area st1 = new Area(window);
-            Rectangle blackout  = new Rectangle();
-            blackout.setFrame(0,0,w,h);
-            mask = new Area(blackout);
-            mask.subtract(st1);
-        }
-
+        g.setColor(maskC);
+        g.fillRect(0,0,ui.getWidth(),ui.getHeight());
+        
         int extraEmps = min(0, max(6,24-empires.size()));
         int tabW = empires.isEmpty() ? 0 : scaled(100);
         int h0 = scaled(450) +(extraEmps*BasePanel.s24);
-        int x0 = scaled(170)+(tabW/2);
+        int x0 = scaled(250)+(tabW/2);
         int y0 = (h-h0)/2;
         int w0 = scaled(580)+tabW;
         g.setColor(MainUI.paneShadeC2);
@@ -222,27 +208,23 @@ public class MapOverlaySpies extends MapOverlay {
         x1a = x1+((leftW-sw)/2);
         drawShadowedString(g, subtitle, 3, x1a, y1+BasePanel.s85, SystemPanel.textShadowC, Color.white);
 
-        /*
-        String skipStr = text("CLICK_CONTINUE");
-        g.setColor(SystemPanel.blackText);
-        g.setFont(narrowFont(14));
-        sw = g.getFontMetrics().stringWidth(skipStr);
-        x1a = x1+((leftW-sw)/2);
-        g.drawString(skipStr, x1a, y1+BasePanel.s85+BasePanel.s20);
-*/
-        int xOff = scaled(pl.race().espionageX);
-        int yOff = scaled(pl.race().espionageY);
         if (labImg == null) {
             labImg = asBufferedImage(pl.race().laboratory());
             Graphics imgG = labImg.getGraphics();
             BufferedImage spyImg = pl.race().spyQuiet();
-            imgG.drawImage(spyImg, 0, 0, labImg.getWidth(), labImg.getHeight(), xOff, yOff, (spyImg.getWidth()/2)+xOff, (spyImg.getHeight()/2)+yOff, null);
+            int w0a = labImg.getWidth();
+            int h0a = labImg.getHeight();
+            imgG.drawImage(spyImg, w0a/2, 0, w0a, h0a, 0, 0, (spyImg.getWidth()/2), spyImg.getHeight(), null);
             imgG.dispose();
         }
 
-        int imgW = leftW;
-        int imgH = imgW*Rotp.IMG_H/Rotp.IMG_W;
-        g.drawImage(labImg, x1, y1+h1-imgH, x1+leftW, y1+h1, 0, 0, labImg.getWidth(), labImg.getHeight(), null);
+        int y1b = y1+BasePanel.s100;
+        int h1b = h1-BasePanel.s100;
+        int imgH = h1b;
+        int imgW = imgH*Rotp.IMG_W/Rotp.IMG_H;
+        g.setClip(x1+BasePanel.s5,y1b,leftW-BasePanel.s5,h1b-BasePanel.s5);
+        g.drawImage(labImg, x1+leftW-imgW, y1b, x1+leftW, y1b+h1b, 0, 0, labImg.getWidth(), labImg.getHeight(), null);
+        g.setClip(null);
 
         closeButton.draw(ui, g);
         parent.addNextTurnControl(closeButton);
@@ -492,7 +474,10 @@ public class MapOverlaySpies extends MapOverlay {
             g.setClip(tabX,tabY,tabW,tabH);
             g.fillRoundRect(tabX-cnr,tabY,tabW+cnr,tabH,cnr,cnr);
             g.setClip(null);
-            g.setColor(SystemPanel.blackText);
+            if (hovering)
+                g.setColor(SystemPanel.yellowText);
+            else
+                g.setColor(SystemPanel.blackText);
             g.drawString(empire.raceName(), tabX+scaled(5), tabY+tabH-scaled(3));
         }
         @Override

@@ -40,6 +40,7 @@ import rotp.model.galaxy.StarSystem;
 import rotp.model.tech.Tech;
 import rotp.model.tech.TechCategory;
 import rotp.ui.FadeInPanel;
+import rotp.ui.RotPUI;
 import rotp.ui.main.SystemPanel;
 
 public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseMotionListener, ActionListener {
@@ -620,6 +621,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
             player().lowerECOToCleanIfEcoComplete();
         finished = true;
         repaint();
+        RotPUI.instance().selectMainPanel();
         session().resumeNextTurnProcessing();
     }
     private void handleShowTechAction() {

@@ -963,10 +963,7 @@ NOTICE_ESPIONAGE_FRAME_SUBTITLE   | Choose the victim race:
 
 // Spy Capture display (during next turn)
 NOTICE_SPIES_TITLE                | Current Spy Report
-NOTICE_SPIES_CAUGHT               | Spies Captured
-NOTICE_SPIES_CAUGHT_OURS          | Ours
-NOTICE_SPIES_CAUGHT_THEIRS        | Theirs
-NOTICE_SPIES_CAUGHT_NONE          | No meaningful spy activity has been observed.
+NOTICE_SPIES_NO_ACTIVITY          | No meaningful spy activity has been observed.
 NOTICE_SPIES_ACTIVITY             | Current Activity:
 NOTICE_SPIES_LOST_DESC            | • The %2 shut down %1 of our spy networks.
 NOTICE_SPIES_LOST_CONFESSED       | Our spies confessed to ongoing sabotage activities.
