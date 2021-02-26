@@ -982,7 +982,7 @@ NOTICE_SPIES_SABOTAGE_FACTORIES   | • Our spies successfully destroyed %1 fact
 NOTICE_SPIES_SABOTAGE_BASES       | • Our spies successfully destroyed %1 missile bases protecting the %2 system.
 NOTICE_SPIES_SABOTAGE_REBELS      | • Our spies successfully incited rebels in the %2 system.
 NOTICE_SPIES_SABOTAGE_REBELLION   | • Our spies successfully triggered rebellion in the %2 system.
-NOTICE_SPIES_LEARNED_TECH         | • Our spies report that the %1 has recently learned the following technologies: %1
+NOTICE_SPIES_LEARNED_TECH         | • Our spies report that the %1 has recently learned the following technologies: %2
 NOTICE_SPIES_MULTIPLE_TECHS       | %1, %2
 NOTICE_SPIES_THREATEN             | Issue Threat
 NOTICE_SPIES_INTELLIGENCE         | View Intelligence
@@ -992,7 +992,7 @@ INVASION_LANDING                  | %1 out of %2 %3 transports penetrate %4 defe
 INVASION_LANDING_REBELS           | %1 transports land to reclaim the %2 colony at %3.
 INVASION_BATTLE                   | In the Year %1, the %2 and %3 battle for %4.
 INVASION_BATTLE_REBELS            | In the Year %1, the %2 and rebels battle for %3.
-INVASION_TROOPS_LANDED            | %1 %2 troops landed.
+INVASION_TROOPS_LANDED            | %1 %2 troops landed. 
 INVASION_SOME_TROOPS_LANDED       | %1 of %2 %3 troops landed.
 INVASION_WIN                      | %1 transports capture %2.
 INVASION_LOSS                     | %1 troops successfully defend %2.

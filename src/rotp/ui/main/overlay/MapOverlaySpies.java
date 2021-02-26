@@ -290,6 +290,29 @@ public class MapOverlaySpies extends MapOverlay {
             }
         }
 
+        // show list of techs learned
+        if (!rpt.techsLearned().isEmpty()) {
+            y2 += lineH;         
+            List<String> techNames = new ArrayList<>();
+            for (String tId : rpt.techsLearned()) 
+                techNames.add(tech(tId).name());
+            Collections.sort(techNames);
+            String techList = techNames.get(0);
+            if (techNames.size() > 1) {
+                for (int i=1;i<techNames.size();i++) 
+                    techList = text("NOTICE_SPIES_MULTIPLE_TECHS", techList, techNames.get(i));
+            }
+            String desc = text("NOTICE_SPIES_LEARNED_TECH", selectedEmpire.name(), techList);
+            g.setFont(narrowFont(15));
+            List<String> lines = wrappedLines(g, desc, descW); 
+            for (String line: lines) {
+                y2 += lineH;
+                g.drawString(line, x2, y2);
+            }
+        }
+        
+        
+        
         // draw tabs
         int y3 = y0+bdr;
         int tabSp = BasePanel.s2;

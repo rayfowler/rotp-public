@@ -324,8 +324,7 @@ public final class SpyNetwork implements Base, Serializable {
         if (owner.isPlayer()) {
             List<String> newPossible = new ArrayList<>(possibleTechs());
             newPossible.removeAll(prevPossible);
-            for (String tId : newPossible) 
-                SpyNewTechAlert.create(emp.id, tId);
+            report().recordTechsLearned(newPossible);
         }  
     }
     private boolean sendSpiesToInfiltrate() {

@@ -16,6 +16,8 @@
 package rotp.model.empires;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import rotp.util.Base;
 
 public class SpyReport implements Base, Serializable {
@@ -29,6 +31,7 @@ public class SpyReport implements Base, Serializable {
     public int sabotageMission;
     public int sabotageSystem;
     public int sabotageCount;
+    public List<String> techsLearned = new ArrayList<>();
  
     public int spiesLost()                       { return spiesLost; }
     public void addSpiesLost()                   { spiesLost++; }
@@ -49,10 +52,14 @@ public class SpyReport implements Base, Serializable {
     public int sabotageCount()                  { return sabotageCount; }
     public int sabotageMission()                { return sabotageMission; }
     public int sabotageSystem()                 { return sabotageSystem; }
+    public List<String> techsLearned()          { return techsLearned; }
     public void recordSabotage(int mission, int system, int count) {
         sabotageMission = mission;
         sabotageSystem = system;
         sabotageCount = count;
+    }
+    public void recordTechsLearned(List<String> techs) {
+        techsLearned.addAll(techs);
     }
     
     public boolean hasActivity() {
@@ -60,9 +67,11 @@ public class SpyReport implements Base, Serializable {
             || (spiesCaptured > 0)
             || (stolenTech != null)
             || (sabotageCount > 0)
+            || !techsLearned.isEmpty()
             || wasFramed;
     }
     public void clear() {
+        techsLearned.clear();
         spiesCaptured = 0;
         spiesLost = 0;
         wasFramed = false;
