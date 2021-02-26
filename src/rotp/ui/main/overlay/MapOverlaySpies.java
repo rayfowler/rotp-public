@@ -124,8 +124,6 @@ public class MapOverlaySpies extends MapOverlay {
         
         int bdr = BasePanel.s7;
         int s10 = BasePanel.s10;
-        int s20 = BasePanel.s20;
-        int s50 = BasePanel.s50;
         int s60 = BasePanel.s60;
 
         // draw map mask
@@ -142,10 +140,11 @@ public class MapOverlaySpies extends MapOverlay {
             mask.subtract(st1);
         }
 
-        int x0 = scaled(120);
-        int y0 = scaled(65);
-        int w0 = scaled(780);
-        int h0 = scaled(575);
+        int extraEmps = min(0, max(6,24-empires.size()));
+        int h0 = scaled(450) +(extraEmps*BasePanel.s24);
+        int x0 = scaled(170);
+        int y0 = (h-h0)/2;
+        int w0 = scaled(680);
         g.setColor(MainUI.paneShadeC2);
         g.fillRect(x0, y0, w0, h0);
 
@@ -185,18 +184,42 @@ public class MapOverlaySpies extends MapOverlay {
         x1a = x1+((leftW-sw)/2);
         g.drawString(skipStr, x1a, y1+BasePanel.s85+BasePanel.s20);
 
-        // draw title
-        int y2 = y1+BasePanel.s25;
-        if (selectedEmpire != null) {
-            g.setFont(narrowFont(26));
-            drawShadowedString(g, selectedEmpire.name(), 3, x2, y2, SystemPanel.textShadowC, Color.white);
+        int xOff = scaled(pl.race().espionageX);
+        int yOff = scaled(pl.race().espionageY);
+        if (labImg == null) {
+            labImg = asBufferedImage(pl.race().laboratory());
+            Graphics imgG = labImg.getGraphics();
+            BufferedImage spyImg = pl.race().spyQuiet();
+            imgG.drawImage(spyImg, 0, 0, labImg.getWidth(), labImg.getHeight(), xOff, yOff, (spyImg.getWidth()/2)+xOff, (spyImg.getHeight()/2)+yOff, null);
+            imgG.dispose();
         }
+
+        int imgW = leftW;
+        int imgH = imgW*Rotp.IMG_H/Rotp.IMG_W;
+        g.drawImage(labImg, x1, y1+h1-imgH, x1+leftW, y1+h1, 0, 0, labImg.getWidth(), labImg.getHeight(), null);
+
+        parent.addNextTurnControl(clickSprite);
+
+        if (selectedEmpire == null)
+            return;
+        
+        EmpireView v = pl.viewForEmpire(selectedEmpire.id);
+        
+        // draw selected empire name
+        int y2 = y1+BasePanel.s25;
+        g.setFont(narrowFont(26));
+        drawShadowedString(g, selectedEmpire.name(), 3, x2, y2, SystemPanel.textShadowC, Color.white);
+        
+        // draw treaty status
+        y2 = y2 + BasePanel.s24;
+        g.setFont(narrowFont(20));
+        g.setColor(SystemPanel.blackText);
+        g.drawString(v.embassy().treatyStatus(), x2, y2);
 
         int descW = infoW-BasePanel.s20;
         int lineH = BasePanel.s18;
         g.setColor(SystemPanel.blackText);
         // draw spies caught
-        EmpireView v = pl.viewForEmpire(selectedEmpire.id);
         SpyReport rpt = v.spies().report();
         int ourSpiesLost = rpt.spiesLost();
         if (ourSpiesLost > 0) {
@@ -322,69 +345,9 @@ public class MapOverlaySpies extends MapOverlay {
             tab.draw(ui, g);
         }
             
-        // draw header
-        /*
-        if (empires.isEmpty()) {
-            String noSpies = text("NOTICE_SPIES_CAUGHT_NONE");
-            g.setFont(narrowFont(18));
-            g.setColor(SystemPanel.blackText);
-            List<String> lines = wrappedLines(g, noSpies, infoW-s20);
-            int y2 = y1+scaled(110);
-            for (String line: lines) {
-                g.drawString(line, x2, y2);
-                y2 += s20;
-            }
-        }
-        else {
-            int y2 = y1+scaled(70);
-            int lineH = BasePanel.s16;
-            g.setFont(narrowFont(18));
-            g.setColor(SystemPanel.whiteText);
-            String capt = text("NOTICE_SPIES_CAUGHT");
-            String ours = text("NOTICE_SPIES_CAUGHT_OURS");
-            String theirs = text("NOTICE_SPIES_CAUGHT_THEIRS");
-            int swa = g.getFontMetrics().stringWidth(ours);
-            int swb = g.getFontMetrics().stringWidth(theirs);
-            int lineb = x1+w1-s50;
-            int linea = lineb-swb-s10;
-            g.drawString(capt, x2, y2);
-            g.drawString(ours, linea-swa, y2);
-            g.drawString(theirs, lineb-swb, y2);
-            g.setFont(narrowFont(15));
-            g.setColor(SystemPanel.blackText);
-            
-            for (Empire emp: empires) {
-                y2 += lineH;
-                EmpireView v = pl.viewForEmpire(emp.id);
-                String spiesA = str(v.spies().spiesLost());
-                String spiesB = str(v.otherView().spies().spiesLost());
-                swa = g.getFontMetrics().stringWidth(spiesA);
-                swb = g.getFontMetrics().stringWidth(spiesB);
-                g.drawString(v.empire().raceName(), x2, y2);
-                g.drawString(spiesA, linea-swa, y2);
-                g.drawString(spiesB, lineb-swb, y2);
-            }
-        }
         
-        */
-        
-        int xOff = scaled(pl.race().espionageX);
-        int yOff = scaled(pl.race().espionageY);
-        if (labImg == null) {
-            labImg = asBufferedImage(pl.race().laboratory());
-            Graphics imgG = labImg.getGraphics();
-            BufferedImage spyImg = pl.race().spyQuiet();
-            imgG.drawImage(spyImg, 0, 0, labImg.getWidth(), labImg.getHeight(), xOff, yOff, (spyImg.getWidth()/2)+xOff, (spyImg.getHeight()/2)+yOff, null);
-            imgG.dispose();
-        }
-
-        int imgW = leftW;
-        int imgH = imgW*Rotp.IMG_H/Rotp.IMG_W;
-        g.drawImage(labImg, x1, y1+h1-imgH, x1+leftW, y1+h1, 0, 0, labImg.getWidth(), labImg.getHeight(), null);
-
         for (EmpireTabSprite tab: tabs) 
             parent.addNextTurnControl(tab);
-        parent.addNextTurnControl(clickSprite);
     }
     @Override
     public void advanceMap() {

@@ -102,6 +102,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
     public Empire owner()                                { return view.owner(); }
     public float treatyDate()                            { return treatyDate; }
     public DiplomaticTreaty treaty()                     { return treaty; }
+    public String treatyStatus()                         { return treaty.status(owner()); }
     public Collection<DiplomaticIncident> allIncidents() { return incidents.values(); }
     public int requestCount()                            { return requestCount; }
     public float relations()                             { return relations; }
