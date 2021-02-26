@@ -50,6 +50,8 @@ public class ColonyInvadedIncident extends DiplomaticIncident {
     @Override
     public String warningMessageId() { return DialogueManager.WARNING_COLONY_INVADED; }
     @Override
+    public boolean isAttacking()        { return true; }
+    @Override
     public String declareWarId()     { return DialogueManager.DECLARE_ATTACKED_WAR; }
     @Override
     public boolean triggersWar()     { return popLost >= 30; }

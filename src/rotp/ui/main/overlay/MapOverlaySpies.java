@@ -252,8 +252,11 @@ public class MapOverlaySpies extends MapOverlay {
         
         intelButton.draw(ui, g);
         parent.addNextTurnControl(intelButton);
-        threatenButton.draw(ui, g);
-        parent.addNextTurnControl(threatenButton);
+        
+        if (pl.diplomatAI().canThreaten(selectedEmpire)) {
+            threatenButton.draw(ui, g);
+            parent.addNextTurnControl(threatenButton);
+        }
 
         EmpireView v = pl.viewForEmpire(selectedEmpire.id);
         

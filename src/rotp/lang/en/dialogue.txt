@@ -262,7 +262,7 @@ DIPLO_TECH_REQUEST_MENU_01   | What type of technology interests you?
 DIPLO_TECH_COUNTER_MENU_01   | What will you trade for it?
 DIPLO_TRADE_MENU_01          | You propose a trade agreement for:
 DIPLO_TREATY_MENU_01         | What do you wish to do?
-DIPLO_THREATEN_MENU_01       | What do you wish to do?
+DIPLO_THREATEN_MENU_01       | What are you threatening?
 DIPLO_DECLARE_WAR_MENU_01    | Are you sure you want to start a war?
 DIPLO_JOINT_WAR_MENU_01      | Who should we declare war on?
 DIPLO_BREAK_ALLIANCE_MENU_01 | Which alliance should we break?

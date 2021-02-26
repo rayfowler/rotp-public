@@ -53,6 +53,8 @@ public class ColonyCapturedIncident extends DiplomaticIncident {
     @Override
     public String description()   { return  decode(text("INC_CAPTURED_COLONY_DESC")); }
     @Override
+    public boolean isAttacking()        { return true; }
+    @Override
     public String declareWarId()  { return DialogueManager.DECLARE_ATTACKED_WAR; }
     @Override
     public int timerKey()               { return DiplomaticEmbassy.TIMER_ATTACK_WARNING; }

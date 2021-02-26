@@ -26,7 +26,6 @@ import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.GalacticCouncil;
-import rotp.model.empires.SpyNetwork;
 import rotp.model.empires.SpyNetwork.Mission;
 import rotp.model.empires.SpyReport;
 import rotp.model.empires.TreatyWar;
@@ -886,6 +885,8 @@ public class AIDiplomat implements Base, Diplomat {
     public boolean canDeclareWar(Empire e)                 { return empire.inEconomicRange(id(e)) && !empire.atWarWith(id(e)) && !empire.alliedWith(id(e)); }
     @Override
     public boolean canThreaten(Empire e) { 
+        if (!diplomats(id(e)))
+            return false;
         return canEvictSpies(e) || canThreatenSpying(e) || canThreatenAttacking(e); 
     }
     @Override
@@ -896,7 +897,10 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
         
         SpyReport rpt = e.viewForEmpire(empire).spies().report();
-        return (rpt.spiesLost() > 0) && (rpt.confessedMission() != Mission.HIDE);
+        Mission miss = rpt.confessedMission();
+        return ((rpt.spiesLost() > 0)
+            && ((miss == Mission.ESPIONAGE) || (miss == Mission.SABOTAGE)));
+            
     }
     @Override
     public boolean canEvictSpies(Empire e) { 
@@ -914,7 +918,11 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
         if (empire.atWarWith(id(e)))
             return false;
-        return true; 
+        
+        EmpireView v = e.viewForEmpire(empire);
+        if (v.embassy().hasCurrentAttackIncident())
+            return true;
+        return false; 
     }
 
     public DiplomaticReply receiveDemandTribute(Empire e) {

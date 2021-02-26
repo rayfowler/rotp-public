@@ -54,6 +54,7 @@ public abstract class DiplomaticIncident implements Base, Serializable {
 
     public boolean isForgotten()         { return remainingTime() <= 0; }
     public boolean isSpying()            { return false; }
+    public boolean isAttacking()         { return false; }
 
     public boolean triggersPraise()      { return !praiseMessageId().isEmpty(); }
     public boolean triggersWarning()     { return !warningMessageId().isEmpty(); }

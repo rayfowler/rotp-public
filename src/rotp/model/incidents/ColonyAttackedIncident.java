@@ -49,6 +49,8 @@ public class ColonyAttackedIncident extends DiplomaticIncident {
     @Override
     public String declareWarId()        { return DialogueManager.DECLARE_ATTACKED_WAR; }
     @Override
+    public boolean isAttacking()        { return true; }
+    @Override
     public boolean triggersWar()        { return popLost >= 30; }
     @Override
     public int timerKey()               { return DiplomaticEmbassy.TIMER_ATTACK_WARNING; }

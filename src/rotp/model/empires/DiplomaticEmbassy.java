@@ -182,6 +182,13 @@ public class DiplomaticEmbassy implements Base, Serializable {
         }
         return false;
     }
+    public boolean hasCurrentAttackIncident() {
+        for (DiplomaticIncident inc: allIncidents()) {
+            if (inc.isAttacking() && (inc.turnOccurred() == galaxy().currentTurn()))
+                return true;
+        }
+        return false;
+    }
     public void nextTurn(float prod) {
         peaceDuration--;
         treaty.nextTurn(empire());
