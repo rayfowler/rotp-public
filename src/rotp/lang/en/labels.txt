@@ -972,11 +972,11 @@ NOTICE_SPIES_LOST_DESC            | • The %2 shut down %1 of our spy networks.
 NOTICE_SPIES_LOST_CONFESSED       | Our spies confessed to ongoing sabotage activities.
 NOTICE_SPIES_LOST_CONFESSED2      | Our spies confessed to ongoing espionage activities.
 NOTICE_SPIES_LOST_CONFESSED3      | Our spies were forced to confess to ongoing sabotage activities.
-NOTICE_SPIES_CAUGHT_DESC          | • %1: %2 spies captured by our internal security forces.
+NOTICE_SPIES_CAUGHT_DESC          | • Our internal security forces shut down %1 spy networks of the %2.
 NOTICE_SPIES_CAUGHT_CONFESSED     | Their spies confessed to ongoing sabotage activities.
 NOTICE_SPIES_CAUGHT_CONFESSED2    | Their spies confessed to ongoing espionage activities.
 NOTICE_SPIES_FRAMED               | • We were framed for espionage activities within the %2.
-NOTICE_SPIES_ESPIONAGE            | • Our spies stole the secrets of %1 from the %2.
+NOTICE_SPIES_ESPIONAGE            | • Our spies have stolen the secrets of %1 from the %2.
 NOTICE_SPIES_ESPIONAGE_FRAME      | We successfully framed the %1 for this theft.
 NOTICE_SPIES_SABOTAGE_FACTORIES   | • Our spies successfully destroyed %1 factories in the %2 system.
 NOTICE_SPIES_SABOTAGE_BASES       | • Our spies successfully destroyed %1 missile bases protecting the %2 system.

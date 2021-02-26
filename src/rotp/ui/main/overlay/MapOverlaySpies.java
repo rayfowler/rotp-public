@@ -30,6 +30,7 @@ import rotp.Rotp;
 import rotp.model.Sprite;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
+import rotp.model.empires.SabotageMission;
 import rotp.model.empires.SpyReport;
 import rotp.model.tech.Tech;
 import rotp.ui.BasePanel;
@@ -238,6 +239,29 @@ public class MapOverlaySpies extends MapOverlay {
             }
         }
         
+        // show any sabotage
+        if (rpt.sabotageCount() > 0) {
+            y2 += lineH;
+            String desc = "";
+            switch (rpt.sabotageMission()) {
+                case SabotageMission.BASES: 
+                    desc = text("NOTICE_SPIES_SABOTAGE_BASES", str(rpt.sabotageCount()), pl.sv.name(rpt.sabotageSystem)); 
+                    break;
+                case SabotageMission.FACTORIES: 
+                    desc = text("NOTICE_SPIES_SABOTAGE_FACTORIES", str(rpt.sabotageCount()), pl.sv.name(rpt.sabotageSystem)); 
+                    break;
+                case SabotageMission.REBELLION: 
+                    desc = text("NOTICE_SPIES_SABOTAGE_REBELS", str(rpt.sabotageCount()), pl.sv.name(rpt.sabotageSystem)); 
+                    break;
+            }
+            g.setFont(narrowFont(15));
+            List<String> lines = wrappedLines(g, desc, descW); 
+            for (String line: lines) {
+                y2 += lineH;
+                g.drawString(line, x2, y2);
+            }
+        }
+                
         // show any techs we stole
         if (rpt.stolenTech() != null) {
             y2 += lineH;

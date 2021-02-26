@@ -27,10 +27,10 @@ import rotp.util.Base;
 
 public class SabotageMission implements Base, Serializable {
     private static final long serialVersionUID = 1L;
-    private static final int FACTORIES = 1;
-    private static final int BASES = 2;
-    private static final int REBELLION = 3;
-    private static final int NO_ACTION = 4;
+    public static final int FACTORIES = 1;
+    public static final int BASES = 2;
+    public static final int REBELLION = 3;
+    public static final int NO_ACTION = 4;
 
     private final SpyNetwork spies;
     private final Spy spy;
@@ -85,6 +85,7 @@ public class SabotageMission implements Base, Serializable {
         float factories = sys.colony().industry().factories();
         factoriesDestroyed = bounds(1, factoriesDestroyed, (int) factories);
         if (factoriesDestroyed > 0) {
+            spies.report().recordSabotage(missionType, system.id, factoriesDestroyed);
             DiplomaticTreaty treaty = spies.owner().treaty(spies.empire());
             if (treaty != null)
                 treaty.loseFactories(spies.empire(), factoriesDestroyed);
@@ -108,6 +109,7 @@ public class SabotageMission implements Base, Serializable {
         missileBasesDestroyed = bounds(1, missileBasesDestroyed, (int) sys.colony().defense().bases());
 
         if (missileBasesDestroyed > 0) {
+            spies.report().recordSabotage(missionType, system.id, missileBasesDestroyed);
             sys.colony().defense().destroyBases(missileBasesDestroyed);
             SabotageBasesIncident.addIncident(this);
             spies.checkForTreatyBreak();
@@ -127,6 +129,7 @@ public class SabotageMission implements Base, Serializable {
         rebelsIncited = col.inciteRebels(pct, "GNN_PLAYER_REBELLION");
 
         if (rebelsIncited > 0) {
+            spies.report().recordSabotage(missionType, system.id, rebelsIncited);
             SabotageRebellionIncident.addIncident(this);
             spies.checkForTreatyBreak();
         }

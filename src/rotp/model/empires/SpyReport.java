@@ -26,6 +26,9 @@ public class SpyReport implements Base, Serializable {
     private String stolenTech;
     public int framedEmpire;
     public boolean wasFramed;
+    public int sabotageMission;
+    public int sabotageSystem;
+    public int sabotageCount;
  
     public int spiesLost()                       { return spiesLost; }
     public void addSpiesLost()                   { spiesLost++; }
@@ -43,11 +46,20 @@ public class SpyReport implements Base, Serializable {
     }
     public void frame()                         { wasFramed = true; }
     public boolean wasFramed()                  { return wasFramed; }
+    public int sabotageCount()                  { return sabotageCount; }
+    public int sabotageMission()                { return sabotageMission; }
+    public int sabotageSystem()                 { return sabotageSystem; }
+    public void recordSabotage(int mission, int system, int count) {
+        sabotageMission = mission;
+        sabotageSystem = system;
+        sabotageCount = count;
+    }
     
     public boolean hasActivity() {
         return (spiesLost > 0) 
             || (spiesCaptured > 0)
             || (stolenTech != null)
+            || (sabotageCount > 0)
             || wasFramed;
     }
     public void clear() {
@@ -57,6 +69,8 @@ public class SpyReport implements Base, Serializable {
         confessedMission = null;
         stolenTech = null;
         framedEmpire = Empire.NULL_ID;
+        sabotageMission = SabotageMission.NO_ACTION;
+        sabotageCount = 0;
     }
 
 }
