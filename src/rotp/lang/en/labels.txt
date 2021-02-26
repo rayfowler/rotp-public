@@ -982,10 +982,11 @@ NOTICE_SPIES_SABOTAGE_FACTORIES   | • Our spies successfully destroyed %1 fact
 NOTICE_SPIES_SABOTAGE_BASES       | • Our spies successfully destroyed %1 missile bases protecting the %2 system.
 NOTICE_SPIES_SABOTAGE_REBELS      | • Our spies successfully incited rebels in the %2 system.
 NOTICE_SPIES_SABOTAGE_REBELLION   | • Our spies successfully triggered rebellion in the %2 system.
-NOTICE_SPIES_LEARNED_TECH         | • Our spies report that the %1 has recently learned the following technologies: %2
+NOTICE_SPIES_LEARNED_TECH         | • Our spies report that the %1 has recently learned the following technologies unknown to us: %2
 NOTICE_SPIES_MULTIPLE_TECHS       | %1, %2
-NOTICE_SPIES_THREATEN             | Issue Threat
-NOTICE_SPIES_INTELLIGENCE         | View Intelligence
+NOTICE_SPIES_THREATEN             | Threaten
+NOTICE_SPIES_MANAGE               | Manage Spies
+NOTICE_SPIES_CLOSE                | Close
 
 // Ground Combat UI
 INVASION_LANDING                  | %1 out of %2 %3 transports penetrate %4 defenses.

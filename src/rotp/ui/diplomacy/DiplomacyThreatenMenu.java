@@ -20,6 +20,7 @@ import java.util.List;
 import rotp.model.ai.interfaces.Diplomat;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
+import rotp.ui.RotPUI;
 
 public class DiplomacyThreatenMenu extends DiplomaticMessage {
     private final List<Integer> options = new ArrayList<>();
@@ -79,7 +80,7 @@ public class DiplomacyThreatenMenu extends DiplomaticMessage {
             case EVICT_SPIES     : reply = diplomat().diplomatAI().receiveThreatEvictSpies(player());    break;
             case STOP_SPYING     : reply = diplomat().diplomatAI().receiveThreatStopSpying(player());    break;
             case STOP_ATTACKING  : reply = diplomat().diplomatAI().receiveThreatStopAttacking(player());     break;
-            case WAR_MENU        : DiplomaticMessage.show(view(), DialogueManager.DIPLOMACY_DECLARE_WAR_MENU); return;
+            case WAR_MENU        : DiplomaticMessage.show(view(), DialogueManager.DIPLOMACY_DECLARE_WAR_MENU, returnToMap()); return;
             case EXIT            : escape(); return;
             default              : escape(); return;
         }
@@ -90,11 +91,15 @@ public class DiplomacyThreatenMenu extends DiplomaticMessage {
         else
             reply.returnMenu(DialogueManager.DIPLOMACY_MAIN_MENU);
 
+        reply.returnToMap(returnToMap);
         // show reply
         DiplomaticMessage.reply(DiplomacyRequestReply.create(diplomat(), reply));	
     }
     @Override
     public void escape() {
-        DiplomaticMessage.show(view(), DialogueManager.DIPLOMACY_MAIN_MENU);
+        if (returnToMap)
+            RotPUI.instance().selectMainPanel();
+        else
+            DiplomaticMessage.show(view(), DialogueManager.DIPLOMACY_MAIN_MENU);
     }
 }

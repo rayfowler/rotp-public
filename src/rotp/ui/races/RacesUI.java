@@ -431,6 +431,7 @@ public class RacesUI extends BasePanel {
             return null;
         return player().viewForEmpire(selectedEmpire);
     }
+    public void selectIntelligenceTab()  { titlePanel.selectTab(INTELLIGENCE_PANEL); }
     public BufferedImage raceIconBackImg() {
         if (raceIconBackImg == null) {
             int w = scaled(200);

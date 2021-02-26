@@ -110,6 +110,7 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
 
         diplomatEmpire.race().resetDiplomat();
         message = DialogueManager.current().message(notif.type(), notif.incident(), diplomatEmpire, notif.otherEmpire());
+        message.returnToMap(notif.returnToMap());
         messageRemark = "";
         if (message == null)
             messageRemark = concat("Message type not defined: ", notif.type());
