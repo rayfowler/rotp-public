@@ -313,7 +313,9 @@ public class AIShipCaptain implements Base, ShipCaptain {
         CombatStackColony col = combat().results().colonyStack;
         EmpireView colView = (col == null) ? null : currStack.empire.viewForEmpire(col.empire);
         boolean inPact = (colView != null) && colView.embassy().pact();
-        
+            
+        if (currStack == col)
+            return false;
         
         // PLAYER STACKS
         // 
