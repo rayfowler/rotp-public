@@ -15,6 +15,7 @@
  */
 package rotp.model.galaxy;
 
+import java.awt.Image;
 import java.util.ArrayList;
 import java.util.List;
 import rotp.model.combat.CombatStackOrionGuardian;
@@ -26,7 +27,7 @@ public class OrionGuardianShip extends SpaceMonster {
     private static final long serialVersionUID = 1L;
     private final List<String> techs = new ArrayList<>();
     public OrionGuardianShip() {
-        super("PLANET_ORION_GUARDIAN");
+        super("ORION_GUARDIAN");
         techs.add("ShipWeapon:16");  // death ray
     }
     @Override
@@ -34,6 +35,8 @@ public class OrionGuardianShip extends SpaceMonster {
         combatStacks().clear();
         addCombatStack(new CombatStackOrionGuardian());       
     }
+    @Override
+    public Image image()  { return image("ORION_GUARDIAN"); }
     @Override
     public void plunder() { 
         super.plunder();
