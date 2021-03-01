@@ -418,7 +418,7 @@ public class ShipCombatManager implements Base {
     public void destroyStack(CombatStack stack) {
         log("Destroyed: ", stack.fullName());
         if (stack instanceof CombatStackShip)
-            results.addShipStackDestroyed(((CombatStackShip)stack).design, stack.num);
+            results.addShipStackDestroyed(((CombatStackShip)stack).design, stack.origNum);
         else if (stack instanceof CombatStackColony)
             results.addBasesDestroyed(stack.num);
 

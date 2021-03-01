@@ -176,11 +176,15 @@ public final class ShipCombatResults implements Base {
     public void addBasesDestroyed(int num) {
         basesDestroyed += num;
     }
-    public void addShipStackDestroyed(ShipDesign d, int count) {
+    public void addShipDestroyed(ShipDesign d, int count) {
+        // called when individual ships in a stack are destroyed
         if (shipsDestroyed.containsKey(d))
             shipsDestroyed.put(d, count+shipsDestroyed.get(d));
         else
             shipsDestroyed.put(d, count);
+    }
+    public void addShipStackDestroyed(ShipDesign d, int count) {
+        shipsDestroyed.put(d, count);
     }
     public void addShipsDamaged(ShipDesign d, int count) {
         if (shipsDamaged.containsKey(d))
