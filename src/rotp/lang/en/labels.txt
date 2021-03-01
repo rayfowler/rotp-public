@@ -225,7 +225,7 @@ INC_ENCROACHING_TITLE             | Encroachment
 INC_ENCROACHING_DESC              | The [your_empire] colonized the system [system], encroaching upon the borders of the [my_empire].
 INC_TECH_STOLEN_TITLE             | Technology Stolen
 INC_TECH_STOLEN_DESC              | [spy_race] spies stole the secrets of [tech] from the [victim_race].
-INC_TECH_FRAMED_DESC              | Unknown spies stole the secrets of [tech] from the [victim_race]. (you were framed)
+INC_TECH_FRAMED_DESC              | Unknown spies stole technological secrets from the [victim_race]. (you were framed)
 INC_TECH_EXCHANGE_TITLE           | Technology Exchanged
 INC_TECH_EXCHANGE_DESC            | The [my_empire] taught the secrets of [techGiven] to the [your_empire] in exchange for the secrets of [techReceived].
 INC_FINANCIAL_AID_TITLE           | Financial Aid
@@ -972,7 +972,7 @@ NOTICE_SPIES_LOST_CONFESSED3      | Our spies were forced to confess to ongoing 
 NOTICE_SPIES_CAUGHT_DESC          | • Our internal security forces shut down %1 spy networks of the %2.
 NOTICE_SPIES_CAUGHT_CONFESSED     | Their spies confessed to ongoing sabotage activities.
 NOTICE_SPIES_CAUGHT_CONFESSED2    | Their spies confessed to ongoing espionage activities.
-NOTICE_SPIES_FRAMED               | • We were framed for espionage activities within the %2.
+NOTICE_SPIES_FRAMED               | • We were framed for espionage activities within the %1.
 NOTICE_SPIES_ESPIONAGE            | • Our spies have stolen the secrets of %1 from the %2.
 NOTICE_SPIES_ESPIONAGE_FRAME      | We successfully framed the %1 for this theft.
 NOTICE_SPIES_SABOTAGE_FACTORIES   | • Our spies successfully destroyed %1 factories in the %2 system.

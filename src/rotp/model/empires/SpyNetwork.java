@@ -408,6 +408,9 @@ public final class SpyNetwork implements Base, Serializable {
             Empire victim = view.empire();
             Empire thief = eMission.thief();
             EmpireView victimView = victim.viewForEmpire(thief);
+            if (thief.isPlayer()) {
+                int i = 0;
+            }
             if (victimView != null)
                 victimView.embassy().addIncident(new EspionageTechIncident(victimView, eMission));
         }
