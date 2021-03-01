@@ -755,7 +755,7 @@ public final class GameSession implements Base, Serializable {
         startExecutors();
         RotPUI.instance().mainUI().checkMapInitialized();
         if (!startUp) {
-            RotPUI.instance().selectMainPanel();
+            RotPUI.instance().selectMainPanelLoadGame();
         }
     }
     public String saveDir() {

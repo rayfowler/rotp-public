@@ -340,10 +340,24 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         selectPanel(MAIN_PANEL, mainUI());
         repaint();
     }
+    public void selectMainPanelLoadGame() {
+        disableGlassPane();
+        if (!session().status().inProgress()) {
+            selectGameOverPanel();
+            return;
+        }
+        mainUI.clearOverlay();
+        mainUI.init(false);
+        mainUI.showDisplayPanel();
+        selectPanel(MAIN_PANEL, mainUI());
+        repaint();
+    }
     public void selectMainPanelNewGame()      {
         disableGlassPane();
+        mainUI.clearOverlay();
         mainUI.init(true);
         mainUI.showHelp();
+        mainUI.showDisplayPanel();
         selectPanel(MAIN_PANEL, mainUI());
         repaint();
     }
