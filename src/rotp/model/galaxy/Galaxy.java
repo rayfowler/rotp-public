@@ -225,6 +225,13 @@ public class Galaxy implements Base, Serializable {
         }        
         return null;
     }
+    public Empire empireMatching(int color, int shape) {
+        for (Empire e: empires) {
+            if ((e.colorId() == color) && (e.shape() == shape))
+                return e;
+        }
+        return null;
+    }
     public void preNextTurn() {
         NoticeMessage.resetSubstatus(text("TURN_LAUNCHING_FLEETS"));
         for (StarSystem sys: starSystems)

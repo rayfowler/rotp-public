@@ -76,10 +76,12 @@ public class RacesUI extends BasePanel {
     RacesMilitaryUI militaryPanel;
     RacesStatusUI statusPanel;
     RacePlayerRelationsPane raceListingPanel;
+    RacesSetColorUI setColorPanel;
     private final CardLayout cardLayout = new CardLayout();
     private int pad = 10;
     private int helpFrame = 0;
     private LinearGradientPaint backGradient;
+    private final HashMap<Empire, Shape> colorIcons = new HashMap<>();
 
     public RacesUI() {
         instance = this;
@@ -223,11 +225,18 @@ public class RacesUI extends BasePanel {
         HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x3, y5, w3, 3, text("RACES_HELP_1D"));
         sp5.setLine(x3+w3, y5+(sp5.height()/2), w-scaled(555),  y5+(sp5.height()/2));
         
-        int x6 = scaled(150);
-        int w6 = scaled(300);
-        int y6 = scaled(460);
-        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 5, text("RACES_HELP_1E"));
-        sp6.setLine(x6+(w6/2), y6, x6+(w6/2), scaled(400));
+        int x6 = w-scaled(470);
+        int w6 = scaled(210);
+        int y6 = scaled(55);
+        int x6a = w-scaled(65);
+        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 3, text("RACES_HELP_1F"));
+        sp6.setLine(x6+w6, y6+(sp6.height()/2), x6a, scaled(85));
+        
+        int x7 = scaled(150);
+        int w7 = scaled(300);
+        int y7 = scaled(460);
+        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7, y7, w7, 5, text("RACES_HELP_1E"));
+        sp7.setLine(x7+(w7/2), y7, x7+(w7/2), scaled(400));
     }
     private void loadHelpUI2() {
         int w = getWidth();
@@ -402,6 +411,10 @@ public class RacesUI extends BasePanel {
         Empire e = (Empire) sessionVar("RACESUI_EMPIRE");
         return (e == null) || e.extinct() ? player() : e;
     }
+    public Empire selectedIconEmpire() {
+        Empire e = (Empire) sessionVar("RACESUI_ICON_EMPIRE");
+        return (e == null) || e.extinct() ? player() : e;
+    }
     public void selectedEmpire(Empire e)  {
         if (e != selectedEmpire()) {
             sessionVar("RACESUI_EMPIRE", e);
@@ -410,6 +423,14 @@ public class RacesUI extends BasePanel {
             militaryPanel.changedEmpire();
             statusPanel.changedEmpire();
         }
+    }
+    public void selectedIconEmpire(Empire e)  {
+        if (e != selectedIconEmpire()) 
+            sessionVar("RACESUI_ICON_EMPIRE", e);
+    }
+    public Shape selectedIconShape() {
+        Empire e = selectedIconEmpire();
+        return colorIcons.get(e);
     }
     private boolean selectPrevEmpire() {
         int index = empires.indexOf(selectedEmpire());
@@ -452,6 +473,7 @@ public class RacesUI extends BasePanel {
         intelPanel = new RacesIntelligenceUI(this);
         militaryPanel = new RacesMilitaryUI(this);
         statusPanel = new RacesStatusUI(this);
+        setColorPanel = new RacesSetColorUI(this);
 
         // create center panel
         titlePanel = new MainTitlePanel(this, "RACES_TITLE");
@@ -843,8 +865,9 @@ public class RacesUI extends BasePanel {
         private static final long serialVersionUID = 1L;
         private final HashMap<Empire, Rectangle> contactBoxes = new HashMap<>();
         private Empire hoverEmp;
+        private boolean hoveringIcon;
         int dragY;
-        int contactsY, contactsYMax;
+        int contactsY, contactsYMax;     
         Rectangle contactsListBox = new Rectangle();
         Rectangle contactsScroller = new Rectangle();
         Shape hoverShape;
@@ -949,14 +972,22 @@ public class RacesUI extends BasePanel {
             boolean selected = emp == selectedEmpire();
 
             Color blackC = selected ? Color.black : SystemPanel.blackText;
-            Color whiteC = emp == hoverEmp ? Color.yellow : selected ? Color.white : SystemPanel.whiteText;
+            Color whiteC = (emp == hoverEmp) && !hoveringIcon ? Color.yellow : selected ? Color.white : SystemPanel.whiteText;
              //empire name
             int x1 = x0+w1+mgn+s10;
             int y1 = y0+s25;
             g.setFont(narrowFont(22));
             drawShadowedString(g, emp.raceName(), 1, x1, y1, blackC, whiteC);
-            emp.drawShape(g,x+w-s30,y0+s10,s20,s20);
-
+            Shape sh = emp.drawShape(g,x+w-s30,y0+s10,s20,s20);
+            setColorIcon(emp, sh);
+            if ((hoverEmp == emp) && hoveringIcon) {
+                Stroke prev = g.getStroke();
+                g.setStroke(stroke2);
+                g.setColor(Color.yellow);
+                g.draw(sh);
+                g.setStroke(prev);
+            }
+            
             if (emp.isPlayer()) {
                 List<EmpireView> views = player().contacts();
                 int n = views.size();
@@ -1081,6 +1112,9 @@ public class RacesUI extends BasePanel {
                 contactBoxes.put(emp, new Rectangle());
             return contactBoxes.get(emp);
         }
+        public void setColorIcon(Empire emp, Shape sh) {
+            colorIcons.put(emp, sh);
+        }
         @Override
         public void mouseWheelMoved(MouseWheelEvent e) {
             int count = e.getUnitsToScroll();           
@@ -1140,18 +1174,30 @@ public class RacesUI extends BasePanel {
             Shape prevHover = hoverShape;
             hoverShape = null;
             hoverEmp = null;
-            for (Empire emp: contactBoxes.keySet()) {
-                Rectangle rec = contactBoxes.get(emp);
+            hoveringIcon = false;
+            for (Empire emp: colorIcons.keySet()) {
+                Shape rec = colorIcons.get(emp);
                 if (rec.contains(x,y)) {
                     hoverShape = rec;
                     hoverEmp = emp;
+                    hoveringIcon = true;
                     break;
+                }
+            }
+            if (hoverShape == null) {
+                for (Empire emp: contactBoxes.keySet()) {
+                    Rectangle rec = contactBoxes.get(emp);
+                    if (rec.contains(x,y)) {
+                        hoverShape = rec;
+                        hoverEmp = emp;
+                        break;
+                    }
                 }
             }
             if (contactsScroller.contains(x,y)) 
                 hoverShape = contactsScroller;
  
-            if (hoverShape != prevHover) 
+            if (hoverShape != prevHover)
                 repaint();     
         }
         @Override
@@ -1177,10 +1223,16 @@ public class RacesUI extends BasePanel {
             if (hoverShape == null)
                 return;
 
-            if ((hoverEmp != null) && (hoverEmp != selectedEmpire())) {
+            if (hoverEmp != null) {
                 softClick();
-                selectedEmpire(hoverEmp);
-                instance.repaint();
+                if (hoveringIcon) {
+                    hoveringIcon = false;
+                    selectedIconEmpire(hoverEmp);
+                    enableGlassPane(setColorPanel);
+                }
+                else if (hoverEmp != selectedEmpire())
+                    selectedEmpire(hoverEmp);
+                instance.repaint();                    
             }
         }
     }

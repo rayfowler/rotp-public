@@ -115,6 +115,7 @@ public class TreatyAlliance extends DiplomaticTreaty implements Base {
     }
     @Override
     public void noticeIncident(DiplomaticIncident inc) { 
+        initStandings();
         if (inc instanceof TechnologyAidIncident) 
             handleTechnologyAid((TechnologyAidIncident) inc);
         else if (inc instanceof FinancialAidIncident) 

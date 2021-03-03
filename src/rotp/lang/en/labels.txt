@@ -282,6 +282,7 @@ INC_TRESPASSING_DESC              | [your_race] fleets are trespassing in the [s
 // generic click to skip or continue messages
 CLICK_SKIP                        | Escape or Click to Skip Animation
 CLICK_CONTINUE                    | Click or Escape to Continue...
+CLICK_EXIT                        | Click or Escape to Exit...
 BUTTON_EXIT                       | Exit
 
 // GAME/SETUP UI 
@@ -1735,6 +1736,9 @@ RACES_STATUS_PRODUCTION           | Production
 RACES_STATUS_TOTAL_POWER          | Total Power
 RACES_UNKNOWN_DATA                | ???
 
+RACES_SET_COLOR_TITLE             | Choose new color for %1
+RACES_SET_COLOR_DESC              | If this color and shape are used by another empire, the colors will be switched.
+
 // Races UI help
 RACES_HELP_0A                     | OVERVIEW: This screen provides detailed information about each of the alien races that you have encountered.
 RACES_HELP_0B                     | Diplomacy - Engage in diplomacy with the selected empire. 
@@ -1748,6 +1752,7 @@ RACES_HELP_1B                     | Provides direct access to diplomats for all 
 RACES_HELP_1C                     | Increase the security tax to improve your chances of thwarting enemy spies.
 RACES_HELP_1D                     | Provides direct access to manage your spies in all contacted empires.
 RACES_HELP_1E                     | Diplomatic incidents that affect how other empires react to you. The effects will move towards zero over time.
+RACES_HELP_1F                     | Click to change the color for a race displayed on the map
 RACES_HELP_2A                     | General information for selected empire.
 RACES_HELP_2B                     | Grants an audience with a diplomat for the selected empire.
 RACES_HELP_2C                     | Information about trade treaties signed with the selected empire.
