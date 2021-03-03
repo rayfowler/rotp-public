@@ -31,6 +31,7 @@ import rotp.model.Sprite;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EspionageMission;
 import rotp.model.galaxy.Galaxy;
+import rotp.model.tech.Tech;
 import rotp.model.tech.TechCategory;
 import rotp.ui.BasePanel;
 import rotp.ui.RotPUI;
@@ -164,10 +165,12 @@ public class MapOverlayEspionageMission extends MapOverlay {
             mask.subtract(st1);
         }
 
-        int x0 = scaled(335);
-        int y0 = scaled(235);
-        int w0 = scaled(555);
-        int h0 = scaled(235);
+        int catW = scaled(200);
+        int catH = BasePanel.s46;
+        int x0 = scaled(265);
+        int y0 = scaled(205);
+        int w0 = scaled(295)+(2*catW);
+        int h0 = scaled(125)+(3*catH);
         g.setColor(MainUI.paneShadeC2);
         g.fillRect(x0, y0, w0, h0);
 
@@ -207,29 +210,37 @@ public class MapOverlayEspionageMission extends MapOverlay {
         g.setColor(SystemPanel.blackText);
         g.drawString(footer, x1c, y1+h1-BasePanel.s10);
 
-        int xOff = scaled(player().race().espionageX);
-        int yOff = scaled(player().race().espionageY);
+        Empire pl = player();
         if (labImg == null) {
-            labImg = asBufferedImage(emp.race().laboratory());
+            labImg = asBufferedImage(pl.race().laboratory());
             Graphics imgG = labImg.getGraphics();
-            BufferedImage spyImg = player().race().spyQuiet();
-            imgG.drawImage(spyImg, 0, 0, labImg.getWidth(), labImg.getHeight(), xOff, yOff, (spyImg.getWidth()/2)+xOff, (spyImg.getHeight()/2)+yOff, null);
+            BufferedImage spyImg = pl.race().spyQuiet();
+            int w0a = labImg.getWidth();
+            int h0a = labImg.getHeight();
+            imgG.drawImage(spyImg, w0a/2, 0, w0a, h0a, 0, 0, (spyImg.getWidth()/2), spyImg.getHeight(), null);
             imgG.dispose();
         }
 
-        int imgW = leftW;
-        int imgH = imgW*Rotp.IMG_H/Rotp.IMG_W;
-        g.drawImage(labImg, x1, y1+h1-imgH, x1+leftW, y1+h1, 0, 0, labImg.getWidth(), labImg.getHeight(), null);
+
+        int y1b = y1+BasePanel.s60;
+        int h1b = h1-BasePanel.s60;
+        int imgH = h1b;
+        int imgW = imgH*Rotp.IMG_W/Rotp.IMG_H;
+        g.setClip(x1+BasePanel.s5,y1b,leftW-BasePanel.s10,h1b-BasePanel.s5);
+        g.drawImage(labImg, x1+leftW-imgW, y1b, x1+leftW, y1b+h1b, 0, 0, labImg.getWidth(), labImg.getHeight(), null);
+        g.setClip(null);
+        
+//        int imgW = leftW;
+//        int imgH = imgW*Rotp.IMG_H/Rotp.IMG_W;
+//        g.drawImage(labImg, x1, y1+h1-imgH, x1+leftW, y1+h1, 0, 0, labImg.getWidth(), labImg.getHeight(), null);
 
         // draw all 6 category boxes
 
-        int catW = scaled(130);
-        int catH = BasePanel.s35;
         int catX1 = x1+scaled(260);
-        int catX2 = x1+scaled(395);
-        int catY1 = y1+BasePanel.s70;
-        int catY2 = y1+scaled(112);
-        int catY3 = y1+scaled(154);
+        int catX2 = catX1+catW+BasePanel.s5;
+        int catY1 = y1+BasePanel.s65;
+        int catY2 = catY1+catH+BasePanel.s7;
+        int catY3 = catY2+catH+BasePanel.s7;
 
         if (grayBack1 == null) {
             float[] dist = {0.0f, 0.5f, 1.0f};
@@ -277,8 +288,9 @@ public class MapOverlayEspionageMission extends MapOverlay {
         g.setPaint(MainUI.darkShadowC);
         g.fillRect(x+bdr, y+bdr, w, h);
 
-        // draw button background gradieant
-        if (techCategoryHoverButton == catNum)
+        Tech tech = mission.inCategory(TechCategory.id(catNum));
+        // draw button background gradient
+        if (tech != null)
             g.setPaint(greenBack);
         else
             g.setPaint(grayBack);
@@ -298,10 +310,25 @@ public class MapOverlayEspionageMission extends MapOverlay {
             s = concat(str(catNum+1), " - ", s);
         int sw = g.getFontMetrics().stringWidth(s);
         int xc = x+(w-sw)/2;
-        Color c0 = mission.inCategory(TechCategory.id(catNum)) == null ? SystemPanel.grayText : Color.white;
-        drawShadowedString(g, s, 3, xc, y+h-BasePanel.s12, MainUI.darkShadowC, c0);
+        Color c0;
+        
+        if (tech == null)
+            c0 = SystemPanel.grayText;
+        else if (techCategoryHoverButton == catNum)
+            c0 = Color.yellow;
+        else
+            c0 = Color.white;
+        
+        drawShadowedString(g, s, 3, xc, y+BasePanel.s20, MainUI.darkShadowC, c0);
+        
+        String techName = tech == null ? text("NOTICE_ESPIONAGE_NO_TECH") : tech.name();
+        scaledFont(g, techName, w-BasePanel.s10, 16, 12);
+        int sw1 = g.getFontMetrics().stringWidth(techName);
+        int x1 = x+(w-sw1)/2;
+           
+        drawShadowedString(g, techName, 1, x1, y+h-BasePanel.s7, MainUI.darkShadowC, c0);
 
         // set mouse bounds for button
-        categorySprites[catNum].setBounds(x, y, w, h);
+        categorySprites[catNum].setBounds(x, y, w, h);        
     }
 }

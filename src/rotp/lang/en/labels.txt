@@ -957,7 +957,8 @@ TECH_COMPLETED_VERIFY             | Verify that spending allocations in the rema
 
 // prompt for espionage
 NOTICE_ESPIONAGE_TITLE            | Our spies have infiltrated a %1 base.
-NOTICE_ESPIONAGE_SUBTITLE         | Select a technology type to steal.
+NOTICE_ESPIONAGE_SUBTITLE         | Select a technology to steal.
+NOTICE_ESPIONAGE_NO_TECH          | No Available Technology
 NOTICE_ESPIONAGE_FOOTER           | If noticed, this may cause a Diplomatic Incident.
 NOTICE_ESPIONAGE_FRAME_TITLE      | Our spies have managed to frame another race for the theft.
 NOTICE_ESPIONAGE_FRAME_SUBTITLE   | Choose the victim race:
@@ -1737,7 +1738,7 @@ RACES_STATUS_TOTAL_POWER          | Total Power
 RACES_UNKNOWN_DATA                | ???
 
 RACES_SET_COLOR_TITLE             | Choose new color for %1
-RACES_SET_COLOR_DESC              | If this color and shape are used by another empire, the colors will be switched.
+RACES_SET_COLOR_DESC              | If the selected color and shape are used by another empire, the colors will be switched.
 
 // Races UI help
 RACES_HELP_0A                     | OVERVIEW: This screen provides detailed information about each of the alien races that you have encountered.
