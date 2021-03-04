@@ -20,6 +20,7 @@ import java.util.List;
 import rotp.model.empires.DiplomaticTreaty;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
+import rotp.ui.RotPUI;
 
 public class DiplomacyTreatyMenu extends DiplomaticMessage {
     private final List<Integer> options = new ArrayList<>();
@@ -110,11 +111,17 @@ public class DiplomacyTreatyMenu extends DiplomaticMessage {
                     DiplomaticMessage.show(view(), DialogueManager.DIPLOMACY_TRADE_MENU); 
                 return;
             case PROPOSE_PACT           : reply = diplomat().diplomatAI().receiveOfferPact(player());     break;
-            case PROPOSE_ALLIANCE       : reply = diplomat().diplomatAI().receiveOfferAlliance(player()); break;
+            case PROPOSE_ALLIANCE       : 
+                RotPUI.instance().mainUI().map().resetRangeAreas(); // resets the range drawing on main map
+                reply = diplomat().diplomatAI().receiveOfferAlliance(player()); 
+                break;
             case PROPOSE_JOINT_WAR      : DiplomaticMessage.show(view(), DialogueManager.DIPLOMACY_JOINT_WAR_MENU); return;
             case BREAK_TRADE            : reply = diplomat().diplomatAI().receiveBreakTrade(player());    break;
             case BREAK_PACT             : reply = diplomat().diplomatAI().receiveBreakPact(player());     break;
-            case BREAK_ALLIANCE         : reply = diplomat().diplomatAI().receiveBreakAlliance(player()); break;
+            case BREAK_ALLIANCE         : 
+                RotPUI.instance().mainUI().map().resetRangeAreas(); // resets the range drawing on main map
+                reply = diplomat().diplomatAI().receiveBreakAlliance(player()); 
+                break;
             case EXIT                   : DiplomaticMessage.show(view(), DialogueManager.DIPLOMACY_MAIN_MENU); return;
             default                     : DiplomaticMessage.show(view(), DialogueManager.DIPLOMACY_MAIN_MENU); return;
         }

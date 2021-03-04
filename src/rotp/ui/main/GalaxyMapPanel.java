@@ -405,6 +405,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     }
     public void clearRangeMap()    { redrawRangeMap = true; }
     public void resetRangeAreas() {
+        clearRangeMap();
         shipRangeArea = null;
         scoutRangeArea = null;
         areaOffsetX = 0;
