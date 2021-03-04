@@ -1146,6 +1146,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         industry().capturedBy(tr.empire());
         defense().capturedBy(tr.empire());
         ecology().capturedBy(tr.empire());
+        research().capturedBy(tr.empire());
 
         StarSystem sys = starSystem();
         empire.removeColonizedSystem(sys);

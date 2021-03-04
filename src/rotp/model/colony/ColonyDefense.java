@@ -117,6 +117,8 @@ public class ColonyDefense extends ColonySpendingCategory {
         unallocatedBC = 0;
         maxBases = 1;
         missileBase = newCiv.tech().bestMissileBase();
+        shieldCompleted = false;
+        missileBasesUpgraded = false;
     }
     @Override
     public void nextTurn(float totalProd, float totalReserve) {

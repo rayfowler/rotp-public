@@ -240,6 +240,11 @@ public class ColonyShipyard extends ColonySpendingCategory {
         stargateBC = 0;
         shipBC = 0;
         shipReserveBC = 0;
+        newShips = 0;
+        buildLimit = 0;
+        shipLimitReached = false;
+        rallyFleet = null;
+        maxAllowedShipBCProd = -1;
     }
     public void goToPrevDesign() {
         design = empire().shipLab().prevDesignFrom(design, hasStargate);

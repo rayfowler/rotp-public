@@ -70,6 +70,9 @@ public class ColonyIndustry extends ColonySpendingCategory {
         industryReserveBC = 0;
         factories = p.alienFactories(newCiv.id);
         p.removeAlienFactories(newCiv.id);
+        unallocatedBC = 0;
+        newFactories = 0;
+        previousFactories = 0;
     }
     @Override
     public void nextTurn(float totalProd, float totalReserve) {

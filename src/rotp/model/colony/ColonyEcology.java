@@ -86,6 +86,15 @@ public class ColonyEcology extends ColonySpendingCategory {
         hostileBC = 0;
         soilEnrichBC = 0;
         unallocatedBC = 0;
+        wasteCleaned = 0;
+        newGrownPopulation = 0;
+        newPurchasedPopulation = 0;
+        newBiosphereIncrease = 0;
+        atmosphereCompleted = false;
+        soilEnrichCompleted = false;
+        terraformCompleted = false;
+        populationGrowthCompleted = false;
+        expectedPopGrowth = 0;
     }
     public float waste()           { return planet().waste(); }
     public void addWaste(float w)  { planet().addWaste(w); }

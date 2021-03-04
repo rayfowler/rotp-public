@@ -15,6 +15,8 @@
  */
 package rotp.model.colony;
 
+import rotp.model.empires.Empire;
+
 public class ColonyResearch extends ColonySpendingCategory {
     private static final long serialVersionUID = 1L;
     private float projectBC = 0;
@@ -82,6 +84,12 @@ public class ColonyResearch extends ColonySpendingCategory {
         if (empire().tech().researchCompleted()) 
             empire().addReserve(unallocatedBC);
            
+        unallocatedBC = 0;
+    }
+    public void capturedBy(Empire newCiv) {
+        if (newCiv == empire())
+            return;
+        projectBC = 0;
         unallocatedBC = 0;
     }
 }
