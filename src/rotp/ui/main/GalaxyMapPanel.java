@@ -30,6 +30,7 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
+import java.awt.geom.AffineTransform;
 import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
 import java.awt.image.BufferedImage;
@@ -123,6 +124,10 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     public Sprite hoverSprite;
     int backOffsetX = 0;
     int backOffsetY = 0;
+    int areaOffsetX = 0;
+    int areaOffsetY = 0;
+    Area shipRangeArea;
+    Area scoutRangeArea;
 
     private final Timer zoomTimer;
 
@@ -324,8 +329,10 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     public void setScale(float scale) {
         int mapSizeX = getSize().width;
         int mapSizeY = getSize().height;
-        if (scaleY != scale)
+        if (scaleY != scale) {
             clearRangeMap();
+            resetRangeAreas();
+        }
         scaleY(scale);
         scaleX(scale*mapSizeX/mapSizeY);
     }
@@ -396,7 +403,13 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             drawBackgroundNebula(sharedNebulaBackground);
         }
     }
-    public void clearRangeMap() {   redrawRangeMap = true; }
+    public void clearRangeMap()    { redrawRangeMap = true; }
+    public void resetRangeAreas() {
+        shipRangeArea = null;
+        scoutRangeArea = null;
+        areaOffsetX = 0;
+        areaOffsetY = 0;
+    }
     private void setFocusToCenter() {
         currentFocus(new Location());
         currentFocus().setXY(sizeX()/2, sizeY()/2);
@@ -533,33 +546,43 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
 
         float scale = getWidth()/scaleX();
 
+        AffineTransform areaOffsetXForm = null;
+        AffineTransform prevXForm = g.getTransform();
+        //log("offsetX:"+areaOffsetX+"  offsetY:"+areaOffsetY);
+        if ((areaOffsetX != 0) || (areaOffsetY != 0)) {
+            areaOffsetXForm = g.getTransform();
+            areaOffsetXForm.setToIdentity();
+            areaOffsetXForm.translate(areaOffsetX, areaOffsetY);
+            g.setTransform(areaOffsetXForm);
+        }
         int extR = (int) (scoutRange*scale);
         int baseR = (int) (shipRange*scale);
-        Area clusterArea = new Area();
-                       
-        for (StarSystem sv: alliedSystems)
-            clusterArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-extR, mapY(sv.y())-extR, 2*extR, 2*extR) ));       
-        
-        for (StarSystem sv: systems)
-            clusterArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-extR, mapY(sv.y())-extR, 2*extR, 2*extR) ));       
-           
+        if (scoutRangeArea == null) {
+            scoutRangeArea = new Area();
+            for (StarSystem sv: alliedSystems)
+                scoutRangeArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-extR, mapY(sv.y())-extR, 2*extR, 2*extR) ));       
+            for (StarSystem sv: systems)
+                scoutRangeArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-extR, mapY(sv.y())-extR, 2*extR, 2*extR) ));       
+        }
         g.setColor(extendedBorder);
         g.setStroke(stroke2);
-        g.draw(clusterArea);   
-        clusterArea.reset();
-        
-        
-        for (StarSystem sv: alliedSystems)
-            clusterArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-baseR, mapY(sv.y())-baseR, 2*baseR, 2*baseR) ));       
-        
-        for (StarSystem sv: systems)
-            clusterArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-baseR, mapY(sv.y())-baseR, 2*baseR, 2*baseR) ));       
-                   
+        g.draw(scoutRangeArea);   
+
+
+        if (shipRangeArea == null) {
+            shipRangeArea = new Area();
+            for (StarSystem sv: alliedSystems)
+                shipRangeArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-baseR, mapY(sv.y())-baseR, 2*baseR, 2*baseR) ));       
+            for (StarSystem sv: systems)
+                shipRangeArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-baseR, mapY(sv.y())-baseR, 2*baseR, 2*baseR) ));       
+        }       
         g.setColor(normalBackground);
-        g.fill(clusterArea);
+        g.fill(shipRangeArea);
         g.setColor(normalBorder);
         g.setStroke(stroke2);
-        g.draw(clusterArea);   
+        g.draw(shipRangeArea);   
+        
+        g.setTransform(prevXForm);
 
     }
     private void drawGridCircularDisplayDark(Graphics2D g) {
@@ -802,10 +825,22 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     public void dragMap(int deltaX, int deltaY) {
         backOffsetX += deltaX/10;
         backOffsetY += deltaY/10;
+
         int focusX = mapX(parent.mapFocus().x());
         int focusY = mapY(parent.mapFocus().y());
-        recenterMap(objX(focusX-deltaX), objY(focusY-deltaY));
-        clearRangeMap();
+        
+        // we need to recalculate the new focusX/Y before
+        // recentering so that we can have the proper pixel
+        // offset for the range areas
+        float newObjX = bounds(0, objX(focusX-deltaX), sizeX());
+        float newObjY = bounds(0, objY(focusY-deltaY), sizeY());      
+        int newFocusX = mapX(newObjX);
+        int newFocusY = mapY(newObjY);
+        areaOffsetX += (focusX-newFocusX);
+        areaOffsetY += (focusY-newFocusY);
+        
+        recenterMap(newObjX, newObjY);
+        
         repaint();
     }
     @Override
