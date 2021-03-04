@@ -463,7 +463,8 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
                 setFontHints(g0);
                 g0.setColor(unreachableBackground);
                 g0.fillRect(0,0,getWidth(),getHeight());
-                drawExtendedRangeDisplay(g0);
+                if (parent.showShipRanges())
+                    drawExtendedRangeDisplay(g0);
                 drawOwnershipDisplay(g0);
             }
             g.drawImage(rangeMapBuffer,0,0,null);
@@ -483,7 +484,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         Galaxy gal = galaxy();
         Empire pl = player();
         for (int id=0; id < pl.sv.count(); id++) {
-            Empire emp = pl.sv.empire(id);
+            Empire emp = parent.knownEmpire(id, pl);
             StarSystem sys = gal.system(id);
             //Shape sysCircle = new Ellipse2D.Float(mapX(sys.x())-ownerR, mapY(sys.y())-ownerR, 2*ownerR, 2*ownerR);
             if ((emp != null) && parent.showOwnership(sys)) {

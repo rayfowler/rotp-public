@@ -38,6 +38,7 @@ import java.util.List;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireStatus;
 import rotp.ui.BasePanel;
+import rotp.ui.RotPUI;
 import rotp.ui.UserPreferences;
 import rotp.ui.main.SystemPanel;
 
@@ -59,6 +60,8 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
     Rectangle[] fullBoxes = new Rectangle[6];
     Rectangle[] dataBoxes = new Rectangle[6];
     Rectangle[] dataScrollers = new Rectangle[6];
+    Rectangle playerHistoryButton = new Rectangle();
+    Rectangle aiHistoryButton = new Rectangle();;
     
     private LinearGradientPaint backGradient;
     public RacesStatusUI(RacesUI p) {
@@ -117,17 +120,21 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
 
         int s200 = scaled(200);
         int s210 = scaled(210);
-        int s260 = scaled(260);
+        int buttonTopY = scaled(240);
+        int rankingTopY = scaled(270);
+        int titleLeftX = scaled(260);
         int s370 = scaled(370);
         drawRaceIconBase(g, emp, s55, s25, s210, s210);
         drawRaceIconBase(g, emp, w-s65-s200, s25, s210, s210);
-        drawAllRankingsLists(g, emp, s55, s260, w-s55-s55, h-s260-s10);
+        drawHistoryButton(g, player(), playerHistoryButton, s55, buttonTopY, s210, s25);
+        aiHistoryButton.setBounds(0,0,0,0);
+        drawAllRankingsLists(g, emp, s55, rankingTopY, w-s55-s55, h-rankingTopY-s10);
         if (UserPreferences.texturesInterface()) 
             drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
         drawOpponentIcon(g, null, w-s60-s200, s30, s200, s200);
-        drawPlayerTitle(g, emp, s260, s30, s370, s50);
-        drawVS(g, emp, s260, s90, w-scaled(520), s50); 
+        drawPlayerTitle(g, emp, titleLeftX, s30, s370, s50);
+        drawVS(g, emp, titleLeftX, s90, w-scaled(520), s50); 
         drawKnownEmpiresTitle(g, emp, w-s60-s200, s30+s200, 0, s50);
     }
     private void paintAIData(Graphics2D g) {
@@ -137,18 +144,49 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
 
         int s200 = scaled(200);
         int s210 = scaled(210);
-        int s260 = scaled(260);
+        int buttonTopY = scaled(240);
+        int rankingTopY = scaled(270);
+        int titleLeftX = scaled(260);
         int s370 = scaled(370);
         drawRaceIconBase(g, emp, s55, s25, s210, s210);
         drawRaceIconBase(g, emp, w-s65-s200, s25, s210, s210);
-        drawVsRankingsLists(g, emp, s55, s260, w-s55-s55, h-s260-s10);
+        drawHistoryButton(g, player(), playerHistoryButton, s55, buttonTopY, s210, s25);
+        drawHistoryButton(g, emp, aiHistoryButton, w-s65-s200, buttonTopY, s210, s25);
+        drawVsRankingsLists(g, emp, s55, rankingTopY, w-s55-s55, h-rankingTopY-s10);
         if (UserPreferences.texturesInterface()) 
             drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
         drawOpponentIcon(g, emp, w-s60-s200, s30, s200, s200);
-        drawPlayerTitle(g, emp, s260, s30, s370, s50);
-        drawVS(g, emp, s260, s90, w-scaled(520), s50);
+        drawPlayerTitle(g, emp, titleLeftX, s30, s370, s50);
+        drawVS(g, emp, titleLeftX, s90, w-scaled(520), s50);
         drawAITitle(g, emp, w-s60-s200, s30+s200, 0, s50);
+    }
+    private void drawHistoryButton(Graphics2D g, Empire emp, Rectangle button, int x, int y, int w, int h) {
+        g.setColor(RacesUI.darkBrown);
+        int cnr = min(w/8,h/8);
+        Shape rect = new RoundRectangle2D.Float(x,y,w,h,cnr, cnr);
+        g.fill(rect);
+              
+        button.setBounds(x,y,w,h);
+        if (button == hoverShape) {
+            Stroke prev = g.getStroke();
+            g.setStroke(stroke1);
+            g.setColor(Color.yellow);
+            g.draw(rect);
+            g.setStroke(prev);
+        }
+        
+        g.setFont(narrowFont(20));
+        if (button == hoverShape) 
+            g.setColor(Color.yellow);
+        else
+            g.setColor(SystemPanel.whiteText);
+        
+        
+        String text = text("RACES_STATUS_HISTORY", emp.raceName());
+        int sw = g.getFontMetrics().stringWidth(text);
+        int x0 = x+(w-sw)/2;
+        g.drawString(text, x0, y+h-s6);
     }
     private void drawRaceIconBase(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(RacesUI.darkBrown);
@@ -250,14 +288,14 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         }
         int mgnL = maxSW+s5;
         int mgnR = s5;
-        int mgnT = s40;
+        int mgnT = s35;
         int mgnB = s10;
 
         g.setFont(font(20));
         String title = player().status().title(num);
         int sw = g.getFontMetrics().stringWidth(title);
         int x0 = x+mgnL+(w-sw-mgnL)/2;
-        int y0 = y+s35;
+        int y0 = y+s30;
         drawShadowedString(g, title, 1, x0, y0, SystemPanel.blackText, SystemPanel.whiteText);
 
         int x1 = x+mgnL;
@@ -480,6 +518,9 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         }
         g.setStroke(prevStroke);
     }
+    private void showHistory(Empire e) {
+        RotPUI.instance().selectHistoryPanel(e.id, false);
+    }
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
         int count = e.getUnitsToScroll();
@@ -536,11 +577,17 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         int y = e.getY();
         Shape prevHover = hoverShape;
         hoverShape = null;
-        for (int i=0;i<dataBoxes.length;i++) {
-            if (dataScrollers[i].contains(x,y)) 
-                hoverShape = dataScrollers[i];
-            else if (dataBoxes[i].contains(x,y)) 
-                hoverShape = dataBoxes[i];
+        if (playerHistoryButton.contains(x,y))
+            hoverShape = playerHistoryButton;
+        else if (aiHistoryButton.contains(x,y))
+            hoverShape = aiHistoryButton;
+        else {
+            for (int i=0;i<dataBoxes.length;i++) {
+                if (dataScrollers[i].contains(x,y)) 
+                    hoverShape = dataScrollers[i];
+                else if (dataBoxes[i].contains(x,y)) 
+                    hoverShape = dataBoxes[i];
+            }
         }
         if (hoverShape != prevHover) 
             repaint();     
@@ -556,6 +603,10 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         if (e.getButton() > 3)
             return;
         dragY = 0;
+        if (hoverShape == aiHistoryButton)
+            showHistory(parent.selectedEmpire());
+        else if (hoverShape == playerHistoryButton)
+            showHistory(player());
     }
     @Override
     public void mouseEntered(MouseEvent mouseEvent) {}

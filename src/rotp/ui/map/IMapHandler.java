@@ -83,6 +83,7 @@ public interface IMapHandler {
 
     default public int defaultFleetDisplay()             { return GalaxyMapPanel.SHOW_IMPORTANT_FLIGHTPATHS; }
     default public int defaultShipRangesDisplay()        { return GalaxyMapPanel.SHOW_STARS_AND_RANGES; }
+    default public boolean showShipRanges()              { return true; }
     default public boolean defaultGridCircularDisplay()  { return false; }
     default public IMappedObject gridOrigin()            { return null; }
     default public void drawAlerts(Graphics2D g)         { }
@@ -100,6 +101,7 @@ public interface IMapHandler {
     default boolean showOwnership(StarSystem s)          { return true; }
     default float ownerReach(StarSystem s)               { return 0; }
     default boolean drawShield(StarSystem s)             { return true; } 
+    default boolean drawStargate(StarSystem s)           { return true; }
     default boolean showSystemName(StarSystem s)         { return map().showSystemNames(); } 
     default boolean showSystemData(StarSystem s)         { return map().showSystemData(); } 
     default boolean shouldDrawSprite(Sprite s)           { return true; }
@@ -107,6 +109,8 @@ public interface IMapHandler {
     default boolean displayNextTurnNotice()              { return false; }
     default boolean suspendAnimationsDuringNextTurn()    { return true; }
     default void paintOverMap(GalaxyMapPanel ui, Graphics2D g) { }
+    default boolean showAlerts()                         { return true; }
     default Color alertColor(SystemView sv)              { return null; }
+    default Empire knownEmpire(int sysId, Empire emp)    { return emp.sv.empire(sysId); }
 
 }

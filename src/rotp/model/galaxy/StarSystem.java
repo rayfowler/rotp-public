@@ -503,16 +503,18 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         int r0 = drawRadius(map);
         twinkleOffset++;
 
-        Empire emp = pl.sv.empire(id);
-        SystemView sv = pl.sv.view(id);
+        Empire emp = map.parent().knownEmpire(id, pl);
         // draw ownership radius?
-        if (map.parent().showOwnerReach(this))
+        if ((emp != null) && map.parent().showOwnerReach(this))
             drawOwnerReach(g2, map, emp, x0, y0);
 
         if (map.parent().drawStar(this)) {
-            Color c0 = map.parent().alertColor(sv);
-            if (c0 != null) 
-                drawAlert(map, g2, c0, x0, y0);
+            if (map.parent().showAlerts()) {
+                SystemView sv = pl.sv.view(id);
+                Color c0 = map.parent().alertColor(sv);
+                if (c0 != null) 
+                    drawAlert(map, g2, c0, x0, y0);
+            }
             drawStar(map, g2, x0, y0);
         }
         
@@ -523,11 +525,12 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             drawHovering(g2, map, x0, y0);
 
         // draw shield?
-        if (map.parent().drawShield(this))
+        if ((emp != null) && map.parent().drawShield(this))
             drawShield(g2, pl.sv.shieldLevel(id), x0, y0, map.scale(0.25f));
 
         // draw stargate icon (AFTER selection box)
-        if (pl.sv.isColonized(id) && pl.sv.hasStargate(id)) {
+        boolean colonized = (emp != null) && pl.sv.isColonized(id);
+        if (colonized && map.parent().drawStargate(this) && pl.sv.hasStargate(id)) {
             if (map.scaleX() <= GalaxyMapPanel.MAX_STARGATE_SCALE) {
                 float mult = max(4, min(60,map.scaleX()));
                 int x1 = x0+(int)(scaled(200)/mult);
@@ -554,13 +557,11 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         if (map.hideSystemNames())
             return;
 
-        int pop = pl.sv.population(id);
         int fontSize = fontSize(map);
         int realFontSize = unscaled(fontSize);
         if (map.parent().showSystemData(this))
             fontSize = fontSize * 7 / 10;
             
-        boolean colonized = pl.sv.isColonized(id);
         if (map.parent().showSystemName(this) || !colonized || (realFontSize < 12)) {
             String s1 = map.parent().systemLabel(this);
             String s2 = map.parent().systemLabel2(this);
@@ -591,6 +592,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             }
         }
         else if (map.parent().showSystemData(this)) {
+            int pop = pl.sv.population(id);
             int mgn = BasePanel.s6;
             int s1 = BasePanel.s1;
             String popStr = ""+pop;

@@ -1727,6 +1727,7 @@ RACES_MILITARY_SPECIALS           | Special Devices
 RACES_STATUS_THE_EMPIRE           | The %1
 RACES_STATUS_VS                   | vs.
 RACES_STATUS_KNOWN_EMPIRES        | %1 Known Empires
+RACES_STATUS_HISTORY              | Show %1 History
 RACES_STATUS_NO_DATA              | No Data
 RACES_STATUS_OLD_DATA             | Old Data
 RACES_STATUS_FLEET_STRENGTH       | Fleet Strength
@@ -1796,6 +1797,16 @@ SABOTAGE_FACTORIES                | factories
 NOTICE_SPYING_MISSION_HIDE        | Infiltration
 NOTICE_SPYING_MISSION_ESPIONAGE   | Espionage
 NOTICE_SPYING_MISSION_SABOTAGE    | Sabotage
+
+// History UI
+HISTORY_TITLE_PLAYER              | History of the %1
+HISTORY_TITLE_AI                  | Known History of the %1
+HISTORY_TITLE_ALL                 | Full Galactic History
+HISTORY_TURN_DESC                 | Turn %1 of %2
+HISTORY_NEXT_TURN                 | Next Turn
+HISTORY_PREV_TURN                 | Previous Turn
+HISTORY_EXIT                      | Exit
+
 
 
 // Council UIs

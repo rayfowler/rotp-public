@@ -63,6 +63,7 @@ import rotp.ui.game.SaveGameUI;
 import rotp.ui.game.SetupGalaxyUI;
 import rotp.ui.game.SetupRaceUI;
 import rotp.ui.game.StartOptionsUI;
+import rotp.ui.history.HistoryUI;
 import rotp.ui.main.MainUI;
 import rotp.ui.notifications.DiplomaticNotification;
 import rotp.ui.notifications.TurnNotification;
@@ -212,6 +213,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     private final ShipBattleUI shipBattleUI = new ShipBattleUI();
     private final GroundBattleUI groundBattleUI = new GroundBattleUI();
     private final SabotageUI sabotageUI = new SabotageUI();
+    private final HistoryUI historyUI = new HistoryUI();
     private final GNNUI gnnUI = new GNNUI();
     private final ColonizePlanetUI colonizePlanetUI = new ColonizePlanetUI();
     private final DiplomaticMessageUI diplomaticMessageUI = new DiplomaticMessageUI();
@@ -417,6 +419,10 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         sabotageUI.init(m, sysId);
         selectPanel(SABOTAGE_PANEL, sabotageUI);
         session().waitUntilNextTurnCanProceed();
+    }
+    public void selectHistoryPanel(int empId, boolean showAll) {
+        historyUI.init(empId, showAll);
+        enableGlassPane(historyUI);
     }
     public void selectGroundBattlePanel(Colony c, Transport tr) {
         session().pauseNextTurnProcessing("Show Ground Battle");
