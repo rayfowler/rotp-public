@@ -98,6 +98,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     public static Color gridDark = new Color(64,64,64);
 
     private final IMapHandler parent;
+    private final Object dragSynch = new Object();
 
     // static fields shared across all galaxy map panels to keep them 
     // visually in synch
@@ -124,8 +125,8 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     public Sprite hoverSprite;
     int backOffsetX = 0;
     int backOffsetY = 0;
-    int areaOffsetX = 0;
-    int areaOffsetY = 0;
+    float areaOffsetX = 0;
+    float areaOffsetY = 0;
     Area shipRangeArea;
     Area scoutRangeArea;
 
@@ -547,13 +548,16 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
 
         float scale = getWidth()/scaleX();
 
-        AffineTransform areaOffsetXForm = null;
         AffineTransform prevXForm = g.getTransform();
-        //log("offsetX:"+areaOffsetX+"  offsetY:"+areaOffsetY);
+        
         if ((areaOffsetX != 0) || (areaOffsetY != 0)) {
-            areaOffsetXForm = g.getTransform();
+            float ctrX = parent.mapFocus().x();
+            float ctrY = parent.mapFocus().y();
+            int mapOffsetX = mapX(ctrX)-mapX(ctrX-areaOffsetX);          
+            int mapOffsetY = mapY(ctrY)-mapY(ctrY-areaOffsetY);
+            AffineTransform areaOffsetXForm = g.getTransform();
             areaOffsetXForm.setToIdentity();
-            areaOffsetXForm.translate(areaOffsetX, areaOffsetY);
+            areaOffsetXForm.translate(mapOffsetX, mapOffsetY);
             g.setTransform(areaOffsetXForm);
         }
         int extR = (int) (scoutRange*scale);
@@ -827,6 +831,8 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         backOffsetX += deltaX/10;
         backOffsetY += deltaY/10;
 
+        float objX = parent.mapFocus().x();
+        float objY = parent.mapFocus().y();
         int focusX = mapX(parent.mapFocus().x());
         int focusY = mapY(parent.mapFocus().y());
         
@@ -835,13 +841,12 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         // offset for the range areas
         float newObjX = bounds(0, objX(focusX-deltaX), sizeX());
         float newObjY = bounds(0, objY(focusY-deltaY), sizeY());      
-        int newFocusX = mapX(newObjX);
-        int newFocusY = mapY(newObjY);
-        areaOffsetX += (focusX-newFocusX);
-        areaOffsetY += (focusY-newFocusY);
+        areaOffsetX += (objX-newObjX);
+        areaOffsetY += (objY-newObjY);
         
-        recenterMap(newObjX, newObjY);
-        
+        parent.mapFocus().setXY(newObjX, newObjY);
+        center(parent.mapFocus());
+        clearRangeMap();
         repaint();
     }
     @Override
