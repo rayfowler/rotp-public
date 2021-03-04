@@ -307,7 +307,7 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
                 String s = text("RACES_STATUS_NO_DATA");
                 g.drawString(s, x2, y2+barH-yAdj);
             }
-            else {
+            else if (maxValue > 0) {
                 g.setColor(rv.emp.color());
                 int barW = (int) (w2 * (rv.value / maxValue));
                 g.fillRect(x2, y2, barW, barH);
