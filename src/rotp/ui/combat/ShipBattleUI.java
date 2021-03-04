@@ -1668,7 +1668,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     }
     public void finishAndResume() {
         finish();
-         session().resumeNextTurnProcessing();
+        session().resumeNextTurnProcessing();
     }
     public void finish() {
         if (mgr.combatIsFinished()) {
@@ -1776,7 +1776,10 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
                 return;
             case KeyEvent.VK_E:
             case KeyEvent.VK_ESCAPE:
-                finish();
+                if (mgr.combatIsFinished())
+                    finishAndResume();
+                else
+                    finish();
         }
     }
     @Override
