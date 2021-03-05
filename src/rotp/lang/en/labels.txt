@@ -1805,6 +1805,8 @@ HISTORY_TITLE_ALL                 | Full Galactic History
 HISTORY_TURN_DESC                 | Turn %1 of %2
 HISTORY_NEXT_TURN                 | Next Turn
 HISTORY_PREV_TURN                 | Previous Turn
+HISTORY_PLAY                      | Play
+HISTORY_PAUSE                     | Pause
 HISTORY_EXIT                      | Exit
 
 
