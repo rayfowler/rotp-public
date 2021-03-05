@@ -640,7 +640,8 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
         return travelTime(to, slowestStackSpeed());
     }
     public float travelTime(StarSystem dest, float speed) {
-        if (inOrbit() || deployed()) {
+        if (inOrbit() || deployed()
+        || (isInTransit() && (travelPct() == 0))) {
             if (system().hasStargate(empire()) && dest.hasStargate(empire()))
                 return 1;
         }
