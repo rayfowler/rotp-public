@@ -639,6 +639,14 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
                 }
             }            
         }
+        
+        if (sysEmp != pl) {
+            int num = pl.transportsInTransit(sv.system());        
+            if (num > 0)
+                return MainUI.yellowAlertC;
+        }
+        
+        // enemy fleets approaching player allied colonies
         // for player systems, highlight those with no bases or insufficient shields
         if (sysEmp == null)
             return null;
@@ -742,51 +750,68 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
                  return eventMessage;
         }
         
+        int num = player().transportsInTransit(sv.system());
+        String transportMsg = num == 0 ? "" : " "+text("SYSTEMS_EXPLOIT_TRANSPORTS",str(num));
+
         Colony col = sv.system().colony();
         if (col.inRebellion())
-            return text("SYSTEMS_STATUS_REBELLION");
+            return concat(text("SYSTEMS_STATUS_REBELLION"),transportMsg);
         
         if (col.creatingWaste()) 
-            return text("SYSTEMS_EXPLOIT_WASTE");
+            return concat(text("SYSTEMS_EXPLOIT_WASTE"), transportMsg);
         
         int pct = (int) (100*col.currentProductionCapacity());
+        String capMsg;
         if (pct < 34)
-            return text("SYSTEMS_EXPLOIT_PCT", pct); 
+            capMsg = text("SYSTEMS_EXPLOIT_PCT", pct); 
         else if (pct < 67)
-            return text("SYSTEMS_EXPLOIT_PCT", pct); 
+            capMsg = text("SYSTEMS_EXPLOIT_PCT", pct); 
         else if (pct < 100)
-            return text("SYSTEMS_EXPLOIT_PCT", pct); 
-        return text("SYSTEMS_EXPLOIT_COMPLETE"); 
+            capMsg = text("SYSTEMS_EXPLOIT_PCT", pct); 
+        else
+            capMsg = text("SYSTEMS_EXPLOIT_COMPLETE"); 
+        
+        return concat(capMsg, transportMsg);
     }
     private String exterminateAlertDescription(SystemView sv) { 
         Empire pl = player();
         if (sv.distance() > pl.scoutRange())
             return null;
+
+        Empire sysEmp = sv.empire();
+        int num = pl.transportsInTransit(sv.system());        
+        String troopMsg;
+        if (num == 0)
+            troopMsg = "";
+        else if (sysEmp == pl)
+            troopMsg = " "+text("SYSTEMS_EXPLOIT_TRANSPORTS",str(num));
+        else
+            troopMsg = " "+text("SYSTEMS_EXT_INC_TRANSPORTS",str(num),pl.raceName());
         
         // show enemy colonies as yellow
-        Empire sysEmp = sv.empire();
         if (pl.atWarWith(sv.empId())) {
-            int num = pl.transportsInTransit(sv.system());
             String msg = text("SYSTEMS_EXT_ENEMY"); 
             if (num == 0)
                 return msg;
             else
-                return concat(msg, " ", text("SYSTEMS_EXT_INC_TRANSPORTS",str(num),pl.raceName()));
+                return concat(msg, troopMsg);
         }
-        
+            
         // deal with enemy fleets orbiting systems around us
         List<ShipFleet> fleets = sv.orbitingFleets();
         for (ShipFleet fl: fleets) {
             if (fl.isPotentiallyArmed(pl)) {
                 if (pl.atWarWith(fl.empId())) { 
+                    String fleetMsg;
                     if (sysEmp == null)
-                        return text("SYSTEMS_EXT_ENEMY_FLEET");
-                    if (sysEmp.isPlayer())
-                        return text("SYSTEMS_EXT_ENEMY_FLEET_PLAYER");
+                        fleetMsg = text("SYSTEMS_EXT_ENEMY_FLEET");
+                    else if (sysEmp.isPlayer())
+                        fleetMsg = text("SYSTEMS_EXT_ENEMY_FLEET_PLAYER");
                     else if (pl.alliedWith(sv.empId()))
-                        return text("SYSTEMS_EXT_ENEMY_FLEET_ALLY");
+                        fleetMsg = text("SYSTEMS_EXT_ENEMY_FLEET_ALLY");
                     else
-                        return text("SYSTEMS_EXT_ENEMY_FLEET");
+                        fleetMsg = text("SYSTEMS_EXT_ENEMY_FLEET");
+                    return concat(fleetMsg, troopMsg);
                 }  
             }
         }
@@ -796,19 +821,25 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         if (pl.knowShipETA() && pl.alliedWith(sv.empId())) {
             for (Ship sh: pl.visibleShips()) {
                 if ((sh.destSysId() == sv.sysId) && pl.atWarWith(sh.empId()) && sh.isPotentiallyArmed(pl)) {
+                    String fleetMsg;
                     if (sysEmp.isPlayer())
-                        return text("SYSTEMS_EXT_INC_FLEET_PLAYER");
+                        fleetMsg = text("SYSTEMS_EXT_INC_FLEET_PLAYER");
                     else 
-                        return text("SYSTEMS_EXT_INC_FLEET_ALLY");
+                        fleetMsg = text("SYSTEMS_EXT_INC_FLEET_ALLY");
+                    return concat(fleetMsg, troopMsg);
                 }
             }               
         }
+        
+        if ((sysEmp != pl) && (num > 0))
+            return troopMsg;
+        
         // for player systems, highlight those with no bases or insufficient shields
         if ((sysEmp == null) || !sysEmp.isPlayer())
             return null;
 
         if (!sv.colony().defense().isCompleted())
-            return text("SYSTEMS_EXT_NEED_DEFENSE");
+            return concat(text("SYSTEMS_EXT_NEED_DEFENSE"), troopMsg);
         
         return null; 
     }

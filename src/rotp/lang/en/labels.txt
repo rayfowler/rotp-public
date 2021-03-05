@@ -1887,6 +1887,7 @@ SYSTEMS_UNCOLONIZEABLE            | System cannot be colonized.
 SYSTEMS_EXPLOIT_PCT               | Colony at %1% total production capacity.
 SYSTEMS_EXPLOIT_WASTE             | Colony is creating industrial waste.
 SYSTEMS_EXPLOIT_COMPLETE          | Colony is at maximum production capacity.
+SYSTEMS_EXPLOIT_TRANSPORTS        | %1 transports are in transit.
 SYSTEMS_EXT_ENEMY                 | Enemy colony.
 SYSTEMS_EXT_ENEMY_FLEET           | Enemy fleet in orbit.
 SYSTEMS_EXT_ENEMY_FLEET_PLAYER    | Enemy fleet orbiting our colony.
