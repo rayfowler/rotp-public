@@ -1894,6 +1894,7 @@ SYSTEMS_EXT_ENEMY_FLEET_ALLY      | Enemy fleet orbiting an allied colony.
 SYSTEMS_EXT_INC_FLEET_PLAYER      | Enemy fleet in transit to our colony.
 SYSTEMS_EXT_INC_FLEET_ALLY        | Enemy fleet in transit to an allied colony.
 SYSTEMS_EXT_NEED_DEFENSE          | Defenses at this colony are not fully upgraded.
+SYSTEMS_EXT_INC_TRANSPORTS        | %1 %2 troops are in transit.
 SYSTEMS_HELP_1A                   | OVERVIEW - The purpose of this screen is to highlight systems in the galaxy that warrant attention by the player. Urgency or danger is denoted by color: flashing red is the highest, and green is the lowest.
 SYSTEMS_HELP_1B                   | Explore - shows unexplored systems within reach of scouts, or potentially with unresearched technologies.
 SYSTEMS_HELP_1C                   | Expand - shows colonizable systems within reach of ships, or potentially with unresearched technologies.

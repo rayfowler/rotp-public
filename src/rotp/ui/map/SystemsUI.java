@@ -765,8 +765,14 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         
         // show enemy colonies as yellow
         Empire sysEmp = sv.empire();
-        if (pl.atWarWith(sv.empId()))
-            return text("SYSTEMS_EXT_ENEMY");
+        if (pl.atWarWith(sv.empId())) {
+            int num = pl.transportsInTransit(sv.system());
+            String msg = text("SYSTEMS_EXT_ENEMY"); 
+            if (num == 0)
+                return msg;
+            else
+                return concat(msg, " ", text("SYSTEMS_EXT_INC_TRANSPORTS",str(num),pl.raceName()));
+        }
         
         // deal with enemy fleets orbiting systems around us
         List<ShipFleet> fleets = sv.orbitingFleets();
