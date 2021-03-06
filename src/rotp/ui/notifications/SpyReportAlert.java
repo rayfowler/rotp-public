@@ -15,27 +15,14 @@
  */
 package rotp.ui.notifications;
 
-import rotp.model.empires.Empire;
 import rotp.model.game.GameSession;
 
-public class SpyCapturedAlert extends GameAlert {
-    private final Empire spy;
-    private final Empire target;
-    private final String mission;
-     public static void create(Empire spyE, Empire targetE, String t) {
-        if (!spyE.atWarWith(targetE.id))
-            GameSession.instance().addAlert(new SpyCapturedAlert(spyE, targetE,t));
+public class SpyReportAlert extends GameAlert {
+    public static void create() {
+        GameSession.instance().addAlert(new SpyReportAlert());
     }
     @Override
     public String description() {
-        if (spy.isAI())
-            return text("MAIN_ALERT_SPY_CAPTURED", spy.name(), mission);
-        else
-            return text("MAIN_ALERT_SPY_CONFESSED", target.name(), mission);
-    }
-    private SpyCapturedAlert(Empire spyE, Empire targetE, String t) {
-        spy = spyE;
-        target = targetE;
-        mission = t;
+        return text("MAIN_ALERT_SPY_REPORT");
     }
 }

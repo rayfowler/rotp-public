@@ -19,7 +19,6 @@ import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.SpyNetwork;
 import rotp.ui.diplomacy.DialogueManager;
-import rotp.ui.notifications.SpyCapturedAlert;
 
 public class SpyConfessionIncident extends DiplomaticIncident {
     private static final long serialVersionUID = 1L;
@@ -62,9 +61,6 @@ public class SpyConfessionIncident extends DiplomaticIncident {
             duration *= 2;
         
         dateOccurred = galaxy().currentYear();
-
-        //if (ev.owner().isPlayer() || ev.empire().isPlayer())
-        //    SpyCapturedAlert.create(ev.empire(), ev.owner(), mission);
     }
     @Override
     public boolean isSpying()           { return (missionType > 0) || galaxy().empire(empVictim).leader().isXenophobic() ; }

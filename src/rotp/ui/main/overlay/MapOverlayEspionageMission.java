@@ -70,6 +70,7 @@ public class MapOverlayEspionageMission extends MapOverlay {
         if (drawSprites) {
             drawSprites = false;
             parent.clearOverlay();
+            session().enableSpyReport();
             RotPUI.instance().selectStealTechPanel(mission, empId);
         }
     }

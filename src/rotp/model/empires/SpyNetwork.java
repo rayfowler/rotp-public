@@ -291,7 +291,7 @@ public final class SpyNetwork implements Base, Serializable {
         
         if (rpt.spiesLost() > 0) {
             if (view.owner().isPlayer() || view.empire().isPlayer())
-                session().addSpiesCapturedNotification();
+            session().enableSpyReport();
         }
         
         if (spyConfessed || activeSpies.isEmpty() || isHide())
@@ -323,7 +323,10 @@ public final class SpyNetwork implements Base, Serializable {
         if (owner.isPlayer()) {
             List<String> newPossible = new ArrayList<>(possibleTechs());
             newPossible.removeAll(prevPossible);
-            report().recordTechsLearned(newPossible);
+            if (!newPossible.isEmpty()) {
+                session().enableSpyReport();
+                report().recordTechsLearned(newPossible);
+            }
         }  
     }
     private boolean sendSpiesToInfiltrate() {

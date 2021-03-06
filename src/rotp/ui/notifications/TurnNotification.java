@@ -32,7 +32,6 @@ public interface TurnNotification extends Comparable<TurnNotification> {
     static final String DIPLOMATIC_MESSAGE = "8500";
     static final String ALLOCATE_SYSTEMS = "9000";
     static final String CONSTRUCT_SHIP   = "9100";
-    static final String SPIES_CAPTURED   = "9150";
     static final String ADVICE           = "9950";
 
     @Override

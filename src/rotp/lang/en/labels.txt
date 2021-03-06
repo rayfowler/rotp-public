@@ -709,9 +709,8 @@ MAIN_AUTOSAVE_FAILED_OK           | OK
 // Alerts
 MAIN_ALERT_TITLE                  | Alert 
 MAIN_ALERT_TITLE_COUNT            | Alert - %1 of %2
+MAIN_ALERT_SPY_REPORT             | Our intelligence bureau has provided a new report on recent spying activity.
 MAIN_ALERT_TECH_STOLEN            | Internal security has uncovered espionage activities by %1 spies.
-//MAIN_ALERT_SPY_CAPTURED           | We have captured a spy from the %1, forcing a confession of their %2 activities.
-//MAIN_ALERT_SPY_CONFESSED          | The %1 have captured one of our spies, forcing a confession of our %2 activities.
 MAIN_ALERT_FACTORIES_DESTROYED    | Agents working for the %1 have destroyed %2 factories in the %3 system.
 MAIN_ALERT_BASES_DESTROYED        | Agents working for the %1 have destroyed %2 missile bases defending the %3 system.
 MAIN_ALERT_FACTORIES_DESTROYED2   | Unknown saboteurs have destroyed %1 factories in the %2 system.
@@ -724,7 +723,6 @@ MAIN_ALERT_INVADERS_KILLED        | %3 %1 transports attempting to invade %2 hav
 MAIN_ALERT_TRESPASSING1           | %1 ships have been spotted trespassing near our colony in the %2 system.
 MAIN_ALERT_TRESPASSING2           | The %1 ambassador protests our ships trespassing in the %2 system.
 MAIN_ALERT_TRADE_MATURED          | Our trade treaty with the %1 has reached its maximum value of %2 BC.
-MAIN_ALERT_SPY_NEW_TECH           | Our spies inform us that the %1 knows the secrets of %2.
 MAIN_ALERT_ALLIANCE_WEAKENING     | Our alliance with the %1 is weakening.
 MAIN_ALERT_ALLIANCE_BREAKING      | Our alliance with the %1 is on the verge of collapse!
 

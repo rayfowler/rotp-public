@@ -136,11 +136,13 @@ public final class SabotageUI extends BasePanel implements MouseListener {
     }
     public void destroyFactories() {
         mission.destroyFactories(systemToDisplay());
+        session().enableSpyReport();
         advanceToNextState();
         return;
     }
     public void destroyBases() {
         mission.destroyMissileBases(systemToDisplay());
+        session().enableSpyReport();
         advanceToNextState();
         return;
     }
@@ -149,6 +151,7 @@ public final class SabotageUI extends BasePanel implements MouseListener {
         Leader prevLeader = sys.empire().leader();
         mission.inciteRebellion(sys);
         inRebellion = (sys.colony().inRebellion() || (sys.empire().leader() != prevLeader));
+        session().enableSpyReport();
         advanceToNextState();
     }
     public void cancelMission() {

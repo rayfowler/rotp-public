@@ -59,6 +59,7 @@ import rotp.ui.UserPreferences;
 import rotp.ui.notifications.GameAlert;
 import rotp.ui.notifications.SabotageNotification;
 import rotp.ui.notifications.ShipConstructionNotification;
+import rotp.ui.notifications.SpyReportAlert;
 import rotp.ui.notifications.StealTechNotification;
 import rotp.ui.notifications.SystemsScoutedNotification;
 import rotp.ui.notifications.TurnNotification;
@@ -180,7 +181,7 @@ public final class GameSession implements Base, Serializable {
         int existingCount = shipsConstructed().containsKey(design) ? shipsConstructed().get(design) : 0;
         shipsConstructed().put(design, existingCount+newCount);
     }
-    public void addSpiesCapturedNotification() {
+    public void enableSpyReport() {
         spyActivity = true;
     }
     public boolean spyActivity()            { return spyActivity; }
@@ -372,7 +373,7 @@ public final class GameSession implements Base, Serializable {
                 }
                 // all diplomatic fallout: praise, warnings, treaty offers, war declarations
                 gal.assessTurn();
-
+                
                 if (processNotifications()){
                     log("Notifications processed 4 - back to MainPanel");
                     RotPUI.instance().selectMainPanel();
@@ -387,6 +388,9 @@ public final class GameSession implements Base, Serializable {
                 }
                 if (!systemsToAllocate().isEmpty())
                     RotPUI.instance().allocateSystems();
+
+                if (spyActivity)
+                    SpyReportAlert.create();
 
                 log("Refreshing Player Views");
                 NoticeMessage.resetSubstatus(text("TURN_REFRESHING"));
