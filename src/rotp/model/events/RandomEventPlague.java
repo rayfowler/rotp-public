@@ -79,7 +79,8 @@ public class RandomEventPlague implements Base, Serializable, RandomEvent, Colon
         targetSystem.eventKey(systemKey());
         researchNeeded = roll(3,10) * targetSystem.colony().totalProductionIncome();
         researchRemaining = researchNeeded;
-        if (player().knowsOf(empId))
+        if (player().knowsOf(empId)
+        && !player().sv.name(sysId).isEmpty())
             GNNNotification.notifyRandomEvent(notificationText(), "GNN_Event_Plague");
 
         affectColony();
@@ -146,7 +147,8 @@ public class RandomEventPlague implements Base, Serializable, RandomEvent, Colon
         if (col != null) {
             col.research().endProject();
             col.clearQuarantine();
-            if (player().knowsOf(empId))
+            if (player().knowsOf(empId)
+            && !player().sv.name(sysId).isEmpty())
                 GNNNotification.notifyRandomEvent(endText(), "GNN_Event_Plague");
         }
     }

@@ -82,7 +82,8 @@ public class RandomEventSupernova implements Base, Serializable, RandomEvent, Co
         targetSystem.eventKey(systemKey());
         researchNeeded = turnsNeeded * targetSystem.colony().totalProductionIncome();
         researchRemaining = researchNeeded;
-        if (player().knowsOf(empId))
+        if (player().knowsOf(empId)
+        && !player().sv.name(sysId).isEmpty())
             GNNNotification.notifyRandomEvent(notificationText(), "GNN_Event_Supernova");
 
         affectColony();
@@ -149,7 +150,8 @@ public class RandomEventSupernova implements Base, Serializable, RandomEvent, Co
         // possible colony is destroyed before supernova
         if (col != null) {
             col.research().endProject();
-            if (player().knowsOf(empId))
+            if (player().knowsOf(empId)
+            && !player().sv.name(sysId).isEmpty())
                 GNNNotification.notifyRandomEvent(goodEndText(), "GNN_Event_Supernova");
         }
     }
@@ -167,7 +169,8 @@ public class RandomEventSupernova implements Base, Serializable, RandomEvent, Co
         // possible colony is destroyed before supernova
         if (col != null) {
             col.research().endProject();
-            if (player().knowsOf(empId))
+            if (player().knowsOf(empId)
+            && !player().sv.name(sysId).isEmpty())
                 GNNNotification.notifyRandomEvent(badEndText(), "GNN_Event_Supernova");
         }
     }

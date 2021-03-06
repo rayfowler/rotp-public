@@ -60,7 +60,8 @@ public class RandomEventPiracy implements Base, Serializable, RandomEvent {
         pirateHP = roll(300,450);
         affectEmpireTrade();
         galaxy().events().addActiveEvent(this);
-        if (player().knowsOf(empId))
+        if (player().knowsOf(empId)
+        && !player().sv.name(sysId).isEmpty())
             GNNNotification.notifyRandomEvent(notificationText(), "GNN_Event_Piracy");
     }
     @Override
@@ -141,7 +142,8 @@ public class RandomEventPiracy implements Base, Serializable, RandomEvent {
         emp.tradePiracyRate(0.0f);
         
         session().removePendingNotification("GNN_Event_Piracy");
-        if (player().knowsOf(empId))
+        if (player().knowsOf(empId)
+        && !player().sv.name(sysId).isEmpty())
             GNNNotification.notifyRandomEvent(endText(), "GNN_Event_Piracy");
     }
 }
