@@ -45,6 +45,7 @@ import rotp.model.galaxy.Location;
 import rotp.model.galaxy.Nebula;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
+import rotp.ui.RotPUI;
 import rotp.ui.UserPreferences;
 import rotp.ui.main.GalaxyMapPanel;
 import rotp.ui.main.MainUI;
@@ -95,8 +96,14 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         backGradient = null;
         // reset map everytime we open
         removeSessionVar("SABOTAGEUI_MAP_INITIALIZED");
+        RotPUI.instance().mainUI().saveMapState();
+        int homeSysId = galaxy().empire(empId).homeSysId();
+        StarSystem homeSys = galaxy().system(homeSysId);
         mapPane.checkMapInitialized();
-        mapPane.selectTargetSystem(galaxy().system(0));
+        mapPane.map().setScale(20);
+        mapPane.selectTargetSystem(galaxy().system(homeSysId));
+        map.centerX(homeSys.x());
+        map.centerY(homeSys.y());
         animationIndex = 0;
         turn = 0;
         numSystems = galaxy().numStarSystems();
@@ -124,7 +131,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         else {
             SystemInfo sv = player().sv;
             for (int sysId=0;sysId<numSystems;sysId++) {
-                if (sv.isScouted(sysId)) 
+                if (!sv.name(sysId).isEmpty())
                     loadOwnershipData(sysId);
             }
         }        
@@ -185,6 +192,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
     }
     public void exit() {
         softClick();
+        RotPUI.instance().mainUI().restoreMapState();
         disableGlassPane();
     }
     private boolean canNextTurn() {
@@ -282,7 +290,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         
         public HistoryButtonsPanel() {
             init();
-            setPreferredSize(new Dimension(getWidth(),scaled(200)));
+            setPreferredSize(new Dimension(scaled(400),scaled(50)));
         }
         private void init() {
             setBackground(MainUI.paneBackground());
@@ -304,23 +312,10 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             
             textureClip = new Rectangle2D.Float(0, 0, w, h);
 
-            int messageH = s60;
-
-            Empire pl = player();
-            String prompt = text("HISTORY_TURN_DESC",str(turn), str(maxTurn));
-            
-            g.setColor(SystemPanel.blackText);
-            g.setFont(narrowFont(15));
-            List<String> lines = this.wrappedLines(g, prompt, w-s20);
-            int y0 = s10;
-            for (String line: lines) {
-                y0 += s16;
-                g.drawString(line, s10, y0);
-            }
-            int buttonW = w-s3;
-            int buttonH = (h-messageH-s25)/4; // -s25 is because 4 buttons at -s5 spacing/button
-            int buttonX = s1;
-            int buttonY = s10+messageH;
+            int buttonW = s90;
+            int buttonH = s30; // -s25 is because 4 buttons at -s5 spacing/button
+            int buttonX = s5;
+            int buttonY = h-buttonH-s10;
             if (greenBackground == null) {
                 float[] dist = {0.0f, 0.5f, 1.0f};
                 Point2D ptStart = new Point2D.Float(buttonX, 0);
@@ -368,8 +363,8 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             drawShadowedString(g, key, buttonX+s10, buttonY + buttonH - s8, Color.black, c0);
           
             // draw previous button
+            buttonX = buttonX+buttonW+s10;
             g.setFont(narrowFont(18));
-            buttonY += (buttonH+s5);
             prevTurnBox.setBounds(buttonX, buttonY, buttonW, buttonH);
             key = "2";
             label = text("HISTORY_PREV_TURN");
@@ -401,8 +396,8 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             drawShadowedString(g, key, buttonX+s10, buttonY + buttonH - s8, Color.black, c0);
           
             // draw play/pause button
+            buttonX = buttonX+buttonW+s10;
             g.setFont(narrowFont(18));
-            buttonY += (buttonH+s5);
             playBox.setBounds(buttonX, buttonY, buttonW, buttonH);
             key = "3";
             label = paused ? text("HISTORY_PLAY") : text("HISTORY_PAUSE");
@@ -434,8 +429,8 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             drawShadowedString(g, key, buttonX+s10, buttonY + buttonH - s8, Color.black, c0);
           
             // draw exit button
+            buttonX = buttonX+buttonW+s10;
             g.setFont(narrowFont(18));
-            buttonY += (buttonH+s5);
             exitBox.setBounds(buttonX, buttonY, buttonW, buttonH);
             key = "4";
             label = text("HISTORY_EXIT");
@@ -548,10 +543,10 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             map = new GalaxyMapPanel(this);
             map.setBounds(0,0,w,h);
 
-            int spyW = scaled(250);
-            int spyH = scaled(250);
+            int bpW = scaled(400);
+            int bpH = scaled(50);
             buttonsPanel = new HistoryButtonsPanel();
-            buttonsPanel.setBounds(w-spyW-s5,h-spyH-s5,spyW,spyH);
+            buttonsPanel.setBounds((w-bpW)/2,h-bpH-s25,bpW,bpH);
 
             setLayout(new BorderLayout());
             add(layers, BorderLayout.CENTER);
@@ -565,7 +560,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         @Override
         public void drawTitle(Graphics2D g) { 
             int w = getWidth();
-            g.setFont(narrowFont(24));
+            g.setFont(narrowFont(30));
             String title;
             if (showAll)
                 title = text("HISTORY_TITLE_ALL");
@@ -576,6 +571,16 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             int sw = g.getFontMetrics().stringWidth(title);
             g.setColor(SystemPanel.whiteText);
             g.drawString(title, (w-sw)/2, s24);
+        }
+        @Override
+        public void drawYear(Graphics2D g) { 
+            int w = getWidth();
+            int h = getHeight();
+            g.setFont(narrowFont(30));
+            String title = text("HISTORY_TURN_DESC",str(turn), str(maxTurn));
+            int sw = g.getFontMetrics().stringWidth(title);
+            g.setColor(SystemPanel.whiteText);
+            g.drawString(title, w-sw-s35, h-s25);
         }
         @Override
         public boolean suspendAnimationsDuringNextTurn()    { return false; }

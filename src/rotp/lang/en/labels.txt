@@ -690,7 +690,6 @@ MAIN_JAVA_32BIT_DESC_2            | Although Remnants of the Precursors will fun
 MAIN_JAVA_32BIT_DESC_3            | If you need assistance in upgrading Java, please go online to www.reddit.com/r/rotp and ask for assistance.
 MAIN_JAVA_32BIT_OK                | OK
 
-
 // Memory Low Warning
 MAIN_MEMORY_LOW_TITLE             | Warning! Game Memory Low
 MAIN_MEMORY_LOW_DESC              | Memory available for this game is running low. This can be caused by extended play or not starting with enough free memory.
