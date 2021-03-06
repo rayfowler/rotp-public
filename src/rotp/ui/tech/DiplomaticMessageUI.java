@@ -249,7 +249,7 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
         
         // draw empire info
         if (!diplomatEmpire.isPlayer()) {
-            int empY = fY+fH+s20;
+            int empY = scaled(420);
             g.setFont(narrowFont(24));
             g.setColor(SystemPanel.whiteText);
             String s = diplomatEmpire.name();
