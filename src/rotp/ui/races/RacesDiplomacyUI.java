@@ -1235,7 +1235,7 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         if (!view.diplomats())
             return;
         
-        DiplomaticMessage.show(parent.selectedEmpire().viewForEmpire(player()), DialogueManager.DIPLOMACY_GREETING);     
+        DiplomaticMessage.show(parent.selectedEmpire().viewForEmpire(player()), DialogueManager.DIPLOMACY_MAIN_MENU);     
     }
     public void openManageDiplomatsPane() {
         softClick();

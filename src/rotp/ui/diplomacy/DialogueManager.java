@@ -35,7 +35,6 @@ public class DialogueManager implements Base {
     public static final String CONTACT_AGGRESSIVE       = "Contact-Aggressive";
     public static final String CONTACT_XENOPHOBIC       = "Contact-Xenophobic";
     public static final String CONTACT_ERRATIC          = "Contact-Erratic";
-    public static final String DIPLOMACY_GREETING       = "DiplomacyGreeting";
     public static final String DIPLOMACY_MAIN_MENU      = "DiplomacyMainMenu";
     public static final String DIPLOMACY_TRADE_MENU     = "DiplomacyTradeMenu";
     public static final String DIPLOMACY_OFFER_TECH_MENU  = "DiplomacyOfferTechMenu";
@@ -174,7 +173,6 @@ public class DialogueManager implements Base {
         addMessage(new TurnNotificationMessage(CONTACT_AGGRESSIVE));
         addMessage(new TurnNotificationMessage(CONTACT_XENOPHOBIC));
         addMessage(new TurnNotificationMessage(CONTACT_ERRATIC));
-        addMessage(new SimpleMessage(DIPLOMACY_GREETING, DIPLOMACY_MAIN_MENU));
         addMessage(new DiplomacyMainMenu(DIPLOMACY_MAIN_MENU));
         addMessage(new DiplomacyTradeMenu(DIPLOMACY_TRADE_MENU));
         addMessage(new DiplomacyTechRequestMenu(DIPLOMACY_TECH_REQ_MENU));

@@ -11,11 +11,6 @@ Contact-Aggressive     |  77  | CONTACT_AGGRESSIVE
 Contact-Xenophobic     |  77  | CONTACT_XENOPHOBIC
 Contact-Erratic        |  77  | CONTACT_ERRATIC
 
-// Ambassador greeetings, differs by relations
-DiplomacyGreeting      |  47  | GREETING_01
-DiplomacyGreeting      |  27  | GREETING_04 
-DiplomacyGreeting      |  17  | GREETING_07
-
 // Declarations of War, generally differs by power
 DeclareWar-Hate        |  74  | DECLAREWAR_HATE_01
 DeclareWar-Hate        |  72  | DECLAREWAR_HATE_02
@@ -76,9 +71,9 @@ TransportsKilled          |  77  | NOTICE_TRANSPORTS_KILLED
 EnemyTransportsKilled     |  77  | NOTICE_ENEMY_TRANSPORTS_KILLED
 
 // Menu prompt: displayed when showing diplomacy options
-DiplomacyMainMenu        |  47  | DIPLO_MAIN_MENU_01
-DiplomacyMainMenu        |  27  | DIPLO_MAIN_MENU_02
-DiplomacyMainMenu        |  17  | DIPLO_MAIN_MENU_03
+DiplomacyMainMenu        |  47  | GREETING_01
+DiplomacyMainMenu        |  27  | GREETING_04
+DiplomacyMainMenu        |  17  | GREETING_07
 DiplomacyTradeMenu       |  77  | DIPLO_TRADE_MENU_01
 DiplomacyTechRequestMenu |  77  | DIPLO_TECH_REQUEST_MENU_01
 DiplomacyTechCounterMenu |  77  | DIPLO_TECH_COUNTER_MENU_01

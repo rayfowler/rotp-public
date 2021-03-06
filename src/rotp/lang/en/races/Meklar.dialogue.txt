@@ -77,10 +77,6 @@ PRAISE_TRADE_01            | Dominion and [your_race] species continue to gain m
 PRAISE_TRADE_02            | Dominion expresses satisfaction at trade agreement with [your_race] species. Ensure agreement endures so that both races profit from each other. 
 PRAISE_REBELLING_WITH_01     | Dominion agrees Galactic Council ruler untrustworthy. [your_race] species objection noted. Dominion will aid [your_race] species in rebellion. 
  
-
-DIPLO_MAIN_MENU_01           | Specify request.
-DIPLO_MAIN_MENU_02           | Specify request.
-DIPLO_MAIN_MENU_03           | Specify request.
 DIPLO_TECH_REQUEST_MENU_01   | Specify technology.
 DIPLO_TECH_COUNTER_MENU_01   | Specify compensation.
 DIPLO_TRADE_MENU_01          | Specify magnitude.
