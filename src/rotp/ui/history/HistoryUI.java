@@ -72,6 +72,9 @@ public final class HistoryUI extends BasePanel implements MouseListener {
     static final Color borderLight1 = new Color(151,112,90);
     static final Color borderShade0 = new Color(85,64,47);
     static final Color borderShade1 = new Color(62,60,108);
+    static final Color sliderBoxC = new Color(34,140,142);
+    static final Color sliderBackC = Color.black;
+    static final Color sliderBorderC = Color.lightGray;
 
     LinearGradientPaint backGradient ;
     private GalaxyMapPane mapPane;
@@ -168,6 +171,13 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         controls.add(new ZoomOutWidgetSprite(10,60,30,30));
         controls.add(new ZoomInWidgetSprite(10,25,30,30));
         initModel();
+    }
+    public void setTurn(int n) {
+        if ((n < 0) || (n > maxTurn))
+            return;
+        turn = n;
+        map.clearRangeMap();
+        repaint();
     }
     public void nextTurn() {
         if (turn >= maxTurn)
@@ -319,12 +329,13 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         private final Rectangle nextTurnBox = new Rectangle();
         private final Rectangle playBox = new Rectangle();
         private final Rectangle exitBox = new Rectangle();
+        private final Rectangle sliderBox = new Rectangle();
         private Shape hoverTarget;
         Shape textureClip;
+        int sliderX, sliderW;
         
         public HistoryButtonsPanel() {
             init();
-            setPreferredSize(new Dimension(scaled(400),scaled(50)));
         }
         private void init() {
             setBackground(MainUI.paneBackground());
@@ -346,10 +357,13 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             
             textureClip = new Rectangle2D.Float(0, 0, w, h);
 
+            int numButtons = 4;
             int buttonW = s90;
             int buttonH = s30; // -s25 is because 4 buttons at -s5 spacing/button
-            int buttonX = s5;
-            int buttonY = h-buttonH-s10;
+            
+            int totalButtonSpacing = numButtons*(buttonW+s10);
+            int buttonX = (w-totalButtonSpacing)/2;
+            int buttonY = h-buttonH-s20;
             if (greenBackground == null) {
                 float[] dist = {0.0f, 0.5f, 1.0f};
                 Point2D ptStart = new Point2D.Float(buttonX, 0);
@@ -488,6 +502,36 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             g.setStroke(prevStr);
             x2a = buttonX + ((buttonW - sw) / 2);
             drawShadowedString(g, label, x2a, buttonY + buttonH - s8, Color.black, c0);
+            
+            
+            // draw slider bar
+            int sliderH = s10;
+            sliderW = scaled(500);
+            sliderX = (w-sliderW)/2;
+            int sliderY = (h-sliderH-s5);
+            sliderBox.setBounds(sliderX, sliderY, sliderW, sliderH);
+            int sliderW0 = min(sliderW, sliderW*turn/maxTurn);
+            if (sliderW > sliderW0) {
+                g.setColor(sliderBackC);
+                g.fill(sliderBox);
+            }
+            if (sliderW0 > 0) {
+                g.setColor(greenMidC);
+                g.fillRect(sliderX, sliderY, sliderW0, sliderH);
+            }
+            
+            if (hoverTarget == sliderBox) {
+                prevStr = g.getStroke();
+                g.setColor(Color.yellow);
+                g.setStroke(stroke2);
+                g.draw(sliderBox);
+                g.setStroke(prevStr);
+            }
+            else {
+                g.setColor(sliderBorderC);
+                g.draw(sliderBox);
+            }
+                    
         }
         @Override
         public void mouseClicked(MouseEvent e) { }
@@ -518,6 +562,11 @@ public final class HistoryUI extends BasePanel implements MouseListener {
                 exit();
                 return;
             }
+            else if (hoverTarget == sliderBox) {
+                int newTurn = maxTurn * (e.getX()-sliderX)/sliderW;
+                setTurn(newTurn);
+                return;
+            }
         }
         @Override
         public void mouseEntered(MouseEvent e) { }
@@ -546,6 +595,8 @@ public final class HistoryUI extends BasePanel implements MouseListener {
                 hoverTarget = playBox;
             else if (exitBox.contains(x,y))
                 hoverTarget = exitBox;
+            else if (sliderBox.contains(x,y))
+                hoverTarget = sliderBox;
 
             if (prevHover != hoverTarget) 
                repaint();
@@ -574,10 +625,10 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             map = new GalaxyMapPanel(this);
             map.setBounds(0,0,w,h);
 
-            int bpW = scaled(400);
-            int bpH = scaled(50);
+            int bpW = scaled(600);
+            int bpH = scaled(60);
             buttonsPanel = new HistoryButtonsPanel();
-            buttonsPanel.setBounds((w-bpW)/2,h-bpH-s25,bpW,bpH);
+            buttonsPanel.setBounds((w-bpW)/2,h-bpH-s15,bpW,bpH);
 
             setLayout(new BorderLayout());
             add(layers, BorderLayout.CENTER);

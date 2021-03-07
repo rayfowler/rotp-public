@@ -209,7 +209,7 @@ public final class GameOverUI extends FadeInPanel implements MouseListener, Mous
         g.setColor(SystemPanel.blackText);
         g.fillRoundRect(exitBox.x+s3, exitBox.y+s3, exitBox.width, exitBox.height, s8, s8);           
         hovering = hoverBox == exitBox;
-        g.setPaint(back1);
+        g.setPaint(back2);
         g.fillRoundRect(exitBox.x, exitBox.y, exitBox.width, exitBox.height, s8, s8);
         prevStr = g.getStroke();
         if (hovering) {
