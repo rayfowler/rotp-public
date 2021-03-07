@@ -57,10 +57,9 @@ public class RacesUI extends BasePanel {
     public static final Color darkBrown = new Color(112,85,68);
     public static final Color darkerBrown = new Color(75,55,39);
     public static final Color gradientBottom = new Color(110,79,56);
-    private static final Color raceEdgeColor = new Color(114,75,49);
-    private static final Color raceCenterColor = new Color(179,117,77);
+    private static final Color raceEdgeColor = new Color(8, 8, 8);
+    private static final Color raceCenterColor = new Color(255, 255, 255);
     static Color[] relationsC = new Color[40];
-    public static BufferedImage raceBackImg;
     public static BufferedImage raceIconBackImg;
     Rectangle diplomacyBox = new Rectangle();
     Rectangle intelligenceBox = new Rectangle();
@@ -941,7 +940,7 @@ public class RacesUI extends BasePanel {
             boxFor(emp).setBounds(x0,y0,w0,h0);
             g.setColor(darkBrown);
             g.fillRect(x0, y0, w0, h0);
-            BufferedImage back = raceBackImg();
+            BufferedImage back = raceBackImg(emp);
             int w1 = back.getWidth();
             int h1 = back.getHeight();
             int mgn = (h-h1)/2;
@@ -1056,26 +1055,70 @@ public class RacesUI extends BasePanel {
                 }
             }
         }
-        public BufferedImage raceBackImg() {
-            if (raceBackImg == null)
-                initRaceBackImg();
-            return raceBackImg;
+        public BufferedImage raceBackImg(Empire emp) {
+             
+            if (emp.raceBackImage() == null )
+                initRaceBackImg(emp);            
+            return emp.raceBackImage();
+               
         }
-        private void initRaceBackImg() {
+        private void initRaceBackImg(Empire emp) {
             int w = s76;
             int h = s82;
-            raceBackImg = gc().createCompatibleImage(w, h);
-
+            emp.setRaceBackImage(gc().createCompatibleImage(w, h));
+            
             Point2D center = new Point2D.Float(w/2, h/2);
             float radius = s78;
             float[] dist = {0.0f, 0.1f, 0.5f, 1.0f};
-            Color[] colors = {raceCenterColor, raceCenterColor, raceEdgeColor, raceEdgeColor};
+            // gradient - method 1 (less flexible)
+//            Color[] colors = {
+//                emp.color().brighter().brighter(), 
+//                emp.color().brighter().brighter(), 
+//                emp.color().darker().darker(), 
+//                emp.color().darker().darker()
+//            };
+            // gradient - method 2 - blending colors (more flexible)
+            Color[] colors = {
+                blendColor(raceCenterColor,emp.color(), 0.6f), 
+                blendColor(raceCenterColor,emp.color(), 0.6f),
+                blendColor(raceEdgeColor,emp.color(), 0.6f),
+                blendColor(raceEdgeColor,emp.color(), 0.6f)
+            };
+            
+            
             RadialGradientPaint p = new RadialGradientPaint(center, radius, dist, colors);
-            Graphics2D g = (Graphics2D) raceBackImg.getGraphics();
+            Graphics2D g = (Graphics2D) emp.raceBackImage().getGraphics();
             g.setPaint(p);
             g.fillRect(0, 0, w, h);
             g.dispose();
         }
+        
+        private Color blendColor( Color c1, Color c2, float ratio ) {
+            if ( ratio > 1f ) ratio = 1f;
+            else if ( ratio < 0f ) ratio = 0f;
+            float iRatio = 1.0f - ratio;
+
+            int i1 = c1.getRGB();
+            int i2 = c2.getRGB();
+
+            int a1 = (i1 >> 24 & 0xff);
+            int r1 = ((i1 & 0xff0000) >> 16);
+            int g1 = ((i1 & 0xff00) >> 8);
+            int b1 = (i1 & 0xff);
+
+            int a2 = (i2 >> 24 & 0xff);
+            int r2 = ((i2 & 0xff0000) >> 16);
+            int g2 = ((i2 & 0xff00) >> 8);
+            int b2 = (i2 & 0xff);
+
+            int a = (int)((a1 * iRatio) + (a2 * ratio));
+            int r = (int)((r1 * iRatio) + (r2 * ratio));
+            int g = (int)((g1 * iRatio) + (g2 * ratio));
+            int b = (int)((b1 * iRatio) + (b2 * ratio));
+
+            return new Color( a << 24 | r << 16 | g << 8 | b );
+        }        
+     
         private Rectangle boxFor(Empire emp) {
             if (!contactBoxes.containsKey(emp))
                 contactBoxes.put(emp, new Rectangle());
