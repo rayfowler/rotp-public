@@ -1803,6 +1803,7 @@ HISTORY_FORWARD                   | Forward
 HISTORY_BACK                      | Back
 HISTORY_PLAY                      | Play
 HISTORY_PAUSE                     | Pause
+HISTORY_RESET                     | Reset
 HISTORY_EXIT                      | Exit
 
 
@@ -1976,6 +1977,9 @@ GAME_OVER_REBELLION_WIN           | Rebellion Win
 GAME_OVER_REBEL_ALLIANCE_WIN      | Rebel Alliance Win
 GAME_OVER_ALLIANCE_WIN            | Alliance Win
 GAME_OVER_NO_COLONIES_LOSS        | Societal Collapse Loss
+
+GAME_OVER_EXIT                    | Exit
+GAME_OVER_REPLAY                  | Replay
 
 // text for race-generic endings
 // %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 special text

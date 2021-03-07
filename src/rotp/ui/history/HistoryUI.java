@@ -93,7 +93,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
 
     @Override
     public boolean drawMemory()            { return true; }
-    public void init(int empId, boolean all)       {
+    public void init(int empId, boolean all) {
         exited = false;
         backGradient = null;
         // reset map everytime we open
@@ -161,12 +161,6 @@ public final class HistoryUI extends BasePanel implements MouseListener {
                 setData(sysId,t,prevOwner);
         }
     }
-    public StarSystem systemToDisplay() {
-        if (mapPane.clickedSprite() instanceof StarSystem)
-            return (StarSystem) mapPane.clickedSprite();
-        else
-            return galaxy().system(player().capitalSysId());
-    }
     public HistoryUI() {
         instance = this;
         setBackground(Color.black);
@@ -194,6 +188,12 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         paused = !paused;
         repaint();
     }
+    public void reset() {
+        softClick();
+        turn = 0;
+        map.clearRangeMap();
+        repaint();                
+    }
     public void exit() {
         softClick();
         RotPUI.instance().mainUI().restoreMapState();
@@ -204,6 +204,9 @@ public final class HistoryUI extends BasePanel implements MouseListener {
     }
     private boolean canPreviousTurn() {
         return turn > 0;
+    }
+    public boolean canReset() {
+        return turn >= maxTurn;
     }
     private void initModel() {
         mapPane = new GalaxyMapPane();
@@ -251,8 +254,13 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             case KeyEvent.VK_B:
                 previousTurn();
                 break;
-            case KeyEvent.VK_3:
-                playPause();
+            case KeyEvent.VK_P:
+                if (!canReset())
+                    playPause();
+                break;
+            case KeyEvent.VK_R:
+                if (canReset())
+                    reset();
                 break;
             case KeyEvent.VK_E:
             case KeyEvent.VK_ESCAPE:
@@ -288,10 +296,8 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             String title;
             if (showAll)
                 title = text("HISTORY_TITLE_ALL");
-            else if (empire.isPlayer())
-                title = text("HISTORY_TITLE_PLAYER", empire.name());
-            else
-                title = text("HISTORY_TITLE_AI", empire.name());
+            else 
+                title = text("HISTORY_TITLE", empire.name());
                 
             g.setFont(narrowFont(35));
             int sw = g.getFontMetrics().stringWidth(title);
@@ -421,7 +427,12 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             buttonX = buttonX+buttonW+s10;
             g.setFont(narrowFont(18));
             playBox.setBounds(buttonX, buttonY, buttonW, buttonH);
-            label = paused ? text("HISTORY_PLAY") : text("HISTORY_PAUSE");
+            if (canReset())
+                label = text("HISTORY_RESET");
+            else if (paused)
+                label = text("HISTORY_PLAY");
+            else
+                label = text("HISTORY_PAUSE");
             sw = g.getFontMetrics().stringWidth(label);
             g.setColor(SystemPanel.blackText);
             g.fillRoundRect(buttonX+s3, buttonY+s3, buttonW, buttonH, s8, s8);           
@@ -496,7 +507,10 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             }
             else if ((hoverTarget == playBox)) {
                 softClick(); 
-                playPause();
+                if (canReset())
+                    reset();
+                else
+                    playPause();
                 return;
             }
             else if ((hoverTarget == exitBox)) {

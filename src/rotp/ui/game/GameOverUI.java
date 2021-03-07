@@ -21,25 +21,38 @@ import java.awt.Composite;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.LinearGradientPaint;
+import java.awt.Rectangle;
+import java.awt.Shape;
+import java.awt.Stroke;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 import rotp.model.empires.Empire;
 import rotp.model.empires.Race;
+import rotp.ui.BasePanel;
 import rotp.ui.FadeInPanel;
 import rotp.ui.RotPUI;
 import rotp.ui.main.GalaxyMapPanel;
+import rotp.ui.main.SystemPanel;
 
 public final class GameOverUI extends FadeInPanel implements MouseListener, MouseMotionListener, ActionListener {
     private static final long serialVersionUID = 1L;
     private static Composite[] trans;
+    private final Color greenEdgeC = new Color(44,59,30);
+    private final Color greenMidC = new Color(70,93,48);
     private int transIndex;
     BufferedImage backImg;
+    private LinearGradientPaint back1, back2;
+    Rectangle exitBox = new Rectangle();
+    Rectangle replayBox = new Rectangle();
+    Shape hoverBox;
     int fadeDelay = 0;
     public GameOverUI() {
         init0();
@@ -126,7 +139,7 @@ public final class GameOverUI extends FadeInPanel implements MouseListener, Mous
             g.setComposite(preComp);
         }
         if (textFinished())
-            drawSkipText(g, true);
+            drawButtons(g);
 
         drawOverlay(g);
         
@@ -145,6 +158,73 @@ public final class GameOverUI extends FadeInPanel implements MouseListener, Mous
             repaint();
             return;
         }
+    }
+    public void drawButtons(Graphics2D g) {
+        int w = getWidth();
+        int h = getHeight();
+        g.setFont(narrowFont(24));
+        String exitText = text("GAME_OVER_EXIT");
+        String replayText = text("GAME_OVER_REPLAY");
+        int sw0 = g.getFontMetrics().stringWidth(exitText);
+        int sw1 = g.getFontMetrics().stringWidth(replayText);
+        
+        exitBox.setBounds(w-sw0-s70, h-s45, sw0+s60, s40);
+        replayBox.setBounds(exitBox.x-s80-sw1, h-s45, sw1+s60, s40);
+        
+        if (back1 == null) {
+            float[] dist = {0.0f, 0.5f, 1.0f};
+            Color[] greenColors = {greenEdgeC, greenMidC, greenEdgeC};
+            Point2D pt1 = new Point2D.Float(replayBox.x, 0);
+            Point2D pt2 = new Point2D.Float(replayBox.x + replayBox.width, 0);
+            back1 = new LinearGradientPaint(pt1, pt2, dist, greenColors);                
+            pt1 = new Point2D.Float(exitBox.x, 0);
+            pt2 = new Point2D.Float(exitBox.x + exitBox.width, 0);
+            back2 = new LinearGradientPaint(pt1, pt2, dist, greenColors);                
+        }
+        
+        // draw replay button
+        g.setColor(SystemPanel.blackText);
+        g.fillRoundRect(replayBox.x+s3, replayBox.y+s3, replayBox.width, replayBox.height, s8, s8);           
+        boolean hovering = hoverBox == replayBox;
+        g.setPaint(back1);
+        g.fillRoundRect(replayBox.x, replayBox.y, replayBox.width, replayBox.height, s8, s8);
+        Stroke prevStr = g.getStroke();
+        Color c0;
+        if (hovering) {
+            c0 = SystemPanel.yellowText;
+            g.setStroke(stroke2);
+        }
+        else {
+            c0 = SystemPanel.whiteText;
+            g.setStroke(BasePanel.stroke1);              
+        }
+        g.setColor(c0);
+        g.drawRoundRect(replayBox.x, replayBox.y, replayBox.width, replayBox.height, s8, s8);
+        g.setStroke(prevStr);
+        int x2a = replayBox.x + ((replayBox.width - sw1) / 2);
+        drawShadowedString(g, replayText, x2a, replayBox.y + replayBox.height - s12, Color.black, c0);
+           
+        
+        // draw exit button
+        g.setColor(SystemPanel.blackText);
+        g.fillRoundRect(exitBox.x+s3, exitBox.y+s3, exitBox.width, exitBox.height, s8, s8);           
+        hovering = hoverBox == exitBox;
+        g.setPaint(back1);
+        g.fillRoundRect(exitBox.x, exitBox.y, exitBox.width, exitBox.height, s8, s8);
+        prevStr = g.getStroke();
+        if (hovering) {
+            c0 = SystemPanel.yellowText;
+            g.setStroke(stroke2);
+        }
+        else {
+            c0 = SystemPanel.whiteText;
+            g.setStroke(BasePanel.stroke1);              
+        }
+        g.setColor(c0);
+        g.drawRoundRect(exitBox.x, exitBox.y, exitBox.width, exitBox.height, s8, s8);
+        g.setStroke(prevStr);
+        x2a = exitBox.x + ((exitBox.width - sw0) / 2);
+        drawShadowedString(g, exitText, x2a, exitBox.y + exitBox.height - s12, Color.black, c0);
     }
     public String gameOverTitle() {
         if (session().status().lostOverthrown())
@@ -242,13 +322,32 @@ public final class GameOverUI extends FadeInPanel implements MouseListener, Mous
     @Override
     public void mouseDragged(MouseEvent e) { }
     @Override
-    public void mouseMoved(MouseEvent e) { }
+    public void mouseMoved(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
+
+        Shape prevHover = hoverBox;
+        hoverBox = null;
+
+        if (exitBox.contains(x,y))
+            hoverBox = exitBox;
+        else if (replayBox.contains(x,y))
+            hoverBox = replayBox;
+
+        if (prevHover != hoverBox) 
+           repaint();
+    }
     @Override
     public void mouseClicked(MouseEvent arg0) { }
     @Override
     public void mouseEntered(MouseEvent arg0) { }
     @Override
-    public void mouseExited(MouseEvent arg0) { }
+    public void mouseExited(MouseEvent e) {
+        if (hoverBox != null) {
+            hoverBox = null;
+            repaint();
+        }
+    }
     @Override
     public void mousePressed(MouseEvent arg0) {}
     @Override
@@ -257,7 +356,16 @@ public final class GameOverUI extends FadeInPanel implements MouseListener, Mous
             return;
         if (!textFinished())
             return;
-        advanceMode();
+        if (hoverBox == exitBox) {
+            softClick(); 
+            advanceMode();
+            return;
+        }
+        else if (hoverBox == replayBox) {
+            softClick(); 
+            RotPUI.instance().selectHistoryPanel(player().id, true);
+            return;
+        }
     }
     @Override
     public void keyPressed(KeyEvent e) {
