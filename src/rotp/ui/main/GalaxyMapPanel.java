@@ -357,7 +357,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         setScale(scaleY());
         //log("map scale:", fmt(scaleX(),2), "@", fmt(scaleY(),2), "  center:", fmt(center().x(),2), "@", fmt(center().y(),2), "  x-rng:", fmt(mapMinX()), "-", fmt(mapMaxX(),2), "  y-rng:", fmt(mapMinY()), "-", fmt(mapMaxY(),2));
         drawBackground(g2);
-        if (showStars()) {
+        if (parent.drawBackgroundStars() && showStars()) {
             float alpha = 8/5*sizeX()/scaleX();
             Composite prev = g2.getComposite();
             if (alpha < 1) {
@@ -698,6 +698,8 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         }
     }
     public void drawShips(Graphics2D g) {
+        if (!parent.drawShips())
+            return;
         Empire pl = player();
         // comodification exception here without this copy
         List<Ship> visibleShips = new ArrayList<>(pl.visibleShips());
@@ -761,11 +763,11 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             if (sprite.isSelectableAt(this, x1, y1))
                 return sprite;
         }
-        for (Sprite sprite: baseControls) {
+        for (Sprite sprite: parent.controlSprites()) {
             if (sprite.isSelectableAt(this, x1, y1))
                 return sprite;
         }
-        for (Sprite sprite: parent.controlSprites()) {
+        for (Sprite sprite: baseControls) {
             if (sprite.isSelectableAt(this, x1, y1))
                 return sprite;
         }

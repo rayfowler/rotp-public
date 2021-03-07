@@ -201,6 +201,7 @@ public class MainUI extends BasePanel implements IMapHandler {
         baseControls.add(alertDismissSprite);
         baseControls.add(helpSprite);
     }
+    @Override
     public boolean showAlerts() {
         return (session().currentAlert() != null) && displayPanel.isVisible();
     }

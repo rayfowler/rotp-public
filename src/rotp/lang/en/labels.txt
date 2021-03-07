@@ -1796,12 +1796,11 @@ NOTICE_SPYING_MISSION_ESPIONAGE   | Espionage
 NOTICE_SPYING_MISSION_SABOTAGE    | Sabotage
 
 // History UI
-HISTORY_TITLE_PLAYER              | History of the %1
-HISTORY_TITLE_AI                  | Known History of the %1
+HISTORY_TITLE                     | Known Galactic History
 HISTORY_TITLE_ALL                 | Full Galactic History
 HISTORY_TURN_DESC                 | Turn %1 of %2
-HISTORY_NEXT_TURN                 | Next Turn
-HISTORY_PREV_TURN                 | Previous Turn
+HISTORY_FORWARD                   | Forward
+HISTORY_BACK                      | Back
 HISTORY_PLAY                      | Play
 HISTORY_PAUSE                     | Pause
 HISTORY_EXIT                      | Exit

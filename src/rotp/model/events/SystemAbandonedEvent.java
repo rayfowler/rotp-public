@@ -18,7 +18,6 @@ package rotp.model.events;
 
 import java.io.Serializable;
 import rotp.model.empires.Empire;
-import rotp.ui.UserPreferences;
 import rotp.util.Base;
 
 public class SystemAbandonedEvent  implements Base, Serializable, StarSystemEvent {

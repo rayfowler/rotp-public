@@ -508,7 +508,8 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         if ((emp != null) && map.parent().showOwnerReach(this))
             drawOwnerReach(g2, map, emp, x0, y0);
 
-        if (map.parent().drawStar(this)) {
+        boolean drawStar = map.parent().drawStar(this);
+        if (drawStar) {
             if (map.parent().showAlerts()) {
                 SystemView sv = pl.sv.view(id);
                 Color c0 = map.parent().alertColor(sv);
@@ -542,7 +543,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             }
         }
         
-        if (map.scaleX() <= GalaxyMapPanel.MAX_FLAG_SCALE) {
+        if (map.parent().drawFlag(this) && (map.scaleX() <= GalaxyMapPanel.MAX_FLAG_SCALE)) {
             Image flag = pl.sv.mapFlagImage(id);
             if (flag != null) {
                 int sz = BasePanel.s30;
@@ -561,7 +562,10 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         int realFontSize = unscaled(fontSize);
         if (map.parent().showSystemData(this))
             fontSize = fontSize * 7 / 10;
-            
+        
+        if (realFontSize < 8)
+            return;
+        
         if (map.parent().showSystemName(this) || !colonized || (realFontSize < 12)) {
             String s1 = map.parent().systemLabel(this);
             String s2 = map.parent().systemLabel2(this);
@@ -573,7 +577,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
                 g2.setColor(map.parent().systemLabelColor(this));
                 int sw = g2.getFontMetrics().stringWidth(s1);
                 int boxSize = r0;
-                int yAdj = scaled(fontSize)+boxSize;
+                int yAdj = drawStar ? scaled(fontSize)+boxSize : scaled(fontSize)/2;
                 if (!s1.isEmpty()) {
                     g2.drawString(s1, x0-(sw/2), y0+yAdj);
                     y0 += scaled(fontSize-2);
@@ -617,7 +621,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
                 int swData = g2.getFontMetrics().stringWidth(lbl);
                 int boxW = max(sw, swData)+mgn;
                 int boxSize = r0;
-                int yAdj = scaled(fontSize)+boxSize;
+                int yAdj = drawStar ? scaled(fontSize)+boxSize : scaled(fontSize)/2;
                 int fontH = scaled(fontSize);
                 int cnr = fontH/2;
                 int x0a = x0-(boxW/2);
