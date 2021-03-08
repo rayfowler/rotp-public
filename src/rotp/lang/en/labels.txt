@@ -954,8 +954,9 @@ TECH_COMPLETED_VERIFY             | Verify that spending allocations in the rema
 
 // prompt for espionage
 NOTICE_ESPIONAGE_TITLE            | Our spies have infiltrated a %1 base.
-NOTICE_ESPIONAGE_SUBTITLE         | Select a technology to steal.
+NOTICE_ESPIONAGE_SUBTITLE         | Select a technology type to steal.
 NOTICE_ESPIONAGE_NO_TECH          | No Available Technology
+NOTICE_ESPIONAGE_MANY_TECHS       | %1 Available Technologies
 NOTICE_ESPIONAGE_FOOTER           | If noticed, this may cause a Diplomatic Incident.
 NOTICE_ESPIONAGE_FRAME_TITLE      | Our spies have managed to frame another race for the theft.
 NOTICE_ESPIONAGE_FRAME_SUBTITLE   | Choose the victim race:

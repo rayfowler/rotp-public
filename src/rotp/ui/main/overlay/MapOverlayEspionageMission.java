@@ -26,6 +26,7 @@ import java.awt.geom.Area;
 import java.awt.geom.Ellipse2D;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
+import java.util.List;
 import rotp.Rotp;
 import rotp.model.Sprite;
 import rotp.model.empires.Empire;
@@ -64,7 +65,7 @@ public class MapOverlayEspionageMission extends MapOverlay {
             categorySprites[i] = new TechCategorySprite(this,i);
     }
     public boolean canSelect(int catNum) {
-        return (mission.inCategory(TechCategory.id(catNum)) != null);
+        return (mission.techChoice(TechCategory.id(catNum)) != null);
     }
     public void espionageCategorySelected() {
         if (drawSprites) {
@@ -93,10 +94,13 @@ public class MapOverlayEspionageMission extends MapOverlay {
             techCategoryHoverButton = ((TechCategorySprite) o).categoryNum();
         if (prevHover != techCategoryHoverButton) {
             Graphics2D g = (Graphics2D) parent.map().getGraphics();
+            parent.map().repaint();
+            /*
             if (prevHover >= 0)
                 paintTechCategoryButton(g, categorySprites[prevHover]);
             if (techCategoryHoverButton >= 0)
                 paintTechCategoryButton(g, categorySprites[techCategoryHoverButton]);
+            */
         }
         return true;
     }
@@ -256,14 +260,30 @@ public class MapOverlayEspionageMission extends MapOverlay {
             grayBack2 = new LinearGradientPaint(start, end, dist, grays);
             greenBack2 = new LinearGradientPaint(start, end, dist, greens);
         }
-        paintTechCategoryButton(g, 0, catX1, catY1, catW, catH);
-        paintTechCategoryButton(g, 1, catX2, catY1, catW, catH);
+        int[] catX = { catX1, catX2, catX1, catX2, catX1, catX2 };
+        int[] catY = { catY1, catY1, catY2, catY2, catY3, catY3 };
+        
+        int hover = techCategoryHoverButton;
+        
+        // paint all of the non-hovering categories first
+        if (hover != 0)
+            paintTechCategoryButton(g, 0, catX1, catY1, catW, catH);
+        if (hover != 1)
+            paintTechCategoryButton(g, 1, catX2, catY1, catW, catH);
 
-        paintTechCategoryButton(g, 2, catX1, catY2, catW, catH);
-        paintTechCategoryButton(g, 3, catX2, catY2, catW, catH);
+        if (hover != 2)
+            paintTechCategoryButton(g, 2, catX1, catY2, catW, catH);
+        if (hover != 3)
+            paintTechCategoryButton(g, 3, catX2, catY2, catW, catH);
 
-        paintTechCategoryButton(g, 4, catX1, catY3, catW, catH);
-        paintTechCategoryButton(g, 5, catX2, catY3, catW, catH);
+        if (hover != 4)
+            paintTechCategoryButton(g, 4, catX1, catY3, catW, catH);
+        if (hover != 5)
+            paintTechCategoryButton(g, 5, catX2, catY3, catW, catH);
+        
+        // paint the hovering category last since it can overwrite the others
+        if (hover >= 0)
+            paintTechCategoryButton(g, hover, catX[hover], catY[hover], catW, catH);
     }
     @Override
     public void advanceMap() {
@@ -272,7 +292,7 @@ public class MapOverlayEspionageMission extends MapOverlay {
     void paintTechCategoryButton(Graphics2D g, TechCategorySprite spr) {
         paintTechCategoryButton(g, spr.categoryNum(), spr.box().x, spr.box().y, spr.box().width, spr.box().height);
     }
-    void paintTechCategoryButton(Graphics2D g, int catNum, int x, int y, int w, int h) {
+    void paintTechCategoryButton(Graphics2D g, int catNum, int x, int y, int w, int h0) {
         // determine which green/gray gradients to use
         LinearGradientPaint grayBack, greenBack;
         if (catNum % 2 == 0) {
@@ -284,17 +304,35 @@ public class MapOverlayEspionageMission extends MapOverlay {
             greenBack = greenBack2;
         }
 
+        // set mouse bounds for button
+        categorySprites[catNum].setBounds(x,y,w,h0);
+        
+        int h = h0;
+        int lineH = BasePanel.s20;
+        List<String> techList = mission.possibleTechs(TechCategory.id(catNum));
+        if ((techCategoryHoverButton == catNum) && (techList.size() > 1)) {
+            h = h+(techList.size()*lineH);
+        }
+        
+        
         // draw shadow around button
         int bdr = BasePanel.s3;
         g.setPaint(MainUI.darkShadowC);
         g.fillRect(x+bdr, y+bdr, w, h);
 
-        Tech tech = mission.inCategory(TechCategory.id(catNum));
-        // draw button background gradient
-        if (tech != null)
-            g.setPaint(greenBack);
+        String techDesc;
+        if (techList.isEmpty()) 
+            techDesc = text("NOTICE_ESPIONAGE_NO_TECH");
+        else if (techList.size() > 1) 
+            techDesc = text("NOTICE_ESPIONAGE_MANY_TECHS", str(techList.size()));
         else
+            techDesc = tech(techList.get(0)).name();
+
+        // draw button background gradient
+        if (techList.isEmpty())
             g.setPaint(grayBack);
+        else
+            g.setPaint(greenBack);
         g.fillRect(x, y, w, h);
 
         // draw button border
@@ -313,23 +351,28 @@ public class MapOverlayEspionageMission extends MapOverlay {
         int xc = x+(w-sw)/2;
         Color c0;
         
-        if (tech == null)
+        if (techList.isEmpty())
             c0 = SystemPanel.grayText;
         else if (techCategoryHoverButton == catNum)
             c0 = Color.yellow;
         else
             c0 = Color.white;
         
-        drawShadowedString(g, s, 3, xc, y+BasePanel.s20, MainUI.darkShadowC, c0);
+        int y1 = y+lineH;
+        drawShadowedString(g, s, 3, xc, y1, MainUI.darkShadowC, c0);
         
-        String techName = tech == null ? text("NOTICE_ESPIONAGE_NO_TECH") : tech.name();
-        scaledFont(g, techName, w-BasePanel.s10, 16, 12);
-        int sw1 = g.getFontMetrics().stringWidth(techName);
-        int x1 = x+(w-sw1)/2;
-           
-        drawShadowedString(g, techName, 1, x1, y+h-BasePanel.s7, MainUI.darkShadowC, c0);
-
-        // set mouse bounds for button
-        categorySprites[catNum].setBounds(x, y, w, h);        
+        scaledFont(g, techDesc, w-BasePanel.s10, 16, 12);
+        int sw1 = g.getFontMetrics().stringWidth(techDesc);
+        int x1 = x+(w-sw1)/2;      
+        y1 += lineH;
+        drawShadowedString(g, techDesc, 1, x1, y1, MainUI.darkShadowC, c0);
+        
+        if ((techCategoryHoverButton == catNum) && (techList.size() > 1)) {
+            for (String tId: techList) {
+                Tech t = tech(tId);
+                y1 += lineH;
+                drawShadowedString(g, t.name(), 1, x+BasePanel.s10, y1, MainUI.darkShadowC, c0);
+            }
+        }  
     }
 }

@@ -35,10 +35,11 @@ public class EspionageMission implements Base, Serializable {
     // map of category ids and id of highest-rated available tech
     private final HashMap<String, String> techChoices = new HashMap<>();
     private final List<Empire> empiresToFrame = new ArrayList<>();
+    private final HashMap<String, List<String>> techPossibles = new HashMap<>();
 
     public StarSystem targetSystem()   { return targetSystem; }
 
-    public EspionageMission(SpyNetwork sn, Spy s, List<Tech> techs, StarSystem target) {
+    public EspionageMission(SpyNetwork sn, Spy s, List<Tech> techs, StarSystem target, List<Tech> possibleTechs) {
         spies = sn;
         spy = s;
         targetSystem = target;
@@ -48,6 +49,9 @@ public class EspionageMission implements Base, Serializable {
             Tech currTech = tech(currTechId);
             if ((currTech == null) || (currTech.level < t.level))
                 techChoices.put(catId, t.id());
+            if (!techPossibles.containsKey(catId))
+                techPossibles.put(catId, new ArrayList<String>());
+            techPossibles.get(catId).add(t.id());
         }
 
         // build a list of potential empires to frame. Both the spy and victim
@@ -99,6 +103,7 @@ public class EspionageMission implements Base, Serializable {
     public boolean canFrame()             { return spy.canFrame() && (empiresToFrame.size() > 1); }
     public boolean hasFramed()            { return framedEmpire != null; }
     public Empire framedEmpire()          { return framedEmpire; }
-    public Tech inCategory(String id)     { return tech(techChoices.get(id)); }
+    public Tech techChoice(String id)     { return tech(techChoices.get(id)); }
     public List<Empire> empiresToFrame()  { return empiresToFrame; }
+    public List<String> possibleTechs(String id)  { return techPossibles.containsKey(id) ? techPossibles.get(id) : new ArrayList<>(); }
 }

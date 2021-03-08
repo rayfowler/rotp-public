@@ -41,7 +41,7 @@ public class TechCategorySprite extends MapSprite {
         selectBox.setBounds(x,y,w,h);
     }
     public void espionage(EspionageMission ct) { mission = ct; }
-    private Tech tech()   { return mission.inCategory(categoryId()); }
+    private Tech tech()   { return mission.techChoice(categoryId()); }
 
     @Override
     public boolean isSelectableAt(GalaxyMapPanel map, int x, int y) {

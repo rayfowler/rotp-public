@@ -686,7 +686,7 @@ public final class GameSession implements Base, Serializable {
                 techs.add(tech(random(view.empire().tech().category(i).allTechs())));
             techs.remove(random(techs)); // one blank category
             Spy spy = (new Spy(view.spies())).makeSuper();
-            EspionageMission mission = new EspionageMission(view.spies(), spy, techs,espionageSystem);
+            EspionageMission mission = new EspionageMission(view.spies(), spy, techs,espionageSystem, techs);
             StealTechNotification.create(mission, espionageEmpire.id);
             for (EmpireView v: player().empireViews())
                 if ((v != null) && (v.empire() != view.empire()))

@@ -380,10 +380,12 @@ public final class SpyNetwork implements Base, Serializable {
         if (bestSpy == null)
             return;
 
+        List<Tech> allPossible = new ArrayList<>();
         // build list of techs at or below the steal number
         List<Tech> espionageChoices = new ArrayList<>();
         for (String tId: possibleTechs()) {
             Tech pTech = tech(tId);
+            allPossible.add(pTech);
             if (pTech.level() <= bestStealNumber)
                 espionageChoices.add(pTech);
         }
@@ -392,7 +394,7 @@ public final class SpyNetwork implements Base, Serializable {
         if (espionageChoices.isEmpty())
             return;
 
-        EspionageMission eMission = chooseTechToSteal(bestSpy, espionageChoices);
+        EspionageMission eMission = chooseTechToSteal(bestSpy, espionageChoices, allPossible);
         
         report().stolenTech(eMission.stolenTech());
         Empire framedEmpire = eMission.framedEmpire();
@@ -417,16 +419,16 @@ public final class SpyNetwork implements Base, Serializable {
         if (bestSpy.caught())
             checkForTreatyBreak();
     }
-    private EspionageMission chooseTechToSteal(Spy spy, List<Tech> techs) {
-        if (techs.isEmpty())
+    private EspionageMission chooseTechToSteal(Spy spy, List<Tech> topTechs, List<Tech> possibleTechs) {
+        if (topTechs.isEmpty())
             return null;
 
         StarSystem randomSystem = random(empire().allColonizedSystems());
-        EspionageMission eMission = new EspionageMission(this, spy, techs, randomSystem);
+        EspionageMission eMission = new EspionageMission(this, spy, topTechs, randomSystem, possibleTechs);
 
         // ai will choose now.. player choice is deferred until UI is displayed
         if (owner().isAIControlled()) {
-            eMission.stealTech(owner().ai().scientist().mostDesirableTech(techs));
+            eMission.stealTech(owner().ai().scientist().mostDesirableTech(topTechs));
             if (eMission.canFrame())
                 eMission.frameEmpire(owner().spyMasterAI().suggestToFrame(eMission.empiresToFrame()));
         }
