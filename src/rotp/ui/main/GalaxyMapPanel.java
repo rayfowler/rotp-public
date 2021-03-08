@@ -374,6 +374,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
 
         drawNebulas(g2);
         drawStarSystems(g2);
+        drawEmpireNames(g2);
         drawShips(g2);
         drawWorkingFlightPaths(g2);
         parent.drawYear(g2);
@@ -683,6 +684,12 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         for (Nebula neb: galaxy().nebulas()) {
             if (parent.shouldDrawSprite(neb))
                 neb.draw(this, g);
+        }
+    }
+    public void drawEmpireNames(Graphics2D g) {
+        for (Empire emp: galaxy().empires()) {
+            if (parent.drawEmpireName(emp)) 
+                emp.draw(this, g);
         }
     }
     public void drawStarSystems(Graphics2D g) {

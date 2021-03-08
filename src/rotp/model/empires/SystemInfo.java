@@ -56,7 +56,7 @@ public class SystemInfo implements Serializable, Base {
     public String descriptiveName(int i) { return missing(i) ? "" : view(i).descriptiveName(); }
     public StarSystem system(int i)      { return galaxy().system(i); }
     public Empire empire(int i)          { return missing(i) ? null : view(i).empire(); }
-    public int empId(int i)              { return id(empire(i)); }
+    public int empId(int i)              { return view(i).empId(); }
     public Colony colony(int i)          { return missing(i) ? null : view(i).colony(); }
     public PlanetType planetType(int i)  { return view(i).planetType(); }
     public float distance(int i)        { return distances[i]; }

@@ -396,6 +396,7 @@ public final class GameSession implements Base, Serializable {
                 NoticeMessage.resetSubstatus(text("TURN_REFRESHING"));
                 validate();
                 gal.refreshEmpireViews(player());
+                player().setEmpireMapAvgCoordinates();
 
                 log("Autosaving post-turn");
                 log("NEXT TURN PROCESSING TIME: ", str(timeMs()-startMs));
@@ -900,6 +901,8 @@ public final class GameSession implements Base, Serializable {
 
         Galaxy gal = this.galaxy();
         Empire pl = player();
+        pl.setEmpireMapAvgCoordinates();
+        
         float minX = gal.width();
         float minY = gal.height();
         float maxX = 0;
