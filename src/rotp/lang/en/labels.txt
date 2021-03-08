@@ -1805,6 +1805,9 @@ HISTORY_PLAY                      | Play
 HISTORY_PAUSE                     | Pause
 HISTORY_RESET                     | Reset
 HISTORY_EXIT                      | Exit
+HISTORY_EXTINCT                   | Extinct
+HISTORY_SYSTEMS                   | Systems
+HISTORY_EMPIRE                    | Empire
 
 
 

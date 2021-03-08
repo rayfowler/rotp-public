@@ -33,6 +33,7 @@ import java.awt.geom.Point2D;
 import java.awt.geom.Rectangle2D;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import javax.swing.JLayeredPane;
 import javax.swing.border.Border;
@@ -62,7 +63,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
     static Color dataBackground = new Color(94,71,53);
     static Color titleColor = new Color(114,155,201);
     private static final Color shadeBorderC = new Color(80,80,80);
-	static final Color dataBorders = new Color(160,160,160);
+    static final Color dataBorders = new Color(160,160,160);
 
     static final Color paneBorderDarker = new Color(61,41,28);
     static final Color paneBorderDark = new Color(76,57,41);
@@ -91,8 +92,10 @@ public final class HistoryUI extends BasePanel implements MouseListener {
     int turn = 0;
     int maxTurn = 0;
     int numSystems = 1;
-    byte[] data;
-    
+    int numEmps = 1;
+    byte[] sysData;
+    int[] empData;
+    List<Empire> sortedEmpires = new ArrayList<>();
 
     @Override
     public boolean drawMemory()            { return true; }
@@ -112,22 +115,39 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         animationIndex = 0;
         turn = 0;
         numSystems = galaxy().numStarSystems();
-        maxTurn = galaxy().numberTurns()-1;
+        numEmps = galaxy().numEmpires();
+        maxTurn = galaxy().numberTurns();
         empire = galaxy().empire(empId);
         showAll = all;
         paused = true;
         
+        sortedEmpires.clear();
+        sortedEmpires.addAll(Arrays.asList(galaxy().empires()));
+        
         initOwnershipData();
+        sortEmpireList();
     }
-    public byte data(int sys, int turn) {
-        return data[(turn*numSystems)+sys];
+    public void sortEmpireList() {
+        for (Empire emp: sortedEmpires) 
+            emp.numColoniesHistory = empData(emp.id, turn);
+        
+        Collections.sort(sortedEmpires, Empire.HISTORICAL_SIZE);
     }
-    public void setData(int sys, int turn, int empId) {
-        data[(turn*numSystems)+sys] = (byte)empId;
+    public byte sysData(int sys, int t) {
+        return sysData[(t*numSystems)+sys];
+    }
+    public int empData(int emp, int t) {
+        return empData[(t*numEmps)+emp];
+    }
+    public void setData(int sys, int t, int empId) {
+        sysData[(t*numSystems)+sys] = (byte)empId;
+        empData[(t*numEmps)+empId]++;
     }
     private void initOwnershipData() {
-        data = new byte[numSystems*(maxTurn+1)];
-        Arrays.fill(data, (byte)Empire.NULL_ID);
+        sysData = new byte[numSystems*(maxTurn+1)];
+        empData = new int[numEmps*(maxTurn+1)];
+        Arrays.fill(sysData, (byte)Empire.NULL_ID);
+        Arrays.fill(empData, 0);
         
         if (showAll) {
             for (int sysId=0;sysId<numSystems;sysId++) 
@@ -176,22 +196,15 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         if ((n < 0) || (n > maxTurn))
             return;
         turn = n;
+        sortEmpireList();
         map.clearRangeMap();
         repaint();
     }
     public void nextTurn() {
-        if (turn >= maxTurn)
-            return;
-        turn++;
-        map.clearRangeMap();
-        repaint();
+        setTurn(turn+1);
     }
     public void previousTurn() {
-        if (turn <= 0)
-            return;
-        turn--;
-        map.clearRangeMap();
-        repaint();
+        setTurn(turn-1);
     }
     public void playPause() {
         softClick();
@@ -241,7 +254,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         switch(k) {
             case KeyEvent.VK_EQUALS:
                 if (e.isShiftDown())  
-                map.adjustZoom(-1);
+                    map.adjustZoom(-1);
                 break;
             case KeyEvent.VK_MINUS:
                 map.adjustZoom(1);
@@ -309,9 +322,9 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             else 
                 title = text("HISTORY_TITLE", empire.name());
                 
-            g.setFont(narrowFont(35));
+            g.setFont(narrowFont(40));
             int sw = g.getFontMetrics().stringWidth(title);
-            g.drawString(title, (w-sw)/2, s40);
+            g.drawString(title, (w-sw)/2, s50);
         }
     }
     final class HistoryButtonsPanel extends BasePanel implements MouseListener, MouseMotionListener {
@@ -375,7 +388,6 @@ public final class HistoryUI extends BasePanel implements MouseListener {
                 Color[] grayColors = {grayEdgeC, grayMidC, grayEdgeC};
                 grayBackground = new LinearGradientPaint(ptStart, ptEnd, dist, grayColors);                
             }
-            
             
             // draw next turn
             g.setFont(narrowFont(18));
@@ -501,8 +513,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             g.drawRoundRect(buttonX, buttonY, buttonW, buttonH, s8, s8);
             g.setStroke(prevStr);
             x2a = buttonX + ((buttonW - sw) / 2);
-            drawShadowedString(g, label, x2a, buttonY + buttonH - s8, Color.black, c0);
-            
+            drawShadowedString(g, label, x2a, buttonY + buttonH - s8, Color.black, c0);           
             
             // draw slider bar
             int sliderH = s10;
@@ -518,8 +529,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             if (sliderW0 > 0) {
                 g.setColor(greenMidC);
                 g.fillRect(sliderX, sliderY, sliderW0, sliderH);
-            }
-            
+            }       
             if (hoverTarget == sliderBox) {
                 prevStr = g.getStroke();
                 g.setColor(Color.yellow);
@@ -531,7 +541,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
                 g.setColor(sliderBorderC);
                 g.draw(sliderBox);
             }
-                    
+            
         }
         @Override
         public void mouseClicked(MouseEvent e) { }
@@ -539,7 +549,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         public void mousePressed(MouseEvent e) { }
         @Override
         public void mouseReleased(MouseEvent e) {
-           if ((hoverTarget == nextTurnBox) && canNextTurn()) {
+            if ((hoverTarget == nextTurnBox) && canNextTurn()) {
                 softClick(); 
                 nextTurn();
                 return;
@@ -675,7 +685,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         @Override
         public boolean canChangeMapScales()            { return true; }
         @Override
-        public boolean drawStar(StarSystem s)          { return data(s.id, turn) == Empire.NULL_ID; }
+        public boolean drawStar(StarSystem s)          { return sysData(s.id, turn) == Empire.NULL_ID; }
         @Override
         public boolean showSystemName(StarSystem s)    { return true; }
         @Override
@@ -694,7 +704,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         public boolean showShipRanges()                { return false; }
         @Override
         public Empire knownEmpire(int sysId, Empire emp)    { 
-            int id = data(sysId, turn);
+            int id = sysData(sysId, turn);
             return id == Empire.NULL_ID ? null : galaxy().empire(id);
         }
         @Override
@@ -797,6 +807,39 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             }
             g.setPaint(backGradient);
             g.fillRect(0,h/2,w, h/2);
+        }
+        @Override
+        public void paintOverMap(GalaxyMapPanel ui, Graphics2D g) { 
+            // empire list
+            int lineH = s22;
+            int y1 = s40;
+            int x1 = getWidth()-scaled(120);
+            g.setFont(narrowFont(24));
+            g.setColor(Color.white);
+            String sysTitle = text("HISTORY_SYSTEMS");
+            String empTitle = text("HISTORY_EMPIRE");
+            String ext = text("HISTORY_EXTINCT");
+            int sw0 = g.getFontMetrics().stringWidth(sysTitle);
+            
+            g.setColor(Color.white);
+            g.drawString(empTitle, x1, y1);
+            g.drawString(sysTitle, x1-sw0-s10, y1);
+            
+            g.setFont(narrowFont(20));
+            for (Empire emp: sortedEmpires) {
+                int num = emp.numColoniesHistory;
+                if (showAll || (num > 0)) {
+                    y1 += lineH;
+                    String amt = num == 0 ? ext : str(num);
+                    sw0 = g.getFontMetrics().stringWidth(amt);
+                    if (num == 0)
+                        g.setColor(SystemPanel.redText);
+                    else
+                        g.setColor(SystemPanel.whiteText);
+                    g.drawString(amt, x1-sw0-s10, y1);
+                    g.drawString(emp.raceName(), x1, y1);
+                }
+            }
         }
     }
 }

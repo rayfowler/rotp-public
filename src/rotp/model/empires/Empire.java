@@ -145,6 +145,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     private transient float totalEmpireStargateCost;
     private transient float totalEmpireMissileBaseCost;
     private transient int inRange;
+    public transient int numColoniesHistory;
 
     public AI ai() {
         if (ai == null)
@@ -2597,5 +2598,5 @@ public final class Empire implements Base, NamedObject, Serializable {
     public static Comparator<Empire> AVG_TECH_LEVEL   = (Empire o1, Empire o2) -> o2.tech.avgTechLevel().compareTo(o1.tech.avgTechLevel());
     public static Comparator<Empire> TOTAL_FLEET_SIZE = (Empire o1, Empire o2) -> o2.totalFleetSize().compareTo(o1.totalFleetSize());
     public static Comparator<Empire> RACE_NAME        = (Empire o1,   Empire o2)   -> o1.raceName().compareTo(o2.raceName());
-
+    public static Comparator<Empire> HISTORICAL_SIZE  = (Empire o1, Empire o2) -> Base.compare(o2.numColoniesHistory, o1.numColoniesHistory);
 }
