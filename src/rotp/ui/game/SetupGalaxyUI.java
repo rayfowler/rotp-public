@@ -467,7 +467,7 @@ public final class SetupGalaxyUI  extends BasePanel implements MouseListener, Mo
         Race race = Race.keyed(newGameOptions().selectedPlayerRace());
 
         // background image
-        Image back = GameUI.background();
+        Image back = GameUI.defaultBackground;
         int imgW = back.getWidth(null);
         int imgH = back.getHeight(null);
         g.drawImage(back, 0, 0, w, h, 0, 0, imgW, imgH, this);

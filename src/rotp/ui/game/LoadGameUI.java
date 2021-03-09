@@ -41,7 +41,6 @@ import java.util.Comparator;
 import java.util.List;
 
 import javax.swing.SwingUtilities;
-import rotp.Rotp;
 
 import rotp.model.game.GameSession;
 import rotp.ui.BasePanel;
@@ -222,7 +221,7 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
         super.paintComponent(g);
         if (loadBackC == null)
             initGradients();
-        Image back = GameUI.background();
+        Image back = GameUI.defaultBackground;
         int imgW = back.getWidth(null);
         int imgH = back.getHeight(null);
         g.drawImage(back, 0, 0, getWidth(), getHeight(), 0, 0, imgW, imgH, this);

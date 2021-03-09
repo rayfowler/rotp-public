@@ -358,7 +358,7 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         setFontHints(g);
 
         // background image
-        Image back = GameUI.background();
+        Image back = GameUI.defaultBackground;
         int imgW = back.getWidth(null);
         int imgH = back.getHeight(null);
         g.drawImage(back, 0, 0, w, h, 0, 0, imgW, imgH, this);

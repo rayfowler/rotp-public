@@ -45,7 +45,6 @@ import javax.swing.InputMap;
 import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
-import rotp.Rotp;
 import rotp.model.game.GameSession;
 import rotp.ui.BasePanel;
 import rotp.ui.BaseTextField;
@@ -179,7 +178,7 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
         super.paintComponent(g);
         if (saveBackC == null)
             initGradients();
-        Image back = GameUI.background();
+        Image back = GameUI.defaultBackground;
         int imgW = back.getWidth(null);
         int imgH = back.getHeight(null);
         g.drawImage(back, 0, 0, getWidth(), getHeight(), 0, 0, imgW, imgH, this);
