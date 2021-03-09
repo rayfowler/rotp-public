@@ -101,7 +101,9 @@ public interface IMapHandler {
     default boolean showOwnership(StarSystem s)          { return true; }
     default float ownerReach(StarSystem s)               { return 0; }
     default boolean drawShield(StarSystem s)             { return true; } 
-    default boolean drawEmpireName(Empire e)             { return Empire.thePlayer().hasContacted(e.id); }
+    default boolean shouldDrawEmpireName(Empire e, float scale)  { 
+        return Empire.thePlayer().hasContacted(e.id) && (scale > GalaxyMapPanel.MAX_FLEET_TRANSPORT_SCALE);
+    }
     default void drawEmpireName(Empire e, GalaxyMapPanel ui, Graphics2D g)  { e.draw(ui,g); }
     default boolean drawStargate(StarSystem s)           { return true; }
     default boolean drawFlag(StarSystem s)               { return true; }

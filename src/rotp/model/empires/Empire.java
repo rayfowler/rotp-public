@@ -2651,10 +2651,6 @@ public final class Empire implements Base, NamedObject, Serializable {
         if (avgX == 0)
             return;
         
-        float scale = map.scaleX();
-        if (scale < GalaxyMapPanel.MAX_FLEET_TRANSPORT_SCALE)
-            return;
-        
         float empW = (xMax-xMin)*2/3;
         float adj = max(0,3-empW);
         int x0 = map.mapX(xMin-adj);

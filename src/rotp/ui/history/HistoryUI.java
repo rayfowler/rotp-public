@@ -94,7 +94,11 @@ public final class HistoryUI extends BasePanel implements MouseListener {
     int numSystems = 1;
     int numEmps = 1;
     byte[] sysData;
-    int[] empData;
+    int[] sysCount;
+    float[] xMin;
+    float[] xMax;
+    float[] xSum;
+    float[] ySum;
     List<Empire> sortedEmpires = new ArrayList<>();
 
     @Override
@@ -129,25 +133,45 @@ public final class HistoryUI extends BasePanel implements MouseListener {
     }
     public void sortEmpireList() {
         for (Empire emp: sortedEmpires) 
-            emp.numColoniesHistory = empData(emp.id, turn);
+            emp.numColoniesHistory = sysCount(emp.id, turn);
         
         Collections.sort(sortedEmpires, Empire.HISTORICAL_SIZE);
+    }
+    public int empIndex(int emp, int t) {
+        return (t*numEmps)+emp;
     }
     public byte sysData(int sys, int t) {
         return sysData[(t*numSystems)+sys];
     }
-    public int empData(int emp, int t) {
-        return empData[(t*numEmps)+emp];
+    public int sysCount(int emp, int t) {
+        return sysCount[(t*numEmps)+emp];
     }
-    public void setData(int sys, int t, int empId) {
-        sysData[(t*numSystems)+sys] = (byte)empId;
-        empData[(t*numEmps)+empId]++;
+    public void setData(StarSystem sys, int t, int empId) {
+        sysData[(t*numSystems)+sys.id] = (byte)empId;
+        
+        int i = (t*numEmps)+empId;
+        float sysX = sys.x();
+        float sysY = sys.y();
+        sysCount[i]++;
+        xMin[i] = min(xMin[i],sysX);
+        xMax[i] = max(xMax[i],sysX);
+        xSum[i] += sysX;
+        ySum[i] += sysY;
     }
     private void initOwnershipData() {
-        sysData = new byte[numSystems*(maxTurn+1)];
-        empData = new int[numEmps*(maxTurn+1)];
+        int i = numSystems*(maxTurn+1);
+        sysData = new byte[i];
+        sysCount = new int[i];
+        xMin =  new float[i];
+        xMax =  new float[i];
+        xSum =  new float[i];
+        ySum =  new float[i];
         Arrays.fill(sysData, (byte)Empire.NULL_ID);
-        Arrays.fill(empData, 0);
+        Arrays.fill(sysCount, 0);
+        Arrays.fill(xMin, Float.MAX_VALUE);
+        Arrays.fill(xMax, 0);
+        Arrays.fill(xSum, 0);
+        Arrays.fill(ySum, 0);
         
         if (showAll) {
             for (int sysId=0;sysId<numSystems;sysId++) 
@@ -173,7 +197,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
                 int eventTurn=event.turn();
                 if (prevOwner != nullOwner) {
                     for (int t=prevTurn;t<eventTurn;t++) 
-                        setData(sysId,t,prevOwner);
+                        setData(sys,t,prevOwner);
                 }
                 prevOwner = (byte) event.owner();
                 prevTurn = eventTurn;
@@ -181,7 +205,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         }
         if (prevOwner != nullOwner) {
             for (int t=prevTurn;t<=maxTurn;t++)
-                setData(sysId,t,prevOwner);
+                setData(sys,t,prevOwner);
         }
     }
     public HistoryUI() {
@@ -698,6 +722,18 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         public boolean drawShips()                     { return false; }
         @Override
         public boolean drawBackgroundStars()           { return false; }
+        @Override
+        public boolean shouldDrawEmpireName(Empire e, float scale)  { 
+            return (scale > 0)
+                && (e.isPlayer() || player().hasContacted(e.id));
+        }
+        @Override
+        public void drawEmpireName(Empire e, GalaxyMapPanel ui, Graphics2D g)  { 
+            int i = empIndex(e.id, turn);
+            float xAvg = sysCount[i] == 0 ? 0 : xSum[i]/sysCount[i];
+            float yAvg = sysCount[i] == 0 ? 0 : ySum[i]/sysCount[i];
+            e.draw(ui,g,xMin[i],xMax[i],xAvg,yAvg); 
+        }
         @Override
         public boolean showAlerts()                    { return false; }
         @Override

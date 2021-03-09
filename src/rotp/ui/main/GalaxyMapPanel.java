@@ -688,8 +688,8 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     }
     public void drawEmpireNames(Graphics2D g) {
         for (Empire emp: galaxy().empires()) {
-            if (parent.drawEmpireName(emp)) 
-                emp.draw(this, g);
+            if (parent.shouldDrawEmpireName(emp, scaleX())) 
+                parent.drawEmpireName(emp, this, g);
         }
     }
     public void drawStarSystems(Graphics2D g) {
