@@ -225,9 +225,11 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         repaint();
     }
     public void nextTurn() {
+        softClick();
         setTurn(turn+1);
     }
     public void previousTurn() {
+        softClick();
         setTurn(turn-1);
     }
     public void playPause() {
@@ -237,9 +239,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
     }
     public void reset() {
         softClick();
-        turn = 0;
-        map.clearRangeMap();
-        repaint();                
+        setTurn(0);      
     }
     public void exit() {
         softClick();
@@ -268,7 +268,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             return;
         
         if (canNextTurn())
-            nextTurn();
+            setTurn(turn+1);
         else
             paused = true;
     }
