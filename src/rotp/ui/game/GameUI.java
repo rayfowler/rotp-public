@@ -459,13 +459,13 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             int baseY = scaled(150);
             drawShadowedString(imgG, titleStr1, 1, 0, 10, x1Left, baseY, logoShade[1], logoFore[0]);
             imgG.setFont(logoFont(smallFont));
-            drawShadowedString(imgG, titleStr2, 1, 0, 5, x1Left+sw1a+s20, baseY, logoShade[1], logoFore[0]);
+            drawShadowedString(imgG, titleStr2, 1, 0, 10, x1Left+sw1a+s20, baseY, logoShade[1], logoFore[0]);
             imgG.setFont(logoFont(bigFont));
             drawShadowedString(imgG, titleStr3, 1, 0, 10, x1Left+sw1a+sw1b+s40, baseY, logoShade[1], logoFore[0]);
             imgG.setFont(logoFont(bigFont));
             drawShadowedString(imgG, titleStr1, 1, 0, 10, x1Left, baseY, logoShade[1], logoFore[0]);
             imgG.setFont(logoFont(smallFont));
-            drawShadowedString(imgG, titleStr2, 1, 0, 5, x1Left+sw1a+s20, baseY, logoShade[1], logoFore[0]);
+            drawShadowedString(imgG, titleStr2, 1, 0, 10, x1Left+sw1a+s20, baseY, logoShade[1], logoFore[0]);
             imgG.setFont(logoFont(bigFont));
             imgG.dispose();
         }
