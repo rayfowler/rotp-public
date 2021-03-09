@@ -331,13 +331,13 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         shrinkText      = new BaseText(this, false,20,   10,24,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         enlargeText     = new BaseText(this, false,20,    0,24,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         enlargeText.preceder(shrinkText);
-        continueText    = new BaseText(this, true, 45,   0, 300,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
-        newGameText     = new BaseText(this, true, 45,   0, 350,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
-        loadGameText    = new BaseText(this, true, 45,   0, 400,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
-        saveGameText    = new BaseText(this, true, 45,   0, 450,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
-        settingsText    = new BaseText(this, true, 45,   0, 500,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
-        exitText        = new BaseText(this, true, 45,   0, 550,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
-        restartText     = new BaseText(this, true, 45,   0, 400,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
+        continueText    = new BaseText(this, true, 45,   0, 340,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
+        newGameText     = new BaseText(this, true, 45,   0, 385,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
+        loadGameText    = new BaseText(this, true, 45,   0, 430,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
+        saveGameText    = new BaseText(this, true, 45,   0, 475,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
+        settingsText    = new BaseText(this, true, 45,   0, 520,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
+        exitText        = new BaseText(this, true, 45,   0, 565,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
+        restartText     = new BaseText(this, true, 45,   0, 430,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
         versionText     = new BaseText(this, false,16,   5, -35,  enabledC,  enabledC, hoverC, depressedC, Color.black, 1, 0, 1);
         discussText     = new BaseText(this, false,22,   5, -10,  enabledC, disabledC, hoverC, depressedC, Color.black, 1, 1, 1);
         developerText   = new BaseText(this, false,16, -210,-95,  enabledC,  enabledC, hoverC, depressedC, Color.black, 1, 1, 1);
@@ -470,7 +470,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             imgG.dispose();
         }
         
-        g.drawImage(titleImg, 0, 0, null);
+        g.drawImage(titleImg, 0, s100, null);
         if (hideText)
             return;
 
