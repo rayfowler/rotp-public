@@ -422,6 +422,7 @@ public class RacesUI extends BasePanel {
             intelPanel.changedEmpire();
             militaryPanel.changedEmpire();
             statusPanel.changedEmpire();
+            raceListingPanel.changedEmpire();
         }
     }
     public void selectedIconEmpire(Empire e)  {
@@ -868,7 +869,8 @@ public class RacesUI extends BasePanel {
         private Empire hoverEmp;
         private boolean hoveringIcon;
         int dragY;
-        int contactsY, contactsYMax;     
+        int contactsY, contactsYMax;    
+        int contactH, listH;
         Rectangle contactsListBox = new Rectangle();
         Rectangle contactsScroller = new Rectangle();
         Shape hoverShape;
@@ -884,6 +886,7 @@ public class RacesUI extends BasePanel {
         }
         public void init() { 
             contactsY = 0;
+            contactH = s100;
         }
         @Override
         public String textureName()            { return TEXTURE_BROWN; }
@@ -909,8 +912,7 @@ public class RacesUI extends BasePanel {
             for (Rectangle r: contactBoxes.values())
                 r.setBounds(0,0,0,0);
 
-            int contactH = s100;
-            int listH = h-y1-s10;
+            listH = h-y1-s10;
             int fullListH = empires.size()*contactH;
             int rightM = listH >= fullListH ? 0 : s20;
             int w2 = w1-rightM;
@@ -1092,6 +1094,16 @@ public class RacesUI extends BasePanel {
             if (raceBackImg == null)
                 initRaceBackImg();
             return raceBackImg;
+        }
+        public void changedEmpire() {
+            Empire emp = selectedEmpire();
+            int empIndex = empires.indexOf(emp);
+            
+            int numEmpires = (getHeight()-s10)/contactH;
+//            if (empIndex > numEmpires) {
+                int offset = min(empIndex, empires.size()-numEmpires);
+                contactsY = contactH*offset;
+//            }
         }
         private void initRaceBackImg() {
             int w = s76;
