@@ -103,8 +103,8 @@ public class RaceIntroUI extends BasePanel implements MouseListener {
     }
     public void drawHomeStar(Graphics2D g) {
         int graphicPaneW = scaled(247);
-        int x0 = getWidth()-graphicPaneW+s2;
-        int y0 = s46;
+        int x0 = getWidth()-graphicPaneW+s13;
+        int y0 = s29;
         drawStar(g, galaxy().system(player().homeSysId()).starType(), s80, x0+(graphicPaneW/3), y0+s30);
     }
     public void drawHomePlanet(Graphics2D g) {
@@ -112,21 +112,20 @@ public class RaceIntroUI extends BasePanel implements MouseListener {
         int w = scaled(247);
         int h = scaled(120);
 
-        int x0 = getWidth()-w+s4;
-        int y0 = s62+(h/4);
+        int x0 = getWidth()-w+s14;
+        int y0 = s42+(h/4);
         int r = s38;
         galaxy().system(player().homeSysId()).planet().draw(g, w, h, x0, y0, r+r, 45);
     }
     public void drawSystemName(Graphics2D g) {
         Empire pl = player();
         String str = pl.sv.name(pl.homeSysId());
-        g.setFont(narrowFont(33));
+        g.setFont(narrowFont(36));
 
-        int namePaneW = scaled(247);
-        int y0 = s67;
-        int x0 = getWidth()-namePaneW-s11+s21;
+        int y0 = s46;
+        int x0 = getWidth()-scaled(225);
 
-        drawBorderedString(g, str, 2, x0, y0, Color.black, SystemPanel.orangeText);
+        drawBorderedString(g, str, 1, x0, y0, Color.black, SystemPanel.orangeText);
     }
     private void drawIntroductionTitle(Graphics2D g) {
         Empire pl = player();
