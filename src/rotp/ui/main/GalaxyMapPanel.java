@@ -563,33 +563,37 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         }
         int extR = (int) (scoutRange*scale);
         int baseR = (int) (shipRange*scale);
-        if (scoutRangeArea == null) {
-            scoutRangeArea = new Area();
+        Area tmpRangeArea = scoutRangeArea;
+        if (tmpRangeArea == null) {
+            tmpRangeArea = new Area();
             for (StarSystem sv: alliedSystems)
-                scoutRangeArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-extR, mapY(sv.y())-extR, 2*extR, 2*extR) ));       
+                tmpRangeArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-extR, mapY(sv.y())-extR, 2*extR, 2*extR) ));       
             for (StarSystem sv: systems)
-                scoutRangeArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-extR, mapY(sv.y())-extR, 2*extR, 2*extR) ));       
+                tmpRangeArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-extR, mapY(sv.y())-extR, 2*extR, 2*extR) ));       
+            scoutRangeArea = tmpRangeArea;
         }
         g.setColor(extendedBorder);
         g.setStroke(stroke2);
-        g.draw(scoutRangeArea);   
+        g.draw(tmpRangeArea);   
 
 
-        if (shipRangeArea == null) {
-            shipRangeArea = new Area();
+        tmpRangeArea = shipRangeArea;
+        if (tmpRangeArea == null) {
+            tmpRangeArea = new Area();
             for (StarSystem sv: alliedSystems)
-                shipRangeArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-baseR, mapY(sv.y())-baseR, 2*baseR, 2*baseR) ));       
+                tmpRangeArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-baseR, mapY(sv.y())-baseR, 2*baseR, 2*baseR) ));       
             for (StarSystem sv: systems)
-                shipRangeArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-baseR, mapY(sv.y())-baseR, 2*baseR, 2*baseR) ));       
+                tmpRangeArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-baseR, mapY(sv.y())-baseR, 2*baseR, 2*baseR) ));       
+            shipRangeArea = tmpRangeArea;
         }       
+        
         g.setColor(normalBackground);
-        g.fill(shipRangeArea);
+        g.fill(tmpRangeArea);
         g.setColor(normalBorder);
         g.setStroke(stroke2);
-        g.draw(shipRangeArea);   
+        g.draw(tmpRangeArea);   
         
         g.setTransform(prevXForm);
-
     }
     private void drawGridCircularDisplayDark(Graphics2D g) {
         Galaxy gal = galaxy();
