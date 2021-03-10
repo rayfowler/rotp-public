@@ -2390,23 +2390,21 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
         else { 
             List<Empire> activeEmpires = galaxy().activeEmpires();
-            // if no empires left, the player has been killed in a solo game
-            // by a monster or by abandoning all of his colonies simultaneously 
-            if (activeEmpires.isEmpty())
-                session().status().loseMilitary();
-            else if (isPlayer() && (lastAttacker == null))
-                session().status().loseNoColonies();                
-            // if only one empire is left...
-            else if (activeEmpires.size() == 1) {
-                if (isPlayer())
-                    session().status().loseMilitary();
+            // Player has gone extinct. Determine loss condition
+            if (isPlayer()) {
+                // no one killed us... abandonment suicide
+                if (lastAttacker == null)
+                    session().status().loseNoColonies();   
                 else
-                    session().status().winMilitary();
+                    session().status().loseMilitary();                    
             }
-            else {
-                if (galaxy().allAlliedWithPlayer()) 
-                    session().status().winMilitaryAlliance();
-            }
+            // an AI empire has gone extinct.. see if player win 
+            // if only one empire is left then player must have won
+            else if (activeEmpires.size() == 1) 
+                session().status().winMilitary();
+            // multiple empires, all allied with player.. that's a win
+            else if (galaxy().allAlliedWithPlayer()) 
+                session().status().winMilitaryAlliance();
         }            
         status.assessTurn();
     }
