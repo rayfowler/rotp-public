@@ -724,8 +724,11 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         public boolean drawBackgroundStars()           { return false; }
         @Override
         public boolean shouldDrawEmpireName(Empire e, float scale)  { 
-            return (scale > 0)
-                && (e.isPlayer() || player().hasContacted(e.id));
+            if (scale == 0)
+                return false;
+            if (showAll)
+                return true;
+            return e.isPlayer() || player().hasContacted(e.id);
         }
         @Override
         public void drawEmpireName(Empire e, GalaxyMapPanel ui, Graphics2D g)  { 
