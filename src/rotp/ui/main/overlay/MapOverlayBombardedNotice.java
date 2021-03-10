@@ -74,6 +74,7 @@ public class MapOverlayBombardedNotice  extends MapOverlay {
         StarSystem sys = galaxy().system(sysId);
         parent.setOverlay(this);
         parent.hideDisplayPanel();
+        parent.map().resetRangeAreas();
         parent.map().setScale(20);
         parent.map().recenterMapOn(sys);
         parent.mapFocus(sys);

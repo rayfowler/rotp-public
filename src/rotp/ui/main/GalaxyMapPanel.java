@@ -98,7 +98,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     public static Color gridDark = new Color(64,64,64);
 
     private final IMapHandler parent;
-    private final Object dragSynch = new Object();
 
     // static fields shared across all galaxy map panels to keep them 
     // visually in synch

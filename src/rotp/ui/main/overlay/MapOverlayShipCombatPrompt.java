@@ -68,6 +68,7 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
         fact = pl.sv.factories(sysId);
         shield = pl.sv.shieldLevel(sysId);
         parent.hideDisplayPanel();
+        parent.map().resetRangeAreas();
         parent.map().setScale(20);
         parent.map().recenterMapOn(sys);
         parent.mapFocus(sys);

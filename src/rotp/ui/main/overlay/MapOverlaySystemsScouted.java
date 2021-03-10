@@ -89,6 +89,7 @@ public class MapOverlaySystemsScouted extends MapOverlay {
         mask = null;
         planetImg = null;
         StarSystem nextSystem = orderedSystems.get(i);
+        parent.map().resetRangeAreas();
         parent.map().recenterMapOn(nextSystem);
         parent.mapFocus(nextSystem);
         parent.clickedSprite(nextSystem);

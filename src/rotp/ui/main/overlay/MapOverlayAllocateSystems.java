@@ -69,6 +69,7 @@ public class MapOverlayAllocateSystems extends MapOverlay {
     }
     private void mapSelectIndex(int i) {
         StarSystem nextSystem = orderedSystems.get(i);
+        parent.map().resetRangeAreas();
         parent.map().recenterMapOn(nextSystem);
         parent.mapFocus(nextSystem);
         parent.clickedSprite(nextSystem);
