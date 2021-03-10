@@ -1100,10 +1100,12 @@ public class RacesUI extends BasePanel {
             int empIndex = empires.indexOf(emp);
             
             int numEmpires = (getHeight()-s10)/contactH;
-//            if (empIndex > numEmpires) {
-                int offset = min(empIndex, empires.size()-numEmpires);
-                contactsY = contactH*offset;
-//            }
+            if (empIndex <= numEmpires) {
+                contactsY = 0;
+                return;
+            }
+            int offset = min(empIndex, empires.size()-numEmpires);
+            contactsY = contactH*offset;
         }
         private void initRaceBackImg() {
             int w = s76;
