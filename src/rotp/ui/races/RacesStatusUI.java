@@ -162,6 +162,8 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         drawAITitle(g, emp, w-s60-s200, s30+s200, 0, s50);
     }
     private void drawHistoryButton(Graphics2D g, Empire emp, Rectangle button, int x, int y, int w, int h) {
+        if (galaxy().numberTurns() == 0)
+            return;
         g.setColor(RacesUI.darkBrown);
         int cnr = min(w/8,h/8);
         Shape rect = new RoundRectangle2D.Float(x,y,w,h,cnr, cnr);
