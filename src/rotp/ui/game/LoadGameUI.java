@@ -33,6 +33,7 @@ import java.awt.event.MouseWheelListener;
 import java.awt.geom.Point2D;
 import java.awt.geom.RoundRectangle2D;
 import java.io.File;
+import java.io.FilenameFilter;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -125,28 +126,30 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
         File backupDir = new File(backupDirPath);
         hasBackupDir = backupDir.exists() && backupDir.isDirectory();
         
-        long sSize = saveDir.listFiles().length;
+        FilenameFilter filter = (File dir, String name1) -> name1.toLowerCase().endsWith(ext);
+        
+        long sSize = saveDir.listFiles(filter).length;
         if (hasBackupDir)
             sSize--;
         saveDirInfo = text("LOAD_GAME_SAVE_DIR", (int)sSize);
         
         if (hasBackupDir) {
-            long bSize = backupDir.listFiles().length;
+            long bSize = backupDir.listFiles(filter).length;
             backupDirInfo = text("LOAD_GAME_BACKUP_DIR", (int)bSize);
         }       
 
         File[] filesList;           
         if (showingBackups) 
-            filesList = backupDir.listFiles();
-        else {
-            filesList = saveDir.listFiles();
-            File autoSave = new File(saveDir, GameSession.RECENT_SAVEFILE);
-            if (autoSave.isFile()) {
-                hasAutosave = true;
-                saveFiles.add(text("LOAD_GAME_AUTOSAVE"));
-                saveDates.add(fileDateFmt.format(autoSave.lastModified()));
-                saveSizes.add(autoSave.length());
-            }
+            filesList = backupDir.listFiles(filter);
+        else 
+            filesList = saveDir.listFiles(filter);
+        
+        File autoSave = new File(saveDir, GameSession.RECENT_SAVEFILE);
+        if (autoSave.isFile()) {
+            hasAutosave = true;
+            saveFiles.add(text("LOAD_GAME_AUTOSAVE"));
+            saveDates.add(fileDateFmt.format(autoSave.lastModified()));
+            saveSizes.add(autoSave.length());        
         }
         
         switch(sortOrder) {
@@ -674,11 +677,13 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
                     if (gameBox[i] == hoverBox)
                         selectIndex = i;
                 }
-                int fileIndex = start+selectIndex;
-                if ((fileIndex == 0) && hasAutosave)
-                    selectedFile = GameSession.RECENT_SAVEFILE;
-                else
-                    selectedFile = saveFiles.get(start+selectIndex)+GameSession.SAVEFILE_EXTENSION;
+                if (!saveFiles.isEmpty()) {
+                    int fileIndex = start+selectIndex;
+                    if ((fileIndex == 0) && hasAutosave)
+                        selectedFile = GameSession.RECENT_SAVEFILE;
+                    else
+                        selectedFile = saveFiles.get(start+selectIndex)+GameSession.SAVEFILE_EXTENSION;
+                }
                 current.repaint();
             }
         }
