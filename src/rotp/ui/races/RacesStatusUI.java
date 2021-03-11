@@ -471,7 +471,7 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
             int ptX = startX+(displayW*i/totalTurns);
             if ((ptX - prevX) > maxPtSpacing)
                 ptX = prevX + maxPtSpacing;
-            int ptY = startY-(displayH*empireVals[i]/maxYValue);
+            int ptY = startY-(int)((float)displayH*empireVals[i]/maxYValue);
             if (prevY >= 0)
                 g.drawLine(prevX, prevY, ptX, ptY);
             prevX = ptX;
@@ -487,7 +487,7 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
             int ptX = startX+(displayW*i/totalTurns);
             if ((ptX - prevX) > maxPtSpacing)
                 ptX = prevX + maxPtSpacing;
-            int ptY = maxYValue == 0 ? 0 : startY-(displayH*playerVals[i]/maxYValue);
+            int ptY = maxYValue == 0 ? 0 : startY-(int)((float)displayH*playerVals[i]/maxYValue);
             if (prevY >= 0)
                 g.drawLine(prevX, prevY, ptX, ptY);
             prevX = ptX;
