@@ -738,6 +738,14 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             e.draw(ui,g,xMin[i],xMax[i],xAvg,yAvg); 
         }
         @Override
+        public Color systemLabelColor(StarSystem s)    { 
+            int i = sysData(s.id, turn);
+            if (i == Empire.NULL_ID)
+                return Color.gray;
+            else
+                return galaxy().empire(i).color();
+        }
+        @Override
         public boolean showAlerts()                    { return false; }
         @Override
         public boolean showShipRanges()                { return false; }
