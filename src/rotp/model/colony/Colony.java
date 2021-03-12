@@ -290,7 +290,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
     public void setCleanupPct(float d) {
         // occurs when ai is reseting eco for minimum cleanup
         allocation(ECOLOGY, (int) Math.ceil(d*MAX_TICKS));
-        cleanupSpending(ecology());
+        redistributeReducedEcoSpending();
     }
     public boolean increment(int catNum, int amt) {
         if (!canAdjust(catNum))
@@ -540,7 +540,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         // always ensure we are at least at clean
         if (allocation[ECOLOGY] < cleanAlloc) {
             allocation[ECOLOGY] = cleanupAllocation = cleanAlloc;
-            cleanupSpending(ecology());
+            redistributeReducedEcoSpending();
             return;
         }
         
@@ -548,7 +548,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         // then lower
         if ((allocation[ECOLOGY] > cleanAlloc) && keepEcoLockedToClean) {
             allocation[ECOLOGY] = cleanupAllocation = cleanAlloc;
-            cleanupSpending(ecology());
+            redistributeReducedEcoSpending();
         }
     }
     public void lowerECOToCleanIfEcoComplete() {
@@ -665,7 +665,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
             }
         }
     }
-    public void cleanupSpending(ColonySpendingCategory cat) {
+    private void redistributeReducedEcoSpending() {
         int maxAllocation = ColonySpendingCategory.MAX_TICKS;
         // determine how much categories are over/under spent
         int spendingTotal = 0;
@@ -673,15 +673,16 @@ public final class Colony implements Base, IMappedObject, Serializable {
             spendingTotal += spending[i].allocation();
 
         int adj = maxAllocation - spendingTotal;
-
-        for (int i = 0; i < NUM_CATS; i++) {
-            ColonySpendingCategory currCat = spending[cleanupSeq[i]];
-            if ((currCat != cat) && !locked(cleanupSeq[i]))
-                adj -= currCat.adjustValue(adj);
-        }
-
-        // if any adj remaining, send back to original cat
-        cat.adjustValue(adj);
+        if (adj == 0)
+            return;
+        
+        // funnel excess to industry if it's not completed
+        if (!industry().isCompleted())
+            adj -= spending[INDUSTRY].adjustValue(adj);
+        
+        // put whatever is left in research
+        if (adj > 0)
+            spending[RESEARCH].adjustValue(adj);
     }
     public void realignSpending(ColonySpendingCategory cat) {
         int maxAllocation = ColonySpendingCategory.MAX_TICKS;

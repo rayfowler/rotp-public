@@ -3083,7 +3083,8 @@ public class DesignUI extends BasePanel {
                             shipWeaponCountIncrement(i,5);
                         else if (ctrlPressed) 
                             shipWeaponCountIncrement(i,20);
-                        else shipWeaponCountIncrement(i,1);
+                        else 
+                            shipWeaponCountIncrement(i,1);
                     }
                     return;
                 }
