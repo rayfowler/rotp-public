@@ -123,7 +123,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
 
         // reset map everytime we open
         targetSystem = null;
-        map.clearRangeMap();
+        map.resetRangeAreas();
         
         // on opening, build list of systems that we have colony ships 
         // in transport to. This is too expensive to do real-time

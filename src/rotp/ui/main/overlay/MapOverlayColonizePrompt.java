@@ -67,7 +67,6 @@ public class MapOverlayColonizePrompt extends MapOverlay {
         flagButton.reset();
         drawSprites = true;
         parent.hideDisplayPanel();
-        parent.map().resetRangeAreas();
         origMapScale = parent.map().scaleY();
         parent.map().setScale(20);
         parent.map().recenterMapOn(sys);

@@ -424,8 +424,12 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         float bestX = bounds(0, x, sizeX());
         float bestY = bounds(0, y, sizeY());
 
+        areaOffsetX += (currentFocus().x()-bestX);
+        areaOffsetY += (currentFocus().y()-bestY);
+        
         currentFocus().setXY(bestX, bestY);
         center(parent.mapFocus());
+        
         clearRangeMap();
     }
     public void adjustZoom(int z) {

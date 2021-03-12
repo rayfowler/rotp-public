@@ -75,7 +75,6 @@ public class MapOverlayBombardPrompt extends MapOverlay {
         noButton.reset();
         yesButton.reset();
         parent.hideDisplayPanel();
-        parent.map().resetRangeAreas();
         parent.map().setScale(20);
         parent.map().recenterMapOn(sys);
         parent.mapFocus(sys);
