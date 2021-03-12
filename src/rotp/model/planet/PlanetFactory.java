@@ -32,11 +32,24 @@ public class PlanetFactory implements Base {
 
     public static Planet createPlanet(StarSystem sys, float bonus) {
         Planet p = instance.options().randomPlanet(sys);
+        
+        if (p.type().isAsteroids()) {
+            p.baseSize(0);
+            return p;
+        }
         float size = p.type().randomSize();
         if (size == p.type().maxSize()) {
             while (p.random() < .2f)
                 size += 5.0f;
         }
+        else if (size == p.type().minSize()) {
+            while (p.random() < .2f)
+                size -= 5.0f;
+        }
+        
+        // IMPORTANT: bound the size between 10 and 120
+        size = Math.max(10, Math.min(size, 120));
+       
         p.baseSize(size);
         return p;
     }

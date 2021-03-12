@@ -398,7 +398,7 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
         Planet planet = sys.planet();
         int rightMargin = s10;
 
-        if (planet.maxSize() > 0) {
+        if (!planet.type().isAsteroids() && (planet.maxSize() > 0)) {
             g2.setFont(textF);
             String popStr;
             boolean ignoreWaste = planet.isColonized() && planet.empire().ignoresPlanetEnvironment();
