@@ -47,7 +47,7 @@ DECLAREWAR_ATTACK_02       | You've done us quite the favor by bringing the figh
 DECLAREWAR_ATTACK_03       | I'd avoid arrogance if I were you, ambassador. The fury of our warriors will never be beaten by technology, no matter how strong you've made yours!
 //
 DECLAREWAR_OPPORTUNITY_01  | Your kind have long outlived their usefulness. But rest assured that you will provide adequate sport for the youngest and most inexperienced of our warriors as they hone their combat skills.
-DECLAREWAR_ASSASSIN_01     | I'm not shocked in the least that your kind would act so spinelessly. To assassinate an ambassador is the gravest dishonor you can ring upon yourself, and in their death throes your people will curse your name for ordering it done!
+DECLAREWAR_ASSASSIN_01     | I'm not shocked in the least that your kind would act so spinelessly. To assassinate an ambassador is the gravest dishonor you can bring upon yourself, and in their death throes your people will curse your name for ordering it done!
 
 
 OFFER_PEACE_01             | There's a time for everything ambassador, and the time now has come for an end to our hostilities. Keep your relics; peace is all we desire from you now!
