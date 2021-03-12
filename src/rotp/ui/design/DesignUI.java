@@ -911,7 +911,7 @@ public class DesignUI extends BasePanel {
                 int y0 = s40;
                 for (String line: lines) {
                     g.drawString(line, leftM, y0);
-                    y0 += s15;
+                    y0 += s14;
                 }
             }
             else {
@@ -940,18 +940,18 @@ public class DesignUI extends BasePanel {
                 int maxSw = max(sw1,sw2,sw3);
                 int maxSwa = max(sw1a,sw2a,sw3a);
                 g.drawString(desc, leftM,  s38);
-                g.drawString(desc2, leftM, s55);
-                g.drawString(desc3, leftM, s70);
-                g.drawString(val1, leftM+maxSw+s5+maxSwa-sw1a, s38);
-                g.drawString(val2, leftM+maxSw+s5+maxSwa-sw2a, s55);
-                g.drawString(val3, leftM+maxSw+s5+maxSwa-sw3a, s70);
+                g.drawString(desc2, leftM, s54);
+                g.drawString(desc3, leftM, s68);
+                g.drawString(val1, leftM+maxSw+s5+maxSwa-sw1a, s40);
+                g.drawString(val2, leftM+maxSw+s5+maxSwa-sw2a, s54);
+                g.drawString(val3, leftM+maxSw+s5+maxSwa-sw3a, s68);
 
                 if (constructionCounts[des.id()] > 0) {
                     String desc4 = text("SHIP_DESIGN_SLOT_DESC4");
                     int sw4 = g.getFontMetrics().stringWidth(desc4);                
                     String val4= str(constructionCounts[des.id()]);
-                    g.drawString(desc4, leftM, s90);
-                    g.drawString(val4, leftM+sw4+s5, s90);
+                    g.drawString(desc4, leftM, s82);
+                    g.drawString(val4, leftM+sw4+s5, s82);
                 }
             }
             // draw copy button
@@ -2695,60 +2695,20 @@ public class DesignUI extends BasePanel {
                 repaint();
             }
         }
-        private void shipWeaponCountDecrement(int i) {
-            ShipDesign des =  shipDesign();
+        private void shipWeaponCountDecrement(int i, int amt) {
+            ShipDesign des = shipDesign();
             if ((des.wpnCount(i) > 0) && !des.weapon(i).isNone()) {
-                des.wpnCount(i, des.wpnCount(i) - 1);
+                int newAmt = max(0, des.wpnCount(i)-amt);
+                des.wpnCount(i, newAmt);
                 repaint();
             }
         }
-        private void shipWeaponCountIncrement(int i) {
+        private void shipWeaponCountIncrement(int i, int amt) {
             ShipDesign des =  shipDesign();
             if (!des.weapon(i).isNone()) {
-                des.wpnCount(i, des.wpnCount(i) + 1);
+                des.wpnCount(i, des.wpnCount(i) + amt);
                 repaint();
             }
-        }
-		// modnar: add shift/ctrl modifiers for +5/+20
-		private void shipWeaponCountDecrement5(int i) {
-            ShipDesign des =  shipDesign();
-            if ((des.wpnCount(i) > 5) && !des.weapon(i).isNone()) {
-                des.wpnCount(i, des.wpnCount(i) - 5);
-                repaint();
-            }
-			else {
-				des.wpnCount(i, 0);
-                repaint();
-			}
-        }
-		// modnar: add shift/ctrl modifiers for +5/+20
-        private void shipWeaponCountIncrement5(int i) {
-            ShipDesign des =  shipDesign();
-            if (!des.weapon(i).isNone()) {
-                des.wpnCount(i, des.wpnCount(i) + 5);
-                repaint();
-            }
-        }
-		// modnar: add shift/ctrl modifiers for +5/+20
-		private void shipWeaponCountDecrement20(int i) {
-            ShipDesign des =  shipDesign();
-            if ((des.wpnCount(i) > 20) && !des.weapon(i).isNone()) {
-                des.wpnCount(i, des.wpnCount(i) - 20);
-                repaint();
-            }
-			else {
-				des.wpnCount(i, 0);
-                repaint();
-			}
-        }
-		// modnar: add shift/ctrl modifiers for +5/+20
-        private void shipWeaponCountIncrement20(int i) {
-            ShipDesign des =  shipDesign();
-            if (!des.weapon(i).isNone()) {
-                des.wpnCount(i, des.wpnCount(i) + 20);
-                repaint();
-            }
-			
         }
         private void openShipSpecialsDialog(int i) {
             specialSelectionUI.selectedDesign = shipDesign();
@@ -2898,7 +2858,10 @@ public class DesignUI extends BasePanel {
         @Override
         public void mousePressed(MouseEvent mouseEvent) { }
         @Override
-        public void mouseReleased(MouseEvent mouseEvent) {
+        public void mouseReleased(MouseEvent e) {
+            boolean shiftPressed = (e.getModifiers() & InputEvent.SHIFT_MASK) != 0;
+            boolean ctrlPressed = (e.getModifiers() & InputEvent.CTRL_MASK) != 0;
+            
             if (hoverTarget == scrapButtonArea) {
                 softClick(); openScrapDialog(); return;
             }
@@ -2991,25 +2954,25 @@ public class DesignUI extends BasePanel {
                 if (hoverTarget == weaponFieldIncr[i]) {
                     softClick(); shipWeaponIncrement(i); return;
                 }
-				// modnar: add shift/ctrl modifiers for +5/+20
                 if (hoverTarget == weaponCountDecr[i]) {
-					if((mouseEvent.getModifiers() & InputEvent.SHIFT_MASK) != 0 ) {
-						softClick(); shipWeaponCountDecrement5(i); return;
-					}
-					if((mouseEvent.getModifiers() & InputEvent.CTRL_MASK) != 0 ) {
-						softClick(); shipWeaponCountDecrement20(i); return;
-					}
-                    softClick(); shipWeaponCountDecrement(i); return;
+                    softClick();
+                    if (shiftPressed) 
+                        shipWeaponCountDecrement(i,5);
+                    else if (ctrlPressed)
+                        shipWeaponCountDecrement(i,20);
+                    else
+                        shipWeaponCountDecrement(i,1); 
+                    return;
                 }
-				// modnar: add shift/ctrl modifiers for +5/+20
                 if (hoverTarget == weaponCountIncr[i]) {
-					if((mouseEvent.getModifiers() & InputEvent.SHIFT_MASK) != 0 ) {
-						softClick(); shipWeaponCountIncrement5(i); return;
-					}
-					if((mouseEvent.getModifiers() & InputEvent.CTRL_MASK) != 0 ) {
-						softClick(); shipWeaponCountIncrement20(i); return;
-					}
-                    softClick(); shipWeaponCountIncrement(i); return;
+                    softClick();
+                    if (shiftPressed) 
+                        shipWeaponCountIncrement(i,5); 
+                    else if (ctrlPressed) 
+                        shipWeaponCountIncrement(i,20); 
+                    else
+                        shipWeaponCountIncrement(i,1); 
+                    return;
                 }
             }
             for (int i=0;i<specialsFieldArea.length;i++) {
@@ -3038,6 +3001,9 @@ public class DesignUI extends BasePanel {
             int count = e.getUnitsToScroll();
             if (shipDesign().active())
                 return;
+            
+            boolean shiftPressed = (e.getModifiers() & InputEvent.SHIFT_MASK) != 0;
+            boolean ctrlPressed = (e.getModifiers() & InputEvent.CTRL_MASK) != 0;
             
             if (hoverTarget == shipImageArea) {
                 if (count < 0)
@@ -3104,29 +3070,21 @@ public class DesignUI extends BasePanel {
                     return;
                 }
                 if (hoverTarget == weaponCountArea[i]) {
-					// modnar: add shift/ctrl modifiers for +5/+20
-                    if (count > 0) {
-						if((e.getModifiers() & InputEvent.SHIFT_MASK) != 0 ) {
-							shipWeaponCountDecrement5(i);
-						}
-						else if((e.getModifiers() & InputEvent.CTRL_MASK) != 0 ) {
-							shipWeaponCountDecrement20(i);
-						}
-                        else {
-							shipWeaponCountDecrement(i);
-						}
-					}
+                    if (count < 0) {
+                        if (shiftPressed) 
+                            shipWeaponCountDecrement(i,5);
+                        else if (ctrlPressed) 
+                            shipWeaponCountDecrement(i,20);
+                        else 
+                            shipWeaponCountDecrement(i,1);
+                    }
                     else {
-						if((e.getModifiers() & InputEvent.SHIFT_MASK) != 0 ) {
-							shipWeaponCountIncrement5(i);
-						}
-						else if((e.getModifiers() & InputEvent.CTRL_MASK) != 0 ) {
-							shipWeaponCountIncrement20(i);
-						}
-                        else {
-							shipWeaponCountIncrement(i);
-						}
-					}
+                        if (shiftPressed) 
+                            shipWeaponCountIncrement(i,5);
+                        else if (ctrlPressed) 
+                            shipWeaponCountIncrement(i,20);
+                        else shipWeaponCountIncrement(i,1);
+                    }
                     return;
                 }
             }
