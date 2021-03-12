@@ -74,7 +74,7 @@ public class SabotageMission implements Base, Serializable {
         system = sys;
         missionType = FACTORIES;
         float weaponLevel = spies.owner().tech().weapon().techLevel();
-        int chances = (int) Math.ceil(weaponLevel/5);
+        int chances = (int) Math.ceil(weaponLevel/10);
 
         factoriesDestroyed = 0;
         for (int i=0;i<chances;i++) {
@@ -98,7 +98,7 @@ public class SabotageMission implements Base, Serializable {
         system = sys;
         missionType = BASES;
         float weaponLevel = spies.owner().tech().weapon().techLevel();
-        int chances = (int) Math.ceil(weaponLevel/5);
+        int chances = (int) Math.ceil(weaponLevel/10);
 
         missileBasesDestroyed = 0;
         for (int i=0;i<chances;i++) {
