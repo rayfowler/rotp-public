@@ -49,6 +49,12 @@ public class MapOverlayNone extends MapOverlay {
     public void paintOverMap(MainUI parent, GalaxyMapPanel ui, Graphics2D g2) {
     }
     @Override
+    public boolean handleKeyRelease(KeyEvent e) {
+        parent.displayPanel().keyReleased(e);
+
+        return true;
+    }
+    @Override
     public boolean handleKeyPress(KeyEvent e) {
         if (session().performingTurn()) {
             // allocate systems overlay should pass keystrokes

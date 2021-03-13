@@ -255,6 +255,11 @@ public class MapOverlayAllocateSystems extends MapOverlay {
         }
         return true;
     }
+
+    @Override
+    public boolean handleKeyRelease(KeyEvent e) {
+        return false;
+    }
 }
 class PreviousSystemButtonSprite extends MapSprite {
     private LinearGradientPaint background;

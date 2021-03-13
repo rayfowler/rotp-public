@@ -473,6 +473,12 @@ public class MapOverlayBombardPrompt extends MapOverlay {
         }
         return true;
     }
+
+    @Override
+    public boolean handleKeyRelease(KeyEvent e) {
+        return false;
+    }
+
     class SystemFlagSprite extends MapSprite {
         private int mapX, mapY, buttonW, buttonH;
         private int selectX, selectY, selectW, selectH;

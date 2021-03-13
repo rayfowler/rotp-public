@@ -362,4 +362,9 @@ public class MapOverlayBombardedNotice  extends MapOverlay {
         }
         return true;
     }
+
+    @Override
+    public boolean handleKeyRelease(KeyEvent e) {
+        return false;
+    }
 }

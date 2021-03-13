@@ -151,6 +151,12 @@ public class MapOverlayShipsConstructed extends MapOverlay {
         }
         return true;
     }
+
+    @Override
+    public boolean handleKeyRelease(KeyEvent e) {
+        return false;
+    }
+
     private void drawShip(MainUI parent, GalaxyMapPanel ui, Graphics2D g, ShipDesign d, int x, int y, int w, int h) {
         g.setFont(narrowFont(18));
         int sw = g.getFontMetrics().stringWidth(d.name());

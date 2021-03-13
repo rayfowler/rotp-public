@@ -145,6 +145,12 @@ public class MapOverlayJava32Bit extends MapOverlay {
         }
         return true;
     }
+
+    @Override
+    public boolean handleKeyRelease(KeyEvent e) {
+        return false;
+    }
+
     class OKButtonSprite extends MapSprite {
         private LinearGradientPaint background;
         private int mapX, mapY, buttonW, buttonH;

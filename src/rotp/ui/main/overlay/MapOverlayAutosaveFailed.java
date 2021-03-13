@@ -141,6 +141,11 @@ public class MapOverlayAutosaveFailed extends MapOverlay {
         }
         return true;
     }
+
+    @Override
+    public boolean handleKeyRelease(KeyEvent e) {
+        return false;
+    }
 }
 class OKButtonSprite extends MapSprite {
     private LinearGradientPaint background;

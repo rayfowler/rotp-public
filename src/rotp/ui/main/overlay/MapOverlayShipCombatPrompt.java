@@ -360,6 +360,12 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
         }
         return true;
     }
+
+    @Override
+    public boolean handleKeyRelease(KeyEvent e) {
+        return false;
+    }
+
     class AutoResolveBattleSprite extends MapSprite {
         private LinearGradientPaint background;
         private final Color edgeC = new Color(59,59,59);

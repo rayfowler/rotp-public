@@ -151,6 +151,11 @@ public class MapOverlayMemoryLow extends MapOverlay {
         }
         return true;
     }
+
+    @Override
+    public boolean handleKeyRelease(KeyEvent e) {
+        return false;
+    }
 }
 class RestartButtonSprite extends MapSprite {
     private LinearGradientPaint background;

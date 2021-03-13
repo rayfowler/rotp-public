@@ -63,6 +63,8 @@ public class SpriteDisplayPanel extends BasePanel implements SystemViewer, Mouse
 
     IMapHandler parent;
 
+    private boolean displayHoverSprite = false;
+
     public SpriteDisplayPanel(IMapHandler p) {
         parent = p;
         initModel();
@@ -171,7 +173,7 @@ public class SpriteDisplayPanel extends BasePanel implements SystemViewer, Mouse
         if ((hovering == null) && (clicked == null))
             err("No clicked or hovering sprite!");
 
-        return hovering == null ? clicked : hovering;
+        return (hovering != null && displayHoverSprite) ? hovering : clicked;
     }
     private void selectBestPanel(Sprite o) {
         if (o instanceof ShipRelocationSprite)
@@ -268,10 +270,20 @@ public class SpriteDisplayPanel extends BasePanel implements SystemViewer, Mouse
             currentPanel.animate();
     }
     @Override
-    public void keyPressed(KeyEvent e) {
+    public void keyPressed(KeyEvent e) {;
+        if (e.getKeyCode() == KeyEvent.VK_CONTROL || e.getKeyCode() == KeyEvent.VK_SHIFT)
+            displayHoverSprite = true;
         if (currentPanel != null)
             currentPanel.keyPressed(e);
+
     }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        if (e.getKeyCode() == KeyEvent.VK_SHIFT)
+            displayHoverSprite = false;
+    }
+
     private void initModel() {
         setBackground(MainUI.paneBackground());
         setLayout(layout);

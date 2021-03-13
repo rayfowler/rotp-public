@@ -181,4 +181,9 @@ public class MapOverlayAdvice extends MapOverlay {
                 return false;
         }
     }
+
+    @Override
+    public boolean handleKeyRelease(KeyEvent e) {
+        return false;
+    }
 }

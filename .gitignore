@@ -4,3 +4,10 @@ test
 build
 build.xml
 manifest.mf
+# Ignore Gradle & IntelliJ
+.gradle
+build.gradle
+gradlew
+gradlew.bat
+gradle
+.idea

@@ -827,4 +827,11 @@ public class MainUI extends BasePanel implements IMapHandler {
         if (!overlay.handleKeyPress(e))
             overlayNone.handleKeyPress(e);
     }
+
+    @Override
+    public void keyReleased(KeyEvent e) {
+        if (!overlay.handleKeyRelease(e))
+            overlayNone.handleKeyRelease(e);
+    }
+
 }
