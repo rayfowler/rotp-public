@@ -731,7 +731,8 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
             selectedPanel.keyPressed(e);
     }
     @Override
-    public void keyReleased(KeyEvent e) {
+    public void
+    keyReleased(KeyEvent e) {
         if (glassPane() != null)
             glassPane().keyReleased(e);
         else if (selectedPanel != null)

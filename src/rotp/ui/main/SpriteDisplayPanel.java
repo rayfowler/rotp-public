@@ -31,6 +31,7 @@ import rotp.model.galaxy.StarSystem;
 import rotp.model.galaxy.Transport;
 import rotp.ui.BasePanel;
 import rotp.ui.SystemViewer;
+import rotp.ui.UserPreferences;
 import rotp.ui.map.IMapHandler;
 import rotp.ui.sprites.FlightPathSprite;
 import rotp.ui.sprites.ShipRelocationSprite;
@@ -171,7 +172,7 @@ public class SpriteDisplayPanel extends BasePanel implements SystemViewer, Mouse
         if ((hovering == null) && (clicked == null))
             err("No clicked or hovering sprite!");
 
-        return hovering == null ? clicked : hovering;
+        return (hovering != null && UserPreferences.infoPanelHover()) ? hovering : clicked;
     }
     private void selectBestPanel(Sprite o) {
         if (o instanceof ShipRelocationSprite)

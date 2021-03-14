@@ -74,6 +74,7 @@ public class UserPreferences {
     private static int screenSizePct = 93;
     private static final HashMap<String, String> raceNames = new HashMap<>();
     private static int backupTurns = 0;
+    private static boolean infoPanelHover = false;
 
     public static void setToDefault() {
         autoColonize = false;
@@ -92,7 +93,8 @@ public class UserPreferences {
             SoundManager.current().toggleSounds();
         musicVolume = 10;
         soundVolume = 10;
-        SoundManager.current().resetSoundVolumes(); 
+        SoundManager.current().resetSoundVolumes();
+        infoPanelHover = true;
         save();
     }
     public static void setForNewGame() {
@@ -100,6 +102,8 @@ public class UserPreferences {
         autoBombardMode = AUTOBOMBARD_NO;
         save();
     }
+    public static boolean infoPanelHover()  { return infoPanelHover; }
+    public static void toggleInfoPanelHover()     { infoPanelHover = !infoPanelHover; save();  }
     public static int musicVolume()         { return musicVolume; }
     public static int soundVolume()         { return soundVolume; }
     public static boolean showMemory()      { return showMemory; }
@@ -108,7 +112,7 @@ public class UserPreferences {
     public static boolean windowed()        { return displayMode.equals(WINDOW_MODE); }
     public static boolean borderless()      { return displayMode.equals(BORDERLESS_MODE); }
     public static String displayMode()      { return displayMode; }
-    public static void toggleDisplayMode()   { 
+    public static void toggleDisplayMode()  {
         switch(displayMode) {
             case WINDOW_MODE:     displayMode = BORDERLESS_MODE; break;
             case BORDERLESS_MODE: displayMode = FULLSCREEN_MODE; break;
@@ -137,7 +141,7 @@ public class UserPreferences {
         }
         save();
     }
-    public static String texturesMode()     { return texturesMode; }
+    public static String texturesMode()       { return texturesMode; }
     public static boolean texturesInterface() { return texturesMode.equals(TEXTURES_INTERFACE) || texturesMode.equals(TEXTURES_BOTH); }
     public static boolean texturesMap()       { return texturesMode.equals(TEXTURES_MAP) || texturesMode.equals(TEXTURES_BOTH); }
     
@@ -253,6 +257,7 @@ public class UserPreferences {
             out.println(keyFormat("SCREEN_SIZE_PCT")+ screenSizePct());
             out.println(keyFormat("UI_TEXTURE_LEVEL")+(int) (uiTexturePct()*100));
             out.println(keyFormat("LANGUAGE")+ languageDir());
+            out.println(keyFormat("INFO_PANEL_HOVER")+ yesOrNo(infoPanelHover));
             for (String raceKey: raceKeys) 
               out.println(keyFormat(raceKey)+raceNames.get(raceKey));
         }
@@ -298,6 +303,7 @@ public class UserPreferences {
             case "SCREEN_SIZE_PCT": screenSizePct(Integer.valueOf(val)); return;
             case "UI_TEXTURE_LEVEL": uiTexturePct(Integer.valueOf(val)); return;
             case "LANGUAGE":     selectLanguage(val); return;
+            case "INFO_PANEL_HOVER":     infoPanelHover = yesOrNo(val); return;
             default:
                 raceNames.put(key, val); break;
         }

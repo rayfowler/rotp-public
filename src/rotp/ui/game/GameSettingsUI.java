@@ -31,9 +31,6 @@ import java.io.File;
 import java.util.List;
 import javax.swing.JFileChooser;
 import rotp.ui.BasePanel;
-import static rotp.ui.BasePanel.s100;
-import static rotp.ui.BasePanel.s20;
-import static rotp.ui.BasePanel.s90;
 import rotp.ui.BaseText;
 import rotp.ui.UserPreferences;
 import rotp.ui.main.SystemPanel;
@@ -54,6 +51,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
     BasePanel parent;
     BaseText displayModeText;
     BaseText texturesText;
+    BaseText infoPanelText;
     BaseText autoColonizeText;
     BaseText soundsText;
     BaseText memoryText;
@@ -72,6 +70,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         displayModeText =  new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         graphicsText =     new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         texturesText =     new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        infoPanelText =    new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         soundsText =       new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         memoryText =       new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         autoColonizeText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
@@ -94,6 +93,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         autoBombardText.displayText(autoBombardStr());
         backupTurnsText.displayText(backupTurnsStr());
         saveDirText.displayText(saveDirStr());
+        infoPanelText.displayText(infoPanelStr());
     }
     public void open(BasePanel p) {
         parent = p;
@@ -201,7 +201,24 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
             y3 += lineH;
             g.drawString(line, x2+s20, y3);
         }
-        
+
+        y2 += (h2+s20);
+        g.setColor(SystemPanel.blackText);
+        g.drawRect(x2, y2, w2, h2);
+        g.setPaint(GameUI.settingsSetupBackground(w));
+        g.fillRect(x2+s10, y2-s10, infoPanelText.stringWidth(g)+s10,s30);
+        infoPanelText.setScaledXY(x2+s20, y2+s7);
+        infoPanelText.draw(g);
+        desc = text("GAME_SETTINGS_INFO_PANEL_DESC");
+        g.setColor(SystemPanel.blackText);
+        g.setFont(descFont);
+        lines = this.wrappedLines(g,desc, w2-s30);
+        y3 = y2+s10;
+        for (String line: lines) {
+            y3 += lineH;
+            g.drawString(line, x2+s20, y3);
+        }
+
         // middle column
         y2 = scaled(200);
         x2 = x2+w2+s20;
@@ -374,6 +391,15 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         String val = UserPreferences.autoColonize()?  text("GAME_SETTINGS_AUTOCOLONIZE_YES"): text("GAME_SETTINGS_AUTOCOLONIZE_NO");
         return text("GAME_SETTINGS_AUTOCOLONIZE", val+"   ");
     }
+    private String infoPanelStr() {
+        String val;
+        if (UserPreferences.infoPanelHover())
+            val = text("GAME_SETTINGS_INFO_PANEL_YES");
+        else
+            val = text("GAME_SETTINGS_INFO_PANEL_NO");
+
+        return text("GAME_SETTINGS_INFO_PANEL", val+"   ");
+    }
     private String soundsStr() {
         String val;
         if (SoundManager.current().disabled())
@@ -440,6 +466,11 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         softClick();
         UserPreferences.toggleTexturesMode();
         texturesText.repaint(texturesStr());
+    }
+    private void toggleInfoPanelHover() {
+        softClick();
+        UserPreferences.toggleInfoPanelHover();
+        infoPanelText.repaint(infoPanelStr());
     }
     private void toggleMemory() {
         softClick();
@@ -534,6 +565,8 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         hoverBox = null;
         if (texturesText.contains(x,y))
             hoverBox = texturesText.bounds();
+        else if (infoPanelText.contains(x,y))
+            hoverBox = infoPanelText.bounds();
         else if (autoColonizeText.contains(x,y))
             hoverBox = autoColonizeText.bounds();
         else if (autoBombardText.contains(x,y))
@@ -556,7 +589,7 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
             hoverBox = okBox;
         else if (defaultBox.contains(x,y))
             hoverBox = defaultBox;
-		
+
         if (hoverBox != prevHover) {
             if (prevHover == texturesText.bounds())
                 texturesText.mouseExit();
@@ -580,6 +613,8 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
                 saveDirText.mouseExit();
             if (hoverBox == texturesText.bounds())
                 texturesText.mouseEnter();
+            if (hoverBox == infoPanelText.bounds())
+                infoPanelText.mouseEnter();
             else if (hoverBox == displayModeText.bounds())
                 displayModeText.mouseEnter();
             else if (hoverBox == autoColonizeText.bounds())
@@ -618,6 +653,8 @@ public class GameSettingsUI extends BasePanel implements MouseListener, MouseMot
         int y = e.getY();
         if (hoverBox == texturesText.bounds())
             toggleTextures();
+        if (hoverBox == infoPanelText.bounds())
+            toggleInfoPanelHover();
         else if (hoverBox == displayModeText.bounds())
             toggleDisplayMode();
         else if (hoverBox == autoColonizeText.bounds())

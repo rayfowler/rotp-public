@@ -340,6 +340,10 @@ GAME_SETTINGS_AUTOCOLONIZE        | Colonize: %1
 GAME_SETTINGS_AUTOCOLONIZE_YES    | Automatically
 GAME_SETTINGS_AUTOCOLONIZE_NO     | Always Prompt
 GAME_SETTINGS_AUTOCOLONIZE_DESC   | Toggle to auto-colonize and name planets immediately when colony ships arrive. This can be time-saving on very large maps.
+GAME_SETTINGS_INFO_PANEL          | Info Panel Hover: %1
+GAME_SETTINGS_INFO_PANEL_DESC     | Toggle to update the right-side info panel when mousing over a system or fleet.
+GAME_SETTINGS_INFO_PANEL_YES      | Yes
+GAME_SETTINGS_INFO_PANEL_NO       | No
 GAME_SETTINGS_AUTOBOMBARD         | Bombard: %1
 GAME_SETTINGS_AUTOBOMBARD_NO      | Always Prompt
 GAME_SETTINGS_AUTOBOMBARD_NEVER   | Never
