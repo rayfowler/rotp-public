@@ -103,7 +103,7 @@ public class UserPreferences {
         save();
     }
     public static boolean infoPanelHover()  { return infoPanelHover; }
-    public static void toggleInfoPanelHover()     { infoPanelHover = !infoPanelHover; save();  }
+    public static void toggleInfoPanelHover()     { infoPanelHover = !infoPanelHover; save(); }
     public static int musicVolume()         { return musicVolume; }
     public static int soundVolume()         { return soundVolume; }
     public static boolean showMemory()      { return showMemory; }

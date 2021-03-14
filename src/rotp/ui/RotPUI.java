@@ -1,12 +1,12 @@
 /*
  * Copyright 2015-2020 Ray Fowler
- * 
+ *
  * Licensed under the GNU General Public License, Version 3 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
- * 
+ *
  *     https://www.gnu.org/licenses/gpl-3.0.html
- * 
+ *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -253,7 +253,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         RotPUI.this.mainUI().clearAdvice();
     }
     public void processNotifications(List<TurnNotification> notifications) {
-        for (TurnNotification tn: notifications) 
+        for (TurnNotification tn: notifications)
             processNotification(tn);
     }
     public void processNotification(TurnNotification tn) {
@@ -284,10 +284,10 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         //toggleAnimations();
         repaint();
     }
-    public static IGameOptions newOptions() { 
+    public static IGameOptions newOptions() {
         if (newGameOptions == null)
             createNewOptions();
-        return newGameOptions; 
+        return newGameOptions;
     }
     public static void createNewOptions()               { newGameOptions = new MOO1GameOptions(); }
     public static void clearNewOptions()                { newGameOptions = null; }
@@ -299,9 +299,9 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
             timer.stop();
     }
     public static RotPUI instance()                  { return instance; }
-    public static HelpUI helpUI()                    { return instance.helpUI; } 
-    public static StartOptionsUI startOptionsUI()    { return instance.startOptionsUI; } 
-    public static GameSettingsUI gameSettingsUI()    { return instance.gameSettingsUI; } 
+    public static HelpUI helpUI()                    { return instance.helpUI; }
+    public static StartOptionsUI startOptionsUI()    { return instance.startOptionsUI; }
+    public static GameSettingsUI gameSettingsUI()    { return instance.gameSettingsUI; }
 
     @Override
     public void paint(Graphics g) {
@@ -325,11 +325,11 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     public void selectSetupGalaxyPanel() { setupGalaxyUI.init(); selectPanel(SETUP_GALAXY_PANEL, setupGalaxyUI);  }
     public void selectLoadGamePanel()  { loadGameUI.init(); selectPanel(LOAD_PANEL, loadGameUI);  }
     public void selectSaveGamePanel()  { saveGameUI.init(); selectPanel(SAVE_PANEL, saveGameUI);  }
-    public void selectIntroPanel()     { 
-        mainUI.init(false); 
-        selectPanel(MAIN_PANEL, mainUI()); 
-        enableGlassPane(raceIntroUI); 
-        repaint(); 
+    public void selectIntroPanel()     {
+        mainUI.init(false);
+        selectPanel(MAIN_PANEL, mainUI());
+        enableGlassPane(raceIntroUI);
+        repaint();
     }
     public void selectMainPanel()      { selectMainPanel(false); }
     public void selectMainPanel(boolean pauseNextTurn)      {
@@ -557,7 +557,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
             session().waitUntilNextTurnCanProceed();
         } finally {
             drawNextTurnNotice = true;
-        }      
+        }
     }
 
     public void selectDiplomaticMessagePanel(DiplomaticNotification notif) {
@@ -731,8 +731,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
             selectedPanel.keyPressed(e);
     }
     @Override
-    public void
-    keyReleased(KeyEvent e) {
+    public void keyReleased(KeyEvent e) {
         if (glassPane() != null)
             glassPane().keyReleased(e);
         else if (selectedPanel != null)
@@ -745,7 +744,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         else if (selectedPanel != null)
             selectedPanel.keyTyped(e);
     }
-    public class LargeDialogPane extends BasePanel { 
+    public class LargeDialogPane extends BasePanel {
         private static final long serialVersionUID = 1L;
         private final CardLayout dialogLayout = new CardLayout();
         private final BasePanel dialogHolder = new BasePanel();
@@ -757,13 +756,13 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         private void initModel() {
             setOpaque(true);
             setBackground(Color.black);
-            dialogHolder.setLayout(dialogLayout);            
-            
+            dialogHolder.setLayout(dialogLayout);
+
             Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
             int border = s10;
             int w = size.width-border-border;
             int h = size.height-border-border;
-            
+
             BasePanel barTop    = new BasePanel();
             BasePanel barBottom = new BasePanel();
             BasePanel barLeft   = new BasePanel();
@@ -772,11 +771,11 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
             barBottom.setOpaque(false);
             barLeft.setOpaque(false);
             barRight.setOpaque(false);
-            
+
             int barW = 0;
             int barH = 0;
             boolean sideBars = w > (h*8/5);
-        
+
             if (sideBars) {
                 barW = (w-(h*8/5))/2;
                 barH = h;
@@ -793,7 +792,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
                 barLeft.setPreferredSize(new Dimension(border, barH));
                 barRight.setPreferredSize(new Dimension(border, barH));
             }
-            
+
             setLayout(new BorderLayout());
             add(barTop, BorderLayout.NORTH);
             add(barBottom, BorderLayout.SOUTH);
