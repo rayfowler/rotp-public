@@ -15,6 +15,8 @@
  */
 package rotp.model.ships;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
@@ -22,6 +24,7 @@ import rotp.model.combat.CombatStack;
 import rotp.model.galaxy.Galaxy;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.planet.PlanetType;
+import rotp.util.Base;
 
 public final class ShipDesign extends Design {
     private static final long serialVersionUID = 1L;
@@ -59,7 +62,9 @@ public final class ShipDesign extends Design {
     private int usedCount = 0;       // # ships used by FleetCommander... updated each turn
     private float perTurnDmg = 0;
     private String iconKey;
+    private int shipColor;
     private transient ImageIcon icon;
+    private transient Image image;
     private transient float costBC;
 
     public static float hullPoints(int size)   { return Galaxy.current().pow(6, size); }
@@ -106,6 +111,18 @@ public final class ShipDesign extends Design {
     public void setIconKey() {
         iconKey(ShipLibrary.current().shipKey(lab().shipStyleIndex(), size(), seq()));
     }
+    public int shipColor()                  { return shipColor; }
+    public void shipColor(int i)            { shipColor = i; }
+    @Override
+    public Image image() {
+        if (image == null) {
+            ShipImage shipImage = shipImage();
+            image = icon(shipImage.nextIcon()).getImage();
+            if (shipColor > 0)
+                image = Base.colorizer.makeColor(shipColor, image);
+        }
+        return image;
+    }  
     public String sizeDesc() {
         switch (size()) {
             case ShipDesign.SMALL:  return text("SHIP_DESIGN_SIZE_SMALL");

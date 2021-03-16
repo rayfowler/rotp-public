@@ -180,8 +180,7 @@ public final class ConfirmScrapUI extends BasePanel implements MouseListener, Mo
         g.setColor(Color.black);
         g.fillRect(x, y, w, h);
 
-        ShipImage shipImage = targetDesign.shipImage();
-        Image img = icon(shipImage.baseIcon()).getImage();
+        Image img = targetDesign.image();
 
         int w0 = img.getWidth(null);
         int h0 = img.getHeight(null);

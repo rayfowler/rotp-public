@@ -407,6 +407,7 @@ public class ShipDesignLab implements Base, Serializable {
         design.armor(armors().get(0));
         design.engine(engines().get(0));
         design.maneuver(maneuvers().get(0));
+        design.shipColor(0);
         for (int i=0;i<ShipDesign.maxWeapons();i++) {
             design.weapon(i, weapons().get(0));
             design.wpnCount(i, 0);

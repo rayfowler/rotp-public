@@ -31,6 +31,8 @@ import rotp.ui.combat.ShipBattleUI;
 import rotp.ui.game.HelpUI;
 import rotp.ui.main.SystemPanel;
 import rotp.util.AnimationManager;
+import rotp.util.Base;
+import rotp.util.ImageColorizer;
 import rotp.util.Palette;
 
 public class DesignUI extends BasePanel {
@@ -38,6 +40,7 @@ public class DesignUI extends BasePanel {
     public static DesignUI instance;
     static Palette palette;
 
+    private static final int[] shipColors = { 0,1,3,4,5,6,8,9,10,11};
     private static final Color lightBrown = new Color(178,124,87);
     private static final Color brown = new Color(110,79,56);
     private static final Color darkBrown = new Color(112,85,68);
@@ -115,6 +118,7 @@ public class DesignUI extends BasePanel {
     private final Rectangle[] specialsFieldArea = new Rectangle[ShipDesign.maxSpecials];
     private final Polygon[] specialsFieldDecr = new Polygon[ShipDesign.maxSpecials];
     private final Polygon[] specialsFieldIncr = new Polygon[ShipDesign.maxSpecials];
+    private final Rectangle[] shipColorArea = new Rectangle[12];
 
     private final DesignComputerSelectionUI computerSelectionUI;
     private final DesignShieldSelectionUI shieldSelectionUI;
@@ -168,6 +172,8 @@ public class DesignUI extends BasePanel {
             specialsFieldDecr[i] = new Polygon();
             specialsFieldIncr[i] = new Polygon();
         }
+        for (int i=0;i<shipColorArea.length;i++) 
+            shipColorArea[i] = new Rectangle();
     }
     public void init() {
         int pid = player().id;
@@ -843,6 +849,8 @@ public class DesignUI extends BasePanel {
             }
             else if (hoverBox == prototypeBox) {
                 selectedSlot = -1;
+                softClick();
+                configPanel.loadShipImages();
                 instance.repaint();
             }
         }
@@ -998,8 +1006,7 @@ public class DesignUI extends BasePanel {
             if (!des.active())
                 return;
 
-            ShipImage shipImage = des.shipImage();
-            Image img = icon(shipImage.nextIcon()).getImage();
+            Image img = des.image();
 
             int w0 = img.getWidth(null);
             int h0 = img.getHeight(null);
@@ -1252,6 +1259,9 @@ public class DesignUI extends BasePanel {
 
             BufferedImage img = shipImages.get(shipImageIndex);
 
+            if (des.shipColor() > 0) 
+                img = Base.colorizer.makeColor(des.shipColor(), img);
+            
             int w1 = img.getWidth();
             int h1 = img.getHeight();
 
@@ -1283,7 +1293,7 @@ public class DesignUI extends BasePanel {
             g0.setClip(null);
         }
         private void drawSummaryInfo(Graphics2D g, ShipDesign des, int x, int y, int w, int h) {
-            String name = "";
+            String name;
             if (selectedSlot < 0) 
                 name = text("SHIP_DESIGN_PROTOTYPE_TITLE");
             else if (des.active())
@@ -1319,7 +1329,10 @@ public class DesignUI extends BasePanel {
             if (des.availableSpace() < 0)
                 g.setColor(errorRedC);
             g.drawString(text("SHIP_DESIGN_AVAIL_SPACE_LABEL"), x1, y6);
-
+            
+            if (!des.active())
+                drawColorOptions(g, x1, y6, w-s20, rowH);
+            
             g.setFont(narrowFont(22));
             drawShadowedString(g, text("SHIP_DESIGN_COMBAT_STATS_TITLE"),3,x2+s5,y1,SystemPanel.textShadowC, SystemPanel.whiteText);
 
@@ -1722,6 +1735,41 @@ public class DesignUI extends BasePanel {
             str = ""+ (int) (engRequired*engCost);
             sw = g.getFontMetrics().stringWidth(str);
             g.drawString(str, x3-sw, y9);
+        }
+        private void drawColorOptions(Graphics2D g, int x, int y, int w, int h) {
+            ShipDesign des = shipDesign();
+            g.setColor(Color.black);
+            String s = text("SHIP_DESIGN_COLORS");
+            int sw = g.getFontMetrics().stringWidth(s);
+            g.drawString(s, x, y+h);
+            int w0 = w-sw-s20;
+            int boxW = w0/shipColors.length;
+            int boxH = h-s10;
+            int boxY = y+s10;
+            int boxX = x+sw+s20;
+            g.setColor(Color.white);
+            Stroke prev = g.getStroke();
+            
+            for (int i=0;i<shipColors.length;i++) {
+                g.setStroke(stroke1);
+                int cIndex = shipColors[i];
+                shipColorArea[i].setBounds(boxX, boxY, boxW-s5, boxH);
+                if (cIndex > 0) {
+                    g.setColor(ImageColorizer.color(cIndex));             
+                    g.fill(shipColorArea[i]);
+                }
+                if (hoverTarget == shipColorArea[i]) 
+                    g.setColor(Color.yellow);
+                else if (des.shipColor() == cIndex) {
+                    g.setStroke(stroke2);
+                    g.setColor(Color.white);
+                }
+                else
+                   g.setColor(Color.black);
+                g.draw(shipColorArea[i]);
+                boxX += boxW;
+            }
+            g.setStroke(prev);
         }
         private void drawLeftComponentInfo(Graphics2D g, ShipDesign des, int x, int y, int w0, int h) {
             g.setColor(darkBrown);
@@ -2734,6 +2782,10 @@ public class DesignUI extends BasePanel {
                 repaint();
             }
         }
+        private void setShipColor(int i) {
+            ShipDesign des =  shipDesign();
+            des.shipColor(shipColors[i]);
+        }
         @Override
         public void mouseDragged(MouseEvent e) { }
         @Override
@@ -2850,6 +2902,16 @@ public class DesignUI extends BasePanel {
                     }
                 }
             }
+            
+            if (hoverTarget == null) {
+                for (int i = 0; i < shipColorArea.length; i++) {
+                    if (shipColorArea[i].contains(x, y)) {
+                        hoverTarget = shipColorArea[i];
+                        break;
+                    }
+                }
+            }
+            
             if (prevHover != hoverTarget)
                 repaint();
         }
@@ -2984,6 +3046,11 @@ public class DesignUI extends BasePanel {
                 }
                 if (hoverTarget == specialsFieldIncr[i]) {
                     softClick(); shipSpecialsIncrement(i); return;
+                }
+            }
+            for (int i=0;i<shipColorArea.length;i++) {
+                if (hoverTarget == shipColorArea[i]) {
+                    softClick(); setShipColor(i); return;
                 }
             }
         }

@@ -309,19 +309,22 @@ public final class ImageColorizer implements Base {
         return img;
     }
     public BufferedImage makeColor(Integer id) {
+        return makeColor(id, baseImage);
+    }
+    public BufferedImage makeColor(int id, Image img) {
         switch(id) {
-            case WHITE:  return makeWhite(baseImage);
-            case GRAY:   return makeGray(baseImage);
-            case RED:    return makeRed(baseImage);
-            case GREEN:  return makeGreen(baseImage);
-            case BLUE:   return makeBlue(baseImage);
-            case PURPLE: return makeMagenta(baseImage);
-            case AQUA:   return makeAqua(baseImage);
-            case YELLOW: return makeYellow(baseImage);
-            case BLACK:  return makeBlack(baseImage);
-            case ORANGE: return makeOrange(baseImage);
-            case DARK_GREEN:  return makeDarkGreen(baseImage);
-            case LIGHT_BLUE:  return makeLightBlue(baseImage);
+            case WHITE:  return makeWhite(img);
+            case GRAY:   return makeGray(img);
+            case RED:    return makeRed(img);
+            case GREEN:  return makeGreen(img);
+            case BLUE:   return makeBlue(img);
+            case PURPLE: return makeMagenta(img);
+            case AQUA:   return makeAqua(img);
+            case YELLOW: return makeYellow(img);
+            case BLACK:  return makeBlack(img);
+            case ORANGE: return makeOrange(img);
+            case DARK_GREEN:  return makeDarkGreen(img);
+            case LIGHT_BLUE:  return makeLightBlue(img);
             default: throw new RuntimeException(concat("Unknown color id: ", str(id)));
         }
     }
@@ -339,8 +342,7 @@ public final class ImageColorizer implements Base {
                 int a0 = pixel >> 24 & 0xff;
                 int r0 = (pixel >> 16 & 0xff);
                 int g0 = (pixel >> 8 & 0xff);
-                int b0 = (pixel >> 0 & 0xff);
-
+                int b0 = (pixel & 0xff);
 
                 int sum = r0+g0+b0;
                 int r1 = sum / 3;
@@ -357,7 +359,6 @@ public final class ImageColorizer implements Base {
     private BufferedImage makeRed(Image base) {
         BufferedImage img = newBufferedImage(base);
 
-        Rectangle rect = getScope(img);
         int w = img.getWidth();
         int h = img.getHeight();
 
@@ -367,20 +368,14 @@ public final class ImageColorizer implements Base {
                 int a0 = pixel >> 24 & 0xff;
                 int r0 = (pixel >> 16 & 0xff);
                 int g0 = (pixel >> 8 & 0xff);
-                int b0 = (pixel >> 0 & 0xff);
+                int b0 = (pixel & 0xff);
 
                 int sum = r0 + g0 + b0;
-                int r1 = r0;
-                int g1 = g0;
-                int b1 = b0;
-
-                if (rect.contains(x,y) && modify(r1,g1,b1)) {
-                    int max = max(r0,g0,b0);
-                    r1 = max;
-                    g1 = (sum - max) / 2;
-                    b1 = g1;
-                }
-
+                int max = max(r0,g0,b0);
+                int r1 = max;
+                int g1 = (sum - max) / 2;
+                int b1 = g1;
+                
                 int newPixel = (a0 << 24)+(r1 << 16)+(g1 << 8)+b1;
                 img.setRGB(x,y,newPixel);
             }
@@ -391,7 +386,6 @@ public final class ImageColorizer implements Base {
     private BufferedImage makeGreen(Image base) {
         BufferedImage img = newBufferedImage(base);
 
-        Rectangle rect = getScope(img);
         int w = img.getWidth();
         int h = img.getHeight();
 
@@ -401,19 +395,13 @@ public final class ImageColorizer implements Base {
                 int a0 = pixel >> 24 & 0xff;
                 int r0 = (pixel >> 16 & 0xff);
                 int g0 = (pixel >> 8 & 0xff);
-                int b0 = (pixel >> 0 & 0xff);
+                int b0 = (pixel & 0xff);
 
                 int sum = r0 + g0 + b0;
-                int r1 = r0;
-                int g1 = g0;
-                int b1 = b0;
-
-                if (rect.contains(x,y) && modify(r1,g1,b1)) {
-                    int max = max(r0,g0,b0);
-                    r1 = (sum - max) / 2;
-                    g1 = max;
-                    b1 = r1;
-                }
+                int max = max(r0,g0,b0);
+                int r1 = (sum - max) / 2;
+                int g1 = max;
+                int b1 = r1;
 
                 int newPixel = (a0 << 24)+(r1 << 16)+(g1 << 8)+b1;
                 img.setRGB(x,y,newPixel);
@@ -425,7 +413,6 @@ public final class ImageColorizer implements Base {
     public BufferedImage makeBlue(Image base) {
         BufferedImage img = newBufferedImage(base);
 
-        Rectangle rect = getScope(img);
         int w = img.getWidth();
         int h = img.getHeight();
 
@@ -435,19 +422,13 @@ public final class ImageColorizer implements Base {
                 int a0 = pixel >> 24 & 0xff;
                 int r0 = (pixel >> 16 & 0xff);
                 int g0 = (pixel >> 8 & 0xff);
-                int b0 = (pixel >> 0 & 0xff);
+                int b0 = (pixel & 0xff);
 
                 int sum = r0 + g0 + b0;
-                int r1 = r0;
-                int g1 = g0;
-                int b1 = b0;
-
-                if (rect.contains(x,y) && modify(r1,g1,b1)) {
-                    int max = max(r0,g0,b0);
-                    r1 = (sum - max) / 2;
-                    g1 = r1;
-                    b1 = max;
-                }
+                int max = max(r0,g0,b0);
+                int r1 = (sum - max) / 2;
+                int g1 = r1;
+                int b1 = max;
 
                 int newPixel = (a0 << 24)+(r1 << 16)+(g1 << 8)+b1;
                 img.setRGB(x,y,newPixel);
@@ -459,7 +440,6 @@ public final class ImageColorizer implements Base {
     public BufferedImage makeLightBlue(Image base) {
         BufferedImage img = newBufferedImage(base);
 
-        Rectangle rect = getScope(img);
         int w = img.getWidth();
         int h = img.getHeight();
 
@@ -469,20 +449,15 @@ public final class ImageColorizer implements Base {
                 int a0 = pixel >> 24 & 0xff;
                 int r0 = (pixel >> 16 & 0xff);
                 int g0 = (pixel >> 8 & 0xff);
-                int b0 = (pixel >> 0 & 0xff);
+                int b0 = (pixel & 0xff);
 
                 int sum = r0 + g0 + b0;
-                int r1 = r0;
-                int g1 = g0;
-                int b1 = b0;
-
-                if (rect.contains(x,y) && modify(r1,g1,b1)) {
-                    int max = max(r0,g0,b0);
-                    r1 = 63+((sum - max)/2)*3/4;
-                    g1 = 63+r1*3/4;
-                    b1 = 63+max*3/4;
-                }
-
+                int max = max(r0,g0,b0);
+                int min = min((r0+g0+b0)/3, 63);
+                int r1 = min+((sum - max)/2)*3/4;
+                int g1 = r1;
+                int b1 = min+max*3/4;
+ 
                 int newPixel = (a0 << 24)+(r1 << 16)+(g1 << 8)+b1;
                 img.setRGB(x,y,newPixel);
             }
@@ -493,7 +468,6 @@ public final class ImageColorizer implements Base {
     public BufferedImage makeDarkGreen(Image base) {
         BufferedImage img = newBufferedImage(base);
 
-        Rectangle rect = getScope(img);
         int w = img.getWidth();
         int h = img.getHeight();
 
@@ -509,13 +483,11 @@ public final class ImageColorizer implements Base {
                 int g1 = g0;
                 int b1 = b0;
 
-                if (rect.contains(x,y) && modify(r1,g1,b1)) {
-                    int max = max(r0,g0,b0);
-                    int min = min(r0,g0,b0);
-                    r1 = min / 2;
-                    g1 = max / 2;
-                    b1 = min / 2;
-                }
+                int max = max(r0,g0,b0);
+                int min = min(r0,g0,b0);
+                r1 = min / 2;
+                g1 = max / 2;
+                b1 = min / 2;
 
                 int newPixel = (a0 << 24)+(r1 << 16)+(g1 << 8)+b1;
                 img.setRGB(x,y,newPixel);
@@ -527,7 +499,6 @@ public final class ImageColorizer implements Base {
     public BufferedImage makeYellow(Image base) {
         BufferedImage img = newBufferedImage(base);
 
-        Rectangle rect = getScope(img);
         int w = img.getWidth();
         int h = img.getHeight();
 
@@ -537,20 +508,16 @@ public final class ImageColorizer implements Base {
                 int a0 = pixel >> 24 & 0xff;
                 int r0 = (pixel >> 16 & 0xff);
                 int g0 = (pixel >> 8 & 0xff);
-                int b0 = (pixel >> 0 & 0xff);
+                int b0 = (pixel & 0xff);
 
                 int sum = r0 + g0 + b0;
-                int r1 = r0;
-                int g1 = g0;
-                int b1 = b0;
+                int min = min(r0,g0,b0);
+                int minR = min((r0+g0+b0)/3, 191);
 
-                if (rect.contains(x,y) && modify(r1,g1,b1)) {
-                    int min = min(r0,g0,b0);
-                    r1 = 191 + ((sum - min) / 12);
-                    g1 = r1;
-                    b1 = min / 2;
-                }
-
+                int r1 = minR + ((sum - min) / 12);
+                int g1 = r1;
+                int b1 = min;
+ 
                 int newPixel = (a0 << 24)+(r1 << 16)+(g1 << 8)+b1;
                 img.setRGB(x,y,newPixel);
             }
@@ -561,7 +528,6 @@ public final class ImageColorizer implements Base {
     public BufferedImage makeOrange(Image base) {
         BufferedImage img = newBufferedImage(base);
 
-        Rectangle rect = getScope(img);
         int w = img.getWidth();
         int h = img.getHeight();
 
@@ -571,19 +537,16 @@ public final class ImageColorizer implements Base {
                 int a0 = pixel >> 24 & 0xff;
                 int r0 = (pixel >> 16 & 0xff);
                 int g0 = (pixel >> 8 & 0xff);
-                int b0 = (pixel >> 0 & 0xff);
+                int b0 = (pixel & 0xff);
 
                 int sum = r0 + g0 + b0;
-                int r1 = r0;
-                int g1 = g0;
-                int b1 = b0;
+                int minR = min((r0+g0+b0)/3, 191);
+                int minG = min((r0+g0+b0)/6, 90);
 
-                if (rect.contains(x,y) && modify(r1,g1,b1)) {
-                    int min = min(r0,g0,b0);
-                    r1 = 191 + ((sum - min) / 12);
-                    g1 = r1 / 2;
-                    b1 = min / 2;
-                }
+                int min = min(r0,g0,b0);
+                int r1 = minR + ((sum - min) / 12);
+                int g1 = minG + ((sum - min) / 12);
+                int b1 = g1;
 
                 int newPixel = (a0 << 24)+(r1 << 16)+(g1 << 8)+b1;
                 img.setRGB(x,y,newPixel);
@@ -629,7 +592,6 @@ public final class ImageColorizer implements Base {
     private BufferedImage makeMagenta(Image base) {
         BufferedImage img = newBufferedImage(base);
 
-        Rectangle rect = getScope(img);
         int w = img.getWidth();
         int h = img.getHeight();
 
@@ -646,12 +608,10 @@ public final class ImageColorizer implements Base {
                 int g1 = g0;
                 int b1 = b0;
 
-                if (rect.contains(x,y) && modify(r1,g1,b1)) {
-                    int min = min(r0,g0,b0);
-                    r1 = (sum - min) / 2;
-                    g1 = min;
-                    b1 = r1;
-                }
+                int min = min(r0,g0,b0);
+                r1 = (sum - min) / 2;
+                g1 = min;
+                b1 = r1;
 
                 int newPixel = (a0 << 24)+(r1 << 16)+(g1 << 8)+b1;
                 img.setRGB(x,y,newPixel);
@@ -663,7 +623,6 @@ public final class ImageColorizer implements Base {
     public BufferedImage makeAqua(Image base) {
         BufferedImage img = newBufferedImage(base);
 
-        Rectangle rect = getScope(img);
         int w = img.getWidth();
         int h = img.getHeight();
 
@@ -680,12 +639,10 @@ public final class ImageColorizer implements Base {
                 int g1 = g0;
                 int b1 = b0;
 
-                if (rect.contains(x,y) && modify(r1,g1,b1)) {
-                    int min = min(r0,g0,b0);
-                    r1 = min;
-                    g1 = (sum - min) / 2;;
-                    b1 = g1;
-                }
+                int min = min(r0,g0,b0);
+                r1 = min;
+                g1 = (sum - min) / 2;;
+                b1 = g1;
 
                 int newPixel = (a0 << 24)+(r1 << 16)+(g1 << 8)+b1;
                 img.setRGB(x,y,newPixel);
@@ -697,7 +654,6 @@ public final class ImageColorizer implements Base {
     public BufferedImage makeWhite(Image base) {
         BufferedImage img = newBufferedImage(base);
 
-        Rectangle rect = getScope(img);
         int w = img.getWidth();
         int h = img.getHeight();
 
@@ -709,18 +665,8 @@ public final class ImageColorizer implements Base {
                 int g0 = (pixel >> 8 & 0xff);
                 int b0 = (pixel >> 0 & 0xff);
 
-                int sum = r0 + g0 + b0;
-                int r1 = r0;
-                int g1 = g0;
-                int b1 = b0;
-
-                if (rect.contains(x,y) && modify(r1,g1,b1)) {
-                    r1 = 191 + (sum / 12);
-                    g1 = r1;
-                    b1 = r1;
-                }
-
-                int newPixel = (a0 << 24)+(r1 << 16)+(g1 << 8)+b1;
+                int max = max(r0,g0,b0);
+                int newPixel = (a0 << 24)+(max << 16)+(max << 8)+max;
                 img.setRGB(x,y,newPixel);
             }
         }
