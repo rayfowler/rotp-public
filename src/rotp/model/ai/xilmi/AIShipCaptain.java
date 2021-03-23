@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package rotp.model.ai.base;
+package rotp.model.ai.xilmi;
 
 import java.awt.*;
 import java.util.*;
@@ -71,7 +71,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
 
         // check for retreating
-        if (wantToRetreat(stack)) {
+        if (wantToRetreat(stack) && stack.canRetreat()) {
             CombatStackShip shipStack = (CombatStackShip) stack;
             StarSystem dest = retreatSystem(shipStack.mgr.system());
             if (dest != null) {
@@ -86,7 +86,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
         while (turnActive) {
             float prevMove = stack.move;
             prevTarget = stack.target;
-            FlightPath bestPathToTarget = chooseTarget(stack);
+            //ail: for moving we pick the target that is overall the most suitable, so that bombers move towards planet
+            FlightPath bestPathToTarget = chooseTarget(stack, false, false);
             // if we need to move towards target, do it now
             if (stack.target != null) {
                 if (stack.mgr.autoResolve) {
@@ -100,8 +101,24 @@ public class AIShipCaptain implements Base, ShipCaptain {
             }
 
             // if can attack target this turn, fire when ready
+            //ail: first look for ships as targets as we can fire our beams/missiles at them and then still drop bombs afterwards
+            if(stack.target != null && stack.target.isColony())
+            {
+                chooseTarget(stack, false, true);
+                if (stack.canAttack(stack.target)) 
+                    mgr.performAttackTarget(stack);
+                //now chhose our previous target again
+                chooseTarget(stack, false, false);
+            }
             if (stack.canAttack(stack.target)) 
                 mgr.performAttackTarget(stack);
+            else
+            {
+                //ail: if we couldn't attack our move-to-target, we try and see if anything else can be attacked from where we are
+                chooseTarget(stack, true, false);
+                if (stack.canAttack(stack.target)) 
+                    mgr.performAttackTarget(stack);
+            }
          
             // SANITY CHECK:
             // make sure we fall out if we haven't moved 
@@ -112,7 +129,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
         mgr.turnDone(stack);
     }
-    private  FlightPath chooseTarget(CombatStack stack) {
+    private  FlightPath chooseTarget(CombatStack stack, boolean onlyInAttackRange, boolean onlyShips) {
         if (!stack.canChangeTarget())
             return null;
 
@@ -129,12 +146,23 @@ public class AIShipCaptain implements Base, ShipCaptain {
         float threatLevel = 0;
         boolean currentCanBomb = false;
         for (CombatStack target : potentialTargets) {
+            if(onlyInAttackRange && !stack.canAttack(target))
+            {
+                continue;
+            }
+            if(onlyShips)
+            {
+                continue;
+            }
             // pct of target that this stack thinks it can kill
             float killPct = max(stack.estimatedKillPct(target), expectedPopLossPct(stack, target)); 
             // threat level target poses to this stack (or its ward if applicable)
             CombatStack ward = stack.hasWard() ? stack.ward() : stack;
             // want to adjust threat upward as target gets closer to ward
             int distAfterMove = target.canTeleport() ? 1 : (int) max(1,target.movePointsTo(ward)-target.maxMove());
+            //ail: We run best-target twice: Once to see where to move toward by ignoring distance, so we just assume we can reach it, and once after moving so we can see what we can actually shoot
+            if(!onlyInAttackRange)
+                distAfterMove = 1;
             // treat those who can move to bombing range (distAfterMove == 1) as maximum threats
             if (ward.isColony()) {
                 CombatStackColony colony = (CombatStackColony) ward;
@@ -326,6 +354,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             return inPact || !currStack.isArmed();
      
         // AI STACKS
+        //System.out.print("\n"+currStack.fullName()+" canRetreat: "+currStack.canRetreat());
         if (!currStack.canRetreat()) 
             return false;
         
@@ -342,15 +371,9 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
         
         // if stack is pacted with colony and doesn't want war, then retreat
-        // modnar: change condition to only "doesn't want war"
-        if ((colView != null) && !colView.embassy().wantWar())  
+        // ail: Whether I want a war or not depends on whether the other faction is an enemy, not on relation!
+        if ((colView != null) && !empire.enemies().contains(col.empire))  
             return true;
-
-        // if stack has ward still in combat, don't retreat
-        if (currStack.hasWard() && currStack.isArmed()) {
-            if (activeStacks.contains(currStack.ward())) 
-                return false;
-        }
 
         // don't retreat if all enemies can only target planets
         boolean canBeTargeted = false;
@@ -372,13 +395,19 @@ public class AIShipCaptain implements Base, ShipCaptain {
     public boolean facingOverwhelmingForce(CombatStack stack) {
         // build list of allies & enemies
         allies().clear(); enemies().clear();
-
+        boolean defending = false;
         for (CombatStack st : combat().activeStacks()) {
             if (st.isMonster()) 
                 enemies.add(st);
             else {
                 if (stack.empire.alliedWith(id(st.empire)))
+                {
                     allies().add(st);
+                    if(st.isColony())
+                    {
+                        defending = true;
+                    }
+                }
                 else if (stack.empire.aggressiveWith(st.empire, combat().system()))
                     enemies().add(st);
             }
@@ -387,6 +416,9 @@ public class AIShipCaptain implements Base, ShipCaptain {
         // calculate ally kills & deaths
         float allyKills = 0;
         float enemyKills = 0;
+        
+        float allyValue = 0;
+        float enemyValue = 0;
 
         List<CombatStack> friends = new ArrayList<>();
         for (CombatStack ally: allies()) {
@@ -404,6 +436,13 @@ public class AIShipCaptain implements Base, ShipCaptain {
 //        log("friends:"+friends.size()+"   foes:"+foes.size());
         for (CombatStack st1 : friends) {
             float maxKillValue = -1;
+            float valueFactor = 1.0f;
+            //ail: Colony-ships seem to overestimate their fighting-ability
+            if(st1.design() != null && st1.design().isColonyShip())
+            {
+                valueFactor = 0.1f;
+            }
+            allyValue += st1.designCost() * st1.num * valueFactor;
             for (CombatStack st2: foes) {
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
                 float killValue = killPct*st2.num*st2.designCost();
@@ -415,6 +454,13 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
        for (CombatStack st1 : foes) {
             float maxKillValue = -1;
+            float valueFactor = 1.0f;
+            //ail: We also don't want to overestimate enemy-colony-ships
+            if(st1.design() != null && st1.design().isColonyShip())
+            {
+                valueFactor = 0.1f;
+            }
+            enemyValue += st1.designCost() * st1.num * valueFactor;
             for (CombatStack st2: friends) {
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
                 float killValue = killPct*st2.num*st2.designCost();
@@ -429,9 +475,21 @@ public class AIShipCaptain implements Base, ShipCaptain {
         else if (allyKills == 0)
             return true;
         else {
-            float retreatRatio = stack.empire.diplomatAI().leaderRetreatRatio(combat().system().empire());
+            //ail: using the value of the ruthless pacifist, as it clearly seems the smartest
+            float retreatRatio = 0.75f; //stack.empire.leader().retreatRatio(combat().system().empire());
+            if(stack.design().obsolete() || defending)
+            {
+                //ail: willing to take more losses for obsolte designs or when defending
+                retreatRatio = 1.2f;
+            }
+            float valueFactor = 1.0f;
+            if(enemyValue > 0 && allyValue > 0)
+            {
+                valueFactor = enemyValue / allyValue;
+            }
             log("retreat ratio: "+retreatRatio+"   enemyKillValue:"+enemyKills+"  allyKillValue:"+allyKills);
-            return ((enemyKills / allyKills) > retreatRatio/1.2f); // modnar: adjust AI to accept less losses, more likely to retreat
+            //System.out.print("\n"+stack.fullName()+" retreat: "+(enemyKills / allyKills) * valueFactor+" vf: "+valueFactor);
+            return ((enemyKills / allyKills) * valueFactor > retreatRatio/1.2f); // modnar: adjust AI to accept less losses, more likely to retreat
         }
     }
     @Override

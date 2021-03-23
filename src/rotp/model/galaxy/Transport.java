@@ -138,6 +138,8 @@ public class Transport implements Base, Ship, Sprite, Serializable {
     public void arrive()                { dest.acceptTransport(this); }
     @Override
     public boolean visibleTo(int empId) { return true; }
+    @Override
+    public boolean isTransport()       { return true; }
 
     // MappedObject overrides
     @Override

@@ -410,7 +410,7 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
             empire().ai().checkColonize(system(), this);
     }
     public boolean canColonizeSystem(StarSystem sys) {
-        if (sys == null)
+        if ((sys == null) || sys.planet().type().isAsteroids())
             return false;
         ShipDesign d = empire().shipDesignerAI().bestDesignToColonize(this, sys);
         return d != null;
@@ -599,7 +599,7 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
         }
         return empire().tech().scoutRange();
     }
-    private float slowestStackSpeed() {
+    public float slowestStackSpeed() {
         float maxSpeed = Integer.MAX_VALUE;
         for (int i=0;i<num.length;i++) {
             if (num[i]>0) {
@@ -826,13 +826,14 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
         empire().sv.refreshFullScan(sysId);
         victim.sv.refreshFullScan(sysId);
     }
-    public float expectedBombardDamage() {
-        if (!system().isColonized())
+    public float expectedBombardDamage() {  return expectedBombardDamage(system());  }
+    public float expectedBombardDamage(StarSystem sys) {
+        if (!sys.isColonized())
             return 0;
 
         float damage = 0;
         ShipCombatManager mgr = galaxy().shipCombat();
-        CombatStackColony planetStack = new CombatStackColony(system().colony(), mgr);
+        CombatStackColony planetStack = new CombatStackColony(sys.colony(), mgr);
 
         for (int i=0;i<num.length;i++) {
             if (num[i] > 0) {

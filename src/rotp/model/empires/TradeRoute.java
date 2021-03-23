@@ -71,6 +71,9 @@ public class TradeRoute implements Base, Serializable {
     }
     public void startRoute(int newLevel) {
         float newTrade = newLevel - level;
+        if (newTrade < 0)
+            return;
+        
         float newPct = ((profit/newTrade) + startPct()) * (newTrade/newLevel);
 
         profit = newPct * newLevel;

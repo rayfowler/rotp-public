@@ -59,7 +59,7 @@ public class OathBreakerIncident extends DiplomaticIncident {
         oathBreakType = type;
         dateOccurred = galaxy().currentYear();
         
-        duration = obs.leader().oathBreakerDuration();
+        duration = obs.diplomatAI().leaderOathBreakerDuration();
         // longer duration for the victim of the oathbreaking
         if (vic == obs)
             duration *= 2;

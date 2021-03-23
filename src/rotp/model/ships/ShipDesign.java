@@ -150,6 +150,7 @@ public final class ShipDesign extends Design {
     public boolean isFighter()     { return (mission() == FIGHTER); }
     public boolean isColonyShip()  { return (mission() == COLONY); }
     public boolean isBomber()      { return (mission() == BOMBER); }
+    public boolean isDestroyer()   { return (mission() == DESTROYER); }
 
 
     public void clearEmptyWeapons() {
@@ -224,6 +225,9 @@ public final class ShipDesign extends Design {
         return pixel;
     }
     public boolean matchesDesign(ShipDesign d) {
+        return matchesDesign(d, false);
+    }
+    public boolean matchesDesign(ShipDesign d, boolean ignoreWeapons) {
         if (scrapped() != d.scrapped())
             return false;
         if (size() != d.size())
@@ -240,11 +244,13 @@ public final class ShipDesign extends Design {
             return false;
         if (maneuver() != d.maneuver())
             return false;
-        for (int i=0;i<ShipDesign.maxWeapons();i++) {
-            if (weapon(i) != d.weapon(i) )
-                return false;
-            if (wpnCount(i) != d.wpnCount(i))
-                return false;
+        if(!ignoreWeapons) {
+            for (int i=0;i<ShipDesign.maxWeapons();i++) {
+                if (weapon(i) != d.weapon(i) )
+                    return false;
+                if (wpnCount(i) != d.wpnCount(i))
+                    return false;
+            }
         }
         for (int i=0;i<ShipDesign.maxSpecials();i++) {
             if (special(i) != d.special(i))

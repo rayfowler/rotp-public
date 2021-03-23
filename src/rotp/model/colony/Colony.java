@@ -142,6 +142,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         else
             return true;
     }
+    public float untargetedHitPoints()         { return UNTARGETED_DAMAGE_FOR_POPLOSS * population(); }
     public void clearAllRebellion() {
         rebels = 0;
         rebellion = false;

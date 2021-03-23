@@ -38,7 +38,7 @@ public class SpyConfessionIncident extends DiplomaticIncident {
             missionType = 1;
             duration = 5;
         }
-        else if (spies.isHide() && ev.owner().leader().isXenophobic()) {
+        else if (spies.isHide() && ev.owner().diplomatAI().leaderHatesAllSpies()) {
             mission = text("NOTICE_SPYING_MISSION_SABOTAGE");
             severity = max(-20, -10+ev.embassy().currentSpyIncidentSeverity());
             missionType = 0;

@@ -27,6 +27,7 @@ import rotp.model.tech.TechArmor;
 import rotp.model.tech.TechAtmosphereEnrichment;
 import rotp.model.tech.TechAutomatedRepair;
 import rotp.model.tech.TechBattleComputer;
+import rotp.model.tech.TechBattleSuit;
 import rotp.model.tech.TechBeamFocus;
 import rotp.model.tech.TechBiologicalAntidote;
 import rotp.model.tech.TechBiologicalWeapon;
@@ -38,12 +39,20 @@ import rotp.model.tech.TechCloning;
 import rotp.model.tech.TechCombatTransporter;
 import rotp.model.tech.TechControlEnvironment;
 import rotp.model.tech.TechDeflectorShield;
+import rotp.model.tech.TechDisplacement;
 import rotp.model.tech.TechECMJammer;
 import rotp.model.tech.TechEcoRestoration;
 import rotp.model.tech.TechEnergyPulsar;
 import rotp.model.tech.TechEngineWarp;
 import rotp.model.tech.TechFuelRange;
+import rotp.model.tech.TechFutureComputer;
+import rotp.model.tech.TechFutureConstruction;
+import rotp.model.tech.TechFutureForceField;
+import rotp.model.tech.TechFuturePlanetology;
+import rotp.model.tech.TechFuturePropulsion;
+import rotp.model.tech.TechFutureWeapon;
 import rotp.model.tech.TechHandWeapon;
+import rotp.model.tech.TechHyperspaceComm;
 import rotp.model.tech.TechImprovedIndustrial;
 import rotp.model.tech.TechImprovedTerraforming;
 import rotp.model.tech.TechIndustrialWaste;
@@ -53,6 +62,7 @@ import rotp.model.tech.TechPersonalShield;
 import rotp.model.tech.TechPlanetaryShield;
 import rotp.model.tech.TechRepulsor;
 import rotp.model.tech.TechRoboticControls;
+import rotp.model.tech.TechScanner;
 import rotp.model.tech.TechShipInertial;
 import rotp.model.tech.TechShipNullifier;
 import rotp.model.tech.TechShipWeapon;
@@ -62,6 +72,7 @@ import rotp.model.tech.TechStasisField;
 import rotp.model.tech.TechStreamProjector;
 import rotp.model.tech.TechSubspaceInterdictor;
 import rotp.model.tech.TechTeleporter;
+import rotp.model.tech.TechTorpedoWeapon;
 import rotp.model.tech.TechTree;
 import rotp.ui.notifications.SelectTechNotification;
 import rotp.util.Base;
@@ -367,6 +378,24 @@ public class AIScientist implements Base, Scientist {
         return val;
     }
     @Override
+    public float baseValue(TechBattleSuit t) {
+        TechBattleSuit curr = empire.tech().topBattleSuitTech();
+        if (curr.level >= t.level)
+            return 0;
+        
+        float val = t.level;
+        
+        if (empire.leader().isAggressive())
+            val *= 1.5;
+        else if (empire.leader().isMilitarist())
+            val *= 1.5;
+        
+        if (empire.combatTransportPct() > 0)
+            val *= 2;
+
+        return val;
+    }
+    @Override
     public float baseValue(TechBeamFocus t) {
         float val = t.level;
         float adj = 1.0f;
@@ -528,7 +557,7 @@ public class AIScientist implements Base, Scientist {
         // obsolete?
         if (t.environment() <= empire.tech().minColonyLevel())
             return 0;
-        List<StarSystem> possible = empire.uncolonizedPlanetsInShipRange((int)empire.tech().minColonyLevel());
+        List<StarSystem> possible = empire.uncolonizedPlanetsInRange(empire.shipRange());
         List<StarSystem> newPossible = empire.uncolonizedPlanetsInShipRange(t.environment());
         float newPlanets = newPossible.size() - possible.size();
         if (newPlanets < 1)
@@ -567,6 +596,18 @@ public class AIScientist implements Base, Scientist {
         val *= Math.sqrt(empire.numEnemies()+1);
 
         return val;
+    }
+    @Override
+    public float baseValue(TechDisplacement t) {
+        int val = t.level;
+        float adj = 1.0f;
+        
+        if (empire.leader().isMilitarist())
+            adj *= 1.25;
+        if (empire.leader().isAggressive())
+            adj *= 1.25;
+        
+        return adj * val;
     }
     @Override
     public float baseValue(TechECMJammer t) {
@@ -676,6 +717,30 @@ public class AIScientist implements Base, Scientist {
         return adj * val;
     }
     @Override
+    public float baseValue(TechFutureComputer t) {
+        return t.level()/2;
+    }
+    @Override
+    public float baseValue(TechFutureConstruction t) {
+        return t.level()/2;
+    }
+    @Override
+    public float baseValue(TechFutureForceField t) {
+        return t.level()/2;
+    }
+    @Override
+    public float baseValue(TechFuturePlanetology t) {
+        return t.level()/2;
+    }
+    @Override
+    public float baseValue(TechFuturePropulsion t) {
+        return t.level()/2;
+    }
+    @Override
+    public float baseValue(TechFutureWeapon t) {
+        return t.level()/2;
+    }
+    @Override
     public float baseValue(TechHandWeapon t) {
         TechHandWeapon curr = empire.tech().topHandWeaponTech();
         int topCombatMod = curr == null ? 0 : curr.combatMod;
@@ -698,6 +763,10 @@ public class AIScientist implements Base, Scientist {
         val *= Math.sqrt(empire.numEnemies()+1);
 
         return val;
+    }
+    @Override
+    public float baseValue(TechHyperspaceComm t) {
+        return t.level();
     }
     @Override
     public float baseValue(TechImprovedIndustrial t) {
@@ -887,6 +956,10 @@ public class AIScientist implements Base, Scientist {
         return val;
     }
     @Override
+    public float baseValue(TechScanner t) {
+        return t.level();
+    }
+    @Override
     public float baseValue(TechShipInertial t) {
         TechShipInertial curr = empire.tech().topShipInertialTech();
         float topDefense = curr == null ? 0 : curr.defenseBonus;
@@ -1057,5 +1130,9 @@ public class AIScientist implements Base, Scientist {
             adj *= 1.25;
 
         return adj * t.level;
+    }
+    @Override
+    public float baseValue(TechTorpedoWeapon t) {
+        return t.level();
     }
 }
