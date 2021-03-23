@@ -1745,6 +1745,7 @@ public final class Empire implements Base, NamedObject, Serializable {
             ally.sv.refreshAllySharingScan(v.sysId);
         }
     }
+    /*
     public List<StarSystem> systemsNeedingTransports(int minTransport) {
         List<StarSystem> systems = new ArrayList<>();
         for (StarSystem sys: colonizedSystems) {
@@ -1753,6 +1754,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
         return systems;
     }
+    */
     public List<StarSystem> systemsInShipRange(Empire c) {
         // returns list of systems in ship range
         // if c provided, restricts list to that owner
@@ -1767,6 +1769,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
         return systems;
     }
+    /*
     public List<StarSystem> systemsSparingTransports(int minTransport) {
         List<StarSystem> systems = new ArrayList<>();
         for (StarSystem sys: colonizedSystems) {
@@ -1775,6 +1778,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
         return systems;
     }
+    */
     public List<StarSystem> allColonizedSystems() {
         return colonizedSystems;
     }

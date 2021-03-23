@@ -40,7 +40,7 @@ public class SystemInfo implements Serializable, Base {
     private transient BufferedImage starBackground;
     public void addView(SystemView sv)      { views[sv.system().id] = sv; }
     public int count()                      { return views.length; }
-    private boolean missing(int i)          { return (i < 0) || views[i] == null; }
+    public boolean missing(int i)          { return (i < 0) || views[i] == null; }
     public SystemView view(int sysId) {
         if (views[sysId] == null)
             views[sysId] = SystemView.create(sysId, empireId);
@@ -74,8 +74,8 @@ public class SystemInfo implements Serializable, Base {
     public int maxTransportsToSend(int i) { return missing(i) ? 0  : view(i).maxTransportsToSend(); }
     public int maxTransportsToReceive(int i) { return missing(i) ? 0  : view(i).maxTransportsToReceive(); }
     public int rallyTurnsTo(int i, StarSystem s) { return view(i).rallyTurnsTo(s); }
-    public float popNeeded(int i)       { return missing(i) ? 0 : view(i).popNeeded(); }
-    public float maxPopToGive(int i)    { return missing(i) ? 0 : view(i).maxPopToGive(); }
+    //public float popNeeded(int i)       { return missing(i) ? 0 : view(i).popNeeded(); }
+    public float maxPopToGive(int i, float pct)    { return missing(i) ? 0 : view(i).maxPopToGive(pct); }
 
     public float hostilityLevel(int i)     { return missing(i) ? 0 : view(i).hostilityLevel(); }
     public int artifactLevel(int i)      { return missing(i) ? 0 : view(i).artifacts(); }

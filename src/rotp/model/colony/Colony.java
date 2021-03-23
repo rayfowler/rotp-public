@@ -815,14 +815,14 @@ public final class Colony implements Base, IMappedObject, Serializable {
     public float expectedPopPct() {
         return (expectedPopulation() / planet.currentSize());
     }
-    public int calcPopNeeded(float pct) {
-        return (int) ((planet.currentSize() * pct) - expectedPopulation());
+    public int calcPopNeeded(float desiredPct) {
+        return (int) ((planet.currentSize() * desiredPct) - expectedPopulation());
     }
-    public int calcPopToGive(float pct) {
+    public int calcPopToGive(float retainPct) {
         if (!canTransport())
             return 0;
         int p1 = maxTransportsAllowed();
-        int p2 = (int) (population() - (empire.ai().targetPopPct(starSystem()) * planet().currentSize()));
+        int p2 = (int) (population() - (retainPct * planet().currentSize()));
         return min(p1,p2);
     }
     public float newWaste() {

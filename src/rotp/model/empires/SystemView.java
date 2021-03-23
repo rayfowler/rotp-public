@@ -466,30 +466,12 @@ public class SystemView implements IMappedObject, Base, Serializable {
         return false;
     }
     public boolean inShipRange()  { return inRange(owner().tech().shipRange()); }
-
-    public float targetPopPct() {
-        if (borderSystem()) return .75f;
-
-        if (system().planet().isResourceRich()) return .75f;
-        if (system().planet().isResourceUltraRich()) return .75f;
-        if (system().planet().isArtifact()) return .75f;
-        if (system().planet().isOrionArtifact()) return .75f;
-        if (system().planet().currentSize() <= 20) return .75f;
-
-        if (supportSystem()) return .5f;
-        if (system().planet().currentSize() <= 40) return .5f;
-
-        return .25f;
-    }
-    public float popNeeded() {
-        return colony().calcPopNeeded(targetPopPct());
-    }
-    public int maxPopToGive() {
+    public int maxPopToGive(float targetPopPct) {
         if (!colony().canTransport())
             return 0;
 
         int p1 = colony().maxTransportsAllowed();
-        int p2 = (int) (colony().population() - (targetPopPct() * system().planet().currentSize()));
+        int p2 = (int) (colony().population() - (targetPopPct * system().planet().currentSize()));
         return Math.min(p1,p2);
     }
     public float defenderCombatAdj() {

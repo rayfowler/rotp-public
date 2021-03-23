@@ -17,6 +17,7 @@ package rotp.model.ai.interfaces;
 
 import rotp.model.ai.ShipPlan;
 import rotp.model.colony.Colony;
+import rotp.model.galaxy.StarSystem;
 
 public interface Governor {
     void setInitialAllocations(Colony c);
@@ -25,4 +26,5 @@ public interface Governor {
     float maxShipBCPermitted(Colony c);
     boolean readyToBuild(Colony c, ShipPlan sh, int designCost);
     int suggestedEmpireTaxLevel();
+    float targetPopPct(int sysId);
 }

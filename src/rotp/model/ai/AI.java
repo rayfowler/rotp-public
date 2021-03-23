@@ -99,26 +99,21 @@ public class AI implements Base {
         Collections.sort(systems,StarSystem.INVASION_PRIORITY);
         return systems;
     }
-    public float targetPopPct(StarSystem sys) {
-        SystemView sv = empire.sv.view(id(sys));
-        if (sv.borderSystem()) return .75f;
-
-        Planet p = sys.planet();
-        if (p.isResourceRich()) return .75f;
-        if (p.isResourceUltraRich()) return .75f;
-        if (p.isArtifact()) return .75f;
-        if (p.isOrionArtifact()) return .75f;
-        if (p.currentSize() <= 20) return .75f;
-
-        if (sv.supportSystem()) return .5f;
-        if (p.currentSize() <= 40) return .5f;
-
-        return .25f;
+    private int popNeeded(int sysId, float pct) {
+        if (empire.sv.missing(sysId))
+            return 0;
+        StarSystem sys = empire.sv.view(sysId).system();
+        Colony col = sys.colony();
+        if (col == null)
+            return 0;
+       
+        return col.calcPopNeeded(pct);
     }
     private ColonyTransporter createColony(StarSystem sys, int minTransports) {
         int sysId = id(sys);
-        int popNeeded = (int) empire.sv.popNeeded(sysId);        
-        int maxPopToGive = (int) empire.sv.maxPopToGive(sysId);
+        float targetPct = empire.governorAI().targetPopPct(sysId);
+        int popNeeded = popNeeded(sysId, targetPct);        
+        int maxPopToGive = (int) empire.sv.maxPopToGive(sysId, targetPct);
         if ((popNeeded < minTransports) && (maxPopToGive < minTransports))
             return null;
 
@@ -242,6 +237,22 @@ public class AI implements Base {
 
         // else don't bomb
         return false;
+    }
+    private float targetPopPct(SystemView sv) {
+        if (sv.borderSystem()) return .75f;
+        
+        Planet pl = sv.system().planet();
+
+        if (pl.isResourceRich()) return .75f;
+        if (pl.isResourceUltraRich()) return .75f;
+        if (pl.isArtifact()) return .75f;
+        if (pl.isOrionArtifact()) return .75f;
+        if (pl.currentSize() <= 20) return .75f;
+
+        if (sv.supportSystem()) return .5f;
+        if (pl.currentSize() <= 40) return .5f;
+
+        return .25f;
     }
     class ColonyTransporter implements IMappedObject {
         Colony colony;

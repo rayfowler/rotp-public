@@ -23,9 +23,11 @@ import rotp.model.colony.Colony;
 import rotp.model.colony.ColonySpendingCategory;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
+import rotp.model.empires.SystemView;
 import rotp.model.galaxy.IMappedObject;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
+import rotp.model.planet.Planet;
 import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipDesignLab;
 import rotp.util.Base;
@@ -512,6 +514,23 @@ public class AIGovernor implements Base, Governor {
             totalProd = col.totalIncome();
         }
         col.validate();
+    }
+    @Override
+    public float targetPopPct(int sysId) {
+        SystemView sv = empire.sv.view(sysId);
+        if (sv.borderSystem()) return .75f;
+
+        Planet p = sv.system().planet();
+        if (p.isResourceRich()) return .75f;
+        if (p.isResourceUltraRich()) return .75f;
+        if (p.isArtifact()) return .75f;
+        if (p.isOrionArtifact()) return .75f;
+        if (p.currentSize() <= 20) return .75f;
+
+        if (sv.supportSystem()) return .5f;
+        if (p.currentSize() <= 40) return .5f;
+
+        return .25f;
     }
     //
 // PRIVATE
