@@ -496,23 +496,27 @@ public class DiplomaticEmbassy implements Base, Serializable {
         }
         otherEmbassy().addIncident(inc);
 
+        boolean finalWar = galaxy().council().finalWar();
         // if oath broken, then create that incident as well
         switch(oathBreakType) {
             case 1:
-                GNNAllianceBrokenNotice.create(owner(), empire());
+                if (!finalWar)
+                    GNNAllianceBrokenNotice.create(owner(), empire());
                 OathBreakerIncident.alertBrokenAlliance(owner(),empire(),requestor); break;
             case 2: OathBreakerIncident.alertBrokenPact(owner(),empire(),requestor); break;
         }
         
         // if the player is one of our allies, let him know
-        for (Empire ally : owner().allies()) {
-            if (ally.isPlayer())
-                GNNAllyAtWarNotification.create(owner(), empire());
-        }
-        // if the player is one of our enemy's allies, let him know
-        for (Empire ally : empire().allies()) {
-            if (ally.isPlayer())
-                GNNAllyAtWarNotification.create(empire(), owner());
+        if (!finalWar) {
+            for (Empire ally : owner().allies()) {
+                if (ally.isPlayer())
+                    GNNAllyAtWarNotification.create(owner(), empire());
+            }
+            // if the player is one of our enemy's allies, let him know
+            for (Empire ally : empire().allies()) {
+                if (ally.isPlayer())
+                    GNNAllyAtWarNotification.create(empire(), owner());
+            }
         }
         
         if (empire().isPlayer())
