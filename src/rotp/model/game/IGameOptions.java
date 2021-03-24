@@ -130,14 +130,14 @@ public interface IGameOptions {
     public static final String AI_HOSTILITY_HIGHER   = "SETUP_AI_HOSTILITY_HIGHER";
     public static final String AI_HOSTILITY_HIGHEST  = "SETUP_AI_HOSTILITY_HIGHEST";
     
-    public static final String OPPONENT_AI_BASE       = "SETUP_AI_BASE";
-    public static final String OPPONENT_AI_MODNAR     = "SETUP_AI_MODNAR";
-    public static final String OPPONENT_AI_XILMI      = "SETUP_AI_XILMI";
-    public static final String OPPONENT_AI_SELECTABLE = "SETUP_AI_SELECTABLE";
-
+    public static final String OPPONENT_AI_BASE       = "SETUP_OPPONENT_AI_BASE";
+    public static final String OPPONENT_AI_MODNAR     = "SETUP_OPPONENT_AI_MODNAR";
+    public static final String OPPONENT_AI_XILMI      = "SETUP_OPPONENT_AI_XILMI";
+    public static final String OPPONENT_AI_SELECTABLE = "SETUP_OPPONENT_AI_SELECT";
     
     public default boolean isAutoPlay()          { return false; }
     public default boolean communityAI()         { return false; }
+    public default boolean selectableAI()        { return selectedOpponentAIOption().equals(OPPONENT_AI_SELECTABLE); }
     public default boolean usingExtendedRaces()  { return (selectedNumberOpponents()+1) > startingRaceOptions().size(); }
     public default void communityAI(boolean b)   { }
     public default int maxOpponents()            { return MAX_OPPONENTS; }
@@ -209,6 +209,7 @@ public interface IGameOptions {
     public List<String> fuelRangeOptions();
     public List<String> randomizeAIOptions();
     public List<String> opponentAIOptions();
+    public List<String> specificOpponentAIOptions();
 	
     public List<String> gameDifficultyOptions();
     public int maximumOpponentsOptions();
@@ -357,6 +358,16 @@ public interface IGameOptions {
         int index = opts.indexOf(selectedGameDifficulty())-1;
         return index < 0 ? opts.get(0) : opts.get(index);
     }
+    default String nextOpponentAI() {
+        List<String> opts = opponentAIOptions();
+        int index = opts.indexOf(selectedOpponentAIOption())+1;
+        return index >= opts.size() ? opts.get(0) : opts.get(index);
+    }
+    default String prevOpponentAI() {
+        List<String> opts = opponentAIOptions();
+        int index = opts.indexOf(selectedOpponentAIOption())-1;
+        return index < 0 ? opts.get(opts.size()-1) : opts.get(index);
+    }
     default String nextResearchRate() {
         List<String> opts = researchRateOptions();
         int index = opts.indexOf(selectedResearchRate())+1;
@@ -421,6 +432,28 @@ public interface IGameOptions {
         List<String> opts = randomizeAIOptions();
         int index = opts.indexOf(selectedRandomizeAIOption())+1;
         return index >= opts.size() ? opts.get(0) : opts.get(index);
+    }
+    default void nextSpecificOpponentAI(int i) {
+        List<String> allAIs = specificOpponentAIOptions();
+        String currAI = specificOpponentAIOption(i);
+        
+        int nextIndex = currAI == null ? 0 : allAIs.indexOf(currAI)+1;
+        if (nextIndex >= allAIs.size())
+            nextIndex = 0;
+        
+        String nextAI = allAIs.get(nextIndex);
+        specificOpponentAIOption(nextAI, i);
+    }
+    default void prevSpecificOpponentAI(int i) {
+        List<String> allAIs = specificOpponentAIOptions();
+        String currAI = specificOpponentAIOption(i);
+        
+        int nextIndex = currAI == null ? 0 : allAIs.indexOf(currAI)-1;
+        if (nextIndex < 0)
+            nextIndex = allAIs.size()-1;
+        
+        String nextAI = allAIs.get(nextIndex);
+        specificOpponentAIOption(nextAI, i);
     }
     default void nextOpponent(int i) {
         String player = selectedPlayerRace();

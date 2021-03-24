@@ -180,7 +180,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     @Override
     public void selectedRandomizeAIOption(String s) { selectedRandomizeAIOption = s; }
     @Override
-    public String selectedOpponentAIOption()       { return selectedOpponentAIOption == null ? OPPONENT_AI_BASE : selectedRandomizeAIOption; }
+    public String selectedOpponentAIOption()       { return selectedOpponentAIOption == null ? OPPONENT_AI_BASE : selectedOpponentAIOption; }
     @Override
     public void selectedOpponentAIOption(String s) { selectedOpponentAIOption = s; }
     @Override
@@ -192,7 +192,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     }
     @Override
     public void specificOpponentAIOption(String s, int n) { 
-        if (specificOpponentAIOption.length < n)
+        if (n < specificOpponentAIOption.length)
             specificOpponentAIOption[n] = s;
     }
     @Override
@@ -774,6 +774,14 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         list.add(OPPONENT_AI_MODNAR);
         list.add(OPPONENT_AI_XILMI);
         list.add(OPPONENT_AI_SELECTABLE);
+        return list;
+    }
+    @Override
+    public List<String> specificOpponentAIOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(OPPONENT_AI_BASE);
+        list.add(OPPONENT_AI_MODNAR);
+        list.add(OPPONENT_AI_XILMI);
         return list;
     }
     @Override
