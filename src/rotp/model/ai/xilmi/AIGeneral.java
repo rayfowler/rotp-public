@@ -742,7 +742,10 @@ public class AIGeneral implements Base, General {
         {
             if(empire.shipLab().design(i).isColonyShip())
             {
-                if(empire.shipLab().design(i).colonySpecial().tech().level == empire.tech().topControlEnvironmentTech().level
+                //ail: no idea how this can be null, but I have a savegame from /u/Elkad, where this is the case
+                if(empire.tech().topControlEnvironmentTech() == null)
+                    additional -= counts[i];
+                else if(empire.shipLab().design(i).colonySpecial().tech().level == empire.tech().topControlEnvironmentTech().level
                         || empire.ignoresPlanetEnvironment())
                     additional -= counts[i];
             }
