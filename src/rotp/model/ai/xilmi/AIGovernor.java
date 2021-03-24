@@ -15,7 +15,6 @@
  */
 package rotp.model.ai.xilmi;
 
-import java.util.List;
 import rotp.model.ai.FleetPlan;
 import rotp.model.ai.ShipPlan;
 import rotp.model.ai.interfaces.Governor;
