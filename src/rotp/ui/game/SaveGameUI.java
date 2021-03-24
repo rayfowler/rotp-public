@@ -589,6 +589,9 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
             if (e.getSource() == newFileField) {
                 newFileField.requestFocus();
                 hoverBox = gameBox[0];
+                if (count == 2)
+                    newFileField.selectAll();
+                return;
             }
 
             if (hoverBox == saveBox) {
@@ -611,8 +614,6 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
                 cancelSave();
                 return;
             }
-            if (count == 2)
-                saveGame(fullSelectedFileName());
             if (hoverBox != selectBox) {
                 softClick();
                 selectBox = hoverBox;
