@@ -57,7 +57,7 @@ public class Leader implements Base, Serializable {
     public Leader(Empire c, String s) {
         empire = c;
         name = s;
-        if (!c.isPlayer() && options().randomizeAIPersonality()) {
+        if (!c.isPlayerControlled() && options().randomizeAIPersonality()) {
             personality = random(Personality.values());
             objective = random(Objective.values());
         }

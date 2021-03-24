@@ -206,7 +206,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
         && (level > (lastRequestedTradeLevel*(1+(tradeRefusalCount/4.0))));
     }
     public void resetTradeTimer(int level)  {
-        if (empire().isPlayer())
+        if (empire().isPlayerControlled())
             tradeTimer = 1;
         else {
             tradeTimer = TRADE_DELAY;
@@ -230,7 +230,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
     public void resetAllianceTimer()        { allianceTimer = ALLIANCE_DELAY; }
     public boolean alreadyOfferedAlliance() { return allianceTimer == ALLIANCE_DELAY; }
     public boolean readyForJointWar()       { return jointWarTimer <= 0; }
-    public void resetJointWarTimer()        { jointWarTimer = empire().isPlayer() ? JOINT_WAR_DELAY : 1; }
+    public void resetJointWarTimer()        { jointWarTimer = empire().isPlayerControlled() ? JOINT_WAR_DELAY : 1; }
     public boolean alreadyOfferedJointWar() { return jointWarTimer == JOINT_WAR_DELAY; }
     public int minimumPraiseLevel()         { 
         // raise threshold for praise when at war
@@ -332,7 +332,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
         // AI  refusals are completely reset after each turn
         // to allow players to continue asking once each turn
         // if they want
-        if (view.owner().isPlayer()) {
+        if (view.owner().isPlayerControlled()) {
             tradeTimer--;
             techTimer--;
             peaceTimer--;
@@ -429,7 +429,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
     public void beginFinalWar() {
         treaty = new TreatyFinalWar(view.owner(), view.empire());
         view.trade().stopRoute();
-        if (empire().isPlayer())
+        if (empire().isPlayerControlled())
             galaxy().giveAdvice("MAIN_ADVISOR_RALLY_POINTS");
     }
     public DiplomaticIncident demandTribute() {
@@ -463,7 +463,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
         // if we're not at war yet, start it and inform player if he is involved
         if (!anyWar()) {
             setTreaty(new TreatyWar(view.owner(), view.empire()));
-            if (view.empire().isPlayer()) {
+            if (view.empire().isPlayerControlled()) {
                 if ((casusBelli == null) || casusBelli.isEmpty())
                     DiplomaticNotification.createAndNotify(view, DialogueManager.DECLARE_HATE_WAR);
                 else
@@ -506,18 +506,18 @@ public class DiplomaticEmbassy implements Base, Serializable {
         
         // if the player is one of our allies, let him know
         for (Empire ally : owner().allies()) {
-            if (ally.isPlayer())
+            if (ally.isPlayerControlled())
                 GNNAllyAtWarNotification.create(owner(), empire());
         }
         // if the player is one of our enemy's allies, let him know
         for (Empire ally : empire().allies()) {
-            if (ally.isPlayer())
+            if (ally.isPlayerControlled())
                 GNNAllyAtWarNotification.create(empire(), owner());
         }
         
-        if (empire().isPlayer())
+        if (empire().isPlayerControlled())
             galaxy().giveAdvice("MAIN_ADVISOR_RALLY_POINTS", owner().raceName());
-        else if  (owner().isPlayer())
+        else if  (owner().isPlayerControlled())
             galaxy().giveAdvice("MAIN_ADVISOR_RALLY_POINTS", empire().raceName());
 
         return inc;
@@ -574,7 +574,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
         otherEmbassy().addIncident(SignAllianceIncident.create(empire(), owner()));
         GNNAllianceFormedNotice.create(owner(), empire());
         // check for military alliance win
-        if (view.owner().isPlayer() || view.empire().isPlayer()) {
+        if (view.owner().isPlayerControlled() || view.empire().isPlayerControlled()) {
             if (galaxy().allAlliedWithPlayer())
                 session().status().winMilitaryAlliance();
         }
@@ -628,16 +628,16 @@ public class DiplomaticEmbassy implements Base, Serializable {
             contact(true);
             DiplomaticIncident inc = FirstContactIncident.create(owner(), empire());
             addIncident(inc);
-            if (empire().isPlayer())
+            if (empire().isPlayerControlled())
                 galaxy().giveAdvice("MAIN_ADVISOR_DIPLOMACY", owner().raceName());
-            else if (owner().isPlayer())
+            else if (owner().isPlayerControlled())
                 galaxy().giveAdvice("MAIN_ADVISOR_DIPLOMACY", empire().raceName());
         }
     }
     public void makeFirstContact() {
         log("First Contact: ", owner().name(), " & ", empire().name());
         setContact();
-        if (empire().isPlayer())
+        if (empire().isPlayerControlled())
             DiplomaticNotification.create(view, owner().leader().dialogueContactType());
     }
     public void removeContact() {

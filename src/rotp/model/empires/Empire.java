@@ -632,7 +632,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         addColonizedSystem(sys);
         Colony c = sys.becomeColonized(sysName, this);
         governorAI().setInitialAllocations(c);
-        if (isPlayer()) {
+        if (isPlayerControlled()) {
             int maxTransportPop =(int)(sys.planet().maxSize()-sys.colony().population());
             galaxy().giveAdvice("MAIN_ADVISOR_TRANSPORT", sysName, str(maxTransportPop), home.name());
             session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_COLONIZED", sysName));
@@ -1033,7 +1033,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         return rebellingPop > loyalPop;
     }
     public void overthrowLeader() {
-        if (isPlayer()) {
+        if (isPlayerControlled()) {
             //session().status().loseOverthrown();
             return;
         }
@@ -2061,14 +2061,14 @@ public final class Empire implements Base, NamedObject, Serializable {
 */
     public void plunderTech(Tech t, StarSystem s, Empire emp) {
         boolean newTech = tech().learnTech(t.id);
-        if (newTech && isPlayer()) {
+        if (newTech && isPlayerControlled()) {
             log("Tech: ", t.name(), " plundered from: ", s.name());
             PlunderTechNotification.create(t.id, s.id, emp.id);
         }
     }
     public void plunderShipTech(Tech t, int empId) {
         boolean newTech = tech().learnTech(t.id);
-        if (newTech && isPlayer()) {
+        if (newTech && isPlayerControlled()) {
             log("Ship tech: ", t.name(), " plundered ");
             PlunderShipTechNotification.create(t.id, empId);
         }
@@ -2085,7 +2085,7 @@ public final class Empire implements Base, NamedObject, Serializable {
             if (t == null) // if none found, then break out of loop
                 break;
             boolean newTech = tech().learnTech(t.id);
-            if (newTech && isPlayer()) {
+            if (newTech && isPlayerControlled()) {
                 log("Tech: ", t.name(), " discovered on: ", s.name());
                 PlunderTechNotification.create(t.id, s.id, -1);
             }
@@ -2435,7 +2435,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         else { 
             List<Empire> activeEmpires = galaxy().activeEmpires();
             // Player has gone extinct. Determine loss condition
-            if (isPlayer()) {
+            if (isPlayerControlled()) {
                 // no one killed us... abandonment suicide
                 if (lastAttacker == null)
                     session().status().loseNoColonies();   

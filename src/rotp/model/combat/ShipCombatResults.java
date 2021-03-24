@@ -75,7 +75,7 @@ public final class ShipCombatResults implements Base {
     public String aiRaceName()  {
         if (monster != null)
             return monster.name();
-        else if (empires.get(0).isPlayer())
+        else if (empires.get(0).isPlayerControlled())
             return empires.get(1).raceName();
         else
             return empires.get(0).raceName();

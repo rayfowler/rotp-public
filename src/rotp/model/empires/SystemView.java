@@ -196,7 +196,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
             setName();
     }
     public void refreshFullScan() {
-        if (owner().isPlayer() && !scouted()) {
+        if (owner().isPlayerControlled() && !scouted()) {
             log("Orbital scan scouts new system: ", system().name());
             session().addSystemScouted(system());
             if (system().empire() != player())
@@ -216,7 +216,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
             owner().plunderAncientTech(system());
     }
     public void refreshAllySharingScan() {
-        if (owner().isPlayer() && !scouted()) {
+        if (owner().isPlayerControlled() && !scouted()) {
             log("Ally shares new system data: ", system().name());
             session().addSystemScoutedByAllies(system());
         }
@@ -227,7 +227,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
         setPlanetData();
     }
     public void refreshLongRangePlanetScan() {
-        if (owner().isPlayer() && !scouted()) {
+        if (owner().isPlayerControlled() && !scouted()) {
             log("Long range planet scan scouts new system: ", system().name());
             session().addSystemScoutedByAstronomers(system());
             owner().shareSystemInfoWithAllies(this);
@@ -240,7 +240,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
         setOrbitingFleets();
     }
     public void refreshLongRangeShipScan() {
-        if (owner().isPlayer() && !scouted()) {
+        if (owner().isPlayerControlled() && !scouted()) {
             log("Long range ship scan scouts new system: ", system().name());
             session().addSystemScouted(system());
             owner().shareSystemInfoWithAllies(this);

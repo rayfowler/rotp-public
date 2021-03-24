@@ -958,7 +958,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         setPopulation(rebels);
 
         if (population() > 0) {
-            if (empire.isPlayer() || tr.empire().isPlayer())
+            if (empire.isPlayerControlled() || tr.empire().isPlayerControlled())
                 RotPUI.instance().selectGroundBattlePanel(this, tr);
             else
                 completeDefenseAgainstTransports(tr);
@@ -1049,9 +1049,9 @@ public final class Colony implements Base, IMappedObject, Serializable {
         // player notification only.
         if (tr.size() == 0) {
             log(concat(str(tr.launchSize()), " ", tr.empire().raceName(), " transports perished at ", name()));
-            if (tr.empire().isPlayer()) 
+            if (tr.empire().isPlayerControlled()) 
                 TransportsKilledAlert.create(empire(), starSystem(), tr.launchSize());
-            else if (empire().isPlayer()) 
+            else if (empire().isPlayerControlled()) 
                 InvadersKilledAlert.create(tr.empire(), starSystem(), tr.launchSize());
             return;
         }

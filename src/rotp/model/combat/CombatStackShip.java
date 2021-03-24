@@ -62,7 +62,7 @@ public class CombatStackShip extends CombatStack {
         fleet = fl;
         empire = fl.empire();
         design = empire.shipLab().design(index);
-        usingAI = (empire == null) || empire.isAI();
+        usingAI = (empire == null) || empire.isAIControlled();
         captain = empire.ai().shipCaptain();
         origNum = num = fl.num(index);
         startingMaxHits = maxHits = design.hits();
