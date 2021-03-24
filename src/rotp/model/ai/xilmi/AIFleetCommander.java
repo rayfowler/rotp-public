@@ -396,9 +396,7 @@ public class AIFleetCommander implements Base, FleetCommander {
         }
     }
     private void reviseFleetPlan(int sysId) {        
-        Galaxy gal = galaxy();
         float scoutRange = empire.scoutRange();
-        float shipRange = empire.shipRange();
         // if out of scout range, forget it
         if (!empire.sv.withinRange(sysId, scoutRange)) 
             return;
@@ -415,28 +413,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             if (empire.alliedWith(empire.sv.empId(sysId))
             || (empire.sv.bases(sysId) == 0)) 
                 setScoutFleetPlan(sysId);
-            return;
         }
-
-        // Only UNCOLONIZED systems beyond this point
-        if(empire.sv.isColonized(sysId))
-        {
-            return;
-        }
-        // if we can colonize this, send a colony fleet if in ship range
-        // else send colony if they can reach, other post a fighter/scout to watch
-        /*if (empire.canColonize(gal.system(sysId).planet().type())) {
-            if (empire.sv.withinRange(sysId, shipRange)) {
-                empire.shipLab().needColonyShips = true;
-                setColonyFleetPlan(sysId);
-            }
-            else{
-                empire.shipLab().needExtendedColonyShips = true;
-                if (empire.shipLab().colonyDesign().isExtendedRange())
-                    setColonyFleetPlan(sysId);
-            }
-            return;
-        }*/
     }
     private void setDistantFleetsToRetreat() {
         List<ShipFleet> fleets = galaxy().ships.notInTransitFleets(empire.id);
@@ -610,7 +587,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                             }
                             if(target.monster() != null)
                             {
-                                enemyBC += 10000;
+                                enemyBC += 100000;
                             }
                             for(ShipFleet incoming : target.incomingFleets())
                             {
@@ -668,7 +645,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                             }
                             else
                             {
-                                if(fleet.canColonizeSystem(target))
+                                if(fleet.canColonizeSystem(target) && target.monster() == null)
                                 {
                                     allowColonizers = true;
                                     sendAmount = 0.01f;
@@ -677,6 +654,10 @@ public class AIFleetCommander implements Base, FleetCommander {
                             if(!empire.sv.isScouted(target.id))
                             {
                                 sendAmount = 0.01f;
+                            }
+                            if(target.monster() != null)
+                            {
+                                allowBombers = false;
                             }
                             if(offensive || empire.transportsInTransit(target) > 0)
                             {
