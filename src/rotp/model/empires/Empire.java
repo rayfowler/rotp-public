@@ -153,7 +153,7 @@ public final class Empire implements Base, NamedObject, Serializable {
 
     public AI ai() {
         if (ai == null)
-            ai = new AI(this);
+            ai = new AI(this, options().selectedAI(this));
         return ai;
     }
     public Diplomat diplomatAI()                  { return ai().diplomat(); }

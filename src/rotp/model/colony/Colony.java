@@ -147,6 +147,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         rebels = 0;
         rebellion = false;
     }
+    public boolean isGovernor()                { return false; }
     public float currentProductionCapacity() {
         // returns a pct (0 to 1) representing the colony's current
         // production vs its maximum possible formula

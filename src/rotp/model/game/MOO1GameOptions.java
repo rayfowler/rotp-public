@@ -20,6 +20,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import rotp.model.ai.AI;
 import rotp.model.empires.Empire;
 import rotp.model.empires.Race;
 import rotp.model.events.RandomEvent;
@@ -67,7 +68,9 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     private String selectedRandomizeAIOption;
     private String selectedAIHostilityOption;
     private String selectedColonizingOption;
-
+    private String selectedOpponentAIOption;
+    private final String[] specificOpponentAIOption = new String[MAX_OPPONENTS+1];
+    
     private transient GalaxyShape galaxyShape;
 
     public MOO1GameOptions() {
@@ -177,6 +180,22 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     @Override
     public void selectedRandomizeAIOption(String s) { selectedRandomizeAIOption = s; }
     @Override
+    public String selectedOpponentAIOption()       { return selectedOpponentAIOption == null ? OPPONENT_AI_BASE : selectedRandomizeAIOption; }
+    @Override
+    public void selectedOpponentAIOption(String s) { selectedOpponentAIOption = s; }
+    @Override
+    public String specificOpponentAIOption(int n)  { 
+            if ((specificOpponentAIOption == null) || (specificOpponentAIOption.length < n))
+                return selectedOpponentAIOption();
+            else
+                return specificOpponentAIOption[n];
+    }
+    @Override
+    public void specificOpponentAIOption(String s, int n) { 
+        if (specificOpponentAIOption.length < n)
+            specificOpponentAIOption[n] = s;
+    }
+    @Override
     public String selectedAIHostilityOption()       { return selectedAIHostilityOption == null ? AI_HOSTILITY_NORMAL : selectedAIHostilityOption; }
     @Override
     public void selectedAIHostilityOption(String s) { selectedAIHostilityOption = s; }
@@ -247,6 +266,10 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedRandomizeAIOption = opt.selectedRandomizeAIOption;
         selectedAIHostilityOption = opt.selectedAIHostilityOption;
         selectedColonizingOption = opt.selectedColonizingOption;
+        selectedOpponentAIOption = opt.selectedOpponentAIOption;
+        
+        for (int i=0;i<specificOpponentAIOption.length;i++)
+            specificOpponentAIOption[i] = opt.specificOpponentAIOption[i];
         
         if (opt.player != null) 
             player.copy(opt.player);
@@ -351,6 +374,22 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
             return 1;
         else 
             return min(10,sqrt(nStars/200f));
+    }
+    @Override
+    public int selectedAI(Empire e) {
+        switch(selectedOpponentAIOption()) {
+            case OPPONENT_AI_BASE:   return AI.BASE;
+            case OPPONENT_AI_MODNAR: return AI.MODNAR;
+            case OPPONENT_AI_XILMI:  return AI.XILMI;
+            case OPPONENT_AI_SELECTABLE:
+                String specificAI = specificOpponentAIOption(e.id);
+                switch(specificAI) {
+                    case OPPONENT_AI_BASE:   return AI.BASE;
+                    case OPPONENT_AI_MODNAR: return AI.MODNAR;
+                    case OPPONENT_AI_XILMI:  return AI.XILMI;
+                }
+        }
+        return AI.BASE;
     }
     @Override
     public float hostileTerraformingPct() { 
@@ -729,6 +768,15 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         return list;
     }
     @Override
+    public List<String> opponentAIOptions() {
+        List<String> list = new ArrayList<>();
+        list.add(OPPONENT_AI_BASE);
+        list.add(OPPONENT_AI_MODNAR);
+        list.add(OPPONENT_AI_XILMI);
+        list.add(OPPONENT_AI_SELECTABLE);
+        return list;
+    }
+    @Override
     public List<String> startingRaceOptions() {
         List<String> list = new ArrayList<>();
         list.add("RACE_HUMAN");
@@ -754,6 +802,9 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedNumberOpponents = maximumOpponentsOptions();
         selectedPlayerRace(random(startingRaceOptions()));
         selectedGameDifficulty = DIFFICULTY_NORMAL;
+        selectedOpponentAIOption = OPPONENT_AI_BASE;
+        for (int i=0;i<specificOpponentAIOption.length;i++)
+            specificOpponentAIOption[i] = OPPONENT_AI_BASE;
         setToDefault();
         generateGalaxy();
     }

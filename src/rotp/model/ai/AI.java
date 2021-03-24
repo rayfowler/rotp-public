@@ -52,6 +52,10 @@ import rotp.ui.notifications.ColonizeSystemNotification;
 import rotp.util.Base;
 
 public class AI implements Base {
+    public static final int BASE = 0;
+    public static final int MODNAR = 1;
+    public static final int XILMI = 2;
+    
     private final Empire empire;
 
     private final Diplomat diplomat;
@@ -64,17 +68,45 @@ public class AI implements Base {
     private final SpyMaster spyMaster;
     private final Treasurer treasurer;
 
-    public AI (Empire e) {
+    public AI (Empire e, int aiType) {
         empire = e;
-        general = new AIGeneral(empire);
-        captain = new AIShipCaptain(empire);
-        governor = new AIGovernor(empire);
-        scientist = new AIScientist(empire);
-        diplomat = new AIDiplomat(empire);
-        shipDesigner = new AIShipDesigner(empire);
-        fleetCommander = new AIFleetCommander(empire);
-        spyMaster = new AISpyMaster(empire);
-        treasurer = new AITreasurer(empire);
+        
+        switch(aiType) {
+            case MODNAR:
+                general =        new rotp.model.ai.modnar.AIGeneral(empire);
+                captain =        new rotp.model.ai.modnar.AIShipCaptain(empire);
+                governor =       new rotp.model.ai.modnar.AIGovernor(empire);
+                scientist =      new rotp.model.ai.modnar.AIScientist(empire);
+                diplomat =       new rotp.model.ai.modnar.AIDiplomat(empire);
+                shipDesigner =   new rotp.model.ai.modnar.AIShipDesigner(empire);
+                fleetCommander = new rotp.model.ai.modnar.AIFleetCommander(empire);
+                spyMaster =      new rotp.model.ai.modnar.AISpyMaster(empire);
+                treasurer =      new rotp.model.ai.modnar.AITreasurer(empire);
+                break;
+            case XILMI:
+                general =        new rotp.model.ai.xilmi.AIGeneral(empire);
+                captain =        new rotp.model.ai.xilmi.AIShipCaptain(empire);
+                governor =       new rotp.model.ai.xilmi.AIGovernor(empire);
+                scientist =      new rotp.model.ai.xilmi.AIScientist(empire);
+                diplomat =       new rotp.model.ai.xilmi.AIDiplomat(empire);
+                shipDesigner =   new rotp.model.ai.xilmi.AIShipDesigner(empire);
+                fleetCommander = new rotp.model.ai.xilmi.AIFleetCommander(empire);
+                spyMaster =      new rotp.model.ai.xilmi.AISpyMaster(empire);
+                treasurer =      new rotp.model.ai.xilmi.AITreasurer(empire);
+                break;
+            case BASE:
+            default:
+                general =        new rotp.model.ai.base.AIGeneral(empire);
+                captain =        new rotp.model.ai.base.AIShipCaptain(empire);
+                governor =       new rotp.model.ai.base.AIGovernor(empire);
+                scientist =      new rotp.model.ai.base.AIScientist(empire);
+                diplomat =       new rotp.model.ai.base.AIDiplomat(empire);
+                shipDesigner =   new rotp.model.ai.base.AIShipDesigner(empire);
+                fleetCommander = new rotp.model.ai.base.AIFleetCommander(empire);
+                spyMaster =      new rotp.model.ai.base.AISpyMaster(empire);
+                treasurer =      new rotp.model.ai.base.AITreasurer(empire);
+                break;
+        }
     }
 
     // MISC INTERFACE

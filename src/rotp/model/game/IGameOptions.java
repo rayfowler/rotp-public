@@ -17,6 +17,7 @@ package rotp.model.game;
 
 import java.awt.Color;
 import java.util.List;
+import rotp.model.ai.AI;
 import rotp.model.empires.Empire;
 import rotp.model.empires.Race;
 import rotp.model.events.RandomEvent;
@@ -129,6 +130,12 @@ public interface IGameOptions {
     public static final String AI_HOSTILITY_HIGHER   = "SETUP_AI_HOSTILITY_HIGHER";
     public static final String AI_HOSTILITY_HIGHEST  = "SETUP_AI_HOSTILITY_HIGHEST";
     
+    public static final String OPPONENT_AI_BASE       = "SETUP_AI_BASE";
+    public static final String OPPONENT_AI_MODNAR     = "SETUP_AI_MODNAR";
+    public static final String OPPONENT_AI_XILMI      = "SETUP_AI_XILMI";
+    public static final String OPPONENT_AI_SELECTABLE = "SETUP_AI_SELECTABLE";
+
+    
     public default boolean isAutoPlay()          { return false; }
     public default boolean communityAI()         { return false; }
     public default boolean usingExtendedRaces()  { return (selectedNumberOpponents()+1) > startingRaceOptions().size(); }
@@ -137,6 +144,7 @@ public interface IGameOptions {
     public default float hostileTerraformingPct() { return 1.0f; }
     public default boolean restrictedColonization() { return selectedColonizingOption().equals(COLONIZING_RESTRICTED); }
     public default int baseAIRelationsAdj()       { return 0; }
+    public default int selectedAI(Empire e)       { return AI.BASE; }
     public default boolean randomizeAIPersonality()  { 
         switch (selectedRandomizeAIOption()) {
             case RANDOMIZE_AI_PERSONALITY:
@@ -200,6 +208,7 @@ public interface IGameOptions {
     public List<String> colonizingOptions();
     public List<String> fuelRangeOptions();
     public List<String> randomizeAIOptions();
+    public List<String> opponentAIOptions();
 	
     public List<String> gameDifficultyOptions();
     public int maximumOpponentsOptions();
@@ -237,6 +246,10 @@ public interface IGameOptions {
     public void selectedFuelRangeOption(String s);
     public String selectedRandomizeAIOption();
     public void selectedRandomizeAIOption(String s);
+    public String selectedOpponentAIOption();
+    public void selectedOpponentAIOption(String s);
+    public String specificOpponentAIOption(int empId);
+    public void specificOpponentAIOption(String s, int empId);
 	
     public String selectedGalaxyShapeOption1();
     public void selectedGalaxyShapeOption1(String s);
