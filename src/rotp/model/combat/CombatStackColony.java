@@ -41,7 +41,7 @@ public class CombatStackColony extends CombatStack {
         mgr = m;
         colony = col;
         empire = colony.empire();
-        usingAI = (empire == null) || empire.isAI();
+        usingAI = (empire == null) || empire.isAIControlled();
         captain = empire.ai().shipCaptain();
         MissileBase mBase = missileBase();
         origNum = num = (int) colony.defense().bases();
