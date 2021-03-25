@@ -180,7 +180,7 @@ public class Galaxy implements Base, Serializable {
             adviceGiven.add(key);
     }
     public boolean adviceAlreadyGiven(String key) {
-        return adviceGiven.contains(key);
+        return adviceGiven.contains(key) || options().isAutoPlay();
     }
     public void giveAdvice(String key) {
         if (!adviceAlreadyGiven(key)) {

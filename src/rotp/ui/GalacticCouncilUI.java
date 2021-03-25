@@ -799,7 +799,7 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         int button2X = x1;
         int sw2 = 0;
         if  (c.votingInProgress()) {
-            button2Text = c.hasVoted(pl) ? text("COUNCIL_COMPLETE_VOTING"): text("COUNCIL_SKIP_TO_PLAYER", pl.raceName());
+            button2Text = c.hasVoted(pl) || options().isAutoPlay() ? text("COUNCIL_COMPLETE_VOTING"): text("COUNCIL_SKIP_TO_PLAYER", pl.raceName());
             sw2 = g.getFontMetrics().stringWidth(button2Text);
             button2W = sw2+s40;
             gap = (w1-button1W-button2W)/3;
@@ -1056,7 +1056,10 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
     }
     private Display nextVotingMode() {
         GalacticCouncil c = galaxy().council();
-        if (c.nextVoter().isPlayer())
+        if (!c.votingInProgress())
+            return Display.SHOW_VOTE_RESULT;
+        
+        if (c.nextVoter().isPlayerControlled())
             return Display.ASK_PLAYER_VOTE;
 
         galaxy().council().castNextVote();

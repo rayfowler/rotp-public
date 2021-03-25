@@ -449,7 +449,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         log("Colony: ", empire.sv.name(starSystem().id),  ": NextTurn [" , shipyard().design().name() , "|" ,str(shipyard().allocation()) , "-"
                     , str(defense().allocation()) , "-" , str(industry().allocation()) , "-" , str(ecology().allocation()) , "-"
                     , str(research().allocation()) , "]");
-        keepEcoLockedToClean = empire().isPlayer() && (allocation[ECOLOGY] <= cleanupAllocation());
+        keepEcoLockedToClean = empire().isPlayerControlled() && (allocation[ECOLOGY] <= cleanupAllocation());
         previousPopulation = population;
         reallocationRequired = false;          
         ensureProperSpendingRates();
@@ -741,7 +741,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
     public float production() {
         if (inRebellion())
             return 0.0f;
-        float mod = empire().isPlayer() ? 1.0f : options().aiProductionModifier();
+        float mod = empire().isPlayerControlled() ? 1.0f : options().aiProductionModifier();
         float workerProd = workingPopulation() * empire.workerProductivity();
         return mod*(workerProd + usedFactories());
     }
@@ -833,7 +833,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         if (empire.ignoresPlanetEnvironment())
             return 0;
         
-        float mod = empire().isPlayer() ? 1.0f : options().aiWasteModifier();
+        float mod = empire().isPlayerControlled() ? 1.0f : options().aiWasteModifier();
         return mod*(min(planet.maxWaste(), planet.waste()) + newWaste()) / tech().wasteElimination();
     }
     public float minimumCleanupCost() {
@@ -913,7 +913,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
             }
             setPopulation(population() - transport().size());
             transport = new Transport(starSystem());
-            if (empire.isPlayer())
+            if (empire.isPlayerControlled())
                 starSystem().transportSprite().launch();
         }
     }
@@ -940,7 +940,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         }
         checkEcoAtClean();
         // reset ship views
-        if (empire.isPlayer())
+        if (empire.isPlayerControlled())
             empire.setVisibleShips();
     }
     public void acceptTransport(Transport t) {

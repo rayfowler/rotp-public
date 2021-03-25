@@ -196,12 +196,14 @@ public class SystemView implements IMappedObject, Base, Serializable {
             setName();
     }
     public void refreshFullScan() {
-        if (owner().isPlayerControlled() && !scouted()) {
+        if (!scouted()) {
             log("Orbital scan scouts new system: ", system().name());
-            session().addSystemScouted(system());
-            if (system().empire() != player())
-                system().addEvent(new SystemScoutedEvent(player().id));
             owner().shareSystemInfoWithAllies(this);
+            if (owner().isPlayerControlled()) {
+                session().addSystemScouted(system());
+                if (system().empire() != player())
+                    system().addEvent(new SystemScoutedEvent(player().id));
+            }
         }
         scoutTime = galaxy().currentYear();
         spyTime = galaxy().currentYear();
@@ -227,10 +229,11 @@ public class SystemView implements IMappedObject, Base, Serializable {
         setPlanetData();
     }
     public void refreshLongRangePlanetScan() {
-        if (owner().isPlayerControlled() && !scouted()) {
+        if (!scouted()) {
             log("Long range planet scan scouts new system: ", system().name());
-            session().addSystemScoutedByAstronomers(system());
             owner().shareSystemInfoWithAllies(this);
+            if (owner().isPlayerControlled())
+                session().addSystemScoutedByAstronomers(system());
         }
 
         scoutTime = galaxy().currentYear();
@@ -240,10 +243,11 @@ public class SystemView implements IMappedObject, Base, Serializable {
         setOrbitingFleets();
     }
     public void refreshLongRangeShipScan() {
-        if (owner().isPlayerControlled() && !scouted()) {
+        if (!scouted()) {
             log("Long range ship scan scouts new system: ", system().name());
-            session().addSystemScouted(system());
             owner().shareSystemInfoWithAllies(this);
+            if (owner().isPlayer())
+                session().addSystemScouted(system());
         }
 
         scoutTime = galaxy().currentYear();

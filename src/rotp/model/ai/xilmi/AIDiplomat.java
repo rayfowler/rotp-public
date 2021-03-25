@@ -1480,8 +1480,8 @@ public class AIDiplomat implements Base, Diplomat {
         EmpireView cv2 = empire.viewForEmpire(civ2);
 
         // to test diplomatic win for player
-        //if (civ1.isPlayer()) return castVoteFor(civ1, approv1);
-        //if (civ2.isPlayer()) return castVoteFor(civ2, approv2);
+        //if (civ1.isPlayerControlled()) return castVoteFor(civ1, approv1);
+        //if (civ2.isPlayerControlled()) return castVoteFor(civ2, approv2);
 
         // always vote for yourself
         if (civ1 == empire)   return castVoteFor(civ1);

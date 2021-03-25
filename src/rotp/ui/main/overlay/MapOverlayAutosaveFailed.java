@@ -40,7 +40,7 @@ public class MapOverlayAutosaveFailed extends MapOverlay {
         parent = p;
     }
     public void init(String err) {
-        errorMsg = err;
+        errorMsg = err == null ? "<null>" : err;
         okButton.reset();
     }
     public void ok() {
