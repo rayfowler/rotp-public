@@ -142,15 +142,12 @@ public class AIFleetCommander implements Base, FleetCommander {
             float bc = 0.0f;
             for(ShipFleet incoming : current.incomingFleets())
             {
-                if(!empire.visibleShips().contains(incoming))
-                    continue;
                 if(incoming.empire().aggressiveWith(empire.id))
                 {
-                    if(incoming.visibleTo(empire))
-                    {
-                        enemyBombardDamage += incoming.expectedBombardDamage(current);
-                        enemyBc += incoming.bcValue();
-                    }
+                    if(!empire.visibleShips().contains(incoming))
+                        continue;
+                    enemyBombardDamage += incoming.expectedBombardDamage(current);
+                    enemyBc += incoming.bcValue();
                 }
                 if(incoming.empire() == fleet.empire())
                 {
@@ -185,15 +182,16 @@ public class AIFleetCommander implements Base, FleetCommander {
                 else if (empire.sv.isUltraPoor(id))
                     score /= 3;
             }
-            for(ShipFleet orbiting : empire.sv.orbitingFleets(current.id))
+            for(ShipFleet orbiting : current.orbitingFleets())
             {
+                if(orbiting.retreating())
+                    continue;
                 if(orbiting.empire().aggressiveWith(fleet.empId()))
                 {
-                    if(orbiting.visibleTo(fleet.empire()))
-                    {
-                        enemyBombardDamage += orbiting.expectedBombardDamage();
-                        enemyBc += orbiting.bcValue();
-                    }
+                    if(!empire.visibleShips().contains(orbiting))
+                        continue;
+                    enemyBombardDamage += orbiting.expectedBombardDamage();
+                    enemyBc += orbiting.bcValue();
                 }
                 if(orbiting.empire() == fleet.empire())
                 {
@@ -570,19 +568,22 @@ public class AIFleetCommander implements Base, FleetCommander {
                         else
                         {
                             float enemyBC = 0.0f;
+                            boolean needToGuess = false;
                             float targetTech = civTech;
-                            for(ShipFleet orbiting : empire.sv.orbitingFleets(target.id))
+                            for(ShipFleet orbiting : target.orbitingFleets())
                             {
                                 if(orbiting.retreating())
                                     continue;
                                 if(orbiting.empire().aggressiveWith(fleet.empId()))
                                 {
-                                    if(orbiting.visibleTo(fleet.empire()))
+                                    if(!empire.visibleShips().contains(orbiting))
                                     {
-                                        EmpireView ev = empire.viewForEmpire(orbiting.empId());
-                                        targetTech = ev.spies().tech().avgTechLevel(); // modnar: target tech level
-                                        enemyBC += orbiting.bcValue();
+                                        needToGuess = true;
+                                        continue;
                                     }
+                                    EmpireView ev = empire.viewForEmpire(orbiting.empId());
+                                    targetTech = ev.spies().tech().avgTechLevel(); // modnar: target tech level
+                                    enemyBC += orbiting.bcValue();
                                 }
                             }
                             if(target.monster() != null)
@@ -591,16 +592,13 @@ public class AIFleetCommander implements Base, FleetCommander {
                             }
                             for(ShipFleet incoming : target.incomingFleets())
                             {
-                                if(!empire.visibleShips().contains(incoming))
-                                    continue;
                                 if(incoming.empire().aggressiveWith(empire.id))
                                 {
-                                    if(incoming.visibleTo(empire))
-                                    {
-                                        EmpireView ev = empire.viewForEmpire(incoming.empId());
-                                        targetTech = ev.spies().tech().avgTechLevel(); // modnar: target tech level
-                                        enemyBC += incoming.bcValue();
-                                    }
+                                    if(!empire.visibleShips().contains(incoming))
+                                        continue;
+                                    EmpireView ev = empire.viewForEmpire(incoming.empId());
+                                    targetTech = ev.spies().tech().avgTechLevel(); // modnar: target tech level
+                                    enemyBC += incoming.bcValue();
                                 }
                             }
                             if(target.empire() != null)
@@ -627,6 +625,9 @@ public class AIFleetCommander implements Base, FleetCommander {
                                 }
                                 else
                                 {
+                                    //ail: if we can't see the system, assume there's at least a fair share of ships for defense
+                                    if(needToGuess)
+                                        enemyBC = max(enemyBC, target.empire().totalFleetCost() * target.colony().production() / target.empire().totalIncome());
                                     enemyBC += empire.sv.bases(target.id)*target.empire().tech().newMissileBaseCost();
                                     EmpireView ev = empire.viewForEmpire(empire.sv.empId(target.id));
                                     if(ev != null)
