@@ -519,7 +519,7 @@ public class AIDiplomat implements Base, Diplomat {
         }
         EmpireView v = empire.viewForEmpire(requestor);
         v.embassy().noteRequest();
-        if(empire.enemies().size() > 1 && requestor != empire.generalAI().bestVictim())
+        if(!wantToDeclareWarOfOpportunity(v))
         {
             if (!v.embassy().readyForPeace())
                 return v.refuse(DialogueManager.DECLINE_OFFER);
@@ -1373,13 +1373,16 @@ public class AIDiplomat implements Base, Diplomat {
         Empire bestVictim = empire.generalAI().bestVictim();
         if(v.empire() == bestVictim)
         {
-            boolean atDevelopmentLimit = true;
+            boolean atFactoryLimit = true;
+            boolean atPopulationLimit = true;
             for(StarSystem sys : empire.allColonizedSystems())
             {
-                if(sys.colony() != null && !(sys.colony().industry().isCompleted() && sys.colony().ecology().isCompleted()))
+                if(sys.colony() != null)
                 {
-                    atDevelopmentLimit = false;
-                    break;
+                    if(!sys.colony().industry().isCompleted())
+                        atFactoryLimit = false;
+                    if(!sys.colony().ecology().isCompleted())
+                        atPopulationLimit = false;
                 }
             }
             float helpingPower = 0.0f;
@@ -1393,21 +1396,56 @@ public class AIDiplomat implements Base, Diplomat {
                 enemyAllyPower += empire.powerLevel(emp);
             }
             float superiorityThreshold = 1.5f;
-            /*
-            if(empire.leader().isRuthless() || empire.leader().isAggressive())
+
+            if(empire.leader().isAggressive())
+                superiorityThreshold = 1.0f;
+            if(empire.leader().isErratic())
+                superiorityThreshold = 1.0f + 2.0f * random();
+            if(empire.leader().isHonorable())
             {
-                superiorityThreshold = 0f;
-            } else if (empire.leader().isErratic())
-            {
-                superiorityThreshold = 1 + random();
+                if(v.embassy().alliance() || v.embassy().pact())
+                    superiorityThreshold = 3.0f;
+                else
+                    superiorityThreshold = 1.0f;
             }
-            if (empire.leader().isPacifist())
+            if(empire.leader().isPacifist())
+                superiorityThreshold = 3.0f;
+            if(empire.leader().isRuthless())
+                superiorityThreshold = 0.0f;
+            if(empire.leader().isXenophobic())
+                superiorityThreshold = 1.5f;
+                    
+            if(empire.leader().isDiplomat())
             {
-                superiorityThreshold *= 2;
-            }*/
-            //System.out.println(empire.name()+" bestVictim: "+bestVictim+" atDevelopmentLimit: "+atDevelopmentLimit+" power: "+empire.powerLevel(empire) + helpingPower+" vs. "+(empire.powerLevel(bestVictim) + enemyAllyPower) * 1.5);
-            if( empire.powerLevel(empire) + helpingPower > (empire.powerLevel(bestVictim) + enemyAllyPower) * superiorityThreshold 
-                    || atDevelopmentLimit)
+                GalacticCouncil gc = galaxy().council();
+                if(gc.active())
+                {
+                    if(empire != gc.candidate1() && empire != gc.candidate2())
+                        return false;
+                }
+            }
+            if(empire.leader().isEcologist())
+            {
+                if(!atPopulationLimit)
+                    return false;
+            }
+            if(empire.leader().isExpansionist())
+            {
+                if(empire.ai().general().additionalColonizersToBuild() > 0)
+                    return false;
+            }
+            if(empire.leader().isIndustrialist())
+            {
+                if(!atFactoryLimit)
+                    return false;
+            }
+            if(empire.leader().isTechnologist())
+            {
+                if(empire.tech().avgTechLevel() < v.empire().tech().avgTechLevel())
+                    return false;
+            }
+            System.out.println(empire.name()+" bestVictim: "+bestVictim+" power: "+empire.powerLevel(empire) + helpingPower+" vs. "+(empire.powerLevel(bestVictim) + enemyAllyPower) *superiorityThreshold+ " Threshold: "+superiorityThreshold +" "+empire.leader().personality()+" "+empire.leader().objective());
+            if(empire.powerLevel(empire) + helpingPower > (empire.powerLevel(bestVictim) + enemyAllyPower) * superiorityThreshold)
             {
                 return true;
             }
@@ -1748,8 +1786,10 @@ public class AIDiplomat implements Base, Diplomat {
    private boolean warWeary(EmpireView v) {
         if (v.embassy().finalWar())
             return false;
-        if(v.empire() == empire.generalAI().bestVictim())
+        if(wantToDeclareWarOfOpportunity(v))
             return false;
+        if(!empire.inShipRange(v.empId()))
+            return true;
         
         // modnar: scale warWeary by number of our wars vs. number of their wars
         // more weary (willing to take less losses) if we are in more wars than they are
