@@ -1444,7 +1444,7 @@ public class AIDiplomat implements Base, Diplomat {
                 if(empire.tech().avgTechLevel() < v.empire().tech().avgTechLevel())
                     return false;
             }
-            System.out.println(empire.name()+" bestVictim: "+bestVictim+" power: "+empire.powerLevel(empire) + helpingPower+" vs. "+(empire.powerLevel(bestVictim) + enemyAllyPower) *superiorityThreshold+ " Threshold: "+superiorityThreshold +" "+empire.leader().personality()+" "+empire.leader().objective());
+            //System.out.println(empire.name()+" bestVictim: "+bestVictim+" power: "+empire.powerLevel(empire) + helpingPower+" vs. "+(empire.powerLevel(bestVictim) + enemyAllyPower) *superiorityThreshold+ " Threshold: "+superiorityThreshold +" "+empire.leader().personality()+" "+empire.leader().objective());
             if(empire.powerLevel(empire) + helpingPower > (empire.powerLevel(bestVictim) + enemyAllyPower) * superiorityThreshold)
             {
                 return true;
