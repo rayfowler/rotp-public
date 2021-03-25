@@ -56,9 +56,9 @@ public class RandomEventAssassination implements Base, Serializable, RandomEvent
 
         // if player is assassin, notify immediately since this will trigger a war declaration
         // from the victim and we want the GNN notice to show up first
-        if (assassin.isPlayer())
+        if (assassin.isPlayerControlled())
             GNNNotification.notifyImmediateEvent(notificationText(), "GNN_Event_Assassin");
-        else if (victim.isPlayer() 
+        else if (victim.isPlayerControlled() 
         || player().hasContact(assassin)
         || player().hasContact(victim))
             GNNNotification.notifyRandomEvent(notificationText(), "GNN_Event_Assassin");

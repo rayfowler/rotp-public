@@ -314,7 +314,7 @@ public final class SpyNetwork implements Base, Serializable {
         Empire emp = view().empire();
         Empire owner = view().owner();
         
-        List<String> prevPossible = owner.isPlayer() ? new ArrayList<>(possibleTechs()) : null;
+        List<String> prevPossible = owner.isPlayerControlled() ? new ArrayList<>(possibleTechs()) : null;
 
         tech.spyOnTechs(emp.tech());
         float maxTech = owner.tech().maxTechLevel();

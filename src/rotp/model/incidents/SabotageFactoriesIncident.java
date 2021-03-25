@@ -37,7 +37,7 @@ public class SabotageFactoriesIncident extends DiplomaticIncident {
         // no incident if spy not caught
         if (!m.spy().caught()) {
             Empire victim = otherView.owner();
-            if (victim.isPlayer()
+            if (victim.isPlayerControlled()
             && !victim.isAIControlled()
             && (m.factoriesDestroyed() > 0)) {
                 StarSystem sys = m.starSystem();
@@ -59,7 +59,7 @@ public class SabotageFactoriesIncident extends DiplomaticIncident {
         destroyed = m.factoriesDestroyed();
         severity = max(-20,(-1*destroyed)+ev.embassy().currentSpyIncidentSeverity());
 
-        if (ev.owner().isPlayer()
+        if (ev.owner().isPlayerControlled()
         && !ev.owner().isAIControlled()
         && (destroyed > 0)) {
             StarSystem sys = m.starSystem();
@@ -78,7 +78,7 @@ public class SabotageFactoriesIncident extends DiplomaticIncident {
     @Override
     public String description()      { return decode(text("INC_DESTROYED_FACTORIES_DESC")); }
     @Override
-    public String warningMessageId() { return galaxy().empire(empVictim).isPlayer() ? "" : DialogueManager.WARNING_SABOTAGE; }
+    public String warningMessageId() { return galaxy().empire(empVictim).isPlayerControlled() ? "" : DialogueManager.WARNING_SABOTAGE; }
     @Override
     public String declareWarId()     { return DialogueManager.DECLARE_SPYING_WAR; }
     @Override

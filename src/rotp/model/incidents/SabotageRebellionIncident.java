@@ -58,7 +58,7 @@ public class SabotageRebellionIncident extends DiplomaticIncident {
     @Override
     public String description()      { return decode(text("INC_INCITED_REBELLION_DESC")); }
     @Override
-    public String warningMessageId() { return galaxy().empire(empVictim).isPlayer() ? "" : DialogueManager.WARNING_SABOTAGE; }
+    public String warningMessageId() { return galaxy().empire(empVictim).isPlayerControlled() ? "" : DialogueManager.WARNING_SABOTAGE; }
     @Override
     public String declareWarId()     { return DialogueManager.DECLARE_SPYING_WAR; }
     @Override

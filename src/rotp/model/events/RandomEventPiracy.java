@@ -81,7 +81,7 @@ public class RandomEventPiracy implements Base, Serializable, RandomEvent {
             sysEmp.tradePiracyRate(prevEmp.tradePiracyRate());
             prevEmp.tradePiracyRate(0.0f);
             empId = sysEmp.id;
-            if (sysEmp.isPlayer())
+            if (sysEmp.isPlayerControlled())
                 turnCount = -1;  // resets the notification counter so player is immediately notified
         }
 

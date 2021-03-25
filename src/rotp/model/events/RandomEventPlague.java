@@ -115,7 +115,7 @@ public class RandomEventPlague implements Base, Serializable, RandomEvent, Colon
         if (sysEmp.id != empId) {
             empId = sysEmp.id;
             researchRemaining = researchNeeded;
-            if (sysEmp.isPlayer())
+            if (sysEmp.isPlayerControlled())
                 turnCount = -1;  // resets the notification counter so player is immediately notified
         }
         
