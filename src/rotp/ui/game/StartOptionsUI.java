@@ -52,6 +52,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
     BaseText colonizingText;
     BaseText councilWinText;
     BaseText randomizeAIText;
+    BaseText autoplayText;
     BaseText researchRateText;
     BaseText warpSpeedText;
     BaseText fuelRangeText;
@@ -73,6 +74,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         colonizingText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         councilWinText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         randomizeAIText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
+        autoplayText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         researchRateText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         warpSpeedText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
         fuelRangeText = new BaseText(this, false, 20, 20,-78,  textC, textC, hoverC, depressedC, textC, 0, 0, 0);
@@ -91,6 +93,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         colonizingText.displayText(colonizingStr());
         councilWinText.displayText(councilWinStr());
         randomizeAIText.displayText(randomizeAIStr());
+        autoplayText.displayText(autoplayStr());
         fuelRangeText.displayText(fuelRangeStr());
         researchRateText.displayText(researchRateStr());
         techTradingText.displayText(techTradingStr());
@@ -313,6 +316,24 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             g.drawString(line, x2+s20, y3);
         }
         
+        
+        y2 += (h2+s20);
+        g.setColor(SystemPanel.blackText);
+        g.drawRect(x2, y2, w2, h2);
+        g.setPaint(GameUI.settingsSetupBackground(w));
+        g.fillRect(x2+s10, y2-s10, autoplayText.stringWidth(g)+s30,s30);
+        autoplayText.setScaledXY(x2+s20, y2+s7);
+        autoplayText.draw(g);
+        desc = text("SETTINGS_AUTOPLAY_DESC");
+        g.setColor(SystemPanel.blackText);
+        g.setFont(descFont);
+        lines = this.wrappedLines(g,desc, w2-s30);
+        y3 = y2+s10;
+        for (String line: lines) {
+            y3 += lineH;
+            g.drawString(line, x2+s20, y3);
+        }
+        
         // right side
         y2 = topM+scaled(110);
         h2 = s90;
@@ -476,6 +497,10 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         String opt = text(newGameOptions().selectedRandomizeAIOption());
         return text("SETTINGS_RANDOMIZE_AI", opt)+" ";
     }
+    private String autoplayStr() {
+        String opt = text(newGameOptions().selectedAutoplayOption());
+        return text("SETTINGS_AUTOPLAY", opt)+" ";
+    }
     private String researchRateStr() {
         String opt = text(newGameOptions().selectedResearchRate());
         return text("SETTINGS_RESEARCH_RATE", opt)+"   ";
@@ -546,6 +571,11 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         newGameOptions().selectedRandomizeAIOption(newGameOptions().nextRandomizeAIOption());
         randomizeAIText.repaint(randomizeAIStr());
     }
+    private void toggleAutoplay(MouseEvent e) {
+        softClick();
+        newGameOptions().selectedAutoplayOption(newGameOptions().nextAutoplayOption());
+        autoplayText.repaint(autoplayStr());
+    }
     private void toggleResearchRate(MouseEvent e) {
         softClick();
         newGameOptions().selectedResearchRate(newGameOptions().nextResearchRate());
@@ -607,6 +637,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             hoverBox = aiHostilityText.bounds();
         else if (randomizeAIText.contains(x,y))
             hoverBox = randomizeAIText.bounds();
+        else if (autoplayText.contains(x,y))
+            hoverBox = autoplayText.bounds();
         else if (researchRateText.contains(x,y))
             hoverBox = researchRateText.bounds();
         else if (warpSpeedText.contains(x,y))
@@ -641,6 +673,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
                 councilWinText.mouseExit();
             else if (prevHover == randomizeAIText.bounds())
                 randomizeAIText.mouseExit();
+            else if (prevHover == autoplayText.bounds())
+                autoplayText.mouseExit();
             else if (prevHover == researchRateText.bounds())
                 researchRateText.mouseExit();
             else if (prevHover == warpSpeedText.bounds())
@@ -669,6 +703,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
                 councilWinText.mouseEnter();
             else if (hoverBox == randomizeAIText.bounds())
                 randomizeAIText.mouseEnter();
+            else if (hoverBox == autoplayText.bounds())
+                autoplayText.mouseEnter();
             else if (hoverBox == researchRateText.bounds())
                 researchRateText.mouseEnter();
             else if (hoverBox == warpSpeedText.bounds())
@@ -715,6 +751,8 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
             toggleCouncilWin(e);
         else if (hoverBox == randomizeAIText.bounds())
             toggleRandomizeAI(e);
+        else if (hoverBox == autoplayText.bounds())
+            toggleAutoplay(e);
         else if (hoverBox == researchRateText.bounds())
             toggleResearchRate(e);
         else if (hoverBox == warpSpeedText.bounds())
