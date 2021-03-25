@@ -2435,7 +2435,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         else { 
             List<Empire> activeEmpires = galaxy().activeEmpires();
             // Player has gone extinct. Determine loss condition
-            if (isPlayerControlled()) {
+            if (isPlayer()) {
                 // no one killed us... abandonment suicide
                 if (lastAttacker == null)
                     session().status().loseNoColonies();   
