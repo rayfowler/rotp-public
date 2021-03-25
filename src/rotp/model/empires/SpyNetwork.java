@@ -290,7 +290,7 @@ public final class SpyNetwork implements Base, Serializable {
         }
         
         if (rpt.spiesLost() > 0) {
-            if (view.owner().isPlayerControlled() || view.empire().isPlayerControlled())
+            if (view.owner().isPlayer() || view.empire().isPlayer())
             session().enableSpyReport();
         }
         
@@ -314,13 +314,13 @@ public final class SpyNetwork implements Base, Serializable {
         Empire emp = view().empire();
         Empire owner = view().owner();
         
-        List<String> prevPossible = owner.isPlayerControlled() ? new ArrayList<>(possibleTechs()) : null;
+        List<String> prevPossible = owner.isPlayer() ? new ArrayList<>(possibleTechs()) : null;
 
         tech.spyOnTechs(emp.tech());
         float maxTech = owner.tech().maxTechLevel();
         possibleTechs = emp.tech().worseTechsUnknownToCiv(owner.tech(), maxTech);
         
-        if (owner.isPlayerControlled()) {
+        if (owner.isPlayer()) {
             List<String> newPossible = new ArrayList<>(possibleTechs());
             newPossible.removeAll(prevPossible);
             if (!newPossible.isEmpty()) {
