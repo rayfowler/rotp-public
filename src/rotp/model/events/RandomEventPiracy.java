@@ -81,7 +81,7 @@ public class RandomEventPiracy implements Base, Serializable, RandomEvent {
             sysEmp.tradePiracyRate(prevEmp.tradePiracyRate());
             prevEmp.tradePiracyRate(0.0f);
             empId = sysEmp.id;
-            if (sysEmp.isPlayer())
+            if (sysEmp.isPlayerControlled())
                 turnCount = -1;  // resets the notification counter so player is immediately notified
         }
 
@@ -95,7 +95,7 @@ public class RandomEventPiracy implements Base, Serializable, RandomEvent {
         affectEmpireTrade();
         turnCount++;
 
-        if ((turnCount % 5 == 0) && sysEmp.isPlayer())
+        if ((turnCount % 5 == 0) && sysEmp.isPlayerControlled())
             GNNNotification.notifyRandomEvent(continuingText(), "GNN_Event_Piracy");
     }
     private float piracyRate()          { return pirateHP / 500.0f; }

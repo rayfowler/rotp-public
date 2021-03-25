@@ -83,7 +83,7 @@ public class SpyConfessionIncident extends DiplomaticIncident {
     public boolean triggersWarning()    { return true; }
     @Override
     public String warningMessageId() {
-        if (galaxy().empire(empVictim).isPlayer())
+        if (galaxy().empire(empVictim).isPlayerControlled())
             return "";
         else if (missionType == 2)
             return DialogueManager.WARNING_SABOTAGE;

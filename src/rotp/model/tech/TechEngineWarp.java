@@ -89,7 +89,7 @@ public final class TechEngineWarp extends Tech {
             }
         }
 
-        if (c.isPlayer() && (baseWarp > 1))
+        if (c.isPlayerControlled() && (baseWarp > 1))
             galaxy().giveAdvice("MAIN_ADVISOR_SHIP_ENGINE");
     }
     @Override

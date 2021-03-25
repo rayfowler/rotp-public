@@ -958,7 +958,7 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
             return;
         
         // stop drawing unarmed AI fleets at a certain zoom level
-        if (!armed && !empire().isPlayer() && (map.scaleX() > GalaxyMapPanel.MAX_FLEET_UNARMED_SCALE))
+        if (!armed && !empire().isPlayerControlled() && (map.scaleX() > GalaxyMapPanel.MAX_FLEET_UNARMED_SCALE))
             return;
 
         // because fleets can be disbanded asynchronously to the ui thread,

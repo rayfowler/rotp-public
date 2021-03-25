@@ -27,7 +27,7 @@ public class FinalWarIncident extends DiplomaticIncident {
     public static void create(Empire ally, Empire leader, Empire rebel) {
         FinalWarIncident inc = new FinalWarIncident(ally, leader, rebel);
         ally.diplomatAI().noticeIncident(inc, rebel);
-        if (rebel.isPlayer() && (ally == leader))
+        if (rebel.isPlayerControlled() && (ally == leader))
             DiplomaticNotification.create(ally.viewForEmpire(rebel), inc, inc.warningMessageId());
     }
     private FinalWarIncident(Empire n, Empire a, Empire v) {

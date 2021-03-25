@@ -189,7 +189,7 @@ public class AIDiplomat implements Base, Diplomat {
 
     @Override
     public DiplomaticReply receiveRequestTech(Empire diplomat, Tech tech) {
-        if (empire.isPlayer()) {
+        if (empire.isPlayerControlled()) {
             EmpireView v = diplomat.viewForEmpire(empire);
             // 1st, create the reply for the AI asking the player for the tech
             DiplomaticReply reply = v.otherView().accept(DialogueManager.OFFER_TECH_EXCHANGE);
@@ -388,12 +388,12 @@ public class AIDiplomat implements Base, Diplomat {
     public DiplomaticReply receiveOfferTrade(Empire requestor, int level) {
         // if the AI is asking the player, create an OfferTrade notification
         log(empire.name(), " receiving offer trade from: ", requestor.name(), "  for:", str(level), " BC");
-        if (empire.isPlayer()) {
+        if (empire.isPlayerControlled()) {
             DiplomaticNotification.create(requestor.viewForEmpire(empire), DialogueManager.OFFER_TRADE);
             return null;
         }
         EmpireView v = empire.viewForEmpire(requestor);
-        if (requestor.isPlayer()) {
+        if (requestor.isPlayerControlled()) {
             if (random(100) < leaderDiplomacyAnnoyanceMod(v)) {
                 v.embassy().withdrawAmbassador();
                 return v.refuse(DialogueManager.DECLINE_ANNOYED);
@@ -443,7 +443,7 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
         
         // if asking player, check that we don't spam him
-        if (v.empire().isPlayer()) {
+        if (v.empire().isPlayerControlled()) {
              if (!v.otherView().embassy().readyForTrade(level))
                 return false;
         }
@@ -509,7 +509,7 @@ public class AIDiplomat implements Base, Diplomat {
     @Override
     public DiplomaticReply receiveOfferPeace(Empire requestor) {
         log(empire.name(), " receiving offer of Peace from: ", requestor.name());
-        if (empire.isPlayer()) {
+        if (empire.isPlayerControlled()) {
             DiplomaticNotification.create(requestor.viewForEmpire(empire), DialogueManager.OFFER_PEACE);
             return null;
         }
@@ -580,12 +580,12 @@ public class AIDiplomat implements Base, Diplomat {
     public DiplomaticReply receiveOfferPact(Empire requestor) {
         log(empire.name(), " receiving offer of Pact from: ", requestor.name());
         EmpireView v = empire.viewForEmpire(requestor);
-        if (empire.isPlayer()) {
+        if (empire.isPlayerControlled()) {
             DiplomaticNotification.create(requestor.viewForEmpire(empire), DialogueManager.OFFER_PACT);
             return null;
         }
 
-        if (requestor.isPlayer()) {
+        if (requestor.isPlayerControlled()) {
             if (random(100) < leaderDiplomacyAnnoyanceMod(v)) {
                 v.embassy().withdrawAmbassador();
                 return v.refuse(DialogueManager.DECLINE_ANNOYED);
@@ -622,7 +622,7 @@ public class AIDiplomat implements Base, Diplomat {
     }
     private boolean willingToOfferPact(EmpireView v) {
         // if asking player, check that we don't spam him
-        if (v.empire().isPlayer()) {
+        if (v.empire().isPlayerControlled()) {
             if (!v.otherView().embassy().readyForPact())
                 return false;
         }
@@ -653,13 +653,13 @@ public class AIDiplomat implements Base, Diplomat {
     @Override
     public DiplomaticReply receiveOfferAlliance(Empire requestor) {
         log(empire.name(), " receiving offer of Alliance from: ", requestor.name());
-        if (empire.isPlayer()) {
+        if (empire.isPlayerControlled()) {
             DiplomaticNotification.create(requestor.viewForEmpire(empire), DialogueManager.OFFER_ALLIANCE);
             return null;
         }
 
         EmpireView v = empire.viewForEmpire(requestor);
-        if (requestor.isPlayer()) {
+        if (requestor.isPlayerControlled()) {
             if (random(100) < leaderDiplomacyAnnoyanceMod(v)) {
                 v.embassy().withdrawAmbassador();
                 return v.refuse(DialogueManager.DECLINE_ANNOYED);
@@ -717,7 +717,7 @@ public class AIDiplomat implements Base, Diplomat {
         EmpireView v = empire.viewForEmpire(e);
         // if we are asking the player, respect the alliance-countdown
         // timer to avoid spamming player with requests
-        if (e.isPlayer()) {
+        if (e.isPlayerControlled()) {
             //return true;
             if (!v.otherView().embassy().readyForAlliance())
                 return false;
@@ -751,7 +751,7 @@ public class AIDiplomat implements Base, Diplomat {
         // this method is called only for targets that we are at war with
         // or targets we are preparing for war with
         
-        if (friend.isPlayer()) {
+        if (friend.isPlayerControlled()) {
             EmpireView v = empire.viewForEmpire(friend);
             if (!v.otherView().embassy().readyForJointWar())
                 return false;
@@ -770,7 +770,7 @@ public class AIDiplomat implements Base, Diplomat {
     @Override
     public DiplomaticReply receiveOfferJointWar(Empire requestor, Empire target) {
         log(empire.name(), " receiving offer of Joint War from: ", requestor.name());
-        if (empire.isPlayer()) {
+        if (empire.isPlayerControlled()) {
             DiplomaticNotification.create(requestor.viewForEmpire(empire), DialogueManager.OFFER_JOINT_WAR, target);
             return null;
         }
@@ -1084,7 +1084,7 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
 
         view.embassy().breakAlliance();
-        if (view.empire().isPlayer())
+        if (view.empire().isPlayerControlled())
             DiplomaticNotification.create(view, DialogueManager.BREAK_ALLIANCE);
         return true;
     }
@@ -1107,7 +1107,7 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
 
         view.embassy().breakPact();
-        if (view.empire().isPlayer())
+        if (view.empire().isPlayerControlled())
             DiplomaticNotification.create(view, DialogueManager.BREAK_PACT);
         return true;
     }
@@ -1124,7 +1124,7 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
 
         view.embassy().breakTrade();
-        if (view.empire().isPlayer())
+        if (view.empire().isPlayerControlled())
             DiplomaticNotification.create(view, DialogueManager.BREAK_TRADE);
         return true;
     }
@@ -1241,7 +1241,7 @@ public class AIDiplomat implements Base, Diplomat {
 
         maxIncident.notifyOfPraise();
         view.embassy().praiseSent();
-        if (view.empire().isPlayer())
+        if (view.empire().isPlayerControlled())
             DiplomaticNotification.create(view, maxIncident, maxIncident.praiseMessageId());
 
         return true;
@@ -1285,7 +1285,7 @@ public class AIDiplomat implements Base, Diplomat {
         view.embassy().logWarning(maxIncident);
         
         // if we are warning player, send a notification
-        if (view.empire().isPlayer()) {
+        if (view.empire().isPlayerControlled()) {
             // we will only give one expansion warning
             if (maxIncident instanceof ExpansionIncident) {
                 if (view.embassy().gaveExpansionWarning())
@@ -1472,8 +1472,8 @@ public class AIDiplomat implements Base, Diplomat {
         EmpireView cv2 = empire.viewForEmpire(civ2);
 
         // to test diplomatic win for player
-        //if (civ1.isPlayer()) return castVoteFor(civ1, approv1);
-        //if (civ2.isPlayer()) return castVoteFor(civ2, approv2);
+        //if (civ1.isPlayerControlled()) return castVoteFor(civ1, approv1);
+        //if (civ2.isPlayerControlled()) return castVoteFor(civ2, approv2);
 
         // always vote for yourself
         if (civ1 == empire)   return castVoteFor(civ1);
@@ -1536,7 +1536,7 @@ public class AIDiplomat implements Base, Diplomat {
     @Override
     public void acceptCouncilRuling(GalacticCouncil c) {
         // player will be prompted by UI
-        if (empire.isPlayer())
+        if (empire.isPlayerControlled())
             return;
         
         // if elected, always accept. Only players are sadomasochists about this

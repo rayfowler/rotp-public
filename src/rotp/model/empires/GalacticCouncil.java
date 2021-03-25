@@ -129,8 +129,10 @@ public class GalacticCouncil implements Base, Serializable {
         }
     }
     private void schedule() {
-        galaxy().giveAdvice("MAIN_ADVISOR_COUNCIL");
-        GNNNotification.notifyCouncil(text("GNN_FORM_COUNCIL"));
+        if (!options().isAutoPlay()) {
+            galaxy().giveAdvice("MAIN_ADVISOR_COUNCIL");
+            GNNNotification.notifyCouncil(text("GNN_FORM_COUNCIL"));
+        }
         nextAction = CONVENE;
         actionCountdown = noticeDuration;
     }
@@ -155,7 +157,7 @@ public class GalacticCouncil implements Base, Serializable {
     public boolean hasLeader() { return leader != null; }
     public void castNextVote() {
         // will not cast vote for player
-        if (!nextVoter().isPlayer())
+        if (!nextVoter().isPlayerControlled())
             castNextVote(nextVoter().diplomatAI().councilVoteFor(candidate1(), candidate2()));
     }
     public void castPlayerVote(Empire chosen) {
@@ -163,7 +165,7 @@ public class GalacticCouncil implements Base, Serializable {
             castNextVote(chosen);
     }
     public void continueNonPlayerVoting() {
-        while (votingInProgress() && !nextVoter().isPlayer())
+        while (votingInProgress() && !nextVoter().isPlayerControlled())
             castNextVote();
     }
     public boolean nextVoteWouldElect(Empire emp) {
@@ -234,7 +236,7 @@ public class GalacticCouncil implements Base, Serializable {
 
         // final war: player is rebelling aginst leader, or player
         // is leader and at least one AI is rebelling
-        if (leader.isPlayer())
+        if (leader.isPlayerControlled())
             galaxy().giveAdvice("MAIN_ADVISOR_COUNCIL_RESISTED", leader.raceName());                   
         else 
             galaxy().giveAdvice("MAIN_ADVISOR_RESIST_COUNCIL");
@@ -275,7 +277,7 @@ public class GalacticCouncil implements Base, Serializable {
             for (Tech tech : leader.tech().techsUnknownTo(ally))
                 ally.tech().acquireTechThroughTrade(tech.id, leader.id);
         }
-        if (leader.isPlayer()) {
+        if (leader.isPlayerControlled()) {
             for (Empire rebel: rebels) {
                 EmpireView v = rebel.viewForEmpire(leader);
                 DiplomaticNotification.create(v, DialogueManager.WARNING_REBELLING_AGAINST); 
@@ -283,7 +285,7 @@ public class GalacticCouncil implements Base, Serializable {
         }
         else {
             for (Empire rebel: rebels) {
-                if (!rebel.isPlayer()) {
+                if (!rebel.isPlayerControlled()) {
                     EmpireView v = rebel.viewForEmpire(leader);
                     DiplomaticNotification.create(v, DialogueManager.PRAISE_REBELLING_WITH); 
                 }

@@ -402,7 +402,7 @@ public final class TechShipWeapon extends Tech {
             ShipWeaponBeam sh2 = new ShipWeaponBeam(this, true);
             c.shipLab().addWeapon(sh2);
         }
-        if (c.isPlayer())
+        if (c.isPlayerControlled())
             galaxy().giveAdvice("MAIN_ADVISOR_SHIP_WEAPON");
     }
     @Override
