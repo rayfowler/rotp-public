@@ -564,7 +564,6 @@ public class ShipCombatManager implements Base {
                 CombatStackShip ship = (CombatStackShip) st;
                 if (ship.retreat()) {
                     retreatingStacks.add(ship);
-                    ship.drawRetreat();
                 }
             }
         }
