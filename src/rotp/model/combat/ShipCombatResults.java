@@ -211,10 +211,8 @@ public final class ShipCombatResults implements Base {
             BioweaponIncident.create(defender(), e, system());
 
         if (monster != null) {
-            if (!monster.alive()) {
+            if (!monster.alive()) 
                 monster.plunder();
-                system.monster(null);
-            }
             return;
         }
         // if a neutral system, then a skirmish for all
