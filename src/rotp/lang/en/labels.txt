@@ -322,6 +322,11 @@ GAME_SETTINGS_TEXTURES_INTERFACE  | User Interface
 GAME_SETTINGS_TEXTURES_MAP        | Galaxy Map
 GAME_SETTINGS_TEXTURES_BOTH       | Interface and Map
 GAME_SETTINGS_TEXTURES_DESC       | Toggle the use of textures on the galaxy map or the various screens throughout the game.
+GAME_SETTINGS_SENSITIVITY         | Hover Sensitivity: %1
+GAME_SETTINGS_SENSITIVITY_HIGH    | High
+GAME_SETTINGS_SENSITIVITY_MEDIUM  | Medium
+GAME_SETTINGS_SENSITIVITY_LOW     | Low
+GAME_SETTINGS_SENSITIVITY_DESC    | Toggle how quickly the galaxy map responds to mouse movement when updating the display panel.
 GAME_SETTINGS_MEMORY              | Show Memory Usage: %1
 GAME_SETTINGS_MEMORY_YES          | Yes
 GAME_SETTINGS_MEMORY_NO           | No

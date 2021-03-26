@@ -159,7 +159,7 @@ public class MainUI extends BasePanel implements IMapHandler {
         overlay = overlayNone;
     }
     public void init(boolean pauseNextTurn) {
-        map.resetRangeAreas();
+        map.init();
         if (pauseNextTurn)
             buttonPanel.init();
         
