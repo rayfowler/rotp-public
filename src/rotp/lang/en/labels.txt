@@ -91,6 +91,7 @@ COLONY_NAME_4                     | Distant %1
 // Space Monster Names
 SPACE_AMOEBA                      | Space Amoeba
 SPACE_CRYSTAL                     | Space Crystal
+ORION_GUARDIAN                    | Orion Guardian
 
 // Personality types (adjective)
 LEADER_ERRATIC                    | Erratic
