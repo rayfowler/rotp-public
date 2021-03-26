@@ -1470,6 +1470,7 @@ SHIP_DESIGN_HELP_1H               | Missile Defense - defense level vs. missile 
 SHIP_DESIGN_HELP_1I               | Beam Defense - defense level vs. beam weapons in combat.
 SHIP_DESIGN_HELP_1J               | Attack Level - attack level for weapons in combat. 
 SHIP_DESIGN_HELP_1K               | Combat Speed - distance the ship can travel in combat, per turn.
+SHIP_DESIGN_HELP_1L               | Tint - alters the color of the ship.
 SHIP_DESIGN_HELP_2A               | Engine Type - the type of engine used to power this ship design.
 SHIP_DESIGN_HELP_2B               | Speed - travel speed provided by the engine.
 SHIP_DESIGN_HELP_2C               | Cost - the cost of each engine needed for power.
