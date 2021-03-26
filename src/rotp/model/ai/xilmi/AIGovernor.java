@@ -361,7 +361,7 @@ public class AIGovernor implements Base, Governor {
             viableForShipProduction = false;
         }
         ShipDesignLab lab = empire.shipLab();
-        if(empire.generalAI().additionalColonizersToBuild() > 0 && viableForShipProduction && col.allocation(SHIP) == 0)
+        if(empire.generalAI().additionalColonizersToBuild(false) > 0 && viableForShipProduction && col.allocation(SHIP) == 0)
         {
             col.shipyard().design(lab.colonyDesign());
             col.allocation(SHIP, maxAllocation - totalAlloc);

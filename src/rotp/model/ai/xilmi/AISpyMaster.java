@@ -46,7 +46,7 @@ public class AISpyMaster implements Base, SpyMaster {
         int paranoia = 0;
         boolean alone = true;
         for (EmpireView cv : empire.empireViews()) {
-            if ((cv != null) && cv.embassy().contact()) {
+            if ((cv != null) && cv.embassy().contact() && cv.inEconomicRange()) {
                 //ail: only panic when I'm technologically ahead and don't have the computer-tech to cover it
                 int shouldPanicThreshold = 0;
                 shouldPanicThreshold += empire.tech().avgTechLevel();
@@ -65,8 +65,6 @@ public class AISpyMaster implements Base, SpyMaster {
         }
         if ((paranoia == 0) && !alone)
             paranoia++;
-        if (empire.leader().isXenophobic())
-            paranoia *= 2;
         //ail: Only do periodical spy-sweeps, 30% of the time should be fine
         if(random() < 0.7)
         {

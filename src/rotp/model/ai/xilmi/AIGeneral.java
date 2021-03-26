@@ -640,6 +640,8 @@ public class AIGeneral implements Base, General {
             {
                 continue;
             }
+            if(empire.systemsForCiv(emp).size() < 2)
+                continue;
             EmpireView ev = empire.viewForEmpire(emp);
             float relationshipFactor = 100 - ev.embassy().relations();
             float currentScore = relationshipFactor * empire.systemsInShipRange(emp).size() * empire.systemsForCiv(emp).size() / empire.powerLevel(emp);
@@ -689,9 +691,9 @@ public class AIGeneral implements Base, General {
         return defenseRatio;
     }
     @Override
-    public int additionalColonizersToBuild()
+    public int additionalColonizersToBuild(boolean returnPotentialUncolonizedInstead)
     {
-        if(additionalColonizersToBuild >= 0)
+        if(additionalColonizersToBuild >= 0 && !returnPotentialUncolonizedInstead)
             return additionalColonizersToBuild;
         int additional = 0;
         int colonizerRange = empire.shipLab().colonyDesign().range();
@@ -736,6 +738,8 @@ public class AIGeneral implements Base, General {
                 }
             }
         }
+        if(returnPotentialUncolonizedInstead)
+            return additional;
         //System.out.print("\n"+empire.name()+" and with those added from range-extension by colonization: "+additional);
         int[] counts = galaxy().ships.shipDesignCounts(empire.id);
         for (int i=0;i<counts.length;i++) 
