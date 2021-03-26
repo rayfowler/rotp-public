@@ -53,7 +53,6 @@ public class OrionGuardianShip extends SpaceMonster {
                 break;
             }
         }
-        
         // all empires now know this system is no longer guarded
         for (Empire emp1: galaxy().empires()) 
             emp1.sv.view(sysId).refreshSystemEntryScan();

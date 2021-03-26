@@ -15,7 +15,6 @@
  */
 package rotp.model.ai.xilmi;
 
-import java.util.List;
 import rotp.model.ai.FleetPlan;
 import rotp.model.ai.ShipPlan;
 import rotp.model.ai.interfaces.Governor;
@@ -362,7 +361,7 @@ public class AIGovernor implements Base, Governor {
             viableForShipProduction = false;
         }
         ShipDesignLab lab = empire.shipLab();
-        if(empire.generalAI().additionalColonizersToBuild() > 0 && viableForShipProduction && col.allocation(SHIP) == 0)
+        if(empire.generalAI().additionalColonizersToBuild(false) > 0 && viableForShipProduction && col.allocation(SHIP) == 0)
         {
             col.shipyard().design(lab.colonyDesign());
             col.allocation(SHIP, maxAllocation - totalAlloc);

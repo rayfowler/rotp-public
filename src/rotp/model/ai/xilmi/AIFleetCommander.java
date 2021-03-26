@@ -142,15 +142,12 @@ public class AIFleetCommander implements Base, FleetCommander {
             float bc = 0.0f;
             for(ShipFleet incoming : current.incomingFleets())
             {
-                if(!empire.visibleShips().contains(incoming))
-                    continue;
                 if(incoming.empire().aggressiveWith(empire.id))
                 {
-                    if(incoming.visibleTo(empire))
-                    {
-                        enemyBombardDamage += incoming.expectedBombardDamage(current);
-                        enemyBc += incoming.bcValue();
-                    }
+                    if(!empire.visibleShips().contains(incoming))
+                        continue;
+                    enemyBombardDamage += incoming.expectedBombardDamage(current);
+                    enemyBc += incoming.bcValue();
                 }
                 if(incoming.empire() == fleet.empire())
                 {
@@ -159,12 +156,14 @@ public class AIFleetCommander implements Base, FleetCommander {
                         bc += incoming.bcValue();
                 }
             }
-            if(current.colony() != null)
+            if(empire.sv.isColonized(id))
             {
                 score = 10; //max(10, current.colony().production());
                 baseBc = empire.sv.bases(current.id)*current.empire().tech().newMissileBaseCost();
                 if(onlyColonizerTargets)
+                {
                     continue;
+                }
             }
             //if we don't have scouts anymore, we still need a way to uncover new systems
             else if(!empire.sv.isScouted(id) && bc == 0 )
@@ -185,15 +184,16 @@ public class AIFleetCommander implements Base, FleetCommander {
                 else if (empire.sv.isUltraPoor(id))
                     score /= 3;
             }
-            for(ShipFleet orbiting : empire.sv.orbitingFleets(current.id))
+            for(ShipFleet orbiting : current.orbitingFleets())
             {
+                if(orbiting.retreating())
+                    continue;
                 if(orbiting.empire().aggressiveWith(fleet.empId()))
                 {
-                    if(orbiting.visibleTo(fleet.empire()))
-                    {
-                        enemyBombardDamage += orbiting.expectedBombardDamage();
-                        enemyBc += orbiting.bcValue();
-                    }
+                    if(!empire.visibleShips().contains(orbiting))
+                        continue;
+                    enemyBombardDamage += orbiting.expectedBombardDamage();
+                    enemyBc += orbiting.bcValue();
                 }
                 if(orbiting.empire() == fleet.empire())
                 {
@@ -231,7 +231,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             }
             else
             {
-                if(current.colony() != null)
+                if(empire.sv.isColonized(id))
                 {
                     if(!empire.enemies().contains(current.empire()))
                     {
@@ -396,9 +396,7 @@ public class AIFleetCommander implements Base, FleetCommander {
         }
     }
     private void reviseFleetPlan(int sysId) {        
-        Galaxy gal = galaxy();
         float scoutRange = empire.scoutRange();
-        float shipRange = empire.shipRange();
         // if out of scout range, forget it
         if (!empire.sv.withinRange(sysId, scoutRange)) 
             return;
@@ -415,28 +413,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             if (empire.alliedWith(empire.sv.empId(sysId))
             || (empire.sv.bases(sysId) == 0)) 
                 setScoutFleetPlan(sysId);
-            return;
         }
-
-        // Only UNCOLONIZED systems beyond this point
-        if(empire.sv.isColonized(sysId))
-        {
-            return;
-        }
-        // if we can colonize this, send a colony fleet if in ship range
-        // else send colony if they can reach, other post a fighter/scout to watch
-        /*if (empire.canColonize(gal.system(sysId).planet().type())) {
-            if (empire.sv.withinRange(sysId, shipRange)) {
-                empire.shipLab().needColonyShips = true;
-                setColonyFleetPlan(sysId);
-            }
-            else{
-                empire.shipLab().needExtendedColonyShips = true;
-                if (empire.shipLab().colonyDesign().isExtendedRange())
-                    setColonyFleetPlan(sysId);
-            }
-            return;
-        }*/
     }
     private void setDistantFleetsToRetreat() {
         List<ShipFleet> fleets = galaxy().ships.notInTransitFleets(empire.id);
@@ -528,11 +505,6 @@ public class AIFleetCommander implements Base, FleetCommander {
     //ail: Entirely new way of handling the military
     private void handleMilitary()
     {
-        boolean offensive = true;
-        if(empire.ai().general().defenseRatio() > 0.5)
-        {
-            offensive = false;
-        }
         //ail: when we have colonizers but don't know we need any, we send them with our attacks, so they can colonize the bombed system also this should allow to scout with initial colonizer
         float civTech = empire.tech().avgTechLevel();
         for(ShipFleet fleet:empire.allFleets())
@@ -561,7 +533,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                     boolean onlyBomberTargets = false;
                     boolean onlyColonizerTargets = false;
                     
-                    if(fleet.numFighters() == 0 || notEnoughFighters || offensive)
+                    if(fleet.numFighters() == 0 || notEnoughFighters)
                         onlyBomberTargets = true;
                     if(fleet.numFighters() == 0 && fleet.numBombers() == 0)
                         onlyColonizerTargets = true;
@@ -577,6 +549,9 @@ public class AIFleetCommander implements Base, FleetCommander {
                         StarSystem stagingPoint = null;
                         float fleetSpeed = fleet.slowestStackSpeed();
                         stagingPoint = galaxy().system(empire.optimalStagingPoint(target, fleetSpeed));
+                        //ail: When we have hyperspace-communications, we don't want to go to a staging-point for our new target.
+                        if(fleet.inTransit())
+                            stagingPoint = null;
                         if(stagingPoint != null
                             && fleet.system() != stagingPoint 
                             && fleet.travelTurns(target) > (int)Math.ceil(fleet.travelTime(stagingPoint, target, fleetSpeed)) 
@@ -593,37 +568,37 @@ public class AIFleetCommander implements Base, FleetCommander {
                         else
                         {
                             float enemyBC = 0.0f;
+                            boolean needToGuess = false;
                             float targetTech = civTech;
-                            for(ShipFleet orbiting : empire.sv.orbitingFleets(target.id))
+                            for(ShipFleet orbiting : target.orbitingFleets())
                             {
                                 if(orbiting.retreating())
                                     continue;
                                 if(orbiting.empire().aggressiveWith(fleet.empId()))
                                 {
-                                    if(orbiting.visibleTo(fleet.empire()))
+                                    if(!empire.visibleShips().contains(orbiting))
                                     {
-                                        EmpireView ev = empire.viewForEmpire(orbiting.empId());
-                                        targetTech = ev.spies().tech().avgTechLevel(); // modnar: target tech level
-                                        enemyBC += orbiting.bcValue();
+                                        needToGuess = true;
+                                        continue;
                                     }
+                                    EmpireView ev = empire.viewForEmpire(orbiting.empId());
+                                    targetTech = ev.spies().tech().avgTechLevel(); // modnar: target tech level
+                                    enemyBC += orbiting.bcValue();
                                 }
                             }
                             if(target.monster() != null)
                             {
-                                enemyBC += 10000;
+                                enemyBC += 100000;
                             }
                             for(ShipFleet incoming : target.incomingFleets())
                             {
-                                if(!empire.visibleShips().contains(incoming))
-                                    continue;
                                 if(incoming.empire().aggressiveWith(empire.id))
                                 {
-                                    if(incoming.visibleTo(empire))
-                                    {
-                                        EmpireView ev = empire.viewForEmpire(incoming.empId());
-                                        targetTech = ev.spies().tech().avgTechLevel(); // modnar: target tech level
-                                        enemyBC += incoming.bcValue();
-                                    }
+                                    if(!empire.visibleShips().contains(incoming))
+                                        continue;
+                                    EmpireView ev = empire.viewForEmpire(incoming.empId());
+                                    targetTech = ev.spies().tech().avgTechLevel(); // modnar: target tech level
+                                    enemyBC += incoming.bcValue();
                                 }
                             }
                             if(target.empire() != null)
@@ -650,6 +625,9 @@ public class AIFleetCommander implements Base, FleetCommander {
                                 }
                                 else
                                 {
+                                    //ail: if we can't see the system, assume there's at least a fair share of ships for defense
+                                    if(needToGuess)
+                                        enemyBC = max(enemyBC, target.empire().totalFleetCost() * target.colony().production() / target.empire().totalIncome());
                                     enemyBC += empire.sv.bases(target.id)*target.empire().tech().newMissileBaseCost();
                                     EmpireView ev = empire.viewForEmpire(empire.sv.empId(target.id));
                                     if(ev != null)
@@ -668,7 +646,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                             }
                             else
                             {
-                                if(fleet.canColonizeSystem(target))
+                                if(fleet.canColonizeSystem(target) && target.monster() == null)
                                 {
                                     allowColonizers = true;
                                     sendAmount = 0.01f;
@@ -678,20 +656,29 @@ public class AIFleetCommander implements Base, FleetCommander {
                             {
                                 sendAmount = 0.01f;
                             }
-                            if(offensive || empire.transportsInTransit(target) > 0)
+                            if(target.monster() != null)
                             {
-                                if(bcValue(fleet, false, allowFighters, allowBombers, allowColonizers) > 0)
-                                {
-                                    sendAmount = max(sendAmount, min(1.0f, enemyBC*(targetTech+10.0f) / (bcValue(fleet, false, allowFighters, allowBombers, allowColonizers)*(civTech+10.0f)* attackThreshold)));
-                                }
-                                else
-                                {
-                                    sendAmount = 0.0f;
-                                    canStillSend = false;
-                                }
+                                allowBombers = false;
                             }
-                            //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" should attack "+target.name()+" "+fleet.bcValue(false, allowFighters, allowBombers, allowColonizers)+":"+enemyBC+" sendAmount: "+sendAmount);
+                            if(bcValue(fleet, false, allowFighters, allowBombers, allowColonizers) > 0)
+                            {
+                                sendAmount = max(sendAmount, min(1.0f, enemyBC*(targetTech+10.0f) / (bcValue(fleet, false, allowFighters, allowBombers, allowColonizers)*(civTech+10.0f)* attackThreshold)));
+                            }
+                            else
+                            {
+                                sendAmount = 0.0f;
+                                canStillSend = false;
+                            }
+                            //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" should attack "+target.name()+" "+bcValue(fleet, false, allowFighters, allowBombers, allowColonizers)+":"+enemyBC+" sendAmount: "+sendAmount);
                             //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" should attack "+target.name()+" HP "+target.colony().getHitPoints() +" Bomb-Dmg: "+fleet.expectedBombardDamage(target)*sendAmount);
+                            //ail: if we have Hyperspace-communications, we can't split
+                            if(fleet.inTransit())
+                            {
+                                sendAmount = 1.0f;
+                                allowFighters = true;
+                                allowBombers = true;
+                                allowColonizers = true;
+                            }
                             if(bcValue(fleet, false, allowFighters, allowBombers, allowColonizers)*(civTech+10.0f) * attackThreshold > enemyBC*(targetTech+10.0f))
                             {
                                 if(fleet.canSendTo(target.id))
