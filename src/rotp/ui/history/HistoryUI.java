@@ -640,9 +640,9 @@ public final class HistoryUI extends BasePanel implements MouseListener {
         private static final long serialVersionUID = 1L;
         private LinearGradientPaint backGradient;
         public GalaxyMapPane() {
-            init();
+            init0();
         }
-        private void init() {
+        private void init0() {
             int w, h;
             if (!UserPreferences.windowed()) {
                 Dimension size = Toolkit.getDefaultToolkit().getScreenSize();
@@ -783,6 +783,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
                 map.centerY(avg(emp.minY(), emp.maxY()));
                 map.setBounds(emp.minX()-3, emp.maxX()+6, emp.minY()-6, emp.maxY());
                 sessionVar("HISTORYUI_MAP_INITIALIZED", true);
+                map.init();
             }
         }
         @Override

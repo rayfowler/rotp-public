@@ -366,6 +366,7 @@ public abstract class DesignSelectionUI extends BasePanel implements MouseListen
         components.clear();
         sortColumn = -1;
         reverseSort = false;
+        startIndex = 0;
     }
     @Override
     public void mouseDragged(MouseEvent e) {}

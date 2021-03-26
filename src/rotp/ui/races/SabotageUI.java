@@ -837,9 +837,9 @@ public final class SabotageUI extends BasePanel implements MouseListener {
         private static final long serialVersionUID = 1L;
         private LinearGradientPaint backGradient;
         public GalaxyMapPane() {
-            init();
+            init0();
         }
-        private void init() {
+        private void init0() {
             setOpaque(true);
             setBackground(Color.black);
             spySystemPanel = new SpySystemPanel();

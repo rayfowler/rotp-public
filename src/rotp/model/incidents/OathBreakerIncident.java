@@ -60,12 +60,19 @@ public class OathBreakerIncident extends DiplomaticIncident {
         dateOccurred = galaxy().currentYear();
         
         duration = obs.diplomatAI().leaderOathBreakerDuration();
+        
+        // zero duration means zero severity. That's ruthless!
+        if (duration == 0) {
+            duration = 1; // avoid /0 errors
+            severity = 0;
+            return;
+        }
+        
         // longer duration for the victim of the oathbreaking
         if (vic == obs)
             duration *= 2;
 
-        // zero duration means zero severity. That's ruthless!
-        severity = duration == 0 ? 0 : max(-30,sev);
+        severity = max(-30,sev);
     }
     @Override
     public String title()        { return text("INC_OATHBREAKER_TITLE"); }

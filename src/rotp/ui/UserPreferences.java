@@ -53,6 +53,9 @@ public class UserPreferences {
     private static final String TEXTURES_BOTH = "GAME_SETTINGS_TEXTURES_BOTH";
     private static final String SAVEDIR_DEFAULT = "GAME_SETTINGS_SAVEDIR_DEFAULT";
     private static final String SAVEDIR_CUSTOM = "GAME_SETTINGS_SAVEDIR_CUSTOM";
+    private static final String SENSITIVITY_HIGH = "GAME_SETTINGS_SENSITIVITY_HIGH";
+    private static final String SENSITIVITY_MEDIUM = "GAME_SETTINGS_SENSITIVITY_MEDIUM";
+    private static final String SENSITIVITY_LOW = "GAME_SETTINGS_SENSITIVITY_LOW";
     
     
     private static final String PREFERENCES_FILE = "Remnants.cfg";
@@ -69,6 +72,7 @@ public class UserPreferences {
     private static String displayMode = WINDOW_MODE;
     private static String graphicsMode = GRAPHICS_HIGH;
     private static String texturesMode = TEXTURES_BOTH;
+    private static String sensitivityMode = SENSITIVITY_MEDIUM;
     private static String saveDir = "";
     private static float uiTexturePct = 0.20f;
     private static int screenSizePct = 93;
@@ -81,6 +85,7 @@ public class UserPreferences {
         displayMode = WINDOW_MODE;
         graphicsMode = GRAPHICS_HIGH;
         texturesMode = TEXTURES_BOTH;
+        sensitivityMode = SENSITIVITY_MEDIUM;
         screenSizePct = 93;
         backupTurns = 0;
         saveDir = "";
@@ -141,6 +146,20 @@ public class UserPreferences {
     public static boolean texturesInterface() { return texturesMode.equals(TEXTURES_INTERFACE) || texturesMode.equals(TEXTURES_BOTH); }
     public static boolean texturesMap()       { return texturesMode.equals(TEXTURES_MAP) || texturesMode.equals(TEXTURES_BOTH); }
     
+    public static void toggleSensitivityMode()   { 
+        switch(sensitivityMode) {
+            case SENSITIVITY_LOW:       sensitivityMode = SENSITIVITY_MEDIUM; break;
+            case SENSITIVITY_MEDIUM:    sensitivityMode = SENSITIVITY_HIGH; break;
+            case SENSITIVITY_HIGH:      sensitivityMode = SENSITIVITY_LOW; break;
+            default :                   sensitivityMode = SENSITIVITY_MEDIUM; break;
+        }
+        save();
+    }
+    public static String sensitivityMode()     { return sensitivityMode; }
+    public static boolean sensitivityHigh()    { return sensitivityMode.equals(SENSITIVITY_HIGH); }
+    public static boolean sensitivityMedium()  { return sensitivityMode.equals(SENSITIVITY_MEDIUM); }
+    public static boolean sensitivityLow()     { return sensitivityMode.equals(SENSITIVITY_LOW); }
+
     public static String autoColonizeMode()     { return autoColonize ? AUTOCOLONIZE_YES : AUTOCOLONIZE_NO; }
     public static void toggleAutoColonize()     { autoColonize = !autoColonize; save();  }
     public static boolean autoColonize()        { return autoColonize; }
@@ -248,6 +267,7 @@ public class UserPreferences {
             out.println(keyFormat("AUTOCOLONIZE")+ yesOrNo(autoColonize));
             out.println(keyFormat("AUTOBOMBARD")+autoBombardToSettingName(autoBombardMode));
             out.println(keyFormat("TEXTURES")+texturesToSettingName(texturesMode));
+            out.println(keyFormat("SENSITIVITY")+sensitivityToSettingName(sensitivityMode));
             out.println(keyFormat("SHOW_MEMORY")+ yesOrNo(showMemory));
             out.println(keyFormat("DISPLAY_YEAR")+ yesOrNo(displayYear));
             out.println(keyFormat("SCREEN_SIZE_PCT")+ screenSizePct());
@@ -293,6 +313,7 @@ public class UserPreferences {
             case "AUTOCOLONIZE": autoColonize = yesOrNo(val); return;
             case "AUTOBOMBARD":  autoBombardMode = autoBombardFromSettingName(val); return;
             case "TEXTURES":     texturesMode = texturesFromSettingName(val); return;
+            case "SENSITIVITY":  sensitivityMode = sensitivityFromSettingName(val); return;
             case "SHOW_MEMORY":  showMemory = yesOrNo(val); return;
             case "DISPLAY_YEAR": displayYear = yesOrNo(val); return;
             case "SCREEN_SIZE_PCT": screenSizePct(Integer.valueOf(val)); return;
@@ -412,6 +433,22 @@ public class UserPreferences {
             case "Both":      return TEXTURES_BOTH;
         }
         return TEXTURES_BOTH;
+    }
+    public static String sensitivityToSettingName(String s) {
+        switch(s) {
+            case SENSITIVITY_HIGH:   return "High";
+            case SENSITIVITY_MEDIUM: return "Medium";
+            case SENSITIVITY_LOW:    return "Low";
+        }
+        return "Medium";
+    }
+    public static String sensitivityFromSettingName(String s) {
+        switch(s) {
+            case "High":   return SENSITIVITY_HIGH;
+            case "Medium": return SENSITIVITY_MEDIUM;
+            case "Low":    return SENSITIVITY_LOW;
+        }
+        return SENSITIVITY_MEDIUM;
     }
     public static void increaseMusicLevel()    { 
         musicVolume = Math.min(10, musicVolume+1); 
