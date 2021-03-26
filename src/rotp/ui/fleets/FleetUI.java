@@ -150,7 +150,7 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
 
         // reset map everytime we open
         targetSystem = null;
-        map.resetRangeAreas();
+        map.init();
 
         selectedSystems.clear();
         
