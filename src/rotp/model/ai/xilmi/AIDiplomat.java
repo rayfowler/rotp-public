@@ -1410,12 +1410,17 @@ public class AIDiplomat implements Base, Diplomat {
                 Collections.sort(empires, Empire.TOTAL_POPULATION);
                 if(empire == empires.get(0) || empire == empires.get(1))
                 {
+                    Empire voteOpponent = null;
+                    if(empire == empires.get(0))
+                        voteOpponent = empires.get(1);
+                    else
+                        voteOpponent = empires.get(0);
                     warAllowed = false;
                     if(empire.totalPlanetaryPopulation() / 100 > gc.totalVotes() / 3.0)
                         warAllowed = true;
-                    if((bestVictim.atWar() && !empire.pactWith(bestVictim.id))
-                            || bestVictim == gc.candidate1() 
-                            || bestVictim == gc.candidate2())
+                    if(bestVictim.atWar() && !empire.pactWith(bestVictim.id) && !bestVictim.warEnemies().contains(voteOpponent))
+                        warAllowed = true;
+                    if(bestVictim == voteOpponent)
                         warAllowed = true;
                     //our tech is worse (if we are stronger in other aspects we will catch up anyways)
                     if(empire.tech().avgTechLevel() < v.empire().tech().avgTechLevel())

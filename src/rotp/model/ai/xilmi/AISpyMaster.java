@@ -110,11 +110,18 @@ public class AISpyMaster implements Base, SpyMaster {
             maxSpiesNeeded = 1;
         else if (emb.alliance()) 
             maxSpiesNeeded = 1;
-
-        if (spies.numActiveSpies() >= maxSpiesNeeded)
+        
+        if (spies.numActiveSpies() >= spies.maxSpies())
             spies.allocation(0);
         else
-            spies.allocation(maxSpiesNeeded * 2);
+        {
+            maxSpiesNeeded *= 2;
+            //ail: avoid inefficient overspening by adjusting to spy-costs
+            float bcPerTick = empire.totalPlanetaryProduction() * empire.spySpendingModifier() / 200.0f;
+            float maxTicksNeeded = spies.maxSpies() * empire.baseSpyCost() / bcPerTick;
+            maxSpiesNeeded = min(maxSpiesNeeded, (int)Math.ceil(maxTicksNeeded));
+            spies.allocation(maxSpiesNeeded);
+        }
     }
     @Override
     public void setSpyingMission(EmpireView v) {
@@ -128,18 +135,21 @@ public class AISpyMaster implements Base, SpyMaster {
         // extinct or no contact = hide
         if (v.empire().extinct() || !emb.contact()) {
             spies.beginHide();
+            spies.maxSpies(0);
             return;
         }
 
         // they are our allies
         if (emb.alliance() || emb.unity()) {
             spies.beginHide();
+            spies.maxSpies(1);
             return;
         }
 
         // we've been warned and they are not our enemy (i.e. no war preparations)
         if (!emb.isEnemy() && spies.threatened()) {
             spies.beginHide();
+            spies.maxSpies(1);
             return;
         }
  
@@ -148,15 +158,28 @@ public class AISpyMaster implements Base, SpyMaster {
         float relations = emb.relations();
         
         // we are in a pact or at peace
+        // ail: according to official strategy-guide two spies is supposedly the ideal number for tech-stealing etc, so always setting it to two except for hiding
         if (emb.pact() || emb.atPeace()) {
             if (leader.isTechnologist() && canEspionage)
+            {
                 spies.beginEspionage();
+                spies.maxSpies(2);
+            }
             else if (leader.isPacifist() || leader.isHonorable())
+            {
                 spies.beginHide();
+                spies.maxSpies(1);
+            }
             else if ((relations > 30) && canEspionage)
+            {
                 spies.beginEspionage();
+                spies.maxSpies(2);
+            }
             else
+            {
                 spies.beginHide();
+                spies.maxSpies(1);
+            }
             return;
         }
 
@@ -167,41 +190,66 @@ public class AISpyMaster implements Base, SpyMaster {
         if (emb.noTreaty()) {
             if (leader.isAggressive() || leader.isRuthless() || leader.isErratic()) {
                 if (canEspionage)
+                {
                     spies.beginEspionage();
+                    spies.maxSpies(2);
+                }
                 else if (canSabotage)
+                {
                     spies.beginSabotage();
+                    spies.maxSpies(2);
+                }
                 else
+                {
                     spies.beginHide();
+                    spies.maxSpies(1);
+                }
             }
             else if (leader.isXenophobic() && canEspionage)
+            {
                 spies.beginEspionage();
-            else if (relations < -20) 
+                spies.maxSpies(2);
+            }
+            else if (relations < -20)
+            {
                 spies.beginHide();
+                spies.maxSpies(1);
+            }
             else if (leader.isTechnologist() && canEspionage)
+            {
                 spies.beginEspionage();
+                spies.maxSpies(2);
+            }
             else if (leader.isPacifist() || leader.isHonorable())
+            {
                 spies.beginHide();
+                spies.maxSpies(1);
+            }
             else
+            {
                 spies.beginHide();
+                spies.maxSpies(1);
+            }
             return;
         }
         
         // if at war, defer to war strategy: 1) steal war techs, 2) sabotage, 3) steal techs
         if (emb.anyWar()) {
-            List<Tech> warTechs = new ArrayList<>();
-            for (String tId: v.spies().possibleTechs()) {
-                Tech t = tech(tId);
-                if ((t.warModeFactor() > 1) && !t.isObsolete(v.owner()))
-                    warTechs.add(t);
+            if (canEspionage)
+            {
+                spies.beginEspionage();
+                spies.maxSpies(2);
             }
-            if (!warTechs.isEmpty())
-                spies.beginEspionage();
             else if (canSabotage)
+            {
                 spies.beginSabotage();
-            else if (!v.spies().possibleTechs().isEmpty())
-                spies.beginEspionage();
+                spies.maxSpies(2);
+            }
             else
+            {
                 spies.beginHide();
+                spies.maxSpies(1);
+            }
             return;
         }
         

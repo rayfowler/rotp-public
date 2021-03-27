@@ -310,13 +310,21 @@ public class AIGovernor implements Base, Governor {
         // prod spending gets up to 100% of planet's remaining net prod
         if(col.industry().factories() < col.maxUseableFactories())
         {
-            float prodCost = min(netProd, col.industry().maxSpendingNeeded());
-            col.pct(INDUSTRY, prodCost/totalProd);
-            prodCost = col.pct(INDUSTRY) * totalProd;
-            netProd -= prodCost;
+            float workerROI = empire.tech().populationCost() / empire.workerProductivity();
+            float netFactoryProduction = 1;
+            if(!empire.ignoresPlanetEnvironment())
+                netFactoryProduction -= empire.tech().factoryWasteMod() / empire.tech().wasteElimination();
+            float factoryROI = empire.tech().baseFactoryCost() / netFactoryProduction;
+            if(workerROI > factoryROI || col.population() == col.maxSize())
+            {
+                float prodCost = min(netProd, col.industry().maxSpendingNeeded());
+                col.pct(INDUSTRY, prodCost/totalProd);
+                prodCost = col.pct(INDUSTRY) * totalProd;
+                netProd -= prodCost;
 
-            if (col.totalAmountAllocated() >= maxAllocation)
-                return;
+                if (col.totalAmountAllocated() >= maxAllocation)
+                    return;
+            }
         }
 
         // eco spending gets up to 100% of planet's remaining net prod

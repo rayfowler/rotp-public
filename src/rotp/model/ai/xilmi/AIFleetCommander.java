@@ -158,7 +158,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             }
             if(empire.sv.isColonized(id))
             {
-                score = 10; //max(10, current.colony().production());
+                score = 10;
                 baseBc = empire.sv.bases(current.id)*current.empire().tech().newMissileBaseCost();
                 if(onlyColonizerTargets)
                 {
@@ -168,21 +168,24 @@ public class AIFleetCommander implements Base, FleetCommander {
             //if we don't have scouts anymore, we still need a way to uncover new systems
             else if(!empire.sv.isScouted(id) && bc == 0 )
             {
-                score = 1.0f;
+                score = 5.0f;
             }
             else if(fleet.canColonizeSystem(current))
             {
-                score = 2.0f;
-                score *= current.planet().maxSize() / 100.0f;
-                score *= (1+empire.sv.artifactLevel(id));
-                if (empire.sv.isUltraRich(id))
-                    score *= 3;
-                else if (empire.sv.isRich(id))
-                    score *= 2;
-                else if (empire.sv.isPoor(id))
-                    score /= 2;
-                else if (empire.sv.isUltraPoor(id))
-                    score /= 3;
+                score = 10.0f;
+                if(onlyColonizerTargets)
+                {
+                    score *= current.planet().maxSize() / 100.0f;
+                    score *= (1+empire.sv.artifactLevel(id));
+                    if (empire.sv.isUltraRich(id))
+                        score *= 3;
+                    else if (empire.sv.isRich(id))
+                        score *= 2;
+                    else if (empire.sv.isPoor(id))
+                        score /= 2;
+                    else if (empire.sv.isUltraPoor(id))
+                        score /= 3;
+                }
             }
             for(ShipFleet orbiting : current.orbitingFleets())
             {
@@ -649,12 +652,16 @@ public class AIFleetCommander implements Base, FleetCommander {
                                 if(fleet.canColonizeSystem(target) && target.monster() == null)
                                 {
                                     allowColonizers = true;
-                                    sendAmount = 0.01f;
+                                    allowBombers = false;
+                                    if(enemyBC == 0)
+                                        sendAmount = 0.01f;
                                 }
                             }
                             if(!empire.sv.isScouted(target.id))
                             {
                                 sendAmount = 0.01f;
+                                if(enemyBC == 0)
+                                    sendAmount = 0.01f;
                             }
                             if(target.monster() != null)
                             {
@@ -662,7 +669,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                             }
                             if(bcValue(fleet, false, allowFighters, allowBombers, allowColonizers) > 0)
                             {
-                                sendAmount = max(sendAmount, min(1.0f, enemyBC*(targetTech+10.0f) / (bcValue(fleet, false, allowFighters, allowBombers, allowColonizers)*(civTech+10.0f)* attackThreshold)));
+                                sendAmount = max(sendAmount, min(1.0f, enemyBC*(targetTech+10.0f)*4.0f / (bcValue(fleet, false, allowFighters, allowBombers, allowColonizers)*(civTech+10.0f))));
                             }
                             else
                             {
