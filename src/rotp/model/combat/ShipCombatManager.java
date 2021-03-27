@@ -384,7 +384,24 @@ public class ShipCombatManager implements Base {
         currentStack.beginTurn();
     }
     public void endOfCombat(boolean logIncidents) {
-        // send retreating ships on their way
+        // auto-retreat any attacking ships that are stuck in stasis.
+        // if they have nowhere to retreat, destroy them (don't show retreat animation in this case)
+        List<CombatStack> activeStacks = new ArrayList<>(results.activeStacks());
+        for (CombatStack st: activeStacks) {
+            if (st.inStasis && st.isShip() && (st.empire == results.attacker())) {
+                CombatStackShip sh = (CombatStackShip) st;
+                StarSystem dest = sh.empire.retreatSystem(system());
+                boolean prevShow = showAnimations;
+                showAnimations = false;
+                if ((dest == null) || (dest == system))
+                    destroyStack(sh);
+                else
+                    retreatStack(sh, dest);
+                showAnimations = prevShow;
+            }          
+        }
+        
+        // ensure rebels are killed in proportionn to overall population
         results.killRebels();
 
         results.refreshSystemScans();
@@ -547,7 +564,6 @@ public class ShipCombatManager implements Base {
                 CombatStackShip ship = (CombatStackShip) st;
                 if (ship.retreat()) {
                     retreatingStacks.add(ship);
-                    ship.drawRetreat();
                 }
             }
         }
@@ -704,11 +720,20 @@ public class ShipCombatManager implements Base {
         List<CombatStack> combatableStacks = new ArrayList<>();
         List<CombatStack> activeStacks = new ArrayList<>(results.activeStacks());
         for (CombatStack st: activeStacks) {
+            // only armed colonies count as combatable stacks
             if (st.isColony()) {
                 if (st.isArmed())
                     combatableStacks.add(st);
             }
-            else
+            // monsters always count
+            else if (st.isMonster())
+                combatableStacks.add(st);
+            // attacking ships not in stasis count
+            else if (st.empire == results.attacker()) { 
+                if (!st.inStasis)
+                    combatableStacks.add(st);
+            }
+            else // add defending ships count
                 combatableStacks.add(st);
         }
         for (CombatStack stack1 : combatableStacks) {
@@ -834,14 +859,39 @@ public class ShipCombatManager implements Base {
         if (currentStack == st)
             turnDone(st);
         activeStacks().remove(st);
+        
+        if (st.isMissile()) {
+            removeMissileFromCombat((CombatStackMissile)st);
+            return;
+        }
+        
+        removeMissilesLaunchedFromStack(st);
+        removeMissilesTargetingStack(st);
+
         if (!st.isColony())
             allStacks.remove(st);
-        if (st.isMissile()) {
-            CombatStackMissile miss = (CombatStackMissile) st;
-            List missList = miss.target.missiles();
-            synchronized(missList) {
-                missList.remove(miss);
+        
+    }
+    public void removeMissilesLaunchedFromStack(CombatStack st) {
+        List<CombatStack> stacks = new ArrayList<>(allStacks());
+        for (CombatStack stack: stacks) {
+            List<CombatStackMissile> missiles = new ArrayList<>(stack.missiles());
+            for (CombatStackMissile miss: missiles) {
+                if (miss.owner == st) 
+                    removeMissileFromCombat(miss);
             }
+        }
+    }
+    public void removeMissilesTargetingStack(CombatStack st) {
+        List<CombatStackMissile> missiles = new ArrayList<>(st.missiles());
+        for (CombatStackMissile miss: missiles) {
+            removeMissileFromCombat(miss);
+        }
+    }
+    private void removeMissileFromCombat(CombatStackMissile miss) {
+        List missList = miss.target.missiles();
+        synchronized(missList) {
+            missList.remove(miss);
         }
     }
     public void performMoveStackToPoint(CombatStack st, int x, int y) {

@@ -239,6 +239,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         renderedPlanetImage = null;
         mgr = m;
         mgr.ui(this);
+        mgr.showAnimations = true;
         mgr.setInitialPause();
         exited = false;
         mode = Display.INTRO;
@@ -1361,6 +1362,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         g.fillRect(x,y,w,h);
         g.setColor(Color.lightGray);
         String sysName =  player().sv.name(mgr.system().id);
+        mgr.showAnimations = false;
         
         Map<ShipDesign,Integer> destroyed = mgr.results().shipsDestroyed();
         Map<ShipDesign,Integer> retreated = mgr.results().shipsRetreated();

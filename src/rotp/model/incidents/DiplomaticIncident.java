@@ -22,9 +22,9 @@ import rotp.util.Base;
 
 public abstract class DiplomaticIncident implements Base, Serializable {
     private static final long serialVersionUID = 1L;
-    protected float severity;
-    protected int duration;
-    protected int dateOccurred;
+    public float severity;
+    public int duration;
+    public int dateOccurred;
 
     public int timerKey()                { return -1; } // default -1 for timerKey index means no timer triggered
     public abstract String key();

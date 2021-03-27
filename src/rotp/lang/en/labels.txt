@@ -1260,6 +1260,7 @@ SETTINGS_COLONIZING_DESC          | Restrict the colonization of systems to only
 SETTINGS_COUNCIL_DESC             | Disable the council victory condition or allow enemy empires to rebel against a player victory.
 SETTINGS_RANDOMIZE_AI_DESC        | Randomize the AI player personalities, racial abilities, or both.
 SETTINGS_AUTOPLAY_DESC            | Completely automate the game by having an AI play for the player. This is useful for a first-hand view of how the AI works.
+SETTINGS_AUTOPLAY_WARNING         | Warning! Autoplay is currently enabled which will prevent user gameplay. Use "Advanced Options" to disable.
 SETTINGS_FUEL_RANGE_DESC          | Increase the range of fuel range technologies and reserve fuel tanks.
 SETTINGS_AI_HOSTILITY_DESC        | Increase or decrease the general level of hostility between alien races.
 
@@ -1469,6 +1470,7 @@ SHIP_DESIGN_HELP_1H               | Missile Defense - defense level vs. missile 
 SHIP_DESIGN_HELP_1I               | Beam Defense - defense level vs. beam weapons in combat.
 SHIP_DESIGN_HELP_1J               | Attack Level - attack level for weapons in combat. 
 SHIP_DESIGN_HELP_1K               | Combat Speed - distance the ship can travel in combat, per turn.
+SHIP_DESIGN_HELP_1L               | Tint - alters the color of the ship.
 SHIP_DESIGN_HELP_2A               | Engine Type - the type of engine used to power this ship design.
 SHIP_DESIGN_HELP_2B               | Speed - travel speed provided by the engine.
 SHIP_DESIGN_HELP_2C               | Cost - the cost of each engine needed for power.

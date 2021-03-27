@@ -352,6 +352,14 @@ public class DesignUI extends BasePanel {
         int y12 = scaled(300);
         HelpUI.HelpSpec sp12 = helpUI.addBrownHelpText(x12,y12,w12, 2, text("SHIP_DESIGN_HELP_1K"));
         sp12.setLine(scaled(690), y12, scaled(665), scaled(250));        
+
+        if (!configPanel.shipDesign().active()) {
+            int x13 = scaled(430);
+            int w13 = scaled(280);
+            int y13 = scaled(360);
+            HelpUI.HelpSpec sp13 = helpUI.addBrownHelpText(x13,y13,w13, 2, text("SHIP_DESIGN_HELP_1L"));
+            sp13.setLine(scaled(560), y13, scaled(540), scaled(275));   
+        }
     }
     private void loadHelpFrame2() {
         HelpUI helpUI = RotPUI.helpUI();
