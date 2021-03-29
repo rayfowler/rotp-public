@@ -1336,7 +1336,11 @@ public class AIDiplomat implements Base, Diplomat {
         
         // must break alliance before declaring war
         if (wantToDeclareWarOfOpportunity(view)) {
-            beginOpportunityWar(view);
+            //ail: even if the real reason is because of geopolitics, we can still blame it on an incident, if there ever was one, so the player thinks it is their own fault
+            if(worstWarnableIncident(view.embassy().allIncidents()) != null)
+                beginIncidentWar(view, worstWarnableIncident(view.embassy().allIncidents()));
+            else
+                beginOpportunityWar(view);
             return true;          
         }
         return false;
@@ -1894,8 +1898,16 @@ public class AIDiplomat implements Base, Diplomat {
         return empire.leader().contemptAcceptPeaceMod(e);
     } 
     @Override
-    public int leaderGenocideDurationMod() { 
-        return empire.leader().genocideDurationMod();
+    public int leaderGenocideDurationMod() {
+        switch(empire.leader().personality) {
+            case PACIFIST:   return 150;
+            case HONORABLE:  return 50;
+            case XENOPHOBIC: return 100;
+            case RUTHLESS:   return 10;
+            case AGGRESSIVE: return 0;
+            case ERRATIC:    return 25;
+            default:         return 25;
+        }
     } 
     @Override
     public float leaderBioweaponMod()         { 
@@ -1903,7 +1915,19 @@ public class AIDiplomat implements Base, Diplomat {
     }
     @Override
     public int leaderOathBreakerDuration() { 
-        return empire.leader().oathBreakerDuration();
+        int objMod = 1;
+        switch(empire.leader().objective) {
+            case DIPLOMAT:  objMod = 2;
+        }
+        switch(empire.leader().personality) {
+            case PACIFIST:   return objMod*50;
+            case HONORABLE:  return objMod*100;
+            case XENOPHOBIC: return objMod*50;
+            case RUTHLESS:   return 0;
+            case AGGRESSIVE: return objMod*50;
+            case ERRATIC:    return objMod*25;
+            default:         return objMod*1;
+        }
     } 
     @Override
     public float leaderDiplomacyAnnoyanceMod(EmpireView v) { 

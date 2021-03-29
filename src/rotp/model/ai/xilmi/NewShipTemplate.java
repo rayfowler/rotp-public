@@ -148,6 +148,8 @@ public class NewShipTemplate implements Base {
 
     private ShipDesign newDesign(ShipDesigner ai, DesignType role, int size, List<EnemyShipTarget> shipTargets, List<EnemyColonyTarget> colonyTargets) {
         ShipDesign d = ai.lab().newBlankDesign(size);
+        // name it first so we can use name for reference in debugging
+        ai.lab().nameDesign(d);
         // engines are always the priority in MOO1 mechanics
         setFastestEngine(ai, d);
         // battle computers are always the priority in MOO1 mechanics
@@ -156,7 +158,6 @@ public class NewShipTemplate implements Base {
         float totalSpace = d.availableSpace();
         Race race = ai.empire().dataRace();
         float enemyMissilePercentage = 0.0f;
-        float enemyShieldPenetration = 0.0f;
         //ail: looking at the stats of our enemies
         Empire bestVictim = ai.empire().generalAI().bestVictim();
         if(bestVictim != null)
@@ -240,11 +241,13 @@ public class NewShipTemplate implements Base {
         // ail: removed leftovers. The impact isn't minor at all. Even at a weight of 0 they usually crammed in the max-level ECM, leaving much less space for weapons
         // branches made in the ugly way for clarity
         // specials will be skipped for smaller hulls in the early game, bringing a bit more allowance to the second fitting
-        ArrayList<ShipSpecial> raceSpecials = buildRacialSpecialsList(ai);
-
+        ArrayList<ShipSpecial> raceSpecials = buildRacialSpecialsList(ai, (enemyMissilePercentage > 0.5f));
+        
         switch (role) {
             case BOMBER:
                 setFittingSpecial(ai, d, specialsSpace, raceSpecials);
+                //leftovers += setFittingSpecial(ai, d, specialsSpace + leftovers, raceSpecials);
+                //setFittingSpecial(ai, d, specialsSpace + leftovers, raceSpecials);
                 setFittingShields(ai, d, shieldSpace);
                 setFittingArmor(ai, d, armorSpace, reinforcedArmorAllowed);
                 setFittingManeuver(ai, d, maneuverSpace, sameSpeedAllowed);
@@ -252,6 +255,9 @@ public class NewShipTemplate implements Base {
                 break;
             case FIGHTER:
                 setFittingSpecial(ai, d, specialsSpace, raceSpecials);
+                //leftovers += setFittingSpecial(ai, d, specialsSpace + leftovers, raceSpecials);
+                //if(!saveSlotforHEF)
+                  //  setFittingSpecial(ai, d, specialsSpace + leftovers, raceSpecials);
                 setFittingArmor(ai, d, armorSpace, reinforcedArmorAllowed);
                 setFittingECM(ai, d, ecmSpace);
                 setFittingShields(ai, d, shieldSpace);
@@ -270,7 +276,7 @@ public class NewShipTemplate implements Base {
         // what's left will be used on non-bombs for bombers, second best weapon for destroyers
         // repeat calls of setOptimalShipCombatWeapon() will result in a weapon from another category (beam, missile, streaming) than already installed
         // fighters will have a single best weapon over all four slots
-
+        
         switch (role) {
             case BOMBER:
                 setOptimalBombardmentWeapon(ai, d, colonyTargets, firstWeaponSpaceRatio * d.availableSpace(), allowBioWeapons); // uses slot 0
@@ -289,9 +295,12 @@ public class NewShipTemplate implements Base {
                 setPerTurnShipDamage(d, ai.empire());
                 break;
         }
-        
-        ai.lab().nameDesign(d);
         ai.lab().iconifyDesign(d);
+        for (int i = 0; i <= 2; ++i) {
+            if (d.special(i) != null) {
+                //System.out.print("\n"+ai.empire().name()+" "+d.name()+" special: "+d.special(i).name());
+            }
+        }
         return d;
     }
 ////////////////////////////////////////////////////
@@ -381,7 +390,7 @@ public class NewShipTemplate implements Base {
 
 // ********** SPECIALS SELECTION AND FITTING FUNCTIONS ********** //
 
-    private ArrayList<ShipSpecial> buildRacialSpecialsList(ShipDesigner ai) {
+    private ArrayList<ShipSpecial> buildRacialSpecialsList(ShipDesigner ai, boolean antiMissle) {
         Race race = ai.empire().dataRace();
         ArrayList<ShipSpecial> specials = new ArrayList<>();
         List<ShipSpecial> allSpecials = ai.lab().specials();
@@ -429,7 +438,7 @@ public class NewShipTemplate implements Base {
         // Mrrshan and Psilon
         boolean preferInertial = race.shipDesignMods[PREF_INERTIAL] > 0;
         // Sakkra, Bulrathi and Psilon
-        boolean preferMissileShield = race.shipDesignMods[PREF_MISS_SHIELD] > 0;
+        boolean preferMissileShield = antiMissle;
         // Psilon
         boolean preferRepulsor = race.shipDesignMods[PREF_REPULSOR] > 0;
         // Psilon
@@ -492,6 +501,7 @@ public class NewShipTemplate implements Base {
             d.special(nextSlot,specials.get(i));
             if ((initialSpace - d.availableSpace()) <= spaceAllowed)
                 foundIt = true;           
+            //System.out.print("\n"+ai.empire().name()+" "+d.name()+" "+specials.get(i).name()+" with "+specials.get(i).size(d)+" ("+(initialSpace - d.availableSpace())+") attempted to fit in "+spaceAllowed+" found it: "+foundIt);
         }
         return (spaceAllowed - (initialSpace - d.availableSpace()));
     }
@@ -500,8 +510,8 @@ public class NewShipTemplate implements Base {
         // if not using a beam weapon, then skip
         if (!d.weapon(0).isBeamWeapon())
             return;
-        // if teleporters or max combat speed, skip
-        if (d.allowsTeleporting() || (d.combatSpeed() >= 9))
+        // only cloaking makes sure we can outrange 
+        if (d.allowsCloaking())
             return;
         // if we don't have room for more specials, we can skip
         int slot1 = d.nextEmptySpecialSlot();

@@ -39,9 +39,9 @@ public final class ShipSpecialShipNullifier extends ShipSpecial {
     @Override
     public void fireUpon(CombatStack source, CombatStack target, int count) {
         if (random() < tech().hitChance)
-            makeUnsuccessfulAttack(source, target);
-        else
             makeSuccessfulAttack(source, target);
+        else
+            makeUnsuccessfulAttack(source, target);            
     }
     private void makeSuccessfulAttack(CombatStack source, CombatStack target) {
         int compRed = roll(tech().minComputerRed, tech().maxComputerRed);

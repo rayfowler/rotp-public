@@ -442,14 +442,20 @@ public class AIShipCaptain implements Base, ShipCaptain {
             {
                 valueFactor = 0.1f;
             }
-            allyValue += st1.designCost() * st1.num * valueFactor;
             for (CombatStack st2: foes) {
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
+                //ail: 0 damage possible when they have repulsor and we can't outrange
+                if(st1.maxFiringRange(st1) <= st1.repulsorRange() && !st1.canCloak && !st1.canTeleport())
+                {
+                    killPct = 0;
+                    valueFactor = 0;
+                }
                 float killValue = killPct*st2.num*st2.designCost();
 //                log(st1.name()+"="+killPct+"    "+st2.name());
                 if (killValue > maxKillValue)
                     maxKillValue = killValue;
             }
+            allyValue += st1.designCost() * st1.num * valueFactor;
             allyKills += maxKillValue;
         }
        for (CombatStack st1 : foes) {
