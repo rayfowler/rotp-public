@@ -16,6 +16,7 @@
 package rotp.ui.planets;
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -82,6 +83,8 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
     private static final int INDUSTRY_MODE = 2;
     private static final int MILITARY_MODE = 3;
     private static int selectedMode = ECOLOGY_MODE;
+    private static final String SINGLE_PLANET_PANEL = "SinglePlanet";
+    private static final String MULTI_PLANET_PANEL = "MultiPlanet";
 
     private static final Color selectedC = new Color(178,124,87);
     private static final Color unselectedC = new Color(112,85,68);
@@ -109,9 +112,13 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
 
     private final TransferReserveUI transferReservePane;
     private final PlanetDisplayPanel planetDisplayPane;
+    private final MultiPlanetDisplayPanel multiPlanetDisplayPane;
     private final PlanetViewSelectionPanel viewSelectionPane;
     private EmpireColonySpendingPane spendingPane;
     private EmpireColonyFoundedPane colonyFoundedPane;
+
+    BasePanel rightPlanetPanel;
+    private final CardLayout planetCardLayout = new CardLayout();
 
     private final PlanetsUI instance;
     private final PlanetListingUI planetListing;
@@ -128,6 +135,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         viewSelectionPane = new PlanetViewSelectionPanel(this);
         transferReservePane = new TransferReserveUI();
         planetDisplayPane = new PlanetDisplayPanel(this);
+        multiPlanetDisplayPane = new MultiPlanetDisplayPanel(this);
         planetListing = new PlanetListingUI(this);
 
         initModel();
@@ -143,10 +151,16 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         centerPanel.add(planetListing, BorderLayout.CENTER);
         centerPanel.add(new EmpireRevenueUI(), BorderLayout.SOUTH);
 
+        rightPlanetPanel = new BasePanel();
+        rightPlanetPanel.setOpaque(false);
+        rightPlanetPanel.setLayout(planetCardLayout);
+        rightPlanetPanel.add(planetDisplayPane, SINGLE_PLANET_PANEL);
+        rightPlanetPanel.add(multiPlanetDisplayPane, MULTI_PLANET_PANEL);
+
         BasePanel rightPanel = new BasePanel();
         rightPanel.setOpaque(false);
         rightPanel.setLayout(new BorderLayout(0,s22));
-        rightPanel.add(planetDisplayPane, BorderLayout.NORTH);
+        rightPanel.add(rightPlanetPanel, BorderLayout.NORTH);
         rightPanel.add(new ExitPlanetsButton(getWidth(), s60, s10, s2), BorderLayout.SOUTH);
 
         setBackground(Color.black);
@@ -160,6 +174,8 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
 
         initDataViews();
     }
+    private void showSinglePlanetPanel() { planetCardLayout.show(rightPlanetPanel, SINGLE_PLANET_PANEL); }
+    private void showMultiPlanetPanel() { planetCardLayout.show(rightPlanetPanel, MULTI_PLANET_PANEL); }
     private void initTextFields() {
         notesField = new BaseTextField(this);
         notesField.setLimit(50);
@@ -589,6 +605,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         
         if (prevAnchorIndex == newAnchorIndex) {
             selectedSystems.add(sys);
+            showSinglePlanetPanel();
             return;
         }
         
@@ -599,6 +616,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             StarSystem sys1 = allSystems.get(i);
             selectedSystems.add(sys1);
         }
+        showMultiPlanetPanel();
         
         setAnchorSystem(sys, updateFieldValues);
     }
@@ -618,6 +636,11 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         if (toggled) 
             setAnchorSystem(sys, updateFieldValues);
         
+        if (systems.size() == 1)
+            showSinglePlanetPanel();
+        else
+            showMultiPlanetPanel();
+        
         return toggled;
     }
     private synchronized void selectedSystem(StarSystem sys, boolean updateFieldValues) {
@@ -629,6 +652,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         systems.add(sys);
         
         setAnchorSystem(sys, updateFieldValues);
+        showSinglePlanetPanel();
     }
     private void setFieldValues(StarSystem sys) {
         if (sys != null) {
@@ -965,6 +989,71 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             return empireDetailPane;
         }
     }
+    class MultiPlanetDisplayPanel extends SystemPanel {
+        private static final long serialVersionUID = 1L;
+        EmpireInfoGraphicPane graphicPane;
+        PlanetsUI parent;
+        public MultiPlanetDisplayPanel(PlanetsUI p) {
+            parent = p;
+            init();
+        }
+        private void init() {
+            setOpaque(true);
+            setBackground(selectedC);
+            setBorder(newEmptyBorder(6,6,6,6));
+            setPreferredSize(new Dimension(scaled(250), scaled(670)));
+
+            graphicPane = new EmpireInfoGraphicPane(this);
+            graphicPane.setPreferredSize(new Dimension(getWidth(),scaled(140)));
+
+            BorderLayout layout = new BorderLayout();
+            layout.setVgap(s6);
+            setLayout(layout);
+            add(topPane(), BorderLayout.NORTH);
+            add(detailPane(), BorderLayout.CENTER);
+        }
+        @Override
+        public String subPanelTextureName()    { return TEXTURE_BROWN; }
+        @Override
+        public List<StarSystem> systemsToDisplay() { return instance.selectedSystems(); }
+        @Override
+        public StarSystem systemViewToDisplay() { return lastSelectedSystem(); }
+        @Override
+        public void animate() { graphicPane.animate(); }
+        @Override
+        protected BasePanel topPane() {
+            return graphicPane;
+        }
+        @Override
+        protected BasePanel detailPane() {
+            BasePanel empireDetailTopPane = new BasePanel();
+            empireDetailTopPane.setOpaque(false);
+            empireDetailTopPane.setBorder(new ShadowBorder(palette.bdrHiOut, palette.bdrLoIn));
+            empireDetailTopPane.setLayout(new BorderLayout(0,s1));
+            empireDetailTopPane.setPreferredSize(new Dimension(getWidth(),scaled(120)));
+            colonyFoundedPane = new EmpireColonyFoundedPane(this, null, unselectedC);
+            empireDetailTopPane.add(colonyFoundedPane, BorderLayout.NORTH);
+            empireDetailTopPane.add(new EmpireColonyInfoPane(this, unselectedC, palette.bdrHiIn, palette.yellow, palette.bdrLoIn), BorderLayout.CENTER);
+
+            BasePanel empireDetailBottomPane = new BasePanel();
+            empireDetailBottomPane.setOpaque(false);
+            empireDetailBottomPane.setBorder(new ShadowBorder(palette.bdrHiOut, palette.bdrLoIn));
+            empireDetailBottomPane.setLayout(new BorderLayout(0,s3));
+            empireDetailBottomPane.setPreferredSize(new Dimension(getWidth(),scaled(215)));
+            empireDetailBottomPane.add(new ColonyShipPane(this), BorderLayout.NORTH);
+            empireDetailBottomPane.add(new ColonyTransferFunds(this), BorderLayout.CENTER);
+            empireDetailBottomPane.setBorder(newEmptyBorder(0,0,0,0));
+
+            spendingPane = new EmpireColonySpendingPane(parent, unselectedC, palette.white, palette.bdrHiOut, palette.bdrLoIn);
+            BasePanel empireDetailPane = new BasePanel();
+            empireDetailPane.setOpaque(false);
+            empireDetailPane.setLayout(new BorderLayout(0,s3));
+            empireDetailPane.add(empireDetailTopPane, BorderLayout.NORTH);
+            empireDetailPane.add(spendingPane, BorderLayout.CENTER);
+            empireDetailPane.add(empireDetailBottomPane, BorderLayout.SOUTH);
+            return empireDetailPane;
+        }
+    }
     class EmpireInfoGraphicPane extends BasePanel implements ActionListener {
         private static final long serialVersionUID = 1L;
         SystemPanel parent;
@@ -982,21 +1071,34 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
 
-            StarSystem sys = parent.systemViewToDisplay();
-            if (sys == null)
+            StarSystem sys = null;
+            List<StarSystem> systems = parent.systemsToDisplay();
+            if (systems == null) {
+                systems = new ArrayList<>();
+                sys = parent.systemViewToDisplay();
+                if (sys != null)
+                    systems.add(sys);
+            }
+            
+            if (systems.isEmpty())
                 return;
+            
+            if (systems.size() == 1)
+                sys = systems.get(0);
 
+            StarSystem anchorSys = lastSelectedSystem();
+            
             Empire pl = player();
             int w = getWidth();
             int h = getHeight();
 
             Graphics2D g2 = (Graphics2D) g;
             g2.drawImage(pl.sv.starBackground(this), 0, 0, null);
-            drawStar(g2, lastSelectedSystem().starType(), s80, getWidth()/3, s70);
+            drawStar(g2, anchorSys.starType(), s80, getWidth()/3, s70);
             starCircle.setFrame((getWidth()/3)-s20, s10, s40, s40);
 
             g.setFont(narrowFont(36));
-            String str = player().sv.name(sys.id);
+            String str = sys == null ? text("PLANETS_MULTI_SYSTEMS", systems.size()) : player().sv.name(sys.id);
             scaledFont(g, str, w-s30, 36, 24);
             int y0 = s42;
             int x0 = s25;
@@ -1005,9 +1107,11 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             int x1 = s20;
             int y1 = s70;
             int r = s40;
-            lastSelectedSystem().planet().draw(g, w, h, x1, y1, r+r, 45);
+            anchorSys.planet().draw(g, w, h, x1, y1, r+r, 45);
             planetCircle.setFrame(x1, y1, r+r, r+r);
-            parent.drawPlanetInfo(g2, lastSelectedSystem(), false, false, s40, getWidth(), getHeight()-s12);
+            
+            if (sys != null)
+                parent.drawPlanetInfo(g2, sys, false, false, s40, getWidth(), getHeight()-s12);
         }
         @Override
         public void animate() {

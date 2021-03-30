@@ -25,6 +25,8 @@ import java.awt.Shape;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.SwingUtilities;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
@@ -61,6 +63,7 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
         Graphics2D g = (Graphics2D) g0;
         super.paintComponent(g);
         
+        List<StarSystem> systems = parent.systemsToDisplay();
         nameBox.setBounds(0,0,0,0);
         int w = getWidth();
         int h = getHeight();
@@ -68,7 +71,7 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
         if (sys == null)
             return;
         int id = sys.id;
-        String name = player().sv.descriptiveName(id);
+        String name = systems != null ? text("PLANETS_AGGREGATE_VALUES") : player().sv.descriptiveName(id);
         int sw = g.getFontMetrics().stringWidth(name);
         Color c0 = nameBox == hoverBox ? Color.yellow : SystemPanel.whiteLabelText;
         g.setFont(narrowFont(24));
@@ -86,8 +89,16 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
         flagBox.setBounds(w-sz+s25,h-sz+s15,sz-s20,sz-s10);
     }
     public void toggleFlagColor(boolean rightClick) {
-        StarSystem sys = parent.systemViewToDisplay();
-        player().sv.view(sys.id).toggleFlagColor(rightClick);
+        List<StarSystem> systems = parent.systemsToDisplay();
+        if (systems == null) {
+            systems = new ArrayList<>();
+            StarSystem sys = parent.systemViewToDisplay();
+            if (sys != null)
+                systems.add(sys);
+        }
+        
+        for (StarSystem sys1: systems) 
+            player().sv.view(sys1.id).toggleFlagColor(rightClick);
         if (topParent != null)
             topParent.repaint();
         else

@@ -28,6 +28,8 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JPanel;
 import rotp.model.colony.Colony;
 import rotp.model.galaxy.StarSystem;
@@ -106,18 +108,33 @@ public class EmpireColonyInfoPane extends BasePanel {
         @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
-            StarSystem sys = parentUI.systemViewToDisplay();
-            if (sys == null)
-                return;
-            Colony c = sys.colony();
-            if (c == null)
+            
+            List<StarSystem> systems = parentUI.systemsToDisplay();
+            if (systems == null) {
+                systems = new ArrayList<>();
+                StarSystem sys = parentUI.systemViewToDisplay();
+                if (sys != null)
+                    systems.add(sys);
+            }
+            
+            if (systems.isEmpty())
+                return;           
+            
+            List<Colony> colonies = new ArrayList<>();
+            for (StarSystem sys1: systems) {
+                Colony c = sys1.colony();
+                if (c != null)
+                    colonies.add(c);
+            }
+           
+            if (colonies.isEmpty())
                 return;
             super.paintComponent(g);
 
             String strTitle = titleString();
-            String strDataLabel = dataLabelString(c);
-            String strData1 = valueString(c);
-            String strData2 = value(c) == maxValue(c) ? "" : concat("/", maxValueString(c));
+            String strDataLabel = dataLabelString(colonies);
+            String strData1 = valueString(colonies);
+            String strData2 = value(colonies) == maxValue(colonies) ? "" : concat("/", maxValueString(colonies));
 
             int x0 = s5;
             int y0 = getHeight()-s6;
@@ -160,12 +177,12 @@ public class EmpireColonyInfoPane extends BasePanel {
             }
         }
         protected int rightMargin()   { return s5; }
-        protected String valueString(Colony c)  { return str(value(c)); }
-        protected String maxValueString(Colony c) { return str(maxValue(c)); }
-        protected String dataLabelString(Colony c)   { return null; }
+        protected String valueString(List<Colony> c)  { return str(value(c)); }
+        protected String maxValueString(List<Colony> c) { return str(maxValue(c)); }
+        protected String dataLabelString(List<Colony> c)   { return null; }
         abstract protected String titleString();
-        abstract int value(Colony c);
-        abstract int maxValue(Colony c);
+        abstract int value(List<Colony> c);
+        abstract int maxValue(List<Colony> c);
     }
     class EmpirePopPane extends EmpireDataPane {
         private static final long serialVersionUID = 1L;
@@ -174,9 +191,19 @@ public class EmpireColonyInfoPane extends BasePanel {
         @Override
         protected String titleString()      { return text("MAIN_COLONY_POPULATION"); }
         @Override
-        protected int value(Colony c)       { return (int) (c == null ? 0 : c.displayPopulation()); }
+        protected int value(List<Colony> colonies) { 
+            int val = 0;
+            for (Colony c: colonies)
+                val += c.displayPopulation(); 
+            return val;
+        }
         @Override
-        protected int maxValue(Colony c)    { return (int) (c == null ? 0 : c.maxSize()); }
+        protected int maxValue(List<Colony> colonies) { 
+            int val = 0;
+            for (Colony c: colonies)
+                val += c.maxSize(); 
+            return val;
+        }
     }
     class EmpireFactoriesPane extends EmpireDataPane {
         private static final long serialVersionUID = 1L;
@@ -185,9 +212,19 @@ public class EmpireColonyInfoPane extends BasePanel {
         @Override
         protected String titleString()   { return text("MAIN_COLONY_FACTORIES"); }
         @Override
-        protected int value(Colony c)    { return (int) (c == null ? 0 : c.industry().factories()); }
+        protected int value(List<Colony> colonies) { 
+            int val = 0;
+            for (Colony c: colonies)
+                val += (int) c.industry().factories(); 
+            return val;
+        }
         @Override
-        protected int maxValue(Colony c) { return (int) (c == null ? 0 : c.industry().maxFactories()); }
+        protected int maxValue(List<Colony> colonies) { 
+            int val = 0;
+            for (Colony c: colonies)
+                val += c.industry().maxFactories(); 
+            return val;
+        }
     }
     class EmpireShieldPane extends EmpireDataPane {
         private static final long serialVersionUID = 1L;
@@ -196,11 +233,27 @@ public class EmpireColonyInfoPane extends BasePanel {
         @Override
         protected String titleString()   { return text("MAIN_COLONY_SHIELD"); }
         @Override
-        protected int value(Colony c)    { return c == null ? 0 : c.defense().shieldLevel(); }
+        protected int value(List<Colony> colonies) { 
+            int val = 0;
+            for (Colony c: colonies)
+                val += (int) c.defense().shieldLevel(); 
+            return val;
+        }
         @Override
-        protected int maxValue(Colony c) { return (int) (c == null ? 0 : c.defense().maxShieldLevel()); }
+        protected int maxValue(List<Colony> colonies) { 
+            int val = 0;
+            for (Colony c: colonies)
+                val += c.defense().maxShieldLevel(); 
+            return val;
+        }
         @Override
-        protected String dataLabelString(Colony c)   { return (c != null) && c.starSystem().inNebula() ? text("MAIN_COLONY_NO_SHIELD") : null; }
+        protected String dataLabelString(List<Colony> colonies)   { 
+            for (Colony c: colonies) {
+                if (!c.starSystem().inNebula())
+                    return null;
+            }
+            return text("MAIN_COLONY_NO_SHIELD");
+        }
     }
     class EmpireBasesPane extends EmpireDataPane  implements MouseListener, MouseMotionListener, MouseWheelListener {
         private static final long serialVersionUID = 1L;
@@ -210,6 +263,7 @@ public class EmpireColonyInfoPane extends BasePanel {
         private final int upButtonY[] = new int[3];
         private final int downButtonX[] = new int[3];
         private final int downButtonY[] = new int[3];
+        private boolean allowAdjust = true;
         public EmpireBasesPane() {
             super();
             init();
@@ -250,21 +304,44 @@ public class EmpireColonyInfoPane extends BasePanel {
         @Override
         public String textureName()      { return parentUI.subPanelTextureName(); }
         @Override
-        protected int rightMargin()      { return s20; }
+        protected int rightMargin()      { return allowAdjust ? s20 : s5; }
         @Override
         protected String titleString()   { return text("MAIN_COLONY_BASES"); }
         @Override
-        protected int value(Colony c)    { return c == null ? 0 : (int)c.defense().bases(); }
+        protected int value(List<Colony> colonies) { 
+            int val = 0;
+            for (Colony c: colonies)
+                val += (int) c.defense().bases(); 
+            return val;
+        }
         @Override
-        protected int maxValue(Colony c) { return c == null ? 0 : c.defense().maxBases(); }
+        protected int maxValue(List<Colony> colonies) { 
+            int val = 0;
+            for (Colony c: colonies)
+                val += c.defense().maxBases(); 
+            return val;
+        }
         @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
             super.paintComponent(g);
 
-            StarSystem sys = parentUI.systemViewToDisplay();
-            if (sys == null)
+            List<StarSystem> systems = parentUI.systemsToDisplay();
+            if (systems == null) {
+                systems = new ArrayList<>();
+                StarSystem sys = parentUI.systemViewToDisplay();
+                if (sys != null)
+                    systems.add(sys);
+            }
+            
+            if (systems.isEmpty())
+                return;           
+            
+            allowAdjust = systems.size() == 1;
+            if (!allowAdjust)
                 return;
+            
+            StarSystem sys = systems.get(0);
             Colony colony = sys.colony();
             if  (colony == null)
                 return;
@@ -371,18 +448,32 @@ public class EmpireColonyInfoPane extends BasePanel {
         public String textureName()            { return parentUI.subPanelTextureName(); }
         @Override
         public void paintComponent(Graphics g) {
-            StarSystem sys = parentUI.systemViewToDisplay();
-            if (sys == null)
-                return;
-            Colony c = sys.colony();
-            if (c == null)
-                return;
+            List<StarSystem> systems = parentUI.systemsToDisplay();
+            if (systems == null) {
+                systems = new ArrayList<>();
+                StarSystem sys = parentUI.systemViewToDisplay();
+                if (sys != null)
+                    systems.add(sys);
+            }
+            
+            if (systems.isEmpty())
+                return;           
 
             super.paintComponent(g);
+            
+            int income = 0;
+            int prod = 0;
+            for (StarSystem sys: systems) {
+                Colony c = sys.colony();
+                if (c != null) {
+                    income += (int)c.totalIncome();
+                    prod += (int)c.production();
+                }
+            }
 
             String str1 = text("MAIN_COLONY_PRODUCTION");
-            String str2 = str((int)c.totalIncome());
-            String str3 = concat("(", str((int)c.production()), ")");
+            String str2 = str(income);
+            String str3 = concat("(", str(prod), ")");
 
             int y0 = getHeight()-s6;
             g.setColor(SystemPanel.blackText);
