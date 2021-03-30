@@ -89,6 +89,8 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
     int maxY = 0;
     int minDisplayY, maxDisplayY;
     boolean scrolling = false;
+    int minSelectableIndex = -1;
+    int maxSelectableIndex = -1;
 
     public SystemListingUI(BasePanel p) {
         topParent = p;
@@ -98,8 +100,11 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
     protected void initPalette() { palette = Palette.named("Brown"); }
     protected void postInit() { }
     protected abstract List<StarSystem> systems();
-    protected abstract StarSystem selectedSystem();
+    protected abstract StarSystem lastSelectedSystem();
     protected abstract void selectedSystem(StarSystem sv, boolean updateFieldValues);
+    protected abstract void shiftSelectedSystem(StarSystem sv, boolean updateFieldValues);
+    protected abstract void controlSelectedSystem(StarSystem sv, boolean updateFieldValues);
+    protected boolean isSelected(StarSystem sys) {  return lastSelectedSystem() == sys; }
     protected abstract DataView dataView();
     protected boolean selectRows()  { return true; }
     public int rowHeight()          { return s30; }
@@ -113,7 +118,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         int listH = getHeight()-rowH;
         float displayedRows = (float) listH/rowH;
         
-        int selectedIndex = systems().indexOf(selectedSystem());
+        int selectedIndex = systems().indexOf(lastSelectedSystem());
         int rowIndex = selectedIndex+1;
         if (rowIndex <= displayedRows)
             startY = 0;
@@ -208,12 +213,17 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         minDisplayY = y1+rowH;
         maxDisplayY = minDisplayY+listH;
         y0 = minDisplayY-startY;
-        int minSelectableIndex = numRows;
-        int maxSelectableIndex = 0;
+        minSelectableIndex = numRows;
+        maxSelectableIndex = 0;
+        RowSprite anchorRow = null;
         for (int i=0;i<systems().size();i++) {
             if (rowButtons.size() <= rowNum)
                 rowButtons.add(new ArrayList<>());
             StarSystem sys = systems().get(i);
+            if ((y0 >= minDisplayY) && ((y0+rowH) <= maxDisplayY)) {
+                minSelectableIndex = min(minSelectableIndex, i);
+                maxSelectableIndex = max(maxSelectableIndex, i);
+            }
             RowSprite row = new RowSprite(sys, rowButtons.get(rowNum), leftM, y0, 0, rowHeight());
             x0 = leftM;
             for (Column col: dv.columns) {
@@ -221,21 +231,29 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
                 col.draw(g, row, sys, x0, y0, colWidth);
                 x0 += (col.width() + cellSpacing);
             }
-            if ((y0 >= minDisplayY) && ((y0+rowH) <= maxDisplayY)) {
-                minSelectableIndex = min(minSelectableIndex, i);
-                maxSelectableIndex = max(maxSelectableIndex, i);
-            }
             row.w = x0-leftM;
+            if (isLastSelected(sys)) 
+                anchorRow = row;
             sprites.add(row);
             y0 += rowH;
             rowNum++;
         }
        
-        int selectedIndex = selectedIndex();
+        if (anchorRow != null) {
+            Stroke prev = g.getStroke();
+            g.setStroke(stroke2);
+            g.setColor(SystemPanel.whiteText);
+            g.drawRect(anchorRow.x, anchorRow.y-anchorRow.h-s1, anchorRow.w-s2, anchorRow.h+s2);
+            g.setStroke(prev);
+        }        
+        /*
+        int selectedIndex = lastSelectedIndex();
         if (selectedIndex < minSelectableIndex)
             selectedSystem(systems().get(minSelectableIndex),true);
         else if (selectedIndex > maxSelectableIndex) 
             selectedSystem(systems().get(maxSelectableIndex),true);
+        */
+        
         g.setClip(null);
         listBox.setBounds(0,row1Y,w,h-row1Y);
         
@@ -262,6 +280,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         int prevY = startY;
         startY = max(0, startY-s10);
         boolean changed = startY != prevY;
+        /*
         if ((startY == 0) && (startY == prevY)) {
             int index = selectedIndex();
             if (index > 0) {
@@ -270,12 +289,15 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
                 changed = true;
             }
         }
+        */
         return changed;
     }
     public boolean scrollDown()  { 
         int prevY = startY;
         startY = min(maxY, startY+s10);
+        
         boolean changed = startY != prevY;
+        /*
         if ((startY == maxY) && (startY == prevY)) {
             int index = selectedIndex();
             if (index < systems().size()-1) {
@@ -284,9 +306,14 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
                 changed = true;
             }
         }
+        */
         return changed;
     }
-    private int selectedIndex()         { return systems().indexOf(selectedSystem()); }
+    private boolean isLastSelected(StarSystem sys) { return sys == lastSelectedSystem(); }
+    private boolean isDisplayed(StarSystem sys) {
+        int index = systems().indexOf(sys);
+        return (index >= minSelectableIndex) && (index <= maxSelectableIndex);
+    }
     private void scrollY(int deltaY) {
         yOffset += deltaY;
         if ((yOffset > rowHeight())) {
@@ -434,6 +461,9 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         int x = e.getX();
         int y = e.getY();
         
+        boolean shift = e.isShiftDown();
+        boolean ctrl = e.isControlDown();
+        
         if (hoverBox == listScroller)
             return;
 
@@ -462,7 +492,12 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             return;
 
         if (sprite != null) {
-            sprite.click();
+            if (shift)
+                sprite.shiftClick();
+            else if (ctrl)
+                sprite.controlClick();
+            else
+                sprite.click();
             topParent.repaint();
         }
     }
@@ -493,7 +528,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             boolean alert = sv.isAlert();
             Color selectedC = alert ? selectedRedC() : selectedC();
             Color unselectedC = alert ? unselectedRedC() : unselectedC();
-            Color backC = (sys == selectedSystem()) || (selectedColumn == this) ? selectedC : unselectedC;
+            Color backC = (isSelected(sys)) || (selectedColumn == this) ? selectedC : unselectedC;
             drawCell(g, backC, x,y,w);
         }
         public void drawHeader(Graphics g, int x0, int y0, int w) {
@@ -775,7 +810,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
                 Collections.sort(systems(), comp);
                 if (reversed)
                     Collections.reverse(systems());
-                selectedSystem(selectedSystem(), true);
+                selectedSystem(lastSelectedSystem(), true);
             }
         }
         @Override
@@ -801,26 +836,37 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         }
         @Override
         public void draw(Graphics g, RowSprite row, StarSystem sys, int x, int y, int w) {
-            if (sys != selectedSystem()) {
+            boolean selected = isSelected(sys);
+            boolean lastSelected = isLastSelected(sys);
+            boolean displayed = isDisplayed(sys);
+            boolean editable = lastSelected && displayed && selected;
+            boolean editableIfDisplayed = lastSelected && selected;
+            
+            if (!editable) {
+                if (editableIfDisplayed)
+                    nameField.setVisible(false);
                 super.draw(g, row, sys, x, y, w);
                 return;
             }
-            if (nameField.isVisible()) {
+
+           if (nameField.isVisible()) {
                 if (nameField.getY() != (y-s30)) {
                     nameField.setBounds(x, y-s30, w, s30);
                     nameField.repaint();
                 }
+                return;
             }
-            else {
-                SystemView sv = player().sv.view(sys.id);
-                if (sv.isAlert())
-                    nameField.setBackground(selectedRedC());
-                else
-                    nameField.setBackground(selectedC());
-                nameField.setBounds(x, y-s30, w, s30);
-                nameField.setVisible(true);
-                nameField.repaint();
-            }
+
+            SystemView sv = player().sv.view(sys.id);
+            if (sv.isAlert())
+                nameField.setBackground(selectedRedC());
+            else
+                nameField.setBackground(selectedC());
+            
+
+            nameField.setBounds(x, y-s30, w, s30);
+            nameField.setVisible(true);
+            nameField.repaint();
         }
         public boolean showField(int y) {
             return (y >= minDisplayY) && (y <= maxDisplayY);
@@ -834,26 +880,35 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         }
         @Override
         public void draw(Graphics g, RowSprite row, StarSystem sys, int x, int y, int w) {
-            if (sys != selectedSystem()) {
+            boolean selected = isSelected(sys);
+            boolean lastSelected = isLastSelected(sys);
+            boolean displayed = isDisplayed(sys);
+            boolean editable = lastSelected && displayed && selected;
+            boolean editableIfDisplayed = lastSelected && selected;
+            
+            if (!editable) {
+                if (editableIfDisplayed)
+                    notesField.setVisible(false);
                 super.draw(g, row, sys, x, y, w);
                 return;
             }
+
             if (notesField.isVisible()) {
                 if (notesField.getY() != (y-s30)) {
                     notesField.setBounds(x, y-s30, w, s30);
                     notesField.repaint();
                 }
+                return;
             }
-            else {
-                SystemView sv = player().sv.view(sys.id);
-                if (sv.isAlert())
-                    notesField.setBackground(selectedRedC());
-                else
-                    notesField.setBackground(selectedC());
-                notesField.setBounds(x, y-s30, w, s30);
-                notesField.setVisible(true);
-                notesField.repaint();
-            }
+
+            SystemView sv = player().sv.view(sys.id);
+            if (sv.isAlert())
+                notesField.setBackground(selectedRedC());
+            else
+                notesField.setBackground(selectedC());
+            notesField.setBounds(x, y-s30, w, s30);
+            notesField.setVisible(true);
+            notesField.repaint();
         }
     }
     public class PlanetTypeColumn extends Column implements Base {
@@ -875,7 +930,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
                 Collections.sort(systems(), comp);
                 if (reversed)
                     Collections.reverse(systems());
-                selectedSystem(selectedSystem(), true);
+                selectedSystem(lastSelectedSystem(), true);
             }
         }
         @Override
@@ -923,7 +978,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
                 Collections.sort(systems(), comp);
                 if (reversed)
                     Collections.reverse(systems());
-                selectedSystem(selectedSystem(), true);
+                selectedSystem(lastSelectedSystem(), true);
             }
         }
         @Override
@@ -965,7 +1020,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
                         break;
                 }
                 Color c;
-                if (sys == selectedSystem())
+                if (isLastSelected(sys))
                     c = delta < 0 ? palette.red : palette.forest;
                 else
                     c = delta < 0 ? palette.red : palette.green;
@@ -995,6 +1050,8 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         public void exit()   { hoveringSprite = null; }
         public void enter()  { hoveringSprite = this; }
         public void click()  { }
+        public void shiftClick()  { }
+        public void controlClick()  { }
         public abstract boolean isSelectableAt(int x, int y);
         public boolean equalsSprite(Sprite s)  { return this == s; }
         public StarSystem system()             { return null; }
@@ -1068,6 +1125,10 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         public void exit()  {  }
         @Override
         public void click() { selectedSystem(system, true); }
+        @Override
+        public void shiftClick() { shiftSelectedSystem(system, true); }
+        @Override
+        public void controlClick() { controlSelectedSystem(system, true); }
     }
     interface SystemButton {
         void reset();
