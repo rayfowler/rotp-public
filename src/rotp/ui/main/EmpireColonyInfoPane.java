@@ -139,23 +139,29 @@ public class EmpireColonyInfoPane extends BasePanel {
             int x0 = s5;
             int y0 = getHeight()-s6;
 
-            g.setFont(narrowFont(16));
-            int sw0 = strDataLabel == null ? 0 : g.getFontMetrics().stringWidth(strDataLabel);
-            int sw1 = g.getFontMetrics().stringWidth(strData1)+s1;
-            int sw2 = g.getFontMetrics().stringWidth(strData2);
-            int x2 = getWidth()-rightMargin()-sw2;
-            int x1 = x2-sw1;
-            if (sw0 > 0)
-                x1 = getWidth()-rightMargin()-sw0;
-
-            // calc max width for label and try to get largest font (from 13-16) in it
-            int titleMaxW = x1-x0-s2;
-            int fontSize = 16;
-            g.setFont(narrowFont(fontSize));
-            while ((g.getFontMetrics().stringWidth(strTitle) > titleMaxW) && (fontSize > 12)) {
+            // calc max width for label and try to get largest font (from 13-16) in it            
+            int x1 = 0;
+            int x2 = 0;
+            int sw1 = 0;
+            int sw2 = 0;
+            int fontSize = 17;
+            boolean textFits = false;
+            while (!textFits && (fontSize >12)) {
                 fontSize--;
                 g.setFont(narrowFont(fontSize));
+                int sw0 = strDataLabel == null ? 0 : g.getFontMetrics().stringWidth(strDataLabel);
+                if (sw0 > 0)
+                    x1 = getWidth()-rightMargin()-sw0;
+                else {
+                    sw1 = g.getFontMetrics().stringWidth(strData1)+s1;
+                    sw2 = g.getFontMetrics().stringWidth(strData2);
+                    x2 = getWidth()-rightMargin()-sw2;
+                    x1 = x2-sw1;
+                }
+                int titleMaxW = x1-x0-s2;
+                textFits = g.getFontMetrics().stringWidth(strTitle) <= titleMaxW;
             }
+
             g.setColor(SystemPanel.blackText);
             g.drawString(strTitle, x0, y0);
 

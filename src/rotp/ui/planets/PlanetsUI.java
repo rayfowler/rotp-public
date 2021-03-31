@@ -1127,6 +1127,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
     class ColonyShipPane extends BasePanel implements MouseListener, MouseMotionListener, MouseWheelListener {
         private static final long serialVersionUID = 1L;
         SystemPanel parent;
+        public Design currDesign;
         // polygon coordinates for left & right increment buttons
         private final int leftButtonX[] = new int[3];
         private final int leftButtonY[] = new int[3];
@@ -1180,30 +1181,60 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             String str = text("MAIN_COLONY_SHIPYARD_CONSTRUCTION");
             drawShadowedString(g, str, 2, s5, s22, MainUI.shadeBorderC(), textColor);
         }
+        private List<Colony> colonies() {
+            List<StarSystem> systems = parent.systemsToDisplay();
+            if (systems == null) {
+                systems = new ArrayList<>();
+                StarSystem sys = parent.systemViewToDisplay();
+                if (sys != null)
+                    systems.add(sys);
+            }
+            
+            List<Colony> colonies = new ArrayList<>();
+            if (systems.isEmpty())
+                return colonies;           
+            
+            for (StarSystem sys1: systems) {
+                Colony c = sys1.colony();
+                if (c != null)
+                    colonies.add(c);
+            }
+            return colonies;
+        }
         private void drawShipIcon(Graphics2D g, int x, int y, int w, int h) {
             g.setColor(Color.black);
             g.fillRect(x, y, w, h);
-            StarSystem sys = parent.systemViewToDisplay();
-            Colony c = sys == null ? null : sys.colony();
-            if (c == null)
+            
+            List<Colony> colonies = colonies();
+            if (colonies.isEmpty())
                 return;
 
             shipDesignBox.setBounds(x,y,w,h);
 
-            Design d = c.shipyard().design();
+            currDesign = colonies.get(0).shipyard().design();
+            for (Colony c: colonies) {
+                if (currDesign != c.shipyard().design()) {
+                    currDesign = null;
+                    break;
+                }
+            }
+            if ((currDesign != null) && currDesign.scrapped())
+                currDesign = null;
             g.drawImage(initializedBackgroundImage(w, h), x,y, null);
 
             // draw design image
-            Image img = d.image();
-            int w0 = img.getWidth(null);
-            int h0 = img.getHeight(null);
-            float scale = min((float)w/w0, (float)h/h0);
+            if (currDesign != null) {
+                Image img = currDesign.image();
+                int w0 = img.getWidth(null);
+                int h0 = img.getHeight(null);
+                float scale = min((float)w/w0, (float)h/h0);
 
-            int w1 = (int)(scale*w0);
-            int h1 = (int)(scale*h0);
-            int x1 = x+(w - w1) / 2;
-            int y1 = y+(h - h1) / 2;
-            g.drawImage(img, x1, y1, x1+w1, y1+h1, 0, 0, w0, h0, this);
+                int w1 = (int)(scale*w0);
+                int h1 = (int)(scale*h0);
+                int x1 = x+(w - w1) / 2;
+                int y1 = y+(h - h1) / 2;
+                g.drawImage(img, x1, y1, x1+w1, y1+h1, 0, 0, w0, h0, this);
+            }
 
             if (hoverBox == shipDesignBox) {
                 Stroke prevStroke = g.getStroke();
@@ -1214,23 +1245,16 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             }
 
             // draw expected build count
-            String count;
-            if (d.scrapped()) {
-                count = text("MAIN_COLONY_SHIP_SCRAPPED");
-                g.setColor(Color.red);
-                g.setFont(narrowFont(20));
-            }
-            else {
-                int i = c.shipyard().upcomingShipCount();
+            if (colonies.size() == 1) {
+                int i = colonies.get(0).shipyard().upcomingShipCount();
                 if (i == 0)
                     return;
-                count = Integer.toString(i);
+                String count = Integer.toString(i);
                 g.setColor(SystemPanel.yellowText);
                 g.setFont(narrowFont(20));
+                int sw = g.getFontMetrics().stringWidth(count);
+                g.drawString(count, x+w-s5-sw, y+h-s5);
             }
-
-            int sw = g.getFontMetrics().stringWidth(count);
-            g.drawString(count, x+w-s5-sw, y+h-s5);
         }
         private void drawShipCompletion(Graphics2D g, int x, int y, int w, int h) {
             StarSystem sys = parent.systemViewToDisplay();
@@ -1345,7 +1369,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
 
             g.setColor(sliderBoxBlue);
             g.setFont(narrowFont(18));
-            String name = c.shipyard().design().name();
+            String name = currDesign == null ? text("FLEETS_MULTIPLE_DESIGNS") : currDesign.name();
             scaledFont(g, name, barW-s5, 18, 8);
             int sw = g.getFontMetrics().stringWidth(name);
             int x0 = barX+((barW-sw)/2);
@@ -1371,36 +1395,29 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             return starBackground;
         }
         public void nextShipDesign(boolean click) {
-            StarSystem sys = parent.systemViewToDisplay();
-            Colony c = sys == null ? null : sys.colony();
-            if (c == null)
-                return;
-            if (!c.shipyard().canCycleDesign()) {
-                if (click)
-                    misClick();
-            }
-            else {
+            Design prev = currDesign;
+            currDesign = player().shipLab().nextDesignFrom(currDesign, false);
+            if (currDesign != prev) {
                 if (click)
                     softClick();
-                c.shipyard().goToNextDesign();
+                setAllShipDesigns();
                 instance.repaint();
             }
         }
         public void prevShipDesign(boolean click) {
-            StarSystem sys = parent.systemViewToDisplay();
-            Colony c = sys == null ? null : sys.colony();
-            if (c  == null)
-                return;
-            if (!c.shipyard().canCycleDesign()) {
-                if (click)
-                    misClick();
-            }
-            else {
+            Design prev = currDesign;
+            currDesign = player().shipLab().prevDesignFrom(currDesign, false);
+            if (currDesign != prev) {
                 if (click)
                     softClick();
-                c.shipyard().goToPrevDesign();
+                setAllShipDesigns();
                 instance.repaint();
             }
+        }
+        private void setAllShipDesigns() {
+            List<Colony> colonies = colonies();
+            for (Colony c: colonies) 
+                c.shipyard().switchToDesign(currDesign);
         }
         private void incrementBuildLimit() {
             StarSystem sys = parent.systemViewToDisplay();
