@@ -483,6 +483,8 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
     }
     @Override
     public void animate() {
+        if (exited)
+            return;
         landingCount++;
         if (!landing()) {
             if (battleInProgress()) {
@@ -502,32 +504,24 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
     private int assignRandomVictim(boolean attacker) {
         Integer deadIndex;
         if (attacker) {
-			// modnar: kill off attackers with index higher than 500 first
-			// to prevent >500 troop bug
-			if (remainingAttackers.size() >= MAX_SOLDIERS) {
-				deadIndex = remainingAttackers.size() - 1;
-			}
-			else {
-				deadIndex = random(remainingAttackers);
-			}
+            // kill off attackers with index higher than 500 first
+            if (remainingAttackers.size() >= MAX_SOLDIERS) 
+                deadIndex = remainingAttackers.size() - 1;
+            else 
+                deadIndex = random(remainingAttackers);
             if (deadIndex < attackerState.length)
                 attackerState[deadIndex] = BEGIN_DYING;
             remainingAttackers.remove(deadIndex);
-            //log("Dead: Attacker - "+deadIndex+"   "+remainingAttackers.size()+" remaining");
         }
         else {
-			// modnar: kill off attackers with index higher than 500 first
-			// to prevent >500 troop bug
-			if (remainingDefenders.size() >= MAX_SOLDIERS) {
-				deadIndex = remainingDefenders.size() - 1;
-			}
-			else {
-				deadIndex = random(remainingDefenders);
-			}
+            // kill off attackers with index higher than 500 first
+            if (remainingDefenders.size() >= MAX_SOLDIERS) 
+                deadIndex = remainingDefenders.size() - 1;
+            else 
+                deadIndex = random(remainingDefenders);
             if (deadIndex < defenderState.length)
                 defenderState[deadIndex] = BEGIN_DYING;
             remainingDefenders.remove(deadIndex);
-            //log("Dead: Defender - "+deadIndex+"   "+remainingDefenders.size()+" remaining");
         }
         return deadIndex;
     }

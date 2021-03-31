@@ -159,6 +159,11 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
     public SystemSetTransportsColumn newSystemSetTransportsColumn(String s1, SystemListingUI ui, int i) {
         return new SystemSetTransportsColumn(s1, ui, i);
     }
+    public void sort(Comparator<StarSystem> comp, boolean reversed) {
+        Collections.sort(systems(), comp);
+        if (reversed)
+            Collections.reverse(systems());
+    }
     @Override
     public void paintComponent(Graphics g0) {
         sprites.clear();
@@ -246,13 +251,6 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             g.drawRect(anchorRow.x, anchorRow.y-anchorRow.h-s1, anchorRow.w-s2, anchorRow.h+s2);
             g.setStroke(prev);
         }        
-        /*
-        int selectedIndex = lastSelectedIndex();
-        if (selectedIndex < minSelectableIndex)
-            selectedSystem(systems().get(minSelectableIndex),true);
-        else if (selectedIndex > maxSelectableIndex) 
-            selectedSystem(systems().get(maxSelectableIndex),true);
-        */
         
         g.setClip(null);
         listBox.setBounds(0,row1Y,w,h-row1Y);
@@ -280,16 +278,6 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         int prevY = startY;
         startY = max(0, startY-s10);
         boolean changed = startY != prevY;
-        /*
-        if ((startY == 0) && (startY == prevY)) {
-            int index = selectedIndex();
-            if (index > 0) {
-                index--;
-                selectedSystem(systems().get(index), true);
-                changed = true;
-            }
-        }
-        */
         return changed;
     }
     public boolean scrollDown()  { 
@@ -297,16 +285,6 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         startY = min(maxY, startY+s10);
         
         boolean changed = startY != prevY;
-        /*
-        if ((startY == maxY) && (startY == prevY)) {
-            int index = selectedIndex();
-            if (index < systems().size()-1) {
-                index++;
-                selectedSystem(systems().get(index), true);
-                changed = true;
-            }
-        }
-        */
         return changed;
     }
     private boolean isLastSelected(StarSystem sys) { return sys == lastSelectedSystem(); }
@@ -807,10 +785,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             super.click();
             if (enabled()) {
                 reversed = !reversed;
-                Collections.sort(systems(), comp);
-                if (reversed)
-                    Collections.reverse(systems());
-                selectedSystem(lastSelectedSystem(), true);
+                sort(comp, reversed);
             }
         }
         @Override
@@ -927,10 +902,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             super.click();
             if (enabled()) {
                 reversed = !reversed;
-                Collections.sort(systems(), comp);
-                if (reversed)
-                    Collections.reverse(systems());
-                selectedSystem(lastSelectedSystem(), true);
+                sort(comp, reversed);
             }
         }
         @Override
@@ -975,10 +947,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             super.click();
             if (enabled()) {
                 reversed = !reversed;
-                Collections.sort(systems(), comp);
-                if (reversed)
-                    Collections.reverse(systems());
-                selectedSystem(lastSelectedSystem(), true);
+                sort(comp, reversed);
             }
         }
         @Override
