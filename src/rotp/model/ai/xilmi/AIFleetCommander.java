@@ -170,7 +170,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             {
                 score = 5.0f;
             }
-            else if(fleet.canColonizeSystem(current))
+            else if(fleet.canColonizeSystem(current) && current.monster() == null)
             {
                 score = 10.0f;
                 if(onlyColonizerTargets)
@@ -432,6 +432,15 @@ public class AIFleetCommander implements Base, FleetCommander {
                 setRetreatFleetPlan(sysId);
                 fleetPlans.add(empire.sv.fleetPlan(sysId));
             }
+            //we also want to retreat fleets that are trespassing to avoid prevention-wars
+            if(fl.system().empire()!= null 
+                    && !empire.enemies().contains(fl.system().empire())
+                    && !empire.allies().contains(fl.system().empire())
+                    && empire != fl.system().empire())
+            {
+                setRetreatFleetPlan(sysId);
+                fleetPlans.add(empire.sv.fleetPlan(sysId));
+            }
         }
     }
     private void setRetreatFleetPlan(int id) {
@@ -513,9 +522,17 @@ public class AIFleetCommander implements Base, FleetCommander {
         for(ShipFleet fleet:empire.allFleets())
         {
             //If we have made peace and war again, we disable potential retreatOnArrival
-            if(fleet.destination() != null && fleet.retreatOnArrival() && empire.enemies().contains(fleet.destination().empire()))
+            if(fleet.destination() != null)
             {
-                fleet.toggleRetreatOnArrival();
+                if(fleet.retreatOnArrival() && empire.enemies().contains(fleet.destination().empire()))
+                    fleet.toggleRetreatOnArrival();
+                if(!fleet.retreatOnArrival() 
+                        && fleet.destination().empire() != null 
+                        && !empire.allies().contains(fleet.destination().empire())
+                        && empire != fleet.destination().empire()
+                        && !empire.enemies().contains(fleet.destination().empire())
+                        && empire.sv.isScouted(fleet.destSysId()))
+                    fleet.toggleRetreatOnArrival();
             }
             if(!fleet.canSend() || fleet.deployed())
             {

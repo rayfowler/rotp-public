@@ -1033,7 +1033,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         return rebellingPop > loyalPop;
     }
     public void overthrowLeader() {
-        if (isPlayerControlled()) {
+        if (isPlayer()) {
             //session().status().loseOverthrown();
             return;
         }

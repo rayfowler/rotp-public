@@ -402,7 +402,7 @@ public class AIGovernor implements Base, Governor {
                     inAttackRange = true;
                 }
             }
-            if(enemy)
+            if(enemy || empire.tech().avgTechLevel() >= 99)
             {
                 maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
                 fighterPercentage = max(0.25f, empire.generalAI().defenseRatio());

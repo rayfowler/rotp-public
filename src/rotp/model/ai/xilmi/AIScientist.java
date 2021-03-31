@@ -345,7 +345,12 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechBattleSuit t) {
-        return t.level() / 2;
+        TechBattleSuit curr = empire.tech().topBattleSuitTech();
+        float val = 0;
+        if(curr != null)
+            val -= curr.level();
+        val += t.level();
+        return val;
     }
     @Override
     public float baseValue(TechBeamFocus t) {
@@ -392,7 +397,6 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechCloaking t) {
         float val = 0;
         val += t.level();
-        val /= 2;
         return val;
     }
     @Override
@@ -579,6 +583,7 @@ public class AIScientist implements Base, Scientist {
         if(curr != null)
             val -= curr.level();
         val += t.level();
+        val /= 2.0f;
         return val;
     }
     @Override

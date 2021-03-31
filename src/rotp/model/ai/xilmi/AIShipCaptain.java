@@ -445,8 +445,9 @@ public class AIShipCaptain implements Base, ShipCaptain {
             for (CombatStack st2: foes) {
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
                 //ail: 0 damage possible when they have repulsor and we can't outrange
-                if(st1.maxFiringRange(st1) <= st1.repulsorRange() && !st1.canCloak && !st1.canTeleport())
+                if(st1.maxFiringRange(st1) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
                 {
+                    //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
                     killPct = 0;
                     valueFactor = 0;
                 }

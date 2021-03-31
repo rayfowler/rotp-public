@@ -1093,6 +1093,9 @@ public class AIDiplomat implements Base, Diplomat {
         if (!v.embassy().alliance())
             return false;
 
+        if (!empire.enemies().isEmpty())
+            return false;
+
         if (v.embassy().treaty().wantToBreak(v.empire()))
             return true;
         
@@ -1115,7 +1118,14 @@ public class AIDiplomat implements Base, Diplomat {
     private boolean wantToBreakPact(EmpireView v) {
         if (!v.embassy().pact())
             return false;
-
+        //ail: never break a pact as long as we have enemies
+        if(!empire.enemies().isEmpty())
+            return false;
+        
+        if(wantToDeclareWarOfOpportunity(v)
+            || wantToDeclareWarOfPrevention(v))
+            return true;
+        
         float adjustedRelations = v.embassy().relations();
         adjustedRelations += leaderPreserveTreatyMod();
         return adjustedRelations < -20;
@@ -1329,18 +1339,45 @@ public class AIDiplomat implements Base, Diplomat {
                 }
             }
             if (warIncident != null) {
-                beginIncidentWar(view, warIncident);
-                return true;
+                if(!warIncident.isSpying())
+                {
+                    //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" starts Incident-War ("+warIncident.toString()+") vs. "+view.empire().name());
+                    beginIncidentWar(view, warIncident);
+                    return true;
+                }
+                else
+                {
+                    if(empire.enemies().isEmpty())
+                    {
+                        if(view.empire() == empire.generalAI().bestVictim())
+                        {
+                            //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" starts Incident-War ("+warIncident.toString()+") vs. "+view.empire().name()+" (best Victim)");
+                            beginIncidentWar(view, warIncident);
+                            return true;
+                        }
+                        if(view.empirePower() < 1.0f)
+                        {
+                            //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" starts Incident-War ("+warIncident.toString()+") vs. "+view.empire().name()+" (weaker)");
+                            beginIncidentWar(view, warIncident);
+                            return true;
+                        }
+                    }   
+                }
             }
         }
         
         // must break alliance before declaring war
-        if (wantToDeclareWarOfOpportunity(view)) {
+        if (wantToDeclareWarOfOpportunity(view)
+                || wantToDeclareWarOfPrevention(view)) {
             //ail: even if the real reason is because of geopolitics, we can still blame it on an incident, if there ever was one, so the player thinks it is their own fault
             if(worstWarnableIncident(view.embassy().allIncidents()) != null)
                 beginIncidentWar(view, worstWarnableIncident(view.embassy().allIncidents()));
             else
                 beginOpportunityWar(view);
+            /*if(wantToDeclareWarOfOpportunity(view))
+                System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" starts Opportunity-War vs. "+view.empire().name());
+            if(wantToDeclareWarOfPrevention(view))
+                System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" starts Prevention-War vs. "+view.empire().name());*/
             return true;          
         }
         return false;
@@ -1369,6 +1406,39 @@ public class AIDiplomat implements Base, Diplomat {
         warThreshold += contemptMod;
         
         return (v.embassy().relations() <= warThreshold);
+    }
+    public boolean wantToDeclareWarOfPrevention(EmpireView v) {
+        if (v.embassy().atPeace())
+        {
+            return false;
+        }
+        Galaxy gal = galaxy();
+        if(empire.alliedWith(v.empId()))
+            return false;
+        float totalPotentialBombard = 0.0f;
+        for (int id=0;id<empire.sv.count();id++) 
+        {
+            StarSystem current = gal.system(id);
+            if(current.colony() == null)
+                continue;
+            if(current.colony().empire() != empire)
+                continue;
+            for(ShipFleet orbiting : current.orbitingFleets())
+            {
+                if(orbiting.empId != v.empId())
+                    continue;
+                totalPotentialBombard += orbiting.expectedBombardDamage() / current.colony().untargetedHitPoints() * current.colony().population() / current.colony().maxSize();
+            }
+            for(ShipFleet incoming : current.incomingFleets())
+            {
+                if(incoming.empId != v.empId())
+                    continue;
+                if(!empire.visibleShips().contains(incoming))
+                    continue;
+                totalPotentialBombard += incoming.expectedBombardDamage(current) / current.colony().untargetedHitPoints() * current.colony().population() / current.colony().maxSize();
+            }
+        }
+        return totalPotentialBombard >= 1.0f;
     }
     @Override
     public boolean wantToDeclareWarOfOpportunity(EmpireView v) {
