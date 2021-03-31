@@ -785,6 +785,11 @@ PLANETS_LIST_TRANSPORTS           | Transports
 PLANETS_LIST_RESOURCES            | Resources
 PLANETS_MULTI_SYSTEMS             | %1 Systems
 PLANETS_AGGREGATE_VALUES          | Aggregate Values
+PLANETS_SPENDING_0                | No %1 Spending
+PLANETS_SPENDING_25               | 25% %1 Spending
+PLANETS_SPENDING_50               | 50% %1 Spending
+PLANETS_SPENDING_75               | 75% %1 Spending
+PLANETS_SPENDING_MAX              | Maximum %1 Spending
 PLANETS_HELP_ALL                  | OVERVIEW - This screen shows your empire's economic data along with a listing of your colonies sortable by various data.
 PLANETS_HELP_1A                   | Ecology - Click this tab to show ecological data for colonies.
 PLANETS_HELP_1B                   | Industry - Click this tab to show industrial data for colonies.

@@ -88,8 +88,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
 
     private static final Color selectedC = new Color(178,124,87);
     private static final Color unselectedC = new Color(112,85,68);
-    private static final Color darkBrown = new Color(45,14,5);
-    private static final Color brown = new Color(64,24,13);
     private static final Color sliderBoxBlue = new Color(34,140,142);
     static final Color enabledArrowColor = Color.black;
     static final Color disabledArrowColor = new Color(65,65,65);
@@ -116,6 +114,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
     private final PlanetViewSelectionPanel viewSelectionPane;
     private EmpireColonySpendingPane spendingPane;
     private EmpireColonyFoundedPane colonyFoundedPane;
+    private MultiColonySpendingPane multiSpendingPane;
 
     BasePanel rightPlanetPanel;
     private final CardLayout planetCardLayout = new CardLayout();
@@ -1039,17 +1038,17 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             empireDetailBottomPane.setOpaque(false);
             empireDetailBottomPane.setBorder(new ShadowBorder(palette.bdrHiOut, palette.bdrLoIn));
             empireDetailBottomPane.setLayout(new BorderLayout(0,s3));
-            empireDetailBottomPane.setPreferredSize(new Dimension(getWidth(),scaled(215)));
-            empireDetailBottomPane.add(new ColonyShipPane(this), BorderLayout.NORTH);
-            empireDetailBottomPane.add(new ColonyTransferFunds(this), BorderLayout.CENTER);
+            empireDetailBottomPane.setPreferredSize(new Dimension(getWidth(),scaled(110)));
+            empireDetailBottomPane.add(new ColonyShipPane(this), BorderLayout.CENTER);
+            //empireDetailBottomPane.add(new ColonyTransferFunds(this), BorderLayout.CENTER);
             empireDetailBottomPane.setBorder(newEmptyBorder(0,0,0,0));
 
-            spendingPane = new EmpireColonySpendingPane(parent, unselectedC, palette.white, palette.bdrHiOut, palette.bdrLoIn);
+            multiSpendingPane = new MultiColonySpendingPane(this, unselectedC, palette.white, palette.bdrHiOut, palette.bdrLoIn);
             BasePanel empireDetailPane = new BasePanel();
             empireDetailPane.setOpaque(false);
             empireDetailPane.setLayout(new BorderLayout(0,s3));
             empireDetailPane.add(empireDetailTopPane, BorderLayout.NORTH);
-            empireDetailPane.add(spendingPane, BorderLayout.CENTER);
+            empireDetailPane.add(multiSpendingPane, BorderLayout.CENTER);
             empireDetailPane.add(empireDetailBottomPane, BorderLayout.SOUTH);
             return empireDetailPane;
         }
