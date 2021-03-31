@@ -1128,6 +1128,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         private static final long serialVersionUID = 1L;
         SystemPanel parent;
         public Design currDesign;
+        public int currBuildLimit;
         // polygon coordinates for left & right increment buttons
         private final int leftButtonX[] = new int[3];
         private final int leftButtonY[] = new int[3];
@@ -1257,10 +1258,15 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             }
         }
         private void drawShipCompletion(Graphics2D g, int x, int y, int w, int h) {
-            StarSystem sys = parent.systemViewToDisplay();
-            Colony c = sys == null ? null : sys.colony();
-            if (c == null)
+            List<Colony> colonies = colonies();
+            if (colonies.isEmpty())
                 return;
+
+            currBuildLimit = colonies.get(0).shipyard().buildLimit();
+            for (Colony c: colonies) 
+                currBuildLimit = min(currBuildLimit,c.shipyard().buildLimit());
+            
+            String limitStr = currBuildLimit == 0 ? text("MAIN_COLONY_SHIPYARD_LIMIT_NONE") : str(currBuildLimit); 
 
             g.setFont(narrowFont(16));
             g.setColor(Color.black);
@@ -1268,7 +1274,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             int sw1 = g.getFontMetrics().stringWidth(label);
             String none = text("MAIN_COLONY_SHIPYARD_LIMIT_NONE");
             int sw2 = g.getFontMetrics().stringWidth(none);           
-            String amt = c.shipyard().buildLimitStr();
+            String amt = limitStr;
             int sw3 = g.getFontMetrics().stringWidth(amt);
             
             int x1 = x+s12;
@@ -1297,7 +1303,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             g.setColor(enabledArrowColor);
             g.fillPolygon(upButtonX, upButtonY, 3);
 
-            if (c.shipyard().buildLimit() == 0)
+            if (currBuildLimit == 0)
                 g.setColor(disabledArrowColor);
             else
                 g.setColor(enabledArrowColor);
@@ -1316,7 +1322,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                 g.drawPolygon(upArrow);
             }
             else if ((hoverBox == downArrow)
-                && (c.shipyard().buildLimit() > 0)) {
+                && (currBuildLimit > 0)) {
                 g.setColor(SystemPanel.yellowText);
                 g.drawPolygon(downArrow);
             }
@@ -1420,30 +1426,24 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                 c.shipyard().switchToDesign(currDesign);
         }
         private void incrementBuildLimit() {
-            StarSystem sys = parent.systemViewToDisplay();
-            Colony col = sys == null ? null : sys.colony();
-            if (col == null)
-                return;
-            boolean updated = col.shipyard().incrementBuildLimit();
-            if (updated) {
-                softClick();
-                parent.repaint();
-            }
-            else
-                misClick();
+            currBuildLimit++;
+            List<Colony> colonies = colonies();
+            softClick();
+            for (Colony c: colonies)
+                c.shipyard().buildLimit(currBuildLimit);
+            
+            parent.repaint();
         }
         private void decrementBuildLimit() {
-            StarSystem sys = parent.systemViewToDisplay();
-            Colony col = sys == null ? null : sys.colony();
-            if (col == null)
+            if (currBuildLimit == 0)
                 return;
-            boolean updated = col.shipyard().decrementBuildLimit();
-            if (updated) {
-                softClick();
-                parent.repaint();
-            }
-            else
-                misClick();
+            currBuildLimit--;
+            List<Colony> colonies = colonies();
+            softClick();
+            for (Colony c: colonies)
+                c.shipyard().buildLimit(currBuildLimit);
+            
+            parent.repaint();
         }
         private void resetBuildLimit() {
             StarSystem sys = parent.systemViewToDisplay();

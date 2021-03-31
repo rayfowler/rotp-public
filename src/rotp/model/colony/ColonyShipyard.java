@@ -53,6 +53,7 @@ public class ColonyShipyard extends ColonySpendingCategory {
     public void addDesiredShips(int i)        { desiredShips += i; }
     public ShipFleet rallyFleet()             { return rallyFleet; }
     public int buildLimit()                   { return buildLimit; }
+    public void buildLimit(int i)             { buildLimit = max(0,i); }
     public String buildLimitStr() { return buildLimit == 0 ? text("MAIN_COLONY_SHIPYARD_LIMIT_NONE") : str(buildLimit); }
     public boolean incrementBuildLimit()      { buildLimit++;  return true; }
     public boolean decrementBuildLimit()      { 
