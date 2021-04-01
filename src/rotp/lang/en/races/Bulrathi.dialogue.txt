@@ -75,6 +75,12 @@ PRAISE_ATTACKED_ENEMY_03   | It's painfully obvious that you only fight against 
 PRAISE_TRADE_01            | Our trade agreement has been most profitable for both our races, little friend. But trust is the most valuable coin, and we will continue to trust you so long as you act thusly.
 PRAISE_TRADE_02            | While war may be the most exhilarating way to advance, it is not the only way, as our trade agreement proves. Long may it continue so both our people may prosper! 
 
-PRAISE_REBELLING_WITH_01     | Ha ha! So you think to stand against the galaxy on your own? Did you think we would shy away from such a glorious battle? Stand tall, for the [my_empire] stands with you!
+PRAISE_REBELLING_WITH_01   | Ha ha! So you think to stand against the galaxy on your own? Did you think we would shy away from such a glorious battle? Stand tall, for the [my_empire] stands with you!
+
+ACCEPT_TRADE_01            | The wisdom of your negotiations makes up for your lack in size, little [your_race]! The Empire is pleased to trade [amt] BC with you yearly from now on.
+RESPOND_IGNORE_THREAT_01   | Hahaha, and why should we listen to threats from such tiny beings? Go now, and count yourself lucky we are in such a forgiving mood today!
+RESPOND_STOP_SPYING_01     | The little chommkas we use for spying were caught, were they? Ah well, return both them and our spies to us unharmed and we will see that they trouble you no more.
+RESPOND_STOP_ATTACKING_01  | The fleets of the Empire are terrifying, aren't they? Fear not little one, our display has had its intended effect, and we will recall them now.
+
 
 

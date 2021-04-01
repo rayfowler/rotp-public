@@ -80,3 +80,9 @@ PRAISE_ATTACKED_ENEMY_03   | You're fighting the [defender_race] too, filthling?
 PRAISE_TRADE_01            | This trade agreement is so great! We've been able to generate support for so many projects from it. I thank you sincerely, and the worlds of the [my_empire] sing eternal praises to your name! 
 PRAISE_TRADE_02            | There you are! The [my_title] wanted me to congratulate you on maintaining a flawless trade agreement with the Conclave. He hopes that you will see the wisdom in continuing, as we have many projects to explore! That's all. Bye now! 
 PRAISE_REBELLING_WITH_01   | The council has gone insane to put those disgusting [leader_race_plural] on the proverbial throne. Their rank stench is already making our people sick. Let us help you take them down, ambassador!  
+ 
+ACCEPT_TRADE_01            | Trade time! Trade time! [amt] BC each year will go a long way to helping set up our biospheres! Thanks, friend!
+RESPOND_IGNORE_THREAT_01   | Oh boy, you're really mad aren't you? Oh well, it's not like you could do anything even if you were! Go away now please, I'm very busy with these flora samples today.
+RESPOND_STOP_SPYING_01     | Caught a spy, did ya? Well don't worry, we were just checking to make sure you were being nice to your planets. Seems like you were, so give us back our monitor and we won't need to send another one out!
+RESPOND_STOP_ATTACKING_01  | See how many ships we have? And every one has big, scary guns! If we ever find out you're abusing your planets, we'll have to send them back, and neither one of us wants that to happen! Bye now!
+

@@ -76,4 +76,8 @@ PRAISE_TRADE_01            | To trade with another who is dedicated to peace is 
 PRAISE_TRADE_02            | Isn't it wonderful, ambassador? See how much simple acts of trade benefit all parties involved! We hope that this will continue to be a boon to both our races for eons to come! 
 PRAISE_REBELLING_WITH_01   | We [my_race_plural] have always believed that war is never the answer. This council, however, shows us that we were in error all along. Make your war, ambassador, and know the Republic stands with you! 
  
+ACCEPT_TRADE_01            | Yes, ambassador, we do agree that mutual trade is the best path to peace. [amt] BC each year is quite fine, and we thank you for your generosity.
+RESPOND_IGNORE_THREAT_01   | Do not mistake our pacifism for weakness! Surely your threat was spoken in irrational anger, and so we shall forgive your outburst this time.
+RESPOND_STOP_SPYING_01     | A [my_race] spy, you say? Surely this must be a misunderstanding. Please return our citizen to us so that we may get to the bottom of this, and rest easy knowing spying is the last thing on our minds.
+RESPOND_STOP_ATTACKING_01  | May this mighty fleet deter anyone foolish enough to begin a costly war, and may our removal of it without ordering it to be used show our commitment to peace.
 

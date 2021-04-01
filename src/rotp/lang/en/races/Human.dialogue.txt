@@ -82,3 +82,8 @@ PRAISE_TRADE_01            | Now this is what it's all about! Good friends and p
 PRAISE_TRADE_02            | Yes, trust is the foundation of diplomacy, but mutually beneficial trade certainly never hurts, eh? I hope we can continue our agreement indefinitely, and that new ways for us to help each other emerge. As we humans like to say, "if you scratch my back, then I'll scratch yours!" 
 
 PRAISE_REBELLING_WITH_01   | Fear not, ambassador! We too recognize the council for what it is: corrupt dictatorship masquerading as peaceful coexistence. We will stand as one, and we will not stop until we're rid of these despots once and for all! 
+
+ACCEPT_TRADE_01            | This trade agreement will profit us both, ambassador. The [my_empire] and the [your_empire], friends to the tune of [amt] BC yearly! That has a nice ring to it, don't you agree?
+RESPOND_IGNORE_THREAT_01   | Oh surely this threat of yours is a joke of some kind? Yes, yes, a joke! Haha, very amusing, ambassador!
+RESPOND_STOP_SPYING_01     | Well this is a messy affair. The Triumvirate disavows any knowledge of this rogue agent who acted of their own accord in spying on your people. Please return them to us, and I assure you this will not happen again.
+RESPOND_STOP_ATTACKING_01  | This is an old [my_race] tradition we call "saber rattling." Consider the saber adequately rattled, ambassador: our fleets will return to us now.
