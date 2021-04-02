@@ -23,7 +23,9 @@ import rotp.model.combat.*;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.galaxy.StarSystem;
+import rotp.model.ships.ShipComponent;
 import rotp.model.ships.ShipDesign;
+import rotp.model.tech.Tech;
 import rotp.util.Base;
 
 public class AIShipCaptain implements Base, ShipCaptain {
@@ -106,18 +108,21 @@ public class AIShipCaptain implements Base, ShipCaptain {
             {
                 chooseTarget(stack, false, true);
                 if (stack.canAttack(stack.target)) 
-                    mgr.performAttackTarget(stack);
+                    performSmartAttackTarget(stack);
+                    //mgr.performAttackTarget(stack);
                 //now chhose our previous target again
                 chooseTarget(stack, false, false);
             }
             if (stack.canAttack(stack.target)) 
-                mgr.performAttackTarget(stack);
+                performSmartAttackTarget(stack);
+                //mgr.performAttackTarget(stack);
             else
             {
                 //ail: if we couldn't attack our move-to-target, we try and see if anything else can be attacked from where we are
                 chooseTarget(stack, true, false);
                 if (stack.canAttack(stack.target)) 
-                    mgr.performAttackTarget(stack);
+                    performSmartAttackTarget(stack);
+                    //mgr.performAttackTarget(stack);
             }
          
             // SANITY CHECK:
@@ -128,6 +133,26 @@ public class AIShipCaptain implements Base, ShipCaptain {
             }
         }
         mgr.turnDone(stack);
+    }
+   
+    private void performSmartAttackTarget(CombatStack stack)
+    {
+        //ail: skip repulsor and stasis-field in first round
+        for (int i=0;i<stack.numWeapons(); i++) {
+            if(stack.weapon(i).tech().isType(Tech.REPULSOR) || stack.weapon(i).tech().isType(Tech.STASIS_FIELD))
+                continue;
+            int rotateCount = 0;
+            while(stack.selectedWeapon() != stack.weapon(i) && rotateCount <= stack.numWeapons())
+            {
+                stack.rotateToUsableWeapon(stack);
+                rotateCount++;
+            }
+            if(!stack.currentWeaponCanAttack(stack.target))
+                continue;
+            stack.fireWeapon(stack.target);
+        }
+        //After that is done we do it again without the skipping
+        galaxy().shipCombat().performAttackTarget(stack);
     }
     private  FlightPath chooseTarget(CombatStack stack, boolean onlyInAttackRange, boolean onlyShips) {
         if (!stack.canChangeTarget())
@@ -442,14 +467,21 @@ public class AIShipCaptain implements Base, ShipCaptain {
             {
                 valueFactor = 0.1f;
             }
-            allyValue += st1.designCost() * st1.num * valueFactor;
             for (CombatStack st2: foes) {
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
+                //ail: 0 damage possible when they have repulsor and we can't outrange
+                if(st1.maxFiringRange(st1) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
+                {
+                    //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
+                    killPct = 0;
+                    valueFactor = 0;
+                }
                 float killValue = killPct*st2.num*st2.designCost();
 //                log(st1.name()+"="+killPct+"    "+st2.name());
                 if (killValue > maxKillValue)
                     maxKillValue = killValue;
             }
+            allyValue += st1.designCost() * st1.num * valueFactor;
             allyKills += maxKillValue;
         }
        for (CombatStack st1 : foes) {

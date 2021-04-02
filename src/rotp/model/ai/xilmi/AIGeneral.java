@@ -230,28 +230,27 @@ public class AIGeneral implements Base, General {
             setRepelFleetPlan(sys, enemyFleetSize);      
     }
     public void orderInvasionFleet(EmpireView v, StarSystem sys, float enemyFleetSize) {
-        // modnar: scale up invasion multiplier with factories
-        // to account for natural pop growth (enemy transport, etc.) with invasion troop travel time
-        float size = empire.sv.currentSize(sys.id); // planet size
-        float fact = empire.sv.factories(sys.id); // factory count
-        float mult = (1.0f + fact/(10.0f*size)); // invasion multiplier
-        
-        int sysId = sys.id;
-        EmpireView ev = empire.viewForEmpire(empire.sv.empId(sysId));
-        float targetTech = ev.spies().tech().avgTechLevel(); // modnar: target tech level
-        
-        if (empire.sv.hasFleetForEmpire(sys.id, empire)
+        boolean haveOrbitingFleet = false;
+        for(ShipFleet orbiting : sys.orbitingFleets())
+        {
+            if(orbiting.empire() == empire)
+                haveOrbitingFleet = true;
+            if(empire.enemies().contains(orbiting.empire()))
+                haveOrbitingFleet = false;
+        }
+        //ail: old check would also be positive when our fleet is retreating
+        if (haveOrbitingFleet
                 && sys.colony().defense().bases() == 0)
-            launchGroundTroops(v, sys, mult);
+            launchGroundTroops(v, sys, 1);
         else if (empire.combatTransportPct() > 0)
-            launchGroundTroops(v, sys, mult/empire.combatTransportPct());
+            launchGroundTroops(v, sys, 1/empire.combatTransportPct());
     }
     
     public void launchGroundTroops(EmpireView v, StarSystem target, float mult) {
         //float troops0 = troopsNecessaryToBypassBases(target);
         float troops1 = mult*troopsNecessaryToTakePlanet(v, target);
         int alreadySent = empire.transportsInTransit(target);
-        float troopsDesired = troops1 + empire.sv.currentSize(target.id) - alreadySent;
+        float troopsDesired = troops1 + empire.sv.currentSize(target.id) * 0.75f - alreadySent;
 
         if (troopsDesired < 1)
             return;
@@ -704,7 +703,8 @@ public class AIGeneral implements Base, General {
             {
                 continue;
             }
-            additional++;
+            if(sys.monster() == null)
+                additional++;
         }
         //System.out.print("\n"+empire.name()+" "+additional+" from uncolonized scouted without en-route.");
         List<StarSystem> alreadyCounted = new ArrayList<>();

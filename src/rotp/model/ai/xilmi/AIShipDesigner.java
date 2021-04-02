@@ -22,6 +22,7 @@ import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.planet.PlanetType;
 import rotp.model.ships.ShipDesign;
+import static rotp.model.ships.ShipDesign.maxWeapons;
 import rotp.model.ships.ShipDesignLab;
 import rotp.model.ships.ShipSpecial;
 import rotp.model.ships.ShipSpecialColony;
@@ -300,8 +301,20 @@ public class AIShipDesigner implements Base, ShipDesigner {
         float upgradeThreshold = empire.atWar() ? 1.5f : 1.25f;
         
         float upgradeChance = 1 + currDesign.availableSpace() / currDesign.totalSpace();
-        float currentDPBC = currDesign.firepower(empire.bestEnemyPlanetaryShieldLevel()) / currDesign.cost();
-        float newDPBC = newDesign.firepower(empire.bestEnemyPlanetaryShieldLevel()) / newDesign.cost() ;
+        
+        //assume that the space not used for weapons is well used for other stuff and thus only look at firepower from space for weapons
+        float currentWpnSpc = 0.0f;
+        float newWpnSpc = 0.0f;
+        for (int i=0; i<maxWeapons(); i++)
+        {
+            if(!currDesign.weapon(i).groundAttacksOnly())
+                continue;
+            currentWpnSpc += (currDesign.wpnCount(i) * currDesign.weapon(i).space(currDesign));
+            newWpnSpc += (newDesign.wpnCount(i) * newDesign.weapon(i).space(newDesign));
+        }
+        
+        float currentDPBC = currDesign.firepower(empire.bestEnemyPlanetaryShieldLevel()) / currentWpnSpc;
+        float newDPBC = newDesign.firepower(empire.bestEnemyPlanetaryShieldLevel()) / newWpnSpc;
         if(currentDPBC > 0)
         {
             upgradeChance *= newDPBC / currentDPBC;
@@ -353,9 +366,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
 
         int currSlot = currDesign.id();
         
-    //    ShipFighterTemplate.setPerTurnDamage(currDesign, empire());
-        NewShipTemplate.setPerTurnShipDamage(currDesign, empire());
-
         // find best hypothetical design vs current targets
         ShipDesign newDesign = newFighterDesign(currDesign.size());
       
@@ -390,8 +400,16 @@ public class AIShipDesigner implements Base, ShipDesigner {
         float upgradeThreshold = empire.atWar() ? 1.5f : 1.25f;
         
         float upgradeChance = 1 + currDesign.availableSpace() / currDesign.totalSpace();
-        float currentDPBC = currDesign.firepowerAntiShip(empire.bestEnemyShieldLevel()) / currDesign.cost();
-        float newDPBC = newDesign.firepowerAntiShip(empire.bestEnemyShieldLevel()) / newDesign.cost() ;
+
+        float currentWpnSpc = 0.0f;
+        float newWpnSpc = 0.0f;
+        for (int i=0; i<maxWeapons(); i++)
+        {
+            currentWpnSpc += (currDesign.wpnCount(i) * currDesign.weapon(i).space(currDesign));
+            newWpnSpc += (newDesign.wpnCount(i) * newDesign.weapon(i).space(newDesign));
+        }
+        float currentDPBC = currDesign.firepowerAntiShip(empire.bestEnemyShieldLevel()) / currentWpnSpc;
+        float newDPBC = newDesign.firepowerAntiShip(empire.bestEnemyShieldLevel()) / newWpnSpc;
         if(currentDPBC > 0)
         {
             upgradeChance *= newDPBC / currentDPBC;
@@ -457,13 +475,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
         design.mission(ShipDesign.COLONY);
         design.maxUnusedTurns(OBS_COLONY_TURNS);
 
-        // AIs will always put 1 beam weapon on their colony ships if AI contact made
-        if (weaponNeeded) {
-            ShipWeapon bestWpn = lab.bestUnlimitedShotWeapon(design, 1);
-            if (bestWpn != null)
-                design.addWeapon(bestWpn, 1);
-        }
-
         // if we don't need regular-range colony ship
         if (extendedRangeNeeded) {
             ShipSpecial prevSpecial = design.special(1);
@@ -473,8 +484,13 @@ public class AIShipDesigner implements Base, ShipDesigner {
             if (design.size() > ShipDesign.LARGE)
                 design.special(1, prevSpecial);
         }
-
         design.setSmallestSize();
+        //ail: only if we now still have room, we put a weapon on it. Extended range and smaller size is way more important than a weapon without computer
+        if (weaponNeeded) {
+            ShipWeapon bestWpn = lab.bestUnlimitedShotWeapon(design, 1);
+            if (bestWpn != null && design.availableSpace() >= bestWpn.space(design))
+                design.addWeapon(bestWpn, 1);
+        }
         lab.nameDesign(design);
         lab.iconifyDesign(design);
         return design;
