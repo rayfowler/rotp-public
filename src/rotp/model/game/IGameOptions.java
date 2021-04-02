@@ -219,6 +219,7 @@ public interface IGameOptions {
 	
     public List<String> gameDifficultyOptions();
     public int maximumOpponentsOptions();
+    public int defaultOpponentsOptions();
     public List<String> startingRaceOptions();
 
     public String selectedGalaxySize();
