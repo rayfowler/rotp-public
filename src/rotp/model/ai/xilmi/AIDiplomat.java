@@ -1476,7 +1476,7 @@ public class AIDiplomat implements Base, Diplomat {
             //when we are up to be voted, avoid being disliked
             //unless we hold more than 1/3rd of votes, so we can't lose anyways
             //exception: our target is at war or the other empire to be voted for
-            float superiorityThreshold = 0.0f;
+            float superiorityThreshold = 0.8f;
             if(gc.active() && galaxy().numActiveEmpires() > 2)
             {
                 List<Empire> empires = new ArrayList<>();
@@ -1499,7 +1499,7 @@ public class AIDiplomat implements Base, Diplomat {
                     //our tech is worse (if we are stronger in other aspects we will catch up anyways)
                     if(empire.tech().avgTechLevel() < v.empire().tech().avgTechLevel())
                         warAllowed = false;
-                    superiorityThreshold = 1.0f;
+                    superiorityThreshold = 1.25f;
                     //System.out.println(empire.name()+" I'm up to be voted and thus act accordingly.");
                 }
             }
@@ -1513,7 +1513,6 @@ public class AIDiplomat implements Base, Diplomat {
                 warAllowed = false;
             if(empire.alliedWith(bestVictim.id))
                 warAllowed = false;
-                
             for(Empire emp : bestVictim.warEnemies())
             {
                 helpingPower += emp.powerLevel(emp);
@@ -1577,45 +1576,26 @@ public class AIDiplomat implements Base, Diplomat {
 
         // if at war with one, vote for other (if contacted)
         if (cv1.embassy().anyWar() && !cv2.embassy().anyWar()) {
-            if (cv2.embassy().contact())
+            if (empire.inEconomicRange(cv2.empId()))
                 return castVoteFor(civ2);
             else
                 return castVoteFor(null);
         }
         if (cv2.embassy().anyWar() && !cv1.embassy().anyWar()) {
-            if (cv1.embassy().contact())
+            if (empire.inEconomicRange(cv1.empId()))
                 return castVoteFor(civ1);
             else
                 return castVoteFor(null);
         }
-
-        // modnar: add empire power bonus for voting
-        // more likely to vote for very powerful empires (relative to the whole galaxy)
-        // only what own empire can see (through spies)
-        float allEmpirePower = 0.0f;
-        for (Empire e: galaxy().activeEmpires()) 
-                allEmpirePower += (empire.militaryPowerLevel(e) + empire.industrialPowerLevel(e));
-        
-        // powerBonus1/powerBonus2 vary from 0 to 1
-        float powerBonus1 = (empire.militaryPowerLevel(civ1) + empire.industrialPowerLevel(civ1)) / allEmpirePower;
-        float powerBonus2 = (empire.militaryPowerLevel(civ2) + empire.industrialPowerLevel(civ2)) / allEmpirePower;
-        
-        // decide to vote for civ1
-        // modnar: don't force vote for civ2 if civ1 get the negative check
-        pct = cv1.embassy().relations()/100.0f + civ1.councilBonus() + civ1.orionCouncilBonus() + previousVoteBonus(civ1) + powerBonus1;
-        if (random() <= Math.abs(pct)) {
-            if (pct > 0)
-                return castVoteFor(civ1);
-        }
-
-        // decide to vote for civ2
-        // modnar: don't force vote for civ1 if civ2 get the negative check
-        pct = cv2.embassy().relations()/100.0f + civ2.councilBonus() + civ2.orionCouncilBonus() + previousVoteBonus(civ2) + powerBonus2;
-        if (random() <= Math.abs(pct)) {
-            if (pct > 0)
-                return castVoteFor(civ2);
-        }
-
+        //ail: I want it to be deterministic and based on relations, not power
+        if(cv1.embassy().relations()/100.0f > 0 
+                && cv1.embassy().relations()/100.0f > cv2.embassy().relations()/100.0f
+                && empire.inEconomicRange(cv1.empId()))
+            return castVoteFor(civ1);
+        if(cv2.embassy().relations()/100.0f > 0 
+                && cv2.embassy().relations()/100.0f > cv1.embassy().relations()/100.0f
+                && empire.inEconomicRange(cv2.empId()))
+            return castVoteFor(civ2);
         // return undecided
         return castVoteFor(null);
     }
