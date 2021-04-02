@@ -24,17 +24,14 @@ import rotp.ui.notifications.TechStolenAlert;
 
 public class EspionageTechIncident extends DiplomaticIncident {
     private static final long serialVersionUID = 1L;
-    final int empSpy;
-    final int empVictim;
+    public final int empSpy;
+    public final int empVictim;
     int empThief;
     String techId;
 
     public EspionageTechIncident(EmpireView ev, EspionageMission m) {
         ev.embassy().resetAllianceTimer();
-        severity = max(-20,-10+ev.embassy().currentSpyIncidentSeverity());
-
         dateOccurred = galaxy().currentYear();
-        duration = ev.empire().leader().isTechnologist()? 20 : 10;
         
         // empSpy is the actual spy
         // empThief is the suspected spy (the one who was framed)
@@ -43,6 +40,11 @@ public class EspionageTechIncident extends DiplomaticIncident {
         empThief = m.thief().id;
         techId = m.stolenTech();
         m.incident(this);
+        
+        if (ev.owner().diplomatAI().setSeverityAndDuration(this, ev.embassy().currentSpyIncidentSeverity()))
+            return;
+        severity = max(-20,-10+ev.embassy().currentSpyIncidentSeverity());
+        duration = ev.empire().leader().isTechnologist()? 20 : 10;
     }
     @Override
     public boolean isSpying()         { return true; }
