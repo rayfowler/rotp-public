@@ -1481,14 +1481,6 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
                 drawPlanetResult(g, sysName, true, x3+w3-shipH-s20, y3+s80+(rows*shipBoxH), shipH);
             }        
         }
-        /*
-        else if (mgr.results().isMonsterVictory())
-            prompt = text("SHIP_COMBAT_RESULTS_MONSTER", victorName, sysName);
-        else 
-            prompt = text("SHIP_COMBAT_RESULTS", victorName, sysName);
-*/
-
-        //drawBorderedString(g, prompt, x1, y1, Color.black, Color.white);
 
         drawSkipText(g, true);
     }

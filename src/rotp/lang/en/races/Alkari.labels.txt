@@ -6,8 +6,6 @@ _title                            | Spire King
 _nameTitle                        | Spire King
 
 
-GOVT_EMPIRE                       | %1 Sovereignty
-
 //
 // All text below this point is copyright 2018-2020 Jeff Colucci
 // 

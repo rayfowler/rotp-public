@@ -1,11 +1,9 @@
 // race-specific variables (must start with _)
-_empire                           | Sakkran Conclave, Reptaran Conclave, Sauran Conclave, Raptora Conclave, Tyranna Conclave
+_empire                           | Sakkran Conclave, Reptaran Conclave, Sauran Conclave, Raptoran Conclave, Tyrannan Conclave
 _race                             | Sakkra, Reptara, Saura, Raptora, Tyranna
 _race_plural                      | Sakkra, Reptara, Saura, Raptora, Tyranna
 _title                            | Prime Magister
 _nameTitle                        | Prime Magister 
-
-GOVT_EMPIRE                       | %1 Conclave
 
 //
 // All text below this point is copyright 2018-2020 Jeff Colucci

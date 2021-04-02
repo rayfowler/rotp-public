@@ -28,7 +28,9 @@ public class InvadersKilledAlert  extends GameAlert {
     }
     @Override
     public String description() {
-        return text("MAIN_ALERT_INVADERS_KILLED", empire.raceName(), systemName(), str(num));
+        String desc = text("MAIN_ALERT_INVADERS_KILLED", systemName(), str(num));
+        desc = empire.replaceTokens(desc, "alien");
+        return desc;
     }
     private String systemName() { return player().sv.name(system.id); }
     private InvadersKilledAlert(Empire e, StarSystem s, int n) {

@@ -5,8 +5,6 @@ _race_plural               | Silicoids, Igneoids, Sedimoids, Granitoids, Magmoid
 _title                     | Crystal Emperor
 _nameTitle                 | Crystal Emperor 
 
-GOVT_EMPIRE                | %1 Imperium
-
 //
 // All text below this point is copyright 2018-2020 Jeff Colucci
 // 

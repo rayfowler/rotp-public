@@ -6,8 +6,6 @@ _title                            | ruler
 _nameTitle                        | 
 
 
-GOVT_EMPIRE                       | %1s
-
 //
 // All text below this point is copyright 2018-2020 Jeff Colucci
 // 

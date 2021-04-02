@@ -492,6 +492,8 @@ public class Race implements Base, Serializable {
             names.add(text("COLONY_NAME_3", s));
         for (String s: systemNames)
             names.add(text("COLONY_NAME_4", s));
+        for (String s: systemNames)
+            names.add(text("COLONY_NAME_5", s));
         return names;
     }
     public String randomLeaderName() { return random(leaderNames); }

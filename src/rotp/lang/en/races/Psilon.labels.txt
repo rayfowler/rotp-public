@@ -6,8 +6,6 @@ _title                            | High Councilor
 _nameTitle                        | High Councilor 
 
 
-GOVT_EMPIRE                       | %1 Republic 
-
 //
 // All text below this point is copyright 2018-2020 Jeff Colucci
 // 

@@ -5,9 +5,6 @@ _race_plural                      | Mrrshan, Prrshan, Meowshan, Clawshan, Hissha
 _title                            | Khan
 _nameTitle                        | Khan
 
-
-GOVT_EMPIRE                       | %1 Khanate
-
 //
 // All text below this point is copyright 2018-2020 Jeff Colucci
 // 

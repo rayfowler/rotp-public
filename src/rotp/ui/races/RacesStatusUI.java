@@ -237,7 +237,9 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
     private void drawPlayerTitle(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(SystemPanel.orangeText);
         g.setFont(narrowFont(32));
-        g.drawString(text("RACES_STATUS_THE_EMPIRE", player().name()), x+s10, y+h-s15);
+        String title = text("RACES_STATUS_THE_EMPIRE");
+        title = player().replaceTokens(title, "alien");
+        g.drawString(title, x+s10, y+h-s15);
     }
     private void drawVS(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(SystemPanel.orangeText);
@@ -257,7 +259,8 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
     private void drawAITitle(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(SystemPanel.orangeText);
         g.setFont(narrowFont(32));
-        String title = text("RACES_STATUS_THE_EMPIRE", emp.name());
+        String title = text("RACES_STATUS_THE_EMPIRE");
+        title = emp.replaceTokens(title, "alien");
         int sw = g.getFontMetrics().stringWidth(title);
         g.drawString(title, x-sw-s10, y-s15);
     }

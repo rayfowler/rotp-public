@@ -80,6 +80,14 @@ public final class ShipCombatResults implements Base {
         else
             return empires.get(0).raceName();
     }
+    public Empire aiEmpire() {
+        if (monster != null)
+            return null;
+        else if (empires.get(0).isPlayer())
+            return empires.get(1);
+        else
+            return empires.get(0);
+    }
     public String victorName() {
         Empire victor = victor();
         if (victor != null)

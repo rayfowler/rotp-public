@@ -139,7 +139,9 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         int lineTextSize = 15;
         g.setFont(narrowFont(lineTextSize));
         String text1 = text("COUNCIL_CONVENE");
-        String text2 = text("COUNCIL_CONVENE2", emp1.leader().name(), emp1.name(), emp2.leader().name(), emp2.name());
+        String text2 = text("COUNCIL_CONVENE2");
+        text2 = emp1.replaceTokens(text2, "first");
+        text2 = emp2.replaceTokens(text2, "second");
         
         int bdr = s10;
         int w1 =  scaled(430);
@@ -256,9 +258,18 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         drawViewSummaryButton(g);
         paintVoteTotals(g);
 
-        String voteText = c.lastVoted() == null ?
-                        text("COUNCIL_CAST_ABSTAIN", c.lastVoter().name(), c.lastVotes()) :
-                        text("COUNCIL_CAST_VOTE", c.lastVoter().name(), str(c.lastVotes()), c.lastVoted().leader().name());
+        String voteText;
+        
+        if (c.lastVoted() == null) {
+            voteText = text("COUNCIL_CAST_ABSTAIN", c.lastVotes());
+            voteText = c.lastVoter().replaceTokens(voteText, "voter");
+        }
+        else {
+            voteText = text("COUNCIL_CAST_VOTE", str(c.lastVotes()));
+            voteText = c.lastVoter().replaceTokens(voteText, "voter");
+            voteText = c.lastVoted().replaceTokens(voteText, "candidate");
+        }
+        
         
         g.setFont(narrowFont(30));
         int sw1 = g.getFontMetrics().stringWidth(voteText);

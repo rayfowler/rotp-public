@@ -5,9 +5,6 @@ _race_plural                      | Humans, Terrans, Tellans, Primans, Midgardia
 _title                            | Triumvir
 _nameTitle                        | Triumvir
 
-
-GOVT_EMPIRE                       | %1 Triumvirate
-
 //
 // All text below this point is copyright 2018-2020 Jeff Colucci
 // 

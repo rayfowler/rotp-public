@@ -79,14 +79,15 @@ PLANET_ORION_GUARDIAN             | Guardian
 NEBULA_NAME                       | %1 Nebula
 NEBULA_ID                         | NCG %1
 
-// Government names
-GOVT_EMPIRE                       | %1 Empire
+// In this, %1 is the race's title when using with the name ("_nameTitle" in the races labels.txt file)
+// and %2 is the leader's actual name
 TITLE_LEADERNAME                  | %1 %2
 
-// Extended Colony Names
+// Extended Colony Name prefix when we run out of names
 COLONY_NAME_2                     | New %1
 COLONY_NAME_3                     | Outer %1
-COLONY_NAME_4                     | Distant %1
+COLONY_NAME_4                     | Far %1
+COLONY_NAME_5                     | Distant %1
 
 // Space Monster Names
 SPACE_AMOEBA                      | Space Amoeba
@@ -654,7 +655,7 @@ MAIN_COLONIZE_TITLE               | Our Colonists are orbiting %1, an uncolonize
 MAIN_COLONIZE_PROMPT              | Build a new colony?
 MAIN_COLONIZE_YES                 | Yes
 MAIN_COLONIZE_NO                  | No
-MAIN_COLONIZE_ANIMATION_TITLE     | In the year %1, the %2 forms a new colony.
+MAIN_COLONIZE_ANIMATION_TITLE     | In the year %1, the [player_empire] forms a new colony.
 MAIN_COLONIZE_NAME_PROMPT         | Colony Name
 MAIN_COLONIZE_NAME_OK             | OK
 
@@ -715,21 +716,21 @@ MAIN_AUTOSAVE_FAILED_OK           | OK
 MAIN_ALERT_TITLE                  | Alert 
 MAIN_ALERT_TITLE_COUNT            | Alert - %1 of %2
 MAIN_ALERT_SPY_REPORT             | Our intelligence bureau has provided a new report on recent spying activity.
-MAIN_ALERT_TECH_STOLEN            | Internal security has uncovered espionage activities by %1 spies.
-MAIN_ALERT_FACTORIES_DESTROYED    | Agents working for the %1 have destroyed %2 factories in the %3 system.
-MAIN_ALERT_BASES_DESTROYED        | Agents working for the %1 have destroyed %2 missile bases defending the %3 system.
+MAIN_ALERT_TECH_STOLEN            | Internal security has uncovered espionage activities by [alien_race] spies.
+MAIN_ALERT_FACTORIES_DESTROYED    | Agents working for the [alien_empire] have destroyed %1 factories in the %2 system.
+MAIN_ALERT_BASES_DESTROYED        | Agents working for the [alien_empire] have destroyed %1 missile bases defending the %2 system.
 MAIN_ALERT_FACTORIES_DESTROYED2   | Unknown saboteurs have destroyed %1 factories in the %2 system.
 MAIN_ALERT_BASES_DESTROYED2       | Unknown saboteurs have destroyed %1 missile bases defending the %2 system.
 MAIN_ALERT_TRANSPORTS_PERISHED    | The colony in the %1 system has been destroyed. Our transports attempting to land there have perished.
-MAIN_ALERT_TRANSPORTS_CAPTURED    | Our %3 transports arriving in the %2 system have surrendered to %1 forces.
+MAIN_ALERT_TRANSPORTS_CAPTURED    | Our %2 transports arriving in the %1 system have surrendered to [alien_race] forces.
 MAIN_ALERT_TRANSPORTS_KILLED      | Our %3 transports attempting to reach %2 have been destroyed by defending %1 forces.
-MAIN_ALERT_INVADERS_CAPTURED      | %3 %1 transports arriving in the %2 system have surrendered to our defensive forces.
-MAIN_ALERT_INVADERS_KILLED        | %3 %1 transports attempting to invade %2 have been completely destroyed by our defensive forces.
-MAIN_ALERT_TRESPASSING1           | %1 ships have been spotted trespassing near our colony in the %2 system.
-MAIN_ALERT_TRESPASSING2           | The %1 ambassador protests our ships trespassing in the %2 system.
+MAIN_ALERT_INVADERS_CAPTURED      | %2 [alien_race] transports arriving in the %1 system have surrendered to our defensive forces.
+MAIN_ALERT_INVADERS_KILLED        | %2 [alien_race] transports attempting to invade %1 have been completely destroyed by our defensive forces.
+MAIN_ALERT_TRESPASSING1           | [alien_race] ships have been spotted trespassing near our colony in the %1 system.
+MAIN_ALERT_TRESPASSING2           | The [alien_race] ambassador protests our ships trespassing in the %1 system.
 MAIN_ALERT_TRADE_MATURED          | Our trade treaty with the %1 has reached its maximum value of %2 BC.
-MAIN_ALERT_ALLIANCE_WEAKENING     | Our alliance with the %1 is weakening.
-MAIN_ALERT_ALLIANCE_BREAKING      | Our alliance with the %1 is on the verge of collapse!
+MAIN_ALERT_ALLIANCE_WEAKENING     | Our alliance with the [ally_empire] is weakening.
+MAIN_ALERT_ALLIANCE_BREAKING      | Our alliance with the [ally_empire] is on the verge of collapse!
 
 // Colony Listing UI
 PLANETS_TITLE                     | %1 Colonies
@@ -1509,7 +1510,7 @@ SHIP_DESIGN_HELP_4G               | Deploy Design - when your new design is comp
 // Ship Combat UI
 SHIP_COMBAT_TITLE_SYSTEM          | Ship Combat at %1!
 SHIP_COMBAT_TITLE_UNSCOUTED       | Ship Combat in unexplored system!
-SHIP_COMBAT_TITLE_DESC            | Our forces meet a hostile %1 fleet.
+SHIP_COMBAT_TITLE_DESC            | Our forces meet a hostile [alien_race] fleet.
 SHIP_COMBAT_TITLE_MONSTER_DESC    | Our forces encounter a hostile %1.
 SHIP_COMBAT_BASES                 | %1 Missile Bases
 SHIP_COMBAT_SHIELD                | Level %1 Planetary Shield
@@ -1526,9 +1527,6 @@ SHIP_COMBAT_SYSTEM_POP            | Population
 SHIP_COMBAT_SYSTEM_FACT           | Factories
 SHIP_COMBAT_SYSTEM_BASE           | Bases
 SHIP_COMBAT_TITLE_VICTORIOUS      | VICTORIOUS
-SHIP_COMBAT_RESULTS               | The %1 fleet was victorious at %2!
-SHIP_COMBAT_RESULTS_MONSTER       | The %1 was victorious at %2!
-SHIP_COMBAT_RESULTS_UNNAMED       | The %1 fleet was victorious!
 SHIP_COMBAT_SHIP_TOTALS           | %1 🡒 %2
 SHIP_COMBAT_RESULTS_RETREATED     | RETREATED
 SHIP_COMBAT_RESULTS_DESTROYED     | DESTROYED
@@ -1623,7 +1621,7 @@ RACES_UNITY                       | Unity
 RACES_OUT_OF_RANGE                | Out of Ship Range
 RACES_TRADE_LEVEL                 | %1 BC trade treaty
 RACES_TRADE_NONE                  | No trade treaty
-RACES_DIPLOMAT_RECALLED           | %1 diplomat recalled
+RACES_DIPLOMAT_RECALLED           | [alien_race] diplomat recalled
 RACES_DIPLOMATS_RECALLED          | Diplomats recalled
 
 RACES_DIPLOMACY_HOMEWORLD         | Homeworld
@@ -1634,10 +1632,10 @@ RACES_DIPLOMACY_TRADE_AMT         | %1 BC
 RACES_DIPLOMACY_CHARACTER         | Character
 RACES_DIPLOMACY_STATUS            | Status
 RACES_DIPLOMACY_RELATIONS_METER   | Relations Meter
-RACES_DIPLOMACY_RELATIONS_UNKNOWN | The mood and motives of the %1 are inscrutable to our diplomats and spies.
+RACES_DIPLOMACY_RELATIONS_UNKNOWN | The mood and motives of the [alien_empire] are inscrutable to our diplomats and spies.
 RACES_DIPLOMACY_BUREAU            | Diplomacy Bureau
 RACES_DIPLOMACY_BUREAU_DESC1      | Contact foreign empires or recall your diplomats to prevent empires from contacting you.
-RACES_DIPLOMACY_BUREAU_DESC       | Contact the %1 ambassador for an audience or establish contact if your diplomats have been recalled. 
+RACES_DIPLOMACY_BUREAU_DESC       | Contact the [alien_race] ambassador for an audience or establish contact if your diplomats have been recalled. 
 RACES_DIPLOMACY_BUREAU_DESC_RANGE | We cannot establish diplomatic relations with empires that are out of our ship range.
 RACES_DIPLOMACY_BUREAU_DESC_FINAL | We are engaged in a final war with the New Republic. Diplomacy is no longer an option. 
 RACES_DIPLOMACY_KNOWN_EMPIRES     | Known Foreign Empires
@@ -1645,15 +1643,14 @@ RACES_DIPLOMACY_RECALLED_DIPLOMAT | Recalled Diplomats
 RACES_DIPLOMACY_MANAGE_DIPLOMATS  | Manage Diplomats
 RACES_DIPLOMACY_AUDIENCE          | Audience
 RACES_DIPLOMACY_CONTACT           | Establish Contact
-RACES_DIPLOMACY_DIALOGUE_TITLE    | [%1 Diplomat]
 RACES_DIPLOMACY_TRADE_SUMMARY     | Trade Summary
-RACES_DIPLOMACY_TRADE_DESC        | Contact the %1 ambassador to negotiate a trade treaty. Trade networks take time and money to set up, but once mature bring money into your empire's treasury.
-RACES_DIPLOMACY_TRADE_DESC_RANGE  | We cannot establish trade networks with the %1 while they are out of ship range.
+RACES_DIPLOMACY_TRADE_DESC        | Contact the [alien_race] ambassador to negotiate a trade treaty. Trade networks take time and money to set up, but once mature bring money into your empire's treasury.
+RACES_DIPLOMACY_TRADE_DESC_RANGE  | We cannot establish trade networks with empires that are out of our ship range.
 RACES_DIPLOMACY_TRADE_DESC_FINAL  | We are engaged in a final war with the New Republic. Trade is no longer possible. 
 RACES_DIPLOMACY_TRADE_TREATY      | Trade Treaty
 RACES_DIPLOMACY_FOREIGN_RELATIONS | Foreign Relations
-RACES_DIPLOMACY_FOREIGN_RANGE     | We cannot know the foreign relations of the %1 until we have established diplomatic contact.
-RACES_DIPLOMACY_FOREIGN_DESC      | The %1 are in contact with the following races:
+RACES_DIPLOMACY_FOREIGN_RANGE     | We cannot know the foreign relations of the [alien_empire] until we have established diplomatic contact.
+RACES_DIPLOMACY_FOREIGN_DESC      | The [alien_race_plural] are in contact with the following races:
 RACES_DIPLOMACY_COUNTER_BUREAU    | Counter-Intelligence Bureau
 RACES_DIPLOMACY_COUNTER_DESC      | Security spending increases your spending and chance of discovering foreign spies.
 RACES_DIPLOMACY_COUNTER_DESC2     | Tax your colonies to increase security spending.
@@ -1669,7 +1666,7 @@ RACES_MANAGE_OUR_RECALLED         | Our diplomat recalled
 RACES_MANAGE_THEIR_RECALLED       | Their diplomat recalled
 RACES_MANAGE_BOTH_RECALLED        | Both diplomats recalled
 
-RACES_INTEL_TITLE                 | %1 Intelligence Report
+RACES_INTEL_TITLE                 | [alien_race] Intelligence Report
 RACES_COUNTER_INTEL_TITLE         | Counter-Intelligence Report
 RACES_INTEL_SECURITY_BONUS        | Security Bonus
 RACES_INTEL_TOTAL_SPENDING        | Total Spending
@@ -1703,15 +1700,15 @@ RACES_INTEL_BUREAU_SPIES          | Total Spies
 RACES_INTEL_BUREAU_MANAGE         | Manage Spies
 RACES_INTEL_BUREAU_SPENDING       | Total Spending
 RACES_INTEL_SPY_ORDERS            | Spy Orders
-RACES_INTEL_SPY_ORDERS_DESC       | Assign your spies to hide, steal secrets, or sabotage %1 colonies. The larger your spy network, the greater chance of success each turn as long as none of your spies is captured and confesses.
-RACES_INTEL_SPY_WARNING           | If discovered, this mission will break our treaty with the %1.
-RACES_INTEL_SPY_WARNING_WAR       | If discovered, this mission could trigger a war with the %1.
-RACES_INTEL_KNOWN_TECHNOLOGY      | %1 Known Technology
-RACES_INTEL_KNOWN_TECH_DESC       | Our spies report the %1 have mastered the following technologies. Any technology unknown to us is highlighted.
+RACES_INTEL_SPY_ORDERS_DESC       | Assign your spies to hide, steal secrets, or sabotage [alien_race] colonies. The larger your spy network, the greater chance of success each turn as long as none of your spies is captured and confesses.
+RACES_INTEL_SPY_WARNING           | If discovered, this mission will break our treaty with the [alien_race].
+RACES_INTEL_SPY_WARNING_WAR       | If discovered, this mission could trigger a war with the [alien_race].
+RACES_INTEL_KNOWN_TECHNOLOGY      | [alien_race] Known Technology
+RACES_INTEL_KNOWN_TECH_DESC       | Our spies report the [alien_race] have mastered the following technologies. Any technology unknown to us is highlighted.
 RACES_INTEL_UNKNOWN_TECHNOLOGY    | Unknown Technology Report
 RACES_INTEL_UNKNOWN_TECH_DESC     | Our spies report foreign races have mastered the following technologies unknown to us.
 
-RACES_MILITARY_TITLE              | %1 Starship Fleet
+RACES_MILITARY_TITLE              | [alien_race]  Starship Fleet
 RACES_MILITARY_SUBTITLE           | Ships by Hull Size
 RACES_MILITARY_UNSCANNED          | ??
 RACES_MILITARY_UNSCANNED_LONG     | Unscanned
@@ -1750,7 +1747,7 @@ RACES_MILITARY_TACTICAL           | Tactical Information
 RACES_MILITARY_WEAPONS            | Weapons
 RACES_MILITARY_SPECIALS           | Special Devices
 
-RACES_STATUS_THE_EMPIRE           | The %1
+RACES_STATUS_THE_EMPIRE           | The [alien_empire]
 RACES_STATUS_VS                   | vs.
 RACES_STATUS_KNOWN_EMPIRES        | %1 Known Empires
 RACES_STATUS_HISTORY              | Show %1 History
@@ -1764,7 +1761,7 @@ RACES_STATUS_PRODUCTION           | Production
 RACES_STATUS_TOTAL_POWER          | Total Power
 RACES_UNKNOWN_DATA                | ???
 
-RACES_SET_COLOR_TITLE             | Choose new color for %1
+RACES_SET_COLOR_TITLE             | Choose new color for the [alien_empire]
 RACES_SET_COLOR_DESC              | If the selected color and shape are used by another empire, the colors will be switched.
 
 // Races UI help
@@ -1806,9 +1803,9 @@ RACES_HELP_6F                     | Production - total industrial production for
 RACES_HELP_6G                     | Total Power - a combination of fleet strength, technology and production levels.
 
 // Sabotage UI
-SABOTAGE_TITLE                    | Our spies have infiltrated %1 colonies and are ready to carry out orders.
-SABOTAGE_PROMPT                   | Select the form of sabotage to commit against the %1 in the %2 system.
-SABOTAGE_WARNING                  | Warning! Any act of sabotage will break our treaty with the %1.
+SABOTAGE_TITLE                    | Our spies have infiltrated [alien_race] colonies and are ready to carry out orders.
+SABOTAGE_PROMPT                   | Select the form of sabotage to commit against the [alien_empire] in the %1 system.
+SABOTAGE_WARNING                  | Warning! Any act of sabotage will break our treaty with the [alien_empire].
 SABOTAGE_SELECT_TARGET            | Select a target
 SABOTAGE_BUTTON_FACTORIES         | Destroy Factories
 SABOTAGE_BUTTON_BASES             | Destroy Missile Bases
@@ -1843,7 +1840,7 @@ HISTORY_EMPIRE                    | Empire
 // Council UIs
 COUNCIL_CONVENE_TITLE             | The High Council Convenes
 COUNCIL_CONVENE                   | The High Council has convened to elect one leader to be Ruler of the Galaxy.
-COUNCIL_CONVENE2                  | Each empire casts a share of votes proportional to its population. A candidate must collect at least two thirds of all votes to be elected. The candidates are the leaders of the two most populous empires: %1 of the %2 and %3 of the %4.
+COUNCIL_CONVENE2                  | Each empire casts a share of votes proportional to its population. A candidate must collect at least two thirds of all votes to be elected. The candidates are the leaders of the two most populous empires: [first_name] of the [first_empire] and [second_name] of the [second_empire].
 COUNCIL_ADJOURN_TITLE             | The High Council Adjourns
 COUNCIL_ADJOURN                   | Voting has concluded and neither candidate has collected two-thirds of votes. No ruler has been named. The High Council will reconvene for another vote in 25 years.
 COUNCIL_SUMMARY_TITLE             | Voter Summary
@@ -1858,9 +1855,8 @@ COUNCIL_VOTES_REQUIRED            | %1 votes required to win election.
 COUNCIL_CAST_PROMPT               | We must cast our %1 votes.
 COUNCIL_CAST_PROMPT_TITLE         | Select a candidate.
 COUNCIL_CHOICE_ABSTAIN            | Abstain
-COUNCIL_CAST_VOTE                 | The %1 cast %2 votes for %3!
-COUNCIL_CAST_ABSTAIN              | The %1 abstains (%2 votes)
-COUNCIL_CHOICE_CANDIDATE          | %1 of the %2
+COUNCIL_CAST_VOTE                 | The [voter_empire] cast %1 votes for [candidate_name]!
+COUNCIL_CAST_ABSTAIN              | The [voter_empire] abstains (%1 votes)
 COUNCIL_CHOICE_ABSTAIN            | Abstain
 COUNCIL_VOTE_COUNT                | %1 votes
 COUNCIL_VOTE_CAST                 | %1 votes - for %2
@@ -1872,7 +1868,6 @@ COUNCIL_TREATY_NONE               | %1: No Treaty
 COUNCIL_TREATY_WAR                | %1: At War
 COUNCIL_CONTINUE                  | Continue
 COUNCIL_ELECTED_TITLE             | Ruler of the Galaxy Elected!
-COUNCIL_ELECTED                   | With %1 votes, the High Council names %2 of the %3 as High Master of the New Republic!
 COUNCIL_ACCEPT_RULING             | Accept Ruling
 COUNCIL_REJECT_RULING             | Reject Ruling
 

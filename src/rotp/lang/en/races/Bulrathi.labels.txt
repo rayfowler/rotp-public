@@ -6,8 +6,6 @@ _title                            | Grand Hierarch
 _nameTitle                        | Grand Hierarch
 
 
-GOVT_EMPIRE                       | %1 Empire
-
 //
 // All text below this point is copyright 2018-2020 Jeff Colucci
 // 

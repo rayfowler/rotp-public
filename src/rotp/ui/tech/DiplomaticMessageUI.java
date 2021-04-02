@@ -143,10 +143,7 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
             return;
         }
 
-//        if (options().usingExtendedRaces())
-//            remarkTitle = diplomatEmpire.race().text("RACES_DIPLOMACY_DIALOGUE_TITLE", diplomatEmpire.raceName(), diplomatEmpire.leader().name());
-//        else
-            remarkTitle = "";
+        remarkTitle = "";
         
         messageRemarkDetail = message.requestDetail();
         if (message.showTalking() && playAnimations())

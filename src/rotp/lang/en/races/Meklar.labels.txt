@@ -5,8 +5,6 @@ _race_plural                      | Meklars, Mechanars, Cybernars, Digitars, Tec
 _title                            | Supreme Arbiter
 _nameTitle                        | Supreme Arbiter 
 
-GOVT_EMPIRE                       | %1 Dominion 
-
 //
 // All text below this point is copyright 2018-2020 Jeff Colucci
 // 

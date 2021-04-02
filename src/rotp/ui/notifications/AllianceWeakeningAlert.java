@@ -25,7 +25,9 @@ public class AllianceWeakeningAlert  extends GameAlert {
     }
     @Override
     public String description() {
-        return text("MAIN_ALERT_ALLIANCE_WEAKENING", empire.name());
+        String desc = text("MAIN_ALERT_ALLIANCE_WEAKENING");
+        desc = empire.replaceTokens(desc, "ally");
+        return desc;
     }
     private AllianceWeakeningAlert(Empire e) {
         empire = e;

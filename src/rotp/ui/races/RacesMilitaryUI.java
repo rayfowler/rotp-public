@@ -197,7 +197,9 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
     private void drawFleetTitle(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(SystemPanel.orangeText);
         g.setFont(narrowFont(32));
-        g.drawString(text("RACES_MILITARY_TITLE", emp.raceName()), x+s10, y+h-s15);
+        String title = text("RACES_MILITARY_TITLE");
+        title = emp.replaceTokens(title, "alien");
+        g.drawString(title, x+s10, y+h-s15);
     }
     private void drawDefenseTitle(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(SystemPanel.orangeText);

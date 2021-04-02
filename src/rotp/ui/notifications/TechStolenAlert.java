@@ -25,7 +25,9 @@ public class TechStolenAlert extends GameAlert {
     }
     @Override
     public String description() {
-        return text("MAIN_ALERT_TECH_STOLEN", galaxy().empire(empSpy).name(), tech(techId).name());
+        String desc = text("MAIN_ALERT_TECH_STOLEN");
+        desc = galaxy().empire(empSpy).replaceTokens(desc, "alien");
+        return desc;
     }
     private TechStolenAlert(int emp, String t) {
         empSpy = emp;
