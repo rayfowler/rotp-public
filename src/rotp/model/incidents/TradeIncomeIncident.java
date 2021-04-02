@@ -21,8 +21,8 @@ import rotp.ui.diplomacy.DialogueManager;
 
 public class TradeIncomeIncident extends DiplomaticIncident {
     private static final long serialVersionUID = 1L;
-    final int empMe;
-    final int empYou;
+    public final int empMe;
+    public final int empYou;
     private final float profit;
 
     public static void create(EmpireView ev, float profit, float pct) {
@@ -32,9 +32,12 @@ public class TradeIncomeIncident extends DiplomaticIncident {
         profit = p;
         severity = min(30, max(0,pct*50));
         dateOccurred = galaxy().currentYear();
-        duration = 3;
         empMe = ev.owner().id;
         empYou = ev.empire().id;
+        
+        if (ev.owner().diplomatAI().setSeverityAndDuration(this))
+            return;
+        duration = 3;
     }
     private DiplomaticEmbassy embassy() {
         return galaxy().empire(empMe).viewForEmpire(empYou).embassy();

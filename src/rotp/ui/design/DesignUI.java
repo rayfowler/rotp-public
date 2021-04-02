@@ -1141,6 +1141,7 @@ public class DesignUI extends BasePanel {
                 Image img = icon(key).getImage();
                 int w0 = img.getWidth(null);
                 int h0 = img.getHeight(null);
+                
                 float scale = min((float)(shipW-s20)/w0, (float)(shipH-s20)/h0);
 
                 int w1 = (int)(scale*w0);
