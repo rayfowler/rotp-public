@@ -1497,8 +1497,6 @@ public class AIDiplomat implements Base, Diplomat {
                     if(bestVictim == voteOpponent)
                         warAllowed = true;
                     //our tech is worse (if we are stronger in other aspects we will catch up anyways)
-                    if(empire.tech().avgTechLevel() < v.empire().tech().avgTechLevel())
-                        warAllowed = false;
                     superiorityThreshold = 1.25f;
                     //System.out.println(empire.name()+" I'm up to be voted and thus act accordingly.");
                 }
@@ -1513,6 +1511,8 @@ public class AIDiplomat implements Base, Diplomat {
                 warAllowed = false;
             if(empire.alliedWith(bestVictim.id))
                 warAllowed = false;
+            if(empire.tech().avgTechLevel() < v.empire().tech().avgTechLevel())
+                warAllowed = false;
             for(Empire emp : bestVictim.warEnemies())
             {
                 helpingPower += emp.powerLevel(emp);
@@ -1521,7 +1521,7 @@ public class AIDiplomat implements Base, Diplomat {
             {
                 enemyAllyPower += emp.powerLevel(emp);
             }
-            
+            //System.out.println(empire.name()+" col: "+empire.generalAI().additionalColonizersToBuild(true)+" fac: "+atFactoryLimit+" pop: "+atPopulationLimit+" allied: "+empire.alliedWith(bestVictim.id)+" tech: "+(empire.tech().avgTechLevel() < v.empire().tech().avgTechLevel()));
             //System.out.println(empire.name()+" bestVictim: "+bestVictim+" power: "+empire.powerLevel(empire) + helpingPower+" vs. "+(empire.powerLevel(bestVictim) + enemyAllyPower) + " Threshold: "+superiorityThreshold +" "+empire.leader().personality()+" "+empire.leader().objective()+" War Allowed: "+warAllowed);
             if(warAllowed &&
                     empire.powerLevel(empire) + helpingPower > (empire.powerLevel(bestVictim) + enemyAllyPower) * superiorityThreshold)

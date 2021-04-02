@@ -694,7 +694,8 @@ public class AIGeneral implements Base, General {
             {
                 continue;
             }
-            additional++;
+            if(sys.monster() == null)
+                additional++;
         }
         //System.out.print("\n"+empire.name()+" "+additional+" from uncolonized scouted without en-route.");
         List<StarSystem> alreadyCounted = new ArrayList<>();
