@@ -28,19 +28,29 @@ public class OathBreakerIncident extends DiplomaticIncident {
     final int empBreaker;
     final int empVictim;
     public static void alertBrokenAlliance(Empire breaker, Empire victim) {
+        alertBrokenAlliance(breaker,victim,null);
+    }
+    public static void alertBrokenAlliance(Empire breaker, Empire victim, Empire requestor) {
         Set<Empire> allContacts = Empire.allContacts(breaker, victim);
         allContacts.add(victim);
         for (Empire contact: allContacts) {
-            OathBreakerIncident inc = new OathBreakerIncident(breaker, victim, contact, 1,ALLIANCE_SEV);
-            contact.viewForEmpire(breaker).embassy().addIncident(inc);
+            if (contact != requestor) {
+                OathBreakerIncident inc = new OathBreakerIncident(breaker, victim, contact, 1,ALLIANCE_SEV);
+                contact.viewForEmpire(breaker).embassy().addIncident(inc);
+            }
         }
     }
     public static void alertBrokenPact(Empire breaker, Empire victim) {
+        alertBrokenPact(breaker,victim,null);
+    }
+    public static void alertBrokenPact(Empire breaker, Empire victim, Empire requestor) {
         Set<Empire> allContacts = Empire.allContacts(breaker, victim);
         allContacts.add(victim);
         for (Empire contact: allContacts) {
-            OathBreakerIncident inc = new OathBreakerIncident(breaker, victim, contact, 2,PACT_SEV);
-            contact.viewForEmpire(breaker).embassy().addIncident(inc);
+            if (contact != requestor) {
+                OathBreakerIncident inc = new OathBreakerIncident(breaker, victim, contact, 2,PACT_SEV);
+                contact.viewForEmpire(breaker).embassy().addIncident(inc);
+            }
         }
     }
     private OathBreakerIncident(Empire brk, Empire vic, Empire obs,int type, int sev) {
@@ -49,13 +59,20 @@ public class OathBreakerIncident extends DiplomaticIncident {
         oathBreakType = type;
         dateOccurred = galaxy().currentYear();
         
-        duration = obs.leader().oathBreakerDuration();
+        duration = obs.diplomatAI().leaderOathBreakerDuration();
+        
+        // zero duration means zero severity. That's ruthless!
+        if (duration == 0) {
+            duration = 1; // avoid /0 errors
+            severity = 0;
+            return;
+        }
+        
         // longer duration for the victim of the oathbreaking
         if (vic == obs)
             duration *= 2;
 
-        // zero duration means zero severity. That's ruthless!
-        severity = duration == 0 ? 0 : max(-30,sev);
+        severity = max(-30,sev);
     }
     @Override
     public String title()        { return text("INC_OATHBREAKER_TITLE"); }

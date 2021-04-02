@@ -74,6 +74,7 @@ public class FleetMassDeployPanel extends BasePanel {
     }
     private void initModel() {
         setOpaque(true);
+        setPreferredSize(new Dimension(getWidth(),scaled(340)));
         setBackground(FleetUI.backHiC);
         BasePanel bottomPanel = new FleetDeployPane();
 

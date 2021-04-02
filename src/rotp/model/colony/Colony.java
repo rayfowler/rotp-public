@@ -34,6 +34,7 @@ import rotp.model.incidents.ColonyCapturedIncident;
 import rotp.model.incidents.ColonyInvadedIncident;
 import rotp.model.planet.Planet;
 import rotp.model.ships.ShipDesign;
+import rotp.model.ships.ShipDesignLab;
 import rotp.model.tech.Tech;
 import rotp.model.tech.TechMissileWeapon;
 import rotp.model.tech.TechTree;
@@ -99,7 +100,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
             new ColonyIndustry(), new ColonyEcology(), new ColonyResearch() };
 
     private boolean underSiege = false;
-    private boolean keepEcoLockedToClean;
+    private boolean keepEcoLockedToClean; 
     private transient boolean hasNewOrders = false;
     private transient int cleanupAllocation = 0;
     private transient boolean recalcSpendingForNewTaxRate;
@@ -141,10 +142,12 @@ public final class Colony implements Base, IMappedObject, Serializable {
         else
             return true;
     }
+    public float untargetedHitPoints()         { return UNTARGETED_DAMAGE_FOR_POPLOSS * population(); }
     public void clearAllRebellion() {
         rebels = 0;
         rebellion = false;
     }
+    public boolean isGovernor()                { return false; }
     public float currentProductionCapacity() {
         // returns a pct (0 to 1) representing the colony's current
         // production vs its maximum possible formula
@@ -223,10 +226,11 @@ public final class Colony implements Base, IMappedObject, Serializable {
     public int allocationRemaining()              { return MAX_TICKS - totalAmountAllocated(); }
     public float totalPlanetaryResearch()         { 
         float totalBC = research().totalSpending();
+        float productAdj = planet().productionAdj();
         if (empire.divertColonyExcessToResearch()) {
-            totalBC += shipyard().excessSpending();
-            totalBC += defense().excessSpending();
-            totalBC += industry().excessSpending();
+            totalBC += shipyard().excessSpending() / productAdj;
+            totalBC += defense().excessSpending() / productAdj;
+            totalBC += industry().excessSpending() / productAdj;
             totalBC += ecology().excessSpending();
         }        
         float totalRP = totalBC * research().researchBonus();
@@ -234,10 +238,11 @@ public final class Colony implements Base, IMappedObject, Serializable {
     }
     public float totalPlanetaryResearchSpending() { 
         float totalBC = research().totalSpending(); 
+        float productAdj = planet().productionAdj();
         if (empire.divertColonyExcessToResearch()) {
-            totalBC += shipyard().excessSpending();
-            totalBC += defense().excessSpending();
-            totalBC += industry().excessSpending();
+            totalBC += shipyard().excessSpending() / productAdj;
+            totalBC += defense().excessSpending() / productAdj;
+            totalBC += industry().excessSpending() / productAdj;
             totalBC += ecology().excessSpending();
         }
         return totalBC;
@@ -287,7 +292,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
     public void setCleanupPct(float d) {
         // occurs when ai is reseting eco for minimum cleanup
         allocation(ECOLOGY, (int) Math.ceil(d*MAX_TICKS));
-        cleanupSpending(ecology());
+        redistributeReducedEcoSpending();
     }
     public boolean increment(int catNum, int amt) {
         if (!canAdjust(catNum))
@@ -365,8 +370,13 @@ public final class Colony implements Base, IMappedObject, Serializable {
         industry().previousFactories(30);
 
         Empire emp = empire();
-        galaxy().ships.buildShips(emp.id, starSystem().id, empire().shipLab().scoutDesign().id(), 2);
-        galaxy().ships.buildShips(emp.id, starSystem().id, empire().shipLab().colonyDesign().id(), 1);
+        ShipDesignLab lab = emp.shipLab();
+        ShipDesign scout = lab.scoutDesign();
+        ShipDesign colony = lab.colonyDesign();
+        galaxy().ships.buildShips(emp.id, starSystem().id, scout.id(), 2);
+        galaxy().ships.buildShips(emp.id, starSystem().id, colony.id(), 1);
+        lab.recordConstruction(scout, 2);
+        lab.recordConstruction(colony, 1);
     }
 
     public void spreadRebellion() {
@@ -439,9 +449,9 @@ public final class Colony implements Base, IMappedObject, Serializable {
         log("Colony: ", empire.sv.name(starSystem().id),  ": NextTurn [" , shipyard().design().name() , "|" ,str(shipyard().allocation()) , "-"
                     , str(defense().allocation()) , "-" , str(industry().allocation()) , "-" , str(ecology().allocation()) , "-"
                     , str(research().allocation()) , "]");
+        keepEcoLockedToClean = empire().isPlayerControlled() && (allocation[ECOLOGY] <= cleanupAllocation());
         previousPopulation = population;
         reallocationRequired = false;          
-
         ensureProperSpendingRates();
         // if rebelling, nothing happens (only enough prod assumed to clean new
         // waste and maintain existing structures)
@@ -449,7 +459,6 @@ public final class Colony implements Base, IMappedObject, Serializable {
             return;
 
         // after turn is over, we may need to reset ECO spending to adjust for cleanup
-        keepEcoLockedToClean = empire().isPlayer() && (allocation[ECOLOGY] >= cleanupAllocation());
         // make sure that the colony's expenses aren't too high
         empire().governorAI().lowerExpenses(this);
 
@@ -523,12 +532,25 @@ public final class Colony implements Base, IMappedObject, Serializable {
     }
     public void checkEcoAtClean() {
         recalcSpendingForNewTaxRate = false;
-        if (!locked[ECOLOGY]) {
-            int newAlloc = ecology().cleanupAllocationNeeded();
-            if (allocation[ECOLOGY] < newAlloc) {
-                allocation[ECOLOGY] = cleanupAllocation = newAlloc;
-                cleanupSpending(ecology());
-            }        
+        if (locked[ECOLOGY]) 
+            return;
+        
+        int cleanAlloc = ecology().cleanupAllocationNeeded();
+        if (allocation[ECOLOGY] == cleanAlloc)
+            return;
+        
+        // always ensure we are at least at clean
+        if (allocation[ECOLOGY] < cleanAlloc) {
+            allocation[ECOLOGY] = cleanupAllocation = cleanAlloc;
+            redistributeReducedEcoSpending();
+            return;
+        }
+        
+        // if we are over clean but the colony started its turn at clean
+        // then lower
+        if ((allocation[ECOLOGY] > cleanAlloc) && keepEcoLockedToClean) {
+            allocation[ECOLOGY] = cleanupAllocation = cleanAlloc;
+            redistributeReducedEcoSpending();
         }
     }
     public void lowerECOToCleanIfEcoComplete() {
@@ -645,7 +667,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
             }
         }
     }
-    public void cleanupSpending(ColonySpendingCategory cat) {
+    private void redistributeReducedEcoSpending() {
         int maxAllocation = ColonySpendingCategory.MAX_TICKS;
         // determine how much categories are over/under spent
         int spendingTotal = 0;
@@ -653,15 +675,16 @@ public final class Colony implements Base, IMappedObject, Serializable {
             spendingTotal += spending[i].allocation();
 
         int adj = maxAllocation - spendingTotal;
-
-        for (int i = 0; i < NUM_CATS; i++) {
-            ColonySpendingCategory currCat = spending[cleanupSeq[i]];
-            if ((currCat != cat) && !locked(cleanupSeq[i]))
-                adj -= currCat.adjustValue(adj);
-        }
-
-        // if any adj remaining, send back to original cat
-        cat.adjustValue(adj);
+        if (adj == 0)
+            return;
+        
+        // funnel excess to industry if it's not completed
+        if (!industry().isCompleted())
+            adj -= spending[INDUSTRY].adjustValue(adj);
+        
+        // put whatever is left in research
+        if (adj > 0)
+            spending[RESEARCH].adjustValue(adj);
     }
     public void realignSpending(ColonySpendingCategory cat) {
         int maxAllocation = ColonySpendingCategory.MAX_TICKS;
@@ -718,7 +741,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
     public float production() {
         if (inRebellion())
             return 0.0f;
-        float mod = empire().isPlayer() ? 1.0f : options().aiProductionModifier();
+        float mod = empire().isPlayerControlled() ? 1.0f : options().aiProductionModifier();
         float workerProd = workingPopulation() * empire.workerProductivity();
         return mod*(workerProd + usedFactories());
     }
@@ -793,14 +816,14 @@ public final class Colony implements Base, IMappedObject, Serializable {
     public float expectedPopPct() {
         return (expectedPopulation() / planet.currentSize());
     }
-    public int calcPopNeeded(float pct) {
-        return (int) ((planet.currentSize() * pct) - expectedPopulation());
+    public int calcPopNeeded(float desiredPct) {
+        return (int) ((planet.currentSize() * desiredPct) - expectedPopulation());
     }
-    public int calcPopToGive(float pct) {
+    public int calcPopToGive(float retainPct) {
         if (!canTransport())
             return 0;
         int p1 = maxTransportsAllowed();
-        int p2 = (int) (population() - (empire.ai().targetPopPct(starSystem()) * planet().currentSize()));
+        int p2 = (int) (population() - (retainPct * planet().currentSize()));
         return min(p1,p2);
     }
     public float newWaste() {
@@ -810,11 +833,16 @@ public final class Colony implements Base, IMappedObject, Serializable {
         if (empire.ignoresPlanetEnvironment())
             return 0;
         
-        float mod = empire().isPlayer() ? 1.0f : options().aiWasteModifier();
+        float mod = empire().isPlayerControlled() ? 1.0f : options().aiWasteModifier();
         return mod*(min(planet.maxWaste(), planet.waste()) + newWaste()) / tech().wasteElimination();
     }
     public float minimumCleanupCost() {
         return min(wasteCleanupCost(), totalIncome());
+    }
+    public void ensureMinimumCleanup() {
+        float pct = wasteCleanupCost()/totalIncome();
+        if (ecology().pct() < pct)
+            forcePct(ECOLOGY, pct);
     }
     public float maxSize() {
         float terraformAdj = tech().terraformAdj();
@@ -885,7 +913,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
             }
             setPopulation(population() - transport().size());
             transport = new Transport(starSystem());
-            if (empire.isPlayer())
+            if (empire.isPlayerControlled())
                 starSystem().transportSprite().launch();
         }
     }
@@ -912,7 +940,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         }
         checkEcoAtClean();
         // reset ship views
-        if (empire.isPlayer())
+        if (empire.isPlayerControlled())
             empire.setVisibleShips();
     }
     public void acceptTransport(Transport t) {
@@ -930,7 +958,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         setPopulation(rebels);
 
         if (population() > 0) {
-            if (empire.isPlayer() || tr.empire().isPlayer())
+            if (empire.isPlayerControlled() || tr.empire().isPlayerControlled())
                 RotPUI.instance().selectGroundBattlePanel(this, tr);
             else
                 completeDefenseAgainstTransports(tr);
@@ -1021,9 +1049,9 @@ public final class Colony implements Base, IMappedObject, Serializable {
         // player notification only.
         if (tr.size() == 0) {
             log(concat(str(tr.launchSize()), " ", tr.empire().raceName(), " transports perished at ", name()));
-            if (tr.empire().isPlayer()) 
+            if (tr.empire().isPlayerControlled()) 
                 TransportsKilledAlert.create(empire(), starSystem(), tr.launchSize());
-            else if (empire().isPlayer()) 
+            else if (empire().isPlayerControlled()) 
                 InvadersKilledAlert.create(tr.empire(), starSystem(), tr.launchSize());
             return;
         }
@@ -1117,9 +1145,11 @@ public final class Colony implements Base, IMappedObject, Serializable {
 
         setPopulation(tr.size());
         tr.size(0);
+        shipyard().capturedBy(tr.empire());
         industry().capturedBy(tr.empire());
         defense().capturedBy(tr.empire());
         ecology().capturedBy(tr.empire());
+        research().capturedBy(tr.empire());
 
         StarSystem sys = starSystem();
         empire.removeColonizedSystem(sys);

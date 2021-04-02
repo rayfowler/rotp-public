@@ -81,8 +81,20 @@ public class ColonyEcology extends ColonySpendingCategory {
         colony().removeColonyOrder(Colony.Orders.TERRAFORM);
     }
     public void capturedBy(Empire newCiv) {
+        if (newCiv == empire())
+            return;
         hostileBC = 0;
         soilEnrichBC = 0;
+        unallocatedBC = 0;
+        wasteCleaned = 0;
+        newGrownPopulation = 0;
+        newPurchasedPopulation = 0;
+        newBiosphereIncrease = 0;
+        atmosphereCompleted = false;
+        soilEnrichCompleted = false;
+        terraformCompleted = false;
+        populationGrowthCompleted = false;
+        expectedPopGrowth = 0;
     }
     public float waste()           { return planet().waste(); }
     public void addWaste(float w)  { planet().addWaste(w); }
@@ -459,7 +471,7 @@ public class ColonyEcology extends ColonySpendingCategory {
         float needed = colony().minimumCleanupCost();
         if (needed == 0)
             return 0;
-        float prod = colony().totalProductionIncome() + colony().maxReserveIncome();
+        float prod = colony().totalIncome();
         float pctNeeded = min(1, needed / prod);
         int ticks = (int) Math.ceil(pctNeeded * MAX_TICKS);
         return ticks;

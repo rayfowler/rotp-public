@@ -67,7 +67,7 @@ public class RandomEventComputerVirus implements Base, Serializable, RandomEvent
         empId = emp.id;
         techId = targetCat.currentTech();
         targetCat.resetResearchBC();
-        if (emp.isPlayer() || player().hasContact(emp))
+        if (emp.isPlayerControlled() || player().hasContact(emp))
             GNNNotification.notifyRandomEvent(notificationText(), "GNN_Event_Virus");
     }
 }

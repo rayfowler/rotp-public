@@ -22,9 +22,9 @@ import rotp.ui.diplomacy.DialogueManager;
 
 public class AttackedAllyIncident extends DiplomaticIncident {
     private static final long serialVersionUID = 1L;
-    final int empAttacker;
-    final int empAlly;
-    final int empMe;
+    public final int empAttacker;
+    public final int empAlly;
+    public final int empMe;
     public static void alert(Empire attacker, Empire defender, ShipCombatResults res) {
         List<Empire> allies = defender.allies();
 

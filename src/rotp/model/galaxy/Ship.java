@@ -23,12 +23,13 @@ import rotp.util.Base;
 
 public interface Ship extends IMappedObject {
     static final int NOT_LAUNCHED = -1;
-    default float hullPoints()        { return 0; }
-    default boolean isRallied()        { return false; }
+    default float hullPoints()          { return 0; }
+    default boolean isRallied()         { return false; }
     default boolean passesThroughNebula(IMappedObject to) { return passesThroughNebula(this, to); }
     default boolean validDestination(int sysId) { return canSendTo(sysId);  }
-    default boolean nullDest()  { return destSysId() == StarSystem.NULL_ID; }
-    default boolean retreating() { return false; }
+    default boolean nullDest()          { return destSysId() == StarSystem.NULL_ID; }
+    default boolean retreating()        { return false; }
+    default boolean isTransport()       { return false; }
 
     public boolean canSendTo(int sysId);
     public float arrivalTime();

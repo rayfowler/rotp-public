@@ -454,6 +454,10 @@ public class MapOverlayBombardPrompt extends MapOverlay {
         boolean shift = e.isShiftDown();
         switch(e.getKeyCode()) {
             case KeyEvent.VK_ESCAPE:
+                if (bombarded)
+                    advanceMap();
+                else 
+                    bombardCancel();
             case KeyEvent.VK_N:
                 bombardCancel();
                 break;

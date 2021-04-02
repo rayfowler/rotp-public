@@ -47,6 +47,7 @@ public final class ShipCombatResults implements Base {
     public StarSystem system()            { return system; }
     public Empire defender()              { return defender; }
     public Empire attacker()              { return attacker; }
+    public SpaceMonster monster()         { return monster; }
     public List<Empire> empires()         { return empires; }
     public int basesDestroyed()           { return basesDestroyed; }
     public int popDestroyed()             { return colonyStack == null ? 0 : (int) Math.ceil(colonyStack.populationLost()); }
@@ -175,11 +176,15 @@ public final class ShipCombatResults implements Base {
     public void addBasesDestroyed(int num) {
         basesDestroyed += num;
     }
-    public void addShipStackDestroyed(ShipDesign d, int count) {
+    public void addShipDestroyed(ShipDesign d, int count) {
+        // called when individual ships in a stack are destroyed
         if (shipsDestroyed.containsKey(d))
             shipsDestroyed.put(d, count+shipsDestroyed.get(d));
         else
             shipsDestroyed.put(d, count);
+    }
+    public void addShipStackDestroyed(ShipDesign d, int count) {
+        shipsDestroyed.put(d, count);
     }
     public void addShipsDamaged(ShipDesign d, int count) {
         if (shipsDamaged.containsKey(d))
@@ -206,10 +211,8 @@ public final class ShipCombatResults implements Base {
             BioweaponIncident.create(defender(), e, system());
 
         if (monster != null) {
-            if (!monster.alive()) {
+            if (!monster.alive()) 
                 monster.plunder();
-                system.monster(null);
-            }
             return;
         }
         // if a neutral system, then a skirmish for all

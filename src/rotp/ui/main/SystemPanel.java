@@ -175,6 +175,7 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
         add(detailPane, BorderLayout.CENTER);
         if (bottomPane != null) 
             add(bottomPane, BorderLayout.SOUTH); 
+        setPreferredSize(new Dimension(getWidth(), scaled(300)));
     }
     protected abstract BasePanel topPane();
     protected abstract BasePanel detailPane();
@@ -397,7 +398,7 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
         Planet planet = sys.planet();
         int rightMargin = s10;
 
-        if (planet.maxSize() > 0) {
+        if (!planet.type().isAsteroids() && (planet.maxSize() > 0)) {
             g2.setFont(textF);
             String popStr;
             boolean ignoreWaste = planet.isColonized() && planet.empire().ignoresPlanetEnvironment();

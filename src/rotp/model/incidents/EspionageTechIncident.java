@@ -15,6 +15,7 @@
  */
 package rotp.model.incidents;
 
+import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.EspionageMission;
@@ -30,10 +31,10 @@ public class EspionageTechIncident extends DiplomaticIncident {
 
     public EspionageTechIncident(EmpireView ev, EspionageMission m) {
         ev.embassy().resetAllianceTimer();
-        severity = max(-20,ev.embassy().currentSpyIncidentSeverity());
+        severity = max(-20,-10+ev.embassy().currentSpyIncidentSeverity());
 
         dateOccurred = galaxy().currentYear();
-        duration = 10;
+        duration = ev.empire().leader().isTechnologist()? 20 : 10;
         
         // empSpy is the actual spy
         // empThief is the suspected spy (the one who was framed)
@@ -46,7 +47,7 @@ public class EspionageTechIncident extends DiplomaticIncident {
     @Override
     public boolean isSpying()         { return true; }
     @Override
-    public int timerKey()           { return SPY_WARNING; }
+    public int timerKey()           { return DiplomaticEmbassy.TIMER_SPY_WARNING; }
     @Override
     public String title()             { return text("INC_TECH_STOLEN_TITLE"); }
     @Override
@@ -58,11 +59,11 @@ public class EspionageTechIncident extends DiplomaticIncident {
     }
     public void frameEmpire(Empire e) {
         empThief = e.id;
-        if (galaxy().empire(empVictim).isPlayer())
+        if (galaxy().empire(empVictim).isPlayerControlled())
             TechStolenAlert.create(empThief, techId);
     }
     @Override
-    public String warningMessageId() { return galaxy().empire(empVictim).isPlayer() ? "" : DialogueManager.WARNING_ESPIONAGE; }
+    public String warningMessageId() { return galaxy().empire(empVictim).isPlayerControlled() ? "" : DialogueManager.WARNING_ESPIONAGE; }
     @Override
     public String declareWarId()     { return DialogueManager.DECLARE_SPYING_WAR; }
     @Override

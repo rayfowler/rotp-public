@@ -28,6 +28,7 @@ public class DiplomaticNotification implements TurnNotification, Base {
     private Empire other;
     private String type;
     private DiplomaticIncident incident;
+    private boolean returnToMap = false;
 
     public static DiplomaticNotification create(EmpireView v, String messageType) {
         DiplomaticNotification notif = new DiplomaticNotification(v, messageType);
@@ -88,6 +89,8 @@ public class DiplomaticNotification implements TurnNotification, Base {
     public DiplomaticIncident incident() { return incident; }
     public String type()                 { return type; }
     public EmpireView view()             { return view; }
+    public void setReturnToMap()         { returnToMap = true; }
+    public boolean returnToMap()         { return returnToMap; }
     public void view(EmpireView v)       { view = v; talker = v.owner(); }
     @Override
     public String displayOrder() { return incident == null ? DIPLOMATIC_MESSAGE : incident.displayOrder(); }

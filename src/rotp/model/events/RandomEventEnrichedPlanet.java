@@ -57,7 +57,8 @@ public class RandomEventEnrichedPlanet implements Base, Serializable, RandomEven
         
         targetSystem.addEvent(new SystemRandomEvent("SYSEVENT_ENRICHED"));
         targetSystem.planet().setResourceRich();
-        if (player().knowsOf(emp))
+        if (player().knowsOf(empId)
+        && !player().sv.name(sysId).isEmpty())
             GNNNotification.notifyRandomEvent(notificationText(), "GNN_Event_Enriched");
     }
 }

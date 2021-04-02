@@ -16,7 +16,6 @@
 package rotp.model.events;
 
 import java.io.Serializable;
-import rotp.ui.UserPreferences;
 import rotp.util.Base;
 
 public class SystemRandomEvent implements Base, Serializable, StarSystemEvent {
@@ -28,9 +27,7 @@ public class SystemRandomEvent implements Base, Serializable, StarSystemEvent {
         key = s;
     }
     @Override
-    public String year() {
-        return UserPreferences.displayYear() ? str(galaxy().beginningYear() + turn) : str(turn+1);
-    }
+    public int turn()                    { return turn; }
     @Override
     public String description() {
         return text(key);

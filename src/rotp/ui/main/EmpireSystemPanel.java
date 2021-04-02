@@ -430,7 +430,7 @@ public class EmpireSystemPanel extends SystemPanel {
                     int i = 0;
                     name = "";
                 }
-                scaledFont(g, name, barW-s5, 18, 14);
+                scaledFont(g, name, barW-s5, 18, 8);
                 int sw = g.getFontMetrics().stringWidth(name);
                 int x0 = barX+((barW-sw)/2);
                 g.drawString(name, x0, barY+s16);
@@ -449,6 +449,7 @@ public class EmpireSystemPanel extends SystemPanel {
             if (sys == null)
                 return;
 
+            boolean enabled = rallyPointEnabled();
             rallyPointBox.setBounds(x, y, w, h);
             GradientPaint pt = new GradientPaint(x, y, gray175C, x+w, y, gray115C);
             Paint prevPaint = g.getPaint();
@@ -458,7 +459,7 @@ public class EmpireSystemPanel extends SystemPanel {
 
             Stroke prevStroke = g.getStroke();
             if ((hoverBox == rallyPointBox)
-            && player().canRallyFleetsFrom(id(sys)))
+            && enabled)
                 g.setColor(SystemPanel.yellowText);
             else
                 g.setColor(gray175C);
@@ -469,7 +470,7 @@ public class EmpireSystemPanel extends SystemPanel {
 
             String s = text("MAIN_COLONY_RELOCATE_LABEL");
             scaledFont(g, s, w-s10, 17, 15);
-            if (!player().canRallyFleetsFrom(id(sys)))
+            if (!enabled)
                 g.setColor(gray90C);
             else if (hoverBox == rallyPointBox)	
                 g.setColor(SystemPanel.yellowText);
@@ -484,6 +485,7 @@ public class EmpireSystemPanel extends SystemPanel {
             if (sys == null)
                 return;
 
+            boolean enabled = transportEnabled();
             transportBox.setBounds(x, y, w, h);
             g.setColor(darkShadingC);
             g.fillRect(x+s2,y+s5,w-s2,h-s5);
@@ -491,7 +493,7 @@ public class EmpireSystemPanel extends SystemPanel {
             g.fillRect(x+s2,y+s5, w-s3, h-s7);
             g.setColor(buttonC);
             g.fillRect(x+s3,y+s6, w-s5, h-s9);
-            if (!player().canSendTransportsFrom(sys))
+            if (!enabled)
                 g.setColor(gray70C);
             else if (hoverBox == transportBox)
                 g.setColor(SystemPanel.yellowText);
@@ -504,7 +506,7 @@ public class EmpireSystemPanel extends SystemPanel {
             int sw = g.getFontMetrics().stringWidth(s);
             g.drawString(s, x+((w-sw)/2),y+s25);
             if ((hoverBox == transportBox)
-            && player().canSendTransportsFrom(sys)) {
+            && enabled) {
                 Stroke prevStroke = g.getStroke();
                 g.setStroke(stroke2);
                 g.setColor(SystemPanel.yellowText);
@@ -517,6 +519,7 @@ public class EmpireSystemPanel extends SystemPanel {
             if (sys == null)
                 return;
 
+            boolean enabled = transportEnabled();
             abandonBox.setBounds(x, y, w, h);
             g.setColor(MainUI.shadeBorderC());
             g.fillRect(x, y, w, h);
@@ -526,7 +529,7 @@ public class EmpireSystemPanel extends SystemPanel {
             g.fillRect(x+s2,y+s5, w-s3, h-s7);
             g.setColor(buttonC);
             g.fillRect(x+s3,y+s6, w-s5, h-s9);
-            if (!player().canSendTransportsFrom(sys))
+            if (!enabled)
                 g.setColor(gray70C);
             else if (hoverBox == abandonBox)
                 g.setColor(SystemPanel.yellowText);
@@ -540,7 +543,7 @@ public class EmpireSystemPanel extends SystemPanel {
             int sw = g.getFontMetrics().stringWidth(s);
             g.drawString(s, x+((w-sw)/2),y+s25);
             if ((hoverBox == abandonBox)
-            && player().canSendTransportsFrom(sys)) {
+            && enabled) {
                 Stroke prevStroke = g.getStroke();
                 g.setStroke(stroke2);
                 g.setColor(SystemPanel.yellowText);
@@ -598,8 +601,8 @@ public class EmpireSystemPanel extends SystemPanel {
             }
             return starBackground;
         }
-        private boolean rallyPointEnabled() { return player().canRallyFleetsFrom(id(parentSpritePanel.systemViewToDisplay())); }
-        private boolean transportEnabled() { return player().canSendTransportsFrom(parentSpritePanel.systemViewToDisplay()); }
+        private boolean rallyPointEnabled() { return !session().performingTurn() && player().canRallyFleetsFrom(id(parentSpritePanel.systemViewToDisplay())); }
+        private boolean transportEnabled() { return !session().performingTurn() && player().canSendTransportsFrom(parentSpritePanel.systemViewToDisplay()); }
         @Override
         public void mouseClicked(MouseEvent arg0) { }
         @Override
@@ -724,7 +727,8 @@ public class EmpireSystemPanel extends SystemPanel {
                     decrementBuildLimit();
                 return;
             }
-            if (shipDesignBox.contains(x,y)) {
+            if (shipDesignBox.contains(x,y) 
+            || shipNameBox.contains(x,y)) {
                 if (e.getWheelRotation() < 0)
                     nextShipDesign();
                 else

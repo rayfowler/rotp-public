@@ -368,7 +368,7 @@ public class ManageDiplomatsUI  extends BasePanel implements MouseListener, Mous
             repaint();
         }
         else {
-            DiplomaticMessage.show(view.empire().viewForEmpire(player()), DialogueManager.DIPLOMACY_GREETING);   
+            DiplomaticMessage.show(view.empire().viewForEmpire(player()), DialogueManager.DIPLOMACY_MAIN_MENU);   
             parent.repaint();
         }
     }

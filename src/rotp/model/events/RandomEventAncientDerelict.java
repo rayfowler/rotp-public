@@ -73,7 +73,7 @@ public class RandomEventAncientDerelict implements Base, Serializable, RandomEve
         }
 
         empId = emp.id;
-        if (emp.isPlayer() || player().hasContact(emp))
+        if (emp.isPlayerControlled() || player().hasContact(emp))
             GNNNotification.notifyRandomEvent(notificationText(), "GNN_Event_Derelict");
 
         for (String techId: discoveredTechs)

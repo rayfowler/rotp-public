@@ -15,6 +15,7 @@
  */
 package rotp.model.incidents;
 
+import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.SabotageMission;
 import rotp.ui.diplomacy.DialogueManager;
@@ -39,7 +40,7 @@ public class SabotageRebellionIncident extends DiplomaticIncident {
     }
     private SabotageRebellionIncident(EmpireView ev, SabotageMission m) {
         dateOccurred = galaxy().currentYear();
-        duration = 10;
+        duration = ev.empire().leader().isXenophobic()? 20 : 10;
 
         empVictim = ev.owner().id;
         empSpy = ev.empire().id;
@@ -51,13 +52,13 @@ public class SabotageRebellionIncident extends DiplomaticIncident {
     @Override
     public boolean isSpying()        { return true; }
     @Override
-    public int timerKey()          { return SPY_WARNING; }
+    public int timerKey()          { return DiplomaticEmbassy.TIMER_SPY_WARNING; }
     @Override
     public String title()            { return text("INC_INCITED_REBELLION_TITLE"); }
     @Override
     public String description()      { return decode(text("INC_INCITED_REBELLION_DESC")); }
     @Override
-    public String warningMessageId() { return galaxy().empire(empVictim).isPlayer() ? "" : DialogueManager.WARNING_SABOTAGE; }
+    public String warningMessageId() { return galaxy().empire(empVictim).isPlayerControlled() ? "" : DialogueManager.WARNING_SABOTAGE; }
     @Override
     public String declareWarId()     { return DialogueManager.DECLARE_SPYING_WAR; }
     @Override

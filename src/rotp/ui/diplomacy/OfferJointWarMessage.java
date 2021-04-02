@@ -37,7 +37,7 @@ public class OfferJointWarMessage extends TurnNotificationMessage {
         switch (i) {
             case 0 : return text("DIPLOMACY_ACCEPT_JOIN_WAR");
             case 1 :
-                if (player().alliedWith(diplomat().id))
+                if (player().alliedWith(diplomat().id) && diplomat().atWarWith(target.id))
                     return text("DIPLOMACY_DECLINE_BREAK_ALLIANCE");
                 else
                     return text("DIPLOMACY_DECLINE_OFFER");
@@ -60,7 +60,12 @@ public class OfferJointWarMessage extends TurnNotificationMessage {
     }
     @Override
     public void escape() {
-        DiplomaticReply reply = player().diplomatAI().refuseOfferJointWar(diplomat());
+        DiplomaticReply reply = player().diplomatAI().refuseOfferJointWar(diplomat(), target);
+        if (reply == null) {
+            session().resumeNextTurnProcessing();
+            return;
+        }
+            
         reply.resumeTurn(true);
         DiplomaticMessage.reply(DiplomacyRequestReply.create(diplomat(), reply));	
     }

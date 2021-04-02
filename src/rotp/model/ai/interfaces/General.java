@@ -16,6 +16,7 @@
 package rotp.model.ai.interfaces;
 
 import java.util.List;
+import rotp.model.empires.Empire;
 import rotp.model.galaxy.StarSystem;
 
 public interface General {
@@ -24,4 +25,9 @@ public interface General {
     public List<StarSystem> rushShipSystems();
     public List<StarSystem> rushDefenseSystems();
     float invasionPriority(StarSystem v);
+    
+    // specific to Xilmi AI
+    default Empire bestVictim()               { return null; }
+    default float defenseRatio()              { return 0.5f; }
+    default int additionalColonizersToBuild(boolean returnPotentialUncolonizedInstead) { return 0; }
 }

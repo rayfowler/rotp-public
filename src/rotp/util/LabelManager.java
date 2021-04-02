@@ -21,6 +21,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import rotp.Rotp;
 
 public class LabelManager implements Base {
     static LabelManager instance = new LabelManager();
@@ -72,7 +73,8 @@ public class LabelManager implements Base {
     }
     public void loadIntroFile(String dir) {
         log("loading Intro: ", dir, introFile);
-        BufferedReader in = reader(dir+introFile);
+        String filename = dir+introFile;
+        BufferedReader in = reader(filename);
         if (in == null) {
             err("can't find intro file! ", dir, introFile);
             return;
@@ -80,11 +82,15 @@ public class LabelManager implements Base {
 
         // intro file found... reset list of intro lines
         introLines.clear();
+        int wc = 0;
         try {
             String input;
             while ((input = in.readLine()) != null) {
-            	if (!isComment(input))
-            		introLines.add(input);
+            	if (!isComment(input)) {
+                    introLines.add(input);
+                    if (Rotp.countWords)
+                        wc += substrings(input, ' ').size();
+                }
             }
         }
         catch (IOException e) { 
@@ -92,35 +98,42 @@ public class LabelManager implements Base {
         }
         finally {
         	try {
-				in.close();
+                        in.close();
 			} catch (IOException e) {
 	        	err("LabelManager.loadIntroFile2 -- IOException: " + e); 
 			}
         }
+        if (Rotp.countWords)
+            log("WORDS - "+filename+": "+wc);
+            
     }
     public void loadLabelFile(String dir) {
         log("loading Labels: ", dir, labelFile);
-        BufferedReader in = reader(dir+labelFile);
+        String filename = dir+labelFile;
+        BufferedReader in = reader(filename);
         if (in == null) {
             err("can't find label file! ", dir, labelFile);
             return;
         }
 
+        int wc = 0;
         try {
             String input;
             while ((input = in.readLine()) != null)
-                loadLabelLine(input);
+                wc += loadLabelLine(input);
         }
         catch (IOException e) { 
         	err("LabelManager.loadLabelFile -- IOException: ", e.toString()); 
         }
         finally {
         	try {
-				in.close();
-			} catch (IOException e) {
-	        	err("LabelManager.loadLabelFile2 -- IOException: " + e); 
-			}
+                        in.close();
+                    } catch (IOException e) {
+                        err("LabelManager.loadLabelFile2 -- IOException: " + e); 
+                    }
         }
+        if (Rotp.countWords)
+            log("WORDS - "+filename+": "+wc);
     }
     public void resetDialogue() {
         enDialogueMap.clear();
@@ -130,78 +143,95 @@ public class LabelManager implements Base {
         log("loading Dialogue: ", dir, dialogueFile);
         HashMap thisMap = dir.equals("lang/en/") ? enDialogueMap : dialogueMap;
         
-        BufferedReader in = reader(dir+dialogueFile);
+        String filename = dir+dialogueFile;
+        BufferedReader in = reader(filename);
         if (in == null) {
             err("can't find dialogue file! ", dir, dialogueFile);
             return;
         }
 
+        int wc = 0;
         try {
             String input;
             while ((input = in.readLine()) != null)
-                loadDialogueLine(input, thisMap);
+                wc += loadDialogueLine(input, thisMap);
         }
         catch (IOException e) { 
         	err("LabelManager.loadDialogueFile -- IOException: ", e.toString()); 
         }
         finally {
-        	try {
-				in.close();
-			} catch (IOException e) {
-	        	err("LabelManager.loadDialogueFile2 -- IOException: " + e); 
-			}
+            try {
+                    in.close();
+                } catch (IOException e) {
+                    err("LabelManager.loadDialogueFile2 -- IOException: " + e); 
+                }
         }
+        if (Rotp.countWords)
+            log("WORDS - "+filename+": "+wc);
     }
     public void loadTechsFile(String dir) {
         log("loading Techs: ", dir, techsFile);
         
-        BufferedReader in = reader(dir+techsFile);
+        String filename = dir+techsFile;
+        BufferedReader in = reader(filename);
         if (in == null) {
             err("can't find techs file! ", dir, techsFile);
             return;
         }
 
+        int wc = 0;
         try {
             String input;
             while ((input = in.readLine()) != null)
-                loadLabelLine(input);
+                wc += loadLabelLine(input);
         }
         catch (IOException e) { 
-        	err("LabelManager.loadTechsFile -- IOException: ", e.toString()); 
+            err("LabelManager.loadTechsFile -- IOException: ", e.toString()); 
         }
         finally {
-        	try {
-				in.close();
-			} catch (IOException e) {
-	        	err("LabelManager.loadTechsFile2 -- IOException: " + e); 
-			}
+            try {
+                in.close();
+            } catch (IOException e) {
+                err("LabelManager.loadTechsFile2 -- IOException: " + e); 
+            }
         }
+        if (Rotp.countWords)
+            log("WORDS - "+filename+": "+wc);
     }
-    private void loadLabelLine(String input) {
+    private int loadLabelLine(String input) {
     	if (isComment(input))
-    		return;
+            return 0;
  
         List<String> vals = substrings(input, '|');
         if (vals.size() < 2)
-        	return;
+            return 0;
         
-        try {
-        labelMap.put(vals.get(0), vals.get(1).getBytes("UTF-8"));
+        int wc = 0;
+        try {      
+            labelMap.put(vals.get(0), vals.get(1).getBytes("UTF-8"));
+            if (Rotp.countWords)
+                wc = substrings(vals.get(1), ' ').size();
         }
         catch(UnsupportedEncodingException e) { }
+        return wc;
     }
-    private void loadDialogueLine(String input, HashMap<String,List<String>> map) {
+    private int loadDialogueLine(String input, HashMap<String,List<String>> map) {
     	if (isComment(input))
-    		return;
+            return 0;
  
         List<String> vals = substrings(input, '|');
         if (vals.size() < 2)
-        	return;
+            return 0;
         
         String key = vals.get(0);
         if (!map.containsKey(key))
-        	map.put(key, new ArrayList<>());
+            map.put(key, new ArrayList<>());
         	
-       map.get(key).add(vals.get(1));
+        map.get(key).add(vals.get(1));
+        
+        if (Rotp.countWords)
+            return substrings(vals.get(1), ' ').size();
+        else
+            return 0;
     }
 }

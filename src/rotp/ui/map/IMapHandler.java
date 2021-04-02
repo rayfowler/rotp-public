@@ -68,6 +68,7 @@ public interface IMapHandler {
     default public boolean isHighlighting(Sprite s)        { return false; }
     default public boolean isLowlighting(Sprite s)         { return false; }
     default public boolean showTreasuryResearchBar()       { return false; }
+    default public boolean showSpyReportIcon()             { return false; }
     default public boolean allowsDragSelect()              { return false; }
     default public boolean hoverOverFleets()               { return true; }
     default public boolean hoverOverSystems()              { return true; }
@@ -82,6 +83,7 @@ public interface IMapHandler {
 
     default public int defaultFleetDisplay()             { return GalaxyMapPanel.SHOW_IMPORTANT_FLIGHTPATHS; }
     default public int defaultShipRangesDisplay()        { return GalaxyMapPanel.SHOW_STARS_AND_RANGES; }
+    default public boolean showShipRanges()              { return true; }
     default public boolean defaultGridCircularDisplay()  { return false; }
     default public IMappedObject gridOrigin()            { return null; }
     default public void drawAlerts(Graphics2D g)         { }
@@ -99,6 +101,12 @@ public interface IMapHandler {
     default boolean showOwnership(StarSystem s)          { return true; }
     default float ownerReach(StarSystem s)               { return 0; }
     default boolean drawShield(StarSystem s)             { return true; } 
+    default boolean shouldDrawEmpireName(Empire e, float scale)  { 
+        return (e.isPlayer() || Empire.thePlayer().hasContacted(e.id)) && (scale > GalaxyMapPanel.MAX_FLEET_TRANSPORT_SCALE);
+    }
+    default void drawEmpireName(Empire e, GalaxyMapPanel ui, Graphics2D g)  { e.draw(ui,g); }
+    default boolean drawStargate(StarSystem s)           { return true; }
+    default boolean drawFlag(StarSystem s)               { return true; }
     default boolean showSystemName(StarSystem s)         { return map().showSystemNames(); } 
     default boolean showSystemData(StarSystem s)         { return map().showSystemData(); } 
     default boolean shouldDrawSprite(Sprite s)           { return true; }
@@ -106,6 +114,10 @@ public interface IMapHandler {
     default boolean displayNextTurnNotice()              { return false; }
     default boolean suspendAnimationsDuringNextTurn()    { return true; }
     default void paintOverMap(GalaxyMapPanel ui, Graphics2D g) { }
+    default boolean showAlerts()                         { return true; }
+    default boolean drawShips()                          { return true; }
+    default boolean drawBackgroundStars()                { return true; }
     default Color alertColor(SystemView sv)              { return null; }
+    default Empire knownEmpire(int sysId, Empire emp)    { return emp.sv.empire(sysId); }
 
 }

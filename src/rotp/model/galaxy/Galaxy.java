@@ -180,7 +180,7 @@ public class Galaxy implements Base, Serializable {
             adviceGiven.add(key);
     }
     public boolean adviceAlreadyGiven(String key) {
-        return adviceGiven.contains(key);
+        return adviceGiven.contains(key) || options().isAutoPlay();
     }
     public void giveAdvice(String key) {
         if (!adviceAlreadyGiven(key)) {
@@ -223,6 +223,13 @@ public class Galaxy implements Base, Serializable {
             if (neb.contains(x,y))
                 return neb;
         }        
+        return null;
+    }
+    public Empire empireMatching(int color, int shape) {
+        for (Empire e: empires) {
+            if ((e.colorId() == color) && (e.shape() == shape))
+                return e;
+        }
         return null;
     }
     public void preNextTurn() {
@@ -526,6 +533,15 @@ public class Galaxy implements Base, Serializable {
                 emps.add(e);
         }
         return emps;
+    }
+    public boolean allAlliedWithPlayer() {
+        List<Empire> activeEmpires = activeEmpires();
+        int playerId = player().id;
+        for (Empire emp: activeEmpires) {
+            if (!emp.alliedWith(playerId))
+                return false;
+        }
+        return true;
     }
     public List<StarSystem> systemsInRange(IMappedObject xyz, float radius) {
         List<StarSystem> systems = new ArrayList<>();

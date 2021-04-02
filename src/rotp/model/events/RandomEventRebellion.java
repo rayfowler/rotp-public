@@ -57,7 +57,7 @@ public class RandomEventRebellion implements Base, Serializable, RandomEvent {
         String systemName = player().sv.name(sysId);
 
         // if a player colony rebels, he already gets a GNN notice. Don't need to send another
-        if (!emp.isPlayer() && !systemName.isEmpty())
+        if (!emp.isPlayerControlled() && !systemName.isEmpty())
             GNNNotification.notifyRandomEvent(notificationText(), "GNN_Event_Rebellion");
     }
 }

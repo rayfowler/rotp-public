@@ -14,8 +14,8 @@
 
 // Klackon specific dialogue
 
-CONTACT_AGGRESSIVE         | I am the [my_race], and you are the... [your_name]? An odd name for another like me, but you say you are nothing like me? This is becoming a most... irritating encounter.
-CONTACT_RUTHLESS           | I am known as [my_race]. You are the [your_name]? What is a [your_name]? I have little need for a kind who thrives on such convolution!
+CONTACT_AGGRESSIVE         | I am the [my_name], and you are the... [your_name]? An odd name for another like me, but you say you are nothing like me? This is becoming a most... irritating encounter.
+CONTACT_RUTHLESS           | I am known as [my_name]. You are the [your_name]? What is a [your_name]? I have little need for a kind who thrives on such convolution!
 CONTACT_XENOPHOBIC         | I knew when I began my journey that there must be another like me, but you are not like me at all... You are different... alien... and dangerous.
 //
 GREETING_01                | My friend! I am happy that you've come! I hope I can provide whatever it is you're seeking.
@@ -56,7 +56,7 @@ WARN_SKIRMISH_01           | The incident at [system] unsettles me. Was it merel
 WARN_ATTACKED_01           | What is there to gain by attacking me so? Cease your aggression at once, or you'll force me to repay it back onto you one-hundred fold! 
 WARN_INVADED_01            | Why have you invaded my space at the [system] system?! Do you intend to start a conflict or have you merely lost control of your bodies? 
 WARN_ESPIONAGE_01          | I don't understand you, [spy_name]. You act as though you don't want conflict but then try to steal my secrets? If you insist on continuing this way, I promise to make you sorry! [framed]
-WARN_SABOTAGE_01           | You make a mockery of me with this act of sabotage! My quest takes precedence over all else, but if this happens again I will pause my search to deal with you personally! 
+WARN_SABOTAGE_01           | You make a mockery of me with this act of sabotage! My quest takes precedence over all else, but if this happens again I will pause my search to deal with you personally! [forced]
 WARN_BIOWEAPON_01          | This weapon of yours is absolutely horrifying. To use it at all speaks of what you really are, but to use it on the bodies of another living thing makes me completely mortified! 
 WARN_GENOCIDE_01           | How callous! I never expected that you would go so far as to completely destroy the one known as [victim_name]. I will never forget the barbarity you've shown this day. 
 WARN_FINAL_WAR_01          | I now see that for me to realize my dream, the galaxy must be at peace. But as long as you exist that peace can never be made real. The answer is obvious: the [rebel_name] must be destroyed! 
@@ -76,9 +76,6 @@ PRAISE_TRADE_01            | We have only managed to come so far by working toge
 PRAISE_TRADE_02            | It pleases me how much our trade agreement aids us both. You're pleased by this as well, aren't you, [your_name]?  
 PRAISE_REBELLING_WITH_01   | The [your_name] calls for aid! I will join you in taking up arms against this ridiculous council! You are my friend, and that means you will never fight alone!
 
-DIPLO_MAIN_MENU_01           | How may I serve you?
-DIPLO_MAIN_MENU_02           | Speak, but do not try my patience.
-DIPLO_MAIN_MENU_03           | Speak quickly and then leave.
 DIPLO_TECH_REQUEST_MENU_01   | What type of technology interests you?
 DIPLO_TECH_COUNTER_MENU_01   | What will you trade for it?
 DIPLO_TRADE_MENU_01          | You propose a trade agreement for:
@@ -98,15 +95,15 @@ DECLINE_OFFER_07           | Perhaps you mistook me for a gullible fool. I rejec
 DECLINE_OFFER_08           | Your offer does not seem fair to me.
 DECLINE_OFFER_09           | I am afraid I must decline.
 
-DECLINE_ENEMY_ALLY_01      | I would never deal with allies of the hated [other_race]
+DECLINE_ENEMY_ALLY_01      | I would never deal with allies of the hated [other_name]
 
-DECLINE_ANNOYED_01         | The [your_race] are creatures of much wind and little action. I tire of your prattle.
-DECLINE_ANNOYED_01         | [your_nameTitle] [your_name], you try my patience. Perhaps you should speak again later.
+DECLINE_ANNOYED_01         | [your_name] is a creature of much wind and little action. I tire of your prattle.
+DECLINE_ANNOYED_01         | [your_name], you try my patience. Perhaps you should speak again later.
 DECLINE_ANNOYED_01         | I have heard enough. We will talk again later.
 DECLINE_ANNOYED_02         | I tire of diplomatic negotiations. We can continue discussions at a later time.
 DECLINE_ANNOYED_02         | These talks get us nowhere. I must take my leave.
 DECLINE_ANNOYED_02         | I go now.
-DECLINE_ANNOYED_03         | A thousand apologies, [your_nameTitle] [your_name], but other duties call.
+DECLINE_ANNOYED_03         | A thousand apologies, [your_name], but other duties call.
 DECLINE_ANNOYED_03         | Pardon me, but our time is at an end.
 DECLINE_ANNOYED_03         | I have little time and much to do. Perhaps we can talk again later.
 
@@ -115,7 +112,7 @@ DECLINE_OATHBREAKER_01     | I am unwilling to enter into a treaty at this time 
 DECLINE_OATHBREAKER_01     | You have not honored your past agreements. I see little reason to trust you now.
 DECLINE_OATHBREAKER_01     | Why should I trust you now, when you have broken so many past treaties?
 DECLINE_OATHBREAKER_01     | I see no reason to agree with someone who has not lived up to past promises.
-DECLINE_OATHBREAKER_01     | I will not deal with [your_race] who have no honor.
+DECLINE_OATHBREAKER_01     | I will not deal with [your_name] who has no honor.
 
 DECLINE_ESPIONAGE_01       | You thieving dogs, you steal the fruits of my research. I deny your request.
 DECLINE_ESPIONAGE_01       | My technology is for the me alone. You have no right to steal it. I will talk when you stop stealing.
@@ -149,75 +146,75 @@ DECLINE_INVASION_01        | I do not wish to deal with the butchers of [system]
 DECLINE_INVASION_01        | My blood at [system] smears your words. I cannot accept your offer.
 DECLINE_INVASION_01        | My loss at [system] cries out for retribution. The pain I feel is louder than your offer.
 
-DECLINE_BIOWEAPONS_01      | I will not make any deals with a race who would use biological weapons.
+DECLINE_BIOWEAPONS_01      | I will not make any deals with one who would use biological weapons.
 DECLINE_BIOWEAPONS_01      | I cannot deal with anybody desperate enough to use biological weaponry.
 DECLINE_BIOWEAPONS_01      | You use weapons that cause untold horrors on me. I refuse to deal with such madness.
 DECLINE_BIOWEAPONS_01      | The gods abhor those who would destroy planets with biological weaponry. I cannot allow it.
 DECLINE_BIOWEAPONS_01      | The pain inflicted on me by your biological weapons fills my ears. I cannot hear your offer.
 
 DECLINE_TECH_TRADE_01      | You have no technology which interests me.
-DECLINE_TECH_TRADE_01      | I have no need of [your_race] toys.
+DECLINE_TECH_TRADE_01      | I have no need of your toys.
 DECLINE_TECH_TRADE_01      | Your primitive inventions do not interest me.
 DECLINE_TECH_TRADE_01      | I am far beyond your technology.
-DECLINE_TECH_TRADE_01      | [your_nameTitle] [your_name], I have little need for what your scientists offer me.
+DECLINE_TECH_TRADE_01      | [your_name], I have little need for what you offer me.
 DECLINE_TECH_TRADE_01      | I see little of interest in your technology.
 
 DECLINE_NO_WAR_ON_ALLY_01  | I will not declare war on an ally.
-DECLINE_PEACE_TREATY_01    | I will not break my peace treaty with the [other_race].
+DECLINE_PEACE_TREATY_01    | I will not break my peace treaty with [other_name].
 
 OFFER_TECH_EXCHANGE_01     | I am in great need of your [tech] technology. Perhaps you are willing to exchange it for some of my technology.
 OFFER_TECH_EXCHANGE_01     | I know you have learned the secrets of [tech]. Can I offer you some of my technology in exchange?
 OFFER_TECH_EXCHANGE_01     | I wish for the secret of the [tech] technology. Will you exchange it for one of my advances?
 OFFER_TECH_EXCHANGE_01     | I am awed by the scientific wonders of [tech]. What can I offer you for its secret?
 
-ACCEPT_TECH_EXCHANGE_01    | Very well. I agree to exchange the wondrous [my_race] secrets of [techGiven] for the technology [techReceived].
+ACCEPT_TECH_EXCHANGE_01    | Very well. I agree to exchange my wondrous secrets of [techGiven] for the technology [techReceived].
 ACCEPT_FINANCIAL_AID_01    | I accept your gift of [amt] BC.
 ACCEPT_TECHNOLOGY_AID_01   | I accept your gift of [tech].
 
-BREAK_TRADE_01             | I have no further desire for the trade goods from the [your_empire].
-ANNOUNCE_TRADE_01          | Effective [year], I and the [your_empire] agree to trade [amt] BC per year.
+BREAK_TRADE_01             | I have no further desire for the trade goods from [your_name].
+ANNOUNCE_TRADE_01          | Effective [year], I and [your_name] agree to trade [amt] BC per year.
 ACCEPT_TRADE_01            | A trade pact of [amt] BC is acceptable.
-ACCEPT_TRADE_01            | I eagerly await the fine goods that the [your_race] offer. I accept an agreement for [amt] BC per year.
+ACCEPT_TRADE_01            | I eagerly await the fine goods that [your_name] offers. I accept an agreement for [amt] BC per year.
 ACCEPT_TRADE_01            | I agree to trade [amt] BC per year.
-ACCEPT_TRADE_01            | Well, [your_nameTitle] [your_name], I find your offer of [amt] BC per year to be fair and equitable.
+ACCEPT_TRADE_01            | Well, [your_name], I find your offer of [amt] BC per year to be fair and equitable.
 
-ANNOUNCE_PEACE_01          | In the year [year], I and the [your_empire] agree to terminate all hostilities.
-ANNOUNCE_PEACE_01          | I hereby order all hostilities to end between your empire and I.
+ANNOUNCE_PEACE_01          | In the year [year], I and [your_name] agree to terminate all hostilities.
+ANNOUNCE_PEACE_01          | I hereby order all hostilities to end between your and I.
 ACCEPT_PEACE_01            | I agree that the time has come to end our petty bickering.
 ACCEPT_PEACE_01            | I accept your offer of peace. Cease fire on me, and I will stop attacking your forces.
 ACCEPT_PEACE_01            | I grow weary of this senseless destruction. I accept your offer of peace.
 
-BREAK_PACT_01              | A warning to the [your_empire] from me: our Non-Aggression Pact is broken!
-ANNOUNCE_PACT_01           | In the year [year], I pledge to adhere to a Non-Aggression Pact and not to attack [your_race] fleets unless they are orbiting one of my colonies.
+BREAK_PACT_01              | A warning to the [your_name] from me: our Non-Aggression Pact is broken!
+ANNOUNCE_PACT_01           | In the year [year], I pledge to adhere to a Non-Aggression Pact and not to attack your fleets unless they are orbiting one of my colonies.
 ACCEPT_PACT_01             | I agree to a Non-Aggression Pact. Neither will attack the other's fleets, unless the orbit of an opposing colony is entered.
 ACCEPT_PACT_01             | If you agree not to send ships to any of my colonies, I vow to not attack any of your ships.
 ACCEPT_PACT_01             | I agree to your proposed Non-Aggression Pact. So it is written, so shall it be done!
 ACCEPT_PACT_01             | Agreed, then. As long as you do not attack my colonies, I will abide by the Non-Aggression Pact.
 
-BREAK_ALLIANCE_01          | I can no longer maintain an Alliance with the [your_empire].
-ANNOUNCE_ALLIANCE_01       | In the year [year] I and the [your_empire] agree to form an alliance in which neither will attack the other's fleets or colonies.
+BREAK_ALLIANCE_01          | I can no longer maintain an Alliance with [your_name].
+ANNOUNCE_ALLIANCE_01       | In the year [year] I and [your_name] agree to form an alliance in which neither will attack the other's fleets or colonies.
 ANNOUNCE_ALLIANCE_01       | So our Alliance is forged. Your ships may visit my colonies as you wish, and get fuel from my bases.
-ACCEPT_ALLIANCE_01         | I welcome an Alliance with my good friend, [your_nameTitle] [your_name].
-ACCEPT_ALLIANCE_01         | I and the [your_empire] today forge an Alliance. Death to our enemies!
-ACCEPT_ALLIANCE_01         | I see the wisdom in an Alliance with the [your_empire]. So be it!
+ACCEPT_ALLIANCE_01         | I welcome an Alliance with my good friend, [your_name].
+ACCEPT_ALLIANCE_01         | I and [your_name] today forge an Alliance. Death to our enemies!
+ACCEPT_ALLIANCE_01         | I see the wisdom in an Alliance with [your_name]. So be it!
 
-ACCEPT_BREAK_ALLIANCE_01   | I agree, the [other_race] are no longer trustworthy and I have broken my alliance with them.
-ACCEPT_BREAK_ALLIANCE_01   | Though it pains me to turn our backs on the [other_race], I have done so.
-ACCEPT_BREAK_ALLIANCE_01   | The [other_empire] is no longer my ally
-ACCEPT_BREAK_ALLIANCE_01   | The Alliance of I and the [other_empire] now lies in shreds under our feet.
-ACCEPT_BREAK_ALLIANCE_01   | As you wish, I no longer shall call the [other_race] my ally.
+ACCEPT_BREAK_ALLIANCE_01   | I agree, [other_name] is no longer trustworthy and I have broken my alliance with them.
+ACCEPT_BREAK_ALLIANCE_01   | Though it pains me to turn our backs on [other_name], I have done so.
+ACCEPT_BREAK_ALLIANCE_01   | [other_name] is no longer my ally
+ACCEPT_BREAK_ALLIANCE_01   | The Alliance of I and [other_name] now lies in shreds under our feet.
+ACCEPT_BREAK_ALLIANCE_01   | As you wish, I no longer shall call [other_name] my ally.
 
-ACCEPT_JOINT_WAR_01        | The [other_empire] must fall before the combined might of [my_race] and [your_race].
-ACCEPT_JOINT_WAR_01        | With [my_race] and [your_race] allied, the [other_race] will not last long.
-ACCEPT_JOINT_WAR_01        | In the year [year], I and the [your_empire] join forces to rid the galaxy of the [other_race] menace.
+ACCEPT_JOINT_WAR_01        | [other_name] must fall before the combined might of [your_name] and I.
+ACCEPT_JOINT_WAR_01        | With [your_name] and I allied, [other_name] will not last long.
+ACCEPT_JOINT_WAR_01        | In the year [year], I and [your_name] join forces to rid the galaxy of the [other_name] menace.
 
-RESPOND_CLOSE_EMBASSY_01   | So be it. There will be no further discussions between myself and the [your_empire].
+RESPOND_CLOSE_EMBASSY_01   | So be it. There will be no further discussions between myself and [your_name].
 
 RESPOND_BREAK_TRADE_01     | I will remember this.
-RESPOND_BREAK_TRADE_01     | So, [your_nameTitle] [your_name], you cannot keep your word. I will not forget this.
+RESPOND_BREAK_TRADE_01     | So, [your_name], you cannot keep your word. I will not forget this.
 
-RESPOND_BREAK_PACT_01      | I will inscribe the words of your broken treaties upon your tombstone, [your_nameTitle] [your_name].
-RESPOND_BREAK_PACT_01      | The [your_empire] will crumble under the weight of its own broken promises.
+RESPOND_BREAK_PACT_01      | I will inscribe the words of your broken treaties upon your tombstone, [your_name].
+RESPOND_BREAK_PACT_01      | [your_name] will crumble under the weight of its own broken promises.
 
 RESPOND_BREAK_ALLIANCE_01  | You have dishonored the agreement. The alliance is broken.
 RESPOND_BREAK_ALLIANCE_01  | Very well. Your untrustworthy intentions have shown. The alliance is broken.
@@ -225,9 +222,9 @@ RESPOND_BREAK_ALLIANCE_01  | I have little need of treaties that are not honored
 RESPOND_BREAK_ALLIANCE_01  | So be it. The alliance is broken.`
 
 RESPOND_DECLARE_WAR_01     | I ignore the hollow threats of a raving lunatic.
-RESPOND_DECLARE_WAR_01     | You bluff poorly, [your_nameTitle] [your_name]. Your threats do not concern me.
+RESPOND_DECLARE_WAR_01     | You bluff poorly, [your_name]. Your threats do not concern me.
 RESPOND_DECLARE_WAR_01     | Make your childish threats. My young often throw tantrums as well.
-RESPOND_DECLARE_WAR_01     | You presume to threaten the mighty [my_race]! You do not know who you are dealing with!
-RESPOND_DECLARE_WAR_01     | Your threats fall on deaf ears, [your_nameTitle] [your_name].
-RESPOND_DECLARE_WAR_01     | You bray like a Rigellian jackass, [your_nameTitle] [your_name], and I take your threats as seriously.
-RESPOND_DECLARE_WAR_01     | Do not make such threats idly, [your_nameTitle] [your_name]. My wrath is terrible to behold.
+RESPOND_DECLARE_WAR_01     | You presume to threaten me! You do not know who you are dealing with!
+RESPOND_DECLARE_WAR_01     | Your threats fall on deaf ears, [your_name].
+RESPOND_DECLARE_WAR_01     | You bray like a Rigellian jackass, [your_name], and I take your threats as seriously.
+RESPOND_DECLARE_WAR_01     | Do not make such threats idly, [your_name]. My wrath is terrible to behold.

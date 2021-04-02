@@ -35,6 +35,7 @@ import rotp.ui.BasePanel;
 import static rotp.ui.BasePanel.s10;
 import static rotp.ui.BasePanel.s20;
 import static rotp.ui.BasePanel.s70;
+import rotp.ui.RotPUI;
 
 public class AlienSystemPanel extends SystemPanel {
     private static final long serialVersionUID = 1L;
@@ -59,6 +60,8 @@ public class AlienSystemPanel extends SystemPanel {
         private static final long serialVersionUID = 1L;
         SystemPanel parent;
         Shape textureClip;
+        Empire displayEmp;
+        Rectangle nameBox = new Rectangle();
         Rectangle flagBox = new Rectangle();
         Shape hoverBox;
 
@@ -78,14 +81,16 @@ public class AlienSystemPanel extends SystemPanel {
         @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
+            nameBox.setBounds(0,0,0,0);
+            displayEmp = null;
             StarSystem sys = parent.systemViewToDisplay();
             if (sys == null)
                 return;
 
             int id = sys.id;
             Empire pl = player();
-            Empire sysEmp = pl.sv.empire(id);
-            if (sysEmp == null)
+            displayEmp = pl.sv.empire(id);
+            if (displayEmp == null)
                 return;
 
             boolean spied = pl.sv.isSpied(id);
@@ -99,7 +104,7 @@ public class AlienSystemPanel extends SystemPanel {
             // draw colony info box
             g.setColor(MainUI.paneBackground());
             g.fillRect(0, 0, w, topH-s5);
-            GradientPaint back = new GradientPaint(0,0,sysEmp.color(),w, 0,MainUI.transC);
+            GradientPaint back = new GradientPaint(0,0,displayEmp.color(),w, 0,MainUI.transC);
             g.setPaint(back);
             g.fillRect(0, 0, w, topH1-s5);
             g.setPaint(null);
@@ -110,7 +115,11 @@ public class AlienSystemPanel extends SystemPanel {
 
             //  colony name
             g.setFont(narrowFont(24));
-            drawShadowedString(g, pl.sv.descriptiveName(id), 2, s10, topH1-s15, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
+            String empName = pl.sv.descriptiveName(id);
+            int sw = g.getFontMetrics().stringWidth(empName);
+            Color c0 = nameBox == hoverBox ? Color.yellow : SystemPanel.whiteLabelText;
+            drawShadowedString(g, empName, 2, s10, topH1-s15, MainUI.shadeBorderC(), c0);
+            nameBox.setBounds(s10, topH1-s40, sw+s5,s25);
 
             // draw system banner
             int sz = s70;
@@ -142,7 +151,7 @@ public class AlienSystemPanel extends SystemPanel {
             g.drawString(baseLbl, x1, y1);
 
             String str = spied ? str(pl.sv.population(id)) : unknown;
-            int sw = g.getFontMetrics().stringWidth(str);
+            sw = g.getFontMetrics().stringWidth(str);
             g.drawString(str, x1-sw-s10, y0);
             str = spied ? str(pl.sv.factories(id)) : unknown;
             sw = g.getFontMetrics().stringWidth(str);
@@ -189,6 +198,8 @@ public class AlienSystemPanel extends SystemPanel {
             hoverBox = null;
             if (flagBox.contains(x,y))
                 hoverBox = flagBox;
+            else if (nameBox.contains(x,y))
+                hoverBox = nameBox;
 
             if (prevHover != hoverBox)
                 repaint();
@@ -204,6 +215,11 @@ public class AlienSystemPanel extends SystemPanel {
                 StarSystem sys = parentSpritePanel.systemViewToDisplay();
                 player().sv.view(sys.id).toggleFlagColor(rightClick);
                 parentSpritePanel.parent.repaint();
+            }
+            else if (hoverBox == nameBox) {
+                RotPUI.instance().selectRacesPanel();
+                RotPUI.instance().racesUI().selectDiplomacyTab();
+                RotPUI.instance().racesUI().selectedEmpire(displayEmp);              
             }
         }
         @Override

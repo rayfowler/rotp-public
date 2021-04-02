@@ -37,6 +37,8 @@ import rotp.ui.main.SystemPanel;
 import rotp.util.Base;
 import javax.swing.*;
 import javax.swing.border.Border;
+import rotp.model.colony.Colony;
+import rotp.model.galaxy.SpaceMonster;
 
 public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, MouseMotionListener {
     private static final long serialVersionUID = 1L;
@@ -85,6 +87,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     BufferedImage renderedPlanetImage;
     Image[] asteroids = new Image[16];
     public int[][] asteroidRoll = new int[GRID_COUNT_X][GRID_COUNT_Y];
+    private final Color shadeC = new Color(255,255,255,20);
 
     private LinearGradientPaint menuBackC;
     private LinearGradientPaint moveBackC;
@@ -102,6 +105,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     final Map<ShipDesign, Integer> counts = new LinkedHashMap<>();
     Empire leftEmpire;
     Empire rightEmpire;
+    SpaceMonster monster;
 
     Display mode;
     ShipCombatManager  mgr;
@@ -232,8 +236,10 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         }
     }
     public boolean init(ShipCombatManager m, int combatFlag) {
+        renderedPlanetImage = null;
         mgr = m;
         mgr.ui(this);
+        mgr.showAnimations = true;
         mgr.setInitialPause();
         exited = false;
         mode = Display.INTRO;
@@ -260,7 +266,8 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             throw new RuntimeException("Not exactly 2 empires in ship combat");
 
         Empire aiEmpire = emps.get(0).isPlayer() ? emps.get(1) : emps.get(0);
-
+        monster = null;
+        
         if (mgr.system().empire() == player()) {
             showPlanet = true;
             leftEmpire = player();
@@ -277,7 +284,9 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         }
 
         initFleetStacks(leftEmpire, leftFleet);
-        if (!mgr.results().isMonsterAttack())
+        if (mgr.results().isMonsterAttack())
+            monster = mgr.results().monster();
+        else
             initFleetStacks(rightEmpire, rightFleet);
         
         if (combatFlag == AUTO_RESOLVE) {
@@ -386,7 +395,11 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             }
         }
 
-        paintShipsToImage(g,x,y,w,h-barH, hoveringX, hoveringY);
+        // draw any overlying messages
+        if (mode == Display.RESULT)
+            drawResults(g, 0, 0, getWidth(),getHeight());
+        else
+            paintShipsToImage(g,x,y,w,h-barH, hoveringX, hoveringY);
         paintMenuBarToImage(g,x,y+h-barH,w,barH);
         
         if (mode != Display.RESULT)
@@ -487,10 +500,6 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
                 drawStack(g, stack, stackX(stack), stackY(stack), rect.width, rect.height);
             }
         }
-
-        // draw any overlying messages
-        if (mode != Display.INTRO)
-            drawResults(g, 0, 0, w, h);
     }
     private void paintStackActions(Graphics2D g, int  hoveringX, int hoveringY) {
         if (mgr.performingStackTurn)
@@ -1348,25 +1357,257 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         Thread thread = new Thread(drawRunnable);
         thread.start();
     }
-    private void drawResults(Graphics g, int x, int y, int w, int h) {
-        g.setFont(narrowFont(40));
+    private void drawResults(Graphics2D g, int x, int y, int w, int h) {
+        g.setColor(shadeC);
+        g.fillRect(x,y,w,h);
         g.setColor(Color.lightGray);
         String sysName =  player().sv.name(mgr.system().id);
-        String victorName = mgr.results().victorName();
+        mgr.showAnimations = false;
+        
+        Map<ShipDesign,Integer> destroyed = mgr.results().shipsDestroyed();
+        Map<ShipDesign,Integer> retreated = mgr.results().shipsRetreated();
+        
+        int w0 = scaled(700);
+        int x0 = x+((w-w0)/2);
+        int y0 = s20;
+        int h0 = s50;
+        int gap = s20;
+        int flagW = s80;
+        int shipW = scaled(120);
+        int shipH = shipW*3/4;
+        int shipBoxH = shipH+s40;
+        
+        g.setColor(Color.black);
+        g.fillRect(x0, y0, w0, h0);
+        
+        g.setFont(narrowFont(40));
         String prompt;
-        if (sysName.isEmpty())
-            prompt = text("SHIP_COMBAT_RESULTS_UNNAMED", victorName);
+        if (sysName.isEmpty()) 
+            prompt = text("SHIP_COMBAT_TITLE_UNNAMED");
+        else
+            prompt = text("SHIP_COMBAT_TITLE", sysName);
+        int sw = g.getFontMetrics().stringWidth(prompt);
+        int x1 = x0+(w0-sw)/2;
+        int y1 = y0+h0-s12;
+        g.setColor(Color.white);
+        g.drawString(prompt, x1, y1); 
+        
+        Empire victor = mgr.results().victor();
+        Empire colonyEmp = mgr.results().colonyStack == null ? null : mgr.results().colonyStack.empire;
+        // left empire
+        String empName = leftEmpire.name();
+        
+        int x2 = x0;
+        int w2 = (w0-gap)/2;
+        int y2 = y0+h0+gap;
+        int h2a = scaled(85);
+        int h2b = scaled(510);
+        g.setColor(Color.black);
+        g.fillRect(x2,y2,w2,h2a);
+        g.fillRect(x2,y2+h2a+s5,w2,h2b);
+        
+        if (leftEmpire == victor) {
+            String v = text("SHIP_COMBAT_TITLE_VICTORIOUS");
+            g.setFont(narrowFont(36));
+            g.setColor(SystemPanel.greenText);
+            g.drawString(v, x2+flagW, y2+s40);
+        }
+        
+        g.setFont(narrowFont(26));
+        g.setColor(SystemPanel.whiteText);
+        g.drawString(empName, x2+flagW, y2+s70);
+        
+        Image flag = leftEmpire.race().flagWar();
+        g.drawImage(flag,x2+s5,y2+s5,x2+flagW-s5,y2+flagW-s5,0,0,flag.getWidth(null),flag.getHeight(null), null);
+        
+        List<ShipDesign> ships = new ArrayList<>(leftFleet.keySet());
+        for (int i=0;i<ships.size();i++) {
+            ShipDesign design = ships.get(i);
+            int retr = retreated.containsKey(design) ? retreated.get(design): 0;
+            int start = leftFleet.containsKey(design) ? leftFleet.get(design): 0;
+            int dead = destroyed.containsKey(design) ? destroyed.get(design): 0;
+            int index = i/2;
+            int yAdj = y2+s85+(index*shipBoxH);
+            int xAdj = i%2 == 0 ? x2+s20 : x2+w2-s50-shipW;
+            drawShipResult(g, xAdj, yAdj, shipW, shipH, design, start, dead, retr);
+        }  
+        if (colonyEmp == leftEmpire) {
+            int rows= (ships.size()+1)/2;
+            drawPlanetResult(g, sysName, false, x2+s20, y2+s80+(rows*shipBoxH), shipH);
+        }
+        
+        // right empire
+        if (monster != null)
+            empName = monster.name();
+        else
+            empName = rightEmpire.name();
+        int x3 = x2+w2+gap;
+        int w3 = w2;
+        int y3 = y2;
+        g.setColor(Color.black);
+        g.fillRect(x3,y2,w3,h2a);
+        g.fillRect(x3,y2+h2a+s5,w3,h2b);
+        
+        if (mgr.results().isMonsterVictory() || (rightEmpire == victor)) {
+            String v = text("SHIP_COMBAT_TITLE_VICTORIOUS");
+            g.setFont(narrowFont(36));
+            g.setColor(SystemPanel.greenText);
+            g.drawString(v, x3+flagW, y3+s40);
+        }
+        g.setFont(narrowFont(26));
+        g.setColor(SystemPanel.whiteText);
+        g.drawString(empName, x3+flagW, y3+s70);
+        if (monster == null) {
+            flag = rightEmpire.race().flagWar();
+            g.drawImage(flag,x3+s5,y3+s5,x3+flagW-s5,y3+flagW-s5,0,0,flag.getWidth(null),flag.getHeight(null), null);
+        }
+        
+        if (monster != null)
+            drawMonsterResult(g, monster, x3+s20, y3+s85, shipW*2, shipH*2);
+        else {
+            ships = new ArrayList<>(rightFleet.keySet());
+            for (int i=0;i<ships.size();i++) {
+                ShipDesign design = ships.get(i);
+                int retr = retreated.containsKey(design) ? retreated.get(design): 0;
+                int start = rightFleet.containsKey(design) ? rightFleet.get(design): 0;
+                int dead = destroyed.containsKey(design) ? destroyed.get(design): 0;
+                int index = i/2;
+                int yAdj = y3+s85+(index*shipBoxH);
+                int xAdj = i%2 == 0 ? x3+s20 : x3+w2-s50-shipW;
+                drawShipResult(g, xAdj, yAdj, shipW, shipH, design, start, dead, retr);
+            }
+            if (colonyEmp == rightEmpire) {
+                int rows= (ships.size()+1)/2;
+                drawPlanetResult(g, sysName, true, x3+w3-shipH-s20, y3+s80+(rows*shipBoxH), shipH);
+            }        
+        }
+        /*
         else if (mgr.results().isMonsterVictory())
             prompt = text("SHIP_COMBAT_RESULTS_MONSTER", victorName, sysName);
         else 
             prompt = text("SHIP_COMBAT_RESULTS", victorName, sysName);
-        int sw = g.getFontMetrics().stringWidth(prompt);
+*/
 
-        int x0 = (w - sw) / 2;
-        int y0 = s80;
-        drawBorderedString(g, prompt, x0, y0, Color.black, Color.white);
+        //drawBorderedString(g, prompt, x1, y1, Color.black, Color.white);
 
         drawSkipText(g, true);
+    }
+    private void drawMonsterResult(Graphics2D g, SpaceMonster monster, int x, int y, int w, int h) {
+        Image img = monster.image();
+        g.drawImage(img, x, y, x+w, y+h, img.getWidth(null), img.getHeight(null), 0,0,null);
+    
+    }
+    private void drawPlanetResult(Graphics2D g, String name, boolean reverse, int x, int y, int r) {
+        if (renderedPlanetImage == null)
+            return;
+        planetX = x;
+        planetY = y;
+        planetR = r;
+        int imgW = renderedPlanetImage.getWidth();
+        int imgH = renderedPlanetImage.getHeight();
+        g.drawImage(renderedPlanetImage, planetX, planetY, planetX+planetR, planetY+planetR, 0, 0, imgW, imgH, null);
+        
+        int dataW = s75;
+        int popX, factX, baseX;
+        if (reverse) {
+            popX = x-dataW;
+            factX = popX-dataW;
+            baseX = factX-dataW;
+        }
+        else {
+            popX = x+r;
+            factX = popX+dataW;
+            baseX = factX+dataW;
+        }
+        
+        int dataY = y+r-s20;
+        int headerY = dataY-s16;
+        
+        g.setFont(narrowFont(15));
+        g.setColor(SystemPanel.whiteText);
+        
+        Colony col = mgr.system().colony();
+        int popLost = mgr.results().popDestroyed();
+        int factLost = mgr.results().factoriesDestroyed();
+        int baseLost = mgr.results().basesDestroyed();
+        int currPop = col == null ? 0 : (int) Math.ceil(col.population());
+        int currFact = (col == null) || (currPop == 0) ? 0 : (int) col.industry().factories();
+        int currBase = (col == null) || (currPop == 0) ? 0 : (int) col.defense().bases();
+        
+        g.drawString(text("SHIP_COMBAT_SYSTEM_POP"), popX, headerY);
+        String amt = str(currPop+popLost);
+        int sw = g.getFontMetrics().stringWidth(amt);
+        g.drawString(amt, popX, dataY);
+        g.fillRect(popX+sw+s4, dataY-s6, s12, s3);
+        Polygon rightArrow = new Polygon();
+        rightArrow.addPoint(popX+sw+s15, dataY-s1);
+        rightArrow.addPoint(popX+sw+s15, dataY-s9);
+        rightArrow.addPoint(popX+sw+s19, dataY-s5);
+        g.fill(rightArrow);
+        g.drawString(str(currPop), popX+sw+s22, dataY);
+
+        g.drawString(text("SHIP_COMBAT_SYSTEM_FACT"), factX, headerY);
+        amt = str(currFact+factLost);
+        sw = g.getFontMetrics().stringWidth(amt);
+        g.drawString(amt, factX, dataY);
+        g.fillRect(factX+sw+s4, dataY-s6, s12, s3);
+        rightArrow.reset();
+        rightArrow.addPoint(factX+sw+s15, dataY-s1);
+        rightArrow.addPoint(factX+sw+s15, dataY-s9);
+        rightArrow.addPoint(factX+sw+s19, dataY-s5);
+        g.fill(rightArrow);
+        g.drawString(str(currFact), factX+sw+s22, dataY);
+
+        if ((currBase+baseLost) > 0) {
+            g.drawString(text("SHIP_COMBAT_SYSTEM_BASE"), baseX, headerY); 
+            amt = str(currBase+baseLost);
+            sw = g.getFontMetrics().stringWidth(amt);
+            g.drawString(amt, baseX, dataY);
+            g.fillRect(baseX+sw+s4, dataY-s6, s12, s3);
+            rightArrow.reset();
+            rightArrow.addPoint(baseX+sw+s15, dataY-s1);
+            rightArrow.addPoint(baseX+sw+s15, dataY-s9);
+            rightArrow.addPoint(baseX+sw+s19, dataY-s5);
+            g.fill(rightArrow);
+            g.drawString(str(currBase), baseX+sw+s22, dataY);
+        }
+        
+        
+    }
+    private void drawShipResult(Graphics2D g, int x, int y, int w, int h, ShipDesign d, int start, int dead, int retreat) {
+            Image img = d.image();
+            g.drawImage(img, x, y, x+w, y+h, img.getWidth(null), img.getHeight(null), 0,0,null);
+            if (retreat > 0) {
+                g.setFont(narrowFont(30));
+                String summary = text("SHIP_COMBAT_RESULTS_RETREATED");
+                int sw0 = g.getFontMetrics().stringWidth(summary);
+                drawBorderedString(g, summary, x+(w-sw0)/2, y+h/2+s5, Color.black, Color.yellow);              
+            }
+            else if (start == dead) {
+                g.setFont(narrowFont(30));
+                String summary = text("SHIP_COMBAT_RESULTS_DESTROYED");
+                int sw0 = g.getFontMetrics().stringWidth(summary);
+                drawBorderedString(g, summary, x+(w-sw0)/2, y+h/2+s5, Color.black, Color.red);              
+            }
+            g.setFont(narrowFont(18));
+            g.setColor(SystemPanel.whiteText);
+            String name = d.name();
+            int sw0 = g.getFontMetrics().stringWidth(name);
+            drawBorderedString(g, name, x+(w-sw0)/2, y+h, Color.black, Color.white);
+            String amt1 = str(start);
+            String amt2 = str(start-dead);
+            int sw1 = g.getFontMetrics().stringWidth(amt1);
+            int sw2 = g.getFontMetrics().stringWidth(amt2);
+            int xAdj1 = x+(w-sw1-sw2-s40)/2;
+            drawBorderedString(g, amt1, xAdj1, y+h+s18, Color.black, SystemPanel.whiteText);
+            //g.drawString("\u2192", xAdj1+sw1+s4, y+h+s12);
+            g.fillRect(xAdj1+sw1+s4, y+h+s12, s30, s3);
+            Polygon rightArrow = new Polygon();
+            rightArrow.addPoint(xAdj1+sw1+s33, y+h+s7);
+            rightArrow.addPoint(xAdj1+sw1+s33, y+h+s19);
+            rightArrow.addPoint(xAdj1+sw1+s37, y+h+s13);
+            g.fill(rightArrow);
+            drawBorderedString(g, amt2, xAdj1+sw1+s40, y+h+s18, Color.black, SystemPanel.whiteText);
     }
     private void togglePlayPause() {
         if (mode != Display.INTRO)
@@ -1422,7 +1663,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     private void retreatStack(CombatStack stack, boolean inCombat) {
         if (mgr.combatIsFinished() || mgr.autoResolve)
             return; 
-        if (!stack.canRetreat() || !stack.empire.isPlayer())
+        if (!stack.canRetreat() || !stack.empire.isPlayerControlled())
             return;
         StarSystem dest = player().ai().shipCaptain().retreatSystem(mgr.system());
         mgr.retreatStack((CombatStackShip)stack, dest);
@@ -1430,13 +1671,15 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         if (inCombat)
             mgr.continueToNextPlayerStack();
     }
+    public void finishAndResume() {
+        finish();
+        session().resumeNextTurnProcessing();
+    }
     public void finish() {
         if (mgr.combatIsFinished()) {
-            renderedPlanetImage = null;
             mode = Display.RESULT;
             exited = true;
             repaint();
-            session().resumeNextTurnProcessing();
         }
         else {
             mgr.showAnimations = false;
@@ -1477,7 +1720,10 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         mgr.autoComplete = true;
         hoverBox = null;
         paintAllImmediately();
-        finish();
+        if (inCombat)
+            finish();
+        else
+            finishAndResume();
     }
     @Override
     public void keyPressed(KeyEvent e) {
@@ -1535,7 +1781,10 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
                 return;
             case KeyEvent.VK_E:
             case KeyEvent.VK_ESCAPE:
-                finish();
+                if (mgr.combatIsFinished())
+                    finishAndResume();
+                else
+                    finish();
         }
     }
     @Override
@@ -1581,8 +1830,9 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             retreatAllPlayerShips(true);
         if (hoverBox == playPauseBox)
             togglePlayPause();
-        else if (hoverBox == exitBox)
-            finish();
+        else if (hoverBox == exitBox) {
+            finishAndResume();
+        }
         else if (hoverBox == nextBox)
             nextStack();
     }

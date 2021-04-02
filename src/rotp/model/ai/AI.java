@@ -19,24 +19,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
-import rotp.model.ai.base.AIDiplomat;
-import rotp.model.ai.base.AIFleetCommander;
-import rotp.model.ai.base.AIGeneral;
-import rotp.model.ai.base.AIGovernor;
-import rotp.model.ai.base.AIScientist;
-import rotp.model.ai.base.AIShipCaptain;
-import rotp.model.ai.base.AIShipDesigner;
-import rotp.model.ai.base.AISpyMaster;
-import rotp.model.ai.base.AITreasurer;
-import rotp.model.ai.community.AICDiplomat;
-import rotp.model.ai.community.AICFleetCommander;
-import rotp.model.ai.community.AICGeneral;
-import rotp.model.ai.community.AICGovernor;
-import rotp.model.ai.community.AICScientist;
-import rotp.model.ai.community.AICShipCaptain;
-import rotp.model.ai.community.AICShipDesigner;
-import rotp.model.ai.community.AICSpyMaster;
-import rotp.model.ai.community.AICTreasurer;
 import rotp.model.ai.interfaces.Diplomat;
 import rotp.model.ai.interfaces.FleetCommander;
 import rotp.model.ai.interfaces.General;
@@ -61,6 +43,10 @@ import rotp.ui.notifications.ColonizeSystemNotification;
 import rotp.util.Base;
 
 public class AI implements Base {
+    public static final int BASE = 0;
+    public static final int MODNAR = 1;
+    public static final int XILMI = 2;
+    
     private final Empire empire;
 
     private final Diplomat diplomat;
@@ -73,29 +59,44 @@ public class AI implements Base {
     private final SpyMaster spyMaster;
     private final Treasurer treasurer;
 
-    public AI (Empire e) {
+    public AI (Empire e, int aiType) {
         empire = e;
-        if (options().communityAI()) {
-            general = new AICGeneral(empire);
-            captain = new AICShipCaptain(empire);
-            governor = new AICGovernor(empire);
-            scientist = new AICScientist(empire);
-            diplomat = new AICDiplomat(empire);
-            shipDesigner = new AICShipDesigner(empire);
-            fleetCommander = new AICFleetCommander(empire);
-            spyMaster = new AICSpyMaster(empire);
-            treasurer = new AICTreasurer(empire);
-        }
-        else {
-            general = new AIGeneral(empire);
-            captain = new AIShipCaptain(empire);
-            governor = new AIGovernor(empire);
-            scientist = new AIScientist(empire);
-            diplomat = new AIDiplomat(empire);
-            shipDesigner = new AIShipDesigner(empire);
-            fleetCommander = new AIFleetCommander(empire);
-            spyMaster = new AISpyMaster(empire);
-            treasurer = new AITreasurer(empire);
+        
+        switch(aiType) {
+            case MODNAR:
+                general =        new rotp.model.ai.modnar.AIGeneral(empire);
+                captain =        new rotp.model.ai.modnar.AIShipCaptain(empire);
+                governor =       new rotp.model.ai.modnar.AIGovernor(empire);
+                scientist =      new rotp.model.ai.modnar.AIScientist(empire);
+                diplomat =       new rotp.model.ai.modnar.AIDiplomat(empire);
+                shipDesigner =   new rotp.model.ai.modnar.AIShipDesigner(empire);
+                fleetCommander = new rotp.model.ai.modnar.AIFleetCommander(empire);
+                spyMaster =      new rotp.model.ai.modnar.AISpyMaster(empire);
+                treasurer =      new rotp.model.ai.modnar.AITreasurer(empire);
+                break;
+            case XILMI:
+                general =        new rotp.model.ai.xilmi.AIGeneral(empire);
+                captain =        new rotp.model.ai.xilmi.AIShipCaptain(empire);
+                governor =       new rotp.model.ai.xilmi.AIGovernor(empire);
+                scientist =      new rotp.model.ai.xilmi.AIScientist(empire);
+                diplomat =       new rotp.model.ai.xilmi.AIDiplomat(empire);
+                shipDesigner =   new rotp.model.ai.xilmi.AIShipDesigner(empire);
+                fleetCommander = new rotp.model.ai.xilmi.AIFleetCommander(empire);
+                spyMaster =      new rotp.model.ai.xilmi.AISpyMaster(empire);
+                treasurer =      new rotp.model.ai.xilmi.AITreasurer(empire);
+                break;
+            case BASE:
+            default:
+                general =        new rotp.model.ai.base.AIGeneral(empire);
+                captain =        new rotp.model.ai.base.AIShipCaptain(empire);
+                governor =       new rotp.model.ai.base.AIGovernor(empire);
+                scientist =      new rotp.model.ai.base.AIScientist(empire);
+                diplomat =       new rotp.model.ai.base.AIDiplomat(empire);
+                shipDesigner =   new rotp.model.ai.base.AIShipDesigner(empire);
+                fleetCommander = new rotp.model.ai.base.AIFleetCommander(empire);
+                spyMaster =      new rotp.model.ai.base.AISpyMaster(empire);
+                treasurer =      new rotp.model.ai.base.AITreasurer(empire);
+                break;
         }
     }
 
@@ -121,26 +122,21 @@ public class AI implements Base {
         Collections.sort(systems,StarSystem.INVASION_PRIORITY);
         return systems;
     }
-    public float targetPopPct(StarSystem sys) {
-        SystemView sv = empire.sv.view(id(sys));
-        if (sv.borderSystem()) return .75f;
-
-        Planet p = sys.planet();
-        if (p.isResourceRich()) return .75f;
-        if (p.isResourceUltraRich()) return .75f;
-        if (p.isArtifact()) return .75f;
-        if (p.isOrionArtifact()) return .75f;
-        if (p.currentSize() <= 20) return .75f;
-
-        if (sv.supportSystem()) return .5f;
-        if (p.currentSize() <= 40) return .5f;
-
-        return .25f;
+    private int popNeeded(int sysId, float pct) {
+        if (empire.sv.missing(sysId))
+            return 0;
+        StarSystem sys = empire.sv.view(sysId).system();
+        Colony col = sys.colony();
+        if (col == null)
+            return 0;
+       
+        return col.calcPopNeeded(pct);
     }
     private ColonyTransporter createColony(StarSystem sys, int minTransports) {
         int sysId = id(sys);
-        int popNeeded = (int) empire.sv.popNeeded(sysId);        
-        int maxPopToGive = (int) empire.sv.maxPopToGive(sysId);
+        float targetPct = empire.governorAI().targetPopPct(sysId);
+        int popNeeded = popNeeded(sysId, targetPct);        
+        int maxPopToGive = (int) empire.sv.maxPopToGive(sysId, targetPct);
         if ((popNeeded < minTransports) && (maxPopToGive < minTransports))
             return null;
 
@@ -264,6 +260,22 @@ public class AI implements Base {
 
         // else don't bomb
         return false;
+    }
+    private float targetPopPct(SystemView sv) {
+        if (sv.borderSystem()) return .75f;
+        
+        Planet pl = sv.system().planet();
+
+        if (pl.isResourceRich()) return .75f;
+        if (pl.isResourceUltraRich()) return .75f;
+        if (pl.isArtifact()) return .75f;
+        if (pl.isOrionArtifact()) return .75f;
+        if (pl.currentSize() <= 20) return .75f;
+
+        if (sv.supportSystem()) return .5f;
+        if (pl.currentSize() <= 40) return .5f;
+
+        return .25f;
     }
     class ColonyTransporter implements IMappedObject {
         Colony colony;

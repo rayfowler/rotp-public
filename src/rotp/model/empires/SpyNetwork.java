@@ -27,7 +27,6 @@ import rotp.model.tech.Tech;
 import rotp.model.tech.TechTree;
 import rotp.ui.RotPUI;
 import rotp.ui.notifications.SabotageNotification;
-import rotp.ui.notifications.SpyNewTechAlert;
 import rotp.util.Base;
 
 public final class SpyNetwork implements Base, Serializable {
@@ -38,6 +37,10 @@ public final class SpyNetwork implements Base, Serializable {
     private static final int MAX_SPENDING_TICKS = 20;
     private static final float MAX_SPENDING_PCT = 0.10f;
     private static final int MIN_SPIES_FOR_FLEET_VIEW = 1;
+    
+    private static final int THREAT_NONE = 0;
+    private static final int THREAT_HIDE = 1;
+    private static final int THREAT_EVICT = 2;
 
     public enum Sabotage {
         FACTORIES, MISSILES, REBELS;
@@ -61,7 +64,8 @@ public final class SpyNetwork implements Base, Serializable {
 
     private final FleetView fleetView  = new FleetView();
     private List<String> possibleTechs = new ArrayList<>();
-    private transient int spiesLost = 0;
+    private int threatened = 0;
+    private SpyReport report = new SpyReport();
     private transient List<StarSystem> baseTargets;
     private transient List<StarSystem> factoryTargets;
     private transient List<StarSystem> rebellionTargets;
@@ -106,6 +110,24 @@ public final class SpyNetwork implements Base, Serializable {
     public void increaseMaxSpies()   { maxSpies++; }
     public void decreaseMaxSpies()   { maxSpies = max(0, maxSpies-1); }
     
+    public void heedEviction()        { threatened = THREAT_EVICT; }
+    public void heedThreat()          { threatened = THREAT_HIDE; }
+    public void ignoreThreat()        { threatened = THREAT_NONE; }
+    public boolean threatened()       { return threatened != THREAT_NONE; }
+    public boolean evicted()          { return threatened == THREAT_EVICT; }
+    public SpyReport report() {
+        if (report == null)
+            report = new SpyReport();
+        return report;
+    }
+    
+    public void shutdownSpyNetworks() {
+        maxSpies = 0;
+        allocation = 0;
+        activeSpies.clear();
+        beginHide();
+    }
+    
     public String numSpiesLabel() {
         int n = activeSpies.size();
         if (n == 0)
@@ -140,7 +162,6 @@ public final class SpyNetwork implements Base, Serializable {
     public boolean hasSpies()        { return !activeSpies.isEmpty(); }
     public List<Spy> activeSpies()   { return activeSpies; }
     public int numActiveSpies()      { return activeSpies().size(); }
-    public int spiesLost()           { return spiesLost; }
 
     public List<String> possibleTechs() {
         if (possibleTechs == null)
@@ -225,15 +246,15 @@ public final class SpyNetwork implements Base, Serializable {
             return;
         }
         
+        if (maxSpies() == 0) {
+            activeSpies.clear();
+            return;
+        }
+        
         log(view+" Spies: nextTurn");
         if (!activeSpies().isEmpty())
             view.refreshSystemSpyViews();
         
-        baseTargets = sabotageBaseTargets();
-        factoryTargets = sabotageFactoryTargets();
-        rebellionTargets = sabotageRebellionTargets();
-
-        spiesLost = 0;
         if (empire().extinct()) {
             activeSpies.clear();
             return;
@@ -243,6 +264,10 @@ public final class SpyNetwork implements Base, Serializable {
         if (activeSpies.isEmpty())
             return;
 
+        baseTargets = sabotageBaseTargets();
+        factoryTargets = sabotageFactoryTargets();
+        rebellionTargets = sabotageRebellionTargets();
+
         if (activeSpies.size() >= MIN_SPIES_FOR_FLEET_VIEW)
             updateFleetView(empire());
 
@@ -250,10 +275,25 @@ public final class SpyNetwork implements Base, Serializable {
         updateTechList();
 
         boolean spyConfessed = sendSpiesToInfiltrate();
+        
+        SpyReport rpt = report();
 
-        if (spyConfessed)
+        if (spyConfessed) {
+            view.otherView().embassy().addIncident(new SpyConfessionIncident(view.otherView(), this));
             checkForTreatyBreak();
-
+            rpt.confessedMission(mission);
+        }
+        else if ((rpt.spiesLost() > 0) && view.empire().leader().isXenophobic()) {
+            view.otherView().embassy().addIncident(new SpyConfessionIncident(view.otherView(), this));
+            checkForTreatyBreak();
+            rpt.confessedMission(Mission.SABOTAGE);
+        }
+        
+        if (rpt.spiesLost() > 0) {
+            if (view.owner().isPlayer() || view.empire().isPlayer())
+            session().enableSpyReport();
+        }
+        
         if (spyConfessed || activeSpies.isEmpty() || isHide())
             return;
 
@@ -283,8 +323,10 @@ public final class SpyNetwork implements Base, Serializable {
         if (owner.isPlayer()) {
             List<String> newPossible = new ArrayList<>(possibleTechs());
             newPossible.removeAll(prevPossible);
-            for (String tId : newPossible) 
-                SpyNewTechAlert.create(emp.id, tId);
+            if (!newPossible.isEmpty()) {
+                session().enableSpyReport();
+                report().recordTechsLearned(newPossible);
+            }
         }  
     }
     private boolean sendSpiesToInfiltrate() {
@@ -294,15 +336,13 @@ public final class SpyNetwork implements Base, Serializable {
         for (Spy spy: spiesAttempting) {
             spy.attemptInfiltration(adj);
             if (spy.eliminated()) {
-                spiesLost++;
+                report().addSpiesLost();
+                view.otherView().spies().report().addSpiesCaptured();
                 activeSpies().remove(spy);
+                
             }
             confession = confession || spy.confesses();
         }
-        // spy confesses to enemy, who gets a Diplomatic Incident
-        if (confession)
-            view.otherView().embassy().addIncident(new SpyConfessionIncident(view.otherView(), this));
-
         return confession;
     }
     private void sendSpiesToAttemptMission() {
@@ -314,10 +354,8 @@ public final class SpyNetwork implements Base, Serializable {
         // make sure we don't try to steal any techs that we just traded for
         // but haven't received yet
         List<String> recentlyTradedTechs = owner().tech().tradedTechs();
-        for (String techId: recentlyTradedTechs) {
-            Tech traded = tech(techId);
-            possibleTechs().remove(traded);
-        }
+        for (String techId: recentlyTradedTechs) 
+            possibleTechs().remove(techId);
         
         // no unknown techs to potentially steal
         if (possibleTechs().isEmpty())
@@ -342,10 +380,12 @@ public final class SpyNetwork implements Base, Serializable {
         if (bestSpy == null)
             return;
 
+        List<Tech> allPossible = new ArrayList<>();
         // build list of techs at or below the steal number
         List<Tech> espionageChoices = new ArrayList<>();
         for (String tId: possibleTechs()) {
             Tech pTech = tech(tId);
+            allPossible.add(pTech);
             if (pTech.level() <= bestStealNumber)
                 espionageChoices.add(pTech);
         }
@@ -354,7 +394,16 @@ public final class SpyNetwork implements Base, Serializable {
         if (espionageChoices.isEmpty())
             return;
 
-        EspionageMission eMission = chooseTechToSteal(bestSpy, espionageChoices);
+        EspionageMission eMission = chooseTechToSteal(bestSpy, espionageChoices, allPossible);
+        
+        report().stolenTech(eMission.stolenTech());
+        Empire framedEmpire = eMission.framedEmpire();
+        // log which empire we framed on our spy report, and the 
+        // fact that they were framed on their spy report
+        if (framedEmpire != null) {
+            report().framedEmpire(framedEmpire);
+            framedEmpire.viewForEmpire(empire().id).spies().report().frame();
+        }
 
         // if spy caught or is going to frame an empire, create incident
         if (bestSpy.caught() || bestSpy.canFrame()) {
@@ -367,16 +416,16 @@ public final class SpyNetwork implements Base, Serializable {
         if (bestSpy.caught())
             checkForTreatyBreak();
     }
-    private EspionageMission chooseTechToSteal(Spy spy, List<Tech> techs) {
-        if (techs.isEmpty())
+    private EspionageMission chooseTechToSteal(Spy spy, List<Tech> topTechs, List<Tech> possibleTechs) {
+        if (topTechs.isEmpty())
             return null;
 
         StarSystem randomSystem = random(empire().allColonizedSystems());
-        EspionageMission eMission = new EspionageMission(this, spy, techs, randomSystem);
+        EspionageMission eMission = new EspionageMission(this, spy, topTechs, randomSystem, possibleTechs);
 
         // ai will choose now.. player choice is deferred until UI is displayed
         if (owner().isAIControlled()) {
-            eMission.stealTech(owner().ai().scientist().mostDesirableTech(techs));
+            eMission.stealTech(owner().ai().scientist().mostDesirableTech(topTechs));
             if (eMission.canFrame())
                 eMission.frameEmpire(owner().spyMasterAI().suggestToFrame(eMission.empiresToFrame()));
         }
@@ -494,7 +543,7 @@ public final class SpyNetwork implements Base, Serializable {
         if (chosenSystem == null)
             return;
 
-        if (owner().isPlayer()) {
+        if (owner().isPlayerControlled()) {
             SabotageNotification.addMission(eMission, chosenSystem.id);
             return;
         }

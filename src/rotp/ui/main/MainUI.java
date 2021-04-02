@@ -33,7 +33,6 @@ import rotp.Rotp;
 import rotp.model.Sprite;
 import rotp.model.combat.ShipCombatManager;
 import rotp.model.empires.Empire;
-import rotp.model.empires.EmpireView;
 import rotp.model.empires.EspionageMission;
 import rotp.model.empires.SystemView;
 import rotp.model.galaxy.IMappedObject;
@@ -50,15 +49,14 @@ import rotp.ui.main.overlay.*;
 import rotp.ui.map.IMapHandler;
 import rotp.ui.notifications.GameAlert;
 import rotp.ui.sprites.AlertDismissSprite;
-import rotp.ui.sprites.ClickToContinueSprite;
 import rotp.ui.sprites.FlightPathSprite;
 import rotp.ui.sprites.HelpSprite;
 import rotp.ui.sprites.YearDisplaySprite;
-import rotp.util.ThickBevelBorder;
 
 public class MainUI extends BasePanel implements IMapHandler {
     private static final long serialVersionUID = 1L;
     public static Color paneBackground = new Color(123,123,123);
+    public static Color paneBackgroundDk = new Color(100,100,100);
     public static Color paneShadeC = new Color(123,123,123,128);
     public static Color paneShadeC2 = new Color(100,100,100,192);
     private static final Color shadeBorderC = new Color(80,80,80);
@@ -85,9 +83,10 @@ public class MainUI extends BasePanel implements IMapHandler {
 
     MapOverlayNone overlayNone;
     MapOverlayMemoryLow overlayMemoryLow;
+    MapOverlayJava32Bit overlayJava32Bit;
     MapOverlayAutosaveFailed overlayAutosaveFailed;
     MapOverlayShipsConstructed overlayShipsConstructed;
-    MapOverlay overlaySpiesCaptured;
+    MapOverlaySpies overlaySpies;
     MapOverlayAllocateSystems overlayAllocateSystems;
     MapOverlaySystemsScouted overlaySystemsScouted;
     MapOverlayEspionageMission overlayEspionageMission;
@@ -145,9 +144,10 @@ public class MainUI extends BasePanel implements IMapHandler {
         addMapControls();
         overlayNone = new MapOverlayNone(this);
         overlayMemoryLow = new MapOverlayMemoryLow(this);
+        overlayJava32Bit = new MapOverlayJava32Bit(this);
         overlayAutosaveFailed = new MapOverlayAutosaveFailed(this);
         overlayShipsConstructed = new MapOverlayShipsConstructed(this);
-        overlaySpiesCaptured = new MapOverlaySpiesCaptured(this);
+        overlaySpies = new MapOverlaySpies(this);
         overlayAllocateSystems = new MapOverlayAllocateSystems(this);
         overlaySystemsScouted = new MapOverlaySystemsScouted(this);
         overlayEspionageMission = new MapOverlayEspionageMission(this);
@@ -159,7 +159,7 @@ public class MainUI extends BasePanel implements IMapHandler {
         overlay = overlayNone;
     }
     public void init(boolean pauseNextTurn) {
-        map.clearRangeMap();
+        map.init();
         if (pauseNextTurn)
             buttonPanel.init();
         
@@ -185,7 +185,7 @@ public class MainUI extends BasePanel implements IMapHandler {
         map.setScale(saveScale);
         map.centerX(saveX);
         map.centerY(saveY);
-        map.clearRangeMap();
+        map.resetRangeAreas();
         map.clearHoverSprite();
         clickedSprite((Sprite) sessionVar("MAINUI_SAVE_CLICKED"));
         showDisplayPanel();
@@ -201,11 +201,14 @@ public class MainUI extends BasePanel implements IMapHandler {
         baseControls.add(alertDismissSprite);
         baseControls.add(helpSprite);
     }
+    @Override
     public boolean showAlerts() {
         return (session().currentAlert() != null) && displayPanel.isVisible();
     }
     @Override
     public boolean showTreasuryResearchBar()       { return overlay != overlayAdvice; }
+    @Override
+    public boolean showSpyReportIcon()             { return (overlay != overlayAdvice) && session().spyActivity(); }
     public void setOverlay(MapOverlay lay) {
         overlay = lay;
     }
@@ -258,6 +261,11 @@ public class MainUI extends BasePanel implements IMapHandler {
         overlayMemoryLow.init();
         repaint();
     }
+    public void showJava32BitPrompt() {
+        overlay = overlayJava32Bit;
+        overlayJava32Bit.init();
+        repaint();
+    }
     public void showAutosaveFailedPrompt(String err) {
         overlay = overlayAutosaveFailed;
         overlayAutosaveFailed.init(err);
@@ -282,8 +290,9 @@ public class MainUI extends BasePanel implements IMapHandler {
         overlayColonizePrompt.init(sysId, fl, d);
         repaint();
     }
-    public void showSpiesCaptured() {
-        overlay = overlaySpiesCaptured;
+    public void showSpyReport() {
+        overlay = overlaySpies;
+        overlaySpies.init();
         repaint();
     }
     public void showEspionageMission(EspionageMission esp, int empId) {
@@ -817,99 +826,5 @@ public class MainUI extends BasePanel implements IMapHandler {
     public void keyPressed(KeyEvent e) {
         if (!overlay.handleKeyPress(e))
             overlayNone.handleKeyPress(e);
-    }
-    class MapOverlaySpiesCaptured extends MapOverlay {
-        MainUI parent;
-        ClickToContinueSprite clickSprite;
-        Border shipBoxOuterBorder;
-        final Color spyTitleC = new Color(143,142,184);
-        final Color shipBoxBackground = new Color(61,48,28);
-        final Color shipLightC = new Color(76,57,41);
-        final Color shipLighterC = new Color(94,71,53);
-        final Color shipDarkC = new Color(42,26,19);
-        final Color shipDarkerC = new Color(22,14,4);
-        public MapOverlaySpiesCaptured(MainUI p) {
-            parent = p;
-            shipBoxOuterBorder = new ThickBevelBorder(5,shipLighterC,shipLightC,shipDarkerC, shipDarkC,shipDarkerC, shipDarkC,shipLighterC,shipLightC);
-            clickSprite = new ClickToContinueSprite(parent);
-        }
-        @Override
-        public boolean hoveringOverSprite(Sprite o) { return false; }
-        @Override
-        public void advanceMap() {
-            resumeTurn();
-        }
-        @Override
-        public void paintOverMap(MainUI parent, GalaxyMapPanel ui, Graphics2D g) {
-            List<Empire> empires = player().contactedEmpires();
-            int lineH = s25;
-            int spyBoxW = scaled(400);
-            int spyBoxH = scaled(100)+(lineH*empires.size());
-            int cellMargin = s20;
-            int borderW = s5;
-
-            int x0 = (ui.getWidth()-spyBoxW)/2;
-            int y0 = (ui.getHeight()-spyBoxH)*2/5;
-
-            g.setColor(shipBoxBackground);
-            g.fillRect(x0, y0, spyBoxW, spyBoxH);
-
-            shipBoxOuterBorder.paintBorder(ui, g, x0, y0, spyBoxW, spyBoxH);
-            g.setColor(Color.white);
-            g.setFont(narrowFont(26));
-
-            int w1 = spyBoxW-(2*(borderW+cellMargin));
-            g.setColor(spyTitleC);
-
-            String title = text("MAIN_SPIES_CAUGHT_TITLE");
-            int x1 = x0+borderW+cellMargin;
-            int y1 = y0+borderW+cellMargin+s10;
-            drawBorderedString(g, title, 2, x1, y1, Color.black, Color.white);
-
-            String yours = text("MAIN_SPIES_CAUGHT_YOURS");
-            int sw2 = g.getFontMetrics().stringWidth(yours);
-            int x2 = x1 + w1/2;
-            int x2b = x2 + (sw2/2);
-            int y2 = y1;
-            drawBorderedString(g, yours, 2, x2, y2, Color.black, Color.white);
-
-            String theirs = text("MAIN_SPIES_CAUGHT_THEIRS");
-            int sw3 = g.getFontMetrics().stringWidth(theirs);
-            int x3 = x1 + w1*3/4;
-            int x3b = x3+(sw3/2);
-            int y3 = y1;
-            drawShadowedString(g, theirs, 2, x3, y3, Color.black, Color.white);
-
-            g.setFont(narrowFont(24));
-            int y4 = y3+s10+lineH;
-            g.setColor(spyTitleC);
-            for (Empire emp: empires) {
-                EmpireView v = player().viewForEmpire(emp);
-                g.drawString(v.empire().raceName(), x1, y4);
-                g.drawString(str(v.spies().spiesLost()), x2b, y4);
-                g.drawString(str(v.otherView().spies().spiesLost()), x3b, y4);
-                y4 += lineH;
-            }
-
-            g.setFont(narrowFont(20));
-            g.setColor(spyTitleC);
-            String cont = text("CLICK_CONTINUE");
-            int sw4 = g.getFontMetrics().stringWidth(cont);
-            int x4 = (ui.getWidth()-sw4)/2;
-            g.drawString(cont, x4, y0+spyBoxH-s11);
-
-            parent.addNextTurnControl(clickSprite);
-        }
-        @Override
-        public boolean handleKeyPress(KeyEvent e) {
-            switch(e.getKeyCode()) {
-                case KeyEvent.VK_ESCAPE:
-                    softClick();
-                    advanceMap();
-                    return true;
-                default:
-                    return false;
-            }
-        }
     }
 }

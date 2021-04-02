@@ -138,8 +138,9 @@ public final class EmpireView implements Base, Serializable {
         return values;
     }
     public void setSuggestedAllocations() {
-        if (owner.isAIControlled())
+        if (owner.isAIControlled()) {
             spies.setSuggestedAllocations();
+        }
     }
     public void setContact() {
         if (owner.extinct() || empire.extinct())
@@ -206,10 +207,8 @@ public final class EmpireView implements Base, Serializable {
         spies.nextTurn(prod, spyMod);
     }
     public void makeDiplomaticOffers() {
-        log(this+": assessTurn");
-        embassy.assessTurn();
-        trade.assessTurn();
-        if (owner.isAI())
+        log(this+": makeDiplomaticOffers");
+        if (owner.isAIControlled())
             owner.diplomatAI().makeDiplomaticOffers(this);
     }
     public String decode(String s) {

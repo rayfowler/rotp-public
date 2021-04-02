@@ -231,6 +231,21 @@ public class ColonyShipyard extends ColonySpendingCategory {
         else
             galaxy().ships.buildShips(emp.id, sysId, designId, count);
     }
+    public void capturedBy(Empire newCiv) {
+        if (newCiv == empire())
+            return;
+        hasStargate = false;
+        buildingStargate = false;
+        stargateCompleted = false;
+        stargateBC = 0;
+        shipBC = 0;
+        shipReserveBC = 0;
+        newShips = 0;
+        buildLimit = 0;
+        shipLimitReached = false;
+        rallyFleet = null;
+        maxAllowedShipBCProd = -1;
+    }
     public void goToPrevDesign() {
         design = empire().shipLab().prevDesignFrom(design, hasStargate);
         buildingStargate = design == empire().shipLab().stargateDesign();

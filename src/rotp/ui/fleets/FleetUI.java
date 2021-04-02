@@ -21,7 +21,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.GridLayout;
 import java.awt.LinearGradientPaint;
 import java.awt.Rectangle;
 import java.awt.Shape;
@@ -83,6 +82,7 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
     private final String RALLY_PANEL = "Rally";
     private final String DEPLOY_PANEL = "Deploy";
     private final String TRANSPORT_PANEL = "Transport";
+    private final String SPENDING_PANEL = "Spending";
 
     public static FleetUI instance;
     private MainTitlePanel titlePanel;
@@ -121,9 +121,11 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
     private BasePanel rallyPanel;
     private BasePanel deployPanel;
     private BasePanel transportPanel;
+    private BasePanel spendingPanel;
     private FleetMassDeployPanel massDeployPanel;
     private SystemMassRallyPanel massRallyPanel;
     private SystemMassTransportPanel massTransportPanel;
+    private SystemMassSpendingPanel massSpendingPanel;
     private MassTransportsDialog massTransportDialog;
     private ExitFleetsButton exitButton;
     JLayeredPane layers = new JLayeredPane();
@@ -148,7 +150,7 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
 
         // reset map everytime we open
         targetSystem = null;
-        map.clearRangeMap();
+        map.init();
 
         selectedSystems.clear();
         
@@ -166,10 +168,12 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
     public boolean showingQueryPanel()     { return currentPane.equals(QUERY_PANEL); }
     public boolean showingRallyPanel()     { return currentPane.equals(RALLY_PANEL); }
     public boolean showingTransportPanel() { return currentPane.equals(TRANSPORT_PANEL); }
+    public boolean showingSpendingPanel()  { return currentPane.equals(SPENDING_PANEL); }
     public void showQueryPanel()           { showPanel(QUERY_PANEL, queryPanel); }
     public void showDeployPanel()          { showPanel(DEPLOY_PANEL, deployPanel); }
     public void showRallyPanel()           { showPanel(RALLY_PANEL, rallyPanel); }
     public void showTransportPanel()       { showPanel(TRANSPORT_PANEL, transportPanel); }
+    public void showSpendingPanel()        { showPanel(SPENDING_PANEL, spendingPanel); }
     @Override
     public boolean allowsDragSelect()      { return true; }
     @Override
@@ -459,6 +463,8 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
             g.setColor(Color.yellow);
         else
             g.setColor(SystemPanel.blackText);
+        String str = filt.text();
+        instance.scaledFont(g,str,w-x-boxW-s10,14,8);
         g.drawString(filt.text(), labelX, y-s2);
     }
     public void drawBrownButton(Graphics2D g, String label, Rectangle actionBox, Shape hoverBox, int y) {
@@ -589,10 +595,12 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         massDeployPanel = new FleetMassDeployPanel(this);
         massRallyPanel = new SystemMassRallyPanel(this);
         massTransportPanel = new SystemMassTransportPanel(this);
+        massSpendingPanel = new SystemMassSpendingPanel(this);
         queryPanel = dataPanelWith(new SystemMassQueryPanel(this), new FleetMassQueryPanel(this), s10);
         rallyPanel = dataPanelWith(new SystemMassQueryPanel(this), massRallyPanel, 0);
         deployPanel = dataPanelWith(new FleetMassQueryPanel(this), massDeployPanel, s10);
         transportPanel = dataPanelWith(new SystemMassQueryPanel(this), massTransportPanel, 0);
+        spendingPanel = dataPanelWith(new SystemMassQueryPanel(this), massSpendingPanel, 0);
 
         dataPanel = new BasePanel();
         dataPanel.setLayout(cardLayout);
@@ -600,6 +608,7 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         dataPanel.add(rallyPanel, RALLY_PANEL);
         dataPanel.add(deployPanel, DEPLOY_PANEL);
         dataPanel.add(transportPanel, TRANSPORT_PANEL);
+        dataPanel.add(spendingPanel, SPENDING_PANEL);
         dataPanel.setBounds(w-rightPaneW-s5,s5,rightPaneW,scaled(673));
         
         exitButton = new ExitFleetsButton(rightPaneW, s60, s10, s2);
@@ -634,11 +643,12 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
         pan.setOpaque(true);
         pan.setBorder(newEmptyBorder(6,6,6,6));
         pan.setBackground(FleetUI.backHiC);
-        GridLayout lay = new GridLayout(2,1);
+        BorderLayout lay = new BorderLayout();
+        //GridLayout lay = new GridLayout(2,1);
         lay.setVgap(vGap);
         pan.setLayout(lay);
-        pan.add(top);
-        pan.add(bottom);
+        pan.add(top, BorderLayout.CENTER);
+        pan.add(bottom, BorderLayout.SOUTH);
         return pan;
     }
     public void clearMapSelections() {

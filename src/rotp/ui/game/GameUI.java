@@ -15,6 +15,7 @@
  */
 package rotp.ui.game;
 
+import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.awt.Graphics;
@@ -28,6 +29,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.Point2D;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.net.URISyntaxException;
 import java.net.URL;
@@ -49,6 +51,8 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     public static String AMBIENCE_KEY = "IntroAmbience";
     protected static RoundGradientPaint rgp;
 
+    public static final int BG_DURATION = 80;
+    
     public static String gameName = "";
     
     private static final Color langShade[] = { new Color(0,0,0,128), new Color(128,0,0,96) };
@@ -56,10 +60,10 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     private static final Color menuDepressed[] = { new Color(156,96,77), new Color(110,110,110) };
     private static final Color menuEnabled[] = { new Color(255,203,133), new Color(197,197,197) };
     private static final Color menuDisabled[] = { new Color(156,96,77), new Color(110,110,110) };
-    private static final Color menuShade[] = { new Color(16,10,8,6), new Color(12,12,12,6) };
+    private static final Color menuShade[] = { new Color(16,10,8,3), new Color(0,0,0,6) };
 
     private static final Color logoFore[] = { new Color(255,220,181), new Color(240,240,240) };
-    private static final Color logoShade[] = { new Color(65,30,24,24), new Color(40,40,40,24) };
+    private static final Color logoShade[] = { new Color(65,30,24,2), new Color(0,0,0,3) };
     private static final Color setupShade[] = { new Color(65,30,24,128), new Color(40,40,40,128) };
     private static final Color setupFrame[] = { new Color(254,204,153), new Color(195,205,205) };
 
@@ -67,7 +71,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     private static final Color[] titleShade = { new Color(25,25,25), new Color(25,25,25) };
     private static final Color[] labelColor = { new Color(79,52,33), new Color(39,44,44) };
     private static final Color[] raceEdgeColor = { new Color(114,75,49), new Color(44,48,47) };
-    private static final Color[] raceCenterColor = { new Color(179,117,77), new Color(78,86,85) };
+    private static final Color[] raceCenterColor = { new Color(179,117,77), new Color(86,96,95) };
     private static final Color[] borderBrightColor = { new Color(254,204,153), new Color(172,181,181) };
     private static final Color[] borderMidColor = { new Color(179,116,73), new Color(106,121,121) };
     private static final Color[] borderDarkColor = { new Color(79,52,33),  new Color(39,44,44) };
@@ -80,8 +84,9 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     private static final Color[] textHoverColor = { new Color(250,247,140), new Color(253,219,180) };
     private static final Color[] textSelectedColor = { new Color(153,196,153), new Color(151,136,205) };
     private static final Color[] textShade = { new Color(25,25,25), new Color(25,25,25) };
+    private static final Color[] loadHiBackgroundColor = { new Color(188,123,81), new Color(91,101,100) };
     private static final Color[] loadHoverBackgroundColor = { new Color(219,167,122), new Color(160,172,170) };
-    private static final Color[] loadListMask = { new Color(0,0,0,80), new Color(0,0,0,80) };
+    private static final Color[] loadListMask = { new Color(0,0,0,120), new Color(0,0,0,120) };
     private static final Color[] sortLabelBackColor = { new Color(100,70,50), new Color(59,66,65) };
     private static LinearGradientPaint[] loadBackground;
     private static LinearGradientPaint[] raceLeftBackground;
@@ -110,6 +115,12 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     boolean hideText = false;
     int startingScale = 100;
     String startingDisplayMode;
+    public static Image defaultBackground;
+    Image backImg1, backImg2;
+    BufferedImage titleImg;
+    BufferedImage backImg;
+    String imageKey1, imageKey2;
+    int animationTimer = BG_DURATION;
     private final GameLanguagePane languagePanel = new GameLanguagePane();
 
     public static Color langShade()               { return langShade[opt()]; }
@@ -132,6 +143,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     public static Color borderBrightColor()       { return borderBrightColor[opt()]; }
     public static Color borderMidColor()          { return borderMidColor[opt()]; }
     public static Color borderDarkColor()         { return borderDarkColor[opt()]; }
+    public static Color loadHiBackground()        { return loadHiBackgroundColor[opt()]; }
     public static Color loadHoverBackground()     { return loadHoverBackgroundColor[opt()]; }
     public static Color loadListMask()            { return loadListMask[opt()]; }
     public static Color sortLabelBackColor()      { return sortLabelBackColor[opt()]; }
@@ -293,42 +305,47 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     }
 
     private static int opt = -1;
-    private static final String[] backImg = { "LANDSCAPE_RUINS_ORION", "LANDSCAPE_RUINS_ANTARAN" };
-    public static Image background() { return ImageManager.current().image(backImg[opt()]); }
+    private static final String[] backImgKeys = { 
+        "LANDSCAPE_RUINS_ORION", "LANDSCAPE_RUINS_ANTARAN", 
+        "AlkCouncil", "BulCouncil", "DarCouncil01", "HumCouncil", "KlaCouncil", "MekCouncil", "MrrCouncil", 
+        "PsiCouncil", "SakCouncil", "SilCouncil" };
+    public Image background() { return backImg; }
     public static int opt()     {
-        if (opt < 0)
-            opt = (int)(backImg.length*Math.random());
-        return opt;
+        return 0;
     }
 
     public GameUI() {
         startingScale = UserPreferences.screenSizePct();
         startingDisplayMode = UserPreferences.displayMode();
-        Color enabledC = menuEnabled[opt()];
-        Color disabledC = menuDisabled[opt()];
-        Color hoverC = menuHover[opt()];
-        Color depressedC = menuDepressed[opt()];
-        Color shadedC = menuShade[opt()];
+        imageKey1 = backImgKeys[0];
+        imageKey2 = random(backImgKeys);
+        while (imageKey1.equals(imageKey2))
+            imageKey2 = random(backImgKeys);
+        Color enabledC = menuEnabled[0];
+        Color disabledC = menuDisabled[0];
+        Color hoverC = logoFore[1];
+        Color depressedC = menuDepressed[1];
+        Color shadedC = menuShade[1];
         
         int w = getWidth();
         shrinkText      = new BaseText(this, false,20,   10,24,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         enlargeText     = new BaseText(this, false,20,    0,24,  enabledC, disabledC, hoverC, depressedC, shadedC, 0, 0, 0);
         enlargeText.preceder(shrinkText);
-        continueText    = new BaseText(this, true, 45,   0, 300,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
-        newGameText     = new BaseText(this, true, 45,   0, 350,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
-        loadGameText    = new BaseText(this, true, 45,   0, 400,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
-        saveGameText    = new BaseText(this, true, 45,   0, 450,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
-        settingsText    = new BaseText(this, true, 45,   0, 500,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
-        exitText        = new BaseText(this, true, 45,   0, 550,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
-        restartText     = new BaseText(this, true, 45,   0, 400,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 8);
-        versionText     = new BaseText(this, false,16, w/2, -35,  enabledC,  enabledC, hoverC, depressedC, shadedC, 2, 0, 0);
-        discussText     = new BaseText(this, false,22, w/2, -10,  enabledC, disabledC, hoverC, depressedC, shadedC, 2, 1, 0);
-        developerText   = new BaseText(this, false,16, -220,-95,  enabledC,  enabledC, hoverC, depressedC, shadedC, 0, 0, 0);
-        artistText      = new BaseText(this, false,16, -220,-78,  enabledC,  enabledC, hoverC, depressedC, shadedC, 0, 0, 0);
-        graphicDsnrText = new BaseText(this, false,16, -220,-61,  enabledC,  enabledC, hoverC, depressedC, shadedC, 0, 0, 0);
-        writerText      = new BaseText(this, false,16, -220,-44,  enabledC,  enabledC, hoverC, depressedC, shadedC, 0, 0, 0);
-        soundText       = new BaseText(this, false,16, -220,-27,  enabledC,  enabledC, hoverC, depressedC, shadedC, 0, 0, 0);
-        translatorText  = new BaseText(this, false,16, -220,-10,  enabledC,  enabledC, hoverC, depressedC, shadedC, 0, 0, 0);
+        continueText    = new BaseText(this, true, 45,   0, 340,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
+        newGameText     = new BaseText(this, true, 45,   0, 385,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
+        loadGameText    = new BaseText(this, true, 45,   0, 430,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
+        saveGameText    = new BaseText(this, true, 45,   0, 475,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
+        settingsText    = new BaseText(this, true, 45,   0, 520,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
+        exitText        = new BaseText(this, true, 45,   0, 565,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
+        restartText     = new BaseText(this, true, 45,   0, 430,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
+        versionText     = new BaseText(this, false,16,   5, -35,  enabledC,  enabledC, hoverC, depressedC, Color.black, 1, 0, 1);
+        discussText     = new BaseText(this, false,22,   5, -10,  enabledC, disabledC, hoverC, depressedC, Color.black, 1, 1, 1);
+        developerText   = new BaseText(this, false,16, -210,-95,  enabledC,  enabledC, hoverC, depressedC, Color.black, 1, 1, 1);
+        artistText      = new BaseText(this, false,16, -210,-78,  enabledC,  enabledC, hoverC, depressedC, Color.black, 1, 1, 1);
+        graphicDsnrText = new BaseText(this, false,16, -210,-61,  enabledC,  enabledC, hoverC, depressedC, Color.black, 1, 1, 1);
+        writerText      = new BaseText(this, false,16, -210,-44,  enabledC,  enabledC, hoverC, depressedC, Color.black, 1, 1, 1);
+        soundText       = new BaseText(this, false,16, -210,-27,  enabledC,  enabledC, hoverC, depressedC, Color.black, 1, 1, 1);
+        translatorText  = new BaseText(this, false,16, -210,-10,  enabledC,  enabledC, hoverC, depressedC, Color.black, 1, 1, 1);
 
         developerText.disabled(true);
         artistText.disabled(true);
@@ -368,6 +385,38 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         versionText.displayText(text("GAME_VERSION", str(Rotp.releaseId)));
     }
     @Override
+    public void animate() {
+        if (glassPane() != null)
+            return;
+        
+        animationTimer--;
+        if (animationTimer == 0) {
+            imageKey1 = imageKey2;
+            imageKey2 = random(backImgKeys);
+            backImg1 = backImg2;
+            log("getting image: "+imageKey2);
+            backImg2 = ImageManager.current().image(imageKey2);
+            backImg = newOpaqueImage(backImg1);
+            animationTimer = BG_DURATION;
+            repaint();
+        }
+        else if (animationTimer < 20) {
+            float pct = bounds(0.0f, (20-animationTimer)/20f, 1.0f);
+            BufferedImage img = newOpaqueImage(backImg1);
+            Graphics2D imgG = (Graphics2D) img.getGraphics();
+            AlphaComposite composite = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, pct);
+            imgG.setComposite(composite);
+            imgG.drawImage(backImg2, 0,0,null);
+            //int alpha =(int) (255* ((10-(int)Math.abs(10-animationTimer))/10.0f));
+            //Color c0 = new Color (0,0,0,alpha);
+            //imgG.setColor(c0);
+            //imgG.fillRect(0,0,img.getWidth(),img.getHeight());
+            imgG.dispose();
+            backImg = img;
+            repaint();
+        }
+    }
+    @Override
     public boolean drawMemory()       { return true; }
     @Override
     public String ambienceSoundKey() { return canContinue() ? super.ambienceSoundKey() : AMBIENCE_KEY; }
@@ -377,6 +426,12 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         Graphics2D g = (Graphics2D) g0;
         int w = getWidth();
 
+        if (backImg == null) {
+            backImg1 =  ImageManager.current().image(imageKey1);
+            backImg2 =  ImageManager.current().image(imageKey2);
+            backImg = newOpaqueImage(backImg1);
+            defaultBackground = backImg;
+        }
         Image back = background();
         int imgW = back.getWidth(null);
         int imgH = back.getHeight(null);
@@ -386,54 +441,57 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         String titleStr2 = text("GAME_TITLE_LINE_2");
         String titleStr3 = text("GAME_TITLE_LINE_3");
 
-        int bigFont = scaledLogoFont(g, titleStr1+titleStr3, w*3/4, 80, 65);
-        int smallFont = scaledLogoFont(g, titleStr2, w*3/20, 60, 40);
-        g.setFont(logoFont(bigFont));
-        int sw1a = g.getFontMetrics().stringWidth(titleStr1);
-        g.setFont(logoFont(smallFont));
-        int sw1b = g.getFontMetrics().stringWidth(titleStr2);
-        g.setFont(logoFont(bigFont));
-        int sw1c = g.getFontMetrics().stringWidth(titleStr3);
-        int sw1Title = sw1a+sw1b+sw1c+s40;
-        int x1Left = (w-sw1Title)/2;
-        if (hideText) {
-            g.setFont(logoFont(bigFont));
-            drawShadowedString(g, titleStr1, 2, 0, 10, (w-sw1a)/2, scaled(250), logoShade[opt()], logoFore[opt()]);
-            g.setFont(logoFont(smallFont));
-            drawShadowedString(g, titleStr2, 1, 0, 5, (w-sw1b)/2, scaled(330), logoShade[opt()], logoFore[opt()]);
-            g.setFont(logoFont(bigFont));
-            drawShadowedString(g, titleStr3, 2, 0, 10, (w-sw1c)/2, scaled(430), logoShade[opt()], logoFore[opt()]);
+        if (titleImg == null) {
+            titleImg = newBufferedImage(getWidth(), scaled(200));
+            Graphics2D imgG = (Graphics2D) titleImg.getGraphics();
+            setFontHints(imgG);
+            int bigFont = scaledLogoFont(imgG, titleStr1+titleStr3, w*3/4, 80, 65);
+            int smallFont = scaledLogoFont(imgG, titleStr2, w*3/20, 60, 40);
+            imgG.setFont(logoFont(bigFont));
+            int sw1a = imgG.getFontMetrics().stringWidth(titleStr1);
+            imgG.setFont(logoFont(smallFont));
+            int sw1b = imgG.getFontMetrics().stringWidth(titleStr2);
+            imgG.setFont(logoFont(bigFont));
+            int sw1c = imgG.getFontMetrics().stringWidth(titleStr3);
+            int sw1Title = sw1a+sw1b+sw1c+s40;
+            int x1Left = (w-sw1Title)/2;
+            imgG.setFont(logoFont(bigFont));
+            int baseY = scaled(150);
+            drawShadowedString(imgG, titleStr1, 1, 0, 10, x1Left, baseY, logoShade[1], logoFore[0]);
+            imgG.setFont(logoFont(smallFont));
+            drawShadowedString(imgG, titleStr2, 1, 0, 10, x1Left+sw1a+s20, baseY, logoShade[1], logoFore[0]);
+            imgG.setFont(logoFont(bigFont));
+            drawShadowedString(imgG, titleStr3, 1, 0, 10, x1Left+sw1a+sw1b+s40, baseY, logoShade[1], logoFore[0]);
+            imgG.setFont(logoFont(bigFont));
+            drawShadowedString(imgG, titleStr1, 1, 0, 10, x1Left, baseY, logoShade[1], logoFore[0]);
+            imgG.setFont(logoFont(smallFont));
+            drawShadowedString(imgG, titleStr2, 1, 0, 10, x1Left+sw1a+s20, baseY, logoShade[1], logoFore[0]);
+            imgG.setFont(logoFont(bigFont));
+            imgG.dispose();
         }
-        else {
-            g.setFont(logoFont(bigFont));
-            drawShadowedString(g, titleStr1, 2, 0, 10, x1Left, scaled(200), logoShade[opt()], logoFore[opt()]);
-            g.setFont(logoFont(smallFont));
-            drawShadowedString(g, titleStr2, 1, 0, 5, x1Left+sw1a+s20, scaled(200), logoShade[opt()], logoFore[opt()]);
-            g.setFont(logoFont(bigFont));
-            drawShadowedString(g, titleStr3, 2, 0, 10, x1Left+sw1a+sw1b+s40, scaled(200), logoShade[opt()], logoFore[opt()]);
-        }
-
+        
+        g.drawImage(titleImg, 0, s100, null);
         if (hideText)
             return;
 
         int lw = languagePanel.w;
         int lh = languagePanel.h;
-        languagePanel.setBounds(w-lw-s15,s15,lw,lh);
+        languagePanel.setBounds(w-lw-s15,s5,lw,lh);
 
         Image img = image("LANGUAGE_ICON");
-        g.drawImage(img, w-s55, s15, s40, s40, this);
-        languageBox.setBounds(w-s55, s15, s40, s40);
+        g.drawImage(img, w-s55, s5, s40, s40, this);
+        languageBox.setBounds(w-s55, s5, s40, s40);
 
         String langText = LanguageManager.current().selectedLanguageName();
         g.setFont(narrowFont(24));
         int langSW = g.getFontMetrics().stringWidth(langText);
         int langX = w-s55-langSW-s10;
-        g.setColor(logoFore[opt()]);
-        drawShadowedString(g, langText, 2, langX, s40, logoShade[opt()], logoFore[opt()]);
+        g.setColor(logoFore[0]);
+        drawShadowedString(g, langText, 2, langX, s30, Color.black, logoFore[0]);
 
         discussText.disabled(false);
         if (LanguageManager.current().currentLangDir().equals("en"))
-            discussText.drawCentered(g);
+            discussText.draw(g);
 
         if (canRestart()) {
             continueText.reset();
@@ -469,7 +527,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         writerText.draw(g);
         soundText.draw(g);
         translatorText.draw(g);
-        versionText.drawCentered(g);
+        versionText.draw(g);
         
         shrinkText.visible(UserPreferences.windowed());
         enlargeText.visible(UserPreferences.windowed());
@@ -593,6 +651,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         LanguageManager.current().selectLanguage(i);
         UserPreferences.save();
         setTextValues();
+        titleImg = null;
         repaint();
     }
     public void goToSettings() {

@@ -24,10 +24,10 @@ import rotp.ui.diplomacy.DialogueManager;
 
 public class BioweaponIncident extends DiplomaticIncident {
     private static final long serialVersionUID = 1L;
-    final int empAttacker;
-    final int empVictim;
-    final int empMe;
-    final int sysId;
+    public final int empAttacker;
+    public final int empVictim;
+    public final int empMe;
+    public final int sysId;
 
     public static void create(Empire victim, Empire attacker, StarSystem sys) {
         // build list of races that were in contact with victim & attacker
@@ -51,8 +51,12 @@ public class BioweaponIncident extends DiplomaticIncident {
         empAttacker = a.id;
         empVictim = v.id;
         sysId = sys.id;
-        severity = max(-30, -20*n.leader().bioweaponMod());
         dateOccurred = galaxy().currentYear();
+        
+        if (n.diplomatAI().setSeverityAndDuration(this))
+            return;
+              
+        severity = max(-30, -20*n.diplomatAI().leaderBioweaponMod());
         duration = 50;
     }
     private String systemName() { return player().sv.name(sysId); }

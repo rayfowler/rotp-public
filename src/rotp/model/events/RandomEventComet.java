@@ -59,7 +59,8 @@ public class RandomEventComet implements Base, Serializable, RandomEvent {
         turnsNeeded = roll(10,15);
         cometHP = 40*turnsNeeded;
         galaxy().events().addActiveEvent(this);
-        if (player().knowsOf(empId))
+        if (player().knowsOf(empId)
+        && !player().sv.name(sysId).isEmpty())
             GNNNotification.notifyRandomEvent(notificationText(), "GNN_Event_Comet");
     }
     @Override

@@ -46,6 +46,12 @@ public class TradeRoute implements Base, Serializable {
         civProd = view.empire().totalPlanetaryProduction();
         ownerProd = view.owner().totalPlanetaryProduction();
         float prevProfit = profit;
+        
+        // anticipate maxLevel() potentially dropping as 
+        // empires shrink
+        if (level > maxLevel())
+            level = maxLevel();
+        
         profit = min(maxProfit(), profit + (pct * level) );
         if ((profit == level) && (profit > prevProfit)) {
             if (view.owner().isPlayer())
@@ -65,6 +71,9 @@ public class TradeRoute implements Base, Serializable {
     }
     public void startRoute(int newLevel) {
         float newTrade = newLevel - level;
+        if (newTrade < 0)
+            return;
+        
         float newPct = ((profit/newTrade) + startPct()) * (newTrade/newLevel);
 
         profit = newPct * newLevel;
@@ -89,6 +98,6 @@ public class TradeRoute implements Base, Serializable {
         return (-.3f + galaxy().empire(emp1).tradePctBonus());
     }
     private float smallerCivProd() {
-        return Math.min(civProd,ownerProd);
+        return min(civProd,ownerProd);
     }
 }

@@ -316,7 +316,7 @@ public class BasePanel extends JPanel implements Base {
     }
     
     public void drawTextureWithExistingClip(Graphics g0, int x, int y, int w, int h) {
-       if (!UserPreferences.textures())
+       if (!UserPreferences.texturesInterface())
             return;
         float pct = UserPreferences.uiTexturePct();
         if (pct <= 0)

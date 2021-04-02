@@ -162,7 +162,8 @@ public class Nebula extends MapSprite implements Base, IMappedObject, Serializab
             //int distFromCenter = (int) Math.min(128,Math.sqrt(((x-centerX)*(x-centerX))+((y-centerY)*(y-centerY))));
             int alpha = min(distFromEdge/2, landLevel*3/5);
             alpha = (int) (pctFromEdge * landLevel);
-            //alpha = Math.min(145-distFromCenter, landLevel/2);
+            alpha = min(alpha*3/2, (alpha+255)/2);
+           //alpha = Math.min(145-distFromCenter, landLevel/2);
             int newPixel = (alpha << 24) | (nebR << 16) | (nebG << 8) | nebB;
             fImg.setRGB(x, y, newPixel);
         }
@@ -176,6 +177,9 @@ public class Nebula extends MapSprite implements Base, IMappedObject, Serializab
         Rectangle mShape = mapShape(map);
         g2.drawImage(image(), mShape.x, mShape.y, mShape.x+mShape.width, mShape.y+mShape.height, 0, 0, image().getWidth(), image().getHeight(), map);
         float scale = map.scaleX();
+        
+        if (map.hideSystemNames())
+            return;
         
         // use smaller font when we have the full name
         int fontSize = sysId <= 0 ? (int) (size*1800/scale) : (int) (size*1200/scale);

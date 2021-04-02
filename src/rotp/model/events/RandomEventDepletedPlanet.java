@@ -57,7 +57,8 @@ public class RandomEventDepletedPlanet implements Base, Serializable, RandomEven
         
         empId = emp.id;
         sysId = targetSystem.id;
-        if (player().knowsOf(emp))
+        if (player().knowsOf(empId)
+        && !player().sv.name(sysId).isEmpty())
             GNNNotification.notifyRandomEvent(notificationText(), "GNN_Event_Depleted");
     }
 }

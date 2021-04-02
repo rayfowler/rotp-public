@@ -72,7 +72,8 @@ public class RandomEventEarthquake implements Base, Serializable, RandomEvent {
 
         targetColony.setPopulation(newPop);
         targetColony.industry().factories(newFact);
-        if (player().knowsOf(emp))
+        if (player().knowsOf(empId)
+        && !player().sv.name(sysId).isEmpty())
             GNNNotification.notifyRandomEvent(notificationText(), "GNN_Event_Earthquake");
     }
 }

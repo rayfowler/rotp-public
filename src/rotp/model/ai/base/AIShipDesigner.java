@@ -15,7 +15,6 @@
  */
 package rotp.model.ai.base;
 
-import java.util.ArrayList;
 import java.util.List;
 import rotp.model.ai.interfaces.ShipDesigner;
 import rotp.model.empires.Empire;
@@ -210,9 +209,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
         boolean easyToReplace = bcValue <= 100;
         
         if (easyToReplace) {
-            newDesign.name(currDesign.name());
-            if  (newDesign.size() == currDesign.size())
-                newDesign.iconKey(currDesign.iconKey());
             lab.scrapDesign(currDesign);
             log("Bomber easy to replace");
             lab.setBomberDesign(newDesign, currSlot);
@@ -298,9 +294,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
         boolean easyToReplace = bcValue <= 100;
         
         if (easyToReplace) {
-            newDesign.name(currDesign.name());
-            if  (newDesign.size() == currDesign.size())
-                newDesign.iconKey(currDesign.iconKey());
             lab.scrapDesign(currDesign);
             log("Fighter easy to replace");
             lab.setFighterDesign(newDesign, currSlot);
@@ -386,9 +379,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
         boolean easyToReplace = bcValue <= 1000;
         
         if (easyToReplace) {
-            newDesign.name(currDesign.name());
-            if  (newDesign.size() == currDesign.size())
-                newDesign.iconKey(currDesign.iconKey());
             lab.scrapDesign(currDesign);
             log("Destroyer easy to replace");
             lab.setDestroyerDesign(newDesign, currSlot);

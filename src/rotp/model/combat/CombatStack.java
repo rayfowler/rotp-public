@@ -25,7 +25,6 @@ import rotp.model.empires.Empire;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.ships.ShipComponent;
 import rotp.model.ships.ShipDesign;
-import rotp.model.ships.ShipWeapon;
 import rotp.model.ships.ShipWeaponMissileType;
 import rotp.model.tech.TechCloaking;
 import rotp.model.tech.TechStasisField;

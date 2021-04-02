@@ -62,7 +62,7 @@ public class CombatStackShip extends CombatStack {
         fleet = fl;
         empire = fl.empire();
         design = empire.shipLab().design(index);
-        usingAI = (empire == null) || empire.isAI();
+        usingAI = (empire == null) || empire.isAIControlled();
         captain = empire.ai().shipCaptain();
         origNum = num = fl.num(index);
         startingMaxHits = maxHits = design.hits();
@@ -198,7 +198,9 @@ public class CombatStackShip extends CombatStack {
             if (tgt.isColony() || wpn.groundAttacksOnly())
                 return 1;
             else if (wpn.isMissileWeapon()) 
-                missileRange = (int) max(1, missileRange, weaponRange(wpn)-maxRetreatMove);
+                // missiles move by distance, not tiles, so adjust minimum range downward by sqrt(2)
+                // to account for diagonal movement
+                missileRange = (int) max(1, missileRange, ((weaponRange(wpn)/1.414f)-maxRetreatMove));
             else
                 weaponRange = max(weaponRange,weaponRange(wpn));
         }
@@ -561,6 +563,7 @@ public class CombatStackShip extends CombatStack {
         fleet.removeShips(design.id(), shipsLost, true);
 
         // record losses
+        mgr.results().addShipDestroyed(design, shipsLost);
         empire.shipLab().recordDestruction(design, shipsLost);
         mgr.currentStack().recordKills(shipsLost);
     }
@@ -618,6 +621,7 @@ public class CombatStackShip extends CombatStack {
         int y2 = y+stackH-BasePanel.s5;
         g.setFont(narrowFont(16));
         String name = text("SHIP_COMBAT_COUNT_NAME", str(num), design.name());
+        scaledFont(g, name, stackW-BasePanel.s5,16,8);
         int sw2 = g.getFontMetrics().stringWidth(name);
         int x2 = max(x1, x1+((stackW-sw2)/2));
 

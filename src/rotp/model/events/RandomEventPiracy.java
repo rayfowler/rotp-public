@@ -60,7 +60,8 @@ public class RandomEventPiracy implements Base, Serializable, RandomEvent {
         pirateHP = roll(300,450);
         affectEmpireTrade();
         galaxy().events().addActiveEvent(this);
-        if (player().knowsOf(empId))
+        if (player().knowsOf(empId)
+        && !player().sv.name(sysId).isEmpty())
             GNNNotification.notifyRandomEvent(notificationText(), "GNN_Event_Piracy");
     }
     @Override
@@ -80,7 +81,7 @@ public class RandomEventPiracy implements Base, Serializable, RandomEvent {
             sysEmp.tradePiracyRate(prevEmp.tradePiracyRate());
             prevEmp.tradePiracyRate(0.0f);
             empId = sysEmp.id;
-            if (sysEmp.isPlayer())
+            if (sysEmp.isPlayerControlled())
                 turnCount = -1;  // resets the notification counter so player is immediately notified
         }
 
@@ -94,7 +95,7 @@ public class RandomEventPiracy implements Base, Serializable, RandomEvent {
         affectEmpireTrade();
         turnCount++;
 
-        if ((turnCount % 5 == 0) && sysEmp.isPlayer())
+        if ((turnCount % 5 == 0) && sysEmp.isPlayerControlled())
             GNNNotification.notifyRandomEvent(continuingText(), "GNN_Event_Piracy");
     }
     private float piracyRate()          { return pirateHP / 500.0f; }
@@ -141,7 +142,8 @@ public class RandomEventPiracy implements Base, Serializable, RandomEvent {
         emp.tradePiracyRate(0.0f);
         
         session().removePendingNotification("GNN_Event_Piracy");
-        if (player().knowsOf(empId))
+        if (player().knowsOf(empId)
+        && !player().sv.name(sysId).isEmpty())
             GNNNotification.notifyRandomEvent(endText(), "GNN_Event_Piracy");
     }
 }

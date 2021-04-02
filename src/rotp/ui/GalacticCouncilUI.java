@@ -62,6 +62,7 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
     
     private final Rectangle summaryBox = new Rectangle();
     private final Rectangle continueBox = new Rectangle();
+    private final Rectangle skipBox = new Rectangle();
     private final Rectangle candidate1Box = new Rectangle();
     private final Rectangle candidate2Box = new Rectangle();
     private final Rectangle abstainBox = new Rectangle();
@@ -74,7 +75,6 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
     int dragY;
     private int scrollbarY, scrollYMax = 0;
     private boolean showVoterSummary = false;
-    private boolean exited = false;
     private RadialGradientPaint diploGradient;
     private Image background;
     private Empire displayedDiplomat;
@@ -90,7 +90,6 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         addMouseWheelListener(this);
     }
     public void init() {
-        exited = false;
         showVoterSummary = false;
         displayMode = Display.ANNOUNCE;
         background = player().race().council();
@@ -105,6 +104,7 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         super.paintComponent(g2);
         summaryBox.setBounds(0,0,0,0);
         continueBox.setBounds(0,0,0,0);
+        skipBox.setBounds(0,0,0,0);
         voterListBox.setBounds(0,0,0,0);
         candidate1Box.setBounds(0,0,0,0);
         candidate2Box.setBounds(0,0,0,0);
@@ -677,6 +677,7 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
     }
     private void paintVoterSummary(Graphics2D g) {
         GalacticCouncil c = galaxy().council();
+        Empire pl = player();
         int w = getWidth();
         int h = getHeight();
         g.drawImage(background, 0, 0, w, h, null);
@@ -686,7 +687,7 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         g.fillRect(0, 0, w, h);      
         
         int MAX_ROWS = 4;
-        List<Empire> voters = c.empires();
+        List<Empire> voters = c.voters();
         int rowsNeeded = (voters.size()+1)/2;
         boolean needsScroll = rowsNeeded > MAX_ROWS;
         
@@ -782,31 +783,66 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         }
         
         g.setFont(narrowFont(20));
-        String button1Text = text("COUNCIL_BEGIN_VOTING");
-        int sw1 = g.getFontMetrics().stringWidth(button1Text);
-        int buttonW = sw1+s40;
-        int button1X = x1+((w1-sw1)/2);
         int buttonH = s30;
-        int buttonY = y2+h2+s7;
-       
+        int buttonY = y2+h2+s7;       
         float[] dist = {0.0f, 0.5f, 1.0f};
         Color[] colors = {greenEdgeC, greenMidC, greenEdgeC};
         
-        continueBox.setBounds(button1X, buttonY, buttonW, buttonH);
+        String button1Text = c.votingInProgress() ? text("COUNCIL_SHOW_VOTING") : text("COUNCIL_SHOW_RESULTS");
+        int sw1 = g.getFontMetrics().stringWidth(button1Text);
+        int button1W = sw1+s40;
+        
+        int gap = (w1-button1W)/2;
+        
+        String button2Text = null;
+        int button2W = 0;
+        int button2X = x1;
+        int sw2 = 0;
+        if  (c.votingInProgress()) {
+            button2Text = c.hasVoted(pl) || options().isAutoPlay() ? text("COUNCIL_COMPLETE_VOTING"): text("COUNCIL_SKIP_TO_PLAYER", pl.raceName());
+            sw2 = g.getFontMetrics().stringWidth(button2Text);
+            button2W = sw2+s40;
+            gap = (w1-button1W-button2W)/3;
+        }
+        
+        if (c.votingInProgress()) {
+            button2X = x1+gap;
+            skipBox.setBounds(button2X, buttonY, button2W, buttonH);
+            Point2D ptStart = new Point2D.Float(button2X, 0);
+            Point2D ptEnd = new Point2D.Float(button2X + button2W, 0);
+            LinearGradientPaint back2 = new LinearGradientPaint(ptStart, ptEnd, dist, colors);
+            boolean hovering = hoverTarget == skipBox;
+            g.setPaint(back2);
+            g.fillRoundRect(button2X, buttonY, button2W, buttonH, s3, s3);
+            Color c0 = hovering ? SystemPanel.yellowText : SystemPanel.whiteText;
+            g.setColor(c0);
+            Stroke prevStr = g.getStroke();
+            g.setStroke(BasePanel.stroke1);
+            g.drawRoundRect(button2X, buttonY, button2W, buttonH, s3, s3);
+            g.setStroke(prevStr);
+            int x2a = button2X + ((button2W - sw2) / 2);
+            drawBorderedString(g, button2Text, x2a, buttonY + buttonH - s9, SystemPanel.textShadowC, c0);          
+        }
+
+        int button1X = button2X+button2W+gap;   
+        continueBox.setBounds(button1X, buttonY, button1W, buttonH);
         Point2D ptStart = new Point2D.Float(button1X, 0);
-        Point2D ptEnd = new Point2D.Float(button1X + buttonW, 0);
+        Point2D ptEnd = new Point2D.Float(button1X + button1W, 0);
         LinearGradientPaint back1 = new LinearGradientPaint(ptStart, ptEnd, dist, colors);
         boolean hovering = hoverTarget == continueBox;
         g.setPaint(back1);
-        g.fillRoundRect(button1X, buttonY, buttonW, buttonH, s3, s3);
+        g.fillRoundRect(button1X, buttonY, button1W, buttonH, s3, s3);
         Color c0 = hovering ? SystemPanel.yellowText : SystemPanel.whiteText;
         g.setColor(c0);
         Stroke prevStr = g.getStroke();
         g.setStroke(BasePanel.stroke1);
-        g.drawRoundRect(button1X, buttonY, buttonW, buttonH, s3, s3);
+        g.drawRoundRect(button1X, buttonY, button1W, buttonH, s3, s3);
         g.setStroke(prevStr);
-        int x2a = button1X + ((buttonW - sw1) / 2);
+        int x2a = button1X + ((button1W - sw1) / 2);
         drawBorderedString(g, button1Text, x2a, buttonY + buttonH - s9, SystemPanel.textShadowC, c0);          
+
+
+
     }
     private void drawVoterSummaryPane(Graphics2D g, Empire voter, int x, int y, int w, int h) {
         GalacticCouncil c = galaxy().council();
@@ -1015,13 +1051,15 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         repaint();
     }
     private void exit() {
-        exited = true;
         repaint();
         session().resumeNextTurnProcessing();
     }
     private Display nextVotingMode() {
         GalacticCouncil c = galaxy().council();
-        if (c.nextVoter().isPlayer())
+        if (!c.votingInProgress())
+            return Display.SHOW_VOTE_RESULT;
+        
+        if (c.nextVoter().isPlayerControlled())
             return Display.ASK_PLAYER_VOTE;
 
         galaxy().council().castNextVote();
@@ -1098,12 +1136,28 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         if ((e.getButton() > 3) || e.getClickCount() > 1)
             return;
         
-        if (showVoterSummary && (hoverTarget == continueBox)) {
-            showVoterSummary = false;
-            if (displayMode == Display.ANNOUNCE)
-                displayMode = nextVotingMode();
-            repaint();
-            return;
+        GalacticCouncil c = galaxy().council();
+        if (showVoterSummary) {
+            if (hoverTarget == continueBox) {
+                showVoterSummary = false;
+                if (!c.votingInProgress()) {
+                    displayMode = Display.SHOW_VOTE_RESULT;
+                    advanceScreen();
+                }
+                else if (displayMode == Display.ANNOUNCE)
+                    displayMode = nextVotingMode();
+                repaint();
+                return;
+            }
+            else if (hoverTarget == skipBox) {
+                c.continueNonPlayerVoting();
+                if (displayMode == Display.ANNOUNCE)
+                    displayMode = nextVotingMode();
+                if (displayMode == Display.ASK_PLAYER_VOTE)
+                    showVoterSummary = false;
+                repaint();
+                return;
+            }
         }
         else if (!showVoterSummary && (hoverTarget == summaryBox) ) {
             scrollbarY = 0;
@@ -1111,7 +1165,6 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
             repaint();
             return;
         }
-        GalacticCouncil c = galaxy().council();
         // fall out for modes that do not ask for choices
         switch(displayMode) {
             case ANNOUNCE:
@@ -1173,6 +1226,8 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         hoverTarget = null;
         if (continueBox.contains(x,y)) 
             hoverTarget = continueBox;
+        else if (skipBox.contains(x,y))  
+            hoverTarget = skipBox;      
         else if (summaryBox.contains(x,y))  
             hoverTarget = summaryBox;      
         else if (candidate1Box.contains(x,y))  

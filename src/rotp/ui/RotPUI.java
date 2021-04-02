@@ -63,6 +63,7 @@ import rotp.ui.game.SaveGameUI;
 import rotp.ui.game.SetupGalaxyUI;
 import rotp.ui.game.SetupRaceUI;
 import rotp.ui.game.StartOptionsUI;
+import rotp.ui.history.HistoryUI;
 import rotp.ui.main.MainUI;
 import rotp.ui.notifications.DiplomaticNotification;
 import rotp.ui.notifications.TurnNotification;
@@ -212,6 +213,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     private final ShipBattleUI shipBattleUI = new ShipBattleUI();
     private final GroundBattleUI groundBattleUI = new GroundBattleUI();
     private final SabotageUI sabotageUI = new SabotageUI();
+    private final HistoryUI historyUI = new HistoryUI();
     private final GNNUI gnnUI = new GNNUI();
     private final ColonizePlanetUI colonizePlanetUI = new ColonizePlanetUI();
     private final DiplomaticMessageUI diplomaticMessageUI = new DiplomaticMessageUI();
@@ -237,6 +239,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     }
     public RaceIntroUI raceIntroUI()  { return raceIntroUI; }
     public AllocateTechUI techUI()    { return allocateTechUI; }
+    public RacesUI racesUI()          { return racesUI; }
     @Override
     public int animationCount()     { return animationCount; }
     @Override
@@ -331,14 +334,33 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     public void selectMainPanel()      { selectMainPanel(false); }
     public void selectMainPanel(boolean pauseNextTurn)      {
         disableGlassPane();
+        if (!session().status().inProgress()) {
+            selectGameOverPanel();
+            return;
+        }
         mainUI.init(pauseNextTurn);
+        selectPanel(MAIN_PANEL, mainUI());
+        repaint();
+    }
+    public void selectMainPanelLoadGame() {
+        disableGlassPane();
+        if (!session().status().inProgress()) {
+            selectGameOverPanel();
+            return;
+        }
+        mainUI.clearOverlay();
+        mainUI.init(false);
+        mainUI.showDisplayPanel();
         selectPanel(MAIN_PANEL, mainUI());
         repaint();
     }
     public void selectMainPanelNewGame()      {
         disableGlassPane();
+        mainUI.clearOverlay();
         mainUI.init(true);
-        mainUI.showHelp();
+        if (!options().isAutoPlay())
+            mainUI.showHelp();
+        mainUI.showDisplayPanel();
         selectPanel(MAIN_PANEL, mainUI());
         repaint();
     }
@@ -398,6 +420,10 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         sabotageUI.init(m, sysId);
         selectPanel(SABOTAGE_PANEL, sabotageUI);
         session().waitUntilNextTurnCanProceed();
+    }
+    public void selectHistoryPanel(int empId, boolean showAll) {
+        historyUI.init(empId, showAll);
+        enableGlassPane(historyUI);
     }
     public void selectGroundBattlePanel(Colony c, Transport tr) {
         session().pauseNextTurnProcessing("Show Ground Battle");
@@ -596,10 +622,12 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         selectMainPanel();
         session().waitUntilNextTurnCanProceed();
     }
-    public void showSpiesCaptured() {
-        log("==MAIN UI==   show spies captured");
-        mainUI().showSpiesCaptured();
+    public void showSpyReport() {
+        session().pauseNextTurnProcessing("Show SpyReport");
+        log("==MAIN UI==   show spy report");
+        mainUI().showSpyReport();
         selectMainPanel();
+        session().waitUntilNextTurnCanProceed();
     }
     public void showShipConstruction() {
         session().pauseNextTurnProcessing("Show Ship Construction");

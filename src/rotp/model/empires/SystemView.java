@@ -196,12 +196,14 @@ public class SystemView implements IMappedObject, Base, Serializable {
             setName();
     }
     public void refreshFullScan() {
-        if (owner().isPlayer() && !scouted()) {
+        if (!scouted()) {
             log("Orbital scan scouts new system: ", system().name());
-            session().addSystemScouted(system());
-            if (system().empire() != player())
-                system().addEvent(new SystemScoutedEvent(player().id));
             owner().shareSystemInfoWithAllies(this);
+            if (owner().isPlayerControlled()) {
+                session().addSystemScouted(system());
+                if (system().empire() != player())
+                    system().addEvent(new SystemScoutedEvent(player().id));
+            }
         }
         scoutTime = galaxy().currentYear();
         spyTime = galaxy().currentYear();
@@ -216,7 +218,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
             owner().plunderAncientTech(system());
     }
     public void refreshAllySharingScan() {
-        if (owner().isPlayer() && !scouted()) {
+        if (owner().isPlayerControlled() && !scouted()) {
             log("Ally shares new system data: ", system().name());
             session().addSystemScoutedByAllies(system());
         }
@@ -227,10 +229,11 @@ public class SystemView implements IMappedObject, Base, Serializable {
         setPlanetData();
     }
     public void refreshLongRangePlanetScan() {
-        if (owner().isPlayer() && !scouted()) {
+        if (!scouted()) {
             log("Long range planet scan scouts new system: ", system().name());
-            session().addSystemScoutedByAstronomers(system());
             owner().shareSystemInfoWithAllies(this);
+            if (owner().isPlayerControlled())
+                session().addSystemScoutedByAstronomers(system());
         }
 
         scoutTime = galaxy().currentYear();
@@ -240,10 +243,11 @@ public class SystemView implements IMappedObject, Base, Serializable {
         setOrbitingFleets();
     }
     public void refreshLongRangeShipScan() {
-        if (owner().isPlayer() && !scouted()) {
+        if (!scouted()) {
             log("Long range ship scan scouts new system: ", system().name());
-            session().addSystemScouted(system());
             owner().shareSystemInfoWithAllies(this);
+            if (owner().isPlayer())
+                session().addSystemScouted(system());
         }
 
         scoutTime = galaxy().currentYear();
@@ -466,30 +470,12 @@ public class SystemView implements IMappedObject, Base, Serializable {
         return false;
     }
     public boolean inShipRange()  { return inRange(owner().tech().shipRange()); }
-
-    public float targetPopPct() {
-        if (borderSystem()) return .75f;
-
-        if (system().planet().isResourceRich()) return .75f;
-        if (system().planet().isResourceUltraRich()) return .75f;
-        if (system().planet().isArtifact()) return .75f;
-        if (system().planet().isOrionArtifact()) return .75f;
-        if (system().planet().currentSize() <= 20) return .75f;
-
-        if (supportSystem()) return .5f;
-        if (system().planet().currentSize() <= 40) return .5f;
-
-        return .25f;
-    }
-    public float popNeeded() {
-        return colony().calcPopNeeded(targetPopPct());
-    }
-    public int maxPopToGive() {
+    public int maxPopToGive(float targetPopPct) {
         if (!colony().canTransport())
             return 0;
 
         int p1 = colony().maxTransportsAllowed();
-        int p2 = (int) (colony().population() - (targetPopPct() * system().planet().currentSize()));
+        int p2 = (int) (colony().population() - (targetPopPct * system().planet().currentSize()));
         return Math.min(p1,p2);
     }
     public float defenderCombatAdj() {

@@ -35,8 +35,10 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
+import rotp.model.empires.DiplomaticTreaty;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
+import rotp.model.empires.TreatyAlliance;
 import rotp.model.incidents.DiplomaticIncident;
 import rotp.ui.BasePanel;
 import rotp.ui.UserPreferences;
@@ -167,7 +169,7 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         drawPlayerDiplomacyBureau(g, emp, x1, s10, w1, s200);
         drawPlayerCounterIntelligenceBureau(g, emp, x1, s215, w1, s215);
         drawPlayerIntelligenceBureau(g, emp, x1, s435, w1, s200);
-        if (UserPreferences.textures()) 
+        if (UserPreferences.texturesInterface()) 
             drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
         drawEmpireName(g, emp, s260, s30, s370, s50);
@@ -200,7 +202,7 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         drawAIDiplomacyBureau(g, emp, x1, s10, w1, s135);
         drawAITradeSummary(g, emp, x1, s150, w1, s175);
         drawAIForeignRelations(g, emp, x1, s330, w1, h-s330-s10);          
-        if (UserPreferences.textures()) 
+        if (UserPreferences.texturesInterface()) 
             drawTexture(g,0,0,w,h);
         drawRaceIcon(g, emp, s60, s30, s200, s200);
         drawEmpireName(g, emp, s260, s30, s370, s50);
@@ -302,9 +304,18 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         g.drawString(s, x+w-s20-sw, y3);
 
         EmpireView view = player().viewForEmpire(emp);
-        s = view.embassy().treaty().status();
+        DiplomaticTreaty treaty = view.embassy().treaty();
+        boolean isAlly = treaty.isAlliance();
+        int starW = s10;
+        int offset = isAlly ? (starW*5)+s5 : 0;
+        s = treaty.status(player());
         sw = g.getFontMetrics().stringWidth(s);
-        g.drawString(s, x+w-s20-sw, y4);
+        g.drawString(s, x+w-s20-offset-sw, y4);
+        if (isAlly) {
+            TreatyAlliance alliance = (TreatyAlliance) treaty;
+            int x1 = x+w-s20-offset+s5;
+            parent.drawAllianceStars(g,x1,y4-s3,alliance.standing(player()),starW);
+        }
     }
     private void drawRelationsMeter(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(RacesUI.darkBrown);
@@ -1129,7 +1140,7 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
             g.setFont(narrowFont(18));
             g.drawString(contact.empire().raceName(), x3, y3);
             g.setFont(narrowFont(15));
-            String treaty = contact.embassy().treaty().status();
+            String treaty = contact.embassy().treaty().status(player());
             int sw1 = g.getFontMetrics().stringWidth(treaty);
             int x3b = x2+w2-sw1-rightM;
             g.drawString(treaty, x3b, y3);
@@ -1224,7 +1235,7 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         if (!view.diplomats())
             return;
         
-        DiplomaticMessage.show(parent.selectedEmpire().viewForEmpire(player()), DialogueManager.DIPLOMACY_GREETING);     
+        DiplomaticMessage.show(parent.selectedEmpire().viewForEmpire(player()), DialogueManager.DIPLOMACY_MAIN_MENU);     
     }
     public void openManageDiplomatsPane() {
         softClick();

@@ -20,7 +20,9 @@ import rotp.model.combat.ShipCombatResults;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.GalacticCouncil;
+import rotp.model.empires.Leader.Personality;
 import rotp.model.incidents.DiplomaticIncident;
+import rotp.model.incidents.BioweaponIncident;
 import rotp.ui.diplomacy.DiplomaticReply;
 import rotp.model.tech.Tech;
 import rotp.ui.diplomacy.DiplomaticCounterReply;
@@ -31,6 +33,10 @@ public interface Diplomat {
     boolean canExchangeTechnology(Empire e);
     boolean canOfferAid(Empire e);
     boolean canDeclareWar(Empire e);
+    boolean canThreaten(Empire e);
+    boolean canEvictSpies(Empire e);
+    boolean canThreatenSpying(Empire e);
+    boolean canThreatenAttacking(Empire e);
     
     List<Integer> offerAidAmounts();
     List<Tech> offerableTechnologies(Empire emp);
@@ -50,6 +56,9 @@ public interface Diplomat {
     
     DiplomaticReply receiveFinancialAid(Empire e, int amt);
     DiplomaticReply receiveTechnologyAid(Empire e, String techId);
+    DiplomaticReply receiveThreatEvictSpies(Empire e);
+    DiplomaticReply receiveThreatStopSpying(Empire e);
+    DiplomaticReply receiveThreatStopAttacking(Empire e);
     DiplomaticReply receiveDeclareWar(Empire e);
     DiplomaticReply receiveOfferPeace(Empire e);
     DiplomaticReply receiveOfferTrade(Empire e, int level);
@@ -70,12 +79,37 @@ public interface Diplomat {
     DiplomaticReply acceptOfferAlliance(Empire e);
     DiplomaticReply refuseOfferAlliance(Empire e);
     DiplomaticReply acceptOfferJointWar(Empire e, Empire target);
-    DiplomaticReply refuseOfferJointWar(Empire e);
+    DiplomaticReply refuseOfferJointWar(Empire e, Empire target);
 
     boolean willingToOfferAlliance(Empire e);
+    boolean wantToDeclareWarOfHate(EmpireView v);
+    boolean wantToDeclareWarOfOpportunity(EmpireView v);
     
     List<Tech> techsAvailableForRequest(Empire emp);
     List<Tech> techsRequestedForCounter(Empire emp, Tech t);
     DiplomaticReply receiveRequestTech(Empire emp, Tech t);
     DiplomaticReply receiveCounterOfferTech(Empire e, Tech counter, Tech wanted);
+    float leaderExploitWeakerEmpiresRatio();
+    float leaderRetreatRatio(Empire c);
+    float leaderContemptDeclareWarMod(Empire e);
+    float leaderContemptAcceptPeaceMod(Empire e);
+    int leaderGenocideDurationMod();
+    float leaderBioweaponMod();
+    int leaderOathBreakerDuration();
+    float leaderDiplomacyAnnoyanceMod(EmpireView v);
+    float leaderDeclareWarMod();
+    float leaderAcceptPeaceTreatyMod();
+    float leaderAcceptPactMod(Empire other);
+    float leaderAcceptAllianceMod(Empire other);
+    float leaderAcceptTradeMod();
+    float leaderHateWarThreshold();
+    float leaderAcceptJointWarMod();
+    float leaderPreserveTreatyMod();
+    float leaderAffinityMod(Personality p1, Personality p2);
+    boolean leaderHatesAllSpies();
+    
+    // generic api for overriding diplomat incident settings
+    // create as needed for incidents, but always set default return false to false
+    // when overriding, set return to true.
+    default boolean setSeverityAndDuration(BioweaponIncident inc)  { return false; }
 }

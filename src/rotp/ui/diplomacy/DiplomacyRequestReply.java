@@ -35,6 +35,8 @@ public class DiplomacyRequestReply extends DiplomaticMessage {
     public void select(int i) {
         if (reply.resumeTurn) 
             session().resumeNextTurnProcessing();
+        else if (reply.returnToMap)
+            RotPUI.instance().selectMainPanel();
         else if (reply.returnMenu() == null)
             RotPUI.instance().selectRacesPanel();
         else

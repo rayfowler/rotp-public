@@ -32,8 +32,6 @@ public enum SoundManager implements Base {
     private static final String soundsFileName = "audio_sounds.txt";
     private static final String musicFileName = "audio_music.txt";
     public static String errorString = "";
-    private static int soundLevel = 10;
-    private static int musicLevel = 10;
 
     private final HashMap<String, Sound> sounds = new HashMap<>();
     private final HashMap<String, Sound> music = new HashMap<>();
@@ -63,10 +61,8 @@ public enum SoundManager implements Base {
         }
         log("SoundManager loaded: ", str(System.currentTimeMillis()-st), "ms");
     }
-    public static int soundLevel()       { return soundLevel; }
-    public static void soundLevel(int v) { soundLevel = Math.max(0, Math.min(10,v)); }
-    public static int musicLevel()       { return musicLevel; }
-    public static void musicLevel(int v) { musicLevel = Math.max(0, Math.min(10,v)); }
+    public static int soundLevel()       { return UserPreferences.soundVolume(); }
+    public static int musicLevel()       { return UserPreferences.musicVolume(); }
     public boolean disabled()     { return soundsDisabled; }
     public boolean playSounds()   { return !soundsDisabled && UserPreferences.playSounds(); }
     public boolean playMusic()    { return !soundsDisabled && UserPreferences.playMusic(); }
@@ -93,33 +89,13 @@ public enum SoundManager implements Base {
             disableOnError("on toggle:"+e.getMessage());
         }
     }
-    public void increaseMusicLevel()    { 
-        musicLevel = min(10, musicLevel+1); 
-        resetMusicVolumes();
-        UserPreferences.save();
-    }
-    public void decreaseMusicLevel()    { 
-        musicLevel = max(0, musicLevel-1); 
-        resetMusicVolumes(); 
-        UserPreferences.save();
-    };
-    public void increaseSoundLevel()    { 
-        soundLevel = min(10, soundLevel+1); 
-        resetSoundVolumes(); 
-        UserPreferences.save();
-    }
-    public void decreaseSoundLevel()    { 
-        soundLevel = max(0, soundLevel-1); 
-        resetSoundVolumes(); 
-        UserPreferences.save();
-    }
-    private void resetSoundVolumes() {
-        float vol = soundLevel/10.0f;
+    public void resetSoundVolumes() {
+        float vol = soundLevel()/10.0f;
         for (Sound s: sounds.values())
             s.setVolume(vol);
     }
-    private void resetMusicVolumes() {
-        float vol = musicLevel/10.0f;
+    public void resetMusicVolumes() {
+        float vol = musicLevel()/10.0f;
         for (Sound s: music.values())
             s.setVolume(vol);
     }
@@ -160,12 +136,13 @@ public enum SoundManager implements Base {
             currentAmbience = playContinuously(key);
         }
         catch (IllegalArgumentException e) {
-            log("error: "+e.toString());
+            err("error: "+e.toString());
             disableOnError("on ambience:"+e.getMessage());
         }
     }
     @Override
     public SoundClip playAudioClip(String key) {
+        log("play audio clip: "+key);
         if (!playSounds())
             return null;
         Sound s = sounds.get(key);
@@ -173,10 +150,10 @@ public enum SoundManager implements Base {
             if (s != null)
                 return s.play(s.gain);
             else
-                log("no sound found for key:"+key);
+                err("no sound found for key:"+key);
         }
         catch (Exception e) {
-            log("SoundManager.audio error1: "+e.getMessage());
+            err("SoundManager.audio error1: "+e.getMessage());
             disableOnError("on play:"+e.getMessage());
         }
         return null;
@@ -278,9 +255,9 @@ public enum SoundManager implements Base {
         }
         public float masterVolume() {
             if (music)
-                return SoundManager.musicLevel / 10.0f;
+                return SoundManager.musicLevel() / 10.0f;
             else
-                return SoundManager.soundLevel/ 10.0f;
+                return SoundManager.soundLevel()/ 10.0f;
         }
         public void setVolume(float vol) {
             if (filename.endsWith("wav"))

@@ -23,6 +23,7 @@ public class TreatyPeace extends DiplomaticTreaty implements Base {
     public TreatyPeace(Empire e1, Empire e2, int d) {
         super(e1,e2,"RACES_PEACE");
         duration = d;
+        recallAttackingForces(e1, e2);
     }    
     @Override
     public void nextTurn(Empire emp)      { 
@@ -36,4 +37,8 @@ public class TreatyPeace extends DiplomaticTreaty implements Base {
     public boolean isPeace()                 { return true; }
     @Override
     public int listOrder()                      { return 5; }
+    private void recallAttackingForces(Empire e1, Empire e2) {
+        e1.retreatShipsFrom(e2.id);
+        e2.retreatShipsFrom(e1.id);
+    }
 }

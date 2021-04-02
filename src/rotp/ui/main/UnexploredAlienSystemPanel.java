@@ -19,13 +19,25 @@ import java.awt.Color;
 import java.awt.GradientPaint;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.Stroke;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
 import java.awt.geom.Rectangle2D;
 import java.util.List;
+import javax.swing.SwingUtilities;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
+import static rotp.ui.BasePanel.s10;
+import static rotp.ui.BasePanel.s15;
+import static rotp.ui.BasePanel.s20;
+import static rotp.ui.BasePanel.s25;
+import static rotp.ui.BasePanel.s70;
+import rotp.ui.RotPUI;
 
 public class UnexploredAlienSystemPanel extends SystemPanel {
     private static final long serialVersionUID = 1L;
@@ -50,10 +62,14 @@ public class UnexploredAlienSystemPanel extends SystemPanel {
     protected BasePanel detailPane() {
         return new DetailPane(this);
     }
-    private class DetailPane extends BasePanel {
+    private class DetailPane extends BasePanel implements MouseMotionListener, MouseListener {
         private static final long serialVersionUID = 1L;
         SystemPanel parent;
         Shape textureClip;
+        Empire displayEmp;
+        Rectangle nameBox = new Rectangle();
+        Rectangle flagBox = new Rectangle();
+        Shape hoverBox;
 
         DetailPane(SystemPanel p) {
             parent = p;
@@ -61,6 +77,8 @@ public class UnexploredAlienSystemPanel extends SystemPanel {
         }
         private void init() {
             setOpaque(true);
+            addMouseMotionListener(this);
+            addMouseListener(this);
         }
         @Override
         public String textureName()     { return TEXTURE_GRAY; }
@@ -73,11 +91,16 @@ public class UnexploredAlienSystemPanel extends SystemPanel {
         @Override
         public void paintComponent(Graphics g0) {
             Graphics2D g = (Graphics2D) g0;
+            nameBox.setBounds(0,0,0,0);
+            displayEmp = null;
             StarSystem sys = parent.systemViewToDisplay();
             if (sys == null)
                 return;
             int id = sys.id;
             Empire pl = player();
+            displayEmp = pl.sv.empire(id);
+            if (displayEmp == null)
+                return;
 
             super.paintComponent(g);
             int h = getHeight();
@@ -88,7 +111,7 @@ public class UnexploredAlienSystemPanel extends SystemPanel {
             // draw colony info box
             g.setColor(MainUI.paneBackground());
             g.fillRect(0, 0, w, topH-s5);
-            GradientPaint back = new GradientPaint(0,0,pl.sv.empire(id).color(),w, 0,transC);
+            GradientPaint back = new GradientPaint(0,0,displayEmp.color(),w, 0,transC);
             g.setPaint(back);
             g.fillRect(0, 0, w, topH1-s5);
             g.setPaint(null);
@@ -99,8 +122,22 @@ public class UnexploredAlienSystemPanel extends SystemPanel {
 
             //  colony name
             g.setFont(narrowFont(24));
-            drawShadowedString(g, pl.sv.descriptiveName(id), 2, s10, topH1-s15, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
+            String empName = pl.sv.descriptiveName(id);
+            int sw = g.getFontMetrics().stringWidth(empName);
+            Color c0 = nameBox == hoverBox ? Color.yellow : SystemPanel.whiteLabelText;
+            drawShadowedString(g, empName, 2, s10, topH1-s15, MainUI.shadeBorderC(), c0);
+            nameBox.setBounds(s10, topH1-s40, sw+s5,s25);
 
+           // draw system banner
+            int sz = s70;
+            Image flagImage = parentSpritePanel.parent.flagImage(sys);
+            g.drawImage(flagImage, w-sz+s15, topH1-sz+s10, sz, sz, null);
+            if (hoverBox == flagBox) {
+                Image hoverImage = parentSpritePanel.parent.flagHover(sys);
+                g.drawImage(hoverImage, w-sz+s15, topH1-sz+s10, sz, sz, null);
+            }
+            flagBox.setBounds(w-sz+s25,topH1-sz+s10,sz-s20,sz-s10);
+            
             // colony data
             String unknown = text("RACES_UNKNOWN_DATA");
             String factLbl = text("MAIN_COLONY_FACTORIES");
@@ -156,6 +193,49 @@ public class UnexploredAlienSystemPanel extends SystemPanel {
             for (String line: descLines) {
                 g.drawString(line, s8, y0);
                 y0 += ydelta;
+            }
+        }
+        @Override
+        public void mouseDragged(MouseEvent e) { }
+        @Override
+        public void mouseMoved(MouseEvent e) {
+            int x = e.getX();
+            int y = e.getY();
+            Shape prevHover = hoverBox;
+            hoverBox = null;
+            if (flagBox.contains(x,y))
+                hoverBox = flagBox;
+            else if (nameBox.contains(x,y))
+                hoverBox = nameBox;
+
+            if (prevHover != hoverBox)
+                repaint();
+        }
+        @Override
+        public void mouseClicked(MouseEvent e) { }
+        @Override
+        public void mousePressed(MouseEvent e) { }
+        @Override
+        public void mouseReleased(MouseEvent e) {
+            boolean rightClick = SwingUtilities.isRightMouseButton(e);
+            if (hoverBox == flagBox) {
+                StarSystem sys = parentSpritePanel.systemViewToDisplay();
+                player().sv.view(sys.id).toggleFlagColor(rightClick);
+                parentSpritePanel.parent.repaint();
+            }
+            else if (hoverBox == nameBox) {
+                RotPUI.instance().selectRacesPanel();
+                RotPUI.instance().racesUI().selectDiplomacyTab();
+                RotPUI.instance().racesUI().selectedEmpire(displayEmp);              
+            }
+        }
+        @Override
+        public void mouseEntered(MouseEvent e) { }
+        @Override
+        public void mouseExited(MouseEvent e) { 
+            if (hoverBox != null) {
+                hoverBox = null;
+                repaint();
             }
         }
     }

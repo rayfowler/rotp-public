@@ -31,7 +31,7 @@ public class AssassinationIncident extends DiplomaticIncident {
         ev.embassy().recallAmbassador(); // technically, he was recalled by the assassin..
         victim.diplomatAI().noticeIncident(inc, assassin);
         
-        for (Empire vicEnemy: victim.enemies()) {
+        for (Empire vicEnemy: victim.warEnemies()) {
             if (vicEnemy != assassin) {
                 AssassinationIncident inc2 = new AssassinationIncident(assassin, victim, vicEnemy);
                 EmpireView ev2 = vicEnemy.viewForEmpire(assassin);

@@ -15,6 +15,7 @@
  */
 package rotp.model.incidents;
 
+import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.SabotageMission;
@@ -36,8 +37,7 @@ public class SabotageBasesIncident extends DiplomaticIncident {
             otherView.embassy().resetAllianceTimer();
             otherView.embassy().resetPactTimer();
             Empire victim = otherView.owner();
-            if (victim.isPlayer()
-            && !victim.isAIControlled()
+            if (victim.isPlayerControlled()
             && (m.missileBasesDestroyed() > 0)) {
                 StarSystem sys = m.starSystem();
                 BasesDestroyedAlert.create(null, m.missileBasesDestroyed(), sys);
@@ -49,7 +49,7 @@ public class SabotageBasesIncident extends DiplomaticIncident {
     private SabotageBasesIncident(EmpireView ev, SabotageMission m) {
 
         dateOccurred = galaxy().currentYear();
-        duration = 10;
+        duration = ev.empire().leader().isPacifist() ? 20 : 10;
 
         empVictim = ev.owner().id;
         empSpy = ev.empire().id;
@@ -57,8 +57,7 @@ public class SabotageBasesIncident extends DiplomaticIncident {
         destroyed = m.missileBasesDestroyed();
         severity = max(-30, (-2 * destroyed) + ev.embassy().currentSpyIncidentSeverity());
         
-        if (ev.owner().isPlayer()
-        && !ev.owner().isAIControlled()
+        if (ev.owner().isPlayerControlled()
         && (destroyed > 0)) {
             StarSystem sys = m.starSystem();
             BasesDestroyedAlert.create(ev.empire(), destroyed, sys);
@@ -70,13 +69,13 @@ public class SabotageBasesIncident extends DiplomaticIncident {
     @Override
     public boolean isSpying()   { return true; }
     @Override
-    public int timerKey()              { return SPY_WARNING; }
+    public int timerKey()              { return DiplomaticEmbassy.TIMER_SPY_WARNING; }
     @Override
     public String title()       { return text("INC_DESTROYED_BASES_TITLE"); }
     @Override
     public String description()      { return decode(text("INC_DESTROYED_BASES_DESC")); }
     @Override
-    public String warningMessageId() { return galaxy().empire(empVictim).isPlayer() ? "" : DialogueManager.WARNING_SABOTAGE; }
+    public String warningMessageId() { return galaxy().empire(empVictim).isPlayerControlled() ? "" : DialogueManager.WARNING_SABOTAGE; }
     @Override
     public String declareWarId()     { return DialogueManager.DECLARE_SPYING_WAR; }
     @Override

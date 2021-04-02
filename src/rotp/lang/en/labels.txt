@@ -40,6 +40,7 @@ SPY_HIDE                          | Hide
 SPY_ESPIONAGE                     | Espionage
 SPY_SABOTAGE                      | Sabotage
 SPY_FRAMED                        | [You were framed.]
+SPY_FORCED_CONFESSION             | [A false confession was forced.]
 SPY_WARNING                       | [You have been warned.]
 
 ARID_DESC_BIOLOGICAL              | Arid Planets are dry, terrestrial worlds with limited vegetation and no more than 40% water surface area.
@@ -90,6 +91,7 @@ COLONY_NAME_4                     | Distant %1
 // Space Monster Names
 SPACE_AMOEBA                      | Space Amoeba
 SPACE_CRYSTAL                     | Space Crystal
+ORION_GUARDIAN                    | Orion Guardian
 
 // Personality types (adjective)
 LEADER_ERRATIC                    | Erratic
@@ -193,10 +195,12 @@ INC_AT_WAR_WITH_ALLY_TITLE        | At War with Ally
 INC_AT_WAR_WITH_ALLY_DESC         | You are at war with the [other_empire], an ally of the [my_empire].
 INC_CLOSED_EMBASSY_TITLE          | Recalled Ambassador
 INC_CLOSED_EMBASSY_DESC           | The [your_empire] ceased diplomatic relations with the [my_empire].
+INC_EVICTED_SPIES_TITLE           | Evicted Diplomats
+INC_EVICTED_SPIES_DESC            | The [your_empire] evicted all non-essential diplomats from the [my_empire].
 INC_BROKE_ALLIANCE_TITLE          | Broke Alliance
 INC_BROKE_ALLIANCE_DESC           | The [your_empire] broke their Alliance with the [my_empire].
 INC_BROKE_PACT_TITLE              | Broke Non-Aggression Pact
-INC_BROKE_PACT_DESC               | The[your_empire] broke their Non-Aggression Pact with the [my_empire].
+INC_BROKE_PACT_DESC               | The [your_empire] broke their Non-Aggression Pact with the [my_empire].
 INC_BROKE_TRADE_TITLE             | Broke Trade Treaty
 INC_BROKE_TRADE_DESC              | The [your_empire] broke their Trade Treaty with the [my_empire].
 INC_ATTACKED_COLONY_TITLE         | Attacked Colony
@@ -222,13 +226,15 @@ INC_ENCROACHING_TITLE             | Encroachment
 INC_ENCROACHING_DESC              | The [your_empire] colonized the system [system], encroaching upon the borders of the [my_empire].
 INC_TECH_STOLEN_TITLE             | Technology Stolen
 INC_TECH_STOLEN_DESC              | [spy_race] spies stole the secrets of [tech] from the [victim_race].
-INC_TECH_FRAMED_DESC              | Unknown spies stole the secrets of [tech] from the [victim_race]. (you were framed)
+INC_TECH_FRAMED_DESC              | Unknown spies stole technological secrets from the [victim_race]. (you were framed)
 INC_TECH_EXCHANGE_TITLE           | Technology Exchanged
 INC_TECH_EXCHANGE_DESC            | The [my_empire] taught the secrets of [techGiven] to the [your_empire] in exchange for the secrets of [techReceived].
 INC_FINANCIAL_AID_TITLE           | Financial Aid
 INC_FINANCIAL_AID_DESC            | The [your_empire] has freely given [amt] BC to the [my_empire].
 INC_TECHNOLOGY_AID_TITLE          | Technological Aid
-INC_TECHNOLOGY_AID_DESC           | The [your_empire] has freely shared the secrets of [tech] to the [my_empire].
+INC_TECHNOLOGY_AID_DESC           | The [your_empire] has freely shared the secrets of [tech] with the [my_empire].
+INC_TECHNOLOGY_AID_DESC_MULT      | The [your_empire] has freely shared with the [my_empire] the secrets of the following technologies: [techs]
+INC_TECHNOLOGY_TECH_LIST_COMMA    | , 
 INC_ENEMY_AID_TITLE               | Aid to Enemy 
 INC_ENEMY_AID_MONEY_DESC          | The [your_empire] has given [amt] BC in aid to the [enemy_empire], an enemy of the [my_empire].
 INC_ENEMY_AID_TECH_DESC           | The [your_empire] has given the secrets of [tech] to the [enemy_empire], an enemy of the [my_empire].
@@ -268,6 +274,7 @@ INC_SKIRMISH_DESC                 | [my_race] and [your_race] fleets engaged in 
 INC_SPY_CONFESSION_TITLE          | Spy Confession
 INC_SPY_CONFESS_ESPIONAGE_DESC    | A spy for the [spy_empire] was captured and confessed to ongoing espionage activities planned against the [victim_empire].
 INC_SPY_CONFESS_SABOTAGE_DESC     | A spy for the [spy_empire] was captured and confessed to ongoing sabotage activities planned against the [victim_empire].
+INC_SPY_CAPTURED_DESC             | A spy for the [spy_empire] was captured and forced to confess to ongoing sabotage activities planned against the [victim_empire].
 INC_TRADE_INCOME_TITLE            | Trade Profit
 INC_TRADE_INCOME_DESC             | Trade between the [your_empire] and [my_empire] has resulted in a profit of [amt] BC.
 INC_TRESPASSING_TITLE             | Trespass
@@ -276,6 +283,7 @@ INC_TRESPASSING_DESC              | [your_race] fleets are trespassing in the [s
 // generic click to skip or continue messages
 CLICK_SKIP                        | Escape or Click to Skip Animation
 CLICK_CONTINUE                    | Click or Escape to Continue...
+CLICK_EXIT                        | Click or Escape to Exit...
 BUTTON_EXIT                       | Exit
 
 // GAME/SETUP UI 
@@ -296,7 +304,9 @@ GAME_ENLARGE                      | Expand
 
 // Game Settings UI
 GAME_SETTINGS_TITLE               | Game Settings
-GAME_SETTINGS_DESCRIPTION         | Click to toggle each game setting. To reset settings, delete the Remnants.cfg file.
+GAME_SETTINGS_DESCRIPTION         | Click to toggle each game setting. 
+GAME_SETTINGS_EXIT                | Exit
+GAME_SETTINGS_DEFAULT             | Set to Default
 GAME_SETTINGS_DISPLAY_MODE        | Display Mode: %1
 GAME_SETTINGS_WINDOWED            | Windowed
 GAME_SETTINGS_BORDERLESS          | Borderless
@@ -308,9 +318,16 @@ GAME_SETTINGS_GRAPHICS_MED        | Medium
 GAME_SETTINGS_GRAPHICS_HIGH       | High
 GAME_SETTINGS_GRAPHICS_DESC       | Adjusts the graphics quality of game. Medium: Anti-Aliasing of images is off. Low: Animations are turned off.
 GAME_SETTINGS_TEXTURES            | Textures: %1
-GAME_SETTINGS_TEXTURES_YES        | Yes
 GAME_SETTINGS_TEXTURES_NO         | No
-GAME_SETTINGS_TEXTURES_DESC       | Toggle the use of textures on the various screens throughout the game.
+GAME_SETTINGS_TEXTURES_INTERFACE  | User Interface
+GAME_SETTINGS_TEXTURES_MAP        | Galaxy Map
+GAME_SETTINGS_TEXTURES_BOTH       | Interface and Map
+GAME_SETTINGS_TEXTURES_DESC       | Toggle the use of textures on the galaxy map or the various screens throughout the game.
+GAME_SETTINGS_SENSITIVITY         | Hover Sensitivity: %1
+GAME_SETTINGS_SENSITIVITY_HIGH    | High
+GAME_SETTINGS_SENSITIVITY_MEDIUM  | Medium
+GAME_SETTINGS_SENSITIVITY_LOW     | Low
+GAME_SETTINGS_SENSITIVITY_DESC    | Toggle how quickly the galaxy map responds to mouse movement when updating the display panel.
 GAME_SETTINGS_MEMORY              | Show Memory Usage: %1
 GAME_SETTINGS_MEMORY_YES          | Yes
 GAME_SETTINGS_MEMORY_NO           | No
@@ -325,21 +342,32 @@ GAME_SETTINGS_MUSIC               | Music: %1
 GAME_SETTINGS_MUSIC_OFF           | Muted
 GAME_SETTINGS_MUSIC_ON            | %1/10
 GAME_SETTINGS_MUSIC_DESC          | Click to mute or unmute music within the game. Use the mousewheel to raise or lower the volume.
-GAME_SETTINGS_AUTOCOLONIZE        | Auto-Colonize: %1
-GAME_SETTINGS_AUTOCOLONIZE_YES    | Yes
-GAME_SETTINGS_AUTOCOLONIZE_NO     | No
+GAME_SETTINGS_AUTOCOLONIZE        | Colonize: %1
+GAME_SETTINGS_AUTOCOLONIZE_YES    | Automatically
+GAME_SETTINGS_AUTOCOLONIZE_NO     | Always Prompt
 GAME_SETTINGS_AUTOCOLONIZE_DESC   | Toggle to auto-colonize and name planets immediately when colony ships arrive. This can be time-saving on very large maps.
-GAME_SETTINGS_AUTOBOMBARD         | Auto-Bombard: %1
+GAME_SETTINGS_AUTOBOMBARD         | Bombard: %1
 GAME_SETTINGS_AUTOBOMBARD_NO      | Always Prompt
 GAME_SETTINGS_AUTOBOMBARD_NEVER   | Never
 GAME_SETTINGS_AUTOBOMBARD_YES     | Always
 GAME_SETTINGS_AUTOBOMBARD_WAR     | Only War
 GAME_SETTINGS_AUTOBOMBARD_INVADE  | Only War and not Invading
 GAME_SETTINGS_AUTOBOMBARD_DESC    | Toggle to always prompt to bombard, never bombard, always bombard, only auto-bombard when at war, or only auto-bombard when at war with no invasion forces en route. 
+GAME_SETTINGS_BACKUP_OFF          | Off
+GAME_SETTINGS_BACKUP_ON           | Every %1 turns
+GAME_SETTINGS_BACKUP              | Backup: %1
+GAME_SETTINGS_BACKUP_DESC         | Enable to have your current game periodically saved in the backup folder with a unique name, allowing you to reload from previous turns.
+GAME_SETTINGS_SAVEDIR             | Save Directory: %1
+GAME_SETTINGS_SAVEDIR_DEFAULT     | Default
+GAME_SETTINGS_SAVEDIR_CUSTOM      | Custom
+GAME_SETTINGS_SAVEDIR_DESC1       | The save directory is currently set to the same directory as the game.
+GAME_SETTINGS_SAVEDIR_DESC2       | The save directory is currently set to: %1
 
 // Load Game UI
 LOAD_GAME_TITLE                   | Load Game
 LOAD_GAME_AUTOSAVE                | Most Recent Autosave
+LOAD_GAME_BACKUP_DIR              | Backup Directory: %1 files
+LOAD_GAME_SAVE_DIR                | Save Directory: %1 files
 LOAD_GAME_FILENAME                | Sort by Filename
 LOAD_GAME_DATE                    | by Date
 LOAD_GAME_SIZE                    | by Size
@@ -347,6 +375,7 @@ LOAD_GAME_LOADING                 | Loading...
 LOAD_GAME_BAD_VERSION             | Cannot load saved game file: %1. This file may be corrupt or outdated.
 LOAD_GAME_CANCEL                  | Cancel
 LOAD_GAME_OK                      | Load
+LOAD_GAME_TOO_LONG                | ...
 
 // Save Game UI
 SAVE_GAME_TITLE                   | Save Game
@@ -372,6 +401,7 @@ MAIN_NAVIGATION_NEXT_TURN         | Next Turn
 MAIN_NAVIGATION_NEXT_YEAR         | Next Year
 MAIN_YEAR_DISPLAY                 | Year  %1
 MAIN_TURN_DISPLAY                 | Turn  %1
+MAIN_SPY_REPORT                   | Spy
 MAIN_TECH_NONE                    | No Research
 MAIN_TECH_COMPLETED               | Research Completed
 MAIN_TECH_RP_REMAINING            | %1 RP Remaining
@@ -659,6 +689,13 @@ MAIN_ALLOCATE_CLOSE               | Close
 MAIN_FLEET_PRODUCTION_TITLE       | Fleet Production Summary
 MAIN_FLEET_SHIP_COUNT             | %1/%2
 
+// 32-bit Java Warning
+MAIN_JAVA_32BIT_TITLE             | Warning! 32-bit Java in use
+MAIN_JAVA_32BIT_DESC              | You are running this game with a 32-bit version of Java. This can greatly reduce available memory and impact game performance.
+MAIN_JAVA_32BIT_DESC_2            | Although Remnants of the Precursors will function in this mode, upgrading to 64-bit Java will improve the gameplay experience.
+MAIN_JAVA_32BIT_DESC_3            | If you need assistance in upgrading Java, please go online to www.reddit.com/r/rotp and ask for assistance.
+MAIN_JAVA_32BIT_OK                | OK
+
 // Memory Low Warning
 MAIN_MEMORY_LOW_TITLE             | Warning! Game Memory Low
 MAIN_MEMORY_LOW_DESC              | Memory available for this game is running low. This can be caused by extended play or not starting with enough free memory.
@@ -674,22 +711,16 @@ MAIN_AUTOSAVE_FAILED_DESC_2       | The message provided to the game for this er
 MAIN_AUTOSAVE_FAILED_DESC_3       | If you see this message frequently, please go online to www.reddit.com/r/rotp and post this screenshot.
 MAIN_AUTOSAVE_FAILED_OK           | OK
 
-// Spy Capture display (during next turn)
-MAIN_SPIES_CAUGHT_TITLE           | Spies Caught
-MAIN_SPIES_CAUGHT_YOURS           | Yours
-MAIN_SPIES_CAUGHT_THEIRS          | Theirs
-
 // Alerts
 MAIN_ALERT_TITLE                  | Alert 
 MAIN_ALERT_TITLE_COUNT            | Alert - %1 of %2
+MAIN_ALERT_SPY_REPORT             | Our intelligence bureau has provided a new report on recent spying activity.
 MAIN_ALERT_TECH_STOLEN            | Internal security has uncovered espionage activities by %1 spies.
-MAIN_ALERT_SPY_CAPTURED           | We have captured a spy from the %1, forcing a confession of their %2 activities.
-MAIN_ALERT_SPY_CONFESSED          | The %1 have captured one of our spies, forcing a confession of our %2 activities.
 MAIN_ALERT_FACTORIES_DESTROYED    | Agents working for the %1 have destroyed %2 factories in the %3 system.
 MAIN_ALERT_BASES_DESTROYED        | Agents working for the %1 have destroyed %2 missile bases defending the %3 system.
 MAIN_ALERT_FACTORIES_DESTROYED2   | Unknown saboteurs have destroyed %1 factories in the %2 system.
 MAIN_ALERT_BASES_DESTROYED2       | Unknown saboteurs have destroyed %1 missile bases defending the %2 system.
-MAIN_ALERT_TRANSPORTS_PERISHED    | The %1 colony in %2 has been destroyed. Our transports attempting to land there have perished.
+MAIN_ALERT_TRANSPORTS_PERISHED    | The colony in the %1 system has been destroyed. Our transports attempting to land there have perished.
 MAIN_ALERT_TRANSPORTS_CAPTURED    | Our %3 transports arriving in the %2 system have surrendered to %1 forces.
 MAIN_ALERT_TRANSPORTS_KILLED      | Our %3 transports attempting to reach %2 have been destroyed by defending %1 forces.
 MAIN_ALERT_INVADERS_CAPTURED      | %3 %1 transports arriving in the %2 system have surrendered to our defensive forces.
@@ -697,8 +728,8 @@ MAIN_ALERT_INVADERS_KILLED        | %3 %1 transports attempting to invade %2 hav
 MAIN_ALERT_TRESPASSING1           | %1 ships have been spotted trespassing near our colony in the %2 system.
 MAIN_ALERT_TRESPASSING2           | The %1 ambassador protests our ships trespassing in the %2 system.
 MAIN_ALERT_TRADE_MATURED          | Our trade treaty with the %1 has reached its maximum value of %2 BC.
-MAIN_ALERT_SPY_NEW_TECH           | Our spies inform us that the %1 knows the secrets of %2.
-
+MAIN_ALERT_ALLIANCE_WEAKENING     | Our alliance with the %1 is weakening.
+MAIN_ALERT_ALLIANCE_BREAKING      | Our alliance with the %1 is on the verge of collapse!
 
 // Colony Listing UI
 PLANETS_TITLE                     | %1 Colonies
@@ -829,6 +860,7 @@ FLEETS_FLEETS_SELECTED            | %1  Fleets Selected
 FLEETS_MULTIPLE_DESIGNS           | Multiple
 FLEETS_RELOCATE_LABEL             | Set Rally Points
 FLEETS_TRANSPORTS_LABEL           | Send Transports
+FLEETS_SPENDING_LABEL             | Adjust Ship Spending
 FLEETS_HAS_ORDERS                 | Fleet is in transit
 FLEETS_HAS_NO_ORDERS              | Fleet is in orbit
 FLEETS_IS_RALLYING                | Fleet is rallying
@@ -841,6 +873,16 @@ FLEETS_SETTING_RALLY_POINTS       | Starting Rally Points
 FLEETS_START_RALLIES_DESC         | Select a system you control to send newly built ships from all selected systems.
 FLEETS_START_RALLIES              | Start Rallies
 FLEETS_SEND_TRANSPORTS            | Send Transports
+FLEETS_ADJUST_SPENDING_SELECT     | Select systems to set Ship spending 
+FLEETS_ADJUST_SPENDING_DESC       | Select the desired Ship spending levels for the %1 selected systems
+FLEETS_ADJUST_SPENDING_DESC2      | Other spending categories will be automatically adjusted.  Ecology will retain minimum spending required to clean pollution.
+FLEETS_ADJUST_SPENDING            | Adjust Ship Spending
+FLEETS_SPENDING_0                 | No Ship Spending
+FLEETS_SPENDING_25                | 25% Ship Spending
+FLEETS_SPENDING_50                | 50% Ship Spending
+FLEETS_SPENDING_75                | 75% Ship Spending
+FLEETS_SPENDING_MAX               | Maximum Ship Spending
+FLEETS_SPENDING_CANCEL            | Cancel
 FLEETS_CANCEL_TRANSPORTS_DESC     | %1 selected systems have already scheduled transports
 FLEETS_CANCEL_TRANSPORTS          | Cancel Transports
 FLEETS_DEPLOYING_TRANSPORTS_DESC  | Select a system within range to send colony transports or military troops to.
@@ -919,16 +961,42 @@ TECH_COMPLETED_VERIFY             | Verify that spending allocations in the rema
 // prompt for espionage
 NOTICE_ESPIONAGE_TITLE            | Our spies have infiltrated a %1 base.
 NOTICE_ESPIONAGE_SUBTITLE         | Select a technology type to steal.
+NOTICE_ESPIONAGE_NO_TECH          | No Available Technology
+NOTICE_ESPIONAGE_MANY_TECHS       | %1 Available Technologies
 NOTICE_ESPIONAGE_FOOTER           | If noticed, this may cause a Diplomatic Incident.
 NOTICE_ESPIONAGE_FRAME_TITLE      | Our spies have managed to frame another race for the theft.
 NOTICE_ESPIONAGE_FRAME_SUBTITLE   | Choose the victim race:
+
+// Spy Capture display (during next turn)
+NOTICE_SPIES_TITLE                | Current Spy Report
+NOTICE_SPIES_NO_ACTIVITY          | No meaningful spy activity has been observed.
+NOTICE_SPIES_ACTIVITY             | Current Activity:
+NOTICE_SPIES_LOST_DESC            | • The %2 shut down %1 of our spy networks.
+NOTICE_SPIES_LOST_CONFESSED       | Our spies confessed to ongoing sabotage activities.
+NOTICE_SPIES_LOST_CONFESSED2      | Our spies confessed to ongoing espionage activities.
+NOTICE_SPIES_LOST_CONFESSED3      | Our spies were forced to confess to ongoing sabotage activities.
+NOTICE_SPIES_CAUGHT_DESC          | • Our internal security forces shut down %1 spy networks of the %2.
+NOTICE_SPIES_CAUGHT_CONFESSED     | Their spies confessed to ongoing sabotage activities.
+NOTICE_SPIES_CAUGHT_CONFESSED2    | Their spies confessed to ongoing espionage activities.
+NOTICE_SPIES_FRAMED               | • We were framed for espionage activities within the %1.
+NOTICE_SPIES_ESPIONAGE            | • Our spies have stolen the secrets of %1 from the %2.
+NOTICE_SPIES_ESPIONAGE_FRAME      | We successfully framed the %1 for this theft.
+NOTICE_SPIES_SABOTAGE_FACTORIES   | • Our spies successfully destroyed %1 factories in the %2 system.
+NOTICE_SPIES_SABOTAGE_BASES       | • Our spies successfully destroyed %1 missile bases protecting the %2 system.
+NOTICE_SPIES_SABOTAGE_REBELS      | • Our spies successfully incited rebels in the %2 system.
+NOTICE_SPIES_SABOTAGE_REBELLION   | • Our spies successfully triggered rebellion in the %2 system.
+NOTICE_SPIES_LEARNED_TECH         | • Our spies report that the %1 has recently learned the following technologies unknown to us: %2
+NOTICE_SPIES_MULTIPLE_TECHS       | %1, %2
+NOTICE_SPIES_THREATEN             | Threaten
+NOTICE_SPIES_MANAGE               | Manage Spies
+NOTICE_SPIES_CLOSE                | Close
 
 // Ground Combat UI
 INVASION_LANDING                  | %1 out of %2 %3 transports penetrate %4 defenses.
 INVASION_LANDING_REBELS           | %1 transports land to reclaim the %2 colony at %3.
 INVASION_BATTLE                   | In the Year %1, the %2 and %3 battle for %4.
 INVASION_BATTLE_REBELS            | In the Year %1, the %2 and rebels battle for %3.
-INVASION_TROOPS_LANDED            | %1 %2 troops landed.
+INVASION_TROOPS_LANDED            | %1 %2 troops landed. 
 INVASION_SOME_TROOPS_LANDED       | %1 of %2 %3 troops landed.
 INVASION_WIN                      | %1 transports capture %2.
 INVASION_LOSS                     | %1 troops successfully defend %2.
@@ -1054,6 +1122,15 @@ SETUP_GALAXY_MAX_OPPONENTS        | Maximum Opponents: %1
 SETUP_OPPONENTS_HEADER_1          | %1 vs.
 SETUP_OPPONENTS_HEADER_2          | Rival Empires
 SETUP_OPPONENT_RANDOM             | ???
+SETUP_OPPONENT_AI                 | Play against:
+SETUP_OPPONENT_AI_BASE            | AI: Base
+SETUP_OPPONENT_AI_MODNAR          | AI: Modnar
+SETUP_OPPONENT_AI_XILMI           | AI: Xilmi
+SETUP_OPPONENT_AI_SELECT          | AI: Selectable
+SETUP_AUTOPLAY_OFF                | Off
+SETUP_AUTOPLAY_AI_BASE            | AI: Base
+SETUP_AUTOPLAY_AI_MODNAR          | AI: Modnar
+SETUP_AUTOPLAY_AI_XILMI           | AI: Xilmi
 SETUP_GAME_DIFFICULTY_LABEL       | Difficulty
 SETUP_DIFFICULTY_EASIEST          | Easiest
 SETUP_DIFFICULTY_EASIER           | Easier
@@ -1087,6 +1164,13 @@ SETUP_STAR_DENSITY_NORMAL         | Normal
 SETUP_STAR_DENSITY_HIGH           | High
 SETUP_STAR_DENSITY_HIGHER         | Higher
 SETUP_STAR_DENSITY_HIGHEST        | Highest
+SETUP_AI_HOSTILITY_LOWEST         | Nicest
+SETUP_AI_HOSTILITY_LOWER          | Nicer
+SETUP_AI_HOSTILITY_LOW            | Nice
+SETUP_AI_HOSTILITY_NORMAL         | Normal
+SETUP_AI_HOSTILITY_HIGH           | Angry
+SETUP_AI_HOSTILITY_HIGHER         | Angrier
+SETUP_AI_HOSTILITY_HIGHEST        | Angriest
 SETUP_GAME_NUMBER_OPPONENTS       | Opponents
 SETUP_PLANET_QUALITY_POOR         | Poor
 SETUP_PLANET_QUALITY_MEDIOCRE     | Mediocre
@@ -1096,6 +1180,8 @@ SETUP_PLANET_QUALITY_GREAT        | Great
 SETUP_TERRAFORMING_NORMAL         | Normal
 SETUP_TERRAFORMING_REDUCED        | Reduced
 SETUP_TERRAFORMING_NONE           | None
+SETUP_COLONIZING_NORMAL           | Normal
+SETUP_COLONIZING_RESTRICTED       | Restricted
 SETUP_FUEL_RANGE_NORMAL           | Normal
 SETUP_FUEL_RANGE_HIGH             | High
 SETUP_FUEL_RANGE_HIGHER           | Higher
@@ -1142,21 +1228,25 @@ SETUP_VOID_4                      | Void 4
 
 
 // Advanced Settings
-SETTINGS_TITLE                    | Advanced Settings
+SETTINGS_TITLE                    | Advanced Game Options
 SETTINGS_DESCRIPTION              | Click to toggle each game setting.
-SETTINGS_ACCEPT                   | Accept
+SETTINGS_EXIT                     | Exit
+SETTINGS_DEFAULT                  | Set to Default
 SETTINGS_STAR_DENSITY             | Star Density: %1
 SETTINGS_RANDOM_EVENTS            | Random Events: %1
 SETTINGS_RESEARCH_RATE            | Research Rate: %1
 SETTINGS_COUNCIL_WIN              | Council Win: %1
 SETTINGS_RANDOMIZE_AI             | Randomize AI: %1
+SETTINGS_AUTOPLAY                 | Autoplay: %1
 SETTINGS_TECH_TRADING             | Tech Trading: %1
 SETTINGS_GALAXY_AGE               | Galaxy Age: %1
 SETTINGS_WARP_SPEED               | Warp Speed: %1
 SETTINGS_NEBULAE                  | Nebulae: %1
 SETTINGS_PLANET_QUALITY           | Planet Quality: %1
 SETTINGS_TERRAFORMING             | Hostile Terraforming: %1
+SETTINGS_COLONIZING               | Colonizing: %1
 SETTINGS_FUEL_RANGE               | Fuel Range: %1
+SETTINGS_AI_HOSTILITY             | Hostility: %1
 SETTINGS_RANDOM_EVENTS_DESC       | Space Monsters are random events and considerable mid-game threats. Turn off space monsters or all random events. 
 SETTINGS_WARP_SPEED_DESC          | Increase the speed of more advanced warp technologies. This can be desirable on very large maps.
 SETTINGS_GALAXY_AGE_DESC          | Compared to normal galaxies, young galaxies have more white and blue stars while old galaxies have more red and neutron stars.
@@ -1166,9 +1256,13 @@ SETTINGS_RESEARCH_RATE_DESC       | Slow the research rate of new technologies, 
 SETTINGS_NEBULAE_DESC             | Nebulae slow down ship travel and render shields useless. Increase or decrease their frequency.
 SETTINGS_PLANET_QUALITY_DESC      | Increases or decreases the frequency of higher quality planets.
 SETTINGS_TERRAFORMING_DESC        | Reduce or eliminate the benefits of the Improved Terraforming technologies on hostile planets.
+SETTINGS_COLONIZING_DESC          | Restrict the colonization of systems to only those for which you have acquired the specific technology.
 SETTINGS_COUNCIL_DESC             | Disable the council victory condition or allow enemy empires to rebel against a player victory.
 SETTINGS_RANDOMIZE_AI_DESC        | Randomize the AI player personalities, racial abilities, or both.
+SETTINGS_AUTOPLAY_DESC            | Completely automate the game by having an AI play for the player. This is useful for a first-hand view of how the AI works.
+SETTINGS_AUTOPLAY_WARNING         | Warning! Autoplay is currently enabled which will prevent user gameplay. Use "Advanced Options" to disable.
 SETTINGS_FUEL_RANGE_DESC          | Increase the range of fuel range technologies and reserve fuel tanks.
+SETTINGS_AI_HOSTILITY_DESC        | Increase or decrease the general level of hostility between alien races.
 
 // Tech UI labels
 TECH_RESEARCH                     | Technology Research
@@ -1237,11 +1331,14 @@ SHIP_DESIGN_SLOTS                 | Design Slots
 SHIP_DESIGN_AVAILABLE             | Available
 SHIP_DESIGN_AVAILABLE_DESC        | Select this design slot to begin work on a new ship design.
 SHIP_DESIGN_AVAILABLE_DESC2       | Deploy this design to allow construction on colonies.
+SHIP_DESIGN_PROTOTYPE             | Prototype
+SHIP_DESIGN_PROTOTYPE_DESC        | Prototype designs cannot be deployed
 SHIP_DESIGN_SLOT_DESC             | Total in fleet:
 SHIP_DESIGN_SLOT_DESC2            | In Orbit:
 SHIP_DESIGN_SLOT_DESC3            | In Transit:
 SHIP_DESIGN_SLOT_DESC4            | Colonies Building:
 SHIP_DESIGN_NEW                   | New Ship Design
+SHIP_DESIGN_PROTOTYPE_TITLE       | Ship Design Prototype
 SHIP_DESIGN_SIZE_SMALL            | Small
 SHIP_DESIGN_SIZE_MEDIUM           | Medium
 SHIP_DESIGN_SIZE_LARGE            | Large
@@ -1261,6 +1358,7 @@ SHIP_DESIGN_SPEED_VALUE           | Warp %1
 SHIP_DESIGN_COST_VALUE            | %1 BC
 SHIP_DESIGN_TOTAL_SPACE_LABEL     | Total Space
 SHIP_DESIGN_AVAIL_SPACE_LABEL     | Available Space
+SHIP_DESIGN_COLORS                | Tint
 SHIP_DESIGN_COMBAT_STATS_TITLE    | Combat Stats
 SHIP_DESIGN_HIT_POINTS_LABEL      | Hit Points
 SHIP_DESIGN_MISSILE_DEF_LABEL     | Missile Defense
@@ -1372,6 +1470,7 @@ SHIP_DESIGN_HELP_1H               | Missile Defense - defense level vs. missile 
 SHIP_DESIGN_HELP_1I               | Beam Defense - defense level vs. beam weapons in combat.
 SHIP_DESIGN_HELP_1J               | Attack Level - attack level for weapons in combat. 
 SHIP_DESIGN_HELP_1K               | Combat Speed - distance the ship can travel in combat, per turn.
+SHIP_DESIGN_HELP_1L               | Tint - alters the color of the ship.
 SHIP_DESIGN_HELP_2A               | Engine Type - the type of engine used to power this ship design.
 SHIP_DESIGN_HELP_2B               | Speed - travel speed provided by the engine.
 SHIP_DESIGN_HELP_2C               | Cost - the cost of each engine needed for power.
@@ -1413,9 +1512,18 @@ SHIP_COMBAT_MISS                  | Miss
 SHIP_COMBAT_DEFLECTED             | Deflected
 SHIP_COMBAT_DESTROYED             | Destroyed!
 SHIP_COMBAT_STASIS                | Stasis
+SHIP_COMBAT_TITLE                 | Battle at %1
+SHIP_COMBAT_TITLE_UNNAMED         | Battle in unexplored system
+SHIP_COMBAT_SYSTEM_POP            | Population
+SHIP_COMBAT_SYSTEM_FACT           | Factories
+SHIP_COMBAT_SYSTEM_BASE           | Bases
+SHIP_COMBAT_TITLE_VICTORIOUS      | VICTORIOUS
 SHIP_COMBAT_RESULTS               | The %1 fleet was victorious at %2!
 SHIP_COMBAT_RESULTS_MONSTER       | The %1 was victorious at %2!
 SHIP_COMBAT_RESULTS_UNNAMED       | The %1 fleet was victorious!
+SHIP_COMBAT_SHIP_TOTALS           | %1 🡒 %2
+SHIP_COMBAT_RESULTS_RETREATED     | RETREATED
+SHIP_COMBAT_RESULTS_DESTROYED     | DESTROYED
 SHIP_COMBAT_RETREAT_ALL           | Retreat All
 SHIP_COMBAT_NEXT                  | Next Ship
 SHIP_COMBAT_AUTO_RESOLVE          | Auto-Resolve Battle
@@ -1637,6 +1745,7 @@ RACES_MILITARY_SPECIALS           | Special Devices
 RACES_STATUS_THE_EMPIRE           | The %1
 RACES_STATUS_VS                   | vs.
 RACES_STATUS_KNOWN_EMPIRES        | %1 Known Empires
+RACES_STATUS_HISTORY              | Show %1 History
 RACES_STATUS_NO_DATA              | No Data
 RACES_STATUS_OLD_DATA             | Old Data
 RACES_STATUS_FLEET_STRENGTH       | Fleet Strength
@@ -1646,6 +1755,9 @@ RACES_STATUS_PLANETS              | Planets
 RACES_STATUS_PRODUCTION           | Production
 RACES_STATUS_TOTAL_POWER          | Total Power
 RACES_UNKNOWN_DATA                | ???
+
+RACES_SET_COLOR_TITLE             | Choose new color for %1
+RACES_SET_COLOR_DESC              | If the selected color and shape are used by another empire, the colors will be switched.
 
 // Races UI help
 RACES_HELP_0A                     | OVERVIEW: This screen provides detailed information about each of the alien races that you have encountered.
@@ -1660,6 +1772,7 @@ RACES_HELP_1B                     | Provides direct access to diplomats for all 
 RACES_HELP_1C                     | Increase the security tax to improve your chances of thwarting enemy spies.
 RACES_HELP_1D                     | Provides direct access to manage your spies in all contacted empires.
 RACES_HELP_1E                     | Diplomatic incidents that affect how other empires react to you. The effects will move towards zero over time.
+RACES_HELP_1F                     | Click to change the color for a race displayed on the map
 RACES_HELP_2A                     | General information for selected empire.
 RACES_HELP_2B                     | Grants an audience with a diplomat for the selected empire.
 RACES_HELP_2C                     | Information about trade treaties signed with the selected empire.
@@ -1703,6 +1816,21 @@ NOTICE_SPYING_MISSION_HIDE        | Infiltration
 NOTICE_SPYING_MISSION_ESPIONAGE   | Espionage
 NOTICE_SPYING_MISSION_SABOTAGE    | Sabotage
 
+// History UI
+HISTORY_TITLE                     | Known Galactic History
+HISTORY_TITLE_ALL                 | Full Galactic History
+HISTORY_TURN_DESC                 | Turn %1 of %2
+HISTORY_FORWARD                   | Forward
+HISTORY_BACK                      | Back
+HISTORY_PLAY                      | Play
+HISTORY_PAUSE                     | Pause
+HISTORY_RESET                     | Reset
+HISTORY_EXIT                      | Exit
+HISTORY_EXTINCT                   | Extinct
+HISTORY_SYSTEMS                   | Systems
+HISTORY_EMPIRE                    | Empire
+
+
 
 // Council UIs
 COUNCIL_CONVENE_TITLE             | The High Council Convenes
@@ -1712,7 +1840,11 @@ COUNCIL_ADJOURN_TITLE             | The High Council Adjourns
 COUNCIL_ADJOURN                   | Voting has concluded and neither candidate has collected two-thirds of votes. No ruler has been named. The High Council will reconvene for another vote in 25 years.
 COUNCIL_SUMMARY_TITLE             | Voter Summary
 COUNCIL_SUMMARY                   | Votes are cast in order of population. %1 votes are required to win election.
-COUNCIL_BEGIN_VOTING              | Continue to Voting
+COUNCIL_BEGIN_VOTING              | Begin Voting
+COUNCIL_SHOW_VOTING               | Continue Voting
+COUNCIL_SKIP_TO_PLAYER            | Skip to %1 Vote
+COUNCIL_COMPLETE_VOTING           | Complete All Voting
+COUNCIL_SHOW_RESULTS              | Show Results
 COUNCIL_VIEW_SUMMARY              | View Voter Summary
 COUNCIL_VOTES_REQUIRED            | %1 votes required to win election.
 COUNCIL_CAST_PROMPT               | We must cast our %1 votes.
@@ -1776,6 +1908,7 @@ SYSTEMS_UNCOLONIZEABLE            | System cannot be colonized.
 SYSTEMS_EXPLOIT_PCT               | Colony at %1% total production capacity.
 SYSTEMS_EXPLOIT_WASTE             | Colony is creating industrial waste.
 SYSTEMS_EXPLOIT_COMPLETE          | Colony is at maximum production capacity.
+SYSTEMS_EXPLOIT_TRANSPORTS        | %1 transports are in transit.
 SYSTEMS_EXT_ENEMY                 | Enemy colony.
 SYSTEMS_EXT_ENEMY_FLEET           | Enemy fleet in orbit.
 SYSTEMS_EXT_ENEMY_FLEET_PLAYER    | Enemy fleet orbiting our colony.
@@ -1783,6 +1916,7 @@ SYSTEMS_EXT_ENEMY_FLEET_ALLY      | Enemy fleet orbiting an allied colony.
 SYSTEMS_EXT_INC_FLEET_PLAYER      | Enemy fleet in transit to our colony.
 SYSTEMS_EXT_INC_FLEET_ALLY        | Enemy fleet in transit to an allied colony.
 SYSTEMS_EXT_NEED_DEFENSE          | Defenses at this colony are not fully upgraded.
+SYSTEMS_EXT_INC_TRANSPORTS        | %1 %2 troops are in transit.
 SYSTEMS_HELP_1A                   | OVERVIEW - The purpose of this screen is to highlight systems in the galaxy that warrant attention by the player. Urgency or danger is denoted by color: flashing red is the highest, and green is the lowest.
 SYSTEMS_HELP_1B                   | Explore - shows unexplored systems within reach of scouts, or potentially with unresearched technologies.
 SYSTEMS_HELP_1C                   | Expand - shows colonizable systems within reach of ships, or potentially with unresearched technologies.
@@ -1812,13 +1946,17 @@ DIPLOMACY_MENU_ACCEPT             | Accept
 DIPLOMACY_MENU_ACCEPT_NEED_BC     | Accept (not enough funds)
 DIPLOMACY_MENU_FORGET_IT          | Forget It
 DIPLOMACY_TRADE_LEVEL             | %1 BC / Year
-DIPLOMACY_MENU_TREATIES           | Diplomatic Actions
+DIPLOMACY_MENU_TREATIES           | Propose Treaty
 DIPLOMACY_MENU_TRADE              | Trade Agreement
 DIPLOMACY_MENU_TECHNOLOGY         | Exchange Technology
 DIPLOMACY_MENU_OFFER_AID          | Offer Aid
 DIPLOMACY_MENU_AMT                | %1 BC
 DIPLOMACY_MENU_OFFER_TECHS        | Offer Technology
+DIPLOMACY_MENU_THREATEN           | Threaten
 DIPLOMACY_MENU_DECLARE_WAR        | Declare War
+DIPLOMACY_MENU_EVICT_SPIES        | Remove All Spies (lowers relations)
+DIPLOMACY_MENU_STOP_SPYING        | Stop Spying Activities
+DIPLOMACY_MENU_STOP_ATTACKING     | Stop Attacking
 DIPLOMACY_MENU_GOODBYE            | Good Bye
 DIPLOMACY_MENU_PACT               | Propose Non-Aggression Pact
 DIPLOMACY_MENU_ALLIANCE           | Propose Alliance
@@ -1838,13 +1976,14 @@ DIPLOMACY_THREATEN_MENU_BR        | Break Trade Treaty
 DIPLOMACY_THREATEN_MENU_5         | Declare War
 DIPLOMACY_ACCEPT_OFFER            | Accept
 DIPLOMACY_ACCEPT_JOIN_WAR         | Accept (Joins War)
-DIPLOMACY_ACCEPT_END_WAR          | Accept (Ends War)
+DIPLOMACY_ACCEPT_END_WAR          | Accept (Ends War, Recalls Forces)
 DIPLOMACY_ACCEPT_FORM_PACT        | Accept (Forms Pact)
 DIPLOMACY_ACCEPT_FORM_ALLIANCE    | Accept (Forms Alliance)
 DIPLOMACY_ACCEPT_ESTABLISH_TRADE  | Accept (Establishes Trade)
 DIPLOMACY_DECLINE_OFFER           | Decline
 DIPLOMACY_DECLINE_BREAK_ALLIANCE  | Decline (Breaks Alliance)
 DIPLOMACY_IGNORE_THREAT           | Ignore Threat
+DIPLOMACY_SHUTDOWN_SPIES          | Shutdown all spy networks in the %1 
 DIPLOMACY_HIDE_SPIES              | Order all spies in the %1 to Hide
 DIPLOMACY_RETREAT_SHIPS           | Order all ships orbiting or in transit to %1 systems to Retreat
 
@@ -1862,6 +2001,9 @@ GAME_OVER_REBELLION_WIN           | Rebellion Win
 GAME_OVER_REBEL_ALLIANCE_WIN      | Rebel Alliance Win
 GAME_OVER_ALLIANCE_WIN            | Alliance Win
 GAME_OVER_NO_COLONIES_LOSS        | Societal Collapse Loss
+
+GAME_OVER_EXIT                    | Exit
+GAME_OVER_REPLAY                  | Replay
 
 // text for race-generic endings
 // %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 special text

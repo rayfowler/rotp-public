@@ -31,6 +31,7 @@ import rotp.ui.BasePanel;
 import static rotp.ui.BasePanel.s10;
 import static rotp.ui.BasePanel.s20;
 import static rotp.ui.BasePanel.s70;
+import rotp.ui.RotPUI;
 import rotp.ui.SystemViewer;
 import rotp.ui.map.IMapHandler;
 
@@ -38,6 +39,7 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
     private static final long serialVersionUID = 1L;
     SystemViewer parent;
     Rectangle flagBox = new Rectangle();
+    Rectangle nameBox = new Rectangle();
     Shape hoverBox;
     IMapHandler topParent;
     public EmpireColonyFoundedPane(SystemViewer p, IMapHandler top, Color c0) {
@@ -59,6 +61,7 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
         Graphics2D g = (Graphics2D) g0;
         super.paintComponent(g);
         
+        nameBox.setBounds(0,0,0,0);
         int w = getWidth();
         int h = getHeight();
         StarSystem sys = parent.systemViewToDisplay();
@@ -66,8 +69,11 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
             return;
         int id = sys.id;
         String name = player().sv.descriptiveName(id);
+        int sw = g.getFontMetrics().stringWidth(name);
+        Color c0 = nameBox == hoverBox ? Color.yellow : SystemPanel.whiteLabelText;
         g.setFont(narrowFont(24));
-        drawShadowedString(g, name, 2, s10, s30, MainUI.shadeBorderC(), SystemPanel.whiteLabelText);
+        drawShadowedString(g, name, 2, s10, s30, MainUI.shadeBorderC(), c0);
+        nameBox.setBounds(s10, s5, sw+s5,s25);
 
         // draw system banner
         int sz = s70;
@@ -97,6 +103,8 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
         hoverBox = null;
         if (flagBox.contains(x,y))
             hoverBox = flagBox;
+        else if (nameBox.contains(x,y))
+            hoverBox = nameBox;
         
         if (prevHover != hoverBox)
             repaint();
@@ -111,6 +119,11 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
         if (hoverBox == flagBox) {
             toggleFlagColor(rightClick);
        }
+        else if (hoverBox == nameBox) {
+            RotPUI.instance().selectRacesPanel();
+            RotPUI.instance().racesUI().selectDiplomacyTab();
+            RotPUI.instance().racesUI().selectedEmpire(player());              
+        }
     }
     @Override
     public void mouseEntered(MouseEvent e) { }

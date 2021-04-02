@@ -290,6 +290,7 @@ public class SystemMassQueryPanel extends BasePanel {
         private final Rectangle stopRalliesBox = new Rectangle();
         private final Rectangle stopTransportsBox = new Rectangle();
         private final Rectangle transportBox  = new Rectangle();
+        private final Rectangle spendingBox  = new Rectangle();
         private final Rectangle shipNameBox = new Rectangle();
         private final Polygon prevDesign = new Polygon();
         private final Polygon nextDesign = new Polygon();
@@ -300,7 +301,7 @@ public class SystemMassQueryPanel extends BasePanel {
             initModel();
         }
         private void initModel() {
-            setPreferredSize(new Dimension(getWidth(), s100));
+            setPreferredSize(new Dimension(getWidth(), s100+s35));
             addMouseListener(this);
             addMouseMotionListener(this);
             addMouseWheelListener(this);
@@ -320,9 +321,10 @@ public class SystemMassQueryPanel extends BasePanel {
 
             if (topParent.showingQueryPanel()) {
                 int midMargin = s90;
-                drawShipIcon(g,s5,s2,midMargin-s10,s60);
-                drawNameSelector(g,midMargin+s5,h-s100,w-midMargin-s15,s30);
-                drawRallyPointButton(g,midMargin+s5,h-s65,w-s15-midMargin,s25);
+                drawShipIcon(g,s5,s5,midMargin-s10,s60);
+                drawNameSelector(g,midMargin+s5,h-s100-s28,w-midMargin-s15,s30);
+                drawRallyPointButton(g,midMargin+s5,h-s93,w-s15-midMargin,s25);
+                drawShipSpendingButton(g,0,h-s67,w,s35);
                 drawTransportButton(g,0,h-s35,w,s35);
                 textureArea = null;
             }
@@ -330,6 +332,8 @@ public class SystemMassQueryPanel extends BasePanel {
                 drawRallyPointHeader(g,w,h);
             else if (topParent.showingTransportPanel())
                 drawTransportHeader(g,w,h);
+            else if (topParent.showingSpendingPanel())
+                drawShipSpendingHeader(g,w,h);
         }
         private void drawRallyPointHeader(Graphics2D g, int w, int h) {
             g.setFont(narrowFont(25));
@@ -403,6 +407,27 @@ public class SystemMassQueryPanel extends BasePanel {
             Area buttonArea = new Area(new Rectangle2D.Float(s3, h-s30, topParent.SIDE_PANE_W-s18, s27));
             textureArea.add(buttonArea);
         }
+        private void drawShipSpendingHeader(Graphics2D g, int w, int h) {
+            g.setFont(narrowFont(25));
+            String title = text("FLEETS_ADJUST_SPENDING");
+            drawShadowedString(g, title, 3, s5, h-s75, SystemPanel.textShadowC, SystemPanel.orangeText);
+
+            g.setColor(FleetUI.backHiC);
+            g.fillRect(0, h-s70, w, s70);
+
+            int y0 = h-s45;
+            g.setColor(SystemPanel.blackText);
+            
+            int num = topParent.filteredSystems.size();
+            String desc = num == 0 ? text("FLEETS_ADJUST_SPENDING_SELECT") : text("FLEETS_ADJUST_SPENDING_DESC", str(num));
+            List<String> descLines = scaledNarrowWrappedLines(g, desc, w-s20, 2, 18, 14);
+            for (String line: descLines) {
+                g.drawString(line, s10, y0);
+                y0 += s16;
+            }
+
+            textureArea = new Area(new Rectangle2D.Float(0,0,w,h-s70));
+        }
         private void drawShipIcon(Graphics2D g, int x, int y, int w, int h) {
             g.setColor(Color.black);
             g.fillRect(x, y, w, h);
@@ -411,50 +436,8 @@ public class SystemMassQueryPanel extends BasePanel {
 
             g.drawImage(initializedBackgroundImage(w, h), x,y, null);
 
-            int y0a = h/3;
-            int y0b = h*2/3;
-
-            // horizontal bars
-            g.setColor(FleetUI.darkBrown);
-            g.fillRect(x, y+s4,     w, s4);
-            g.fillRect(x, y+h-s8,   w, s4);
-            g.fillRect(x, y+y0a,    w, s4);
-            g.fillRect(x, y+y0b-s4, w, s4);
-
-            g.setColor(FleetUI.brown);
-            g.fillRect(x, y+s8,     w, s4);
-            g.fillRect(x, y+h-s12,  w, s4);
-            g.fillRect(x, y+y0a-s4, w, s4);
-            g.fillRect(x, y+y0b,    w, s4);
-
-            // vertical bars
-            g.setColor(FleetUI.darkBrown);
-            g.fillRect(x+w/8,   y+y0a+s4, s4, y0b-y0a-s8);
-            g.fillRect(x+w*3/8, y+y0a+s4, s4, y0b-y0a-s8);
-            g.fillRect(x+w*5/8, y+y0a+s4, s4, y0b-y0a-s8);
-            g.fillRect(x+w*7/8, y+y0a+s4, s4, y0b-y0a-s8);
-
-            Stroke prevStroke = g.getStroke();
-            g.setStroke(stroke2);
-            g.drawLine(x+s4,         y+s12,    x+(w/5)-s4,   y+y0a-s4);
-            g.drawLine(x+(w/5)+s4,   y+y0a-s4, x+(w*2/5)-s4, y+s12);
-            g.drawLine(x+(w*2/5)+s4, y+s12,    x+(w*3/5)-s4, y+y0a-s4);
-            g.drawLine(x+(w*3/5)+s4, y+y0a-s4, x+(w*4/5)-s4, y+s12);
-            g.drawLine(x+(w*4/5)+s4, y+s12,    x+w-s4,       y+y0a-s4);
-
-            g.drawLine(x+s4,         y+h-s12,  x+(w/5)-s4,   y+y0b+s4);
-            g.drawLine(x+(w/5)+s4,   y+y0b+s4, x+(w*2/5)-s4, y+h-s12);
-            g.drawLine(x+(w*2/5)+s4, y+h-s12,  x+(w*3/5)-s4, y+y0b+s4);
-            g.drawLine(x+(w*3/5)+s4, y+y0b+4,  x+(w*4/5)-4,  y+h-12);
-            g.drawLine(x+(w*4/5)+s4, y+h-s12,  x+w-s4,       y+y0b+s4);
-
-            g.setStroke(prevStroke);
-
             // draw design image
-            if (topParent.currDesign == null) {
-
-            }
-            else {
+            if (topParent.currDesign != null) {
                 Image img = topParent.currDesign.image();
                 int w0 = img.getWidth(null);
                 int h0 = img.getHeight(null);
@@ -516,6 +499,7 @@ public class SystemMassQueryPanel extends BasePanel {
             g.setColor(FleetUI.sliderBoxBlue);
             g.setFont(narrowFont(18));
             String name = topParent.currDesign == null ? text("FLEETS_MULTIPLE_DESIGNS") : topParent.currDesign.name();
+            scaledFont(g,name,barW-s5,18,8);
             int sw = g.getFontMetrics().stringWidth(name);
             int x0 = barX+((barW-sw)/2);
             g.drawString(name, x0, barY+s16);
@@ -580,6 +564,31 @@ public class SystemMassQueryPanel extends BasePanel {
             g.drawString(s, x+s10, y+s25);
             if ((hoverBox == transportBox)
             && player().canSendTransports()) {
+                Stroke prevStroke = g.getStroke();
+                g.setStroke(stroke2);
+                g.setColor(SystemPanel.yellowText);
+                g.drawRect(x+s2,y+s5,w-s2,h-s7);
+                g.setStroke(prevStroke);
+            }
+        }
+        private void drawShipSpendingButton(Graphics2D g, int x, int y, int w, int h) {
+            spendingBox.setBounds(x, y, w, h);
+            g.setColor(FleetUI.backLoC);
+            g.fillRect(x, y, w, h);
+            g.setColor(FleetUI.darkShadingC);
+            g.fillRect(x+s2,y+s5,w-s2,h-s5);
+            g.setColor(SystemPanel.whiteText);
+            g.fillRect(x+s2,y+s5, w-s3, h-s7);
+            g.setColor(FleetUI.backLoC);
+            g.fillRect(x+s3,y+s6, w-s5, h-s9);
+            if (hoverBox == spendingBox)
+                g.setColor(SystemPanel.yellowText);
+            else
+                g.setColor(SystemPanel.whiteText);
+            g.setFont(narrowFont(20));
+            String s = text("FLEETS_SPENDING_LABEL");
+            g.drawString(s, x+s10, y+s25);
+            if (hoverBox == spendingBox) {
                 Stroke prevStroke = g.getStroke();
                 g.setStroke(stroke2);
                 g.setColor(SystemPanel.yellowText);
@@ -680,6 +689,10 @@ public class SystemMassQueryPanel extends BasePanel {
                     repaint();
                 }
             }
+            else if (spendingBox.contains(x,y)){
+                topParent.showSpendingPanel();
+                repaint();
+            }
         }
         @Override
         public void mouseDragged(MouseEvent arg0) { }
@@ -703,6 +716,8 @@ public class SystemMassQueryPanel extends BasePanel {
                 hoverBox = rallyPointBox;
             else if (transportBox.contains(x,y))
                 hoverBox = transportBox;
+            else if (spendingBox.contains(x,y))
+                hoverBox = spendingBox;
             else if (stopRalliesBox.contains(x,y))
                 hoverBox = stopRalliesBox;
             else if (stopTransportsBox.contains(x,y))

@@ -19,6 +19,11 @@ PsilonShip               , data/sounds/ship_psilon.wav        , 100            ,
 SakkraShip               , data/sounds/ship_sakkra.wav        , 100            ,
 SilicoidShip             , data/sounds/ship_silicoid.wav      , 100            ,
 
+#Colonization Jingles
+ColonizeNormalAmbience  , data/sounds/colonize_normal.wav   , 50             ,
+ColonizeHostileAmbience , data/sounds/colonize_hostile.wav  , 50             ,
+ColonizeRuinsAmbience   , data/sounds/colonize_ruins.wav    , 50             ,
+
 #Ground Combat
 GroundBattle             , data/sounds/groundcombat_battle.wav   , 100            , L
 

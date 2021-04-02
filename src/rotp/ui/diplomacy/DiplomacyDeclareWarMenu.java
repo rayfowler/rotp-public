@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import java.util.List;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
+import rotp.ui.RotPUI;
 
 public class DiplomacyDeclareWarMenu extends DiplomaticMessage {
     private final List<Integer> options = new ArrayList<>();
@@ -62,8 +63,8 @@ public class DiplomacyDeclareWarMenu extends DiplomaticMessage {
         DiplomaticReply reply;
         switch(choice) {
             case DECLARE_WAR          : reply = diplomat().diplomatAI().receiveDeclareWar(player());    break;
-            case EXIT                 : DiplomaticMessage.show(view(), DialogueManager.DIPLOMACY_MAIN_MENU); return;
-            default                   : DiplomaticMessage.show(view(), DialogueManager.DIPLOMACY_MAIN_MENU); return;
+            case EXIT                 : escape(); return;
+            default                   : escape(); return;
         }
 
         // get return menu for reply (after it's clicked)
@@ -72,12 +73,17 @@ public class DiplomacyDeclareWarMenu extends DiplomaticMessage {
             reply.returnMenu(null);
         else
             reply.returnMenu(DialogueManager.DIPLOMACY_MAIN_MENU);
+        
+        reply.returnToMap(returnToMap());
 
         // show reply
         DiplomaticMessage.reply(DiplomacyRequestReply.create(diplomat(), reply));	
     }
     @Override
     public void escape() {
-        DiplomaticMessage.show(view(), DialogueManager.DIPLOMACY_MAIN_MENU);
+        if (returnToMap)
+            RotPUI.instance().selectMainPanel();
+        else
+            DiplomaticMessage.show(view(), DialogueManager.DIPLOMACY_MAIN_MENU);
     }
 }

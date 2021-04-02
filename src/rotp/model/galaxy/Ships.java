@@ -288,6 +288,7 @@ public class Ships implements Base, Serializable {
             sourceFleet.num(i, 0);
         }        
         retreatingFleet.setArrivalTime();
+        retreatingFleet.retreating(true);
         deleteFleet(sourceFleet);
         session().replaceVarValue(sourceFleet, retreatingFleet);
             
@@ -563,6 +564,18 @@ public class Ships implements Base, Serializable {
             }
         }
         return null;
+    }
+    public List<ShipFleet> incomingFleets(int sysId) {
+        List<ShipFleet> fleets = new ArrayList<>();
+        List<ShipFleet> fleetsAll = allFleetsCopy();
+        
+        for (ShipFleet fl: fleetsAll) {
+            if (fl != null) {
+                if ((fl.destSysId() == sysId) && (fl.inTransit() || fl.deployed()))
+                    fleets.add(fl);
+            }
+        }
+        return fleets;
     }
     public List<ShipFleet> orbitingFleets(int sysId) {
         List<ShipFleet> fleets = new ArrayList<>();

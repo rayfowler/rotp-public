@@ -18,7 +18,6 @@ package rotp.model.events;
 
 import java.io.Serializable;
 import rotp.model.empires.Empire;
-import rotp.ui.UserPreferences;
 import rotp.util.Base;
 
 public class SystemAbandonedEvent  implements Base, Serializable, StarSystemEvent {
@@ -30,9 +29,11 @@ public class SystemAbandonedEvent  implements Base, Serializable, StarSystemEven
         empId = id;
     }
     @Override
-    public String year() {
-        return UserPreferences.displayYear() ? str(galaxy().beginningYear() + turn) : str(turn+1);
-    }
+    public int turn()                    { return turn; }
+    @Override
+    public boolean changesOwnership()    { return true; }
+    @Override
+    public int owner()                   { return Empire.NULL_ID; }
     @Override
     public String description() {
         Empire emp = galaxy().empire(empId);

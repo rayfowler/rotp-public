@@ -255,13 +255,11 @@ WARN_REBELLING_AGAINST_01    | The [my_race] are a free and independent people a
 
 PRAISE_REBELLING_WITH_01     | The [my_race] join you in your righteous rebellion against the tyrannical rule of the New Republic.
 
-DIPLO_MAIN_MENU_01           | How may our empire serve you?
-DIPLO_MAIN_MENU_02           | Speak, but do not try our patience.
-DIPLO_MAIN_MENU_03           | Speak quickly and then leave.
 DIPLO_TECH_REQUEST_MENU_01   | What type of technology interests you?
 DIPLO_TECH_COUNTER_MENU_01   | What will you trade for it?
 DIPLO_TRADE_MENU_01          | You propose a trade agreement for:
 DIPLO_TREATY_MENU_01         | What do you wish to do?
+DIPLO_THREATEN_MENU_01       | What are you threatening?
 DIPLO_DECLARE_WAR_MENU_01    | Are you sure you want to start a war?
 DIPLO_JOINT_WAR_MENU_01      | Who should we declare war on?
 DIPLO_BREAK_ALLIANCE_MENU_01 | Which alliance should we break?
@@ -415,10 +413,17 @@ RESPOND_BREAK_ALLIANCE_01  | Very well. Your untrustworthy intentions have shown
 RESPOND_BREAK_ALLIANCE_01  | We have little need of treaties that are not honored. The alliance is broken.
 RESPOND_BREAK_ALLIANCE_01  | So be it. The alliance is broken.
 
-RESPOND_DECLARE_WAR_01     | We ignore the hollow threats of a raving lunatic.
-RESPOND_DECLARE_WAR_01     | You bluff poorly, [your_nameTitle] [your_name]. Your threats do not concern us.
-RESPOND_DECLARE_WAR_01     | Make your childish threats. The young of the [my_race] often throw tantrums as well.
-RESPOND_DECLARE_WAR_01     | You presume to threaten the mighty [my_nameTitle] [my_name]! You do not know who you are dealing with!
-RESPOND_DECLARE_WAR_01     | Your threats fall on deaf ears, [your_nameTitle] [your_name].
-RESPOND_DECLARE_WAR_01     | You bray like a Rigellian jackass, [your_nameTitle] [your_name], and we take your threats as seriously.
-RESPOND_DECLARE_WAR_01     | Do not make such threats idly, [your_nameTitle] [your_name]. The wrath of the [my_race] is terrible to behold.
+RESPOND_DECLARE_WAR_01       | 
+RESPOND_IGNORE_THREAT_01     | We ignore the hollow threats of a raving lunatic.
+RESPOND_IGNORE_THREAT_01     | You bluff poorly, [your_nameTitle] [your_name]. Your threats do not concern us.
+RESPOND_IGNORE_THREAT_01     | Make your childish threats. The young of the [my_race] often throw tantrums as well.
+RESPOND_IGNORE_THREAT_01     | You presume to threaten the mighty [my_nameTitle] [my_name]! You do not know who you are dealing with!
+RESPOND_IGNORE_THREAT_01     | Your threats fall on deaf ears, [your_nameTitle] [your_name].
+RESPOND_IGNORE_THREAT_01     | You bray like a Rigellian jackass, [your_nameTitle] [your_name], and we take your threats as seriously.
+RESPOND_IGNORE_THREAT_01     | Do not make such threats idly, [your_nameTitle] [your_name]. The wrath of the [my_race] is terrible to behold.
+
+RESPOND_STOP_SPYING_01       | Our spies will be recalled.
+
+RESPOND_STOP_ATTACKING_01    | Very well. We will recall our forces.
+
+

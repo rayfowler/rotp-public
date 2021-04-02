@@ -28,9 +28,15 @@ import java.util.HashMap;
 import java.util.List;
 import javax.swing.BorderFactory;
 import rotp.Rotp;
+import rotp.model.empires.DiplomaticTreaty;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
+import rotp.model.empires.TreatyAlliance;
 import rotp.ui.*;
+import static rotp.ui.BasePanel.s10;
+import static rotp.ui.BasePanel.s20;
+import static rotp.ui.BasePanel.s3;
+import static rotp.ui.BasePanel.s5;
 import rotp.ui.game.HelpUI;
 import rotp.ui.main.SystemPanel;
 import rotp.util.AnimationManager;
@@ -70,10 +76,12 @@ public class RacesUI extends BasePanel {
     RacesMilitaryUI militaryPanel;
     RacesStatusUI statusPanel;
     RacePlayerRelationsPane raceListingPanel;
+    RacesSetColorUI setColorPanel;
     private final CardLayout cardLayout = new CardLayout();
     private int pad = 10;
     private int helpFrame = 0;
     private LinearGradientPaint backGradient;
+    private final HashMap<Empire, Shape> colorIcons = new HashMap<>();
 
     public RacesUI() {
         instance = this;
@@ -217,11 +225,18 @@ public class RacesUI extends BasePanel {
         HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x3, y5, w3, 3, text("RACES_HELP_1D"));
         sp5.setLine(x3+w3, y5+(sp5.height()/2), w-scaled(555),  y5+(sp5.height()/2));
         
-        int x6 = scaled(150);
-        int w6 = scaled(300);
-        int y6 = scaled(460);
-        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 5, text("RACES_HELP_1E"));
-        sp6.setLine(x6+(w6/2), y6, x6+(w6/2), scaled(400));
+        int x6 = w-scaled(470);
+        int w6 = scaled(210);
+        int y6 = scaled(55);
+        int x6a = w-scaled(65);
+        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 3, text("RACES_HELP_1F"));
+        sp6.setLine(x6+w6, y6+(sp6.height()/2), x6a, scaled(85));
+        
+        int x7 = scaled(150);
+        int w7 = scaled(300);
+        int y7 = scaled(460);
+        HelpUI.HelpSpec sp7 = helpUI.addBrownHelpText(x7, y7, w7, 5, text("RACES_HELP_1E"));
+        sp7.setLine(x7+(w7/2), y7, x7+(w7/2), scaled(400));
     }
     private void loadHelpUI2() {
         int w = getWidth();
@@ -396,6 +411,10 @@ public class RacesUI extends BasePanel {
         Empire e = (Empire) sessionVar("RACESUI_EMPIRE");
         return (e == null) || e.extinct() ? player() : e;
     }
+    public Empire selectedIconEmpire() {
+        Empire e = (Empire) sessionVar("RACESUI_ICON_EMPIRE");
+        return (e == null) || e.extinct() ? player() : e;
+    }
     public void selectedEmpire(Empire e)  {
         if (e != selectedEmpire()) {
             sessionVar("RACESUI_EMPIRE", e);
@@ -403,7 +422,16 @@ public class RacesUI extends BasePanel {
             intelPanel.changedEmpire();
             militaryPanel.changedEmpire();
             statusPanel.changedEmpire();
+            raceListingPanel.changedEmpire();
         }
+    }
+    public void selectedIconEmpire(Empire e)  {
+        if (e != selectedIconEmpire()) 
+            sessionVar("RACESUI_ICON_EMPIRE", e);
+    }
+    public Shape selectedIconShape() {
+        Empire e = selectedIconEmpire();
+        return colorIcons.get(e);
     }
     private boolean selectPrevEmpire() {
         int index = empires.indexOf(selectedEmpire());
@@ -425,6 +453,8 @@ public class RacesUI extends BasePanel {
             return null;
         return player().viewForEmpire(selectedEmpire);
     }
+    public void selectDiplomacyTab()  { titlePanel.selectTab(DIPLOMACY_PANEL); }
+    public void selectIntelligenceTab()  { titlePanel.selectTab(INTELLIGENCE_PANEL); }
     public BufferedImage raceIconBackImg() {
         if (raceIconBackImg == null) {
             int w = scaled(200);
@@ -445,6 +475,7 @@ public class RacesUI extends BasePanel {
         intelPanel = new RacesIntelligenceUI(this);
         militaryPanel = new RacesMilitaryUI(this);
         statusPanel = new RacesStatusUI(this);
+        setColorPanel = new RacesSetColorUI(this);
 
         // create center panel
         titlePanel = new MainTitlePanel(this, "RACES_TITLE");
@@ -535,6 +566,41 @@ public class RacesUI extends BasePanel {
         ptY[0]=y2; ptY[1] = y2+arrowH; ptY[2]=y2+arrowH;
         g.setColor(Color.white);
         g.fillPolygon(ptX, ptY, 3);
+    }
+    public void drawAllianceStars(Graphics2D g, int x, int y, int val, int imgW) {
+        int[] stars = new int[5];
+        Image[] img = new Image[3];
+        img[0] = image("Star_Empty");
+        img[1] = image("Star_Half");
+        img[2] = image("Star_Full");
+
+        // 90+ = 2 2 2 2 2
+        // 80+ = 2 2 2 2 1
+        // 70+ = 2 2 2 2 0
+        // 60+ = 2 2 2 1 0
+        // 50+ = 2 2 2 0 0
+        // 40+ = 2 2 1 0 0
+        // 30+ = 2 2 0 0 0
+        // 20+ = 2 1 0 0 0
+        // 10+ = 2 0 0 0 0
+        // 0+  = 1 0 0 0 0
+        // <0  = 0 0 0 0 0
+
+        if (val >= 0)  stars[0]=1;
+        if (val >= 10) stars[0]=2;
+        if (val >= 20) stars[1]=1;
+        if (val >= 30) stars[1]=2;
+        if (val >= 40) stars[2]=1;
+        if (val >= 50) stars[2]=2;
+        if (val >= 60) stars[3]=1;
+        if (val >= 70) stars[3]=2;
+        if (val >= 80) stars[4]=1;
+        if (val >= 90) stars[4]=2;
+
+        for (int i=0;i<stars.length;i++) {
+            g.drawImage(img[stars[i]], x, y-imgW, imgW, imgW, this);
+            x = x+imgW;
+        }
     }
     @Override
     public void keyPressed(KeyEvent e) {
@@ -801,8 +867,10 @@ public class RacesUI extends BasePanel {
         private static final long serialVersionUID = 1L;
         private final HashMap<Empire, Rectangle> contactBoxes = new HashMap<>();
         private Empire hoverEmp;
+        private boolean hoveringIcon;
         int dragY;
-        int contactsY, contactsYMax;
+        int contactsY, contactsYMax;    
+        int contactH, listH;
         Rectangle contactsListBox = new Rectangle();
         Rectangle contactsScroller = new Rectangle();
         Shape hoverShape;
@@ -818,6 +886,7 @@ public class RacesUI extends BasePanel {
         }
         public void init() { 
             contactsY = 0;
+            contactH = s100;
         }
         @Override
         public String textureName()            { return TEXTURE_BROWN; }
@@ -838,13 +907,12 @@ public class RacesUI extends BasePanel {
             int w1 = w;
             int h1 = h-y1-s10;
             g.fillRect(0,0,w,h);
-            if (UserPreferences.textures()) 
+            if (UserPreferences.texturesInterface()) 
                 drawTexture(g,0,0,w,h);
             for (Rectangle r: contactBoxes.values())
                 r.setBounds(0,0,0,0);
 
-            int contactH = s100;
-            int listH = h-y1-s10;
+            listH = h-y1-s10;
             int fullListH = empires.size()*contactH;
             int rightM = listH >= fullListH ? 0 : s20;
             int w2 = w1-rightM;
@@ -907,14 +975,22 @@ public class RacesUI extends BasePanel {
             boolean selected = emp == selectedEmpire();
 
             Color blackC = selected ? Color.black : SystemPanel.blackText;
-            Color whiteC = emp == hoverEmp ? Color.yellow : selected ? Color.white : SystemPanel.whiteText;
+            Color whiteC = (emp == hoverEmp) && !hoveringIcon ? Color.yellow : selected ? Color.white : SystemPanel.whiteText;
              //empire name
             int x1 = x0+w1+mgn+s10;
             int y1 = y0+s25;
             g.setFont(narrowFont(22));
             drawShadowedString(g, emp.raceName(), 1, x1, y1, blackC, whiteC);
-            emp.drawShape(g,x+w-s30,y0+s10,s20,s20);
-
+            Shape sh = emp.drawShape(g,x+w-s30,y0+s10,s20,s20);
+            setColorIcon(emp, sh);
+            if ((hoverEmp == emp) && hoveringIcon) {
+                Stroke prev = g.getStroke();
+                g.setStroke(stroke2);
+                g.setColor(Color.yellow);
+                g.draw(sh);
+                g.setStroke(prev);
+            }
+            
             if (emp.isPlayer()) {
                 List<EmpireView> views = player().contacts();
                 int n = views.size();
@@ -941,7 +1017,16 @@ public class RacesUI extends BasePanel {
                 if (inRange) {
                     // treaty status
                     y1 += s20;
-                    g.drawString(view.embassy().treaty().status(), x1, y1);
+                    DiplomaticTreaty treaty = view.embassy().treaty();
+                    boolean isAlly = treaty.isAlliance();
+                    int starW = s8;
+                    String s = treaty.status(player());
+                    int sw = g.getFontMetrics().stringWidth(s);
+                    g.drawString(s, x1, y1);
+                    if (isAlly) {
+                        TreatyAlliance alliance = (TreatyAlliance) treaty;
+                        drawAllianceStars(g,x1+sw+s5,y1-s3,alliance.standing(player()),starW);
+                    }
                     // trade
                     y1 += s16;
                     int level = view.trade().level();
@@ -956,7 +1041,7 @@ public class RacesUI extends BasePanel {
                     drawRelationsBar(g, emp, x1, y0+h0-s25, w0-x1-s10, s10, s10, s5);
             }
             
-            if (UserPreferences.textures()) 
+            if (UserPreferences.texturesInterface()) 
                 drawTextureWithExistingClip(g, x0,y0,w0,h0);
             drawRaceImage(g, emp, back, x0, y0, h0);
         }
@@ -1010,6 +1095,18 @@ public class RacesUI extends BasePanel {
                 initRaceBackImg();
             return raceBackImg;
         }
+        public void changedEmpire() {
+            Empire emp = selectedEmpire();
+            int empIndex = empires.indexOf(emp);
+            
+            int numEmpires = (getHeight()-s10)/contactH;
+            if (empIndex <= numEmpires) {
+                contactsY = 0;
+                return;
+            }
+            int offset = min(empIndex, empires.size()-numEmpires);
+            contactsY = contactH*offset;
+        }
         private void initRaceBackImg() {
             int w = s76;
             int h = s82;
@@ -1029,6 +1126,9 @@ public class RacesUI extends BasePanel {
             if (!contactBoxes.containsKey(emp))
                 contactBoxes.put(emp, new Rectangle());
             return contactBoxes.get(emp);
+        }
+        public void setColorIcon(Empire emp, Shape sh) {
+            colorIcons.put(emp, sh);
         }
         @Override
         public void mouseWheelMoved(MouseWheelEvent e) {
@@ -1089,18 +1189,30 @@ public class RacesUI extends BasePanel {
             Shape prevHover = hoverShape;
             hoverShape = null;
             hoverEmp = null;
-            for (Empire emp: contactBoxes.keySet()) {
-                Rectangle rec = contactBoxes.get(emp);
+            hoveringIcon = false;
+            for (Empire emp: colorIcons.keySet()) {
+                Shape rec = colorIcons.get(emp);
                 if (rec.contains(x,y)) {
                     hoverShape = rec;
                     hoverEmp = emp;
+                    hoveringIcon = true;
                     break;
+                }
+            }
+            if (hoverShape == null) {
+                for (Empire emp: contactBoxes.keySet()) {
+                    Rectangle rec = contactBoxes.get(emp);
+                    if (rec.contains(x,y)) {
+                        hoverShape = rec;
+                        hoverEmp = emp;
+                        break;
+                    }
                 }
             }
             if (contactsScroller.contains(x,y)) 
                 hoverShape = contactsScroller;
  
-            if (hoverShape != prevHover) 
+            if (hoverShape != prevHover)
                 repaint();     
         }
         @Override
@@ -1126,10 +1238,16 @@ public class RacesUI extends BasePanel {
             if (hoverShape == null)
                 return;
 
-            if ((hoverEmp != null) && (hoverEmp != selectedEmpire())) {
+            if (hoverEmp != null) {
                 softClick();
-                selectedEmpire(hoverEmp);
-                instance.repaint();
+                if (hoveringIcon) {
+                    hoveringIcon = false;
+                    selectedIconEmpire(hoverEmp);
+                    enableGlassPane(setColorPanel);
+                }
+                else if (hoverEmp != selectedEmpire())
+                    selectedEmpire(hoverEmp);
+                instance.repaint();                    
             }
         }
     }

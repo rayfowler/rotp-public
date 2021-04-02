@@ -15,6 +15,8 @@
  */
 package rotp.model.ships;
 
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
@@ -22,6 +24,7 @@ import rotp.model.combat.CombatStack;
 import rotp.model.galaxy.Galaxy;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.planet.PlanetType;
+import rotp.util.Base;
 
 public final class ShipDesign extends Design {
     private static final long serialVersionUID = 1L;
@@ -59,7 +62,9 @@ public final class ShipDesign extends Design {
     private int usedCount = 0;       // # ships used by FleetCommander... updated each turn
     private float perTurnDmg = 0;
     private String iconKey;
+    private int shipColor;
     private transient ImageIcon icon;
+    private transient Image image;
     private transient float costBC;
 
     public static float hullPoints(int size)   { return Galaxy.current().pow(6, size); }
@@ -106,6 +111,18 @@ public final class ShipDesign extends Design {
     public void setIconKey() {
         iconKey(ShipLibrary.current().shipKey(lab().shipStyleIndex(), size(), seq()));
     }
+    public int shipColor()                  { return shipColor; }
+    public void shipColor(int i)            { shipColor = i; }
+    @Override
+    public Image image() {
+        if (image == null) {
+            ShipImage shipImage = shipImage();
+            image = icon(shipImage.nextIcon()).getImage();
+            if (shipColor > 0)
+                image = Base.colorizer.makeColor(shipColor, image);
+        }
+        return image;
+    }  
     public String sizeDesc() {
         switch (size()) {
             case ShipDesign.SMALL:  return text("SHIP_DESIGN_SIZE_SMALL");
@@ -133,6 +150,7 @@ public final class ShipDesign extends Design {
     public boolean isFighter()     { return (mission() == FIGHTER); }
     public boolean isColonyShip()  { return (mission() == COLONY); }
     public boolean isBomber()      { return (mission() == BOMBER); }
+    public boolean isDestroyer()   { return (mission() == DESTROYER); }
 
 
     public void clearEmptyWeapons() {
@@ -207,6 +225,9 @@ public final class ShipDesign extends Design {
         return pixel;
     }
     public boolean matchesDesign(ShipDesign d) {
+        return matchesDesign(d, false);
+    }
+    public boolean matchesDesign(ShipDesign d, boolean ignoreWeapons) {
         if (scrapped() != d.scrapped())
             return false;
         if (size() != d.size())
@@ -223,11 +244,13 @@ public final class ShipDesign extends Design {
             return false;
         if (maneuver() != d.maneuver())
             return false;
-        for (int i=0;i<ShipDesign.maxWeapons();i++) {
-            if (weapon(i) != d.weapon(i) )
-                return false;
-            if (wpnCount(i) != d.wpnCount(i))
-                return false;
+        if(!ignoreWeapons) {
+            for (int i=0;i<ShipDesign.maxWeapons();i++) {
+                if (weapon(i) != d.weapon(i) )
+                    return false;
+                if (wpnCount(i) != d.wpnCount(i))
+                    return false;
+            }
         }
         for (int i=0;i<ShipDesign.maxSpecials();i++) {
             if (special(i) != d.special(i))

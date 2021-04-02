@@ -34,7 +34,14 @@ public class GenocideIncident extends DiplomaticIncident {
         empVictim = vic.id;
         severity = -50;
         dateOccurred = galaxy().currentYear();
-        duration = obs.leader().genocideDurationMod();
+        duration = obs.diplomatAI().leaderGenocideDurationMod();
+        
+        // zero duration means zero severity. That's aggressive!
+        if (duration == 0) {
+            duration = 1; // avoid /0 errors
+            severity = 0;
+            return;
+        }
     }
     @Override
     public String title()            { return text("INC_GENOCIDE_TITLE"); }

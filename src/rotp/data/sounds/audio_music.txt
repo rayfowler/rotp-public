@@ -2,9 +2,6 @@
 
 
 # Ambience
-ColonizeNormalAmbience  , data/sounds/colonize_normal.wav   , 50             ,
-ColonizeHostileAmbience , data/sounds/colonize_hostile.wav  , 50             ,
-ColonizeRuinsAmbience   , data/sounds/colonize_ruins.wav    , 50             ,
 IntroAmbience           , data/sounds/opening.wav           , 100            , L
 CouncilAmbience         , data/sounds/council_vote.wav      , 100            , L
 ExploreAmbience         , data/sounds/map_explore.wav       , 50             , C

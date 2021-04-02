@@ -21,4 +21,5 @@ public interface FleetCommander {
     boolean inExpansionMode();
     void nextTurn();
     float transportPriority(StarSystem sys);
+    float maxShipMaintainance();
 }

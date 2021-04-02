@@ -28,6 +28,7 @@ public class DiplomaticReply implements Base {
     String remark;
     String returnMenu;
     boolean resumeTurn = false;
+    boolean returnToMap = false;
 
     public boolean accepted()         { return accepted; }
     public void accepted(boolean b)   { accepted = b; }
@@ -39,6 +40,7 @@ public class DiplomaticReply implements Base {
     public void remark(String s)      { remark = s; }
     public String returnMenu()        { return returnMenu; }
     public void returnMenu(String s)  { returnMenu = s; }
+    public void returnToMap(boolean b) { returnToMap = b; }
 
     public void decode(String key, String value) {
         remark = remark.replace(key, value);

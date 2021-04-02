@@ -102,6 +102,8 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
     int defenderGunY = 0;
     LandingShip[] ships = new LandingShip[MAX_SHIPS];
     private SoundClip shipLanding;
+    String sysName;
+    String title;
 
     public GroundBattleUI() {
         init();
@@ -118,6 +120,11 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
         exited = false;
         attackerEmp = transport.empire();
         defenderEmp = colony.empire();
+        sysName = player().sv.name(colony.starSystem().id);
+        if (defenderEmp == attackerEmp)
+            title = text("INVASION_BATTLE_REBELS", str(galaxy().currentYear()), attackerEmp.raceName(), sysName);
+        else
+            title = text("INVASION_BATTLE", str(galaxy().currentYear()), attackerEmp.raceName(), defenderEmp.raceName(), sysName);
 
         initLandscapeImage(colony);
         
@@ -455,7 +462,7 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
         // draw title last (so it overlays any ship)
         int titleLineH = s40;
         g.setFont(narrowFont(40));
-        List<String> lines = wrappedLines(g, title(), w*4/5);
+        List<String> lines = wrappedLines(g, title, w*4/5);
         y0 = s10;
         for (String line: lines) {
             y0 += titleLineH;
@@ -479,8 +486,6 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
         landingCount++;
         if (!landing()) {
             if (battleInProgress()) {
-				// modnar: use Math.min(MAX_SOLDIERS,totalAttackers) and Math.min(MAX_SOLDIERS,totalDefenders)
-				// avoid bug with more than 500 attackers
                 allStartFiring(Math.min(MAX_SOLDIERS,totalAttackers), Math.min(MAX_SOLDIERS,totalDefenders));
                 if (animationCount() % 3 == 0) {
                     attackerDead = colony.singleCombatAgainstTransports(transport);
@@ -526,22 +531,6 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
         }
         return deadIndex;
     }
-    private String title() {
-        int year = galaxy().currentYear();
-        String invaders = attackerEmp.raceName();
-        String defenders = defenderEmp.raceName();
-        String name = player().sv.name(colony.starSystem().id);
-         if (transport.size() == 0)
-            return text("INVASION_LOSS", defenders, name);
-         else if (remainingDefenders.isEmpty())
-            return text("INVASION_WIN", invaders, name);
-        else {
-            if (defenderEmp == attackerEmp)
-                return text("INVASION_BATTLE_REBELS", str(year), invaders, name);
-            else
-                return text("INVASION_BATTLE", str(year), invaders, defenders, name);
-        }
-    }
     private boolean landing() {
         for (LandingShip ship: ships) {
             if (ship.landing())
@@ -572,6 +561,11 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
             repaint();
         }
         else {
+            if (transport.size() == 0)
+                title = text("INVASION_LOSS", defenderEmp.raceName(), sysName);
+            else
+                title = text("INVASION_WIN", attackerEmp.raceName(), sysName);
+
             exited = true;
             repaint();
             session().resumeNextTurnProcessing();
@@ -655,24 +649,24 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
         // predecided victim is fired on at least once
         int victim;
         if (!attackerDead && deathThisTurn > 0) {
-                victim = deathThisTurn;
-                deathThisTurn = 0;
+            victim = deathThisTurn;
+            deathThisTurn = 0;
         }
         else
-                victim = random(remainingDefenders);
+            victim = random(remainingDefenders);
 
-		int victimX = defenderX[0]-(defenderImgW/2);
+        int victimX = defenderX[0]-(defenderImgW/2);
         int victimY = defenderY[0]+(defenderImgH/2);
-		
-		// modnar: adjust firing to prevent >500 troop bug
-		if (victim >= MAX_SOLDIERS) {
-			victimX = defenderX[MAX_SOLDIERS-1]-(defenderImgW/2);
-			victimY = defenderY[MAX_SOLDIERS-1]+(defenderImgH/2);
-		}
-		else {
-			victimX = defenderX[victim]-(defenderImgW/2);
-			victimY = defenderY[victim]+(defenderImgH/2);
-		}
+
+        // modnar: adjust firing to prevent >500 troop bug
+        if (victim >= MAX_SOLDIERS) {
+            victimX = defenderX[MAX_SOLDIERS-1]-(defenderImgW/2);
+            victimY = defenderY[MAX_SOLDIERS-1]+(defenderImgH/2);
+        }
+        else {
+            victimX = defenderX[victim]-(defenderImgW/2);
+            victimY = defenderY[victim]+(defenderImgH/2);
+        }
 
         //log("firing at defender#"+victim+"  from:"+gunX+"@"+gunY+"  to:"+victimX+"@"+victimY+"  gun:"+attackerGunX+"@"+attackerGunY);
         attackerWeapon.drawEffect(g, gunX, gunY, victimX, victimY);

@@ -138,6 +138,8 @@ public class Transport implements Base, Ship, Sprite, Serializable {
     public void arrive()                { dest.acceptTransport(this); }
     @Override
     public boolean visibleTo(int empId) { return true; }
+    @Override
+    public boolean isTransport()       { return true; }
 
     // MappedObject overrides
     @Override
@@ -300,7 +302,7 @@ public class Transport implements Base, Ship, Sprite, Serializable {
                 empire().takeAbandonedSystem(dest, this);
             else {
                 log(concat(str(size), " ", empire.name(), " transports perished at ", dest.name()));
-                if (empire.isPlayer())
+                if (empire.isPlayerControlled())
                     TransportsPerishedAlert.create(targetEmp, dest);
                 size = 0;
             }
@@ -308,7 +310,7 @@ public class Transport implements Base, Ship, Sprite, Serializable {
         else if (dest.empire() != empire) {
             if (surrenderOnArrival()) {
                 log(concat(str(size), " ", empire.name(), " transports surrendered at ", dest.name()));
-                if (empire.isPlayer() || dest.empire().isPlayer())
+                if (empire.isPlayerControlled() || dest.empire().isPlayerControlled())
                     TransportsCapturedAlert.create(empire, dest.empire(), dest, originalSize);
                 size = 0;
             }
