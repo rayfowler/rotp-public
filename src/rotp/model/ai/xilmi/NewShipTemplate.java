@@ -109,8 +109,8 @@ public class NewShipTemplate implements Base {
         // add another entry for the current design, using the cost multiplier for its size
 
         // how many ships of each design can we build for virtual tests?
-        // use top 5 colonies, with 50% production for ships
-        float shipBudgetBC = shipProductionBudget(ai, 5, 0.5f);
+        // use top 5 colonies
+        float shipBudgetBC = shipProductionBudget(ai, 5);
         
         SortedMap<Float, ShipDesign> designSorter = new TreeMap<>();
         
@@ -518,7 +518,9 @@ public class NewShipTemplate implements Base {
                     currentScore /= 5;
             }
             currentScore /= spec.space(d);
-            specials.put(currentScore, spec);
+            //if we put stuff with 0 score, we end up with tinies and auto-repair
+            if(currentScore > 0)
+                specials.put(currentScore, spec);
             //System.out.print("\n"+ai.empire().name()+" "+d.name()+" "+spec.name()+" score "+currentScore);
         }
         return specials; 
@@ -629,10 +631,13 @@ public class NewShipTemplate implements Base {
         float shield = ai.empire().bestEnemyShieldLevel();
         if(!mustTargetShips)
             shield = ai.empire().bestEnemyPlanetaryShieldLevel();
+        float startingShield = shield;
+        //System.out.print("\n"+ai.empire().name()+" "+d.name()+" air: "+mustTargetShips+" ranged: "+mustBeRanged+" beams: "+prohibitMissiles);
         while(bestWeapon == null)
         {
             for (ShipWeapon wpn: allWeapons) {
                 if (wpn.canAttackShips() && mustTargetShips || !mustTargetShips) {
+                    //System.out.print("\n"+ai.empire().name()+" "+d.name()+" wpn: "+wpn.name()+" air: "+mustTargetShips+" shd: "+shield+" spc: "+wpn.space(d)+"/"+spaceAllowed);
                     //We don't want missiles: Can be outrun, can run out and strong counters exist
                     if(wpn.space(d) > spaceAllowed)
                         continue;
@@ -642,8 +647,7 @@ public class NewShipTemplate implements Base {
                         continue;
                     if(!mustTargetShips && !wpn.groundAttacksOnly())
                         continue;
-                    float currentScore = 0.0f;
-                    currentScore = wpn.firepower(shield) / wpn.space(d);
+                    float currentScore = wpn.firepower(shield) / wpn.space(d);
                     if(currentScore > bestScore)
                     {
                         bestWeapon = wpn;
@@ -653,7 +657,20 @@ public class NewShipTemplate implements Base {
             }
             if(bestWeapon == null)
             {
-                shield =- 1;
+                shield -= 1;
+                //if we couldn't find any ranged-weapon that does damage, we allow 
+                if(shield < 0 && prohibitMissiles == true && mustBeRanged == true)
+                {
+                    shield = startingShield;
+                    prohibitMissiles = false;
+                    continue;
+                }
+                if(shield < 0 && prohibitMissiles == false && mustBeRanged == true)
+                {
+                    shield = startingShield;
+                    mustBeRanged = false;
+                    continue;
+                }
                 if(shield < 0)
                     return;
             }
@@ -666,7 +683,7 @@ public class NewShipTemplate implements Base {
         }
         
         int num = (int)Math.floor(spaceAllowed / bestWeapon.space(d));
-
+        //System.out.print("\n"+ai.empire().name()+" "+d.name()+" add: "+num+" "+bestWeapon.name());
         int maxSlots = weaponSlotsOccupied + numSlotsToUse;
         if (maxSlots > ShipDesign.maxWeapons)
             maxSlots = ShipDesign.maxWeapons;
@@ -681,7 +698,7 @@ public class NewShipTemplate implements Base {
         }
     }
     
-    private float shipProductionBudget(ShipDesigner ai, int topSystems, float shipRatio) {
+    private float shipProductionBudget(ShipDesigner ai, int topSystems) {
         // how many BCs can topSystems number of top producing colonies
         // crank into ship production with shipRatio ratio per turn
 
