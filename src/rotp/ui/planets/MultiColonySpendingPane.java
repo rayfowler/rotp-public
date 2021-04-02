@@ -126,6 +126,8 @@ public class MultiColonySpendingPane extends BasePanel implements MouseListener,
         y0 += s15;
         g.setColor(SystemPanel.blackText);            
         String desc = text("FLEETS_ADJUST_SPENDING_DESC2");
+        if (!player().ignoresPlanetEnvironment())
+            desc = desc + " " + text("FLEETS_ADJUST_SPENDING_DESC3");
         g.setFont(narrowFont(14));
         List<String> descLines = wrappedLines(g, desc, w-s20);
         for (String line: descLines) {
