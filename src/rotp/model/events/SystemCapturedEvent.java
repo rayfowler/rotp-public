@@ -36,6 +36,8 @@ public class SystemCapturedEvent implements Base, Serializable, StarSystemEvent 
     @Override
     public String description() {
         Empire emp = galaxy().empire(empId);
-        return text("SYSEVENT_CAPTURED",emp.raceName());
+        String s = text("SYSEVENT_CAPTURED");
+        s = emp.replaceTokens(s, "alien");
+        return s;
     } 
 }

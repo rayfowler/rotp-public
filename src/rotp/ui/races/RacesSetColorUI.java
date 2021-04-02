@@ -73,7 +73,8 @@ public class RacesSetColorUI extends BasePanel implements MouseListener, MouseMo
         Empire emp = parent.selectedIconEmpire();
         // get length of title and determine box width
         g.setFont(narrowFont(24));
-        String title = text("RACES_SET_COLOR_TITLE", emp.name());
+        String title = text("RACES_SET_COLOR_TITLE");
+        title = emp.replaceTokens(title, "alien");
         int titleSW = g.getFontMetrics().stringWidth(title);
 
         int n = options().numColors();

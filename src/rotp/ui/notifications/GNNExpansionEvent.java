@@ -63,15 +63,16 @@ public class GNNExpansionEvent implements Base {
             if (emp.allColonizedSystems().size() >= numColonies) {
                 switch (triggers) {
                     case 0:
-                        title = text("GNN_EXPANSION_1", emp.name(), numColonies);
+                        title = text("GNN_EXPANSION_1", numColonies);
                         break;
                     case 1:
-                        title = text("GNN_EXPANSION_2", emp.name(), numColonies);
+                        title = text("GNN_EXPANSION_2", numColonies);
                         break;
                     case 2:
-                        title = text("GNN_EXPANSION_3", emp.name());
+                        title = text("GNN_EXPANSION_3");
                         break;
                 }
+                title = emp.replaceTokens(title,"expanding");
                 triggers++;
                 if (player().knowsOf(emp))
                     GNNNotification.notifyExpansion(title);

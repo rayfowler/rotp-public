@@ -38,7 +38,9 @@ public class SystemDestroyedEvent implements Base, Serializable, StarSystemEvent
     public String description() {
         if (attacker instanceof Empire) {
             Empire emp = (Empire) attacker;
-            return text("SYSEVENT_DESTROYED", emp.raceName());
+            String s = text("SYSEVENT_DESTROYED");
+            s = emp.replaceTokens(s, "alien");
+            return s;
         }
         else if (attacker instanceof NamedObject) 
             return text("SYSEVENT_DESTROYED_MONSTER", attacker.name());

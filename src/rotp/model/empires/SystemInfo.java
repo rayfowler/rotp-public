@@ -99,6 +99,7 @@ public class SystemInfo implements Serializable, Base {
     public boolean canSabotageBases(int i)     { return missing(i) ? false : view(i).canSabotageBases(); }
     public boolean canSabotageFactories(int i) { return missing(i) ? false : view(i).canSabotageFactories(); }
     public boolean canInciteRebellion(int i)   { return missing(i) ? false : view(i).canInciteRebellion(); }
+    public int flagColorId(int i)              { return missing(i) ? -1  : view(i).flagColorId(); }
     public Color flagColor(int i)              { return missing(i) ? null  : view(i).flagColor(); }
     public Image flagImage(int i)              { return missing(i) ? null  : view(i).flagImage(); }
     public Image mapFlagImage(int i)           { return missing(i) ? null  : view(i).mapFlagImage(); }

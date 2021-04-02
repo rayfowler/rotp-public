@@ -180,7 +180,7 @@ public class RandomEventSpaceAmoeba implements Base, Serializable, RandomEvent {
         String s1 = text(key);
         if (emp != null) {
             s1 = s1.replace("[system]", emp.sv.name(sysId));
-            s1 = s1.replace("[race]", emp.raceName());
+            s1 = emp.replaceTokens(s1, "victim");
         }
         else 
             s1 = s1.replace("[system]", player().sv.name(sysId));

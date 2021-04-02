@@ -139,7 +139,9 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         int lineTextSize = 15;
         g.setFont(narrowFont(lineTextSize));
         String text1 = text("COUNCIL_CONVENE");
-        String text2 = text("COUNCIL_CONVENE2", emp1.leader().name(), emp1.name(), emp2.leader().name(), emp2.name());
+        String text2 = text("COUNCIL_CONVENE2");
+        text2 = emp1.replaceTokens(text2, "first");
+        text2 = emp2.replaceTokens(text2, "second");
         
         int bdr = s10;
         int w1 =  scaled(430);
@@ -256,9 +258,18 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         drawViewSummaryButton(g);
         paintVoteTotals(g);
 
-        String voteText = c.lastVoted() == null ?
-                        text("COUNCIL_CAST_ABSTAIN", c.lastVoter().name(), c.lastVotes()) :
-                        text("COUNCIL_CAST_VOTE", c.lastVoter().name(), str(c.lastVotes()), c.lastVoted().leader().name());
+        String voteText;
+        
+        if (c.lastVoted() == null) {
+            voteText = text("COUNCIL_CAST_ABSTAIN", c.lastVotes());
+            voteText = c.lastVoter().replaceTokens(voteText, "voter");
+        }
+        else {
+            voteText = text("COUNCIL_CAST_VOTE", str(c.lastVotes()));
+            voteText = c.lastVoter().replaceTokens(voteText, "voter");
+            voteText = c.lastVoted().replaceTokens(voteText, "candidate");
+        }
+        
         
         g.setFont(narrowFont(30));
         int sw1 = g.getFontMetrics().stringWidth(voteText);
@@ -799,7 +810,12 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         int button2X = x1;
         int sw2 = 0;
         if  (c.votingInProgress()) {
-            button2Text = c.hasVoted(pl) || options().isAutoPlay() ? text("COUNCIL_COMPLETE_VOTING"): text("COUNCIL_SKIP_TO_PLAYER", pl.raceName());
+            if (c.hasVoted(pl) || options().isAutoPlay())
+                button2Text = text("COUNCIL_COMPLETE_VOTING");
+            else {
+                button2Text = text("COUNCIL_SKIP_TO_PLAYER");
+                button2Text = pl.replaceTokens(button2Text, "player");
+            }
             sw2 = g.getFontMetrics().stringWidth(button2Text);
             button2W = sw2+s40;
             gap = (w1-button1W-button2W)/3;
@@ -864,8 +880,10 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
             Empire votee = galaxy().empire(voter.lastCouncilVoteEmpId());
             if (votee == null)
                 voteStr = text("COUNCIL_VOTE_ABSTAINED", str(votes));
-            else
-                voteStr = text("COUNCIL_VOTE_CAST", str(votes), votee.raceName());
+            else {
+                voteStr = text("COUNCIL_VOTE_CAST", str(votes));
+                voteStr = votee.replaceTokens(voteStr, "alien");
+            }
         }
         else
             voteStr = text("COUNCIL_VOTE_COUNT", str(votes));
@@ -884,18 +902,20 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         g.drawString(cand2Str, x1, y+s80);
     }
     private String treatyString(Empire voter, Empire candidate) {
+        String treatyStr;
         if (voter == candidate)
-            return text("COUNCIL_TREATY_CANDIDATE", candidate.raceName());
+            treatyStr = text("COUNCIL_TREATY_CANDIDATE");
         else if (voter.alliedWith(candidate.id))
-            return text("COUNCIL_TREATY_ALLIANCE", candidate.raceName());
+            treatyStr = text("COUNCIL_TREATY_ALLIANCE");
         else if (voter.pactWith(candidate.id))
-            return text("COUNCIL_TREATY_PACT", candidate.raceName());
+            treatyStr = text("COUNCIL_TREATY_PACT");
         else if (voter.atWarWith(candidate.id))
-            return text("COUNCIL_TREATY_WAR", candidate.raceName());
+            treatyStr = text("COUNCIL_TREATY_WAR");
         else
-            return text("COUNCIL_TREATY_NONE", candidate.raceName());
+            treatyStr = text("COUNCIL_TREATY_NONE");
 
-
+        treatyStr = candidate.replaceTokens(treatyStr, "alien");
+        return treatyStr;
     }
     private void drawViewSummaryButton(Graphics2D g) {
         g.setFont(narrowFont(20));

@@ -405,11 +405,14 @@ public final class Colony implements Base, IMappedObject, Serializable {
         Empire pl = player();
         String message = null;
         if (empire == pl) {
-            message = text(messageKey, sys.name(), empire.name(), rebels);
+            message = text(messageKey, sys.name(), rebels);
+            message = empire.replaceTokens(message, "rebelling");
             galaxy().giveAdvice("MAIN_ADVISOR_REBELLION", sys.name());
         }
-        else if (empire.hasContact(pl) && pl.sv.isScouted(sys.id))
-            message = text("GNN_ALIEN_REBELLION", pl.sv.name(sys.id), empire.name(), rebels);
+        else if (empire.hasContact(pl) && pl.sv.isScouted(sys.id)) {
+            message = text("GNN_ALIEN_REBELLION", pl.sv.name(sys.id), rebels);
+            message = empire.replaceTokens(message, "rebelling");
+        }
         if (message != null)
             GNNNotification.notifyRebellion(message);
     }

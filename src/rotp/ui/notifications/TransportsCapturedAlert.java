@@ -29,10 +29,16 @@ public class TransportsCapturedAlert extends GameAlert {
     }
     @Override
     public String description() {
-        if (attacker.isPlayer())
-            return text("MAIN_ALERT_TRANSPORTS_CAPTURED", defender.raceName(), systemName(), str(num));
-        else
-            return text("MAIN_ALERT_INVADERS_CAPTURED", attacker.raceName(), systemName(), str(num));
+        String desc;
+        if (attacker.isPlayer()) {
+            desc = text("MAIN_ALERT_TRANSPORTS_CAPTURED", systemName(), str(num));
+            desc = defender.replaceTokens(desc, "alien");
+        }
+        else {
+            desc = text("MAIN_ALERT_INVADERS_CAPTURED", systemName(), str(num));
+            desc = attacker.replaceTokens(desc, "alien");
+        }
+        return desc;
     }
     private String systemName() { return player().sv.name(system.id); }
     private TransportsCapturedAlert(Empire att, Empire def, StarSystem s, int n) {

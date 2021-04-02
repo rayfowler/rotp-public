@@ -129,7 +129,8 @@ public class GNNUI extends FadeInPanel implements Base, MouseListener, MouseMoti
     }
     private void drawTitle(Graphics g, int w, int h) {
         g.setFont(narrowFont(36));
-        String title = text("GNN_TITLE", player().raceName());
+        String title = text("GNN_TITLE");
+        title = player().replaceTokens(title, "player");
         int titleW = g.getFontMetrics().stringWidth(title);
         drawBorderedString(g, title, 2, (w-titleW)/2, s36, Color.black, SystemPanel.orangeText);
     }
@@ -155,7 +156,9 @@ public class GNNUI extends FadeInPanel implements Base, MouseListener, MouseMoti
         for (int i=0;i<rows;i++) {
             Empire e = empires.get(i);
             y1 += lineH;
-            String line = text("GNN_EMPIRE_RANKING", str(i+1), e.raceName());
+           
+            String line = text("GNN_EMPIRE_RANKING", str(i+1));
+            line = e.replaceTokens(line, "empire");
             drawShadowedString(g, line, 1, x1, y1, Color.black, c0);
         }
     }

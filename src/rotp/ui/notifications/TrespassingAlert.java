@@ -30,10 +30,16 @@ public class TrespassingAlert extends GameAlert {
         Empire empHost = galaxy().empire(empHostId);
         Empire empShip = galaxy().empire(empShipId);
         String sysName = player().sv.name(sysId);
-        if (empHost.isPlayer())
-           return text("MAIN_ALERT_TRESPASSING1", empShip.raceName(), sysName);
-        else
-           return text("MAIN_ALERT_TRESPASSING2", empHost.raceName(), sysName);            
+        String desc;
+        if (empHost.isPlayer()) {
+           desc = text("MAIN_ALERT_TRESPASSING1", sysName);
+           desc = empShip.replaceTokens(desc, "alien");
+        }
+        else {
+           desc = text("MAIN_ALERT_TRESPASSING2", sysName);   
+           desc = empHost.replaceTokens(desc, "alien");
+        }
+        return desc;
     }
     private TrespassingAlert(int emp1, int emp2, int sys) {
         empHostId = emp1;

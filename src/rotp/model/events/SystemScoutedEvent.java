@@ -32,6 +32,8 @@ public class SystemScoutedEvent implements Base, Serializable, StarSystemEvent {
     @Override
     public String description() {
         Empire emp = galaxy().empire(empId);
-        return text("SYSEVENT_SCOUTED",emp.raceName());
+        String s = text("SYSEVENT_SCOUTED");
+        s = emp.replaceTokens(s, "alien");
+        return s;
     } 
 }

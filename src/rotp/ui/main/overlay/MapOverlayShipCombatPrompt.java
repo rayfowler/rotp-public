@@ -190,11 +190,15 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
         drawBorderedString(g, yearStr, 2, x0, boxY+boxH1-s20, SystemPanel.textShadowC, SystemPanel.orangeText);
 
         
+        
+        Empire aiEmpire = mgr.results().aiEmpire();
         String titleStr;
-        if (mgr.results().isMonsterAttack())
+        if (aiEmpire == null)
             titleStr = text("SHIP_COMBAT_TITLE_MONSTER_DESC", mgr.results().aiRaceName());
-        else
-            titleStr = text("SHIP_COMBAT_TITLE_DESC", mgr.results().aiRaceName());
+        else {
+            titleStr = text("SHIP_COMBAT_TITLE_DESC");
+            titleStr = aiEmpire.replaceTokens(titleStr, "alien");
+        }
         g.setColor(Color.black);
         int titleFontSize = scaledFont(g, titleStr, boxW-leftW, 20, 14);
         g.setFont(narrowFont(titleFontSize));

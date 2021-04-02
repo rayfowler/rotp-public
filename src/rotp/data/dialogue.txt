@@ -223,12 +223,10 @@ DeclinePeaceTreaty   |  77  | DECLINE_PEACE_TREATY_01
 OfferJointWar        |  77  | OFFER_JOINT_WAR_01
 AcceptJointWar       |  77  | ACCEPT_JOINT_WAR_01
 CounterJointWar      |  77  | COUNTER_JOINT_WAR_01
-AcceptBreakAlliance  |  77  | ACCEPT_BREAK_ALLIANCE_01
 RespondCloseEmbassy  |  77  | RESPOND_CLOSE_EMBASSY_01
 RespondBreakTrade    |  77  | RESPOND_BREAK_TRADE_01
 RespondBreakPact     |  77  | RESPOND_BREAK_PACT_01
 RespondBreakAlliance |  77  | RESPOND_BREAK_ALLIANCE_01
-RespondDeclareWar    |  77  | RESPOND_DECLARE_WAR_01
 RespondIgnoreThreat  |  77  | RESPOND_IGNORE_THREAT_01
 RespondStopSpying    |  77  | RESPOND_STOP_SPYING_01
 RespondStopAttacking |  77  | RESPOND_STOP_ATTACKING_01

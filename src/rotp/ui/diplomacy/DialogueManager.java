@@ -83,12 +83,10 @@ public class DialogueManager implements Base {
     public static final String OFFER_JOINT_WAR          = "OfferJointWar";
     public static final String ACCEPT_JOINT_WAR         = "AcceptJointWar";
     public static final String COUNTER_JOINT_WAR        = "CounterJointWar";
-    public static final String ACCEPT_BREAK_ALLIANCE    = "AcceptBreakAlliance";
     public static final String RESPOND_CLOSE_EMBASSY    = "RespondCloseEmbassy";
     public static final String RESPOND_BREAK_TRADE      = "RespondBreakTrade";
     public static final String RESPOND_BREAK_PACT       = "RespondBreakPact";
     public static final String RESPOND_BREAK_ALLIANCE   = "RespondBreakAlliance";
-    public static final String RESPOND_DECLARE_WAR      = "RespondDeclareWar";
     public static final String RESPOND_IGNORE_THREAT    = "RespondIgnoreThreat";
     public static final String RESPOND_STOP_SPYING      = "RespondStopSpying";
     public static final String RESPOND_STOP_ATTACKING   = "RespondStopAttacking";
@@ -213,12 +211,10 @@ public class DialogueManager implements Base {
         addMessage(new SimpleMessage(ACCEPT_ALLIANCE));
         addMessage(new SimpleMessage(ACCEPT_JOINT_WAR));
         addMessage(new SimpleMessage(COUNTER_JOINT_WAR));
-        addMessage(new SimpleMessage(ACCEPT_BREAK_ALLIANCE));
         addMessage(new SimpleMessage(RESPOND_CLOSE_EMBASSY));
         addMessage(new SimpleMessage(RESPOND_BREAK_TRADE));
         addMessage(new SimpleMessage(RESPOND_BREAK_PACT));
         addMessage(new SimpleMessage(RESPOND_BREAK_ALLIANCE));
-        addMessage(new SimpleMessage(RESPOND_DECLARE_WAR));
         addMessage(new TurnNotificationMessage(ANNOUNCE_TRADE));
         addMessage(new TurnNotificationMessage(ANNOUNCE_PEACE));
         addMessage(new TurnNotificationMessage(ANNOUNCE_PACT));

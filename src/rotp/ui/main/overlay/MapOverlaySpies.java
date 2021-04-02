@@ -272,7 +272,8 @@ public class MapOverlaySpies extends MapOverlay {
         int ourSpiesLost = rpt.spiesLost();
         if (ourSpiesLost > 0) {
             y2 += lineH;
-            String desc = text("NOTICE_SPIES_LOST_DESC", str(ourSpiesLost), selectedEmpire.name());
+            String desc = text("NOTICE_SPIES_LOST_DESC", str(ourSpiesLost));
+            desc = selectedEmpire.replaceTokens(desc, "alien");
             if (rpt.confessedMission() != null) {
                 switch(rpt.confessedMission()) {
                     case SABOTAGE: desc = concat(desc," ", text("NOTICE_SPIES_LOST_CONFESSED")); break;
@@ -295,7 +296,8 @@ public class MapOverlaySpies extends MapOverlay {
         if (theirSpiesLost > 0) {
             SpyReport theirRpt = v.otherView().spies().report();
             y2 += lineH;
-            String desc = text("NOTICE_SPIES_CAUGHT_DESC", str(theirSpiesLost), selectedEmpire.name());
+            String desc = text("NOTICE_SPIES_CAUGHT_DESC", str(theirSpiesLost));
+            desc = selectedEmpire.replaceTokens(desc, "alien");
             if (theirRpt.confessedMission() != null) {
                 switch(theirRpt.confessedMission()) {
                     case SABOTAGE: desc = concat(desc," ", text("NOTICE_SPIES_CAUGHT_CONFESSED")); break;
@@ -338,9 +340,12 @@ public class MapOverlaySpies extends MapOverlay {
             y2 += lineH;
             Tech t = tech(rpt.stolenTech());
             Empire framed = rpt.framedEmpire();
-            String desc = text("NOTICE_SPIES_ESPIONAGE", t.name(), selectedEmpire.name());
-            if (framed != null)
-                desc = concat(desc, " ", text("NOTICE_SPIES_ESPIONAGE_FRAME", framed.name()));
+            String desc = text("NOTICE_SPIES_ESPIONAGE", t.name());
+            desc = selectedEmpire.replaceTokens(desc, "alien");
+            if (framed != null) {
+                desc = concat(desc, " ", text("NOTICE_SPIES_ESPIONAGE_FRAME"));
+                desc = framed.replaceTokens(desc, "framed");
+            }
             g.setFont(narrowFont(15));
             List<String> lines = wrappedLines(g, desc, descW); 
             for (String line: lines) {
@@ -352,7 +357,8 @@ public class MapOverlaySpies extends MapOverlay {
         // informs if we were framed
         if (rpt.wasFramed()) {
             y2 += lineH;
-            String desc = text("NOTICE_SPIES_FRAMED", selectedEmpire.name());
+            String desc = text("NOTICE_SPIES_FRAMED");
+            desc = selectedEmpire.replaceTokens(desc, "alien");
             g.setFont(narrowFont(15));
             List<String> lines = wrappedLines(g, desc, descW); 
             for (String line: lines) {
@@ -373,7 +379,8 @@ public class MapOverlaySpies extends MapOverlay {
                 for (int i=1;i<techNames.size();i++) 
                     techList = text("NOTICE_SPIES_MULTIPLE_TECHS", techList, techNames.get(i));
             }
-            String desc = text("NOTICE_SPIES_LEARNED_TECH", selectedEmpire.name(), techList);
+            String desc = text("NOTICE_SPIES_LEARNED_TECH", techList);
+            desc = selectedEmpire.replaceTokens(desc, "alien");
             g.setFont(narrowFont(15));
             List<String> lines = wrappedLines(g, desc, descW); 
             for (String line: lines) {

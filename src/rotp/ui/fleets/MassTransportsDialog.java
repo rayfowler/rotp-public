@@ -214,9 +214,13 @@ public class MassTransportsDialog extends BasePanel {
         @Override
         protected List<StarSystem> systems()  { return sourceSystems;  }
         @Override
-        protected StarSystem selectedSystem() { return selectedSystem != null ? selectedSystem : systems().get(0); }
+        protected StarSystem lastSelectedSystem() { return selectedSystem != null ? selectedSystem : systems().get(0); }
         @Override
         protected void selectedSystem(StarSystem sys, boolean updateFieldValues) { selectedSystem = sys; }
+        @Override
+        protected void shiftSelectedSystem(StarSystem sys, boolean updateFieldValues) { selectedSystem = sys; }
+        @Override
+        protected void controlSelectedSystem(StarSystem sys, boolean updateFieldValues) { selectedSystem = sys; }
         @Override
         protected boolean selectRows()  { return false; }
         @Override

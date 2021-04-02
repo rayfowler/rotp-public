@@ -121,18 +121,25 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
         attackerEmp = transport.empire();
         defenderEmp = colony.empire();
         sysName = player().sv.name(colony.starSystem().id);
-        if (defenderEmp == attackerEmp)
-            title = text("INVASION_BATTLE_REBELS", str(galaxy().currentYear()), attackerEmp.raceName(), sysName);
-        else
-            title = text("INVASION_BATTLE", str(galaxy().currentYear()), attackerEmp.raceName(), defenderEmp.raceName(), sysName);
+        if (defenderEmp == attackerEmp) {
+            title = text("INVASION_BATTLE_REBELS", str(galaxy().currentYear()), sysName);
+            title = attackerEmp.replaceTokens(title, "attacker");
+        }
+        else {
+            title = text("INVASION_BATTLE", str(galaxy().currentYear()), sysName);
+            title = attackerEmp.replaceTokens(title, "attacker");
+            title = defenderEmp.replaceTokens(title, "defender");
+        }
 
         initLandscapeImage(colony);
         
         if (tr.size() < tr.launchSize()) 
-            subtitle = text("INVASION_SOME_TROOPS_LANDED", str(tr.size()), str(tr.launchSize()), tr.empire().raceName());
+            subtitle = text("INVASION_SOME_TROOPS_LANDED", str(tr.size()), str(tr.launchSize()));
         else
-            subtitle = text("INVASION_TROOPS_LANDED", str(tr.size()), tr.empire().raceName());
+            subtitle = text("INVASION_TROOPS_LANDED", str(tr.size()));
 
+        subtitle = tr.empire().replaceTokens(subtitle, "attacker");
+        
         descendingFrames.clear();
         descendingFrameRefs.clear();
         Race race = tr.empire().race();
@@ -404,7 +411,8 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
             drawTroops(g, Math.min(MAX_SOLDIERS,totalAttackers), true, x0, y0-s40);
             // draw attacker info
             g.setFont(narrowFont(40));
-            String str1 = text("INVASION_ATTACKERS_TITLE", str(transport.size()), transport.empire().raceName());
+            String str1 = text("INVASION_ATTACKERS_TITLE", str(transport.size()));
+            str1 = transport.empire().replaceTokens(str1, "attacker");
             drawBorderedString(g, str1, 2, x0, y0, Color.black, Color.white);
             scaledFont(g, attLine, w/2-s60, 22, 18);
             //g.setFont(narrowFont(22));
@@ -430,9 +438,10 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
         y0 = textY;
         String str2;
         if (defenderEmp == attackerEmp)
-            str2 = text("INVASION_REBELS_TITLE", str(defense.troops()), defenderEmp.raceName());
+            str2 = text("INVASION_REBELS_TITLE", str(defense.troops()));
         else
-            str2 = text("INVASION_DEFENDERS_TITLE", str(defense.troops()), defenderEmp.raceName());
+            str2 = text("INVASION_DEFENDERS_TITLE", str(defense.troops()));
+        str2 = defenderEmp.replaceTokens(str2, "defender");
         int sw2 = g.getFontMetrics().stringWidth(str2);
         drawBorderedString(g, str2, 2, x0-sw2, textY, Color.black, Color.white);
         String defArmorDesc = text("INVASION_TROOP_ARMOR_DESC", defense.armorDesc(), defense.battleSuitDesc());
@@ -483,6 +492,8 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
     }
     @Override
     public void animate() {
+        if (exited)
+            return;
         landingCount++;
         if (!landing()) {
             if (battleInProgress()) {
@@ -502,32 +513,24 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
     private int assignRandomVictim(boolean attacker) {
         Integer deadIndex;
         if (attacker) {
-			// modnar: kill off attackers with index higher than 500 first
-			// to prevent >500 troop bug
-			if (remainingAttackers.size() >= MAX_SOLDIERS) {
-				deadIndex = remainingAttackers.size() - 1;
-			}
-			else {
-				deadIndex = random(remainingAttackers);
-			}
+            // kill off attackers with index higher than 500 first
+            if (remainingAttackers.size() >= MAX_SOLDIERS) 
+                deadIndex = remainingAttackers.size() - 1;
+            else 
+                deadIndex = random(remainingAttackers);
             if (deadIndex < attackerState.length)
                 attackerState[deadIndex] = BEGIN_DYING;
             remainingAttackers.remove(deadIndex);
-            //log("Dead: Attacker - "+deadIndex+"   "+remainingAttackers.size()+" remaining");
         }
         else {
-			// modnar: kill off attackers with index higher than 500 first
-			// to prevent >500 troop bug
-			if (remainingDefenders.size() >= MAX_SOLDIERS) {
-				deadIndex = remainingDefenders.size() - 1;
-			}
-			else {
-				deadIndex = random(remainingDefenders);
-			}
+            // kill off attackers with index higher than 500 first
+            if (remainingDefenders.size() >= MAX_SOLDIERS) 
+                deadIndex = remainingDefenders.size() - 1;
+            else 
+                deadIndex = random(remainingDefenders);
             if (deadIndex < defenderState.length)
                 defenderState[deadIndex] = BEGIN_DYING;
             remainingDefenders.remove(deadIndex);
-            //log("Dead: Defender - "+deadIndex+"   "+remainingDefenders.size()+" remaining");
         }
         return deadIndex;
     }
@@ -561,10 +564,14 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
             repaint();
         }
         else {
-            if (transport.size() == 0)
+            if (transport.size() == 0) {
                 title = text("INVASION_LOSS", defenderEmp.raceName(), sysName);
-            else
+                title = defenderEmp.replaceTokens(title, "defender");
+            }
+            else {
                 title = text("INVASION_WIN", attackerEmp.raceName(), sysName);
+                title = attackerEmp.replaceTokens(title, "attacker");
+            }
 
             exited = true;
             repaint();

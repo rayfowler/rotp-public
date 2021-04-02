@@ -335,7 +335,8 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         if (emp.race().masksDiplomacy) {
             g.setFont(narrowFont(15));
             g.setColor(SystemPanel.blackText);
-            String str2 = text("RACES_DIPLOMACY_RELATIONS_UNKNOWN", emp.name());
+            String str2 = text("RACES_DIPLOMACY_RELATIONS_UNKNOWN");
+            str2 = emp.replaceTokens(str2, "alien");
             List<String> lines = this.wrappedLines(g, str2, w-s60-leftW);
             int x1 = x0+leftW+s40;
             int y1 = lines.size() == 1 ? y0 : y0-s10;
@@ -1016,8 +1017,11 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
             desc = text("RACES_DIPLOMACY_BUREAU_DESC_FINAL");
         else if (outOfRange)
             desc = text("RACES_DIPLOMACY_BUREAU_DESC_RANGE");
-        else
-            desc = text("RACES_DIPLOMACY_BUREAU_DESC", emp.raceName());
+        else {
+            desc = text("RACES_DIPLOMACY_BUREAU_DESC");
+            desc = emp.replaceTokens(desc, "alien");
+        }
+        
         List<String> lines = wrappedLines(g, desc, w-s30);
         int y1 = y0+s7;
         for (String line: lines) {
@@ -1050,9 +1054,11 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         if (finalWar)
             desc = text("RACES_DIPLOMACY_TRADE_DESC_FINAL");
         else if (outOfRange)
-            desc = text("RACES_DIPLOMACY_TRADE_DESC_RANGE", emp.name());
-        else
-            desc = text("RACES_DIPLOMACY_TRADE_DESC", emp.raceName());
+            desc = text("RACES_DIPLOMACY_TRADE_DESC_RANGE");
+        else {
+            desc = text("RACES_DIPLOMACY_TRADE_DESC");
+            desc = emp.replaceTokens(desc, "alien");
+        }
         
         List<String> lines = wrappedLines(g, desc, w-s30);
         int y1 = y0+s10;
@@ -1104,9 +1110,10 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         g.setFont(narrowFont(15));
         String desc;
         if (outOfRange)
-            desc = text("RACES_DIPLOMACY_FOREIGN_RANGE", emp.name());
+            desc = text("RACES_DIPLOMACY_FOREIGN_RANGE");
         else
-            desc = text("RACES_DIPLOMACY_FOREIGN_DESC", emp.raceName());
+            desc = text("RACES_DIPLOMACY_FOREIGN_DESC");
+        desc = emp.replaceTokens(desc, "alien");
         List<String> lines = wrappedLines(g, desc, w-s30);
         int y1 = y0+s10;
         for (String line: lines) {

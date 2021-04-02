@@ -87,3 +87,10 @@ PRAISE_TRADE_01            | It relieves me more than you know, ambassador, that
 PRAISE_TRADE_02            | There are many ways to prove one's honor, ambassador. Conducting business fairly and in good faith is one of the best ways to do so, and something the Sovereignty values highly from those we encounter in this galaxy. 
 
 PRAISE_REBELLING_WITH_01   | Those brutes on the council underestimate us, ambassador! Together we will show them what the term "fatal misstep" truly means! 
+
+ACCEPT_TRADE_01            | The Sovereignty is always pleased to make dealings with the [your_empire]. An annual amount of [amt] BC is quite agreeable, thank you.
+RESPOND_IGNORE_THREAT_01   | You dare try and provoke the [my_empire]? Take your laughable jests elsewhere before they cease to be amusing.
+RESPOND_STOP_SPYING_01     | Your eyes seem to be sharp as ours when it comes to finding spies. Consider our efforts at subterfuge finished.
+RESPOND_STOP_ATTACKING_01  | Now you see the might of our Sovereignty? As long as you do not forget our power, we will not trouble you with these fleets again.
+
+ 

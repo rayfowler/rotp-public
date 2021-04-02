@@ -15,10 +15,12 @@
  */
 package rotp.ui;
 
+import java.util.List;
 import rotp.model.galaxy.StarSystem;
 
 public interface SystemViewer {
     public StarSystem systemViewToDisplay();
     public void repaint();
     default String subPanelTextureName()            { return null; }
+    default List<StarSystem> systemsToDisplay()     { return null; }
 }

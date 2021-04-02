@@ -63,7 +63,7 @@ WARN_FINAL_WAR_01          | Only through the forging of alliances can we comple
 WARN_COUNCIL_VOTE_01       | It would surely be better if this council were dissolved and the Imperium given sole control of galactic affairs. Then your people would be able to earn our enmity when you speak out against us so! 
 WARN_OATHBREAKER_01        | How disconcerting, to break one's word is to break one's trust. There is no doubt the Enemy of the Prophecies would dare act in such a way! 
 WARN_ATTACKED_ALLY_01      | The [defender_race] bear the honor of fellowship with the Imperium! Heed our warning in response to your attack: I assure you that you will receive it only once!
-WARN_REBELLING_AGAINST_01    | Our crusade will not be delayed! Not by the simpletons of the council, and not by you! Brace yourself, ambassador: a holy storm will soon be upon you!
+WARN_REBELLING_AGAINST_01  | Our crusade will not be delayed! Not by the simpletons of the council, and not by you! Brace yourself, ambassador: a holy storm will soon be upon you!
 
 PRAISE_COUNCIL_VOTE_01     | Our trusted ally earns our praise once again! With you to speak reason to the council, our crusade will never falter! You have earned gratitude from the Imperium today, [voter_race]. 
 PRAISE_COUNCIL_VOTE_02     | Your race has not yet proven itself innocent, ambassador. Continue to support our cause in council, and prove yourself an ally of our crusade. 
@@ -76,4 +76,9 @@ PRAISE_ATTACKED_ENEMY_03   | Surely you did not think us foolish enough to belie
 PRAISE_TRADE_01            | The Imperium wishes you well, friend of the crusade! Our trade agreement has funded countless battles in our search for Quaralon's spawn. The Imperium hopes your people have profited equally so. 
 PRAISE_TRADE_02            | While we cannot say that we hold you above suspicion, we can say that directly funding our holy war through trade has bolstered our faith in you. See that it continues, ambassador! 
 PRAISE_REBELLING_WITH_01   | Our enemy has been found! The hideous spawn of Quaralon has usurped the galactic throne! Onward to battle: [my_race] and [your_race] fleets will join together and purge this filth from the galaxy!
+ 
+ACCEPT_TRADE_01            | The Imperium accepts your offer, [your_race]. We will trade [amt] BC each year with you so that we may further our holy crusade.
+RESPOND_IGNORE_THREAT_01   | Our crusade will not be deterred by your idle threats. Find someone else to bother or risk our wrath!
+RESPOND_STOP_SPYING_01     | We merely wished to determine the identity of Quaralon's foul brood. We are satisfied your people are not our mortal enemies in disguise.
+RESPOND_STOP_ATTACKING_01  | Our fleets sought out enemies of the Imperium. If you are not our enemies, they have no need to remain where they are.
 

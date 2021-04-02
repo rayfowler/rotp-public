@@ -130,7 +130,8 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         tech = tech(techId);
         sourceEmpire = player();
         player().race().resetScientist();
-        title = text("TECH_DISCOVERY_TITLE", text(player().raceName()), text(tech().cat.key()));
+        title = text("TECH_DISCOVERY_TITLE", text(tech().cat.key()));
+        title = player().replaceTokens(title, "player");
         finished = false;
         mission = null;
         frameEmpire1 = null;
@@ -148,7 +149,9 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         tech = tech(techId);
         sourceEmpire = gal.empire(empId);
         player().race().resetScientist();
-        title = text("TECH_TRADED_TITLE", text(player().raceName()), sourceEmpire.raceName());
+        title = text("TECH_TRADED_TITLE");
+        title = player().replaceTokens(title, "player");
+        title = sourceEmpire.replaceTokens(title, "alien");
         finished = false;
         mission = null;
         frameEmpire1 = null;
@@ -189,7 +192,8 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         mission = null;
         sourceEmpire = null;
         player().race().resetScientist();
-        title = empId == -2 ? text("TECH_GUARDIAN_TITLE", text(player().raceName())) :  text("TECH_DERELICT_TITLE", text(player().raceName()));
+        title = empId == -2 ? text("TECH_GUARDIAN_TITLE") :  text("TECH_DERELICT_TITLE");
+        title = player().replaceTokens(title, "player");
         finished = false;
         frameEmpire1 = null;
         frameEmpire2 = null;

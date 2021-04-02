@@ -1066,10 +1066,14 @@ public class RacesUI extends BasePanel {
             boolean otherDipGone = view.otherView().embassy().diplomatGone();
             if (dipGone && otherDipGone)
                 text = text("RACES_DIPLOMATS_RECALLED");
-            else if (dipGone)
-                text = text("RACES_DIPLOMAT_RECALLED", player().raceName());
-            else if (otherDipGone) 
+            else if (dipGone) {
+                text = text("RACES_DIPLOMAT_RECALLED");
+                text = player().replaceTokens(text, "alien");
+            }
+            else if (otherDipGone) {
                 text = text("RACES_DIPLOMAT_RECALLED", emp.raceName());
+                text = emp.replaceTokens(text, "alien");
+            }
                         
             if (!text.isEmpty()) {
                 g.setFont(narrowFont(14));

@@ -196,7 +196,8 @@ public class MapOverlayEspionageMission extends MapOverlay {
         drawBorderedString(g, yearStr, 2, x1a, y1+s45, SystemPanel.textShadowC, SystemPanel.orangeText);
 
         // draw title
-        String title = text("NOTICE_ESPIONAGE_TITLE", emp.raceName());
+        String title = text("NOTICE_ESPIONAGE_TITLE");
+        title = emp.replaceTokens(title, "alien");
         g.setFont(narrowFont(15));
         int x1b = x1+leftW;
         g.setColor(SystemPanel.blackText);

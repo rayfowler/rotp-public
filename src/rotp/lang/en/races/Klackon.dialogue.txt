@@ -221,10 +221,8 @@ RESPOND_BREAK_ALLIANCE_01  | Very well. Your untrustworthy intentions have shown
 RESPOND_BREAK_ALLIANCE_01  | I have little need of treaties that are not honored. The alliance is broken.
 RESPOND_BREAK_ALLIANCE_01  | So be it. The alliance is broken.`
 
-RESPOND_DECLARE_WAR_01     | I ignore the hollow threats of a raving lunatic.
-RESPOND_DECLARE_WAR_01     | You bluff poorly, [your_name]. Your threats do not concern me.
-RESPOND_DECLARE_WAR_01     | Make your childish threats. My young often throw tantrums as well.
-RESPOND_DECLARE_WAR_01     | You presume to threaten me! You do not know who you are dealing with!
-RESPOND_DECLARE_WAR_01     | Your threats fall on deaf ears, [your_name].
-RESPOND_DECLARE_WAR_01     | You bray like a Rigellian jackass, [your_name], and I take your threats as seriously.
-RESPOND_DECLARE_WAR_01     | Do not make such threats idly, [your_name]. My wrath is terrible to behold.
+ACCEPT_TRADE_01            | You want to trade with me? How much was it? [amt] BC every year? Yes... yes I think I can accept such an arrangement from [your_name].
+RESPOND_IGNORE_THREAT_01   | Don't threaten me, stupid [your_name]. There are so many of me you could never hope to win if we were to wage war. Go away!
+RESPOND_STOP_SPYING_01     | I was just trying to see how [your_name] was when you are alone among yourself. I will not do this again. Please return my spy to me now?
+RESPOND_STOP_ATTACKING_01  | Haha! See how strong I am! [your_name] cannot compare to me! Don't forget that after I return my fleets home!
+

@@ -271,7 +271,8 @@ public final class SabotageUI extends BasePanel implements MouseListener {
 
             int w = getWidth();            
             g.setColor(SystemPanel.orangeText);
-            String title = text("SABOTAGE_TITLE", mission.target().raceName());
+            String title = text("SABOTAGE_TITLE");
+            title = mission.target().replaceTokens(title, "alien");
             g.setFont(narrowFont(35));
             int sw = g.getFontMetrics().stringWidth(title);
             g.drawString(title, (w-sw)/2, s40);
@@ -493,8 +494,8 @@ public final class SabotageUI extends BasePanel implements MouseListener {
             Empire pl = player();
             StarSystem sys = instance.systemToDisplay();
             boolean treatyBreak = pl.pactWith(mission.target().id) || pl.alliedWith(mission.target().id);
-            String prompt = treatyBreak ? text("SABOTAGE_WARNING", mission.target().name()) : text("SABOTAGE_PROMPT",mission.target().name(), sys.name());
-            
+            String prompt = treatyBreak ? text("SABOTAGE_WARNING") : text("SABOTAGE_PROMPT", sys.name());
+            prompt = mission.target().replaceTokens(prompt, "alien");
             if (treatyBreak)
                 g.setColor(SystemPanel.redText);
             else

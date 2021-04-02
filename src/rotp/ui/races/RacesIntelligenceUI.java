@@ -206,7 +206,9 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
     private void drawIntelTitle(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(SystemPanel.orangeText);
         g.setFont(narrowFont(32));
-        g.drawString(text("RACES_INTEL_TITLE", emp.raceName()), x+s10, y+h-s15);
+        String title = text("RACES_INTEL_TITLE");
+        title = emp.replaceTokens(title, "alien");
+        g.drawString(title, x+s10, y+h-s15);
     }
     private void drawCounterIntelTitle(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(SystemPanel.orangeText);
@@ -385,7 +387,8 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
     private void drawTechnologyTitle(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(SystemPanel.orangeText);
         g.setFont(narrowFont(30));
-        String title = emp.isPlayer() ? text("RACES_INTEL_UNKNOWN_TECHNOLOGY") : text("RACES_INTEL_KNOWN_TECHNOLOGY", emp.raceName());
+        String title = emp.isPlayer() ? text("RACES_INTEL_UNKNOWN_TECHNOLOGY") : text("RACES_INTEL_KNOWN_TECHNOLOGY");
+        title = emp.replaceTokens(title, "alien");
         int sw = g.getFontMetrics().stringWidth(title);
         int y1 = y + h - s5;
         int x1 = x+s20;
@@ -401,7 +404,8 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         int x2 = x1+sw+s40;
         int w2 = x+w-x2-s40;
         int y2 = y1 - s10;
-        String desc = emp.isPlayer() ? text("RACES_INTEL_UNKNOWN_TECH_DESC") : text("RACES_INTEL_KNOWN_TECH_DESC", emp.raceName());
+        String desc = emp.isPlayer() ? text("RACES_INTEL_UNKNOWN_TECH_DESC") : text("RACES_INTEL_KNOWN_TECH_DESC");
+        desc = emp.replaceTokens(desc, "alien");
         g.setColor(SystemPanel.whiteText);
         int fontSize = 15;
         g.setFont(narrowFont(fontSize));
@@ -697,7 +701,8 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
 
         g.setColor(SystemPanel.blackText);
         g.setFont(narrowFont(15));
-        String desc = text("RACES_INTEL_SPY_ORDERS_DESC", emp.raceName());
+        String desc = text("RACES_INTEL_SPY_ORDERS_DESC");
+        desc = emp.replaceTokens(desc, "alien");
         List<String> lines = wrappedLines(g, desc, w-s30);
         for (String line: lines) {
             y2 += s16;
@@ -706,10 +711,11 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         
         String desc2 = "";
         if (triggerWar) 
-            desc2 = text("RACES_INTEL_SPY_WARNING_WAR", emp.raceName());
+            desc2 = text("RACES_INTEL_SPY_WARNING_WAR");
         else if (treatyBreak)
-            desc2 = text("RACES_INTEL_SPY_WARNING", emp.raceName());
+            desc2 = text("RACES_INTEL_SPY_WARNING");
         if (!desc2.isEmpty()) {
+            desc2 = emp.replaceTokens(desc2, "alien");
             g.setColor(SystemPanel.yellowText);
             y2 += s5;
             List<String> lines2 = wrappedLines(g, desc2, w-s30);

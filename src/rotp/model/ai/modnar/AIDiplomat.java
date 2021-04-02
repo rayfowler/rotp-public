@@ -52,6 +52,9 @@ import rotp.model.incidents.SabotageFactoriesIncident;
 import rotp.model.incidents.SkirmishIncident;
 import rotp.model.incidents.TechnologyAidIncident;
 import rotp.model.incidents.TrespassingIncident;
+// modnar: add incidents for modnar-AI
+import rotp.model.incidents.SpyConfessionIncident;
+import rotp.model.incidents.TradeIncomeIncident;
 import rotp.model.ships.ShipDesign;
 import rotp.model.tech.Tech;
 import rotp.ui.diplomacy.DialogueManager;
@@ -1933,5 +1936,29 @@ public class AIDiplomat implements Base, Diplomat {
     }
     @Override
     public  boolean leaderHatesAllSpies() { return empire.leader().isXenophobic(); }
+    
+    // modnar: add incident values for modnar-AI
+    @Override
+    public boolean setSeverityAndDuration(EspionageTechIncident inc, float spySeverity)  { 
+        inc.severity = max(-30,-10+spySeverity); // modnar: increase tech steal severity
+        inc.duration = empire.leader().isTechnologist()? 25 : 15; // modnar: increase tech steal duration
+        return true;
+    }
+    @Override
+    public boolean setSeverityAndDuration(FinancialAidIncident inc)  { 
+        inc.duration = 5; // modnar: increase duration
+        return true;
+    }
+    @Override
+    public boolean setSeverityAndDuration(SpyConfessionIncident inc, float spySeverity)  { 
+        inc.severity = max(-40, -10+spySeverity); // modnar: increase spy confession severity
+        inc.duration = 15; // modnar: increase spy confession duration
+        return true;
+    }
+    @Override
+    public boolean setSeverityAndDuration(TradeIncomeIncident inc)  { 
+        inc.duration = 5; // modnar: increase duration
+        return true;
+    }
 
 }

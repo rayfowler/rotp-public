@@ -77,6 +77,11 @@ PRAISE_TRADE_01            | Dominion and [your_race] species continue to gain m
 PRAISE_TRADE_02            | Dominion expresses satisfaction at trade agreement with [your_race] species. Ensure agreement endures so that both races profit from each other. 
 PRAISE_REBELLING_WITH_01     | Dominion agrees Galactic Council ruler untrustworthy. [your_race] species objection noted. Dominion will aid [your_race] species in rebellion. 
  
+ACCEPT_TRADE_01            | [your_race] species trade request received. [amt] BC proposed amount. Dominion agrees.
+RESPOND_IGNORE_THREAT_01   | Threat from [your_race] species puzzling. [your_race] civilization substantially inferior to Dominion fleets. Ignoring.
+RESPOND_STOP_SPYING_01     | Dominion spy captured while attempting to gain insight into [your_race] lifeforms. Dominion professes apology. Return captured [my_race] at earliest opportunity
+RESPOND_STOP_ATTACKING_01  | Dominion successful in display of military capability to [your_race] civilization. Returning fleets to designated holding coordinates.
+
 DIPLO_TECH_REQUEST_MENU_01   | Specify technology.
 DIPLO_TECH_COUNTER_MENU_01   | Specify compensation.
 DIPLO_TRADE_MENU_01          | Specify magnitude.
@@ -97,82 +102,28 @@ DECLINE_OFFER_06           | Request denied.
 DECLINE_OFFER_07           | Request denied.
 DECLINE_OFFER_08           | Request denied.
 DECLINE_OFFER_09           | Request denied.
-
 DECLINE_ENEMY_ALLY_01      | Request denied.
 DECLINE_NO_WAR_ON_ALLY_01  | Request denied.
 DECLINE_PEACE_TREATY_01    | Request denied.
-
-
-DECLINE_ANNOYED_01         | Request denied.
-DECLINE_ANNOYED_01         | Request denied.
 DECLINE_ANNOYED_01         | Request denied.
 DECLINE_ANNOYED_02         | Request denied.
-DECLINE_ANNOYED_02         | Request denied.
-DECLINE_ANNOYED_02         | Request denied.
 DECLINE_ANNOYED_03         | Request denied.
-DECLINE_ANNOYED_03         | Request denied.
-DECLINE_ANNOYED_03         | Request denied.
-
-
 DECLINE_OATHBREAKER_01     | Request denied.
-DECLINE_OATHBREAKER_01     | Request denied.
-DECLINE_OATHBREAKER_01     | Request denied.
-DECLINE_OATHBREAKER_01     | Request denied.
-DECLINE_OATHBREAKER_01     | Request denied.
-
 DECLINE_ESPIONAGE_01       | Request denied.
-DECLINE_ESPIONAGE_01       | Request denied.
-DECLINE_ESPIONAGE_01       | Request denied.
-DECLINE_ESPIONAGE_01       | Request denied.
-DECLINE_ESPIONAGE_01       | Request denied.
-
 DECLINE_SABOTAGE_01        | Request denied.
-DECLINE_SABOTAGE_01        | Request denied.
-DECLINE_SABOTAGE_01        | Request denied.
-DECLINE_SABOTAGE_01        | Request denied.
-DECLINE_SABOTAGE_01        | Request denied.
-
 DECLINE_BUILDUP_01         | Request denied.
-DECLINE_BUILDUP_01         | Request denied.
-DECLINE_BUILDUP_01         | Request denied.
-DECLINE_BUILDUP_01         | Request denied.
-
 DECLINE_ENCROACH_01        | Request denied.
-
 DECLINE_SKIRMISH_01        | Request denied.
-DECLINE_SKIRMISH_01        | Request denied.
-DECLINE_SKIRMISH_01        | Request denied.
-DECLINE_SKIRMISH_01        | Request denied.
-DECLINE_SKIRMISH_01        | Request denied.
-
 DECLINE_ATTACK_01          | Request denied.
-DECLINE_ATTACK_01          | Request denied.
-
 DECLINE_INVASION_01        | Request denied.
-DECLINE_INVASION_01        | Request denied.
-DECLINE_INVASION_01        | Request denied.
-
 DECLINE_BIOWEAPONS_01      | Request denied.
-DECLINE_BIOWEAPONS_01      | Request denied.
-DECLINE_BIOWEAPONS_01      | Request denied.
-DECLINE_BIOWEAPONS_01      | Request denied.
-DECLINE_BIOWEAPONS_01      | Request denied.
-
 DECLINE_TECH_TRADE_01      | Request denied.
-DECLINE_TECH_TRADE_01      | Request denied.
-DECLINE_TECH_TRADE_01      | Request denied.
-DECLINE_TECH_TRADE_01      | Request denied.
-DECLINE_TECH_TRADE_01      | Request denied.
-DECLINE_TECH_TRADE_01      | Request denied.
-
 OFFER_TECH_EXCHANGE_01     | Dominion requires [tech] technology. Specify compensation.
 ACCEPT_TECH_EXCHANGE_01    | Acceptance recorded.
 ACCEPT_FINANCIAL_AID_01    | Acceptance recorded.
 ACCEPT_TECHNOLOGY_AID_01   | Acceptance recorded.
 
 BREAK_TRADE_01             | Trade agreement terminated.
-ACCEPT_TRADE_01            | Acceptance recorded.
-
 ANNOUNCE_PEACE_01          | Acceptance recorded.
 ACCEPT_PEACE_01            | Request granted.
 
@@ -183,7 +134,6 @@ ACCEPT_PACT_01             | Request granted.
 BREAK_ALLIANCE_01          | Alliance terminated.
 ANNOUNCE_ALLIANCE_01       | Acceptance recorded.
 ACCEPT_ALLIANCE_01         | Request granted.
-ACCEPT_BREAK_ALLIANCE_01   | Request granted.
 ACCEPT_JOINT_WAR_01        | Request granted.
 
 RESPOND_CLOSE_EMBASSY_01   | Actions recorded.
