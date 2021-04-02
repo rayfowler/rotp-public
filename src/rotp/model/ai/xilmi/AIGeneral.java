@@ -230,7 +230,16 @@ public class AIGeneral implements Base, General {
             setRepelFleetPlan(sys, enemyFleetSize);      
     }
     public void orderInvasionFleet(EmpireView v, StarSystem sys, float enemyFleetSize) {
-        if (empire.sv.hasFleetForEmpire(sys.id, empire)
+        boolean haveOrbitingFleet = false;
+        for(ShipFleet orbiting : sys.orbitingFleets())
+        {
+            if(orbiting.empire() == empire)
+                haveOrbitingFleet = true;
+            if(empire.enemies().contains(orbiting.empire()))
+                haveOrbitingFleet = false;
+        }
+        //ail: old check would also be positive when our fleet is retreating
+        if (haveOrbitingFleet
                 && sys.colony().defense().bases() == 0)
             launchGroundTroops(v, sys, 1);
         else if (empire.combatTransportPct() > 0)
