@@ -476,15 +476,13 @@ public final class Empire implements Base, NamedObject, Serializable {
             return false;
         if (sys.colony().quarantined())
             return false;
-        if (allColonizedSystems().size() > 1)
-            return true;
         
         for (StarSystem abSys: galaxy().abandonedSystems()) {
             if (sv.inShipRange(abSys.id) && canColonize(abSys))
                 return true;
         }
             
-        return false;
+        return true;
     }
     public boolean canAbandonTo(StarSystem sys) {
         if (sys == null)
