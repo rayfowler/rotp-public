@@ -534,7 +534,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                         && empire.sv.isScouted(fleet.destSysId()))
                     fleet.toggleRetreatOnArrival();
             }
-            if(!fleet.canSend() || fleet.deployed())
+            //ail: using hyperspace-communication disabled for now as it produced weird unintended results... have to check for better implementation
+            if(!fleet.canSend() || fleet.deployed() || fleet.inTransit())
             {
                 continue;
             }
