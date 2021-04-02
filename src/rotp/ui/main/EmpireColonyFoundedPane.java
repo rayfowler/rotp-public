@@ -44,6 +44,7 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
     Rectangle nameBox = new Rectangle();
     Shape hoverBox;
     IMapHandler topParent;
+    public BasePanel repainter;
     public EmpireColonyFoundedPane(SystemViewer p, IMapHandler top, Color c0) {
         parent = p;
         topParent = top;
@@ -99,7 +100,9 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
         
         for (StarSystem sys1: systems) 
             player().sv.view(sys1.id).toggleFlagColor(rightClick);
-        if (topParent != null)
+        if (repainter != null)
+            repainter.repaint();
+        else if (topParent != null)
             topParent.repaint();
         else
             parent.repaint();

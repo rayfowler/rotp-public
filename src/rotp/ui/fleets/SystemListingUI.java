@@ -18,6 +18,7 @@ package rotp.ui.fleets;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.LinearGradientPaint;
 import java.awt.Polygon;
 import java.awt.Rectangle;
@@ -146,6 +147,9 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
     }
     public SystemDeltaDataColumn newSystemDeltaDataColumn(String s1, String s2, int i, Color clr, Comparator<StarSystem> c, int align) {
         return new SystemDeltaDataColumn(s1, s2, i, clr, c, align);
+    }
+    public SystemFlagColumn newSystemFlagColumn(String s1, String s2, int i, Color clr, Comparator<StarSystem> c, int align) {
+        return new SystemFlagColumn(s1, s2, i, clr, c, align);
     }
     public SystemNameColumn newSystemNameColumn(BaseTextField field, String s1, String s2, int i, Color clr, Comparator<StarSystem> c, int align) {
         return new SystemNameColumn(field, s1, s2, i, clr, c, align);
@@ -791,6 +795,8 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         @Override
         public void draw(Graphics g, RowSprite row, StarSystem sys, int x, int y, int w) {
             super.draw(g, row, sys, x, y, w);
+            if (attributeKey.isEmpty())
+                return;
             String val = sys.getAttribute(attributeKey);
             int sw = g.getFontMetrics().stringWidth(val);
             if (sw > w) 
@@ -801,6 +807,20 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
                 case RIGHT:   g.drawString(val, x+w-s10-sw, y-s5); break;
                 case CENTER:  g.drawString(val, x+((w-sw)/2), y-s5); break;
             }
+        }
+    }
+    public class SystemFlagColumn extends SystemDataColumn {
+        SystemFlagColumn(String s1, String s2, int i, Color clr, Comparator<StarSystem> c, int a) {
+            super(s1, s2,i,clr,c,a);
+        }
+        @Override
+        public void draw(Graphics g, RowSprite row, StarSystem sys, int x, int y, int w) {
+            super.draw(g, row, sys, x, y, w);
+            SystemView sv = player().sv.view(sys.id);
+            int sz = s35;
+            Image img = sv.flagImage();
+            
+            g.drawImage(img, x+w-sz, y-sz+s3, sz, sz, null);
         }
     }
     public class SystemNameColumn extends SystemDataColumn {
@@ -842,9 +862,6 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             nameField.setBounds(x, y-s30, w, s30);
             nameField.setVisible(true);
             nameField.repaint();
-        }
-        public boolean showField(int y) {
-            return (y >= minDisplayY) && (y <= maxDisplayY);
         }
     }
     public class SystemNotesColumn extends SystemDataColumn {

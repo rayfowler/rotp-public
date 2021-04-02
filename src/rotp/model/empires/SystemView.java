@@ -126,6 +126,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
         system().rallySprite().stop(); 
     }
     
+    public int flagColorId()  { return flagColor; }
     public Color flagColor() { 
         switch(flagColor) {
             case FLAG_RED:    return Color.red;

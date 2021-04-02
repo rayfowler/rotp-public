@@ -546,7 +546,9 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             case KeyEvent.VK_5:
                 spendingPane.keyPressed(e); return;
             case KeyEvent.VK_F:
-                colonyFoundedPane.toggleFlagColor(shift); return;
+                colonyFoundedPane.toggleFlagColor(shift); 
+                instance.repaint();
+                return;
         }
         if (repaint)
             repaint();
@@ -672,6 +674,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
     }
     private void initDataViews() {
         Column rowNumCol =  listingUI.newRowNumColumn("PLANETS_LIST_NUM", 15, RIGHT);
+        Column flagCol = listingUI.newSystemFlagColumn("", "FLAG", 30, palette.black, StarSystem.VFLAG, LEFT);
         Column nameCol = listingUI.newSystemNameColumn(nameField, "PLANETS_LIST_NAME", "NAME", 170, palette.black, StarSystem.NAME, LEFT);
         Column populationCol = listingUI.newSystemDeltaDataColumn("PLANETS_LIST_POPULATION", "POPULATION", 130, palette.black, StarSystem.POPULATION, RIGHT);
         Column sizeCol = listingUI.newSystemDataColumn("PLANETS_LIST_SIZE", "SIZE", 60, palette.black, StarSystem.CURRENT_SIZE, RIGHT);
@@ -689,6 +692,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
 
         DataView ecoView = listingUI.newDataView();
         ecoView.addColumn(rowNumCol);
+        ecoView.addColumn(flagCol);
         ecoView.addColumn(nameCol);
         ecoView.addColumn(populationCol);
         ecoView.addColumn(pTypeCol);
@@ -700,6 +704,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
 
         DataView indView = listingUI.newDataView();
         indView.addColumn(rowNumCol);
+        indView.addColumn(flagCol);
         indView.addColumn(nameCol);
         indView.addColumn(populationCol);
         indView.addColumn(resourceCol);
@@ -712,6 +717,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
 
         DataView milView = listingUI.newDataView();
         milView.addColumn(rowNumCol);
+        milView.addColumn(flagCol);
         milView.addColumn(nameCol);
         milView.addColumn(populationCol);
         milView.addColumn(resourceCol);
@@ -966,6 +972,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             empireDetailTopPane.setLayout(new BorderLayout(0,s1));
             empireDetailTopPane.setPreferredSize(new Dimension(getWidth(),scaled(120)));
             colonyFoundedPane = new EmpireColonyFoundedPane(this, null, unselectedC);
+            colonyFoundedPane.repainter = parent;
             empireDetailTopPane.add(colonyFoundedPane, BorderLayout.NORTH);
             empireDetailTopPane.add(new EmpireColonyInfoPane(this, unselectedC, palette.bdrHiIn, palette.yellow, palette.bdrLoIn), BorderLayout.CENTER);
 
