@@ -23,7 +23,9 @@ public class GNNAllyAtWarNotification implements Base {
         new GNNAllyAtWarNotification(ally, enemy);
     }
     private GNNAllyAtWarNotification(Empire ally, Empire enemy) {
-        String title = text("GNN_ALLY_AT_WAR", ally.name(), enemy.name());
+        String title = text("GNN_ALLY_AT_WAR");
+        title = ally.replaceTokens(title, "ally");
+        title = enemy.replaceTokens(title, "other");
         GNNNotification.notifyGenocide(title);
     }
 }

@@ -1050,7 +1050,8 @@ public final class Empire implements Base, NamedObject, Serializable {
 
         if (viewForEmpire(player()).embassy().contact()) {
             String leaderDesc = text("LEADER_PERSONALITY_FORMAT", leader.personality(),leader.objective());
-            String message = text("GNN_OVERTHROW", name(), leaderDesc);
+            String message = text("GNN_OVERTHROW", leaderDesc);
+            message = replaceTokens(message, "alien");
             GNNNotification.notifyRebellion(message);
         }
     }

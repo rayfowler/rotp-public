@@ -1032,30 +1032,30 @@ BOMBARDMENT_COLONISTS_KILLED      | %1 Colonists Killed
 BOMBARDMENT_FACTORIES_DESTROYED   | %1 Factories Destroyed
 BOMBARDMENT_BASES_DESTROYED       | %1 Missile Bases Destroyed
 
-GNN_TITLE                         | The %1 Galactic News Network reports:
-GNN_EMPIRE_RANKING                | %1. %2
-GNN_KNOWN_SUBJECT                 | The %1
-GNN_KNOWN_PREDICATE               | the %1
-GNN_UNKNOWN_SUBJECT               | An unknown civilization 
-GNN_UNKNOWN_PREDICATE             | an unknown empire
-GNN_EXPANSION_1                   | The %1 now spans %2 star systems, outstripping all the other races.
-GNN_EXPANSION_2                   | The %1 now numbers %2 star systems. If their expansion is not contained they will soon control the galaxy.
-GNN_EXPANSION_3                   | The %1 nearly controls a majority of the galaxy. Leaders are already preparing to merge with the mighty empire.
+GNN_TITLE                         | The [player_race] Galactic News Network reports:
+GNN_EMPIRE_RANKING                | %1. [empire_race]
+GNN_EXTINCTION_KNOWN_VICTIM       | The [victim_race]
+GNN_EXTINCTION_KNOWN_KILLER       | the [killer_race]
+GNN_EXTINCTION_UNKNOWN_VICTIM     | An unknown civilization 
+GNN_EXTINCTION_UNKNOWN_KILLER     | an unknown empire
 GNN_EXTINCTION                    | %1 has been completely destroyed by %2.
-GNN_EXTINCTION_UNKNOWN            | %1 has been completely destroyed.
-GNN_ALLIANCE_FORMED               | The %1 has formed an Alliance with the %2.
-GNN_ALLIANCE_BROKEN               | The Alliance between the %1 and the %2 has been broken.
+GNN_EXTINCTION_NO_KILLER          | %1 has been completely destroyed.
+GNN_EXPANSION_1                   | The [expanding_empire] now spans %1 star systems, outstripping all the other races.
+GNN_EXPANSION_2                   | The [expanding_empire] now numbers %1 star systems. If their expansion is not contained they will soon control the galaxy.
+GNN_EXPANSION_3                   | The [expanding_empire] nearly controls a majority of the galaxy. Leaders are already preparing to merge with the mighty empire.
+GNN_ALLIANCE_FORMED               | The [first_empire] has formed an Alliance with the [second_empire].
+GNN_ALLIANCE_BROKEN               | The Alliance between the [first_empire] and the [second_empire] has been broken.
 GNN_FLEETS_RANKING                | Current ranking of space fleet strengths:
 GNN_CENSUS_RANKING                | The census ranking of empire populations:
 GNN_PRODUCTION_RANKING            | Current rankings of empire production:
 GNN_TECHNOLOGY_RANKING            | Current leaders of advanced technology:
-GNN_PLAYER_REBELLION              | %1 has rebelled and refuses to contribute to the %2. At least %3 million rebels control the colony. Troops must be sent to quell the uprising. 
-GNN_ALIEN_REBELLION               | %1 has rebelled and refused to contribute to the %2. At least %3 million rebels control the colony.
-GNN_PLAYER_REBELLION_SPREAD       | Rebellion continues to spread throughout the %2. At least %3 million rebels now control our colony at %1. Troops must be sent to quell the uprising. 
-GNN_OVERTHROW                     | A new leader emerged from with the %1. Rumors indicate the new emperor is a %2. Relations have become neutral and trade has been disrupted.
+GNN_PLAYER_REBELLION              | %1 has rebelled and refuses to contribute to the [rebelling_empire]. At least %2 million rebels control the colony. Troops must be sent to quell the uprising. 
+GNN_ALIEN_REBELLION               | %1 has rebelled and refused to contribute to the [rebelling_empire]. At least %2 million rebels control the colony.
+GNN_PLAYER_REBELLION_SPREAD       | Rebellion continues to spread throughout the [rebelling_empire]. At least %2 million rebels now control the colony at %1. 
+GNN_OVERTHROW                     | A new leader emerged from within the [alien_empire]. Rumors indicate the new emperor is a %1. Relations have become neutral and trade has been disrupted.
 GNN_END_COUNCIL                   | With only two Empires remaining, attempts to unify the galaxy with a Galactic Council have ended. Many leaders now debate what sort of final solution can bring lasting peace.
 GNN_FORM_COUNCIL                  | In the pursuit of peace, representatives for each race will soon convene to elect a Galactic Emperor to be chosen from the leaders of the two most populous empires.
-GNN_ALLY_AT_WAR                   | Our ally, the %1, has entered into war against the %2.
+GNN_ALLY_AT_WAR                   | Our ally, the [ally_empire], has entered into war against the [other_empire].
 
 // Error UI text
 ERROR_TITLE                       | An Error has occurred  :(
