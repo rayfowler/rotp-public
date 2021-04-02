@@ -756,7 +756,7 @@ public interface Base {
             throw(e);
         }
     }
-    public static int compare(int a, int b)        { return a-b; }
+    public static int compare(int a, int b)        { return Integer.compare(a,b); }
     public static int compare(float a, float b)  { return Float.compare(a, b); }
     public default Color newColor(int r, int g, int b) {
         return newColor(r,g,b,255);
