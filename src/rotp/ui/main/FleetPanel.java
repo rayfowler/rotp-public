@@ -505,7 +505,13 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
 
             // draw title
             g.setFont(narrowFont(36));
-            String str1 = contact ? text("MAIN_FLEET_TITLE", fl.empire().raceName()) : text("MAIN_FLEET_TITLE_UNKNOWN");
+            String str1;
+            if (contact) {
+                str1 = text("MAIN_FLEET_TITLE");
+                str1 = fl.empire().replaceTokens(str1, "fleet");
+            }
+            else 
+                str1 = text("MAIN_FLEET_TITLE_UNKNOWN");
             drawBorderedString(g, str1, 2, s15, s42, Color.black, SystemPanel.orangeText);
 
             // draw orbiting data, bottom up

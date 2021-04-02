@@ -36,6 +36,8 @@ public class SystemHomeworldEvent implements Base, Serializable, StarSystemEvent
     @Override
     public String description() {
         Empire emp = galaxy().empire(empId);
-        return text("SYSEVENT_HOMEWORLD",emp.raceName());
+        String s = text("SYSEVENT_HOMEWORLD");
+        s = emp.replaceTokens(s, "alien");
+        return s;
     }
 }

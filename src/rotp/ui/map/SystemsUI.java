@@ -712,7 +712,9 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         if ((sysDistance <= pl.shipRange()) && pl.canColonize(sv.sysId)) { 
             if (expandGuardedSystems.containsKey(sv.sysId)) {
                 Empire enemyEmp = galaxy().empire(expandGuardedSystems.get(sv.sysId));
-                return text("SYSTEMS_CAN_COLONIZE_ENEMY", enemyEmp.raceName());
+                String s = text("SYSTEMS_CAN_COLONIZE_ENEMY");
+                s = enemyEmp.replaceTokens(s, "alien");
+                return s;
             }
             if (expandEnRouteSystems.containsKey(sv.sysId)) {
                 int turns = expandEnRouteSystems.get(sv.sysId);
@@ -785,8 +787,10 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
             troopMsg = "";
         else if (sysEmp == pl)
             troopMsg = " "+text("SYSTEMS_EXPLOIT_TRANSPORTS",str(num));
-        else
-            troopMsg = " "+text("SYSTEMS_EXT_INC_TRANSPORTS",str(num),pl.raceName());
+        else {
+            troopMsg = " "+text("SYSTEMS_EXT_INC_TRANSPORTS",str(num));
+            troopMsg = pl.replaceTokens(troopMsg, "player");
+        }
         
         // show enemy colonies as yellow
         if (pl.atWarWith(sv.empId())) {

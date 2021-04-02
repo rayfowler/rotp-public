@@ -37,10 +37,10 @@ MAIN_ADVISOR_COUNCIL_RESISTED     | Why do these fools persist in being so disag
 MAIN_SCOUT_TITLE                  | I Explore A New Star System
 MAIN_COLONIZE_TITLE               | I am orbiting %1, an uncolonized system.
 MAIN_COLONIZE_ANIMATION_TITLE     | In the year %1, I form a new colony.
-MAIN_ALERT_SPY_CAPTURED           | I have captured a spy from the %1, forcing a confession of their %2 activities.
-MAIN_ALERT_TRANSPORTS_KILLED      | My attempts to reach %2 have been stopped by defending %1 forces.
-MAIN_ALERT_INVADERS_KILLED        | %1 transports attempting to invade %2 have been completely destroyed by me.
-MAIN_BOMBARD_TITLE                | I am orbiting an enemy %2 colony.
+MAIN_ALERT_SPY_CAPTURED           | I have captured a spy from the [alien_empire], forcing a confession of their %2 activities.
+MAIN_ALERT_TRANSPORTS_KILLED      | My attempts to reach %2 have been stopped by defending [alien_race] forces.
+MAIN_ALERT_INVADERS_KILLED        | [alien_race] transports attempting to invade %2 have been completely destroyed by me.
+MAIN_BOMBARD_TITLE                | I am orbiting an enemy [alien_race] colony.
 
 TECH_RESEARCH_COMPUTER            | I must select the next computer technology to focus on.
 TECH_RESEARCH_CONSTRUCTION        | I must select the next construction technology to focus on.
@@ -48,10 +48,10 @@ TECH_RESEARCH_FORCE_FIELD         | I must select the next force field technolog
 TECH_RESEARCH_PLANETOLOGY         | I must select the next planetology technology to focus on.
 TECH_RESEARCH_PROPULSION          | I must select the next propulsion technology to focus on.
 TECH_RESEARCH_WEAPON              | I must select the next weapon technology to focus on.
-TECH_DISCOVERY_TITLE              | I Achieve a %2 Breakthrough
+TECH_DISCOVERY_TITLE              | I Achieve a %1 Breakthrough
 TECH_SCOUTED_TITLE                | While Exploring the Ruins of %1, I discover a new Technology
 TECH_STOLEN_TITLE                 | I have infiltrated the %1 research center at %2.
-TECH_TRADED_TITLE                 | I Acquire Technology from %2 Scientists
+TECH_TRADED_TITLE                 | I Acquire Technology from [alien_race] Scientists
 TECH_PLUNDERED_TITLE              | While Plundering the Ruins of %1, I discover a new Technology
 TECH_ALLOCATE_SHIELD              | Should I increase the defense ratios of all of my colonies to build the new planetary shields?
 TECH_ALLOCATE_MISSILE_BASES       | Should I increase the defense ratios of all of my colonies to upgrade my missile bases?
@@ -61,12 +61,10 @@ TECH_ALLOCATE_ENRICH_SOIL         | Should I increase the ecology ratios of my c
 TECH_ALLOCATE_ATMOSPHERE          | Should I increase the ecology ratios of my colonies with hostile environments in order to begin terraforming my planets?
 TECH_ALLOCATE_TERRAFORM           | Should I increase the ecology ratios of all of my colonies in order to begin terraforming my planets?
 
-NOTICE_ESPIONAGE_TITLE            | I have infiltrated a %1 base.
+NOTICE_ESPIONAGE_TITLE            | I have infiltrated a [alien_race] base.
 NOTICE_ESPIONAGE_FRAME_TITLE      | I have managed to frame another race for the theft.
 
-BOMBARD_TITLE                     | I am orbiting an enemy system
-SHIP_COMBAT_TITLE_DESC            | I meet a hostile %1 fleet.
-SABOTAGE_DESCRIPTION              | I have successfully infiltrated %1 colonies and am ready to commit sabotage.
+SHIP_COMBAT_TITLE_DESC            | I meet a hostile [alien_race] fleet.
 
 SABOTAGE_FACTORIES_RESULT         | I destroyed %1 factories.
 SABOTAGE_BASES_RESULT             | I destroyed %1 missile bases.

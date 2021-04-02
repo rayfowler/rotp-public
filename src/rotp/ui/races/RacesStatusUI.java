@@ -185,7 +185,8 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
             g.setColor(SystemPanel.whiteText);
         
         
-        String text = text("RACES_STATUS_HISTORY", emp.raceName());
+        String text = text("RACES_STATUS_HISTORY");
+        text = emp.replaceTokens(text, "alien");
         int sw = g.getFontMetrics().stringWidth(text);
         int x0 = x+(w-sw)/2;
         g.drawString(text, x0, y+h-s6);

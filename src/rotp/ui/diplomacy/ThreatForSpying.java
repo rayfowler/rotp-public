@@ -33,8 +33,14 @@ public class ThreatForSpying extends TurnNotificationMessage {
     public String reply(int i)          { 
         switch (i) {
             case 0 : return text("DIPLOMACY_IGNORE_THREAT");
-            case 1 : return text("DIPLOMACY_HIDE_SPIES", diplomat().name());
-            case 2 : return text("DIPLOMACY_SHUTDOWN_SPIES", diplomat().name());
+            case 1 : 
+                String s = text("DIPLOMACY_HIDE_SPIES");
+                s = diplomat().replaceTokens(s, "alien");
+                return s;
+            case 2 : 
+                String s1 =  text("DIPLOMACY_SHUTDOWN_SPIES");
+                s1 = diplomat().replaceTokens(s1, "alien");
+                return s1;
         }
         return ""; 
     }

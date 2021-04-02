@@ -1,5 +1,5 @@
 //
-// Still not race-specific
+// Dialogue that is not race-specific
 //
 
 DIPLO_TECH_REQUEST_MENU_01   | What type of technology interests you?

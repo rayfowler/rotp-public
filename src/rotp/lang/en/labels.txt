@@ -1,4 +1,4 @@
-// This is the label text file for Java MOO
+// This is the label text file for Remnants of the Precursors
 // comment lines should start with '/'  they are ignored
 //  
 // the format for each line is   key | label
@@ -145,21 +145,21 @@ EVENT_SUPERNOVA_2                 | The threat of supernova in the [system] syst
 EVENT_SUPERNOVA_3                 | Working feverishly, [target_race] physicists in the [system] system have found a way to delay to supernova of their nearby star for the foreseeable future.
 EVENT_SUPERNOVA_4                 | The star in the [system] system has gone supernova, irradiating the [target_race] world, devastating its environment and killing millions.
 EVENT_VIRUS                       | A highly destructive computer virus strikes [target_race] research centers, destroying years of research in [technology].
-EVENT_SPACE_AMOEBA                | A monstrous biological form dubbed the "Space Amoeba" has been spotted approaching the [system] system. Defending [race] colonists and fleets are preparing for the worst.
+EVENT_SPACE_AMOEBA                | A monstrous biological form dubbed the "Space Amoeba" has been spotted approaching the [system] system. Defending [victim_race] colonists and fleets are preparing for the worst.
 EVENT_SPACE_AMOEBA_1              | A monstrous biological form dubbed the "Space Amoeba" has been spotted approaching the uncolonized [system] system.
-EVENT_SPACE_AMOEBA_2              | The Space Amoeba has completely consumed the [race] colony in the [system] system.
-EVENT_SPACE_AMOEBA_3              | The Space Amoeba was destroyed by [race] defenders in the [system] system.
-EVENT_SPACE_CRYSTAL               | A gigantic crystalline entity called the "Space Crystal" has been spotted approaching the [system] system. Defending [race] colonists and fleets are preparing for the worst.
+EVENT_SPACE_AMOEBA_2              | The Space Amoeba has completely consumed the [victim_race] colony in the [system] system.
+EVENT_SPACE_AMOEBA_3              | The Space Amoeba was destroyed by [victim_race] defenders in the [system] system.
+EVENT_SPACE_CRYSTAL               | A gigantic crystalline entity called the "Space Crystal" has been spotted approaching the [system] system. Defending [victim_race] colonists and fleets are preparing for the worst.
 EVENT_SPACE_CRYSTAL_1             | A gigantic crystalline entity called the "Space Crystal" has been spotted approaching the uncolonized [system] system.
-EVENT_SPACE_CRYSTAL_2             | The Space Crystal has completely destroyed all life on the [race] colony in the [system] system.
-EVENT_SPACE_CRYSTAL_3             | The Space Crystal was destroyed by [race] defenders in the [system] system.
+EVENT_SPACE_CRYSTAL_2             | The Space Crystal has completely destroyed all life on the [victim_race] colony in the [system] system.
+EVENT_SPACE_CRYSTAL_3             | The Space Crystal was destroyed by [victim_race] defenders in the [system] system.
 
-SYSEVENT_HOMEWORLD                | Homeworld for the %1.
-SYSEVENT_SCOUTED                  | First scouted by the %1.
-SYSEVENT_COLONIZED                | Colonized by the %1.
-SYSEVENT_CAPTURED                 | Captured by %1 forces.
-SYSEVENT_ABANDONED                | Abandoned by the %1.
-SYSEVENT_DESTROYED                | Destroyed by orbiting %1 forces.
+SYSEVENT_HOMEWORLD                | Homeworld for the [alien_race].
+SYSEVENT_SCOUTED                  | First scouted by the [alien_race].
+SYSEVENT_COLONIZED                | Colonized by the [alien_race].
+SYSEVENT_CAPTURED                 | Captured by [alien_race] forces.
+SYSEVENT_ABANDONED                | Abandoned by the [alien_race].
+SYSEVENT_DESTROYED                | Destroyed by orbiting [alien_race] forces.
 SYSEVENT_DESTROYED_MONSTER        | Destroyed by the %1.
 SYSEVENT_DESTROYED_UNKNOWN        | Destroyed.
 SYSEVENT_ATMOSPHERE_TERRAFORMED   | The planet's atmosphere has been terraformed.
@@ -499,7 +499,7 @@ TURN_DESIGN_SHIPS                 | Designing Ships
 TURN_COLONY_SPENDING              | Colony Allocations
 
 // Fleet labels
-MAIN_FLEET_TITLE                  | %1 Fleet
+MAIN_FLEET_TITLE                  | [fleet_race] Fleet
 MAIN_FLEET_TITLE_UNKNOWN          | Unknown Fleet
 MAIN_FLEET_IN_ORBIT               | In orbit
 MAIN_FLEET_DEPLOYED               | Deployed
@@ -617,21 +617,6 @@ MAIN_COLONY_TRANSPORTS_LABEL      | Send Transports
 MAIN_COLONY_ABANDON_LABEL         | Abandon
 MAIN_COLONY_SHIP_SCRAPPED         | Scrapped
 MAIN_COLONY_NO_SHIELD             | Nebula
-
-// Advisor text
-MAIN_ADVISOR_TITLE                | %1 Advisor
-MAIN_ADVISOR_BUTTON_OK            | Dismiss
-MAIN_ADVISOR_SCOUT                | My lord, our scouts stand at the ready to discover a new world for our colony ship to bring into the fold so that we may add the territory to our illustrious sovereignty. 
-MAIN_ADVISOR_TRANSPORT            | A new world bears our banner, but it grows at an inhibited rate. Sending a transport to the colony will enable it to grow at a much swifter rate.
-MAIN_ADVISOR_DIPLOMACY            | Another spacefaring civilization has revealed itself! Our diplomats will observe all appropriate decorum in your name, and take careful note on if they respond in kind.
-MAIN_ADVISOR_SHIP_ENGINE          | Our greatest minds have crafted a new, more efficient engine design. They wish for you to review existing ship schematics and decide how best to apply the new engines to our fleets.
-MAIN_ADVISOR_RALLY_POINTS         | Our era of peace cannot continue while an undignified race wages war on our glorious empire. The 33 Houses stand united under you, and will assemble their fleets to wherever you direct them.
-MAIN_ADVISOR_MISSILE_BASES        | With the sovereign fleets engaged in battle, our outer worlds lie vulnerable to enemy aggression. We can begin our construction of defensive missile bases on any world you desire.
-MAIN_ADVISOR_SHIP_WEAPON          | Our researchers have had a breakthrough in regards to ship weaponry. The fleets can be outfitted with these devastating pieces of technology at any time.
-MAIN_ADVISOR_COUNCIL              | The Galactic Council will soon convene, and our presence will no doubt be highly desired. Our diplomats will take this chance to ensure all that is decided upon will further the good of the sovereignty. 
-MAIN_ADVISOR_REBELLION            | Ah, a rebellion on %1. How quaint. I suppose it was bound to happen at some point my lord, but we should still bring it to heel before discontent spreads to our other colonies.
-MAIN_ADVISOR_RESIST_COUNCIL       | My lord! We stand with you! There shall be no peace in this galaxy until you take your rightful place upon its highest throne! 
-MAIN_ADVISOR_COUNCIL_RESISTED     | Pathetic. See how the fools struggle against the inevitable? Give us the order to crush these rebels, and we shall see it done! 
 
 // System Scouted Notification
 MAIN_SCOUT_TITLE                  | Scientists Catalogue A New Star System
@@ -823,6 +808,7 @@ PLANETS_HELP_4E                   | Shield - planetary shield level.
 PLANETS_HELP_4F                   | Bases - missile bases on planet. Red if outdated technology.
 PLANETS_HELP_4G                   | Shipyard - ship design being constructed.
 PLANETS_HELP_4H                   | Notes - Player system notes. Editable.
+PLANETS_HELP_4I                   | Flag - user-selected system flag.
 
 // Bombardment prompt
 MAIN_BOMBARDED_TITLE             | %1 has been bombarded by %2 forces.
@@ -941,13 +927,13 @@ TECH_CHOOSE_RESEARCH_COST         | %1 RP
 TECH_CHOOSE_RESEARCH_TIER         | Tier %1
 TECH_TRADE_TIER_COST_INFO         | (Tier %1 - %2 RP)
 TECH_CONFIRM_CHOICE               | Select
-TECH_DISCOVERY_TITLE              | %1 Scientists Achieve a %2 Breakthrough
+TECH_DISCOVERY_TITLE              | [player_race] Scientists Achieve a %1 Breakthrough
 TECH_SCOUTED_TITLE                | Scouts Exploring the Ruins of %1 Discover
 TECH_STOLEN_TITLE                 | Our spies have infiltrated the %1 research center at %2.
-TECH_TRADED_TITLE                 | %1 Scientists Acquire Technology from %2 Scientists
+TECH_TRADED_TITLE                 | [player_race] Scientists Acquire Technology from [alien_race] Scientists
 TECH_PLUNDERED_TITLE              | Troopers at the Ruins of %1 Plunder
-TECH_DERELICT_TITLE               | %1 Explorers Plunder an Ancient Technology
-TECH_GUARDIAN_TITLE               | %1 Soldiers Recover an Ancient Weapon
+TECH_DERELICT_TITLE               | [player_race] Explorers Plunder an Ancient Technology
+TECH_GUARDIAN_TITLE               | [player_race] Soldiers Recover an Ancient Weapon
 TECH_ALLOCATE_SHIELD              | Should we increase the defense ratios of all of our colonies to build the new planetary shields?
 TECH_ALLOCATE_MISSILE_BASES       | Should we increase the defense ratios of all of our colonies to upgrade our missile bases?
 TECH_ALLOCATE_FACTORIES           | Should we increase the industry ratios of all of our colonies to upgrade our factory controls?
@@ -968,7 +954,7 @@ TECH_COMPLETED_ALL                | We have completed all possible scientific re
 TECH_COMPLETED_VERIFY             | Verify that spending allocations in the remaining research fields are set properly.
 
 // prompt for espionage
-NOTICE_ESPIONAGE_TITLE            | Our spies have infiltrated a %1 base.
+NOTICE_ESPIONAGE_TITLE            | Our spies have infiltrated a [alien_race] base.
 NOTICE_ESPIONAGE_SUBTITLE         | Select a technology type to steal.
 NOTICE_ESPIONAGE_NO_TECH          | No Available Technology
 NOTICE_ESPIONAGE_MANY_TECHS       | %1 Available Technologies
@@ -980,59 +966,40 @@ NOTICE_ESPIONAGE_FRAME_SUBTITLE   | Choose the victim race:
 NOTICE_SPIES_TITLE                | Current Spy Report
 NOTICE_SPIES_NO_ACTIVITY          | No meaningful spy activity has been observed.
 NOTICE_SPIES_ACTIVITY             | Current Activity:
-NOTICE_SPIES_LOST_DESC            | • The %2 shut down %1 of our spy networks.
+NOTICE_SPIES_LOST_DESC            | • The [alien_empire] shut down %1 of our spy networks.
 NOTICE_SPIES_LOST_CONFESSED       | Our spies confessed to ongoing sabotage activities.
 NOTICE_SPIES_LOST_CONFESSED2      | Our spies confessed to ongoing espionage activities.
 NOTICE_SPIES_LOST_CONFESSED3      | Our spies were forced to confess to ongoing sabotage activities.
-NOTICE_SPIES_CAUGHT_DESC          | • Our internal security forces shut down %1 spy networks of the %2.
+NOTICE_SPIES_CAUGHT_DESC          | • Our internal security forces shut down %1 spy networks of the [alien_empire].
 NOTICE_SPIES_CAUGHT_CONFESSED     | Their spies confessed to ongoing sabotage activities.
 NOTICE_SPIES_CAUGHT_CONFESSED2    | Their spies confessed to ongoing espionage activities.
-NOTICE_SPIES_FRAMED               | • We were framed for espionage activities within the %1.
-NOTICE_SPIES_ESPIONAGE            | • Our spies have stolen the secrets of %1 from the %2.
-NOTICE_SPIES_ESPIONAGE_FRAME      | We successfully framed the %1 for this theft.
+NOTICE_SPIES_FRAMED               | • We were framed for espionage activities within the [alien_empire].
+NOTICE_SPIES_ESPIONAGE            | • Our spies have stolen the secrets of %1 from the [alien_empire].
+NOTICE_SPIES_ESPIONAGE_FRAME      | We successfully framed the [framed_empire] for this theft.
 NOTICE_SPIES_SABOTAGE_FACTORIES   | • Our spies successfully destroyed %1 factories in the %2 system.
 NOTICE_SPIES_SABOTAGE_BASES       | • Our spies successfully destroyed %1 missile bases protecting the %2 system.
 NOTICE_SPIES_SABOTAGE_REBELS      | • Our spies successfully incited rebels in the %2 system.
 NOTICE_SPIES_SABOTAGE_REBELLION   | • Our spies successfully triggered rebellion in the %2 system.
-NOTICE_SPIES_LEARNED_TECH         | • Our spies report that the %1 has recently learned the following technologies unknown to us: %2
+NOTICE_SPIES_LEARNED_TECH         | • Our spies report that the [alien_empire] has recently learned the following technologies unknown to us: %1
+// this just details how to concatenate a list of multiple technology (English uses ,)
 NOTICE_SPIES_MULTIPLE_TECHS       | %1, %2
 NOTICE_SPIES_THREATEN             | Threaten
 NOTICE_SPIES_MANAGE               | Manage Spies
 NOTICE_SPIES_CLOSE                | Close
 
 // Ground Combat UI
-INVASION_LANDING                  | %1 out of %2 %3 transports penetrate %4 defenses.
-INVASION_LANDING_REBELS           | %1 transports land to reclaim the %2 colony at %3.
-INVASION_BATTLE                   | In the Year %1, the %2 and %3 battle for %4.
-INVASION_BATTLE_REBELS            | In the Year %1, the %2 and rebels battle for %3.
-INVASION_TROOPS_LANDED            | %1 %2 troops landed. 
-INVASION_SOME_TROOPS_LANDED       | %1 of %2 %3 troops landed.
-INVASION_WIN                      | %1 transports capture %2.
-INVASION_LOSS                     | %1 troops successfully defend %2.
-INVASION_ATTACKERS_TITLE          | %1 %2 Troops
-INVASION_DEFENDERS_TITLE          | %1 %2 Troops
-INVASION_REBELS_TITLE             | %1 %2 Rebels
+INVASION_BATTLE                   | In the Year %1, the [attacker_race] and [defender_race] battle for %2.
+INVASION_BATTLE_REBELS            | In the Year %1, the [attacker_race] and rebels battle for %2.
+INVASION_TROOPS_LANDED            | %1 [attacker_race] troops landed. 
+INVASION_SOME_TROOPS_LANDED       | %1 of %2 [attacker_race] troops landed.
+INVASION_WIN                      | [attacker_race] transports capture %2.
+INVASION_LOSS                     | [defender_race] troops successfully defend %2.
+INVASION_ATTACKERS_TITLE          | %1 [attacker_race] Troops
+INVASION_DEFENDERS_TITLE          | %1 [defender_race] Troops
+INVASION_REBELS_TITLE             | %1 [defender_race] Rebels
 INVASION_TROOP_ARMOR_DESC         | %1 %2
 
-// Bombard Planet prompt
-BOMBARD_TITLE                     | Our forces are orbiting an enemy system
-BOMBARD_PROMPT                    | Bombard the planet?
-BOMBARD_YES                       | YES
-BOMBARD_NO                        | NO
-BOMBARD_FINISHED                  | Bombardment Completed
-BOMBARD_DESTROYED                 | Colony Destroyed
-BOMBARD_POP_DESTROYED             | %1 %2 Colonists Killed
-BOMBARD_FACTORIES_DESTROYED       | %1 Factories Destroyed
-BOMBARD_BASES_DESTROYED           | %1 Missile Bases Destroyed
-BOMBARDMENT_ENEMY_TITLE           | Orbiting %1 forces bombard %2
-BOMBARDMENT_COLONISTS             | %1 Colonists
-BOMBARDMENT_FACTORIES             | %1 Factories
-BOMBARDMENT_BASES                 | %1 Missile Bases
-BOMBARDMENT_COLONY_DESTROYED      | COLONY DESTROYED
-BOMBARDMENT_COLONISTS_KILLED      | %1 Colonists Killed
-BOMBARDMENT_FACTORIES_DESTROYED   | %1 Factories Destroyed
-BOMBARDMENT_BASES_DESTROYED       | %1 Missile Bases Destroyed
-
+// GNN Text
 GNN_TITLE                         | The [player_race] Galactic News Network reports:
 GNN_EMPIRE_RANKING                | %1. [empire_race]
 GNN_EXTINCTION_KNOWN_VICTIM       | The [victim_race]
@@ -1750,7 +1717,7 @@ RACES_MILITARY_SPECIALS           | Special Devices
 RACES_STATUS_THE_EMPIRE           | The [alien_empire]
 RACES_STATUS_VS                   | vs.
 RACES_STATUS_KNOWN_EMPIRES        | %1 Known Empires
-RACES_STATUS_HISTORY              | Show %1 History
+RACES_STATUS_HISTORY              | Show [alien_race] History
 RACES_STATUS_NO_DATA              | No Data
 RACES_STATUS_OLD_DATA             | Old Data
 RACES_STATUS_FLEET_STRENGTH       | Fleet Strength
@@ -1847,7 +1814,7 @@ COUNCIL_SUMMARY_TITLE             | Voter Summary
 COUNCIL_SUMMARY                   | Votes are cast in order of population. %1 votes are required to win election.
 COUNCIL_BEGIN_VOTING              | Begin Voting
 COUNCIL_SHOW_VOTING               | Continue Voting
-COUNCIL_SKIP_TO_PLAYER            | Skip to %1 Vote
+COUNCIL_SKIP_TO_PLAYER            | Skip to [player_race] Vote
 COUNCIL_COMPLETE_VOTING           | Complete All Voting
 COUNCIL_SHOW_RESULTS              | Show Results
 COUNCIL_VIEW_SUMMARY              | View Voter Summary
@@ -1859,13 +1826,13 @@ COUNCIL_CAST_VOTE                 | The [voter_empire] cast %1 votes for [candid
 COUNCIL_CAST_ABSTAIN              | The [voter_empire] abstains (%1 votes)
 COUNCIL_CHOICE_ABSTAIN            | Abstain
 COUNCIL_VOTE_COUNT                | %1 votes
-COUNCIL_VOTE_CAST                 | %1 votes - for %2
+COUNCIL_VOTE_CAST                 | %1 votes - for [alien_race]
 COUNCIL_VOTE_ABSTAINED            | %1 votes - Abstained
-COUNCIL_TREATY_CANDIDATE          | %1: Candidate
-COUNCIL_TREATY_ALLIANCE           | %1: Alliance
-COUNCIL_TREATY_PACT               | %1: Non-aggression Pact
-COUNCIL_TREATY_NONE               | %1: No Treaty
-COUNCIL_TREATY_WAR                | %1: At War
+COUNCIL_TREATY_CANDIDATE          | [alien_race]: Candidate
+COUNCIL_TREATY_ALLIANCE           | [alien_race]: Alliance
+COUNCIL_TREATY_PACT               | [alien_race]: Non-aggression Pact
+COUNCIL_TREATY_NONE               | [alien_race]: No Treaty
+COUNCIL_TREATY_WAR                | [alien_race]: At War
 COUNCIL_CONTINUE                  | Continue
 COUNCIL_ELECTED_TITLE             | Ruler of the Galaxy Elected!
 COUNCIL_ACCEPT_RULING             | Accept Ruling
@@ -1904,7 +1871,7 @@ SYSTEMS_UNSCOUTED_GUARDED         | Unable to scout while system is guarded.
 SYSTEMS_UNSCOUTED_UNREACHABLE     | System is unscouted and currently unreachable.
 SYSTEMS_CAN_COLONIZE              | System can be reached and colonized with our current technology.
 SYSTEMS_CAN_COLONIZE_EN_ROUTE     | A colony ship is en route to this system. ETA is %1 turns.
-SYSTEMS_CAN_COLONIZE_ENEMY        | System can be reached and colonized but is orbited by a hostile %1 fleet.
+SYSTEMS_CAN_COLONIZE_ENEMY        | System can be reached and colonized but is orbited by a hostile [alien_race] fleet.
 SYSTEMS_UNCOLONIZED_NEED_TECH     | System can be colonized after research in "%1" is completed.
 SYSTEMS_UNCOLONIZED_NEED_TECHS    | System can be colonized after research in "%1" and "%2" is completed.
 SYSTEMS_UNCOLONIZEABLE            | System cannot be colonized.
@@ -1919,7 +1886,7 @@ SYSTEMS_EXT_ENEMY_FLEET_ALLY      | Enemy fleet orbiting an allied colony.
 SYSTEMS_EXT_INC_FLEET_PLAYER      | Enemy fleet in transit to our colony.
 SYSTEMS_EXT_INC_FLEET_ALLY        | Enemy fleet in transit to an allied colony.
 SYSTEMS_EXT_NEED_DEFENSE          | Defenses at this colony are not fully upgraded.
-SYSTEMS_EXT_INC_TRANSPORTS        | %1 %2 troops are in transit.
+SYSTEMS_EXT_INC_TRANSPORTS        | %1 [player_race] troops are in transit.
 SYSTEMS_HELP_1A                   | OVERVIEW - The purpose of this screen is to highlight systems in the galaxy that warrant attention by the player. Urgency or danger is denoted by color: flashing red is the highest, and green is the lowest.
 SYSTEMS_HELP_1B                   | Explore - shows unexplored systems within reach of scouts, or potentially with unresearched technologies.
 SYSTEMS_HELP_1C                   | Expand - shows colonizable systems within reach of ships, or potentially with unresearched technologies.
@@ -1937,10 +1904,6 @@ SYSTEMS_STATUS_PIRACY             | Pirates are affecting trade routes in this s
 SYSTEMS_STATUS_SPACE_AMOEBA       | A giant space amoeba is heading towards this system.
 SYSTEMS_STATUS_SPACE_CRYSTAL      | A gigantic space crystal is heading towards this system.
 
-
-// =========================================================================
-//   DO NOT TRANSLATE BEYOND THIS POINT! THESE UI'S ARE NOT REDESIGNED YET
-// =========================================================================
 
 DIPLOMACY_RECEIVING               | Translating Incoming Message...
 DIPLOMACY_MENU_CONTINUE           | Continue
@@ -1986,9 +1949,9 @@ DIPLOMACY_ACCEPT_ESTABLISH_TRADE  | Accept (Establishes Trade)
 DIPLOMACY_DECLINE_OFFER           | Decline
 DIPLOMACY_DECLINE_BREAK_ALLIANCE  | Decline (Breaks Alliance)
 DIPLOMACY_IGNORE_THREAT           | Ignore Threat
-DIPLOMACY_SHUTDOWN_SPIES          | Shutdown all spy networks in the %1 
-DIPLOMACY_HIDE_SPIES              | Order all spies in the %1 to Hide
-DIPLOMACY_RETREAT_SHIPS           | Order all ships orbiting or in transit to %1 systems to Retreat
+DIPLOMACY_SHUTDOWN_SPIES          | Shutdown all spy networks in the [alien_empire] 
+DIPLOMACY_HIDE_SPIES              | Order all spies in the [alien_empire] to Hide
+DIPLOMACY_RETREAT_SHIPS           | Order all ships orbiting or in transit to [alien_race] systems to Retreat
 
 // types of endings
 GAME_OVER_OVERTHROWN_LOSS         | Overthrown Loss

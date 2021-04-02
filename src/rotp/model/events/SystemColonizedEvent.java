@@ -36,6 +36,8 @@ public class SystemColonizedEvent implements Base, Serializable, StarSystemEvent
     @Override
     public String description() {
         Empire emp = galaxy().empire(empId);
-        return text("SYSEVENT_COLONIZED",emp.raceName());
+        String s = text("SYSEVENT_COLONIZED");
+        s = emp.replaceTokens(s, "alien");
+        return s;
     } 
 }
