@@ -690,7 +690,7 @@ public interface Base {
             if (fis != null)
                 in = new InputStreamReader(fis, "UTF-8");
             else if (zipStream != null)
-                       in = new InputStreamReader(zipStream, "UTF-8");
+                in = new InputStreamReader(zipStream, "UTF-8");
             else
                 err("Base.reader() -- FileNotFoundException:", n);
         } catch (IOException ex) {

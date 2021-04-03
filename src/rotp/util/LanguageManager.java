@@ -46,6 +46,12 @@ public class LanguageManager implements Base {
         }
         return languages;
     }
+    public List<String> languageCodes() {
+        List<String> names = new ArrayList<>();
+        for (Language lang: languages)
+            names.add(lang.directory);
+        return names;
+    }
     public List<String> languageNames() {
         List<String> names = new ArrayList<>();
         for (Language lang: languages)
@@ -123,7 +129,7 @@ public class LanguageManager implements Base {
             labels().load(currDir);
             RaceFactory.current().loadRaceLangFiles(newLang.directory);
         }
-    }
+    } 
     public String defaultLangDir()    { return langDir(DEFAULT_LANGUAGE); }
     public String currentLanguage()   { return language(selectedLanguage()); }
     public String currentLangDir()    { return langDir(selectedLanguage()); }
@@ -159,6 +165,8 @@ public class LanguageManager implements Base {
         String orientString = strings.get(3);
         String fontString = strings.get(4);
         languages.add(new Language(dirString, subdirString, nameString, orientString, fontString));
+        // load fonts for selected lanage
+        FontManager.current().loadLanguageFonts(baseDir, dirString);
     }
     class Language {
         String directory;
