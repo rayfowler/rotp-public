@@ -51,7 +51,13 @@ public class GNNGenocideNotice implements Base {
         if (killer == null)
             GNNNotification.notifyGenocide(text("GNN_EXTINCTION_NO_KILLER", empTitle1));
         else {
-            String empTitle2 = knowsKiller ? text("GNN_EXTINCTION_KNOWN_KILLER", killer.name()) : text("GNN_EXTINCTION_UNKNOWN_KILLER");
+            String empTitle2;
+            if (knowsKiller) {
+                empTitle2 = text("GNN_EXTINCTION_KNOWN_KILLER");
+                empTitle2 = victim.replaceTokens(empTitle2, "killer");                
+            }
+            else
+                empTitle2 = text("GNN_EXTINCTION_UNKNOWN_KILLER");
             String title = text("GNN_EXTINCTION", empTitle1, empTitle2);
             GNNNotification.notifyGenocide(title);
         }

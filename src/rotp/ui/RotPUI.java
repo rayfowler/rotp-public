@@ -121,7 +121,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         catch (Throwable t) { startupException = t; System.out.println("Err: PlanetFactory init: "+t.getMessage()); }
 
         try { UserPreferences.loadAndSave(); }
-        catch (Throwable t) { startupException = t; System.out.println("Err: PlanetFactory init: "+t.getMessage()); }
+        catch (Throwable t) { startupException = t; System.out.println("Err: UserPreferences init: "+t.getMessage()); }
     }
 
     public static boolean useDebugFile = false;

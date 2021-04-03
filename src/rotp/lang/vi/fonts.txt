@@ -1,0 +1,8 @@
+// These are the fonts used for the 5 font types within the game.
+
+logo,       FiraSans-Light.ttf,       100
+dialogue,   FiraSans-Light.ttf,       100
+narrow,     FiraSans-Light.ttf,       100
+normal,     FiraSans-Light.ttf,       100
+plain,      FiraSans-Light.ttf,       100
+language,   FiraSans-Light.ttf,       100
