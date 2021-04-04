@@ -635,6 +635,9 @@ public class AIGeneral implements Base, General {
         Empire archEnemy = null;
         for(Empire emp : empire.contactedEmpires())
         {
+            //Since there's allied victory, there's no reason to ever break up with our alliance
+            if(empire.alliedWith(emp.id))
+                continue;
             if(!empire.inShipRange(emp.id))
             {
                 continue;
