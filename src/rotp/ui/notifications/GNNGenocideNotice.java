@@ -54,7 +54,10 @@ public class GNNGenocideNotice implements Base {
             String empTitle2;
             if (knowsKiller) {
                 empTitle2 = text("GNN_EXTINCTION_KNOWN_KILLER");
-                empTitle2 = victim.replaceTokens(empTitle2, "killer");                
+                if (killer instanceof Empire) 
+                    empTitle2 = ((Empire)killer).replaceTokens(empTitle2, "killer");     
+                else
+                    empTitle2 = empTitle2.replace("[killer_race]", killer.name());
             }
             else
                 empTitle2 = text("GNN_EXTINCTION_UNKNOWN_KILLER");
