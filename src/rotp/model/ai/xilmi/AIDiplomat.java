@@ -603,6 +603,10 @@ public class AIDiplomat implements Base, Diplomat {
 
         v.embassy().resetPactTimer();
         
+        //ail: We don't want a nap with who we think want to go to war with later on or are even already preparing one for
+        if(requestor == empire.generalAI().bestVictim() || empire.enemies().contains(requestor))
+            return v.refuse(DialogueManager.DECLINE_OFFER);
+        
         float adjustedRelations = v.embassy().relations();
         adjustedRelations += leaderAcceptPactMod(requestor);
         adjustedRelations += requestor.diplomacyBonus();
@@ -632,7 +636,7 @@ public class AIDiplomat implements Base, Diplomat {
         }
         if (!canOfferPact(v.empire()))
             return false;
-        if(empire.enemies().contains(v.empire()))
+        if(empire.enemies().contains(v.empire()) || v.empire() == empire.generalAI().bestVictim())
         {
             return false;
         }
@@ -726,7 +730,9 @@ public class AIDiplomat implements Base, Diplomat {
     public boolean willingToOfferJointWar(Empire friend, Empire target) {
         // this method is called only for targets that we are at war with
         // or targets we are preparing for war with
-        
+        // only ask people who we are in real contact with
+        if (!empire.inEconomicRange(friend.id))
+            return false;
         if (friend.isPlayerControlled()) {
             EmpireView v = empire.viewForEmpire(friend);
             if (!v.otherView().embassy().readyForJointWar())
@@ -738,7 +744,7 @@ public class AIDiplomat implements Base, Diplomat {
         // if he's allied with the target, don't bother
         if (friend.alliedWith(target.id))
             return false;
-        // if he's not in economic range, don't bother
+        // if he's not in ship range, don't bother
         if (!friend.inShipRange(target.id))
             return false;
         return true;
@@ -750,11 +756,15 @@ public class AIDiplomat implements Base, Diplomat {
             DiplomaticNotification.create(requestor.viewForEmpire(empire), DialogueManager.OFFER_JOINT_WAR, target);
             return null;
         }
-
+        
         if (empire.atWarWith(target.id))
             return DiplomaticReply.answer(false, "Already at war with that empire");
 
         EmpireView v = empire.viewForEmpire(requestor);
+        
+        // not helping someone whom I don't have real contact with
+        if (!empire.inEconomicRange(requestor.id))
+            return v.refuse(DialogueManager.DECLINE_OFFER, target);
 
         // never willing to declare war on an ally
         if (empire.alliedWith(target.id))
@@ -1308,20 +1318,10 @@ public class AIDiplomat implements Base, Diplomat {
                 }
                 else
                 {
-                    if(empire.enemies().isEmpty())
+                    if(wantToDeclareWar(view, true))
                     {
-                        if(view.empire() == empire.generalAI().bestVictim())
-                        {
-                            //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" starts Incident-War ("+warIncident.toString()+") vs. "+view.empire().name()+" (best Victim)");
-                            beginIncidentWar(view, warIncident);
+                        beginIncidentWar(view, warIncident);
                             return true;
-                        }
-                        if(view.empirePower() < 1.0f)
-                        {
-                            //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" starts Incident-War ("+warIncident.toString()+") vs. "+view.empire().name()+" (weaker)");
-                            beginIncidentWar(view, warIncident);
-                            return true;
-                        }
                     }   
                 }
             }
@@ -1388,7 +1388,7 @@ public class AIDiplomat implements Base, Diplomat {
             {
                 if(orbiting.empId != v.empId())
                     continue;
-                totalPotentialBombard += orbiting.expectedBombardDamage() / current.colony().untargetedHitPoints() * current.colony().population() / current.colony().maxSize();
+                totalPotentialBombard += orbiting.expectedBombardDamage() / (200 * current.colony().maxSize());
             }
             for(ShipFleet incoming : current.incomingFleets())
             {
@@ -1396,19 +1396,25 @@ public class AIDiplomat implements Base, Diplomat {
                     continue;
                 if(!empire.visibleShips().contains(incoming))
                     continue;
-                totalPotentialBombard += incoming.expectedBombardDamage(current) / current.colony().untargetedHitPoints() * current.colony().population() / current.colony().maxSize();
+                totalPotentialBombard += incoming.expectedBombardDamage(current) / (200 * current.colony().maxSize());
             }
+            totalPotentialBombard += empire.enemyTransportsInTransit(current) / current.colony().maxSize();
         }
         return totalPotentialBombard >= 1.0f;
     }
     @Override
     public boolean wantToDeclareWarOfOpportunity(EmpireView v) {
+        return wantToDeclareWar(v, false);
+    }
+    public boolean wantToDeclareWar(EmpireView v, boolean overrideBestVictim) {
         //System.out.println(empire.name()+" atpeace: "+v.embassy().atPeace()+" no enemies:  "+empire.enemies().isEmpty());
         if (v.embassy().atPeace())
         {
             return false;
         }
         Empire bestVictim = empire.generalAI().bestVictim();
+        if(overrideBestVictim)
+            bestVictim = v.empire();
         if(v.empire() == bestVictim)
         {
             boolean warAllowed = false;

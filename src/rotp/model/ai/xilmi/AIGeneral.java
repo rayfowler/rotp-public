@@ -648,6 +648,9 @@ public class AIGeneral implements Base, General {
             float relationshipFactor = 100 - ev.embassy().relations();
             float currentScore = relationshipFactor * empire.systemsInShipRange(emp).size() * empire.systemsForCiv(emp).size() / empire.powerLevel(emp);
             //System.out.print("\n"+empire.name()+": Considering "+emp.name()+" with Score of: "+currentScore+" relationshipFactor: "+relationshipFactor+" sys: "+empire.systemsInShipRange(emp).size()+" power: "+empire.powerLevel(emp));
+            //ail: drastically reduce score for those I have a NAP as nap-breaking makes others mad
+            if(empire.pactWith(emp.id))
+                currentScore /= 3;
             if(currentScore > highestScore)
             {
                 highestScore = currentScore;
@@ -688,8 +691,8 @@ public class AIGeneral implements Base, General {
         {
             dr = totalProductionReachableByEnemies / (totalReachableEnemyProduction + totalProductionReachableByEnemies);
         }
-        //System.out.print("\n"+empire.name()+" defenseRatio: "+defenseRatio);
         defenseRatio = dr;
+        System.out.print("\n"+empire.name()+" defenseRatio: "+defenseRatio);
         return defenseRatio;
     }
     @Override

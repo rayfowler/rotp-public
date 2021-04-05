@@ -121,6 +121,20 @@ public class NewShipTemplate implements Base {
             float score = 0;
             if(count >= 1)
                 score = design.spaceUsed() / design.totalSpace();
+            if(role.BOMBER == role)
+            {
+                boolean hasBombs = false;
+                for (int j=0; j<maxWeapons(); j++)
+                {
+                    if(design.weapon(j).groundAttacksOnly())
+                    {
+                        hasBombs = true;
+                        break;
+                    }
+                }
+                if (!hasBombs)
+                    score = 0;
+            }
             for (int j=0;j<maxSpecials();j++)
                 if(!design.special(j).isNone())
                     score *= 1.1;

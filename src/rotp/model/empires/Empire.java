@@ -974,7 +974,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         boolean[] enemyMap = enemyMap();
         for (Ship sh: visibleShips) {
             if (sh.isTransport()) {
-                if (enemyMap[sh.empId()] && (sh.destSysId() == s.id))
+                if (enemyMap[sh.empId()] && (sh.destSysId() == s.id) && !((Transport)sh).surrenderOnArrival())
                     transports += ((Transport)sh).size();
             }
         }

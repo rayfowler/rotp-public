@@ -49,7 +49,8 @@ public class ShipWeapon extends ShipComponent {
 
         float shieldMod = source.targetShieldMod(this);
         float shieldLevel = shieldMod * target.shieldLevel();
-        float dmg = firepower(shieldLevel);
+        //ail: we multiply our damage by the amount of weapons shooting
+        float dmg = firepower(shieldLevel) * num;
 		
 		// modnar: account for planetDamageMod()
 		// correctly calculate damage estimate for attacking colony (in round-about way)
@@ -64,13 +65,8 @@ public class ShipWeapon extends ShipComponent {
 		
         if (dmg == 0)
             return 0;
-
-        if (isStreamingWeapon() && (dmg > target.maxHits()))
-            return (num*dmg/target.maxHits());
-        else if (dmg < target.maxHits())
-            return  num / (float) Math.ceil(target.maxHits() / dmg);
-        else
-            return num;
+        //ail: The only thing that makes sense to return here is our total damage divided by the target's hitpoints
+        return dmg/target.maxHits();
     }
     @Override
     public float estimatedBombardDamage(CombatStack source, CombatStackColony target) {
