@@ -38,8 +38,8 @@ MAIN_SCOUT_TITLE                  | I Explore A New Star System
 MAIN_COLONIZE_TITLE               | I am orbiting %1, an uncolonized system.
 MAIN_COLONIZE_ANIMATION_TITLE     | In the year %1, I form a new colony.
 MAIN_ALERT_SPY_CAPTURED           | I have captured a spy from the [alien_empire], forcing a confession of their %2 activities.
-MAIN_ALERT_TRANSPORTS_KILLED      | My attempts to reach %2 have been stopped by defending [alien_race] forces.
-MAIN_ALERT_INVADERS_KILLED        | [alien_race] transports attempting to invade %2 have been completely destroyed by me.
+MAIN_ALERT_TRANSPORTS_KILLED      | My attempts to reach %1 have been stopped by defending [alien_race] forces.
+MAIN_ALERT_INVADERS_KILLED        | %2 [alien_race] transports attempting to invade %1 have been completely destroyed by me.
 MAIN_BOMBARD_TITLE                | I am orbiting an enemy [alien_race] colony.
 
 TECH_RESEARCH_COMPUTER            | I must select the next computer technology to focus on.

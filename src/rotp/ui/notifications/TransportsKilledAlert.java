@@ -29,7 +29,9 @@ public class TransportsKilledAlert extends GameAlert {
     private String systemName() { return player().sv.name(system.id); }
     @Override
     public String description() {
-        return text("MAIN_ALERT_TRANSPORTS_KILLED", empire.raceName(), systemName(), str(num));
+        String desc = text("MAIN_ALERT_TRANSPORTS_KILLED", systemName(), str(num));
+        desc = empire.replaceTokens(desc, "alien");
+        return desc;
     }
     private TransportsKilledAlert(Empire e, StarSystem s, int n) {
         empire = e;
