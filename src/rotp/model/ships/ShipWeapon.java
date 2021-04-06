@@ -36,6 +36,9 @@ public class ShipWeapon extends ShipComponent {
         float min = minDamage();
         float max = maxDamage();
         float shd = shield * shieldMod();
+        //ail: the line above gets only the shield-mod from oracle interface but not from the weapon itself
+        if(isBeamWeapon())
+            shd *= ((ShipWeaponBeam)(this)).shieldMod();
         float dmg = (summate(max-shd) - summate(min-shd-1)) / (max-min+1);
         return attacksPerRound() * dmg;
     }
@@ -46,22 +49,20 @@ public class ShipWeapon extends ShipComponent {
     public float estimatedKills(CombatStack source, CombatStack target, int num) {
         if (groundAttacksOnly() && !target.isColony())
             return 0;
-
-        float shieldMod = source.targetShieldMod(this);
-        float shieldLevel = shieldMod * target.shieldLevel();
+        float shieldLevel = target.shieldLevel();
         //ail: we multiply our damage by the amount of weapons shooting
         float dmg = firepower(shieldLevel) * num;
 		
-		// modnar: account for planetDamageMod()
-		// correctly calculate damage estimate for attacking colony (in round-about way)
-		// beams and torpedoes do half damage against colonies, planetDamageMod() = 0.5f
-		// other weapons have planetDamageMod() = 1.0f, so this correction would have no effect for them
-		// average(beamMax/2-shield, beamMin/2-shield)  // correct formula
-		// = average(beamMax-2*shield, beamMin-2*shield)/2  // equivalent formula used here
-		if (target.isColony()) {
-		    shieldLevel = shieldMod * target.shieldLevel() / planetDamageMod();
-			dmg = firepower(shieldLevel) * planetDamageMod();
-		}
+        // modnar: account for planetDamageMod()
+        // correctly calculate damage estimate for attacking colony (in round-about way)
+        // beams and torpedoes do half damage against colonies, planetDamageMod() = 0.5f
+        // other weapons have planetDamageMod() = 1.0f, so this correction would have no effect for them
+        // average(beamMax/2-shield, beamMin/2-shield)  // correct formula
+        // = average(beamMax-2*shield, beamMin-2*shield)/2  // equivalent formula used here
+        if (target.isColony()) {
+            shieldLevel = target.shieldLevel() / planetDamageMod();
+            dmg = firepower(shieldLevel) * num * planetDamageMod();
+        }
 		
         if (dmg == 0)
             return 0;

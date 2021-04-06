@@ -216,12 +216,14 @@ public class AIGeneral implements Base, General {
         if (!empire.canSendTransportsTo(sys))
             return false;
         float pop = empire.sv.population(sys.id);
-        float needed = troopsNecessaryToTakePlanet(v, sys);   
-        // modnar: scale back willingness to take losses
-        // Willing to take 1.1:1 losses to invade normal 100-pop size planet with 200 factories.
-        // For invading normal 80-pop size planet with 320 factories, be willing to take ~1:1 losses.
-        float value = takePlanetValue(sys) * 1.1f;
-        return needed < pop * value;
+        float facSavings = empire.sv.factories(sys.id) * (empire.tech().baseFactoryCost() - 2) + sys.planet().alienFactories(empire.id) * empire.tech().baseFactoryCost();
+        float needed = troopsNecessaryToTakePlanet(v, sys);
+        //ail: If the population we have to expend costs less than a colonizer and the factories built there, it's worth it already!
+        float invasionCost = needed * empire.tech().populationCost();
+        //we gain factories, save us from building a colonizer and killing enemy-population also has value to us of half of what they pay for it
+        float invasionGain = facSavings + empire.shipLab().colonyDesign().cost() + pop * empire.tech().populationCost() / 2;
+        //System.out.println(empire.name()+": Considering invasion of "+sys.name()+" cost: "+invasionCost+" gain: "+invasionGain+" fac: "+facSavings +" cs: "+empire.shipLab().colonyDesign().cost()+" kills: "+pop * empire.tech().populationCost());
+        return invasionCost <= invasionGain;
     }
     public void orderRebellionFleet(StarSystem sys, float enemyFleetSize) {
         if (enemyFleetSize == 0)
@@ -250,7 +252,7 @@ public class AIGeneral implements Base, General {
         //float troops0 = troopsNecessaryToBypassBases(target);
         float troops1 = mult*troopsNecessaryToTakePlanet(v, target);
         int alreadySent = empire.transportsInTransit(target);
-        float troopsDesired = troops1 + empire.sv.currentSize(target.id) * 0.75f - alreadySent;
+        float troopsDesired = troops1 + empire.sv.currentSize(target.id) * 0.25f - alreadySent;
 
         if (troopsDesired < 1)
             return;
@@ -647,7 +649,7 @@ public class AIGeneral implements Base, General {
             EmpireView ev = empire.viewForEmpire(emp);
             float relationshipFactor = 100 - ev.embassy().relations();
             float currentScore = relationshipFactor * empire.systemsInShipRange(emp).size() * empire.systemsForCiv(emp).size() / empire.powerLevel(emp);
-            //System.out.print("\n"+empire.name()+": Considering "+emp.name()+" with Score of: "+currentScore+" relationshipFactor: "+relationshipFactor+" sys: "+empire.systemsInShipRange(emp).size()+" power: "+empire.powerLevel(emp));
+            //System.out.println(empire.name()+": Considering "+emp.name()+" with Score of: "+currentScore+" relationshipFactor: "+relationshipFactor+" sys: "+empire.systemsInShipRange(emp).size()+" power: "+empire.powerLevel(emp));
             //ail: drastically reduce score for those I have a NAP as nap-breaking makes others mad
             if(empire.pactWith(emp.id))
                 currentScore /= 3;
@@ -692,7 +694,7 @@ public class AIGeneral implements Base, General {
             dr = totalProductionReachableByEnemies / (totalReachableEnemyProduction + totalProductionReachableByEnemies);
         }
         defenseRatio = dr;
-        System.out.print("\n"+empire.name()+" defenseRatio: "+defenseRatio);
+        //System.out.print("\n"+empire.name()+" defenseRatio: "+defenseRatio);
         return defenseRatio;
     }
     @Override
@@ -764,5 +766,11 @@ public class AIGeneral implements Base, General {
         additional = max(additional, 0);
         additionalColonizersToBuild = additional;
         return additionalColonizersToBuild;
+    }
+    @Override
+    public boolean allowedToBomb(Empire emp) { 
+        if(empire.enemies().contains(emp))
+            return true;
+        return false;
     }
 }

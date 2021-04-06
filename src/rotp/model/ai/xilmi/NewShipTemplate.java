@@ -566,51 +566,6 @@ public class NewShipTemplate implements Base {
         return remainingSpace;
     }
  
-    private void upgradeBeamRangeSpecial(ShipDesigner ai, ShipDesign d) {
-        // if not using a beam weapon, then skip
-        if (!d.weapon(0).isBeamWeapon())
-            return;
-        // only cloaking makes sure we can outrange 
-        if (d.allowsCloaking())
-            return;
-        // if we don't have room for more specials, we can skip
-        int slot1 = d.nextEmptySpecialSlot();
-        if (slot1 < 0)
-            return;
-
-        // go through specials that improve compat speed (inertials)
-        int addlRange = 0;
-        float wpnRangeFactor = 0.95f;
-
-        List<ShipSpecial> specials = ai.lab().specials();
-        for (ShipSpecial spec: specials) {
-
-            boolean notInstalledAlready = true;
-            for (int i = 0; i<ShipDesign.maxSpecials; i++) {
-                if (d.special(i).name().equals(spec.name())) // ugly as hell
-                    notInstalledAlready = false;
-            }
-
-            if (notInstalledAlready) {
-                int rangeBonus = spec.beamRangeBonus();
-                if (rangeBonus > 0) {
-                    int rangeDiff = rangeBonus - addlRange;
-                    int wpnCount = d.wpnCount(0);
-                    int minNewWpnCount = (int) Math.ceil(wpnCount*Math.pow(wpnRangeFactor, rangeDiff));
-                    // calc reduction in space and how many weapons need to be removed
-                    float spaceLost = d.availableSpace() + d.special(slot1).space(d) - spec.space(d);
-                    int wpnRemoved = (int) Math.floor(spaceLost/ d.weapon(0).space(d));
-                    int newWpnCount = wpnCount+wpnRemoved;
-                    if (newWpnCount >= minNewWpnCount) {
-                        addlRange = rangeBonus;
-                        d.special(slot1,spec);
-                        d.wpnCount(0,newWpnCount);
-                    }
-                }
-            }
-        }
-    }
-
     public static List<TechTree> assessRivalsTech(Empire emp, int rivalsNum) {
         List<TechTree> rivalTech = new ArrayList<>();
         SortedMap<Float, EmpireView> relationsMap = new TreeMap<>();

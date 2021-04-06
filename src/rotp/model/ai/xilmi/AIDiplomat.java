@@ -779,6 +779,10 @@ public class AIDiplomat implements Base, Diplomat {
             return v.refuse(DialogueManager.DECLINE_PEACE_TREATY, target);
         }
         
+        //ail: if we are preparing a war against them anyways, we can also make it official here
+        if(empire.enemies().contains(target) && !empire.warEnemies().contains(target))
+            return agreeToJointWar(requestor, target);
+        
         if(!empire.enemies().isEmpty())
             return v.refuse(DialogueManager.DECLINE_OFFER, target);
 
@@ -1137,6 +1141,11 @@ public class AIDiplomat implements Base, Diplomat {
 //----------------
     @Override
     public void makeDiplomaticOffers(EmpireView v) {
+        if(empire.enemies().contains(v.empire()) && !empire.warEnemies().contains(v.empire()))
+        {
+            if(!empire.inShipRange(v.empId()))
+                v.embassy().endWarPreparations();
+        }
         if (v.embassy().contactAge() < 2)
             return;
         if (v.embassy().unity() || v.embassy().finalWar())
@@ -1288,6 +1297,8 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
         if (!view.inEconomicRange())
             return false;
+        if(empire.enemies().contains(view.empire()))
+            return false;
         
         // look at new incidents. If any trigger war, pick
         // the one with the greatest severity
@@ -1320,6 +1331,7 @@ public class AIDiplomat implements Base, Diplomat {
                 {
                     if(wantToDeclareWar(view, true))
                     {
+                        //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" starts Incident-War ("+warIncident.toString()+") vs. "+view.empire().name());
                         beginIncidentWar(view, warIncident);
                             return true;
                     }   
@@ -1327,19 +1339,17 @@ public class AIDiplomat implements Base, Diplomat {
             }
         }
         
-        // must break alliance before declaring war
-        if (wantToDeclareWarOfOpportunity(view)
-                || wantToDeclareWarOfPrevention(view)) {
+        if (wantToDeclareWarOfOpportunity(view)) {
             //ail: even if the real reason is because of geopolitics, we can still blame it on an incident, if there ever was one, so the player thinks it is their own fault
-            if(worstWarnableIncident(view.embassy().allIncidents()) != null)
-                beginIncidentWar(view, worstWarnableIncident(view.embassy().allIncidents()));
-            else
-                beginOpportunityWar(view);
-            /*if(wantToDeclareWarOfOpportunity(view))
-                System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" starts Opportunity-War vs. "+view.empire().name());
-            if(wantToDeclareWarOfPrevention(view))
-                System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" starts Prevention-War vs. "+view.empire().name());*/
+            //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" starts Opportunity-War vs. "+view.empire().name());
+            beginOpportunityWar(view);
             return true;          
+        }
+        
+        if (wantToDeclareWarOfPrevention(view)) {
+            //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" starts Prevention-War vs. "+view.empire().name());            
+            beginErraticWar(view);
+            return true;
         }
         return false;
     }
@@ -1398,7 +1408,6 @@ public class AIDiplomat implements Base, Diplomat {
                     continue;
                 totalPotentialBombard += incoming.expectedBombardDamage(current) / (200 * current.colony().maxSize());
             }
-            totalPotentialBombard += empire.enemyTransportsInTransit(current) / current.colony().maxSize();
         }
         return totalPotentialBombard >= 1.0f;
     }
@@ -1487,6 +1496,11 @@ public class AIDiplomat implements Base, Diplomat {
         log(view+" - Declaring war based on opportunity");
         //System.out.print("\n"+empire.name()+" starts opportunity-war on "+view.empire().name());
         view.embassy().beginWarPreparations(DialogueManager.DECLARE_OPPORTUNITY_WAR, null);
+    }
+    //ail: I need a war that isn't checked for still being valid for our prevention-war
+    private void beginErraticWar(EmpireView view) {
+        log(view+" - Declaring war based on erratic");
+        view.embassy().beginWarPreparations(DialogueManager.DECLARE_ERRATIC_WAR, null);
     }
     @Override
     public Empire councilVoteFor(Empire civ1, Empire civ2) {

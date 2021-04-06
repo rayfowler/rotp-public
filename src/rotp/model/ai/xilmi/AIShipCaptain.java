@@ -437,7 +437,6 @@ public class AIShipCaptain implements Base, ShipCaptain {
                     enemies().add(st);
             }
         }
-
         // calculate ally kills & deaths
         float allyKills = 0;
         float enemyKills = 0;
@@ -458,8 +457,11 @@ public class AIShipCaptain implements Base, ShipCaptain {
 //        log("friends:"+friends.size()+"   foes:"+foes.size());
         for (CombatStack st1 : friends) {
             float maxKillValue = -1;
+            float pctOfMaxHP = ((st1.num-1) * st1.maxHits + st1.hits) / (st1.num * st1.maxHits);
             for (CombatStack st2: foes) {
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
+                //ail: If our ship is badly damaged, consider at as weaker
+                killPct *= pctOfMaxHP;
                 //ail: 0 damage possible when they have repulsor and we can't outrange
                 if(st1.maxFiringRange(st1) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
                 {
@@ -467,7 +469,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                     killPct = 0;
                 }
                 float killValue = killPct*st2.num*st2.designCost();
-                //System.out.print("\n"+stack.fullName()+" "+st1.fullName()+" thinks it can kill "+killPct+" val: "+killValue+" of "+st2.fullName());
+                //System.out.print("\n"+stack.fullName()+" "+st1.fullName()+" thinks it can kill "+killPct+" val: "+killValue+" of "+st2.fullName()+" it has: "+pctOfMaxHP);
 //                log(st1.name()+"="+killPct+"    "+st2.name());
                 if (killValue > maxKillValue)
                     maxKillValue = killValue;
@@ -476,8 +478,10 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
        for (CombatStack st1 : foes) {
             float maxKillValue = -1;
+            float pctOfMaxHP = ((st1.num-1) * st1.maxHits + st1.hits) / (st1.num * st1.maxHits);
             for (CombatStack st2: friends) {
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
+                killPct *= pctOfMaxHP;
                 if(st1.maxFiringRange(st1) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
                 {
                     //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
@@ -485,7 +489,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 }
                 float killValue = killPct*st2.num*st2.designCost();
 //                log(st1.name()+"="+killPct+"    "+st2.name());
-                //System.out.print("\n"+stack.fullName()+" "+st1.fullName()+" thinks it can kill "+killPct+" val: "+killValue+" of "+st2.fullName());
+                //System.out.print("\n"+stack.fullName()+" "+st1.fullName()+" thinks it can kill "+killPct+" val: "+killValue+" of "+st2.fullName()+" it has: "+pctOfMaxHP);
                 if (killValue > maxKillValue)
                     maxKillValue = killValue;
             }
