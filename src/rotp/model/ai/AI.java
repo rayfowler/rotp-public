@@ -235,6 +235,10 @@ public class AI implements Base {
             return false;
         }
         
+        // ail: asking our general for permission
+        if(!empire.generalAI().allowedToBomb(sys.empire()))
+            return false;
+        
         // estimate bombardment damage and resulting population loss
         float damage = fl.expectedBombardDamage();
         float popLoss = damage / 200;

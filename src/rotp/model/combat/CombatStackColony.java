@@ -142,7 +142,11 @@ public class CombatStackColony extends CombatStack {
     }
     @Override
     public float estimatedKills(CombatStack target) {
-        return missile.estimatedKills(this, target, num);
+        //ail: take attack and defense into account
+        float hitPct = (5 + attackLevel - target.missileDefense) / 10;
+        hitPct = max(.05f, hitPct);
+        //ail: each missile base fires 3 missiles, even in the estimate
+        return hitPct * missile.estimatedKills(this, target, 3*num);
     }
     @Override
     public boolean canAttack(CombatStack target) {

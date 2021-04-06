@@ -437,14 +437,10 @@ public class AIShipCaptain implements Base, ShipCaptain {
                     enemies().add(st);
             }
         }
-
         // calculate ally kills & deaths
         float allyKills = 0;
         float enemyKills = 0;
         
-        float allyValue = 0;
-        float enemyValue = 0;
-
         List<CombatStack> friends = new ArrayList<>();
         for (CombatStack ally: allies()) {
             if (ally.isArmed())
@@ -461,42 +457,39 @@ public class AIShipCaptain implements Base, ShipCaptain {
 //        log("friends:"+friends.size()+"   foes:"+foes.size());
         for (CombatStack st1 : friends) {
             float maxKillValue = -1;
-            float valueFactor = 1.0f;
-            //ail: Colony-ships seem to overestimate their fighting-ability
-            if(st1.design() != null && st1.design().isColonyShip())
-            {
-                valueFactor = 0.1f;
-            }
+            float pctOfMaxHP = ((st1.num-1) * st1.maxHits + st1.hits) / (st1.num * st1.maxHits);
             for (CombatStack st2: foes) {
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
+                //ail: If our ship is badly damaged, consider at as weaker
+                killPct *= pctOfMaxHP;
                 //ail: 0 damage possible when they have repulsor and we can't outrange
                 if(st1.maxFiringRange(st1) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
                 {
                     //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
                     killPct = 0;
-                    valueFactor = 0;
                 }
                 float killValue = killPct*st2.num*st2.designCost();
+                //System.out.print("\n"+stack.fullName()+" "+st1.fullName()+" thinks it can kill "+killPct+" val: "+killValue+" of "+st2.fullName()+" it has: "+pctOfMaxHP);
 //                log(st1.name()+"="+killPct+"    "+st2.name());
                 if (killValue > maxKillValue)
                     maxKillValue = killValue;
             }
-            allyValue += st1.designCost() * st1.num * valueFactor;
             allyKills += maxKillValue;
         }
        for (CombatStack st1 : foes) {
             float maxKillValue = -1;
-            float valueFactor = 1.0f;
-            //ail: We also don't want to overestimate enemy-colony-ships
-            if(st1.design() != null && st1.design().isColonyShip())
-            {
-                valueFactor = 0.1f;
-            }
-            enemyValue += st1.designCost() * st1.num * valueFactor;
+            float pctOfMaxHP = ((st1.num-1) * st1.maxHits + st1.hits) / (st1.num * st1.maxHits);
             for (CombatStack st2: friends) {
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
+                killPct *= pctOfMaxHP;
+                if(st1.maxFiringRange(st1) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
+                {
+                    //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
+                    killPct = 0;
+                }
                 float killValue = killPct*st2.num*st2.designCost();
 //                log(st1.name()+"="+killPct+"    "+st2.name());
+                //System.out.print("\n"+stack.fullName()+" "+st1.fullName()+" thinks it can kill "+killPct+" val: "+killValue+" of "+st2.fullName()+" it has: "+pctOfMaxHP);
                 if (killValue > maxKillValue)
                     maxKillValue = killValue;
             }
@@ -514,14 +507,9 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 //ail: willing to take more losses for obsolte designs or when defending
                 retreatRatio = 1.2f;
             }
-            float valueFactor = 1.0f;
-            if(enemyValue > 0 && allyValue > 0)
-            {
-                valueFactor = enemyValue / allyValue;
-            }
             log("retreat ratio: "+retreatRatio+"   enemyKillValue:"+enemyKills+"  allyKillValue:"+allyKills);
-            //System.out.print("\n"+stack.fullName()+" retreat: "+(enemyKills / allyKills) * valueFactor+" vf: "+valueFactor);
-            return ((enemyKills / allyKills) * valueFactor > retreatRatio/1.2f); // modnar: adjust AI to accept less losses, more likely to retreat
+            //System.out.print("\n"+stack.fullName()+" enemy-superiority: "+(enemyKills / allyKills));
+            return ((enemyKills / allyKills) > retreatRatio/1.2f); // modnar: adjust AI to accept less losses, more likely to retreat
         }
     }
     @Override

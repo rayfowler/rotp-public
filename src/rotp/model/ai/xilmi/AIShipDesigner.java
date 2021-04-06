@@ -217,7 +217,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         boolean weaponsNeeded = !empire.contactedEmpires().isEmpty();
         // current design is "properlyArmed" if it is armed &weapons needed or unarmed & weapons unneeded
         //always try to make extended, if possible, additional-cost is worth it and once it fits on large, the costs won't matter much anyways
-        boolean extendedFuelNeeded = true;
+        boolean extendedFuelNeeded = !empire.tech().topFuelRangeTech().unlimited;
 
         ShipDesign newDesign = newColonyDesign(weaponsNeeded, extendedFuelNeeded);
 

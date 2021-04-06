@@ -300,7 +300,7 @@ public class AIDiplomat implements Base, Diplomat {
         while (!availableTechs.isEmpty()) {
             Tech wantedTech = empire.ai().scientist().mostDesirableTech(availableTechs);
             availableTechs.remove(wantedTech);
-            if (empire.ai().scientist().researchValue(wantedTech) > 0) {
+            if (empire.ai().scientist().researchValue(wantedTech) > 1) {
                 List<Tech> counterTechs = v.empire().diplomatAI().techsRequestedForCounter(empire, wantedTech);
                 if (!counterTechs.isEmpty()) {
                     List<Tech> previouslyOffered = v.embassy().alreadyOfferedTechs(wantedTech);
@@ -603,6 +603,10 @@ public class AIDiplomat implements Base, Diplomat {
 
         v.embassy().resetPactTimer();
         
+        //ail: We don't want a nap with who we think want to go to war with later on or are even already preparing one for
+        if(requestor == empire.generalAI().bestVictim() || empire.enemies().contains(requestor))
+            return v.refuse(DialogueManager.DECLINE_OFFER);
+        
         float adjustedRelations = v.embassy().relations();
         adjustedRelations += leaderAcceptPactMod(requestor);
         adjustedRelations += requestor.diplomacyBonus();
@@ -632,7 +636,7 @@ public class AIDiplomat implements Base, Diplomat {
         }
         if (!canOfferPact(v.empire()))
             return false;
-        if(empire.enemies().contains(v.empire()))
+        if(empire.enemies().contains(v.empire()) || v.empire() == empire.generalAI().bestVictim())
         {
             return false;
         }
@@ -673,7 +677,6 @@ public class AIDiplomat implements Base, Diplomat {
                 return v.refuse(DialogueManager.DECLINE_ANNOYED);
             }
         }
-
         v.embassy().noteRequest();
 
         List<Empire> myEnemies = v.owner().warEnemies();
@@ -682,26 +685,10 @@ public class AIDiplomat implements Base, Diplomat {
             if (hisAllies.contains(enemy))
                 return v.refuse(DialogueManager.DECLINE_ENEMY_ALLY, enemy);
         }
-        
-        // be more willing if the requestor is someone we can use the alliance
-        // to help us fight a war
-        int joinWarBonus = 0;
-        for (Empire enemy: myEnemies) {
-            if (!requestor.atWarWith(enemy.id) && requestor.inShipRange(enemy.id))
-                joinWarBonus = 30;
-        }
-        int erraticLeaderPenalty = requestor.leader().isErratic() ? -40 : 0;
- 
-        // if we don't like the requestor well enough, refuse now
-        float adjustedRelations = v.embassy().relations();
-        adjustedRelations += leaderAcceptAllianceMod(requestor);
-        adjustedRelations += requestor.diplomacyBonus();
-        adjustedRelations += joinWarBonus;
-        adjustedRelations += erraticLeaderPenalty;
-        if (adjustedRelations < 60)
+        if(willingToOfferAlliance(requestor))
+            return signAlliance(requestor);
+        else
             return refuseOfferAlliance(requestor);
-        
-        return signAlliance(requestor);
     }
     public DiplomaticReply signAlliance(Empire requestor) {
         EmpireView v = empire.viewForEmpire(requestor);
@@ -722,27 +709,8 @@ public class AIDiplomat implements Base, Diplomat {
     }
     @Override
     public boolean willingToOfferAlliance(Empire e) {
-        EmpireView v = empire.viewForEmpire(e);
-        // if we are asking the player, respect the alliance-countdown
-        // timer to avoid spamming player with requests
-        if (e.isPlayerControlled()) {
-            //return true;
-            if (!v.otherView().embassy().readyForAlliance())
-                return false;
-        }    
-        // is asking for an alliance even allowed per game rules
-        if (!canOfferAlliance(e))
-            return false;       
-        if (v.embassy().alliedWithEnemy())
-            return false;
-        if(empire.enemies().contains(v.empire()))
-        {
-            return false;
-        }
-        // do we like the other to want to join an alliance
-        float adjustedRelations = v.embassy().relations();
-        adjustedRelations += leaderAcceptAllianceMod(e);
-        return adjustedRelations > 70;
+        //ail: Alliances are just a broken game mechanic. It defies the categorical imperative: If everyone would use it, it would make the whole game pointless
+        return false;
     }
 //-----------------------------------
 //  JOINT WARS
@@ -762,7 +730,9 @@ public class AIDiplomat implements Base, Diplomat {
     public boolean willingToOfferJointWar(Empire friend, Empire target) {
         // this method is called only for targets that we are at war with
         // or targets we are preparing for war with
-        
+        // only ask people who we are in real contact with
+        if (!empire.inEconomicRange(friend.id))
+            return false;
         if (friend.isPlayerControlled()) {
             EmpireView v = empire.viewForEmpire(friend);
             if (!v.otherView().embassy().readyForJointWar())
@@ -774,7 +744,7 @@ public class AIDiplomat implements Base, Diplomat {
         // if he's allied with the target, don't bother
         if (friend.alliedWith(target.id))
             return false;
-        // if he's not in economic range, don't bother
+        // if he's not in ship range, don't bother
         if (!friend.inShipRange(target.id))
             return false;
         return true;
@@ -786,28 +756,58 @@ public class AIDiplomat implements Base, Diplomat {
             DiplomaticNotification.create(requestor.viewForEmpire(empire), DialogueManager.OFFER_JOINT_WAR, target);
             return null;
         }
-
+        
         if (empire.atWarWith(target.id))
             return DiplomaticReply.answer(false, "Already at war with that empire");
 
         EmpireView v = empire.viewForEmpire(requestor);
+        
+        // not helping someone whom I don't have real contact with
+        if (!empire.inEconomicRange(requestor.id))
+            return v.refuse(DialogueManager.DECLINE_OFFER, target);
 
-        // never willing to declare war on an ally unless we are ruthless
-        if (empire.alliedWith(target.id) && !empire.leader().isRuthless())
+        // never willing to declare war on an ally
+        if (empire.alliedWith(target.id))
             return v.refuse(DialogueManager.DECLINE_NO_WAR_ON_ALLY, target);
         
-        // never willing to declare war on an NAP partner if we are honorable
-        if (empire.pactWith(target.id) && empire.leader().isHonorable())
+        // never willing to declare war on an NAP partner
+        if (empire.pactWith(target.id))
             return v.refuse(DialogueManager.DECLINE_OFFER, target);
         
         // if a peacy treaty is in effect with the target, then refuse
         if (empire.viewForEmpire(target.id).embassy().atPeace()) {
             return v.refuse(DialogueManager.DECLINE_PEACE_TREATY, target);
         }
+        
+        //ail: if we are preparing a war against them anyways, we can also make it official here
+        if(empire.enemies().contains(target) && !empire.warEnemies().contains(target))
+            return agreeToJointWar(requestor, target);
+        
+        if(!empire.enemies().isEmpty())
+            return v.refuse(DialogueManager.DECLINE_OFFER, target);
 
          // will always declare war if allied with the requestor and he is already at war with the target
         if (requestor.alliedWith(id(empire)) && requestor.atWarWith(target.id))
             return agreeToJointWar(requestor, target);
+        
+        //ail: if the target is our common enemy and together we are stronger than them, we'll accept without a bribe
+        //System.out.println(empire.galaxy().currentTurn()+" "+ requestor.name()+" asked "+empire.name()+" to declare joint war on "+target.name());
+        if(target == empire.generalAI().bestVictim())
+        {
+            float combinedPower = requestor.powerLevel(requestor) + empire.powerLevel(empire);
+            for(Empire targetWars:target.warEnemies())
+            {
+                if(targetWars == requestor || targetWars == empire)
+                    continue;
+                combinedPower += targetWars.powerLevel(targetWars);
+            }
+            //System.out.println(empire.galaxy().currentTurn()+" "+target.name()+" is best victim for "+empire.name()+" combined power: "+combinedPower+" their power: "+target.powerLevel(target));
+            if(combinedPower > target.powerLevel(target))
+            {
+                //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" agreed to support "+requestor.name()+" in their war against "+target.name());
+                return agreeToJointWar(requestor, target);
+            }
+        }
 
         int maxBribe = galaxy().numberTurns()*50;
         float bribeValue = bribeAmountToJointWar(target);
@@ -992,7 +992,7 @@ public class AIDiplomat implements Base, Diplomat {
             return v.accept(DialogueManager.RESPOND_STOP_SPYING);
         }
                    
-        float otherPower = empire.militaryPowerLevel(e);
+        float otherPower = e.militaryPowerLevel();
         float myPower = empire.militaryPowerLevel();
         float powerRatio = myPower/otherPower;
 
@@ -1027,7 +1027,7 @@ public class AIDiplomat implements Base, Diplomat {
             return v.accept(DialogueManager.RESPOND_STOP_SPYING);
         }
                    
-        float otherPower = empire.militaryPowerLevel(e);
+        float otherPower = e.militaryPowerLevel();
         float myPower = empire.militaryPowerLevel();
         float powerRatio = myPower/otherPower;
 
@@ -1058,7 +1058,7 @@ public class AIDiplomat implements Base, Diplomat {
             return v.otherView().accept(DialogueManager.RESPOND_STOP_ATTACKING);
         }
                    
-        float otherPower = empire.militaryPowerLevel(e);
+        float otherPower = e.militaryPowerLevel();;
         float myPower = empire.militaryPowerLevel();
         float powerRatio = myPower/otherPower;
 
@@ -1089,22 +1089,9 @@ public class AIDiplomat implements Base, Diplomat {
             DiplomaticNotification.create(view, DialogueManager.BREAK_ALLIANCE);
         return true;
     }
+    //ail: no good reason to ever break an alliance
     private boolean wantToBreakAlliance(EmpireView v) {
-        if (!v.embassy().alliance())
-            return false;
-
-        if (!empire.enemies().isEmpty())
-            return false;
-
-        if (v.embassy().treaty().wantToBreak(v.empire()))
-            return true;
-        
-        if (wantToDeclareWarOfOpportunity(v)) 
-            return true;
-        
-        float adjustedRelations = v.embassy().relations();
-        adjustedRelations += leaderPreserveTreatyMod();
-        return adjustedRelations < 20;
+        return false;
     }
     private boolean decidedToBreakPact(EmpireView view) {
         if (!wantToBreakPact(view))
@@ -1154,6 +1141,11 @@ public class AIDiplomat implements Base, Diplomat {
 //----------------
     @Override
     public void makeDiplomaticOffers(EmpireView v) {
+        if(empire.enemies().contains(v.empire()) && !empire.warEnemies().contains(v.empire()))
+        {
+            if(!empire.inShipRange(v.empId()))
+                v.embassy().endWarPreparations();
+        }
         if (v.embassy().contactAge() < 2)
             return;
         if (v.embassy().unity() || v.embassy().finalWar())
@@ -1185,53 +1177,41 @@ public class AIDiplomat implements Base, Diplomat {
         if (v.embassy().finalWar() || v.embassy().unity())
             return;
         
-        // we can issue praise even to people we don't like
-        if (decidedToIssuePraise(v))
-            return;
-
         // if this empire is at war with us or we are preparing
         // for war, then stop now. No more Mr. Nice Guy.
         List<Empire> enemies = empire.enemies();
         if (enemies.contains(v.empire()))
             return;
         
-        if (decidedToExchangeTech(v))
-            return;
-
+        // build a priority list for Joint War offers:
+        for (Empire target: empire.enemies()) {
+            if(target.powerLevel(target) > empire.powerLevel(empire))
+            {
+                if (willingToOfferJointWar(v.empire(), target)) {
+                    v.empire().diplomatAI().receiveOfferJointWar(v.owner(), target); 
+                    return;
+                }
+            }
+        }
+        
         if (willingToOfferTrade(v, v.trade().maxLevel())) {
             v.empire().diplomatAI().receiveOfferTrade(v.owner(), v.trade().maxLevel());
             return;
         }
-        if (willingToOfferPact(v)) {
-            v.empire().diplomatAI().receiveOfferPact(empire);
-            return;
-        }
+        
         if (willingToOfferAlliance(v.empire())) {
             v.empire().diplomatAI().receiveOfferAlliance(v.owner());
             return;
         }
-        // build a priority list for Joint War offers:
-        // 1. see if we can draw our ally into our existing war 
-        // 2. if not, what about the empire we are about to war with?
-        List<Empire> warEnemies = empire.warEnemies();
-        List<Empire> comingWarEnemies = empire.enemies();
-        comingWarEnemies.removeAll(warEnemies);
 
-        // ask only allies for now, to avoid spam
-        if (v.embassy().alliance()) {
-            for (Empire target: warEnemies) {
-                if (willingToRequestAllyToJoinWar(v.empire(), target)) {
-                    v.empire().diplomatAI().receiveOfferJointWar(v.owner(), target); 
-                    return;
-                }                
-            }            
-            for (Empire target: comingWarEnemies) {
-                if (willingToOfferJointWar(v.empire(), target)) {
-                    v.empire().diplomatAI().receiveOfferJointWar(v.owner(), target); 
-                    return;
-                }                
-            }
+        if (decidedToExchangeTech(v))
+            return;
+        
+        if (willingToOfferPact(v)) {
+            v.empire().diplomatAI().receiveOfferPact(empire);
+            return;
         }
+        decidedToIssuePraise(v);
     }
     private boolean decidedToIssuePraise(EmpireView view) {
         if (!view.inEconomicRange())
@@ -1317,6 +1297,8 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
         if (!view.inEconomicRange())
             return false;
+        if(empire.enemies().contains(view.empire()))
+            return false;
         
         // look at new incidents. If any trigger war, pick
         // the one with the greatest severity
@@ -1347,38 +1329,27 @@ public class AIDiplomat implements Base, Diplomat {
                 }
                 else
                 {
-                    if(empire.enemies().isEmpty())
+                    if(wantToDeclareWar(view, true))
                     {
-                        if(view.empire() == empire.generalAI().bestVictim())
-                        {
-                            //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" starts Incident-War ("+warIncident.toString()+") vs. "+view.empire().name()+" (best Victim)");
-                            beginIncidentWar(view, warIncident);
+                        //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" starts Incident-War ("+warIncident.toString()+") vs. "+view.empire().name());
+                        beginIncidentWar(view, warIncident);
                             return true;
-                        }
-                        if(view.empirePower() < 1.0f)
-                        {
-                            //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" starts Incident-War ("+warIncident.toString()+") vs. "+view.empire().name()+" (weaker)");
-                            beginIncidentWar(view, warIncident);
-                            return true;
-                        }
                     }   
                 }
             }
         }
         
-        // must break alliance before declaring war
-        if (wantToDeclareWarOfOpportunity(view)
-                || wantToDeclareWarOfPrevention(view)) {
+        if (wantToDeclareWarOfOpportunity(view)) {
             //ail: even if the real reason is because of geopolitics, we can still blame it on an incident, if there ever was one, so the player thinks it is their own fault
-            if(worstWarnableIncident(view.embassy().allIncidents()) != null)
-                beginIncidentWar(view, worstWarnableIncident(view.embassy().allIncidents()));
-            else
-                beginOpportunityWar(view);
-            /*if(wantToDeclareWarOfOpportunity(view))
-                System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" starts Opportunity-War vs. "+view.empire().name());
-            if(wantToDeclareWarOfPrevention(view))
-                System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" starts Prevention-War vs. "+view.empire().name());*/
+            //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" starts Opportunity-War vs. "+view.empire().name());
+            beginOpportunityWar(view);
             return true;          
+        }
+        
+        if (wantToDeclareWarOfPrevention(view)) {
+            //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" starts Prevention-War vs. "+view.empire().name());            
+            beginErraticWar(view);
+            return true;
         }
         return false;
     }
@@ -1427,7 +1398,7 @@ public class AIDiplomat implements Base, Diplomat {
             {
                 if(orbiting.empId != v.empId())
                     continue;
-                totalPotentialBombard += orbiting.expectedBombardDamage() / current.colony().untargetedHitPoints() * current.colony().population() / current.colony().maxSize();
+                totalPotentialBombard += orbiting.expectedBombardDamage() / (200 * current.colony().maxSize());
             }
             for(ShipFleet incoming : current.incomingFleets())
             {
@@ -1435,19 +1406,24 @@ public class AIDiplomat implements Base, Diplomat {
                     continue;
                 if(!empire.visibleShips().contains(incoming))
                     continue;
-                totalPotentialBombard += incoming.expectedBombardDamage(current) / current.colony().untargetedHitPoints() * current.colony().population() / current.colony().maxSize();
+                totalPotentialBombard += incoming.expectedBombardDamage(current) / (200 * current.colony().maxSize());
             }
         }
         return totalPotentialBombard >= 1.0f;
     }
     @Override
     public boolean wantToDeclareWarOfOpportunity(EmpireView v) {
+        return wantToDeclareWar(v, false);
+    }
+    public boolean wantToDeclareWar(EmpireView v, boolean overrideBestVictim) {
         //System.out.println(empire.name()+" atpeace: "+v.embassy().atPeace()+" no enemies:  "+empire.enemies().isEmpty());
         if (v.embassy().atPeace())
         {
             return false;
         }
         Empire bestVictim = empire.generalAI().bestVictim();
+        if(overrideBestVictim)
+            bestVictim = v.empire();
         if(v.empire() == bestVictim)
         {
             boolean warAllowed = false;
@@ -1471,39 +1447,7 @@ public class AIDiplomat implements Base, Diplomat {
             }
             float helpingPower = 0.0f;
             float enemyAllyPower = 0.0f;
-                               
-            GalacticCouncil gc = galaxy().council();
-            //when we are up to be voted, avoid being disliked
-            //unless we hold more than 1/3rd of votes, so we can't lose anyways
-            //exception: our target is at war or the other empire to be voted for
             float superiorityThreshold = 0.8f;
-            if(gc.active() && galaxy().numActiveEmpires() > 2)
-            {
-                List<Empire> empires = new ArrayList<>();
-                empires = galaxy().activeEmpires();
-                Collections.sort(empires, Empire.TOTAL_POPULATION);
-                if(empire == empires.get(0) || empire == empires.get(1))
-                {
-                    Empire voteOpponent = null;
-                    if(empire == empires.get(0))
-                        voteOpponent = empires.get(1);
-                    else
-                        voteOpponent = empires.get(0);
-                    warAllowed = false;
-                    if(empire.totalPlanetaryPopulation() / 100 > gc.totalVotes() / 3.0)
-                        warAllowed = true;
-                    if(bestVictim.atWar() && !empire.pactWith(bestVictim.id) && !bestVictim.warEnemies().contains(voteOpponent))
-                        warAllowed = true;
-                    if(bestVictim == voteOpponent)
-                        warAllowed = true;
-                    //our tech is worse (if we are stronger in other aspects we will catch up anyways)
-                    superiorityThreshold = 1.25f;
-                    //System.out.println(empire.name()+" I'm up to be voted and thus act accordingly.");
-                }
-            }
-            //unless it's only one left
-            if(gc.disbanded())
-                warAllowed = true;
             //we can still grow otherwise
             if(empire.generalAI().additionalColonizersToBuild(true) > 0
                     || !atFactoryLimit
@@ -1522,9 +1466,9 @@ public class AIDiplomat implements Base, Diplomat {
                 enemyAllyPower += emp.powerLevel(emp);
             }
             //System.out.println(empire.name()+" col: "+empire.generalAI().additionalColonizersToBuild(true)+" fac: "+atFactoryLimit+" pop: "+atPopulationLimit+" allied: "+empire.alliedWith(bestVictim.id)+" tech: "+(empire.tech().avgTechLevel() < v.empire().tech().avgTechLevel()));
-            //System.out.println(empire.name()+" bestVictim: "+bestVictim+" power: "+empire.powerLevel(empire) + helpingPower+" vs. "+(empire.powerLevel(bestVictim) + enemyAllyPower) + " Threshold: "+superiorityThreshold +" "+empire.leader().personality()+" "+empire.leader().objective()+" War Allowed: "+warAllowed);
+            //System.out.println(empire.name()+" bestVictim: "+bestVictim+" power: "+empire.powerLevel(empire) + helpingPower+" vs. "+(bestVictim.powerLevel(bestVictim) + enemyAllyPower) + " Threshold: "+superiorityThreshold +" "+empire.leader().personality()+" "+empire.leader().objective()+" War Allowed: "+warAllowed);
             if(warAllowed &&
-                    empire.powerLevel(empire) + helpingPower > (empire.powerLevel(bestVictim) + enemyAllyPower) * superiorityThreshold)
+                    empire.powerLevel(empire) + helpingPower > (bestVictim.powerLevel(bestVictim) + enemyAllyPower) * superiorityThreshold)
             {
                 return true;
             }
@@ -1553,14 +1497,15 @@ public class AIDiplomat implements Base, Diplomat {
         //System.out.print("\n"+empire.name()+" starts opportunity-war on "+view.empire().name());
         view.embassy().beginWarPreparations(DialogueManager.DECLARE_OPPORTUNITY_WAR, null);
     }
+    //ail: I need a war that isn't checked for still being valid for our prevention-war
+    private void beginErraticWar(EmpireView view) {
+        log(view+" - Declaring war based on erratic");
+        view.embassy().beginWarPreparations(DialogueManager.DECLARE_ERRATIC_WAR, null);
+    }
     @Override
     public Empire councilVoteFor(Empire civ1, Empire civ2) {
         EmpireView cv1 = empire.viewForEmpire(civ1);
         EmpireView cv2 = empire.viewForEmpire(civ2);
-
-        // to test diplomatic win for player
-        //if (civ1.isPlayerControlled()) return castVoteFor(civ1, approv1);
-        //if (civ2.isPlayerControlled()) return castVoteFor(civ2, approv2);
 
         // always vote for yourself
         if (civ1 == empire)   return castVoteFor(civ1);
@@ -1588,12 +1533,10 @@ public class AIDiplomat implements Base, Diplomat {
                 return castVoteFor(null);
         }
         //ail: I want it to be deterministic and based on relations, not power
-        if(cv1.embassy().relations()/100.0f > 0 
-                && cv1.embassy().relations()/100.0f > cv2.embassy().relations()/100.0f
+        if(cv1.embassy().relations()/100.0f > cv2.embassy().relations()/100.0f
                 && empire.inEconomicRange(cv1.empId()))
             return castVoteFor(civ1);
-        if(cv2.embassy().relations()/100.0f > 0 
-                && cv2.embassy().relations()/100.0f > cv1.embassy().relations()/100.0f
+        if(cv2.embassy().relations()/100.0f > cv1.embassy().relations()/100.0f
                 && empire.inEconomicRange(cv2.empId()))
             return castVoteFor(civ2);
         // return undecided
@@ -1618,7 +1561,7 @@ public class AIDiplomat implements Base, Diplomat {
         // only what own empire can see (through spies)
         // more likely to accept more powerful empire, less likely to accept less powerful empire
         // powerBonus vary from -0.25 to 0.25
-        float powerBonus = 0.5f * (empire.powerLevel(c) / (empire.powerLevel(c) + empire.powerLevel(empire)) - 0.5f);
+        float powerBonus = 0.5f * (c.powerLevel(c) / (c.powerLevel(c) + empire.powerLevel(empire)) - 0.5f);
         
         if (empire.lastCouncilVoteEmpId() == c.id)
             return true;

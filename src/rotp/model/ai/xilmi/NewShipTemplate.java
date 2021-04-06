@@ -121,6 +121,20 @@ public class NewShipTemplate implements Base {
             float score = 0;
             if(count >= 1)
                 score = design.spaceUsed() / design.totalSpace();
+            if(role.BOMBER == role)
+            {
+                boolean hasBombs = false;
+                for (int j=0; j<maxWeapons(); j++)
+                {
+                    if(design.weapon(j).groundAttacksOnly())
+                    {
+                        hasBombs = true;
+                        break;
+                    }
+                }
+                if (!hasBombs)
+                    score = 0;
+            }
             for (int j=0;j<maxSpecials();j++)
                 if(!design.special(j).isNone())
                     score *= 1.1;
@@ -187,13 +201,11 @@ public class NewShipTemplate implements Base {
         int shieldWeight = 4;
         int ecmWeight = 3;    
         ecmWeight = (int)Math.round(ecmWeight * 2 * enemyMissilePercentage);
-        int maneuverWeight = 1;
+        int maneuverWeight = 2;
         int armorWeight = 3; 
         int specialsWeight = 4; 
-        // Same Speed Allowed Flag: default false, alkari/mrrshan true
-        boolean sameSpeedAllowed = race.shipDesignMods[SPEED_MATCHING] > 0; 
-        // Reinforced Armor Allowed Flag: default true, alkari/klackon false
-        boolean reinforcedArmorAllowed = race.shipDesignMods[REINFORCED_ARMOR] > 0; 
+        boolean sameSpeedAllowed = true; 
+        boolean reinforcedArmorAllowed = true; 
         
         // if we have a large ship, let's let the AI use more specials; it may have to differentiate designs more
         if (size >= ShipDesign.LARGE)
@@ -213,7 +225,7 @@ public class NewShipTemplate implements Base {
         // branches made in the ugly way for clarity
         // specials will be skipped for smaller hulls in the early game, bringing a bit more allowance to the second fitting
         //ArrayList<ShipSpecial> specials;
-        SortedMap<Float, ShipSpecial> specials = new TreeMap<>(Collections.reverseOrder());
+        SortedMap<Float, ShipSpecial> specials;
         
         boolean needRange = false;
         boolean boostInertial = false;
@@ -276,7 +288,7 @@ public class NewShipTemplate implements Base {
         switch (role) {
             case BOMBER:
                 setOptimalWeapon(ai, d, firstWeaponSpaceRatio * d.availableSpace(), 1, false, false, false);
-                setOptimalWeapon(ai, d, d.availableSpace(), 1, needRange, true, false); // uses slot 1
+                setOptimalWeapon(ai, d, d.availableSpace(), 3, needRange, true, true); // uses slot 1
                 break;
             case FIGHTER:
             default:
@@ -393,19 +405,20 @@ public class NewShipTemplate implements Base {
             if(tech.isType(Tech.AUTOMATED_REPAIR))
             {
                 if(tech.sequence == 0)
-                    currentScore = 25;
-                if(tech.sequence == 1)
                     currentScore = 50;
+                if(tech.sequence == 1)
+                    currentScore = 100;
+                currentScore -= ai.empire().tech().avgTechLevel(); //loses usefullness with more miniaturization
                 if(d.size() < 2)
                     currentScore = 0;
                 if(d.size() > 2)
                     currentScore *= 6;
             }
             else if(tech.isType(Tech.SCANNER))
-                currentScore = 100;
+                currentScore = 50;
             else if(tech.isType(Tech.BLACK_HOLE))
             {
-                currentScore = 1000;
+                currentScore = 500;
                 currentScore *= (5-d.size());
                 if(needRange)
                     currentScore /= 5;
@@ -430,18 +443,18 @@ public class NewShipTemplate implements Base {
             else if(tech.isType(Tech.CLOAKING))
             {
                 if(bomber)
-                    currentScore = 1000;
-                else
                     currentScore = 500;
+                else
+                    currentScore = 250;
                 if(needRange)
                     currentScore *= 2;
             }
             else if(tech.isType(Tech.DISPLACEMENT))
             {
                 if(bomber)
-                    currentScore = 300;
+                    currentScore = 100;
                 else
-                    currentScore = 150;
+                    currentScore = 50;
             }
             else if(tech.isType(Tech.ENERGY_PULSAR))
             {
@@ -474,7 +487,7 @@ public class NewShipTemplate implements Base {
             }
             else if(tech.isType(Tech.REPULSOR))
             {
-                currentScore = 200;
+                currentScore = 50;
                 if(bomber)
                     currentScore /= 5;
                 if(needRange)
@@ -482,7 +495,7 @@ public class NewShipTemplate implements Base {
             }
             else if(tech.isType(Tech.SHIP_INERTIAL))
             {
-                currentScore = 150 * (tech.sequence + 1);
+                currentScore = 100 * (tech.sequence + 1);
                 if(bomber)
                     currentScore *= 2;
                 if(boostInertial)
@@ -490,13 +503,13 @@ public class NewShipTemplate implements Base {
             }
             else if(tech.isType(Tech.SHIP_NULLIFIER))
             {
-                currentScore = 300;
+                currentScore = 100;
                 if(needRange)
                     currentScore *= 1.5;
             }
             else if(tech.isType(Tech.STASIS_FIELD))
             {
-                currentScore = 500;
+                currentScore = 200;
                 if(needRange)
                     currentScore /= 5;
             }
@@ -513,11 +526,12 @@ public class NewShipTemplate implements Base {
                 currentScore = 200 * (1 - ai.empire().generalAI().defenseRatio());
             else if(tech.isType(Tech.TELEPORTER))
             {
-                currentScore = 300 * ai.empire().generalAI().defenseRatio();
+                currentScore = 100 * ai.empire().generalAI().defenseRatio();
                 if(bomber)
                     currentScore /= 5;
             }
-            currentScore /= spec.space(d);
+            //ail: removed division by size otherwise bigger and better stuff will never be used because other stuff just miniaturizes more
+            //currentScore /= spec.space(d);
             //if we put stuff with 0 score, we end up with tinies and auto-repair
             if(currentScore > 0)
                 specials.put(currentScore, spec);
@@ -552,51 +566,6 @@ public class NewShipTemplate implements Base {
         return remainingSpace;
     }
  
-    private void upgradeBeamRangeSpecial(ShipDesigner ai, ShipDesign d) {
-        // if not using a beam weapon, then skip
-        if (!d.weapon(0).isBeamWeapon())
-            return;
-        // only cloaking makes sure we can outrange 
-        if (d.allowsCloaking())
-            return;
-        // if we don't have room for more specials, we can skip
-        int slot1 = d.nextEmptySpecialSlot();
-        if (slot1 < 0)
-            return;
-
-        // go through specials that improve compat speed (inertials)
-        int addlRange = 0;
-        float wpnRangeFactor = 0.95f;
-
-        List<ShipSpecial> specials = ai.lab().specials();
-        for (ShipSpecial spec: specials) {
-
-            boolean notInstalledAlready = true;
-            for (int i = 0; i<ShipDesign.maxSpecials; i++) {
-                if (d.special(i).name().equals(spec.name())) // ugly as hell
-                    notInstalledAlready = false;
-            }
-
-            if (notInstalledAlready) {
-                int rangeBonus = spec.beamRangeBonus();
-                if (rangeBonus > 0) {
-                    int rangeDiff = rangeBonus - addlRange;
-                    int wpnCount = d.wpnCount(0);
-                    int minNewWpnCount = (int) Math.ceil(wpnCount*Math.pow(wpnRangeFactor, rangeDiff));
-                    // calc reduction in space and how many weapons need to be removed
-                    float spaceLost = d.availableSpace() + d.special(slot1).space(d) - spec.space(d);
-                    int wpnRemoved = (int) Math.floor(spaceLost/ d.weapon(0).space(d));
-                    int newWpnCount = wpnCount+wpnRemoved;
-                    if (newWpnCount >= minNewWpnCount) {
-                        addlRange = rangeBonus;
-                        d.special(slot1,spec);
-                        d.wpnCount(0,newWpnCount);
-                    }
-                }
-            }
-        }
-    }
-
     public static List<TechTree> assessRivalsTech(Empire emp, int rivalsNum) {
         List<TechTree> rivalTech = new ArrayList<>();
         SortedMap<Float, EmpireView> relationsMap = new TreeMap<>();
@@ -683,6 +652,21 @@ public class NewShipTemplate implements Base {
         }
         
         int num = (int)Math.floor(spaceAllowed / bestWeapon.space(d));
+        //ail: there is a maximum amount of bombs that make sense, which is exceeded in lategame, we need to calculate it and adjust the number
+        if(bestWeapon.groundAttacksOnly())
+        {
+            //maximum hitpoints a colony can have * hitpoints per point of population
+            float highestPopulation = 0;
+            for (int id=0;id<ai.empire().sv.count();id++) 
+            {
+                StarSystem current = galaxy().system(id);
+                if(current.planet().maxSize() > highestPopulation)
+                    highestPopulation = current.planet().maxSize();
+            }
+            float maxDamageNeeded = highestPopulation * 200;
+            float maxBombsNeeded = maxDamageNeeded / (bestWeapon.firepower(ai.empire().bestEnemyPlanetaryShieldLevel()-ai.empire().bestEnemyShieldLevel()) * 10);
+            num = (int) Math.ceil(min(num, maxBombsNeeded));
+        }
         //System.out.print("\n"+ai.empire().name()+" "+d.name()+" add: "+num+" "+bestWeapon.name());
         int maxSlots = weaponSlotsOccupied + numSlotsToUse;
         if (maxSlots > ShipDesign.maxWeapons)

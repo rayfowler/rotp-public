@@ -74,9 +74,9 @@ public class AIFleetCommander implements Base, FleetCommander {
             sendColonyMissions = !empire.shipLab().colonyDesign().obsolete();
             canBuildShips = true; //since we build only colonizers and scouts here, this should always be possible
             NoticeMessage.setSubstatus(text("TURN_FLEET_PLANS"));
+            handleMilitary();
             buildFleetPlans();
             fillFleetPlans();
-            handleMilitary();
         }
     }
     @Override
@@ -525,13 +525,6 @@ public class AIFleetCommander implements Base, FleetCommander {
             if(fleet.destination() != null)
             {
                 if(fleet.retreatOnArrival() && empire.enemies().contains(fleet.destination().empire()))
-                    fleet.toggleRetreatOnArrival();
-                if(!fleet.retreatOnArrival() 
-                        && fleet.destination().empire() != null 
-                        && !empire.allies().contains(fleet.destination().empire())
-                        && empire != fleet.destination().empire()
-                        && !empire.enemies().contains(fleet.destination().empire())
-                        && empire.sv.isScouted(fleet.destSysId()))
                     fleet.toggleRetreatOnArrival();
             }
             //ail: using hyperspace-communication disabled for now as it produced weird unintended results... have to check for better implementation
