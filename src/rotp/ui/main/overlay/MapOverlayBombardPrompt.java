@@ -240,12 +240,11 @@ public class MapOverlayBombardPrompt extends MapOverlay {
             g.drawString(titleStr, boxX+leftW, boxY+s25);
 
             if (transports > 0) {
-                String subtitleStr = text("MAIN_BOMBARD_TROOPS", str(transports), player().raceName());
+                String subtitleStr = text("MAIN_BOMBARD_TROOPS", str(transports));
+                subtitleStr = player().replaceTokens(subtitleStr, "alien");
                 g.setColor(Color.black);
                 int subtitleFontSize = min(titleFontSize-2, scaledFont(g, subtitleStr, boxW-leftW, 20, 14));
                 g.setFont(narrowFont(subtitleFontSize));
-                //drawBorderedString(g, subtitleStr, 1, boxX+leftW, boxY+s20+transportH, Color.black, new Color(192,64,64));
-                //drawShadowedString(g, subtitleStr, 1, boxX+leftW, boxY+s20+transportH, new Color(30,30,30,150), new Color(192,64,64));
                 g.drawString(subtitleStr, boxX+leftW, boxY+s25+transportH);         
             }
             
