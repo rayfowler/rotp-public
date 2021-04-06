@@ -1567,39 +1567,39 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         
     }
     private void drawShipResult(Graphics2D g, int x, int y, int w, int h, ShipDesign d, int start, int dead, int retreat) {
-            Image img = d.image();
-            g.drawImage(img, x, y, x+w, y+h, img.getWidth(null), img.getHeight(null), 0,0,null);
-            if (retreat > 0) {
-                g.setFont(narrowFont(30));
-                String summary = text("SHIP_COMBAT_RESULTS_RETREATED");
-                int sw0 = g.getFontMetrics().stringWidth(summary);
-                drawBorderedString(g, summary, x+(w-sw0)/2, y+h/2+s5, Color.black, Color.yellow);              
-            }
-            else if (start == dead) {
-                g.setFont(narrowFont(30));
-                String summary = text("SHIP_COMBAT_RESULTS_DESTROYED");
-                int sw0 = g.getFontMetrics().stringWidth(summary);
-                drawBorderedString(g, summary, x+(w-sw0)/2, y+h/2+s5, Color.black, Color.red);              
-            }
-            g.setFont(narrowFont(18));
-            g.setColor(SystemPanel.whiteText);
-            String name = d.name();
-            int sw0 = g.getFontMetrics().stringWidth(name);
-            drawBorderedString(g, name, x+(w-sw0)/2, y+h, Color.black, Color.white);
-            String amt1 = str(start);
-            String amt2 = str(start-dead);
-            int sw1 = g.getFontMetrics().stringWidth(amt1);
-            int sw2 = g.getFontMetrics().stringWidth(amt2);
-            int xAdj1 = x+(w-sw1-sw2-s40)/2;
-            drawBorderedString(g, amt1, xAdj1, y+h+s18, Color.black, SystemPanel.whiteText);
-            //g.drawString("\u2192", xAdj1+sw1+s4, y+h+s12);
-            g.fillRect(xAdj1+sw1+s4, y+h+s12, s30, s3);
-            Polygon rightArrow = new Polygon();
-            rightArrow.addPoint(xAdj1+sw1+s33, y+h+s7);
-            rightArrow.addPoint(xAdj1+sw1+s33, y+h+s19);
-            rightArrow.addPoint(xAdj1+sw1+s37, y+h+s13);
-            g.fill(rightArrow);
-            drawBorderedString(g, amt2, xAdj1+sw1+s40, y+h+s18, Color.black, SystemPanel.whiteText);
+        Image img = d.image();
+        g.drawImage(img, x, y, x+w, y+h, img.getWidth(null), img.getHeight(null), 0,0,null);
+        if (retreat > 0) {
+            g.setFont(narrowFont(30));
+            String summary = text("SHIP_COMBAT_RESULTS_RETREATED");
+            int sw0 = g.getFontMetrics().stringWidth(summary);
+            drawBorderedString(g, summary, x+(w-sw0)/2, y+h/2+s5, Color.black, Color.yellow);              
+        }
+        else if (start == dead) {
+            g.setFont(narrowFont(30));
+            String summary = text("SHIP_COMBAT_RESULTS_DESTROYED");
+            int sw0 = g.getFontMetrics().stringWidth(summary);
+            drawBorderedString(g, summary, x+(w-sw0)/2, y+h/2+s5, Color.black, Color.red);              
+        }
+        g.setFont(narrowFont(18));
+        g.setColor(SystemPanel.whiteText);
+        String name = d.name();
+        int sw0 = g.getFontMetrics().stringWidth(name);
+        drawBorderedString(g, name, x+(w-sw0)/2, y+h, Color.black, Color.white);
+        String amt1 = str(start);
+        String amt2 = str(start-dead);
+        int sw1 = g.getFontMetrics().stringWidth(amt1);
+        int sw2 = g.getFontMetrics().stringWidth(amt2);
+        int xAdj1 = x+(w-sw1-sw2-s40)/2;
+        drawBorderedString(g, amt1, xAdj1, y+h+s18, Color.black, SystemPanel.whiteText);
+        //g.drawString("\u2192", xAdj1+sw1+s4, y+h+s12);
+        g.fillRect(xAdj1+sw1+s4, y+h+s12, s30, s3);
+        Polygon rightArrow = new Polygon();
+        rightArrow.addPoint(xAdj1+sw1+s33, y+h+s7);
+        rightArrow.addPoint(xAdj1+sw1+s33, y+h+s19);
+        rightArrow.addPoint(xAdj1+sw1+s37, y+h+s13);
+        g.fill(rightArrow);
+        drawBorderedString(g, amt2, xAdj1+sw1+s40, y+h+s18, Color.black, SystemPanel.whiteText);
     }
     private void togglePlayPause() {
         if (mode != Display.INTRO)

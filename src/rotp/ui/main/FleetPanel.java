@@ -96,8 +96,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         sessionVar("ADJUSTED_FLEET", fl);
     }
     private ShipFleet displayedFleet()  {
-        ShipFleet fl = (ShipFleet) sessionVar("DISPLAYED_FLEET");
-        fl = parent.shipFleetToDisplay();
+        ShipFleet fl = parent.shipFleetToDisplay();
         return (fl == null) ? adjustedFleet() : fl;
     }
     private void  displayedFleet(ShipFleet s)       { sessionVar("DISPLAYED_FLEET", s); }
@@ -651,8 +650,8 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 return;
             ShipFleet displayFleet = origFleet;
             // do we want to display an adjustable fleet based on selected fleet?
-            boolean canAdjust = (origFleet != null) && origFleet.canBeAdjustedBy(pl);
-            if ((origFleet == null) || canAdjust)
+            boolean canAdjust = origFleet.canBeAdjustedBy(pl);
+            if (canAdjust)
                 displayFleet = adjustedFleet();
 
             if (displayFleet == null)
