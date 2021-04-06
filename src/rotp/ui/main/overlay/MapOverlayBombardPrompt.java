@@ -232,7 +232,8 @@ public class MapOverlayBombardPrompt extends MapOverlay {
             parent.addNextTurnControl(clickSprite);
         }
         else {
-            String titleStr = text("MAIN_BOMBARD_TITLE", sysName, sys.empire().raceName());
+            String titleStr = text("MAIN_BOMBARD_TITLE", sysName);
+            titleStr = sys.empire().replaceTokens(titleStr, "alien");
             g.setColor(Color.black);
             int titleFontSize = scaledFont(g, titleStr, boxW-leftW, 20, 14);
             g.setFont(narrowFont(titleFontSize));
