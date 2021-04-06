@@ -91,14 +91,12 @@ public class CombatStackSpaceAmoeba extends CombatStack {
 
         // stop and enjoy the meal
         move = 0;
-        if (st.mgr.ui != null)
+        if (st.mgr.showAnimations())
             st.mgr.ui.paintAllImmediately();
     }
     @Override
     public void endTurn() {
         super.endTurn();
-            
-
     }
     @Override
     public boolean moveTo(int x1, int y1) {

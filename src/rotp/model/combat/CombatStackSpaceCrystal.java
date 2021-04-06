@@ -83,7 +83,7 @@ public class CombatStackSpaceCrystal extends CombatStack {
         return 100;
     }
     public void drawAttack() { 
-        if (mgr.ui == null)
+        if (!mgr.showAnimations())
             return;
         
         brighten = 1.0f;
