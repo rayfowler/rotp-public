@@ -21,7 +21,6 @@ import java.awt.geom.Point2D;
 import javax.swing.*;
 import java.util.List;
 import rotp.model.ships.ShipDesign;
-import rotp.model.ships.ShipImage;
 import rotp.ui.BasePanel;
 import rotp.ui.BaseTextField;
 import rotp.ui.main.SystemPanel;
@@ -62,6 +61,7 @@ public final class ConfirmCreateUI extends BasePanel implements MouseListener, M
     }
     public void targetDesign(ShipDesign d) {
         targetDesign = d;
+        targetDesign.resetImage();
         if ((targetDesign.name() == null) || targetDesign.name().isEmpty())
             player().shipLab().nameDesign(targetDesign);
         nameField.setText(targetDesign.name().trim());
