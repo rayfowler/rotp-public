@@ -232,19 +232,19 @@ public class MapOverlayBombardPrompt extends MapOverlay {
             parent.addNextTurnControl(clickSprite);
         }
         else {
-            String titleStr = text("MAIN_BOMBARD_TITLE", sysName, sys.empire().raceName());
+            String titleStr = text("MAIN_BOMBARD_TITLE", sysName);
+            titleStr = sys.empire().replaceTokens(titleStr, "alien");
             g.setColor(Color.black);
             int titleFontSize = scaledFont(g, titleStr, boxW-leftW, 20, 14);
             g.setFont(narrowFont(titleFontSize));
             g.drawString(titleStr, boxX+leftW, boxY+s25);
 
             if (transports > 0) {
-                String subtitleStr = text("MAIN_BOMBARD_TROOPS", str(transports), player().raceName());
+                String subtitleStr = text("MAIN_BOMBARD_TROOPS", str(transports));
+                subtitleStr = player().replaceTokens(subtitleStr, "alien");
                 g.setColor(Color.black);
                 int subtitleFontSize = min(titleFontSize-2, scaledFont(g, subtitleStr, boxW-leftW, 20, 14));
                 g.setFont(narrowFont(subtitleFontSize));
-                //drawBorderedString(g, subtitleStr, 1, boxX+leftW, boxY+s20+transportH, Color.black, new Color(192,64,64));
-                //drawShadowedString(g, subtitleStr, 1, boxX+leftW, boxY+s20+transportH, new Color(30,30,30,150), new Color(192,64,64));
                 g.drawString(subtitleStr, boxX+leftW, boxY+s25+transportH);         
             }
             

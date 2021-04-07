@@ -28,15 +28,14 @@ public enum FontManager implements Base {
     INSTANCE;
     public static FontManager current()  { return INSTANCE; }
 
-    private static int MAX_FONT_SIZE = 200;
+    private static final int MAX_FONT_SIZE = 200;
     private Font logoFont;
     private Font introFont;
     private Font dlgFont;
     private Font narrowFont;
     private Font plainFont;
-    private Font languageFont;
-    private Map<String,Font> languageFonts = new HashMap<>();
-    private Map<String,Integer> languageFontSizes = new HashMap<>();
+    private final Map<String,Font> languageFonts = new HashMap<>();
+    private final Map<String,Integer> languageFontSizes = new HashMap<>();
     private int logoSize, introSize, dlgSize, narrowSize, plainSize, languageSize;
     private Font[] createdLogoFont;
     private Font[] createdDlgFont;
@@ -190,7 +189,7 @@ public enum FontManager implements Base {
         String filename = fields.size() > 1 ? fields.get(1) : fields.get(0);
         int fontSizing = fields.size() > 2 ? parseInt(fields.get(2)): 100;
 
-        InputStream is = Rotp.class.getResourceAsStream(fontDir+filename);
+        InputStream is = fileInputStream(fontDir+filename);
         if (is == null) {
             err("FontManager.loadFont: could not get inputStream for:"+fontDir+filename);
             return;

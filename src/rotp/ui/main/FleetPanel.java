@@ -53,6 +53,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
     protected BasePanel topPane;
     protected BasePanel detailPane;
     protected BasePanel bottomPane;
+    String nebulaText;
     private final int[] stackAdjustment = new int[ShipDesignLab.MAX_DESIGNS];
     //session vars
     private StarSystem selectedDest()         { return (StarSystem) sessionVar("FLEETDEPLOY_SELECTED_DEST"); }
@@ -95,8 +96,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         sessionVar("ADJUSTED_FLEET", fl);
     }
     private ShipFleet displayedFleet()  {
-        ShipFleet fl = (ShipFleet) sessionVar("DISPLAYED_FLEET");
-        fl = parent.shipFleetToDisplay();
+        ShipFleet fl = parent.shipFleetToDisplay();
         return (fl == null) ? adjustedFleet() : fl;
     }
     private void  displayedFleet(ShipFleet s)       { sessionVar("DISPLAYED_FLEET", s); }
@@ -650,8 +650,8 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 return;
             ShipFleet displayFleet = origFleet;
             // do we want to display an adjustable fleet based on selected fleet?
-            boolean canAdjust = (origFleet != null) && origFleet.canBeAdjustedBy(pl);
-            if ((origFleet == null) || canAdjust)
+            boolean canAdjust = origFleet.canBeAdjustedBy(pl);
+            if (canAdjust)
                 displayFleet = adjustedFleet();
 
             if (displayFleet == null)
@@ -688,7 +688,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             StarSystem dest = parent.displayedDestination();
             g.setColor(SystemPanel.blackText);
             String text = null;
-            String nebulaText = null;
+            nebulaText = null;
             String retreatText = null;
             String rallyText = null;
             if (displayFl.canBeSentBy(player())) {
@@ -834,14 +834,6 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                     y0 += lineH;
                 }
             }
-            if (nebulaText != null) {
-                g.setColor(SystemPanel.redText);
-                List<String> lines = wrappedLines(g, nebulaText, w-s30);
-                for (String line: lines) {
-                    g.drawString(line, x0, y0);
-                    y0 += lineH;
-                }
-            }
         }
         private void drawFleet(Graphics2D g, ShipFleet origFl, ShipFleet displayFl, boolean canAdjust, int x, int y, int w, int h) {
             // draw star background
@@ -852,7 +844,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 drawBackgroundStars(starImg, null);
             }
             g.drawImage(starImg,x,y,null);
-
+            
             int spacing = s15;
             // figure out size of ships
             int shipW = w/2;
@@ -921,6 +913,16 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                     drawShip(g, origFl, displayFl, showAdjust, contact, 4, leftX+xAdj, botY, shipW, shipH);
                     drawShip(g, origFl, displayFl, showAdjust, contact, 5, rightX-xAdj, botY, shipW, shipH);
                     break;
+            }
+            int y0= y+s15;
+            g.setFont(narrowFont(15));
+            if (nebulaText != null) {
+                g.setColor(SystemPanel.redText);
+                List<String> lines = wrappedLines(g, nebulaText, w-s30);
+                for (String line: lines) {
+                    g.drawString(line, s15, y0);
+                    y0 += s14;
+                }
             }
         }
         private void drawShip(Graphics2D g, ShipFleet origFl, ShipFleet displayFl, boolean canAdjust, boolean contact, int i, int x0, int y0, int w, int h) {

@@ -280,8 +280,10 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedColonizingOption = opt.selectedColonizingOption;
         selectedOpponentAIOption = opt.selectedOpponentAIOption;
         
-        for (int i=0;i<specificOpponentAIOption.length;i++)
-            specificOpponentAIOption[i] = opt.specificOpponentAIOption[i];
+        if (opt.specificOpponentAIOption != null) {
+            for (int i=0;i<specificOpponentAIOption.length;i++)
+                specificOpponentAIOption[i] = opt.specificOpponentAIOption[i];
+        }
         
         if (opt.player != null) 
             player.copy(opt.player);
