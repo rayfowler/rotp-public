@@ -189,7 +189,7 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         text = emp.replaceTokens(text, "alien");
         int sw = g.getFontMetrics().stringWidth(text);
         int x0 = x+(w-sw)/2;
-        g.drawString(text, x0, y+h-s6);
+        drawString(g,text, x0, y+h-s6);
     }
     private void drawRaceIconBase(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(RacesUI.darkBrown);
@@ -240,7 +240,7 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         g.setFont(narrowFont(32));
         String title = text("RACES_STATUS_THE_EMPIRE");
         title = player().replaceTokens(title, "alien");
-        g.drawString(title, x+s10, y+h-s15);
+        drawString(g,title, x+s10, y+h-s15);
     }
     private void drawVS(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(SystemPanel.orangeText);
@@ -248,14 +248,14 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         String vs = text("RACES_STATUS_VS");
         int sw = g.getFontMetrics().stringWidth(vs);
         int x0 = x+(w-sw)/2;
-        g.drawString(vs, x0, y+h-s2);
+        drawString(g,vs, x0, y+h-s2);
     }
     private void drawKnownEmpiresTitle(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(SystemPanel.orangeText);
         g.setFont(narrowFont(32));
         String title = text("RACES_STATUS_KNOWN_EMPIRES", player().contacts().size());
         int sw = g.getFontMetrics().stringWidth(title);
-        g.drawString(title, x-sw-s10, y-s15);
+        drawString(g,title, x-sw-s10, y-s15);
     }
     private void drawAITitle(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(SystemPanel.orangeText);
@@ -263,7 +263,7 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         String title = text("RACES_STATUS_THE_EMPIRE");
         title = emp.replaceTokens(title, "alien");
         int sw = g.getFontMetrics().stringWidth(title);
-        g.drawString(title, x-sw-s10, y-s15);
+        drawString(g,title, x-sw-s10, y-s15);
     }
     private void drawAllRankingsLists(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(RacesUI.darkBrown);
@@ -349,7 +349,7 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
             if (rv.value < 0) {
                 g.setColor(RacesUI.darkBrown);
                 String s = text("RACES_STATUS_NO_DATA");
-                g.drawString(s, x2, y2+barH-yAdj);
+                drawString(g,s, x2, y2+barH-yAdj);
             }
             else if (maxValue > 0) {
                 g.setColor(rv.emp.color());
@@ -358,12 +358,12 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
                 g.setColor(RacesUI.brown);
                 float pct = (float)100*rv.value/sumValues;
                 String val = pct >= 10 ? str(Math.round(pct)) : df1.format(pct); 
-                g.drawString(val, x2+barW+s5, y2+barH-yAdj);
+                drawString(g,val, x2+barW+s5, y2+barH-yAdj);
             }
             String name = rv.emp.raceName();
             int sw2 = g.getFontMetrics().stringWidth(name);
             g.setColor(SystemPanel.blackText);
-            g.drawString(name, x1-s5-sw2, y2+barH-yAdj);
+            drawString(g,name, x1-s5-sw2, y2+barH-yAdj);
             y2 += (barH+vSpacing);
         }
         
@@ -470,7 +470,7 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         g.setColor(parent.selectedEmpire().color());
         String name = parent.selectedEmpire().raceName();
         int nameW = g.getFontMetrics().stringWidth(name);
-        g.drawString(name, startX+displayW+rSpacing-s5-nameW, startY+s5);
+        drawString(g,name, startX+displayW+rSpacing-s5-nameW, startY+s5);
         int prevX = startX;
         int prevY = -1;
         for (int i=0;i<empireTurns;i++) {
@@ -486,7 +486,7 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
 
         // DRAW PLAYER
         g.setColor(player().color());
-        g.drawString(player().raceName(), startX, startY-displayH);
+        drawString(g,player().raceName(), startX, startY-displayH);
         prevX = startX;
         prevY = -1;
         for (int i=0;i<totalTurns;i++) {
@@ -505,7 +505,7 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
             g.setColor(RacesUI.darkBrown);
             String s = text("RACES_STATUS_NO_DATA");
             int sw1 = g.getFontMetrics().stringWidth(s);
-            g.drawString(s, x1+(w1-sw1)/2, y1+(h1+s24)/2);            
+            drawString(g,s, x1+(w1-sw1)/2, y1+(h1+s24)/2);            
         }
         // DRAW SELECTED EMPIRE AGAIN, with dashed lines
         g.setStroke(dashedLineStroke);

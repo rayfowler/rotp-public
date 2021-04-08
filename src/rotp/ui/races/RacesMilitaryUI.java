@@ -199,12 +199,12 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         g.setFont(narrowFont(32));
         String title = text("RACES_MILITARY_TITLE");
         title = emp.replaceTokens(title, "alien");
-        g.drawString(title, x+s10, y+h-s15);
+        drawString(g,title, x+s10, y+h-s15);
     }
     private void drawDefenseTitle(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(SystemPanel.orangeText);
         g.setFont(narrowFont(32));
-        g.drawString(text("RACES_MILITARY_DEFENSE"), x+s10, y+h-s15);
+        drawString(g,text("RACES_MILITARY_DEFENSE"), x+s10, y+h-s15);
     }
     private void drawPlayerBaseInfo(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(RacesUI.darkBrown);
@@ -260,11 +260,11 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         g.setFont(narrowFont(16));
         int age = fv.reportAge();
         if (fv.noReport())
-            g.drawString(text("RACES_MILITARY_REPORT_NONE"), x0, y2);
+            drawString(g,text("RACES_MILITARY_REPORT_NONE"), x0, y2);
         else if (age == 0)
-            g.drawString(text("RACES_MILITARY_REPORT_CURRENT"), x0, y2);
+            drawString(g,text("RACES_MILITARY_REPORT_CURRENT"), x0, y2);
         else
-            g.drawString(text("RACES_MILITARY_REPORT_OLD", str(age)), x0, y2);
+            drawString(g,text("RACES_MILITARY_REPORT_OLD", str(age)), x0, y2);
     }
     private void drawPlayerDefenseInfo(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(RacesUI.darkBrown);
@@ -277,45 +277,45 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         
         g.setColor(SystemPanel.blackText);
         g.setFont(narrowFont(16));
-        g.drawString(text("RACES_MILITARY_DEF_PLANET_SHIELD"), x0, y0);
+        drawString(g,text("RACES_MILITARY_DEF_PLANET_SHIELD"), x0, y0);
         g.setFont(narrowFont(15));
         int shieldLvl = tech.topPlanetaryShieldTech() == null ? 0 : tech.topPlanetaryShieldTech().damage;
         String shieldLvlStr = shieldLvl > 0 ? str(shieldLvl) : text("RACES_MILITARY_NO_SHIELD");
         int sw = g.getFontMetrics().stringWidth(shieldLvlStr);
-        g.drawString(shieldLvlStr, x+w-s10-sw, y0);
+        drawString(g,shieldLvlStr, x+w-s10-sw, y0);
             
         y0 += s17;
         g.setFont(narrowFont(16));
-        g.drawString(text("RACES_MILITARY_DEF_DEFL_SHIELD"), x0, y0);
+        drawString(g,text("RACES_MILITARY_DEF_DEFL_SHIELD"), x0, y0);
         g.setFont(narrowFont(15));
         shieldLvl = tech.topDeflectorShieldTech() == null ? 0 : tech.topDeflectorShieldTech().damage;
         shieldLvlStr = shieldLvl > 0 ? str(shieldLvl) : text("RACES_MILITARY_NO_SHIELD");
         sw = g.getFontMetrics().stringWidth(shieldLvlStr);
-        g.drawString(shieldLvlStr, x+w-s10-sw, y0);
+        drawString(g,shieldLvlStr, x+w-s10-sw, y0);
         
         y0 += s17;
         g.setFont(narrowFont(16));
-        g.drawString(text("RACES_MILITARY_DEF_ARMOR"), x0, y0);
+        drawString(g,text("RACES_MILITARY_DEF_ARMOR"), x0, y0);
         g.setFont(narrowFont(15));
         String armor = tech.topArmorTech() == null ? "" : tech.topArmorTech().shortName();
         sw = g.getFontMetrics().stringWidth(armor);
-        g.drawString(armor, x+w-s10-sw, y0);
+        drawString(g,armor, x+w-s10-sw, y0);
         
         y0 += s17;
         g.setFont(narrowFont(16));
-        g.drawString(text("RACES_MILITARY_DEF_MISSILE"), x0, y0);
+        drawString(g,text("RACES_MILITARY_DEF_MISSILE"), x0, y0);
         g.setFont(narrowFont(15));
         String miss = tech.topBaseMissileTech() == null ? "" : tech.topBaseMissileTech().name();
         sw = g.getFontMetrics().stringWidth(miss);
-        g.drawString(miss, x+w-s10-sw, y0);
+        drawString(g,miss, x+w-s10-sw, y0);
         
         y0 += s17;
         g.setFont(narrowFont(16));
-        g.drawString(text("RACES_MILITARY_TROOP_BONUS"), x0, y0);
+        drawString(g,text("RACES_MILITARY_TROOP_BONUS"), x0, y0);
         g.setFont(narrowFont(15));
         String bonus = concat("+",str((int)tech.troopCombatAdj(false)));
         sw = g.getFontMetrics().stringWidth(bonus);
-        g.drawString(bonus, x+w-s10-sw, y0);      
+        drawString(g,bonus, x+w-s10-sw, y0);      
         
         g.setColor(RacesUI.darkBrown);
         g.fillRect(x, y+h-s35, w, s35);
@@ -335,7 +335,7 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         g.setColor(SystemPanel.blackText);
         String numBases = str(player().defaultMaxBases());
         int sw1 = g.getFontMetrics().stringWidth(numBases);
-        g.drawString(numBases, x0+s18-sw1, y1);
+        drawString(g,numBases, x0+s18-sw1, y1);
         
         
         int sz = s10;
@@ -380,45 +380,45 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         
         g.setColor(SystemPanel.blackText);
         g.setFont(narrowFont(16));
-        g.drawString(text("RACES_MILITARY_DEF_PLANET_SHIELD"), x0, y0);
+        drawString(g,text("RACES_MILITARY_DEF_PLANET_SHIELD"), x0, y0);
         g.setFont(narrowFont(15));
         int shieldLvl = tech.topPlanetaryShieldTech() == null ? 0 : tech.topPlanetaryShieldTech().damage;
         String shieldLvlStr = shieldLvl > 0 ? str(shieldLvl) : text("RACES_MILITARY_NO_SHIELD");
         int sw = g.getFontMetrics().stringWidth(shieldLvlStr);
-        g.drawString(shieldLvlStr, x+w-s10-sw, y0);
+        drawString(g,shieldLvlStr, x+w-s10-sw, y0);
             
         y0 += s17;
         g.setFont(narrowFont(16));
-        g.drawString(text("RACES_MILITARY_DEF_DEFL_SHIELD"), x0, y0);
+        drawString(g,text("RACES_MILITARY_DEF_DEFL_SHIELD"), x0, y0);
         g.setFont(narrowFont(15));
         shieldLvl = tech.topDeflectorShieldTech() == null ? 0 : tech.topDeflectorShieldTech().damage;
         shieldLvlStr = shieldLvl > 0 ? str(shieldLvl) : text("RACES_MILITARY_NO_SHIELD");
         sw = g.getFontMetrics().stringWidth(shieldLvlStr);
-        g.drawString(shieldLvlStr, x+w-s10-sw, y0);
+        drawString(g,shieldLvlStr, x+w-s10-sw, y0);
         
         y0 += s17;
         g.setFont(narrowFont(16));
-        g.drawString(text("RACES_MILITARY_DEF_ARMOR"), x0, y0);
+        drawString(g,text("RACES_MILITARY_DEF_ARMOR"), x0, y0);
         g.setFont(narrowFont(15));
         String armor = tech.topArmorTech() == null ? "" : tech.topArmorTech().shortName();
         sw = g.getFontMetrics().stringWidth(armor);
-        g.drawString(armor, x+w-s10-sw, y0);
+        drawString(g,armor, x+w-s10-sw, y0);
         
         y0 += s17;
         g.setFont(narrowFont(16));
-        g.drawString(text("RACES_MILITARY_DEF_MISSILE"), x0, y0);
+        drawString(g,text("RACES_MILITARY_DEF_MISSILE"), x0, y0);
         g.setFont(narrowFont(15));
         String miss = tech.topBaseMissileTech() == null ? "" : tech.topBaseMissileTech().name();
         sw = g.getFontMetrics().stringWidth(miss);
-        g.drawString(miss, x+w-s10-sw, y0);
+        drawString(g,miss, x+w-s10-sw, y0);
         
         y0 += s17;
         g.setFont(narrowFont(16));
-        g.drawString(text("RACES_MILITARY_TROOP_BONUS"), x0, y0);
+        drawString(g,text("RACES_MILITARY_TROOP_BONUS"), x0, y0);
         g.setFont(narrowFont(15));
         String bonus = concat("+",str((int)tech.troopCombatAdj(false)));
         sw = g.getFontMetrics().stringWidth(bonus);
-        g.drawString(bonus, x+w-s10-sw, y0);
+        drawString(g,bonus, x+w-s10-sw, y0);
     }
     private void drawShipDesignTitle(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         int y0 = y+h-s5;
@@ -429,9 +429,9 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         
         g.setColor(SystemPanel.blackText);
         g.setFont(narrowFont(18));
-        g.drawString(text("RACES_MILITARY_TACTICAL"), x1, y0);
-        g.drawString(text("RACES_MILITARY_WEAPONS"), x3, y0);
-        g.drawString(text("RACES_MILITARY_SPECIALS"), x4, y0);
+        drawString(g,text("RACES_MILITARY_TACTICAL"), x1, y0);
+        drawString(g,text("RACES_MILITARY_WEAPONS"), x3, y0);
+        drawString(g,text("RACES_MILITARY_SPECIALS"), x4, y0);
     }
     private void drawShipDesignListing(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(RacesUI.darkBrown);
@@ -555,14 +555,14 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         sw = g.getFontMetrics().stringWidth(status);
         x1 = x+((x0-x-sw)/2);
         y1 += s20;
-        g.drawString(status, x1, y1);
+        drawString(g,status, x1, y1);
         
         if (status2 != null) {
             g.setFont(narrowFont(15));
             sw = g.getFontMetrics().stringWidth(status2);
             x1 = x+((x0-x-sw)/2);
             y1 += s16;
-            g.drawString(status2, x1, y1);          
+            drawString(g,status2, x1, y1);          
         }
         drawShipIcon(g, view, x0, y0, w0, h0); 
     }
@@ -604,27 +604,27 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         int y3 = y2+lineH;
         g.setFont(narrowFont(16));
         String label = text("RACES_MILITARY_HULL");
-        g.drawString(label, x0, y0);
+        drawString(g,label, x0, y0);
         label = text("RACES_MILITARY_ARMOR");
-        g.drawString(label,  x0, y1);
+        drawString(g,label,  x0, y1);
         label = text("RACES_MILITARY_SHIELD");
-        g.drawString(label, x0, y2);
+        drawString(g,label, x0, y2);
         label = text("RACES_MILITARY_TRAVEL_SPEED");
-        g.drawString(label,  x0, y3);
+        drawString(g,label,  x0, y3);
              
         g.setFont(narrowFont(15));
         String val = d.sizeDesc();
         int sw = g.getFontMetrics().stringWidth(val);
-        g.drawString(val, x+w-sw-s10, y0);
+        drawString(g,val, x+w-sw-s10, y0);
         val = view.armorKnown() ? str((int)d.hits()) : unk;
         sw = g.getFontMetrics().stringWidth(val);
-        g.drawString(val, x+w-sw-s10, y1);
+        drawString(g,val, x+w-sw-s10, y1);
         val =  view.shieldKnown() ? str((int)d.shieldLevel()) : unk;
         sw = g.getFontMetrics().stringWidth(val);
-        g.drawString(val, x+w-sw-s10, y2);
+        drawString(g,val, x+w-sw-s10, y2);
         val = str(d.warpSpeed());
         sw = g.getFontMetrics().stringWidth(val);
-        g.drawString(val, x+w-sw-s10, y3);
+        drawString(g,val, x+w-sw-s10, y3);
     }
     private void  drawShipTactical2(Graphics2D g, ShipView view, int x, int y, int w, int h) { 
         String unk = text("RACES_MILITARY_UNSCANNED");
@@ -640,27 +640,27 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         int y3 = y2+lineH;
         g.setFont(narrowFont(16));
         String label = text("RACES_MILITARY_ATTACK_LEVEL");
-        g.drawString(label,  x0, y0);
+        drawString(g,label,  x0, y0);
         label = text("RACES_MILITARY_MISSILE_DEFENSE");
-        g.drawString(label,  x0, y1);
+        drawString(g,label,  x0, y1);
         label = text("RACES_MILITARY_BEAM_DEFENSE");
-        g.drawString(label,  x0, y2);
+        drawString(g,label,  x0, y2);
         label = text("RACES_MILITARY_COMBAT_SPEED");
-        g.drawString(label,  x0, y3);
+        drawString(g,label,  x0, y3);
              
         g.setFont(narrowFont(15));
         String val = view.computerKnown() ? str((int)d.attackLevel()) : unk;
         int sw = g.getFontMetrics().stringWidth(val);
-        g.drawString(val, x+w-sw-s10, y0);
+        drawString(g,val, x+w-sw-s10, y0);
         val = view.maneuverKnown() ? str(d.missileDefense()) : unk;
         sw = g.getFontMetrics().stringWidth(val);
-        g.drawString(val, x+w-sw-s10, y1);
+        drawString(g,val, x+w-sw-s10, y1);
         val = view.maneuverKnown() ? str(d.beamDefense()) : unk;
         sw = g.getFontMetrics().stringWidth(val);
-        g.drawString(val, x+w-sw-s10, y2);
+        drawString(g,val, x+w-sw-s10, y2);
         val = view.maneuverKnown() ? str(d.combatSpeed()) : unk;
         sw = g.getFontMetrics().stringWidth(val);
-        g.drawString(val, x+w-sw-s10, y3);
+        drawString(g,val, x+w-sw-s10, y3);
 
     }
     private void  drawShipWeapons(Graphics2D g, ShipView view, int x, int y, int w, int h) { 
@@ -680,14 +680,14 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         
         y0 += lineH;
         if (!wpnScanned)
-            g.drawString(text("RACES_MILITARY_UNSCANNED_LONG"), x0, y0);
+            drawString(g,text("RACES_MILITARY_UNSCANNED_LONG"), x0, y0);
         else if (totalWpnCount == 0)
-            g.drawString(text("RACES_MILITARY_NO_WEAPONS"), x0, y0);
+            drawString(g,text("RACES_MILITARY_NO_WEAPONS"), x0, y0);
         else {
             for (int i=0;i<ShipDesign.maxWeapons();i++) {
                 if (view.weaponKnown(i)) {
                     if (view.hasWeapon(i)) 
-                        g.drawString(text("RACES_MILITARY_WEAPON_CNT", str(d.wpnCount(i)), d.weapon(i).name()), x0, y0);
+                        drawString(g,text("RACES_MILITARY_WEAPON_CNT", str(d.wpnCount(i)), d.weapon(i).name()), x0, y0);
                 }
                 y0 += lineH;
             }    
@@ -705,24 +705,24 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
             y0 += lineH;
             if (view.specialKnown(i)) {
                 if (view.hasSpecial(i)) {
-                    g.drawString(d.special(i).name(), x0, y0);
+                    drawString(g,d.special(i).name(), x0, y0);
                 }
                 else if (i == 0)
-                    g.drawString(text("RACES_MILITARY_NO_SPECIALS"), x0, y0);
+                    drawString(g,text("RACES_MILITARY_NO_SPECIALS"), x0, y0);
             }
             else if (i == 0)
-                g.drawString(text("RACES_MILITARY_UNSCANNED_LONG"), x0, y0);
+                drawString(g,text("RACES_MILITARY_UNSCANNED_LONG"), x0, y0);
         }   
     }
     private void drawSizeBox(Graphics g, String size, int count, int x, int y, int w, int h, boolean hideVal) {
         g.setColor(SystemPanel.blackText);
         g.setFont(narrowFont(20));
-        g.drawString(size, x, y+h-s10);
+        drawString(g,size, x, y+h-s10);
 
         if (!hideVal) {
             String c = str(count);
             int sw = g.getFontMetrics().stringWidth(c);
-            g.drawString(c, x+w-sw, y+h-s10);
+            drawString(g,c, x+w-sw, y+h-s10);
         }
     }
     @Override

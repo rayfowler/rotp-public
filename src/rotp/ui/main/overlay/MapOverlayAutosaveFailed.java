@@ -98,7 +98,7 @@ public class MapOverlayAutosaveFailed extends MapOverlay {
         g.setFont(narrowFont(16));
         List<String> lines = wrappedLines(g, desc1, textW);
         for (String line: lines) {
-            g.drawString(line, x2a, y2a);
+            drawString(g,line, x2a, y2a);
             y2a += lineH;
         }
 
@@ -107,7 +107,7 @@ public class MapOverlayAutosaveFailed extends MapOverlay {
         g.setFont(narrowFont(16));
         lines = wrappedLines(g, desc2, textW);
         for (String line: lines) {
-            g.drawString(line, x2a, y2a);
+            drawString(g,line, x2a, y2a);
             y2a += lineH;
         }
 
@@ -117,7 +117,7 @@ public class MapOverlayAutosaveFailed extends MapOverlay {
         g.setFont(narrowFont(16));
         lines = wrappedLines(g, desc3, textW);
         for (String line: lines) {
-            g.drawString(line, x2a, y2a);
+            drawString(g,line, x2a, y2a);
             y2a += lineH;
         }
 

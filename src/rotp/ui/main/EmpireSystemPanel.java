@@ -318,7 +318,7 @@ public class EmpireSystemPanel extends SystemPanel {
             }
 
             int sw = g.getFontMetrics().stringWidth(count);
-            g.drawString(count, x+w-s5-sw, y+h-s5);
+            drawString(g,count, x+w-s5-sw, y+h-s5);
         }
         private void drawShipCompletion(Graphics2D g, Colony c, int x, int y, int w, int h) {
             if (c == null)
@@ -338,8 +338,8 @@ public class EmpireSystemPanel extends SystemPanel {
             int x2 = x1+sw1+s5;
             int x3 = x1+sw1+s5+max(sw2,sw3)+s5;
             int y3 = y1+s2;
-            g.drawString(label, x1, y1);
-            g.drawString(amt, x2, y1);  
+            drawString(g,label, x1, y1);
+            drawString(g,amt, x2, y1);  
             
             limitBox.setBounds(x2-s3,y1-s12,sw3+s6,s15);
             if (hoverBox == limitBox) {
@@ -433,7 +433,7 @@ public class EmpireSystemPanel extends SystemPanel {
                 scaledFont(g, name, barW-s5, 18, 8);
                 int sw = g.getFontMetrics().stringWidth(name);
                 int x0 = barX+((barW-sw)/2);
-                g.drawString(name, x0, barY+s16);
+                drawString(g,name, x0, barY+s16);
             }
 
             if (hoverBox == shipNameBox) {
@@ -478,7 +478,7 @@ public class EmpireSystemPanel extends SystemPanel {
                 g.setColor(gray20C);
             int sw = g.getFontMetrics().stringWidth(s);
             int x0 = x+((w-sw)/2);
-            g.drawString(s, x0, y+h-s7);
+            drawString(g,s, x0, y+h-s7);
         }
         private void drawTransportButton(Graphics2D g, int x, int y, int w, int h) {
             StarSystem sys = parentSpritePanel.systemViewToDisplay();
@@ -504,7 +504,7 @@ public class EmpireSystemPanel extends SystemPanel {
             
             g.setFont(narrowFont(fontSize));
             int sw = g.getFontMetrics().stringWidth(s);
-            g.drawString(s, x+((w-sw)/2),y+s25);
+            drawString(g,s, x+((w-sw)/2),y+s25);
             if ((hoverBox == transportBox)
             && enabled) {
                 Stroke prevStroke = g.getStroke();
@@ -541,7 +541,7 @@ public class EmpireSystemPanel extends SystemPanel {
             
             g.setFont(narrowFont(fontSize));
             int sw = g.getFontMetrics().stringWidth(s);
-            g.drawString(s, x+((w-sw)/2),y+s25);
+            drawString(g,s, x+((w-sw)/2),y+s25);
             if ((hoverBox == abandonBox)
             && enabled) {
                 Stroke prevStroke = g.getStroke();

@@ -110,7 +110,7 @@ public class RacesSetColorUI extends BasePanel implements MouseListener, MouseMo
         g.setFont(narrowFont(16));
         for (String line: lines) {
             y1 += s18;
-            g.drawString(line, x0+s25, y1);
+            drawString(g,line, x0+s25, y1);
         }
        
         
@@ -141,7 +141,7 @@ public class RacesSetColorUI extends BasePanel implements MouseListener, MouseMo
         g.setColor(SystemPanel.blackText);
         int x3 = x0+(boxWidth-sw)/2;
         int y3 = y2 +s40;
-        g.drawString(exit, x3, y3);
+        drawString(g,exit, x3, y3);
     }
     private void exit() {
         hoverBox = null;

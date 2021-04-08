@@ -136,7 +136,7 @@ public abstract class ButtonPanel extends BasePanel implements MouseListener {
         int sh = g.getFontMetrics().getHeight();
         int x0 = (getWidth() - sw) / 2;
         int y0 = getHeight() - bottomMargin(sh);
-        g.drawString(text, x0, y0);
+        drawString(g,text, x0, y0);
     }
     public int bottomMargin(int fontHeight) {
         return s4+(getHeight()-(fontHeight*9/10))/2;

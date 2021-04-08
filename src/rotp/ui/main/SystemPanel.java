@@ -256,12 +256,12 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
             g.setColor(SystemPanel.greenText);
             String str4 = text("MAIN_FLEET_ALLY");
             int sw4 = g.getFontMetrics().stringWidth(str4);
-            g.drawString(str4, w-sw4-s10, y+h);
+            drawString(g,str4, w-sw4-s10, y+h);
         } else if (pl.atWarWith(empId)) {
             g.setColor(SystemPanel.redText);
             String str4 = text("MAIN_FLEET_ENEMY");
             int sw4 = g.getFontMetrics().stringWidth(str4);
-            g.drawString(str4, w-sw4-s10, y+h);
+            drawString(g,str4, w-sw4-s10, y+h);
         }
     }
     public void drawSystemName(Graphics2D g2, StarSystem sys, int y, int w, int h) {
@@ -291,7 +291,7 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
         int sw = g2.getFontMetrics().stringWidth(typeStr);
 
         int x0 = w-rightMargin-sw;
-        g2.drawString(typeStr, x0, y+h);
+        drawString(g2,typeStr, x0, y+h);
     }
     public boolean drawSystemEnvironment(Graphics2D g2, StarSystem sys, Font textF, int y, int w, int h) {
         int rightMargin = s10;
@@ -315,7 +315,7 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
         if (!envStr.isEmpty()) {
             int sw = g2.getFontMetrics().stringWidth(envStr);
             int x0 = w-rightMargin-sw;
-            g2.drawString(envStr, x0, y+h);
+            drawString(g2,envStr, x0, y+h);
             return true;
         }
         return false;
@@ -329,7 +329,7 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
             g2.setColor(redText);
             int sw = g2.getFontMetrics().stringWidth(projStr);
             int x0 = w-rightMargin-sw;
-            g2.drawString(projStr, x0, y+h);
+            drawString(g2,projStr, x0, y+h);
             return true;
         }
         return false;
@@ -357,7 +357,7 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
         if (!resourceStr.isEmpty()) {
             int sw = g2.getFontMetrics().stringWidth(resourceStr);
             int x0 = w-rightMargin-sw;
-            g2.drawString(resourceStr, x0, y+h);
+            drawString(g2,resourceStr, x0, y+h);
             return true;
         }
         return false;
@@ -388,7 +388,7 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
             int sw = g2.getFontMetrics().stringWidth(popStr);
 
             int x0 = w-rightMargin-sw;
-            g2.drawString(popStr, x0, y+h);
+            drawString(g2,popStr, x0, y+h);
         }
     }
     public void drawSystemSize(Graphics2D g2, StarSystem sys, Font textF, int y, int w, int h) {
@@ -426,7 +426,7 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
             int sw = g2.getFontMetrics().stringWidth(popStr);
 
             int x0 = w-rightMargin-sw;
-            g2.drawString(popStr, x0, y+h);
+            drawString(g2,popStr, x0, y+h);
         }
     }
     public void drawSystemReportAge(Graphics2D g2, StarSystem sys, Font textF, int y, int w, int h) {
@@ -440,7 +440,7 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
             String title = text("RACES_REPORT_AGE", age);
             int sw = g2.getFontMetrics().stringWidth(title);
             int x0 = w-rightMargin-sw;
-            g2.drawString(title, x0, y+h);
+            drawString(g2,title, x0, y+h);
         }
     }
     protected class SystemRangePane extends BasePanel {

@@ -227,7 +227,7 @@ public class MapOverlayBombardPrompt extends MapOverlay {
             String contStr = text("CLICK_CONTINUE");
             g.setColor(Color.black);
             g.setFont(narrowFont(14));
-            g.drawString(contStr, boxX+leftW, boxY+s50);
+            drawString(g,contStr, boxX+leftW, boxY+s50);
             // click to continue sprite
             parent.addNextTurnControl(clickSprite);
         }
@@ -237,7 +237,7 @@ public class MapOverlayBombardPrompt extends MapOverlay {
             g.setColor(Color.black);
             int titleFontSize = scaledFont(g, titleStr, boxW-leftW, 20, 14);
             g.setFont(narrowFont(titleFontSize));
-            g.drawString(titleStr, boxX+leftW, boxY+s25);
+            drawString(g,titleStr, boxX+leftW, boxY+s25);
 
             if (transports > 0) {
                 String subtitleStr = text("MAIN_BOMBARD_TROOPS", str(transports));
@@ -245,7 +245,7 @@ public class MapOverlayBombardPrompt extends MapOverlay {
                 g.setColor(Color.black);
                 int subtitleFontSize = min(titleFontSize-2, scaledFont(g, subtitleStr, boxW-leftW, 20, 14));
                 g.setFont(narrowFont(subtitleFontSize));
-                g.drawString(subtitleStr, boxX+leftW, boxY+s25+transportH);         
+                drawString(g,subtitleStr, boxX+leftW, boxY+s25+transportH);         
             }
             
             // calc width needed for yes/no buttons

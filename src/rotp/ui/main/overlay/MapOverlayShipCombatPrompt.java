@@ -202,7 +202,7 @@ public class MapOverlayShipCombatPrompt extends MapOverlay {
         g.setColor(Color.black);
         int titleFontSize = scaledFont(g, titleStr, boxW-leftW, 20, 14);
         g.setFont(narrowFont(titleFontSize));
-        g.drawString(titleStr, boxX+leftW, boxY+s20);
+        drawString(g,titleStr, boxX+leftW, boxY+s20);
 
         // print prompt string
         String sysName = player().sv.name(sys.id);

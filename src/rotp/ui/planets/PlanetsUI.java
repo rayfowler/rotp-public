@@ -801,7 +801,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             g.setFont(narrowFont(30));
 
             int y0 = h - s10;
-            g.drawString(title, x0,y0);
+            drawString(g,title, x0,y0);
             x0 += (tabW+gap);
             drawTab(g,x0,0,tabW,h,ecoLabel, ecologyBox, selectedMode == ECOLOGY_MODE);
             textureArea = new Area(new RoundRectangle2D.Float(x0,s10,tabW,h-s10,h/4,h/4));
@@ -826,7 +826,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             else
                 g.setColor(Color.white);
 
-            g.drawString("?", s16, s30);
+            drawString(g,"?", s16, s30);
         }
         private void drawTab(Graphics2D g, int x, int y, int w, int h, String label, Rectangle box, boolean selected) {
             g.setFont(narrowFont(20));
@@ -1259,7 +1259,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                 g.setColor(SystemPanel.yellowText);
                 g.setFont(narrowFont(20));
                 int sw = g.getFontMetrics().stringWidth(count);
-                g.drawString(count, x+w-s5-sw, y+h-s5);
+                drawString(g,count, x+w-s5-sw, y+h-s5);
             }
         }
         private void drawShipCompletion(Graphics2D g, int x, int y, int w, int h) {
@@ -1287,8 +1287,8 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             int x2 = x1+sw1+s5;
             int x3 = x1+sw1+s5+max(sw2,sw3)+s5;
             int y3 = y1+s2;
-            g.drawString(label, x1, y1);
-            g.drawString(amt, x2, y1);  
+            drawString(g,label, x1, y1);
+            drawString(g,amt, x2, y1);  
             
             limitBox.setBounds(x2-s3,y1-s12,sw3+s6,s15);
             if (hoverBox == limitBox) {
@@ -1384,7 +1384,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             scaledFont(g, name, barW-s5, 18, 8);
             int sw = g.getFontMetrics().stringWidth(name);
             int x0 = barX+((barW-sw)/2);
-            g.drawString(name, x0, barY+s16);
+            drawString(g,name, x0, barY+s16);
 
             if (hoverBox == shipNameBox) {
                 Stroke prev = g.getStroke();
@@ -1603,7 +1603,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             List<String> lines = scaledNarrowWrappedLines(g, text("PLANETS_COLONY_TRANSFER_DETAIL"), w-s15, 2, 16, 12);
             for (String line: lines) {
                 y0 += s16;
-                g.drawString(line, x0, y0);
+                drawString(g,line, x0, y0);
             }
             int buttonH = s30;
             drawTransferButton(g, s5, h-buttonH-s5, w-s10, buttonH);
@@ -1784,7 +1784,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             g.setColor(palette.black);
             y1 = s63;
             for (String line: descLines) {
-                g.drawString(line, x1+s20, y1);
+                drawString(g,line, x1+s20, y1);
                 y1 += s16;
             }
 
@@ -1819,14 +1819,14 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             String val = text("PLANETS_AMT_PCT", fmt(100*player().shipMaintCostPerBC(),1));
             sw = g.getFontMetrics().stringWidth(val);
             g.setColor(palette.black);
-            g.drawString(val, x1+w1-sw, y1);
+            drawString(g,val, x1+w1-sw, y1);
 
             y1 = h-s40;
             drawShadowedString(g, lbl2, 2, midX-sw2, y1, SystemPanel.textShadowC, SystemPanel.whiteText);
             val = text("PLANETS_AMT_PCT", fmt(100*player().missileBaseCostPerBC(),1));
             sw = g.getFontMetrics().stringWidth(val);
             g.setColor(palette.black);
-            g.drawString(val, x1+w1-sw, y1);
+            drawString(g,val, x1+w1-sw, y1);
 
 
             y1 = h-s20;
@@ -1834,7 +1834,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             val = text("PLANETS_AMT_PCT", fmt(100*player().stargateCostPerBC(),1));
             sw = g.getFontMetrics().stringWidth(val);
             g.setColor(palette.black);
-            g.drawString(val, x1+w1-sw, y1);
+            drawString(g,val, x1+w1-sw, y1);
 
             // RIGHT COLUMN
             int x2 = x1+w1+spacing;
@@ -1845,14 +1845,14 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             val = text("PLANETS_AMT_PCT", fmt(100*player().totalSpyCostPct(),1));
             sw = g.getFontMetrics().stringWidth(val);
             g.setColor(palette.black);
-            g.drawString(val, x2+w2-sw, y1);
+            drawString(g,val, x2+w2-sw, y1);
 
             y1 = h-s40;
             drawShadowedString(g, lbl5, 2, midX-sw5, y1, SystemPanel.textShadowC, SystemPanel.whiteText);
             val = text("PLANETS_AMT_PCT", fmt(100*player().internalSecurityCostPct(),1));
             sw = g.getFontMetrics().stringWidth(val);
             g.setColor(palette.black);
-            g.drawString(val, x2+w2-sw, y1);
+            drawString(g,val, x2+w2-sw, y1);
         }
     }
     class TotalIncomeUI extends BasePanel {
@@ -1903,7 +1903,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             String val = text("PLANETS_AMT_BC", df1.format(player().netTradeIncome()));
             sw = g.getFontMetrics().stringWidth(val);
             g.setColor(palette.black);
-            g.drawString(val, amtP-sw, y1);
+            drawString(g,val, amtP-sw, y1);
 
             y1 += s25;
             label = text("PLANETS_INCOME_PLANETS");
@@ -1912,7 +1912,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             val = text("PLANETS_AMT_BC", df1.format(player().totalPlanetaryIncome()));
             sw = g.getFontMetrics().stringWidth(val);
             g.setColor(palette.black);
-            g.drawString(val, amtP-sw, y1);
+            drawString(g,val, amtP-sw, y1);
 
             // draw divider line
             y1 += s15;
@@ -1926,7 +1926,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             val = text("PLANETS_AMT_BC", df1.format(player().totalIncome()));
             sw = g.getFontMetrics().stringWidth(val);
             g.setColor(palette.black);
-            g.drawString(val, amtP-sw, y1);
+            drawString(g,val, amtP-sw, y1);
         }
     }
     class ReserveUI extends BasePanel implements MouseListener, MouseMotionListener, MouseWheelListener {
@@ -1989,14 +1989,14 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
 
             g.setColor(palette.black);
             String text = text("PLANETS_AMT_BC", shortFmt(player().totalReserve()));
-            g.drawString(text, midP+s10, y1);
+            drawString(g,text, midP+s10, y1);
 
             y1 += s10;
 
             List<String> lines = scaledNarrowWrappedLines(g, text("PLANETS_TAX_DESC"), w-s40, 1, 15, 12);
             for (String line: lines) {
                 y1 += s15;
-                g.drawString(line, s20, y1);
+                drawString(g,line, s20, y1);
             }
 
             y1 += s30;
@@ -2004,7 +2004,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             g.setFont(narrowFont(16));
             String lbl = text("PLANETS_RESERVE_TAX");
             sw = g.getFontMetrics().stringWidth(lbl);
-            g.drawString(lbl, x1, y1);
+            drawString(g,lbl, x1, y1);
 
             x1 = x1+sw+s5;
             int boxW=s100;
@@ -2025,7 +2025,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             g.setFont(narrowFont(16));
             g.setColor(palette.black);
             x1 = x1+boxW+s5;
-            g.drawString(result, x1, y1);
+            drawString(g,result, x1, y1);
             
 
              // draw check box
@@ -2054,7 +2054,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             }
             g.setStroke(prev);
             g.setColor(palette.black);
-            g.drawString(opt,labelX,y1);
+            drawString(g,opt,labelX,y1);
         }
         private void drawSliderBox(Graphics2D g, int x, int y, int w, int h) {
             int leftMargin = x;
@@ -2123,7 +2123,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             g.setClip(null);
 
             g.setColor(palette.white);
-            g.drawString(pctAmt, x0, y0);
+            drawString(g,pctAmt, x0, y0);
 
             if (hoverBox == sliderBox) {
                 g.setColor(SystemPanel.yellowText);

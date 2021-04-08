@@ -593,7 +593,7 @@ public class CombatStack implements Base {
                 g.setColor(cRed[i]);
             else
                 g.setColor(cWhite[i]);
-            g.drawString(displayStr, x2, y2);
+            drawString(g,displayStr, x2, y2);
             x2 += dx;
             y2 += dy;
             fontsize += dFont;
@@ -665,7 +665,7 @@ public class CombatStack implements Base {
         int x2 = max(x1, x1+((stackW-sw2)/2));
 
         g.setColor(Color.lightGray);
-        g.drawString(s, x2, y2);
+        drawString(g,s, x2, y2);
 
         if (inStasis) {
             g.setColor(TechStasisField.STASIS_COLOR);

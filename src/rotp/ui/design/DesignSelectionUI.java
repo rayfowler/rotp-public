@@ -205,15 +205,15 @@ public abstract class DesignSelectionUI extends BasePanel implements MouseListen
             switch (align) {
                 case JLabel.CENTER:
                     rect = new Rectangle(x3+((colW-valW)/2),y3-itemH,valW,itemH);
-                    g.drawString(s, x3+((colW-valW)/2), y3-s2);
+                    drawString(g,s, x3+((colW-valW)/2), y3-s2);
                     break;
                 case JLabel.RIGHT:
                     rect = new Rectangle(x3+colW-valW,y3-itemH,valW,itemH);
-                    g.drawString(s, x3+colW-valW, y3-s2);
+                    drawString(g,s, x3+colW-valW, y3-s2);
                     break;
                 default: 
                     rect = new Rectangle(x3,y3-itemH,valW,itemH);
-                    g.drawString(s, x3, y3-s2);
+                    drawString(g,s, x3, y3-s2);
                     break;
             }
             sortingBoxes.add(rect);
@@ -240,13 +240,13 @@ public abstract class DesignSelectionUI extends BasePanel implements MouseListen
                 int valW = g.getFontMetrics().stringWidth(val);
                 switch (align) {
                     case JLabel.CENTER:
-                        g.drawString(val, x3+((colW-valW)/2), y3-4);
+                        drawString(g,val, x3+((colW-valW)/2), y3-4);
                         break;
                     case JLabel.RIGHT:
-                        g.drawString(val, x3+colW-valW, y3-4);
+                        drawString(g,val, x3+colW-valW, y3-4);
                         break;
                     default: 
-                        g.drawString(val, x3, y3-4);
+                        drawString(g,val, x3, y3-4);
                         break;
                 }
                 x3 += columnWidths.get(fieldNum);

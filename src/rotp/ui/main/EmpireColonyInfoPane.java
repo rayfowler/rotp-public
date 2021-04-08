@@ -163,7 +163,7 @@ public class EmpireColonyInfoPane extends BasePanel {
             }
 
             g.setColor(SystemPanel.blackText);
-            g.drawString(strTitle, x0, y0);
+            drawString(g,strTitle, x0, y0);
 
             if (strDataLabel != null) {
                 drawShadowedString(g, strDataLabel, 1, x1, y0, darkC, textC);
@@ -171,7 +171,7 @@ public class EmpireColonyInfoPane extends BasePanel {
             else {
                 drawShadowedString(g, strData1, 1, x1, y0, darkC, textC);
                 g.setColor(darkC);
-                g.drawString(strData2, x2, y0);
+                drawString(g,strData2, x2, y0);
                 basesBox.setBounds(x1-s3,y0-s12,(x2-x1)+sw2+s6,s15);
                 if (hoverBox == basesBox) {
                     Stroke prevStroke = g.getStroke();
@@ -484,7 +484,7 @@ public class EmpireColonyInfoPane extends BasePanel {
             int y0 = getHeight()-s6;
             g.setColor(SystemPanel.blackText);
             g.setFont(narrowFont(16));
-            g.drawString(str1, s5, y0);
+            drawString(g,str1, s5, y0);
             int sw2 = g.getFontMetrics().stringWidth(str2);
             int sw3 = g.getFontMetrics().stringWidth(str3);
 

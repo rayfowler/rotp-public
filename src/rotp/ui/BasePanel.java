@@ -304,12 +304,7 @@ public class BasePanel extends JPanel implements Base {
         if (threads >= 15)
             s = concat(s, " T:", str(threads));
         int sw = g.getFontMetrics().stringWidth(s);
-        g.drawString(s, getWidth()-sw-s5, getHeight()-s5);
-    }
-    public void drawAlpha(Graphics g) {
-        g.setFont(narrowFont(99));
-        g.setColor(new Color(255,255,255,48));
-        g.drawString("ALPHA", getWidth()/3, getHeight()/2-s30);         
+        drawString(g, s, getWidth()-sw-s5, getHeight()-s5);
     }
     public void drawTexture(Graphics g0) {
         drawTexture(g0, 0, 0, getWidth(), getHeight());

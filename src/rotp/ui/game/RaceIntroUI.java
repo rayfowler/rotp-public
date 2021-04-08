@@ -135,7 +135,7 @@ public class RaceIntroUI extends BasePanel implements MouseListener {
         g.setFont(font(24));
         int x0 = scaled(pl.race().introTextX);
         int y0 = scaled(230);
-        g.drawString(title, x0, y0);
+        drawString(g,title, x0, y0);
     }
     private void drawIntroductionText(Graphics2D g) {
         int w = getWidth();
@@ -153,7 +153,7 @@ public class RaceIntroUI extends BasePanel implements MouseListener {
                 String paragraph = text.get(i).replace("[race]", pl.raceName());
                 List<String> lines = scaledWrappedLines(g, paragraph, lineW, 30, 16, 12);
                 for (String line: lines) {
-                    g.drawString(line, x0, y0);
+                    drawString(g,line, x0, y0);
                     y0 += lineH;
                 }
                 y0 += paraSpacing;

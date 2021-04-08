@@ -2716,7 +2716,7 @@ public final class Empire implements Base, NamedObject, Serializable {
                 int sw = g2.getFontMetrics().stringWidth(name);
                 int x = mapX - (sw/2);
                 int y = mapY - (fontSize/2);
-                g2.drawString(name, x, y);
+                drawString(g2,name, x, y);
             }
         }
     }

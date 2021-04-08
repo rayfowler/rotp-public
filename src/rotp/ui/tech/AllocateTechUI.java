@@ -232,7 +232,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         String title = text("TECH_RESEARCH");
         g.setFont(narrowFont(32));
         g.setColor(yellowTextC);
-        g.drawString(title,s50, s40);
+        drawString(g,title,s50, s40);
 
         int cats = TechTree.NUM_CATEGORIES;
         int gap = s5;
@@ -281,7 +281,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         g.setColor(yellowTextC);
 
         int x4 = subPanelX+((subPanelW-subSW)/2);
-        g.drawString(subtitle, x4, subPanelY-s8);
+        drawString(g,subtitle, x4, subPanelY-s8);
 
         g.setColor(subpanelBackC);
         g.fillRect(subPanelX, subPanelY, subPanelW, subPanelH);
@@ -307,7 +307,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             y5 += s10;
         for (String descLine: descLines) {
             y5 += s15;
-            g.drawString(descLine, subPanelX+s20, y5);
+            drawString(g,descLine, subPanelX+s20, y5);
         }
 
         TechTree tree = player().tech();
@@ -323,12 +323,12 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         String detailLine1 = text("TECH_EMPIRE_DETAIL_1", spending, research);
         int detSW = g.getFontMetrics().stringWidth(detailLine1);
         int x6 = subPanelX+((subPanelW-detSW)/2);
-        g.drawString(detailLine1, x6, y6);
+        drawString(g,detailLine1, x6, y6);
         String detailLine2 = text("TECH_EMPIRE_DETAIL_2", spending, research);
         detSW = g.getFontMetrics().stringWidth(detailLine2);
         y6 += s28;
         x6 = subPanelX+((subPanelW-detSW)/2);
-        g.drawString(detailLine2, x6, y6);
+        drawString(g,detailLine2, x6, y6);
         
         int y6a = y6+s10;
         g.setFont(plainFont(16));
@@ -337,7 +337,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         List<String> divertLines = wrappedLines(g, divertLine, subPanelW-s30-indent);
         for (String line: divertLines) {
             y6a += s15;
-            g.drawString(line, subPanelX+s20+indent, y6a);
+            drawString(g,line, subPanelX+s20+indent, y6a);
         }
      
         int checkW = s12;
@@ -372,7 +372,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         List<String> eqLines = wrappedLines(g, text("TECH_EMPIRE_BALANCED_DESC"), scaled(200));
         for (String line: eqLines) {
             y6 += s15;
-            g.drawString(line, subPanelX+s20, y6);
+            drawString(g,line, subPanelX+s20, y6);
         }
 
         int x7 = subPanelX+s10;
@@ -419,7 +419,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         else
             g.setColor(Color.white);
 
-        g.drawString("?", s26, s40);
+        drawString(g,"?", s26, s40);
     }
     private void drawCategorySlider(Graphics2D g, int catNum, int x, int y, int w, int h) {
         TechCategory cat = player().tech().category(catNum);
@@ -438,7 +438,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             textC = sliderTextEnabled;
         g.setColor(textC);
         int sw = g.getFontMetrics().stringWidth(name);
-        g.drawString(name, x+s30, y+s15);
+        drawString(g,name, x+s30, y+s15);
         labelBox[catNum].setBounds(x+s30, y, sw, s15);
 
         // cat slider box
@@ -495,7 +495,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         int rpSW = g.getFontMetrics().stringWidth(rpText);
         int x8 = x+w-rpSW-s10;
         int y8 = y+s32;
-        g.drawString(rpText, x8, y8);
+        drawString(g,rpText, x8, y8);
     }
     private void drawOpenTechCategory(Graphics2D g, int catNum, int x, int y, int w, int h, int titleH) {
         catBox[catNum].setBounds(0,0,0,0);
@@ -555,35 +555,35 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         String researching = cat.researchCompleted() ? text("TECH_RESEARCH_COMPLETED") : text("TECH_RESEARCHING");
         int sw1 = g.getFontMetrics().stringWidth(researching);
         int x1 =x+scaled(200);
-        g.drawString(researching, x1, y0);
+        drawString(g,researching, x1, y0);
 
         if (!cat.researchCompleted()) {
             g.setFont(plainFont(fontSize));
             String techName = tech == null ? text("TECH_NONE_RESEARCHED") : tech.name();
-            g.drawString(techName, x1+sw1+s5, y0);
+            drawString(g,techName, x1+sw1+s5, y0);
         }
 
         g.setFont(narrowFont(fontSize));
         String detail1Key = cat.techDescription1(true);
         int sw2 = g.getFontMetrics().stringWidth(detail1Key);
         int x2 = x+scaled(500);
-        g.drawString(detail1Key, x2, y0);
+        drawString(g,detail1Key, x2, y0);
 
         g.setFont(plainFont(fontSize));
         String detail1Value = cat.techDescription1(false);
         int x2b = x2+sw2+s10;
-        g.drawString(detail1Value, x2b, y0);
+        drawString(g,detail1Value, x2b, y0);
 
         String detail2Key = cat.techDescription2(true);
         if (!detail2Key.isEmpty()) {
             g.setFont(narrowFont(fontSize));
             int sw3 = g.getFontMetrics().stringWidth(detail2Key);
             int x3 = x+scaled(720);
-            g.drawString(detail2Key, x3, y0);
+            drawString(g,detail2Key, x3, y0);
             String detail2Value = cat.techDescription2(false);
             int x3b = x3+sw3+s10;
             g.setFont(plainFont(fontSize));
-            g.drawString(detail2Value, x3b, y0);
+            drawString(g,detail2Value, x3b, y0);
         }
     }
     public void drawResearchBubble(Graphics2D g, TechCategory cat, boolean showMinimum, Color textC, Color backC1, Color backC2, int x, int y) {
@@ -607,7 +607,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
                 g.setFont(narrowFont(18));
                 g.setColor(textC);
                 int swPct = g.getFontMetrics().stringWidth(strPct);
-                g.drawString(strPct, x-(swPct/2), y);
+                drawString(g,strPct, x-(swPct/2), y);
             }
         }
 
@@ -682,7 +682,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         int titleSW = g.getFontMetrics().stringWidth(title);
         int x0 = x+((w-titleSW)/2);
         int y0 = h*4/9;
-        g.drawString(title,x0,y0);
+        drawString(g,title,x0,y0);
 
         y0 += s10;
         List<String> descLines = this.scaledPlainWrappedLines(g, desc, w*2/3, 5, 20, 16);
@@ -690,7 +690,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             int lineSW = g.getFontMetrics().stringWidth(line);
             x0 = x+((w-lineSW)/2);
             y0 += s20;
-            g.drawString(line,x0,y0);
+            drawString(g,line,x0,y0);
         }
     }
     private void drawTierArrow(Graphics2D g, int x0, int w, int h) {
@@ -706,7 +706,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         g.setFont(narrowFont(30));
         String numStr = str(tierNum+1);
         int sw = g.getFontMetrics().stringWidth(numStr);
-        g.drawString(numStr, x0+w-sw-s5, s25);
+        drawString(g,numStr, x0+w-sw-s5, s25);
     }
     private void drawTechTier(Graphics2D g, Tech[] allT, boolean newResearch, List<String> knownT, String currentT, int minLevel, int maxLevel, int x, int w, int h) {
         g.setColor(tierBackC);
@@ -771,7 +771,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         int fontSize = scaledFont(g, name, w-s80, 20, 16);
         int y0 = y+hdr1;
         if (known)
-            g.drawString(name, x+s7, y0);
+            drawString(g,name, x+s7, y0);
         else
             drawShadowedString(g, name, 2, x+s7, y0, SystemPanel.buttonShadowC, textC);
         
@@ -793,7 +793,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             g.setFont(narrowFont(fontSize));
             int costSW = g.getFontMetrics().stringWidth(costLbl);
             g.setColor(Color.black);
-            g.drawString(costLbl, x+w-s10-costSW, y0);
+            drawString(g,costLbl, x+w-s10-costSW, y0);
         }
 
         g.setColor(techUnderscoreC);
@@ -803,7 +803,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         g.setColor(Color.black);
         descLines = this.scaledPlainWrappedLines(g, tech.detail(), w-s14, 4, 16, 13);
         for (String desc: descLines) {
-            g.drawString(desc, x+s7, y0);
+            drawString(g,desc, x+s7, y0);
             y0+= lineH;
         }
         
@@ -822,7 +822,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             g.drawRoundRect(x1, y+hdr1+s45, sw1+s20, s20, s5, s5);
             g.setStroke(prev);
             g.setColor(SystemPanel.whiteText);
-            g.drawString(select, x1+s10, y+hdr1+s60);
+            drawString(g,select, x1+s10, y+hdr1+s60);
         }
     }
     public void selectTechCategory(int i) {

@@ -79,7 +79,7 @@ public class SystemNameDisplaySprite  extends MapControlSprite  {
         String name = map.parent().systemLabel(home);
         int sw = g2.getFontMetrics().stringWidth(name);
 
-        g2.drawString(name, x2-(sw/2), y2+scaled(24));
+        drawString(g2,name, x2-(sw/2), y2+scaled(24));
         
         if (map.showSystemData()) {
             g2.setColor(StarSystem.systemDataBackC);

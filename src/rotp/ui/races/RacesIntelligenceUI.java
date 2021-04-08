@@ -208,12 +208,12 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         g.setFont(narrowFont(32));
         String title = text("RACES_INTEL_TITLE");
         title = emp.replaceTokens(title, "alien");
-        g.drawString(title, x+s10, y+h-s15);
+        drawString(g,title, x+s10, y+h-s15);
     }
     private void drawCounterIntelTitle(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(SystemPanel.orangeText);
         g.setFont(narrowFont(32));
-        g.drawString(text("RACES_COUNTER_INTEL_TITLE"), x+s10, y+h-s15);
+        drawString(g,text("RACES_COUNTER_INTEL_TITLE"), x+s10, y+h-s15);
     }
     private void drawPlayerBaseInfo(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(RacesUI.darkBrown);
@@ -241,7 +241,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         if (lines.size() == 1)
             y4 += s10;
         for (String line: lines) {
-            g.drawString(line, x0+20, y4);
+            drawString(g,line, x0+20, y4);
             y4 += s16;
         }
 
@@ -251,17 +251,17 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         int amt = (int) (100*player().totalInternalSecurityPct());
         String s = amt == 0 ? text("RACES_INTEL_SECURITY_BONUS_NONE") : text("RACES_INTEL_SECURITY_BONUS_AMT", str(amt));
         int sw = g.getFontMetrics().stringWidth(s);
-        g.drawString(s, x+w-s20-sw, y1);
+        drawString(g,s, x+w-s20-sw, y1);
 
         amt = (int) internalSecurityCost;
         s = text("RACES_INTEL_SPENDING_ANNUAL", str(amt));
         sw = g.getFontMetrics().stringWidth(s);
-        g.drawString(s, x+w-s20-sw, y2);
+        drawString(g,s, x+w-s20-sw, y2);
         
          // draw string on right for pct 
         String cost = text("RACES_INTEL_PERCENT_AMT",(int)(player().requestedSecurityCostPct()*100));
         sw = g.getFontMetrics().stringWidth(cost);
-        g.drawString(cost, x+w-s20-sw, y3);
+        drawString(g,cost, x+w-s20-sw, y3);
         // need maxwidth so slider doesn't move as cost pct changes
         String maxWidthStr = text("RACES_INTEL_PERCENT_AMT",10);
         sw = g.getFontMetrics().stringWidth(maxWidthStr);
@@ -307,7 +307,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         if (lines.size() == 1)
             y4 += s10;
         for (String line: lines) {
-            g.drawString(line, x0+20, y4);
+            drawString(g,line, x0+20, y4);
             y4 += s16;
         }
 
@@ -325,7 +325,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
             s = text("RACES_INTEL_YEARS", str(age));
         
         int sw = g.getFontMetrics().stringWidth(s);
-        g.drawString(s, x+w-s20-sw, y1);
+        drawString(g,s, x+w-s20-sw, y1);
 
         // draw arrows to incr/decr desired spy networks
         int mgn = s20;
@@ -366,13 +366,13 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         int max = view.spies().maxSpies();
         s  = num == max ? str(num) : text("RACES_INTEL_SPIES", str(num), str(max));
         sw = g.getFontMetrics().stringWidth(s);
-        g.drawString(s, x+w-mgn-sw, y2);
+        drawString(g,s, x+w-mgn-sw, y2);
        
          // draw string on right for pct 
         g.setColor(SystemPanel.blackText);
         String newSpies = view.spies().newSpiesExpected();
         sw = g.getFontMetrics().stringWidth(newSpies);
-        g.drawString(newSpies, x+w-s20-sw, y3);
+        drawString(g,newSpies, x+w-s20-sw, y3);
         // need maxwidth so slider doesn't move as cost pct changes
         String maxWidthStr = text("RACES_INTEL_COMPLETION_YEARS",99);
         sw = g.getFontMetrics().stringWidth(maxWidthStr);
@@ -392,7 +392,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         int sw = g.getFontMetrics().stringWidth(title);
         int y1 = y + h - s5;
         int x1 = x+s20;
-        g.drawString(title, x1, y1);
+        drawString(g,title, x1, y1);
         
         // don't draw the spy informational message for your New Republic allies
         if (emp.isAI()) {
@@ -418,7 +418,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         if (lines.size() == 1)
             y2 += s8;
         for (String line: lines) {
-            g.drawString(line, x2, y2);
+            drawString(g,line, x2, y2);
             y2 += s16;
         }
     }
@@ -504,7 +504,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
             if ((t.level() > 0) && !t.free) {
                 y2 += rowH;
                 rows++;
-                g.drawString(tech(id).name(), x2, y2);
+                drawString(g,tech(id).name(), x2, y2);
             }
         }
         g.setColor(SystemPanel.blackText);
@@ -513,7 +513,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
             if ((t.level() > 0) && !t.free) {
                 y2 += rowH;
                 rows++;
-                g.drawString(tech(id).name(), x2, y2);
+                drawString(g,tech(id).name(), x2, y2);
             }
         }
         techYMax[num] = max(0, s21+(rowH*rows) - listH);
@@ -577,7 +577,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
                 y2 += rowH;
                 rows++;
                 String s = tech(id).name();
-                g.drawString(s, x2, y2);
+                drawString(g,s, x2, y2);
                 int sw1 = g.getFontMetrics().stringWidth(s)+s5;
                 List<Empire> emps = techOwners.get(id);
                 int x3 = x2 + sw1;
@@ -585,7 +585,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
                 for (Empire emp1: emps) {
                     s = emp1.raceName();
                     sw1 = g.getFontMetrics().stringWidth(s)+s5;
-                    g.drawString(s, x3, y2);
+                    drawString(g,s, x3, y2);
                     x3 += sw1;
                 }
                 g.setColor(SystemPanel.orangeText);
@@ -631,29 +631,29 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         int y1 = y0+s5;
         for (String line: lines) {
             y1 += s16;
-            g.drawString(line, x+s20, y1);
+            drawString(g,line, x+s20, y1);
         }
         
         g.setFont(narrowFont(18));
         String spies = text("RACES_INTEL_BUREAU_SPIES");
         int y2 = y0+s80;
-        g.drawString(spies, x+s20, y2);
+        drawString(g,spies, x+s20, y2);
         
         g.setFont(narrowFont(16));
         String str2 = str(player().totalActiveSpies());
         int sw2 = g.getFontMetrics().stringWidth(str2);
-        g.drawString(str2, x+w-s20-sw2, y2);
+        drawString(g,str2, x+w-s20-sw2, y2);
         
         y2 += s25;
         g.setFont(narrowFont(18));
         String spending = text("RACES_INTEL_BUREAU_SPENDING");
-        g.drawString(spending, x+s20, y2);
+        drawString(g,spending, x+s20, y2);
         int amt = (int) externalSpyingCost;
         
         g.setFont(narrowFont(16));
         str2 = amt == 0 ? text("RACES_INTEL_SECURITY_BONUS_NONE") : text("RACES_INTEL_SPENDING_ANNUAL", str(amt));
         sw2 = g.getFontMetrics().stringWidth(str2);
-        g.drawString(str2, x+w-s20-sw2, y2);
+        drawString(g,str2, x+w-s20-sw2, y2);
         
         drawManageSpiesButton(g, x+s20,y+h-s45,w-s40,s25);
     }
@@ -706,7 +706,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         List<String> lines = wrappedLines(g, desc, w-s30);
         for (String line: lines) {
             y2 += s16;
-            g.drawString(line, x+s15, y2);
+            drawString(g,line, x+s15, y2);
         }
         
         String desc2 = "";
@@ -721,7 +721,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
             List<String> lines2 = wrappedLines(g, desc2, w-s30);
             for (String line: lines2) {
                 y2 += s16;
-                g.drawString(line, x+s15, y2);
+                drawString(g,line, x+s15, y2);
             }           
         }
     }
@@ -776,7 +776,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
             int sw1 = g.getFontMetrics().stringWidth(spyCost);
             int xa = buttonSlider.x+((buttonSlider.width - sw1)/2);
             int ya = buttonSlider.y+buttonSlider.height-s4;
-            g.drawString(spyCost, xa, ya);
+            drawString(g,spyCost, xa, ya);
         }
     }
     private void drawSpiesMissionButton(Graphics2D g, Empire emp, boolean treatyBreak, int x, int y, int w, int h) {
@@ -831,7 +831,7 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         scaledFont(g, name, barW-s5, 18, 14);
         int sw = g.getFontMetrics().stringWidth(name);
         int x0 = barX+((barW-sw)/2);
-        g.drawString(name, x0, barY+s16);
+        drawString(g,name, x0, barY+s16);
 
         if (hoverShape == spyMissionBox) {
             Stroke prev = g.getStroke();

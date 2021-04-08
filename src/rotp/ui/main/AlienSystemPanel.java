@@ -145,23 +145,23 @@ public class AlienSystemPanel extends SystemPanel {
 
             g.setFont(narrowFont(16));
             g.setColor(textColor);
-            g.drawString(popLbl, x0, y0);
-            g.drawString(factLbl, x1, y0);
-            g.drawString(shieldLbl, x0, y1);
-            g.drawString(baseLbl, x1, y1);
+            drawString(g,popLbl, x0, y0);
+            drawString(g,factLbl, x1, y0);
+            drawString(g,shieldLbl, x0, y1);
+            drawString(g,baseLbl, x1, y1);
 
             String str = spied ? str(pl.sv.population(id)) : unknown;
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x1-sw-s10, y0);
+            drawString(g,str, x1-sw-s10, y0);
             str = spied ? str(pl.sv.factories(id)) : unknown;
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, w-s10-sw, y0);
+            drawString(g,str, w-s10-sw, y0);
             str = spied ? str(pl.sv.shieldLevel(id)) : unknown;
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x1-s10-sw, y1);
+            drawString(g,str, x1-s10-sw, y1);
             str = spied ? str(pl.sv.bases(id)) : unknown;
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, w-s10-sw, y1);
+            drawString(g,str, w-s10-sw, y1);
 
             // draw borders around data
             g.setColor(dataBorders);

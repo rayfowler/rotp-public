@@ -147,7 +147,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         g.setFont(narrowFont(18));
         String expl = text("SETTINGS_DESCRIPTION");
         g.setColor(SystemPanel.blackText);
-        g.drawString(expl, leftM+s10, y1+s20);
+        drawString(g,expl, leftM+s10, y1+s20);
         
         Stroke prev = g.getStroke();
         g.setStroke(stroke3);
@@ -171,7 +171,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         int y3 = y2+s10;
         for (String line: lines) {
             y3 += lineH;
-            g.drawString(line, x2+s20, y3);
+            drawString(g,line, x2+s20, y3);
         }
         
         y2 += (h2+s20);
@@ -188,7 +188,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         y3 = y2+s10;
         for (String line: lines) {
             y3 += lineH;
-            g.drawString(line, x2+s20, y3);
+            drawString(g,line, x2+s20, y3);
         }       
        
         y2 += (h2+s20);
@@ -205,7 +205,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         y3 = y2+s10;
         for (String line: lines) {
             y3 += lineH;
-            g.drawString(line, x2+s20, y3);
+            drawString(g,line, x2+s20, y3);
         }
         
         y2 += (h2+s20);
@@ -222,7 +222,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         y3 = y2+s10;
         for (String line: lines) {
             y3 += lineH;
-            g.drawString(line, x2+s20, y3);
+            drawString(g,line, x2+s20, y3);
         }
         
         
@@ -240,7 +240,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         y3 = y2+s10;
         for (String line: lines) {
             y3 += lineH;
-            g.drawString(line, x2+s20, y3);
+            drawString(g,line, x2+s20, y3);
         }
         
         // middle column
@@ -260,7 +260,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         y3 = y2+s10;
         for (String line: lines) {
             y3 += lineH;
-            g.drawString(line, x2+s20, y3);
+            drawString(g,line, x2+s20, y3);
         }
         
         y2 += (h2+s20);
@@ -277,7 +277,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         y3 = y2+s10;
         for (String line: lines) {
             y3 += lineH;
-            g.drawString(line, x2+s20, y3);
+            drawString(g,line, x2+s20, y3);
         }       
        
 
@@ -295,7 +295,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         y3 = y2+s10;
         for (String line: lines) {
             y3 += lineH;
-            g.drawString(line, x2+s20, y3);
+            drawString(g,line, x2+s20, y3);
         }
  
         
@@ -313,7 +313,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         y3 = y2+s10;
         for (String line: lines) {
             y3 += lineH;
-            g.drawString(line, x2+s20, y3);
+            drawString(g,line, x2+s20, y3);
         }
         
         
@@ -331,7 +331,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         y3 = y2+s10;
         for (String line: lines) {
             y3 += lineH;
-            g.drawString(line, x2+s20, y3);
+            drawString(g,line, x2+s20, y3);
         }
         
         // right side
@@ -351,7 +351,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         y3 = y2+s10;
         for (String line: lines) {
             y3 += lineH;
-            g.drawString(line, x2+s20, y3);
+            drawString(g,line, x2+s20, y3);
         }
         
         y2 += (h2+s20);
@@ -368,7 +368,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         y3 = y2+s10;
         for (String line: lines) {
             y3 += lineH;
-            g.drawString(line, x2+s20, y3);
+            drawString(g,line, x2+s20, y3);
         }
           
         y2 += (h2+s20);
@@ -385,7 +385,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         y3 = y2+s10;
         for (String line: lines) {
             y3 += lineH;
-            g.drawString(line, x2+s20, y3);
+            drawString(g,line, x2+s20, y3);
         }
 
         y2 += (h2+s20);
@@ -402,7 +402,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         y3 = y2+s10;
         for (String line: lines) {
             y3 += lineH;
-            g.drawString(line, x2+s20, y3);
+            drawString(g,line, x2+s20, y3);
         }
 
 
@@ -420,7 +420,7 @@ public class StartOptionsUI extends BasePanel implements MouseListener, MouseMot
         y3 = y2+s10;
         for (String line: lines) {
             y3 += lineH;
-            g.drawString(line, x2+s20, y3);
+            drawString(g,line, x2+s20, y3);
         }
 
         g.setStroke(prev);

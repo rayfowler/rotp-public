@@ -69,7 +69,7 @@ public class HelpSprite extends MapSprite {
         else
             g.setColor(Color.white);
             
-        g.drawString("?", x1, y1);
+        drawString(g,"?", x1, y1);
     }
     @Override
     public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {

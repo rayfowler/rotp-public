@@ -190,7 +190,7 @@ public final class TransferReserveUI extends BasePanel implements MouseListener,
         int sw = g.getFontMetrics().stringWidth(amtString);
         int amtX = x0+boxWidth-s40-sw;
         g.setColor(SystemPanel.blackText);
-        g.drawString(amtString, amtX, boxTopY+boxH-s3);
+        drawString(g,amtString, amtX, boxTopY+boxH-s3);
 
         // button vars
         int buttonM = s30;  // L/R margin

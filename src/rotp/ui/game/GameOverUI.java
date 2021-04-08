@@ -105,7 +105,7 @@ public final class GameOverUI extends FadeInPanel implements MouseListener, Mous
         g.setFont(narrowFont(30));
         g.setColor(Color.lightGray);
         String title = gameOverTitle();
-        g.drawString(title, s10, s35);
+        drawString(g,title, s10, s35);
         
         if (transIndex >= 0) {
             int lineH = s30;
@@ -134,7 +134,7 @@ public final class GameOverUI extends FadeInPanel implements MouseListener, Mous
                 if (transIndex == trans.length-1) 
                     drawBorderedString(g, line, x0, y0, Color.black, Color.lightGray);
                 else
-                    g.drawString(line, x0, y0);
+                    drawString(g,line, x0, y0);
             }
             g.setComposite(preComp);
         }

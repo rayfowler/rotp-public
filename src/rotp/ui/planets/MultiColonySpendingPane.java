@@ -131,7 +131,7 @@ public class MultiColonySpendingPane extends BasePanel implements MouseListener,
         g.setFont(narrowFont(14));
         List<String> descLines = wrappedLines(g, desc, w-s20);
         for (String line: descLines) {
-            g.drawString(line, s10, y0);
+            drawString(g,line, s10, y0);
             y0 += s16;
         }
     }
@@ -370,7 +370,7 @@ public class MultiColonySpendingPane extends BasePanel implements MouseListener,
             String labelText = text(text);
             g.setColor(textC);
             g.setFont(narrowFont(18));
-            g.drawString(labelText, s10, getHeight()-s10);
+            drawString(g,labelText, s10, getHeight()-s10);
             labelBox.setBounds(s5, 0, leftMargin()-s15, getHeight());
 
             int boxL = boxLeftX();
@@ -440,7 +440,7 @@ public class MultiColonySpendingPane extends BasePanel implements MouseListener,
                     g.setColor(SystemPanel.darkOrangeText);
                 else
                     g.setColor(Color.gray);
-                 g.drawString(popStr, boxL+x1, boxTopY+boxH-s4);
+                 drawString(g,popStr, boxL+x1, boxTopY+boxH-s4);
                 
                 if (popGrowth < 0)
                     g.setColor(SystemPanel.orangeText);
@@ -448,7 +448,7 @@ public class MultiColonySpendingPane extends BasePanel implements MouseListener,
                     g.setColor(Color.lightGray);
                 Shape prevClip = g.getClip();
                 g.setClip(fillRect);
-                g.drawString(popStr, boxL+x1, boxTopY+boxH-s4);
+                drawString(g,popStr, boxL+x1, boxTopY+boxH-s4);
                 g.setClip(prevClip);
             }
 
@@ -467,7 +467,7 @@ public class MultiColonySpendingPane extends BasePanel implements MouseListener,
             scaledFont(g, resultText, rightMargin()-s10, 18, 14);
             //g.setFont(narrowFont(18));
             int sw = g.getFontMetrics().stringWidth(resultText);
-            g.drawString(resultText, getWidth()-sw-s10, getHeight()-s10);
+            drawString(g,resultText, getWidth()-sw-s10, getHeight()-s10);
         }
         private int leftMargin()        { return s58; }
         private int rightMargin()       { return s70; }

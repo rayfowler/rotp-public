@@ -232,7 +232,7 @@ public class MapOverlaySystemsScouted extends MapOverlay {
         if (!detailStr.isEmpty()) {
             g.setColor(Color.darkGray);
             g.setFont(narrowFont(16));
-            g.drawString(detailStr, boxX+leftW+s30, boxY+boxH1-s20);
+            drawString(g,detailStr, boxX+leftW+s30, boxY+boxH1-s20);
         }
 
         // draw planet info, from bottom up
@@ -376,7 +376,7 @@ public class MapOverlaySystemsScouted extends MapOverlay {
             int x4b = prevSystemButton.mapX()+prevSystemButton.width()+s10;
             int y4b = prevSystemButton.mapY()+prevSystemButton.height()-s10;
             g.setColor(SystemPanel.blackText);
-            g.drawString(notice2Str, x4b, y4b);
+            drawString(g,notice2Str, x4b, y4b);
 
             parent.addNextTurnControl(nextSystemButton);
             nextSystemButton.init(this,g);

@@ -275,7 +275,7 @@ public final class SabotageUI extends BasePanel implements MouseListener {
             title = mission.target().replaceTokens(title, "alien");
             g.setFont(narrowFont(35));
             int sw = g.getFontMetrics().stringWidth(title);
-            g.drawString(title, (w-sw)/2, s40);
+            drawString(g,title, (w-sw)/2, s40);
         }
     }
     class SpySystemPanel extends SystemPanel {
@@ -395,23 +395,23 @@ public final class SabotageUI extends BasePanel implements MouseListener {
 
             g.setFont(narrowFont(16));
             g.setColor(SystemPanel.blackText);
-            g.drawString(popLbl, x0, y0);
-            g.drawString(factLbl, x1, y0);
-            g.drawString(shieldLbl, x0, y1);
-            g.drawString(baseLbl, x1, y1);
+            drawString(g,popLbl, x0, y0);
+            drawString(g,factLbl, x1, y0);
+            drawString(g,shieldLbl, x0, y1);
+            drawString(g,baseLbl, x1, y1);
 
             String s = spied ? str(pl.sv.population(id)) : unknown;
             int sw1 = g.getFontMetrics().stringWidth(s);
-            g.drawString(s, x1-sw1-s10, y0);
+            drawString(g,s, x1-sw1-s10, y0);
             s = spied ? str(pl.sv.factories(id)) : unknown;
             int sw2 = g.getFontMetrics().stringWidth(s);
-            g.drawString(s, w-s10-sw2, y0);
+            drawString(g,s, w-s10-sw2, y0);
             s = spied ? str(pl.sv.shieldLevel(id)) : unknown;
             int sw3 = g.getFontMetrics().stringWidth(s);
-            g.drawString(s, x1-s10-sw3, y1);
+            drawString(g,s, x1-s10-sw3, y1);
             s = spied ? str(pl.sv.bases(id)) : unknown;
             int sw4 = g.getFontMetrics().stringWidth(s);
-            g.drawString(s, w-s10-sw4, y1);
+            drawString(g,s, w-s10-sw4, y1);
 
             // draw borders around data
             g.setColor(dataBorders);
@@ -505,7 +505,7 @@ public final class SabotageUI extends BasePanel implements MouseListener {
             int y0 = s10;
             for (String line: lines) {
                 y0 += s16;
-                g.drawString(line, s10, y0);
+                drawString(g,line, s10, y0);
             }
             int buttonW = w-s3;
             int buttonH = (h-messageH-s25)/4; // -s25 is because 4 buttons at -s5 spacing/button
@@ -875,7 +875,7 @@ public final class SabotageUI extends BasePanel implements MouseListener {
             String title = text("SABOTAGE_SELECT_TARGET");
             int sw = g.getFontMetrics().stringWidth(title);
             g.setColor(SystemPanel.whiteText);
-            g.drawString(title, (w-sw)/2, s24);
+            drawString(g,title, (w-sw)/2, s24);
         }
         @Override
         public boolean showSystemName(StarSystem s)         { return s.empire() != mission.target();  } 

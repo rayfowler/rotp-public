@@ -153,7 +153,7 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         List<String> desc1Lines = this.wrappedLines(g, race.description1, maxLineW);
         g.fillOval(x0, y0-s8, s5, s5);
         for (String line: desc1Lines) {
-            g.drawString(line, x0+s8, y0);
+            drawString(g,line, x0+s8, y0);
             y0 += s18;
         }
 
@@ -162,7 +162,7 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         List<String> desc2Lines = wrappedLines(g, race.description2, maxLineW);
         g.fillOval(x0, y0-s8, s5, s5);
         for (String line: desc2Lines) {
-            g.drawString(line, x0+s8, y0);
+            drawString(g,line, x0+s8, y0);
             y0 += s18;
         }
 
@@ -171,7 +171,7 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         String desc3 = race.description3.replace("[race]", race.setupName());
         List<String> desc3Lines = scaledNarrowWrappedLines(g0, desc3, maxLineW+s8, 4, 16, 13);
         for (String line: desc3Lines) {
-            g.drawString(line, x0, y0);
+            drawString(g,line, x0, y0);
             y0 += s17;
         }
 
@@ -181,7 +181,7 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         int y3 = colorBox[0].y-s100-s14;
         g.setFont(narrowFont(20));
         g.setColor(Color.black);
-        g.drawString(homeLbl, x3, y3);
+        drawString(g,homeLbl, x3, y3);
 
         if (hoverBox == homeWorldBox) {
             Stroke prev = g.getStroke();
@@ -197,7 +197,7 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         y3 = colorBox[0].y-s64;
         g.setFont(narrowFont(20));
         g.setColor(Color.black);
-        g.drawString(nameLbl, x3, y3);
+        drawString(g,nameLbl, x3, y3);
 
         if (hoverBox == leaderBox) {
             Stroke prev = g.getStroke();
@@ -213,7 +213,7 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         y3 = colorBox[0].y-s8;
         g.setFont(narrowFont(20));
         g.setColor(Color.black);
-        g.drawString(colorLbl, x3, y3);
+        drawString(g,colorLbl, x3, y3);
 
         // draw selected & hovering colors
         for (int i=0;i<colorBox.length;i++) {

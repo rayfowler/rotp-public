@@ -129,7 +129,7 @@ public final class ConfirmCreateUI extends BasePanel implements MouseListener, M
         for (String line: titleLines) {
             int sw = g.getFontMetrics().stringWidth(line);
             int x1 = (w - sw) / 2;
-            g.drawString(line, x1, y1);
+            drawString(g,line, x1, y1);
             y1 += s20;
         }
 
@@ -147,7 +147,7 @@ public final class ConfirmCreateUI extends BasePanel implements MouseListener, M
             for (String line: amtLines) {
                 int sw = g.getFontMetrics().stringWidth(line);
                 int x1 = (w-sw)/2;
-                g.drawString(line, x1, y2);
+                drawString(g,line, x1, y2);
                 y2 += s16;
             }
         }
