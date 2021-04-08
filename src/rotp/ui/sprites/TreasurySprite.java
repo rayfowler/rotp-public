@@ -92,15 +92,15 @@ public class TreasurySprite extends MapControlSprite {
         if (label2.isEmpty()) {
             int sw = g2.getFontMetrics().stringWidth(label);
             int x0 = startX+((width-sw)/2);
-            g2.drawString(label, x0, startY+height-BasePanel.s10);
+            drawString(g2,label, x0, startY+height-BasePanel.s10);
         }
         else {
             int sw = g2.getFontMetrics().stringWidth(label);
             int x0 = startX+((width-sw)/2);
-            g2.drawString(label, x0, startY+height-BasePanel.s18);
+            drawString(g2,label, x0, startY+height-BasePanel.s18);
             sw = g2.getFontMetrics().stringWidth(label2);
             x0 = startX+((width-sw)/2);
-            g2.drawString(label2, x0, startY+height-BasePanel.s4);
+            drawString(g2,label2, x0, startY+height-BasePanel.s4);
         }
         
         if (hovering) {
@@ -111,7 +111,7 @@ public class TreasurySprite extends MapControlSprite {
             if (detailLines.size() == 1)
                 y1 += BasePanel.s8;
             for (String line: detailLines) {
-                g2.drawString(line, x1, y1);
+                drawString(g2,line, x1, y1);
                 y1 += BasePanel.s14;
             }
         }

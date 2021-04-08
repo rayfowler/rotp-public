@@ -109,7 +109,7 @@ public class FleetMassQueryPanel extends BasePanel {
                 g.setColor(Color.yellow);
             else
                 g.setColor(SystemPanel.whiteText);
-            g.drawString(fr1, fr1X, y0-s5);
+            drawString(g,fr1, fr1X, y0-s5);
             Stroke prev = g.getStroke();
             g.setStroke(stroke1);
             g.drawRect(boxL, y0-boxH, boxW, boxH);
@@ -128,7 +128,7 @@ public class FleetMassQueryPanel extends BasePanel {
                 g.setColor(Color.yellow);
             else
                 g.setColor(SystemPanel.whiteText);
-            g.drawString(fr2, fr2X, y0-s5);
+            drawString(g,fr2, fr2X, y0-s5);
             prev = g.getStroke();
             g.setStroke(stroke1);
             g.drawRect(boxL2, y0-boxH, boxW, boxH);
@@ -138,7 +138,7 @@ public class FleetMassQueryPanel extends BasePanel {
             y0 += s25;
             g.setColor(Color.black);
             g.setFont(narrowFont(17));
-            g.drawString(filt, x0, y0);
+            drawString(g,filt, x0, y0);
             y0 += s3;
 
             // draw filters
@@ -154,7 +154,7 @@ public class FleetMassQueryPanel extends BasePanel {
             y0 += s25;
             g.setFont(narrowFont(17));
             g.setColor(SystemPanel.blackText);
-            g.drawString(cons, x0+s5, y0);
+            drawString(g,cons, x0+s5, y0);
             g.setColor(Color.darkGray);
             g.setFont(narrowFont(14));
             y0 += s4;
@@ -291,20 +291,20 @@ public class FleetMassQueryPanel extends BasePanel {
                     g.setFont(narrowFont(15));
                     String str1 = str(shipCount(i));
                     int sw1 = g.getFontMetrics().stringWidth(str1);
-                    g.drawString(str1, x0+s5+swMax-sw1, y0);
+                    drawString(g,str1, x0+s5+swMax-sw1, y0);
                     String str2 = d1.name();
                     scaledFont(g,str2,w/2-swMax-s10,15,7);
-                    g.drawString(str2, x0+swMax+s10, y0);
+                    drawString(g,str2, x0+swMax+s10, y0);
                 }
                 ShipDesign d2 = player().shipLab().design(i+half);
                 if (d2.active()) {
                     g.setFont(narrowFont(15));
                     String str1 = str(shipCount(i+half));
                     int sw1 = g.getFontMetrics().stringWidth(str1);
-                    g.drawString(str1, x1+s5+swMax-sw1, y0);
+                    drawString(g,str1, x1+s5+swMax-sw1, y0);
                     String str2 = d2.name();
                     scaledFont(g,str2,w/2-swMax-s10,15,7);
-                    g.drawString(str2, x1+swMax+s10, y0);
+                    drawString(g,str2, x1+swMax+s10, y0);
                 }
             }
         }
@@ -334,7 +334,7 @@ public class FleetMassQueryPanel extends BasePanel {
                 g.setColor(SystemPanel.whiteText);
             g.setFont(narrowFont(20));
             String s = text("FLEETS_DEPLOY_FLEETS");
-            g.drawString(s, x+s10, y+s25);
+            drawString(g,s, x+s10, y+s25);
             if ((hoverBox == deployBox)
             && player().canSendTransports()) {
                 Stroke prevStroke = g.getStroke();

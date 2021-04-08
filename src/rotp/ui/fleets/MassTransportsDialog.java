@@ -180,7 +180,7 @@ public class MassTransportsDialog extends BasePanel {
             String title = text("FLEETS_TRANSPORTS_TITLE");
             int titleW = g.getFontMetrics().stringWidth(title);
             g.setColor(SystemPanel.orangeText);
-            g.drawString(title, s20,h-s10);
+            drawString(g,title, s20,h-s10);
 
             int warnW = w-s20-titleW-s20;
             // draw warning
@@ -368,7 +368,7 @@ public class MassTransportsDialog extends BasePanel {
                 int detailW = x1-x3b-s20;
                 g.setColor(SystemPanel.whiteText);
                 scaledFont(g0, transportDetail, detailW, 18, 16);
-                g.drawString(transportDetail, x3b, buttonY+buttonH-s10);
+                drawString(g,transportDetail, x3b, buttonY+buttonH-s10);
             }
 
             // transfer button

@@ -154,23 +154,23 @@ public class UnexploredAlienSystemPanel extends SystemPanel {
 
             g.setFont(narrowFont(16));
             g.setColor(textColor);
-            g.drawString(popLbl, x0, y0);
-            g.drawString(factLbl, x1, y0);
-            g.drawString(shieldLbl, x0, y1);
-            g.drawString(baseLbl, x1, y1);
+            drawString(g,popLbl, x0, y0);
+            drawString(g,factLbl, x1, y0);
+            drawString(g,shieldLbl, x0, y1);
+            drawString(g,baseLbl, x1, y1);
 
             String str1 = spied ? str(pl.sv.population(id)) : unknown;
             int sw1 = g.getFontMetrics().stringWidth(str1);
-            g.drawString(str1, x1-sw1-s10, y0);
+            drawString(g,str1, x1-sw1-s10, y0);
             String str2 = spied ? str(pl.sv.factories(id)) : unknown;
             int sw2 = g.getFontMetrics().stringWidth(str2);
-            g.drawString(str2, w-s10-sw2, y0);
+            drawString(g,str2, w-s10-sw2, y0);
             String str3 = spied ? str(pl.sv.shieldLevel(id)) : unknown;
             int sw3 = g.getFontMetrics().stringWidth(str3);
-            g.drawString(str3, x1-s10-sw3, y1);
+            drawString(g,str3, x1-s10-sw3, y1);
             String str4 = spied ? str(pl.sv.bases(id)) : unknown;
             int sw4 = g.getFontMetrics().stringWidth(str4);
-            g.drawString(str4, w-s10-sw4, y1);
+            drawString(g,str4, w-s10-sw4, y1);
 
             // draw borders around data
             g.setColor(dataBorders);
@@ -191,7 +191,7 @@ public class UnexploredAlienSystemPanel extends SystemPanel {
             int ydelta = s18;
             y0=h-s8-(ydelta*(descLines.size()-1));
             for (String line: descLines) {
-                g.drawString(line, s8, y0);
+                drawString(g,line, s8, y0);
                 y0 += ydelta;
             }
         }

@@ -348,7 +348,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
                 
             g.setFont(narrowFont(40));
             int sw = g.getFontMetrics().stringWidth(title);
-            g.drawString(title, (w-sw)/2, s50);
+            drawString(g,title, (w-sw)/2, s50);
         }
     }
     final class HistoryButtonsPanel extends BasePanel implements MouseListener, MouseMotionListener {
@@ -684,7 +684,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
                 title = text("HISTORY_TITLE");
             int sw = g.getFontMetrics().stringWidth(title);
             g.setColor(SystemPanel.whiteText);
-            g.drawString(title, (w-sw)/2, s24);
+            drawString(g,title, (w-sw)/2, s24);
         }
         @Override
         public void drawYear(Graphics2D g) { 
@@ -694,7 +694,7 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             String title = text("HISTORY_TURN_DESC",str(turn), str(maxTurn));
             int sw = g.getFontMetrics().stringWidth(title);
             g.setColor(SystemPanel.whiteText);
-            g.drawString(title, w-sw-s35, h-s25);
+            drawString(g,title, w-sw-s35, h-s25);
         }
         @Override
         public boolean suspendAnimationsDuringNextTurn()    { return false; }
@@ -869,8 +869,8 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             int sw0 = g.getFontMetrics().stringWidth(sysTitle);
             
             g.setColor(Color.white);
-            g.drawString(empTitle, x1, y1);
-            g.drawString(sysTitle, x1-sw0-s10, y1);
+            drawString(g,empTitle, x1, y1);
+            drawString(g,sysTitle, x1-sw0-s10, y1);
             
             g.setFont(narrowFont(20));
             for (Empire emp: sortedEmpires) {
@@ -883,8 +883,8 @@ public final class HistoryUI extends BasePanel implements MouseListener {
                         g.setColor(SystemPanel.redText);
                     else
                         g.setColor(SystemPanel.whiteText);
-                    g.drawString(amt, x1-sw0-s10, y1);
-                    g.drawString(emp.raceName(), x1, y1);
+                    drawString(g,amt, x1-sw0-s10, y1);
+                    drawString(g,emp.raceName(), x1, y1);
                 }
             }
         }

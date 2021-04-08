@@ -386,7 +386,7 @@ public class TransportDeploymentPanel extends SystemPanel {
             g.setColor(promptColor);
             for (String line: lines) {
                 y0 += s18;
-                g.drawString(line, leftM, y0);
+                drawString(g,line, leftM, y0);
             }
 
 
@@ -409,7 +409,7 @@ public class TransportDeploymentPanel extends SystemPanel {
             int sw2 = g.getFontMetrics().stringWidth(popLabel);
             y0 += s21;
             g.setFont(narrowFont(16));
-            g.drawString(popLabel, leftM, y0);
+            drawString(g,popLabel, leftM, y0);
 
             // draw slider
             if (enableAbandon) 
@@ -467,7 +467,7 @@ public class TransportDeploymentPanel extends SystemPanel {
                 // draw amt
                 g.setColor(SystemPanel.blackText);
                 g.setFont(narrowFont(18));
-                g.drawString(str(transportSprite().amt()), button2X+buttonW+s5, y0);
+                drawString(g,str(transportSprite().amt()), button2X+buttonW+s5, y0);
             }
 
             // draw ETA line under slider
@@ -476,7 +476,7 @@ public class TransportDeploymentPanel extends SystemPanel {
             y0 += s21;
             g.setColor(SystemPanel.blackText);
             g.setFont(narrowFont(16));
-            g.drawString(etaLine, leftM, y0);
+            drawString(g,etaLine, leftM, y0);
         }
         private Shape arrow(int w, int h) {
             if (arrow == null) {
@@ -594,7 +594,7 @@ public class TransportDeploymentPanel extends SystemPanel {
                 List<String> lines = wrappedLines(g, prompt, getWidth()-leftM-s20);
                 for (String line: lines) {
                     y0 += s18;
-                    g.drawString(line, leftM, y0);
+                    drawString(g,line, leftM, y0);
                 }
                 return;
             }
@@ -610,7 +610,7 @@ public class TransportDeploymentPanel extends SystemPanel {
                 List<String> lines = wrappedLines(g, prompt, getWidth()-leftM-s20);
                 for (String line: lines) {
                     y0 += s18;
-                    g.drawString(line, leftM, y0);
+                    drawString(g,line, leftM, y0);
                 }
                 return;
             }
@@ -652,7 +652,7 @@ public class TransportDeploymentPanel extends SystemPanel {
                 List<String> lines = wrappedLines(g, error, getWidth()-leftM-s20);
                 for (String line: lines) {
                     y0 += s18;
-                    g.drawString(line, leftM, y0);
+                    drawString(g,line, leftM, y0);
                 }
             }
             else if (destEmpire != null) {
@@ -671,23 +671,23 @@ public class TransportDeploymentPanel extends SystemPanel {
 
                 g.setFont(narrowFont(16));
                 g.setColor(SystemPanel.blackText);
-                g.drawString(popLbl, x0, y0);
-                g.drawString(factLbl, x1, y0);
-                g.drawString(shieldLbl, x0, y1);
-                g.drawString(baseLbl, x1, y1);
+                drawString(g,popLbl, x0, y0);
+                drawString(g,factLbl, x1, y0);
+                drawString(g,shieldLbl, x0, y1);
+                drawString(g,baseLbl, x1, y1);
 
                 String str1 = spied ? str(pl.sv.population(id)) : unknown;
                 int sw1 = g.getFontMetrics().stringWidth(str1);
-                g.drawString(str1, x1-sw1-s10, y0);
+                drawString(g,str1, x1-sw1-s10, y0);
                 String str2 = spied ? str(pl.sv.factories(id)) : unknown;
                 int sw2 = g.getFontMetrics().stringWidth(str2);
-                g.drawString(str2, w-s10-sw2, y0);
+                drawString(g,str2, w-s10-sw2, y0);
                 String str3 = spied ? str(pl.sv.shieldLevel(id)) : unknown;
                 int sw3 = g.getFontMetrics().stringWidth(str3);
-                g.drawString(str3, x1-s10-sw3, y1);
+                drawString(g,str3, x1-s10-sw3, y1);
                 String str4 = spied ? str(pl.sv.bases(id)) : unknown;
                 int sw4 = g.getFontMetrics().stringWidth(str4);
-                g.drawString(str4, w-s10-sw4, y1);
+                drawString(g,str4, w-s10-sw4, y1);
 
                 // draw borders around data
                 g.setColor(dataBorders);

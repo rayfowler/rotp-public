@@ -524,24 +524,24 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                     String dest =  pl.sv.name(fl.destSysId());
                     String str2 = dest.isEmpty() ? text("MAIN_FLEET_DEST_UNSCOUTED") : text("MAIN_FLEET_DESTINATION", dest);
                     int sw2 = g.getFontMetrics().stringWidth(str2);
-                    g.drawString(str2, w-sw2-s10, y0);
+                    drawString(g,str2, w-sw2-s10, y0);
                     y0 -= s25;
                 }
                 String str3 = fl.retreating() ? text("MAIN_FLEET_RETREATING") : text("MAIN_FLEET_IN_TRANSIT");
                 int sw3 = g.getFontMetrics().stringWidth(str3);
-                g.drawString(str3, w-sw3-s10, y0);
+                drawString(g,str3, w-sw3-s10, y0);
                 y0 -= s25;
                 if (!fl.empire().isPlayer()) {
                     if (pl.alliedWith(fl.empId)) {
                         g.setColor(SystemPanel.greenText);
                         String str4 = text("MAIN_FLEET_ALLY");
                         int sw4 = g.getFontMetrics().stringWidth(str4);
-                        g.drawString(str4, w-sw4-s10, y0);
+                        drawString(g,str4, w-sw4-s10, y0);
                     } else if (pl.atWarWith(fl.empId)) {
                         g.setColor(SystemPanel.redText);
                         String str4 = text("MAIN_FLEET_ENEMY");
                         int sw4 = g.getFontMetrics().stringWidth(str4);
-                        g.drawString(str4, w-sw4-s10, y0);
+                        drawString(g,str4, w-sw4-s10, y0);
                     }
                 }
             }
@@ -549,16 +549,16 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 String dest =  pl.sv.name(fl.destSysId());
                 String str2 = dest.isEmpty() ? text("MAIN_FLEET_DEST_UNSCOUTED") : text("MAIN_FLEET_DESTINATION", dest);
                 int sw2 = g.getFontMetrics().stringWidth(str2);
-                g.drawString(str2, w-sw2-s10, y0);
+                drawString(g,str2, w-sw2-s10, y0);
                 y0 -= s25;
                 StarSystem sys1 = fl.system();
                 String str3 = text("MAIN_FLEET_ORIGIN", pl.sv.name(sys1.id));
                 int sw3 = g.getFontMetrics().stringWidth(str3);
-                g.drawString(str3, w-sw3-s10, y0);
+                drawString(g,str3, w-sw3-s10, y0);
                 y0 -= s25;
                 String str4 = fl.retreating() && fl.empire().isPlayer() ? text("MAIN_FLEET_RETREATING") :text("MAIN_FLEET_DEPLOYED");
                 int sw4 = g.getFontMetrics().stringWidth(str4);
-                g.drawString(str4, w-sw4-s10, y0);
+                drawString(g,str4, w-sw4-s10, y0);
             }
             else {
                 StarSystem sys1 = fl.system();
@@ -566,11 +566,11 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 if (str2.isEmpty()) 
                     log("ERROR: No system assigned to fleet ");             
                 int sw2 = g.getFontMetrics().stringWidth(str2);
-                g.drawString(str2, w-sw2-s10, y0);
+                drawString(g,str2, w-sw2-s10, y0);
                 y0 -= s25;
                 String str3 = text("MAIN_FLEET_IN_ORBIT");
                 int sw3 = g.getFontMetrics().stringWidth(str3);
-                g.drawString(str3, w-sw3-s10, y0);
+                drawString(g,str3, w-sw3-s10, y0);
             }
             g.setColor(MainUI.shadeBorderC());
             g.fillRect(0, h-s5, w, s5);
@@ -779,7 +779,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             if (text != null) {
                 List<String> lines = wrappedLines(g, text, w-s30);
                 for (String line: lines) {
-                    g.drawString(line, x0, y0);
+                    drawString(g,line, x0, y0);
                     y0 += lineH;
                 }
             }
@@ -804,7 +804,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 g.setStroke(prev);
                 g.setColor(SystemPanel.blackText);
                 int indent = checkW+s6;
-                g.drawString(rallyText, x0+indent, y0);
+                drawString(g,rallyText, x0+indent, y0);
             }
             if (retreatText != null) {
                 y0 += lineH;
@@ -829,7 +829,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 int indent = checkW+s6;
                 List<String> lines = wrappedLines(g, retreatText, w-s30, indent);
                 for (String line: lines) {
-                    g.drawString(line, x0+indent, y0);
+                    drawString(g,line, x0+indent, y0);
                     indent = 0;
                     y0 += lineH;
                 }
@@ -920,7 +920,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 g.setColor(SystemPanel.redText);
                 List<String> lines = wrappedLines(g, nebulaText, w-s30);
                 for (String line: lines) {
-                    g.drawString(line, s15, y0);
+                    drawString(g,line, s15, y0);
                     y0 += s14;
                 }
             }
@@ -959,7 +959,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 int sw = g.getFontMetrics().stringWidth(d.name());
                 int x2 = x+((w-sw)/2);
                 g.setColor(SystemPanel.grayText);
-                g.drawString(d.name(), x2, y+s5);
+                drawString(g,d.name(), x2, y+s5);
             }
 
             int y3 = y+h+s7;
@@ -1019,7 +1019,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             this.scaledFont(g, s, w-s60, 18, 12);
             int sw3 = g.getFontMetrics().stringWidth(s);
             int x3 = x+((w-sw3)/2);
-            g.drawString(s, x3, y3);
+            drawString(g,s, x3, y3);
 
             // if hovering, draw highlight frame
             if (hoverBox == shipBox[i]) {

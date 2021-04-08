@@ -113,6 +113,7 @@ public final class ShipDesign extends Design {
     }
     public int shipColor()                  { return shipColor; }
     public void shipColor(int i)            { shipColor = i; }
+    public void resetImage()                { image = null; }
     @Override
     public Image image() {
         if (image == null) {

@@ -50,7 +50,7 @@ public class ErrorUI extends BasePanel implements MouseListener, MouseMotionList
         g.setFont(narrowFont(40));
         String title = "An Error has occurred  :(";
         int sw0 = g.getFontMetrics().stringWidth(title);
-        g.drawString(title, (w-sw0)/2, BasePanel.s50);
+        drawString(g,title, (w-sw0)/2, BasePanel.s50);
 
         int x0 = w/10;
         int w0 = w*4/5;
@@ -62,29 +62,29 @@ public class ErrorUI extends BasePanel implements MouseListener, MouseMotionList
         for (String line : lines) {
             y0 += BasePanel.s35;
             if (lineCount < 10)
-                g.drawString(line, x0, y0);
+                drawString(g,line, x0, y0);
             lineCount++;
         }
 
         g.setFont(narrowFont(24));
         y0 += BasePanel.s60;
-        g.drawString("Email: rayfowler@fastmail.com", x0, y0);
+        drawString(g,"Email: rayfowler@fastmail.com", x0, y0);
         y0 += BasePanel.s30;
-        g.drawString("Reddit: www.Reddit.com/r/rotp", x0, y0);
+        drawString(g,"Reddit: www.Reddit.com/r/rotp", x0, y0);
 
 
         g.setFont(narrowFont(24));
         y0 += BasePanel.s70;
-        g.drawString(exception.toString(), x0, y0);
+        drawString(g,exception.toString(), x0, y0);
         for (StackTraceElement line : exception.getStackTrace()) {
             y0 += BasePanel.s27;
-            g.drawString(line.toString(), x0, y0);
+            drawString(g,line.toString(), x0, y0);
         }
 
         g.setFont(narrowFont(20));
         String ver = "Version:"+ Rotp.releaseId;
         int sw = g.getFontMetrics().stringWidth(ver);
-        g.drawString(ver, getWidth()-sw-s20, getHeight()-s30);
+        drawString(g,ver, getWidth()-sw-s20, getHeight()-s30);
 
         drawMemory(g);
         drawSkipText(g, true);

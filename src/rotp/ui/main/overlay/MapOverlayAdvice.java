@@ -154,7 +154,7 @@ public class MapOverlayAdvice extends MapOverlay {
         int lineH = scaled(19);
         int y0 = boxTop+scaled(55);
         for (String line: lines) {
-            g.drawString(line, textMgn, y0);
+            drawString(g,line, textMgn, y0);
             y0 += lineH;
         }
         String okStr = text("MAIN_ADVISOR_BUTTON_OK");

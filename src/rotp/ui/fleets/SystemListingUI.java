@@ -576,9 +576,9 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             else
                 g.setColor(palette.maroon);
             switch(align) {
-                case LEFT:    g.drawString(val, x+s5, y-s5); break;
-                case RIGHT:   g.drawString(val, x+w-s10-sw, y-s5); break;
-                case CENTER:  g.drawString(val, x+((w-sw)/2), y-s5); break;
+                case LEFT:    drawString(g,val, x+s5, y-s5); break;
+                case RIGHT:   drawString(g,val, x+w-s10-sw, y-s5); break;
+                case CENTER:  drawString(g,val, x+((w-sw)/2), y-s5); break;
             }
         }
     }
@@ -628,7 +628,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         private void drawErrorString(Graphics2D g, String err, int x0, int y1) {
             g.setFont(narrowFont(18));
             g.setColor(SystemPanel.blackText);
-            g.drawString(err,x0,y1);
+            drawString(g,err,x0,y1);
         }
         private void drawSliderBox(Graphics2D g, RowSprite row, StarSystem sys, int x0, int y1, int w) {
             int amt = sys.transportSprite().amt();
@@ -711,7 +711,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
                 g.setFont(narrowFont(dataFontSize()));
                 String amtStr = str(amt);
                 int amtW = g.getFontMetrics().stringWidth(amtStr);
-                g.drawString(amtStr, arrowRightM+s35-amtW, boxTopY+boxH-s1);
+                drawString(g,amtStr, arrowRightM+s35-amtW, boxTopY+boxH-s1);
             }
         }
         private void drawUnableToSendTransports(Graphics2D g, RowSprite row, StarSystem sys, int x0, int y1, int w) {
@@ -719,7 +719,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             String sysName = player().sv.name(sys.id);
             String detail = text("FLEETS_CANNOT_SEND_TRANSPORTS", sysName);
             scaledFont(g, detail, w-s20, 20, 12);
-            g.drawString(detail, x0+s10, y1+s18);
+            drawString(g,detail, x0+s10, y1+s18);
         }
         private void drawExistingTransports(Graphics2D g, RowSprite row, StarSystem sys, int x0, int y1, int w) {
             TransportStopButton stopButton = (TransportStopButton) row.getButton(TRANSPORT_STOP);
@@ -763,10 +763,10 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
 
             //this.scaledFont(g, detail, boxL-s5-x0, 20, 12);
             if (detailLines.size() == 1)
-                g.drawString(detail, x0+s10, boxTopY+boxH-s2);
+                drawString(g,detail, x0+s10, boxTopY+boxH-s2);
             else {
-                g.drawString(detailLines.get(0), x0+s10, y1+boxH-s12);
-                g.drawString(detailLines.get(1), x0+s10, y1+boxH+s1);            
+                drawString(g,detailLines.get(0), x0+s10, y1+boxH-s12);
+                drawString(g,detailLines.get(1), x0+s10, y1+boxH+s1);            
             }
         }
     }
@@ -803,9 +803,9 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
                 scaledFont(g, val, w, dataFontSize()-1, 8);
             g.setColor(color(sys));
             switch(align) {
-                case LEFT:    g.drawString(val, x+s5, y-s5); break;
-                case RIGHT:   g.drawString(val, x+w-s10-sw, y-s5); break;
-                case CENTER:  g.drawString(val, x+((w-sw)/2), y-s5); break;
+                case LEFT:    drawString(g,val, x+s5, y-s5); break;
+                case RIGHT:   drawString(g,val, x+w-s10-sw, y-s5); break;
+                case CENTER:  drawString(g,val, x+((w-sw)/2), y-s5); break;
             }
         }
     }
@@ -936,9 +936,9 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             else
                 g.setColor(palette.black);
             switch(align) {
-                case LEFT:    g.drawString(val, x+s5, y-s5); break;
-                case RIGHT:   g.drawString(val, x+w-s10-sw, y-s5); break;
-                case CENTER:  g.drawString(val, x+((w-sw)/2), y-s5); break;
+                case LEFT:    drawString(g,val, x+s5, y-s5); break;
+                case RIGHT:   drawString(g,val, x+w-s10-sw, y-s5); break;
+                case CENTER:  drawString(g,val, x+((w-sw)/2), y-s5); break;
             }
         }
     }
@@ -984,9 +984,9 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             int x0 = x+w1;
             int yb = y-s5;
             switch(align) {
-                case LEFT:    g.drawString(val1, x+s5, yb); break;
-                case RIGHT:   g.drawString(val1, x+w1-s10-sw1, yb); break;
-                case CENTER:  g.drawString(val1, x+((w1-sw1)/2), yb); break;
+                case LEFT:    drawString(g,val1, x+s5, yb); break;
+                case RIGHT:   drawString(g,val1, x+w1-s10-sw1, yb); break;
+                case CENTER:  drawString(g,val1, x+((w1-sw1)/2), yb); break;
             }
             if (delta != 0) {
                 int x1 = 0;
@@ -1012,7 +1012,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
                     c = delta < 0 ? palette.red : palette.green;
 
                 g.setColor(c);
-                g.drawString(val2, x1, yb);
+                drawString(g,val2, x1, yb);
 
                 // arrow (up or down)
                 int xHalfHead=s10/2;

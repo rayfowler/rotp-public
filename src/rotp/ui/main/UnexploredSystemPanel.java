@@ -88,7 +88,7 @@ public class UnexploredSystemPanel extends SystemPanel {
                 int ydelta = s18;
                 int y0=s70;
                 for (String line: nebLines) {
-                    g.drawString(line, s8, y0);
+                    drawString(g,line, s8, y0);
                     y0 += ydelta;
                 }
             } 
@@ -101,7 +101,7 @@ public class UnexploredSystemPanel extends SystemPanel {
             int ydelta = s18;
             int y0=h-s8-(ydelta*(descLines.size()-1));
             for (String line: descLines) {
-                g.drawString(line, s8, y0);
+                drawString(g,line, s8, y0);
                 y0 += ydelta;
             }
         }

@@ -186,7 +186,7 @@ public class EmpireColonySpendingPane extends BasePanel {
             String labelText = text(text);
             g.setColor(textC);
             g.setFont(narrowFont(18));
-            g.drawString(labelText, s10, getHeight()-s10);
+            drawString(g,labelText, s10, getHeight()-s10);
             labelBox.setBounds(s5, 0, leftMargin()-s15, getHeight());
 
             int boxL = boxLeftX();
@@ -256,7 +256,7 @@ public class EmpireColonySpendingPane extends BasePanel {
                     g.setColor(SystemPanel.darkOrangeText);
                 else
                     g.setColor(Color.gray);
-                 g.drawString(popStr, boxL+x1, boxTopY+boxH-s4);
+                 drawString(g,popStr, boxL+x1, boxTopY+boxH-s4);
                 
                 if (popGrowth < 0)
                     g.setColor(SystemPanel.orangeText);
@@ -264,7 +264,7 @@ public class EmpireColonySpendingPane extends BasePanel {
                     g.setColor(Color.lightGray);
                 Shape prevClip = g.getClip();
                 g.setClip(fillRect);
-                g.drawString(popStr, boxL+x1, boxTopY+boxH-s4);
+                drawString(g,popStr, boxL+x1, boxTopY+boxH-s4);
                 g.setClip(prevClip);
             }
 
@@ -283,7 +283,7 @@ public class EmpireColonySpendingPane extends BasePanel {
             scaledFont(g, resultText, rightMargin()-s10, 18, 14);
             //g.setFont(narrowFont(18));
             int sw = g.getFontMetrics().stringWidth(resultText);
-            g.drawString(resultText, getWidth()-sw-s10, getHeight()-s10);
+            drawString(g,resultText, getWidth()-sw-s10, getHeight()-s10);
         }
         private int leftMargin()        { return s58; }
         private int rightMargin()       { return s70; }

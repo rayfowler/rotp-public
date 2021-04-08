@@ -187,7 +187,7 @@ public class MapOverlayColonizePrompt extends MapOverlay {
         String scoutStr = text("MAIN_COLONIZE_TITLE", sysName);
         g.setColor(Color.black);
         g.setFont(narrowFont(14));
-        g.drawString(scoutStr, boxX+leftW, boxY+s20);
+        drawString(g,scoutStr, boxX+leftW, boxY+s20);
 
         // calc width needed for yes/no buttons
         g.setFont(narrowFont(20));

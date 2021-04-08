@@ -980,7 +980,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
             g.setFont(narrowFont(32));
             int titleW = g.getFontMetrics().stringWidth(title);
             int titleSpacing = s60+s60;
-            g.drawString(title, x0,y0);
+            drawString(g,title, x0,y0);
 
             int tabW = (w-titleW-titleSpacing-(6*gap)-helpW)/4;
             int tabSpacing = tabW+gap;
@@ -1017,7 +1017,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
             else
                 g.setColor(Color.white);
 
-            g.drawString("?", s16, s30);
+            drawString(g,"?", s16, s30);
         }
         private void drawTab(Graphics2D g, int x, int y, int w, int h, String label, Rectangle box, boolean selected) {
             g.setFont(narrowFont(22));

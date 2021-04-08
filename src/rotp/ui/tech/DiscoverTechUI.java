@@ -393,7 +393,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         int sw = g.getFontMetrics().stringWidth(subtitle);
         int x2 = x0+(boxW-sw)/2;
         int y2 = y1+s30;
-        g.drawString(subtitle, x2, y2);
+        drawString(g,subtitle, x2, y2);
 
         int x3a = x0+mgn+buttonPad;
         int x3b = x3a+buttonW+buttonPad;
@@ -577,14 +577,14 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         g.setFont(narrowFont(16));
         for (String line: detailLines) {
             y0 += detailLineH;
-            g.drawString(line, x0, y0);
+            drawString(g,line, x0, y0);
         }
         
         if (!detail2.isEmpty()) {
             y0 = y0+s20;
             for (String line: detail2Lines) {
                 y0 += detailLineH;
-                g.drawString(line, x0, y0);
+                drawString(g,line, x0, y0);
             }
         }
     }

@@ -701,7 +701,7 @@ public class DesignUI extends BasePanel {
             
             g.setFont(narrowFont(32));
             g.setColor(SystemPanel.orangeText);
-            g.drawString(title, helpW+s10, s32);
+            drawString(g,title, helpW+s10, s32);
         }
         public void drawHelpButton(Graphics2D g) {
             helpBox.setBounds(s10,s10,s20,s25);
@@ -713,7 +713,7 @@ public class DesignUI extends BasePanel {
             else
                 g.setColor(Color.white);
 
-            g.drawString("?", s16, s30);
+            drawString(g,"?", s16, s30);
         }
         @Override
         public void mouseClicked(MouseEvent e) {}
@@ -787,7 +787,7 @@ public class DesignUI extends BasePanel {
             
             g.setFont(narrowFont(32));
             g.setColor(SystemPanel.orangeText);
-            g.drawString(title, s10, s32);
+            drawString(g,title, s10, s32);
             
             prototypeBox.setBounds(0,s50,w,h-s55);
             int shipW = shipSlotW < 0 ? s95 : shipSlotW;
@@ -926,7 +926,7 @@ public class DesignUI extends BasePanel {
                 List<String> lines = wrappedLines(g, desc, getWidth()-s20-leftM);
                 int y0 = s40;
                 for (String line: lines) {
-                    g.drawString(line, leftM, y0);
+                    drawString(g,line, leftM, y0);
                     y0 += s14;
                 }
             }
@@ -955,19 +955,19 @@ public class DesignUI extends BasePanel {
                 
                 int maxSw = max(sw1,sw2,sw3);
                 int maxSwa = max(sw1a,sw2a,sw3a);
-                g.drawString(desc, leftM,  s38);
-                g.drawString(desc2, leftM, s54);
-                g.drawString(desc3, leftM, s68);
-                g.drawString(val1, leftM+maxSw+s5+maxSwa-sw1a, s40);
-                g.drawString(val2, leftM+maxSw+s5+maxSwa-sw2a, s54);
-                g.drawString(val3, leftM+maxSw+s5+maxSwa-sw3a, s68);
+                drawString(g,desc, leftM,  s38);
+                drawString(g,desc2, leftM, s54);
+                drawString(g,desc3, leftM, s68);
+                drawString(g,val1, leftM+maxSw+s5+maxSwa-sw1a, s40);
+                drawString(g,val2, leftM+maxSw+s5+maxSwa-sw2a, s54);
+                drawString(g,val3, leftM+maxSw+s5+maxSwa-sw3a, s68);
 
                 if (constructionCounts[des.id()] > 0) {
                     String desc4 = text("SHIP_DESIGN_SLOT_DESC4");
                     int sw4 = g.getFontMetrics().stringWidth(desc4);                
                     String val4= str(constructionCounts[des.id()]);
-                    g.drawString(desc4, leftM, s82);
-                    g.drawString(val4, leftM+sw4+s5, s82);
+                    drawString(g,desc4, leftM, s82);
+                    drawString(g,val4, leftM+sw4+s5, s82);
                 }
             }
             // draw copy button
@@ -1325,19 +1325,19 @@ public class DesignUI extends BasePanel {
             g.setFont(narrowFont(17));
             g.setColor(Color.black);
             int y1 = y0+rowH+s15;
-            g.drawString(text("SHIP_DESIGN_SIZE_LABEL"), x1, y1);
+            drawString(g,text("SHIP_DESIGN_SIZE_LABEL"), x1, y1);
             int y2 = y1+rowH+s10;
-            g.drawString(text("SHIP_DESIGN_RANGE_LABEL"), x1, y2);
+            drawString(g,text("SHIP_DESIGN_RANGE_LABEL"), x1, y2);
             int y3 = y2+rowH;
-            g.drawString(text("SHIP_DESIGN_SPEED_LABEL"), x1, y3);
+            drawString(g,text("SHIP_DESIGN_SPEED_LABEL"), x1, y3);
             int y4 = y3+rowH;
-            g.drawString(text("SHIP_DESIGN_COST_LABEL"), x1, y4);
+            drawString(g,text("SHIP_DESIGN_COST_LABEL"), x1, y4);
             int y5 = y4+rowH;
-            g.drawString(text("SHIP_DESIGN_TOTAL_SPACE_LABEL"), x1, y5);
+            drawString(g,text("SHIP_DESIGN_TOTAL_SPACE_LABEL"), x1, y5);
             int y6 = y5+rowH;
             if (des.availableSpace() < 0)
                 g.setColor(errorRedC);
-            g.drawString(text("SHIP_DESIGN_AVAIL_SPACE_LABEL"), x1, y6);
+            drawString(g,text("SHIP_DESIGN_AVAIL_SPACE_LABEL"), x1, y6);
             
             if (!des.active())
                 drawColorOptions(g, x1, y6, w-s20, rowH);
@@ -1391,38 +1391,38 @@ public class DesignUI extends BasePanel {
             g.setFont(narrowFont(15));
             int sw = g.getFontMetrics().stringWidth(sizeStr);
             int x1a = x2-s20-boxW+((boxW-sw)/2);
-            g.drawString(sizeStr, x1a, y1);
+            drawString(g,sizeStr, x1a, y1);
 
             g.setColor(darkestBrown);
             g.setFont(narrowFont(17));
            
             String str = player().tech().topFuelRangeTech().unlimited ? text("SHIP_DESIGN_RANGE_UNLIMITED") : text("SHIP_DESIGN_RANGE_VALUE", (int)des.range());
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x2-s20-sw, y2);
+            drawString(g,str, x2-s20-sw, y2);
             str = text("SHIP_DESIGN_SPEED_VALUE", (int)des.warpSpeed());
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x2-s20-sw, y3);
+            drawString(g,str, x2-s20-sw, y3);
             des.recalculateCost();
             str = text("SHIP_DESIGN_COST_VALUE", (int)des.cost());
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x2-s20-sw, y4);
+            drawString(g,str, x2-s20-sw, y4);
             str = ""+ (int)des.spaceUsed();
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x2-s20-sw, y5);
+            drawString(g,str, x2-s20-sw, y5);
             str = "" + (int)Math.floor(des.availableSpace());
             sw = g.getFontMetrics().stringWidth(str);
             if (des.availableSpace() < 0)
                 g.setColor(errorRedC);
-            g.drawString(str, x2-s20-sw, y6);
+            drawString(g,str, x2-s20-sw, y6);
 
             // right side
             g.setColor(Color.black);
             g.setFont(narrowFont(17));
-            g.drawString(text("SHIP_DESIGN_HIT_POINTS_LABEL"), x2+s10, y2);
-            g.drawString(text("SHIP_DESIGN_MISSILE_DEF_LABEL"), x2+s10, y3);
-            g.drawString(text("SHIP_DESIGN_BEAM_DEF_LABEL"), x2+s10, y4);
-            g.drawString(text("SHIP_DESIGN_ATTACK_LEVEL_LABEL"), x2+s10, y5);
-            g.drawString(text("SHIP_DESIGN_COMBAT_SPEED_LABEL"), x2+s10, y6);
+            drawString(g,text("SHIP_DESIGN_HIT_POINTS_LABEL"), x2+s10, y2);
+            drawString(g,text("SHIP_DESIGN_MISSILE_DEF_LABEL"), x2+s10, y3);
+            drawString(g,text("SHIP_DESIGN_BEAM_DEF_LABEL"), x2+s10, y4);
+            drawString(g,text("SHIP_DESIGN_ATTACK_LEVEL_LABEL"), x2+s10, y5);
+            drawString(g,text("SHIP_DESIGN_COMBAT_SPEED_LABEL"), x2+s10, y6);
 
             // draw right side values
             int x3 = x+w-s20;
@@ -1430,19 +1430,19 @@ public class DesignUI extends BasePanel {
             g.setFont(narrowFont(17));
             str = ""+(int)des.hits();
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x3-sw, y2);
+            drawString(g,str, x3-sw, y2);
             str = ""+des.missileDefense();
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x3-sw, y3);
+            drawString(g,str, x3-sw, y3);
             str = ""+des.beamDefense();
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x3-sw, y4);
+            drawString(g,str, x3-sw, y4);
             str = ""+ (int)des.attackLevel();
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x3-sw, y5);
+            drawString(g,str, x3-sw, y5);
             str = ""+ des.combatSpeed();
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x3-sw, y6);
+            drawString(g,str, x3-sw, y6);
 
             if (selectedSlot < 0) {
                 renameButtonArea.setBounds(0,0,0,0);
@@ -1486,7 +1486,7 @@ public class DesignUI extends BasePanel {
                 int lineX = x+w-maxLabelW;
                 int lineY = lines.size() == 1 ? y+h-s15 : y+h-s25;
                 for (String line: lines) {
-                    g.drawString(line, lineX, lineY);
+                    drawString(g,line, lineX, lineY);
                     lineY += s16;
                 }
             }
@@ -1637,29 +1637,29 @@ public class DesignUI extends BasePanel {
             int x0 = x + s20;
             for (String line : lines) {
                 y0 += s12;
-                g.drawString(line, x0, y0);
+                drawString(g,line, x0, y0);
             }
             int scrunch = lines.size() > 1 ? ((lines.size() - 1) * s12) / 4 : 0;
             g.setColor(Color.black);
             g.setFont(narrowFont(16));
             int y1 = y0 + s26;
-            g.drawString(text("SHIP_DESIGN_ENGINE_TYPE"), x0, y1);
+            drawString(g,text("SHIP_DESIGN_ENGINE_TYPE"), x0, y1);
             int y2 = y1 + s33 - scrunch;
-            g.drawString(text("SHIP_DESIGN_ENGINE_SPEED"), x0, y2);
+            drawString(g,text("SHIP_DESIGN_ENGINE_SPEED"), x0, y2);
             int y3 = y2 + s17;
-            g.drawString(text("SHIP_DESIGN_ENGINE_COST1"), x0, y3);
+            drawString(g,text("SHIP_DESIGN_ENGINE_COST1"), x0, y3);
             int y4 = y3 + s17;
-            g.drawString(text("SHIP_DESIGN_ENGINE_SIZE1"), x0, y4);
+            drawString(g,text("SHIP_DESIGN_ENGINE_SIZE1"), x0, y4);
             int y5 = y4 + s17;
-            g.drawString(text("SHIP_DESIGN_ENGINE_POWER1"), x0, y5);
+            drawString(g,text("SHIP_DESIGN_ENGINE_POWER1"), x0, y5);
             int y6 = y5 + s27 - scrunch;
-            g.drawString(text("SHIP_DESIGN_POWER_REQUIREMENTS"), x0, y6);
+            drawString(g,text("SHIP_DESIGN_POWER_REQUIREMENTS"), x0, y6);
             int y7 = y6 + s17;
-            g.drawString(text("SHIP_DESIGN_ENGINES_REQUIRED"), x0, y7);
+            drawString(g,text("SHIP_DESIGN_ENGINES_REQUIRED"), x0, y7);
             int y8 = y7 + s27 - scrunch;
-            g.drawString(text("SHIP_DESIGN_ENGINES_SIZE"), x0, y8);
+            drawString(g,text("SHIP_DESIGN_ENGINES_SIZE"), x0, y8);
             int y9 = y8 + s17;
-            g.drawString(text("SHIP_DESIGN_ENGINES_COST"), x0, y9);
+            drawString(g,text("SHIP_DESIGN_ENGINES_COST"), x0, y9);
 
            if (UserPreferences.texturesInterface()) 
                 drawTexture(g,x, y,w,h);
@@ -1711,7 +1711,7 @@ public class DesignUI extends BasePanel {
             g.setFont(narrowFont(15));
             int sw = g.getFontMetrics().stringWidth(typeStr);
             int x1a = x3-boxW+((boxW-sw)/2);
-            g.drawString(typeStr, x1a, y1);
+            drawString(g,typeStr, x1a, y1);
 
             float engRequired = des.enginesRequired();
             float engSize = des.engine().size(des);
@@ -1722,35 +1722,35 @@ public class DesignUI extends BasePanel {
             g.setFont(narrowFont(16));
             String str = text("SHIP_DESIGN_SPEED_VALUE", (int)des.warpSpeed());
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x3-sw, y2);
+            drawString(g,str, x3-sw, y2);
             str = ""+fmt(engCost,1);
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x3-sw, y3);
+            drawString(g,str, x3-sw, y3);
             str = ""+fmt(engSize,1);
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x3-sw, y4);
+            drawString(g,str, x3-sw, y4);
             str = ""+fmt(engPower,1);
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x3-sw, y5);
+            drawString(g,str, x3-sw, y5);
             str = ""+fmt(engRequired*engPower,1);
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x3-sw, y6);
+            drawString(g,str, x3-sw, y6);
             str = ""+ fmt(engRequired,1);
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x3-sw, y7);
+            drawString(g,str, x3-sw, y7);
             str = ""+ (int) (engRequired*engSize);
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x3-sw, y8);
+            drawString(g,str, x3-sw, y8);
             str = ""+ (int) (engRequired*engCost);
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x3-sw, y9);
+            drawString(g,str, x3-sw, y9);
         }
         private void drawColorOptions(Graphics2D g, int x, int y, int w, int h) {
             ShipDesign des = shipDesign();
             g.setColor(Color.black);
             String s = text("SHIP_DESIGN_COLORS");
             int sw = g.getFontMetrics().stringWidth(s);
-            g.drawString(s, x, y+h);
+            drawString(g,s, x, y+h);
             int w0 = w-sw-s20;
             int boxW = w0/shipColors.length;
             int boxH = h-s10;
@@ -1799,20 +1799,20 @@ public class DesignUI extends BasePanel {
             g.setFont(narrowFont(16));
             String str = text("SHIP_DESIGN_DESCRIPTION_LABEL");
             //int sw2 = g.getFontMetrics().stringWidth(s2);
-            //g.drawString(s2, x2+(w2-sw2)/2, y1);
-            g.drawString(str, x2, y1);
+            //drawString(g,s2, x2+(w2-sw2)/2, y1);
+            drawString(g,str, x2, y1);
             str = text("SHIP_DESIGN_TYPE_LABEL");
             int sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x3+(w3-sw)/2, y1);
+            drawString(g,str, x3+(w3-sw)/2, y1);
             str = text("SHIP_DESIGN_SIZE_LABEL");
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x4+w4-sw, y1);
+            drawString(g,str, x4+w4-sw, y1);
             str = text("SHIP_DESIGN_POWER_LABEL");
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x5+w5-sw, y1);
+            drawString(g,str, x5+w5-sw, y1);
             str = text("SHIP_DESIGN_COST_LABEL");
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x6+w6-sw, y1);
+            drawString(g,str, x6+w6-sw, y1);
 
             // draw ship computer row
             int rowH = (y+h-s10-y1)/3;
@@ -1847,10 +1847,10 @@ public class DesignUI extends BasePanel {
             g.setColor(darkestBrown);
             List<String> descLines = wrappedLines(g, compDesc, w2);
             if (descLines.size() == 1) 
-                g.drawString(descLines.get(0), x2, y2);
+                drawString(g,descLines.get(0), x2, y2);
             else if (descLines.size() > 1) {
-                g.drawString(descLines.get(0), x2, y2-s5);
-                g.drawString(descLines.get(1), x2, y2+s5);
+                drawString(g,descLines.get(0), x2, y2-s5);
+                drawString(g,descLines.get(1), x2, y2+s5);
             }
             g.setColor(Color.black);
             int boxW = w3-s20;
@@ -1897,18 +1897,18 @@ public class DesignUI extends BasePanel {
             g.setFont(narrowFont(15));
             sw = g.getFontMetrics().stringWidth(compName);
             int x3a = x3+s10+((boxW-sw)/2);
-            g.drawString(compName, x3a, y2);
+            drawString(g,compName, x3a, y2);
 
             g.setFont(narrowFont(17));
             g.setColor(darkestBrown);
             sw = g.getFontMetrics().stringWidth(compSize);
-            g.drawString(compSize, x4+w4-sw, y2);
+            drawString(g,compSize, x4+w4-sw, y2);
 
             sw = g.getFontMetrics().stringWidth(compPower);
-            g.drawString(compPower, x5+w5-sw, y2);
+            drawString(g,compPower, x5+w5-sw, y2);
 
             sw = g.getFontMetrics().stringWidth(compCost);
-            g.drawString(compCost, x6+w6-sw, y2);
+            drawString(g,compCost, x6+w6-sw, y2);
 
             // armor field
             ShipArmor armor = des.armor();
@@ -1921,11 +1921,11 @@ public class DesignUI extends BasePanel {
             g.setColor(darkestBrown);
             descLines = wrappedLines(g, armorDesc, w2);
             if (descLines.size() == 1) {
-                g.drawString(descLines.get(0), x2, y3);
+                drawString(g,descLines.get(0), x2, y3);
             }
             else if (descLines.size() > 1) {
-                g.drawString(descLines.get(0), x2, y3-s5);
-                g.drawString(descLines.get(1), x2, y3+s5);
+                drawString(g,descLines.get(0), x2, y3-s5);
+                drawString(g,descLines.get(1), x2, y3+s5);
             }
             g.setColor(Color.black);
             boxW = w3-s20;
@@ -1971,18 +1971,18 @@ public class DesignUI extends BasePanel {
             g.setFont(narrowFont(15));
             sw = g.getFontMetrics().stringWidth(armorName);
             x3a = x3+s10+((boxW-sw)/2);
-            g.drawString(armorName, x3a, y3);
+            drawString(g,armorName, x3a, y3);
 
             g.setFont(narrowFont(17));
             g.setColor(darkestBrown);
             sw = g.getFontMetrics().stringWidth(armorSize);
-            g.drawString(armorSize, x4+w4-sw, y3);
+            drawString(g,armorSize, x4+w4-sw, y3);
 
             sw = g.getFontMetrics().stringWidth(armorPower);
-            g.drawString(armorPower, x5+w5-sw, y3);
+            drawString(g,armorPower, x5+w5-sw, y3);
 
             sw = g.getFontMetrics().stringWidth(armorCost);
-            g.drawString(armorCost, x6+w6-sw, y3);
+            drawString(g,armorCost, x6+w6-sw, y3);
          
             // shield field
             ShipShield shield = des.shield();
@@ -1996,10 +1996,10 @@ public class DesignUI extends BasePanel {
             descLines = wrappedLines(g, shieldDesc, w2);
 
             if (descLines.size() == 1) 
-                g.drawString(descLines.get(0), x2, y4);
+                drawString(g,descLines.get(0), x2, y4);
             else if (descLines.size() > 1) {
-                g.drawString(descLines.get(0), x2, y4-s5);
-                g.drawString(descLines.get(1), x2, y4+s5);
+                drawString(g,descLines.get(0), x2, y4-s5);
+                drawString(g,descLines.get(1), x2, y4+s5);
             }
             g.setColor(Color.black);
             boxW = w3-s20;
@@ -2045,18 +2045,18 @@ public class DesignUI extends BasePanel {
             g.setFont(narrowFont(15));
             sw = g.getFontMetrics().stringWidth(shieldName);
             x3a = x3+s10+((boxW-sw)/2);
-            g.drawString(shieldName, x3a, y4);
+            drawString(g,shieldName, x3a, y4);
 
             g.setFont(narrowFont(17));
             g.setColor(darkestBrown);
             sw = g.getFontMetrics().stringWidth(shieldSize);
-            g.drawString(shieldSize, x4+w4-sw, y4);
+            drawString(g,shieldSize, x4+w4-sw, y4);
 
             sw = g.getFontMetrics().stringWidth(shieldPower);
-            g.drawString(shieldPower, x5+w5-sw, y4);
+            drawString(g,shieldPower, x5+w5-sw, y4);
 
             sw = g.getFontMetrics().stringWidth(shieldCost);
-            g.drawString(shieldCost, x6+w6-sw, y4);
+            drawString(g,shieldCost, x6+w6-sw, y4);
         }
         private void drawRightComponentInfo(Graphics2D g, ShipDesign des, int x, int y, int w0, int h) {
             g.setColor(darkBrown);
@@ -2077,20 +2077,20 @@ public class DesignUI extends BasePanel {
             g.setFont(narrowFont(16));
             String str = text("SHIP_DESIGN_DESCRIPTION_LABEL");
             //int sw2 = g.getFontMetrics().stringWidth(s2);
-            //g.drawString(s2, x2+(w2-sw2)/2, y1);
-            g.drawString(str, x2, y1);
+            //drawString(g,s2, x2+(w2-sw2)/2, y1);
+            drawString(g,str, x2, y1);
             str = text("SHIP_DESIGN_TYPE_LABEL");
             int sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x3+(w3-sw)/2, y1);
+            drawString(g,str, x3+(w3-sw)/2, y1);
             str = text("SHIP_DESIGN_SIZE_LABEL");
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x4+w4-sw, y1);
+            drawString(g,str, x4+w4-sw, y1);
             str = text("SHIP_DESIGN_POWER_LABEL");
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x5+w5-sw, y1);
+            drawString(g,str, x5+w5-sw, y1);
             str = text("SHIP_DESIGN_COST_LABEL");
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x6+w6-sw, y1);
+            drawString(g,str, x6+w6-sw, y1);
 
             // draw ecm jammer row
             int rowH = (y+h-s10-y1)/3;
@@ -2119,10 +2119,10 @@ public class DesignUI extends BasePanel {
             g.setColor(darkestBrown);
             List<String> descLines = wrappedLines(g, ecmDesc, w2);
             if (descLines.size() == 1) 
-                g.drawString(descLines.get(0), x2, y2);
+                drawString(g,descLines.get(0), x2, y2);
             else if (descLines.size() > 1) {
-                g.drawString(descLines.get(0), x2, y2-s5);
-                g.drawString(descLines.get(1), x2, y2+s5);
+                drawString(g,descLines.get(0), x2, y2-s5);
+                drawString(g,descLines.get(1), x2, y2+s5);
             }
             g.setColor(Color.black);
             int boxW = w3-s20;
@@ -2168,18 +2168,18 @@ public class DesignUI extends BasePanel {
             g.setFont(narrowFont(15));
             sw = g.getFontMetrics().stringWidth(ecmName);
             int x3a = x3+s10+((boxW-sw)/2);
-            g.drawString(ecmName, x3a, y2);
+            drawString(g,ecmName, x3a, y2);
 
             g.setFont(narrowFont(17));
             g.setColor(darkestBrown);
             sw = g.getFontMetrics().stringWidth(ecmSize);
-            g.drawString(ecmSize, x4+w4-sw, y2);
+            drawString(g,ecmSize, x4+w4-sw, y2);
 
             sw = g.getFontMetrics().stringWidth(ecmPower);
-            g.drawString(ecmPower, x5+w5-sw, y2);
+            drawString(g,ecmPower, x5+w5-sw, y2);
 
             sw = g.getFontMetrics().stringWidth(ecmCost);
-            g.drawString(ecmCost, x6+w6-sw, y2);
+            drawString(g,ecmCost, x6+w6-sw, y2);
 
              // maneuver field
             ShipManeuver manv = des.maneuver();
@@ -2192,10 +2192,10 @@ public class DesignUI extends BasePanel {
             g.setColor(darkestBrown);
             descLines = wrappedLines(g, manvDesc, w2);
             if (descLines.size() == 1) 
-                g.drawString(descLines.get(0), x2, y3);
+                drawString(g,descLines.get(0), x2, y3);
             else if (descLines.size() > 1) {
-                g.drawString(descLines.get(0), x2, y3-s5);
-                g.drawString(descLines.get(1), x2, y3+s5);
+                drawString(g,descLines.get(0), x2, y3-s5);
+                drawString(g,descLines.get(1), x2, y3+s5);
             }
             g.setColor(Color.black);
             boxW = w3-s20;
@@ -2241,18 +2241,18 @@ public class DesignUI extends BasePanel {
             g.setFont(narrowFont(15));
             sw = g.getFontMetrics().stringWidth(manvName);
             x3a = x3+s10+((boxW-sw)/2);
-            g.drawString(manvName, x3a, y3);
+            drawString(g,manvName, x3a, y3);
 
             g.setFont(narrowFont(17));
             g.setColor(darkestBrown);
             sw = g.getFontMetrics().stringWidth(manvSize);
-            g.drawString(manvSize, x4+w4-sw, y3);
+            drawString(g,manvSize, x4+w4-sw, y3);
 
             sw = g.getFontMetrics().stringWidth(manvPower);
-            g.drawString(manvPower, x5+w5-sw, y3);
+            drawString(g,manvPower, x5+w5-sw, y3);
 
             sw = g.getFontMetrics().stringWidth(manvCost);
-            g.drawString(manvCost, x6+w6-sw, y3);
+            drawString(g,manvCost, x6+w6-sw, y3);
         }
         private void drawWeaponInfo(Graphics2D g, ShipDesign des, int x, int y, int w0, int h) {
             g.setColor(darkBrown);
@@ -2276,27 +2276,27 @@ public class DesignUI extends BasePanel {
             g.setFont(narrowFont(16));
             String str = text("SHIP_DESIGN_TYPE_LABEL");
             int sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x2+(w2-sw)/2, y1);
+            drawString(g,str, x2+(w2-sw)/2, y1);
             str = text("SHIP_DESIGN_COUNT_LABEL");
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x3+(w3-sw)/2, y1);
+            drawString(g,str, x3+(w3-sw)/2, y1);
             str = text("SHIP_DESIGN_DAMAGE_LABEL");
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x4+(w4-sw)/2, y1);
+            drawString(g,str, x4+(w4-sw)/2, y1);
             str = text("SHIP_DESIGN_RANGE_LABEL");
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x5+(w5-sw)/2, y1);
+            drawString(g,str, x5+(w5-sw)/2, y1);
             str = text("SHIP_DESIGN_SIZE_LABEL");
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x6+w6-sw, y1);
+            drawString(g,str, x6+w6-sw, y1);
             str = text("SHIP_DESIGN_POWER_LABEL");
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x7+w7-sw, y1);
+            drawString(g,str, x7+w7-sw, y1);
             str = text("SHIP_DESIGN_COST_LABEL");
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x8+w8-sw, y1);
+            drawString(g,str, x8+w8-sw, y1);
             str = text("SHIP_DESIGN_DESCRIPTION_LABEL");
-            g.drawString(str, x9+s15, y1);
+            drawString(g,str, x9+s15, y1);
 
             // draw weapon row 1
             int rowH = (y+h-s10-y1)/4;
@@ -2363,7 +2363,7 @@ public class DesignUI extends BasePanel {
                 g.setFont(narrowFont(15));
                 sw = g.getFontMetrics().stringWidth(wpnName);
                 int x2a = boxX+((boxW-sw)/2);
-                g.drawString(wpnName, x2a, y2);
+                drawString(g,wpnName, x2a, y2);
 
 
                 g.setColor(Color.black);
@@ -2407,21 +2407,21 @@ public class DesignUI extends BasePanel {
                 g.setFont(narrowFont(15));
                 sw = g.getFontMetrics().stringWidth(wpnCount);
                 int x3a = boxX+((boxW-sw)/2);
-                g.drawString(wpnCount, x3a, y2);
+                drawString(g,wpnCount, x3a, y2);
 
                 g.setFont(narrowFont(17));
                 g.setColor(darkestBrown);
                 sw = g.getFontMetrics().stringWidth(wpnDmg);
-                g.drawString(wpnDmg, x4+((w4-sw)/2), y2);
+                drawString(g,wpnDmg, x4+((w4-sw)/2), y2);
                 sw = g.getFontMetrics().stringWidth(wpnRange);
-                g.drawString(wpnRange, x5+((w5-sw)/2), y2);
+                drawString(g,wpnRange, x5+((w5-sw)/2), y2);
                 sw = g.getFontMetrics().stringWidth(wpnSize);
-                g.drawString(wpnSize, x6+w6-sw, y2);
+                drawString(g,wpnSize, x6+w6-sw, y2);
                 sw = g.getFontMetrics().stringWidth(wpnPower);
-                g.drawString(wpnPower, x7+w7-sw, y2);
+                drawString(g,wpnPower, x7+w7-sw, y2);
                 sw = g.getFontMetrics().stringWidth(wpnCost);
-                g.drawString(wpnCost, x8+w8-sw, y2);
-                g.drawString(wpnDesc, x9+s15, y2);
+                drawString(g,wpnCost, x8+w8-sw, y2);
+                drawString(g,wpnDesc, x9+s15, y2);
                 y2 += rowH;
             }
         }
@@ -2444,18 +2444,18 @@ public class DesignUI extends BasePanel {
             g.setFont(narrowFont(16));
             String str = text("SHIP_DESIGN_TYPE_LABEL");
             int sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x2+(w2-sw)/2, y1);
+            drawString(g,str, x2+(w2-sw)/2, y1);
             str = text("SHIP_DESIGN_SIZE_LABEL");
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x3+w3-sw, y1);
+            drawString(g,str, x3+w3-sw, y1);
             str = text("SHIP_DESIGN_POWER_LABEL");
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x4+w4-sw, y1);
+            drawString(g,str, x4+w4-sw, y1);
             str = text("SHIP_DESIGN_COST_LABEL");
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x5+w5-sw, y1);
+            drawString(g,str, x5+w5-sw, y1);
             str = text("SHIP_DESIGN_DESCRIPTION_LABEL");
-            g.drawString(str, x6+s15, y1);
+            drawString(g,str, x6+s15, y1);
 
             // draw special 1
             int rowH = (y+h-s10-y1)/3;
@@ -2519,17 +2519,17 @@ public class DesignUI extends BasePanel {
                 g.setFont(narrowFont(15));
                 sw = g.getFontMetrics().stringWidth(wpnName);
                 int x2a = boxX+ ((boxW - sw) / 2);
-                g.drawString(wpnName, x2a, y2);
+                drawString(g,wpnName, x2a, y2);
 
                 g.setFont(narrowFont(17));
                 g.setColor(darkestBrown);
                 sw = g.getFontMetrics().stringWidth(wpnSize);
-                g.drawString(wpnSize, x3 + w3 - sw, y2);
+                drawString(g,wpnSize, x3 + w3 - sw, y2);
                 sw = g.getFontMetrics().stringWidth(wpnPower);
-                g.drawString(wpnPower, x4 + w4 - sw, y2);
+                drawString(g,wpnPower, x4 + w4 - sw, y2);
                 sw = g.getFontMetrics().stringWidth(wpnCost);
-                g.drawString(wpnCost, x5 + w5 - sw, y2);
-                g.drawString(wpnDesc, x6 + s15, y2);
+                drawString(g,wpnCost, x5 + w5 - sw, y2);
+                drawString(g,wpnDesc, x6 + s15, y2);
                 y2 += rowH;
             }
         }

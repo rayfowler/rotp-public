@@ -136,17 +136,17 @@ public class TransportPanel extends BasePanel {
                 String dest =  pl.sv.name(tr.destination().id);
                 String str2 = dest.isEmpty() ? text("MAIN_FLEET_DEST_UNSCOUTED") : text("MAIN_FLEET_DESTINATION", dest);
                 int sw2 = g.getFontMetrics().stringWidth(str2);
-                g.drawString(str2, w-sw2-s10, y0);
+                drawString(g,str2, w-sw2-s10, y0);
                 y0 -= s25;
                 StarSystem sys = tr.from();
                 String str3 = text("MAIN_FLEET_ORIGIN", pl.sv.name(sys.id));
                 int sw3 = g.getFontMetrics().stringWidth(str3);
-                g.drawString(str3, w-sw3-s10, y0);
+                drawString(g,str3, w-sw3-s10, y0);
                 y0 -= s25;
             }
             String str4 = text("MAIN_FLEET_IN_TRANSIT");
             int sw4 = g.getFontMetrics().stringWidth(str4);
-            g.drawString(str4, w-sw4-s10, y0);
+            drawString(g,str4, w-sw4-s10, y0);
 
             g.setColor(MainUI.shadeBorderC());
             g.fillRect(0, h-s5, w, s5);
@@ -222,7 +222,7 @@ public class TransportPanel extends BasePanel {
             int indent = checkW+s6;
             List<String> lines = wrappedLines(g, retreatText, w-s20, indent);
             for (String line: lines) {
-                g.drawString(line, x0+indent, y0);
+                drawString(g,line, x0+indent, y0);
                 indent = 0;
                 y0 += lineH;
             }

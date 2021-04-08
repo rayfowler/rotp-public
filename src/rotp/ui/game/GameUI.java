@@ -804,7 +804,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
                 g.setColor(c0);
                 y0 += lineH;
                 int sw = g.getFontMetrics().stringWidth(name);
-                g.drawString(name, w-sw-s10, y0);
+                drawString(g,name, w-sw-s10, y0);
                 lang[i].setBounds(w-sw-s10, y0-lineH, sw+s5, lineH);
             }
         }

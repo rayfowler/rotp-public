@@ -644,7 +644,7 @@ public class CombatStackShip extends CombatStack {
         int x2 = max(x1, x1+((stackW-sw2)/2));
 
         g.setColor(Color.lightGray);
-        g.drawString(name, x2, y2);
+        drawString(g, name, x2, y2);
 
         if (inStasis) {
             g.setColor(TechStasisField.STASIS_COLOR);

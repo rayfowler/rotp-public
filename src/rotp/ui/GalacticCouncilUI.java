@@ -195,12 +195,12 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         g.setColor(SystemPanel.blackText);
         for (String line: lines1) {
             y2 += lineH;
-            g.drawString(line, x2, y2);
+            drawString(g,line, x2, y2);
         }
         y2 += s20;
         for (String line: lines2) {
             y2 += lineH;
-            g.drawString(line, x2, y2);
+            drawString(g,line, x2, y2);
         }        
         
         g.setFont(narrowFont(20));
@@ -281,7 +281,7 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         g.setColor(SystemPanel.whiteText);
         sw1 = g.getFontMetrics().stringWidth(contText);
         x0 = (w-sw1)/2;
-        g.drawString(contText, x0, h-s10);
+        drawString(g,contText, x0, h-s10);
         drawDiplomatImage(g, c.lastVoter());
     }
     private void paintVoteTotals(Graphics2D g) {
@@ -313,11 +313,11 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         g.setColor(SystemPanel.whiteText);
         g.setFont(narrowFont(26));
         String votes1 = text("COUNCIL_VOTE_COUNT", str(c.votes1()));
-        g.drawString(votes1, x3a+w3+s10, h-s20);
+        drawString(g,votes1, x3a+w3+s10, h-s20);
         
         String votes2 = text("COUNCIL_VOTE_COUNT", str(c.votes2()));
         int sw = g.getFontMetrics().stringWidth(votes2);
-        g.drawString(votes2, x3b-sw-s10, h-s20);
+        drawString(g,votes2, x3b-sw-s10, h-s20);
     }
     private void paintPlayerVoteMessage(Graphics2D g) {
         GalacticCouncil c = galaxy().council();
@@ -369,7 +369,7 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         String prompt = text("COUNCIL_CAST_PROMPT", str(c.nextVotes()));
         g.setColor(SystemPanel.blackText);
         g.setFont(narrowFont(15)); 
-        g.drawString(prompt, x1b, y1a+h1a-s45);
+        drawString(g,prompt, x1b, y1a+h1a-s45);
         
         String titleStr = text("COUNCIL_CAST_PROMPT_TITLE");
         g.setFont(narrowFont(22));
@@ -546,7 +546,7 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         g.setColor(SystemPanel.blackText);
         for (String line: lines1) {
             y2 += lineH;
-            g.drawString(line, x2, y2);
+            drawString(g,line, x2, y2);
         } 
         
         g.setFont(narrowFont(20));
@@ -750,7 +750,7 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         int y1b = y1+h1-s42-(s8*lines.size());
         
         for (String line: lines) {
-            g.drawString(line, x1b, y1b);
+            drawString(g,line, x1b, y1b);
             y1b += s16;
         }
         
@@ -895,11 +895,11 @@ public final class GalacticCouncilUI extends FadeInPanel implements MouseListene
         drawShadowedString(g, voter.raceName(), 2, x1, y+s30, SystemPanel.textShadowC, SystemPanel.whiteText);
         g.setFont(narrowFont(16));
         g.setColor(Color.black);
-        g.drawString(voteStr, x1, y+s47);
+        drawString(g,voteStr, x1, y+s47);
         g.setFont(narrowFont(14));
         g.setColor(SystemPanel.blackText);
-        g.drawString(cand1Str, x1, y+s65);
-        g.drawString(cand2Str, x1, y+s80);
+        drawString(g,cand1Str, x1, y+s65);
+        drawString(g,cand2Str, x1, y+s80);
     }
     private String treatyString(Empire voter, Empire candidate) {
         String treatyStr;

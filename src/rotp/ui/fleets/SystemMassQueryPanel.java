@@ -126,7 +126,7 @@ public class SystemMassQueryPanel extends BasePanel {
                 g.setColor(Color.yellow);
             else
                 g.setColor(SystemPanel.whiteText);
-            g.drawString(fr1, fr1X, y0-s5);
+            drawString(g,fr1, fr1X, y0-s5);
             Stroke prev = g.getStroke();
             g.setStroke(stroke1);
             g.drawRect(boxL, y0-boxH, boxW, boxH);
@@ -145,7 +145,7 @@ public class SystemMassQueryPanel extends BasePanel {
                 g.setColor(Color.yellow);
             else
                 g.setColor(SystemPanel.whiteText);
-            g.drawString(fr2, fr2X, y0-s5);
+            drawString(g,fr2, fr2X, y0-s5);
             prev = g.getStroke();
             g.setStroke(stroke1);
             g.drawRect(boxL2, y0-boxH, boxW, boxH);
@@ -155,7 +155,7 @@ public class SystemMassQueryPanel extends BasePanel {
             y0 += s20;
             g.setColor(Color.black);
             g.setFont(narrowFont(17));
-            g.drawString(filt, x0, y0);
+            drawString(g,filt, x0, y0);
             y0 += s3;
 
             // draw filters
@@ -181,7 +181,7 @@ public class SystemMassQueryPanel extends BasePanel {
             y0 += s19;
             g.setFont(narrowFont(17));
             g.setColor(SystemPanel.blackText);
-            g.drawString(cons, x0+s5, y0);
+            drawString(g,cons, x0+s5, y0);
             g.setColor(Color.darkGray);
             g.setFont(narrowFont(14));
             y0 += s2;
@@ -363,7 +363,7 @@ public class SystemMassQueryPanel extends BasePanel {
             String desc = text("FLEETS_STOP_RALLIES_DESC", str(rallyCount));
             List<String> descLines = scaledNarrowWrappedLines(g, desc, w-s20, 2, 16, 14);
             for (String line: descLines) {
-                g.drawString(line, s10, y0);
+                drawString(g,line, s10, y0);
                 y0 += s16;
             }
 
@@ -399,7 +399,7 @@ public class SystemMassQueryPanel extends BasePanel {
             String desc = text("FLEETS_CANCEL_TRANSPORTS_DESC", str(transportCount));
             List<String> descLines = scaledNarrowWrappedLines(g, desc, w-s20, 2, 18, 14);
             for (String line: descLines) {
-                g.drawString(line, s10, y0);
+                drawString(g,line, s10, y0);
                 y0 += s16;
             }
 
@@ -422,7 +422,7 @@ public class SystemMassQueryPanel extends BasePanel {
             String desc = num == 0 ? text("FLEETS_ADJUST_SPENDING_SELECT") : text("FLEETS_ADJUST_SPENDING_DESC", str(num));
             List<String> descLines = scaledNarrowWrappedLines(g, desc, w-s20, 2, 18, 14);
             for (String line: descLines) {
-                g.drawString(line, s10, y0);
+                drawString(g,line, s10, y0);
                 y0 += s16;
             }
 
@@ -502,7 +502,7 @@ public class SystemMassQueryPanel extends BasePanel {
             scaledFont(g,name,barW-s5,18,8);
             int sw = g.getFontMetrics().stringWidth(name);
             int x0 = barX+((barW-sw)/2);
-            g.drawString(name, x0, barY+s16);
+            drawString(g,name, x0, barY+s16);
 
             if (hoverBox == shipNameBox) {
                 Stroke prev = g.getStroke();
@@ -541,7 +541,7 @@ public class SystemMassQueryPanel extends BasePanel {
                 g.setColor(SystemPanel.blackText);
             int sw = g.getFontMetrics().stringWidth(s);
             int x0 = x+((w-sw)/2);
-            g.drawString(s, x0, y+h-s7);
+            drawString(g,s, x0, y+h-s7);
         }
         private void drawTransportButton(Graphics2D g, int x, int y, int w, int h) {
             transportBox.setBounds(x, y, w, h);
@@ -561,7 +561,7 @@ public class SystemMassQueryPanel extends BasePanel {
                 g.setColor(SystemPanel.whiteText);
             g.setFont(narrowFont(20));
             String s = text("FLEETS_TRANSPORTS_LABEL");
-            g.drawString(s, x+s10, y+s25);
+            drawString(g,s, x+s10, y+s25);
             if ((hoverBox == transportBox)
             && player().canSendTransports()) {
                 Stroke prevStroke = g.getStroke();
@@ -587,7 +587,7 @@ public class SystemMassQueryPanel extends BasePanel {
                 g.setColor(SystemPanel.whiteText);
             g.setFont(narrowFont(20));
             String s = text("FLEETS_SPENDING_LABEL");
-            g.drawString(s, x+s10, y+s25);
+            drawString(g,s, x+s10, y+s25);
             if (hoverBox == spendingBox) {
                 Stroke prevStroke = g.getStroke();
                 g.setStroke(stroke2);

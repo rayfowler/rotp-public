@@ -191,7 +191,7 @@ public class Nebula extends MapSprite implements Base, IMappedObject, Serializab
                 int sw = g2.getFontMetrics().stringWidth(name);
                 int x0 = mShape.x+((mShape.width-sw)/2);
                 int y0 = mShape.y+((mShape.height-fontSize)/2);
-                g2.drawString(name, x0, y0);
+                drawString(g2, name, x0, y0);
             }
         }
     }

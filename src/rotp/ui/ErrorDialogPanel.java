@@ -65,7 +65,7 @@ public class ErrorDialogPanel extends BasePanel implements MouseListener {
         g.fillRect(x0+s3, y0+s3, boxWidth-s6, boxHeight-s6);
 
         g.setColor(SystemPanel.whiteText);
-        g.drawString(title, x0+s35, y0+boxHeight-s13);
+        drawString(g,title, x0+s35, y0+boxHeight-s13);
     }
     private void exit() {
         softClick();

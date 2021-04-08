@@ -266,7 +266,7 @@ public class ManageDiplomatsUI  extends BasePanel implements MouseListener, Mous
         String s = view.empire().raceName();
         int w1 = x2-x;
         int sw = g.getFontMetrics().stringWidth(s);
-        g.drawString(s, x+(w1-sw)/2, y1);
+        drawString(g,s, x+(w1-sw)/2, y1);
         
         // audience button or recalled text in column 2
         int w2 = x3-x2;
@@ -292,7 +292,7 @@ public class ManageDiplomatsUI  extends BasePanel implements MouseListener, Mous
         if (label != null) {
             g.setFont(narrowFont(16));
             sw = g.getFontMetrics().stringWidth(label);
-            g.drawString(label, x2+(w2-sw)/2, y1);
+            drawString(g,label, x2+(w2-sw)/2, y1);
         }
         else {
             // AUDIENCE BUTTON HERE
