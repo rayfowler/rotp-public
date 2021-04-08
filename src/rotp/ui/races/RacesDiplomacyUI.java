@@ -259,6 +259,7 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         drawString(g,s, x+w-s20-sw, y1);
 
         s = text("TITLE_LEADERNAME", emp.labels().text("_nameTitle"), emp.leader().name());
+        s = emp.replaceTokens(s, "alien");
         sw = g.getFontMetrics().stringWidth(s);
         drawString(g,s, x+w-s20-sw, y2);
 
@@ -296,6 +297,7 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         drawString(g,s, x+w-s20-sw, y1);
 
         s = text("TITLE_LEADERNAME", emp.race().text("_nameTitle"), emp.leader().name());
+        s = emp.replaceTokens(s, "alien");
         sw = g.getFontMetrics().stringWidth(s);
         drawString(g,s, x+w-s20-sw, y2);
 
