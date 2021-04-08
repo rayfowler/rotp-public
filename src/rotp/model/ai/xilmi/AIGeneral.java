@@ -644,8 +644,6 @@ public class AIGeneral implements Base, General {
             {
                 continue;
             }
-            if(empire.systemsForCiv(emp).size() < 2)
-                continue;
             EmpireView ev = empire.viewForEmpire(emp);
             float relationshipFactor = 100 - ev.embassy().relations();
             float currentScore = relationshipFactor * empire.systemsInShipRange(emp).size() * empire.systemsForCiv(emp).size() / empire.powerLevel(emp);
@@ -672,6 +670,8 @@ public class AIGeneral implements Base, General {
         float dr = 1.0f;
         float totalReachableEnemyProduction = 0.0f;
         float totalProductionReachableByEnemies = 0.0f;
+        float totalMissileBaseCost = 0.0f;
+        float totalShipCost = 0.0f;
         for(Empire enemy : empire.enemies())
         {
             for(StarSystem enemySystem : empire.systemsInShipRange(enemy))
@@ -688,13 +688,18 @@ public class AIGeneral implements Base, General {
                     totalProductionReachableByEnemies += max(mySystem.colony().production(), 1.0f);
                 }
             }
+            totalMissileBaseCost += enemy.shipMaintCostPerBC();
+            totalShipCost += enemy.missileBaseCostPerBC();
         }
         if(totalReachableEnemyProduction > 0)
         {
             dr = totalProductionReachableByEnemies / (totalReachableEnemyProduction + totalProductionReachableByEnemies);
         }
+        if(totalMissileBaseCost+totalShipCost > 0)
+        {
+            dr = min(dr, totalShipCost / (totalMissileBaseCost+totalShipCost));
+        }
         defenseRatio = dr;
-        //System.out.print("\n"+empire.name()+" defenseRatio: "+defenseRatio);
         return defenseRatio;
     }
     @Override

@@ -31,6 +31,7 @@ import rotp.model.galaxy.StarSystem;
 import rotp.model.galaxy.StarType;
 import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipDesignLab;
+import rotp.model.tech.TechTree;
 import rotp.ui.NoticeMessage;
 import rotp.util.Base;
 
@@ -61,7 +62,20 @@ public class AIFleetCommander implements Base, FleetCommander {
     @Override
     public float maxShipMaintainance() {
         if (maxMaintenance < 0) 
-            maxMaintenance = max(0.025f, empire.tech().avgTechLevel() / 100.0f);
+        {
+            boolean techsLeft = false;
+            for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
+                if (!empire.tech().category(j).possibleTechs().isEmpty())
+                {
+                    techsLeft = true;
+                    break;
+                }
+            }
+            if(techsLeft)
+                maxMaintenance = min(empire.tech().avgTechLevel() / 100.0f, 0.05f * empire.tech().topSpeed());
+            else
+                maxMaintenance = 0.9f;
+        }
         return maxMaintenance;
     }
     @Override

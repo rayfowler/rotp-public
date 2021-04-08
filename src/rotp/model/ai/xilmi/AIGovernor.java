@@ -29,6 +29,7 @@ import rotp.model.galaxy.StarSystem;
 import rotp.model.planet.Planet;
 import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipDesignLab;
+import rotp.model.tech.TechTree;
 import rotp.util.Base;
 
 public class AIGovernor implements Base, Governor {
@@ -294,8 +295,21 @@ public class AIGovernor implements Base, Governor {
         float workerROI = empire.tech().populationCost() / empire.workerProductivity();
         float factoryROI = empire.tech().baseFactoryCost() / netFactoryProduction;
         
+        float enemyBombardPower = 0.0f;
+        
+        for(ShipFleet fleet:col.starSystem().orbitingFleets())
+        {
+            if(fleet.empire().aggressiveWith(col.empire().id))
+            {
+                enemyBombardPower += fleet.expectedBombardDamage();
+            }
+        }
+        float popLoss = enemyBombardPower / 200;
+        
         // prod spending gets up to 100% of planet's remaining net prod
-        if(col.industry().factories() < col.maxUseableFactories() && (colonizerNeed == 0 || factoryROI < 25 || productionScore(col.starSystem()) < 0.5))
+        if(col.industry().factories() < col.maxUseableFactories() 
+                && (colonizerNeed == 0 || factoryROI < 25 || productionScore(col.starSystem()) < 0.5)
+                && enemyBombardPower == 0)
         {
             if(workerROI > factoryROI || col.population() == col.maxSize())
             {
@@ -319,6 +333,9 @@ public class AIGovernor implements Base, Governor {
         {
             nonCleanEcoCost = 0;
         }
+        //if we bomb us, we make ship or research
+        if(popLoss * empire.tech().populationCost() > totalProd)
+            nonCleanEcoCost = 0;
         float ecoCost = max(0, min(netProd, nonCleanEcoCost));
         col.pct(ECOLOGY, (ecoCost + cleanCost)/totalProd);
 
@@ -397,6 +414,12 @@ public class AIGovernor implements Base, Governor {
         float bomberDamage = lab.bomberDesign().firepower(empire.bestEnemyPlanetaryShieldLevel());
         //ail: No use to build any ships if they won't do damage anyways. Better tech up.
         boolean viableForShipProduction = true;
+        float turnsBeforeColonyDestroyed = Float.MAX_VALUE;
+        if(popLoss > 0)
+            turnsBeforeColonyDestroyed = col.population() / popLoss;
+        float fighterBuildTime = lab.fighterDesign().cost() / totalProd;
+        if(fighterBuildTime > turnsBeforeColonyDestroyed)
+            viableForShipProduction = false;
         if(bomberDamage == 0 && fighterDamage == 0)
         {
             viableForShipProduction = false;
@@ -421,9 +444,18 @@ public class AIGovernor implements Base, Governor {
             maxShipMaintainance *= productionScore(col.starSystem());
             if(maxShipMaintainance > maxShipMaintainanceBeforeAdj)
                 maxShipMaintainance = (min(maxShipMaintainance, 1) + maxShipMaintainanceBeforeAdj) / 2;
-            if(empire.tech().avgTechLevel() >= 99)
+            boolean techsLeft = false;
+            for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
+                if (!empire.tech().category(j).possibleTechs().isEmpty())
+                {
+                    techsLeft = true;
+                    break;
+                }
+            }
+            
+            if(!techsLeft)
                 maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
-            //System.out.print("\n"+empire.name()+" "+col.name()+" adjMaxMaint: "+maxShipMaintainance+" baseMaxMaint: "+maxShipMaintainanceBeforeAdj);
+            //System.out.print("\n"+empire.name()+" "+col.name()+" adjMaxMaint: "+maxShipMaintainance+" baseMaxMaint: "+maxShipMaintainanceBeforeAdj+" avg-tech-level: "+empire.tech().avgTechLevel());
             if(fighterDamage == 0)
             {
                 fighterPercentage = 0.25f;
@@ -434,7 +466,8 @@ public class AIGovernor implements Base, Governor {
             }
             col.shipyard().design(lab.fighterDesign());
             //System.out.print("\n"+empire.name()+" fighterCost: "+fighterCost+" bomberCost: "+bomberCost+" F% reached: "+fighterCost / (bomberCost + fighterCost)+" of "+fighterPercentage);
-            if(fighterCost / (bomberCost + fighterCost) > fighterPercentage)
+            if(fighterCost / (bomberCost + fighterCost) > fighterPercentage 
+                && enemyBombardPower == 0)
             {
                 col.shipyard().design(empire.shipLab().bomberDesign());
             }

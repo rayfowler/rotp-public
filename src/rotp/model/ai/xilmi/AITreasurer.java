@@ -40,6 +40,8 @@ public class AITreasurer implements Base, Treasurer {
         List<StarSystem> poorSystems = new ArrayList<>();
         List<StarSystem> richSystems = new ArrayList<>(); // modnar: make richSystem list
         
+        boolean needToSolveEvent = false;
+        
         // remove all systems in rebellion and poor/ultra-poor. None of these
         // systems will receive reserve. However poor/ultra-poor will be added
         // back in so we can collect reserve from them.
@@ -51,13 +53,19 @@ public class AITreasurer implements Base, Treasurer {
             if (sys.colony().inRebellion())
                 systems.remove(sys);
             else {
+                if (sys.colony().research().hasProject())
+                    needToSolveEvent = true;
                 Planet pl = sys.planet();
                 if (pl.isResourcePoor() || pl.isResourceUltraPoor()) {
                     poorSystems.add(sys); // modnar: still make poorSystems list
                 }
                 if (pl.isResourceRich() || pl.isResourceUltraRich()) {
-                    systems.remove(sys);
-                    richSystems.add(sys); // modnar: make richSystems list
+                    //ail: If the system with the event is rich, we mustn't remove it from the list of receivers!
+                    if(!sys.colony().research().hasProject())
+                    {
+                        systems.remove(sys);
+                        richSystems.add(sys); // modnar: make richSystems list
+                    }
                 }
             }
         }
@@ -71,8 +79,11 @@ public class AITreasurer implements Base, Treasurer {
                     break;
                 Colony col = sys.colony();
                 if (col.research().hasProject()) {
+                    needToSolveEvent = true;
                     int rsvNeeded = (int) col.maxReserveNeeded();
                     empire.allocateReserve(col, rsvNeeded);
+                    //ail: might be able to lower it due to more income meaning less percent for clean needed
+                    col.lowerECOToCleanIfEcoComplete();
                     systems.remove(sys);
                 }
             }
@@ -87,6 +98,8 @@ public class AITreasurer implements Base, Treasurer {
                 Colony col = sys.colony();
                 int rsvNeeded = (int) col.maxReserveNeeded();
                 empire.allocateReserve(col, rsvNeeded);
+                //ail: might be able to lower it due to more income meaning less percent for clean needed
+                col.lowerECOToCleanIfEcoComplete();
                 systems.remove(sys);
             }
         }
@@ -100,6 +113,8 @@ public class AITreasurer implements Base, Treasurer {
                 Colony col = sys.colony();
                 int rsvNeeded = (int) col.maxReserveNeeded();
                 empire.allocateReserve(col, rsvNeeded);
+                //ail: might be able to lower it due to more income meaning less percent for clean needed
+                col.lowerECOToCleanIfEcoComplete();
                 systems.remove(sys);
             }
         }
@@ -119,7 +134,45 @@ public class AITreasurer implements Base, Treasurer {
                 int rsvNeeded = (int) max(0, min(col.maxReserveUseable(), max-curr));
                 if (rsvNeeded > 0) {
                     empire.allocateReserve(col,rsvNeeded);
+                    //ail: might be able to lower it due to more income meaning less percent for clean needed
+                    col.lowerECOToCleanIfEcoComplete();
                     systems.remove(sys);
+                }
+            }
+        }
+        //We only gather tax when we need to deal with a nova/plague
+        if(needToSolveEvent)
+        {
+            float totalProd = empire.totalPlanetaryProduction();
+            float desiredRsv = totalProd * 0.1f; // modnar: reduce reserve collection, less is more efficient in general
+            int maxAlloc = ColonySpendingCategory.MAX_TICKS; 
+            if (empire.totalReserve() < desiredRsv) {
+                systems.addAll(richSystems); // modnar: check for richSystems first to collect reserve
+                Collections.reverse(systems);
+                for (StarSystem sys : systems) {
+                    Colony col = sys.colony();
+                    //ail: The colony that has the project that we are saving for shouldn't be one of those who are saving!
+                    if(col.research().hasProject())
+                        continue;
+                    int res = col.research().allocation();
+                    if (res > 0) {
+                        Planet pl = sys.planet();
+                        if (pl.isResourceRich() || pl.isResourceUltraRich()) {
+                            if (col.population() >= pl.maxSize()) {
+                                int eco = col.ecology().allocation();
+                                int ecoAdj = min(res, maxAlloc - eco); // modnar: collect all we can from rich/ultra-rich
+                                col.research().adjustValue(-ecoAdj);
+                                col.ecology().adjustValue(ecoAdj);                            
+                            }
+                        } else if (!pl.isArtifact()) {
+                            if (col.industry().factories() >= col.industry().maxFactories()) {
+                                int ind = col.industry().allocation();
+                                int indAdj = min(res, maxAlloc - ind)/4; // ail: 1/6 wasn't enough to prevent the nova
+                                col.research().adjustValue(-indAdj);
+                                col.industry().adjustValue(indAdj);                            
+                            }                        
+                        }
+                    }
                 }
             }
         }
