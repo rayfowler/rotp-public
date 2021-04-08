@@ -19,6 +19,7 @@ import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Objects;
 import rotp.model.empires.Empire;
 import rotp.model.empires.Race;
 import rotp.model.galaxy.GalaxyShape.EmpireSystem;
@@ -210,29 +211,34 @@ public class GalaxyFactory implements Base {
         // systems based on the galaxy size selected at startup
 
         // get possible banner colors, remove player's color, then randomize
-        List<Integer> raceColors = opts.possibleColors();
+        List<Integer> raceColors = new ArrayList<>();
+        Integer playerC = options().selectedPlayerColor();
+        boolean playerCExcluded = false;
+        for (Integer i : opts.possibleColors()) {
+            if ((i == playerC) && !playerCExcluded)
+                playerCExcluded = true;
+            else
+                raceColors.add(i);
+        };
 
         // possible the galaxy shape could not fit in all of the races
         int maxRaces = min(alienRaces.size(), empSystems.size());
 
         int empId = startId;
+        
+        // since we may have more races than colors we will need to reset the
+        // color list each time we run out. 
         for (int h=0;h<maxRaces;h++) {
             Race r = Race.keyed(alienRaces.get(h));
             EmpireSystem empSystem = empSystems.get(h);
+            if (raceColors.isEmpty()) 
+                raceColors = opts.possibleColors();
             Integer colorId = raceColors.remove(0);
-            if (raceColors.isEmpty())
-                raceColors =  opts.possibleColors();
-            if (colorId == options().selectedPlayerColor()) {
-                colorId = raceColors.remove(0);
-                if (raceColors.isEmpty())
-                    raceColors = opts.possibleColors();
-            }
             StarSystem sys = StarSystemFactory.current().newSystemForRace(r,g);
             sys.setXY(empSystem.colonyX(), empSystem.colonyY());
             sys.name(r.nextAvailableHomeworld());
             g.addStarSystem(sys);
             Empire emp = new Empire(g, empId, r.id, sys, colorId, null);
-            //log("Adding star system: ", sys.name(), " - ", r.id, " : ", fmt(sys.x(),2), "@", fmt(sys.y(),2));
             g.addEmpire(emp);
             empId++;
             // create two nearby system within 3 light-years (required to be at least 1 habitable)
