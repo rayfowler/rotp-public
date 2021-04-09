@@ -183,7 +183,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     public List<StarSystem> shipBuildingSystems() { return shipBuildingSystems; }
     public boolean inGalacticAlliance()           { return galacticAlliance; }
     public void joinGalacticAlliance()            { galacticAlliance = true; }
-    public float planetScanningRange()            { return planetScanningRange; }
+    public float planetScanningRange()            { return max(3, planetScanningRange); }  // max() to correct old saves
     public void planetScanningRange(float d)      { planetScanningRange = d; }
     public float shipScanningRange()              { return shipScanningRange; }
     public void shipScanningRange(float d)        { shipScanningRange = d; }
