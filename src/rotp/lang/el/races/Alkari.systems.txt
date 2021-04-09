@@ -1,7 +1,7 @@
 // Alkari stars based on Japanese names - 124 chosen
 // see: http://www.sengokudaimyo.com/miscellany/names.html
 // excluded names that require lips: b,f,m,p,v,w,y because birds
-// Up to 9 letter words needed for best viewership in all alerts
+
 Αντάτσι
 Ακέτσι
 Ακίτα
@@ -110,4 +110,3 @@
 Γιοσίντα
 Γιοσίι
 Γιούκι
-
