@@ -18,7 +18,6 @@ package rotp.ui.planets;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.GridLayout;
 import java.awt.LinearGradientPaint;
 import java.awt.Polygon;
 import java.awt.Rectangle;
@@ -220,6 +219,7 @@ public class MultiColonySpendingPane extends BasePanel implements MouseListener,
                 c.ensureMinimumCleanup();
             }
         }
+        parent.repaintAll();
     }
     @Override
     public void mouseClicked(MouseEvent arg0) {}

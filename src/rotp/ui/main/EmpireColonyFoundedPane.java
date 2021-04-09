@@ -105,7 +105,7 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
         else if (topParent != null)
             topParent.repaint();
         else
-            parent.repaint();
+            parent.repaintAll();
     }
     @Override
     public void mouseDragged(MouseEvent e) { }
