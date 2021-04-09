@@ -15,6 +15,8 @@
  */
 package rotp.model.tech;
 
+import rotp.model.empires.Empire;
+
 public final class TechFuturePlanetology extends Tech {
     int number;
     public TechFuturePlanetology (String typeId, int lv, int seq, boolean b, TechCategory c) {
@@ -33,4 +35,6 @@ public final class TechFuturePlanetology extends Tech {
     // all future techs can always be research
     @Override
     public float discoveryPct()          { return 1.0f; }
+    @Override
+    public float baseValue(Empire c) { return c.ai().scientist().baseValue(this); }
 }

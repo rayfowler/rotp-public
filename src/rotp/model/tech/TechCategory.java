@@ -223,6 +223,8 @@ public final class TechCategory implements Base, Serializable {
         }
     }
     public boolean studyingFutureTech() {
+        if(tech(currentTech) != null && tech(currentTech).isFutureTech())
+            return true;
         return false;
     }
     public String techDescription1(boolean key) {

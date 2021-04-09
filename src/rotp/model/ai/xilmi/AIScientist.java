@@ -96,32 +96,116 @@ public class AIScientist implements Base, Scientist {
     @Override
     public void setTechTreeAllocations() {
         // invoked after nextTurn() processing is complete on each civ's turn
-        
-        // Otherwise, go for the defaults modulo future tech adjustments
-        int futureTechs = 0;
+        setDefaultTechTreeAllocations();
+        //ail: first I stop researching where there's no techs left
+        int leftOverAlloc = 0;
         for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
-            if (empire.tech().category(j).studyingFutureTech())
-                futureTechs++;
+            if (empire.tech().category(j).possibleTechs().isEmpty())
+            {
+                leftOverAlloc+=empire.tech().category(j).allocation();
+                empire.tech().category(j).allocation(0);
+            }
         }
-        if ((futureTechs == TechTree.NUM_CATEGORIES) || (futureTechs == 0)) {
+        if(leftOverAlloc >= 60)
+        {
             setDefaultTechTreeAllocations();
             return;
         }
-
-        float floatAllocation = 100.0f / (TechTree.NUM_CATEGORIES - futureTechs);
-        float totalFloatAllocation = 0;
-        int intAllocation = (int) floatAllocation;
-        int totalIntAllocation = 0;
-
+        while(leftOverAlloc > 0)
+        {
+            for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
+                if (!empire.tech().category(j).possibleTechs().isEmpty())
+                {
+                    empire.tech().category(j).adjustAllocation(1);
+                    leftOverAlloc--;
+                }
+                if(leftOverAlloc <= 0)
+                    break;
+            }
+        }
+        //second I stop researching techs with too high of a discovery-chance
+        for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
+            if ((empire.tech().category(j).upcomingDiscoveryChance()-1)*60 > empire.tech().category(j).allocation())
+            {
+                leftOverAlloc+=empire.tech().category(j).allocation();
+                empire.tech().category(j).allocation(0);
+            }
+        }
+        while(leftOverAlloc > 0)
+        {
+            boolean couldSpend = false;
+            for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
+                if (!empire.tech().category(j).possibleTechs().isEmpty()
+                        && (empire.tech().category(j).upcomingDiscoveryChance()-1)*60 <= empire.tech().category(j).allocation())
+                {
+                    empire.tech().category(j).adjustAllocation(1);
+                    leftOverAlloc--;
+                    couldSpend = true;
+                }
+                if(leftOverAlloc <= 0)
+                    break;
+            }
+            if(!couldSpend)
+            {
+                for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
+                    if (!empire.tech().category(j).possibleTechs().isEmpty())
+                    {
+                        empire.tech().category(j).adjustAllocation(1);
+                        leftOverAlloc--;
+                    }
+                    if(leftOverAlloc <= 0)
+                        break;
+                }
+            }
+        }
+        //and lastly i stop researching future techs when there's still others
         for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
             if (empire.tech().category(j).studyingFutureTech())
+            {
+                leftOverAlloc+=empire.tech().category(j).allocation();
                 empire.tech().category(j).allocation(0);
-            else {
-                empire.tech().category(j).allocation(intAllocation);
-                if (totalIntAllocation < (int) totalFloatAllocation)
-                    empire.tech().category(j).increaseAllocation();
-                totalIntAllocation += empire.tech().category(j).allocation();
-                totalFloatAllocation += floatAllocation;
+            }
+        }
+        while(leftOverAlloc > 0)
+        {
+            boolean couldSpend = false;
+            for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
+                if (!empire.tech().category(j).possibleTechs().isEmpty()
+                        && !empire.tech().category(j).studyingFutureTech()
+                        && (empire.tech().category(j).upcomingDiscoveryChance()-1)*60 <= empire.tech().category(j).allocation())
+                {
+                    empire.tech().category(j).adjustAllocation(1);
+                    leftOverAlloc--;
+                    couldSpend = true;
+                }
+                if(leftOverAlloc <= 0)
+                    break;
+            }
+            if(!couldSpend)
+            {
+                for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
+                    if (!empire.tech().category(j).possibleTechs().isEmpty()
+                            && (empire.tech().category(j).upcomingDiscoveryChance()-1)*60 <= empire.tech().category(j).allocation())
+                    {
+                        empire.tech().category(j).adjustAllocation(1);
+                        leftOverAlloc--;
+                        couldSpend = true;
+                    }
+                    if(leftOverAlloc <= 0)
+                        break;
+                }
+            }
+            if(!couldSpend)
+            {
+                for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
+                    if (!empire.tech().category(j).possibleTechs().isEmpty())
+                    {
+                        empire.tech().category(j).adjustAllocation(1);
+                        leftOverAlloc--;
+                    }
+                    if(leftOverAlloc <= 0)
+                        break;
+                }
             }
         }
     }
@@ -502,27 +586,27 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechFutureComputer t) {
-        return t.level()/2;
+        return 1;
     }
     @Override
     public float baseValue(TechFutureConstruction t) {
-        return t.level()/2;
+        return 1;
     }
     @Override
     public float baseValue(TechFutureForceField t) {
-        return t.level()/2;
+        return 1;
     }
     @Override
     public float baseValue(TechFuturePlanetology t) {
-        return t.level()/2;
+        return 1;
     }
     @Override
     public float baseValue(TechFuturePropulsion t) {
-        return t.level()/2;
+        return 1;
     }
     @Override
     public float baseValue(TechFutureWeapon t) {
-        return t.level()/2;
+        return 1;
     }
     @Override
     public float baseValue(TechHandWeapon t) {

@@ -480,6 +480,9 @@ public class AIShipCaptain implements Base, ShipCaptain {
             float maxKillValue = -1;
             float pctOfMaxHP = ((st1.num-1) * st1.maxHits + st1.hits) / (st1.num * st1.maxHits);
             for (CombatStack st2: friends) {
+                //ail: When we have brought colonizers to a battle and are not the colonizer ourselves, we ignore their lack of combat-power for our own retreat-decision. They can still retreat when they are too scared!
+                if(stack != st2 && st2.design().isColonyShip())
+                    continue;
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
                 killPct *= pctOfMaxHP;
                 if(st1.maxFiringRange(st1) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
@@ -500,16 +503,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
         else if (allyKills == 0)
             return true;
         else {
-            //ail: using the value of the ruthless pacifist, as it clearly seems the smartest
-            float retreatRatio = 0.75f; //stack.empire.leader().retreatRatio(combat().system().empire());
-            if(stack.design().obsolete() || defending)
-            {
-                //ail: willing to take more losses for obsolte designs or when defending
-                retreatRatio = 1.2f;
-            }
-            log("retreat ratio: "+retreatRatio+"   enemyKillValue:"+enemyKills+"  allyKillValue:"+allyKills);
             //System.out.print("\n"+stack.fullName()+" enemy-superiority: "+(enemyKills / allyKills));
-            return ((enemyKills / allyKills) > retreatRatio/1.2f); // modnar: adjust AI to accept less losses, more likely to retreat
+            return (enemyKills / allyKills) > 1.0f;
         }
     }
     @Override
