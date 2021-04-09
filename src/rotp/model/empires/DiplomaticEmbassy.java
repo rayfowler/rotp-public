@@ -414,8 +414,6 @@ public class DiplomaticEmbassy implements Base, Serializable {
     }
     public DiplomaticIncident establishTradeTreaty(int level) {
         view.embassy().tradePraised(false);
-        treatyDate = galaxy().currentTime();
-        otherEmbassy().treatyDate = galaxy().currentTime();
         view.trade().startRoute(level);
         DiplomaticIncident inc = SignTradeIncident.create(owner(), empire(), level);
         addIncident(inc);
@@ -737,7 +735,6 @@ public class DiplomaticEmbassy implements Base, Serializable {
         empire().setRecalcDistances();
     }
     private void beginPeace(int duration) {
-        beginTreaty();
         treaty = new TreatyPeace(view.empire(), view.owner(), duration);
         view.setSuggestedAllocations();
     }

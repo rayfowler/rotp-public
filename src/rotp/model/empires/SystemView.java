@@ -440,14 +440,18 @@ public class SystemView implements IMappedObject, Base, Serializable {
             else
                 return text("MAIN_NO_COLONIES");
         }
+        String name;
         if (!scouted())
-            return text("PLANET_WORLD",empire().raceName());
-        if (empire().isHomeworld(system()))
-            return text("PLANET_HOMEWORLD",empire().raceName());
+            name = text("PLANET_WORLD",empire().raceName());
+        else if (empire().isHomeworld(system()))
+            name = text("PLANET_HOMEWORLD",empire().raceName());
         else if (empire().isColony(system()))
-            return text("PLANET_COLONY",empire().raceName());
+            name = text("PLANET_COLONY",empire().raceName());
         else
-            return text("PLANET_WORLD",empire().raceName());
+            name = text("PLANET_WORLD",empire().raceName());
+        
+        name = empire().replaceTokens(name, "alien");
+        return name;
     }
 
     @Override

@@ -676,17 +676,17 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         Column rowNumCol =  listingUI.newRowNumColumn("PLANETS_LIST_NUM", 15, RIGHT);
         Column flagCol = listingUI.newSystemFlagColumn("", "FLAG", 30, palette.black, StarSystem.VFLAG, LEFT);
         Column nameCol = listingUI.newSystemNameColumn(nameField, "PLANETS_LIST_NAME", "NAME", 170, palette.black, StarSystem.NAME, LEFT);
-        Column populationCol = listingUI.newSystemDeltaDataColumn("PLANETS_LIST_POPULATION", "POPULATION", 130, palette.black, StarSystem.POPULATION, RIGHT);
+        Column populationCol = listingUI.newSystemDeltaDataColumn("PLANETS_LIST_POPULATION", "POPULATION", 90, palette.black, StarSystem.POPULATION, RIGHT);
         Column sizeCol = listingUI.newSystemDataColumn("PLANETS_LIST_SIZE", "SIZE", 60, palette.black, StarSystem.CURRENT_SIZE, RIGHT);
         Column pTypeCol = listingUI.newPlanetTypeColumn("PLANETS_LIST_TYPE", "PLANET_TYPE", 90, StarSystem.PLANET_TYPE);
         Column wasteCol = listingUI.newSystemDataColumn("PLANETS_LIST_WASTE", "WASTE", 75, palette.black, StarSystem.WASTE, RIGHT);
         Column notesCol = listingUI.newSystemNotesColumn(notesField, "PLANETS_LIST_NOTES", "NOTES", 999, palette.black);
-        Column factoriesCol = listingUI.newSystemDeltaDataColumn("PLANETS_LIST_FACTORIES", "FACTORIES", 110, palette.black, StarSystem.FACTORIES, RIGHT);
+        Column factoriesCol = listingUI.newSystemDeltaDataColumn("PLANETS_LIST_FACTORIES", "FACTORIES", 90, palette.black, StarSystem.FACTORIES, RIGHT);
         Column productionCol = listingUI.newSystemDataColumn("PLANETS_LIST_PRODUCTION", "INCOME", 60, palette.black, StarSystem.INCOME, RIGHT);
         Column capacityCol = listingUI.newSystemDataColumn("PLANETS_LIST_CAPACITY", "CAPACITY", 60, palette.black, StarSystem.CAPACITY, RIGHT);
         Column indRsvCol = listingUI.newSystemDataColumn("PLANETS_LIST_RESERVE", "RESERVE", 60, palette.black, StarSystem.INDUSTRY_RESERVE, RIGHT);
-        Column basesCol = listingUI.newSystemDeltaDataColumn("PLANETS_LIST_BASES", "BASES", 70, palette.black, StarSystem.BASES, RIGHT);
-        Column shieldCol = listingUI.newSystemDataColumn("PLANETS_LIST_SHIELD", "SHIELD", 70, palette.black, StarSystem.SHIELD, RIGHT);
+        Column basesCol = listingUI.newSystemDeltaDataColumn("PLANETS_LIST_BASES", "BASES", 60, palette.black, StarSystem.BASES, RIGHT);
+        Column shieldCol = listingUI.newSystemDataColumn("PLANETS_LIST_SHIELD", "SHIELD", 60, palette.black, StarSystem.SHIELD, RIGHT);
         Column shipCol = listingUI.newSystemDataColumn("PLANETS_LIST_SHIPYARD", "SHIPYARD", 140, palette.black, StarSystem.SHIPYARD, LEFT);
         Column resourceCol = listingUI.newSystemDataColumn("PLANETS_LIST_RESOURCES", "RESOURCES", 90, palette.black, StarSystem.RESOURCES, LEFT);
 
@@ -722,6 +722,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         milView.addColumn(populationCol);
         milView.addColumn(resourceCol);
         milView.addColumn(productionCol);
+        milView.addColumn(capacityCol);
         milView.addColumn(shieldCol);
         milView.addColumn(basesCol);
         milView.addColumn(shipCol);
@@ -1024,6 +1025,8 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         @Override
         public StarSystem systemViewToDisplay() { return lastSelectedSystem(); }
         @Override
+        public void repaintAll()                { instance.repaint(); }
+        @Override
         public void animate() { graphicPane.animate(); }
         @Override
         protected BasePanel topPane() {
@@ -1290,7 +1293,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             drawString(g,label, x1, y1);
             drawString(g,amt, x2, y1);  
             
-            limitBox.setBounds(x2-s3,y1-s12,sw3+s6,s15);
+            limitBox.setBounds(x2-s3,y1-s15,x3-x2,s18);
             if (hoverBox == limitBox) {
                 Stroke prevStroke = g.getStroke();
                 g.setStroke(stroke2);
@@ -1495,22 +1498,22 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                     prevShipDesign(true);
                 else
                     nextShipDesign(true);
-                parent.repaint();
+                instance.repaint();
             }
             else if (shipNameBox.contains(x,y)){
                 if (rightClick)
                     prevShipDesign(true);
                 else
                     nextShipDesign(true);
-                parent.repaint();
+                instance.repaint();
             }
             else if (nextDesign.contains(x,y)){
                 nextShipDesign(true);
-                parent.repaint();
+                instance.repaint();
             }
             else if (prevDesign.contains(x,y)){
                 prevShipDesign(true);
-                parent.repaint();
+                instance.repaint();
             }
         }
         @Override

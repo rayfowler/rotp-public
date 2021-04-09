@@ -341,7 +341,7 @@ public class EmpireSystemPanel extends SystemPanel {
             drawString(g,label, x1, y1);
             drawString(g,amt, x2, y1);  
             
-            limitBox.setBounds(x2-s3,y1-s12,sw3+s6,s15);
+            limitBox.setBounds(x2-s3,y1-s15,x3-x2,s18);
             if (hoverBox == limitBox) {
                 Stroke prevStroke = g.getStroke();
                 g.setStroke(stroke2);

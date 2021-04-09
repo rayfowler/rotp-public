@@ -69,9 +69,9 @@ PLANET_FERTILE                    | Fertile
 PLANET_GAIA                       | Gaia
 
 // Planet Descriptors for Race
-PLANET_HOMEWORLD                  | %1 Homeworld
-PLANET_WORLD                      | %1 World
-PLANET_COLONY                     | %1 Colony
+PLANET_HOMEWORLD                  | [alien_race] Homeworld
+PLANET_WORLD                      | [alien_race] World
+PLANET_COLONY                     | [alien_race] Colony
 PLANET_ORION                      | Orion
 PLANET_ORION_GUARDIAN             | Guardian
 
@@ -79,9 +79,8 @@ PLANET_ORION_GUARDIAN             | Guardian
 NEBULA_NAME                       | %1 Nebula
 NEBULA_ID                         | NCG %1
 
-// In this, %1 is the race's title when using with the name ("_nameTitle" in the races labels.txt file)
-// and %2 is the leader's actual name
-TITLE_LEADERNAME                  | %1 %2
+// %2 is the leader's actual name
+TITLE_LEADERNAME                  | [alien_nameTitle] %2
 
 // Extended Colony Name prefix when we run out of names
 COLONY_NAME_2                     | New %1
