@@ -159,6 +159,8 @@ public class EmpireSystemPanel extends SystemPanel {
         detailTopPane.add(infoPane, BorderLayout.CENTER);
         Color textC = new Color(204,204,204);
         spendingPane = new EmpireColonySpendingPane(this, MainUI.paneBackground(), textC, labelBorderHi, labelBorderLo);
+        if (parentSpritePanel.parent != null)  
+            spendingPane.mapListener(parentSpritePanel.parent.map());
         shipPane = new EmpireShipPane(this);
 
         BasePanel empireDetailPane = new BasePanel();

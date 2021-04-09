@@ -285,6 +285,10 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         addMouseWheelListener(this);
         addMouseMotionListener(this);
     }
+    public void repaintTechStatus() {
+        int y = getHeight()-scaled(275);
+        this.repaint(s10,y,s30,scaled(205));
+    }
     // scale(float) will translate any arbitrary "real" distancce
     // into a map distance in pixels
     public int scale(float d) {
