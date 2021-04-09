@@ -25,6 +25,7 @@ import rotp.ui.BasePanel;
 import rotp.ui.RotPUI;
 import rotp.ui.main.GalaxyMapPanel;
 import rotp.ui.main.MainUI;
+import rotp.ui.main.TransportDeploymentPanel;
 import rotp.ui.sprites.ShipRelocationSprite;
 import rotp.ui.sprites.SystemTransportSprite;
 
@@ -168,6 +169,22 @@ public class MapOverlayNone extends MapOverlay {
                         StarSystem sys = (StarSystem) parent.clickedSprite();
                         if (player().canSendTransportsFrom(sys)) {
                             softClick();
+                            parent.hoveringOverSprite(null);
+                            parent.clickedSprite(sys.transportSprite());
+                            parent.displayPanel().repaint();
+                            break;
+                        }
+                    }
+                }
+                misClick();
+                break;
+            case KeyEvent.VK_A:
+                if (e.getModifiersEx() == 128) {
+                    if (parent.clickedSprite() instanceof StarSystem) {
+                        StarSystem sys = (StarSystem) parent.clickedSprite();
+                        if (player().canSendTransportsFrom(sys)) {
+                            softClick();
+                            TransportDeploymentPanel.enableAbandon = true; 
                             parent.hoveringOverSprite(null);
                             parent.clickedSprite(sys.transportSprite());
                             parent.displayPanel().repaint();
