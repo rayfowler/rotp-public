@@ -42,7 +42,7 @@ public class RandomEventComet implements Base, Serializable, RandomEvent {
     @Override
     public String notificationText()    {
         String s1 = text("EVENT_COMET");
-        s1 = s1.replace("[system]", galaxy().empire(empId).sv.name(sysId));
+        s1 = s1.replace("[system]", player().sv.name(sysId));
         s1 = s1.replace("[years]", str((int)Math.ceil(turnsNeeded-turnCount)));
         s1 = galaxy().empire(empId).replaceTokens(s1, "target");
         return s1;
@@ -59,8 +59,7 @@ public class RandomEventComet implements Base, Serializable, RandomEvent {
         turnsNeeded = roll(10,15);
         cometHP = 40*turnsNeeded;
         galaxy().events().addActiveEvent(this);
-        if (player().knowsOf(empId)
-        && !player().sv.name(sysId).isEmpty())
+        if (!player().sv.name(sysId).isEmpty())
             GNNNotification.notifyRandomEvent(notificationText(), "GNN_Event_Comet");
     }
     @Override
@@ -106,20 +105,20 @@ public class RandomEventComet implements Base, Serializable, RandomEvent {
     }
     private String continuingText() {
         String s1 = text("EVENT_COMET_2");
-        s1 = s1.replace("[system]", galaxy().empire(empId).sv.name(sysId));
+        s1 = s1.replace("[system]", player().sv.name(sysId));
         s1 = s1.replace("[years]", str((int)Math.ceil(turnsNeeded-turnCount)));
         s1 = galaxy().empire(empId).replaceTokens(s1, "target");
         return s1;
     }
     private String goodEndText() {
         String s1 = text("EVENT_COMET_3");
-        s1 = s1.replace("[system]", galaxy().empire(empId).sv.name(sysId));
+        s1 = s1.replace("[system]", player().sv.name(sysId));
         s1 = galaxy().empire(empId).replaceTokens(s1, "target");
         return s1;
     }
     private String badEndText() {
         String s1 = text("EVENT_COMET_4");
-        s1 = s1.replace("[system]", galaxy().empire(empId).sv.name(sysId));
+        s1 = s1.replace("[system]", player().sv.name(sysId));
         s1 = galaxy().empire(empId).replaceTokens(s1, "target");
         return s1;
     }
@@ -129,7 +128,7 @@ public class RandomEventComet implements Base, Serializable, RandomEvent {
         sys.clearEvent();
         
         session().removePendingNotification("GNN_Event_Comet");
-        if (player().knowsOf(empId)) 
+        if (!player().sv.name(sysId).isEmpty())
             GNNNotification.notifyRandomEvent(goodEndText(), "GNN_Event_Comet");
     }
     private void destroyColony() {
@@ -138,7 +137,7 @@ public class RandomEventComet implements Base, Serializable, RandomEvent {
         sys.addEvent(new SystemRandomEvent("SYSEVENT_COMET"));
         sys.clearEvent();
         sys.planet().sufferImpactEvent(); // destroys colony, downgrades planet type to Barren
-        if (player().knowsOf(empId)) 
+        if (!player().sv.name(sysId).isEmpty())
             GNNNotification.notifyRandomEvent(badEndText(), "GNN_Event_Comet");
     }
 }
