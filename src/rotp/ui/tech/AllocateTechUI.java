@@ -119,6 +119,13 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         totalPlanetaryResearchSpending = player().totalPlanetaryResearchSpending();
         resetData();
     }
+    public void adjustPlanetaryResearch(float amt) { 
+        if (totalPlanetaryResearch != -1)
+            totalPlanetaryResearch += amt;
+    }
+    public void resetPlanetaryResearch() { 
+        totalPlanetaryResearch = -1;
+    }
     public float totalPlanetaryResearch() {
         if (totalPlanetaryResearch < 0)
             totalPlanetaryResearch = player().totalPlanetaryResearch();
