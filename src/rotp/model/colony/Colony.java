@@ -830,14 +830,14 @@ public final class Colony implements Base, IMappedObject, Serializable {
         return min(p1,p2);
     }
     public float newWaste() {
-        return max(0, usedFactories() * tech().factoryWasteMod());
+        float mod = empire().isPlayer() ? 1.0f : options().aiWasteModifier();
+        return max(0, usedFactories() * tech().factoryWasteMod() * mod);
     }
     public float wasteCleanupCost() {
         if (empire.ignoresPlanetEnvironment())
             return 0;
         
-        float mod = empire().isPlayer() ? 1.0f : options().aiWasteModifier();
-        return mod*(min(planet.maxWaste(), planet.waste()) + newWaste()) / tech().wasteElimination();
+        return (min(planet.maxWaste(), planet.waste()) + newWaste()) / tech().wasteElimination();
     }
     public float minimumCleanupCost() {
         return min(wasteCleanupCost(), totalIncome());
