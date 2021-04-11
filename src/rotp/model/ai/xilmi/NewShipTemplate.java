@@ -109,8 +109,8 @@ public class NewShipTemplate implements Base {
         // add another entry for the current design, using the cost multiplier for its size
 
         // how many ships of each design can we build for virtual tests?
-        // use top 5 colonies
-        float shipBudgetBC = shipProductionBudget(ai, 5);
+        // use top 3 colonies
+        float shipBudgetBC = shipProductionBudget(ai, 3);
         
         SortedMap<Float, ShipDesign> designSorter = new TreeMap<>();
         

@@ -33,6 +33,7 @@ import rotp.model.empires.TreatyWar;
 import rotp.model.galaxy.Galaxy;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
+import rotp.model.galaxy.Transport;
 import rotp.model.incidents.AlliedWithEnemyIncident;
 import rotp.model.incidents.AtWarWithAllyIncident;
 import rotp.model.incidents.ColonyAttackedIncident;
@@ -1431,31 +1432,29 @@ public class AIDiplomat implements Base, Diplomat {
                 warAllowed = true;
             if(empire.enemies().size() == 1 && empire.enemies().contains(bestVictim))
                 warAllowed = true;
-            boolean atFactoryLimit = true;
-            boolean atPopulationLimit = true;
+            float developmentPct = 0;
+            float countedColonies = 0;
             for(StarSystem sys : empire.allColonizedSystems())
             {
                 if(sys.colony() != null)
                 {
                     if(sys.planet().isResourcePoor() || sys.planet().isResourceUltraPoor())
                         continue;
-                    if(!sys.colony().industry().isCompleted())
-                        atFactoryLimit = false;
-                    if(!sys.colony().ecology().isCompleted())
-                        atPopulationLimit = false;
+                    developmentPct += sys.colony().currentProductionCapacity();
+                    countedColonies++;
                 }
             }
+            if(countedColonies > 0)
+                developmentPct /= countedColonies;
             float helpingPower = 0.0f;
             float enemyAllyPower = 0.0f;
-            float superiorityThreshold = 0.8f;
+            float superiorityThreshold = 0.75f;
             //we can still grow otherwise
             if(empire.generalAI().additionalColonizersToBuild(true) > 0
-                    || !atFactoryLimit
-                    || !atPopulationLimit)
+                    && developmentPct < 0.75f)
                 warAllowed = false;
-            if(empire.alliedWith(bestVictim.id))
-                warAllowed = false;
-            if(empire.tech().avgTechLevel() < v.empire().tech().avgTechLevel())
+            if(empire.tech().avgTechLevel() < v.empire().tech().avgTechLevel() 
+                    && empire.tech().avgTechLevel() < 99)
                 warAllowed = false;
             for(Empire emp : bestVictim.warEnemies())
             {
@@ -1465,7 +1464,7 @@ public class AIDiplomat implements Base, Diplomat {
             {
                 enemyAllyPower += emp.powerLevel(emp);
             }
-            //System.out.println(empire.name()+" col: "+empire.generalAI().additionalColonizersToBuild(true)+" fac: "+atFactoryLimit+" pop: "+atPopulationLimit+" allied: "+empire.alliedWith(bestVictim.id)+" tech: "+(empire.tech().avgTechLevel() < v.empire().tech().avgTechLevel()));
+            //System.out.println(empire.name()+" col: "+empire.generalAI().additionalColonizersToBuild(true)+" devPct: "+developmentPct+" allied: "+empire.alliedWith(bestVictim.id)+" tech: "+(empire.tech().avgTechLevel() < v.empire().tech().avgTechLevel()));
             //System.out.println(empire.name()+" bestVictim: "+bestVictim+" power: "+empire.powerLevel(empire) + helpingPower+" vs. "+(bestVictim.powerLevel(bestVictim) + enemyAllyPower) + " Threshold: "+superiorityThreshold +" "+empire.leader().personality()+" "+empire.leader().objective()+" War Allowed: "+warAllowed);
             if(warAllowed &&
                     empire.powerLevel(empire) + helpingPower > (bestVictim.powerLevel(bestVictim) + enemyAllyPower) * superiorityThreshold)
@@ -1791,6 +1790,13 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
         if(!empire.inShipRange(v.empId()))
             return true;
+        
+        //ail: when we have incoming transports, we don't want them to perish
+        for(Transport trans:empire.transports())
+        {
+            if(trans.destination().empire() == v.empire())
+                return false;
+        }
         
         // modnar: scale warWeary by number of our wars vs. number of their wars
         // more weary (willing to take less losses) if we are in more wars than they are

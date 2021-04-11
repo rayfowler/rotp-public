@@ -95,7 +95,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         return bestDesign;
     }
     private void countdownObsoleteDesigns() {
-        if(((empire.shipMaintCostPerBC() > (empire.fleetCommanderAI().maxShipMaintainance() * 1.5) && !empire.atWar() && !empire.fleetCommanderAI().inExpansionMode()))
+        if(((empire.shipMaintCostPerBC() > (empire.fleetCommanderAI().maxShipMaintainance() * 1.5) && empire.enemies().isEmpty() && !empire.fleetCommanderAI().inExpansionMode()))
                 || empire.netIncome() <= 0)
         {
             scrapWorstDesign(empire.netIncome() <= 0);

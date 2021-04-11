@@ -462,6 +462,9 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
                 //ail: If our ship is badly damaged, consider at as weaker
                 killPct *= pctOfMaxHP;
+                //ail: If the enemy has brought a colonizer, we split our kill because otherwise each of our stacks thinks they can kill all the colonizers despite it's already dead
+                if(st2.design().isColonyShip())
+                    killPct /= friends.size();
                 //ail: 0 damage possible when they have repulsor and we can't outrange
                 if(st1.maxFiringRange(st1) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
                 {
