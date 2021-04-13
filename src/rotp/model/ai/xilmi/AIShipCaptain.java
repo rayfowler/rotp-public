@@ -32,6 +32,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
     private final Empire empire;
     private transient List<CombatStack> allies = new ArrayList<>();
     private transient List<CombatStack> enemies = new ArrayList<>();
+    private CombatStack currentTarget = null;
 
     public List<CombatStack> allies() {
         if (allies == null)
@@ -87,13 +88,13 @@ public class AIShipCaptain implements Base, ShipCaptain {
         boolean turnActive = true;
         while (turnActive) {
             float prevMove = stack.move;
-            prevTarget = stack.target;
+            prevTarget = currentTarget;
             //ail: for moving we pick the target that is overall the most suitable, so that bombers move towards planet
             FlightPath bestPathToTarget = chooseTarget(stack, false, false);
             // if we need to move towards target, do it now
-            if (stack.target != null) {
+            if (currentTarget != null) {
                 if (stack.mgr.autoResolve) {
-                    Point destPt = findClosestPoint(stack, stack.target);
+                    Point destPt = findClosestPoint(stack, currentTarget);
                     if (destPt != null)
                         mgr.performMoveStackToPoint(stack, destPt.x, destPt.y);
                 }
@@ -104,23 +105,23 @@ public class AIShipCaptain implements Base, ShipCaptain {
 
             // if can attack target this turn, fire when ready
             //ail: first look for ships as targets as we can fire our beams/missiles at them and then still drop bombs afterwards
-            if(stack.target != null && stack.target.isColony())
+            if(currentTarget != null && currentTarget.isColony())
             {
                 chooseTarget(stack, false, true);
-                if (stack.canAttack(stack.target)) 
+                if (stack.canAttack(currentTarget)) 
                     performSmartAttackTarget(stack);
                     //mgr.performAttackTarget(stack);
                 //now chhose our previous target again
                 chooseTarget(stack, false, false);
             }
-            if (stack.canAttack(stack.target)) 
+            if (stack.canAttack(currentTarget)) 
                 performSmartAttackTarget(stack);
                 //mgr.performAttackTarget(stack);
             else
             {
                 //ail: if we couldn't attack our move-to-target, we try and see if anything else can be attacked from where we are
                 chooseTarget(stack, true, false);
-                if (stack.canAttack(stack.target)) 
+                if (stack.canAttack(currentTarget)) 
                     performSmartAttackTarget(stack);
                     //mgr.performAttackTarget(stack);
             }
@@ -128,7 +129,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             // SANITY CHECK:
             // make sure we fall out if we haven't moved 
             // and we are still picking the same target
-            if ((prevMove == stack.move) && (prevTarget == stack.target)) {
+            if ((prevMove == stack.move) && (prevTarget == currentTarget)) {
                 turnActive = false;
             }
         }
@@ -137,22 +138,39 @@ public class AIShipCaptain implements Base, ShipCaptain {
    
     private void performSmartAttackTarget(CombatStack stack)
     {
-        //ail: skip repulsor and stasis-field in first round
+        //1st run: fire only specials which are not repulsor or stasis-field
         for (int i=0;i<stack.numWeapons(); i++) {
-            if(stack.weapon(i).tech().isType(Tech.REPULSOR) || stack.weapon(i).tech().isType(Tech.STASIS_FIELD))
-                continue;
-            int rotateCount = 0;
-            while(stack.selectedWeapon() != stack.weapon(i) && rotateCount <= stack.numWeapons())
+            if(!stack.weapon(i).isSpecial()
+                    || !((CombatStackShip)stack).shipComponentCanAttack(currentTarget, i)
+                    || stack.weapon(i).tech().isType(Tech.REPULSOR)
+                    || stack.weapon(i).tech().isType(Tech.STASIS_FIELD))
             {
-                stack.rotateToUsableWeapon(stack);
-                rotateCount++;
-            }
-            if(!stack.currentWeaponCanAttack(stack.target))
                 continue;
-            stack.fireWeapon(stack.target);
+            }
+            else
+            {
+                stack.fireWeapon(currentTarget, i);
+            }
         }
-        //After that is done we do it again without the skipping
-        galaxy().shipCombat().performAttackTarget(stack);
+        //2nd run: fire non-special-weapons
+        for (int i=0;i<stack.numWeapons(); i++) {
+            if(stack.selectedWeapon().isSpecial()
+                    || !((CombatStackShip)stack).shipComponentCanAttack(currentTarget, i))
+            {
+                continue;
+            }
+            else
+            {
+                stack.fireWeapon(currentTarget, i);
+            }
+        }
+        //3rd run: fire whatever is left
+        for (int i=0;i<stack.numWeapons(); i++) {
+            if(((CombatStackShip)stack).shipComponentCanAttack(currentTarget, i))
+            {
+                stack.fireWeapon(currentTarget, i);
+            }
+        }
     }
     private  FlightPath chooseTarget(CombatStack stack, boolean onlyInAttackRange, boolean onlyShips) {
         if (!stack.canChangeTarget())
@@ -246,7 +264,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 }
             }
         }
-        stack.target = bestTarget;
+        currentTarget = bestTarget;
         return bestPath;
     }
     public Point findClosestPoint(CombatStack st, CombatStack tgt) {
@@ -420,7 +438,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
     public boolean facingOverwhelmingForce(CombatStack stack) {
         // build list of allies & enemies
         allies().clear(); enemies().clear();
-        boolean defending = false;
+        boolean atLeastOneFriendCountersRepulsor = false;
+        boolean unCounteredRepulsor = false;
         for (CombatStack st : combat().activeStacks()) {
             if (st.isMonster()) 
                 enemies.add(st);
@@ -428,10 +447,6 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 if (stack.empire.alliedWith(id(st.empire)))
                 {
                     allies().add(st);
-                    if(st.isColony())
-                    {
-                        defending = true;
-                    }
                 }
                 else if (stack.empire.aggressiveWith(st.empire, combat().system()))
                     enemies().add(st);
@@ -466,10 +481,11 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 if(st2.isShip() && st2.design().isColonyShip())
                     killPct /= friends.size();
                 //ail: 0 damage possible when they have repulsor and we can't outrange
-                if(st1.maxFiringRange(st1) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
+                if(st1.optimalFiringRange(st1) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
                 {
                     //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
                     killPct = 0;
+                    unCounteredRepulsor = true;
                 }
                 float killValue = killPct*st2.num*st2.designCost();
                 //System.out.print("\n"+stack.fullName()+" "+st1.fullName()+" thinks it can kill "+killPct+" val: "+killValue+" of "+st2.fullName()+" it has: "+pctOfMaxHP);
@@ -488,7 +504,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                     continue;
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
                 killPct *= pctOfMaxHP;
-                if(st1.maxFiringRange(st1) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
+                if(st1.optimalFiringRange(st1) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
                 {
                     //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
                     killPct = 0;
@@ -501,6 +517,9 @@ public class AIShipCaptain implements Base, ShipCaptain {
             }
             enemyKills += maxKillValue;
         }
+        //even one stack with repulsors can cover up to three additional stacks in a corner
+        if(unCounteredRepulsor && foes.size() <= 4)
+            allyKills = 0;
         if (enemyKills == 0)
             return false;
         else if (allyKills == 0)

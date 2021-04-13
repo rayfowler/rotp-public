@@ -220,17 +220,18 @@ public class AIShipDesigner implements Base, ShipDesigner {
         boolean extendedFuelNeeded = !empire.tech().topFuelRangeTech().unlimited;
 
         ShipDesign newDesign = newColonyDesign(weaponsNeeded, extendedFuelNeeded);
-
+        
         if (currDesign.matchesDesign(newDesign, true) && currDesign.active())
         {
+            //System.out.print("\n"+empire.name()+" "+newDesign.name()+" size: "+newDesign.size()+" matches with "+currDesign.name()+" size: "+currDesign.size()); 
             return;
         }
         
         boolean easyToReplace = shipCounts[currDesign.id()] < 1;
-        
         if (easyToReplace) {
             lab.scrapDesign(currDesign);
             lab.setColonyDesign(newDesign, currSlot);
+            //System.out.print("\n"+empire.name()+" "+newDesign.name()+" will shall replace "+currDesign.name());
             return;
         }
         
@@ -240,6 +241,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         if (slot >= 0) {
             lab.setColonyDesign(newDesign, slot);
             currDesign.becomeObsolete(OBS_COLONY_TURNS);
+            //System.out.print("\n"+empire.name()+" "+newDesign.name()+" put in slot "+slot);
             return;
         }
         else
@@ -248,6 +250,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
             currDesign.becomeObsolete(OBS_COLONY_TURNS);
             scrapWorstDesign(false);
             slot = lab.availableDesignSlot();
+            //System.out.print("\n"+empire.name()+" "+newDesign.name()+" put in slot "+slot+" after scrapping something.");
             lab.setColonyDesign(newDesign, slot);
         }
     }
@@ -470,18 +473,40 @@ public class AIShipDesigner implements Base, ShipDesigner {
     public ShipDesign newColonyDesign(boolean weaponNeeded, boolean extendedRangeNeeded) {
         ShipDesignLab lab = lab();
         ShipDesign design = lab.newBlankDesign(ShipDesign.LARGE);
+        lab.nameDesign(design);
         design.special(0, bestColonySpecial());
         design.engine(lab.fastestEngine());
         design.mission(ShipDesign.COLONY);
         design.maxUnusedTurns(OBS_COLONY_TURNS);
 
+        boolean allowHuge = false;
+        boolean unexploredInRange = false;
+        
+        for(StarSystem unexplored:empire.unexploredSystems())
+        {
+            if(empire.sv.inShipRange(unexplored.id))
+            {
+                unexploredInRange = true;
+                break;
+            }
+        }
+        
+        if(empire.uncolonizedPlanetsInRange(empire.shipRange()).isEmpty() 
+                && !unexploredInRange
+                && !empire.uncolonizedPlanetsInRange(empire.scoutRange()).isEmpty()
+                && (empire.shipRange() - 3) >= 3 / session().researchMapSizeAdjustment())
+            allowHuge = true;
+            
+        //System.out.print("\n"+empire.name()+" colonizable in normal range: "+empire.uncolonizedPlanetsInRange(empire.shipRange()).size()+" colonizable in extended-range: "+empire.uncolonizedPlanetsInRange(empire.scoutRange()).size()+" unexplored in range: "+unexploredInRange+" huge allowed: "+allowHuge);
+        
         // if we don't need regular-range colony ship
         if (extendedRangeNeeded) {
-            ShipSpecial prevSpecial = design.special(1);
             ShipSpecial special = lab.specialReserveFuel();
+            ShipSpecial prevSpecial = design.special(1);
             design.special(1, special);
             design.setSmallestSize();
-            if (design.size() > ShipDesign.LARGE)
+            if (design.size() > ShipDesign.LARGE
+                    && !allowHuge)
                 design.special(1, prevSpecial);
         }
         design.setSmallestSize();
@@ -491,7 +516,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
             if (bestWpn != null && design.availableSpace() >= bestWpn.space(design))
                 design.addWeapon(bestWpn, 1);
         }
-        lab.nameDesign(design);
         lab.iconifyDesign(design);
         return design;
     }

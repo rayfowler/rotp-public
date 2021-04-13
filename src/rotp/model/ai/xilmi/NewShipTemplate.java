@@ -232,6 +232,8 @@ public class NewShipTemplate implements Base {
         
         for(EmpireView ev : ai.empire().contacts())
         {
+            if(ev.empire().tech().knowsTechOfType(Tech.REPULSOR))
+                needRange = true;
             for(ShipView enemyDesign : ev.empire().shipLab().designHistory())
             {
                 if(enemyDesign.design().scrapped())

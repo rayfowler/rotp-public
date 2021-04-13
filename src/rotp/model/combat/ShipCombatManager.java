@@ -33,6 +33,7 @@ import rotp.util.Base;
 public class ShipCombatManager implements Base {
     private static final int MAX_TURNS = 100;
     private static Thread autoRunThread;
+    private static Thread runningThread;
     // combat vars
     public ShipBattleUI ui;
     private StarSystem system;
@@ -240,9 +241,19 @@ public class ShipCombatManager implements Base {
         if (autoComplete) {
             autoRunThread = new Thread(autoRunProcess());
             autoRunThread.start();
+            runningThread = autoRunThread;
         }
-        else
+        else {
+            if(runningThread != null) {
+                try {
+                    runningThread.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                runningThread = null;
+            }
             continueToNextPlayerStack();
+        }
     }
     public void resolveAllCombat() {
         clearAsteroids();

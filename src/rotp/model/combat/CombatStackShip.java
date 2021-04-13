@@ -470,7 +470,7 @@ public class CombatStackShip extends CombatStack {
 
         return shipComponentCanAttack(target, wpn);
     }
-    private boolean shipComponentCanAttack(CombatStack target, int index) {
+    public boolean shipComponentCanAttack(CombatStack target, int index) {
         if (target == null)
             return false;
 
