@@ -318,7 +318,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                 score = 5.0f;
                 if(onlyColonizerTargets)
                 {
-                    score += colonizationBonus * 2.5;
+                    score += colonizationBonus * 5;
                 }
             }
             else if(fleet.canColonizeSystem(current) && current.monster() == null)
