@@ -318,7 +318,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                 score = 5.0f;
                 if(onlyColonizerTargets)
                 {
-                    score += colonizationBonus;
+                    score += colonizationBonus * 2.5;
                 }
             }
             else if(fleet.canColonizeSystem(current) && current.monster() == null)
@@ -336,7 +336,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                         score /= 2;
                     else if (empire.sv.isUltraPoor(id))
                         score /= 3;
-                    score += colonizationBonus;
+                    score += colonizationBonus * 5;
                 }
             }
             if(empire.alliedWith(empire.sv.empId(id)))
