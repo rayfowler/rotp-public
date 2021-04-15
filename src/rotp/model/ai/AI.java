@@ -197,7 +197,7 @@ public class AI implements Base {
         if (sys.orbitingShipsInConflict())
             return;
 
-        if (empire.sv.isColonized(sys.id))
+        if (sys.colony() != null)
             return;
         if (!empire.canColonize(sys.planet().type()))
             return;

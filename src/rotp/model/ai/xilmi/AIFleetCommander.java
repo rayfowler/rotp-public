@@ -25,6 +25,8 @@ import rotp.model.ai.FleetOrders;
 import rotp.model.ai.FleetPlan;
 import rotp.model.ai.ShipDecision;
 import rotp.model.ai.ShipPlan;
+import rotp.model.combat.CombatStackColony;
+import rotp.model.combat.ShipCombatManager;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.galaxy.Galaxy;
@@ -45,7 +47,7 @@ class AISystemInfo {
     float myBombardDamage;
     float myIncomingTransports;
     int additionalSystemsInRangeWhenColonized;
-    boolean sentToThisRound = false;
+    boolean ignore;
 }
 
 public class AIFleetCommander implements Base, FleetCommander {
@@ -234,7 +236,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                 bc = systemInfoBuffer.get(id).myBc;
                 myTransports = systemInfoBuffer.get(id).myIncomingTransports;
                 colonizationBonus = systemInfoBuffer.get(id).additionalSystemsInRangeWhenColonized;
-                if(systemInfoBuffer.get(id).sentToThisRound)
+                if(systemInfoBuffer.get(id).ignore)
                     continue;
             }
             else
@@ -292,6 +294,12 @@ public class AIFleetCommander implements Base, FleetCommander {
                 {
                     transports += empire.enemyTransportsInTransit(current) * empire.maxRobotControls();
                     myTransports += empire.transportsInTransit(current);
+                }
+                //ail: incase we have hyperspace-communications and are headed to current, we have to substract ourself from the values
+                if(fleet.inTransit() && fleet.destination() == current)
+                {
+                    bc -= fleet.bcValue();
+                    bombardDamage -= fleet.expectedBombardDamage(current);
                 }
                 AISystemInfo buffy = new AISystemInfo();
                 buffy.enemyBc = enemyBc;
@@ -611,8 +619,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                 if(fleet.retreatOnArrival() && empire.enemies().contains(fleet.destination().empire()))
                     fleet.toggleRetreatOnArrival();
             }
-            //ail: using hyperspace-communication disabled for now as it produced weird unintended results... have to check for better implementation
-            if(!fleet.canSend() || fleet.deployed() || fleet.inTransit())
+            if(!fleet.canSend() || fleet.deployed())
             {
                 continue;
             }
@@ -732,7 +739,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                                             else
                                             {
                                                 keepBc = (empire.enemyTransportsInTransit(target) * empire.maxRobotControls() + enemyBC) * 2;
-                                                systemInfoBuffer.get(target.id).sentToThisRound = true;
+                                                systemInfoBuffer.get(target.id).ignore = true;
                                                 continue;
                                             }
                                         }
@@ -826,10 +833,6 @@ public class AIFleetCommander implements Base, FleetCommander {
                                         //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" should attack "+target.name()+" allowBombers: "+allowBombers);
                                         canStillSend = false;
                                     }
-                                    else
-                                    {
-                                        systemInfoBuffer.get(target.id).sentToThisRound = true;
-                                    }
                                     //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" has been sent "+target.name()+" sent: "+sendAmount);
                                 }
                                 else
@@ -844,10 +847,6 @@ public class AIFleetCommander implements Base, FleetCommander {
                                         {
                                             //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" should attack "+target.name()+" allowBombers: "+allowBombers);
                                             canStillSend = false;
-                                        }
-                                        else
-                                        {
-                                            systemInfoBuffer.get(target.id).sentToThisRound = true;
                                         }
                                     }
                                     else
@@ -936,7 +935,11 @@ public class AIFleetCommander implements Base, FleetCommander {
                 }
             }   
             if(counts[i] > 0)
+            {
                 haveToDeploy = true;
+                systemInfoBuffer.get(target.id).myBc += counts[i] * d.cost();
+                systemInfoBuffer.get(target.id).myBombardDamage += counts[i] * designBombardDamage(d, target);
+            }
         }
         if(haveToDeploy)
             galaxy().ships.deploySubfleet(fl, counts, target.id);
@@ -963,5 +966,18 @@ public class AIFleetCommander implements Base, FleetCommander {
         }
         return bc;
     }
+    public float designBombardDamage(ShipDesign d, StarSystem sys) {
+        if (!sys.isColonized())
+            return 0;
 
+        float damage = 0;
+        ShipCombatManager mgr = galaxy().shipCombat();
+        CombatStackColony planetStack = new CombatStackColony(sys.colony(), mgr);
+
+        for (int j=0;j<ShipDesign.maxWeapons();j++)
+            damage += d.wpnCount(j) * d.weapon(j).estimatedBombardDamage(d, planetStack);
+        for (int j=0;j<ShipDesign.maxSpecials();j++)
+            damage += d.special(j).estimatedBombardDamage(d, planetStack);
+        return damage;
+    }
 }

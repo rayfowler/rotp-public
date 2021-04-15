@@ -20,6 +20,9 @@ import rotp.model.ai.interfaces.ShipDesigner;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
+import static rotp.model.game.IGameOptions.RESEARCH_SLOW;
+import static rotp.model.game.IGameOptions.RESEARCH_SLOWER;
+import static rotp.model.game.IGameOptions.RESEARCH_SLOWEST;
 import rotp.model.planet.PlanetType;
 import rotp.model.ships.ShipDesign;
 import static rotp.model.ships.ShipDesign.maxWeapons;
@@ -491,13 +494,26 @@ public class AIShipDesigner implements Base, ShipDesigner {
             }
         }
         
+        float rangeTechLevelThreshold = 9;
+        
+        rangeTechLevelThreshold /= max(1.0f, session().researchMapSizeAdjustment());
+        
+        //System.out.print("\n"+empire.name()+" rangeTechLevelThreshold for galaxysize/empires: "+rangeTechLevelThreshold);
+        
+        if(session().options().selectedResearchRate().equals(RESEARCH_SLOW))
+            rangeTechLevelThreshold /= sqrt(9/3.0f);
+        else if(session().options().selectedResearchRate().equals(RESEARCH_SLOWER))
+            rangeTechLevelThreshold /= sqrt(9);
+        else if(session().options().selectedResearchRate().equals(RESEARCH_SLOWEST))
+            rangeTechLevelThreshold /= sqrt(9*5);
+            
         if(empire.uncolonizedPlanetsInRange(empire.shipRange()).isEmpty() 
                 && !unexploredInRange
                 && !empire.uncolonizedPlanetsInRange(empire.scoutRange()).isEmpty()
-                && (empire.shipRange() - 3) >= 3 / session().researchMapSizeAdjustment())
+                && (empire.tech().propulsion().techLevel() >= rangeTechLevelThreshold && empire.tech().researchingShipRange() <= empire.shipRange() || empire.tech().propulsion().techLevel() >= 2 * rangeTechLevelThreshold))
             allowHuge = true;
             
-        //System.out.print("\n"+empire.name()+" colonizable in normal range: "+empire.uncolonizedPlanetsInRange(empire.shipRange()).size()+" colonizable in extended-range: "+empire.uncolonizedPlanetsInRange(empire.scoutRange()).size()+" unexplored in range: "+unexploredInRange+" huge allowed: "+allowHuge);
+        //System.out.print("\n"+empire.name()+" colonizable in normal range: "+empire.uncolonizedPlanetsInRange(empire.shipRange()).size()+" colonizable in extended-range: "+empire.uncolonizedPlanetsInRange(empire.scoutRange()).size()+" unexplored in range: "+unexploredInRange+" huge allowed: "+allowHuge+" rtlt: "+rangeTechLevelThreshold);
         
         // if we don't need regular-range colony ship
         if (extendedRangeNeeded) {

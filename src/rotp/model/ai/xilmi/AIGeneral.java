@@ -591,32 +591,36 @@ public class AIGeneral implements Base, General {
                 additional++;
         }
         //System.out.print("\n"+empire.name()+" "+additional+" from uncolonized scouted without en-route.");
-        List<StarSystem> alreadyCounted = new ArrayList<>();
-        for(ShipFleet fleet:empire.allFleets())
+        //ail: when we have huge colonizer, don't count the unlocks for how many we need since we don't want to spam them like normal one's
+        if(empire.shipLab().colonyDesign().size() < 3)
         {
-            if(!fleet.hasColonyShip())
+            List<StarSystem> alreadyCounted = new ArrayList<>();
+            for(ShipFleet fleet:empire.allFleets())
             {
-                continue;
-            }
-            if(fleet.destination() != null)
-            {
-                for(StarSystem sys : galaxy().systemsInRange(fleet.destination(), empire.shipRange()))
+                if(!fleet.hasColonyShip())
                 {
-                    if(alreadyCounted.contains(sys))
+                    continue;
+                }
+                if(fleet.destination() != null)
+                {
+                    for(StarSystem sys : galaxy().systemsInRange(fleet.destination(), empire.shipRange()))
                     {
-                        break;
-                    }
-                    if(sys.colony() != null)
-                    {
-                        continue;
-                    }
-                    if(!empire.sv.inShipRange(sys.id))
-                    {
-                        if(empire.canColonize(sys.id)
-                                || empire.unexploredSystems().contains(sys))
+                        if(alreadyCounted.contains(sys))
                         {
-                            additional++;
-                            alreadyCounted.add(sys);
+                            break;
+                        }
+                        if(sys.colony() != null)
+                        {
+                            continue;
+                        }
+                        if(!empire.sv.inShipRange(sys.id))
+                        {
+                            if(empire.canColonize(sys.id)
+                                    || empire.unexploredSystems().contains(sys))
+                            {
+                                additional++;
+                                alreadyCounted.add(sys);
+                            }
                         }
                     }
                 }
