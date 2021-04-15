@@ -235,26 +235,28 @@ public class ShipCombatManager implements Base {
         }
         return false;
     }
+
     public void toggleAutoComplete() {
         autoComplete = !autoComplete;
         log("Toggling Auto Complete: "+autoComplete);
+
         if (autoComplete) {
             autoRunThread = new Thread(autoRunProcess());
             autoRunThread.start();
             runningThread = autoRunThread;
         }
         else {
-            if(runningThread != null) {
+            if(autoRunThread != null) {
                 try {
-                    runningThread.join();
+                    autoRunThread.join();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                runningThread = null;
             }
             continueToNextPlayerStack();
         }
     }
+
     public void resolveAllCombat() {
         clearAsteroids();
 
@@ -299,6 +301,7 @@ public class ShipCombatManager implements Base {
             while (shouldContinue())
                 performNextStackTurn();
             performingStackTurn = false;
+            autoRunThread = null;
         };
     }
     public boolean canScan(Empire civ, CombatStack st) {
