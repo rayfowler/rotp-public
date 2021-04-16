@@ -277,9 +277,7 @@ public class Race implements Base, Serializable {
     }
     public String name()                      { return text(id); }
     public String setupName()                 {
-        if (setupName == null)
-            setupName = text(substrings(raceNames.get(0), '|').get(0));
-        return setupName;
+        return text(substrings(raceNames.get(0), '|').get(0));
     }
     public int shipAttackBonus()              { return shipAttackBonus; }
     public void shipAttackBonus(int i)        { shipAttackBonus = i; }
