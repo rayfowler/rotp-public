@@ -366,9 +366,9 @@ public class AIScientist implements Base, Scientist {
     @Override
     public float researchValue(Tech t) {
         //ail: for something that has 0 base-value, we also don't add random
-        if (t.isObsolete(empire) || t.baseValue(empire) == 0)
+        if (t.isObsolete(empire))
             return 0;
-        return t.baseValue(empire) + random();
+        return t.baseValue(empire);
     }
     @Override
     public float researchBCValue(Tech t) {

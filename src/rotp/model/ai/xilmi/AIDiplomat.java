@@ -1128,13 +1128,7 @@ public class AIDiplomat implements Base, Diplomat {
         return true;
     }
     private boolean wantToBreakTrade(EmpireView v) {
-        if (!v.trade().active())
-            return false;
-
-        if(empire.enemies().contains(v.empire()))
-        {
-            return true;
-        }
+        //ail: no need to break trade. War declaration will do it for us, otherwise it just warns our opponent
         return false;
     }
     //----------------

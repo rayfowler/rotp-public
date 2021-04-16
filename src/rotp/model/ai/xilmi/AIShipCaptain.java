@@ -271,10 +271,13 @@ public class AIShipCaptain implements Base, ShipCaptain {
         if (!st.canMove())
             return null;
 
-        int targetDist = st.optimalFiringRange(tgt);
-        if (tgt.isColony() && st.hasBombs())
-            targetDist = 1;
+        //ail: We will always want to go as close as possible because this increases hit-chance
+        int targetDist = 1;
 
+        //ail: only repulsors will prevent us from doing so, if we don't have the counter
+        if(targetDist < tgt.repulsorRange() + 1 && !st.cloaked && !st.canTeleport())
+            targetDist = tgt.repulsorRange() + 1;
+        
         float maxDist = st.movePointsTo(tgt.x,tgt.y);
         if (maxDist <= targetDist)
             return null;
@@ -313,11 +316,18 @@ public class AIShipCaptain implements Base, ShipCaptain {
     public FlightPath findSafestSpace(CombatStack st) {
         return null;
     }
-    public static FlightPath findBestPathToAttack(CombatStack st, CombatStack tgt) {
+    public FlightPath findBestPathToAttack(CombatStack st, CombatStack tgt) {
         if (!st.isArmed())
             return null;
-        int r = st.optimalFiringRange(tgt);
-        return findBestPathToAttack(st, tgt, r);
+        //we start at r = 1 and increase up to our optimal firing-range
+        int r = 1;
+        FlightPath bestPath = null;
+        while(bestPath == null && r <= st.optimalFiringRange(tgt))
+        {
+            bestPath = findBestPathToAttack(st, tgt, r);
+            r++;
+        }
+        return bestPath;
     }
     public static FlightPath findBestPathToAttack(CombatStack st, CombatStack tgt, int range) {
         if (st.movePointsTo(tgt) <= range) {
@@ -369,9 +379,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             
          // there is no path to get in optimal firing range of target!
         if (validPaths.isEmpty()) {
-            // are we within max firing range? if so, go with that
-            if (st.movePointsTo(tgt) <= st.maxFiringRange(tgt)) 
-                return new FlightPath();          
+            // ail: no longer being content when we are within max-firing-range, we'll run a loop with slowly increasing range instead
             return null;
         }  
 
@@ -456,6 +464,9 @@ public class AIShipCaptain implements Base, ShipCaptain {
         float allyKills = 0;
         float enemyKills = 0;
         
+        float allyValue = 0;
+        float enemyValue = 0;
+        
         List<CombatStack> friends = new ArrayList<>();
         for (CombatStack ally: allies()) {
             if (ally.isArmed())
@@ -473,6 +484,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         for (CombatStack st1 : friends) {
             float maxKillValue = -1;
             float pctOfMaxHP = ((st1.num-1) * st1.maxHits + st1.hits) / (st1.num * st1.maxHits);
+            allyValue += st1.num * pctOfMaxHP * st1.designCost();
             for (CombatStack st2: foes) {
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
                 //ail: If our ship is badly damaged, consider at as weaker
@@ -498,6 +510,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
        for (CombatStack st1 : foes) {
             float maxKillValue = -1;
             float pctOfMaxHP = ((st1.num-1) * st1.maxHits + st1.hits) / (st1.num * st1.maxHits);
+            enemyValue += st1.num * pctOfMaxHP * st1.designCost();
             for (CombatStack st2: friends) {
                 //ail: When we have brought colonizers to a battle and are not the colonizer ourselves, we ignore their lack of combat-power for our own retreat-decision. They can still retreat when they are too scared!
                 if(stack != st2 && st2.isShip() && st2.design().isColonyShip())
@@ -525,8 +538,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
         else if (allyKills == 0)
             return true;
         else {
-            //System.out.print("\n"+stack.fullName()+" enemy-superiority: "+(enemyKills / allyKills));
-            return (enemyKills / allyKills) > 1.0f;
+            //System.out.print("\n"+stack.fullName()+" enemy-superiority: "+(enemyKills * enemyValue) / (allyKills * allyValue)+" kills (Enemy vs. mine): "+enemyKills / allyKills+" Cost: (enemy vs. mine): "+enemyValue/allyValue);
+            return (enemyKills * enemyValue) / (allyKills * allyValue) > 1.0f;
         }
     }
     @Override

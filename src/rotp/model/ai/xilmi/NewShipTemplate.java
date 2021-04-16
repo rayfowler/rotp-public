@@ -232,20 +232,18 @@ public class NewShipTemplate implements Base {
         
         for(EmpireView ev : ai.empire().contacts())
         {
-            if(ev.empire().tech().knowsTechOfType(Tech.REPULSOR))
-                needRange = true;
-            for(ShipView enemyDesign : ev.empire().shipLab().designHistory())
+            for(ShipDesign enemyDesign : ev.empire().shipLab().designs())
             {
-                if(enemyDesign.design().scrapped())
+                if(enemyDesign.scrapped())
                 {
                     continue;
                 }
-                if(enemyDesign.design().repulsorRange() > 0)
+                if(enemyDesign.repulsorRange() > 0)
                 {
                     needRange = true;
                 }
                 for (int j=0;j<maxSpecials();j++)
-                    if(enemyDesign.design().special(j).createsBlackHole())
+                    if(enemyDesign.special(j).createsBlackHole())
                         boostInertial = true;
             }
         }
