@@ -456,6 +456,17 @@ public class Race implements Base, Serializable {
         };
         return 0;
     }
+    public int mostCommonLeaderAttitude() {
+        float maxPct = 0;
+        int maxAttitude = 0;
+        for (int i=0;i<personalityPct.length;i++) {
+            if (personalityPct[i] > maxPct) {
+                maxPct = personalityPct[i];
+                maxAttitude = i;
+            }
+        };
+        return maxAttitude;
+    }
     public int randomLeaderObjective() {
         float r = random();
         float modAccum = 0;
