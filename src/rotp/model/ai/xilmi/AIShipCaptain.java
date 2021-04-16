@@ -274,8 +274,9 @@ public class AIShipCaptain implements Base, ShipCaptain {
         //ail: We will always want to go as close as possible because this increases hit-chance
         int targetDist = 1;
 
-        //ail: only repulsors will prevent us from doing so, if we don't have the counter
-        if(targetDist < tgt.repulsorRange() + 1 && !st.cloaked && !st.canTeleport())
+
+        if ((targetDist <= tgt.repulsorRange())
+        && !st.ignoreRepulsors())
             targetDist = tgt.repulsorRange() + 1;
         
         float maxDist = st.movePointsTo(tgt.x,tgt.y);
@@ -492,7 +493,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 if(st2.isShip() && st2.design().isColonyShip())
                     killPct /= friends.size();
                 //ail: 0 damage possible when they have repulsor and we can't outrange
-                if(st1.optimalFiringRange(st1) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
+                if(st1.maxFiringRange(st1) <= st2.repulsorRange() && !st1.ignoreRepulsors())
                 {
                     //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
                     killPct = 0;
@@ -516,7 +517,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                     continue;
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
                 killPct *= pctOfMaxHP;
-                if(st1.optimalFiringRange(st1) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
+                if(st1.maxFiringRange(st1) <= st2.repulsorRange() && !st1.ignoreRepulsors())
                 {
                     //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
                     killPct = 0;
