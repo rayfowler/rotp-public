@@ -198,7 +198,7 @@ public class CombatStackShip extends CombatStack {
             //ail: if we count specials as weapons, we'll never get close when we have long-range-specials but short range-weapons
             if(wpn.isSpecial())
                 continue;
-            if (tgt.isColony() || wpn.groundAttacksOnly())
+            if (tgt.isColony() && wpn.groundAttacksOnly())
                 return 1;
             else if (wpn.isMissileWeapon()) 
                 // missiles move by distance, not tiles, so adjust minimum range downward by sqrt(2)
