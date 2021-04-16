@@ -1411,6 +1411,26 @@ public final class Empire implements Base, NamedObject, Serializable {
         float techLvl = t0.avgTechLevel();
         return prod*techLvl;
     }
+    public void clearDataForExtinctEmpire(int empId) {
+        EmpireView view = viewForEmpire(empId);
+        view.spies().shutdownSpyNetworks();
+        
+        // clear and re-add should be faster than removing ships
+        // since each remove would recopy the list
+        List<Ship> oldShips = new ArrayList<>(visibleShips());
+        visibleShips.clear();
+        for (Ship sh: oldShips) {
+            if (sh.empId() != empId)
+               visibleShips.add(sh);
+        }
+        
+        // clear out system view data. Inefficient on large maps
+        int n = sv.count();
+        for (int i=0;i<n;i++) {
+            if (sv.empId(i) == empId)
+                sv.view(i).goExtinct();
+        }
+    }
     public boolean hasAnyContact() {  return !contactedEmpires().isEmpty(); }
 
     public boolean inRangeOfAnyEmpire() {
@@ -2430,6 +2450,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         for (EmpireView v : empireViews()) {
             if (v != null)
                 v.embassy().removeContact();
+            v.empire().clearDataForExtinctEmpire(id);
         }
 
         Galaxy g = galaxy();

@@ -125,7 +125,15 @@ public class SystemView implements IMappedObject, Base, Serializable {
         relocationSystem = null;
         system().rallySprite().stop(); 
     }
-    
+    public void goExtinct() {
+        vEmpire = null;
+        vBases = 0;
+        vShieldLevel = 0;
+        vFactories = 0;
+        vPopulation = 0;
+        vStargate = false;
+        clearHostility();
+    }
     public int flagColorId()  { return flagColor; }
     public Color flagColor() { 
         switch(flagColor) {
