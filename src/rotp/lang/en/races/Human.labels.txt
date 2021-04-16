@@ -20,7 +20,7 @@ _nameTitle                        | Triumvir
 //
 
 // Advisor text
-MAIN_ADVISOR_TITLE                | %1 Advisor
+MAIN_ADVISOR_TITLE                | Human Advisor
 MAIN_ADVISOR_BUTTON_OK            | Dismiss
 MAIN_ADVISOR_SCOUT                | Our logistics division reports that a pair of scouts and a colony ship are ready for deployment. I suggest we locate and colonize a nearby planet as soon as we can.
 MAIN_ADVISOR_TRANSPORT            | The establishment of a colony at %1 was successful. The more transports we use, the faster %1 will develop into a cornerstone of our interstellar empire.

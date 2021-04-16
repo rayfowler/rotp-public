@@ -20,7 +20,7 @@ _nameTitle                        |
 // or distributing any material covered under this license.
 
 // Advisor text
-MAIN_ADVISOR_TITLE                | %1 Advisor
+MAIN_ADVISOR_TITLE                | Darlok Advisor
 MAIN_ADVISOR_BUTTON_OK            | Dismiss
 MAIN_ADVISOR_SCOUT                | We have finished construction on a pair of scouts and a colony ship. Let us hope the answers we seek present themselves on a nearby world.
 MAIN_ADVISOR_TRANSPORT            | No answers found on the planet %1. We should still grow our numbers there by sending any transports we can spare.

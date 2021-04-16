@@ -20,7 +20,7 @@ _nameTitle                        | Khan
 //
 
 // Advisor text
-MAIN_ADVISOR_TITLE                | %1 Advisor
+MAIN_ADVISOR_TITLE                | Mrrshan Advisor
 MAIN_ADVISOR_BUTTON_OK            | Dismiss
 MAIN_ADVISOR_SCOUT                | Ah-ha! Our first fleet is ready! Let's use it to find a world with enemies who've much treasure for the taking.
 MAIN_ADVISOR_TRANSPORT            | We've taken new territory on %1. The more of us we transport from %3, the faster we'll find any loot this world has.

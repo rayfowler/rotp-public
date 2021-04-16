@@ -21,7 +21,7 @@ _nameTitle                        | Spire King
 //
 
 // Advisor text
-MAIN_ADVISOR_TITLE                | %1 Advisor
+MAIN_ADVISOR_TITLE                | Alkari Advisor
 MAIN_ADVISOR_BUTTON_OK            | Dismiss
 MAIN_ADVISOR_SCOUT                | My lord, our scouts stand at the ready to discover a new world for our colony ship to bring into the fold so that we may add the territory to our illustrious sovereignty. 
 MAIN_ADVISOR_TRANSPORT            | A new world bears our banner, but it grows at an inhibited rate. Sending a transport to the colony will enable it to grow much faster.

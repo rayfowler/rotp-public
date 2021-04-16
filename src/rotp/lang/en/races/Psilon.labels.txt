@@ -21,7 +21,7 @@ _nameTitle                        | High Councilor
 //
 
 // Advisor text
-MAIN_ADVISOR_TITLE                | %1 Advisor
+MAIN_ADVISOR_TITLE                | Psilon Advisor
 MAIN_ADVISOR_BUTTON_OK            | Dismiss
 MAIN_ADVISOR_SCOUT                | High Councilor, our exploration fleet stands ready. Would you deem it most prudent for us to find a new world and create a settlement there soon?
 MAIN_ADVISOR_TRANSPORT            | Our new colony has been established. The council is now deliberating on how many of our people we should send there on a transport ship, if we should send any at all.
