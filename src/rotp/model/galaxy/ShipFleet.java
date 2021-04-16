@@ -645,6 +645,10 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
             if (system().hasStargate(empire()) && dest.hasStargate(empire()))
                 return 1;
         }
+        if(inTransit() && destination() == dest)
+        {
+            return arrivalTime() - galaxy().currentTime();
+        }
         return travelTime(this,dest,speed);
     }
     public int travelTurns(StarSystem dest) { 
