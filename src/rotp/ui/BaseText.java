@@ -89,6 +89,7 @@ public class BaseText implements Base {
     public void disabled(boolean b)   { disabled = b; }
     public void visible(boolean b)    { visible = b; }
     public void preceder(BaseText t)  { preceder = t; }
+    public boolean isEmpty()          { return text.isEmpty(); }
     public void setBounds(int x, int y, int w, int h) {
         bounds.setBounds(x,y,w,h);
     }
