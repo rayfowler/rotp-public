@@ -1995,22 +1995,26 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             drawString(g,text, midP+s10, y1);
 
             y1 += s10;
-
+            int lineH = s15;
             List<String> lines = scaledNarrowWrappedLines(g, text("PLANETS_TAX_DESC"), w-s40, 1, 15, 12);
+            if (lines.size() > 1) {
+                lineH = s12;
+                y1 -= s5;
+            }
             for (String line: lines) {
-                y1 += s15;
+                y1 += lineH;
                 drawString(g,line, s20, y1);
             }
 
-            y1 += s30;
+            int boxW=s100;
+            y1 += s27;
             x1 = s20;
-            g.setFont(narrowFont(16));
             String lbl = text("PLANETS_RESERVE_TAX");
+            scaledFont(g, lbl, ((w-boxW)/2)-s15, 16, 13);
             sw = g.getFontMetrics().stringWidth(lbl);
             drawString(g,lbl, x1, y1);
 
             x1 = x1+sw+s5;
-            int boxW=s100;
             drawSliderBox(g, x1, y1-s15, boxW, s18);
 
             String result;
@@ -2025,9 +2029,10 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             }
             else
                 result = text("PLANETS_RESERVE_NO_TAX");
-            g.setFont(narrowFont(16));
-            g.setColor(palette.black);
+            
             x1 = x1+boxW+s5;
+            scaledFont(g, result, w-x1-border-s5, 16, 13);
+            g.setColor(palette.black);
             drawString(g,result, x1, y1);
             
 

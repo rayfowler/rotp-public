@@ -75,7 +75,7 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
         String name = systems != null ? text("PLANETS_AGGREGATE_VALUES") : player().sv.descriptiveName(id);
         int sw = g.getFontMetrics().stringWidth(name);
         Color c0 = nameBox == hoverBox ? Color.yellow : SystemPanel.whiteLabelText;
-        g.setFont(narrowFont(24));
+        scaledFont(g, name, w-s50, 24, 20);
         drawShadowedString(g, name, 2, s10, s30, MainUI.shadeBorderC(), c0);
         nameBox.setBounds(s10, s5, sw+s5,s25);
 
