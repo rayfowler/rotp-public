@@ -1408,9 +1408,18 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             }
             return starBackground;
         }
+        private boolean anyHaveStargate() {
+            List<Colony> colonies = colonies();
+            for (Colony c: colonies) {
+                if (c.shipyard().hasStargate())
+                    return true;
+            }
+            return false;
+        }
         public void nextShipDesign(boolean click) {
+            boolean hasStargate = anyHaveStargate();
             Design prev = currDesign;
-            currDesign = player().shipLab().nextDesignFrom(currDesign, false);
+            currDesign = player().shipLab().nextDesignFrom(currDesign, hasStargate);
             if (currDesign != prev) {
                 if (click)
                     softClick();
@@ -1419,8 +1428,9 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             }
         }
         public void prevShipDesign(boolean click) {
+            boolean hasStargate = anyHaveStargate();
             Design prev = currDesign;
-            currDesign = player().shipLab().prevDesignFrom(currDesign, false);
+            currDesign = player().shipLab().prevDesignFrom(currDesign, hasStargate);
             if (currDesign != prev) {
                 if (click)
                     softClick();
