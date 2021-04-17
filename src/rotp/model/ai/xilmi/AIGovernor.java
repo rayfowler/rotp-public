@@ -293,7 +293,7 @@ public class AIGovernor implements Base, Governor {
         if(!empire.ignoresPlanetEnvironment())
             netFactoryProduction -= empire.tech().factoryWasteMod() / empire.tech().wasteElimination();
         float workerROI = empire.tech().populationCost() / empire.workerProductivity();
-        float factoryROI = empire.tech().baseFactoryCost() / netFactoryProduction;
+        float factoryROI = empire.tech().baseFactoryCost() / col.planet().productionAdj() / netFactoryProduction;
         
         float enemyBombardPower = 0.0f;
         
