@@ -455,6 +455,8 @@ public class AIFleetCommander implements Base, FleetCommander {
             empire.shipLab().needScouts = false;
         else if (empire.scanPlanets())
             empire.shipLab().needScouts = false;
+        else if (empire.shipLab().colonyDesign().size() <= 2 && empire.shipLab().colonyDesign().range() >= empire.scoutRange())
+            empire.shipLab().needScouts = false;
             
         NoticeMessage.setSubstatus(text("TURN_DEPLOY_FLEETS"));
         // get fleet orders for each fleet

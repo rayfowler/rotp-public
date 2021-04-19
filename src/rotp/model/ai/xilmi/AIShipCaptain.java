@@ -446,7 +446,6 @@ public class AIShipCaptain implements Base, ShipCaptain {
     public boolean facingOverwhelmingForce(CombatStack stack) {
         // build list of allies & enemies
         allies().clear(); enemies().clear();
-        boolean atLeastOneFriendCountersRepulsor = false;
         boolean unCounteredRepulsor = false;
         for (CombatStack st : combat().activeStacks()) {
             if (st.isMonster()) 
