@@ -109,8 +109,8 @@ public class NewShipTemplate implements Base {
         // add another entry for the current design, using the cost multiplier for its size
 
         // how many ships of each design can we build for virtual tests?
-        // use top 5 colonies
-        float shipBudgetBC = shipProductionBudget(ai, 5);
+        // use top 3 colonies
+        float shipBudgetBC = shipProductionBudget(ai, 3);
         
         SortedMap<Float, ShipDesign> designSorter = new TreeMap<>();
         
@@ -232,18 +232,18 @@ public class NewShipTemplate implements Base {
         
         for(EmpireView ev : ai.empire().contacts())
         {
-            for(ShipView enemyDesign : ev.empire().shipLab().designHistory())
+            for(ShipDesign enemyDesign : ev.empire().shipLab().designs())
             {
-                if(enemyDesign.design().scrapped())
+                if(enemyDesign.scrapped())
                 {
                     continue;
                 }
-                if(enemyDesign.design().repulsorRange() > 0)
+                if(enemyDesign.repulsorRange() > 0)
                 {
                     needRange = true;
                 }
                 for (int j=0;j<maxSpecials();j++)
-                    if(enemyDesign.design().special(j).createsBlackHole())
+                    if(enemyDesign.special(j).createsBlackHole())
                         boostInertial = true;
             }
         }

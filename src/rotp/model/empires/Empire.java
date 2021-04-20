@@ -1926,7 +1926,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         List<StarSystem> systems = new ArrayList<>();
         for (int i=0;i<sv.count();i++) {
             StarSystem sys = gal.system(i);
-            if (sv.isScouted(i) && sv.inShipRange(i) && canColonize(sys.planet().type(), newType))
+            if (sv.isScouted(i) && sv.inShipRange(i) && canColonize(sys.planet().type(), newType) && !sv.isColonized(i))
                 systems.add(sys);
         }
         return systems;
@@ -1936,7 +1936,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         List<StarSystem> systems = new ArrayList<>();
         for (int i=0;i<sv.count();i++) {
             StarSystem sys = gal.system(i);
-            if (sv.isScouted(i) && (sv.distance(i) <= range) && canColonize(sys.planet().type()))
+            if (sv.isScouted(i) && (sv.distance(i) <= range) && canColonize(sys.planet().type()) && !sv.isColonized(i))
                 systems.add(sys);
         }
         return systems;

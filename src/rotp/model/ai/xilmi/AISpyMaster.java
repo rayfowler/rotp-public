@@ -159,24 +159,17 @@ public class AISpyMaster implements Base, SpyMaster {
       
         // we are in a pact or at peace
         // ail: according to official strategy-guide two spies is supposedly the ideal number for tech-stealing etc, so always setting it to two except for hiding
+        // let's see what happens, if we just non-chalantly spy on everyone regardless of anything considering they won't declare war unless they would do so anyways
         if (emb.pact() || emb.atPeace() || emb.noTreaty()) {
-            if(!v.empire().warEnemies().isEmpty() && (v.empire().powerLevel(v.empire()) < empire.powerLevel(empire) || v.empire() == empire.generalAI().bestVictim()))
+            if(canEspionage)
             {
-                if(canEspionage)
-                {
-                    spies.beginEspionage();
-                    spies.maxSpies(2);
-                }
-                else if(canSabotage && emb.noTreaty())
-                {
-                    spies.beginSabotage();
-                    spies.maxSpies(2);
-                }
-                else
-                {
-                    spies.beginHide();
-                    spies.maxSpies(1);
-                }
+                spies.beginEspionage();
+                spies.maxSpies(2);
+            }
+            else if(canSabotage && emb.noTreaty())
+            {
+                spies.beginSabotage();
+                spies.maxSpies(2);
             }
             else
             {
