@@ -100,6 +100,7 @@ public class AIScientist implements Base, Scientist {
         //ail: first I stop researching where there's no techs left
         int leftOverAlloc = 0;
         for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
+            //System.out.print("\n"+empire.name()+" "+empire.tech().category(j).id()+" alloc before adjust: "+empire.tech().category(j).allocation());
             if (empire.tech().category(j).possibleTechs().isEmpty())
             {
                 leftOverAlloc+=empire.tech().category(j).allocation();
@@ -125,7 +126,8 @@ public class AIScientist implements Base, Scientist {
         }
         //second I stop researching techs with too high of a discovery-chance
         for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
-            if ((empire.tech().category(j).upcomingDiscoveryChance()-1)*60 > empire.tech().category(j).allocation())
+            //System.out.print("\n"+empire.name()+" "+empire.tech().category(j).id()+" "+discoveryChanceOfCategoryIfAllocationWasZero(j)+" > "+empire.tech().category(j).allocation());
+            if (discoveryChanceOfCategoryIfAllocationWasZero(j) > empire.tech().category(j).allocation())
             {
                 leftOverAlloc+=empire.tech().category(j).allocation();
                 empire.tech().category(j).allocation(0);
@@ -136,7 +138,7 @@ public class AIScientist implements Base, Scientist {
             boolean couldSpend = false;
             for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
                 if (!empire.tech().category(j).possibleTechs().isEmpty()
-                        && (empire.tech().category(j).upcomingDiscoveryChance()-1)*60 <= empire.tech().category(j).allocation())
+                        && discoveryChanceOfCategoryIfAllocationWasZero(j) <= empire.tech().category(j).allocation())
                 {
                     empire.tech().category(j).adjustAllocation(1);
                     leftOverAlloc--;
@@ -159,6 +161,13 @@ public class AIScientist implements Base, Scientist {
             }
         }
         //and lastly i stop researching future techs when there's still others
+        int futureTechs = 0;
+        for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
+            if (empire.tech().category(j).studyingFutureTech())
+                futureTechs++;
+        }
+        if(futureTechs == 6)
+            return;
         for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
             if (empire.tech().category(j).studyingFutureTech())
             {
@@ -172,7 +181,7 @@ public class AIScientist implements Base, Scientist {
             for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
                 if (!empire.tech().category(j).possibleTechs().isEmpty()
                         && !empire.tech().category(j).studyingFutureTech()
-                        && (empire.tech().category(j).upcomingDiscoveryChance()-1)*60 <= empire.tech().category(j).allocation())
+                        && discoveryChanceOfCategoryIfAllocationWasZero(j) <= empire.tech().category(j).allocation())
                 {
                     empire.tech().category(j).adjustAllocation(1);
                     leftOverAlloc--;
@@ -185,7 +194,7 @@ public class AIScientist implements Base, Scientist {
             {
                 for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
                     if (!empire.tech().category(j).possibleTechs().isEmpty()
-                            && (empire.tech().category(j).upcomingDiscoveryChance()-1)*60 <= empire.tech().category(j).allocation())
+                            && discoveryChanceOfCategoryIfAllocationWasZero(j) <= empire.tech().category(j).allocation())
                     {
                         empire.tech().category(j).adjustAllocation(1);
                         leftOverAlloc--;
@@ -299,6 +308,22 @@ public class AIScientist implements Base, Scientist {
                 empire.tech().weapon().adjustAllocation(-9);
             }
         }
+        int futureTechs = 0;
+        for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
+            if (empire.tech().category(j).studyingFutureTech()
+                    || empire.tech().category(j).possibleTechs().isEmpty())
+                futureTechs++;
+        }
+        //When we are researching future-techs, weapons and propulsion are much more valuable than the rest
+        if(futureTechs == 6)
+        {
+            empire.tech().computer().adjustAllocation(-5);
+            empire.tech().construction().adjustAllocation(-5);
+            empire.tech().forceField().adjustAllocation(-5);
+            empire.tech().planetology().adjustAllocation(-5);
+            empire.tech().propulsion().adjustAllocation(+10);
+            empire.tech().weapon().adjustAllocation(+10);
+        }
     }
     @Override
     public void setTechToResearch(TechCategory cat) {
@@ -340,9 +365,10 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float researchValue(Tech t) {
+        //ail: for something that has 0 base-value, we also don't add random
         if (t.isObsolete(empire))
             return 0;
-        return t.baseValue(empire) + random();
+        return t.baseValue(empire);
     }
     @Override
     public float researchBCValue(Tech t) {
@@ -801,5 +827,13 @@ public class AIScientist implements Base, Scientist {
     @Override
     public float baseValue(TechTorpedoWeapon t) {
         return t.level() / 2;
+    }
+    private float discoveryChanceOfCategoryIfAllocationWasZero(int category)
+    {
+        int allocationBefore = empire.tech().category(category).allocation();
+        empire.tech().category(category).allocation(0);
+        float chance = (empire.tech().category(category).upcomingDiscoveryChance() - 1) * 60;
+        empire.tech().category(category).allocation(allocationBefore);
+        return chance;
     }
 }

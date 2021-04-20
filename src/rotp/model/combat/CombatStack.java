@@ -466,15 +466,16 @@ public class CombatStack implements Base {
         assignCollateralDamage(damage);
         return damageTaken;
     }
-    public void takeBlackHoleDamage(float pct) {
+    public float takeBlackHoleDamage(float pct) {
         if (inStasis)
-            return;
+            return 0;
         attacked = true;
         float pctLoss = pct - (shieldLevel() /50) - blackHoleDef();
         pctLoss = max(0,pctLoss);
-        num = (int) (num * (1-pctLoss));
-        if (destroyed() && (mgr != null))
-            mgr.destroyStack(this);
+        int kills = Math.round(num * pctLoss);
+        for(int i = 0; i < kills; ++i)
+            loseShip();
+        return kills * maxHits;
     }
     public void loseShip() {
         int lost = maxHits > 0 ? 1 : num;

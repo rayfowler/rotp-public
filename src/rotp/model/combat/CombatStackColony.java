@@ -18,6 +18,7 @@ package rotp.model.combat;
 import rotp.model.colony.Colony;
 import rotp.model.colony.MissileBase;
 import rotp.model.ships.ShipComponent;
+import rotp.model.ships.ShipWeapon;
 import rotp.model.ships.ShipWeaponMissile;
 import rotp.model.ships.ShipWeaponMissileType;
 import rotp.model.tech.TechScanner;
@@ -175,7 +176,18 @@ public class CombatStackColony extends CombatStack {
     public ShipWeaponMissile selectedWeapon() { return missile; }
     @Override
     public void fireWeapon(CombatStack newTarget) {
-        fireWeapon(newTarget, 0);
+        //ail: @Ray: My AI usually doesn't build missile-bases and there's also no hook in it to control the used missile type, so'll do some very basic logic here to help the auto-play and the other AIs pick the right missile
+        int missileToUse = 0;
+        float bestDamage = 0;
+        for(int i = 0; i < numWeapons(); ++i)
+        {
+            float currentDamage = ((ShipWeapon)weapon(i)).firepower(newTarget.shieldLevel());
+            if(currentDamage > bestDamage) {
+                missileToUse = i;
+                bestDamage = currentDamage;
+            }
+        }
+        fireWeapon(newTarget, missileToUse);
     }
     @Override
     public void fireWeapon(CombatStack newTarget, int i) {
@@ -187,7 +199,10 @@ public class CombatStackColony extends CombatStack {
             return;
         target = newTarget;
         // each missile base fires 3 missiles
-        CombatStackMissile missileStack = new CombatStackMissile(this, missile, 3*num);
+        ShipWeaponMissile missileType = missile;
+        if(i > 0 && numWeapons() > 0)
+            missileType = scatterPack;
+        CombatStackMissile missileStack = new CombatStackMissile(this, missileType, 3*num);
         mgr.addStackToCombat(missileStack);
         missileFired = true;
     }

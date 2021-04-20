@@ -293,7 +293,7 @@ public class AIGovernor implements Base, Governor {
         if(!empire.ignoresPlanetEnvironment())
             netFactoryProduction -= empire.tech().factoryWasteMod() / empire.tech().wasteElimination();
         float workerROI = empire.tech().populationCost() / empire.workerProductivity();
-        float factoryROI = empire.tech().baseFactoryCost() / netFactoryProduction;
+        float factoryROI = empire.tech().baseFactoryCost() / col.planet().productionAdj() / netFactoryProduction;
         
         float enemyBombardPower = 0.0f;
         
@@ -366,16 +366,22 @@ public class AIGovernor implements Base, Governor {
         //System.out.print("\n"+empire.name()+" "+col.name()+" colonizer-production-score "+productionScore(col.starSystem(), true));
         boolean inAttackRange = false;
         boolean enemy = false;
+        float totalEnemyBc = 0.0f;
+        float highestNonEnemyBc = 0.0f;
+        float myFleetBc = empire.totalFleetCost() * (empire.tech().avgTechLevel() + 10);
         for(Empire emp : empire.contactedEmpires())
         {
             EmpireView v = empire.viewForEmpire(emp);
             if(v.embassy().isEnemy() && empire.inShipRange(emp.id))
             {
                 enemy = true;
+                totalEnemyBc += emp.totalFleetCost() * (emp.tech().avgTechLevel() + 10);
             }
             else if(empire.inShipRange(emp.id))
             {
                 inAttackRange = true;
+                if(emp.totalFleetCost() > highestNonEnemyBc)
+                    highestNonEnemyBc = emp.totalFleetCost() * (emp.tech().avgTechLevel() + 10);
             }
         }
         int[] counts = galaxy().ships.shipDesignCounts(empire.id);
@@ -433,11 +439,16 @@ public class AIGovernor implements Base, Governor {
             if(enemy)
             {
                 maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
+                if(myFleetBc > 4 * totalEnemyBc && highestNonEnemyBc <= myFleetBc * 4)
+                    maxShipMaintainance /= 4.0f;
                 fighterPercentage = 0.5f + empire.generalAI().defenseRatio() * 0.5f;
             }
             else if(inAttackRange)
             {
-                maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance() / 4;
+                if(highestNonEnemyBc > myFleetBc * 4)
+                    maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
+                else
+                    maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance() / 4;
                 fighterPercentage = 0.75f;
             }
             float maxShipMaintainanceBeforeAdj = maxShipMaintainance;
@@ -455,7 +466,7 @@ public class AIGovernor implements Base, Governor {
             
             if(!techsLeft)
                 maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
-            //System.out.print("\n"+empire.name()+" "+col.name()+" adjMaxMaint: "+maxShipMaintainance+" baseMaxMaint: "+maxShipMaintainanceBeforeAdj+" avg-tech-level: "+empire.tech().avgTechLevel());
+            //System.out.print("\n"+empire.name()+" "+col.name()+" adjMaxMaint: "+maxShipMaintainance+" baseMaxMaint: "+maxShipMaintainanceBeforeAdj+" NonEnemyBc: "+highestNonEnemyBc+" enemyBc: "+totalEnemyBc+" myBC: "+myFleetBc);
             if(fighterDamage == 0)
             {
                 fighterPercentage = 0.25f;
@@ -602,7 +613,7 @@ public class AIGovernor implements Base, Governor {
     }
     public float productionScore(StarSystem sys)
     {
-        float Score = sys.colony().totalIncome();
+        float Score = sqrt(sys.colony().totalIncome());
         Score *= sys.planet().productionAdj();
         Score /= sys.planet().researchAdj();
         float avgScore = 0;
@@ -616,7 +627,7 @@ public class AIGovernor implements Base, Governor {
                 continue;
             if(current.colony().currentProductionCapacity() < 0.5)
                 continue;
-            float currentScore = current.colony().totalIncome();
+            float currentScore = sqrt(current.colony().totalIncome());
             currentScore *= current.planet().productionAdj();
             currentScore /= current.planet().productionAdj();
             avgScore += currentScore;
