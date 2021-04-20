@@ -1103,12 +1103,14 @@ SETUP_OPPONENT_RANDOM             | ???
 SETUP_OPPONENT_AI                 | Επιλέξτε τύπο Τεχνητής Νοημοσύνης Αντιπάλου:
 SETUP_OPPONENT_AI_BASE            | ΤΝ: Βασικό Επίπεδο
 SETUP_OPPONENT_AI_MODNAR          | ΤΝ: Επίπεδο Μόντναρ
-SETUP_OPPONENT_AI_XILMI           | ΤΝ: Επίπεδο Ξίλμι
+SETUP_OPPONENT_AI_XILMI           | ΤΝ: Επίπεδο Ιδιοφυία
+SETUP_OPPONENT_AI_HYBRID          | ΤΝ: Επίπεδο Υβρίδιο
 SETUP_OPPONENT_AI_SELECT          | ΤΝ: Επιλέξιμο
 SETUP_AUTOPLAY_OFF                | Ανενεργό
 SETUP_AUTOPLAY_AI_BASE            | ΤΝ: Βασικό Επίπεδο
 SETUP_AUTOPLAY_AI_MODNAR          | ΤΝ: Επίπεδο Μόντναρ
-SETUP_AUTOPLAY_AI_XILMI           | ΤΝ: Επίπεδο Ξίλμι
+SETUP_AUTOPLAY_AI_XILMI           | ΤΝ: Επίπεδο Ιδιοφυία
+SETUP_AUTOPLAY_AI_HYBRID          | ΤΝ: Επίπεδο Υβρίδιο
 SETUP_GAME_DIFFICULTY_LABEL       | Επίπεδο Δυσκολίας
 SETUP_DIFFICULTY_EASIEST          | Κατώτατο
 SETUP_DIFFICULTY_EASIER           | Πιο Εύκολο
