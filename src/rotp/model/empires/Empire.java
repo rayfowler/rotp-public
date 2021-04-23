@@ -257,6 +257,11 @@ public final class Empire implements Base, NamedObject, Serializable {
         shipBorderColor = null;
         scoutBorderColor = null;
         empireRangeColor = null;
+        shipImage = null;
+        shipImageLarge = null;
+        shipImageHuge = null;
+        scoutImage = null;
+        transportImage = null;
     }
     public boolean canSeeShips(int empId) {
         if (canSeeShips == null) {
