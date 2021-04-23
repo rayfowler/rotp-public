@@ -188,13 +188,13 @@ public class MapOverlayAllocateSystems extends MapOverlay {
         // draw reasons info
         StarSystem sv = orderedSystems.get(systemIndex);
         List<String> reasons = systemsToAllocate.get(sv);
-        int lineH = BasePanel.s18;
+        int lineH = BasePanel.s15;
         int x2a = x2+s10;
-        int y2a = y2+s20;
+        int y2a = y2+BasePanel.s15;
 
         //g.setFont(narrowFont(16));
         int textW = w2+x2-x2a-s10;
-        g.setFont(narrowFont(16));
+        g.setFont(narrowFont(15));
         for (String reason: reasons) {
             List<String> lines = this.wrappedLines(g, reason, textW);
             for (String line: lines) {
