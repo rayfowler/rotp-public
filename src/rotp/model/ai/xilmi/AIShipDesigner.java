@@ -18,6 +18,7 @@ package rotp.model.ai.xilmi;
 import java.util.List;
 import rotp.model.ai.interfaces.ShipDesigner;
 import rotp.model.empires.Empire;
+import rotp.model.empires.EmpireView;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
 import static rotp.model.game.IGameOptions.RESEARCH_SLOW;
@@ -25,6 +26,7 @@ import static rotp.model.game.IGameOptions.RESEARCH_SLOWER;
 import static rotp.model.game.IGameOptions.RESEARCH_SLOWEST;
 import rotp.model.planet.PlanetType;
 import rotp.model.ships.ShipDesign;
+import static rotp.model.ships.ShipDesign.maxSpecials;
 import static rotp.model.ships.ShipDesign.maxWeapons;
 import rotp.model.ships.ShipDesignLab;
 import rotp.model.ships.ShipSpecial;
@@ -356,10 +358,33 @@ public class AIShipDesigner implements Base, ShipDesigner {
     public void updateFighterDesign() {
         ShipDesignLab lab = lab();
         
-        // recalculate current design's damage vs. current targets
+        boolean needRange = false;
+        
+        for(EmpireView ev : empire().contacts())
+        {
+            for(ShipDesign enemyDesign : ev.empire().shipLab().designs())
+            {
+                if(enemyDesign.scrapped())
+                {
+                    continue;
+                }
+                if(enemyDesign.repulsorRange() > 0)
+                {
+                    needRange = true;
+                }
+            }
+        }
+       
         ShipDesign currDesign = lab.fighterDesign();
-        // if we don't have any faster engines
-        if (currDesign.engine() == lab.fastestEngine() && currDesign.active()) {
+
+        for (int j=0;j<maxSpecials();j++)
+            if(currDesign.special(j).beamRangeBonus() > 0)
+                needRange = false;
+        for(int j=0;j<maxWeapons();j++)
+            if(currDesign.weapon(j).range() > 1)
+                needRange = false;
+        
+        if (currDesign.engine() == lab.fastestEngine() && currDesign.active() && !needRange) {
             // and if the design has less than 10% free space or has less than 25/50/75/100 free space, we assume the redesign has no sense
             // 25/50/75/100 may be a too straight-line set of values
             if ((currDesign.availableSpace()/(currDesign.totalSpace()) < 0.1f)) {
@@ -428,7 +453,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         //System.out.print("\n"+galaxy().currentYear()+" "+empire.name()+" Fighter upgrade "+currDesign.name()+" val: "+upgradeChance+" DPBC: "+newDPBC / currentDPBC+" better-Engine: "+betterEngine+" betterArmor: "+betterArmor);
         
         //System.out.print("\n"+empire.name()+" designed new fighter which is "+upgradeChance+" better and should go to slot: "+slot);
-        if (!betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) )
+        if (!betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) && !needRange)
             return;
 
         // if there is a slot available, use it for the new design
