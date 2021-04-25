@@ -311,11 +311,15 @@ public class ColonyDefense extends ColonySpendingCategory {
 
         if (newBC <= maxCost) {
             if (delta < 1) {
-                int turns = (int) Math.ceil( (1- (bases - (int)bases))*newBaseCost/newBC);
-                if (turns > 99)
-                    return text(yearsLongText, turns);
-                else
-                    return text(yearsText, turns);
+                if (newBC == 0)
+                    return text(noneText);
+                else {
+                    int turns = (int) Math.ceil( (1- (bases - (int)bases))*newBaseCost/newBC);
+                    if (turns > 99)
+                        return text(yearsLongText, turns);
+                    else
+                        return text(yearsText, turns);
+                }
             }
             else if (delta == 1)
                 return text(yearText, 1);

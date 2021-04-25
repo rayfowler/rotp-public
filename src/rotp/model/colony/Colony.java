@@ -805,7 +805,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         float shipyardCost = shipyard().maintenanceCost();
         float transportCost = transportCost();
 
-        return prod - reserveCost - securityCost - defenseCost - shipyardCost - transportCost + tradeIncome - shipCost - stargateCost;
+        return max(0, prod - reserveCost - securityCost - defenseCost - shipyardCost - transportCost + tradeIncome - shipCost - stargateCost);
     }
     public float expectedPopulation() {
         return workingPopulation() + normalPopGrowth() + incomingTransports();

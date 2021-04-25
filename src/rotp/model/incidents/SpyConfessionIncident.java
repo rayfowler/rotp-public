@@ -60,13 +60,13 @@ public class SpyConfessionIncident extends DiplomaticIncident {
             duration = 2;
         }
 
-        if (ev.owner().leader().isXenophobic())
+        if (ev.owner().diplomatAI().leaderHatesAllSpies())
             duration *= 2;
         
         dateOccurred = galaxy().currentYear();
     }
     @Override
-    public boolean isSpying()           { return (missionType > 0) || galaxy().empire(empVictim).leader().isXenophobic() ; }
+    public boolean isSpying()           { return (missionType > 0) || galaxy().empire(empVictim).diplomatAI().leaderHatesAllSpies() ; }
     @Override
     public int timerKey()               { return DiplomaticEmbassy.TIMER_SPY_WARNING; }
     @Override
