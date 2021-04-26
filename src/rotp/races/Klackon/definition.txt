@@ -9,7 +9,7 @@ homeworldSize: 100
 homeworldKey:  9208212
 
 // animations
-mugshot:       KlaAdvisorVS,      0@0|250x270
+mugshot:       KlackonDiplomat,      170@4|420x380
 setupImage:    KlackonDiploMug, 100@0|584x768
 spyMug:        KlaAdvisorS,       0@0|440x330
 soldierMug:    KlaAdvisorS,       0@0|440x330
