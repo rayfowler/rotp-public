@@ -147,7 +147,11 @@ public class CombatStackColony extends CombatStack {
         float hitPct = (5 + attackLevel - target.missileDefense) / 10;
         hitPct = max(.05f, hitPct);
         //ail: each missile base fires 3 missiles, even in the estimate
-        return hitPct * missile.estimatedKills(this, target, 3*num);
+        float missileDamage = hitPct * missile.estimatedKills(this, target, 3*num);
+        float scatterDamage = 0;
+        if(scatterPack != null)
+            scatterDamage = hitPct * scatterPack.estimatedKills(this, target, 3*num);
+        return max(missileDamage, scatterDamage);
     }
     @Override
     public boolean canAttack(CombatStack target) {
