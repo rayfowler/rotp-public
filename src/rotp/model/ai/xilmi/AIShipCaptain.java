@@ -202,7 +202,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             {
                 continue;
             }
-            if(onlyShips)
+            if(onlyShips && target.isColony())
             {
                 continue;
             }
