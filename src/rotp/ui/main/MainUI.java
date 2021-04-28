@@ -219,9 +219,9 @@ public class MainUI extends BasePanel implements IMapHandler {
             overlay = overlayNone;
         }
     }
-    public void showAdvice(String key, String var1, String var2, String var3) {
+    public void showAdvice(String key, Empire emp1, String var1, String var2, String var3) {
         overlay = overlayAdvice;
-        overlayAdvice.init(key, var1, var2, var3);
+        overlayAdvice.init(key, emp1, var1, var2, var3);
         showAdvice = true;
         repaint();
     }

@@ -277,9 +277,7 @@ public class Race implements Base, Serializable {
     }
     public String name()                      { return text(id); }
     public String setupName()                 {
-        if (setupName == null)
-            setupName = text(substrings(raceNames.get(0), '|').get(0));
-        return setupName;
+        return text(substrings(raceNames.get(0), '|').get(0));
     }
     public int shipAttackBonus()              { return shipAttackBonus; }
     public void shipAttackBonus(int i)        { shipAttackBonus = i; }
@@ -457,6 +455,17 @@ public class Race implements Base, Serializable {
                 return i;
         };
         return 0;
+    }
+    public int mostCommonLeaderAttitude() {
+        float maxPct = 0;
+        int maxAttitude = 0;
+        for (int i=0;i<personalityPct.length;i++) {
+            if (personalityPct[i] > maxPct) {
+                maxPct = personalityPct[i];
+                maxAttitude = i;
+            }
+        };
+        return maxAttitude;
     }
     public int randomLeaderObjective() {
         float r = random();

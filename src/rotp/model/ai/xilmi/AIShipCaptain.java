@@ -273,9 +273,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
 
         //ail: We will always want to go as close as possible because this increases hit-chance
         int targetDist = 1;
-
-        //ail: only repulsors will prevent us from doing so, if we don't have the counter
-        if(targetDist < tgt.repulsorRange() + 1 && !st.cloaked && !st.canTeleport())
+        if ((targetDist <= tgt.repulsorRange())
+        && !st.ignoreRepulsors())
             targetDist = tgt.repulsorRange() + 1;
         
         float maxDist = st.movePointsTo(tgt.x,tgt.y);

@@ -20,7 +20,7 @@ _nameTitle                        |
 //
 
 // Advisor text
-MAIN_ADVISOR_TITLE                | %2
+MAIN_ADVISOR_TITLE                | [player_name]
 MAIN_ADVISOR_BUTTON_OK            | Dismiss
 MAIN_ADVISOR_SCOUT                | At last my ships have reached completion. I must use my scouts to find new worlds for my colony vessel to land upon.
 MAIN_ADVISOR_TRANSPORT            | I've established myself on this new world and must send more from my home to expand upon it. There is no new life here, and so my search continues.

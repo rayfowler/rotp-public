@@ -492,7 +492,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         drawShadowedString(g, langText, 2, langX, s30, Color.black, logoFore[0]);
 
         discussText.disabled(false);
-        if (LanguageManager.current().currentLangDir().equals("en"))
+        if (!discussText.isEmpty())
             discussText.draw(g);
 
         if (canRestart()) {

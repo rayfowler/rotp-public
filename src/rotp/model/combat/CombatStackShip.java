@@ -126,6 +126,8 @@ public class CombatStackShip extends CombatStack {
     @Override
     public void recordKills(int num) { empire.shipLab().recordKills(design, num); }
     @Override
+    public boolean ignoreRepulsors()    { return cloaked || canTeleport(); }
+    @Override
     public void becomeDestroyed()    {
         fleet.removeShips(design.id(), num, true);
         empire.shipLab().recordDestruction(design, num);

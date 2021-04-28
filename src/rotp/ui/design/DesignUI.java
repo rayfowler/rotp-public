@@ -2333,18 +2333,22 @@ public class DesignUI extends BasePanel {
                 int boxH = s20;
                 if (shipDesign().active()) {
                     g.fillRoundRect(boxX, boxY, boxW, boxH, s10, s10);
-                    g.setColor(SystemPanel.whiteText);
+                   g.setColor(SystemPanel.whiteText);
                 }
-                else {
+                 else {
                     weaponFieldArea[i].setBounds(boxX, boxY, boxW, boxH);
                     weaponFieldDecr[i].reset();
-                    weaponFieldDecr[i].addPoint(boxX - s11, boxY + (boxH / 2));
-                    weaponFieldDecr[i].addPoint(boxX - s3, boxY);
-                    weaponFieldDecr[i].addPoint(boxX - s3, boxY + boxH);
+                    if (wpn != first) {
+                        weaponFieldDecr[i].addPoint(boxX - s11, boxY + (boxH / 2));
+                        weaponFieldDecr[i].addPoint(boxX - s3, boxY);
+                        weaponFieldDecr[i].addPoint(boxX - s3, boxY + boxH);
+                    }
                     weaponFieldIncr[i].reset();
-                    weaponFieldIncr[i].addPoint(boxX + boxW + s11, boxY + (boxH / 2));
-                    weaponFieldIncr[i].addPoint(boxX + boxW + s3, boxY);
-                    weaponFieldIncr[i].addPoint(boxX + boxW + s3, boxY + boxH);
+                    if (wpn != last) {
+                        weaponFieldIncr[i].addPoint(boxX + boxW + s11, boxY + (boxH / 2));
+                        weaponFieldIncr[i].addPoint(boxX + boxW + s3, boxY);
+                        weaponFieldIncr[i].addPoint(boxX + boxW + s3, boxY + boxH);
+                    }
                     g.fill(weaponFieldArea[i]);
                     g.fill(weaponFieldDecr[i]);
                     g.fill(weaponFieldIncr[i]);
@@ -2378,17 +2382,13 @@ public class DesignUI extends BasePanel {
                 else {
                     weaponCountArea[i].setBounds(boxX, boxY, boxW, boxH);
                     weaponCountDecr[i].reset();
-                    if (wpn != first) {
-                        weaponCountDecr[i].addPoint(boxX - s11, boxY + (boxH / 2));
-                        weaponCountDecr[i].addPoint(boxX - s3, boxY);
-                        weaponCountDecr[i].addPoint(boxX - s3, boxY + boxH);
-                    }
+                    weaponCountDecr[i].addPoint(boxX - s11, boxY + (boxH / 2));
+                    weaponCountDecr[i].addPoint(boxX - s3, boxY);
+                    weaponCountDecr[i].addPoint(boxX - s3, boxY + boxH);
                     weaponCountIncr[i].reset();
-                    if (wpn != last) {
-                        weaponCountIncr[i].addPoint(boxX + boxW + s11, boxY + (boxH / 2));
-                        weaponCountIncr[i].addPoint(boxX + boxW + s3, boxY);
-                        weaponCountIncr[i].addPoint(boxX + boxW + s3, boxY + boxH);
-                    }
+                    weaponCountIncr[i].addPoint(boxX + boxW + s11, boxY + (boxH / 2));
+                    weaponCountIncr[i].addPoint(boxX + boxW + s3, boxY);
+                    weaponCountIncr[i].addPoint(boxX + boxW + s3, boxY + boxH);
                     g.fill(weaponCountArea[i]);
                     g.fill(weaponCountDecr[i]);
                     g.fill(weaponCountIncr[i]);

@@ -20,7 +20,7 @@ _nameTitle                 | Crystal Emperor
 //
 
 // Advisor text
-MAIN_ADVISOR_TITLE         | %1 Advisor
+MAIN_ADVISOR_TITLE         | Silicoid Advisor
 MAIN_ADVISOR_BUTTON_OK     | Dismiss
 MAIN_ADVISOR_SCOUT         | God-Emperor, your scouts stand prepared to escort the first colony ship to any world you desire! Give the order and see your will be done!
 MAIN_ADVISOR_TRANSPORT     | The colony on %1 has been founded in your name, mighty Emperor! If you desire us to send more transports to support your new dominion, say the word and we shall comply!

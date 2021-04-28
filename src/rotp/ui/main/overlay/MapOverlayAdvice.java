@@ -26,6 +26,7 @@ import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
 import java.util.List;
 import rotp.model.Sprite;
+import rotp.model.empires.Empire;
 import rotp.model.empires.Race;
 import rotp.ui.BasePanel;
 import rotp.ui.main.GalaxyMapPanel;
@@ -43,12 +44,14 @@ public class MapOverlayAdvice extends MapOverlay {
     BufferedImage advisorImg;
     AdvisorOKSprite okButton = new AdvisorOKSprite();
     String textKey;
+    Empire emp1;
     String var1, var2, var3;
     public MapOverlayAdvice(MainUI p) {
         parent = p;
     }
-    public void init(String key, String s1, String s2, String s3) {
+    public void init(String key, Empire e1, String s1, String s2, String s3) {
         textKey = key;
+        emp1 = e1;
         var1 = s1;
         var2 = s2;
         var3 = s3;
@@ -129,6 +132,7 @@ public class MapOverlayAdvice extends MapOverlay {
         int textMgn = boxLeft+scaled(155);
         g.setFont(narrowFont(28));
         String title = text("MAIN_ADVISOR_TITLE", player().raceName(), player().leader().name());
+        title = player().replaceTokens(title, "player");
         drawShadowedString(g, title, 4, textMgn, boxTop+scaled(28), SystemPanel.textShadowC, SystemPanel.whiteText);
 
         int imgW = advisorImg.getWidth();
@@ -150,7 +154,13 @@ public class MapOverlayAdvice extends MapOverlay {
             desc = text(textKey, var1, var2);
         else
             desc = text(textKey, var1, var2, var3);
-        List<String> lines = this.wrappedLines(g, desc, boxW+mgn-textMgn-scaled(10));
+        
+        desc = player().replaceTokens(desc, "player");
+        
+        if (emp1 != null)
+            desc = emp1.replaceTokens(desc, "alien");
+        
+        List<String> lines = wrappedLines(g, desc, boxW+mgn-textMgn-scaled(10));
         int lineH = scaled(19);
         int y0 = boxTop+scaled(55);
         for (String line: lines) {

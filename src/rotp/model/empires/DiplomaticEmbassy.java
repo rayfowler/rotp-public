@@ -517,10 +517,10 @@ public class DiplomaticEmbassy implements Base, Serializable {
             }
         }
         
-        if (empire().isPlayerControlled())
-            galaxy().giveAdvice("MAIN_ADVISOR_RALLY_POINTS", owner().raceName());
+        if (empire().isPlayerControlled()) 
+            galaxy().giveAdvice("MAIN_ADVISOR_RALLY_POINTS", owner(), owner().raceName());
         else if  (owner().isPlayerControlled())
-            galaxy().giveAdvice("MAIN_ADVISOR_RALLY_POINTS", empire().raceName());
+            galaxy().giveAdvice("MAIN_ADVISOR_RALLY_POINTS", empire(), empire().raceName());
 
         return inc;
     }
@@ -631,9 +631,9 @@ public class DiplomaticEmbassy implements Base, Serializable {
             DiplomaticIncident inc = FirstContactIncident.create(owner(), empire());
             addIncident(inc);
             if (empire().isPlayerControlled())
-                galaxy().giveAdvice("MAIN_ADVISOR_DIPLOMACY", owner().raceName());
+                galaxy().giveAdvice("MAIN_ADVISOR_DIPLOMACY", owner(), owner().raceName());
             else if (owner().isPlayerControlled())
-                galaxy().giveAdvice("MAIN_ADVISOR_DIPLOMACY", empire().raceName());
+                galaxy().giveAdvice("MAIN_ADVISOR_DIPLOMACY", empire(), empire().raceName());
         }
     }
     public void makeFirstContact() {

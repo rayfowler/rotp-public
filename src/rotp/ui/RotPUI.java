@@ -434,8 +434,8 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
             selectPanel(GROUND_BATTLE_PANEL, groundBattleUI);
         session().waitUntilNextTurnCanProceed();
     }
-    public void showAdvice(String key, String var1, String var2, String var3) {
-        mainUI().showAdvice(key, var1, var2, var3);
+    public void showAdvice(String key, Empire emp1, String var1, String var2, String var3) {
+        mainUI().showAdvice(key, emp1, var1, var2, var3);
         selectMainPanel();
     }
     public void showBombardmentNotice(int sysId, ShipFleet fl) {

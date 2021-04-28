@@ -21,7 +21,7 @@ _nameTitle                        | High Councilor
 //
 
 // Advisor text
-MAIN_ADVISOR_TITLE                | %1 Advisor
+MAIN_ADVISOR_TITLE                | Psilon Advisor
 MAIN_ADVISOR_BUTTON_OK            | Dismiss
 MAIN_ADVISOR_SCOUT                | High Councilor, our exploration fleet stands ready. Would you deem it most prudent for us to find a new world and create a settlement there soon?
 MAIN_ADVISOR_TRANSPORT            | Our new colony has been established. The council is now deliberating on how many of our people we should send there on a transport ship, if we should send any at all.
@@ -31,6 +31,7 @@ MAIN_ADVISOR_RALLY_POINTS         | It is unfortunate, but the Republic now find
 MAIN_ADVISOR_MISSILE_BASES        | Instead of massing fleets of war, we can construct defensive missile bases on our colonies to protect them from invasion. The council wishes to hear your thoughts on what worlds would be best served by the presence of these bases. 
 MAIN_ADVISOR_SHIP_WEAPON          | The council is in heated debate about the newest design for ship weaponry. Some wish the weapons destroyed immediately, but we may wish to change our ship designs as a purely proactive measure.
 MAIN_ADVISOR_COUNCIL              | Soon there will be a joyous meeting of the galaxy's greatest and powerful peoples. We should attend this Galactic Council and hear the wisdom of our celestial neighbors.
+MAIN_ADVISOR_REBELLION            | That the population of %1 would choose to handle disagreement this way is most perplexing. The Council has given you leave to handle this immediately, even before they hear the issue. 
 MAIN_ADVISOR_RESIST_COUNCIL       | It troubles me that all our efforts have led to this war, but if the only alternative is to submit to this warmongering council than I can see no other choice for our people! 
 MAIN_ADVISOR_COUNCIL_RESISTED     | Does this not sadden you to see others reject peace so vehemently? Steel your resolve, High Councilor: this shall be the last war this galaxy ever sees.
 

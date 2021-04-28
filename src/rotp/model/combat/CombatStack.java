@@ -125,7 +125,7 @@ public class CombatStack implements Base {
     public boolean ignoreRepulsors()    { return false; }
     public int weaponNum(ShipComponent w)  { return -1; }
     public boolean canRetreat()      { return false; }
-    public boolean canTeleport()     { return canTeleport; }
+    public boolean canTeleport()     { return canTeleport && !mgr.interdiction(); }
     public boolean hasTeleporting()  { return false; }
     public boolean canScan()         { return false; }
     public boolean retreatAllowed()  { return false; }

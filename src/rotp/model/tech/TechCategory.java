@@ -526,7 +526,9 @@ public final class TechCategory implements Base, Serializable {
 
         bonusTechs.remove(id);
         possibleTechs.remove(id);
-        t.provideBenefits(tree.empire());
+        
+        if (newTech)
+            t.provideBenefits(tree.empire());
 
         if (id.equals(currentTech())) {
             resetResearchBC();

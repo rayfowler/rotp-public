@@ -84,7 +84,14 @@ public class Leader implements Base, Serializable {
     public boolean isTechnologist() { return (objective == Objective.TECHNOLOGIST); }
 
     public String dialogueContactType() {
-        switch(personality) {
+        Personality p = personality;
+        
+        // when using the random personality option, use the most common attitude for  
+        // contact dialogue since there is not text for every race/attitude combination
+        if (options().randomizeAIPersonality())
+            p = Personality.values()[empire.race().mostCommonLeaderAttitude()];
+
+        switch(p) {
             case PACIFIST:   return DialogueManager.CONTACT_PACIFIST;
             case HONORABLE:  return DialogueManager.CONTACT_HONORABLE;
             case RUTHLESS:   return DialogueManager.CONTACT_RUTHLESS;

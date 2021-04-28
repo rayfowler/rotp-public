@@ -15,14 +15,19 @@
  */
 package rotp.ui.notifications;
 
+import rotp.model.empires.Empire;
 import rotp.model.game.GameSession;
 import rotp.ui.RotPUI;
 
 public class AdviceNotification implements TurnNotification {
     private final String message;
+    private Empire emp1;
     private String var1, var2, var3;
     public static void create(String message) {
         GameSession.instance().addTurnNotification(new AdviceNotification(message));
+    }
+    public static void create(String message, Empire e1, String s1) {
+        GameSession.instance().addTurnNotification(new AdviceNotification(message, e1, s1));
     }
     public static void create(String message, String s1) {
         GameSession.instance().addTurnNotification(new AdviceNotification(message, s1));
@@ -35,6 +40,11 @@ public class AdviceNotification implements TurnNotification {
     }
     private AdviceNotification(String msg) {
         message = msg;
+    }
+    private AdviceNotification(String msg, Empire e1, String s1) {
+        message = msg;
+        emp1 = e1;
+        var1 = s1;
     }
     private AdviceNotification(String msg, String s1) {
         message = msg;
@@ -54,5 +64,5 @@ public class AdviceNotification implements TurnNotification {
     @Override
     public String displayOrder() { return ADVICE; }
     @Override
-    public void notifyPlayer()   { RotPUI.instance().showAdvice(message, var1, var2, var3); }
+    public void notifyPlayer()   { RotPUI.instance().showAdvice(message, emp1, var1, var2, var3); }
 }

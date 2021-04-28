@@ -984,7 +984,7 @@ public class ShipCombatManager implements Base {
         // enemy stacks may have a repulsor range that is also not traversable
         List<CombatStack> stacks = new ArrayList<>(results.activeStacks());
         for (CombatStack s: stacks) {            
-            int r = stack.cloaked || (s.empire == stack.empire) || s.inStasis || stack.ignoreRepulsors() ? 0 : s.repulsorRange();
+            int r = stack.ignoreRepulsors() || (s.empire == stack.empire) || s.inStasis ? 0 : s.repulsorRange();
             if ((r == 0) && stack.canEat(s)) 
                 continue;
             else if (r == 0) 
