@@ -33,6 +33,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
     private transient List<CombatStack> allies = new ArrayList<>();
     private transient List<CombatStack> enemies = new ArrayList<>();
     private CombatStack currentTarget = null;
+    private CombatStack closeTarget = null;
+    private CombatStack distantTarget = null;
 
     public List<CombatStack> allies() {
         if (allies == null)
@@ -90,7 +92,14 @@ public class AIShipCaptain implements Base, ShipCaptain {
             float prevMove = stack.move;
             prevTarget = currentTarget;
             //ail: for moving we pick the target that is overall the most suitable, so that bombers move towards planet
+            chooseTarget(stack, true, true);
             FlightPath bestPathToTarget = chooseTarget(stack, false, false);
+            //ail: if our target to move to is not the same as the target we can currently shoot at, we shoot before moving
+            if(closeTarget != null && closeTarget != distantTarget)
+            {
+                if (stack.canAttack(closeTarget)) 
+                    performSmartAttackTarget(stack, closeTarget);
+            }
             // if we need to move towards target, do it now
             if (currentTarget != null) {
                 if (stack.mgr.autoResolve) {
@@ -109,20 +118,20 @@ public class AIShipCaptain implements Base, ShipCaptain {
             {
                 chooseTarget(stack, false, true);
                 if (stack.canAttack(currentTarget)) 
-                    performSmartAttackTarget(stack);
+                    performSmartAttackTarget(stack, currentTarget);
                     //mgr.performAttackTarget(stack);
                 //now chhose our previous target again
                 chooseTarget(stack, false, false);
             }
             if (stack.canAttack(currentTarget)) 
-                performSmartAttackTarget(stack);
+                performSmartAttackTarget(stack, currentTarget);
                 //mgr.performAttackTarget(stack);
             else
             {
                 //ail: if we couldn't attack our move-to-target, we try and see if anything else can be attacked from where we are
                 chooseTarget(stack, true, false);
                 if (stack.canAttack(currentTarget)) 
-                    performSmartAttackTarget(stack);
+                    performSmartAttackTarget(stack, currentTarget);
                     //mgr.performAttackTarget(stack);
             }
          
@@ -136,12 +145,12 @@ public class AIShipCaptain implements Base, ShipCaptain {
         mgr.turnDone(stack);
     }
    
-    private void performSmartAttackTarget(CombatStack stack)
+    private void performSmartAttackTarget(CombatStack stack, CombatStack target)
     {
         //1st run: fire only specials which are not repulsor or stasis-field
         for (int i=0;i<stack.numWeapons(); i++) {
             if(!stack.weapon(i).isSpecial()
-                    || !((CombatStackShip)stack).shipComponentCanAttack(currentTarget, i)
+                    || !((CombatStackShip)stack).shipComponentCanAttack(target, i)
                     || stack.weapon(i).tech().isType(Tech.REPULSOR)
                     || stack.weapon(i).tech().isType(Tech.STASIS_FIELD))
             {
@@ -149,26 +158,26 @@ public class AIShipCaptain implements Base, ShipCaptain {
             }
             else
             {
-                stack.fireWeapon(currentTarget, i);
+                stack.fireWeapon(target, i);
             }
         }
         //2nd run: fire non-special-weapons
         for (int i=0;i<stack.numWeapons(); i++) {
             if(stack.selectedWeapon().isSpecial()
-                    || !((CombatStackShip)stack).shipComponentCanAttack(currentTarget, i))
+                    || !((CombatStackShip)stack).shipComponentCanAttack(target, i))
             {
                 continue;
             }
             else
             {
-                stack.fireWeapon(currentTarget, i);
+                stack.fireWeapon(target, i);
             }
         }
         //3rd run: fire whatever is left
         for (int i=0;i<stack.numWeapons(); i++) {
-            if(((CombatStackShip)stack).shipComponentCanAttack(currentTarget, i))
+            if(((CombatStackShip)stack).shipComponentCanAttack(target, i))
             {
-                stack.fireWeapon(currentTarget, i);
+                stack.fireWeapon(target, i);
             }
         }
     }
@@ -193,7 +202,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             {
                 continue;
             }
-            if(onlyShips)
+            if(onlyShips && target.isColony())
             {
                 continue;
             }
@@ -265,6 +274,10 @@ public class AIShipCaptain implements Base, ShipCaptain {
             }
         }
         currentTarget = bestTarget;
+        if(onlyInAttackRange)
+            closeTarget = bestTarget;
+        else
+            distantTarget = bestTarget;
         return bestPath;
     }
     public Point findClosestPoint(CombatStack st, CombatStack tgt) {
@@ -445,7 +458,6 @@ public class AIShipCaptain implements Base, ShipCaptain {
     public boolean facingOverwhelmingForce(CombatStack stack) {
         // build list of allies & enemies
         allies().clear(); enemies().clear();
-        boolean unCounteredRepulsor = false;
         for (CombatStack st : combat().activeStacks()) {
             if (st.isMonster()) 
                 enemies.add(st);
@@ -493,7 +505,6 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 {
                     //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
                     killPct = 0;
-                    unCounteredRepulsor = true;
                 }
                 float killValue = killPct*st2.num*st2.designCost();
                 //System.out.print("\n"+stack.fullName()+" "+st1.fullName()+" thinks it can kill "+killPct+" val: "+killValue+" of "+st2.fullName()+" it has: "+pctOfMaxHP);
@@ -525,9 +536,6 @@ public class AIShipCaptain implements Base, ShipCaptain {
             }
             enemyKills += maxKillValue;
         }
-        //even one stack with repulsors can cover up to three additional stacks in a corner
-        if(unCounteredRepulsor && foes.size() <= 4)
-            allyKills = 0;
         if (enemyKills == 0)
             return false;
         else if (allyKills == 0)

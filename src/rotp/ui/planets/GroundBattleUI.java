@@ -627,7 +627,7 @@ public class GroundBattleUI extends BasePanel implements MouseListener {
                 else {
                     int frame = defenderState[count];  // DEFENDER_END_DYING... 0... DEFENDER_END_FIRING
                     if (frame > BEGIN_DYING)
-                        iconImg = frame < defenderDeathFrames.size() ? defenderDeathFrames.get(frame) : null;
+                        iconImg = frame < defenderFrames.size() ? defenderFrames.get(frame) : null;
                     else {
                         int deathFrame = 0-frame-1;
                         iconImg = deathFrame < defenderDeathFrames.size() ? defenderDeathFrames.get(0-frame-1) : null;

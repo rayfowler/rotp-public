@@ -110,7 +110,10 @@ public class NewShipTemplate implements Base {
 
         // how many ships of each design can we build for virtual tests?
         // use top 3 colonies
-        float shipBudgetBC = shipProductionBudget(ai, 3);
+        int coloniesForBudget = 3;
+        if (role == DesignType.BOMBER)
+            coloniesForBudget = 1;
+        float shipBudgetBC = shipProductionBudget(ai, coloniesForBudget);
         
         SortedMap<Float, ShipDesign> designSorter = new TreeMap<>();
         

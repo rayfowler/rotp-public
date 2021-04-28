@@ -653,11 +653,11 @@ public class AIFleetCommander implements Base, FleetCommander {
                         {
                             onlyColonizerTargets = true;
                             target = findBestTarget(fleet, onlyBomberTargets, onlyColonizerTargets);
-                            if(target == null)
-                            {
-                                target = findBestGatherpoint(fleet);
-                                targetIsGatherPoint = true;
-                            }
+                        }
+                        if(target == null)
+                        {
+                            target = findBestGatherpoint(fleet);
+                            targetIsGatherPoint = true;
                         }
                     }
                     if(target != null)

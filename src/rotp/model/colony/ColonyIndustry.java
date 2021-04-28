@@ -229,7 +229,12 @@ public class ColonyIndustry extends ColonySpendingCategory {
         // cost to convert alien factories
         float convertCost = totalAlienConversionCost();
         if (newBC <= convertCost)
-            return text(convertAlienFactoriesText);
+        {
+            if(newBC > 0)
+                return text(convertAlienFactoriesText);
+            else
+                return text(noneText);
+        }
 
         newBC -= convertCost;
 
