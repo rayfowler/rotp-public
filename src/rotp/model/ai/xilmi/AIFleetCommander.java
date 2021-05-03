@@ -181,7 +181,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                 targetTech = current.empire().tech().avgTechLevel();
             if(enemyBc * (targetTech+10.0f) * 2 > ourEffectiveBC * (civTech+10.0f))
                 continue;
-            if(empire.enemies().isEmpty())
+            if(empire.warEnemies().isEmpty())
             {
                 for(StarSystem mySystem : mySystemsInShipRange)
                 {
@@ -199,7 +199,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             {
                 for(StarSystem other : otherSystemsInShipRange)
                 {
-                    if(empire.enemies().contains(other.empire()))
+                    if(empire.warEnemies().contains(other.empire()))
                     {
                         float scoreToAdd = max(other.colony().production() * other.planet().productionAdj() * other.planet().researchAdj(), 1.0f) / (1 + current.distanceTo(other));
                         currentScore += scoreToAdd;
@@ -429,7 +429,6 @@ public class AIFleetCommander implements Base, FleetCommander {
                 //we only reduce the attractiveness of the system, if it isn't about to become a new colony of ours
                 if((!fleet.canColonizeSystem(current) && myTransports == 0 && !colonizerEnroute) || colonizationBonus == 0)
                     score *= Math.max(1 - (bombardDamage / current.colony().untargetedHitPoints()), 0.0f);
-                score *= 1 + 0.5f * colonizationBonus; 
             }
             if(enemyBc + baseBc > 0 && fleet.system() != current)
             {
