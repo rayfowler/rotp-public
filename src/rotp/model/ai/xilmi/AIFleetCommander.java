@@ -729,6 +729,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                         else
                         {
                             float enemyBC = 0.0f;
+                            float enemyBaseBC = 0.0f;
                             boolean needToGuess = false;
                             float targetTech = civTech;
                             for(ShipFleet orbiting : target.orbitingFleets())
@@ -803,7 +804,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                                     //ail: if we can't see the system, assume there's at least a fair share of ships for defense
                                     if(needToGuess)
                                         enemyBC = max(enemyBC, target.empire().totalFleetCost() * target.colony().production() / target.empire().totalIncome());
-                                    enemyBC += empire.sv.bases(target.id)*target.empire().tech().newMissileBaseCost();
+                                    enemyBaseBC = empire.sv.bases(target.id)*target.empire().tech().newMissileBaseCost();
                                     EmpireView ev = empire.viewForEmpire(empire.sv.empId(target.id));
                                     if(ev != null)
                                     {
@@ -850,14 +851,18 @@ public class AIFleetCommander implements Base, FleetCommander {
                             {
                                 allowBombers = false;
                             }
-                            float ourEffectiveBC = bcValue(fleet, false, allowFighters, allowBombers, allowColonizers);
+                            float ourEffectiveBC = bcValue(fleet, false, true, false, false);
+                            float ourEffectiveBombBC = bcValue(fleet, false, false, true, false);
                             if(ourEffectiveBC - keepBc > 0)
                             {
                                 float enemyBCWithBonus = enemyBC;
+                                float enemyBaseBCWithBonus = enemyBaseBC;
                                 if(systemInfoBuffer.containsKey(target.id)){
                                     enemyBCWithBonus *= 1 + 0.5f * systemInfoBuffer.get(target.id).additionalSystemsInRangeWhenColonized;
+                                    enemyBaseBCWithBonus *= 1 + 0.5f * systemInfoBuffer.get(target.id).additionalSystemsInRangeWhenColonized;
                                 }
                                 sendAmount = max(sendAmount, min(1.0f, enemyBCWithBonus*(targetTech+10.0f)*2.0f / (ourEffectiveBC *(civTech+10.0f))));
+                                sendAmount = max(sendAmount, min(1.0f, enemyBaseBCWithBonus*(targetTech+10.0f)*2.0f / (ourEffectiveBombBC *(civTech+10.0f))));
                             }
                             else
                             {
@@ -874,7 +879,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                                 allowBombers = true;
                                 allowColonizers = true;
                             }
-                            if((ourEffectiveBC - keepBc) * (civTech+10.0f) * attackThreshold > enemyBC * (targetTech+10.0f))
+                            if((ourEffectiveBC - keepBc) * (civTech+10.0f) * attackThreshold > enemyBC * (targetTech+10.0f)
+                                    && ourEffectiveBombBC * (civTech+10.0f) * attackThreshold > enemyBaseBC * (targetTech+10.0f))
                             {
                                 if(fleet.canSendTo(target.id))
                                 {
