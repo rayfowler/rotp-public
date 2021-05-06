@@ -853,7 +853,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                             }
                             float ourEffectiveBC = bcValue(fleet, false, true, false, false);
                             float ourEffectiveBombBC = bcValue(fleet, false, false, true, false);
-                            if(ourEffectiveBC - keepBc > 0)
+                            float ourColonizerBC = bcValue(fleet, false, false, false, allowColonizers);
+                            if(ourEffectiveBC + ourEffectiveBombBC + ourColonizerBC - keepBc > 0)
                             {
                                 float enemyBCWithBonus = enemyBC;
                                 float enemyBaseBCWithBonus = enemyBaseBC;
@@ -861,8 +862,10 @@ public class AIFleetCommander implements Base, FleetCommander {
                                     enemyBCWithBonus *= 1 + 0.5f * systemInfoBuffer.get(target.id).additionalSystemsInRangeWhenColonized;
                                     enemyBaseBCWithBonus *= 1 + 0.5f * systemInfoBuffer.get(target.id).additionalSystemsInRangeWhenColonized;
                                 }
-                                sendAmount = max(sendAmount, min(1.0f, enemyBCWithBonus*(targetTech+10.0f)*2.0f / (ourEffectiveBC *(civTech+10.0f))));
-                                sendAmount = max(sendAmount, min(1.0f, enemyBaseBCWithBonus*(targetTech+10.0f)*2.0f / (ourEffectiveBombBC *(civTech+10.0f))));
+                                if(ourEffectiveBC > 0)
+                                    sendAmount = max(sendAmount, min(1.0f, enemyBCWithBonus*(targetTech+10.0f)*2.0f / (ourEffectiveBC *(civTech+10.0f))));
+                                if(ourEffectiveBombBC > 0)
+                                    sendAmount = max(sendAmount, min(1.0f, enemyBaseBCWithBonus*(targetTech+10.0f)*2.0f / (ourEffectiveBombBC *(civTech+10.0f))));
                             }
                             else
                             {
@@ -879,8 +882,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                                 allowBombers = true;
                                 allowColonizers = true;
                             }
-                            if((ourEffectiveBC - keepBc) * (civTech+10.0f) * attackThreshold > enemyBC * (targetTech+10.0f)
-                                    && ourEffectiveBombBC * (civTech+10.0f) * attackThreshold > enemyBaseBC * (targetTech+10.0f))
+                            if((ourEffectiveBC - keepBc) * (civTech+10.0f) * attackThreshold >= enemyBC * (targetTech+10.0f)
+                                    && ourEffectiveBombBC * (civTech+10.0f) * attackThreshold >= enemyBaseBC * (targetTech+10.0f))
                             {
                                 if(fleet.canSendTo(target.id))
                                 {
