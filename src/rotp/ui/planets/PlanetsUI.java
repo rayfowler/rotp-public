@@ -367,13 +367,13 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         int x5 = scaled(370);
         int w5 = scaled(190);
         int y5 = scaled(190);
-        HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y5, w5, 3, text("PLANETS_HELP_2D"));
+        HelpUI.HelpSpec sp5 = helpUI.addBrownHelpText(x5, y5, w5, 3, text("PLANETS_HELP_2E"));
         sp5.setLine(scaled(460), y5, scaled(460), s77);
         
         int x6 = scaled(475);
         int w6 = scaled(140);
         int y6 = scaled(100);
-        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 3, text("PLANETS_HELP_2E"));
+        HelpUI.HelpSpec sp6 = helpUI.addBrownHelpText(x6, y6, w6, 3, text("PLANETS_HELP_2D"));
         sp6.setLine(scaled(550), y6, scaled(550), s77);
         
         int x7 = scaled(590);
