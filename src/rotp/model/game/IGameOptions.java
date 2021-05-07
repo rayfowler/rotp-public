@@ -131,14 +131,12 @@ public interface IGameOptions {
     public static final String AI_HOSTILITY_HIGHEST  = "SETUP_AI_HOSTILITY_HIGHEST";
     
     public static final String OPPONENT_AI_BASE       = "SETUP_OPPONENT_AI_BASE";
-    public static final String OPPONENT_AI_HYBRID     = "SETUP_OPPONENT_AI_HYBRID";
     public static final String OPPONENT_AI_MODNAR     = "SETUP_OPPONENT_AI_MODNAR";
     public static final String OPPONENT_AI_XILMI      = "SETUP_OPPONENT_AI_XILMI";
     public static final String OPPONENT_AI_SELECTABLE = "SETUP_OPPONENT_AI_SELECT";
     
     public static final String AUTOPLAY_OFF           = "SETUP_AUTOPLAY_OFF";
     public static final String AUTOPLAY_AI_BASE       = "SETUP_AUTOPLAY_AI_BASE";
-    public static final String AUTOPLAY_AI_HYBRID       = "SETUP_AUTOPLAY_AI_HYBRID";
     public static final String AUTOPLAY_AI_MODNAR     = "SETUP_AUTOPLAY_AI_MODNAR";
     public static final String AUTOPLAY_AI_XILMI      = "SETUP_AUTOPLAY_AI_XILMI";
     
