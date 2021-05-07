@@ -69,7 +69,7 @@ PLANET_FERTILE                    | Γόνιμος
 PLANET_GAIA                       | Γαία
 
 // Planet Descriptors for Race
-PLANET_HOMEWORLD                  | Πλανήτης Έδρα - %1 
+PLANET_HOMEWORLD                  | Πλανήτης Κοιτίδα - %1 
 PLANET_WORLD                      | Κόσμος - %1
 PLANET_COLONY                     | Αποικία - %1
 PLANET_ORION                      | Ωρίων
@@ -132,12 +132,12 @@ EVENT_COMET_4                     | Ο φονικός κομήτης κατάσ�
 EVENT_DONATION                    | Ένας πλούσιος έμπορος, επιθυμώντας να υποστηρίξει το σκοπό τους έκανε μια γεναιόδωρη συνεισφορά [amt] ΔΙΣ στο Πλανητικό Απόθεμα των [target_race].
 EVENT_DEPLETED                    | Η φυλή των [target_race] εξόρυξε όλα τα γνωστά αποθέματα μετάλλων στον πλανήτη του συστήματος [system], καθιστώντας τον πλανήτη Πτωχό σε Μεταλλεύματα.
 EVENT_DERELICT                    | Ένας στόλος της αυτοκρατορίας των [target_empire] ανακάλυψε ένα αρχαίο εγκαταλελειμένο σκάφος. Επιστήμονες των [target_race] έχουν αποκομηδίσει έκτοτε από το σκάφος, πολλαπλές τεχνολογίες οπλικών συστημάτων και δυναμικών πεδίων.
-EVENT_EARTHQUAKE                  | Ολέθριος σεισμός χτύπησε τον κόσμο των[target_race] επί του συστήματος [system], σκοτώνοντας [amt] εκατομμύρια αποίκους ενώ προξένησε και σημαντικές φθορές στην εργοστασιακή δραστηριότητα.
+EVENT_EARTHQUAKE                  | Ολέθριος σεισμός χτύπησε τον κόσμο των[target_race] του συστήματος [system], σκοτώνοντας [amt] εκατομμύρια αποίκους ενώ προξένησε και σημαντικές φθορές στην εργοστασιακή δραστηριότητα.
 EVENT_ENRICHED                    | Έρευνα βαθιάς εξορύξεως των [target_race] στον κόσμο του συστήματος [system] αποκάλυψε τεράστια, προηγουμένως μη ανιχνεύσιμη, φλέβα βαρεών μετάλλων, καθιστώντας τον Πλούσιο σε Μεταλλεύματα.
 EVENT_FERTILE                     | Μια ξαφνική μεταβολή του πλανητικού άξονα του κόσμου των [target_race] στο σύστημα [system] άλλαξε το κλίμα του περιβάλλοντος σε πιο αναπαραγωγικά γόνιμο. Ο πληθυσμιακός ρυθμός ανάπτυξης αυξάνεται σε 50%.
 EVENT_PIRACY                      | Πειρατές έχουν αρχίσει να διαταράσσουν το εμπόριο μεταξύ συστημάτων των [target_race], μειώνοντας το σχετικό εμπορικό εισόδημα κατά [amt]%. Οπλισμένα σκάφη απαιτούνται στο σύστημα [system] για να αποδιοργανώσουν την βάση επιχειρήσεων τους.
 EVENT_PIRACY_2                    | Οι πειρατές με ορμητήριο το σύστημα [system] συνεχίζουν να διαταράσσουν την εμπορική δραστηριότητα των [target_race], μειώνοντας τα γενικά επίπεδα εμπορίου κατά ποσοστό που έχει υπολογιστεί σε [amt]%.
-EVENT_PIRACY_3                    | Ο στόλος των [target_race] κατάστρεψε μείζονα πειρατική επιχείρηση επί του συστήματος [system]. Τα γενικά επίπεδα εμπορίου επέστρεψαν στο κανονικό όριο.
+EVENT_PIRACY_3                    | Ο στόλος των [target_race] κατάστρεψε μείζονα πειρατική επιχείρηση του συστήματος [system]. Τα γενικά επίπεδα εμπορίου επέστρεψαν στο κανονικό όριο.
 EVENT_PLAGUE                      | Θανατηφόρα επιδημία χτύπησε τον κόσμο των [target_race] στο σύστημα [system]. Στο σύστημα επιβλήθηκε καραντίνα και εκατομμύρια αναμένεται να πεθαίνουν κάθε έτος μέχρι οι επιστήμονες να βρούν θεραπεία.
 EVENT_PLAGUE_2                    | Η Θανατηφόρος επιδημία στο σύστημα [system] επιμένει. Οι επιστήμονες υπολογίζουν ότι περίπου ακόμη [amt] ΠΕ χρειάζονται για να προκύψει θεραπεία.
 EVENT_PLAGUE_3                    | Επιστήμονες των [target_race] ανακάλυψαν τη θεραπεία για τη θανατηφόρα επιδημία που μάστιζε το σύστημα [system]. Η καραντίνα που είχε επιβληθεί στο σύστημα ανακλήθηκε.
@@ -153,10 +153,10 @@ EVENT_SPACE_AMOEBA_2              | Η Διαστημική Αμοιβάδα "κ
 EVENT_SPACE_AMOEBA_3              | Η Διαστημική Αμοιβάδα καταστράφηκε απο αμυνόμενους των [victim_race] στο σύστημα [system].
 EVENT_SPACE_CRYSTAL               | Μια γιγαντιαία διαστημική μορφή ζωής από κρύσταλλο αποκαλούμενη ως "Κρυσταλλική Οντότητα" εντοπίστηκε να πλησιάζει το σύστημα [system]. Υπερασπιστές άποικοι και στόλοι των [victim_race] προετοιμάζονται για το χειρότερο.
 EVENT_SPACE_CRYSTAL_1             | Μια γιγαντιαία διαστημική μορφή ζωής από κρύσταλλο αποκαλούμενη ως "Κρυσταλλική Οντότητα" εντοπίστηκε να πλησιάζει το ακατοίκητο σύστημα [system].
-EVENT_SPACE_CRYSTAL_2             | Η Κρυσταλλική Οντότητα κατέστρεψε εντελώς κάθε μορφή ζωής στην αποικία των [victim_race] επί του συστήματος [system].
+EVENT_SPACE_CRYSTAL_2             | Η Κρυσταλλική Οντότητα κατέστρεψε εντελώς κάθε μορφή ζωής στην αποικία των [victim_race] του συστήματος [system].
 EVENT_SPACE_CRYSTAL_3             | Η Κρυσταλλική Οντότητα καταστράφηκε από αμυνόμενους των [victim_race] στο σύστημα [system].
 
-SYSEVENT_HOMEWORLD                | Πλανήτης Έδρα των [alien_race].
+SYSEVENT_HOMEWORLD                | Πλανήτης Κοιτίδα των [alien_race].
 SYSEVENT_SCOUTED                  | Ανιχνεύτηκε πρώτα από τους [alien_race].
 SYSEVENT_COLONIZED                | Αποικίστηκε από τους [alien_race].
 SYSEVENT_CAPTURED                 | Καταλήφθηκε από δυνάμεις των [alien_race].
@@ -254,14 +254,14 @@ INC_GENOCIDE_DESC                 | Οι [attacker_empire] κατέστρεψα�
 INC_FINAL_WAR_TITLE               | Τελικός Πόλεμος!
 INC_FINAL_WAR_DESC                | Οι [rebel_empire] επαναστάτησαν εναντίον του ψηφίσματος του Γαλαξιακού Συμβουλίου, με αποτέλεσμα να κληθούν οι υπόλοιπες συμαχικές δυνάμεις του Γαλαξία να τους εξολοθρεύσουν ολοκληρωτικά.
 INC_MILITARY_BUILDUP_TITLE        | Συγκέντρωση Στόλου
-INC_MILITARY_BUILDUP_DESC         | Οι [your_empire] συγκεντρώνουν έναν οπλισμένο στόλο επί του συστήματος [system].
+INC_MILITARY_BUILDUP_DESC         | Οι [your_empire] συγκεντρώνουν έναν οπλισμένο στόλο στο σύστημα [system].
 INC_OATHBREAKER_TITLE             | Καταπάτηση Όρκου
 INC_DESTROYED_BASES_TITLE         | Κατεστραμμένες Στρατιωτικές Βάσεις
-INC_DESTROYED_BASES_DESC          | Σαμποτέρ των [spy_empire] κατέστρεψαν [amt] αμυντικές πυραυλικές βάσεις επί του συστήματος [system].
+INC_DESTROYED_BASES_DESC          | Σαμποτέρ των [spy_empire] κατέστρεψαν [amt] αμυντικές πυραυλικές βάσεις του συστήματος [system].
 INC_DESTROYED_FACTORIES_TITLE     | Κατεστραμμένα Εργοστάσια
-INC_DESTROYED_FACTORIES_DESC      | Σαμποτέρ των [spy_empire] κατέστρεψαν [amt] βιομηχανικές εγκαταστάσεις επί του συστήματος [system].
+INC_DESTROYED_FACTORIES_DESC      | Σαμποτέρ των [spy_empire] κατέστρεψαν [amt] βιομηχανικές εγκαταστάσεις του συστήματος [system].
 INC_INCITED_REBELLION_TITLE       | Προκληθείσα Εξέγερση
-INC_INCITED_REBELLION_DESC        | Στασιαστές των [spy_empire] εκπαίδευσαν [amt] εκατομμύρια επαναστάτες επί του συστήματος [system].
+INC_INCITED_REBELLION_DESC        | Στασιαστές των [spy_empire] εκπαίδευσαν [amt] εκατομμύρια επαναστάτες του συστήματος [system].
 INC_SIGNED_ALLIANCE_TITLE         | Συμμαχία
 INC_SIGNED_ALLIANCE_DESC          | Οι [my_empire] και [your_empire] αποφάσισαν να ενωθούν σε Συμμαχία, υποσχόμενοι να αλληλοπροστατεύονται από εξωτερικές απειλές. 
 INC_JOINT_WAR_TITLE               | Κήρυξη Πολέμου
@@ -273,7 +273,7 @@ INC_SIGNED_PEACE_DESC             | Οι [my_empire] και [your_empire] υπέ
 INC_SIGNED_TRADE_TITLE            | Εμπορική Συμφωνία
 INC_SIGNED_TRADE_DESC             | Οι [my_empire] και [your_empire] συμφώνησαν να συνάψουν Εμπορική Συνθήκη μέγιστου ετήσιου ύψους [amt] ΔΙΣ.
 INC_SKIRMISH_TITLE                | Αψιμαχία
-INC_SKIRMISH_DESC                 | Στόλοι των [my_race] και [your_race] ενεπλάκησαν σε μάχη επί του συστήματος [system].
+INC_SKIRMISH_DESC                 | Στόλοι των [my_race] και [your_race] ενεπλάκησαν σε μάχη στο σύστημα [system].
 INC_SPY_CONFESSION_TITLE          | Ομολογία Κατασκόπου
 INC_SPY_CONFESS_ESPIONAGE_DESC    | Κατάσκοπος των [spy_empire] συνελήφθη και ομολόγησε κατασκοπευτικές ενέργειες σχεδιασμένες εναντίον της αυτοκρατορίας των [victim_empire].
 INC_SPY_CONFESS_SABOTAGE_DESC     | Κατάσκοπος των [spy_empire] αιχμαλωτίσθηκε και ομολόγησε κατασκοπευτικές ενέργειες σε εξέλιξη, σχεδιασμένες εναντίον της αυτοκρατορίας των [victim_empire].
@@ -281,7 +281,7 @@ INC_SPY_CAPTURED_DESC             | Κατάσκοπος των [spy_empire] α�
 INC_TRADE_INCOME_TITLE            | Εμπορικό Κέρδος
 INC_TRADE_INCOME_DESC             | Το Εμπόριο μεταξύ των [your_empire] και [my_empire] απέδωσε κέρδη ύψους [amt] ΔΙΣ.
 INC_TRESPASSING_TITLE             | Εδαφική Παραβίαση
-INC_TRESPASSING_DESC              | Στόλοι της [your_race] εισήλθαν παράνομα επί του συστήματος [system], εδαφών της [my_empire].
+INC_TRESPASSING_DESC              | Στόλοι της [your_race] εισήλθαν παράνομα στο σύστημα [system], εδαφών της [my_empire].
 
 // generic click to skip or continue messages
 CLICK_SKIP                        | Κλικάρετε ή Πατήστε Esc για να παραλείψετε την Κινούμενη Απεικόνιση
@@ -300,9 +300,9 @@ GAME_MENU_LOAD_GAME               | Επαναφορά Αποθήκευσης
 GAME_MENU_SAVE_GAME               | Αποθήκευση
 GAME_MENU_SETTINGS                | Ρυθμίσεις
 GAME_MENU_EXIT                    | Έξοδος
-GAME_MENU_RESTART                 | Επανέναρξη
-GAME_VERSION                      | Έκδοση: Έκδοση %1
-GAME_SHRINK                       | Σύμπτυξη -
+GAME_MENU_RESTART                 | Επανεκκίνηση
+GAME_VERSION                      | Έκδοση: Ελληνική Έκδοση %1
+GAME_SHRINK                       | Σμίκρυνση -
 GAME_ENLARGE                      | Μεγέθυνση
 
 // Game Settings UI
@@ -314,7 +314,7 @@ GAME_SETTINGS_DISPLAY_MODE        | Προβολή Εφαρμογής: %1
 GAME_SETTINGS_WINDOWED            | Σε Παράθυρο
 GAME_SETTINGS_BORDERLESS          | Χωρίς Περίγραμμα
 GAME_SETTINGS_FULLSCREEN          | Πλήρης Οθόνη
-GAME_SETTINGS_DISPLAY_MODE_DESC   | Απαιτεί επανεκίνηση. Σε Παράθυρο είναι σταθερής αναλογίας και προσαρμόσιμου μεγέθους. Χωρίς Περίγραμμα είναι μεγιστοποιημένο παράθυρο. Πλήρης Οθόνη είναι αποκλειστικό μεγιστοποιημένο παράθυρο ίσο με την έκταση της οθόνης.
+GAME_SETTINGS_DISPLAY_MODE_DESC   | Απαιτεί επανεκκίνηση. Σε Παράθυρο: σταθερή αναλογίας/προσαρμόσιμο μέθος. Χωρίς Περίγραμμα: μεγιστοποιημένο παράθυρο. Πλήρης Οθόνη: αποκλειστικό μεγιστοποιημένο παράθυρο ίσο με έκταση οθόνης.
 GAME_SETTINGS_GRAPHICS            | Επίπεδο Γραφικών: %1
 GAME_SETTINGS_GRAPHICS_LOW        | Χαμηλό
 GAME_SETTINGS_GRAPHICS_MED        | Μεσαίο
@@ -355,13 +355,13 @@ GAME_SETTINGS_AUTOBOMBARD_NEVER   | Ποτέ
 GAME_SETTINGS_AUTOBOMBARD_YES     | Πάντοτε
 GAME_SETTINGS_AUTOBOMBARD_WAR     | Μόνο σε πόλεμο
 GAME_SETTINGS_AUTOBOMBARD_INVADE  | Μόνο σε πόλεμο χωρίς εισβολή
-GAME_SETTINGS_AUTOBOMBARD_DESC    | Εναλαγή για να ερωτάσθε πάντοτε πριν το βομβαρδισμό, να μην βομβαρδίζετε ποτέ, να βομβαρδίζετε πάντοτε, να βομβαρδίζετε αυτόματα σε καιρό πολέμου, ή να βομβαρδίζετε αυτόματα σε καιρό πολέμου με προυπόθεση ότι δεν έχετε στόλους εισβολής εν πλώ. 
-GAME_SETTINGS_BACKUP_OFF          | Αποεπιλεγμένο
+GAME_SETTINGS_AUTOBOMBARD_DESC    | Εναλαγή: ερωτάσθε πάντοτε πριν βομβαρδισμό, δεν βομβαρδίζετε ποτέ, βομβαρδίζετε πάντοτε, βομβαρδίζετε αυτόματα σε καιρό πολέμου, ή βομβαρδίζετε αυτόματα σε καιρό πολέμου εάν δεν έχετε στόλους εισβολής εν πλώ. 
+GAME_SETTINGS_BACKUP_OFF          | Αποεπιλογή
 GAME_SETTINGS_BACKUP_ON           | Κάθε %1 γύρο(υς)
 GAME_SETTINGS_BACKUP              | Εφεδρικό Αντίγραφο: %1
-GAME_SETTINGS_BACKUP_DESC         | Επιλέξτε για να σώζετε αυτόματα το τρέχων παιχνίδι σας στο φάκελο εφεδρικών αντιγράφων με μοναδικό όνομα, ώστε να μπορείτε να επαναφέρετε προγενέστερες σωσμένες θέσεις.
-GAME_SETTINGS_SAVEDIR             | Κατάλογος Αποθηκευμένων Θέσεων: %1
-GAME_SETTINGS_SAVEDIR_DEFAULT     | Προεπιλεγμένος
+GAME_SETTINGS_BACKUP_DESC         | Επιλέξτε για να σώζετε αυτόματα το τρέχον παιχνίδι σας στο φάκελο εφεδρικών αντιγράφων με μοναδικό όνομα, ώστε να μπορείτε να επαναφέρετε προγενέστερες σωσμένες θέσεις.
+GAME_SETTINGS_SAVEDIR             | Κατάλογος Αποθήκευσεων: %1
+GAME_SETTINGS_SAVEDIR_DEFAULT     | Προεπιλογή
 GAME_SETTINGS_SAVEDIR_CUSTOM      | Ορισμός Καταλόγου
 GAME_SETTINGS_SAVEDIR_DESC1       | Ο κατάλογος σωσμένος θέσεων έχει ρυθμιστεί ώς ταυτόσημος με τον κατάλογο αρχείων του παιχνιδιού.
 GAME_SETTINGS_SAVEDIR_DESC2       | Ο κατάλογος σωσμένος θέσεων είναι: %1
@@ -369,8 +369,8 @@ GAME_SETTINGS_SAVEDIR_DESC2       | Ο κατάλογος σωσμένος θέ�
 // Load Game UI
 LOAD_GAME_TITLE                   | Επαναφορά Αποθηκευμένης Θέσης
 LOAD_GAME_AUTOSAVE                | Πιο Πρόσφατη Αυτόματη Αποθήκευση
-LOAD_GAME_BACKUP_DIR              | Backup Directory: %1 files
-LOAD_GAME_SAVE_DIR                | Κατάλογος Αποθηκεύσεων: %1 files
+LOAD_GAME_BACKUP_DIR              | Κατάλογος Εφεδρικού: %1 αρχείων
+LOAD_GAME_SAVE_DIR                | Κατάλογος Αποθηκεύσεων: %1 αρχείων
 LOAD_GAME_FILENAME                | Ταξινόμηση κατά Όνομα Αρχείου
 LOAD_GAME_DATE                    | κατά Ημερομηνία
 LOAD_GAME_SIZE                    | κατά Μέγεθος
@@ -430,8 +430,8 @@ MAIN_HELP_2E                      | Αλλαγή τύπου σκάφους πο�
 MAIN_HELP_2F                      | Επιλέξτε σημείο συγκέντρωσης για να στέλνετε αυτομάτως νεοκατασκευασθέντα σκάφη σε άλλη αποικία.
 MAIN_HELP_2G                      | Μεταφέρεται πληθυσμό για να ενισχύσετε άλλη αποικία ή να στείλετε στρατεύματα εισβολής σε άλλο πλανήτη. Η αποικία υφίσταται το μεταφορικό κόστος κάθε φορά στην παραγωγή της.
 MAIN_HELP_2H                      | Εγκαταλείψτε εντελώς έναν πλανήτη μεταφέροντας όλο τον πληθυσμό του σε άλλη αποικία.
-MAIN_HELP_2I                      | Πλανητικός πληθυσμός - τρέχων και μέγιστος. Το 100 αντιπροσωπεύει γεμάτο με πληθυσμό πλανήτη που δεν έχει γεωπλασθεί.
-MAIN_HELP_2J                      | Τρέχων και μέγιστος αριθμός επιτρεπόμενων εργοστασίων. Ο μέγιστος αριθμός εργοστασίων καθορίζεται από τον πληθυσμό και την τεχνολογία ρομποτικού ελέγχου.
+MAIN_HELP_2I                      | Πλανητικός πληθυσμός - τρέχον και μέγιστος. Το 100 αντιπροσωπεύει γεμάτο με πληθυσμό πλανήτη που δεν έχει γεωπλασθεί.
+MAIN_HELP_2J                      | Τρέχον και μέγιστος αριθμός επιτρεπόμενων εργοστασίων. Ο μέγιστος αριθμός εργοστασίων καθορίζεται από τον πληθυσμό και την τεχνολογία ρομποτικού ελέγχου.
 MAIN_HELP_2K                      | Τοποθετήστε μια σημαία στο πλανητικό σύστημα για να το επισημαίνετε εύκολα στο γαλαξιακό χάρτη.
 MAIN_HELP_2L                      | Το διαθέσιμο ποσό που έχει αποθηκευτεί στο θησαυροφυλάκιο της αυτοκρατορίας.
 MAIN_HELP_2M                      | Η τρέχουσα κατάσταση έρευνας για καθέναν από τους έξι τεχνολογικούς τομείς.
@@ -443,7 +443,7 @@ MAIN_HELP_3E                      | Φυλές - αναλυτικές πληρο
 MAIN_HELP_3F                      | Αποικίες - αναλυτική και ταξινομητέα καταχώρηση των αποικιών σου. Επίσης παρέχει πληροφορίες για το εισόδημα και τα έξοδα της αυτοκρατορίας.
 MAIN_HELP_3G                      | Τεχνολογία - εμφανίζει τις διαθέσιμες τεχνολογίες. Σου επιτρέπει να εστιάζεις ή να κατανέμεις Πόντους Έρευνας(ΠΕ) σε μέχρι και έξι τεχνολογικούς τομείς.
 MAIN_HELP_3H                      | Επόμενο Έτος - προχωράει το παιχνίδι στο επόμενο έτος.
-MAIN_HELP_3I                      | Τρέχων Γύρος - εμφανίζει τον τρέχων γύρο τπυ παιχνιδιού ή το τρέχων έτος στην αυτοκρατορία σου. Κλίκαρε για εναλαγή.
+MAIN_HELP_3I                      | Τρέχων Γύρος - εμφανίζει τον τρέχον γύρο τπυ παιχνιδιού ή το τρέχον έτος στην αυτοκρατορία σου. Κλίκαρε για εναλαγή.
 MAIN_HELP_3J                      | Προβολή Γαλαξία - κλίκαρε για κυκλική ρύθμιση τρόπων προβολής γαλαξιακού χάρτη.
 
 MAIN_SYSTEM_DETAIL_PFB            | Πληθ. %1  Εργ. %2  Βασ. %3
@@ -507,7 +507,7 @@ MAIN_FLEET_IN_ORBIT               | Σε τροχιά
 MAIN_FLEET_DEPLOYED               | Σε αποστολή
 MAIN_FLEET_IN_TRANSIT             | Εν πλώ
 MAIN_FLEET_RETREATING             | Οπισθοχωρώντας
-MAIN_FLEET_LOCATION               | επί %1
+MAIN_FLEET_LOCATION               | %1
 MAIN_FLEET_ORIGIN                 | από %1
 MAIN_FLEET_DESTINATION            | προς %1
 MAIN_FLEET_DEST_UNSCOUTED         | προς ανεξερεύνητο
@@ -612,7 +612,7 @@ MAIN_COLONY_COMPLETION_CENTURY    | %1 Έτη
 MAIN_COLONY_COMPLETION_PER_YEAR   | %1/Έτος
 MAIN_COLONY_SHIPYARD_COMPLETED    | Ολοκλήρωση: %1
 MAIN_COLONY_SHIPYARD_LIMIT        | Όριο Κατασκευής:
-MAIN_COLONY_SHIPYARD_LIMIT_NONE   | Κανένα
+MAIN_COLONY_SHIPYARD_LIMIT_NONE   | Χωρίς
 MAIN_COLONY_SHIPYARD_CONSTRUCTION | Σειρά Κατασκευής Σκαφών
 MAIN_COLONY_RELOCATE_LABEL        | Ορίστε Σημείο Συγκέντ
 MAIN_COLONY_TRANSPORTS_LABEL      | Στείλτε Μεταγωγικά
@@ -638,7 +638,7 @@ MAIN_SCOUT_RICH_DESC              | Πόροι: Πλούσιος - Το βιομ
 MAIN_SCOUT_ULTRA_RICH_DESC        | Πόροι: Πάμπλουτος - Το βιομηχανικό προΐόν τριπλασιάζεται.
 
 // Colonization prompt
-MAIN_COLONIZE_TITLE               | Αποικιστές μας είναι σε τροχιά επί %1, μη αποικισμένο σύστημα.
+MAIN_COLONIZE_TITLE               | Αποικιστές μας είναι σε τροχιά %1, μη αποικισμένο σύστημα.
 MAIN_COLONIZE_PROMPT              | Δημιουργία Αποικίας?
 MAIN_COLONIZE_YES                 | Ναί
 MAIN_COLONIZE_NO                  | Όχι
@@ -648,7 +648,7 @@ MAIN_COLONIZE_NAME_OK             | OK
 
 // Reasons to ask player to reallocate a system (during next turn)
 MAIN_ALLOCATE_TITLE               | Αναδιάρθρωση Δαπανών
-MAIN_ALLOCATE_DESIGN_SCRAPPED     | Το σκάφος που κατασκευαζόταν επί του %1 διαλύθηκε.
+MAIN_ALLOCATE_DESIGN_SCRAPPED     | Το σκάφος που κατασκευαζόταν στο σύστημα %1 διαλύθηκε.
 MAIN_ALLOCATE_COLONIZED           | • Ο %1 αποικίστηκε.
 MAIN_ALLOCATE_STARGATE_COMPLETE   | • Ο %1 ολοκλήρωσε την κατασκευή μιας Αστροπύλης.
 MAIN_ALLOCATE_SHIPS_COMPLETE      | • Ο %1 ολοκλήρωσε την κατασκευή του επιθυμητού αριθμού %2 σκαφών.
@@ -749,8 +749,8 @@ PLANETS_AMT_BC                    | %1 ΔΙΣ
 PLANETS_TRANSFER_DESC             | Μετάφερε κονδύλια σε %1
 PLANETS_TRANSFER_CANCEL           | Ακύρωση
 PLANETS_TRANSFER_ACCEPT           | Μεταφορά
-PLANETS_COLONY_TRANSFER_TITLE     | ------- Μεταφορά Διαθεσίμων -------
-PLANETS_COLONY_TRANSFER_DETAIL    | Μετάφερε κονδύλια από το Θησαυροφυλάκιο της Αυτοκρατορίας ώστε να αυξήσεις την παραγωγή αποικίας.
+PLANETS_COLONY_TRANSFER_TITLE     | - Μεταφορά Διαθεσίμων -
+PLANETS_COLONY_TRANSFER_DETAIL    | Μετάφερε κονδύλια Θησαυροφυλάκιου για να αυξήσεις την παραγωγή αποικίας.
 PLANETS_COLONY_TRANSFER_BUTTON    | Έμβασμα Θησαυροφυλακίου
 PLANETS_LIST_NUM                  | 
 PLANETS_LIST_NAME                 | Όνομα
@@ -791,8 +791,8 @@ PLANETS_HELP_2A                   | Όνομα - Το όνομα του συστ
 PLANETS_HELP_2B                   | Πληθυσμός - Τρέχων Πληθυσμός Αποικίας, συμπεριλαμβανόμενης της διαφοράς απο τον προηγούμενο γύρο.
 PLANETS_HELP_2C                   | Τύπος - Κυρίαρχος τύπος εδαφών Πλανήτη. Πράσσινο για τους γόνιμους Πλανήτες.
 PLANETS_HELP_2D                   | Πόροι - για Πλούσιους, Πτωχούς ή και Πλανήτες Τεχνουργημάτων.
-PLANETS_HELP_2E                   | Μέγεθος - Τρέχων μέγεθος Πλανήτη.
-PLANETS_HELP_2F                   | Απόβλητα - επίπεδο της βιομηχανικής μόλυνσης του Πλανήτη.
+PLANETS_HELP_2E                   | Μέγεθος - Τρέχον μέγεθος Πλανήτη.
+PLANETS_HELP_2F                   | Απόβλητα - Επίπεδο της βιομηχανικής μόλυνσης του Πλανήτη.
 PLANETS_HELP_2G                   | Σημειώσεις - Σημειώσεις Παίκτη για το σύστημα. Επεξεργάσιμο.
 PLANETS_HELP_3A                   | Όνομα - Το όνομα του συστήματος. Επεξεργάσιμο.
 PLANETS_HELP_3B                   | Πληθυσμός - Τρέχων Πληθυσμός Αποικίας, συμπεριλαμβανόμενης της διαφοράς απο τον προηγούμενο γύρο.
@@ -854,7 +854,7 @@ FLEETS_IS_STANDARD                | Το σύστημα έχει το συνηθ
 FLEETS_SYSTEMS_SELECTED           | %1  Συστήματα Επιλέχτηκαν
 FLEETS_FLEETS_SELECTED            | %1  Στόλοι Επιλέχτηκαν
 FLEETS_MULTIPLE_DESIGNS           | Πολλαπλά
-FLEETS_RELOCATE_LABEL             | Θέσατε Σημεία Συγκέντρωσης
+FLEETS_RELOCATE_LABEL             | Σημεία Συγκέντρωσης
 FLEETS_TRANSPORTS_LABEL           | Στείλτε Μεταγωγικά
 FLEETS_SPENDING_LABEL             | Ρυθμίστε τη Δαπάνη για Σκάφη
 FLEETS_HAS_ORDERS                 | Ο Στόλος είναι σε πλεύση
@@ -862,7 +862,7 @@ FLEETS_HAS_NO_ORDERS              | Ο Στόλος είναι σε τροχιά
 FLEETS_IS_RALLYING                | Ο Στόλος οδεύει προς Σημείο Συγκέντρωσης
 FLEETS_DESIGN_COUNT               | %1 %2
 FLEETS_DEPLOY_FLEETS              | Αποστείλατε Στόλους
-FLEETS_SET_RALLY_POINTS           | Θέσατε Σημεία Συγκέντρωσης
+FLEETS_SET_RALLY_POINTS           | Σημεία Συγκέντρωσης
 FLEETS_STOP_RALLIES_DESC          | %1 Επιλεγμένα συστήματα έχουν ήδη κατανεμημένα σημεία συγκέντρωση
 FLEETS_STOP_RALLIES               | Διακοπή Συγκεντρώσεων
 FLEETS_SETTING_RALLY_POINTS       | Έναρξη Συγκεντρώσεων
@@ -931,7 +931,7 @@ TECH_TRADE_TIER_COST_INFO         | (Σειρά %1 - %2 ΠΕ)
 TECH_CONFIRM_CHOICE               | Επιλογή
 TECH_DISCOVERY_TITLE              | Επιστήμονες των [player_race] καταφθάνουν σε ένα ακόμη %1 επίτευγμα
 TECH_SCOUTED_TITLE                | Ανιχνευτικά που εξερευνούσαν τα ερείπια του %1 ανακαλύπτουν:
-TECH_STOLEN_TITLE                 | Οι κατάσκοποι μας διείσδυσαν σε %1 ερευνητικά κέντρα επί του %2.
+TECH_STOLEN_TITLE                 | Οι κατάσκοποι μας διείσδυσαν σε %1 ερευνητικά κέντρα του %2.
 TECH_TRADED_TITLE                 | Επιστήμονες των [player_race] αποκτούν Τεχνολογία από τους Επιστήμονες των [alien_race]
 TECH_PLUNDERED_TITLE              | Στρατιώτες στα ερείπια του %1 λαφυραγωγούν:
 TECH_DERELICT_TITLE               | Εξερευνητές των [player_race] βρίσκουν τα χαμένα μυστικά μιας ξεχασμένης Αρχαίας Τεχνολογίας
@@ -982,7 +982,7 @@ NOTICE_SPIES_SABOTAGE_FACTORIES   | • Οι κατάσκοποι μας επέ�
 NOTICE_SPIES_SABOTAGE_BASES       | • Οι κατάσκοποι μας επέτυχαν να κατέστρεψουν %1 πυραυλικές βάσεις που προστάτευαν το σύστημα %2.
 NOTICE_SPIES_SABOTAGE_REBELS      | • Οι κατάσκοποι μας επέτυχαν να υποδαυλίσουν επεναστάτες στο σύστημα %2.
 NOTICE_SPIES_SABOTAGE_REBELLION   | • Οι κατάσκοποι μας επέτυχαν να προξενήσουν επανάσταση στο σύστημα %2.
-NOTICE_SPIES_LEARNED_TECH         | • Οι κατάσκοποι μας αναφέρουν ότι οι [alien_empire] ολοκλήρωσαν την έρευνα τους στις ακόλουθες, άγνωστες για εμάς τεχνολογίες: %1
+NOTICE_SPIES_LEARNED_TECH         | • Οι κατάσκοποι μας αναφέρουν ότι οι [alien_empire] ολοκλήρωσαν την έρευνα τους στις ακόλουθες, άγνωστες για εμάς, τεχνολογίες: %1
 // this just details how to concatenate a list of multiple technology (English uses ,)
 NOTICE_SPIES_MULTIPLE_TECHS       | %1, %2
 NOTICE_SPIES_THREATEN             | Απειλή
@@ -1047,23 +1047,23 @@ SETUP_RULESET_SIRIUS              | Σείριος
 SETUP_GALAXY_SIZE_LABEL           | Μέγεθος
 SETUP_RACE_MULTIPLIER             | x%1
 SETUP_GALAXY_SHAPE_LABEL          | Σχήμα
-SETUP_GALAXY_SIZE_TINY            | Μικροσκοπικό Μέγεθος
-SETUP_GALAXY_SIZE_SMALL           | Μικρό Μέγεθος
-SETUP_GALAXY_SIZE_SMALL2          | Μικρό Μέγεθος
-SETUP_GALAXY_SIZE_AVERAGE         | Μέτριο Μέγεθος
-SETUP_GALAXY_SIZE_AVERAGE2        | Μέτριο Μέγεθος
-SETUP_GALAXY_SIZE_LARGE           | Μεγάλο Μέγεθος
-SETUP_GALAXY_SIZE_LARGE2          | Μεγάλο Μέγεθος
-SETUP_GALAXY_SIZE_HUGE            | Τεράστιο Μέγεθος
-SETUP_GALAXY_SIZE_HUGE2           | Τεράστιο Μέγεθος
-SETUP_GALAXY_SIZE_MASSIVE         | Πελώριο Μέγεθος
-SETUP_GALAXY_SIZE_MASSIVE2        | Πελώριο Μέγεθος
-SETUP_GALAXY_SIZE_MASSIVE3        | Πελώριο Μέγεθος
-SETUP_GALAXY_SIZE_MASSIVE4        | Πελώριο Μέγεθος
-SETUP_GALAXY_SIZE_MASSIVE5        | Πελώριο Μέγεθος
-SETUP_GALAXY_SIZE_INSANE          | Σχιζοφρενικό Μέγεθος
-SETUP_GALAXY_SIZE_LUDICROUS       | Φαιδρό Μέγεθος
-SETUP_GALAXY_SIZE_MAXIMUM         | Μέγιστο Μέγεθος
+SETUP_GALAXY_SIZE_TINY            | Μικροσκοπικό
+SETUP_GALAXY_SIZE_SMALL           | Μικρό 1
+SETUP_GALAXY_SIZE_SMALL2          | Μικρό 2
+SETUP_GALAXY_SIZE_AVERAGE         | Μέτριο 1
+SETUP_GALAXY_SIZE_AVERAGE2        | Μέτριο 2
+SETUP_GALAXY_SIZE_LARGE           | Μεγάλο 1
+SETUP_GALAXY_SIZE_LARGE2          | Μεγάλο 2
+SETUP_GALAXY_SIZE_HUGE            | Τεράστιο 1
+SETUP_GALAXY_SIZE_HUGE2           | Τεράστιο 2
+SETUP_GALAXY_SIZE_MASSIVE         | Πελώριο 1
+SETUP_GALAXY_SIZE_MASSIVE2        | Πελώριο 2
+SETUP_GALAXY_SIZE_MASSIVE3        | Πελώριο 3
+SETUP_GALAXY_SIZE_MASSIVE4        | Πελώριο 4
+SETUP_GALAXY_SIZE_MASSIVE5        | Πελώριο 5
+SETUP_GALAXY_SIZE_INSANE          | Σχιζοφρενικό
+SETUP_GALAXY_SIZE_LUDICROUS       | Φαιδρό
+SETUP_GALAXY_SIZE_MAXIMUM         | Μέγιστο
 SETUP_GALAXY_SHAPE_RECTANGLE      | Αστρικό Πεδίο
 SETUP_GALAXY_SHAPE_CIRCULAR       | Κυκλικός
 SETUP_GALAXY_SHAPE_RING           | Δακτυλοειδής
@@ -1097,21 +1097,19 @@ SETUP_RANDOM_EVENTS_NO_MONSTERS   | Χωρίς Τέρατα
 SETUP_GALAXY_NUMBER_EMPIRES       | Σύνολο Αυτοκρατοριών: %1
 SETUP_GALAXY_NUMBER_SYSTEMS       | Σύνολο Συστημάτων: %1
 SETUP_GALAXY_MAX_OPPONENTS        | Μέγιστος Αριθμός Αντιπάλων: %1
-SETUP_OPPONENTS_HEADER_1          | %1 εναντίον.
-SETUP_OPPONENTS_HEADER_2          | Αντίπαλες Αυτοκρατορίες
+SETUP_OPPONENTS_HEADER_1          | %1 εναντίον
+SETUP_OPPONENTS_HEADER_2          | Φυλών
 SETUP_OPPONENT_RANDOM             | ???
-SETUP_OPPONENT_AI                 | Επιλέξτε τύπο Τεχνητής Νοημοσύνης Αντιπάλου:
-SETUP_OPPONENT_AI_BASE            | ΤΝ: Βασικό Επίπεδο
-SETUP_OPPONENT_AI_MODNAR          | ΤΝ: Επίπεδο Μόντναρ
-SETUP_OPPONENT_AI_XILMI           | ΤΝ: Επίπεδο Ιδιοφυία
-SETUP_OPPONENT_AI_HYBRID          | ΤΝ: Επίπεδο Υβρίδιο
-SETUP_OPPONENT_AI_SELECT          | ΤΝ: Επιλέξιμο
+SETUP_OPPONENT_AI                 | Τεχνητή Νοημοσύνη Αντιπάλου:
+SETUP_OPPONENT_AI_BASE            | Βασική
+SETUP_OPPONENT_AI_MODNAR          | Μόντναρ
+SETUP_OPPONENT_AI_XILMI           | Ξίλμι
+SETUP_OPPONENT_AI_SELECT          | Επιλέξιμο
 SETUP_AUTOPLAY_OFF                | Ανενεργό
-SETUP_AUTOPLAY_AI_BASE            | ΤΝ: Βασικό Επίπεδο
-SETUP_AUTOPLAY_AI_MODNAR          | ΤΝ: Επίπεδο Μόντναρ
-SETUP_AUTOPLAY_AI_XILMI           | ΤΝ: Επίπεδο Ιδιοφυία
-SETUP_AUTOPLAY_AI_HYBRID          | ΤΝ: Επίπεδο Υβρίδιο
-SETUP_GAME_DIFFICULTY_LABEL       | Επίπεδο Δυσκολίας
+SETUP_AUTOPLAY_AI_BASE            | ΤΝ: Βασικό
+SETUP_AUTOPLAY_AI_MODNAR          | ΤΝ: Μόντναρ
+SETUP_AUTOPLAY_AI_XILMI           | ΤΝ: Ξίλμι
+SETUP_GAME_DIFFICULTY_LABEL       | Δυσκολία
 SETUP_DIFFICULTY_EASIEST          | Κατώτατο
 SETUP_DIFFICULTY_EASIER           | Πιο Εύκολο
 SETUP_DIFFICULTY_EASY             | Εύκολο
@@ -1136,7 +1134,7 @@ SETUP_NEBULA_COMMON               | Κοινοτοπία
 SETUP_NEBULA_FREQUENT             | Συχνή
 SETUP_COUNCIL_NONE                | Ανυπαρξία Συμβουλίου
 SETUP_COUNCIL_IMMEDIATE           | Άμεσα
-SETUP_COUNCIL_REBELS              | Επιτρέπονται Επαναστάσεις
+SETUP_COUNCIL_REBELS              | Επιτρέπονται Στάσεις
 SETUP_STAR_DENSITY_LOWEST         | Κατώτατη
 SETUP_STAR_DENSITY_LOWER          | Χαμηλότερη
 SETUP_STAR_DENSITY_LOW            | Χαμηλή
@@ -1172,7 +1170,7 @@ SETUP_RANDOMIZE_AI_ABILITY        | Ικανότητα
 SETUP_RANDOMIZE_AI_BOTH           | Και τα δύο
 SETUP_RACE_LABEL                  | Διαθέσιμες Φυλές
 SETUP_RACE_COLOR                  | Χρώμα Αυτοκρατορίας:
-SETUP_HOMEWORLD_NAME_LABEL        | Όνομα Πλανήτη Έδρας:
+SETUP_HOMEWORLD_NAME_LABEL        | Όνομα Μητρικού Πλανήτη:
 SETUP_LEADER_NAME_LABEL           | Όνομα Ηγέτη:
 SETUP_FLAG_LABEL                  | Λάβαρο
 SETUP_BUTTON_CANCEL               | Ακύρωση
@@ -1181,14 +1179,14 @@ SETUP_BUTTON_NEXT                 | Επόμενο
 SETUP_BUTTON_START                | Έναρξη
 SETUP_BUTTON_SETTINGS             | Εξειδικευμένες Επιλογές
 
-SETUP_SPIRAL_2_ARMS               | Δύο Βραχίονες
-SETUP_SPIRAL_3_ARMS               | Τρείς Βραχίονες
-SETUP_SPIRAL_4_ARMS               | Τέσσερις Βραχίονες
-SETUP_SPIRAL_5_ARMS               | Πέντε Βραχίονες
-SETUP_SPIRAL_6_ARMS               | Έξι Βραχίονες
-SETUP_SPIRAL_7_ARMS               | Επτά Βραχίονες
-SETUP_SPIRAL_8_ARMS               | Οκτώ Βραχίονες
-SETUP_SPIRAL_ROTATION_0           | Χωρίς Περιστροφή
+SETUP_SPIRAL_2_ARMS               | 2 Βραχίονες
+SETUP_SPIRAL_3_ARMS               | 3 Βραχίονες
+SETUP_SPIRAL_4_ARMS               | 4 Βραχίονες
+SETUP_SPIRAL_5_ARMS               | 5 Βραχίονες
+SETUP_SPIRAL_6_ARMS               | 6 Βραχίονες
+SETUP_SPIRAL_7_ARMS               | 7 Βραχίονες
+SETUP_SPIRAL_8_ARMS               | 8 Βραχίονες
+SETUP_SPIRAL_ROTATION_0           | Περιστροφή 0
 SETUP_SPIRAL_ROTATION_1           | Περιστροφή 1
 SETUP_SPIRAL_ROTATION_2           | Περιστροφή 2
 SETUP_SPIRAL_ROTATION_3           | Περιστροφή 3
@@ -1329,7 +1327,7 @@ SHIP_DESIGN_COUNT_LABEL           | Καταμέτρηση
 SHIP_DESIGN_DAMAGE_LABEL          | Πλήγμα
 SHIP_DESIGN_POWER_LABEL           | Ισχύς
 SHIP_DESIGN_RANGE_LABEL           | Εμβέλεια
-SHIP_DESIGN_SPEED_LABEL           | Ταχύτης
+SHIP_DESIGN_SPEED_LABEL           | Ταχύτητα
 SHIP_DESIGN_COST_LABEL            | Κόστος
 SHIP_DESIGN_DESCRIPTION_LABEL     | Περιγραφή
 SHIP_DESIGN_RANGE_VALUE           | %1 έτη-φωτός
@@ -1344,17 +1342,17 @@ SHIP_DESIGN_HIT_POINTS_LABEL      | Πόντοι Πλήγματος
 SHIP_DESIGN_MISSILE_DEF_LABEL     | Πυραυλική Άμυνα
 SHIP_DESIGN_BEAM_DEF_LABEL        | Ενεργειακή Άμυνα
 SHIP_DESIGN_ATTACK_LEVEL_LABEL    | Επίπεδο Επίθεσης
-SHIP_DESIGN_COMBAT_SPEED_LABEL    | Ταχύτης Μάχης
+SHIP_DESIGN_COMBAT_SPEED_LABEL    | Ταχύτητα Μάχης
 SHIP_DESIGN_COMBAT_SPEED_VALUE    | %1 τετράγων(ο/α)
 SHIP_DESIGN_ENGINES_TITLE         | Κινητήρας
 SHIP_DESIGN_ENGINES_DESC          | Δίνει ενέργεια στο σκάφος και τα υποσυστήματα.
 SHIP_DESIGN_ENGINE_TYPE           | Τύπος
-SHIP_DESIGN_ENGINE_SPEED          | Ταχύτης
+SHIP_DESIGN_ENGINE_SPEED          | Ταχύτητα
 SHIP_DESIGN_ENGINE_COST1          | Κόστος, ανά κινητήρα
 SHIP_DESIGN_ENGINE_SIZE1          | Μέγεθος, ανά κινητήρα
 SHIP_DESIGN_ENGINE_POWER1         | Ισχύς, ανά κινητήρα
 SHIP_DESIGN_POWER_REQUIREMENTS    | Απαιτούμενη Ισχύς
-SHIP_DESIGN_ENGINES_REQUIRED      | Απαιτούμενες Μηχανές Κινητήρα
+SHIP_DESIGN_ENGINES_REQUIRED      | Απαιτούμενες Μηχανές
 SHIP_DESIGN_ENGINES_SIZE          | Συνολικό Μέγεθος Κινητήρα
 SHIP_DESIGN_ENGINES_COST          | Συνολικό Κόστος Κινητήρα
 SHIP_DESIGN_COPY_BUTTON           | Αντιγραφή
@@ -1415,7 +1413,7 @@ SHIP_DESIGN_ENGINE_SIZE           | Μέγεθος
 SHIP_DESIGN_ENGINE_POWER          | Ισχύς
 SHIP_DESIGN_MANEUVER_TITLE        | Ελιγμοστρόβιλος
 SHIP_DESIGN_MANEUVER_TYPE         | Τύπος Στρόβιλου
-SHIP_DESIGN_MANEUVER_SPEED        | Ταχύτητα
+SHIP_DESIGN_MANEUVER_SPEED        | Ταχύτης
 SHIP_DESIGN_MANEUVER_COST         | Κόστος
 SHIP_DESIGN_MANEUVER_POWER        | Ισχύς
 SHIP_DESIGN_MANEUVER_SPACE        | Χώρος
@@ -1540,7 +1538,7 @@ SHIP_COMBAT_SCAN_MISSILE_DEF      | Πυραυλική Άμυνα
 SHIP_COMBAT_SCAN_BEAM_DEF         | Ενεργειακή Άμυνα
 SHIP_COMBAT_SCAN_SHIELD_CLASS     | Κλάση Ασπίδας
 SHIP_COMBAT_SCAN_ATTACK_LEVEL     | Επίπεδο Επίθεσης
-SHIP_COMBAT_SCAN_SPEED            | Ταχύτης
+SHIP_COMBAT_SCAN_SPEED            | Ταχύτητα
 SHIP_COMBAT_SCAN_WEAPONS          | Όπλα
 SHIP_COMBAT_SCAN_DEVICES          | Μηχανισμοί
 SHIP_COMBAT_SCAN_HITS_VALUE       | %1/%2
@@ -1577,8 +1575,8 @@ RELATIONS_HARMONY                 | Αρμονία
 RACES_TITLE                       | Αναφορές Φυλών
 RACES_SELECTOR_TITLE              | Επιλογή Αυτοκρατορίας
 RACES_TAB_DIPLOMACY               | Διπλωματία
-RACES_TAB_INTELLIGENCE            | Υπηρεσία Πληροφοριών
-RACES_TAB_MILITARY                | Στρατιωτικός Τομέας
+RACES_TAB_INTELLIGENCE            | Υπήρ. Πληρ.
+RACES_TAB_MILITARY                | Στρατιωτ. Τομέας
 RACES_TAB_STATUS                  | Κατάσταση
 RACES_KNOWN_EMPIRES               | %1 γνωστές Αυτοκρατορίες
 RACES_RECALLED_DIPLOMATS          | %1 ανακληθέντες Διπλωμάτες
@@ -1595,9 +1593,9 @@ RACES_TRADE_NONE                  | Χωρίς Εμπορική Συνθήκη
 RACES_DIPLOMAT_RECALLED           | Διπλωμάτης [alien_race] ανακλήθηκε
 RACES_DIPLOMATS_RECALLED          | Διπλωμάτες Ανακλήθηκαν
 
-RACES_DIPLOMACY_HOMEWORLD         | Πλανήτης Έδρα
+RACES_DIPLOMACY_HOMEWORLD         | Πλανήτης Κοιτίδα
 RACES_DIPLOMACY_LEADER            | Ηγέτης
-RACES_DIPLOMACY_CURRENT_TRADE     | Τρέχων Εμπορικό Εισόδημα
+RACES_DIPLOMACY_CURRENT_TRADE     | Τρέχον Εμπορικό Εισόδημα
 RACES_DIPLOMACY_TOTAL_TRADE       | Σύνολο Εμπορικών Συνθηκών
 RACES_DIPLOMACY_TRADE_AMT         | %1 ΔΙΣ
 RACES_DIPLOMACY_CHARACTER         | Χαρακτήρας
@@ -1609,7 +1607,7 @@ RACES_DIPLOMACY_BUREAU_DESC1      | Επικοινωνήστε με εξώκοσ
 RACES_DIPLOMACY_BUREAU_DESC       | Επικοινωνήστε με τον Πρέσβη των[alien_race] για μια ακρόαση ή θεμελιώστε ξανά επαφή εάν οι διπλωμάτες σας έχουν ανακληθεί. 
 RACES_DIPLOMACY_BUREAU_DESC_RANGE | Δεν μπορούμε να συνάψουμε διπλωματικές σχέσεις με αυτοκρατορίες που είναι εκτός εμβέλειας των σκαφών μας.
 RACES_DIPLOMACY_BUREAU_DESC_FINAL | Έχουμε εμπλακεί σε τελειωτικό πόλεμο με την Γαλαξιακή Δημοκρατία. Η διπλωματία δεν είναι πια επιλογή. 
-RACES_DIPLOMACY_KNOWN_EMPIRES     | Γνωστές Εξόκοσμες Αυτοκρατορίες
+RACES_DIPLOMACY_KNOWN_EMPIRES     | Γνωστές Εξώκοσμες Αυτοκρατορίες
 RACES_DIPLOMACY_RECALLED_DIPLOMAT | Ανακλημένοι Διπλωμάτες
 RACES_DIPLOMACY_MANAGE_DIPLOMATS  | Διαχείριση Διπλωματών
 RACES_DIPLOMACY_AUDIENCE          | Ακρόαση
@@ -1660,7 +1658,7 @@ RACES_INTEL_1_SPY                 | 1 κατάσκοπος
 RACES_INTEL_N_SPIES               | %1 κατάσκοποι
 RACES_INTEL_SPIES                 | %1 / %2
 RACES_INTEL_SPENDING_ANNUAL       | %1 ΔΙΣ/έτος
-RACES_INTEL_CURRENT               | Τρέχων
+RACES_INTEL_CURRENT               | Τρέχον
 RACES_INTEL_NO_DATA               | Μηδενικά Δεδομένα
 RACES_INTEL_SPENDING_NONE         | Καμμία Δαπάνη
 RACES_INTEL_COMPLETION_YEARS      | %1 Έτη
@@ -1677,7 +1675,7 @@ RACES_INTEL_SPY_WARNING_WAR       | Αν αποκαλυφθεί, αυτή η α�
 RACES_INTEL_KNOWN_TECHNOLOGY      | Γνωστές Τεχνολογίες των [alien_race]
 RACES_INTEL_KNOWN_TECH_DESC       | Οι κατάσκοποι μας αναφέρουν ότι οι [alien_race] έχουν κατακτήσει τις ακόλουθες τεχνολογίες. Όποια τεχνολογία από αυτές μας είναι άγνωστη έχει επισημανθεί.
 RACES_INTEL_UNKNOWN_TECHNOLOGY    | Αναφορά Άγνωστης Τεχνολογίας
-RACES_INTEL_UNKNOWN_TECH_DESC     | Οι κατάσκοποι μας αναφέρουν ότι εξωδιαστημικές φυλές έχουν κατακτήσει τις ακόλουθες, άγνωστες σε εμάς τεχνολογίες.
+RACES_INTEL_UNKNOWN_TECH_DESC     | Οι κατάσκοποι μας αναφέρουν ότι εξωδιαστημικές φυλές έχουν κατακτήσει τις ακόλουθες, άγνωστες σε εμάς, τεχνολογίες.
 
 RACES_MILITARY_TITLE              | Στόλος Διαστημοπλοίων [alien_race]
 RACES_MILITARY_SUBTITLE           | Σκάφη ανά μέγεθος σκελετού κελύφους
@@ -1692,7 +1690,7 @@ RACES_MILITARY_DEFENSE            | Άμυνα
 RACES_MILITARY_DEF_PLANET_SHIELD  | Πλανητικές Ασπίδες
 RACES_MILITARY_DEF_DEFL_SHIELD    | Απωστικές Ασπίδες
 RACES_MILITARY_DEF_ARMOR          | Θωράκιση
-RACES_MILITARY_TROOP_BONUS        | Μπόνους Επίγειου Στρατεύματος
+RACES_MILITARY_TROOP_BONUS        | Πλεονέκτημα Επίγειου Στρατ.
 RACES_MILITARY_DEF_MISSILE        | Πυραυλική Βάση
 RACES_MILITARY_DEF_MISSILE_MAX    | Προεπιλογή Μέγιστου Πυραυλικών Βάσεων για Νέες Αποικίες
 RACES_MILITARY_NO_SHIELD          | Δεν υπάρχει
@@ -1705,8 +1703,8 @@ RACES_MILITARY_ATTACK_LEVEL       | Επίπεδο επίθεσης
 RACES_MILITARY_MISSILE_DEFENSE    | Πυραυλική Άμυνα
 RACES_MILITARY_BEAM_DEFENSE       | Ενεργειακή Άμυνα
 RACES_MILITARY_SHIELD             | Κλάση Ασπίδας
-RACES_MILITARY_COMBAT_SPEED       | Ταχύτητα Μάχης
-RACES_MILITARY_TRAVEL_SPEED       | Ταχύτητα Πλεύσης
+RACES_MILITARY_COMBAT_SPEED       | Ταχύτης Μάχης
+RACES_MILITARY_TRAVEL_SPEED       | Ταχύτης Πλεύσης
 RACES_MILITARY_WEAPON_CNT         | %2 x%1
 RACES_MILITARY_NO_WEAPONS         | Χωρίς όπλα
 RACES_MILITARY_NO_SPECIALS        | Χωρίς Συσκευές
@@ -1775,7 +1773,7 @@ RACES_HELP_6G                     | Συνολική Ισχύς - συνδυασ
 
 // Sabotage UI
 SABOTAGE_TITLE                    | Οι κατάσκοποί μας επέτυχαν να διεισδύσουν σε αποικίες των [alien_race] και περιμένουν διαταγές.
-SABOTAGE_PROMPT                   | Επιλέξτε τη μορφή σαμποτάζπου θα κάνουμε εναντίον των [alien_empire] στο σύστημα %1.
+SABOTAGE_PROMPT                   | Επιλέξτε τη μορφή σαμποτάζ που θα κάνουμε εναντίον των [alien_empire] στο σύστημα %1.
 SABOTAGE_WARNING                  | Προειδοποίηση! Οποιαδήποτε πράξη σαμποτάζ θα σπάσει τη συνθήκη που έχουμε με τους [alien_empire].
 SABOTAGE_SELECT_TARGET            | Επιλογή Στόχου
 SABOTAGE_BUTTON_FACTORIES         | Καταστροφή Εργοστασίων
