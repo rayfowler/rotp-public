@@ -2454,8 +2454,10 @@ public final class Empire implements Base, NamedObject, Serializable {
 
         for (EmpireView v : empireViews()) {
             if (v != null)
+            {
                 v.embassy().removeContact();
-            v.empire().clearDataForExtinctEmpire(id);
+                v.empire().clearDataForExtinctEmpire(id);
+            }
         }
 
         Galaxy g = galaxy();

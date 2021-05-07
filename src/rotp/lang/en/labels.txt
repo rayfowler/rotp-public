@@ -1100,12 +1100,14 @@ SETUP_OPPONENT_RANDOM             | ???
 SETUP_OPPONENT_AI                 | Play against:
 SETUP_OPPONENT_AI_BASE            | AI: Base
 SETUP_OPPONENT_AI_MODNAR          | AI: Modnar
-SETUP_OPPONENT_AI_XILMI           | AI: Xilmi
+SETUP_OPPONENT_AI_XILMI           | AI: Supreme
+SETUP_OPPONENT_AI_HYBRID          | AI: Hybrid
 SETUP_OPPONENT_AI_SELECT          | AI: Selectable
 SETUP_AUTOPLAY_OFF                | Off
 SETUP_AUTOPLAY_AI_BASE            | AI: Base
 SETUP_AUTOPLAY_AI_MODNAR          | AI: Modnar
-SETUP_AUTOPLAY_AI_XILMI           | AI: Xilmi
+SETUP_AUTOPLAY_AI_XILMI           | AI: Supreme
+SETUP_AUTOPLAY_AI_HYBRID          | AI: Hybrid
 SETUP_GAME_DIFFICULTY_LABEL       | Difficulty
 SETUP_DIFFICULTY_EASIEST          | Easiest
 SETUP_DIFFICULTY_EASIER           | Easier
