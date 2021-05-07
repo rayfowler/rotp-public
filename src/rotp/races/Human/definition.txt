@@ -26,8 +26,8 @@ gnn:           HumanGNN
 gnnHost:       HumanGNNHost
 gnnColor:      Orange
 gnnTextColor:  255,93,0
-winSplash:     ,255,255,255
-lossSplash:    ,255,255,255
+winSplash:     HumWin,255,255,255
+lossSplash:    HumLoss,255,255,255
 
 advisorScout:      HumanSoldier2, 130@0|440x640
 advisorTransport:  HumanSoldier2, 130@0|440x640
@@ -69,9 +69,9 @@ council:       HumCouncil
 shield:        HumShield,            0@0|420x450
 introTextX:    680
 espionageXY:   0@0
-spyFactories:  0
-spyMissiles:   0
-spyRebellion:  0
+spyFactories:  48
+spyMissiles:   48
+spyRebellion:  45
 dialogTextX:   130,130
 dialogTextY:   540
 councilDiplo:  0.4, 80, -200, 0.7
