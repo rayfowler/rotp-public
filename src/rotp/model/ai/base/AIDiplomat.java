@@ -1357,6 +1357,8 @@ public class AIDiplomat implements Base, Diplomat {
     }
     @Override
     public boolean wantToDeclareWarOfHate(EmpireView v) {
+        if (v.empire().isPlayer())
+            return true;
         if (v.embassy().atPeace())
             return false;
         
@@ -1454,7 +1456,8 @@ public class AIDiplomat implements Base, Diplomat {
     }
     private void beginHateWar(EmpireView view) {
         log(view+" - Declaring war based on hate");
-        view.embassy().beginWarPreparations(DialogueManager.DECLARE_HATE_WAR, null);
+        view.embassy().beginWarPreparations(DialogueManager.DECLARE_SPYING_WAR, null);
+        view.embassy().declareWar();
     }
     private void beginErraticWar(EmpireView view) {
         log(view+" - Declaring war based on erratic");
