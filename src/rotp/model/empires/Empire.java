@@ -65,6 +65,8 @@ import rotp.model.tech.Tech;
 import rotp.model.tech.TechRoboticControls;
 import rotp.model.tech.TechTree;
 import rotp.ui.NoticeMessage;
+import rotp.ui.diplomacy.DialogueManager;
+import rotp.ui.diplomacy.DiplomaticReply;
 import rotp.ui.main.GalaxyMapPanel;
 import rotp.util.Base;
 
@@ -415,7 +417,17 @@ public final class Empire implements Base, NamedObject, Serializable {
             empireName = replaceTokens("[this_empire]", "this");
         return empireName;
     }
-    
+    public DiplomaticReply respond(String reason, Empire listener) {
+        return respond(reason,listener,null);
+    }
+    public DiplomaticReply respond(String reason, Empire listener, Empire other) {
+        String message = DialogueManager.current().randomMessage(reason, this);
+        message = replaceTokens(message, "my");
+        message = listener.replaceTokens(message, "your");
+        if (other != null)
+            message = other.replaceTokens(message, "other");
+        return DiplomaticReply.answer(true, message);
+    }
     public void chooseNewCapital() {
         // make list of every colony that is not the current capital
         StarSystem currentCapital = galaxy().system(capitalSysId);

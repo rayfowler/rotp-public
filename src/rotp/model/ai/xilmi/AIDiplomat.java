@@ -943,18 +943,18 @@ public class AIDiplomat implements Base, Diplomat {
         return v.otherView().accept(DialogueManager.RESPOND_BREAK_TRADE, inc);
     }
     @Override
-    public DiplomaticReply receiveThreatStopSpying(Empire e) {
-        EmpireView v = empire.viewForEmpire(e);
+    public DiplomaticReply receiveThreatStopSpying(Empire dip) {
+        EmpireView v = empire.viewForEmpire(dip);
         
         v.embassy().noteRequest();
         v.embassy().withdrawAmbassador();
         
         v.spies().ignoreThreat();
-        return v.otherView().accept(DialogueManager.RESPOND_IGNORE_THREAT);
+        return empire.respond(DialogueManager.RESPOND_IGNORE_THREAT, dip);
     }
     @Override
-    public DiplomaticReply receiveThreatEvictSpies(Empire e) {
-        EmpireView v = empire.viewForEmpire(e);
+    public DiplomaticReply receiveThreatEvictSpies(Empire dip) {
+        EmpireView v = empire.viewForEmpire(dip);
         
         v.embassy().noteRequest();
         v.embassy().withdrawAmbassador();
@@ -963,17 +963,17 @@ public class AIDiplomat implements Base, Diplomat {
         v.embassy().addIncident(inc);
         
         v.spies().ignoreThreat();
-        return v.otherView().accept(DialogueManager.RESPOND_IGNORE_THREAT);
+        return empire.respond(DialogueManager.RESPOND_IGNORE_THREAT, dip);
     }
     @Override
-    public DiplomaticReply receiveThreatStopAttacking(Empire e) {
-        EmpireView v = empire.viewForEmpire(e);
+    public DiplomaticReply receiveThreatStopAttacking(Empire dip) {
+        EmpireView v = empire.viewForEmpire(dip);
 
         v.embassy().noteRequest();
         v.embassy().withdrawAmbassador();
         
         v.embassy().ignoreThreat();
-        return v.otherView().accept(DialogueManager.RESPOND_IGNORE_THREAT);
+        return empire.respond(DialogueManager.RESPOND_IGNORE_THREAT, dip);
     }
     @Override
     public DiplomaticReply receiveDeclareWar(Empire e) {
