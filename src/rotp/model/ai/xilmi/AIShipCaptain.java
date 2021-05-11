@@ -141,6 +141,17 @@ public class AIShipCaptain implements Base, ShipCaptain {
             if ((prevMove == stack.move) && (prevTarget == currentTarget)) {
                 turnActive = false;
             }
+            //ail: If I have repulsors and already used all my weapons, I'll discard remaining move-points
+            if(stack.repulsorRange() > 0)
+            {
+                boolean atLeastOneWeaponCanStillFire = false;
+                for (int i=0;i<stack.numWeapons(); i++) {
+                    if(!stack.shipComponentIsUsed(i))
+                        atLeastOneWeaponCanStillFire = true;
+                }
+                if(!atLeastOneWeaponCanStillFire)
+                    turnActive = false;
+            }
         }
         mgr.turnDone(stack);
     }

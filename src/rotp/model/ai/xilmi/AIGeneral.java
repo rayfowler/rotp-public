@@ -22,12 +22,14 @@ import java.util.List;
 import java.util.Set;
 import rotp.model.ai.FleetPlan;
 import rotp.model.ai.interfaces.General;
+import rotp.model.colony.Colony;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.galaxy.Galaxy;
 import rotp.model.galaxy.Ship;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
+import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipDesignLab;
 import rotp.util.Base;
 
@@ -68,6 +70,41 @@ public class AIGeneral implements Base, General {
         bestVictim = null;
         defenseRatio = -1;
         additionalColonizersToBuild = -1;
+        
+        additionalColonizersToBuild = additionalColonizersToBuild(false);
+        //System.out.println(empire.name()+" additionalColonizersToBuild: "+additionalColonizersToBuild+" available: "+empire.shipLab().colonyDesign().name());
+        while (additionalColonizersToBuild > 0)
+        {
+            float highestScore = 0;
+            Colony bestCol = null;
+            int eligibleColonies = 0;
+            for (int id=0; id<empire.sv.count();id++) {
+                if(empire.sv.empire(id) != empire)
+                    continue;
+                ++eligibleColonies;
+                StarSystem sys = galaxy().system(id);
+                Colony col = sys.colony();
+                float score = empire.ai().governor().productionScore(sys);
+                //System.out.println(empire.name()+" "+col.name()+" score: "+score);
+                if (score < 0.5f)
+                    continue;
+                if(col.shipyard().building())
+                    continue;
+                if(score > highestScore)
+                {
+                    bestCol = col;
+                    highestScore = score;
+                }
+            }
+            if(bestCol == null)
+                break;
+            ShipDesign design = empire.shipLab().colonyDesign();
+            bestCol.shipyard().design(design);
+            bestCol.shipyard().addQueuedBC(design.cost());
+            bestCol.shipyard().addDesiredShips(1);
+            //System.out.println(empire.name()+" should order a colonizer at "+bestCol.name());
+            additionalColonizersToBuild--;
+        }
 
         Galaxy gal = galaxy();
         for (int id=0;id<empire.sv.count();id++) 
@@ -628,7 +665,8 @@ public class AIGeneral implements Base, General {
         }
         if(returnPotentialUncolonizedInstead)
             return additional;
-        //System.out.print("\n"+empire.name()+" and with those added from range-extension by colonization: "+additional);
+        additional = max(additional, empire.numColonies() / 5);
+        //System.out.println("\n"+empire.name()+" required colonizers: "+additional);
         int[] counts = galaxy().ships.shipDesignCounts(empire.id);
         for (int i=0;i<counts.length;i++) 
         {
@@ -642,6 +680,7 @@ public class AIGeneral implements Base, General {
                 else if(empire.shipLab().design(i).colonySpecial().tech().level == empire.tech().topControlEnvironmentTech().level
                         || empire.ignoresPlanetEnvironment())
                     additional -= counts[i];
+                //System.out.println("\n"+empire.name()+" available: "+counts[i]+" "+empire.shipLab().design(i).name());
             }
         }
         //System.out.print("\n"+empire.name()+" after substracting the already existing ones: "+additional);

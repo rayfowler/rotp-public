@@ -1338,13 +1338,17 @@ public class AIDiplomat implements Base, Diplomat {
                 developmentPct /= countedColonies;
             float helpingPower = 0.0f;
             float enemyAllyPower = 0.0f;
-            float superiorityThreshold = 0.75f;
+            float superiorityThreshold = 1.5f - (developmentPct - 0.75f) * 6;
             //we can still grow otherwise
             if(empire.generalAI().additionalColonizersToBuild(true) > 0
-                    && developmentPct < 0.75f)
+                    || developmentPct < 0.75f)
                 warAllowed = false;
             if(empire.tech().avgTechLevel() < v.empire().tech().avgTechLevel() 
                     && empire.tech().avgTechLevel() < 99)
+                warAllowed = false;
+            if(empire.tech().topSpeed() < 3)
+                warAllowed = false;
+            if(empire.tech().topShipWeaponTech().damageHigh() < 5)
                 warAllowed = false;
             for(Empire emp : bestVictim.warEnemies())
             {
@@ -1678,14 +1682,16 @@ public class AIDiplomat implements Base, Diplomat {
    private boolean warWeary(EmpireView v) {
         if (v.embassy().finalWar())
             return false;
-        if(!empire.inShipRange(v.empId()))
-            return true;
         //ail: when we have incoming transports, we don't want them to perish
         for(Transport trans:empire.transports())
         {
             if(trans.destination().empire() == v.empire())
                 return false;
         }
+        if(!empire.inShipRange(v.empId()))
+            return true;
+        if(empire.generalAI().bestVictim().tech().avgTechLevel() > empire.tech().avgTechLevel())
+            return true;
         //ail: only colonies and factories relevant for war-weariness. Population and Military are merely tools to achieve our goals
         Empire emp = v.owner();
         TreatyWar treaty = (TreatyWar) v.embassy().treaty();
