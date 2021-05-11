@@ -246,6 +246,13 @@ public final class SpyNetwork implements Base, Serializable {
             return;
         }
         
+        // data automatically updates for allies
+        if (view.embassy().alliance()) {
+            lastSpyDate = galaxy().currentYear();
+            view.refreshSystemSpyViews();
+            updateTechList();
+        }
+        
         if (maxSpies() == 0) {
             activeSpies.clear();
             return;

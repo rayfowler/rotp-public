@@ -181,7 +181,7 @@ public final class EmpireView implements Base, Serializable {
         // if there are some unknown, all add if unity else sort by distance
         // and add 1 for each spy network
         if (!allUnknownSystems.isEmpty()) {
-            if (this.embassy().unity()) 
+            if (embassy().unity() || embassy().alliance()) 
                 allKnownSystems.addAll(allUnknownSystems);
             else {
                 int spyNetworks = spies().activeSpies().size();
