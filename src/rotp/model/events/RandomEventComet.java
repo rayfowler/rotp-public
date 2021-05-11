@@ -59,7 +59,7 @@ public class RandomEventComet implements Base, Serializable, RandomEvent {
         turnsNeeded = roll(10,15);
         cometHP = 40*turnsNeeded;
         galaxy().events().addActiveEvent(this);
-        if (!player().sv.name(sysId).isEmpty())
+        if ((empId != Empire.NULL_ID) && !player().sv.name(sysId).isEmpty())
             GNNNotification.notifyRandomEvent(notificationText(), "GNN_Event_Comet");
     }
     @Override
@@ -80,7 +80,7 @@ public class RandomEventComet implements Base, Serializable, RandomEvent {
             return;
         }
 
-        if ((turnCount % 5 == 0) && (player().id == empId))
+        if ((empId != Empire.NULL_ID) && (turnCount % 5 == 0) && (player().id == empId))
             GNNNotification.notifyRandomEvent(continuingText(), "GNN_Event_Comet");
     }
     private void battleComet() {
@@ -128,7 +128,7 @@ public class RandomEventComet implements Base, Serializable, RandomEvent {
         sys.clearEvent();
         
         session().removePendingNotification("GNN_Event_Comet");
-        if (!player().sv.name(sysId).isEmpty())
+        if ((empId != Empire.NULL_ID) && !player().sv.name(sysId).isEmpty())
             GNNNotification.notifyRandomEvent(goodEndText(), "GNN_Event_Comet");
     }
     private void destroyColony() {
@@ -137,7 +137,7 @@ public class RandomEventComet implements Base, Serializable, RandomEvent {
         sys.addEvent(new SystemRandomEvent("SYSEVENT_COMET"));
         sys.clearEvent();
         sys.planet().sufferImpactEvent(); // destroys colony, downgrades planet type to Barren
-        if (!player().sv.name(sysId).isEmpty())
+        if ((empId != Empire.NULL_ID) && !player().sv.name(sysId).isEmpty())
             GNNNotification.notifyRandomEvent(badEndText(), "GNN_Event_Comet");
     }
 }

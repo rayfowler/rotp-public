@@ -220,7 +220,7 @@ public class Planet implements Base, IMappedObject, Serializable {
         }
 
         // if this was a terran-type planet, change it to Barren
-        if (!type.hostileToTerrans()) {
+        if (!type().hostileToTerrans()) {
             initPlanetType(PlanetType.BARREN);
             baseSize(type().randomSize());
         }
