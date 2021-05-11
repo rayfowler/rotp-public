@@ -76,8 +76,10 @@ public class AssassinationIncident extends DiplomaticIncident {
     public String decode(String s) {
         String s1 = super.decode(s);
         Galaxy g = galaxy();
-        s1 = g.empire(empAssassin).replaceTokens(s1, "assassin");
-        s1 = g.empire(empVictim).replaceTokens(s1, "victim");
+        s1 = g.empire(empAssassin).replaceTokens(s1, "assassin"); // used by DECLARE_ASSASSIN_WAR
+        s1 = g.empire(empVictim).replaceTokens(s1, "victim");     // used by DECLARE_ASSASSIN_WAR
+        s1 = g.empire(empAssassin).replaceTokens(s1, "attacker"); // used by PRAISE_ATTACKED_ENEMY
+        s1 = g.empire(empVictim).replaceTokens(s1, "defender");   // used by PRAISE_ATTACKED_ENEMY
         return s1;
     }
 }
