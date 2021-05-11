@@ -17,6 +17,7 @@ package rotp.ui.diplomacy;
 
 import java.util.ArrayList;
 import java.util.List;
+import rotp.model.ai.interfaces.Diplomat;
 import rotp.model.empires.DiplomaticTreaty;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
@@ -31,6 +32,7 @@ public class DiplomacyTreatyMenu extends DiplomaticMessage {
     public void diplomat(Empire emp) { 
         super.diplomat(emp); 
         
+        Diplomat plAI = player().diplomatAI();
         Empire pl = player();
         Empire dip = diplomat();
         EmpireView v = pl.viewForEmpire(dip);
@@ -46,7 +48,7 @@ public class DiplomacyTreatyMenu extends DiplomaticMessage {
         options.clear();
         if (tr.isWar())
             options.add(PROPOSE_PEACE);
-        else if (!v.trade().active())
+        else if (plAI.canOfferTradeTreaty(dip))
             options.add(PROPOSE_TRADE);
         else if (tr.isNoTreaty())
             options.add(PROPOSE_PACT);

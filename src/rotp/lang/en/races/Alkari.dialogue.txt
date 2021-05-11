@@ -52,8 +52,6 @@ DECLAREWAR_OPPORTUNITY_01  | As you can see, we of the [my_empire] have managed 
 DECLAREWAR_ASSASSIN_01     | What crassness is this? You would commit so monstrous an act as slaying an ambassador in cold blood? The Sovereignty will not suffer so loathsome a race as yours to exist any longer!
 
 
-
-
 OFFER_PEACE_01             | The story of the Crimson Millennium cannot be allowed to repeat, ambassador! We request that you bring honor to [your_race] and [my_race] alike by signing this peace treaty to prevent any further bloodshed!
 OFFER_TRADE_01             | Surely civilized races such as ours are capable of aiding one another in honorable cooperation. The [my_empire] wishes a trade agreement with the [your_empire] set at [amt] BC, each year. What is your response, ambassador?
 OFFER_PACT_01              | The Sovereignty is pleased with how your people present themselves in diplomatic affairs. To show how much we value our relationship, we wish to sign a non-aggression pact, ensuring that neither of us falls prey to... misinterpreting each other's intentions.
