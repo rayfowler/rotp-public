@@ -721,7 +721,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             StarSystem sys = gal.system(id);
             if (parent.shouldDrawSprite(sys))
                 sys.draw(this, g);
-            if (parent.shouldDrawSprite(sys.transportSprite))
+            if (parent.shouldDrawSprite(sys.transportSprite()))
                 sys.transportSprite().draw(this, g);
             if (parent.shouldDrawSprite(sys.rallySprite()))
                 sys.rallySprite().draw(this, g);

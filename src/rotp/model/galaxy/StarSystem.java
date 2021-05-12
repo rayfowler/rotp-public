@@ -79,6 +79,10 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     private SpaceMonster monster;
     private final List<StarSystemEvent> events = new ArrayList<>();
 
+    public int transportDestId;
+    public int transportAmt;
+    public float transportTravelTime;
+    
     // public so we can access without lazy inits from accessors
     public transient SystemTransportSprite transportSprite;
     public transient ShipRelocationSprite rallySprite;
@@ -89,8 +93,16 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     private transient boolean displayed = false;
 
     public SystemTransportSprite transportSprite() {
-        if (transportSprite == null)
+        if (transportSprite == null) {
             transportSprite = new SystemTransportSprite(this);
+            if (transportAmt > 0) {
+                transportSprite.clickedDest(galaxy().system(transportDestId));
+                if (transportTravelTime == 0)
+                    transportSprite.accept();
+                else
+                    transportSprite.accept(transportTravelTime);
+            }
+        }
         return transportSprite;
     }
     public ShipRelocationSprite rallySprite() {

@@ -23,13 +23,18 @@ import rotp.ui.main.GalaxyMapPanel;
 public class SystemTransportSprite extends MapSprite {
     StarSystem clickedDest;
     StarSystem hoveringDest;
-    int amt;
 
     public SystemTransportSprite(StarSystem s) {
         init(s);
     }
     private void init(StarSystem s) {
         source(s);
+    }
+    public int amt() {
+        return homeSystem().transportAmt;
+    }
+    public void amt(int i) {
+        homeSystem().transportAmt = i;
     }
     public FlightPathSprite pathSpriteTo(StarSystem sys) {
         // no system transports for uncolonized systems
@@ -43,26 +48,33 @@ public class SystemTransportSprite extends MapSprite {
     }
     public void cancel() {
         Transport tr = homeSystem().colony().transport();
-        amt = tr.size();
+        amt(tr.size());
+        homeSystem().transportDestId = id(tr.destination());
         clickedDest = tr.destination();
         hoveringDest = null;
     }
     public void launch() {
-        amt = 0;
+        amt(0);
+        homeSystem().transportDestId = StarSystem.NULL_ID;
         clickedDest = null;
         hoveringDest = null;
     }
     public void clear() {
-        amt = 0;
+        amt(0);
+        homeSystem().transportDestId = StarSystem.NULL_ID;
         clickedDest = null;
         hoveringDest = null;
         homeSystem().colony().clearTransport();
     }
     public void accept() {
-        homeSystem().colony().scheduleTransportsToSystem(clickedDest, amt);
+        homeSystem().transportDestId = id(clickedDest);
+        homeSystem().transportTravelTime = 0;
+        homeSystem().colony().scheduleTransportsToSystem(clickedDest, amt());
     }
     public void accept(float travelTime) {
-        homeSystem().colony().scheduleTransportsToSystem(clickedDest, amt, travelTime);
+        homeSystem().transportDestId = id(clickedDest);
+        homeSystem().transportTravelTime = travelTime;
+        homeSystem().colony().scheduleTransportsToSystem(clickedDest, amt(), travelTime);
     }
     public boolean canClear() {
         Transport tr = homeSystem().colony().transport();
@@ -70,7 +82,7 @@ public class SystemTransportSprite extends MapSprite {
     }
     public boolean canAccept() {
         Transport tr = homeSystem().colony().transport();
-        return (clickedDest != null) && (amt > 0) && ((clickedDest != tr.destination()) || (amt != tr.size()));
+        return (clickedDest != null) && (amt() > 0) && ((clickedDest != tr.destination()) || (amt() != tr.size()));
     }
     public boolean increment(int n) {
         int maxSendingSize = player().sv.maxTransportsToSend(homeSystem().id);
@@ -79,7 +91,7 @@ public class SystemTransportSprite extends MapSprite {
         if (prevAmt == newAmt)
             return false;
 
-        amt(newAmt);
+        homeSystem().transportAmt = newAmt;
         return true;
     }
     public boolean decrement(int n) {
@@ -88,11 +100,9 @@ public class SystemTransportSprite extends MapSprite {
         if (prevAmt == newAmt)
             return false;
 
-        amt(newAmt);
+        homeSystem().transportAmt = newAmt;
         return true;
     }
-    public void amt(int i)                    { amt = i; }
-    public int amt()                          { return amt; }
     public void clickedDest(StarSystem sys)   { clickedDest = sys; }
     public void hoveringDest(StarSystem sys)  { hoveringDest = sys; }
     public StarSystem homeSystem()            { return (StarSystem) source(); }
