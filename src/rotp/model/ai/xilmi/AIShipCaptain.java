@@ -75,16 +75,6 @@ public class AIShipCaptain implements Base, ShipCaptain {
             return;
         }
 
-        // check for retreating
-        if (wantToRetreat(stack) && stack.canRetreat()) {
-            CombatStackShip shipStack = (CombatStackShip) stack;
-            StarSystem dest = retreatSystem(shipStack.mgr.system());
-            if (dest != null) {
-                mgr.retreatStack(shipStack, dest);
-                return;
-            }
-        }
-        
         CombatStack prevTarget = null;
         
         boolean turnActive = true;
@@ -93,13 +83,27 @@ public class AIShipCaptain implements Base, ShipCaptain {
             prevTarget = currentTarget;
             //ail: for moving we pick the target that is overall the most suitable, so that bombers move towards planet
             chooseTarget(stack, true, true);
-            FlightPath bestPathToTarget = chooseTarget(stack, false, false);
+            chooseTarget(stack, false, false);
             //ail: if our target to move to is not the same as the target we can currently shoot at, we shoot before moving
             if(closeTarget != null && closeTarget != distantTarget)
             {
                 if (stack.canAttack(closeTarget)) 
                     performSmartAttackTarget(stack, closeTarget);
             }
+            // check for retreating
+            if (wantToRetreat(stack) && stack.canRetreat()) {
+                //attack before retreating, if we can
+                if(currentTarget != null && stack.canAttack(currentTarget))
+                    performSmartAttackTarget(stack, closeTarget);
+                CombatStackShip shipStack = (CombatStackShip) stack;
+                StarSystem dest = retreatSystem(shipStack.mgr.system());
+                if (dest != null) {
+                    mgr.retreatStack(shipStack, dest);
+                    return;
+                }
+            }
+            //only now get the path because it might be freed by killing the other stack
+            FlightPath bestPathToTarget = chooseTarget(stack, false, false);
             // if we need to move towards target, do it now
             if (currentTarget != null) {
                 if (stack.mgr.autoResolve) {

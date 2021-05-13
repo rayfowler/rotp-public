@@ -1346,7 +1346,7 @@ public class AIDiplomat implements Base, Diplomat {
             if(empire.tech().avgTechLevel() < v.empire().tech().avgTechLevel() 
                     && empire.tech().avgTechLevel() < 99)
                 warAllowed = false;
-            if(empire.tech().topSpeed() < 3)
+            if(empire.tech().topSpeed() < 2)
                 warAllowed = false;
             if(empire.tech().topShipWeaponTech().damageHigh() < 5)
                 warAllowed = false;

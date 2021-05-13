@@ -649,7 +649,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                 if(fleet.retreatOnArrival() && empire.enemies().contains(fleet.destination().empire()))
                     fleet.toggleRetreatOnArrival();
             }
-            if(!fleet.canSend() || fleet.deployed())
+            if(!fleet.canSend() || fleet.deployed() || fleet.retreating())
             {
                 continue;
             }
@@ -847,6 +847,10 @@ public class AIFleetCommander implements Base, FleetCommander {
                             float ourEffectiveBC = bcValue(fleet, false, true, false, false);
                             float ourEffectiveBombBC = bcValue(fleet, false, false, true, false);
                             float ourColonizerBC = bcValue(fleet, false, false, false, allowColonizers);
+                            ourEffectiveBC *= 1 + 0.125f * empire.shipAttackBonus() + 0.2f * empire.shipDefenseBonus();
+                            ourEffectiveBombBC *= 1 + 0.125f * empire.shipAttackBonus() + 0.2f * empire.shipDefenseBonus();
+                            if(target.empire() != null)
+                                enemyBC *= 1 + 0.125f * target.empire().shipAttackBonus() + 0.2f * target.empire().shipDefenseBonus();
                             if(ourEffectiveBC + ourEffectiveBombBC + ourColonizerBC - keepBc > 0)
                             {
                                 float enemyBCWithBonus = enemyBC;
