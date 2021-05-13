@@ -102,8 +102,14 @@ public class AIShipCaptain implements Base, ShipCaptain {
                     return;
                 }
             }
-            //only now get the path because it might be freed by killing the other stack
-            FlightPath bestPathToTarget = chooseTarget(stack, false, false);
+            //When we are defending and can't get into attack-range of the enemy, we let them come to us
+            //if(currentTarget != null)
+                //System.out.println(stack.fullName()+" target: "+currentTarget.fullName()+" distaftermove: "+(stack.movePointsTo(currentTarget) - stack.move)+" maxFR: "+stack.maxFiringRange(currentTarget));
+            FlightPath bestPathToTarget = null;
+            if(currentTarget == null || (stack.movePointsTo(currentTarget) - stack.move > stack.maxFiringRange(currentTarget) && stack.hasWard()))
+                bestPathToTarget = defendWardPath(stack, stack.ward());
+            else
+                bestPathToTarget = chooseTarget(stack, false, false);
             // if we need to move towards target, do it now
             if (currentTarget != null) {
                 if (stack.mgr.autoResolve) {
@@ -361,7 +367,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 boolean blocked = false;
                 for(CombatStack other : st.mgr.activeStacks())
                 {
-                    if(other.x == x && other.y == y)
+                    if(other.x == x && other.y == y && other != st)
                     {
                         blocked = true;
                         continue;
@@ -388,6 +394,50 @@ public class AIShipCaptain implements Base, ShipCaptain {
             return bestPath;
         Collections.sort(validPaths,FlightPath.SORT);
         //System.out.println("Paths found: "+validPaths.size());
+        return validPaths.get(0);
+    }
+    public FlightPath defendWardPath(CombatStack st, CombatStack tgt)
+    {
+        List<FlightPath> validPaths = new ArrayList<>();
+        FlightPath bestPath = null;
+        int bestX = st.x;
+        int bestY = st.y;
+        float bestScore = Float.MAX_VALUE;
+        for(int x = tgt.x-1; x <= tgt.x+1; ++x)
+        {
+            for(int y = tgt.y-1; y <= tgt.y+1; ++y)
+            {
+                float currentScore = Float.MAX_VALUE;
+                if(!st.mgr.validSquare(x,y))
+                    continue;
+                boolean blocked = false;
+                for(CombatStack other : st.mgr.activeStacks())
+                {
+                    if(other.x == x && other.y == y && other != st)
+                    {
+                        blocked = true;
+                        continue;
+                    }
+                    if(other.hostileTo(st, StarSystem.TARGET_SYSTEM))
+                    {
+                        currentScore = other.distanceTo(x, y);
+                    }
+                }
+                if(blocked)
+                    continue;
+                if(currentScore < bestScore)
+                {
+                    bestScore = currentScore;
+                    bestX = x;
+                    bestY = y;
+                }
+            }
+        }
+        //System.out.println("Best Square for "+st.fullName()+" x: "+bestX+" y: "+bestY+" wardScore: "+bestScore);
+        allValidPaths(st.x,st.y,bestX,bestY,14,st, validPaths, bestPath);
+        if(validPaths.isEmpty())
+            return bestPath;
+        Collections.sort(validPaths,FlightPath.SORT);
         return validPaths.get(0);
     }
     public FlightPath findBestPathToAttack(CombatStack st, CombatStack tgt) {

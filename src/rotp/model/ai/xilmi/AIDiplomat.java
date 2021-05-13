@@ -1690,8 +1690,6 @@ public class AIDiplomat implements Base, Diplomat {
         }
         if(!empire.inShipRange(v.empId()))
             return true;
-        if(empire.generalAI().bestVictim().tech().avgTechLevel() > empire.tech().avgTechLevel())
-            return true;
         //ail: only colonies and factories relevant for war-weariness. Population and Military are merely tools to achieve our goals
         Empire emp = v.owner();
         TreatyWar treaty = (TreatyWar) v.embassy().treaty();
