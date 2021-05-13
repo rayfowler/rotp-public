@@ -139,22 +139,26 @@ public class AIShipCaptain implements Base, ShipCaptain {
                     //mgr.performAttackTarget(stack);
             }
          
+            //ail: Always move away if I have fired at our best target
+            boolean atLeastOneWeaponCanStillFire = false;
+            for (int i=0;i<stack.numWeapons(); i++) {
+                if(currentTarget != null && !currentTarget.isColony() && stack.weapon(i).groundAttacksOnly())
+                    continue;
+                if(!stack.shipComponentIsUsed(i))
+                    atLeastOneWeaponCanStillFire = true;
+            }
+            if(!atLeastOneWeaponCanStillFire && distantTarget == currentTarget)
+            {
+                FlightPath bestPathToSaveSpot = findSafestSpace(stack);
+                if(bestPathToSaveSpot != null)
+                    mgr.performMoveStackAlongPath(stack, bestPathToSaveSpot);
+                turnActive = false;
+            }
             // SANITY CHECK:
             // make sure we fall out if we haven't moved 
             // and we are still picking the same target
             if ((prevMove == stack.move) && (prevTarget == currentTarget)) {
                 turnActive = false;
-            }
-            //ail: If I have repulsors and already used all my weapons, I'll discard remaining move-points
-            if(stack.repulsorRange() > 0)
-            {
-                boolean atLeastOneWeaponCanStillFire = false;
-                for (int i=0;i<stack.numWeapons(); i++) {
-                    if(!stack.shipComponentIsUsed(i))
-                        atLeastOneWeaponCanStillFire = true;
-                }
-                if(!atLeastOneWeaponCanStillFire)
-                    turnActive = false;
             }
         }
         mgr.turnDone(stack);
@@ -341,7 +345,50 @@ public class AIShipCaptain implements Base, ShipCaptain {
         return pt;
     }
     public FlightPath findSafestSpace(CombatStack st) {
-        return null;
+        FlightPath bestPath = null;
+        int bestX = st.x;
+        int bestY = st.y;
+        float safestScore = 0;
+        for(int x = 0; x <= st.mgr.maxX; ++x)
+        {
+            for(int y = 0; y <= st.mgr.maxY; ++y)
+            {
+                float currentScore = 0;
+                if(!st.mgr.validSquare(x,y))
+                    continue;
+                if(!st.canTeleport && !st.canMoveTo(x, y))
+                    continue;
+                boolean blocked = false;
+                for(CombatStack other : st.mgr.activeStacks())
+                {
+                    if(other.x == x && other.y == y)
+                    {
+                        blocked = true;
+                        continue;
+                    }
+                    if(other.hostileTo(st, StarSystem.TARGET_SYSTEM))
+                    {
+                        currentScore += other.distanceTo(x, y);
+                    }
+                }
+                if(blocked)
+                    continue;
+                if(currentScore > safestScore)
+                {
+                    safestScore = currentScore;
+                    bestX = x;
+                    bestY = y;
+                }
+            }
+        }
+        //System.out.println("Safest space for "+st.fullName()+" x: "+bestX+" y: "+bestY+" safetyScore: "+safestScore);
+        List<FlightPath> validPaths = new ArrayList<>();
+        allValidPaths(st.x,st.y,bestX,bestY,(int)st.move,st, validPaths, bestPath);
+        if(validPaths.isEmpty())
+            return bestPath;
+        Collections.sort(validPaths,FlightPath.SORT);
+        //System.out.println("Paths found: "+validPaths.size());
+        return validPaths.get(0);
     }
     public FlightPath findBestPathToAttack(CombatStack st, CombatStack tgt) {
         if (!st.isArmed())
