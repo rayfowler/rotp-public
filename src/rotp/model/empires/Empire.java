@@ -1176,29 +1176,6 @@ public final class Empire implements Base, NamedObject, Serializable {
         Galaxy gal = galaxy();
         visibleShips.clear();
         
-        float scanRange = planetScanningRange();
-        // get ships orbiting visible systems
-
-        for (int sysId=0;sysId<sv.count();sysId++) {
-            // is the system in scanning range?
-            boolean canScan = sv.withinRange(sysId, scanRange);
-            List<ShipFleet> systemFleets = gal.ships.allFleetsAtSystem(sysId);
-            // if not, see if we own or are unity with any ships
-            // currently in the system. If so, we can see all ships here
-            if (!canScan)  {
-                for (ShipFleet fl: systemFleets) {
-                    if (canSeeShips(fl.empId))
-                        canScan = true;
-                }
-            }
-            if (canScan) {
-                for (ShipFleet fl: systemFleets) {
-                    if (fl.visibleTo(this))
-                        visibleShips.add(fl);
-                }
-            }
-        }
-
         List<ShipFleet> myShips = galaxy().ships.allFleets(id);
         List<StarSystem> mySystems = this.allColonizedSystems();
 
@@ -1210,7 +1187,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
 
         // get fleets in transit
-        for (ShipFleet sh : gal.ships.inTransitFleets()) {
+        for (ShipFleet sh : gal.ships.allFleets()) {
             if (canSeeShips(sh.empId())
             || (sh.visibleTo(id) && canScanTo(sh, mySystems, myShips) ))
                 addVisibleShip(sh);
