@@ -257,10 +257,10 @@ public class AIGovernor implements Base, Governor {
         lowerExpenses(col);
         float totalProd = col.totalIncome();
         float cleanCost = col.minimumCleanupCost();
-        float netProd = totalProd - cleanCost;
-        float shipCost = 0;
         // calculate minimum eco cleanup pct
         col.pct(ECOLOGY, cleanCost/totalProd);
+        float netProd = totalProd - totalProd * col.pct(ECOLOGY);
+        float shipCost = 0;
 
         if (col.allocation(ECOLOGY) < 0) {
             err("Minimum cleanup cost < 0");
@@ -286,7 +286,9 @@ public class AIGovernor implements Base, Governor {
             shipCost = min(maxShipBC, col.shipyard().maxSpendingNeeded());
             float shipPct = shipCost/totalProd;
             col.pct(SHIP, shipPct);
+            //System.out.println("\n"+empire.name()+" "+col.name()+" shipPct: "+shipPct+" shipCost-A: "+shipCost+" maxShipBC: "+maxShipBC+" col.shipyard().maxSpendingNeeded(): "+col.shipyard().maxSpendingNeeded()+" shipTurns: "+shipTurns+" totalProd: "+totalProd);
             shipCost = col.pct(SHIP) * totalProd;
+            //System.out.println("\n"+empire.name()+" "+col.name()+" shipPct: "+shipPct+" col.pct(SHIP): "+col.pct(SHIP)+" col.pct(ECOLOGY): "+col.pct(ECOLOGY)+" shipCost-B: "+shipCost+" maxShipBC: "+maxShipBC+" shipTurns: "+shipTurns+" totalProd: "+totalProd);
         }
         netProd -= shipCost;
 

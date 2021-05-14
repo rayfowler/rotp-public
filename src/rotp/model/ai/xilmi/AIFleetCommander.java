@@ -433,7 +433,10 @@ public class AIFleetCommander implements Base, FleetCommander {
             }
             if(handleEvent)
             {
-                score = Float.MAX_VALUE;
+                if(empire.enemies().isEmpty())
+                    score = Float.MAX_VALUE;
+                else
+                    score = 10;
             }
             if(!fleet.canColonizeSystem(current) || empire.sv.isColonized(id))
                 score /= fleet.travelTime(current) + 1;
@@ -444,7 +447,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                 best = current;
             }
         }
-        //System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" => "+empire.sv.name(best.id)+" score: "+bestScore);
+        /*if(best != null)
+            System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" => "+empire.sv.name(best.id)+" score: "+bestScore);*/
         return best;
     }
     
@@ -795,10 +799,12 @@ public class AIFleetCommander implements Base, FleetCommander {
                                 else
                                 {
                                     //ail: if we can't see the system, assume there's at least a fair share of ships for defense
-                                    if(needToGuess)
-                                        enemyBC = max(enemyBC, target.empire().totalFleetCost() * target.colony().production() / target.empire().totalIncome());
-                                    enemyBaseBC = empire.sv.bases(target.id)*target.empire().tech().newMissileBaseCost();
                                     EmpireView ev = empire.viewForEmpire(empire.sv.empId(target.id));
+                                    if(needToGuess && ev != null)
+                                    {
+                                        enemyBC = max(enemyBC, target.empire().totalFleetCost() * target.colony().production() / target.empire().totalIncome());
+                                    }
+                                    enemyBaseBC = empire.sv.bases(target.id)*target.empire().tech().newMissileBaseCost();
                                     if(ev != null)
                                     {
                                         targetTech = ev.spies().tech().avgTechLevel(); // modnar: target tech level
@@ -837,8 +843,6 @@ public class AIFleetCommander implements Base, FleetCommander {
                             if(!empire.sv.isScouted(target.id))
                             {
                                 sendAmount = 0.01f;
-                                if(enemyBC == 0)
-                                    sendAmount = 0.01f;
                             }
                             if(target.monster() != null)
                             {
@@ -859,6 +863,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                                     enemyBCWithBonus *= 1 + 0.5f * systemInfoBuffer.get(target.id).additionalSystemsInRangeWhenColonized;
                                     enemyBaseBCWithBonus *= 1 + 0.5f * systemInfoBuffer.get(target.id).additionalSystemsInRangeWhenColonized;
                                 }
+                                //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" thinks "+target.name()+" has "+enemyBCWithBonus+" defenders to be dealt with.");
                                 if(ourEffectiveBC > 0)
                                     sendAmount = max(sendAmount, min(1.0f, enemyBCWithBonus*(targetTech+10.0f)*2.0f / (ourEffectiveBC *(civTech+10.0f))));
                                 if(ourEffectiveBombBC > 0)

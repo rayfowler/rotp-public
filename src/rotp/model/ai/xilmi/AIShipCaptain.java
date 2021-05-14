@@ -106,7 +106,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             //if(currentTarget != null)
                 //System.out.println(stack.fullName()+" target: "+currentTarget.fullName()+" distaftermove: "+(stack.movePointsTo(currentTarget) - stack.move)+" maxFR: "+stack.maxFiringRange(currentTarget));
             FlightPath bestPathToTarget = null;
-            if(currentTarget == null || (stack.movePointsTo(currentTarget) - stack.move > stack.maxFiringRange(currentTarget) && stack.hasWard()))
+            if((currentTarget == null || stack.movePointsTo(currentTarget) - stack.move > stack.maxFiringRange(currentTarget)) && stack.hasWard())
                 bestPathToTarget = defendWardPath(stack, stack.ward());
             else
                 bestPathToTarget = chooseTarget(stack, false, false);
