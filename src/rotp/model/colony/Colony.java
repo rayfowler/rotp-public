@@ -746,7 +746,8 @@ public final class Colony implements Base, IMappedObject, Serializable {
             return 0.0f;
         float mod = empire().isPlayer() ? 1.0f : options().aiProductionModifier();
         float workerProd = workingPopulation() * empire.workerProductivity();
-        return mod*(workerProd + usedFactories());
+        float factoryOutput = mod*(workerProd + usedFactories());
+        return factoryOutput - transportCost();
     }
     public float maxProduction() {
         float workerProd = planet().maxSize() * empire.workerProductivity();
@@ -803,9 +804,8 @@ public final class Colony implements Base, IMappedObject, Serializable {
         float tradeIncome = actualTradeIncome();
         float defenseCost = prod * empire.missileBaseCostPerBC();
         float shipyardCost = shipyard().maintenanceCost();
-        float transportCost = transportCost();
 
-        return max(0, prod - reserveCost - securityCost - defenseCost - shipyardCost - transportCost + tradeIncome - shipCost - stargateCost);
+        return max(0, prod - reserveCost - securityCost - defenseCost - shipyardCost + tradeIncome - shipCost - stargateCost);
     }
     public float expectedPopulation() {
         return workingPopulation() + normalPopGrowth() + incomingTransports();

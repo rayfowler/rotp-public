@@ -2336,7 +2336,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         if (totalEmpireProduction <= 0) {
             float totalProductionBC = 0;
             List<StarSystem> systems = new ArrayList<>(allColonizedSystems());
-            for (StarSystem sys: systems)
+            for (StarSystem sys: systems) 
                 totalProductionBC += sys.colony().production();
             totalEmpireProduction = totalProductionBC;
         }
