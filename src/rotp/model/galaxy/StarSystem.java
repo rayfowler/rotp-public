@@ -527,7 +527,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
 
         boolean drawStar = map.parent().drawStar(this);
         if (drawStar) {
-            if (map.parent().showAlerts()) {
+            if (!session().performingTurn()) {
                 SystemView sv = pl.sv.view(id);
                 Color c0 = map.parent().alertColor(sv);
                 if (c0 != null) 
