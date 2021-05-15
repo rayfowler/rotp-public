@@ -152,6 +152,14 @@ public class AISpyMaster implements Base, SpyMaster {
             spies.maxSpies(1);
             return;
         }
+        
+        // don't bother trying to steal/sabotage against Darloks unless we are Darloks ourselves, it's probably just a waste of resources
+        if(emb.empire().race().internalSecurityAdj > empire.race().spyInfiltrationAdj)
+        {
+            spies.beginHide();
+            spies.maxSpies(1);
+            return; 
+        }
  
         boolean canEspionage = !spies.possibleTechs().isEmpty();
         Sabotage sabMission = bestSabotageChoice(v);
