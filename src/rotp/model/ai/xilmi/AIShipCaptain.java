@@ -152,7 +152,9 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 if(currentTarget != null && !currentTarget.isColony() && stack.weapon(i).groundAttacksOnly())
                     continue;
                 if(!stack.shipComponentIsUsed(i))
+                {
                     atLeastOneWeaponCanStillFire = true;
+                }
             }
             if(!atLeastOneWeaponCanStillFire && distantTarget == currentTarget)
             {
@@ -273,7 +275,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
             }
             if (killPct > 0) {
                 killPct = min(1,killPct);
-                float desirability = max((10000* threatLevel * threatLevel * killPct), .01f);
+                //float desirability = max((10000* threatLevel * threatLevel * killPct), .01f);
+                float desirability = killPct * target.num * target.designCost();
                 if (desirability > maxDesirability) {  // this might be a better target, adjust desirability for pathing
                     if (stack.mgr.autoResolve) {
                         bestTarget = target;

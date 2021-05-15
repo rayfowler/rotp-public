@@ -710,7 +710,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                         }
                         StarSystem stagingPoint = null;
                         float fleetSpeed = fleet.slowestStackSpeed();
-                        stagingPoint = galaxy().system(empire.optimalStagingPoint(target, fleet.slowestStackSpeed()));
+                        stagingPoint = galaxy().system(empire.optimalStagingPoint(target, 1));
                         
                         //ail: When we have hyperspace-communications, we don't want to go to a staging-point for our new target.
                         if(fleet.inTransit())
@@ -1025,17 +1025,24 @@ public class AIFleetCommander implements Base, FleetCommander {
             int num = fl.num(i);
             if (num > 0) {
                 ShipDesign des = lab.design(i);
+                float bcValueFactor = 1;
                 if(des == null)
                     continue;
                 if(des.isScout() && !countScouts)
                     continue;
                 if(des.isBomber() && !countBombers)
-                    continue;
+                {
+                    //ail the fighting-value of bombers is weak but not 0, so we count them partially
+                    if(countFighters)
+                        bcValueFactor = 0.2f;
+                    else
+                        continue;
+                }
                 if(des.isFighter() && !countFighters)
                     continue;
                 if(des.hasColonySpecial() && !countColonizers)
                     continue;
-                bc += (num * des.cost());
+                bc += (num * des.cost() * bcValueFactor);
             }
         }
         return bc;

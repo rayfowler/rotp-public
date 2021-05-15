@@ -205,27 +205,14 @@ public class AISpyMaster implements Base, SpyMaster {
     public Sabotage bestSabotageChoice(EmpireView v) {
         // invoked when a Sabotage attempt is successful
         // unfinished - AI needs to choose best sabotage type
-
-        if (v.embassy().anyWar()) {
-            if (!v.spies().baseTargets().isEmpty())
-                return Sabotage.MISSILES;
-            else if (!v.spies().factoryTargets().isEmpty())
-                return Sabotage.FACTORIES;
-            else if (!v.spies().rebellionTargets().isEmpty())
-                return Sabotage.REBELS;
-            else
-                return null;
-        }
-        else {
-            if (!v.spies().rebellionTargets().isEmpty())
-                return Sabotage.REBELS;
-            else if (!v.spies().factoryTargets().isEmpty())
-                return Sabotage.FACTORIES;
-            else if (!v.spies().baseTargets().isEmpty())
-                return Sabotage.MISSILES;
-            else
-                return null;
-        }
+        if (!v.spies().rebellionTargets().isEmpty())
+            return Sabotage.REBELS;
+        else if (!v.spies().baseTargets().isEmpty())
+            return Sabotage.MISSILES;
+        else if (!v.spies().factoryTargets().isEmpty())
+            return Sabotage.FACTORIES;
+        else
+            return null;
     }
     @Override
     public StarSystem bestSystemForSabotage(EmpireView v, Sabotage choice) {

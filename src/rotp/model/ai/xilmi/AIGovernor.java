@@ -370,7 +370,7 @@ public class AIGovernor implements Base, Governor {
                 enemy = true;
                 totalEnemyBc += emp.totalFleetCost() * (emp.tech().avgTechLevel() + 10);
             }
-            else if(empire.inShipRange(emp.id))
+            else if(empire.inShipRange(emp.id) || emp.inShipRange(empire.id))
             {
                 inAttackRange = true;
                 if(emp.totalFleetCost() > highestNonEnemyBc)

@@ -261,7 +261,7 @@ public class AIDiplomat implements Base, Diplomat {
         EmpireView view = empire.viewForEmpire(requestor);
 
         // what is this times the value of the request tech?dec
-        float maxTechValue = techDealValue(view) * tech.tradeValue(empire);
+        float maxTechValue = techDealValue(view) * tech.baseValue(empire);
 
         // what are all of the unknown techs that we could ask for
         List<Tech> allTechs = view.spies().unknownTechs();
@@ -341,12 +341,7 @@ public class AIDiplomat implements Base, Diplomat {
         return empire.ai().scientist().mostDesirableTech(v.spies().unknownTechs());
     }
     private float techDealValue(EmpireView v) {
-        if (v.embassy().alliance())
-            return 1.0f;
-        else if (v.embassy().pact())
-            return 0.9f;
-        else
-            return 0.8f;
+        return 1.0f;
     }
     //-----------------------------------
     //  TRADE TREATIES
