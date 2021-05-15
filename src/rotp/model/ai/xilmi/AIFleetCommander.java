@@ -153,7 +153,11 @@ public class AIFleetCommander implements Base, FleetCommander {
         List<StarSystem> otherSystemsInShipRange = new ArrayList<>();
         for(Empire other : empire.contactedEmpires())
         {
-            otherSystemsInShipRange.addAll(empire.systemsInShipRange(other));
+            if(empire.alliedWith(other.id))
+                continue;
+            if(!empire.inEconomicRange(other.id))
+                continue;
+            otherSystemsInShipRange.addAll(other.allColonizedSystems());
         }
         float ourEffectiveBC = bcValue(fleet, false, true, true, false);
         float civTech = empire.tech().avgTechLevel();
@@ -181,6 +185,10 @@ public class AIFleetCommander implements Base, FleetCommander {
                 targetTech = current.empire().tech().avgTechLevel();
             if(enemyBc * (targetTech+10.0f) * 2 > ourEffectiveBC * (civTech+10.0f))
                 continue;
+            for(StarSystem own : mySystemsInShipRange)
+            {
+                currentScore += max(own.colony().production() * own.planet().productionAdj() * own.planet().researchAdj(), 1.0f) / (1 + current.distanceTo(own));
+            }
             for(StarSystem other : otherSystemsInShipRange)
             {
                 float scoreToAdd = max(other.colony().production() * other.planet().productionAdj() * other.planet().researchAdj(), 1.0f) / (1 + current.distanceTo(other));
@@ -203,7 +211,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                 best = current;
             }
         }
-        //System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" gathers at "+empire.sv.name(best.id)+" score: "+bestScore);
+        /*if(best != null)
+            System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" gathers at "+empire.sv.name(best.id)+" score: "+bestScore);*/
         return best;
     }
     //ail: using completely different approach for handling my attack-fleets
