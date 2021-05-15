@@ -150,9 +150,22 @@ public class DialogueManager implements Base {
         msg.incident(inc);
         return msg;
     }
-    public String randomMessage(String type, Empire diplomat) {
+    public String randomMessage(String type, Empire speaker) {
         // find all dialog strings of proper type
-        EmpireView view = diplomat.isPlayer() ? null : diplomat.viewForEmpire(player());
+        EmpireView view = speaker.isPlayer() ? null : speaker.viewForEmpire(player());
+        List<DialogString> matchingStrings = new ArrayList<>();
+        for (DialogString str: strings) {
+            if (str.matchesType(type) && str.fitsContext(view))
+                matchingStrings.add(str); 
+        }
+        if (matchingStrings.isEmpty())
+            return concat("Message not found. type:", type);
+        else 
+            return speaker.race().dialogue(random(matchingStrings).key());
+    }
+    public String randomMessage(String type, EmpireView view) {
+        // find all dialog strings of proper type
+        Empire diplomat = view.empire();
         List<DialogString> matchingStrings = new ArrayList<>();
         for (DialogString str: strings) {
             if (str.matchesType(type) && str.fitsContext(view))

@@ -40,8 +40,9 @@ public class Rotp {
     public static int IMG_W = 1229;
     public static int IMG_H = 768;
     public static String jarFileName = "Remnants.jar";
+    public static String exeFileName = "Remnants.exe";
     public static boolean countWords = false;
-    private static String jarPath;
+    private static String startupDir;
     private static JFrame frame;
     public static String releaseId = "0.92";
     public static long startMs = System.currentTimeMillis();
@@ -142,16 +143,16 @@ public class Rotp {
         return resizeAmt;
     }
     public static String jarPath()  {
-        if (jarPath == null) {
+        if (startupDir == null) {
             try {
                 File jarFile = new File(Rotp.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath());
-                jarPath = jarFile.getParentFile().getPath();
+                startupDir = jarFile.getParentFile().getPath();
             } catch (URISyntaxException ex) {
                 System.out.println("Unable to resolve jar path: "+ex.toString());
-                jarPath = ".";
+                startupDir = ".";
             }
         }
-        return jarPath;
+        return startupDir;
     }
     private static void stopIfInsufficientMemory(JFrame frame, int allocMb) {
         if (allocMb < 260) {
@@ -167,7 +168,10 @@ public class Rotp {
         return (max == total) && (free < 300);
     }
     public static void restart() {
-        String execStr = actualAlloc < 0 ? "java -jar "+jarFileName : "java -Xmx"+actualAlloc+"m -jar "+jarFileName+" arg1";
+        
+        File exeFile = new File(startupDir+"/"+exeFileName);
+        String execStr = exeFile.exists() ? exeFileName : actualAlloc < 0 ? "java -jar "+jarFileName : "java -Xmx"+actualAlloc+"m -jar "+jarFileName+" arg1";
+
         try {
             Runtime.getRuntime().exec(execStr);
             System.exit(0);

@@ -964,51 +964,51 @@ public class AIDiplomat implements Base, Diplomat {
         return v.otherView().accept(DialogueManager.RESPOND_BREAK_TRADE, inc);
     }
     @Override
-    public DiplomaticReply receiveThreatStopSpying(Empire e) {
-        EmpireView v = empire.viewForEmpire(e);
+    public DiplomaticReply receiveThreatStopSpying(Empire dip) {
+        EmpireView v = empire.viewForEmpire(dip);
         
         v.embassy().noteRequest();
         v.embassy().withdrawAmbassador();
         
-        if (empire.atWarWith(e.id) || v.embassy().onWarFooting()) {
+        if (empire.atWarWith(dip.id) || v.embassy().onWarFooting()) {
             v.spies().ignoreThreat();
-            return v.otherView().accept(DialogueManager.RESPOND_IGNORE_THREAT);
+            return empire.respond(DialogueManager.RESPOND_IGNORE_THREAT, dip);
         }
 
         if (empire.leader().isPacifist() || empire.leader().isHonorable()) {
-            if (e.leader().isXenophobic()) {
-                empire.shutdownSpyNetworksAgainst(e.id);
+            if (dip.leader().isXenophobic()) {
+                empire.shutdownSpyNetworksAgainst(dip.id);
                 v.spies().heedEviction();
             }
             else {
-                empire.hideSpiesAgainst(e.id);
+                empire.hideSpiesAgainst(dip.id);
                 v.spies().heedThreat();
             }
-            return v.otherView().accept(DialogueManager.RESPOND_STOP_SPYING);
+            return empire.respond(DialogueManager.RESPOND_STOP_SPYING, dip);
         }
                    
-        float otherPower = empire.militaryPowerLevel(e);
+        float otherPower = empire.militaryPowerLevel(dip);
         float myPower = empire.militaryPowerLevel();
         float powerRatio = myPower/otherPower;
 
         if (powerRatio > 2) {
             v.spies().ignoreThreat();
-            return v.otherView().accept(DialogueManager.RESPOND_IGNORE_THREAT);
+            return empire.respond(DialogueManager.RESPOND_IGNORE_THREAT, dip);
         }
             
-        if (e.leader().isXenophobic()) {
-            empire.shutdownSpyNetworksAgainst(e.id);
+        if (dip.leader().isXenophobic()) {
+            empire.shutdownSpyNetworksAgainst(dip.id);
             v.spies().heedEviction();
         }
         else {
-            empire.hideSpiesAgainst(e.id);
+            empire.hideSpiesAgainst(dip.id);
             v.spies().heedThreat();
         }
-        return v.otherView().accept(DialogueManager.RESPOND_STOP_SPYING);
+        return empire.respond(DialogueManager.RESPOND_STOP_SPYING, dip);
     }
     @Override
-    public DiplomaticReply receiveThreatEvictSpies(Empire e) {
-        EmpireView v = empire.viewForEmpire(e);
+    public DiplomaticReply receiveThreatEvictSpies(Empire dip) {
+        EmpireView v = empire.viewForEmpire(dip);
         
         v.embassy().noteRequest();
         v.embassy().withdrawAmbassador();
@@ -1016,60 +1016,60 @@ public class AIDiplomat implements Base, Diplomat {
         EvictedSpiesIncident inc = EvictedSpiesIncident.create(v);
         v.embassy().addIncident(inc);
         
-        if (empire.atWarWith(e.id) || v.embassy().onWarFooting()) {
+        if (empire.atWarWith(dip.id) || v.embassy().onWarFooting()) {
             v.spies().ignoreThreat();
-            return v.otherView().accept(DialogueManager.RESPOND_IGNORE_THREAT);
+            return empire.respond(DialogueManager.RESPOND_IGNORE_THREAT, dip);
         }
 
         if (empire.leader().isPacifist() || empire.leader().isHonorable()) {
-            empire.shutdownSpyNetworksAgainst(e.id);
+            empire.shutdownSpyNetworksAgainst(dip.id);
             v.spies().heedEviction();
-            return v.otherView().accept(DialogueManager.RESPOND_STOP_SPYING);
+            return empire.respond(DialogueManager.RESPOND_STOP_SPYING, dip);
         }
                    
-        float otherPower = empire.militaryPowerLevel(e);
+        float otherPower = empire.militaryPowerLevel(dip);
         float myPower = empire.militaryPowerLevel();
         float powerRatio = myPower/otherPower;
 
         if (powerRatio > 2) {
             v.spies().ignoreThreat();
-            return v.otherView().accept(DialogueManager.RESPOND_IGNORE_THREAT);
+            return empire.respond(DialogueManager.RESPOND_IGNORE_THREAT, dip);
         }
             
-        empire.shutdownSpyNetworksAgainst(e.id);
+        empire.shutdownSpyNetworksAgainst(dip.id);
         v.spies().heedEviction();
-        return v.otherView().accept(DialogueManager.RESPOND_STOP_SPYING);
+        return empire.respond(DialogueManager.RESPOND_STOP_SPYING, dip);
     }
     @Override
-    public DiplomaticReply receiveThreatStopAttacking(Empire e) {
-        EmpireView v = empire.viewForEmpire(e);
+    public DiplomaticReply receiveThreatStopAttacking(Empire dip) {
+        EmpireView v = empire.viewForEmpire(dip);
 
         v.embassy().noteRequest();
         v.embassy().withdrawAmbassador();
         
-        if (empire.atWarWith(e.id) || v.embassy().onWarFooting()) {
+        if (empire.atWarWith(dip.id) || v.embassy().onWarFooting()) {
             v.embassy().ignoreThreat();
-            return v.otherView().accept(DialogueManager.RESPOND_IGNORE_THREAT);
+            return empire.respond(DialogueManager.RESPOND_IGNORE_THREAT, dip);
         }
 
         if (empire.leader().isPacifist()) {
-            empire.retreatShipsFrom(e.id);
+            empire.retreatShipsFrom(dip.id);
             v.embassy().heedThreat();
-            return v.otherView().accept(DialogueManager.RESPOND_STOP_ATTACKING);
+            return empire.respond(DialogueManager.RESPOND_STOP_ATTACKING, dip);
         }
                    
-        float otherPower = empire.militaryPowerLevel(e);
+        float otherPower = empire.militaryPowerLevel(dip);
         float myPower = empire.militaryPowerLevel();
         float powerRatio = myPower/otherPower;
 
         if (powerRatio > 2) {
             v.embassy().ignoreThreat();
-            return v.otherView().accept(DialogueManager.RESPOND_IGNORE_THREAT);
+            return empire.respond(DialogueManager.RESPOND_IGNORE_THREAT, dip);
         }
             
-        empire.retreatShipsFrom(e.id);
+        empire.retreatShipsFrom(dip.id);
         v.embassy().heedThreat();
-        return v.otherView().accept(DialogueManager.RESPOND_STOP_ATTACKING);
+        return empire.respond(DialogueManager.RESPOND_STOP_ATTACKING, dip);
     }
     @Override
     public DiplomaticReply receiveDeclareWar(Empire e) {

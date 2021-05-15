@@ -65,6 +65,8 @@ import rotp.model.tech.Tech;
 import rotp.model.tech.TechRoboticControls;
 import rotp.model.tech.TechTree;
 import rotp.ui.NoticeMessage;
+import rotp.ui.diplomacy.DialogueManager;
+import rotp.ui.diplomacy.DiplomaticReply;
 import rotp.ui.main.GalaxyMapPanel;
 import rotp.util.Base;
 
@@ -415,7 +417,17 @@ public final class Empire implements Base, NamedObject, Serializable {
             empireName = replaceTokens("[this_empire]", "this");
         return empireName;
     }
-    
+    public DiplomaticReply respond(String reason, Empire listener) {
+        return respond(reason,listener,null);
+    }
+    public DiplomaticReply respond(String reason, Empire listener, Empire other) {
+        String message = DialogueManager.current().randomMessage(reason, this);
+        message = replaceTokens(message, "my");
+        message = listener.replaceTokens(message, "your");
+        if (other != null)
+            message = other.replaceTokens(message, "other");
+        return DiplomaticReply.answer(true, message);
+    }
     public void chooseNewCapital() {
         // make list of every colony that is not the current capital
         StarSystem currentCapital = galaxy().system(capitalSysId);
@@ -1164,29 +1176,6 @@ public final class Empire implements Base, NamedObject, Serializable {
         Galaxy gal = galaxy();
         visibleShips.clear();
         
-        float scanRange = planetScanningRange();
-        // get ships orbiting visible systems
-
-        for (int sysId=0;sysId<sv.count();sysId++) {
-            // is the system in scanning range?
-            boolean canScan = sv.withinRange(sysId, scanRange);
-            List<ShipFleet> systemFleets = gal.ships.allFleetsAtSystem(sysId);
-            // if not, see if we own or are unity with any ships
-            // currently in the system. If so, we can see all ships here
-            if (!canScan)  {
-                for (ShipFleet fl: systemFleets) {
-                    if (canSeeShips(fl.empId))
-                        canScan = true;
-                }
-            }
-            if (canScan) {
-                for (ShipFleet fl: systemFleets) {
-                    if (fl.visibleTo(this))
-                        visibleShips.add(fl);
-                }
-            }
-        }
-
         List<ShipFleet> myShips = galaxy().ships.allFleets(id);
         List<StarSystem> mySystems = this.allColonizedSystems();
 
@@ -1198,7 +1187,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
 
         // get fleets in transit
-        for (ShipFleet sh : gal.ships.inTransitFleets()) {
+        for (ShipFleet sh : gal.ships.allFleets()) {
             if (canSeeShips(sh.empId())
             || (sh.visibleTo(id) && canScanTo(sh, mySystems, myShips) ))
                 addVisibleShip(sh);
@@ -2324,7 +2313,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         if (totalEmpireProduction <= 0) {
             float totalProductionBC = 0;
             List<StarSystem> systems = new ArrayList<>(allColonizedSystems());
-            for (StarSystem sys: systems)
+            for (StarSystem sys: systems) 
                 totalProductionBC += sys.colony().production();
             totalEmpireProduction = totalProductionBC;
         }

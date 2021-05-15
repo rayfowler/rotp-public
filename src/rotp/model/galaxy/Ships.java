@@ -28,7 +28,7 @@ import rotp.util.Base;
 public class Ships implements Base, Serializable {
     private static final long serialVersionUID = 1L;
     private final List<ShipFleet> allFleets = new ArrayList<>();
-    private List<ShipFleet> allFleetsCopy() { return new ArrayList<>(allFleets); }
+     private List<ShipFleet> allFleetsCopy() { return new ArrayList<>(allFleets); }
     
     public void buildRallyShips(int empId, int sysId, int designId, int count, int rallySysId) {
         // are we relocating new ships? If so, do so as long as dest is still allied with us
@@ -636,6 +636,9 @@ public class Ships implements Base, Serializable {
                 fleets.add(fl);
         }
         return fleets;
+    }
+    public List<ShipFleet> allFleets() {
+        return allFleetsCopy();
     }
     public List<ShipFleet> allFleets(int empireId) {
         List<ShipFleet> fleets = new ArrayList<>();
