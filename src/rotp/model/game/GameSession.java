@@ -830,12 +830,16 @@ public final class GameSession implements Base, Serializable {
         return true;
     }
     public void loadRecentSession(boolean startUp) {
-        loadSession(saveDir(), RECENT_SAVEFILE, startUp);
+        loadRecentSession(RECENT_SAVEFILE, startUp);
+    }
+    public void loadRecentSession(String filename, boolean startUp) {
+        String fn = filename.isEmpty() ? RECENT_SAVEFILE : filename;
+        loadSession(saveDir(), fn, startUp);
     }
     public void loadSession(String dir, String filename, boolean startUp) {
         try {
             log("Loading game from file: ", filename);
-            File saveFile = new File(dir, filename);
+            File saveFile = dir.isEmpty() ? new File(filename) : new File(dir, filename);
             GameSession newSession;
             // assume the file is not zipped, load it directly
             try (InputStream file = new FileInputStream(saveFile)) {
