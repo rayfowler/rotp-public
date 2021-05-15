@@ -830,11 +830,7 @@ public final class GameSession implements Base, Serializable {
         return true;
     }
     public void loadRecentSession(boolean startUp) {
-        loadRecentSession(RECENT_SAVEFILE, startUp);
-    }
-    public void loadRecentSession(String filename, boolean startUp) {
-        String fn = filename.isEmpty() ? RECENT_SAVEFILE : filename;
-        loadSession(saveDir(), fn, startUp);
+        loadSession(saveDir(), RECENT_SAVEFILE, startUp);
     }
     public void loadSession(String dir, String filename, boolean startUp) {
         try {

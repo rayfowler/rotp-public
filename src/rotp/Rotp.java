@@ -99,18 +99,18 @@ public class Rotp {
             setFrameSize();
         }
 
-        if (reloadRecentSave)
-            GameSession.instance().loadRecentSession(false);
-        else if (!loadSaveFile.isEmpty()) 
-            GameSession.instance().loadSession("", loadSaveFile, false);
-        
         // this will not catch 32-bit JREs on all platforms, but better than nothing
         String bits = System.getProperty("sun.arch.data.model").trim();
         if (bits.equals("32"))
             RotPUI.instance().mainUI().showJava32BitPrompt();
+        else if (reloadRecentSave)
+            GameSession.instance().loadRecentSession(false);
+        else if (!loadSaveFile.isEmpty()) 
+            GameSession.instance().loadSession("", loadSaveFile, false);        
 
-        frame.setVisible(true);
+        becomeVisible();
     }
+    public static void becomeVisible() {   frame.setVisible(true); }
     public static boolean containsArg(String[] argList, String key) {
         for (String s: argList) {
             if (s.equalsIgnoreCase(key))
