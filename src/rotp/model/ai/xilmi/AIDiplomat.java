@@ -365,6 +365,10 @@ public class AIDiplomat implements Base, Diplomat {
         if (!empire.inEconomicRange(id(e)))
             return false;
         EmpireView view = empire.viewForEmpire(id(e));
+
+        if (!view.embassy().contact())
+            return false;
+
         // Automatic exclusion for AI empires:
         //    1) Have trade established but it is not yet profitable
         // or 2) Not at full trade && and can't increase current trade level by +50%
