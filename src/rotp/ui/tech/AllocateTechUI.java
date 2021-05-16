@@ -629,7 +629,15 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         techSelections.clear();
         boolean newResearch = cat.researchStarted();
         String currentT = cat.currentTech();
-        int maxQ = currentT == null ? 0 : cat.maxResearchableQuintile();
+
+        int maxQ = cat.maxResearchableQuintile();
+        
+        // if we haven't started any research yet (currentT == null)
+        // but have acquired a tech through other means (e.g. artifact planet),
+        // show all of the known tiers but not the next tier
+        if (currentT == null)
+            maxQ--;
+        
         int maxTechLvl = maxQ*5;
         List<String> knownT = cat.knownTechs();
         List<String> allT = new ArrayList<>(cat.possibleTechs());
@@ -663,18 +671,18 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             int minLevel=(5*i)+1;
             int maxLevel=minLevel+4;
             if (i==maxQ)
-                drawUnknownTechTier(g,cat, i, x0,tierW,h);
+                drawUnknownTechTier(g,cat,currentT, i, x0,tierW,h);
             else
                 drawTechTier(g,techs,newResearch,knownT,currentT,minLevel,maxLevel,x0,tierW,h);
             x0 += tierW;
         }
         g.dispose();
     }
-    private void drawUnknownTechTier(Graphics g, TechCategory cat, int tier, int x, int w, int h) {
+    private void drawUnknownTechTier(Graphics g, TechCategory cat, String currentT, int tier, int x, int w, int h) {
         String title = text("TECH_NEXT_TIER_TITLE");
         String desc;
         
-        if (tier == 0)
+        if (currentT == null)
             desc = text("TECH_FIRST_TIER_DESC");
         else if (tier < 10)
             desc = text("TECH_NEXT_TIER_DESC");
