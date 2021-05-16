@@ -363,6 +363,8 @@ public class AIDiplomat implements Base, Diplomat {
     public boolean canOfferTradeTreaty(Empire e) {
         if (!empire.inEconomicRange(id(e)))
             return false;
+        if(!e.inEconomicRange(empire.id))
+            return false;
         
         EmpireView view = empire.viewForEmpire(id(e));
         
