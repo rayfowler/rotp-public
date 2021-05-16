@@ -2252,6 +2252,17 @@ public final class Empire implements Base, NamedObject, Serializable {
             pts += fl.bcValue();
         return pts;
     }
+    public Float totalEmpirePopulation() {
+        float totalPop = 0;
+        List<StarSystem> systems = new ArrayList<>(allColonizedSystems());
+        for (StarSystem sys: systems)
+            totalPop += sys.colony().population();
+        List<Transport> allTransports = transports();
+        for(Transport tr: allTransports) 
+            totalPop += tr.size();
+                
+        return totalPop;
+    }
     public Float totalPlanetaryPopulation() {
         float totalPop = 0;
         List<StarSystem> systems = new ArrayList<>(allColonizedSystems());
