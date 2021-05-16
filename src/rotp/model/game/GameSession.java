@@ -207,6 +207,10 @@ public final class GameSession implements Base, Serializable {
         return false;
     }
     public void addSystemToAllocate(StarSystem sys, String reason) {
+        // don't prompt to allocate systems that are in rebellion
+        if (sys.isColonized() && sys.colony().inRebellion())
+            return;
+        
         log("Re-allocate: ", sys.name(), " :", reason);
         if (!systemsToAllocate().containsKey(sys))
             systemsToAllocate().put(sys, new ArrayList<>());
