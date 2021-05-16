@@ -733,6 +733,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
     }
     private void finish(boolean disableNextTurn) {
         displayedSystems = null;
+        sessionVar("COLONYUI_ANCHOR_SYSTEM", null); 
         buttonClick();
         RotPUI.instance().selectMainPanel(disableNextTurn);
     }
