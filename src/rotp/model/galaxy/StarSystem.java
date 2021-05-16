@@ -93,7 +93,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     private transient boolean displayed = false;
 
     public SystemTransportSprite transportSprite() {
-        if (transportSprite == null) {
+        if ((transportSprite == null) && isColonized()) {
             transportSprite = new SystemTransportSprite(this);
             if (transportAmt > 0) {
                 transportSprite.clickedDest(galaxy().system(transportDestId));

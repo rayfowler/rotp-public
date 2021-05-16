@@ -53,7 +53,7 @@ public class EmpireStatus implements Base, Serializable {
         int turn = galaxy().numberTurns();
         if (turn >= fleetStrength.length)
             growLists();
-
+        
         fleetStrength[turn] = currentFleetStrengthValue();
         population[turn] = currentPopulationValue();
         technology[turn] = currentTechnologyValue();

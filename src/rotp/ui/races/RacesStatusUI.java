@@ -454,9 +454,9 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
 
         // find maximum Y value to display
         int maxYValue = 0;
-        for (int i=0;i<totalTurns;i++)
+        for (int i=0;i<=totalTurns;i++)
             maxYValue = Math.max(playerVals[i], maxYValue);
-        for (int i=0;i<empireTurns;i++)
+        for (int i=0;i<=empireTurns;i++)
             maxYValue = Math.max(empireVals[i], maxYValue);
 
         int startX = x1+lSpacing;    // x-location for pt values in turn 0
@@ -473,7 +473,7 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         drawString(g,name, startX+displayW+rSpacing-s5-nameW, startY+s5);
         int prevX = startX;
         int prevY = -1;
-        for (int i=0;i<empireTurns;i++) {
+        for (int i=0;i<=empireTurns;i++) {
             int ptX = startX+(displayW*i/totalTurns);
             if ((ptX - prevX) > maxPtSpacing)
                 ptX = prevX + maxPtSpacing;
@@ -489,7 +489,7 @@ public final class RacesStatusUI extends BasePanel implements MouseListener, Mou
         drawString(g,player().raceName(), startX, startY-displayH);
         prevX = startX;
         prevY = -1;
-        for (int i=0;i<totalTurns;i++) {
+        for (int i=0;i<=totalTurns;i++) {
             int ptX = startX+(displayW*i/totalTurns);
             if ((ptX - prevX) > maxPtSpacing)
                 ptX = prevX + maxPtSpacing;
