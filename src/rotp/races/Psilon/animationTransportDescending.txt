@@ -2,4 +2,4 @@
 # Psilon Transport Ship Descending Animation
 
 // Default is closed
-Base, _ALL_  , PsiTransport
+Base, _ALL_  , PsiTrans
