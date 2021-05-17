@@ -407,6 +407,9 @@ public class DiplomaticEmbassy implements Base, Serializable {
         // owner() is the requestee, who will be learning the counter-offered tech
         owner().tech().acquireTechThroughTrade(offeredTech.id, empire().id);
         empire().tech().acquireTechThroughTrade(requestedTech.id, owner().id);
+
+        view.spies().noteTradedTech(requestedTech);
+        view.otherView().spies().noteTradedTech(offeredTech);
         DiplomaticIncident inc = ExchangeTechnologyIncident.create(owner(), empire(), offeredTech, requestedTech);
         addIncident(inc);
         otherEmbassy().addIncident(ExchangeTechnologyIncident.create(empire(), owner(), requestedTech, offeredTech));
