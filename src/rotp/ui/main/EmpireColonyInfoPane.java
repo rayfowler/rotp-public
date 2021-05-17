@@ -33,6 +33,7 @@ import java.util.List;
 import javax.swing.JPanel;
 import rotp.model.colony.Colony;
 import rotp.model.galaxy.StarSystem;
+import rotp.model.planet.Planet;
 import rotp.ui.BasePanel;
 import rotp.ui.SystemViewer;
 
@@ -228,8 +229,18 @@ public class EmpireColonyInfoPane extends BasePanel {
         protected int maxValue(List<Colony> colonies) { 
             int val = 0;
             for (Colony c: colonies)
-                val += c.industry().maxFactories(); 
+                val += c.industry().maxBuildableFactories(); 
             return val;
+        }
+        @Override
+        protected String maxValueString(List<Colony> c) { 
+            if (c.size()> 1)
+                return str(maxValue(c));
+            Planet p = c.get(0).planet();
+            if (p.currentSize() < p.maxSize())
+                return text("MAIN_COLONY_VALUE+", str(maxValue(c))); 
+            else
+                return str(maxValue(c));
         }
     }
     class EmpireShieldPane extends EmpireDataPane {
