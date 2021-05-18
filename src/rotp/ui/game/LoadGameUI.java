@@ -182,6 +182,12 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
                 selectedFile = saveFiles.get(start+selectIndex)+GameSession.SAVEFILE_EXTENSION;
         }
     }
+    private String selectedFileName(int index) {
+        if ((start+index == 0) && hasAutosave)
+            return GameSession.RECENT_SAVEFILE;
+        else
+            return saveFiles.get(start+index)+GameSession.SAVEFILE_EXTENSION;
+    }
     private String fileBaseName(String fn) {
         String ext = GameSession.SAVEFILE_EXTENSION;
         if (fn.endsWith(ext)
@@ -241,7 +247,7 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
         start = max(0, min(start+1, saveFiles.size()-MAX_FILES));
         if ((start == prevStart) && (selectIndex >= 0))
             selectIndex = min(selectIndex+1, saveFiles.size()-1, MAX_FILES-1);
-        selectedFile = saveFiles.get(start+selectIndex)+GameSession.SAVEFILE_EXTENSION;
+        selectedFile = selectedFileName(selectIndex);
         if ((prevStart != start) || (prevSelect != selectIndex))
             repaint();
     }
@@ -251,7 +257,7 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
         start = max(start-1, 0);
         if ((start == prevStart) && (selectIndex >= 0))
             selectIndex = max(selectIndex-1, 0);
-        selectedFile = saveFiles.get(start+selectIndex)+GameSession.SAVEFILE_EXTENSION;
+        selectedFile = selectedFileName(selectIndex);
         if ((prevStart != start) || (prevSelect != selectIndex))
             repaint();
     }
@@ -679,10 +685,7 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
                 }
                 if (!saveFiles.isEmpty()) {
                     int fileIndex = start+selectIndex;
-                    if ((fileIndex == 0) && hasAutosave)
-                        selectedFile = GameSession.RECENT_SAVEFILE;
-                    else
-                        selectedFile = saveFiles.get(start+selectIndex)+GameSession.SAVEFILE_EXTENSION;
+                    selectedFile = selectedFileName(selectIndex);
                 }
                 current.repaint();
             }

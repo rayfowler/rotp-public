@@ -576,6 +576,7 @@ MAIN_COLONY_HOMEWORLD             | %1 Homeworld
 MAIN_COLONY_FOUNDED               | %1 Colony
 MAIN_COLONY_POPULATION            | Population
 MAIN_COLONY_FACTORIES             | Factories
+MAIN_COLONY_VALUE+                | %1+
 MAIN_COLONY_SHIELD                | Shield Level
 MAIN_COLONY_BASES                 | Bases
 MAIN_COLONY_PRODUCTION            | Production - Net (Gross)

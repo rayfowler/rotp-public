@@ -44,7 +44,7 @@ import rotp.ui.RotPUI;
 import rotp.ui.main.SystemPanel;
 
 public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseMotionListener, ActionListener {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;    
     static final int SCIENTIST_VIEW = 0;
     static final int SPY_VIEW = 1;
     static final int TROOPER_VIEW = 2;
@@ -62,6 +62,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
     private int view;
     private int mode;
     private int background;
+    private boolean researchedTech = false;
     String title;
     private Tech tech;
     private StarSystem system;
@@ -129,6 +130,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         background = BACKGROUND_LABORATORY;
         tech = tech(techId);
         sourceEmpire = player();
+        researchedTech = true;
         player().race().resetScientist();
         title = text("TECH_DISCOVERY_TITLE", text(tech().cat.key()));
         title = player().replaceTokens(title, "player");
@@ -146,6 +148,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         view = SCIENTIST_VIEW;
         mode = MODE_SHOW_TECH;
         background = BACKGROUND_ALIEN_LAB;
+        researchedTech = false;
         tech = tech(techId);
         sourceEmpire = gal.empire(empId);
         player().race().resetScientist();
@@ -166,6 +169,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         view = TROOPER_VIEW;
         mode = MODE_SHOW_TECH;
         background = empId == Empire.NULL_ID ? BACKGROUND_RUINS : BACKGROUND_ALIEN_LAB;
+        researchedTech = false;
         tech = tech(techId);
         system = gal.system(sysId);
         sourceEmpire = empId == Empire.NULL_ID ? null : gal.empire(empId);  // could be null for artifact planets
@@ -188,6 +192,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         view = TROOPER_VIEW;
         mode = MODE_SHOW_TECH;
         background = BACKGROUND_DERELICT;
+        researchedTech = false;
         tech = tech(techId);
         mission = null;
         sourceEmpire = null;
@@ -207,6 +212,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         view = SPY_VIEW;
         mode = MODE_SHOW_TECH;
         background = BACKGROUND_ALIEN_LAB;
+        researchedTech = false;
         tech = m.choice();
         system = m.targetSystem();
         sourceEmpire = gal.empire(empId);
@@ -625,7 +631,9 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
             player().lowerECOToCleanIfEcoComplete();
         finished = true;
         repaint();
-        RotPUI.instance().selectMainPanel();
+        
+        if (!researchedTech)
+            RotPUI.instance().selectMainPanel();
         session().resumeNextTurnProcessing();
     }
     private void handleShowTechAction() {

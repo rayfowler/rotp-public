@@ -56,12 +56,18 @@ public class Rotp {
     static GraphicsDevice device = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice();
     public static void main(String[] args) {
         frame = new JFrame("Remnants of the Precursors");
+        String loadSaveFile = "";
         if (args.length == 0) {
             if (restartWithMoreMemory(frame, false))
                 return;
             logging = false;
         }
-        reloadRecentSave = containsArg(args, "reload");
+        else {
+            if (args[0].toLowerCase().endsWith(".rotp")) 
+                loadSaveFile = args[0];
+        }
+        
+        reloadRecentSave = containsArg(args, "reload");  
         logging = containsArg(args, "log");
         stopIfInsufficientMemory(frame, (int)maxHeapMemory);
         Thread.setDefaultUncaughtExceptionHandler(new SwingExceptionHandler());
@@ -93,16 +99,18 @@ public class Rotp {
             setFrameSize();
         }
 
-        if (reloadRecentSave) 
-            GameSession.instance().loadRecentSession(false);
-        
         // this will not catch 32-bit JREs on all platforms, but better than nothing
         String bits = System.getProperty("sun.arch.data.model").trim();
         if (bits.equals("32"))
             RotPUI.instance().mainUI().showJava32BitPrompt();
+        else if (reloadRecentSave)
+            GameSession.instance().loadRecentSession(false);
+        else if (!loadSaveFile.isEmpty()) 
+            GameSession.instance().loadSession("", loadSaveFile, false);        
 
-        frame.setVisible(true);
+        becomeVisible();
     }
+    public static void becomeVisible() {   frame.setVisible(true); }
     public static boolean containsArg(String[] argList, String key) {
         for (String s: argList) {
             if (s.equalsIgnoreCase(key))
@@ -168,7 +176,6 @@ public class Rotp {
         return (max == total) && (free < 300);
     }
     public static void restart() {
-        
         File exeFile = new File(startupDir+"/"+exeFileName);
         String execStr = exeFile.exists() ? exeFileName : actualAlloc < 0 ? "java -jar "+jarFileName : "java -Xmx"+actualAlloc+"m -jar "+jarFileName+" arg1";
 

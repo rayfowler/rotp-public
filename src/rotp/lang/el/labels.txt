@@ -579,6 +579,7 @@ MAIN_COLONY_HOMEWORLD             | Πλανήτης Προέλευσης %1
 MAIN_COLONY_FOUNDED               | Αποικία %1
 MAIN_COLONY_POPULATION            | Πληθυσμός
 MAIN_COLONY_FACTORIES             | Εργοστάσια
+MAIN_COLONY_VALUE+                | %1+
 MAIN_COLONY_SHIELD                | Επίπεδο Ασπίδας
 MAIN_COLONY_BASES                 | Βάσεις
 MAIN_COLONY_PRODUCTION            | Παράγει - Καθαρό (Μεικτό)

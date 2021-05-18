@@ -1140,19 +1140,21 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         g.setFont(narrowFont(18));
         g.setColor(SystemPanel.blackText);
         List<EmpireView> contacts = emp.contacts();
-        Collections.sort(contacts, EmpireView.BY_RACENAME);
+        Collections.sort(contacts, EmpireView.PLAYER_LIST_ORDER);
         int rowH = s18;
         int fullListH = (contacts.size()*rowH)+s5;
         int rightM = fullListH <= listH ? s10 : s20;
         for (EmpireView contact: contacts) {
-            y3 += rowH;
-            g.setFont(narrowFont(18));
-            drawString(g,contact.empire().raceName(), x3, y3);
-            g.setFont(narrowFont(15));
-            String treaty = contact.embassy().treaty().status(player());
-            int sw1 = g.getFontMetrics().stringWidth(treaty);
-            int x3b = x2+w2-sw1-rightM;
-            drawString(g,treaty, x3b, y3);
+            if (contact.inEconomicRange()) {
+                y3 += rowH;
+                g.setFont(narrowFont(18));
+                drawString(g,contact.empire().raceName(), x3, y3);
+                g.setFont(narrowFont(15));
+                String treaty = contact.embassy().treaty().status(player());
+                int sw1 = g.getFontMetrics().stringWidth(treaty);
+                int x3b = x2+w2-sw1-rightM;
+                drawString(g,treaty, x3b, y3);
+            }
         }      
         relationsYMax = max(0, fullListH-listH);
         if (relationsYMax == 0)

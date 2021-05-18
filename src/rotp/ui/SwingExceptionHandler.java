@@ -17,6 +17,7 @@ package rotp.ui;
 
 import java.lang.reflect.InvocationTargetException;
 import javax.swing.SwingUtilities;
+import rotp.Rotp;
 
 public class SwingExceptionHandler implements Thread.UncaughtExceptionHandler {
     @Override
@@ -37,5 +38,6 @@ public class SwingExceptionHandler implements Thread.UncaughtExceptionHandler {
     }
     private void showError(Throwable e) {
         RotPUI.instance().selectErrorPanel(e);
+        Rotp.becomeVisible();
     }
 }

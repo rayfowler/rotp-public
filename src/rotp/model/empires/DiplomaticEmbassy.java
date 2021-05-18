@@ -260,8 +260,6 @@ public class DiplomaticEmbassy implements Base, Serializable {
     public void giveExpansionWarning()      { warningLevel = 1; }
     public boolean gaveExpansionWarning()   { return warningLevel > 0; }
     public void noteRequest() {
-        if (requestCount == currentMaxRequests)
-            currentMaxRequests--;
         requestCount++;
     }
     public void heedThreat()          { threatened = true; }
@@ -407,6 +405,9 @@ public class DiplomaticEmbassy implements Base, Serializable {
         // owner() is the requestee, who will be learning the counter-offered tech
         owner().tech().acquireTechThroughTrade(offeredTech.id, empire().id);
         empire().tech().acquireTechThroughTrade(requestedTech.id, owner().id);
+
+        view.spies().noteTradedTech(requestedTech);
+        view.otherView().spies().noteTradedTech(offeredTech);
         DiplomaticIncident inc = ExchangeTechnologyIncident.create(owner(), empire(), offeredTech, requestedTech);
         addIncident(inc);
         otherEmbassy().addIncident(ExchangeTechnologyIncident.create(empire(), owner(), requestedTech, offeredTech));
