@@ -1025,13 +1025,16 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             return;
         }
         
-        if (techSelections.keySet().contains(hoverBox)) {
-            String techId = techSelections.get(hoverBox);
-            player().tech().category(selectedCategory).currentTech(tech(techId));
-            visualTree = null;
-            repaint();
-            return;
+        if (treeBox.contains(x,y)) {
+            if (techSelections.keySet().contains(hoverBox)) {
+                String techId = techSelections.get(hoverBox);
+                player().tech().category(selectedCategory).currentTech(tech(techId));
+                visualTree = null;
+                repaint();
+                return;
+            }
         }
+
         if (hoverBox == techBox) {
             toggleOverflowSpending();
             return;
@@ -1141,9 +1144,11 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         }
     }
     private Shape hoverShape(int x, int y) {
-        for (RoundRectangle2D.Float box: techSelections.keySet()) {
-            if (box.contains(x+treeX-treeBox.x,y+treeY-treeBox.y)) 
-                return box;
+        if (treeBox.contains(x,y)) {
+            for (RoundRectangle2D.Float box: techSelections.keySet()) {
+                if (box.contains(x+treeX-treeBox.x,y+treeY-treeBox.y)) 
+                    return box;
+            }
         }
         if (equalizeButton.contains(x,y))
             return equalizeButton;
