@@ -110,7 +110,7 @@ public class MapOverlayNone extends MapOverlay {
                     Sprite spr = parent.displayPanel().spriteToDisplay();
                     if (spr instanceof StarSystem) {
                         StarSystem sys = (StarSystem) spr;
-                        player().sv.view(sys.id).toggleFlagColor(shift);
+                        player().sv.toggleFlagColor(sys.id,shift);
                         break;
                     }
                 }

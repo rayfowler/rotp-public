@@ -26,6 +26,8 @@ import java.awt.Shape;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 import java.util.List;
 import javax.swing.SwingUtilities;
 import rotp.model.empires.SystemInfo;
@@ -34,7 +36,7 @@ import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
 import rotp.ui.map.IMapHandler;
 
-public class UnexploredSystemPanel extends SystemPanel implements MouseMotionListener, MouseListener {
+public class UnexploredSystemPanel extends SystemPanel implements MouseMotionListener, MouseListener, MouseWheelListener {
     private static final long serialVersionUID = 1L;
     Rectangle flagBox = new Rectangle();
     Shape hoverBox;
@@ -47,6 +49,7 @@ public class UnexploredSystemPanel extends SystemPanel implements MouseMotionLis
         initModel();
         addMouseListener(this);
         addMouseMotionListener(this);
+        addMouseWheelListener(this);
     }
     @Override
     protected BasePanel topPane() { return null; }
@@ -58,9 +61,14 @@ public class UnexploredSystemPanel extends SystemPanel implements MouseMotionLis
     protected BasePanel detailPane() {
         return new UnexploredDetailPane(parentSpritePanel);
     }
-    public void toggleFlagColor(boolean rightClick) {
+    public void toggleFlagColor(boolean reverse) {
         StarSystem sys = parentSpritePanel.systemViewToDisplay();
-        player().sv.view(sys.id).toggleFlagColor(rightClick);
+        player().sv.toggleFlagColor(sys.id, reverse);
+        spritePanel().repaint();
+    }
+    public void resetFlagColor() {
+        StarSystem sys = parentSpritePanel.systemViewToDisplay();
+        player().sv.resetFlagColor(sys.id);
         IMapHandler topPanel = spritePanel().parent;
         topPanel.repaint();
     }
@@ -86,7 +94,10 @@ public class UnexploredSystemPanel extends SystemPanel implements MouseMotionLis
     public void mouseReleased(MouseEvent e) {
         boolean rightClick = SwingUtilities.isRightMouseButton(e);
         if (hoverBox == flagBox) {
-            toggleFlagColor(rightClick);
+            if (rightClick)
+                resetFlagColor();
+            else
+                toggleFlagColor(false);
        }
     }
     @Override
@@ -96,6 +107,15 @@ public class UnexploredSystemPanel extends SystemPanel implements MouseMotionLis
         if (hoverBox != null) {
             hoverBox = null;
             repaint();
+        }
+    }
+    @Override
+    public void mouseWheelMoved(MouseWheelEvent e) {
+        if (hoverBox == flagBox) {
+            if (e.getWheelRotation() < 0)
+                toggleFlagColor(true);
+            else
+                toggleFlagColor(false);
         }
     }
     public class UnexploredDetailPane  extends BasePanel {

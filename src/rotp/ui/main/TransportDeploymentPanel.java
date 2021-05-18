@@ -557,7 +557,7 @@ public class TransportDeploymentPanel extends SystemPanel {
             }
         }
     }
-    class ToSystemDetailPane extends BasePanel implements MouseMotionListener, MouseListener {
+    class ToSystemDetailPane extends BasePanel implements MouseMotionListener, MouseListener, MouseWheelListener {
         private static final long serialVersionUID = 1L;
         Shape hoverBox;
         Rectangle flagBox = new Rectangle();
@@ -567,6 +567,7 @@ public class TransportDeploymentPanel extends SystemPanel {
         private void init() {
             setPreferredSize(new Dimension(getWidth(),s80));
             setBackground(MainUI.paneBackground);
+            addMouseWheelListener(this);
             addMouseMotionListener(this);
             addMouseListener(this);
         }
@@ -701,8 +702,11 @@ public class TransportDeploymentPanel extends SystemPanel {
         }
         public void toggleFlagColor(boolean rightClick) {
             StarSystem sys = destination();
-            player().sv.view(sys.id).toggleFlagColor(rightClick);
-            parentSpritePanel.parent.repaint();
+            if (rightClick)
+                player().sv.resetFlagColor(sys.id);
+            else
+                player().sv.toggleFlagColor(sys.id);
+            parentSpritePanel.repaint();
         }
         @Override
         public void mouseDragged(MouseEvent e) { }
@@ -736,6 +740,17 @@ public class TransportDeploymentPanel extends SystemPanel {
             if (hoverBox != null) {
                 hoverBox = null;
                 repaint();
+            }
+        }
+        @Override
+        public void mouseWheelMoved(MouseWheelEvent e) {
+            if (hoverBox == flagBox) {
+                StarSystem sys = destination();
+                if (e.getWheelRotation() < 0)
+                    player().sv.toggleFlagColor(sys.id, true);
+                else
+                    player().sv.toggleFlagColor(sys.id, false);
+                parentSpritePanel.repaint();
             }
         }
     }

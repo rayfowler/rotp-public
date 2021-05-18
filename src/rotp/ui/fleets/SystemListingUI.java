@@ -1232,7 +1232,10 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             if (e.getButton() > 3)
                 return;
             boolean rightClick = SwingUtilities.isRightMouseButton(e);
-            player().sv.toggleFlagColor(sys.id, rightClick);
+            if (rightClick)
+                player().sv.resetFlagColor(sys.id);
+            else
+                player().sv.toggleFlagColor(sys.id);
             softClick();
             repaint();
         }

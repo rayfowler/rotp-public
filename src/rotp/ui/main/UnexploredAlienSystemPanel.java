@@ -220,7 +220,10 @@ public class UnexploredAlienSystemPanel extends SystemPanel {
             boolean rightClick = SwingUtilities.isRightMouseButton(e);
             if (hoverBox == flagBox) {
                 StarSystem sys = parentSpritePanel.systemViewToDisplay();
-                player().sv.view(sys.id).toggleFlagColor(rightClick);
+                if (rightClick)
+                    player().sv.resetFlagColor(sys.id);
+                else
+                    player().sv.toggleFlagColor(sys.id);
                 parentSpritePanel.parent.repaint();
             }
             else if (hoverBox == nameBox) {

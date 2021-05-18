@@ -104,7 +104,9 @@ public class SystemInfo implements Serializable, Base {
     public Image flagImage(int i)              { return missing(i) ? null  : view(i).flagImage(); }
     public Image mapFlagImage(int i)           { return missing(i) ? null  : view(i).mapFlagImage(); }
     public Image flagHover(int i)              { return ImageManager.current().image("Flag_Hover"); }
-    public void toggleFlagColor(int i, boolean b) { if (!missing(i))  view(i).toggleFlagColor(b); }
+    public void toggleFlagColor(int i)          { toggleFlagColor(i, false); }
+    public void toggleFlagColor(int i, boolean b) { view(i).toggleFlagColor(b); }
+    public void resetFlagColor(int i)            { view(i).resetFlagColor(); }
     public FleetPlan fleetPlan(int i)            { return view(i).fleetPlan(); }
     public ShipFleet orbitingFleet(int i)        { return system(i).orbitingFleetForEmpire(empire()); }
     public List<ShipFleet> orbitingFleets(int i) { return missing(i) ? null : view(i).orbitingFleets(); }

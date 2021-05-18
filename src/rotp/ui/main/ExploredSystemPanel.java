@@ -24,6 +24,8 @@ import java.awt.Shape;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.List;
@@ -62,7 +64,7 @@ public class ExploredSystemPanel extends SystemPanel {
     protected BasePanel detailPane() {
         return new ExploredDetailPane(this);
     }
-    private class ExploredDetailPane extends BasePanel implements MouseMotionListener, MouseListener {
+    private class ExploredDetailPane extends BasePanel implements MouseMotionListener, MouseListener, MouseWheelListener {
         private static final long serialVersionUID = 1L;
         SystemPanel parent;
         private Shape textureClip;
@@ -75,6 +77,7 @@ public class ExploredSystemPanel extends SystemPanel {
         }
         private void init() {
             setOpaque(false);
+            addMouseWheelListener(this);
             addMouseMotionListener(this);
             addMouseListener(this);
         }
@@ -167,8 +170,11 @@ public class ExploredSystemPanel extends SystemPanel {
             boolean rightClick = SwingUtilities.isRightMouseButton(e);
             if (hoverBox == flagBox) {
                 StarSystem sys = parentSpritePanel.systemViewToDisplay();
-                player().sv.view(sys.id).toggleFlagColor(rightClick);
-                parentSpritePanel.parent.repaint();
+                if (rightClick)
+                    player().sv.resetFlagColor(sys.id);
+                else
+                    player().sv.toggleFlagColor(sys.id);
+                parentSpritePanel.repaint();
             }
         }
         @Override
@@ -178,6 +184,17 @@ public class ExploredSystemPanel extends SystemPanel {
             if (hoverBox != null) {
                 hoverBox = null;
                 repaint();
+            }
+        }
+        @Override
+        public void mouseWheelMoved(MouseWheelEvent e) {
+            if (hoverBox == flagBox) {
+                StarSystem sys = parentSpritePanel.systemViewToDisplay();
+                if (e.getWheelRotation() < 0)
+                    player().sv.toggleFlagColor(sys.id, true);
+                else
+                    player().sv.toggleFlagColor(sys.id, false);
+                parentSpritePanel.repaint();
             }
         }
     }

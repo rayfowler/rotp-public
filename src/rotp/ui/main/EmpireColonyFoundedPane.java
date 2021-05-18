@@ -25,6 +25,8 @@ import java.awt.Shape;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.SwingUtilities;
@@ -37,7 +39,7 @@ import rotp.ui.RotPUI;
 import rotp.ui.SystemViewer;
 import rotp.ui.map.IMapHandler;
 
-public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionListener, MouseListener {
+public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionListener, MouseListener, MouseWheelListener {
     private static final long serialVersionUID = 1L;
     SystemViewer parent;
     Rectangle flagBox = new Rectangle();
@@ -55,6 +57,7 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
         setBackground(c0);
         setPreferredSize(new Dimension(getWidth(), s40));
         addMouseMotionListener(this);
+        addMouseWheelListener(this);
         addMouseListener(this);
     }
     @Override
@@ -89,7 +92,7 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
         g.drawImage(flagImage, w-sz+s15, h-sz+s15, sz, sz, null);
         flagBox.setBounds(w-sz+s25,h-sz+s15,sz-s20,sz-s10);
     }
-    public void toggleFlagColor(boolean rightClick) {
+    public void toggleFlagColor(boolean reverse) {
         List<StarSystem> systems = parent.systemsToDisplay();
         if (systems == null) {
             systems = new ArrayList<>();
@@ -99,7 +102,27 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
         }
         
         for (StarSystem sys1: systems) 
-            player().sv.view(sys1.id).toggleFlagColor(rightClick);
+            player().sv.toggleFlagColor(sys1.id, reverse);
+
+                if (repainter != null)
+            repainter.repaint();
+        else if (topParent != null)
+            topParent.repaint();
+        else
+            parent.repaintAll();
+    }
+    public void resetFlagColor() {
+        List<StarSystem> systems = parent.systemsToDisplay();
+        if (systems == null) {
+            systems = new ArrayList<>();
+            StarSystem sys = parent.systemViewToDisplay();
+            if (sys != null)
+                systems.add(sys);
+        }
+        
+        for (StarSystem sys1: systems) 
+            player().sv.resetFlagColor(sys1.id);
+        
         if (repainter != null)
             repainter.repaint();
         else if (topParent != null)
@@ -131,7 +154,10 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
     public void mouseReleased(MouseEvent e) {
         boolean rightClick = SwingUtilities.isRightMouseButton(e);
         if (hoverBox == flagBox) {
-            toggleFlagColor(rightClick);
+            if (rightClick)
+                resetFlagColor();
+            else
+                toggleFlagColor(false);
        }
         else if (hoverBox == nameBox) {
             RotPUI.instance().selectRacesPanel();
@@ -146,6 +172,15 @@ public class EmpireColonyFoundedPane extends BasePanel implements MouseMotionLis
         if (hoverBox != null) {
             hoverBox = null;
             repaint();
+        }
+    }
+    @Override
+    public void mouseWheelMoved(MouseWheelEvent e) {
+        if (hoverBox == flagBox) {
+            if (e.getWheelRotation() < 0)
+                toggleFlagColor(true);
+            else
+                toggleFlagColor(true);
         }
     }
 }
