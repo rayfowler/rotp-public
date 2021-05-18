@@ -180,12 +180,12 @@ public class AIDiplomat implements Base, Diplomat {
         // 2 - we have diplomats active
         // 3 - we are not at war
         // 4 - we are in economic range
-        // 5 - our spies tell us they have technologies that are unknown to us
+        // 5 - they have techs they are willing to trade to us (i.e. do we have compensation)
         return options().canTradeTechs(empire, e) 
                 && diplomats(id(e)) 
                 && !empire.atWarWith(id(e)) 
                 && empire.inEconomicRange(id(e)) 
-                && !empire.viewForEmpire(id(e)).spies().unknownTechs().isEmpty(); 
+                && !techsAvailableForRequest(e).isEmpty();
     }
 
     @Override
