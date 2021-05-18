@@ -333,21 +333,9 @@ public class SystemView implements IMappedObject, Base, Serializable {
     public boolean environmentFertile()     { return (planet() != null) && planet().isEnvironmentFertile(); }
     public boolean environmentGaia()        { return (planet() != null) && planet().isEnvironmentGaia(); }
 
-    public void toggleFlagColor(boolean reverse) {
-        if (reverse) {
-            switch(flagColor) {
-                case FLAG_NONE:   flagColor = FLAG_PINK; return;
-                case FLAG_WHITE:  flagColor = FLAG_NONE; return;
-                case FLAG_RED:    flagColor = FLAG_WHITE; return;
-                case FLAG_BLUE:   flagColor = FLAG_RED; return;
-                case FLAG_GREEN:  flagColor = FLAG_BLUE; return;
-                case FLAG_YELLOW: flagColor = FLAG_GREEN; return;
-                case FLAG_AQUA:   flagColor = FLAG_YELLOW; return;
-                case FLAG_ORANGE: flagColor = FLAG_AQUA; return;
-                case FLAG_LTBLUE: flagColor = FLAG_ORANGE; return;
-                case FLAG_PURPLE: flagColor = FLAG_LTBLUE; return;
-                case FLAG_PINK:   flagColor = FLAG_PURPLE; return;
-            }
+    public void toggleFlagColor(boolean reset) {
+        if (reset) {
+            flagColor = FLAG_NONE; return;
         }
         else {
             switch(flagColor) {

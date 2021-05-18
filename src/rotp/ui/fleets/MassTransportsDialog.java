@@ -142,7 +142,7 @@ public class MassTransportsDialog extends BasePanel {
         footerUI.close();
     }
     private void setBoundsH(int h) {
-        setBounds(scaled(150),scaled(100),scaled(700),h);
+        setBounds(scaled(150),scaled(100),scaled(730),h);
     }
     private void initModel() {
         setBoundsH(scaled(600));
@@ -237,6 +237,7 @@ public class MassTransportsDialog extends BasePanel {
         @Override
         protected void postInit() {
             Column rowNumCol =  newRowNumColumn("PLANETS_LIST_NUM", 15, RIGHT);
+            Column flagCol = newSystemFlagColumn("", "FLAG", 30, palette.black, StarSystem.VFLAG, LEFT);
             Column nameCol = newSystemDataColumn("PLANETS_LIST_NAME", "NAME", 140, palette.black, StarSystem.NAME, LEFT);
             Column populationCol = newSystemDataColumn("PLANETS_LIST_POP", "POPULATION", 60, palette.black, StarSystem.POPULATION, RIGHT);
             Column sizeCol = newSystemDataColumn("PLANETS_LIST_SIZE", "SIZE", 60, palette.black, StarSystem.CURRENT_SIZE, RIGHT);
@@ -246,6 +247,7 @@ public class MassTransportsDialog extends BasePanel {
 
             view = new DataView();
             view.addColumn(rowNumCol);
+            view.addColumn(flagCol);
             view.addColumn(nameCol);
             view.addColumn(populationCol);
             view.addColumn(sizeCol);
