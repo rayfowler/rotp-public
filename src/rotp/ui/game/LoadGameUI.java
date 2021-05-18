@@ -183,10 +183,10 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
         }
     }
     private String selectedFileName(int index) {
-        if ((index == 0) && hasAutosave)
+        if ((start+index == 0) && hasAutosave)
             return GameSession.RECENT_SAVEFILE;
         else
-            return saveFiles.get(start+selectIndex)+GameSession.SAVEFILE_EXTENSION;
+            return saveFiles.get(start+index)+GameSession.SAVEFILE_EXTENSION;
     }
     private String fileBaseName(String fn) {
         String ext = GameSession.SAVEFILE_EXTENSION;
