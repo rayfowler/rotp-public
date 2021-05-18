@@ -233,6 +233,17 @@ public class Tech implements Base {
                 return Base.compare(o2.level, o1.level);
         }
     };
+    public static Comparator<Tech> BASE_VALUE = new Comparator<Tech>() {
+        @Override
+        public int compare(Tech o1, Tech o2) {
+            float pr1 = o1.baseValue(comparatorCiv);
+            float pr2 = o2.baseValue(comparatorCiv);
+            if (pr1 != pr2)
+                return Base.compare(pr2, pr1);
+            else
+                return Base.compare(o2.level, o1.level);
+        }
+    };
     public static Comparator<Tech> WAR_TRADE_VALUE = new Comparator<Tech>() {
         @Override
         public int compare(Tech o1, Tech o2) {

@@ -260,8 +260,6 @@ public class DiplomaticEmbassy implements Base, Serializable {
     public void giveExpansionWarning()      { warningLevel = 1; }
     public boolean gaveExpansionWarning()   { return warningLevel > 0; }
     public void noteRequest() {
-        if (requestCount == currentMaxRequests)
-            currentMaxRequests--;
         requestCount++;
     }
     public void heedThreat()          { threatened = true; }
