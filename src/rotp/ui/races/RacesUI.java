@@ -990,7 +990,7 @@ public class RacesUI extends BasePanel {
                 g.draw(sh);
                 g.setStroke(prev);
             }
-            
+            boolean inRange = true;
             if (emp.isPlayer()) {
                 List<EmpireView> views = player().contacts();
                 int n = views.size();
@@ -1010,7 +1010,7 @@ public class RacesUI extends BasePanel {
             }
             else {
                 EmpireView view = player().viewForEmpire(emp);
-                boolean inRange = view.inEconomicRange();
+                inRange = view.inEconomicRange();
                 g.setColor(blackC);
                 g.setFont(narrowFont(16));
 
@@ -1043,20 +1043,18 @@ public class RacesUI extends BasePanel {
             
             if (UserPreferences.texturesInterface()) 
                 drawTextureWithExistingClip(g, x0,y0,w0,h0);
-            drawRaceImage(g, emp, back, x0, y0, h0);
+            drawRaceImage(g, emp, back, x0, y0, h0, inRange);
         }
-        public void drawRaceImage(Graphics2D g, Empire emp, BufferedImage back, int x, int y, int h) {
+        public void drawRaceImage(Graphics2D g, Empire emp, BufferedImage back, int x, int y, int h, boolean inRange) {
             BufferedImage img = emp.race().diploMugshotQuiet();
+            
             int w1 = back.getWidth();
             int h1 = back.getHeight();
             int mgn = (h-h1)/2;
-            g.drawImage(back, x+mgn, y+mgn, null);
-
-            //Composite comp = AlphaComposite.getInstance(AlphaComposite.SRC_OVER , 0.3f);
-            //if (comp != null)
-            //    g.setComposite(comp);
-            g.drawImage(img, x+mgn, y+mgn, w1, h1, null);
             
+            g.drawImage(back, x+mgn, y+mgn, null);
+            g.drawImage(img, x+mgn, y+mgn, w1, h1, null);
+
             if (emp.isPlayer())
                 return;
             
@@ -1064,7 +1062,9 @@ public class RacesUI extends BasePanel {
             EmpireView view = player().viewForEmpire(emp);
             boolean dipGone = view.embassy().diplomatGone();
             boolean otherDipGone = view.otherView().embassy().diplomatGone();
-            if (dipGone && otherDipGone)
+            if (!inRange) 
+                text = text("RACES_OUT_OF_RANGE");
+            else if (dipGone && otherDipGone)
                 text = text("RACES_DIPLOMATS_RECALLED");
             else if (dipGone) {
                 text = text("RACES_DIPLOMAT_RECALLED");
@@ -1078,7 +1078,7 @@ public class RacesUI extends BasePanel {
             if (!text.isEmpty()) {
                 g.setFont(narrowFont(14));
                 Composite prevC = g.getComposite();
-                Composite comp = AlphaComposite.getInstance(AlphaComposite.SRC_OVER , 0.6f);
+                Composite comp = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.6f);
                 g.setComposite(comp);
                 g.setColor(Color.black);
                 g.fillRect(x+mgn, y+mgn, w1, h1);
