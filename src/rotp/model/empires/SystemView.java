@@ -38,7 +38,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
     protected static final int BORDER_SYSTEM = 2;
     protected static final int ATTACK_TARGET = 3;
     
-    static final int FLAG_NONE = 0;
+    public static final int FLAG_NONE = 0;
     static final int FLAG_WHITE = 1;
     static final int FLAG_RED = 2;
     static final int FLAG_BLUE = 3;
