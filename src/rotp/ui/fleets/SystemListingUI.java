@@ -1240,6 +1240,16 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             repaint();
         }
         @Override
+        public void mouseWheelMoved(StarSystem sys, MouseWheelEvent e) {
+            int rot = e.getWheelRotation();
+            if (rot < 0)
+                player().sv.toggleFlagColor(sys.id, true);
+            else 
+                player().sv.toggleFlagColor(sys.id, false);
+        }
+        @Override
+        public boolean wantsMouseWheel()       { return true; }
+        @Override
         public void reset() { setBounds(0,0,0,0); }
         @Override
         public int id()     { return SYSTEM_FLAG; }
