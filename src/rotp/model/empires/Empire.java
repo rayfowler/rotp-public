@@ -1066,7 +1066,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         
         // end all rebellions
         for (StarSystem sys: allColonizedSystems()) 
-            sys.colony().rebels(0);    
+            sys.colony().clearAllRebellion();   
 
         if (viewForEmpire(player()).embassy().contact()) {
             String leaderDesc = text("LEADER_PERSONALITY_FORMAT", leader.personality(),leader.objective());
