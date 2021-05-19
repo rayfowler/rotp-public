@@ -1003,6 +1003,17 @@ public interface Base {
         }
         return wrappedLines;
     }
+    public default int scaledDialogueFontSize(Graphics g, String text, int maxWidth, int maxLines, int desiredFont, int minFont) {
+        int fontSize = desiredFont;
+        g.setFont(dlgFont(fontSize));
+        List<String> wrappedLines = wrappedLines(g, text, maxWidth);
+        while ((wrappedLines.size() > maxLines) && (fontSize > minFont)) {
+            fontSize--;
+            g.setFont(dlgFont(fontSize));
+            wrappedLines = wrappedLines(g, text, maxWidth);
+        }
+        return fontSize;
+    }
     public default List<String> scaledWrappedLines(Graphics g, String text, int maxWidth, int maxLines, int desiredFont, int minFont) {
         int fontSize = desiredFont;
         g.setFont(font(fontSize));

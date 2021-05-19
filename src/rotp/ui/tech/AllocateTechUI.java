@@ -83,6 +83,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
     private final Rectangle treeBox = new Rectangle();
     private final Rectangle catArea = new Rectangle();
     private final Map<RoundRectangle2D.Float,String> techSelections = new HashMap<>();
+    private Point2D.Float[] currentTechs = new Point2D.Float[TechTree.NUM_CATEGORIES];
     private BufferedImage visualTree;
     int treeX, treeY;
     int dragX, dragY;
@@ -277,6 +278,20 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             g.setStroke(prev);
         }
 
+        // draw RP remaining or % success for current tech
+        Point2D.Float techPt = currentTechs[selectedCategory];
+        if (techPt != null) {
+            int y1 = (int) techPt.y-treeY+treeBox.y;
+            int x1 = (int) techPt.x-treeX+treeBox.x;       
+            TechCategory cat = player().tech().category(selectedCategory);
+            Tech tech = tech(cat.currentTech());
+            String costLbl = techCostString(cat, tech);
+            g.setFont(narrowFont(20));
+            int costSW = g.getFontMetrics().stringWidth(costLbl);
+            g.setColor(Color.black);
+            drawString(g,costLbl, x1-costSW, y1);        
+        }
+        
         // draw right-side panel
         int subPanelX = w-scaled(250);
         int subPanelW = scaled(233);
@@ -427,6 +442,25 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             g.setColor(Color.white);
 
         drawString(g,"?", s26, s40);
+    }
+    private String techCostString(TechCategory cat, Tech tech) {
+        if (tech == null)
+            return "";
+        float costRP = cat.costForTech(tech);
+        float chance = 1;
+        if ((cat.currentTech() != null) && cat.currentTech().equals(tech.id)) {
+            costRP -= cat.totalBC();
+            chance = cat.upcomingDiscoveryChance();
+        }
+        int cost = max(0,(int)Math.ceil(costRP));
+        if (chance > 1) {
+            int pct = (int) (100* (chance -1));
+            return text("TECH_DISCOVERY_PCT",pct);
+        }
+        else if (cost > 10000)
+            return text("TECH_TOTAL_RP",shortFmt(cost));
+        else 
+            return text("TECH_TOTAL_RP",cost);
     }
     private void drawCategorySlider(Graphics2D g, int catNum, int x, int y, int w, int h) {
         TechCategory cat = player().tech().category(catNum);
@@ -756,9 +790,9 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             backC = knownTechC;
             textC = Color.black;
         }
-        else if (tech.id.equals(currentT))
+        else if (tech.id.equals(currentT)) 
             backC = currentTechC;
-
+        
         Color c0 = backC;
         Color c1 = new Color(backC.getRed(), backC.getGreen(), backC.getBlue(), 80);
         Point2D start = new Point2D.Float(x, y);
@@ -791,24 +825,23 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
             drawShadowedString(g, name, 2, x+s7, y0, SystemPanel.buttonShadowC, textC);
         
         if (!known) {
-            String costLbl;
-            float costRP = cat.costForTech(tech);
-            if ((cat.currentTech() != null) && cat.currentTech().equals(tech.id))
-                costRP -= cat.totalBC();
-            int cost = max(0,(int)Math.ceil(costRP));
-            if (cost > 10000)
-                costLbl = text("TECH_TOTAL_RP",shortFmt(cost));
-            else if (cost > 0)
-                costLbl = text("TECH_TOTAL_RP",cost);
-            else {
-                float chance = cat.upcomingDiscoveryChance();
-                int pct = (int) (100* (chance -1));
-                costLbl = text("TECH_DISCOVERY_PCT",pct);
+            // for current techs, the cost label is drawn dynamically over the visualTree
+            // image instead of within the image. This allows adjustments of the tech
+            // sliders to update the current tech cost label without the costly effort
+            // of recreating the visual tree image. To do this, for each current tech
+            // we save off the x/y positioning of the cost label for later reference.
+            if (tech.id.equals(currentT)) {
+                int catId = tech.cat.index();
+                Point2D.Float pt = new Point2D.Float(x+w-s10,y0);
+                currentTechs[catId] = pt;
             }
-            g.setFont(narrowFont(fontSize));
-            int costSW = g.getFontMetrics().stringWidth(costLbl);
-            g.setColor(Color.black);
-            drawString(g,costLbl, x+w-s10-costSW, y0);
+            else {
+                String costLbl = techCostString(cat, tech);
+                g.setFont(narrowFont(fontSize));
+                int costSW = g.getFontMetrics().stringWidth(costLbl);
+                g.setColor(Color.black);
+                drawString(g,costLbl, x+w-s10-costSW, y0);
+            }            
         }
 
         g.setColor(techUnderscoreC);
@@ -850,6 +883,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         repaint();
     }
     private void resetData() {
+        currentTechs = new Point2D.Float[TechTree.NUM_CATEGORIES];
         visualTree = null;
         hoverBox = null;
         treeX = 0;

@@ -109,9 +109,14 @@ public class MapOverlaySystemsScouted extends MapOverlay {
             systemIndex = orderedSystems.size()-1;
         mapSelectIndex(systemIndex);
     }
-    private void toggleFlagColor(boolean rightClick) {
+    private void toggleFlagColor(boolean reverse) {
         StarSystem sys = orderedSystems.get(systemIndex);
-        player().sv.view(sys.id).toggleFlagColor(rightClick);
+        player().sv.toggleFlagColor(sys.id, reverse);
+        parent.repaint();
+    }
+    private void resetFlagColor() {
+        StarSystem sys = orderedSystems.get(systemIndex);
+        player().sv.resetFlagColor(sys.id);
         parent.repaint();
     }
     @Override
@@ -658,6 +663,8 @@ public class MapOverlaySystemsScouted extends MapOverlay {
         @Override
         public boolean acceptDoubleClicks()         { return true; }
         @Override
+        public boolean acceptWheel()                { return true; }
+        @Override
         public boolean isSelectableAt(GalaxyMapPanel map, int x, int y) {
             hovering = x >= selectX
                         && x <= selectX+selectW
@@ -681,7 +688,17 @@ public class MapOverlaySystemsScouted extends MapOverlay {
         }
         @Override
         public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
-            parent.toggleFlagColor(rightClick);
+            if (rightClick)
+                parent.resetFlagColor();
+            else
+                parent.toggleFlagColor(false);
+        };
+        @Override
+        public void wheel(GalaxyMapPanel map, int rotation, boolean click) {
+            if (rotation < 0)
+                parent.toggleFlagColor(true);
+            else
+                parent.toggleFlagColor(false);
         };
     }
 }

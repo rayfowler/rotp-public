@@ -84,8 +84,12 @@ public class MapOverlayBombardPrompt extends MapOverlay {
     private StarSystem starSystem() {
         return galaxy().system(sysId);
     }
-    private void toggleFlagColor(boolean rightClick) {
-        player().sv.view(sysId).toggleFlagColor(rightClick);
+    private void toggleFlagColor(boolean reverse) {
+        player().sv.toggleFlagColor(sysId, reverse);
+        parent.repaint();
+    }
+    private void resetFlagColor() {
+        player().sv.resetFlagColor(sysId);
         parent.repaint();
     }
     public void bombardYes() {
@@ -504,6 +508,8 @@ public class MapOverlayBombardPrompt extends MapOverlay {
         @Override
         public boolean acceptDoubleClicks()         { return true; }
         @Override
+        public boolean acceptWheel()                { return true; }
+        @Override
         public boolean isSelectableAt(GalaxyMapPanel map, int x, int y) {
             hovering = x >= selectX
                         && x <= selectX+selectW
@@ -527,7 +533,17 @@ public class MapOverlayBombardPrompt extends MapOverlay {
         }
         @Override
         public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
-            parent.toggleFlagColor(rightClick);
+            if (rightClick)
+                parent.resetFlagColor();
+            else
+                parent.toggleFlagColor(false);
+        };
+        @Override
+        public void wheel(GalaxyMapPanel map, int rotation, boolean click) {
+            if (rotation < 0)
+                parent.toggleFlagColor(true);
+            else
+                parent.toggleFlagColor(false);
         };
     }
 }

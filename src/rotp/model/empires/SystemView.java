@@ -38,7 +38,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
     protected static final int BORDER_SYSTEM = 2;
     protected static final int ATTACK_TARGET = 3;
     
-    static final int FLAG_NONE = 0;
+    public static final int FLAG_NONE = 0;
     static final int FLAG_WHITE = 1;
     static final int FLAG_RED = 2;
     static final int FLAG_BLUE = 3;
@@ -333,9 +333,10 @@ public class SystemView implements IMappedObject, Base, Serializable {
     public boolean environmentFertile()     { return (planet() != null) && planet().isEnvironmentFertile(); }
     public boolean environmentGaia()        { return (planet() != null) && planet().isEnvironmentGaia(); }
 
+    public void resetFlagColor()            { flagColor = FLAG_NONE; }
     public void toggleFlagColor(boolean reverse) {
         if (reverse) {
-            switch(flagColor) {
+             switch(flagColor) {
                 case FLAG_NONE:   flagColor = FLAG_PINK; return;
                 case FLAG_WHITE:  flagColor = FLAG_NONE; return;
                 case FLAG_RED:    flagColor = FLAG_WHITE; return;

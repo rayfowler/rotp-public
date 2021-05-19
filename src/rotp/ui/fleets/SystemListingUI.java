@@ -33,6 +33,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import javax.swing.SwingUtilities;
 import javax.swing.border.Border;
 import rotp.model.empires.SystemView;
 import rotp.model.galaxy.StarSystem;
@@ -62,10 +63,12 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
     public static final int CENTER = 0;
     public static final int RIGHT = 1;
 
+    // unique ids for various button types that may be on a row
     int TRANSPORT_SLIDER = 1;
     int TRANSPORT_DECREMENT = 2;
     int TRANSPORT_INCREMENT = 3;
     int TRANSPORT_STOP = 4;
+    int SYSTEM_FLAG = 5;
 
     private final BasePanel topParent;
     protected Palette palette;
@@ -465,7 +468,7 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         if ((button != null) && button.wantsMouseRelease()) {
             Sprite sprite = matchingSprite(x,y);
             button.mouseReleased(sprite.system(), e);
-            repaint();
+            topParent.repaint();
             return;
         }
 
@@ -816,7 +819,14 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         @Override
         public void draw(Graphics g, RowSprite row, StarSystem sys, int x, int y, int w) {
             super.draw(g, row, sys, x, y, w);
-            SystemView sv = player().sv.view(sys.id);
+            SystemFlagButton flagButton = (SystemFlagButton) row.getButton(SYSTEM_FLAG);
+            if (flagButton == null) {
+                flagButton = new SystemFlagButton();
+                row.addButton(flagButton);
+            }
+            flagButton.setBounds(x, y-row.h, w, row.h);
+
+           SystemView sv = player().sv.view(sys.id);
             int sz = s35;
             Image img = sv.flagImage();
             
@@ -1212,6 +1222,37 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         public void reset() { setBounds(0,0,0,0); }
         @Override
         public int id()     { return TRANSPORT_STOP; }
+        @Override
+        public boolean contains(int x, int y)  { return super.contains(x,y); }
+    }
+    class SystemFlagButton extends Rectangle implements SystemButton {
+        private static final long serialVersionUID = 1L;
+        @Override
+        public void mouseReleased(StarSystem sys, MouseEvent e) {
+            if (e.getButton() > 3)
+                return;
+            boolean rightClick = SwingUtilities.isRightMouseButton(e);
+            if (rightClick)
+                player().sv.resetFlagColor(sys.id);
+            else
+                player().sv.toggleFlagColor(sys.id);
+            softClick();
+            repaint();
+        }
+        @Override
+        public void mouseWheelMoved(StarSystem sys, MouseWheelEvent e) {
+            int rot = e.getWheelRotation();
+            if (rot < 0)
+                player().sv.toggleFlagColor(sys.id, true);
+            else 
+                player().sv.toggleFlagColor(sys.id, false);
+        }
+        @Override
+        public boolean wantsMouseWheel()       { return true; }
+        @Override
+        public void reset() { setBounds(0,0,0,0); }
+        @Override
+        public int id()     { return SYSTEM_FLAG; }
         @Override
         public boolean contains(int x, int y)  { return super.contains(x,y); }
     }

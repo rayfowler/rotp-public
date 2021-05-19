@@ -15,16 +15,31 @@
  */
 package rotp.ui.main;
 
+import java.awt.AlphaComposite;
 import java.awt.Color;
+import java.awt.Composite;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.Shape;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 import java.util.List;
+import javax.swing.SwingUtilities;
+import rotp.model.empires.SystemInfo;
+import rotp.model.empires.SystemView;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
-import static rotp.ui.main.SystemPanel.grayText;
+import rotp.ui.map.IMapHandler;
 
-public class UnexploredSystemPanel extends SystemPanel {
+public class UnexploredSystemPanel extends SystemPanel implements MouseMotionListener, MouseListener, MouseWheelListener {
     private static final long serialVersionUID = 1L;
+    Rectangle flagBox = new Rectangle();
+    Shape hoverBox;
 
     public UnexploredSystemPanel(SpriteDisplayPanel p) {
         parentSpritePanel = p;
@@ -32,6 +47,9 @@ public class UnexploredSystemPanel extends SystemPanel {
     }
     private void init() {
         initModel();
+        addMouseListener(this);
+        addMouseMotionListener(this);
+        addMouseWheelListener(this);
     }
     @Override
     protected BasePanel topPane() { return null; }
@@ -42,6 +60,63 @@ public class UnexploredSystemPanel extends SystemPanel {
     @Override
     protected BasePanel detailPane() {
         return new UnexploredDetailPane(parentSpritePanel);
+    }
+    public void toggleFlagColor(boolean reverse) {
+        StarSystem sys = parentSpritePanel.systemViewToDisplay();
+        player().sv.toggleFlagColor(sys.id, reverse);
+        spritePanel().repaint();
+    }
+    public void resetFlagColor() {
+        StarSystem sys = parentSpritePanel.systemViewToDisplay();
+        player().sv.resetFlagColor(sys.id);
+        IMapHandler topPanel = spritePanel().parent;
+        topPanel.repaint();
+    }
+    @Override
+    public void mouseDragged(MouseEvent e) { }
+    @Override
+    public void mouseMoved(MouseEvent e) {
+        int x = e.getX();
+        int y = e.getY();
+        Shape prevHover = hoverBox;
+        hoverBox = null;
+        if (flagBox.contains(x,y))
+            hoverBox = flagBox;
+        
+        if (prevHover != hoverBox)
+            repaint();
+    }
+    @Override
+    public void mouseClicked(MouseEvent e) { }
+    @Override
+    public void mousePressed(MouseEvent e) { }
+    @Override
+    public void mouseReleased(MouseEvent e) {
+        boolean rightClick = SwingUtilities.isRightMouseButton(e);
+        if (hoverBox == flagBox) {
+            if (rightClick)
+                resetFlagColor();
+            else
+                toggleFlagColor(false);
+       }
+    }
+    @Override
+    public void mouseEntered(MouseEvent e) { }
+    @Override
+    public void mouseExited(MouseEvent e) { 
+        if (hoverBox != null) {
+            hoverBox = null;
+            repaint();
+        }
+    }
+    @Override
+    public void mouseWheelMoved(MouseWheelEvent e) {
+        if (hoverBox == flagBox) {
+            if (e.getWheelRotation() < 0)
+                toggleFlagColor(true);
+            else
+                toggleFlagColor(false);
+        }
     }
     public class UnexploredDetailPane  extends BasePanel {
         private static final long serialVersionUID = 1L;
@@ -59,11 +134,12 @@ public class UnexploredSystemPanel extends SystemPanel {
         @Override
         public boolean hasStarBackground()     { return true; }
         @Override
-        public void paintComponent(Graphics g) {
+        public void paintComponent(Graphics g0) {
             StarSystem sys = parent.systemViewToDisplay();
             if (sys == null)
                 return;
 
+            Graphics2D g = (Graphics2D) g0;
             super.paintComponent(g);
             int w = getWidth();
             int h = getHeight();
@@ -77,9 +153,34 @@ public class UnexploredSystemPanel extends SystemPanel {
             Graphics2D g2 = (Graphics2D) g;
             drawStar(g2, sys.starType(), s40, getWidth()/2, getHeight()/2);
 
-            g.setFont(narrowFont(36));
+            int sz = s60;
             String label = text("MAIN_UNEXPLORED_SYSTEM");
-            drawBorderedString(g, label, 2, s25, s42, Color.black, SystemPanel.orangeText);
+            scaledFont(g, label, w-sz, 36, 24);
+            drawBorderedString(g, label, 2, s10, s40, Color.black, SystemPanel.orangeText);
+            
+            // draw system banner
+            SystemInfo sv = player().sv;
+            if (hoverBox == flagBox) {
+                Image hoverImage = sv.flagHover(sys.id);
+                g.drawImage(hoverImage, w-sz+s5, 0, sz, sz, null);
+            }
+            else if (sv.flagColorId(sys.id) == SystemView.FLAG_NONE){
+                Image hoverImage = sv.flagHover(sys.id);
+                g.drawImage(hoverImage, w-sz+s5, 0, sz, sz, null);
+                Composite prevC = g.getComposite();
+                Composite comp = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.6f);
+                g.setComposite(comp);
+                g.setColor(Color.black);
+                g.fillRect(w-sz+s15, 0, sz-s10, sz-s10);
+                g.setComposite(prevC);
+            }
+            
+            Image flagImage = sv.mapFlagImage(sys.id);
+            g.drawImage(flagImage, w-sz+s5, 0, sz, sz, null);
+            flagBox.setBounds(w-sz+s5,0,sz-s20,sz-s10);         
+            
+            //g.setColor(Color.red);
+            //g.fillRect(w-sz+s25,15,sz-s20,sz-s10); 
             
             if (sys.inNebula()) {
                 g.setFont(narrowFont(16));
