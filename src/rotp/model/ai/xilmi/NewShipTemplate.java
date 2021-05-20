@@ -124,6 +124,8 @@ public class NewShipTemplate implements Base {
             float score = 0;
             if(count >= 1)
                 score = design.spaceUsed() / design.totalSpace();
+            if(design.firepower(0) == 0)
+                score = 0;
             if(role.BOMBER == role)
             {
                 boolean hasBombs = false;
