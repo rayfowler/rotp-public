@@ -40,7 +40,6 @@ public class DesignUI extends BasePanel {
     public static DesignUI instance;
     static Palette palette;
 
-    private static final int[] shipColors = { 0,1,3,4,5,6,8,9,10,11};
     private static final Color lightBrown = new Color(178,124,87);
     private static final Color brown = new Color(110,79,56);
     private static final Color darkBrown = new Color(112,85,68);
@@ -1754,16 +1753,16 @@ public class DesignUI extends BasePanel {
             int sw = g.getFontMetrics().stringWidth(s);
             drawString(g,s, x, y+h);
             int w0 = w-sw-s20;
-            int boxW = w0/shipColors.length;
+            int boxW = w0/ShipDesign.shipColors.length;
             int boxH = h-s10;
             int boxY = y+s10;
             int boxX = x+sw+s20;
             g.setColor(Color.white);
             Stroke prev = g.getStroke();
             
-            for (int i=0;i<shipColors.length;i++) {
+            for (int i=0;i<ShipDesign.shipColors.length;i++) {
                 g.setStroke(stroke1);
-                int cIndex = shipColors[i];
+                int cIndex = ShipDesign.shipColors[i];
                 shipColorArea[i].setBounds(boxX, boxY, boxW-s5, boxH);
                 if (cIndex > 0) {
                     g.setColor(ImageColorizer.color(cIndex));             
@@ -2797,7 +2796,7 @@ public class DesignUI extends BasePanel {
         }
         private void setShipColor(int i) {
             ShipDesign des =  shipDesign();
-            des.shipColor(shipColors[i]);
+            des.shipColor(ShipDesign.shipColors[i]);
         }
         @Override
         public void mouseDragged(MouseEvent e) { }

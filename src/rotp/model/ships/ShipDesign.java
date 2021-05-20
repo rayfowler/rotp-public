@@ -16,7 +16,6 @@
 package rotp.model.ships;
 
 import java.awt.Image;
-import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
@@ -30,6 +29,7 @@ public final class ShipDesign extends Design {
     private static final long serialVersionUID = 1L;
     public static final int maxWeapons = 4;
     public static final int maxSpecials = 3;
+    public static final int[] shipColors = { 0,1,3,4,5,6,8,9,10,11};
     public static final int maxWeapons()                 { return maxWeapons; }
     public static final int maxSpecials()                { return maxSpecials; }
 

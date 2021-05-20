@@ -250,7 +250,10 @@ public final class Empire implements Base, NamedObject, Serializable {
         
         colorId(newColor);
     }
-    
+    public int defaultShipTint() {
+        int maxRaces = 10;
+        return id < maxRaces ? 0 : id % (ShipDesign.shipColors.length-1)+1;
+    }
     private void resetColors() {
         nameColor = null;
         ownershipColor = null;
