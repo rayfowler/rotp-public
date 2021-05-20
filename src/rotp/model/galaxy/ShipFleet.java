@@ -677,7 +677,9 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
         int nextTurns = (int) Math.ceil(travelTime(currDest,finalDest,design.warpSpeed()));
         return currTurns+nextTurns;
     }
-    public int travelTurnsRemaining()     { return hasDestination() ?  travelTurns(destination()) : 0;  }
+    public int travelTurnsRemaining()     { 
+        return (int)Math.ceil(arrivalTime - galaxy().currentTime());
+    }
     public int numScouts()   { return numShipType(ShipDesign.SCOUT); }
     public int numFighters() { return numShipType(ShipDesign.FIGHTER); }
     public int numBombers()  { return numShipType(ShipDesign.BOMBER); }
