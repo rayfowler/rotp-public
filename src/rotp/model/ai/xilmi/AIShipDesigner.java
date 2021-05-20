@@ -59,7 +59,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
         if (empire.isAIControlled()) {
             log(this+": nextTurn");
             shipCounts = galaxy().ships.shipDesignCounts(empire.id);
-            countdownObsoleteDesigns();
             // designs are updated in a specific order in order to prioritize
             // use of empty design slots
             updateFighterDesign();
@@ -67,6 +66,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
             updateBomberDesign();
             updateColonyDesign();
             updateScoutDesign();
+            countdownObsoleteDesigns();
         }
     }
     @Override
@@ -134,15 +134,22 @@ public class AIShipDesigner implements Base, ShipDesigner {
                     float currentDamageShields = lab.fighterDesign().firepowerAntiShip(empire.bestEnemyShieldLevel());
                     float obsoleteDamageNoShields = d.firepowerAntiShip(0);
                     float obsoleteDamageShields = d.firepowerAntiShip(empire.bestEnemyShieldLevel());
-                    float currentPenetrate = currentDamageShields / currentDamageNoShields;
-                    float obsoletePenetrate = obsoleteDamageShields / obsoleteDamageNoShields;
-                    if(currentPenetrate > 0)
+                    if(obsoleteDamageNoShields == 0)
                     {
-                        keepScore *= obsoletePenetrate / currentPenetrate;
+                        keepScore = 0;
                     }
                     else
                     {
-                        keepScore = 0;
+                        float currentPenetrate = currentDamageShields / currentDamageNoShields;
+                        float obsoletePenetrate = obsoleteDamageShields / obsoleteDamageNoShields;
+                        if(currentPenetrate > 0)
+                        {
+                            keepScore *= obsoletePenetrate / currentPenetrate;
+                        }
+                        else
+                        {
+                            keepScore = 0;
+                        }
                     }
                 }
                 if(d.isBomber())
@@ -151,15 +158,22 @@ public class AIShipDesigner implements Base, ShipDesigner {
                     float currentDamageShields = lab.bomberDesign().firepower(empire.bestEnemyPlanetaryShieldLevel());
                     float obsoleteDamageNoShields = d.firepower(0);
                     float obsoleteDamageShields = d.firepower(empire.bestEnemyPlanetaryShieldLevel());
-                    float currentPenetrate = currentDamageShields / currentDamageNoShields;
-                    float obsoletePenetrate = obsoleteDamageShields / obsoleteDamageNoShields;
-                    if(currentPenetrate > 0)
+                    if(obsoleteDamageNoShields == 0)
                     {
-                        keepScore *= obsoletePenetrate / currentPenetrate;
+                        keepScore = 0;
                     }
                     else
                     {
-                        keepScore = 0;
+                        float currentPenetrate = currentDamageShields / currentDamageNoShields;
+                        float obsoletePenetrate = obsoleteDamageShields / obsoleteDamageNoShields;
+                        if(currentPenetrate > 0)
+                        {
+                            keepScore *= obsoletePenetrate / currentPenetrate;
+                        }
+                        else
+                        {
+                            keepScore = 0;
+                        }
                     }
                 }
                 keepScore *= shipCounts[d.id()] * d.cost();
@@ -232,14 +246,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
             return;
         }
         
-        boolean easyToReplace = shipCounts[currDesign.id()] < 1;
-        if (easyToReplace) {
-            lab.scrapDesign(currDesign);
-            lab.setColonyDesign(newDesign, currSlot);
-            //System.out.print("\n"+empire.name()+" "+newDesign.name()+" will shall replace "+currDesign.name());
-            return;
-        }
-        
         int slot = lab.availableDesignSlot();
         
         // if there is a slot available, use it for the new design
@@ -288,15 +294,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
             return;
         }
 
-        boolean easyToReplace = shipCounts[currDesign.id()] < 1;
-        
-        if (easyToReplace) {
-            lab.scrapDesign(currDesign);
-            log("Bomber easy to replace");
-            lab.setBomberDesign(newDesign, currSlot);
-            return;
-        }
-            
         // WE HAVE BOMBERS IN USE... VERIFY THIS UPGRADE JUSTIFIES SWITCHING OVER
         boolean betterEngine = (newDesign.engine().warp() > currDesign.engine().warp());
         boolean betterArmor = (newDesign.armor().sequence() > currDesign.armor().sequence());
@@ -334,7 +331,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         
         //System.out.print("\n"+galaxy().currentYear()+" "+empire.name()+" Bomber upgrade "+currDesign.name()+" val: "+upgradeChance+" DPBC: "+newDPBC / currentDPBC+" better-Engine: "+betterEngine+" betterArmor: "+betterArmor);
         
-        if (!betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) )
+        if (!betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) && currDesign.active() )
             return;
         
         //System.out.print("\n"+empire.name()+" designed new bomber which is "+upgradeChance+" better and should go to slot: "+slot);
@@ -405,17 +402,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
             return;
         }
 
-        // if we have very few fighters actually in use, go ahead and
-        // scrap/replace now
-        boolean easyToReplace = shipCounts[currDesign.id()] < 1;
-        
-        if (easyToReplace) {
-            lab.scrapDesign(currDesign);
-            log("Fighter easy to replace");
-            lab.setFighterDesign(newDesign, currSlot);
-            return;
-        }
-        
         // WE HAVE FIGHTERS IN USE... VERIFY THIS UPGRADE JUSTIFIES SWITCHING OVER
 
         // factor in speed improvements when determining if new design is better
@@ -453,7 +439,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         //System.out.print("\n"+galaxy().currentYear()+" "+empire.name()+" Fighter upgrade "+currDesign.name()+" val: "+upgradeChance+" DPBC: "+newDPBC / currentDPBC+" better-Engine: "+betterEngine+" betterArmor: "+betterArmor);
         
         //System.out.print("\n"+empire.name()+" designed new fighter which is "+upgradeChance+" better and should go to slot: "+slot);
-        if (!betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) && !needRange)
+        if (!betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) && !needRange && currDesign.active())
             return;
 
         // if there is a slot available, use it for the new design
