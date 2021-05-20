@@ -778,53 +778,45 @@ public class AIDiplomat implements Base, Diplomat {
         
         //ail: if the target is our common enemy and together we are stronger than them, we'll accept without a bribe
         //System.out.println(empire.galaxy().currentTurn()+" "+ requestor.name()+" asked "+empire.name()+" to declare joint war on "+target.name());
-        if(target == empire.generalAI().bestVictim())
+        if(wantToDeclareWar(empire.viewForEmpire(target.id), true))
         {
-            float combinedPower = requestor.powerLevel(requestor) + empire.powerLevel(empire);
-            for(Empire targetWars:target.warEnemies())
-            {
-                if(targetWars == requestor || targetWars == empire)
-                    continue;
-                combinedPower += targetWars.powerLevel(targetWars);
-            }
-            //System.out.println(empire.galaxy().currentTurn()+" "+target.name()+" is best victim for "+empire.name()+" combined power: "+combinedPower+" their power: "+target.powerLevel(target));
-            if(combinedPower > target.powerLevel(target))
-            {
-                //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" agreed to support "+requestor.name()+" in their war against "+target.name());
+            if(requestor.atWarWith(target.id))
                 return agreeToJointWar(requestor, target);
+            else
+            {
+                int maxBribe = galaxy().numberTurns()*50;
+                float bribeValue = bribeAmountToJointWar(target);
+
+                if (empire.alliedWith(target.id))
+                    bribeValue *= 2;
+                else if (empire.pactWith(target.id))
+                    bribeValue *= 1.5;
+                if (empire.leader().isPacifist())
+                    bribeValue *= 2;
+
+                List<Tech> allTechs = v.spies().unknownTechs();   
+                if (allTechs.isEmpty())
+                    return v.refuse(DialogueManager.DECLINE_OFFER, target);
+
+                Tech.comparatorCiv = empire;
+                Collections.sort(allTechs, Tech.WAR_TRADE_VALUE);
+
+                List<String> requestedTechs = new ArrayList<>();
+                for (Tech tech : allTechs) {
+                    if ((bribeValue > 0) && (requestedTechs.size() < 3)) {
+                        requestedTechs.add(tech.id());
+                        bribeValue -= tech.researchCost();
+                    }
+                }
+                if (requestedTechs.isEmpty())
+                    requestedTechs.add(allTechs.get(0).id());
+
+                if (bribeValue > maxBribe)
+                    return v.refuse(DialogueManager.DECLINE_OFFER, target);
+                return v.counter(DialogueManager.COUNTER_JOINT_WAR, target, requestedTechs, bribeValue);
             }
         }
-
-        int maxBribe = galaxy().numberTurns()*50;
-        float bribeValue = bribeAmountToJointWar(target);
-        
-        if (empire.alliedWith(target.id))
-            bribeValue *= 2;
-        else if (empire.pactWith(target.id))
-            bribeValue *= 1.5;
-        if (empire.leader().isPacifist())
-            bribeValue *= 2;
-        
-        List<Tech> allTechs = v.spies().unknownTechs();   
-        if (allTechs.isEmpty())
-            return v.refuse(DialogueManager.DECLINE_OFFER, target);
-
-        Tech.comparatorCiv = empire;
-        Collections.sort(allTechs, Tech.WAR_TRADE_VALUE);
-        
-        List<String> requestedTechs = new ArrayList<>();
-        for (Tech tech : allTechs) {
-            if ((bribeValue > 0) && (requestedTechs.size() < 3)) {
-                requestedTechs.add(tech.id());
-                bribeValue -= tech.researchCost();
-            }
-        }
-        if (requestedTechs.isEmpty())
-            requestedTechs.add(allTechs.get(0).id());
-        
-        if (bribeValue > maxBribe)
-            return v.refuse(DialogueManager.DECLINE_OFFER, target);
-        return v.counter(DialogueManager.COUNTER_JOINT_WAR, target, requestedTechs, bribeValue);
+        return v.refuse(DialogueManager.DECLINE_OFFER, target);
     }
     @Override
     public DiplomaticReply receiveCounterJointWar(Empire requestor, DiplomaticCounterReply counter) {
@@ -1076,12 +1068,9 @@ public class AIDiplomat implements Base, Diplomat {
         
         // build a priority list for Joint War offers:
         for (Empire target: empire.enemies()) {
-            if(target.powerLevel(target) > empire.powerLevel(empire))
-            {
-                if (willingToOfferJointWar(v.empire(), target)) {
-                    v.empire().diplomatAI().receiveOfferJointWar(v.owner(), target); 
-                    return;
-                }
+            if (willingToOfferJointWar(v.empire(), target)) {
+                v.empire().diplomatAI().receiveOfferJointWar(v.owner(), target); 
+                return;
             }
         }
         
@@ -1341,13 +1330,19 @@ public class AIDiplomat implements Base, Diplomat {
                 developmentPct /= countedColonies;
             float helpingPower = 0.0f;
             float enemyAllyPower = 0.0f;
-            float superiorityThreshold = 1.5f - (developmentPct - 0.75f) * 6;
+            float highestKnownOpponentTechLevel = 1;
+            for(EmpireView ev : empire.contacts())
+            {
+                Empire emp = ev.empire();
+                if(!empire.inEconomicRange(emp.id))
+                    continue;
+                if(emp.tech().avgTechLevel() > highestKnownOpponentTechLevel)
+                    highestKnownOpponentTechLevel = emp.tech().avgTechLevel();
+            }
+            float superiorityThreshold = max(0, 2 - developmentPct * empire.tech().avgTechLevel() / highestKnownOpponentTechLevel);
             //we can still grow otherwise
             if(empire.generalAI().additionalColonizersToBuild(true) > 0
                     || developmentPct < 0.75f)
-                warAllowed = false;
-            if(empire.tech().avgTechLevel() < v.empire().tech().avgTechLevel() 
-                    && empire.tech().avgTechLevel() < 99)
                 warAllowed = false;
             if(empire.tech().topSpeed() < 2)
                 warAllowed = false;
@@ -1361,8 +1356,8 @@ public class AIDiplomat implements Base, Diplomat {
             {
                 enemyAllyPower += emp.powerLevel(emp);
             }
-            //System.out.println(empire.name()+" col: "+empire.generalAI().additionalColonizersToBuild(true)+" devPct: "+developmentPct+" allied: "+empire.alliedWith(bestVictim.id)+" tech: "+(empire.tech().avgTechLevel() < v.empire().tech().avgTechLevel()));
-            //System.out.println(empire.name()+" bestVictim: "+bestVictim+" power: "+empire.powerLevel(empire) + helpingPower+" vs. "+(bestVictim.powerLevel(bestVictim) + enemyAllyPower) + " Threshold: "+superiorityThreshold +" "+empire.leader().personality()+" "+empire.leader().objective()+" War Allowed: "+warAllowed);
+            //System.out.println(empire.name()+" col: "+empire.generalAI().additionalColonizersToBuild(true)+" devPct: "+developmentPct+" allied: "+empire.alliedWith(bestVictim.id));
+            //System.out.println(empire.name()+" bestVictim: "+bestVictim+" power: "+empire.powerLevel(empire) + helpingPower+" vs. "+(bestVictim.powerLevel(bestVictim) + enemyAllyPower) + " Threshold: "+superiorityThreshold +" War Allowed: "+warAllowed);
             if(warAllowed &&
                     empire.powerLevel(empire) + helpingPower > (bestVictim.powerLevel(bestVictim) + enemyAllyPower) * superiorityThreshold)
             {
