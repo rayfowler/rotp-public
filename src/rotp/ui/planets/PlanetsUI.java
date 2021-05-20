@@ -346,12 +346,18 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         int y1 = scaled(350);
         HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 4, text("PLANETS_HELP_ALL"));
 
-        int x2 = scaled(30);
-        int w2 = scaled(190);
+        int x1a = scaled(10);
+        int w1a = scaled(130);
+        int y1a = scaled(190);
+        HelpUI.HelpSpec sp1a = helpUI.addBrownHelpText(x1a, y1a, w1a, 3, text("PLANETS_HELP_4I"));
+        sp1a.setLine(scaled(50), y1a, scaled(50), s100);
+        
+        int x2 = scaled(60);
+        int w2 = scaled(160);
         int y2 = scaled(100);
         HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 3, text("PLANETS_HELP_2A"));
-        sp2.setLine(scaled(130), y2, scaled(130), s77);
-        
+        sp2.setLine(scaled(150), y2, scaled(150), s77);
+       
         int x3 = scaled(150);
         int w3 = scaled(190);
         int y3 = scaled(190);
@@ -396,11 +402,17 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         int y1 = scaled(350);
         HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 4, text("PLANETS_HELP_ALL"));
 
-        int x2 = scaled(30);
-        int w2 = scaled(190);
+        int x1a = scaled(10);
+        int w1a = scaled(130);
+        int y1a = scaled(190);
+        HelpUI.HelpSpec sp1a = helpUI.addBrownHelpText(x1a, y1a, w1a, 3, text("PLANETS_HELP_4I"));
+        sp1a.setLine(scaled(50), y1a, scaled(50), s100);
+        
+        int x2 = scaled(60);
+        int w2 = scaled(160);
         int y2 = scaled(100);
         HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 3, text("PLANETS_HELP_3A"));
-        sp2.setLine(scaled(130), y2, scaled(130), s77);
+        sp2.setLine(scaled(150), y2, scaled(150), s77);
         
         int x3 = scaled(150);
         int w3 = scaled(190);
@@ -452,13 +464,19 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         int y1 = scaled(350);
         HelpUI.HelpSpec sp1 = helpUI.addBrownHelpText(x1, y1, w1, 4, text("PLANETS_HELP_ALL"));
 
-        int x2 = scaled(30);
-        int w2 = scaled(190);
+        int x1a = scaled(10);
+        int w1a = scaled(130);
+        int y1a = scaled(190);
+        HelpUI.HelpSpec sp1a = helpUI.addBrownHelpText(x1a, y1a, w1a, 3, text("PLANETS_HELP_4I"));
+        sp1a.setLine(scaled(50), y1a, scaled(50), s100);
+        
+        int x2 = scaled(60);
+        int w2 = scaled(160);
         int y2 = scaled(100);
         HelpUI.HelpSpec sp2 = helpUI.addBrownHelpText(x2, y2, w2, 3, text("PLANETS_HELP_4A"));
-        sp2.setLine(scaled(130), y2, scaled(130), s77);
+        sp2.setLine(scaled(150), y2, scaled(150), s77);
         
-        int x3 = scaled(140);
+        int x3 = scaled(150);
         int w3 = scaled(190);
         int y3 = scaled(190);
         HelpUI.HelpSpec sp3 = helpUI.addBrownHelpText(x3, y3, w3, 3, text("PLANETS_HELP_4B"));
