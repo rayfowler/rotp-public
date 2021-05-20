@@ -127,7 +127,7 @@ public class AIScientist implements Base, Scientist {
         //second I stop researching techs with too high of a discovery-chance
         for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
             //System.out.print("\n"+empire.name()+" "+empire.tech().category(j).id()+" "+discoveryChanceOfCategoryIfAllocationWasZero(j)+" > "+empire.tech().category(j).allocation());
-            if (discoveryChanceOfCategoryIfAllocationWasZero(j) > min(empire.tech().category(j).allocation(), 10))
+            if (discoveryChanceOfCategoryIfAllocationWasZero(j) > empire.tech().category(j).allocation())
             {
                 leftOverAlloc+=empire.tech().category(j).allocation();
                 empire.tech().category(j).allocation(0);
@@ -232,9 +232,9 @@ public class AIScientist implements Base, Scientist {
         }
 
         if (empire.leader().isDiplomat()) {
-            empire.tech().computer().allocation(9);
+            empire.tech().computer().allocation(12);
             empire.tech().construction().allocation(9);
-            empire.tech().forceField().allocation(12);
+            empire.tech().forceField().allocation(9);
             empire.tech().planetology().allocation(9);
             empire.tech().propulsion().allocation(11);
             empire.tech().weapon().allocation(10);
@@ -256,20 +256,20 @@ public class AIScientist implements Base, Scientist {
             empire.tech().weapon().allocation(9);
         }
         else if (empire.leader().isIndustrialist()) {
-            empire.tech().computer().allocation(10);
+            empire.tech().computer().allocation(12);
             empire.tech().construction().allocation(12);
-            empire.tech().forceField().allocation(11);
+            empire.tech().forceField().allocation(9);
             empire.tech().planetology().allocation(9);
             empire.tech().propulsion().allocation(9);
             empire.tech().weapon().allocation(9);
         }
         else if (empire.leader().isExpansionist()) {
-            empire.tech().computer().allocation(10);
+            empire.tech().computer().allocation(9);
             empire.tech().construction().allocation(9);
             empire.tech().forceField().allocation(9);
-            empire.tech().planetology().allocation(10);
+            empire.tech().planetology().allocation(12);
             empire.tech().propulsion().allocation(12);
-            empire.tech().weapon().allocation(10);
+            empire.tech().weapon().allocation(9);
         }
         else if (empire.leader().isTechnologist()) {
             empire.tech().computer().allocation(10);
