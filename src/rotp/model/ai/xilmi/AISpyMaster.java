@@ -174,11 +174,6 @@ public class AISpyMaster implements Base, SpyMaster {
                 spies.beginEspionage();
                 spies.maxSpies(2);
             }
-            else if(canSabotage && emb.noTreaty())
-            {
-                spies.beginSabotage();
-                spies.maxSpies(2);
-            }
             else
             {
                 spies.beginHide();
@@ -186,7 +181,6 @@ public class AISpyMaster implements Base, SpyMaster {
             }
             return;
         }
-        // if at war, defer to war strategy: 1) steal war techs, 2) sabotage, 3) steal techs
         if (emb.anyWar()) {
             if (canEspionage)
             {
