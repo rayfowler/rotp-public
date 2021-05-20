@@ -171,7 +171,8 @@ public class AIFleetCommander implements Base, FleetCommander {
             {
                 continue;
             }
-            if(current.empire() != null && !current.empire().alliedWith(empire.id) && !empire.warEnemies().contains(current.empire()))
+            //if(current.empire() != null && !current.empire().alliedWith(empire.id) && !empire.warEnemies().contains(current.empire()))
+            if(current.empire() == null || !current.empire().alliedWith(empire.id))
                 continue;
             if(current.monster() != null)
                 continue;
@@ -185,13 +186,14 @@ public class AIFleetCommander implements Base, FleetCommander {
                 targetTech = current.empire().tech().avgTechLevel();
             if(enemyBc * (targetTech+10.0f) * 2 > ourEffectiveBC * (civTech+10.0f))
                 continue;
-            for(StarSystem own : mySystemsInShipRange)
+            /*for(StarSystem own : mySystemsInShipRange)
             {
                 currentScore += max(own.colony().production() * own.planet().productionAdj() * own.planet().researchAdj(), 1.0f) / (1 + current.distanceTo(own));
-            }
+            }*/
             for(StarSystem other : otherSystemsInShipRange)
             {
                 float scoreToAdd = max(other.colony().production() * other.planet().productionAdj() * other.planet().researchAdj(), 1.0f) / (1 + current.distanceTo(other));
+                scoreToAdd *= 2;
                 if(empire.enemies().contains(other.empire()))
                 {
                     scoreToAdd *= 2;
@@ -214,6 +216,51 @@ public class AIFleetCommander implements Base, FleetCommander {
         /*if(best != null)
             System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" gathers at "+empire.sv.name(best.id)+" score: "+bestScore);*/
         return best;
+    }
+    private StarSystem smartPath(ShipFleet fleet, StarSystem target)
+    {
+        if(target != null && !empire.tech().hyperspaceCommunications())
+        {
+            Galaxy gal = galaxy();
+            float ourEffectiveBC = bcValue(fleet, false, true, true, false);
+            float civTech = empire.tech().avgTechLevel();
+            float targetTech = civTech;
+            //We smart-path towards the gather-point to be more flexible
+            //for that we seek the closest system from where we currently are, that is closer to the gather-point, if none is found, we go to the gather-point
+            StarSystem pathNode = null;
+            float smallestDistance = Float.MAX_VALUE;
+            for (int id=0;id<empire.sv.count();id++)
+            {
+                StarSystem current = gal.system(id);
+                if(!fleet.canReach(current))
+                    continue;
+                if(current.empire() != null && !current.empire().alliedWith(empire.id) && !empire.warEnemies().contains(current.empire()))
+                    continue;
+                if(current.monster() != null)
+                    continue;
+                float enemyBc = 0.0f;
+                if(systemInfoBuffer.containsKey(id))
+                {
+                    enemyBc = systemInfoBuffer.get(id).enemyBc;
+                    if(empire.aggressiveWith(current.empId()))
+                        enemyBc += empire.sv.bases(current.id)*current.empire().tech().newMissileBaseCost();
+                }
+                if(current.empire() != null)
+                    targetTech = current.empire().tech().avgTechLevel();
+                if(enemyBc * (targetTech+10.0f) * 2 > ourEffectiveBC * (civTech+10.0f))
+                    continue;
+                if(current.distanceTo(target) + fleet.distanceTo(target) / 3 >= fleet.distanceTo(target))
+                    continue;
+                if(fleet.distanceTo(current) < smallestDistance)
+                {
+                    pathNode = current;
+                    smallestDistance = fleet.distanceTo(current);
+                }
+            }
+            if(pathNode != null)
+                target = pathNode;
+        }
+        return target;
     }
     //ail: using completely different approach for handling my attack-fleets
     private StarSystem findBestTarget(ShipFleet fleet, boolean onlyBomberTargets, boolean onlyColonizerTargets)
@@ -705,25 +752,24 @@ public class AIFleetCommander implements Base, FleetCommander {
                     {
                         if(targetIsGatherPoint)
                         {
-                           attackWithFleet(fleet, target, 1.0f, false, true, true, true, keepBc);
-                           break;
+                            target = smartPath(fleet, target);
+                            attackWithFleet(fleet, target, 1.0f, false, true, true, true, keepBc);
+                            break;
                         }
                         StarSystem stagingPoint = null;
                         float fleetSpeed = fleet.slowestStackSpeed();
                         stagingPoint = galaxy().system(empire.optimalStagingPoint(target, 1));
                         
-                        //ail: When we have hyperspace-communications, we don't want to go to a staging-point for our new target.
-                        if(fleet.inTransit())
-                            stagingPoint = null;
-                        //if(stagingPoint != null)
-                            //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" going to "+target.name()+" should stage at: "+stagingPoint.name());
+                        /*if(stagingPoint != null)
+                            System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" going to "+target.name()+" should stage at: "+stagingPoint.name());*/
                         if(stagingPoint != null
                             && fleet.system() != stagingPoint 
                             && fleet.travelTurns(target) > (int)Math.ceil(fleet.travelTime(stagingPoint, target, fleetSpeed)) 
                             && fleet.travelTurns(target) > fleet.travelTurns(stagingPoint)
-                            && empire.enemies().contains(target.empire())) //only stage when target is owned by an enemy
+                            && !(fleet.canColonizeSystem(target) && target.empire() == null) )
                         {
                             //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" going to "+target.name()+" stages at: "+stagingPoint.name());
+                            stagingPoint = smartPath(fleet, stagingPoint);
                             if(fleet.canSendTo(stagingPoint.id))
                             {
                                 attackWithFleet(fleet, stagingPoint, sendAmount, false, allowFighters, allowBombers, allowColonizers, keepBc);
@@ -896,6 +942,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                             if((ourEffectiveBC - keepBc) * (civTech+10.0f) * attackThreshold >= enemyBC * (targetTech+10.0f)
                                     && ourEffectiveBombBC * (civTech+10.0f) * attackThreshold >= enemyBaseBC * (targetTech+10.0f))
                             {
+                                if(!(fleet.canColonizeSystem(target) && target.empire() == null))
+                                    target = smartPath(fleet, target);
                                 if(fleet.canSendTo(target.id))
                                 {
                                     int numBeforeSend=fleet.numShips();
@@ -929,6 +977,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                             else if(stagingPoint != null
                                 && fleet.system() != stagingPoint)
                             {
+                                stagingPoint = smartPath(fleet, stagingPoint);
                                 attackWithFleet(fleet, stagingPoint, sendAmount, false, allowFighters, allowBombers, allowColonizers, keepBc);
                                 canStillSend = false;
                             }
