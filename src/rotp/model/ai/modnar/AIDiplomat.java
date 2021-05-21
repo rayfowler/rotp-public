@@ -207,20 +207,12 @@ public class AIDiplomat implements Base, Diplomat {
         }
 
         EmpireView v = empire.viewForEmpire(diplomat);
-        v.embassy().noteRequest();
-        if (v.embassy().alreadyOfferedTech())
-            v.embassy().noteRequest();
-
-        if (v.embassy().tooManyRequests())
-            return v.refuse(DialogueManager.DECLINE_ANNOYED);
         
         // modnar: add in readyForTech check, limits one tech trade per turn per empire
         // this also prevents trading the same tech multiple times to the same empire
         if (!v.embassy().readyForTech())
             return v.refuse(DialogueManager.DECLINE_OFFER);
         
-        v.embassy().resetTechTimer();
-
         List<Tech> counterTechs = empire.diplomatAI().techsRequestedForCounter(diplomat, tech);
         if (counterTechs.isEmpty())
             return v.refuse(DialogueManager.DECLINE_TECH_TRADE);
@@ -231,6 +223,8 @@ public class AIDiplomat implements Base, Diplomat {
     @Override
     public DiplomaticReply receiveCounterOfferTech(Empire diplomat, Tech offeredTech, Tech requestedTech) {
         EmpireView view = empire.viewForEmpire(diplomat);
+        view.embassy().resetTechTimer();
+
         DiplomaticIncident inc = view.embassy().exchangeTechnology(offeredTech, requestedTech);
         return view.otherView().accept(DialogueManager.ACCEPT_TECH_EXCHANGE, inc);
     }
@@ -259,10 +253,13 @@ public class AIDiplomat implements Base, Diplomat {
     }
     @Override
     public List<Tech> techsRequestedForCounter(Empire requestor, Tech tech) {
+        if (tech.isObsolete(requestor))
+            return new ArrayList<>();
+        
         EmpireView view = empire.viewForEmpire(requestor);
 
         // what is this times the value of the request tech?dec
-        float maxTechValue = techDealValue(view) * tech.tradeValue(empire);
+        float maxTechValue = techDealValue(view) * max(tech.level(), tech.baseValue(requestor));
 
         // what are all of the unknown techs that we could ask for
         List<Tech> allTechs = view.spies().unknownTechs();
@@ -272,22 +269,26 @@ public class AIDiplomat implements Base, Diplomat {
         List<Tech> worthyTechs = new ArrayList<>(allTechs.size());
         for (Tech t: allTechs) {
             if (t.quintile() == tech.quintile()) {
-                if (t.baseValue(empire) < maxTechValue)
-                    worthyTechs.add(t);
+                if (t.baseValue(empire) > maxTechValue) {
+                    if (!t.isObsolete(empire))
+                        worthyTechs.add(t);
+                }
             }
         }
 
         // sort techs by the diplomat's research priority (hi to low)
         Tech.comparatorCiv = empire;
-        Collections.sort(worthyTechs, Tech.RESEARCH_VALUE);
-
+        Collections.sort(worthyTechs, Tech.BASE_VALUE);
+        
         // limit return to top 5 techs
-        int maxTechs = 5;
+        Tech.comparatorCiv = requestor;
+        int maxTechs = 3;
         if (worthyTechs.size() <= maxTechs)
             return worthyTechs;
         List<Tech> topFiveTechs = new ArrayList<>(maxTechs);
         for (int i=0; i<maxTechs;i++)
             topFiveTechs.add(worthyTechs.get(i));
+        Collections.sort(topFiveTechs, Tech.RESEARCH_VALUE);
         return topFiveTechs;
     }
     private boolean decidedToExchangeTech(EmpireView v) {
@@ -1012,7 +1013,7 @@ public class AIDiplomat implements Base, Diplomat {
             empire.hideSpiesAgainst(dip.id);
             v.spies().heedThreat();
         }
-        return empire.respond(DialogueManager.RESPOND_STOP_SPYING, empire);
+        return empire.respond(DialogueManager.RESPOND_STOP_SPYING, dip);
     }
     @Override
     public DiplomaticReply receiveThreatEvictSpies(Empire dip) {

@@ -250,7 +250,10 @@ public final class Empire implements Base, NamedObject, Serializable {
         
         colorId(newColor);
     }
-    
+    public int defaultShipTint() {
+        int maxRaces = 10;
+        return id < maxRaces ? 0 : id % (ShipDesign.shipColors.length-1)+1;
+    }
     private void resetColors() {
         nameColor = null;
         ownershipColor = null;
@@ -1066,7 +1069,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         
         // end all rebellions
         for (StarSystem sys: allColonizedSystems()) 
-            sys.colony().rebels(0);    
+            sys.colony().clearAllRebellion();   
 
         if (viewForEmpire(player()).embassy().contact()) {
             String leaderDesc = text("LEADER_PERSONALITY_FORMAT", leader.personality(),leader.objective());
