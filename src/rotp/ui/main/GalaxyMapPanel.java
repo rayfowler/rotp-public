@@ -313,7 +313,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
 
         float rX = (x-minX)/(maxX-minX);
         int res = (int) (rX*w);
-        //int res =  (w/2)+(int)(rX*w);
         return res;
     }
     public int mapY(float y) {
@@ -323,6 +322,21 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         float rY = (y-minY)/(maxY-minY);
         int res = (int) (rY*h);
         return res;
+    }
+    public float fMapX(float x) {
+        float minX = mapMinX();
+        float maxX = mapMaxX();
+        int w = getSize().width;
+
+        float rX = (x-minX)/(maxX-minX);
+        return rX*w;
+    }
+    public float fMapY(float y) {
+        float minY = mapMinY();
+        float maxY = mapMaxY();
+        int h = getSize().height;
+        float rY = (y-minY)/(maxY-minY);
+        return rY*h;
     }
     public void setBounds(float x1, float x2, float y1, float y2) {
         float scaleFromY = y2-y1;
@@ -570,26 +584,27 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         float scale = getWidth()/scaleX();
 
         AffineTransform prevXForm = g.getTransform();
-        
-        if ((areaOffsetX != 0) || (areaOffsetY != 0)) {
+        float defScale = scale;
+        if ((areaOffsetX != 0) || (areaOffsetY != 0) || (scale != defScale)) {
             float ctrX = parent.mapFocus().x();
             float ctrY = parent.mapFocus().y();
-            int mapOffsetX = mapX(ctrX)-mapX(ctrX-areaOffsetX);          
-            int mapOffsetY = mapY(ctrY)-mapY(ctrY-areaOffsetY);
+            float mapOffsetX = fMapX(ctrX)- fMapX(ctrX-areaOffsetX);          
+            float mapOffsetY = fMapY(ctrY)-fMapY(ctrY-areaOffsetY);
             AffineTransform areaOffsetXForm = g.getTransform();
             areaOffsetXForm.setToIdentity();
             areaOffsetXForm.translate(mapOffsetX, mapOffsetY);
+//            areaOffsetXForm.scale(scale/defScale,scale/defScale);
             g.setTransform(areaOffsetXForm);
         }
-        int extR = (int) (scoutRange*scale);
-        int baseR = (int) (shipRange*scale);
+        float extR = (scoutRange*defScale);
+        float baseR = (shipRange*defScale);
         Area tmpRangeArea = scoutRangeArea;
         if (tmpRangeArea == null) {
             tmpRangeArea = new Area();
             for (StarSystem sv: alliedSystems)
-                tmpRangeArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-extR, mapY(sv.y())-extR, 2*extR, 2*extR) ));       
+                tmpRangeArea.add(new Area( new Ellipse2D.Float(fMapX(sv.x())-extR, fMapY(sv.y())-extR, 2*extR, 2*extR) ));       
             for (StarSystem sv: systems)
-                tmpRangeArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-extR, mapY(sv.y())-extR, 2*extR, 2*extR) ));       
+                tmpRangeArea.add(new Area( new Ellipse2D.Float(fMapX(sv.x())-extR, fMapY(sv.y())-extR, 2*extR, 2*extR) ));       
             scoutRangeArea = tmpRangeArea;
         }
         g.setColor(extendedBorder);
@@ -866,14 +881,23 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
 
         float objX = parent.mapFocus().x();
         float objY = parent.mapFocus().y();
-        int focusX = mapX(parent.mapFocus().x());
-        int focusY = mapY(parent.mapFocus().y());
+        float newObjX = objX;
+        float newObjY = objY;
         
         // we need to recalculate the new focusX/Y before
         // recentering so that we can have the proper pixel
         // offset for the range areas
-        float newObjX = bounds(0, objX(focusX-deltaX), sizeX());
-        float newObjY = bounds(0, objY(focusY-deltaY), sizeY());      
+        // only do this for changed X/Y values to avoid 
+        // introducing rounding errors
+        if (deltaX != 0) {
+            int focusX = mapX(parent.mapFocus().x());
+            newObjX = bounds(0, objX(focusX-deltaX), sizeX());
+        }
+        if (deltaY != 0) {
+            int focusY = mapY(parent.mapFocus().y());
+            newObjY = bounds(0, objY(focusY-deltaY), sizeY());      
+        }
+        
         areaOffsetX += (objX-newObjX);
         areaOffsetY += (objY-newObjY);
         
