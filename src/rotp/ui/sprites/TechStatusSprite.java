@@ -94,12 +94,12 @@ public class TechStatusSprite extends MapControlSprite {
             if (label2.isEmpty())
                 y1 += BasePanel.s7;
             g2.setFont(narrowFont(fontSize1));
-            g2.drawString(label, x1, y1);
+            drawString(g2,label, x1, y1);
             if (!label2.isEmpty()) {
                 int y2 = startY+height-BasePanel.s5;
                 int x2 = labelW2 >= labelW1 ? x1 : x1 + ((labelW1-labelW2)/2);
                 g2.setFont(narrowFont(fontSize2));
-                g2.drawString(label2, x2, y2);
+                drawString(g2,label2, x2, y2);
             }
         }
         drawBorder(map,g2,w);

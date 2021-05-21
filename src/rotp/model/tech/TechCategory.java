@@ -129,7 +129,7 @@ public final class TechCategory implements Base, Serializable {
         if (!possibleTechs.contains(id))
             possibleTechs.add(id);
     }
-    private void addKnownTech(String id) {
+    public void addKnownTech(String id) {
         if (!knownTechs().contains(id)) {
             knownTechs().add(id);
             Collections.sort(knownTechs, Tech.LEVEL);
@@ -223,6 +223,8 @@ public final class TechCategory implements Base, Serializable {
         }
     }
     public boolean studyingFutureTech() {
+        if(tech(currentTech) != null && tech(currentTech).isFutureTech())
+            return true;
         return false;
     }
     public String techDescription1(boolean key) {
@@ -524,7 +526,9 @@ public final class TechCategory implements Base, Serializable {
 
         bonusTechs.remove(id);
         possibleTechs.remove(id);
-        t.provideBenefits(tree.empire());
+        
+        if (newTech)
+            t.provideBenefits(tree.empire());
 
         if (id.equals(currentTech())) {
             resetResearchBC();

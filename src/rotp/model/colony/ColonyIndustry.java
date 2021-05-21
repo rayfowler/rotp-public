@@ -40,7 +40,7 @@ public class ColonyIndustry extends ColonySpendingCategory {
     @Override
     public int categoryType()               { return Colony.INDUSTRY; }
     public float factories()               { return factories; }
-    public void factories(float d)         { factories = d; }
+    public void factories(float d)         { factories = max(0,d); }
     public void previousFactories(float d) { previousFactories = d; }
     public int deltaFactories()             { return (int)factories - (int)previousFactories; }
     public int robotControls()              { return robotControls; }
@@ -76,6 +76,8 @@ public class ColonyIndustry extends ColonySpendingCategory {
     }
     @Override
     public void nextTurn(float totalProd, float totalReserve) {
+        if (factories < 0) // correct possible data issue
+            factories = 0;
         previousFactories = factories;
         // prod gets planetary bonus, but not reserve
         float prodBC = pct()* totalProd * planet().productionAdj();
@@ -83,13 +85,13 @@ public class ColonyIndustry extends ColonySpendingCategory {
         float newBC = prodBC+rsvBC+industryReserveBC;
         industryReserveBC = 0;
         newFactories = 0;
-
+        
         // convert captured factories, one at a time until no more BC or alien factories
         while (hasAlienFactories() && (newBC > factoryConversionCost())) {
             convertRandomAlienFactory();
             newBC -= factoryConversionCost();
         }
-
+        
         // if unconverted factories remain, save off BC remainder for next turn
         if (hasAlienFactories()) {
             industryReserveBC = newBC;
@@ -229,7 +231,12 @@ public class ColonyIndustry extends ColonySpendingCategory {
         // cost to convert alien factories
         float convertCost = totalAlienConversionCost();
         if (newBC <= convertCost)
-            return text(convertAlienFactoriesText);
+        {
+            if(newBC > 0)
+                return text(convertAlienFactoriesText);
+            else
+                return text(noneText);
+        }
 
         newBC -= convertCost;
 

@@ -21,7 +21,6 @@ import java.awt.geom.Point2D;
 import javax.swing.*;
 import java.util.List;
 import rotp.model.ships.ShipDesign;
-import rotp.model.ships.ShipImage;
 import rotp.ui.BasePanel;
 import rotp.ui.BaseTextField;
 import rotp.ui.main.SystemPanel;
@@ -62,6 +61,7 @@ public final class ConfirmCreateUI extends BasePanel implements MouseListener, M
     }
     public void targetDesign(ShipDesign d) {
         targetDesign = d;
+        targetDesign.resetImage();
         if ((targetDesign.name() == null) || targetDesign.name().isEmpty())
             player().shipLab().nameDesign(targetDesign);
         nameField.setText(targetDesign.name().trim());
@@ -129,7 +129,7 @@ public final class ConfirmCreateUI extends BasePanel implements MouseListener, M
         for (String line: titleLines) {
             int sw = g.getFontMetrics().stringWidth(line);
             int x1 = (w - sw) / 2;
-            g.drawString(line, x1, y1);
+            drawString(g,line, x1, y1);
             y1 += s20;
         }
 
@@ -147,7 +147,7 @@ public final class ConfirmCreateUI extends BasePanel implements MouseListener, M
             for (String line: amtLines) {
                 int sw = g.getFontMetrics().stringWidth(line);
                 int x1 = (w-sw)/2;
-                g.drawString(line, x1, y2);
+                drawString(g,line, x1, y2);
                 y2 += s16;
             }
         }

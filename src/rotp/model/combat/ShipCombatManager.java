@@ -33,6 +33,7 @@ import rotp.util.Base;
 public class ShipCombatManager implements Base {
     private static final int MAX_TURNS = 100;
     private static Thread autoRunThread;
+    private static Thread runningThread;
     // combat vars
     public ShipBattleUI ui;
     private StarSystem system;
@@ -234,16 +235,28 @@ public class ShipCombatManager implements Base {
         }
         return false;
     }
+
     public void toggleAutoComplete() {
         autoComplete = !autoComplete;
         log("Toggling Auto Complete: "+autoComplete);
+
         if (autoComplete) {
             autoRunThread = new Thread(autoRunProcess());
             autoRunThread.start();
+            runningThread = autoRunThread;
         }
-        else
+        else {
+            if(autoRunThread != null) {
+                try {
+                    autoRunThread.join();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
             continueToNextPlayerStack();
+        }
     }
+
     public void resolveAllCombat() {
         clearAsteroids();
 
@@ -288,6 +301,7 @@ public class ShipCombatManager implements Base {
             while (shouldContinue())
                 performNextStackTurn();
             performingStackTurn = false;
+            autoRunThread = null;
         };
     }
     public boolean canScan(Empire civ, CombatStack st) {
@@ -970,7 +984,7 @@ public class ShipCombatManager implements Base {
         // enemy stacks may have a repulsor range that is also not traversable
         List<CombatStack> stacks = new ArrayList<>(results.activeStacks());
         for (CombatStack s: stacks) {            
-            int r = stack.cloaked || (s.empire == stack.empire) || s.inStasis || stack.ignoreRepulsors() ? 0 : s.repulsorRange();
+            int r = stack.ignoreRepulsors() || (s.empire == stack.empire) || s.inStasis ? 0 : s.repulsorRange();
             if ((r == 0) && stack.canEat(s)) 
                 continue;
             else if (r == 0) 

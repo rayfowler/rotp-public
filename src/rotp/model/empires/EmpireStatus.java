@@ -53,7 +53,7 @@ public class EmpireStatus implements Base, Serializable {
         int turn = galaxy().numberTurns();
         if (turn >= fleetStrength.length)
             growLists();
-
+        
         fleetStrength[turn] = currentFleetStrengthValue();
         population[turn] = currentPopulationValue();
         technology[turn] = currentTechnologyValue();
@@ -121,7 +121,7 @@ public class EmpireStatus implements Base, Serializable {
         return empire.allColonizedSystems().size();
     }
     private int currentPopulationValue() {
-        return (int)Math.ceil(empire.totalPlanetaryPopulation());
+        return (int)Math.ceil(empire.totalEmpirePopulation());
     }
     private int currentProductionValue() {
         return (int)Math.ceil(empire.totalPlanetaryProduction());

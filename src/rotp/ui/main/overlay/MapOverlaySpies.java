@@ -240,7 +240,7 @@ public class MapOverlaySpies extends MapOverlay {
             List<String> lines = wrappedLines(g, none, descW); 
             for (String line: lines) {
                 y1a += lineH;
-                g.drawString(line, x2, y1a);
+                drawString(g,line, x2, y1a);
             }
             return;
         }
@@ -264,7 +264,7 @@ public class MapOverlaySpies extends MapOverlay {
         y2 = y2 + BasePanel.s24;
         g.setFont(narrowFont(20));
         g.setColor(SystemPanel.blackText);
-        g.drawString(v.embassy().treatyStatus(), x2, y2);
+        drawString(g,v.embassy().treatyStatus(), x2, y2);
 
         g.setColor(SystemPanel.blackText);
         // draw spies caught
@@ -272,7 +272,8 @@ public class MapOverlaySpies extends MapOverlay {
         int ourSpiesLost = rpt.spiesLost();
         if (ourSpiesLost > 0) {
             y2 += lineH;
-            String desc = text("NOTICE_SPIES_LOST_DESC", str(ourSpiesLost), selectedEmpire.name());
+            String desc = text("NOTICE_SPIES_LOST_DESC", str(ourSpiesLost));
+            desc = selectedEmpire.replaceTokens(desc, "alien");
             if (rpt.confessedMission() != null) {
                 switch(rpt.confessedMission()) {
                     case SABOTAGE: desc = concat(desc," ", text("NOTICE_SPIES_LOST_CONFESSED")); break;
@@ -286,7 +287,7 @@ public class MapOverlaySpies extends MapOverlay {
             List<String> lines = wrappedLines(g, desc, descW); 
             for (String line: lines) {
                 y2 += lineH;
-                g.drawString(line, x2, y2);
+                drawString(g,line, x2, y2);
             }
         }
         
@@ -295,7 +296,8 @@ public class MapOverlaySpies extends MapOverlay {
         if (theirSpiesLost > 0) {
             SpyReport theirRpt = v.otherView().spies().report();
             y2 += lineH;
-            String desc = text("NOTICE_SPIES_CAUGHT_DESC", str(theirSpiesLost), selectedEmpire.name());
+            String desc = text("NOTICE_SPIES_CAUGHT_DESC", str(theirSpiesLost));
+            desc = selectedEmpire.replaceTokens(desc, "alien");
             if (theirRpt.confessedMission() != null) {
                 switch(theirRpt.confessedMission()) {
                     case SABOTAGE: desc = concat(desc," ", text("NOTICE_SPIES_CAUGHT_CONFESSED")); break;
@@ -306,7 +308,7 @@ public class MapOverlaySpies extends MapOverlay {
             List<String> lines = wrappedLines(g, desc, descW); 
             for (String line: lines) {
                 y2 += lineH;
-                g.drawString(line, x2, y2);
+                drawString(g,line, x2, y2);
             }
         }
         
@@ -329,7 +331,7 @@ public class MapOverlaySpies extends MapOverlay {
             List<String> lines = wrappedLines(g, desc, descW); 
             for (String line: lines) {
                 y2 += lineH;
-                g.drawString(line, x2, y2);
+                drawString(g,line, x2, y2);
             }
         }
                 
@@ -338,26 +340,30 @@ public class MapOverlaySpies extends MapOverlay {
             y2 += lineH;
             Tech t = tech(rpt.stolenTech());
             Empire framed = rpt.framedEmpire();
-            String desc = text("NOTICE_SPIES_ESPIONAGE", t.name(), selectedEmpire.name());
-            if (framed != null)
-                desc = concat(desc, " ", text("NOTICE_SPIES_ESPIONAGE_FRAME", framed.name()));
+            String desc = text("NOTICE_SPIES_ESPIONAGE", t.name());
+            desc = selectedEmpire.replaceTokens(desc, "alien");
+            if (framed != null) {
+                desc = concat(desc, " ", text("NOTICE_SPIES_ESPIONAGE_FRAME"));
+                desc = framed.replaceTokens(desc, "framed");
+            }
             g.setFont(narrowFont(15));
             List<String> lines = wrappedLines(g, desc, descW); 
             for (String line: lines) {
                 y2 += lineH;
-                g.drawString(line, x2, y2);
+                drawString(g,line, x2, y2);
             }
         }
                 
         // informs if we were framed
         if (rpt.wasFramed()) {
             y2 += lineH;
-            String desc = text("NOTICE_SPIES_FRAMED", selectedEmpire.name());
+            String desc = text("NOTICE_SPIES_FRAMED");
+            desc = selectedEmpire.replaceTokens(desc, "alien");
             g.setFont(narrowFont(15));
             List<String> lines = wrappedLines(g, desc, descW); 
             for (String line: lines) {
                 y2 += lineH;
-                g.drawString(line, x2, y2);
+                drawString(g,line, x2, y2);
             }
         }
 
@@ -373,12 +379,13 @@ public class MapOverlaySpies extends MapOverlay {
                 for (int i=1;i<techNames.size();i++) 
                     techList = text("NOTICE_SPIES_MULTIPLE_TECHS", techList, techNames.get(i));
             }
-            String desc = text("NOTICE_SPIES_LEARNED_TECH", selectedEmpire.name(), techList);
+            String desc = text("NOTICE_SPIES_LEARNED_TECH", techList);
+            desc = selectedEmpire.replaceTokens(desc, "alien");
             g.setFont(narrowFont(15));
             List<String> lines = wrappedLines(g, desc, descW); 
             for (String line: lines) {
                 y2 += lineH;
-                g.drawString(line, x2, y2);
+                drawString(g,line, x2, y2);
             }
         }
         
@@ -478,7 +485,7 @@ public class MapOverlaySpies extends MapOverlay {
                 g.setColor(SystemPanel.yellowText);
             else
                 g.setColor(SystemPanel.blackText);
-            g.drawString(empire.raceName(), tabX+scaled(5), tabY+tabH-scaled(3));
+            drawString(g,empire.raceName(), tabX+scaled(5), tabY+tabH-scaled(3));
         }
         @Override
         public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean click) {
@@ -547,7 +554,7 @@ public class MapOverlaySpies extends MapOverlay {
             g.setColor(c0);
             g.setFont(narrowFont(20));
             int sw = g.getFontMetrics().stringWidth(label);
-            g.drawString(label, x+((w-sw)/2),y+BasePanel.s19);
+            drawString(g,label, x+((w-sw)/2),y+BasePanel.s19);
             if (hovering) {
                 Stroke prevStroke = g.getStroke();
                 g.setStroke(stroke2);
@@ -624,7 +631,7 @@ public class MapOverlaySpies extends MapOverlay {
             g.setColor(c0);
             g.setFont(narrowFont(20));
             int sw = g.getFontMetrics().stringWidth(label);
-            g.drawString(label, x+((w-sw)/2),y+BasePanel.s19);
+            drawString(g,label, x+((w-sw)/2),y+BasePanel.s19);
             if (hovering) {
                 Stroke prevStroke = g.getStroke();
                 g.setStroke(stroke2);
@@ -701,7 +708,7 @@ public class MapOverlaySpies extends MapOverlay {
             g.setColor(c0);
             g.setFont(narrowFont(20));
             int sw = g.getFontMetrics().stringWidth(label);
-            g.drawString(label, x+((w-sw)/2),y+BasePanel.s19);
+            drawString(g,label, x+((w-sw)/2),y+BasePanel.s19);
             if (hovering) {
                 Stroke prevStroke = g.getStroke();
                 g.setStroke(stroke2);

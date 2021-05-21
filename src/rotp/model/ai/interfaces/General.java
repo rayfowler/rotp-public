@@ -30,4 +30,5 @@ public interface General {
     default Empire bestVictim()               { return null; }
     default float defenseRatio()              { return 0.5f; }
     default int additionalColonizersToBuild(boolean returnPotentialUncolonizedInstead) { return 0; }
+    default boolean allowedToBomb(Empire emp) { return true; }
 }

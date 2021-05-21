@@ -261,7 +261,7 @@ public class RallyPointPanel extends SystemPanel {
             List<String> lines = wrappedLines(g, prompt, getWidth()-leftM-s20);
             for (String line: lines) {
                 y0 += s18;
-                g.drawString(line, leftM, y0);
+                drawString(g,line, leftM, y0);
             }
             
             int checkW = s12;
@@ -285,7 +285,7 @@ public class RallyPointPanel extends SystemPanel {
             String forward = text("MAIN_RALLY_FORWARD");
             g.setFont(narrowFont(16));
             g.setColor(MainUI.darkShadowC);
-            g.drawString(forward, leftM+s15, y0-s1);
+            drawString(g,forward, leftM+s15, y0-s1);
         }
         private Shape arrow() {
             if (arrow == null) {
@@ -385,7 +385,7 @@ public class RallyPointPanel extends SystemPanel {
                 List<String> lines = wrappedLines(g, prompt, getWidth()-leftM-s20);
                 for (String line: lines) {
                     y0 += s18;
-                    g.drawString(line, leftM, y0);
+                    drawString(g,line, leftM, y0);
                 }
                 return;
             }
@@ -396,7 +396,7 @@ public class RallyPointPanel extends SystemPanel {
                 List<String> lines = wrappedLines(g, prompt, getWidth()-leftM-s20);
                 for (String line: lines) {
                     y0 += s18;
-                    g.drawString(line, leftM, y0);
+                    drawString(g,line, leftM, y0);
                 }
                 return;
             }
@@ -412,7 +412,7 @@ public class RallyPointPanel extends SystemPanel {
             List<String> lines = wrappedLines(g, prompt, getWidth()-leftM-s20);
             for (String line: lines) {
                 y0 += s18;
-                g.drawString(line, leftM, y0);
+                drawString(g,line, leftM, y0);
             }
         }
     }

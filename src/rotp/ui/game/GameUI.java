@@ -18,6 +18,7 @@ package rotp.ui.game;
 import java.awt.AlphaComposite;
 import java.awt.Color;
 import java.awt.Desktop;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -42,6 +43,7 @@ import rotp.ui.BaseText;
 import rotp.ui.RotPUI;
 import rotp.ui.UserPreferences;
 import rotp.ui.sprites.RoundGradientPaint;
+import rotp.util.FontManager;
 import rotp.util.ImageManager;
 import rotp.util.LanguageManager;
 import rotp.util.ThickBevelBorder;
@@ -490,7 +492,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         drawShadowedString(g, langText, 2, langX, s30, Color.black, logoFore[0]);
 
         discussText.disabled(false);
-        if (LanguageManager.current().currentLangDir().equals("en"))
+        if (!discussText.isEmpty())
             discussText.draw(g);
 
         if (canRestart()) {
@@ -762,6 +764,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     public class GameLanguagePane extends BasePanel implements MouseListener, MouseMotionListener {
         private static final long serialVersionUID = 1L;
         List<String> names;
+        List<String> codes;
         public int w;
         public int h;
         private Rectangle[] lang;
@@ -770,6 +773,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             init();
         }
         private void init() {
+            codes = LanguageManager.current().languageCodes();
             names = LanguageManager.current().languageNames();
             w = scaled(100);
             h = s45+(s20*names.size());
@@ -791,14 +795,16 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             int lineH = s20;
             g.fillRoundRect(0,topM,w,h-topM,s10,s10);
             int y0 = topM;
-            g.setFont(narrowFont(18));
             for (int i=0; i<names.size(); i++) {
+                String code = codes.get(i);
                 String name = names.get(i);
+                Font f = FontManager.current().languageFont(code, 18);
+                g.setFont(f);
                 Color c0 = hoverBox == lang[i] ? Color.yellow : Color.white;
                 g.setColor(c0);
                 y0 += lineH;
                 int sw = g.getFontMetrics().stringWidth(name);
-                g.drawString(name, w-sw-s10, y0);
+                drawString(g,name, w-sw-s10, y0);
                 lang[i].setBounds(w-sw-s10, y0-lineH, sw+s5, lineH);
             }
         }

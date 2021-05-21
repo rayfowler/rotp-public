@@ -81,3 +81,9 @@ PRAISE_TRADE_01            | Remember when I began our trade agreement? I told y
 PRAISE_TRADE_02            | It's always more fun to fight for riches and head home with ships loaded with the spoils of victory! Ah well, I suppose that this trade agreement is at least a little bit more profitable when you factor in the costs. Be sure it stays that way, ambassador.
 PRAISE_REBELLING_WITH_01   | That's more like it! There's nothing like a good fight, eh? And so much loot begging to be acquired... I hope you don't mind that the Khanate wants to join in the fun! 
 
+ACCEPT_TRADE_01            | I suppose we can't loot every civilization we come across. You want to trade how much BC annually? [amt]? Fine..
+RESPOND_IGNORE_THREAT_01   | Forgive me for laughing, your threats are just comically empty. Run along now before our raiders decide to sharpen their claws on your colonies.
+RESPOND_STOP_SPYING_01     | You found a spy you say belongs to us? Surely not. We would never dream of spying on the exalted [your_empire]. Do what you want with the spy, it is of no consequence to us.
+RESPOND_STOP_ATTACKING_01  | Worried about a raid, [your_race]? Don't worry, we have no interest in what you possess. We'll move them now. We wouldn't want to scare you, after all.
+
+

@@ -29,13 +29,15 @@ public class GNNAllianceBrokenNotice implements Base {
         if (!pl.hasContact(emp1) && !pl.hasContact(emp2))
             return;
 
-        String empTitle1 = emp1.name();
-        String empTitle2 = emp2.name();
-        if (!pl.hasContact(emp1)) {
-            empTitle1 = empTitle2;
-            empTitle2 = emp1.name();
+        String title = text("GNN_ALLIANCE_BROKEN");
+        if (pl.hasContact(emp1)) {
+            title = emp1.replaceTokens(title, "first");
+            title = emp2.replaceTokens(title, "second");
         }
-        String title = text("GNN_ALLIANCE_BROKEN", empTitle1, empTitle2);
+        else {
+            title = emp2.replaceTokens(title, "first");
+            title = emp1.replaceTokens(title, "second");
+        }
         GNNNotification.notifyAllianceBroken(title);
     }
 }

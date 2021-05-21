@@ -42,6 +42,10 @@ public class TradeRoute implements Base, Serializable {
     private EmpireView otherView()   { return galaxy().empire(emp2).viewForEmpire(emp1); }
     public void assessTurn() {
         EmpireView view = view();
+        if (!view.inEconomicRange()) {
+            stopRoute();
+            return;
+        }
         float pct = (roll(1,200) + view.embassy().relations() + 25) / 6000.0f;
         civProd = view.empire().totalPlanetaryProduction();
         ownerProd = view.owner().totalPlanetaryProduction();
@@ -71,7 +75,7 @@ public class TradeRoute implements Base, Serializable {
     }
     public void startRoute(int newLevel) {
         float newTrade = newLevel - level;
-        if (newTrade < 0)
+        if (newTrade <= 0)
             return;
         
         float newPct = ((profit/newTrade) + startPct()) * (newTrade/newLevel);

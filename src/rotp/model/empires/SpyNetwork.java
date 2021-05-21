@@ -24,6 +24,7 @@ import rotp.model.incidents.EspionageTechIncident;
 import rotp.model.incidents.SpyConfessionIncident;
 import rotp.model.ships.ShipDesign;
 import rotp.model.tech.Tech;
+import rotp.model.tech.TechCategory;
 import rotp.model.tech.TechTree;
 import rotp.ui.RotPUI;
 import rotp.ui.notifications.SabotageNotification;
@@ -246,6 +247,13 @@ public final class SpyNetwork implements Base, Serializable {
             return;
         }
         
+        // data automatically updates for allies
+        if (view.embassy().alliance()) {
+            lastSpyDate = galaxy().currentYear();
+            view.refreshSystemSpyViews();
+            updateTechList();
+        }
+        
         if (maxSpies() == 0) {
             activeSpies.clear();
             return;
@@ -328,6 +336,10 @@ public final class SpyNetwork implements Base, Serializable {
                 report().recordTechsLearned(newPossible);
             }
         }  
+    }
+    public void noteTradedTech(Tech t) {
+        TechCategory cat = tech.category(t.cat.index());
+        cat.addKnownTech(t.id());
     }
     private boolean sendSpiesToInfiltrate() {
         boolean confession = false;

@@ -405,11 +405,14 @@ public final class Colony implements Base, IMappedObject, Serializable {
         Empire pl = player();
         String message = null;
         if (empire == pl) {
-            message = text(messageKey, sys.name(), empire.name(), rebels);
+            message = text(messageKey, sys.name(), rebels);
+            message = empire.replaceTokens(message, "rebelling");
             galaxy().giveAdvice("MAIN_ADVISOR_REBELLION", sys.name());
         }
-        else if (empire.hasContact(pl) && pl.sv.isScouted(sys.id))
-            message = text("GNN_ALIEN_REBELLION", pl.sv.name(sys.id), empire.name(), rebels);
+        else if (empire.hasContact(pl) && pl.sv.isScouted(sys.id)) {
+            message = text("GNN_ALIEN_REBELLION", pl.sv.name(sys.id), rebels);
+            message = empire.replaceTokens(message, "rebelling");
+        }
         if (message != null)
             GNNNotification.notifyRebellion(message);
     }
@@ -741,9 +744,10 @@ public final class Colony implements Base, IMappedObject, Serializable {
     public float production() {
         if (inRebellion())
             return 0.0f;
-        float mod = empire().isPlayerControlled() ? 1.0f : options().aiProductionModifier();
+        float mod = empire().isPlayer() ? 1.0f : options().aiProductionModifier();
         float workerProd = workingPopulation() * empire.workerProductivity();
-        return mod*(workerProd + usedFactories());
+        float factoryOutput = mod*(workerProd + usedFactories());
+        return factoryOutput - transportCost();
     }
     public float maxProduction() {
         float workerProd = planet().maxSize() * empire.workerProductivity();
@@ -800,9 +804,8 @@ public final class Colony implements Base, IMappedObject, Serializable {
         float tradeIncome = actualTradeIncome();
         float defenseCost = prod * empire.missileBaseCostPerBC();
         float shipyardCost = shipyard().maintenanceCost();
-        float transportCost = transportCost();
 
-        return prod - reserveCost - securityCost - defenseCost - shipyardCost - transportCost + tradeIncome - shipCost - stargateCost;
+        return max(0, prod - reserveCost - securityCost - defenseCost - shipyardCost + tradeIncome - shipCost - stargateCost);
     }
     public float expectedPopulation() {
         return workingPopulation() + normalPopGrowth() + incomingTransports();
@@ -827,14 +830,14 @@ public final class Colony implements Base, IMappedObject, Serializable {
         return min(p1,p2);
     }
     public float newWaste() {
-        return max(0, usedFactories() * tech().factoryWasteMod());
+        float mod = empire().isPlayer() ? 1.0f : options().aiWasteModifier();
+        return max(0, usedFactories() * tech().factoryWasteMod() * mod);
     }
     public float wasteCleanupCost() {
         if (empire.ignoresPlanetEnvironment())
             return 0;
         
-        float mod = empire().isPlayerControlled() ? 1.0f : options().aiWasteModifier();
-        return mod*(min(planet.maxWaste(), planet.waste()) + newWaste()) / tech().wasteElimination();
+        return (min(planet.maxWaste(), planet.waste()) + newWaste()) / tech().wasteElimination();
     }
     public float minimumCleanupCost() {
         return min(wasteCleanupCost(), totalIncome());

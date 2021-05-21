@@ -702,7 +702,7 @@ public class RacesUI extends BasePanel {
             g.setFont(narrowFont(32));
             int titleW = g.getFontMetrics().stringWidth(title);
             int titleSpacing = s60+s60;
-            g.drawString(title, x0,y0);
+            drawString(g,title, x0,y0);
 
             int tabW = (w-titleW-helpW-titleSpacing-(5*gap))/4;
 
@@ -735,7 +735,7 @@ public class RacesUI extends BasePanel {
             else
                 g.setColor(Color.white);
 
-            g.drawString("?", s16, s30);
+            drawString(g,"?", s16, s30);
         }
         private void drawTab(Graphics2D g, int x, int y, int w, int h, String label, Rectangle box, boolean selected) {
             g.setFont(narrowFont(22));
@@ -860,7 +860,7 @@ public class RacesUI extends BasePanel {
             String title = text(titleKey);
             g.setFont(narrowFont(32));
             g.setColor(SystemPanel.orangeText);
-            g.drawString(title, s10, s35);
+            drawString(g,title, s10, s35);
         }
     }
     final class RacePlayerRelationsPane extends BasePanel implements MouseListener, MouseMotionListener, MouseWheelListener {
@@ -990,14 +990,14 @@ public class RacesUI extends BasePanel {
                 g.draw(sh);
                 g.setStroke(prev);
             }
-            
+            boolean inRange = true;
             if (emp.isPlayer()) {
                 List<EmpireView> views = player().contacts();
                 int n = views.size();
                 g.setFont(narrowFont(16));
                 g.setColor(blackC);
                 y1 += s20;
-                g.drawString(text("RACES_KNOWN_EMPIRES", n), x1, y1);
+                drawString(g,text("RACES_KNOWN_EMPIRES", n), x1, y1);
                 if (n > 0) {
                     int r = 0;
                     for (EmpireView v : views) {
@@ -1005,12 +1005,12 @@ public class RacesUI extends BasePanel {
                             r++;
                     }
                     y1 += s16;
-                    g.drawString(text("RACES_RECALLED_DIPLOMATS", r), x1, y1);
+                    drawString(g,text("RACES_RECALLED_DIPLOMATS", r), x1, y1);
                 }
             }
             else {
                 EmpireView view = player().viewForEmpire(emp);
-                boolean inRange = view.inEconomicRange();
+                inRange = view.inEconomicRange();
                 g.setColor(blackC);
                 g.setFont(narrowFont(16));
 
@@ -1022,7 +1022,7 @@ public class RacesUI extends BasePanel {
                     int starW = s8;
                     String s = treaty.status(player());
                     int sw = g.getFontMetrics().stringWidth(s);
-                    g.drawString(s, x1, y1);
+                    drawString(g,s, x1, y1);
                     if (isAlly) {
                         TreatyAlliance alliance = (TreatyAlliance) treaty;
                         drawAllianceStars(g,x1+sw+s5,y1-s3,alliance.standing(player()),starW);
@@ -1031,11 +1031,11 @@ public class RacesUI extends BasePanel {
                     y1 += s16;
                     int level = view.trade().level();
                     String tradeStr = (level == 0) ? text("RACES_TRADE_NONE") : text("RACES_TRADE_LEVEL", level);
-                    g.drawString(tradeStr, x1, y1);
+                    drawString(g,tradeStr, x1, y1);
                 }
                 else {
                     y1 += s20;
-                    g.drawString(text("RACES_OUT_OF_RANGE"), x1, y1);
+                    drawString(g,text("RACES_OUT_OF_RANGE"), x1, y1);
                 }
                 if (!emp.race().masksDiplomacy) 
                     drawRelationsBar(g, emp, x1, y0+h0-s25, w0-x1-s10, s10, s10, s5);
@@ -1043,20 +1043,18 @@ public class RacesUI extends BasePanel {
             
             if (UserPreferences.texturesInterface()) 
                 drawTextureWithExistingClip(g, x0,y0,w0,h0);
-            drawRaceImage(g, emp, back, x0, y0, h0);
+            drawRaceImage(g, emp, back, x0, y0, h0, inRange);
         }
-        public void drawRaceImage(Graphics2D g, Empire emp, BufferedImage back, int x, int y, int h) {
+        public void drawRaceImage(Graphics2D g, Empire emp, BufferedImage back, int x, int y, int h, boolean inRange) {
             BufferedImage img = emp.race().diploMugshotQuiet();
+            
             int w1 = back.getWidth();
             int h1 = back.getHeight();
             int mgn = (h-h1)/2;
-            g.drawImage(back, x+mgn, y+mgn, null);
-
-            //Composite comp = AlphaComposite.getInstance(AlphaComposite.SRC_OVER , 0.3f);
-            //if (comp != null)
-            //    g.setComposite(comp);
-            g.drawImage(img, x+mgn, y+mgn, w1, h1, null);
             
+            g.drawImage(back, x+mgn, y+mgn, null);
+            g.drawImage(img, x+mgn, y+mgn, w1, h1, null);
+
             if (emp.isPlayer())
                 return;
             
@@ -1064,17 +1062,23 @@ public class RacesUI extends BasePanel {
             EmpireView view = player().viewForEmpire(emp);
             boolean dipGone = view.embassy().diplomatGone();
             boolean otherDipGone = view.otherView().embassy().diplomatGone();
-            if (dipGone && otherDipGone)
+            if (!inRange) 
+                text = text("RACES_OUT_OF_RANGE");
+            else if (dipGone && otherDipGone)
                 text = text("RACES_DIPLOMATS_RECALLED");
-            else if (dipGone)
-                text = text("RACES_DIPLOMAT_RECALLED", player().raceName());
-            else if (otherDipGone) 
+            else if (dipGone) {
+                text = text("RACES_DIPLOMAT_RECALLED");
+                text = player().replaceTokens(text, "alien");
+            }
+            else if (otherDipGone) {
                 text = text("RACES_DIPLOMAT_RECALLED", emp.raceName());
+                text = emp.replaceTokens(text, "alien");
+            }
                         
             if (!text.isEmpty()) {
                 g.setFont(narrowFont(14));
                 Composite prevC = g.getComposite();
-                Composite comp = AlphaComposite.getInstance(AlphaComposite.SRC_OVER , 0.6f);
+                Composite comp = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.6f);
                 g.setComposite(comp);
                 g.setColor(Color.black);
                 g.fillRect(x+mgn, y+mgn, w1, h1);
@@ -1085,7 +1089,7 @@ public class RacesUI extends BasePanel {
                 for (String line: lines) {
                     int sw = g.getFontMetrics().stringWidth(line);
                     int x2 = x+mgn+((w1-sw)/2);
-                    g.drawString(line, x2, y2);
+                    drawString(g,line, x2, y2);
                     y2 += s16;
                 }
             }

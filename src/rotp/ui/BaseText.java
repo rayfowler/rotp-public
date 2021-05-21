@@ -89,6 +89,7 @@ public class BaseText implements Base {
     public void disabled(boolean b)   { disabled = b; }
     public void visible(boolean b)    { visible = b; }
     public void preceder(BaseText t)  { preceder = t; }
+    public boolean isEmpty()          { return text.isEmpty(); }
     public void setBounds(int x, int y, int w, int h) {
         bounds.setBounds(x,y,w,h);
     }
@@ -178,7 +179,7 @@ public class BaseText implements Base {
         int sw = stringWidth(g);
         int fontH = g.getFontMetrics().getHeight();
         setBounds(x1,y1-fontH,sw+scaled(5),fontH+(fontH/5));
-        g.drawString(displayText(), x1, y1);
+        drawString(g,displayText(), x1, y1);
         return x1+sw;
     }
     public int drawCentered(Graphics g) {
@@ -210,7 +211,7 @@ public class BaseText implements Base {
                 int x0s = scaled(x0);
                 for (int y0=(0-topThick);y0<=thick;y0++) {
                     int y0s = scaled(y0);
-                    g0.drawString(text, hPad+x0s, fontH+y0s);
+                    drawString(g0,text, hPad+x0s, fontH+y0s);
                 }
             }
             g0.dispose();
@@ -218,7 +219,7 @@ public class BaseText implements Base {
         Color c0 = textColor();
         g.setColor(c0);
         g.drawImage(textShadow, x1-hPad, y1-fontH, null);
-        g.drawString(displayText(), x1, y1);
+        drawString(g,displayText(), x1, y1);
         return x1+sw;
     }
 }

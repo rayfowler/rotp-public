@@ -38,7 +38,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
     protected static final int BORDER_SYSTEM = 2;
     protected static final int ATTACK_TARGET = 3;
     
-    static final int FLAG_NONE = 0;
+    public static final int FLAG_NONE = 0;
     static final int FLAG_WHITE = 1;
     static final int FLAG_RED = 2;
     static final int FLAG_BLUE = 3;
@@ -125,7 +125,16 @@ public class SystemView implements IMappedObject, Base, Serializable {
         relocationSystem = null;
         system().rallySprite().stop(); 
     }
-    
+    public void goExtinct() {
+        vEmpire = null;
+        vBases = 0;
+        vShieldLevel = 0;
+        vFactories = 0;
+        vPopulation = 0;
+        vStargate = false;
+        clearHostility();
+    }
+    public int flagColorId()  { return flagColor; }
     public Color flagColor() { 
         switch(flagColor) {
             case FLAG_RED:    return Color.red;
@@ -324,9 +333,10 @@ public class SystemView implements IMappedObject, Base, Serializable {
     public boolean environmentFertile()     { return (planet() != null) && planet().isEnvironmentFertile(); }
     public boolean environmentGaia()        { return (planet() != null) && planet().isEnvironmentGaia(); }
 
+    public void resetFlagColor()            { flagColor = FLAG_NONE; }
     public void toggleFlagColor(boolean reverse) {
         if (reverse) {
-            switch(flagColor) {
+             switch(flagColor) {
                 case FLAG_NONE:   flagColor = FLAG_PINK; return;
                 case FLAG_WHITE:  flagColor = FLAG_NONE; return;
                 case FLAG_RED:    flagColor = FLAG_WHITE; return;
@@ -439,14 +449,18 @@ public class SystemView implements IMappedObject, Base, Serializable {
             else
                 return text("MAIN_NO_COLONIES");
         }
+        String name;
         if (!scouted())
-            return text("PLANET_WORLD",empire().raceName());
-        if (empire().isHomeworld(system()))
-            return text("PLANET_HOMEWORLD",empire().raceName());
+            name = text("PLANET_WORLD",empire().raceName());
+        else if (empire().isHomeworld(system()))
+            name = text("PLANET_HOMEWORLD",empire().raceName());
         else if (empire().isColony(system()))
-            return text("PLANET_COLONY",empire().raceName());
+            name = text("PLANET_COLONY",empire().raceName());
         else
-            return text("PLANET_WORLD",empire().raceName());
+            name = text("PLANET_WORLD",empire().raceName());
+        
+        name = empire().replaceTokens(name, "alien");
+        return name;
     }
 
     @Override

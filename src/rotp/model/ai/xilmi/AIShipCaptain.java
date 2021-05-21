@@ -23,13 +23,18 @@ import rotp.model.combat.*;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.galaxy.StarSystem;
+import rotp.model.ships.ShipComponent;
 import rotp.model.ships.ShipDesign;
+import rotp.model.tech.Tech;
 import rotp.util.Base;
 
 public class AIShipCaptain implements Base, ShipCaptain {
     private final Empire empire;
     private transient List<CombatStack> allies = new ArrayList<>();
     private transient List<CombatStack> enemies = new ArrayList<>();
+    private CombatStack currentTarget = null;
+    private CombatStack closeTarget = null;
+    private CombatStack distantTarget = null;
 
     public List<CombatStack> allies() {
         if (allies == null)
@@ -85,13 +90,20 @@ public class AIShipCaptain implements Base, ShipCaptain {
         boolean turnActive = true;
         while (turnActive) {
             float prevMove = stack.move;
-            prevTarget = stack.target;
+            prevTarget = currentTarget;
             //ail: for moving we pick the target that is overall the most suitable, so that bombers move towards planet
+            chooseTarget(stack, true, true);
             FlightPath bestPathToTarget = chooseTarget(stack, false, false);
+            //ail: if our target to move to is not the same as the target we can currently shoot at, we shoot before moving
+            if(closeTarget != null && closeTarget != distantTarget)
+            {
+                if (stack.canAttack(closeTarget)) 
+                    performSmartAttackTarget(stack, closeTarget);
+            }
             // if we need to move towards target, do it now
-            if (stack.target != null) {
+            if (currentTarget != null) {
                 if (stack.mgr.autoResolve) {
-                    Point destPt = findClosestPoint(stack, stack.target);
+                    Point destPt = findClosestPoint(stack, currentTarget);
                     if (destPt != null)
                         mgr.performMoveStackToPoint(stack, destPt.x, destPt.y);
                 }
@@ -102,32 +114,72 @@ public class AIShipCaptain implements Base, ShipCaptain {
 
             // if can attack target this turn, fire when ready
             //ail: first look for ships as targets as we can fire our beams/missiles at them and then still drop bombs afterwards
-            if(stack.target != null && stack.target.isColony())
+            if(currentTarget != null && currentTarget.isColony())
             {
                 chooseTarget(stack, false, true);
-                if (stack.canAttack(stack.target)) 
-                    mgr.performAttackTarget(stack);
+                if (stack.canAttack(currentTarget)) 
+                    performSmartAttackTarget(stack, currentTarget);
+                    //mgr.performAttackTarget(stack);
                 //now chhose our previous target again
                 chooseTarget(stack, false, false);
             }
-            if (stack.canAttack(stack.target)) 
-                mgr.performAttackTarget(stack);
+            if (stack.canAttack(currentTarget)) 
+                performSmartAttackTarget(stack, currentTarget);
+                //mgr.performAttackTarget(stack);
             else
             {
                 //ail: if we couldn't attack our move-to-target, we try and see if anything else can be attacked from where we are
                 chooseTarget(stack, true, false);
-                if (stack.canAttack(stack.target)) 
-                    mgr.performAttackTarget(stack);
+                if (stack.canAttack(currentTarget)) 
+                    performSmartAttackTarget(stack, currentTarget);
+                    //mgr.performAttackTarget(stack);
             }
          
             // SANITY CHECK:
             // make sure we fall out if we haven't moved 
             // and we are still picking the same target
-            if ((prevMove == stack.move) && (prevTarget == stack.target)) {
+            if ((prevMove == stack.move) && (prevTarget == currentTarget)) {
                 turnActive = false;
             }
         }
         mgr.turnDone(stack);
+    }
+   
+    private void performSmartAttackTarget(CombatStack stack, CombatStack target)
+    {
+        //1st run: fire only specials which are not repulsor or stasis-field
+        for (int i=0;i<stack.numWeapons(); i++) {
+            if(!stack.weapon(i).isSpecial()
+                    || !((CombatStackShip)stack).shipComponentCanAttack(target, i)
+                    || stack.weapon(i).tech().isType(Tech.REPULSOR)
+                    || stack.weapon(i).tech().isType(Tech.STASIS_FIELD))
+            {
+                continue;
+            }
+            else
+            {
+                stack.fireWeapon(target, i);
+            }
+        }
+        //2nd run: fire non-special-weapons
+        for (int i=0;i<stack.numWeapons(); i++) {
+            if(stack.selectedWeapon().isSpecial()
+                    || !((CombatStackShip)stack).shipComponentCanAttack(target, i))
+            {
+                continue;
+            }
+            else
+            {
+                stack.fireWeapon(target, i);
+            }
+        }
+        //3rd run: fire whatever is left
+        for (int i=0;i<stack.numWeapons(); i++) {
+            if(((CombatStackShip)stack).shipComponentCanAttack(target, i))
+            {
+                stack.fireWeapon(target, i);
+            }
+        }
     }
     private  FlightPath chooseTarget(CombatStack stack, boolean onlyInAttackRange, boolean onlyShips) {
         if (!stack.canChangeTarget())
@@ -150,7 +202,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             {
                 continue;
             }
-            if(onlyShips)
+            if(onlyShips && target.isColony())
             {
                 continue;
             }
@@ -221,17 +273,23 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 }
             }
         }
-        stack.target = bestTarget;
+        currentTarget = bestTarget;
+        if(onlyInAttackRange)
+            closeTarget = bestTarget;
+        else
+            distantTarget = bestTarget;
         return bestPath;
     }
     public Point findClosestPoint(CombatStack st, CombatStack tgt) {
         if (!st.canMove())
             return null;
 
-        int targetDist = st.optimalFiringRange(tgt);
-        if (tgt.isColony() && st.hasBombs())
-            targetDist = 1;
-
+        //ail: We will always want to go as close as possible because this increases hit-chance
+        int targetDist = 1;
+        if ((targetDist <= tgt.repulsorRange())
+        && !st.ignoreRepulsors())
+            targetDist = tgt.repulsorRange() + 1;
+        
         float maxDist = st.movePointsTo(tgt.x,tgt.y);
         if (maxDist <= targetDist)
             return null;
@@ -270,11 +328,18 @@ public class AIShipCaptain implements Base, ShipCaptain {
     public FlightPath findSafestSpace(CombatStack st) {
         return null;
     }
-    public static FlightPath findBestPathToAttack(CombatStack st, CombatStack tgt) {
+    public FlightPath findBestPathToAttack(CombatStack st, CombatStack tgt) {
         if (!st.isArmed())
             return null;
-        int r = st.optimalFiringRange(tgt);
-        return findBestPathToAttack(st, tgt, r);
+        //we start at r = 1 and increase up to our optimal firing-range
+        int r = 1;
+        FlightPath bestPath = null;
+        while(bestPath == null && r <= st.optimalFiringRange(tgt))
+        {
+            bestPath = findBestPathToAttack(st, tgt, r);
+            r++;
+        }
+        return bestPath;
     }
     public static FlightPath findBestPathToAttack(CombatStack st, CombatStack tgt, int range) {
         if (st.movePointsTo(tgt) <= range) {
@@ -326,9 +391,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             
          // there is no path to get in optimal firing range of target!
         if (validPaths.isEmpty()) {
-            // are we within max firing range? if so, go with that
-            if (st.movePointsTo(tgt) <= st.maxFiringRange(tgt)) 
-                return new FlightPath();          
+            // ail: no longer being content when we are within max-firing-range, we'll run a loop with slowly increasing range instead
             return null;
         }  
 
@@ -395,7 +458,6 @@ public class AIShipCaptain implements Base, ShipCaptain {
     public boolean facingOverwhelmingForce(CombatStack stack) {
         // build list of allies & enemies
         allies().clear(); enemies().clear();
-        boolean defending = false;
         for (CombatStack st : combat().activeStacks()) {
             if (st.isMonster()) 
                 enemies.add(st);
@@ -403,23 +465,18 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 if (stack.empire.alliedWith(id(st.empire)))
                 {
                     allies().add(st);
-                    if(st.isColony())
-                    {
-                        defending = true;
-                    }
                 }
                 else if (stack.empire.aggressiveWith(st.empire, combat().system()))
                     enemies().add(st);
             }
         }
-
         // calculate ally kills & deaths
         float allyKills = 0;
         float enemyKills = 0;
         
         float allyValue = 0;
         float enemyValue = 0;
-
+        
         List<CombatStack> friends = new ArrayList<>();
         for (CombatStack ally: allies()) {
             if (ally.isArmed())
@@ -436,16 +493,21 @@ public class AIShipCaptain implements Base, ShipCaptain {
 //        log("friends:"+friends.size()+"   foes:"+foes.size());
         for (CombatStack st1 : friends) {
             float maxKillValue = -1;
-            float valueFactor = 1.0f;
-            //ail: Colony-ships seem to overestimate their fighting-ability
-            if(st1.design() != null && st1.design().isColonyShip())
-            {
-                valueFactor = 0.1f;
-            }
-            allyValue += st1.designCost() * st1.num * valueFactor;
+            float pctOfMaxHP = ((st1.num-1) * st1.maxHits + st1.hits) / (st1.num * st1.maxHits);
+            allyValue += st1.num * pctOfMaxHP * st1.designCost();
             for (CombatStack st2: foes) {
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
+                //ail: If the enemy has brought a colonizer, we split our kill because otherwise each of our stacks thinks they can kill all the colonizers despite it's already dead
+                if(st2.isShip() && st2.design().isColonyShip())
+                    killPct /= friends.size();
+                //ail: 0 damage possible when they have repulsor and we can't outrange
+                if(st1.optimalFiringRange(st1) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
+                {
+                    //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
+                    killPct = 0;
+                }
                 float killValue = killPct*st2.num*st2.designCost();
+                //System.out.print("\n"+stack.fullName()+" "+st1.fullName()+" thinks it can kill "+killPct+" val: "+killValue+" of "+st2.fullName()+" it has: "+pctOfMaxHP);
 //                log(st1.name()+"="+killPct+"    "+st2.name());
                 if (killValue > maxKillValue)
                     maxKillValue = killValue;
@@ -454,17 +516,21 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
        for (CombatStack st1 : foes) {
             float maxKillValue = -1;
-            float valueFactor = 1.0f;
-            //ail: We also don't want to overestimate enemy-colony-ships
-            if(st1.design() != null && st1.design().isColonyShip())
-            {
-                valueFactor = 0.1f;
-            }
-            enemyValue += st1.designCost() * st1.num * valueFactor;
+            float pctOfMaxHP = ((st1.num-1) * st1.maxHits + st1.hits) / (st1.num * st1.maxHits);
+            enemyValue += st1.num * pctOfMaxHP * st1.designCost();
             for (CombatStack st2: friends) {
+                //ail: When we have brought colonizers to a battle and are not the colonizer ourselves, we ignore their lack of combat-power for our own retreat-decision. They can still retreat when they are too scared!
+                if(stack != st2 && st2.isShip() && st2.design().isColonyShip())
+                    continue;
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
+                if(st1.optimalFiringRange(st1) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
+                {
+                    //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
+                    killPct = 0;
+                }
                 float killValue = killPct*st2.num*st2.designCost();
 //                log(st1.name()+"="+killPct+"    "+st2.name());
+                //System.out.print("\n"+stack.fullName()+" "+st1.fullName()+" thinks it can kill "+killPct+" val: "+killValue+" of "+st2.fullName()+" it has: "+pctOfMaxHP);
                 if (killValue > maxKillValue)
                     maxKillValue = killValue;
             }
@@ -475,21 +541,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
         else if (allyKills == 0)
             return true;
         else {
-            //ail: using the value of the ruthless pacifist, as it clearly seems the smartest
-            float retreatRatio = 0.75f; //stack.empire.leader().retreatRatio(combat().system().empire());
-            if(stack.design().obsolete() || defending)
-            {
-                //ail: willing to take more losses for obsolte designs or when defending
-                retreatRatio = 1.2f;
-            }
-            float valueFactor = 1.0f;
-            if(enemyValue > 0 && allyValue > 0)
-            {
-                valueFactor = enemyValue / allyValue;
-            }
-            log("retreat ratio: "+retreatRatio+"   enemyKillValue:"+enemyKills+"  allyKillValue:"+allyKills);
-            //System.out.print("\n"+stack.fullName()+" retreat: "+(enemyKills / allyKills) * valueFactor+" vf: "+valueFactor);
-            return ((enemyKills / allyKills) * valueFactor > retreatRatio/1.2f); // modnar: adjust AI to accept less losses, more likely to retreat
+            //System.out.print("\n"+stack.fullName()+" enemy-superiority: "+(enemyKills * enemyValue) / (allyKills * allyValue)+" kills (Enemy vs. mine): "+enemyKills / allyKills+" Cost: (enemy vs. mine): "+enemyValue/allyValue);
+            return (enemyKills * enemyValue) / (allyKills * allyValue) > 1.0f;
         }
     }
     @Override

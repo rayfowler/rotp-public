@@ -15,7 +15,6 @@
  */
 package rotp.ui.fleets;
 
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -74,9 +73,11 @@ public class SystemMassSpendingPanel  extends BasePanel implements MouseMotionLi
         y0 += s15;
         g.setColor(SystemPanel.blackText);            
         String desc = text("FLEETS_ADJUST_SPENDING_DESC2");
+        if (!player().ignoresPlanetEnvironment())
+            desc = desc + " " + text("FLEETS_ADJUST_SPENDING_DESC3");
         List<String> descLines = scaledNarrowWrappedLines(g, desc, w-s20, 4, 18, 14);
         for (String line: descLines) {
-            g.drawString(line, s10, y0);
+            drawString(g,line, s10, y0);
             y0 += s16;
         }
         

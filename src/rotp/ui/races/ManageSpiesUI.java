@@ -275,7 +275,7 @@ public class ManageSpiesUI extends BasePanel implements MouseListener, MouseWhee
         String s = view.empire().raceName();
         int w1 = x2-x;
         int sw = g.getFontMetrics().stringWidth(s);
-        g.drawString(s, x+(w1-sw)/2, y1);
+        drawString(g,s, x+(w1-sw)/2, y1);
         
         // spending slider in column 2
         int w2 = x3-x2;
@@ -288,7 +288,7 @@ public class ManageSpiesUI extends BasePanel implements MouseListener, MouseWhee
         int w3 = x4-x3;
         s = view.spies().numSpiesLabel();
         sw = g.getFontMetrics().stringWidth(s);
-        g.drawString(s, x3+(w3-sw)/2, y1);
+        drawString(g,s, x3+(w3-sw)/2, y1);
  
         // mission box in column 4
         int w4 = x5-x4;
@@ -361,7 +361,7 @@ public class ManageSpiesUI extends BasePanel implements MouseListener, MouseWhee
         String spyCost = text("RACES_INTEL_SPENDING_ANNUAL", (int) cost);
         int sw = g.getFontMetrics().stringWidth(spyCost);
         int x0 = barX+((barW-sw)/2);
-        g.drawString(spyCost, x0, barY+s14);
+        drawString(g,spyCost, x0, barY+s14);
 
         if (hoverButton == box) {
             Stroke prev = g.getStroke();
@@ -375,7 +375,7 @@ public class ManageSpiesUI extends BasePanel implements MouseListener, MouseWhee
         g.setColor(SystemPanel.blackText);
         g.setFont(narrowFont(16));
         String newSpies = view.spies().newSpiesExpected();
-        g.drawString(newSpies, x+w-labelW+s10, barY+s14);
+        drawString(g,newSpies, x+w-labelW+s10, barY+s14);
     }   
     private void drawSpiesMissionButton(Graphics2D g, EmpireView view ,int index, int x, int y, int w, int h) {
         if (missionDecr.size() <= index)
@@ -435,7 +435,7 @@ public class ManageSpiesUI extends BasePanel implements MouseListener, MouseWhee
         g.setFont(narrowFont(16));
         int sw = g.getFontMetrics().stringWidth(name);
         int x0 = barX+((barW-sw)/2);
-        g.drawString(name, x0, barY+s14);
+        drawString(g,name, x0, barY+s14);
 
         if (hoverButton == box) {
             Stroke prev = g.getStroke();

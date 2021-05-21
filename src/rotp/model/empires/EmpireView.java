@@ -181,7 +181,7 @@ public final class EmpireView implements Base, Serializable {
         // if there are some unknown, all add if unity else sort by distance
         // and add 1 for each spy network
         if (!allUnknownSystems.isEmpty()) {
-            if (this.embassy().unity()) 
+            if (embassy().unity() || embassy().alliance()) 
                 allKnownSystems.addAll(allUnknownSystems);
             else {
                 int spyNetworks = spies().activeSpies().size();
@@ -219,17 +219,21 @@ public final class EmpireView implements Base, Serializable {
     public String decode(String s, Empire other) {
         String s1 = owner.replaceTokens(s, "my");
         s1 = empire.replaceTokens(s1, "your");
-        s1 = other.replaceTokens(s1, "other");
+        if (other != null)
+            s1 = other.replaceTokens(s1, "other");
         return s1;
     }
     private String decodedMessage(String key) {
-        return decode(DialogueManager.current().randomMessage(key, empire));
+        return decode(DialogueManager.current().randomMessage(key, this));
+    }
+    private String decodedMessage(String key, Empire speaker, Empire otherEmp) {
+        return decode(DialogueManager.current().randomMessage(key, speaker), otherEmp);
     }
     private String decodedMessage(String key, Empire otherEmp) {
-        return decode(DialogueManager.current().randomMessage(key, empire), otherEmp);
+        return decode(DialogueManager.current().randomMessage(key, this), otherEmp);
     }
     private String decodedMessage(String key, DiplomaticIncident inc) {
-        return decode(inc.decode(DialogueManager.current().randomMessage(key, empire)));
+        return decode(inc.decode(DialogueManager.current().randomMessage(key, this)));
     }
     public DiplomaticReply refuse(String reason) {
         return DiplomaticReply.answer(false, decodedMessage(reason));
@@ -239,6 +243,9 @@ public final class EmpireView implements Base, Serializable {
     }
     public DiplomaticReply accept(String reason) {
         return DiplomaticReply.answer(true, decodedMessage(reason));
+    }
+    public DiplomaticReply accept(String reason, Empire speaker) {
+        return DiplomaticReply.answer(true, decodedMessage(reason, speaker, null));
     }
     public DiplomaticReply accept(String reason, DiplomaticIncident inc) {
         return DiplomaticReply.answer(true, decodedMessage(reason, inc));

@@ -58,4 +58,6 @@ public abstract class MapSprite implements Base, Sprite {
     public abstract void draw(GalaxyMapPanel map, Graphics2D g2);
     @Override
     public void click(GalaxyMapPanel map, int count, boolean rightClick, boolean sound)        { }
+    @Override
+    public void wheel(GalaxyMapPanel map, int count, boolean sound)        { }
 }

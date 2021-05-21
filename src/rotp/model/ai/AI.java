@@ -197,7 +197,7 @@ public class AI implements Base {
         if (sys.orbitingShipsInConflict())
             return;
 
-        if (empire.sv.isColonized(sys.id))
+        if (sys.colony() != null)
             return;
         if (!empire.canColonize(sys.planet().type()))
             return;
@@ -234,6 +234,10 @@ public class AI implements Base {
             BombardSystemNotification.create(id(sys), fl, autoBomb);
             return false;
         }
+        
+        // ail: asking our general for permission
+        if(!empire.generalAI().allowedToBomb(sys.empire()))
+            return false;
         
         // estimate bombardment damage and resulting population loss
         float damage = fl.expectedBombardDamage();

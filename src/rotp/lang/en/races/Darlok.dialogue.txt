@@ -77,3 +77,7 @@ PRAISE_TRADE_02            | Our ongoing honest trading proves to be a continuou
 
 PRAISE_REBELLING_WITH_01   | The fools in the council have chosen incorrectly as we knew they would. You are right to fight against them, and we are right in joining your rebellion.
 
+ACCEPT_TRADE_01            | You greatly aid our quest with this trade agreement, [your_race]. [amt] BC each year will help us more than you know.
+RESPOND_IGNORE_THREAT_01   | Be careful who you threaten. You might find a response hidden in the shadows to be most displeasing.
+RESPOND_STOP_SPYING_01     | How is it that YOU came to catch one of our spies? No matter, return it to us at once and we will cease our activities from here on.
+RESPOND_STOP_ATTACKING_01  | We will recall our fleets now for your sake, but remember the most dangerous power is the one that goes unseen.

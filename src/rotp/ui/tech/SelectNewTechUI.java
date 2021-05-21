@@ -190,7 +190,7 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
             g.setColor(dimWhite);
             for (String line: footerLines) {
                 y1 += s16;
-                g.drawString(line, x0, y1);
+                drawString(g,line, x0, y1);
             }
         }
 
@@ -237,18 +237,18 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
             else
                 g.setColor(dimWhite);
             g.setFont(narrowFont(16));
-            g.drawString(text(t.name()),x1+5, y1+s15);
+            drawString(g,text(t.name()),x1+5, y1+s15);
 
             float techCost = t.researchCost();
             String cost = text("TECH_CHOOSE_RESEARCH_COST", shortFmt(techCost));
             int sw1 = g.getFontMetrics().stringWidth(cost);
-            g.drawString(cost, boxRightX-s35-sw1, y1+s15);
+            drawString(g,cost, boxRightX-s35-sw1, y1+s15);
             int y2 = y1 + s17;
             g.setColor(Color.black);
             g.setFont(narrowFont(14));
             for (String line: lines) {
                 y2 += s15;
-                g.drawString(line, x1+s5, y2);
+                drawString(g,line, x1+s5, y2);
             }
             y1 += th;
             y1 += s5;

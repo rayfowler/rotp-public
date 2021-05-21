@@ -207,6 +207,10 @@ public final class GameSession implements Base, Serializable {
         return false;
     }
     public void addSystemToAllocate(StarSystem sys, String reason) {
+        // don't prompt to allocate systems that are in rebellion
+        if (sys.isColonized() && sys.colony().inRebellion())
+            return;
+        
         log("Re-allocate: ", sys.name(), " :", reason);
         if (!systemsToAllocate().containsKey(sys))
             systemsToAllocate().put(sys, new ArrayList<>());
@@ -835,7 +839,7 @@ public final class GameSession implements Base, Serializable {
     public void loadSession(String dir, String filename, boolean startUp) {
         try {
             log("Loading game from file: ", filename);
-            File saveFile = new File(dir, filename);
+            File saveFile = dir.isEmpty() ? new File(filename) : new File(dir, filename);
             GameSession newSession;
             // assume the file is not zipped, load it directly
             try (InputStream file = new FileInputStream(saveFile)) {

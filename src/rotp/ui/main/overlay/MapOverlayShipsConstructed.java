@@ -126,7 +126,7 @@ public class MapOverlayShipsConstructed extends MapOverlay {
         String skipStr = text("CLICK_CONTINUE");
         g.setColor(Color.darkGray);
         g.setFont(narrowFont(16));
-        g.drawString(skipStr, boxX+leftW+s30, boxY+boxH1-s20);
+        drawString(g,skipStr, boxX+leftW+s30, boxY+boxH1-s20);
 
         int numShips = designs.size();
         int shipW = boxW/ShipDesignLab.MAX_DESIGNS;
@@ -156,7 +156,7 @@ public class MapOverlayShipsConstructed extends MapOverlay {
         int sw = g.getFontMetrics().stringWidth(d.name());
         int x0 = x+((w-sw)/2);
         g.setColor(SystemPanel.yellowText);
-        g.drawString(d.name(), x0, y);
+        drawString(g,d.name(), x0, y);
 
         Image img = d.image();
         
@@ -178,6 +178,6 @@ public class MapOverlayShipsConstructed extends MapOverlay {
         int sw2 = g.getFontMetrics().stringWidth(s);
         int x2 = x+((w-sw2)/2);
         g.setColor(SystemPanel.yellowText);
-        g.drawString(s, x2, y+h+scaled(15));
+        drawString(g,s, x2, y+h+scaled(15));
     }
 }

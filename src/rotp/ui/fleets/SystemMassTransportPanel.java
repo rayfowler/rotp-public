@@ -124,7 +124,7 @@ public class SystemMassTransportPanel  extends SystemPanel {
             String desc = text("FLEETS_DEPLOYING_TRANSPORTS_DESC");
             List<String> descLines = scaledNarrowWrappedLines(g, desc, w-s20, 4, 18, 16);
             for (String line: descLines) {
-                g.drawString(line, s10, y0);
+                drawString(g,line, s10, y0);
                 y0 += s18;
             }
         }

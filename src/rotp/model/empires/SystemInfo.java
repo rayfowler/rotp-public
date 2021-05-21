@@ -56,7 +56,7 @@ public class SystemInfo implements Serializable, Base {
     public String descriptiveName(int i) { return missing(i) ? "" : view(i).descriptiveName(); }
     public StarSystem system(int i)      { return galaxy().system(i); }
     public Empire empire(int i)          { return missing(i) ? null : view(i).empire(); }
-    public int empId(int i)              { return view(i).empId(); }
+    public int empId(int i)              { return missing(i) ? Empire.NULL_ID : view(i).empId(); }
     public Colony colony(int i)          { return missing(i) ? null : view(i).colony(); }
     public PlanetType planetType(int i)  { return view(i).planetType(); }
     public float distance(int i)        { return distances[i]; }
@@ -99,10 +99,14 @@ public class SystemInfo implements Serializable, Base {
     public boolean canSabotageBases(int i)     { return missing(i) ? false : view(i).canSabotageBases(); }
     public boolean canSabotageFactories(int i) { return missing(i) ? false : view(i).canSabotageFactories(); }
     public boolean canInciteRebellion(int i)   { return missing(i) ? false : view(i).canInciteRebellion(); }
+    public int flagColorId(int i)              { return missing(i) ? -1  : view(i).flagColorId(); }
     public Color flagColor(int i)              { return missing(i) ? null  : view(i).flagColor(); }
     public Image flagImage(int i)              { return missing(i) ? null  : view(i).flagImage(); }
     public Image mapFlagImage(int i)           { return missing(i) ? null  : view(i).mapFlagImage(); }
     public Image flagHover(int i)              { return ImageManager.current().image("Flag_Hover"); }
+    public void toggleFlagColor(int i)          { toggleFlagColor(i, false); }
+    public void toggleFlagColor(int i, boolean b) { view(i).toggleFlagColor(b); }
+    public void resetFlagColor(int i)            { view(i).resetFlagColor(); }
     public FleetPlan fleetPlan(int i)            { return view(i).fleetPlan(); }
     public ShipFleet orbitingFleet(int i)        { return system(i).orbitingFleetForEmpire(empire()); }
     public List<ShipFleet> orbitingFleets(int i) { return missing(i) ? null : view(i).orbitingFleets(); }
@@ -111,7 +115,7 @@ public class SystemInfo implements Serializable, Base {
     public void rallySystem(int i, StarSystem sys) { view(i).rallySystem(sys);}
     public void stopRally(int i)                 { view(i).stopRally(); }
     public boolean forwardRallies(int i)         { return missing(i) ? false : view(i).forwardRallies(); }
-    public void toggleForwardRallies(int i)      { view(i).toggleForwardRallies(); }
+    public void toggleForwardRallies(int i)      { if (!missing(i)) view(i).toggleForwardRallies(); }
     public void raiseHostility(int i)            { view(i).raiseHostility(); }
     public boolean hasStargate(int i)            { return missing(i) ? false : view(i).stargate(); }
     public boolean hasFleetPlan(int i)           { return missing(i) ? false : view(i).hasFleetPlan(); }

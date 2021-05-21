@@ -32,6 +32,7 @@ import java.awt.event.MouseWheelListener;
 import rotp.model.colony.Colony;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
+import rotp.ui.RotPUI;
 import rotp.ui.SystemViewer;
 
 public class EmpireColonySpendingPane extends BasePanel {
@@ -51,6 +52,7 @@ public class EmpireColonySpendingPane extends BasePanel {
     EmpireSliderPane shipSlider, defSlider, indSlider, ecoSlider, researchSlider;
 
     private final SystemViewer parent;
+    private GalaxyMapPanel mapListener;
     public EmpireColonySpendingPane(SystemViewer p, Color c0, Color text, Color hi, Color lo) {
         parent = p;
         textC = text;
@@ -59,6 +61,7 @@ public class EmpireColonySpendingPane extends BasePanel {
         borderLo = lo;
         init();
     }
+    public void mapListener(GalaxyMapPanel map)  { mapListener = map; }
     @Override
     public String textureName()            { return parent.subPanelTextureName(); }
     private void init() {
@@ -186,7 +189,7 @@ public class EmpireColonySpendingPane extends BasePanel {
             String labelText = text(text);
             g.setColor(textC);
             g.setFont(narrowFont(18));
-            g.drawString(labelText, s10, getHeight()-s10);
+            drawString(g,labelText, s10, getHeight()-s10);
             labelBox.setBounds(s5, 0, leftMargin()-s15, getHeight());
 
             int boxL = boxLeftX();
@@ -256,7 +259,7 @@ public class EmpireColonySpendingPane extends BasePanel {
                     g.setColor(SystemPanel.darkOrangeText);
                 else
                     g.setColor(Color.gray);
-                 g.drawString(popStr, boxL+x1, boxTopY+boxH-s4);
+                 drawString(g,popStr, boxL+x1, boxTopY+boxH-s4);
                 
                 if (popGrowth < 0)
                     g.setColor(SystemPanel.orangeText);
@@ -264,7 +267,7 @@ public class EmpireColonySpendingPane extends BasePanel {
                     g.setColor(Color.lightGray);
                 Shape prevClip = g.getClip();
                 g.setClip(fillRect);
-                g.drawString(popStr, boxL+x1, boxTopY+boxH-s4);
+                drawString(g,popStr, boxL+x1, boxTopY+boxH-s4);
                 g.setClip(prevClip);
             }
 
@@ -283,7 +286,7 @@ public class EmpireColonySpendingPane extends BasePanel {
             scaledFont(g, resultText, rightMargin()-s10, 18, 14);
             //g.setFont(narrowFont(18));
             int sw = g.getFontMetrics().stringWidth(resultText);
-            g.drawString(resultText, getWidth()-sw-s10, getHeight()-s10);
+            drawString(g,resultText, getWidth()-sw-s10, getHeight()-s10);
         }
         private int leftMargin()        { return s58; }
         private int rightMargin()       { return s70; }
@@ -304,7 +307,16 @@ public class EmpireColonySpendingPane extends BasePanel {
             Colony colony = sys.colony();
             if (colony == null)
                 return;
+            
+            float prevTech = mapListener == null ? 0 : colony.totalPlanetaryResearch();
             if (colony.increment(category, -1)) {
+                if (mapListener == null)
+                    RotPUI.instance().techUI().resetPlanetaryResearch();
+                else {
+                    float techAdj = colony.totalPlanetaryResearch() - prevTech;
+                    RotPUI.instance().techUI().adjustPlanetaryResearch(techAdj);
+                    mapListener.repaintTechStatus();
+                }
                 if (click)
                     softClick();
                 parent.repaint();
@@ -319,7 +331,16 @@ public class EmpireColonySpendingPane extends BasePanel {
             Colony colony = sys.colony();
             if (colony == null)
                 return;
+            
+            float prevTech = mapListener == null ? 0 : colony.totalPlanetaryResearch();
             if (colony.increment(category, 1)) {
+                if (mapListener == null)
+                    RotPUI.instance().techUI().resetPlanetaryResearch();
+                else {
+                    float techAdj = colony.totalPlanetaryResearch() - prevTech;
+                    RotPUI.instance().techUI().adjustPlanetaryResearch(techAdj);
+                    mapListener.repaintTechStatus();
+                }
                 if (click)
                     softClick();
                 parent.repaint();
@@ -377,7 +398,15 @@ public class EmpireColonySpendingPane extends BasePanel {
                             pct = 0;
                         else if (pct > .95)
                             pct = 1;
+                        float prevTech = mapListener == null ? 0 : colony.totalPlanetaryResearch();
                         colony.forcePct(category, pct);
+                        if (mapListener == null)
+                            RotPUI.instance().techUI().resetPlanetaryResearch();
+                        else {
+                            float techAdj = colony.totalPlanetaryResearch() - prevTech;
+                            RotPUI.instance().techUI().adjustPlanetaryResearch(techAdj);
+                            mapListener.repaintTechStatus();
+                        }
                         parent.repaint();
                     }
                 }

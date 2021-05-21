@@ -47,7 +47,7 @@ public class OrionGuardianShip extends SpaceMonster {
         // find the system with this monster and remove it
         int sysId = StarSystem.NULL_ID;
         for (StarSystem sys: galaxy().starSystems()) {
-            if (sys.monster() == this) {
+            if (sys.planet().isOrionArtifact()) {
                 sys.monster(null);
                 sysId = sys.id;
                 break;

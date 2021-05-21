@@ -465,7 +465,7 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
             g.setColor(SystemPanel.blackText);
         String str = filt.text();
         instance.scaledFont(g,str,w-x-boxW-s10,14,8);
-        g.drawString(filt.text(), labelX, y-s2);
+        instance.drawString(g,filt.text(), labelX, y-s2);
     }
     public void drawBrownButton(Graphics2D g, String label, Rectangle actionBox, Shape hoverBox, int y) {
         drawButton(g, brownBackC, label, actionBox, hoverBox, y);
@@ -1054,7 +1054,7 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
             String title = text(titleKey);
             g.setColor(SystemPanel.orangeText);
             g.setFont(narrowFont(32));
-            g.drawString(title, x0,y0);
+            drawString(g,title, x0,y0);
 
             g.setColor(backHiC);
             g.fillRect(s10, h-s5, w-s20, s5);
@@ -1069,7 +1069,7 @@ public final class FleetUI extends BasePanel implements IMapHandler, ActionListe
             else
                 g.setColor(Color.white);
 
-            g.drawString("?", s16, s30);
+            drawString(g,"?", s16, s30);
         }
         @Override
         public void mouseClicked(MouseEvent e) {}

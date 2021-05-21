@@ -712,7 +712,9 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         if ((sysDistance <= pl.shipRange()) && pl.canColonize(sv.sysId)) { 
             if (expandGuardedSystems.containsKey(sv.sysId)) {
                 Empire enemyEmp = galaxy().empire(expandGuardedSystems.get(sv.sysId));
-                return text("SYSTEMS_CAN_COLONIZE_ENEMY", enemyEmp.raceName());
+                String s = text("SYSTEMS_CAN_COLONIZE_ENEMY");
+                s = enemyEmp.replaceTokens(s, "alien");
+                return s;
             }
             if (expandEnRouteSystems.containsKey(sv.sysId)) {
                 int turns = expandEnRouteSystems.get(sv.sysId);
@@ -785,8 +787,10 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
             troopMsg = "";
         else if (sysEmp == pl)
             troopMsg = " "+text("SYSTEMS_EXPLOIT_TRANSPORTS",str(num));
-        else
-            troopMsg = " "+text("SYSTEMS_EXT_INC_TRANSPORTS",str(num),pl.raceName());
+        else {
+            troopMsg = " "+text("SYSTEMS_EXT_INC_TRANSPORTS",str(num));
+            troopMsg = pl.replaceTokens(troopMsg, "player");
+        }
         
         // show enemy colonies as yellow
         if (pl.atWarWith(sv.empId())) {
@@ -976,7 +980,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
             g.setFont(narrowFont(32));
             int titleW = g.getFontMetrics().stringWidth(title);
             int titleSpacing = s60+s60;
-            g.drawString(title, x0,y0);
+            drawString(g,title, x0,y0);
 
             int tabW = (w-titleW-titleSpacing-(6*gap)-helpW)/4;
             int tabSpacing = tabW+gap;
@@ -1013,7 +1017,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
             else
                 g.setColor(Color.white);
 
-            g.drawString("?", s16, s30);
+            drawString(g,"?", s16, s30);
         }
         private void drawTab(Graphics2D g, int x, int y, int w, int h, String label, Rectangle box, boolean selected) {
             g.setFont(narrowFont(22));

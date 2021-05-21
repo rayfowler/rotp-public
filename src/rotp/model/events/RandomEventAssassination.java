@@ -42,11 +42,11 @@ public class RandomEventAssassination implements Base, Serializable, RandomEvent
         // find a contacted empire that is not at war
         List<Empire> emps = new ArrayList<>();
         for (Empire e: emp.contactedEmpires()) {
-            if (!emp.atWarWith(e.id))
+            if (!emp.atWarWith(e.id) && emp.inEconomicRange(e.id))
                 emps.add(e);
         }
         if (emps.isEmpty())
-                return;
+            return;
 
         Empire assassin = emp;
         Empire victim = random(emps);

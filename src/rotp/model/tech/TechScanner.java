@@ -48,7 +48,7 @@ public final class TechScanner extends Tech {
                 cost = 30;
                 size = 50;
                 power = 50;
-                planetRange = 0;
+                planetRange = 3;
                 shipRange = 0;
                 shipAttackBonus = 1;
                 shipInitiativeBonus = BATTLE_SCANNER_INITIATIVE;

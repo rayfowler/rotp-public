@@ -135,7 +135,7 @@ public class RaceIntroUI extends BasePanel implements MouseListener {
         g.setFont(font(24));
         int x0 = scaled(pl.race().introTextX);
         int y0 = scaled(230);
-        g.drawString(title, x0, y0);
+        drawString(g,title, x0, y0);
     }
     private void drawIntroductionText(Graphics2D g) {
         int w = getWidth();
@@ -153,7 +153,7 @@ public class RaceIntroUI extends BasePanel implements MouseListener {
                 String paragraph = text.get(i).replace("[race]", pl.raceName());
                 List<String> lines = scaledWrappedLines(g, paragraph, lineW, 30, 16, 12);
                 for (String line: lines) {
-                    g.drawString(line, x0, y0);
+                    drawString(g,line, x0, y0);
                     y0 += lineH;
                 }
                 y0 += paraSpacing;
@@ -190,20 +190,24 @@ public class RaceIntroUI extends BasePanel implements MouseListener {
     private void initIntroBack() {
         int w = getWidth();
         int h = getHeight();
+        
+        // non-stretched values for lab and diplomat image
+        int h1 = min(h,w*5/8);
+        int w1 = h*8/5;
         introBack = this.newBufferedImage(w, h);
         Graphics2D g = (Graphics2D) introBack.getGraphics();
         setFontHints(g);
         g.setColor(Color.black);
         g.fillRect(0,0, w, h);
         drawStars(g);
-        g.drawImage(fadeLab(w,h), 0, 0, w, h, this);
+        g.drawImage(fadeLab(w1,h1), 0, 0, w1, h1, this);
         drawHomeStar(g);
         drawSystemName(g);
         drawIntroductionTitle(g);
         drawIntroductionText(g);
 
         Image raceImg = player().race().diplomatQuiet();
-        g.drawImage(player().race().diplomatQuiet(), 0, h/10, w*9/10, h, 0, 0, raceImg.getWidth(null), raceImg.getHeight(null), this);
+        g.drawImage(player().race().diplomatQuiet(), 0, h1/10, w1*9/10, h, 0, 0, raceImg.getWidth(null), raceImg.getHeight(null), this);
         g.dispose();
     }
     private void initModel() {

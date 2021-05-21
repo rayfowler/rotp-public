@@ -61,7 +61,7 @@ public class SpyReportSprite extends MapControlSprite {
 
         int sw = g2.getFontMetrics().stringWidth(label);
         int x0 = startX+((width-sw)/2);
-        g2.drawString(label, x0, startY+height-BasePanel.s10);
+        drawString(g2,label, x0, startY+height-BasePanel.s10);
 
 ///        drawBorder(map,g2,width);
     }

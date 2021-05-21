@@ -184,7 +184,7 @@ public class MapOverlayBombardedNotice  extends MapOverlay {
         String contStr = text("CLICK_CONTINUE");
         g.setColor(Color.black);
         g.setFont(narrowFont(14));
-        g.drawString(contStr, boxX+leftW, boxY+s50);
+        drawString(g,contStr, boxX+leftW, boxY+s50);
         // click to continue sprite
         parent.addNextTurnControl(clickSprite);
 

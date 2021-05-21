@@ -25,7 +25,9 @@ public class AllianceBreakingAlert  extends GameAlert {
     }
     @Override
     public String description() {
-        return text("MAIN_ALERT_ALLIANCE_BREAKING", empire.name());
+        String desc = text("MAIN_ALERT_ALLIANCE_BREAKING");
+        desc = empire.replaceTokens(desc, "ally");
+        return desc;
     }
     private AllianceBreakingAlert(Empire e) {
         empire = e;

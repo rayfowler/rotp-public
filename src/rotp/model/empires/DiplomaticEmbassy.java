@@ -260,8 +260,6 @@ public class DiplomaticEmbassy implements Base, Serializable {
     public void giveExpansionWarning()      { warningLevel = 1; }
     public boolean gaveExpansionWarning()   { return warningLevel > 0; }
     public void noteRequest() {
-        if (requestCount == currentMaxRequests)
-            currentMaxRequests--;
         requestCount++;
     }
     public void heedThreat()          { threatened = true; }
@@ -407,6 +405,9 @@ public class DiplomaticEmbassy implements Base, Serializable {
         // owner() is the requestee, who will be learning the counter-offered tech
         owner().tech().acquireTechThroughTrade(offeredTech.id, empire().id);
         empire().tech().acquireTechThroughTrade(requestedTech.id, owner().id);
+
+        view.spies().noteTradedTech(requestedTech);
+        view.otherView().spies().noteTradedTech(offeredTech);
         DiplomaticIncident inc = ExchangeTechnologyIncident.create(owner(), empire(), offeredTech, requestedTech);
         addIncident(inc);
         otherEmbassy().addIncident(ExchangeTechnologyIncident.create(empire(), owner(), requestedTech, offeredTech));
@@ -414,8 +415,6 @@ public class DiplomaticEmbassy implements Base, Serializable {
     }
     public DiplomaticIncident establishTradeTreaty(int level) {
         view.embassy().tradePraised(false);
-        treatyDate = galaxy().currentTime();
-        otherEmbassy().treatyDate = galaxy().currentTime();
         view.trade().startRoute(level);
         DiplomaticIncident inc = SignTradeIncident.create(owner(), empire(), level);
         addIncident(inc);
@@ -519,10 +518,10 @@ public class DiplomaticEmbassy implements Base, Serializable {
             }
         }
         
-        if (empire().isPlayerControlled())
-            galaxy().giveAdvice("MAIN_ADVISOR_RALLY_POINTS", owner().raceName());
+        if (empire().isPlayerControlled()) 
+            galaxy().giveAdvice("MAIN_ADVISOR_RALLY_POINTS", owner(), owner().raceName());
         else if  (owner().isPlayerControlled())
-            galaxy().giveAdvice("MAIN_ADVISOR_RALLY_POINTS", empire().raceName());
+            galaxy().giveAdvice("MAIN_ADVISOR_RALLY_POINTS", empire(), empire().raceName());
 
         return inc;
     }
@@ -633,9 +632,9 @@ public class DiplomaticEmbassy implements Base, Serializable {
             DiplomaticIncident inc = FirstContactIncident.create(owner(), empire());
             addIncident(inc);
             if (empire().isPlayerControlled())
-                galaxy().giveAdvice("MAIN_ADVISOR_DIPLOMACY", owner().raceName());
+                galaxy().giveAdvice("MAIN_ADVISOR_DIPLOMACY", owner(), owner().raceName());
             else if (owner().isPlayerControlled())
-                galaxy().giveAdvice("MAIN_ADVISOR_DIPLOMACY", empire().raceName());
+                galaxy().giveAdvice("MAIN_ADVISOR_DIPLOMACY", empire(), empire().raceName());
         }
     }
     public void makeFirstContact() {
@@ -737,7 +736,6 @@ public class DiplomaticEmbassy implements Base, Serializable {
         empire().setRecalcDistances();
     }
     private void beginPeace(int duration) {
-        beginTreaty();
         treaty = new TreatyPeace(view.empire(), view.owner(), duration);
         view.setSuggestedAllocations();
     }

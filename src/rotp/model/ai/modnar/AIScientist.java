@@ -111,7 +111,7 @@ public class AIScientist implements Base, Scientist {
             return;
         }
 
-        float floatAllocation = 100.0f / (TechTree.NUM_CATEGORIES - futureTechs);
+        float floatAllocation = 60.0f / (TechTree.NUM_CATEGORIES - futureTechs);
         float totalFloatAllocation = 0;
         int intAllocation = (int) floatAllocation;
         int totalIntAllocation = 0;

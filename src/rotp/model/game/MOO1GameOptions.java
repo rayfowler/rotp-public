@@ -106,10 +106,10 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
     public String selectedGalaxySize()           { return selectedGalaxySize; }
     @Override
     public void selectedGalaxySize(String s)     {
-        int prevMaxOpp = maximumOpponentsOptions();
+        int prevNumOpp = defaultOpponentsOptions();
         selectedGalaxySize = s; 
-        if (selectedNumberOpponents() == prevMaxOpp)
-            selectedNumberOpponents(maximumOpponentsOptions());
+        if (selectedNumberOpponents() == prevNumOpp)
+            selectedNumberOpponents(defaultOpponentsOptions());
         generateGalaxy();
     }
     @Override
@@ -240,6 +240,12 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         return min(maxOpponents, maxEmpires-1);
     }
     @Override
+    public int defaultOpponentsOptions() {
+        int maxEmpires = min((int)Math.ceil(numberStarSystems()/16f), colors.size(), MAX_OPPONENT_TYPE*startingRaceOptions().size());
+        int maxOpponents = min(SetupGalaxyUI.MAX_DISPLAY_OPPS);
+        return min(maxOpponents, maxEmpires-1);
+    }
+    @Override
     public String name()                 { return "SETUP_RULESET_ORION"; }
     @Override
     public void copyOptions(IGameOptions o) { 
@@ -274,8 +280,10 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedColonizingOption = opt.selectedColonizingOption;
         selectedOpponentAIOption = opt.selectedOpponentAIOption;
         
-        for (int i=0;i<specificOpponentAIOption.length;i++)
-            specificOpponentAIOption[i] = opt.specificOpponentAIOption[i];
+        if (opt.specificOpponentAIOption != null) {
+            for (int i=0;i<specificOpponentAIOption.length;i++)
+                specificOpponentAIOption[i] = opt.specificOpponentAIOption[i];
+        }
         
         if (opt.player != null) 
             player.copy(opt.player);
@@ -832,7 +840,7 @@ public class MOO1GameOptions implements Base, IGameOptions, Serializable {
         selectedGalaxySize = SIZE_SMALL;
         selectedGalaxyShape = galaxyShapeOptions().get(0);
         selectedGalaxyAge = galaxyAgeOptions().get(1);
-        selectedNumberOpponents = maximumOpponentsOptions();
+        selectedNumberOpponents = defaultOpponentsOptions();
         selectedPlayerRace(random(startingRaceOptions()));
         selectedGameDifficulty = DIFFICULTY_NORMAL;
         selectedOpponentAIOption = OPPONENT_AI_BASE;

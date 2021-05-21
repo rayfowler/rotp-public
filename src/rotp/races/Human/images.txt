@@ -1,3 +1,5 @@
+HumWin        | races/Human/WinSplash.jpg
+HumLoss       | races/Human/LossSplash.jpg
 
 HumFlagWar    | races/Human/banner_war.png
 HumFlagNorm   | races/Human/banner_norm.png

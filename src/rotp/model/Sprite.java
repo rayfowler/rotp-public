@@ -36,6 +36,8 @@ public interface Sprite {
 
     default boolean acceptDoubleClicks()         { return false; }
     default void click(GalaxyMapPanel map, int count, boolean rightClick, boolean sound)        { }
+    default void wheel(GalaxyMapPanel map, int count, boolean sound)        { }
+    default boolean acceptWheel()                { return false; }
 
     default int mapX(GalaxyMapPanel map)         { return map.mapX(source().x()); }
     default int mapY(GalaxyMapPanel map)         { return map.mapY(source().y()); }

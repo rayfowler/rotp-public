@@ -368,7 +368,8 @@ public class ColonizePlanetUI extends FadeInPanel implements MouseListener, Mous
     }
     private void drawTitle(Graphics2D g, int w) {
         // draw title last (so it overlays any ship)
-        String title = text("MAIN_COLONIZE_ANIMATION_TITLE", str(galaxy().currentYear()), player().name());
+        String title = text("MAIN_COLONIZE_ANIMATION_TITLE", str(galaxy().currentYear()));
+        title = player().replaceTokens(title, "player");
         g.setFont(narrowFont(36));
         List<String> lines = wrappedLines(g, title, w*5/6);
         int y1 = s10;

@@ -690,7 +690,7 @@ public interface Base {
             if (fis != null)
                 in = new InputStreamReader(fis, "UTF-8");
             else if (zipStream != null)
-                       in = new InputStreamReader(zipStream, "UTF-8");
+                in = new InputStreamReader(zipStream, "UTF-8");
             else
                 err("Base.reader() -- FileNotFoundException:", n);
         } catch (IOException ex) {
@@ -756,7 +756,7 @@ public interface Base {
             throw(e);
         }
     }
-    public static int compare(int a, int b)        { return a-b; }
+    public static int compare(int a, int b)        { return Integer.compare(a,b); }
     public static int compare(float a, float b)  { return Float.compare(a, b); }
     public default Color newColor(int r, int g, int b) {
         return newColor(r,g,b,255);
@@ -811,6 +811,9 @@ public interface Base {
     public default Border newEmptyBorder(int top, int left, int bottom, int right) {
         return BorderFactory.createEmptyBorder(scaled(top), scaled(left), scaled(bottom), scaled(right));
     }
+    public default void drawString(Graphics g, String str, int x, int y) {
+        g.drawString(str, x, y);
+    }
     public default void drawBorderedString(Graphics g, String str, int x, int y, Color back, Color fore) {
         drawBorderedString(g, str, 1, x, y, back, fore);
     }
@@ -824,11 +827,11 @@ public interface Base {
             int x0s = scaled(x0);
             for (int y0=start;y0<=thick;y0++) {
                 int y0s = scaled(y0);
-                g.drawString(str, x+x0s, y+y0s);
+                drawString(g,str, x+x0s, y+y0s);
             }
         }
         g.setColor(fore);
-        g.drawString(str,  x, y);
+        drawString(g,str,  x, y);
     }
     public default void drawShadowedString(Graphics g, String str, int x, int y, Color back, Color fore) {
         drawShadowedString(g, str, 1, x, y, back, fore);
@@ -848,11 +851,11 @@ public interface Base {
             int x0s = scaled(x0);
             for (int y0=(0-topThick);y0<=thick;y0++) {
                 int y0s = scaled(y0);
-                g.drawString(str, x+x0s, y+y0s);
+                drawString(g,str, x+x0s, y+y0s);
             }
         }
         g.setColor(fore);
-        g.drawString(str,  x, y);
+        drawString(g,str,  x, y);
     }
     public default void drawShadowedString(Graphics g, String str, int scale,  int th0, int th1, int x, int y, Color back, Color fore) {
         g.setColor(back);
@@ -862,10 +865,10 @@ public interface Base {
         int incr = scaled(scale);
         for (int x0=(0-topThick);x0<=thick;x0+=incr) {
             for (int y0=(0-topThick);y0<=thick;y0+=incr)
-                g.drawString(str, x+x0, y+y0);
+                drawString(g,str, x+x0, y+y0);
         }
         g.setColor(fore);
-        g.drawString(str,  x, y);
+        drawString(g,str,  x, y);
     }
     public default void drawAlphaShadowedString(Graphics2D g, float alpha, String str, int th0, int th1, int x, int y, Color back, Color fore) {
         if (alpha <= 0)
@@ -884,19 +887,19 @@ public interface Base {
         int thick = scaled(th1);
         for (int x0=(0-topThick);x0<=thick;x0++) {
             for (int y0=(0-topThick);y0<=thick;y0++)
-                g.drawString(str, x+x0, y+y0);
+                drawString(g,str, x+x0, y+y0);
         }
         if (alpha < 1)
             g.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, alpha/2));
 
         g.setColor(fore);
-        g.drawString(str,  x, y);
+        drawString(g,str,  x, y);
         g.setComposite(c);
     }
     public default void drawBoldString(Graphics g,  String str, int x, int y) {
         for (int x0=0;x0<=1;x0++) {
             for (int y0=0;y0<=1;y0++)
-                g.drawString(str, x+x0, y+y0);
+                drawString(g,str, x+x0, y+y0);
         }
     }
     public default void drawBoldString(Graphics g,  String str, int x, int y,Color fore) {
@@ -904,7 +907,7 @@ public interface Base {
 
         for (int x0=0;x0<=1;x0++) {
             for (int y0=0;y0<=1;y0++)
-                g.drawString(str, x+x0, y+y0);
+                drawString(g,str, x+x0, y+y0);
         }
     }
     public default boolean isLightColor(Color c) {
@@ -999,6 +1002,17 @@ public interface Base {
             wrappedLines = wrappedLines(g, text, maxWidth);
         }
         return wrappedLines;
+    }
+    public default int scaledDialogueFontSize(Graphics g, String text, int maxWidth, int maxLines, int desiredFont, int minFont) {
+        int fontSize = desiredFont;
+        g.setFont(dlgFont(fontSize));
+        List<String> wrappedLines = wrappedLines(g, text, maxWidth);
+        while ((wrappedLines.size() > maxLines) && (fontSize > minFont)) {
+            fontSize--;
+            g.setFont(dlgFont(fontSize));
+            wrappedLines = wrappedLines(g, text, maxWidth);
+        }
+        return fontSize;
     }
     public default List<String> scaledWrappedLines(Graphics g, String text, int maxWidth, int maxLines, int desiredFont, int minFont) {
         int fontSize = desiredFont;

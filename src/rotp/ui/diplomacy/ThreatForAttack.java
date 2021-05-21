@@ -33,7 +33,10 @@ public class ThreatForAttack extends TurnNotificationMessage {
     public String reply(int i)          { 
         switch (i) {
             case 0 : return text("DIPLOMACY_IGNORE_THREAT");
-            case 1 : return text("DIPLOMACY_RETREAT_SHIPS", diplomat().raceName());
+            case 1 : 
+                String s = text("DIPLOMACY_RETREAT_SHIPS");
+                s = diplomat().replaceTokens(s, "alien");
+                return s;
         }
         return ""; 
     }

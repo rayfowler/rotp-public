@@ -28,7 +28,6 @@ import rotp.model.galaxy.Galaxy;
 import rotp.model.galaxy.Ship;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
-import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipDesignLab;
 import rotp.util.Base;
 
@@ -179,17 +178,6 @@ public class AIGeneral implements Base, General {
         if (!empire.sv.inShipRange(sysId))
             return;
 
-        boolean enemyFleetInOrbit = false;
-        float enemyFleetSize = 0.0f;
-        List<ShipFleet> fleets = sys.orbitingFleets();
-        for (ShipFleet fl: fleets) {
-            if (!fl.empire().alliedWith(empire.id) && !fl.empire().pactWith(empire.id)) {
-                enemyFleetInOrbit = true;
-                if (fl.isArmed())
-                    enemyFleetSize += fl.bcValue();
-            }
-        }
-
         // for uncolonized systems
         if (!empire.sv.isColonized(sysId)) {
             return;
@@ -199,7 +187,7 @@ public class AIGeneral implements Base, General {
         if (empire == empire.sv.empire(sysId)) {
             float value = invasionPriority(sys);
             if (sys.colony().inRebellion())
-                orderRebellionFleet(sys, enemyFleetSize);
+                orderRebellionFleet(sys);
             return;
         }
 
@@ -208,7 +196,7 @@ public class AIGeneral implements Base, General {
         // for empires we are at war with.. we always invade or bomb
         if (ev.embassy().isEnemy()) {
             if (willingToInvade(ev, sys))
-                orderInvasionFleet(ev, sys, enemyFleetSize);
+                orderInvasionFleet(ev, sys);
             return;
         }
     }
@@ -216,42 +204,40 @@ public class AIGeneral implements Base, General {
         if (!empire.canSendTransportsTo(sys))
             return false;
         float pop = empire.sv.population(sys.id);
-        float needed = troopsNecessaryToTakePlanet(v, sys);   
-        // modnar: scale back willingness to take losses
-        // Willing to take 1.1:1 losses to invade normal 100-pop size planet with 200 factories.
-        // For invading normal 80-pop size planet with 320 factories, be willing to take ~1:1 losses.
-        float value = takePlanetValue(sys) * 1.1f;
-        return needed < pop * value;
+        float facSavings = empire.sv.factories(sys.id) * (empire.tech().baseFactoryCost() - 2) + sys.planet().alienFactories(empire.id) * empire.tech().baseFactoryCost();
+        float needed = troopsNecessaryToTakePlanet(v, sys);
+        //ail: If the population we have to expend costs less than a colonizer and the factories built there, it's worth it already!
+        float invasionCost = needed * empire.tech().populationCost();
+        //we gain factories, save us from building a colonizer and killing enemy-population also has value to us of half of what they pay for it
+        float invasionGain = facSavings + empire.shipLab().colonyDesign().cost() + pop * empire.tech().populationCost() / 2;
+        //System.out.println(empire.name()+": Considering invasion of "+sys.name()+" cost: "+invasionCost+" gain: "+invasionGain+" fac: "+facSavings +" cs: "+empire.shipLab().colonyDesign().cost()+" kills: "+pop * empire.tech().populationCost());
+        return invasionCost <= invasionGain;
     }
-    public void orderRebellionFleet(StarSystem sys, float enemyFleetSize) {
-        if (enemyFleetSize == 0)
-            launchRebellionTroops(sys);
-        else
-            setRepelFleetPlan(sys, enemyFleetSize);      
+    public void orderRebellionFleet(StarSystem sys) {
+        launchRebellionTroops(sys);
     }
-    public void orderInvasionFleet(EmpireView v, StarSystem sys, float enemyFleetSize) {
-        // modnar: scale up invasion multiplier with factories
-        // to account for natural pop growth (enemy transport, etc.) with invasion troop travel time
-        float size = empire.sv.currentSize(sys.id); // planet size
-        float fact = empire.sv.factories(sys.id); // factory count
-        float mult = (1.0f + fact/(10.0f*size)); // invasion multiplier
-        
-        int sysId = sys.id;
-        EmpireView ev = empire.viewForEmpire(empire.sv.empId(sysId));
-        float targetTech = ev.spies().tech().avgTechLevel(); // modnar: target tech level
-        
-        if (empire.sv.hasFleetForEmpire(sys.id, empire)
+    public void orderInvasionFleet(EmpireView v, StarSystem sys) {
+        boolean haveOrbitingFleet = false;
+        for(ShipFleet orbiting : sys.orbitingFleets())
+        {
+            if(orbiting.empire() == empire)
+                haveOrbitingFleet = true;
+            if(empire.enemies().contains(orbiting.empire()))
+                haveOrbitingFleet = false;
+        }
+        //ail: old check would also be positive when our fleet is retreating
+        if (haveOrbitingFleet
                 && sys.colony().defense().bases() == 0)
-            launchGroundTroops(v, sys, mult);
+            launchGroundTroops(v, sys, 1);
         else if (empire.combatTransportPct() > 0)
-            launchGroundTroops(v, sys, mult/empire.combatTransportPct());
+            launchGroundTroops(v, sys, 1/empire.combatTransportPct());
     }
     
     public void launchGroundTroops(EmpireView v, StarSystem target, float mult) {
         //float troops0 = troopsNecessaryToBypassBases(target);
         float troops1 = mult*troopsNecessaryToTakePlanet(v, target);
         int alreadySent = empire.transportsInTransit(target);
-        float troopsDesired = troops1 + empire.sv.currentSize(target.id) - alreadySent;
+        float troopsDesired = troops1 + empire.sv.currentSize(target.id) * 0.25f - alreadySent;
 
         if (troopsDesired < 1)
             return;
@@ -472,36 +458,6 @@ public class AIGeneral implements Base, General {
             empire.sv.fleetPlan(sys.id).priority = FleetPlan.BOMB_UNDEFENDED;
         }
     }
-    // modnar: setHighFighterGuard added for most threatened
-    private void setHighFighterGuard(StarSystem sys, float priority) {
-        float basesWanted = empire.sv.desiredMissileBases(sys.id);
-        float baseCost = empire.tech().newMissileBase().cost(empire);
-        FleetPlan fp = empire.sv.fleetPlan(sys.id);
-        fp.priority = priority;
-        // modnar: fighter guard on top of any bases, 4 base BC = 1 fighter BC
-        fp.addShipBC(empire.shipLab().fighterDesign(), basesWanted*baseCost/4);
-    }
-    // modnar: setNormalFighterGuard added for possibly threatened
-    private void setNormalFighterGuard(StarSystem sys, float priority) {
-        float basesNeeded = empire.sv.desiredMissileBases(sys.id) - empire.sv.bases(sys.id);
-        if (basesNeeded <= 0) 
-            return;
-        float baseCost = empire.tech().newMissileBase().cost(empire);
-        FleetPlan fp = empire.sv.fleetPlan(sys.id);
-        fp.priority = priority;
-        // modnar: normal fighter guard, 8 base BC = 1 fighter BC
-        fp.addShipBC(empire.shipLab().fighterDesign(), basesNeeded*baseCost/8);
-    }
-    private void setMinimumFighterGuard(StarSystem sys, float priority) {
-        float basesNeeded = empire.sv.desiredMissileBases(sys.id) - empire.sv.bases(sys.id);
-        if (basesNeeded <= 0) 
-            return;
-        float baseCost = empire.tech().newMissileBase().cost(empire);
-        FleetPlan fp = empire.sv.fleetPlan(sys.id);
-        fp.priority = priority;
-        // modnar: adjust minium fighter guard, 20 base BC = 1 fighter BC (previous one base BC = 10 fighter BC, typo(?), equation is 10:1)
-        fp.addShipBC(empire.shipLab().fighterDesign(), basesNeeded*baseCost/20); // modnar: reduce minium fighter guard needed
-    }
     private void setRepelFleetPlan(StarSystem sys, float fleetSize) {
         float baseBCPresent = empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost();
         float bcNeeded = max(empire.shipLab().fighterDesign().cost(), fleetSize*3); // modnar: reduce repel fleet
@@ -521,90 +477,6 @@ public class AIGeneral implements Base, General {
         float speed = min(lab.destroyerDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
         FleetPlan fp = empire.sv.fleetPlan(sys.id);
         fp.priority = FleetPlan.REPEL + invasionPriority(sys)/100;
-        fp.stagingPointId = empire.optimalStagingPoint(sys, speed);
-        fp.addShips(empire.shipLab().destroyerDesign(), destroyersNeeded);
-        fp.addShips(empire.shipLab().fighterDesign(), fightersNeeded);
-    }
-    private void setInterceptFleetPlan(StarSystem sys, float fleetSize) {
-        float baseBCPresent = empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost();
-        float bcNeeded = max(empire.shipLab().fighterDesign().cost(), fleetSize*2); // modnar: reduce intercept fleet
-        bcNeeded -= baseBCPresent;
-        if (bcNeeded <= 0)
-            return;
-
-        rushDefenseSystems.add(sys);
-        // use up to half of BC for Destroyers... rest for fighters
-        int destroyersNeeded = (int) Math.ceil((bcNeeded/2)/empire.shipLab().destroyerDesign().cost());
-        bcNeeded = max(0, bcNeeded-(destroyersNeeded * empire.shipLab().destroyerDesign().cost()));
-        int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost());
-
-        ShipDesignLab lab = empire.shipLab();
-        // modnar: should use min speed here (?)
-        float speed = min(lab.destroyerDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
-        FleetPlan fp = empire.sv.fleetPlan(sys.id);
-        fp.priority = FleetPlan.INTERCEPT + invasionPriority(sys)/100;
-        fp.addShips(empire.shipLab().destroyerDesign(), destroyersNeeded);
-        fp.addShips(empire.shipLab().fighterDesign(), fightersNeeded);
-    }
-    private void setExpelFleetPlan(StarSystem sys, float fleetSize) {
-        float baseBCPresent = empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost();
-        float bcNeeded = max(empire.shipLab().fighterDesign().cost(), fleetSize*3); // modnar: reduce expel fleet
-        bcNeeded -= baseBCPresent;
-        if (bcNeeded <= 0)
-            return;
-
-        // use up to half of BC for Destroyers... rest for fighters
-        int destroyersNeeded = (int) Math.ceil((bcNeeded/2)/empire.shipLab().destroyerDesign().cost());
-        bcNeeded = max(0, bcNeeded-(destroyersNeeded * empire.shipLab().destroyerDesign().cost()));
-        int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost());
-
-        ShipDesignLab lab = empire.shipLab();
-        // modnar: should use min speed here (?)
-        float speed = min(lab.destroyerDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
-        FleetPlan fp = empire.sv.fleetPlan(sys.id);
-        fp.priority = FleetPlan.EXPEL + invasionPriority(sys)/100;
-        fp.stagingPointId = empire.optimalStagingPoint(sys, speed);
-        fp.addShips(empire.shipLab().destroyerDesign(), destroyersNeeded);
-        fp.addShips(empire.shipLab().fighterDesign(), fightersNeeded);
-    }
-    private void setExpelPiratesPlan(StarSystem sys) {
-        float bcNeeded = 300;
-        int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost());
-
-        FleetPlan fp = empire.sv.fleetPlan(sys.id);
-        fp.priority = FleetPlan.EXPEL;
-        fp.addShips(empire.shipLab().fighterDesign(), fightersNeeded);
-    }
-    private void setDestroyCometPlan(StarSystem sys, boolean alliance) {
-        float bcNeeded = alliance ? 10000 : 20000;
-        
-        int destroyersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().destroyerDesign().cost());
-        // fighters are not much help here but we want to at least rush any available fighters there
-        // while destroyers are potentially being constructed
-        int fightersNeeded = (int) Math.ceil(0.02f*bcNeeded/empire.shipLab().fighterDesign().cost());
-
-        FleetPlan fp = empire.sv.fleetPlan(sys.id);
-        fp.priority = alliance ? FleetPlan.ASSIST_ALLY : FleetPlan.REPEL;
-        fp.addShips(empire.shipLab().destroyerDesign(), destroyersNeeded);
-        fp.addShips(empire.shipLab().fighterDesign(), fightersNeeded);
-    }
-    private void setAssistAllyFleetPlan(StarSystem sys, float fleetSize) {
-        float baseBCPresent = empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost();
-        float bcNeeded = max(empire.shipLab().fighterDesign().cost(), fleetSize*5);
-        bcNeeded -= baseBCPresent;
-        if (bcNeeded <= 0)
-            return;
-
-        // use up to half of BC for Destroyers... rest for fighters
-        int destroyersNeeded = (int) Math.ceil((bcNeeded/2)/empire.shipLab().destroyerDesign().cost());
-        bcNeeded = max(0, bcNeeded-(destroyersNeeded * empire.shipLab().destroyerDesign().cost()));
-        int fightersNeeded = (int) Math.ceil(bcNeeded/empire.shipLab().fighterDesign().cost());
-
-        ShipDesignLab lab = empire.shipLab();
-        // modnar: should use min speed here (?)
-        float speed = min(lab.destroyerDesign().warpSpeed(), lab.fighterDesign().warpSpeed());
-        FleetPlan fp = empire.sv.fleetPlan(sys.id);
-        fp.priority = FleetPlan.ASSIST_ALLY + invasionPriority(sys)/100;
         fp.stagingPointId = empire.optimalStagingPoint(sys, speed);
         fp.addShips(empire.shipLab().destroyerDesign(), destroyersNeeded);
         fp.addShips(empire.shipLab().fighterDesign(), fightersNeeded);
@@ -636,16 +508,20 @@ public class AIGeneral implements Base, General {
         Empire archEnemy = null;
         for(Empire emp : empire.contactedEmpires())
         {
+            //Since there's allied victory, there's no reason to ever break up with our alliance
+            if(empire.alliedWith(emp.id))
+                continue;
             if(!empire.inShipRange(emp.id))
             {
                 continue;
             }
-            if(empire.systemsForCiv(emp).size() < 2)
-                continue;
             EmpireView ev = empire.viewForEmpire(emp);
             float relationshipFactor = 100 - ev.embassy().relations();
             float currentScore = relationshipFactor * empire.systemsInShipRange(emp).size() * empire.systemsForCiv(emp).size() / empire.powerLevel(emp);
-            //System.out.print("\n"+empire.name()+": Considering "+emp.name()+" with Score of: "+currentScore+" relationshipFactor: "+relationshipFactor+" sys: "+empire.systemsInShipRange(emp).size()+" power: "+empire.powerLevel(emp));
+            //System.out.println(empire.name()+": Considering "+emp.name()+" with Score of: "+currentScore+" relationshipFactor: "+relationshipFactor+" sys: "+empire.systemsInShipRange(emp).size()+" power: "+empire.powerLevel(emp));
+            //ail: drastically reduce score for those I have a NAP as nap-breaking makes others mad
+            if(empire.pactWith(emp.id))
+                currentScore /= 3;
             if(currentScore > highestScore)
             {
                 highestScore = currentScore;
@@ -665,6 +541,8 @@ public class AIGeneral implements Base, General {
         float dr = 1.0f;
         float totalReachableEnemyProduction = 0.0f;
         float totalProductionReachableByEnemies = 0.0f;
+        float totalMissileBaseCost = 0.0f;
+        float totalShipCost = 0.0f;
         for(Empire enemy : empire.enemies())
         {
             for(StarSystem enemySystem : empire.systemsInShipRange(enemy))
@@ -681,12 +559,17 @@ public class AIGeneral implements Base, General {
                     totalProductionReachableByEnemies += max(mySystem.colony().production(), 1.0f);
                 }
             }
+            totalMissileBaseCost += enemy.shipMaintCostPerBC();
+            totalShipCost += enemy.missileBaseCostPerBC();
         }
         if(totalReachableEnemyProduction > 0)
         {
             dr = totalProductionReachableByEnemies / (totalReachableEnemyProduction + totalProductionReachableByEnemies);
         }
-        //System.out.print("\n"+empire.name()+" defenseRatio: "+defenseRatio);
+        if(totalMissileBaseCost+totalShipCost > 0)
+        {
+            dr = min(dr, totalShipCost / (totalMissileBaseCost+totalShipCost));
+        }
         defenseRatio = dr;
         return defenseRatio;
     }
@@ -704,35 +587,40 @@ public class AIGeneral implements Base, General {
             {
                 continue;
             }
-            additional++;
+            if(sys.monster() == null)
+                additional++;
         }
         //System.out.print("\n"+empire.name()+" "+additional+" from uncolonized scouted without en-route.");
-        List<StarSystem> alreadyCounted = new ArrayList<>();
-        for(ShipFleet fleet:empire.allFleets())
+        //ail: when we have huge colonizer, don't count the unlocks for how many we need since we don't want to spam them like normal one's
+        if(empire.shipLab().colonyDesign().size() < 3)
         {
-            if(!fleet.hasColonyShip())
+            List<StarSystem> alreadyCounted = new ArrayList<>();
+            for(ShipFleet fleet:empire.allFleets())
             {
-                continue;
-            }
-            if(fleet.destination() != null)
-            {
-                for(StarSystem sys : galaxy().systemsInRange(fleet.destination(), empire.shipRange()))
+                if(!fleet.hasColonyShip())
                 {
-                    if(alreadyCounted.contains(sys))
+                    continue;
+                }
+                if(fleet.destination() != null)
+                {
+                    for(StarSystem sys : galaxy().systemsInRange(fleet.destination(), empire.shipRange()))
                     {
-                        break;
-                    }
-                    if(sys.colony() != null)
-                    {
-                        continue;
-                    }
-                    if(!empire.sv.inShipRange(sys.id))
-                    {
-                        if(empire.canColonize(sys.id)
-                                || empire.unexploredSystems().contains(sys))
+                        if(alreadyCounted.contains(sys))
                         {
-                            additional++;
-                            alreadyCounted.add(sys);
+                            break;
+                        }
+                        if(sys.colony() != null)
+                        {
+                            continue;
+                        }
+                        if(!empire.sv.inShipRange(sys.id))
+                        {
+                            if(empire.canColonize(sys.id)
+                                    || empire.unexploredSystems().contains(sys))
+                            {
+                                additional++;
+                                alreadyCounted.add(sys);
+                            }
                         }
                     }
                 }
@@ -746,6 +634,8 @@ public class AIGeneral implements Base, General {
         {
             if(empire.shipLab().design(i).isColonyShip())
             {
+                if(empire.shipLab().design(i).range() < empire.shipLab().colonyDesign().range())
+                    continue;
                 //ail: no idea how this can be null, but I have a savegame from /u/Elkad, where this is the case
                 if(empire.tech().topControlEnvironmentTech() == null)
                     additional -= counts[i];
@@ -758,5 +648,11 @@ public class AIGeneral implements Base, General {
         additional = max(additional, 0);
         additionalColonizersToBuild = additional;
         return additionalColonizersToBuild;
+    }
+    @Override
+    public boolean allowedToBomb(Empire emp) { 
+        if(empire.enemies().contains(emp))
+            return true;
+        return false;
     }
 }

@@ -180,12 +180,12 @@ public class AIDiplomat implements Base, Diplomat {
         // 2 - we have diplomats active
         // 3 - we are not at war
         // 4 - we are in economic range
-        // 5 - our spies tell us they have technologies that are unknown to us
+        // 5 - they have techs they are willing to trade to us (i.e. do we have compensation)
         return options().canTradeTechs(empire, e) 
                 && diplomats(id(e)) 
                 && !empire.atWarWith(id(e)) 
                 && empire.inEconomicRange(id(e)) 
-                && !empire.viewForEmpire(id(e)).spies().unknownTechs().isEmpty(); 
+                && !techsAvailableForRequest(e).isEmpty();
     }
 
     @Override
@@ -205,20 +205,12 @@ public class AIDiplomat implements Base, Diplomat {
         }
 
         EmpireView v = empire.viewForEmpire(diplomat);
-        v.embassy().noteRequest();
-        if (v.embassy().alreadyOfferedTech())
-            v.embassy().noteRequest();
-
-        if (v.embassy().tooManyRequests())
-            return v.refuse(DialogueManager.DECLINE_ANNOYED);
         
         // modnar: add in readyForTech check, limits one tech trade per turn per empire
         // this also prevents trading the same tech multiple times to the same empire
         if (!v.embassy().readyForTech())
             return v.refuse(DialogueManager.DECLINE_OFFER);
         
-        v.embassy().resetTechTimer();
-
         List<Tech> counterTechs = empire.diplomatAI().techsRequestedForCounter(diplomat, tech);
         if (counterTechs.isEmpty())
             return v.refuse(DialogueManager.DECLINE_TECH_TRADE);
@@ -229,6 +221,8 @@ public class AIDiplomat implements Base, Diplomat {
     @Override
     public DiplomaticReply receiveCounterOfferTech(Empire diplomat, Tech offeredTech, Tech requestedTech) {
         EmpireView view = empire.viewForEmpire(diplomat);
+        view.embassy().resetTechTimer();
+
         DiplomaticIncident inc = view.embassy().exchangeTechnology(offeredTech, requestedTech);
         return view.otherView().accept(DialogueManager.ACCEPT_TECH_EXCHANGE, inc);
     }
@@ -257,10 +251,13 @@ public class AIDiplomat implements Base, Diplomat {
     }
     @Override
     public List<Tech> techsRequestedForCounter(Empire requestor, Tech tech) {
+        if (tech.isObsolete(requestor))
+            return new ArrayList<>();
+        
         EmpireView view = empire.viewForEmpire(requestor);
 
         // what is this times the value of the request tech?dec
-        float maxTechValue = techDealValue(view) * tech.tradeValue(empire);
+        float maxTechValue = techDealValue(view) * max(tech.level(), tech.baseValue(requestor));
 
         // what are all of the unknown techs that we could ask for
         List<Tech> allTechs = view.spies().unknownTechs();
@@ -270,22 +267,26 @@ public class AIDiplomat implements Base, Diplomat {
         List<Tech> worthyTechs = new ArrayList<>(allTechs.size());
         for (Tech t: allTechs) {
             if (t.quintile() == tech.quintile()) {
-                if (t.baseValue(empire) < maxTechValue)
-                    worthyTechs.add(t);
+                if (t.baseValue(empire) > maxTechValue) {
+                    if (!t.isObsolete(empire))
+                        worthyTechs.add(t);
+                }
             }
         }
 
         // sort techs by the diplomat's research priority (hi to low)
         Tech.comparatorCiv = empire;
-        Collections.sort(worthyTechs, Tech.RESEARCH_VALUE);
-
+        Collections.sort(worthyTechs, Tech.BASE_VALUE);        
+        
         // limit return to top 5 techs
-        int maxTechs = 5;
+        Tech.comparatorCiv = requestor;
+        int maxTechs = 3;
         if (worthyTechs.size() <= maxTechs)
             return worthyTechs;
         List<Tech> topFiveTechs = new ArrayList<>(maxTechs);
         for (int i=0; i<maxTechs;i++)
             topFiveTechs.add(worthyTechs.get(i));
+        Collections.sort(topFiveTechs, Tech.RESEARCH_VALUE);
         return topFiveTechs;
     }
     private boolean decidedToExchangeTech(EmpireView v) {
@@ -363,7 +364,14 @@ public class AIDiplomat implements Base, Diplomat {
     public boolean canOfferTradeTreaty(Empire e) {
         if (!empire.inEconomicRange(id(e)))
             return false;
+        if(!e.inEconomicRange(empire.id))
+            return false;
+        
         EmpireView view = empire.viewForEmpire(id(e));
+        
+        if (!view.embassy().contact())
+            return false;
+
         // Automatic exclusion for AI empires:
         //    1) Have trade established but it is not yet profitable
         // or 2) Not at full trade && and can't increase current trade level by +50%
@@ -964,51 +972,51 @@ public class AIDiplomat implements Base, Diplomat {
         return v.otherView().accept(DialogueManager.RESPOND_BREAK_TRADE, inc);
     }
     @Override
-    public DiplomaticReply receiveThreatStopSpying(Empire e) {
-        EmpireView v = empire.viewForEmpire(e);
+    public DiplomaticReply receiveThreatStopSpying(Empire dip) {
+        EmpireView v = empire.viewForEmpire(dip);
         
         v.embassy().noteRequest();
         v.embassy().withdrawAmbassador();
         
-        if (empire.atWarWith(e.id) || v.embassy().onWarFooting()) {
+        if (empire.atWarWith(dip.id) || v.embassy().onWarFooting()) {
             v.spies().ignoreThreat();
-            return v.accept(DialogueManager.RESPOND_IGNORE_THREAT);
+            return empire.respond(DialogueManager.RESPOND_IGNORE_THREAT, dip);
         }
 
         if (empire.leader().isPacifist() || empire.leader().isHonorable()) {
-            if (e.leader().isXenophobic()) {
-                empire.shutdownSpyNetworksAgainst(e.id);
+            if (dip.leader().isXenophobic()) {
+                empire.shutdownSpyNetworksAgainst(dip.id);
                 v.spies().heedEviction();
             }
             else {
-                empire.hideSpiesAgainst(e.id);
+                empire.hideSpiesAgainst(dip.id);
                 v.spies().heedThreat();
             }
-            return v.accept(DialogueManager.RESPOND_STOP_SPYING);
+            return empire.respond(DialogueManager.RESPOND_STOP_SPYING, dip);
         }
                    
-        float otherPower = empire.militaryPowerLevel(e);
+        float otherPower = empire.militaryPowerLevel(dip);
         float myPower = empire.militaryPowerLevel();
         float powerRatio = myPower/otherPower;
 
         if (powerRatio > 2) {
             v.spies().ignoreThreat();
-            return v.accept(DialogueManager.RESPOND_IGNORE_THREAT);
+            return empire.respond(DialogueManager.RESPOND_IGNORE_THREAT, dip);
         }
             
-        if (e.leader().isXenophobic()) {
-            empire.shutdownSpyNetworksAgainst(e.id);
+        if (dip.leader().isXenophobic()) {
+            empire.shutdownSpyNetworksAgainst(dip.id);
             v.spies().heedEviction();
         }
         else {
-            empire.hideSpiesAgainst(e.id);
+            empire.hideSpiesAgainst(dip.id);
             v.spies().heedThreat();
         }
-        return v.accept(DialogueManager.RESPOND_STOP_SPYING);
+        return empire.respond(DialogueManager.RESPOND_STOP_SPYING, dip);
     }
     @Override
-    public DiplomaticReply receiveThreatEvictSpies(Empire e) {
-        EmpireView v = empire.viewForEmpire(e);
+    public DiplomaticReply receiveThreatEvictSpies(Empire dip) {
+        EmpireView v = empire.viewForEmpire(dip);
         
         v.embassy().noteRequest();
         v.embassy().withdrawAmbassador();
@@ -1016,60 +1024,60 @@ public class AIDiplomat implements Base, Diplomat {
         EvictedSpiesIncident inc = EvictedSpiesIncident.create(v);
         v.embassy().addIncident(inc);
         
-        if (empire.atWarWith(e.id) || v.embassy().onWarFooting()) {
+        if (empire.atWarWith(dip.id) || v.embassy().onWarFooting()) {
             v.spies().ignoreThreat();
-            return v.accept(DialogueManager.RESPOND_IGNORE_THREAT);
+            return empire.respond(DialogueManager.RESPOND_IGNORE_THREAT, dip);
         }
 
         if (empire.leader().isPacifist() || empire.leader().isHonorable()) {
-            empire.shutdownSpyNetworksAgainst(e.id);
+            empire.shutdownSpyNetworksAgainst(dip.id);
             v.spies().heedEviction();
-            return v.accept(DialogueManager.RESPOND_STOP_SPYING);
+            return empire.respond(DialogueManager.RESPOND_STOP_SPYING, dip);
         }
                    
-        float otherPower = empire.militaryPowerLevel(e);
+        float otherPower = empire.militaryPowerLevel(dip);
         float myPower = empire.militaryPowerLevel();
         float powerRatio = myPower/otherPower;
 
         if (powerRatio > 2) {
             v.spies().ignoreThreat();
-            return v.accept(DialogueManager.RESPOND_IGNORE_THREAT);
+            return empire.respond(DialogueManager.RESPOND_IGNORE_THREAT, dip);
         }
             
-        empire.shutdownSpyNetworksAgainst(e.id);
+        empire.shutdownSpyNetworksAgainst(dip.id);
         v.spies().heedEviction();
-        return v.accept(DialogueManager.RESPOND_STOP_SPYING);
+        return empire.respond(DialogueManager.RESPOND_STOP_SPYING, dip);
     }
     @Override
-    public DiplomaticReply receiveThreatStopAttacking(Empire e) {
-        EmpireView v = empire.viewForEmpire(e);
+    public DiplomaticReply receiveThreatStopAttacking(Empire dip) {
+        EmpireView v = empire.viewForEmpire(dip);
 
         v.embassy().noteRequest();
         v.embassy().withdrawAmbassador();
         
-        if (empire.atWarWith(e.id) || v.embassy().onWarFooting()) {
+        if (empire.atWarWith(dip.id) || v.embassy().onWarFooting()) {
             v.embassy().ignoreThreat();
-            return v.otherView().accept(DialogueManager.RESPOND_IGNORE_THREAT);
+            return empire.respond(DialogueManager.RESPOND_IGNORE_THREAT, dip);
         }
 
         if (empire.leader().isPacifist()) {
-            empire.retreatShipsFrom(e.id);
+            empire.retreatShipsFrom(dip.id);
             v.embassy().heedThreat();
-            return v.otherView().accept(DialogueManager.RESPOND_STOP_ATTACKING);
+            return empire.respond(DialogueManager.RESPOND_STOP_ATTACKING, dip);
         }
                    
-        float otherPower = empire.militaryPowerLevel(e);
+        float otherPower = empire.militaryPowerLevel(dip);
         float myPower = empire.militaryPowerLevel();
         float powerRatio = myPower/otherPower;
 
         if (powerRatio > 2) {
             v.embassy().ignoreThreat();
-            return v.otherView().accept(DialogueManager.RESPOND_IGNORE_THREAT);
+            return empire.respond(DialogueManager.RESPOND_IGNORE_THREAT, dip);
         }
             
-        empire.retreatShipsFrom(e.id);
+        empire.retreatShipsFrom(dip.id);
         v.embassy().heedThreat();
-        return v.otherView().accept(DialogueManager.RESPOND_STOP_ATTACKING);
+        return empire.respond(DialogueManager.RESPOND_STOP_ATTACKING, dip);
     }
     @Override
     public DiplomaticReply receiveDeclareWar(Empire e) {

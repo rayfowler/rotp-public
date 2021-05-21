@@ -19,20 +19,24 @@ import java.awt.Font;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import rotp.Rotp;
 
 public enum FontManager implements Base {
     INSTANCE;
     public static FontManager current()  { return INSTANCE; }
 
-    private static int MAX_FONT_SIZE = 200;
+    private static final int MAX_FONT_SIZE = 200;
     private Font logoFont;
     private Font introFont;
     private Font dlgFont;
     private Font narrowFont;
     private Font plainFont;
-    private int logoSize, introSize, dlgSize, narrowSize, plainSize;
+    private final Map<String,Font> languageFonts = new HashMap<>();
+    private final Map<String,Integer> languageFontSizes = new HashMap<>();
+    private int logoSize, introSize, dlgSize, narrowSize, plainSize, languageSize;
     private Font[] createdLogoFont;
     private Font[] createdDlgFont;
     private Font[] createdNarrowFonts;
@@ -59,6 +63,12 @@ public enum FontManager implements Base {
         if (createdPlainFonts[i] == null)
             createdPlainFonts[i] = plainFont.deriveFont((float) scaled(i*plainSize/100));
         return createdPlainFonts[i];
+    }
+    public Font languageFont(String code, int size) {
+        int i = min(MAX_FONT_SIZE, size);
+        Font baseFont = languageFonts.get(code);
+        int baseSize = languageFontSizes.get(code);
+        return baseFont.deriveFont((float)scaled(i*baseSize/100));
     }
     @Override
     public Font font(int n) {
@@ -99,14 +109,14 @@ public enum FontManager implements Base {
         try {
             String input;
             while ((input = in.readLine()) != null)
-                loadFontLine(input, fontDir);
+                loadFontLine(input, fontDir, langDir);
             in.close();
         }
         catch (IOException e) {
             err("FontManager.loadFonts -- IOException: ", e.toString());
         }
     }
-    private void loadFontLine(String input, String fontDir) {
+    private void loadFontLine(String input, String fontDir, String langCode) {
         if (isComment(input))
             return;
 
@@ -142,6 +152,54 @@ public enum FontManager implements Base {
             else if (fontName.equalsIgnoreCase("logo")) {
                 logoFont = newFont;
                 logoSize = fontSizing;
+            }
+        }
+        catch (Exception e) {
+            err("FontManager.loadFont -- Exception: " + e.getMessage());
+        }
+    }
+    public void loadLanguageFonts(String baseDir, String langDir) {
+        String fontDir = baseDir+"fonts/";
+        String dir = baseDir+langDir+"/";
+        log("Loading fonts - baseDir: ", baseDir, "  fontDir: ", fontDir, "  langDir: ", dir);
+        initFonts();
+        String dataFile = "fonts.txt";
+
+        BufferedReader in = reader(dir+dataFile);
+        if (in == null) {
+            err("can't find fonts file! ", dir, dataFile);
+            return;
+        }
+        try {
+            String input;
+            while ((input = in.readLine()) != null)
+                loadLanguageFontLine(input, fontDir, langDir);
+            in.close();
+        }
+        catch (IOException e) {
+            err("FontManager.loadFonts -- IOException: ", e.toString());
+        }
+    }
+    private void loadLanguageFontLine(String input, String fontDir, String langCode) {
+        if (isComment(input))
+            return;
+
+        List<String> fields = substrings(input, ',');
+        String fontName = fields.get(0);
+        String filename = fields.size() > 1 ? fields.get(1) : fields.get(0);
+        int fontSizing = fields.size() > 2 ? parseInt(fields.get(2)): 100;
+
+        InputStream is = fileInputStream(fontDir+filename);
+        if (is == null) {
+            err("FontManager.loadFont: could not get inputStream for:"+fontDir+filename);
+            return;
+        }
+
+        try {
+            if (fontName.equalsIgnoreCase("language")) {
+                Font newFont = Font.createFont(Font.TRUETYPE_FONT, is);
+                languageFonts.put(langCode, newFont);
+                languageFontSizes.put(langCode, fontSizing);
             }
         }
         catch (Exception e) {

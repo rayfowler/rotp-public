@@ -37,6 +37,8 @@ public class SystemAbandonedEvent  implements Base, Serializable, StarSystemEven
     @Override
     public String description() {
         Empire emp = galaxy().empire(empId);
-        return text("SYSEVENT_ABANDONED",emp.raceName());
+        String s = text("SYSEVENT_ABANDONED");
+        s = emp.replaceTokens(s, "alien");
+        return s;
     } 
 }

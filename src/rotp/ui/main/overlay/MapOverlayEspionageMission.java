@@ -196,11 +196,12 @@ public class MapOverlayEspionageMission extends MapOverlay {
         drawBorderedString(g, yearStr, 2, x1a, y1+s45, SystemPanel.textShadowC, SystemPanel.orangeText);
 
         // draw title
-        String title = text("NOTICE_ESPIONAGE_TITLE", emp.raceName());
+        String title = text("NOTICE_ESPIONAGE_TITLE");
+        title = emp.replaceTokens(title, "alien");
         g.setFont(narrowFont(15));
         int x1b = x1+leftW;
         g.setColor(SystemPanel.blackText);
-        g.drawString(title, x1b, y1+s20);
+        drawString(g,title, x1b, y1+s20);
 
         // draw subtitle
         String subtitle = text("NOTICE_ESPIONAGE_SUBTITLE");
@@ -213,7 +214,7 @@ public class MapOverlayEspionageMission extends MapOverlay {
         int sw2 = g.getFontMetrics().stringWidth(footer);
         int x1c = x1+leftW+((rightW-sw2)/2);
         g.setColor(SystemPanel.blackText);
-        g.drawString(footer, x1c, y1+h1-BasePanel.s10);
+        drawString(g,footer, x1c, y1+h1-BasePanel.s10);
 
         Empire pl = player();
         if (labImg == null) {

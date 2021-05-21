@@ -72,7 +72,7 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
     Empire diplomatEmpire;
     Image flag, dialogBox;
     DiplomaticMessage message;
-    String remarkTitle, messageRemark, messageRemarkDetail;
+    String messageRemark, messageRemarkDetail;
 
     int talkTimeMs = 5000;
     long startTimeMs;
@@ -143,11 +143,6 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
             return;
         }
 
-//        if (options().usingExtendedRaces())
-//            remarkTitle = diplomatEmpire.race().text("RACES_DIPLOMACY_DIALOGUE_TITLE", diplomatEmpire.raceName(), diplomatEmpire.leader().name());
-//        else
-            remarkTitle = "";
-        
         messageRemarkDetail = message.requestDetail();
         if (message.showTalking() && playAnimations())
             startFadeTimer();
@@ -255,19 +250,19 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
             String s = diplomatEmpire.name();
             int sw = g.getFontMetrics().stringWidth(s);
             drawBorderedString(g, s, fX+(fW-sw)/2, empY, Color.black, Color.white);
-            //g.drawString(s, fX+(fW-sw)/2, empY);
+            //drawString(g,s, fX+(fW-sw)/2, empY);
             empY += s20;
             g.setFont(narrowFont(18));
             s = text("LEADER_PERSONALITY_FORMAT", diplomatEmpire.leader().personality(), diplomatEmpire.leader().objective());
             sw = g.getFontMetrics().stringWidth(s); 
             drawBorderedString(g, s, fX+(fW-sw)/2, empY, Color.black, Color.white);
-//            g.drawString(s, fX+(fW-sw)/2, empY);
+//            drawString(g,s, fX+(fW-sw)/2, empY);
             empY += s20;
             DiplomaticTreaty treaty = player().treatyWithEmpire(diplomatEmpire.id);
             s = treaty.status(player());
             sw = g.getFontMetrics().stringWidth(s);
             drawBorderedString(g, s, fX+(fW-sw)/2, empY, Color.black, Color.white);
-//            g.drawString(s, fX+(fW-sw)/2, empY);
+//            drawString(g,s, fX+(fW-sw)/2, empY);
         }
 
         // draw diplomat
@@ -296,21 +291,18 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
         g.dispose();
         return screenBuffer();
     }
-    private int dialogFontSize(String remark, int options) {
-        // largest font under any conditions
-        int maxSize0 = 30;
-        // maxFont based on number of replies
-        int maxSize1 = 44-(options*3);
-        // maxFont base on remark length (150 chars = 3 max lines at font 35 >> font 30)
-        int maxSize2 = (400-remark.length())/10;
-        return min(maxSize0, maxSize1, maxSize2);
-    }
     private void drawText(Graphics g, boolean receiving, int x, int y, int w, int h) {
         if (message == null) {
             err(messageRemark);
             return;
         }
 
+        // messageRemark is the prose text that the player reads
+        // messageRemarkDetail is infrequent, but is a differently-colored suffix to the messageRemark
+        //    such as [your were framed]
+        // message.numReplies() is the number of response options provided to the player
+        // message.numDataLines() similar to response options but 2/line
+        
         g.setColor(textC);
 
         int x1 = x+s20;
@@ -332,13 +324,12 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
         // data lines will draw two items per line
         int nonRemarkLines = message.numReplies()+(message.numDataLines()+1)/2;
         int maxLinesForText = nonRemarkLines > 3 ? 2 : 6-nonRemarkLines;
-        g.setFont(narrowFont(18));
-        drawBorderedString(g, remarkTitle, 1, x1, y1, textBgC,  textC);
         // need to calculate correct font size to fit full text (remark & detail) onto allowed # of lines
-        List<String> displayTextLines = scaledDialogueWrappedLines(g, displayText, w1, maxLinesForText, 26, 16);
+        int dispFontSize = scaledDialogueFontSize(g, displayText, w1, maxLinesForText, 26, 16);
+        g.setFont(dlgFont(dispFontSize));
         // now split just the remark text 
         List<String> remarkLines = wrappedLines(g, messageRemark, w1);
-        int lineH = g.getFontMetrics().getHeight();
+        int lineH = scaled(dispFontSize-2);
         int lastLineW = 0;
         // print the remark text
         for (String line: remarkLines) {
@@ -357,7 +348,7 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
                 x1a = x1;
                 y1 += lineH;
             }
-            g.drawString(messageRemarkDetail, x1a, y1);
+            drawString(g,messageRemarkDetail, x1a, y1);
         }
 
         y1 += s10;
@@ -429,7 +420,7 @@ public class DiplomaticMessageUI extends FadeInPanel implements MouseListener, M
             else 
                 c0 = optionC;
             g.setColor(c0);
-            g.drawString(""+(i+1), x1-s15, y1);
+            drawString(g,""+(i+1), x1-s15, y1);
             g.fillOval(x1, y1-s9, s3, s3);
             String reply = message.reply(i);
             String replyDetail = message.replyDetail(i);

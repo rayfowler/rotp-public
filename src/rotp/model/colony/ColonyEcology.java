@@ -41,7 +41,7 @@ public class ColonyEcology extends ColonySpendingCategory {
     public boolean atmosphereCompletedThisTurn()        { return atmosphereCompleted; }
     public boolean soilEnrichCompletedThisTurn()        { return soilEnrichCompleted; }
     public boolean terraformCompletedThisTurn()         { return terraformCompleted; }
-    public boolean populationGrowthCompletedThisTurn()  { return populationGrowthCompleted; }
+    public boolean populationGrowthCompletedThisTurn()  { return populationGrowthCompleted && populationGrowthCompleted(); }
     public boolean populationGrowthCompleted()          { return colony().population() >= colony().maxSize(); }
     public boolean terraformCompleted()                 { return planet().currentSize() >= colony().maxSize(); }
 

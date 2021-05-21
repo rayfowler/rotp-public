@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch4jConfig>
+  <dontWrapJar>false</dontWrapJar>
+  <headerType>gui</headerType>
+  <jar>C:\Users\RayGame\Documents\NB\Remnants\dist\Remnants.jar</jar>
+  <outfile>C:\Users\RayGame\Documents\NB\Remnants\launch4j\Remnants\Remnants.exe</outfile>
+  <errTitle></errTitle>
+  <cmdLine></cmdLine>
+  <chdir>.</chdir>
+  <priority>normal</priority>
+  <downloadUrl>http://java.com/download</downloadUrl>
+  <supportUrl></supportUrl>
+  <stayAlive>false</stayAlive>
+  <restartOnCrash>false</restartOnCrash>
+  <manifest></manifest>
+  <icon>C:\Users\RayGame\Documents\NB\Remnants\launch4j\rotp.ico</icon>
+  <jre>
+    <path>jre</path>
+    <bundledJre64Bit>true</bundledJre64Bit>
+    <bundledJreAsFallback>false</bundledJreAsFallback>
+    <minVersion></minVersion>
+    <maxVersion></maxVersion>
+    <jdkPreference>preferJre</jdkPreference>
+    <runtimeBits>64</runtimeBits>
+    <initialHeapSize>2000</initialHeapSize>
+    <maxHeapSize>3500</maxHeapSize>
+  </jre>
+  <splash>
+    <file>C:\Users\RayGame\Pictures\rotp_splash.bmp</file>
+    <waitForWindow>false</waitForWindow>
+    <timeout>15</timeout>
+    <timeoutErr>false</timeoutErr>
+  </splash>
+</launch4jConfig>

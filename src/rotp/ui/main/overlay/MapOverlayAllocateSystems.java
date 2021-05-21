@@ -158,7 +158,7 @@ public class MapOverlayAllocateSystems extends MapOverlay {
         g.setFont(narrowFont(16));
         int x1c = x1b+scaled(20);
         g.setColor(SystemPanel.blackText);
-        g.drawString(noticeStr, x1c, y1+h1-s15);
+        drawString(g,noticeStr, x1c, y1+h1-s15);
 
         //draw arrow
         int r1 = x1+w1;
@@ -183,23 +183,23 @@ public class MapOverlayAllocateSystems extends MapOverlay {
         int x1d = x[6]-sw2;
         int y1d = y[6]-scaled(5);
         g.setColor(SystemPanel.blackText);
-        g.drawString(actionStr, x1d, y1d);
+        drawString(g,actionStr, x1d, y1d);
 
         // draw reasons info
         StarSystem sv = orderedSystems.get(systemIndex);
         List<String> reasons = systemsToAllocate.get(sv);
-        int lineH = BasePanel.s18;
+        int lineH = BasePanel.s15;
         int x2a = x2+s10;
-        int y2a = y2+s20;
+        int y2a = y2+BasePanel.s15;
 
         //g.setFont(narrowFont(16));
         int textW = w2+x2-x2a-s10;
-        g.setFont(narrowFont(16));
+        g.setFont(narrowFont(15));
         for (String reason: reasons) {
             List<String> lines = this.wrappedLines(g, reason, textW);
             for (String line: lines) {
                 //scaledFont(g, line, textW, 16, 12);
-                g.drawString(line, x2a, y2a);
+                drawString(g,line, x2a, y2a);
                 y2a += lineH;
             }
         }
@@ -227,7 +227,7 @@ public class MapOverlayAllocateSystems extends MapOverlay {
                 int x4b = prevSystemButton.mapX()+prevSystemButton.width()+s10;
                 int y4b = prevSystemButton.mapY()+prevSystemButton.height()-s10;
                 g.setColor(SystemPanel.blackText);
-                g.drawString(notice2Str, x4b, y4b);
+                drawString(g,notice2Str, x4b, y4b);
 
                 parent.addNextTurnControl(nextSystemButton);
                 nextSystemButton.init(this,g);

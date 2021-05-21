@@ -285,6 +285,10 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         addMouseWheelListener(this);
         addMouseMotionListener(this);
     }
+    public void repaintTechStatus() {
+        int y = getHeight()-scaled(275);
+        this.repaint(s10,y,s30,scaled(205));
+    }
     // scale(float) will translate any arbitrary "real" distancce
     // into a map distance in pixels
     public int scale(float d) {
@@ -717,7 +721,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             StarSystem sys = gal.system(id);
             if (parent.shouldDrawSprite(sys))
                 sys.draw(this, g);
-            if (parent.shouldDrawSprite(sys.transportSprite))
+            if (parent.shouldDrawSprite(sys.transportSprite()))
                 sys.transportSprite().draw(this, g);
             if (parent.shouldDrawSprite(sys.rallySprite()))
                 sys.rallySprite().draw(this, g);
@@ -908,6 +912,13 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     }
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {
+        // if we are hovering over a sprite and it accepts mousewheel
+        // then do that
+        if ((hoverSprite != null) && hoverSprite.acceptWheel()) {
+            hoverSprite.wheel(this, e.getWheelRotation(), false);
+            return;
+        }
+        
         if (parent.forwardMouseEvents())
             parent.mouseWheelMoved(e);
         else

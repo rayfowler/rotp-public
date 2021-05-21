@@ -25,6 +25,8 @@ import java.awt.Stroke;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 import java.awt.geom.Rectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.List;
@@ -56,7 +58,7 @@ public class AlienSystemPanel extends SystemPanel {
     protected BasePanel detailPane() {
         return new DetailPane(this);
     }
-    private class DetailPane extends BasePanel implements MouseMotionListener, MouseListener {
+    private class DetailPane extends BasePanel implements MouseMotionListener, MouseListener, MouseWheelListener {
         private static final long serialVersionUID = 1L;
         SystemPanel parent;
         Shape textureClip;
@@ -73,6 +75,7 @@ public class AlienSystemPanel extends SystemPanel {
             setOpaque(false);
             addMouseMotionListener(this);
             addMouseListener(this);
+            addMouseWheelListener(this);
         }
         @Override
         public String textureName()            { return TEXTURE_GRAY; }
@@ -145,23 +148,23 @@ public class AlienSystemPanel extends SystemPanel {
 
             g.setFont(narrowFont(16));
             g.setColor(textColor);
-            g.drawString(popLbl, x0, y0);
-            g.drawString(factLbl, x1, y0);
-            g.drawString(shieldLbl, x0, y1);
-            g.drawString(baseLbl, x1, y1);
+            drawString(g,popLbl, x0, y0);
+            drawString(g,factLbl, x1, y0);
+            drawString(g,shieldLbl, x0, y1);
+            drawString(g,baseLbl, x1, y1);
 
             String str = spied ? str(pl.sv.population(id)) : unknown;
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x1-sw-s10, y0);
+            drawString(g,str, x1-sw-s10, y0);
             str = spied ? str(pl.sv.factories(id)) : unknown;
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, w-s10-sw, y0);
+            drawString(g,str, w-s10-sw, y0);
             str = spied ? str(pl.sv.shieldLevel(id)) : unknown;
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, x1-s10-sw, y1);
+            drawString(g,str, x1-s10-sw, y1);
             str = spied ? str(pl.sv.bases(id)) : unknown;
             sw = g.getFontMetrics().stringWidth(str);
-            g.drawString(str, w-s10-sw, y1);
+            drawString(g,str, w-s10-sw, y1);
 
             // draw borders around data
             g.setColor(dataBorders);
@@ -213,7 +216,10 @@ public class AlienSystemPanel extends SystemPanel {
             boolean rightClick = SwingUtilities.isRightMouseButton(e);
             if (hoverBox == flagBox) {
                 StarSystem sys = parentSpritePanel.systemViewToDisplay();
-                player().sv.view(sys.id).toggleFlagColor(rightClick);
+                if (rightClick)
+                    player().sv.resetFlagColor(sys.id);
+                else
+                    player().sv.toggleFlagColor(sys.id);
                 parentSpritePanel.parent.repaint();
             }
             else if (hoverBox == nameBox) {
@@ -229,6 +235,17 @@ public class AlienSystemPanel extends SystemPanel {
             if (hoverBox != null) {
                 hoverBox = null;
                 repaint();
+            }
+        }
+        @Override
+        public void mouseWheelMoved(MouseWheelEvent e) {
+            if (hoverBox == flagBox) {
+                StarSystem sys = parentSpritePanel.systemViewToDisplay();
+                if (e.getWheelRotation() < 0)
+                    player().sv.toggleFlagColor(sys.id, true);
+                else
+                    player().sv.toggleFlagColor(sys.id, false);
+                parentSpritePanel.repaint();
             }
         }
     }

@@ -18,10 +18,16 @@ package rotp.model.ai.xilmi;
 import java.util.List;
 import rotp.model.ai.interfaces.ShipDesigner;
 import rotp.model.empires.Empire;
+import rotp.model.empires.EmpireView;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
+import static rotp.model.game.IGameOptions.RESEARCH_SLOW;
+import static rotp.model.game.IGameOptions.RESEARCH_SLOWER;
+import static rotp.model.game.IGameOptions.RESEARCH_SLOWEST;
 import rotp.model.planet.PlanetType;
 import rotp.model.ships.ShipDesign;
+import static rotp.model.ships.ShipDesign.maxSpecials;
+import static rotp.model.ships.ShipDesign.maxWeapons;
 import rotp.model.ships.ShipDesignLab;
 import rotp.model.ships.ShipSpecial;
 import rotp.model.ships.ShipSpecialColony;
@@ -94,7 +100,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         return bestDesign;
     }
     private void countdownObsoleteDesigns() {
-        if(((empire.shipMaintCostPerBC() > (empire.fleetCommanderAI().maxShipMaintainance() * 1.5) && !empire.atWar() && !empire.fleetCommanderAI().inExpansionMode()))
+        if(((empire.shipMaintCostPerBC() > (empire.fleetCommanderAI().maxShipMaintainance() * 1.5) && empire.enemies().isEmpty() && !empire.fleetCommanderAI().inExpansionMode()))
                 || empire.netIncome() <= 0)
         {
             scrapWorstDesign(empire.netIncome() <= 0);
@@ -216,20 +222,21 @@ public class AIShipDesigner implements Base, ShipDesigner {
         boolean weaponsNeeded = !empire.contactedEmpires().isEmpty();
         // current design is "properlyArmed" if it is armed &weapons needed or unarmed & weapons unneeded
         //always try to make extended, if possible, additional-cost is worth it and once it fits on large, the costs won't matter much anyways
-        boolean extendedFuelNeeded = true;
+        boolean extendedFuelNeeded = !empire.tech().topFuelRangeTech().unlimited;
 
         ShipDesign newDesign = newColonyDesign(weaponsNeeded, extendedFuelNeeded);
-
+        
         if (currDesign.matchesDesign(newDesign, true) && currDesign.active())
         {
+            //System.out.print("\n"+empire.name()+" "+newDesign.name()+" size: "+newDesign.size()+" matches with "+currDesign.name()+" size: "+currDesign.size()); 
             return;
         }
         
         boolean easyToReplace = shipCounts[currDesign.id()] < 1;
-        
         if (easyToReplace) {
             lab.scrapDesign(currDesign);
             lab.setColonyDesign(newDesign, currSlot);
+            //System.out.print("\n"+empire.name()+" "+newDesign.name()+" will shall replace "+currDesign.name());
             return;
         }
         
@@ -239,6 +246,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         if (slot >= 0) {
             lab.setColonyDesign(newDesign, slot);
             currDesign.becomeObsolete(OBS_COLONY_TURNS);
+            //System.out.print("\n"+empire.name()+" "+newDesign.name()+" put in slot "+slot);
             return;
         }
         else
@@ -247,6 +255,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
             currDesign.becomeObsolete(OBS_COLONY_TURNS);
             scrapWorstDesign(false);
             slot = lab.availableDesignSlot();
+            //System.out.print("\n"+empire.name()+" "+newDesign.name()+" put in slot "+slot+" after scrapping something.");
             lab.setColonyDesign(newDesign, slot);
         }
     }
@@ -300,8 +309,20 @@ public class AIShipDesigner implements Base, ShipDesigner {
         float upgradeThreshold = empire.atWar() ? 1.5f : 1.25f;
         
         float upgradeChance = 1 + currDesign.availableSpace() / currDesign.totalSpace();
-        float currentDPBC = currDesign.firepower(empire.bestEnemyPlanetaryShieldLevel()) / currDesign.cost();
-        float newDPBC = newDesign.firepower(empire.bestEnemyPlanetaryShieldLevel()) / newDesign.cost() ;
+        
+        //assume that the space not used for weapons is well used for other stuff and thus only look at firepower from space for weapons
+        float currentWpnSpc = 0.0f;
+        float newWpnSpc = 0.0f;
+        for (int i=0; i<maxWeapons(); i++)
+        {
+            if(!currDesign.weapon(i).groundAttacksOnly())
+                continue;
+            currentWpnSpc += (currDesign.wpnCount(i) * currDesign.weapon(i).space(currDesign));
+            newWpnSpc += (newDesign.wpnCount(i) * newDesign.weapon(i).space(newDesign));
+        }
+        
+        float currentDPBC = currDesign.firepower(empire.bestEnemyPlanetaryShieldLevel()) / currentWpnSpc;
+        float newDPBC = newDesign.firepower(empire.bestEnemyPlanetaryShieldLevel()) / newWpnSpc;
         if(currentDPBC > 0)
         {
             upgradeChance *= newDPBC / currentDPBC;
@@ -337,10 +358,33 @@ public class AIShipDesigner implements Base, ShipDesigner {
     public void updateFighterDesign() {
         ShipDesignLab lab = lab();
         
-        // recalculate current design's damage vs. current targets
+        boolean needRange = false;
+        
+        for(EmpireView ev : empire().contacts())
+        {
+            for(ShipDesign enemyDesign : ev.empire().shipLab().designs())
+            {
+                if(enemyDesign.scrapped())
+                {
+                    continue;
+                }
+                if(enemyDesign.repulsorRange() > 0)
+                {
+                    needRange = true;
+                }
+            }
+        }
+       
         ShipDesign currDesign = lab.fighterDesign();
-        // if we don't have any faster engines
-        if (currDesign.engine() == lab.fastestEngine() && currDesign.active()) {
+
+        for (int j=0;j<maxSpecials();j++)
+            if(currDesign.special(j).beamRangeBonus() > 0)
+                needRange = false;
+        for(int j=0;j<maxWeapons();j++)
+            if(currDesign.weapon(j).range() > 1)
+                needRange = false;
+        
+        if (currDesign.engine() == lab.fastestEngine() && currDesign.active() && !needRange) {
             // and if the design has less than 10% free space or has less than 25/50/75/100 free space, we assume the redesign has no sense
             // 25/50/75/100 may be a too straight-line set of values
             if ((currDesign.availableSpace()/(currDesign.totalSpace()) < 0.1f)) {
@@ -353,9 +397,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
 
         int currSlot = currDesign.id();
         
-    //    ShipFighterTemplate.setPerTurnDamage(currDesign, empire());
-        NewShipTemplate.setPerTurnShipDamage(currDesign, empire());
-
         // find best hypothetical design vs current targets
         ShipDesign newDesign = newFighterDesign(currDesign.size());
       
@@ -390,8 +431,16 @@ public class AIShipDesigner implements Base, ShipDesigner {
         float upgradeThreshold = empire.atWar() ? 1.5f : 1.25f;
         
         float upgradeChance = 1 + currDesign.availableSpace() / currDesign.totalSpace();
-        float currentDPBC = currDesign.firepowerAntiShip(empire.bestEnemyShieldLevel()) / currDesign.cost();
-        float newDPBC = newDesign.firepowerAntiShip(empire.bestEnemyShieldLevel()) / newDesign.cost() ;
+
+        float currentWpnSpc = 0.0f;
+        float newWpnSpc = 0.0f;
+        for (int i=0; i<maxWeapons(); i++)
+        {
+            currentWpnSpc += (currDesign.wpnCount(i) * currDesign.weapon(i).space(currDesign));
+            newWpnSpc += (newDesign.wpnCount(i) * newDesign.weapon(i).space(newDesign));
+        }
+        float currentDPBC = currDesign.firepowerAntiShip(empire.bestEnemyShieldLevel()) / currentWpnSpc;
+        float newDPBC = newDesign.firepowerAntiShip(empire.bestEnemyShieldLevel()) / newWpnSpc;
         if(currentDPBC > 0)
         {
             upgradeChance *= newDPBC / currentDPBC;
@@ -404,7 +453,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         //System.out.print("\n"+galaxy().currentYear()+" "+empire.name()+" Fighter upgrade "+currDesign.name()+" val: "+upgradeChance+" DPBC: "+newDPBC / currentDPBC+" better-Engine: "+betterEngine+" betterArmor: "+betterArmor);
         
         //System.out.print("\n"+empire.name()+" designed new fighter which is "+upgradeChance+" better and should go to slot: "+slot);
-        if (!betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) )
+        if (!betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) && !needRange)
             return;
 
         // if there is a slot available, use it for the new design
@@ -452,30 +501,62 @@ public class AIShipDesigner implements Base, ShipDesigner {
     public ShipDesign newColonyDesign(boolean weaponNeeded, boolean extendedRangeNeeded) {
         ShipDesignLab lab = lab();
         ShipDesign design = lab.newBlankDesign(ShipDesign.LARGE);
+        lab.nameDesign(design);
         design.special(0, bestColonySpecial());
         design.engine(lab.fastestEngine());
         design.mission(ShipDesign.COLONY);
         design.maxUnusedTurns(OBS_COLONY_TURNS);
 
-        // AIs will always put 1 beam weapon on their colony ships if AI contact made
-        if (weaponNeeded) {
-            ShipWeapon bestWpn = lab.bestUnlimitedShotWeapon(design, 1);
-            if (bestWpn != null)
-                design.addWeapon(bestWpn, 1);
+        boolean allowHuge = false;
+        boolean unexploredInRange = false;
+        
+        for(StarSystem unexplored:empire.unexploredSystems())
+        {
+            if(empire.sv.inShipRange(unexplored.id))
+            {
+                unexploredInRange = true;
+                break;
+            }
         }
-
+        
+        float rangeTechLevelThreshold = 9;
+        
+        rangeTechLevelThreshold /= max(1.0f, session().researchMapSizeAdjustment());
+        
+        //System.out.print("\n"+empire.name()+" rangeTechLevelThreshold for galaxysize/empires: "+rangeTechLevelThreshold);
+        
+        if(session().options().selectedResearchRate().equals(RESEARCH_SLOW))
+            rangeTechLevelThreshold /= sqrt(9/3.0f);
+        else if(session().options().selectedResearchRate().equals(RESEARCH_SLOWER))
+            rangeTechLevelThreshold /= sqrt(9);
+        else if(session().options().selectedResearchRate().equals(RESEARCH_SLOWEST))
+            rangeTechLevelThreshold /= sqrt(9*5);
+            
+        if(empire.uncolonizedPlanetsInRange(empire.shipRange()).isEmpty() 
+                && empire.enemies().isEmpty()
+                && !unexploredInRange
+                && !empire.uncolonizedPlanetsInRange(empire.scoutRange()).isEmpty()
+                && (empire.tech().propulsion().techLevel() >= rangeTechLevelThreshold && empire.tech().researchingShipRange() <= empire.shipRange() || empire.tech().propulsion().techLevel() >= 2 * rangeTechLevelThreshold))
+            allowHuge = true;
+            
+        //System.out.print("\n"+empire.name()+" colonizable in normal range: "+empire.uncolonizedPlanetsInRange(empire.shipRange()).size()+" colonizable in extended-range: "+empire.uncolonizedPlanetsInRange(empire.scoutRange()).size()+" unexplored in range: "+unexploredInRange+" huge allowed: "+allowHuge+" rtlt: "+rangeTechLevelThreshold);
         // if we don't need regular-range colony ship
         if (extendedRangeNeeded) {
-            ShipSpecial prevSpecial = design.special(1);
             ShipSpecial special = lab.specialReserveFuel();
+            ShipSpecial prevSpecial = design.special(1);
             design.special(1, special);
             design.setSmallestSize();
-            if (design.size() > ShipDesign.LARGE)
+            if (design.size() > ShipDesign.LARGE
+                    && !allowHuge)
                 design.special(1, prevSpecial);
         }
-
         design.setSmallestSize();
-        lab.nameDesign(design);
+        //ail: only if we now still have room, we put a weapon on it. Extended range and smaller size is way more important than a weapon without computer
+        if (weaponNeeded) {
+            ShipWeapon bestWpn = lab.bestUnlimitedShotWeapon(design, 1);
+            if (bestWpn != null && design.availableSpace() >= bestWpn.space(design))
+                design.addWeapon(bestWpn, 1);
+        }
         lab.iconifyDesign(design);
         return design;
     }

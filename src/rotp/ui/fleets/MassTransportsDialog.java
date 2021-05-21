@@ -142,7 +142,7 @@ public class MassTransportsDialog extends BasePanel {
         footerUI.close();
     }
     private void setBoundsH(int h) {
-        setBounds(scaled(150),scaled(100),scaled(700),h);
+        setBounds(scaled(150),scaled(100),scaled(730),h);
     }
     private void initModel() {
         setBoundsH(scaled(600));
@@ -180,7 +180,7 @@ public class MassTransportsDialog extends BasePanel {
             String title = text("FLEETS_TRANSPORTS_TITLE");
             int titleW = g.getFontMetrics().stringWidth(title);
             g.setColor(SystemPanel.orangeText);
-            g.drawString(title, s20,h-s10);
+            drawString(g,title, s20,h-s10);
 
             int warnW = w-s20-titleW-s20;
             // draw warning
@@ -214,9 +214,13 @@ public class MassTransportsDialog extends BasePanel {
         @Override
         protected List<StarSystem> systems()  { return sourceSystems;  }
         @Override
-        protected StarSystem selectedSystem() { return selectedSystem != null ? selectedSystem : systems().get(0); }
+        protected StarSystem lastSelectedSystem() { return selectedSystem != null ? selectedSystem : systems().get(0); }
         @Override
         protected void selectedSystem(StarSystem sys, boolean updateFieldValues) { selectedSystem = sys; }
+        @Override
+        protected void shiftSelectedSystem(StarSystem sys, boolean updateFieldValues) { selectedSystem = sys; }
+        @Override
+        protected void controlSelectedSystem(StarSystem sys, boolean updateFieldValues) { selectedSystem = sys; }
         @Override
         protected boolean selectRows()  { return false; }
         @Override
@@ -233,6 +237,7 @@ public class MassTransportsDialog extends BasePanel {
         @Override
         protected void postInit() {
             Column rowNumCol =  newRowNumColumn("PLANETS_LIST_NUM", 15, RIGHT);
+            Column flagCol = newSystemFlagColumn("", "FLAG", 30, palette.black, StarSystem.VFLAG, LEFT);
             Column nameCol = newSystemDataColumn("PLANETS_LIST_NAME", "NAME", 140, palette.black, StarSystem.NAME, LEFT);
             Column populationCol = newSystemDataColumn("PLANETS_LIST_POP", "POPULATION", 60, palette.black, StarSystem.POPULATION, RIGHT);
             Column sizeCol = newSystemDataColumn("PLANETS_LIST_SIZE", "SIZE", 60, palette.black, StarSystem.CURRENT_SIZE, RIGHT);
@@ -242,6 +247,7 @@ public class MassTransportsDialog extends BasePanel {
 
             view = new DataView();
             view.addColumn(rowNumCol);
+            view.addColumn(flagCol);
             view.addColumn(nameCol);
             view.addColumn(populationCol);
             view.addColumn(sizeCol);
@@ -364,7 +370,7 @@ public class MassTransportsDialog extends BasePanel {
                 int detailW = x1-x3b-s20;
                 g.setColor(SystemPanel.whiteText);
                 scaledFont(g0, transportDetail, detailW, 18, 16);
-                g.drawString(transportDetail, x3b, buttonY+buttonH-s10);
+                drawString(g,transportDetail, x3b, buttonY+buttonH-s10);
             }
 
             // transfer button

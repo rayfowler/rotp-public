@@ -44,7 +44,7 @@ import rotp.ui.RotPUI;
 import rotp.ui.main.SystemPanel;
 
 public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseMotionListener, ActionListener {
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;    
     static final int SCIENTIST_VIEW = 0;
     static final int SPY_VIEW = 1;
     static final int TROOPER_VIEW = 2;
@@ -62,6 +62,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
     private int view;
     private int mode;
     private int background;
+    private boolean researchedTech = false;
     String title;
     private Tech tech;
     private StarSystem system;
@@ -129,8 +130,10 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         background = BACKGROUND_LABORATORY;
         tech = tech(techId);
         sourceEmpire = player();
+        researchedTech = true;
         player().race().resetScientist();
-        title = text("TECH_DISCOVERY_TITLE", text(player().raceName()), text(tech().cat.key()));
+        title = text("TECH_DISCOVERY_TITLE", text(tech().cat.key()));
+        title = player().replaceTokens(title, "player");
         finished = false;
         mission = null;
         frameEmpire1 = null;
@@ -145,10 +148,13 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         view = SCIENTIST_VIEW;
         mode = MODE_SHOW_TECH;
         background = BACKGROUND_ALIEN_LAB;
+        researchedTech = false;
         tech = tech(techId);
         sourceEmpire = gal.empire(empId);
         player().race().resetScientist();
-        title = text("TECH_TRADED_TITLE", text(player().raceName()), sourceEmpire.raceName());
+        title = text("TECH_TRADED_TITLE");
+        title = player().replaceTokens(title, "player");
+        title = sourceEmpire.replaceTokens(title, "alien");
         finished = false;
         mission = null;
         frameEmpire1 = null;
@@ -163,6 +169,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         view = TROOPER_VIEW;
         mode = MODE_SHOW_TECH;
         background = empId == Empire.NULL_ID ? BACKGROUND_RUINS : BACKGROUND_ALIEN_LAB;
+        researchedTech = false;
         tech = tech(techId);
         system = gal.system(sysId);
         sourceEmpire = empId == Empire.NULL_ID ? null : gal.empire(empId);  // could be null for artifact planets
@@ -185,11 +192,13 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         view = TROOPER_VIEW;
         mode = MODE_SHOW_TECH;
         background = BACKGROUND_DERELICT;
+        researchedTech = false;
         tech = tech(techId);
         mission = null;
         sourceEmpire = null;
         player().race().resetScientist();
-        title = empId == -2 ? text("TECH_GUARDIAN_TITLE", text(player().raceName())) :  text("TECH_DERELICT_TITLE", text(player().raceName()));
+        title = empId == -2 ? text("TECH_GUARDIAN_TITLE") :  text("TECH_DERELICT_TITLE");
+        title = player().replaceTokens(title, "player");
         finished = false;
         frameEmpire1 = null;
         frameEmpire2 = null;
@@ -203,6 +212,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         view = SPY_VIEW;
         mode = MODE_SHOW_TECH;
         background = BACKGROUND_ALIEN_LAB;
+        researchedTech = false;
         tech = m.choice();
         system = m.targetSystem();
         sourceEmpire = gal.empire(empId);
@@ -389,7 +399,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         int sw = g.getFontMetrics().stringWidth(subtitle);
         int x2 = x0+(boxW-sw)/2;
         int y2 = y1+s30;
-        g.drawString(subtitle, x2, y2);
+        drawString(g,subtitle, x2, y2);
 
         int x3a = x0+mgn+buttonPad;
         int x3b = x3a+buttonW+buttonPad;
@@ -573,14 +583,14 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         g.setFont(narrowFont(16));
         for (String line: detailLines) {
             y0 += detailLineH;
-            g.drawString(line, x0, y0);
+            drawString(g,line, x0, y0);
         }
         
         if (!detail2.isEmpty()) {
             y0 = y0+s20;
             for (String line: detail2Lines) {
                 y0 += detailLineH;
-                g.drawString(line, x0, y0);
+                drawString(g,line, x0, y0);
             }
         }
     }
@@ -621,7 +631,9 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
             player().lowerECOToCleanIfEcoComplete();
         finished = true;
         repaint();
-        RotPUI.instance().selectMainPanel();
+        
+        if (!researchedTech)
+            RotPUI.instance().selectMainPanel();
         session().resumeNextTurnProcessing();
     }
     private void handleShowTechAction() {

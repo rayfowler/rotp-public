@@ -1110,7 +1110,7 @@ SHIPWPN_18_DETAIL      | An advanced phasor capable of firing 3 burst per turn f
 SHIPWPN_19_NAME        | Tri-Focus Plasma Cannon
 SHIPWPN_19_DETAIL      | Fires a triad of high-intensity plasma beams capable of inflicting 20 to 50 points of damage.
 
-SHIPWPN_20_NAME        | Stellar Convertor
+SHIPWPN_20_NAME        | Stellar Converter
 SHIPWPN_20_BRIEF       | Hits All Four Shields
 SHIPWPN_20_DETAIL      | Surrounds the target with an extremely powerful matter-energy conversion field, inflicting four 10 to 35-point attacks. It has a range of 3 spaces.
 

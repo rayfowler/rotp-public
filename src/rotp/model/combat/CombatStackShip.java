@@ -126,6 +126,8 @@ public class CombatStackShip extends CombatStack {
     @Override
     public void recordKills(int num) { empire.shipLab().recordKills(design, num); }
     @Override
+    public boolean ignoreRepulsors()    { return cloaked || canTeleport(); }
+    @Override
     public void becomeDestroyed()    {
         fleet.removeShips(design.id(), num, true);
         empire.shipLab().recordDestruction(design, num);
@@ -195,7 +197,10 @@ public class CombatStackShip extends CombatStack {
         for (int i=0;i<weapons.size();i++) {
             ShipComponent wpn = weapons.get(i);
             // if we are bombing a planet, ignore other weapons
-            if (tgt.isColony() || wpn.groundAttacksOnly())
+            //ail: if we count specials as weapons, we'll never get close when we have long-range-specials but short range-weapons
+            if(wpn.isSpecial())
+                continue;
+            if (tgt.isColony() && wpn.groundAttacksOnly())
                 return 1;
             else if (wpn.isMissileWeapon()) 
                 // missiles move by distance, not tiles, so adjust minimum range downward by sqrt(2)
@@ -265,6 +270,9 @@ public class CombatStackShip extends CombatStack {
         
         for (ShipComponent c: weapons)
             c.reload();
+        //ail: reset selectedWeaponIndex too, so that ship will consistently start from the same weapon each new turn
+        if (weapons.size() > 0)
+            selectedWeaponIndex = 0;
     }
     @Override
     public void endTurn() {
@@ -433,7 +441,17 @@ public class CombatStackShip extends CombatStack {
         for (int i=0;i<weapons.size();i++) {
             ShipComponent comp = weapons.get(i);
             if (!comp.isLimitedShotWeapon() || (roundsRemaining[i] > 0)) 
-                kills += comp.estimatedKills(this, target, num * roundsRemaining[i]);
+            {
+                //ail: take attack and defense into account
+                float hitPct = 1.0f;
+                if(comp.isBeamWeapon())
+                    hitPct = (5 + attackLevel - target.beamDefense) / 10;
+                if(comp.isMissileWeapon())
+                    hitPct = (5 + attackLevel - target.missileDefense) / 10;
+                hitPct = max(.05f, hitPct);
+                //ail: we totally have to consider the weapon-count too!
+                kills += hitPct * comp.estimatedKills(this, target, weaponCount[i] * num * roundsRemaining[i]);
+            }
         }
         return kills;
     }
@@ -454,7 +472,7 @@ public class CombatStackShip extends CombatStack {
 
         return shipComponentCanAttack(target, wpn);
     }
-    private boolean shipComponentCanAttack(CombatStack target, int index) {
+    public boolean shipComponentCanAttack(CombatStack target, int index) {
         if (target == null)
             return false;
 
@@ -513,7 +531,7 @@ public class CombatStackShip extends CombatStack {
     }
     @Override
     public boolean shipComponentIsUsed(int index) {
-        return (shotsRemaining[index] < 1)  || (roundsRemaining[index] < 1);
+        return (shotsRemaining[index] < 1)  || (roundsRemaining[index] < 1) || (wpnTurnsToFire[index] > 1);
     }
     @Override
     public boolean shipComponentIsOutOfMissiles(int index) {
@@ -563,7 +581,9 @@ public class CombatStackShip extends CombatStack {
         fleet.removeShips(design.id(), shipsLost, true);
 
         // record losses
-        mgr.results().addShipDestroyed(design, shipsLost);
+        if (!destroyed())  // if destroyed, already recorded lose in super.loseShip()
+            mgr.results().addShipDestroyed(design, shipsLost);
+        
         empire.shipLab().recordDestruction(design, shipsLost);
         mgr.currentStack().recordKills(shipsLost);
     }
@@ -626,7 +646,7 @@ public class CombatStackShip extends CombatStack {
         int x2 = max(x1, x1+((stackW-sw2)/2));
 
         g.setColor(Color.lightGray);
-        g.drawString(name, x2, y2);
+        drawString(g, name, x2, y2);
 
         if (inStasis) {
             g.setColor(TechStasisField.STASIS_COLOR);

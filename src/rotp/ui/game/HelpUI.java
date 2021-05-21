@@ -119,7 +119,7 @@ public class HelpUI extends BasePanel implements MouseListener {
             int x0 = spec.x + s15;
             int y0 = spec.y + lineH+s7;
             for (String line: lines) {
-                g.drawString(line, x0, y0);
+                drawString(g,line, x0, y0);
                 y0 += lineH;
             }
             // draw line to target

@@ -476,7 +476,7 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
             int sw = g.getFontMetrics().stringWidth(title);
             fileNameBox.setBounds(x, y-lineH,sw,lineH);
             g.setColor(textC);
-            g.drawString(title, x, y-(lineH/5));
+            drawString(g,title, x, y-(lineH/5));
         }
         private void drawSizeButton(Graphics g, int x, int y) {
             Color textC = fileSizeBox == hoverBox ? GameUI.textHoverColor() : GameUI.textColor();
@@ -485,7 +485,7 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
             int sw = g.getFontMetrics().stringWidth(title);
             fileSizeBox.setBounds(x-sw, y-lineH, sw, lineH);
             g.setColor(textC);
-            g.drawString(title, x-sw, y-(lineH/5));
+            drawString(g,title, x-sw, y-(lineH/5));
         }
         private void drawDateButton(Graphics g, int x, int y) {
             Color textC = fileDateBox == hoverBox ? GameUI.textHoverColor() : GameUI.textColor();
@@ -494,7 +494,7 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
             int sw = g.getFontMetrics().stringWidth(title);
             fileDateBox.setBounds(x-sw, y-lineH, sw, lineH);
             g.setColor(textC);
-            g.drawString(title, x-sw, y-(lineH/5));
+            drawString(g,title, x-sw, y-(lineH/5));
         }
         private void scrollY(int deltaY) {
             yOffset += deltaY;
@@ -514,19 +514,19 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
             int sw0 = g.getFontMetrics().stringWidth(filename);
             int maxW = w-scaled(250);
             g.setClip(x+s25, y+h-s30, maxW, s30);
-            g.drawString(filename, x+s30, y+h-s8);
+            drawString(g,filename, x+s30, y+h-s8);
             g.setClip(null);
             if (sw0 > maxW)
-                g.drawString(text("LOAD_GAME_TOO_LONG"), x+s25+maxW, y+h-s8);
+                drawString(g,text("LOAD_GAME_TOO_LONG"), x+s25+maxW, y+h-s8);
 
             if (sz > 0) {
                 String szStr = shortFmt(sz);
                 int sw1 = g.getFontMetrics().stringWidth(szStr);
-                g.drawString(szStr, x+w-scaled(150)-sw1, y+h-s8);
+                drawString(g,szStr, x+w-scaled(150)-sw1, y+h-s8);
             }
 
             int sw2 = g.getFontMetrics().stringWidth(dt);
-            g.drawString(dt, x+w-s30-sw2, y+h-s8);
+            drawString(g,dt, x+w-s30-sw2, y+h-s8);
         }
         @Override
         public void mouseDragged(MouseEvent e) {

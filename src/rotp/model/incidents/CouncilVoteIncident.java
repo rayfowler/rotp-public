@@ -103,6 +103,7 @@ public class CouncilVoteIncident extends DiplomaticIncident {
         s1 = galaxy().empire(empVoter).replaceTokens(s1, "voter");
         s1 = galaxy().empire(empCandidate).replaceTokens(s1, "candidate");
         s1 = galaxy().empire(empRival).replaceTokens(s1, "rival");
+        s1 = galaxy().empire(empRival).replaceTokens(s1, "other");  // sometimes used instead of rival
         return s1;
     }
 }

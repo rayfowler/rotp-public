@@ -22,11 +22,11 @@ import rotp.ui.diplomacy.DialogueManager;
 
 public class SpyConfessionIncident extends DiplomaticIncident {
     private static final long serialVersionUID = 1L;
-    final int empVictim;
-    final int empSpy;
-    final int remainingSpies;
-    final int missionType;
-    final String mission;
+    public final int empVictim;
+    public final int empSpy;
+    public final int remainingSpies;
+    public final int missionType;
+    public final String mission;
     public SpyConfessionIncident(EmpireView ev, SpyNetwork spies) {
         remainingSpies = spies.numActiveSpies();
         empVictim = ev.owner().id;
@@ -34,8 +34,11 @@ public class SpyConfessionIncident extends DiplomaticIncident {
         
         if (spies.isEspionage()) {
             mission = text("NOTICE_SPYING_MISSION_ESPIONAGE");
-            severity = max(-20, -5+ev.embassy().currentSpyIncidentSeverity());
             missionType = 1;
+            
+            if (ev.owner().diplomatAI().setSeverityAndDuration(this, ev.embassy().currentSpyIncidentSeverity()))
+                return;
+            severity = max(-20, -5+ev.embassy().currentSpyIncidentSeverity());
             duration = 5;
         }
         else if (spies.isHide() && ev.owner().diplomatAI().leaderHatesAllSpies()) {
@@ -57,13 +60,13 @@ public class SpyConfessionIncident extends DiplomaticIncident {
             duration = 2;
         }
 
-        if (ev.owner().leader().isXenophobic())
+        if (ev.owner().diplomatAI().leaderHatesAllSpies())
             duration *= 2;
         
         dateOccurred = galaxy().currentYear();
     }
     @Override
-    public boolean isSpying()           { return (missionType > 0) || galaxy().empire(empVictim).leader().isXenophobic() ; }
+    public boolean isSpying()           { return (missionType > 0) || galaxy().empire(empVictim).diplomatAI().leaderHatesAllSpies() ; }
     @Override
     public int timerKey()               { return DiplomaticEmbassy.TIMER_SPY_WARNING; }
     @Override

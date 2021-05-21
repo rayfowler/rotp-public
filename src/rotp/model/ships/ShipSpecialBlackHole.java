@@ -50,9 +50,9 @@ public final class ShipSpecialBlackHole extends ShipSpecial {
     @Override
     public void fireUpon(CombatStack source, CombatStack target, int count) {
         float pct = (random()*.75f) + .25f;
-		// modnar: bug fix for Black Hole damage numbers
-		float pctLoss = (float)Math.max(0.0f, pct - (target.shieldLevel() / 50) - target.blackHoleDef());
-        int dmg = (int) (pctLoss*target.maxHits*target.num);
+        // modnar: bug fix for Black Hole damage numbers
+        float pctLoss = (float)Math.max(0.0f, pct - (target.shieldLevel() / 50) - target.blackHoleDef());
+        float dmg = Math.round(pctLoss*target.num)*target.maxHits;
         tech().drawSpecialAttack(source, target, count, dmg);
         target.takeBlackHoleDamage(pct);
     }

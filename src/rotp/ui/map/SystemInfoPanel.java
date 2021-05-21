@@ -27,6 +27,8 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 import java.awt.geom.Ellipse2D;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -173,7 +175,7 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
             }
         }
     }
-    final class SystemSummaryPane extends BasePanel implements MouseMotionListener, MouseListener {
+    final class SystemSummaryPane extends BasePanel implements MouseMotionListener, MouseListener, MouseWheelListener {
         private static final long serialVersionUID = 1L;
         Shape hoverBox;
         Rectangle flagBox = new Rectangle();
@@ -182,6 +184,7 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
             setPreferredSize(new Dimension(getWidth(), s40));
             addMouseListener(this);
             addMouseMotionListener(this);
+            addMouseWheelListener(this);
         }
         @Override
         public void paintComponent(Graphics g0) {
@@ -207,7 +210,10 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
         }
         public void toggleFlagColor(boolean rightClick) {
             StarSystem sys = systemViewToDisplay();
-            player().sv.view(sys.id).toggleFlagColor(rightClick);
+            if (rightClick)
+                player().sv.resetFlagColor(sys.id);
+            else
+                player().sv.toggleFlagColor(sys.id);
             parent.repaint();
         }
         @Override
@@ -242,6 +248,17 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
             if (hoverBox != null) {
                 hoverBox = null;
                 repaint();
+            }
+        }
+        @Override
+        public void mouseWheelMoved(MouseWheelEvent e) {
+            if (hoverBox == flagBox) {
+                StarSystem sys = systemViewToDisplay();
+                if (e.getWheelRotation() < 0)
+                    player().sv.toggleFlagColor(sys.id, true);
+                else
+                    player().sv.toggleFlagColor(sys.id, false);
+                parent.repaint();
             }
         }
     }
@@ -309,7 +326,7 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
             List<String> lines = wrappedLines(g, desc, getWidth()-s20);
             int y0 = s47;
             for (String line: lines) {
-                g.drawString(line, s10, y0);
+                drawString(g,line, s10, y0);
                 y0 += s18;
             }
             
@@ -387,9 +404,9 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
                 String desc = ev.description();
                 List<String> descLines = this.wrappedLines(g, desc, w0-s40);
                 int yrOffset = (descLines.size()-1)*(lineH/2);
-                g.drawString(yr, x0, y0+yrOffset);
+                drawString(g,yr, x0, y0+yrOffset);
                 for (String line: descLines) {
-                    g.drawString(line, x0+s40, y0);
+                    drawString(g,line, x0+s40, y0);
                     y0 += lineH;
                 }
                 y0 += s3;

@@ -129,7 +129,7 @@ public class FleetMassDeployPanel extends BasePanel {
             List<String> descLines = scaledNarrowWrappedLines(g, desc, w-s20, 2, 16, 14);
             for (String line: descLines) {
                 y0 += s16;
-                g.drawString(line, s10, y0);
+                drawString(g,line, s10, y0);
             }
 
             if (undeployCount == 0)
@@ -268,7 +268,7 @@ public class FleetMassDeployPanel extends BasePanel {
             int y0 = h-s10-(descLines.size()*s20);
             for (String line: descLines) {
                 y0 += s18;
-                g.drawString(line, s10, y0);
+                drawString(g,line, s10, y0);
             }
         }
     }

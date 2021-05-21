@@ -79,6 +79,10 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     private SpaceMonster monster;
     private final List<StarSystemEvent> events = new ArrayList<>();
 
+    public int transportDestId;
+    public int transportAmt;
+    public float transportTravelTime;
+    
     // public so we can access without lazy inits from accessors
     public transient SystemTransportSprite transportSprite;
     public transient ShipRelocationSprite rallySprite;
@@ -89,8 +93,16 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     private transient boolean displayed = false;
 
     public SystemTransportSprite transportSprite() {
-        if (transportSprite == null)
+        if ((transportSprite == null) && isColonized()) {
             transportSprite = new SystemTransportSprite(this);
+            if (transportAmt > 0) {
+                transportSprite.clickedDest(galaxy().system(transportDestId));
+                if (transportTravelTime == 0)
+                    transportSprite.accept();
+                else
+                    transportSprite.accept(transportTravelTime);
+            }
+        }
         return transportSprite;
     }
     public ShipRelocationSprite rallySprite() {
@@ -411,6 +423,10 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     public static Comparator<StarSystem> SHIELD             = (StarSystem sys1, StarSystem sys2) -> Base.compare(sys1.colony().defense().shieldLevel(),sys2.colony().defense().shieldLevel());
     public static Comparator<StarSystem> INVASION_PRIORITY  = (StarSystem sys1, StarSystem sys2) -> Base.compare(sys1.empire().generalAI().invasionPriority(sys1),sys2.empire().generalAI().invasionPriority(sys2));
     public static Comparator<StarSystem> TRANSPORT_PRIORITY = (StarSystem sys1, StarSystem sys2) -> Base.compare(sys1.empire().fleetCommanderAI().transportPriority(sys1),sys2.empire().fleetCommanderAI().transportPriority(sys2));
+    public static Comparator<StarSystem> VFLAG = (StarSystem sys1, StarSystem sys2) -> {
+        Empire pl = Empire.thePlayer();
+        return Base.compare(pl.sv.flagColorId(sys1.id),pl.sv.flagColorId(sys2.id));
+    };
     public static Empire VIEWING_EMPIRE;
     public static Comparator<StarSystem> VDISTANCE = (StarSystem sys1, StarSystem sys2) -> {
         return Base.compare(VIEWING_EMPIRE.sv.distance(sys1.id),VIEWING_EMPIRE.sv.distance(sys2.id));
@@ -511,7 +527,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
 
         boolean drawStar = map.parent().drawStar(this);
         if (drawStar) {
-            if (map.parent().showAlerts()) {
+            if (!session().performingTurn()) {
                 SystemView sv = pl.sv.view(id);
                 Color c0 = map.parent().alertColor(sv);
                 if (c0 != null) 
@@ -580,13 +596,13 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
                 int boxSize = r0;
                 int yAdj = drawStar ? scaled(fontSize)+boxSize : scaled(fontSize)/2;
                 if (!s1.isEmpty()) {
-                    g2.drawString(s1, x0-(sw/2), y0+yAdj);
+                    drawString(g2,s1, x0-(sw/2), y0+yAdj);
                     y0 += scaled(fontSize-2);
                 }
                 if (!s2.isEmpty()) {
                     g2.setFont(narrowFont(fontSize-2));
                     int sw2 = g2.getFontMetrics().stringWidth(s2);
-                    g2.drawString(s2, x0-(sw2/2), y0+yAdj);
+                    drawString(g2,s2, x0-(sw2/2), y0+yAdj);
                 }
 
                 g2.setFont(prevFont);
@@ -638,17 +654,17 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
                 g2.setColor(map.parent().systemLabelColor(this));
                 if (!label1.isEmpty()) {
                     g2.setFont(narrowFont(fontSize));
-                    g2.drawString(label1, x0-(sw/2), y0+yAdj+BasePanel.s1);
+                    drawString(g2,label1, x0-(sw/2), y0+yAdj+BasePanel.s1);
                     y0 += scaled(fontSize-2);
                     g2.setFont(narrowFont(fontSize*3/5));
                     g2.setColor(Color.black);
-                    g2.drawString(lbl, x0-(swData/2), y0+yAdj-(fontH*3/16));
+                    drawString(g2,lbl, x0-(swData/2), y0+yAdj-(fontH*3/16));
                 }
                 if (!label2.isEmpty()) {
                     g2.setColor(map.parent().systemLabelColor(this));
                     g2.setFont(narrowFont(fontSize-2));
                     int sw2 = g2.getFontMetrics().stringWidth(label2);
-                    g2.drawString(label2, x0-(sw2/2), y0+yAdj+fontH+BasePanel.s2);
+                    drawString(g2,label2, x0-(sw2/2), y0+yAdj+fontH+BasePanel.s2);
                 }
                 g2.setFont(prevFont);
                 box.x = x0-(sw/2);
