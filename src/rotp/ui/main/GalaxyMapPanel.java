@@ -307,36 +307,20 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     // mapX(float) and mapY(float) will translate any arbitrary "real"
     // coordinates into map coordinates
     public int mapX(float x) {
-        float minX = mapMinX();
-        float maxX = mapMaxX();
-        int w = getSize().width;
-
-        float rX = (x-minX)/(maxX-minX);
-        int res = (int) (rX*w);
-        return res;
+        float rX = (x-center.x())/scaleX()+.4f;
+        return (int) (rX*getSize().width);
     }
     public int mapY(float y) {
-        float minY = mapMinY();
-        float maxY = mapMaxY();
-        int h = getSize().height;
-        float rY = (y-minY)/(maxY-minY);
-        int res = (int) (rY*h);
-        return res;
+        float rY = (y-center.y())/scaleY()+.4f;
+        return (int) (rY*getSize().height);
     }
-    public float fMapX(float x) {
-        float minX = mapMinX();
-        float maxX = mapMaxX();
-        int w = getSize().width;
-
-        float rX = (x-minX)/(maxX-minX);
-        return rX*w;
+    private float fMapX(float x) {
+        float rX = (x-center.x())/scaleX()+.4f;
+        return rX*getSize().width;
     }
-    public float fMapY(float y) {
-        float minY = mapMinY();
-        float maxY = mapMaxY();
-        int h = getSize().height;
-        float rY = (y-minY)/(maxY-minY);
-        return rY*h;
+    private float fMapY(float y) {
+        float rY = (y-center.y())/scaleY()+.4f;
+        return rY*getSize().height;
     }
     public void setBounds(float x1, float x2, float y1, float y2) {
         float scaleFromY = y2-y1;
@@ -565,7 +549,6 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
             return;
 
         Empire pl = player();
-        Color emptyBackground = Color.black;
         Color normalBorder = emp.shipBorderColor();
         Color extendedBorder = emp.scoutBorderColor();
         Color normalBackground = emp.empireRangeColor();
@@ -584,20 +567,18 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         float scale = getWidth()/scaleX();
 
         AffineTransform prevXForm = g.getTransform();
-        float defScale = scale;
-        if ((areaOffsetX != 0) || (areaOffsetY != 0) || (scale != defScale)) {
+        if ((areaOffsetX != 0) || (areaOffsetY != 0)) {
             float ctrX = parent.mapFocus().x();
             float ctrY = parent.mapFocus().y();
             float mapOffsetX = fMapX(ctrX)- fMapX(ctrX-areaOffsetX);          
             float mapOffsetY = fMapY(ctrY)-fMapY(ctrY-areaOffsetY);
-            AffineTransform areaOffsetXForm = g.getTransform();
-            areaOffsetXForm.setToIdentity();
-            areaOffsetXForm.translate(mapOffsetX, mapOffsetY);
-//            areaOffsetXForm.scale(scale/defScale,scale/defScale);
-            g.setTransform(areaOffsetXForm);
+            AffineTransform xForm = g.getTransform();
+            xForm.setToIdentity();
+            xForm.translate(mapOffsetX, mapOffsetY);
+            g.setTransform(xForm);
         }
-        float extR = (scoutRange*defScale);
-        float baseR = (shipRange*defScale);
+        float extR = scoutRange*scale;
+        float baseR = shipRange*scale;
         Area tmpRangeArea = scoutRangeArea;
         if (tmpRangeArea == null) {
             tmpRangeArea = new Area();
@@ -616,9 +597,9 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         if (tmpRangeArea == null) {
             tmpRangeArea = new Area();
             for (StarSystem sv: alliedSystems)
-                tmpRangeArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-baseR, mapY(sv.y())-baseR, 2*baseR, 2*baseR) ));       
+                tmpRangeArea.add(new Area( new Ellipse2D.Float(fMapX(sv.x())-baseR, fMapY(sv.y())-baseR, 2*baseR, 2*baseR) ));       
             for (StarSystem sv: systems)
-                tmpRangeArea.add(new Area( new Ellipse2D.Float(mapX(sv.x())-baseR, mapY(sv.y())-baseR, 2*baseR, 2*baseR) ));       
+                tmpRangeArea.add(new Area( new Ellipse2D.Float(fMapX(sv.x())-baseR, fMapY(sv.y())-baseR, 2*baseR, 2*baseR) ));       
             shipRangeArea = tmpRangeArea;
         }       
         
