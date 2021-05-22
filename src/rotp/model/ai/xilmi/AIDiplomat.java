@@ -695,8 +695,42 @@ public class AIDiplomat implements Base, Diplomat {
     }
     @Override
     public boolean willingToOfferAlliance(Empire e) {
-        //ail: Alliances are just a broken game mechanic. It defies the categorical imperative: If everyone would use it, it would make the whole game pointless
+        EmpireView v = empire.viewForEmpire(e);
+        // if we are asking the player, respect the alliance-countdown
+        // timer to avoid spamming player with requests
+        if (e.isPlayerControlled()) {
+            //return true;
+            if (!v.otherView().embassy().readyForAlliance())
+                return false;
+        }    
+        // is asking for an alliance even allowed per game rules
+        if (!canOfferAlliance(e))
+            return false;       
+        if (v.embassy().alliedWithEnemy())
+            return false;
+        if(empire.generalAI().bestVictim() == e)
+            return false;
+        /*if(popRatioOfAllianceAmongstContatacts(empire) < 1.0/3.0)
+            return true;*/
         return false;
+    }
+    public float popRatioOfAllianceAmongstContatacts(Empire e)
+    {
+        float totalPop = 0;
+        float alliedPop = 0;
+        for(EmpireView ev : empire.contacts())
+        {
+            if(!ev.inEconomicRange())
+                continue;
+            Empire emp = ev.empire();
+            totalPop += emp.totalPlanetaryPopulation();
+            if(e.allies().contains(emp))
+                alliedPop += emp.totalPlanetaryPopulation();
+        }
+        alliedPop += e.totalPlanetaryPopulation();
+        totalPop += e.totalPlanetaryPopulation();
+        System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+"'s allies have "+alliedPop+" of "+" "+totalPop+" "+alliedPop / totalPop);
+        return alliedPop / totalPop;
     }
 //-----------------------------------
 //  JOINT WARS
@@ -732,6 +766,9 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
         // if he's not in ship range, don't bother
         if (!friend.inShipRange(target.id))
+            return false;
+        EmpireView v = friend.viewForEmpire(target);
+        if(v.embassy().atPeace())
             return false;
         return true;
     }
@@ -769,12 +806,12 @@ public class AIDiplomat implements Base, Diplomat {
         if(empire.enemies().contains(target) && !empire.warEnemies().contains(target))
             return agreeToJointWar(requestor, target);
         
-        if(!empire.enemies().isEmpty())
-            return v.refuse(DialogueManager.DECLINE_OFFER, target);
-
          // will always declare war if allied with the requestor and he is already at war with the target
         if (requestor.alliedWith(id(empire)) && requestor.atWarWith(target.id))
             return agreeToJointWar(requestor, target);
+        
+        if(!empire.enemies().isEmpty())
+            return v.refuse(DialogueManager.DECLINE_OFFER, target);
         
         //ail: if the target is our common enemy and together we are stronger than them, we'll accept without a bribe
         //System.out.println(empire.galaxy().currentTurn()+" "+ requestor.name()+" asked "+empire.name()+" to declare joint war on "+target.name());
@@ -1069,6 +1106,7 @@ public class AIDiplomat implements Base, Diplomat {
         // build a priority list for Joint War offers:
         for (Empire target: empire.enemies()) {
             if (willingToOfferJointWar(v.empire(), target)) {
+                //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" asks "+v.empire().name()+" to declare war on "+target.name());
                 v.empire().diplomatAI().receiveOfferJointWar(v.owner(), target); 
                 return;
             }
@@ -1082,6 +1120,15 @@ public class AIDiplomat implements Base, Diplomat {
         if (willingToOfferAlliance(v.empire())) {
             v.empire().diplomatAI().receiveOfferAlliance(v.owner());
             return;
+        }
+        
+        if(empire.alliedWith(v.empId()))
+        {
+            if(!offerableTechnologies(v.empire()).isEmpty())
+            {
+                //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" offers "+offerableTechnologies(v.empire()).get(0).id+" to "+v.empire().name());
+                v.empire().diplomatAI().receiveTechnologyAid(empire, offerableTechnologies(v.empire()).get(0).id);
+            }
         }
 
         if (decidedToExchangeTech(v))
