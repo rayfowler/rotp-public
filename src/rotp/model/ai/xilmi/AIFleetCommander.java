@@ -371,12 +371,6 @@ public class AIFleetCommander implements Base, FleetCommander {
                     transports += empire.enemyTransportsInTransit(current) * empire.maxRobotControls();
                     myTransports += empire.transportsInTransit(current);
                 }
-                //ail: incase we have hyperspace-communications and are headed to current, we have to substract ourself from the values
-                if(fleet.inTransit() && fleet.destination() == current)
-                {
-                    bc -= fleet.bcValue();
-                    bombardDamage -= fleet.expectedBombardDamage(current);
-                }
                 AISystemInfo buffy = new AISystemInfo();
                 buffy.enemyBc = enemyBc;
                 buffy.enemyBombardDamage = enemyBombardDamage;
@@ -387,6 +381,15 @@ public class AIFleetCommander implements Base, FleetCommander {
                 buffy.additionalSystemsInRangeWhenColonized = colonizationBonus;
                 buffy.colonizerEnroute = colonizerEnroute;
                 systemInfoBuffer.put(id, buffy);
+            }
+            //ail: incase we have hyperspace-communications and are headed to current, we have to substract ourself from the values
+            //This needs to happen always, not just when we are about to buffer it
+            //System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" => "+empire.sv.name(current.id)+" bc: "+bc+" bomb: "+bombardDamage);
+            if(fleet.inTransit() && fleet.destination() == current)
+            {
+                bc -= fleet.bcValue();
+                bombardDamage -= fleet.expectedBombardDamage(current);
+                //System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" => "+empire.sv.name(current.id)+" bc: "+bc+" bomb: "+bombardDamage);
             }
             if(empire.sv.isColonized(id))
             {
@@ -453,12 +456,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                     {
                         continue;
                     }
-                    float BonusPerSystem = 0;
-                    if(empire.allColonizedSystems().size() > 0)
-                        BonusPerSystem = 200 * empire.totalPlanetaryPopulation() / empire.allColonizedSystems().size();
-                    float locationBonus = BonusPerSystem * colonizationBonus;
-                    //System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" => "+empire.sv.name(current.id)+" bomb: "+bombardDamage+" hp: "+current.colony().untargetedHitPoints()+" location-bonus: "+locationBonus+" unlocks: "+colonizationBonus+" avg-pop-expected: "+empire.totalPlanetaryPopulation() / empire.allColonizedSystems().size());
-                    if(bombardDamage > locationBonus + current.colony().untargetedHitPoints() && fleet.system() != current)
+                    //System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" => "+empire.sv.name(current.id)+" bomb: "+bombardDamage+" hp: "+current.colony().untargetedHitPoints()+" unlocks: "+colonizationBonus+" avg-pop-expected: "+empire.totalPlanetaryPopulation() / empire.allColonizedSystems().size());
+                    if(bombardDamage > current.colony().untargetedHitPoints() && fleet.system() != current)
                     {
                         continue;
                     }
