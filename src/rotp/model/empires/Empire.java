@@ -1218,19 +1218,15 @@ public final class Empire implements Base, NamedObject, Serializable {
     }
     public boolean canScanTo(IMappedObject loc, List<StarSystem> systems, List<ShipFleet> ships) {
         float planetRange = planetScanningRange();
-        if (planetRange > 0) {
-            for (StarSystem sys: systems) {
-                if (sys.distanceTo(loc) <= planetRange)
-                    return true;
-            }
+        for (StarSystem sys: systems) {
+            if (sys.distanceTo(loc) <= planetRange)
+                return true;
         }
         
         float shipRange = shipScanningRange();
-        if (shipRange > 0) {
-            for (Ship sh: ships) {
-                if (sh.distanceTo(loc) <= shipRange)
-                    return true;
-            }
+        for (Ship sh: ships) {
+            if (sh.distanceTo(loc) <= shipRange)
+                return true;
         }
         return false;
     }
