@@ -258,7 +258,8 @@ public final class TechMissileWeapon extends Tech {
                 c.tech().updateMissileBase();
             }
         }
-        c.shipLab().addWeapon(new ShipWeaponMissile(this, false, shots, range, speed));
+        //ail: all 2-rack-missiles have +1 speed according to official strategy-guide
+        c.shipLab().addWeapon(new ShipWeaponMissile(this, false, shots, range, speed + 1));
         c.shipLab().addWeapon(new ShipWeaponMissile(this, true, shots2, range2, speed));
     }
     public static List<ImageIcon> iconsForType(String typeName) {
