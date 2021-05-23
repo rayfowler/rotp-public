@@ -475,7 +475,8 @@ public class AIScientist implements Base, Scientist {
         if(curr != null)
             val -= curr.level();
         val += t.level();
-        val /= 2;
+        val /= 10;
+        val = max(1, val);
         return val;
     }
     @Override
@@ -485,7 +486,8 @@ public class AIScientist implements Base, Scientist {
         if(curr != null)
             val -= curr.level();
         val += t.level();
-        val /= 3;
+        val /= 10;
+        val = max(1, val);
         return val;
     }
     @Override
@@ -564,13 +566,14 @@ public class AIScientist implements Base, Scientist {
         if(curr != null)
             val -= curr.level();
         val += t.level();
-        val /= 2;
+        val /= 10;
+        val = max(1, val);
         return val;
     }
     @Override
     public float baseValue(TechEcoRestoration t) {
         if (empire.ignoresPlanetEnvironment())
-            return 0;
+            return 1;
         TechEcoRestoration curr = empire.tech().topEcoRestorationTech();
         float val = 0;
         if(curr != null)
@@ -594,7 +597,8 @@ public class AIScientist implements Base, Scientist {
         if(curr != null)
             val -= curr.level();
         val += t.level();
-        val /= 2;
+        val /= 10;
+        val = max(1, val);
         return val;
     }
     @Override
@@ -645,7 +649,7 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechHyperspaceComm t) {
-        return t.level() / 2;
+        return t.level();
     }
     @Override
     public float baseValue(TechImprovedIndustrial t) {
@@ -683,7 +687,8 @@ public class AIScientist implements Base, Scientist {
         if(curr != null)
             val -= curr.level();
         val += t.level();
-        val /= 2.0f;
+        val /= 10.0f;
+        val = max(1, val);
         return val;
     }
     @Override
@@ -781,14 +786,12 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechStasisField t) {
         float val = 0;
         val += t.level();
-        val /= 2;
         return val;
     }
     @Override
     public float baseValue(TechStreamProjector t) {
         float val = 0;
         val += t.level();
-        val /= 2;
         return val;
     }
     @Override
@@ -818,7 +821,7 @@ public class AIScientist implements Base, Scientist {
             }
         }
         if (allEnemiesHaveInterdiction)
-            return 0;
+            return 1;
         float val = 0;
         val += t.level();
         val /= 2;
