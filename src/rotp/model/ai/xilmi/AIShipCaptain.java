@@ -243,40 +243,10 @@ public class AIShipCaptain implements Base, ShipCaptain {
             //ail: We run best-target twice: Once to see where to move toward by ignoring distance, so we just assume we can reach it, and once after moving so we can see what we can actually shoot
             if(!onlyInAttackRange)
                 distAfterMove = 1;
-            // treat those who can move to bombing range (distAfterMove == 1) as maximum threats
-            if (ward.isColony()) {
-                CombatStackColony colony = (CombatStackColony) ward;
-                float popLossPct  =  expectedPopLossPct(target, colony); 
-                float baseLossPct = target.estimatedKillPct(colony);
-                float maxLossPct = max(popLossPct,baseLossPct);
-                // if this is the first potential target that can reach and damage the colony, 
-                // ignore any previous selected targets
-                if ((!currentCanBomb) && (distAfterMove <= 1) && (maxLossPct > 0.05f)) {
-                    threatLevel = maxLossPct;                     
-                    currentCanBomb = true;
-                    bestTarget = null;
-                    maxDesirability = -1;
-                }
-                // if we have a target that can actually bomb us, ignore any future
-                // targets that cannot yet
-                else if (currentCanBomb && (distAfterMove > 1)) {
-                    threatLevel = 0;
-                }
-                // this and no previous targets can yet bomb our colony, so evaluate
-                // based on threat and distance
-                else {
-                    float rangeAdj = 10.0f/distAfterMove;
-                    threatLevel = rangeAdj * maxLossPct;                     
-                } 
-            }
-            else {
-                float rangeAdj = 10.0f/distAfterMove;
-                threatLevel = rangeAdj * target.estimatedKillPct(ward);  
-            }
+            float rangeAdj = 10.0f/distAfterMove;
             if (killPct > 0) {
                 killPct = min(1,killPct);
-                //float desirability = max((10000* threatLevel * threatLevel * killPct), .01f);
-                float desirability = killPct * target.num * target.designCost();
+                float desirability = killPct * target.num * target.designCost() * rangeAdj;
                 if (desirability > maxDesirability) {  // this might be a better target, adjust desirability for pathing
                     if (stack.mgr.autoResolve) {
                         bestTarget = target;
