@@ -463,8 +463,9 @@ public class AIFleetCommander implements Base, FleetCommander {
                     }
                     //ail: when I'm already invading and there's no enemies around, I can use my fleet for something else
                     //new: other fleets than the one already there can still go there because they will potentially be needed once the invasion is done
-                    if(enemyBc == 0 && myTransports > 0 && fleet.system() == current)
-                        continue;
+                    //this is from when splitting didn't work, so it's outdated now
+                    /*if(enemyBc == 0 && myTransports > 0 && fleet.system() == current)
+                        continue;*/
                 }
             }
             if(bombardDamage > 0 && fleet.system() != current)
