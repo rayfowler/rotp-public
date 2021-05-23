@@ -710,8 +710,11 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
         if(empire.generalAI().bestVictim() == e)
             return false;
-        /*if(popRatioOfAllianceAmongstContatacts(empire) < 1.0/3.0)
-            return true;*/
+        if(galaxy().options().baseAIRelationsAdj() > 0)
+        {
+            if(popRatioOfAllianceAmongstContatacts(empire) < galaxy().options().baseAIRelationsAdj() * 3.33 / 100.0)
+                return true;
+        }
         return false;
     }
     public float popRatioOfAllianceAmongstContatacts(Empire e)
@@ -729,7 +732,7 @@ public class AIDiplomat implements Base, Diplomat {
         }
         alliedPop += e.totalPlanetaryPopulation();
         totalPop += e.totalPlanetaryPopulation();
-        System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+"'s allies have "+alliedPop+" of "+" "+totalPop+" "+alliedPop / totalPop);
+        //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+"'s allies have "+alliedPop+" of "+" "+totalPop+" "+alliedPop / totalPop);
         return alliedPop / totalPop;
     }
 //-----------------------------------
@@ -1351,6 +1354,8 @@ public class AIDiplomat implements Base, Diplomat {
         {
             return false;
         }
+        if(galaxy().options().baseAIRelationsAdj() <= -30)
+            return true;
         Empire bestVictim = empire.generalAI().bestVictim();
         if(overrideBestVictim)
             bestVictim = v.empire();
@@ -1387,6 +1392,7 @@ public class AIDiplomat implements Base, Diplomat {
                     highestKnownOpponentTechLevel = emp.tech().avgTechLevel();
             }
             float superiorityThreshold = max(0, 2 - developmentPct * empire.tech().avgTechLevel() / highestKnownOpponentTechLevel);
+            superiorityThreshold += galaxy().options().baseAIRelationsAdj() / 30.0;
             //we can still grow otherwise
             if(empire.generalAI().additionalColonizersToBuild(true) > 0
                     || developmentPct < 0.75f)
@@ -1735,6 +1741,9 @@ public class AIDiplomat implements Base, Diplomat {
         }
         if(!empire.inShipRange(v.empId()))
             return true;
+        //ail: no war-weariness in always-war-mode
+        if(galaxy().options().baseAIRelationsAdj() <= -30)
+            return false;
         //ail: only colonies and factories relevant for war-weariness. Population and Military are merely tools to achieve our goals
         Empire emp = v.owner();
         TreatyWar treaty = (TreatyWar) v.embassy().treaty();
