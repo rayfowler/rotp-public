@@ -164,12 +164,42 @@ public class AISpyMaster implements Base, SpyMaster {
         boolean canEspionage = !spies.possibleTechs().isEmpty();
         Sabotage sabMission = bestSabotageChoice(v);
         boolean canSabotage = spies.canSabotage() && (sabMission != null);
+        
+        boolean actAsIfInWar = false;
+        boolean allowSpiesAtPeace = true;
+        
+        if(galaxy().options().selectableAI())
+        {
+            if(empire.leader().isHonorable())
+            {
+                canEspionage = false;
+                canSabotage = false;
+            }
+            if(empire.leader().isPacifist())
+            {
+                allowSpiesAtPeace = false;
+                canSabotage = false;
+            }
+            if(empire.leader().isXenophobic())
+            {
+                allowSpiesAtPeace = false;
+            }
+            if(empire.leader().isAggressive() || empire.leader().isRuthless())
+            {
+                actAsIfInWar = true;
+            }
+            if(empire.leader().isTechnologist())
+            {
+                allowSpiesAtPeace = true;
+                canEspionage = true;
+            }
+        }
       
         // we are in a pact or at peace
         // ail: according to official strategy-guide two spies is supposedly the ideal number for tech-stealing etc, so always setting it to two except for hiding
         // let's see what happens, if we just non-chalantly spy on everyone regardless of anything considering they won't declare war unless they would do so anyways
         if (emb.pact() || emb.atPeace() || emb.noTreaty()) {
-            if(canEspionage)
+            if(canEspionage && allowSpiesAtPeace)
             {
                 spies.beginEspionage();
                 spies.maxSpies(2);
@@ -181,7 +211,7 @@ public class AISpyMaster implements Base, SpyMaster {
             }
             return;
         }
-        if (emb.anyWar()) {
+        if (emb.anyWar() || actAsIfInWar) {
             if (canEspionage)
             {
                 spies.beginEspionage();

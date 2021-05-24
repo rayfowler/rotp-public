@@ -429,6 +429,17 @@ public class AIGovernor implements Base, Governor {
             //System.out.print("\n"+empire.name()+" "+col.name()+" production-score "+productionScore(col.starSystem()));
             float maxShipMaintainance = 0.0f;
             float fighterPercentage = 1.0f;
+            
+            boolean militarist = false;
+            boolean hippy = false;
+            
+            if(galaxy().options().selectableAI())
+            {
+                if(empire.leader().isMilitarist())
+                    militarist = true;
+                else if(empire.leader().isEcologist())
+                    hippy = true;
+            }
 
             if(enemy)
             {
@@ -437,7 +448,7 @@ public class AIGovernor implements Base, Governor {
                     maxShipMaintainance /= 4.0f;
                 fighterPercentage = 0.5f + empire.generalAI().defenseRatio() * 0.5f;
             }
-            else if(inAttackRange)
+            else if(inAttackRange && !hippy)
             {
                 if(highestNonEnemyBc > myFleetBc * 4)
                     maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
@@ -445,6 +456,8 @@ public class AIGovernor implements Base, Governor {
                     maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance() / 4;
                 fighterPercentage = 0.75f;
             }
+            if(militarist)
+                maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
             float maxShipMaintainanceBeforeAdj = maxShipMaintainance;
             maxShipMaintainance *= productionScore(col.starSystem());
             if(maxShipMaintainance > maxShipMaintainanceBeforeAdj)

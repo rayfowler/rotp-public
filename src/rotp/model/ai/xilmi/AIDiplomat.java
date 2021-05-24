@@ -708,11 +708,27 @@ public class AIDiplomat implements Base, Diplomat {
             return false;       
         if (v.embassy().alliedWithEnemy())
             return false;
+        float personalityAllianceMod = 0;
+        if(galaxy().options().selectableAI())
+        {
+            if(empire.leader().isHonorable())
+                personalityAllianceMod = 10;
+            if(empire.leader().isDiplomat())
+                personalityAllianceMod = 30;
+            if(empire.leader().isPacifist())
+                return true;
+            if(empire.leader().isErratic())
+            {
+                if(random() <= ERRATIC_WAR_PCT)
+                    return true;
+            }
+        }
         if(empire.generalAI().bestVictim() == e)
             return false;
-        if(galaxy().options().baseAIRelationsAdj() > 0)
+        if(galaxy().options().baseAIRelationsAdj() > 0 || galaxy().options().selectableAI())
         {
-            if(popRatioOfAllianceAmongstContatacts(empire) < galaxy().options().baseAIRelationsAdj() * 3.33 / 100.0)
+            //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" ally-Popratio: "+popRatioOfAllianceAmongstContatacts(empire)+" agree when below: "+(personalityAllianceMod + galaxy().options().baseAIRelationsAdj()) * 3.33 / 100.0);
+            if(popRatioOfAllianceAmongstContatacts(empire) < (personalityAllianceMod + galaxy().options().baseAIRelationsAdj()) * 3.33 / 100.0)
                 return true;
         }
         return false;
@@ -732,7 +748,6 @@ public class AIDiplomat implements Base, Diplomat {
         }
         alliedPop += e.totalPlanetaryPopulation();
         totalPop += e.totalPlanetaryPopulation();
-        //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+"'s allies have "+alliedPop+" of "+" "+totalPop+" "+alliedPop / totalPop);
         return alliedPop / totalPop;
     }
 //-----------------------------------
@@ -1030,6 +1045,16 @@ public class AIDiplomat implements Base, Diplomat {
     }
     //ail: no good reason to ever break an alliance
     private boolean wantToBreakAlliance(EmpireView v) {
+        if(!canBreakAlliance(v.empire()))
+            return false;
+        if(galaxy().options().selectableAI())
+        {
+            if(empire.leader().isErratic())
+            {
+                if(random() <= ERRATIC_WAR_PCT)
+                    return true;
+            }
+        }
         return false;
     }
     private boolean decidedToBreakPact(EmpireView view) {
@@ -1272,6 +1297,13 @@ public class AIDiplomat implements Base, Diplomat {
             }
         }
         
+        
+        // 2% chance of war if erratic leader (these guys are crazy)
+        if (galaxy().options().selectableAI() && empire.leader().isErratic() && (random() <= ERRATIC_WAR_PCT)) {
+            beginErraticWar(view);
+            return true;
+        }
+        
         if (wantToDeclareWarOfOpportunity(view)) {
             //ail: even if the real reason is because of geopolitics, we can still blame it on an incident, if there ever was one, so the player thinks it is their own fault
             //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" starts Opportunity-War vs. "+view.empire().name());
@@ -1393,6 +1425,13 @@ public class AIDiplomat implements Base, Diplomat {
             }
             float superiorityThreshold = max(0, 2 - developmentPct * empire.tech().avgTechLevel() / highestKnownOpponentTechLevel);
             superiorityThreshold += galaxy().options().baseAIRelationsAdj() / 30.0;
+            if(galaxy().options().selectableAI())
+            {
+                if(empire.leader().isAggressive() || empire.leader().isRuthless() || empire.leader().isExpansionist())
+                    superiorityThreshold = 0;
+                else if(empire.leader().isPacifist())
+                    return false;
+            }
             //we can still grow otherwise
             if(empire.generalAI().additionalColonizersToBuild(true) > 0
                     || developmentPct < 0.75f)
@@ -1744,6 +1783,13 @@ public class AIDiplomat implements Base, Diplomat {
         //ail: no war-weariness in always-war-mode
         if(galaxy().options().baseAIRelationsAdj() <= -30)
             return false;
+        if(galaxy().options().selectableAI())
+        {
+            if(empire.leader().isHonorable() || empire.leader().isRuthless())
+                return false;
+            if(empire.leader().isPacifist())
+                return true;
+        }
         //ail: only colonies and factories relevant for war-weariness. Population and Military are merely tools to achieve our goals
         Empire emp = v.owner();
         TreatyWar treaty = (TreatyWar) v.embassy().treaty();
