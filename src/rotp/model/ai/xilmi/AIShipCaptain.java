@@ -103,8 +103,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 }
             }
             //When we are defending and can't get into attack-range of the enemy, we let them come to us
-            //if(currentTarget != null)
-                //System.out.println(stack.fullName()+" target: "+currentTarget.fullName()+" distaftermove: "+(stack.movePointsTo(currentTarget) - stack.move)+" maxFR: "+stack.maxFiringRange(currentTarget));
+            /*if(currentTarget != null)
+                System.out.println(stack.fullName()+" target: "+currentTarget.fullName()+" distaftermove: "+(stack.movePointsTo(currentTarget) - stack.move)+" maxFR: "+stack.maxFiringRange(currentTarget));*/
             FlightPath bestPathToTarget = null;
             //ail: defend-stuff is problematic as stacks can be drawn out
             /*if((currentTarget == null || stack.movePointsTo(currentTarget) - stack.move > stack.maxFiringRange(currentTarget)) && stack.hasWard())
@@ -148,15 +148,22 @@ public class AIShipCaptain implements Base, ShipCaptain {
          
             //ail: Always move away if I have fired at our best target
             boolean atLeastOneWeaponCanStillFire = false;
+            boolean allWeaponsCanStillFire = true;
             for (int i=0;i<stack.numWeapons(); i++) {
                 if(currentTarget != null && !currentTarget.isColony() && stack.weapon(i).groundAttacksOnly())
+                    continue;
+                if(stack.weapon(i).isSpecial())
                     continue;
                 if(!stack.shipComponentIsUsed(i))
                 {
                     atLeastOneWeaponCanStillFire = true;
                 }
+                else
+                {
+                    allWeaponsCanStillFire = false;
+                }
             }
-            if(!atLeastOneWeaponCanStillFire && distantTarget == currentTarget)
+            if(!atLeastOneWeaponCanStillFire && (distantTarget == currentTarget || distantTarget == null))
             {
                 FlightPath bestPathToSaveSpot = findSafestSpace(stack);
                 if(bestPathToSaveSpot != null)
@@ -168,6 +175,16 @@ public class AIShipCaptain implements Base, ShipCaptain {
             // and we are still picking the same target
             if ((prevMove == stack.move) && (prevTarget == currentTarget)) {
                 turnActive = false;
+            }
+            //ail: we have not moved and not fired... so we probably can't get to our target, then retreat
+            if(stack.maxMove == stack.move && allWeaponsCanStillFire)
+            {
+                CombatStackShip shipStack = (CombatStackShip) stack;
+                StarSystem dest = retreatSystem(shipStack.mgr.system());
+                if (dest != null) {
+                    mgr.retreatStack(shipStack, dest);
+                    return;
+                }
             }
         }
         mgr.turnDone(stack);
@@ -192,7 +209,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
         //2nd run: fire non-special-weapons
         for (int i=0;i<stack.numWeapons(); i++) {
             if(stack.selectedWeapon().isSpecial()
-                    || !((CombatStackShip)stack).shipComponentCanAttack(target, i))
+                    || !((CombatStackShip)stack).shipComponentCanAttack(target, i)
+                    || (stack.weapon(i).isMissileWeapon() && stack.movePointsTo(target) > 2))
             {
                 continue;
             }
@@ -201,8 +219,10 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 stack.fireWeapon(target, i);
             }
         }
-        //3rd run: fire whatever is left
+        //3rd run: fire whatever is left, except missiles if we are too far
         for (int i=0;i<stack.numWeapons(); i++) {
+            if(stack.weapon(i).isMissileWeapon() && stack.movePointsTo(target) > 2)
+                continue;
             if(((CombatStackShip)stack).shipComponentCanAttack(target, i))
             {
                 stack.fireWeapon(target, i);
@@ -244,9 +264,11 @@ public class AIShipCaptain implements Base, ShipCaptain {
             if(!onlyInAttackRange)
                 distAfterMove = 1;
             float rangeAdj = 10.0f/distAfterMove;
+            //System.out.print("\n"+stack.fullName()+" onlyships: "+onlyShips+" onlyInAttackRange: "+onlyInAttackRange+" looking at "+target.fullName()+" killPct: "+killPct+" rangeAdj: "+rangeAdj+" cnt: "+target.num+" target.designCost(): "+target.designCost());
             if (killPct > 0) {
                 killPct = min(1,killPct);
-                float desirability = killPct * target.num * target.designCost() * rangeAdj;
+                float desirability = killPct * max(1, target.num) * target.designCost() * rangeAdj;
+                //System.out.print("\n"+stack.fullName()+" looking at "+target.fullName()+" desirability: "+desirability);
                 if (desirability > maxDesirability) {  // this might be a better target, adjust desirability for pathing
                     if (stack.mgr.autoResolve) {
                         bestTarget = target;
@@ -587,7 +609,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 if(st2.isShip() && st2.design().isColonyShip())
                     killPct /= friends.size();
                 //ail: 0 damage possible when they have repulsor and we can't outrange
-                if(st1.optimalFiringRange(st1) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
+                if(st1.optimalFiringRange(st2) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
                 {
                     //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
                     killPct = 0;
@@ -609,7 +631,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 if(stack != st2 && st2.isShip() && st2.design().isColonyShip())
                     continue;
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
-                if(st1.optimalFiringRange(st1) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
+                if(st1.optimalFiringRange(st2) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
                 {
                     //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
                     killPct = 0;
