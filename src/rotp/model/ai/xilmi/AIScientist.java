@@ -230,55 +230,30 @@ public class AIScientist implements Base, Scientist {
             empire.tech().weapon().allocation(10);
             return;
         }
+        
+        if (empire.tech().topFuelRangeTech().range() < 4) {
+            empire.tech().computer().allocation(0);
+            empire.tech().construction().allocation(0);
+            empire.tech().forceField().allocation(0);
+            empire.tech().planetology().allocation(0);
+            empire.tech().propulsion().allocation(60);
+            empire.tech().weapon().allocation(0);
+            return;
+        }
 
-        if (empire.leader().isDiplomat()) {
-            empire.tech().computer().allocation(12);
-            empire.tech().construction().allocation(9);
-            empire.tech().forceField().allocation(9);
-            empire.tech().planetology().allocation(9);
-            empire.tech().propulsion().allocation(11);
-            empire.tech().weapon().allocation(10);
-        }
-        else if (empire.leader().isMilitarist()) {
-            empire.tech().computer().allocation(11);
-            empire.tech().construction().allocation(9);
-            empire.tech().forceField().allocation(10);
-            empire.tech().planetology().allocation(8);
-            empire.tech().propulsion().allocation(10);
-            empire.tech().weapon().allocation(12);
-        }
-        else if (empire.leader().isEcologist()) {
-            empire.tech().computer().allocation(10);
-            empire.tech().construction().allocation(10);
-            empire.tech().forceField().allocation(10);
-            empire.tech().planetology().allocation(12);
-            empire.tech().propulsion().allocation(9);
-            empire.tech().weapon().allocation(9);
-        }
-        else if (empire.leader().isIndustrialist()) {
-            empire.tech().computer().allocation(12);
-            empire.tech().construction().allocation(12);
-            empire.tech().forceField().allocation(9);
-            empire.tech().planetology().allocation(9);
-            empire.tech().propulsion().allocation(9);
-            empire.tech().weapon().allocation(9);
-        }
-        else if (empire.leader().isExpansionist()) {
-            empire.tech().computer().allocation(9);
-            empire.tech().construction().allocation(9);
-            empire.tech().forceField().allocation(9);
-            empire.tech().planetology().allocation(12);
-            empire.tech().propulsion().allocation(12);
-            empire.tech().weapon().allocation(9);
-        }
-        else if (empire.leader().isTechnologist()) {
-            empire.tech().computer().allocation(10);
-            empire.tech().construction().allocation(10);
-            empire.tech().forceField().allocation(10);
-            empire.tech().planetology().allocation(10);
-            empire.tech().propulsion().allocation(10);
-            empire.tech().weapon().allocation(10);
-        }
+        float totalTechMod = 0;
+        for(int i = 0; i < 6; ++i)
+            totalTechMod += empire.race().techMod[i];
+        
+        totalTechMod /= 36.0;
+        
+        empire.tech().computer().allocationPct(totalTechMod/empire.race().techMod[0]);
+        empire.tech().construction().allocationPct(totalTechMod/empire.race().techMod[1]);
+        empire.tech().forceField().allocationPct(totalTechMod/empire.race().techMod[2]);
+        empire.tech().planetology().allocationPct(totalTechMod/empire.race().techMod[3]);
+        empire.tech().propulsion().allocationPct(totalTechMod/empire.race().techMod[4]);
+        empire.tech().weapon().allocationPct(totalTechMod/empire.race().techMod[5]);
+        
         // if in special mode, change ratios
         if (empire.generalAI().inWarMode()) {
             empire.tech().computer().adjustAllocation(4);
@@ -324,6 +299,67 @@ public class AIScientist implements Base, Scientist {
             empire.tech().propulsion().adjustAllocation(+10);
             empire.tech().weapon().adjustAllocation(+10);
         }
+        
+        int totalAlloc = empire.tech().computer().allocation() + empire.tech().construction().allocation() 
+        + empire.tech().forceField().allocation() + empire.tech().planetology().allocation() 
+        + empire.tech().propulsion().allocation() + empire.tech().weapon().allocation();
+        
+        int roundingFix = 60 - totalAlloc;
+        while(roundingFix < 0)
+        {
+            empire.tech().computer().adjustAllocation(-1);
+            roundingFix++;
+            if(roundingFix >= 0)
+                break;
+            empire.tech().construction().adjustAllocation(-1);
+            roundingFix++;
+            if(roundingFix >= 0)
+                break;
+            empire.tech().forceField().adjustAllocation(-1);
+            roundingFix++;
+            if(roundingFix >= 0)
+                break;
+            empire.tech().planetology().adjustAllocation(-1);
+            roundingFix++;
+            if(roundingFix >= 0)
+                break;
+            empire.tech().propulsion().adjustAllocation(-1);
+            roundingFix++;
+            if(roundingFix >= 0)
+                break;
+            empire.tech().weapon().adjustAllocation(-1);
+            roundingFix++;
+            if(roundingFix >= 0)
+                break;
+        }
+        
+        while(roundingFix > 0)
+        {
+            empire.tech().computer().adjustAllocation(1);
+            roundingFix--;
+            if(roundingFix <= 0)
+                break;
+            empire.tech().construction().adjustAllocation(1);
+            roundingFix--;
+            if(roundingFix <= 0)
+                break;
+            empire.tech().forceField().adjustAllocation(1);
+            roundingFix--;
+            if(roundingFix <= 0)
+                break;
+            empire.tech().planetology().adjustAllocation(1);
+            roundingFix--;
+            if(roundingFix <= 0)
+                break;
+            empire.tech().propulsion().adjustAllocation(1);
+            roundingFix--;
+            if(roundingFix <= 0)
+                break;
+            empire.tech().weapon().adjustAllocation(1);
+            roundingFix--;
+            if(roundingFix <= 0)
+                break;
+        }  
     }
     @Override
     public void setTechToResearch(TechCategory cat) {
