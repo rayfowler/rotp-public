@@ -1226,11 +1226,9 @@ public final class Empire implements Base, NamedObject, Serializable {
         }
         
         float shipRange = shipScanningRange();
-        if (shipRange > 0) {
-            for (Ship sh: ships) {
-                if (sh.distanceTo(loc) <= shipRange)
-                    return true;
-            }
+        for (Ship sh: ships) {
+            if (sh.distanceTo(loc) <= shipRange)
+                return true;
         }
         return false;
     }
