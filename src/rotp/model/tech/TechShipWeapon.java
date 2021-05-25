@@ -500,6 +500,8 @@ public final class TechShipWeapon extends Tech {
             else if ((source.x > target.x) && (source.y > target.y))
                 xMod = -1;
             for (int n = -5; n < 6; n++) {
+                if (!source.mgr.showAnimations()) 
+                    break;
                 ui.paintCellsImmediately(source.x,target.x,source.y,target.y);
                 int adj = scaled(n)*3;
                 g.drawLine(x0, y0, x1+(xMod*adj), y1+(yMod*adj));

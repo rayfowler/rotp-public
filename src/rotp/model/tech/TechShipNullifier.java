@@ -157,6 +157,8 @@ public final class TechShipNullifier extends Tech {
         
         // draw attack
         for (int h=0; h<repeat; h++) {
+            if (!source.mgr.showAnimations()) 
+                break;
             ui.paintCellsImmediately(source.x, target.x, source.y, target.y);
             for (int i=0; i<n; i++) {
                 long t0 = System.currentTimeMillis();

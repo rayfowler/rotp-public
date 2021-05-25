@@ -92,11 +92,8 @@ public final class TechEnergyPulsar extends Tech {
     @Override
     public void drawSpecialAttack(CombatStack source, CombatStack target, int wpnNum, float dmg) {
         ShipBattleUI ui = source.mgr.ui;
-        if (ui == null)
-            return;
-
-        if (!source.mgr.showAnimations)
-            return;
+        if (!source.mgr.showAnimations())
+           return;
 
         int x = source.x;
         int y = source.y;
@@ -145,6 +142,8 @@ public final class TechEnergyPulsar extends Tech {
         int startX = rect.x-ui.boxW;
         int startY = rect.y-ui.boxH;
         for (int i=0; i<n; i++) {
+            if (!source.mgr.showAnimations()) 
+                break;
             long t0 = System.currentTimeMillis();
             ui.paintCellsImmediately(x-1, x+1, y-1,y+1);
             g.drawImage(frames[i],startX,startY,null);
