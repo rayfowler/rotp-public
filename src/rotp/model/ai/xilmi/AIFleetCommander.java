@@ -427,6 +427,8 @@ public class AIFleetCommander implements Base, FleetCommander {
             }
             if(empire.alliedWith(empire.sv.empId(id)))
             {
+                //attacking is a lot better than defending, so defending should have a lower score in general
+                score /= 2.0f;
                 if (current.empire() == empire && current.hasEvent()) {
                     if (current.eventKey().equals("MAIN_PLANET_EVENT_PIRACY")) {
                         handleEvent = true;
@@ -489,10 +491,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             }
             if(handleEvent)
             {
-                if(empire.enemies().isEmpty())
-                    score = Float.MAX_VALUE;
-                else
-                    score = 10;
+                score = 10;
             }
             if(!fleet.canColonizeSystem(current) || empire.sv.isColonized(id))
                 score /= fleet.travelTime(current) + 1;
