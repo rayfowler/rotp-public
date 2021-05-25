@@ -1,52 +1,19 @@
-// General dialogue for all races unless overridden by race
-
-CONTACT_HONORABLE          | Soso, eine andere Rasse hat den [my_race] Raum betreten. Verhaltet Euch so unauffällig, das Ihr unseren mächtigen und weisen Anführer nicht stört [my_name].
-CONTACT_HONORABLE          | Das [my_race] Reich grüßt herzlich die [your_race] und hofft, dass Ihr unter unserer Herrschaft erblühen werdet.
-CONTACT_HONORABLE          | Hört, Anführer [your_name], die großartigen, erhabenen und gottgleichen [my_race] sind gekommen.
-CONTACT_HONORABLE          | Gegrüßt seid Ihr, weiser und gerechter Anführer [your_name]. Die [my_race] heißen Euch in einem neuen Zeitalter der Ehre zwischen unseren Völkern willkommen.
-CONTACT_HONORABLE          | Eure Rasse ist pathetisch und nutzlos im Licht unseres glorreichen [my_race] Imperium.
-CONTACT_PACIFIST           | Anführer [my_name] von den [my_race] sendet Grüße an Euch. Möge es eine friedliche Zunkunft zwischen unseren Völkern geben.
-CONTACT_PACIFIST           | Friede sei mit Dir, Anführer [your_name]! Die [my_race] wünschen uns eine Zukunft ohne Konflikte und Streit.
-CONTACT_PACIFIST           | Oh, erhabener [your_name], sicher können die [your_race] und [my_race] Völker in Frieden und Harmonie miteinander leben.
-CONTACT_PACIFIST           | Lang lebe Anführer [your_name] und sein [your_race] Imperium. Die [my_race] grüßen Euch.
-CONTACT_DIPLOMATIC         | Grüß, Anführer [your_name]. Das [my_race] Imperium freut sich auf die zukünftigen Beziehungen.
-CONTACT_DIPLOMATIC         | Die [my_race] freuen sich über unseren ersten Kontakt mit den [your_race]. Lasst uns an eine gegenseitig vorteilhafte Beziehung arbeiten.
-CONTACT_DIPLOMATIC         | Das [my_race] Reich erkennt die Schwierigkeiten des ersten Kontaktes mit einer anderen Rasse. Hoffentlich werden wir unser gegenseitiges Misstrauen überwinden.
-CONTACT_DIPLOMATIC         | Nun, da die [your_race] und [my_race] gemeinsame Territorium teilen, hängt unser Überleben von der gegenseitigen Zusammenarbeit ab.
-CONTACT_RUTHLESS           | Ergebt Euch jetzt, Kaiser [my_name], und rettet Euch von dem unvermeidlichen Fall zum [my_race] Reich.
-CONTACT_RUTHLESS           | Die [my_race] und [your_race] Imperien werden gut nebeneinander leben, solange Ihr unsere Überlegenheit anerkennt.
-CONTACT_RUTHLESS           | Jetzt, da die [my_race] sich der Gegenwart der [your_race] bewusst sind, werden wir genau hinschauen und keine Aggression tolerieren.
-CONTACT_RUTHLESS           | Mach  keinen Fehler, Kaiser [my_name]! Das [my_race] Reich wird absolut keine Einmischung von der [your_race] dulden.
-CONTACT_AGGRESSIVE         | Hütet Euch, Kaiser [your_name], das [my_race] Reich ist angekommen, um die Galaxie von dem [your_race] Terror zu befreien.
-CONTACT_AGGRESSIVE         | Hütet Euch, Kaiser [your_name]. Jede Aggression wird mit sofortiger Vergeltung aus dem [my_race] Reich beantwortet.
-CONTACT_AGGRESSIVE         | Erschaudere, Kaiser [your_name]. Bald wird die ganze Galaxie von der eisernen Faust des [my_race] Reiches regiert.
-CONTACT_AGGRESSIVE         | Wir sind die [my_race]! Die Existenz wie sie sie kennen, endet hiermit. Ihre Kultur wird sich anpassen und uns dienen.
-CONTACT_XENOPHOBIC         | Anführer [your_name], betretet den [my_race] Raum und Ihr werdet zerstört.
-CONTACT_XENOPHOBIC         | Das [my_race] Imperium wünscht keinen Kontakt mit dem [your_race]-Abschaum.
-CONTACT_XENOPHOBIC         | Bleibt weg aus dem [my_race] Territorium! Eure schiere Existenz macht uns krank!
-CONTACT_XENOPHOBIC         | Die [my_race] sind nicht interessiert an Sachen von minderen Spezies. Haltet euch von uns fern!
-
 //
-GREETING_01                | Trotz Eurer Unverschämtheit und arroganten Stolzes gewährt Dir [my_name] der [my_race] eine Audienz.
-GREETING_02                | Wir erwarten, dass Ihr gekommen seid, um den [my_race] zu helfen.
-GREETING_03                | Unser Anführer [my_name] hat Dir eine kurze Audienz gewährt, Anführer [your_name].
-GREETING_04                | Wir geben Dir widerwillig eine Audienz. Fasst Euch kurz, unsere Zeit ist kostbar.
-GREETING_05                | Der Anführer [my_name] hat jetzt ein wenig Zeit für Euch.
-GREETING_06                | Grüße von [my_name], Anführer der [my_race].
-GREETING_07                | Seid auch gegrüßt,Anführer der [your_race]. [my_name] sendet Grüße von der mächtigen [my_race].
-GREETING_08                | Seid Gegrüßt mächtiger Anführer [your_name]. Ich grüße vom weisesten Anführer: [my_name] der [my_race].
-GREETING_09                | Seid gegrüßt, glorreicher Anführer [your_name]. Ich richte Grüße von [my_name], Anführer der [my_race], aus.
+// Dialogue that is not race-specific
 //
-DIPLO_MAIN_MENU_01           | Wie kann mein Imperium helfen?
+
 DIPLO_TECH_REQUEST_MENU_01   | An welcher Technologie hättet ihr Interesse?
 DIPLO_TECH_COUNTER_MENU_01   | Was würdet Ihr uns dafür geben?
 DIPLO_TRADE_MENU_01          | Euer Vorschlag ist ein Handelsabkommen über:
 DIPLO_TREATY_MENU_01         | Ihr könnt ein Abkommen vorgeschlagen.
+DIPLO_THREATEN_MENU_01       | Womit drohen Sie?
 DIPLO_DECLARE_WAR_MENU_01    | Wem sollten wir den Krieg erklären?
+DIPLO_JOINT_WAR_MENU_01      | Wem sollten wir den Krieg erklären?
 DIPLO_BREAK_ALLIANCE_MENU_01 | Welche Allianz sollen wir auflösen?
-DIPLO_THREATEN_MENU_01       | Euer Vorgehen:
+DIPLO_OFFER_AID_MENU_01      | Was möchten Sie schenken?
+DIPLO_OFFER_TECH_MENU_01     | Was möchten Sie schenken?
 
-DECLINE_OFFER_01           | Anführer [my_name] lehnt ab.
+DECLINE_OFFER_01           | [my_nameTitle] [my_name] lehnt ab.
 DECLINE_OFFER_02           | Die [my_race] haben Euer Angebot beraten und es abgelehnt.
 DECLINE_OFFER_03           | Wir weisen das Angebot respektvoll zurück.
 DECLINE_OFFER_04           | Wir haben zur Zeit kein Interesse.
@@ -57,6 +24,9 @@ DECLINE_OFFER_08           | Euer Angebot scheint nicht fair zu sein.
 DECLINE_OFFER_09           | Wir müssen leider ablehnen.
 
 DECLINE_ENEMY_ALLY_01      | Die [my_race] würden niemals mit den Verbündeten der verhassten [other_race] handeln.
+DECLINE_ALREADY_ALLIED_01  | Die [my_race] und unsere Verbündeten können Ihre Anfrage nicht berücksichtigen, solange Sie mit anderen Imperien verbündet sind.
+DECLINE_NO_WAR_ON_ALLY_01  | Wir werden unseren Verbündeten nicht den Krieg erklären.
+DECLINE_PEACE_TREATY_01    | Wir werden unseren Friedensvertrag mit der [other_race].
 
 DECLINE_ANNOYED_01         | Die [your_race] reden viel und tun wenig. Wir haben genug von Eurem Geschätz.
 DECLINE_ANNOYED_01         | Anführer [your_name], Ihr strapeziert unsere Geduld. Vielleicht sollten wir es später nochmal versuchen.
@@ -111,7 +81,7 @@ DECLINE_BIOWEAPONS_01      | Die [my_race] werden nicht mit jemanden handeln, de
 DECLINE_BIOWEAPONS_01      | Wir können nicht mit jemanden handeln, der so kaltschnäuzig ist und Biowaffen einsetzt.
 DECLINE_BIOWEAPONS_01      | Ihr habt Biowaffen eingesetzt und damit unvorstellbares Leid über Unschuldige gebracht. Wir lehnen es ab, mit einem Wahnsinnigen zu handeln.
 DECLINE_BIOWEAPONS_01      | Die Götter verabscheuen Euren Angriff mit biologischen Waffen. Die [my_race] können es nicht erlauben.
-DECLINE_BIOWEAPONS_01      | Die Schreie der Toten durch Euren Biowaffeneinsatz schreien.. Sie schreien so laut, dass wir Euch nicht hören.
+DECLINE_BIOWEAPONS_01      | Die Schreie der Toten durch Euren Biowaffeneinsatz sind laut.. Sie schreien so laut, dass wir Euch nicht hören.
 
 DECLINE_ANNOYED_01         | Wir sind erschöpft von den ganzen Verhandlungen. Wir können später weiter reden.
 DECLINE_ANNOYED_01         | Das führt doch zu nichts. Wir müssen weg.
@@ -136,23 +106,12 @@ OFFER_TECH_EXCHANGE_01     | Anführer [my_name] der [my_race] wünscht die Gehe
 OFFER_TECH_EXCHANGE_01     | Die [my_race] gucken erfürchtig auf die Wunder der Technologie [tech]. Was können wir für das Geheimnis anbieten?
 
 ACCEPT_TECH_EXCHANGE_01    | Sehr schön. Anführer [my_name] stimmt dem Austausch der Geheimnisse von [techGiven] für die Technologie [techReceived] mit den wunderbaren [my_race] zu.
+ACCEPT_FINANCIAL_AID_01    | [my_nameTitle] [my_name] akzeptiert Euer Geschenk über [amt] BC.
+ACCEPT_TECHNOLOGY_AID_01   | [my_nameTitle] [my_name] akzeptiert Euer Geschenk über die Technologie [tech].
 
 BREAK_TRADE_01             | Das [my_race] Volk hat kein Bedarf an den Handelsgütern der [your_race].
-OFFER_TRADE_01             | Das [my_race] Imperium möchte ein Handelsabkommen über [amt] BC pro Jahr schließen.
-OFFER_TRADE_01             | Der Handel zwischen den [your_race] und den [my_race] kommt beiden zugute. Würdet Ihr einem Betrag von [amt] BC pro Jahr zustimmen?
-OFFER_TRADE_01             | Die [my_race] verlangen nach Euren Produkten. Könnt Ihr einem Abkommen über [amt] BC pro Jahr zustimmen?
 ANNOUNCE_TRADE_01          | Ab dem Jahr [year], haben die [my_race] und die [your_race] einem Handelsabkommen über [amt] BC pro Jahr zugestimmt.
-ACCEPT_TRADE_01            | Ein Handelsabkommen über [amt] BC ist akzeptabel.
-ACCEPT_TRADE_01            | Die [my_race] erwarten die edlen Produkte, die die [your_race] anbieten. Wir akzeptieren ein Handelsabkommen über [amt] BC pro Jahr.
-ACCEPT_TRADE_01            | Anführer [my_name] stimmt dem Handel über [amt] BC pro Jahr zu.
-ACCEPT_TRADE_01            | Gut, Anführer [your_name], wir finden Euer Angebot über [amt] BC fair und gerecht.
 
-OFFER_PEACE_01             | Großer [your_name], der Krieg zwischen den [your_race] und [my_race] hat große Opfer auf beiden Seiten gefordert. Unterzeichnet einen Friedensvertrag, damit wir das sinnlose Schlachten beenden können.
-OFFER_PEACE_01             | Dieser Krieg zwischen den [your_race] und [my_race] ist sinnlos. Lasst es uns mit einem Friedensvertrag beenden.
-OFFER_PEACE_01             | Unsere beiden Rassen [your_race] und [my_race] haben genug gelitten. Wollen wir nicht in Frieden leben?
-OFFER_PEACE_01             | Großer [your_name], das [my_race] Reich überbringt dir ein Friedensangebot von unserem glorreichen Anführer [my_name].
-OFFER_PEACE_01             | Wollt Ihr wirklich noch mehr leiden? Das [my_race] Imperium sieht keine Notwendigkeit weiter zu kämpfen. Lasst uns Frieden schließen.
-OFFER_PEACE_01             | Das [my_race] Imperium kann diesen Horror nicht mehr aushalten. Wir bieten den [your_race] Frieden an.
 ANNOUNCE_PEACE_01          | Im Jahr [year] haben die [my_race] und die [your_race] beschlossen, alle Feindseligkeiten einzustellen.
 ANNOUNCE_PEACE_01          | Anführer [my_name] hat angeordnet, alle Feindseligkeiten einzustellen, damit dieser Krieg ein Ende hat.
 ACCEPT_PEACE_01            | Wir stimmen zu, dass es an der Zeit wurde, unser kleinliches Gezänk zu beenden.
@@ -160,10 +119,6 @@ ACCEPT_PEACE_01            | Wir akzeptieren den Friedensvertrag. Die Waffen der
 ACCEPT_PEACE_01            | Wir werden dieser sinnlosen Zerstörung müde. Die [my_race] akzeptieren den Frieden.
 
 BREAK_PACT_01              | Eine Warnung an die [your_race] von den [my_race]: Unser Nichtangriffspakt ist hinfällig.
-OFFER_PACT_01              | Im Interesse des friedlichen Miteinanders, schlagen die [my_race] einen Nichtangriffspakt zwischen unseren großen Mächten vor.
-OFFER_PACT_01              | Expansion ist gefährlich. Niemand kann die Einsätze des anderen überholen, deshalb schlagen wir einen Nichtangriffspakt vor, um einen versehentlichen Konflikt zwischen den [your_race] and [my_race] zu verhindern .
-OFFER_PACT_01              | Die [my_race] haben keine bösen Absichten gegenüber den [your_race]. Lasst uns einem Nichtangriffspakt für eine gemeinsame Zukunft zustimmen.
-OFFER_PACT_01              | Die [my_race] haben keine Bedenken bei den [your_race]. Lasst uns einem Nichtangriffspakt zustimmen, um unsere Kräfte auf andere Probleme zu konzentrieren.
 ANNOUNCE_PACT_01           | Im Jahr [year] verpflichten sich die [my_race], sich an einen Nichtangriffspakt zu halten und keine Flottenangriffe anzugreifen, wenn sie nicht eine unserer Kolonien umkreisen.
 ACCEPT_PACT_01             | Die [my_race] stimmen einem Nichtangriffspakt zu.  Keine Seite wird die Flotten der anderen angreifen, es sei denn, sie betreten die Umlaufbahn einer gegnerischen Kolonie.
 ACCEPT_PACT_01             | Wenn Ihr zustimmt, Eure Schiffe nicht zu unseren Kolonien zu senden, dann versprechen die [my_race], Eure Schiffe auch nicht anzugreifen.
@@ -171,27 +126,17 @@ ACCEPT_PACT_01             | Imperator [my_name] stimmt dem Nichtangriffspakt zu
 ACCEPT_PACT_01             | Beschlossene Sache. Solange Ihr unsere Kolonien nicht angreift, so lange wird sich das [my_race] Imperium an den Nichtangriffspakt halten.
 
 BREAK_ALLIANCE_01          | Die [my_race] können nicht länger in einer Allianz mit Euch zusammenarbeiten.
-OFFER_ALLIANCE_01          | Die Zeit ist gekommen, dass die [your_race] und [my_race] eine unsterbliche Allianz bilden.
-OFFER_ALLIANCE_01          | Die [my_race] und [your_race] sind jetzt an einem Punkt der absoluten Harmonie zwischen den Völkern angekommen.
-OFFER_ALLIANCE_01          | Die [my_race] bieten den [your_race] ihre unsterbliche Loyalität und Treue an.
-OFFER_ALLIANCE_01          | Die [my_race] bieten ihre ewige Freudnschaft und Loyalität an.
-OFFER_ALLIANCE_01          | Anführer [your_name], lasst unsere Beziehungen mit einer Allianz der [your_race] und [my_race] festigen.
 ANNOUNCE_ALLIANCE_01       | Im Jahr [year] haben die [my_race] und [your_race] einer Allianz zugestimmt und werden weder die Flotten noch die Kolonien des anderen angreifen.
 ANNOUNCE_ALLIANCE_01       | So wurde unsere Allianz besiegelt. Eure Schiffe können unsere Kolonien besuchen und werden mit Treibstoff versorgt.
 ACCEPT_ALLIANCE_01         | Anführer [my_name] begrüsst die Allianz mit seinem guten Freund [your_name].
 ACCEPT_ALLIANCE_01         | Die [my_race] und die [your_race] haben heute eine Allianz zwischen den Völkern geschmiedet. Tod unseren Feinden!
 ACCEPT_ALLIANCE_01         | Anführer [my_name] sieht eine große Weisheit in der Allianz mit den [your_race]. So sei es!
 
-ACCEPT_BREAK_ALLIANCE_01   | Wir stimmen zu, dass die [other_race] keine vertrauenswürdigen Allierten sind und haben die Allianz aufgelöst.
-ACCEPT_BREAK_ALLIANCE_01   | Obwohl es uns schmerzt, den [other_race] den Rücken zuzuwenden, haben wir das getan.
-ACCEPT_BREAK_ALLIANCE_01   | Die [other_race] sind nicht länger Allierter der [my_race].
-ACCEPT_BREAK_ALLIANCE_01   | Die Allianz zwischen den [my_race] und [other_race] liegt in Scherben vor uns.
-ACCEPT_BREAK_ALLIANCE_01   | Wie Ihr wünscht, sind nicht mehr länger der Allierter der [other_race].
-
+OFFER_JOINT_WAR_01         | The time has come for the [your_empire] and [my_empire] to join together in war against the [other_race].
 ACCEPT_JOINT_WAR_01        | Das [other_race] Reich muss vor den vereinten Kräften der [my_race] und [your_race] in den Staub fallen.
 ACCEPT_JOINT_WAR_01        | Mit den vereinten Kräften der [my_race] und [your_race] werden die [other_race] nicht mehr lange eine Bedrohung sein.
 ACCEPT_JOINT_WAR_01        | Im Jahr [year] vereinen die [my_race] und die [your_race] ihre Kräfte um sich des [other_race] Abschaums zu entledigen.
-
+COUNTER_JOINT_WAR_01       | Wir werden uns Ihnen in Ihrem Krieg gegen das [other_empire] anschließen, im Austausch für die folgende Entschädigung:
 RESPOND_CLOSE_EMBASSY_01   | So sei es. Es wird keine weitere Unterhaltung zwischen unseren Reichen geben.
 
 RESPOND_BREAK_TRADE_01     | Wir werden uns daran erinnern.
@@ -201,196 +146,6 @@ RESPOND_BREAK_PACT_01      | Wir werden die Worte Deiner gebrochenen Verträge a
 RESPOND_BREAK_PACT_01      | Die [your_race] werden unter der Last der gebrochenen Versprechen zerbrechen.
 
 RESPOND_BREAK_ALLIANCE_01  | Ihr hat die Vereinbarung entehrt. Die Allianz ist zerbrochen.
-RESPOND_BREAK_ALLIANCE_01  | Ok. Very well. Ihr habt eure nicht vertrauenswürdigen Absichten gezeigt. Die Allianz war einmal.
+RESPOND_BREAK_ALLIANCE_01  | Ok. Na gut. Ihr habt eure nicht vertrauenswürdigen Absichten gezeigt. Die Allianz war einmal.
 RESPOND_BREAK_ALLIANCE_01  | Wir haben wenig Bedarf an Verträgen, die nicht geehrt werden. Die Allianz ist Geschichte.
 RESPOND_BREAK_ALLIANCE_01  | So sei es. Die Allianz ist vorüber.
-
-RESPOND_DECLARE_WAR_01     | Wir ignorieren die hohlen Drohungen eines tobenden Wahnsinnigen.
-RESPOND_DECLARE_WAR_01     | Du blufst schlecht, Anführer [your_name]. Deine Drohungen betreffen uns nicht.
-RESPOND_DECLARE_WAR_01     | Macht deine kindischen Drohungen. Die Jugend der [my_race] haben auch mal Wutanfälle.
-RESPOND_DECLARE_WAR_01     | Du nimmst an, Du machst dem mächtigen Anführer [my_name] Angst? Du weißt nicht, mit wem Du es zu tun hast...
-RESPOND_DECLARE_WAR_01     | Eure Drohungen stoßen auf taube Ohren, Anführer [your_name].
-RESPOND_DECLARE_WAR_01     | Ihr schreit wie ein rigillianischer Esel, Anführer [your_name]... Wir nehmen diese "Drohung" natürlich ernst.
-RESPOND_DECLARE_WAR_01     | Keine unbedachten Drohungen, Anführer [your_name]. Der Zorn der [my_race] ist fürchterlich.
-
-DECLAREWAR_HATE_01         | [your_race]-Abschaum. Bald wird das [my_race] Reich eurer miserablen Existenz ein Ende bereiten.
-DECLAREWAR_HATE_01         | Dieses kümmerliche [your_race] Reich ist ein Dorn im Auge der [my_race] geworden, welches wir nicht tolerieren können. Bereitet Euch auf Euer Ende vor.
-DECLAREWAR_HATE_02         | Die [my_race] haben die ganze Zeit vermutet, dass den [your_race] nicht vertraut werden kann, also werden wir den ersten Schlag ausführen!
-DECLAREWAR_HATE_02         | Die [my_race] Euch bis an das Ende des Universum verfolgen um die [your_race] Seuche aus dem Weltall zu brennen.
-DECLAREWAR_HATE_03         | Wir können Eure Störungen nicht länger ignorieren. Die [my_race] werden den [your_race] bis zum Ende bekämpfen. 
-DECLAREWAR_HATE_03         | Nein! Nicht mehr! Das erniedrigte Volk der [my_race] kann immer noch kämpfen, selbst gegen die arroganten [your_race].
-//
-DECLAREWAR_ERRATIC_01      | Die Konjunktion der Planeten zeigt an, dass die [my_race] die [your_race] aus der Galaxie ausrotten muss.
-DECLAREWAR_ERRATIC_02      | In einer Vision haben die Alten zu Kaiser [my_name] gesprochen, dass die [my_race] die Ungläubigen [your_race] schlagen muss. Bereitet Euch vor zu sterben, heidnischer Müll.
-DECLAREWAR_ERRATIC_03      | Der [my_race] Kalender sagt, dass es ein gutes Jahr für einen Krieg ist. Auf Wiedersehen, Anführer [your_name]!
-DECLAREWAR_ERRATIC_04      | Anführer [my_name] der [my_race] hat bestimmt, dass Jagdsaison ist. Jagd auf [your_race].
-DECLAREWAR_ERRATIC_05      | Die [your_race] verstecken sich hinter einer Maske der diplomatischen Freundschaft. Die [my_race] werden zuerst schlagen, bevor Ihr Eure wahre Natur offenbaren könnt.
-//
-DECLAREWAR_MILITARY_01     | Die Beibehaltung der Beziehungen zu deiner erbärmlichen Rasse ist nicht mehr von Vorteil. Die [my_race] mobilisieren unsere Flotten und bereiten den Krieg vor.
-DECLAREWAR_MILITARY_02     | Während unsere Botschafter Frieden versprachen, bereitete Kaiser [my_name] das Volk für den Krieg vor. Ihr werdet jetzt sterben.
-DECLAREWAR_MILITARY_03     | Anführer [my_name] der [my_race] langweilt sich bei den ganzen diplomatischen Spielen.Er will lieber Kriegsspiele spielen.
-DECLAREWAR_MILITARY_04     | Das [my_race] Reich ist der diplomatischen Spielchen müde. Erschauer, Anführer [your_name], wir kommen, um Euch zu holen.
-DECLAREWAR_MILITARY_05     | Wir werden ein Beispiel an Euch statuieren für diejenigen, die der Macht des [my_race] Reiches widerstehen würden.
-DECLAREWAR_MILITARY_06     | Ihr lasst uns [my_race] nur eine Wahl: Euer Reich brennen zu sehen.
-//
-DECLAREWAR_ALLIANCE_01     | Das [my_race] Reich ist entschlossen, das Universum von der [your_race] Tyrannei zu befreien!
-DECLAREWAR_ALLIANCE_02     | Das [my_race] Reich wird bald die Galaxie von Eurem Wahnsinns heilen.
-DECLAREWAR_ALLIANCE_03     | Die [my_race] verstehen, dass auch Anührer törichte Fehler machen. Ergebe Dich und Dir wird die Schande des Sturzes erspart bleiben.
-DECLAREWAR_ALLIANCE_04     | Unsere aufrichtige Entschuldigung, Kaiser [your_name], aber das [my_race] Reich muss Euch jetzt zerstören.
-//
-DECLAREWAR_SPYING_01       | [your_race]-Schleim. Warnungen waren wohl nicht genug. Jetzt wirst du die Macht des [my_race] Reiches fühlen.
-DECLAREWAR_SPYING_02       | Ihre Einmischung in [my_race] Angelegenheiten wurde lange genug geduldet. Natürlich weißt du, dass das Krieg bedeutet!
-DECLAREWAR_SPYING_03       | Ihre Handlungen können nicht mehr toleriert werden. Bereiten Sie sich vor, unter der Welle des [my_race] Sturms zu sterben.
-DECLAREWAR_SPYING_04       | Obwohl das [my_race] Reich gezögert hat, in einen intergalaktischen Krieg einzutreten, können Eure unerträglichen Terrorakte nicht mehr zugelassen werden.
-DECLAREWAR_SPYING_05       | Eure Handlungen gegen die [my_race] haben das Schicksal unserer beiden Reiche unwiderruflich verändert und uns in einen Krieg gestürzt, den niemand gewinnen kann.
-DECLAREWAR_SPYING_06       | Immer wieder haben die [my_race] versucht, mit dir zu reden. Jetzt habt Ihr uns keine andere Wahl als Krieg gelassen.
-DECLAREWAR_SPYING_07       | Also, Anführer [your_name], so habt Ihr unsere Fragen nach dauerndem Frieden beantwortet.So sei es! Wir werden den Wahnsinn der [your_race] aus dem Universum tilgen.
-
-DECLAREWAR_ATTACK_07       | Wie kannst du es wagen, in den [my_race]-Raum einzutreten und eine unserer Kolonien anzugreifen. Solche Kühnheit kann nur in der Art beantwortet werden.
-DECLAREWAR_ATTACK_08       | Das Angriff auf unsere Kolonie auf [system] war nicht klug. Das [my_race] Reich wird nicht mehr im Leerlauf sitzen, während unser Volk von [your_race] Hunden erschlagen wird.
-DECLAREWAR_ATTACK_09       | Das [my_race] Reich betrachtet den Angriff auf das [system]-Sternensystem als eine unprovozierte Kriegshandlung.
-
-
-WARN_SPYING_01             |
-
-WARN_ATTACKED_ALLY_01      | Anführer [my_name], Oberster der [my_race], ist sehr beunruhigt über die [your_race] Angriffe auf unseren Allierten, die [other_race].
-
-WARN_TRESPASSING_01        | Anführer [my_name] schlägt vor, dass Ihr Eure [your_race] Schiffe sofort aus dem [system]-System abzieht.
-WARN_TRESPASSING_02        | Spielt keine Spiele mit den mächtigen [my_race]. Zieht Eure Schiffe aus dem Orbit von [system] ab.
-WARN_TRESPASSING_03        | Anführer [my_name] sagt schmerzhafte Konsequenzen für irgendwelche [your_race] Schiffe, die zu nahe an der [my_race] Kolonie bei [system] verweilen.
-WARN_TRESPASSING_04        | [your_race] Schiffe, die im [system]-System erfasst werden, werden als Rückzahlung an die [my_race] für Ihren Mangel an Diplomatie gehalten.
-WARN_TRESPASSING_05        | Die [my_race] Jugend wird bald Museumsausstellungen von antiken [your_race] Schiffen haben, die im Orbit des [system]-Systems waren.
-
-WARN_ENCROACHING_01        | Das [your_race]-Reich ist zu groß geworden. Wenn Du es weiter vergößerst, werden die [my_race] genötigt militärische Maßnahmen zu ergreifen.
-WARN_ENCROACHING_02        | Eure rücksichtslose Expansion fängt an, auf [my_race] Territorium einzudringen. Ziehe dich aus unserem Raum zurück oder werde zerstört
-WARN_ENCROACHING_03        | Eure ehrgeizige Expansion kann nicht unkontrolliert bleiben. Wenn Ihr nicht anfängt, euch zurückzuziehen, werden wir gezwungen sein, das Territorium mit Gewalt zurückzuerobern.
-WARN_ENCROACHING_04        | Stoppt Eure Expansion in das [my_race] Territorium oder wir werden Ihre pathetische Rasse zermalmen.
-WARN_ENCROACHING_05        | Die [my_race] Geduld ist am Ende. Expandiert weiter und es gibt Krieg.
-
-WARN_EXPANSION_01          | Das [your_race] Reich ist viel zu mächtig geworden. Beachte meine Warnung: Mach so weiter und Ihr werdet ausgerottet.
-WARN_EXPANSION_02          | Das [your_race] Reich ist zu einer Bedrohung für die gesamte Galaxis geworden. Stoppe die Ausdehnung oder spüre den Zorn des [my_race] Imperiums.
-WARN_EXPANSION_03          | Die [my_race] sind ermüdet von Eurer Expansion. Zieht Euch zurück oder bereitet Euch vor zu sterben, Anführer [your_name].
-WARN_EXPANSION_04          | Die [my_race] werden es den [your_race] nicht erlauben, die Galaxis zu erobern. Wenn nötig, werden wir das Universum vor dem Wahnsinn der [your_race] retten.
-WARN_EXPANSION_05          | Ihr habt euch wie eine Pest in der Galaxie verbreitet. Hört au, Eure rücksichtslose Expansion fortzusetzen oder die [my_race] wird gezwungen sein, Ihre Bedrohung ein für allemal zu beseitigen.
-
-WARN_BUILDUP_01            | Anführer [your_name], Eure Flotten sind zu nah an unserer Grenze. [my_race] Anführer [my_name] erwartet, dass Ihr Eure Flotte zurückzieht oder wir werden es selber erledigen.
-WARN_BUILDUP_02            | Die [my_race] Verteidigung ist wachsam und wird jegliches Eindringen der [your_race] Flotte zerschlagen. Wir schlagen vor, dass Sie Ihre winzigen Muskeln anderswo spielen lasst.
-WARN_BUILDUP_03            | Hast Du erwartet, dass wir von deiner pathetischen Show in der Nähe von den [my_race] Grenzen beunruhigt werden? Wir zerstören größere Flotten in unseren Trainingsübungen.
-WARN_BUILDUP_04            | Nimm nicht an, Anführer [your_name], dass die [my_race] die Anhäufung Schiffe in der Nähe unserer Grenzen nicht bemerkt haben. Wir werden alle Einfälle mit gleicher Kraft vergelten.
-WARN_BUILDUP_05            | Die [my_race] Flotte in der Nähe unserer Grenzen ist zu groß. Entferne sie, wenn Du beabsichtigst, stabile Beziehungen aufrechtzuerhalten.
-WARN_BUILDUP_06            | Erzähle Deinem feigen Anführer [your_name], dass die Flotten bereit sind, eure Flotten zu zerstören, die in den [my_race] Raum vorstoßen.
-WARN_BUILDUP_07            | Grüße, großer und wundersamer Anführer [your_name]! Die [my_race] nehmen an, dass eure mächtigen Flotten in der Nähe unserer Grenzen als Mittel des gegenseitigen Schutzes angesammelt werden?
-WARN_BUILDUP_08            | Grüße an den mächtigen Anführer [your_name]! Wir haben bemerkt, dass sich [your_race] Flotten nahe der [my_race] Grenze befinden. Sicherlich werden wir nicht als Bedrohung Eurer Macht angesehen?
-WARN_BUILDUP_09            | Ist es so, dass es so für die [my_race] enden soll? Zermalmt zwischen den anstürmenden [your_race] Flotten? Zweifelt nicht dran, dass wir Euch mit unserem letzten Atemzug verfluchen werden.
-
-WARN_SKIRMISH_01           | Grüße, Anführer [your_name]! Die [my_race] haben Eure verirrten Schiffe in einem Schiffsfriedhof nahe [system] verbracht. Für Schäden während des Transports haften wir nicht.
-WARN_SKIRMISH_02           | Wenn Anführer [your_name] sich so sehr einen Krieg mit den mächtigen [my_race], sagt ihm, dass er eine größere Flotte im [system]-System findet.
-WARN_SKIRMISH_03           | Arrogante Welpen! Ein weiterer Angriff wie der bei [system] und die [my_race] werden bald die Reste Deiner käglichen Zivilisation aus dem Profl kratzen. Achte darauf oder stirb.
-WARN_SKIRMISH_04           | Nur ein Narr würde einen kostspieligen Krieg mit einem Freund provozieren. Die [my_race] hoffen, dass der Vorfall bei [system] nur ein Unfall in der Einschätzung war.
-WARN_SKIRMISH_05           | Anführer [your_name], das Scharmützel bei [system] riskiert einen sinnlosen Krieg, der nur [your_race] und [my_race] gleichermaßen ruinieren kann.
-WARN_SKIRMISH_06           | Dummköpfe! Wenn der Angriff auf [system] ein Vorspiel für eine weitere militärische Aktion war, dann wird die [my_race] gerne die Schaufel für das Grab der [your_race] reichen.
-WARN_SKIRMISH_07           | Grüße, glorreicher [your_name]! Die [my_race] hoffen auf einen unglücklichen Zufall bei [system] und hoffen, dass die guten Beziehungen mit den mächtigen [your_race] aufrecht erhalten werden.
-WARN_SKIRMISH_08           | Warum habt Ihr die [my_race] bei [system] angegriffen? Sicherliche gibt es durchaus wichtigere Bedrohungen für die mächtigen [your_race]...
-WARN_SKIRMISH_09           | Informieren Sie die Metzger, die den Angriff an [System] befohlen haben, dass selbst die kleinste [my_race] -Kraft einen schmerzhaft zubeißen kann, wenn sie in die Enge getrieben wird.
-
-WARN_ATTACKED_04           | Betrachten Sie sich glücklich, Anführer [your_name], dass das [my_race] Reich noch nicht bereit ist, in einen sinnlosen Krieg über den Vorfall bei [system] einzutreten.
-WARN_ATTACKED_05           | Euer sinnloser Angriff auf das [my_race] -Sternsystem bei [system] hat das Leben von Milliarden auf unseren beiden Welten gefährdet.
-WARN_ATTACKED_06           | Wie kannst Du es nicht erwarten, dass wir Vergeltung für den unprovozierten Angriff auf [system] üben?
-WARN_ATTACKED_07           | Wagt Euch noch einmal in die Nähe des [system]-Sternsystems und die [my_race] wird gezwungen sein, die gesamte [your_race] Rasse zu vernichten
-WARN_ATTACKED_08           | Viele im [my_race] Reich sind unruhig und sehnen sich nach Rache. Ein weiterer Angriff wie der bei [system] und du wirst uns eine Entschuldigung für den Krieg geben.
-WARN_ATTACKED_09           | Die Beziehungen zwischen unseren beiden Reichen hat sich sehr verschlechtert. Der Angriff auf das [my_race]-System bei [system] war unprovoziert und kann bald zum Krieg führen.
-
-WARN_INVADED_04            | Die [my_race] befehlen Euch, alle Feindseligkeiten im [system]-System einzustellen oder die Konsequenzen zu tragen.
-WARN_INVADED_05            | Konflikte wie diese Schlacht bei [system] kann als Einleitung für einen Krieg mit den [my_race] gesehen werden.
-WARN_INVADED_06            | Zur Hölle mit Dir, Anführer [your_name]! Ihr gefährdet die Zukunft unserer beiden Völker durch Ihre sinnlosen Angriffe auf [my_race] Kolonien.
-WARN_INVADED_07            | Wir sind keine Dummköpfe. Sicherlich haben wir das nicht erwartet von den [my_race], aber der Angriff auf [system]-System war sicherlich kein Angriff von Rebellen...
-WARN_INVADED_08            | Der mitleidlose Angriff auf die [my_race]-Kolonie im [system]-System hat alles, was wir an Zukunft aufgebaut haben, zerstört.
-WARN_INVADED_09            | Während die Zerstörung unserer  Schiffe bedauerlich ist, garantiert das Massaker auf [system] einen Gegenschlag.
-
-WARN_ESPIONAGE_01          | Anführer [your_name] der Undankbare, Du riskierst die wohlwollende Gnaden des Volks der [my_race] durch die Spionageaktivitäten.
-WARN_ESPIONAGE_02          | Kinder, die um Geschenke bitten, sind klüger als die, die sich diese einfach nehmen.Stoppe die Spionageaktivitäten oder erwarte Deine gerechte Strafe.
-WARN_ESPIONAGE_03          | Dein unverschämter Führer wird nur die [your_race] mit den pathetischen Versuchen zur Spionage im [my_race] Imperium ruinieren.
-WARN_ESPIONAGE_04          | Die [my_race] wissen um die Spionage schon seit einiger Zeit... und unser Geduldsfaden wird dünner...
-WARN_ESPIONAGE_05          | Passt auf, Anführer [your_name]. Wir werden nicht länger die Spionage gegen die [my_race] dulden.
-WARN_ESPIONAGE_06          | Wir hatten bisher große Nachsicht, die bis dahin nur die Spionageversuche duldete, aber bald wirst Du den Zorn des [my_race] Reiches fühlen.
-WARN_ESPIONAGE_07          | Die [my_race] ist gezwungen, gegen deine hartnäckigen Spionageversuche zu protestieren.
-WARN_ESPIONAGE_08          | Ihre Spionageversuche schaffen Spannungen zwischen den [my_race] und [your_race] Reichen.
-WARN_ESPIONAGE_09          | Offensichtlich hast Du die [my_race] Geduld im Umgang mit [your_race] Spionage überschätzt. Wenn Ihr fortfahrt, wird es sicherlich zu offenen Feindseligkeiten führen.
-
-WARN_SABOTAGE_01           | In der Vergangenheit ist das Reich der [my_race] nett zu untergeordneten Arten gewesen, aber wenn du auf die Sabotage unserer Kolonien beharrst, werden wir die Bedrohung von [your_race] ein für allemal beseitigen.
-WARN_SABOTAGE_02           | Sicherlich Anführer [your_name], musst Du erkennen, dass Sabotage irgendwelche zukünftigen Beziehungen mit der [my_race] gefährden wird.
-WARN_SABOTAGE_03           | Exzellent! Eure Sabotageakte gegen die [my_race] haben uns eine ausreichende Begründung für Eliminierung Eurer erbärmlichen Spezies gegeben. 
-WARN_SABOTAGE_04           | Die [my_race] tragen Dir keine bösartigen absichten nach, aber die sinnlose Sabotage zwingt uns fast in einen Krieg, der unsere Zivilisationen vernichten könnte.
-WARN_SABOTAGE_04           | Anführer [your_name], hör her: Hört auf mit diesen Sabotageakten oder macht Euch auf unsere Rache gefasst.
-WARN_SABOTAGE_05           | Eine fortgeführte Sabotage an den [my_race] Kolonien wird unsere Reiche in die Nähe eines Krieges bringen...
-WARN_SABOTAGE_05           | Sabotiert weiter die [my_race] Kolonien und Du wirst uns in einen dummen und kostespieligen Krieg treiben!
-WARN_SABOTAGE_05           | Eure plumpen Sabotageversuche in den [my_race] Kolonien wird auch noch das letzte bisschen Frieden zerbrechen, was wir noch haben.
-WARN_SABOTAGE_06           | Also, wollen die abscheulichen [your_race] einen Krieg zur gegenseitigen Ausrottung beginnen? Nach Euren jüngsten Sabotageversuchen ist das [my_race] Imperium gefährlich nah an Eurer Vernichtung.
-WARN_SABOTAGE_07           | Anführer [your_name], wenn ihr euch nicht einen sinnlosen Krieg wünscht, dann hört sofort mit den Sabotageakten auf!
-WARN_SABOTAGE_08           | Die [my_race] werden nicht länger für den Terrorimus der [your_race] tolerieren. Kriege sind schon wegen weniger ausgebrochen.
-WARN_SABOTAGE_09           | Die noblen [my_race] werden immer gegen die [your_race] Tyrannei und deren mutwilligen Akte des Terrors stehen.
-
-WARN_GENOCIDE_04           | Anführer [your_name], Du bist zu weit gegangen. Die mächtigen [my_race] können nicht über den Mord an den [victim] hinwegsehen.
-WARN_GENOCIDE_05           | Bedenke, [your_name], Völkermord ist oft ein Schwert mit zwei Schneiden...
-WARN_GENOCIDE_06           | Die freundlichen [my_race] hoffen, dass die mächtigen [your_race] immer noch unterscheiden können zwischen Freund und Feind.
-WARN_GENOCIDE_07           | Der Massenmord an den [victim] erinnert die mächtigen [my_race] daran, dass wir uns nicht auf Eure Stufe stellen sollten.
-WARN_GENOCIDE_08           | Die Auslöschung der kompletten [victim]-Rasse macht klar, dass Ihr nur die Sprache der Gewalt versteht.
-WARN_GENOCIDE_09           | Euer barbarischer Akt gegen die [victim] zeigt die Rücksichlosigkeit gegenüber der Galaxis.
-
-WARN_FINAL_WAR_01          | Bald werden wir Eure erbärmliche Rebellion zu einem Ende bringen.
-WARN_FINAL_WAR_01          | Ihr könnt Euch nicht gegen die Neue Republik wehren. Bereite Dich auf Deinen Tod vor!
-WARN_FINAL_WAR_01          | Wünschst Du Deine Stimme zur Neuen Republik zu ändern? Ich muss Dir leider mitteilen, dass es zu spät ist.
-WARN_FINAL_WAR_01          | Die Neue Republik wird nicht ruhen, bevor die verräterischen [your_race] ausgetilgt sind.
-WARN_FINAL_WAR_01          | Die Neue Republik muss ein Exempel für zukünftige Revolten mit Eurer Auslöschung statuieren.
-
-WARN_BIOWEAPON_01          | Offensichtlich sind die [your_race] von einem Wahnsinnigen regiert. Der Einsatz von biologischen Waffen zeigt es deutlich. Bald wird das [my_race] Imperium dem ein Ende bereiten.
-WARN_BIOWEAPON_02          | Anführer [your_name], einfache Rhetorik kann einen Biowaffeneinsatz nicht entschuldigen.
-WARN_BIOWEAPON_03          | In den Worten eines Anführers, der Biowaffen einsetzt, kann weder Ehre noch Wahrheit liegen.
-WARN_BIOWEAPON_04          | Offensichtlich sind die [your_race] von einem Wahnsinnigen regiert. Der Einsatz von biologischen Waffen zeigt es deutlich. Bald wird das [my_race] Imperium dem ein Ende bereiten.
-WARN_BIOWEAPON_05          | Keine erbärmliche Entschuldigung kann einen Einsatz von Biowaffen gegen zivile Bevölkerung rechtfertigen.
-WARN_BIOWEAPON_06          | In den Worten eines Anführers, der Biowaffen einsetzt, kann weder Ehre noch Wahrheit liegen.
-WARN_BIOWEAPON_07          | Abschaum! Du wirst teuer bezahlen für den Biowaffeneinsatz auf unschuldige Kolonisten.
-WARN_BIOWEAPON_08          | Der Einsatz biologischer Waffen hat unsere beiden Reiche an den Rande des Krieges geführt.
-WARN_BIOWEAPON_09          | In den Worten eines Anführers, der Biowaffen einsetzt, kann weder Ehre noch Wahrheit liegen.
-
-WARN_COUNCIL_VOTE_01       | Euer Votum gegen uns [my_race] hat uns zum Gespött der Galaxis gemacht. Wir werden diese Schmach nicht vergessen.
-WARN_COUNCIL_VOTE_01       | Und Du mein Sohn, [your_name]? Hütet euch, denn, wenn ich Deinen Dolch aus dem Rücken reißen will, weiß ich, wie ich es machen werde und lehre dich, nicht wieder gegen uns zu stimmen.
-WARN_COUNCIL_VOTE_01       | Durch Deinen Betrug hat unsere Geduld stark abgenommen. Deine Stimme gegen die [my_race] ist ein Fehler, den man nur einmal machen sollte.
-WARN_COUNCIL_VOTE_01       | Stich in den Rücken! Auf Sicht! Eure Abstimmungverhalten liest sich wie ein politisches Meuchelmörderhandbuch.
-WARN_COUNCIL_VOTE_02       | Wenn Eure abscheulichen Angriffe auf unseren guten Ruf weitergehen, schreiben wir Eurem kleines betrügerisches Handbuch ein unangenehmes Ende.
-WARN_COUNCIL_VOTE_02       | Wir sind nicht amüsiert über Eure Wahl gegen uns.
-WARN_COUNCIL_VOTE_02       | Wie konntet Ihr nicht für die [my_race]stimmen? Wenn du meinen Zorn weiterhin wecken willst, wirst du meinen Zorn kennenlernen.
-WARN_COUNCIL_VOTE_02       | Wir haben gelernt, unsere Freunde nah und unsere Feinde noch näher zu halten. Stimme wieder gegen die [my_race] im Galaktischen Rat und wir könnten in Laser Distanz sein.
-WARN_COUNCIL_VOTE_03       | Wie Ihr Galaktischer Rat sagt, sind diejenigen, die nicht für uns sind, gegen uns. Betrachte Dich als einige Plätze auf unserer Todesliste nach oben gerutscht.
-WARN_COUNCIL_VOTE_03       | Du erkennst natürlich die Kraft, die ich ausübe, und ich werde dich wie ein Insekt für deinen Wahlverrat zerschlagen.
-WARN_COUNCIL_VOTE_03       | Es gibt Strafen für die Abstimmung gegen die [my_race], wie Du vielleicht später herausfinden wirst.
-
-WARN_OATHBREAKER_01        | Wie wir es erwartet haben, haben die [your_race] unter Beweis gestellt, dass sie keine Ehre haben.
-WARN_OATHBREAKER_01        | Ein Anführer, der seine Vereinbarungen nicht ehrt ist weniger wert als ein Denubischer Schachtkriecher.
-
-PRAISE_COUNCIL_VOTE_01     | Hurra! Und denk dran: Eine Stimme für [my_race] ist eine Stimme für den galaktischen Frieden!
-PRAISE_COUNCIL_VOTE_01     | Wir sind erfreut mit Deiner Wahl. Wenn Du Deine weise Entscheidung beibehälst, kann unser Anführer [my_name] die Galaxis vereinen.
-PRAISE_COUNCIL_VOTE_01     | Wir sind geschmeichelt, dass du für die [my_race] gestimmt hast. Ihr müsst uns bald einen formellen Besuch abstatten. Vielleicht können wir die Gunst zurückgeben.
-
-PRAISE_COUNCIL_VOTE_02     | Wir nehmen Ihre Stimme für uns als klare Geste, dass Sie Ihre Beziehungen mit dem mächtigen [my_race] Imperium verbessern möchten.
-PRAISE_COUNCIL_VOTE_02     | Obwohl wir die Wahl nicht gewonnen haben, freuen wir uns sehr, dass Du dich entschieden hast, die Stimmen für die [my_race] zu geben.
-PRAISE_COUNCIL_VOTE_02     | Nun, [your_name], das könnte der Beginn einer schönen Freundschaft sein. Vielen Dank für Ihre Stimme in der Sitzung des Galaktischen Rates.
-
-PRAISE_COUNCIL_VOTE_03     | Obwohl wir Ihre Stimme sehr schätzen, fragen sich die Zyniker unter uns, welche Strings an sie angehängt werden könnten.
-PRAISE_COUNCIL_VOTE_03     | Du zeigst Weisheit, wenn Du Deine Stimme für uns abgibst. Trotz unserer natürlichen Bedenken werden wir vielleicht eine wohlhabende Zukunft haben.
-
-PRAISE_ATTACKED_ENEMY_01   | Es scheint, dass sowohl die [your_race] und [my_race] sich einen gemeinsamen Feind teilen, die abscheulichen [other_race].
-PRAISE_ATTACKED_ENEMY_01   | Zusammen können wir, die [your_race] und die [my_race], der Bedrohung durch die bösen [other_race] widerstehen.
-PRAISE_ATTACKED_ENEMY_01   | Anführer [your_name], Du musst doch auch die unglaubliche Bedrohung erkennen, die das [other_race] Reich für uns  [your_race] und [my_race] Welten darstellt.
-PRAISE_ATTACKED_ENEMY_01   | Offensichtlich ist die [other_race] Bedrohung auch an Eurem Reich angekommen. Zusammen können wir diese Ungläubigen vernichten.
-PRAISE_ATTACKED_ENEMY_01   | Die [my_race] erkennen jetzt, dass Eure Angriffe gegen die heimtückischen [other_race] ehrhaft waren und Ihr Worte des Friedens gesprochen habt.
-
-PRAISE_TRADE_01            | Der Handel zwischen dem [my_race] Reich und dem [your_race] Imperium hat die aktuellen Spannungen stark entspannt.
-PRAISE_TRADE_01            | Obwohl unsere Imperien in der Vergangenheit Meinungsverschiedenheiten hatten, hat der gegenseitige Handel zwischen [yourace] und [my_race] Kaufleuten sicherlich etwas von der Schärfe genommen.
-PRAISE_TRADE_01            | Anführer [Ihr Name], Ihr Handel mit dem [my_race] Imperium hat nicht nur unsere Produktion erhöht, sondern auch eine Grundlage für gegenseitigen Respekt und Kooperation geschaffen.
-PRAISE_TRADE_01            | Ihre Beiträge zum gegenseitigen Handel zwischen unseren beiden Reichen haben unsere Beziehungen zwischen [your_race] und [my_race] stark verbessert.
-PRAISE_TRADE_01            | Der florierende Handel zwischen den [your_race] und [my_race] Imperien hat eine solide finanzielle Grundlage gebildet, von der unsere Reiche profitieren können.
-PRAISE_TRADE_01            | Der fortgesetzte Handel zwischen dem [my_race] und dem [your_race] Imperium ist von äußerster Wichtigkeit, wenn unsere Reiche der Bedrohung anderer widerstehen sollen.
-PRAISE_TRADE_01            | Der florierende Handel zwischen dem [my_race] und dem [your_race] Imperium hat ausgezeichnete Anreize geschaffen, um einen dauerhaften Frieden zwischen unseren beiden Reichen zu erhalten.
-PRAISE_TRADE_01            | Unser gegenseitiger Handel hat eine neue Ära der Zusammenarbeit zwischen dem [my_race] und dem [your_race] Imperium geschaffen.
-PRAISE_TRADE_01            | Der von Ihnen angebotene Handel hat den [your_race] und [my_race] eine Chance gegeben, unsere Allianz zu stärken.

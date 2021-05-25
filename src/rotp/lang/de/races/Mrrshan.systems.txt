@@ -1,7 +1,6 @@
 // Human stars based on traditional Arabic star names
 // see: https://en.wikipedia.org/wiki/List_of_Arabic_star_names
 
-Acamar
 Achernar
 Acrab
 Acubens
