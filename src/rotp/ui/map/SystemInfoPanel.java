@@ -56,11 +56,18 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
     EmpireInfoGraphicPane graphicPane;
     SystemsUI parent;
     SystemSummaryPane summaryPane;
+    SystemFlagsPane systemFlagsPane;
     public SystemInfoPanel(SystemsUI p) {
         parent = p;
-        init();
+        init0();
     }
-    private void init() {
+    public void init() {
+        systemFlagsPane.init();
+    }
+    public void exit() {
+        systemFlagsPane.exit();
+    }
+    private void init0() {
         palette = Palette.named("Brown");
         setOpaque(true);
         setBackground(selectedC);
@@ -99,7 +106,7 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
     protected BasePanel detailPane() {
         summaryPane = new SystemSummaryPane();
 
-        BasePanel systemFlagsPane = new SystemFlagsPane();
+        systemFlagsPane = new SystemFlagsPane();
 
         BasePanel systemEventsPanel = new SystemHistoryPane();
         systemEventsPanel.setPreferredSize(new Dimension(getWidth(), scaled(250)));
@@ -279,7 +286,12 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
             comments.putClientProperty("caretWidth", s3);
             comments.setFocusTraversalKeysEnabled(false);
             comments.addMouseListener(this);
+        }
+        public void init() {
             emptyNotes = text("SYSTEMS_ENTER_NOTES");
+        }
+        public void exit() {
+            sys = null;
         }
         @Override
         public void paintComponent(Graphics g) {

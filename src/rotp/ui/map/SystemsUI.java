@@ -91,7 +91,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
     private GalaxyMapPanel map;
     private LinearGradientPaint backGradient;
     private SystemInfoPanel displayPanel;
-    private ExitFleetsButton exitButton;
+    private ExitSystemsButton exitButton;
     private final List<Sprite> controls = new ArrayList<>();
     private final Map<Integer,Integer> expandEnRouteSystems = new HashMap<>();
     private final Map<Integer,Integer> expandGuardedSystems = new HashMap<>();
@@ -113,6 +113,8 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
     private LinearGradientPaint greenBackC;
     private LinearGradientPaint brownBackC;
 
+    public String emptyNotes;
+    
     public SystemsUI() {
         instance = this;
         initModel();
@@ -124,6 +126,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         // reset map everytime we open
         targetSystem = null;
         map.init();
+        displayPanel.init();
         
         // on opening, build list of systems that we have colony ships 
         // in transport to. This is too expensive to do real-time
@@ -289,7 +292,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         displayPanel = new SystemInfoPanel(this);
         displayPanel.setBounds(w-rightPaneW-s5,s5,rightPaneW,scaled(673));
         
-        exitButton = new ExitFleetsButton(rightPaneW, s60, s10, s2);
+        exitButton = new ExitSystemsButton(rightPaneW, s60, s10, s2);
         exitButton.setBounds(w-rightPaneW-s5,h-s83,rightPaneW,s60);
         
         setLayout(new BorderLayout());
@@ -877,6 +880,10 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         }
         return "";
     }
+    public void exit(boolean delay) {
+        displayPanel.exit();
+        RotPUI.instance().selectMainPanel(delay);
+    }
     @Override
     public void keyPressed(KeyEvent e) {
         boolean shift = e.isShiftDown();
@@ -897,7 +904,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
             case KeyEvent.VK_ESCAPE:
                 clearMapSelections();
                 buttonClick();
-                RotPUI.instance().selectMainPanel(false);
+                exit(false);
                 return;
             case KeyEvent.VK_EQUALS:
                 if (e.isShiftDown())  {
@@ -1127,16 +1134,16 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
                 repaint();
         }
     }
-    class ExitFleetsButton extends ExitButton {
+    class ExitSystemsButton extends ExitButton {
         private static final long serialVersionUID = 1L;
-        public ExitFleetsButton(int w, int h, int vMargin, int hMargin) {
+        public ExitSystemsButton(int w, int h, int vMargin, int hMargin) {
             super(w, h, vMargin, hMargin);
         }
         @Override
         protected void clickAction(int numClicks) {
             // force recalcuate map bounds when returning
             buttonClick();
-            RotPUI.instance().selectMainPanel(true);
+            exit(true);
         }
     }
 }
