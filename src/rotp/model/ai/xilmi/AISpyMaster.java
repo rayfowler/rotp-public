@@ -43,34 +43,27 @@ public class AISpyMaster implements Base, SpyMaster {
         // modnar: is it not 0% to 10% of total prod, for a max of +20% security bonus, with 0 to 10 ticks/clicks?
         // MAX_SECURITY_TICKS = 10 in model/empires/Empire.java
 
-        int paranoia = 0;
-        boolean alone = true;
+        float paranoia = 0;
+        float avgOpponentTechLevel = 0;
+        float avgOpponentComputerLevel = 0;
+        float opponentCount = 0;
         for (EmpireView cv : empire.empireViews()) {
             if ((cv != null) && cv.embassy().contact() && cv.inEconomicRange()) {
-                //ail: only panic when I'm technologically ahead and don't have the computer-tech to cover it
-                int shouldPanicThreshold = 0;
-                shouldPanicThreshold += empire.tech().avgTechLevel();
-                shouldPanicThreshold -= cv.empire().tech().avgTechLevel();
-                shouldPanicThreshold += cv.empire().tech().computer().techLevel();
-                shouldPanicThreshold -= empire.tech().computer().techLevel();
-                alone = false;
-                if(shouldPanicThreshold > 0)
-                {
-                    if (cv.embassy().anyWar())
-                        paranoia += 3; // modnar: more internal security paranoia
-                    if (cv.embassy().noTreaty())
-                        paranoia += 2; // modnar: more internal security paranoia
-                }
+                avgOpponentTechLevel += cv.empire().tech().avgTechLevel();
+                avgOpponentComputerLevel += cv.empire().tech().computer().techLevel();
+                opponentCount++;
             }
         }
-        if ((paranoia == 0) && !alone)
-            paranoia++;
-        //ail: Only do periodical spy-sweeps, 30% of the time should be fine
-        if(random() < 0.7)
+        if(opponentCount > 0)
         {
-            paranoia = 0;
+            avgOpponentTechLevel /= opponentCount;
+            avgOpponentComputerLevel /= opponentCount;
+            paranoia = empire.tech().avgTechLevel() - avgOpponentTechLevel + min(0, avgOpponentComputerLevel - empire.tech().computer().techLevel());
         }
-        return min(10, paranoia); // modnar: change max to 10, MAX_SECURITY_TICKS = 10
+        if (paranoia < 0)
+            paranoia = 0;
+        System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" counter-espionage: "+paranoia+" mt: "+empire.tech().avgTechLevel()+" ot: "+avgOpponentTechLevel+" mct: "+empire.tech().computer().techLevel()+" pct: "+avgOpponentComputerLevel);
+        return min(10, (int)Math.round(paranoia)); // modnar: change max to 10, MAX_SECURITY_TICKS = 10
     }
     @Override
     public void setSpyingAllocation(EmpireView v) {
@@ -170,28 +163,13 @@ public class AISpyMaster implements Base, SpyMaster {
         
         if(galaxy().options().selectableAI())
         {
-            if(empire.leader().isHonorable())
+            if(empire.leader().isHonorable() || empire.leader().isPacifist())
             {
-                canEspionage = false;
                 canSabotage = false;
-            }
-            if(empire.leader().isPacifist())
-            {
-                allowSpiesAtPeace = false;
-                canSabotage = false;
-            }
-            if(empire.leader().isXenophobic())
-            {
-                allowSpiesAtPeace = false;
             }
             if(empire.leader().isAggressive() || empire.leader().isRuthless())
             {
                 actAsIfInWar = true;
-            }
-            if(empire.leader().isTechnologist())
-            {
-                allowSpiesAtPeace = true;
-                canEspionage = true;
             }
         }
       

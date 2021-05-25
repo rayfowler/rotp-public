@@ -72,7 +72,7 @@ public class AIGeneral implements Base, General {
         additionalColonizersToBuild = -1;
         
         additionalColonizersToBuild = additionalColonizersToBuild(false);
-        //System.out.println(empire.name()+" additionalColonizersToBuild: "+additionalColonizersToBuild+" available: "+empire.shipLab().colonyDesign().name());
+        System.out.println(empire.name()+" personality: "+empire.leader().personality()+" objective: "+empire.leader().objective());
         while (additionalColonizersToBuild > 0)
         {
             float highestScore = 0;

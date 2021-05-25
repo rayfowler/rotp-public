@@ -254,6 +254,49 @@ public class AIScientist implements Base, Scientist {
         empire.tech().propulsion().allocationPct(totalTechMod/empire.race().techMod[4]);
         empire.tech().weapon().allocationPct(totalTechMod/empire.race().techMod[5]);
         
+        if(!empire.fleetCommanderAI().inExpansionMode())
+        {
+            if(galaxy().options().selectableAI())
+            {
+                if(empire.leader().isEcologist())
+                {
+                    empire.tech().computer().adjustAllocation(-1);
+                    empire.tech().construction().adjustAllocation(-1);
+                    empire.tech().forceField().adjustAllocation(-1);
+                    empire.tech().planetology().adjustAllocation(5);
+                    empire.tech().propulsion().adjustAllocation(-1);
+                    empire.tech().weapon().adjustAllocation(-1);
+                }
+                if(empire.leader().isIndustrialist())
+                {
+                    empire.tech().computer().adjustAllocation(2);
+                    empire.tech().construction().adjustAllocation(2);
+                    empire.tech().forceField().adjustAllocation(-1);
+                    empire.tech().planetology().adjustAllocation(-1);
+                    empire.tech().propulsion().adjustAllocation(-1);
+                    empire.tech().weapon().adjustAllocation(-1);
+                }
+                if(empire.leader().isExpansionist())
+                {
+                    empire.tech().computer().adjustAllocation(-1);
+                    empire.tech().construction().adjustAllocation(-1);
+                    empire.tech().forceField().adjustAllocation(-1);
+                    empire.tech().planetology().adjustAllocation(2);
+                    empire.tech().propulsion().adjustAllocation(2);
+                    empire.tech().weapon().adjustAllocation(-1);
+                }
+                if(empire.leader().isMilitarist())
+                {
+                    empire.tech().computer().adjustAllocation(1);
+                    empire.tech().construction().adjustAllocation(-1);
+                    empire.tech().forceField().adjustAllocation(1);
+                    empire.tech().planetology().adjustAllocation(-1);
+                    empire.tech().propulsion().adjustAllocation(-1);
+                    empire.tech().weapon().adjustAllocation(1);
+                }
+            }
+        }
+        
         // if in special mode, change ratios
         if (empire.generalAI().inWarMode()) {
             empire.tech().computer().adjustAllocation(4);
@@ -307,30 +350,47 @@ public class AIScientist implements Base, Scientist {
         int roundingFix = 60 - totalAlloc;
         while(roundingFix < 0)
         {
-            empire.tech().computer().adjustAllocation(-1);
-            roundingFix++;
-            if(roundingFix >= 0)
-                break;
-            empire.tech().construction().adjustAllocation(-1);
-            roundingFix++;
-            if(roundingFix >= 0)
-                break;
-            empire.tech().forceField().adjustAllocation(-1);
-            roundingFix++;
-            if(roundingFix >= 0)
-                break;
-            empire.tech().planetology().adjustAllocation(-1);
-            roundingFix++;
-            if(roundingFix >= 0)
-                break;
-            empire.tech().propulsion().adjustAllocation(-1);
-            roundingFix++;
-            if(roundingFix >= 0)
-                break;
-            empire.tech().weapon().adjustAllocation(-1);
-            roundingFix++;
-            if(roundingFix >= 0)
-                break;
+            if(empire.tech().computer().allocation() > 0)
+            {
+                empire.tech().computer().adjustAllocation(-1);
+                roundingFix++;
+                if(roundingFix >= 0)
+                    break;
+            }
+            if(empire.tech().construction().allocation() > 0)
+            {
+                empire.tech().construction().adjustAllocation(-1);
+                roundingFix++;
+                if(roundingFix >= 0)
+                    break;
+            }
+            if(empire.tech().forceField().allocation() > 0)
+            {
+                empire.tech().forceField().adjustAllocation(-1);
+                roundingFix++;
+                if(roundingFix >= 0)
+                    break;
+            }
+            if(empire.tech().planetology().allocation() > 0)
+            {
+                empire.tech().planetology().adjustAllocation(-1);
+                roundingFix++;
+                if(roundingFix >= 0)
+                    break;
+            }
+            if(empire.tech().propulsion().allocation() > 0)
+            {
+                empire.tech().propulsion().adjustAllocation(-1);
+                roundingFix++;
+                if(roundingFix >= 0)
+                    break;
+            }
+            if(empire.tech().weapon().allocation() > 0)
+            {            empire.tech().weapon().adjustAllocation(-1);
+                roundingFix++;
+                if(roundingFix >= 0)
+                    break;
+            }
         }
         
         while(roundingFix > 0)

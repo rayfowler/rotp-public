@@ -396,10 +396,22 @@ public class AIGovernor implements Base, Governor {
                 colonizerCost += lab.design(i).cost() * counts[i];
             }
         }
+        boolean militarist = false;
+        boolean hippy = false;
+
+        if(galaxy().options().selectableAI())
+        {
+            if(empire.leader().isMilitarist())
+                militarist = true;
+            else if(empire.leader().isExpansionist() && empire.generalAI().additionalColonizersToBuild(true) == 0)
+                militarist = true;
+            else if(empire.leader().isEcologist() || empire.leader().isTechnologist())
+                hippy = true;
+        }
         if(col.allocation(SHIP) == 0 && productionScore(col.starSystem()) >= 0.5)
         {
             //Making sure to not just spam colonizers when we at risk of being attacked, also ignoring ship-maintenance-limit in this case
-            if(enemy == true || inAttackRange == true)
+            if(enemy == true || inAttackRange == true && !hippy)
             {
                 if(colonizerCost > fighterCost)
                 {
@@ -430,17 +442,6 @@ public class AIGovernor implements Base, Governor {
             float maxShipMaintainance = 0.0f;
             float fighterPercentage = 1.0f;
             
-            boolean militarist = false;
-            boolean hippy = false;
-            
-            if(galaxy().options().selectableAI())
-            {
-                if(empire.leader().isMilitarist())
-                    militarist = true;
-                else if(empire.leader().isEcologist())
-                    hippy = true;
-            }
-
             if(enemy)
             {
                 maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
@@ -456,7 +457,7 @@ public class AIGovernor implements Base, Governor {
                     maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance() / 4;
                 fighterPercentage = 0.75f;
             }
-            if(militarist)
+            if(militarist && inAttackRange)
                 maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
             float maxShipMaintainanceBeforeAdj = maxShipMaintainance;
             maxShipMaintainance *= productionScore(col.starSystem());

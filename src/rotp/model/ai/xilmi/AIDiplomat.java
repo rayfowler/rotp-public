@@ -537,7 +537,17 @@ public class AIDiplomat implements Base, Diplomat {
 
         v.embassy().resetPeaceTimer();
         
-        if (!warWeary(v))
+        boolean personalityForcedRefuse = false;
+        boolean personalityForcedAccept = false;
+        if(galaxy().options().selectableAI())
+        {
+            if(empire.leader().isHonorable())
+                personalityForcedAccept = true;
+            if(empire.leader().isRuthless())
+                personalityForcedRefuse = true;
+        }
+
+        if ((!warWeary(v) || personalityForcedRefuse) && !personalityForcedAccept)
             return refuseOfferPeace(requestor);
 
         DiplomaticIncident inc = v.embassy().signPeace();
@@ -712,9 +722,13 @@ public class AIDiplomat implements Base, Diplomat {
         if(galaxy().options().selectableAI())
         {
             if(empire.leader().isHonorable())
-                personalityAllianceMod = 10;
-            if(empire.leader().isDiplomat())
                 personalityAllianceMod = 30;
+            if(empire.leader().isAggressive() || empire.leader().isRuthless())
+            {
+                if(e.warEnemies().equals(empire.warEnemies())
+                        && e.allies().equals(empire.allies()))
+                    personalityAllianceMod = 30;
+            }
             if(empire.leader().isPacifist())
                 return true;
             if(empire.leader().isErratic())
@@ -728,7 +742,7 @@ public class AIDiplomat implements Base, Diplomat {
         if(galaxy().options().baseAIRelationsAdj() > 0 || galaxy().options().selectableAI())
         {
             //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" ally-Popratio: "+popRatioOfAllianceAmongstContatacts(empire)+" agree when below: "+(personalityAllianceMod + galaxy().options().baseAIRelationsAdj()) * 3.33 / 100.0);
-            if(popRatioOfAllianceAmongstContatacts(empire) < (personalityAllianceMod + galaxy().options().baseAIRelationsAdj()) * 3.33 / 100.0)
+            if(popRatioOfAllianceAmongstContatacts(empire) < (galaxy().options().baseAIRelationsAdj() * 3.33 + personalityAllianceMod) / 100.0)
                 return true;
         }
         return false;
@@ -776,6 +790,12 @@ public class AIDiplomat implements Base, Diplomat {
             if (!v.otherView().embassy().readyForJointWar())
                 return false;
         }    
+        //asking for help is dishonorable!
+        if(galaxy().options().selectableAI())
+        {
+            if(empire.leader().isHonorable())
+                return false;
+        }
         // if he's already at war, don't bother
         if (friend.atWarWith(target.id))
             return false;
@@ -824,8 +844,14 @@ public class AIDiplomat implements Base, Diplomat {
         if(empire.enemies().contains(target) && !empire.warEnemies().contains(target))
             return agreeToJointWar(requestor, target);
         
+        boolean truePacifist = false;
+        if(galaxy().options().selectableAI())
+        {
+            if(empire.leader().isPacifist())
+                truePacifist = true;
+        }
          // will always declare war if allied with the requestor and he is already at war with the target
-        if (requestor.alliedWith(id(empire)) && requestor.atWarWith(target.id))
+        if (requestor.alliedWith(id(empire)) && requestor.atWarWith(target.id) && !truePacifist)
             return agreeToJointWar(requestor, target);
         
         if(!empire.enemies().isEmpty())
@@ -1054,6 +1080,11 @@ public class AIDiplomat implements Base, Diplomat {
                 if(random() <= ERRATIC_WAR_PCT)
                     return true;
             }
+            if(empire.leader().isRuthless())
+            {
+                if(v.empire() == empire.generalAI().bestVictim())
+                    return true;
+            }
         }
         return false;
     }
@@ -1145,7 +1176,15 @@ public class AIDiplomat implements Base, Diplomat {
             return;
         }
         
-        if (willingToOfferAlliance(v.empire())) {
+        //Honorables may return true on willingToOfferAlliance so they accept when asked, but they won't ask themselves
+        boolean canAcceptButNotOffer = false;
+        if(galaxy().options().selectableAI())
+        {
+            if(empire.leader().isHonorable())
+                canAcceptButNotOffer = true;
+        }
+        
+        if (willingToOfferAlliance(v.empire()) && canAcceptButNotOffer) {
             v.empire().diplomatAI().receiveOfferAlliance(v.owner());
             return;
         }
@@ -1425,21 +1464,29 @@ public class AIDiplomat implements Base, Diplomat {
             }
             float superiorityThreshold = max(0, 2 - developmentPct * empire.tech().avgTechLevel() / highestKnownOpponentTechLevel);
             superiorityThreshold += galaxy().options().baseAIRelationsAdj() / 30.0;
+            boolean useTechRequirement = true;
             if(galaxy().options().selectableAI())
             {
-                if(empire.leader().isAggressive() || empire.leader().isRuthless() || empire.leader().isExpansionist())
+                if(empire.leader().isHonorable() && v.empire().atWar())
+                    return false;
+                if(empire.leader().isAggressive() || empire.leader().isRuthless())
                     superiorityThreshold = 0;
                 else if(empire.leader().isPacifist())
                     return false;
+                if(empire.leader().isMilitarist() || empire.leader().isExpansionist())
+                    useTechRequirement = false;
             }
             //we can still grow otherwise
             if(empire.generalAI().additionalColonizersToBuild(true) > 0
                     || developmentPct < 0.75f)
                 warAllowed = false;
-            if(empire.tech().topSpeed() < 2)
-                warAllowed = false;
-            if(empire.tech().topShipWeaponTech().damageHigh() < 5)
-                warAllowed = false;
+            if(useTechRequirement)
+            {
+                if(empire.tech().topSpeed() < 2)
+                    warAllowed = false;
+                if(empire.tech().topShipWeaponTech().damageHigh() < 5)
+                    warAllowed = false;
+            }
             for(Empire emp : bestVictim.warEnemies())
             {
                 helpingPower += emp.powerLevel(emp);
@@ -1785,7 +1832,7 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
         if(galaxy().options().selectableAI())
         {
-            if(empire.leader().isHonorable() || empire.leader().isRuthless())
+            if(empire.leader().isHonorable())
                 return false;
             if(empire.leader().isPacifist())
                 return true;
