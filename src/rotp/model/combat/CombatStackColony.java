@@ -55,7 +55,7 @@ public class CombatStackColony extends CombatStack {
         beamDefense = mBase.beamDefense();
         startingPop = colony.population();
         startingFactories = colony.industry().factories();
-        planetaryShieldLevel = colony.empire().tech().maxPlanetaryShieldLevel();
+        planetaryShieldLevel = colony.defense().shieldLevel();
         hits = maxHits;
         shield = maxShield;
     }
