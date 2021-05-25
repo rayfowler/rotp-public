@@ -93,7 +93,7 @@ public final class TechMissileWeapon extends Tech {
         switch(typeSeq) {
             case 0: // NUCLEAR MISSILE
                 damage = 4;
-                speed = 2;
+                speed = 3; speed2 = 2;
                 cost = 11;
                 size = 50;
                 power = 20;
@@ -104,7 +104,7 @@ public final class TechMissileWeapon extends Tech {
                 break;
             case 1: // HYPER-V ROCKETS
                 damage = 6;
-                speed = 2.5f;
+                speed = 3.5f; speed2 = 2.5f;
                 size = 70;
                 power = 20;
                 cost = 12;
@@ -115,7 +115,7 @@ public final class TechMissileWeapon extends Tech {
                 break;
             case 2: // HYPER-X ROCKETS
                 damage = 8;
-                speed = 2.5f;
+                speed = 2.5f; speed2 = 2.5f;
                 size = 100;
                 power = 20;
                 cost = 14;
@@ -127,7 +127,7 @@ public final class TechMissileWeapon extends Tech {
                 break;
             case 3: // SCATTER PACK V ROCKETS
                 damage = 6;
-                speed = 2.5f;
+                speed = 3.5f; speed2 = 2.5f;
                 size = 115;
                 power = 50;
                 cost = 28;
@@ -139,7 +139,7 @@ public final class TechMissileWeapon extends Tech {
                 break;
             case 4: // MERCULITE MISSILES
                 damage = 10;
-                speed = 3;
+                speed = 3; speed2 = 3;
                 size = 105;
                 power = 20;
                 cost = 15;
@@ -151,7 +151,7 @@ public final class TechMissileWeapon extends Tech {
                 break;
             case 5: // STINGER MISSILES
                 damage = 15;
-                speed = 3.5f;
+                speed = 3.5f; speed2 = 3.5f;
                 size = 155;
                 power = 30;
                 cost = 25;
@@ -163,7 +163,7 @@ public final class TechMissileWeapon extends Tech {
                 break;
             case 6: // SCATTER PACK VII MISSILES
                 damage = 10;
-                speed = 3;
+                speed = 3; speed2 = 3;
                 cost = 50;
                 size = 230;
                 power = 50;
@@ -176,7 +176,7 @@ public final class TechMissileWeapon extends Tech {
                 break;
             case 7: // PULSON MISSILES
                 damage = 20;
-                speed = 4;
+                speed = 4; speed2 = 4;
                 cost = 25;
                 size = 160;
                 power = 40;
@@ -188,7 +188,7 @@ public final class TechMissileWeapon extends Tech {
                 break;
             case 8: // HERCULAR MISSILES
                 damage = 25;
-                speed = 4.5f;
+                speed = 4.5f; speed2 = 4.5f;
                 size = 220;
                 power = 40;
                 cost = 30;
@@ -200,7 +200,7 @@ public final class TechMissileWeapon extends Tech {
                 break;
             case 9: // ZEON MISSILES
                 damage = 30;
-                speed = 5;
+                speed = 5; speed2 = 5;
                 size = 250;
                 power = 50;
                 cost = 36;
@@ -212,7 +212,7 @@ public final class TechMissileWeapon extends Tech {
                 break;
             case 10: // SCATTER PACK X MISSILES
                 damage = 15;
-                speed = 3.5f;
+                speed = 3.5f; speed2 = 3.5f;
                 size = 250;
                 power = 50;
                 cost = 36;
@@ -259,7 +259,7 @@ public final class TechMissileWeapon extends Tech {
             }
         }
         c.shipLab().addWeapon(new ShipWeaponMissile(this, false, shots, range, speed));
-        c.shipLab().addWeapon(new ShipWeaponMissile(this, true, shots2, range2, speed));
+        c.shipLab().addWeapon(new ShipWeaponMissile(this, true, shots2, range2, speed2));
     }
     public static List<ImageIcon> iconsForType(String typeName) {
         int i = missileTypes.indexOf(typeName);
