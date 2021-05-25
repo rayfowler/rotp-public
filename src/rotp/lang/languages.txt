@@ -1,6 +1,6 @@
 en,     , English    ,
 //bn,     , বাংলা     , 
-//de,     , Deutsch    ,
+de,     , Deutsch    ,
 el,     , Ελληνικά   ,
 //es,     , Español    ,
 //fi,     , Suomen kieli,
