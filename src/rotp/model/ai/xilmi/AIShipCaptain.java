@@ -146,14 +146,17 @@ public class AIShipCaptain implements Base, ShipCaptain {
                     //mgr.performAttackTarget(stack);
             }
          
-            //ail: Always move away if I have fired at our best target
+            //ail: only move away if I have fired at our best target and am a missile-user or have repulsors
             boolean atLeastOneWeaponCanStillFire = false;
             boolean allWeaponsCanStillFire = true;
+            boolean shouldPerformKiting = false;
             for (int i=0;i<stack.numWeapons(); i++) {
                 if(currentTarget != null && !currentTarget.isColony() && stack.weapon(i).groundAttacksOnly())
                     continue;
                 if(stack.weapon(i).isSpecial())
                     continue;
+                if(stack.weapon(i).isMissileWeapon())
+                    shouldPerformKiting = true;
                 if(!stack.shipComponentIsUsed(i))
                 {
                     atLeastOneWeaponCanStillFire = true;
@@ -163,7 +166,10 @@ public class AIShipCaptain implements Base, ShipCaptain {
                     allWeaponsCanStillFire = false;
                 }
             }
-            if(!atLeastOneWeaponCanStillFire && (distantTarget == currentTarget || distantTarget == null))
+            if(stack.repulsorRange() > 0)
+                shouldPerformKiting = true;
+            
+            if(shouldPerformKiting && !atLeastOneWeaponCanStillFire && (distantTarget == currentTarget || distantTarget == null))
             {
                 FlightPath bestPathToSaveSpot = findSafestSpace(stack);
                 if(bestPathToSaveSpot != null)
