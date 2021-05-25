@@ -56,6 +56,7 @@ public class ShipCombatManager implements Base {
     private final double[][] riskMap = new double[maxX+1][maxY+1];
     public boolean[][] asteroidMap = new boolean[maxX+1][maxY+1];
     private boolean initialPause;
+    public List<CombatStack> currentTurnList;
 
     public boolean interdiction()              { return interdiction; }
     public ShipCombatResults results()         { return results; }
@@ -256,13 +257,16 @@ public class ShipCombatManager implements Base {
             continueToNextPlayerStack();
         }
     }
-
+    private void setupCurrentTurnList() {
+        currentTurnList = new ArrayList<>(activeStacks());
+        Collections.sort(currentTurnList, CombatStack.INITIATIVE);
+    }
     public void resolveAllCombat() {
         clearAsteroids();
 
         autoComplete = true;
         autoResolve = true;
-        performingStackTurn = true;
+        performingStackTurn = true;       
         while (shouldContinue())
             performNextStackTurn();
     } 
@@ -371,8 +375,8 @@ public class ShipCombatManager implements Base {
         allStacks.clear();
         allStacks.addAll(results.activeStacks());
 
-        Collections.sort(results.activeStacks(), CombatStack.INITIATIVE);
-        currentStack = results.activeStacks().get(0);
+        setupCurrentTurnList();
+        currentStack = currentTurnList.get(0);
         currentStack.beginTurn();
     }
     private void setupBattle(Empire emp, SpaceMonster monster) {
@@ -393,8 +397,8 @@ public class ShipCombatManager implements Base {
         allStacks.clear();
         allStacks.addAll(results.activeStacks());
 
-        Collections.sort(results.activeStacks(), CombatStack.INITIATIVE);
-        currentStack = results.activeStacks().get(0);
+        setupCurrentTurnList();
+        currentStack =  currentTurnList.get(0);
         currentStack.beginTurn();
     }
     public void endOfCombat(boolean logIncidents) {
@@ -846,22 +850,20 @@ public class ShipCombatManager implements Base {
         //log(st.fullName(), " - Done");
         st.endTurn();
 
-        List<CombatStack> stacks = new ArrayList<>(results.activeStacks());
-        if (stacks.isEmpty()) {
+        if (activeStacks().isEmpty()) {
             endOfCombat(true);
             return;
         }
         
-        int i = stacks.indexOf(st);
-        if (i+1 == stacks.size()) {
-            Collections.sort(results.activeStacks(), CombatStack.INITIATIVE);
-            stacks = new ArrayList<>(results.activeStacks());
-            currentStack = stacks.get(0);
+        int i = currentTurnList.indexOf(st);
+        if (i+1 == currentTurnList.size()) {
+            setupCurrentTurnList();
+            currentStack = currentTurnList.get(0);
             turnCounter++;
             trimAsteroids();
         }
         else
-            currentStack = stacks.get(i+1);
+            currentStack = currentTurnList.get(i+1);
 
         currentStack.beginTurn();
     }
