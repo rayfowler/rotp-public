@@ -149,6 +149,8 @@ public final class TechStasisField extends Tech {
         
         // draw attack
         for (int h=0; h<repeat; h++) {
+            if (!source.mgr.showAnimations()) 
+                break;
             ui.paintCellsImmediately(source.x, target.x, source.y, target.y);
             g0.drawImage(shading[h],tgtBox.x, tgtBox.y, null);
             for (int i=0; i<n; i++) {

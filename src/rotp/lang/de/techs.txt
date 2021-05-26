@@ -45,7 +45,6 @@ ARMOR_6_DETAIL   | Ultimative Panzerung. Verbessert Trefferpunkte bei Schiffen u
 ATMOSPHERE_0_NAME      | Atmosphärisches Terraforming
 ATMOSPHERE_0_DETAIL    | Wandelt feindselige Umgebung in eine normale Umgebung für 150 BC.
 
-
 //
 // Automated Repair techs
 // 
@@ -54,7 +53,7 @@ AUTOREPAIR_0_BRIEF     | Heilt 15% der Trefferpunkte eines Schiffs pro Zug
 AUTOREPAIR_0_DETAIL    | Unzerstörte Schiffe können am Ende des Zuges bis zu 15% ihrer Trefferpunkte wiederherstellen.
 
 AUTOREPAIR_1_NAME      | Fortgeschrittene Schadenskontrolle
-AUTOREPAIR_1_BRIEF     | Heilt 39=0% der Trefferpunkte eines Schiffs pro Zug
+AUTOREPAIR_1_BRIEF     | Heilt 30% der Trefferpunkte eines Schiffs pro Zug
 AUTOREPAIR_1_DETAIL    | Unzerstörte Schiffe können am Ende des Zuges bis zu 30% ihrer Trefferpunkte wiederherstellen.
 
 
@@ -140,14 +139,15 @@ BATTLESUIT_3_NAME    | Servorüstung
 BATTLESUIT_3_DETAIL  | Kombiniert hohe Mobilität, Antigrav-Flug, starke Panzerung zur fortgeschrittensten Rüstung für Bodentruppen. Verbessert den Bodenkampf um 30.
 
 
-
 //
 // Energy Focus techs for beam weapons
 // 
 BEAMFOCUS_0_NAME    | Hochenergiefokus
-BEAMFOCUS_0_DETAIL  | Erhöht die Reichweite aller Energiewaffen um 3.
+BEAMFOCUS_0_BRIEF   | Reichtweite +3 für Strahlenwaffewaffen
+BEAMFOCUS_0_DETAIL  | Erhöht die Reichweite aller Strahlenwaffenwaffen um 3.
 
 BEAMFOCUS_1_NAME    | Oracle Interface
+BEAMFOCUS_1_BRIEF   | Konzentriert Strahlenwaffen, halbiert gegnerische Schilde
 BEAMFOCUS_1_DETAIL  | Koordiniert alle Strahlenwaffen in einen konzentrierten Alphaschlag, der die gegnerische Schildstärke halbiert.
 
 
@@ -439,66 +439,66 @@ PULSAR_1_DETAIL   | Eine mächtige Triebwerkserweiterung, die eine sphärische W
 // Engine techs
 //
 ENGINE_0_NAME    | Retro-Antrieb
-ENGINE_0_DETAIL  | Bewegt Schiffe mit Warp 1 und erlaubt eine maximale Bewegungsrate Klasse I im Kampf.
+ENGINE_0_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse I im Kampf.
 ENGINE_0_ITEM    | Retros
 ENGINE_0_ITEM2   | Klasse 1
-ENGINE_0_BRIEF   | Warp 1  Def %1
+ENGINE_0_BRIEF   | Warp %1  Def %1
 ENGINE_0_BRIEF2  | Kampfgeschwindigkeit %1
 
 ENGINE_1_NAME    | Nuklear-Antrieb 
-ENGINE_1_DETAIL  | Bewegt Schiffe mit Warp 2 und erlaubt eine maximale Bewegungsrate Klasse II im Kampf.
+ENGINE_1_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse II im Kampf.
 ENGINE_1_ITEM    | Nuclear
 ENGINE_1_ITEM2   | Klasse 2
-ENGINE_1_BRIEF   | Warp 2  Def %1
+ENGINE_1_BRIEF   | Warp %1  Def %1
 ENGINE_1_BRIEF2  | Kampfgeschwindigkeit %1
 
 ENGINE_2_NAME    | SubLight Antrieb 
-ENGINE_2_DETAIL  | Bewegt Schiffe mit Warp 3 und erlaubt eine maximale Bewegungsrate Klasse III im Kampf.
+ENGINE_2_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse III im Kampf.
 ENGINE_2_ITEM    | SubLight
 ENGINE_2_ITEM2   | Klasse 3
-ENGINE_2_BRIEF   | Warp 3  Def %1
+ENGINE_2_BRIEF   | Warp %1  Def %1
 ENGINE_2_BRIEF2  | Kampfgeschwindigkeit %1
 
 ENGINE_3_NAME    | Fusionsantrieb
-ENGINE_3_DETAIL  | Bewegt Schiffe mit Warp 4 und erlaubt eine maximale Bewegungsrate Klasse IV im Kampf.
+ENGINE_3_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse IV im Kampf.
 ENGINE_3_ITEM    | Fusion
 ENGINE_3_ITEM2   | Klasse 4
-ENGINE_3_BRIEF   | Warp 4  Def %1
+ENGINE_3_BRIEF   | Warp %1  Def %1
 ENGINE_3_BRIEF2  | Kampfgeschwindigkeit %1
 
 ENGINE_4_NAME    | Impulsantrieb
-ENGINE_4_DETAIL  | Bewegt Schiffe mit Warp 5 und erlaubt eine maximale Bewegungsrate Klasse V im Kampf.
+ENGINE_4_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse V im Kampf.
 ENGINE_4_ITEM    | Impuls
 ENGINE_4_ITEM2   | Klasse 5
-ENGINE_4_BRIEF   | Warp 5  Def %1
+ENGINE_4_BRIEF   | Warp %1  Def %1
 ENGINE_4_BRIEF2  | Kampfgeschwindigkeit %1
 
-ENGINE_5_NAME    | Ionantrieb
-ENGINE_5_DETAIL  | Bewegt Schiffe mit Warp 6 und erlaubt eine maximale Bewegungsrate Klasse VI im Kampf.
+ENGINE_5_NAME    | Ionenantrieb
+ENGINE_5_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse VI im Kampf.
 ENGINE_5_ITEM    | Ion
 ENGINE_5_ITEM2   | Klasse 6
-ENGINE_5_BRIEF   | Warp 6  Def %1
+ENGINE_5_BRIEF   | Warp %1  Def %1
 ENGINE_5_BRIEF2  | Kampfgeschwindigkeit %1
 
 ENGINE_6_NAME    | Antimaterie-Antrieb
-ENGINE_6_DETAIL  | Bewegt Schiffe mit Warp 7 und erlaubt eine maximale Bewegungsrate Klasse VII im Kampf.
+ENGINE_6_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse VII im Kampf.
 ENGINE_6_ITEM    | Antimaterie
 ENGINE_6_ITEM2   | Klasse 7
-ENGINE_6_BRIEF   | Warp 7  Def %1
+ENGINE_6_BRIEF   | Warp %1  Def %1
 ENGINE_6_BRIEF2  | Kampfgeschwindigkeit %1
 
 ENGINE_7_NAME    | InterPhasen-Antrieb
-ENGINE_7_DETAIL  | Bewegt Schiffe mit Warp 8 und erlaubt eine maximale Bewegungsrate Klasse VIII im Kampf.
+ENGINE_7_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse VIII im Kampf.
 ENGINE_7_ITEM    | InterPhase
 ENGINE_7_ITEM2   | Klasse 8
-ENGINE_7_BRIEF   | Warp 8  Def %1
+ENGINE_7_BRIEF   | Warp %1  Def %1
 ENGINE_7_BRIEF2  | Kampfgeschwindigkeit %1
 
 ENGINE_8_NAME    | Hyper Antrieb
-ENGINE_8_DETAIL  | Bewegt Schiffe mit Warp 9 und erlaubt eine maximale Bewegungsrate Klasse IX im Kampf.
+ENGINE_8_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse IX im Kampf.
 ENGINE_8_ITEM    | Hyper
 ENGINE_8_ITEM2   | Klasse 9
-ENGINE_8_BRIEF   | Warp 9  Def %1
+ENGINE_8_BRIEF   | Warp %1  Def %1
 ENGINE_8_BRIEF2  | Kampfgeschwindigkeit %1
 
 
@@ -506,28 +506,28 @@ ENGINE_8_BRIEF2  | Kampfgeschwindigkeit %1
 // Fuel Range techs
 //
 FUELRANGE_0_NAME   | Erweiterte Treibstofftanks
-FUELRANGE_0_DETAIL | Die erweiterten Treibstofftanks erhöhen die Reichtweite um 3 Lichtjahre.
+FUELRANGE_0_DETAIL | Die erweiterten Treibstofftanks erhöhen die Reichweite um Kolonien um %1 Lichtjahre.
 
 FUELRANGE_1_NAME   | Hydrogen Treibstoffzellen
-FUELRANGE_1_DETAIL | Die Hydrogen Treibstoffzellen erhöhen die Reichtweite um 4 Lichtjahre.
+FUELRANGE_1_DETAIL | Die Hydrogen Treibstoffzellen erhöhen die Reichweite um Kolonien um %1 Lichtjahre.
 
 FUELRANGE_2_NAME   | Deuterium Treibstoffzellen
-FUELRANGE_2_DETAIL | Die Deuterium Treibstoffzellen erhöhen die Reichtweite um 5 Lichtjahre.
+FUELRANGE_2_DETAIL | Die Deuterium Treibstoffzellen erhöhen die Reichweite um Kolonien um %1 Lichtjahre.
 
 FUELRANGE_3_NAME   | Iridium Treibstoffzellen
-FUELRANGE_3_DETAIL | Die Iridium Treibstoffzellen erhöhen die Reichtweite um 6 Lichtjahre.
+FUELRANGE_3_DETAIL | Die Iridium Treibstoffzellen erhöhen die Reichweite um Kolonien um %1 Lichtjahre.
 
 FUELRANGE_4_NAME   | Dotomitkristalle
-FUELRANGE_4_DETAIL | Die Dotomitkristalle erhöhen die Reichtweite um 7 Lichtjahre.
+FUELRANGE_4_DETAIL | Die Dotomitkristalle erhöhen die Reichweite um Kolonien um %1 Lichtjahre.
 
 FUELRANGE_5_NAME   | Uridium Treibstoffzellen
-FUELRANGE_5_DETAIL | Die Uridium Treibstoffzellen erhöhen die Reichtweite um 8 Lichtjahre.
+FUELRANGE_5_DETAIL | Die Uridium Treibstoffzellen erhöhen die Reichweite um Kolonien um %1 Lichtjahre.
 
 FUELRANGE_6_NAME   | Reajax II Treibstoffzellen
-FUELRANGE_6_DETAIL | Die Reajax II Treibstoffzellen erhöhen die Reichtweite um 9 Lichtjahre.
+FUELRANGE_6_DETAIL | Die Reajax II Treibstoffzellen erhöhen die Reichweite um Kolonien um %1 Lichtjahre.
 
 FUELRANGE_7_NAME   | Trilithium-Kristalle
-FUELRANGE_7_DETAIL | Die Trilithium-Kristalle erhöhen die Reichtweite um 10 Lichtjahre.
+FUELRANGE_7_DETAIL | Die Trilithium-Kristalle erhöhen die Reichweite um Kolonien um %1 Lichtjahre.
 
 FUELRANGE_8_NAME   | Thoriumzellen
 FUELRANGE_8_DETAIL | Unerschöpflicher Treibstoffvorrat, keine Begrenzung bei der Reichweite mehr.
@@ -833,8 +833,10 @@ INDWASTE_0_DETAIL       | Verringert Verschmutzung durch Fabriken auf 80% des no
 
 INDWASTE_1_NAME         | Industrierecycling 60%
 INDWASTE_1_DETAIL       | Verringert Verschmutzung durch Fabriken auf 60% des normalen Levels.
+
 INDWASTE_2_NAME         | Industrierecycling 40%
 INDWASTE_2_DETAIL       | Verringert Verschmutzung durch Fabriken auf 40% des normalen Levels.
+
 INDWASTE_3_NAME         | Industrierecycling 20%
 INDWASTE_3_DETAIL       | Verringert Verschmutzung durch Fabriken auf 20% des normalen Levels.
 
@@ -905,7 +907,6 @@ MISSWPN_8_NAME      | Hercules Raketen
 MISSWPN_8_BRIEF     | 2 Schuss, +5 Treffer
 MISSWPN_8_BRIEF2    | 5 Schuss, +5 Treffer
 MISSWPN_8_DETAIL    | Stark fortgeschrittene Rakete mit 25 Schadenspunkten, Geschwindigkeit von 4,5 und einem Zielcomputer +5.
-
 
 MISSWPN_9_NAME      | Zeon Rakete
 MISSWPN_9_BRIEF     | 2 Schuss, +6 Treffer
@@ -990,15 +991,19 @@ ROBOTCTRL_4_DETAIL   | Ermöglicht die Steuerung von 7 Fabriken pro Einwohner. D
 // Scanner techs 
 //
 SCANNER_0_NAME       | Gefechtscanner
+SCANNER_0_BRIEF      | Scannt feindliche Schiffe im Kampf
 SCANNER_0_DETAIL     | Zeigt technische Details von feindlichen Raumschiffen im Kampf.
 
 SCANNER_1_NAME       | Tiefenraum-Scanner
+SCANNER_1_BRIEF      | Spürt Schiffe bis 5 Lichtjahre Umgebung auf
 SCANNER_1_DETAIL     | Spürt gegnerische Schiffe bis zu 5 Lichtjahre entfernt um eine Kolonie und bis zu 1 Lichtjahre um eigene Schiffe auf.
 
 SCANNER_2_NAME       | Tachyonenscanner
+SCANNER_2_BRIEF      | Spürt Schiffe und deren Ziel bis 7 Lichtjahre Umgebung auf
 SCANNER_2_DETAIL     | Spürt gegnerische Schiffe bis zu 7 Lichtjahre entfernt um eine Kolonie und bis zu 2 Lichtjahre um eigene Schiffe auf. Kann gegnerische Flugziele bestimmen.
 
 SCANNER_3_NAME       | Sensoren
+SCANNER_3_BRIEF      | Erlaubt die Erkundschaftung fremder Planeten 9 Lichtjahre
 SCANNER_3_DETAIL     | Erlaubt die Erkundschaftung fremder Planeten 9 Lichtjahre um eine Kolonie und spürt gegnerische Schiffe bis zu 3 Lichtjahre um eigene Schiffe entfernt auf.
 
 

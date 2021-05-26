@@ -189,6 +189,8 @@ public final class TechBombWeapon extends Tech {
         // animation is doing this 4 times
         for (int n=0;n<FRAMES;n++) {
             ui.paintAllImmediately();
+            if (!source.mgr.showAnimations()) 
+                break;
             for (int i = -2; i < 3; i++) {
                 int xAdj = i * xSpacing;
                 int yAdj = i * ySpacing;

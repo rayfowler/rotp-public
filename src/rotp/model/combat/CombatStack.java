@@ -554,7 +554,7 @@ public class CombatStack implements Base {
     public void drawAttackResult(Graphics g, int x1, int y1, int x0, float dmg, String result) {
         if (!mgr.showAnimations())
             return;
-        
+         
         int xleft = x0 < x1 ? x : max(0, x-1);
         Rectangle rTopLeft = mgr.ui.combatGrids[xleft][max(0,y-1)];
         
@@ -587,8 +587,9 @@ public class CombatStack implements Base {
 
         for (int i=0;i<FRAMES;i++) {
             long t0 = System.currentTimeMillis();
-            if (mgr.ui != null)
-                mgr.ui.paintCellImmediately(x,y);
+            if (!mgr.showAnimations()) 
+                break;
+            mgr.ui.paintCellImmediately(x,y);
             g.setFont(font[i]);
             if (dmg != 0)
                 g.setColor(cRed[i]);
