@@ -535,6 +535,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
         beginTreaty();
         int duration = roll(8,15);
         endWarPreparations();
+        otherEmbassy().endWarPreparations();
         beginPeace(duration);
         otherEmbassy().beginPeace(duration);
         DiplomaticIncident inc = SignPeaceIncident.create(owner(), empire(), duration);
