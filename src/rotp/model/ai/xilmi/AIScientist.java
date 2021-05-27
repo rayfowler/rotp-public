@@ -254,49 +254,6 @@ public class AIScientist implements Base, Scientist {
         empire.tech().propulsion().allocationPct(totalTechMod/empire.race().techMod[4]);
         empire.tech().weapon().allocationPct(totalTechMod/empire.race().techMod[5]);
         
-        if(!empire.fleetCommanderAI().inExpansionMode())
-        {
-            if(galaxy().options().selectableAI())
-            {
-                if(empire.leader().isEcologist())
-                {
-                    empire.tech().computer().adjustAllocation(-1);
-                    empire.tech().construction().adjustAllocation(-1);
-                    empire.tech().forceField().adjustAllocation(-1);
-                    empire.tech().planetology().adjustAllocation(5);
-                    empire.tech().propulsion().adjustAllocation(-1);
-                    empire.tech().weapon().adjustAllocation(-1);
-                }
-                if(empire.leader().isIndustrialist())
-                {
-                    empire.tech().computer().adjustAllocation(2);
-                    empire.tech().construction().adjustAllocation(2);
-                    empire.tech().forceField().adjustAllocation(-1);
-                    empire.tech().planetology().adjustAllocation(-1);
-                    empire.tech().propulsion().adjustAllocation(-1);
-                    empire.tech().weapon().adjustAllocation(-1);
-                }
-                if(empire.leader().isExpansionist())
-                {
-                    empire.tech().computer().adjustAllocation(-1);
-                    empire.tech().construction().adjustAllocation(-1);
-                    empire.tech().forceField().adjustAllocation(-1);
-                    empire.tech().planetology().adjustAllocation(2);
-                    empire.tech().propulsion().adjustAllocation(2);
-                    empire.tech().weapon().adjustAllocation(-1);
-                }
-                if(empire.leader().isMilitarist())
-                {
-                    empire.tech().computer().adjustAllocation(1);
-                    empire.tech().construction().adjustAllocation(-1);
-                    empire.tech().forceField().adjustAllocation(1);
-                    empire.tech().planetology().adjustAllocation(-1);
-                    empire.tech().propulsion().adjustAllocation(-1);
-                    empire.tech().weapon().adjustAllocation(1);
-                }
-            }
-        }
-        
         // if in special mode, change ratios
         if (empire.generalAI().inWarMode()) {
             empire.tech().computer().adjustAllocation(4);

@@ -25,6 +25,7 @@ import rotp.model.ai.interfaces.General;
 import rotp.model.colony.Colony;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
+import rotp.model.empires.Leader;
 import rotp.model.galaxy.Galaxy;
 import rotp.model.galaxy.Ship;
 import rotp.model.galaxy.ShipFleet;
@@ -72,7 +73,6 @@ public class AIGeneral implements Base, General {
         additionalColonizersToBuild = -1;
         
         additionalColonizersToBuild = additionalColonizersToBuild(false);
-        System.out.println(empire.name()+" personality: "+empire.leader().personality()+" objective: "+empire.leader().objective());
         while (additionalColonizersToBuild > 0)
         {
             float highestScore = 0;
@@ -554,7 +554,27 @@ public class AIGeneral implements Base, General {
             }
             EmpireView ev = empire.viewForEmpire(emp);
             float relationshipFactor = 100 - ev.embassy().relations();
-            float currentScore = relationshipFactor * empire.systemsInShipRange(emp).size() * empire.systemsForCiv(emp).size() / empire.powerLevel(emp);
+            float currentScore = 0;
+            currentScore = empire.systemsInShipRange(emp).size() * empire.systemsForCiv(emp).size() / empire.powerLevel(emp);
+            if(isTrader())
+            {
+                if(emp.totalPlanetaryIncome() > 0)
+                    currentScore = 1.0f / emp.totalPlanetaryIncome();
+                else
+                    currentScore = 1;
+            }
+            if(isSpy())
+            {
+                if(emp.tech().avgTechLevel() > 0)
+                    currentScore = 1.0f / emp.tech().avgTechLevel();
+                else
+                    currentScore = 1;
+            }
+            if(isInvader())
+            {
+                currentScore = emp.tech().avgTechLevel();
+            }
+            currentScore *= relationshipFactor;
             //System.out.println(empire.name()+": Considering "+emp.name()+" with Score of: "+currentScore+" relationshipFactor: "+relationshipFactor+" sys: "+empire.systemsInShipRange(emp).size()+" power: "+empire.powerLevel(emp));
             //ail: drastically reduce score for those I have a NAP as nap-breaking makes others mad
             if(empire.pactWith(emp.id))
@@ -596,17 +616,21 @@ public class AIGeneral implements Base, General {
                     totalProductionReachableByEnemies += max(mySystem.colony().production(), 1.0f);
                 }
             }
-            totalMissileBaseCost += enemy.shipMaintCostPerBC();
-            totalShipCost += enemy.missileBaseCostPerBC();
+            totalMissileBaseCost += enemy.missileBaseCostPerBC();
+            totalShipCost += enemy.shipMaintCostPerBC();
         }
         if(totalReachableEnemyProduction > 0)
         {
+            if(isInvader())
+                totalProductionReachableByEnemies *= 3;
             dr = totalProductionReachableByEnemies / (totalReachableEnemyProduction + totalProductionReachableByEnemies);
         }
+        //System.out.print("\n"+empire.name()+" totalReachableEnemyProduction: "+totalReachableEnemyProduction+" totalProductionReachableByEnemies: "+totalProductionReachableByEnemies+" dr: "+dr);
         if(totalMissileBaseCost+totalShipCost > 0)
         {
             dr = min(dr, totalShipCost / (totalMissileBaseCost+totalShipCost));
         }
+        //System.out.print("\n"+empire.name()+" totalShipCost: "+totalShipCost+" totalMissileBaseCost: "+totalMissileBaseCost+" dr: "+dr);
         defenseRatio = dr;
         return defenseRatio;
     }
@@ -691,6 +715,41 @@ public class AIGeneral implements Base, General {
     @Override
     public boolean allowedToBomb(Empire emp) { 
         if(empire.enemies().contains(emp))
+            return true;
+        return false;
+    }
+    @Override
+    public boolean isInvader()
+    {
+        if(empire.race().groundAttackBonus() > 0)
+            return true;
+        return false;
+    }
+    @Override
+    public boolean isRusher()
+    {
+        if(empire.race().shipAttackBonus() > 0 || empire.race().shipDefenseBonus() > 0)
+            return true;
+        return false;
+    }
+    @Override
+    public boolean isExpander()
+    {
+        if(empire.race().ignoresPlanetEnvironment() || empire.race().growthRateMod() > 1)
+            return true;
+        return false;
+    }
+    @Override
+    public boolean isSpy()
+    {
+        if(empire.race().spyInfiltrationAdj() > 0)
+            return true;
+        return false;
+    }
+    @Override
+    public boolean isTrader()
+    {
+        if(empire.race().tradePctBonus() > 0)
             return true;
         return false;
     }
