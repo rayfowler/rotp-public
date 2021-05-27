@@ -183,7 +183,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 turnActive = false;
             }
             //ail: we have not moved and not fired... so we probably can't get to our target, then retreat
-            if(stack.maxMove == stack.move && allWeaponsCanStillFire)
+            if(stack.maxMove == stack.move && allWeaponsCanStillFire && stack.isShip())
             {
                 CombatStackShip shipStack = (CombatStackShip) stack;
                 StarSystem dest = retreatSystem(shipStack.mgr.system());
