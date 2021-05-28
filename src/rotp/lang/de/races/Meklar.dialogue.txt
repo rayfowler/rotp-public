@@ -60,7 +60,7 @@ WARN_BIOWEAPON_01          | Das Dominion beobachtet den Einsatz einer groben Bi
 WARN_GENOCIDE_01           | Völkermord an [victim_race] Spezies durch [attacker_race] Spezies festgestellt. Dominion kümmert sich nicht um mögliche Ursachen oder Alternativen. Bedrohungsbewertung der Spezies [attacker_race] um 5 Stufen erhöht.  
 WARN_FINAL_WAR_01          | Alle bekannten Spezies schließen ein Abkommen, um dauerhaften Frieden in der Galaxie zu sichern. [rebel_race] Spezies einziger Abweichler. Das Dominion wird entsprechende Maßnahmen ergreifen.
 WARN_COUNCIL_VOTE_01       | Dominion weiß von [voter_race] Aktionen im Rat. Bedeutung irrelevant. Ergebnis wird als nachteilig für die Ziele von [candidate_race] bewertet. Diplomatisches Ansehen entsprechend angepasst.  
-WARN_OATHBREAKER_01        | [my_title] fällt ein Urteil: [your_race] Spezies wird nicht mehr als vertrauenswürdig angesehen. Alle zukünftigen Geschäfte werden revidiert, da die [your_race] eine verbindliche Vereinbarung gebrochen hat. 
+WARN_OATHBREAKER_01        | [my_title] fällt ein Urteil: [your_race] Spezies wird nicht mehr als vertrauenswürdig angesehen. Alle zukünftigen Geschäfte werden revidiert, da die [your_race] eine verbindliche Vereinbarung gebrochen hat. [spiesCaught] 
 WARN_ATTACKED_ALLY_01      | Konflikt zwischen [your_race] Spezies und [defender_race] Spezies aufgezeichnet. Spezies [defender_race] bekannter Verbündeter des Dominion. Stellen Sie die Kämpfe ein oder bereiten Sie sich auf die Konsequenzen vor. 
 WARN_REBELLING_AGAINST_01  | [your_race] Spezies behindert nun die Ziele des Dominion. Entscheidung des Galaktischen Rates inakzeptabel. Erwarte Antwort vom Supreme Arbiter. 
 

@@ -61,7 +61,7 @@ WARN_BIOWEAPON_01          | Unthinkable! The flesh is weak enough against conve
 WARN_GENOCIDE_01           | Tell us now why you have committed genocide against the [victim_race] race. Choose your words carefully: your answer determines how our two people will proceed from here!
 WARN_FINAL_WAR_01          | Only through the forging of alliances can we complete our holy crusade! We stand together as united peoples, yet you stand alone as the voice of chaos and war. The prophecy is in motion: you are the brood of Quaralon indeed! 
 WARN_COUNCIL_VOTE_01       | It would surely be better if this council were dissolved and the Imperium given sole control of galactic affairs. Then your people would be able to earn our enmity when you speak out against us so! 
-WARN_OATHBREAKER_01        | How disconcerting, to break one's word is to break one's trust. There is no doubt the Enemy of the Prophecies would dare act in such a way! 
+WARN_OATHBREAKER_01        | How disconcerting, to break one's word is to break one's trust. There is no doubt the Enemy of the Prophecies would dare act in such a way! [spiesCaught]
 WARN_ATTACKED_ALLY_01      | The [defender_race] bear the honor of fellowship with the Imperium! Heed our warning in response to your attack: I assure you that you will receive it only once!
 WARN_REBELLING_AGAINST_01  | Our crusade will not be delayed! Not by the simpletons of the council, and not by you! Brace yourself, ambassador: a holy storm will soon be upon you!
 

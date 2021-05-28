@@ -872,9 +872,9 @@ public class ShipCombatManager implements Base {
         currentStack.performTurn();
     }
     public void removeFromCombat(CombatStack st) {
+        activeStacks().remove(st);
         if (currentStack == st)
             turnDone(st);
-        activeStacks().remove(st);
         
         if (st.isMissile()) {
             removeMissileFromCombat((CombatStackMissile)st);

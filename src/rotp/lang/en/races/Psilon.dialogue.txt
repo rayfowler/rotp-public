@@ -60,7 +60,7 @@ WARN_BIOWEAPON_01          | This is... unheard of, ambassador. To use a bioweap
 WARN_GENOCIDE_01           | And just like that, a voice in the chorus of the galaxy is lost forever. For a people to be capable of such evil... I fear we may not be able to form a lasting peace with you in the end.
 WARN_FINAL_WAR_01          | The galaxy is on the brink of harmony, and yet you obstinately choose to stand in the way. If the... removal of the [rebel_empire] is the cost of eternal peace, than we will do what we can to see that cost paid.  
 WARN_COUNCIL_VOTE_01       | The [candidate_empire] seeks nothing but peace so that all may share in the prosperity it brings. If you wish for the best... future for your people, you will not vote against the Republic in council again.
-WARN_OATHBREAKER_01        | Scurrilous and dishonorable, ambassador. We wonder if you would break peace as easily as you break agreements, and we will be ready should you ever choose to do so.
+WARN_OATHBREAKER_01        | Scurrilous and dishonorable, ambassador. We wonder if you would break peace as easily as you break agreements, and we will be ready should you ever choose to do so. [spiesCaught]
 WARN_ATTACKED_ALLY_01      | Call off these attacks of yours, ambassador! You know we are allies of the [defender_race]. Can we not instead broker a peace through dialogue instead of you forcing us all to war? 
 WARN_REBELLING_AGAINST_01  | No! You cannot be trusted to lead the council to peace! Our dedication to peace far outmatches yours, but you may force us to soon discard that dedication! 
 

@@ -459,12 +459,12 @@ public final class SpyNetwork implements Base, Serializable {
             return;
         
         if (!isHide() && owner().alliedWith(victim.id)) {
-            view.embassy().breakAlliance();
+            view.embassy().breakAlliance(true);
             view.breakAllTreaties();
             return;
         }
         if (isSabotage() && owner().pactWith(victim.id)) {
-            view.embassy().breakPact();
+            view.embassy().breakPact(true);
             view.breakAllTreaties();
             return;
         }

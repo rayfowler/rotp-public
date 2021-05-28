@@ -60,7 +60,7 @@ WARN_BIOWEAPON_01          | Der ultimative Akt der Feigheit, eine Biowaffe gege
 WARN_GENOCIDE_01           | Die [victim_race_plural] waren schwach und gebrechlich und sind kein großer Verlust für die Galaxie. Dass ein so unbedeutendes Volk wie das Eure für ihre Auslöschung verantwortlich sein soll, ist das, was uns am meisten beunruhigt.
 WARN_FINAL_WAR_01          | Wir bewundern die Tapferkeit derer, die sich gegen die Galaxie stellen wollen, obwohl sie sich entschieden hat, sich in Frieden zu vereinen? Wir werden Eure Kühnheit in unseren Geschichtsbüchern festhalten, Kleines, nachdem wir Euch bis auf das letzte Kind zerquetscht haben! 
 WARN_COUNCIL_VOTE_01       | Dieser Rat ist eine Versammlung von albernen Narren, die lieber über ihre Missstände diskutieren, als sie wie Krieger zu regeln! Aber nur weil wir eine solche Verachtung für diese Verfahren haben, bedeutet das nicht, dass wir Eure Opposition währenddessen bereitwillig verzeihen werden!
-WARN_OATHBREAKER_01        | Kleiner! Dein Wort zu brechen, ist die ultimative Schande! Wir wissen, dass deine Art körperlich schwach ist, aber auch im Wort schwach zu sein, überrascht selbst uns! 
+WARN_OATHBREAKER_01        | Kleiner! Dein Wort zu brechen, ist die ultimative Schande! Wir wissen, dass deine Art körperlich schwach ist, aber auch im Wort schwach zu sein, überrascht selbst uns! [spiesCaught] 
 WARN_ATTACKED_ALLY_01      | Die kleinen [defender_race] steht unter unserem Schutz! Stellt Euren Krieg ein und leistet Wiedergutmachung, oder Ihr werdet durch unsere Hand sterben, bevor Ihr wisst, was Euch trifft!
 WARN_REBELLING_AGAINST_01  | Der Große Hierarch ist der Einzige, der auf dem Thron des Galaktischen Rates sitzen darf! Wir werden deine schändliche Usurpation niemals akzeptieren!
 //
