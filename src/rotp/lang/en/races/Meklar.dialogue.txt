@@ -60,7 +60,7 @@ WARN_BIOWEAPON_01          | Dominion observes use of crude bioweapon. Effective
 WARN_GENOCIDE_01           | Genocide of [victim_race] species by [attacker_race] species recorded. Dominion unconcerned with possible cause or alternatives. [attacker_race] species threat assessment increased by 5 levels.  
 WARN_FINAL_WAR_01          | All known species create agreement to ensure lasting peace in galaxy. [rebel_race] species sole dissenter. Dominion will take appropriate action.
 WARN_COUNCIL_VOTE_01       | Dominion aware of [voter_race] actions in council. Meaning irrelevant. Result assessed as detrimental to [candidate_race] goals. Diplomatic standing adjusted accordingly.  
-WARN_OATHBREAKER_01        | [my_title] passes judgment: [your_race] species no longer deemed trustworthy. All future dealings subject to revision based on [your_race] species breaking binding agreement. 
+WARN_OATHBREAKER_01        | [my_title] passes judgment: [your_race] species no longer deemed trustworthy. All future dealings subject to revision based on [your_race] species breaking binding agreement. [spiesCaught]
 WARN_ATTACKED_ALLY_01      | Conflict recorded between [your_race] species and [defender_race] species. [defender_race] species known ally of Dominion. Cease fighting or prepare for consequences. 
 WARN_REBELLING_AGAINST_01  | [your_race] species now obstacle of Dominion objectives. Galactic Council ruling unacceptable. Awaiting response from Supreme Arbiter. 
 

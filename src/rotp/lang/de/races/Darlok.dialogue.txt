@@ -60,7 +60,7 @@ WARN_BIOWEAPON_01          | Ein hässliches Ding, diese Waffe. Noch hässlicher
 WARN_GENOCIDE_01           | Die Bedrohung durch Völkermord ist meinem Volk nicht unbekannt, aber sie so lässig umgesetzt zu sehen... Sie ekeln uns auf eine Art und Weise an, die wir wohl nie verzeihen werden, Botschafter.  
 WARN_FINAL_WAR_01          | Wenn der Frieden in der Galaxie anbricht, werden alle, die daran teilhaben, finden, was sie suchen. Wenn Sie [rebel_race_plural] diesen Frieden bedrohen, bedrohen Sie unser ultimatives Ziel, und wir werden alles tun, was wir können, um Sie in die Annalen der Galaxie zu verbannen. 
 WARN_COUNCIL_VOTE_01       | Es ist nicht so, dass wir subtile politische Manöver nicht zu schätzen wüssten, wir sind nur sehr verärgert, wenn diese Manöver gegen uns arbeiten. Seien Sie vorsichtig, Botschafter: Wir geben Ihnen vielleicht nicht noch einmal die Gelegenheit, auf diese Weise zu manövrieren.
-WARN_OATHBREAKER_01        | Nutzlose Feiglinge! Schade, dass unser Volk das Misstrauen der gesamten Galaxis ertragen muss, wenn ihr so dreist beweist, dass ihr es seid, die diese Feindschaft verdient haben! 
+WARN_OATHBREAKER_01        | Nutzlose Feiglinge! Schade, dass unser Volk das Misstrauen der gesamten Galaxis ertragen muss, wenn ihr so dreist beweist, dass ihr es seid, die diese Feindschaft verdient haben! [spiesCaught] 
 WARN_ATTACKED_ALLY_01      | Wir warnen Sie nur einmal, Botschafter. Stoppen Sie Ihre Aggression gegen die[defender_race_plural]:  Sie stehen zu uns, und wir stehen zu ihnen.
 WARN_REBELLING_AGAINST_01  | Ihr wagt es, den höchsten Sitz im Rat von uns, seinen rechtmäßigen Herren, zu beanspruchen? Ihr Volk wird diesen Tag noch bereuen, Botschafter.
 //

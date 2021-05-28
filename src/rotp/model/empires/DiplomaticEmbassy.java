@@ -501,8 +501,8 @@ public class DiplomaticEmbassy implements Base, Serializable {
             case 1:
                 if (!finalWar)
                     GNNAllianceBrokenNotice.create(owner(), empire());
-                OathBreakerIncident.alertBrokenAlliance(owner(),empire(),requestor); break;
-            case 2: OathBreakerIncident.alertBrokenPact(owner(),empire(),requestor); break;
+                OathBreakerIncident.alertBrokenAlliance(owner(),empire(),requestor,false); break;
+            case 2: OathBreakerIncident.alertBrokenPact(owner(),empire(),requestor,false); break;
         }
         
         // if the player is one of our allies, let him know
@@ -558,12 +558,13 @@ public class DiplomaticEmbassy implements Base, Serializable {
     public void closeEmbassy() {
         withdrawAmbassador(Integer.MAX_VALUE);
     }
-    public DiplomaticIncident breakPact() {
+    public DiplomaticIncident breakPact() { return breakPact(false); }
+    public DiplomaticIncident breakPact(boolean caughtSpying) {
         endTreaty();
         setTreaty(new TreatyNone(view.owner(), view.empire()));
-        DiplomaticIncident inc = BreakPactIncident.create(owner(), empire());
+        DiplomaticIncident inc = BreakPactIncident.create(owner(), empire(), caughtSpying);
         otherEmbassy().addIncident(inc);
-        OathBreakerIncident.alertBrokenPact(owner(),empire());
+        OathBreakerIncident.alertBrokenPact(owner(),empire(), caughtSpying);
         return inc;
     }
     public DiplomaticIncident signAlliance() {
@@ -584,13 +585,14 @@ public class DiplomaticEmbassy implements Base, Serializable {
         }
         return inc;
     }
-    public DiplomaticIncident breakAlliance() {
+    public DiplomaticIncident breakAlliance() { return breakAlliance(false); }
+    public DiplomaticIncident breakAlliance(boolean caughtSpying) {
         endTreaty();
         setTreaty(new TreatyNone(view.owner(), view.empire()));
-        DiplomaticIncident inc = BreakAllianceIncident.create(owner(), empire());
+        DiplomaticIncident inc = BreakAllianceIncident.create(owner(), empire(), caughtSpying);
         otherEmbassy().addIncident(inc);
         GNNAllianceBrokenNotice.create(owner(), empire());
-        OathBreakerIncident.alertBrokenAlliance(owner(),empire());
+        OathBreakerIncident.alertBrokenAlliance(owner(),empire(),caughtSpying);
         return inc;
     }
     public DiplomaticIncident signJointWar(Empire target) {

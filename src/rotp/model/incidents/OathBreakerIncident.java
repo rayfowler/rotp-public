@@ -27,37 +27,45 @@ public class OathBreakerIncident extends DiplomaticIncident {
     private final int oathBreakType;
     final int empBreaker;
     final int empVictim;
-    public static void alertBrokenAlliance(Empire breaker, Empire victim) {
-        alertBrokenAlliance(breaker,victim,null);
+    final boolean spying;
+    final boolean notify;
+    public static void alertBrokenAlliance(Empire breaker, Empire victim, boolean spy) {
+        alertBrokenAlliance(breaker,victim,null,spy);
     }
-    public static void alertBrokenAlliance(Empire breaker, Empire victim, Empire requestor) {
+    public static void alertBrokenAlliance(Empire breaker, Empire victim, Empire requestor, boolean spy) {
+        OathBreakerIncident inc = new OathBreakerIncident(breaker, victim, victim, 1, ALLIANCE_SEV, spy);
+        victim.viewForEmpire(breaker).embassy().addIncident(inc);
+
         Set<Empire> allContacts = Empire.allContacts(breaker, victim);
-        allContacts.add(victim);
         for (Empire contact: allContacts) {
             if (contact != requestor) {
-                OathBreakerIncident inc = new OathBreakerIncident(breaker, victim, contact, 1,ALLIANCE_SEV);
+                inc = new OathBreakerIncident(breaker, victim, contact, 1, ALLIANCE_SEV, false);
                 contact.viewForEmpire(breaker).embassy().addIncident(inc);
             }
         }
     }
-    public static void alertBrokenPact(Empire breaker, Empire victim) {
-        alertBrokenPact(breaker,victim,null);
+    public static void alertBrokenPact(Empire breaker, Empire victim, boolean spy) {
+        alertBrokenPact(breaker,victim,null, spy);
     }
-    public static void alertBrokenPact(Empire breaker, Empire victim, Empire requestor) {
+    public static void alertBrokenPact(Empire breaker, Empire victim, Empire requestor, boolean spy) {
+        OathBreakerIncident inc = new OathBreakerIncident(breaker, victim, victim, 2, PACT_SEV, spy);
+        victim.viewForEmpire(breaker).embassy().addIncident(inc);
+        
         Set<Empire> allContacts = Empire.allContacts(breaker, victim);
-        allContacts.add(victim);
         for (Empire contact: allContacts) {
             if (contact != requestor) {
-                OathBreakerIncident inc = new OathBreakerIncident(breaker, victim, contact, 2,PACT_SEV);
+                inc = new OathBreakerIncident(breaker, victim, contact, 2,PACT_SEV, false);
                 contact.viewForEmpire(breaker).embassy().addIncident(inc);
             }
         }
     }
-    private OathBreakerIncident(Empire brk, Empire vic, Empire obs,int type, int sev) {
+    private OathBreakerIncident(Empire brk, Empire vic, Empire obs, int type, int sev, boolean spy) {
         empBreaker = brk.id;
         empVictim = vic.id;
+        spying = spy;
         oathBreakType = type;
         dateOccurred = galaxy().currentYear();
+        notify = vic == obs;
         
         duration = obs.diplomatAI().leaderOathBreakerDuration();
         
@@ -85,7 +93,7 @@ public class OathBreakerIncident extends DiplomaticIncident {
         return "";
     }
     @Override
-    public String warningMessageId() { return DialogueManager.WARNING_OATHBREAKER; }
+    public String warningMessageId() { return notify ? DialogueManager.WARNING_OATHBREAKER : ""; }
     @Override
     public String key()              { return "Oath Break"; }
     @Override
@@ -95,6 +103,12 @@ public class OathBreakerIncident extends DiplomaticIncident {
         // this means that "my_empire" tag in the text needs to be replaced with the victim empire name
         s1 = galaxy().empire(empVictim).replaceTokens(s1, "my");
         s1 = galaxy().empire(empBreaker).replaceTokens(s1, "your");
+        if (spying) {
+            String spies = text("SPY_CAUGHT");
+            s1 = s1.replace("[spiesCaught]", spies);
+        }
+        else
+            s1 = s1.replace("[spiesCaught]", "");
         return s1;
     }
 }

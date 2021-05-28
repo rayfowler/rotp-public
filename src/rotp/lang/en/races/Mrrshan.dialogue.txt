@@ -67,7 +67,7 @@ WARN_BIOWEAPON_01          | Trophies must be won in honorable combat, not stole
 WARN_GENOCIDE_01           | Not a bad decision, to eradicate the entire [victim_race] species and take every one of their treasures for your own. While I doubt you'd be stupid enough to try something like that with us, your capabilities are still quite disconcerting. 
 WARN_FINAL_WAR_01          | Stupid [your_race]! To defy the will of the council decision is to defy the will of the [my_race]! We will take your trophies and burn them down to the smallest bauble! Nothing will remain of your kind once we are through! 
 WARN_COUNCIL_VOTE_01       | The Khanate has more important matters to deal with than playing political games in council chambers. It would be better for us if you would simply yield to our wishes. And it would be better for you too, if my meaning is made clear.
-WARN_OATHBREAKER_01        | Hmph! Only the desperate break the bond of their word. No matter! From now on we will simply deal with you as we deal with others too duplicitous to be trusted. 
+WARN_OATHBREAKER_01        | Hmph! Only the desperate break the bond of their word. No matter! From now on we will simply deal with you as we deal with others too duplicitous to be trusted. [spiesCaught]
 WARN_ATTACKED_ALLY_01      | I can't say I don't see why you'd attack the [defender_race]. Their treasures are so very lovely... but they will belong to us when we wish to take them: they will not belong to you!
 WARN_REBELLING_AGAINST_01  | This peace espoused by the council would never sit well with our people. We desire one thing and one thing only: to take treasures from the weak and make them ours! 
 

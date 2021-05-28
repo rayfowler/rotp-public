@@ -60,7 +60,7 @@ WARN_BIOWEAPON_01          | An ugly thing, that weapon. Even uglier is the one 
 WARN_GENOCIDE_01           | The threat of genocide is not unknown to my people, but to see it so casually realized... you disgust us in ways I doubt we will ever forgive, ambassador. 
 WARN_FINAL_WAR_01          | As peace dawns on the galaxy, all who partake shall find what they seek. If you [rebel_race_plural] threaten that peace, you threaten our ultimate goal, and we will do everything we can to banish you to the annals of the galaxy. 
 WARN_COUNCIL_VOTE_01       | It is not that we lack appreciation for subtle political maneuverings, only that we become most displeased when those maneuverings work against us. Tread lightly, ambassador: we may not give you the opportunity to maneuver this way again.
-WARN_OATHBREAKER_01        | Feckless cowards! Alas that our people must endure the distrust of the entire galaxy when you so brazenly prove that you are the ones who deserve such enmity! 
+WARN_OATHBREAKER_01        | Feckless cowards! Alas that our people must endure the distrust of the entire galaxy when you so brazenly prove that you are the ones who deserve such enmity! [spiesCaught]
 WARN_ATTACKED_ALLY_01      | We warn you only once, ambassador. Halt your aggression towards the [defender_race_plural]: they stand with us, and we stand with them.
 WARN_REBELLING_AGAINST_01  | You dare usurp the highest seat on the council from us, its rightful masters? Your people will live to regret this day, ambassador.
 //

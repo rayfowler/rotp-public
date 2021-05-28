@@ -21,13 +21,15 @@ public class BreakPactIncident extends DiplomaticIncident {
     private static final long serialVersionUID = 1L;
     final int empBreaker;
     final int empMe;
-    public static BreakPactIncident create(Empire e1, Empire e2) {
-        BreakPactIncident inc = new BreakPactIncident(e1, e2);
+    final boolean spying;
+    public static BreakPactIncident create(Empire e1, Empire e2, boolean spy) {
+        BreakPactIncident inc = new BreakPactIncident(e1, e2, spy);
         return inc;
     }
-    private BreakPactIncident(Empire e1, Empire e2) {
+    private BreakPactIncident(Empire e1, Empire e2, boolean spy) {
         empBreaker = e1.id;
         empMe = e2.id;
+        spying = spy;
         severity = -15;
         dateOccurred = galaxy().currentYear();
         duration = 10;
@@ -43,6 +45,12 @@ public class BreakPactIncident extends DiplomaticIncident {
         String s1 = super.decode(s);
         s1 = galaxy().empire(empBreaker).replaceTokens(s1, "your");
         s1 = galaxy().empire(empMe).replaceTokens(s1, "my");
+        if (spying) {
+            String spies = text("SPY_CAUGHT");
+            s1 = s1.replace("[spiesCaught]", spies);
+        }
+        else
+            s1 = s1.replace("[spiesCaught]", "");
         return s1;
     }
 }

@@ -61,7 +61,7 @@ WARN_BIOWEAPON_01          | This weapon of yours is absolutely horrifying. To u
 WARN_GENOCIDE_01           | How callous! I never expected that you would go so far as to completely destroy the one known as [victim_name]. I will never forget the barbarity you've shown this day. 
 WARN_FINAL_WAR_01          | I now see that for me to realize my dream, the galaxy must be at peace. But as long as you exist that peace can never be made real. The answer is obvious: the [rebel_name] must be destroyed! 
 WARN_COUNCIL_VOTE_01       | I admit that I'm unfamiliar with the nuances of what you call "political maneuvering." But I do know that by voting for [other_name] you have made a move against me, and I don't forget those impede me so. 
-WARN_OATHBREAKER_01        | Is this how you operate, [your_name]? To make an agreement only to break it when you see fit? I knew that you were nothing like me, and your actions prove this beyond a shadow of a doubt! 
+WARN_OATHBREAKER_01        | Is this how you operate, [your_name]? To make an agreement only to break it when you see fit? I knew that you were nothing like me, and your actions prove this beyond a shadow of a doubt! [spiesCaught] 
 WARN_ATTACKED_ALLY_01      | Why do you attack my friend [defender_name], [your name]? Find another way to resolve your 
 differences: I will not like being forced to intervene! 
 WARN_REBELLING_AGAINST_01  | I do not like the [your_name], and I like even less that you were chosen as leader of the council! I must reflect on what has happened today, and you should reflect on how I may soon be forced to respond! 

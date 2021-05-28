@@ -61,7 +61,7 @@ WARN_BIOWEAPON_01          | Undenkbar! Das Fleisch ist schwach genug gegen konv
 WARN_GENOCIDE_01           | Sagen Sie uns jetzt, warum Sie Völkermord an der Rasse [victim_race] begangen haben. Wähle deine Worte mit Bedacht: deine Antwort bestimmt, wie unsere beiden Völker von hier an weitermachen werden!
 WARN_FINAL_WAR_01          | Nur durch das Schmieden von Allianzen können wir unseren heiligen Kreuzzug vollenden! Wir stehen zusammen als vereinte Völker, doch du stehst allein als die Stimme des Chaos und des Krieges. Die Prophezeiung ist in Bewegung: Ihr seid in der Tat die Brut von Quaralon! 
 WARN_COUNCIL_VOTE_01       | Es wäre sicherlich besser, wenn dieser Rat aufgelöst würde und das Imperium die alleinige Kontrolle über die galaktischen Angelegenheiten bekäme. Dann würde sich euer Volk unsere Feindschaft verdienen, wenn ihr euch so gegen uns äußert! 
-WARN_OATHBREAKER_01        | Wie beunruhigend, sein Wort zu brechen, bedeutet, sein Vertrauen zu brechen. Es besteht kein Zweifel, dass der Feind der Prophezeiungen es wagen würde, auf diese Art und Weise zu handeln! 
+WARN_OATHBREAKER_01        | Wie beunruhigend, sein Wort zu brechen, bedeutet, sein Vertrauen zu brechen. Es besteht kein Zweifel, dass der Feind der Prophezeiungen es wagen würde, auf diese Art und Weise zu handeln! [spiesCaught] 
 WARN_ATTACKED_ALLY_01      | Die [defender_race] tragen die Ehre der Verbundenheit mit dem Imperium! Beachtet unsere Warnung als Antwort auf Euren Angriff: Ich versichere Euch, dass Ihr sie nur einmal erhalten werdet!
 WARN_REBELLING_AGAINST_01  | Unser Kreuzzug wird nicht verzögert werden! Nicht von den Einfaltspinseln des Rates und auch nicht von Ihnen! Halten Sie sich bereit, Botschafter: Ein heiliger Sturm wird bald über Sie hereinbrechen!
 
