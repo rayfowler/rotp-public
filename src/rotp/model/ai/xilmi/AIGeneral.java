@@ -570,10 +570,6 @@ public class AIGeneral implements Base, General {
                 else
                     currentScore = 1;
             }
-            if(isInvader())
-            {
-                currentScore = emp.tech().avgTechLevel();
-            }
             currentScore *= relationshipFactor;
             //System.out.println(empire.name()+": Considering "+emp.name()+" with Score of: "+currentScore+" relationshipFactor: "+relationshipFactor+" sys: "+empire.systemsInShipRange(emp).size()+" power: "+empire.powerLevel(emp));
             //ail: drastically reduce score for those I have a NAP as nap-breaking makes others mad
