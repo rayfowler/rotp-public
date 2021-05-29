@@ -72,6 +72,67 @@ public class AIGeneral implements Base, General {
         defenseRatio = -1;
         additionalColonizersToBuild = -1;
         
+        //Alkari
+        if(empire.race().shipDefenseBonus() > 0)
+        {
+            empire.leader().personality = Leader.Personality.HONORABLE;
+            empire.leader().objective = Leader.Objective.EXPANSIONIST;
+        }
+        //Bulrathi
+        if(empire.race().groundAttackBonus() > 0)
+        {
+            empire.leader().personality = Leader.Personality.AGGRESSIVE;
+            empire.leader().objective = Leader.Objective.MILITARIST;
+        }
+        //Darlok
+        if(empire.race().spyInfiltrationAdj() > 0)
+        {
+            empire.leader().personality = Leader.Personality.RUTHLESS;
+            empire.leader().objective = Leader.Objective.TECHNOLOGIST;
+        }
+        //Human
+        if(empire.race().tradePctBonus() > 0)
+        {
+            empire.leader().personality = Leader.Personality.RUTHLESS;
+            empire.leader().objective = Leader.Objective.DIPLOMAT;
+        }
+        //Klackon
+        if(empire.race().workerProductivityMod() > 1)
+        {
+            empire.leader().personality = Leader.Personality.XENOPHOBIC;
+            empire.leader().objective = Leader.Objective.INDUSTRIALIST;
+        }
+        //Meklar
+        if(empire.race().robotControlsAdj() > 0)
+        {
+            empire.leader().personality = Leader.Personality.ERRATIC;
+            empire.leader().objective = Leader.Objective.INDUSTRIALIST;
+        }
+        //Mrrshan
+        if(empire.race().shipAttackBonus() > 0)
+        {
+            empire.leader().personality = Leader.Personality.HONORABLE;
+            empire.leader().objective = Leader.Objective.MILITARIST;
+        }
+        //Psilon
+        if(empire.race().researchBonusPct() > 1)
+        {
+            empire.leader().personality = Leader.Personality.ERRATIC;
+            empire.leader().objective = Leader.Objective.TECHNOLOGIST;
+        }
+        //Sakkra
+        if(empire.race().growthRateMod > 1)
+        {
+            empire.leader().personality = Leader.Personality.AGGRESSIVE;
+            empire.leader().objective = Leader.Objective.ECOLOGIST;
+        }
+        //Silicoid
+        if(empire.race().ignoresPlanetEnvironment())
+        {
+            empire.leader().personality = Leader.Personality.XENOPHOBIC;
+            empire.leader().objective = Leader.Objective.EXPANSIONIST;
+        }
+        
         additionalColonizersToBuild = additionalColonizersToBuild(false);
         while (additionalColonizersToBuild > 0)
         {
