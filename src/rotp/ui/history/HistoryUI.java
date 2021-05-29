@@ -819,6 +819,10 @@ public final class HistoryUI extends BasePanel implements MouseListener {
             }
         }
         @Override
+        public boolean isClicked(Sprite s)             { return false; }
+        @Override
+        public boolean isHovering(Sprite s)            { return false; }
+        @Override
         public Sprite hoveringSprite()           { return (Sprite) sessionVar("HISTORYUI_HOVERING_SPRITE"); }
         public void hoveringSprite(Sprite s)     { 
             sessionVar("HISTORYUI_HOVERING_SPRITE", s); 
