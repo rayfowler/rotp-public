@@ -446,8 +446,6 @@ public class AIGovernor implements Base, Governor {
                     maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance() / 4;
                 fighterPercentage = 0.75f;
             }
-            if(empire.generalAI().isSpy() && inAttackRange)
-                maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
             float maxShipMaintainanceBeforeAdj = maxShipMaintainance;
             maxShipMaintainance *= productionScore(col.starSystem());
             if(maxShipMaintainance > maxShipMaintainanceBeforeAdj)
