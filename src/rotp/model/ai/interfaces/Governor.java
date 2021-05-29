@@ -27,4 +27,7 @@ public interface Governor {
     boolean readyToBuild(Colony c, ShipPlan sh, int designCost);
     int suggestedEmpireTaxLevel();
     float targetPopPct(int sysId);
+    
+    // specific to Xilmi AI
+    default float productionScore(StarSystem sys) { return 0; }
 }

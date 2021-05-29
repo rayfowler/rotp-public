@@ -42,6 +42,7 @@ import rotp.model.ships.ShipManeuver;
 import rotp.model.ships.ShipShield;
 import rotp.model.ships.ShipSpecial;
 import rotp.model.ships.ShipWeapon;
+import rotp.model.ships.ShipWeaponMissileType;
 import rotp.model.tech.Tech;
 import rotp.model.tech.TechTree;
 import rotp.util.Base;
@@ -121,9 +122,13 @@ public class NewShipTemplate implements Base {
             ShipDesign design = shipDesigns[i];
             // number of whole designs we can build within our budget
             int count = (int) Math.floor(shipBudgetBC / (design.cost() * costMultiplier[i]));
+            if(count < 1 && (i == 0 || i == 1))
+                count = 1;
             float score = 0;
             if(count >= 1)
                 score = design.spaceUsed() / design.totalSpace();
+            if(design.firepower(0) == 0)
+                score = 0;
             if(role.BOMBER == role)
             {
                 boolean hasBombs = false;
@@ -232,6 +237,10 @@ public class NewShipTemplate implements Base {
         
         boolean needRange = false;
         boolean boostInertial = false;
+        float topSpeed = 0;
+        float avgECM = 0;
+        float avgSHD = 0;
+        float totalCost = 0;
         
         for(EmpireView ev : ai.empire().contacts())
         {
@@ -248,8 +257,21 @@ public class NewShipTemplate implements Base {
                 for (int j=0;j<maxSpecials();j++)
                     if(enemyDesign.special(j).createsBlackHole())
                         boostInertial = true;
+                if(enemyDesign.combatSpeed() > topSpeed)
+                    topSpeed = enemyDesign.combatSpeed();
+                float count = ev.empire().shipDesignCount(enemyDesign.id());
+                avgECM += enemyDesign.ecm().level() * enemyDesign.cost() * count;
+                avgSHD += enemyDesign.shieldLevel() * enemyDesign.cost() * count;
+                totalCost += enemyDesign.cost() * count;
             }
         }
+        if(totalCost > 0)
+        {
+            avgECM /= totalCost;
+            avgSHD /= totalCost;
+        }
+        
+        //System.out.print("\n"+ai.empire().name()+" "+d.name()+" avgSHD: "+avgSHD+" avgECM: "+avgECM);
         
         switch (role) {
             case BOMBER:
@@ -290,12 +312,12 @@ public class NewShipTemplate implements Base {
         
         switch (role) {
             case BOMBER:
-                setOptimalWeapon(ai, d, firstWeaponSpaceRatio * d.availableSpace(), 1, false, false, false);
-                setOptimalWeapon(ai, d, d.availableSpace(), 3, needRange, true, true); // uses slot 1
+                setOptimalWeapon(ai, d, firstWeaponSpaceRatio * d.availableSpace(), 1, false, false, false, topSpeed, avgECM, avgSHD);
+                setOptimalWeapon(ai, d, d.availableSpace(), 3, needRange, true, false, topSpeed, avgECM, avgSHD); // uses slot 1
                 break;
             case FIGHTER:
             default:
-                setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, true); // uses slots 0-3
+                setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, avgSHD); // uses slots 0-3
                 break;
         }
         ai.lab().iconifyDesign(d);
@@ -596,13 +618,13 @@ public class NewShipTemplate implements Base {
     
 // ********* FUNCTIONS SETTING ANTI-SHIP AND ANTI-PLANET WEAPONS ********** //
 
-    private void setOptimalWeapon(ShipDesigner ai, ShipDesign d, float spaceAllowed, int numSlotsToUse, boolean mustBeRanged, boolean mustTargetShips, boolean prohibitMissiles) {
+    private void setOptimalWeapon(ShipDesigner ai, ShipDesign d, float spaceAllowed, int numSlotsToUse, boolean mustBeRanged, boolean mustTargetShips, boolean prohibitMissiles, float missileSpeedMinimum, float avgECM, float avgSHD) {
         List<ShipWeapon> allWeapons = ai.lab().weapons();
         ShipWeapon bestWeapon = null;
         float bestScore = 0.0f;
-        float shield = ai.empire().bestEnemyShieldLevel();
+        float shield = avgSHD;
         if(!mustTargetShips)
-            shield = ai.empire().bestEnemyPlanetaryShieldLevel();
+            shield = ai.empire().bestEnemyPlanetaryShieldLevel() + ai.empire().bestEnemyShieldLevel();
         float startingShield = shield;
         //System.out.print("\n"+ai.empire().name()+" "+d.name()+" air: "+mustTargetShips+" ranged: "+mustBeRanged+" beams: "+prohibitMissiles);
         while(bestWeapon == null)
@@ -619,7 +641,19 @@ public class NewShipTemplate implements Base {
                         continue;
                     if(!mustTargetShips && !wpn.groundAttacksOnly())
                         continue;
-                    float currentScore = wpn.firepower(shield) / wpn.space(d);
+                    float missileDamageMod = 1.0f;
+                    if(wpn.isMissileWeapon())
+                    {
+                        ShipWeaponMissileType swm = (ShipWeaponMissileType)wpn;
+                        //System.out.print("\n"+ai.empire().name()+" "+d.name()+" wpn: "+wpn.name()+" speed: "+swm.speed());
+                        if(swm.speed() <= missileSpeedMinimum)
+                            continue;
+                        avgECM -= swm.computerLevel();
+                        missileDamageMod = max(0.0f, 1.0f - 0.1f * avgECM);
+                        missileDamageMod *= swm.shots() / 5.0f;
+                    }
+                    float currentScore = wpn.firepower(shield) * missileDamageMod / wpn.space(d);
+                    //System.out.print("\n"+ai.empire().name()+" "+d.name()+" wpn: "+wpn.name()+" score: "+currentScore);
                     if(currentScore > bestScore)
                     {
                         bestWeapon = wpn;
