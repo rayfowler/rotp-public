@@ -265,11 +265,8 @@ public class AIDiplomat implements Base, Diplomat {
         // of the requestedTech we would be trading away
         List<Tech> worthyTechs = new ArrayList<>(allTechs.size());
         for (Tech t: allTechs) {
-            if(t.researchCost() >= tech.researchCost() * 2.0 / 3.0)
+            if(t.quintile() == tech.quintile())
             {
-                //If there's already 3 much more expensive techs in the list, leave two slots for techs we can hope the player to be willing to give us
-                if(worthyTechs.size() >= 3 && t.researchCost() >= tech.researchCost() * 3.0 / 2.0)
-                    continue;
                 if (!t.isObsolete(empire) && t.baseValue(empire) > 0)
                     worthyTechs.add(t);
             }
@@ -280,7 +277,7 @@ public class AIDiplomat implements Base, Diplomat {
         
         // limit return to top 5 techs
         Tech.comparatorCiv = requestor;
-        int maxTechs = 5;
+        int maxTechs = 3;
         if (worthyTechs.size() <= maxTechs)
             return worthyTechs;
         List<Tech> topFiveTechs = new ArrayList<>(maxTechs);
@@ -311,16 +308,6 @@ public class AIDiplomat implements Base, Diplomat {
                     // simplified logic so that if we have ever asked for wantedTech before, don't ask again
                     if (previouslyOffered == null) {
                         //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" ask "+v.empire().name()+" for "+wantedTech.name());
-                        // there are counters available.. at this point we need to check if we are okay with the counters!
-                        boolean theCountersAreOkayWithUs = false;
-                        for(Tech ct : counterTechs)
-                        {
-                            //System.out.println(empire.galaxy().currentTurn()+" "+ v.empire().name()+" wants "+ct.name()+" "+ct.researchCost()+" in exchange for "+wantedTech.name()+" "+wantedTech.researchCost());
-                            if(ct.researchCost() <= 1.5 * wantedTech.researchCost())
-                                theCountersAreOkayWithUs = true;
-                        }
-                        if(theCountersAreOkayWithUs == false)
-                            continue;
                         v.embassy().logTechExchangeRequest(wantedTech, counterTechs);
                         //only now send the request
                         DiplomaticReply reply = v.empire().diplomatAI().receiveRequestTech(empire, wantedTech);
