@@ -626,7 +626,7 @@ public class AIScientist implements Base, Scientist {
     @Override
     public float baseValue(TechEcoRestoration t) {
         if (empire.ignoresPlanetEnvironment())
-            return 1;
+            return 0;
         TechEcoRestoration curr = empire.tech().topEcoRestorationTech();
         float val = 0;
         if(curr != null)
@@ -874,7 +874,7 @@ public class AIScientist implements Base, Scientist {
             }
         }
         if (allEnemiesHaveInterdiction)
-            return 1;
+            return 0;
         float val = 0;
         val += t.level();
         val /= 2;
