@@ -30,6 +30,7 @@ import rotp.model.empires.Leader;
 import rotp.model.empires.SpyNetwork.Mission;
 import rotp.model.empires.SpyReport;
 import rotp.model.empires.TreatyWar;
+import rotp.model.events.StarSystemEvent;
 import rotp.model.galaxy.Galaxy;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
@@ -1328,6 +1329,15 @@ public class AIDiplomat implements Base, Diplomat {
             if(current.colony() == null)
                 continue;
             if(current.colony().empire() != empire)
+                continue;
+            int colonizationTurn = 0;
+            for(StarSystemEvent sysEvent : current.events())
+            {
+                if(sysEvent.changesOwnership() && sysEvent.owner() == empire.id)
+                    colonizationTurn = sysEvent.turn();
+            }
+            //seed out false positives from recently colonized systems
+            if(galaxy().currentTurn() - colonizationTurn < 10)
                 continue;
             for(ShipFleet orbiting : current.orbitingFleets())
             {
