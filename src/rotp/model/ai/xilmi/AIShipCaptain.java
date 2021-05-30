@@ -198,6 +198,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
    
     private void performSmartAttackTarget(CombatStack stack, CombatStack target)
     {
+        if(target == null)
+            return;
         //1st run: fire only specials which are not repulsor or stasis-field
         for (int i=0;i<stack.numWeapons(); i++) {
             if(!stack.weapon(i).isSpecial()
