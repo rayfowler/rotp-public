@@ -263,7 +263,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
     public void adjustPopulation(float pop) { population += pop; }
     public int rebels()                      { return rebels; }
     public void rebels(int i)                { rebels = i; }
-    public int deltaPopulation()             { return (int) population - (int) previousPopulation; }
+    public int deltaPopulation()             { return (int) population - (int) previousPopulation - (int) inTransport(); }
     public boolean destroyed()               { return population <= 0; }
     public boolean inRebellion()             { return rebellion && (rebels > 0); }
     public float rebellionPct()             { return rebels / population(); }
