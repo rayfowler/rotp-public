@@ -20,6 +20,8 @@ import rotp.model.ai.ShipPlan;
 import rotp.model.ai.interfaces.Governor;
 import rotp.model.colony.Colony;
 import rotp.model.colony.ColonySpendingCategory;
+import rotp.model.combat.CombatStackColony;
+import rotp.model.combat.ShipCombatManager;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.SystemView;
@@ -343,7 +345,7 @@ public class AIGovernor implements Base, Governor {
 
         // ail: Remove spending limit since bases are now only built at border and we want to get it over with quickly
         // ail: only build defense when a shield is needed. Otherwise never worth it
-        if(wantShield(col))
+        if(wantShield(col) || col.defense().maxBases() > col.defense().bases())
         {
             float defCost = col.defense().maxSpendingNeeded();
             col.pct(DEFENSE, defCost/totalProd);
@@ -521,10 +523,39 @@ public class AIGovernor implements Base, Governor {
             col.defense().maxBases(max(currBases, 0));
             return;
         }
+        float enemyBombardDamage = 0;
+        float enemyBc = 0;
+        boolean allowBases = false;
+        for(ShipFleet fl : col.starSystem().incomingFleets())
+        {
+            if(fl.empire().aggressiveWith(empire.id))
+            {
+                if(!empire.visibleShips().contains(fl))
+                    continue;
+                enemyBombardDamage += expectedBombardDamageAsIfBasesWereThere(fl, col.starSystem());
+                if(fl.isArmed())
+                    enemyBc += fl.bcValue();
+            }
+        }
+        for(ShipFleet fl : col.starSystem().orbitingFleets())
+        {
+            if(fl.empire().aggressiveWith(empire.id))
+            {
+                if(!empire.visibleShips().contains(fl))
+                    continue;
+                enemyBombardDamage += expectedBombardDamageAsIfBasesWereThere(fl, col.starSystem());
+                if(fl.isArmed())
+                    enemyBc += fl.bcValue();
+            }
+        }
+        //System.out.print("\n"+empire.name()+" "+col.name()+" expected bombard-Damage: "+enemyBombardDamage+" Bc: "+enemyBc);
+        if(enemyBc > 0 && enemyBombardDamage == 0)
+            allowBases = true;
         if (sys == null)  // this can happen at startup
             col.defense().maxBases(0);
-        /*else if (empire.sv.isAttackTarget(sys.id))
-            col.defense().maxBases(max(currBases, (int)(col.production()/30))); // modnar: reduce base count
+        else if (allowBases)
+            col.defense().maxBases(max(currBases, 1));
+        /*
         else if (empire.sv.isBorderSystem(sys.id))
             col.defense().maxBases(max(currBases, (int)(col.production()/40))); // modnar: reduce base count*/
         else
@@ -632,5 +663,25 @@ public class AIGovernor implements Base, Governor {
         if(avgScore > 0)
             return Score/avgScore;
         return 0;
+    }
+    public float expectedBombardDamageAsIfBasesWereThere(ShipFleet fl, StarSystem sys) {
+        if (!sys.isColonized())
+            return 0;
+
+        float damage = 0;
+        ShipCombatManager mgr = galaxy().shipCombat();
+        CombatStackColony planetStack = new CombatStackColony(sys.colony(), mgr);
+        planetStack.num = 1;
+
+        for (int i=0;i<fl.num.length;i++) {
+            if (fl.num[i] > 0) {
+                ShipDesign d = fl.empire().shipLab().design(i);
+                for (int j=0;j<ShipDesign.maxWeapons();j++)
+                    damage += (fl.num[i] * d.wpnCount(j) * d.weapon(j).estimatedBombardDamage(d, planetStack));
+                for (int j=0;j<ShipDesign.maxSpecials();j++)
+                    damage += d.special(j).estimatedBombardDamage(d, planetStack);
+            }
+        }
+        return damage;
     }
 }
