@@ -493,7 +493,10 @@ public class AIFleetCommander implements Base, FleetCommander {
             {
                 score = 10;
             }
-            if(!fleet.canColonizeSystem(current) || empire.sv.isColonized(id))
+            boolean ignoreTravelTime = false;
+            if(fleet.canColonizeSystem(current) && empire.shipLab().colonyDesign().size() > 2)
+                ignoreTravelTime = true;
+            if(!ignoreTravelTime)
                 score /= fleet.travelTime(current) + 1;
             //System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" => "+empire.sv.name(current.id)+" score: "+score);
             if(score > bestScore)
@@ -542,7 +545,9 @@ public class AIFleetCommander implements Base, FleetCommander {
             empire.shipLab().needScouts = false;
         else if (empire.scanPlanets())
             empire.shipLab().needScouts = false;
-        else if (empire.shipLab().colonyDesign().size() <= 2 && empire.shipLab().colonyDesign().range() >= empire.scoutRange())
+        else if (empire.shipLab().colonyDesign().size() <= 2 
+                && empire.shipLab().colonyDesign().range() >= empire.scoutRange()
+                && (empire.tech().planetology().techLevel() > 19 || empire.race().ignoresPlanetEnvironment()))
             empire.shipLab().needScouts = false;
             
         NoticeMessage.setSubstatus(text("TURN_DEPLOY_FLEETS"));
