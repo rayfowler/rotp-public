@@ -752,7 +752,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                         if(targetIsGatherPoint)
                         {
                             target = smartPath(fleet, target);
-                            attackWithFleet(fleet, target, 1.0f, false, true, true, true, keepBc);
+                            attackWithFleet(fleet, target, 1.0f, false, true, true, true, keepBc, true);
                             break;
                         }
                         StarSystem stagingPoint = null;
@@ -771,7 +771,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                             stagingPoint = smartPath(fleet, stagingPoint);
                             if(fleet.canSendTo(stagingPoint.id))
                             {
-                                attackWithFleet(fleet, stagingPoint, sendAmount, false, allowFighters, allowBombers, allowColonizers, keepBc);
+                                attackWithFleet(fleet, stagingPoint, sendAmount, false, allowFighters, allowBombers, allowColonizers, keepBc, true);
                             }
                             canStillSend = false;
                         }
@@ -941,13 +941,17 @@ public class AIFleetCommander implements Base, FleetCommander {
                             if((ourEffectiveBC - keepBc) * (civTech+10.0f) * attackThreshold >= enemyBC * (targetTech+10.0f)
                                     && ourEffectiveBombBC * (civTech+10.0f) * attackThreshold >= enemyBaseBC * (targetTech+10.0f))
                             {
+                                StarSystem targetBeforeSmartPath = target;
                                 if(!(fleet.canColonizeSystem(target) && target.empire() == null))
                                     target = smartPath(fleet, target);
+                                boolean allowSplitBySpeed = true;
+                                if(targetBeforeSmartPath == target)
+                                    allowSplitBySpeed = false;
                                 if(fleet.canSendTo(target.id))
                                 {
                                     int numBeforeSend=fleet.numShips();
                                     //ail: first send everything except fighters
-                                    attackWithFleet(fleet, target, sendAmount, false, allowFighters, allowBombers, allowColonizers, keepBc);
+                                    attackWithFleet(fleet, target, sendAmount, false, allowFighters, allowBombers, allowColonizers, keepBc, allowSplitBySpeed);
                                     if(sendAmount >= 1.0f || numBeforeSend == fleet.numShips())
                                     {
                                         //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" should attack "+target.name()+" allowBombers: "+allowBombers);
@@ -962,7 +966,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                                             && fleet.newestOfType(COLONY).range() > empire.shipRange())
                                     {
                                         int numBeforeSend=fleet.numShips();
-                                        attackWithFleet(fleet, target, sendAmount, false, allowFighters, allowBombers, allowColonizers, keepBc);
+                                        attackWithFleet(fleet, target, sendAmount, false, allowFighters, allowBombers, allowColonizers, keepBc, false);
                                         if(sendAmount >= 1.0f || numBeforeSend == fleet.numShips())
                                         {
                                             //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" should attack "+target.name()+" allowBombers: "+allowBombers);
@@ -977,7 +981,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                                 && fleet.system() != stagingPoint)
                             {
                                 stagingPoint = smartPath(fleet, stagingPoint);
-                                attackWithFleet(fleet, stagingPoint, sendAmount, false, allowFighters, allowBombers, allowColonizers, keepBc);
+                                attackWithFleet(fleet, stagingPoint, sendAmount, false, allowFighters, allowBombers, allowColonizers, keepBc, true);
                                 canStillSend = false;
                             }
                             else
@@ -1007,64 +1011,76 @@ public class AIFleetCommander implements Base, FleetCommander {
         }
     }
     
-    public void attackWithFleet(ShipFleet fl, StarSystem target, float amount, boolean includeScouts, boolean includeFighters, boolean includeBombers, boolean includeColonizer, float needToKeep)
+    public void attackWithFleet(ShipFleet fl, StarSystem target, float amount, boolean includeScouts, boolean includeFighters, boolean includeBombers, boolean includeColonizer, float needToKeep, boolean splitBySpeed)
     {
         if(fl.system() == target)
             return;
-        boolean haveToDeploy = false;
-        int[] counts = new int[ShipDesignLab.MAX_DESIGNS];
         ShipDesignLab lab = empire.shipLab();
-        for (int i=0;i<fl.num.length;i++) {
-            int num = fl.num(i);
-            ShipDesign d = lab.design(i); 
-            if(d.isScout()&& !includeScouts)
-            {
-                continue;
-            }
-            if(d.hasColonySpecial() && !includeColonizer)
-            {
-                continue;
-            }
-            if(d.isBomber() && !includeBombers)
-            {
-                continue;
-            }
-            if((d.isFighter() || d.isDestroyer()) && !includeFighters)
-            {
-                continue;
-            }
-            if(!empire.sv.inShipRange(target.id) && d.range() < empire.scoutRange())
-                continue;
-            counts[i] = (int)Math.ceil(num * amount);
-            if(needToKeep > 0 && (d.isFighter() || d.isDestroyer()))
-            {
-                int toKeep = (int)Math.ceil(needToKeep / d.cost());
-                if(num - counts[i] <= toKeep)
+        if(fl.isInTransit())
+            splitBySpeed = false;
+        for (int speed=(int)fl.slowestStackSpeed();speed<=(int)empire.tech().topSpeed();speed++)
+        {
+            boolean haveToDeploy = false;
+            int[] counts = new int[ShipDesignLab.MAX_DESIGNS];
+            for (int i=0;i<fl.num.length;i++) {
+                int num = fl.num(i);
+                ShipDesign d = lab.design(i); 
+                if(d.warpSpeed()!=speed && splitBySpeed)
+                    continue;
+                if(d.isScout()&& !includeScouts)
                 {
-                    //System.out.print("\n"+empire.name()+" need to keep: "+needToKeep+" that's "+toKeep+" of "+d.name()+" that costs: "+d.cost());
-                    if(counts[i] >= toKeep)
-                    {
-                        needToKeep -= toKeep * d.cost();
-                        counts[i] -= toKeep;
-                    }
-                    else
-                    {
-                        needToKeep -= counts[i] * d.cost();
-                        counts[i] = 0;
-                    }
+                    continue;
                 }
-            }   
-            if(counts[i] > 0)
-            {
-                haveToDeploy = true;
-                systemInfoBuffer.get(target.id).myBc += counts[i] * d.cost();
-                systemInfoBuffer.get(target.id).myBombardDamage += counts[i] * designBombardDamage(d, target);
-                if(d.hasColonySpecial())
-                    systemInfoBuffer.get(target.id).colonizerEnroute = true;
+                if(d.hasColonySpecial() && !includeColonizer)
+                {
+                    continue;
+                }
+                if(d.isBomber() && !includeBombers)
+                {
+                    continue;
+                }
+                if((d.isFighter() || d.isDestroyer()) && !includeFighters)
+                {
+                    continue;
+                }
+                if(!empire.sv.inShipRange(target.id) && d.range() < empire.scoutRange())
+                    continue;
+                counts[i] = (int)Math.ceil(num * amount);
+                if(needToKeep > 0 && (d.isFighter() || d.isDestroyer()))
+                {
+                    int toKeep = (int)Math.ceil(needToKeep / d.cost());
+                    if(num - counts[i] <= toKeep)
+                    {
+                        //System.out.print("\n"+empire.name()+" need to keep: "+needToKeep+" that's "+toKeep+" of "+d.name()+" that costs: "+d.cost());
+                        if(counts[i] >= toKeep)
+                        {
+                            needToKeep -= toKeep * d.cost();
+                            counts[i] -= toKeep;
+                        }
+                        else
+                        {
+                            needToKeep -= counts[i] * d.cost();
+                            counts[i] = 0;
+                        }
+                    }
+                }   
+                if(counts[i] > 0)
+                {
+                    haveToDeploy = true;
+                    //System.out.print("\n"+empire.name()+" deploy "+counts[i]+" "+d.name()+" speed "+speed+" to "+target.name()+" splitBySpeed: "+splitBySpeed);
+                    systemInfoBuffer.get(target.id).myBc += counts[i] * d.cost();
+                    systemInfoBuffer.get(target.id).myBombardDamage += counts[i] * designBombardDamage(d, target);
+                    if(d.hasColonySpecial())
+                        systemInfoBuffer.get(target.id).colonizerEnroute = true;
+                }
             }
+            if(haveToDeploy)
+            {
+                galaxy().ships.deploySubfleet(fl, counts, target.id);
+            }
+            if(!splitBySpeed)
+                break;
         }
-        if(haveToDeploy)
-            galaxy().ships.deploySubfleet(fl, counts, target.id);
     }
     public float bcValue(ShipFleet fl, boolean countScouts, boolean countFighters, boolean countBombers, boolean countColonizers) {
         float bc = 0;
