@@ -69,9 +69,9 @@ council:       AlkCouncil
 shield:        AlkShield,    0@0|420x450
 introTextX:    680
 espionageXY:   0@0
-spyFactories:  0
-spyMissiles:   0
-spyRebellion:  0
+spyFactories:  48
+spyMissiles:   47
+spyRebellion:  47
 dialogTextX:   110,220
 dialogTextY:   580
 councilDiplo:  0.6, 75, 0, 0.6

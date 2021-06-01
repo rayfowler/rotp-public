@@ -1,3 +1,5 @@
+AlkWin        | races/Alkari/WinSplash.jpg
+AlkLoss       | races/Alkari/LossSplash.jpg
 
 AlkFlagWar   | races/Alkari/banner_war.png
 AlkFlagNorm  | races/Alkari/banner_norm.png
