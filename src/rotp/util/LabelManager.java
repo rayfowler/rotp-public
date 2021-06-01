@@ -66,7 +66,6 @@ public class LabelManager implements Base {
         return (value == null) || value.isEmpty() ? key : random(value);
     }
     public void load(String dir) {
-    	loadIntroFile(dir);
     	loadLabelFile(dir);
     	loadTechsFile(dir);
     	loadDialogueFile(dir);

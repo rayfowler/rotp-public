@@ -176,7 +176,7 @@ public class Transport implements Base, Ship, Sprite, Serializable {
         // if being sent back to home system, then abort the launch
         if (dest == from) {
             size = 0;
-            gal.removeShipInTransit(this);
+            gal.removeTransport(this);
             return;
         }
 
@@ -189,7 +189,7 @@ public class Transport implements Base, Ship, Sprite, Serializable {
         combatSpeed = empire.tech().transportCombatSpeed();
         setArrivalTime();
 
-        gal.addShipInTransit(this);
+        gal.addTransport(this);
         TechTree tech = empire.tech();
 
         hitPoints = tech.topArmorTech().transportHP;

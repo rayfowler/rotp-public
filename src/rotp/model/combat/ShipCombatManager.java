@@ -855,15 +855,35 @@ public class ShipCombatManager implements Base {
             return;
         }
         
-        int i = currentTurnList.indexOf(st);
-        if (i+1 == currentTurnList.size()) {
+        int currIndex = currentTurnList.indexOf(st);
+        int nextIndex = -1;
+        int lastIndex =currentTurnList.size()-1;
+        
+        // we need to find the next available stack to take a turn 
+        // from the currentTurnList. Skip any stacks that are:
+        // -- destroyed (by any earlier stack in the list)
+        // -- unarmed colonies (they can't shoot or move, so skip)
+        // when we find one, set nextIndex and break out of the loop
+        for (int i=currIndex+1;i<=lastIndex;i++) {
+            CombatStack stack = currentTurnList.get(i);
+            if (stack.destroyed())
+                continue;
+            if (stack.isColony() && !stack.isArmed()) 
+                continue;
+            nextIndex = i;
+            break;
+        }
+        
+        // if no valid stack found in the current turn list
+        // then reset the turn list and start a new combat round
+        if (nextIndex < 0) {
             setupCurrentTurnList();
             currentStack = currentTurnList.get(0);
             turnCounter++;
             trimAsteroids();
         }
         else
-            currentStack = currentTurnList.get(i+1);
+            currentStack = currentTurnList.get(nextIndex);
 
         currentStack.beginTurn();
     }

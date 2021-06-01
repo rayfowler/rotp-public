@@ -39,6 +39,7 @@ PLANET_TUNDRA                     | Tundra
 SPY_HIDE                          | Verstecken
 SPY_ESPIONAGE                     | Ausspionieren
 SPY_SABOTAGE                      | Sabotage
+SPY_CAUGHT                        | [Deine Spione wurden gefangen]
 SPY_FRAMED                        | [Du wurdest betrogen]
 SPY_FORCED_CONFESSION             | [Ein falsches Geständnis wurde erzwungen.]
 SPY_WARNING                       | [Du wurdest gewarnt]

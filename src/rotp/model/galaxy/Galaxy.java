@@ -456,8 +456,15 @@ public class Galaxy implements Base, Serializable {
         }
     }
     public List<Transport> transports()       { return transports; }
-    public void removeShipInTransit(Transport sh) { transports.remove(sh); }
-    public void addShipInTransit(Transport sh)    { transports.add(sh); }
+    public void removeTransport(Transport sh) { transports.remove(sh); }
+    public void addTransport(Transport sh)    { transports.add(sh); }
+    public void removeAllTransports(int empId) {
+        List<Transport> allTransports = new ArrayList<>(transports);
+        for (Transport tr: allTransports) {
+            if (tr.empId() == empId)
+                transports.remove(tr);
+        }
+    }
     public void nextEmpireTurns() {
         for (Empire e: empires) {
             if (!e.extinct())

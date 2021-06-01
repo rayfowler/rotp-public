@@ -26,7 +26,7 @@
     <maxHeapSize>3500</maxHeapSize>
   </jre>
   <splash>
-    <file>C:\Users\RayGame\Pictures\rotp_splash.bmp</file>
+    <file>C:\Users\RayGame\Documents\NB\Remnants\launch4j\rotp_splash.bmp</file>
     <waitForWindow>false</waitForWindow>
     <timeout>15</timeout>
     <timeoutErr>false</timeoutErr>
