@@ -410,11 +410,22 @@ public class AIScientist implements Base, Scientist {
     //
     @Override
     public float researchPriority(Tech t) {
-        // by raising tech cost to 1.3, we will tend to value researching lower-cost
-        // techs that have a similar value/cost ratio as more expensive ones
-        // iow, for each 10x in cost, there needs to be 20x value to be same priority
-        //System.out.print("\n"+empire.name()+" Tech: "+t.name()+" score: "+researchValue(t)+" score before stuff: "+t.baseValue(empire));
-        return researchValue(t);
+        float researchValue = researchValue(t);
+        if(researchValue > 1)
+        {
+            for(EmpireView ev : empire.contacts())
+            {
+                if(!ev.inEconomicRange())
+                    continue;
+                //If we can steal it or trade for it, we don't want to research it ourselves
+                if(ev.spies().unknownTechs().contains(t))
+                {
+                    researchValue = 1;
+                    break;
+                }
+            }
+        }
+        return researchValue;
     }
     @Override
     public float researchValue(Tech t) {

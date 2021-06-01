@@ -158,20 +158,25 @@ public class AIShipCaptain implements Base, ShipCaptain {
             boolean atLeastOneWeaponCanStillFire = false;
             boolean allWeaponsCanStillFire = true;
             boolean shouldPerformKiting = false;
-            for (int i=0;i<stack.numWeapons(); i++) {
-                if(currentTarget != null && !currentTarget.isColony() && stack.weapon(i).groundAttacksOnly())
-                    continue;
-                if(stack.weapon(i).isSpecial())
-                    continue;
-                if(stack.weapon(i).isMissileWeapon())
-                    shouldPerformKiting = true;
-                if(!stack.shipComponentIsUsed(i))
-                {
-                    atLeastOneWeaponCanStillFire = true;
-                }
-                else
-                {
-                    allWeaponsCanStillFire = false;
+            if(stack.isShip())
+            {
+                CombatStackShip shipStack = (CombatStackShip)stack;
+                for (int i=0;i<stack.numWeapons(); i++) {
+                    if(currentTarget != null && !currentTarget.isColony() && stack.weapon(i).groundAttacksOnly())
+                        continue;
+                    if(stack.weapon(i).isSpecial())
+                        continue;
+                    if(stack.weapon(i).isMissileWeapon())
+                        shouldPerformKiting = true;
+
+                    if(stack.shotsRemaining(i) < shipStack.weaponAttacks[i])
+                    {
+                        allWeaponsCanStillFire = false;
+                    }
+                    else
+                    {
+                        atLeastOneWeaponCanStillFire = true;
+                    }
                 }
             }
             if(stack.repulsorRange() > 0)
