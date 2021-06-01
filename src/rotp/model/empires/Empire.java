@@ -2450,6 +2450,8 @@ public final class Empire implements Base, NamedObject, Serializable {
             log("disband#1 fleet: ", fl.toString());
             fl.disband();
         }
+        
+        galaxy().removeAllTransports(id);
 
         for (EmpireView v : empireViews()) {
             if (v != null)
