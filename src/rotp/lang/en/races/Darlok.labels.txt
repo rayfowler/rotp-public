@@ -49,5 +49,5 @@ GAME_OVER_COUNCIL_MILITARY_WIN2   | The first phase finished, the true test now 
 GAME_OVER_COUNCIL_MILITARY_LOSS2  | The end of your quest, the end of your people...#The saddest fate you could have achieved for your people has been made into reality. Your unmatched ability for subterfuge and manipulation has been foiled by inferior species who could not hope to understand the great work you were trying to accomplish. Though you succeeded in the monumental task of becoming the elected ruler of the galaxy while still maintaining the secrecy that shrouded your goals, you were unable to stifle the rebellion that soon rose up to meet your burgeoning rule.#Now it is too late for you to steer the future of the galaxy along the path you deem fit. The rebellion has left the New Republic as nothing more than ruins for the victors to loot and build over. And the death of the Darloks seals the fate of those who remain trapped in a doomed universe they have no hope of escaping. Your failure has sealed the fate of your empire in not one but two universes, and as such is more monumental than any of your enemies could even comprehend...
 
 // This text is the %8 variable in some of the game over text... when this race wins the game
-GAME_OVER_ALLIANCE_WIN3           | the shadowy grip of the Darloks ensnares
-GAME_OVER_REBELLION_LOSS3         | the unknowable machinations of the Darloks
+GAME_OVER_ALLIANCE_WIN3           | the unknowable machinations of the Darloks
+GAME_OVER_REBELLION_LOSS3         | the shadowy grip of the Darloks ensnares

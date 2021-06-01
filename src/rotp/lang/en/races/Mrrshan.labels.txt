@@ -49,5 +49,5 @@ GAME_OVER_COUNCIL_MILITARY_WIN2   | The spoils of this galaxy for you and your a
 GAME_OVER_COUNCIL_MILITARY_LOSS2  | Your cherished treasures now free for the taking...#Though initially you were able to use fear to crush the dissent of your rivals and become Master of the New Republic, there were some brave enough to stand against you and the future that you envisioned. Your people were proud and strong, decorated with the spoils of countless raids and eager to gain more treasures from another inevitable conquest. But they did not, or could not, see the danger the rebellion represented, and the steadfast courage that the rebels displayed would prove to be your end.#Though you boasted superior numbers in utilizing the fleets of those you had strong-armed into submission, you were unable to stop the insurrection from destabilizing the republic and casting you down from the throne. First your subordinates fell followed shortly by your people. It seems that in the end the galaxy itself chose against the future that you had planned. After all, what is the will of one people, no matter how strong, against the indomitable hand of fate...
 
 // This text is the %8 variable in some of the game over text... when this race wins the game
-GAME_OVER_ALLIANCE_WIN3           | the insatiable greed of the Mrrshan engulfs
-GAME_OVER_REBELLION_LOSS3         | the treasure lust of the Mrrshan
+GAME_OVER_ALLIANCE_WIN3           | the treasure lust of the Mrrshan
+GAME_OVER_REBELLION_LOSS3         | the insatiable greed of the Mrrshan engulfs

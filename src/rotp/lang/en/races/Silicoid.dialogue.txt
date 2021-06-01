@@ -26,7 +26,7 @@ GREETING_07                | Miserable [your_race]! To interrupt our sacred war 
 DECLAREWAR_HATE_01         | It is clearer now than ever before that your people are the long sought Children of Quaralon! We shall take the utmost pleasure in removing your kind from this galaxy like the scourge you are!
 DECLAREWAR_HATE_02         | The time spoken in legend has at last come! Prepare yourself, Brood of Quaralon! For regardless of who wins, our crusade will soon come to an end!
 DECLAREWAR_HATE_03         | At last we have found you, Quaralon's brood! And now our battle will be joined! Your strength is inconsequential: the strength of Diamodus will guide us through!
-DECLAREWAR_ERRATIC_01      | Since our first meeting the [my_title] has pondered on whether or not you are our most hated enemy. It will continue to do so after we bring your race to an end.
+DECLAREWAR_ERRATIC_01      | Since our first meeting the [my_title] has pondered on whether or not you are our most hated enemy. We will continue to do so after we bring your race to an end.
 DECLAREWAR_ERRATIC_02      | Our time as celestial neighbors has been amicable enough, but even the slightest chance of your people being the Children of Quaralon is enough for us to declare war.
 DECLAREWAR_ERRATIC_03      | Even the smallest risk of villainy from you is beyond what we are prepared to accept. We shall clean your filth from the galaxy or die in the attempt.
 DECLAREWAR_MILITARY_01     | You dare encroach on our territory in such a manner? So be it! You will soon come to know our wrath, [your_race], and in doing so will learn the depths of your folly.
