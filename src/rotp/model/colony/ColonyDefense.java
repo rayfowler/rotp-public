@@ -335,8 +335,6 @@ public class ColonyDefense extends ColonySpendingCategory {
         upgradeMissileBasesCost = Math.max(0, upgradeMissileBasesCost);
         float newMissileBasesCost =  (maxBases() - bases) * tech().newMissileBaseCost();
         newMissileBasesCost = Math.max(0, newMissileBasesCost);
-        if(upgradeMissileBasesCost + newMissileBasesCost + missileBases() == 0)
-            buildShieldCost = 0;
         float totalCost = buildShieldCost + upgradeMissileBasesCost + newMissileBasesCost;
 
         // adjust cost for planetary production

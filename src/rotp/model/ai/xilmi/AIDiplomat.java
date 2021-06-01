@@ -814,8 +814,11 @@ public class AIDiplomat implements Base, Diplomat {
         
         if(!empire.enemies().isEmpty())
             return v.refuse(DialogueManager.DECLINE_OFFER, target);
+
+        //ail: refuse offer if we like the target more than the one who asks
+        if(empire.viewForEmpire(target).embassy().relations() > v.embassy().relations())
+            return v.refuse(DialogueManager.DECLINE_OFFER, target);
         
-        //ail: if the target is our common enemy and together we are stronger than them, we'll accept without a bribe
         //System.out.println(empire.galaxy().currentTurn()+" "+ requestor.name()+" asked "+empire.name()+" to declare joint war on "+target.name());
         if(wantToDeclareWar(empire.viewForEmpire(target.id), true))
         {

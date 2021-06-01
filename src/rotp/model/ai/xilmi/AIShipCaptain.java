@@ -74,7 +74,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             mgr.turnDone(stack);
             return;
         }
-
+        
         CombatStack prevTarget = null;
         
         boolean turnActive = true;
@@ -85,6 +85,14 @@ public class AIShipCaptain implements Base, ShipCaptain {
             chooseTarget(stack, true, true);
             chooseTarget(stack, false, false);
             //ail: if our target to move to is not the same as the target we can currently shoot at, we shoot before moving
+            
+            if (stack.isColony() && stack.canAttack(currentTarget)) 
+            {
+                stack.target = currentTarget;
+                mgr.performAttackTarget(stack);
+                mgr.turnDone(stack);
+            }
+            
             if(closeTarget != null && closeTarget != distantTarget)
             {
                 if (stack.canAttack(closeTarget)) 
@@ -185,11 +193,21 @@ public class AIShipCaptain implements Base, ShipCaptain {
             //ail: we have not moved and not fired... so we probably can't get to our target, then retreat
             if(stack.maxMove == stack.move && allWeaponsCanStillFire && stack.isShip())
             {
-                CombatStackShip shipStack = (CombatStackShip) stack;
-                StarSystem dest = retreatSystem(shipStack.mgr.system());
-                if (dest != null) {
-                    mgr.retreatStack(shipStack, dest);
-                    return;
+                if(currentTarget == null)
+                {
+                    FlightPath bestPathToSaveSpot = findSafestSpace(stack);
+                    if(bestPathToSaveSpot != null)
+                        mgr.performMoveStackAlongPath(stack, bestPathToSaveSpot);
+                    turnActive = false;
+                }
+                else
+                {
+                    CombatStackShip shipStack = (CombatStackShip) stack;
+                    StarSystem dest = retreatSystem(shipStack.mgr.system());
+                    if (dest != null) {
+                        mgr.retreatStack(shipStack, dest);
+                        return;
+                    }
                 }
             }
         }
