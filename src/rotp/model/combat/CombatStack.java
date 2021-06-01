@@ -217,11 +217,6 @@ public class CombatStack implements Base {
         return true;
     }
     public void beginTurn() {
-        if (destroyed()) {
-            mgr.turnDone(this);
-            return;
-        }
-
         move = maxMove;
         canTeleport = hasTeleporting() && !mgr.interdiction();
 
