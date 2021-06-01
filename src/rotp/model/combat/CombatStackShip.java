@@ -532,7 +532,7 @@ public class CombatStackShip extends CombatStack {
     }
     @Override
     public boolean shipComponentIsUsed(int index) {
-        return (shotsRemaining[index] < weaponAttacks[index])  || (roundsRemaining[index] < 1) || (wpnTurnsToFire[index] > 1);
+        return shotsRemaining[index] < 1 || (roundsRemaining[index] < 1) || (wpnTurnsToFire[index] > 1);
     }
     @Override
     public boolean shipComponentIsOutOfMissiles(int index) {
