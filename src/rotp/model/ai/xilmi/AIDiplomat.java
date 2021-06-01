@@ -1410,8 +1410,7 @@ public class AIDiplomat implements Base, Diplomat {
             superiorityThreshold += galaxy().options().baseAIRelationsAdj() / 30.0;
             if(!empire.generalAI().isInvader() && !empire.generalAI().isRusher())
             {
-                if(empire.generalAI().additionalColonizersToBuild(true) > 0
-                        || developmentPct < 0.75f)
+                if(developmentPct < 0.75f)
                     warAllowed = false;
             }
             if(empire.generalAI().isRusher() || empire.generalAI().isInvader() || empire.generalAI().isExpander())
