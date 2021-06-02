@@ -936,9 +936,10 @@ public final class Empire implements Base, NamedObject, Serializable {
             scientistAI().setTechTreeAllocations();
             securityAllocation = spyMasterAI().suggestedInternalSecurityLevel();
             empireTaxLevel = governorAI().suggestedEmpireTaxLevel();
-            fleetCommanderAI().nextTurn();
+            //ail: calling this before fleetCommanderAI avoids a possible case where a fleet is slower than it could be due to scrapping ships after the fleet was launched
             NoticeMessage.setSubstatus(text("TURN_DESIGN_SHIPS"));
             shipDesignerAI().nextTurn();
+            fleetCommanderAI().nextTurn();
             ai().sendTransports();
         }
 
@@ -1496,7 +1497,10 @@ public final class Empire implements Base, NamedObject, Serializable {
         return sum;
     }
     public int internalSecurity()            { return securityAllocation; }
-    public void internalSecurity(int i)      { securityAllocation = bounds(0,i,MAX_SECURITY_TICKS); }
+    public void internalSecurity(int i)      { 
+        securityAllocation = bounds(0,i,MAX_SECURITY_TICKS); 
+        flagColoniesToRecalcSpending();
+    }
     public float internalSecurityPct()       { return (float) securityAllocation/MAX_SECURITY_TICKS; }
     public void increaseInternalSecurity()   { internalSecurity(securityAllocation+1); }
     public void decreaseInternalSecurity()   { internalSecurity(securityAllocation-1); }
@@ -2171,7 +2175,8 @@ public final class Empire implements Base, NamedObject, Serializable {
             flagColoniesToRecalcSpending();
         return empireTaxLevel != prevLevel;
     }
-    private void flagColoniesToRecalcSpending() {
+    //ail: needs to be public for when spending in spy-network is adjusted
+    public void flagColoniesToRecalcSpending() {
         // tax rate has changed in some way... flag colonies so they
         // recalc properly
         List<StarSystem> allSystems = allColonizedSystems();
