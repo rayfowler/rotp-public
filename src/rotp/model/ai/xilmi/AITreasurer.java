@@ -48,6 +48,7 @@ public class AITreasurer implements Base, Treasurer {
         // modnar: (???) poor/ultra-poor should be getting reserve to build factories
         // they are terrible to collect reserve from...
         // instead remove rich/ultra-rich from receiving reserves
+        float reserveGoal = 0;
         List<StarSystem> systems = new ArrayList<>(allSystems);
         for (StarSystem sys: allSystems) {
             if (sys.colony().inRebellion())
@@ -56,6 +57,8 @@ public class AITreasurer implements Base, Treasurer {
                 if (sys.colony().research().hasProject())
                     needToSolveEvent = true;
                 Planet pl = sys.planet();
+                if(sys.colony().maxReserveUseable() > reserveGoal)
+                    reserveGoal = sys.colony().maxReserveUseable();
                 if (pl.isResourcePoor() || pl.isResourceUltraPoor()) {
                     poorSystems.add(sys); // modnar: still make poorSystems list
                 }
@@ -70,7 +73,11 @@ public class AITreasurer implements Base, Treasurer {
             }
         }
         
-    
+        //keep 5 times of what our biggest planet could use as reserve to handle events
+        reserveGoal *= 5;
+        
+        //System.out.print("\n"+empire.name()+" wanted reserve: "+reserveGoal+" current reserve: "+empire.totalReserve());
+        
         // first, help systems that are fighting plague or supernova research events
         if (empire.totalReserve() > 0) {
             List<StarSystem> remainingSystems = new ArrayList<>(systems);
@@ -89,39 +96,9 @@ public class AITreasurer implements Base, Treasurer {
             }
         }
         
-        // next, give reserve to systems designed as "rush defense" by the general
-        if (empire.totalReserve() > 0) {
-            List<StarSystem> needDefense = empire.generalAI().rushDefenseSystems();
-            for (StarSystem sys: needDefense) {
-                if (empire.totalReserve() <= 0)
-                    break;
-                Colony col = sys.colony();
-                int rsvNeeded = (int) col.maxReserveNeeded();
-                empire.allocateReserve(col, rsvNeeded);
-                //ail: might be able to lower it due to more income meaning less percent for clean needed
-                col.lowerECOToCleanIfEcoComplete();
-                systems.remove(sys);
-            }
-        }
-        
-        // next, give reserve to systems designed as "rush build ships" by the fleet commander
-        if (empire.totalReserve() > 0) {
-            List<StarSystem> needShips = empire.generalAI().rushShipSystems();
-            for (StarSystem sys: needShips) {
-                if (empire.totalReserve() <= 0)
-                    break;
-                Colony col = sys.colony();
-                int rsvNeeded = (int) col.maxReserveNeeded();
-                empire.allocateReserve(col, rsvNeeded);
-                //ail: might be able to lower it due to more income meaning less percent for clean needed
-                col.lowerECOToCleanIfEcoComplete();
-                systems.remove(sys);
-            }
-        }
-    
         // sort remaining colonies from smallest to largest
         // assist in prod to build factories on smaller colonies
-        if (empire.totalReserve() > 0) {
+        if (empire.totalReserve() > reserveGoal) {
             List<StarSystem> remainingSystems = new ArrayList<>(systems);
             Collections.sort(remainingSystems,StarSystem.BASE_PRODUCTION);
             Collections.reverse(remainingSystems);
@@ -132,16 +109,21 @@ public class AITreasurer implements Base, Treasurer {
                 float max = col.industry().maxSpendingNeeded();
                 float curr = col.maxProduction();
                 int rsvNeeded = (int) max(0, min(col.maxReserveUseable(), max-curr));
+                //if we somehow have more than twice what we should keep as reserve, we'll spend it even on planets that are finished developing
+                if(empire.totalReserve() > 2 * reserveGoal)
+                    rsvNeeded = (int)col.maxReserveUseable();
                 if (rsvNeeded > 0) {
                     empire.allocateReserve(col,rsvNeeded);
                     //ail: might be able to lower it due to more income meaning less percent for clean needed
                     col.lowerECOToCleanIfEcoComplete();
                     systems.remove(sys);
                 }
+                if(empire.totalReserve() < reserveGoal)
+                    break;
             }
         }
         //We only gather tax when we need to deal with a nova/plague
-        if(needToSolveEvent)
+        if(needToSolveEvent && empire.totalReserve() < reserveGoal)
         {
             float totalProd = empire.totalPlanetaryProduction();
             float desiredRsv = totalProd * 0.1f; // modnar: reduce reserve collection, less is more efficient in general
