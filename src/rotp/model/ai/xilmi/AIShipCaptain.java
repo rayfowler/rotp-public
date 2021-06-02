@@ -168,7 +168,6 @@ public class AIShipCaptain implements Base, ShipCaptain {
                         continue;
                     if(stack.weapon(i).isMissileWeapon())
                         shouldPerformKiting = true;
-
                     if(stack.shotsRemaining(i) < shipStack.weaponAttacks[i])
                     {
                         allWeaponsCanStillFire = false;
