@@ -494,7 +494,7 @@ public class AIGovernor implements Base, Governor {
             shiftResearchToIndustry = true;
         
         //getting here sometimes happens when building colony-ships and not needing all production
-        if(col.industry().factories() < col.industry().maxFactories())
+        if(col.industry().factories() < col.industry().maxFactories() && enemyBombardPower == 0)
             shiftResearchToIndustry = true;
         
         if (shiftResearchToIndustry) {
