@@ -308,10 +308,11 @@ public class AIGovernor implements Base, Governor {
             }
         }
         float popLoss = enemyBombardPower / 200;
+        float prodScore = productionScore(col.starSystem());
         
         // prod spending gets up to 100% of planet's remaining net prod
         if(col.industry().factories() < col.maxUseableFactories() 
-                && (factoryROI < 25 || productionScore(col.starSystem()) < 0.5)
+                && (factoryROI < 25 || prodScore < 0.5)
                 && enemyBombardPower == 0)
         {
             if(workerROI > factoryROI || col.population() == col.maxSize())
@@ -399,7 +400,7 @@ public class AIGovernor implements Base, Governor {
                 colonizerCost += lab.design(i).cost() * counts[i];
             }
         }
-        if(col.allocation(SHIP) == 0 && productionScore(col.starSystem()) >= 0.5)
+        if(col.allocation(SHIP) == 0 && prodScore >= 0.5)
         {
             //Making sure to not just spam colonizers when we at risk of being attacked, also ignoring ship-maintenance-limit in this case
             if(enemy == true || inAttackRange == true)
@@ -449,7 +450,7 @@ public class AIGovernor implements Base, Governor {
                 fighterPercentage = 0.75f;
             }
             float maxShipMaintainanceBeforeAdj = maxShipMaintainance;
-            maxShipMaintainance *= productionScore(col.starSystem());
+            maxShipMaintainance *= prodScore;
             if(maxShipMaintainance > maxShipMaintainanceBeforeAdj)
                 maxShipMaintainance = (min(maxShipMaintainance, 1) + maxShipMaintainanceBeforeAdj) / 2;
             boolean techsLeft = false;
@@ -487,10 +488,20 @@ public class AIGovernor implements Base, Governor {
         totalAlloc = col.allocation(SHIP)+col.allocation(DEFENSE)+col.allocation(INDUSTRY)+col.allocation(ECOLOGY);
         col.allocation(RESEARCH, maxAllocation - totalAlloc);
 
-        // check to allocate reserve
-        // modnar: reduce to 0%, since it's taken care of by the AICTreasurer (?)
-        if (col.planet().noArtifacts() && (col.pct(RESEARCH) > 0.5) ) {
-            int rsvAmt = (int) Math.min(0.0, col.pct(RESEARCH) - 0.5);
+        //ail: Rich and Ultra-Rich that are doing research which is not a project should put their stuff into reserve instead of conducting research
+        boolean shiftResearchToIndustry = false;
+        if(prodScore > 1 && (col.planet().isResourceRich() || col.planet().isResourceUltraRich()) && !col.research().hasProject())
+            shiftResearchToIndustry = true;
+        
+        //getting here sometimes happens when building colony-ships and not needing all production
+        if(col.industry().factories() < col.industry().maxFactories())
+            shiftResearchToIndustry = true;
+        
+        if(enemyBombardPower > 0)
+            shiftResearchToIndustry = false;
+        
+        if (shiftResearchToIndustry) {
+            float rsvAmt = col.pct(RESEARCH);
             col.addPct(RESEARCH, -rsvAmt);
             col.addPct(INDUSTRY, rsvAmt);
         }
@@ -637,6 +648,7 @@ public class AIGovernor implements Base, Governor {
     private float shipPctForColony(Colony col) {
         return 1;
     }
+    @Override
     public float productionScore(StarSystem sys)
     {
         float Score = sqrt(sys.colony().totalIncome());

@@ -125,7 +125,7 @@ public final class SpyNetwork implements Base, Serializable {
     
     public void shutdownSpyNetworks() {
         maxSpies = 0;
-        allocation = 0;
+        allocation(0);
         activeSpies.clear();
         beginHide();
     }
@@ -171,7 +171,10 @@ public final class SpyNetwork implements Base, Serializable {
         return possibleTechs;
     }
     public int allocation()           { return allocation; }
-    public void allocation(int i)     { allocation = bounds(0,i,MAX_SPENDING_TICKS); }
+    public void allocation(int i)     { 
+        allocation = bounds(0,i,MAX_SPENDING_TICKS); 
+        view().owner().flagColoniesToRecalcSpending();
+    }
     public float allocationPct()     { return (float) allocation/MAX_SPENDING_TICKS; }
     public float allocationCostPct() { 
         if (numActiveSpies() >= maxSpies)
