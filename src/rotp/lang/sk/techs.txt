@@ -1,0 +1,1197 @@
+
+
+//
+// Armor techs
+// 
+ARMOR_0_NAME     | Titanium Armor
+ARMOR_0_ITEM     | Titanium
+ARMOR_0_BRIEF    | Hit Points %1
+ARMOR_0_DETAIL   | Beginning armor technology. No bonuses to ship armor or ground attacks.
+
+ARMOR_1_NAME     | Duralloy Armor
+ARMOR_1_ITEM     | Duralloy
+ARMOR_1_BRIEF    | Hit Points %1
+ARMOR_1_DETAIL   | Increases the hit points of ships and transports by 50%. Personal combat armor is also enhanced, adding 5 to all ground attacks.
+
+ARMOR_2_NAME     | Zortrium Armor
+ARMOR_2_ITEM     | Zortrium
+ARMOR_2_BRIEF    | Hit Points %1
+ARMOR_2_DETAIL   | Increases the hit points of ships and transports by 100%. Personal combat armor is also enhanced, adding 10 to all ground attacks.
+
+ARMOR_3_NAME     | Andrium Armor
+ARMOR_3_ITEM     | Andrium
+ARMOR_3_BRIEF    | Hit Points %1
+ARMOR_3_DETAIL   | Increases the hit points of ships and transports by 150%. Personal combat armor is also enhanced, adding 15 to all ground attacks.
+
+ARMOR_4_NAME     | Tritanium Armor
+ARMOR_4_ITEM     | Tritanium
+ARMOR_4_BRIEF    | Hit Points %1
+ARMOR_4_DETAIL   | Increases the hit points of ships and transports by 200%. Personal combat armor is also enhanced, adding 20 to all ground attacks.
+
+ARMOR_5_NAME     | Adamantium Armor
+ARMOR_5_ITEM     | Adamantium
+ARMOR_5_BRIEF    | Hit Points %1
+ARMOR_5_DETAIL   | Increases the hit points of ships and transports by 250%. Personal combat armor is also enhanced, adding 25 to all ground attacks.
+
+ARMOR_6_NAME     | Neutronium Armor
+ARMOR_6_ITEM     | Neutronium
+ARMOR_6_BRIEF    | Hit Points %1
+ARMOR_6_DETAIL   | Increases the hit points of ships and transports by 300%. Personal combat armor is also enhanced, adding 30 to all ground attacks.
+
+
+//
+// Atmospheric Terraforming techs
+// 
+ATMOSPHERE_0_NAME      | Atmospheric Terraforming
+ATMOSPHERE_0_DETAIL    | Converts Hostile environments to Normal environments for a cost of 150 BCs.
+
+//
+// Automated Repair techs
+// 
+AUTOREPAIR_0_NAME      | Automated Repair System
+AUTOREPAIR_0_BRIEF     | Heals 15% of ship's hits a turn
+AUTOREPAIR_0_DETAIL    | Undestroyed ships can repair up to 15% of their total hit points at the end of each turn.
+
+AUTOREPAIR_1_NAME      | Advanced Damage Control
+AUTOREPAIR_1_BRIEF     | Heals 30% of ship's hits a turn
+AUTOREPAIR_1_DETAIL    | Undestroyed ships can repair up to 30% of their total hit points at the end of each turn.
+
+
+//
+// Battle Computer techs
+// 
+// this is the Ship Design entry for selecting no battle computer
+COMPUTER_0_NAME    | 
+COMPUTER_0_ITEM    |  
+COMPUTER_0_BRIEF   | Attack Level 0
+COMPUTER_0_DETAIL  |
+
+COMPUTER_1_NAME    | Battle Computer Mark I
+COMPUTER_1_ITEM    | Mark I
+COMPUTER_1_BRIEF   | Attack Level I
+COMPUTER_1_DETAIL  | Increases weapon accuracy to Level 1.
+
+COMPUTER_2_NAME    | Battle Computer Mark II
+COMPUTER_2_ITEM    | Mark II
+COMPUTER_2_BRIEF   | Attack Level II
+COMPUTER_2_DETAIL  | Increases weapon accuracy to Level 2.
+
+COMPUTER_3_NAME    | Battle Computer Mark III
+COMPUTER_3_ITEM    | Mark III
+COMPUTER_3_BRIEF   | Attack Level III
+COMPUTER_3_DETAIL  | Increases weapon accuracy to Level 3.
+
+COMPUTER_4_NAME    | Battle Computer Mark IV
+COMPUTER_4_ITEM    | Mark IV
+COMPUTER_4_BRIEF   | Attack Level IV
+COMPUTER_4_DETAIL  | Increases weapon accuracy to Level 4.
+
+COMPUTER_5_NAME    | Battle Computer Mark V
+COMPUTER_5_ITEM    | Mark V
+COMPUTER_5_BRIEF   | Attack Level V
+COMPUTER_5_DETAIL  | Increases weapon accuracy to Level 5.
+
+COMPUTER_6_NAME    | Battle Computer Mark VI
+COMPUTER_6_ITEM    | Mark VI
+COMPUTER_6_BRIEF   | Attack Level VI
+COMPUTER_6_DETAIL  | Increases weapon accuracy to Level 6.
+
+COMPUTER_7_NAME    | Battle Computer Mark VII
+COMPUTER_7_ITEM    | Mark VII
+COMPUTER_7_BRIEF   | Attack Level VII
+COMPUTER_7_DETAIL  | Increases weapon accuracy to Level 7.
+
+COMPUTER_8_NAME    | Battle Computer Mark VIII
+COMPUTER_8_ITEM    | Mark VIII
+COMPUTER_8_BRIEF   | Attack Level VIII
+COMPUTER_8_DETAIL  | Increases weapon accuracy to Level 8.
+
+COMPUTER_9_NAME    | Battle Computer Mark IX
+COMPUTER_9_ITEM    | Mark IX
+COMPUTER_9_BRIEF   | Attack Level IX
+COMPUTER_9_DETAIL  | Increases weapon accuracy to Level 9.
+
+COMPUTER_10_NAME   | Battle Computer Mark X
+COMPUTER_10_ITEM   | Mark X
+COMPUTER_10_BRIEF  | Attack Level X
+COMPUTER_10_DETAIL | Increases weapon accuracy to Level 10.
+
+COMPUTER_11_NAME   | Battle Computer Mark XI
+COMPUTER_11_ITEM   | Mark XI
+COMPUTER_11_BRIEF  | Attack Level XI
+COMPUTER_11_DETAIL | Increases weapon accuracy to Level 11.
+
+
+//
+// Battle Suit techs for ground combat
+// 
+// this is for default, no-bonus armor that player starts with
+BATTLESUIT_0_NAME    | Armor
+BATTLESUIT_0_DETAIL  |
+
+BATTLESUIT_1_NAME    | Battle Suits
+BATTLESUIT_1_DETAIL  | Armor that not only protects but also boosts strength. Adds 10 to all ground combat rolls.
+
+BATTLESUIT_2_NAME    | Armored Exoskeleton
+BATTLESUIT_2_DETAIL  | Advanced mobile suits that not only boost power and increase defenses but also offer limited flight to ground troops. Adds 20 to all ground combat rolls.
+
+BATTLESUIT_3_NAME    | Powered Armor
+BATTLESUIT_3_DETAIL  | Combines high mobility, anti-grav flight, and heavy armored plating to form the most advanced armor available for ground troops. Adds 30 to all ground combat rolls.
+
+
+//
+// Energy Focus techs for beam weapons
+// 
+BEAMFOCUS_0_NAME    | High Energy Focus
+BEAMFOCUS_0_BRIEF   | Adds +3 to energy weapon range
+BEAMFOCUS_0_DETAIL  | Increases the firing range of all energy weapons by three.
+
+BEAMFOCUS_1_NAME    | Oracle Interface
+BEAMFOCUS_1_BRIEF   | Concentrate beam weapons, halve enemy's shield
+BEAMFOCUS_1_DETAIL  | Coordinates all beam weapon attacks into one simultaneous burst of concentrated fire, halving the enemy's shield strength.
+
+
+//
+// Biological antidote techs 
+// 
+BIOANTIDOTE_0_NAME    | Bio Toxin Antidote
+BIOANTIDOTE_0_DETAIL  | Reduces casualties taken from biological weapons by 1M per attack.
+
+BIOANTIDOTE_1_NAME    | Universal Antidote
+BIOANTIDOTE_1_DETAIL  | Reduces casualties taken from biological weapons by 2M per attack.
+
+
+//
+// Biological weapon techs 
+// 
+BIOWEAPON_0_NAME     | Death Spores
+BIOWEAPON_0_BRIEF    | Biological Weapon
+BIOWEAPON_0_DETAIL   | Horrible biological weapons capable of reducing the maximum planetary populations by 1M per attack.
+
+BIOWEAPON_1_NAME     | Doom Virus
+BIOWEAPON_1_BRIEF    | Biological Weapon
+BIOWEAPON_1_DETAIL   | Dreadful biological weapons capable of reducing planetary populations by 2M per attack.
+
+BIOWEAPON_2_NAME     | Bio Terminator
+BIOWEAPON_2_BRIEF    | Biological Weapon
+BIOWEAPON_2_DETAIL   | Abominable biological weapons capable of reducing planetary populations by 3M per attack.
+
+//
+// Black Hole Generator tech
+//
+BLACKHOLE_0_NAME     | Black Hole Generator
+BLACKHOLE_0_DETAIL   | Creates a sub-space field that warps normal space, creating a black hole that destroys 25% to 100% of enemy ships or missile bases, less 2% per shield class.
+
+
+//
+// Bomb weapon tech
+//
+BOMB_0_NAME     | Nuclear Bomb
+BOMB_0_BRIEF    | Ground Attacks Only
+BOMB_0_DETAIL   | Bombs that explode for 3-12 points of damage on ground targets only.
+
+BOMB_1_NAME     | Fusion Bomb
+BOMB_1_BRIEF    | Ground Attacks Only
+BOMB_1_DETAIL   | Bombs that explode for 5-20 points of damage on ground targets only.
+
+BOMB_2_NAME     | Anti-Matter Bomb
+BOMB_2_BRIEF    | Ground Attacks Only
+BOMB_2_DETAIL   | Bombs that explode for 10-40 points of damage against planetary targets only.
+
+BOMB_3_NAME     | Omega-V Bomb
+BOMB_3_BRIEF    | Ground Attacks Only
+BOMB_3_DETAIL   | Bombs that explode for 20-50 points of damage on ground targets only.
+
+BOMB_4_NAME     | Neutronium Bomb
+BOMB_4_BRIEF    | Ground Attacks Only
+BOMB_4_DETAIL   | Bombs that explode for 40-70 points of damage on ground targets only.
+
+
+//
+// Cloaking tech
+//
+CLOAK_0_NAME     | Cloaking Device
+CLOAK_0_BRIEF    | Renders ship nearly invisible
+CLOAK_0_DETAIL   | Renders ship nearly invisible until they attack, improving their defenses by +5. Ships must uncloak to attack and will automatically recloak on any turn in which they don't attack.
+
+
+//
+// Cloning tech
+//
+CLONE_0_NAME     | Cloning
+CLONE_0_DETAIL   | Allows bio engineered colonists to be grown at a rate of 1M per 10 BC.
+
+CLONE_1_NAME     | Advanced Cloning
+CLONE_1_DETAIL   | Allows bio-engineered colonists to be grown at a rate of 1M per 5 BC.
+
+
+//
+// Combat Transporter tech
+//
+COMBATTRANSPORT_0_NAME     | Combat Transporters
+COMBATTRANSPORT_0_DETAIL   | Transports equipped with these devices have a 50% chance of beaming down onto enemy surfaces before they can be attacked by enemy ships and missile defense bases.
+
+
+//
+// Control Environment tech
+//
+CONTROLENV_0_NAME    | Controlled Normal Environment
+CONTROLENV_0_ITEM    | Standard Colony Base
+CONTROLENV_0_BRIEF   | Allows Normal Planet Landings
+CONTROLENV_0_DETAIL  | Permits the colonization of standard planets.
+
+CONTROLENV_1_NAME    | Controlled Barren Environment
+CONTROLENV_1_ITEM    | Barren Colony Base
+CONTROLENV_1_BRIEF   | Allows Barren Planet Landings
+CONTROLENV_1_DETAIL  | Permits the colonization of barren and less hostile planets.
+
+CONTROLENV_2_NAME    | Controlled Tundra Environment
+CONTROLENV_2_ITEM    | Tundra Colony Base
+CONTROLENV_2_BRIEF   | Allows Tundra Planet Landings
+CONTROLENV_2_DETAIL  | Permits the colonization of tundra and less hostile planets.
+
+CONTROLENV_3_NAME    | Controlled Dead Environment
+CONTROLENV_3_ITEM    | Dead Colony Base
+CONTROLENV_3_BRIEF   | Allows Dead Planet Landings
+CONTROLENV_3_DETAIL  | Permits the colonization of dead and less hostile planets.
+
+CONTROLENV_4_NAME    | Controlled Inferno Environment
+CONTROLENV_4_ITEM    | Inferno Colony Base
+CONTROLENV_4_BRIEF   | Allows Inferno Planet Landings
+CONTROLENV_4_DETAIL  | Permits the colonization of inferno and less hostile planets.
+
+CONTROLENV_5_NAME    | Controlled Toxic Environment
+CONTROLENV_5_ITEM    | Toxic Colony Base
+CONTROLENV_5_BRIEF   | Allows Toxic Planet Landings
+CONTROLENV_5_DETAIL  | Permits the colonization of toxic and less hostile planets.
+
+CONTROLENV_6_NAME    | Controlled Irradiated Environment
+CONTROLENV_6_ITEM    | Radiated Colony Base
+CONTROLENV_6_BRIEF   | Allows Irradiated Planet Landings
+CONTROLENV_6_DETAIL  | Permits the colonization of irradiated and less hostile planets.
+
+
+//
+// Deflector Shield tech
+//
+// this is the entry on Ship Design for selecting no deflector shield
+DEFLECTOR_0_NAME      | 
+DEFLECTOR_0_ITEM      |   
+DEFLECTOR_0_BRIEF     |  
+DEFLECTOR_0_DETAIL    | 
+
+DEFLECTOR_1_NAME      | Class I Deflector Shields
+DEFLECTOR_1_ITEM      | Class I
+DEFLECTOR_1_BRIEF     | Absorbs 1 hit
+DEFLECTOR_1_DETAIL    | Absorbs 1 point of damage from all attacks.
+
+DEFLECTOR_2_NAME      | Class II Deflector Shields
+DEFLECTOR_2_ITEM      | Class II
+DEFLECTOR_2_BRIEF     | Absorbs 2 hits
+DEFLECTOR_2_DETAIL    | Absorbs 2 points of damage from all attacks.
+
+DEFLECTOR_3_NAME      | Class III Deflector Shields
+DEFLECTOR_3_ITEM      | Class III
+DEFLECTOR_3_BRIEF     | Absorbs 3 hits
+DEFLECTOR_3_DETAIL    | Absorbs 3 points of damage from all attacks.
+
+DEFLECTOR_4_NAME      | Class IV Deflector Shields
+DEFLECTOR_4_ITEM      | Class IV
+DEFLECTOR_4_BRIEF     | Absorbs 4 hits
+DEFLECTOR_4_DETAIL    | Absorbs 4 points of damage from all attacks.
+
+DEFLECTOR_5_NAME      | Class V Deflector Shields
+DEFLECTOR_5_ITEM      | Class V
+DEFLECTOR_5_BRIEF     | Absorbs 5 hits
+DEFLECTOR_5_DETAIL    | Absorbs 5 points of damage from all attacks.
+
+DEFLECTOR_6_NAME      | Class VI Deflector Shields
+DEFLECTOR_6_ITEM      | Class VI
+DEFLECTOR_6_BRIEF     | Absorbs 6 hits
+DEFLECTOR_6_DETAIL    | Absorbs 6 points of damage from all attacks.
+
+DEFLECTOR_7_NAME      | Class VII Deflector Shields
+DEFLECTOR_7_ITEM      | Class VII
+DEFLECTOR_7_BRIEF     | Absorbs 7 hits
+DEFLECTOR_7_DETAIL    | Absorbs 7 points of damage from all attacks.
+
+DEFLECTOR_8_NAME      | Class IX Deflector Shields
+DEFLECTOR_8_ITEM      | Class IX
+DEFLECTOR_8_BRIEF     | Absorbs 9 hits
+DEFLECTOR_8_DETAIL    | Absorbs 9 points of damage from all attacks.
+
+DEFLECTOR_9_NAME      | Class XI Deflector Shields
+DEFLECTOR_9_ITEM      | Class XI
+DEFLECTOR_9_BRIEF     | Absorbs 11 hits
+DEFLECTOR_9_DETAIL    | Absorbs 11 points of damage from all attacks.
+
+DEFLECTOR_10_NAME     | Class XIII Deflector Shields
+DEFLECTOR_10_ITEM     | Class XIII
+DEFLECTOR_10_BRIEF    | Absorbs 13 hits
+DEFLECTOR_10_DETAIL   | Absorbs 13 points of damage from all attacks.
+
+DEFLECTOR_11_NAME     | Class XV Deflector Shields
+DEFLECTOR_11_ITEM     | Class XV
+DEFLECTOR_11_BRIEF    | Absorbs 15 hits
+DEFLECTOR_11_DETAIL   | Absorbs 15 points of damage from all attacks.
+
+
+//
+// Displacement tech
+//
+DISPLACEMENT_0_NAME   | Displacement Device
+DISPLACEMENT_0_BRIEF  | 1/3 of all enemy attacks miss
+DISPLACEMENT_0_DETAIL | Randomly shifts the equipped ships in and out of normal space, allowing them to avoid 1/3 of all non-area weapon attacks.
+
+
+//
+// ECM Jammer tech
+//
+// this is the entry on Ship Design for selecting no ECM Jammer
+ECMJAMMER_0_NAME      | 
+ECMJAMMER_0_ITEM      | 
+ECMJAMMER_0_BRIEF     | Missile Def 0
+ECMJAMMER_0_DETAIL    | 
+
+ECMJAMMER_1_NAME      | ECM Jammer Mark I
+ECMJAMMER_1_ITEM      | Jammer I
+ECMJAMMER_1_BRIEF     | Missile Def 1
+ECMJAMMER_1_DETAIL    | Adds 1 level to defense against enemy missile attacks.
+
+ECMJAMMER_2_NAME      | ECM Jammer Mark II
+ECMJAMMER_2_ITEM      | Jammer II
+ECMJAMMER_2_BRIEF     | Missile Def 2
+ECMJAMMER_2_DETAIL    | Adds 2 levels to defense against enemy missile attacks. 
+
+ECMJAMMER_3_NAME      | ECM Jammer Mark III
+ECMJAMMER_3_ITEM      | Jammer III
+ECMJAMMER_3_BRIEF     | Missile Def 3
+ECMJAMMER_3_DETAIL    | Adds 3 levels to defense against enemy missile attacks.
+
+ECMJAMMER_4_NAME      | ECM Jammer Mark IV
+ECMJAMMER_4_ITEM      | Jammer IV
+ECMJAMMER_4_BRIEF     | Missile Def 4
+ECMJAMMER_4_DETAIL    | Adds 4 levels to defense against enemy missile attacks.
+
+ECMJAMMER_5_NAME      | ECM Jammer Mark V
+ECMJAMMER_5_ITEM      | Jammer V
+ECMJAMMER_5_BRIEF     | Missile Def 5
+ECMJAMMER_5_DETAIL    | Adds 5 levels to defense against enemy missile attacks.
+
+ECMJAMMER_6_NAME      | ECM Jammer Mark VI
+ECMJAMMER_6_ITEM      | Jammer VI
+ECMJAMMER_6_BRIEF     | Missile Def 6
+ECMJAMMER_6_DETAIL    | Adds 6 levels to defense against enemy missile attacks.
+
+ECMJAMMER_7_NAME      | ECM Jammer Mark VII
+ECMJAMMER_7_ITEM      | Jammer VII
+ECMJAMMER_7_BRIEF     | Missile Def 7
+ECMJAMMER_7_DETAIL    | Adds 7 levels to defense against enemy missile attacks.
+
+ECMJAMMER_8_NAME      | ECM Jammer Mark VIII
+ECMJAMMER_8_ITEM      | Jammer VIII
+ECMJAMMER_8_BRIEF     | Missile Def 8
+ECMJAMMER_8_DETAIL    | Adds 8 levels to defense against enemy missile attacks.
+
+ECMJAMMER_9_NAME      | ECM Jammer Mark IX
+ECMJAMMER_9_ITEM      | Jammer IX
+ECMJAMMER_9_BRIEF     | Missile Def 9
+ECMJAMMER_9_DETAIL    | Adds 9 levels to defense against enemy missile attacks.
+
+ECMJAMMER_10_NAME     | ECM Jammer Mark X
+ECMJAMMER_10_ITEM     | Jammer X
+ECMJAMMER_10_BRIEF    | Missile Def 10
+ECMJAMMER_10_DETAIL   | Adds 10 levels to defense against enemy missile attacks.
+
+
+//
+// Ecological Restoration techs
+//
+ECORESTORATION_0_NAME   | Ecological Restoration
+ECORESTORATION_0_DETAIL | Eliminates 2 units of industrial waste for a cost of 1 BC.
+
+ECORESTORATION_1_NAME   | Improved Eco Restoration
+ECORESTORATION_1_DETAIL | Eliminates 3 units of industrial waste for a cost of 1 BC.
+
+ECORESTORATION_2_NAME   | Enhanced Eco Restoration
+ECORESTORATION_2_DETAIL | Eliminates 5 units of industrial waste for a cost of 1 BC.
+
+ECORESTORATION_3_NAME   | Advanced Eco Restoration
+ECORESTORATION_3_DETAIL | Eliminates 10 units of industrial waste for a cost of 1 BC.
+
+ECORESTORATION_4_NAME   | Complete Eco Restoration
+ECORESTORATION_4_DETAIL | Eliminates 20 units of industrial waste for a cost of 1 BC.
+
+
+//
+// Energy Pulsar techs
+//
+PULSAR_0_NAME     | Energy Pulsar
+PULSAR_0_BRIEF    | Expands to inflict 1-5 hits
+PULSAR_0_DETAIL   | A potent engine modification which generates a sudden spherical burst of energy striking all adjacent ships for up to 5 points of damage +1 per two ships.
+
+PULSAR_1_NAME     | Ionic Pulsar
+PULSAR_1_BRIEF    | Expands to inflict 2-10 hits
+PULSAR_1_DETAIL   | A powerful engine modification capable of generating a spherical burst of phased energy striking all adjacent ships for up to 10 points of damage +1 per attacking ship.
+
+
+//
+// Engine techs
+//
+ENGINE_0_NAME    | Retro Engines 
+ENGINE_0_DETAIL  | Moves ships at Warp %1, and allows a maximum maneuverability of class I in combat.
+ENGINE_0_ITEM    | Retros
+ENGINE_0_ITEM2   | Class 1
+ENGINE_0_BRIEF   | Warp 1  Def %1
+ENGINE_0_BRIEF2  | Combat Speed %1
+
+ENGINE_1_NAME    | Nuclear Engines 
+ENGINE_1_DETAIL  | Moves ships at Warp %1, and allows a maximum maneuverability of class II in combat.
+ENGINE_1_ITEM    | Nuclear
+ENGINE_1_ITEM2   | Class 2
+ENGINE_1_BRIEF   | Warp 2  Def %1
+ENGINE_1_BRIEF2  | Combat Speed %1
+
+ENGINE_2_NAME    | SubLight Drives 
+ENGINE_2_DETAIL  | Moves ships at Warp %1, and allows a maximum maneuverability of class III in combat.
+ENGINE_2_ITEM    | SubLight
+ENGINE_2_ITEM2   | Class 3
+ENGINE_2_BRIEF   | Warp 3  Def %1
+ENGINE_2_BRIEF2  | Combat Speed %1
+
+ENGINE_3_NAME    | Fusion Drives 
+ENGINE_3_DETAIL  | Moves ships at Warp %1, and allows a maximum maneuverability of class IV in combat.
+ENGINE_3_ITEM    | Fusion
+ENGINE_3_ITEM2   | Class 4
+ENGINE_3_BRIEF   | Warp 4  Def %1
+ENGINE_3_BRIEF2  | Combat Speed %1
+
+ENGINE_4_NAME    | Impulse Engines 
+ENGINE_4_DETAIL  | Moves ships at Warp %1, and allows a maximum maneuverability of class V in combat.
+ENGINE_4_ITEM    | Impulse
+ENGINE_4_ITEM2   | Class 5
+ENGINE_4_BRIEF   | Warp 5  Def %1
+ENGINE_4_BRIEF2  | Combat Speed %1
+
+ENGINE_5_NAME    | Ion Drives 
+ENGINE_5_DETAIL  | Moves ships at Warp %1, and allows a maximum maneuverability of class VI in combat.
+ENGINE_5_ITEM    | Ion
+ENGINE_5_ITEM2   | Class 6
+ENGINE_5_BRIEF   | Warp 6  Def %1
+ENGINE_5_BRIEF2  | Combat Speed %1
+
+ENGINE_6_NAME    | Anti-Matter Engines
+ENGINE_6_DETAIL  | Moves ships at Warp %1, and allows a maximum maneuverability of class VII in combat.
+ENGINE_6_ITEM    | Anti-Matter
+ENGINE_6_ITEM2   | Class 7
+ENGINE_6_BRIEF   | Warp 7  Def %1
+ENGINE_6_BRIEF2  | Combat Speed %1
+
+ENGINE_7_NAME    | Inter-Phased Drives
+ENGINE_7_DETAIL  | Moves ships at Warp %1, and allows a maximum maneuverability of class VIII in combat.
+ENGINE_7_ITEM    | Inter-Phased
+ENGINE_7_ITEM2   | Class 8
+ENGINE_7_BRIEF   | Warp 8  Def %1
+ENGINE_7_BRIEF2  | Combat Speed %1
+
+ENGINE_8_NAME    | Hyper Drives
+ENGINE_8_DETAIL  | Moves ships at Warp %1, and allows a maximum maneuverability of class IX in combat.
+ENGINE_8_ITEM    | Hyper
+ENGINE_8_ITEM2   | Class 9
+ENGINE_8_BRIEF   | Warp 9  Def %1
+ENGINE_8_BRIEF2  | Combat Speed %1
+
+
+//
+// Fuel Range techs
+//
+FUELRANGE_0_NAME   | Fuel Cells
+FUELRANGE_0_DETAIL | Fuel reserves allow ships to move up to %1 light-years away from colony planets.
+
+FUELRANGE_1_NAME   | Hydrogen Fuel Cells
+FUELRANGE_1_DETAIL | Fuel reserves allow ships to move up to %1 light-years away from colony planets.
+
+FUELRANGE_2_NAME   | Deuterium Fuel Cells
+FUELRANGE_2_DETAIL | Fuel reserves allow ships to move up to %1 light-years away from colony planets.
+
+FUELRANGE_3_NAME   | Irridium Fuel Cells
+FUELRANGE_3_DETAIL | Fuel reserves allow ships to move up to %1 light-years away from colony planets.
+
+FUELRANGE_4_NAME   | Dotomite Crystals
+FUELRANGE_4_DETAIL | Fuel reserves allow ships to move up to %1 light-years away from colony planets.
+
+FUELRANGE_5_NAME   | Uridium Fuel Cells
+FUELRANGE_5_DETAIL | Fuel reserves allow ships to move up to %1 light-years away from colony planets.
+
+FUELRANGE_6_NAME   | Reajax II Fuel Cells
+FUELRANGE_6_DETAIL | Fuel reserves allow ships to move up to %1 light-years away from colony planets.
+
+FUELRANGE_7_NAME   | Trilithium Crystals
+FUELRANGE_7_DETAIL | Fuel reserves allow ships to move up to %1 light-years away from colony planets.
+
+FUELRANGE_8_NAME   | Thorium Cells
+FUELRANGE_8_DETAIL | Fuel reserves allow ships to move any distance away from colony planets.
+
+
+//
+// Future Computer techs
+//
+FUTURECOMP_0_NAME    | Future Computer I
+FUTURECOMP_0_DETAIL  | General Improvements in Computer Technology.
+
+FUTURECOMP_1_NAME    | Future Computer II
+FUTURECOMP_1_DETAIL  | General Improvements in Computer Technology.
+
+FUTURECOMP_2_NAME    | Future Computer III
+FUTURECOMP_2_DETAIL  | General Improvements in Computer Technology.
+
+FUTURECOMP_3_NAME    | Future Computer IV
+FUTURECOMP_3_DETAIL  | General Improvements in Computer Technology.
+
+FUTURECOMP_4_NAME    | Future Computer V
+FUTURECOMP_4_DETAIL  | General Improvements in Computer Technology.
+
+FUTURECOMP_5_NAME    | Future Computer VI
+FUTURECOMP_5_DETAIL  | General Improvements in Computer Technology.
+
+FUTURECOMP_6_NAME    | Future Computer VII
+FUTURECOMP_6_DETAIL  | General Improvements in Computer Technology.
+
+FUTURECOMP_7_NAME    | Future Computer VIII
+FUTURECOMP_7_DETAIL  | General Improvements in Computer Technology.
+
+FUTURECOMP_8_NAME    | Future Computer IX
+FUTURECOMP_8_DETAIL  | General Improvements in Computer Technology.
+
+FUTURECOMP_9_NAME    | Future Computer X
+FUTURECOMP_9_DETAIL  | General Improvements in Computer Technology. 
+
+
+//
+// Future Construction techs
+//
+FUTURECONST_0_NAME    | Future Construction I
+FUTURECONST_0_DETAIL  | General Improvements in Construction Technology.
+
+FUTURECONST_1_NAME    | Future Construction II
+FUTURECONST_1_DETAIL  | General Improvements in Construction Technology.
+
+FUTURECONST_2_NAME    | Future Construction III
+FUTURECONST_2_DETAIL  | General Improvements in Construction Technology.
+
+FUTURECONST_3_NAME    | Future Construction IV
+FUTURECONST_3_DETAIL  | General Improvements in Construction Technology.
+
+FUTURECONST_4_NAME    | Future Construction V
+FUTURECONST_4_DETAIL  | General Improvements in Construction Technology.
+
+FUTURECONST_5_NAME    | Future Construction VI
+FUTURECONST_5_DETAIL  | General Improvements in Construction Technology.
+
+FUTURECONST_6_NAME    | Future Construction VII
+FUTURECONST_6_DETAIL  | General Improvements in Construction Technology.
+
+FUTURECONST_7_NAME    | Future Construction VIII
+FUTURECONST_7_DETAIL  | General Improvements in Construction Technology.
+
+FUTURECONST_8_NAME    | Future Construction IX
+FUTURECONST_8_DETAIL  | General Improvements in Construction Technology.
+
+FUTURECONST_9_NAME    | Future Construction X
+FUTURECONST_9_DETAIL  | General Improvements in Construction Technology. 
+
+
+//
+// Future Force Field techs
+//
+FUTUREFORCE_0_NAME    | Future Force Field I
+FUTUREFORCE_0_DETAIL  | General Improvements in Force Field Technology.
+
+FUTUREFORCE_1_NAME    | Future Force Field II
+FUTUREFORCE_1_DETAIL  | General Improvements in Force Field Technology.
+
+FUTUREFORCE_2_NAME    | Future Force Field III
+FUTUREFORCE_2_DETAIL  | General Improvements in Force Field Technology.
+
+FUTUREFORCE_3_NAME    | Future Force Field IV
+FUTUREFORCE_3_DETAIL  | General Improvements in Force Field Technology.
+
+FUTUREFORCE_4_NAME    | Future Force Field V
+FUTUREFORCE_4_DETAIL  | General Improvements in Force Field Technology.
+
+FUTUREFORCE_5_NAME    | Future Force Field VI
+FUTUREFORCE_5_DETAIL  | General Improvements in Force Field Technology.
+
+FUTUREFORCE_6_NAME    | Future Force Field VII
+FUTUREFORCE_6_DETAIL  | General Improvements in Force Field Technology.
+
+FUTUREFORCE_7_NAME    | Future Force Field VIII
+FUTUREFORCE_7_DETAIL  | General Improvements in Force Field Technology.
+
+FUTUREFORCE_8_NAME    | Future Force Field IX
+FUTUREFORCE_8_DETAIL  | General Improvements in Force Field Technology.
+
+FUTUREFORCE_9_NAME    | Future Force Field X
+FUTUREFORCE_9_DETAIL  | General Improvements in Force Field Technology.
+
+
+//
+// Future Planetology techs
+//
+FUTUREPLANET_0_NAME    | Future Planetology I
+FUTUREPLANET_0_DETAIL  | General Improvements in Planetology Technology.
+
+FUTUREPLANET_1_NAME    | Future Planetology II
+FUTUREPLANET_1_DETAIL  | General Improvements in Planetology Technology.
+
+FUTUREPLANET_2_NAME    | Future Planetology III
+FUTUREPLANET_2_DETAIL  | General Improvements in Planetology Technology.
+
+FUTUREPLANET_3_NAME    | Future Planetology IV
+FUTUREPLANET_3_DETAIL  | General Improvements in Planetology Technology.
+
+FUTUREPLANET_4_NAME    | Future Planetology V
+FUTUREPLANET_4_DETAIL  | General Improvements in Planetology Technology.
+
+FUTUREPLANET_5_NAME    | Future Planetology VI
+FUTUREPLANET_5_DETAIL  | General Improvements in Planetology Technology.
+
+FUTUREPLANET_6_NAME    | Future Planetology VII
+FUTUREPLANET_6_DETAIL  | General Improvements in Planetology Technology.
+
+FUTUREPLANET_7_NAME    | Future Planetology VIII
+FUTUREPLANET_7_DETAIL  | General Improvements in Planetology Technology.
+
+FUTUREPLANET_8_NAME    | Future Planetology IX
+FUTUREPLANET_8_DETAIL  | General Improvements in Planetology Technology.
+
+FUTUREPLANET_9_NAME    | Future Planetology X
+FUTUREPLANET_9_DETAIL  | General Improvements in Planetology Technology.
+
+
+//
+// Future Propulsion techs
+//
+FUTUREPROP_0_NAME    | Future Propulsion I
+FUTUREPROP_0_DETAIL  | General Improvements in Propulsion Technology.
+
+FUTUREPROP_1_NAME    | Future Propulsion II
+FUTUREPROP_1_DETAIL  | General Improvements in Propulsion Technology.
+
+FUTUREPROP_2_NAME    | Future Propulsion III
+FUTUREPROP_2_DETAIL  | General Improvements in Propulsion Technology.
+
+FUTUREPROP_3_NAME    | Future Propulsion IV
+FUTUREPROP_3_DETAIL  | General Improvements in Propulsion Technology.
+
+FUTUREPROP_4_NAME    | Future Propulsion V
+FUTUREPROP_4_DETAIL  | General Improvements in Propulsion Technology.
+
+FUTUREPROP_5_NAME    | Future Propulsion VI
+FUTUREPROP_5_DETAIL  | General Improvements in Propulsion Technology.
+
+FUTUREPROP_6_NAME    | Future Propulsion VII
+FUTUREPROP_6_DETAIL  | General Improvements in Propulsion Technology.
+
+FUTUREPROP_7_NAME    | Future Propulsion VIII
+FUTUREPROP_7_DETAIL  | General Improvements in Propulsion Technology.
+
+FUTUREPROP_8_NAME    | Future Propulsion IX
+FUTUREPROP_8_DETAIL  | General Improvements in Propulsion Technology.
+
+FUTUREPROP_9_NAME    | Future Propulsion X
+FUTUREPROP_9_DETAIL  | General Improvements in Propulsion Technology.
+
+
+//
+// Future Weapon techs
+//
+FUTUREWEAPON_0_NAME    | Future Weapon I
+FUTUREWEAPON_0_DETAIL  | General Improvements in Weapon Technology.
+
+FUTUREWEAPON_1_NAME    | Future Weapon II
+FUTUREWEAPON_1_DETAIL  | General Improvements in Weapon Technology.
+
+FUTUREWEAPON_2_NAME    | Future Weapon III
+FUTUREWEAPON_2_DETAIL  | General Improvements in Weapon Technology.
+
+FUTUREWEAPON_3_NAME    | Future Weapon IV
+FUTUREWEAPON_3_DETAIL  | General Improvements in Weapon Technology.
+
+FUTUREWEAPON_4_NAME    | Future Weapon V
+FUTUREWEAPON_4_DETAIL  | General Improvements in Weapon Technology.
+
+FUTUREWEAPON_5_NAME    | Future Weapon VI
+FUTUREWEAPON_5_DETAIL  | General Improvements in Weapon Technology.
+
+FUTUREWEAPON_6_NAME    | Future Weapon VII
+FUTUREWEAPON_6_DETAIL  | General Improvements in Weapon Technology.
+
+FUTUREWEAPON_7_NAME    | Future Weapon VIII
+FUTUREWEAPON_7_DETAIL  | General Improvements in Weapon Technology.
+
+FUTUREWEAPON_8_NAME    | Future Weapon IX
+FUTUREWEAPON_8_DETAIL  | General Improvements in Weapon Technology.
+
+FUTUREWEAPON_9_NAME    | Future Weapon X
+FUTUREWEAPON_9_DETAIL  | General Improvements in Weapon Technology. 
+
+
+//
+// Hand Weapon techs
+//
+HANDWEAPON_0_NAME      | 
+HANDWEAPON_0_DETAIL    | 
+
+HANDWEAPON_1_NAME      | Hand Lasers
+HANDWEAPON_1_DETAIL    | Personal lasers that add 5 to your ground combat rolls.
+
+HANDWEAPON_2_NAME      | Ion Rifle
+HANDWEAPON_2_DETAIL    | Personal beam weapons that add 10 points to your ground attacks.
+
+HANDWEAPON_3_NAME      | Fusion Rifle
+HANDWEAPON_3_DETAIL    | Inaccurate but incredibly powerful beam weapons that add 20 points to your ground combat rolls.
+
+HANDWEAPON_4_NAME      | Hand Phasor
+HANDWEAPON_4_DETAIL    | Potent hand-held energy weapons capable of reducing an opponent to his component atoms. Adds 25 to your ground combat rolls.
+
+HANDWEAPON_5_NAME      | Plasma Rifle
+HANDWEAPON_5_DETAIL    | The most devastating hand-held weapon available. Adds 30 to your ground attacks.
+
+
+//
+// Hyperspace Communication tech
+//
+HYPERSPACE_0_NAME      | Hyperspace Communications
+HYPERSPACE_0_DETAIL    | Allows you to communicate with ship fleets in hyperspace, and change their destinations while en route.
+
+
+//
+// Improved Industrial techs
+//
+IMPRINDUSTRY_0_NAME     | Improved Industrial Tech 9
+IMPRINDUSTRY_0_DETAIL   | Reduces factory construction costs to 9 BC each.
+
+IMPRINDUSTRY_1_NAME     | Improved Industrial Tech 8
+IMPRINDUSTRY_1_DETAIL   | Reduces factory construction costs to 8 BC each.
+
+IMPRINDUSTRY_2_NAME     | Improved Industrial Tech 7
+IMPRINDUSTRY_2_DETAIL   | Reduces factory construction costs to 7 BC each.
+
+IMPRINDUSTRY_3_NAME     | Improved Industrial Tech 6
+IMPRINDUSTRY_3_DETAIL   | Reduces factory construction costs to 6 BC each.
+
+IMPRINDUSTRY_4_NAME     | Improved Industrial Tech 5
+IMPRINDUSTRY_4_DETAIL   | Reduces factory construction costs to 5 BC each.
+
+IMPRINDUSTRY_5_NAME     | Improved Industrial Tech 4
+IMPRINDUSTRY_5_DETAIL   | Reduces factory construction costs to 4 BC each.
+
+IMPRINDUSTRY_6_NAME     | Improved Industrial Tech 3
+IMPRINDUSTRY_6_DETAIL   | Reduces factory construction costs to 3 BC each.
+
+IMPRINDUSTRY_7_NAME     | Improved Industrial Tech 2
+IMPRINDUSTRY_7_DETAIL   | Reduces factory construction costs to 2 BC each.
+
+
+//
+// Improved Terraforming techs
+//
+IMPRTFORM_0_NAME        | Improved Terraforming +10
+IMPRTFORM_0_DETAIL      | Increases the population capacity of planets by 10M for a cost of 5 BC per million.
+
+IMPRTFORM_1_NAME        | Improved Terraforming +20
+IMPRTFORM_1_DETAIL      | Increases the population capacity of planets by 20M for a cost of 5 BC per million.
+
+IMPRTFORM_2_NAME        | Improved Terraforming +30
+IMPRTFORM_2_DETAIL      | Increases the population capacity of planets by 30M for a cost of 4 BC per million.
+
+IMPRTFORM_3_NAME        | Improved Terraforming +40
+IMPRTFORM_3_DETAIL      | Increases the population capacity of planets by 40M for a cost of 4 BC per million.
+
+IMPRTFORM_4_NAME        | Improved Terraforming +50
+IMPRTFORM_4_DETAIL      | Increases the population capacity of planets by 50M for a cost of 3 BC per million.
+
+IMPRTFORM_5_NAME        | Improved Terraforming +60
+IMPRTFORM_5_DETAIL      | Increases the population capacity of planets by 60M for a cost of 3 BC per million.
+
+IMPRTFORM_6_NAME        | Improved Terraforming +80
+IMPRTFORM_6_DETAIL      | Increases the population capacity of planets by 80M for a cost of 2 BC per million.
+
+IMPRTFORM_7_NAME        | Improved Terraforming +100
+IMPRTFORM_7_DETAIL      | Increases the population capacity of planets by 100M for a cost of 2 BC per million.
+
+IMPRTFORM_8_NAME        | Complete Terraforming
+IMPRTFORM_8_DETAIL      | Increases the population capacity of planets by 120M for a cost of 2 BC per million.
+
+
+//
+// Industrial Waste techs
+//
+INDWASTE_0_NAME         | Reduced Industrial Waste 80%
+INDWASTE_0_DETAIL       | Decreases factory pollution levels to 80% of the normal rate.
+
+INDWASTE_1_NAME         | Reduced Industrial Waste 60%
+INDWASTE_1_DETAIL       | Decreases factory pollution levels to 60% of the normal rate.
+
+INDWASTE_2_NAME         | Reduced Industrial Waste 40%
+INDWASTE_2_DETAIL       | Decreases factory pollution levels to 40% of the normal rate.
+
+INDWASTE_3_NAME         | Reduced Industrial Waste 20%
+INDWASTE_3_DETAIL       | Decreases factory pollution levels to 20% of the normal rate.
+
+INDWASTE_4_NAME         | Industrial Waste Elimination
+INDWASTE_4_DETAIL       | Factories cease to pollute.
+
+
+//
+// Missile Defense techs
+//
+MISSDEF_0_NAME      | Anti-Missile Rockets
+MISSDEF_0_BRIEF     | 40% chance missiles destroyed
+MISSDEF_0_DETAIL    | Trans-light rockets capable of destroying incoming enemy missiles 40% of the time, -1% per technology level of the missile.
+
+MISSDEF_1_NAME      | Zyro Shield
+MISSDEF_1_BRIEF     | 75% chance missiles destroyed
+MISSDEF_1_DETAIL    | An energy field that destroys incoming enemy missiles and torpedoes 75% of the time, -1% per technology level of the missile.
+
+MISSDEF_2_NAME      | Lightning Shield
+MISSDEF_2_BRIEF     | 100% chance missiles destroyed
+MISSDEF_2_DETAIL    | An energy field that destroys incoming enemy missiles and torpedoes 100% of the time, -1% per technology level of the missile.
+
+
+//
+// Missile Weapon techs
+//
+MISSWPN_0_NAME      | Nuclear Missile
+MISSWPN_0_BRIEF     | 2 shots, +1 speed
+MISSWPN_0_BRIEF2    | 5 shots
+MISSWPN_0_DETAIL    | Missiles tipped with nuclear warheads that explode for 4 points of damage and move at a speed of 2.
+
+MISSWPN_1_NAME      | Hyper-V Rockets
+MISSWPN_1_BRIEF     | 2 shots, +1 speed
+MISSWPN_1_BRIEF2    | 5 shots
+MISSWPN_1_DETAIL    | Swift missiles that explode for 6 points of damage and move at a speed of 2.5.
+
+MISSWPN_2_NAME      | Hyper-X Rockets
+MISSWPN_2_BRIEF     | 2 shots, +1 to hit
+MISSWPN_2_BRIEF2    | 5 shots, +1 to hit
+MISSWPN_2_DETAIL    | Missiles equipped with high energy warheads that explode for 8 points of damage, move at a speed of 2.5, and are controlled by a +1 level targeting computer.
+
+MISSWPN_3_NAME      | Scatter Pack V Rockets
+MISSWPN_3_BRIEF     | 2 shots, +1 speed
+MISSWPN_3_BRIEF2    | 5 shots
+MISSWPN_3_DETAIL    | Mirv versions of Hyper-V Rockets, splitting into five separate warheads that each explode for 6 points of damage and move at a speed of 2.5.
+
+MISSWPN_4_NAME      | Merculite Missiles
+MISSWPN_4_BRIEF     | 2 shots, +2 to hit
+MISSWPN_4_BRIEF2    | 5 shots, +2 to hit
+MISSWPN_4_DETAIL    | Hard-hitting, swift missiles that explode for 10 points of damage, move at a speed of 3, and are controlled by a +2 targeting computer.
+
+MISSWPN_5_NAME      | Stinger Missiles
+MISSWPN_5_BRIEF     | 2 shots, +3 to hit
+MISSWPN_5_BRIEF2    | 5 shots, +3 to hit
+MISSWPN_5_DETAIL    | Slow, hyper-accurate missiles to do 15 points of damage, move at a speed of 3.5, and are controlled by a sophisticated +3 targeting computer.
+
+MISSWPN_6_NAME      | Scatter Pack VII Missiles
+MISSWPN_6_BRIEF     | 2 shots, MIRVS to 7
+MISSWPN_6_BRIEF2    | 5 shots, MIRVS to 7
+MISSWPN_6_DETAIL    | MIRV versions of Hyper-X Rockets, splitting into 7 separate warheads that each explode for 10 points of damage, move at a speed of 3, and are guided by a +2 targeting computer.
+
+MISSWPN_7_NAME      | Pulson Missiles
+MISSWPN_7_BRIEF     | 2 shots, +4 to hit
+MISSWPN_7_BRIEF2    | 5 shots, +4 to hit
+MISSWPN_7_DETAIL    | Powerful missiles equipped with anti-matter warheads that explode for 20 points of damage, move at speed 4, and are controlled by a +4 targeting computer.
+
+MISSWPN_8_NAME      | Hercular Missiles
+MISSWPN_8_BRIEF     | 2 shots, +5 to hit
+MISSWPN_8_BRIEF2    | 5 shots, +5 to hit
+MISSWPN_8_DETAIL    | Highly advanced missile that explodes for 25 points of damage. The hercular missiles moves at speed 4.5 and is controlled by a +5 targeting computer.
+
+MISSWPN_9_NAME      | Zeon Missiles
+MISSWPN_9_BRIEF     | 2 shots, +6 to hit
+MISSWPN_9_BRIEF2    | 5 shots, +6 to hit
+MISSWPN_9_DETAIL    | Most advanced missile available. Capable of striking enemy ships for 30 points of damage and moving at a speed of 5. The missile is guided by a +6 targeting computer.
+
+MISSWPN_10_NAME      | Scatter Pack X Missiles
+MISSWPN_10_BRIEF     | 2 shots, MIRVS to 10
+MISSWPN_10_BRIEF2    | 5 shots, MIRVS to 10
+MISSWPN_10_DETAIL    | MIRV versions of Stinger Missiles, splitting into 10 separate warheads that each explode for 15 points of damage, move at speed 3.5, and are guided by a +3 targeting computer.
+
+
+//
+// Personal Shield techs for ground combat
+//
+// default "no shield" tech that each player starts with
+PERSSHIELD_0_NAME     | 
+PERSSHIELD_0_DETAIL   | 
+
+PERSSHIELD_1_NAME     | Personal Deflector Shield
+PERSSHIELD_1_DETAIL   | Protects individuals ground troops with a directional force field. Adds +10 to all ground combat battles.
+
+PERSSHIELD_2_NAME     | Personal Absorption Shield
+PERSSHIELD_2_DETAIL   | Absorbs damage from all hand weapons. Adds +20 to all ground combat battles.
+
+PERSSHIELD_3_NAME     | Personal Barrier Shield
+PERSSHIELD_3_DETAIL   | Completely encases the soldier in a nearly impenetrable force field. Adds +30 to all ground combat rolls.
+
+
+//
+// Planetary Shield techs 
+//
+PLANETSHIELD_0_NAME    | Class V Planetary Shields
+PLANETSHIELD_0_DETAIL  | Absorbs 5 points of damage from all attacks against planet surfaces, adding to missile base deflector shields.
+
+PLANETSHIELD_1_NAME    | Class X Planetary Shields
+PLANETSHIELD_1_DETAIL  | Absorbs 10 points of damage from all attacks against planet surfaces, adding to missile base deflector shields.
+
+PLANETSHIELD_2_NAME    | Class XV Planetary Shields
+PLANETSHIELD_2_DETAIL  | Absorbs 15 points of damage from all attacks against planet surfaces, adding to missile base deflector shields.
+
+PLANETSHIELD_3_NAME    | Class XX Planetary Shields
+PLANETSHIELD_3_DETAIL  | Absorbs 20 points of damage from all attacks against planet surfaces, adding to missile base deflector shields.
+
+
+//
+// Repulsor tech 
+//
+REPULSOR_0_NAME    | Repulsor Beam
+REPULSOR_0_BRIEF   | Moves enemy ships back 1 space
+REPULSOR_0_DETAIL  | Repels enemy ships back one space away from the defending ship. This special weapon has a one-space range.
+
+
+//
+// Reserve Fuel tech 
+//
+RSRVFUEL_0_NAME    | Reserve Fuel Tanks
+RSRVFUEL_0_BRIEF   | Extends Ship Range by %1 light-years
+RSRVFUEL_0_DETAIL  | Reserve Fuel Tanks increase a ship's range.
+
+
+//
+// Robotic Controls techs 
+//
+ROBOTCTRL_0_NAME     | Improved Robotic Controls III
+ROBOTCTRL_0_DETAIL   | Allows 3 factories to be operated per population. The refit cost to upgrade is half the standard cost of each factory.
+
+ROBOTCTRL_1_NAME     | Improved Robotic Controls IV
+ROBOTCTRL_1_DETAIL   | Allows 4 factories to be operated per population. The refit cost to upgrade is the standard cost of each factory.
+
+ROBOTCTRL_2_NAME     | Improved Robotic Controls V
+ROBOTCTRL_2_DETAIL   | Allows 5 factories to be operated per population. The refit cost to upgrade is one and a half time the standard cost of each factory.
+
+ROBOTCTRL_3_NAME     | Improved Robotic Controls VI
+ROBOTCTRL_3_DETAIL   | Allows 6 factories to be operated per population. The refit cost to upgrade is twice the standard cost of each factory.
+
+ROBOTCTRL_4_NAME     | Improved Robotic Controls VII
+ROBOTCTRL_4_DETAIL   | Allows 7 factories to be operated per population. The refit cost to upgrade is 2.5 times the standard cost of each factory.
+
+
+//
+// Scanner techs 
+//
+SCANNER_0_NAME       | Battle Scanner
+SCANNER_0_BRIEF      | Scans enemy ships in combat
+SCANNER_0_DETAIL     | Reveals technical specifications of enemy spacecraft in combat.
+
+SCANNER_1_NAME       | Deep Space Scanner
+SCANNER_1_BRIEF      | Detects ships up to 5 light-years away
+SCANNER_1_DETAIL     | Detects enemy ships up to 5 light-years away from your colonies and 1 light-year away from your ships.
+
+SCANNER_2_NAME       | Improved Space Scanner
+SCANNER_2_BRIEF      | Detects ships and destinations up to 7 light-years away
+SCANNER_2_DETAIL     | Detects enemy ships up to 7 light-years away from your colonies and 2 light-years away from your ships. Enemy destinations can be determined.
+
+SCANNER_3_NAME       | Advanced Space Scanner
+SCANNER_3_BRIEF      | Allows exploration of planets up to 9 light-years away 
+SCANNER_3_DETAIL     | Allows exploration of planets from colony bases up to 9 light-years away and detects enemy ships up to 3 light-years away from your ships. 
+
+
+//
+// Ship Inertial techs 
+//
+SHIPINERTIAL_0_NAME     | Inertial Stabilizer
+SHIPINERTIAL_0_BRIEF    | Adds +2 to maneuverability
+SHIPINERTIAL_0_DETAIL   | Reduces the inertia of ships, adding 2 classes of maneuverability in combat (+2 defense and +1 combat speed).
+
+SHIPINERTIAL_1_NAME     | Inertial Nullifier
+SHIPINERTIAL_1_BRIEF    | Adds +4 to maneuverability
+SHIPINERTIAL_1_DETAIL   | Negates the inertia of ships, adding 4 classes of maneuverability in combat. Also reduces the effect of Black Hole attacks by -30%.
+
+
+//
+// Ship Inertial techs 
+//
+SHIPNULLIFIER_0_NAME     | Technology Nullifier
+SHIPNULLIFIER_0_BRIEF    | Destroys enemy computers
+SHIPNULLIFIER_0_DETAIL   | Scrambles enemy Battle Computers and ECM, reducing them from 2-6 levels per attack. Its range exceeds most ship weapons.
+
+SHIPNULLIFIER_1_NAME     | Warp Dissipator
+SHIPNULLIFIER_1_BRIEF    | Reduces speed of enemy ships
+SHIPNULLIFIER_1_DETAIL   | Warp Dissipators are long-range weapons that disrupt enemy starship engines, reducing their speed with each attack.
+
+
+//
+// Ship Weapon techs 
+//
+SHIPWPN_0_NAME         | Laser
+SHIPWPN_0_ITEM2        | Heavy Laser
+SHIPWPN_0_DETAIL       | Direct-fire beam weapon that inflicts 1-4 points of damage. Heavy lasers have a two space range and do 1-7 points of damage.
+
+SHIPWPN_1_NAME         | Gatling Laser
+SHIPWPN_1_BRIEF        | Fires 4 times/turn
+SHIPWPN_1_DETAIL       | An advanced laser that fires up to four times per turn for 1-4 points of damage with each hit.
+
+SHIPWPN_2_NAME         | Neutron Pellet Gun
+SHIPWPN_2_BRIEF        | Halves Shield Strength
+SHIPWPN_2_DETAIL       | Heavy particle stream weapon that halves the effectiveness of enemy deflector shields and inflicts 2 to 5 points of damage.
+
+SHIPWPN_3_NAME         | Ion Cannon
+SHIPWPN_3_ITEM2        | Heavy Ion Cannon
+SHIPWPN_3_DETAIL       | High intensity beam weapons capable of inflicting 3-8 points of damage. Heavy ion cannons strike for 3-15 and have a two space range.
+
+SHIPWPN_4_NAME         | Mass Driver
+SHIPWPN_4_BRIEF        | Halves Shield Strength
+SHIPWPN_4_DETAIL       | A linear accelerator that halves the effectiveness of enemy deflector shields and inflicts 5-8 points of damage.
+
+SHIPWPN_5_NAME         | Neutron Blaster
+SHIPWPN_5_ITEM2        | Heavy Neutron Blaster
+SHIPWPN_5_DETAIL       | High powered beam weapons capable of inflicting 3-12 points of damage. Heavy neutron blasters strike for 3-24 points and have a 2 space range.
+
+SHIPWPN_6_NAME         | Graviton Beam
+SHIPWPN_6_BRIEF        | Streaming Attack
+SHIPWPN_6_DETAIL       | Tractor-repulsor beam capable of rendering ships to pieces. It strikes for 1-15 points damage, and the continuous streaming effect allows excess damage to carry over to other ships.
+
+SHIPWPN_7_NAME         | Hard Beam
+SHIPWPN_7_BRIEF        | Halves Shield Strength
+SHIPWPN_7_DETAIL       | An energy-to-matter beam weapon that halves the effectiveness of enemy deflector shields, and inflicts 8-12 points of damage.
+
+SHIPWPN_8_NAME         | Fusion Beam
+SHIPWPN_8_ITEM2        | Heavy Fusion Beam
+SHIPWPN_8_DETAIL       | High intensity beam weapon capable of doing 4-16 points of damage. Heavy fusion beams strike for 4-30 points and have a 2 space range.
+
+SHIPWPN_9_NAME         | Megabolt Cannon
+SHIPWPN_9_BRIEF        | +3 levels to hit
+SHIPWPN_9_DETAIL       | Releases multiple bolts of pure energy in a wide field. It has a +30% bonus chance to hit and strikes for 2-20 points of damage.
+
+SHIPWPN_10_NAME        | Phasor
+SHIPWPN_10_ITEM2       | Heavy Phasor
+SHIPWPN_10_DETAIL      | Phased-energy beams capable of inflicting 5 to 20 points of damage. Heavy phasors strike for 5-40 points of damage and have a two-space range.
+
+SHIPWPN_11_NAME        | Auto Blaster
+SHIPWPN_11_BRIEF       | Fires 3 times/turn
+SHIPWPN_11_DETAIL      | An advanced neutron blaster that fires up to three times per turn for 4-16 points of damage per hit.
+
+SHIPWPN_12_NAME        | Tachyon Beam
+SHIPWPN_12_BRIEF       | Streaming Attack
+SHIPWPN_12_DETAIL      | Fires an intense stream of tachyon particles that strike enemy ships for 1-25 hits. The continuous streaming effect allows excess damage to carry over to other ships.
+
+SHIPWPN_13_NAME        | Gauss Autocannon
+SHIPWPN_13_BRIEF       | 1/2 Shields, Fires 4x
+SHIPWPN_13_DETAIL      | An advanced linear accelerator capable of firing 4 explosive rounds per turn that inflict 7 to 10 points of damage each. These projectile rounds also halve the effectiveness of enemy shields.
+
+SHIPWPN_14_NAME        | Particle Beam
+SHIPWPN_14_BRIEF       | Halves Shield Strength
+SHIPWPN_14_DETAIL      | High intensity particle accelerators capable of striking enemy ships for 10-20 points of damage and halving the effectiveness of deflector shields.
+
+SHIPWPN_15_NAME        | Plasma Cannon
+SHIPWPN_15_DETAIL      | Fires intense bolts of energy that inflict 6-30 points of damage at a range of 1.
+
+SHIPWPN_16_NAME        | Death Ray
+SHIPWPN_16_DETAIL      | An ancient weapon of unbelievably destructive power that inflicts 200-1000 points of damage and has a one-space range.
+
+SHIPWPN_17_NAME        | Disruptor
+SHIPWPN_17_DETAIL      | Unleashes tremendous bolts of pure energy that can strike enemy targets up to two spaces away for 10-40 points of damage.
+
+SHIPWPN_18_NAME        | Pulse Phasor
+SHIPWPN_18_BRIEF       | Fires 3 times/turn
+SHIPWPN_18_DETAIL      | An advanced phasor capable of firing 3 burst per turn for 5-20 points of damage with each hit.
+
+SHIPWPN_19_NAME        | Tri-Focus Plasma Cannon
+SHIPWPN_19_DETAIL      | Fires a triad of high-intensity plasma beams capable of inflicting 20 to 50 points of damage.
+
+SHIPWPN_20_NAME        | Stellar Converter
+SHIPWPN_20_BRIEF       | Hits All Four Shields
+SHIPWPN_20_DETAIL      | Surrounds the target with an extremely powerful matter-energy conversion field, inflicting four 10 to 35-point attacks. It has a range of 3 spaces.
+
+SHIPWPN_21_NAME        | Mauler Device
+SHIPWPN_21_DETAIL      | Unleashes enormous amounts of focused energy at enemy targets, inflicting 20-100 points of damage.
+
+SHIPWPN_22_NAME        | The Amoeba Stream
+SHIPWPN_22_DETAIL      | A stream that does 250-1000 points of damage and has a range of 3 spaces. Its continuous streaming effect allows it to carry damage over from one ship to another.
+
+SHIPWPN_23_NAME        | The Crystal Ray
+SHIPWPN_23_DETAIL      | A beam that surrounds a target's shields, delivering 4 attacks for 100-300 points of damage each. It has a range of 3 spaces.
+
+
+//
+// Soil Enrichment techs
+//
+SOILENRICH_0_NAME     | Soil Enrichment
+SOILENRICH_0_DETAIL   | Converts standard planets to fertile enviroments, increasing population growth by 50% and raising the base planetary size by +25% for a one-time cost of 150 BC.
+
+SOILENRICH_1_NAME     | Advanced Soil Enrichment
+SOILENRICH_1_DETAIL   | Converts standard and fertile planets to gaias, doubling the population growth and increasing the planet's base size by +50% for a one-time cost of 300 BC.
+
+
+//
+// Stargate tech
+//
+STARGATE_0_NAME      | Intergalactic Star Gates
+STARGATE_0_DETAIL    | Allows your ships to move between any two planets equipped with star gates in only one turn. Cost 3000 BC to build.
+
+
+//
+// Stasis Field tech
+//
+STASIS_0_NAME      | Stasis Field
+STASIS_0_BRIEF     | Enemy frozen for 1 turn
+STASIS_0_DETAIL    | Freezes one group of enemy ships, up to one space away, for one turn. Frozen ships cannot attack or be attacked.
+
+
+//
+// Stream Weapon techs
+//
+STREAMWPN_0_NAME    | Ion Stream Projector
+STREAMWPN_0_BRIEF   | Reduces enemy armor by 20%
+STREAMWPN_0_DETAIL  | Fires an intense ionic blast, reducing the armor of every target in the opponent's group by 20% plus 1% per 2 firing ships, up to a maximum of 50% of its starting hit points per attack.
+
+STREAMWPN_1_NAME    | Neutron Stream Projector
+STREAMWPN_1_BRIEF   | Reduces enemy armor by 40%
+STREAMWPN_1_DETAIL  | Fires a blast of concentrated neutrinos, reducing the armor of every target in the opposing group by 40% plus 1% per firing ship, up to a maximum of 75% of its hit points per attack.
+
+
+//
+// Subspace Interdictor tech
+//
+SUBSPACEINT_0_NAME    | Sub-Space Interdictor
+SUBSPACEINT_0_DETAIL  | Prevents the use of enemy sub-space teleporters and combat transporters. The device is automatically added to missile bases.
+
+
+//
+// Subspace Teleporter tech
+//
+SUBSPACETEL_0_NAME    | Sub-Space Teleporter
+SUBSPACETEL_0_BRIEF   | Teleports ship in combat
+SUBSPACETEL_0_DETAIL  | Teleports ships to any space on the combat map and before determining combat initiative normally.
+
+
+//
+// Ship Torpedo Weapon techs
+//
+TORPEDO_0_NAME        | Anti-Matter Torpedos
+TORPEDO_0_BRIEF       | Fires one per 2 turns
+TORPEDO_0_DETAIL      | High energy tracking torpedoes that deliver 30 points of damage but may only be fired every other turn. Each torpedo is equipped with a +4 level targeting computer.
+
+TORPEDO_1_NAME        | Hellfire Torpedoes
+TORPEDO_1_BRIEF       | Hits all four shields
+TORPEDO_1_DETAIL      | Enveloping energy torpedoes that simultaneously strike all shields. They move at speed 5, are guided by a +6 level targeting computer, delivering damage equal to four 25-point attacks.
+
+TORPEDO_2_NAME        | Proton Torpedoes
+TORPEDO_2_BRIEF       | Fires one per 2 turns
+TORPEDO_2_DETAIL      | High-yield energy torpedoes that deliver 75 points of damage but may be fired only every other turn. Each torpedo is equipped with a +6 level targeting computer.
+
+TORPEDO_3_NAME        | Plasma Torpedoes
+TORPEDO_3_BRIEF       | Loses 15 damage/hex
+TORPEDO_3_DETAIL      | Pure energy torpedoes that deliver 150 points of damage and move at speed 6, but loses 15 damage per space traveled. The launcher fires every other turn and has a +7 guidance computer.
+
