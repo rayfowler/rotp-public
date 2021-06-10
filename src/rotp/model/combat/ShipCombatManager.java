@@ -258,8 +258,12 @@ public class ShipCombatManager implements Base {
         }
     }
     private void setupCurrentTurnList() {
-        currentTurnList = new ArrayList<>(activeStacks());
-        Collections.sort(currentTurnList, CombatStack.INITIATIVE);
+        // use temp to avoid rare comod error when auto-resolving in
+        // the middle of combat, which can potentially update both activeStacks()
+        // and currentTurnList
+        List<CombatStack> temp = new ArrayList<>(activeStacks());
+        Collections.sort(temp, CombatStack.INITIATIVE);
+        currentTurnList = new ArrayList<>(temp);
     }
     public void resolveAllCombat() {
         clearAsteroids();

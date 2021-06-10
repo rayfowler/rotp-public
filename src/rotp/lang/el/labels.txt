@@ -39,7 +39,7 @@ PLANET_TUNDRA                     | Τούνδρα
 SPY_HIDE                          | Απόκρυψη
 SPY_ESPIONAGE                     | Κατασκοπία
 SPY_SABOTAGE                      | Σαμποτάζ
-SPY_CAUGHT                        | [Οι κατάσκοποι σου πιάστηκαν]
+SPY_CAUGHT                        | [Οι κατάσκοποί σου αιχμαλωτίστηκαν]
 SPY_FRAMED                        | [Ενοχοποιήθηκες]
 SPY_FORCED_CONFESSION             | [Μια πλαστή ομολογία εκμαιεύτηκε]
 SPY_WARNING                       | [Προειδοποιήθηκες]
