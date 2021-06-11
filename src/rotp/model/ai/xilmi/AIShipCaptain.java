@@ -183,9 +183,17 @@ public class AIShipCaptain implements Base, ShipCaptain {
             
             if(shouldPerformKiting && !atLeastOneWeaponCanStillFire && (distantTarget == currentTarget || distantTarget == null))
             {
-                FlightPath bestPathToSaveSpot = findSafestSpace(stack);
-                if(bestPathToSaveSpot != null)
-                    mgr.performMoveStackAlongPath(stack, bestPathToSaveSpot);
+                if (stack.mgr.autoResolve) {
+                    Point destPt = findSafestPoint(stack);
+                    if (destPt != null)
+                        mgr.performMoveStackToPoint(stack, destPt.x, destPt.y);
+                }
+                else
+                {
+                    FlightPath bestPathToSaveSpot = findSafestPath(stack);
+                    if(bestPathToSaveSpot != null)
+                        mgr.performMoveStackAlongPath(stack, bestPathToSaveSpot);
+                }
                 turnActive = false;
             }
             // SANITY CHECK:
@@ -199,10 +207,17 @@ public class AIShipCaptain implements Base, ShipCaptain {
             {
                 if(currentTarget == null)
                 {
-                    FlightPath bestPathToSaveSpot = findSafestSpace(stack);
-                    if(bestPathToSaveSpot != null)
-                        mgr.performMoveStackAlongPath(stack, bestPathToSaveSpot);
-                    turnActive = false;
+                    if (stack.mgr.autoResolve) {
+                        Point destPt = findSafestPoint(stack);
+                        if (destPt != null)
+                            mgr.performMoveStackToPoint(stack, destPt.x, destPt.y);
+                    }
+                    else
+                    {
+                        FlightPath bestPathToSaveSpot = findSafestPath(stack);
+                        if(bestPathToSaveSpot != null)
+                            mgr.performMoveStackAlongPath(stack, bestPathToSaveSpot);
+                    }
                 }
                 else
                 {
@@ -376,8 +391,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
         return pt;
     }
-    public FlightPath findSafestSpace(CombatStack st) {
-        FlightPath bestPath = null;
+    public Point findSafestPoint(CombatStack st) {
         int bestX = st.x;
         int bestY = st.y;
         float safestScore = 0;
@@ -413,9 +427,17 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 }
             }
         }
+        Point pt = new Point(st.x, st.y);
+        pt.x = bestX;
+        pt.y = bestY;
+        return pt;
+    }
+    public FlightPath findSafestPath(CombatStack st) {
+        FlightPath bestPath = null;
+        Point pt = findSafestPoint(st);
         //System.out.println("Safest space for "+st.fullName()+" x: "+bestX+" y: "+bestY+" safetyScore: "+safestScore);
         List<FlightPath> validPaths = new ArrayList<>();
-        allValidPaths(st.x,st.y,bestX,bestY,(int)st.move,st, validPaths, bestPath);
+        allValidPaths(st.x,st.y,pt.x,pt.y,(int)st.move,st, validPaths, bestPath);
         if(validPaths.isEmpty())
             return bestPath;
         Collections.sort(validPaths,FlightPath.SORT);
@@ -472,6 +494,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
         //we start at r = 1 and increase up to our optimal firing-range
         int r = 1;
         FlightPath bestPath = null;
+        if(st.repulsorRange() > 0 && st.optimalFiringRange(tgt) > 1 && tgt.optimalFiringRange(st) < st.optimalFiringRange(tgt))
+            r = 2;
         while(bestPath == null && r <= st.optimalFiringRange(tgt))
         {
             bestPath = findBestPathToAttack(st, tgt, r);
@@ -633,6 +657,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             float maxKillValue = -1;
             float pctOfMaxHP = ((st1.num-1) * st1.maxHits + st1.hits) / (st1.num * st1.maxHits);
             allyValue += st1.num * pctOfMaxHP * st1.designCost();
+            //System.out.print("\n"+st1.fullName()+" pctOfMaxHP: "+pctOfMaxHP+" allyValue: "+allyValue);
             for (CombatStack st2: foes) {
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
                 //ail: If the enemy has brought a colonizer, we split our kill because otherwise each of our stacks thinks they can kill all the colonizers despite it's already dead
@@ -686,7 +711,11 @@ public class AIShipCaptain implements Base, ShipCaptain {
     @Override
     public StarSystem retreatSystem(StarSystem sys) {
         float speed = empire.tech().topSpeed();
-        int sysId = empire.alliedColonyNearestToSystem(sys, speed);
+        //ail: first try to use the staging-point for the system we are currently retreating from so we don't retreat to system with enemies
+        int sysId = empire.optimalStagingPoint(sys, 1);
+        //ail: only if that fails take overall closest system
+        if(sysId == StarSystem.NULL_ID)
+            sysId = empire.alliedColonyNearestToSystem(sys, speed);
         return galaxy().system(sysId);
     }
     @Override
