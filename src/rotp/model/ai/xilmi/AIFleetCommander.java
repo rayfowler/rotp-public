@@ -238,6 +238,10 @@ public class AIFleetCommander implements Base, FleetCommander {
                     continue;
                 if(current.monster() != null)
                     continue;
+                if(fleet.distanceTo(target) < fleet.distanceTo(current))
+                    continue;
+                if(current.distanceTo(target) + fleet.distanceTo(target) / 3 >= fleet.distanceTo(target))
+                    continue;
                 float enemyBc = 0.0f;
                 if(systemInfoBuffer.containsKey(id))
                 {
@@ -248,8 +252,6 @@ public class AIFleetCommander implements Base, FleetCommander {
                 if(current.empire() != null)
                     targetTech = current.empire().tech().avgTechLevel();
                 if(enemyBc * (targetTech+10.0f) * 2 > ourEffectiveBC * (civTech+10.0f))
-                    continue;
-                if(current.distanceTo(target) + fleet.distanceTo(target) / 3 >= fleet.distanceTo(target))
                     continue;
                 if(fleet.distanceTo(current) < smallestDistance)
                 {
@@ -1020,8 +1022,24 @@ public class AIFleetCommander implements Base, FleetCommander {
         if(fl.system() == target)
             return;
         ShipDesignLab lab = empire.shipLab();
+    
+        float totalVal = 0;
+        float topSpeedVal = 0;
+        
+        for (int i=0;i<fl.num.length;i++) {
+            int num = fl.num(i);
+            ShipDesign d = lab.design(i); 
+            totalVal += num * d.cost();
+            if(d.warpSpeed() == empire.tech().topSpeed())
+                topSpeedVal += num * d.cost();
+        }
+        
+        if(topSpeedVal / totalVal > 2.0 / 3.0)
+            splitBySpeed = true;
+        
         if(fl.isInTransit())
             splitBySpeed = false;
+        
         for (int speed=(int)fl.slowestStackSpeed();speed<=(int)empire.tech().topSpeed();speed++)
         {
             boolean haveToDeploy = false;
