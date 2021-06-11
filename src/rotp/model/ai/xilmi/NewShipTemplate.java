@@ -240,6 +240,7 @@ public class NewShipTemplate implements Base {
         float topSpeed = 0;
         float avgECM = 0;
         float avgSHD = 0;
+        float longRangePct = 0;
         float totalCost = 0;
         
         for(EmpireView ev : ai.empire().contacts())
@@ -250,23 +251,39 @@ public class NewShipTemplate implements Base {
                 {
                     continue;
                 }
+                boolean isLongRange = false;
                 if(enemyDesign.repulsorRange() > 0)
                 {
                     needRange = true;
                 }
                 for (int j=0;j<maxSpecials();j++)
+                {
                     if(enemyDesign.special(j).createsBlackHole())
                         boostInertial = true;
+                    if(enemyDesign.special(j).beamRangeBonus() > 0)
+                        isLongRange = true;
+                }
+                for (int i=0; i<maxWeapons(); i++)
+                {
+                    ShipWeapon weapon = enemyDesign.weapon(i);
+                    if(weapon == null)
+                        continue;
+                    if(weapon.range() > 1)
+                        isLongRange = true;
+                }
                 if(enemyDesign.combatSpeed() > topSpeed)
                     topSpeed = enemyDesign.combatSpeed();
                 float count = ev.empire().shipDesignCount(enemyDesign.id());
                 avgECM += enemyDesign.ecm().level() * enemyDesign.cost() * count;
                 avgSHD += enemyDesign.shieldLevel() * enemyDesign.cost() * count;
+                if(isLongRange)
+                    longRangePct += enemyDesign.cost() * count;
                 totalCost += enemyDesign.cost() * count;
             }
         }
         if(totalCost > 0)
         {
+            longRangePct /= totalCost;
             avgECM /= totalCost;
             avgSHD /= totalCost;
         }
@@ -275,11 +292,11 @@ public class NewShipTemplate implements Base {
         
         switch (role) {
             case BOMBER:
-                specials = buildSpecialsList(d, ai, enemyMissilePercentage, true, false, boostInertial, size, specialsSpace);
+                specials = buildSpecialsList(d, ai, enemyMissilePercentage, true, false, boostInertial, size, specialsSpace, longRangePct);
                 break;
             case FIGHTER:
             default:
-                specials = buildSpecialsList(d, ai, enemyMissilePercentage, false, needRange, boostInertial, size, specialsSpace);
+                specials = buildSpecialsList(d, ai, enemyMissilePercentage, false, needRange, boostInertial, size, specialsSpace, longRangePct);
                 break;
         }
         
@@ -415,7 +432,7 @@ public class NewShipTemplate implements Base {
 
 // ********** SPECIALS SELECTION AND FITTING FUNCTIONS ********** //
 
-    private SortedMap<Float, ShipSpecial> buildSpecialsList(ShipDesign d, ShipDesigner ai, float antiMissle, boolean bomber, boolean needRange, boolean boostInertial, int size, float specialsSpace) {
+    private SortedMap<Float, ShipSpecial> buildSpecialsList(ShipDesign d, ShipDesigner ai, float antiMissle, boolean bomber, boolean needRange, boolean boostInertial, int size, float specialsSpace, float longRangePct) {
         SortedMap<Float, ShipSpecial> specials = new TreeMap<>(Collections.reverseOrder());
         List<ShipSpecial> allSpecials = ai.lab().specials();
 
@@ -512,7 +529,7 @@ public class NewShipTemplate implements Base {
             }
             else if(tech.isType(Tech.REPULSOR))
             {
-                currentScore = 50;
+                currentScore = 250 * (1 - longRangePct);
                 if(bomber)
                     currentScore /= 5;
                 if(needRange)
