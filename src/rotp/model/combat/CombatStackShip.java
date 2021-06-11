@@ -205,7 +205,7 @@ public class CombatStackShip extends CombatStack {
             else if (wpn.isMissileWeapon()) 
                 // missiles move by distance, not tiles, so adjust minimum range downward by sqrt(2)
                 // to account for diagonal movement
-                missileRange = (int) max(tgt.repulsorRange() + 1, missileRange, ((weaponRange(wpn)/1.414f)-maxRetreatMove));
+                missileRange = (int) max(tgt.repulsorRange() + 1, repulsorRange() + 1, missileRange, ((weaponRange(wpn)/1.414f)-maxRetreatMove));
             else
                 weaponRange = max(weaponRange,weaponRange(wpn));
         }
