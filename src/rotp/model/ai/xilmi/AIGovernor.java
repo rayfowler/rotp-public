@@ -372,7 +372,8 @@ public class AIGovernor implements Base, Governor {
             if(v.embassy().isEnemy() && empire.inShipRange(emp.id))
             {
                 enemy = true;
-                totalEnemyBc += emp.totalFleetCost() * (emp.tech().avgTechLevel() + 10);
+                //ail: if someone has no fleet, we don't just want to assume almost nothing
+                totalEnemyBc += max(emp.totalIncome(), emp.totalFleetCost()) * (emp.tech().avgTechLevel() + 10);
             }
             else if(empire.inShipRange(emp.id) || emp.inShipRange(empire.id))
             {
