@@ -219,6 +219,10 @@ public class CombatStackColony extends CombatStack {
         colony.rebels(newRebels);
     }
     @Override
+    public int optimalFiringRange(CombatStack target) {
+        return 9;
+    }
+    @Override
     public boolean shipComponentIsUsed(int index) {
         return missileFired;
     }
