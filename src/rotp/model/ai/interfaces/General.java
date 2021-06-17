@@ -31,6 +31,7 @@ public interface General {
     default float defenseRatio()              { return 0.5f; }
     default int additionalColonizersToBuild(boolean returnPotentialUncolonizedInstead) { return 0; }
     default boolean allowedToBomb(Empire emp) { return true; }
+    default boolean strongEnoughToAttack() { return true; }
     default boolean isExpander() { return false; }
     default boolean isInvader() { return false; }
     default boolean isRusher() { return false; }
