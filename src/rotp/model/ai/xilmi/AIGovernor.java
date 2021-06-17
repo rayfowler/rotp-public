@@ -232,28 +232,22 @@ public class AIGovernor implements Base, Governor {
             return;
         }
 
-        // calc this now before spending amts are  reset
-        //switch away from stargate, which can accidentally get selected by scrapping after stargate was researched
-        if(col.shipyard().design() == empire.shipLab().stargateDesign() || !col.shipyard().design().active()) {
-            col.shipyard().goToNextDesign();
-        }
         //System.out.print("\n"+empire.name()+" col.shipyard().maxSpendingNeeded(): "+col.shipyard().maxSpendingNeeded()+" bldg: "+col.shipyard().design().id()+ " active: "+col.shipyard().design().active());
         float netFactoryProduction = 1;
         if(!empire.ignoresPlanetEnvironment())
             netFactoryProduction -= empire.tech().factoryWasteMod() / empire.tech().wasteElimination();
-        float workerROI = empire.tech().populationCost() / empire.workerProductivity();
+        float workerProductivityForExistingFactories = 0;
+        if(col.industry().factories() > col.maxUseableFactories())
+            workerProductivityForExistingFactories = netFactoryProduction * empire.maxRobotControls();
+        float workerROI = (empire.tech().populationCost() + col.ecology().enrichSoilCost() + col.ecology().terraformCost() + col.normalPopGrowth() * empire.tech().populationCost()) / (empire.workerProductivity() + workerProductivityForExistingFactories);
         float factoryROI = empire.tech().baseFactoryCost() / col.planet().productionAdj() / netFactoryProduction;
-        //System.out.print("\n"+empire.name()+" "+col.name()+" workerROI: "+workerROI+" factoryROI: "+factoryROI);
-        float maxShipBCNeeded = col.shipyard().maxSpendingNeeded();
+        if(col.industry().factories() > col.maxUseableFactories())
+            factoryROI += workerROI;
         float maxShipBC = maxShipBCPermitted(col);
-        float shipPctSpending = shipPctForColony(col);
-        float currentNet = col.totalIncome() - col.minimumCleanupCost();
-        // # of turns we could make ship with 100% ship
-        float shipTurns = maxShipBCNeeded/(currentNet*shipPctSpending);
-        // pct increase of factories we could make with 100% industry
-        float maxNewFactories = min(col.industry().maxUseableFactories()-col.industry().factories(), currentNet/col.industry().newFactoryCost());
-        float factoryIncreasePct = maxNewFactories/col.industry().factories();
+        float prodScore = productionScore(col.starSystem());
 
+        //System.out.print("\n"+empire.name()+" "+col.name()+" workerROI: "+workerROI+" factoryROI: "+factoryROI+" prodScore: "+prodScore+" fac-bonus: "+workerProductivityForExistingFactories+" capacity: "+col.currentProductionCapacity());
+        
         suggestMissileBaseCount(col);
         col.clearSpending();
 
@@ -284,10 +278,16 @@ public class AIGovernor implements Base, Governor {
         }
         // ship spending, if requested
         if (!col.shipyard().buildingObsoleteDesign()
-        && (col.shipyard().desiredShips() > 0)
-        && ((1.0/shipTurns) > factoryIncreasePct)){
+        && col.shipyard().desiredShips() > 0
+        && col.currentProductionCapacity() >= 0.5){
             shipCost = min(maxShipBC, col.shipyard().maxSpendingNeeded());
             float shipPct = shipCost/totalProd;
+            if(col.shipyard().design().isShip())
+            {
+                ShipDesign d = (ShipDesign)col.shipyard().design();
+                if(d.hasColonySpecial())
+                    shipPct = totalProd;
+            }
             col.pct(SHIP, shipPct);
             //System.out.println("\n"+empire.name()+" "+col.name()+" shipPct: "+shipPct+" shipCost-A: "+shipCost+" maxShipBC: "+maxShipBC+" col.shipyard().maxSpendingNeeded(): "+col.shipyard().maxSpendingNeeded()+" shipTurns: "+shipTurns+" totalProd: "+totalProd);
             shipCost = col.pct(SHIP) * totalProd;
@@ -308,29 +308,21 @@ public class AIGovernor implements Base, Governor {
             }
         }
         float popLoss = enemyBombardPower / 200;
-        float prodScore = productionScore(col.starSystem());
-        
+        float nonCleanEcoCost = col.ecology().maxSpendingNeeded() - cleanCost;        
         // prod spending gets up to 100% of planet's remaining net prod
-        if(col.industry().factories() < col.maxUseableFactories() 
-                && (factoryROI < 25 || prodScore < 0.5)
-                && enemyBombardPower == 0)
+        if((workerROI > factoryROI || col.industry().factories() < col.maxUseableFactories())
+            && enemyBombardPower == 0)
         {
-            if(workerROI > factoryROI || col.population() == col.maxSize())
-            {
-                float prodCost = min(netProd, col.industry().maxSpendingNeeded());
-                col.pct(INDUSTRY, prodCost/totalProd);
-                prodCost = col.pct(INDUSTRY) * totalProd;
-                netProd -= prodCost;
+            float prodCost = min(netProd, col.industry().maxSpendingNeeded());
+            col.pct(INDUSTRY, prodCost/totalProd);
+            prodCost = col.pct(INDUSTRY) * totalProd;
+            netProd -= prodCost;
 
-                if (col.totalAmountAllocated() >= maxAllocation)
-                    return;
-            }
+            if (col.totalAmountAllocated() >= maxAllocation)
+                return;
         }
 
         // eco spending gets up to 100% of planet's remaining net prod
-
-        float nonCleanEcoCost = col.ecology().maxSpendingNeeded() - cleanCost;
-        //if we bomb us, we make ship or research
         if(popLoss * empire.tech().populationCost() > totalProd)
             nonCleanEcoCost = 0;
         float ecoCost = max(0, min(netProd, nonCleanEcoCost));
@@ -492,10 +484,6 @@ public class AIGovernor implements Base, Governor {
         //ail: Rich and Ultra-Rich that are doing research which is not a project should put their stuff into reserve instead of conducting research
         boolean shiftResearchToIndustry = false;
         if(prodScore > 1 && (col.planet().isResourceRich() || col.planet().isResourceUltraRich()) && !col.research().hasProject())
-            shiftResearchToIndustry = true;
-        
-        //getting here sometimes happens when building colony-ships and not needing all production
-        if(col.industry().factories() < col.industry().maxFactories())
             shiftResearchToIndustry = true;
         
         if(enemyBombardPower > 0)
