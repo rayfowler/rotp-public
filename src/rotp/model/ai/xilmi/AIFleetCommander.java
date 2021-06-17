@@ -387,6 +387,8 @@ public class AIFleetCommander implements Base, FleetCommander {
             //ail: incase we have hyperspace-communications and are headed to current, we have to substract ourself from the values
             //This needs to happen always, not just when we are about to buffer it
             //System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" => "+empire.sv.name(current.id)+" bc: "+bc+" bomb: "+bombardDamage);
+            if(!fleet.isArmed() && enemyBc > 0)
+                continue;
             if(fleet.inTransit() && fleet.destination() == current)
             {
                 bc -= fleet.bcValue();
@@ -460,6 +462,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                     {
                         continue;
                     }
+                    if(!empire.warEnemies().contains(current.empire()) && !empire.generalAI().strongEnoughToAttack())
+                        continue;
                     //System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" => "+empire.sv.name(current.id)+" bomb: "+bombardDamage+" hp: "+current.colony().untargetedHitPoints()+" unlocks: "+colonizationBonus+" avg-pop-expected: "+empire.totalPlanetaryPopulation() / empire.allColonizedSystems().size());
                     if(bombardDamage > current.colony().untargetedHitPoints() && fleet.system() != current)
                     {
