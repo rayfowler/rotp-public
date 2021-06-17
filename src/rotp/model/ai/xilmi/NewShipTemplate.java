@@ -262,6 +262,8 @@ public class NewShipTemplate implements Base {
                         boostInertial = true;
                     if(enemyDesign.special(j).beamRangeBonus() > 0)
                         isLongRange = true;
+                    if(enemyDesign.special(j).allowsCloaking())
+                        isLongRange = true;
                 }
                 for (int i=0; i<maxWeapons(); i++)
                 {
@@ -292,13 +294,43 @@ public class NewShipTemplate implements Base {
         
         switch (role) {
             case BOMBER:
-                specials = buildSpecialsList(d, ai, enemyMissilePercentage, true, false, boostInertial, size, specialsSpace, longRangePct);
+                specials = buildSpecialsList(d, ai, enemyMissilePercentage, true, false, boostInertial, longRangePct);
                 break;
             case FIGHTER:
             default:
-                specials = buildSpecialsList(d, ai, enemyMissilePercentage, false, needRange, boostInertial, size, specialsSpace, longRangePct);
+                specials = buildSpecialsList(d, ai, enemyMissilePercentage, false, needRange, boostInertial, longRangePct);
                 break;
         }
+        
+        boolean haveBHG = false;
+        boolean haveCloaking = false;
+        boolean haveStasis = false;
+        float spaceOfStasisCloakCombo = 0;
+        float spaceOfBlackHoleCloakCombo = 0;
+        for(ShipSpecial spec : specials.values())
+        {
+            if(spec.allowsCloaking())
+            {
+                haveCloaking = true;
+                spaceOfStasisCloakCombo += spec.space(d);
+                spaceOfBlackHoleCloakCombo += spec.space(d);
+            }
+            if(spec.createsBlackHole())
+            {
+                spaceOfBlackHoleCloakCombo += spec.space(d);
+                if(spaceOfBlackHoleCloakCombo < 0.5f * d.totalSpace())
+                    haveBHG = true;
+            }
+            if(spec.tech().isType(Tech.STASIS_FIELD))
+            {
+                spaceOfStasisCloakCombo += spec.space(d);
+                if(spaceOfStasisCloakCombo < 0.5f * d.totalSpace())
+                    haveStasis = true;
+            }
+        }
+        //when we can combine cloaking with either BHG or Stasis, we allow a lot more space for specials
+        if(haveCloaking && (haveStasis || haveBHG))
+            specialsSpace = max(specialsSpace, totalSpace * 0.5f);
         
         switch (role) {
             case BOMBER:
@@ -329,12 +361,12 @@ public class NewShipTemplate implements Base {
         
         switch (role) {
             case BOMBER:
-                setOptimalWeapon(ai, d, firstWeaponSpaceRatio * d.availableSpace(), 1, false, false, false, topSpeed, avgECM, avgSHD);
-                setOptimalWeapon(ai, d, d.availableSpace(), 3, needRange, true, false, topSpeed, avgECM, avgSHD); // uses slot 1
+                setOptimalWeapon(ai, d, firstWeaponSpaceRatio * d.availableSpace(), 1, false, false, haveStasis, topSpeed, avgECM, avgSHD);
+                setOptimalWeapon(ai, d, d.availableSpace(), 3, needRange, true, haveStasis, topSpeed, avgECM, avgSHD); // uses slot 1
                 break;
             case FIGHTER:
             default:
-                setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, avgSHD); // uses slots 0-3
+                setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, haveStasis, topSpeed, avgECM, avgSHD); // uses slots 0-3
                 break;
         }
         ai.lab().iconifyDesign(d);
@@ -432,23 +464,27 @@ public class NewShipTemplate implements Base {
 
 // ********** SPECIALS SELECTION AND FITTING FUNCTIONS ********** //
 
-    private SortedMap<Float, ShipSpecial> buildSpecialsList(ShipDesign d, ShipDesigner ai, float antiMissle, boolean bomber, boolean needRange, boolean boostInertial, int size, float specialsSpace, float longRangePct) {
+    private SortedMap<Float, ShipSpecial> buildSpecialsList(ShipDesign d, ShipDesigner ai, float antiMissle, boolean bomber, boolean needRange, boolean boostInertial, float longRangePct) {
         SortedMap<Float, ShipSpecial> specials = new TreeMap<>(Collections.reverseOrder());
         List<ShipSpecial> allSpecials = ai.lab().specials();
+        
+        boolean hasCloaking = false;
+        for (ShipSpecial spec: allSpecials) {
+            if(spec.allowsCloaking())
+                hasCloaking = true;
+        }
 
         for (ShipSpecial spec: allSpecials) {
             if(spec.isNone() || spec.isColonySpecial() || spec.isFuelRange())
-                continue;
-            if(spec.space(d) > specialsSpace)
                 continue;
             Tech tech = spec.tech();
             float currentScore = 0;
             
             if(tech.isType(Tech.AUTOMATED_REPAIR))
             {
-                if(tech.sequence == 0)
+                if(tech.typeSeq == 0)
                     currentScore = 50;
-                if(tech.sequence == 1)
+                if(tech.typeSeq == 1)
                     currentScore = 100;
                 currentScore -= ai.empire().tech().avgTechLevel(); //loses usefullness with more miniaturization
                 if(d.size() < 2)
@@ -462,17 +498,17 @@ public class NewShipTemplate implements Base {
             {
                 currentScore = 500;
                 currentScore *= (5-d.size());
-                if(needRange)
+                if(needRange && !hasCloaking)
                     currentScore /= 5;
             }
             else if(spec.beamRangeBonus() > 0)
             {
                 if(bomber)
-                    currentScore = 40;
+                    currentScore = 20;
                 else
-                    currentScore = 200;
-                currentScore *= spec.beamRangeBonus();
-                if(needRange)
+                    currentScore = 100;
+                currentScore *= (d.totalSpace() - spec.space(d)) / d.totalSpace();
+                if(needRange && !hasCloaking)
                     currentScore *= 5;
             }
             else if(spec.beamShieldMod() < 1)
@@ -481,15 +517,12 @@ public class NewShipTemplate implements Base {
                     currentScore = 40;
                 else
                     currentScore = 200;
+                currentScore *= (d.totalSpace() - spec.space(d)) / d.totalSpace();
             }
             else if(tech.isType(Tech.CLOAKING))
             {
-                if(bomber)
-                    currentScore = 500;
-                else
-                    currentScore = 250;
-                if(needRange)
-                    currentScore *= 2;
+                //ail: we always want it. It's the best!
+                currentScore = 5000;
             }
             else if(tech.isType(Tech.DISPLACEMENT))
             {
@@ -500,7 +533,7 @@ public class NewShipTemplate implements Base {
             }
             else if(tech.isType(Tech.ENERGY_PULSAR))
             {
-                currentScore = 50 * (tech.sequence + 1);
+                currentScore = 50 * (tech.typeSeq + 1);
                 currentScore *= (5-d.size());
                 if(bomber)
                     currentScore /= 5;
@@ -509,11 +542,11 @@ public class NewShipTemplate implements Base {
             }
             else if(tech.isType(Tech.MISSILE_SHIELD))
             {
-                if(tech.sequence == 0)
+                if(tech.typeSeq == 0)
                     currentScore = 40;
-                if(tech.sequence == 1)
+                if(tech.typeSeq == 1)
                     currentScore = 75;
-                if(tech.sequence == 2)
+                if(tech.typeSeq == 2)
                     currentScore = 100;
                 float missileLevel = 0;
                 if(ai.empire().tech().topBaseMissileTech() != null)
@@ -532,12 +565,12 @@ public class NewShipTemplate implements Base {
                 currentScore = 250 * (1 - longRangePct);
                 if(bomber)
                     currentScore /= 5;
-                if(needRange)
+                if(needRange && !hasCloaking)
                     currentScore *= 2;
             }
             else if(tech.isType(Tech.SHIP_INERTIAL))
             {
-                currentScore = 100 * (tech.sequence + 1);
+                currentScore = 100 * (tech.typeSeq + 1);
                 if(bomber)
                     currentScore *= 2;
                 if(boostInertial)
@@ -551,13 +584,13 @@ public class NewShipTemplate implements Base {
             }
             else if(tech.isType(Tech.STASIS_FIELD))
             {
-                currentScore = 200;
-                if(needRange)
-                    currentScore /= 5;
+                currentScore = 500;
+                if(needRange && !hasCloaking)
+                    currentScore /= 10;
             }
             else if(tech.isType(Tech.STREAM_PROJECTOR))
             {
-                currentScore = 100 * (tech.sequence + 1);
+                currentScore = 100 * (tech.typeSeq + 1);
                 currentScore *= (5-d.size());
                 if(needRange)
                     currentScore *= 2;
@@ -577,7 +610,7 @@ public class NewShipTemplate implements Base {
             //if we put stuff with 0 score, we end up with tinies and auto-repair
             if(currentScore > 0)
                 specials.put(currentScore, spec);
-            //System.out.print("\n"+ai.empire().name()+" "+d.name()+" "+spec.name()+" score "+currentScore);
+            //System.out.print("\n"+ai.empire().name()+" "+d.name()+" "+spec.name()+" score "+currentScore+" space: "+spec.space(d)+"/"+d.totalSpace());
         }
         return specials; 
     }
