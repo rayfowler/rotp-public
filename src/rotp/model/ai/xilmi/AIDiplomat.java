@@ -23,10 +23,12 @@ import rotp.model.ai.interfaces.Diplomat;
 import rotp.model.combat.CombatStack;
 import rotp.model.combat.ShipCombatResults;
 import rotp.model.empires.DiplomaticEmbassy;
+import rotp.model.empires.DiplomaticTreaty;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.GalacticCouncil;
 import rotp.model.empires.Leader;
+import rotp.model.empires.SpyNetwork;
 import rotp.model.empires.SpyNetwork.Mission;
 import rotp.model.empires.SpyReport;
 import rotp.model.empires.TreatyWar;
@@ -367,18 +369,6 @@ public class AIDiplomat implements Base, Diplomat {
         if (!view.embassy().contact())
             return false;
 
-        // Automatic exclusion for AI empires:
-        //    1) Have trade established but it is not yet profitable
-        // or 2) Not at full trade && and can't increase current trade level by +50%
-        if (empire.isAIControlled()) {
-            if ((view.trade().level() > 0)
-            && (view.trade().profit() <= 0))
-                return false;
-            if (!view.trade().atFullLevel()
-            || (view.trade().level() * 1.5) > view.trade().maxLevel())
-                return false;
-        }
-
         // no trade if no diplomats or at war
         if (!diplomats(id(e)) || empire.atWarWith(id(e)) )
             return false;
@@ -446,6 +436,12 @@ public class AIDiplomat implements Base, Diplomat {
         if (v.embassy().alliedWithEnemy()) 
             return false;
         
+        if ((v.trade().level() > 0)
+            && (v.trade().profit() <= 0))
+            return false;
+        if (!v.trade().atFullLevel())
+            return false;
+        
         // if asking player, check that we don't spam him
         if (v.empire().isPlayerControlled()) {
              if (!v.otherView().embassy().readyForTrade(level))
@@ -454,7 +450,7 @@ public class AIDiplomat implements Base, Diplomat {
 
         float currentTrade = v.trade().level();
         float maxTrade = v.trade().maxLevel();
-        if (maxTrade < (currentTrade * 1.1))
+        if (maxTrade < (currentTrade * 1.5))
             return false;
 
         log(v.toString(), ": willing to offer trade. Max:", str(maxTrade), "    current:", str(currentTrade));
@@ -819,45 +815,6 @@ public class AIDiplomat implements Base, Diplomat {
         if(empire.viewForEmpire(target).embassy().relations() > v.embassy().relations())
             return v.refuse(DialogueManager.DECLINE_OFFER, target);
         
-        //System.out.println(empire.galaxy().currentTurn()+" "+ requestor.name()+" asked "+empire.name()+" to declare joint war on "+target.name());
-        if(wantToDeclareWar(empire.viewForEmpire(target.id), true))
-        {
-            if(requestor.atWarWith(target.id))
-                return agreeToJointWar(requestor, target);
-            else
-            {
-                int maxBribe = galaxy().numberTurns()*50;
-                float bribeValue = bribeAmountToJointWar(target);
-
-                if (empire.alliedWith(target.id))
-                    bribeValue *= 2;
-                else if (empire.pactWith(target.id))
-                    bribeValue *= 1.5;
-                if (empire.leader().isPacifist())
-                    bribeValue *= 2;
-
-                List<Tech> allTechs = v.spies().unknownTechs();   
-                if (allTechs.isEmpty())
-                    return v.refuse(DialogueManager.DECLINE_OFFER, target);
-
-                Tech.comparatorCiv = empire;
-                Collections.sort(allTechs, Tech.WAR_TRADE_VALUE);
-
-                List<String> requestedTechs = new ArrayList<>();
-                for (Tech tech : allTechs) {
-                    if ((bribeValue > 0) && (requestedTechs.size() < 3)) {
-                        requestedTechs.add(tech.id());
-                        bribeValue -= tech.researchCost();
-                    }
-                }
-                if (requestedTechs.isEmpty())
-                    requestedTechs.add(allTechs.get(0).id());
-
-                if (bribeValue > maxBribe)
-                    return v.refuse(DialogueManager.DECLINE_OFFER, target);
-                return v.counter(DialogueManager.COUNTER_JOINT_WAR, target, requestedTechs, bribeValue);
-            }
-        }
         return v.refuse(DialogueManager.DECLINE_OFFER, target);
     }
     @Override
@@ -1266,15 +1223,6 @@ public class AIDiplomat implements Base, Diplomat {
                     beginIncidentWar(view, warIncident);
                     return true;
                 }
-                else
-                {
-                    if(wantToDeclareWar(view, true))
-                    {
-                        //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" starts Incident-War ("+warIncident.toString()+") vs. "+view.empire().name());
-                        beginIncidentWar(view, warIncident);
-                            return true;
-                    }   
-                }
             }
         }
         
@@ -1408,12 +1356,20 @@ public class AIDiplomat implements Base, Diplomat {
             }
             float superiorityThreshold = max(0, 2 - developmentPct * empire.tech().avgTechLevel() / highestKnownOpponentTechLevel);
             superiorityThreshold += galaxy().options().baseAIRelationsAdj() / 30.0;
-            if(!empire.generalAI().isInvader() && !empire.generalAI().isRusher())
+            if(developmentPct < 0.75f)
+                warAllowed = false;
+            if(empire.generalAI().isSpy())
             {
-                if(developmentPct < 0.75f)
+                SpyNetwork spies = v.spies();
+                if(!spies.possibleTechs().isEmpty() && v.trade().active())
                     warAllowed = false;
             }
-            if(empire.generalAI().isRusher() || empire.generalAI().isInvader() || empire.generalAI().isExpander())
+            if(empire.generalAI().isTrader())
+            {
+                if(v.owner().totalPlanetaryProduction() <= v.empire().totalPlanetaryProduction() && v.trade().active())
+                    warAllowed = false;
+            }
+            if(empire.generalAI().isRusher())
                 superiorityThreshold = 0;
             for(Empire emp : bestVictim.warEnemies())
             {
@@ -1423,8 +1379,19 @@ public class AIDiplomat implements Base, Diplomat {
             {
                 enemyAllyPower += emp.powerLevel(emp);
             }
+            float potentialBackstabberPower = 0;
+            for(Empire contact : empire.contactedEmpires())
+            {
+                if(contact == v.empire())
+                    continue;
+                if(contact.inShipRange(empire.id) && contact.warEnemies().isEmpty() && !contact.inShipRange(v.empId()))
+                    potentialBackstabberPower += contact.powerLevel(contact);
+            }
+            if(potentialBackstabberPower > empire.powerLevel(empire) && !empire.generalAI().isRusher())
+                warAllowed = false;
             //System.out.println(empire.name()+" col: "+empire.generalAI().additionalColonizersToBuild(true)+" devPct: "+developmentPct+" allied: "+empire.alliedWith(bestVictim.id));
             //System.out.println(empire.name()+" bestVictim: "+bestVictim+" power: "+empire.powerLevel(empire) + helpingPower+" vs. "+(bestVictim.powerLevel(bestVictim) + enemyAllyPower) + " Threshold: "+superiorityThreshold +" War Allowed: "+warAllowed);
+            //System.out.println(empire.name()+" bestVictim: "+bestVictim+" potentialBackstabberPower: "+potentialBackstabberPower + " my Power: "+empire.powerLevel(empire));
             if(warAllowed &&
                     empire.powerLevel(empire) + helpingPower > (bestVictim.powerLevel(bestVictim) + enemyAllyPower) * superiorityThreshold)
             {
@@ -1758,9 +1725,28 @@ public class AIDiplomat implements Base, Diplomat {
         //ail: no war-weariness in always-war-mode
         if(galaxy().options().baseAIRelationsAdj() <= -30)
             return false;
+        //ail: If we are not fighting our preferred target, we don't really want a war
+        if(v.empire() != empire.generalAI().bestVictim())
+            return true;
         //ail: only colonies and factories relevant for war-weariness. Population and Military are merely tools to achieve our goals
         Empire emp = v.owner();
         TreatyWar treaty = (TreatyWar) v.embassy().treaty();
+        //ail: If I have more than one war, I'd like to get rid of the older wars.
+        if(empire.warEnemies().size() > 1)
+        {
+            float newestWarDate = 0;
+            for(Empire warEnemy : empire.warEnemies())
+            {
+                EmpireView warView = empire.viewForEmpire(warEnemy);
+                TreatyWar war = (TreatyWar)warView.embassy().treaty();
+                if(war.date() > newestWarDate)
+                    newestWarDate = war.date();
+            }
+            if(treaty.date() < newestWarDate)
+                return true;
+        }
+
+        //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" war-weariness-check against "+v.empire().name()+" treaty.colonyChange(emp): "+treaty.colonyChange(emp) + " treaty.factoryChange(emp): "+treaty.factoryChange(emp));
         if (treaty.colonyChange(emp) < 0.85f)
             return true;
         if (treaty.factoryChange(emp) < 0.85f)
