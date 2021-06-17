@@ -221,11 +221,14 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 }
                 else
                 {
-                    CombatStackShip shipStack = (CombatStackShip) stack;
-                    StarSystem dest = retreatSystem(shipStack.mgr.system());
-                    if (dest != null) {
-                        mgr.retreatStack(shipStack, dest);
-                        return;
+                    if(stack.canRetreat())
+                    {
+                        CombatStackShip shipStack = (CombatStackShip) stack;
+                        StarSystem dest = retreatSystem(shipStack.mgr.system());
+                        if (dest != null) {
+                            mgr.retreatStack(shipStack, dest);
+                            return;
+                        }
                     }
                 }
             }
@@ -299,6 +302,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
             {
                 continue;
             }
+            if(target.inStasis)
+                continue;
             // pct of target that this stack thinks it can kill
             float killPct = max(stack.estimatedKillPct(target), expectedPopLossPct(stack, target)); 
             // threat level target poses to this stack (or its ward if applicable)
