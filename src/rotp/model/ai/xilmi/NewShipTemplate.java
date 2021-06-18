@@ -351,8 +351,12 @@ public class NewShipTemplate implements Base {
         }
         
         for (int j=0;j<maxSpecials();j++)
+        {
             if(d.special(j).beamRangeBonus() > 0)
                 needRange = false;
+            if(d.special(j).allowsCloaking())
+                needRange = false;
+        }
         
         float firstWeaponSpaceRatio = 0.8f; // bombs for bombers, best weapon for destroyers
         // what's left will be used on non-bombs for bombers, second best weapon for destroyers
