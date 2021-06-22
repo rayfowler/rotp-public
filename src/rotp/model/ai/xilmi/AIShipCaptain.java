@@ -113,21 +113,18 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 }
             }
             // check for retreating
+            boolean wantsToRetreat = false;
             if (wantToRetreat(stack) && stack.canRetreat()) {
-                //attack before retreating, if we can
-                if(currentTarget != null && stack.canAttack(currentTarget))
+                if(currentTarget != null)
                 {
-                    performSmartAttackTarget(stack, closeTarget);
-                    AttackedBeforeMoving = true;
-                }
-                //ail: check if I still want to retreat after my attack
-                if(wantToRetreat(stack))
-                {
-                    CombatStackShip shipStack = (CombatStackShip) stack;
-                    StarSystem dest = retreatSystem(shipStack.mgr.system());
-                    if (dest != null) {
-                        mgr.retreatStack(shipStack, dest);
-                        return;
+                    if(stack.movePointsTo(currentTarget) >= stack.move + stack.optimalFiringRange(currentTarget))
+                    {   
+                        CombatStackShip shipStack = (CombatStackShip) stack;
+                        StarSystem dest = retreatSystem(shipStack.mgr.system());
+                        if (dest != null) {
+                            mgr.retreatStack(shipStack, dest);
+                            return;
+                        }
                     }
                 }
             }
@@ -201,6 +198,15 @@ public class AIShipCaptain implements Base, ShipCaptain {
             }
             
             //System.out.print("\n"+stack.fullName()+" shouldPerformKiting: "+shouldPerformKiting+" atLeastOneWeaponCanStillFire: "+atLeastOneWeaponCanStillFire);
+            
+            if (wantToRetreat(stack) && stack.canRetreat()) {
+                CombatStackShip shipStack = (CombatStackShip) stack;
+                StarSystem dest = retreatSystem(shipStack.mgr.system());
+                if (dest != null) {
+                    mgr.retreatStack(shipStack, dest);
+                    return;
+                }
+            }
             
             if(shouldPerformKiting && !atLeastOneWeaponCanStillFire)
             {
@@ -280,7 +286,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         for (int i=0;i<stack.numWeapons(); i++) {
             if(stack.selectedWeapon().isSpecial()
                     || !((CombatStackShip)stack).shipComponentCanAttack(target, i)
-                    || (stack.weapon(i).isMissileWeapon() && stack.movePointsTo(target) > 2))
+                    || (stack.weapon(i).isMissileWeapon() && stack.movePointsTo(target) > target.maxMove + 1))
             {
                 continue;
             }
@@ -336,6 +342,16 @@ public class AIShipCaptain implements Base, ShipCaptain {
             if(!onlyInAttackRange)
                 distAfterMove = 1;
             float rangeAdj = 10.0f/distAfterMove;
+            if(target.isColony() && target.num == 0)
+            {
+                for (int i=0;i<stack.numWeapons(); i++) {
+                    if(!stack.weapon(i).groundAttacksOnly() && !stack.shipComponentIsUsed(i))
+                    {
+                        killPct = 0;
+                        break;
+                    }
+                }
+            }
             //System.out.print("\n"+stack.fullName()+" onlyships: "+onlyShips+" onlyInAttackRange: "+onlyInAttackRange+" looking at "+target.fullName()+" killPct: "+killPct+" rangeAdj: "+rangeAdj+" cnt: "+target.num+" target.designCost(): "+target.designCost());
             if (killPct > 0) {
                 killPct = min(1,killPct);
