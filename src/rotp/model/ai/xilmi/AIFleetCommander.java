@@ -62,7 +62,7 @@ public class AIFleetCommander implements Base, FleetCommander {
     private final List<Integer> systemsCommitted;
     private Map<Integer, AISystemInfo> systemInfoBuffer;
     private transient boolean canBuildShips = true;
-    private transient float maxMaintenance;
+    private transient float maxMaintenance = -1;
 
     private List<FleetPlan> fleetPlans()      { return fleetPlans; }
     private List<Integer> systems()           { return systems;  }
@@ -333,6 +333,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                     if(incoming.empire().aggressiveWith(empire.id))
                     {
                         if(!empire.visibleShips().contains(incoming))
+                            continue;
+                        if(incoming.arrivalTime() > galaxy().currentTime() + 1)
                             continue;
                         enemyBombardDamage += incoming.expectedBombardDamage(current);
                         if(incoming.isArmed())
@@ -817,6 +819,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                                 if(incoming.empire().aggressiveWith(empire.id))
                                 {
                                     if(!empire.visibleShips().contains(incoming))
+                                        continue;
+                                    if(incoming.arrivalTime() > galaxy().currentTime() + 1)
                                         continue;
                                     EmpireView ev = empire.viewForEmpire(incoming.empId());
                                     targetTech = ev.spies().tech().avgTechLevel(); // modnar: target tech level
