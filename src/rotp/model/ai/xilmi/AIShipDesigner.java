@@ -107,6 +107,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         if(((empire.shipMaintCostPerBC() > (empire.fleetCommanderAI().maxShipMaintainance() * 1.5) && empire.enemies().isEmpty() && !empire.fleetCommanderAI().inExpansionMode()))
                 || empire.netIncome() <= 0)
         {
+            //System.out.print("\n"+empire.name()+" scrapWorstDesign max-maint: "+empire.fleetCommanderAI().maxShipMaintainance());
             scrapWorstDesign(empire.netIncome() <= 0);
         }
     }
@@ -373,11 +374,15 @@ public class AIShipDesigner implements Base, ShipDesigner {
         }
         else
         {
-            //if there is no slot available I push the old one to obsolete so a new slot will be freed up soon
-            currDesign.becomeObsolete(OBS_BOMBER_TURNS);
-            scrapWorstDesign(false);
-            slot = lab.availableDesignSlot();
-            lab.setBomberDesign(newDesign, slot);
+            //with no free slots, we don't obsolete a design that is similar to an existing one
+            if(!currDesign.matchesDesign(newDesign))
+            {
+                //if there is no slot available I push the old one to obsolete so a new slot will be freed up soon
+                currDesign.becomeObsolete(OBS_BOMBER_TURNS);
+                scrapWorstDesign(false);
+                slot = lab.availableDesignSlot();
+                lab.setBomberDesign(newDesign, slot);
+            }
         }
     }
     public void updateFighterDesign() {
@@ -503,10 +508,13 @@ public class AIShipDesigner implements Base, ShipDesigner {
         }
         else
         {
-            currDesign.becomeObsolete(OBS_FIGHTER_TURNS);
-            scrapWorstDesign(false);
-            slot = lab.availableDesignSlot();
-            lab.setFighterDesign(newDesign, slot);
+            if(!currDesign.matchesDesign(newDesign))
+            {
+                currDesign.becomeObsolete(OBS_FIGHTER_TURNS);
+                scrapWorstDesign(false);
+                slot = lab.availableDesignSlot();
+                lab.setFighterDesign(newDesign, slot);
+            }
         }
     }
     public void updateDestroyerDesign() {
