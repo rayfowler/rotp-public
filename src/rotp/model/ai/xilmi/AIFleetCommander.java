@@ -847,6 +847,9 @@ public class AIFleetCommander implements Base, FleetCommander {
                                             else
                                             {
                                                 keepBc = (empire.enemyTransportsInTransit(target) * empire.maxRobotControls() + enemyBC) * 2;
+                                                //ail: no need to keep a fleet if we'll have to retreat anyways
+                                                if(enemyBC > ourEffectiveBC)
+                                                    keepBc = 0;
                                                 systemInfoBuffer.get(target.id).ignore = true;
                                                 continue;
                                             }
