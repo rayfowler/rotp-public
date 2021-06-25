@@ -155,7 +155,9 @@ public class NewShipTemplate implements Base {
     private ShipDesign newDesign(ShipDesigner ai, DesignType role, int size) {
         ShipDesign d = ai.lab().newBlankDesign(size);
         // name it first so we can use name for reference in debugging
-        ai.lab().nameDesign(d);
+        d.name(ai.empire().race().randomSystemName(ai.empire()));
+        List<String> shipNames = ai.empire().race().shipNames(d.size());
+        d.name(d.name() +" "+shipNames.get((int)random(shipNames.size())));
         // engines are always the priority in MOO1 mechanics
         setFastestEngine(ai, d);
         // battle computers are always the priority in MOO1 mechanics

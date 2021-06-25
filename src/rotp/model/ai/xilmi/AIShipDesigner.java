@@ -15,6 +15,7 @@
  */
 package rotp.model.ai.xilmi;
 
+import java.util.Arrays;
 import java.util.List;
 import rotp.model.ai.interfaces.ShipDesigner;
 import rotp.model.empires.Empire;
@@ -537,7 +538,10 @@ public class AIShipDesigner implements Base, ShipDesigner {
         design.setSmallestSize();
         design.mission(ShipDesign.SCOUT);
         design.maxUnusedTurns(OBS_SCOUT_TURNS);
-        lab.nameDesign(design);
+        //lab.nameDesign(design);
+        design.name(lab.fastestEngine().name());
+        List<String> shipNames = empire().race().shipNames(design.size());
+        design.name(design.name() +" "+shipNames.get((int)random(shipNames.size())));
         lab.iconifyDesign(design);
         return design;
     }
@@ -547,7 +551,9 @@ public class AIShipDesigner implements Base, ShipDesigner {
     public ShipDesign newColonyDesign(boolean weaponNeeded, boolean extendedRangeNeeded) {
         ShipDesignLab lab = lab();
         ShipDesign design = lab.newBlankDesign(ShipDesign.LARGE);
-        lab.nameDesign(design);
+        design.name(bestColonySpecial().name().split(" ")[0]);
+        List<String> shipNames = empire().race().shipNames(design.size());
+        design.name(design.name() +" "+shipNames.get((int)random(shipNames.size())));
         design.special(0, bestColonySpecial());
         design.engine(lab.fastestEngine());
         design.mission(ShipDesign.COLONY);
