@@ -445,9 +445,9 @@ public class CombatStackShip extends CombatStack {
                 //ail: take attack and defense into account
                 float hitPct = 1.0f;
                 if(comp.isBeamWeapon())
-                    hitPct = (5 + attackLevel - target.beamDefense) / 10;
+                    hitPct = (5 + attackLevel - target.beamDefense()) / 10;
                 if(comp.isMissileWeapon())
-                    hitPct = (5 + attackLevel - target.missileDefense) / 10;
+                    hitPct = (5 + attackLevel - target.missileDefense()) / 10;
                 hitPct = max(.05f, hitPct);
                 hitPct = min(hitPct, 1.0f);
                 //ail: we totally have to consider the weapon-count too!
