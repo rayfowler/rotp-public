@@ -795,6 +795,13 @@ public class ShipCombatManager implements Base {
 
         if (st.canTeleport() && !interdiction)
             return true;
+        
+        for (CombatStack s: results.activeStacks()) {            
+            if(st.ignoreRepulsors() || (s.empire == st.empire) || s.inStasis)
+                continue;
+            if(s.movePointsTo(x, y) <= s.repulsorRange())
+                return false;
+        }
 
         return st.canMoveTo(x, y);
     }
