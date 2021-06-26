@@ -53,6 +53,8 @@ public final class ShipWeaponMissile extends ShipWeaponMissileType {
     @Override
     public int maxDamage()                { return tech().damage(); }
     @Override
+    public String name()                  { return super.name() + "-" + shots; }
+    @Override
     public int range()                    { return range; }
     @Override
     public int shots()                    { return shots; }

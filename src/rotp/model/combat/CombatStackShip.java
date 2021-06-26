@@ -451,7 +451,7 @@ public class CombatStackShip extends CombatStack {
                 hitPct = max(.05f, hitPct);
                 hitPct = min(hitPct, 1.0f);
                 //ail: we totally have to consider the weapon-count too!
-                kills += hitPct * comp.estimatedKills(this, target, weaponCount[i] * num * roundsRemaining[i]);
+                kills += hitPct * comp.estimatedKills(this, target, weaponCount[i] * num);
             }
         }
         return kills;

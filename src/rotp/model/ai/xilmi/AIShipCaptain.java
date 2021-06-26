@@ -33,8 +33,6 @@ public class AIShipCaptain implements Base, ShipCaptain {
     private transient List<CombatStack> allies = new ArrayList<>();
     private transient List<CombatStack> enemies = new ArrayList<>();
     private CombatStack currentTarget = null;
-    private CombatStack closeTarget = null;
-    private CombatStack distantTarget = null;
 
     public List<CombatStack> allies() {
         if (allies == null)
@@ -82,9 +80,31 @@ public class AIShipCaptain implements Base, ShipCaptain {
             float prevMove = stack.move;
             prevTarget = currentTarget;
             //ail: for moving we pick the target that is overall the most suitable, so that bombers move towards planet
-            chooseTarget(stack, true, true);
-            chooseTarget(stack, false, false);
+            FlightPath bestPathToTarget = null;
+            //ail: defend-stuff is problematic as stacks can be drawn out
+            /*if((currentTarget == null || stack.movePointsTo(currentTarget) - stack.move > stack.maxFiringRange(currentTarget)) && stack.hasWard())
+                bestPathToTarget = defendWardPath(stack, stack.ward());
+            else*/
+            bestPathToTarget = chooseTarget(stack, false, false);
+            CombatStack tgtBeforeClose = currentTarget;
             //ail: if our target to move to is not the same as the target we can currently shoot at, we shoot before moving
+            
+            // check for retreating
+            if (wantToRetreat(stack) && stack.canRetreat()) {
+                if(currentTarget != null)
+                {
+                    if(stack.movePointsTo(currentTarget) >= stack.move + stack.optimalFiringRange(currentTarget))
+                    {   
+                        CombatStackShip shipStack = (CombatStackShip) stack;
+                        StarSystem dest = retreatSystem(shipStack.mgr.system());
+                        if (dest != null) {
+                            mgr.retreatStack(shipStack, dest);
+                            //System.out.print("\n"+stack.fullName()+" target: "+currentTarget.fullName()+" retreat because it wants to.");
+                            return;
+                        }
+                    }
+                }
+            }
             
             if (stack.isColony() && stack.canAttack(currentTarget)) 
             {
@@ -92,7 +112,6 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 mgr.performAttackTarget(stack);
                 mgr.turnDone(stack);
             }
-            boolean AttackedBeforeMoving = false;
             boolean shouldPerformKiting = false;
             if(stack.isShip())
             {
@@ -104,49 +123,18 @@ public class AIShipCaptain implements Base, ShipCaptain {
             if(stack.repulsorRange() > 0)
                 shouldPerformKiting = true;
             
-            if(closeTarget != null && closeTarget != distantTarget)
-            {
-                if (stack.canAttack(closeTarget))
-                {
-                    AttackedBeforeMoving = performSmartAttackTarget(stack, closeTarget);
-                }
-            }
-            // check for retreating
-            if (wantToRetreat(stack) && stack.canRetreat()) {
-                if(currentTarget != null)
-                {
-                    if(stack.movePointsTo(currentTarget) >= stack.move + stack.optimalFiringRange(currentTarget))
-                    {   
-                        CombatStackShip shipStack = (CombatStackShip) stack;
-                        StarSystem dest = retreatSystem(shipStack.mgr.system());
-                        if (dest != null) {
-                            mgr.retreatStack(shipStack, dest);
-                            return;
-                        }
-                    }
-                }
-            }
             //When we are defending and can't get into attack-range of the enemy, we let them come to us
             /*if(currentTarget != null)
                 System.out.println(stack.fullName()+" target: "+currentTarget.fullName()+" distaftermove: "+(stack.movePointsTo(currentTarget) - stack.move)+" maxFR: "+stack.maxFiringRange(currentTarget));*/
-            FlightPath bestPathToTarget = null;
-            //ail: defend-stuff is problematic as stacks can be drawn out
-            /*if((currentTarget == null || stack.movePointsTo(currentTarget) - stack.move > stack.maxFiringRange(currentTarget)) && stack.hasWard())
-                bestPathToTarget = defendWardPath(stack, stack.ward());
-            else*/
-            bestPathToTarget = chooseTarget(stack, false, false);
             // if we need to move towards target, do it now
             if (currentTarget != null) {
-                if(!AttackedBeforeMoving || !shouldPerformKiting)
-                {
-                    if (stack.mgr.autoResolve) {
-                        Point destPt = findClosestPoint(stack, currentTarget);
-                        if (destPt != null)
-                            mgr.performMoveStackToPoint(stack, destPt.x, destPt.y);
-                    }
-                    else if ((bestPathToTarget != null) && (bestPathToTarget.size() > 0)) {
-                        mgr.performMoveStackAlongPath(stack, bestPathToTarget);
-                    }
+                if (stack.mgr.autoResolve) {
+                    Point destPt = findClosestPoint(stack, currentTarget);
+                    if (destPt != null)
+                        mgr.performMoveStackToPoint(stack, destPt.x, destPt.y);
+                }
+                else if ((bestPathToTarget != null) && (bestPathToTarget.size() > 0)) {
+                    mgr.performMoveStackAlongPath(stack, bestPathToTarget);
                 }
             }
             
@@ -157,21 +145,17 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 chooseTarget(stack, false, true);
                 if (stack.canAttack(currentTarget)) 
                     performSmartAttackTarget(stack, currentTarget);
-                    //mgr.performAttackTarget(stack);
                 //now chhose our previous target again
                 chooseTarget(stack, false, false);
             }
-            CombatStack tgtBeforeClose = currentTarget;
             if (stack.canAttack(currentTarget)) 
                 performSmartAttackTarget(stack, currentTarget);
-                //mgr.performAttackTarget(stack);
             else
             {
                 //ail: if we couldn't attack our move-to-target, we try and see if anything else can be attacked from where we are
                 chooseTarget(stack, true, false);
                 if (stack.canAttack(currentTarget)) 
                     performSmartAttackTarget(stack, currentTarget);
-                    //mgr.performAttackTarget(stack);
             }
             
             if(currentTarget != null)
@@ -187,11 +171,11 @@ public class AIShipCaptain implements Base, ShipCaptain {
             {
                 CombatStackShip shipStack = (CombatStackShip)stack;
                 for (int i=0;i<stack.numWeapons(); i++) {
-                    if(currentTarget != null && !currentTarget.isColony() && stack.weapon(i).groundAttacksOnly())
+                    if(tgtBeforeClose != null && !tgtBeforeClose.isColony() && stack.weapon(i).groundAttacksOnly())
                         continue;
                     if(stack.weapon(i).isSpecial())
                         continue;
-                    if(stack.shotsRemaining(i) < shipStack.weaponAttacks[i])
+                    if(stack.shotsRemaining(i) < shipStack.weaponAttacks[i] || stack.weapon(i).isLimitedShotWeapon() && shipStack.roundsRemaining[i] < 1)
                     {
                         allWeaponsCanStillFire = false;
                     }
@@ -209,6 +193,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 StarSystem dest = retreatSystem(shipStack.mgr.system());
                 if (dest != null) {
                     mgr.retreatStack(shipStack, dest);
+                    //System.out.println(stack.fullName()+" retreat because it wants to after moving.");
                     return;
                 }
             }
@@ -258,13 +243,17 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 }
                 else
                 {
-                    if(stack.canRetreat())
+                    if(tgtBeforeClose == null || stack.movePointsTo(tgtBeforeClose) < DistanceToBeAt(stack, tgtBeforeClose))
                     {
-                        CombatStackShip shipStack = (CombatStackShip) stack;
-                        StarSystem dest = retreatSystem(shipStack.mgr.system());
-                        if (dest != null) {
-                            mgr.retreatStack(shipStack, dest);
-                            return;
+                        if(stack.canRetreat())
+                        {
+                            CombatStackShip shipStack = (CombatStackShip) stack;
+                            StarSystem dest = retreatSystem(shipStack.mgr.system());
+                            if (dest != null) {
+                                mgr.retreatStack(shipStack, dest);
+                                //System.out.print("\n"+stack.fullName()+" retreat because it didn't move.");
+                                return;
+                            }
                         }
                     }
                 }
@@ -368,8 +357,11 @@ public class AIShipCaptain implements Base, ShipCaptain {
             if (killPct > 0) {
                 killPct = min(1,killPct);
                 float desirability = killPct * max(1, target.num) * target.designCost() * rangeAdj;
-                if(!target.canPotentiallyAttack(stack) && !target.isColony())
-                    desirability /= 100;
+                if(!target.canPotentiallyAttack(stack))
+                {
+                    if(!target.isColony() || onlyShips)
+                        desirability /= 100;
+                }
                 //System.out.print("\n"+stack.fullName()+" looking at "+target.fullName()+" desirability: "+desirability+" oir: "+onlyInAttackRange+" os: "+onlyShips);
                 if (desirability > maxDesirability) {  // this might be a better target, adjust desirability for pathing
                     if (stack.mgr.autoResolve) {
@@ -384,7 +376,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                         FlightPath path = findBestPathToAttack(stack, target);
                         if (path != null) {  // can we even path to this target?
                             int turnsToReachTarget = stack.canTeleport ? 1 : (int) Math.ceil(path.size() / stack.maxMove());
-                            if (turnsToReachTarget > 0)
+                            if (turnsToReachTarget > 0 && onlyInAttackRange)
                                 desirability = desirability / turnsToReachTarget; // lower-value targets that can be attacked right away may be more desirable
                             if (desirability > maxDesirability) {
                                 bestPath = path;
@@ -397,10 +389,6 @@ public class AIShipCaptain implements Base, ShipCaptain {
             }
         }
         currentTarget = bestTarget;
-        if(onlyInAttackRange)
-            closeTarget = bestTarget;
-        else
-            distantTarget = bestTarget;
         return bestPath;
     }
     public Point findClosestPoint(CombatStack st, CombatStack tgt) {
@@ -466,7 +454,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                         blocked = true;
                         continue;
                     }
-                    if(other.hostileTo(st, StarSystem.TARGET_SYSTEM))
+                    if(other.canPotentiallyAttack(st))
                     {
                         currentScore += other.distanceTo(x, y);
                     }
