@@ -108,12 +108,10 @@ public class AIShipCaptain implements Base, ShipCaptain {
             {
                 if (stack.canAttack(closeTarget))
                 {
-                    performSmartAttackTarget(stack, closeTarget);
-                    AttackedBeforeMoving = true;
+                    AttackedBeforeMoving = performSmartAttackTarget(stack, closeTarget);
                 }
             }
             // check for retreating
-            boolean wantsToRetreat = false;
             if (wantToRetreat(stack) && stack.canRetreat()) {
                 if(currentTarget != null)
                 {
@@ -139,7 +137,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             bestPathToTarget = chooseTarget(stack, false, false);
             // if we need to move towards target, do it now
             if (currentTarget != null) {
-                if(!(AttackedBeforeMoving && shouldPerformKiting))
+                if(!AttackedBeforeMoving || !shouldPerformKiting)
                 {
                     if (stack.mgr.autoResolve) {
                         Point destPt = findClosestPoint(stack, currentTarget);
@@ -275,10 +273,11 @@ public class AIShipCaptain implements Base, ShipCaptain {
         mgr.turnDone(stack);
     }
    
-    private void performSmartAttackTarget(CombatStack stack, CombatStack target)
+    private boolean performSmartAttackTarget(CombatStack stack, CombatStack target)
     {
+        boolean performedAttack = false;
         if(target == null)
-            return;
+            return false;
         //1st run: fire only specials which are not repulsor or stasis-field
         for (int i=0;i<stack.numWeapons(); i++) {
             if(!stack.weapon(i).isSpecial()
@@ -291,6 +290,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             else
             {
                 stack.fireWeapon(target, i);
+                performedAttack = true;
             }
         }
         //2nd run: fire non-special-weapons
@@ -304,6 +304,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             else
             {
                 stack.fireWeapon(target, i);
+                performedAttack = true;
             }
         }
         //3rd run: fire whatever is left, except missiles if we are too far
@@ -313,8 +314,10 @@ public class AIShipCaptain implements Base, ShipCaptain {
             if(((CombatStackShip)stack).shipComponentCanAttack(target, i))
             {
                 stack.fireWeapon(target, i);
+                performedAttack = true;
             }
         }
+        return performedAttack;
     }
     private  FlightPath chooseTarget(CombatStack stack, boolean onlyInAttackRange, boolean onlyShips) {
         if (!stack.canChangeTarget())
@@ -330,8 +333,6 @@ public class AIShipCaptain implements Base, ShipCaptain {
         FlightPath bestPath = null;
         CombatStack bestTarget = null;
         float maxDesirability = -1;
-        float threatLevel = 0;
-        boolean currentCanBomb = false;
         for (CombatStack target : potentialTargets) {
             if(onlyInAttackRange && !stack.canAttack(target))
             {
@@ -369,7 +370,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 float desirability = killPct * max(1, target.num) * target.designCost() * rangeAdj;
                 if(!target.canPotentiallyAttack(stack) && !target.isColony())
                     desirability /= 100;
-                //System.out.print("\n"+stack.fullName()+" looking at "+target.fullName()+" desirability: "+desirability);
+                //System.out.print("\n"+stack.fullName()+" looking at "+target.fullName()+" desirability: "+desirability+" oir: "+onlyInAttackRange+" os: "+onlyShips);
                 if (desirability > maxDesirability) {  // this might be a better target, adjust desirability for pathing
                     if (stack.mgr.autoResolve) {
                         bestTarget = target;
@@ -407,7 +408,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             return null;
 
         //ail: We will always want to go as close as possible because this increases hit-chance
-        int targetDist = DistanceToBeAt(st, tgt);;
+        int targetDist = DistanceToBeAt(st, tgt);
         
         float maxDist = st.movePointsTo(tgt.x,tgt.y);
         if (maxDist <= targetDist)
@@ -664,7 +665,18 @@ public class AIShipCaptain implements Base, ShipCaptain {
         // retreating would violate a pact, or when the stack is unarmed
         // armed stacks will otherwise fight to the death, per player expectations
         if (!currStack.usingAI())
-            return inPact || !currStack.isArmed();
+        {
+            boolean atLeastOneStackStillArmed = false;
+            for(CombatStack cst : currStack.mgr.allStacks())
+            {
+                if(cst.empire == empire)
+                {
+                    if(cst.isArmed())
+                        atLeastOneStackStillArmed = true;
+                }
+            }
+            return inPact || !atLeastOneStackStillArmed;
+        }
      
         // AI STACKS
         //System.out.print("\n"+currStack.fullName()+" canRetreat: "+currStack.canRetreat());
