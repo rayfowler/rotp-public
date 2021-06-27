@@ -474,7 +474,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechArmor t) {
         TechArmor curr = empire.tech().topArmorTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= sqrt(curr.level());
         val += t.level();
         return val;
@@ -493,7 +494,8 @@ public class AIScientist implements Base, Scientist {
             return 0;
         TechAtmosphereEnrichment curr = empire.tech().topAtmoEnrichmentTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= sqrt(curr.level());
         val += t.level();
         return val;
@@ -502,7 +504,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechAutomatedRepair t) {
         TechAutomatedRepair curr = empire.tech().topAutomatedRepairTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
         val /= 2;
@@ -512,7 +515,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechBattleComputer t) {
         TechBattleComputer curr = empire.tech().topBattleComputerTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
         return val;
@@ -521,7 +525,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechBattleSuit t) {
         TechBattleSuit curr = empire.tech().topBattleSuitTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
         return val;
@@ -564,7 +569,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechBombWeapon t) {
         TechBombWeapon curr = empire.tech().topBombWeaponTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
         return val;
@@ -579,7 +585,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechCloning t) {
         TechCloning curr = empire.tech().topCloningTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
         return val;
@@ -601,7 +608,8 @@ public class AIScientist implements Base, Scientist {
             return 0;
         TechControlEnvironment curr = empire.tech().topControlEnvironmentTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= sqrt(curr.level());
         val += t.level();
         if(empire.fleetCommanderAI().inExpansionMode())
@@ -614,7 +622,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechDeflectorShield t) {
         TechDeflectorShield curr = empire.tech().topDeflectorShieldTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
         return val;
@@ -640,7 +649,8 @@ public class AIScientist implements Base, Scientist {
             return 0;
         TechEcoRestoration curr = empire.tech().topEcoRestorationTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
         return val;
@@ -649,7 +659,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechEngineWarp t) {
         TechEngineWarp curr = empire.tech().topEngineWarpTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= sqrt(curr.level());
         val += t.level();
         return val;
@@ -658,7 +669,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechEnergyPulsar t) {
         TechEnergyPulsar curr = empire.tech().topEnergyPulsarTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
         val /= 10;
@@ -669,7 +681,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechFuelRange t) {
         TechFuelRange curr = empire.tech().topFuelRangeTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
         if(empire.fleetCommanderAI().inExpansionMode())
@@ -706,7 +719,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechHandWeapon t) {
         TechHandWeapon curr = empire.tech().topHandWeaponTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
         return val;
@@ -719,7 +733,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechImprovedIndustrial t) {
         TechImprovedIndustrial curr = empire.tech().topImprovedIndustrialTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
         return val;
@@ -728,7 +743,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechImprovedTerraforming t) {
         TechImprovedTerraforming curr = empire.tech().topTerraformingTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
         return val;
@@ -739,7 +755,8 @@ public class AIScientist implements Base, Scientist {
             return 0;
         TechIndustrialWaste curr = empire.tech().topIndustrialWasteTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
         return val;
@@ -748,7 +765,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechMissileShield t) {
         TechMissileShield curr = empire.tech().topMissileShieldTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
         val /= 10.0f;
@@ -759,7 +777,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechMissileWeapon t) {
         TechMissileWeapon curr = empire.tech().topBaseMissileTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
         val /= 2.0f;
@@ -769,7 +788,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechPersonalShield t) {
         TechPersonalShield curr = empire.tech().topPersonalShieldTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
         return val;
@@ -778,7 +798,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechPlanetaryShield t) {
         TechPlanetaryShield curr = empire.tech().topPlanetaryShieldTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
         return val;
@@ -794,7 +815,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechRoboticControls t) {
         TechRoboticControls curr = empire.tech().topRoboticControlsTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= sqrt(curr.level());
         val += t.level();
         return val;
@@ -807,10 +829,10 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechShipInertial t) {
         TechShipInertial curr = empire.tech().topShipInertialTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
-        val /= 2;
         return val;
     }
     @Override
@@ -824,7 +846,8 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechShipWeapon t) {
         TechShipWeapon curr = empire.tech().topShipWeaponTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
         return val;
@@ -835,7 +858,8 @@ public class AIScientist implements Base, Scientist {
             return 0;
         TechSoilEnrichment curr = empire.tech().topSoilEnrichmentTech();
         float val = 0;
-        if(curr != null)
+        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
+        if(curr != null && t != best)
             val -= sqrt(curr.level());
         val += t.level();
         return val;
