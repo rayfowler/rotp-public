@@ -83,11 +83,9 @@ public class AIGeneral implements Base, General {
         {
             float highestScore = 0;
             Colony bestCol = null;
-            int eligibleColonies = 0;
             for (int id=0; id<empire.sv.count();id++) {
                 if(empire.sv.empire(id) != empire)
                     continue;
-                ++eligibleColonies;
                 StarSystem sys = galaxy().system(id);
                 Colony col = sys.colony();
                 float score = empire.ai().governor().productionScore(sys);
@@ -107,9 +105,12 @@ public class AIGeneral implements Base, General {
             ShipDesign design = empire.shipLab().colonyDesign();
             bestCol.shipyard().design(design);
             bestCol.shipyard().addQueuedBC(design.cost());
-            bestCol.shipyard().addDesiredShips(1);
-            //System.out.println(empire.name()+" should order a colonizer at "+bestCol.name());
-            additionalColonizersToBuild--;
+            float colonyProduction = (bestCol.totalIncome() - bestCol.minimumCleanupCost()) * bestCol.planet().productionAdj();
+            int desiredCount = min(additionalColonizersToBuild, (int)Math.floor((float)colonyProduction / (float)design.cost()));
+            desiredCount = max(1, desiredCount);
+            bestCol.shipyard().addDesiredShips(desiredCount);
+            //System.out.println(galaxy().currentTurn()+" "+empire.name()+" should order "+desiredCount+" colonizers at "+bestCol.name());
+            additionalColonizersToBuild-=desiredCount;
         }
 
         Galaxy gal = galaxy();
