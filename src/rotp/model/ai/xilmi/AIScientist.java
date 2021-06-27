@@ -833,6 +833,7 @@ public class AIScientist implements Base, Scientist {
         if(curr != null && t != best)
             val -= curr.level();
         val += t.level();
+        val /= 2;
         return val;
     }
     @Override
