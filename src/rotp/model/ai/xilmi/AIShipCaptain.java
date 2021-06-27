@@ -87,14 +87,22 @@ public class AIShipCaptain implements Base, ShipCaptain {
             else*/
             bestPathToTarget = chooseTarget(stack, false, false);
             CombatStack tgtBeforeClose = currentTarget;
+            if (stack.isColony() && stack.canAttack(currentTarget)) 
+            {
+                stack.target = currentTarget;
+                mgr.performAttackTarget(stack);
+                mgr.turnDone(stack);
+            }
             //ail: if our target to move to is not the same as the target we can currently shoot at, we shoot before moving
-            
             // check for retreating
-            if (wantToRetreat(stack) && stack.canRetreat()) {
-                if(currentTarget != null)
-                {
-                    if(stack.movePointsTo(currentTarget) >= stack.move + stack.optimalFiringRange(currentTarget))
-                    {   
+            if(tgtBeforeClose != null && stack.movePointsTo(tgtBeforeClose) >= stack.move + stack.optimalFiringRange(tgtBeforeClose))
+            {  
+                chooseTarget(stack, true, false);
+                if (stack.canAttack(currentTarget) && stack.movePointsTo(tgtBeforeClose) <= stack.optimalFiringRange(stack) ) 
+                    performSmartAttackTarget(stack, currentTarget);
+                if (wantToRetreat(stack) && stack.canRetreat()) {
+                    if(tgtBeforeClose != null)
+                    {
                         CombatStackShip shipStack = (CombatStackShip) stack;
                         StarSystem dest = retreatSystem(shipStack.mgr.system());
                         if (dest != null) {
@@ -104,13 +112,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                         }
                     }
                 }
-            }
-            
-            if (stack.isColony() && stack.canAttack(currentTarget)) 
-            {
-                stack.target = currentTarget;
-                mgr.performAttackTarget(stack);
-                mgr.turnDone(stack);
+                currentTarget = tgtBeforeClose;
             }
             boolean shouldPerformKiting = false;
             if(stack.isShip())
@@ -742,11 +744,15 @@ public class AIShipCaptain implements Base, ShipCaptain {
 
 //        log("friends:"+friends.size()+"   foes:"+foes.size());
         for (CombatStack st1 : friends) {
+            if(st1.inStasis)
+                continue;
             float maxKillValue = -1;
             float pctOfMaxHP = ((st1.num-1) * st1.maxHits + st1.hits) / (st1.num * st1.maxHits);
             allyValue += st1.num * pctOfMaxHP * st1.designCost();
             //System.out.print("\n"+st1.fullName()+" pctOfMaxHP: "+pctOfMaxHP+" allyValue: "+allyValue);
             for (CombatStack st2: foes) {
+                if(st2.inStasis)
+                    continue;
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
                 //ail: If the enemy has brought a colonizer, we split our kill because otherwise each of our stacks thinks they can kill all the colonizers despite it's already dead
                 if(st2.isShip() && st2.design().isColonyShip())
@@ -766,10 +772,14 @@ public class AIShipCaptain implements Base, ShipCaptain {
             allyKills += maxKillValue;
         }
        for (CombatStack st1 : foes) {
+            if(st1.inStasis)
+                continue;
             float maxKillValue = -1;
             float pctOfMaxHP = ((st1.num-1) * st1.maxHits + st1.hits) / (st1.num * st1.maxHits);
             enemyValue += st1.num * pctOfMaxHP * st1.designCost();
             for (CombatStack st2: friends) {
+                if(st2.inStasis)
+                    continue;
                 //ail: When we have brought colonizers to a battle and are not the colonizer ourselves, we ignore their lack of combat-power for our own retreat-decision. They can still retreat when they are too scared!
                 if(stack != st2 && st2.isShip() && st2.design().isColonyShip())
                     continue;
