@@ -151,14 +151,29 @@ public class NewShipTemplate implements Base {
         // lastKey is design with greatest damage
         return designSorter.get(designSorter.lastKey()); 
     }
+    
+    private void nameDesign(ShipDesigner ai, ShipDesign d)
+    {
+        String nameToUse = "";
+        if(!ai.empire().allColonizedSystems().isEmpty())
+            nameToUse = ai.empire().allColonizedSystems().get((int)random(ai.empire().allColonizedSystems().size())).name();
+        List<String> shipNames = ai.empire().race().shipNames(d.size());
+        nameToUse += " " + shipNames.get((int)random(shipNames.size()));
+        String Before = nameToUse;
+        int numeral = 2;
+        while(ai.lab().designNamed(nameToUse) != null)
+        {
+            nameToUse = Before + " " + numeral;
+            numeral++;
+        }
+        d.name(nameToUse);
+    }
 
     private ShipDesign newDesign(ShipDesigner ai, DesignType role, int size) {
         ShipDesign d = ai.lab().newBlankDesign(size);
         // name it first so we can use name for reference in debugging
-        d.name(ai.empire().race().randomSystemName(ai.empire()));
-        List<String> shipNames = ai.empire().race().shipNames(d.size());
-        d.name(d.name() +" "+shipNames.get((int)random(shipNames.size())));
         // engines are always the priority in MOO1 mechanics
+        nameDesign(ai, d);
         setFastestEngine(ai, d);
         // battle computers are always the priority in MOO1 mechanics
         setBestBattleComputer(ai, d); 
