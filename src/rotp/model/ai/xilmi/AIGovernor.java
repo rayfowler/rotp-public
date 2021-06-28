@@ -598,20 +598,15 @@ public class AIGovernor implements Base, Governor {
             if(fl.isArmed() && empire.enemies().contains(fl.empire()))
                 return 0;
         }
-        if (sv.borderSystem()) return .75f;
-
-        Planet p = sv.system().planet();
-        if (p.isResourceRich()) return .75f;
-        if (p.isResourceUltraRich()) return .75f;
-        if (p.isArtifact()) return .75f;
-        if (p.isOrionArtifact()) return .75f;
-        if (p.isEnvironmentHostile()) return .75f;
-        if (p.currentSize() <= 20) return .75f;
-
-        if (sv.supportSystem()) return .5f;
-        if (p.currentSize() <= 40) return .5f;
-
-        return .25f;
+        if(empire.generalAI().totalEmpirePopulationCapacity() > 0)
+        {
+            float tgtPercentage = empire.totalEmpirePopulation() / empire.generalAI().totalEmpirePopulationCapacity();
+            Planet p = sv.system().planet();
+            tgtPercentage *= p.productionAdj() * p.researchAdj();
+            tgtPercentage = min(0.9f, tgtPercentage);
+            return tgtPercentage;
+        }
+        return 0;
     }
     //
 // PRIVATE

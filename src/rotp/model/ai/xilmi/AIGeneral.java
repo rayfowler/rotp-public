@@ -46,6 +46,7 @@ public class AIGeneral implements Base, General {
     private float defenseRatio = -1;
     private float totalArmedFleetCost = -1;
     private int additionalColonizersToBuild = -1;
+    private float totalEmpirePopulationCapacity = -1;
 
     public AIGeneral (Empire c) {
         empire = c;
@@ -73,6 +74,7 @@ public class AIGeneral implements Base, General {
         defenseRatio = -1;
         additionalColonizersToBuild = -1;
         totalArmedFleetCost = -1;
+        totalEmpirePopulationCapacity = -1;
         
         //ail: slightly hacky way to prevent accidentally building stargates as it keeps happening
         if(empire.tech().canBuildStargate())
@@ -593,6 +595,22 @@ public class AIGeneral implements Base, General {
         //System.out.println(empire.name()+" best Victim: "+archEnemy+" score: "+highestScore);
         bestVictim = archEnemy;
         return bestVictim;
+    }
+    @Override
+    public float totalEmpirePopulationCapacity()
+    {
+        if(totalEmpirePopulationCapacity >= 0)
+            return totalEmpirePopulationCapacity;
+        for (int id=0;id<empire.sv.count();id++) 
+        {
+            StarSystem current = galaxy().system(id);
+            if(current.colony() == null)
+                continue;
+            if(current.empId() != empire.id)
+                continue;
+            totalEmpirePopulationCapacity += current.planet().currentSize();
+        }
+        return totalEmpirePopulationCapacity;
     }
     @Override
     public float defenseRatio()
