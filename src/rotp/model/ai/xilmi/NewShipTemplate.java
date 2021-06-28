@@ -37,6 +37,7 @@ import rotp.model.ships.ShipComputer;
 import rotp.model.ships.ShipDesign;
 import static rotp.model.ships.ShipDesign.maxSpecials;
 import static rotp.model.ships.ShipDesign.maxWeapons;
+import rotp.model.ships.ShipDesignLab;
 import rotp.model.ships.ShipECM;
 import rotp.model.ships.ShipManeuver;
 import rotp.model.ships.ShipShield;
@@ -494,6 +495,15 @@ public class NewShipTemplate implements Base {
             if(spec.allowsCloaking())
                 hasCloaking = true;
         }
+        int designsWithStasisField = 0;
+        for (int slot=0;slot<ShipDesignLab.MAX_DESIGNS;slot++) {
+            ShipDesign ourDesign = ai.lab().design(slot);
+            for (int j=0;j<maxSpecials();j++)
+            {
+                if(!ourDesign.special(j).isNone() && ourDesign.special(j).tech().isType(Tech.STASIS_FIELD) == true)
+                    designsWithStasisField++;
+            }
+        }
 
         for (ShipSpecial spec: allSpecials) {
             if(spec.isNone() || spec.isColonySpecial() || spec.isFuelRange())
@@ -606,7 +616,7 @@ public class NewShipTemplate implements Base {
             else if(tech.isType(Tech.STASIS_FIELD))
             {
                 currentScore = 500;
-                if(needRange && !hasCloaking)
+                if(needRange && !hasCloaking || designsWithStasisField > 1)
                     currentScore /= 10;
             }
             else if(tech.isType(Tech.STREAM_PROJECTOR))
