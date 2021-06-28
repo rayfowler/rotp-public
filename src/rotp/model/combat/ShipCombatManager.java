@@ -410,7 +410,7 @@ public class ShipCombatManager implements Base {
         // if they have nowhere to retreat, destroy them (don't show retreat animation in this case)
         List<CombatStack> activeStacks = new ArrayList<>(results.activeStacks());
         for (CombatStack st: activeStacks) {
-            if (st.inStasis && st.isShip() && (st.empire == results.attacker())) {
+            if (st.inStasis && st.isShip()) {
                 CombatStackShip sh = (CombatStackShip) st;
                 StarSystem dest = sh.empire.retreatSystem(system());
                 boolean prevShow = showAnimations;
@@ -751,11 +751,7 @@ public class ShipCombatManager implements Base {
             else if (st.isMonster())
                 combatableStacks.add(st);
             // attacking ships not in stasis count
-            else if (st.empire == results.attacker()) { 
-                if (!st.inStasis)
-                    combatableStacks.add(st);
-            }
-            else // add defending ships count
+            else if (!st.inStasis)
                 combatableStacks.add(st);
         }
         for (CombatStack stack1 : combatableStacks) {
