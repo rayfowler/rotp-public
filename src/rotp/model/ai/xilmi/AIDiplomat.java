@@ -1738,9 +1738,13 @@ public class AIDiplomat implements Base, Diplomat {
             for(Empire warEnemy : empire.warEnemies())
             {
                 EmpireView warView = empire.viewForEmpire(warEnemy);
-                TreatyWar war = (TreatyWar)warView.embassy().treaty();
-                if(war.date() > newestWarDate)
-                    newestWarDate = war.date();
+                //ail need to differentiate with final war as that one cannot be cast
+                if(warView.embassy().treaty().isWar())
+                {
+                    TreatyWar war = (TreatyWar)warView.embassy().treaty();
+                    if(war.date() > newestWarDate)
+                        newestWarDate = war.date();
+                }
             }
             if(treaty.date() < newestWarDate)
                 return true;
