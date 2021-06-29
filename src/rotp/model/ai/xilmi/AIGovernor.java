@@ -603,7 +603,16 @@ public class AIGovernor implements Base, Governor {
             float tgtPercentage = empire.totalEmpirePopulation() / empire.generalAI().totalEmpirePopulationCapacity();
             Planet p = sv.system().planet();
             tgtPercentage *= p.productionAdj() * p.researchAdj();
-            tgtPercentage = min(0.9f, tgtPercentage);
+            //Systems that are building colony-ships should keep their population
+            float factoryTgt = tgtPercentage;
+            if(sv.colony().shipyard().design() == empire.shipLab().colonyDesign() && sv.colony().shipyard().building())
+                if(sv.colony().industry().maxBuildableFactories() > 0)
+                    factoryTgt = (float) sv.colony().industry().factories() / (float) sv.colony().industry().maxBuildableFactories();
+            tgtPercentage = max(factoryTgt, tgtPercentage);
+            if(tgtPercentage <= 1)
+                tgtPercentage = min(0.9f, tgtPercentage);
+            else
+                tgtPercentage = 1;
             return tgtPercentage;
         }
         return 0;
