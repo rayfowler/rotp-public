@@ -92,8 +92,6 @@ public class AIGeneral implements Base, General {
                 Colony col = sys.colony();
                 float score = empire.ai().governor().productionScore(sys);
                 //System.out.println(empire.name()+" "+col.name()+" score: "+score);
-                if (score < 0.5f)
-                    continue;
                 if(col.shipyard().building())
                     continue;
                 if(score > highestScore)
