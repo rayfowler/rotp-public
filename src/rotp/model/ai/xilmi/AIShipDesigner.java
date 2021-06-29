@@ -189,6 +189,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
                     lab.scrapDesign(d);
                     //if we do this, we don't have to scrap the design with the lowest keepscore anymore because a slot is now free
                     shouldScrap = false;
+                    break;
                 }
                 else if(keepScore < lowestKeepScore)
                 {
