@@ -282,6 +282,7 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
         launchTime = galaxy().currentTime();
         setArrivalTime();
         makeInTransit();
+        sysId = StarSystem.NULL_ID;
     }
     public void arrive(StarSystem sys, boolean scan) {
         sysId = sys.id;
@@ -641,7 +642,7 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
     }
     public float travelTime(StarSystem dest, float speed) {
         if (inOrbit() || deployed()
-        || (isInTransit() && (travelPct() == 0))) {
+        || (isInTransit() && (travelPct() == 0 && system() != null))) {
             if (system().hasStargate(empire()) && dest.hasStargate(empire()))
                 return 1;
         }

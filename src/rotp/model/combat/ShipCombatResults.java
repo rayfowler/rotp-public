@@ -207,10 +207,8 @@ public final class ShipCombatResults implements Base {
             shipsRetreated.put(d, count);
     }
     public void refreshSystemScans() {
-        if (system.orbitingFleetForEmpire(attacker) != null)
-            attacker.sv.refreshFullScan(system.id);
-        if (system.orbitingFleetForEmpire(defender) != null)
-            defender.sv.refreshFullScan(system.id);
+        if (victor() != null)
+            victor().sv.refreshFullScan(system.id);
         if (colonyStack != null)
             colonyStack.empire.sv.refreshFullScan(system.id);
     }

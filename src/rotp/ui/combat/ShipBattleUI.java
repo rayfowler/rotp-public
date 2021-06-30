@@ -800,7 +800,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         }
 
         boolean friendly = currentStack.empire == target.empire;
-        boolean drawUpper = target.y > 5;
+        boolean drawUpper = target.y > 3;
         boolean drawLeft = target.reversed ? target.x > 6 : target.x > 2;
         int buttonRows = (actions.size()+1)/2;
         buttonH = s25;
@@ -2171,6 +2171,9 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             for (ShipActionButton butt: buttons) {
                 if (butt != this)
                     butt.clickAllAction(rightClick);
+                //ail: if we kill our target we must leave this loop, otherwise the next stack will continue here!
+                if (!mgr.currentStack().canFireWeaponAtTarget(ship))
+                    break;
             }
         }
     }

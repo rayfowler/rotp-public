@@ -29,8 +29,10 @@ public interface General {
     // specific to Xilmi AI
     default Empire bestVictim()               { return null; }
     default float defenseRatio()              { return 0.5f; }
+    default float totalEmpirePopulationCapacity() { return 0; }
     default int additionalColonizersToBuild(boolean returnPotentialUncolonizedInstead) { return 0; }
     default boolean allowedToBomb(Empire emp) { return true; }
+    default boolean strongEnoughToAttack() { return true; }
     default boolean isExpander() { return false; }
     default boolean isInvader() { return false; }
     default boolean isRusher() { return false; }
