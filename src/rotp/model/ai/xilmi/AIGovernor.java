@@ -239,7 +239,7 @@ public class AIGovernor implements Base, Governor {
         float workerProductivityForExistingFactories = 0;
         if(col.industry().factories() > col.maxUseableFactories())
             workerProductivityForExistingFactories = netFactoryProduction * empire.maxRobotControls();
-        float workerROI = empire.tech().populationCost() / (empire.workerProductivity());
+        float workerROI = empire.tech().populationCost() / empire.workerProductivity();
         float factoryROI = empire.tech().newFactoryCost(col.industry().robotControls()) / col.planet().productionAdj() / netFactoryProduction;
         if(col.industry().factories() > col.maxUseableFactories())
             factoryROI += workerROI;
@@ -297,7 +297,7 @@ public class AIGovernor implements Base, Governor {
         }
         float popLoss = enemyBombardPower / 200;
         // prod spending gets up to 100% of planet's remaining net prod
-        if((workerROI > factoryROI || col.industry().factories() < col.maxUseableFactories() + col.normalPopGrowth() * empire.maxRobotControls())
+        if((col.industry().factories() < col.maxUseableFactories() + col.normalPopGrowth() * empire.maxRobotControls())
             && enemyBombardPower == 0)
         {
             float prodCost = min(netProd, col.industry().maxSpendingNeeded(), factoriesNeeded * empire.tech().newFactoryCost(col.industry().robotControls()));
@@ -613,9 +613,6 @@ public class AIGovernor implements Base, Governor {
             tgtPercentage *= p.productionAdj() * p.researchAdj();
             //Systems that are building colony-ships should keep their population
             float factoryTgt = tgtPercentage;
-            if(sv.colony().shipyard().design() == empire.shipLab().colonyDesign() && sv.colony().shipyard().building())
-                if(sv.colony().industry().maxBuildableFactories() > 0)
-                    factoryTgt = (float) sv.colony().industry().factories() / (float) sv.colony().industry().maxBuildableFactories();
             tgtPercentage = max(factoryTgt, tgtPercentage);
             if(tgtPercentage <= 1)
                 tgtPercentage = min(0.9f, tgtPercentage);
