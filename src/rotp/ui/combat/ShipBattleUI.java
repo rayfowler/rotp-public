@@ -2168,11 +2168,12 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
                 return;
             }
             List<ShipActionButton> buttons = new ArrayList<>(shipActionButtons);
+            CombatStack stackAtClickTime = mgr.currentStack();
             for (ShipActionButton butt: buttons) {
                 if (butt != this)
                     butt.clickAllAction(rightClick);
-                //ail: if we kill our target we must leave this loop, otherwise the next stack will continue here!
-                if (!mgr.currentStack().canFireWeaponAtTarget(ship))
+                //ail: This should fix the issue that actions get carried over from one stack to the next
+                if (stackAtClickTime != mgr.currentStack())
                     break;
             }
         }
