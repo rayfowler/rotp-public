@@ -282,7 +282,6 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
         launchTime = galaxy().currentTime();
         setArrivalTime();
         makeInTransit();
-        sysId = StarSystem.NULL_ID;
     }
     public void arrive(StarSystem sys, boolean scan) {
         sysId = sys.id;
