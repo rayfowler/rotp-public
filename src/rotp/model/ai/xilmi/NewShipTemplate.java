@@ -84,7 +84,10 @@ public class NewShipTemplate implements Base {
     public static final int PREF_TECH_NULLIFIER = 26;
     public static final int PREF_BEAM_FOCUS = 27;
     
-
+    public static void nameShipDesign(ShipDesigner ai, ShipDesign d) {
+        instance.nameDesign(ai, d);
+    }
+    
     public static ShipDesign newFighterDesign(ShipDesigner ai) {
         return instance.bestDesign(ai, DesignType.FIGHTER);
     }
@@ -153,7 +156,7 @@ public class NewShipTemplate implements Base {
         return designSorter.get(designSorter.lastKey()); 
     }
     
-    private void nameDesign(ShipDesigner ai, ShipDesign d)
+    public void nameDesign(ShipDesigner ai, ShipDesign d)
     {
         String nameToUse = "";
         if(!ai.empire().allColonizedSystems().isEmpty())

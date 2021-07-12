@@ -540,9 +540,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         design.mission(ShipDesign.SCOUT);
         design.maxUnusedTurns(OBS_SCOUT_TURNS);
         //lab.nameDesign(design);
-        design.name(lab.fastestEngine().name());
-        List<String> shipNames = empire().race().shipNames(design.size());
-        design.name(design.name() +" "+shipNames.get((int)random(shipNames.size())));
+        NewShipTemplate.nameShipDesign(this, design);
         lab.iconifyDesign(design);
         return design;
     }
@@ -552,9 +550,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
     public ShipDesign newColonyDesign(boolean weaponNeeded, boolean extendedRangeNeeded) {
         ShipDesignLab lab = lab();
         ShipDesign design = lab.newBlankDesign(ShipDesign.LARGE);
-        design.name(bestColonySpecial().name().split(" ")[0]);
-        List<String> shipNames = empire().race().shipNames(design.size());
-        design.name(design.name() +" "+shipNames.get((int)random(shipNames.size())));
+        NewShipTemplate.nameShipDesign(this, design);
         design.special(0, bestColonySpecial());
         design.engine(lab.fastestEngine());
         design.mission(ShipDesign.COLONY);
