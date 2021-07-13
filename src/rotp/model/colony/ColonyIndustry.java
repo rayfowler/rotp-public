@@ -74,6 +74,14 @@ public class ColonyIndustry extends ColonySpendingCategory {
         newFactories = 0;
         previousFactories = 0;
     }
+    public float upgradeCost()
+    {
+        float upgradeCost = 0;
+        float factoriesToUpgrade = min(factories+newFactories, maxBuildableFactories(robotControls));
+        if (!empire().ignoresFactoryRefit())
+            upgradeCost = factoriesToUpgrade * tech().baseFactoryCost() / 2;
+        return upgradeCost;
+    }
     @Override
     public void nextTurn(float totalProd, float totalReserve) {
         if (factories < 0) // correct possible data issue
@@ -120,10 +128,7 @@ public class ColonyIndustry extends ColonySpendingCategory {
         // then incrementally upgrade factories to better robot controls
         while ((newBC > 0) && (robotControls < tech().baseRobotControls())) {
             // calculate cost to refit existing factories
-            float upgradeCost = 0;
-            float factoriesToUpgrade = min(factories+newFactories, maxBuildableFactories(robotControls));
-            if (!empire().ignoresFactoryRefit())
-                upgradeCost = factoriesToUpgrade * tech().baseFactoryCost() / 2;
+            float upgradeCost = upgradeCost();
             // not enough to upgrade? save off BC for next turn and exit
             if (upgradeCost > newBC) {
                 industryReserveBC = newBC;
