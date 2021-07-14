@@ -358,11 +358,6 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             return true;
         }
 
-        // if we are selecting a system that the selected fleet
-        // is orbiting, then consume the event but do nothing
-        if (adjustedFleet.system() == sys) 
-            return true;
-
         softClick();
         selectedDest(sys);
         adjustedFleet.use(o, parent.parent);
