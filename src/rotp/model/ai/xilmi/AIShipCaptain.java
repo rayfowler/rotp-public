@@ -229,6 +229,19 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 {
                     if(tgtBeforeClose != null && stack.movePointsTo(tgtBeforeClose) != DistanceToBeAt(stack, tgtBeforeClose))
                     {
+                        if(stack.canRetreat())
+                        {
+                            CombatStackShip shipStack = (CombatStackShip) stack;
+                            StarSystem dest = retreatSystem(shipStack.mgr.system());
+                            if (dest != null) {
+                                mgr.retreatStack(shipStack, dest);
+                                //System.out.print("\n"+stack.fullName()+" retreat because it didn't move.");
+                                return;
+                            }
+                        }
+                    }
+                    else
+                    {
                         if (stack.mgr.autoResolve) {
                             Point destPt = findSafestPoint(stack);
                             if (destPt != null)
