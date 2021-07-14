@@ -127,7 +127,17 @@ public class AIScientist implements Base, Scientist {
         //second I stop researching techs with too high of a discovery-chance
         for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
             //System.out.print("\n"+empire.name()+" "+empire.tech().category(j).id()+" "+discoveryChanceOfCategoryIfAllocationWasZero(j)+" > "+empire.tech().category(j).allocation());
-            if (discoveryChanceOfCategoryIfAllocationWasZero(j) > empire.tech().category(j).allocation())
+            Tech currentTechResearching = empire.tech().category(j).tech(empire.tech().category(j).currentTech());
+            boolean researchingSomethingWeDontReallyWant = false;
+            if(currentTechResearching != null)
+            {
+                if(researchPriority(currentTechResearching) == 0)
+                {
+                    researchingSomethingWeDontReallyWant = true;
+                    //System.out.print("\n"+empire.name()+" "+empire.tech().category(j).id()+" reduced because "+currentTechResearching.name()+" is either owned by someone else or not something we want.");
+                }
+            }
+            if (discoveryChanceOfCategoryIfAllocationWasZero(j) > empire.tech().category(j).allocation() || researchingSomethingWeDontReallyWant)
             {
                 leftOverAlloc+=empire.tech().category(j).allocation();
                 empire.tech().category(j).allocation(0);
@@ -137,8 +147,14 @@ public class AIScientist implements Base, Scientist {
         {
             boolean couldSpend = false;
             for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
+                Tech currentTechResearching = empire.tech().category(j).tech(empire.tech().category(j).currentTech());
+                boolean researchingSomethingWeDontReallyWant = false;
+                if(currentTechResearching != null)
+                    if(researchPriority(currentTechResearching) == 0)
+                        researchingSomethingWeDontReallyWant = true;
                 if (!empire.tech().category(j).possibleTechs().isEmpty()
-                        && discoveryChanceOfCategoryIfAllocationWasZero(j) <= empire.tech().category(j).allocation())
+                        && discoveryChanceOfCategoryIfAllocationWasZero(j) <= empire.tech().category(j).allocation()
+                        && !researchingSomethingWeDontReallyWant)
                 {
                     empire.tech().category(j).adjustAllocation(1);
                     leftOverAlloc--;
@@ -404,28 +420,30 @@ public class AIScientist implements Base, Scientist {
 
         // return highest priority
         cat.currentTech(techs.get(0));
+        //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+cat.id()+": "+cat.currentTechName()+" "+researchPriority(techs.get(0)));
     }
     //
     //  RESEARCH VALUES for various types of tech
     //
     @Override
     public float researchPriority(Tech t) {
-        float researchValue = researchValue(t);
-        if(researchValue > 1)
+        for(EmpireView ev : empire.contacts())
         {
-            for(EmpireView ev : empire.contacts())
+            if(!ev.inEconomicRange())
+                continue;
+            if(!galaxy().options().canTradeTechs(empire, ev.empire()))
+                continue;
+            if(ev.empire().race().internalSecurityAdj() > empire.race().spyInfiltrationAdj())
+                continue;
+            if(t.isType(Tech.ENGINE_WARP))
+                continue;
+            //If we can steal it or trade for it, we don't want to research it ourselves
+            if(ev.spies().unknownTechs().contains(t))
             {
-                if(!ev.inEconomicRange())
-                    continue;
-                //If we can steal it or trade for it, we don't want to research it ourselves
-                if(ev.spies().unknownTechs().contains(t))
-                {
-                    researchValue = 1;
-                    break;
-                }
+                return 0;
             }
         }
-        return researchValue;
+        return max(researchValue(t), 1);
     }
     @Override
     public float researchValue(Tech t) {
@@ -502,14 +520,7 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechAutomatedRepair t) {
-        TechAutomatedRepair curr = empire.tech().topAutomatedRepairTech();
-        float val = 0;
-        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
-        if(curr != null && t != best)
-            val -= curr.level();
-        val += t.level();
-        val /= 2;
-        return val;
+        return 1;
     }
     @Override
     public float baseValue(TechBattleComputer t) {
@@ -539,25 +550,11 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechBiologicalAntidote t) {
-        TechBiologicalAntidote curr = empire.tech().topBiologicalAntidoteTech();
-        float val = 0;
-        if(curr != null)
-            val -= curr.level();
-        val += t.level();
-        val /= 10;
-        val = max(1, val);
-        return val;
+        return 1;
     }
     @Override
     public float baseValue(TechBiologicalWeapon t) {
-        TechBiologicalWeapon curr = empire.tech().topBiologicalWeaponTech();
-        float val = 0;
-        if(curr != null)
-            val -= curr.level();
-        val += t.level();
-        val /= 10;
-        val = max(1, val);
-        return val;
+        return 1;
     }
     @Override
     public float baseValue(TechBlackHole t) {
@@ -572,7 +569,7 @@ public class AIScientist implements Base, Scientist {
         Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
         if(curr != null && t != best)
             val -= curr.level();
-        val += t.level();
+        val += (t.quintile() - 1) * 5 + t.quintile() * 5 - t.level() + 1;
         return val;
     }
     @Override
@@ -583,19 +580,11 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechCloning t) {
-        TechCloning curr = empire.tech().topCloningTech();
-        float val = 0;
-        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
-        if(curr != null && t != best)
-            val -= curr.level();
-        val += t.level();
-        return val;
+        return t.level();
     }
     @Override
     public float baseValue(TechCombatTransporter t) {
-        float val = 0;
-        val += t.level();
-        return val;
+        return t.level();
     }
     @Override
     public float baseValue(TechControlEnvironment t) {
@@ -630,18 +619,11 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechDisplacement t) {
-        return t.level() / 2;
+        return 1;
     }
     @Override
     public float baseValue(TechECMJammer t) {
-        TechECMJammer curr = empire.tech().topECMJammerTech();
-        float val = 0;
-        if(curr != null)
-            val -= curr.level();
-        val += t.level();
-        val /= 10;
-        val = max(1, val);
-        return val;
+        return 1;
     }
     @Override
     public float baseValue(TechEcoRestoration t) {
@@ -657,32 +639,18 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechEngineWarp t) {
-        TechEngineWarp curr = empire.tech().topEngineWarpTech();
-        float val = 0;
-        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
-        if(curr != null && t != best)
-            val -= sqrt(curr.level());
-        val += t.level();
-        return val;
+        return t.level();
     }
     @Override
     public float baseValue(TechEnergyPulsar t) {
-        TechEnergyPulsar curr = empire.tech().topEnergyPulsarTech();
-        float val = 0;
-        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
-        if(curr != null && t != best)
-            val -= curr.level();
-        val += t.level();
-        val /= 10;
-        val = max(1, val);
-        return val;
+        return 1;
     }
     @Override
     public float baseValue(TechFuelRange t) {
         TechFuelRange curr = empire.tech().topFuelRangeTech();
         float val = 0;
         Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
-        if(curr != null && t != best)
+        if(curr != null && t != best && !empire.fleetCommanderAI().inExpansionMode())
             val -= curr.level();
         val += t.level();
         if(empire.fleetCommanderAI().inExpansionMode())
@@ -722,7 +690,7 @@ public class AIScientist implements Base, Scientist {
         Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
         if(curr != null && t != best)
             val -= curr.level();
-        val += t.level();
+        val += (t.quintile() - 1) * 5 + t.quintile() * 5 - t.level() + 1;
         return val;
     }
     @Override
@@ -763,15 +731,7 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechMissileShield t) {
-        TechMissileShield curr = empire.tech().topMissileShieldTech();
-        float val = 0;
-        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
-        if(curr != null && t != best)
-            val -= curr.level();
-        val += t.level();
-        val /= 10.0f;
-        val = max(1, val);
-        return val;
+        return 1;
     }
     @Override
     public float baseValue(TechMissileWeapon t) {
@@ -780,7 +740,7 @@ public class AIScientist implements Base, Scientist {
         Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
         if(curr != null && t != best)
             val -= curr.level();
-        val += t.level();
+        val += (t.quintile() - 1) * 5 + t.quintile() * 5 - t.level() + 1;
         val /= 2.0f;
         return val;
     }
@@ -808,7 +768,6 @@ public class AIScientist implements Base, Scientist {
     public float baseValue(TechRepulsor t) {
         float val = 0;
         val += t.level();
-        val /= 2;
         return val;
     }
     @Override
@@ -823,25 +782,17 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechScanner t) {
-        return t.level() / 2;
+        return 1;
     }
     @Override
     public float baseValue(TechShipInertial t) {
-        TechShipInertial curr = empire.tech().topShipInertialTech();
         float val = 0;
-        Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
-        if(curr != null && t != best)
-            val -= curr.level();
         val += t.level();
-        val /= 2;
         return val;
     }
     @Override
     public float baseValue(TechShipNullifier t) {
-        float val = 0;
-        val += t.level();
-        val /= 2;
-        return val;
+        return 1;
     }
     @Override
     public float baseValue(TechShipWeapon t) {
@@ -850,7 +801,7 @@ public class AIScientist implements Base, Scientist {
         Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
         if(curr != null && t != best)
             val -= curr.level();
-        val += t.level();
+        val += (t.quintile() - 1) * 5 + t.quintile() * 5 - t.level() + 1;
         return val;
     }
     @Override
@@ -918,7 +869,7 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechTorpedoWeapon t) {
-        return t.level() / 2;
+        return 1;
     }
     private float discoveryChanceOfCategoryIfAllocationWasZero(int category)
     {
