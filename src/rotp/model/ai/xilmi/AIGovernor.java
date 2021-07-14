@@ -236,11 +236,12 @@ public class AIGovernor implements Base, Governor {
         float netFactoryProduction = 1;
         if(!empire.ignoresPlanetEnvironment())
             netFactoryProduction -= empire.tech().factoryWasteMod() / empire.tech().wasteElimination();
-        float workerProductivityForExistingFactories = 0;
-        if(col.industry().factories() > col.maxUseableFactories())
-            workerProductivityForExistingFactories = netFactoryProduction * empire.maxRobotControls();
         float workerROI = empire.tech().populationCost() / empire.workerProductivity();
         float factoryROI = empire.tech().newFactoryCost(col.industry().robotControls()) / col.planet().productionAdj() / netFactoryProduction;
+        if(col.industry().factories() > 0)
+            factoryROI = (empire.tech().newFactoryCost(col.industry().robotControls()) + col.industry().upgradeCost() / col.industry().factories()) / col.planet().productionAdj() / netFactoryProduction;
+        float warROI = empire.generalAI().warROI();
+        float techROI = min(workerROI, factoryROI);
         if(col.industry().factories() > col.maxUseableFactories())
             factoryROI += workerROI;
         float popGrowthROI = Float.MAX_VALUE;
@@ -250,10 +251,11 @@ public class AIGovernor implements Base, Governor {
         float prodScore = productionScore(col.starSystem());
         float factoriesNeeded = max(0, col.maxUseableFactories() + col.normalPopGrowth() * empire.maxRobotControls() - col.industry().factories());
         float workerGoal = max(0, col.industry().factories() / empire.maxRobotControls() - col.workingPopulation() - col.normalPopGrowth());
-        if(popGrowthROI > workerROI)
+        if(min(popGrowthROI, warROI) > workerROI)
             workerGoal = col.maxSize() - col.workingPopulation();
 
         //System.out.print("\n"+empire.name()+" "+col.name()+" workerROI: "+workerROI+" popGrowthROI: "+popGrowthROI+" factoryROI: "+factoryROI+" prodScore: "+prodScore+" factoriesNeeded: "+factoriesNeeded);
+        //System.out.print("\n"+empire.name()+" "+col.name()+" workerROI: "+workerROI+" popGrowthROI: "+popGrowthROI+" factoryROI: "+factoryROI+" warROI: "+warROI);
         
         suggestMissileBaseCount(col);
         col.clearSpending();
@@ -298,7 +300,8 @@ public class AIGovernor implements Base, Governor {
         float popLoss = enemyBombardPower / 200;
         // prod spending gets up to 100% of planet's remaining net prod
         if((col.industry().factories() < col.maxUseableFactories() + col.normalPopGrowth() * empire.maxRobotControls())
-            && enemyBombardPower == 0)
+            && enemyBombardPower == 0
+            && factoryROI < warROI)
         {
             float prodCost = min(netProd, col.industry().maxSpendingNeeded(), factoriesNeeded * empire.tech().newFactoryCost(col.industry().robotControls()));
             col.pct(INDUSTRY, prodCost/totalProd);
@@ -465,6 +468,8 @@ public class AIGovernor implements Base, Governor {
             
             if(!techsLeft)
                 maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
+            if(warROI < techROI)
+                maxShipMaintainance = 0.9f;
             //System.out.print("\n"+empire.name()+" "+col.name()+" adjMaxMaint: "+maxShipMaintainance+" baseMaxMaint: "+maxShipMaintainanceBeforeAdj+" NonEnemyBc: "+highestNonEnemyBc+" enemyBc: "+totalEnemyBc+" myBC: "+myFleetBc);
             if(fighterDamage == 0)
             {

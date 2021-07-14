@@ -38,4 +38,5 @@ public interface General {
     default boolean isRusher() { return false; }
     default boolean isSpy() { return false; }
     default boolean isTrader() { return false; }
+    default float warROI() { return Float.MAX_VALUE; }
 }

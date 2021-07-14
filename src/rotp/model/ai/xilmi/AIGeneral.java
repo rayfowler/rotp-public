@@ -32,6 +32,8 @@ import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipDesignLab;
+import rotp.model.ships.ShipWeapon;
+import rotp.model.tech.TechBombWeapon;
 import rotp.util.Base;
 
 public class AIGeneral implements Base, General {
@@ -47,6 +49,7 @@ public class AIGeneral implements Base, General {
     private float totalArmedFleetCost = -1;
     private int additionalColonizersToBuild = -1;
     private float totalEmpirePopulationCapacity = -1;
+    private float warROI = -1;
 
     public AIGeneral (Empire c) {
         empire = c;
@@ -75,6 +78,7 @@ public class AIGeneral implements Base, General {
         additionalColonizersToBuild = -1;
         totalArmedFleetCost = -1;
         totalEmpirePopulationCapacity = -1;
+        warROI = -1;
         
         //ail: slightly hacky way to prevent accidentally building stargates as it keeps happening
         if(empire.tech().canBuildStargate())
@@ -542,6 +546,62 @@ public class AIGeneral implements Base, General {
             }
         }
     }
+    public float timeToKill(Empire attacker, Empire defender)
+    {
+        float avgFleetDistance = 0;
+        float fleetDistanceCounts = 0;
+        float avgProductionDistance = 0;
+        float productionDistanceCounts = 0;
+        for(StarSystem theirs: defender.allColonizedSystems())
+        {
+            for(ShipFleet fleet: attacker.allFleets())
+            {
+                avgFleetDistance += fleet.travelTimeTo(theirs, fleet.slowestStackSpeed()) * fleet.bcValue();
+                fleetDistanceCounts += fleet.bcValue();
+            }
+            for(StarSystem mine: attacker.allColonizedSystems())
+            {
+                avgProductionDistance += mine.travelTimeTo(theirs, attacker.tech().topSpeed()) * mine.colony().totalIncome() * mine.planet().productionAdj();
+                productionDistanceCounts += mine.colony().totalIncome() * mine.planet().productionAdj();
+            }
+        }
+        if(fleetDistanceCounts > 0)
+            avgFleetDistance /= fleetDistanceCounts;
+        if(productionDistanceCounts > 0)
+            avgProductionDistance /= productionDistanceCounts;
+        avgFleetDistance *= 2;
+        avgProductionDistance *= 2;
+        float averageDamagerPerBc = 0;
+        TechBombWeapon bomb = attacker.tech().topBombWeaponTech();
+        averageDamagerPerBc = (max(0, bomb.damageLow() - defender.tech().maxPlanetaryShieldLevel()) + max(0, bomb.damageHigh() - defender.tech().maxPlanetaryShieldLevel())) / 2;
+        averageDamagerPerBc /= bomb.cost * bomb.costMiniaturization(attacker) * 4;
+        
+        float killTime = Float.MAX_VALUE;
+        if(avgFleetDistance == 0)
+            avgFleetDistance = Float.MAX_VALUE;
+        if(avgProductionDistance == 0)
+            avgProductionDistance = Float.MAX_VALUE;
+        float ProductionTurnsForKillInOneTurn = Float.MAX_VALUE;
+        if(averageDamagerPerBc > 0)
+        {
+            killTime = defender.totalPlanetaryPopulation() * 200 / (attacker.totalFleetCost() * averageDamagerPerBc) + avgFleetDistance;
+            ProductionTurnsForKillInOneTurn = defender.totalPlanetaryPopulation() * 200 / (attacker.totalPlanetaryProduction() * 2 * averageDamagerPerBc) + avgProductionDistance;
+        }
+
+        //System.out.println(attacker.name()+" vs. "+defender.name()+" fleets: "+avgFleetDistance+" planets: "+avgProductionDistance+" avgDpBC: "+averageDamagerPerBc+" killtime: "+killTime+" prodTime: "+ProductionTurnsForKillInOneTurn);
+        return min(killTime, ProductionTurnsForKillInOneTurn);
+    }
+    @Override
+    public float warROI() {
+        if(warROI > -1)
+            return warROI;
+        warROI = Float.MAX_VALUE;
+        for(Empire enemy : empire.enemies())
+        {
+            warROI = min(warROI, timeToKill(enemy, empire));
+        }
+        return warROI;
+    }
     @Override
     public Empire bestVictim() {
         if(bestVictim != null)
@@ -565,32 +625,28 @@ public class AIGeneral implements Base, General {
                 continue;
             }
             EmpireView ev = empire.viewForEmpire(emp);
-            float currentScore = 0;
-            
-            float supportingPower = 0;
+            float ourKillTime = timeToKill(empire, emp);
+            float theirKillTime = timeToKill(emp, empire);
             for(Empire empContact : emp.contactedEmpires())
             {
+                if(empContact == empire)
+                    continue;
                 if(empContact.warEnemies().contains(emp))
-                    supportingPower += empContact.powerLevel(empContact) / empContact.warEnemies().size();
-                else if(empContact.warEnemies().isEmpty() && empContact != empire)
-                    supportingPower += empContact.powerLevel(empContact) / 2;
+                    theirKillTime += timeToKill(emp, empContact) / empContact.warEnemies().size();
+                else if(empContact.allies().contains(emp))
+                    ourKillTime += timeToKill(empire, empContact) / empContact.warEnemies().size();
             }
-            
-            currentScore = emp.numColonizedSystems() / emp.powerLevel(emp);
-            currentScore *= (emp.powerLevel(emp) + supportingPower) / emp.powerLevel(emp);
-                    
-            //currentScore *= relationshipFactor;
-            //System.out.println(empire.name()+" => "+emp.name()+" score: "+currentScore+" systems: "+emp.numColonizedSystems()+" powermod: "+(emp.powerLevel(emp) + supportingPower) / emp.powerLevel(emp));
+            float currentScore = (theirKillTime / empire.allColonizedSystems().size()) / (ourKillTime / emp.allColonizedSystems().size());
             //ail: drastically reduce score for those I have a NAP as nap-breaking makes others mad
             if(empire.pactWith(emp.id))
                 currentScore /= 3;
+            //System.out.println(empire.name()+" => "+emp.name()+" score: "+currentScore+" we vs. them: "+ourKillTime+" they vs. us: "+theirKillTime);
             if(currentScore > highestScore)
             {
                 highestScore = currentScore;
                 archEnemy = emp;
             }
         }
-        //System.out.println(empire.name()+" best Victim: "+archEnemy+" score: "+highestScore);
         bestVictim = archEnemy;
         return bestVictim;
     }
