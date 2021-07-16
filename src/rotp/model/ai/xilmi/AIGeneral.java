@@ -596,10 +596,12 @@ public class AIGeneral implements Base, General {
         if(warROI > -1)
             return warROI;
         warROI = Float.MAX_VALUE;
+        float totalTime = 0;
         for(Empire enemy : empire.enemies())
         {
-            warROI = min(warROI, timeToKill(enemy, empire));
+            totalTime += 1 / timeToKill(enemy, empire);
         }
+        warROI = 1 / totalTime;
         return warROI;
     }
     @Override
@@ -627,16 +629,8 @@ public class AIGeneral implements Base, General {
             EmpireView ev = empire.viewForEmpire(emp);
             float ourKillTime = timeToKill(empire, emp);
             float theirKillTime = timeToKill(emp, empire);
-            for(Empire empContact : emp.contactedEmpires())
-            {
-                if(empContact == empire)
-                    continue;
-                if(empContact.warEnemies().contains(emp))
-                    theirKillTime += timeToKill(emp, empContact) / empContact.warEnemies().size();
-                else if(empContact.allies().contains(emp))
-                    ourKillTime += timeToKill(empire, empContact) / empContact.warEnemies().size();
-            }
-            float currentScore = (theirKillTime / empire.allColonizedSystems().size()) / (ourKillTime / emp.allColonizedSystems().size());
+            //float currentScore = (theirKillTime / empire.allColonizedSystems().size()) / (ourKillTime / emp.allColonizedSystems().size());
+            float currentScore = theirKillTime / ourKillTime;
             //ail: drastically reduce score for those I have a NAP as nap-breaking makes others mad
             if(empire.pactWith(emp.id))
                 currentScore /= 3;
@@ -720,6 +714,7 @@ public class AIGeneral implements Base, General {
         int additional = 0;
         int colonizerRange = empire.shipLab().colonyDesign().range();
         int requiredSpecial = 0;
+        List<StarSystem> alreadyCounted = new ArrayList<>();
         for(StarSystem sys : empire.uncolonizedPlanetsInRange(colonizerRange))
         {
             if(sys.colony() != null)
@@ -727,13 +722,27 @@ public class AIGeneral implements Base, General {
                 continue;
             }
             if(sys.monster() == null)
+            {
                 additional++;
+                alreadyCounted.add(sys);
+            }
+        }
+        for(StarSystem sys : empire.unexploredSystems())
+        {
+            if(empire.sv.isColonized(sys.id))
+                continue;
+            if(empire.sv.distance(sys.id) > colonizerRange)
+                continue;
+            if(sys.monster() != null)
+                continue;
+            additional++;
+            //System.out.print("\n"+empire.name()+" "+sys.name()+" counted as uncolonized.");
+            alreadyCounted.add(sys);
         }
         //System.out.print("\n"+empire.name()+" "+additional+" from uncolonized scouted without en-route.");
         //ail: when we have huge colonizer, don't count the unlocks for how many we need since we don't want to spam them like normal one's
         if(empire.shipLab().colonyDesign().size() < 3)
         {
-            List<StarSystem> alreadyCounted = new ArrayList<>();
             for(ShipFleet fleet:empire.allFleets())
             {
                 if(!fleet.hasColonyShip())
