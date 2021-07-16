@@ -241,7 +241,7 @@ public class AIGovernor implements Base, Governor {
         if(col.industry().factories() > 0)
             factoryROI = (empire.tech().newFactoryCost(col.industry().robotControls()) + col.industry().upgradeCost() / col.industry().factories()) / col.planet().productionAdj() / netFactoryProduction;
         float warROI = empire.generalAI().warROI();
-        float techROI = min(workerROI, factoryROI);
+        float techROI = min(workerROI, factoryROI) * col.planet().productionAdj() / col.planet().researchAdj();
         if(col.industry().factories() > col.maxUseableFactories())
             factoryROI += workerROI;
         float popGrowthROI = Float.MAX_VALUE;
@@ -253,9 +253,11 @@ public class AIGovernor implements Base, Governor {
         float workerGoal = max(0, col.industry().factories() / empire.maxRobotControls() - col.workingPopulation() - col.normalPopGrowth());
         if(min(popGrowthROI, warROI) > workerROI)
             workerGoal = col.maxSize() - col.workingPopulation();
+        
+        workerGoal -= empire.transportsInTransit(col.starSystem());
 
         //System.out.print("\n"+empire.name()+" "+col.name()+" workerROI: "+workerROI+" popGrowthROI: "+popGrowthROI+" factoryROI: "+factoryROI+" prodScore: "+prodScore+" factoriesNeeded: "+factoriesNeeded);
-        //System.out.print("\n"+empire.name()+" "+col.name()+" workerROI: "+workerROI+" popGrowthROI: "+popGrowthROI+" factoryROI: "+factoryROI+" warROI: "+warROI);
+        //System.out.print("\n"+empire.name()+" "+col.name()+" workerROI: "+workerROI+" popGrowthROI: "+popGrowthROI+" factoryROI: "+factoryROI+" warROI: "+warROI+" techROI: "+techROI);
         
         suggestMissileBaseCount(col);
         col.clearSpending();
@@ -333,8 +335,8 @@ public class AIGovernor implements Base, Governor {
                 if(d.hasColonySpecial())
                     shipPct = totalProd;
             }
-            col.pct(SHIP, shipPct - totalAlloc);
-            //System.out.println("\n"+empire.name()+" "+col.name()+" shipPct: "+shipPct+" shipCost-A: "+shipCost+" maxShipBC: "+maxShipBC+" col.shipyard().maxSpendingNeeded(): "+col.shipyard().maxSpendingNeeded()+" shipTurns: "+shipTurns+" totalProd: "+totalProd);
+            col.pct(SHIP, shipPct);
+            //System.out.println("\n"+empire.name()+" "+col.name()+" shipPct: "+shipPct+" shipCost-A: "+shipCost+" maxShipBC: "+maxShipBC+" col.shipyard().maxSpendingNeeded(): "+col.shipyard().maxSpendingNeeded()+" totalProd: "+totalProd+" totalAlloc: "+totalAlloc);
             shipCost = col.pct(SHIP) * totalProd;
             //System.out.println("\n"+empire.name()+" "+col.name()+" shipPct: "+shipPct+" col.pct(SHIP): "+col.pct(SHIP)+" col.pct(ECOLOGY): "+col.pct(ECOLOGY)+" shipCost-B: "+shipCost+" maxShipBC: "+maxShipBC+" shipTurns: "+shipTurns+" totalProd: "+totalProd);
         }
@@ -432,6 +434,7 @@ public class AIGovernor implements Base, Governor {
         {
             viableForShipProduction = false;
         }
+        //System.out.print("\n"+empire.name()+" "+col.name()+" col.allocation(SHIP): "+col.allocation(SHIP));
         if(col.allocation(SHIP) == 0 && viableForShipProduction)
         {
             //System.out.print("\n"+empire.name()+" "+col.name()+" production-score "+productionScore(col.starSystem()));
