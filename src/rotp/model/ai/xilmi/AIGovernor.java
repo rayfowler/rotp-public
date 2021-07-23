@@ -609,6 +609,9 @@ public class AIGovernor implements Base, Governor {
     @Override
     public float targetPopPct(int sysId) {
         SystemView sv = empire.sv.view(sysId);
+        //too risky during war
+        if(!empire.warEnemies().isEmpty())
+            return 0;
         for(ShipFleet fl : sv.system().orbitingFleets())
         {
             if(fl.isArmed() && empire.enemies().contains(fl.empire()))
