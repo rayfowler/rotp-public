@@ -480,7 +480,9 @@ public class AIFleetCommander implements Base, FleetCommander {
                 //we only reduce the attractiveness of the system, if it isn't about to become a new colony of ours
                 if((!fleet.canColonizeSystem(current) && myTransports == 0 && !colonizerEnroute) || colonizationBonus == 0)
                     score *= Math.max(1 - (bombardDamage / current.colony().untargetedHitPoints()), 0.0f);
-            }
+            } 
+            else if(bombardDamage > 0 && fleet.system() == current)
+                score = 0; //score will be 0 and the amount of ships that stay there will be handled via keepBC
             if(enemyBc + baseBc > 0 && fleet.system() != current)
             {
                 score *= Math.min((fleet.bcValue()) / (enemyBc + baseBc), 2.0f);
@@ -733,6 +735,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                     boolean allowBombers = true;
                     boolean allowColonizers = true;
                     float sendAmount = 1.0f;
+                    float keepAmount = 0.0f;
                     boolean onlyBomberTargets = false;
                     boolean onlyColonizerTargets = false;
                     boolean targetIsGatherPoint = false;
@@ -741,8 +744,32 @@ public class AIFleetCommander implements Base, FleetCommander {
                         onlyBomberTargets = true;
                     if(fleet.numFighters() == 0 && fleet.numBombers() == 0)
                         onlyColonizerTargets = true;
-
+                    
                     StarSystem target = findBestTarget(fleet, onlyBomberTargets, onlyColonizerTargets);
+                    if(empire.enemies().contains(fleet.system().empire()))
+                    {
+                        float requiredBombardDamage = fleet.system().population() * 200;
+                        if(empire.transportsInTransit(fleet.system()) > 0)
+                        {
+                            requiredBombardDamage *= 0.9f;
+                        }
+                        float expectedBombardDamage = fleet.expectedBombardDamage();
+                        boolean canInvade = empire.canColonize(fleet.system().planet().type());
+                        //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" raw keepAmount: "+requiredBombardDamage / expectedBombardDamage);
+                        if(expectedBombardDamage > 0 && canInvade)
+                            keepAmount = min(1, requiredBombardDamage / expectedBombardDamage);
+                        else if(canInvade)
+                            keepAmount = 0;
+                        else
+                            keepAmount = 1;
+                        if(target == null)
+                            keepAmount = 1;
+                    }
+                    
+                    //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" keep: "+keepAmount);
+                    if(keepAmount >= 1)
+                        break;
+
                     if(target == null)
                     {
                         if(onlyColonizerTargets == false && fleet.hasColonyShip())
@@ -761,7 +788,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                         if(targetIsGatherPoint)
                         {
                             target = smartPath(fleet, target);
-                            attackWithFleet(fleet, target, 1.0f, false, true, true, true, keepBc, true);
+                            attackWithFleet(fleet, target, sendAmount - keepAmount, false, true, true, true, keepBc, true);
                             break;
                         }
                         StarSystem stagingPoint = null;
@@ -780,7 +807,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                             stagingPoint = smartPath(fleet, stagingPoint);
                             if(fleet.canSendTo(stagingPoint.id))
                             {
-                                attackWithFleet(fleet, stagingPoint, sendAmount, false, allowFighters, allowBombers, allowColonizers, keepBc, true);
+                                attackWithFleet(fleet, stagingPoint, sendAmount - keepAmount, false, allowFighters, allowBombers, allowColonizers, keepBc, true);
                             }
                             canStillSend = false;
                         }
@@ -843,7 +870,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                                             }
                                             else
                                             {
-                                                keepBc = (empire.enemyTransportsInTransit(target) * empire.maxRobotControls() + enemyBC) * 2;
+                                                keepBc = max(keepBc, (empire.enemyTransportsInTransit(target) * empire.maxRobotControls() + enemyBC) * 2);
                                                 //ail: no need to keep a fleet if we'll have to retreat anyways
                                                 if(enemyBC > ourEffectiveBC)
                                                     keepBc = 0;
@@ -851,16 +878,16 @@ public class AIFleetCommander implements Base, FleetCommander {
                                                 continue;
                                             }
                                         }
-                                        sendAmount = min(1.0f, (empire.enemyTransportsInTransit(target) * empire.maxRobotControls() + enemyBC) * 2 / (ourEffectiveBC));
+                                        sendAmount = min(1.0f - keepAmount, (empire.enemyTransportsInTransit(target) * empire.maxRobotControls() + enemyBC) * 2 / (ourEffectiveBC));
                                     }
                                     else
                                     {
-                                        sendAmount = 1.0f;
+                                        sendAmount = 1.0f - keepAmount;
                                     }
                                     if (target.hasEvent()) {
                                         if (target.eventKey().equals("MAIN_PLANET_EVENT_PIRACY")
                                                 || target.eventKey().equals("MAIN_PLANET_EVENT_COMET")) {
-                                            sendAmount = 1.0f;
+                                            sendAmount = 1.0f - keepAmount;
                                         }
                                     }
                                 }
@@ -886,11 +913,11 @@ public class AIFleetCommander implements Base, FleetCommander {
                                                 BonusPerSystem = 200 * empire.totalPlanetaryPopulation() / empire.allColonizedSystems().size();
                                             locationBonus = BonusPerSystem * systemInfoBuffer.get(target.id).additionalSystemsInRangeWhenColonized;
                                         }
-                                        sendAmount = min(1.0f, (locationBonus + target.colony().untargetedHitPoints()) / fleet.expectedBombardDamage(target));
+                                        sendAmount = min(1.0f - keepAmount, (locationBonus + target.colony().untargetedHitPoints()) / fleet.expectedBombardDamage(target));
                                     }
                                     else
                                     {
-                                        sendAmount = 1.0f;
+                                        sendAmount = 1.0f - keepAmount;
                                     }
                                 }
                             }
@@ -933,9 +960,9 @@ public class AIFleetCommander implements Base, FleetCommander {
                                 }
                                 //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" thinks "+target.name()+" has "+enemyBCWithBonus+" defenders to be dealt with.");
                                 if(ourEffectiveBC > 0)
-                                    sendAmount = max(sendAmount, min(1.0f, enemyBCWithBonus*(targetTech+10.0f)*2.0f / (ourEffectiveBC *(civTech+10.0f))));
+                                    sendAmount = max(sendAmount, min(1.0f - keepAmount, enemyBCWithBonus*(targetTech+10.0f)*2.0f / (ourEffectiveBC *(civTech+10.0f))));
                                 if(ourEffectiveBombBC > 0)
-                                    sendAmount = max(sendAmount, min(1.0f, enemyBaseBCWithBonus*(targetTech+10.0f)*2.0f / (ourEffectiveBombBC *(civTech+10.0f))));
+                                    sendAmount = max(sendAmount, min(1.0f - keepAmount, enemyBaseBCWithBonus*(targetTech+10.0f)*2.0f / (ourEffectiveBombBC *(civTech+10.0f))));
                             }
                             else
                             {
@@ -1027,6 +1054,8 @@ public class AIFleetCommander implements Base, FleetCommander {
     
     public void attackWithFleet(ShipFleet fl, StarSystem target, float amount, boolean includeScouts, boolean includeFighters, boolean includeBombers, boolean includeColonizer, float needToKeep, boolean splitBySpeed)
     {
+        /*if(fl.system() != null)
+            System.out.print("\n"+empire.name()+" fleet at "+fl.system().name()+" sent to "+target.name()+" amount: "+amount);*/
         if(fl.system() == target)
             return;
         ShipDesignLab lab = empire.shipLab();
@@ -1108,7 +1137,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                         systemInfoBuffer.get(fl.destination().id).myBc -= counts[i] * d.cost();
                         systemInfoBuffer.get(fl.destination().id).myBombardDamage -= counts[i] * designBombardDamage(d, fl.destination());
                         if(d.hasColonySpecial())
-                            systemInfoBuffer.get(target.id).colonizersEnroute++;
+                            systemInfoBuffer.get(target.id).colonizersEnroute--;
                     }
                 }
             }
