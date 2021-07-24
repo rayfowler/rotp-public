@@ -255,7 +255,20 @@ public class AIGovernor implements Base, Governor {
             workerGoal = col.maxSize() - col.workingPopulation();
         
         workerGoal -= empire.transportsInTransit(col.starSystem());
-
+        
+        //float colShipTime = empire.shipLab().colonyDesign().cost() / (col.totalIncome() - col.minimumCleanupCost()) / col.planet().productionAdj();
+        
+        boolean buildingColonyShip = false;
+        //Mostly for Sakkra and Meklar, so they expand quicker when they can 72% pop is where the growth drops below 80%
+        if(col.shipyard().building() 
+                && col.shipyard().design() == empire.shipLab().colonyDesign()
+                && col.populationPct() > 0.72)
+        {
+            workerGoal = 0;
+            buildingColonyShip = true;
+        }
+        
+        //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+col.name()+" popGrowthROI: "+popGrowthROI+" colship-time: "+colShipTime);
         //System.out.print("\n"+empire.name()+" "+col.name()+" workerROI: "+workerROI+" popGrowthROI: "+popGrowthROI+" factoryROI: "+factoryROI+" prodScore: "+prodScore+" factoriesNeeded: "+factoriesNeeded);
         //System.out.print("\n"+empire.name()+" "+col.name()+" workerROI: "+workerROI+" popGrowthROI: "+popGrowthROI+" factoryROI: "+factoryROI+" warROI: "+warROI+" techROI: "+techROI);
         
@@ -303,7 +316,8 @@ public class AIGovernor implements Base, Governor {
         // prod spending gets up to 100% of planet's remaining net prod
         if((col.industry().factories() < col.maxUseableFactories() + col.normalPopGrowth() * empire.maxRobotControls())
             && enemyBombardPower == 0
-            && factoryROI < warROI)
+            && factoryROI < warROI
+            && !buildingColonyShip)
         {
             float prodCost = min(netProd, col.industry().maxSpendingNeeded(), factoriesNeeded * empire.tech().newFactoryCost(col.industry().robotControls()));
             col.pct(INDUSTRY, prodCost/totalProd);
@@ -611,7 +625,13 @@ public class AIGovernor implements Base, Governor {
         SystemView sv = empire.sv.view(sysId);
         //too risky during war
         if(!empire.warEnemies().isEmpty())
-            return 0;
+        {
+            for(Empire warEnemy : empire.warEnemies())
+            {
+                if(warEnemy.sv.inShipRange(sysId))
+                    return 0;
+            }
+        }
         for(ShipFleet fl : sv.system().orbitingFleets())
         {
             if(fl.isArmed() && empire.enemies().contains(fl.empire()))
