@@ -1419,8 +1419,6 @@ public class AIDiplomat implements Base, Diplomat {
             }
             if(countedColonies > 0)
                 developmentPct /= countedColonies;
-            float helpingPower = 0.0f;
-            float enemyAllyPower = 0.0f;
             float highestKnownOpponentTechLevel = 1;
             for(EmpireView ev : empire.contacts())
             {
@@ -1430,58 +1428,14 @@ public class AIDiplomat implements Base, Diplomat {
                 if(emp.tech().avgTechLevel() > highestKnownOpponentTechLevel)
                     highestKnownOpponentTechLevel = emp.tech().avgTechLevel();
             }
-            float superiorityThreshold = max(0, 2 - developmentPct * empire.tech().avgTechLevel() / highestKnownOpponentTechLevel);
-            superiorityThreshold += galaxy().options().baseAIRelationsAdj() / 30.0;
-
-            /*if(empire.generalAI().isSpy())
-            {
-                SpyNetwork spies = v.spies();
-                if(!spies.possibleTechs().isEmpty() && v.trade().active())
-                    warAllowed = false;
-            }
-            if(empire.generalAI().isTrader())
-            {
-                if(v.owner().totalPlanetaryProduction() <= v.empire().totalPlanetaryProduction() && v.trade().active())
-                    warAllowed = false;
-            }
-            if(empire.generalAI().isRusher())
-                superiorityThreshold = 0;
-            for(Empire emp : bestVictim.warEnemies())
-            {
-                helpingPower += emp.powerLevel(emp);
-            }
-            for(Empire emp : bestVictim.allies())
-            {
-                enemyAllyPower += emp.powerLevel(emp);
-            }
-            float potentialBackstabberPower = 0;
-            for(Empire contact : empire.contactedEmpires())
-            {
-                if(contact == v.empire())
-                    continue;
-                if(contact.inShipRange(empire.id) && contact.warEnemies().isEmpty() && !contact.inShipRange(v.empId()))
-                    potentialBackstabberPower += contact.powerLevel(contact);
-            }
-            if(potentialBackstabberPower > empire.powerLevel(empire) && !empire.generalAI().isRusher())
-                warAllowed = false;*/
-            
-            //new experimental code
-            
             if(saveAgainstPotentialBackstabs())
                 warAllowed = true;
-          
             if(developmentPct < 0.75f)
                 warAllowed = false;
-            
-            //System.out.println(galaxy().currentTurn()+" "+ empire.name()+" vs: "+bestVictim.name()+" war allowed: "+warAllowed+" we vs. them: "+empire.generalAI().timeToKill(empire, bestVictim)+" enemies vs. us: "+killSpeedOfAllPotentialEnemies+" RCB: "+reachableBy+" DEV: "+developmentPct);
-            //System.out.println(empire.name()+" col: "+empire.generalAI().additionalColonizersToBuild(true)+" devPct: "+developmentPct+" allied: "+empire.alliedWith(bestVictim.id));
-            //System.out.println(empire.name()+" bestVictim: "+bestVictim+" power: "+empire.powerLevel(empire) + helpingPower+" vs. "+(bestVictim.powerLevel(bestVictim) + enemyAllyPower) + " Threshold: "+superiorityThreshold +" War Allowed: "+warAllowed);
-            //System.out.println(empire.name()+" bestVictim: "+bestVictim+" potentialBackstabberPower: "+potentialBackstabberPower + " my Power: "+empire.powerLevel(empire));
-            if(warAllowed /*&&
-                    empire.powerLevel(empire) + helpingPower > (bestVictim.powerLevel(bestVictim) + enemyAllyPower) * superiorityThreshold*/)
-            {
+            if(empire.generalAI().additionalColonizersToBuild(true) > 0)
+                warAllowed = false;
+            if(warAllowed)
                 return true;
-            }
         }
         return false;
     }
