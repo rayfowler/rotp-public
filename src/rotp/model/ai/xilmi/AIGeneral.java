@@ -776,7 +776,16 @@ public class AIGeneral implements Base, General {
         }
         if(returnPotentialUncolonizedInstead)
             return additional;
-        additional = max(additional, empire.numColonies() / 5);
+        boolean knowSomeoneAtWar = false;
+        for(EmpireView contact : empire.contacts())
+        {
+            if(!empire.inShipRange(contact.empId()))
+                continue;
+            if(!contact.empire().warEnemies().isEmpty())
+                knowSomeoneAtWar = true;
+        }
+        if(knowSomeoneAtWar)
+            additional = max(additional, empire.numColonies() / 5);
         //System.out.println("\n"+empire.name()+" required colonizers: "+additional);
         int[] counts = galaxy().ships.shipDesignCounts(empire.id);
         for (int i=0;i<counts.length;i++) 
