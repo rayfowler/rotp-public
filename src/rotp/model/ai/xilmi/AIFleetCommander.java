@@ -272,7 +272,9 @@ public class AIFleetCommander implements Base, FleetCommander {
                 currentScore += scoreToAdd;
             }
             //distance to our fleet also plays a role but it's importance is heavily scince we are at peace and have time to travel
-            currentScore /=  sqrt(fleet.travelTime(current) + mySystemsInShipRange.size());
+            currentScore /=  sqrt(fleet.distanceTo(current) / fleet.slowestStackSpeed() + mySystemsInShipRange.size());
+            if(current.inNebula())
+                currentScore /= fleet.slowestStackSpeed();
             //System.out.print("\n"+fleet.empire().name()+" "+empire.sv.name(fleet.system().id)+" score to gather at: "+empire.sv.name(current.id)+" score: "+currentScore);
             if(currentScore > bestScore)
             {
@@ -440,7 +442,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                         handleEvent = true;
                     }
                 }
-                if(current.colony() != null && enemyBombardDamage > current.colony().untargetedHitPoints() && fleet.travelTime(current) > 1)
+                if(current.colony() != null && enemyBombardDamage > current.colony().untargetedHitPoints() && fleet.distanceTo(current) / fleet.slowestStackSpeed() > 1)
                 {
                     score = 1.0f;
                 }
@@ -504,7 +506,11 @@ public class AIFleetCommander implements Base, FleetCommander {
             if(fleet.canColonizeSystem(current) && empire.shipLab().colonyDesign().size() > 2)
                 ignoreTravelTime = true;
             if(!ignoreTravelTime)
-                score /= fleet.travelTime(current) + 1;
+            {
+                score /= fleet.distanceTo(current) / fleet.slowestStackSpeed() + 1;
+                if(current.inNebula())
+                    score /= fleet.slowestStackSpeed();
+            }
             //System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" => "+empire.sv.name(current.id)+" score: "+score);
             if(score > bestScore)
             {
