@@ -186,40 +186,77 @@ public class NewShipTemplate implements Base {
         Race race = ai.empire().dataRace();
         float enemyMissilePercentage = 0.0f;
         //ail: looking at the stats of our enemies
-        Empire bestVictim = ai.empire().generalAI().bestVictim();
-        if(bestVictim != null)
+        boolean needRange = false;
+        boolean boostInertial = false;
+        float topSpeed = 0;
+        float avgECM = 0;
+        float avgSHD = 0;
+        float longRangePct = 0;
+        float totalCost = 0;
+        float nonMissileTotal = 0.0f;
+        float missileTotal = 0.0f;
+        
+        for(EmpireView ev : ai.empire().contacts())
         {
-            float nonMissileTotal = 0.0f;
-            float missileTotal = 0.0f;
-            for(ShipView enemyDesign : bestVictim.shipLab().designHistory())
+            for(ShipDesign enemyDesign : ev.empire().shipLab().designs())
             {
-                if(enemyDesign.design().scrapped())
+                if(enemyDesign.scrapped())
                 {
                     continue;
+                }
+                boolean isLongRange = false;
+                if(enemyDesign.repulsorRange() > 0)
+                {
+                    needRange = true;
+                }
+                for (int j=0;j<maxSpecials();j++)
+                {
+                    if(enemyDesign.special(j).createsBlackHole())
+                        boostInertial = true;
+                    if(enemyDesign.special(j).beamRangeBonus() > 0)
+                        isLongRange = true;
+                    if(enemyDesign.special(j).allowsCloaking())
+                        isLongRange = true;
                 }
                 for (int i=0; i<maxWeapons(); i++)
                 {
                     ShipWeapon weapon = enemyDesign.weapon(i);
                     if(weapon == null)
                         continue;
+                    if(weapon.range() > 1)
+                        isLongRange = true;
                     if(weapon.isMissileWeapon())
                     {
-                        missileTotal = weapon.cost() * enemyDesign.wpnCount(i);
+                        missileTotal += weapon.cost() * enemyDesign.wpnCount(i);
                     }
                     else
                     {
-                        nonMissileTotal = weapon.cost() * enemyDesign.wpnCount(i);
+                        nonMissileTotal += weapon.cost() * enemyDesign.wpnCount(i);
                     }
                 }
+                if(enemyDesign.combatSpeed() > topSpeed)
+                    topSpeed = enemyDesign.combatSpeed();
+                float count = ev.empire().shipDesignCount(enemyDesign.id());
+                avgECM += enemyDesign.ecm().level() * enemyDesign.cost() * count;
+                avgSHD += enemyDesign.shieldLevel() * enemyDesign.cost() * count;
+                if(isLongRange)
+                    longRangePct += enemyDesign.cost() * count;
+                totalCost += enemyDesign.cost() * count;
             }
-            if(missileTotal+nonMissileTotal > 0)
+            if(ev.empire().shipMaintCostPerBC()+ev.empire().missileBaseCostPerBC() > 0)
             {
-                enemyMissilePercentage = missileTotal / (missileTotal + nonMissileTotal);
+                enemyMissilePercentage = max((enemyMissilePercentage * ev.empire().shipMaintCostPerBC() + ev.empire().missileBaseCostPerBC()) / (ev.empire().shipMaintCostPerBC() + ev.empire().missileBaseCostPerBC()), enemyMissilePercentage);
             }
-            if(bestVictim.shipMaintCostPerBC()+bestVictim.missileBaseCostPerBC() > 0)
-            {
-                enemyMissilePercentage = (enemyMissilePercentage * bestVictim.shipMaintCostPerBC() + bestVictim.missileBaseCostPerBC()) / (bestVictim.shipMaintCostPerBC() + bestVictim.missileBaseCostPerBC());
-            }
+        }
+        if(totalCost > 0)
+        {
+            longRangePct /= totalCost;
+            avgECM /= totalCost;
+            avgSHD /= totalCost;
+        }
+        if(missileTotal+nonMissileTotal > 0)
+        {
+            enemyMissilePercentage = max(enemyMissilePercentage, missileTotal / (missileTotal + nonMissileTotal));
         }
 
         // initial separation of the free space left onto weapons and non-weapons/specials
@@ -255,62 +292,6 @@ public class NewShipTemplate implements Base {
         // specials will be skipped for smaller hulls in the early game, bringing a bit more allowance to the second fitting
         //ArrayList<ShipSpecial> specials;
         SortedMap<Float, ShipSpecial> specials;
-        
-        boolean needRange = false;
-        boolean boostInertial = false;
-        float topSpeed = 0;
-        float avgECM = 0;
-        float avgSHD = 0;
-        float longRangePct = 0;
-        float totalCost = 0;
-        
-        for(EmpireView ev : ai.empire().contacts())
-        {
-            for(ShipDesign enemyDesign : ev.empire().shipLab().designs())
-            {
-                if(enemyDesign.scrapped())
-                {
-                    continue;
-                }
-                boolean isLongRange = false;
-                if(enemyDesign.repulsorRange() > 0)
-                {
-                    needRange = true;
-                }
-                for (int j=0;j<maxSpecials();j++)
-                {
-                    if(enemyDesign.special(j).createsBlackHole())
-                        boostInertial = true;
-                    if(enemyDesign.special(j).beamRangeBonus() > 0)
-                        isLongRange = true;
-                    if(enemyDesign.special(j).allowsCloaking())
-                        isLongRange = true;
-                }
-                for (int i=0; i<maxWeapons(); i++)
-                {
-                    ShipWeapon weapon = enemyDesign.weapon(i);
-                    if(weapon == null)
-                        continue;
-                    if(weapon.range() > 1)
-                        isLongRange = true;
-                }
-                if(enemyDesign.combatSpeed() > topSpeed)
-                    topSpeed = enemyDesign.combatSpeed();
-                float count = ev.empire().shipDesignCount(enemyDesign.id());
-                avgECM += enemyDesign.ecm().level() * enemyDesign.cost() * count;
-                avgSHD += enemyDesign.shieldLevel() * enemyDesign.cost() * count;
-                if(isLongRange)
-                    longRangePct += enemyDesign.cost() * count;
-                totalCost += enemyDesign.cost() * count;
-            }
-        }
-        if(totalCost > 0)
-        {
-            longRangePct /= totalCost;
-            avgECM /= totalCost;
-            avgSHD /= totalCost;
-        }
-        
         //System.out.print("\n"+ai.empire().name()+" "+d.name()+" avgSHD: "+avgSHD+" avgECM: "+avgECM);
         
         switch (role) {
