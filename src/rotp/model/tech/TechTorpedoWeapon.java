@@ -125,6 +125,8 @@ public final class TechTorpedoWeapon extends Tech {
     public boolean isMissileBaseWeapon()  { return false; }
     public float range()   { return 0; }
     @Override
+    public float baseValue(Empire c) { return c.ai().scientist().baseValue(this); }
+    @Override
     public boolean providesShipComponent()  { return true; }
     @Override
     public boolean isObsolete(Empire c) {

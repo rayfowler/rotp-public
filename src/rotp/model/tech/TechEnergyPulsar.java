@@ -76,9 +76,7 @@ public final class TechEnergyPulsar extends Tech {
         return (c.tech().topEnergyPulsarTech() != null) && (level < c.tech().topEnergyPulsarTech().level);
     }
     @Override
-    public float baseValue(Empire c) {
-        return c.tech().topEnergyPulsarTech() == null ? level : level - c.tech().topEnergyPulsarTech().level;
-    }
+    public float baseValue(Empire c) { return c.ai().scientist().baseValue(this); }
     @Override
     public void provideBenefits(Empire c) {
         super.provideBenefits(c);

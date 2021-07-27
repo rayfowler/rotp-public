@@ -113,7 +113,9 @@ public final class ShipCombatResults implements Base {
             bc += (factoriesDestroyed() * e.tech().baseFactoryCost());
             bc += (popDestroyed() * (e.tech().populationCost()+e.workerProductivity()));
         }
-        float prod = e.totalPlanetaryProduction();
+        float prod = 0;
+        if(e != null)
+            prod = e.totalPlanetaryProduction();
         return prod <= 0 ? 1.0f : min(1.0f, bc / prod);
     }
     public ShipCombatResults(ShipCombatManager mgr, StarSystem s, Empire emp1, Empire emp2) {
@@ -207,10 +209,8 @@ public final class ShipCombatResults implements Base {
             shipsRetreated.put(d, count);
     }
     public void refreshSystemScans() {
-        if (system.orbitingFleetForEmpire(attacker) != null)
-            attacker.sv.refreshFullScan(system.id);
-        if (system.orbitingFleetForEmpire(defender) != null)
-            defender.sv.refreshFullScan(system.id);
+        if (victor() != null)
+            victor().sv.refreshFullScan(system.id);
         if (colonyStack != null)
             colonyStack.empire.sv.refreshFullScan(system.id);
     }

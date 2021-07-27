@@ -205,7 +205,7 @@ public class CombatStackShip extends CombatStack {
             else if (wpn.isMissileWeapon()) 
                 // missiles move by distance, not tiles, so adjust minimum range downward by sqrt(2)
                 // to account for diagonal movement
-                missileRange = (int) max(tgt.repulsorRange() + 1, missileRange, ((weaponRange(wpn)/1.414f)-maxRetreatMove));
+                missileRange = (int) max(tgt.repulsorRange() + 1, repulsorRange() + 1, missileRange, ((weaponRange(wpn)/1.414f)-maxRetreatMove));
             else
                 weaponRange = max(weaponRange,weaponRange(wpn));
         }
@@ -445,13 +445,13 @@ public class CombatStackShip extends CombatStack {
                 //ail: take attack and defense into account
                 float hitPct = 1.0f;
                 if(comp.isBeamWeapon())
-                    hitPct = (5 + attackLevel - target.beamDefense) / 10;
+                    hitPct = (5 + attackLevel - target.beamDefense()) / 10;
                 if(comp.isMissileWeapon())
-                    hitPct = (5 + attackLevel - target.missileDefense) / 10;
+                    hitPct = (5 + attackLevel - target.missileDefense()) / 10;
                 hitPct = max(.05f, hitPct);
                 hitPct = min(hitPct, 1.0f);
                 //ail: we totally have to consider the weapon-count too!
-                kills += hitPct * comp.estimatedKills(this, target, weaponCount[i] * num * roundsRemaining[i]);
+                kills += hitPct * comp.estimatedKills(this, target, weaponCount[i] * num);
             }
         }
         return kills;

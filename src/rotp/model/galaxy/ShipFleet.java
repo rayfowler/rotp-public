@@ -641,7 +641,7 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
     }
     public float travelTime(StarSystem dest, float speed) {
         if (inOrbit() || deployed()
-        || (isInTransit() && (travelPct() == 0))) {
+        || (isInTransit() && (travelPct() == 0 && system() != null))) {
             if (system().hasStargate(empire()) && dest.hasStargate(empire()))
                 return 1;
         }

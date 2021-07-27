@@ -29,6 +29,7 @@ import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.planet.Planet;
 import rotp.model.planet.PlanetType;
+import rotp.ui.main.MainUI;
 import rotp.util.Base;
 
 public class SystemView implements IMappedObject, Base, Serializable {
@@ -436,6 +437,16 @@ public class SystemView implements IMappedObject, Base, Serializable {
             return false;
         if (scouted() && system().hasEvent())
             return true;
+        if(system().empire() == player())
+        {
+            for (ShipFleet fl: orbitingFleets()) {
+                if (fl.isPotentiallyArmed(player())) {
+                    if (player().atWarWith(fl.empId())) { 
+                        return true;
+                    }  
+                }
+            }
+        }
         return (scouted() && isColonized() && colony().inRebellion());
     }
     public String descriptiveName() {

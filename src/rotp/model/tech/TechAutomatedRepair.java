@@ -51,9 +51,7 @@ public final class TechAutomatedRepair extends Tech {
     @Override
     public boolean providesShipComponent()  { return true; }
     @Override
-    public float baseValue(Empire c) {
-        return c.tech().topAutomatedRepairTech() == null ? level : level - c.tech().topAutomatedRepairTech().level;
-    }
+    public float baseValue(Empire c)   { return c.ai().scientist().baseValue(this); }
     @Override
     public boolean isObsolete(Empire c) {
         return repairAdj < c.tech().shipDamageRepairPct();

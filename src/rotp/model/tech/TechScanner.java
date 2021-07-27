@@ -77,6 +77,8 @@ public final class TechScanner extends Tech {
         return (shipRange < c.shipScanningRange()) && (planetRange < c.planetScanningRange());
     }
     @Override
+    public float baseValue(Empire c) { return c.ai().scientist().baseValue(this); }
+    @Override
     public void provideBenefits(Empire c) {
         super.provideBenefits(c);
         c.shipScanningRange(max(c.shipScanningRange(), shipRange));

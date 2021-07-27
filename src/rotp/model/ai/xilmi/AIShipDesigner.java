@@ -15,11 +15,13 @@
  */
 package rotp.model.ai.xilmi;
 
+import java.util.Arrays;
 import java.util.List;
 import rotp.model.ai.interfaces.ShipDesigner;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.galaxy.ShipFleet;
+import rotp.model.galaxy.Ships;
 import rotp.model.galaxy.StarSystem;
 import static rotp.model.game.IGameOptions.RESEARCH_SLOW;
 import static rotp.model.game.IGameOptions.RESEARCH_SLOWER;
@@ -32,6 +34,7 @@ import rotp.model.ships.ShipDesignLab;
 import rotp.model.ships.ShipSpecial;
 import rotp.model.ships.ShipSpecialColony;
 import rotp.model.ships.ShipWeapon;
+import rotp.model.tech.Tech;
 import rotp.util.Base;
 
 public class AIShipDesigner implements Base, ShipDesigner {
@@ -100,9 +103,12 @@ public class AIShipDesigner implements Base, ShipDesigner {
         return bestDesign;
     }
     private void countdownObsoleteDesigns() {
+        Ships ships = galaxy().ships;
+        int pid = empire.id;
         if(((empire.shipMaintCostPerBC() > (empire.fleetCommanderAI().maxShipMaintainance() * 1.5) && empire.enemies().isEmpty() && !empire.fleetCommanderAI().inExpansionMode()))
                 || empire.netIncome() <= 0)
         {
+            //System.out.print("\n"+empire.name()+" scrapWorstDesign max-maint: "+empire.fleetCommanderAI().maxShipMaintainance());
             scrapWorstDesign(empire.netIncome() <= 0);
         }
     }
@@ -183,6 +189,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
                     lab.scrapDesign(d);
                     //if we do this, we don't have to scrap the design with the lowest keepscore anymore because a slot is now free
                     shouldScrap = false;
+                    break;
                 }
                 else if(keepScore < lowestKeepScore)
                 {
@@ -271,11 +278,14 @@ public class AIShipDesigner implements Base, ShipDesigner {
         // recalculate current design's damage vs. current targets
         ShipDesign currDesign = lab.bomberDesign();
         
+        // check for an available slot for the new design
+        int slot = lab.availableDesignSlot();
+        
         // if we don't have any faster engines
         if (currDesign.engine() == lab.fastestEngine() && currDesign.active()) {
             // and if the design has less than 10% free space or has less than 25/50/75/100 free space, we assume the redesign has no sense
             // 25/50/75/100 may be a too straight-line set of values
-            if ((currDesign.availableSpace()/(currDesign.totalSpace()) < 0.1f)) {
+            if ((currDesign.availableSpace()/(currDesign.totalSpace()) < 0.1f) && slot < 0) {
                 // we're fairly certain AI packed the ship before and if the current modules haven't shrinked enough,
                 // that means we don't have enough new tech to make the new design markedly better            
                 currDesign.remainingLife++;
@@ -289,18 +299,39 @@ public class AIShipDesigner implements Base, ShipDesigner {
         // find best hypothetical design vs current targets
         ShipDesign newDesign = newBomberDesign(currDesign.size());
 
-        if (currDesign.matchesDesign(newDesign, false) && currDesign.active())
-        {
-            return;
-        }
-
         // WE HAVE BOMBERS IN USE... VERIFY THIS UPGRADE JUSTIFIES SWITCHING OVER
         boolean betterEngine = (newDesign.engine().warp() > currDesign.engine().warp());
         boolean betterArmor = (newDesign.armor().sequence() > currDesign.armor().sequence());
-
-        // check for an available slot for the new design
-        int slot = lab.availableDesignSlot();
+        boolean betterSpecial = false;
+        boolean oldHasCloaking = false;
+        boolean newHasCloaking = false;
+        boolean oldHasStasis = false;
+        boolean newHasStasis = false;
+        boolean oldHasBHG = false;
+        boolean newHasBHG = false;
         
+        for (int i=0;i<maxSpecials();i++) {
+            if(currDesign.special(i).allowsCloaking() == true)
+                oldHasCloaking = true; 
+            if(newDesign.special(i).allowsCloaking() == true)
+                newHasCloaking = true;
+            if(!currDesign.special(i).isNone() && currDesign.special(i).tech().isType(Tech.STASIS_FIELD) == true)
+                oldHasStasis = true;
+            if(!newDesign.special(i).isNone() && newDesign.special(i).tech().isType(Tech.STASIS_FIELD) == true)
+                newHasStasis = true;
+            if(currDesign.special(i).createsBlackHole())
+                oldHasBHG = true;
+            if(newDesign.special(i).createsBlackHole())
+                newHasBHG = true;
+        }
+        
+        if(!oldHasCloaking && newHasCloaking)
+            betterSpecial = true;
+        if(!oldHasStasis && newHasStasis)
+            betterSpecial = true;
+        if(!oldHasBHG && newHasBHG)
+            betterSpecial = true;
+
         // switch to new design when damage is floatd
         // more willing to upgrade when not at war
         float upgradeThreshold = empire.atWar() ? 1.5f : 1.25f;
@@ -331,7 +362,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         
         //System.out.print("\n"+galaxy().currentYear()+" "+empire.name()+" Bomber upgrade "+currDesign.name()+" val: "+upgradeChance+" DPBC: "+newDPBC / currentDPBC+" better-Engine: "+betterEngine+" betterArmor: "+betterArmor);
         
-        if (!betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) && currDesign.active() )
+        if (slot < 0 && !betterSpecial && !betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) && currDesign.active() )
             return;
         
         //System.out.print("\n"+empire.name()+" designed new bomber which is "+upgradeChance+" better and should go to slot: "+slot);
@@ -345,11 +376,15 @@ public class AIShipDesigner implements Base, ShipDesigner {
         }
         else
         {
-            //if there is no slot available I push the old one to obsolete so a new slot will be freed up soon
-            currDesign.becomeObsolete(OBS_BOMBER_TURNS);
-            scrapWorstDesign(false);
-            slot = lab.availableDesignSlot();
-            lab.setBomberDesign(newDesign, slot);
+            //with no free slots, we don't obsolete a design that is similar to an existing one
+            if(!currDesign.matchesDesign(newDesign))
+            {
+                //if there is no slot available I push the old one to obsolete so a new slot will be freed up soon
+                currDesign.becomeObsolete(OBS_BOMBER_TURNS);
+                scrapWorstDesign(false);
+                slot = lab.availableDesignSlot();
+                lab.setBomberDesign(newDesign, slot);
+            }
         }
     }
     public void updateFighterDesign() {
@@ -381,10 +416,13 @@ public class AIShipDesigner implements Base, ShipDesigner {
             if(currDesign.weapon(j).range() > 1)
                 needRange = false;
         
+        // check for an available slot for the new design
+        int slot = lab.availableDesignSlot();
+        
         if (currDesign.engine() == lab.fastestEngine() && currDesign.active() && !needRange) {
             // and if the design has less than 10% free space or has less than 25/50/75/100 free space, we assume the redesign has no sense
             // 25/50/75/100 may be a too straight-line set of values
-            if ((currDesign.availableSpace()/(currDesign.totalSpace()) < 0.1f)) {
+            if ((currDesign.availableSpace()/(currDesign.totalSpace()) < 0.1f) && slot < 0) {
                 // we're fairly certain AI packed the ship before and if the current modules haven't shrinked enough,
                 // that means we don't have enough new tech to make the new design markedly better
                 currDesign.remainingLife++;
@@ -397,20 +435,41 @@ public class AIShipDesigner implements Base, ShipDesigner {
         // find best hypothetical design vs current targets
         ShipDesign newDesign = newFighterDesign(currDesign.size());
       
-        if (currDesign.matchesDesign(newDesign, false) && currDesign.active())
-        {
-            return;
-        }
-
         // WE HAVE FIGHTERS IN USE... VERIFY THIS UPGRADE JUSTIFIES SWITCHING OVER
 
         // factor in speed improvements when determining if new design is better
         // i.e. wrp 5, 100 dmg is better than wrp 3, 120 dmg
         boolean betterEngine = (newDesign.engine().warp() > currDesign.engine().warp());
         boolean betterArmor = (newDesign.armor().sequence() > currDesign.armor().sequence());
+        boolean betterSpecial = false;
+        boolean oldHasCloaking = false;
+        boolean newHasCloaking = false;
+        boolean oldHasStasis = false;
+        boolean newHasStasis = false;
+        boolean oldHasBHG = false;
+        boolean newHasBHG = false;
 
-        // check for an available slot for the new design
-        int slot = lab.availableDesignSlot();
+        for (int i=0;i<maxSpecials();i++) {
+            if(currDesign.special(i).allowsCloaking() == true)
+                oldHasCloaking = true; 
+            if(newDesign.special(i).allowsCloaking() == true)
+                newHasCloaking = true;
+            if(!currDesign.special(i).isNone() && currDesign.special(i).tech().isType(Tech.STASIS_FIELD) == true)
+                oldHasStasis = true;
+            if(!newDesign.special(i).isNone() && newDesign.special(i).tech().isType(Tech.STASIS_FIELD) == true)
+                newHasStasis = true;
+            if(currDesign.special(i).createsBlackHole())
+                oldHasBHG = true;
+            if(newDesign.special(i).createsBlackHole())
+                newHasBHG = true;
+        }
+        
+        if(!oldHasCloaking && newHasCloaking)
+            betterSpecial = true;
+        if(!oldHasStasis && newHasStasis)
+            betterSpecial = true;
+        if(!oldHasBHG && newHasBHG)
+            betterSpecial = true;
         
         // switch to new design when damage is floatd
         // more willing to upgrade when not at war
@@ -439,7 +498,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         //System.out.print("\n"+galaxy().currentYear()+" "+empire.name()+" Fighter upgrade "+currDesign.name()+" val: "+upgradeChance+" DPBC: "+newDPBC / currentDPBC+" better-Engine: "+betterEngine+" betterArmor: "+betterArmor);
         
         //System.out.print("\n"+empire.name()+" designed new fighter which is "+upgradeChance+" better and should go to slot: "+slot);
-        if (!betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) && !needRange && currDesign.active())
+        if (slot < 0 && !betterSpecial && !betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) && !needRange && currDesign.active())
             return;
 
         // if there is a slot available, use it for the new design
@@ -451,10 +510,13 @@ public class AIShipDesigner implements Base, ShipDesigner {
         }
         else
         {
-            currDesign.becomeObsolete(OBS_FIGHTER_TURNS);
-            scrapWorstDesign(false);
-            slot = lab.availableDesignSlot();
-            lab.setFighterDesign(newDesign, slot);
+            if(!currDesign.matchesDesign(newDesign))
+            {
+                currDesign.becomeObsolete(OBS_FIGHTER_TURNS);
+                scrapWorstDesign(false);
+                slot = lab.availableDesignSlot();
+                lab.setFighterDesign(newDesign, slot);
+            }
         }
     }
     public void updateDestroyerDesign() {
@@ -477,7 +539,8 @@ public class AIShipDesigner implements Base, ShipDesigner {
         design.setSmallestSize();
         design.mission(ShipDesign.SCOUT);
         design.maxUnusedTurns(OBS_SCOUT_TURNS);
-        lab.nameDesign(design);
+        //lab.nameDesign(design);
+        NewShipTemplate.nameShipDesign(this, design);
         lab.iconifyDesign(design);
         return design;
     }
@@ -487,7 +550,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
     public ShipDesign newColonyDesign(boolean weaponNeeded, boolean extendedRangeNeeded) {
         ShipDesignLab lab = lab();
         ShipDesign design = lab.newBlankDesign(ShipDesign.LARGE);
-        lab.nameDesign(design);
+        NewShipTemplate.nameShipDesign(this, design);
         design.special(0, bestColonySpecial());
         design.engine(lab.fastestEngine());
         design.mission(ShipDesign.COLONY);

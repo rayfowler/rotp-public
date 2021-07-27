@@ -61,6 +61,8 @@ public final class TechRepulsor extends Tech {
     @Override
     public boolean providesShipComponent()  { return true; }
     @Override
+    public float baseValue(Empire c) { return c.ai().scientist().baseValue(this); }
+    @Override
     public void provideBenefits(Empire c) {
         super.provideBenefits(c);
         ShipSpecialRepulsor sh = new ShipSpecialRepulsor(this);
