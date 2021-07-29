@@ -35,6 +35,7 @@ import rotp.model.ships.ShipSpecial;
 import rotp.model.ships.ShipSpecialColony;
 import rotp.model.ships.ShipWeapon;
 import rotp.model.tech.Tech;
+import rotp.model.tech.TechStargate;
 import rotp.util.Base;
 
 public class AIShipDesigner implements Base, ShipDesigner {
@@ -64,6 +65,9 @@ public class AIShipDesigner implements Base, ShipDesigner {
             shipCounts = galaxy().ships.shipDesignCounts(empire.id);
             // designs are updated in a specific order in order to prioritize
             // use of empty design slots
+            //ail: slightly hacky way to prevent accidentally building stargates as it keeps happening
+            if(empire.tech().canBuildStargate())
+                empire.tech().canBuildStargate(false);
             updateFighterDesign();
             updateDestroyerDesign();
             updateBomberDesign();
