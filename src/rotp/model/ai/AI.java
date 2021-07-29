@@ -144,7 +144,7 @@ public class AI implements Base {
     }
     public void sendTransports() {
         long tm0 = System.currentTimeMillis();
-        int minTransportSize = 5;
+        int minTransportSize = empire.generalAI().minTransportSize();
         List<ColonyTransporter> needy = new ArrayList<>();
         List<ColonyTransporter> givey = new ArrayList<>();
         for (StarSystem sys: empire.allColonizedSystems()) {

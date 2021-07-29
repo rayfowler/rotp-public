@@ -40,4 +40,5 @@ public interface General {
     default boolean isTrader() { return false; }
     default float timeToKill(Empire attacker, Empire defender) { return Float.MIN_VALUE; }
     default float warROI() { return Float.MAX_VALUE; }
+    default int minTransportSize() { return 5; }
 }
