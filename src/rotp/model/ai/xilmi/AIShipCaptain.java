@@ -222,54 +222,22 @@ public class AIShipCaptain implements Base, ShipCaptain {
             if ((prevMove == stack.move) && (prevTarget == currentTarget)) {
                 turnActive = false;
             }
-            //ail: we have not moved and not fired... so we probably can't get to our target, then retreat
+            //ail: no more handling retreat from here, only kiting
             if(stack.maxMove == stack.move && allWeaponsCanStillFire && stack.isShip())
             {
                 if(currentTarget == null)
                 {
-                    if(tgtBeforeClose != null && stack.movePointsTo(tgtBeforeClose) != DistanceToBeAt(stack, tgtBeforeClose))
-                    {
-                        if(stack.canRetreat())
-                        {
-                            CombatStackShip shipStack = (CombatStackShip) stack;
-                            StarSystem dest = retreatSystem(shipStack.mgr.system());
-                            if (dest != null) {
-                                mgr.retreatStack(shipStack, dest);
-                                //System.out.print("\n"+stack.fullName()+" retreat because it didn't move.");
-                                return;
-                            }
-                        }
+                    if (stack.mgr.autoResolve) {
+                        Point destPt = findSafestPoint(stack);
+                        if (destPt != null)
+                            mgr.performMoveStackToPoint(stack, destPt.x, destPt.y);
                     }
                     else
                     {
-                        if (stack.mgr.autoResolve) {
-                            Point destPt = findSafestPoint(stack);
-                            if (destPt != null)
-                                mgr.performMoveStackToPoint(stack, destPt.x, destPt.y);
-                        }
-                        else
-                        {
-                            FlightPath bestPathToSaveSpot = findSafestPath(stack);
-                            if(bestPathToSaveSpot != null)
-                                mgr.performMoveStackAlongPath(stack, bestPathToSaveSpot);
-                            //System.out.print("\n"+stack.fullName()+" No target-kite performed: "+(bestPathToSaveSpot != null));
-                        }
-                    }
-                }
-                else
-                {
-                    if(tgtBeforeClose == null || stack.movePointsTo(tgtBeforeClose) < DistanceToBeAt(stack, tgtBeforeClose))
-                    {
-                        if(stack.canRetreat())
-                        {
-                            CombatStackShip shipStack = (CombatStackShip) stack;
-                            StarSystem dest = retreatSystem(shipStack.mgr.system());
-                            if (dest != null) {
-                                mgr.retreatStack(shipStack, dest);
-                                //System.out.print("\n"+stack.fullName()+" retreat because it didn't move.");
-                                return;
-                            }
-                        }
+                        FlightPath bestPathToSaveSpot = findSafestPath(stack);
+                        if(bestPathToSaveSpot != null)
+                            mgr.performMoveStackAlongPath(stack, bestPathToSaveSpot);
+                        //System.out.print("\n"+stack.fullName()+" No target-kite performed: "+(bestPathToSaveSpot != null));
                     }
                 }
             }
@@ -301,7 +269,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         for (int i=0;i<stack.numWeapons(); i++) {
             if(stack.selectedWeapon().isSpecial()
                     || !((CombatStackShip)stack).shipComponentCanAttack(target, i)
-                    || (stack.weapon(i).isMissileWeapon() && stack.movePointsTo(target) > target.maxMove + 1))
+                    || (stack.weapon(i).isMissileWeapon() && stack.movePointsTo(target) > DistanceToBeAt(stack, target)))
             {
                 continue;
             }
@@ -313,7 +281,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
         //3rd run: fire whatever is left, except missiles if we are too far
         for (int i=0;i<stack.numWeapons(); i++) {
-            if(stack.weapon(i).isMissileWeapon() && stack.movePointsTo(target) > target.maxMove + 1)
+            if(stack.weapon(i).isMissileWeapon() && stack.movePointsTo(target) > DistanceToBeAt(stack, target))
                 continue;
             if(((CombatStackShip)stack).shipComponentCanAttack(target, i))
             {
@@ -742,6 +710,9 @@ public class AIShipCaptain implements Base, ShipCaptain {
         float allyValue = 0;
         float enemyValue = 0;
         
+        float allyKillsPerTurn = 0;
+        float enemyKillsPerTurn = 0;
+        
         List<CombatStack> friends = new ArrayList<>();
         for (CombatStack ally: allies()) {
             if (ally.isArmed())
@@ -756,10 +727,13 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
 
 //        log("friends:"+friends.size()+"   foes:"+foes.size());
+        boolean repulsorEnemy = false;
+        int repulsorCounterers = 0;
         for (CombatStack st1 : friends) {
             if(st1.inStasis)
                 continue;
             float maxKillValue = -1;
+            float bestPerTurnKills = 0;
             float pctOfMaxHP = ((st1.num-1) * st1.maxHits + st1.hits) / (st1.num * st1.maxHits);
             allyValue += st1.num * pctOfMaxHP * st1.designCost();
             //System.out.print("\n"+st1.fullName()+" pctOfMaxHP: "+pctOfMaxHP+" allyValue: "+allyValue);
@@ -776,18 +750,29 @@ public class AIShipCaptain implements Base, ShipCaptain {
                     //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
                     killPct = 0;
                 }
+                if(st2.repulsorRange() > 0)
+                {
+                    repulsorEnemy = true;
+                    if(killPct != 0)
+                        repulsorCounterers++;
+                }
                 float killValue = killPct*st2.num*st2.designCost();
                 //System.out.print("\n"+stack.fullName()+" "+st1.fullName()+" thinks it can kill "+killPct+" val: "+killValue+" of "+st2.fullName()+" it has: "+pctOfMaxHP);
 //                log(st1.name()+"="+killPct+"    "+st2.name());
                 if (killValue > maxKillValue)
+                {
                     maxKillValue = killValue;
+                    bestPerTurnKills = killPct*st2.num;
+                }
             }
+            allyKillsPerTurn += bestPerTurnKills;
             allyKills += maxKillValue;
         }
-       for (CombatStack st1 : foes) {
+        for (CombatStack st1 : foes) {
             if(st1.inStasis)
                 continue;
             float maxKillValue = -1;
+            float bestPerTurnKills = 0;
             float pctOfMaxHP = ((st1.num-1) * st1.maxHits + st1.hits) / (st1.num * st1.maxHits);
             enemyValue += st1.num * pctOfMaxHP * st1.designCost();
             for (CombatStack st2: friends) {
@@ -806,10 +791,20 @@ public class AIShipCaptain implements Base, ShipCaptain {
 //                log(st1.name()+"="+killPct+"    "+st2.name());
                 //System.out.print("\n"+stack.fullName()+" "+st1.fullName()+" thinks it can kill "+killPct+" val: "+killValue+" of "+st2.fullName()+" it has: "+pctOfMaxHP);
                 if (killValue > maxKillValue)
+                {
                     maxKillValue = killValue;
+                    bestPerTurnKills = killPct*st2.num;
+                }
             }
             enemyKills += maxKillValue;
+            enemyKillsPerTurn += bestPerTurnKills;
         }
+        if(repulsorEnemy == true && repulsorCounterers == 0)
+            allyKills = 0;
+        //System.out.print("\n"+stack.mgr.system().name()+" "+stack.fullName()+" we can kill per turn: "+allyKillsPerTurn+" enemy can kill per turn: "+enemyKillsPerTurn);
+        //If we can't kill at least one ship per turn and the enemy can kill a bigger percentage of ships per turn, drastically devalue our kill-score as enemy could just retreat after killing some of us
+        if(allyKillsPerTurn < 1 && allyKillsPerTurn < enemyKillsPerTurn)
+            allyKills *= allyKillsPerTurn / enemyKillsPerTurn;
         if (enemyKills == 0)
             return false;
         else if (allyKills == 0)
