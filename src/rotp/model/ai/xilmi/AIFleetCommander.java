@@ -32,6 +32,7 @@ import rotp.model.empires.EmpireView;
 import rotp.model.galaxy.Galaxy;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
+import rotp.model.galaxy.Transport;
 import rotp.model.ships.ShipDesign;
 import static rotp.model.ships.ShipDesign.COLONY;
 import rotp.model.ships.ShipDesignLab;
@@ -108,6 +109,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             sendColonyMissions = !empire.shipLab().colonyDesign().obsolete();
             canBuildShips = true; //since we build only colonizers and scouts here, this should always be possible
             NoticeMessage.setSubstatus(text("TURN_FLEET_PLANS"));
+            handleTransports();
             handleMilitary();
             buildFleetPlans();
             fillFleetPlans();
@@ -272,9 +274,10 @@ public class AIFleetCommander implements Base, FleetCommander {
                 currentScore += scoreToAdd;
             }
             //distance to our fleet also plays a role but it's importance is heavily scince we are at peace and have time to travel
-            currentScore /=  sqrt(fleet.distanceTo(current) / fleet.slowestStackSpeed() + mySystemsInShipRange.size());
+            float speed = fleet.slowestStackSpeed();
             if(current.inNebula())
-                currentScore /= fleet.slowestStackSpeed();
+                speed = 1;
+            currentScore /=  sqrt(max(fleet.distanceTo(current) / speed, 1) + mySystemsInShipRange.size());
             //System.out.print("\n"+fleet.empire().name()+" "+empire.sv.name(fleet.system().id)+" score to gather at: "+empire.sv.name(current.id)+" score: "+currentScore);
             if(currentScore > bestScore)
             {
@@ -432,8 +435,9 @@ public class AIFleetCommander implements Base, FleetCommander {
             }
             if(empire.alliedWith(empire.sv.empId(id)))
             {
-                //attacking is a lot better than defending, so defending should have a lower score in general
-                score /= 2.0f;
+                //attacking is a lot better than defending, so defending should have a lower score in general. Unless there's incoming transports, that is.
+                if(transports == 0)
+                    score /= 2.0f;
                 if (current.empire() == empire && current.hasEvent()) {
                     if (current.eventKey().equals("MAIN_PLANET_EVENT_PIRACY")) {
                         handleEvent = true;
@@ -507,11 +511,12 @@ public class AIFleetCommander implements Base, FleetCommander {
                 ignoreTravelTime = true;
             if(!ignoreTravelTime)
             {
-                score /= fleet.distanceTo(current) / fleet.slowestStackSpeed() + 1;
+                float speed = fleet.slowestStackSpeed();
                 if(current.inNebula())
-                    score /= fleet.slowestStackSpeed();
+                    speed = 1;
+                score /= max(1, fleet.distanceTo(current) / speed) + 1;
             }
-            //System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" => "+empire.sv.name(current.id)+" score: "+score);
+            //System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" => "+empire.sv.name(current.id)+" score: "+score+" enemy-transports: "+transports);
             if(score > bestScore)
             {
                 bestScore = score;
@@ -712,6 +717,22 @@ public class AIFleetCommander implements Base, FleetCommander {
         else if (empire.sv.inShipRange(id))
             plan.addShips(empire.shipLab().fighterDesign(), 1);
     }
+    private void handleTransports()
+    {
+        for(Transport trn : empire.transports())
+        {
+            if(empire.enemies().contains(trn.destination().empire()))
+            {
+                if(trn.surrenderOnArrival())
+                    trn.toggleSurrenderOnArrival();
+            }
+            else if(trn.destination().empire() != empire)
+            {
+                if(!trn.surrenderOnArrival())
+                    trn.toggleSurrenderOnArrival();
+            }
+        }
+    }
     //ail: Entirely new way of handling the military
     private void handleMilitary()
     {
@@ -858,6 +879,10 @@ public class AIFleetCommander implements Base, FleetCommander {
                                         enemyBC += incoming.bcValue();
                                 }
                             }
+                            UpdateSystemInfo(fleet.sysId());
+                            keepBc = max(keepBc, (systemInfoBuffer.get(fleet.sysId()).enemyIncomingTransports * empire.maxRobotControls() + systemInfoBuffer.get(fleet.sysId()).enemyBc * 2));
+                            if(systemInfoBuffer.get(fleet.sysId()).enemyBc > bcValue(fleet, false, true, false, false))
+                                keepBc = 0;
                             if(target.empire() != null)
                             {
                                 if(empire.alliedWith(target.empId()) && (enemyBC > 0 || empire.enemyTransportsInTransit(target) > 0))
@@ -868,7 +893,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                                     float ourEffectiveBC = bcValue(fleet, false, allowFighters, allowBombers, allowColonizers);
                                     if(ourEffectiveBC - keepBc > 0)
                                     {
-                                        if(target == fleet.system())
+                                        /*if(target == fleet.system())
                                         {
                                             if(ourEffectiveBC <= (empire.enemyTransportsInTransit(target) * empire.maxRobotControls() + enemyBC) * 2)
                                             {   
@@ -883,7 +908,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                                                 systemInfoBuffer.get(target.id).ignore = true;
                                                 continue;
                                             }
-                                        }
+                                        }*/
                                         sendAmount = min(1.0f - keepAmount, (empire.enemyTransportsInTransit(target) * empire.maxRobotControls() + enemyBC) * 2 / (ourEffectiveBC));
                                     }
                                     else
@@ -1016,7 +1041,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                                         attackWithFleet(fleet, target, sendAmount, false, allowFighters, allowBombers, allowColonizers, keepBc, false);
                                         if(sendAmount >= 1.0f || numBeforeSend == fleet.numShips())
                                         {
-                                            //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" should attack "+target.name()+" allowBombers: "+allowBombers);
+                                            System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" should attack "+target.name()+" allowBombers: "+allowBombers);
                                             canStillSend = false;
                                         }
                                     }
