@@ -753,6 +753,9 @@ public class ShipCombatManager implements Base {
             // attacking ships not in stasis count
             else if (!st.inStasis)
                 combatableStacks.add(st);
+            //ail: when there's still missiles flying around don't end the combat
+            if(!st.missiles().isEmpty())
+                return true;
         }
         for (CombatStack stack1 : combatableStacks) {
             for (CombatStack stack2 : combatableStacks) {
@@ -762,6 +765,7 @@ public class ShipCombatManager implements Base {
                 }
             }
         }
+        // don't retreat if we still have missiles in flight
         return false;
     }
     public void addStackToCombat(CombatStack st) {
