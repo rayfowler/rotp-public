@@ -45,6 +45,7 @@ public class AIGeneral implements Base, General {
     private float civTech = 0;
     //better buffer values in private-members instead of recalculating every time
     private Empire bestVictim = null;
+    private boolean searchedVictimThisTurn = false;
     private float defenseRatio = -1;
     private float totalArmedFleetCost = -1;
     private int additionalColonizersToBuild = -1;
@@ -74,15 +75,12 @@ public class AIGeneral implements Base, General {
         rushDefenseSystems.clear();
         rushShipSystems.clear();
         bestVictim = null;
+        searchedVictimThisTurn = false;
         defenseRatio = -1;
         additionalColonizersToBuild = -1;
         totalArmedFleetCost = -1;
         totalEmpirePopulationCapacity = -1;
         warROI = -1;
-        
-        //ail: slightly hacky way to prevent accidentally building stargates as it keeps happening
-        if(empire.tech().canBuildStargate())
-            empire.tech().canBuildStargate(false);
         
         additionalColonizersToBuild = additionalColonizersToBuild(false);
         while (additionalColonizersToBuild > 0)
@@ -255,7 +253,7 @@ public class AIGeneral implements Base, General {
         float facSavings = empire.sv.factories(sys.id) * (empire.tech().baseFactoryCost() - 2) + sys.planet().alienFactories(empire.id) * empire.tech().baseFactoryCost();
         float needed = troopsNecessaryToTakePlanet(v, sys);
         //ail: If the population we have to expend costs less than a colonizer and the factories built there, it's worth it already!
-        float invasionCost = needed * empire.tech().populationCost();
+        float invasionCost = needed * empire.tech().populationCost() / empire.race().growthRateMod();
         //we gain factories, save us from building a colonizer and killing enemy-population also has value to us of half of what they pay for it
         float invasionGain = facSavings + empire.shipLab().colonyDesign().cost() + pop * empire.tech().populationCost() / 2;
         //System.out.println(empire.name()+": Considering invasion of "+sys.name()+" cost: "+invasionCost+" gain: "+invasionGain+" fac: "+facSavings +" cs: "+empire.shipLab().colonyDesign().cost()+" kills: "+pop * empire.tech().populationCost());
@@ -265,13 +263,16 @@ public class AIGeneral implements Base, General {
         launchRebellionTroops(sys);
     }
     public void orderInvasionFleet(EmpireView v, StarSystem sys) {
-        boolean haveOrbitingFleet = false;
+        boolean haveOrbitingFleet = true;
         for(ShipFleet orbiting : sys.orbitingFleets())
         {
             if(orbiting.empire() == empire)
                 haveOrbitingFleet = true;
-            if(empire.enemies().contains(orbiting.empire()))
+            if(!orbiting.empire().alliedWith(empire.id))
+            {
                 haveOrbitingFleet = false;
+                break;
+            }
         }
         //ail: old check would also be positive when our fleet is retreating
         if (haveOrbitingFleet
@@ -546,35 +547,64 @@ public class AIGeneral implements Base, General {
             }
         }
     }
+    @Override
     public float timeToKill(Empire attacker, Empire defender)
     {
         float avgFleetDistance = 0;
         float fleetDistanceCounts = 0;
+        float avgPopDistance = 0;
+        float popDistanceCounts = 0;
         float avgProductionDistance = 0;
         float productionDistanceCounts = 0;
+        float totalPopGrowthPerTurnPotential = 0;
+        boolean popGrowthSet = false;
         for(StarSystem theirs: defender.allColonizedSystems())
         {
             for(ShipFleet fleet: attacker.allFleets())
             {
-                avgFleetDistance += fleet.travelTimeTo(theirs, fleet.slowestStackSpeed()) * fleet.bcValue();
+                float speed = fleet.slowestStackSpeed();
+                if(theirs.inNebula())
+                    speed = 1;
+                avgFleetDistance += max(fleet.distanceTo(theirs) / speed, 1) * fleet.bcValue();
+                //fleet.travelTimeTo(theirs, fleet.slowestStackSpeed()) * fleet.bcValue();
                 fleetDistanceCounts += fleet.bcValue();
             }
             for(StarSystem mine: attacker.allColonizedSystems())
             {
-                avgProductionDistance += mine.travelTimeTo(theirs, attacker.tech().topSpeed()) * mine.colony().totalIncome() * mine.planet().productionAdj();
-                productionDistanceCounts += mine.colony().totalIncome() * mine.planet().productionAdj();
+                float speed = attacker.tech().topSpeed();
+                if(theirs.inNebula())
+                    speed = 1;
+                float popSpeed = max(speed-1, 1);
+                float colonyContributionValue = mine.colony().totalIncome() * mine.planet().productionAdj();
+                float baseGrowthRate = (1 - ((min(mine.colony().population(),mine.planet().currentSize() / 2)) / mine.planet().currentSize())) / 10;
+                baseGrowthRate *= attacker.growthRateMod();
+                if (!attacker.ignoresPlanetEnvironment())
+                    baseGrowthRate *= mine.planet().growthAdj();
+                float newGrownPopulation = min(mine.colony().population(),mine.planet().currentSize() / 2) * baseGrowthRate;
+                //System.out.println(attacker.name()+" "+mine.name()+" can make "+newGrownPopulation+" per turn. so far: "+popDistanceCounts);
+                float dist = mine.distanceTo(theirs);
+                avgPopDistance += max(dist / popSpeed, 1) * newGrownPopulation;
+                popDistanceCounts += newGrownPopulation;
+                if(popGrowthSet == false)
+                    totalPopGrowthPerTurnPotential += newGrownPopulation;
+                avgProductionDistance += max(dist / speed, 1) * colonyContributionValue;
+                productionDistanceCounts += colonyContributionValue;
             }
+            popGrowthSet = true;
         }
         if(fleetDistanceCounts > 0)
             avgFleetDistance /= fleetDistanceCounts;
         if(productionDistanceCounts > 0)
             avgProductionDistance /= productionDistanceCounts;
+        if(popDistanceCounts > 0)
+            avgPopDistance /= popDistanceCounts;
         avgFleetDistance *= 2;
         avgProductionDistance *= 2;
         float averageDamagerPerBc = 0;
         TechBombWeapon bomb = attacker.tech().topBombWeaponTech();
         averageDamagerPerBc = (max(0, bomb.damageLow() - defender.tech().maxPlanetaryShieldLevel()) + max(0, bomb.damageHigh() - defender.tech().maxPlanetaryShieldLevel())) / 2;
         averageDamagerPerBc /= bomb.cost * bomb.costMiniaturization(attacker) * 4;
+        float averageDamagePerPop = 200 / attacker.troopKillRatio(galaxy().system(defender.homeSysId()));
         
         float killTime = Float.MAX_VALUE;
         if(avgFleetDistance == 0)
@@ -582,14 +612,19 @@ public class AIGeneral implements Base, General {
         if(avgProductionDistance == 0)
             avgProductionDistance = Float.MAX_VALUE;
         float ProductionTurnsForKillInOneTurn = Float.MAX_VALUE;
+        float PopKillTime = Float.MAX_VALUE;
         if(averageDamagerPerBc > 0)
         {
             killTime = defender.totalPlanetaryPopulation() * 200 / (attacker.totalFleetCost() * averageDamagerPerBc) + avgFleetDistance;
-            ProductionTurnsForKillInOneTurn = defender.totalPlanetaryPopulation() * 200 / (attacker.totalPlanetaryProduction() * 2 * averageDamagerPerBc) + avgProductionDistance;
+            ProductionTurnsForKillInOneTurn = defender.totalPlanetaryPopulation() * 200 / (attacker.totalPlanetaryProduction() * averageDamagerPerBc) + avgProductionDistance;
         }
+        if(averageDamagePerPop > 0)
+            PopKillTime = defender.totalPlanetaryPopulation() * 200 / (averageDamagePerPop * totalPopGrowthPerTurnPotential) + avgPopDistance;
 
-        //System.out.println(attacker.name()+" vs. "+defender.name()+" fleets: "+avgFleetDistance+" planets: "+avgProductionDistance+" avgDpBC: "+averageDamagerPerBc+" killtime: "+killTime+" prodTime: "+ProductionTurnsForKillInOneTurn);
-        return min(killTime, ProductionTurnsForKillInOneTurn);
+        //System.out.println(attacker.name()+" vs. "+defender.name()+" popKillTime: "+PopKillTime+" totalPopGrowthPerTurnPotential: "+totalPopGrowthPerTurnPotential+" avgPopDistance: "+avgPopDistance);
+        float totalKillTime = 1 / (1 / killTime + 1 / ProductionTurnsForKillInOneTurn + 1 / PopKillTime);
+        //System.out.println(attacker.name()+" vs. "+defender.name()+" totalKillTime: "+totalKillTime+" ship-killtime: "+killTime+" prod-killtime: "+ProductionTurnsForKillInOneTurn+" pop-killtime: "+PopKillTime);
+        return totalKillTime;
     }
     @Override
     public float warROI() {
@@ -606,10 +641,25 @@ public class AIGeneral implements Base, General {
     }
     @Override
     public Empire bestVictim() {
-        if(bestVictim != null)
+        if(searchedVictimThisTurn)
         {
             return bestVictim;
         }
+        searchedVictimThisTurn = true;
+        float developmentPct = 0;
+        float countedColonies = 0;
+        for(StarSystem sys : empire.allColonizedSystems())
+        {
+            if(sys.colony() != null)
+            {
+                if(sys.planet().isResourcePoor() || sys.planet().isResourceUltraPoor())
+                    continue;
+                developmentPct += sys.colony().currentProductionCapacity();
+                countedColonies++;
+            }
+        }
+        if(countedColonies > 0)
+            developmentPct /= countedColonies;
         float highestScore = 0;
         Empire archEnemy = null;
         if(empire.contactedEmpires().isEmpty())
@@ -623,24 +673,23 @@ public class AIGeneral implements Base, General {
             if(empire.alliedWith(emp.id))
                 continue;
             if(!empire.inShipRange(emp.id))
-            {
                 continue;
-            }
-            EmpireView ev = empire.viewForEmpire(emp);
-            float ourKillTime = timeToKill(empire, emp);
-            float theirKillTime = timeToKill(emp, empire);
-            //float currentScore = (theirKillTime / empire.allColonizedSystems().size()) / (ourKillTime / emp.allColonizedSystems().size());
-            float currentScore = theirKillTime / ourKillTime;
-            //ail: drastically reduce score for those I have a NAP as nap-breaking makes others mad
-            if(empire.pactWith(emp.id))
-                currentScore /= 3;
-            //System.out.println(empire.name()+" => "+emp.name()+" score: "+currentScore+" we vs. them: "+ourKillTime+" they vs. us: "+theirKillTime);
-            if(currentScore > highestScore)
+            float theyvsus = empire.generalAI().timeToKill(emp, empire);
+            float wevsthem = empire.generalAI().timeToKill(empire, emp);
+            //System.out.println(empire.name()+" vs "+emp.name()+" our: "+wevsthem+" their: "+theyvsus+" would be score: "+theyvsus / wevsthem+" dev-pct: "+developmentPct);
+            if(theyvsus > wevsthem * (2 - developmentPct) || developmentPct >= 1.0)
             {
-                highestScore = currentScore;
-                archEnemy = emp;
+                float currentScore = theyvsus / wevsthem;
+                //System.out.println(empire.name()+" => "+emp.name()+" score: "+currentScore+" we vs. them: "+wevsthem+" they vs. us: "+theyvsus);
+                if(currentScore > highestScore)
+                {
+                    highestScore = currentScore;
+                    archEnemy = emp;
+                }
             }
         }
+        /*if(archEnemy != null)
+            System.out.println(empire.name()+" => "+archEnemy.name()+" score: "+highestScore);*/
         bestVictim = archEnemy;
         return bestVictim;
     }
@@ -693,8 +742,6 @@ public class AIGeneral implements Base, General {
         }
         if(totalReachableEnemyProduction > 0)
         {
-            if(isInvader())
-                totalProductionReachableByEnemies *= 3;
             dr = totalProductionReachableByEnemies / (totalReachableEnemyProduction + totalProductionReachableByEnemies);
         }
         //System.out.print("\n"+empire.name()+" totalReachableEnemyProduction: "+totalReachableEnemyProduction+" totalProductionReachableByEnemies: "+totalProductionReachableByEnemies+" dr: "+dr);
@@ -869,5 +916,10 @@ public class AIGeneral implements Base, General {
         if(empire.race().tradePctBonus() > 0 || empire.leader().isDiplomat() || empire.leader().isPacifist())
             return true;
         return false;
+    }
+    @Override
+    public int minTransportSize()
+    {
+        return 1;
     }
 }
