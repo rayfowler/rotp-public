@@ -703,8 +703,6 @@ public class AIDiplomat implements Base, Diplomat {
             return false;       
         if (v.embassy().alliedWithEnemy())
             return false;
-        if(empire.generalAI().bestVictim() == e)
-            return false;
         if(galaxy().options().baseAIRelationsAdj() > 0)
         {
             //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" <3 "+e.name()+" ally-Popratio: "+popRatioOfAllianceAmongstContatacts(empire)+" agree when below: "+(galaxy().options().baseAIRelationsAdj() * 3.33 + personalityAllianceMod) / 100.0);
@@ -1311,7 +1309,7 @@ public class AIDiplomat implements Base, Diplomat {
     }
     @Override
     public boolean wantToDeclareWarOfOpportunity(EmpireView v) {
-        return wantToDeclareWar(v, false);
+        return wantToDeclareWar(v);
     }
     public Empire bestAlly()
     {
@@ -1336,60 +1334,7 @@ public class AIDiplomat implements Base, Diplomat {
             System.out.println(empire.name()+" best ally for me would be "+best.name()+" with score: "+highestMatchScore);*/
         return best;
     }
-    public boolean saveAgainstPotentialBackstabs()
-    {
-        Empire bestVictim = empire.generalAI().bestVictim();
-        boolean warAllowed = false;
-        if(bestVictim == null)
-            return true;
-        float theyvsus = 0;
-        float wevsthem = 1 / empire.generalAI().timeToKill(empire, bestVictim);;
-        for(Empire contact : empire.contactedEmpires())
-        {
-            if(!contact.inShipRange(empire.id))
-                continue;
-            float contactVsMe = empire.generalAI().timeToKill(contact, empire);
-            if(contact == bestVictim)
-            {
-                theyvsus += 1 / empire.generalAI().timeToKill(contact, empire);
-                continue;
-            }
-            if(contact.inShipRange(bestVictim.id))
-            {
-                float contactVsVictim = empire.generalAI().timeToKill(contact, bestVictim);
-                if(contactVsVictim < contactVsMe)
-                {
-                    wevsthem += 1 / contactVsVictim;
-                    //System.out.println(empire.name()+" vs "+bestVictim.name()+" "+contact.name()+" will probably backstab "+bestVictim.name()+" CvV: "+contactVsVictim+" CvM: "+contactVsMe);
-                }
-                else
-                {
-                    theyvsus += 1 / contactVsMe;
-                    //System.out.println(empire.name()+" vs "+bestVictim.name()+" "+contact.name()+" will probably backstab "+empire.name()+" CvV: "+contactVsVictim+" CvM: "+contactVsMe);
-                }
-            }
-            else
-            {
-                theyvsus += 1 / contactVsMe;
-                //System.out.println(empire.name()+" vs "+bestVictim.name()+" "+contact.name()+" will probably backstab "+empire.name()+" CvV: unreachable CvM: "+contactVsMe);
-            }
-        }
-        if(theyvsus > 0)
-            theyvsus = 1 / theyvsus;
-        else
-            theyvsus = Float.MAX_VALUE;
-
-        if(wevsthem > 0)
-            wevsthem = 1 / wevsthem;
-        else
-            wevsthem = Float.MAX_VALUE;
-
-        //System.out.println(empire.name()+" vs "+bestVictim.name()+" our: "+wevsthem+" their: "+theyvsus);
-        if(theyvsus > wevsthem)
-            warAllowed = true;
-        return warAllowed;
-    }
-    public boolean wantToDeclareWar(EmpireView v, boolean overrideBestVictim) {
+    public boolean wantToDeclareWar(EmpireView v) {
         //System.out.println(empire.name()+" atpeace: "+v.embassy().atPeace()+" no enemies:  "+empire.enemies().isEmpty());
         if (v.embassy().atPeace())
         {
@@ -1399,44 +1344,12 @@ public class AIDiplomat implements Base, Diplomat {
             return true;
         if (!empire.enemies().isEmpty()) 
             return false;
-        Empire bestVictim = empire.generalAI().bestVictim();
-        if(overrideBestVictim)
-            bestVictim = v.empire();
-        if(v.empire() == bestVictim)
-        {
-            boolean warAllowed = false;
-            float developmentPct = 0;
-            float countedColonies = 0;
-            for(StarSystem sys : empire.allColonizedSystems())
-            {
-                if(sys.colony() != null)
-                {
-                    if(sys.planet().isResourcePoor() || sys.planet().isResourceUltraPoor())
-                        continue;
-                    developmentPct += sys.colony().currentProductionCapacity();
-                    countedColonies++;
-                }
-            }
-            if(countedColonies > 0)
-                developmentPct /= countedColonies;
-            float highestKnownOpponentTechLevel = 1;
-            for(EmpireView ev : empire.contacts())
-            {
-                Empire emp = ev.empire();
-                if(!empire.inEconomicRange(emp.id))
-                    continue;
-                if(emp.tech().avgTechLevel() > highestKnownOpponentTechLevel)
-                    highestKnownOpponentTechLevel = emp.tech().avgTechLevel();
-            }
-            if(saveAgainstPotentialBackstabs())
-                warAllowed = true;
-            if(developmentPct < 0.75f)
-                warAllowed = false;
-            if(empire.generalAI().additionalColonizersToBuild(true) > 0)
-                warAllowed = false;
-            if(warAllowed)
+        boolean warAllowed = true;
+        if(empire.generalAI().additionalColonizersToBuild(false) > 0)
+            warAllowed = false;
+        if(warAllowed)
+            if(v.empire() == empire.generalAI().bestVictim())
                 return true;
-        }
         return false;
     }
     private DiplomaticIncident worstWarnableIncident(Collection<DiplomaticIncident> incidents) {
