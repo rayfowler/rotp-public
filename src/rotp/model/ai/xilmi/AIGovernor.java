@@ -262,7 +262,8 @@ public class AIGovernor implements Base, Governor {
         //Mostly for Sakkra and Meklar, so they expand quicker when they can 72% pop is where the growth drops below 80%
         if(col.shipyard().building() 
                 && col.shipyard().design() == empire.shipLab().colonyDesign()
-                && col.populationPct() > 0.72)
+                && col.populationPct() > 0.72
+                && col.industry().factories() >= col.population())
         {
             workerGoal = 0;
             buildingColonyShip = true;
@@ -460,7 +461,8 @@ public class AIGovernor implements Base, Governor {
                 maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
                 if(myFleetBc > 4 * totalEnemyBc && highestNonEnemyBc <= myFleetBc * 4)
                     maxShipMaintainance /= 4.0f;
-                fighterPercentage = 0.5f + empire.generalAI().defenseRatio() * 0.5f;
+                //fighterPercentage = 0.5f + empire.generalAI().defenseRatio() * 0.5f;
+                fighterPercentage = empire.generalAI().defenseRatio();
             }
             else if(inAttackRange)
             {
