@@ -893,22 +893,6 @@ public class AIFleetCommander implements Base, FleetCommander {
                                     float ourEffectiveBC = bcValue(fleet, false, allowFighters, allowBombers, allowColonizers);
                                     if(ourEffectiveBC - keepBc > 0)
                                     {
-                                        /*if(target == fleet.system())
-                                        {
-                                            if(ourEffectiveBC <= (empire.enemyTransportsInTransit(target) * empire.maxRobotControls() + enemyBC) * 2)
-                                            {   
-                                                break;
-                                            }
-                                            else
-                                            {
-                                                keepBc = max(keepBc, (empire.enemyTransportsInTransit(target) * empire.maxRobotControls() + enemyBC) * 2);
-                                                //ail: no need to keep a fleet if we'll have to retreat anyways
-                                                if(enemyBC > ourEffectiveBC)
-                                                    keepBc = 0;
-                                                systemInfoBuffer.get(target.id).ignore = true;
-                                                continue;
-                                            }
-                                        }*/
                                         sendAmount = min(1.0f - keepAmount, (empire.enemyTransportsInTransit(target) * empire.maxRobotControls() + enemyBC) * 2 / (ourEffectiveBC));
                                     }
                                     else
@@ -1041,7 +1025,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                                         attackWithFleet(fleet, target, sendAmount, false, allowFighters, allowBombers, allowColonizers, keepBc, false);
                                         if(sendAmount >= 1.0f || numBeforeSend == fleet.numShips())
                                         {
-                                            System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" should attack "+target.name()+" allowBombers: "+allowBombers);
+                                            //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" should attack "+target.name()+" allowBombers: "+allowBombers);
                                             canStillSend = false;
                                         }
                                     }
