@@ -1388,8 +1388,6 @@ public class AIDiplomat implements Base, Diplomat {
         if (civ1 == empire)   return castVoteFor(civ1);
         if (civ2 == empire)   return castVoteFor(civ2);
         
-        float pct;
-
         // if allied with one, vote for that ally
         if (cv1.embassy().alliance() && !cv2.embassy().alliance())
             return castVoteFor(civ1);
@@ -1701,12 +1699,6 @@ public class AIDiplomat implements Base, Diplomat {
             if(treaty.date() < newestWarDate)
                 return true;
         }
-
-        //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" war-weariness-check against "+v.empire().name()+" treaty.colonyChange(emp): "+treaty.colonyChange(emp) + " treaty.factoryChange(emp): "+treaty.factoryChange(emp));
-        if (treaty.colonyChange(emp) < 0.85f)
-            return true;
-        if (treaty.factoryChange(emp) < 0.85f)
-            return true;
         return false;
     }
     /*
