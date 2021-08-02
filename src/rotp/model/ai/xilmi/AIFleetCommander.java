@@ -1179,13 +1179,12 @@ public class AIFleetCommander implements Base, FleetCommander {
                 if(des.isBomber() && !countBombers)
                 {
                     //ail the fighting-value of bombers is weak but not 0, so we count them partially
+                    //ail 2021-08-01: Not anymore with recent change of doubling down on specialization
                     if(countFighters)
-                        bcValueFactor = 0.2f;
+                        bcValueFactor = 0.0f;
                     else
                         continue;
                 }
-                if(des.isFighter() && !countFighters)
-                    continue;
                 if(des.hasColonySpecial() && !countColonizers)
                     continue;
                 bc += (num * des.cost() * bcValueFactor);

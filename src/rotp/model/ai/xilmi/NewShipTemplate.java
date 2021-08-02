@@ -265,6 +265,10 @@ public class NewShipTemplate implements Base {
 
         // arbitrary initial weighting of what isn't weapons
         int shieldWeight = 4;
+        if(role == DesignType.BOMBER)
+        {
+            shieldWeight = 0;
+        }
         int ecmWeight = 3;    
         ecmWeight = (int)Math.round(ecmWeight * 2 * enemyMissilePercentage);
         int maneuverWeight = 2;
@@ -367,12 +371,13 @@ public class NewShipTemplate implements Base {
         
         switch (role) {
             case BOMBER:
-                setOptimalWeapon(ai, d, firstWeaponSpaceRatio * d.availableSpace(), 1, false, false, haveStasis, topSpeed, avgECM, avgSHD);
-                setOptimalWeapon(ai, d, d.availableSpace(), 3, needRange, true, haveStasis, topSpeed, avgECM, avgSHD); // uses slot 1
+                setOptimalWeapon(ai, d, d.availableSpace(), 1, false, false, haveStasis, topSpeed, avgECM, avgSHD);
+                //setOptimalWeapon(ai, d, d.availableSpace(), 3, needRange, true, haveStasis, topSpeed, avgECM, avgSHD); // uses slot 1
                 break;
             case FIGHTER:
             default:
                 setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, haveStasis, topSpeed, avgECM, avgSHD); // uses slots 0-3
+                //setOptimalWeapon(ai, d, d.availableSpace(), 1, false, false, haveStasis, topSpeed, avgECM, avgSHD);
                 break;
         }
         ai.lab().iconifyDesign(d);
@@ -494,6 +499,10 @@ public class NewShipTemplate implements Base {
                 continue;
             Tech tech = spec.tech();
             float currentScore = 0;
+            
+            //new approach: The main idea behind our bombers is that they are cheap and that they carry lots of bombs, so no specials besided of cloaking-device help us outside of combat
+            if(bomber && !tech.isType(Tech.CLOAKING))
+                continue;
             
             if(tech.isType(Tech.AUTOMATED_REPAIR))
             {

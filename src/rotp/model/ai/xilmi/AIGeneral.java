@@ -689,7 +689,7 @@ public class AIGeneral implements Base, General {
             }
         }
         /*if(archEnemy != null)
-            System.out.println(empire.name()+" => "+archEnemy.name()+" score: "+highestScore);*/
+            System.out.println(galaxy().currentTurn()+" "+empire.name()+" => "+archEnemy.name()+" score: "+highestScore);*/
         bestVictim = archEnemy;
         return bestVictim;
     }
