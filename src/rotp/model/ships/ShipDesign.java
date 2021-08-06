@@ -393,8 +393,8 @@ public final class ShipDesign extends Design {
         }
         return false;
     }
-	// modnar: add firepowerAntiShip to only count weapons that can attack ships
-	public float firepowerAntiShip(float shield) {
+    // modnar: add firepowerAntiShip to only count weapons that can attack ships
+    public float firepowerAntiShip(float shield) {
         float dmg = 0;
         for (int i=0;i<maxWeapons();i++)
 			if (weapon(i).canAttackShips()) {
