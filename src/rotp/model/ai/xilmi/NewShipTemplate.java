@@ -310,15 +310,12 @@ public class NewShipTemplate implements Base {
         
         boolean haveBHG = false;
         boolean haveCloaking = false;
-        boolean haveStasis = false;
-        float spaceOfStasisCloakCombo = 0;
         float spaceOfBlackHoleCloakCombo = 0;
         for(ShipSpecial spec : specials.values())
         {
             if(spec.allowsCloaking())
             {
                 haveCloaking = true;
-                spaceOfStasisCloakCombo += spec.space(d);
                 spaceOfBlackHoleCloakCombo += spec.space(d);
             }
             if(spec.createsBlackHole())
@@ -327,15 +324,9 @@ public class NewShipTemplate implements Base {
                 if(spaceOfBlackHoleCloakCombo < 0.5f * d.totalSpace())
                     haveBHG = true;
             }
-            if(spec.tech().isType(Tech.STASIS_FIELD))
-            {
-                spaceOfStasisCloakCombo += spec.space(d);
-                if(spaceOfStasisCloakCombo < 0.5f * d.totalSpace())
-                    haveStasis = true;
-            }
         }
         //when we can combine cloaking with either BHG or Stasis, we allow a lot more space for specials
-        if(haveCloaking && (haveStasis || haveBHG))
+        if(haveCloaking && haveBHG)
             specialsSpace = max(specialsSpace, totalSpace * 0.5f);
         
         switch (role) {
@@ -364,20 +355,25 @@ public class NewShipTemplate implements Base {
                 needRange = false;
         }
         
-        float firstWeaponSpaceRatio = 0.8f; // bombs for bombers, best weapon for destroyers
+        float hybridBombRatio = 0;
+        if(ai.wantHybrid())
+        {
+            hybridBombRatio = 0.5f - 0.5f * ai.empire().generalAI().defenseRatio();
+        }
+        //System.out.print("\n"+galaxy().currentTurn()+" "+ai.empire().name()+" hybridBombRatio: "+hybridBombRatio);
         // what's left will be used on non-bombs for bombers, second best weapon for destroyers
         // repeat calls of setOptimalShipCombatWeapon() will result in a weapon from another category (beam, missile, streaming) than already installed
         // fighters will have a single best weapon over all four slots
         
         switch (role) {
             case BOMBER:
-                setOptimalWeapon(ai, d, d.availableSpace(), 1, false, false, haveStasis, topSpeed, avgECM, avgSHD);
-                //setOptimalWeapon(ai, d, d.availableSpace(), 3, needRange, true, haveStasis, topSpeed, avgECM, avgSHD); // uses slot 1
+                setOptimalWeapon(ai, d, d.availableSpace(), 1, false, false, false, topSpeed, avgECM, avgSHD);
+                //setOptimalWeapon(ai, d, d.availableSpace(), 3, needRange, true, false, topSpeed, avgECM, avgSHD); // uses slot 1
                 break;
             case FIGHTER:
             default:
-                setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, haveStasis, topSpeed, avgECM, avgSHD); // uses slots 0-3
-                //setOptimalWeapon(ai, d, d.availableSpace(), 1, false, false, haveStasis, topSpeed, avgECM, avgSHD);
+                setOptimalWeapon(ai, d, d.availableSpace() * hybridBombRatio, 1, false, false, false, topSpeed, avgECM, avgSHD);
+                setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, avgSHD); // uses slots 0-3
                 break;
         }
         ai.lab().iconifyDesign(d);
