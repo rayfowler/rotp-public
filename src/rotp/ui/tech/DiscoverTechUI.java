@@ -235,7 +235,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
     public void paintToImage(Image dataImg) {
         Graphics2D g = (Graphics2D) dataImg.getGraphics();
         setFontHints(g);
-        Image techImg = null;
+        Image techImg = tech.image();
         Image raceImg;
         BufferedImage labImg;
         BufferedImage holoImg;
@@ -282,12 +282,15 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         int w = getWidth();
         int h = getHeight();
 
-        int fX = (int) (player().race().labFlagX()*w);
-        int fY = h*25/100;
-        int fW = scaled(210);
-        int fH = scaled(140);
+        int fX = (int) ((player().race().labFlagX()-.2)*w);
+        int fY = scaled(150);
+        int fW = scaled(448);
+        int fH = scaled(280);
         g.drawImage(labImg, 0, 0, w, h, null);
         if (holoImg != null) {
+            //g.drawImage(holoImg, 0, 0, w, h, null);
+        }
+        if (techImg != null) {
             Composite prevComposite = g.getComposite();
             float fluxPct = holoPct;
             if (fluxPct > 1) {
@@ -298,14 +301,6 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
                     fluxPct = 0.5f + fluxPct;
             }
             AlphaComposite ac = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, fluxPct);
-            g.setComposite(ac);
-            g.drawImage(holoImg, 0, 0, w, h, null);
-            g.setComposite(prevComposite);
-        }
-        if ((holoPct > 2) && (techImg != null)) {
-            float flagPct = (float) min(0.3f, (holoPct - 2));
-            Composite prevComposite = g.getComposite();
-            AlphaComposite ac = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, flagPct);
             g.setComposite(ac);
             g.drawImage(techImg, fX, fY, fX+fW, fY+fH, 0, 0, techImg.getWidth(null), techImg.getHeight(null), null);
             g.setComposite(prevComposite);
