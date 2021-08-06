@@ -240,8 +240,10 @@ public class AIGovernor implements Base, Governor {
         float factoryROI = empire.tech().newFactoryCost(col.industry().robotControls()) / col.planet().productionAdj() / netFactoryProduction;
         if(col.industry().factories() > 0)
             factoryROI = (empire.tech().newFactoryCost(col.industry().robotControls()) + col.industry().upgradeCost() / col.industry().factories()) / col.planet().productionAdj() / netFactoryProduction;
-        float warROI = empire.generalAI().warROI();
-        float techROI = min(workerROI, factoryROI) * col.planet().productionAdj() / col.planet().researchAdj();
+        float warROI = Float.MAX_VALUE;
+        //if our factories need to be refitted
+        if(col.currentProductionCapacity() > 0.5f)
+            warROI = empire.generalAI().warROI();
         if(col.industry().factories() > col.maxUseableFactories())
             factoryROI += workerROI;
         float popGrowthROI = Float.MAX_VALUE;
@@ -262,8 +264,7 @@ public class AIGovernor implements Base, Governor {
         //Mostly for Sakkra and Meklar, so they expand quicker when they can 72% pop is where the growth drops below 80%
         if(col.shipyard().building() 
                 && col.shipyard().design() == empire.shipLab().colonyDesign()
-                && col.populationPct() > 0.72
-                && col.industry().factories() >= col.population())
+                && col.currentProductionCapacity() > 0.5f)
         {
             workerGoal = 0;
             buildingColonyShip = true;
@@ -408,14 +409,8 @@ public class AIGovernor implements Base, Governor {
         float colonizerCost = 0.0f;
         for (int i=0;i<counts.length;i++) 
         {
-            if(lab.design(i).isFighter())
-            {
-                fighterCost += lab.design(i).cost() * counts[i];
-            }
-            if(lab.design(i).isBomber())
-            {
-                bomberCost += lab.design(i).cost() * counts[i];
-            }
+            fighterCost += lab.design(i).cost() * counts[i] * empire.shipDesignerAI().fightingAdapted(lab.design(i));
+            bomberCost += lab.design(i).cost() * counts[i] * empire.shipDesignerAI().bombingAdapted(lab.design(i));
             if(lab.design(i).isColonyShip())
             {
                 colonizerCost += lab.design(i).cost() * counts[i];
@@ -435,8 +430,6 @@ public class AIGovernor implements Base, Governor {
             }
             //System.out.print("\n"+empire.name()+" Colony-ship: "+col.shipyard().design().name()+ " needed: "+empire.generalAI().additionalColonizersToBuild());
         }
-        float fighterDamage = lab.fighterDesign().firepowerAntiShip(empire.bestEnemyShieldLevel());
-        float bomberDamage = lab.bomberDesign().firepower(empire.bestEnemyPlanetaryShieldLevel());
         //ail: No use to build any ships if they won't do damage anyways. Better tech up.
         boolean viableForShipProduction = true;
         float turnsBeforeColonyDestroyed = Float.MAX_VALUE;
@@ -445,10 +438,6 @@ public class AIGovernor implements Base, Governor {
         float fighterBuildTime = lab.fighterDesign().cost() / totalProd;
         if(fighterBuildTime > turnsBeforeColonyDestroyed)
             viableForShipProduction = false;
-        if(bomberDamage == 0 && fighterDamage == 0)
-        {
-            viableForShipProduction = false;
-        }
         //System.out.print("\n"+empire.name()+" "+col.name()+" col.allocation(SHIP): "+col.allocation(SHIP));
         if(col.allocation(SHIP) == 0 && viableForShipProduction)
         {
@@ -472,6 +461,8 @@ public class AIGovernor implements Base, Governor {
                     maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance() / 4;
                 fighterPercentage = 0.75f;
             }
+            if(empire.shipDesignerAI().bombingAdapted(lab.fighterDesign()) > 0)
+                fighterPercentage = 1.0f;
             float maxShipMaintainanceBeforeAdj = maxShipMaintainance;
             maxShipMaintainance *= prodScore;
             if(maxShipMaintainance > maxShipMaintainanceBeforeAdj)
@@ -487,17 +478,7 @@ public class AIGovernor implements Base, Governor {
             
             if(!techsLeft)
                 maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
-            if(warROI < techROI)
-                maxShipMaintainance = 0.9f;
             //System.out.print("\n"+empire.name()+" "+col.name()+" adjMaxMaint: "+maxShipMaintainance+" baseMaxMaint: "+maxShipMaintainanceBeforeAdj+" NonEnemyBc: "+highestNonEnemyBc+" enemyBc: "+totalEnemyBc+" myBC: "+myFleetBc);
-            if(fighterDamage == 0)
-            {
-                fighterPercentage = 0.25f;
-            } 
-            else if (bomberDamage == 0)
-            {
-                fighterPercentage = 1.0f;
-            }
             col.shipyard().design(lab.fighterDesign());
             //System.out.print("\n"+empire.name()+" fighterCost: "+fighterCost+" bomberCost: "+bomberCost+" F% reached: "+fighterCost / (bomberCost + fighterCost)+" of "+fighterPercentage);
             if(fighterCost / (bomberCost + fighterCost) > fighterPercentage 
