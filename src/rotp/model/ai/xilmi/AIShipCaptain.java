@@ -127,7 +127,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             
             //When we are defending and can't get into attack-range of the enemy, we let them come to us
             /*if(currentTarget != null)
-                System.out.println(stack.fullName()+" target: "+currentTarget.fullName()+" distaftermove: "+(stack.movePointsTo(currentTarget) - stack.move)+" maxFR: "+stack.maxFiringRange(currentTarget));*/
+                System.out.println(stack.fullName()+" target: "+currentTarget.fullName()+" distaftermove: "+(stack.movePointsTo(currentTarget) - stack.move)+" DistToBeAt: "+DistanceToBeAt(stack, currentTarget));*/
             // if we need to move towards target, do it now
             if (currentTarget != null) {
                 if (stack.mgr.autoResolve) {
@@ -530,7 +530,9 @@ public class AIShipCaptain implements Base, ShipCaptain {
     public int DistanceToBeAt(CombatStack st, CombatStack tgt)
     {
         int distanceToBeAt = st.optimalFiringRange(tgt);
-        if(st.repulsorRange() > 0 && st.optimalFiringRange(tgt) > 1 && tgt.optimalFiringRange(st) < st.optimalFiringRange(tgt))
+        if(st.repulsorRange() > 0 && st.optimalFiringRange(tgt) > 1 && tgt.optimalFiringRange(st) < st.optimalFiringRange(tgt) && !tgt.ignoreRepulsors())
+            distanceToBeAt = 2;
+        if(tgt.repulsorRange() > 0 && !st.ignoreRepulsors())
             distanceToBeAt = 2;
         boolean shallGoForFirstStrike = true;
         if(galaxy().shipCombat().results().damageSustained(st.empire) > 0
