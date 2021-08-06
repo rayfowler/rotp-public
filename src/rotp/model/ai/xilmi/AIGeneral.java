@@ -721,8 +721,10 @@ public class AIGeneral implements Base, General {
         float totalProductionReachableByEnemies = 0.0f;
         float totalMissileBaseCost = 0.0f;
         float totalShipCost = 0.0f;
-        for(Empire enemy : empire.enemies())
+        for(Empire enemy : empire.contactedEmpires())
         {
+            if(!empire.inShipRange(enemy.id))
+                continue;
             for(StarSystem enemySystem : empire.systemsInShipRange(enemy))
             {
                 if(enemySystem.colony() != null)
