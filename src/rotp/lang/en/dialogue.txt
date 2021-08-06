@@ -38,7 +38,6 @@ DECLINE_ANNOYED_03         | A thousand apologies, [your_nameTitle] [your_name],
 DECLINE_ANNOYED_03         | Pardon us, but our time is at an end.
 DECLINE_ANNOYED_03         | We have little time and much to do. Perhaps we can talk again later.
 
-
 DECLINE_OATHBREAKER_01     | We are unwilling to enter into a treaty at this time because you have broken treaties in the past.
 DECLINE_OATHBREAKER_01     | You have not honored your past agreements. We see little reason to trust you now.
 DECLINE_OATHBREAKER_01     | Why should we trust you now, when you have broken so many past treaties?
@@ -82,16 +81,6 @@ DECLINE_BIOWEAPONS_01      | We cannot deal with anybody desperate enough to use
 DECLINE_BIOWEAPONS_01      | You use weapons that cause untold horrors on innocent populations. We refuse to deal with such madness.
 DECLINE_BIOWEAPONS_01      | The gods abhor those who would destroy planets with biological weaponry. The [my_race] cannot allow it.
 DECLINE_BIOWEAPONS_01      | The cries of those killed by your biological weapons fill our ears. We cannot hear your offer.
-
-DECLINE_ANNOYED_01         | We tire of diplomatic negotiations. We can continue discussions at a later time.
-DECLINE_ANNOYED_01         | These talks get us nowhere. We must take our leave.
-DECLINE_ANNOYED_01         | [my_nameTitle] [my_name] has heard enough. We will talk again later. 
-DECLINE_ANNOYED_01         | [your_nameTitle] [your_name], you try our patience. Perhaps you should speak again later.
-DECLINE_ANNOYED_01         | A thousand apologies, [your_nameTitle] [your_name], but other duties call.
-DECLINE_ANNOYED_01         | We have little time and much to do. Perhaps we can talk again later.
-DECLINE_ANNOYED_01         | The [your_race] are creatures of much wind and little action. We tire of your prattle.
-DECLINE_ANNOYED_01         | We go now.
-DECLINE_ANNOYED_01         | Pardon us, but our time is at an end.
 
 DECLINE_TECH_TRADE_01      | You have no technology which interests us.
 DECLINE_TECH_TRADE_01      | We have no need of [your_race] toys.

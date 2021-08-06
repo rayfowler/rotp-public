@@ -17,7 +17,6 @@ package rotp.ui.notifications;
 
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.ShipFleet;
-import rotp.model.game.GameSession;
 import rotp.ui.RotPUI;
 import rotp.util.Base;
 
@@ -26,12 +25,13 @@ public class BombardSystemNotification implements TurnNotification, Base {
     private final int sysId;
 
     public static void create(int systemId, ShipFleet fl, boolean autoBomb) {
+        Empire emp = fl.empire();
         int sysId = systemId;
         // sanity check to avoid unallowable bombings
         // fleet must have ability to attack planets and must be in orbit
         // planet must be colonized
         // fleet & planet empires must be on aggressive terms (war or no treaty)
-        if (!fl.canAttackPlanets() || fl.launched() || !fl.empire().sv.isColonized(sysId) || !fl.empire().aggressiveWith(fl.empire().sv.empId(sysId)))
+        if (!fl.canAttackPlanets() || fl.launched() || !emp.sv.isColonized(sysId) || !emp.aggressiveWith(emp.sv.empId(sysId)))
             return;
 
         // bomb immediately instead of queueing notification

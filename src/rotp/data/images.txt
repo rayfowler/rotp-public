@@ -8,3 +8,52 @@ LANGUAGE_ICON       | images/language_icon-red.png
 TEXTURE_BROWN       | images/texture_brown.jpg
 TEXTURE_GRAY        | images/texture_gray.jpg
 DERELICT_SHIP       | images/Derelict_Ship.jpg
+
+TECH_ANTIMATTER_BOMB          | images/techs/Anti-Matter_Bomb.png
+TECH_ANTIMATTER_TORPEDO       | images/techs/Anti-Matter_Torpedo.png
+TECH_AUTO_BLASTER             | images/techs/Auto_Blaster.png
+TECH_DEATH_RAY                | images/techs/Death_Ray.png
+TECH_DISRUPTOR                | images/techs/Disruptor.png
+TECH_FUSION_BEAM              | images/techs/Fusion_Beam.png
+TECH_FUSION_BOMB              | images/techs/Fusion_Bomb.png
+TECH_FUSION_RIFLE             | images/techs/Fusion_Rifle.png
+TECH_GATLING_LASER            | images/techs/Gatling_Laser.png
+TECH_GAUSS_AUTOCANNON         | images/techs/Gauss_Autocannon.png
+TECH_GRAVITON_BEAM            | images/techs/Graviton_Beam.png
+TECH_HAND_LASER               | images/techs/Hand_Laser.png
+TECH_HAND_PHASOR              | images/techs/Hand_Phasor.png
+TECH_HARD_BEAM                | images/techs/Hard_Beam.png
+TECH_HELLFIRE_TORPEDO         | images/techs/Hellfire_Torpedo.png
+TECH_HERCULAR_MISSILE         | images/techs/Hercular_Missile.png
+TECH_HYPER-V_ROCKET           | images/techs/Hyper-V_Rocket.png
+TECH_HYPER-X_ROCKET           | images/techs/Hyper-X_Rocket.png
+TECH_ION_CANNON               | images/techs/Ion_Cannon.png
+TECH_ION_RIFLE                | images/techs/Ion_Rifle.png
+TECH_ION_STREAM_PROJECTOR     | images/techs/Ion_Stream_Projector.png
+TECH_MASS_DRIVER              | images/techs/Mass_Driver.png
+TECH_MAULER_DEVICE            | images/techs/Mauler_Device.png
+TECH_MEGABOLT_CANNON          | images/techs/Megabolt_Cannon.png
+TECH_MERCULITE_MISSILE        | images/techs/Merculite_Missile.png
+TECH_NEUTRON_BLASTER          | images/techs/Neutron_Blaster.png
+TECH_NEUTRON_PELLET_GUN       | images/techs/Neutron_Pellet_Gun.png
+TECH_NEUTRON_STREAM_PROJECTOR | images/techs/Neutron_Stream_Projector.png
+TECH_NEUTRONIUM_BOMB          | images/techs/Neutronium_Bomb.png
+TECH_OMEGA-V_BOMB             | images/techs/Omega-V_Bomb.png
+TECH_PARTICLE_BEAM            | images/techs/Particle_Beam.png
+TECH_PLASMA_CANNON            | images/techs/Plasma_Cannon.png
+TECH_PLASMA_RIFLE             | images/techs/Plasma_Rifle.png
+TECH_PLASMA_TORPEDO           | images/techs/Plasma_Torpedo.png
+TECH_PROTON_TORPEDO           | images/techs/Proton_Torpedo.png
+TECH_PULSE_PHASOR             | images/techs/Pulse_Phasor.png
+TECH_PULSON_MISSILE           | images/techs/Pulson_Missile.png
+TECH_SCATTER_PACK_V_MISSILE   | images/techs/Scatter_Pack_V_Missile.png
+TECH_SCATTER_PACK_VII_MISSILE | images/techs/Scatter_Pack_VII_Missile.png
+TECH_SCATTER_PACK_X_MISSILE   | images/techs/Scatter_Pack_X_Missile.png
+TECH_STELLAR_CONVERTOR        | images/techs/Stellar_Convertor.png
+TECH_STINGER_MISSILE          | images/techs/Stinger_Missile.png
+TECH_TACHYON_BEAM             | images/techs/Tachyon_Beam.png
+TECH_TRI-FOCUS_PLASMA_CANNON  | images/techs/Tri-Focus_Plasma_Cannon.png
+TECH_ZEON_MISSILE             | images/techs/Zeon_Missile.png
+
+
+

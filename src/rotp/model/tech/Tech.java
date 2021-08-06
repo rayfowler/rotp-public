@@ -130,6 +130,7 @@ public class Tech implements Base {
     public String item()                  { return item == null ? name() : text(item); }
     public String item2()                 { return item2 == null ? item() : text(item2); }
     public String imageKey()              { return ""; }
+    public Image image()                  { return iconFilename == null ? null : image(iconFilename); }
     public int futureTechLevel()          { return 0; }
     public boolean isWarpDissipator()     { return false; }
     public boolean isTechNullifier()      { return false; }
