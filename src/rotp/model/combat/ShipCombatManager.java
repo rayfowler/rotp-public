@@ -753,9 +753,16 @@ public class ShipCombatManager implements Base {
             // attacking ships not in stasis count
             else if (!st.inStasis)
                 combatableStacks.add(st);
-            //ail: when there's still missiles flying around don't end the combat
+            //ail: when there's still missiles flying around don't end the combat (the stack that fired it doesn't count as armed anymore)
             if(!st.missiles().isEmpty())
-                return true;
+            {
+                for(CombatStackMissile missile : st.missiles())
+                {
+                    //ail: the missile alsoe needs to have a target that still is there as otherwise this can lead to combat going on after target with incoming missile was destroyed
+                    if(missile.target.num > 0)
+                        return true;
+                }
+            }
         }
         for (CombatStack stack1 : combatableStacks) {
             for (CombatStack stack2 : combatableStacks) {
