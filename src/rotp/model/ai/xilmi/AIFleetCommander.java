@@ -1109,18 +1109,18 @@ public class AIFleetCommander implements Base, FleetCommander {
                 {
                     continue;
                 }
-                if(d.isBomber() && !includeBombers)
+                if(empire.shipDesignerAI().bombingAdapted(d) >= 0.8f && !includeBombers && !d.isColonyShip())
                 {
                     continue;
                 }
-                if((d.isFighter() || d.isDestroyer()) && !includeFighters)
+                if(empire.shipDesignerAI().fightingAdapted(d) > 0.8f && !includeFighters && !d.isColonyShip())
                 {
                     continue;
                 }
                 if(!empire.sv.inShipRange(target.id) && d.range() < empire.scoutRange())
                     continue;
                 counts[i] = (int)Math.ceil(num * amount);
-                if(needToKeep > 0 && (d.isFighter() || d.isDestroyer()))
+                if(needToKeep > 0 && empire.shipDesignerAI().fightingAdapted(d) > 0)
                 {
                     int toKeep = (int)Math.ceil(needToKeep / d.cost());
                     if(num - counts[i] <= toKeep)
@@ -1176,15 +1176,10 @@ public class AIFleetCommander implements Base, FleetCommander {
                     continue;
                 if(des.isScout() && !countScouts)
                     continue;
-                if(des.isBomber() && !countBombers)
-                {
-                    //ail the fighting-value of bombers is weak but not 0, so we count them partially
-                    //ail 2021-08-01: Not anymore with recent change of doubling down on specialization
-                    if(countFighters)
-                        bcValueFactor = 0.0f;
-                    else
-                        continue;
-                }
+                if(countBombers)
+                    bcValueFactor = empire.shipDesignerAI().bombingAdapted(des);
+                if(countFighters)
+                    bcValueFactor = empire.shipDesignerAI().fightingAdapted(des);
                 if(des.hasColonySpecial() && !countColonizers)
                     continue;
                 bc += (num * des.cost() * bcValueFactor);
