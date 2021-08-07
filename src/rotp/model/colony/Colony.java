@@ -285,14 +285,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
     }
     public void forcePct(int catNum, float d) {
         // occurs when new spending orders are applied
-        int baseTicks = MAX_TICKS;
-        int tickOffset = 0;
-        if(catNum == ECOLOGY)
-        {
-            tickOffset =  ecology().cleanupAllocationNeeded();
-            baseTicks -= tickOffset;
-        }
-        allocation(catNum, tickOffset + (int) Math.ceil(d*baseTicks));
+        allocation(catNum, (int) Math.ceil(d*MAX_TICKS));
         realignSpending(spending[catNum]);
         spending[catNum].removeSpendingOrders();
     }
