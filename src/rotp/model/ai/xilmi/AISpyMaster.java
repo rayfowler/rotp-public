@@ -49,9 +49,11 @@ public class AISpyMaster implements Base, SpyMaster {
             }
         }
         paranoia = empire.tech().avgTechLevel() - highestOpponentTechLevel;
+        if(highestOpponentTechLevel == 0)
+            paranoia = 0;
         if (paranoia < 0)
             paranoia = 0;
-        //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" counter-espionage: "+paranoia+" mt: "+empire.tech().avgTechLevel()+" ot: "+avgOpponentTechLevel+" mct: "+empire.tech().computer().techLevel()+" pct: "+avgOpponentComputerLevel);
+        //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" counter-espionage: "+paranoia+" mt: "+empire.tech().avgTechLevel()+" ot: "+highestOpponentTechLevel);
         return min(10, (int)Math.round(paranoia)); // modnar: change max to 10, MAX_SECURITY_TICKS = 10
     }
     @Override
