@@ -1340,6 +1340,8 @@ public class AIDiplomat implements Base, Diplomat {
         {
             return false;
         }
+        if(!empire.inShipRange(v.empId()))
+            return false;
         if(galaxy().options().baseAIRelationsAdj() <= -30)
             return true;
         if (!empire.enemies().isEmpty()) 
