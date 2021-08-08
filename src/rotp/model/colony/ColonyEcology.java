@@ -245,7 +245,11 @@ public class ColonyEcology extends ColonySpendingCategory {
             }
         }
         if (colony().population() < 0)
+        {
             err("ERROR: bad pop for ", colony().name(), " pop:"+colony().population(), " newGrown:", str(newGrownPopulation), " newPurchased:", str(newPurchasedPopulation));
+            //ail: I've actually seen that happen and it kinda messes up the AI, when it does. So I'd rather also do something about it.
+            colony().setPopulation(1);
+        }
 
         if (!empire().divertColonyExcessToResearch())
             empire().addReserve(unallocatedBC);
