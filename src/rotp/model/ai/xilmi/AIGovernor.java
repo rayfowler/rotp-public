@@ -496,8 +496,12 @@ public class AIGovernor implements Base, Governor {
 
         //ail: Rich and Ultra-Rich that are doing research which is not a project should put their stuff into reserve instead of conducting research
         boolean shiftResearchToIndustry = false;
-        if(prodScore > 1 && (col.planet().isResourceRich() || col.planet().isResourceUltraRich()) && !col.research().hasProject())
+        if(prodScore > 1 && (col.planet().isResourceRich() || col.planet().isResourceUltraRich()) && !col.research().hasProject() && col.pct(RESEARCH) > 0)
+        {
             shiftResearchToIndustry = true;
+            if(empire.divertColonyExcessToResearch())
+                empire.toggleColonyExcessToResearch();
+        }
         
         if(enemyBombardPower > 0)
             shiftResearchToIndustry = false;
@@ -663,7 +667,7 @@ public class AIGovernor implements Base, Governor {
     @Override
     public float productionScore(StarSystem sys)
     {
-        float Score = sqrt(sys.colony().totalIncome());
+        float Score = sqrt(max(0, sys.colony().totalIncome()));
         Score *= sys.planet().productionAdj();
         Score /= sys.planet().researchAdj();
         float avgScore = 0;

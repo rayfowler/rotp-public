@@ -97,6 +97,9 @@ public class AIScientist implements Base, Scientist {
     public void setTechTreeAllocations() {
         // invoked after nextTurn() processing is complete on each civ's turn
         setDefaultTechTreeAllocations();
+        //ail: This happens at the beginning before we see whether we want to switch this off. But we want accidental excess to go to research so to not waste it.
+        if(!empire.divertColonyExcessToResearch())
+            empire.toggleColonyExcessToResearch();
         //ail: first I stop researching where there's no techs left
         int leftOverAlloc = 0;
         for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {

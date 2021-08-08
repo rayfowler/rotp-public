@@ -125,6 +125,8 @@ public class AITreasurer implements Base, Treasurer {
         //We only gather tax when we need to deal with a nova/plague
         if(needToSolveEvent && empire.totalReserve() < reserveGoal)
         {
+            if(empire.divertColonyExcessToResearch())
+                empire.toggleColonyExcessToResearch();
             float totalProd = empire.totalPlanetaryProduction();
             float desiredRsv = totalProd * 0.1f; // modnar: reduce reserve collection, less is more efficient in general
             int maxAlloc = ColonySpendingCategory.MAX_TICKS; 
