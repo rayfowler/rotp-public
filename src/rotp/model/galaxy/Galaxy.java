@@ -395,7 +395,8 @@ public class Galaxy implements Base, Serializable {
         for (int i=0;i<num;i++) {
             NoticeMessage.setSubstatus(text("TURN_MAKE_DECISIONS"), (i+1), num);
             Empire emp = empires[i];
-            emp.makeNextTurnDecisions();
+            if(!emp.extinct())
+                emp.makeNextTurnDecisions();
         }
     }
     
