@@ -74,7 +74,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
                 if((d.isColonyShip() || d.isScout()) && !d.obsolete())
                     continue;
                 if(shipCounts[d.id()] == 0 && !empire.isAnyColonyConstructing(d))
-                    lab().scrapDesign(d);
+                    ScrapDesign(d);
             }
             /*System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" Fighter: "+lab().fighterDesign().name());
             System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" Bomber: "+lab().bomberDesign().name());
@@ -160,7 +160,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
                 //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+d.name()+" keepScore: "+keepScore+" role: "+d.mission());
                 if(keepScore == 0)
                 {
-                    lab.scrapDesign(d);
+                    ScrapDesign(d);
                     //if we do this, we don't have to scrap the design with the lowest keepscore anymore because a slot is now free
                     shouldScrap = false;
                     break;
@@ -176,7 +176,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         if(designToScrap != null && shouldScrap)
         {
             //System.out.print("\n"+empire.name()+" "+designToScrap.name()+" is scrapped.");
-            lab.scrapDesign(designToScrap);
+            ScrapDesign(designToScrap);
         }
     }
 
@@ -189,7 +189,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
             ShipDesign currDesign = lab.scoutDesign();
             if(currDesign.active() && currDesign.isScout())
             {
-                lab.scrapDesign(currDesign);
+                ScrapDesign(currDesign);
             }
             return;
         }
@@ -205,7 +205,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
 
         // NEW DESIGN IS BETTER THAN CURRENT
         // immediately replace scout design, don't bother with obsoleting them
-        lab.scrapDesign(currDesign);
+        ScrapDesign(currDesign);
         lab.setScoutDesign(newScout, currSlot);
     }
     public void updateColonyDesign() {
@@ -444,7 +444,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         ShipDesign currDesign = lab.destroyerDesign();
         if(currDesign.active() && currDesign.isDestroyer())
         {
-            lab.scrapDesign(currDesign);
+            ScrapDesign(currDesign);
         }
     }
     @Override
@@ -683,4 +683,9 @@ public class AIShipDesigner implements Base, ShipDesigner {
         }
         return false;
     } 
+    public void ScrapDesign(ShipDesign d)
+    {
+        if(lab().canScrapADesign())
+            lab().scrapDesign(d);
+    }
 }
