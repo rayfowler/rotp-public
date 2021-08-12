@@ -34,8 +34,6 @@ import rotp.model.ships.ShipDesignLab;
 import rotp.model.ships.ShipSpecial;
 import rotp.model.ships.ShipSpecialColony;
 import rotp.model.ships.ShipWeapon;
-import rotp.model.tech.Tech;
-import rotp.model.tech.TechStargate;
 import rotp.util.Base;
 
 public class AIShipDesigner implements Base, ShipDesigner {
