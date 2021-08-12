@@ -80,7 +80,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             float prevMove = stack.move;
             prevTarget = currentTarget;
             //ail: for moving we pick the target that is overall the most suitable, so that bombers move towards planet
-            FlightPath bestPathToTarget = null;
+            FlightPath bestPathToTarget;
             //ail: defend-stuff is problematic as stacks can be drawn out
             /*if((currentTarget == null || stack.movePointsTo(currentTarget) - stack.move > stack.maxFiringRange(currentTarget)) && stack.hasWard())
                 bestPathToTarget = defendWardPath(stack, stack.ward());
@@ -101,15 +101,12 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 if (stack.canAttack(currentTarget) && stack.movePointsTo(tgtBeforeClose) <= stack.optimalFiringRange(stack) ) 
                     performSmartAttackTarget(stack, currentTarget);
                 if (wantToRetreat(stack) && stack.canRetreat()) {
-                    if(tgtBeforeClose != null)
-                    {
-                        CombatStackShip shipStack = (CombatStackShip) stack;
-                        StarSystem dest = retreatSystem(shipStack.mgr.system());
-                        if (dest != null) {
-                            mgr.retreatStack(shipStack, dest);
-                            //System.out.print("\n"+stack.fullName()+" target: "+currentTarget.fullName()+" retreat because it wants to.");
-                            return;
-                        }
+                    CombatStackShip shipStack = (CombatStackShip) stack;
+                    StarSystem dest = retreatSystem(shipStack.mgr.system());
+                    if (dest != null) {
+                        mgr.retreatStack(shipStack, dest);
+                        //System.out.print("\n"+stack.fullName()+" target: "+currentTarget.fullName()+" retreat because it wants to.");
+                        return;
                     }
                 }
                 currentTarget = tgtBeforeClose;
