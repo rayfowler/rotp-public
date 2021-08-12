@@ -704,7 +704,8 @@ public class AIGovernor implements Base, Governor {
             if (fl.num[i] > 0) {
                 ShipDesign d = fl.empire().shipLab().design(i);
                 for (int j=0;j<ShipDesign.maxWeapons();j++)
-                    damage += (fl.num[i] * d.wpnCount(j) * d.weapon(j).estimatedBombardDamage(d, planetStack));
+                    if(!d.weapon(j).isBioWeapon())
+                        damage += (fl.num[i] * d.wpnCount(j) * d.weapon(j).estimatedBombardDamage(d, planetStack));
                 for (int j=0;j<ShipDesign.maxSpecials();j++)
                     damage += d.special(j).estimatedBombardDamage(d, planetStack);
             }

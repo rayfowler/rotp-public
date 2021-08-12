@@ -45,6 +45,7 @@ import rotp.model.ships.ShipSpecial;
 import rotp.model.ships.ShipWeapon;
 import rotp.model.ships.ShipWeaponMissileType;
 import rotp.model.tech.Tech;
+import rotp.model.tech.TechBiologicalWeapon;
 import rotp.model.tech.TechTree;
 import rotp.util.Base;
 
@@ -189,6 +190,7 @@ public class NewShipTemplate implements Base {
         boolean needRange = false;
         boolean boostInertial = false;
         float topSpeed = 0;
+        float antiDote = 0;
         float avgECM = 0;
         float avgSHD = 0;
         float longRangePct = 0;
@@ -198,6 +200,8 @@ public class NewShipTemplate implements Base {
         
         for(EmpireView ev : ai.empire().contacts())
         {
+            if(ev.spies().tech().antidoteLevel() > antiDote)
+                antiDote = ev.spies().tech().antidoteLevel();
             for(ShipDesign enemyDesign : ev.empire().shipLab().designs())
             {
                 if(enemyDesign.scrapped())
@@ -367,13 +371,13 @@ public class NewShipTemplate implements Base {
         
         switch (role) {
             case BOMBER:
-                setOptimalWeapon(ai, d, d.availableSpace(), 1, false, false, false, topSpeed, avgECM, avgSHD);
+                setOptimalWeapon(ai, d, d.availableSpace(), 1, false, false, false, topSpeed, avgECM, avgSHD, antiDote);
                 //setOptimalWeapon(ai, d, d.availableSpace(), 3, needRange, true, false, topSpeed, avgECM, avgSHD); // uses slot 1
                 break;
             case FIGHTER:
             default:
-                setOptimalWeapon(ai, d, d.availableSpace() * hybridBombRatio, 1, false, false, false, topSpeed, avgECM, avgSHD);
-                setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, avgSHD); // uses slots 0-3
+                setOptimalWeapon(ai, d, d.availableSpace() * hybridBombRatio, 1, false, false, false, topSpeed, avgECM, avgSHD, antiDote);
+                setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, avgSHD, antiDote); // uses slots 0-3
                 break;
         }
         ai.lab().iconifyDesign(d);
@@ -688,7 +692,7 @@ public class NewShipTemplate implements Base {
     
 // ********* FUNCTIONS SETTING ANTI-SHIP AND ANTI-PLANET WEAPONS ********** //
 
-    private void setOptimalWeapon(ShipDesigner ai, ShipDesign d, float spaceAllowed, int numSlotsToUse, boolean mustBeRanged, boolean mustTargetShips, boolean prohibitMissiles, float missileSpeedMinimum, float avgECM, float avgSHD) {
+    private void setOptimalWeapon(ShipDesigner ai, ShipDesign d, float spaceAllowed, int numSlotsToUse, boolean mustBeRanged, boolean mustTargetShips, boolean prohibitMissiles, float missileSpeedMinimum, float avgECM, float avgSHD, float antiDote) {
         List<ShipWeapon> allWeapons = ai.lab().weapons();
         ShipWeapon bestWeapon = null;
         float bestScore = 0.0f;
@@ -723,6 +727,8 @@ public class NewShipTemplate implements Base {
                         missileDamageMod *= swm.shots() / 5.0f;
                     }
                     float currentScore = wpn.firepower(shield) * missileDamageMod / wpn.space(d);
+                    if(wpn.isBioWeapon() && allowBioWeapons(ai))
+                        currentScore = TechBiologicalWeapon.avgDamage(wpn.maxDamage(), (int)antiDote) * 200 / wpn.space(d);
                     //System.out.print("\n"+ai.empire().name()+" "+d.name()+" wpn: "+wpn.name()+" score: "+currentScore);
                     if(currentScore > bestScore)
                     {
@@ -806,5 +812,34 @@ public class NewShipTemplate implements Base {
             totalShipProduction += systemsProduction.get(i);
 
         return totalShipProduction;
+    }
+    
+    private boolean allowBioWeapons(ShipDesigner ai)
+    {
+        boolean allow = false;
+        int DesignsWithRegularBombs = 0;
+        int DesignsWithBioWeapons = 0;
+        for (int slot=0;slot<ShipDesignLab.MAX_DESIGNS;slot++) {
+            ShipDesign ourDesign = ai.lab().design(slot);
+            boolean hasRegular = false;
+            boolean hasBio = false;
+            for (int j=0;j<maxWeapons();j++)
+            {
+                if(ourDesign.weapon(j).groundAttacksOnly())
+                {
+                    if(ourDesign.weapon(j).isBioWeapon())
+                        hasBio = true;
+                    else
+                        hasRegular = true;
+                }
+            }
+            if(hasRegular)
+                DesignsWithRegularBombs++;
+            if(hasBio)
+                DesignsWithBioWeapons++;
+        }
+        if(DesignsWithRegularBombs > 1 && DesignsWithBioWeapons < 2)
+            allow = true;
+        return allow;
     }
 }
