@@ -1,0 +1,143 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Meklar specific dialogue
+
+CONTACT_ERRATIC            | Spesies: [your_race]. Penentuan pemimpin: [your_title]. Inovasi teknologi: bervariasi. Penilaian ancaman: meragukan.
+CONTACT_HONORABLE          | Spesies [your_race] menyatakan niatnya. [my_empire] merasakan adanya potensi kerja sama untuk keuntungan bersama. Hasil masih dipantau.
+CONTACT_RUTHLESS           | [my_empire] sekarang mengetahui keberadaan [your_race]. [my_title] menyatakan peringatan kepada seluruh spesies [your_race]: jangan ikut campur dalam tujuan Dominion. Itu akan berujung pada kepunahan [your_race].
+//
+GREETING_01                | Identitas duta besar sekutu terkonfirmasi. Permintaan resmi dari Dominion. Dominion akan membantu jika memungkinkan. 
+GREETING_04                | [my_empire] mengakui duta besar [your_race]. Dominion bersedia memproses permintaan untuk saat ini.
+GREETING_07                | Permintaan resmi negara. Dominion mungkin tidak mengirimkan permintaan dari [your_race] untuk diproses [my_title].
+//
+DECLAREWAR_HATE_01         | [my_empire] tidak lagi ingin menoleransi keberadaan [your_empire]. Kekuatan spesies [your_race] cukup primitif. Melakukan protokol pencarian dan penghancuran.
+DECLAREWAR_HATE_02         | [my_title] tidak lagi mengizinkan spesies [your_race] ikut serta dalam tujuan Dominion. Dominion bersiap untuk mendedikasikan diri lebih ke pengamanan pengarahan primer.
+DECLAREWAR_HATE_03         | Dominion tidak bisa melanjutkan pengarahan sementara [your_empire] masih ada. Dominion harus mengakhiri spesies ini. Tidak ada pilihan lain.
+DECLAREWAR_ERRATIC_01      | [my_title] menyimpulkan bahwa keberadaan spesies [your_race] mengancam tujuan Dominion. Dominion akan memulai protokol pembantaian segera.
+DECLAREWAR_ERRATIC_02      | [my_title] menilai spesies [your_race] kemungkinan besar memegang rahasian untuk tujuan Dominion yang lebih besar. Dominion akan mengambil rahasia dari spesies [your_race] dengan paksa.
+DECLAREWAR_ERRATIC_03      | [my_title] menganggap spesies [your_race] sebagai variasi yang tidak dapat diterima dalam rencana Dominion. Dominion akan memberantas spesies [your_race] atau membunuh dirinya dalam proses itu.
+DECLAREWAR_MILITARY_01     | [my_empire] harus terus memperbanyak dirinya di seluruh galaksi dalam pengejaran tujuan utama. [your_empire] menghambat perkembangan ini. Masalah sedang diselesaikan.
+DECLAREWAR_MILITARY_02     | Dominion tidak mampu menentukan lokasi tujuan utama. Kemungkinan bahwa planet-planet yang dekat atau menjadi milik [your_empire] menyimpan apa yang sedang dicari. Perang takterhindarkan.
+DECLAREWAR_MILITARY_03     | Dominion memaksa mengembangkan pencapaian wilayahnya. Kekuatan spesies [your_race] tidak dapat menjadi faktor penawar. Perang takterhindarkan, tapi harus terjadi.
+DECLAREWAR_ALLIANCE_01     | [your_empire] telah menyatakan perang kepada sekutu Dominion. Dominion akan melindungi niat terselubung dalam tujuan-tujuannya dengan cara memberantas ancaman [your_race].
+DECLAREWAR_ALLIANCE_02     | Dominion menerima permintaan bantuan dari [other_empire]. Lanjut untuk membantu sekutu dalam perang melawan spesies [your_race] selama konflik berlangsung.
+DECLAREWAR_ALLIANCE_03     | Spesies [your_race] menjadi sombong dengan mendeklarasikan perang terhadap pihak lain. Dominion akan membantu kekaisaran lain untuk menghilangkan spesies [your_race] dari  galaksi ini.
+DECLAREWAR_SPYING_01       | Spesies [your_race] terlibat dalam aksi rahasia melawan Dominion. Konsekuensi untuk Dominion: tidak dapat diabaikan. Konsekuensi untuk spesies [your_race]: fatal.
+DECLAREWAR_SPYING_02       | Penipuan terdeteksi di wilayah Dominion. Sumber terkonfirmasi sebagai spesies [your_race]. Protokol Dominion memerlukan perang sebagai respon. 
+DECLAREWAR_SPYING_03       | Dominion mendeteksi upaya destabilisasi yang nyata dari [your_empire]. Tidak bisa membiarkan spesies [your_race] untuk melanjutkan keterlibatan dengan tujuan. Dominion harus menyerang dengan cara apapun.
+DECLAREWAR_ATTACK_01       | Spesies [your_race] terbukti melakukan kekerasan meski adanya keunggulan [my_race] yang nyata. Dominion bergerak untuk menghilangkan seluruh ancaman.
+DECLAREWAR_ATTACK_02       | Spesies [your_race] menghalangi tujuan Dominion dengan menyerang secara langsung. Konfrontasi takterhindarkan.
+DECLAREWAR_ATTACK_03       | Spesies [your_race] mencoba mencegah Dominion mencapai tujuannya dengan memusnahkan [my_race]. Dominion akan menyerang dengan semua kekuatan militer yang ada.
+DECLAREWAR_OPPORTUNITY_01  | [my_title] percaya spesies [your_race] akhirnya akan terbukti berbahaya dalam meraih tujuan utama. Dominion akan memberantas spesies [your_race] sebelum ancaman benar-benar terwujud.
+DECLAREWAR_ASSASSIN_01     | Duta Besar Dominion dibuat tidak dapat beroperasi oleh spesies [your_race] sebelum diintegrasikan ulang dalam Mainframe. Tindakan [your_race] ini sengaja meminta penyerangan keras.
+
+OFFER_PEACE_01             | [my_title] mendapat pemikiran baru. Perang tidak lagi menjadi pengeluaran yang dapat diterima bagi Dominion. Dominion ingin memperantarai perdamaian secepatnya. 
+OFFER_TRADE_01             | Spesies [your_race] memiliki sumber daya yang signifikan. Dominion juga memiliki barang berharga. Dominion mengusulkan persetujuan dagang sejumlah [amt] BC per tahun.  
+OFFER_PACT_01              | Dominion lebih menghargai hasil akhir daripada konlik yang tidak masuk akal. Pakta Non-agresi dengan spesies [your_race] dirasa merupakan cara yang paling pantas untuk mendapat hasil yang dapat dinyatakan dengan jelas. 
+OFFER_ALLIANCE_01          | [my_title] menghargai diplomasi dengan spesies [your_race]. Dominion mengusulkan aliansi formal untuk memastikan keselamatan baik spesies [your_race] maupun [my_race]. Dibutuhkan respon secepatnya.  
+
+WARN_TRESPASSING_01        | [your_race] species detected in [system] system. Area previously claimed by Dominion. Vacate immediately. 
+WARN_EXPANSION_01          | Ekspansi besar-besaran dari spesies [your_race] merupakan ancaman bagi tujuan Dominion. Kelanjutan pertumbuhan wilayah akan memaksa aksi militer sebagai balasannya. 
+WARN_BUILDUP_01            | Jaringan pengamatan Dominion mengidentifikasi armada [your_race] sebagai potensi ancaman bagi keamanan. Peningkatan pengawasan terhadap spesies [your_race] untuk memastikan tujuan Domonion tidak terganggu.
+WARN_SKIRMISH_01           | Konflik antara armada Dominion dan [your_race] terdeteksi pada [system]. Dominion menyarankan menghindari penyerangan berulang: Dominion bersiap untuk merespon dengan sebaik-baiknya jika peringatan tidak diindahkan. 
+WARN_ATTACKED_01           | Serangan [attacker_race] tercatat pada [system]. [defender_title] memberikan pesan kepada Duta Besar: melanjutkan untuk mengancam keamanan Dominion akan menghasilkan kepunahan spesies [attacker_race]. 
+WARN_INVADED_01            | Peringatan dari Dominion bahwa spesies [attacker_race] tidak memiliki hak klaim atas ruang [defender_race]. Pindahkan armada secepatnya atau hadapilah pembasmian total.
+WARN_ESPIONAGE_01          | Aktivitas spionase [spy_race] terekam di wilayah Dominion. Protokol keamanan Dominion lebih hebat dari keahlian [spy_race] dalam hal spionase. Menguji Dominion lagi mungkin akan membawa hasil yang fatal. [framed]
+WARN_SABOTAGE_01           | Dominion mengetahui keterlibatan spesies [spy_race] di sabotase yang baru terjadi. Usaha dalam kekacauan yang terlalu remeh untuk menimbulkan respon. Usaha lebih lanjut dalam sabotase dapat dipastikan mengundang pembalasan spontan. [forced]
+WARN_BIOWEAPON_01          | Dominion mengamati penggunaan senjata biologis kasar. Persenjataan yang efektif. Penilaian ancaman spesies [attacker_race] ditingkatkan sebanyak 3 level. 
+WARN_GENOCIDE_01           | Pembunuhan besar-besaran terhadap spesies [victim_race] oleh spesies [attacker_race] terekam. Dominion tidak peduli dengan kemungkinan penyebab atau pilihan lain. Penilaian ancaman spesies [attacker_race] ditingkatkan sebanyak 5 level.  
+WARN_FINAL_WAR_01          | Semua spesies yang dikenali menyusun persetujuan untuk memastikan perdamaian yang berkelanjutan di galaksi.  lasting peace in galaxy. Spesies [rebel_race] adalah satu-satunya penentang. Dominion akan mengambil langkah yang pantas.
+WARN_COUNCIL_VOTE_01       | Dominion mengetahui tindakan [voter_race] di Majelis. Itu tidak penting. Hasil dinilai sebagai bahaya bagi tujuan [candidate_race]. Dukungan diplomatis dilaksanakan sesuai situasi.  
+WARN_OATHBREAKER_01        | [my_title] memberikan keputusan: spesies [your_race] tidak lagi dianggap dapat dipercaya. Semua perjanjian di masa depan akan direvisi berdasarkan tindakan spesies [your_race] melanggar kesepakatan yang mengikat. 
+WARN_ATTACKED_ALLY_01      | Konflik terekam di antara spesies [your_race] dan spesies [defender_race]. Spesies [defender_race] diketahui sebagai sekutu Dominion. Hentikan pertengkaran atau bersiaplah menanggung konsekuensinya. 
+WARN_REBELLING_AGAINST_01  | Spesies [your_race] kini menjadi hambatan bagi tujuan Dominion. Majelis Galaksi memutuskan hal ini tidak dapat diterima. Menunggu respon dari Wasit Agung. 
+
+
+PRAISE_COUNCIL_VOTE_01     | Duta Besar spesies [voter_race] terus menyediakan bantuan dalam memajukan tujuan [candidate_race]. Dominion melihat manfaat hubungan yang berkelanjutan dengan spesies [voter_race]. Dominion akan membayar kebaikan mereka sebagaimana mestinya. 
+PRAISE_COUNCIL_VOTE_02     | Dominion melihat suara positifmu di majelis. Dominion akan menentukan sikap terhadap spesies [voter_race] sesuai hal ini.
+PRAISE_COUNCIL_VOTE_03     | Dominion mengenali kesamaan penipuan oleh spesies [voter_race]. Terus-menerus membantu Dominion dalam majelis mungkin akan mengurangi kekhawatiran. 
+
+PRAISE_ATTACKED_ENEMY_01   | Menyerang musuh Dominion berarti membuktikan komitmen kepada tujuan [my_race]. Dominion berkomitmen untuk menjaga kerusakan akibat perbuatan spesies [attacker_race] sampai angka minimum absolut. 
+PRAISE_ATTACKED_ENEMY_02   | Dominion menyambut bantuan melawan spesies [defender_race]. Perang ini mungkin akan membuktikan awal baru di antara spesies [my_race] dan [attacker_race]. 
+PRAISE_ATTACKED_ENEMY_03   | Menyerang spesies [defender_race] tidak berarti menebus kejahatan masa lalu melawan Dominion. Dominion akan menilai kembali level ancaman spesies [attacker_race] berdasarkan tindakannya dalam perang ini. 
+
+PRAISE_TRADE_01            | Dominion dan spesies [your_race] terus memperoleh keuntungan dari perdagangan yang berkelanjutan. Dominion ingin perdagangan tetap ada selama pengaturan tetap mengatur status manfaat masing-masing.
+PRAISE_TRADE_02            | Dominion mengekspresikan kepuasan pada persetujuan dagang dengan spesies [your_race]. Pastikan persetujuan mempertahankan kondisi ini sehingga kedua ras saling mendapat keuntungan dari satu sama lain. 
+PRAISE_REBELLING_WITH_01     | Dominion setuju bahwa pemimpin Majelis Galaksi tidak dapat dipercaya. Penolakan spesies [your_race] dicatat. Dominion akan membantu spesies [your_race] dalam pemberontakan. 
+ 
+ACCEPT_TRADE_01            | Permintaan dagang spesies [your_race] diterima. Diusulkan sejumlah [amt] BC. Dominion setuju.
+RESPOND_IGNORE_THREAT_01   | Ancaman dari spesies [your_race] membingungkan. Peradaban [your_race] secara mendasar lebih rendah daripada armada Dominion. Mengabaikan ancaman.
+RESPOND_STOP_SPYING_01     | Mata-mata Dominion tertangkap ketika mencoba memperoleh informasi ke dalam bentuk kehidupan [your_race]. Dominion mengucapkan permintaan maaf. Kembalikan [my_race] yang tertangkap pada kesempatan yang secepatnya setelah ini.
+RESPOND_STOP_ATTACKING_01  | Dominion sukses menampilkan kemampuan militer kepada peradaban [your_race]. Mengembalikan armada ke koordinat pertahanan yang telah ditentukan.
+
+DIPLO_TECH_REQUEST_MENU_01   | Tentukan teknologi.
+DIPLO_TECH_COUNTER_MENU_01   | Tentukan kompensasi.
+DIPLO_TRADE_MENU_01          | Tentukan besarnya.
+DIPLO_TREATY_MENU_01         | Tentukan perjanjian.
+DIPLO_DECLARE_WAR_MENU_01    | Pastikan sebelum melanjutkan.
+DIPLO_SUGGEST_WAR_MENU_01    | Tentukan target.
+DIPLO_BREAK_ALLIANCE_MENU_01 | Tentukan sekutu.
+DIPLO_THREATEN_MENU_01       | Tentukan.
+DIPLO_OFFER_AID_MENU_01      | Tentukan.
+DIPLO_OFFER_TECH_MENU_01     | Tentukan teknologi.
+
+DECLINE_OFFER_01           | Permintaan ditolak. 
+DECLINE_OFFER_02           | Permintaan ditolak.
+DECLINE_OFFER_03           | Permintaan ditolak.
+DECLINE_OFFER_04           | Permintaan ditolak.
+DECLINE_OFFER_05           | Permintaan ditolak.
+DECLINE_OFFER_06           | Permintaan ditolak.
+DECLINE_OFFER_07           | Permintaan ditolak.
+DECLINE_OFFER_08           | Permintaan ditolak.
+DECLINE_OFFER_09           | Permintaan ditolak.
+DECLINE_ENEMY_ALLY_01      | Permintaan ditolak.
+DECLINE_NO_WAR_ON_ALLY_01  | Permintaan ditolak.
+DECLINE_PEACE_TREATY_01    | Permintaan ditolak.
+DECLINE_ANNOYED_01         | Permintaan ditolak.
+DECLINE_ANNOYED_02         | Permintaan ditolak.
+DECLINE_ANNOYED_03         | Permintaan ditolak.
+DECLINE_OATHBREAKER_01     | Permintaan ditolak.
+DECLINE_ESPIONAGE_01       | Permintaan ditolak.
+DECLINE_SABOTAGE_01        | Permintaan ditolak.
+DECLINE_BUILDUP_01         | Permintaan ditolak.
+DECLINE_ENCROACH_01        | Permintaan ditolak.
+DECLINE_SKIRMISH_01        | Permintaan ditolak.
+DECLINE_ATTACK_01          | Permintaan ditolak.
+DECLINE_INVASION_01        | Permintaan ditolak.
+DECLINE_BIOWEAPONS_01      | Permintaan ditolak.
+DECLINE_TECH_TRADE_01      | Permintaan ditolak.
+OFFER_TECH_EXCHANGE_01     | Dominion memerlukan teknologi [tech]. Tentukan kompensasi.
+ACCEPT_TECH_EXCHANGE_01    | Penerimaan direkam.
+ACCEPT_FINANCIAL_AID_01    | Penerimaan direkam.
+ACCEPT_TECHNOLOGY_AID_01   | Penerimaan direkam.
+
+BREAK_TRADE_01             | Persetujuan dagang dihentikan.
+ANNOUNCE_PEACE_01          | Penerimaan direkam.
+ACCEPT_PEACE_01            | Permintaan dikabulkan.
+
+BREAK_PACT_01              | Pakta Non-agresi dihentikan.
+ANNOUNCE_PACT_01           | Penerimaan direkam.
+ACCEPT_PACT_01             | Permintaan dikabulkan.
+
+BREAK_ALLIANCE_01          | Aliansi dihentikan.
+ANNOUNCE_ALLIANCE_01       | Penerimaan direkam.
+ACCEPT_ALLIANCE_01         | Permintaan dikabulkan.
+ACCEPT_JOINT_WAR_01        | Permintaan dikabulkan.
+
+RESPOND_CLOSE_EMBASSY_01   | Tindakan direkam.
+RESPOND_BREAK_TRADE_01     | Tindakan direkam.
+RESPOND_BREAK_PACT_01      | Tindakan direkam.
+RESPOND_BREAK_ALLIANCE_01  | Tindakan direkam.
+RESPOND_DECLARE_WAR_01     | Tindakan direkam.

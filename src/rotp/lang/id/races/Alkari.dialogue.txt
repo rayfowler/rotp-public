@@ -1,0 +1,96 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Alkari specific dialogue
+
+CONTACT_HONORABLE          | Salam bagimu, wahai [your_nameTitle] [your_name] dari [your_empire]! Kami [my_empire] agungkan salam mulia, dan sangat ingin bekerja sama dengan penuh hormat dengan sesamamu.
+CONTACT_PACIFIST           | Salamku yang paling tulus, [your_title] dari [your_empire]. Jangan kau bawa peperangan ke gerbang Sovereignty, maka kita semua akan sama-sama makmur dalam persahabatan.
+CONTACT_ERRATIC            | Aku adalah duta dari kerajaan [my_empire] yang mulia. Rakyatku menyampaikan salam seperti yang kami lakukan dalam adat kami. Bangsamu adalah bangsa [your_race_plural]? Itu sangat ... menarik.
+
+//
+GREETING_01                | Salam bagimu, Duta Besar! Bantuan apa yang mungkin bisa diberikan Sovereignty untuk sekutu yang sangat terhormat pada hari ini?
+GREETING_04                | Kusampaikan salamku, Duta Besar! Sovereignty siap mendengarkan permintaanmu, tapi seberapa jauh kami akan bertindak harus kami tinjau dulu ...
+GREETING_07                | Bicaralah secepatnya, Duta Besar! Kami diminta hukum negeri kami untuk mengikuti semua tata krama, tapi tidak berarti kami akan membuang waktu hanya untuk memenuhi keinginan sepele darimu.
+
+//
+DECLAREWAR_HATE_01         | Bangsa sejenismu, tak memikirkan kepantasan dan kesopanan, tidak pantas hidup di galaksi yang dipimpin Sovereignty, Duta Besar! Bersiaplah untuk bertempur!
+DECLAREWAR_HATE_02         | Kekurangajaran dan kesombonganmulah yang menyebabkan semua ini! Sampaikan pesan ini kepada [your_title] mu: Perang saat ini terjadi padamu!
+DECLAREWAR_HATE_03         | Kurang ajar! [my_empire] lebih baik runtuh daripada hidup sambil berbagi ruang kosmos dengan orang-orang yang kasar, Duta Besar!
+//
+DECLAREWAR_ERRATIC_01      | Duta Besar, Kami tidak bisa mengelak bahwa sangat menyenangkan rasanya menghadapi bangsa yang unik sepertimu. Sayangnya perlakuan ini harus berakhir.
+DECLAREWAR_ERRATIC_02      | Kalian telah mencoba untuk menghibur kami sejak pertama bangsa kita berjumpa. Sovereignty sangat ingin melihat apakah kalian akan membuktikan diri bahwa kalian juga semenarik itu di kala peperangan, Duta Besar!
+DECLAREWAR_ERRATIC_03      | Salam, Duta Besar [your_empire]! [my_empire] ingin menguji diri dalam pertempuran terhormat melawan kekuatan terukurmu. Persiapkan armadamu dan bangsamu untuk perang!
+//
+DECLAREWAR_MILITARY_01     | Sovereignty harus terus mengembangkan wilayah untuk menghidupi kelompok kami. Apabila kami tidak bisa menemukan dunia baru tak berpenghuni, kami ambil dunia dengan kerajaan yang lebih lemah. Kerajaanmu lebih lemah dari kami, jadi duniamu sekarang adalah milik kami.
+DECLAREWAR_MILITARY_02     | Akhirnya waktu telah tiba, Duta Besar! Dengan satu sayap, Sovereignty akan mengembangkan bayang-bayang perang di atas dirimu, dan dengan hal lainnya yang akan menyapu duniamu dalam lipatannya.
+DECLAREWAR_MILITARY_03     | Ini rasanya ... sayang sekali bahwa semuanya harus menjadi seperti ini, Duta Besar. Kami harus menjaga planetmu untuk kepentingan kami atau mati dalam usaha untuk mendapatkannya. Kami tak punya pilihan lain, bersiaplah untuk perang!
+//
+DECLAREWAR_ALLIANCE_01     | Utusan diplomatik dari [other_empire] telah memberitahu kami bahwa mereka sedang dalam peperangan dengan tentaramu. [my_empire] terikat kehormatan untuk membantu sekutu kami di masa perang: ini fakta yang akan cepat kau lupakan, Duta Besar.
+DECLAREWAR_ALLIANCE_02     | Sekutu kami memanggil bantuan, dan Sovereignty menjawab. Nasibmu ada di tanganmu, Duta Besar: Kau tak bisa terus menerus melawan armada gabungan kami!
+DECLAREWAR_ALLIANCE_03     | Menyebalkan rasanya bahwa kamu telah memilih untuk mengadakan perang melawan salah satu sekutu kami dengan cara ini. Menurut hukum kami yang paling keramat, sekarang kami harus membantu mereka dalam perang melawanmu! Kumohon, berbaliklah dari jalan ini sebelum terlalu terlambat bagi semuanya!
+//
+DECLAREWAR_SPYING_01       | Kami selama ini cukup puas bisa menjaga persahabatan yang erat dengan rakyatmu, Duta Besar. Bahwa kau melakukan tindakan tidak terhormat melawan pemimpin kami membuat kami berpikir ulang.
+DECLAREWAR_SPYING_02       | Kekerasan seperti ini tidak akan lolos dari hukuman, Duta Besar! Siapa saja yang bertindak diam-diam melawan kami akan diseret di bawah kemarahan kami.
+DECLAREWAR_SPYING_03       | Duta Besar! Berani sekali orang-orangmu melakukan tindakan keji melawan Sovereignty? Kami akan perjuangkan keadilan untuk ini apapun caranya! Bersiaplah untuk perang!
+//
+DECLAREWAR_ATTACK_01       | Hmph! Itu keputusan ceroboh, Duta Besar! Tapi jika perang adalah yang kau inginkan, perang juga yang akan dibawa Sovereignty kepadamu!
+DECLAREWAR_ATTACK_02       | Kalau begitu ini akan dimulai, Duta Besar! Jika orang [my_race] dapat selamat dari perang tak berujung di Crimson Millennium, kami akan mudah melewati perang melawan bangsamu!
+DECLAREWAR_ATTACK_03       | Kami seharusnya sudah menduga kelakuan vulgar semacam ini akan dilakukan oleh ras kurang beradab sepertimu, Duta Besar! Jangan kau pikir Sovereignty akan menyerah begitu saja padamu!
+//
+DECLAREWAR_OPPORTUNITY_01  | Seperti yang kaulihat, kami dari [my_empire] telah berhasil meraih sukses yang cukup besar. Sayang sekali, Duta Besar, kebutuhan kami memaksa bahwa kesuksesan kami berikutnya harus berasal dari kerugian negerimu.
+DECLAREWAR_ASSASSIN_01     | Kekurangajaran macam apa ini? Kalian sampai melakukan hal yang begitu mengerikan seperti membantai seorang duta besar dengan darah dingin? Sovereignty tidak akan membiarkan ras menjijikan semacam kalian untuk hidup lebih lama lagi!
+
+
+
+
+OFFER_PEACE_01             | Kisah Crimson Millennium tidak boleh terulang lagi, Duta Besar! Kami minta kalian sama-sama menghormati [your_race] dan [my_race] dengan menandatangani perjanjian perdamaian ini untuk mencegah pertumpahan darah lagi!
+OFFER_TRADE_01             | Tentunya ras yang beradab seperti kami mampu membantu satu sama lain dalam kerjasama yang terhormat. [my_empire] menginginkan persetujuan dagang dengan [your_empire] yang ditetapkan pada [amt] BC, tiap tahun. Menurutmu bagaimana, Duta Besar?
+OFFER_PACT_01              | Sovereignty puas dengan cara rakyatmu menampilkan diri mereka dalam hubungan diplomatik. Untuk menunjukkan seberapa banyak kami menghargai hubungan kita, kami ingin menandatangani pakta perjanjian non-agresi, untuk meyakinkan bahwa tak satupun di antara kita terjerumus pada ... salah paham akan maksud pihak lain.
+OFFER_ALLIANCE_01          | Tindakanmu menimbulkan rasa hormat dengan Sovereignty, Duta Besar! Raja Spire telah memerintahkan aliansi di antara [your_race] dan [my_race] harus dibentuk sekarang juga! Kami menunggu tanda tanganmu!
+
+WARN_TRESPASSING_01        | Sangat tidak pantas bagi armada [your_race] menang habis-habisan di sistem [system] seakan-akan ini wilayah mereka sendiri. Ini adalah keinginan semua orang, Duta Besar, bahwa kalian meluruskan perbuatan kalian secepatnya.
+WARN_EXPANSION_01          | Berkeliaran tanpa diperiksa ke manapun kalian pergi menunjukkan ketidakhormatan yang luar biasa terhadap tetanggamu, Duta Besar! Aku sangat menyarankan kalian untuk tidak melanjutkan tindakan kurang ajar terhadap Sovereignty lebih jauh lagi.
+WARN_BUILDUP_01            | Kalian pikir kami buta, Duta Besar? Kami lihat armadamu terus bertambah ukuran dan kekuatannya. Tunjukkan bahwa kau tidak bermaksud jahat dengan menghentikan perkembangan ini, atau kau malah akan mendapat serangan dini!
+WARN_SKIRMISH_01           | Kami sangat tahu tentang perkelahian di [system], Duta Besar! Sovereignty akan mengabaikan perbuatanmu kali ini saja. Mengapa? Aku tidak melihat alasan mengapa aku harus menjawab pertanyaan dari orang seperti kalian. 
+WARN_ATTACKED_01           | Serangan lancang hanya berasal dari kurangnya rasa menghargai, Duta Besar! Kau benar-benar beruntung Raja Spire tidak merendahkan diri untuk menghukum kekurangajaranmu. Kau mungkin tidak seberuntung ini lain kali!
+WARN_INVADED_01            | Jadi kau mencari sesuatu yang tidak seharusnya menjadi milikmu, Duta Besar? Jangan goda amarah kami lagi: kami akan dengan senang hati menyingkirkan planet tidak berguna itu jika itu berarti hilangnya kebodohanmu!
+WARN_ESPIONAGE_01          | Hmfhmfhmf, kami tidak terkejut bahwa suatu ras rendahan semacam kalian akan menggunakan mata-mata untuk meraih tujuan. Ingat, Duta Besar: mata [my_race] sangat tajam sampai tak ada yang lolos pandangan mereka. [framed]
+WARN_SABOTAGE_01           | Benar-benar menjijikkan, Duta Besar! Menyelinap dalam kegelapan dan melakukan sabotase seperti setan di malam hari!? Tapi kalian memang sebodoh kecerobohan kalian: bangunan yang kalian hancurkan tidak cukup penting untuk meneriakkan serangan balasan! [forced]
+WARN_BIOWEAPON_01          | Terkutuk! Terkutuk! Kalian menggunakan tipe senjata yang paling tidak boleh dibicarakan melawan pihak yang bahkan tidak bisa mengangkat perisai untuk melindungi diri! Perbuatan buruk kalian akan selalu mengikuti kalian sampai akhir nanti, Duta Besar!
+WARN_GENOCIDE_01           | Di saat aku setuju bahwa [victim_race] adalah kelompok miskin yang menyedihkan, Sovereignty benar-benar melawan usulan melakukan genosida. Kami ingin tahu, Duta Besar, apakah orang-orangmu sanggup melakukan strategi ini dengan ... ras yang lebih beradab?
+WARN_FINAL_WAR_01          | Tidak ada kebajikan dalam jalan yang telah kaupilih, Duta Besar. Jangan salah: sekarang karena kau telah memutuskan untuk melawan pemimpin terpilih di galaksi ini, kami merasa terhormat untuk melakukan apapun yang kami bisa untuk menghentikanmu!
+WARN_COUNCIL_VOTE_01       | Sebegitu besarnya untuk Duta Besar yang Agung dari [your_empire]! Apakah kau benar-benar percaya kami tidak akan belajar dari penipuanmu di majelis? Kau seharusnya khawatir akan orang-orangmu, Duta Besar: Raja Spire lah yang paling akan merasa tidak senang.
+WARN_OATHBREAKER_01        | Skandal besar! Kau tau prinsip kehormatan yang kami terapkan, tetapi begitu terangnya kau mengingkari kata-katamu sendiri hanya untuk memuaskan nafsumu?! Sovereignty akan mengingat penghinaan ini selamanya, Duta Besar, dan pasti akan menebusnya dengan sesuatu!
+WARN_ATTACKED_ALLY_01      | Merepotkan rasanya, Duta Besar, bahwa orang-orangmu dan [defender_empire] memilih untuk memperdebatkannya. Kau tidak bisa berharap untuk menyamai kekuatan gabungan kami, Duta Besar: Sovereignty memaksamu untuk memikirkan ulang langkahmu.
+WARN_REBELLING_AGAINST_01  | Apakah kau pikir kami sudah lupa betapa tidak terhormatnya kau? Tidak penting apakah kami harus berkelahi denganmu di seluruh galaksi: kau tidak akan menduduki tahta majelis selama Raja Spire masih hidup!
+
+PRAISE_COUNCIL_VOTE_01     | Duta Besar yang terhormat dan termasyhur dari [your_empire]! Kami berhutang budi kepadamu pada pertemuan majelis ini, dan ingin sekali menebus hutang itu bila kau memutuskan untuk menentukan bagaimana caranya.
+PRAISE_COUNCIL_VOTE_02     | Salam bagimu, Duta Besar! Kau menghormati kami dengan menyuarakan keuntungan untuk kami di hadapan mereka yang berkumpul di sini. Aku yakin bahwa Raja Spire akan ingin untuk mengetahui lebih banyak tentang orang seterhormat dirimu segera setelah aku melapor kepadanya.
+PRAISE_COUNCIL_VOTE_03     | Hmfhmfhmf, aku yakin kau tidak menyangka akan berpihak kepada Sovereignty di luar rasa hormat atau rasa menghargai, Duta Besar? Tapi, mungkin kau akan terus membuktikan dirimu kepada kami hanya jika kami beri kesempatan untuk itu?
+
+PRAISE_ATTACKED_ENEMY_01   | Ah! Teman kami yang terhormat dan sekutunya membawa kabar baik di masa perang! Kemari, Duta Besar: biar orang-orang kita bertempur  [defender_race] yang mengerikan ini bersama sebagai komando seperjuangan! together as comrades-in-arms!
+PRAISE_ATTACKED_ENEMY_02   | Perang ini seharusnya akan berakhir secepatnya, Duta Besar. Meski sendirian  Sovereignty akan dengan mudah mengalahkan monster vulgar [defender_race] ini. Tapi jika bersama-sama? Bersama kita akan menyapu noda ras mereka sampai bersih dari galaksi ini selamanya!
+PRAISE_ATTACKED_ENEMY_03   | Aku yakin bahwa kau bertindak menurut kesempatan yang ada sebagaimana aku yakin bahwa kau tidak mengerti arti kata "kehormatan"! Kami biarkan kalian menolong kami melawan [defender_race], jika itu hanya berarti untuk mencegah kami menimbulkan kerusakan yang tidak perlu.
+
+PRAISE_TRADE_01            | Sangat melegakan bagiku melebihi dugaanmu, Duta Besar, bahwa rakyatmu menjalankan bisnis begitu terhormat. Sovereignty menghormatimu dan rakyatmu, dan akan terus menghargai persahabatan kita lebih dari sekedar kesepakatan dagang berkelanjutan!
+PRAISE_TRADE_02            | Ada banyak cara untuk membuktikan kehormatan seseorang, duta Besar. Menjalankan bisnis secara adil dan dengan kepercayaan penuh adalah salah satu cara terbaik untuk itu, dan ini adalah sesuatu yang dihargai Sovereignty dengan sangat tinggi dari mereka yang kami temui di galaksi ini.
+
+PRAISE_REBELLING_WITH_01   | Orang-orang bangsat di majelis memandang kita sebelah mata, Duta Besar! Bersama kita akan menunjukkan kepada mereka apa arti sebenarnya dari "salah langkah fatal"!
+
+ACCEPT_TRADE_01            | Sovereignty selalu senang untuk membuat perjanjian dengan  [your_empire]. Jumlah tahunan sebanyak [amt] BC cukup bisa disetujui, terima kasih.
+RESPOND_IGNORE_THREAT_01   | Kau berani membuat marah [my_empire]? Singkirkan candaan murahanmu ke manapun kau bisa sebelum berubah menjadi tidak lucu lagi.
+RESPOND_STOP_SPYING_01     | Matamu tampaknya setajam mata kami jika sedang mencari mata-mata. Anggap usaha kita dalam tipu daya ini berakhir.
+RESPOND_STOP_ATTACKING_01  | Sekarang kau lihat betapa kuatnya Sovereignty? Selama kau tidak melupakan kekuatan kami, kami tidak akan mengganggumu dengan armada ini lagi.
+
+ 

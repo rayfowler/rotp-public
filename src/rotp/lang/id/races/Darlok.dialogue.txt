@@ -1,0 +1,83 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Darlok specific dialogue
+
+CONTACT_AGGRESSIVE         | Kami beri salam padamu hari ini, wahai warga liar dari alam kosmik yang tak dikenal. Kami juga menyampaikan peringatan: jangan menghalangi kami dalam pencarian kami, atau kau mungkin tidak akan hidup bahkan hanya untuk menyesali takdir pertemuan kita.
+CONTACT_RUTHLESS           | Salam padamu, penghuni daerah asing. Paling baik bagimu jika kau bisa melakukan hal-hal yang memastikan keberadaan berdampingan kita... sama-sama menguntungkan.
+CONTACT_ERRATIC            | Suatu pertemuan kebetukan di lautan bintang. Hati-hati akan kegelapan di jurang angkasa ini, karena kau akan lihat sendiri bahwa ia telah menutupi banyak rahasia...
+//
+GREETING_01                | Kau telah buktikan bahwa dirimu berharga bagi kepentingan kami. Kami akan lakukan apa yang kami bisa untuk membantumu dalam kepentinganmu.
+GREETING_04                | Bicaralah.
+GREETING_07                | Kau tidak tau betapa kurang ajarnya sikapmu ketika kau meminta bantuan kami. Menurut kami itu sangat lucu. 
+//
+DECLAREWAR_HATE_01         | Kami telah mentoleransi banyak hal dalam pencarian tujuan kita, tapi kami bersyukur tidak perlu menoleransi keberadaanmu lebih lama lagi, [your_race].
+DECLAREWAR_HATE_02         | Bajingan parah! Kami tidak akan menoleransi kebodohanmu lagi! Entah prajuritmu siap atau tidak, pada akhirnya akan tetap sama bagimu!
+DECLAREWAR_HATE_03         | Dasar Musuh! Tidak ada gunanya ras kami hidup makmur di sini hanya untuk berbagi galaksi dengan makhluk sejenismu. Bersiaplah! Kami akan usir kalian dari ruang angkasa ini bahkan jika setiap individu dari kami juga harus menderita!
+DECLAREWAR_ERRATIC_01      | Orang-orang kami sering berkata bahwa pisau di medan pertempuran membunuh sama mudahnya dengan pisau di kegelapan. Makhluk sejenismu akan segera tahu apa sebabnya.
+DECLAREWAR_ERRATIC_02      | Pernahkah kalian memandang langit dan berharap bisa mengetahui apa yang tersembunyi di kegelapan di antara kelip cahaya? Tidakkah kalian tahu kebijaksanaan untuk selalu berhati-hati dengan apa yang kalian inginkan? 
+DECLAREWAR_ERRATIC_03      | Di masa ketidakpastian yang begitu besar ini, kau mungkin akan menemukan bahwa makhluk yang paling tidak menonjol masih bisa memberikan pukulan telak. 
+DECLAREWAR_MILITARY_01     | Kami masih belum menemukan hal yang paling kami inginkan, jadi kami akan mengambil darimu tempat-tempat yang belum pernah dilihat mata kami. Serahkan duniamu atau jatuhlah kalian dalam perlawanan.
+DECLAREWAR_MILITARY_02     | Kemungkinan yang ada adalah bahwa jawaban yang kami cari tersembunyi pada planet di kekaisaranmu, maka kami akan ambil alih semuanya. Tidak perlu tersinggung, [your_race], tapi memang masa-masa sulit butuh keputusan yang sulit juga. 
+DECLAREWAR_MILITARY_03     | Jika kami tidak bisa mendapat solusi dari masalah besar kami, tidak ada gunanya melanjutkan ini! Jika jawabannya berada dalam salah satu duniamu, kami akan berikan apapun yang bisa kami beri untuk mendapatkannya!
+DECLAREWAR_ALLIANCE_01     | Tolol! Kau malah menjadikan sekutu kami sebagai musuh, dan dengan itulah kalian menjadi musuh kami juga! Kami akan segera menyerang kalian secepatnya: kami tidak punya waktu untuk disia-siakan oleh kesalahan dan kebodohanmu! 
+DECLAREWAR_ALLIANCE_02     | Kami jarang ikut campur secara langsung dalam urusan orang lain. Tapi, jika sekutu yang telah membantu kami memohon bantuan, kami akan lakukan apa yang kami bisa untuk membantu mereka.
+DECLAREWAR_ALLIANCE_03     | Kami senang melihat kekaisaranmu bertarung melawan dirinya sendiri, tapi kami tahu ancaman yang kau perlihatkan pada kami. Dengan senang hati kami akan membantu [defender_race] untuk membasmi masalah yang dimiliki pemerintahanmu.
+DECLAREWAR_SPYING_01       | Lucu rasanya bahwa kau akan melakukan suatu sikap melawan mereka yang menguasai begitu banyak rahasia. Asal kau tahu, hukuman untuk kegagalanmu nanti tidak akan menjadi rahasia juga.
+DECLAREWAR_SPYING_02       | Mengagumkan, berani mencoba dan mendahului kami dalam gerakan rahasia. Aku ingin tahu, apakah kekuatan militermu terbukti siap-sedia seperti keberanianmu? 
+DECLAREWAR_SPYING_03       | Apakah kau percaya tindakan bodoh ini akan lolos dari pengawasan ketat kami? Jika kau begitu sombong bahwa kau percaya mata-matamu bisa menyaru begitu saja, berarti kau memang sombong dan pantas bagi kami untuk menghancurkanmu di medan tempur.
+DECLAREWAR_ATTACK_01       | Kurang ajar! Berani menyerang kami terang-terangan berarti kau ingin dibasmi habis-habisan. 
+DECLAREWAR_ATTACK_02       | Makhluk kampungan menyebalkan! Kami akan segera mencari tahu apakah keyakinan yang datang dari penyerangan terhadap kami memang disertai kemampuan untuk bertanding! 
+DECLAREWAR_ATTACK_03       | Bangsat! Dasar Musuh! Kami tidak akan menyerah padamu atau kepada siapapun sampai misi besar kami selesai! Bersiaplah untuk pembalasan! 
+DECLAREWAR_OPPORTUNITY_01  | Politik tidaklah lebih dari permainan kesempatan. Kami dapati bahwa orang yang paling memanfaatkan kesempatan adalah mereka yang keluar sebagai pemenang. Memang begitulah sejak dulu, dan akan selalu begitu.
+DECLAREWAR_ASSASSIN_01     | Lancang, berani menyerang seorang duta besar yang datang padamu tanpa senjata! Kami akan membawa rahasiamu ini kepada pihak kami, dan meledakkan tubuh orang-orangmu menjadi seperti debu tertiup angin matahari!
+
+OFFER_PEACE_01             | Sudah cukup darah tertumpah dalam satu perang ini, Duta Besar. Tentunya tidak ada di antara kita yang sanggup menyia-nyiakan nyawa dengan begitu bernafsunya. Kami tawarkan akhir segera dari konflik ini, untuk kebaikan masa depan bersama. 
+OFFER_TRADE_01             | Meski pendekatan langsung kadang menjadi yang terbaik, cara itu bukanlah satu-satunya bagi suatu kekaisaran untuk mendapatkan tujuannya. Ada waktunya untuk berdagang dengan keyakinan yang baik, dan kami percaya bahwa waktunya adalah sekarang. Bisakah kita mulai dengan [amt] BC setiap tahunnya? 
+OFFER_PACT_01              | Perluasan wilayah yang tidak terbatas ini menyimpan bahaya yang tidak terduga bagi mereka yang memilih untuk menjalankannya. Marilah kita berhenti melakukan hal yang lebih jauh, kecuali jika diperlukan. Pakta perjanjian non-agresi di antara orang-orang kita akan mengurangi satu resiko yang berdampak pada seluruh galaksi. 
+OFFER_ALLIANCE_01          | Ada beberapa orang yang mengawasi kita dan membiarkan ketakutan mereka membayangi penilaian mereka. Kami tidak percaya rasmu seperti mereka. Izinkan kami meresmikan aliansi di antara [my_race] dan [your_race], dan menggunakan ketakutan pihak lain sebagai keuntungan bagi kedua kekaisaran kita. 
+
+WARN_TRESPASSING_01        | Kami tidak menginginkan perang melawanmu saat ini, tetapi keberadaanmu di [system] sulit ditafsirkan sebagai hal selain kedatangan tanpa izin. Pergilah sekarang juga, dan buktikan ketakutan kami tidak beralasan.
+WARN_EXPANSION_01          | Kami tidak buta untuk melihat kebutuhanmu memperluas wilayah bisa terwujud. Kami tidak akan duduk begitu saja dan membiarkanmu mencuri setiap dunia untuk dirimu sendiri. Kau telah diperingatkan, Duta Besar [your_empire]. 
+WARN_BUILDUP_01            | Apakah kau bermaksud untuk menggunakan armada hebat ini untuk membuat mereka yang di sekelilingmu menyerah ketakutan? Ketahui ini: jika kau terus menyombongkan kekuatan militermu, mungkin kau akan lihat reaksi kekaisaran lain akan kurang... memenuhi harapanmu.  
+WARN_SKIRMISH_01           | Bagaimana menurutmu mengenai serangan mendadak di sistem [system] ? Kami harap demi kebaikanmu bahwa kau salah menyangka kami adalah kekaisaran lain. Jika tidak, konsekuensinya akan parah. Parah sekali.
+WARN_ATTACKED_01           | Kau berani meluncurkan serangan kepada kami, Duta Besar? Anggap dirimu beruntung kami sedang memusatkan perhatian pada hal lain: kali berikutnya kekurangajaranmu tidak akan didiamkan begitu saja! 
+WARN_INVADED_01            | Kau pindah ke wilayah kami seakan-akan ini adalah milikmu. Taktik yang berani, tapi ketahuilah bahwa kami sudah melihat kedatanganmu sebelumnya dan membiarkanmu melakukan manuver ini... hanya untuk saat ini. 
+WARN_ESPIONAGE_01          | Usahamu yang lamban dalam memata-matai terbukti sangat lucu bagi kami. Kami biarkan mata-matamu untuk kembali kepadamu kali ini, tapi ketahuilah bahwa kami akan lebih tergoda untuk menjadi tidak seramah ini. [framed]
+WARN_SABOTAGE_01           | Jadi [spy_empire] berniat menyabotase? Usahamu terlalu tidak penting untuk memicu serangan kami, tapi jika kau mencoba ini lagi kami mungkin akan memilih untuk memperlakukanmu seperti hama pengganggu karena kau sendiri yang memaksakan diri menjadi seperti hewan! [forced]
+WARN_BIOWEAPON_01          | Jelek ya, senjatamu itu. Bahkan lebih jelek lagi orang yang memilih menggunakan itu pada warga yang tidak berdaya. Jeritan kepedihan mereka akan bergema di ruang angkasa selama berabad-abad, dan kami akan bergabung dengan suara mereka yang mengutuk nama licikmu. 
+WARN_GENOCIDE_01           | Ancaman genosida tidaklah asing bagi orang-orangku, tetapi melihatnya terwujud begitu saja... kau membuat kami jijik dengan cara yang tidak akan kumaafkan, Duta Besar.  
+WARN_FINAL_WAR_01          | Sejalan dengan fajar kedamaian di galaksi ini, semua yang terlibat akan menemukan apa yang mereka cari. Jika kalian [rebel_race_plural] mengancam kedamaian ini, sama saja kalian mengancam tujuan utama kami, dan kami akan lakukan apa saja yang bisa kami lakukan untuk menendangmu ke pintu keluar galaksi.  
+WARN_COUNCIL_VOTE_01       | Bukannya kami kurang menghargai manuver politik tersembunyi, kami hanya paling tidak suka jika manuver tersebut berjalan melawan kami. Berjalanlah pelan-pelan, Duta Besar: kami mungkin tidak akan memberimu kesempatan untuk bermanuver seperti ini lagi. 
+WARN_OATHBREAKER_01        | Pengecut kurang ajar! Sialnya orang-orang kami harus menanggung ketidakpercayaan dari seluruh galaksi ketika kau dengan tidak tahu malu menunjukkan bahwa dirimu adalah pihak yang paling berhak dimusuhi!  
+WARN_ATTACKED_ALLY_01      | Kami peringatkan kau hanya sekali ini, Duta Besar. Hentikan agresimu terhadap [defender_race_plural]: mereka ada di pihak kami, dan kami ada di pihak mereka. 
+WARN_REBELLING_AGAINST_01  | Kau berani merebut kursi tertinggi pada majelis dari kami, pemimpin yang paling berhak? Orang-orangmu akan menyesali hari ini sepanjang hidup, Duta Besar.
+//
+PRAISE_COUNCIL_VOTE_01     | Kepentingan kami adalah hal yang sangat besar, Duta Besar, dan kami selamanya berterima kasih bisa mengandalkan [voter_empire] dalam majelis. Yakinlah bahwa kami tidak akan melupakan ini jika di kemudian hari kau memerlukan bantuan orang-orang kami.
+PRAISE_COUNCIL_VOTE_02     | Kau baik sekali mau memberikan kepercayaanmu kepada kami hari ini, Duta Besar. Ketahuilah bahwa kami selalu mengingat mereka yang membantu kami meraih tujuan akhir kami. 
+PRAISE_COUNCIL_VOTE_03     | Tentu saja orang-orangmu memiliki maksud tersembunyi dalam mendukung kami. Kami masih sangat berhati-hati terhadapmu dan makhluk sejenismu, tapi kami juga bisa menghargai kalian. 
+
+PRAISE_ATTACKED_ENEMY_01   | Kami tahu kau akan membantu kami dalam perang ini, Duta Besar! Dengan paduan niat kuat kita, bahkan [defender_race] takkan dapat bertahan melawan kita lebih lama lagi! 
+PRAISE_ATTACKED_ENEMY_02   | Senang melihat yang lain bergabung melawan [defender_race] yang menyebalkan. Ayo kita bekerja bersama untuk mengakhiri semua ini secepatnya agar kita bisa lanjut mengejar tujuan lain yang lebih penting.
+PRAISE_ATTACKED_ENEMY_03   | Jika maksudmu ingin mendapatkan kekaguman dari orang-orangku, ketahuilah bahwa tugas ini hampir tidak mungkin. Tetapi berani menyerang [defender_race] adalah langkah yang mengagumkan bagi semua orang.
+
+PRAISE_TRADE_01            | Tidakkah kelihatannya lucu betapa hal mudah seperti perdagangan dapat membuka begitu banyak pintu untuk kedua pihak yang terlibat? Rakyat kami benar-benar bahagia dengan ini, dan kami harap rakyatmu juga senang. 
+PRAISE_TRADE_02            | Perdagangan jujur yang sedang berjalan di antara kita terbukti akan terus bermanfaat bagi orang-orang kita. Kami harap, Duta Besar, untuk terus mempercayai satu sama lain dalam hal ini. 
+
+PRAISE_REBELLING_WITH_01   | Orang-orang bodoh di Majelis telah memilih pilihan yang salah seperti dugaan kita. Kau berhak menyerang mereka, dan kami berhak bergabung dalam pemberontakanmu. 
+
+ACCEPT_TRADE_01            | Kau sudah banyak sekali membantu misi kami dengan kesepakatan dagang ini, [your_race]. [amt] BC setiap tahun akan membantu kami lebih dari yang kau tahu.
+RESPOND_IGNORE_THREAT_01   | Hati-hati dengan siapa yang kau ancam. Kau mungkin menemukan tanggapan tersembunyi dalam bayangan hitam yang ternyata sangat tidak menyenangkan.
+RESPOND_STOP_SPYING_01     | Bagaimana bisa KAU datang untuk menangkap salah satu mata-mata kami? Bagaimanapun, kembalikan dia kepada kami sekarang juga dan kami akan hentikan perbuatan kami dari sekarang.
+RESPOND_STOP_ATTACKING_01  | Akan kami tarik armada kami sekarang demi kalian, tapi ingat bahwa kekuatan yang paling berbahaya adalah kekuatan yang tidak terlihat.

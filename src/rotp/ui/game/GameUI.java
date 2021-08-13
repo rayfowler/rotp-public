@@ -776,7 +776,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             codes = LanguageManager.current().languageCodes();
             names = LanguageManager.current().languageNames();
             w = scaled(100);
-            h = s45+(s20*names.size());
+            h = s45+(s17*names.size());
             lang = new Rectangle[names.size()];
             for (int i=0;i<lang.length;i++)
                 lang[i] = new Rectangle();
@@ -792,20 +792,20 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             int h = getHeight();
             g.setColor(langShade());
             int topM = s35;
-            int lineH = s20;
+            int lineH = s17;
             g.fillRoundRect(0,topM,w,h-topM,s10,s10);
             int y0 = topM;
             for (int i=0; i<names.size(); i++) {
                 String code = codes.get(i);
                 String name = names.get(i);
-                Font f = FontManager.current().languageFont(code, 18);
+                Font f = FontManager.current().languageFont(code, 15);
                 g.setFont(f);
                 Color c0 = hoverBox == lang[i] ? Color.yellow : Color.white;
                 g.setColor(c0);
                 y0 += lineH;
                 int sw = g.getFontMetrics().stringWidth(name);
-                drawString(g,name, w-sw-s10, y0);
-                lang[i].setBounds(w-sw-s10, y0-lineH, sw+s5, lineH);
+                drawString(g,name, w-sw-s5, y0);
+                lang[i].setBounds(w-sw-s5, y0-lineH, sw+s5, lineH);
             }
         }
         @Override
