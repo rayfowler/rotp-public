@@ -1409,12 +1409,12 @@ public class AIDiplomat implements Base, Diplomat {
             else
                 return castVoteFor(null);
         }
-        //ail: I want it to be deterministic and based on relations, not power
-        if(cv1.embassy().relations()/100.0f > cv2.embassy().relations()/100.0f
-                && empire.inEconomicRange(cv1.empId()))
+        //ail: I want it to be deterministic, so I pick whoever I fear more
+        if(empire.generalAI().timeToKill(civ1, empire) < empire.generalAI().timeToKill(civ2, empire)
+            && empire.inEconomicRange(cv1.empId()))
             return castVoteFor(civ1);
-        if(cv2.embassy().relations()/100.0f > cv1.embassy().relations()/100.0f
-                && empire.inEconomicRange(cv2.empId()))
+        if(empire.generalAI().timeToKill(civ2, empire) < empire.generalAI().timeToKill(civ1, empire)
+            && empire.inEconomicRange(cv2.empId()))
             return castVoteFor(civ2);
         // return undecided
         return castVoteFor(null);
