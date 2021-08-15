@@ -945,8 +945,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                                     if(enemyBC == 0)
                                     {
                                         sendAmount = 0.01f;
-                                        if(!empire.sv.inShipRange(target.id))
-                                            allowFighters = false;
+                                        allowFighters = false;
                                     }
                                 }
                             }
