@@ -1349,9 +1349,18 @@ public class AIDiplomat implements Base, Diplomat {
         boolean warAllowed = true;
         if(empire.generalAI().additionalColonizersToBuild(false) > 0)
             warAllowed = false;
+        int popCapRank = popCapRank();
+        if(techLevelRank() > popCapRank || facCapRank() > popCapRank)
+        {
+            warAllowed = false;
+        }
+        //System.out.println(galaxy().currentTurn()+" "+empire.name()+" popCap: "+empire.generalAI().totalEmpirePopulationCapacity(empire)+" popCapRank: "+popCapRank+" facCapRank: " +facCapRank()+" tech-rank: "+techLevelRank()+" war Allowed: "+warAllowed);
         if(warAllowed)
             if(v.empire() == empire.generalAI().bestVictim())
+            {
+                //System.out.println(galaxy().currentTurn()+" "+empire.name()+" war against " +empire.generalAI().bestVictim()+" should be allowed.");
                 return true;
+            }
         return false;
     }
     private DiplomaticIncident worstWarnableIncident(Collection<DiplomaticIncident> incidents) {
@@ -1434,54 +1443,12 @@ public class AIDiplomat implements Base, Diplomat {
             c.defyRuling(empire);
     }
     private boolean giveLoyaltyTo(Empire c) {
-        // modnar: add empire power bonus relative to own power for accepting winner
-        // only what own empire can see (through spies)
-        // more likely to accept more powerful empire, less likely to accept less powerful empire
-        // powerBonus vary from -0.25 to 0.25
-        float powerBonus = 0.5f * (c.powerLevel(c) / (c.powerLevel(c) + empire.powerLevel(empire)) - 0.5f);
-        
-        if (empire.lastCouncilVoteEmpId() == c.id)
-            return true;
-
-        if (c.orionCouncilBonus() > 0)
-            return true;
-        
-        EmpireView cv1 = empire.viewForEmpire(c);
-        if (cv1.embassy().alliance())
-            return true;
-        if (empire.leader().isPacifist())
-            return true;
-        if (cv1.embassy().pact() && empire.leader().isHonorable())
-            return true;
-        
-        if (cv1.embassy().anyWar()) {
-            if (empire.leader().isXenophobic())
-                return random() < powerBonus; // modnar: add powerBonus
-            else if (empire.leader().isAggressive())
-                return random() < 0.50f + powerBonus; // modnar: add powerBonus
-            else
-                return random() < 0.75f + powerBonus; // modnar: add powerBonus
-        }
-        
-        if (empire.leader().isXenophobic())
-            return random() < 0.50f + powerBonus; // modnar: add powerBonus
-        else if (empire.leader().isErratic())
-            return random() < 0.75f + powerBonus; // modnar: add powerBonus
-
-        return random() < 0.90f + powerBonus; // modnar: add powerBonus
+        // ail: Very simple decision
+        return empire.generalAI().timeToKill(empire, c) > empire.generalAI().timeToKill(c, empire);
     }
     // ----------------------------------------------------------
 // PRIVATE METHODS
 // ----------------------------------------------------------
-    private float previousVoteBonus(Empire c) {
-        return c.id == empire.lastCouncilVoteEmpId() ? 0.6f : 0;
-    }
-    private Empire conditionallyCastVoteFor(EmpireView ev) {
-        if (ev.embassy().noTreaty() && galaxy().council().nextVoteWouldElect(ev.empire()))
-            return castVoteFor(null);
-        else
-            return castVoteFor(ev.empire());
-    }
     private Empire castVoteFor(Empire c) {
         if (c == null)
             empire.lastCouncilVoteEmpId(Empire.ABSTAIN_ID);
@@ -1681,7 +1648,6 @@ public class AIDiplomat implements Base, Diplomat {
         if(v.empire() != empire.generalAI().bestVictim())
             return true;
         //ail: only colonies and factories relevant for war-weariness. Population and Military are merely tools to achieve our goals
-        Empire emp = v.owner();
         TreatyWar treaty = (TreatyWar) v.embassy().treaty();
         //ail: If I have more than one war, I'd like to get rid of the older wars.
         if(empire.warEnemies().size() > 1)
@@ -1796,5 +1762,62 @@ public class AIDiplomat implements Base, Diplomat {
     }
     @Override
     public  boolean leaderHatesAllSpies() { return false; }
+    public int popCapRank()
+    {
+        int rank = 1;
+        float myPopCap = empire.generalAI().totalEmpirePopulationCapacity(empire);
+        for(Empire emp:empire.contactedEmpires())
+        {
+            if(!empire.inEconomicRange(emp.id))
+                continue;
+            //System.out.println(galaxy().currentTurn()+" "+empire.name()+" looking at: "+emp.name()+" "+empire.generalAI().totalEmpirePopulationCapacity(emp)+" mine: "+myPopCap);
+            if(empire.generalAI().totalEmpirePopulationCapacity(emp) > myPopCap)
+                rank++;
+        }
+        return rank;
+    }
+    public int techLevelRank()
+    {
+        int rank = 1;
+        float myTechLevel = empire.tech().avgTechLevel();
+        for(Empire emp:empire.contactedEmpires())
+        {
+            if(!empire.inEconomicRange(emp.id))
+                continue;
+            if(emp.tech().avgTechLevel() > myTechLevel)
+                rank++;
+        }
+        if(myTechLevel >= 99)
+            rank = 1;
+        return rank;
+    }
+    public int facCapRank()
+    {
+        int rank = 1;
+        float myFacCap = facCapPct(empire, true);
+        for(Empire emp:empire.contactedEmpires())
+        {
+            if(!empire.inEconomicRange(emp.id))
+                continue;
+            if(facCapPct(emp, true) > myFacCap)
+                rank++;
+        }
+        if(myFacCap >= 1)
+            rank = 1;
+        return rank;
+    }
+    public float facCapPct(Empire emp, boolean ignorePoor)
+    {
+        float factories = 0;
+        float factoryCap = 0;
+        for (StarSystem sys: emp.allColonizedSystems())
+        {
+            if(sys.planet().productionAdj() < 1 && ignorePoor)
+                continue;
+            factories += sys.colony().industry().factories();
+            factoryCap += sys.colony().industry().maxFactories();
+        }
+        return factories / factoryCap;
+    }
 }
 

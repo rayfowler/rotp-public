@@ -637,7 +637,7 @@ public class AIGeneral implements Base, General {
         {
             totalTime += 1 / timeToKill(enemy, empire);
         }
-        warROI = 1 / totalTime;
+        warROI = 3 / totalTime;
         return warROI;
     }
     @Override
@@ -647,20 +647,6 @@ public class AIGeneral implements Base, General {
             return bestVictim;
         }
         searchedVictimThisTurn = true;
-        float developmentPct = 0;
-        float countedColonies = 0;
-        for(StarSystem sys : empire.allColonizedSystems())
-        {
-            if(sys.colony() != null)
-            {
-                if(sys.planet().isResourcePoor() || sys.planet().isResourceUltraPoor())
-                    continue;
-                developmentPct += sys.colony().currentProductionCapacity();
-                countedColonies++;
-            }
-        }
-        if(countedColonies > 0)
-            developmentPct /= countedColonies;
         float highestScore = 0;
         Empire archEnemy = null;
         if(empire.contactedEmpires().isEmpty())
@@ -675,7 +661,6 @@ public class AIGeneral implements Base, General {
                 continue;
             if(!empire.inShipRange(emp.id))
                 continue;
-            float theyvsus = empire.generalAI().timeToKill(emp, empire);
             float wevsthem = empire.generalAI().timeToKill(empire, emp);
             boolean incomingInvasion = false;
             for(Transport trans:empire.transports())
@@ -683,16 +668,14 @@ public class AIGeneral implements Base, General {
                 if(trans.destination().empire() == emp)
                     incomingInvasion = true;
             }
-            //System.out.println(empire.name()+" vs "+emp.name()+" our: "+wevsthem+" their: "+theyvsus+" would be score: "+theyvsus / wevsthem+" dev-pct: "+developmentPct);
-            if(theyvsus > wevsthem * (2 - developmentPct) || developmentPct >= 1.0 || incomingInvasion)
+            float currentScore = totalEmpirePopulationCapacity(emp) / wevsthem;
+            if(incomingInvasion)
+                currentScore *= 2;
+            //System.out.println(galaxy().currentTurn()+" "+empire.name()+" vs "+emp.name()+" our: "+wevsthem+" pop-cap: "+totalEmpirePopulationCapacity(emp)+" score: "+currentScore);
+            if(currentScore > highestScore)
             {
-                float currentScore = theyvsus / wevsthem;
-                //System.out.println(empire.name()+" => "+emp.name()+" score: "+currentScore+" we vs. them: "+wevsthem+" they vs. us: "+theyvsus);
-                if(currentScore > highestScore)
-                {
-                    highestScore = currentScore;
-                    archEnemy = emp;
-                }
+                highestScore = currentScore;
+                archEnemy = emp;
             }
         }
         /*if(archEnemy != null)
@@ -701,20 +684,23 @@ public class AIGeneral implements Base, General {
         return bestVictim;
     }
     @Override
-    public float totalEmpirePopulationCapacity()
+    public float totalEmpirePopulationCapacity(Empire emp)
     {
-        if(totalEmpirePopulationCapacity >= 0)
+        if(totalEmpirePopulationCapacity >= 0 && emp == empire)
             return totalEmpirePopulationCapacity;
-        for (int id=0;id<empire.sv.count();id++) 
+        float capacity = 0;
+        for (int id=0;id<emp.sv.count();id++) 
         {
             StarSystem current = galaxy().system(id);
             if(current.colony() == null)
                 continue;
-            if(current.empId() != empire.id)
+            if(current.empId() != emp.id)
                 continue;
-            totalEmpirePopulationCapacity += current.planet().currentSize();
+            capacity += current.planet().currentSize();
         }
-        return totalEmpirePopulationCapacity;
+        if(empire == emp)
+            totalEmpirePopulationCapacity = capacity;
+        return capacity;
     }
     @Override
     public float defenseRatio()

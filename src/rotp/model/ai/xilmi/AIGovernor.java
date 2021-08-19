@@ -625,9 +625,9 @@ public class AIGovernor implements Base, Governor {
             if(fl.isArmed() && empire.enemies().contains(fl.empire()))
                 return 0;
         }
-        if(empire.generalAI().totalEmpirePopulationCapacity() > 0)
+        if(empire.generalAI().totalEmpirePopulationCapacity(empire) > 0)
         {
-            float tgtPercentage = empire.totalEmpirePopulation() / empire.generalAI().totalEmpirePopulationCapacity();
+            float tgtPercentage = empire.totalEmpirePopulation() / empire.generalAI().totalEmpirePopulationCapacity(empire);
             Planet p = sv.system().planet();
             tgtPercentage *= p.productionAdj() * p.researchAdj();
             //Systems that are building colony-ships should keep their population
