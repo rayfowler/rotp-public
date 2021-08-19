@@ -793,7 +793,7 @@ public class AIScientist implements Base, Scientist {
         TechShipWeapon curr = empire.tech().topShipWeaponTech();
         float val = 0;
         Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
-        if(curr != null && t != best)
+        if(curr != null && t != best && !t.heavyAllowed)
             val -= curr.level();
         val += (t.quintile() - 1) * 5 + t.quintile() * 5 - t.level() + 1;
         return val;
