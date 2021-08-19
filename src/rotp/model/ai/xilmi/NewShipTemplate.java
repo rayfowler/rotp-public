@@ -728,7 +728,7 @@ public class NewShipTemplate implements Base {
                     }
                     float currentScore = wpn.firepower(shield) * missileDamageMod / wpn.space(d);
                     if(wpn.isBioWeapon() && allowBioWeapons(ai))
-                        currentScore = TechBiologicalWeapon.avgDamage(wpn.maxDamage(), (int)antiDote) * 200 / wpn.space(d);
+                        currentScore = bioWeaponScoreMod(ai) * TechBiologicalWeapon.avgDamage(wpn.maxDamage(), (int)antiDote) * 200 / wpn.space(d);
                     //System.out.print("\n"+ai.empire().name()+" "+d.name()+" wpn: "+wpn.name()+" score: "+currentScore);
                     if(currentScore > bestScore)
                     {
@@ -813,9 +813,26 @@ public class NewShipTemplate implements Base {
 
         return totalShipProduction;
     }
-    
+    private float bioWeaponScoreMod(ShipDesigner ai)
+    {
+        float scoreMod = 1;
+        float totalMissileBaseCost = 0;
+        float totalShipCost = 0;
+        for(Empire enemy : ai.empire().contactedEmpires())
+        {
+            totalMissileBaseCost += enemy.missileBaseCostPerBC();
+            totalShipCost += enemy.shipMaintCostPerBC();
+        }
+        if(totalMissileBaseCost > 0)
+        {
+            scoreMod = totalShipCost / (totalMissileBaseCost + totalShipCost);
+        }
+        return scoreMod;
+    }
     private boolean allowBioWeapons(ShipDesigner ai)
     {
+        if(bioWeaponScoreMod(ai) == 1)
+            return true;
         boolean allow = false;
         int DesignsWithRegularBombs = 0;
         int DesignsWithBioWeapons = 0;
