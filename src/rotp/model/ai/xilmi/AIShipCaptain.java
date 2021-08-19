@@ -266,7 +266,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         for (int i=0;i<stack.numWeapons(); i++) {
             if(stack.selectedWeapon().isSpecial()
                     || !((CombatStackShip)stack).shipComponentCanAttack(target, i)
-                    || (stack.weapon(i).isMissileWeapon() && stack.movePointsTo(target) > DistanceToBeAt(stack, target)))
+                    || (stack.weapon(i).isMissileWeapon() && stack.movePointsTo(target) > 2))
             {
                 continue;
             }
@@ -278,7 +278,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
         //3rd run: fire whatever is left, except missiles if we are too far
         for (int i=0;i<stack.numWeapons(); i++) {
-            if(stack.weapon(i).isMissileWeapon() && stack.movePointsTo(target) > DistanceToBeAt(stack, target))
+            if(stack.weapon(i).isMissileWeapon() && stack.movePointsTo(target) > 2)
                 continue;
             if(((CombatStackShip)stack).shipComponentCanAttack(target, i))
             {
