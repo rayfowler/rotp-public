@@ -273,16 +273,7 @@ public class AIScientist implements Base, Scientist {
         empire.tech().propulsion().allocationPct(totalTechMod/empire.race().techMod[4]);
         empire.tech().weapon().allocationPct(totalTechMod/empire.race().techMod[5]);
         
-        // if in special mode, change ratios
-        if (empire.generalAI().inWarMode()) {
-            empire.tech().computer().adjustAllocation(4);
-            empire.tech().construction().adjustAllocation(-3);
-            empire.tech().forceField().adjustAllocation(1);
-            empire.tech().planetology().adjustAllocation(-3);
-            empire.tech().propulsion().adjustAllocation(-3);
-            empire.tech().weapon().adjustAllocation(4);
-        }
-        else if (empire.fleetCommanderAI().inExpansionMode()) {
+        if (empire.fleetCommanderAI().inExpansionMode()) {
             if(empire.ignoresPlanetEnvironment())
             {
                 empire.tech().computer().adjustAllocation(-3);
