@@ -192,7 +192,7 @@ public class NewShipTemplate implements Base {
         float topSpeed = 0;
         float antiDote = 0;
         float avgECM = 0;
-        float avgSHD = 0;
+        float bestSHD = 0;
         float longRangePct = 0;
         float totalCost = 0;
         float nonMissileTotal = 0.0f;
@@ -242,7 +242,8 @@ public class NewShipTemplate implements Base {
                     topSpeed = enemyDesign.combatSpeed();
                 float count = ev.empire().shipDesignCount(enemyDesign.id());
                 avgECM += enemyDesign.ecm().level() * enemyDesign.cost() * count;
-                avgSHD += enemyDesign.shieldLevel() * enemyDesign.cost() * count;
+                if(enemyDesign.shieldLevel() > bestSHD)
+                    bestSHD = enemyDesign.shieldLevel();
                 if(isLongRange)
                     longRangePct += enemyDesign.cost() * count;
                 totalCost += enemyDesign.cost() * count;
@@ -256,7 +257,6 @@ public class NewShipTemplate implements Base {
         {
             longRangePct /= totalCost;
             avgECM /= totalCost;
-            avgSHD /= totalCost;
         }
         if(missileTotal+nonMissileTotal > 0)
         {
@@ -371,13 +371,13 @@ public class NewShipTemplate implements Base {
         
         switch (role) {
             case BOMBER:
-                setOptimalWeapon(ai, d, d.availableSpace(), 1, false, false, false, topSpeed, avgECM, avgSHD, antiDote);
-                //setOptimalWeapon(ai, d, d.availableSpace(), 3, needRange, true, false, topSpeed, avgECM, avgSHD); // uses slot 1
+                setOptimalWeapon(ai, d, d.availableSpace(), 1, false, false, false, topSpeed, avgECM, bestSHD, antiDote);
+                //setOptimalWeapon(ai, d, d.availableSpace(), 3, needRange, true, false, topSpeed, avgECM, bestSHD); // uses slot 1
                 break;
             case FIGHTER:
             default:
-                setOptimalWeapon(ai, d, d.availableSpace() * hybridBombRatio, 1, false, false, false, topSpeed, avgECM, avgSHD, antiDote);
-                setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, avgSHD, antiDote); // uses slots 0-3
+                setOptimalWeapon(ai, d, d.availableSpace() * hybridBombRatio, 1, false, false, false, topSpeed, avgECM, bestSHD, antiDote);
+                setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, bestSHD, antiDote); // uses slots 0-3
                 break;
         }
         ai.lab().iconifyDesign(d);
@@ -846,7 +846,7 @@ public class NewShipTemplate implements Base {
                 {
                     if(ourDesign.weapon(j).isBioWeapon())
                         hasBio = true;
-                    else
+                    else if(ourDesign.weapon(j).tech() == ai.empire().tech().topBombWeaponTech())
                         hasRegular = true;
                 }
             }
