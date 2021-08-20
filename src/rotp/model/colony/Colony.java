@@ -456,6 +456,8 @@ public final class Colony implements Base, IMappedObject, Serializable {
         previousPopulation = population;
         reallocationRequired = false;          
         ensureProperSpendingRates();
+        validateOnLoad();
+        
         // if rebelling, nothing happens (only enough prod assumed to clean new
         // waste and maintain existing structures)
         if (inRebellion())
