@@ -233,7 +233,7 @@ public class AI implements Base {
         }
         
         // ail: asking our general for permission
-        if(!empire.generalAI().allowedToBomb(sys.empire()))
+        if(!empire.generalAI().allowedToBomb(sys))
             return false;
         
         // estimate bombardment damage and resulting population loss

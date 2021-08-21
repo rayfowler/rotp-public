@@ -31,7 +31,7 @@ public interface General {
     default float defenseRatio()              { return 0.5f; }
     default float totalEmpirePopulationCapacity(Empire emp) { return 0; }
     default int additionalColonizersToBuild(boolean returnPotentialUncolonizedInstead) { return 0; }
-    default boolean allowedToBomb(Empire emp) { return true; }
+    default boolean allowedToBomb(StarSystem sys) { return true; }
     default boolean strongEnoughToAttack() { return true; }
     default boolean isExpander() { return false; }
     default boolean isInvader() { return false; }

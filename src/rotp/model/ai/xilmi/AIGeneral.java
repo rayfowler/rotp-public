@@ -34,6 +34,7 @@ import rotp.model.galaxy.Transport;
 import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipDesignLab;
 import rotp.model.ships.ShipWeapon;
+import rotp.model.tech.Tech;
 import rotp.model.tech.TechBombWeapon;
 import rotp.util.Base;
 
@@ -247,18 +248,39 @@ public class AIGeneral implements Base, General {
             return;
         }
     }
+    public float invasionCost(EmpireView v, StarSystem sys)
+    {
+        float needed = troopsNecessaryToTakePlanet(v, sys);
+        float invasionCost = needed * empire.tech().populationCost() / empire.race().growthRateMod();
+        return invasionCost;
+    }
+    public float invasionGain(EmpireView v, StarSystem sys)
+    {
+        float facSavings = empire.sv.factories(sys.id) * (empire.tech().baseFactoryCost() - 2) + sys.planet().alienFactories(empire.id) * empire.tech().baseFactoryCost();
+        float invasionGain = facSavings;
+        List<Tech> possibleTechs = v.empire().tech().techsUnknownTo(empire);
+        float avgTechCost = 0;
+        int techCount = 0;
+        for(Tech possi:possibleTechs)
+        {
+            avgTechCost += possi.researchCost();
+            techCount++;
+        }
+        if(techCount > 0)
+            avgTechCost /= techCount;
+        float techCaptureCountEstimate = min(6, techCount, 0.02f * empire.sv.factories(sys.id));
+        float techCaputureGain = techCaptureCountEstimate * avgTechCost;
+        invasionGain += techCaputureGain;
+        //System.out.println(galaxy().currentTurn()+" "+empire.name()+": Considering invasion of "+sys.name()+" potential techs: "+techCaptureCountEstimate+" avg cost: "+avgTechCost+" techCaptureGain: "+techCaputureGain);
+        return invasionGain;
+    }
     public boolean willingToInvade(EmpireView v, StarSystem sys) {
         if (!empire.canSendTransportsTo(sys))
             return false;
-        float pop = empire.sv.population(sys.id);
-        float facSavings = empire.sv.factories(sys.id) * (empire.tech().baseFactoryCost() - 2) + sys.planet().alienFactories(empire.id) * empire.tech().baseFactoryCost();
-        float needed = troopsNecessaryToTakePlanet(v, sys);
-        //ail: If the population we have to expend costs less than a colonizer and the factories built there, it's worth it already!
-        float invasionCost = needed * empire.tech().populationCost() / empire.race().growthRateMod();
         //we gain factories, save us from building a colonizer and killing enemy-population also has value to us of half of what they pay for it
-        float invasionGain = facSavings + empire.shipLab().colonyDesign().cost() + pop * empire.tech().populationCost() / 2;
-        //System.out.println(empire.name()+": Considering invasion of "+sys.name()+" cost: "+invasionCost+" gain: "+invasionGain+" fac: "+facSavings +" cs: "+empire.shipLab().colonyDesign().cost()+" kills: "+pop * empire.tech().populationCost());
-        return invasionCost <= invasionGain;
+        float invasionGain = invasionGain(v, sys) + empire.shipLab().colonyDesign().cost();
+        //System.out.println(galaxy().currentTurn()+" "+empire.name()+": Considering invasion of "+sys.name()+" cost: "+invasionCost(v, sys)+" gain: "+invasionGain+" cs: "+empire.shipLab().colonyDesign().cost());
+        return invasionCost(v, sys) <= invasionGain;
     }
     public void orderRebellionFleet(StarSystem sys) {
         launchRebellionTroops(sys);
@@ -668,7 +690,12 @@ public class AIGeneral implements Base, General {
                 if(trans.destination().empire() == emp)
                     incomingInvasion = true;
             }
-            float currentScore = totalEmpirePopulationCapacity(emp) / wevsthem;
+            float currentScore = 0;
+            for(StarSystem theirs: emp.allColonizedSystems())
+            {
+                if(empire.sv.inShipRange(theirs.id))
+                    currentScore += theirs.planet().maxSize() * theirs.planet().productionAdj() * theirs.planet().researchAdj();
+            }
             if(incomingInvasion)
                 currentScore *= 2;
             //System.out.println(galaxy().currentTurn()+" "+empire.name()+" vs "+emp.name()+" our: "+wevsthem+" pop-cap: "+totalEmpirePopulationCapacity(emp)+" score: "+currentScore);
@@ -867,9 +894,20 @@ public class AIGeneral implements Base, General {
         return false;
     }
     @Override
-    public boolean allowedToBomb(Empire emp) { 
+    public boolean allowedToBomb(StarSystem sys) { 
+        Empire emp = sys.empire();
         if(empire.enemies().contains(emp))
-            return true;
+        {
+            if(empire.transportsInTransit(sys) > troopsNecessaryToTakePlanet(empire.viewForEmpire(emp), sys))
+            {
+                float cost = invasionCost(empire.viewForEmpire(emp), sys);
+                float gain = invasionGain(empire.viewForEmpire(emp), sys);
+                if(cost > gain)
+                    return true;
+            }
+            else
+                return true;
+        }
         return false;
     }
     @Override
