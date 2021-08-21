@@ -880,7 +880,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                                 }
                             }
                             UpdateSystemInfo(fleet.sysId());
-                            keepBc = max(keepBc, (systemInfoBuffer.get(fleet.sysId()).enemyIncomingTransports * empire.maxRobotControls() + systemInfoBuffer.get(fleet.sysId()).enemyBc * 2));
+                            keepBc = max(keepBc, ((systemInfoBuffer.get(fleet.sysId()).enemyIncomingTransports + systemInfoBuffer.get(fleet.sysId()).myIncomingTransports) * empire.maxRobotControls() + systemInfoBuffer.get(fleet.sysId()).enemyBc * 2));
                             if(systemInfoBuffer.get(fleet.sysId()).enemyBc > bcValue(fleet, false, true, false, false))
                                 keepBc = 0;
                             if(target.empire() != null)
