@@ -177,7 +177,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             if(current.colony() != null)
             {
                 buffy.enemyIncomingTransports += empire.enemyTransportsInTransit(current) * empire.maxRobotControls();
-                buffy.myIncomingTransports += empire.transportsInTransit(current);
+                buffy.myIncomingTransports += empire.transportsInTransit(current) * empire.maxRobotControls();
             }
             systemInfoBuffer.put(id, buffy);
         }
