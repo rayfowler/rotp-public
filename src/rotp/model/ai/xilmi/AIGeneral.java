@@ -27,6 +27,8 @@ import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.Leader;
 import rotp.model.galaxy.Galaxy;
+import rotp.model.galaxy.IMappedObject;
+import rotp.model.galaxy.Location;
 import rotp.model.galaxy.Ship;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
@@ -683,22 +685,11 @@ public class AIGeneral implements Base, General {
                 continue;
             if(!empire.inShipRange(emp.id))
                 continue;
-            float wevsthem = empire.generalAI().timeToKill(empire, emp);
             boolean incomingInvasion = false;
-            for(Transport trans:empire.transports())
-            {
-                if(trans.destination().empire() == emp)
-                    incomingInvasion = true;
-            }
-            float currentScore = 0;
-            for(StarSystem theirs: emp.allColonizedSystems())
-            {
-                if(empire.sv.inShipRange(theirs.id))
-                    currentScore += theirs.planet().maxSize() * theirs.planet().productionAdj() * theirs.planet().researchAdj();
-            }
+            float currentScore = 1 / fleetCenter(empire).distanceTo(colonyCenter(emp));
             if(incomingInvasion)
                 currentScore *= 2;
-            //System.out.println(galaxy().currentTurn()+" "+empire.name()+" vs "+emp.name()+" our: "+wevsthem+" pop-cap: "+totalEmpirePopulationCapacity(emp)+" score: "+currentScore);
+            //System.out.println(galaxy().currentTurn()+" "+empire.name()+" vs "+emp.name()+" dist: "+fleetCenter(empire).distanceTo(colonyCenter(emp))+" score: "+currentScore);
             if(currentScore > highestScore)
             {
                 highestScore = currentScore;
@@ -782,7 +773,6 @@ public class AIGeneral implements Base, General {
             return additionalColonizersToBuild;
         int additional = 0;
         int colonizerRange = empire.shipLab().colonyDesign().range();
-        int requiredSpecial = 0;
         List<StarSystem> alreadyCounted = new ArrayList<>();
         for(StarSystem sys : empire.uncolonizedPlanetsInRange(colonizerRange))
         {
@@ -954,5 +944,39 @@ public class AIGeneral implements Base, General {
     public int minTransportSize()
     {
         return 1;
+    }
+    public Location fleetCenter(Empire emp)
+    {
+        float x = 0;
+        float y = 0;
+        float totalValue = 0;
+        for(ShipFleet fleet: emp.allFleets())
+        {
+            x += fleet.x() * fleet.bcValue();
+            y += fleet.y() * fleet.bcValue();
+            totalValue += fleet.bcValue();
+        }
+        x /= totalValue;
+        y /= totalValue;
+        Location center = new Location(x, y);
+        if(totalValue == 0)
+            center = colonyCenter(emp);
+        return center;
+    }
+    public Location colonyCenter(Empire emp)
+    {
+        float x = 0;
+        float y = 0;
+        float totalPopCap = 0;
+        for(StarSystem sys: emp.allColonizedSystems())
+        {
+            x += sys.x() * sys.planet().maxSize();
+            y += sys.y() * sys.planet().maxSize();
+            totalPopCap += sys.planet().maxSize();
+        }
+        x /= totalPopCap;
+        y /= totalPopCap;
+        Location center = new Location(x, y);
+        return center;
     }
 }
