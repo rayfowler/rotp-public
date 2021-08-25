@@ -801,15 +801,12 @@ public class AIShipCaptain implements Base, ShipCaptain {
         if(repulsorEnemy == true && repulsorCounterers == 0)
             allyKills = 0;
         //System.out.print("\n"+stack.mgr.system().name()+" "+stack.fullName()+" we can kill per turn: "+allyKillsPerTurn+" enemy can kill per turn: "+enemyKillsPerTurn);
-        //If we can't kill at least one ship per turn and the enemy can kill a bigger percentage of ships per turn, drastically devalue our kill-score as enemy could just retreat after killing some of us
-        if(allyKillsPerTurn < 1 && allyKillsPerTurn < enemyKillsPerTurn)
-            allyKills *= allyKillsPerTurn / enemyKillsPerTurn;
         if (enemyKills == 0)
             return false;
         else if (allyKills == 0)
             return true;
         else {
-            //System.out.print("\n"+stack.fullName()+" enemy-superiority: "+(enemyKills * enemyValue) / (allyKills * allyValue)+" kills (Enemy vs. mine): "+enemyKills / allyKills+" Cost: (enemy vs. mine): "+enemyValue/allyValue);
+            //System.out.print("\n"+stack.mgr.system().name()+" "+stack.fullName()+" enemy-superiority: "+(enemyKills * enemyValue) / (allyKills * allyValue)+" kills (Enemy vs. mine): "+enemyKills / allyKills+" Cost: (enemy vs. mine): "+enemyValue/allyValue);
             return (enemyKills * enemyValue) / (allyKills * allyValue) > 1.0f;
         }
     }
