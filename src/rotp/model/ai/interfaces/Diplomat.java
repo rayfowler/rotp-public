@@ -122,4 +122,9 @@ public interface Diplomat {
     default boolean setSeverityAndDuration(FinancialAidIncident inc)  { return false; }
     default boolean setSeverityAndDuration(SpyConfessionIncident inc, float spySeverity)  { return false; }
     default boolean setSeverityAndDuration(TradeIncomeIncident inc)  { return false; }
+    
+    //Xilmi-AI:
+    default int popCapRank() { return 1; }
+    default int techLevelRank() { return 1; }
+    default int facCapRank() { return 1; }
 }
