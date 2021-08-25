@@ -1350,6 +1350,8 @@ public class AIDiplomat implements Base, Diplomat {
         if(empire.generalAI().additionalColonizersToBuild(false) > 0)
             warAllowed = false;
         int popCapRank = popCapRank();
+        if(galaxy().numActiveEmpires() > 2 && popCapRank < 3)
+            warAllowed = false;
         if(techLevelRank() > popCapRank || facCapRank() > popCapRank)
         {
             warAllowed = false;
@@ -1399,6 +1401,9 @@ public class AIDiplomat implements Base, Diplomat {
         if (civ1 == empire)   return castVoteFor(civ1);
         if (civ2 == empire)   return castVoteFor(civ2);
         
+        if(!empire.inEconomicRange(cv2.empId()) || !empire.inEconomicRange(cv1.empId()))
+            return castVoteFor(null);
+        
         // if allied with one, vote for that ally
         if (cv1.embassy().alliance() && !cv2.embassy().alliance())
             return castVoteFor(civ1);
@@ -1406,24 +1411,15 @@ public class AIDiplomat implements Base, Diplomat {
             return castVoteFor(civ2);
 
         // if at war with one, vote for other (if contacted)
-        if (cv1.embassy().anyWar() && !cv2.embassy().anyWar()) {
-            if (empire.inEconomicRange(cv2.empId()))
-                return castVoteFor(civ2);
-            else
-                return castVoteFor(null);
-        }
-        if (cv2.embassy().anyWar() && !cv1.embassy().anyWar()) {
-            if (empire.inEconomicRange(cv1.empId()))
-                return castVoteFor(civ1);
-            else
-                return castVoteFor(null);
-        }
-        //ail: I want it to be deterministic, so I pick whoever I fear more
-        if(empire.generalAI().timeToKill(civ1, empire) < empire.generalAI().timeToKill(civ2, empire)
-            && empire.inEconomicRange(cv1.empId()))
+        if (cv1.embassy().anyWar() && !cv2.embassy().anyWar())
+            return castVoteFor(civ2);
+        if (cv2.embassy().anyWar() && !cv1.embassy().anyWar())
             return castVoteFor(civ1);
-        if(empire.generalAI().timeToKill(civ2, empire) < empire.generalAI().timeToKill(civ1, empire)
-            && empire.inEconomicRange(cv2.empId()))
+
+        //ail: I want it to be deterministic, so I pick whoever I fear more
+        if(empire.generalAI().timeToKill(civ1, empire) < empire.generalAI().timeToKill(civ2, empire))
+            return castVoteFor(civ1);
+        if(empire.generalAI().timeToKill(civ2, empire) < empire.generalAI().timeToKill(civ1, empire))
             return castVoteFor(civ2);
         // return undecided
         return castVoteFor(null);
@@ -1762,6 +1758,7 @@ public class AIDiplomat implements Base, Diplomat {
     }
     @Override
     public  boolean leaderHatesAllSpies() { return false; }
+    @Override
     public int popCapRank()
     {
         int rank = 1;
@@ -1776,6 +1773,7 @@ public class AIDiplomat implements Base, Diplomat {
         }
         return rank;
     }
+    @Override
     public int techLevelRank()
     {
         int rank = 1;
@@ -1791,6 +1789,7 @@ public class AIDiplomat implements Base, Diplomat {
             rank = 1;
         return rank;
     }
+    @Override
     public int facCapRank()
     {
         int rank = 1;
