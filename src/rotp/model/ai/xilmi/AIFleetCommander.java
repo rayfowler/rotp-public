@@ -737,6 +737,7 @@ public class AIFleetCommander implements Base, FleetCommander {
     private void handleMilitary()
     {
         //ail: when we have colonizers but don't know we need any, we send them with our attacks, so they can colonize the bombed system also this should allow to scout with initial colonizer
+        //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" firepower: "+totalFirePower()+" firepower needed: "+firePowerNeededForAttack()+" def-budget: "+stationaryDefenseBudget());
         float civTech = empire.tech().avgTechLevel();
         for(ShipFleet fleet:empire.allFleets())
         {
@@ -754,7 +755,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             {
                 boolean canStillSend = true;
                 boolean notEnoughFighters = false;
-                float keepBc = 0.0f;
+                float keepBc = 0;
                 while(canStillSend)
                 {
                     float attackThreshold = 0.625f;
@@ -812,6 +813,11 @@ public class AIFleetCommander implements Base, FleetCommander {
                     }
                     if(target != null)
                     {
+                        UpdateSystemInfo(fleet.sysId());
+                        keepBc = max(keepBc, ((systemInfoBuffer.get(fleet.sysId()).enemyIncomingTransports + systemInfoBuffer.get(fleet.sysId()).myIncomingTransports) * empire.maxRobotControls() + systemInfoBuffer.get(fleet.sysId()).enemyBc * 2));
+                        //System.out.print("\n"+galaxy().currentTurn()+" "+fleet.empire().name()+" Fleet at "+fleet.system().name()+" keepBc: "+keepBc);
+                        if(systemInfoBuffer.get(fleet.sysId()).enemyBc > bcValue(fleet, false, true, false, false))
+                            keepBc = 0;
                         if(targetIsGatherPoint)
                         {
                             target = smartPath(fleet, target);
@@ -879,10 +885,6 @@ public class AIFleetCommander implements Base, FleetCommander {
                                         enemyBC += incoming.bcValue();
                                 }
                             }
-                            UpdateSystemInfo(fleet.sysId());
-                            keepBc = max(keepBc, ((systemInfoBuffer.get(fleet.sysId()).enemyIncomingTransports + systemInfoBuffer.get(fleet.sysId()).myIncomingTransports) * empire.maxRobotControls() + systemInfoBuffer.get(fleet.sysId()).enemyBc * 2));
-                            if(systemInfoBuffer.get(fleet.sysId()).enemyBc > bcValue(fleet, false, true, false, false))
-                                keepBc = 0;
                             if(target.empire() != null)
                             {
                                 if(empire.alliedWith(target.empId()) && (enemyBC > 0 || empire.enemyTransportsInTransit(target) > 0))
@@ -1119,7 +1121,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                 if(!empire.sv.inShipRange(target.id) && d.range() < empire.scoutRange())
                     continue;
                 counts[i] = (int)Math.ceil(num * amount);
-                if(needToKeep > 0 && empire.shipDesignerAI().fightingAdapted(d) > 0)
+                if(needToKeep > 0 && empire.shipDesignerAI().fightingAdapted(d) >= 0.5 && !d.isColonyShip())
                 {
                     int toKeep = (int)Math.ceil(needToKeep / d.cost());
                     if(num - counts[i] <= toKeep)
@@ -1199,5 +1201,36 @@ public class AIFleetCommander implements Base, FleetCommander {
         for (int j=0;j<ShipDesign.maxSpecials();j++)
             damage += d.special(j).estimatedBombardDamage(d, planetStack);
         return damage;
+    }
+    public float totalFirePower()
+    {
+        float bombardPower = 0;
+        for(ShipFleet fleet:empire.allFleets())
+        {
+            bombardPower+=fleet.expectedBombardDamage(galaxy().system(empire.homeSysId()));
+        }
+        return bombardPower;
+    }
+    public float firePowerNeededForAttack()
+    {
+        float firePowerNeeded = 0;
+        for(Empire emp:empire.enemies())
+        {
+            firePowerNeeded += empire.generalAI().totalEmpirePopulationCapacity(emp) * 200;
+        }
+        return firePowerNeeded;
+    }
+    public float stationaryDefenseBudget()
+    {
+        float totalDefenseBC = empire.totalFleetCost() * (totalFirePower() - firePowerNeededForAttack()) / totalFirePower();
+        if(firePowerNeededForAttack() == 0)
+            totalDefenseBC = 0;
+        return max(0, totalDefenseBC);
+    }
+    public float defenseBudgetForSystem(StarSystem sys, float totalBudget)
+    {
+        if(sys.empire() != empire)
+            return 0;
+        return totalBudget * sys.population() / empire.totalPlanetaryPopulation();
     }
 }
