@@ -384,7 +384,6 @@ public class AIGovernor implements Base, Governor {
         //System.out.print("\n"+empire.name()+" "+col.name()+" colonizer-production-score "+productionScore(col.starSystem(), true));
         boolean inAttackRange = false;
         boolean enemy = false;
-        float totalEnemyBc = 0.0f;
         float highestNonEnemyBc = 0.0f;
         float myFleetBc = empire.totalFleetCost() * (empire.tech().avgTechLevel() + 10);
         for(Empire emp : empire.contactedEmpires())
@@ -393,8 +392,6 @@ public class AIGovernor implements Base, Governor {
             if(v.embassy().isEnemy() && empire.inShipRange(emp.id))
             {
                 enemy = true;
-                //ail: if someone has no fleet, we don't just want to assume almost nothing
-                totalEnemyBc += max(emp.totalIncome(), emp.totalFleetCost()) * (emp.tech().avgTechLevel() + 10);
             }
             else if(empire.inShipRange(emp.id) || emp.inShipRange(empire.id))
             {
@@ -448,8 +445,8 @@ public class AIGovernor implements Base, Governor {
             if(enemy)
             {
                 maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
-                if(myFleetBc > 4 * totalEnemyBc && highestNonEnemyBc <= myFleetBc * 4)
-                    maxShipMaintainance /= 4.0f;
+                /*if(myFleetBc > 4 * totalEnemyBc && highestNonEnemyBc <= myFleetBc * 4)
+                    maxShipMaintainance /= 4.0f;*/
                 fighterPercentage = 0.5f + empire.generalAI().defenseRatio() * 0.5f;
                 //fighterPercentage = empire.generalAI().defenseRatio();
             }
@@ -479,7 +476,7 @@ public class AIGovernor implements Base, Governor {
             
             if(!techsLeft)
                 maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
-            //System.out.print("\n"+empire.name()+" "+col.name()+" adjMaxMaint: "+maxShipMaintainance+" baseMaxMaint: "+maxShipMaintainanceBeforeAdj+" NonEnemyBc: "+highestNonEnemyBc+" enemyBc: "+totalEnemyBc+" myBC: "+myFleetBc);
+            //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+col.name()+" adjMaxMaint: "+maxShipMaintainance+" baseMaxMaint: "+maxShipMaintainanceBeforeAdj+" CurrMaint: "+empire.shipMaintCostPerBC());
             col.shipyard().design(lab.fighterDesign());
             //System.out.print("\n"+empire.name()+" fighterCost: "+fighterCost+" bomberCost: "+bomberCost+" F% reached: "+fighterCost / (bomberCost + fighterCost)+" of "+fighterPercentage);
             if(fighterCost / (bomberCost + fighterCost) > fighterPercentage 
