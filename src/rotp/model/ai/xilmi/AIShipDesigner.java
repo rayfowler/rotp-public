@@ -153,6 +153,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
                 {
                     keepScore = 1 - d.availableSpace()/d.totalSpace();
                 }
+                keepScore *= keepScore;
                 keepScore *= shipCounts[d.id()] * d.cost();
                 //we can scrap all that we don't need at all
                 //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+d.name()+" keepScore: "+keepScore+" role: "+d.mission());
