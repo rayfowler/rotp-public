@@ -744,7 +744,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 if(st2.isShip() && st2.design().isColonyShip())
                     killPct /= friends.size();
                 //ail: 0 damage possible when they have repulsor and we can't outrange
-                if(st1.optimalFiringRange(st2) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
+                if(st1.maxFiringRange(st2) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
                 {
                     //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
                     killPct = 0;
@@ -781,7 +781,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 if(stack != st2 && st2.isShip() && st2.design().isColonyShip())
                     continue;
                 float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
-                if(st1.optimalFiringRange(st2) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
+                if(st1.maxFiringRange(st2) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
                 {
                     //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
                     killPct = 0;
