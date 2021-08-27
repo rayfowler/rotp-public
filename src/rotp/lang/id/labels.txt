@@ -1845,12 +1845,12 @@ COUNCIL_REJECT_RULING             | Tolak pemimpin
 
 // Credit text
 CREDITS_DEVELOPER                 | Ray Fowler, Developer
-CREDITS_ILLUSTRATOR               | Petar Penev, Illustrator
-CREDITS_GRAPHIC_DESIGN            | Kaitlin Lindsay, Graphic Designer
-CREDITS_MUSIC                     | Efe Tozan, Music
-CREDITS_WRITER                    | Jeff Colucci, Writer
-CREDITS_SOUND                     | Remi Agullo, Sound Designer
-CREDITS_TRANSLATOR                | 
+CREDITS_ILLUSTRATOR               | Petar Penev, Ilustrator
+CREDITS_GRAPHIC_DESIGN            | Kaitlin Lindsay, Desainer Grafis
+CREDITS_MUSIC                     | Efe Tozan, Musik
+CREDITS_WRITER                    | Jeff Colucci, Penulis
+CREDITS_SOUND                     | Remi Agullo, Pengatur Suara
+CREDITS_TRANSLATOR                | Inda Ardani, Penerjemah
 
 // Systems UI
 SYSTEMS_TITLE                     | Sistem
