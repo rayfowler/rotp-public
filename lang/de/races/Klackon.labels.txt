@@ -1,0 +1,92 @@
+// race-specific variables (must start with _)
+_empire                           | Klackon Hive, Insecton Hive, Termitton Hive, Arthropon Hive, Coleopteron Hive
+_race                             | Klackon, Insecton, Termitton, Arthropon, Coleopteron
+_race_plural                      | Klackons, Insectons, Termittons, Arthropon, Coleopteron
+_title                            | Herrscher
+_nameTitle                        |
+
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Advisor text
+MAIN_ADVISOR_TITLE                | %2
+MAIN_ADVISOR_BUTTON_OK            | Entlassen
+MAIN_ADVISOR_SCOUT                | Endlich haben meine Schiffe die Fertigstellung erreicht. Ich muss meine Scouts einsetzen, um neue Welten zu finden, auf denen mein Kolonieschiff landen kann.
+MAIN_ADVISOR_TRANSPORT            | Ich habe mich auf dieser neuen Welt niedergelassen und muss mehr von meiner Heimat schicken, um sie zu erweitern. Hier gibt es kein neues Leben, und so geht meine Suche weiter.
+MAIN_ADVISOR_DIPLOMACY            | Endlich neues Leben! Was für eine seltsame Lebensform, die durch Geräusche und Gesten kommuniziert. Ich muss die diplomatischen und geheimdienstlichen Informationen, die ich über sie weiß, in Betracht ziehen, bevor ich meinen nächsten Schritt mache.
+MAIN_ADVISOR_SHIP_ENGINE          | Ich verbessere mich weiter mit dieser Verfeinerung meiner Raumschiffmotoren. Ich muss mir meine Schiffsentwürfe noch einmal ansehen, um sie in meine Flotte zu integrieren.
+MAIN_ADVISOR_RALLY_POINTS         | Warum greifen sie mich an? Ich verstehe das nicht. Ich muss einen Versammlungspunkt für meine Schiffe wählen, um mich zu verteidigen, während ich versuche zu verstehen, warum dies geschehen ist.
+MAIN_ADVISOR_MISSILE_BASES        | Ich sehe jetzt, dass nicht alles Leben den Segen der Kooperation gelernt hat. Ich muss meine äußeren Welten mit Raketenbasen befestigen, um meine Übernahmen zu sichern.
+MAIN_ADVISOR_SHIP_WEAPON          | Ich mache weiter Fortschritte, und meine neue Waffentechnologie wird mir mehr Macht verleihen, sobald ich sie in meine Schiffsdesigns integriere.
+MAIN_ADVISOR_COUNCIL              | Aufregung! Ein Treffen vieler Spezies wird bald stattfinden. Welche Lebensformen werden dort versammelt sein? Wenn ich mich bei denen, die ich kenne, in ein besseres Licht rücke, erleichtern sie mir vielleicht den Einstieg in neue Spezies.
+MAIN_ADVISOR_REBELLION            | Was ist das? Ich habe auf %1 die Kontrolle über mich verloren. Egal, ich muss einfach dorthin gehen und ihnen zeigen, dass ich das Sagen habe.
+MAIN_ADVISOR_RESIST_COUNCIL       | Unmöglich! Dass ein anderer auserwählt wurde, diese einfältigen Tölpel zu regieren, während meine Weisheit ignoriert wird! Aber das macht nichts: Ich werde ihnen allen sofort ein Ende setzen! 
+MAIN_ADVISOR_COUNCIL_RESISTED     | Warum sind diese Dummköpfe immer noch so unangenehm? Der Rat gehört mir, die Galaxie gehört mir, und jetzt werden sie ihren Platz in meiner Herrschaft kennenlernen! 
+
+MAIN_SCOUT_TITLE                  | Ich erforsche ein neues Sternensystem
+MAIN_COLONIZE_TITLE               | Ich umkreise %1, ein unkolonisiertes System.
+MAIN_COLONIZE_ANIMATION_TITLE     | Im Jahr %1, gründe ich eine neue Kolonie.
+MAIN_ALERT_SPY_CAPTURED           | Ich habe einen Spion der %1 gefangen genommen und ein Geständnis ihrer %2 Aktivitäten erzwungen.
+MAIN_ALERT_TRANSPORTS_KILLED      | Meine Versuche, %2 zu erreichen, wurden von verteidigenden %1-Kräften gestoppt.
+MAIN_ALERT_INVADERS_KILLED        | %1 Transporte, die versuchten, in %2 einzudringen, wurden von mir vollständig zerstört.
+MAIN_BOMBARD_TITLE                | Ich umkreise eine feindliche %2-Kolonie.
+
+TECH_RESEARCH_COMPUTER            | Ich muss die nächste Computertechnologie auswählen, auf die ich mich konzentrieren möchte.
+TECH_RESEARCH_CONSTRUCTION        | Ich muss die nächste Bautechnologie auswählen, auf die ich mich konzentrieren möchte.
+TECH_RESEARCH_FORCE_FIELD         | Ich muss die nächste Kraftfeldtechnologie auswählen, auf die ich mich konzentrieren möchte.
+TECH_RESEARCH_PLANETOLOGY         | Ich muss die nächste Planetologie-Technologie auswählen, auf die ich mich konzentrieren möchte.
+TECH_RESEARCH_PROPULSION          | Ich muss die nächste Antriebstechnologie auswählen, auf die ich mich konzentrieren möchte.
+TECH_RESEARCH_WEAPON              | Ich muss die nächste Waffentechnologie auswählen, auf die ich mich konzentrieren möchte.
+TECH_DISCOVERY_TITLE              | Ich erreiche einen %2-Durchbruch
+TECH_SCOUTED_TITLE                | Während ich die Ruinen von %1 erforsche, entdecke ich eine neue Technologie
+TECH_STOLEN_TITLE                 | Ich habe das Forschungszentrum von %1 in %2 infiltriert.
+TECH_TRADED_TITLE                 | Ich erwerbe Technologie von %2 Wissenschaftlern
+TECH_PLUNDERED_TITLE              | Während ich die Ruinen von %1 plündere, entdecke ich eine neue Technologie
+TECH_ALLOCATE_SHIELD              | Soll ich die Verteidigungsratio aller meiner Kolonien erhöhen, um die neuen planetaren Schilde zu bauen?
+TECH_ALLOCATE_MISSILE_BASES       | Soll ich die Verteidigungsratio aller meiner Kolonien erhöhen, um meine Raketenbasen aufzurüsten?
+TECH_ALLOCATE_FACTORIES           | Soll ich die Industrieratio aller meiner Kolonien erhöhen, um meine Fabrikkontrollen aufzurüsten?
+TECH_ALLOCATE_CLEAN_WASTE         | Soll ich die Ökologieratio aller meiner Kolonien auf das Minimum reduzieren, um sie sauber zu halten?
+TECH_ALLOCATE_ENRICH_SOIL         | Soll ich die Ökologieratio meiner Kolonien mit Standardumgebungen erhöhen, um mit dem Terraforming meiner Planeten zu beginnen?
+TECH_ALLOCATE_ATMOSPHERE          | Soll ich die Ökologieratio meiner Kolonien mit feindlicher Umgebung erhöhen, um mit dem Terraforming meiner Planeten zu beginnen?
+TECH_ALLOCATE_TERRAFORM           | Soll ich die Ökologieratio aller meiner Kolonien erhöhen, um mit dem Terraforming meiner Planeten zu beginnen?
+
+
+NOTICE_ESPIONAGE_TITLE            | Ich habe eine [alien_race]-Basis infiltriert.
+NOTICE_ESPIONAGE_FRAME_TITLE      | Ich habe es geschafft, eine andere Rasse des Diebstahls zu beschuldigen.
+
+SHIP_COMBAT_TITLE_DESC            | Ich treffe auf eine feindliche [alien_race]-Flotte.
+
+SABOTAGE_FACTORIES_RESULT         | Ich habe %1 Fabriken zerstört.
+SABOTAGE_BASEN_RESULT             | Ich habe %1 Raketenbasen zerstört.
+SABOTAGE_REBELS_RESULT            | Ich habe %1 Rebellen aufgehetzt.
+SABOTAGE_REBELS_TOTAL             | Ich habe %1 Rebellen aufgehetzt. Unruhe jetzt bei %2%.
+SABOTAGE_REBELS_REVOLT            | Ich habe eine Revolte ausgelöst!
+
+COUNCIL_CAST_PROMPT               | Ich muss wählen (%1 Stimmen)...
+
+// text for endings... '#' represents a paragraph break
+// variables: %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 is special race-specific text described below
+GAME_OVER_MILITARY_LOSS2          | Dich hat ein schreckliches Schicksal ereilt. #Zu Beginn Ihres Streifzugs ins Unbekannte betraten Sie den Weltraum mit der Hoffnung, eine andere Lebensform zu finden, die so einzigartig ist wie Sie. Zu Ihrem Unglück blieb Ihr Traum bis zu Ihrem Todestag unerfüllt. Die anderen intelligenten Lebensformen, die Sie fanden, erwiesen sich nicht nur als äußerst unähnlich zu Ihnen, sondern auch als gewalttätig und wenig sympathisch für Ihre Suche. Diese Gewalt wurde zum Verhängnis eurer Hoffnung, und alle eure Welten befinden sich nun in den Händen derer, die euch vom Moment eurer ersten Begegnung an gehasst haben.* Jeder eurer Körper liegt gebrochen und leblos da, wo er getötet wurde, von eurer Heimatwelt bis zu euren entferntesten ehemaligen Kolonien. Als das Licht die Augen Ihrer letzten verbliebenen sterblichen Spule verlässt, dämmert Ihnen, dass das Universum im Begriff ist, seine einzigartigste Form des Lebens für immer zu verlieren...
+GAME_OVER_MILITARY_WIN2           | Ihre Suche hat ein Ende... vorerst. #Mit großen Hoffnungen hast du es gewagt, davon zu träumen, irgendwo in den Tiefen des Weltraums ein anderes Bewusstsein wie das deine zu finden. Obwohl Sie zahllosen höheren Intelligenzen begegneten, wurde nur allzu deutlich, dass keine von ihnen der Einzigartigkeit, die nur Sie besitzen, ähnlich war. Und schlimmer noch: Aus Furcht vor dem, was sie nicht verstanden, griffen sie dich an und provozierten die feierlichsten Reaktionen von dir und den unzähligen Körpern, die du bewohnst. Schweren Herzens hast du sie niedergeschlagen, und noch schwerer ist es, dass du dich als die einzige Intelligenz, die diese Galaxie bewohnt, wiederfindest. Obwohl diese außerirdischen Rassen mit ihren einzigartigen Formen des Selbst Ihre Suche nicht befriedigt haben, erkennen Sie jetzt, dass es da draußen ein ganzes Universum zu erforschen gibt. Alles, was Ihnen bleibt, ist, sich in jeden Winkel dieser Galaxie auszubreiten und Ihre Suche von vorne zu beginnen...
+GAME_OVER_MILITARY_ALLIANCE_WIN2  | Deine Suche ist zu einem Ende gekommen... vorerst. #Du bist unendlich traurig über die Taten, zu denen du gezwungen wurdest. Auf der Suche nach Verwandtschaft unter den Planeten dieser Galaxie sind Sie fast ausschließlich auf ignorante Kreaturen gestoßen, die Sie anpeitschten, weil Sie anders waren als sie. Als ihre Worte in Gewalt umschlugen, hast du sie niedergeschlagen, um dich und deine Interessen zu verteidigen, in der Hoffnung, dass sie ihre Fehler einsehen und dich als die einzigartige Lebensform erkennen würden, die du bist. Deine Hoffnungen wurden am Ende enttäuscht, und alle, die dir mit Gewalt begegneten, sind für immer zum Schweigen gebracht worden. Obwohl du nicht in der Lage warst, ein Bewusstsein zu finden, das deinem eigenen ähnlich ist, konntest du am Ende vertrauenswürdige und kämpferische Verbündete finden. Seltsamerweise betrachten sie dich mit der gleichen Freundschaft, die du für sie empfindest. Wenn die Sehnsucht, herauszufinden, ob Sie alles sind, was Ihnen im Universum gleicht, wieder zuschlägt, können Sie jederzeit zu anderen Galaxien aufbrechen. Aber für den Moment können Sie sich entspannen und dieses Gefühl der Kameradschaft genießen, das Sie gefunden haben, und auch alle Vorteile genießen, die es bringen kann. 
+GAME_OVER_DIPLOMATIC_LOSS2        | Ihre Suche hat ein Ende gefunden... vorerst. #Dies war nicht das Ende, das Sie sich für Ihre Suche nach Verwandtschaft im Sternenmeer gewünscht haben. Obwohl Du auf Deiner Suche vielen seltsamen und wundersamen Völkern begegnet bist, hast Du auch viele gemeine und schlecht gelaunte Zivilisationen getroffen. Leider sitzt die unausstehlichste, der Sie begegnet sind, nun als Anführer der Neuen Republik. Du bezweifelst, dass dieser neue Anführer freundlich zu dir sein wird, denn du hast aus der Vergangenheit alle Beweise dafür, dass dein Imperium nun in tödlicher Gefahr sein könnte.#Alles, was du dir gewünscht hast, war, einen anderen zu finden, der so anders ist wie du. Jetzt kannst du nur in Unterwerfung an den Fersen einer größeren Macht warten. Du kannst nur beten, dass die %5 dich in Ruhe lassen, denn sollten sie die Forderung stellen, wird die gesamte Macht der Galaxie gegen dich eingesetzt...
+GAME_OVER_ALLIANCE_WIN2           | Deine Suche hat ein Ende gefunden ... vorerst. #Ein neues Zeitalter für die Klackon hat begonnen, und deine vertrauten Freunde, die %5, sind nun bereit, die Neue Republik in eine glorreiche Zukunft zu führen. Obwohl sie sich in vielerlei Hinsicht von dir unterscheiden, betrachten dich deine Freunde mit Interesse und Mitgefühl, und du vertraust darauf, dass sie dir erlauben werden, deine Suche fortzusetzen, sobald die Arbeit an dieser neuen Allianz beendet ist. Es wird viel erfordern, damit so unterschiedliche Spezies eine harmonische Koexistenz erreichen können, aber Sie wissen, dass %8 es schaffen wird.#Sie können nur ein Gefühl der Zufriedenheit über dieses Ergebnis empfinden. Du hast dich sowieso nie für die Feinheiten politischer Manöver interessiert und bist froh, dass dein Freund dir den lästigen Mantel für immer von den Schultern nehmen wird. Alles, was Sie sich wünschten, war, irgendwo in dieser Galaxie eine Seele wie die Ihre zu finden. Vielleicht, eines Tages, werden Sie...GAME_OVER_REBELLION_LOSS2         | You've met with a terrible fate.#You were alone at your beginning, and at your end you are still alone. Unable to find the ultimate object of your search, you drifted from meeting one strange civilization to the next until those with more foresight than you banded to form the New Republic. Sensing your quest would reach a premature end as the %5 assumed the mantle of leadership, you chose to fight against this fate rather than meekly submit to it. It was not the first mistake you made on your journey, but it proved to be your last in the end.#Now, as %8 the galaxy, you muse silently to yourself in your final moments that in death, at least, your worries will come to an end. If only you could have found another like you, or at least one who understands who and what you are, you could have taken up arms together...
+GAME_OVER_REBELLION_WIN2          |Ihre Suche hat ein Ende... vorerst.# Gegen Ihren tiefsten Wunsch hat sich die Galaxie gegen Sie gestellt und Sie gezwungen, es ihr mit gleicher Münze heimzuzahlen. Unfähig, die Herrschaft der fremdenfeindlichen %7 zu akzeptieren, greifst du allein zu den Waffen, um dich und deine Suche gegen ihre grausame Herrschaft zu verteidigen. Du wusstest, dass diejenigen, die von der tyrannischen Rasse manipuliert worden waren, sich wahrscheinlich gegen dich stellen würden, aber die Fortsetzung deiner Suche konnte unter keinen Umständen gefährdet werden. Hätte eine dieser Rassen nicht ihrer Angst vor den %7 oder ihrem Hass auf das Unbekannte nachgegeben, wäre es ihnen vielleicht möglich gewesen, mit Ihnen in friedlicher Koexistenz zu leben. Aber das ist kein Grund zur Traurigkeit, denn so haben Sie wenigstens eine erschütternde Geschichte, die Sie mit demjenigen teilen können, der das Objekt Ihrer Suche ist, falls Sie ihn jemals finden sollten...
+GAME_OVER_REBEL_ALLIANCE_WIN2     | Ihre Suche hat ein Ende... vorerst.#Sie wussten seit der ersten Sitzung des Galaktischen Rates, dass dies passieren würde. Trotz Ihrer Warnungen an die anderen Imperien, die die Galaxis bewohnten, hatten es die verräterischen und abscheulichen %7 geschafft, das Ruder der Neuen Republik zu übernehmen und drohten, die Galaxis mit ihrer abscheulichen Fremdenfeindlichkeit zu infizieren. Tapfer hast du gegen sie gekämpft, und obwohl viele in der Galaxis beschlossen, ihr Los gegen dich zu werfen, konntest du deine Interessen am Ende erfolgreich verteidigen.#Am glücklichsten war vielleicht die Unterstützung, die du von deinen Freunden in diesem letzten Krieg erhalten hast. Klug genug, um die Gefahr zu erkennen, und mitfühlend genug, um Ihnen zu helfen, waren Sie froh, diesen Kampf nicht allein geführt zu haben. Jetzt können Sie eine friedliche Koexistenz erreichen und gemeinsam den Reichtum dieser Galaxie genießen. Eines Tages werden Sie vielleicht noch tiefer in den Weltraum vordringen und die Galaxie verlassen, in der Hoffnung, diejenige zu treffen, nach der Sie schon so lange suchen...
+GAME_OVER_DIPLOMATIC_WIN2         | Ihre Suche hat ein unerwartetes Ende gefunden #Sie haben viel entdeckt, seit Sie zum ersten Mal von Ihrer alten Heimatwelt aufgebrochen sind, um ein anderes Bewusstsein zu finden, das Ihrem eigenen entspricht. Obwohl Sie sich diesen Traum noch nicht erfüllen konnten, hat sich das Wissen und die Freundschaft, die Sie von denen, denen Sie begegnet sind, erlangt haben, als eine süße Belohnung erwiesen. Deine Verbündeten haben nicht nur ihre Angst vor deiner einzigartigen Lebensweise überwunden, sondern dich auch zum Herrscher der Neuen Republik gewählt. Vor Ihnen liegt eine Zukunft, die Sie sich selbst nie erträumt hätten, und Sie werden Ihre neuen Freunde mit all der Verwandtschaft und dem Vertrauen, das sie Ihnen entgegengebracht haben, in diese Zukunft führen. Vielleicht werden Sie sich eines Tages wieder auf die Suche machen, um jemanden zu finden, der genauso existiert wie Sie. Für den Moment jedoch gibt es viel Arbeit für dich zu tun, und deine Suche wird auf ihre Vollendung warten müssen. Und wenn sie erledigt ist, werden Sie vielleicht feststellen, dass Ihre ursprüngliche Sehnsucht sehr viel geringer geworden ist. Schließlich sind Sie zum ersten Mal in Ihrem langen Leben nicht mehr allein. 
+GAME_OVER_NEW_REPUBLIC_WIN2       | Ihre Suche hat ein unerwartetes Ende gefunden #Jetzt sind Ihre Kriege endlich zu einem Ende gekommen. Nachdem Sie den Posten des Herrschers in der Neuen Republik übernommen hatten, war es Ihnen gelungen, alle höheren Lebensformen in dieser Galaxie an den Tisch der Freundschaft zu bringen. Zumindest, bis sich eine erbärmlich unvorbereitete Rebellion gegen Sie formierte. Gegründet aus Fremdenfeindlichkeit und Furcht vor dem, was Sie sind, konnten diejenigen, die Sie zu stürzen versuchten, weder die Tiefen Ihrer zielstrebigen Stärke noch die Wut Ihrer Verbündeten ergründen. Sie wurden vernichtet, und der Frieden wird durch die Galaxis fließen wie Wasser in die Ozeane der zahlreichen Welten, die Sie nun Ihr Eigen nennen. Während die Gebiete der Rebellen unter Ihnen und Ihren Verbündeten aufgeteilt werden, gehen Ihre Gedanken kurz zu der Suche über, die Sie vor so langer Zeit aus Ihrer Heimat vertrieben hat. Es stimmt, du hast das Objekt deiner Suche nie gefunden, und du bleibst in vielerlei Hinsicht allein im Universum. Aber glücklicherweise stellen Sie fest, dass Sie mit den Verbündeten, die Sie auf Ihrer Reise gefunden haben, nie wieder wirklich allein sein werden. 
+
+// This text is the %8 variable in some of the game over text... when this race wins the game
+GAME_OVER_ALLIANCE_WIN3           | die unbestechliche Zielstrebigkeit des Klackon
+GAME_OVER_REBELLION_LOSS3         | die seelenlosen Horden des Klackon dominieren

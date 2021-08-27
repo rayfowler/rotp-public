@@ -1,0 +1,85 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Silicoid specific dialogue
+
+CONTACT_XENOPHOBIC         | Das [my_empire] hat sich herabgelassen, Ihre Anwesenheit zu bestätigen, [your_name] von der [your_race]. Wir werden Euch kontaktieren, wenn es unsere Bedürfnisse erfordern.
+CONTACT_RUTHLESS           | Die Augen des Imperiums sind auf dich gerichtet, [your_race]. Betet für Euch und für alles, was Euch lieb ist, dass [my_title] Euch wohlwollend betrachtet.
+CONTACT_AGGRESSIVE         | Wir sind die [your_race_plural], kleine [your_race]. Unser Territorium ist riesig und unsere Macht unübertroffen. Ich warne Euch, unseren Zorn nicht herauszufordern, sonst werdet Ihr lernen, was tödliche Vergeltung bedeutet.
+
+//
+GREETING_01                | Seid gegrüßt, Botschafter. Sagt, worum Ihr den [my_title] bittet, und wenn er Euch für würdig erachtet, werden wir unseren heiligen Krieg unterbrechen, um Euch zu helfen.
+GREETING_04                | Fassen Sie sich kurz, Botschafter: der [my_title] hält unseren Kreuzzug für nichts auf.
+GREETING_07                | Elende [your_race]! Unseren heiligen Krieg zu unterbrechen, bedeutet, unseren Zorn auf Euch zu ziehen!
+//
+DECLAREWAR_HATE_01         | Es ist jetzt klarer als je zuvor, dass Euer Volk die lange gesuchten Kinder von Quaralon sind! Wir werden das größte Vergnügen daran haben, eure Art aus dieser Galaxie zu entfernen, wie die Geißel, die ihr seid!
+DECLAREWAR_HATE_02         | Die Zeit, von der in der Legende gesprochen wird, ist endlich gekommen! Bereitet euch vor, Brut von Quaralon! Denn egal, wer gewinnt, unser Kreuzzug wird bald zu einem Ende kommen!
+DECLAREWAR_HATE_03         | Endlich haben wir euch gefunden, Quaralons Brut! Und nun wird unser Kampf vereint! Eure Stärke ist unbedeutend: die Stärke von Diamodus wird uns hindurchführen!
+DECLAREWAR_ERRATIC_01      | Seit unserem ersten Treffen hat das [my_title] darüber nachgedacht, ob Sie unser meistgehasster Feind sind oder nicht. Es wird dies auch weiterhin tun, nachdem wir Eurer Rasse ein Ende bereitet haben.
+DECLAREWAR_ERRATIC_02      | Unsere Zeit als himmlische Nachbarn war freundschaftlich genug, aber selbst die geringste Möglichkeit, dass Ihr Volk die Kinder von Quaralon sind, ist für uns genug, um den Krieg zu erklären.
+DECLAREWAR_ERRATIC_03      | Selbst das kleinste Risiko der Schurkerei durch euch ist jenseits dessen, was wir bereit sind zu akzeptieren. Wir werden euren Dreck aus der Galaxis entfernen oder bei dem Versuch sterben.
+DECLAREWAR_MILITARY_01     | Ihr wagt es, auf diese Weise in unser Territorium einzudringen? So soll es sein! Ihr werdet bald unseren Zorn kennenlernen, [your_race], und dabei die Tiefen Eurer Torheit erfahren.
+DECLAREWAR_MILITARY_02     | Merkt Euch dies, erbärmliche [your_race]: Alle Welten in dieser Galaxis gehören dem [my_empire] durch göttliches Recht, und wir werden für sie mit einer Wut kämpfen, die die Sterne selbst erschüttern wird!
+DECLAREWAR_MILITARY_03     | Wir werden Euch nicht erlauben, auch nur einen weiteren Stein auf Welten zu beanspruchen, die uns gehören oder gehören werden! Es wird die Macht eures Militärs gegen die Stärke unserer Überzeugungen sein. Lasst uns sehen, was sich durchsetzen wird!
+DECLAREWAR_ALLIANCE_01     | Es war eine unkluge Entscheidung, einem Verbündeten des Imperiums den Krieg zu erklären. Betet, dass Ihr Gnade bei Euren Göttern findet, denn bei uns werdet Ihr keine finden.
+DECLAREWAR_ALLIANCE_02     | Unser Verbündeter hat uns darüber informiert, dass Ihr Euch entschieden habt, Krieg gegen ihn zu führen: Damit habt Ihr auch uns den Krieg erklärt. Bereiten Sie sich vor!
+DECLAREWAR_ALLIANCE_03     | Das Schicksal der [other_race] ist uns egal, aber wir werden diese Chance nutzen, um die Galaxie von euresgleichen zu befreien, damit wir unseren heiligen Kreuzzug fortsetzen können. 
+DECLAREWAR_SPYING_01       | Bedauernswerte [your_race]! An diesem Tag werdet Ihr lernen, wie töricht es ist, die Geheimnisse des Imperiums zu stehlen!
+DECLAREWAR_SPYING_02       | Ihr wollt so dringend unsere Geheimnisse erfahren? Dann werde ich dir das wichtigste verraten: Wir vergeben nicht, und wir vergessen nicht. Bereitet euch auf den Krieg vor!
+DECLAREWAR_SPYING_03       | Glaubst du, dass du in der Lage bist, unsere Geheimnisse ohne Konsequenzen zu nehmen? Sie werden bald lernen, wie töricht eine solch arrogante Entscheidung ist.
+DECLAREWAR_ATTACK_01       | Endlich habt ihr euch entlarvt, Kinder von Quaralon! Niemand außer der Brut unseres meistgehassten Feindes wäre so töricht, uns so kühn herauszufordern! Bereitet euch auf die letzte Schlacht vor!
+DECLAREWAR_ATTACK_02       | Lange haben wir vermutet, dass ihr die Ausgeburt unseres alten Feindes seid! Mit diesem Schlag habt Ihr diese Tatsache für alle Zeiten bestätigt! Endlich wird sich unsere Prophezeiung erfüllen!
+DECLAREWAR_ATTACK_03       | Schurke! Geißel! In unserer dunkelsten Stunde startest Du einen solchen Angriff gegen uns?! Nun, da du dich als unser ewiger Feind zu erkennen gegeben hast, wird uns kein Unterschied in unserer Stärke daran hindern, dich zu vernichten!
+DECLAREWAR_OPPORTUNITY_01  | Während wir unseren heiligen Kreuzzug durch die Galaxis fortsetzen, müssen wir jede Gelegenheit nutzen, unseren Vorteil zu vergrößern. Diese Zeit ist jetzt, und eure Art auszulöschen ist die Gelegenheit. Lebt wohl, erbärmliche [your_race].
+DECLAREWAR_ASSASSIN_01     | Wie könnt Ihr es wagen, einen Botschafter des Imperiums zu töten!? Nur einer von Quaralons Ausgeburten konnte mit solch einem bösen Geist handeln! Bereitet eure Flotten auf den Krieg vor! 
+
+OFFER_PEACE_01             | Man sagt, dass man, um jemanden zu kennen, zuerst gegen ihn kämpfen muss. Wir haben gekämpft, und wir sehen, dass Ihr nicht die Kinder der Bestie Quaralon seid. Wir möchten jetzt Frieden mit Euch haben, damit wir unsere Aufmerksamkeit auf diejenigen richten können, die es verdienen, unseren Zorn zu spüren. 
+OFFER_TRADE_01             | Die Tiefen des Weltraums zu erforschen ist ein kostspieliges Unterfangen. Das Imperium möchte einen offenen Handel vorschlagen. Die Summe von [amt] BC pro Jahr wird sowohl unseren heiligen Kreuzzug finanzieren als auch mehr Reichtum für Euer Volk anhäufen. Was sagt Ihr dazu? 
+OFFER_PACT_01              | Wir suchen die Zerstörung von Quaralon und seinesgleichen allein. Solange wir glauben, dass Eure Leute nicht zu ihnen gehören, haben wir keine Skrupel mit Euch. Wir würden unsere Absichten mit einem Nichtangriffspakt beweisen. Ob Sie ihn unterzeichnen wollen, ist Ihre Entscheidung.
+OFFER_ALLIANCE_01          | Wir haben auf unserem heiligen Krieg zur Säuberung der Galaxie zahlreiche seltsame und abscheuliche Kreaturen getroffen. Von denen, denen wir begegnet sind, halten wir Sie für den unwahrscheinlichsten unserer erbärmlichen Feinde. Verbündet Euch mit uns, [your_race], und verdient Euch den Segen des [my_title]! 
+
+WARN_TRESPASSING_01        | Ihr entweiht den geweihten Raum von [system] mit Eurer ungebetenen Anwesenheit! Zieht Euch sofort zurück oder wir werden Euch mit gerechtem Feuer vertreiben! 
+WARN_EXPANSION_01          | Glauben Sie, die Galaxie gehöre Ihnen und nur Ihnen allein? Stoppen Sie diese rücksichtslose Expansion sofort, oder stellen Sie sich dem Zorn des gesamten Imperiums!
+WARN_BUILDUP_01            | Nur das Imperium darf die stärksten Flotten in der Galaxie besitzen, denn nur das Imperium kann ein angemessenes Urteil über die Bösen fällen. Stelle dieses Diktum auf eigene Gefahr in Frage, [your_race].  
+WARN_SKIRMISH_01           | Was meint Ihr damit, Botschafter? Ein bloßes Scharmützel, bei dem wir nur einmal ein Auge zudrücken: Lassen Sie nicht zu, dass sich so etwas wiederholt! 
+WARN_ATTACKED_01           | Wahnsinn! Ihr wagt es, das Imperium so anzugreifen!? In seiner Weisheit hat der [defender_title] einen Aufschub unserer Vergeltung angeordnet, damit er sehen kann, was Ihr als nächstes tun werdet. Seid Ihr wirklich unser langersehnter Feind?! 
+WARN_INVADED_01            | Sicherlich eine Verzweiflungstat von [attacker_race], um dem Imperium Territorium zu stehlen. Ihr wisst, dass [system] für uns bedeutungslos war, aber weiterhin zu nehmen, was dem Imperium gehört, kann nur Euren Untergang bedeuten! 
+WARN_ESPIONAGE_01          | Die Entscheidung, unsere Geheimnisse zu stehlen, war eine schwere Fehleinschätzung, Botschafter. Ich mahne Sie zur Vorsicht: Wäre Ihr Versuch nicht so lächerlich, hätte er sicherlich eine schlimmere Reaktion verdient! [gerahmt]
+WARN_SABOTAGE_01           | Was ist das für eine Trickserei? Sabotage ist eine verwerfliche Handlung, die nur Feiglingen und Schurken würdig ist! Entpuppst Du Dich nun doch als der böse Feind unserer Prophezeiungen? Das [victim_title] wird entscheiden...
+WARN_BIOWEAPON_01          | Undenkbar! Das Fleisch ist schwach genug gegen konventionelle Waffen, aber gegen biologische Waffen hat es keine Chance. Und dann auch noch gegen Zivilisten?! Sicherlich fließt das dunkle Blut von Quaralon durch die Adern deiner Art!
+WARN_GENOCIDE_01           | Sagen Sie uns jetzt, warum Sie Völkermord an der Rasse [victim_race] begangen haben. Wähle deine Worte mit Bedacht: deine Antwort bestimmt, wie unsere beiden Völker von hier an weitermachen werden!
+WARN_FINAL_WAR_01          | Nur durch das Schmieden von Allianzen können wir unseren heiligen Kreuzzug vollenden! Wir stehen zusammen als vereinte Völker, doch du stehst allein als die Stimme des Chaos und des Krieges. Die Prophezeiung ist in Bewegung: Ihr seid in der Tat die Brut von Quaralon! 
+WARN_COUNCIL_VOTE_01       | Es wäre sicherlich besser, wenn dieser Rat aufgelöst würde und das Imperium die alleinige Kontrolle über die galaktischen Angelegenheiten bekäme. Dann würde sich euer Volk unsere Feindschaft verdienen, wenn ihr euch so gegen uns äußert! 
+WARN_OATHBREAKER_01        | Wie beunruhigend, sein Wort zu brechen, bedeutet, sein Vertrauen zu brechen. Es besteht kein Zweifel, dass der Feind der Prophezeiungen es wagen würde, auf diese Art und Weise zu handeln! [spiesCaught] 
+WARN_ATTACKED_ALLY_01      | Die [defender_race] tragen die Ehre der Verbundenheit mit dem Imperium! Beachtet unsere Warnung als Antwort auf Euren Angriff: Ich versichere Euch, dass Ihr sie nur einmal erhalten werdet!
+WARN_REBELLING_AGAINST_01  | Unser Kreuzzug wird nicht verzögert werden! Nicht von den Einfaltspinseln des Rates und auch nicht von Ihnen! Halten Sie sich bereit, Botschafter: Ein heiliger Sturm wird bald über Sie hereinbrechen!
+
+PRAISE_COUNCIL_VOTE_01     | Unser treuer Verbündeter verdient wieder einmal unser Lob! Mit Euch, die Ihr dem Rat Vernunft einredet, wird unser Kreuzzug niemals ins Stocken geraten! Ihr habt Euch heute die Dankbarkeit des Imperiums verdient, [voter_race]. 
+PRAISE_COUNCIL_VOTE_02     | Eure Rasse hat sich noch nicht als unschuldig erwiesen, Botschafter. Unterstützen Sie unsere Sache weiterhin im Rat und erweisen Sie sich als Verbündeter unseres Kreuzzuges. 
+PRAISE_COUNCIL_VOTE_03     | Denken Sie nicht, dass eine einzige Stimme für das Imperium im Rat Sie von jedem Verdacht befreit! Deinesgleichen müssen noch viel mehr beweisen, bevor unsere Zweifel ausgeräumt sind! 
+
+PRAISE_ATTACKED_ENEMY_01   | Wir wissen noch nicht, ob die [defender_race] die ruchlosesten Kinder von Quaralon sind, aber zu sehen, dass unsere Verbündeten sich uns so bereitwillig anschließen, macht uns Mut in diesem Krieg! Vorwärts! Für die Gerechtigkeit! Für das Imperium!  
+PRAISE_ATTACKED_ENEMY_02   | Ihr wollt Euch unserem Kampf gegen die [defender_race] anschließen? Dann geht hinaus und zeigt uns, wie Ihr Euch auf dem Schlachtfeld verhaltet. Ein Sieg wird Euch ein höheres Ansehen am kaiserlichen Hof einbringen, aber eine Niederlage bringt nur den Tod! 
+PRAISE_ATTACKED_ENEMY_03   | Sicherlich haltet Ihr uns nicht für so töricht, an Eure Unschuld zu glauben, nur weil Ihr Euch uns im Kampf gegen die [defender_race] angeschlossen habt? Der Feind der Prophezeiung würde genau das Richtige tun, um seine Identität zu verschleiern. Geht jetzt! Zeigt uns, wie Ihr kämpft, und wir werden beurteilen, wie rein Ihr wirklich seid! 
+
+PRAISE_TRADE_01            | Das Imperium wünscht dir alles Gute, Freund des Kreuzzuges! Unser Handelsabkommen hat unzählige Schlachten auf unserer Suche nach Quaralons Brut finanziert. Das Imperium hofft, dass dein Volk ebenso davon profitiert hat. 
+PRAISE_TRADE_02            | Während wir nicht sagen können, dass wir Euch über jeden Verdacht erhaben sind, können wir sagen, dass die direkte Finanzierung unseres heiligen Krieges durch Handel unser Vertrauen in Euch gestärkt hat. Sorgen Sie dafür, dass dies so bleibt, Botschafter! 
+PRAISE_REBELLING_WITH_01   | Unser Feind ist gefunden worden! Die abscheuliche Ausgeburt von Quaralon hat den galaktischen Thron an sich gerissen! Vorwärts in die Schlacht: Die Flotten von [my_race] und [your_race] werden sich zusammentun und diesen Dreck aus der Galaxie entfernen!
+
+ 
+ACCEPT_TRADE_01            | Das Imperium nimmt Ihr Angebot an, [your_race]. Wir werden jedes Jahr [amt] BC mit Euch handeln, damit wir unseren heiligen Kreuzzug fortsetzen können.
+RESPOND_IGNORE_THREAT_01   | Unser Kreuzzug wird sich nicht von Ihren leeren Drohungen abschrecken lassen. Suchen Sie sich jemand anderen, den Sie belästigen können, oder riskieren Sie unseren Zorn!
+RESPOND_STOP_SPYING_01     | Wir wollten lediglich die Identität von Quaralons übler Brut feststellen. Wir sind überzeugt, daß eure Leute nicht unsere Todfeinde in Verkleidung sind.
+RESPOND_STOP_ATTACKING_01  | Unsere Flotten suchten nach Feinden des Imperiums. Wenn ihr nicht unsere Feinde seid, haben sie keinen Grund, dort zu bleiben, wo sie sind.
+

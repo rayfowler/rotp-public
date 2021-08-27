@@ -17,10 +17,16 @@ package rotp.util;
 
 import java.awt.ComponentOrientation;
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import rotp.Rotp;
 import rotp.model.empires.RaceFactory;
 import rotp.ui.UserPreferences;
 
@@ -40,7 +46,7 @@ public class LanguageManager implements Base {
 
     private List<Language> languages()  {
         if (languages.isEmpty()) {
-            loadLanguageFile();
+            loadLanguages();
             selectedLanguage(-1);
             selectLanguage(DEFAULT_LANGUAGE);
         }
@@ -138,6 +144,58 @@ public class LanguageManager implements Base {
     public Locale currentLocale()     { return locale(selectedLanguage()); }
     public ComponentOrientation currentOrientation()  { return orientation(selectedLanguage()); }
 
+    protected void loadLanguages() {
+        languages.add(new Language("en", "", "English", "", ""));
+        FontManager.current().loadLanguageFonts(baseDir, "en");
+        File langDir = new File(Rotp.jarPath()+"/lang");
+        File[] langFolders = langDir.listFiles();
+        if (langFolders != null) {
+            for (File f : langFolders){
+                if (f.isDirectory()) {
+                    String langCode = f.getName();
+                    String langName = languageDisplayName(langCode);
+                    if (langName != null) {
+                        languages.add(new Language(langCode, "", langName, "", ""));
+                        FontManager.current().loadLanguageFonts(baseDir, langCode);
+                    }
+                }
+            }
+        }
+    }
+    protected String languageDisplayName(String fn) {
+        FileInputStream fis = null;
+        try {
+            fis = new FileInputStream(new File(Rotp.jarPath()+"/lang/"+fn, "fonts.txt"));
+        } catch (FileNotFoundException e) {
+            return null;
+        }
+        InputStreamReader isr;
+        try {
+            isr = new InputStreamReader(fis, "UTF-8");
+        } catch (UnsupportedEncodingException ex) {
+            return null;
+        }
+ 
+        BufferedReader in = new BufferedReader(isr);
+        try {
+            String input;
+            while ((input = in.readLine()) != null) {
+                String[] vars = input.split(",");
+                if ((vars.length > 1) && vars[0].equalsIgnoreCase("name")) {
+                    return vars[1].trim();
+                }
+            }
+            in.close();
+            isr.close();
+            fis.close();
+        }
+        catch (IOException e) {
+
+            err("LanguageManager.languageDisplayName()2 -- IOException: ", e.toString());
+        }
+        return null;
+    }
+    /*
     protected void loadLanguageFile() {
         BufferedReader in = reader(baseDir+languageFile);
         if (in == null) {
@@ -168,6 +226,7 @@ public class LanguageManager implements Base {
         // load fonts for selected lanage
         FontManager.current().loadLanguageFonts(baseDir, dirString);
     }
+*/
     class Language {
         String directory;
         String subdirectory;

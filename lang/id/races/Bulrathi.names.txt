@@ -1,0 +1,21 @@
+// all possible names
+name: Bulrathi, Bearathi, Ursinathi, Pawrathi, Grizzlathi
+
+desc1: Ahli Lingkungan yang Agresif 
+desc2: Prajurit Lapangan yang Hebat
+desc3: [race] yang sangat setia, menghargai baik kekuatan fisik maupun kebijaksanaan raja filsuf
+
+// possible home system names
+home: Ursa, Canis, Grizzla, Pandara, Bruin
+
+title:     Hirearch Agung
+fulltitle: Hirearch Agung
+
+// possible leader names
+leader: Bullux, Durpp, Grunk, Krungo, Monch, Smurch
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Paw, Patrol, Claw, Fang, Tooth, Boar, Ursine
+ship2: Hunter, Gladiator, Sentinel, Fisher, Tracker, Carnivore, Panda
+ship3: Warbear, Brute, Predator, Intimidator, Killer, Guardian, Protector
+ship4: Grizzly, Punisher, Rhino, Kodiak, Destroyer, Cerberus, Mauler

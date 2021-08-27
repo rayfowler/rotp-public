@@ -1,0 +1,21 @@
+// all possible names
+name: Psilon, Mentalon, Psychon, Scienton, Logicon, Neurolon, Cognilon
+
+desc1: Pazifistische Technokraten
+desc2: Überragende Forscher
+desc3: Die Psilon Republik sucht nach einer friedlichen und erhöhenden Koexistenz mit anderen Spezies.
+
+// possible home system names
+home: Mentar, Cogitar, Psilar, Metrica, Neura
+
+title:     Berater
+fulltitle: Hoher Rat
+
+// possible leader names
+leader: Dynalon, Kelvan, Meson, Quark, Tachaon, Zygot
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Electron, Neutrino, Quark, Neutron, Proton, Atom, Molecule
+ship2: Sigma, Prime, Radius, Hypotenuse, Algebra, Tangent, Logarithm
+ship3: Parallax, Ellipse, Axis, Sine Wave, Fractal, Calculus, Derivation
+ship4: Sun Fire, Constellation, Nova, Quasar, Galaxy, Nebula, Corona

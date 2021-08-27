@@ -1,0 +1,89 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Human specific dialogue
+
+CONTACT_HONORABLE          | Kami adalah [my_race_plural] dari Bumi, [your_title], dan kami sangat bersemangat untuk berkontak denganmu. Jika kau butuh apapun dari Triumvirate, apapun juga, tolong jangan ragu meminta.
+CONTACT_PACIFIST           | Salam hangat, [your_name]. Kau adalah [your_empire]? Aku mewakili [my_empire], dan kuharap ini akan menjadi pertukaran ramah yang pertama dari banyak lagi yang tidak terhitung setelah ini di antara orang-orang kita.
+CONTACT_ERRATIC            | Orang-orang di Bumi biasanya lebih suka menyelesaikan masalah dengan negosiasi dan diplomasi. Tapi jika kau lebih suka cara yang lebih keras, kami akan sangat senang untuk memenuhi permintaanmu, [your_race].
+//
+GREETING_01                | Ah! Duta Besar dari [your_empire] di sini! Boleh aku mengambilkan makanan atau minuman? Silakan buat dirimu nyaman dan katakan apa yang kami bisa lakukan untukmu hari ini.
+GREETING_04                | Halo! Kau butuh sesuatu dari Triumvirate? Aku tidak yakin aku bisa membuat permintaanmu diteruskan kepada Triumvirs, tapi mungkin kau butuh sesuatu yang mereka tidak perlu terganggu karenanya untuk sekarang?
+GREETING_07                | Yah, Duta Besar [your_race] muncul. Apa yang sebenarnya kau mau dari kami? Lebih baik jangan meminta sesuatu yang terlalu tidak masuk akal.
+//
+DECLAREWAR_HATE_01         | Triumvirate bahagia bisa menunjukkan kepadamu mengapa kami seharusnya tidak menyakiti ras yang kekuatannya jauh lebih kecil darimu sendiri. Kau harus belajar dari hal ini... jika kau sempat hidup lama tentunya.
+DECLAREWAR_HATE_02         | Menyedihkan rasanya ketika aku sadar bahwa semua waktu yang kami habiskan "berkelakuan baik" denganmu ketika kami begitu jelas telah ditakdirkan untuk perang yang panjang dan berdarah-darah.
+DECLAREWAR_HATE_03         | Tidak ada gunanya berpura-pura lagi! Kami tidak akan menoleransi permintaan berbagi galaksi denganmu yang membuat posisi kami nantinya lebih rendah! Berapapun harga yang harus kami bayar!
+
+DECLAREWAR_ERRATIC_01      | Ada banyak gosip akhir-akhir ini tentang bagaimana militer kita bersikap malas dan cepat puas. Semoga perang denganmu akan mencambuk mereka kembali kepada kesigapan untuk musuh Triumvirate yang lebih berbahaya.
+DECLAREWAR_ERRATIC_02      | Kau tahu permainan perang, Duta Besar? PErtempuran pura-pura di mana kita menghimpit angkatan bersenjata kita satu sama lain untuk kepentingan latihan. Yah, kami harap perang sungguhan dengan orang-orangmu mungkin akan lebih bermanfaat untuk tujuan itu. 
+DECLAREWAR_ERRATIC_03      | Tidak ada yang bisa mempersatukan populasi lebih baik dari musuh bersama, Duta Besar! Jika kau tidak mau melayani keinginan kami melalui diplomasi, setidaknya kau bisa berguna untuk kami sebagai angkatan bersenjata yang mempersatukan orang-orang kita. 
+//
+DECLAREWAR_MILITARY_01     | Akan lebih baik untukmu jika kau setuju untuk menyerahkan wilayah kepada kami melalui cara diplomatik. Penolakanmu akan memaksa kami untuk mengambil pilihan lain. 
+DECLAREWAR_MILITARY_02     | Sebagaimana kaupahami betul, pertumbuhan populasi memerlukan wilayah yang lebih berkembang untuk memenuhi kebutuhannya yang lebih berkembang pula. Waktunya telah tiba bagi kami untuk berkembang, dan wilayah yang kami butuhkan adalah milikmu. 
+DECLAREWAR_MILITARY_03     | Triumvirs setia kepada orang-orang sebagaimana orang-orang juga setia kepada Triumvirs. Jika kebutuhan kami mengatakan bahwa kami membutuhkan duniamu untuk dikoloni, mereka bahkan akan dengan senang hati memberikan nyawa mereka untuk mewujudkannya!
+//
+DECLAREWAR_ALLIANCE_01     | Ada banyak cara untuk membuat sekutu terkesan, Duta Besar. Memusnahkanmu pasti akan meningkatkan nilai kami dengan [other_race], jadi cobalah untuk membuat pertunjukan yang terbaik, ya?
+DECLAREWAR_ALLIANCE_02     | Triumvirate tidak akan pernah mengabaikan sekutunya untuk menghadapi musuh mereka sendirian! Dengan bersatunya manusia dan [other_race], kau tidak punya harapan untuk menang!
+DECLAREWAR_ALLIANCE_03     | Hanya karena kau punya militer yang kuat tidak berarti galaksi ini serta-merta menjadi milikmu. Kami akan senang untuk bergabung dengan [other_race], dab bersama kami akan melihatmu dihukum untuk kejahatanmu yang tak terhitung!
+//
+DECLAREWAR_SPYING_01       | Sepertinya kau pikir kau bisa kabur begitu saja dengan taktik rahasia seperti itu hanya karena kebiasaan diplomasi kami. Jangan takut! Kami akan membantumu mempelajari betapa besarnya kesalahan yang kau buat!
+DECLAREWAR_SPYING_02       | Akan lebih baik untuk kita berdua jika kau sama berkomitmennya terhadap diplomasi seperti kami. Kami akan merespon taktik perangmu dengan... metode peperangan yang lebih tradisional.
+DECLAREWAR_SPYING_03       | Kami berharap kau setuju dengan pandangan kami akan diplomasi sebagai cara untuk meraih tujuan. Karena kau jelas memiliki ide yang lebih licik, aku khawatir kami tidak punya pilihan lain untuk merespon dengan cara ini.
+//
+DECLAREWAR_ATTACK_01       | Tidak perlu pameran diplomatik lagi! Berani menyerang kami sederhananya berarti kau sudah hidup melebihi masa kegunaanmu. Tapi jangan khawatir!  Aku yakin kita akan menemukan tempat bagi orang-orangmu dalam buku sejarah kami, entah di manapun itu.
+DECLAREWAR_ATTACK_02       | Jangan menganggap remeh kekuatan militer Triumvirate! Jika memang pertempuran yang kau inginkan, kami akan lebih dari sekedar senang untuk melayanimu, Duta Besar!
+DECLAREWAR_ATTACK_03       | Kemanusiaan telah menjalani berbagai masa kegelapan, tetapi setiap kalinya kami keluar sebagai yang lebih kuat dan lebih bijak daripada sebelumnya. Kuyakinkan kau, Duta Besar, kali ini tidak akan ada bedanya dengan itu semua.
+//
+DECLAREWAR_OPPORTUNITY_01  | Setiap tindakan yang kami lakukan adalah untuk memenuhi tujuan kami, Duta Besar. Kami biasanya lebih suka diplomasi, tetapi karena tidak ada alasan nyata untuk mempertahankanmu, perang singkat denganmu akan lebih sesuai dengan tujuan kami.
+DECLAREWAR_ASSASSIN_01     | Aku terkejut ketika tahu bahwa ras yang tampaknya cerdas mau melakukan sesuatu sekejam pembunuhan duta besar. Kami akan memberi contoh kepadamu, sehingga tidak akan ada kekaisaran lain yang akan melakukan hal yang sama terhadap Triumvirate sepertimu!
+
+OFFER_PEACE_01             | Pasti sekarang kau bisa mengerti bahwa perang seperti ini hanya akan membawa tragedi. Ayolah kita hentikan kebodohan ini sebelum darah [your_race] dan [my_race] yang lebih berharga sampai tertumpah. Bergabunglah dalam upaya mengakhiri perang dan membentuk masa depan baru yang anak-anak kita akan bangga mewarisinya!
+OFFER_TRADE_01             | Ada yang bilang di [my_home] bahwa "perang tak dapat dihindarkan," tetapi kita belajar sejak lama bahwa hal ini tidaklah benar di mana kemakmuran berjaya. Mari kita bekerja sama dalam pengejaran kemakmuran itu. Akankah kita mulai dengan, oh, [amt] BC per tahun? 
+OFFER_PACT_01              | Kita semua tahu bahwa perang mungkin tidak sengaja dimulai bila kekaisaran manapun memperluas dirinya di seantero galaksi. Hal terakhir yang diinginkan Triumvirate adalah perang dengan orang-orang sehebat dirimu, dan pakta non-agresi akan membuat orang-orang di kedua pihak kita beristirahat dengan lebih mudah malam ini. Setuju kan? 
+OFFER_ALLIANCE_01          | [your_race_plural] memang hebat! Duta Besar, satu ide baru saja muncul padaku: ayo kita resmikan aliansi antara [your_race] dan [my_race]. Bersama kita bisa mengajarkan kerumunan makhluk-makhluk di galaksi ini bahwa diplomasi, bukan kekerasan, adalah satu-satunya cara untuk maju ke depan! 
+
+WARN_TRESPASSING_01        | Duta besar, sepertinya armada [your_race] telah memposisikan diri di ruang [my_race]. Tentunya kau tahu kami tidak bisa membolehkan ini? Tidak apa-apa, cukup pindahkan armadamu dan kami akan lupakan ini pernah terjadi.  
+WARN_EXPANSION_01          | Meski Triumvirate ingin menghormati keinginan orang-orangmu, kami tidak bisa buta terhadap ekspansi wilayah yang agresif seperti itu. Aku yakin kau akan menghentikan ini demi mempertahankan ikatan diplomatik kita, ya kan Duta Besar? 
+WARN_BUILDUP_01            | Duta Besar, kumohon! Pemimpin militer kami sedang mengamuk karena penguatan armadamu baru-baru ini! Aku memintamu untuk melambatkan pembangunan kapalmu untuk menunjukkan kepada orang-orang militer bodoh itu bahwa ketakutan mereka tidak berdasar! 
+WARN_SKIRMISH_01           | Aku baru saja menerima laporan menyedihkan mengenai serangan mendadak antara kapal-kapal Triumvirate dan armada yang dimiliki [your_empire]. Tolong pastikan ini tidak akan pernah terjadi lagi, jika tidak aku takut perang akan menjadi masa depan yang tidak bisa kita hindari!
+WARN_ATTACKED_01           | Tidak bagus, Duta Besar: sangat tidak bagus. Berani menyerang kami di [system]... apa maksudmu? Aku mencoba untuk mempertahankan posisi militer di tepian karena komitmenku terhadap diplomasi, tetapi jika kau terus melakukan ini, tidak ada yang bisa kulakukan lagi untuk meredakan amarah mereka. 
+WARN_INVADED_01            | Jenderal-jenderal kami marah besar akan tindakan terkini dari orang-orangmu! Dengan seranganmu terhadap sistem [system], mereka siap berangkat menuju pertempuran! Kau harus berhenti sekarang juga! Kau tidak sedang mencoba memulai perang, ya kan?! 
+WARN_ESPIONAGE_01          | Rakyatku tidak asing dengan mata-mata, dan hal ini telah meresap dalam budaya kami sejak perang yang dingin dan getir yang terjadi berabad-abad lalu. Tapi kau seharusnya sudah tahu bahwa usaha berulang-ulang untuk mencuri rahasia kami akan menemui balasannya di masa depan? [framed]
+WARN_SABOTAGE_01           | Spionase bisa kami pahami, tapi sabotase? Aku akan lakukan apa yang aku bisa untuk membuat para jenderal tidak marah, tapi jika kau melakukan hal seperti ini lagi aku ragu apakah aku sendiri mau membantumu di masa depan. [forced]
+WARN_BIOWEAPON_01          | Telah menjadi perhatianku bahwa kau menggunakan senjata biologis terhadap penduduk biasa di [system]. Aku... sejujurnya kehabisan kata-kata. Demi kebaikan ikatan diplomatik kita akan kulakukan apa yang aku bisa, tetapi aku tidak bisa bilang aku bersemangat menunggu respon apa yang akan muncul dalam Triumvirate. 
+WARN_GENOCIDE_01           | Apa yang kau perbuat?! Kebudayaan kuno yang cantik sudak musnah untuk selamanya! Aku bergidik membayangkan bagaimana Triumvirs akan bereaksi terhadap berita ini: genosida terhadap [victim_race] adalah sepenuhnya lawan dari filosofi kami! 
+WARN_FINAL_WAR_01          | Pada akhirnya galaksi ini telah memilih untuk bergabung bersama dan bergerak untuk perdamaian, dan masih juga kalian memilih untuk melawan aksi demokratis yang kami pilih? Setelah semua pembicaraan kita ternyata aku salah menilaimu. Tapi aku tahu bahwa kesalahanku ini akan segera diperbaiki!  
+WARN_COUNCIL_VOTE_01       | Kuakui bahwa aku sendiri kecewa dengan tindakanmu dalam majelis, Duta Besar. Kuharap ini adalah kesalahan tunggal bagimu dan ini bisa menjadi apa yang kami para manusia sering katakan, "yang lalu biarlah berlalu."
+WARN_OATHBREAKER_01        | Kepercayaan adalah dasar dari segala diplomasi, Duta Besar. Dengan mengingkari perkataanmu kau sudah meludahi kepercayaan kami, dan aku yakinkan kau bahwa hubungan diplomatik kita telah mengalami pukulan yang tidak akan dapat dipulihkan. 
+WARN_ATTACKED_ALLY_01      | Duta Besar, aku sangat menyarankanmu melawan serangan lebih jauh terhadap [defender_race]. Kita telah bersumpah untuk menjadi sekutu dengan mereka, dan bahkan aku tidak akan bisa untuk menahan militer kami tetap di tepian jika kau memaksa meneruskan rangkaian kekerasan ini!
+WARN_REBELLING_AGAINST_01  | Tidak mungkin bahwa kau telah terpilih mengungguli kami untuk memimpin Majelis Galaksi! Triumvirs akan marah besar! Aku khawatir mereka akan melihat perang sebagai satu-satunya pilihan yang tersisa untuk dilakukan! 
+//
+PRAISE_COUNCIL_VOTE_01     | Teman baikku Sang Duta Besar! Aku hanya ingin memberitahumu: hebat sekali di majelis hari ini! Triumvirate selalu menghargai mereka yang mendukung kepentingan kami, dan senang bahwa sekutu sehebat kau bisa terus membuat kami menghargaimu. 
+PRAISE_COUNCIL_VOTE_02     | Ah, Duta Besar dari [voter_empire]. Aku senang bisa menemukanmu sebelum kita bubar. Aku senang melihat keyakinanmu tentang idealisme Triumvirate begitu kuat! Saat kita pulang nanti, pastikan untuk menghubungiku sehingga kita mungkin bisa mengeratkan ikatan diplomatik kita!
+PRAISE_COUNCIL_VOTE_03     | Jadi ternyata kau memberi suara untuk kami, eh? Aku senang akhirnya kau sadar. Jika kau ingin untuk mengusahakan pembentukan ikatan diplomatik baru dengan Triumvirate, aku mungkin bersedia mengatakan hal-hal baik tentangmu. 
+
+PRAISE_ATTACKED_ENEMY_01   | Aku punya sedikit keraguan bahwa [defender_race] tidak menyangka Triumvirate akan mau bertempur dalam perang, tapi aku tahu mereka tidak akan menyangka teman kami [your_race] juga akan bergabung! Bersama kita akan menunjukkan mereka mengapa diplomasi dan kepercayaan adalah alat paling penting yang harus dikuasai seseorang! 
+PRAISE_ATTACKED_ENEMY_02   | Hari ini adalah hari baik untuk bertempur, Duta Besar. Kami lebih suka untuk berteman dalam situasi yang jauh lebih damai, tetapi jika perang melawan [defender_race] bisa menandai awal mula persahabatan panjang di antara orang-orangmu dan orang-orangku, maka tidak ragu lagi bahwa perang ini memang layak terjadi! 
+PRAISE_ATTACKED_ENEMY_03   | Triumvirate lebih dari sekedar mampu untuk menghadapi musuh manapun yang merendahkan usaha kami dalam hubungan damai. Tapi jika kau memaksa untuk bergabung dalam pertempuran ini sebagai tindakan dalam keyakinan yang baik, tentu saja kami tidak akan melakukan apapun untuk menghalangimu!
+
+PRAISE_TRADE_01            | Sekarang ini baru benar! Teman baik dan persetujuan dagang penuh kemakmuran lebih berharga daripada musuh dan perang yang melelahkan! Aku senang orang-orangmu memilih untuk menjadi teman kami, dan aku yakin Triumvirs juga merasakan hal yang sama! 
+PRAISE_TRADE_02            | Ya, kepercayaan adalah pondasi dari diplomasi, tapi perdagangan yang saling menguntungkan pasti tidak akan menyakitkan, eh? Kuharap kita bisa meneruskan kesepakatan kita selamanya, dan menjadi cara baru bagi kita untuk menolong meningkatkan satu sama lain. Seperti kami para manusia suka mengatakan, "berat sama dijunjung, ringan sama dijinjing!" 
+
+PRAISE_REBELLING_WITH_01   | Jangan takut, Duta Besar! Kami juga mengenali majelis untuk hal yang sama: kediktatoran terkorupsi bertopeng kebersamaan dalam damai. Kita akan bersatu, dan kita tidak akan berhenti sampai kita menyingkirkan pemimpin-pemimpin keji ini sekali pukul dan untuk semuanya! 
+
+ACCEPT_TRADE_01            | Persetujuan dagang ini akan menguntungkan kita semua, Duta Besar. [my_empire] dan [your_empire], berteman untuk menetapkan [amt] BC per tahun! Terdengar bagus, ya kan?
+RESPOND_IGNORE_THREAT_01   | Oh tentu saja ancaman darimu ini adalah semacam candaan? Ya, ya, memang candaan! Haha, lucu sekali, Duta Besar!
+RESPOND_STOP_SPYING_01     | Yah ini ternyata memang tindakan yang kacau. Triumvirate membantah tahu tentang apapun mengenai agen rendahan ini yang bertindak berdasarkan kemauan mereka sendiri untuk memata-matai orang-orangmu. Tolong kembalikan mereka kepada kami, dan kupastikan padamu bahwa ini tidak akan terjadi lagi.
+RESPOND_STOP_ATTACKING_01  | Ini adalah tradisi lama dari [my_race] yang kami sebut sebagai "saling pukul golok." Anggap saja goloknya sudah cukup saling pukul, Duta Besar: armada kami akan kembali kepada kami sekarang.

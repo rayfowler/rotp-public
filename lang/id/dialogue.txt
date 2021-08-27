@@ -1,0 +1,151 @@
+//
+// Dialogue that is not race-specific
+//
+
+DIPLO_TECH_REQUEST_MENU_01   | Jenis teknologi apa yang menurutmu menarik?
+DIPLO_TECH_COUNTER_MENU_01   | Apa yang ingin kau perdagangkan dengan ini?
+DIPLO_TRADE_MENU_01          | Kau mengusulkan persetujuan dagang untuk: 
+DIPLO_TREATY_MENU_01         | Apa yang ingin kau lakukan? 
+DIPLO_THREATEN_MENU_01       | Kau mengancam tentang apa? 
+DIPLO_DECLARE_WAR_MENU_01    | Apakah kau yakin kau ingin memulai perang? 
+DIPLO_JOINT_WAR_MENU_01      | Kepada siapa kita harus menyatakan perang? 
+DIPLO_BREAK_ALLIANCE_MENU_01 | Aliansi dengan siapa yang ingin kau akhiri? 
+DIPLO_OFFER_AID_MENU_01      | Apa yang ingin kau berikan? 
+DIPLO_OFFER_TECH_MENU_01     | Apa yang ingin kau berikan? 
+
+DECLINE_OFFER_01           | [my_nameTitle] [my_name] menolak.
+DECLINE_OFFER_02           | [my_race] telah mempertimbangkan tawaranmu, dan menolaknya. 
+DECLINE_OFFER_03           | Kami menolak tawaranmu dengan hormat. 
+DECLINE_OFFER_04           | Kali ini kami sedang tidak tertarik. 
+DECLINE_OFFER_05           | [my_race] tidak merasa tawaranmu adil. 
+DECLINE_OFFER_06           | Bukanlah minat kami untuk menerima tawaranmu kali ini.
+DECLINE_OFFER_07           | Mungkin kau salah menduga kami sebagai makhluk bodoh yang mudah percaya begitu saja. Kami menolak tawaranmu.
+DECLINE_OFFER_08           | Tawaranmu sepertinya tidak adil bagi kami. 
+DECLINE_OFFER_09           | Kami khawatir kami harus menolaknya. 
+
+DECLINE_ENEMY_ALLY_01      | [my_race] tidak akan menjanjikan aliansi dengan [other_race] yang kami benci.
+DECLINE_ALREADY_ALLIED_01  | [my_race] dan sekutu kami tidak bisa mempertimbangkan permintaanmu selama kau bersekutu dengan kekaisaran lain.
+DECLINE_NO_WAR_ON_ALLY_01  | Kami tidak akan menyatakan perang kepada sekutu kami. 
+DECLINE_PEACE_TREATY_01    | Kami tidak akan merusak perjanjian damai kami dengan [other_race].
+
+DECLINE_ANNOYED_01         | [your_race] adalah makhluk-makhluk yang suka omong kosong dan sedikit bertindak nyata. Kami lelah dengan kata-kata bodohmu.
+DECLINE_ANNOYED_01         | [your_nameTitle] [your_name], kau menguji kesabaran kami. Mungkin kau perlu bicara lagi nanti saja.
+DECLINE_ANNOYED_01         | [my_nameTitle] [my_name] sudah cukup mendengarkanmu. Kita akan bicara lagi nanti. 
+DECLINE_ANNOYED_02         | Kami lelah akan negosiasi diplomatis. Kami bisa menetuskan diskusi di waktu lain.
+DECLINE_ANNOYED_02         | Pembicaraan ini tidak membawa kita ke mana-mana. Kami harus pamit.
+DECLINE_ANNOYED_02         | Kami pergi sekarang. 
+DECLINE_ANNOYED_03         | Seribu maaf, [your_nameTitle] [your_name], tapi tugas lain telah memanggil.
+DECLINE_ANNOYED_03         | Maafkan kami, tapi waktu kita sudah berakhir.
+DECLINE_ANNOYED_03         | Kami hanya punya sedikit waktu dan banyak yang harus dilakukan. Mungkin kita bisa bicara lagi nanti.
+
+
+DECLINE_OATHBREAKER_01     | Kami tidak ingin terlibat dalam perjanjian saat ini karena kau telah mengingkari banyak perjanjian di masa lalu.
+DECLINE_OATHBREAKER_01     | Kau tidak menghormati persetujuanmu di masa lalu. Kami hanya melihat sedikit alasan untuk mempercayaimu sekarang.
+DECLINE_OATHBREAKER_01     | Mengapa kami harus percaya kepadamu sekarang, ketika kau telah mengingkari begitu banyak perjanjian di masa lalu?
+DECLINE_OATHBREAKER_01     | Kami tidak melihat alasan untuk setuju dengan seseorang yang tidak menjaga janji sebelumnya.
+DECLINE_OATHBREAKER_01     | Kami tidak akan berurusan dengan [your_race] yang tidak punya kehormatan.
+
+DECLINE_ESPIONAGE_01       | Kau anjing pencuri, kau curi buah penelitian kami. Kami menolak permintaanmu.  
+DECLINE_ESPIONAGE_01       | Teknologi kami adalah untuk ras [my_race]. Kau tidak punya hak untuk mencurinya. Kita hanya akan bicara jika kau berhenti mencuri.
+DECLINE_ESPIONAGE_01       | Mengapa kami harus memberimu sesuatu? Mata-matamu sudah mencuri segalanya yang kau butuhkan!
+DECLINE_ESPIONAGE_01       | Bagaimana bisa kau berharap kami menerima ketika mata-matamu mencuri teknologi kami?
+DECLINE_ESPIONAGE_01       | Singkirkan mata-matamu, baru kita bicara. 
+
+DECLINE_SABOTAGE_01        | Kami belum lupa insiden sabotase terakhirmu. Sampai kau buktikan bahwa kau memang bisa dipercaya kami tidak mau berurusan denganmu.
+DECLINE_SABOTAGE_01        | Orang-orang kami telah menderita karena sabotasemu. Kami tidak akan berurusan denganmu sampai kau hentikan itu semua.
+DECLINE_SABOTAGE_01        | Apa! Kau ingin kami setuju denganmu di saat kau menyabotase [target] milik kami?
+DECLINE_SABOTAGE_01        | Kau hancurkan [target]. Mengapa kami harus berurusan denganmu?
+DECLINE_SABOTAGE_01        | Saat kau berhenti menyabotase [target] milik kami, kami akan mempertimbangkan masalah ini lebih jauh.
+
+DECLINE_BUILDUP_01         | Kami tidak akan mau berbicara tentang hal itu ketika kau sedang mengumpulkan kapal-kapalmu di dekat perbatasan kami.
+DECLINE_BUILDUP_01         | Pindahkan kapal-kapalmu dari sepanjang perbatasan kami dan kami akan mempertimbangkan untuk menerima tawaranmu. Sampai kau melakukan itu, kami tidak akan tertarik pada kata-katamu.
+DECLINE_BUILDUP_01         | Kapal-kapalmu di perbatasan kami bukanlah ancaman bagi kami. Tapi kami menolak membuat perjanjian selama mereka ada di sana. 
+DECLINE_BUILDUP_01         | Jika kau ingin membuat perjanjian dengan [my_empire], kirimkan kapalmu untuk menakut-nakuti pihak lain, bukan kami.
+
+DECLINE_ENCROACH_01        | Armadamu menerobos ruang angkasa [my_race]. Pindahkan mereka semua, baru setelah itu kita bicara.
+
+DECLINE_SKIRMISH_01        | Kau menyerang kapal kami tanpa provokasi dan berharap kami menerimanya? Kami menolak perundingan.
+DECLINE_SKIRMISH_01        | Kami tidak bisa menerima tawaran dari orang yang menyerang armada kami.
+DECLINE_SKIRMISH_01        | Begitu armadamu berhenti menyerang armada kami, kita bisa bicara.
+DECLINE_SKIRMISH_01        | Jika kau ingin membuat perjanjian dengan [my_empire], jangan ganggu armada kami lagi.
+DECLINE_SKIRMISH_01        | [my_nameTitle] [my_name] tidak suka akan penghancuranmu terhadap armada kami. Kami tidak bisa terima.
+
+DECLINE_ATTACK_01          | Serangan tidak adilmu di [system] membuatmu hanya punya sedikit peluang untuk melakukan penawaran.
+DECLINE_ATTACK_01          | Kami belum lupa serangan di koloni [system]. Tidak mungkin kami menerimanya.
+
+DECLINE_INVASION_01        | Orang-orang kami tidak ingin berurusan dengan penjagal dari [system]. Tebus dulu kesalahanmu.
+DECLINE_INVASION_01        | Darah dari [system] menodai perkataanmu. Kami tidak bisa menerima tawaranmu. 
+DECLINE_INVASION_01        | Kematian [system] meneriakkan pembalasan. Kami dengar teriakan mereka lebih keras dari penawaranmu.
+
+DECLINE_BIOWEAPONS_01      | [my_race] tidak akan membuat perjanjian dengan ras yang menggunakan senjata biologis.
+DECLINE_BIOWEAPONS_01      | Kami tidak bisa membuat perjanjian dengan siapapun yang cukup putus asa untuk menggunakan senjata biologis.
+DECLINE_BIOWEAPONS_01      | Kau menggunakan senjata yang menyebabkan horor tak terperi pada populasi yang tidak bersalah. Kami menolak berurusan dengan kegilaan ini.
+DECLINE_BIOWEAPONS_01      | Para dewa membenci mereka yang menghancurkan planet dengan senjata biologis. [my_race] tidak bisa membiarkannya.
+DECLINE_BIOWEAPONS_01      | Teriakan mereka yang terbunuh oleh senjata bologismu memenuhi telinga kami. Kami tidak bisa mendengarkan tawaranmu.
+
+DECLINE_ANNOYED_01         | Kami lelah dengan negosiasi diplomatis. Kita bisa melanjutkan diskusi nanti.
+DECLINE_ANNOYED_01         | Pembicaraan ini tidak membawa kita ke mana-mana. Kami harus pergi. 
+DECLINE_ANNOYED_01         | [my_nameTitle] [my_name] sudah cukup mendengarkanmu. Kita akan bicara lagi nanti. 
+DECLINE_ANNOYED_01         | [your_nameTitle] [your_name], kau menguji kesabaran kami. Mungkin kau perlu bicara lagi nanti saja.
+DECLINE_ANNOYED_01         | Seribu maaf, [your_nameTitle] [your_name], tapi ada tugas lain yang memanggil.
+DECLINE_ANNOYED_01         | Kami hanya punya sedikit waktu dan banyak yang harus kami lakukan. Mungkin kita bisa bicara lagi nanti. 
+DECLINE_ANNOYED_01         | [your_race] adalah makhluk-makhluk yang banyak omong kosong tapi sedikit bekerja. Kami lelah dengan bualanmu.
+DECLINE_ANNOYED_01         | Kami pergi sekarang.
+DECLINE_ANNOYED_01         | Maafkan kami, tapi waktu kita sudah habis.
+
+DECLINE_TECH_TRADE_01      | Kau tidak punya teknologi yang menarik bagi kami. 
+DECLINE_TECH_TRADE_01      | Kami tidak butuh mainan [your_race].
+DECLINE_TECH_TRADE_01      | Penemuan primitifmu tidak menarik bagi kami. 
+DECLINE_TECH_TRADE_01      | Peradaban [my_race] jauh melebihi teknologimu. 
+DECLINE_TECH_TRADE_01      | [your_nameTitle] [your_name], Kami sangat sedikit membutuhkan apa yang ditawarkan ilmuwanmu.
+DECLINE_TECH_TRADE_01      | [my_nameTitle] [my_name] sangat kurang tertarik dengan teknologimu.
+
+OFFER_TECH_EXCHANGE_01     | [your_empire] sangat membutuhkan teknologi [tech] milikmu. Mungkin kau mau menukarnya dengan beberapa dari teknologi kami.
+OFFER_TECH_EXCHANGE_01     | [your_empire] tahu kau telah mempelajari rahasia [tech]. Bisakah kami menawarkan kepadamu teknologi kami sebagai gantinya?
+OFFER_TECH_EXCHANGE_01     | [your_nameTitle] [your_name] dari [your_empire] berharap akan rahasia teknologi [tech]. Akankah kau menukarnya dengan salah satu dari kemajuan kami?
+OFFER_TECH_EXCHANGE_01     | ras [your_race] merasa kagum akan keajaiban sains dari [tech]. Apa yang bisa kami tawarkan kepadamu untuk tahu rahasianya?
+
+ACCEPT_TECH_EXCHANGE_01    | Baiklah. [my_nameTitle] [my_name] setuju menukar rahasia keajaiban [techGiven] [my_race] untuk teknologi [techReceived].
+ACCEPT_FINANCIAL_AID_01    | [my_nameTitle] [my_name] menerima hadiahmu sebanyak [amt] BC.
+ACCEPT_TECHNOLOGY_AID_01   | [my_nameTitle] [my_name] menerima hadiahmu sebanyak [tech].
+
+BREAK_TRADE_01             | Warga [my_race] tidak punya keinginan lebih lanjut untuk berdagang barang-barang dari [your_empire].
+ANNOUNCE_TRADE_01          | Efektif mulai [year], [my_empire] dan [your_empire] setuju untuk berdagang [amt] BC per tahun.
+
+ANNOUNCE_PEACE_01          | Pada tahun [year] kekaisaran [my_race] dan [your_race] sepakat menghentikan semua tindakan kekerasan.
+ANNOUNCE_PEACE_01          | [my_nameTitle] [my_name] dengan ini memerintahkan semua tindakan kekerasan untuk diakhiri di antara kekaisaran kita. 
+ACCEPT_PEACE_01            | Kami sepakat bahwa waktunya telah tiba untuk kita akhiri pertengkaran remeh kita.
+ACCEPT_PEACE_01            | Kami menerima tawaran perdamaianmu. Hentikan serangan terhadap tentara [my_race], dan kami juga akan berhenti menyerangmu.
+ACCEPT_PEACE_01            | Kami jadi lelah dengan penghancuran tidak masuk akal ini. [my_empire] menerima tawaran perdamaianmu. 
+
+BREAK_PACT_01              | Peringatan untuk [your_empire] dari [my_race]: Pakta Non-Agresi kita batal!
+ANNOUNCE_PACT_01           | Pada tahun [year] [my_empire] menyatakan untuk menaati Pakta Non-Agresi dan tidak menyerang armada [your_race] kecuali mereka mengitari salah satu koloni kami.
+ACCEPT_PACT_01             | [my_empire] setuju akan Pakta Non-Agresi. Tidak ada satu pihak pun yang akan menyerang armada pihak lainnya, kecuali mereka memasuki orbit koloni lawan.
+ACCEPT_PACT_01             | Jika kau setuju tidak mengirimkan kapal apapun ke koloni kami, orang-orang [my_race] bersumpah tidak akan menyerang satu pun kapalmu.
+ACCEPT_PACT_01             | [my_nameTitle] [my_name] setuju terhadap Pakta Non yang kauusulkan. Apapun yang tertulis di situ, begitulah pakta itu akan dijalankan!
+ACCEPT_PACT_01             | Kalau begitu kami setuju. Selama kau tidak menyerang koloni kami, [my_empire] akan tunduk kepada Pakta Non-Agresi.
+
+BREAK_ALLIANCE_01          | [my_empire] tidak bisa lagi menjalani aliansi dengan [your_empire].
+ANNOUNCE_ALLIANCE_01       | Pada tahun [year] [my_empire] dan [your_empire] setuju membentuk aliansi di mana tidak ada satu pihak pun akan menyerang armada atau koloni pihak lainnya.
+ANNOUNCE_ALLIANCE_01       | Begitulah aliansi kita dibentuk. Kapalmu boleh mengunjungi koloni kami sesuka hatimu dan mendapatkan bahan bakar dari basis kami.
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] menyambut aliansi dengan kawan baik kami, [your_nameTitle] [your_name].
+ACCEPT_ALLIANCE_01         | [my_empire] dan [your_empire] hari ini membentuk aliansi di antara orang-orang kita. Matilah musuh kita!
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] melihat dengan kebijakan dalam aliansi dengan [your_empire]. Jadilah!
+
+OFFER_JOINT_WAR_01         | Waktunya telah tiba bagi [your_empire] dan [my_empire] untuk bergabung bersama dalam perang melawan [other_race].
+ACCEPT_JOINT_WAR_01        | [other_empire] harus jatuh di hadapan kekuatan gabungan [my_empire] dan [your_empire].
+ACCEPT_JOINT_WAR_01        | Dengan bersekutunya [my_race] dan [your_race],  [other_race] tidak akan bertahan lama.
+ACCEPT_JOINT_WAR_01        | Pada tahun [year], [my_empire] dan [your_empire] membentuk kekuatan gabungan untuk menyingkirkan bahaya [other_race] di galaksi ini.
+COUNTER_JOINT_WAR_01       | Kami akan bergabung denganmu dalam perang melawan [other_empire] sebagai gantinya akan kompensasi berikut ini:
+RESPOND_CLOSE_EMBASSY_01   | Ya sudah. Tidak akan ada diskusi lebih lanjut lagi di antara kekaisaran kita.
+
+RESPOND_BREAK_TRADE_01     | Kami akan mengingat ini semua.
+RESPOND_BREAK_TRADE_01     | Jadi, [your_nameTitle] [your_name], kau tidak bisa menepati ucapanmu. Kami tidak akan melupakan ini.
+
+RESPOND_BREAK_PACT_01      | Kami akan mengukir kata-kata perjanjian yang kau ingkari di batu nisanmu, [your_nameTitle] [your_name].
+RESPOND_BREAK_PACT_01      | [your_empire] akan remuk di bawah gerusan ingkarnya janji kalian sendiri.
+
+RESPOND_BREAK_ALLIANCE_01  | Kau telah menodai kesepakatan. Dengan ini aliansi telah dibatalkan.
+RESPOND_BREAK_ALLIANCE_01  | Baiklah. Niatmu yang tidak dapat dipercaya itu telah kau tunjukkan. Dengan ini aliansi telah dibatalkan.
+RESPOND_BREAK_ALLIANCE_01  | Kami tidak butuh perjanjian yang tidak diindahkan. Dengan ini aliansi telah dibatalkan. 
+RESPOND_BREAK_ALLIANCE_01  | Biarlah. Dengan ini aliansi telah dibatalkan. 
