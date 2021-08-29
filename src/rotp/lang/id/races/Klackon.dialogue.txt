@@ -1,0 +1,227 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Klackon specific dialogue
+
+CONTACT_AGGRESSIVE         | Akulah [my_name], dan kau adalah... [your_name]? Nama yang aneh untuk makhluk yang seperti aku, tapi kau bilang kau sama sekali berbeda denganku? Ini rasanya... pertemuan yang paling menyakitkan.
+CONTACT_RUTHLESS           | Aku dikenal sebagai [my_name]. Kau adalah [your_name]? Siapa itu [your_name]? Aku punya sedikit kebutuhan untuk makhluk yang berkembang baik dalam situasi sulit seperti itu.
+CONTACT_XENOPHOBIC         | Aku tahu saat aku memulai perjalananku bahwa pasti ada makhluk lain yang seperti aku, tapi kau sama sekali tidak seperti aku... Kau berbeda... asing... dan berbahaya.
+//
+GREETING_01                | Temanku! Aku bahagia kau datang! Aku harap aku bisa menyediakan apapun yang sedang kaucari.
+GREETING_04                | Si [your_name] yang aneh memanggilku. Apa yang kauinginkan, [your_name] yang aneh?
+GREETING_07                | Kau berkelakuan aneh dan aku tidak suka. Katakan saja apa maksud kedatanganmu dan pergilah.
+//
+
+DECLAREWAR_HATE_01         | Aku sudah menunggu terlalu lama, aku harus menemukan makhluk lain yang seperti aku! Kau terus saja menghadangku, dan aku tidak akan menunggu sedetikpun untuk lepas darimu.
+DECLAREWAR_HATE_02         | Saat aku memikirkanmu ada rasa jijik yang bahkan aku tidak tahu rasa itu bisa kurasakan. Akan kuberikan apa saja yang harus kuberikan untuk melihatmu hancur sekali ini dan selamanya!
+DECLAREWAR_HATE_03         | Tidak! Tidak mungkin aku menetapkan perjalananku hanya untuk menemukan sesuatu sepertimu di galaksi ini! Aku tidak akan mau melanjutkan hidup denganmu sebagai tetangga! Entah kau hancurkan aku atau aku yang akan hancurkan kau!
+DECLAREWAR_ERRATIC_01      | Kau tidak bisa membodohiku dengan tipuanmu! Aku tahu kau akan menyerangku di saat yang paling tepat untukmu! Tapi aku akan membunuhmu sebelum itu terjadi!
+DECLAREWAR_ERRATIC_02      | Kelakuanmu aneh dan tidak bisa diduga. Ketidakpastian yang kau buat menjadikanku merasa sangat kesal, dan aku tidak melihat mengapa aku harus menderita seperti ini lebih lama lagi. Bersiaplah untuk melupakan segalanya!
+DECLAREWAR_ERRATIC_03      | Mengapa kau lakukan itu? Apa yang mendorongmu? Dan apakah itu akan mendorongmu untuk membawa perang ke hadapanku suatu hari nanti? Aku tidak bisa hanya menunggu begitu saja untuk melihat apa yang akan kaulakukan: demi masa depanku aku harus berperang denganmu secepatnya!
+DECLAREWAR_MILITARY_01     | Aku masih belum menemukan makhluk yang sepertiku. Aku tahu mereka pasti ada, dan aku akan mencari mereka dalam setiap dan satu per satu dari planet-planetmu begitu aku mengambil alih mereka darimu!
+DECLAREWAR_MILITARY_02     | Apa yang kau sembunyikan dariku [your_name]? Aku tidak akan tahu kepastiannya sampai kuperiksa setiap planetmu, dan aku akan ambil alih mereka darimu sekarang jadi itulah yang memang akan kulakukan!
+DECLAREWAR_MILITARY_03     | Takkan kubiarkan kau menutup-nutupi tujuan pencarianku lebih lama lagi! Aku tahu bahwa yang aku cari ada di salah satu planetmu. Aku tidak akan beristirahat sampai kauberikan mereka kepadaku!
+DECLAREWAR_ALLIANCE_01     | Temanku yang bernama [other_name] telah membantuku dalam misi perjalananku lebih dari yang kau tahu. Aku senang bisa membalas kebaikan mereka dengan menyingkirkanmu!
+DECLAREWAR_ALLIANCE_02     | Mereka yang membantuku dalam pencarianku mendapat penghargaanku yang takkan pernah berakhir, dan aku akan berikan dengan senang hati apa yang aku bisa untuk menghormati temanku [other_name]. Bersiaplah untuk mati, [your_name]!
+DECLAREWAR_ALLIANCE_03     | Kau tekan semua orang di galaksi karena kau pikir tidak ada yang berani melawan keinginanmu. Jika [other_name] akan membawa perkelahian ke hadapanmu, aku juga mau!
+DECLAREWAR_SPYING_01       | Tidak ada satupun yang terjadi di salah satu planetku yang lolos dari pandanganku. Karena kau ngotot ingin berkelakuan jahat seperti itu, kau tidak memberikanku pilihan lain selain menghancurkanmu.
+DECLAREWAR_SPYING_02       | Si Tolol [your_name], aku sudah tidak tahan lagi dengan permainanmu! Kau tidak akan punya waktu untuk rencana licik seperti itu jika kau harus mempertahankan diri dari tentaraku. Bersiaplah untuk perang!
+DECLAREWAR_SPYING_03       | Apa yang kauharapkan dari pergerakan melawanku seperti itu? Sekarang aku tidak punya pilihan lain kecuali berkelahi denganmu, betapapun berbedanya kemampuan tentara kita!
+DECLAREWAR_ATTACK_01       | Apa ini, [your_name]? Apakah kau bermaksudh untuk menghadangku dalam pencarianku dengan menyerang salah satu planetku? Aku kira dengan menghancurkanmu akan memberiku pengalihan yang menyenangkan, jika itu hanya pengalihan singkat saja.
+DECLAREWAR_ATTACK_02       | Inikah yang disebut sebagai aksi peperangan? Kau berharap tentaramu dan armadamu bertempur melawanku? Ayo kita berperang: Aku ingin sekali mencari tahu lebih lanjut!
+DECLAREWAR_ATTACK_03       | Beraninya kau meluncurkan serangan melawanku?1 Kau ingin mencegahku menyelesaikan pencarianku, tapi kau justru akan melihat kemarahan totalku!
+DECLAREWAR_OPPORTUNITY_01  | Apabila sesuatu terbukti menjadi penghalang, cara yang terbaik untuk menyingkirkannya adalah dengan menghilangkannya secara keseluruhan. Aku tidak tahu cara-cara berdiplomasi, tetapi aku tahu bahwa menghilangkanmu dari jalanku akan menjadi hal menggelikan yang sangat sepele.
+DECLAREWAR_ASSASSIN_01     | Serangan terhadap salah satu pesawatku sama saja dengan serangan semua pesawatku. Karena kau telah memilih untuk membunuh salah satu dariku, aku akan membunuh kalian semua sebagai balasannya!
+
+OFFER_PEACE_01             | Aku tidak suka hal yang kau sebut sebagai perang ini. Perang itu keji dan tanpa ampun, dan kita berdua memiliki hal-hal penting untuk dilakukan ketimbang melanjutkan pembunuhan tak berujung ini. Ayo kita akhiri ini semua dengan perdamaian, [your_name].
+OFFER_TRADE_01             | Kite berdua berkelana di ruang galaksi dengan tujuan kita masing-masing, [your_name]. Mengapa kita tidak menolong satu sama lain untuk meraih ambisi kita? Persetujuan dagang sejumlah [amt] BC setiap tahun cukup baik, ya kan?
+OFFER_PACT_01              | Aku telah bertemu banyak makhluk aneh di perjalananku di ruang angkasa, dan banyak di antara mereka suka bertengkar dan sifatnya kejam. Sepertinya kau tidak seperti mereka, jadi ayo kita cegah kesalahpahaman dengan pakta non-agresi. 
+OFFER_ALLIANCE_01          | Hubungan kita selama ini telah sangat menguntungkan untuk kedua pihak, [your_name]. Ayo kita menjadi sekutu dalam kata dan dalam ikatan, sehingga semua di galaksi ini akan tahu bahwa kita berdiri sebagai satu kesatuan! 
+ 
+WARN_TRESPASSING_01        | Keberadaanmu di [system] membuatku sangat tidak nyaman. Pindahkan armada [your_name] dari area ini, atau aku mungkin terpaksa akan menyerang kalian.  
+WARN_EXPANSION_01          | Aku tidak akan membiarkanmu menghalangiku menyelesaikan pencarianku dengan cara mengklaim setiap planet yang kau sukai sebagi milikmu. Hentikan itu sekarang juga, atau bersiaplah untuk perang!
+WARN_BUILDUP_01            | Kau telah mengembangkan armadamu menjadi ukuran yang mengesankan, [your_name]. Hati-hati dengan caramu menggunakannya ketika armadaku juga berada di sekitarmu. 
+WARN_SKIRMISH_01           | Insiden di [system] membuatku resah. Apakah itu hanyalah sebuah kesalahpahaman darimu? Yakinkan bahwa itu takkan terjadi lagi: Aku tidak ingin berkelahi dengan [your_name] jika aku tidak harus melakukannya. 
+WARN_ATTACKED_01           | Apa yang akan kaudapat dengan menyerangku? Hentikan seranganmu sekarang juga, atau kau akan memaksaku untuk menebusnya kembali kepadamu seratus kali lipat! 
+WARN_INVADED_01            | Mengapa kau menyerang ruang angkasaku di sistem [system]?! Apakah kau sengaja ingin memulai konflik atau kau hanya sekedar kehilangan kontrol pesawatmu? 
+WARN_ESPIONAGE_01          | Aku tidak memahamimu, [spy_name]. Kau bertindak seakan-akan kau tidak menginginkan konflik tetapi kemudian mencoba mencuri rahasiaku? Jika kau memaksa melanjutkan dengan cara ini, aku berjanji akan membuatmu menyesal! [framed]
+WARN_SABOTAGE_01           | Kau mengejekku dengan kelakuan sabotase ini! Perjalananku adalah prioritasku dari segalanya, tapi jika ini terjadi lagi aku akan hentikan sejenak pencarianku untuk menghadapimu secara langsung! [forced]
+WARN_BIOWEAPON_01          | Senjata milikmu ini benar-benar menakutkan. Menggunakannya berarti menunjukkan siapa dirimu sebenarnya, tapi menggunakannya untuk menyerang pesawat makhluk hidup lain benar-benar membuatku ngeri! 
+WARN_GENOCIDE_01           | Kasar sekali! Aku tidak pernah menduga kau akan melakukan sejauh itu, menghancurkan total mereka yang dikenal sebagai [victim_name]. Aku tidak akan melupakan sikap bar-bar yang kau suguhkan hari ini. 
+WARN_FINAL_WAR_01          | Sekarang aku lihat bahwa jika aku ingin mewujudkan mimpiku, galaksi ini harus dalam kondisi damai. Tapi selama kau masih ada kedamaian itu tidak dapat diwujudkan. Alasannya jelas: [rebel_name] harus dihancurkan! 
+WARN_COUNCIL_VOTE_01       | Kuakui aku tidak akrab dengan nuansa yang yang kau sebut sebagai "manuver politik." Tapi aku tahu bahwa dengan memberikan suara untuk [other_name] kau telah bergerak melawanku, dan aku tidak pernah melupakan siapapun yang menghalangiku. 
+WARN_OATHBREAKER_01        | Inikah caramu beroperasi, [your_name]? Membuat persetujuan kemudian mematahkannya ketika menurutmu itu lebih baik bagimu? Aku tahu bahwa kau sama sekali tidak seperti aku, dan tindakanmu membuktikannya lebih dari sekedar bayangan keraguan! 
+WARN_ATTACKED_ALLY_01      | Mengapa kau menyerang temanku si [defender_name], [your name]? Carilah cara lain untuk menyelesaikan ketidakpuasanmu: Aku tidak suka dipaksa untuk ikut campur! 
+WARN_REBELLING_AGAINST_01  | Aku tidak suka [your_name], dan bahkan aku lebih tidak suka kau dipilih sebagai pemimpin majelis! Aku harus memikirkan apa yang terjadi hari ini, dan kau harus memikirkan kemungkinan bagaimana aku akan dipaksa untuk meresponnya! 
+
+PRAISE_COUNCIL_VOTE_01     | [voter_name]! Jangan kira aku akan menganggap remeh suaramu di Majelis! Meski kau dan aku sangat berbeda, aku sangat bahagia aku bisa bertemu dengan teman yang luar biasa sepertimu dalam perjalananku. 
+PRAISE_COUNCIL_VOTE_02     | Aku tidak pernah punya kebutuhan dalam hal "politik" seumur hidupku yang panjang ini, tapi yang kaulakukan adalah sesuatu yang bermanfaat bagiku, ya kan? Ayo kita bicara lagi segera, agar kita bisa mencari tahu bagaimana kita bisa saling memberi manfaat. 
+PRAISE_COUNCIL_VOTE_03     | Suaramu untukku di majelis hanyalah suatu usaha untuk membuatku berpikir ulang mengenai pendapatku tentangmu. Meski begitu, aku percaya aku mungkin dipaksa melakukannya jika sikapmu terus-menerus memberi manfaat bagiku.  
+PRAISE_ATTACKED_ENEMY_01   | Ya! Aku telah diserang dan temanku datang menolong! Ayo kita tunjukkan kepada si [defender_name] yang licik itu bahwa kita berjuang bersama dengan ikatan yang tidak dapat dipisahkan! 
+PRAISE_ATTACKED_ENEMY_02   | Terima kasih [attacker_name]! Senang rasanya melihat ada satu lagi yang mengenali suatu bahaya yang terkenal ditimbulkan oleh "[defender_name]". Kemarilah! Kita akan menyerangnya bersama hingga tak ada lagi yang tersisa! 
+PRAISE_ATTACKED_ENEMY_03   | Aku tidak tahu apa yang kau harapkan untuk bisa kauperoleh dengan menyerang [defender_name], [attacker_name]. Kau tidak konsisten dan tidak bisa dipercaya, tapi aku akan selalu mengingat ini sebagaimana adanya.
+PRAISE_TRADE_01            | Kami hanya bisa berhasil sampai sejauh ini dengan bekerja sama untuk keuntungan bersama. Semoga kemakmuran yang diperoleh dari perdagangan kita bertahan hingga kita semua menemukan apa yang kita cari!   
+PRAISE_TRADE_02            | Aku senang karena persetujuan dagang ini bisa membantu kita semua. Kau juga senang karena ini, ya kan [your_name]?  
+PRAISE_REBELLING_WITH_01   | [your_name] memanggil untuk meminta tolong! Aku akan bergabung denganmu dalam mengumpulkan tentara menghadapi majelis konyol ini! Kau adalah temanku, dan itu berarti kau takkan pernah bertarung sendirian!
+
+DIPLO_TECH_REQUEST_MENU_01   | Teknologi apa yang menurutmu menarik? 
+DIPLO_TECH_COUNTER_MENU_01   | Apa yang ingin kauperdagangkan untuk itu?
+DIPLO_TRADE_MENU_01          | Kau usulkan persetujuan dagang untuk:
+DIPLO_TREATY_MENU_01         | Kau mengusulkan perjanjian
+DIPLO_DECLARE_WAR_MENU_01    | Apakah kau yakin ingin memulai perang?
+DIPLO_SUGGEST_WAR_MENU_01    | Kepada siapa aku harus menyatakan perang?
+DIPLO_BREAK_ALLIANCE_MENU_01 | Aliansi mana yang harus kububarkan?
+DIPLO_THREATEN_MENU_01       | Sikapmu:
+
+DECLINE_OFFER_01           | Aku menolak.
+DECLINE_OFFER_02           | Aku sudah mempertimbangkan penawaranmu, dan menolaknya.
+DECLINE_OFFER_03           | Dengan rasa hormat aku menolak tawaranmu.
+DECLINE_OFFER_04           | Aku tidak tertarik untuk saat ini.
+DECLINE_OFFER_05           | Aku tidak merasa tawaranmu adalah yang adil.
+DECLINE_OFFER_06           | Tidak akan menjadi minat terbesarku untuk menerima tawaranmu saat ini.
+DECLINE_OFFER_07           | Mungkin kau salah menyangka aku orang tolol yang mudah percaya begitu saja. Aku menolak tawaranmu.
+DECLINE_OFFER_08           | Tawaranmu rasanya tidak adil bagiku.
+DECLINE_OFFER_09           | Aku khawatir aku harus menolak.
+
+DECLINE_ENEMY_ALLY_01      | Aku tidak akan mau berurusan dengan sekutu dari [other_name] yang kubenci.
+
+DECLINE_ANNOYED_01         | [your_name] adalah makhluk yang terlalu banyak angin dan sedikit kerja. Aku lelah dengan omong kosongmu.
+DECLINE_ANNOYED_01         | [your_name], kau uji kesabaranku. Mungkin kau seharusnya melanjutkan kata-katamu nanti.
+DECLINE_ANNOYED_01         | Aku sudah cukup mendengarkan. Kita akan bicara lagi nanti.
+DECLINE_ANNOYED_02         | Aku lelah dengan negosiasi diplomatik. Kita bisa lanjutkan diskusi beberapa waktu lagi.
+DECLINE_ANNOYED_02         | Pembicaraan ini tidak membawa kita ke manapun. Aku harus pergi.
+DECLINE_ANNOYED_02         | Aku pergi sekarang.
+DECLINE_ANNOYED_03         | Beribu maaf, [your_name], tapi tugas lain sudah memanggil.
+DECLINE_ANNOYED_03         | Maaf, tapi waktu kita sudah berakhir.
+DECLINE_ANNOYED_03         | Aku hanya punya sedikit waktu dan banyak hal harus dilakukan. Mungkin kita bisa bicara lagi nanti.
+
+
+DECLINE_OATHBREAKER_01     | Aku tidak bersedia memasuki perjanjian saat ini karena kau sudah mengingkari banyak perjanjian di masa lalu.
+DECLINE_OATHBREAKER_01     | Kau tidak menghormati persetujuan sebelumnya. Aku cuma punya sedikit alasan untuk mempercayaimu sekarang.
+DECLINE_OATHBREAKER_01     | Mengapa aku harus mempercayaimu sekarang, ketika kau telah mengingkari begitu banyak perjanjian sebelumnya?
+DECLINE_OATHBREAKER_01     | Aku tidak melihat adanya alasan untuk setuju dengan seseorang yang tidak menjaga janji mereka sebelumnya.
+DECLINE_OATHBREAKER_01     | Aku tidak akan berurusan dengan [your_name] yang tak punya martabat.
+
+DECLINE_ESPIONAGE_01       | Kau anjing pencuri, kau curi hasil dari penelitianku. Aku tolak permintaanmu.
+DECLINE_ESPIONAGE_01       | Teknologiku hanyalah untukku sendiri. Kau tak punya hak untuk mencurinya. Aku hanya mau bicara jika kau berhenti mencuri.
+DECLINE_ESPIONAGE_01       | Mengapa aku harus memberimu sesuatu? Mata-matamu sudah mencuri apapun yang kaubutuhkan!
+DECLINE_ESPIONAGE_01       | Bagaimana bisa kau harapkan aku untuk menerima begitu saja ketika mata-matamu mencuri teknologiku?
+DECLINE_ESPIONAGE_01       | Singkirkan dulu mata-matamu, baru kita bisa bicara.
+
+DECLINE_SABOTAGE_01        | Aku belum melupakan insiden sabotase terakhirmu. Sampai kau bisa buktikan bahwa kau bisa lebih dipercaya, aku tidak mau berurusan denganmu.
+DECLINE_SABOTAGE_01        | Aku rugi gara-gara sabotasemu. Aku tidak akan berurusan denganmu sampai semua ini berlalu.
+DECLINE_SABOTAGE_01        | Apa! Kau memintaku untuk setuju denganmu ketika kau menyabotase [target]ku?
+DECLINE_SABOTAGE_01        | Kau hancurkan [target]ku. Mengapa aku harus berurusan denganmu?
+DECLINE_SABOTAGE_01        | Apabila kau berhenti menyabotase [target]ku, aku bisa mempertimbangkan urusan ini lebih baik lagi.
+
+DECLINE_BUILDUP_01         | Aku tidak akan membicarakannya ketika kau mengumpulkan kapal-kapalmu di dekat batasku.
+DECLINE_BUILDUP_01         | Pindahkan kapal-kapalmu dari batas-batasku dan aku akan pertimbangkan untuk menerimamu. Sampai kaulakukan itu, aku tidak tertarik denganmu.
+DECLINE_BUILDUP_01         | Kapal-kapalmu di batasku bukanlah ancaman bagiku. Tapi aku menolak membuat perjanjian denganmu kalau mereka masih di situ.
+DECLINE_BUILDUP_01         | Jika kau ingin berunding denganku, kirim kapalmu untuk mengancam pihak lain, bukan aku.
+
+DECLINE_ENCROACH_01        | Armadamu mengganggu wilayahku. Pindahkan mereka sejauh mungkin, baru kita bicara.
+
+DECLINE_SKIRMISH_01        | Kau serang kapalku tanpa provokasi dan berharap aku menerimanya? Aku tidak mau.
+DECLINE_SKIRMISH_01        | Aku tidak bisa menerima tawaran dari pihak yang menyerang armadaku.
+DECLINE_SKIRMISH_01        | Begitu armadamu berhenti menyerangku, kita bisa bicara.
+DECLINE_SKIRMISH_01        | Jika kau ingin berunding denganku, jangan ganggu armadaku.
+DECLINE_SKIRMISH_01        | Aku tidak bisa menyanjung perusakan yang kau lakukan terhadap armadaku. Aku tidak terima.
+
+DECLINE_ATTACK_01          | Serangan tidak adilmu di [system] membuat peluangmu untuk tawar-menawar menjadi kecil.
+DECLINE_ATTACK_01          | Aku belum lupa serangan di koloni [system]. Tidak mungkin aku bisa menerimanya.
+
+DECLINE_INVASION_01        | Aku tidak ingin berurusan dengan tukang jagal dari [system]. Tebus dulu kesalahanmu.
+DECLINE_INVASION_01        | Darahku di [system] menodai kata-katamu. Aku tidak bisa menerima tawaranmu.
+DECLINE_INVASION_01        | Kerugianku di [system] berteriak meminta penebusan. Rasa sakit yang kurasakan lebih keras dari tawaranmu.
+
+DECLINE_BIOWEAPONS_01      | Aku tidak akan mau berurusan dengan pihak yang menggunakan senjata biologis.
+DECLINE_BIOWEAPONS_01      | Aku tidak bisa berurusan dengan siapapun yang cukup putus asa untuk menggunakan persenjataan biologis.
+DECLINE_BIOWEAPONS_01      | Kau gunakan senjata yang menyebabkan horor takterkatakan padaku. Aku menolak berurusan dengan kegilaan ini.
+DECLINE_BIOWEAPONS_01      | Tuhan manapun membenci mereka yang berniat menghancurkan planet dengan persenjataan biologis. Aku tidak bisa membiarkannya.
+DECLINE_BIOWEAPONS_01      | Rasa sakit yang ditimpakan kepadaku oleh senjata biologismu memenuhi telingaku. Aku tidak bisa mendengar tawaranmu.
+
+DECLINE_TECH_TRADE_01      | Kau tidak punya teknologi yang menarik bagiku.
+DECLINE_TECH_TRADE_01      | Aku tidak membutuhkan mainanmu.
+DECLINE_TECH_TRADE_01      | Penemuan primitifmu tidak menarik bagiku.
+DECLINE_TECH_TRADE_01      | Aku sudah jauh di atas teknologimu.
+DECLINE_TECH_TRADE_01      | [your_name], aku cuma membutuhkan sedikit dari yang kau tawarkan padaku.
+DECLINE_TECH_TRADE_01      | Aku lihat adanya ketertarikan kecil akan teknologimu.
+
+DECLINE_NO_WAR_ON_ALLY_01  | Aku tidak akan menyatakan perang kepada sekutuku.
+DECLINE_PEACE_TREATY_01    | Aku tidak akan mematahkan perjanjian damaiku dengan [other_name].
+
+OFFER_TECH_EXCHANGE_01     | Aku benar-benar membutuhkan teknologi [tech] darimu. Mungkin kau mau menukarnya dengan beberapa teknologiku.
+OFFER_TECH_EXCHANGE_01     | Aku tahu kau telah mempelajari rahasia [tech]. Bisakah kutawarkan padamu beberapa teknologiku sebagai gantinya?
+OFFER_TECH_EXCHANGE_01     | Aku mengharapkan mengetahu rahasia teknologi [tech]. Apakah kau mau menukarkannya dengan salah satu dari kemajuanku?
+OFFER_TECH_EXCHANGE_01     | Aku kagum dengan keajaiban sains [tech]. Apa yang bisa kutawarkan padamu untuk mengetahui rahasianya?
+
+ACCEPT_TECH_EXCHANGE_01    | Baiklah. Aku setuju menukar rahasia ajaibku mengenai [techGiven] untuk teknologi [techReceived].
+ACCEPT_FINANCIAL_AID_01    | Kuterima hadiahmu sebanyak [amt] BC.
+ACCEPT_TECHNOLOGY_AID_01   | Kuterima hadiahmu berupa [tech].
+
+BREAK_TRADE_01             | Aku tidak punya keinginan lagi untuk berdagang barang dari [your_name].
+ANNOUNCE_TRADE_01          | Efektif mulai [year], aku dan [your_name] setuju untuk memperdagangkan sejumlah [amt] BC per tahun.
+ACCEPT_TRADE_01            | Pakta perdagangan sejumlah [amt] BC bisa diterima.
+ACCEPT_TRADE_01            | Aku sangat bersedia menunggu barang bagus yang ditawarkan [your_name]. Kuterima persetujuan untuk sejumlah [amt] BC per tahun.
+ACCEPT_TRADE_01            | Aku setuju berdagang sejumlah [amt] BC per tahun.
+ACCEPT_TRADE_01            | Yah, [your_name], aku merasa tawaranmu sejumlah [amt] BC per tahun cukup adil dan setara.
+
+ANNOUNCE_PEACE_01          | Di tahun [year], aku dan [your_name] setuju menghentikan semua tindakan kekerasan.
+ANNOUNCE_PEACE_01          | Dengan ini aku memerintahkan semua kekerasan dihentikan di antara kau dan aku.
+ACCEPT_PEACE_01            | Aku setuju bahwa waktunya telah tiba untuk menghentikan pertengkaran sepele kita.
+ACCEPT_PEACE_01            | Kuterima tawaran perdamaianmu. Hentikan peluncuran senjata padakamu, dan aku akan berhenti menyerang angkatanmu.
+ACCEPT_PEACE_01            | Aku lelah dengan kerusakan tidak masuk akal ini. Kuterima tawaran perdamaianmu.
+
+BREAK_PACT_01              | Peringatan kepada [your_name] dariku: Pakta Non-agresi kita telah dibatalkan!
+ANNOUNCE_PACT_01           | Pada tahun [year], Aku bersumpah untuk menaati Pakta Non-agresi tidak menyerang armadamu kecuali mereka mengorbit di salah satu koloniku.
+ACCEPT_PACT_01             | Aku setuju dengan Pakta Non-agresi. Tidak ada di antara kita yang akan menyerang satu-sama lain, kecuali orbit dari salah satu koloni telah terjamah.
+ACCEPT_PACT_01             | Jika kau setuju tidak mengirimkan kapal ke koloniku di manapun, aku bersumpah tidak akan menyerang satupun kapalmu.
+ACCEPT_PACT_01             | Aku setuju akan usulan Pakta Non-agresi darimu. Begitulah ia akan ditulis, begitulah ia akan terlaksana!
+ACCEPT_PACT_01             | Setuju kalau begitu. Selama kau tidak menyerang koloniku, aku akan menaati Pakta Non-agresi.
+
+BREAK_ALLIANCE_01          | Aku tidak bisa lagi mempertahankan aliansi dengan [your_name].
+ANNOUNCE_ALLIANCE_01       | Pada tahun [year] aku dan [your_name] setuju untuk membentuk aliansi yang berarti tidak seorangpun di antara kami akan menyerang armada atau koloni satu sama lain.
+ANNOUNCE_ALLIANCE_01       | Begitulah aliansi kita terbentuk. Kapalmu boleh mengunjungi koloniku sesuka hatimu, dan mendapat bahan bakar dari basisku.
+ACCEPT_ALLIANCE_01         | Kusambut aliansi dengan teman baikku, [your_name].
+ACCEPT_ALLIANCE_01         | Aku dan [your_name] hari ini membentuk aliansi. Matilah musuh-musuh kita!
+ACCEPT_ALLIANCE_01         | Aku melihat kebijaksanaan dalam aliansi dengan [your_name]. Ayo kita wujudkan!
+
+ACCEPT_BREAK_ALLIANCE_01   | Aku setuju, [other_name] sudah tidak dapat lagi dipercaya dan aku telah membatalkan aliansiku dengan mereka.
+ACCEPT_BREAK_ALLIANCE_01   | Meski menyakitkan bagiku untuk meninggalkan [other_name], aku harus melakukannya.
+ACCEPT_BREAK_ALLIANCE_01   | [other_name] bukan lagi sekutuku.
+ACCEPT_BREAK_ALLIANCE_01   | Aliansi antara aku dan [other_name] sekarang terpecah bagaikan serpihan di bawah kaki kami. now lies in shreds under our feet.
+ACCEPT_BREAK_ALLIANCE_01   | Terserah kau, aku tidak lagi akan menyebut [other_name] sebagai sekutuku.
+
+ACCEPT_JOINT_WAR_01        | [other_name] harus jatuh di hadapan kekuatan gabungan dari [your_name] dan aku.
+ACCEPT_JOINT_WAR_01        | Dengan [your_name] dan aku bersatu, [other_name] tidak akan bertahan lama.
+ACCEPT_JOINT_WAR_01        | Pada tahun [year], aku dan [your_name] menyatukan kekuatan untuk menyingkirkan galaksi [other_name] yang keji.
+
+RESPOND_CLOSE_EMBASSY_01   | Biarkan saja begitu. Tidak akan ada lagi diskusi di antara diriku dan [your_name].
+
+RESPOND_BREAK_TRADE_01     | Aku akan mengingat ini.
+RESPOND_BREAK_TRADE_01     | Jadi, [your_name], kau tidak bisa memegang kata-katamu. Aku tidak akan melupakan ini.
+
+RESPOND_BREAK_PACT_01      | Aku akan mengukir kata-kata perjanjian yang kaurusak di batu nisanmu, [your_name].
+RESPOND_BREAK_PACT_01      | [your_name] akan remuk di bawah beban janji yang diingkarinya.
+
+RESPOND_BREAK_ALLIANCE_01  | Kau tidak menghormati persetujuan kita. Aliansi kita sudah rusak.
+RESPOND_BREAK_ALLIANCE_01  | Bagus sekali. Niatmu yang tidak dapat dipercaya telah kautunjukkan. Aliansi kita sudah rusak. The alliance is broken.
+RESPOND_BREAK_ALLIANCE_01  | Aku tidak membutuhkan perjanjian yang tidak dihormati. Aliansi kita sudah rusak.
+RESPOND_BREAK_ALLIANCE_01  | Baik kalau begitu. Aliansi kita sudah rusak.
+
+ACCEPT_TRADE_01            | Kau ingin berdagang denganku? Berapa? [amt] BC setiap tahun? Ya... ya kurasa aku bisa menerima pengaturan dari [your_name].
+RESPOND_IGNORE_THREAT_01   | Jangan mengancamku, [your_name] bodoh. Ada begitu banyak dariku yang kau tidak akan pernah bisa berharap untuk menang jika kita berada dalam perang. Pergi sana!
+RESPOND_STOP_SPYING_01     | Aku hanya mencoba untuk melihat bagaimana [your_name] ketika kau sendirian di lingkunganmu. Aku tidak akan melakukan ini lagi. Tolong kembalikan mata-mataku kepadaku sekarang?
+RESPOND_STOP_ATTACKING_01  | Haha! Lihat betapa kuatnya aku! [your_name] tak bisa membandingkan dirinya denganku! Jangan lupakan itu setelah aku memulangkan armadaku!
+

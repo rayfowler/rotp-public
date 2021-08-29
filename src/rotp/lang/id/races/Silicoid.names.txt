@@ -1,0 +1,21 @@
+// all possible names
+name: Silicoid, Igneoid, Sedimoid, Granitoid, Magmoid
+
+desc1: Pelaku perluasan wilayah yang tidak suka ras asing
+desc2: Kebal terhadap lingkungan yang tidak ramah
+desc3: [race] yang sulit dimengerti dan terus haus akan energi mencari mushh abadi mereka di seluruh galaksi ini.
+
+// possible home system names
+home: Cryslon, Geode, Karst, Igneous, Silican
+
+title:     Kaisar
+fulltitle: Kaisar Crystal
+
+// possible leader names
+leader: Carnax, Crystous, Geode, Granid, Igneous, Sedimin
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Sediment, Pebble, Stone, Rock, Crystal, Mineral, Sand
+ship2: Granite, Marble, Slate, Quartz, Pumice, Gabbro, Obsidian
+ship3: Magma, Lava, Feldspar, Rhyolite, Mica, Basalt, Dacite
+ship4: Diamond, Sapphire, Emerald, Ruby, Amethyst, Topaz, Garnet

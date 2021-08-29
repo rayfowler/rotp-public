@@ -680,7 +680,7 @@ public interface Base {
             fis = new FileInputStream(new File(Rotp.jarPath(), n));
         } catch (FileNotFoundException e) {
             try {
-                        fis = new FileInputStream(fullString);
+                fis = new FileInputStream(fullString);
             } catch (FileNotFoundException ex) {
                 zipStream = Rotp.class.getResourceAsStream(n);
             }

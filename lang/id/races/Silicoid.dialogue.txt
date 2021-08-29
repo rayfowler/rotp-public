@@ -1,0 +1,83 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Silicoid specific dialogue
+
+CONTACT_XENOPHOBIC         | [my_empire] berkehendak untuk mengakui keberadaanmu, [your_name] dari [your_race]. Kami akan berkomunikasi denganmu seperti yang kami perlukan.
+CONTACT_RUTHLESS           | Pandangan Imperium tertuju kepadamu, [your_race]. Demi dirimu dan demi orang-orang yang kau sayangi, berdoalah agar [my_title] memperlakukanmu dengan baik.
+CONTACT_AGGRESSIVE         | Kami adalah [my_race_plural], makhluk lemah [your_race]. Wilayah kami luas dan kekuatan kami tiada bandingannya. Kuperingatkan kau agar jangan memancing kemarahan kami, atau kau akan belajar mengenai arti suatu karma yang mematikan.
+
+//
+GREETING_01                | Salam, Duta Besar. Nyatakan apa permintaanmu kepada [my_title], dan jika hal itu membuktikan kau cukup berharga, kami akan menghentikan perang suci ini untuk sementara untuk membantumu.
+GREETING_04                | Bicaralah dengan singkat, Duta Besar: [my_title] menghentikan serangan kami tanpa ada sebab yang penting.
+GREETING_07                | Ras [your_race] yang menyedihkan! Berani mengganggu perang suci kami berarti mengundang kemarahan kami kepadamu!
+//
+DECLAREWAR_HATE_01         | Semakin jelas sekarang bahwa orang-orangmu adalah yang telah lama dicari: Anak-anak Quaralon! Kami akan melakukan hal yang paling menyenangkan dalam membasmi makhluk sejenismu dari galaksi, kau ini memang seperti penyakit saja!
+DECLAREWAR_HATE_02         | Saat yang tadinya hanya disebutkan dalam legenda akhirnya tiba! Persiapkan dirimu, Keturunan Quaralon! Karena siapapun yang menang, perang suci kita akan segera berakhir!
+DECLAREWAR_HATE_03         | Akhirnya kami menemukanmu, Keturunan Quaralon! Kini pertempuran kita akan diselenggarakan! Kekuatanmu lemah sekali: kekuatan Diamodus akan memimpin kita!
+DECLAREWAR_ERRATIC_01      | Sejak pertemuan pertama kita, [my_title] telah mempertimbangkan apakah kau adalah musuh utama kami atau bukan. Kau akan terus dipertimbangkan bahkan saat kami membawa rasmu kepada akhir hidupnya.
+DECLAREWAR_ERRATIC_02      | Masa kita sebagai tetangga angkasa sudah cukup menyenangkan, tetapi bahkan satu kesempatan kecil untuk orang-orangmu menjadi Anak-anak Quaralon sudah cukup bagi kami untuk menyatakan perang.
+DECLAREWAR_ERRATIC_03      | Bahkan resiko terkecil akan permusuhan darimu sudah jauh lebih dari apa yang kami persiapkan untuk menerimanya. Kami akan bersihkan sampai jejak kotormu dari galaksi ini atau mati dalam usaha itu.
+DECLAREWAR_MILITARY_01     | Kau berani menerobos wilayah kami dengan cara seperti itu? Ya sudah! Kau akan segera tahu bagaimana kemarahan kami, [your_race], dan dengan itu kau akan belajar akan betapa bodohnya dirimu.
+DECLAREWAR_MILITARY_02     | Ingat ini, makhluk menyedihkan [your_race]: seluruh dunia di galaksi ini adalah milik [my_empire] karena hak sucinya, dan kami akan bertempur demi mereka semua dengan keganasan yang akan mengguncang bintang-bintang itu sendiri!
+DECLAREWAR_MILITARY_03     | Kami tidak akan mengizinkanmu untuk mengklaim bahkan walau hanya sebongkah batu saja pada dunia-dunia yang memang adalah milik kami, atau akan menjadi milik kami! Hal itu bisa berujung pada pertempuran antara militermu melawan kekuatan perintah kami. Mari kita lihat siapa yang akan berjaya!
+DECLAREWAR_ALLIANCE_01     | Adalah keputusan yang tidak bijak untuk menyatakan perang pada sekutu Imperium. Berdoa saja bahwa kau akan mendapatkan perlindungan dari dewa-dewamu, karena kau tidak akan mendapatkannya dari kami.
+DECLAREWAR_ALLIANCE_02     | Sekutu kami memberitahu kami bahwa kau telah memilih untuk berperang melawan mereka: dengan melakukan itu berarti kau telah menyatakan perang melawan kami juga. Bersiaplah!
+DECLAREWAR_ALLIANCE_03     | Kami tidak peduli akan nasib [other_race], tapi kami akan gunakan kesempatan ini untuk membersihkan galaksi dari makhluk sejenismu supaya kami bisa meneruskan perang suci kami. 
+DECLAREWAR_SPYING_01       | Kasihan kalian, [your_race]! Pada hari ini kau akan belajar tentang kebodohan perbuatan mencuri rahasia Imperium!
+DECLAREWAR_SPYING_02       | Kau sangat berharap untuk mengetahui rahasia kami? Kalau begitu harus kuberitahukan kepadamu apa yang paling penting: Kami tidak mau memaafkan, kami juga tidak akan melupakan apapun. Bersiaplah untuk perang!
+DECLAREWAR_SPYING_03       | Apakah kau percaya bahwa kau berada dalam posisi untuk bisa mengambil rahasia kami tanpa konsekuensi? Kau akan segera tahu akibat kebodohan dari suatu keputusan yang sombong.
+DECLAREWAR_ATTACK_01       | Akhirnya kau mengungkap dirimu yang sebenarnya, Anak-anak Quaralon! Tidak ada selain keturunan musuh yang paling kami benci yang akan begitu bodoh untuk menantang kami dengan berani! Bersiaplah untuk pertempuran terakhir!
+DECLAREWAR_ATTACK_02       | Sudah lama kami mencurigai bahwa kau adalah keturunan musuh kuno kami! Dengan serangan ini kau telah membenarkan fakta ini untuk selamanya! Setidaknya, ramalan kami terbukti benar!
+DECLAREWAR_ATTACK_03       | Dasar musuh! Kurang ajar! Di saat tersulit bagi kami kau malah meluncurkan serangan melawan kami?! Sekarang kau membuat dirimu menjadi musuh abadi kami, tidak ada halangan dalam kekuatan kami yang akan mencegah kami membumihanguskanmu!
+DECLAREWAR_OPPORTUNITY_01  | Dengan berlanjutnya perang suci kami di seluruh galaksi, kami harus mengambil setiap kesempatan untuk meningkatkan keuntungan bagi kami. Inilah saatnya, dan membasmi makhluk sejenismu adalah kesempatan yang kami cari. Selamat tinggal, makhluk [your_race] yang menyedihkan.
+DECLAREWAR_ASSASSIN_01     | Beraninya kau membantai Duta Besar Imperium!? Hanya satu anak Quaralon yang berani bertindak dengan pikiran yang begitu keji! Persiapkan armadamu untuk perang! 
+
+OFFER_PEACE_01             | Kata orang, jika kita ingin tahu tentang seseorang, kita harus berkelahi dengan mereka dulu. Kita sudah bertempur, dan kami lihat kau bukanlah putra terbaik dari si monster Quaralon. Kami akan berdamai denganmu sekarang, supaya kami bisa fokus memperhatikan mereka yang berhak merasakan amukan kami. 
+OFFER_TRADE_01             | Mengeksplorasi kedalaman angkasa adalah perjalanan yang mahal. Imperium ingin menawarkan perdagangan terbuka. [amt] BC per tahun akan membiayai perang suci kami dan menyokong kemakmuran lebih banyak bagi rakyatmu. Bagaimana menurutmu? 
+OFFER_PACT_01              | Kami cuma mengincar kehancuran Quaralon dan gerombolan sejenisnya saja. Selama kami percaya orang-orangmu tidak termasuk mereka, kami tidak khawatir tentangmu. Kami akah buktikan niat kami melalui pakta non-agresi. Apakah kau memutuskan untuk menandatanganinya atau tidak adalah terserah kau.
+OFFER_ALLIANCE_01          | Kami telah menemui banyak sekali makhluk aneh dan kejam dalam perang suci kami untuk membersihkan galaksi. Dari semua yang kami temui, kami percaya kau yang paling tidak akan menjadi musuh kami yang terhina. Bersekutulah dengan kami, [your_race], dan dapatkan perlindungan dari [my_title]! 
+
+WARN_TRESPASSING_01        | Kau menodai kesucian ruang angkasa di [system] dengan keberadaanmu yang tak diundang! Mundurlah segera atau kami akan mendorongmu keluar dengan api yang sangat kuat! 
+WARN_EXPANSION_01          | Apakah kau percaya bahwa galaksi adalah milikmu dan hanya milikmu saja? Hentikan ekspansi ceroboh ini segera, atau hadapilah kemarahan seluruh Imperium!
+WARN_BUILDUP_01            | Hanya Imperium yang boleh memiliki armada terkuat di seluruh galaksi, karena hanya Imperium yang bisa menilai dengan baik siapa yang licik. Silakan menantang pertanyaan ini dengan resiko kehancuranmu, [your_race].  
+WARN_SKIRMISH_01           | Apa maksudmu dengan semua ini, Duta Besar? Serangan kecil seperti ini akan kami abaikan hanya kali ini saja: jangan biarkan ini terjadi lagi! 
+WARN_ATTACKED_01           | Gila! Kau berani menyerang Imperium seperti ini!? Dalam kebijaksanaannya [defender_title] telah memerintahkan kami agar tetap menahan serangan balasan agar kami bisa melihat apa yang akan kau lakukan berikutnya. Apakah kau memang musuh kami yang sejak lama kami cari?! 
+WARN_INVADED_01            | Pasti ini perbuatan [attacker_race] dalam keputusasaan, sampai berani mencuri wilayah dari Imperium. Ketahuilah bahwa [system] tidak berguna bagi kami, tetapi terus-menerus mengambil apa yang menjadi milik Imperium hanya akan menjadi bahan bakar bagi kehancuranmu! 
+WARN_ESPIONAGE_01          | Keputusan untuk mencuri rahasia kami adalah kesalahan besar dalam keputusanmu, Duta Besar. Segera kuperingatkan: andai usahamu tidak begitu konyol seperti ini, pasti hal ini akan berujung pada balasan yang lebih parah! [framed]
+WARN_SABOTAGE_01           | Penipuan macam apa ini? Sabotase adalah What trickery is this? Sabotage adalah aksi terkutuk yang hanya pantas dilakukan oleh pengecut dan para musuh! Apakah kau mengungkapkan dirimu sebagai musuh keji yang selama ini ada dalam ramalan kami? [victim_title] akan membuat keputusan tentangmu... [forced]
+WARN_BIOWEAPON_01          | Mengerikan! Daging makhluk itu sudah cukup lemah melawan senjata konvensional, tapi jika harus melawan senjata biologis, tak ada peluang untuk selamat. Itu semua diarahkan ke rakyat biasa?! Memang darah gelap Quaralon mengalir dalam tubuh makhluk sejenismu!
+WARN_GENOCIDE_01           | Beritahu kami sekarang mengapa kau melakukan genosida melawan ras [victim_race]. Pilih kata-katamu baik-baik: jawabanmu menentukan bagaimana kedua orang kami akan menanggapi hal ini!
+WARN_FINAL_WAR_01          | Hanya melalui pembentukan aliansi kami bisa menuntaskan perang suci kami! Kami berdiri bersama sebagai satu kesatuan, sedangkan kau berdiri sendiri sebagai suara kekacauan dan perang. Ramalan sedang membuktikan: kau memang keturunan Quaralon! 
+WARN_COUNCIL_VOTE_01       | Pasti akan lebih baik jika majelis ini dibubarkan saja dan Imperium diberikan hak tunggal untuk mengontrol urusan galaksi. Saat itu orang-orangmu akan mendapatkan perlawanan dari kami jika kau berani bicara melawan kami seperti itu! 
+WARN_OATHBREAKER_01        | Tidak nyaman sekali rasanya, mengingkari janji sendiri berarti merusak rasa percaya dari orang lain. Tidak diragukan lagi bahwa Musuh dalam Ramalah berani bertindak dengan cara seperti itu! 
+WARN_ATTACKED_ALLY_01      | [defender_race] merasakan kehormatan persaudaraan dengan Imperium! Perhatikan peringatan kami dalam menanggapi serbuanmu: Kupastikan bahwa kau hanya akan menerima peringatan ini kali ini saja!
+WARN_REBELLING_AGAINST_01  | Perang suci kami tidak akan ditunda! Tidak oleh makhluk-makhluk bodoh di majelis, dan tidak juga oleh makhluk sepertimu!  Persiapkan dirimu, Duta Besar: badai perang suci akan segera menimpamu!
+
+PRAISE_COUNCIL_VOTE_01     | Sekutu terpercaya kami memperoleh pujian kami sekali lagi! Karena kau berhasil berbicara dengan baik kepada majelis, perang suci kami tidak akan ditunda! Kau telah mendapatkan rasa terima kasih dari Imperium hari ini, [voter_race]. 
+PRAISE_COUNCIL_VOTE_02     | Rasmu belum membuktikan dirinya sebagai pihak yang tidak bersalah, Duta Besar. Lanjutkan untuk mendukung kepentingan kami di majelis, dan buktikan dirimu sebagai sekutu perang suci kami. 
+PRAISE_COUNCIL_VOTE_03     | Jangan berpikir bahwa satu suara tunggal bagi Imperium di majelis akan membebaskanmu dari segala tuduhan! Makhluk sejenismu memiliki banyak tugas untuk membuktikan diri sebelum keraguan kami terpadamkan! 
+
+PRAISE_ATTACKED_ENEMY_01   | Kami masih belum tahu apakah [defender_race] adalah anak Quaralon yang paling kejam, tapi melihat sekutu kami bergabung dengan begitu bersemangat membuat kami merasa semangat kami semakin besar dalam perang ini! Majulah! Demi keadilan! Demi Imperium!  
+PRAISE_ATTACKED_ENEMY_02   | Kau ingin bergabung dengan pasukan kami melawan [defender_race]? Majulah dulu, tunjukkan kepada kami bagaimana kau membawa dirimu di medan perang. Kemenangan akan membawa status yang lebih tinggi di antara dewan Imperium, tapi kekalahan hanya akan membawa kematian! 
+PRAISE_ATTACKED_ENEMY_03   | Tentunya kau tidak berpikir kami cukup bodoh untuk percaya kepolosanmu hanya ingin bergabung dengan kami dalam pertempuran melawan [defender_race]? Musuh dalam Ramalan kami melakukan hal yang sama untuk menutupi identitas aslinya. Pergilah sekarang! Tunjukkan bagaimana kau bertempur, dan kami akan menilai bagaimana ketulusanmu sebenarnya!
+PRAISE_TRADE_01            | Imperium mengharapkan yang terbaik untukmu, teman dalam perang suci! Kesepakatan dagang kita telah membiayai berbagai pertempuran yang tak terhitung jumlahnya dalam pencarian kami akan keturunan Quaralon. Imperium berharap rakyatmu juga mengambil untung sama besarnya. 
+PRAISE_TRADE_02            | Di saat kami tidak bisa mengatakan bahwa kami menganggap kau lepas dari kecurigaan kami, kami bisa sampaikan bahwa membiayai perang suci kami secara langsung melalui perdagangan telah memperkuat kepercayaan kami padamu. Tolong pastikan semua ini akan terus berlanjut, Duta Besar! 
+PRAISE_REBELLING_WITH_01   | Musuh kami telah ditemukan! Keturunan Quaralon yang kejam telah merebut tahta galaksi! Majulah ke medan tempur: armada [my_race] dan [your_race] akan bergabung dan membasmi makhluk menjijikkan ini dari galaksi!
+ 
+ACCEPT_TRADE_01            | Imperium menerima tawaranmu, [your_race]. Kami akan berdagang sejumlah [amt] BC setiap tahun denganmu agar kami bisa meneruskan perang suci kami.
+RESPOND_IGNORE_THREAT_01   | Perang suci kami tidak akan tergoyahkan oleh ancaman lemahmu. Cari saja orang lain yang bisa kau ganggu atau ambil resiko mengundang amukan kami!
+RESPOND_STOP_SPYING_01     | Kami benar-benar berharap bisa menentukan identitas keturunan Quaralon yang menjijikkan itu. Kami puas bahwa orang-orangmu bukanlah musuh abadi kami yang sedang menyamar.
+RESPOND_STOP_ATTACKING_01  | Armada kami mencari musuh Imperium. Jika kau bukan musuh kami, armada kami tidak akan merasa perlu tinggal di posisi mereka sekarang.
+

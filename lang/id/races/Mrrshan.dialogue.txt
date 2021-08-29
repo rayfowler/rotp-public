@@ -1,0 +1,89 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Mrrshan specific dialogue
+
+CONTACT_AGGRESSIVE         | Aku memberi salam kepadamu, benda aneh. Aku dari [my_race], dan pembantu dari Khan Emas. Kuharap kau kuat, [your_race], tidak hanya demi orang-orangmu, tetapi juga demi harta yang kau anggap paling berharga. 
+CONTACT_RUTHLESS           | Kami adalah [my_race], [your_race], dan kami hanya memegang satu keyakinan saja: yang kuat akan mengambil dan yang lemah akan memberi. Jika kau belum mengerti kebijakan dalam filosofi ini, yakinlah kami akan mengajarkannya secepatnya.
+CONTACT_XENOPHOBIC         | Berdoalah bahwa Khan Emas menganggapmu cukup berharga, [your_race]. Kalau kau goda kemarahannya dia tidak akan ragu memerintahkan armada [my_race] turun kepadamu.
+//
+GREETING_01                | Kau telah buktikan dirimu kepada kami lagi dan lagi. Kaami merasa terhormat untuk melakukan apa yang kami bisa untuk membuktikan diri kami kepadamu dengan cara tertentu.
+GREETING_04                | Aku akan mendengarkanmu, Duta Besar, tapi aku tidak harus memberimu apapun yang sedang kau cari.
+GREETING_07                | Kau punya cukup keberanian dalam dirimu untuk mendekati pembantu Khan. Katakan apa yang kau mau, dan bersiaplah untuk kabur dari sini jika kau hanya menghabiskan waktumu.
+//
+DECLAREWAR_HATE_01         | Barang-barang antikmu sia-sia saja di tanganmu! Kami bahkan akan menghiasi ruangan-ruangan kami di Fierias dengan tulang-tulangmu dan hartamu, dan itu saja yang akan menjadi hal yang tersisa dari orang-orangmu ketika kami selesai!
+DECLAREWAR_HATE_02         | Sudah cukup! Cuma perlawanan kecil saja tidak akan memuaskan keinginan kami untuk berkelahi dengan makhluk sejenismu: kalian para [your_race_plural] berhak mendapatkan perlakuan berskala lebih besar!
+DECLAREWAR_HATE_03         | Bahkan hanya dengan mengetahui bahwa ras selemah kalian punya pengaruh di alam semesta ini cukup membuat kami mual. Apapun resikonya, aku berjanji padamu kami akan lakukan apapun yang kami bisa untuk mengajarkanmu di mana tempatmu seharusnya.
+//
+DECLAREWAR_ERRATIC_01      | Cakar Khanate butuh ditajamkan, Duta Besar. Orang-orangmu harus menyediakan kami dengan olahraga yang kami butuhkan agar kami tetap siap untuk musuh yang lebih hebat.
+DECLAREWAR_ERRATIC_02      | Orang-orangmu benar-benar memiliki harta yang paling indah, [your_race]. Kami ingin sekali melihat seberapa galak kau akan bertempur mempertahankannya!
+DECLAREWAR_ERRATIC_03      | Sudah terlalu lama sejak kami membawa kembali kemewahan legendaris. Orang-orangmu bertarung dengan baik, tapi mereka mencegah kami mengambil banyak tropi berkilau ketika itu semua sudah di genggaman kami?
+//
+DECLAREWAR_MILITARY_01     | Yang kuat mengambil dan yang lemah memberi: itulah hukum tangan besi dari semesta. Kau akan segera melihat bahwa itu semua berlaku tidak hanya terhadap hartamu, tetapi juga terhadap planet-planetmu.
+DECLAREWAR_MILITARY_02     | Meski jarang berkelip seperti emas, tanah sering dianggap hadiah berharga dari dan pada dirinya. Dan semua hadiah yang bagus layak diperebutkan, ya kan, Duta Besar?
+DECLAREWAR_MILITARY_03     | Kebutuhan akan Khanate lebih penting dari kebutuhan ras [your_race]. Mungkin kau punya teknologi yang mengesankan, tetapi aku ragu kau punya kekuatan yang setara dengannya!
+//
+DECLAREWAR_ALLIANCE_01     | Kau memainkan permainan yang berbahaya untuk menjadi musuh dari sekutu Khanate. Permainan itu akan segera meleset menjadi akhir berdarah! 
+DECLAREWAR_ALLIANCE_02     | Sekutu kami, [other_race_plural], memang terhormat tapi lemah. Kau mungkin menang andai perang ini hanya melibatkan dua kekaisaran kalian saja, tapi dengan adanya kami di sisi mereka kau tak punya kesempatan untuk menang!
+DECLAREWAR_ALLIANCE_03     | Kami telah memilih untuk memiliki kehormatan menggulingkan kekaisaranmu demi kami sendiri. Kelihatannya kami harus membagi kejayaan, dan harta rampasan, dengan [other_race] untuk saat ini.
+//
+DECLAREWAR_SPYING_01       | Pengecut, beraninya kalian hanya bergerak diam-diam bukannya bertarung dengan kehormatan! Tindakanmu cocok dengan kelemahanmu, dan kau sekarang harus membayar harganya! 
+DECLAREWAR_SPYING_02       | Bagaimana rasanya, [your_race]? Mengambil begitu banyak resiko hanya untuk membawa perang kepada orang-orangmu?
+DECLAREWAR_SPYING_03       | Katakan kepada [your_nameTitle] [your_name] ini: kerahasiaan adalah teater anjing tak bernyali. Kau melakukan itu dengan begitu pengecutnya, berarti hanya kekerasan kami yang akan mengantarkan kami kepada kemenangan!
+//
+DECLAREWAR_ATTACK_01       | Ha! Di sini kami membawamu kepada para pengecut lemah, tapi sepertinya kau juga punya hasrat bertempur ternyata! Sayang sekali kau tidak akan di sini lebih lama lagi untuk merayakan ketiadaan kemenangan ini!
+DECLAREWAR_ATTACK_02       | Kau sudah cukup melakukan kebaikan dengan membawakan pertempuran ke depan pintu kami! Kami akan membalas kebaikanmu dengan memastikan orang-orangmu menemui ajal mereka di medan tempur selayaknya petarung sejati!
+DECLAREWAR_ATTACK_03       | Aku akan menghindari kesombongan jika aku adalah kau, Duta Besar. Kemarahan tentara kami tidak akan bisa dikalahkan oleh teknologi, betapapun kuatnya kau rancang teknologimu!
+//
+DECLAREWAR_OPPORTUNITY_01  | Makhluk sejenismu sudah melewati batas kehidupan mereka jika dibandingkan dengan kegunaan mereka. Tapi tenanglah bahwa kau akan memberikan aktivitas yang cukup baik untuk tentara kami yang paling muda dan paling tidak berpengalaman sambil mereka melatih kemampuan bertempur mereka.
+DECLAREWAR_ASSASSIN_01     | Aku sedikitpun tidak terkejut bahwa makhluk sejenismu bisa melakukan hal yang begitu rendah. Membunuh seorang duta besar adalah penghinaan terbesar yang kau lakukan terhadap dirimu sendiri, dan dalam posisi sekarat orang-orangmu akan mengutuk namamu karena telah memerintahkan pembunuhan itu!
+
+
+OFFER_PEACE_01             | Segalanya ada saatnya, Duta Besar. Dan saatnya telah tiba untuk mengakhiri kekerasan di antara kita. Simpan harta antikmu; perdamaian adalah yang kami inginkan darimu sekarang!
+OFFER_TRADE_01             | Tidak diragukan lagi bahwa jalan tercepat untuk meraih piala penghargaan adalah langsung saja ambil dari mereka yang terlalu lemah untuk menghentikanmu! Tapi perdagangan juga bisa menjadi cara yang bisa diterima oleh kedua kekaisaran untuk meraih keuntungan dari satu sama lain. Ayo kita mulai pada jumlah [amt] BC setiap tahun untuk melihat seberapa kita bisa ... mengambil untung satu sama lain. 
+OFFER_PACT_01              | Tidak perlu kedua kekaisaran menjadi sangat setara untuk bertempur melawan satu sama lain di saat ada begitu banyak ras yang lebih lemah untuk dirampok dan dibakar. Ayo kita sama-sama setujui pakta non-agresi resmi sehingga energi kita lebih baik dihabiskan untuk mereka yang punya harta yang lebih mudah untuk direbut! 
+OFFER_ALLIANCE_01          | Aku datang padamu hari ini untuk mengusulkan aliansi formal di antara Khanate dan [your_empire]. Aku percaya kau tidak akan membuang waktu untuk menandatangani perjanjian ini? Ingatlah juga: bagi hasil merata dalam suatu aliansi berarti bagi hasil merata dalam hal kerugian perang juga! 
+ 
+WARN_TRESPASSING_01        | Kecuali kapalmu berada di sistem [system] untuk mengantar barang persembahan, kusarankan kau kau memerintahkan mereka untuk berputar balik dan pergi sesegera mungkin. 
+WARN_EXPANSION_01          | Sambil kami memilih barang berharga yang bisa kami gunakan untuk menghiasi dinding kuil kami, kami tidak buta hingga kami mengabaikan harta berharga yang berada pada tanah takbertuan. Periksalah proses ekspansimu atau ambillah resiko menggoda kemarahan kami, Duta Besar. 
+WARN_BUILDUP_01            | Jika kaubangun armadamu untuk menyerang ras lain, kau tidak akan mendapat penolakan dari kami. Tapi hingga kami mendapat kepastian pada titik itu, kami akan memandang armadamu akan ditujukan kepada kami, dan kami tidak ragu bertindak untuk mencegahnya. 
+WARN_SKIRMISH_01           | Itu adalah serangan mendadak yang cukup seru, iya kan? Tapi, pertempuran kecil rasanya membosankan dan tidak membuat bangga: kalau kau memaksa melanjutkannya, kami akan dengan senang hati membuat deklarasi perang yang lebih formal! 
+WARN_ATTACKED_01           | Ha! Apakah itu tadi merupakan usaha serius untuk mencoba memprovokasi kami, Duta Besar? Orang-orangmu lemah dan hartamu ternoda! Hentikan upaya bodoh ini sebelum kau memaksa kami untuk menghabisimu! 
+WARN_INVADED_01            | Pasti kau bercanda dengan serangan kecil dan lemah ini? Kau beruntung kami menggunakan sedikit sistem [system], tapi jika kau arahkan pandangamu kepada sistem yang lebih berharga, kami tentu akan memastikan bahwa kau tidak bisa lagi mengambil apapun dari siapapun! 
+WARN_ESPIONAGE_01          | Betapa liciknya permainan yang dilakukan orang-orangmu! Kau akan diharuskan untuk memikirkan baik-baik usaha apa yang harus dilakukan jika kau ingin mengetahui rahasia Khanate untuk kepentinganmu. Bawa mata-matamu kembali denganmu dan pergilah, sebelum permainan ini tidak lagi terasa lucu. [framed]
+WARN_SABOTAGE_01           | Tindakan berbahaya, Duta Besar. Andai bangunan yang ingin kauhancurkan menyimpan banyak harta berharga, tidak diragukan lagi kami akan mengguyur darahmu dari jalanan dunia asalmu. Aku sangat menyarankan kau tidak merencanakan sabotase lagi. [forced]
+WARN_BIOWEAPON_01          | Trophy harus dimenangkan dalam perang yang terhormat, bukannya dicuri dari tulang mereka yang tidak sanggup mempertahankan diri bahkan di saat mereka masih hidup! Jika kau sampai menggunakan senjata keji itu lagi, kupastikan padamu bahwa itu akan menjadi yang terakhir kalinya! 
+WARN_GENOCIDE_01           | Bukan keputusan yang buruk untuk memberantas seluruh spesies [victim_race] dan mengambil setiap harta mereka untuk menjadi milikmu. Di saat aku ragu kau akan cukup bodoh untuk mencoba sesuatu seperti itu dengan kami, kemampuanmu masih cukup mengkhawatirkan. 
+WARN_FINAL_WAR_01          | [your_race] bodoh! Berani menentang keinginan majelis berarti berani menentang keinginan [my_race]! Kami akan mengambil piala-pialamu dan membakarnya sampai menjadi kepingan kecil! Tidak akan ada yang tersisa dari jenismu setelah kami selesai melakukannya! 
+WARN_COUNCIL_VOTE_01       | Khanate memiliki urusan yang lebih penting untuk diperhatikan daripada memainkan permainan politik di ruang majelis. Lebih baik bagi kami jika kau mau mengalah dengan suka rela terhadap keinginan kami. Dan itu berarti lebih baik bagimu juga, jika aku sudah menjelaskannya dengan baik.
+WARN_OATHBREAKER_01        | Hmph! Hanya orang yang sudah putus asa yang mematahkan ikatan kata-kata mereka. Tidak masalah! Mulai dari sekarang kami hanya akan berurusan denganmu seperti halnya kami berurusan dengan yang lain yang terlalu mencurigakan untuk dipercaya. 
+WARN_ATTACKED_ALLY_01      | Aku tidak bisa bilang aku tidak tahu alasanmu menyerang [defender_race]. Harta mereka memang menarik sekali... tapi itu semua akan menjadi milik kami ketika kami ingin mengambilnya: harta itu tidak akan menjadi milikmu!
+WARN_REBELLING_AGAINST_01  | Perdamaian yang didukung oleh majelis ini tidak akan bisa berdampingan dengan orang-orang kami. Kami mendambakan satu hal dan satu hal ini saja: untuk mengambil harta dari yang lemah dan menjadikannya milik kami! 
+
+PRAISE_COUNCIL_VOTE_01     | Dukunganmu dalam majelis akan selalu dihargai, Duta Besar. Khan Emas sendiri ingin kau tahu bahwa orang-orangmu adalah aset berharga bagi Khanate, dan jika kau ingin mengunjungi [candidate_home], suatu perjamuan akan diadakan atas namamu! 
+PRAISE_COUNCIL_VOTE_02     | Apakah kau lihat bahwa perwakilan [rival_race] marah? Ha! Biarlah mereka mengejek! Selama orang bijak sepertimu terus mengakui kekuasaan kami, Khanate tidak perlu takut akan apapun! 
+PRAISE_COUNCIL_VOTE_03     | Apakah kau takut akan serangan kami, Duta Besar? Apakah kau berharap dengan menenangkan kami di majelis akan menahan para pencari harta kami dari duniamu? Hmhmhmhm, yah memang hal itu sama sekali tidak merusak peluangmu, ya kan?
+PRAISE_ATTACKED_ENEMY_01   | Hari ini akan terjadi peristiwa besar untuk semua orang-orang kita, [attacker_race]! [defender_race] belum berdoa melawan kekuatan gabungan kami! Ada begitu banyak harta untuk kedua pihak: ksatria yang terhebat mengejar nikmat terhebat pula!
+PRAISE_ATTACKED_ENEMY_02   | Berharap akan kesempatan di hari harta karun, Duta Besar? Baiklah, akan kuberikan tawaran untukmu: bantu kami menyingkirkan hama [defender_race] ini dan kami akan mempertimbangkan agar kau bisa mendapatkan sedikit hadiah. 
+PRAISE_ATTACKED_ENEMY_03   | Sudah jelas bahwa kau satu-satunya yang bisa memperoleh hasil untukmu sendiri di dalam perang para orang kaya ini. Tapi para [defender_race] ini memiliki harta peninggalan yang menyedihkan, jadi kurasa jika kau membantu kami maka kami akan memberi bagian untukmu apapun yang kami tidak ingin menghabiskannya sendiri. 
+PRAISE_TRADE_01            | Ingat ketika aku memulai persetujuan dagang kita? Kubilang kepadamu bahwa kita akan menentukan berapa yang bisa kita dapatkan dari masing-masing, dan aku bahagia melihat kita sama-sama mendapat manfaat dari ini. 
+PRAISE_TRADE_02            | Rasanya selalu lebih menyenangkan untuk bertarung demi menjadi kaya dan pulang dengan kapal yang terisi penuh dengan kemewahan dalam kemenangan! Ah baiklah, kurasa persetujuan dagang ini setidaknya sedikit lebih menguntungkan saat kau mempertimbangkan biaya. Tolong pastikan keadaannya tetap seperti ini, Duta Besar.
+PRAISE_REBELLING_WITH_01   | Itu jauh lebih baik! Tidak ada yang lebih menyenangkan dibanding pertarungan yang seru, eh? Dan begitu banyak barang berharga memohon untuk diambil alih... Kuharap kau tidak keberatan Khanate ingin bergabung dengan keseruan ini! 
+
+ACCEPT_TRADE_01            | Kurasa kami tidak bisa merampas harta setiap peradaban yang kita lewati. Kau ingin berdagang berapa BC per tahun? [amt]? Baiklah..
+RESPOND_IGNORE_THREAT_01   | Maafkan aku menertawakanmu, ancamanmu lucu dan kosong. Larilah sekarang sebelum petarung kami memutuskan untuk menajamkan cakar mereka kepada kolonimu.
+RESPOND_STOP_SPYING_01     | Kau menemukan mata-mata yang katanya berasal dari kami? Tentu saja tidak. Kami tidak akan pernah bermimpi memata-matai [your_empire] Yang Agung. Lakukan apa saja yang kau mau dengan mata-mata itu, itu tidak ada akibatnya bagi kami.
+RESPOND_STOP_ATTACKING_01  | Khawatir akan ada serangan, [your_race]? Jangan khawatir, kami tidak tertarik dengan apa yang kau miliki. Kami akan memindahkannya sekarang. Kami tidak akan mau menakut-nakutimu juga.
+
+

@@ -1,0 +1,1197 @@
+
+
+//
+// Armor techs
+// 
+ARMOR_0_NAME     | Baju Logam Titanium
+ARMOR_0_ITEM     | Titanium
+ARMOR_0_BRIEF    | Poin Pukulan %1
+ARMOR_0_DETAIL   | Awal teknologi baju perang. Tidak ada bonus untuk pengkapalan baju logam atau serangan darat.
+
+ARMOR_1_NAME     | Baju Logam Duralloy
+ARMOR_1_ITEM     | Duralloy
+ARMOR_1_BRIEF    | Poin Pukulan %1
+ARMOR_1_DETAIL   | Meningkatkan poin pukulan kapal dan transport sebanyak 50%. Baju logam pertempuran personal juga ditingkatkan, menambah 5 bonus untuk semua serangan darat.
+
+ARMOR_2_NAME     | Baju Logam Zortrium
+ARMOR_2_ITEM     | Zortrium
+ARMOR_2_BRIEF    | Poin Pukulan %1
+ARMOR_2_DETAIL   | Meningkatkan poin pukulan kapal dan transport sebanyak 100%. Baju logam pertempuran personal juga ditingkatkan, menambah 10 bonus untuk semua serangan darat.
+
+ARMOR_3_NAME     | Baju Logam Andrium
+ARMOR_3_ITEM     | Andrium
+ARMOR_3_BRIEF    | Poin Pukulan %1
+ARMOR_3_DETAIL   | Meningkatkan poin pukulan kapal dan transport sebanyak 150%. Baju logam pertempuran personal juga ditingkatkan, menambah 15 bonus untuk semua serangan darat.
+
+ARMOR_4_NAME     | Baju Logam Tritanium
+ARMOR_4_ITEM     | Tritanium
+ARMOR_4_BRIEF    | Poin Pukulan %1
+ARMOR_4_DETAIL   | Meningkatkan poin pukulan kapal dan transport sebanyak 200%. Baju logam pertempuran personal juga ditingkatkan, menambah 20 bonus untuk semua serangan darat.
+
+ARMOR_5_NAME     | Baju Logam Adamantium
+ARMOR_5_ITEM     | Adamantium
+ARMOR_5_BRIEF    | Poin Pukulan %1
+ARMOR_5_DETAIL   | Meningkatkan poin pukulan kapal dan transport sebanyak 250%. Baju logam pertempuran personal juga ditingkatkan, menambah 25 bonus untuk semua serangan darat.
+
+ARMOR_6_NAME     | Baju Logam Neutronium
+ARMOR_6_ITEM     | Neutronium
+ARMOR_6_BRIEF    | Poin Pukulan %1
+ARMOR_6_DETAIL   | Meningkatkan poin pukulan kapal dan transport sebanyak 300%. Baju logam pertempuran personal juga ditingkatkan, menambah 30 bonus untuk semua serangan darat.
+
+
+//
+// Atmospheric Terraforming techs
+// 
+ATMOSPHERE_0_NAME      | Pembentukan Atmosfer Teraform Seperti Bumi
+ATMOSPHERE_0_DETAIL    | Mengubah lingkungan keras menjadi lingkungan normal dengan biaya 150 BC.
+
+//
+// Automated Repair techs
+// 
+AUTOREPAIR_0_NAME      | Sistem Perbaikan Otomatis
+AUTOREPAIR_0_BRIEF     | Memulihkan 15% pukulan kapal sekali putaran
+AUTOREPAIR_0_DETAIL    | Kapal yang belum hancur bisa memulihkan diri hingga 15% dari total poin pukulan di akhir setiap putaran.
+
+AUTOREPAIR_1_NAME      | Kontrol Kerusakan Canggih
+AUTOREPAIR_1_BRIEF     | Memulihkan 30% pukulan kapal sekali putaran
+AUTOREPAIR_1_DETAIL    | Kapal yang belum hancur bisa memulihkan diri hingga 30% dari total poin pukulan di akhir setiap putaran.
+
+
+//
+// Battle Computer techs
+// 
+// this is the Ship Design entry for selecting no battle computer
+COMPUTER_0_NAME    | 
+COMPUTER_0_ITEM    |  
+COMPUTER_0_BRIEF   | Level serangan 0
+COMPUTER_0_DETAIL  |
+
+COMPUTER_1_NAME    | Komputer Pertempuran Mark I
+COMPUTER_1_ITEM    | Mark I
+COMPUTER_1_BRIEF   | Level serangan I
+COMPUTER_1_DETAIL  | Meningkatkan akurasi senjata hingga Level 1.
+
+COMPUTER_2_NAME    | Komputer Pertempuran Mark II
+COMPUTER_2_ITEM    | Mark II
+COMPUTER_2_BRIEF   | Level serangan II
+COMPUTER_2_DETAIL  | Meningkatkan akurasi senjata hingga Level 2.
+
+COMPUTER_3_NAME    | Komputer Pertempuran Mark III
+COMPUTER_3_ITEM    | Mark III
+COMPUTER_3_BRIEF   | Level serangan III
+COMPUTER_3_DETAIL  | Meningkatkan akurasi senjata hingga Level 3.
+
+COMPUTER_4_NAME    | Komputer Pertempuran Mark IV
+COMPUTER_4_ITEM    | Mark IV
+COMPUTER_4_BRIEF   | Level serangan IV
+COMPUTER_4_DETAIL  | Meningkatkan akurasi senjata hingga Level 4.
+
+COMPUTER_5_NAME    | Komputer Pertempuran Mark V
+COMPUTER_5_ITEM    | Mark V
+COMPUTER_5_BRIEF   | Level serangan V
+COMPUTER_5_DETAIL  | Meningkatkan akurasi senjata hingga Level 5.
+
+COMPUTER_6_NAME    | Komputer Pertempuran Mark VI
+COMPUTER_6_ITEM    | Mark VI
+COMPUTER_6_BRIEF   | Level serangan VI
+COMPUTER_6_DETAIL  | Meningkatkan akurasi senjata hingga Level 6.
+
+COMPUTER_7_NAME    | Komputer Pertempuran Mark VII
+COMPUTER_7_ITEM    | Mark VII
+COMPUTER_7_BRIEF   | Level serangan VII
+COMPUTER_7_DETAIL  | Meningkatkan akurasi senjata hingga Level 7.
+
+COMPUTER_8_NAME    | Komputer Pertempuran Mark VIII
+COMPUTER_8_ITEM    | Mark VIII
+COMPUTER_8_BRIEF   | Level serangan VIII
+COMPUTER_8_DETAIL  | Meningkatkan akurasi senjata hingga Level 8.
+
+COMPUTER_9_NAME    | Komputer Pertempuran Mark IX
+COMPUTER_9_ITEM    | Mark IX
+COMPUTER_9_BRIEF   | Level serangan IX
+COMPUTER_9_DETAIL  | Meningkatkan akurasi senjata hingga Level 9.
+
+COMPUTER_10_NAME   | Komputer Pertempuran Mark X
+COMPUTER_10_ITEM   | Mark X
+COMPUTER_10_BRIEF  | Level serangan X
+COMPUTER_10_DETAIL | Meningkatkan akurasi senjata hingga Level 10.
+
+COMPUTER_11_NAME   | Komputer Pertempuran Mark XI
+COMPUTER_11_ITEM   | Mark XI
+COMPUTER_11_BRIEF  | Level serangan XI
+COMPUTER_11_DETAIL | Meningkatkan akurasi senjata hingga Level 11.
+
+
+//
+// Battle Suit techs for ground combat
+// 
+// this is for default, no-bonus armor that player starts with
+BATTLESUIT_0_NAME    | Baju Logam
+BATTLESUIT_0_DETAIL  |
+
+BATTLESUIT_1_NAME    | Baju Perang
+BATTLESUIT_1_DETAIL  | Baju logam yang tidak hanya melindungi tetapi juga meningkatkan kekuatan. Menambah 10 untuk semua putaran pertempuran darat.
+
+BATTLESUIT_2_NAME    | Rangka Luar Tubuh Berlapis Logam
+BATTLESUIT_2_DETAIL  | Baju pergerakan yang lebih canggih yang tidak hanya menambah kekuatan dan meningkatkan pertahanan tetapi juga menawarkan penerbangan terbatas untuk tentara darat. Menambah 20 untuk semua putaran pertempuran darat.
+
+BATTLESUIT_3_NAME    | Baju Logam Berbaterai
+BATTLESUIT_3_DETAIL  | Memadukan mobilitas tinggi, penerbangan anti gravitasi, dan piringan logam berat untuk membentuk baju logam yang paling canggih yang tersedia untuk tentara darat. Menambah 30 untuk semua putaran pertempuran darat.
+
+
+//
+// Energy Focus techs for beam weapons
+// 
+BEAMFOCUS_0_NAME    | Fokus Energi Tinggi
+BEAMFOCUS_0_BRIEF   | Menambah +3 untuk jangkauan senjata energi
+BEAMFOCUS_0_DETAIL  | Meningkatkan jangkauan penembakan untuk semua senjata energi Increases the firing range of all energy weapons by three.
+
+BEAMFOCUS_1_NAME    | Antarmuka Oracle
+BEAMFOCUS_1_BRIEF   | Konsentrasikan senjata sinar, belah perisai musuh
+BEAMFOCUS_1_DETAIL  | Koordinasikan semua serangan senjata sinar menjadi satu semprotan simultan berupa api terkonsentrasi, membelah kekuatan perisai musuh.
+
+
+//
+// Biological antidote techs 
+// 
+BIOANTIDOTE_0_NAME    | Penawar Racun Biologis
+BIOANTIDOTE_0_DETAIL  | Mengurangi kerusakan yang berasal dari senjata biologis sebanyak 1M per serangan.
+
+BIOANTIDOTE_1_NAME    | Penawar Universal
+BIOANTIDOTE_1_DETAIL  | Mengurangi kerusakan yang berasal dari senjata biologis sebanyak 2M per serangan.
+
+
+//
+// Biological weapon techs 
+// 
+BIOWEAPON_0_NAME     | Spora Maut
+BIOWEAPON_0_BRIEF    | Senjata Biologis
+BIOWEAPON_0_DETAIL   | Senjata biologis mengerikan yang bisa mengurangi populasi planet maksimum sebanyak 1M per serangan.
+
+BIOWEAPON_1_NAME     | Virus Kiamat
+BIOWEAPON_1_BRIEF    | Senjata Biologis
+BIOWEAPON_1_DETAIL   | Senjata biologis menakutkan yang bisa mengurangi populasi planet maksimum sebanyak 2M per serangan.
+
+BIOWEAPON_2_NAME     | Pembasmi Biologis
+BIOWEAPON_2_BRIEF    | Senjata Biologis
+BIOWEAPON_2_DETAIL   | Senjata biologis menjijikkan yang bisa mengurangi populasi planet maksimum sebanyak 3M per serangan.
+
+//
+// Black Hole Generator tech
+//
+BLACKHOLE_0_NAME     | Pembuat Lubang Hitam
+BLACKHOLE_0_DETAIL   | Menciptakan lapangan sub-ruang angkasa yang melipat ruang normal, menciptakan lubang hitam yang menghancurkan 25% sampai 100% kapal musuh atau basis misil, kurang dari 2% per kelas lapisan pelindung.
+
+
+//
+// Bomb weapon tech
+//
+BOMB_0_NAME     | Bom Nuklir
+BOMB_0_BRIEF    | Hanya Untuk Serangan Darat
+BOMB_0_DETAIL   | Bom yang meledak untuk 3-12 poin kerusakan hanya pada target di darat.
+
+BOMB_1_NAME     | Bom Fusi
+BOMB_1_BRIEF    | Hanya Untuk Serangan Darat
+BOMB_1_DETAIL   | Bom yang meledak untuk 5-20 poin kerusakan hanya pada target di darat.
+
+BOMB_2_NAME     | Bom Anti Materi
+BOMB_2_BRIEF    | Hanya Untuk Serangan Darat
+BOMB_2_DETAIL   | Bom yang meledak untuk 10-40 poin kerusakan hanya pada target di darat.
+
+BOMB_3_NAME     | Bom Omega-V
+BOMB_3_BRIEF    | Hanya Untuk Serangan Darat
+BOMB_3_DETAIL   | Bom yang meledak untuk 20-50 poin kerusakan hanya pada target di darat.
+
+BOMB_4_NAME     | Bom Neutronium
+BOMB_4_BRIEF    | Hanya Untuk Serangan Darat
+BOMB_4_DETAIL   | Bom yang meledak untuk 40-70 poin kerusakan hanya pada target di darat.
+
+
+//
+// Cloaking tech
+//
+CLOAK_0_NAME     | Alat Jubah Pelindung
+CLOAK_0_BRIEF    | Membuat kapal hampir tidak tampak
+CLOAK_0_DETAIL   | Membuat kapal hampir tidak tampak sampai kapal tersebut menyerang, meningkatkan pertahanan sebanyak +5. Kapal harus melepas alat jubah untuk menyerang dan secara otomatis akan memakai alat jubah lagi pada putaran apapun ketika mereka tidak sedang menyerang.
+
+
+//
+// Cloning tech
+//
+CLONE_0_NAME     | Kloning
+CLONE_0_DETAIL   | Membolehkan kolonis yang sudah terrekayasa secara biologis untuk tumbuh pada laju 1M per 10 BC.
+
+CLONE_1_NAME     | Kloning Canggih
+CLONE_1_DETAIL   | Membolehkan kolonis yang sudah terrekayasa secara biologis untuk tumbuh pada laju 1M per 5 BC.
+
+
+//
+// Combat Transporter tech
+//
+COMBATTRANSPORT_0_NAME     | Alat Transport Pertempuran
+COMBATTRANSPORT_0_DETAIL   | Transport yang dilengkapi dengan alat ini memiliki 50% kesempatan untuk menembak dengan sinar kepada permukaan musuh sebelum mereka diserang kapal dan basis misil pertahanan musuh.
+
+
+//
+// Control Environment tech
+//
+CONTROLENV_0_NAME    | Lingkungan Normal Terkontrol
+CONTROLENV_0_ITEM    | Basis Koloni Standar
+CONTROLENV_0_BRIEF   | Membolehkan Pengaturan Tanah Planet Normal
+CONTROLENV_0_DETAIL  | Mengizinkan kolonisasi planet standar.
+
+CONTROLENV_1_NAME    | Lingkungan Tandus Terkontrol
+CONTROLENV_1_ITEM    | Basis Koloni Tandus
+CONTROLENV_1_BRIEF   | Membolehkan Pengaturan Tanah Planet Tandus
+CONTROLENV_1_DETAIL  | Mengizinkan kolonisasi planet tandus dan tidak begitu keras lingkungannya.
+
+CONTROLENV_2_NAME    | Lingkungan Tundra Terkontrol
+CONTROLENV_2_ITEM    | Basis Koloni Tundra
+CONTROLENV_2_BRIEF   | Membolehkan Pengaturan Tanah Planet Tundra
+CONTROLENV_2_DETAIL  | Mengizinkan kolonisasi planet tundra dan tidak begitu keras lingkungannya.
+
+CONTROLENV_3_NAME    | Lingkungan Mati Terkontrol
+CONTROLENV_3_ITEM    | Basis Koloni Mati
+CONTROLENV_3_BRIEF   | Membolehkan Pengaturan Tanah Planet Mati
+CONTROLENV_3_DETAIL  | Mengizinkan kolonisasi planet mati dan tidak begitu keras lingkungannya.
+
+CONTROLENV_4_NAME    | Lingkungan Api Terkontrol
+CONTROLENV_4_ITEM    | Basis Koloni Api
+CONTROLENV_4_BRIEF   | Membolehkan Pengaturan Tanah Planet Inferno/Api
+CONTROLENV_4_DETAIL  | Mengizinkan kolonisasi planet inferno/api dan tidak begitu keras lingkungannya.
+
+CONTROLENV_5_NAME    | Lingkungan Beracun Terkontrol
+CONTROLENV_5_ITEM    | Basis Koloni Beracun
+CONTROLENV_5_BRIEF   | Membolehkan Pengaturan Tanah Planet Beracun
+CONTROLENV_5_DETAIL  | Mengizinkan kolonisasi planet beracun dan tidak begitu keras lingkungannya.
+
+CONTROLENV_6_NAME    | Lingkungan Terradiasi Terkontrol
+CONTROLENV_6_ITEM    | Basis Koloni Terradiasi
+CONTROLENV_6_BRIEF   | Membolehkan Pengaturan Tanah Planet Terradiasi
+CONTROLENV_6_DETAIL  | Mengizinkan kolonisasi planet terradiasi dan tidak begitu keras lingkungannya.
+
+
+//
+// Deflector Shield tech
+//
+// this is the entry on Ship Design for selecting no deflector shield
+DEFLECTOR_0_NAME      | 
+DEFLECTOR_0_ITEM      |   
+DEFLECTOR_0_BRIEF     |  
+DEFLECTOR_0_DETAIL    | 
+
+DEFLECTOR_1_NAME      | Perisai Deflektor Kelas I
+
+DEFLECTOR_1_ITEM      | Kelas I
+DEFLECTOR_1_BRIEF     | Menyerap 1 pukulan
+DEFLECTOR_1_DETAIL    | Menyerap 1 poin kerusakan dari semua serangan.
+
+DEFLECTOR_2_NAME      | Perisai Deflektor Kelas II
+DEFLECTOR_2_ITEM      | Kelas II
+DEFLECTOR_2_BRIEF     | Menyerap 2 pukulan
+DEFLECTOR_2_DETAIL    | Menyerap 2 poin kerusakan dari semua serangan.
+
+DEFLECTOR_3_NAME      | Perisai Deflektor Kelas III
+DEFLECTOR_3_ITEM      | Kelas III
+DEFLECTOR_3_BRIEF     | Menyerap 3 pukulan
+DEFLECTOR_3_DETAIL    | Menyerap 3 poin kerusakan dari semua serangan.
+
+DEFLECTOR_4_NAME      | Perisai Deflektor Kelas IV
+DEFLECTOR_4_ITEM      | Kelas IV
+DEFLECTOR_4_BRIEF     | Menyerap 4 pukulan
+DEFLECTOR_4_DETAIL    | Menyerap 4 poin kerusakan dari semua serangan.
+
+DEFLECTOR_5_NAME      | Perisai Deflektor Kelas V
+DEFLECTOR_5_ITEM      | Kelas V
+DEFLECTOR_5_BRIEF     | Menyerap 5 pukulan
+DEFLECTOR_5_DETAIL    | Menyerap 5 poin kerusakan dari semua serangan.
+
+DEFLECTOR_6_NAME      | Perisai Deflektor Kelas VI
+DEFLECTOR_6_ITEM      | Kelas VI
+DEFLECTOR_6_BRIEF     | Menyerap 6 pukulan
+DEFLECTOR_6_DETAIL    | Menyerap 6 poin kerusakan dari semua serangan.
+
+DEFLECTOR_7_NAME      | Perisai Deflektor Kelas VII
+DEFLECTOR_7_ITEM      | Kelas VII
+DEFLECTOR_7_BRIEF     | Menyerap 7 pukulan
+DEFLECTOR_7_DETAIL    | Menyerap 7 poin kerusakan dari semua serangan.
+
+DEFLECTOR_8_NAME      | Perisai Deflektor Kelas IX
+DEFLECTOR_8_ITEM      | Kelas IX
+DEFLECTOR_8_BRIEF     | Menyerap 9 pukulan
+DEFLECTOR_8_DETAIL    | Menyerap 9 poin kerusakan dari semua serangan.
+
+DEFLECTOR_9_NAME      | Perisai Deflektor Kelas XI
+DEFLECTOR_9_ITEM      | Kelas XI
+DEFLECTOR_9_BRIEF     | Menyerap 11 pukulan
+DEFLECTOR_9_DETAIL    | Menyerap 11 poin kerusakan dari semua serangan.
+
+DEFLECTOR_10_NAME     | Perisai Deflektor Kelas XIII
+DEFLECTOR_10_ITEM     | Kelas XIII
+DEFLECTOR_10_BRIEF    | Menyerap 13 pukulan
+DEFLECTOR_10_DETAIL   | Menyerap 13 poin kerusakan dari semua serangan.
+
+DEFLECTOR_11_NAME     | Perisai Deflektor Kelas XV
+DEFLECTOR_11_ITEM     | Kelas XV
+DEFLECTOR_11_BRIEF    | Menyerap 15 pukulan
+DEFLECTOR_11_DETAIL   | Menyerap 15 poin kerusakan dari semua serangan.
+
+
+//
+// Displacement tech
+//
+DISPLACEMENT_0_NAME   | Alat Pembetulan Letak
+DISPLACEMENT_0_BRIEF  | 1/3 dari semua serangan musuh meleset
+DISPLACEMENT_0_DETAIL | Secara acak mengangkat kapal yang berperlengkapan keluar dan masuk ruang normal, membolehkan kapal tersebut untuk menghindari 1/3 dari semua serangan senjata tanpa area.
+
+
+//
+// ECM Jammer tech
+//
+// this is the entry on Ship Design for selecting no ECM Jammer
+ECMJAMMER_0_NAME      | 
+ECMJAMMER_0_ITEM      | 
+ECMJAMMER_0_BRIEF     | Missile Def 0
+ECMJAMMER_0_DETAIL    | 
+
+ECMJAMMER_1_NAME      | ECM Jammer Mark I
+ECMJAMMER_1_ITEM      | Jammer I
+ECMJAMMER_1_BRIEF     | Missile Def 1
+ECMJAMMER_1_DETAIL    | Menambahkan 1 level untuk pertahanan melawan serangan misil musuh.
+
+ECMJAMMER_2_NAME      | ECM Jammer Mark II
+ECMJAMMER_2_ITEM      | Jammer II
+ECMJAMMER_2_BRIEF     | Missile Def 2
+ECMJAMMER_2_DETAIL    | Menambahkan 2 level untuk pertahanan melawan serangan misil musuh.
+
+ECMJAMMER_3_NAME      | ECM Jammer Mark III
+ECMJAMMER_3_ITEM      | Jammer III
+ECMJAMMER_3_BRIEF     | Missile Def 3
+ECMJAMMER_3_DETAIL    | Menambahkan 3 level untuk pertahanan melawan serangan misil musuh.
+
+ECMJAMMER_4_NAME      | ECM Jammer Mark IV
+ECMJAMMER_4_ITEM      | Jammer IV
+ECMJAMMER_4_BRIEF     | Missile Def 4
+ECMJAMMER_4_DETAIL    | Menambahkan 4 level untuk pertahanan melawan serangan misil musuh.
+
+ECMJAMMER_5_NAME      | ECM Jammer Mark V
+ECMJAMMER_5_ITEM      | Jammer V
+ECMJAMMER_5_BRIEF     | Missile Def 5
+ECMJAMMER_5_DETAIL    | Menambahkan 5 level untuk pertahanan melawan serangan misil musuh.
+
+ECMJAMMER_6_NAME      | ECM Jammer Mark VI
+ECMJAMMER_6_ITEM      | Jammer VI
+ECMJAMMER_6_BRIEF     | Missile Def 6
+ECMJAMMER_6_DETAIL    | Menambahkan 6 level untuk pertahanan melawan serangan misil musuh.
+
+ECMJAMMER_7_NAME      | ECM Jammer Mark VII
+ECMJAMMER_7_ITEM      | Jammer VII
+ECMJAMMER_7_BRIEF     | Missile Def 7
+ECMJAMMER_7_DETAIL    | Menambahkan 7 level untuk pertahanan melawan serangan misil musuh.
+
+ECMJAMMER_8_NAME      | ECM Jammer Mark VIII
+ECMJAMMER_8_ITEM      | Jammer VIII
+ECMJAMMER_8_BRIEF     | Missile Def 8
+ECMJAMMER_8_DETAIL    | Menambahkan 8 level untuk pertahanan melawan serangan misil musuh.
+
+ECMJAMMER_9_NAME      | ECM Jammer Mark IX
+ECMJAMMER_9_ITEM      | Jammer IX
+ECMJAMMER_9_BRIEF     | Missile Def 9
+ECMJAMMER_9_DETAIL    |Menambahkan 9 level untuk pertahanan melawan serangan misil musuh.
+
+ECMJAMMER_10_NAME     | ECM Jammer Mark X
+ECMJAMMER_10_ITEM     | Jammer X
+ECMJAMMER_10_BRIEF    | Missile Def 10
+ECMJAMMER_10_DETAIL   | Menambahkan 10 level untuk pertahanan melawan serangan misil musuh.
+
+
+//
+// Ecological Restoration techs
+//
+ECORESTORATION_0_NAME   | Restorasi Ekologis
+ECORESTORATION_0_DETAIL | Menghilangkan 2 unit limbah industri dengan biaya 1 BC.
+
+ECORESTORATION_1_NAME   | Restorasi Ekologis yang Ditingkatkan
+ECORESTORATION_1_DETAIL | Menghilangkan 3 unit limbah industri dengan biaya 1 BC.
+
+ECORESTORATION_2_NAME   | Restorasi Ekologis yang Dikuatkan
+ECORESTORATION_2_DETAIL | Menghilangkan 5 unit limbah industri dengan biaya 1 BC.
+
+ECORESTORATION_3_NAME   | Restorasi Ekologis yang Dimajukan
+ECORESTORATION_3_DETAIL | Menghilangkan 10 unit limbah industri dengan biaya 1 BC.
+
+ECORESTORATION_4_NAME   | Restorasi Ekologis Lengkap
+ECORESTORATION_4_DETAIL | Menghilangkan 20 unit limbah industri dengan biaya 1 BC.
+
+
+//
+// Energy Pulsar techs
+//
+PULSAR_0_NAME     | Pulsar Energi (Pulsar adalah sumber radio berdenyut dari bintang)
+PULSAR_0_BRIEF    | Mengembang untuk mengeluarkan 1-5 pukulan
+PULSAR_0_DETAIL   | Sebuah modifikasi mesin potensial yang menciptakan semburan melingkar mendadak dari suatu energi yang menghantam semua kapal yang menempelinya hingga 5 poin kerusakan +1 per dua kapal.
+
+PULSAR_1_NAME     | Pulsar Ion
+PULSAR_1_BRIEF    | Mengembang untuk mengeluarkan 2-10 pukulan
+PULSAR_1_DETAIL   | Sebuah modifikasi mesin kuat yang mampu menciptakan semburan melingkar dari energi phase yang menghantam semua kapal yang menempelinya hingga 10 poin kerusakan +1 per kapal yang menyerang.
+
+//
+// Engine techs
+//
+ENGINE_0_NAME    | Mesin Retro 
+ENGINE_0_DETAIL  | Menggerakkan kapal pada Lipatan %1, dan memungkinkan manuverabilitas maksimum dari kelas I dalam pertempuran.
+ENGINE_0_ITEM    | Retros
+ENGINE_0_ITEM2   | Kelas 1
+ENGINE_0_BRIEF   | Lipatan 1  Def %1
+ENGINE_0_BRIEF2  | Kecepatan Pertempuran %1
+
+ENGINE_1_NAME    | Mesin Nuklir
+ENGINE_1_DETAIL  | Menggerakkan kapal pada Lipatan %1, dan memungkinkan manuverabilitas maksimum dari kelas II dalam pertempuran.
+ENGINE_1_ITEM    | Nuclear
+ENGINE_1_ITEM2   | Kelas 2
+ENGINE_1_BRIEF   | Lipatan 2  Def %1
+ENGINE_1_BRIEF2  | Kecepatan Pertempuran %1
+
+ENGINE_2_NAME    | SubLight Drives 
+ENGINE_2_DETAIL  | Menggerakkan kapal pada Lipatan %1, dan memungkinkan manuverabilitas maksimum dari kelas III dalam pertempuran.
+ENGINE_2_ITEM    | SubLight
+ENGINE_2_ITEM2   | Kelas 3
+ENGINE_2_BRIEF   | Lipatan 3  Def %1
+ENGINE_2_BRIEF2  | Kecepatan Pertempuran %1
+
+ENGINE_3_NAME    | Fusion Drives 
+ENGINE_3_DETAIL  | Menggerakkan kapal pada Lipatan %1, dan memungkinkan manuverabilitas maksimum dari kelas IV dalam pertempuran.
+ENGINE_3_ITEM    | Fusion
+ENGINE_3_ITEM2   | Kelas 4
+ENGINE_3_BRIEF   | Lipatan 4  Def %1
+ENGINE_3_BRIEF2  | Kecepatan Pertempuran %1
+
+ENGINE_4_NAME    | Mesin Impuls
+ENGINE_4_DETAIL  | Menggerakkan kapal pada Lipatan %1, dan memungkinkan manuverabilitas maksimum dari kelas V dalam pertempuran.
+ENGINE_4_ITEM    | Impulse
+ENGINE_4_ITEM2   | Kelas 5
+ENGINE_4_BRIEF   | Lipatan 5  Def %1
+ENGINE_4_BRIEF2  | Kecepatan Pertempuran %1
+
+ENGINE_5_NAME    | Ion Drives 
+ENGINE_5_DETAIL  | Menggerakkan kapal pada Lipatan %1, dan memungkinkan manuverabilitas maksimum dari kelas VI dalam pertempuran.
+ENGINE_5_ITEM    | Ion
+ENGINE_5_ITEM2   | Kelas 6
+ENGINE_5_BRIEF   | Lipatan 6  Def %1
+ENGINE_5_BRIEF2  | Kecepatan Pertempuran %1
+
+ENGINE_6_NAME    | Mesin Anti Materi
+ENGINE_6_DETAIL  | Menggerakkan kapal pada Lipatan %1, dan memungkinkan manuverabilitas maksimum dari kelas VII dalam pertempuran.
+ENGINE_6_ITEM    | Anti-Matter
+ENGINE_6_ITEM2   | Kelas 7
+ENGINE_6_BRIEF   | Lipatan 7  Def %1
+ENGINE_6_BRIEF2  | Kecepatan Pertempuran %1
+
+ENGINE_7_NAME    | Inter-Phased Drives
+ENGINE_7_DETAIL  | Menggerakkan kapal pada Lipatan %1, dan memungkinkan manuverabilitas maksimum dari kelas VIII dalam pertempuran.
+ENGINE_7_ITEM    | Inter-Phased
+ENGINE_7_ITEM2   | Kelas 8
+ENGINE_7_BRIEF   | Lipatan 8  Def %1
+ENGINE_7_BRIEF2  | Kecepatan Pertempuran %1
+
+ENGINE_8_NAME    | Hyper Drives
+ENGINE_8_DETAIL  | Menggerakkan kapal pada Lipatan %1, dan memungkinkan manuverabilitas maksimum dari kelas IX dalam pertempuran.
+ENGINE_8_ITEM    | Hyper
+ENGINE_8_ITEM2   | Kelas 9
+ENGINE_8_BRIEF   | Lipatan 9  Def %1
+ENGINE_8_BRIEF2  | Kecepatan Pertempuran %1
+
+
+//
+// Fuel Range techs
+//
+FUELRANGE_0_NAME   | Sel Bahan Bakar
+FUELRANGE_0_DETAIL | Penyimpanan bahan bakar memungkinkan kapal untuk bergerak hingga sejauh %1 tahun cahaya dari planet koloni.
+
+FUELRANGE_1_NAME   | Sel Bahan Bakar Hydrogen
+FUELRANGE_1_DETAIL | Penyimpanan bahan bakar memungkinkan kapal untuk bergerak hingga sejauh %1 tahun cahaya dari planet koloni.
+
+FUELRANGE_2_NAME   | Sel Bahan Bakar Deuterium
+FUELRANGE_2_DETAIL | Penyimpanan bahan bakar memungkinkan kapal untuk bergerak hingga sejauh %1 tahun cahaya dari planet koloni.
+
+FUELRANGE_3_NAME   | Sel Bahan Bakar Irridium
+FUELRANGE_3_DETAIL | Penyimpanan bahan bakar memungkinkan kapal untuk bergerak hingga sejauh %1 tahun cahaya dari planet koloni.
+
+FUELRANGE_4_NAME   | Kristal Dotomite
+FUELRANGE_4_DETAIL | Penyimpanan bahan bakar memungkinkan kapal untuk bergerak hingga sejauh %1 tahun cahaya dari planet koloni.
+
+FUELRANGE_5_NAME   | Sel Bahan Bakar Uridium
+FUELRANGE_5_DETAIL | Penyimpanan bahan bakar memungkinkan kapal untuk bergerak hingga sejauh %1 tahun cahaya dari planet koloni.
+
+FUELRANGE_6_NAME   | Sel Bahan Bakar Reajax II
+FUELRANGE_6_DETAIL | Penyimpanan bahan bakar memungkinkan kapal untuk bergerak hingga sejauh %1 tahun cahaya dari planet koloni.
+
+FUELRANGE_7_NAME   | Kristal Trilithium 
+FUELRANGE_7_DETAIL | Penyimpanan bahan bakar memungkinkan kapal untuk bergerak hingga sejauh %1 tahun cahaya dari planet koloni.
+
+FUELRANGE_8_NAME   | Sel Thorium
+FUELRANGE_8_DETAIL | Penyimpanan bahan bakar memungkinkan kapal untuk bergerak pada jarak sejauh apapun dari planet koloni.
+
+
+//
+// Future Computer techs
+//
+FUTURECOMP_0_NAME    | Komputer Masa Depan I
+FUTURECOMP_0_DETAIL  | Peningkatan Umum dalam Teknologi Komputer.
+
+FUTURECOMP_1_NAME    | Komputer Masa Depan II
+FUTURECOMP_1_DETAIL  | Peningkatan Umum dalam Teknologi Komputer.
+
+FUTURECOMP_2_NAME    | Komputer Masa Depan III
+FUTURECOMP_2_DETAIL  | Peningkatan Umum dalam Teknologi Komputer.
+
+FUTURECOMP_3_NAME    | Komputer Masa Depan IV
+FUTURECOMP_3_DETAIL  | Peningkatan Umum dalam Teknologi Komputer.
+
+FUTURECOMP_4_NAME    | Komputer Masa Depan V
+FUTURECOMP_4_DETAIL  | Peningkatan Umum dalam Teknologi Komputer.
+
+FUTURECOMP_5_NAME    | Komputer Masa Depan VI
+FUTURECOMP_5_DETAIL  | Peningkatan Umum dalam Teknologi Komputer.
+
+FUTURECOMP_6_NAME    | Komputer Masa Depan VII
+FUTURECOMP_6_DETAIL  | Peningkatan Umum dalam Teknologi Komputer.
+
+FUTURECOMP_7_NAME    | Komputer Masa Depan VIII
+FUTURECOMP_7_DETAIL  | Peningkatan Umum dalam Teknologi Komputer.
+
+FUTURECOMP_8_NAME    | Komputer Masa Depan IX
+FUTURECOMP_8_DETAIL  | Peningkatan Umum dalam Teknologi Komputer.
+
+FUTURECOMP_9_NAME    | Komputer Masa Depan X
+FUTURECOMP_9_DETAIL  | Peningkatan Umum dalam Teknologi Komputer.
+
+
+//
+// Future Construction techs
+//
+FUTURECONST_0_NAME    | Konstruksi Masa Depan I
+FUTURECONST_0_DETAIL  | Peningkatan Umum dalam Teknologi Konstruksi.
+
+FUTURECONST_1_NAME    | Konstruksi Masa Depan II
+FUTURECONST_1_DETAIL  | Peningkatan Umum dalam Teknologi Konstruksi.
+
+FUTURECONST_2_NAME    | Konstruksi Masa Depan III
+FUTURECONST_2_DETAIL  | Peningkatan Umum dalam Teknologi Konstruksi.
+
+FUTURECONST_3_NAME    | Konstruksi Masa Depan IV
+FUTURECONST_3_DETAIL  | Peningkatan Umum dalam Teknologi Konstruksi.
+
+FUTURECONST_4_NAME    | Konstruksi Masa Depan V
+FUTURECONST_4_DETAIL  | Peningkatan Umum dalam Teknologi Konstruksi.
+
+FUTURECONST_5_NAME    | Konstruksi Masa Depan VI
+FUTURECONST_5_DETAIL  | Peningkatan Umum dalam Teknologi Konstruksi.
+
+FUTURECONST_6_NAME    | Konstruksi Masa Depan VII
+FUTURECONST_6_DETAIL  | Peningkatan Umum dalam Teknologi Konstruksi.
+
+FUTURECONST_7_NAME    | Konstruksi Masa Depan VIII
+FUTURECONST_7_DETAIL  | Peningkatan Umum dalam Teknologi Konstruksi.
+
+FUTURECONST_8_NAME    | Konstruksi Masa Depan IX
+FUTURECONST_8_DETAIL  | Peningkatan Umum dalam Teknologi Konstruksi.
+
+FUTURECONST_9_NAME    | Konstruksi Masa Depan X
+FUTURECONST_9_DETAIL  | Peningkatan Umum dalam Teknologi Konstruksi.
+
+
+//
+// Future Force Field techs
+//
+FUTUREFORCE_0_NAME    | Lapangan Angkatan Bersenjata Masa Depan I
+FUTUREFORCE_0_DETAIL  | Peningkatan Umum dalam Teknologi Lapangan Angkatan Bersenjata.
+
+FUTUREFORCE_1_NAME    | Lapangan Angkatan Bersenjata Masa Depan II
+FUTUREFORCE_1_DETAIL  | Peningkatan Umum dalam Teknologi Lapangan Angkatan Bersenjata.
+
+FUTUREFORCE_2_NAME    | Lapangan Angkatan Bersenjata Masa Depan III
+FUTUREFORCE_2_DETAIL  | Peningkatan Umum dalam Teknologi Lapangan Angkatan Bersenjata.
+
+FUTUREFORCE_3_NAME    | Lapangan Angkatan Bersenjata Masa Depan IV
+FUTUREFORCE_3_DETAIL  | Peningkatan Umum dalam Teknologi Lapangan Angkatan Bersenjata.
+
+FUTUREFORCE_4_NAME    | Lapangan Angkatan Bersenjata Masa Depan V
+FUTUREFORCE_4_DETAIL  | Peningkatan Umum dalam Teknologi Lapangan Angkatan Bersenjata.
+
+FUTUREFORCE_5_NAME    | Lapangan Angkatan Bersenjata Masa Depan VI
+FUTUREFORCE_5_DETAIL  | Peningkatan Umum dalam Teknologi Lapangan Angkatan Bersenjata.
+
+FUTUREFORCE_6_NAME    | Lapangan Angkatan Bersenjata Masa Depan VII
+FUTUREFORCE_6_DETAIL  | Peningkatan Umum dalam Teknologi Lapangan Angkatan Bersenjata.
+
+FUTUREFORCE_7_NAME    | Lapangan Angkatan Bersenjata Masa Depan VIII
+FUTUREFORCE_7_DETAIL  | Peningkatan Umum dalam Teknologi Lapangan Angkatan Bersenjata.
+
+FUTUREFORCE_8_NAME    | Lapangan Angkatan Bersenjata Masa Depan IX
+FUTUREFORCE_8_DETAIL  | Peningkatan Umum dalam Teknologi Lapangan Angkatan Bersenjata.
+
+FUTUREFORCE_9_NAME    | Lapangan Angkatan Bersenjata Masa Depan X
+FUTUREFORCE_9_DETAIL  | Peningkatan Umum dalam Teknologi Lapangan Angkatan Bersenjata.
+
+
+//
+// Future Planetology techs
+//
+FUTUREPLANET_0_NAME    | Planetologi Masa Depan I
+FUTUREPLANET_0_DETAIL  | Peningkatan Umum dalam Teknologi Planetologi.
+
+FUTUREPLANET_1_NAME    | Planetologi Masa Depan II
+FUTUREPLANET_1_DETAIL  | Peningkatan Umum dalam Teknologi Planetologi.
+
+FUTUREPLANET_2_NAME    | Planetologi Masa Depan III
+FUTUREPLANET_2_DETAIL  | Peningkatan Umum dalam Teknologi Planetologi.
+
+FUTUREPLANET_3_NAME    | Planetologi Masa Depan IV
+FUTUREPLANET_3_DETAIL  | Peningkatan Umum dalam Teknologi Planetologi.
+
+FUTUREPLANET_4_NAME    | Planetologi Masa Depan V
+FUTUREPLANET_4_DETAIL  | Peningkatan Umum dalam Teknologi Planetologi.
+
+FUTUREPLANET_5_NAME    | Planetologi Masa Depan VI
+FUTUREPLANET_5_DETAIL  | Peningkatan Umum dalam Teknologi Planetologi.
+
+FUTUREPLANET_6_NAME    | Planetologi Masa Depan VII
+FUTUREPLANET_6_DETAIL  | Peningkatan Umum dalam Teknologi Planetologi.
+
+FUTUREPLANET_7_NAME    | Planetologi Masa Depan VIII
+FUTUREPLANET_7_DETAIL  | Peningkatan Umum dalam Teknologi Planetologi.
+
+FUTUREPLANET_8_NAME    | Planetologi Masa Depan IX
+FUTUREPLANET_8_DETAIL  | Peningkatan Umum dalam Teknologi Planetologi.
+
+FUTUREPLANET_9_NAME    | Planetologi Masa Depan X
+FUTUREPLANET_9_DETAIL  | Peningkatan Umum dalam Teknologi Planetologi.
+
+
+//
+// Future Propulsion techs
+//
+FUTUREPROP_0_NAME    | Lontaran Masa Depan I
+FUTUREPROP_0_DETAIL  | Peningkatan Umum dalam Teknologi Lontaran.
+
+FUTUREPROP_1_NAME    | Lontaran Masa Depan II
+FUTUREPROP_1_DETAIL  | Peningkatan Umum dalam Teknologi Lontaran.
+
+FUTUREPROP_2_NAME    | Lontaran Masa Depan III
+FUTUREPROP_2_DETAIL  | Peningkatan Umum dalam Teknologi Lontaran.
+
+FUTUREPROP_3_NAME    | Lontaran Masa Depan IV
+FUTUREPROP_3_DETAIL  | Peningkatan Umum dalam Teknologi Lontaran.
+
+FUTUREPROP_4_NAME    | Lontaran Masa Depan V
+FUTUREPROP_4_DETAIL  | Peningkatan Umum dalam Teknologi Lontaran.
+
+FUTUREPROP_5_NAME    | Lontaran Masa Depan VI
+FUTUREPROP_5_DETAIL  | Peningkatan Umum dalam Teknologi Lontaran.
+
+FUTUREPROP_6_NAME    | Lontaran Masa Depan VII
+FUTUREPROP_6_DETAIL  | Peningkatan Umum dalam Teknologi Lontaran.
+
+FUTUREPROP_7_NAME    | Lontaran Masa Depan VIII
+FUTUREPROP_7_DETAIL  | Peningkatan Umum dalam Teknologi Lontaran.
+
+FUTUREPROP_8_NAME    | Lontaran Masa Depan IX
+FUTUREPROP_8_DETAIL  | Peningkatan Umum dalam Teknologi Lontaran.
+
+FUTUREPROP_9_NAME    | Lontaran Masa Depan X
+FUTUREPROP_9_DETAIL  | Peningkatan Umum dalam Teknologi Lontaran.
+
+
+//
+// Future Weapon techs
+//
+FUTUREWEAPON_0_NAME    | Senjata Masa Depan I
+FUTUREWEAPON_0_DETAIL  | Peningkatan Umum dalam Teknologi Senjata.
+
+FUTUREWEAPON_1_NAME    | Senjata Masa Depan II
+FUTUREWEAPON_1_DETAIL  | Peningkatan Umum dalam Teknologi Senjata.
+
+FUTUREWEAPON_2_NAME    | Senjata Masa Depan III
+FUTUREWEAPON_2_DETAIL  | Peningkatan Umum dalam Teknologi Senjata.
+
+FUTUREWEAPON_3_NAME    | Senjata Masa Depan IV
+FUTUREWEAPON_3_DETAIL  | Peningkatan Umum dalam Teknologi Senjata.
+
+FUTUREWEAPON_4_NAME    | Senjata Masa Depan V
+FUTUREWEAPON_4_DETAIL  | Peningkatan Umum dalam Teknologi Senjata.
+
+FUTUREWEAPON_5_NAME    | Senjata Masa Depan VI
+FUTUREWEAPON_5_DETAIL  | Peningkatan Umum dalam Teknologi Senjata.
+
+FUTUREWEAPON_6_NAME    | Senjata Masa Depan VII
+FUTUREWEAPON_6_DETAIL  | Peningkatan Umum dalam Teknologi Senjata.
+
+FUTUREWEAPON_7_NAME    | Senjata Masa Depan VIII
+FUTUREWEAPON_7_DETAIL  | Peningkatan Umum dalam Teknologi Senjata.
+
+FUTUREWEAPON_8_NAME    | Senjata Masa Depan IX
+FUTUREWEAPON_8_DETAIL  | Peningkatan Umum dalam Teknologi Senjata.
+
+FUTUREWEAPON_9_NAME    | Senjata Masa Depan X
+FUTUREWEAPON_9_DETAIL  | Peningkatan Umum dalam Teknologi Senjata.
+
+
+//
+// Hand Weapon techs
+//
+HANDWEAPON_0_NAME      | 
+HANDWEAPON_0_DETAIL    | 
+
+HANDWEAPON_1_NAME      | Laser Tangan
+HANDWEAPON_1_DETAIL    | Laser personal yang menambahkan 5 poin terhadap gerakan pertempuran daratmu.
+
+HANDWEAPON_2_NAME      | Senapan Ion
+HANDWEAPON_2_DETAIL    | Senjata sinar personal yang menambah 10 poin terhadap serangan daratmu.
+
+HANDWEAPON_3_NAME      | Senapan Fusi
+HANDWEAPON_3_DETAIL    | Senjata sinar yang kurang akurat tetapi sangat kuat yang menambah 20 poin terhadap gerakan pertempuran daratmu.
+
+HANDWEAPON_4_NAME      | Hand Phasor
+HANDWEAPON_4_DETAIL    | Senjata energi pegangan tangan yang poten, yang bisa mengurangi komponen atom musuh. Menambahkan 25 poin terhadap gerakan pertempuran daratmu.
+
+HANDWEAPON_5_NAME      | Senapan Plasma
+HANDWEAPON_5_DETAIL    | Senjata pegangan tangan yang paling menyakitkan yang pernah ada. Menambahkan 30 poin teradap serangan daratmu.
+
+
+//
+// Hyperspace Communication tech
+//
+HYPERSPACE_0_NAME      | Komunikasi Hiper Ruang Angkasa
+HYPERSPACE_0_DETAIL    | Memungkinkanmu berkomunikasi dengan kapal dalam hiper ruang angkasa, dan mengubah tujuan mereka saat mereka berjalan.
+
+
+//
+// Improved Industrial techs
+//
+IMPRINDUSTRY_0_NAME     | Peningkatan Teknologi Industri 9
+IMPRINDUSTRY_0_DETAIL   | Mengurangi biaya konstruksi pabrik hingga 9 BC.
+
+IMPRINDUSTRY_1_NAME     | Peningkatan Teknologi Industri 8
+IMPRINDUSTRY_1_DETAIL   | Mengurangi biaya konstruksi pabrik hingga 8 BC.
+
+IMPRINDUSTRY_2_NAME     | Peningkatan Teknologi Industri 7
+IMPRINDUSTRY_2_DETAIL   | Mengurangi biaya konstruksi pabrik hingga 7 BC.
+
+IMPRINDUSTRY_3_NAME     | Peningkatan Teknologi Industri 6
+IMPRINDUSTRY_3_DETAIL   | Mengurangi biaya konstruksi pabrik hingga 6 BC.
+
+IMPRINDUSTRY_4_NAME     | Peningkatan Teknologi Industri 5
+IMPRINDUSTRY_4_DETAIL   | Mengurangi biaya konstruksi pabrik hingga 5 BC.
+
+IMPRINDUSTRY_5_NAME     | Peningkatan Teknologi Industri 4
+IMPRINDUSTRY_5_DETAIL   | Mengurangi biaya konstruksi pabrik hingga 4 BC.
+
+IMPRINDUSTRY_6_NAME     | Peningkatan Teknologi Industri 3
+IMPRINDUSTRY_6_DETAIL   | Mengurangi biaya konstruksi pabrik hingga 3 BC.
+
+IMPRINDUSTRY_7_NAME     | Peningkatan Teknologi Industri 2
+IMPRINDUSTRY_7_DETAIL   | Mengurangi biaya konstruksi pabrik hingga 2 BC.
+
+
+//
+// Improved Terraforming techs
+//
+IMPRTFORM_0_NAME        | Peningkatan Teraform atau pembentukan planet seperti bumi +10
+IMPRTFORM_0_DETAIL      | Meningkatkan kapasitas populasi planet sebanyak 10M dengan biaya 5 BC per juta makhluk.
+
+IMPRTFORM_1_NAME        | Peningkatan Terraforming +20
+IMPRTFORM_1_DETAIL      | Meningkatkan kapasitas populasi planet sebanyak 20M dengan biaya 5 BC per juta makhluk.
+
+IMPRTFORM_2_NAME        | Peningkatan Terraforming +30
+IMPRTFORM_2_DETAIL      | Meningkatkan kapasitas populasi planet sebanyak 30M dengan biaya 4 BC per juta makhluk.
+
+IMPRTFORM_3_NAME        | Peningkatan Terraforming +40
+IMPRTFORM_3_DETAIL      | Meningkatkan kapasitas populasi planet sebanyak 40M dengan biaya 4 BC per juta makhluk.
+
+IMPRTFORM_4_NAME        | Peningkatan Terraforming +50
+IMPRTFORM_4_DETAIL      | Meningkatkan kapasitas populasi planet sebanyak 50M dengan biaya 3 BC per juta makhluk.
+
+IMPRTFORM_5_NAME        | Peningkatan Terraforming +60
+IMPRTFORM_5_DETAIL      | Meningkatkan kapasitas populasi planet sebanyak 60M dengan biaya 3 BC per juta makhluk.
+
+IMPRTFORM_6_NAME        | Peningkatan Terraforming +80
+IMPRTFORM_6_DETAIL      | Meningkatkan kapasitas populasi planet sebanyak 80M dengan biaya 2 BC per juta makhluk.
+
+IMPRTFORM_7_NAME        | Peningkatan Terraforming +100
+IMPRTFORM_7_DETAIL      | Meningkatkan kapasitas populasi planet sebanyak 100M dengan biaya 2 BC per juta makhluk.
+
+IMPRTFORM_8_NAME        | Terraforming Lengkap
+IMPRTFORM_8_DETAIL      | Meningkatkan kapasitas populasi planet sebanyak 120M dengan biaya 2 BC per juta makhluk.
+
+
+//
+// Industrial Waste techs
+//
+INDWASTE_0_NAME         | Penurunan Limbah Industri 80%
+INDWASTE_0_DETAIL       | Menurunkan level polusi pabrik hingga 80% dari angka normal.
+
+INDWASTE_1_NAME         | Penurunan Limbah Industri 60%
+INDWASTE_1_DETAIL       | Menurunkan level polusi pabrik hingga 60% dari angka normal.
+
+INDWASTE_2_NAME         | Penurunan Limbah Industri 40%
+INDWASTE_2_DETAIL       | Menurunkan level polusi pabrik hingga 40% dari angka normal.
+
+INDWASTE_3_NAME         | Penurunan Limbah Industri 20%
+INDWASTE_3_DETAIL       | Menurunkan level polusi pabrik hingga 20% dari angka normal.
+
+INDWASTE_4_NAME         | Penghilangan Limbah Industri
+INDWASTE_4_DETAIL       | Pabrik tidak lagi mencemari lingkungan.
+
+
+//
+// Missile Defense techs
+//
+MISSDEF_0_NAME      | Roket Anti-misil
+MISSDEF_0_BRIEF     | 40% kemungkinan misil dihancurkan
+MISSDEF_0_DETAIL    | Roket trans-cahaya yang mampu menghancurkan misil energi yang dilontarkan musuh sebanyak 40% setiap kalinya, -1% per level teknologi misil.
+
+MISSDEF_1_NAME      | Perisai Zyro
+MISSDEF_1_BRIEF     | 75% kemungkinan misil dihancurkan
+MISSDEF_1_DETAIL    | Bidang energi yang menghancurkan misil energi dan torpedo yang dilontarkan musuh sebanyak 75% setiap kalinya, -1% per level teknologi misil.
+
+MISSDEF_2_NAME      | Perisai Kilat
+MISSDEF_2_BRIEF     | 100% kemungkinan misil dihancurkan
+MISSDEF_2_DETAIL    | Bidang energi yang menghancurkan misil energi dan torpedo yang dilontarkan musuh sebanyak 100% setiap kalinya, -1% per level teknologi misil.
+
+
+//
+// Missile Weapon techs
+//
+MISSWPN_0_NAME      | Misil Nuklir
+MISSWPN_0_BRIEF     | 2 tembakan, +1 kecepatan
+MISSWPN_0_BRIEF2    | 5 tembakan
+MISSWPN_0_DETAIL    | Misil yang berujung nuklir yang meledak untuk 4 poin kerusakan dan bergerak pada kecepatan 2.
+
+MISSWPN_1_NAME      | Roket Hyper-V
+MISSWPN_1_BRIEF     | 2 tembakan, +1 speed
+MISSWPN_1_BRIEF2    | 5 tembakan
+MISSWPN_1_DETAIL    | Misil gerak cepat yang meledak untuk 6 poin kerusakan dan bergerak pada kecepatan 2,5.
+
+MISSWPN_2_NAME      | Roket Hyper-X
+MISSWPN_2_BRIEF     | 2 tembakan, +1 untuk memukul
+MISSWPN_2_BRIEF2    | 5 tembakan, +1 untuk memukul
+MISSWPN_2_DETAIL    | Misil yang dilengkapi dengan ujung berenergi tinggi yang meledak untuk 8 poin kerusakan, bergerak pada kecepatan 2,5 dan dikontrol oleh komputer penarget level +1.
+
+MISSWPN_3_NAME      | Roket Penyebar Tentara V
+MISSWPN_3_BRIEF     | 2 tembakan, +1 speed
+MISSWPN_3_BRIEF2    | 5 tembakan
+MISSWPN_3_DETAIL    | Versi MIRV dari Roket Hyper-V, membelah menjadi lima ujung bom yang setiap satunya meledak untuk 6 poin kerusakan dan bergerak pada kecepatan 2,5.
+
+MISSWPN_4_NAME      | Misil Merculite
+MISSWPN_4_BRIEF     | 2 tembakan, +2 untuk memukul
+MISSWPN_4_BRIEF2    | 5 tembakan, +2 untuk memukul
+MISSWPN_4_DETAIL    | Misil yang sulit dilumpuhkan, vergerak cepat, dan meledak untuk 10 poin kerusakan, bergerak pada kecepatan 3, dan dikontrol ole komputer penarget level +2.
+
+MISSWPN_5_NAME      | Misil Stinger
+MISSWPN_5_BRIEF     | 2 tembakan, +3 untuk memukul
+MISSWPN_5_BRIEF2    | 5 tembakan, +3 untuk memukul
+MISSWPN_5_DETAIL    | Misil yang lambat tetapi hiper-akurat untuk melakukan 15 poin kerusakan, bergerak pada kecepatan 3.5, dan dikontrol oleh komputer penarget +3 yang canggih.
+
+MISSWPN_6_NAME      | Misil Penyebar Tentara VII
+MISSWPN_6_BRIEF     | 2 tembakan, MIRVS sampai 7
+MISSWPN_6_BRIEF2    | 5 tembakan, MIRVS sampai 7
+MISSWPN_6_DETAIL    | Versi MIRV dari Roket Hyper-X, membelah menjadi 7 ujung bom yang setiap satunya meledak untuk 10 poin kerusakan, bergerak pada kecepatan 3, dan diarahkan oleh komputer penarget +2.
+
+MISSWPN_7_NAME      | Misil Pulson
+MISSWPN_7_BRIEF     | 2 tembakan, +4 untuk memukul
+MISSWPN_7_BRIEF2    | 5 tembakan, +4 untuk memukul
+MISSWPN_7_DETAIL    | Misil ampuh yang dilengkapi dengan ujung anti materi yang meledak untuk 20 poin kerusakan, bergerak pada kecepatan 4, dan dikontrol oleh komputer penarget +4.
+
+MISSWPN_8_NAME      | Misil Hercular
+MISSWPN_8_BRIEF     | 2 tembakan, +5 untuk memukul
+MISSWPN_8_BRIEF2    | 5 tembakan, +5 untuk memukul
+MISSWPN_8_DETAIL    | Misil sangat canggih yang meledak untuk 25 poin kerusakan. Misil Hercular ini bergerak pada kecepatan 4,5 dan dikontrol oleh komputer penarget +5.
+
+MISSWPN_9_NAME      | Misil Zeon
+MISSWPN_9_BRIEF     | 2 tembakan, +6 untuk memukul
+MISSWPN_9_BRIEF2    | 5 tembakan, +6 untuk memukul
+MISSWPN_9_DETAIL    | Misil paling canggih yang pernah ada. Mampu memukul kapal musuh untuk 30 poin kerusakan dan bergerak pada kecepatan 5. Misil ini diarahkan oleh komputer penarget +6.
+
+MISSWPN_10_NAME      | Misil Penyebar Tentara X 
+MISSWPN_10_BRIEF     | 2 tembakan, MIRVS sampai 10
+MISSWPN_10_BRIEF2    | 5 tembakan, MIRVS sampai 10
+MISSWPN_10_DETAIL    | Versi MIRV dari Misil Stinger, membelah menjadi 10 ujung bom terpisah yang setiap satunya meledak untuk 15 poin kerusakan, bergerak pada kecepatan 3,5 dan diarahkan oleh komputer penarget +3.
+
+
+//
+// Personal Shield techs for ground combat
+//
+// default "no shield" tech that each player starts with
+PERSSHIELD_0_NAME     | 
+PERSSHIELD_0_DETAIL   | 
+
+PERSSHIELD_1_NAME     | Perisai Deflektor Personal
+PERSSHIELD_1_DETAIL   | Melindungi tentara darat individual dengan lapangan angkatan bersenjata yang terarah. Menambahkan +10 untuk semua pertempuran darat.
+
+PERSSHIELD_2_NAME     | Perisai Penyerap Personal
+PERSSHIELD_2_DETAIL   | Menyerap kerusakan dari semua senjata tangan. Menambahkan +20 untuk semua pertempuran darat.
+
+PERSSHIELD_3_NAME     | Perisai Rintangan Personal
+PERSSHIELD_3_DETAIL   | Sepenuhnya melindungi prajurit dalam lapangan angkatan bersenjata yang hampir tidak dapat ditembus. Menambahkan +30 untuk semua gerakan pertempuran darat.
+
+
+//
+// Planetary Shield techs 
+//
+PLANETSHIELD_0_NAME    | Lapisan Pelindung Planet Kelas V
+PLANETSHIELD_0_DETAIL  | Menyerap 5 poin kerusakan dari semua serangan terhadap permukaan planet, menambahkan kepada lapisan pelindung deflektor basis misil.
+
+PLANETSHIELD_1_NAME    | Lapisan Pelindung Planet Kelas X
+PLANETSHIELD_1_DETAIL  | Menyerap 10 poin kerusakan dari semua serangan terhadap permukaan planet, menambahkan kepada lapisan pelindung deflektor basis misil.
+
+PLANETSHIELD_2_NAME    | Lapisan Pelindung Planet Kelas XV
+PLANETSHIELD_2_DETAIL  | Menyerap 15 poin kerusakan dari semua serangan terhadap permukaan planet, menambahkan kepada lapisan pelindung deflektor basis misil.
+
+PLANETSHIELD_3_NAME    | Lapisan Pelindung Planet Kelas XX
+PLANETSHIELD_3_DETAIL  | Menyerap 20 poin kerusakan dari semua serangan terhadap permukaan planet, menambahkan kepada lapisan pelindung deflektor basis misil.
+
+
+//
+// Repulsor tech 
+//
+REPULSOR_0_NAME    | Penolak Sinar
+REPULSOR_0_BRIEF   | Menggerakkan kapal musuh mundur 1 ruang
+REPULSOR_0_DETAIL  | Menolak kapal musuh mundur satu ruang lebih jauh dari kapal pertahanan. Senjata spesial ini memiliki suatu jangkauan satu-ruang.
+
+
+//
+// Reserve Fuel tech 
+//
+RSRVFUEL_0_NAME    | Tangki Penyimpanan Bahan Bakar
+RSRVFUEL_0_BRIEF   | Menambah jangkauan kapal sebanyak %1 tahun cahaya
+RSRVFUEL_0_DETAIL  | Tangki Penyimpanan Bahan Bakar meningkatkan jangkauan kapal.
+
+
+//
+// Robotic Controls techs 
+//
+ROBOTCTRL_0_NAME     | Peningkatan Kontrol Robotik III
+ROBOTCTRL_0_DETAIL   | Memungkinkan 3 pabrik dioperasikan per populasi. Biaya perbaikan untuk peningkatan ini adalah setengah biaya standar setiap pabrik.
+
+ROBOTCTRL_1_NAME     | Peningkatan Kontrol Robotik IV
+ROBOTCTRL_1_DETAIL   | Memungkinkan 4 pabrik dioperasikan per populasi. Biaya perbaikan untuk peningkatan ini adalah biaya standar setiap pabrik.
+
+ROBOTCTRL_2_NAME     | Peningkatan Kontrol Robotik V
+ROBOTCTRL_2_DETAIL   | Memungkinkan 5 pabrik dioperasikan per populasi. Biaya perbaikan untuk peningkatan ini adalah 1,5 kali biaya standar setiap pabrik.
+
+ROBOTCTRL_3_NAME     | Peningkatan Kontrol Robotik VI
+ROBOTCTRL_3_DETAIL   | Memungkinkan 6 pabrik dioperasikan per populasi. Biaya perbaikan untuk peningkatan ini adalah dua kali biaya standar setiap pabrik.
+
+ROBOTCTRL_4_NAME     | Peningkatan Kontrol Robotik VII
+ROBOTCTRL_4_DETAIL   | Memungkinkan 7 pabrik dioperasikan per populasi. Biaya perbaikan untuk peningkatan ini adalah 2.5 kali biaya standar setiap pabrik.
+
+
+//
+// Scanner techs 
+//
+SCANNER_0_NAME       | Pemindai Pertempuran
+SCANNER_0_BRIEF      | Memindai kapal musuh dalam pertempuran
+SCANNER_0_DETAIL     | Mengungkap spesifikasi teknis dari kendaraan musuh di suatu pertempuran.
+
+SCANNER_1_NAME       | Pemindai Ruang Angkasa Dalam
+SCANNER_1_BRIEF      | Mendeteksi kapal hingga sejauh 5 tahun cahaya
+SCANNER_1_DETAIL     | Mendeteksi kapal musuh hingga sejauh 5 tahun cahaya dari kolonimu dan sejauh 1 tahun cahaya dari kapalmu.
+
+SCANNER_2_NAME       | Pemindai Ruang Angkasa yang Telah Diperbaiki
+SCANNER_2_BRIEF      | Mendeteksi kapal dan tujuan hingga sejauh 7 tahun cahaya
+SCANNER_2_DETAIL     | Mendeteksi kapal musuh hingga sejauh 7 tahun cahaya dari kolonimu dan sejauh 2 tahun cahaya dari kapalmu. Tujuan musuh bisa diketahui pasti.
+
+SCANNER_3_NAME       | Pemindai Ruang Angkasa Canggih
+SCANNER_3_BRIEF      | Memungkinkan eksplorasi planet hingga sejauh 9 tahun cahaya 
+SCANNER_3_DETAIL     | Memungkinkan eksplorasi planet dari basis koloni hingga sejauh 9 tahun cahaya dan mendeteksi kapal musuh hingga sejauh 3 tahun cahaya dari kapalmu.
+
+
+//
+// Ship Inertial techs 
+//
+SHIPINERTIAL_0_NAME     | Stabiliser Tidak Bergerak
+SHIPINERTIAL_0_BRIEF    | Menambahkan +2 untuk kemampuan manuver
+SHIPINERTIAL_0_DETAIL   | Mengurangi inersia kapal, menambah 2 kelas kemampuan manuver dalam pertempuran (+2 pertahanan dan +1 kecepatan pertempuran).
+
+SHIPINERTIAL_1_NAME     | Nulifier Tidak Bergerak
+SHIPINERTIAL_1_BRIEF    | Menambahkan +4 untuk kemampuan manuver
+SHIPINERTIAL_1_DETAIL   | Meniadakan inersia kapal, menambah 4 kelas kemampuan manuver dalam pertempuran. Juga mengurangi efek serangan Lubang Hitam sebanyak -30%.
+
+
+//
+// Ship Inertial techs 
+//
+SHIPNULLIFIER_0_NAME     | Nulifier Teknologi
+SHIPNULLIFIER_0_BRIEF    | Menghancurkan komputer musuh
+SHIPNULLIFIER_0_DETAIL   | Mencacah ECM dan Komputer Pertempuran musuh, mengurangi level mereka sebanyak 2-6 levels per serangan. Jangkauannya melebihi kebanyakan senjata kapal.
+
+SHIPNULLIFIER_1_NAME     | Penghilang Lipatan
+SHIPNULLIFIER_1_BRIEF    | Mengurangi kecepatan kapal musuh
+SHIPNULLIFIER_1_DETAIL   | Penghilang Lipatan adalah senjata jarak jauh yang mengganggu mesin kapal bintang milik musuh, mengurangi kecepatan mereka dengan setiap serangan.
+
+
+//
+// Ship Weapon techs 
+//
+SHIPWPN_0_NAME         | Laser
+SHIPWPN_0_ITEM2        | Laser Berat
+SHIPWPN_0_DETAIL       | Senjata sinar tembak-langsung yang menimbulkan 1-4 poin kerusakan. Laser berat memiliki dua jangkauan ruang dan melakukan 1-7 poin kerusakan.
+
+SHIPWPN_1_NAME         | Laser Gatling
+SHIPWPN_1_BRIEF        | Menembak 4 kali/putaran
+SHIPWPN_1_DETAIL       | Laser canggih yang menembak sampai empat kali per putaran untuk 1-4 poin kerusanan dengan setiap pukulannya.
+
+SHIPWPN_2_NAME         | Pistol Pelet Neutron
+SHIPWPN_2_BRIEF        | Membelah kekuatan perisai atau pelindung
+SHIPWPN_2_DETAIL       | Senjata arus partikel berat yang membelah efektivitas perisai deflektor musuh dan menimbulkan 2 sampai 5 poin kerusakan.
+
+SHIPWPN_3_NAME         | Meriam Ion
+SHIPWPN_3_ITEM2        | Meriam Ion Berat
+SHIPWPN_3_DETAIL       | Senjata sinar intensitas tinggi yang bisa menimbulkan 3-8 poin kerusakan. Meriam Ion Berat memukul untuk 3-15 dan memiliki dua jangkauan ruang.
+
+SHIPWPN_4_NAME         | Poros Massa
+SHIPWPN_4_BRIEF        | Membelah Kekuatan Perisai
+SHIPWPN_4_DETAIL       | Akselerator linear yang membelah efektivitas perisao deflektor musuh dan menimbulkan 5-8 poin kerusakan.
+
+SHIPWPN_5_NAME         | Peledak Neutron
+SHIPWPN_5_ITEM2        | Peledak Neutron Berat
+SHIPWPN_5_DETAIL       | Senjata sinar kekuatan tinggi yang mampu menimbulkan 3-12 poin kerusakan. Peledak neutron berat memukul sebanyak 3-24 poin dan memiliki 2 jangkauan ruang.
+
+SHIPWPN_6_NAME         | Sinar Graviton
+SHIPWPN_6_BRIEF        | Serangan Arus
+SHIPWPN_6_DETAIL       | Sinar Tractor-repulsor yang mampu membuat kapal pecah berkeping-keping. Senjata ini menyerang untuk  1-15 poin kerusakan, dan efek arus berkelanjutannya memungkinkan kerusakan berlebih untuk diteruskan kepada kapal lain.
+
+SHIPWPN_7_NAME         | Sinar Berat
+SHIPWPN_7_BRIEF        | Membelah Kekuatan Perisai
+SHIPWPN_7_DETAIL       | Senjata sinar pengubah energi-menjadi-materi yang membelah efektivitas perisai deflektor musuh, dan menimbulkan 8-12 poin kerusakan.
+
+SHIPWPN_8_NAME         | Sinar Fusi
+SHIPWPN_8_ITEM2        | Sinar Fusi Berat
+SHIPWPN_8_DETAIL       | Senjata sinar intensitas tinggi yang mampu melakukan 4-16 poin kerusakan. Sinar fusi berat memukul sebanyak 4-30 poin dan memiliki 2 jangkauan ruang.
+
+SHIPWPN_9_NAME         | Meriam Megabolt
+SHIPWPN_9_BRIEF        | +3 level untuk memukul
+SHIPWPN_9_DETAIL       | Melepas banyak anak panah berenergi murni dalam bidang yang luas. Senjata ini memiliki +30% bonus kesempatan untuk memukul dan menyerang 2-20 poin kerusakan.
+
+SHIPWPN_10_NAME        | Phasor
+SHIPWPN_10_ITEM2       | Phasor Berat
+SHIPWPN_10_DETAIL      | Sinar energi-phasa yang mampu menimbulkan 5 sampai 20 poin kerusakan. Phasor Berat memukul sebanyak 5-40 poin kerusakan dan memiliki dua jangkauan ruang.
+
+SHIPWPN_11_NAME        | Peledak Otomatis
+SHIPWPN_11_BRIEF       | Menembak 3 kali/putaran
+SHIPWPN_11_DETAIL      | Peledak neutron canggih yang menembah hingga tiga kali per giliran untuk 4-16 poin kerusakan per pukulan.
+
+SHIPWPN_12_NAME        | Sinar Tachyon
+SHIPWPN_12_BRIEF       | Serangan Arus
+SHIPWPN_12_DETAIL      | Menembakkan arus intens partikel tachyon yang memukul kapal musuh sebanyak 1-25 pukulan. Efek arus berkelanjutannya memungkinkan kerusakan berlebih untuk diteruskan kepada kapal lain.
+
+SHIPWPN_13_NAME        | Meriam Otomatis Gauss
+SHIPWPN_13_BRIEF       | 1/2 Perisai, Menembak 4x
+SHIPWPN_13_DETAIL      | Akselerator linear canggih yang mampu menembakkan 4 putaran eksplosif per putaran yang menimbulkan 7 sampai 10 poin kerusakan setiap kalinya. Putaran proyektil ini juga membelah efektivitas perisai musuh.
+
+SHIPWPN_14_NAME        | Sinar Partikel
+SHIPWPN_14_BRIEF       | Membelah Kekuatan Perisai
+SHIPWPN_14_DETAIL      | Akselerator partikel intensitas tinggi yang mampu memukul kapal musuh untuk 10-20 poin kerusakan dan membelah efektivitas perisai deflektor.
+
+SHIPWPN_15_NAME        | Meriam Plasma
+SHIPWPN_15_DETAIL      | Menembakkan anak panah energi intens yang menimbulkan 6-30 poin kerusakan pada jangkauan 1.
+
+SHIPWPN_16_NAME        | Sinar Kematian
+SHIPWPN_16_DETAIL      | Senjata kuno yang memiliki kekuatan destruktif yang sulit dipercaya yang menimbulkan 200-1000 poin kerusakan dan memiliki satu jangkauan ruang.
+
+SHIPWPN_17_NAME        | Disruptor
+SHIPWPN_17_DETAIL      | Melepas banyak anak panak berenergi murni yang dapat memukul target musuh hingga sejauh dua ruang untuk 10-40 poin kerusakan.
+
+SHIPWPN_18_NAME        | Pulse Phasor
+SHIPWPN_18_BRIEF       | Menembak 3 kali/putaran
+SHIPWPN_18_DETAIL      | Phasor canggih yang mampu menembakkan 3 semburan per putaran untuk 5-20 poin kerusakan dengan setiap pukulan.
+
+SHIPWPN_19_NAME        | Meriam Plasma Tiga Fokus
+SHIPWPN_19_DETAIL      | Menembakkan trio sinar plasma intensitas tinggi yang mampu menimbulkan 20 sampai 50 poin kerusakan.
+
+SHIPWPN_20_NAME        | Stellar Convertor
+SHIPWPN_20_BRIEF       | Memukul keempat perisai semua
+SHIPWPN_20_DETAIL      | Mengelilingi target dengan bidang konversi materi-energi yang sangat kuat, menimbulkan empat kali 10-35 poin serangan. Memiliki jangkauan 3 ruang.
+
+SHIPWPN_21_NAME        | Alat Mauler
+SHIPWPN_21_DETAIL      | Melepas banyak energi terfokus pada target musuh, menimbulkan 20-100 poin kerusakan.
+
+SHIPWPN_22_NAME        | Arus Amoeba
+SHIPWPN_22_DETAIL      | Arus yang membuat 250-1000 poin kerusakan dan memiliki jangkauan 3 ruang. Efek arus berkelanjutannya memungkinkannya untuk meneruskan kerusakan dari satu kapal ke yang lain.
+
+SHIPWPN_23_NAME        | Sinar Kristal
+SHIPWPN_23_DETAIL      | Sinar yang mengelilingi perisai target, memberikan 4 serangan untuk 100-300 poin kerusakan di setiap serangannya. Memiliki jangkauan 3 ruang.
+
+
+//
+// Soil Enrichment techs
+//
+SOILENRICH_0_NAME     | Penyubur Tanah
+SOILENRICH_0_DETAIL   | Mengubah Planet Standar menjadi lingkungan yang subur, meningkatkan pertumbuhan populasi hingga 50% dan meningkatkan ukuran dasar planet sebanyak +25% untuk biaya sekali bayar 150 BC.
+
+SOILENRICH_1_NAME     | Penyubur Tanah Canggih
+SOILENRICH_1_DETAIL   | Mengubah planet standar dan subur menjadi gaia, menggandakan pertumbuhan populasi dan meningkatkan ukuran dasar planet sebanyak +50% untuk biaya sekali bayar 300 BC.
+
+
+//
+// Stargate tech
+//
+STARGATE_0_NAME      | Gerbang Bintang Antargalaksi
+STARGATE_0_DETAIL    | Memungkinkan kapalmu untuk berjalan di antara dua planet yang dilengkapi dengan gerbang bintang hanya dalam satu putaran. Biaya 3000 BC untuk pembangunannya.
+
+
+//
+// Stasis Field tech
+//
+STASIS_0_NAME      | Bidang Stasis
+STASIS_0_BRIEF     | Musuh membeku untuk 1 putaran
+STASIS_0_DETAIL    | Membekukan satu grup kapal musuh, sampai sejauh satu ruang, untuk satu putaran. Kapal yang membeku tidak bisa menyerang atau diserang.
+
+
+//
+// Stream Weapon techs
+//
+STREAMWPN_0_NAME    | Proyektor Arus Ion
+STREAMWPN_0_BRIEF   | Mengurangi baju logam musuh hingga 20%
+STREAMWPN_0_DETAIL  | Menembakkan ledakan ion intens, mengurangi baju logam setiap target pada grup lawan sebanyak 20% plus 1% per 2 kapal penembak, sampai sejumlah maksimum 50% dari poin pukulan awal per serangan.
+
+STREAMWPN_1_NAME    | Proyektor Arus Neutron
+STREAMWPN_1_BRIEF   | Mengurangi baju logam musuh hingga 40%
+STREAMWPN_1_DETAIL  | Menembakkan ledakan nutrino terkonsentrasi, mengurangi baju logam setiap target pada grup lawan sebanyak 40% plus 1% per kapal penembak, sampai sejumlah maksimum 75% dari poin pukulannya per serangan.
+
+
+//
+// Subspace Interdictor tech
+//
+SUBSPACEINT_0_NAME    | Pengganggu Sub-ruang angkasa
+SUBSPACEINT_0_DETAIL  | Mencegah penggunaan teleporter sub-ruang angkasa milik musuh dan melawan transporter. Alat ini ditambahkan secara otomatis pada basis misil.
+
+
+//
+// Subspace Teleporter tech
+//
+SUBSPACETEL_0_NAME    | Teleporter Sub-ruang angkasa
+SUBSPACETEL_0_BRIEF   | Teleportasi kapal dalam pertempuran
+SUBSPACETEL_0_DETAIL  | Teleportasi kapal ke ruang manapun dalam peta pertempuran dan sebelum menentukan awal pertempuran secara normal.
+
+
+//
+// Ship Torpedo Weapon techs
+//
+TORPEDO_0_NAME        | Torpedo Anti-Materi
+TORPEDO_0_BRIEF       | Menembak satu per 2 putaran
+TORPEDO_0_DETAIL      | Torpedo pelacak energi tinggi yang memberikan 30 poin kerusakan tapi hanya bisa ditembakkan setiap 2 putaran. Setiap torpedo dilengkapi dengan komputer penarget level +4.
+
+TORPEDO_1_NAME        | Torpedo Api Neraka
+TORPEDO_1_BRIEF       | Memukul keempat perisai semuanya
+TORPEDO_1_DETAIL      | Torpedo pembungkus energi yang secara simultan menyerang semua perisai. Torpedo ini bergerak pada kecepatan 5, dipandu oleh komputer penarget level +6, memberikan kerusakan setara dengan empat kali 25-poin serangan.
+
+TORPEDO_2_NAME        | Torpedo Proton
+TORPEDO_2_BRIEF       | Menembak satu per 2 putaran
+TORPEDO_2_DETAIL      | Torpedo penghasil energi tinggi yang memberikan 75 poin kerusakan tetapi hanya bisa ditembakkan setiap 2 putaran. Setiap torpedo dilengkapi dengan komputer penarget level +6.
+
+TORPEDO_3_NAME        | Torpedo Plasma
+TORPEDO_3_BRIEF       | Mengurangi 15 kerusakan/hex
+TORPEDO_3_DETAIL      | Torpedo energi murni yang memberikan 150 poin kerusakan dan bergerak pada kecepatan 6, tetapi dapat menghilangkan 15 kerusakan per ruang yang dijalani. Tembakan diluncurkan setiap dua putaran dan memiliki komputer pemandu +7.
+

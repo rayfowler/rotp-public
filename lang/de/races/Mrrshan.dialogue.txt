@@ -1,0 +1,87 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Mrrshan specific dialogue
+
+CONTACT_AGGRESSIVE         | Ich grüße dich, seltsames Ding. Ich bin von der [my_race] und ein Diener des Goldenen Khans. Ich hoffe, dass Du stark bist, [your_race], nicht nur um Deines Volkes willen, sondern auch um der Schätze willen, die Dir am meisten am Herzen liegen. 
+CONTACT_RUTHLESS           | Wir sind die [my_race], [your_race], und wir halten uns nur an einen Glauben: Die Starken sollen nehmen und die Schwachen sollen geben. Wenn Sie die Weisheit einer solchen Philosophie noch nicht verstehen, werden wir sie Ihnen sicher sehr bald beibringen.
+CONTACT_XENOPHOBIC         | Bete, dass der Goldene Khan dich als würdig ansieht, [your_race]. Erregt seinen Zorn und er wird keine Skrupel haben, Flotten von [my_race] über Euch herfallen zu lassen.
+//
+GREETING_01                | Ihr habt Euch uns gegenüber immer wieder bewährt. Es ist uns eine Ehre, das zu tun, was wir können, um uns Ihnen gegenüber ebenso zu beweisen.
+GREETING_04                | Ich höre Ihre Worte, Botschafter, aber ich bin nicht verpflichtet, Ihnen zu geben, was immer Sie suchen.
+GREETING_07                | Du hast es gewagt, dich einem Diener des Khans zu nähern. Sagen Sie, was Sie zu sagen haben, und seien Sie bereit zu fliehen, wenn Sie nur meine Zeit verschwenden wollen.
+//
+DECLAREWAR_HATE_01         | Deine Reliquien sind an dich verschwendet! Wir werden unsere Hallen auf Fierias mit euren Knochen und eurem Schatz schmücken, und sie werden alles sein, was von eurem Volk übrig bleibt, wenn wir fertig sind!
+DECLAREWAR_HATE_02         | Genug davon! Bloße Raubzüge werden unsere Feindseligkeit gegenüber Eurer Art nicht befriedigen: Ihr [your_race_plural] verdient ein weitaus größeres Vorgehen!
+DECLAREWAR_HATE_03         | Allein der Gedanke, dass eine so schwache Rasse wie die Eure in diesem Universum Einfluss hat, reicht aus, um uns krank zu machen. Egal wie die Chancen stehen, ich verspreche Ihnen, dass wir alles tun werden, um Ihnen Ihren Platz zu zeigen.
+//
+DECLAREWAR_ERRATIC_01      | Die Krallen des Khanats müssen geschärft werden, Botschafter. Euer Volk sollte uns mit dem Sport versorgen, den wir brauchen, um uns für würdigere Feinde bereit zu halten.
+DECLAREWAR_ERRATIC_02      | Euer Volk hat wahrlich einige der schönsten Schätze, [your_race]. Wir sind gespannt darauf, wie heftig Ihr darum kämpfen werdet, sie zu bewahren!
+DECLAREWAR_ERRATIC_03      | Es ist schon viel zu lange her, dass wir legendäre Beute zurückgebracht haben. Eure Leute kämpfen gut, aber können sie uns daran hindern, so viele glitzernde Trophäen zu nehmen, wenn sie in unserer Reichweite sind?
+//
+DECLAREWAR_MILITARY_01     | Die Starken nehmen und die Schwachen geben: ein unumstößliches Gesetz des Universums. Sie werden bald sehen, dass es nicht nur für Ihre Schätze gilt, sondern auch für Ihre Planeten.
+DECLAREWAR_MILITARY_02     | Auch wenn es selten wie Gold glänzt, ist Land oft ein wertvoller Preis an und für sich. Und alle guten Preise sind es wert, um sie zu kämpfen, nicht wahr, Botschafter?
+DECLAREWAR_MILITARY_03     | Die Bedürfnisse des Khanats überwiegen die Bedürfnisse der Rasse [your_race]. Ihr mögt über beeindruckende Technologie verfügen, aber ich bezweifle, dass Ihr die nötige Wildheit besitzt, um sie zu nutzen!
+//
+DECLAREWAR_ALLIANCE_01     | Ihr habt ein gefährliches Spiel gespielt, um aus dem Verbündeten des Khanats einen Feind zu machen. Dieses Spiel wird bald ein schnelles und blutiges Ende finden!
+DECLAREWAR_ALLIANCE_02     | Unsere Verbündeten, die [andere_Rasse_plural], sind ein ehrenwertes, aber schwaches Volk. Sie hätten vielleicht gewonnen, wenn an diesem Krieg nur Ihre beiden Reiche beteiligt gewesen wären, aber mit uns an ihrer Seite haben Sie keine Chance auf einen Sieg!
+DECLAREWAR_ALLIANCE_03     | Wir hätten es vorgezogen, die Ehre, Euer Imperium zu stürzen, ganz für uns allein zu haben. Es sieht so aus, als müssten wir den Ruhm und die Beute dieses Mal mit der [other_race] teilen.
+//
+DECLAREWAR_SPYING_01       | Feigling, sich im Geheimen zu engagieren, anstatt mit Ehre zu kämpfen! Deine Handlungen entsprechen deiner Schwäche, und jetzt sollst du den Preis dafür zahlen! 
+DECLAREWAR_SPYING_02       | Wie fühlt sich das an, [your_race]? So viel zu riskieren, nur um nichts als Krieg über dein Volk zu bringen?
+DECLAREWAR_SPYING_03       | Sagen Sie [your_nameTitle] [your_name] dies: Geheimhaltung ist das Theater der feigen Flüche. Dass Sie so feige handeln würden, bedeutet, dass unsere Wildheit allein uns zum Sieg führen wird!
+//
+DECLAREWAR_ATTACK_01       | Ha! Wir haben euch für feige Schwächlinge gehalten, aber es scheint, dass ihr doch etwas Kampfgeist in euch habt! Schade nur, dass ihr nicht mehr lange da sein werdet, um diesen mageren Sieg zu feiern!
+DECLAREWAR_ATTACK_02       | Ihr habt uns einen großen Gefallen getan, indem Ihr den Kampf vor unsere Haustür gebracht habt! Wir werden es Euch mit gleicher Münze zurückzahlen, indem wir sicherstellen, dass Eure Leute ihr Ende auf dem Schlachtfeld finden, wie wahre Krieger!
+DECLAREWAR_ATTACK_03       | Ich würde Arroganz vermeiden, wenn ich Sie wäre, Botschafter. Die Wut unserer Krieger wird niemals durch Technologie besiegt werden, egal wie stark Sie die Ihre gemacht haben!
+//
+DECLAREWAR_OPPORTUNITY_01  | Eure Art hat ihre Nützlichkeit längst überlebt. Aber seien Sie versichert, dass Sie den jüngsten und unerfahrensten unserer Krieger einen angemessenen Sport bieten werden, während sie ihre Kampffähigkeiten verfeinern.
+DECLAREWAR_ASSASSIN_01     | Ich bin nicht im Geringsten schockiert, dass Ihre Art so rückgratlos handeln würde. Einen Botschafter zu ermorden, ist die größte Schande, die man sich einhandeln kann, und in ihrem Todeskampf wird Ihr Volk Ihren Namen dafür verfluchen, dass Sie das angeordnet haben!
+
+
+OFFER_PEACE_01             | Es gibt eine Zeit für alles Botschafter, und die Zeit ist jetzt für ein Ende unserer Feindseligkeiten gekommen. Behalten Sie Ihre Reliquien; Frieden ist alles, was wir jetzt von Ihnen wünschen!
+OFFER_TRADE_01             | Es besteht kein Zweifel, dass der schnellste Weg, Trophäen zu erlangen, darin besteht, sie einfach von denen zu nehmen, die zu schwach sind, um Sie aufzuhalten! Aber auch der Handel kann ein akzeptabler Weg für zwei Reiche sein, voneinander zu profitieren. Lassen Sie uns jedes Jahr bei [amt] BC beginnen, um zu sehen, wie viel wir voneinander... gewinnen können. 
+OFFER_PACT_01              | Es gibt keinen Grund, dass Reiche, die so gleichstark sind, sich gegenseitig bekämpfen, wenn es genug schwächere Rassen gibt, die man plündern und niederbrennen kann. Lasst uns einen offiziellen Nichtangriffspakt vereinbaren, damit wir unsere Energien besser auf diejenigen verwenden können, die leichtere Schätze zu erbeuten haben! 
+OFFER_ALLIANCE_01          | Ich komme heute zu Euch, um Euch ein offizielles Bündnis zwischen dem Khanat und dem  [your_empire] vorzuschlagen. Ich vertraue darauf, dass Ihr keine Zeit verlieren werdet, diesen Vertrag zu unterzeichnen? Denkt auch daran: Ein gleicher Anteil an einem Bündnis bedeutet einen gleichen Anteil an der Kriegsbeute! 
+ 
+WARN_TRESPASSING_01        | Wenn Ihre Schiffe nicht im [system]-system sind, um Tribut zu liefern, schlage ich vor, dass Sie ihnen befehlen, umzudrehen und so schnell wie möglich zu gehen. 
+WARN_EXPANSION_01          | Wir bevorzugen zwar Wertsachen, mit denen wir die Wände unserer Tempel schmücken können, aber wir sind nicht so blind, um den Schatz zu ignorieren, den das unbesetzte Land darstellt. Überprüfen Sie Ihre Expansion oder riskieren Sie, unseren Zorn zu erregen, Botschafter. 
+WARN_BUILDUP_01            | Wenn Sie Ihre Flotten aufbauen, um eine andere Rasse zu überfallen, werden Sie keine Einwände von uns bekommen. Aber bis wir entsprechende Zusicherungen haben, gehen wir davon aus, dass Ihre Flotten auf uns gerichtet sind, und werden nicht zögern, präventiv zu handeln. 
+WARN_SKIRMISH_01           | Das war ein amüsantes kleines Scharmützel, nicht wahr? Dennoch sind diese kleinen Schlachten langweilig und ohne Belohnung: Wenn Sie darauf bestehen, sie fortzusetzen, werden wir gerne eine formellere Kriegserklärung abgeben! 
+WARN_ATTACKED_01           | Ha! War das ein ernsthafter Versuch, uns zu provozieren, Botschafter? Euer Volk ist schwach und Eure Schätze sind befleckt! Beenden Sie dieses törichte Spiel, bevor Sie uns zwingen, Sie zu vernichten! 
+WARN_INVADED_01            | Sicherlich scherzt Ihr mit Eurer mageren kleinen Invasion? Ihr habt Glück, dass wir wenig Verwendung für das [system] system hatten, aber wenn Ihr es auf wertvollere systeme abgesehen habt, werden wir dafür sorgen, dass Ihr nie wieder jemandem etwas wegnehmen könnt! 
+WARN_ESPIONAGE_01          | Was für hinterhältige Spiele Ihre Leute spielen! Ihr müsst Euch schon sehr viel mehr Mühe geben, wenn Ihr die Geheimnisse des Khanats für Euch gewinnen wollt. Nehmt Euren Spion mit und verschwindet, bevor dieses Spiel aufhört, amüsant zu sein. [Verrat]
+WARN_SABOTAGE_01           | Gefährliche Machenschaften, Botschafter. Hätte das Gebäude, das Sie zerstören wollten, große Wertgegenstände beherbergt, würden wir zweifellos Ihr Blut von den Straßen Ihrer Heimatwelt waschen. Ich würde Ihnen dringend empfehlen, Sabotage nicht mehr in Erwägung zu ziehen.
+WARN_BIOWEAPON_01          | Trophäen müssen in einem ehrenhaften Kampf gewonnen werden, nicht aus den Knochen derer gestohlen werden, die schon zu Lebzeiten wehrlos waren! Wenn Sie jemals wieder solche verachtenswerten Waffen benutzen, versichere ich Ihnen, dass es das letzte Mal sein wird! 
+WARN_GENOCIDE_01           | Keine schlechte Entscheidung, die gesamte Spezies [Opfer_Rasse] auszurotten und jeden ihrer Schätze für sich zu nehmen. Ich bezweifle zwar, dass Ihr so dumm sein würdet, so etwas mit uns zu versuchen, aber Eure Fähigkeiten sind trotzdem ziemlich beunruhigend. 
+WARN_FINAL_WAR_01          | Dumme [your_race]! Sich dem Willen des Ratsbeschlusses zu widersetzen, bedeutet, sich dem Willen der [my_race] zu widersetzen! Wir werden Eure Trophäen nehmen und sie bis auf den kleinsten Klumpen niederbrennen! Wenn wir mit Euch fertig sind, wird von Eurer Art nichts mehr übrig sein! 
+WARN_COUNCIL_VOTE_01       | Das Khanat hat wichtigere Dinge zu tun, als politische Spielchen in Ratskammern zu spielen. Es wäre besser für uns, wenn Ihr Euch einfach unseren Wünschen fügen würdet. Und es wäre auch besser für Sie, wenn meine Bedeutung deutlich gemacht wird.
+WARN_OATHBREAKER_01        | Hmph! Nur die Verzweifelten brechen das Band ihres Wortes. Das macht nichts! Von nun an werden wir mit Euch einfach so umgehen, wie wir mit anderen umgehen, die zu verlogen sind, um ihnen zu trauen. [spiesCaught] 
+WARN_ATTACKED_ALLY_01      | Ich kann nicht sagen, dass ich nicht verstehe, warum Ihr die [Verteidiger_rasse] angreifen wollt. Ihre Schätze sind so schön ... aber sie werden uns gehören, wenn wir sie nehmen wollen: Sie werden nicht euch gehören!
+WARN_REBELLING_AGAINST_01  | Dieser vom Rat befürwortete Frieden würde unserem Volk niemals gefallen. Wir wollen nur eines: den Schwachen ihre Schätze nehmen und sie zu den unseren machen! 
+
+PRAISE_COUNCIL_VOTE_01     | Ihre Unterstützung im Rat wird immer geschätzt, Herr Botschafter. Der Goldene Khan selbst wollte Euch wissen lassen, dass Euer Volk ein wertvolles Gut für das Khanat ist, und solltet Ihr [candidate_home] besuchen wollen, wird in Eurem Namen ein Festmahl veranstaltet! 
+PRAISE_COUNCIL_VOTE_02     | Habt Ihr den finsteren Blick des Vertreters der [rival_race] gesehen? Ha! Sollen sie doch spotten! Solange weise Menschen wie Ihr unsere Macht anerkennen, hat das Khanat nichts zu befürchten! 
+PRAISE_COUNCIL_VOTE_03     | Habt Ihr Angst vor unseren Überfällen, Botschafter? Hofft Ihr, uns im Rat zu besänftigen, um unsere Schatzsucher von Euren Welten fernzuhalten? Hmhmhmhm, nun, es schadet Ihren Chancen sicher nicht, oder?
+PRAISE_ATTACKED_ENEMY_01   | Der heutige Tag wird für unsere beiden Völker großartig, [attacker_race]! Die [defender_race] hat keine Chance gegen unsere geballte Kraft! Es gibt reichlich Schätze für uns beide: Den größten Kriegern gehört die größte Beute! 
+PRAISE_ATTACKED_ENEMY_02   | Hofft Ihr heute auf eine Chance auf einen Schatz, Botschafter? Nun gut, ich schlage Euch einen Handel vor: Helft uns, diese [defender_race] Schädlinge loszuwerden, und wir werden dafür sorgen, dass Ihr eine gerechte Belohnung erhaltet. 
+PRAISE_ATTACKED_ENEMY_03   | Es ist offensichtlich, dass Ihr nur wegen der Reichtümer, die Ihr für Euch selbst nehmen könnt, in diesem Krieg seid. Aber diese [defender_race] haben erbärmliche Reliquien, also nehme ich an, wenn Ihr uns helft, dann lassen wir Euch alles, was wir nicht für uns selbst nehmen wollen. 
+PRAISE_TRADE_01            | Erinnert Ihr Euch, als ich unser Handelsabkommen begann? Ich sagte Ihnen, dass wir sehen würden, wie viel wir voneinander gewinnen würden, und ich bin froh zu sehen, dass der gewonnene Wert auf Gegenseitigkeit beruht. 
+PRAISE_TRADE_02            | Es macht immer mehr Spaß, für Reichtümer zu kämpfen und mit Schiffen nach Hause zu fahren, die mit der Beute des Sieges beladen sind! Nun gut, ich nehme an, dass dieses Handelsabkommen zumindest ein wenig profitabler ist, wenn man die Kosten mit einbezieht. Sorgen Sie dafür, dass das so bleibt, Herr Botschafter.
+PRAISE_REBELLING_WITH_01   | Das ist besser so! Es geht doch nichts über einen guten Kampf, oder? Und so viel Beute, die darum bettelt, erworben zu werden... Ich hoffe, es stört dich nicht, dass das Khanat sich dem Spaß anschließen will! 
+
+ACCEPT_TRADE_01            | Ich nehme an, wir können nicht jede Zivilisation plündern, der wir begegnen. Sie wollen wie viel BC jährlich tauschen? [amt]? Gut...
+RESPOND_IGNORE_THREAT_01   | Verzeihen Sie mir das Lachen, Ihre Drohungen sind einfach nur komisch leer. Gehen Sie jetzt, bevor unsere Plünderer beschließen, ihre Krallen an Ihren Kolonien zu schärfen.
+RESPOND_STOP_SPYING_01     | Sie haben einen Spion gefunden, der angeblich zu uns gehört? Sicherlich nicht. Wir würden nicht im Traum daran denken, das erhabene [your_empire] zu bespitzeln. Macht mit dem Spion, was Ihr wollt, es ist für uns ohne Bedeutung.
+RESPOND_STOP_ATTACKING_01  | Besorgt über einen Überfall, [your_race]? Keine Sorge, wir haben kein Interesse an Ihren Besitztümern. Wir werden sie jetzt wegbringen. Schließlich wollen wir Euch nicht erschrecken.

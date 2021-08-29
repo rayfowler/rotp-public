@@ -32,7 +32,6 @@ public class LabelManager implements Base {
     private final String techsFile = "techs.txt";
     private String introFile = "intro.txt";
     private final HashMap<String,byte[]> labelMap = new HashMap<>();
-    private final HashMap<String,List<String>> enDialogueMap = new HashMap<>();
     private final HashMap<String,List<String>> dialogueMap = new HashMap<>();
     private final List<String> introLines = new ArrayList<>();
 
@@ -61,8 +60,8 @@ public class LabelManager implements Base {
     }
     public String dialogue(String key) {
         List<String> value = dialogueMap.get(key);
-        if (value == null) 
-            value = enDialogueMap.get(key);
+        //if (value == null) 
+        //    value = enDialogueMap.get(key);
         return (value == null) || value.isEmpty() ? key : random(value);
     }
     public void load(String dir) {
@@ -135,12 +134,10 @@ public class LabelManager implements Base {
             log("WORDS - "+filename+": "+wc);
     }
     public void resetDialogue() {
-        enDialogueMap.clear();
         dialogueMap.clear();
     }
     public void loadDialogueFile(String dir) {
         log("loading Dialogue: ", dir, dialogueFile);
-        HashMap thisMap = dir.equals("lang/en/") ? enDialogueMap : dialogueMap;
         
         String filename = dir+dialogueFile;
         BufferedReader in = reader(filename);
@@ -153,7 +150,7 @@ public class LabelManager implements Base {
         try {
             String input;
             while ((input = in.readLine()) != null)
-                wc += loadDialogueLine(input, thisMap);
+                wc += loadDialogueLine(input, dialogueMap);
         }
         catch (IOException e) { 
         	err("LabelManager.loadDialogueFile -- IOException: ", e.toString()); 

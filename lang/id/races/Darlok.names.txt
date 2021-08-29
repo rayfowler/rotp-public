@@ -1,0 +1,21 @@
+// all possible names
+name: Darlok, Sarlok, Spylok, Shadelok, Nazlok
+
+desc1: Diplomat Agresif
+desc2: Mata-mata Agung
+desc3: Ras [race] ini tidak alamiah dan rahasia bagaikan hantu, berasal dari dimensi lain  
+
+// possible home system names
+home: Nazin, Mordor, Hades, Abyssal, Hel
+title:     Pimpinan
+fulltitle: Pimpinan
+
+// possible leader names
+leader: Darquan, Morfane, Narzina, Nazgur, Shador, Ssithra
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Mist, Vapor, Spark, Veil, Omen, Ether, Glimmer
+ship2: Mirage, Shadow, Dream, Illusion, Reflection, Vision, Haunt
+ship3: Phantom, Spectre, Wraith, Shade, Ghost, Spirit, Poltergeist
+ship4: Nightmare, Phantasm, Terror, Horror, Revenant, Grim Reaper, Phobos
+

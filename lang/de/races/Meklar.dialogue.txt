@@ -1,0 +1,139 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Meklar specific dialogue
+
+CONTACT_ERRATIC            | Spezies: [your_race]. Bezeichnung des Leiters: [your_title]. Technologische Innovationen: vielfältig. Einschätzung der Bedrohung: Nicht schlüssig.
+CONTACT_HONORABLE          | [your_race] Spezies Interesse zeigt. [my_empire] spürt das Potenzial, zum gegenseitigen Nutzen zu kooperieren. Die Ergebnisse bleiben abzuwarten.
+CONTACT_RUTHLESS           | [my_empire] weiß jetzt von der Existenz von [your_race]. [my_title] spricht eine Warnung an alle [your_race]-Spezies aus: Mischen Sie sich nicht in die Ziele des Dominions ein. Dies wird zur Auslöschung von [your_race] führen.
+//
+GREETING_01                | Identität des verbündeten Botschafters bestätigt. Bitte an das Dominion angeben. Das Dominion wird helfen, wenn möglich.
+GREETING_04                | [my_empire] bestätigt [your_race] Botschafter. Das Dominion ist bereit, Anfragen zu diesem Zeitpunkt zu bearbeiten.
+GREETING_07                | Bitte angeben. Unwahrscheinlich, dass das Dominion eine Anfrage der [your_race] an [my_title] zur Weiterverarbeitung sendet.
+//
+DECLAREWAR_HATE_01         | [my_race] nicht mehr bereit, die Anwesenheit von [your_race] zu tolerieren. Stärke der Spezies [your_race] vergleichsweise primitiv. Führt ein Such- und Zerstörungsprotokoll aus.
+DECLAREWAR_HATE_02         | [my_race] wird nicht länger zulassen, dass die Spezies [your_race] die Ziele des Dominion beeinträchtigt. Das Dominion ist bereit, viel für den Erhalt der Primärdirektive zu tun.
+DECLAREWAR_HATE_03         | Das Dominion kann die Direktiven nicht fortführen, solange [your_race] besteht. Das Dominion muss diese Spezies auslöschen. Keine Alternative gefunden.
+DECLAREWAR_ERRATIC_01      | [my_title] stellt fest, dass die Existenz der Spezies [your_race] die Ziele des Dominion bedroht. Das Dominion beginnt sofort mit den Ausrottungsprotokollen.
+DECLAREWAR_ERRATIC_02      | [my_title] urteilt, dass [your_race] Spezies wahrscheinlich ein Geheimnis besitzt, das die Ziele des Dominion fördert. Das Dominion wird sich die Geheimnisse von [your_race] Spezies mit Gewalt holen.
+DECLAREWAR_ERRATIC_03      | [my_title] betrachtet [your_race] Spezies als inakzeptable Variable in den Plänen des Dominion. Das Dominion wird [your_race]-Spezies ausrotten oder sich dabei selbst beenden.
+DECLAREWAR_MILITARY_01     | [my_empire] muss sich weiterhin in der Galaxie ausbreiten, um das ultimative Ziel zu erreichen. [your_empire] hemmt die Ausbreitung. Das Problem wird jetzt behoben.
+DECLAREWAR_MILITARY_02     | Dominion nicht in der Lage, das Primärziel zu lokalisieren. Möglichkeit, dass Planeten in der Nähe oder im Besitz von [your_empire] enthalten, was gesucht wird. Krieg unvermeidbar.
+DECLAREWAR_MILITARY_03     | Das Dominion ist gezwungen, die Reichweite seines Territoriums zu erweitern. Die Stärke der Spezies [your_race] kann kein abschreckender Faktor sein. Der Krieg ist bedauerlich, aber notwendig.
+DECLAREWAR_ALLIANCE_01     | [your_empire] hat dem Verbündeten des Dominion den Krieg erklärt. Das Dominion wird seine eigenen Interessen an den Zielen schützen, indem es die Bedrohung durch [your_race] auslöscht.
+DECLAREWAR_ALLIANCE_02     | Das Dominion hat ein Hilfeersuchen von [anderes_Imperium] erhalten. Unterstützt Verbündeten im Krieg gegen [your_race] Spezies, solange der Konflikt andauert.
+DECLAREWAR_ALLIANCE_03     | [your_race] Spezies wird arrogant und erklärt anderen den Krieg. Das Dominion wird anderen Imperien helfen, [your_race] Spezies aus der Galaxie zu entfernen.
+DECLAREWAR_SPYING_01       | [your_race] Spezies unternimmt geheime Aktionen gegen das Dominion.  Konsequenzen für das Dominion: vernachlässigbar. Konsequenzen für [your_race]-Spezies: tödlich.
+DECLAREWAR_SPYING_02       | Subterfuge im Territorium des Dominion entdeckt. Quelle bestätigt als [your_race]-Spezies. Die Protokolle des Dominion erfordern einen Krieg als Antwort. 
+DECLAREWAR_SPYING_03       | Dominion entdeckt offensichtlichen Versuch der Destabilisierung durch [your_empire]. Kann nicht zulassen, dass [your_race] Spezies weiterhin Ziele stört. Das Dominion muss um jeden Preis Vergeltung üben.
+DECLAREWAR_ATTACK_01       | [your_race] Spezies erweist sich als feindlich trotz offensichtlicher Überlegenheit von [my_empire]. Das Dominion versucht, die Bedrohung vollständig zu beseitigen.
+DECLAREWAR_ATTACK_02       | [your_race] Spezies behindert Ziele des Dominion durch direkten Angriff. Eine Konfrontation ist unvermeidlich.
+DECLAREWAR_ATTACK_03       | [your_race] Spezies versucht, Dominion am Erreichen von Zielen zu hindern, indem sie [my_empire] auslöscht. Das Dominion wird mit allen verfügbaren militärischen Kräften Vergeltung üben.
+DECLAREWAR_OPPORTUNITY_01  | [my_title] glaubt, dass [your_race] Spezies sich letztendlich als schädlich für das Erreichen der Hauptdirektive erweisen wird. Das Dominion wird die Spezies [your_race] ausrotten, bevor die Bedrohung vollständig realisiert ist.
+DECLAREWAR_ASSASSIN_01     | Dominion-Botschafter wird von [your_race] Spezies funktionsunfähig gemacht, bevor er in den Mainframe re-integriert wird. [your_race]-Aktionen erfordern gewaltsame Vergeltung.
+
+OFFER_PEACE_01             | [my_title] erreicht neues Urteil. Krieg ist kein akzeptabler Aufwand mehr für das Dominion. Dominion wünscht sofortigen Frieden zu vermitteln. 
+OFFER_TRADE_01             | [your_race] Spezies besitzt bedeutende Ressourcen. Das Dominion besitzt auch Gegenstände von Wert. Das Dominion schlägt ein Handelsabkommen zu [amt] BC pro Jahr vor.  
+OFFER_PACT_01 		       | Das Dominion strebt ein Ergebnis jenseits sinnloser Konflikte an. Ein Nichtangriffspakt mit [your_race] Spezies wird als das vernünftigste Mittel angesehen, um das genannte Ergebnis zu erreichen. 
+OFFER_ALLIANCE_01 	       | [my_title] schätzt Diplomatie mit [your_race] Spezies. Das Dominion schlägt eine formale Allianz vor, um das Überleben sowohl der Spezies [your_race] als auch [my_empire] zu sichern. Unmittelbare Antwort erbeten.  
+
+WARN_TRESPASSING_01 	   | [your_race] Spezies in [system] system entdeckt. Das Gebiet wurde zuvor vom Dominion beansprucht. Sofort räumen. 
+WARN_EXPANSION_01 	       | Rasche Expansion der Spezies [your_race] wird als Bedrohung für die Ziele des Dominion angesehen. Die Fortsetzung des territorialen Wachstums wird militärische Maßnahmen als Antwort erzwingen. 
+WARN_BUILDUP_01 	       | Das Überwachungsnetzwerk des Dominion identifiziert [your_race]-Flotten als potentielle Bedrohung für die Sicherheit. Verstärkte Überwachung von [your_race] Spezies, um sicherzustellen, dass die Interessen des Dominion nicht gefährdet werden.
+WARN_SKIRMISH_01 	       | Konflikt zwischen Flotten des Dominion und der  [your_race] in [system] entdeckt. Das Dominion rät von wiederholten Verstößen ab: Das Dominion ist bereit, angemessen zu reagieren, wenn die Warnung nicht beachtet wird. 
+WARN_ATTACKED_01 	       | [attacker_race] Aggression bei [system] festgestellt. [defender_title] gibt Botschaft an Botschafter: Fortgesetzte Bedrohung der Sicherheit des Dominion wird zur Auslöschung der Spezies [attacker_race] führen. 
+WARN_INVADED_01 	       | Erinnerung des Dominion, dass die Spezies [attacker_race] keinen Anspruch auf den Raum [defender_race] hat. Flotten sofort entfernen oder totale Vernichtung droht.
+WARN_ESPIONAGE_01          | [spy_race] Spionageaktivität auf dem Territorium des Dominion registriert. Die Sicherheitsprotokolle des Dominion übertreffen die Spionagefähigkeiten von [spy_race]. Ein erneuter Test des Dominion könnte sich als fatal erweisen. [Verrat!]
+WARN_SABOTAGE_01           | Das Dominion ist sich der Beteiligung der Spezies [spy_race] an kürzlichen Sabotageakten bewusst. Der Versuch, Chaos zu stiften, ist zu unbedeutend, um eine Reaktion zu rechtfertigen. Weitere Sabotageversuche werden schnellstens geahndet.  
+WARN_BIOWEAPON_01          | Das Dominion beobachtet den Einsatz einer groben Biowaffe. Effektive Bewaffnung. Spezies-Bedrohungseinschätzung um 3 Stufen erhöht. 
+WARN_GENOCIDE_01           | Völkermord an [victim_race] Spezies durch [attacker_race] Spezies festgestellt. Dominion kümmert sich nicht um mögliche Ursachen oder Alternativen. Bedrohungsbewertung der Spezies [attacker_race] um 5 Stufen erhöht.  
+WARN_FINAL_WAR_01          | Alle bekannten Spezies schließen ein Abkommen, um dauerhaften Frieden in der Galaxie zu sichern. [rebel_race] Spezies einziger Abweichler. Das Dominion wird entsprechende Maßnahmen ergreifen.
+WARN_COUNCIL_VOTE_01       | Dominion weiß von [voter_race] Aktionen im Rat. Bedeutung irrelevant. Ergebnis wird als nachteilig für die Ziele von [candidate_race] bewertet. Diplomatisches Ansehen entsprechend angepasst.  
+WARN_OATHBREAKER_01        | [my_title] fällt ein Urteil: [your_race] Spezies wird nicht mehr als vertrauenswürdig angesehen. Alle zukünftigen Geschäfte werden revidiert, da die [your_race] eine verbindliche Vereinbarung gebrochen hat. [spiesCaught] 
+WARN_ATTACKED_ALLY_01      | Konflikt zwischen [your_race] Spezies und [defender_race] Spezies aufgezeichnet. Spezies [defender_race] bekannter Verbündeter des Dominion. Stellen Sie die Kämpfe ein oder bereiten Sie sich auf die Konsequenzen vor. 
+WARN_REBELLING_AGAINST_01  | [your_race] Spezies behindert nun die Ziele des Dominion. Entscheidung des Galaktischen Rates inakzeptabel. Erwarte Antwort vom Supreme Arbiter. 
+
+
+PRAISE_COUNCIL_VOTE_01     | Botschafter von [voter_race] Spezies bietet weiterhin Hilfe bei der Förderung der Ziele von [candidate_race]. Das Dominion erkennt den Nutzen einer fortgesetzten Beziehung mit der Spezies der [voter_race] an. Das Dominion wird den Gefallen nach Bedarf zurückzahlen. 
+PRAISE_COUNCIL_VOTE_02     | Das Dominion nimmt Ihre positive Abstimmung im Rat zur Kenntnis. Das Dominion wird die Ansicht über die Spezies [voter_race] entsprechend anpassen.
+PRAISE_COUNCIL_VOTE_03     | Das Dominion erkennt die Wahrscheinlichkeit von Täuschungsmanövern der Spezies [voter_race] an. Die weitere Unterstützung des Dominion im Rat kann die Bedenken zerstreuen. 
+
+PRAISE_ATTACKED_ENEMY_01   | Feinde des Dominion anzugreifen beweist Engagement für [my_race] Ziele. Das Dominion hat sich verpflichtet, die Verluste der Spezies [attacker_race] auf ein absolutes Minimum zu beschränken. 
+PRAISE_ATTACKED_ENEMY_02   | Das Dominion begrüßt Unterstützung gegen [defender_race] Spezies. Dieser Krieg könnte ein neuer Anfang zwischen [my_empire] und [attacker_race] Spezies sein. 
+PRAISE_ATTACKED_ENEMY_03   | Der Angriff auf [defender_race] Spezies entschuldigt nicht die vergangenen Verbrechen gegen das Dominion. Das Dominion wird die Bedrohungsstufe der Spezies [attacker_race] in Abhängigkeit von ihrer Aktion in diesem Krieg neu einschätzen. 
+
+PRAISE_TRADE_01            | Das Dominion und [your_race] Spezies gewinnen weiterhin viel durch kontinuierlichen Handel. Das Dominion wünscht, dass der Handel so lange fortgesetzt wird, wie die Vereinbarung einen vorteilhaften Status hat.
+PRAISE_TRADE_02            | Das Dominion äußert sich zufrieden über das Handelsabkommen mit [your_race] Spezies. Stellen Sie sicher, dass die Vereinbarung bestehen bleibt, so dass beide Rassen voneinander profitieren. 
+PRAISE_REBELLING_WITH_01   | Das Dominion stimmt zu, dass der Herrscher des Galaktischen Rates nicht vertrauenswürdig ist. [your_race] Spezies Einwand zur Kenntnis genommen. Dominion wird [your_race]-Spezies bei der Rebellion unterstützen. 
+
+DIPLO_TECH_REQUEST_MENU_01 | Geben Sie die Technologie an.
+DIPLO_TECH_COUNTER_MENU_01 | Geben Sie die Vergütung an.
+DIPLO_TRADE_MENU_01        | Größenordnung angeben.
+DIPLO_TREATY_MENU_01       | Vertrag festlegen.
+DIPLO_DECLARE_WAR_MENU_01  | Bestätigen Sie, bevor Sie fortfahren.
+DIPLO_SUGGEST_WAR_MENU_01  | Geben Sie das Ziel an.
+DIPLO_BREAK_ALLIANCE_MENU_01 | Verbündeten angeben.
+DIPLO_THREATEN_MENU_01     | Angeben.
+DIPLO_OFFER_AID_MENU_01    | Festlegen.
+DIPLO_OFFER_TECH_MENU_01   | Technologie angeben.
+
+DECLINE_OFFER_01           | Anfrage abgelehnt.
+DECLINE_OFFER_02           | Anfrage abgelehnt.
+DECLINE_OFFER_03           | Anfrage abgelehnt.
+DECLINE_OFFER_04           | Anfrage abgelehnt.
+DECLINE_OFFER_05           | Anfrage abgelehnt.
+DECLINE_OFFER_06           | Anfrage abgelehnt.
+DECLINE_OFFER_07           | Anfrage abgelehnt.
+DECLINE_OFFER_08           | Anfrage abgelehnt.
+DECLINE_OFFER_09           | Anfrage abgelehnt.
+DECLINE_ENEMY_ALLY_01      | Anfrage abgelehnt.
+DECLINE_NO_WAR_ON_ALLY_01  | Anfrage abgelehnt.
+DECLINE_PEACE_TREATY_01    | Anfrage abgelehnt.
+DECLINE_ANNOYED_01         | Anfrage abgelehnt.
+DECLINE_ANNOYED_02         | Anfrage abgelehnt.
+DECLINE_ANNOYED_03         | Anfrage abgelehnt.
+DECLINE_OATHBREAKER_01     | Anfrage abgelehnt.
+DECLINE_ESPIONAGE_01       | Anfrage abgelehnt.
+DECLINE_SABOTAGE_01        | Anfrage abgelehnt.
+DECLINE_BUILDUP_01         | Anfrage abgelehnt.
+DECLINE_ENCROACH_01        | Anfrage abgelehnt.
+DECLINE_SKIRMISH_01        | Anfrage abgelehnt.
+DECLINE_ATTACK_01          | Anfrage abgelehnt.
+DECLINE_INVASION_01        | Anfrage abgelehnt.
+DECLINE_BIOWEAPONS_01      | Anfrage abgelehnt.
+DECLINE_TECH_TRADE_01      | Anfrage abgelehnt.
+OFFER_TECH_EXCHANGE_01     | Dominion benötigt [tech]-Technologie. Geben Sie die Vergütung an.
+ACCEPT_TECH_EXCHANGE_01    | Akzeptanz aufgezeichnet.
+ACCEPT_FINANCIAL_AID_01    | Akzeptanz aufgezeichnet.
+ACCEPT_TECHNOLOGY_AID_01   | Akzeptanz aufgezeichnet.
+
+BREAK_TRADE_01             | Handelsabkommen terminiert.
+ANNOUNCE_PEACE_01          | Akzeptanz aufgezeichnet.
+ACCEPT_PEACE_01            | Antrag bewilligt.
+
+BREAK_PACT_01              | Nichtangriffspakt terminiert.
+ANNOUNCE_PACT_01           | Akzeptanz aufgezeichnet.
+ACCEPT_PACT_01             | Antrag bewilligt.
+
+BREAK_ALLIANCE_01          | Allianz terminiert.
+ANNOUNCE_ALLIANCE_01       | Akzeptanz aufgezeichnet.
+ACCEPT_ALLIANCE_01         | Antrag bewilligt.
+ACCEPT_BREAK_ALLIANCE_01   | Antrag bewilligt.
+ACCEPT_JOINT_WAR_01        | Antrag bewilligt.
+
+RESPOND_CLOSE_EMBASSY_01   | Aktionen aufgezeichnet.
+RESPOND_BREAK_TRADE_01     | Aktionen aufgezeichnet.
+RESPOND_BREAK_PACT_01      | Aktionen aufgezeichnet.
+RESPOND_BREAK_ALLIANCE_01  | Aktionen aufgezeichnet.
+RESPOND_DECLARE_WAR_01     | Aktionen aufgezeichnet.

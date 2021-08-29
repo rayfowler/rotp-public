@@ -1,0 +1,83 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Psilon specific dialogue
+CONTACT_PACIFIST           | Salam dan hormat! Kami dari [my_empire] tahu sejak lama akan manfaat kerjasama dalam perdamaian. Kami harap ikatan diplomatik kami denganmu akan seharmonis urusan dalam negeri kami.
+CONTACT_HONORABLE          | Betapa bahagianya bisa bertemu makhluk lain yang sedang menjelajahi wilayah yang tak berbatas ini! Kami sering disebut sebagai [my_race_plural], dan kami akan melakukan apapun yang kami bisa untuk mengabdikan diri kami kepadamu dalam setiap kesempatan.
+CONTACT_ERRATIC            | [my_empire] mendoakan yang terbaik untukmu. Kami sepertinya sudah mengenal orang-orangmu sebagai... [your_empire], iya kan? Mengagumkan sekali. Ya... memang cukup mengagumkan.
+
+//
+GREETING_01                | Kami terlalu bahagia mendengar kabar dari teman yang begitu terhormat. Bagaimana [my_empire] bisa membantumu?
+GREETING_04                | Salam, Duta Besar. Aku bahagia bisa membawa permintaanmu kepada Majelis untuk... dipertimbangkan.
+GREETING_07                | Antrean sudah terbuka, Duta Besar. Apa yang kau... ingin bicarakan?
+//
+DECLAREWAR_HATE_01         | Kami sudah melakukan apa yang kami bisa lakukan untuk... melayani keberadaanmu, tapi ras yang kurang cerdas sepertimu kurang tangguh menjadi tetangga kami di angkasa ini. Jangan takut, akhir kisahmu akan berlangsung secepatnya dan juga tanpa rasa sakit.
+DECLAREWAR_HATE_02         | Kita sudah menghabiskan banyak waktu dalam perundingan. Itu rasanya... dapat disesalkan, tapi kami telah membulatkan tekad bahwa orang-orangmu harus disingkirkan dari galaksi saat ini.
+DECLAREWAR_HATE_03         | Meski kami lebih suka perdamaian di atas segalanya, kami tidak bisa menurutimu untuk terus bertindak seperti ini. Kami akan... melakukan apa yang harus kami lakukan untuk memulihkan perdamaian di galaksi.
+DECLAREWAR_ERRATIC_01      | Kuakui aku merasa sikap Majelis membingungkan, tapi mereka menganggap bahwa orang-orangmu telah melampaui batas kecerdasan mereka dan harus... disingkirkan. Sialnya, aku hanyalah seorang duta besar yang tidak punya cara untuk membujuk mereka untuk berbalik sikap.
+DECLAREWAR_ERRATIC_02      | Untuk benar-benar bisa mewujudkan perdamaian, kami kadang-kadang harus... mengingatkan diri kami sendiri betapa buruknya perang itu. Tidakkah kau setuju itu, Duta Besar?
+DECLAREWAR_ERRATIC_03      | Waktunya bertempur bagi kami, Duta Besar. Saat kami sudah selesai nanti, salah satu dari kekaisaran kita akan selamanya diingatkan akan konsekuensi perang. Kekaisaran yang lain, sayangnya, akan tidak lagi ada.
+DECLAREWAR_MILITARY_01     | Aku mohon maaf, Duta Besar, tapi waktunya telah tiba bagi Republik untuk meluaskan pengaruhnya. Kalau kami tidak bisa... memperoleh wilayah ini dengan damai, kami harus mengambilnya dengan paksa.
+DECLAREWAR_MILITARY_02     | Hanya ada sedikit di galaksi ini yang cukup berharga untuk ditukar dengan perdamaian. Kau pasti akan setuju, Duta Besar, bahwa wilayah adalah salah satu dari hal tersebut?
+DECLAREWAR_MILITARY_03     | Aku membawa kabar peperangan, Duta Besar. Majelis telah memerintahkan bahwa kami harus memperluas wilayah Republik sekarang. Meski kemampuan berperangmu mungkin... sangat mengesankan, keinginan Majelis tidak akan dapat ditolak.
+DECLAREWAR_ALLIANCE_01     | Satu dari sekutu kami, [other_race], telah mendatangi kami untuk memohon bantuan kami dalam pertempuran melawanmu. Majelis telah mendengar mereka dan menyetujui, dan begitulah bantuan kami akan mereka dapatkan.
+DECLAREWAR_ALLIANCE_02     | Bahwa rasmu dan [other_race] telah merusak perdamaian membuat kami merasa... sedih. Bahkan lebih menyedihkan bahwa kami harus bergabung dalam pertempuran melawanmu. 
+DECLAREWAR_ALLIANCE_03     | Sudah terbukti bahwa makhluk sejenismu terlalu suka berkelahi dalam situasi apapun... situasi yang tadinya terdapat perdamaian di dalamnya. Jika [other_race] telah memilih untuk berangkat berperang denganmu, kami juga ikut.
+DECLAREWAR_SPYING_01       | Aku penasaran bagaimana kau berpikir cara ini akan dijalankan. Melakukan hal yang seperti ini melawan Republik... mungkin ternyata kami terlalu menganggap tinggi kecerdasanmu. 
+DECLAREWAR_SPYING_02       | Andai kau menginginkan... untuk mendapat sesuatu dari kami, kami lebih suka kau meminta baik-baik daripada bertindak diam-diam. Sekarang kau tidak memberi kami pilihan untuk merusak perdamaian ini yang telah lama kami usahakan untuk menjaganya. 
+DECLAREWAR_SPYING_03       | Menyedihkan, Duta Besar. Ada begitu banyak pilihan lain untukmu dan untuk mata-matamu untuk dipertimbangkan, dan kini kedua pihak di antara kita harus menderita penghinaan besar karena perang.
+DECLAREWAR_ATTACK_01       | Tindakanmu tidak disertai logika, Duta Besar. Menyerang orang-orang yang hanya menginginkan perdamaian di saat mereka jelas-jelas tidak sebanding denganmu adalah sangat... membingungkan. Sepertinya rasmu jauh lebih tidak pintar daripada yang kami duga sebelumnya.  
+DECLAREWAR_ATTACK_02       | Sebuah hari yang... gelap bagi kedua kekaisaran kita. Kami tidak menginginkan apapun selain kebersamaan yang harmonis dengan rakyatmu. Mengapa kau memaksa kami seperti ini? your people.
+DECLAREWAR_ATTACK_03       | Mengapa kau memilih jalan ini? Kami orang-orang yang damai dalam segala hal, tapi tenanglah karena kami tahu bagaimana mempertahankan diri di saat-saat seperti ini.
+DECLAREWAR_OPPORTUNITY_01  | Ah baiklah, ini pastinya menjadi pengalaman menarik, Duta Besar. Tetapi saatnya telah tiba bagi kami untuk mengakhiri sejarahmu. Kami percaya makhluk yang memiliki kemampuan intelektual yang sangat kecil akhirnya hanya akan mengganggu tujuan kami.
+DECLAREWAR_ASSASSIN_01     | Aku harus menyampaikan kepadamu beberapa tahap... ucapan selamat. Dengan sedikit tindakan dapat menyebabkan [my_empire] memobilisasi armada untuk perperang dengan begitu sigapnya, tetapi membunuh Duta Besar yang tidak bersenjata tentu saja merupakan bagian dari perbuatanmu.
+
+OFFER_PEACE_01             | Perang tidak pernah berubah, Duta Besar. Begitu banyak pembunuhan, begitu banyak kerusakan, semuanya untuk apa? Tolonglah, mari kita akui... kesalahan kita di masa lalu dan memulai era baru perdamaian. 
+OFFER_TRADE_01             | Ras yang beradab dan... cerdas seperti kita tahu apa itu kemakmuran, bukannya perang, sebagai hal yang lebih bermanfaat. Republik menginginkan kemakmuran bersama dengan rakyatmu, dan persetujuan dagang sejumlah [amt] BC setiap tahun adalah langkah terbaik untuk mengawalinya. 
+OFFER_PACT_01              | Semakin banyak waktu yang kami habiskan di antara kalian, semakin kami menghargai ikatan diplomasi kita. Kita harus melakukan apapun yang kita bisa untuk... mempertahankan ikatan itu, dan pakta non-agresi di antara orang-orang kita akan memungkinkan ikatan ini terus terjaga, iya bukan, Duta Besar? 
+OFFER_ALLIANCE_01          | Waktunya telah tiba, Duta Besar: aliansi di antara [my_empire] dan [your_empire] harus dibentuk. Melalui kita, galaksi akan melihat bahwa kebersamaan dalam damai adalah satu-satunya pilihan yang dapat diterima! 
+
+WARN_TRESPASSING_01        | Keberadaanmu di [system] telah membuat pihak lain mengangkat alis mereka di majelis. Tolong, segera mundur sekarang juga sebelum perdamaian yang sudah kami usahakan begitu keras menjadi sia-sia. 
+WARN_EXPANSION_01          | Ada beberapa cara yang kami lakukan untuk mengamati caramu begitu cepat... mengembangkan cakupan pengaruhmu. Tidak ada satupun dari caramu itu yang baik bagi kelangsungan perdamaian di antara rakyat kita.
+WARN_BUILDUP_01            | Caramu membangun armadamu seperti ini bisa menunjukkan... potensi buruk terhadap perdamaian, Duta Besar. Waspadalah akan bagaimana suatu kapal yang menakutkan ini akan dipandang oleh pihak lain, termasuk dalam Republik juga.
+WARN_SKIRMISH_01           | Serangan mendadak di [system] itu... sangat mengganggu. Apakah kita akan memandang ini sebagai ditinggalkannya akal sehat untuk sementara? Atau suatu tanda bahwa sesuatu yang jauh lebih berbahaya mungkin akan segera terjadi? 
+WARN_ATTACKED_01           | Kurang ajar! Serangan seperti ini tidak boleh terus dilanjutkan! Kuperingatkan kau, Duta Besar: jangan seenaknya membahayakan perdamaian di antara [attacker_empire] dan Republik. 
+WARN_INVADED_01            | Duta Besar, apa maksudmu menyerbu ke wilayah [defender_race]!? Tentunya kau tidak bermaksud merusak perdamaian kita dengan bertindak begitu agresif? 
+WARN_ESPIONAGE_01          | Memata-matai ya, Duta Besra? Tidakkah lebih sopan jika kau... bernegosiasi untuk hal yang kau cari? Kami akan biarkan ini demi kebersamaan dalam perdamaian, tapi kami tidak akan begitu mudah memaafkan lain kali... [framed]
+WARN_SABOTAGE_01           | Aku tidak pernah bermimpi bahwa [spy_empire] sanggup melakukan... sabotase yang begitu licik. Atas nama perdamaian, aku berdoa semoga kau tidak mengulangi kesalahan bodoh ini lagi. [forced]
+WARN_BIOWEAPON_01          | Hal ini... belum pernah didengar siapapun, Duta Besar. Menggunakan senjata biologis terhadap penduduk sipil bahkan hanya untuk satu kali saja memaksa kami untuk berpikir ulang dengan cara apapun tentang bagaimana pandangan kami terhadapmu! 
+WARN_GENOCIDE_01           | Hanya begitu saja, suara dalam nyanyian di galaksi selamanya hilang. Untuk mereka yang begitu tega melakukan kejahatan seperti ini... Aku khawatir pada akhirnya kami tidak akan bisa membentuk perdamaian yang abadi denganmu.
+WARN_FINAL_WAR_01          | Galaksi ini sudah hampir mencapai harmoni, tetapi kau begitu keras kepala menghalanginya. Jika... pembinasaan [rebel_empire] adalah harga yang harus dibayar untuk perdamaian abadi, kami akan melakukannya. Kami akan memastikan harga itu terbayar.  
+WARN_COUNCIL_VOTE_01       | [candidate_empire] tidak mencari apapun kecuali perdamaian sehingga semua bisa berbagi kemakmuran dari itu. Jika kau berharap yang terbaik... untuk masa depan rakyatmu, kau tidak akan lagi menyumbang suara melawan Republik di majelis.
+WARN_OATHBREAKER_01        | Ini perbuatan terhina dan rendahan, Duta Besar. Kami heran bagaimana kau bisa merusak perdamaian begitu mudahnya seperti saat kau merusak kesepakatan, dan kami akan siap jika kau sampai berani melakukannya.
+WARN_ATTACKED_ALLY_01      | Batalkan serangan darimu ini, Duta Besar! Kau tahu kami adalah sekutu dari [defender_race]. Tidak bisakah kita membawa perdamaian melalui dialog daripada kalian memaksa kita semua ke dalam perang? 
+WARN_REBELLING_AGAINST_01  | Tidak! Kau tidak bisa dipercaya untuk memimpin majelis menuju perdamaian! Dedikasi kami terhadap perdamaian jauh melampaui niatmu, tapi kau mungkin bisa memaksa kami untuk segera membuang dedikasi itu! 
+
+PRAISE_COUNCIL_VOTE_01     | Teman kami di [voter_empire] belum pernah mengecewakan kami sebelumnya! Republik menyampaikan rasa terima kasihnya kepadamu untuk... tindakanmu di majelis hari ini, dan kami sangat ingin menyambutmu di [candidate_home] segera setelah kau punya waktu. 
+PRAISE_COUNCIL_VOTE_02     | Keputusan yang bijak telah dibuat di majelis, tetapi mungkin yang terbaik adalah ketika kau memberi suara kepada Republik. Kami mengakui suatu... dedikasimu terhadap perdamaian, dan mungkin kami akan menikmati persahabatan denganmu selama dedikasi itu berlanjut.  
+PRAISE_COUNCIL_VOTE_03     | Kami tahu akan suaramu untuk Republik di majelis. Kami terkejut, Duta Besar, dan mungkin salah mengira kecerdasan orang-orangmu. 
+
+PRAISE_ATTACKED_ENEMY_01   | Duta Besar! Bantuanmu sangat kami... hargai. Bersama kita akan membasmi ancaman [defender_race], dan memulihkan perdamaian yang sangat didambakan oleh galaksi ini. 
+PRAISE_ATTACKED_ENEMY_02   | Kami melihat dan menghargai aksi [attacker_empire] sebagai suatu komitmen terhadap cita-cita kami akan perdamaian yang lebih besar. Tenanglah bahwa segera setelah kami... memaksa [defender_race] untuk melemah, perdamaian itu bisa berlanjut lagi. 
+PRAISE_ATTACKED_ENEMY_03   | Orang-orangmu kejam dan tidak tahu malu, jadi bagi kami cukup mengejutkan kamu mau bergabung ikut perang begitu saja. Meski begitu, kenyataan bahwa kau mengarahkan senjatamu kepada pihak yang tidak bertempur demi perdamaian setidaknya harus... diakui. 
+
+PRAISE_TRADE_01            | Berdagang dengan pihak lain yang mendedikasikan diri demi perdamaian adalah sebuah manfaat lebih, tapi berdagang dengan teman yang berdedikasi terhadap perdamaian adalah anugrah sejati. Semoga kesepakatan dagang dan persahabatan kita berlangsung hingga akhir hidup galaksi ini! 
+PRAISE_TRADE_02            | Bukankan ini menarik, Duta Besar? Lihat betapa suatu langkah sederhana dalam perdagangan memberi manfaat kepada semua pihak yang terlibat! Kami harap hal ini akan berlanjut menjadi keuntungan bagi kedua ras kita selama ribuan eon tahun ke depan! 
+PRAISE_REBELLING_WITH_01   | Kami [my_race_plural] selalu percaya bahwa perang bukanlah jawaban. Majelis ini, bagaimanapun juga, menunjukkan kepada kami bahwa kami bersalah selama ini. Silakan berperang, Duta Besar, dan ketahuilah bahwa Republik berdiri bersamamu! 
+ 
+ACCEPT_TRADE_01            | Ya, Duta Besar, kami setuju bahwa perdagangan yang saling menguntungkan adalah jalan terbaik menuju perdamaian. Sejumlah [amt] BC setiap tahun cukup baik, dan kami berterima kasih akan kemurahan hatimu.
+RESPOND_IGNORE_THREAT_01   | Jangan salah mengartikan ketidaksukaan kami akan perang adalah kelemahan! Tentunya ancamanmu kau utarakan dalam kemarahan yang tidak masuk akal, dan begitulah kami harus memaafkan semburan kemarahanmu kali ini.
+RESPOND_STOP_SPYING_01     | Mata-mata dari [my_race], katamu? Pasti ini kesalahpahaman. Tolong kembalikan warga kami agar kami bisa memahami apa persoalan sebenarnya, dan beristirahatlah dengan santai karena memata-matai adalah hal terakhir yang bisa kami pikirkan.
+RESPOND_STOP_ATTACKING_01  | Semoga armada tangguh ini menghambat siapapun yang cukup bodoh untuk memulai perang yang mahal, dan semoga keluarnya kami dari armada ini tanpa memerintahkannya untuk digunakan menunjukkan komitmen kami terhadap perdamaian.
+

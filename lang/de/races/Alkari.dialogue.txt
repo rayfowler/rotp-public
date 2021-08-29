@@ -1,0 +1,97 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Alkari specific dialogue
+
+CONTACT_HONORABLE          | Sei gegrüßt, oh [your_nameTitle] [your_name] der [your_empire]! Wir vom [my_empire] grüßen Euch herzlich und freuen uns auf einen ehrenvollen Umgang mit Euresgleichen. 
+CONTACT_PACIFIST           | Herzliche Grüße an Dich, [Ihr_Titel] vom [Ihr_Reich]. Bringt keinen Krieg an die Grenzen unserer Souveränität, und wir werden beide in gegenseitiger Freundschaft gedeihen. 
+CONTACT_ERRATIC            | Ich bin ein Botschafter für das langlebige [my_empire]. Mein Volk grüßt Euch, wie es unser Brauch ist. Eure Art ist bekannt als [Ihre_Rasse_plural]? Das ist sehr... faszinierend.
+
+//
+GREETING_01                | Sei gegrüßt, Botschafter! Welchen Dienst könnte die Souveränität einem so verehrten Verbündeten an diesem Tag erweisen?
+GREETING_04                | Ich grüße Sie, Botschafter. Die Souveränität ist bereit, Ihr Anliegen zu hören, aber wie weit wir gehen werden, um es zu erfüllen, bleibt abzuwarten...
+GREETING_07                | Sprechen Sie schnell, Herr Botschafter! Wir sind nach unseren Gesetzen verpflichtet, alle Anstandsregeln einzuhalten, aber das bedeutet nicht, dass wir unsere Zeit damit verschwenden, Ihre trivialen Forderungen zu erfüllen!
+
+//
+DECLAREWAR_HATE_01         | Eine Rasse wie die Ihre, die sich nicht um Anstand und Höflichkeit schert, gehört nicht in eine Galaxie, die von der Souveränität regiert wird, Herr Botschafter! Bereitet euch auf den Kampf vor!
+DECLAREWAR_HATE_02         | Eure Kratzbürstigkeit und Arroganz haben dies herbeigeführt! Überbringe diese Nachricht an deinen [your_title]: Wir tragen den Krieg zu Euch!
+DECLAREWAR_HATE_03         | Was für eine Obszönität! Das [my_empire] würde eher aufhören zu existieren, als weiterhin den Kosmos mit einem solch rüpelhaften Volk zu teilen, Botschafter!
+//
+DECLAREWAR_ERRATIC_01      | Botschafter, wir können nicht leugnen, dass es angenehm war, mit einer so intriganten Rasse wie der Ihren zu tun zu haben. Wir bedauern, dass diese Geschäfte nun zu Ende gehen müssen.
+DECLAREWAR_ERRATIC_02      | Sie haben uns immer wieder amüsiert, seit unsere Völker sich zum ersten Mal trafen. Die Souveränität ist gespannt, ob Sie sich in Zeiten des Krieges als ebenso amüsant erweisen werden, Botschafter!
+DECLAREWAR_ERRATIC_03      | Sei gegrüßt, Botschafter der [your_empire]! Die [my_empire] möchte sich in einem ehrenvollen Kampf mit Eurer beachtlichen Stärke messen. Bereitet Eure Flotten und Euer Volk auf den Krieg vor!
+//
+DECLAREWAR_MILITARY_01     | Die Souveränität muss ihr Territorium weiter vergrößern, um unsere Herden zu versorgen. Wenn wir keine unbewohnten Welten finden, nehmen wir die Welten kleinerer Reiche. Euer Imperium ist kleiner als unseres, und so werden Eure Welten nun die unseren.
+DECLAREWAR_MILITARY_02     | Die Zeit ist endlich gekommen, Botschafter! Mit einem Flügel wird die Souveränität den Schatten des Krieges über euch ausbreiten, und mit dem anderen wird sie eure Welten in ihre Schranken weisen.
+DECLAREWAR_MILITARY_03     | Es ist... bedauerlich, dass es so weit gekommen ist, Botschafter. Wir müssen Ihre Planeten für uns gewinnen oder bei dem Versuch umkommen. Wir haben keine Wahl, bereitet euch auf den Krieg vor!
+//
+DECLAREWAR_ALLIANCE_01     | Diplomaten des [other_empire] haben uns informiert, dass sie sich mit Ihrem Volk im Krieg befinden. Das [my_empire] ist ehrenhaft verpflichtet, unseren Verbündeten in Zeiten des Krieges beizustehen: eine Tatsache, die Ihr bald bereuen werdet, Botschafter. 
+DECLAREWAR_ALLIANCE_02     | Unser Verbündeter ruft um Hilfe, und die Souveränität antwortet! Euer Ende ist nah, Botschafter: Ihr könnt nicht lange gegen unsere kombinierten Flotten bestehen!
+DECLAREWAR_ALLIANCE_03     | Es ärgert uns, dass Ihr Euch entschieden habt, auf diese Weise Krieg gegen einen unserer Verbündeten zu führen. Nach unseren heiligsten Gesetzen müssen wir ihnen nun im Kampf gegen Euch beistehen! Bitte, kehrt um von diesem Weg, bevor es für uns alle zu spät ist!
+//
+DECLAREWAR_SPYING_01       | Wir waren damit zufrieden, freundschaftliche Beziehungen zu Eurem Volk zu unterhalten, Herr Botschafter. Dass Ihr Euch auf solch unehrenhafte Handlungen gegen die Krone einlassen, hat uns gezwungen, das zu überdenken.
+DECLAREWAR_SPYING_02       | Ein solcher Frevel wird nicht ungestraft bleiben, Botschafter! Diejenigen, die im Geheimen gegen uns agieren, werden unter unserem Zorn zur Strecke gebracht werden!
+DECLAREWAR_SPYING_03       | Herr Botschafter! Wie können Ihre Leute es wagen, solche abscheulichen Taten gegen die Souveränität zu begehen?! Dafür werden wir um jeden Preis Gerechtigkeit einfordern! Bereitet euch auf den Krieg vor!
+//
+DECLAREWAR_ATTACK_01       | Hmpf! Was für eine tollkühne Entscheidung, Botschafter! Aber wenn Ihr den Krieg wollt, dann wird Euch die Souveränität den Krieg bringen!
+DECLAREWAR_ATTACK_02       | So beginnt es, Botschafter! Wenn das Volk von [my_race] die endlosen Kriege des Purpurnen Jahrtausends überleben konnte, werden wir auch einen Krieg gegen Ihre Art problemlos überstehen!
+DECLAREWAR_ATTACK_03       | Wir hätten diese Art von Rüpelhaftigkeit von einer ungehobelten Rasse wie der Ihren erwarten sollen, Botschafter! Glaubt nicht, dass die Souveränität sich Euch unangefochten ergeben wird!
+//
+DECLAREWAR_OPPORTUNITY_01  | Wie Sie sehen können, haben wir vom [my_empire] in unseren Weltraumaktivitäten viel Erfolg gehabt. Leider, Botschafter, diktieren unsere Bedürfnisse, dass unser nächster Erfolg auf Kosten Ihres Reiches gehen muss. 
+DECLAREWAR_ASSASSIN_01     | Was ist das für eine Abscheulichkeit? Ihr begeht eine so monströse Tat, wie einen Botschafter kaltblütig zu ermorden? Die Souveränität wird nicht dulden, dass eine so abscheuliche Rasse wie die Ihre weiter existiert!
+
+
+
+
+OFFER_PEACE_01             | Die Geschichte des Crimson Millennium darf sich nicht wiederholen, Botschafter! Wir bitten Euch, [your_race] und [my_race] gleichermaßen zu ehren, indem Ihr diesen Friedensvertrag unterzeichnet, um weiteres Blutvergießen zu verhindern!
+OFFER_TRADE_01             | Sicherlich sind zivilisierte Rassen wie die unsere in der Lage, sich gegenseitig in ehrenhafter Zusammenarbeit zu unterstützen. Das [my_empire] wünscht ein Handelsabkommen mit dem [your_empire] in Höhe von [amt] BC, jedes Jahr. Wie lautet Ihre Antwort, Herr Botschafter?
+OFFER_PACT_01              | Die Souveränität ist zufrieden damit, wie sich Ihr Volk in diplomatischen Angelegenheiten verhält. Um zu zeigen, wie sehr wir unsere Beziehung schätzen, möchten wir einen Nichtangriffspakt unterzeichnen, der sicherstellt, dass keiner von uns in die Gefahr gerät, die Absichten des anderen... falsch zu interpretieren.
+OFFER_ALLIANCE_01          | Eure Taten haben Euch viel Ansehen bei der Souveränität eingebracht, Botschafter! Der König des Turms hat verfügt, dass ein Bündnis zwischen [your_race] und [my_race] sofort geschlossen werden muss! Wir warten nur noch auf Eure Unterschrift!
+
+WARN_TRESPASSING_01        | Es ist höchst unpassend, dass die Flotten von [your_race] im System [System] herumturnen, als ob es ihre eigene Domäne wäre. Es ist im besten Interesse aller, Herr Botschafter, dass Sie dies sofort korrigieren. 
+WARN_EXPANSION_01          | Unkontrolliert zu expandieren, wohin Sie wollen, zeigt eine große Respektlosigkeit gegenüber Ihren Nachbarn, Herr Botschafter! Ich rate Ihnen dringend, diese Respektlosigkeit gegenüber der Souveränität nicht länger fortzusetzen. 
+WARN_BUILDUP_01            | Haltet Ihr uns für blind, Botschafter?! Wir sehen, dass Eure Flotten weiter an Größe und Stärke zunehmen. Zeigen Sie uns, dass Sie es nicht böse meinen, wenn Sie diesen Aufbau stoppen, oder Sie könnten tatsächlich eine präventive Antwort verdienen!
+WARN_SKIRMISH_01           | Wir wissen sehr wohl über das Scharmützel in [System] Bescheid, Botschafter! Die Souveränität wird dieses eine Mal über Eure Aktionen hinwegsehen. Aber warum? Ich sehe keinen Grund, eine solche Frage von jemandem wie Euch zu beantworten! 
+WARN_ATTACKED_01           | Ein solch dreister Angriff entspringt nur einem völligen Mangel an Respekt, Herr Botschafter! Ihr könnt Euch glücklich schätzen, dass der Turmkönig sich nicht herablässt, Eure Frechheit zu rügen. Das nächste Mal habt Ihr vielleicht nicht so viel Glück! 
+WARN_INVADED_01            | Ihr wollt euch also das nehmen, was euch nicht gehört, Botschafter?! Ziehen Sie nicht länger unseren Zorn auf sich: Wir würden diesen wertlosen Planeten gerne loswerden, wenn es bedeutet, Ihre Dummheit loszuwerden! 
+WARN_ESPIONAGE_01          | Hmfhmfhmf, es überrascht uns nicht, dass eine so niederträchtige Rasse auf Spionage zurückgreifen würde, um ihre Ziele zu erreichen. Denken Sie daran, Botschafter: Die Augen der [my_race] sind so scharf, dass ihrem Blick nichts entgeht. [framed]
+WARN_SABOTAGE_01           | Absolut widerwärtig, Botschafter! In der Dunkelheit zu schleichen und Sabotage zu begehen wie Unholde in der Nacht!? Aber Sie sind ebenso dumm wie krass: Die Gebäude, die Sie zerstört haben, waren nicht wichtig genug, um eine Reaktion zu rechtfertigen! 
+WARN_BIOWEAPON_01          | Entehrung! Entehrung! Ihr habt die unaussprechlichste Art von Waffe gegen jene eingesetzt, die nicht einmal einen Schild erheben können, um sich zu schützen! Ihre wohlverdiente Schande wird Ihnen bis zum Ende folgen, Botschafter! 
+WARN_GENOCIDE_01           | Ich stimme zwar zu, dass die [victim_race] eine erbärmliche Horde rüpelhaften Ungeziefers war, aber die Souveränität lehnt es entschieden ab, Völkermord zu begehen. Wir fragen uns, Herr Botschafter, ob Ihr Volk in der Lage ist, diese Aktionen mit mehr... zivilisierten Rassen zu wiederholen?
+WARN_FINAL_WAR_01          | Es gibt keine Tugend auf dem Weg, den Sie gewählt haben, Botschafter. Machen Sie keinen Fehler: Jetzt, da Sie sich entschieden haben, sich gegen den rechtmäßig gewählten Führer der Galaxie zu stellen, sind wir ehrenhaft verpflichtet, alles zu tun, um Sie zu stoppen! 
+WARN_COUNCIL_VOTE_01       | So viel zum illustren Botschafter des [Euer_Imperium]! Habt Ihr wirklich geglaubt, wir würden von Eurer Täuschung im Rat nichts erfahren? Ihr solltet um Euer Volk fürchten, Botschafter: Der Turmkönig wird höchst unzufrieden sein. 
+WARN_OATHBREAKER_01        | Wie skandalös! Sie wissen, wie sehr wir Ehre schätzen, und dennoch brechen Sie so offen Ihr Wort, nur um Ihre eigenen Wünsche zu befriedigen?! Die Souveränität wird sich für immer an diese Beleidigung erinnern, Botschafter, und sie sicherlich mit gleicher Münze heimzahlen! [spiesCaught] 
+WARN_ATTACKED_ALLY_01      | Es ist ärgerlich, Botschafter, dass Ihr Volk und das [defender_empire] sich entschieden haben, so zu zanken. Ihr könnt nicht hoffen, es mit unserer vereinten Macht aufnehmen zu können, Botschafter: Die Souveränität bittet Euch dringend, Eure Handlungen zu überdenken.
+WARN_REBELLING_AGAINST_01  | Dachtet Ihr, wir hätten vergessen, wie unehrenhaft Ihr Euch erwiesen habt? Es spielt keine Rolle, ob wir gegen Euch oder die gesamte Galaxie kämpfen müssen: Ihr werdet niemals auf dem Thron des Rates sitzen, solange der König im Turm lebt! 
+ 
+PRAISE_COUNCIL_VOTE_01     | Der geschätzte und ehrwürdige Botschafter des [your_empire]! Wir stehen in der Schuld für Ihren Dienst an uns bei dieser Ratssitzung und sind begierig darauf, diese Schuld zu begleichen, wann immer Sie entscheiden, wie das am besten geschehen kann. 
+PRAISE_COUNCIL_VOTE_02     | Ich grüße Sie, Herr Botschafter. Ihr ehrt uns mit einer Stimme, die vor den hier Versammelten für unsere Sache spricht. Ich bin sicher, dass der König des Turms mehr über ein so ehrenwertes Volk erfahren möchte, sobald ich ihm meinen Bericht erstattet habe. 
+PRAISE_COUNCIL_VOTE_03     | Hmfhmfhmf, Sie erwarten doch nicht, dass wir glauben, Sie hätten sich aus Respekt oder Ehrgefühl auf die Seite der Souveränität geschlagen, Herr Botschafter? Doch vielleicht werden Sie sich uns gegenüber weiterhin beweisen, wenn wir Ihnen nur eine weitere Chance dazu geben? 
+
+PRAISE_ATTACKED_ENEMY_01   | Ah! Unser geschätzter Freund und Verbündeter bringt eine gute Nachricht in dieser Zeit des Krieges! Komm, Botschafter: Lass unser Volk gemeinsam als Mitstreiter gegen diese schreckliche [defender_race] in den Kampf ziehen! 
+PRAISE_ATTACKED_ENEMY_02   | Dieser Krieg wird schnell vorbei sein, Herr Botschafter. Auch allein würde die Souveränität diese vulgären [defender_race] Bestien leicht überwältigen. Aber gemeinsam? Gemeinsam werden wir den Makel ihrer Rasse für immer aus der Galaxie tilgen! 
+PRAISE_ATTACKED_ENEMY_03   | Ich bin mir ebenso sicher, dass Sie aus einer Gelegenheit heraus handeln, wie ich mir sicher bin, dass Sie die Bedeutung des Wortes "Ehre" nicht kennen! Wir erlauben Euch, uns gegen die [defender_race] zu helfen, und sei es nur, um zu verhindern, dass wir so viele Verluste erleiden, wie wir es sonst tun würden! 
+
+PRAISE_TRADE_01            | Es erleichtert mich mehr als Ihr denkt, Herr Botschafter, dass Ihr Volk so ehrenhaft Handel treibt. Die Souveränität ehrt Sie und Ihr Volk und wird unsere Freundschaft noch mehr zu schätzen wissen als unser fortgesetztes Handelsabkommen! 
+PRAISE_TRADE_02            | Es gibt viele Wege, seine Ehre zu beweisen, Botschafter. Geschäfte fair und in gutem Glauben zu führen, ist einer der besten Wege, dies zu tun, und etwas, das die Souveränität bei denen, denen wir in dieser Galaxie begegnen, sehr schätzt. 
+
+PRAISE_REBELLING_WITH_01   | Diese Rüpel im Rat unterschätzen uns, Herr Botschafter! Gemeinsam werden wir ihnen zeigen, was der Begriff "fataler Fehltritt" wirklich bedeutet! 
+
+ACCEPT_TRADE_01            | Die Souveränität ist immer gerne bereit, mit dem [your_empire] Geschäfte zu machen. Ein jährlicher Betrag von [amt] BC ist sehr angenehm, danke.
+RESPOND_IGNORE_THREAT_01   | Sie wagen es, das [my_empire] zu provozieren? Nehmen Sie Ihre lächerlichen Scherze woanders hin, bevor sie aufhören, amüsant zu sein.
+RESPOND_STOP_SPYING_01     | Eure Augen scheinen so scharf zu sein wie unsere, wenn es darum geht, Spione zu finden. Betrachten Sie unsere Täuschungsversuche als beendet.
+RESPOND_STOP_ATTACKING_01  | Sehen Sie nun die Macht unserer Souveränität? Solange Ihr unsere Macht nicht vergesst, werden wir Euch mit diesen Flotten nicht mehr belästigen.
+
+
+ 

@@ -1,0 +1,22 @@
+// all possible names
+name: Manusia, Terran, Tellan, Priman, Midgardian
+
+desc1: Diplomat Tersohor
+desc2: Pedagang Ahli dan Diplomat Ulung
+desc3: Manusia Ahli Bersilat lidah adalah ahlinya meyakinkan pihak lain untuk memenuhi keinginan Manusia.
+
+// possible home system names
+home: Earth, Terra, Tellus, Prime, Midgard
+
+title:     Triumvir
+fulltitle: Triumvir
+
+// possible leader names
+leader: Alexander, Bladrov II, Durash IV, Johann III, Lasitus, Strader
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Sentry, Survey, Courier, Explorer, Seeker, Messenger, Patrol
+ship2: Frigate, Corvette, Gunboat, Fighter, Brigade, Shrike, Commando
+ship3: Cruiser, Escort, Warship, Defender, Carrier, Vanguard, Harrier
+ship4: Dreadnought, Battleship, Dreadstar, Devastator, War Cruiser, Avenger, Destroyer
+

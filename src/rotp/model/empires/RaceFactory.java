@@ -76,7 +76,7 @@ public enum RaceFactory implements Base {
     }
     public void resetRaceLangFiles() {
         for (Race r : Race.races())
-            r.labels().resetDialogue();
+            r.raceLabels().resetDialogue();
     }
     public void loadRaceLangFiles(String langDir) {
         for (Race r : Race.races())

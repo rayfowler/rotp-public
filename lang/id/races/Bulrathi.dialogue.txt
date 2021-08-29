@@ -1,0 +1,86 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Bulrathi specific dialogue
+
+CONTACT_AGGRESSIVE         | Aku adalah Duta Besar dari [my_empire]. Kusarankan kau tetap berada dalam pihak yang benar dengan [my_title], [your_race] Kecil. Karena dia hanya perlu sekali perintah saja dan makhluk sejenismu akan musnah di bawah kemarahan yang tidak mungkin bisa kau bayangkan.
+CONTACT_RUTHLESS           | Kau ini kecil sekali! Kau hanya butuh tahu dua hal: pertama, bahwa kami dipanggil "[my_race]", dan kedua, bahwa melawan perjalanan kami hanya akan menjamin kematianmu!
+CONTACT_ERRATIC            | Kami dari [my_empire] menyapamu, Makhluk Kecil. Nasib kita terletak di suatu tempat di antara dunia-dunia yang tersebar dan bintang-bintang yang membara ini. Akan menarik rasanya melihat posisimu di rencana besar kami.
+//
+GREETING_01                | Jadi kau telah bertindak dengan kehormatan, dan begitu juga kami akan bertindak untuk menghormatimu. Katakan apa yang kau butuhkan, Teman Kecil. 
+GREETING_04                | Bicaralah secepatnya, [your_race] Kecil. Jangan menggoda kemarahan kami dengan janji palsu dan perjanjian sepihak.
+GREETING_07                | Berani datang dan bicara dengan kami menunjukkan kegagahan untuk makhluk yang sekecil kau. Kegagahan ini pantas mendapat balasan berupa keamanan untuk dirimu untuk saat ini.
+
+DECLAREWAR_HATE_01         | [your_race_plural] Kecil dalam dunia kecil mereka dengan siasat kecil mereka. [my_title] mulai lelah dengan gangguanmu yang terus-menerus. Kau tidak akan selamat dari bencana yang akan kami bawa ke hadapanmu!
+DECLAREWAR_HATE_02         | Cukup! Nasib orang-orang kami sudah tertera pada bintang-bintang. Kami tidak akan mempertahankan makhluk yang sangat kecil sepertimu untuk melawan kami lebih lama lagi!
+DECLAREWAR_HATE_03         | Persiapkan dirimu untuk pertempuran, [your_race] kecil! Akan kami tunjukkan kepadamu bahwa kekerasan adalah satu-satunya kekuatan yang membawa kemenangan di medan tempur!
+DECLAREWAR_ERRATIC_01      | Kebijakan para filsuf bisa membingungkan mereka yang tidak mampu memahaminya. Ketika para pemikir kami memerintahkan kami untuk menyerang, para ksatria kami pasti akan menurut.
+DECLAREWAR_ERRATIC_02      | Setiap hal memiliki waktu dan tempatnya di alam semesta ini. Perang dan perdamaian, hidup dan mati, dominasi dan penundukan. Bagi kami inilah waktunya untuk menyerang, dan bagimu waktunya untuk bertahan.
+DECLAREWAR_ERRATIC_03      | Pernahkan kau merasa kagum terhadap nasib, Duta Besar? Nasib memiliki cara yang lucu untuk membuat nyata hal-hal yang tampaknya tidak mungkin. Ayo kita uji nasib bersama, [your_race] kecil, dan lihat apa yang dimilikinya untuk kita.
+DECLAREWAR_MILITARY_01     | Kepada yang kuatlah yang lemah tertuju. [my_race] kuat, dan begitu juga kami akan menang melawan yang lemah, meski sebelumnya mereka menjadi milik pihak lain.
+DECLAREWAR_MILITARY_02     | Orang-orangmu bertempur dengan baik untuk makhluk yang berukuran sangat kecil, Duta Besar. Mari kita lihat bagaimana mereka akan bertempur dengan kekuatan [my_race] yang didatangkan untuk mereka hadapi!
+DECLAREWAR_MILITARY_03     | Galaksi ini adalah milik mereka yang tangguh, dan kekuatan kami tidak akan membiarkanmu menutupinya. Pertahankan duniamu secara baik-baik, atau kami akan mengambilnya darimu!
+DECLAREWAR_ALLIANCE_01     | Sekutu dari Kekaisaran telah meminta bantuan kami! Kami akan menunjukkan kepada kalian berdua dan kepada [defender_race] bagaimana kekuatan sejati [my_race] dikerahkan!
+DECLAREWAR_ALLIANCE_02     | Kau memulai perang terhadap sekutu kami, aku tidak ragu bahwa kau telah memulai perang terhadap kami juga. Pertempuran ini adalah di mana orang-orangmu tidak akan muncul sebagai pemenang, Duta Besar. Lihat saja.
+DECLAREWAR_ALLIANCE_03     | Bahkan dengan seluruh kekuatanmu, kau tidak punya kesempatan melawan [defender_race] jika kami [my_race] bergabung dengan mereka! Persiapkan dirimu, [your_race] kecil!
+DECLAREWAR_SPYING_01       | Penghianatan! Tapi bila kau harus ada dalam tubuh sekecil itu kau pasti juga hanya punya pilihan kecil lainnya: kau pasti tidak punya peluang di medan pertempuran, seperti yang akan kami buktikan dengan mudah padamu.
+DECLAREWAR_SPYING_02       | Sadarilah bahwa makhluk sekecil kau tidak akan bisa berhasil dalam suatu operasi rahasia seperti ini. Gantung mata-matamu setinggi mungkin agar penghuni dunia-duniamu melihatnya; kau akan membayar kesalahan mereka dengan nyawamu! 
+DECLAREWAR_SPYING_03       | Kau pikir kami terlalu lemah untuk merespon tindakan yang dirahasiakan seperti ini, Makhluk Kecil? Akan kami tunjukkan kepadamu betapa parahnya salah duga yang kau lakukan!
+DECLAREWAR_ATTACK_01       | Kalau kau sangat ingin bertempur, kau hanya perlu meminta, [your_race] Kecil. Kami akan hancurkan apapun yang kau genggam erat di hadapan matamu dengan sekali pukulan!
+DECLAREWAR_ATTACK_02       | Begitu lancangnya kau menyerang kami, seakan-akan kau jauh lebih kuat dari kenyataannya. Membuatku salut padamu, tetapi akhirnya kau yang salah.
+DECLAREWAR_ATTACK_03       | Ya sudah! Mungkin memang benar bahwa kami kehabisan senjata, tapi kau masih akan melihat dirimu kalah!
+DECLAREWAR_OPPORTUNITY_01  | Orang-orang kami selalu mencari kesempatan untuk menajamkan keahlian pertempuran mereka, dan orang-orangmu mungkin terbukti menjadi tantangan berharga. Pastikan kalian membuat gerakan yang bagus supaya makhluk sejenismu akan dibicarakan dengan rasa sayang dalam kisah kami.
+DECLAREWAR_ASSASSIN_01     | Kami tidak mau kurang dari ini: ras yang fisiknya begitu rendah yang mereka harus repot-repot membunuh duta besar tanpa senjata untuk meneruskan ambisi mereka. Berdoalah kepada dewa manapun yang kau punya, [your_race] Kecil, karena kami akan memastikan bahwa pertempuran ini adalah yang terakhir bagimu.
+
+OFFER_PEACE_01             | Orang-orangmu bertempur dengan baik, Makhluk Kecil, tapi terlalu banyak darah sudah tertumpah dalam perang ini. Kami telah bersiap untuk meninggalkan pertentangan kita di masa lalu dan bergerak menuju perdamaian, jika kau cukup berani untuk melakukannya juga.
+OFFER_TRADE_01             | Kekuranganmu dalam hal ukuran tubuh sepertinya telah ditebus dengan kecerdikanmu. Orang-orang kami mengusulkan perdagangan sebanyak [amt] BC, setiap tahun, dengan harapan bahwa perdagangan bisa terbukti lebih bermanfaat daripada berkonflik untuk kita semua.
+OFFER_PACT_01              | Kami [my_race_plural] memiliki berbagai pendapat berbeda untuk berbagai ras yang telah kami temui. Makluk sejenismu khususnya bisa menghibur [my_title], dan dia meminta kami bisa menandatangani pakta non-agresi denganmu untuk mencegah pertentangan yang tidak perlu di masa depan. 
+OFFER_ALLIANCE_01          | Meski kami tak terkalahkan dalam pertempuran, kami tidak barbar sehingga kami sampai tega memutuskan ikatan dengan ras sepertimu hanya untuk merasakan serunya kemenangan. Duta Besar Mini, mari kita resmikan aliansi, dan bertemu di medan tempur sebagai kawan bukannya musuh.
+//
+WARN_TRESPASSING_01        | Keberadaanmu di [system] mulai membuat kami kesal. Lebih bijak jika kau pergi sebelum kau menggoda kemarahan kami lebih jauh. 
+WARN_EXPANSION_01          | Mengambil alih wilayah adalah hak kekaisaran yang paling kuat. Kami peringatkan kau jangan melakukan ekspansi lebih jauh, Makhluk Kecil, kecuali kau ingin kami mempertahankan masa depan wilayah [my_race] sebelum secara resmi wilayah itu menjadi milik kami. 
+WARN_BUILDUP_01            | Ruang angkasa adalah panggung teater para pengecut: pemberani sejati hanya dapat terbukti pada permukaan planet. Meski armadamu tumbuh begitu banyak, kau tidak bisa menggunakannya untuk bersembunyi dari kemarahan kami jika kau terus mengembangkannya lagi. 
+WARN_SKIRMISH_01           | Serangan mendadak di [system] adalah sedikit di atas kegilaan bagi kami. Jangan ganggu kami lagi atau kami akan meremukkanmu seperti hama yang kau sepertinya suka sekali berbuat seperti itu!
+WARN_ATTACKED_01           | Pertunjukan menyedihkan dari ras yang sama menyedihkannya pula! Bersyukurlah bahwa [defender_title] memiliki urusan yang lebih penting daripada pertunjukan kekuatan kecilmu, tapi ketahuilah bahwa jika kau ingin perang kami akan senang bisa menurutimu, Makhluk Kecil. 
+WARN_INVADED_01            | Ha! Makhluk-makhluk kecil yang cukup berani. Tinggalkan wilayahmu sekarang, Makhluk Kecil, sbelum kau melakukan sesuatu yang pasti akan kau sesali segera setelahnya. 
+WARN_ESPIONAGE_01          | Pengecut! Berani menyusup di antara [victim_race_plural] seperti primata chommka keluar dari tabung mereka. Bersyukurlah kami tidak meremukkan mata-matamu, dan jangan paksa kami merespin perbuatan rendahan semacam ini lagi! [framed]
+WARN_SABOTAGE_01           | Mengapa tidak menghadapi kami di pertempuran langsung saja, Makhluk Kecil? Akan membosankan bagi kami untuk bertempur dengan ras yang ngotot mengutamakan sabotase, tapi jika kau melakukan ini lagi kami mau menanggung kebosanan itu hanya untuk menyingkirkanmu! [forced] 
+WARN_BIOWEAPON_01          | Tindakan yang paling pengecut, menggunakan senjata biologis melawan mereka yang bahkan tidak mampu mempertahankan diri! Orang-orangmu akan menanggung penghinaan ini sampai akhir masa kekaisaranmu, Makhluk Kecil: tidak ada yang akan benar-benar bisa menghapus sejarah serangan ini. 
+WARN_GENOCIDE_01           | [victim_race_plural] lemah dan rapuh, dan bukanlah suatu kehilangan besar bagi galaksi ini. Bahwa makhluk yang tidak penting sepertimu akan menjadi pihak yang bertanggung jawab akan kepunahan mereka adalah yang terasa paling tidak nyaman bagi kami.
+WARN_FINAL_WAR_01          | Kami kagum akan keberanian mereka yang berdiri melawan galaksi di saat mereka semua telah memilih untuk persatu dalam damai? Kami akan mencatat keberanianmu dalam sejarah kami, Makhluk Kecil, setelah kami menghancurkanmu sampai anakmu yang paling terakhir! 
+WARN_COUNCIL_VOTE_01       | Majelis ini adalah perkumpulan makhluk-makhluk pemuja bodoh yang lebih suka mendiskusikan kesedihan mereka daripada membereskannya seperti layaknya ksatria! Tapi hanya kami karena merasa proses ini tidak penting bukan berarti kami siap untuk memaafkan perlawananmu selama proses itu!
+WARN_OATHBREAKER_01        | Makhluk Kecil! Mengingkari janjimu berarti aib besar! Kami tahu makhluk sejenismu lemah secara fisik, tapi ternyata perkataan kalian juga lemah sampai kami pun terkejut! 
+WARN_ATTACKED_ALLY_01      | [defender_race] Kecil berada di bawah perlindungan kami! Hentikan perang dan perbaiki kesalahanmu, atau kau akan mati di tangan kami sebelum kau menyadari apa yang memukulmu!
+WARN_REBELLING_AGAINST_01    | Hierarch Agung adalah satu-satunya yang cocok duduk di singgasana Majelis Galaksi! Kami tidak akan bisa menerima perlawanan jahatmu!
+//
+PRAISE_COUNCIL_VOTE_01     | Ha! Pandangan di wajah mereka ketika kau memihak kami terlihat sangat lucu. Tapi mereka tahu di mana kekuatan sejati berada, dan kami berterima kasih kepada teman kecil kami telah membantu mereka menyadarinya! 
+PRAISE_COUNCIL_VOTE_02     | Cukup membosankan rasanya ketika kita dipaksa bertahan mendengarkan ocehan para tetua bodoh selama pertemuan ini. Entah kau mau membantu kami untuk mengakhirinya lebih cepat atau karena kau paham kekuatan kami, kami melihat apa yang kau lakukan hari ini.
+PRAISE_COUNCIL_VOTE_03     | Kau membuat kami penasaran, Makhluk Kecil. Tapi baguslah bahwa orang-orangmu memilih mengenali kekuatan kami hari ini. Demi kebaikanmu, kuharap kau tetap seperti ini. 
+
+PRAISE_ATTACKED_ENEMY_01   | Ha ha! Senang bisa melihatmu di medan tempur hari ini, Teman Kecil! Mari kita remukkan [defender_race] yang menyedihkan ini bersama-sama! Biarkan darah mereka mengaliri dunia mereka sampai tidak ada satupun dari mereka yang tersisa! 
+PRAISE_ATTACKED_ENEMY_02   | Betapa berjayanya pertempuran yang akan kita lakukan hari ini, Makhluk Kecil! Tunjukkan pada kami bagaimana kau bertarung melawan [defender_race], supaya kami bisa memberimu rasa hormat yang pantas mulai hari ini dan seterusnya!  
+PRAISE_ATTACKED_ENEMY_03   | Cukup jelas bahwa kau hanya bertarung melawan [defender_race] karena kami juga melakukannya. Tapi, karena kau tidak sepenuhnya melarikan diri dari pertempuran... mungkin kami telah salah menilaimu.
+
+PRAISE_TRADE_01            | Persetujuan dagang kita adalah yang paling menguntungkan bagi kedua ras kita, Teman Kecil. Tapi kepercayaan adalah mata uang yang paling berharga, dan kami akan terus mempercayaimu selama kau juga melakukan hal yang sama.
+PRAISE_TRADE_02            | Di saat perang mungkin adalah hal yang paling menggelikan untuk melangkah maju, ini bukanlah satu-satunya cara, karena kesepakatan dagang kita telah membuktikannya. Semoga ini berlanjut terus agar rakyat kita sama-sama makmur! 
+
+PRAISE_REBELLING_WITH_01   | Ha ha! Jadi kau pikir kau bisa berdiri melawan galaksi sendirian? Apa kau pikir kami akan enggan ikut pertempuran penuh kejayaan ini? Berdiri tegaklah, karena [my_empire] berdiri bersamamu!
+
+ACCEPT_TRADE_01            | Kebijaksanaan dalam negosiasimu menebus kekurangan ukuranmu, [your_race] Kecil! Kekaisaranku puas berdagang sebanyak [amt] BC denganmu per tahun sejak sekarang.
+RESPOND_IGNORE_THREAT_01   | Hahaha, dan mengapa pula kami harus mendengarkan ancaman dari makhluk yang begitu kecil? Pergilah sekarang, dan anggap dirimu beruntung kami sedang dalam suasana hati yang ingin memaafkan hari ini!
+RESPOND_STOP_SPYING_01     | Chomka yang kami gunakan untuk memata-matai telah tertangkap, ya kan? Ah baiklah, kembalikan mereka berdua dan juga mata-mata kami kepada kami tanpa terluka dan kami akan memastikan mereka tidak lagi merepotkanmu.
+RESPOND_STOP_ATTACKING_01  | Armada kekaisaranku menakutkan, ya kan? Jangan takut, Makhluk Kecil, penampilan kami memiliki niat tertentu, dan kami akan memanggil mereka kembali sekarang.
+
+
+

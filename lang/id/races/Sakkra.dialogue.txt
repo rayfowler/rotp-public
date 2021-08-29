@@ -1,0 +1,88 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Sakkra specific dialogue
+
+CONTACT_AGGRESSIVE         | Hai kalian! Kami dikenal sebagai [my_race], tapi itu tidak penting. Yang penting adalah, apakah kau tahu kami berencana menyempurnakan ekologi di setiap planet di galaksi ini dengan cara apapun yang diperlukan, ok? Dah!
+CONTACT_RUTHLESS           | Hai! Kami adalah [my_race]! Kuharap kalian belum merusak ekosistem planetmu. Kami akan berkewajiban untuk memperbaikinya secepatnya dan mungkin itu tidak akan terasa menyenangkan bagimu, iya kan?
+CONTACT_ERRATIC            | Wow, spesies baru! Kami adalah [my_race], dan kalian siapa? [your_race]? Bagus sekali! Cuma ingin memberitahu kalian nahwa kalian harus tetap menjaga kebersihan planet kalian, ok? Kami akan pastikan kalian melakukannya dengan mengamati kalian dengan sangat, sangat ketat.
+//
+GREETING_01                | Hei, Duta Besar! Aku selalu senang mendengar kabar dari teman sepertimu! Butuh bantuan?
+GREETING_04                | Rupanya Duta Besar dari [your_empire]! Kami sedang sibuk mendandani ekosistem planet, tapi kami akan mendengarkan apa yang ingin kau katakan. 
+GREETING_07                | Oh, ternyata kau. Apa maumu? Kau tahu kami sebenarnya tidak suka berhubungan dengan ras kotor sepertimu, kan?
+//
+DECLAREWAR_HATE_01         | Orang-orangmu sepertinya tidak bisa berhenti menodai setiap planet yang mereka sentuh , hah? Kami akan menyapu kotoranmu dari galaksi ini dalam waktu yang lebih cepat dari yang dibutuhkan galaksi untuk membangun biodome!
+DECLAREWAR_HATE_02         | Sejak kami bertemu denganmu, kau terus mengacaukan ekosistemmu dengan cara yang paling tidak bisa dipercaya! Kami akan membawamu pergi sebelum kau bisa menyakiti siapapun di planet-planet ini!
+DECLAREWAR_HATE_03         | Kami tidak tahan melihatmu mengotori duniamu lebih banyak lagi! Kami memang menjadi sangat repot, tetapi jika kamu tidak turun tangan, akibatnya bisa jauh lebih berat dari ini!
+//
+DECLAREWAR_ERRATIC_01      | Wow, orang-orangmu betul-betul jorok. Kami bisa membantumu membersihkan duniamu, tapi akan jauh lebih cepat jika kami membasmimu dulu dan memperbaiki lingkunganmu dengan cara kami sendiri!
+DECLAREWAR_ERRATIC_02      | Hai! Siap untuk perang? Tidak siap? Yah, sayang sekali! Tapi kami melihat beberapa duniamu nyata-nyata memohon perbaikan dan kami harus mengulurkan tangan kami kepada mereka.
+DECLAREWAR_ERRATIC_03      | Hei! Tidakkah kau tahu kami baru-baru ini mendesain biodome yang lebih efisien dalam energi? Kami ingin mengetes biodome tersebut pada planet-planet yang sangat kotor, jadi apakah kau keberatan jika kami pakai beberapa planetmu supaya kami bisa segera mulai percobaan kami?
+//
+DECLAREWAR_MILITARY_01     | Kau tahu bahwa Conclave akan menjadi lingkungan yang sempurna dibanding semua planet di galaksi ini, iya kan? Yah, kami akan mulai bekerja pada planet-planetmu. Kau harus meninggalkan planetmu sekarang. Kau harus pergi segera: tidak ada cara lain bagimu untuk mengalahkan kami jika kau mencoba melawan!
+DECLAREWAR_MILITARY_02     | [my_title] mengatakan bahwa kami harus memastikan rakyatmu pergi dari planet-planet mereka sekarang agar kami bisa mulai memperbaiki planet-planet itu. Apakah kau akan pergi dengan damai? Tidak? Sayang sekali!
+DECLAREWAR_MILITARY_03     | Kau memiliki persoalan ekologis paling ajaib untuk diselesaikan di wilayahmu dan kau perlakukan hal itu seakan-akan persoalan itu tidak pernah ada! Kami tidak tahan lagi! Bagaimanapun, kami akan mengambil alih wilayahmu darimu!
+//
+DECLAREWAR_ALLIANCE_01     | Kami dengar kau dan [other_race] sedang bertengkar tentang sesuatu. Aku yakin itu cuma tentang hal bodoh yang tidak penting, tetapi ini adalah kesempatan terbaik bagi kami untuk mengambil kolonimu demi kepentingan kami agar kami akhirnya bisa memperbaiki kerusakan yang kau buat!
+DECLAREWAR_ALLIANCE_02     | Aku tentu saja tidak bisa mengelak bahwa [other_race] adalah rakyat yang jorok. Tapi kau sendiri lebih menjijikkan dari mereka, jadi jika mereka ingin bertempur melawanmu kami akan dengan senang hati bergabung dalam gerakan mereka.
+DECLAREWAR_ALLIANCE_03     | Kau jelas-jelas meleset kali ini, Duta Besar! Kau seharusnya sudah tahu kami akan bergabung dengan sekutu yang akan berperang denganmu, bahkan jika sekutu itu sekotor [other_race]. Tunggu, kau tidak tahu? Aduh...
+//
+DECLAREWAR_SPYING_01       | Menurutmu aku sebenarnya sedang apa? Seseorang yang sangat jorok seperti orang-orangmu tidak akan bisa memata-matai Conclave tanpa meninggalkan jejak kotoran di belakangmu sehingga kami bisa mengikutimu, mengerti?
+DECLAREWAR_SPYING_02       | Fakta bahwa kau akan bertindak secara rahasia seperti itu melawan Conclave membuat kami marah, tetapi fakta bahwa kalian mengotori planet-planet kami dengan keberadaanmu yang menjijikkan membuat kami sangat murka!
+DECLAREWAR_SPYING_03       | Kau membuat kesalahan dengan berpikir bahwa kami tidak akan menyerang balik ketika kau memutuskan untuk memata-matai kami. Hanya karena kekuatan militermu sedikit lebih besar dari kami tidak berarti kami tidak mau berperang denganmu, makhluk kumuh!
+//
+DECLAREWAR_ATTACK_01       | Apa yang sedang kau perbuat?! Beraninya makhluk kotor dan lemah sepertimu merusak planet-planet kami yang sangat berharga?! Karena ini kami akan membakar orang-orangmu seperti sampah!
+DECLAREWAR_ATTACK_02       | Mau bertempur dalam perang melawan kami, hah? Jangan kuatir, kami akan jemput kalian, satu per satu koloni, dan membebaskan plane dari penjajah mengerikan!
+DECLAREWAR_ATTACK_03       | Kotor! Kotor! Kotor! Kau nodai planet kami dengan nafsu berdarah kalian! Conclave akan menghimpun setiap keping kekuatan yang dimilikinya untuk mendorong kalian kembali ke lubang sampah asal kalian!
+//
+DECLAREWAR_OPPORTUNITY_01  | [my_title] memikirkan tentang orang-orangmu beberapa saat terakhir ini. Dia mengambil kesimpulan bahwa yang terbaik bagi kami adalah mencegah kalian menyebar di galaksi ini secepatnya daripada ditunda. Dengan begitu, kami tidak akan memiliki begitu banyak dunia untuk dibersihkan setelah kami membasmimu!
+DECLAREWAR_ASSASSIN_01     | Apa yang sudah kau perbuat?! Aku tahu makhluk sejenismu tidak bisa dipercaya! Jika kau sampai membunuh seorang duta besar tanpa senjata aku pun gemetar membayangkan apa yang bisa kau lakukan terhadap ekosistemmu! Bersiaplah untuk perang, Makhluk Kotor [your_race].
+
+
+OFFER_PEACE_01             | Planet-planet yang menyedihkan itu! Kami tidak tahan melihat mereka dilukai lebih banyak lagi karena perang ini! Ayo kita hentikan perang ini sekarang, Duta Besar, dan mulai sembuhkan dunia-dunia ini yang telah kita kacaukan sebelumnya!  
+OFFER_TRADE_01             | Wow, ada begitu banyak lingkungan kompleks di dunia-dunia ini! Kami ingin membuat keadaan ekonomi kami lebih berkembang untuk mendanai semua proyek ini, dan perdagangan denganmu akan sangat membantu! [amt] BC per tahun tidak apa-apa, kan? 
+OFFER_PACT_01              | Sepertinya kau merawat planet-planetmu dengan cukup baik, dan perang membuat hal yang begitu buruk terhadap dunia yang mereka perebutkan. Apakah kau mau menyepakati pakta non-agresi dengan kami? Dengan cara itu, ekosistem cantik kita tidak akan perlu merasa takut akan apapun lagi! 
+OFFER_ALLIANCE_01          | Wow, aku sangat terkesan! Caramu mengurus planet-planetmu, kau sendiri jadi tampak seperti makhluk dari Sakkra! Bersekutulah dengan kami, Duta Besar! Kita akan saling melindungi dunia kita bersama: tidak akan ada yang mengancam kita selama kita berdiri sebagai satu kesatuan! 
+ 
+WARN_TRESPASSING_01        | Hei! Hei! Hei! [system] berada di bawah perlindungan Conclave! Kau tidak boleh berada di sini, tahu? Keluar! Sekarang! Tunggu apa lagi? Pergi!  
+WARN_EXPANSION_01          | Kau mengambil banyak hal demi dirimu sendiri lebih banyak dari seharusnya, Duta Besar! Kau tidak memiliki kemampuan yang cukup untuk merawa setiap dunia ini, dan kami tidak akan membiarkanmu menyia-nyiakan setiap komponen ekologis ini! Perlambat ekspansimu, kalau tidak kami akan ..! 
+WARN_BUILDUP_01            | Banyak sekali kapalmu yang kaubawa ke sini! Jika kau terus membawa kapal lagi, beberapa kekaisaran mungkin akan mulai jadi gelisah. Mereka mungkin akan mulai mengarahkan senjata mereka di jalanmu. Mereka mungkin juga akan menembak sekali-dua kali! Itu kalau kau terus membawa kapal ke sini lagi, begitulah. 
+WARN_SKIRMISH_01           | Aku sulit percaya bahwa ada keributan di [system]! Apa yang sedang kau pikirkan, Duta Besar? Kami akan mengabaikan ini sekarang karena kau tidak membahayakan planet manapun, tapi awasi baik-baik armadamu mulai sekarang, [your_race] bodoh! 
+WARN_ATTACKED_01           | Menurutmu kau sedang berbuat apa?! Sudahi kebodohanmu! Kami sangat sibuk berusaha menyempurnakan ekologi di [system], kami tidak butuh kapalmu beterbangan dan membuat pekerjaan kami jadi lebih sulit! 
+WARN_INVADED_01            | Apa kau sudah gila?! Atau seberapa bodoh dirimu wahai mahkluk bodoh [your_race]?! Akan butuh waktu bertahun-tahun untuk memperbaiki kerusakan yang kau lakukan! Candaan ini tidak lucu lagi! Berhenti bermain-main atau kami akan membuatmu menyesalinya! 
+WARN_ESPIONAGE_01          | Apa kau berpikir kau bisa memata-matai kami dan akan berhasil menutup rahasia perbuatanmu ini? Kau ini lucu, Duta Besar. Tapi jika semua ini menjadi tidak lucu lagi, kami mungkin hanya akan langsung maju dan membunuhmu, ok? [framed]
+WARN_SABOTAGE_01           | Apa yang sudah kau perbuat?! Kau merusak biodome sampai parah begini! Semua sampel berharga itu, semua eksperimen jadi rusak! Kau sudah bertindak terlalu jauh: bersiaplah menghadapi kami jika ini terus kau lakukan, [your_race] jorok! [forced]
+WARN_BIOWEAPON_01          | Jadi memang kau melakukannya! Sebuah senjata biologis?! Senjata biologis!! Pikirkan kerusakan parah yang telah kaulakukan pada ekologi di planet tanpa pertahanan itu! Kau ini benar-benar monster: selamanya kau akan hidup dengan penyesalan akan hal ini!
+WARN_GENOCIDE_01           | Kau membumihanguskan [victim_race] iya kan? Bagus, mereka sudah benar-benar mulai membuat kami marah waktu itu. Tentu saja kau akan memberi kami dunia mereka untuk pemulihan ekologi. Kau tidak mau? Baiklah aku mengerti...
+WARN_FINAL_WAR_01          | Kau tahu bahwa kami semua memutuskan untuk bergabung bersama untuk kebaikan semua planet, ya kan? Mengapa kau ingin menentang persatuan kami, Duta Besar? Aku rasa sikapmu ini tidak akan menjadi hal yang penting segera setelah ini. Tapi jangan kuatir! Kami akan merawat planet-planetmu dengan baik setelah kau tiada.
+WARN_COUNCIL_VOTE_01       | Itu bukanlah hal yang sangat baik untuk dilakukan di majelis. Aku pikir kita sudah sama-sama mengerti, Duta Besar? Bahwa kehendak [candidate_race] selalu merupakan pilihan yang tepat untuk dijalankan? Jangan meleset lagi, ras [your race] kotor!
+WARN_OATHBREAKER_01        | Kami selalu merasa fisikmu kelihatan menjijikkan, dengan bentuk yang aneh dan bau badan yang busuk. Tapi sekarang kami melihat tindakanmu cocok dengan penampilanmu! Pergilah dari pandanganku sekarang, Duta Besar: aku mulai benar-benar merasa mual.
+WARN_ATTACKED_ALLY_01      | Dengar ya, kami sebenarnya kurang suka dengan [defender_race] meski secara teknis kami bersekutu. even if we are technically allies. Berhenti berdebat atau kami terpaksa harus turun tangan.
+WARN_REBELLING_AGAINST_01  | Bagaimana bisa majelis melakukan hal ini kepada kami?! Bagaimana mungkin mereka memilih KAU dari semua pembesar untuk memimpin galaksi ini? Kami tidak bisa membiarkan ini berlalu begitu saja... kau ini... begitu... KOTOR! 
+
+PRAISE_COUNCIL_VOTE_01     | Hei, Duta Besar! Terima kasih karena kau begitu dapat diandalkan di majelis. Ras yang lain sangat menjijikkan, tapi memiliki dukungan dari makhluk sepertimu? Yah, rasanya kami melakukan hal yang benar. Beritahu saja kepada kami jika kau butuh sesuatu, ok? 
+PRAISE_COUNCIL_VOTE_02     | Kau melakukan hal yang baik hari ini di ruang majelis. Aku senang sekali mengetahui kau memiliki kebijakan dengan caramu. Kuharap planetmu mendapat manfaat dari kebijaksanaanmu sebagaimana Conclave juga mendapatkannya! 
+PRAISE_COUNCIL_VOTE_03     | Hmm, siasat apa yang kau buat, mencoba berada pada sisi kami dengan cara memilih kami di pertemuan majelis? Yah, terserahlah, aku yakin kami akan tahu apa alasanmu sesegera mungkin jika itu memang penting. Pokoknya terima kasih untuk dukunganmu, Makhluk Kotor. 
+PRAISE_ATTACKED_ENEMY_01   | Kau dengar panggilan planet-planet itu, iya kan Duta Besar? Mereka butuh dibebaskan dari penjajahan [defender_race] sesegera mungkin. Aku tahu kau sama dengan kami di dalam hatimu! Kini seluruh Conclave juga akan mengetahuinya! 
+PRAISE_ATTACKED_ENEMY_02   | Haha, iya! Begitulah caranya! Arahkan makhluk [defender_race_plural] yang kotor itu kembali sampai tidak ada lagi tujuan bagi mereka untuk lari! Asalkan jangan melukai planet terlalu banyak, ok? Kami akan membutuhkan planet-planet itu ketika kami selesai. 
+PRAISE_ATTACKED_ENEMY_03   | Kau bertempur melawan [defender_race] juga, Makhluk Kotor? Baunya, iya kan? Baunya menembus segala sesuatu yang ada di sekitarnya. Jauh-jauh dari kami saat kau selesai! Aku yakin baunya juga akan mengenai dirimu! 
+PRAISE_TRADE_01            | Persetujuan dagang ini sangat hebat! Kami telah memperoleh dukungan untuk begitu banyak proyek karenanya. Aku betul-betul berterima kasih kepadamu, dan planet-planet milik [my_empire] menyanyikan pujian abadi atas namamu! 
+PRAISE_TRADE_02            | Selamat! [my_title] ingin aku mengucapkan selamat kepadamu karena telah menjaga persetujuan dagang yang sempurna dengan Conclave. Dia berharap kau akan melihat kebijaksanaan dalam melanjutkan hal ini, sebagaimana kita memiliki banyak proyek yang perlu dieksplorasi! Itu saja dulu. Sampai jumpa lagi!
+PRAISE_REBELLING_WITH_01   | Majelis sudah menjadi gila karena menetapkan ras [leader_race_plural] yang menjijikkan itu pada tahta terhormat. on the proverbial throne. Bau busuk barisan mereka sudah membuat orang-orang kami mual. Biarkan kami membantumu menggulingkan mereka, Duta Besar!  
+ 
+ACCEPT_TRADE_01            | Saatnya berdagang! Saatnya berdagang! [amt] BC setiap tahun akan berlaku cukup lama untuk membantu kami merawat zona kehidupan biosper kami! Terima kasih, teman!
+RESPOND_IGNORE_THREAT_01   | Ya ampun, kau tidak benar-benar marah, kan? Yah, toh kau tidak bisa berbuat apa-apa walaupun kau berada di sini! Pergilah sekarang, kumohon, aku sangat sibuk dengan sampel tumbuhan ini hari ini.
+RESPOND_STOP_SPYING_01     | Menangkap basah mata-mata kami, ya? Jangan kuatir, kami cuma mengecek untuk mencari tahu apakah kau memang berbuat baik terhadap planet-planetmu. Sepertinya memang begitu, jadi kembalikan monitor kami dan kami tidak akan mengirim utusan kami lagi!
+RESPOND_STOP_ATTACKING_01  | Lihat berapa kapal yang kami punya? Setiap kapal punya senjata yang besar dan menakutkan! Kalau kami sampai tahu bahwa kau merusak planet-planetmu, kami harus mengirim kapal-kapal kami kembali, dan tidak ada satupun di antara kita yang ingin itu semua terjadi! Selamat tinggal!
+
