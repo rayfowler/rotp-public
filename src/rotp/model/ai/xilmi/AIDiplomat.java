@@ -709,8 +709,8 @@ public class AIDiplomat implements Base, Diplomat {
             if(popRatioOfAllianceAmongstContatacts(empire) < (galaxy().options().baseAIRelationsAdj() * 3.33) / 100.0)
                 return true;
         }
-        /*if(wantAlly() && e == bestAlly())
-            return true;*/
+        if(e == bestAlly())
+            return true;
         return false;
     }
     public float popRatioOfAllianceAmongstContatacts(Empire e)
@@ -1315,18 +1315,30 @@ public class AIDiplomat implements Base, Diplomat {
     {
         float highestMatchScore = 0;
         Empire best = null;
+        boolean everyoneMet = true;
+        for(Empire emp:galaxy().activeEmpires())
+        {
+            if(empire == emp)
+                continue;
+            if(!empire.inEconomicRange(emp.id) || !empire.contactedEmpires().contains(emp))
+            {
+                //System.out.println(empire.name()+" not met: "+emp.name());
+                everyoneMet = false;
+                break;
+            }
+        }
+        if(!everyoneMet || galaxy().activeEmpires().size() < 3)
+            return best;
         for(Empire contact : empire.contactedEmpires())
         {
             if(empire.enemies().contains(contact))
                 continue;
             if(!empire.inEconomicRange(contact.id))
                 continue;
-            if(!contact.allies().isEmpty())
-                continue;
-            float matchScore = contact.powerLevel(contact);
-            if(matchScore > highestMatchScore)
+            float currentScore = empire.generalAI().totalEmpirePopulationCapacity(contact);
+            if(currentScore > highestMatchScore)
             {
-                highestMatchScore = matchScore;
+                highestMatchScore = currentScore;
                 best = contact;
             }
         }
@@ -1397,11 +1409,17 @@ public class AIDiplomat implements Base, Diplomat {
         EmpireView cv1 = empire.viewForEmpire(civ1);
         EmpireView cv2 = empire.viewForEmpire(civ2);
 
+        // check special allied victory condition and vote for bigger one
+        if(empire == civ1 && cv2.embassy().alliance() && civ2.totalEmpirePopulation() >= empire.totalEmpirePopulation())
+            return castVoteFor(civ2);
+        if(empire == civ2 && cv1.embassy().alliance() && civ1.totalEmpirePopulation() >= empire.totalEmpirePopulation())
+            return castVoteFor(civ1);
+        
         // always vote for yourself
         if (civ1 == empire)   return castVoteFor(civ1);
         if (civ2 == empire)   return castVoteFor(civ2);
         
-        if(!empire.inEconomicRange(cv2.empId()) || !empire.inEconomicRange(cv1.empId()))
+        if(!empire.inEconomicRange(cv2.empId()) || !empire.inEconomicRange(cv1.empId()) || !empire.contactedEmpires().contains(civ1) || !empire.contactedEmpires().contains(civ2))
             return castVoteFor(null);
         
         // if allied with one, vote for that ally
