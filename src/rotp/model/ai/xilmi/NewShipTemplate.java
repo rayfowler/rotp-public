@@ -253,6 +253,11 @@ public class NewShipTemplate implements Base {
                 enemyMissilePercentage = max((enemyMissilePercentage * ev.empire().shipMaintCostPerBC() + ev.empire().missileBaseCostPerBC()) / (ev.empire().shipMaintCostPerBC() + ev.empire().missileBaseCostPerBC()), enemyMissilePercentage);
             }
         }
+        //if opponent has repulsors we can't fire missiles point blank so they must be faster to compensate
+        if(needRange)
+            topSpeed++;
+        //when ships move diagonally they can outrun same-speed missiles so missiles must be faster
+        topSpeed *= sqrt(2);
         if(totalCost > 0)
         {
             longRangePct /= totalCost;
@@ -831,8 +836,6 @@ public class NewShipTemplate implements Base {
     }
     private boolean allowBioWeapons(ShipDesigner ai)
     {
-        if(bioWeaponScoreMod(ai) == 1)
-            return true;
         boolean allow = false;
         int DesignsWithRegularBombs = 0;
         int DesignsWithBioWeapons = 0;
