@@ -277,6 +277,8 @@ public class AIGeneral implements Base, General {
         return invasionGain;
     }
     public boolean willingToInvade(EmpireView v, StarSystem sys) {
+        if(!empire.warEnemies().contains(sys.empire()) && !empire.generalAI().strongEnoughToAttack())
+            return false;
         if (!empire.canSendTransportsTo(sys))
             return false;
         //we gain factories, save us from building a colonizer and killing enemy-population also has value to us of half of what they pay for it
@@ -870,6 +872,10 @@ public class AIGeneral implements Base, General {
     @Override
     public boolean strongEnoughToAttack()
     {
+        float attackThreshold = empire.totalPlanetaryProduction();
+        boolean enoughMaintenance = false;
+        if(empire.shipMaintCostPerBC() > empire.fleetCommanderAI().maxShipMaintainance() / 4)
+            enoughMaintenance = true;
         if(totalArmedFleetCost < 0)
         {
             int[] counts = galaxy().ships.shipDesignCounts(empire.id);
@@ -879,7 +885,8 @@ public class AIGeneral implements Base, General {
                     totalArmedFleetCost += (counts[i] * d.cost());
             }
         }
-        if(totalArmedFleetCost > empire.totalPlanetaryProduction())           
+        //System.out.println(galaxy().currentTurn()+" "+empire.name()+" "+totalArmedFleetCost+" / "+attackThreshold+" "+empire.shipMaintCostPerBC()+" / "+empire.fleetCommanderAI().maxShipMaintainance() / 4+" Enough: "+enoughMaintenance);
+        if(totalArmedFleetCost > attackThreshold && enoughMaintenance)
             return true;
         return false;
     }
