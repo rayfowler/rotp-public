@@ -578,6 +578,7 @@ MAIN_COLONY_HOMEWORLD             | %1 Роден Свят
 MAIN_COLONY_FOUNDED               | %1 Колония
 MAIN_COLONY_POPULATION            | Население
 MAIN_COLONY_FACTORIES             | Фабрики
+MAIN_COLONY_VALUE+                | %1+
 MAIN_COLONY_SHIELD                | Ниво на Щитове
 MAIN_COLONY_BASES                 | Бази
 MAIN_COLONY_PRODUCTION            | Производство - Нетно 

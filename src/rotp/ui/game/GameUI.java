@@ -444,7 +444,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             //imgG.fillRect(0,0,img.getWidth(),img.getHeight());
             imgG.dispose();
             backImg = img;
-            if ((animationTimer >= 10) && (slideshowFade > 0)) {
+            if ((animationTimer >= 10) && (slideshowFade > 0) && !languagePanel.isVisible()) {
                 long curTime = System.currentTimeMillis();
                 if ((curTime - slideshowTime) >= (BG_DURATION * RotPUI.ANIMATION_TIMER))
                     slideshowFade = (animationTimer - 10)/10f;
@@ -615,6 +615,13 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         settingsText.rescale();
         exitText.rescale();
     }
+    private void resetSlideshowTimer() {
+        if (slideshowFade < 1) {
+            slideshowFade = 1;
+            slideshowTime = System.currentTimeMillis();
+            repaint();
+        }        
+    }
     @Override
     public void keyReleased(KeyEvent e) {
         int k = e.getKeyCode();
@@ -624,11 +631,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     }
     @Override
     public void keyPressed(KeyEvent e) {
-        if (slideshowFade < 1) {
-            slideshowFade = 1;
-            slideshowTime = System.currentTimeMillis();
-            repaint();
-        }
+        resetSlideshowTimer();
         int k = e.getKeyCode();
         switch (k) {
             case KeyEvent.VK_MINUS:
@@ -742,11 +745,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     public void mouseExited(MouseEvent e) { }
     @Override
     public void mousePressed(MouseEvent e) {
-        if (slideshowFade < 1) {
-            slideshowFade = 1;
-            slideshowTime = System.currentTimeMillis();
-            repaint();
-        }
+        resetSlideshowTimer();
         mouseDepressed = true;
         if (hoverBox != null)
             hoverBox.mousePressed();
@@ -791,11 +790,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         int x = e.getX();
         int y = e.getY();
 
-        if (slideshowFade < 1) {
-            slideshowFade = 1;
-            slideshowTime = System.currentTimeMillis();
-            repaint();
-        }
+        resetSlideshowTimer();
 
         if (hideText)
             return;
@@ -889,7 +884,9 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         @Override
         public void mouseClicked(MouseEvent e) { }
         @Override
-        public void mousePressed(MouseEvent e) { }
+        public void mousePressed(MouseEvent e) { 
+            resetSlideshowTimer();
+        }
         @Override
         public void mouseReleased(MouseEvent e) {
             for (int i=0;i<lang.length;i++) {
@@ -912,6 +909,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         public void mouseMoved(MouseEvent e) {
             int x = e.getX();
             int y = e.getY();
+            resetSlideshowTimer();
             Rectangle prevHover = hoverBox;
             hoverBox = null;
             for (Rectangle box: lang) {

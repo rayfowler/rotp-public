@@ -577,6 +577,7 @@ MAIN_COLONY_HOMEWORLD             | Planeta ojczysta %1
 MAIN_COLONY_FOUNDED               | Kolonia %1
 MAIN_COLONY_POPULATION            | Populacja
 MAIN_COLONY_FACTORIES             | Fabryki
+MAIN_COLONY_VALUE+                | %1+
 MAIN_COLONY_SHIELD                | Poziom tarczy
 MAIN_COLONY_BASES                 | Bazy
 MAIN_COLONY_PRODUCTION            | Produkcja - Netto (Brutto)

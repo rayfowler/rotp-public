@@ -583,6 +583,7 @@ MAIN_COLONY_HOMEWORLD             | %1 Dunia Asal
 MAIN_COLONY_FOUNDED               | %1 Koloni
 MAIN_COLONY_POPULATION            | Populasi
 MAIN_COLONY_FACTORIES             | Pabrik
+MAIN_COLONY_VALUE+                | %1+
 MAIN_COLONY_SHIELD                | Level Pelindung
 MAIN_COLONY_BASES                 | Basis
 MAIN_COLONY_PRODUCTION            | Produksi - Netto (Gross)
