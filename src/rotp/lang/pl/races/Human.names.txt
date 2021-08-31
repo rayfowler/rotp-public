@@ -1,0 +1,22 @@
+// all possible names
+name: Człowiek, Terran, Ziemianin, Naczelny, Midgardczyk
+
+desc1: Honorowi dyplomaci
+desc2: Doskonali handlarze i pierwszorzędni dyplomaci
+desc3: Złotousta rasa znana jako [race] to mistrzowie w przekonywaniu innych do służenia swoim interesom.
+
+// possible home system names
+home: Ziemia, Terra, Tellus, Prime, Midgard
+
+title:     Triumwir
+fulltitle: Triumwir
+
+// possible leader names
+leader: Aleksander, Bladrow II, Durasz IV, Johan III, Lasytus, Sztrader
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Wartownik, Badacz, Kurier, Odkrywca, Poszukiwacz, Posłaniec, Patrolowiec
+ship2: Fregata, Korweta, Kanonierka, Myśliwiec, Brygada, Dzierzba, Komando
+ship3: Krążownik, Eskorta, Okręt Wojenny, Obrońca, Lotniskowiec, Awangarda, Łupieżca
+ship4: Pancernik, Okręt wojenny, Okrutnik, Dewastator, Krążownik Wojenny, Mściciel, Niszczyciel
+

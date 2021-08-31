@@ -1,0 +1,89 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Human specific dialogue
+
+CONTACT_HONORABLE          | Jesteśmy [my_race_plural] z Ziemi i jesteśmy bardzo podekscytowani, że możemy nawiązać z wami kontakt. Jeśli potrzebujesz czegokolwiek z Triumwiratu - czegokolwiek! - nie wahaj się pytać.
+CONTACT_PACIFIST           | Gorące pozdrowienia, [your_name]. Jesteście z [your_empire2]? Reprezentuję [my_empire] i mam nadzieję, że będzie to pierwszy z niezliczonych przyjaznych kontaktów między nami.
+CONTACT_ERRATIC            | Mieszkańcy Ziemi zazwyczaj wolą rozwiązywać problemy za pomocą negocjacji i dyplomacji. Jeśli jednak wasi ludzie wolą bardziej brutalne metody, z chęcią wam pomożemy, [your_race2].
+//
+GREETING_01                | Ach! Ambasador [your_empire2] jest tutaj! Czy mogę podać ci coś do jedzenia lub picia? Proszę się rozgościć i powiedzieć mi, co możemy dziś dla pana zrobić.
+GREETING_04                | Witam! Potrzebujecie czegoś od Triumwiratu? Nie jestem pewien, czy uda mi się przekazać waszą prośbę Triumwirom, ale może potrzebujecie czegoś w czym ja mogę pomóc?
+GREETING_07                | O, pojawił się ambasador rasy [your_race3]. Czego dokładnie od nas chcecie? Najlepiej nie proście o nic nierozsądnego.
+//
+DECLAREWAR_HATE_01         | Triumwirat z przyjemnością pokaże wam dlaczego nie powinienno się drażnić rasy której potęga przewyższa własną. Powinniście wyciągnąć wnioski z tej lekcji... o ile ją przeżyjecie.
+DECLAREWAR_HATE_02         | Smutno mi myśleć o całym tym czasie, który zmarnowaliśmy na "miłe pogrywanie" z wami, kiedy tak wyraźnie byliśmy skazani na długą i krwawą wojnę.
+DECLAREWAR_HATE_03         | Nie ma sensu dłużej bawić się w udawanie! Nie będziemy tolerować wymagań, jakie stawia przed nami dzielenie z wami galaktyki nawet przez sekundę! Bez względu na cenę jaką przyjdzie nam zapłacić!
+
+DECLAREWAR_ERRATIC_01      | Ostatnio dużo się mówi o tym, że nasze wojsko jest leniwe i zadufane w sobie. Miejmy nadzieję, że wojna z wami przywróci je do formy by mogło stawić czoła groźniejszym wrogom Triumwiratu.
+DECLAREWAR_ERRATIC_02      | Czy zna pan gry wojenne, ambasadorze? Pozorowane bitwy, w których wystawiamy nasze siły przeciwko sobie w celach szkoleniowych. Cóż, uważamy że prawdziwa wojna z waszymi ludźmi może się bardziej nadawać do tego celu.
+DECLAREWAR_ERRATIC_03      | Nic tak nie jednoczy ludności jak wspólny wróg, ambasadorze! Jeśli nie chce pan służyć naszym interesom poprzez dyplomację, może pan przynajmniej być dla nas użyteczny jako siła jednocząca naszych ludzi. 
+//
+DECLAREWAR_MILITARY_01     | Byłoby lepiej gdybyście zgodzili się na oddanie nam terytorium drogą dyplomatyczną. Wasza odmowa zmusza nas do podjęcia alternatywnych działań. 
+DECLAREWAR_MILITARY_02     | Jak dobrze wiecie, rosnąca populacja wymaga coraz większego terytorium w celu zaspokojenia stale rosnących potrzeb. Nadszedł czas abyśmy to właśnie zrobili - a terytorium którego potrzebujemy jest wasze. 
+DECLAREWAR_MILITARY_03     | Triumwirowie są tak samo oddani ludziom, jak ludzie są oddani Triumwirom. Jeśli nasze potrzeby będą wymagały kolonizacji waszych światów, z radością oddadzą swoje życie aby tak się stało!
+//
+DECLAREWAR_ALLIANCE_01     | Jest wiele sposobów by zaimponować sojusznikom, ambasadorze. Wyeliminowanie was z pewnością poprawi naszą pozycję u rasy [other_race3] więc postarajcie się, dobrze?
+DECLAREWAR_ALLIANCE_02     | Triumwirat nigdy nie opuści swoich sojuszników by samotnie stawili czoła wrogom! Z ludźmi i rasą [other_race3] stojącymi wspólnie nie macie co liczyć na zwycięstwo!
+DECLAREWAR_ALLIANCE_03     | Tylko dlatego, że macie silną armię, nie oznacza że galaktyka jest wasza. Chętnie przyłączymy się do [other_race3] i razem ukarzemy was za wasze niezliczone zbrodnie!
+//
+DECLAREWAR_SPYING_01       | Uważaliście chyba, że takie podstępne taktyki mogą wam ujść na sucho tylko z powodu naszych preferencji dyplomatycznych. Nie obawiajcie się! Pomożemy wam dowiedzieć się jak wielki był to błąd!
+DECLAREWAR_SPYING_02       | Byłoby lepiej dla nas obu, gdybyście byli tak samo oddani dyplomacji jak my. Odpowiemy na tę wojnę podstępów bardziej... tradycyjną metodą walki.
+DECLAREWAR_SPYING_03       | Mieliśmy nadzieję, że zgadzacie się z naszymi poglądami na temat dyplomacji jako środka do osiągania celów. Ponieważ najwyraźniej macie bardziej nikczemne pomysły, obawiam się że nie mamy innego wyboru jak tylko odpowiedzieć w ten sposób.
+//
+DECLAREWAR_ATTACK_01       | Nie potrzeba już dyplomatycznej fasady! Atakowanie nas jest dowodem na to, że staliście się nieprzydatni. Ale nie martwcie się! Jestem pewien, że znajdziemy gdzieś miejsce dla waszych ludzi w naszych podręcznikach historii.
+DECLAREWAR_ATTACK_02       | Nie lekceważcie armii Triumwiratu! Jeśli chcecie walki to zmierzymy się z wami z przyjemnością, ambasadorze!
+DECLAREWAR_ATTACK_03       | Ludzkość przeszła przez wiele mrocznych czasów, ale za każdym razem wychodziliśmy z nich silniejsi i mądrzejsi niż wcześniej. Zapewniam pana, ambasadorze, że tym razem nie będzie inaczej.
+//
+DECLAREWAR_OPPORTUNITY_01  | Każde nasze działanie ma służyć naszym celom, ambasadorze. Zazwyczaj wolimy stosować dyplomację, ale skoro nie ma żadnego powodu dla waszego istnienia to szybka wojna lepiej przysłuży się naszym celom.
+DECLAREWAR_ASSASSIN_01     | Byłem zszokowany, że pozornie inteligentna rasa może zrobić coś tak haniebnego jak zabicie ambasadora. Zrobimy z was przykład, tak aby żadne imperium już nigdy nie podjęło takich działań przeciwko Triumwiratowi!
+
+OFFER_PEACE_01             | Z pewnością teraz już widzisz, że wojny takie jak ta przynoszą tylko tragedię. Powstrzymajmy to szaleństwo zanim zostanie przelane więcej cennej krwi rasy [your_race3] i [my_race3]. Dołącz do nas w tym postanowieniu i wykujmy nową przyszłość, którą nasze dzieci będą mogły odziedziczyć z dumą!
+OFFER_TRADE_01             | Jest takie powiedzenie na mej ojczystej planecie [my_home], że "wojna jest nieunikniona", ale już dawno temu nauczyliśmy się że nigdy nie sprawdza się ono tam gdzie panuje dobrobyt. Połączmy siły w dążeniu do tego dobrobytu. Czy zaczniemy od [amt] BC rocznie?
+OFFER_PACT_01              | Obaj wiemy, że wojny mogą wybuchać przypadkowo gdy imperia rozszerzają swoje galaktyczne strefy wpływów. Ostatnią rzeczą jakiej pragnie Triumwirat jest wojna z tak przykładnym ludem jak wasz. Pakt o Nieagresji sprawi, że oba nasze narody będą mogły spać spokojnie. Zgodzisz się ze mną?
+OFFER_ALLIANCE_01          | [your_race_plural] są rzeczywiście wspaniali! Ambasadorze, właśnie przyszedł mi do głowy pomysł: sformalizujmy sojusz między rasą [your_race3] i [my_race3]. Razem możemy nauczyć galaktyczny motłoch, że to dyplomacja a nie przemoc jest jedyną właściwą drogą!
+
+WARN_TRESPASSING_01        | Ambasadorze, wygląda na to że flota [your_race3] zajęła pozycję w przestrzeni rasy [my_race3]. Na pewno zdajesz sobie sprawę, że nie możemy na to pozwolić? Po prostu usuńcie swoje floty a zapomnimy że to się kiedykolwiek wydarzyło.
+WARN_EXPANSION_01          | Choć Triumwirat pragnie uszanować wolę waszego ludu, nie możemy przymykać oczu na tak agresywną ekspansję terytorialną. Jestem pewien, że zaprzestaniecie tego w imię zachowania naszych dyplomatycznych więzi, prawda ambasadorze?
+WARN_BUILDUP_01            | Ambasadorze, proszę! Nasi przywódcy wojskowi są wściekli z powodu rozbudowy waszych flot! Proszę o spowolnienie budowy statków aby pokazać tym trepom że ich obawy są bezpodstawne!
+WARN_SKIRMISH_01           | Właśnie otrzymałem ponury raport o potyczce pomiędzy statkami Triumwiratu a flotą należącą do [your_empire2]. Upewnij się proszę, że to się już nie powtórzy. W przeciwnym razie obawiam się, że wojna będzie nieuchronna!
+WARN_ATTACKED_01           | Niedobrze ambasadorze. Bardzo niedobrze. Zaatakować nas w systemie [system]... co wy sobie wyobrażacie? Staram się trzymać wojsko na dystans ze względu na moje zaangażowanie w dyplomację, ale jeśli tak dalej pójdzie to nie będę w stanie nic zrobić by ich powstrzymać.
+WARN_INVADED_01            | Nasi generałowie są wściekli z powodu ostatnich działań, jakie podjęli wasi ludzie! Są gotowi do walki po waszej inwazji na system [system]! Musicie to natychmiast powstrzymać! Chyba nie próbujesz wywołać wojny?! 
+WARN_ESPIONAGE_01          | Mojemu ludowi nieobce jest szpiegostwo, które przenika naszą kulturę od czasów zimnej wojny sprzed wielu wieków. Musicie chyba jednak wiedzieć, że powtarzające się próby wykradania naszych tajemnic spotkają się w przyszłości z odwetem? [framed]
+WARN_SABOTAGE_01           | Szpiegostwo możemy jeszcze zrozumieć, ale sabotaż?! Zrobię co w mojej mocy by uciszyć generałów, ale jeśli jeszcze raz spróbujecie czegoś takiego to wątpię, czy będę w stanie lub nawet będę chciał wam pomóc w przyszłości. [forced]
+WARN_BIOWEAPON_01          | Doszły mnie słuchy, że użyliście broni biologicznej na cywilach w systemie [system]. Szczerze mówiąc to brak mi słów. Dla dobra naszych stosunków dyplomatycznych zrobię co w mojej mocy, ale nie mogę powiedzieć że jestem entuzjastycznie nastawiony do reakcji Triumwiratu.
+WARN_GENOCIDE_01           | Coście uczynili?! Piękna i starożytna kultura została na zawsze utracona! Drżę na myśl o tym jak Triumwirowie zareagują na tę wiadomość: ludobójstwo dokonane na rasie [victim_race3] jest absolutną antytezą naszej filozofii!
+WARN_FINAL_WAR_01          | W końcu galaktyka postanowiła się zjednoczyć i dążyć do pokoju, a wy ze wszystkich istot zdecydowaliście się przeciwstawić naszemu demokratycznie wybranemu kierunkowi działania? Po naszych kontaktach myliłem się, myśląc o was lepiej. Wiem jednak, że wkrótce mój błąd zostanie naprawiony!
+WARN_COUNCIL_VOTE_01       | Wyznaję, że jestem rozczarowany waszymi działaniami w Radzie, ambasadorze. Mam nadzieję, że to był jednokrotny błąd z waszej strony i że - jak my ludzie lubimy mówić - "było, minęło".
+WARN_OATHBREAKER_01        | Zaufanie jest podstawą wszelkiej dyplomacji, ambasadorze. Łamiąc słowo, splunęliście na nasze zaufanie i zapewniam, że nasze stosunki dyplomatyczne otrzymały cios po którym prawdopodobnie już nigdy się nie podniosą.
+WARN_ATTACKED_ALLY_01      | Ambasadorze, stanowczo odradzam wam dalsze ataki na rasę [defender_race3]. Zawarliśmy z nimi sojusz i nawet ja nie będę w stanie utrzymać naszego wojska w szachu, jeśli będziecie nalegać na kontynuowanie tych brutalnych działań!
+WARN_REBELLING_AGAINST_01  | Nie może być tak, że wybrano was zamiast nas na przywódców Rady Galaktycznej! Triumwirowie będą wściekli! Obawiam się, że uznają wojnę za jedyną realną opcję jaka im pozostała!
+//
+PRAISE_COUNCIL_VOTE_01     | Mój dobry przyjacielu ambasadorze! Chciałem ci tylko powiedzieć: dobra robota w dzisiejszej radzie! Triumwirat zawsze docenia tych, którzy wspierają nasze sprawy i cieszymy się, że tak wielki sojusznik jak wy nadal zdobywa to uznanie.
+PRAISE_COUNCIL_VOTE_02     | Ach, ambasador [voter_empire2]. Doskonale, że odnalazłem cię zanim zakończyliśmy obrady. Cieszę się, że wasza wiara w ideały Triumwiratu jest tak silna! Kiedy powrócimy do domów, proszę się do mnie odezwać abyśmy mogli wzmocnić nasze więzi dyplomatyczne!
+PRAISE_COUNCIL_VOTE_03     | Więc jednak głosowaliście na nas, co? Cieszę się, że w końcu poszliście po rozum do głowy. Jeśli jesteście gotowi na nawiązanie nowych więzi dyplomatycznych z Triumwiratem to może będę skłonny szepnąć o was dobre słowo.
+
+PRAISE_ATTACKED_ENEMY_01   | Nie wątpię, że rasa [defender_race3] nie spodziewała się, że Triumwirat kiedykolwiek będzie toczył wojnę, ale wiem że nie spodziewała się, że nasi przyjaciele [your_race] również się przyłączą! Razem pokażemy im dlaczego to dyplomacja i zaufanie są najważniejszymi narzędziami polityki!
+PRAISE_ATTACKED_ENEMY_02   | Dziś jest dobry dzień na bitwę, ambasadorze. Wolimy zawierać przyjaźnie w o wiele bardziej pokojowych okolicznościach, ale jeśli wojna przeciwko rasie [defender_race3] oznacza początek długiej przyjaźni między moim i waszym ludem, to bez wątpienia jest to wojna którą warto stoczyć!
+PRAISE_ATTACKED_ENEMY_03   | Triumwirat jest bardziej niż zdolny do podjęcia walki z każdym wrogiem, który gardzi próbami pokojowych stosunków. Jeśli jednak nalegacie na przyłączenie się do tej walki jako akt dobrej woli, z pewnością nie zrobimy nic by stanąć wam na drodze!
+
+PRAISE_TRADE_01            | I o to właśnie chodzi! Dobrzy przyjaciele i korzystne umowy handlowe są warci więcej niż wrogowie i wyniszczające wojny! Cieszę się, że wasi ludzie wybrali nas za przyjaciół i jestem pewien, że Triumwirowie czują to samo!
+PRAISE_TRADE_02            | Tak - to zaufanie jest podstawą dyplomacji, ale wzajemnie korzystny handel z pewnością nie zaszkodzi, prawda? Mam nadzieję, że będziemy mogli kontynuować nasze porozumienie w nieskończoność i że pojawią się nowe sposoby, dzięki którym będziemy mogli sobie nawzajem pomagać. Jak to my ludzie lubimy mówić: "jeśli Ty podrapiesz moje plecy, to ja podrapię twoje!".
+
+PRAISE_REBELLING_WITH_01   | Nie obawiaj się, ambasadorze! My również uznajemy Radę za to, czym jest: skorumpowaną dyktaturą udającą pokojowe współistnienie. Staniemy jako jedność i nie spoczniemy, dopóki nie pozbędziemy się tych despotów raz na zawsze!
+
+ACCEPT_TRADE_01            | Ta umowa handlowa przyniesie korzyści nam obu, ambasadorze. [my_empire] i [your_empire] przyjaciółmi na sumę [amt] BC rocznie! Ładnie to brzmi, nie sądzisz?
+RESPOND_IGNORE_THREAT_01   | Ta groźba to na pewno jakiś żart? Tak, tak, żart! Haha, bardzo zabawne, ambasadorze!
+RESPOND_STOP_SPYING_01     | Co za bałagan. Triumwirat wypiera się wszelkiej wiedzy na temat tego nieuczciwego agenta, który działał z własnej woli szpiegując wasz lud. Proszę zwróćcie nam go a zapewniam, że to się więcej nie powtórzy.
+RESPOND_STOP_ATTACKING_01  | To stara tradycja rasy [my_race3], którą nazywamy "pobrzękiwaniem szabelką". Uznajcie ambasadorze, że szabla została usłyszana: nasze floty zawrócą.

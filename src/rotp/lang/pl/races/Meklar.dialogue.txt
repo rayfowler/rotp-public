@@ -1,0 +1,144 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Meklar specific dialogue
+
+CONTACT_ERRATIC            | Gatunek: [your_race]. Lider: [your_title]. Innowacje technologiczne: Różnorodne. Ocena zagrożenia: Niejednoznaczna.
+CONTACT_HONORABLE          | Gatunek [your_race] jest dla nas interesujący. [my_empire] widzi potencjał we współpracy. Rezultaty zobaczymy w przyszłości.
+CONTACT_RUTHLESS           | [my_empire] jest teraz świadome istnienia [your_race3]. [my_title] ostrzega wszystkich [your_race3]: nie przeszkadzajcie w realizacji celów Dominium. Rezultatem będzie zagłada gatunku [your_race].
+//
+GREETING_01                | Tożsamość ambasadora została potwierdzona. Dominium pomoże, jeśli będzie to możliwe.
+GREETING_04                | [my_empire] uznaje ambasadora [your_race3]. Dominium jest gotowe na przetwarzanie jego życzeń.
+GREETING_07                | Żądanie dyplomatyczne. Dominium raczej nie przekaże żądań [your_race3] swemu władcy w celu przetwarzania.
+//
+DECLAREWAR_HATE_01         | [my_empire] nie będzie więcej tolerować obecności [your_empire2]. Siła gatunku [your_race] wypada w porównaniu prymitywnie. Rozpocząć protokół wyszukaj i zniszcz.
+DECLAREWAR_HATE_02         | [my_title] nie pozwoli gatunkowi [your_race] zagrozić celom Dominium. Dominium jest gotowe na wiele w celu ochrony głównej dyrektywy.
+DECLAREWAR_HATE_03         | Dominium nie może realizować dyrektyw kiedy istnieje [your_empire]. Dominium musi zniszczyć ten gatunek. Brak alternatyw.
+DECLAREWAR_ERRATIC_01      | [my_title] stwierdził, że istnienie gatunku [your_race] zagraża celom Dominium. Dominium natychmiast rozpocznie protokoły eksterminacji.
+DECLAREWAR_ERRATIC_02      | [my_title] sądzi, że gatunek [your_race] prawdopodobnie posiada informacje pomocne w osiągnięciu celu Dominium. Dominium zdobędzie te informacje od gatunku [your_race] siłą.
+DECLAREWAR_ERRATIC_03      | [my_title] uważa gatunek [your_race] za nieakceptowalną niewiadomą. Dominium zniszczy gatunek [your_race] albo zginie w tym procesie.
+DECLAREWAR_MILITARY_01     | [my_empire] musi kontynuować galaktyczną ekspansję aby osiągnąć ostateczny cel. [your_empire] zagraża ekspansji. Ten problem zostanie rozwiązany.
+DECLAREWAR_MILITARY_02     | Dominium nie jest w stanie określić głównego celu. Istnieje prawdopodobieństwo, że planety należące do [your_empire2] są kluczem. Wojna jest nieunikniona.
+DECLAREWAR_MILITARY_03     | Dominium zmuszone do poszerzenia terytorium. Siła rasy [your_race] nie może temu zagrozić. Wojna konieczna, choć godna ubolewania.
+DECLAREWAR_ALLIANCE_01     | Mocarstwo o nazwie [your_empire] wypowiedziało wojnę sojusznikowi Dominium. Dominium będzie chronić swoich interesów likwidując zagrożenie ze strony gatunku [your_race].
+DECLAREWAR_ALLIANCE_02     | Dominium otrzymało prośbę o pomoc od [other_empire2]. Pomoc w wojnie przeciwko gatunkowi [your_race] w toku.
+DECLAREWAR_ALLIANCE_03     | Gatunek [your_race] staje się arogancka i wypowiada wojnę innym. Dominium pomoże im usunąć gatunek [your_race] z galaktyki.
+DECLAREWAR_SPYING_01       | Gatunek [your_race] angażuje się w tajne działania przeciwko Dominium. Konsekwencje dla Dominium: nieistotne. Konsekwencje dla gatunku [your_race]: śmiertelne.
+DECLAREWAR_SPYING_02       | Wykryto podstęp na terytorium Dominium. Źródło potwierdzone jako gatunek [your_race]. Protokoły Dominium wymagają wojny w odpowiedzi. 
+DECLAREWAR_SPYING_03       | Dominium wykryło oczywistą próbę destabilizacji ze strony [your_empire2]. Nie może pozwolić gatunkowi [your_race] na dalszą ingerencję w cele. Dominium musi wziąć odwet za wszelką cenę.
+DECLAREWAR_ATTACK_01       | Gatunek [your_race] okazał się wrogi, mimo oczywistej przewagi [my_race3]. Dominium dąży do całkowitego usunięcia zagrożenia.
+DECLAREWAR_ATTACK_02       | Gatunek [your_race] utrudnia realizację celów Dominium, atakując bezpośrednio. Konfrontacja nieunikniona.
+DECLAREWAR_ATTACK_03       | Gatunek [your_race] próbuje uniemożliwić Dominium osiągnięcie celów poprzez zniszczenie [my_race3]. Dominium dokona odwetu przy użyciu wszystkich dostępnych sił militarnych.
+DECLAREWAR_OPPORTUNITY_01  | [my_title] uważa, że gatunek [your_race] ostatecznie okaże się szkodliwy w realizacji głównej dyrektywy. Dominium wyeliminuje gatunek [your_race] zanim zagrożenie zostanie w pełni urzeczywistnione.
+DECLAREWAR_ASSASSIN_01     | Ambasador Dominium został unieszkodliwiony przez gatunek [your_race], zanim został ponownie zintegrowany z Komputerem Głównym. Działania [your_race3] wymagają gwałtownego odwetu.
+
+OFFER_PEACE_01             | [my_title] postanowił. Wojna nie jest już akceptowalnym wydatkiem dla Dominium. Dominium chce natychmiast pośredniczyć w zawarciu pokoju.
+OFFER_TRADE_01             | Gatunek [your_race] posiada znaczne zasoby. Dominium również posiada przedmioty wartościowe. Dominium proponuje umowę handlową o wartości [amt] BC rocznie.
+OFFER_PACT_01              | Dominium dąży do wyniku wykraczającego poza bezsensowny konflikt. Pakt o nieagresji z gatunkiem [your_race] uważany jest za najrozsądniejszy środek do osiągnięcia tego celu.
+OFFER_ALLIANCE_01          | [my_title] ceni sobie dyplomację z gatunkiem [your_race]. Dominium proponuje formalny sojusz, aby zapewnić przetrwanie zarówno gatunkowi [your_race] jak i gatunkowi [my_race]. Wymagana natychmiastowa odpowiedź.
+
+WARN_TRESPASSING_01        | Gatunek [your_race] wykryty w systemie [system]. Obszar wcześniej zajęty przez Dominium. Opuścić go natychmiast.
+WARN_EXPANSION_01          | Gwałtowna ekspansja gatunku [your_race] uznana za zagrożenie dla celów Dominium. Dalsza ekspansja terytorialna wymusi działania militarne.
+WARN_BUILDUP_01            | Sieć nadzoru Dominium identyfikuje flotę [your_race3] jako potencjalne zagrożenie dla bezpieczeństwa. Wzmożony nadzór nad gatunkiem [your_race] by upewnić się że interesy Dominium nie są zagrożone.
+WARN_SKIRMISH_01           | Konflikt między flotami Dominium i [your_race3] wykryty w systemie [system]. Dominium odradza powtórne naruszenia: Dominium jest przygotowane na odpowiednią reakcję, jeśli ostrzeżenie nie zostanie wysłuchane. 
+WARN_ATTACKED_01           | Odnotowano agresję [attacker_race3] w systemie [system]. [defender_title] przekazuje ambasadorowi wiadomość: dalsze zagrażanie bezpieczeństwu Dominium doprowadzi do wyginięcia gatunku [attacker_race]. 
+WARN_INVADED_01            | Przypomnienie od Dominium, że gatunek [attacker_race] nie ma prawa do przestrzeni [defender_race3]. Natychmiast usuńcie floty, albo grozi wam całkowita zagłada.
+WARN_ESPIONAGE_01          | Aktywność szpiegowska [spy_race3] zarejestrowana na terytorium Dominium. Protokoły bezpieczeństwa Dominium przewyższają umiejętności szpiegowskie [spy_race3]. Ponowna próba może okazać się zgubna. [framed]
+WARN_SABOTAGE_01           | Dominium wie o udziale gatunku [spy_race] w ostatnim sabotażu. Próba chaosu była zbyt błaha, by uzasadnić reakcję. Dalsze próby sabotażu spowodują szybką odpłatę. [forced]
+WARN_BIOWEAPON_01          | Dominium obserwuje użycie prymitywnej broni biologicznej. Skuteczne uzbrojenie. Ocena zagrożenia gatunkowego [attacker_race3] zwiększona o 3 poziomy. 
+WARN_GENOCIDE_01           | Zanotowano ludobójstwo gatunku [victim_race] przez gatunek [attacker_race]. Dominium nie interesuje się możliwymi przyczynami ani alternatywami. Ocena zagrożenia gatunku [attacker_race] zwiększona o 5 poziomów.  
+WARN_FINAL_WAR_01          | Wszystkie znane gatunki tworzą porozumienie mające zapewnić trwały pokój w galaktyce. Gatunek [rebel_race] jest jedynym przeciwnikiem. Dominium podejmie odpowiednie działania.
+WARN_COUNCIL_VOTE_01       | Dominium wie o działaniach [voter_race3] w radzie. Znaczenie nieistotne. Rezultat oceniony jako szkodliwy dla celów [candidate_race3]. Pozycja dyplomatyczna odpowiednio dostosowana.  
+WARN_OATHBREAKER_01        | [my_title] wydaje wyrok: Gatunek [your_race] nie jest już uważany za godny zaufania. Wszystkie przyszłe kontakty mogą ulec zmianie, jeśli gatunek [your_race] złamie wiążącą umowę.
+WARN_ATTACKED_ALLY_01      | Zarejestrowano konflikt między gatunkiem [your_race] a gatunkiem [defender_race]. Gatunek [defender_race] znany jako sprzymierzeniec Dominium. Zaprzestań walki lub przygotuj się na konsekwencje. 
+WARN_REBELLING_AGAINST_01  | Gatunek [your_race] stanowi przeszkodę w realizacji celów Dominium. Orzeczenie Rady Galaktycznej nie do przyjęcia. Oczekujemy odpowiedzi od Najwyższego Arbitra. 
+
+PRAISE_COUNCIL_VOTE_01     | Ambasador gatunku [voter_race] kontynuuje pomoc w osiąganiu celów [candidate_race3]. Dominium dostrzega korzyści płynące z kontynuacji stosunków z gatunkiem [voter_race]. Dominium odwdzięczy się w razie potrzeby. 
+PRAISE_COUNCIL_VOTE_02     | Dominium odnotowuje twój pozytywny głos w radzie. Dominium odpowiednio dostosuje swoje poglądy na temat gatunku [voter_race].
+
+PRAISE_COUNCIL_VOTE_03     | Dominium uznaje prawdopodobieństwo podstępu ze strony gatunku [voter_race]. Dalsza pomoc Dominium w radzie zostanie doceniona.
+
+PRAISE_ATTACKED_ENEMY_01   | Zaatakowanie wrogów Dominium dowodzi zaangażowania w realizację celów [my_race3]. Dominium zobowiązało się do utrzymania ofiar wśród gatunku [attacker_race] na poziomie absolutnego minimum. 
+PRAISE_ATTACKED_ENEMY_02   | Dominium z zadowoleniem przyjmuje pomoc przeciwko gatunkowi [defender_race]. Ta wojna może okazać się nowym początkiem między gatunkami [my_race] i [attacker_race].  
+PRAISE_ATTACKED_ENEMY_03   | Atakowanie gatunku [defender_race] nie wymazuje dawnych zbrodni przeciwko Dominium. Dominium ponownie oceni poziom zagrożenia gatunku [attacker_race] w zależności od jego działań w tej wojnie. 
+
+PRAISE_TRADE_01            | Dominium i gatunek [your_race] wiele zyskują na ciągłym handlu. Dominium życzy sobie, aby handel trwał tak długo, jak długo układ ten będzie korzystny.
+PRAISE_TRADE_02            | Dominium wyraża zadowolenie z porozumienia handlowego z gatunkiem [your_race]. Upewnij się że umowa będzie trwała, aby obie rasy czerpały z niej korzyści. 
+PRAISE_REBELLING_WITH_01     | Dominium zgadza się, że władca Rady Galaktycznej jest niegodny zaufania. Sprzeciw gatunku [your_race] odnotowany. Dominium pomoże gatunkowi [your_race] w rebelii. 
+
+
+ACCEPT_TRADE_01            | Otrzymano wniosek o handel z gatunkiem [your_race]. Proponowana kwota BC [amt]. Dominium zgadza się.
+RESPOND_IGNORE_THREAT_01   | Zagrożenie ze strony gatunku [your_race] zastanawiające. Cywilizacja [your_race3] jest znacznie słabsza od flot Dominium. Zignorowane.
+RESPOND_STOP_SPYING_01     | Szpieg Dominium schwytany podczas próby zdobycia informacji o formach życia [your_race3]. Dominium oferuje przeprosiny. Zwróćcie schwytanego przedstawiciela [my_race3] przy najbliższej okazji.
+RESPOND_STOP_ATTACKING_01  | Dominium odniosło sukces, pokazując cywilizacji [your_race3] swoje możliwości militarne. Wycofujemy floty do wyznaczonych współrzędnych.
+
+DIPLO_TECH_REQUEST_MENU_01   | Określ technologię.
+DIPLO_TECH_COUNTER_MENU_01   | Określ rekompensatę.
+DIPLO_TRADE_MENU_01          | Określ wielkość.
+DIPLO_TREATY_MENU_01         | Określ porozumienie.
+DIPLO_DECLARE_WAR_MENU_01    | Potwierdź przed kontynuacją.
+DIPLO_SUGGEST_WAR_MENU_01    | Określ cel.
+DIPLO_BREAK_ALLIANCE_MENU_01 | Określ sojusznika.
+DIPLO_THREATEN_MENU_01       | Określ.
+DIPLO_OFFER_AID_MENU_01      | Określ.
+DIPLO_OFFER_TECH_MENU_01     | Określ technologię.
+
+DECLINE_OFFER_01           | Żądanie odrzucone.
+DECLINE_OFFER_02           | Żądanie odrzucone.
+DECLINE_OFFER_03           | Żądanie odrzucone.
+DECLINE_OFFER_04           | Żądanie odrzucone.
+DECLINE_OFFER_05           | Żądanie odrzucone.
+DECLINE_OFFER_06           | Żądanie odrzucone.
+DECLINE_OFFER_07           | Żądanie odrzucone.
+DECLINE_OFFER_08           | Żądanie odrzucone.
+DECLINE_OFFER_09           | Żądanie odrzucone.
+DECLINE_ENEMY_ALLY_01      | Żądanie odrzucone.
+DECLINE_NO_WAR_ON_ALLY_01  | Żądanie odrzucone.
+DECLINE_PEACE_TREATY_01    | Żądanie odrzucone.
+DECLINE_ANNOYED_01         | Żądanie odrzucone.
+DECLINE_ANNOYED_02         | Żądanie odrzucone.
+DECLINE_ANNOYED_03         | Żądanie odrzucone.
+DECLINE_OATHBREAKER_01     | Żądanie odrzucone.
+DECLINE_ESPIONAGE_01       | Żądanie odrzucone.
+DECLINE_SABOTAGE_01        | Żądanie odrzucone.
+DECLINE_BUILDUP_01         | Żądanie odrzucone.
+DECLINE_ENCROACH_01        | Żądanie odrzucone.
+DECLINE_SKIRMISH_01        | Żądanie odrzucone.
+DECLINE_ATTACK_01          | Żądanie odrzucone.
+DECLINE_INVASION_01        | Żądanie odrzucone.
+DECLINE_BIOWEAPONS_01      | Żądanie odrzucone.
+DECLINE_TECH_TRADE_01      | Żądanie odrzucone.
+OFFER_TECH_EXCHANGE_01     | Dominium wymaga technologii [tech]. Określ rekompensatę.
+ACCEPT_TECH_EXCHANGE_01    | Akceptacja zarejestrowana.
+ACCEPT_FINANCIAL_AID_01    | Akceptacja zarejestrowana.
+ACCEPT_TECHNOLOGY_AID_01   | Akceptacja zarejestrowana.
+
+BREAK_TRADE_01             | Umowa handlowa wypowiedziana.
+ANNOUNCE_PEACE_01          | Akceptacja zarejestrowana.
+ACCEPT_PEACE_01            | Żądanie rozpatrzone pozytywnie.
+
+BREAK_PACT_01              | Pakt o nieagresji wypowiedziany.
+ANNOUNCE_PACT_01           | Akceptacja zarejestrowana.
+ACCEPT_PACT_01             | Żądanie rozpatrzone pozytywnie.
+
+BREAK_ALLIANCE_01          | Sojusz rozwiązany.
+ANNOUNCE_ALLIANCE_01       | Akceptacja zarejestrowana.
+ACCEPT_ALLIANCE_01         | Żądanie rozpatrzone pozytywnie.
+ACCEPT_JOINT_WAR_01        | Żądanie rozpatrzone pozytywnie.
+
+RESPOND_CLOSE_EMBASSY_01   | Akcja zarejestrowana.
+RESPOND_BREAK_TRADE_01     | Akcja zarejestrowana.
+RESPOND_BREAK_PACT_01      | Akcja zarejestrowana.
+RESPOND_BREAK_ALLIANCE_01  | Akcja zarejestrowana.
+RESPOND_DECLARE_WAR_01     | Akcja zarejestrowana.

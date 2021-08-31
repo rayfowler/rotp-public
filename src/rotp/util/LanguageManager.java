@@ -64,6 +64,13 @@ public class LanguageManager implements Base {
             names.add(lang.name);
         return names;
     }
+    private Language languageForCode(String code) {
+        for (Language lang: languages) {
+            if (lang.directory.equalsIgnoreCase(code))
+                return lang;
+        }
+        return null;
+    }
     public static int languageNumber(String dir) {
         for (int i=0;i<languages.size();i++) {
             Language lang = languages.get(i);
@@ -145,8 +152,7 @@ public class LanguageManager implements Base {
     public ComponentOrientation currentOrientation()  { return orientation(selectedLanguage()); }
 
     protected void loadLanguages() {
-        languages.add(new Language("en", "", "English", "", ""));
-        FontManager.current().loadLanguageFonts(baseDir, "en");
+        loadInstalledLanguages();
         File langDir = new File(Rotp.jarPath()+"/lang");
         File[] langFolders = langDir.listFiles();
         if (langFolders != null) {
@@ -154,9 +160,13 @@ public class LanguageManager implements Base {
                 if (f.isDirectory()) {
                     String langCode = f.getName();
                     String langName = languageDisplayName(langCode);
+                    Language language = languageForCode(langCode);
                     if (langName != null) {
-                        languages.add(new Language(langCode, "", langName, "", ""));
                         FontManager.current().loadLanguageFonts(baseDir, langCode);
+                        if (language == null) 
+                            languages.add(new Language(langCode, "", langName, "", ""));
+                        else 
+                            language.name = langName;
                     }
                 }
             }
@@ -190,29 +200,27 @@ public class LanguageManager implements Base {
             fis.close();
         }
         catch (IOException e) {
-
             err("LanguageManager.languageDisplayName()2 -- IOException: ", e.toString());
         }
         return null;
     }
-    /*
-    protected void loadLanguageFile() {
+    protected void loadInstalledLanguages() {
         BufferedReader in = reader(baseDir+languageFile);
         if (in == null) {
-            err("LanguageManager.loadLanguageFile() - can't find language file! ", baseDir, languageFile);
+            err("LanguageManager.loadInstalledLanguages() - can't find language file! ", baseDir, languageFile);
             return;
         }
         try {
             String input;
             while ((input = in.readLine()) != null)
-                loadLanguageLine(input);
+                loadInstalledLanguageLine(input);
             in.close();
         }
         catch (IOException e) {
-            err("LanguageManager.loadLanguageFile() -- IOException: ", e.toString());
+            err("LanguageManager.loadInstalledLanguages() -- IOException: ", e.toString());
         }
     }
-    protected void loadLanguageLine(String input) {
+    protected void loadInstalledLanguageLine(String input) {
         if (isComment(input))
             return;
 
@@ -226,7 +234,6 @@ public class LanguageManager implements Base {
         // load fonts for selected lanage
         FontManager.current().loadLanguageFonts(baseDir, dirString);
     }
-*/
     class Language {
         String directory;
         String subdirectory;

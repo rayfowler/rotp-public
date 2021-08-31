@@ -31,6 +31,8 @@ MAIN_ADVISOR_MISSILE_BASES | Jenderal-jenderalmu percaya bahwa membangun basis m
 MAIN_ADVISOR_SHIP_WEAPON   | Kaisar Dewa! Para ilmuwan menyampaikan kemajuan terkini mereka dalam teknologi senjata! Kita akan mendandani armada kita dengan peralatan perang ini, kau hanya perlu memerintahkan untuk itu!
 MAIN_ADVISOR_COUNCIL       | Sebuah pertemuan para pembesar yang dikenal sebagai Majelis Galaksi akan segera diadakan bagi kita! Musuh kita sejak dulu pasti menyamar di antara mereka yang berkumpul di sana! Kita harus membuka kedok mereka agar perang suci kita bisa segera dimulai!
 MAIN_ADVISOR_REBELLION     | Kaisar yang Agung! Sesuatu yang tidak terduga telah terjadi. Orang-orang kita, tidak ragu lagi telah terinfeksi oleh musuh kita yang keji, memberontak melawanmu di %1. Kita harus mengakhiri kecurangan ini saat ini juga!
+MAIN_ADVISOR_RESIST_COUNCIL   | Betapa kurang ajarnya orang-orang bodoh ini! Kaisar Dewa, armada kita sudah siap! Pimpin kami kepada kemenangan dalam pertempuran yang telah ditakdirkan ini!
+MAIN_ADVISOR_COUNCIL_RESISTED | Tentu saja anak-anak dari musuh kami tidak bisa menerima dominasi [my_race]! Orang-orang kami mengamuk, akhirnya ramalan itu terbukti juga!
 
 // text for endings... '#' represents a paragraph break
 // variables: %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 is special race-specific text described below

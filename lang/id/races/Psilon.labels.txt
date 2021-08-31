@@ -31,9 +31,9 @@ MAIN_ADVISOR_RALLY_POINTS         | Sangat disayangkan, tetapi Republik kini bar
 MAIN_ADVISOR_MISSILE_BASES        | Daripada mengerahkan armada perang, kita bisa membangun basis misil pertahanan pada koloni kita untuk melindungi mereka dari serangan. Majelis ingin mendengar pendapatmu mengenai dunia mana yang paling baik untuk ditempati basis seperti ini. 
 MAIN_ADVISOR_SHIP_WEAPON          | Majelis sedang berdebat panas mengenai desain terbaru untuk persenjataan kapal. Beberapa pihak ingin senjata tersebut dihancurkan secepatnya, tapi kita boleh berharap untuk mengubah desain kapal kita sebagai pertimbangan proaktif murni.
 MAIN_ADVISOR_COUNCIL              | Sebentar lagi akan ada pertemuan yang membahagiakan bagi para pembesar yang hebat dan berkuasa di galaksi ini. Kita harus menghadiri Majelis Galaksi dan mendengarkan kebijaksanaan para tetangga angkasa kita.
+MAIN_ADVISOR_REBELLION            | Adalah mengejutkan bahwa populasi %1 memilih untuk menjawab ketidaksepakatan dengan cara ini. Majelis telah memberimu izin untuk pergi menangani ini segera, bahkan sebelum mereka mendengar masalah ini.
 MAIN_ADVISOR_RESIST_COUNCIL       | Rasanya meresahkan bahwa semua usaha kita telah berujung pada perang ini, tapi jika satu-satunya pilihan adalah menyerah kepada majelis penyulut perang ini maka aku tidak melihat pilihan lain bagi rakyat kita! 
 MAIN_ADVISOR_COUNCIL_RESISTED     | Tidakkah kau sedih melihat pihak-pihak lain menolak perdamaian dengan begitu ngototnya? Persiapkan solusimu, Konsilor Agung: ini akan menjadi perang terakhir yang dialami galaksi ini.
-MAIN_ADVISOR_REBELLION            | Adalah mengejutkan bahwa populasi %1 memilih untuk menjawab ketidaksepakatan dengan cara ini. Majelis telah memberimu izin untuk pergi menangani ini segera, bahkan sebelum mereka mendengar masalah ini.
 
 
 
