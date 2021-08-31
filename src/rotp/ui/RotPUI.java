@@ -86,7 +86,7 @@ import rotp.util.sound.SoundManager;
 public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     private static final long serialVersionUID = 1L;
     private static int FPS = 10;
-    private static int ANIMATION_TIMER = 100;
+    public static int ANIMATION_TIMER = 100;
     private boolean drawNextTurnNotice = true;
     private static Throwable startupException;
     static {

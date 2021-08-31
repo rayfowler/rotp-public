@@ -1,6 +1,9 @@
 AlkWin        | races/Alkari/WinSplash.jpg
 AlkLoss       | races/Alkari/LossSplash.jpg
 
+AlkSab01      | races/Alkari/SabotageMissiles/Frame000.jpg
+AlkSab02      | races/Alkari/SabotageRebellion/Frame000.jpg
+
 AlkFlagWar   | races/Alkari/banner_war.png
 AlkFlagNorm  | races/Alkari/banner_norm.png
 AlkFlagPact  | races/Alkari/banner_pact.png

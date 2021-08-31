@@ -1,6 +1,9 @@
 DarWin        | races/Darlok/WinSplash.jpg
 DarLoss       | races/Darlok/LossSplash.jpg
 
+DarSab01      | races/Darlok/SabotageMissiles/Frame000.jpg
+DarSab02      | races/Darlok/SabotageRebellion/Frame000.jpg
+
 DarFlagWar    | races/Darlok/banner_war.png
 DarFlagNorm   | races/Darlok/banner_norm.png
 DarFlagPact   | races/Darlok/banner_pact.png

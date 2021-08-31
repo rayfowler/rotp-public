@@ -1,6 +1,9 @@
 HumWin        | races/Human/WinSplash.jpg
 HumLoss       | races/Human/LossSplash.jpg
 
+HumSab01      | races/Human/SabotageMissiles/Frame000.jpg
+HumSab02      | races/Human/SabotageRebellion/Frame000.jpg
+
 HumFlagWar    | races/Human/banner_war.png
 HumFlagNorm   | races/Human/banner_norm.png
 HumFlagPact   | races/Human/banner_pact.png

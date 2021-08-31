@@ -1,6 +1,9 @@
 MrrWin        | races/Mrrshan/WinSplash.jpg
 MrrLoss       | races/Mrrshan/LossSplash.jpg
 
+MrrSab01      | races/Mrrshan/SabotageMissiles/Frame000.jpg
+MrrSab02      | races/Mrrshan/SabotageRebellion/Frame000.jpg
+
 MrrFlagWar   | races/Mrrshan/banner_war.png
 MrrFlagNorm  | races/Mrrshan/banner_norm.png
 MrrFlagPact  | races/Mrrshan/banner_pact.png

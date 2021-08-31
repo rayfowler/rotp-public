@@ -1,6 +1,9 @@
 KlaWin        | races/Klackon/WinSplash.jpg
 KlaLoss       | races/Klackon/LossSplash.jpg
 
+KlaSab01      | races/Klackon/SabotageMissiles/Frame000.jpg
+KlaSab02      | races/Klackon/SabotageRebellion/Frame000.jpg
+
 KlaFlagWar    | races/Klackon/banner_war.png
 KlaFlagNorm   | races/Klackon/banner_norm.png
 KlaFlagPact   | races/Klackon/banner_pact.png
