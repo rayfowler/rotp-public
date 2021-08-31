@@ -370,6 +370,17 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         translatorText.disabled(true);
         slideshowText.disabled(true);
         versionText.disabled(true);
+        developerText.bordered(true);
+        artistText.bordered(true);
+        graphicDsnrText.bordered(true);
+        writerText.bordered(true);
+        soundText.bordered(true);
+        translatorText.bordered(true);
+        slideshowText.bordered(true);
+        versionText.bordered(true);
+        discussText.bordered(true);
+        shrinkText.bordered(true);
+        enlargeText.bordered(true);
         setTextValues();
         initModel();
     }
@@ -405,6 +416,9 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     public void animate() {
         if (glassPane() != null)
             return;
+        
+        if (slideshowTime == 0) 
+            slideshowTime = System.currentTimeMillis();
         
         animationTimer--;
         if (animationTimer == 0) {
