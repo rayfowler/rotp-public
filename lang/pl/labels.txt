@@ -1848,7 +1848,7 @@ CREDITS_GRAPHIC_DESIGN            | Kaitlin Lindsay, grafika
 CREDITS_MUSIC                     | Efe Tozan, muzyka
 CREDITS_WRITER                    | Jeff Colucci, tekst
 CREDITS_SOUND                     | Remi Agullo, dźwięk
-CREDITS_TRANSLATOR                | 
+CREDITS_TRANSLATOR                | Michał Świetlik, tłumaczenie
 
 // Systems UI
 SYSTEMS_TITLE                     | Systemy
