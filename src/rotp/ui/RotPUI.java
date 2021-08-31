@@ -364,7 +364,12 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         selectPanel(MAIN_PANEL, mainUI());
         repaint();
     }
-    public void selectGamePanel()      { selectPanel(GAME_PANEL,  gameUI); }
+    public void selectGamePanel()      { 
+        if (!UserPreferences.windowed())
+            selectDialogPanel(GAME_PANEL, gameUI);
+        else
+            selectPanel(GAME_PANEL, gameUI);
+    }
     public void selectDesignPanel()    { designUI.init(); selectPanel(DESIGN_PANEL, designUI); }
     public void selectFleetPanel()     { fleetUI.init(); selectPanel(FLEET_PANEL, fleetUI); }
     public void selectSystemsPanel()   { systemsUI.init(); selectPanel(SYSTEMS_PANEL, systemsUI); }
@@ -641,7 +646,11 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         setBackground(Color.CYAN);
         setLayout(layout);
 
-        add(gameUI, GAME_PANEL);
+        if (!UserPreferences.windowed()) 
+            dialogPane.addToLayout(gameUI, GAME_PANEL);
+        else 
+            add(gameUI, GAME_PANEL);
+                
         add(setupRaceUI, SETUP_RACE_PANEL);
         add(setupGalaxyUI, SETUP_GALAXY_PANEL);
         add(loadGameUI, LOAD_PANEL);

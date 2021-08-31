@@ -448,7 +448,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
                 long curTime = System.currentTimeMillis();
                 if ((curTime - slideshowTime) >= (BG_DURATION * RotPUI.ANIMATION_TIMER))
                     slideshowFade = (animationTimer - 10)/10f;
-                else 
+                else if (animationTimer == 10)
                     slideshowTime = curTime;
             }
             repaint();
