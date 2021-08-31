@@ -98,7 +98,6 @@ public interface Base {
     public default Empire player()         { return galaxy().player(); }
     public default boolean isPlayer(Empire e) { return galaxy().isPlayer(e); }
     public default LabelManager labels()   { return LabelManager.current(); }
-    public default CursorManager cursors() { return CursorManager.current(); }
     public default IGameOptions newGameOptions()        { return RotPUI.newOptions(); }
     public default void createNewGameOptions()          { RotPUI.createNewOptions(); }
     public default void clearNewGameOptions()           { RotPUI.clearNewOptions(); }

@@ -274,7 +274,6 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
     private void init() {
         initModel();
         addKeyListener(this);
-        setDefaultCursor();
         if (startupException != null)
             selectErrorPanel(startupException);
         else

@@ -705,14 +705,10 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     @Override
     public void mouseEnter(GalaxyMapPanel map) {
         hovering = true;
-        if (canShowDetail(map))
-            map.setPromptCursor();
     }
     @Override
     public void mouseExit(GalaxyMapPanel map) {
         hovering = false;
-        if (map.parent().isClicked(this))
-            map.setCrosshairsCursor();
     }
     private float flareSize(GalaxyMapPanel map)  {
         if (!playAnimations())

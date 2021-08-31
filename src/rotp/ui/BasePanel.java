@@ -79,16 +79,6 @@ public class BasePanel extends JPanel implements Base {
             gc = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDefaultConfiguration();
         return gc;
     }
-    //public void setDefaultCursor()         { setCursor(cursors().defaultCursor()); }
-    //public void setCrosshairsCursor()      { setCursor(cursors().crosshairs()); }
-    //public void setScrapCursor()           { setCursor(cursors().scrap()); }
-    //public void setToCursor()              { setCursor(cursors().to()); }
-    //public void setPromptCursor()          { setCursor(cursors().prompt()); }
-    public void setDefaultCursor()         {  }
-    public void setCrosshairsCursor()      {  }
-    public void setScrapCursor()           {  }
-    public void setToCursor()              { }
-    public void setPromptCursor()          {  }
     public void showHelp()                 {  }
     public void cancelHelp()               {  }
     public void advanceHelp()              { }
