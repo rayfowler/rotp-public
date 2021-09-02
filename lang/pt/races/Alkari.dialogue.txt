@@ -1,0 +1,94 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Alkari specific dialogue
+
+CONTACT_HONORABLE          | Salvações, ó [your_title] [your_name] do império [your_race_male]! Nós, da [my_empire], oferecemos os nossos cordiais cumprimentos na esperança de fruir tratos valorosos com a vossa espécie. 
+CONTACT_PACIFIST           | As mais sinceras saudações ao [your_title] do império [your_race_male]. Não conduzais a guerra às proximidades da nossa Soberania e ambos os impérios haverão de prosperar na amizade comum.
+CONTACT_ERRATIC            | Sou embaixador pelo eterno império da [my_empire]. O meu povo apresenta as suas saudações conforme dita a tradição. Diz-me que a vossa espécie é conhecida pelos "[your_race_male_plural]"? Quão...intrigante.
+
+//
+GREETING_01                | Saudações, embaixador! Que serviço pode a Soberania disponibilizar a tão estimado aliado neste dia?
+GREETING_04                | Saudo-o, embaixador. A soberania prepara-se para ouvir o seu pedido, mas ainda está para se ver o quão longe iremos para o acomodar...
+GREETING_07                | Apresse-se na fala, embaixador! As nossas leis de conduta podem obrigar-nos ao decoro, mas não é por isso que vamos perder tempo na execução de exigências triviais!
+
+//
+DECLAREWAR_HATE_01         | Uma raça como a vossa, sem consideração alguma pela dignidade e a polidez, não pertence a uma galáxia liderada pela Soberania! Preparai-vos para a batalha!
+DECLAREWAR_HATE_02         | Leve a seguinte mensagem ao vosso [your_title]: A partir de agora, estamos em guerra. Foi a isto que vos trouxe a vossa grosseria e arrogância! 
+DECLAREWAR_HATE_03         | Quanta vulgaridade! Embaixador, a [my_empire] preferiria deixar de existir a ter de continuar a partilhar o cosmos com tão bárbaro povo!
+//
+DECLAREWAR_ERRATIC_01      | Embaixador, não poderíamos negar que tem sido agradável lidar com uma raça tão intrigante quanto a vossa. Lamentamos que estas relações devam agora ser cortadas.
+DECLAREWAR_ERRATIC_02      | Como nos tendes entretido desde o primeiro contato! A Soberania tenciona saber se sereis tão cativantes em tempos de guerra, embaixador!
+DECLAREWAR_ERRATIC_03      | Saudações, embaixador do império [your_race_male]! O nosso império, a [my_empire], deseja testar-se em combate honroso contra a vossa força considerável. Preparai as vossas frotas e gentes para a guerra!
+//
+DECLAREWAR_MILITARY_01     | A Soberania deve continuar a expandir o seu território para que os nossos bandos não fiquem sem terra. Quando não encontramos mundos desabitados, tomamos os de impérios menores. O vosso império é inferior ao nosso; logo, os vossos mundos são agora nossos.
+DECLAREWAR_MILITARY_02     | Chegou a hora, embaixador! Com uma asa, a Soberania alastrará as trevas da guerra sobre vós, e com a outra, varrerá os vossos mundos para as suas dobras.
+DECLAREWAR_MILITARY_03     | É...lamentável que as coisas tenham chegado a este ponto, embaixador. Não temos outra opção senão tomar os vossos planetas para exploração própria, ou morrer a tentar. Preparai-vos para a guerra!
+//
+DECLAREWAR_ALLIANCE_01     | Diplomatas dos [other_empire] informaram-nos de que eles estão em guerra com vocês. A [my_empire] tem um compromisso de honra que nos obriga a auxiliar os nossos aliados em tempos de guerra: facto que muito vos pesará, embaixador.
+DECLAREWAR_ALLIANCE_02     | Um aliado chama pelo nosso auxílio e a Soberania responde! O vosso fim aproxima-se, embaixador: não conseguireis enfrentar as nossas frotas combinadas por muito tempo!
+DECLAREWAR_ALLIANCE_03     | Ficámos vexados com a vossa decisão de fazer a guerra contra um dos nossos aliados. Pelas nossas leis mais sagradas, teremos de os assistir no combate contra vós. Por favor, voltai atrás antes que seja tarde demais para todos nós!
+//
+DECLAREWAR_SPYING_01       |  Estavámos satisfeitos em manter boas relações com a vossa gente, embaixador. Uma vez que entrastes por ações tão desonrosas contra a coroa, somos forçados a reconsiderar.
+DECLAREWAR_SPYING_02       | Tamanho ultraje não sairá impune, embaixador! Quem atua em segredo contra nós, submete-se à nossa fúria!
+DECLAREWAR_SPYING_03       | Embaixador! Como ousa o vosso povo conspirar tão desprezivelmente contra a Soberania?! Faremos justiça por isto a todo o custo! Preparai-vos para a guerra!
+//
+DECLAREWAR_ATTACK_01       | Hmpf! Uma decisão temerária, embaixador! Mas se é guerra que desejais da parte da Soberania, guerra é aquilo que tereis!
+DECLAREWAR_ATTACK_02       | É o princípio do fim, embaixador! Se o povo [my_race_male] sobreviveu às guerras intermináveis do Período Carmesim, facilmente faremos frente à agressão da vossa raça!
+DECLAREWAR_ATTACK_03       | Deveríamos ter previsto este tipo de baixeza vinda de uma raça tão infame quanto a vossa, embaixador! Não julgue que a Soberania se submeterá sem retaliar!
+//
+DECLAREWAR_OPPORTUNITY_01  | Como pode ver, nós da [my_empire], temos tido muito sucesso nas nossas realizações espaciais. Infelizmente, embaixador, as nossas necessidades determinam que o próximo sucesso terá de ser feito às custas do seu império.
+DECLAREWAR_ASSASSIN_01     | Que selvageria vem a ser esta? Pudestes cometer um ato tão monstruoso como executar um embaixador a sangue-frio? A Soberania não vai tolerar que uma raça tão execrável quanto a vossa exista por muito mais tempo!
+
+
+
+
+OFFER_PEACE_01             | Embaixador, não podemos permitir que a História do Período Carmesim se repita! Instamo-lo a que traga honra a ambos [your_race_male_plural] e [my_race_male_plural] assinando este tratado de paz para impedir mais derramamento de sangue!
+OFFER_TRADE_01             | Seguramente que raças civilizadas como as nossas são capazes de se ajudar mutuamente em nobre cooperação. A [my_empire] deseja celebrar um acordo comercial com a [your_empire], fixado nas [amt] BM/ano. O que nos diz, embaixador?
+OFFER_PACT_01              | A Soberania deleita-se com os modos com que a vossa gente se apresenta na diplomacia. Para mostrar o quanto valorizamos a nossa relação, vimos propor a assinatura de um pacto de não-agressão, o qual assegurará que nenhum dos lados será vítima de... más interpretações da intenção do outro.
+OFFER_ALLIANCE_01          | As vossas ações conquistaram muito apreço da Soberania, embaixador! O Rei Zénite decretou que uma aliança entre [your_race_male_plural] e [my_race_male_plural] urge ser estabelecida! Só nos falta a sua assinatura!
+
+WARN_TRESPASSING_01        | Consideramos extremamente inapropriado que frotas [your_race_female_plural] deambulem pelo sistema de [system] como se fossem os seus domínios. É do interesse de todos, embaixador, que retifique a situação de imediato.
+WARN_EXPANSION_01          | Expandir-se sem escrúpulos para onde se quer demonstra uma grande falta de respeito pelos vizinhos, embaixador! Aconselho-vos seriamente a não manterdes tal descortesia para com a Soberania.
+WARN_BUILDUP_01            | Tomais-nos por cegos, embaixador?! Nós vemos as vossas frotas a crescer em quantidade e força. Mostrai que não conspirais revogando este arsenal, ou podereis obter uma resposta preventiva!
+WARN_SKIRMISH_01           | Temos pleno conhecimento da pequena contenda no sistema [system], embaixador! A Soberania vai desvalorizar as vossas investidas desta vez. Por que motivo? Não vejo por que haveria responder a uma tal pergunta vinda de si!
+WARN_ATTACKED_01           | Um ataque tão arrojado só poderá advir de uma completa falta de respeito, embaixador! Tendes sorte que o Rei Zénite não se dignou a retorquir à vossa insolência. Mas talvez não sejais tão afortunados numa próxima vez!
+WARN_INVADED_01            | Com que então, quereis tomar aquilo que não vos pertence?! Não tenteis mais a nossa força, embaixador: de bom grado nos livraremos daquele planeta inútil se significar que nos livramos da vossa presunção!
+WARN_ESPIONAGE_01          | Hmfhmfhmf, não nos supreende que uma raça tão indecorosa recorra à espionagem para atingir os seus fins. Lembrem-se, embaixador: o olhar dos [my_race_male_plural] é tão aguçado que nada lhe escapa. [framed]
+WARN_SABOTAGE_01           | Absolutamente repulsivo, embaixador! Cometer sabotagem, dissimulados nas sombras, como um criminoso pela noite?! Contudo, sois tão obtusos quanto brutos: os edifícios que destruistes não eram importantes a ponto de gerarem uma retaliação. [forced]
+WARN_BIOWEAPON_01          | Desonra! Desonra! Usastes o tipo de arma mais execrável contra quem só tem escudos para se defender! A vossa infâmia é merecida e assombrar-vos-á até ao fim, embaixador!
+WARN_GENOCIDE_01           | Ainda que concordemos que os [victim_race_male_plural] eram, de facto, uma horda miserável de rudes vermes, a Soberania opõe-se severamente a atos de genocídio. Perguntamo-nos, embaixador, se a vossa gente não seria capaz de repetir o procedimento com povos mais...civilizados?
+WARN_FINAL_WAR_01          | Não existe virtude alguma neste caminho que tomais, embaixador. Desenganem-se: agora que decidistes opor-vos ao líder - devidamente eleito - da galáxia, a honra incita-nos a fazer tudo o que estiver ao nosso alcance para vos travar!
+WARN_COUNCIL_VOTE_01       | Lá se foi a excelência do embaixador da [your_empire]! Acreditastes realmente que não saberíamos da vossa hipocrisia no Conselho? Tema pelos seus, embaixador: o Rei-Zénite não ficará satisfeito.
+WARN_OATHBREAKER_01        | Escandaloso! Conheceis o valor que concedemos à honradez e, ainda assim, quebrais com a vossa palavra pelo cumprimento dos vossos caprichos egoístas? A Soberania não esquecerá este insulto, embaixador, e certificar-se-á de que é pago na mesma moeda!
+WARN_ATTACKED_ALLY_01      | É problemático, embaixador, que o vosso povo e a [defender_empire] tenham enveredado por tais querelas. Não podeis esperar igualar a nossa força conjunta, embaixador: a Soberania vem persuadi-lo a reconsiderar.
+WARN_REBELLING_AGAINST_01  | Julgastes que passaria despercebido o quão desonrosos vos revelastes? Pouco importa se temos vos combater a vós ou à galáxia inteira: jamais sentareis alguém no trono do Conselho enquanto o Rei-Zénite respirar!
+ 
+PRAISE_COUNCIL_VOTE_01     | O estimado e venerável embaixador da [your_empire]! Estamos em dívida para com o vosso serviço na última reunião do Conselho e ávidos de pagar o favor quando decidirdes que tal deve ser feito.
+PRAISE_COUNCIL_VOTE_02     | Saudações, embaixador. Honrais-nos com uma voz em favor da nossa causa perante os que aqui se reúnem. Estou certo de que o Rei-Zénite vai querer aprender mais acerca de um povo tão digno assim que apresentar o meu relatório. 
+PRAISE_COUNCIL_VOTE_03     | Hmfhmfhmf, é certo que não acreditamos que ficastes do lado da Soberania por mero respeito ou sentido de honra. Porém, talvez posseis provar-vos dignos se vos dermos outra chance para tal?
+
+PRAISE_ATTACKED_ENEMY_01   | Ah! O nosso caro aliado e amigo traz boas novas em tempos de guerra! Vamos, embaixador: que as nossas tropas façam frente a estes medonhos [defender_race_male_plural] - juntos, como camaradas de armas! 
+PRAISE_ATTACKED_ENEMY_02   | A guerra terá um término rápido, embaixador. Por si só, a Soberania facilmente aplacaria estas vulgares criaturas dos [defender_race_male_plural]. Mas juntos? Juntos, vamos varrer permanentemente a mancha daquela raça da galáxia!
+PRAISE_ATTACKED_ENEMY_03   | Estou seguro de que agis por oportunismo tanto quanto estou de que desconheceis o significado de "honra"! Vamos condescender com o vosso auxílio contra os [defender_race_male] - quando muito, para minimizar as perdas do nosso lado!
+
+PRAISE_TRADE_01            | Alivia-me mais do que julga, embaixador, que o seu povo conduza negócios com tamanha honradez. A soberania louva-o e ao seu povo, e continuará a acarinhar a nossa amizade ainda mais que o acordo comercial que estabelecemos.
+PRAISE_TRADE_02            | Ele há várias formas de provar a nossa honra, embaixador. Conduzir negócios em justiça e boa-fé é uma das melhores, e algo que a Soberania valoriza enormemente entre os que encontramos por esta galáxia afora. 
+PRAISE_REBELLING_WITH_01   | Aqueles bárbaros do Conselho subestimam-nos, embaixador! Juntos, vamos mostrar-lhes o que realmente significa dar um passo em falso!
+ACCEPT_TRADE_01            | A Soberania encanta-se sempre em negociar com a [your_empire]. Uma quantia anual de [amt] BM é bastante adequada. Cordialmente aceite.
+RESPOND_IGNORE_THREAT_01   | Atreveis-vos a provocar a [my_empire]? Levai as vossas ameaças risíveis para outro lado antes que deixem de ter graça.
+RESPOND_STOP_SPYING_01     | Parece que a vossa mira é tão aguçada quanto a nossa no que toca detetar espiões. Damos os nossos estratagemas por terminados.
+RESPOND_STOP_ATTACKING_01  | Agora já conseguem apreciar a capacidade da nossa Soberania? Desde que vos recordeis do nosso poder, não vos importunaremos mais com as nossas frotas.
+
+ 

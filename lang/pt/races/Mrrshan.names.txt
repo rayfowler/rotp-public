@@ -1,0 +1,22 @@
+// all possible names
+name: Mrrshan, Prrshan, Miaushan, Garrshan, Hisshan
+
+desc1: Militares Implacáveis
+desc2: Mestres Artilheiros
+desc3: As hordas de Mrrshanes procuram acumular troféus de batalha à medida que se expandem pela galáxia.
+
+// possible home system names
+home: Fierias, Fierina, Miamara, Miriana, Yailaria
+
+title:     Cã
+fulltitle: Cã
+
+// possible leader names
+leader: Jasana, Miamar, Mirana, Prrsha, Shandra, Yalara
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Feral, Felina, Ratoeira, Carcaju, Furão, Fuinha, Gato
+ship2: Lince, Persa, Siamesa, Gata-brava, Caracal, Maracajá, Serval
+ship3: Pantera, Leopardo, Chita, Onça, Ocelote, Jaguarundi, Caça-ratos
+ship4: Dentes-de-sabre, Puma, Tigre, Leão, Jaguar, Ligre, Pumapardo
+

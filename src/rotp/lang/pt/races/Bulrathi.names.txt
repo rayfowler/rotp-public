@@ -1,0 +1,21 @@
+// all possible names
+name: Bulrathi, Ballusiathi, Ursathi, Patathi, Grizzlathi
+
+desc1: Ecologistas Agressivos
+desc2: Peritos em Combate Terrestre
+desc3: Os destemidos e leais Bulrathis valorizam tanto a força como a sabedoria no seu rei-filósofo. 
+
+// possible home system names
+home: Ursa, Canis, Grizzla, Pandara, Arcto
+
+title:     Grande Hierarca
+fulltitle: Grande Hierarca
+
+// possible leader names
+leader: Bullux, Durpp, Grunk, Krungo, Monch, Smurch
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Pata, Patrulha, Garra, Presa, Canino, Bravia, Ursina
+ship2: Caçadora, Gladiadora, Sentinela, Pescadora, Batedora, Carnívora, Panda
+ship3: Ursa-de-Guerra, Bruta, Predadora, Bestial, Assassina, Guardiã, Protetora
+ship4: Parda, Executora, Colosso, Kodiak, Demolidora, Cérbero, Titã

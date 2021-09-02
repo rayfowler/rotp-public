@@ -1,0 +1,84 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Silicoid specific dialogue
+
+CONTACT_XENOPHOBIC         | A [my_empire] digna-se a reconhecer a vossa presença, [your_name] dos [your_race_male_plural]. Contactá-los-emos de acordo com as nossas necessidades.
+CONTACT_RUTHLESS           | As atenções do Império viram-se para vocês, [your_race_male_plural]. Para vosso bem e daqueles que vos são queridos, rezem para que o [my_title] vos veja com bons olhos.
+CONTACT_AGGRESSIVE         | Somos os [my_race_male_plural], frágil [your_race_male]. O nosso território é vasto e a nossa força inigualável. Aviso-te, não tentem a nossa fúria ou aprenderão o que significa uma retribuição letal.
+
+//
+GREETING_01                | Saudações, embaixador. Diga o que pretende do [my_title] e se ele te achar digno, pausaremos a nossa cruzada para vos assistir. 
+GREETING_04                | Seja breve, embaixador: o [my_title] não trava a nossa cruzada por nada.
+GREETING_07                | [your_race_male] miserável! Interromper a nossa guerra sacra é um convite à nossa ira!
+//
+DECLAREWAR_HATE_01         | É mais claro agora que nunca que o vosso povo são os descendentes de Quaralon que há tanto buscamos! Retiraremos o maior prazer de remover a vossa espécie da galáxia como a escumalha que são!
+DECLAREWAR_HATE_02         | O momento cantado nas lendas chega enfim! Preparem-se, descendentes de Quaralon! Não importa quem ganha, a nossa cruzada em breve terá um fim!
+DECLAREWAR_HATE_03         | Encontramo-vos enfim, descendentes de Quaralon! E agora a nossa batalha vai começar! A vossa força é irrelevante: a força de Diamodus guiar-nos-á até ao fim!
+DECLAREWAR_ERRATIC_01      | Desde o nosso primeiro encontro que o [my_title] tem ponderado se vocês serão os nossos inimigos mais odiados. Assim vai continuar a questionar-se depois de pormos um fim à vossa raça.
+DECLAREWAR_ERRATIC_02      | O tempo de vizinhança celestial tem sido agradável o suficiente, mas mesmo a mais pequena chance de o teu povo serem os descendentes de Quaralon é suficiente para vos declararmos guerra. 
+DECLAREWAR_ERRATIC_03      | Mesmo um risco mínimo de vilania da vossa parte vai para lá daquilo que estamos dispostos a aceitar. Limparemos a vossa mácula da galáxia ou morreremos a tentar.
+DECLAREWAR_MILITARY_01     | Atrevem-se a invadir o nosso território dessa forma? Então que seja! Em breve conhecerão a nossa fúria, [your_race_male_plural], e com isso, as magnitude da vossa tolice.
+DECLAREWAR_MILITARY_02     | Lembrem-se disto, [your_race_male_plural] patéticos: todos os mundos desta galáxia pertencem aos [my_race_male_plural] segundo direito divino - e nós lutaremos por eles com uma força que fará tremer até as estrelas!
+DECLAREWAR_MILITARY_03     | Nós não permitiremos que reclamem mais uma rocha que seja em mundos que são ou hão de ser nossos! Vai ser a força do nosso exército contra a das vossas convicções. Vamos ver quem se sai melhor!
+DECLAREWAR_ALLIANCE_01     | Decisão pouco sensata a de declarar guerra a um aliado do Império. Rezem para que os vossos deuses vos dêm misericórdia, pois daqui não terão nenhuma.
+DECLAREWAR_ALLIANCE_02     | Um aliado nosso acaba de nos informar que decidiram travar uma guerra contra eles: ao fazerem uma tal coisa, declararam guerra contra nós também. Preparem-se!
+DECLAREWAR_ALLIANCE_03     | Não nos importa o destino dos [other_race_male_plural], mas vamos agarrar a oportunidade para livrar a galáxia do vosso bando e continuarmos a nossa cruzada em paz.
+DECLAREWAR_SPYING_01       | [your_race_male_plural] ingénuos! Hoje é o dia em que aprendem a tolice que é roubar os segredos do Império! 
+DECLAREWAR_SPYING_02       | Querem assim tanto saber os nossos segredos? Então eu conto-vos o mais importante de todos: nós não perdoamos e não esquecemos. Preparem-se para a batalha!
+DECLAREWAR_SPYING_03       | Crêm mesmo estar em posição de desviar os nossos segredos sem consequências? Em breve aprenderão a asneira que é uma presunção tão arrogante.
+DECLAREWAR_ATTACK_01       | Finalmente revelam-se os descendentes de Quaralon! Ninguém para além da prole do nosso inimigo mais odiado seria temerário a ponto de nos desafiar com tanta ousadia! Preparem-se para a batalha final!
+DECLAREWAR_ATTACK_02       | Há muito que suspeitávamos que vocês eram a descendência do nosso arqui-inimigo! Com este ataque, acabaram de confirmar a verdade eterna dos factos! Finalmente, a profecia será cumprida!
+DECLAREWAR_ATTACK_03       | Vilões! Escumalha! No nosso momento de maior fraqueza, lançam um ataque destes contra nós?! Agora que se sagraram nossos inimigos absolutos, nenhuma diferença entre as nossas forças vai impedir que vos aniquilemos!
+DECLAREWAR_OPPORTUNITY_01  | Há que aproveitar todas as oportunidades para aumentar nossa vantagem à medida que seguimos pela galáxia na nossa cruzada. Esta é uma dessas alturas, e a oportunidade consiste em eliminar a vossa raça. Adeus, patético [your_race_male].
+DECLAREWAR_ASSASSIN_01     | Como se atrevem a executar um embaixador do Império?! Só alguém da estirpe de Quaralon poderia atuar sob ideias tão preversas! Preparem as frotas para a guerra!
+
+OFFER_PEACE_01             | Dizem que para conhecer alguém, há que lutar contra ele primeiro. Nós lutámos, e vemos que vocês não são os descendentes do monstro Quaralon. Gostaríamos de ter a paz agora, para podermos dirigir os nossos focos para aqueles que realmente merecem a nossa raiva.
+OFFER_TRADE_01             | Explorar as profundezas do espaço é um empreendimento caro. O Império deseja propor uma troca. [amt] BM por ano para os fundos da nossa cruzada e para a riqueza do seu povo. Que dizem? 
+OFFER_PACT_01              | Nós só queremos a destruição de Quaralon e da sua laia. Desde que o nosso povo não os reveja em vocês, não temos pruridos convosco. Gostaríamos de provar as nossas intenções com um pacto de não-agressão. A decisão de o selar é vossa.
+OFFER_ALLIANCE_01          | Temos conhecido muitas criaturas estranhas e malvadas na nossa guerra santa pela pureza da galáxia. Dessas todas que encontrámos, parece-nos que vocês serão as menos prováveis de serem o nosso maldito arqui-inimigo disfarçado. Aliem-se a nós, [your_race_male], e ganhem a benção do [my_title]! 
+
+WARN_TRESPASSING_01        | Vocês conspurcam o espaço consagrado de [system] com a vossa presença indesejada! Retirem-se de imediato  ou enxotar-vos-emos com os devidos disparos!
+WARN_EXPANSION_01          | Crêem que a galáxia é só vossa? Travem já esta expansão inconsequente ou enfrentarão a fúria de todo o Império!
+WARN_BUILDUP_01            | Somente o Império pode ter as frotas mais fortes da galáxia, pois só o Império faz a distinção certa entre os bons e os maus. Desafiem esta verdade por vossa conta e risco, [your_race_male_plural].  
+WARN_SKIRMISH_01           | O quer isto dizer, embaixador? A pequenas provocações, só fechamos os olhos uma vez: não permita que isto volte a acontecer!
+WARN_ATTACKED_01           | Insanidade! Atrevem-se a atacar o Império assim?! Na sua sabedoria, o [defender_title] ordenou uma suspensão na nossa retaliação para vermos o que farão a seguir. Afinal, são vocês o nosso inimigo há tanto procurado?!
+WARN_INVADED_01            | Este roubo de território do Império só pode ter sido um ato de desespero [attacker_race_male]. Fiquem sabendo que o sistema [system] era insignificante para nós, mas continuar a tirar o que pertence ao Império só poderá levar à vossa destruição!
+WARN_ESPIONAGE_01          | A decisão de furtar os nossos segredos foi um erro grave no vosso juízo, embaixador. Tenham cuidado: não fosse a vossa tentativa tão risível, ter-vos-ia ganhado uma resposta mais antipática! [framed]
+WARN_SABOTAGE_01           | Que farsa vem a ser esta? A sabotagem é uma ação reprovável de que só se servem os cobardes e os vilões! Afinal estão a revelar-se como o vil inimigo das nossas profecias? O [victim_title] vai decidir... [forced]
+WARN_BIOWEAPON_01          | Impensável! A carne é fraca contra o armamento convencional, mas não resiste às armas biológicas. E contra civis?! Decerto que o sangue imundo de Quaralon vos corre nas veias!
+WARN_GENOCIDE_01           | Diz-nos por que o teu povo cometeu genocídio contra a raça [victim_race_female]. E escolhe bem as palavras: a tua resposta vai determinar como os nossos povos se entenderão daqui para a frente!
+WARN_FINAL_WAR_01          | Só forjando alianças conseguiremos terminar a nossa santa cruzada! Enquanto que nós nos unimos num só povo, vocês isolam-se como a voz do caos e da guerra. A profecia está em andamento: vocês só podem ser os descendentes de Quaralon!
+WARN_COUNCIL_VOTE_01       | Seria melhor se este conselho fosse dissolvido e fosse dado ao Império o controlo exclusivo dos assuntos galácticos. Então aí veríamos se vocês se pronunciariam contra nós assim! 
+WARN_OATHBREAKER_01        | Que perturbador. Quebrar com a palavra é quebrar a confiança. Sem dúvida que o Inimigo das profecias teria a audácia de um tal comportamento!
+WARN_ATTACKED_ALLY_01      | Os [defender_race_male_plural] transportam a honra de cooperarem com o Império! Atentem neste aviso que vos damos em resposta ao ataque - asseguro-vos de que só o recebem uma vez!
+WARN_REBELLING_AGAINST_01  | A nossa cruzada não será atrasada! Nem pelos incapazes do conselho nem por vocês! Preparem-se, embaixador: uma tempestade sagrada descenderá sobre vós!
+
+PRAISE_COUNCIL_VOTE_01     | O nosso fiél aliado conquista a benção do Império uma vez mais! Com vocês a chamar o Conselho à razão, a nossa cruzada não tem como recuar! Hoje merecem a nossa gratidão, [voter_race_male_plural]. 
+PRAISE_COUNCIL_VOTE_02     | A raça [your_race_female] ainda não provou por completo a sua inocência, embaixador. Continuem a apoiar a nossa causa no Conselho e demonstrem que são aliados da cruzada. 
+PRAISE_COUNCIL_VOTE_03     | Não pensem que é um voto pelo Império que vos livra das suspeitas! A tua laia ainda tem muito que provar até que as nossas dúvidas desapareçam!
+
+PRAISE_ATTACKED_ENEMY_01   | Ainda não sabemos se os [defender_race_male_plural] são os descendentes malignos de Quaralon, mas ver os nossos aliados juntar-se a nós tão prontamente eleva-nos os espíritos nesta guerra! Em frente! Pela Justiça! Pelo Império!
+PRAISE_ATTACKED_ENEMY_02   | Desejam juntar-se à nossa luta contra os [defender_race_male_plural]? Vão em frente e mostrem como se comportam no campo de batalha. A vitória dar-vos-á uma melhor estatuto junto da corte imperial, mas a derrota dar-vos-á a morte!
+PRAISE_ATTACKED_ENEMY_03   | Não digam que nos acham burros o suficiente para acreditar na vossa inocência, só porque se juntaram a nós na luta contra os [defender_race_male_plural]. Isso é exatamente o que o Inimigo da profecia faria para esconder a sua identidade. Saia! Mostrarem-nos como lutam para avaliarmos a vossa pureza de espírito.
+
+PRAISE_TRADE_01            | O império deseja-vos tudo de bom, amigos da cruzada! O nosso acordo comercial já financeou inúmeras batalhas na nossa busca pela descendência de Quaralon. O Império espera que o vosso povo também tenha extraído algum benefício.
+PRAISE_TRADE_02            | Ainda que não possamos dizer que vocês ultrapassam as nossas suspeitas, a verdade é que a nossa fé nos [your_race_male_plural] aumentou drasticamente com o vosso contributo para o financeamento da guerra santa. Faça para que continue, embaixador!
+PRAISE_REBELLING_WITH_01   | O nosso inimigo foi encontrado! A prole hedionda de Quaralon usurpou o trono galáctico! Vamos, para a batalha: juntas, as frotas [my_race_female_plural] e [your_race_female_plural] purgarão esta mancha da galáxia!
+ 
+ACCEPT_TRADE_01            | O Império aceita a sua oferta, [your_race_male]. Trocaremos [amt] BM com vocês todos os anos pelo bem da nossa cruzada.
+RESPOND_IGNORE_THREAT_01   | A cruzada não se deixa abrandar por ameaças fúteis. Encontrem outros para chatear ou arrisquem-se a experimentar a nossa ira!
+RESPOND_STOP_SPYING_01     | Nós só queríamos confirmar a identidade dos herdeiros profanos de Quaralon. Agora estamos contentes por saber que o vosso povo não são os nossos inimigos mortais disfarçados.
+RESPOND_STOP_ATTACKING_01  | As nossas frotas foram no encalço de inimigos do Império. Se vocês não são nossos inimigos, então não há por que elas permaneçam onde estão.
+

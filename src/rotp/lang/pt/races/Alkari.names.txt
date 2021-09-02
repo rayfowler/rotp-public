@@ -1,0 +1,22 @@
+// all possible names
+name: Alkari, Aviari, Garrulari, Plumari, Galinari
+
+desc1: Militares Honrados
+desc2: Pilotos Excecionais
+desc3: A Soberania Alkari é uma sociedade guerreira organizada que valoriza a honra no campo de batalha acima de todas as coisas.
+
+// possible home system names
+home: Altair, Aegir, Aviar, Volary, Aerie
+
+title:      Rei
+fulltitle:  Rei-Zénite
+
+// possible leader names
+leader: Ariel, Áugure, Asadelta, Ruivo, Gaio, Olimpo
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Morcego, Gavião, Pelicano, Arara, Tordo, Corvo, Pluma
+ship2: Falcão, Guincho, Gaivota, Bufo-real, Papagaio, Asa Estelar
+ship3: Raptor, Águia, Grou, Abutre, Harpia, Condor, Hórus
+ship4: Pássaro do Trovão, Pégaso, Fénix, Grifo, Asa da Morte, Monarca dos Céus, Rodan
+

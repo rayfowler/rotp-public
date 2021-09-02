@@ -1,0 +1,86 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Bulrathi specific dialogue
+
+CONTACT_AGGRESSIVE         | Sou embaixador pelos [my_race_male_plural]. Aconselho-te a permanecer nas boas graças do [my_nameTitle], pequeno [your_race_male]. Basta-lhe dar uma ordem para que a vossa raça sucumba a uma fúria que nunca sequer julgou possível.
+CONTACT_RUTHLESS           | Criaturas minorcas que vocês são! Adiante, só precisam de saber duas coisas: a primeira, somos os "[my_race_male_plural]", e a segunda, quem se opõe à nossa demanda assina uma sentença de morte.
+CONTACT_ERRATIC            | Nós, da [my_empire], saudamo-vos, pequenotes. O nosso destino espera-nos algures no meio destes mundos dispersos e astros flamejantes. Vai ser interessante perceber qual será o vosso papel no nosso grande desígnio.
+//
+GREETING_01                | Como têm procedido com honra, vamos agir para vos honrar. Diz-nos o que desejas, amiguinho.
+GREETING_04                | Apressa-te, pequeno [your_race_male]. E não provoques a nossa fúria com promessas falsas e negócios que só vos beneficiem a vocês.
+GREETING_07                | Chegar aqui e encarar-nos demonstra muita coragem para um ser tão minúsculo. A tua valentia ganhou-te a segurança, por agora.
+
+DECLAREWAR_HATE_01         | Pequenos [your_race_male_plural] nos seus pequenos mundos com os seus pequenos esquemas. O [my_title] está cansado da vossa interferência constante. Não vão sobreviver ao martírio a que vos submeteremos!
+DECLAREWAR_HATE_02         | Basta! O destino do nosso povo está gravado nas estrelas. Não aceitaremos que alguém tão tacanho como vocês continue a contrariar-nos!
+DECLAREWAR_HATE_03         | Prepara-te para a guerra, pequeno [your_race_male]! Havemos de vos mostrar que a voracidade é a única qualidade que traz a vitória em batalha!
+DECLAREWAR_ERRATIC_01      | A sabedoria dos filósofos pode deixar perplexos aqueles que são incapazes de a compreender. Mas quando as nossas mais veneráveis mentes nos instruem para atacar, os nossos guerreiros automaticamente obedecem.
+DECLAREWAR_ERRATIC_02      | Cada coisa tem o seu tempo e lugar neste universo: a guerra e a paz, a vida e a morte, a dominação e a subserviência. Para nós, é altura de atacar; e para vocês, de defender.
+DECLAREWAR_ERRATIC_03      | Emissário, alguma vez contemplaste o destino? Tem uma forma curiosa de tornar real aquilo que parece impossível. Vamos testá-lo juntos, pequeno [your_race_male], e ver o que nos reserva.
+DECLAREWAR_MILITARY_01     | A sorte favorece os audazes. Os [my_race_male_plural] são valentes e hão de colher os frutos da guerra, independentemente de a quem pertençam.
+DECLAREWAR_MILITARY_02     | A tua gente luta bem para um bando de criaturas tão pequenas. Vamos ver como se saem contra a força dos [my_race_male_plural]!
+DECLAREWAR_MILITARY_03     | Esta galáxia pertence aos fortes, e a nossa força não vai permitir que a vossa a tente eclipsar. Defendam bem os vossos mundos, ou tomá-los-emos!
+DECLAREWAR_ALLIANCE_01     | Um aliado do Império pediu o nosso auxílio! Tanto vocês, como os [defender_race_male_plural] hão de testemunhar o verdadeiro ímpeto dos [my_race_male_plural]!
+DECLAREWAR_ALLIANCE_02     | Vocês que travam uma guerra contra um aliado nosso, certamente que o fazem sem saber que essa guerra também nos diz respeito. O teu povo não vai sair vitorioso desta luta, embaixador. Podem contar com isso.
+DECLAREWAR_ALLIANCE_03     | Mesmo com todo o vosso poder, não vos restarão chances contra os [defender_race_male_plural] com os [my_race_male_plural] unidos a eles! Preparem-se, pequeno [your_race_male]!
+DECLAREWAR_SPYING_01       | Desleais! ...Mas já que têm de existir em corpos tão pequenos, não vos devem restar muitas outras opções: é evidente que vão fracassar no campo de batalha - tal como vamos, agora mesmo, provar.
+DECLAREWAR_SPYING_02       | E pensar que coisinhas tão pequenas não logram sucesso em operações furtivas... Gritem bem alto os nomes dos vossos agentes para que cheguem a todas as colónias: os seus erros hão de custar-vos a vida! 
+DECLAREWAR_SPYING_03       | Julgam-nos demasiado fracos para responder a atos tão dissimulados, pequenote? Vamos mostrar-vos a gravidade do vosso julgamento!
+DECLAREWAR_ATTACK_01       | Se vocês querem assim tanto lutar, é só pedirem, pequeno [your_race_male]. Prometemos esmagar tudo aquilo que vocês amam diante dos vossos olhos - de uma só investida!
+DECLAREWAR_ATTACK_02       | Atacar-nos tão abertamente, como se fossem mais fortes do que aquilo que são. É admirável, mas um erro.
+DECLAREWAR_ATTACK_03       | Que assim seja! Vocês podem superar-nos em armas, mas não na determinação!
+DECLAREWAR_OPPORTUNITY_01  | A nossa gente está sempre em busca de oportunidades para apurar os dotes de combate, e os vossos lutadores podem ser um desafio à altura. Não levem isto tanto a peito: vamos dar-vos o devido crédito nas nossas crónicas.
+DECLAREWAR_ASSASSIN_01     | Não esperávamos menos de uma raça assim: tão fisicamente inferior que tem de recorrer ao assassínio de um embaixador desarmado para atingir os seus objetivos. Rezem a todos os deuses que tiverem, pequeno [your_race_male], pois vamos assegurar de que não passam desta batalha.
+
+OFFER_PEACE_01             | É um gosto ver-vos lutar, pequenote, mas demasiado sangue já foi derramado nesta guerra. Estamos dispostos a abandonar as disputas passadas e enveredar pela paz se vocês tiverem a sobriedade para fazer o mesmo.
+OFFER_TRADE_01             | O que vos falta em tamanho, vocês compensam com o vosso engenho. O nosso povo propõe uma troca de [amt] BM todos os anos, na esperança de que o comércio seja mais benéfico que o conflito para ambas as partes.
+OFFER_PACT_01              | Nós, os [my_race_male_plural], temos formado opiniões diversas sobre as muitas raças que vimos conhecendo. A vossa, em particular, é fonte de fascínio para o [my_nameTitle], pelo que este deseja celebrar um pacto de não-agressão para prevenir brigas desnecessárias que possam surgir.
+OFFER_ALLIANCE_01          | Mesmo inigualáveis em batalha, não somos insensíveis a ponto de comprometer os laços com uma raça como a vossa apenas pelo mero gosto da vitória. Pequeno emissário, formalizemos uma aliança, lutemos juntos como amigos e não rivais.
+//
+WARN_TRESPASSING_01        | A vossa presença em [system] começa a aborrecer-nos. Seria sensato da vossa parte retirá-la antes que a nossa ira seja provocada.
+WARN_EXPANSION_01          | Conquistar território é um direito dos impérios mais fortes. Estamos a avisar-vos para repensarem expansões futuras, pequenote - a não ser que estejam a defender o futuro solo [my_race_male] antes de ser oficialmente nosso.
+WARN_BUILDUP_01            | O espaço é o cenário dos cobardes: a verdadeira bravura só é provada na superfície de um planeta. Mesmo com a vossa frota crescendo a olhos vistos, não servirá de esconderijo da nossa fúria por muito mais tempo se a continuarem a estender.
+WARN_SKIRMISH_01           | As hostilidades em [system] são mero ruído para nós. Não nos incomodem mais ou vamos esborrachar-vos como as pestes que vocês insistem em ser!
+WARN_ATTACKED_01           | Demonstração patética de uma raça patética. Considerem-se gratos que o [defender_title] tem assuntos mais importantes a tratar além da vossa mostra humorística de força, mas saibam que se pedirem uma guerra, pequenos, ficaremos felizes em fazer-vos a vontade.
+WARN_INVADED_01            | Ha! Tanta bravura para proporções tão reduzidas. Desapeguem-se dos nossos mundos, pequenotes - antes que façam algo de que se arrependam.
+WARN_ESPIONAGE_01          | Cobardes! Infiltraram-se entre os [victim_race_male_plural] que nem chommkas fugidos das gaiolas. Agradeçam não termos obliterado o vosso espião e não nos obriguem a responder à letra! [framed]
+WARN_SABOTAGE_01           | E por que não enfrentarem-nos na guerra, pequenote? É enfastiante combater uma raça tão medrosa que tem de recorrer à sabotagem, mas se voltarem a repetir o feito, teremos de tolerar esse fastio só para nos vermos livres de vocês! [forced] 
+WARN_BIOWEAPON_01          | O derradeiro ato de cobardia, usar armas biológicas contra quem nem se pode defender! Tu e a tua raça hão de carregar a marca da vergonha até ao fim do vosso império: nada do que possam fazer apagará a vossa mácula.
+WARN_GENOCIDE_01           | Os [victim_race_male_plural] eram mansos e frágeis - não foram uma grande perda para a galáxia, na verdade. O que nos desconcerta é que uma raça tão insignificante como a vossa possa ser a responsável pelo seu extermínio.
+WARN_FINAL_WAR_01          | Admiramos a audácia de alguém que se atreve a enfrentar toda uma galáxia quando esta decide unir-se em paz. Vamos narrar a vossa coragem, pequenotes, assim que tivermos extinguido cada um de vós, até ao mais juvenil.
+WARN_COUNCIL_VOTE_01       | Este conselho é uma congeminação de cobardes dissimulados que preferem expor as suas comiserações a resolvê-las como guerreiros! Mas não é por desdenharmos do procedimento que vamos perdoar a vossa oposição!
+WARN_OATHBREAKER_01        | Minorca! Quebrar com a palavra é a derradeira afronta! Sabemos que a vossa espécie é fraca de corpo, mas ser fraca de espírito supreende-nos até a nós!
+WARN_ATTACKED_ALLY_01      | Os pequenos [defender_race_male_plural] estão sob a nossa proteção! Cessem fogo e façam as vossas emendas, ou hão de perecer às nossas mãos antes de sequer se darem conta!
+WARN_REBELLING_AGAINST_01    | O Grande Hierarca é o único digno de se sentar no trono do Conselho Galáctico! Nunca aceitaremos a vossa vil usurpação!
+//
+PRAISE_COUNCIL_VOTE_01     | Ha! A expressão nos rostos deles quando vocês ficaram do nosso lado foi digna de ser ver! Mas agora eles sabem onde reside a verdadeira força, e viemos agradecer aos nossos amiguinhos por terem ajudado a ensinar-lhes esta lição!
+PRAISE_COUNCIL_VOTE_02     | É deveras penoso ter de aguentar os verborreicos senis nestas reuniões. Quer vocês nos tenham apoiado para que terminassem mais cedo, quer porque reconhecem o nosso poder, nós valorizamos o fizeram hoje.
+PRAISE_COUNCIL_VOTE_03     | Vocês baralham-nos, pequenote. Mas é algo bom terem reconhecido a nossa grandeza neste dia. Pelo vosso bem, esperamos que continuem.
+
+PRAISE_ATTACKED_ENEMY_01   | Ha ha! É bom ver-vos no campo de batalha, amiguinho! Esmaguemos estes patéticos [defender_race_male_plural]! Vamos fazer o sangue correr nos mundos deles até que não reste mais nenhum!
+PRAISE_ATTACKED_ENEMY_02   | Que gloriosa batalha vamos ter hoje, pequeno [your_race_male]! Mostrem-nos como se luta contra os [defender_race_male_plural], para que possamos atribuir-vos o devido respeito daqui por diante!
+PRAISE_ATTACKED_ENEMY_03   | É absurdamente óbvio que vocês só atacam os [defender_race_male_plural] porque nós fazemos o mesmo. Ainda assim, o facto de não evitarem o combate completamente... talvez indique um juízo errado da nossa parte.
+
+PRAISE_TRADE_01            | As nossas trocas têm sido muito rentáveis para ambas as raças, amiguinho. Mas a confiança é a moeda mais valiosa e nós continuaremos a confiar em vocês se vocês fizerem por isso.
+PRAISE_TRADE_02            | Como as nossas trocas têm vindo a provar, a guerra não é a única forma válida de proceder, ainda que seja a mais estimulante. Que o nosso acordo comercial perdure no tempo para que os nossos povos possam prosperar!
+
+PRAISE_REBELLING_WITH_01   | Ha ha! Então julgaram que iriam enfrentar a galáxia sozinhos? Acharam mesmo que os [my_race_male_plural] recusariam uma disputa épica? Vão com convicção, pois a [my_empire] está com vocês!
+
+ACCEPT_TRADE_01            | A sensatez da vossa negociação compensa a vossa falta de estatura, pequeno [your_race_male]! O Império fica feliz em trocar [amt] BM por ano a partir de agora.
+RESPOND_IGNORE_THREAT_01   | Hahaha, e por que é que haveríamos de escutar as ameaças de liliputianos? Vão-se lá embora - e dêm-se por sortudos nós estarmos tão benevolentes hoje!
+RESPOND_STOP_SPYING_01     | Os pequenos chommkas foram apanhados a espiar, é? Enfim, devolvam-nos as mascotes e os nossos espiões ilesos e garantimos que não vos perturbarão mais.
+RESPOND_STOP_ATTACKING_01  | As frotas do Império impressionam, não? Não temam mais, pequenotes, a demonstração já teve o efeito pretendido e vamos retirá-las agora.
+
+
+

@@ -1,0 +1,21 @@
+// all possible names
+name: Psilon, Mentalon, Psichon, Cerebron, Neuralon
+
+desc1: Tecnólogos Pacifistas
+desc2: Técnicas de Pesquisa Superiores
+desc3: A República Psilon não quer mais que uma coexistência pacífica e iluminada com as restantes raças. 
+
+// possible home system names
+home: Mentar, Cogito, Psilar, Metrica, Neura
+
+title:     Conselheiro
+fulltitle: Alto Conselheiro
+
+// possible leader names
+leader: Dynalon, Kelvan, Meson, Quarkon, Tachaon, Zygot
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Electron, Neutrino, Quark, Neutrão, Protão, Átomo, Molécula
+ship2: Sigma, Gama, Omega, Delta, Hipotenusa, Tangente, Seno
+ship3: Elipse, Áxis, Fractal, Euler, Derivada, Paralaxe, Logaritmo
+ship4: Supernova, Constelação, Quasar, Galáxia, Nébula, SunFire, Corona 

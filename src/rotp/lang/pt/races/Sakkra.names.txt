@@ -1,0 +1,22 @@
+// all possible names
+name: Sakkra, Reptara, Saura, Raptora, Tyranna
+
+desc1: Expansionistas Agressivos
+desc2: Crescimento Populacional Amplificado
+desc3: Os zelosos da Congregação Sakkra anseiam por aperfeiçoar os mundos que conquistam.
+
+// possible home system names
+home: Sssla, Sssana, Sssihs, Sssha, Sssss, Hsssa
+
+title:     Magistrado
+fulltitle: Primeiro Magistrado
+
+// possible leader names
+leader: Guanar, Hissa, Kryssta, Saurak, Sauron, Tyranid
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Lagarto, Iguana, Anoli, Calango, Camaleão, Lagartixa, Osga 
+ship2: Varano, Caimão, Jacaré, Basilisco, Croc, Teiú, Gavial
+ship3: Dinossáuria, Alossauro, Velociraptor, Pterodáctilo, Plesiossauro, Terópode, Cerátopo
+ship4: Dragão, Beemote, Medusa, Górgona, Godzilla, Kraken, Tiranossauro
+

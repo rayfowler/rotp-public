@@ -1,0 +1,21 @@
+// all possible names
+name: Darlok, Sarlok, Spilok, Vultlok, Nazlok
+
+desc1: Diplomatas Agressivos
+desc2: Espiões Supremos
+desc3: Os Darloks são como enigmáticas assombrações, vindas de outra dimensão.
+
+// possible home system names
+home: Eteros, Mordor, Hades, Abissal, Hel
+title:     
+fulltitle: 
+
+// possible leader names
+leader: Darquan, Morfane, Narzina, Nazgur, Obsscor, Ssithra
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Bruma, Vapor, Sopro, Manto, Omen, Éter, Élan
+ship2: Miragem, Sombra, Alma, Ilusão, Reflexo, Visão, Névoa
+ship3: Fantasma, Espectro, Assombro, Penumbra, Nume, Espírita, Poltergeist
+ship4: Quimera, Pesadelo, Terror, Pavor, Treva, Ceifadora, Phobos
+
