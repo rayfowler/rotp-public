@@ -709,8 +709,8 @@ public class AIDiplomat implements Base, Diplomat {
             if(popRatioOfAllianceAmongstContatacts(empire) < (galaxy().options().baseAIRelationsAdj() * 3.33) / 100.0)
                 return true;
         }
-        if(e == bestAlly())
-            return true;
+        /*if(e == bestAlly())
+            return true;*/
         return false;
     }
     public float popRatioOfAllianceAmongstContatacts(Empire e)
@@ -1311,10 +1311,8 @@ public class AIDiplomat implements Base, Diplomat {
     public boolean wantToDeclareWarOfOpportunity(EmpireView v) {
         return wantToDeclareWar(v);
     }
-    public Empire bestAlly()
+    public boolean everyoneMet()
     {
-        float highestMatchScore = 0;
-        Empire best = null;
         boolean everyoneMet = true;
         for(Empire emp:galaxy().activeEmpires())
         {
@@ -1327,7 +1325,14 @@ public class AIDiplomat implements Base, Diplomat {
                 break;
             }
         }
-        if(!everyoneMet || galaxy().activeEmpires().size() < 3)
+        return everyoneMet;
+    }
+    public Empire bestAlly()
+    {
+        float highestMatchScore = 0;
+        Empire best = null;
+
+        if(!everyoneMet() || galaxy().activeEmpires().size() < 3)
             return best;
         for(Empire contact : empire.contactedEmpires())
         {
@@ -1362,8 +1367,8 @@ public class AIDiplomat implements Base, Diplomat {
         if(empire.generalAI().additionalColonizersToBuild(false) > 0)
             warAllowed = false;
         int popCapRank = popCapRank();
-        if(galaxy().numActiveEmpires() > 2 && popCapRank < 3)
-            warAllowed = false;
+        /*if(!everyoneMet() && popCapRank < 3)
+            warAllowed = false;*/
         if(techLevelRank() > popCapRank || facCapRank() > popCapRank)
         {
             warAllowed = false;
@@ -1805,6 +1810,20 @@ public class AIDiplomat implements Base, Diplomat {
         }
         if(myTechLevel >= 99)
             rank = 1;
+        return rank;
+    }
+    @Override
+    public int militaryRank()
+    {
+        int rank = 1;
+        float myMilitaryPower = empire.militaryPowerLevel(empire);
+        for(Empire emp:empire.contactedEmpires())
+        {
+            if(!empire.inEconomicRange(emp.id))
+                continue;
+            if(emp.militaryPowerLevel(emp) > myMilitaryPower)
+                rank++;
+        }
         return rank;
     }
     @Override

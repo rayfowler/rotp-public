@@ -873,9 +873,6 @@ public class AIGeneral implements Base, General {
     public boolean strongEnoughToAttack()
     {
         float attackThreshold = empire.totalPlanetaryProduction();
-        boolean enoughMaintenance = false;
-        if(empire.shipMaintCostPerBC() > empire.fleetCommanderAI().maxShipMaintainance() / 4)
-            enoughMaintenance = true;
         if(totalArmedFleetCost < 0)
         {
             int[] counts = galaxy().ships.shipDesignCounts(empire.id);
@@ -886,7 +883,7 @@ public class AIGeneral implements Base, General {
             }
         }
         //System.out.println(galaxy().currentTurn()+" "+empire.name()+" "+totalArmedFleetCost+" / "+attackThreshold+" "+empire.shipMaintCostPerBC()+" / "+empire.fleetCommanderAI().maxShipMaintainance() / 4+" Enough: "+enoughMaintenance);
-        if(totalArmedFleetCost > attackThreshold && enoughMaintenance)
+        if(totalArmedFleetCost > attackThreshold && empire.diplomatAI().militaryRank() <= empire.diplomatAI().popCapRank())
             return true;
         return false;
     }
