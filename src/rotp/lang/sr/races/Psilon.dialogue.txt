@@ -1,0 +1,83 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Psilon specific dialogue
+CONTACT_PACIFIST           | Srdačni pozdravi! Mi iz [my_empireStva] smo davno naučili dobrobiti mirne saradnje. Nadamo se da će naše diplomatske veze s vama biti skladne kao i što su naša unutrašnja pitanja.
+CONTACT_HONORABLE          | Kakva radosna prilika za susret sa drugima koji prelaze ovo beskrajno prostranstvo! Zovemo se [my_race_plural] i učinićemo sve što možemo da vam budemo korisni u svakoj prilici.
+CONTACT_ERRATIC            | [my_empire] vam želi dobro. Vaš narod treba da nazivamo... [your_empire], zar ne? Kako fascinantno. Da... zaista fascinantno.
+
+//
+GREETING_01                | Presrećni da vidimo tako cenjenog prijatelja. Kako [my_empire] može biti od pomoći?
+GREETING_04                | Pozdrav ambasadore. Drago mi je što mogu izneti vaše zahteve Veću za... razmatranje.
+GREETING_07                | Linija je otvorena, ambasadore. O čemu... želite da razgovarate?
+//
+DECLAREWAR_HATE_01         | Učinili smo sve što smo mogli da... vam udovoljimo, ali neinteligentna rasa poput vaše jednostavno je previše za podneti kao nebeskog komšiju. Ne bojte se, vaš kraj će biti brz i bezbolan.
+DECLAREWAR_HATE_02         | Proveli smo mnogo vremena u razmišljanju. Situacija je... za žaljenje, ali odlučili smo da vaš narod sada mora biti uklonjen iz galaksije.
+DECLAREWAR_HATE_03         | Iako u svakom slučaju više volimo mir, ne možemo podržavati nastavak vašeg ponašanja kao i do sada. Uradićemo... ono što moramo da vratimo mir u galaksiji.
+DECLAREWAR_ERRATIC_01      | Priznajem da su mi odluke Veća zagonetka, ali oni su odlučili da je vaš narod dosegao granicu svoje inteligencije i da ih je potrebno... ukloniti. Avaj, ja sam samo ambasador i nemam načina da ih ubedim u suprotno.
+DECLAREWAR_ERRATIC_02      | Da bismo pravilno vrednovali mir, moramo se povremeno... podsetiti na ružnoću rata. Slažete li se, ambasadore?
+DECLAREWAR_ERRATIC_03      | Vreme za borbu je pred nama, ambasadore. Kada završimo, jedna od naših imperija će se zauvek sećati kolika je cena rata. Druga imperija će, nažalost, da prestane da postoji.
+DECLAREWAR_MILITARY_01     | Izvinjavam se ambasadore, ali došlo je vreme da Republika proširi svoj uticaj. Ako ne možemo... da mirno dobijemo ovu teritoriju, moramo ih zauzeti silom.
+DECLAREWAR_MILITARY_02     | Za nekoliko stvari u ovoj galaksiji vredi prekinuti mir. Sigurno biste se složili, ambasadore, da je teritorija jedna od tih stvari?
+DECLAREWAR_MILITARY_03     | Donosim vesti o ratu, ambasadore. Veće je donelo odluku da u ovom trenutku moramo povećati teritoriju Republike. Iako je vaše borbeno umeće... impresivno, volji Veća se ne prkosi.
+DECLAREWAR_ALLIANCE_01     | Jedan od naših saveznika, [other_race], došao je kod nas da moli za našu pomoć u njihovoj borbi protiv vas. Veće ih je saslušalo i složilo se, pa će i oni imati našu pomoć.
+DECLAREWAR_ALLIANCE_02     | To što su vaša rasa i [other_race_plural] prekršili vaš mir je... žalosno. To što moramo da im se pridružimo u borbi protiv vas je još žalosnije.
+DECLAREWAR_ALLIANCE_03     | Očigledno je da je vaša vrsta previše svadljiva za bilo kakav... trajni mir. Ako je [other_raceSka] vrsta izabrala rat s vama, mi ćemo to isto učiniti.
+DECLAREWAR_SPYING_01       | Zanima me kako ste mislili da će se ovo odigrati. Da poduzmete takve akcije protiv Republike... možda smo ipak precenili vašu inteligenciju.
+DECLAREWAR_SPYING_02       | Da ste hteli... da dobijete nešto od nas, više bismo voleli da ste nas pitali, nego da se delujete u tajnosti. Ne ostavljate nam ništa drugo nego da prekinemo ovaj mir koji smo toliko pokušavali da sačuvamo.
+DECLAREWAR_SPYING_03       | Tužno, ambasadore. Bilo je toliko drugih mogućnosti za vas i vaše špijune, a sada oba naša naroda moraju da trpe veliku sramotu ratovanja.
+DECLAREWAR_ATTACK_01       | Vaše akcije su bez logike, ambasadore. Udariti na narod koji samo želi mir dok su tako očigledno superiorni... zagonetno je. Čini se da je vaša rasa mnogo manje pametna nego što se ranije mislilo.
+DECLAREWAR_ATTACK_02       | Mračan dan za obe naše imperije. Nismo želeli ništa drugo osim skladnog suživota sa vašim narodom. Zašto nas tako primoravate?
+DECLAREWAR_ATTACK_03       | Zašto ste izabrali ovaj put? Mi smo miroljubiv narod u srži, ali budite uvereni da znamo da se branimo u ovakvim vremenima.
+DECLAREWAR_OPPORTUNITY_01  | Pa, ovo je svakako bilo zanimljivo iskustvo, ambasadore. Međutim, došlo je vreme da stavimo tačku na vašu istoriju. Verujemo da će takvi, sa tako malim intelektualnim sposobnostima na kraju ometati naše ciljeve.
+DECLAREWAR_ASSASSIN_01     | Moram vam da vam ponudim... čestitke. Malo dela bi moglo navesti [my_empireStvo] da se tako lako mobiliše za rat, ali ubijanje nenaoružanog ambasadora je nesumnjivo jedno od njih.
+
+OFFER_PEACE_01             | Rat se nikada ne menja, ambasadore. Toliko ubijanja, toliko uništenja, sve to zbog čega? Molimo vas da priznamo naše... prošle greške i započnemo novu eru mira. 
+OFFER_TRADE_01             | Civilizovane i... inteligentne rase poput naših znaju da je prosperitet, a ne rat, najkorisniji. Republika želi uzajamni prosperitet sa vašim narodom, a trgovinski ugovor od [amt] MK godišnje kao dobar početak.
+OFFER_PACT_01              | Što više vremena provodimo među vašom vrstom, više cenimo naše diplomatske veze. Treba da učinimo sve što možemo da... očuvamo tu vezu, a Ugovor o Nenapadanju između naših naroda će to osigurati, zar ne, ambasadore?
+OFFER_ALLIANCE_01          | Došlo je vreme ambasadore: Savez između [my_empireStva] i [your_empireStva] mora se sklopiti. Zbog nas će galaksija uvideti da je miran suživot jedini prihvatljiv izbor!
+
+WARN_TRESPASSING_01        | Vaše prisustvo u [system] sistemu je podiglo obrve u Veću. Molim vas, povucite se odmah pre nego što se naruši mir koji smo se toliko trudili da postignemo.
+WARN_EXPANSION_01          | Nekoliko je načina na koje možemo protumačiti... vaše tako brzo širenje vaše sfere uticaja. Nijedan od njih nije dobar za održavanje mira među našim ljudima.
+WARN_BUILDUP_01            | Ako biste nastavili da ovako gradite svoje flote, moglo bi se pokazati... loš predznak za mir, ambasadore. Budite oprezni kako će takvu zastrašujuću flotu tumačiti drugi, uključujući i Republiku.
+WARN_SKIRMISH_01           | Okršaj u [system] sistemu je ... problematičan. Treba li ovo da protumačimo kao privremena odsutnost razuma? Ili znak da bi se uskoro moglo dogoditi nešto daleko opasnije?
+WARN_ATTACKED_01           | Ovo je nečuveno! Ne možemo dozvoliti da se takvi napadi nastave! Upozoravam vas ambasadore: nemojte tako olako ugrožavati mir između [attacker_empireStva] i Republike.
+WARN_INVADED_01            | Ambasadore, šta znači vaše zadiranje u [defender_raceSku] teritoriju!? Sigurno ne nameravate da prekinete naš mir tom agresijom?
+WARN_ESPIONAGE_01          | Špijunirate, ambasadore? Zar ne bi bilo mudrije samo... pregovarati o stvarima koje tražite? Dozvolićemo ovo u ime skladnog suživota, ali možda vam sledeći put nećemo oprostiti... [framed]
+WARN_SABOTAGE_01           | Nikada ne bih ni sanjao da su [spy_empire] sposobni za takvu... podlu sabotažu. U ime mira, molim vas da više ne ponovite ovu glupu grešku. [forced]
+WARN_BIOWEAPON_01          | Ovo je... nečuveno, ambasadore. Upotreba biološkog oružja na civilnim metama čak i jednom nas prisiljava da na se kompletno preispitamo kako gledamo na vas!
+WARN_GENOCIDE_01           | I samo tako, jedan glas uz hora galaksije je zauvek izgubljen. Da jedan narod bude sposoban za takvo zlo... Bojim se da na kraju možda nećemo moći da uspostavimo trajni mir s vama.
+WARN_FINAL_WAR_01          | Galaksija je na ivici harmonije, a vi ipak tvrdoglavo odlučujete da nam stojite na putu. Ako je... uklanjanje [rebel_empireStva] cena večnog mira, onda ćemo učiniti sve što možemo da ta cena bude plaćena.
+WARN_COUNCIL_VOTE_01       | [candidate_empire] ne traži ništa osim mira kako bi svi mogli učestvovati u prosperitetu koji taj mir donosi. Ako želite najbolju... budućnost za svoj narod, nećete ponovo glasati protiv republike u Savetu.
+WARN_OATHBREAKER_01        | Strašno i nečasno, ambasadore. Pitamo se da li biste prekršili mir isto tako lako kao što kršite sporazume, a mi ćemo biti spremni ako se ikada na to odlučite.
+WARN_ATTACKED_ALLY_01      | Opozovite vaše napade, ambasadore! Znate da smo saveznici sa [defender_raceSkom] vrstom. Zar ne možemo umesto toga da posredujemo mir kroz dijalog umesto da nas sve primorate na rat?
+WARN_REBELLING_AGAINST_01  | Ne! Ne može vam se verovati da vodite Savet ka miru! Naša posvećenost miru daleko nadmašuje vašu, ali možda ćete nas prisiliti da tu posvećenost uskoro odbacimo!
+
+PRAISE_COUNCIL_VOTE_01     | Naši prijatelji u [voter_empireStvu] nas nikada nisu izneverili! Republika vam zahvaljuje na vašim... delima u Savetu danas i radujemo se što ćemo vas ugostiti na [candidate_home] čim možete da priuštite vremena.
+PRAISE_COUNCIL_VOTE_02     | Mudre odluke su donete u Savetu, ali je možda najmudrija glas koji ste dali za Republiku. Prepoznajemo takvu... posvećenost miru i možemo uživati u prijateljstvu sa vama sve dok se ta posvećenost nastavlja.
+PRAISE_COUNCIL_VOTE_03     | Znamo za vaš glasa Republici u Savetu. Iznenađeni smo, ambasadore, i možda smo potcenili inteligenciju vašeg naroda. 
+
+PRAISE_ATTACKED_ENEMY_01   | Ambasadore! Vaša pomoć je... cenjena. Zajedno ćemo ukloniti [defender_raceSku] pretnju i vratiti mir za kojim ova galaksija tako očajnički žudi.
+PRAISE_ATTACKED_ENEMY_02   | Prepoznajemo čast i dela [attacker_empireStva] kao posvećenost našim idealima velikog mira. Budite uvereni da čim... prisilimo [defender_raceSku] vrstu da se primiri, mir može da se ponovo uspostavi.
+PRAISE_ATTACKED_ENEMY_03   | Vaš narod je i nasilan i drzak, pa i nije iznenađenje što se tako spremno uključujete u rat. Ipak, činjenica da ste okrenuli oružje prema strani koja se ne bori za mir mora se barem... priznati.
+
+PRAISE_TRADE_01            | Trgovanje sa nekim ko je posvećen miru je prednost, ali trgovina sa prijateljem koji je posvećen miru je zaista blagoslov. Neka naši trgovinski ugovori i naše prijateljstvo traju do kraja galaksije!
+PRAISE_TRADE_02            | Zar nije divno, ambasadore? Vidite li koliko jednostavne trgovinske razmene koriste svim uključenim stranama! Nadamo se da će ovo i dalje biti prednost za obe naše vrste eonima koji dolaze!
+PRAISE_REBELLING_WITH_01   | Mi [my_race_plural] smo oduvek verovali da rat nikada nije dobar odgovor. Ovaj Savet nam, međutim, pokazuje da smo sve vreme grešili. Ratujte, ambasadore, i znajte da Republika stoji uz vas! 
+ 
+ACCEPT_TRADE_01            | Da, ambasadore, slažemo se da je međusobna trgovina najbolji put do mira. [amt] MK godišnje je sasvim u redu, i zahvaljujemo vam se na velikodušnosti.
+RESPOND_IGNORE_THREAT_01   | Ne mešajte naš pacifizam sa slabošću! Sigurno je vaša pretnja izrečena u iracionalnom besu, pa ćemo vam ovaj put oprostiti ispad.
+RESPOND_STOP_SPYING_01     | [my_raceSki] špijun, kažete? Ovo mora da je nesporazum. Molimo vas da nam vratite našeg građanina kako bismo ovo do kraja razjasnili, i budite mirni znajući da je špijuniranje poslednja stvar koja nam pada na pamet.
+RESPOND_STOP_ATTACKING_01  | Neka ova moćna flota odvrati svakoga dovoljno budalastog da započne skupi rat, i neka naše uklanjanje te flote bez naređivanja da se upotrebi pokaže našu posvećenost miru.
+

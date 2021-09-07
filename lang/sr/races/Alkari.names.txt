@@ -1,0 +1,22 @@
+// all possible names
+name: Alkari, Avijari, Kljucani, Pernatiri, Faulari
+
+desc1: Časni Militaristi
+desc2: Superiorni Piloti
+desc3: Kraljevstvo Alkarija je organizovano ratničko društvo koje ceni čast u borbi.
+
+// possible home system names
+home: Altair, Ejgir, Aviar, Volari, Ejri
+
+title:     Kralj
+fulltitle: Kralj Nebesa
+
+// possible leader names
+leader: Ariel, Farsir, Hajsoar, Redving, Šarpklou, Skajlord
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Lisac, Vrabac, Pelikan, Zeba, Carić, Vrana, Pero
+ship2: Soko, Kobac, Galeb, Sova, Kanarinac, Zvezdano Krilo
+ship3: Ratna Ptica, Ratni Kobac, Ratni Orao, Jastreb, Lešinar, Harpija, Kondor
+ship4: Gromovnik, Krila Propasti, Gospodar Neba, Ruk, Rodan, Grifin, Feniks
+

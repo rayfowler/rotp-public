@@ -1,0 +1,21 @@
+// all possible names
+name: Darlok, Sarlok, Špajlok, Senlok, Nazlok
+
+desc1: Agresivne Diplomate
+desc2: Superiorni Špijuni
+desc3: Darloci su neprirodne i tajnovite utvare koje potiču iz druge dimenzije  
+
+// possible home system names
+home: Nazin, Mordor, Had, Abisal, Hel
+title:     Imperator
+fulltitle: Imperator
+
+// possible leader names
+leader: Darkvan, Morfejn, Narzina, Nazgur, Šador, Sitra
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Izmaglica, Para, Iskra, Veo, Omen, Etar, Sjaj
+ship2: Avet, Senka, San, Iluzija, Odraz, Vizija, Haunt
+ship3: Fantom, Sablast, Utvara, Sena, Duh, Spirit, Poltergajst
+ship4: Noćna Mora, Fantazma, Teror, Užas, Povratnik, Smrt, Fobos
+

@@ -1,0 +1,22 @@
+// all possible names
+name: Čovek, Teran, Telan, Prajman, Midgardian
+
+desc1: Časne Diplomate
+desc2: Stručni Trgovci i Veličanstvene Diplomate 
+desc3: Zlatousti Ljudi su vešti u ubeđivanju drugih da služe njihovim interesima.
+
+// possible home system names
+home: Zemlja, Tera, Telus, Prajm, Midgard
+
+title:     Trijumvir
+fulltitle: Trijumvir
+
+// possible leader names
+leader: Aleksandar, Bladrov II, Duraš IV, Jovan III, Lasitus, Strajder
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Stražar, Survey, Kurir, Gorštak, Tragač, Glasnik, Patrola
+ship2: Fregata, Korveta, Topovnik, Borac, Brigada, Svračak, Komando
+ship3: Krstarica, Pratilac, Ratni Brod, Branioc, Nosač, Prethodnica, Lovac
+ship4: Drednot, Bojni Brod, Zvezda Smrti, Rušioc, Ratna Krstarica, Osvetnik, Razarač
+

@@ -1,0 +1,89 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Mrrshan specific dialogue
+
+CONTACT_AGGRESSIVE         | Pozdravljam te, čudni stvore. Ja sam [my_race], i sluga Zlatnog Kana. Nadam se da si snažan, [your_raceVoc], ne samo zarad vaših naroda, već i zarad vaših najmilijih blaga. 
+CONTACT_RUTHLESS           | Mi smo [my_race_plural], [your_raceVoc], i mi se držimo samo jednog verovanja: jaki uzimaju, a slabi daju. Ako već ne razumete mudrost takve filozofije, uskoro ćemo vas podučiti.
+CONTACT_XENOPHOBIC         | Molite se da vas Zlatni Kan vidi kao dostojne, [your_raceVoc]. Budete li ga razbesneli on neće imati nedoumica da se [my_raceSke] flote obruše na vas.
+//
+GREETING_01                | Ponovo ste nam se dokazali. Biće nam čast da učinimo šta možemo da se i mi vama dokažemo.
+GREETING_04                | Čuću vaše reči ambasadore, ali nisam dužan da vam dam šta god tražite.
+GREETING_07                | Dosta ste drski da priđete sluzi Kana. Recite šta imate i budite spremni da pobegnete ako samo trošite moje vreme.
+//
+DECLAREWAR_HATE_01         | Vaš nakit je uzalud potrošen na vas! Ukrasićemo naše dvorane na Fijeriasu vašim kostima i vašim blagom, i to će biti sve što će ostati od vašeg naroda kad završimo!
+DECLAREWAR_HATE_02         | Dosta je bilo ovoga! Obični napadi neće zadovoljiti naše neprijateljstvo prema vašoj vrsti: vi [your_race_plural] zaslužujete daleko širi pristup!
+DECLAREWAR_HATE_03         | Gadi nam se znanje da slaba rasa kao što je vaša ima uticaj u ovom univerzumu. Bez obzira na šanse, obećavam vam da ćemo učiniti sve što možemo da vas naučimo gde vam je mesto.
+//
+DECLAREWAR_ERRATIC_01      | Kandže Kanata treba da se naoštre, ambasadore. Vaš narod treba da nam pruži potrebnu vežbu da bi smo bili spremni za dostojnije neprijatelje.
+DECLAREWAR_ERRATIC_02      | Tvoj narod zaista ima neka od najlepših blaga, [your_raceVoc]. Željni smo da vidimo koliko ćete se žestoko boriti da ih zadržite!
+DECLAREWAR_ERRATIC_03      | Prošlo je mnogo vremena otkako smo našli legendarni plen. Vaš narod se dobro bori, ali mogu li da nas spreče da uzmemo mnogo svetlucavih trofeja kada su nam nadohvat ruke?
+//
+DECLAREWAR_MILITARY_01     | Jaki uzimaju, a slabi daju: gvozdeni zakon univerzuma. Uskoro ćete videti da se to ne odnosi samo na vaše blago, već i na vaše planete.
+DECLAREWAR_MILITARY_02     | Iako retko svetluca kao zlato, zemljište je često samo po sebi vredna nagrada. A za sve dobre nagrade vredi se boriti, zar ne, ambasadore?
+DECLAREWAR_MILITARY_03     | Potrebe Kanata nadmašuju potrebe [your_raceSke] rase. Možda imate impresivnu tehnologiju, ali sumnjam da imate jednaku žestinu!
+//
+DECLAREWAR_ALLIANCE_01     | Odigrali ste opasnu igru kada ste napravili neprijatelja od saveznika Kanata. Ta igra će brzo doći do krvavog kraja!
+DECLAREWAR_ALLIANCE_02     | Naši saveznici, [other_race_plural], su časni ali slabašan narod. Možda bi ste pobedili da je u ovom ratu bile umešane samo vaše dve imperije, ali s nama na njihovoj strani nemate šanse za pobedu!
+DECLAREWAR_ALLIANCE_03     | Više bismo voleli da imamo čast da srušimo vašu imperiju sami. Izgleda da ćemo ovog puta morati da podelimo slavu i plen sa [other_raceSkom] rasom.
+//
+DECLAREWAR_SPYING_01       | Kukavice, radije bi da radite u tajnosti nego da se borite časno! Vaši postupci odgovaraju vašoj slabosti i sada ćete platiti cenu!
+DECLAREWAR_SPYING_02       | Kakav je osećaj, [your_raceVoc]? Toliko rizikovati samo da ne donesete ništa osim rata svom narodu?
+DECLAREWAR_SPYING_03       | Imamo poruku za vašeg [your_nameTitleA] [your_name]: tajnost je pozorište bespomoćnih kukavica. Vaše kukavično ponašanje samo nam govori da će nas naša žestina dovesti do pobede!
+//
+DECLAREWAR_ATTACK_01       | Ha! Mi smo vas smatrali za kukavičke slabiće, ali izgleda da ipak imate žar borbe u sebi! Šteta što nećete dugo poživeti da biste proslavili ovu jadnu pobedu!
+DECLAREWAR_ATTACK_02       | Učinili ste nam veliku uslugu time što ste nam doveli borbu na prag kuće! Vratićemo vam u naturi tako što ćemo osigurati da vaši ljudi dočekaju svoj kraj na bojnom polju kao pravi ratnici!
+DECLAREWAR_ATTACK_03       | Na vašem mestu bih izbegao aroganciju, ambasadore. Žestinu naših ratnika nikada neće pobediti tehnoogija, koliko god da je napredna!
+//
+DECLAREWAR_OPPORTUNITY_01  | Vaša vrsta je odavno nadživela svoju korisnost. Ali budite sigurni da ćete pružiti adekvatnu vežbu najmlađim i najneiskusnijim našim ratnicima dok usavršavaju svoje borbene sposobnosti.
+DECLAREWAR_ASSASSIN_01     | Nisam ni najmanje šokiran što bi se vaša vrsta ponašala tako beskičmeno. Ubiti ambasadora najveća je sramota koju možete navući na sebe, a u samrtnoj muci vaš narod će proklinjati vaše ime zbog tog naređenja!
+
+
+OFFER_PEACE_01             | Za sve postoji pravo vreme ambasadore, a sada je došlo vreme za okončanje našeg neprijateljstva. Zadržite vaše dragocenosti; mir je sve što sada želimo od vas!
+OFFER_TRADE_01             | Nema sumnje da je najbrži način da osvojite trofeje da ih otmete od onih previše slabih da vas spreče u tome! Ali trgovanje može biti prihvatljiv način da i dve imperije imaju međusobnu korist. Počnimo svake godine od [amt] MK da vidimo koliko možemo... da dobijemo jedni od drugih. 
+OFFER_PACT_01              | Nema potrebe za tako podjednakim imperijama da se međusobno bore kada postoji mnogo slabijih rasa za pljačku i paljenje. Pristanimo na zvanični Ugovor o Nenapadanju kako bismo našu energiju bolje potrošili na one kojima možemo lakše da uzmemo blago!
+OFFER_ALLIANCE_01          | Danas sam došao kod vas da predložim formalni savez između Kanata i [your_empireStva]. Verujem da nećete gubiti vreme i potpisati ovaj ugovor? Takođe zapamtite: jednak udeo u savezu znači jednak udeo u ratnom plenu!
+ 
+WARN_TRESPASSING_01        | Osim ako vaši brodovi nisu u [system] sistemu da na plate danak, predlažem da im naredite da se okrenu i odu što je pre moguće.
+WARN_EXPANSION_01          | Iako preferiramo dragocenosti kojima možemo ukrasiti zidove naših hramova, nismo toliko slepi da zanemarimo vrednost neutralnog zemljišta. Zaustavite svoju ekspanziju ili rizikujte da izazovete naš bes, ambasadore.
+WARN_BUILDUP_01            | Ako gradite svoje flote kako biste vršili napade na drugu rasu, od nas nećete imati primedbi. Ali dok ne dobijemo garancije u tom smislu, pretpostavićemo da će vaše flote biti uperene u nas, i nećemo oklevati da delujemo preventivno.
+WARN_SKIRMISH_01           | To je bio zabavan mali okršaj, zar ne? Ipak, ove male bitke su dosadne i bez nagrade: ako insistirate na njihovom nastavku, rado ćemo dati formalniju objavu rata!
+WARN_ATTACKED_01           | Ha! Da li je to bio ozbiljan pokušaj da nas isprovocirate ambasadore? Vaš narod je slab, a vaše dragocenosti su okaljane! Prestanite sa ovim glupim igrama pre nego što nas primorate da vas okončamo!
+WARN_INVADED_01            | Sigurno se šalite sa ovom vašom jadnom malom invazijom? Imate sreću što nismo imali mnogo koristi od [system] sistema, ali ako usmerite pogled na vrednije sisteme, postaraćemo se da više nikome ništa nikada ne uzmete!
+WARN_ESPIONAGE_01          | Kakve podmukle igre igra vaš narod! Moraćete da uložite mnogo više napora od toga ako želite da otkrijete tajne Kanata. Uzmite svog špijuna sa sobom i idite, pre nego što ova igra prestane da bude zabavna. [framed]
+WARN_SABOTAGE_01           | Opasne smicalice, ambasadore. Da su u zgradi koju ste hteli da uništite bile velike dragocenosti, nesumnjivo bismo prali krv sa ulica vašeg sveta. Toplo bih vam preporučio da više ne razmišljate o sabotaži. [forced]
+WARN_BIOWEAPON_01          | Trofeji moraju biti osvojeni u časnim borbama, a ne ukradeni iz kostiju onih koji su bili bespomoćni dok su bili živi! Ako ikada više upotrebite tako odvratno oružje, uveravam vas da će to biti poslednji put! 
+WARN_GENOCIDE_01           | Nije loša odluka da se iskoreni čitava [victim_raceSka] vrsta i oteti sva njihova blaga za sebe. Iako sumnjam da biste bili dovoljno glupi da pokušate tako nešto sa nama, vaše sposobnosti su i dalje prilično uznemirujuće.
+WARN_FINAL_WAR_01          | Glupi [your_raceVoc]! Prkositi volji odluke veća znači prkositi volji [my_raceIja]! Uzećemo vaše trofeje i spaliti ih do najfinijeg pepela! Ništa neće ostati od vaše vrste kad završimo! 
+WARN_COUNCIL_VOTE_01       | Kanat ima važnije stvari kojima se mora baviti nego da igra političke igre u Savetu. Za nas bi bilo bolje ako biste jednostavno popustili našim željama. I za vas bi to bilo bolje, ako se razumemo.
+WARN_OATHBREAKER_01        | Hmpf! Samo očajnici ne poštuju svoju reč. Nema veze! Od sada ćemo se jednostavno baviti vama kao i drugima koji su previše dvolični da bi im se moglo verovati.
+WARN_ATTACKED_ALLY_01      | Ne mogu reći da ne vidim zašto biste napali [defender_raceSku] rasu. Njihove dragocenosti su tako divne... ali će pripadati nama kad poželimo da ih uzmemo: neće pripadati vama!
+WARN_REBELLING_AGAINST_01  | Ovaj mir koji zagovara Savet nikada ne bi prijao našem narodu. Želimo jedno i samo jedno: da od slabih uzmemo njihova blaga za sebe!
+
+PRAISE_COUNCIL_VOTE_01     | Cenimo vašu podršku u savetu, ambasadore. Zlatni Kan je lično želeo da znate da vaš narod predstavlja veliku benficiju Kanatu, a ako poželite da posetite [candidate_home], gozba će biti održana u vaše ime!
+PRAISE_COUNCIL_VOTE_02     | Jeste li videli da se [rival_raceSki] predstavnik mršti? Ha! Neka kipe! Sve dok mudri ljudi poput vas nastavljaju da priznaju našu moć, Kanat nema zašto da se plaši!
+PRAISE_COUNCIL_VOTE_03     | Bojite li se naših napada ambasadore? Nadate li se da će ugađanje nama u Savetu zaustaviti naše lovce na vaša blaga? Hmhmhmhm, pa to sigurno ne šteti vašim šansama, zar ne?
+PRAISE_ATTACKED_ENEMY_01   | Danas će biti veliki dan za oba naša naroda, [attacker_raceVoc]! [defender_raceSka] vrsta nema molitvu koja može da im pomogne protiv naše udružene snage! Ima dovoljno blaga za sve nas: najboljim ratnicima ide najveći plen!
+PRAISE_ATTACKED_ENEMY_02   | Nadate li se nekom blagu danas, ambasadore? Vrlo dobro, dogovorićemo se: pomozite nam da se rešimo ovih [defender_raceSkih] štetočina i pobrinućemo se da zaradite pravednu nagradu.
+PRAISE_ATTACKED_ENEMY_03   | Očigledno je da ste u ovom ratu samo za bogatstvo koje želite uzeti za sebe. Ali ovi [defender_race_plural] imaju jadne relikvije, pa pretpostavljam da ako nam pomognete, ostavićemo vam sve što ne želimo da uzmemo za sebe.
+PRAISE_TRADE_01            | Sećate li se kada sam započeo naš trgovinski sporazum? Rekao sam vam da ćemo videti koliko ćemo dobiti jedni od drugih, i drago mi je što vidim da je korist obostrana.
+PRAISE_TRADE_02            | Uvek je zabavnije boriti se za bogatstvo i krenuti kući brodovima punim plena nakon pobede! Pa dobro, pretpostavljam da je ovaj trgovinski ugovor ipak malo isplativiji ako uzmete u obzir troškove. Osigurajte da to tako i ostane, ambasadore.
+PRAISE_REBELLING_WITH_01   | Tako je već bolje! Ne postoji ništa kao dobra borba, a? I toliko plena koji prosto moli da bude otet... Nadam se da vam ne smeta što Kanat želi da se pridruži zabavi!
+
+ACCEPT_TRADE_01            | Pretpostavljam da ne možemo opljačkati svaku civilizaciju na koju naiđemo. Želite da trgujete sa koliko MK godišnje? [amt]? Dobro.
+RESPOND_IGNORE_THREAT_01   | Oprostite što sam se nasmejao, vaše prijetnje su komično prazne. Trčite sada pre nego što naši jurišnici odluče da izoštre kandže na vašim kolonijama.
+RESPOND_STOP_SPYING_01     | Našli ste špijuna za koga kažete da pripada nama? Sigurno ne. Ni u snu ne bismo sanjali da špijuniramo uzvišene iz [your_empireStva]. Učinite šta hoćete sa špijunom, za nas to nema nikakve posledice.
+RESPOND_STOP_ATTACKING_01  | Zabrinuti ste zbog napada, [your_raceVoc]? Ne brinite, nemamo interes prema onome što posedujete. Sada ćemo pomeriti naše flote. Na kraju krajeva, ne bismo hteli da vas uplašimo.
+
+

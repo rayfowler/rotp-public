@@ -1,0 +1,22 @@
+// all possible names
+name: Klakon, Klakant, Klokan, Artropon, Koleopteron
+
+desc1: Ksenofobični Industrijalisti
+desc2: Jednoumlje i Povećana Produktivnost Radnika
+desc3: Vrsta sa jedinstvenim umom koji kontroliše sve, industrijski Klakoni predstavljaju zagonetku tuđincima.
+
+// possible home system names
+home: Koldan, Koldant, Kaldon, Klokdon, Kakdon
+
+title:     
+fulltitle: 
+
+// possible leader names
+leader: Iksitiksl, Kaksal, Kikitik, Klakuan, K'kalak, Zantak
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Bumbar, Igla, Bogomoljka, Buba, Trut, Pauk, Mandibula
+ship2: Stršljen, Otrov, Kukuta, Vretenca, Žaoka, Skarabej, Osa
+ship3: Tarantula, Poskok, Kobra, Aspida, Zmija, Mamba, Škorpion
+ship4: Kraljevska Kobra, Crna Udovica, Smrtonosni Vin, Šarka, Naga, Crna Guja, Crna Mamba
+

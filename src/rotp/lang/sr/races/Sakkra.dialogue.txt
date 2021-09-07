@@ -1,0 +1,88 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Sakkra specific dialogue
+
+CONTACT_AGGRESSIVE         | Zdravo! Poznati smo kao [my_race], ali to nije važno. Ono što je važno, jeste da znate da planiramo da usavršimo ekologiju svake planete u galaksiji svim raspoloživim sredstvima, u redu? Zbogom!
+CONTACT_RUTHLESS           | Hej! Mi smo [my_race]! Nadam se da niste maltretirali ekosisteme svojih planeta. Da jeste, morali bismo to odmah da rešimo, a to vam verovatno ne bi bilo zabavno, zar ne?
+CONTACT_ERRATIC            | Vau, nova vrsta! Mi smo [your_race], a vi ste? [your_race]? Neverovatno! Samo da vas obavestim da treba da održavate svoje planete čistima, u redu? Potrudićemo se da to učinite, držeći vas na oku vrlo, vrlo pažljivo.
+//
+GREETING_01                | Hej ambasadore! Uvek mi je drago da vidim prijatelja poput vas! Treba vam pomoć oko nečega?
+GREETING_04                | Ambasador [your_empireStva]! Zauzeti smo usavršavanjem nekih planetarnih ekosistema, ali slušaćemo šta imate da kažete. 
+GREETING_07                | O, vi ste. Šta hoćete? Znate da ne volimo da nas vezuju sa prljavim rasama poput vaše?
+//
+DECLAREWAR_HATE_01         | Čini se da vaš narod ne može da prestane da prlja svaku planetu koju dohvate, a? Obrisaćemo vašu prljavštinu iz galaksije za manje vremena nego što je potrebno za izgradnju biokupole!
+DECLAREWAR_HATE_02         | Otkad smo vas upoznali, stalno uništavate svoje ekosisteme na neshvatljiv način! Uklonićemo vas pre nego što budete još više povredili ove planete!
+DECLAREWAR_HATE_03         | Ne možemo više da podnesemo da gledamo kako uništavate svetove! To će nas koštati mnogo, ali ponekad ciljevi više nego opravdavaju sredstva!
+//
+DECLAREWAR_ERRATIC_01      | Vau, vaš narod je baš prljav. Mogli bismo vam pomoći da očistite svoje svetove, ali bilo bi mnogo brže da vas se rešimo i sami ih popravimo.
+DECLAREWAR_ERRATIC_02      | Zdravo! Spremni za rat? Niste? Pa to je šteta! Ali vidimo da neki od vaših svetova mole za optimizacijom i moramo ih se dočepati.
+DECLAREWAR_ERRATIC_03      | Hej tamo! Jeste li znali da smo nedavno dizajnirali još energetski efikasnije biokupole? Želeli bismo da ih testiramo na nekim zaista prljavim planetama, pa da li vam smeta ako očistimo neke od vaših kako bismo mogli da počnemo sa testiranjem?
+//
+DECLAREWAR_MILITARY_01     | Znate da će Konklava usavršiti okruženje svake planete u ovoj galaksiji, jel tako? Pa, počećemo da radimo na vašim svetovima. Trebalo bi da ih napustite uskoro: nema šanse da nas pobedite ako pokušate da se borite!
+DECLAREWAR_MILITARY_02     | [my_title] kaže da moramo da uklonimo vaš narod sa njihovih planeta kako bismo mogli da počnemo da ih popravljamo. Hoćete li ih ostaviti mirno? Ne? Baš šteta!
+DECLAREWAR_MILITARY_03     | Imate neke od najčudesnijih ekoloških zagonetki za rešavanje na svojoj teritoriji i tretirate ih kao da ih ni nema! Ne možemo više da izdržimo! Bez obzira na sve, uzećemo tu teritoriju od vas!
+//
+DECLAREWAR_ALLIANCE_01     | Čuli smo da ste se vi i [other_race_plural] svađali oko nečega. Siguran sam da je to glupo i nevažno, ali ovo je najbolja šansa da uzmemo vaše kolonije kako bismo konačno popravili svu štetu koju ste naneli!
+DECLAREWAR_ALLIANCE_02     | Definitivno ne mogu poreći da su [other_raceSka] rasa prljavi. Ipak ste daleko prljaviji od njih, pa ako su voljni da se bore s vama, rado ćemo se pridružiti njihovom cilju.
+DECLAREWAR_ALLIANCE_03     | Ovaj put ste definitivno okliznuli, ambasadore! Morali ste da znate da ćemo se pridružiti savezniku koji bi krenuo u rat protiv vas, čak i ako je taj saveznik prljav kao [other_raceSka] vrsta. Čekajte, niste znali? O moj...
+//
+DECLAREWAR_SPYING_01       | Šta tačno radite? Neko prljav kao što je vaš narod nikada ne bi mogao sprovesti špijuniranje protiv Konklave, a da ne ostavi trag prljavštine koji mi možemo da pratimo, znate?
+DECLAREWAR_SPYING_02       | Činjenica da biste se ponašali u takvoj tajnosti protiv Konklave nas ljuti, ali činjenica da ste uprljali naše planete svojim odvratnim prisustvom čini nas apsolutno besnima!
+DECLAREWAR_SPYING_03       | Pogrešili ste misleći da nećemo uzvratiti udarac kada ste odlučili da nas špijunirate. To što je vaša vojska malo veća od naše, ne znači da nismo voljni da ratujemo sa prljavštinama kao što ste vi!
+//
+DECLAREWAR_ATTACK_01       | Šta radite?! Kako se usuđuje neki prljavi slabić poput vas da ošteti naše dragocene planete?! Za ovo ćemo spaliti vaš narod kao đubre, što i jesu!
+DECLAREWAR_ATTACK_02       | Želite da vodite rat protiv nas, a? Ne brinite, mi ćemo vas potamaniti, jednu po jednu koloniju, i osloboditi vaše planete od njihovih užasnih prljavaca!
+DECLAREWAR_ATTACK_03       | Prljavo! Prljavo! Prljavo! Ugrozili ste našu planetu svojim užasnim krvožeđem! Konklava će prikupiti svu snagu da vas potuče nazad u prljavu jamu iz koje ste došli!
+//
+DECLAREWAR_OPPORTUNITY_01  | [my_title] je nedavno razmišljao o vašem narodu. Došao je do zaključka da će za nas biti najbolje da vas sprečimo da se proširite po galaksiji pre ili kasnije. Na taj način nećemo imati toliko svetova za čišćenje nakon što vas eliminišemo!
+DECLAREWAR_ASSASSIN_01     | Šta ste uradili?! Znao sam da se vašoj vrsti ne može verovati! Kada ste spremni da ubijete nenaoružanog ambasadora, naježim se od pomisli šta radite sa svojim ekosistemima! Pripremite se za rat, prljavi [your_raceVoc].
+
+
+OFFER_PEACE_01             | Jadne planete! Jednostavno ne možemo više da podnesemo da ih gledamo kako se uništavaju u ovom glupom ratu! Hajde sada da okončamo borbe, ambasadore, i da počnemo da lečimo ove svetove o koje smo se toliko ogrešili!
+OFFER_TRADE_01             | Vau, ima toliko kompleksnih okruženja na svim ovim svetovima! Želeli bismo da učinimo našu ekonomiju snažnijom za finansiranje svih naših projekata, a trgovanje sa vama bilo bi od velike pomoći! [amt] MK godišnje je prihvatljivo, zar ne?
+OFFER_PACT_01              | Čini se da se dovoljno dobro brinete o svojim planetama, a ratovi čine jako ružne stvari svetovima na kojima se dešavaju. Želite li da potpišete sa nama Ugovor o Nenapadanju? Na taj način nijedan od naših prelepih ekosistema neće imati čega da se plaši!
+OFFER_ALLIANCE_01          | Vau, impresioniran sam! Način na koji brinete o svojim planetama, skoro kao da ste Sakra! Napravite Savez sa nama, ambasadore! Zajedno ćemo štititi naše svetove: niko nam neće pretiti sve dok stojimo ujedinjeni!
+ 
+WARN_TRESPASSING_01        | Hej! Hej! Hej! [system] sistem je pod zaštitom Konklave! Vi ne pripadate ovde, razumete? Napustite ga! Odmah! Šta čekate? Idite!
+WARN_EXPANSION_01          | Uzimate za sebe mnogo više nego što bi trebalo, ambasadore! Niste dovoljno napredni da brinete o svakom od ovih svetova, a mi vam nećemo dozvoliti da protraćite sve ove ekološke zagonetke! Usporite širenje, ili u suprotnom...
+WARN_BUILDUP_01            | To je mnogo brodova koje imate tu! Ako nastavite da ih još pravite, neke imperije mogu postati nervozne. Možda će uperiti da njihovo oružje u vas. Možda čak ispale hitac ili dva! To je, ako nastavite da pravite još brodova.
+WARN_SKIRMISH_01           | Ne mogu da verujem da je došlo do okršaja u [system] sistemu! Šta ste mislili, ambasadore? Ovaj put ćemo vas pustiti jer niste naneli štetu nijednoj planeti, ali od sada pazite na svoje flote, tupavi [your_raceVoc]!
+WARN_ATTACKED_01           | Šta mislite da radite?! Prestanite sa zafrkavanjem! Veoma smo zauzeti pokušavajući da usavršimo ekologiju u [system] sistemu, ne trebaju nam vaši brodovi koji lete unaokolo i čine stvari još težim!
+WARN_INVADED_01            | Jeste li izgubili razum?! Ili to malo razuma koje imate vi glupavi [your_raceVoc]?!Trebaće godine da se popravi šteta koju ste naneli! Ove šale više nisu smešne! Prestanite da se igrate ili ćete zažaliti!
+WARN_ESPIONAGE_01          | Mislite da biste nas mogli špijunirati i uspeti da to sačuvate u tajnosti? Smešni ste, ambasadore. Ali ako ovo prestane da nam bude zabavno, verovatno ćemo vas samo ubiti, OK? [framed]
+WARN_SABOTAGE_01           | Šta si učinili?! Potpuno ste razbili biokupole! Svi ti dragoceni uzorci, svi ti eksperimenti su uništeni! Otišli ste predaleko: očekujte odgovor od nas ako se ovo nastavi, prljavi [your_raceVoc]! [forced]
+WARN_BIOWEAPON_01          | Sada ste ga ugasili! Biološko oružje?! Biološko oružje!! Pomislite na neizrecivu štetu koju ste naneli ekologiji te bespomoćne planete! Vi ste apsolutno čudovište: poživećete da zažalite ovo!
+WARN_GENOCIDE_01           | Uklonili ste [victim_raceSku] rasu, zar ne? Odlično, počeli su baš da nas nerviraju. Naravno da ćete nam dati njihove svetove za ekološku obnovu. Nećete? U redu...
+WARN_FINAL_WAR_01          | Znate da smo svi odlučili da se udružimo za dobrobit svih svetova, zar ne? Zašto želite da se protivite našem jedinstvu, ambasadore? Pretpostavljam da to neće biti važno uskoro. Ali ne brinite! Dobro ćemo se pobrinuti za vaše planete nakon što odete.
+WARN_COUNCIL_VOTE_01       | To nije bilo lepo što ste uradili u Savetu. Mislio sam da imamo razumevanje, ambasadore? Da li je [candidate_raceSka] volja oduvek bila pravi izbor? Nemojte opet da pogrešite, prljavi [your raceVoc]!
+WARN_OATHBREAKER_01        | Uvek smo mislili da ste fizički odvratni, sa svojim čudnim telima i neprijatnim mirisima. Ali sada vidimo da se radnje podudaraju sa izgledom! Sklanjajte mi se s očiju, ambasadore: Zaista mi je jako loše od vas.
+WARN_ATTACKED_ALLY_01      | Gledajte, mi zapravo nismo ljubitelji [defender_raceIja] čak i ako smo nominalno saveznici. Prestanite sa glupim prepirkama, inače ćemo morati da se umešamo.
+WARN_REBELLING_AGAINST_01  | Kako je Savet mogao to da nam uradi?! Kako su mogli da izaberu VAS od svih ljudi da vodite ovu galaksiju? Ne možemo dozvoliti da ovo prođe... vi ste... tako... ŠTROKAVI!
+
+PRAISE_COUNCIL_VOTE_01     | Hej ambasadore! Hvala vam što ste bili tako pouzdani u Savetu. Te druge rase su tako odvratne, ali imati podršku naroda poput vas? Pa, osećamo se kao da radimo nešto kako treba. Samo mi recite ako ti nešto zatreba, ok?
+PRAISE_COUNCIL_VOTE_02     | Bili ste jako dobri danas u prostorijama Saveta. Zaista mi je drago što znam da vidite mudrost u našim ciljevima. Nadam se da će vaše planete imati koristi od vaše mudrosti koliko i Konklava!
+PRAISE_COUNCIL_VOTE_03     | Hmm, šta kujete, pokušavate da nas pridobijete  glasanjem za nas na sednici Saveta? Pa, šta god, siguran sam da ćemo uskoro saznati šta kujete ako je nešto važno. Hvala na podršci u svakom slučaju, prljavče.
+PRAISE_ATTACKED_ENEMY_01   | Čuli ste poziv tih svetova, zar ne ambasadore? Moraju se što pre osloboditi ugnjetavanja [defender_raceIja]. Znao sam da ste u srži slični nama! Sada će to znati i ostatak Konklave! 
+PRAISE_ATTACKED_ENEMY_02   | Haha, da! Tako je! Potucite te prljave [defender_raceSku] gamad sve dok im više ne ostane gde da pobegnu! Samo pokušate da ne povredite planete previše, OK? Trebaće nam kad završimo.
+PRAISE_ATTACKED_ENEMY_03   | I vi se borite protiv [defender_raceIja], prljavče? Miris je u pitanju, zar ne? Prožima sve unaokolo. Samo se drži podalje od nas kad završiš! Siguran sam da će se poprimiti i na vas!
+PRAISE_TRADE_01            | Ovaj Trgovinski Ugovor je sjajan! Uspeli smo da generišemo podršku za tako mnogo projekata. Od srca vam zahvaljujem, a svetovi [my_empireStva] pevaju večne hvale vašem imenu!
+PRAISE_TRADE_02            | Tu ste! [my_title] je želeo da vam čestitam na održavanju besprekornog trgovinskog ugovora sa Konklavom. Nada se da ćete videti mudrost u nastavku ugovora, jer imamo mnogo projekata za istraživanje! To je sve. Sad zdravo!
+PRAISE_REBELLING_WITH_01   | Savet je potpuno poludeo da postavi te odvratne [leader_raceSke] štrokavce na legendarni tron. Našem narodu je već muka od njihovog nesnosnog smrada. Dozvolite da pomognemo da ih uklonite, ambasadore!
+ 
+ACCEPT_TRADE_01            | Vreme za trgovinu! Vreme za trgovinu! [amt] MK godišnje će mnogo pomoći u postavljanju naših biosfera! Hvala, prijatelju!
+RESPOND_IGNORE_THREAT_01   | O dečače, stvarno ste ljuti, niste li? Pa dobro, i da jeste, nije da možete išta da učinite po tom pitanju! Odlazite sada, molim vas, danas sam jako zauzet ovim uzorcima flore.
+RESPOND_STOP_SPYING_01     | Uhvatili ste špijuna, zar ne? Pa, ne brinite, samo smo proverili da li ste ljubazni prema svojim planetama. Izgleda da jeste, pa nam vratite osmatrača i nećemo morati da šaljemo drugog!
+RESPOND_STOP_ATTACKING_01  | Vidite li koliko brodova imamo? I svaki ima veliko, zastrašujuće oružje! Ako ikada saznamo da zloupotrebljavate svoje planete, moraćemo ih poslati nazad do vas, a niko od nas ne želi da se to dogodi! Sad zbogom!
+

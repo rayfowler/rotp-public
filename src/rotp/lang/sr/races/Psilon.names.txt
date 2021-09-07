@@ -1,0 +1,21 @@
+// all possible names
+name: Sajlon, Mentalon, Sajkon, Serebron, Neuralon
+
+desc1: Pacifistične Tehnokrate
+desc2: Superiorne Istraživačke Tehnike
+desc3: Sajlonska Republika traži miran i prosvetljen suživot sa drugim rasama.
+
+// possible home system names
+home: Mentar, Kogitar, Sajlar, Metrika, Neura
+
+title:     Odbornik
+fulltitle: Vrhovni Odbornik
+
+// possible leader names
+leader: Dajnalon, Kelvan, Meson, Kvark, Tekion, Zigot
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Elektron, Neutrino, Kvark, Neutron, Proton, Atom, Molekul
+ship2: Sigma, Prajm, Radijus, Hipotenuza, Algebra, Tangenta, Logaritam
+ship3: Paralaks, Elipsa, Osovina, Sinusni Talas, Fraktal, Integral, Derivacija
+ship4: Zvezdana Vatra, Konstelacija, Nova, Kvazar, Galaksija, Maglina, Kruna

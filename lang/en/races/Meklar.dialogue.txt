@@ -1,0 +1,143 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Meklar specific dialogue
+
+CONTACT_ERRATIC            | Species: [your_race]. Leader designation: [your_title]. Technological innovations: varied. Threat assessment: Inconclusive.
+CONTACT_HONORABLE          | [your_race] species presents interest. [my_empire] senses potential to cooperate for mutual benefit. Results remain to be seen.
+CONTACT_RUTHLESS           | [my_empire] now aware of [your_race] existence. [my_title] states a warning to all [your_race] species: do not interfere with Dominion objectives. Will result in [your_race] extinction.
+//
+GREETING_01                | Identity of allied ambassador confirmed. State request of Dominion. Dominion will assist if possible. 
+GREETING_04                | [my_empire] acknowledges [your_race] ambassador. Dominion willing to process requests at this time.
+GREETING_07                | State request. Dominion unlikely to send requests from [your_race] to [my_title] for processing.
+//
+DECLAREWAR_HATE_01         | [my_empire] no longer willing to tolerate presence of [your_empire]. Strength of [your_race] species comparatively primitive. Executing search and destroy protocol.
+DECLAREWAR_HATE_02         | [my_title] will no longer allow [your_race] species interference with Dominion objectives. Dominion prepared to dedicate much to preserve primary directive.
+DECLAREWAR_HATE_03         | Dominion cannot continue directives while [your_empire] persists. Dominion must terminate this species. No alternative found.
+DECLAREWAR_ERRATIC_01      | [my_title] concludes existence of [your_race] species threatens Dominion objectives. Dominion to begin extermination protocols immediately.
+DECLAREWAR_ERRATIC_02      | [my_title] judges [your_race] species likely holds secret to further Dominion goal. Dominion will take secrets from [your_race] species by force.
+DECLAREWAR_ERRATIC_03      | [my_title] deems [your_race] species as unacceptable variable in Dominion plans. Dominion will eradicate [your_race] species or terminate itself in process.
+DECLAREWAR_MILITARY_01     | [my_empire] must continue to proliferate across galaxy in pursuit of ultimate goal. [your_empire] inhibits expansion. Problem now being rectified.
+DECLAREWAR_MILITARY_02     | Dominion unable to locate primary objective. Possibility that planets near or belonging to [your_empire] contain what is sought. War unavoidable.
+DECLAREWAR_MILITARY_03     | Dominion forced to expand reach of its territory. Strength of [your_race] species cannot be dissuading factor. War regrettable, but necessary.
+DECLAREWAR_ALLIANCE_01     | [your_empire] has declared war on Dominion ally. Dominion will protect vested interest in objectives by eradicating [your_race] threat.
+DECLAREWAR_ALLIANCE_02     | Dominion received request for aid from [other_empire]. Proceeding to aid ally in war against [your_race] species so long as conflict persists.
+DECLAREWAR_ALLIANCE_03     | [your_race] species grows arrogant to declare war on others. Dominion will aid other empire to remove [your_race] species from galaxy.
+DECLAREWAR_SPYING_01       | [your_race] species engages in secret action against Dominion.  Consequences for Dominion: negligible. Consequences for [your_race] species: fatal.
+DECLAREWAR_SPYING_02       | Subterfuge detected in Dominion territory. Source confirmed as [your_race] species. Dominion protocols require war as response. 
+DECLAREWAR_SPYING_03       | Dominion detects obvious attempt at destabilization by [your_empire]. Cannot allow [your_race] species to continue interference with objectives. Dominion must retaliate at any cost.
+DECLAREWAR_ATTACK_01       | [your_race] species proven hostile despite evident [my_race] superiority. Dominion moving to remove threat entirely.
+DECLAREWAR_ATTACK_02       | [your_race] species impedes Dominion objectives by attacking directly. Confrontation unavoidable.
+DECLAREWAR_ATTACK_03       | [your_race] species attempts to prevent Dominion from reaching objectives by wiping out [my_race]. Dominion will retaliate with all available military strength.
+DECLAREWAR_OPPORTUNITY_01  | [my_title] believes [your_race] species will ultimately prove detrimental in attaining primary directive. Dominion will eradicate [your_race] species before threat is fully realized.
+DECLAREWAR_ASSASSIN_01     | Dominion Ambassador rendered inoperable by [your_race] species before being re-integrated into Mainframe. [your_race] actions demand violent retaliation.
+
+OFFER_PEACE_01             | [my_title] reaches new judgment. War no longer acceptable expenditure for Dominion. Dominion wishes to broker peace immediately. 
+OFFER_TRADE_01             | [your_race] species possesses significant resources. Dominion also possesses items of value. Dominion proposes trade agreement at [amt] BC per year.  
+OFFER_PACT_01              | Dominion aspires for outcome beyond senseless conflict. Non-aggression pact with [your_race] species deemed most prudent means of obtaining stated result. 
+OFFER_ALLIANCE_01          | [my_title] values diplomacy with [your_race] species. Dominion proposes formal alliance to ensure survival of both [your_race] species and [my_race]. Immediate response requested.  
+
+WARN_TRESPASSING_01        | [your_race] species detected in [system] system. Area previously claimed by Dominion. Vacate immediately. 
+WARN_EXPANSION_01          | Rapid expansion of [your_race] species deemed threat to Dominion objectives. Continuation of territorial growth will force military action as response. 
+WARN_BUILDUP_01            | Dominion surveillance network identifies [your_race] fleets as potential threat to security. Increasing watch on [your_race] species to ensure Dominion interests are not compromised.
+WARN_SKIRMISH_01           | Conflict between Dominion and [your_race] fleets detected at [system]. Dominion advises against repeat offenses: Dominion prepared to respond appropriately if warning unheeded. 
+WARN_ATTACKED_01           | [attacker_race] aggression noted at [system]. [defender_title] gives message to ambassador: continuing to threaten Dominion security will result in extinction of [attacker_race] species. 
+WARN_INVADED_01            | Reminder from Dominion that [attacker_race] species has no claim on [defender_race] space. Remove fleets immediately or face total annihilation.
+WARN_ESPIONAGE_01          | [spy_race] espionage activity recorded in Dominion territory. Dominion security protocols greater than [spy_race] skill at espionage. Testing Dominion again may prove fatal. [framed]
+WARN_SABOTAGE_01           | Dominion aware of [spy_race] species involvement in recent sabotage. Attempt at chaos too menial to warrant response. Further attempts at sabotage will ensure swift retribution [forced]
+WARN_BIOWEAPON_01          | Dominion observes use of crude bioweapon. Effective armament. [attacker_race] species threat assessment increased by 3 levels. 
+WARN_GENOCIDE_01           | Genocide of [victim_race] species by [attacker_race] species recorded. Dominion unconcerned with possible cause or alternatives. [attacker_race] species threat assessment increased by 5 levels.  
+WARN_FINAL_WAR_01          | All known species create agreement to ensure lasting peace in galaxy. [rebel_race] species sole dissenter. Dominion will take appropriate action.
+WARN_COUNCIL_VOTE_01       | Dominion aware of [voter_race] actions in council. Meaning irrelevant. Result assessed as detrimental to [candidate_race] goals. Diplomatic standing adjusted accordingly.  
+WARN_OATHBREAKER_01        | [my_title] passes judgment: [your_race] species no longer deemed trustworthy. All future dealings subject to revision based on [your_race] species breaking binding agreement. [spiesCaught]
+WARN_ATTACKED_ALLY_01      | Conflict recorded between [your_race] species and [defender_race] species. [defender_race] species known ally of Dominion. Cease fighting or prepare for consequences. 
+WARN_REBELLING_AGAINST_01  | [your_race] species now obstacle of Dominion objectives. Galactic Council ruling unacceptable. Awaiting response from Supreme Arbiter. 
+
+
+PRAISE_COUNCIL_VOTE_01     | Ambassador of [voter_race] species continues to provide aid in advancing [candidate_race] objectives. Dominion recognizes benefit of continued relationship with [voter_race] species. Dominion will repay favor as needed. 
+PRAISE_COUNCIL_VOTE_02     | Dominion notes your positive vote in council. Dominion will adjust view on [voter_race] species accordingly.
+PRAISE_COUNCIL_VOTE_03     | Dominion acknowledges likelihood of subterfuge by [voter_race] species. Continuing to aid Dominion in council may assuage concerns. 
+
+PRAISE_ATTACKED_ENEMY_01   | To attack enemies of Dominion proves commitment to [my_race] objectives. Dominion committed to keeping casualties of [attacker_race] species to absolute minimum. 
+PRAISE_ATTACKED_ENEMY_02   | Dominion welcomes assistance against [defender_race] species. This war may prove new beginning between [my_race] and [attacker_race] species. 
+PRAISE_ATTACKED_ENEMY_03   | Attacking [defender_race] species does not excuse past crimes against Dominion. Dominion will reassess [attacker_race] species threat level dependent upon its action in this war. 
+
+PRAISE_TRADE_01            | Dominion and [your_race] species continue to gain much from continuous trade. Dominion wishes trade to remain as long as arrangement continues beneficial status.
+PRAISE_TRADE_02            | Dominion expresses satisfaction at trade agreement with [your_race] species. Ensure agreement endures so that both races profit from each other. 
+PRAISE_REBELLING_WITH_01     | Dominion agrees Galactic Council ruler untrustworthy. [your_race] species objection noted. Dominion will aid [your_race] species in rebellion. 
+ 
+ACCEPT_TRADE_01            | [your_race] species trade request received. [amt] BC proposed amount. Dominion agrees.
+RESPOND_IGNORE_THREAT_01   | Threat from [your_race] species puzzling. [your_race] civilization substantially inferior to Dominion fleets. Ignoring.
+RESPOND_STOP_SPYING_01     | Dominion spy captured while attempting to gain insight into [your_race] lifeforms. Dominion professes apology. Return captured [my_race] at earliest opportunity
+RESPOND_STOP_ATTACKING_01  | Dominion successful in display of military capability to [your_race] civilization. Returning fleets to designated holding coordinates.
+
+DIPLO_TECH_REQUEST_MENU_01   | Specify technology.
+DIPLO_TECH_COUNTER_MENU_01   | Specify compensation.
+DIPLO_TRADE_MENU_01          | Specify magnitude.
+DIPLO_TREATY_MENU_01         | Specify treaty.
+DIPLO_DECLARE_WAR_MENU_01    | Confirm before proceeding.
+DIPLO_SUGGEST_WAR_MENU_01    | Specify target.
+DIPLO_BREAK_ALLIANCE_MENU_01 | Specify ally.
+DIPLO_THREATEN_MENU_01       | Specify.
+DIPLO_OFFER_AID_MENU_01      | Specify.
+DIPLO_OFFER_TECH_MENU_01     | Specify technology.
+
+DECLINE_OFFER_01           | Request denied.
+DECLINE_OFFER_02           | Request denied.
+DECLINE_OFFER_03           | Request denied.
+DECLINE_OFFER_04           | Request denied.
+DECLINE_OFFER_05           | Request denied.
+DECLINE_OFFER_06           | Request denied.
+DECLINE_OFFER_07           | Request denied.
+DECLINE_OFFER_08           | Request denied.
+DECLINE_OFFER_09           | Request denied.
+DECLINE_ENEMY_ALLY_01      | Request denied.
+DECLINE_NO_WAR_ON_ALLY_01  | Request denied.
+DECLINE_PEACE_TREATY_01    | Request denied.
+DECLINE_ANNOYED_01         | Request denied.
+DECLINE_ANNOYED_02         | Request denied.
+DECLINE_ANNOYED_03         | Request denied.
+DECLINE_OATHBREAKER_01     | Request denied.
+DECLINE_ESPIONAGE_01       | Request denied.
+DECLINE_SABOTAGE_01        | Request denied.
+DECLINE_BUILDUP_01         | Request denied.
+DECLINE_ENCROACH_01        | Request denied.
+DECLINE_SKIRMISH_01        | Request denied.
+DECLINE_ATTACK_01          | Request denied.
+DECLINE_INVASION_01        | Request denied.
+DECLINE_BIOWEAPONS_01      | Request denied.
+DECLINE_TECH_TRADE_01      | Request denied.
+OFFER_TECH_EXCHANGE_01     | Dominion requires [tech] technology. Specify compensation.
+ACCEPT_TECH_EXCHANGE_01    | Acceptance recorded.
+ACCEPT_FINANCIAL_AID_01    | Acceptance recorded.
+ACCEPT_TECHNOLOGY_AID_01   | Acceptance recorded.
+
+BREAK_TRADE_01             | Trade agreement terminated.
+ANNOUNCE_PEACE_01          | Acceptance recorded.
+ACCEPT_PEACE_01            | Request granted.
+
+BREAK_PACT_01              | Non-aggression pact terminated.
+ANNOUNCE_PACT_01           | Acceptance recorded.
+ACCEPT_PACT_01             | Request granted.
+
+BREAK_ALLIANCE_01          | Alliance terminated.
+ANNOUNCE_ALLIANCE_01       | Acceptance recorded.
+ACCEPT_ALLIANCE_01         | Request granted.
+ACCEPT_JOINT_WAR_01        | Request granted.
+
+RESPOND_CLOSE_EMBASSY_01   | Actions recorded.
+RESPOND_BREAK_TRADE_01     | Actions recorded.
+RESPOND_BREAK_PACT_01      | Actions recorded.
+RESPOND_BREAK_ALLIANCE_01  | Actions recorded.
+RESPOND_DECLARE_WAR_01     | Actions recorded.

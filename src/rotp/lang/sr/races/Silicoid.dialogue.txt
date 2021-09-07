@@ -1,0 +1,84 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Silicoid specific dialogue
+
+CONTACT_XENOPHOBIC         | [my_empire] su se udostojili da uvide vaše prisustvo, [your_name] od [your_raceSke] vrste. Kontaktiraćemo vas kako nam potrebe nalažu.
+CONTACT_RUTHLESS           | Oči Imperije su uprte u vas, [your_raceVoc]. Radi vas i radi svega što vam je drago, molite se da [my_title] bude blagonaklon prema vama.
+CONTACT_AGGRESSIVE         | Mi smo [my_race_plural], bedni [your_raceVoc]. Naša teritorija je ogromna i naša moć je bez premca. Upozoravam vas da ne iskušavate naš gnev ili ćete naučiti značenje smrtonosne odmazde.
+
+//
+GREETING_01                | Pozdrav ambasadore. Navedite šta tražite od [my_titleA], i ako smatra da ste dostojni, pauziraćemo naš sveti rat da vam pomognemo.
+GREETING_04                | Budite kratki, ambasadore: [my_title] ne zaustavlja naš sveti rat bez dobrog razloga.
+GREETING_07                | Bedni [your_raceVoc]! Prekinuti naš sveti rat znači prizvati naš gnev!
+//
+DECLAREWAR_HATE_01         | Sada je jasnije nego ikad pre da je vaš narod dugo tražena deca Kvaralona! Biće nam najveće zadovoljstvo da uklonimo vašu vrstu iz ove galaksije poput gamadi, što i jeste!
+DECLAREWAR_HATE_02         | Napokon je došlo vreme o kome se govori u legendi! Pripremi se, Kvaralonovo leglo! Jer bez obzira na to ko pobedi, našem svetom ratu će uskoro doći kraj!
+DECLAREWAR_HATE_03         | Konačno smo vas našli, Kvaralonovo leglo! I sada ćemo započeti našu bitku! Vaša snaga je nebitna: snaga Diamoda će nas voditi!
+DECLAREWAR_ERRATIC_01      | Od našeg prvog susreta [my_title] razmišlja o tome da li ste vi naš najomraženiji neprijatelj ili ne. Nastaviće da razmišlja o tome nakon što okončamo postojanje vaše vrste.
+DECLAREWAR_ERRATIC_02      | Naše vreme nebeskih komšija bilo je dovoljno prijateljsko, ali i najmanja šansa da vaši ljudi budu deca Kvaralona dovoljna je da vam objavimo rat.
+DECLAREWAR_ERRATIC_03      | Čak i najmanji rizik od vašeg razbojništva je van onoga što smo spremni da prihvatimo. Očistićemo vapu prljavštinu iz galaksije ili ćemo umreti u pokušaju.
+DECLAREWAR_MILITARY_01     | Usuđujete se na takav način da zadrete u našu teritoriju? Neka tako bude! Uskoro ćete upoznati naš gnev, [your_raceVoc], i na taj način shvatiti kolika ste budala.
+DECLAREWAR_MILITARY_02     | Zapamtite ovo, patetični [your_raceVoc]: svi svetovi u ovoj galaksiji pripadaju [my_empireStvu] po božanskom pravu, i mi ćemo se za njih boriti besom koji će uzdrmati same zvezde!
+DECLAREWAR_MILITARY_03     | Nećemo vam dozvoliti da položite pravo ni jedan kamen na svetovima koji već jesu, ili će biti naši! To će biti sukob snage vaše vojske nasuprot snazi naših uverenja. Da vidimo šta će prevladati!
+DECLAREWAR_ALLIANCE_01     | Nije bila mudra odluka objaviti rat savezniku Imperije. Moli se da nađeš milost kod svojih bogova, jer je kod nas nećeš naći.
+DECLAREWAR_ALLIANCE_02     | Naš saveznik nas obaveštava da ste odlučili da krenete u rat protiv njih: time ste objavili rat i nama. Pripremite se!
+DECLAREWAR_ALLIANCE_03     | Nas nije briga za sudbinu [other_raceIja], ali iskoristićemo ovu priliku da oslobodimo galaksiju od vaše vrste kako bismo nastavili naš sveti rat.
+DECLAREWAR_SPYING_01       | Jadni [your_raceVoc]! Na današnji dan ćete naučiti kakva je budalaština da kradete tajne Imperije!
+DECLAREWAR_SPYING_02       | Toliko želite da otkrijete naše tajne? Otkriću vam najvažniju: ne opraštamo i ne zaboravljamo. Pripremite se za rat!
+DECLAREWAR_SPYING_03       | Verujete li da ste u poziciji da otkrijete naše tajne bez posledica? Uskoro ćete naučiti koliko je glupo donositi takve arogantne odluke.
+DECLAREWAR_ATTACK_01       | Konačno ste se razotkrili, deco Kvaralona! Niko osim legla našeg najomraženijeg neprijatelja ne bi bio dovoljno glup da nas tako smelo izazove! Pripremite se za konačnu bitku!
+DECLAREWAR_ATTACK_02       | Dugo smo sumnjali da ste izrod našeg drevnog neprijatelja! Ovim napadom ste potvrdili tu činjenicu za sva vremena! Konačno će se naše proročanstvo ispuniti!
+DECLAREWAR_ATTACK_03       | Zlikovče! Prokletniče! U našem najmračnijem trenutku pokrećete takav napad na nas?! Sada kada ste se otkrili da ste naš večiti neprijatelj, nikakva razlika u našoj snazi neće nas sprečiti da vas uništimo!
+DECLAREWAR_OPPORTUNITY_01  | Dok nastavljamo preko galaksije u našem svetom ratu, moramo iskoristiti svaku priliku da povećamo svoju prednost. Prilika nam se sada ukazala, a to je iskorenjivanje vaše vrste. Zbogom, patetični [your_raceVoc].
+DECLAREWAR_ASSASSIN_01     | Kako se usuđujete da ubijete ambasadora Imperije!? Samo jedan Kvaralonov izrod je mogao da deluje sa takvim zlim namerama! Pripremite svoje flote za rat!
+
+OFFER_PEACE_01             | Kažu da bi se sa nekim upoznali, morate se prvo boriti protiv njih. Borili smo se i vidimo da niste deca Kvaralonskih zveri. Sada želimo mir sa vama, kako bismo mogli da usredsredimo svoju pažnju na one koji zaslužuju da osete naš bes.
+OFFER_TRADE_01             | Istraživanje dubina svemira je skup poduhvat. Imperija želi da predloži otvorenu trgovinu. [amt] MK godišnje će finansirati naš sveti rat i prikupiti više bogatstva za vaš narod. Šta kažete?
+OFFER_PACT_01              | Tražimo uništenje Kvaralona i njemu sličnih. Sve dok verujemo da vaš narod nisu oni, nemamo ništa protiv vas. Naše namere bismo dokazali Ugovorom o Nenapadanju. Odluka o potpisivanju je vaša.
+OFFER_ALLIANCE_01          | Upoznali smo mnogo čudnih i podlih stvorenja u našem svetom ratu u cilju da očistimo galaksiju. Od svih na koje smo naišli, verujemo da je najmanje verovatno da ste vi naš užasni neprijatelj. Udružite se u savezu sa nama, [your_raceVoc], i zaslužite blagoslov [my_titleA]! 
+
+WARN_TRESPASSING_01        | Skrnavite osvećeni prostor [system] sistema svojim nepozvanim prisustvom! Odmah se povucite ili ćemo vas isterati pravednim žarom!
+WARN_EXPANSION_01          | Verujete li da je galaksija vaša i samo vaša? Odmah zaustavite ovu bezobzirnu ekspanziju ili se suočite sa gnevom čitave Imperije!
+WARN_BUILDUP_01            | Samo Imperija može posedovati najjače flote u galaksiji, jer samo Imperija može doneti pravilan sud o tome ko je zao. Osporite ovaj zakon na svoju odgovornost, [your_raceVoc].  
+WARN_SKIRMISH_01           | Šta mislite pod ovim, ambasadore? Običan okršaj na koji ćemo samo jednom zažmuriti: ne dozvolite da se ovo ponovi! 
+WARN_ATTACKED_01           | Ludilo! Usuđujete se da napadnete Imperiju!? U svojoj mudrosti, [defender_title] je naredio da zaustavimo odmazdu kako bi mogao da vidi šta ćete sledeće učiniti. Jeste li ipak zaista vi naš dugo traženi neprijatelj?!
+WARN_INVADED_01            | Sigurno je u pitanju očajnički čin [attacker_raceIja], da ukrade teritoriju Imperiji. Znajte da je [system] sistem za nas bio beznačajan, ali nastavak uzimanja onoga što pripada Imperiji može vam samo doneti propast! 
+WARN_ESPIONAGE_01          | Odluka da ukradete naše tajne bila je ozbiljna greška u prosuđivanju, ambasadore. Pozivam vas na oprez: da vaš pokušaj nije bio toliko smešan, sigurno bi zaradio ozbiljniji odgovor! [framed]
+WARN_SABOTAGE_01           | Kakvi su ovo trikovi? Sabotaža je za svaku osudu i dostojna samo kukavica i zlikovaca! Da li se otkrivate da ste ipak naš podli neprijatelj iz naših proročanstava? [victim_title] će odlučiti... [forced]
+WARN_BIOWEAPON_01          | Nezamislivo! Život se lako gubi protiv konvencionalnog oružja, ali protiv biološkog oružja nema nikakvih šansi. I to protiv civila?! Mračna krv Kvaralona sigurno teče venama vaše vrste!
+WARN_GENOCIDE_01           | Recite nam sada zašto ste počinili genocid nad [victim_raceSkom] rasom. Pažljivo birajte reči: vaš odgovor određuje kako naši narodi nastaviti od sada!
+WARN_FINAL_WAR_01          | Samo sklapanjem saveza možemo dovršiti naš sveti rat! Mi stojimo zajedno kao ujedinjeni narodi, a vi ostanite sami kao glasilo haosa i rata. Proročanstvo je počelo: zaista ste leglo Kvaralona! 
+WARN_COUNCIL_VOTE_01       | Sigurno bi bilo bolje da se ovaj Savet raspusti i da Imperija ima isključivu kontrolu nad galaksijom. Tada bi vaš narod mogao da postane naš neprijatelj kada tako govorite protiv nas!
+WARN_OATHBREAKER_01        | Kako uznemirujuće, prekršiti reč znači izgubiti poverenje. Nema sumnje da bi se neprijatelj proročanstva usudio da se ponaša na takav način!
+WARN_ATTACKED_ALLY_01      | [defender_race_plural] imaju čast zajedništva sa Imperijom! Poslušajte naše upozorenje kao odgovor na vaš napad: Uveravam vas da ćete ga dobiti samo jednom!
+WARN_REBELLING_AGAINST_01  | Naš krstaški rat neće biti odložen! Ne zbog prostaka iz Saveta, a ni zbog vas! Pripremite se, ambasadore: sveta oluja će uskoro biti pred vama!
+
+PRAISE_COUNCIL_VOTE_01     | Naš pouzdani saveznik ponovo zaslužuje naše hvale! Uz vas da govorite razumno u Savetu, naš sveti rat nikada neće posustati! Danas ste zaslužili zahvalnost Imperije, [voter_raceVoc]. 
+PRAISE_COUNCIL_VOTE_02     | Vaša rasa se još nije dokazala bezazlenom, ambasadore. Nastavite podržavati naš cilj u Savetu i pokažite se saveznikom našeg svetog rata.
+PRAISE_COUNCIL_VOTE_03     | Nemojte misliti da vas jedan glas za Imperiju u Savetu oslobađa sumnje! Vaša vrsta ima još mnogo toga da dokaže pre nego što se naše sumnje otklone!
+
+PRAISE_ATTACKED_ENEMY_01   | Još ne znamo da li su [defender_raceSka] rasa odvratna deca Kvaralona, ali videti kako nam se naši saveznici tako spremno pridružuju pojačava naš moral u ovom ratu! Napred! Za pravdu! Za Imperiju!
+PRAISE_ATTACKED_ENEMY_02   | Želite da se pridružite našoj borbi protiv [defender_raceIja]? Napred onda i pokažite nam kako se ponašate na bojnom polju. Pobeda će doneti viši status pred Imperijalnim sudom, ali poraz će doneti samo smrt!ž
+PRAISE_ATTACKED_ENEMY_03   | Sigurno niste mislili da smo dovoljno naivni da poverujemo u vašu bezazlenost samo zato što ste nam se pridružili u borbi protiv [defender_raceIja]? Neprijatelj proročanstva učinio bi tako nešto da prikrije svoj identitet. Napred! Pokažite nam kako se borite, pa ćemo proceniti koliko ste zaista čisti!
+
+PRAISE_TRADE_01            | Imperija ti želi dobro, prijatelju svetog rata! Naš trgovinski ugovor finansirao je bezbroj bitaka u našoj potrazi za Kvaralonovim gnezdom. Imperija se nada da su vaši ljudi jednako profitirali.
+PRAISE_TRADE_02            | Iako ne možemo reći da ste izvan svake sumnje, možemo reći da je direktno finansiranje našeg svetog rata kroz trgovinu učvrstilo našu veru u vas. Osigurajte da se to i nastavi, ambasadore!
+PRAISE_REBELLING_WITH_01   | Naš neprijatelj je pronađen! Grozno gnezdo Kvaralona je uzurpiralo galaktički tron! Napred u bitku: [my_raceSke] i [your_raceSke] flote će se udružiti i očistiti ovu prljavštinu iz galaksije!
+ 
+ACCEPT_TRADE_01            | Imperija prihvata vašu ponudu, [your_raceVoc]. Trgovaćemo sa vama [amt] MK godišnje, kako bismo mogli da nastavimo naš sveti rat.
+RESPOND_IGNORE_THREAT_01   | Nećete nas odvratiti od našeg svetog rata vašim praznim pretnjama. Nađite nekog drugog da mu smetate ili rizikuje naš gnev!
+RESPOND_STOP_SPYING_01     | Mi smo samo hteli da utvrdimo identitet Kvaralonovog gnusnog legla. Zadovoljni smo da vaš narod nije naš skriveni neprijatelj.
+RESPOND_STOP_ATTACKING_01  | Naše flote su tražile neprijatelje Imperije. Ako niste naši neprijatelji, one nemaju potrebu da ostanu tu gde su.
+

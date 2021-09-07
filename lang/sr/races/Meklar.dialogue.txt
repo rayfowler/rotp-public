@@ -1,0 +1,143 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Meklar specific dialogue
+
+CONTACT_ERRATIC            | Vrsta: [your_race]. Oznaka vođe: [your_title]. Tehnološke inovacije: varijabilno. Procena pretnje: Neuspešno.
+CONTACT_HONORABLE          | [your_race] predstavlja interesovanje. [my_empire] oseća potencijal za saradnju na obostranu korist. Rezultati će se tek videti.
+CONTACT_RUTHLESS           | [my_empire] je sada svestan postojanja [your_raceSke] rase. [my_title] daje upozorenje svima iz [your_raceSke] vrste: ne mešajte se u ciljeve Protektorata. Suprotno će rezultirati [your_raceSkom] izumiranju.
+//
+GREETING_01                | Potvrđen identitet savezničkog ambasadora. Recite vaše zahteve za Protektorat. Protektorat će pomoći ako je moguće.
+GREETING_04                | [my_empire] prepoznaje [your_raceSku] rasu, ambasadore. Protektorat je sada spreman da procesuira zahteve.
+GREETING_07                | Navedite zahteve. Protektorat verovatno neše proslediti zahteve od [your_raceIja] ka [my_title] za procesuiranje.
+//
+DECLAREWAR_HATE_01         | [my_empire] ne želi više da toleriše prisustvo [your_empireStva]. Snaga [your_raceSke] rase je komparativno primitivna. Izvršavam protokol za pretraživanje i uništavanje.
+DECLAREWAR_HATE_02         | [my_title] neće više dozvoliti mešanje [your_raceSke] vrste u ciljeve Protektorata. Protektorat je spreman da posveti dosta toga da bi se očuvala primarna direktiva.
+DECLAREWAR_HATE_03         | Protektorat ne može da nastavi sa svojim direktivama dok [your_empire] postoji. Protektorat mora da okonča ovu vrstu. Druga opcija nije nađena.
+DECLAREWAR_ERRATIC_01      | [my_title] je zaključio da postojanje [your_raceSke] vrste preti ciljevima Protektorata. Protektorat odmah započinje protokole istrebljenja.
+DECLAREWAR_ERRATIC_02      | [my_title] ocenjuje da [your_raceSka] vrsta verovatno krije tajne koje mogu da pomognu ciljevima Protektorata.
+DECLAREWAR_ERRATIC_03      | [my_title] smatra da je [your_raceSka] vrsta  as neprihvatljiva varijabla u planovima Protektorata. Protektorat će istrebiti [your_raceSku] vrstu ili okončati svoje postojanje u tom procesu.
+DECLAREWAR_MILITARY_01     | [my_empire] mora nastaviti da se širi po galaksiji u potrazi za krajnjim ciljem. [your_empire] sprečava ekspanziju. Problem će sada biti otklonjen.
+DECLAREWAR_MILITARY_02     | Protektorat ne može da locira primarni cilj. Mogućnost postoji da planete u blizini, ili koje pripadaju [your_empireStvu] sadrže ono što tražimo. Rat neizbežan.
+DECLAREWAR_MILITARY_03     | Protektorat je primoran da proširi domet svoje teritorije. Snaga [your_raceSke] vrste nije obeshrabrujući faktor. Rat je nepoželjan, ali neophodan.
+DECLAREWAR_ALLIANCE_01     | Vi iz [your_empireStva] ste objavili rat savezniku Protektorata. Protektorat će zaštititi svoje interese i ciljeve iskorenjivanjem [your_raceSke] pretnje.
+DECLAREWAR_ALLIANCE_02     | Protektorat je primio zahtev za pomoć od [other_empireStva]. Započet postupak pružanja pomoći savezniku u ratu protiv [your_raceSke] vrste sve dok sukob traje.
+DECLAREWAR_ALLIANCE_03     | [your_raceSka] vrsta pokazuje aroganciju objavom rata drugima. Protektorat će pomoći drugoj imperiji da otkloni [your_raceSku] vrstu iz galaksije.
+DECLAREWAR_SPYING_01       | [your_raceSka] vrsta se upušta u tajnovite akcije protiv Protektorata. Posledice za Protektorat: zanemarljive. Posledice za [your_raceSku] vrstu: fatalne.
+DECLAREWAR_SPYING_02       | Detektovano podmetanje u teritoriji Protektorata. Potvrđen izvor: [your_raceSka] vrsta. Protokoli Protektorata zahtevaju odgovor u vidu rata. 
+DECLAREWAR_SPYING_03       | Protektorat detektuje očigledan pokušaje destabilizacije od strane [your_empireStva]. Nemoguće dozvoliti [your_raceSkoj] vrsti da nastavi mešanje u ciljeve. Protektorat mora da uzvrati po svaku cenu.
+DECLAREWAR_ATTACK_01       | [your_raceSka] vrsta dokazuje neprijateljstvo uprkos očiglednoj [my_raceSkoj] superiornosti. Protektorat započinje proces otklanjanja pretnje.
+DECLAREWAR_ATTACK_02       | [your_raceSka] vrsta ometa ciljeve Protektorata direktnim napadima. Sukob je neizbežan.
+DECLAREWAR_ATTACK_03       | [your_raceSka] vrsta pokušava da spreči Protektorat u postizanju ciljeva uništavanjem [my_raceSke] vrste. Protektorat će uzvratiti sa svom raspoloživom vojnom silom.
+DECLAREWAR_OPPORTUNITY_01  | [my_title] veruje da će se [your_raceSka] vrsta na kraju pokazati štetnim za postizanje primarne direktive. Protektorat će istrebiti [your_raceSku] vrstu pre nego što se ta pretnja ispuni.
+DECLAREWAR_ASSASSIN_01     | Ambasador Protektorata onemogućen akcijama [your_raceSke] vrste pre nego što se integrisao u Mejnfrejm. [your_raceSke] akcije zahtevaju nasilnu odmazdu.
+
+OFFER_PEACE_01             | [my_title] donosi novi zaključak. Rat za Protektorat više nije prihvatljiv trošak. Protektorat želi da odmah sklopi mirovni ugovor. 
+OFFER_TRADE_01             | [your_raceSka] vrsta poseduje značajne resurse. Protektorat takođe poseduje stvari od vrednosti. Protektorat predlaže trgovinski ugovor od [amt] MK godišnje.  
+OFFER_PACT_01              | Protektorat teži ishodu van besmislenog sukoba. Ugovor o Nenapadanju sa [your_raceSkom] vrstom smatra se najpametnijim načinom za postizanje navedenog rezultata. 
+OFFER_ALLIANCE_01          | [my_title] vrednuje diplomatiju sa [your_raceSkom] vrstom. Protektorat predlaže formalni savez kako bi se obezbedio opstanak [your_raceSke] vrste i [my_raceIja]. Potreban neposredan odgovor. 
+
+WARN_TRESPASSING_01        | [your_raceSka] vrsta detektovana u [system] sistemu. Na to područje je već položio pravo Protektorat. Napustite odmah. 
+WARN_EXPANSION_01          | Brzo širenje [your_raceSke] vrste se smatra pretnjom za ciljeve Protektorata. Nastavak teritorijalnog rasta iznudiće vojnu akciju kao odgovor. 
+WARN_BUILDUP_01            | Mreža nadzora Protektorata identifikuje [your_raceSke] flote kao potencijalnu pretnju za bezbednost. Povećamo smotru [your_raceSke] vrste da bi osigurali interese Protektorata.
+WARN_SKIRMISH_01           | Konflikt izmeću Protektorata i [your_raceSkih] flota detektovan na [system] sistemu. Protektorat savetuje da se ne ponavljaju prekršaji: Protektorat je spreman da prikladno odgovori ako upozorenje ne bude poslušano. 
+WARN_ATTACKED_01           | [attacker_raceSka] agresija zabeležena na [system] sistemu. [defender_title] šalje poruku ambasadoru: nastavak ugrožavanja bezbednosti Protektorata će rezultirati istrebljenjem [attacker_raceSke] vrste. 
+WARN_INVADED_01            | Podsetnik Protektorata da [attacker_raceSka] vrsta nema nikakva prava na [defender_raceSki] prostor. Otklonite flote odmah ili se suočite sa kompletnim uništenjem.
+WARN_ESPIONAGE_01          | [spy_raceSka] špijunska aktivnost zabeležena u teritoriji Protektorata. Bezbednosni protokoli Protektorata su bolji od [spy_raceSkog] umeća u špijuniranju. Ponovno testiranje Protektorata se može pokazati kao fatalna greška. [framed]
+WARN_SABOTAGE_01           | Protektorat je svestan da je [spy_raceSka] vrsta umešana u nedavnoj sabotaži. Pokušaj stvaranja haosa je previše tup da bi zahtevao odgovor. Dalji pokušaji sabotaže garantovaće brzu odmazdu [forced]
+WARN_BIOWEAPON_01          | Protektorat je osmotrio upotrebu sirovog biološkog oružja. Efektivno naoružavanje. Procena pretnje [attacker_raceSke] vrste povećana za 3 nivoa.
+WARN_GENOCIDE_01           | Zabeležen genocid nad [victim_raceSkom] vrstom od strane [attacker_raceSke] vrste. Protektorat nije zainteresovan za moguće uzroke ili mogućnosti. Procena pretnje [attacker_raceSke] vrste povećana za 5 nivoa.  
+WARN_FINAL_WAR_01          | Sve poznate vrste su stvorile sporazum kako bi osigurale trajni mir u galaksiji. [rebel_raceSka] vrsta je jedini disident. Protektorat će preduzeti odgovarajuće mere.
+WARN_COUNCIL_VOTE_01       | Protektorat je svestan akcija [voter_raceIja] u Savetu. Značenje nebitno. Rezultat je ocenjen kao štetan za [candidate_raceSke] ciljeve. Diplomatsko stanovište prilagođeno u skladu s tim.  
+WARN_OATHBREAKER_01        | [my_title] donosi zaključak: [your_raceSka] vrsta se više ne smatra pouzdana. Svi budući poslovi podležu reviziji jer [your_raceSke] vrste krši obavezujući sporazum. 
+WARN_ATTACKED_ALLY_01      | Zabeležen sukob između [your_raceSke] vrste i [defender_raceSke] vrste. [defender_raceSka] vrsta poznata kao saveznik Protektorata. Prestanite sa borbom ili se pripremite za posledice.
+WARN_REBELLING_AGAINST_01  | [your_raceSka] vrsta sada predstavlja prepreku ciljevima Protektorata. Presuda Galaktičkog Saveta neprihvatljiva. Čeka se odgovor Vrhovnog Arbitra.
+
+
+PRAISE_COUNCIL_VOTE_01     | Ambasador [voter_raceSke] vrste nastavlja da pomaže u ostvarivanju [candidate_raceSkih] ciljeva. Protektorat prepoznaje korist u nastavku veza sa [voter_raceSkom] vrstom. Protektorat će vratiti uslugu ako bude potrebno. 
+PRAISE_COUNCIL_VOTE_02     | Protektorat primećuje vaš pozitivan glas u Savetu. Protektorat će shodno tome prilagoditi pogled na [voter_raceSku] vrstu.
+PRAISE_COUNCIL_VOTE_03     | Protektorat priznaje verovatnoću za podmetanje od strane [voter_raceSke] vrste. Nastavak pružanja pomoći Protektoratu u Savetu može umanjiti zabrinutost.
+
+PRAISE_ATTACKED_ENEMY_01   | Napadati neprijatelje Protektorata dokazuje posvećenost ciljevima [my_raceIja]. Protektorat se obavezao da će svesti žrtve [attacker_raceSke] vrste na apsolutni minimum.
+PRAISE_ATTACKED_ENEMY_02   | Protektorata pozdravlja pomoć protiv [defender_raceSke] vrste. Ovaj rat može se pokazati kao novi početak između [my_raceSkih] i [attacker_raceSkih] vrsta.
+PRAISE_ATTACKED_ENEMY_03   | Napadanje [defender_raceSke] vrste ne opravdava prošle zločine protiv Protektorata. Protektorat će ponovo proceniti nivo opasnosti od [attacker_raceSke] vrste u zavisnosti od njihovih akcija u ovom ratu.
+
+PRAISE_TRADE_01            | Protektorat i [your_raceSka] vrsta nastavljaju da dobijaju mnogo od kontinuirane trgovine. Protektorat želi da se trgovina nastavi sve dok dogovor ima povoljan status.
+PRAISE_TRADE_02            | Protektorat izražava zadovoljstvo trgovinskim ugovorom sa [your_raceSkom] vrstom. Osigurajte da ugovor potraje da bi obe rase profitirale jedna od druge.
+PRAISE_REBELLING_WITH_01     | Protektorat se slaže da je vladar Galaktičkog Saveta nepouzdan. Prigovor [your_raceSke] vrste zabeležen. Protektorat će pomoći [your_raceSkoj] vrsti u pobuni. 
+ 
+ACCEPT_TRADE_01            | Zahtev za trgovinu od [your_raceSke] vrste primljen. Predložen isnos od [amt] MK. Protektorat prihvata.
+RESPOND_IGNORE_THREAT_01   | Pretnja [your_raceSke] vrste je zbunjujuća. [your_raceSka] civilizacija je znatno inforeiornija od flota Protektorata. Ignorišemo.
+RESPOND_STOP_SPYING_01     | Špijun Protektorata zarobljen dok je pokušavao da stekne uvid u [your_raceSke] oblike života. Protektorat šalje izvinjenje. Vratite zarobljenog [my_raceIja] prvom prilikom
+RESPOND_STOP_ATTACKING_01  | Protektorata uspešan u pokazivanju vojne sposobnosti [your_raceSkoj] civilizaciji. Vratićemo flote na naznačene odbrambene koordinate.
+
+DIPLO_TECH_REQUEST_MENU_01   | Precizirajte tehnologiju.
+DIPLO_TECH_COUNTER_MENU_01   | Precizirajte kompenzaciju.
+DIPLO_TRADE_MENU_01          | Precizirajte iznos.
+DIPLO_TREATY_MENU_01         | Precizirajte ugovor.
+DIPLO_DECLARE_WAR_MENU_01    | Potvrdite pre nastavka.
+DIPLO_SUGGEST_WAR_MENU_01    | Precizirajte metu.
+DIPLO_BREAK_ALLIANCE_MENU_01 | Precizirajte saveznika.
+DIPLO_THREATEN_MENU_01       | Precizirajte.
+DIPLO_OFFER_AID_MENU_01      | Precizirajte.
+DIPLO_OFFER_TECH_MENU_01     | Precizirajte tehnologiju.
+
+DECLINE_OFFER_01           | Zahtev odbijen.
+DECLINE_OFFER_02           | Zahtev odbijen.
+DECLINE_OFFER_03           | Zahtev odbijen.
+DECLINE_OFFER_04           | Zahtev odbijen.
+DECLINE_OFFER_05           | Zahtev odbijen.
+DECLINE_OFFER_06           | Zahtev odbijen.
+DECLINE_OFFER_07           | Zahtev odbijen.
+DECLINE_OFFER_08           | Zahtev odbijen.
+DECLINE_OFFER_09           | Zahtev odbijen.
+DECLINE_ENEMY_ALLY_01      | Zahtev odbijen.
+DECLINE_NO_WAR_ON_ALLY_01  | Zahtev odbijen.
+DECLINE_PEACE_TREATY_01    | Zahtev odbijen.
+DECLINE_ANNOYED_01         | Zahtev odbijen.
+DECLINE_ANNOYED_02         | Zahtev odbijen.
+DECLINE_ANNOYED_03         | Zahtev odbijen.
+DECLINE_OATHBREAKER_01     | Zahtev odbijen.
+DECLINE_ESPIONAGE_01       | Zahtev odbijen.
+DECLINE_SABOTAGE_01        | Zahtev odbijen.
+DECLINE_BUILDUP_01         | Zahtev odbijen.
+DECLINE_ENCROACH_01        | Zahtev odbijen.
+DECLINE_SKIRMISH_01        | Zahtev odbijen.
+DECLINE_ATTACK_01          | Zahtev odbijen.
+DECLINE_INVASION_01        | Zahtev odbijen.
+DECLINE_BIOWEAPONS_01      | Zahtev odbijen.
+DECLINE_TECH_TRADE_01      | Zahtev odbijen.
+OFFER_TECH_EXCHANGE_01     | Protektoratu potrebna [tech] tehnologija. Precizirajte kompenzaciju.
+ACCEPT_TECH_EXCHANGE_01    | Prihvatanje zabeleženo.
+ACCEPT_FINANCIAL_AID_01    | Prihvatanje zabeleženo.
+ACCEPT_TECHNOLOGY_AID_01   | Prihvatanje zabeleženo.
+
+BREAK_TRADE_01             | Trgovinski ugovor raskinut.
+ANNOUNCE_PEACE_01          | Prihvatanje zabeleženo.
+ACCEPT_PEACE_01            | Zahtev odobren.
+
+BREAK_PACT_01              | Ugovor o Nenapadanju raskinut.
+ANNOUNCE_PACT_01           | Prihvatanje zabeleženo.
+ACCEPT_PACT_01             | Zahtev odobren.
+
+BREAK_ALLIANCE_01          | Savez raskinut.
+ANNOUNCE_ALLIANCE_01       | Prihvatanje zabeleženo.
+ACCEPT_ALLIANCE_01         | Zahtev odobren.
+ACCEPT_JOINT_WAR_01        | Zahtev odobren.
+
+RESPOND_CLOSE_EMBASSY_01   | Prihvatanje zabeleženo.
+RESPOND_BREAK_TRADE_01     | Prihvatanje zabeleženo.
+RESPOND_BREAK_PACT_01      | Prihvatanje zabeleženo.
+RESPOND_BREAK_ALLIANCE_01  | Prihvatanje zabeleženo.
+RESPOND_DECLARE_WAR_01     | Prihvatanje zabeleženo.

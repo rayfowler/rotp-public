@@ -1,0 +1,118 @@
+// race-specific variables (must start with _)
+_empire                           | Klakonska Unija, Klakantska Unija, Klokanska Unija, Artroponska Unija, Koleopteronska Unija
+_empireStvo                       | Klakonsku Uniju, Klakantsku Uniju, Klokansku Uniju, Artroponsku Uniju, Koleopteronsku Uniju
+_empireStva                       | Klakonske Unije, Klakantske Unije, Klokanske Unije, Artroponske Unije, Koleopteronske Unije
+_empireStvu                       | Klakonskoj Uniji, Klakantskoj Uniji, Klokanskoj Uniji, Artroponskoj Uniji, Koleopteronskoj Uniji
+_empireStvom                      | Klakonskom Unijom, Klakantskom Unijom, Klokanskom Unijom, Artroponskom Unijom, Koleopteronskom Unijom
+_empireSkog                       | Klakonske Unije, Klakantske Unije, Klokanske Unije, Artroponske Unije, Koleopteronske Unije
+_empireSki                        | Klakonski Unijski, Klakantski Unijski, Klokanski Unijski, Artroponski Unijski, Koleopteronski Unijski
+_empireSku                        | Klakonsku Unijsku, Klakantsku Unijsku, Klokansku Unijsku, Artroponsku Unijsku, Koleopteronska Unijsku
+_empireSka                        | Klakonska Unijska, Klakantska Unijska, Klokanska Unijska, Artroponska Unijska, Koleopteronska Unijska
+_empireSke                        | Klakonska Unijske, Klakantska Unijske, Klokanska Unijske, Artroponska Unijske, Koleopteronska Unijske
+_race                             | Klakon, Klakant, Klokan, Artropon, Koleopteron
+_raceSkog                         | Klakonskog, Klakantskog, Klokanskog, Artroponskog, Koleopteronskog
+_raceSki                          | Klakonski, Klakantski, Klokanski, Artroponski, Koleopteronski
+_raceSkih                         | Klakonskih, Klakantskih, Klokanskih, Artroponskih, Koleopteronskih
+_raceSku                          | Klakonsku, Klakantsku, Klokansku, Artroponsku, Koleopteronsku
+_raceSka                          | Klakonska, Klakantska, Klokanska, Artroponska, Koleopteronska
+_raceSke                          | Klakonske, Klakantske, Klokanske, Artroponske, Koleopteronske
+_raceSkom                         | Klakonskom, Klakantskom, Klokanskom, Artroponskom, Koleopteronskom
+_raceSkoj                         | Klakonskoj, Klakantskoj, Klokanskoj, Artroponskoj, Koleopteronskoj
+_raceIja                          | Klakona, Klakanta, Klokana, Artropona, Koleopterona
+_race_plural                      | Klakoni, Kalakanti, Kolkani, Artroponi, Koleopteroni
+_raceVoc                          | Klakone, Kalakante, Kolkane, Artropone, Koleopterone
+_title                            | Vođa
+_titleV                           | Vođo
+_titleA                           | Vođu
+_titleI                           | Vođom
+_nameTitle                        |
+_nameTitleV                       |
+_nameTitleA                       |
+_nameTitleI                       |
+
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Advisor text
+MAIN_ADVISOR_TITLE                | [player_name]
+MAIN_ADVISOR_BUTTON_OK            | Otpusti
+MAIN_ADVISOR_SCOUT                | Napokon su moji brodovi završili izgradnju. Moram da koristim svoje izviđače da pronađem nove svetove na koje će sleteti moj brod kolonista.
+MAIN_ADVISOR_TRANSPORT            | Utvrdio sam se na ovom novom svetu i moram poslati još iz svoje matice da bih ga proširio. Ovde nema novog života, i tako se moja potraga nastavlja.
+MAIN_ADVISOR_DIPLOMACY            | Napokon novi život! Kakav čudan oblik života da komunicira zvukovima i gestikulacijama. Moram da razmotrim diplomatske i obaveštajne informacije koje znam o njima pre nego što povučem sledeći potez.
+MAIN_ADVISOR_SHIP_ENGINE          | Nastavljam da usavršavam motore svemirskih letelica. Moram reviziram modele brodova da bih ih integrisao u svoju flotu.
+MAIN_ADVISOR_RALLY_POINTS         | Zašto me napadaju? Ne razumem. Moram odabrati tačku za okupljanje da bi moji brodovi otišli da me brane dok pokušavam da shvatim zašto se ovo dogodilo.
+MAIN_ADVISOR_MISSILE_BASES        | Sad shvatam da nije svaki oblik života naučio blagodeti saradnje. Moram da ojačam svoje spoljne svetove raketnim bazama da bih obezbedio svoje posede.
+MAIN_ADVISOR_SHIP_WEAPON          | Nastavljam da napredujem, a moja nova tehnologija naoružanja će mi dati veću moć, čim je integrišem u svoje modele brodova. 
+MAIN_ADVISOR_COUNCIL              | Uzbuđenje! Uskoro će se održati sastanak mnogih vrsta. Koji će se oblici života tamo sakupiti? Ako se predstavim u boljem svetlu među onima koje poznajem, možda će mi olakšati upoznavanje sa nepoznatim vrstama.
+MAIN_ADVISOR_REBELLION            | Šta je ovo? Izgubio sam kontrolu nad sobom na %1 sistemu. Nema veze, moram jednostavno otići tamo i pokazati im da sam ja taj koji odlučuje.
+MAIN_ADVISOR_RESIST_COUNCIL       | Nemoguće! Da je drugi izabran da vlada ovim šugavcima, dok moja mudrost ostaje zanemarena! Ali nema veze: staviću tačku na sve to odmah!
+MAIN_ADVISOR_COUNCIL_RESISTED     | Zašto ove budale istrajavaju u svom nezadovoljstvu? Savet je moj, galaksija je moja i sada će oni da nauče gde im je mesto u mojoj imperiji! 
+
+MAIN_SCOUT_TITLE                  | Istražujem novi zvezdani sistem
+MAIN_COLONIZE_TITLE               | Orbitiram %1, nekolonizovani sistem.
+MAIN_COLONIZE_ANIMATION_TITLE     | U godini %1, formiram novu koloniju.
+MAIN_ALERT_SPY_CAPTURED           | Uhvatio sam špijuna iz [alien_empireStva], prisiljavajući na priznanje njihovih %2 aktivnosti.
+MAIN_ALERT_TRANSPORTS_KILLED      | Moji pokušaj da stignem do %2 je bio sprečen od strane [alien_raceSkih] odbrambenih snaga.
+MAIN_ALERT_INVADERS_KILLED        | [alien_raceSki] transporteri koji su pokušali da stignu do %2 su kompletno uništeni mojom zaslugom.
+MAIN_BOMBARD_TITLE                | Ja sam u orbiti [alien_raceSke] kolonije.
+
+TECH_RESEARCH_COMPUTER            | Moram da izaberem sledeću tehnologiju računara na koju ću se fokusirati.
+TECH_RESEARCH_CONSTRUCTION        | Moram da izaberem sledeću tehnologiju konstrukcije na koju ću se fokusirati.
+TECH_RESEARCH_FORCE_FIELD         | Moram da izaberem sledeću tehnologiju polja sile na koju ću se fokusirati.
+TECH_RESEARCH_PLANETOLOGY         | Moram da izaberem sledeću tehnologiju planetologije na koju ću se fokusirati.
+TECH_RESEARCH_PROPULSION          | Moram da izaberem sledeću tehnologiju pogona na koju ću se fokusirati.
+TECH_RESEARCH_WEAPON              | Moram da izaberem sledeću tehnologiju naoružanja na koju ću se fokusirati.
+TECH_DISCOVERY_TITLE              | Dostigao sam %1 otkriće.
+TECH_SCOUTED_TITLE                | Dok sam istraživao ruševine %1 sistema, otkrio sam novu tehnologiju
+TECH_STOLEN_TITLE                 | Infiltrirao sam %1 istraživački centar na %2.
+TECH_TRADED_TITLE                 | Stekao sam tehnologiju od [alien_raceSkih] naučnika
+TECH_PLUNDERED_TITLE              | Dok sam pljačkao ruševine sa %1 sistema, otkrio sam novu tehnologiju
+TECH_ALLOCATE_SHIELD              | Da li bih trebalo da povećam potrošnju na odbranu u svim mojim kolonijama za izgradnju novih planetarnih štitova
+TECH_ALLOCATE_MISSILE_BASES       | Da li bih trebalo da povećam potrošnju na odbranu u svim mojim kolonijama za unapređenje raketnih baza?
+TECH_ALLOCATE_FACTORIES           | Da li bih trebalo da povećam potrošnju na industriju u svim mojim kolonijama za unapređenje fabričkih kontrola
+TECH_ALLOCATE_CLEAN_WASTE         | Da li bih trebalo da smanjim potrošnju na ekologiju u svim mojim kolonijama na nivo koji je neophodan da budu čiste?
+TECH_ALLOCATE_ENRICH_SOIL         | Da li bih trebalo da povećam potrošnju na ekologiju u svim mojim kolonijama sa standardnim okruženjem da bih započeo teraformiranje.
+TECH_ALLOCATE_ATMOSPHERE          | Da li bih trebalo da povećam potrošnju na ekologiju u svim mojim kolonijama sa nepristupačnim okruženjem da bih započeo teraformiranje.
+TECH_ALLOCATE_TERRAFORM           | Da li bih trebalo da povećam potrošnju na ekologiju u svim mojim kolonijama da bih započeo teraformiranje.
+
+NOTICE_ESPIONAGE_TITLE            | Infiltrirao sam [alien_raceSku] bazu.
+NOTICE_ESPIONAGE_FRAME_TITLE      | Uspeo sam da okrivim drugu rasu za krađu.
+
+SHIP_COMBAT_TITLE_DESC            | Susreo sam neprijateljsku flotu koja pripada [alien_raceSkoj] rasi.
+
+SABOTAGE_FACTORIES_RESULT         | Uništio sam %1 fabrika.
+SABOTAGE_BASES_RESULT             | Uništio sam %1 raketnih baza.
+SABOTAGE_REBELS_RESULT            | Podstakao sam %1 pobunjenika.
+SABOTAGE_REBELS_TOTAL             | Podstakao sam %1 pobunjenika. Nemir je trenutno na %2%.
+SABOTAGE_REBELS_REVOLT            | Pokrenuo sam pobunu!
+
+COUNCIL_CAST_PROMPT               | Moram da izaberem (%1 glasova)...
+
+// text for endings... '#' represents a paragraph break
+// variables: %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 is special race-specific text described below
+GAME_OVER_MILITARY_LOSS2          | Zadesila te je stravična sudbina.#Na početku tvog puta u nepoznato, vinuo si se u svemir uz nadu da ćeš naići na drugi oblik života, jedinstven koliko i ti. Nažalost, taj tvoj san ostaje neispunjen do tvog poslednjeg dana. Ne samo da su se druge inteligentne forme života pokazale potpuno drugačije od tebe, nego su takođe pokazale da su nasilne i ravnodušne ka vašoj potrazi. Upravo to nasilje je uništilo sve tvoje nade i svi tvoji svetovi su sada u rukama onih koji su vas mrzeli od trenutka tvojeg prvog susreta.#Svako od tvojih tela sada leži slomljeno i beživotno tamo gde je ubijeno, od tvojeg matičnog sveta do tvojih najudaljenijih bivših kolonija. Dok poslednji dah napušta tvoje poslednje preostalo smrtno postojanje, shvataš da će svemir zauvek izgubiti svoj najunikatniji oblik života...
+GAME_OVER_MILITARY_WIN2           | Tvoja potraga je stigla kraju... za sada.#Uz velike nade, sanjao si da ćeš pronaći drugu svest poput tvoje negde u dubinama svemira. Iako si upoznao razne oblike inteligencije, postalo je očigledno da nijedan od njih nije sličan jedinstvenosti koju ti poseduješ. I šta još gore: i strahu od onoga što nisu razumeli, napali su te, i time izazvali strahovit odziv tvojeg, i tvojih nebrojenih tela koja nastanjuješ. Teška srca ih likvidiraš, i sa još težim srcem shvataš da si jedini preostali oblik inteligencije koja naseljava ovu galaksiju.#Ipak, nije sve izgubljeno. Iako ove tuđinske rase, sa svojim jedinstvenim oblicima bića, nisu dale odgovor tvojoj potrazi, sada shvataš da postoji čitav univerzum koji treba istražiti. Preostalo je samo da se proširiš u svaki kutak ove galaksije i započneš potragu ispočetka...
+GAME_OVER_MILITARY_ALLIANCE_WIN2  | Tvoja potraga je stigla kraju... za sada.#Ispunjava te prekomerna tuga zbog dela koja na koja si bio primoran. U potrazi za srodstvom među planetama ove galaksije, samo si naišao na mnoštvo neukih bića koja su se obrušila na tebe samo zbog toga što si različit. Kad su se njihove reči pretvorile u nasilje, udarili ste na ih da bi odbranili sebe i svoje interese, nadajući se sve vreme da će oni videti grešku svog puta i uvideti koliko ste jedinstven oblik života. Tvoje nade su na kraju potonule, a svi koji su se o vas ogrešili nasiljem su zauvek ućutkani.#Ali ima razloga sreći, drevni! Iako nisi uspeo da pronađeš svest sličnu tvojoj, uspeo si da stekneš verne saveznike pre nego što se tvoj put završio. Jedno je sigurno, barem te smatraju jednakim prijateljem kao i ti njih. Ako se ponovo pojavi čežnja da otkriješ da li si zaista jedinstven u svemiru, možeš da kreneš u druge galaksije kad god poželiš. Ali za sada, možeš da se opustiš i uživaš u osećaju druženja koji si pronašao i uživati u svim blagodatima koje će to druženje nesumnjivo doneti.
+GAME_OVER_COUNCIL_LOSS2           | Tvoja potraga je stigla kraju... za sada.#Tvoja potraga za sebi srodnima kroz okean zvezda ti nije doneo kraj kakav si želeo. Iako si u toj potrazi upoznao razne neobične i čudnovate narode, takođe si i sreo mnoge podle i zlurade kulture. Avaj, najnepodnošljiviji s kojim si se susreo sada je Gospodar Nove Republike. Sumnjaš da će vam ovaj novi vođa biti naklonjen, a svi neophodni dokazi za taj strah se nalaze u prethodim odnosima sa tim tuđinskim vođom.#Sve što si želeo bilo je da nađeš drugog koji je jedinstven poput tebe. Sada možeš samo da čamiš, potčinjen pod silinom veće moći od tvoje. Samo se moliš da te [leader_name] ostavi na miru, jer ako oni tako odluče, čitava moć galaksije biće uperena protiv tebe...
+GAME_OVER_COUNCIL_ALLIANCE_WIN2   | Tvoja potraga je stigla kraju... za sada.#Novo doba za Klakone treba da započne, a tvoji verni prijatelj, [leader_name], sada je spreman da vodi Novu Republiku napred u svetlu budućnosti. Iako različiti od tebe u mnogim aspektima, tvoji prijatelji te smatraju zanimljivim i imaju razumevanje za tebe. Ti u njih imaš poverenje da ti omoguće da nastavak misije nakon završetka rada na ovom novom savezu. Mnogo će biti potrebno da takve različite vrste postignu harmoničan suživot, ali znate da će %8 to izvršiti.#Ovakav ishod ti pruža zadovoljstvo. Ionako nikada nisi mnogo mario za zamršenost političkih manevrisanja i drago ti je što će tvoj prijatelj zauvek preuzeti takav teret. Sve što si priželjkivao bilo je pronaći dušu poput tvoje negde u ovoj galaksiji. Možda, jednog dana, se baš to i dogodi...
+GAME_OVER_REBELLION_LOSS2         | Zadesila te je stravična sudbina.#U početku si bio sam, i sada na samom kraju, i dalje stojiš sam. Nemoćan da postigneš krajnji cilj svoje misije, talasi su te nosili da susretneš razne neobične civilizacije, sve dok su one koje su bile promišljenije od tebe nisu udružile da formiraju Novu Republiku. Osećajući da će tvoja misija dostići prevremeni kraj, dok je [leader_name] preuzeo plašt vođstva,  umesto da se poslušno predaš, odlučio si da se boriš protiv takve sudbine. To nije bila prva greška koju si počinio na svom putovanju, ali pokazala se, na žalost, kao poslednja.#Sada dok %8 galaksijom, u svojim poslednjim momentima u sebi razmišljaš da li će te bar tvoja smrt lišiti briga. Da si bar mogao da pronađeš još jednog sličnog sebi, ili bar nekoga ko razume ko si i šta si, možda bi se tvoja sudbina drugačije odigrala da ste mogli da se zajedno prihvatite oružja.
+GAME_OVER_REBELLION_WIN2          | Tvoja potraga je stigla kraju... za sada.#Uprkos tvojim najvećim željama, galaksija se uzdigla protiv tebe, i naterala te da im to vratiš istom merom. Nije bilo moguće za tebe da prihvatiš vođstvo ksenofobičnog vladara [leader_name], i sam si se prihvatio oružja da bi odbranio sebe i svoju misiju od njihove užasne vladavine. Znao si da oni koji su bili izmanipulisani od strane ovih licemernih tiranina najverovatnije se tebi usprotiviti, ali nastavak tvoje misije nije mogao da bude ugrožen, nevezano za okolnosti. I tako, tužnog srca, smrvio si sve koji su ti se usprotivili.#Da je bilo koja od ovih rasa prevazišla svoj strah i mržnju od nepoznatog, možda bi jednog dana mogli da imaju miran suživot. Ali nije sve tako crno, jer ćeš bar moći da ispričaš ovu mučnu priču onima koji su cilj tvoje potrage, ukoliko ikada uspeš da ih pronađeš.
+GAME_OVER_REBEL_ALLIANCE_WIN2     | Tvoja potraga je stigla kraju... za sada.#Znao si da će se ovo desiti još od prvog susreta Galaktičkog Saveta. Uprkos tvojim upozorenjima ka drugim imperijama koje nastanjuju ovu galaksiju, izdajnički i podli [leader_name] je uspeo da stigne na čelo Nove Republike, i pretio da inficira čitavu galaksiju njihovom podlom ksenofobijom. Hrabro si se borio protiv njih, i iako su mnogi izabrali da stanu na stranu tvojih protivnika, na kraju si uspeo da odbraniš svoje interese.#Možda je najsretnija stvar u celoj priči podrška koju si dobio od tvojih prijatelja u ovom konačnom ratu. Dovoljno mudri da shvate opasnost i dovoljno plemeniti da ti pruže podršku, sretan si što nisi morao da se boriš sam. Sada možeš da postigneš zaista miran suživot, i da deliš sa njima blagodeti ove galaksije. Uskoro ćeš se možda naći u još dubljem svemiru, i napustiti galaksiju u nadi da ćeš se sresti sa onim koga tražiš jako, jako dugo...
+GAME_OVER_COUNCIL_WIN2            | Tvoja potraga je stigla neočekivanom kraju.#Mnogo si otkrio otkako si prvi put krenuo iz svog drevnog zavičaja u potrazi za drugom svesti poput tvoje. Iako taj san još nisi ispunio, znanje i prijateljstvo koje si stekao od novih poznanica se pokazalo kao slatka nagrada. Tvoji saveznici ne samo da su preovladali strah od tvoje unikantnosti, već su vas izabrali za Gospodara Nove Republike. Budućnost kakvu nikada nisi očekivao leži pred tobom, i vodićeš tvoje nove prijatelje u sutrašnjicu sa svim strpljenjem i poverenjem koje su i oni tebi ukazali.#Možda ćeš jednog dana ponovo krenuti u potragu za nekim ko postoji na isti način kao i ti. Međutim, još te čeka  mnogo posla i tvoja potraga će morati da sačeka dok se taj posao ne završi. A kada se završi, možda će tvoja iskonska čežnja biti znatno umanjena. Na kraju krajeva, prvi put u svom dugom životu više nisi sam.
+GAME_OVER_COUNCIL_MILITARY_WIN2   | Tvoja potraga je stigla neočekivanom kraju.#Napokon, tvoje bitke su došle kraju. Nakon preuzimanja pozicije Gospodara Nove Republike, uspeo si da okupiš sve više forme života ove galaksije da prijateljski sednu za isti sto. Makar je bilo tako, dok se žalosna nepripremljena pobuna uzdigla protiv tebe. Osnovana na ksenofobiji i straha od onoga šta si ti, pobuna nije mogla da shvati ni snagu tvog jednoumlja, ni žestinu tvojih saveznika u odbrani republike. Oni su smrvljeni, i reka mira će poteći galaksijom, kao voda koja se uliva u okeane mnogobrojnih svetova koji su sada tvoji.#Dok ti i tvoji saveznici delite teritorije pobunjenika, tvoj um se na kratko podseća misije koja te je vinula iz tvojeg doma veoma davno. Istina je, nikada nisi našao ono za čime si tragao, i u mnogim aspektima si ostao usamljen. Ali sreća nadolazi uz shvatanje da sa saveznicima koje si stekao na ovom putu, nikada više nećeš biti zaista sam.
+GAME_OVER_COUNCIL_MILITARY_LOSS2  | Zadesila te je stravična sudbina.#Niko ne može da te krivi zbog tvoje nade da ćeš jednog dana dovesti galaksiju do mira kao Gospodar Nove Republike. Niko ne može da te krivi za to što si dao sve od sebe da spojiš izuzetno raznolike civilizacije. Ali uprkos svim tvojim naporima, pobuna koja se podigla protiv tebe nije samo uspela da te uzdrma, već da te liši pozicije vodstva i smrvio Novu Republiku, i svu snagu koja je uspela da sakupi. Pre nego što su se njihove imperije pretvorile u prah, tvoji saveznici, sada već odavno mrtvi, možda su se pokajali to što su izabrali tebe da ih vodiš. Bar ne možeš da čuješ njihovo jadikovanje, sada su njihovi glasovi zauvek utihnuli.#Poslednja od tvojih tela se spremaju za susret sa sudbinom, u skolništima koja su iskopali da bi se sakrili od tvojih neprijatelja. Bez hrane i vode, nije im ostalo puno vremena. Da si samo pronašao drugog poput sebe, nekoga ko te potpuno razume i ko bi se borio uz tebe sa jednakom istrajnošću, videli bi oni. Da li bi se stvari završile drugačije? Možda. Avaj, ipak nikada nećeš saznati...
+
+// This text is the %8 variable in some of the game over text... when this race wins the game
+GAME_OVER_ALLIANCE_WIN3           | nepogrešivo jednoumlje Klakona
+GAME_OVER_REBELLION_LOSS3         | bezdušne horde Klakona dominiraju

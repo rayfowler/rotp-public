@@ -1,0 +1,10 @@
+// These are the fonts used for the 5 font types within the game.
+
+name,       Српски 
+
+logo,       OrelegaOne-Regular.ttf,      100
+dialogue,   RobotoMono-Regular.ttf,      100
+narrow,     RobotoCondensed-Bold.ttf,    85
+normal,     RobotoCondensed-Regular.ttf, 100
+plain,      RobotoCondensed-Regular.ttf, 75
+language,   MyriadPro-BoldCond.otf,   100

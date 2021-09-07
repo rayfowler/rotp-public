@@ -1,0 +1,1197 @@
+
+
+//
+// Armor techs
+// 
+ARMOR_0_NAME     | Titanijum Oklop
+ARMOR_0_ITEM     | Titanijum
+ARMOR_0_BRIEF    | Poeni Trupa %1
+ARMOR_0_DETAIL   | Početna tehnologija oklopa. Nema bonusa za oklop brodova ili borbi na tlu.
+
+ARMOR_1_NAME     | Duraloj Oklop
+ARMOR_1_ITEM     | Duraloj
+ARMOR_1_BRIEF    | Poeni Trupa %1
+ARMOR_1_DETAIL   | Povećava poene trupa brodova i transportera za 50%. Lični borbeni oklop je takođe poboljšan, dodaje 5 na sve napade na tlu.
+
+ARMOR_2_NAME     | Zortijum Oklop
+ARMOR_2_ITEM     | Zortijum
+ARMOR_2_BRIEF    | Poeni Trupa %1
+ARMOR_2_DETAIL   | Povećava poene trupa brodova i transportera za 100%. Lični borbeni oklop je takođe poboljšan, dodaje 10 na sve napade na tlu.
+
+ARMOR_3_NAME     | Andrijum Oklop
+ARMOR_3_ITEM     | Andrijum
+ARMOR_3_BRIEF    | Poeni Trupa %1
+ARMOR_3_DETAIL   | Povećava poene trupa brodova i transportera za 150%. Lični borbeni oklop je takođe poboljšan, dodaje 15 na sve napade na tlu.
+
+ARMOR_4_NAME     | Tritanijum Oklop
+ARMOR_4_ITEM     | Tritanijum
+ARMOR_4_BRIEF    | Poeni Trupa %1
+ARMOR_4_DETAIL   | Povećava poene trupa brodova i transportera za 200%. Lični borbeni oklop je takođe poboljšan, dodaje 20 na sve napade na tlu.
+
+ARMOR_5_NAME     | Adamantijum Oklop
+ARMOR_5_ITEM     | Adamantijum
+ARMOR_5_BRIEF    | Poeni Trupa %1
+ARMOR_5_DETAIL   | Povećava poene trupa brodova i transportera za 250%. Lični borbeni oklop je takođe poboljšan, dodaje 25 na sve napade na tlu.
+
+ARMOR_6_NAME     | Neutronijum Oklop
+ARMOR_6_ITEM     | Neutronijum
+ARMOR_6_BRIEF    | Poeni Trupa %1
+ARMOR_6_DETAIL   | Povećava poene trupa brodova i transportera za 300%. Lični borbeni oklop je takođe poboljšan, dodaje 30 na sve napade na tlu.
+
+
+//
+// Atmospheric Terraforming techs
+// 
+ATMOSPHERE_0_NAME      | Atmosfersko Teraformiranje
+ATMOSPHERE_0_DETAIL    | Pretvara Nepristupačna okruženja u Normalna okruženja po ceni od 150 MK.
+
+//
+// Automated Repair techs
+// 
+AUTOREPAIR_0_NAME      | Automatizovani Sistem za Popravku 
+AUTOREPAIR_0_BRIEF     | Popravlja 15% brodskih poena po potezu
+AUTOREPAIR_0_DETAIL    | Neuništeni brodovi mogu popraviti do 15% od svojih ukupnih poena trupa na kraju svakog poteza.
+
+AUTOREPAIR_1_NAME      | Napredna Kontrola Štete
+AUTOREPAIR_1_BRIEF     | Popravlja 30% brodskih poena po potezu
+AUTOREPAIR_1_DETAIL    | Neuništeni brodovi mogu popraviti do 30% od svojih ukupnih poena trupa na kraju svakog poteza.
+
+
+//
+// Battle Computer techs
+// 
+// this is the Ship Design entry for selecting no battle computer
+COMPUTER_0_NAME    | 
+COMPUTER_0_ITEM    |  
+COMPUTER_0_BRIEF   | Nivo Napada 0
+COMPUTER_0_DETAIL  |
+
+COMPUTER_1_NAME    | Borbeni Kompjuter Serija I
+COMPUTER_1_ITEM    | Serija I
+COMPUTER_1_BRIEF   | Nivo Napada I
+COMPUTER_1_DETAIL  | Povećava preciznost oružja do nivoa 1.
+
+COMPUTER_2_NAME    | Borbeni Kompjuter Serija II
+COMPUTER_2_ITEM    | Serija II
+COMPUTER_2_BRIEF   | Nivo Napada II
+COMPUTER_2_DETAIL  | Povećava preciznost oružja do nivoa 2.
+
+COMPUTER_3_NAME    | Borbeni Kompjuter Serija III
+COMPUTER_3_ITEM    | Serija III
+COMPUTER_3_BRIEF   | Nivo Napada III
+COMPUTER_3_DETAIL  | Povećava preciznost oružja do nivoa 3.
+
+COMPUTER_4_NAME    | Borbeni Kompjuter Serija IV
+COMPUTER_4_ITEM    | Serija IV
+COMPUTER_4_BRIEF   | Nivo Napada IV
+COMPUTER_4_DETAIL  | Povećava preciznost oružja do nivoa 4.
+
+COMPUTER_5_NAME    | Borbeni Kompjuter Serija V
+COMPUTER_5_ITEM    | Serija V
+COMPUTER_5_BRIEF   | Nivo Napada V
+COMPUTER_5_DETAIL  | Povećava preciznost oružja do nivoa 5.
+
+COMPUTER_6_NAME    | Borbeni Kompjuter Serija VI
+COMPUTER_6_ITEM    | Serija VI
+COMPUTER_6_BRIEF   | Nivo Napada VI
+COMPUTER_6_DETAIL  | Povećava preciznost oružja do nivoa 6.
+
+COMPUTER_7_NAME    | Borbeni Kompjuter Serija VII
+COMPUTER_7_ITEM    | Serija VII
+COMPUTER_7_BRIEF   | Nivo Napada VII
+COMPUTER_7_DETAIL  | Povećava preciznost oružja do nivoa 7.
+
+COMPUTER_8_NAME    | Borbeni Kompjuter Serija VIII
+COMPUTER_8_ITEM    | Serija VIII
+COMPUTER_8_BRIEF   | Nivo Napada VIII
+COMPUTER_8_DETAIL  | Povećava preciznost oružja do nivoa 8.
+
+COMPUTER_9_NAME    | Borbeni Kompjuter Serija IX
+COMPUTER_9_ITEM    | Serija IX
+COMPUTER_9_BRIEF   | Nivo Napada IX
+COMPUTER_9_DETAIL  | Povećava preciznost oružja do nivoa 9.
+
+COMPUTER_10_NAME   | Borbeni Kompjuter Serija X
+COMPUTER_10_ITEM   | Serija X
+COMPUTER_10_BRIEF  | Nivo Napada X
+COMPUTER_10_DETAIL | Povećava preciznost oružja do nivoa 10.
+
+COMPUTER_11_NAME   | Borbeni Kompjuter Serija XI
+COMPUTER_11_ITEM   | Serija XI
+COMPUTER_11_BRIEF  | Nivo Napada XI
+COMPUTER_11_DETAIL | Povećava preciznost oružja do nivoa 11.
+
+
+//
+// Battle Suit techs for ground combat
+// 
+// this is for default, no-bonus armor that player starts with
+BATTLESUIT_0_NAME    | Oklop
+BATTLESUIT_0_DETAIL  |
+
+BATTLESUIT_1_NAME    | Borbena Odela
+BATTLESUIT_1_DETAIL  | Oklop koji ne samo da štiti, već i povećava snagu. Dodaje 10 na sve šanse kod borbi na tlu.
+
+BATTLESUIT_2_NAME    | Oklopljen Egzoskelet
+BATTLESUIT_2_DETAIL  | Napredna mobilna odela koja ne samo da povećavaju snagu i povećavaju odbranu, već i nude ograničen let kopnenim trupama. Dodaje 20 na sve šanse kod borbi na tlu.
+
+BATTLESUIT_3_NAME    | Pogonski Oklop
+BATTLESUIT_3_DETAIL  | Kombinuje visoku pokretljivost, anti gravitacijski let i tešku oklopnu oblogu kako bi formirao najnapredniji oklop dostupan kopnenim trupama. Dodaje 20 na sve šanse kod borbi na tlu.
+
+
+//
+// Energy Focus techs for beam weapons
+// 
+BEAMFOCUS_0_NAME    | Visoko Energetski Fokus
+BEAMFOCUS_0_BRIEF   | Dodaje +3 domet energetskom oružju
+BEAMFOCUS_0_DETAIL  | Povećava domet svih energetskih oružja za tri.
+
+BEAMFOCUS_1_NAME    | Orakl Interfejs
+BEAMFOCUS_1_BRIEF   | Koncentriše zrakovna oružja, prepolovljava neprijateljske štitove
+BEAMFOCUS_1_DETAIL  | Koordinira sve napade zrakovnih oružja u jedan istovremeni rafal koncentrisane vatre, prepolovljujući snagu neprijateljskog štita.
+
+
+//
+// Biological antidote techs 
+// 
+BIOANTIDOTE_0_NAME    | BioToksin Protivotrov
+BIOANTIDOTE_0_DETAIL  | Smanjuje gubitke nanete biološkim oružjem za 1M po napadu.
+
+BIOANTIDOTE_1_NAME    | Univerzalni Protivotrov
+BIOANTIDOTE_1_DETAIL  | Smanjuje gubitke nanete biološkim oružjem za 2M po napadu.
+
+
+//
+// Biological weapon techs 
+// 
+BIOWEAPON_0_NAME     | Smrtonosne Spore
+BIOWEAPON_0_BRIEF    | Biološko Oružje
+BIOWEAPON_0_DETAIL   | Užasno biološko oružje sposobno da smanji maksimalno stanovništvo planete za 1M po napadu.
+
+BIOWEAPON_1_NAME     | Kataklizma Virus
+BIOWEAPON_1_BRIEF    | Biološko Oružje
+BIOWEAPON_1_DETAIL   | Strahovito biološko oružje sposobno da smanji maksimalno stanovništvo planete za 2M po napadu.
+
+BIOWEAPON_2_NAME     | Bio Terminator
+BIOWEAPON_2_BRIEF    | Biološko Oružje
+BIOWEAPON_2_DETAIL   | Gnusno biološko oružje sposobno da smanji maksimalno stanovništvo planete za 3M po napadu.
+
+//
+// Black Hole Generator tech
+//
+BLACKHOLE_0_NAME     | Generator Crne Rupe
+BLACKHOLE_0_DETAIL   | Kreira pod-prostorno polje koje savija normalan prostor, stvarajući crnu rupu koja uništava 25% do 100% neprijateljskih brodova ili raketnih baza, minus 2% po klasi štita.
+
+
+//
+// Bomb weapon tech
+//
+BOMB_0_NAME     | Nuklearna Bomba
+BOMB_0_BRIEF    | Napada Samo Tlo
+BOMB_0_DETAIL   | Bombe koje eksplodiraju za 3-12 poena i mogu da ciljaju isključivo planete.
+
+BOMB_1_NAME     | Fuziona Bomba
+BOMB_1_BRIEF    | Napada Samo Tlo
+BOMB_1_DETAIL   | Bombe koje eksplodiraju za 5-20 poena i mogu da ciljaju isključivo planete.
+
+BOMB_2_NAME     | Anti-Materijska Bomba
+BOMB_2_BRIEF    | Napada Samo Tlo
+BOMB_2_DETAIL   | Bombe koje eksplodiraju za 10-40 poena i mogu da ciljaju isključivo planete.
+
+BOMB_3_NAME     | Omega-V Bomba
+BOMB_3_BRIEF    | Napada Samo Tlo
+BOMB_3_DETAIL   | Bombe koje eksplodiraju za 20-50 poena i mogu da ciljaju isključivo planete.
+
+BOMB_4_NAME     | Neutronska Bomba
+BOMB_4_BRIEF    | Napada Samo Tlo
+BOMB_4_DETAIL   | Bombe koje eksplodiraju za 40-70 poena i mogu da ciljaju isključivo planete.
+
+
+//
+// Cloaking tech
+//
+CLOAK_0_NAME     | Uređaj za Maskiranje
+CLOAK_0_BRIEF    | Čini brod gotovo nevidljivim
+CLOAK_0_DETAIL   | Čini brod gotovo nevidljivim sve dok ne napadne, poboljšavajući odbranu za +5. Brod mora da se odmaskira da bi napao i automatski se maskira svakog poteza kada ništa ne napadne.
+
+
+//
+// Cloning tech
+//
+CLONE_0_NAME     | Kloniranje
+CLONE_0_DETAIL   | Omogućava uzgoj kolonista sa bioinženjeringom po stopi od 1M za 10 MK.
+
+CLONE_1_NAME     | Napredno Kloniranje
+CLONE_1_DETAIL   | Omogućava uzgoj kolonista sa bioinženjeringom po stopi od 1M za 5 MK.
+
+
+//
+// Combat Transporter tech
+//
+COMBATTRANSPORT_0_NAME     | Borbeni Transporteri
+COMBATTRANSPORT_0_DETAIL   | Transporteri opremljeni ovim uređajima imaju  50% šansi da slete na nerpijateljsko tlo pre nego što neprijateljski brodovi i raketne baze mogu da ih napadnu.
+
+
+//
+// Control Environment tech
+//
+CONTROLENV_0_NAME    | Kontrolisano Normalno Okruženje
+CONTROLENV_0_ITEM    | Standardna Baza Kolonista
+CONTROLENV_0_BRIEF   | Dozvoljava Sletanje na Normalne Planete
+CONTROLENV_0_DETAIL  | Dopušta kolonizaciju standardnih planeta.
+
+CONTROLENV_1_NAME    | Kontrolisano Jalovo Okruženje
+CONTROLENV_1_ITEM    | Jalova Baza Kolonista
+CONTROLENV_1_BRIEF   | Dozvoljava Sletanje na Jalove Planete
+CONTROLENV_1_DETAIL  | Dopušta kolonizaciju jalovih i manje nepristupačnih planeta.
+
+CONTROLENV_2_NAME    | Kontrolisano Tundra Okruženje
+CONTROLENV_2_ITEM    | Tundra Baza Kolonista
+CONTROLENV_2_BRIEF   | Dozvoljava Sletanje na Tundra Planete
+CONTROLENV_2_DETAIL  | Dopušta kolonizaciju tundra i manje nepristupačnih planeta.
+
+CONTROLENV_3_NAME    | Kontrolisano Mrtvo Okruženje
+CONTROLENV_3_ITEM    | Mrtva Baza Kolonista
+CONTROLENV_3_BRIEF   | Dozvoljava Sletanje na Mrtve Planete
+CONTROLENV_3_DETAIL  | Dopušta kolonizaciju mrtvih i manje nepristupačnih planeta.
+
+CONTROLENV_4_NAME    | Kontrolisano Pakleno Okruženje
+CONTROLENV_4_ITEM    | Paklena Baza Kolonista
+CONTROLENV_4_BRIEF   | Dozvoljava Sletanje na Paklene Planete
+CONTROLENV_4_DETAIL  | Dopušta kolonizaciju paklenih i manje nepristupačnih planeta.
+
+CONTROLENV_5_NAME    | Kontrolisano Otrovno Okruženje
+CONTROLENV_5_ITEM    | Otrovna Baza Kolonista
+CONTROLENV_5_BRIEF   | Dozvoljava Sletanje na Otrovne Planete
+CONTROLENV_5_DETAIL  | Dopušta kolonizaciju otrovnih i manje nepristupačnih planeta.
+
+CONTROLENV_6_NAME    | Kontrolisano Ozračeno Okruženje
+CONTROLENV_6_ITEM    | Ozračena Baza Kolonista
+CONTROLENV_6_BRIEF   | Dozvoljava Sletanje na Ozračene Planete
+CONTROLENV_6_DETAIL  | Dopušta kolonizaciju ozračenih i manje nepristupačnih planeta.
+
+
+//
+// Deflector Shield tech
+//
+// this is the entry on Ship Design for selecting no deflector shield
+DEFLECTOR_0_NAME      | 
+DEFLECTOR_0_ITEM      |   
+DEFLECTOR_0_BRIEF     |  
+DEFLECTOR_0_DETAIL    | 
+
+DEFLECTOR_1_NAME      | Klasa I Deflektorski Štitovi
+DEFLECTOR_1_ITEM      | Klasa I
+DEFLECTOR_1_BRIEF     | Apsorbuje 1 poen
+DEFLECTOR_1_DETAIL    | Apsorbuje 1 poen oštećenja od svih napada.
+
+DEFLECTOR_2_NAME      | Klasa II Deflektorski Štitovi
+DEFLECTOR_2_ITEM      | Klasa II
+DEFLECTOR_2_BRIEF     | Apsorbuje 2 poena
+DEFLECTOR_2_DETAIL    | Apsorbuje 2 poena oštećenja od svih napada.
+
+DEFLECTOR_3_NAME      | Klasa III Deflektorski Štitovi
+DEFLECTOR_3_ITEM      | Klasa III
+DEFLECTOR_3_BRIEF     | Apsorbuje 3 poena
+DEFLECTOR_3_DETAIL    | Apsorbuje 3 poena oštećenja od svih napada.
+
+DEFLECTOR_4_NAME      | Klasa IV Deflektorski Štitovi
+DEFLECTOR_4_ITEM      | Klasa IV
+DEFLECTOR_4_BRIEF     | Apsorbuje 4 poena
+DEFLECTOR_4_DETAIL    | Apsorbuje 4 poena oštećenja od svih napada.
+
+DEFLECTOR_5_NAME      | Klasa V Deflektorski Štitovi
+DEFLECTOR_5_ITEM      | Klasa V
+DEFLECTOR_5_BRIEF     | Apsorbuje 5 poena
+DEFLECTOR_5_DETAIL    | Apsorbuje 5 poena oštećenja od svih napada.
+
+DEFLECTOR_6_NAME      | Klasa VI Deflektorski Štitovi
+DEFLECTOR_6_ITEM      | Klasa VI
+DEFLECTOR_6_BRIEF     | Apsorbuje 6 poena
+DEFLECTOR_6_DETAIL    | Apsorbuje 6 poena oštećenja od svih napada.
+
+DEFLECTOR_7_NAME      | Klasa VII Deflektorski Štitovi
+DEFLECTOR_7_ITEM      | Klasa VII
+DEFLECTOR_7_BRIEF     | Apsorbuje 7 poena
+DEFLECTOR_7_DETAIL    | Apsorbuje 7 poena oštećenja od svih napada.
+
+DEFLECTOR_8_NAME      | Klasa IX Deflektorski Štitovi
+DEFLECTOR_8_ITEM      | Klasa IX
+DEFLECTOR_8_BRIEF     | Apsorbuje 9 poena
+DEFLECTOR_8_DETAIL    | Apsorbuje 9 poena oštećenja od svih napada.
+
+DEFLECTOR_9_NAME      | Klasa XI Deflektorski Štitovi
+DEFLECTOR_9_ITEM      | Klasa XI
+DEFLECTOR_9_BRIEF     | Apsorbuje 11 poena
+DEFLECTOR_9_DETAIL    | Apsorbuje 11 poena oštećenja od svih napada.
+
+DEFLECTOR_10_NAME     | Klasa XIII Deflektorski Štitovi
+DEFLECTOR_10_ITEM     | Klasa XIII
+DEFLECTOR_10_BRIEF    | Apsorbuje 13 poena
+DEFLECTOR_10_DETAIL   | Apsorbuje 13 poena oštećenja od svih napada.
+
+DEFLECTOR_11_NAME     | Klasa XV Deflektorski Štitovi
+DEFLECTOR_11_ITEM     | Klasa XV
+DEFLECTOR_11_BRIEF    | Apsorbuje 15 poena
+DEFLECTOR_11_DETAIL   | Apsorbuje 15 poena oštećenja od svih napada.
+
+
+//
+// Displacement tech
+//
+DISPLACEMENT_0_NAME   | Uređaj Prebacivanja
+DISPLACEMENT_0_BRIEF  | 1/3 neprijateljskih napada promašuje
+DISPLACEMENT_0_DETAIL | Nasumično prebacuje opremljene brodove unutar i izvan normalnog prostora, omogućavajući im da izbegnu 1/3 svih napada oružjem koje nije širokog delovanja.
+
+
+//
+// ECM Jammer tech
+//
+// this is the entry on Ship Design for selecting no ECM Jammer
+ECMJAMMER_0_NAME      | 
+ECMJAMMER_0_ITEM      | 
+ECMJAMMER_0_BRIEF     | Raketna Odb 0
+ECMJAMMER_0_DETAIL    | 
+
+ECMJAMMER_1_NAME      | EPM Ometač Serija I
+ECMJAMMER_1_ITEM      | Ometač I
+ECMJAMMER_1_BRIEF     | Raketna Odb 1
+ECMJAMMER_1_DETAIL    | Dodaje 1 nivo odbrane protiv neprijateljskih raketnih napada.
+
+ECMJAMMER_2_NAME      | EPM Ometač Serija II
+ECMJAMMER_2_ITEM      | Ometač II
+ECMJAMMER_2_BRIEF     | Raketna Odb 2
+ECMJAMMER_2_DETAIL    | Dodaje 2 nivoa odbrane protiv neprijateljskih raketnih napada. 
+
+ECMJAMMER_3_NAME      | EPM Ometač Serija III
+ECMJAMMER_3_ITEM      | Ometač III
+ECMJAMMER_3_BRIEF     | Raketna Odb 3
+ECMJAMMER_3_DETAIL    | Dodaje 3 nivoa odbrane protiv neprijateljskih raketnih napada.
+
+ECMJAMMER_4_NAME      | EPM Ometač Serija IV
+ECMJAMMER_4_ITEM      | Ometač IV
+ECMJAMMER_4_BRIEF     | Raketna Odb 4
+ECMJAMMER_4_DETAIL    | Dodaje 4 nivoa odbrane protiv neprijateljskih raketnih napada.
+
+ECMJAMMER_5_NAME      | EPM Ometač Serija V
+ECMJAMMER_5_ITEM      | Ometač V
+ECMJAMMER_5_BRIEF     | Raketna Odb 5
+ECMJAMMER_5_DETAIL    | Dodaje 5 nivoa odbrane protiv neprijateljskih raketnih napada.
+
+ECMJAMMER_6_NAME      | EPM Ometač Serija VI
+ECMJAMMER_6_ITEM      | Ometač VI
+ECMJAMMER_6_BRIEF     | Raketna Odb 6
+ECMJAMMER_6_DETAIL    | Dodaje 6 nivoa odbrane protiv neprijateljskih raketnih napada.
+
+ECMJAMMER_7_NAME      | EPM Ometač Serija VII
+ECMJAMMER_7_ITEM      | Ometač VII
+ECMJAMMER_7_BRIEF     | Raketna Odb 7
+ECMJAMMER_7_DETAIL    | Dodaje 7 nivoa odbrane protiv neprijateljskih raketnih napada.
+
+ECMJAMMER_8_NAME      | EPM Ometač Serija VIII
+ECMJAMMER_8_ITEM      | Ometač VIII
+ECMJAMMER_8_BRIEF     | Raketna Odb 8
+ECMJAMMER_8_DETAIL    | Dodaje 8 nivoa odbrane protiv neprijateljskih raketnih napada.
+
+ECMJAMMER_9_NAME      | EPM Ometač Serija IX
+ECMJAMMER_9_ITEM      | Ometač IX
+ECMJAMMER_9_BRIEF     | Raketna Odb 9
+ECMJAMMER_9_DETAIL    | Dodaje 9 nivoa odbrane protiv neprijateljskih raketnih napada.
+
+ECMJAMMER_10_NAME     | EPM Ometač Serija X
+ECMJAMMER_10_ITEM     | Ometač X
+ECMJAMMER_10_BRIEF    | Raketna Odb 10
+ECMJAMMER_10_DETAIL   | Dodaje 10 nivoa odbrane protiv neprijateljskih raketnih napada.
+
+
+//
+// Ecological Restoration techs
+//
+ECORESTORATION_0_NAME   | Ekološka Restoracija
+ECORESTORATION_0_DETAIL | Eliminiše 2 jedinice industrijskog otpada po ceni od 1 MK.
+
+ECORESTORATION_1_NAME   | Poboljšana Eko Restoracija
+ECORESTORATION_1_DETAIL | Eliminiše 3 jedinice industrijskog otpada po ceni od 1 MK.
+
+ECORESTORATION_2_NAME   | Unapređena Eko Restoracija
+ECORESTORATION_2_DETAIL | Eliminiše 5 jedinica industrijskog otpada po ceni od 1 MK.
+
+ECORESTORATION_3_NAME   | Napredna Eko Restoracija
+ECORESTORATION_3_DETAIL | Eliminiše 10 jedinica industrijskog otpada po ceni od 1 MK.
+
+ECORESTORATION_4_NAME   | Kompletna Eko Restoracija
+ECORESTORATION_4_DETAIL | Eliminiše 20 jedinica industrijskog otpada po ceni od 1 MK.
+
+
+//
+// Energy Pulsar techs
+//
+PULSAR_0_NAME     | Energetski Pulsar
+PULSAR_0_BRIEF    | Proširuje se i šteti 1-5 poena
+PULSAR_0_DETAIL   | Snažna modifikacija motora koja generiše iznenadni sferni nalet energije koji pogađa sve susedne brodove za do 5 poena oštećenja, +1 za svaka dva broda.
+
+PULSAR_1_NAME     | Jonski Pulsar
+PULSAR_1_BRIEF    | Proširuje se i šteti 2-10 poena
+PULSAR_1_DETAIL   | Snažna modifikacija motora koja generiše iznenadni sferni nalet energije koji pogađa sve susedne brodove za do 5 poena oštećenja, +1 za svaki brod.
+
+
+//
+// Engine techs
+//
+ENGINE_0_NAME    | Retro Motori 
+ENGINE_0_DETAIL  | Pokreće brodove hiperbrzinom %1, i omogućava maksimalo manevrisanje klase I u borbi.
+ENGINE_0_ITEM    | Retro
+ENGINE_0_ITEM2   | Klasa 1
+ENGINE_0_BRIEF   | Hiperbrzina 1  Odb %1
+ENGINE_0_BRIEF2  | Borbena Brzina %1
+
+ENGINE_1_NAME    | Nuklearni Motori 
+ENGINE_1_DETAIL  | Pokreće brodove hiperbrzinom %1, i omogućava maksimalo manevrisanje klase II u borbi.
+ENGINE_1_ITEM    | Nuklearni
+ENGINE_1_ITEM2   | Klasa 2
+ENGINE_1_BRIEF   | Hiperbrzina 2  Odb %1
+ENGINE_1_BRIEF2  | Borbena Brzina %1
+
+ENGINE_2_NAME    | Pod-Prostorni Pogon 
+ENGINE_2_DETAIL  | Pokreće brodove hiperbrzinom %1, i omogućava maksimalo manevrisanje klase III u borbi.
+ENGINE_2_ITEM    | PodProstorni
+ENGINE_2_ITEM2   | Klasa 3
+ENGINE_2_BRIEF   | Hiperbrzina 3  Odb %1
+ENGINE_2_BRIEF2  | Borbena Brzina %1
+
+ENGINE_3_NAME    | Fuzioni Pogon 
+ENGINE_3_DETAIL  | Pokreće brodove hiperbrzinom %1, i omogućava maksimalo manevrisanje klase IV u borbi.
+ENGINE_3_ITEM    | Fuzioni
+ENGINE_3_ITEM2   | Klasa 4
+ENGINE_3_BRIEF   | Hiperbrzina 4  Odb %1
+ENGINE_3_BRIEF2  | Borbena Brzina %1
+
+ENGINE_4_NAME    | Impuls Motori 
+ENGINE_4_DETAIL  | Pokreće brodove hiperbrzinom %1, i omogućava maksimalo manevrisanje klase V u borbi.
+ENGINE_4_ITEM    | Impuls
+ENGINE_4_ITEM2   | Klasa 5
+ENGINE_4_BRIEF   | Hiperbrzina 5  Odb %1
+ENGINE_4_BRIEF2  | Borbena Brzina %1
+
+ENGINE_5_NAME    | Jonski Pogon 
+ENGINE_5_DETAIL  | Pokreće brodove hiperbrzinom %1, i omogućava maksimalo manevrisanje klase VI u borbi.
+ENGINE_5_ITEM    | Jonski
+ENGINE_5_ITEM2   | Klasa 6
+ENGINE_5_BRIEF   | Hiperbrzina 6  Odb %1
+ENGINE_5_BRIEF2  | Borbena Brzina %1
+
+ENGINE_6_NAME    | Anti-Materijski Motori
+ENGINE_6_DETAIL  | Pokreće brodove hiperbrzinom %1, i omogućava maksimalo manevrisanje klase VII u borbi.
+ENGINE_6_ITEM    | Anti-Materijski
+ENGINE_6_ITEM2   | Klasa 7
+ENGINE_6_BRIEF   | Hiperbrzina 7  Odb %1
+ENGINE_6_BRIEF2  | Borbena Brzina %1
+
+ENGINE_7_NAME    | Među-Fazni Pogon
+ENGINE_7_DETAIL  | Pokreće brodove hiperbrzinom %1, i omogućava maksimalo manevrisanje klase VIII u borbi.
+ENGINE_7_ITEM    | Među-Fazni
+ENGINE_7_ITEM2   | Klasa 8
+ENGINE_7_BRIEF   | Hiperbrzina 8  Odb %1
+ENGINE_7_BRIEF2  | Borbena Brzina %1
+
+ENGINE_8_NAME    | Hiper Pogon
+ENGINE_8_DETAIL  | Pokreće brodove hiperbrzinom %1, i omogućava maksimalo manevrisanje klase IX u borbi.
+ENGINE_8_ITEM    | Hiper
+ENGINE_8_ITEM2   | Klasa 9
+ENGINE_8_BRIEF   | Hiperbrzina 9  Odb %1
+ENGINE_8_BRIEF2  | Borbena Brzina %1
+
+
+//
+// Fuel Range techs
+//
+FUELRANGE_0_NAME   | Gorivne Ćelije
+FUELRANGE_0_DETAIL | Rezerve goriva omogućavaju brodovima da se udalje do %1 svetlosnih godina od kolonizovanih planeta .
+
+FUELRANGE_1_NAME   | Hidrogenske Gorivne Ćelije
+FUELRANGE_1_DETAIL | Rezerve goriva omogućavaju brodovima da se udalje do %1 svetlosnih godina od kolonizovanih planeta .
+
+FUELRANGE_2_NAME   | Deuterijumske Gorivne Ćelije
+FUELRANGE_2_DETAIL | Rezerve goriva omogućavaju brodovima da se udalje do %1 svetlosnih godina od kolonizovanih planeta .
+
+FUELRANGE_3_NAME   | Iridijumske Gorivne Ćelije
+FUELRANGE_3_DETAIL | Rezerve goriva omogućavaju brodovima da se udalje do %1 svetlosnih godina od kolonizovanih planeta .
+
+FUELRANGE_4_NAME   | Dolomitske Crystals
+FUELRANGE_4_DETAIL | Rezerve goriva omogućavaju brodovima da se udalje do %1 svetlosnih godina od kolonizovanih planeta .
+
+FUELRANGE_5_NAME   | Uridijumske Gorivne Ćelije
+FUELRANGE_5_DETAIL | Rezerve goriva omogućavaju brodovima da se udalje do %1 svetlosnih godina od kolonizovanih planeta .
+
+FUELRANGE_6_NAME   | Rejdžaks II Gorivne Ćelije
+FUELRANGE_6_DETAIL | Rezerve goriva omogućavaju brodovima da se udalje do %1 svetlosnih godina od kolonizovanih planeta .
+
+FUELRANGE_7_NAME   | Trilitijumski Kristali
+FUELRANGE_7_DETAIL | Rezerve goriva omogućavaju brodovima da se udalje do %1 svetlosnih godina od kolonizovanih planeta .
+
+FUELRANGE_8_NAME   | Torijumske Ćelije
+FUELRANGE_8_DETAIL | Rezerve goriva omogućavaju brodovima da se kreću na bilo kojoj udaljenosti od kolonizovanih planeta.
+
+
+//
+// Future Computer techs
+//
+FUTURECOMP_0_NAME    | Budući Računari I
+FUTURECOMP_0_DETAIL  | Opšta Poboljšanja Računarskih Tehnologija.
+
+FUTURECOMP_1_NAME    | Budući Računari II
+FUTURECOMP_1_DETAIL  | Opšta Poboljšanja Računarskih Tehnologija.
+
+FUTURECOMP_2_NAME    | Budući Računari III
+FUTURECOMP_2_DETAIL  | Opšta Poboljšanja Računarskih Tehnologija.
+
+FUTURECOMP_3_NAME    | Budući Računari IV
+FUTURECOMP_3_DETAIL  | Opšta Poboljšanja Računarskih Tehnologija.
+
+FUTURECOMP_4_NAME    | Budući Računari V
+FUTURECOMP_4_DETAIL  | Opšta Poboljšanja Računarskih Tehnologija.
+
+FUTURECOMP_5_NAME    | Budući Računari VI
+FUTURECOMP_5_DETAIL  | Opšta Poboljšanja Računarskih Tehnologija.
+
+FUTURECOMP_6_NAME    | Budući Računari VII
+FUTURECOMP_6_DETAIL  | Opšta Poboljšanja Računarskih Tehnologija.
+
+FUTURECOMP_7_NAME    | Budući Računari VIII
+FUTURECOMP_7_DETAIL  | Opšta Poboljšanja Računarskih Tehnologija.
+
+FUTURECOMP_8_NAME    | Budući Računari IX
+FUTURECOMP_8_DETAIL  | Opšta Poboljšanja Računarskih Tehnologija.
+
+FUTURECOMP_9_NAME    | Budući Računari X
+FUTURECOMP_9_DETAIL  | Opšta Poboljšanja Računarskih Tehnologija. 
+
+
+//
+// Future Construction techs
+//
+FUTURECONST_0_NAME    | Buduća Konstrukcija I
+FUTURECONST_0_DETAIL  | Opšta Poboljšanja Tehnologija Konstrukcije.
+
+FUTURECONST_1_NAME    | Buduća Konstrukcija II
+FUTURECONST_1_DETAIL  | Opšta Poboljšanja Tehnologija Konstrukcije.
+
+FUTURECONST_2_NAME    | Buduća Konstrukcija III
+FUTURECONST_2_DETAIL  | Opšta Poboljšanja Tehnologija Konstrukcije.
+
+FUTURECONST_3_NAME    | Buduća Konstrukcija IV
+FUTURECONST_3_DETAIL  | Opšta Poboljšanja Tehnologija Konstrukcije.
+
+FUTURECONST_4_NAME    | Buduća Konstrukcija V
+FUTURECONST_4_DETAIL  | Opšta Poboljšanja Tehnologija Konstrukcije.
+
+FUTURECONST_5_NAME    | Buduća Konstrukcija VI
+FUTURECONST_5_DETAIL  | Opšta Poboljšanja Tehnologija Konstrukcije.
+
+FUTURECONST_6_NAME    | Buduća Konstrukcija VII
+FUTURECONST_6_DETAIL  | Opšta Poboljšanja Tehnologija Konstrukcije.
+
+FUTURECONST_7_NAME    | Buduća Konstrukcija VIII
+FUTURECONST_7_DETAIL  | Opšta Poboljšanja Tehnologija Konstrukcije.
+
+FUTURECONST_8_NAME    | Buduća Konstrukcija IX
+FUTURECONST_8_DETAIL  | Opšta Poboljšanja Tehnologija Konstrukcije.
+
+FUTURECONST_9_NAME    | Buduća Konstrukcija X
+FUTURECONST_9_DETAIL  | Opšta Poboljšanja Tehnologija Konstrukcije. 
+
+
+//
+// Future Force Field techs
+//
+FUTUREFORCE_0_NAME    | Buduća Polja Sile I
+FUTUREFORCE_0_DETAIL  | Opšta Poboljšanja Tehnologija Polja Sile.
+
+FUTUREFORCE_1_NAME    | Buduća Polja Sile II
+FUTUREFORCE_1_DETAIL  | Opšta Poboljšanja Tehnologija Polja Sile.
+
+FUTUREFORCE_2_NAME    | Buduća Polja Sile III
+FUTUREFORCE_2_DETAIL  | Opšta Poboljšanja Tehnologija Polja Sile.
+
+FUTUREFORCE_3_NAME    | Buduća Polja Sile IV
+FUTUREFORCE_3_DETAIL  | Opšta Poboljšanja Tehnologija Polja Sile.
+
+FUTUREFORCE_4_NAME    | Buduća Polja Sile V
+FUTUREFORCE_4_DETAIL  | Opšta Poboljšanja Tehnologija Polja Sile.
+
+FUTUREFORCE_5_NAME    | Buduća Polja Sile VI
+FUTUREFORCE_5_DETAIL  | Opšta Poboljšanja Tehnologija Polja Sile.
+
+FUTUREFORCE_6_NAME    | Buduća Polja Sile VII
+FUTUREFORCE_6_DETAIL  | Opšta Poboljšanja Tehnologija Polja Sile.
+
+FUTUREFORCE_7_NAME    | Buduća Polja Sile VIII
+FUTUREFORCE_7_DETAIL  | Opšta Poboljšanja Tehnologija Polja Sile.
+
+FUTUREFORCE_8_NAME    | Buduća Polja Sile IX
+FUTUREFORCE_8_DETAIL  | Opšta Poboljšanja Tehnologija Polja Sile.
+
+FUTUREFORCE_9_NAME    | Buduća Polja Sile X
+FUTUREFORCE_9_DETAIL  | Opšta Poboljšanja Tehnologija Polja Sile.
+
+
+//
+// Future Planetology techs
+//
+FUTUREPLANET_0_NAME    | Buduća Planetologija I
+FUTUREPLANET_0_DETAIL  | Opšta Poboljšanja Tehnologija Planetologije.
+
+FUTUREPLANET_1_NAME    | Buduća Planetologija II
+FUTUREPLANET_1_DETAIL  | Opšta Poboljšanja Tehnologija Planetologije.
+
+FUTUREPLANET_2_NAME    | Buduća Planetologija III
+FUTUREPLANET_2_DETAIL  | Opšta Poboljšanja Tehnologija Planetologije.
+
+FUTUREPLANET_3_NAME    | Buduća Planetologija IV
+FUTUREPLANET_3_DETAIL  | Opšta Poboljšanja Tehnologija Planetologije.
+
+FUTUREPLANET_4_NAME    | Buduća Planetologija V
+FUTUREPLANET_4_DETAIL  | Opšta Poboljšanja Tehnologija Planetologije.
+
+FUTUREPLANET_5_NAME    | Buduća Planetologija VI
+FUTUREPLANET_5_DETAIL  | Opšta Poboljšanja Tehnologija Planetologije.
+
+FUTUREPLANET_6_NAME    | Buduća Planetologija VII
+FUTUREPLANET_6_DETAIL  | Opšta Poboljšanja Tehnologija Planetologije.
+
+FUTUREPLANET_7_NAME    | Buduća Planetologija VIII
+FUTUREPLANET_7_DETAIL  | Opšta Poboljšanja Tehnologija Planetologije.
+
+FUTUREPLANET_8_NAME    | Buduća Planetologija IX
+FUTUREPLANET_8_DETAIL  | Opšta Poboljšanja Tehnologija Planetologije.
+
+FUTUREPLANET_9_NAME    | Buduća Planetologija X
+FUTUREPLANET_9_DETAIL  | Opšta Poboljšanja Tehnologija Planetologije.
+
+
+//
+// Future Propulsion techs
+//
+FUTUREPROP_0_NAME    | Budući Pogon I
+FUTUREPROP_0_DETAIL  | Opšta Poboljšanja Tehnologija Pogona.
+
+FUTUREPROP_1_NAME    | Budući Pogon II
+FUTUREPROP_1_DETAIL  | Opšta Poboljšanja Tehnologija Pogona.
+
+FUTUREPROP_2_NAME    | Budući Pogon III
+FUTUREPROP_2_DETAIL  | Opšta Poboljšanja Tehnologija Pogona.
+
+FUTUREPROP_3_NAME    | Budući Pogon IV
+FUTUREPROP_3_DETAIL  | Opšta Poboljšanja Tehnologija Pogona.
+
+FUTUREPROP_4_NAME    | Budući Pogon V
+FUTUREPROP_4_DETAIL  | Opšta Poboljšanja Tehnologija Pogona.
+
+FUTUREPROP_5_NAME    | Budući Pogon VI
+FUTUREPROP_5_DETAIL  | Opšta Poboljšanja Tehnologija Pogona.
+
+FUTUREPROP_6_NAME    | Budući Pogon VII
+FUTUREPROP_6_DETAIL  | Opšta Poboljšanja Tehnologija Pogona.
+
+FUTUREPROP_7_NAME    | Budući Pogon VIII
+FUTUREPROP_7_DETAIL  | Opšta Poboljšanja Tehnologija Pogona.
+
+FUTUREPROP_8_NAME    | Budući Pogon IX
+FUTUREPROP_8_DETAIL  | Opšta Poboljšanja Tehnologija Pogona.
+
+FUTUREPROP_9_NAME    | Budući Pogon X
+FUTUREPROP_9_DETAIL  | Opšta Poboljšanja Tehnologija Pogona.
+
+
+//
+// Future Weapon techs
+//
+FUTUREWEAPON_0_NAME    | Buduće Oružje I
+FUTUREWEAPON_0_DETAIL  | Opšta Poboljšanja Tehnologija Oružja.
+
+FUTUREWEAPON_1_NAME    | Buduće Oružje II
+FUTUREWEAPON_1_DETAIL  | Opšta Poboljšanja Tehnologija Oružja.
+
+FUTUREWEAPON_2_NAME    | Buduće Oružje III
+FUTUREWEAPON_2_DETAIL  | Opšta Poboljšanja Tehnologija Oružja.
+
+FUTUREWEAPON_3_NAME    | Buduće Oružje IV
+FUTUREWEAPON_3_DETAIL  | Opšta Poboljšanja Tehnologija Oružja.
+
+FUTUREWEAPON_4_NAME    | Buduće Oružje V
+FUTUREWEAPON_4_DETAIL  | Opšta Poboljšanja Tehnologija Oružja.
+
+FUTUREWEAPON_5_NAME    | Buduće Oružje VI
+FUTUREWEAPON_5_DETAIL  | Opšta Poboljšanja Tehnologija Oružja.
+
+FUTUREWEAPON_6_NAME    | Buduće Oružje VII
+FUTUREWEAPON_6_DETAIL  | Opšta Poboljšanja Tehnologija Oružja.
+
+FUTUREWEAPON_7_NAME    | Buduće Oružje VIII
+FUTUREWEAPON_7_DETAIL  | Opšta Poboljšanja Tehnologija Oružja.
+
+FUTUREWEAPON_8_NAME    | Buduće Oružje IX
+FUTUREWEAPON_8_DETAIL  | Opšta Poboljšanja Tehnologija Oružja.
+
+FUTUREWEAPON_9_NAME    | Buduće Oružje X
+FUTUREWEAPON_9_DETAIL  | Opšta Poboljšanja Tehnologija Oružja. 
+
+
+//
+// Hand Weapon techs
+//
+HANDWEAPON_0_NAME      | 
+HANDWEAPON_0_DETAIL    | 
+
+HANDWEAPON_1_NAME      | Ručni Laseri
+HANDWEAPON_1_DETAIL    | Lični laseri koji dodaju 5 poena na sve napade na tlu.
+
+HANDWEAPON_2_NAME      | Jonska Puška
+HANDWEAPON_2_DETAIL    | Lično zrakovno oružje koje dodaje 10 poena na sve napade na tlu.
+
+HANDWEAPON_3_NAME      | Fuziona Puška
+HANDWEAPON_3_DETAIL    | Neprecizno ali neverovatno snažno zrakovno oružje koje dodaje 20 poena na sve napade na tlu.
+
+HANDWEAPON_4_NAME      | Ručni Fazor
+HANDWEAPON_4_DETAIL    | Moćno ručno energetsko oružje sposobno da rastvori neprijatelje u atome. Dodaje 25 poena na sve napade na tlu.
+
+HANDWEAPON_5_NAME      | Plazma Puška
+HANDWEAPON_5_DETAIL    | Najrazornije ručno oružje koje je dostupno. Dodaje 30 poena na sve napade na tlu.
+
+
+//
+// Hyperspace Communication tech
+//
+HYPERSPACE_0_NAME      | Hiperprostorna Komunikacija
+HYPERSPACE_0_DETAIL    | Omogućava vam da komunicirate sa brodskim flotama u hiperprostoru i menjate njihova odredišta dok su na putu.
+
+
+//
+// Improved Industrial techs
+//
+IMPRINDUSTRY_0_NAME     | Poboljšana Industrijska Teh 9
+IMPRINDUSTRY_0_DETAIL   | Smanjuje cenu proizvodnje fabrika na 9 MK.
+
+IMPRINDUSTRY_1_NAME     | Poboljšana Industrijska Teh 8
+IMPRINDUSTRY_1_DETAIL   | Smanjuje cenu proizvodnje fabrika na 8 MK.
+
+IMPRINDUSTRY_2_NAME     | Poboljšana Industrijska Teh 7
+IMPRINDUSTRY_2_DETAIL   | Smanjuje cenu proizvodnje fabrika na 7 MK.
+
+IMPRINDUSTRY_3_NAME     | Poboljšana Industrijska Teh 6
+IMPRINDUSTRY_3_DETAIL   | Smanjuje cenu proizvodnje fabrika na 6 MK.
+
+IMPRINDUSTRY_4_NAME     | Poboljšana Industrijska Teh 5
+IMPRINDUSTRY_4_DETAIL   | Smanjuje cenu proizvodnje fabrika na 5 MK.
+
+IMPRINDUSTRY_5_NAME     | Poboljšana Industrijska Teh 4
+IMPRINDUSTRY_5_DETAIL   | Smanjuje cenu proizvodnje fabrika na 4 MK.
+
+IMPRINDUSTRY_6_NAME     | Poboljšana Industrijska Teh 3
+IMPRINDUSTRY_6_DETAIL   | Smanjuje cenu proizvodnje fabrika na 3 MK.
+
+IMPRINDUSTRY_7_NAME     | Poboljšana Industrijska Teh 2
+IMPRINDUSTRY_7_DETAIL   | Smanjuje cenu proizvodnje fabrika na 2 MK.
+
+
+//
+// Improved Terraforming techs
+//
+IMPRTFORM_0_NAME        | Poboljšano Teraformiranje +10
+IMPRTFORM_0_DETAIL      | Povećava kapacitet stanovništva vaših planeta za 10M po ceni od 5 MK po milionu.
+
+IMPRTFORM_1_NAME        | Poboljšano Teraformiranje +20
+IMPRTFORM_1_DETAIL      | Povećava kapacitet stanovništva vaših planeta za 20M po ceni od 5 MK po milionu.
+
+IMPRTFORM_2_NAME        | Poboljšano Teraformiranje +30
+IMPRTFORM_2_DETAIL      | Povećava kapacitet stanovništva vaših planeta za 30M po ceni od 4 MK po milionu.
+
+IMPRTFORM_3_NAME        | Poboljšano Teraformiranje +40
+IMPRTFORM_3_DETAIL      | Povećava kapacitet stanovništva vaših planeta za 40M po ceni od 4 MK po milionu.
+
+IMPRTFORM_4_NAME        | Poboljšano Teraformiranje +50
+IMPRTFORM_4_DETAIL      | Povećava kapacitet stanovništva vaših planeta za 50M po ceni od 3 MK po milionu.
+
+IMPRTFORM_5_NAME        | Poboljšano Teraformiranje +60
+IMPRTFORM_5_DETAIL      | Povećava kapacitet stanovništva vaših planeta za 60M po ceni od 3 MK po milionu.
+
+IMPRTFORM_6_NAME        | Poboljšano Teraformiranje +80
+IMPRTFORM_6_DETAIL      | Povećava kapacitet stanovništva vaših planeta za 80M po ceni od 2 MK po milionu.
+
+IMPRTFORM_7_NAME        | Poboljšano Teraformiranje +100
+IMPRTFORM_7_DETAIL      | Povećava kapacitet stanovništva vaših planeta za 100M po ceni od 2 MK po milionu.
+
+IMPRTFORM_8_NAME        | Potpuno Teraformiranje
+IMPRTFORM_8_DETAIL      | Povećava kapacitet stanovništva vaših planeta za 120M po ceni od 2 MK po milionu.
+
+
+//
+// Industrial Waste techs
+//
+INDWASTE_0_NAME         | Smanjen Industrijski Otpad 80%
+INDWASTE_0_DETAIL       | Smanjuje zagađenje fabrika na nivo koji je 80% od normalne stope.
+
+INDWASTE_1_NAME         | Smanjen Industrijski Otpad 60%
+INDWASTE_1_DETAIL       | Smanjuje zagađenje fabrika na nivo koji je 60% od normalne stope.
+
+INDWASTE_2_NAME         | Smanjen Industrijski Otpad 40%
+INDWASTE_2_DETAIL       | Smanjuje zagađenje fabrika na nivo koji je 40% od normalne stope.
+
+INDWASTE_3_NAME         | Smanjen Industrijski Otpad 20%
+INDWASTE_3_DETAIL       | Smanjuje zagađenje fabrika na nivo koji je 20% od normalne stope.
+
+INDWASTE_4_NAME         | Smanjen Industrijski Otpad
+INDWASTE_4_DETAIL       | Fabrike prestaju da zagađuju.
+
+
+//
+// Missile Defense techs
+//
+MISSDEF_0_NAME      | Protiv-Raketni Sistem
+MISSDEF_0_BRIEF     | 40% šansi za uništenje projektila
+MISSDEF_0_DETAIL    | Nad-svetlosne rakete sposobne da unište nadolazeće neprijateljske projektile u 40% slučajeva, -1% po tehnološkom nivou projektila.
+
+MISSDEF_1_NAME      | Nulti Štit
+MISSDEF_1_BRIEF     | 75% šansi za uništenje projektila
+MISSDEF_1_DETAIL    | Energetsko polje koje uništava neprijateljske rakete i torpeda u 75% slučajeva, -1% po tehnološkom nivou projektila.
+
+MISSDEF_2_NAME      | Elektro-Energetski Štit
+MISSDEF_2_BRIEF     | 100% šansi za uništenje projektila
+MISSDEF_2_DETAIL    | Energetsko polje koje uništava neprijateljske rakete i torpeda u 100% slučajeva, -1% po tehnološkom nivou projektila.
+
+
+//
+// Missile Weapon techs
+//
+MISSWPN_0_NAME      | Nuklearna Raketa
+MISSWPN_0_BRIEF     | 2 hica, +1 brzina
+MISSWPN_0_BRIEF2    | 5 hitaca
+MISSWPN_0_DETAIL    | Rakete sa nuklearnom bojevom glavom je eksplodiraju nanoseći 4 poena štete i kreću se brzinom 2.
+
+MISSWPN_1_NAME      | Hiper-V Rakete
+MISSWPN_1_BRIEF     | 2 hica, +1 brzina
+MISSWPN_1_BRIEF2    | 5 hitaca
+MISSWPN_1_DETAIL    | Brze rakete koje eksplodiraju nanoseći 6 poena štete i kreću se brzinom of 2.5.
+
+MISSWPN_2_NAME      | Hiper-X Rakete
+MISSWPN_2_BRIEF     | 2 hica, +1 da pogodi
+MISSWPN_2_BRIEF2    | 5 hitaca, +1 da pogodi
+MISSWPN_2_DETAIL    | Rakete opremljene visoko energetskim bojevim glavama koje eksplodiraju nanoseći 8 poena štete, kreću se brzinom 2.5, i kontrolisane su +1 računarom za ciljanje.
+
+MISSWPN_3_NAME      | Rasprskavajuće V Rakete
+MISSWPN_3_BRIEF     | 2 hica, +1 brzina
+MISSWPN_3_BRIEF2    | 5 hitaca
+MISSWPN_3_DETAIL    | Kasetne verzije Hiper-V Raketa, rasprašuju se u 5 odvojeni bojevih glava od kojih svaka eksplodira nanoseći 6 poena štete i kreću se brzinom 2.5.
+
+MISSWPN_4_NAME      | Merkulitne Rakete
+MISSWPN_4_BRIEF     | 2 hica, +2 da pogodi
+MISSWPN_4_BRIEF2    | 5 hitaca, +2 da pogodi
+MISSWPN_4_DETAIL    | Razarajuće, brze rakete koje eksplodiraju nanoseći 10 poena štete, kreću se brzinom 3, i kontrolisane su +2 računarom za ciljanje.
+
+MISSWPN_5_NAME      | Stinger Rakete
+MISSWPN_5_BRIEF     | 2 hica, +3 da pogodi
+MISSWPN_5_BRIEF2    | 5 hitaca, +3 da pogodi
+MISSWPN_5_DETAIL    | Spore, ultra precizne rakete koje nanose 15 poena štete, kreću se brzinom of 3.5, i kontrolisane su sofisticiranim +3 računarom za ciljanje.
+
+MISSWPN_6_NAME      | Rasprskavajuće VII Rakete
+MISSWPN_6_BRIEF     | 2 hica, Rasprašuje u 7
+MISSWPN_6_BRIEF2    | 5 hitaca, Rasprašuje u 7
+MISSWPN_6_DETAIL    | Kasetne verzije Hiper-X Rakete, razdvajaju se u 7 odvojenih bojevih glava od kojih svaka eksplodira nanoseći 10 poena štete, kreću se brzinom 3, i navodi ih +2 računar za ciljanje.
+
+MISSWPN_7_NAME      | Pulsonske Rakete
+MISSWPN_7_BRIEF     | 2 hica, +4 da pogodi
+MISSWPN_7_BRIEF2    | 5 hitaca, +4 da pogodi
+MISSWPN_7_DETAIL    | Moćne rakete opremljene anti-materijskim bojevim glavama koje eksplodiraju nanoseći 20 poena štete, kreću se brzinom 4, i navodi ih +4 računar za ciljanje.
+
+MISSWPN_8_NAME      | Herkularne Rakete
+MISSWPN_8_BRIEF     | 2 hica, +5 da pogodi
+MISSWPN_8_BRIEF2    | 5 hitaca, +5 da pogodi
+MISSWPN_8_DETAIL    | Visoko napredne rakete koje eksplodiraju nanoseći 25 poena štete. Herkularne rakete se kreću brzinom 4.5 i kotrolisane su +5 računarom za ciljanje.
+
+MISSWPN_9_NAME      | Zeon Rakete
+MISSWPN_9_BRIEF     | 2 hica, +6 da pogodi
+MISSWPN_9_BRIEF2    | 5 hitaca, +6 da pogodi
+MISSWPN_9_DETAIL    | Najnaprednije dostupne rakete. Sposobne da svojom eksplozijom nanesu 30 poena štete i kreću se brzinom 5. Rakete navodi +6 računar za ciljanje.
+
+MISSWPN_10_NAME      | Rasprskavajuće X Rakete
+MISSWPN_10_BRIEF     | 2 hica, Rasprašuje u 10
+MISSWPN_10_BRIEF2    | 5 hitaca, Rasprašuje u 10
+MISSWPN_10_DETAIL    | Kasetne verzije Stinger Raketa, razdvaja se u 10 odvojenih bojevih glava od kojih svaka eksplodira nanoseći 15 poena štete, kreću se brzinom 3.5, i navodi ih +3 računar za ciljanje.
+
+
+//
+// Personal Shield techs for ground combat
+//
+// default "no shield" tech that each player starts with
+PERSSHIELD_0_NAME     | 
+PERSSHIELD_0_DETAIL   | 
+
+PERSSHIELD_1_NAME     | Lični Deflektorski Štit
+PERSSHIELD_1_DETAIL   | Štiti individualne kopnene trupe svojim direkcionalnim poljem sile. Dodaje +10 na sve borbe na tlu.
+
+PERSSHIELD_2_NAME     | Lični Apsorpcijski Štit
+PERSSHIELD_2_DETAIL   | Apsorbuje štetu nanetu svim ručnim oružjem. Dodaje +20 na sve borbe na tlu.
+
+PERSSHIELD_3_NAME     | Lični Barijera Štit
+PERSSHIELD_3_DETAIL   | Kompletno ograđuje vojnika u gotovo neprobojno polje sile. Dodaje +30 na sve borbe na tlu.
+
+
+//
+// Planetary Shield techs 
+//
+PLANETSHIELD_0_NAME    | Klasa V Planetarni Štitovi
+PLANETSHIELD_0_DETAIL  | Apsorbuje 5 poena štete svih napada protiv planetarne površine, dodajući na postojeću zaštitu deflektorskih štitova raketnih baza.
+
+PLANETSHIELD_1_NAME    | Klasa X Planetarni Štitovi
+PLANETSHIELD_1_DETAIL  | Apsorbuje 10 poena štete svih napada protiv planetarne površine, dodajući na postojeću zaštitu deflektorskih štitova raketnih baza.
+
+PLANETSHIELD_2_NAME    | Klasa XV Planetarni Štitovi
+PLANETSHIELD_2_DETAIL  | Apsorbuje 15 poena štete svih napada protiv planetarne površine, dodajući na postojeću zaštitu deflektorskih štitova raketnih baza.
+
+PLANETSHIELD_3_NAME    | Klasa XX Planetarni Štitovi
+PLANETSHIELD_3_DETAIL  | Apsorbuje 20 poena štete svih napada protiv planetarne površine, dodajući na postojeću zaštitu deflektorskih štitova raketnih baza.
+
+
+//
+// Repulsor tech 
+//
+REPULSOR_0_NAME    | Odbijajući Zrak
+REPULSOR_0_BRIEF   | Odbija neprijateljske brodove nazad 1 mesto
+REPULSOR_0_DETAIL  | Odbija neprijateljske brodove jedno mesto unazad od odbrambenog broda. Ovo specijalno oružje ima domet jedan kvadrat.
+
+
+//
+// Reserve Fuel tech 
+//
+RSRVFUEL_0_NAME    | Rezervni Gorivni Tankeri
+RSRVFUEL_0_BRIEF   | Povećava domet brodova za %1 svetlosne godine
+RSRVFUEL_0_DETAIL  | Rezervni gorivni tankeri povećavaju domet brodova.
+
+
+//
+// Robotic Controls techs 
+//
+ROBOTCTRL_0_NAME     | Poboljšana Kontrola Fabrika III
+ROBOTCTRL_0_DETAIL   | Dozvoljava da se upravlja sa 3 fabrike po stanovniku. Cena prepravke da bi se fabrike nadogradile je pola cene svake fabrike.
+
+ROBOTCTRL_1_NAME     | Poboljšana Kontrola Fabrika IV
+ROBOTCTRL_1_DETAIL   | Dozvoljava da se upravlja sa 4 fabrike po stanovniku. Cena prepravke da bi se fabrike nadogradile je jednaka standardnoj ceni svake fabrike.
+
+ROBOTCTRL_2_NAME     | Poboljšana Kontrola Fabrika V
+ROBOTCTRL_2_DETAIL   | Dozvoljava da se upravlja sa 5 fabrike po stanovniku. Cena prepravke da bi se fabrike nadogradile je jedna i po od cene svake fabrike.
+
+ROBOTCTRL_3_NAME     | Poboljšana Kontrola Fabrika VI
+ROBOTCTRL_3_DETAIL   | Dozvoljava da se upravlja sa 6 fabrike po stanovniku. Cena prepravke da bi se fabrike nadogradile je duplo od cene svake fabrike.
+
+ROBOTCTRL_4_NAME     | Poboljšana Kontrola Fabrika VII
+ROBOTCTRL_4_DETAIL   | Dozvoljava da se upravlja sa 7 fabrike po stanovniku. Cena prepravke da bi se fabrike nadogradile je dva i po puta od cene svake fabrike.
+
+
+//
+// Scanner techs 
+//
+SCANNER_0_NAME       | Borbeni Skener
+SCANNER_0_BRIEF      | Skenira neprijateljske brodove u borbi
+SCANNER_0_DETAIL     | Otkriva tehničke specifikacije neprijateljskih brodova u borbi.
+
+SCANNER_1_NAME       | Duboki Svemirski Skener
+SCANNER_1_BRIEF      | Detektuje brodove udaljene do 5 svetlosnih godina
+SCANNER_1_DETAIL     | Detektuje neprijateljske brodove udaljene do 5 svetlosnih godina od vaših kolonija i do 1 svetlosnu godinu od vaših brodova.
+
+SCANNER_2_NAME       | Poboljšani Svemirski Skener
+SCANNER_2_BRIEF      | Detektuje brodove i njihove destinacije destinacije udaljeni do 7 svetlosnih godina
+SCANNER_2_DETAIL     | Detektuje neprijateljske brodove udaljene do 7 svetlosnih godina od vaših kolonija i do 2 svetlosne godine od vaših brodova. Mogu se utvrditi neprijateljske destinacije.
+
+SCANNER_3_NAME       | Napredni Svemirski Skener
+SCANNER_3_BRIEF      | Omogućava istraživanje planeta udaljenih do 9 svetlosnih godina  
+SCANNER_3_DETAIL     | Omogućava istraživanje planeta iz vaših kolonija udaljenih do 9 svetlosnih godina i otkriva neprijateljske brodove udaljene do 3 svetlosne godine od vaših brodova. 
+
+
+//
+// Ship Inertial techs 
+//
+SHIPINERTIAL_0_NAME     | Inercijalni Stabilizator 
+SHIPINERTIAL_0_BRIEF    | Dodaje +2 manevarsku sposobnost
+SHIPINERTIAL_0_DETAIL   | Smanjuje inerciju brodova, dodajući 2 klase manevarske sposobnosti u borbi (+2 odbrana i +1 borbena brzina).
+
+SHIPINERTIAL_1_NAME     | Inercijalni Nulifikator
+SHIPINERTIAL_1_BRIEF    | Dodaje +4 manevarsku sposobnost
+SHIPINERTIAL_1_DETAIL   | Negira inerciju brodova, dodajući 4 klase manevarske sposobnosti u borbi. Takođe smanjuje efekat napada Crnom Rupom za -30%.
+
+
+//
+// Ship Inertial techs 
+//
+SHIPNULLIFIER_0_NAME     | Tehnološki Nulifikator
+SHIPNULLIFIER_0_BRIEF    | Uništava neprijateljske računare
+SHIPNULLIFIER_0_DETAIL   | Kompromituje neprijateljske borbene računare i EPM, smanjujući ih za 2-6 nivoa po napadu. Njegov domet premašuje većinu brodskog naoružanja.
+
+SHIPNULLIFIER_1_NAME     | Rasipač Hiperbrzine
+SHIPNULLIFIER_1_BRIEF    | Smanjuje brzinu neprijateljskih brodova
+SHIPNULLIFIER_1_DETAIL   | Rasipači Hiperbrzine su oružja velikog dometa koja ometaju neprijateljske brodove, smanjujući njihovu brzinu svakim napadom.
+
+
+//
+// Ship Weapon techs 
+//
+SHIPWPN_0_NAME         | Laser
+SHIPWPN_0_ITEM2        | Težak Laser
+SHIPWPN_0_DETAIL       | Oružje direktne vatre koje nanosi 1-4 poena štete. Teški laseri imaju domet dva kvadrata i nanose 1-7 poena štete.
+
+SHIPWPN_1_NAME         | Rafalni Laser
+SHIPWPN_1_BRIEF        | Ispaljuje 4 puta/potezu
+SHIPWPN_1_DETAIL       | Napredni laser koji ispaljuje do četiri puta po potezu za 1-4 poena oštećenja svakim hicem.
+
+SHIPWPN_2_NAME         | Neutronska Sačmara
+SHIPWPN_2_BRIEF        | Prepolovljava Snagu Štitova
+SHIPWPN_2_DETAIL       | Oružje sa teškim česticama koje prepolovljava efikasnost neprijateljskih štitova i nanosi 2 do 5 poena oštećenja.
+
+SHIPWPN_3_NAME         | Jonski Top
+SHIPWPN_3_ITEM2        | Težak Jonski Top
+SHIPWPN_3_DETAIL       | Oružje visokog intenziteta koje može naneti 3-8 poena oštećenja. Teški jonski topovi pogađaju za 3-15 i imaju domet dva kvadrata.
+
+SHIPWPN_4_NAME         | Akcelerator Mase
+SHIPWPN_4_BRIEF        | Prepolovljava Snagu Štitova
+SHIPWPN_4_DETAIL       | Linearni akcelerator koji prepolovljava efikasnost neprijateljskih štitova i nanosi 5-8 poena oštećenja.
+
+SHIPWPN_5_NAME         | Neutronski Blaster
+SHIPWPN_5_ITEM2        | Težak Neutronski Blaster
+SHIPWPN_5_DETAIL       | Oružje velike moći koje može naneti 3-12 poena štete. Teški neutronski blasteri udaraju za 3-24 poena i imaju domet 2.
+
+SHIPWPN_6_NAME         | Gravitonski Zrak
+SHIPWPN_6_BRIEF        | Strujni Napad
+SHIPWPN_6_DETAIL       | Snop koji velikom brzinom privlači i odbija brodove, sposoban da razbije brodove u komadiće. Nanosi 1-15 poena štete, i neprekidni strujni efekat dozvoljava da se oštećenje prenese na druge brodove.
+
+SHIPWPN_7_NAME         | Tvrdi Zrak
+SHIPWPN_7_BRIEF        | Prepolovljava Snagu Štitova
+SHIPWPN_7_DETAIL       | Energija-u-materiju zrakovno oružje koje prepolovljava snagu neprijateljskih deflektorskih štitova, i nanosi 8-12 poena oštećenja.
+
+SHIPWPN_8_NAME         | Fuzioni Zrak
+SHIPWPN_8_ITEM2        | Težak Fuzioni Zrak
+SHIPWPN_8_DETAIL       | Oružje visokog intenziteta koje može naneti 4-16 poena oštećenja. Teški fuzioni zrak udara za 4-30 poena i ima domet 2.
+
+SHIPWPN_9_NAME         | Megagrom Top
+SHIPWPN_9_BRIEF        | +3 nivoa da pogodi
+SHIPWPN_9_DETAIL       | Oslobađa više snopova čiste energije u širokom polju. Ima +30% bonus šansi da pogodi i zadaje 2-20 poena oštećenja.
+
+SHIPWPN_10_NAME        | Fazor
+SHIPWPN_10_ITEM2       | Težak Fazor
+SHIPWPN_10_DETAIL      | Oružje koje koristi faznu energiju sposobno da nanese 5 do 20 poena oštećenja. Teški fazori udaraju za 5-40 poena oštećenja i imaju domet od dva kvadrata.
+
+SHIPWPN_11_NAME        | Auto Blaster
+SHIPWPN_11_BRIEF       | Ispaljuje 3 puta/potezu
+SHIPWPN_11_DETAIL      | Napredni neutronski blaster koji puca do tri puta po potezu za 4-16 poena oštećenja po pogotku.
+
+SHIPWPN_12_NAME        | Tahionski Zrak
+SHIPWPN_12_BRIEF       | Strujni Napad
+SHIPWPN_12_DETAIL      | Ispaljuje intenzivnu struju čestica tahiona koji udaraju neprijateljske brodove za 1-25 poena. Efekat kontinuiranog strujanja omogućava da se višak oštećenja prenese na druge brodove.
+
+SHIPWPN_13_NAME        | Gaus Automat
+SHIPWPN_13_BRIEF       | 1/2 Štitovi, Ispaljuje 4x
+SHIPWPN_13_DETAIL      | Napredni linearni akcelerator koji može da ispali 4 eksplozivna metka po potezu od kojih svaki nanosi 7 do 10 poena oštećenja. Ovi projektili takođe prepolovljavaju efikasnost neprijateljskih štitova.
+
+SHIPWPN_14_NAME        | Zrak Čestica
+SHIPWPN_14_BRIEF       | Prepolovljava Snagu Štitova
+SHIPWPN_14_DETAIL      | Ubrzivači čestica visokog intenziteta sposobni su pogoditi neprijateljske brodove za 10-20 poena oštećenja i prepoloviti efikasnost deflektorskih štitova.
+
+SHIPWPN_15_NAME        | Plazma Top
+SHIPWPN_15_DETAIL      | Puca snažnom energijom koja nanosi 6-30 poena oštećenja i dometa 1.
+
+SHIPWPN_16_NAME        | Zrak Smrti
+SHIPWPN_16_DETAIL      | Drevno oružje neverovatno razorne moći koje nanosi 200-1000 poena oštećenja i ima domet jedan kvadrat.
+
+SHIPWPN_17_NAME        | Remetnik
+SHIPWPN_17_DETAIL      | Oslobađa ogromne gomile čiste energije koje mogu pogoditi neprijateljske ciljeve u dometu do dva kvadrata za 10-40 poena oštećenja.
+
+SHIPWPN_18_NAME        | Pulsirajući Fazor
+SHIPWPN_18_BRIEF       | Ispaljuje 3 puta/potezu
+SHIPWPN_18_DETAIL      | Napredni fazor sposoban da ispuca 3 rafala po potezu za 5-20 poena oštećenja pri svakom pogotku.
+
+SHIPWPN_19_NAME        | Tri-fokusni Plazma Top
+SHIPWPN_19_DETAIL      | Ispaljuje trijadu plazma zraka visokog intenziteta koji mogu naneti 20 do 50 poena oštećenja.
+
+SHIPWPN_20_NAME        | Stelarni Konvertor
+SHIPWPN_20_BRIEF       | Pogađa Sva Četiri Štita
+SHIPWPN_20_DETAIL      | Okružuje metu izuzetno moćnim poljem za pretvaranje energije u materiju, nanoseći četiri napada od 10 do 35 poena. Ima domet od 3 kvadrata.
+
+SHIPWPN_21_NAME        | Izobličujući Uređaj
+SHIPWPN_21_DETAIL      | Oslobađa ogromne količine usredsređene energije na neprijateljske ciljeve, nanoseći 20-100 poena štete.
+
+SHIPWPN_22_NAME        | Ameba Tok
+SHIPWPN_22_DETAIL      | Tok koji nanosi 250-1000 poena oštećenja i ima domet od 3 kvadrata. Njegov kontinuirani efekat strujanja omogućava mu da prenosi štetu sa jednog broda na drugi.
+
+SHIPWPN_23_NAME        | Snop Kristala
+SHIPWPN_23_DETAIL      | Snop koji okružuje štitove mete, isporučujući 4 napada sa po 100-300 poena oštećenja. Ima domet od 3 kvadrata.
+
+
+//
+// Soil Enrichment techs
+//
+SOILENRICH_0_NAME     | Obogaćivanje Zemljišta
+SOILENRICH_0_DETAIL   | Pretvara standardne planete u plodno okruženje, povećavajući rast stanovništva za 50% i povećavajući baznu planetarnu veličinu za +25% po jednokratnim troškovima od 150 MK.
+
+SOILENRICH_1_NAME     | Napredno Obogaćivanje Zemljišta
+SOILENRICH_1_DETAIL   | Pretvara standardne i plodne planete u rajske, udvostručujući rast stanovništva i povećavajući baznu veličinu planete za +50% po jednokratnim troškovima od 300 MK.
+
+
+//
+// Stargate tech
+//
+STARGATE_0_NAME      | Intergalaktičke Zvezdane Kapije
+STARGATE_0_DETAIL    | Omogućava vašim brodovima da se kreću između bilo koje dve planete opremljene Zvezdanim Kapijama u samo jednom potezu. Izgradnja košta 3000 MK.
+
+
+//
+// Stasis Field tech
+//
+STASIS_0_NAME      | Polje Zastoja
+STASIS_0_BRIEF     | Neprijatelj zamrznut na 1 potez
+STASIS_0_DETAIL    | Zamrzava jednu grupu neprijateljskih brodova, udaljenu do jednog mesta, na jedan potez. Smrznuti brodovi ne mogu napasti niti biti napadnuti.
+
+
+//
+// Stream Weapon techs
+//
+STREAMWPN_0_NAME    | Projektor Jonskog Snopa
+STREAMWPN_0_BRIEF   | Smanjuje neprijateljski oklop za 20%
+STREAMWPN_0_DETAIL  | Ispušta snažnu jonsku eksploziju, smanjujući oklop svake mete u protivničkoj grupi za 20% plus 1% na 2 broda koji ispaljuju snop, smanjujući maksimalno do 50% od početnih poena trupa.
+
+STREAMWPN_1_NAME    | Projektor Neutronskog Snopa
+STREAMWPN_1_BRIEF   | Smanjuje neprijateljski oklop za 40%
+STREAMWPN_1_DETAIL  | Ispaljuje snop koncentrisanih neutrina, smanjujući oklop svake mete u protivničkoj grupi za 40% plus 1% po brodu koji ispaljuje snop, smanjujući maksimalno do 75% od početnih poena trupa.
+
+
+//
+// Subspace Interdictor tech
+//
+SUBSPACEINT_0_NAME    | Pod-Prostorni Ometač
+SUBSPACEINT_0_DETAIL  | Sprečava upotrebu neprijateljskih Pod-Prostornih Teleporta i borbenih transportera. Uređaj se automatski ugrađuje u raketne baze.
+
+
+//
+// Subspace Teleporter tech
+//
+SUBSPACETEL_0_NAME    | Pod-Prostorni Teleport
+SUBSPACETEL_0_BRIEF   | Teleportuje brodove u borbi
+SUBSPACETEL_0_DETAIL  | Teleportuje brode u bilo koje mesto na borbenoj mapi i pre nego što se aktivira inicijativa drugih brodova.
+
+
+//
+// Ship Torpedo Weapon techs
+//
+TORPEDO_0_NAME        | Anti-Materijski Torpedo
+TORPEDO_0_BRIEF       | Ispaljuje jednom u 2 poteza
+TORPEDO_0_DETAIL      | Visoko energetska prateća Torpeda koja nanose 30 poena štete, ali se mogu ispaliti samo pri svakom drugom potezu. Svaki torpedo je opremljen +4 nivoa računarom za ciljanje.
+
+TORPEDO_1_NAME        | Pakleni Torpedo
+TORPEDO_1_BRIEF       | Pogađa sva četiri štita
+TORPEDO_1_DETAIL      | Obmotavajuća energetska torpeda koja istovremeno pogađaju sve štitove. Kreću se brzinom 5, navode se +6 nivoa računarom za ciljanje, nanoseći štetu jednaku četiri napada od 25 poena.
+
+TORPEDO_2_NAME        | Protonski Torpedo
+TORPEDO_2_BRIEF       | Ispaljuje jednom u 2 poteza
+TORPEDO_2_DETAIL      | Energetska razarajuća torpeda koja nanose 75 poena štete, ali se mogu ispaliti samo pri svakom drugom potezu. Svaki torpedo je opremljen +6 nivoa računarom za ciljanje.
+
+TORPEDO_3_NAME        | Plazma Torpedo
+TORPEDO_3_BRIEF       | Gubi 15 štete/heks
+TORPEDO_3_DETAIL      | Torpeda čiste energije koja nanose 150 poena štete i kreću se brzinom 6, ali gube 15 štete po proputovanom kvadratu prostora. Lanser ispaljuje svakog drugog poteza i ima +7 računar za navođenje.
+

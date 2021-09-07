@@ -1,0 +1,86 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Bulrathi specific dialogue
+
+CONTACT_AGGRESSIVE         | Ja sam ambasador iz [my_empireStva]. Savetujem vam da ostanete u dobrim odnosima sa [my_titleI], maleni [your_raceVoc]. Jer on treba samo da kaže reč i vaša vrsta će nestati pred nezamislivim gnevom.
+CONTACT_RUTHLESS           | Takva ste mala stvorenja! Trebate znati samo dve stvari: prvo, da se zovemo "[my_race]", i drugo, suprotstavljanje našem osvajanju samo garantuje vašu smrt!
+CONTACT_ERRATIC            | Mi iz [my_empireStva] vas pozdravljamo, mališani. Naša sudbina leži negde među ovim raštrkanim svetovima i zvezdama. Biće zanimljivo videti kako ćete se vi uklopiti u naš veliki plan.
+//
+GREETING_01                | Dakle, ponašali ste se časno, pa ćemo i mi prema vama. Recite nam šta vam treba, mali prijatelju. 
+GREETING_04                | Govori brzo, mali [your_raceVoc]. Ne iskušavajte naš bes lažnim obećanjima i pristrasnim ugovorima.
+GREETING_07                | Doći i razgovarati s nama pokazuje veliku hrabrost za nekoga tako malog. Ta hrabrost vam je za sada zaradila vašu sigurnost.
+
+DECLAREWAR_HATE_01         | Mali [your_race_plural] na njihovim malim svetovima sa svojim malim šemama. [my_title] se umara od vašeg stalnog ometanja. Nećete preživeti propast koju vam donosimo!
+DECLAREWAR_HATE_02         | Dosta je ovoga! Sudbina našeg naroda zacrtana je u zvezdama. Više nećemo dozvoliti tako sićušne kao što ste vi da nam se suprotstavljaju!
+DECLAREWAR_HATE_03         | Pripremite se za bitku, maleni [your_raceVoc]! Pokazaćemo vam da je žestina jedina stvar koja donosi pobedu na bojnom polju! 
+DECLAREWAR_ERRATIC_01      | Mudrost filozofa može zbuniti one koji je ne razumeju. Kada nam najveći umovi kažu da napadnemo, naši ratnici će ih naravno poslušati.
+DECLAREWAR_ERRATIC_02      | Za svaku stvar postoji vreme i mesto u ovom univerzumu. Rat i mir, život i smrt, dominacija i potčinjavanje. Za nas je vreme da napadnemo, a za vas vreme da se branite.
+DECLAREWAR_ERRATIC_03      | Jeste li se ikad zadivili nad sudbinom, ambasadore? Ima smešan način da pretvori u stvarnost ono što se čini nemogućim. Dozvolite da zajedno testiramo sudbinu, maleni [your_raceVoc], i da vidimo šta ona sprema.
+DECLAREWAR_MILITARY_01     | Jaki dobijaju plen. [my_race_plural] su jaki, i tako ćemo steći plen, bez obzira kome je prvobitno pripadao.
+DECLAREWAR_MILITARY_02     | Vaš narod se dobro bori s obzirom da ste tako mali, ambasadore. Hajde da vidimo koliko će se dobro boriti protiv moći moje [my_raceSke] rase!
+DECLAREWAR_MILITARY_03     | Ova galaksija pripada moćnima, a naša moć neće dozvoliti da je vaša zaseni. Dobro branite svoje svetove, ili ćemo vam ih mi preuzeti!
+DECLAREWAR_ALLIANCE_01     | Saveznik Imperije je zatražio našu pomoć! Pokazaćemo i vama i [defender_raceSkoj] rasi pravu snagu [my_raceIja]!
+DECLAREWAR_ALLIANCE_02     | Vi ratujete protiv našeg saveznika, nesumnjivo nesvesni da ratujete i protiv nas. Ovo je borba iz koje vaš narod neće izaći kao pobednik, ambasadore. Računajte na to.
+DECLAREWAR_ALLIANCE_03     | Čak i svom snagom nemate šanse protiv [defender_raceIja] ako im se mi [my_race_plural] pridružimo! Pripremi se, mali [your_raceVoc]!
+DECLAREWAR_SPYING_01       | Kakva izdaja! Ali kada morate postojati u tako malom telu, mora da nemate drugog izbora: očigledno nemate šanse na bojnom polju, što ćemo sada lako da dokažemo.
+DECLAREWAR_SPYING_02       | Šta nam je bilo da pomislimo da tako mali ljudi ne mogu uspeti u takvim tajnim operacijama. Obesite svoje špijune visoko da ih vide vaši svetovi; platićete njihove greške vašim životom!
+DECLAREWAR_SPYING_03       | Mislite li da smo preslabi da bismo odgovorili na takve podmukle akcije, maleni? Pokazaćemo vam koliko ste ozbiljno pogrešno prosudili!
+DECLAREWAR_ATTACK_01       | Ako toliko želite da se borite, treba samo da pitate, mali [your_raceVoc]. Pred vašim očima ćemo jednim udarcem slomiti sve što vam je drago!
+DECLAREWAR_ATTACK_02       | Da nas napadnete tako drsko, kao da ste mnogo jači nego što jeste. Pohvalno, ali na kraju pogrešno.
+DECLAREWAR_ATTACK_03       | Neka tako bude! Možda je istina da ste bolje naoružani, ali i dalje ćete se naći nadmašeni!
+DECLAREWAR_OPPORTUNITY_01  | Naši ljudi uvek traže šanse da izoštre svoje borbene veštine, a vaši ljudi se mogu pokazati kao dostojan izazov. Budite dobri takmičar, da bi se o vaše vrste rado sećali u našoj istoriji.
+DECLAREWAR_ASSASSIN_01     | Nismo očekivali ništa manje: rasa toliko fizički inferiorna da moraju pribeći ubijanju nenaoružanog ambasadora da bi ostvarili svoje ambicije. Moli se svim bogovima koje imate, mali [tvoja_rasaVoc], jer ćemo se pobrinuti da ovo bude vaša poslednja bitka.
+
+OFFER_PEACE_01             | Vaši se ljudi dobro bore, maleni, ali u ovom ratu je proliveno više nego dovoljno krvi. Spremni smo da ostavimo prepirke u prošlosti i da krenemo ka miru, ako ste i vi dovoljno hrabri da učinite isto.
+OFFER_TRADE_01             | Ono što vam nedostaje u veličini izgleda da nadoknađujete svojom snalažljivošću. Naši ljudi svake godine predlažu trgovinu [amt] MK, u nadi da će trgovina za nas oboje biti korisnija od sukoba.
+OFFER_PACT_01              | Mi [my_race_plural] imamo različita mišljenja o brojnim rasama koje smo sreli. Vaša vrsta posebno zabavlja [my_titleA] i želi da potpišete sa nama Ugovor o Nenapadanju kako bismo sprečili bilo kakve nepotrebne sporove u budućnosti.
+OFFER_ALLIANCE_01          | Iako smo bez premca u borbi, nismo toliki varvari da bismo odbacili vezu sa rasom poput vaše samo da bismo osetili uzbuđenje pobede. Mali ambasadore, hajde da formalizujemo savez i da se nađemo na bojnom polju kao prijatelji umesto kao neprijatelji.
+//
+WARN_TRESPASSING_01        | Vaše prisustvo u [system] sistemu je počelo da nas nervira. Bilo bi pametno da odete pre nego što još više iskušate naš gnev.
+WARN_EXPANSION_01          | Zauzimanje teritorije pravo je najjačih imperija. Upozoravamo vas protiv daljeg širenja, mali, osim ako ne želite da počnemo da branimo buduću teritoriju [my_raceSke] rase, pre nego što ona formalno postane naša.
+WARN_BUILDUP_01            | Svemir je teatar kukavica: istinska hrabrost može se dokazati samo na površini planete. Iako vaša flota postaje ogromna, ne možete je koristiti da se sakrijete od našeg besa ako nastavite da je povećavate još više.
+WARN_SKIRMISH_01           | Okršaj u [system] sistemu za nas ne predstavlja nešto više od male smetnje. Ne uznemiravajte nas više, ili ćemo vas smrviti poput štetočine, ako već insistirate da se ponašate kao štetočina!
+WARN_ATTACKED_01           | Patetičan prikaz jednako patetične rase! Prebrojte svoje blagoslove jer [defender_title] ima važnijih stvari za bavljenje nego da se bavi vašem pokazivanju oskudne sile, ali znajte da ćemo vam, ako želite rat, rado učiniti, maleni.
+WARN_INVADED_01            | Ha! Takva hrabrost od tako malog naroda. Napusti naše teritorije sada maleni, pre nego što uradite nešto zbog čega ćete sigurno zažaliti.
+WARN_ESPIONAGE_01          | Kukavice! Da se ušunjate među [victim_race_plural] poput čomkasa koji beže iz svojih tuba. Budite zahvalni što nismo zgnječili vašeg špijuna i nemojte nas prisiljavati da ponovo odgovorimo na takvu beskičmenost! [framed]
+WARN_SABOTAGE_01           | Zašto se ne bi suočili sa nama u borbi, mali? Bilo bi nam dosadno da se borimo protiv rase koja je dovoljno kukavična da se oslanja na sabotažu, ali ako ovo ponovite, možda ćemo podneti tu dosadu samo da bismo vas se rešili! [forced]
+WARN_BIOWEAPON_01          | Krajnji čin kukavičluka, upotreba biološkog oružja protiv onih koji ne mogu ni da se odbrane! Vaš narod će nositi ovu sramotu do kraja vaše imperije, mali: ništa što uradite nikada neće obrisati vaša dela.
+WARN_GENOCIDE_01           | [victim_race_plural] su bili slabi i jadni, i ne predstavljaju veliki gubitak za galaksiju. Ono što nas najviše uznemirava je da je tako beznačajan narod kao što je vaš bio odgovoran za njihovo izumiranje.
+WARN_FINAL_WAR_01          | Divimo se hrabrosti onih koji žele da se suprotstave galaksiji kada je odlučila da se ujedini u miru? Zabeležićemo vašu smelost u našim istorijama, mali, nakon što zdrobimo vaš poslednji primerak!
+WARN_COUNCIL_VOTE_01       | Ovaj Savet je skup glupih budala koji bi radije raspravljali o svojim nezadovoljstvima nego da ih rešavaju kao ratnici! Ali samo zato što toliko preziremo ove procedure, ne znači da ćemo spremno oprostiti vašem delanju protiv nas tokom njih!
+WARN_OATHBREAKER_01        | Mališa! Prekršiti reč je krajnja sramota! Znamo da je vaša vrsta nemoćna telom, ali da je nemoćna i rečima takođe, iznenađuje čak i nas!
+WARN_ATTACKED_ALLY_01      | Mali [defender_race_plural] su pod našom zaštitom! Prekinite svoj rat i popravite se, ili ćete umreti od pred našom silom pre nego što shvatite šta vas je udarilo!
+WARN_REBELLING_AGAINST_01    | Vrhovni Arhijerej je jedini zaslužan da sedi na tronu Galaktičkog Saveta! Nikada nećemo prihvatiti vašu podlu uzurpaciju!
+//
+PRAISE_COUNCIL_VOTE_01     | Ha! Pogledi na njihovim licima kada ste stali na našu stranu su bili vrlo zabavni. Ali sada znaju gde je prava moć, a mi zahvaljujemo našim malim prijateljima što su im pomogli da nauče! 
+PRAISE_COUNCIL_VOTE_02     | Prilično je zamorno biti prisiljen da istrpimo blebetanje senilnih stvorenja tokom ovih sastanaka. Bez obzira da li ste nam pomogli da bi što pre završili, ili zato što ste svesni naše moći, prepoznajemo ono što ste danas učinili.
+PRAISE_COUNCIL_VOTE_03     | Interesantni ste nam, maleni. Ali za vaš narod je dobro što ste danas prepoznali našu moć. Zbog vas, nadam se da ćete i dalje to činiti.
+
+PRAISE_ATTACKED_ENEMY_01   | Ha ha! Drago mi je što vas danas vidim na bojnom polju, mali prijatelju! Slomimo ovu patetičnu [defender_raceSku] rasu zajedno! Neka njihova krv teče po njihovim svetovima sve dok ne ostane nijedan od njih! 
+PRAISE_ATTACKED_ENEMY_02   | Kakvu ćemo slavnu bitku danas voditi, mali! Pokažite nam kako se borite protiv [defender_raceSke] rase, kako bismo vam mogli pružiti odgovarajuće poštovanje!
+PRAISE_ATTACKED_ENEMY_03   | Bolno je očigledno da se borite protiv [defender_raceSke] rase samo zato što i mi to radimo. Ipak, vi se ne klonite borbe u potpunosti... možda smo vas ipak pogrešno procenili.
+
+PRAISE_TRADE_01            | Naš trgovinski ugovor je bio jako isplativ za obe naše rase, mali prijatelju. Ali poverenje je najvrednija kovanica i mi ćemo vam i dalje verovati sve dok se ponašate na takav način.
+PRAISE_TRADE_02            | Iako je rat možda najuzbudljiviji način za napredak, to nije jedini način, što dokazuje naš trgovinski sporazum. Neka dugo poživi, da bi naši narodi prosperirali!
+
+PRAISE_REBELLING_WITH_01   | Ha ha! Dakle, mislite da se samostalno suprotstavite galaksiji? Da li ste mislili da ćemo se kloniti tako slavne bitke? Ustanite i stojte silno, jer [my_empire] stoji uz vas!
+
+ACCEPT_TRADE_01            | Mudrost vaših pregovora nadoknađuje vaš nedostatak veličine, mali [your_raceVoc]! Imperija je zadovoljna što od sada trguje sa vama [amt] MK godišnje.
+RESPOND_IGNORE_THREAT_01   | Hahaha, i zašto bismo slušali pretnje tako sićušnih bića? Idite sada i smatrajte se srećnim što smo danas u takvom oproštajnom raspoloženju!
+RESPOND_STOP_SPYING_01     | Male čomke koje koristimo za špijuniranje su uhvaćene, zar ne? Ah, dobro, vratite nam i njih i naše špijune neozleđene i videćemo da vas više ne muče.
+RESPOND_STOP_ATTACKING_01  | Imperijalne flote su zastrašujuće, zar ne? Ne bojte se maleni, naš prikaz je ispuni svoj cilj i mi ćemo ih sada opozvati.
+
+
+

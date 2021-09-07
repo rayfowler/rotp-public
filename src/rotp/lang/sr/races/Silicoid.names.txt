@@ -1,0 +1,21 @@
+// all possible names
+name: Silikoidi, Ignioidi, Sidimoidi, Granitoidi, Magmoidi
+
+desc1: Ksenofobični Ekspanzionisti
+desc2: Imunost na Nepristupačna Životna Okruženja
+desc3: Enigmatični kamenojedi Silikoidi nastanjuju galaksiju u potrazi za njihovim smrtnim neprijateljima.
+
+// possible home system names
+home: Krajslon, Geoda, Karst, Ignius, Silikan
+
+title:     Imperator
+fulltitle: Kristalni Imperator
+
+// possible leader names
+leader: Karnaks, Krajstos, Geoda, Granid, Ignius, Sedimin
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Sediment, Kamenčić, Kamen, Stena, Kristal, Mineral, Pesak
+ship2: Granit, Mermer, Škriljac, Kvarc, Plavac, Gabro, Opsidijan
+ship3: Magma, Lava, Feldspat, Riolit, Liskun, Bazalt, Dacit
+ship4: Dijamant, Safir, Smaragd, Rubin, Ametist, Topaz, Granat

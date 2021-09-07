@@ -577,6 +577,7 @@ MAIN_COLONY_HOMEWORLD             | %1 Planeta Natal
 MAIN_COLONY_FOUNDED               | %1 Colónia
 MAIN_COLONY_POPULATION            | População
 MAIN_COLONY_FACTORIES             | Fábricas
+MAIN_COLONY_VALUE+                | %1+
 MAIN_COLONY_SHIELD                | Nível de Escudos
 MAIN_COLONY_BASES                 | Bases
 MAIN_COLONY_PRODUCTION            | Produção - Total (Bruto)
