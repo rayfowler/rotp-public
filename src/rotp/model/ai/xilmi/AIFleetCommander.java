@@ -121,14 +121,17 @@ public class AIFleetCommander implements Base, FleetCommander {
         if(!systemInfoBuffer.containsKey(id))
         {
             AISystemInfo buffy = new AISystemInfo();
-            for(StarSystem sys : galaxy().systemsInRange(current, empire.shipRange()))
+            if(!empire.tech().hyperspaceCommunications())
             {
-                if(!empire.sv.inShipRange(sys.id))
+                for(StarSystem sys : galaxy().systemsInRange(current, empire.shipRange()))
                 {
-                    if(empire.canColonize(sys.id)
-                            || empire.unexploredSystems().contains(sys))
+                    if(!empire.sv.inShipRange(sys.id))
                     {
-                        buffy.additionalSystemsInRangeWhenColonized++;
+                        if(empire.canColonize(sys.id)
+                                || empire.unexploredSystems().contains(sys))
+                        {
+                            buffy.additionalSystemsInRangeWhenColonized++;
+                        }
                     }
                 }
             }
@@ -432,6 +435,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                     bonusScore /= 3;
                 bonusScore += colonizationBonus * 5;
                 score += bonusScore;
+                if(enemyBc > 0)
+                    score /= enemyBc;
             }
             if(empire.alliedWith(empire.sv.empId(id)))
             {
@@ -498,7 +503,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                 score *= 2.0;
                 if (bc > 0 && fleet.sysId() != current.id && (current.empire() == null || empire.alliedWith(empire.sv.empId(id))))
                 {
-                    if(!(current.empire() == null && fleet.canColonizeSystem(current) && colonizerEnroute == false))
+                    if(!(current.empire() == null && fleet.canColonizeSystem(current) && !colonizerEnroute))
                         score /= bc;
                 }
             }
@@ -524,7 +529,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             }
         }
         /*if(best != null)
-            System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" => "+empire.sv.name(best.id)+" score: "+bestScore);*/
+            System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" x: "+fleet.x()+" y: "+fleet.y()+" => "+empire.sv.name(best.id)+" score: "+bestScore+" colonizersEnroute: "+systemInfoBuffer.get(best.id).colonizersEnroute);*/
         return best;
     }
     
@@ -834,7 +839,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                             && fleet.system() != stagingPoint 
                             && fleet.travelTurns(target) > (int)Math.ceil(fleet.travelTime(stagingPoint, target, fleetSpeed)) 
                             && fleet.travelTurns(target) > fleet.travelTurns(stagingPoint)
-                            && !(fleet.canColonizeSystem(target) && target.empire() == null) )
+                            && !(fleet.canColonizeSystem(target) && empire.sv.empire(target.id) == null) )
                         {
                             //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" going to "+target.name()+" stages at: "+stagingPoint.name());
                             stagingPoint = smartPath(fleet, stagingPoint);
@@ -1147,13 +1152,14 @@ public class AIFleetCommander implements Base, FleetCommander {
                     systemInfoBuffer.get(target.id).myBombardDamage += counts[i] * designBombardDamage(d, target);
                     if(d.hasColonySpecial())
                         systemInfoBuffer.get(target.id).colonizersEnroute++;
+                    //System.out.print("\n"+empire.name()+" deploy "+counts[i]+" "+d.name()+" speed "+speed+" to "+target.name()+" splitBySpeed: "+splitBySpeed+" colonizersEnroute: "+systemInfoBuffer.get(target.id).colonizersEnroute+" myBC: "+systemInfoBuffer.get(target.id).myBc);
                     if(fl.destination() != null)
                     {
                         UpdateSystemInfo(fl.destination().id);
                         systemInfoBuffer.get(fl.destination().id).myBc -= counts[i] * d.cost();
                         systemInfoBuffer.get(fl.destination().id).myBombardDamage -= counts[i] * designBombardDamage(d, fl.destination());
                         if(d.hasColonySpecial())
-                            systemInfoBuffer.get(target.id).colonizersEnroute--;
+                            systemInfoBuffer.get(fl.destination().id).colonizersEnroute--;
                     }
                 }
             }
