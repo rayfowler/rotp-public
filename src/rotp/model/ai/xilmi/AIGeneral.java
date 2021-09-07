@@ -974,9 +974,9 @@ public class AIGeneral implements Base, General {
         float totalPopCap = 0;
         for(StarSystem sys: emp.allColonizedSystems())
         {
-            x += sys.x() * sys.planet().maxSize();
-            y += sys.y() * sys.planet().maxSize();
-            totalPopCap += sys.planet().maxSize();
+            x += sys.x() * sys.colony().population();
+            y += sys.y() * sys.colony().population();
+            totalPopCap += sys.colony().population();
         }
         x /= totalPopCap;
         y /= totalPopCap;
