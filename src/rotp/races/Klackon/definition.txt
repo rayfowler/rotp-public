@@ -16,7 +16,7 @@ soldierMug:    KlaAdvisorS,       0@0|440x330
 diploProfile:  KlaAdvisorW, 0@0|630x480
 lab:           KlackonLaboratory
 embassy:       KlackonLaboratory
-holograph:     KlackonHolograph
+holograph:     
 diplomat:      KlackonDiplomat
 scientist:     KlackonScientist
 trooper:       KlackonSoldier
@@ -77,7 +77,7 @@ spyRebellion:  36
 dialogTextX:   180,180
 dialogTextY:   540
 councilDiplo:  0.5, 70, -160, 0.6
-labFlagX:      0.71
+labFlagX:      0.75
 flagSize:      200x200
 flagWar:       KlaFlagWar
 flagNormal:    KlaFlagNorm

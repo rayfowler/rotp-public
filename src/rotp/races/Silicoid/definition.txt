@@ -15,7 +15,7 @@ soldierMug:    SilicoidSoldierMug, 165@0|440x330
 diploProfile:  SilicoidDiploMug, 100@0|630x480
 lab:           SilicoidLaboratory
 embassy:       SilicoidLaboratory
-holograph:     SilicoidHolograph
+holograph:     
 diplomat:      SilicoidDiplomat
 scientist:     SilicoidScientist
 trooper:       SilicoidSoldier
@@ -75,7 +75,7 @@ spyRebellion:  22
 dialogTextX:   150,150
 dialogTextY:   530
 councilDiplo:  0.50, 30, -130, 0.6
-labFlagX:      0.78
+labFlagX:      0.80
 flagSize:      200x200
 flagWar:       SilFlagWar
 flagNormal:    SilFlagNorm

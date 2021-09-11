@@ -13,7 +13,6 @@ BulDlgNorm  | races/Bulrathi/dialogue_norm.png
 BulDlgPact  | races/Bulrathi/dialogue_pact.png
 
 BulLab      | races/Bulrathi/Bulrathi_Laboratory.jpg
-BulLab01    | races/Bulrathi/Bulrathi_Laboratory_holograph.png
 BulCouncil  | races/Bulrathi/Council_01.jpg
 
 BulLeader    | races/Bulrathi/CouncilLeader.png

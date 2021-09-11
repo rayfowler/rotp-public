@@ -15,7 +15,6 @@ SilDlgPact   | races/Silicoid/dialogue_pact.png
 SilicoidTroopIcon | races/Silicoid/troop_icon.png
 
 SilLab       | races/Silicoid/Silicoid_Laboratory_Base.jpg
-SilLab01     | races/Silicoid/Silicoid_Laboratory_Holograph.png
 SilLabGlowA  | races/Silicoid/Silicoid_Laboratory_GlowA.png
 SilLabGlowB  | races/Silicoid/Silicoid_Laboratory_GlowB.png
 SilCouncil   | races/Silicoid/Council_01.jpg

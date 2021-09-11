@@ -1,6 +1,5 @@
 
 SakkraLaboratory    | races/Sakkra/animationLaboratory.txt
-SakkraHolograph     | races/Sakkra/animationHolograph.txt
 SakkraDiploMug      | races/Sakkra/animationMugshot.txt
 SakkraSpyMug        | races/Sakkra/animationSpyMug.txt
 SakkraSoldierMug    | races/Sakkra/animationSoldierMug.txt

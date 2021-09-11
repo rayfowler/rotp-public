@@ -1,6 +1,0 @@
-#
-# Psilon Laboratory Animation
-# effect fades in and stays
-
-Base,   _ALL_  , PsiLab01
-

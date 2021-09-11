@@ -1,7 +1,6 @@
 
 
 MeklarLaboratory      | races/Meklar/animationLaboratory.txt
-MeklarHolograph       | races/Meklar/animationHolograph.txt
 MeklarSpyMug          | races/Meklar/animationSpyMug.txt
 MeklarSoldierMug      | races/Meklar/animationSoldierMug.txt
 MeklarDiploMug        | races/Meklar/animationMugshot.txt

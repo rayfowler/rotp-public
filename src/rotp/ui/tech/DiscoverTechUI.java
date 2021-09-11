@@ -283,7 +283,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         int h = getHeight();
 
         int fX = (int) ((player().race().labFlagX()-.2)*w);
-        int fY = scaled(150);
+        int fY = scaled(200);
         int fW = scaled(448);
         int fH = scaled(280);
         g.drawImage(labImg, 0, 0, w, h, null);

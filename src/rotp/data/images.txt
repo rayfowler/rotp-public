@@ -55,5 +55,29 @@ TECH_TACHYON_BEAM             | images/techs/Tachyon_Beam.png
 TECH_TRI-FOCUS_PLASMA_CANNON  | images/techs/Tri-Focus_Plasma_Cannon.png
 TECH_ZEON_MISSILE             | images/techs/Zeon_Missile.png
 
-
+TECH_DEFLECTOR_SHIELDS_01     | images/techs/Deflector_Shields_01.png
+TECH_DEFLECTOR_SHIELDS_02     | images/techs/Deflector_Shields_02.png
+TECH_DEFLECTOR_SHIELDS_03     | images/techs/Deflector_Shields_03.png
+TECH_DEFLECTOR_SHIELDS_04     | images/techs/Deflector_Shields_04.png
+TECH_DEFLECTOR_SHIELDS_05     | images/techs/Deflector_Shields_05.png
+TECH_DEFLECTOR_SHIELDS_06     | images/techs/Deflector_Shields_06.png
+TECH_DEFLECTOR_SHIELDS_07     | images/techs/Deflector_Shields_07.png
+TECH_DEFLECTOR_SHIELDS_09     | images/techs/Deflector_Shields_09.png
+TECH_DEFLECTOR_SHIELDS_11     | images/techs/Deflector_Shields_11.png
+TECH_DEFLECTOR_SHIELDS_13     | images/techs/Deflector_Shields_13.png
+TECH_DEFLECTOR_SHIELDS_15     | images/techs/Deflector_Shields_15.png
+TECH_STASIS_FIELD             | images/techs/Stasis_Field.png
+TECH_REPULSOR_BEAM            | images/techs/Repulsor_Beam.png
+TECH_CLOAKING_DEVICE          | images/techs/Cloaking_Device.png
+TECH_BLACK_HOLE_GENERATOR     | images/techs/Black_Hole_Generator.png
+TECH_PLANETARY_SHIELD_V       | images/techs/Class_V_Planetary_Shields.png
+TECH_PLANETARY_SHIELD_X       | images/techs/Class_X_Planetary_Shields.png
+TECH_PLANETARY_SHIELD_XV      | images/techs/Class_XV_Planetary_Shields.png
+TECH_PLANETARY_SHIELD_XX      | images/techs/Class_XX_Planetary_Shields.png
+TECH_PERSONAL_SHIELD_01       | images/techs/Personal_Deflector_Shield.png
+TECH_PERSONAL_SHIELD_02       | images/techs/Personal_Absorption_Shield.png
+TECH_PERSONAL_SHIELD_03       | images/techs/Personal_Barrier_Shield.png
+TECH_MISSILE_SHIELD_01        | images/techs/Anti-Missile_Rockets.png
+TECH_MISSILE_SHIELD_02        | images/techs/Zyro_Shield.png
+TECH_MISSILE_SHIELD_03        | images/techs/Lightning_Shield.png
 

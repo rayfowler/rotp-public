@@ -15,7 +15,6 @@ PsiDlgPact  | races/Psilon/dialogue_pact.png
 PsilonTroopIcon | races/Psilon/troop_icon.png
 
 PsiLab      | races/Psilon/Psilon_Laboratory.jpg
-PsiLab01    | races/Psilon/Psilon_Laboratory_effect.png
 PsiCouncil  | races/Psilon/Council_01.jpg
 
 PsiLeader    | races/Psilon/CouncilLeader.png

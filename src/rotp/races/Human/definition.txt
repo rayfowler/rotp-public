@@ -15,7 +15,7 @@ soldierMug:    HumanSoldierMug, 120@10|440x330
 diploProfile:  HumanDiploMug, 0@100|630x480
 lab:           HumanLaboratory
 embassy:       HumanLaboratory
-holograph:     HumanHolograph
+holograph:     
 diplomat:      HumanDiplomat
 scientist:     HumanScientist
 trooper:       HumanSoldier
