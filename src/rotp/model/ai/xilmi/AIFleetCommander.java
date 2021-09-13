@@ -92,7 +92,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             }
             float threatFactor = 0.04f;
             if(techsLeft)
-                maxMaintenance = sqrt(empire.tech().avgTechLevel()) * threatFactor;
+                maxMaintenance = sqrt(max(10, empire.tech().avgTechLevel())) * threatFactor;
             else
                 maxMaintenance = 0.9f;
         }
