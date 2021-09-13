@@ -1813,13 +1813,13 @@ public class AIDiplomat implements Base, Diplomat {
         return rank;
     }
     @Override
-    public int militaryRank()
+    public int militaryRank(Empire etc)
     {
         int rank = 1;
-        float myMilitaryPower = empire.militaryPowerLevel(empire);
-        for(Empire emp:empire.contactedEmpires())
+        float myMilitaryPower = etc.militaryPowerLevel(etc);
+        for(Empire emp:etc.contactedEmpires())
         {
-            if(!empire.inEconomicRange(emp.id))
+            if(!etc.inEconomicRange(emp.id))
                 continue;
             if(emp.militaryPowerLevel(emp) > myMilitaryPower)
                 rank++;

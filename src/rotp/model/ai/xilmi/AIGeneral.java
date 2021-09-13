@@ -680,6 +680,12 @@ public class AIGeneral implements Base, General {
             bestVictim = archEnemy;
             return bestVictim;
         }
+        int opponentsInRange = 0;
+        for(Empire emp : empire.contactedEmpires())
+        {
+            if(empire.inEconomicRange(emp.id))
+                opponentsInRange++;
+        }
         for(Empire emp : empire.contactedEmpires())
         {
             //Since there's allied victory, there's no reason to ever break up with our alliance
@@ -687,6 +693,17 @@ public class AIGeneral implements Base, General {
                 continue;
             if(!empire.inShipRange(emp.id))
                 continue;
+            //The bigger we are, the more careful we are about whom to pick
+            if(!empire.warEnemies().contains(emp))
+            {
+                int upToWhatRank = 2 + opponentsInRange - empire.diplomatAI().popCapRank();
+                System.out.println(galaxy().currentTurn()+" "+empire.name()+" "+emp.name()+" military-rank: "+empire.diplomatAI().militaryRank(emp) +" threshold: "+upToWhatRank);
+                if(empire.diplomatAI().militaryRank(emp) < upToWhatRank)
+                {
+                    //System.out.println(galaxy().currentTurn()+" "+empire.name()+" skips "+emp.name()+" as potential enemy because military-rank: "+empire.diplomatAI().militaryRank(emp) +" is better than "+upToWhatRank);
+                    continue;
+                }
+            }
             boolean incomingInvasion = false;
             float currentScore = 1 / fleetCenter(empire).distanceTo(colonyCenter(emp));
             if(incomingInvasion)
@@ -883,7 +900,7 @@ public class AIGeneral implements Base, General {
             }
         }
         //System.out.println(galaxy().currentTurn()+" "+empire.name()+" "+totalArmedFleetCost+" / "+attackThreshold+" "+empire.shipMaintCostPerBC()+" / "+empire.fleetCommanderAI().maxShipMaintainance() / 4+" Enough: "+enoughMaintenance);
-        if(totalArmedFleetCost > attackThreshold && empire.diplomatAI().militaryRank() <= empire.diplomatAI().popCapRank())
+        if(totalArmedFleetCost > attackThreshold && empire.diplomatAI().militaryRank(empire) <= empire.diplomatAI().popCapRank())
             return true;
         return false;
     }

@@ -127,5 +127,5 @@ public interface Diplomat {
     default int popCapRank() { return 1; }
     default int techLevelRank() { return 1; }
     default int facCapRank() { return 1; }
-    default int militaryRank() { return 1; }
+    default int militaryRank(Empire etc) { return 1; }
 }
