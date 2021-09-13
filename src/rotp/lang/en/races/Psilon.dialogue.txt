@@ -65,7 +65,7 @@ WARN_ATTACKED_ALLY_01      | Call off these attacks of yours, ambassador! You kn
 WARN_REBELLING_AGAINST_01  | No! You cannot be trusted to lead the council to peace! Our dedication to peace far outmatches yours, but you may force us to soon discard that dedication! 
 
 PRAISE_COUNCIL_VOTE_01     | Our friends at the [voter_empire] have never let us down before! The Republic extends its gratitude to you for your... actions in council today, and we look forward to hosting you on [candidate_home] as soon as you can spare the time. 
-PRAISE_COUNCIL_VOTE_02     | Wise decisions were made at the council, but perhaps the wisest was the vote you placed for the Republic. We recognize such... dedication to peace, and may  enjoy friendship with you so long as that dedication continues.  
+PRAISE_COUNCIL_VOTE_02     | Wise decisions were made at the council, but perhaps the wisest was the vote you placed for the Republic. We recognize such... dedication to peace, and may enjoy friendship with you so long as that dedication continues.  
 PRAISE_COUNCIL_VOTE_03     | We are aware of your vote for the Republic in council. We are surprised, ambassador, and may have underestimated the intelligence of your people. 
 
 PRAISE_ATTACKED_ENEMY_01   | Ambassador! Your aid is most... appreciated. Together we will remove the [defender_race] menace, and restore the peace this galaxy so desperately craves. 

@@ -133,7 +133,7 @@ EVENT_DERELICT                    | The fleet of the [target_empire] has discove
 EVENT_EARTHQUAKE                  | A devastating earthquake strikes the [target_race] world in the [system] system, killing [amt] million colonists while damaging large areas of industrial activity.
 EVENT_ENRICHED                    | Deep mining exploration at the [target_race] world in the [system] system reveals a huge, previously undetected deposit of heavy metals, making the planet Mineral Rich.
 EVENT_FERTILE                     | A sudden shift in the planetary axis of the [target_race] world at [system] has changed its environment to be more fertile. Population growth increases by 50%.
-EVENT_PIRACY                      | Pirates have been begun disrupting overall trade among [target_race] systems, reducing trade revenues by [amt]%. Armed ships are needed in the [system] system to disrupt their base of operations.
+EVENT_PIRACY                      | Pirates have begun disrupting overall trade among [target_race] systems, reducing trade revenues by [amt]%. Armed ships are needed in the [system] system to disrupt their base of operations.
 EVENT_PIRACY_2                    | The pirates based in the [system] system continue to disrupt [target_race] trade activity, reducing overall trade levels by an estimated [amt]%.
 EVENT_PIRACY_3                    | The [target_race] fleet has destroyed a major piracy operation based in the [system] system. Overall trade levels have returned to normal.
 EVENT_PLAGUE                      | A deadly plague strikes the [target_race] world in the [system] system. A quarantine has been placed on the system and millions are expected to die each year until scientists can find a cure.

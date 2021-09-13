@@ -25,7 +25,7 @@ GREETING_07                | You behave oddly and I do not like it. Just say wha
 
 DECLAREWAR_HATE_01         | I've waited too long, I must find another who is like me! You continue to be in my way, and I'll not wait a second longer to be rid of you.
 DECLAREWAR_HATE_02         | When I think of you it gives me a feeling of disgust I never even knew I could feel. I will give everything I must to see you destroyed once and for all!
-DECLAREWAR_HATE_03         | No! It can't be that I set out on my journey only to find something like you in this galaxy! I won't continue living with you as a neighbor! Either I you perish or I will!
+DECLAREWAR_HATE_03         | No! It can't be that I set out on my journey only to find something like you in this galaxy! I won't continue living with you as a neighbor! Either you perish or I will!
 DECLAREWAR_ERRATIC_01      | You cannot fool me with your trickery! I know you will strike me at the time that suits you best! But I will kill you before that can happen!
 DECLAREWAR_ERRATIC_02      | Your behavior is strange and unpredictable. The uncertainty you make me feel vexes me so, and I do not see why I should have to suffer it any longer. Prepare for oblivion!
 DECLAREWAR_ERRATIC_03      | Why do you do what you do? What drives you? And will it drive you to bring war to me one day? I cannot just wait to see what you'll do next: for my future I must make war on you immediately!
@@ -51,7 +51,7 @@ OFFER_ALLIANCE_01          | Our relationship has been exceedingly beneficial to
  
 WARN_TRESPASSING_01        | You being at [system] makes me very uneasy. Remove the [your_name] fleet from the area, or I may be forced to retaliate.  
 WARN_EXPANSION_01          | I won't let you prevent me from completing my search by claiming every world you lay your eyes upon. Stop at once, or prepare yourself for war!
-WARN_BUILDUP_01            | You have grown your fleet to an impressive size, [your_name]. Be careful how you use it my fleets are present. 
+WARN_BUILDUP_01            | You have grown your fleet to an impressive size, [your_name]. Be careful how you use it while my fleets are present. 
 WARN_SKIRMISH_01           | The incident at [system] unsettles me. Was it merely a misunderstanding on your part? Ensure that it does not happen again: I don't want to fight the [your_name] if I don't have to. 
 WARN_ATTACKED_01           | What is there to gain by attacking me so? Cease your aggression at once, or you'll force me to repay it back onto you one-hundred fold! 
 WARN_INVADED_01            | Why have you invaded my space at the [system] system?! Do you intend to start a conflict or have you merely lost control of your bodies? 
@@ -62,8 +62,7 @@ WARN_GENOCIDE_01           | How callous! I never expected that you would go so 
 WARN_FINAL_WAR_01          | I now see that for me to realize my dream, the galaxy must be at peace. But as long as you exist that peace can never be made real. The answer is obvious: the [rebel_name] must be destroyed! 
 WARN_COUNCIL_VOTE_01       | I admit that I'm unfamiliar with the nuances of what you call "political maneuvering." But I do know that by voting for [other_name] you have made a move against me, and I don't forget those impede me so. 
 WARN_OATHBREAKER_01        | Is this how you operate, [your_name]? To make an agreement only to break it when you see fit? I knew that you were nothing like me, and your actions prove this beyond a shadow of a doubt! [spiesCaught] 
-WARN_ATTACKED_ALLY_01      | Why do you attack my friend [defender_name], [your name]? Find another way to resolve your 
-differences: I will not like being forced to intervene! 
+WARN_ATTACKED_ALLY_01      | Why do you attack my friend [defender_name], [your name]? Find another way to resolve your differences: I will not like being forced to intervene! 
 WARN_REBELLING_AGAINST_01  | I do not like the [your_name], and I like even less that you were chosen as leader of the council! I must reflect on what has happened today, and you should reflect on how I may soon be forced to respond! 
 
 PRAISE_COUNCIL_VOTE_01     | [voter_name]! Don't think I take your vote in the Council for granted! Though you and I are very different, I'm truly happy that I was able to meet such a wonderful friend as you on my journey. 
