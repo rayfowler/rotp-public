@@ -697,7 +697,7 @@ public class AIGeneral implements Base, General {
             if(!empire.warEnemies().contains(emp))
             {
                 int upToWhatRank = 2 + opponentsInRange - empire.diplomatAI().popCapRank();
-                System.out.println(galaxy().currentTurn()+" "+empire.name()+" "+emp.name()+" military-rank: "+empire.diplomatAI().militaryRank(emp) +" threshold: "+upToWhatRank);
+                //System.out.println(galaxy().currentTurn()+" "+empire.name()+" "+emp.name()+" military-rank: "+empire.diplomatAI().militaryRank(emp) +" threshold: "+upToWhatRank);
                 if(empire.diplomatAI().militaryRank(emp) < upToWhatRank)
                 {
                     //System.out.println(galaxy().currentTurn()+" "+empire.name()+" skips "+emp.name()+" as potential enemy because military-rank: "+empire.diplomatAI().militaryRank(emp) +" is better than "+upToWhatRank);
