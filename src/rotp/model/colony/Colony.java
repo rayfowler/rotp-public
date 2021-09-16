@@ -995,12 +995,12 @@ public final class Colony implements Base, IMappedObject, Serializable {
             if (ev.embassy().unity())
                 return;
             // don't cause war if treaty signed since launch
-            if (!ev.embassy().war() && (ev.embassy().treatyDate() >= tr.launchTime()))
+            if (!(ev.embassy().war() || ev.embassy().finalWar()) && (ev.embassy().treatyDate() >= tr.launchTime()))
                 return;
             // don't cause war if planet now occupied by another race
-            if (!ev.embassy().war() && (empire != tr.targetCiv()))
+            if (!(ev.embassy().war() || ev.embassy().finalWar()) && (empire != tr.targetCiv()))
                 return;
-            if (!ev.embassy().war())
+            if (!(ev.embassy().war() || ev.embassy().finalWar()))
                 ev.embassy().declareWar();
         }
 
