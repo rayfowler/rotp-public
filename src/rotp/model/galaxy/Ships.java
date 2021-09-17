@@ -342,6 +342,33 @@ public class Ships implements Base, Serializable {
 
         return retreatingFleet;
     }
+    public boolean cancelRetreatingFleets(int empId, int sysId) {
+        List<ShipFleet> retreatingFleets = retreatingFleets(empId, sysId);
+        ShipFleet orbitingFleet = orbitingFleet(empId, sysId);
+        
+        boolean cancelled = !retreatingFleets.isEmpty();
+        
+        for (ShipFleet fl: retreatingFleets) {
+            if (orbitingFleet == null) {
+                orbitingFleet = fl;
+                orbitingFleet.makeOrbiting();
+                orbitingFleet.retreating(false);
+                orbitingFleet.rallySysId(StarSystem.NULL_ID);
+                orbitingFleet.destSysId(StarSystem.NULL_ID);
+            }
+            else {
+                for (int i=0;i<fl.num.length;i++) {
+                    int a = fl.num(i);
+                    int b = orbitingFleet.num(i);
+                    orbitingFleet.num(i, a+b);
+                    fl.num(i,0);
+                }
+                deleteFleet(fl);
+                session().replaceVarValue(fl, orbitingFleet);            
+            }
+        }
+        return cancelled;
+    }
     public boolean undeployFleet(ShipFleet sourceFleet) {
         if (!sourceFleet.deployed() && !sourceFleet.isRalliedThisTurn())
             return false;
@@ -551,6 +578,16 @@ public class Ships implements Base, Serializable {
                 return fl;
         }
         return null;
+    }
+    public List<ShipFleet> retreatingFleets(int empId, int sysId) {
+        List<ShipFleet> fleetsAll = allFleetsCopy();
+        List<ShipFleet> retreating = new ArrayList<>();
+        for (ShipFleet fl: fleetsAll) {
+            if ((fl.empId == empId) && (fl.sysId() == sysId) 
+            && fl.isDeployed() && fl.retreating())
+                retreating.add(fl);
+        }
+        return retreating;
     }
     public ShipFleet deployedFleet(int empId, int sysId, int destSysId, int turns) {
         List<ShipFleet> fleetsAll = allFleetsCopy();
