@@ -38,6 +38,9 @@ public class ColonyShipyard extends ColonySpendingCategory {
     private boolean shipLimitReached = false;
     private transient ShipFleet rallyFleet;
     private transient float maxAllowedShipBCProd;
+    private transient int rallyCount = 0;
+    private transient int rallyDesignId = 0;
+    private transient int rallyDestSysId = StarSystem.NULL_ID;
 
     // used by the AI when determining what to build
     private float queuedBC = 0;
@@ -97,7 +100,14 @@ public class ColonyShipyard extends ColonySpendingCategory {
     @Override
     public void lowerMaintenance()       { hasStargate = false; }
     @Override
-    public void assessTurn()             { }
+    public void assessTurn()             { 
+        if (rallyCount ==0)
+            return;
+        
+        Colony c = colony();
+        galaxy().ships.rallyOrbitingShips(c.empire().id, c.starSystem().id, rallyDesignId, rallyCount, rallyDestSysId);
+ 
+    }
     public boolean building()            { return queuedBC > 0; }
     public boolean willingToBuild(Design d) {
         if (design == d)
@@ -142,6 +152,9 @@ public class ColonyShipyard extends ColonySpendingCategory {
     }
     @Override
     public void nextTurn(float totalProd, float totalReserve) {
+        rallyCount = 0;
+        rallyDesignId = 0;
+        rallyDestSysId = StarSystem.NULL_ID;
         maxAllowedShipBCProd = -1;
         // if we switched designs, send previous ship BC to shipyard reserve
         if (design != prevDesign) {
@@ -227,10 +240,14 @@ public class ColonyShipyard extends ColonySpendingCategory {
         int sysId = sys.id;
         int designId = d.id();
         
-        if ((emp.sv.hasRallyPoint(sysId)) && (emp.alliedWith(emp.sv.empId(sysId)))) 
-            galaxy().ships.buildRallyShips(emp.id, sysId, designId, count, id(emp.sv.rallySystem(sysId)));
-        else
-            galaxy().ships.buildShips(emp.id, sysId, designId, count);
+        // if we are rallying, note how many of which design we need to deploy later
+        if ((emp.sv.hasRallyPoint(sysId)) && (emp.alliedWith(emp.sv.empId(sysId)))) {
+            rallyCount = count;
+            rallyDesignId = designId;
+            rallyDestSysId = id(emp.sv.rallySystem(sysId));
+        }
+
+        galaxy().ships.buildShips(emp.id, sysId, designId, count);
     }
     public void capturedBy(Empire newCiv) {
         if (newCiv == empire())

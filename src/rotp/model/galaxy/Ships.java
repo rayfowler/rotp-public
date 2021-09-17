@@ -30,18 +30,31 @@ public class Ships implements Base, Serializable {
     private final List<ShipFleet> allFleets = new ArrayList<>();
      private List<ShipFleet> allFleetsCopy() { return new ArrayList<>(allFleets); }
     
-    public void buildRallyShips(int empId, int sysId, int designId, int count, int rallySysId) {
-        // are we relocating new ships? If so, do so as long as dest is still allied with us
-        ShipFleet existingFleet = rallyingFleet(empId, sysId, rallySysId);
+    public void rallyOrbitingShips(int empId, int sysId, int designId, int count, int rallySysId) {
+        ShipFleet orbitingFleet = orbitingFleet(empId, sysId);
+        if (orbitingFleet == null)
+            return;   // no ships in orbit to rally
         
-        if (existingFleet == null) {
+        int rallyCount = min(count, orbitingFleet.num(designId));
+        
+        if (rallyCount == 0)
+            return;   // no orbiting ships of this design to rally
+
+        // check for an existing rally fleet
+        ShipFleet rallyingFleet = rallyingFleet(empId, sysId, rallySysId);
+        
+        // if none, create one
+        if (rallyingFleet == null) {
             StarSystem sys = galaxy().system(sysId);
-            existingFleet = new ShipFleet(empId, sys);
-            existingFleet.rallySysId(rallySysId);
-            existingFleet.makeDeployed();
-            allFleets.add(existingFleet);
+            rallyingFleet = new ShipFleet(empId, sys);
+            rallyingFleet.rallySysId(rallySysId);
+            rallyingFleet.makeDeployed();
+            allFleets.add(rallyingFleet);
         }       
-        existingFleet.addShips(designId, count);   
+        
+        // move rallyCount ships from orbitingFleet to rallyingFleet
+        rallyingFleet.addShips(designId, rallyCount);  
+        orbitingFleet.removeShips(designId, rallyCount, true);
     }
     public void forwardRallyFleet(ShipFleet fl, int empId, int sysId, int rallySysId) {
         ShipFleet existingFleet = rallyingFleet(empId, sysId, rallySysId);
