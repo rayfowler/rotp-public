@@ -172,10 +172,10 @@ public class CombatStackShip extends CombatStack {
         int maxRange = 0;
         for (int i=0;i<weapons.size();i++) {
             ShipComponent wpn = weapons.get(i);
-            if (!tgt.isColony() || !wpn.groundAttacksOnly()) {
-                if (roundsRemaining[i]>0)
-                    maxRange = max(maxRange,weaponRange(wpn));
-            }
+            if (wpn.groundAttacksOnly() && !tgt.isColony())
+                continue;
+            if (roundsRemaining[i]>0)
+                maxRange = max(maxRange,weaponRange(wpn));
         }
         return maxRange;
     }
