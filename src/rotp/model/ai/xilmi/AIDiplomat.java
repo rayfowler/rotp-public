@@ -59,6 +59,7 @@ import rotp.model.incidents.TechnologyAidIncident;
 import rotp.model.incidents.TrespassingIncident;
 import rotp.model.ships.ShipDesign;
 import rotp.model.tech.Tech;
+import static rotp.model.tech.TechTree.NUM_CATEGORIES;
 import rotp.ui.diplomacy.DialogueManager;
 import rotp.ui.diplomacy.DiplomacyTechOfferMenu;
 import rotp.ui.diplomacy.DiplomaticCounterReply;
@@ -1290,6 +1291,7 @@ public class AIDiplomat implements Base, Diplomat {
             //seed out false positives from recently colonized systems
             if(galaxy().currentTurn() - colonizationTurn < 10)
                 continue;
+            totalPotentialBombard += 4 * empire.enemyTransportsInTransit(current) / current.colony().maxSize();
             for(ShipFleet orbiting : current.orbitingFleets())
             {
                 if(orbiting.empId != v.empId())
@@ -1369,7 +1371,18 @@ public class AIDiplomat implements Base, Diplomat {
         int popCapRank = popCapRank();
         /*if(!everyoneMet() && popCapRank < 3)
             warAllowed = false;*/
-        if(techLevelRank() > popCapRank || facCapRank() > popCapRank)
+        for(int i = 0; i < NUM_CATEGORIES; ++i)
+        {
+            int levelToCheck = (int)Math.ceil(empire.tech().avgTechLevel());
+            float techCost = empire.tech().category(i).baseResearchCost(levelToCheck) * levelToCheck * levelToCheck * empire.techMod(i);
+            //System.out.println(galaxy().currentTurn()+" "+empire.name()+" cat: "+empire.tech().category(i).id()+" techlevel: "+levelToCheck+" techcost: "+techCost+" income: "+empire.totalIncome());
+            if(techCost < empire.totalIncome())
+            {
+                warAllowed = false;
+                break;
+            }
+        }
+        if(techLevelRank() > popCapRank || facCapRank() > 1)
         {
             warAllowed = false;
         }
