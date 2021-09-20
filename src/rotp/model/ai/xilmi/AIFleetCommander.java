@@ -442,7 +442,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             {
                 //attacking is a lot better than defending, so defending should have a lower score in general. Unless there's incoming transports, that is.
                 if(transports == 0)
-                    score /= 2.0f;
+                    score *= empire.generalAI().defenseRatio();
                 if (current.empire() == empire && current.hasEvent()) {
                     if (current.eventKey().equals("MAIN_PLANET_EVENT_PIRACY")) {
                         handleEvent = true;
