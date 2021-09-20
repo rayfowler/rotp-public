@@ -87,6 +87,31 @@ public class AIGeneral implements Base, General {
         warROI = -1;
         
         additionalColonizersToBuild = additionalColonizersToBuild(false);
+        if(empire.atWar())
+        {
+            int[] counts = galaxy().ships.shipDesignCounts(empire.id);
+            ShipDesignLab lab = empire.shipLab();
+            float fighterCost = 0.0f;
+            float colonizerCost = 0.0f;
+            for (int i=0;i<counts.length;i++) 
+            {
+                if(lab.design(i).hasColonySpecial())
+                {
+                    colonizerCost += lab.design(i).cost() * counts[i];
+                    //System.out.println(galaxy().currentTurn()+" "+empire.name()+" "+lab.design(i).name()+" cost: "+lab.design(i).cost()+" count: "+counts[i]);
+                    continue;
+                }
+                fighterCost += lab.design(i).cost() * counts[i] * empire.shipDesignerAI().fightingAdapted(lab.design(i));
+            }
+            colonizerCost += additionalColonizersToBuild * lab.colonyDesign().cost();
+            //System.out.println(galaxy().currentTurn()+" "+empire.name()+" fightercost: "+fighterCost+" col-cost: "+colonizerCost+" col-need before: "+additionalColonizersToBuild);
+            while(colonizerCost > fighterCost && additionalColonizersToBuild > 0)
+            {
+                additionalColonizersToBuild--;
+                colonizerCost -= lab.colonyDesign().cost();
+            }
+            //System.out.println(galaxy().currentTurn()+" "+empire.name()+" col-need after: "+additionalColonizersToBuild);
+        }
         while (additionalColonizersToBuild > 0)
         {
             float highestScore = 0;
@@ -301,9 +326,11 @@ public class AIGeneral implements Base, General {
                 break;
             }
         }
+
         //ail: old check would also be positive when our fleet is retreating
+        //System.out.println(galaxy().currentTurn()+" "+empire.name()+" invading "+sys.name()+" haveOrbitingFleet: "+haveOrbitingFleet+" bases: "+sys.colony().defense().bases());
         if (haveOrbitingFleet
-                && sys.colony().defense().bases() == 0)
+                && sys.colony().defense().bases() < 1)
             launchGroundTroops(v, sys, 1);
         else if (empire.combatTransportPct() > 0)
             launchGroundTroops(v, sys, 1/empire.combatTransportPct());
@@ -314,7 +341,7 @@ public class AIGeneral implements Base, General {
         float troops1 = mult*troopsNecessaryToTakePlanet(v, target);
         int alreadySent = empire.transportsInTransit(target);
         float troopsDesired = troops1 + empire.sv.currentSize(target.id) * 0.25f - alreadySent;
-
+        //System.out.println(galaxy().currentTurn()+" "+empire.name()+" invading "+target.name()+" troops desired: "+troopsDesired);
         if (troopsDesired < 1)
             return;
 
@@ -751,6 +778,7 @@ public class AIGeneral implements Base, General {
         float totalProductionReachableByEnemies = 0.0f;
         float totalMissileBaseCost = 0.0f;
         float totalShipCost = 0.0f;
+        float reachableEnemies = 0;
         for(Empire enemy : empire.contactedEmpires())
         {
             if(!empire.inShipRange(enemy.id))
@@ -771,6 +799,7 @@ public class AIGeneral implements Base, General {
             }
             totalMissileBaseCost += enemy.missileBaseCostPerBC();
             totalShipCost += enemy.shipMaintCostPerBC();
+            reachableEnemies++;
         }
         if(totalReachableEnemyProduction > 0)
         {
@@ -782,6 +811,14 @@ public class AIGeneral implements Base, General {
             dr = min(dr, totalShipCost / (totalMissileBaseCost+totalShipCost));
         }
         //System.out.print("\n"+empire.name()+" totalShipCost: "+totalShipCost+" totalMissileBaseCost: "+totalMissileBaseCost+" dr: "+dr);
+        float avgEnemyShipCost = totalShipCost;
+        if(reachableEnemies > 0)
+            avgEnemyShipCost /= reachableEnemies;
+        if(avgEnemyShipCost > 0)
+        {
+            dr /= max(1, empire.shipMaintCostPerBC() / avgEnemyShipCost);
+        }
+        //System.out.print("\n"+empire.name()+" adjusted-defense-ratio: "+dr);
         defenseRatio = dr;
         return defenseRatio;
     }

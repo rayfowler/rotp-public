@@ -403,29 +403,12 @@ public class AIGovernor implements Base, Governor {
         int[] counts = galaxy().ships.shipDesignCounts(empire.id);
         float fighterCost = 0.0f;
         float bomberCost = 0.0f;
-        float colonizerCost = 0.0f;
         for (int i=0;i<counts.length;i++) 
         {
+            if(lab.design(i).hasColonySpecial())
+                continue;
             fighterCost += lab.design(i).cost() * counts[i] * empire.shipDesignerAI().fightingAdapted(lab.design(i));
             bomberCost += lab.design(i).cost() * counts[i] * empire.shipDesignerAI().bombingAdapted(lab.design(i));
-            if(lab.design(i).isColonyShip())
-            {
-                colonizerCost += lab.design(i).cost() * counts[i];
-            }
-        }
-        if(col.allocation(SHIP) == 0 && prodScore >= 0.5)
-        {
-            //Making sure to not just spam colonizers when we at risk of being attacked, also ignoring ship-maintenance-limit in this case
-            if(enemy == true || inAttackRange == true)
-            {
-                if(colonizerCost > fighterCost)
-                {
-                    col.shipyard().design(lab.fighterDesign());
-                    col.allocation(SHIP, maxAllocation - totalAlloc);
-                    totalAlloc = col.allocation(SHIP)+col.allocation(DEFENSE)+col.allocation(INDUSTRY)+col.allocation(ECOLOGY);
-                }
-            }
-            //System.out.print("\n"+empire.name()+" Colony-ship: "+col.shipyard().design().name()+ " needed: "+empire.generalAI().additionalColonizersToBuild());
         }
         //ail: No use to build any ships if they won't do damage anyways. Better tech up.
         boolean viableForShipProduction = true;
