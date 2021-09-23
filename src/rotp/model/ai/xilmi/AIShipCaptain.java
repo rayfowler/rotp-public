@@ -109,6 +109,25 @@ public class AIShipCaptain implements Base, ShipCaptain {
                         return;
                     }
                 }
+                if(stack.isShip())
+                {
+                    if(shouldDodgeMissile((CombatStackShip)stack))
+                    {
+                        if (stack.mgr.autoResolve) {
+                            Point destPt = findSafestPoint(stack);
+                            if (destPt != null)
+                                mgr.performMoveStackToPoint(stack, destPt.x, destPt.y);
+                        }
+                        else
+                        {
+                            FlightPath bestPathToSaveSpot = findSafestPath(stack);
+                            if(bestPathToSaveSpot != null)
+                                mgr.performMoveStackAlongPath(stack, bestPathToSaveSpot);
+                            //System.out.print("\n"+stack.fullName()+" Kiting performed: "+(bestPathToSaveSpot != null));
+                        }
+                        turnActive = false;
+                    }
+                }
                 currentTarget = tgtBeforeClose;
             }
             boolean shouldPerformKiting = false;
@@ -662,6 +681,20 @@ public class AIShipCaptain implements Base, ShipCaptain {
             for (CombatStackMissile miss: st.missiles()) {
                 if (miss.owner == currStack) 
                     return false;
+                if (miss.target == currStack && st.isShip())
+                {
+                    if(miss.maxMove > currStack.maxMove * sqrt(2) || miss.distanceTo(currStack.x(), currStack.y()) + currStack.maxMove <= miss.missile.range())
+                    {
+                        float hitPct;
+                        hitPct = (5 + miss.attackLevel - miss.target.missileDefense()) / 10;
+                        hitPct = max(.05f, hitPct);
+                        hitPct = min(hitPct, 1.0f);
+                        float killPct = ((miss.maxDamage()-miss.target.shieldLevel())*miss.num*hitPct)/(miss.target.maxHits*miss.target.num);
+                        //System.out.print("\n"+currStack.fullName()+" will be hit by missiles for approx "+killPct);
+                        if(killPct > 0.2f)
+                            return true;
+                    }
+                }
             }
         }
         
@@ -999,5 +1032,29 @@ public class AIShipCaptain implements Base, ShipCaptain {
         
         float popLoss = expectedPopulationLoss(ship, colony);
         return popLoss/colony.colony.population();
+    }
+    public boolean shouldDodgeMissile(CombatStackShip currStack)
+    {
+        boolean retVal = false;
+        List<CombatStack> activeStacks = new ArrayList<>(currStack.mgr.activeStacks());
+        for (CombatStack st: activeStacks) {
+            for (CombatStackMissile miss: st.missiles()) {
+                if (miss.target == currStack && st.isShip())
+                {
+                    if(miss.maxMove <= currStack.maxMove * sqrt(2) || miss.distanceTo(currStack.x(), currStack.y()) + currStack.maxMove > miss.missile.range())
+                    {
+                        float hitPct;
+                        hitPct = (5 + miss.attackLevel - miss.target.missileDefense()) / 10;
+                        hitPct = max(.05f, hitPct);
+                        hitPct = min(hitPct, 1.0f);
+                        float killPct = ((miss.maxDamage()-miss.target.shieldLevel())*miss.num*hitPct)/(miss.target.maxHits*miss.target.num);
+                        //System.out.print("\n"+currStack.fullName()+" will be hit by missiles for approx "+killPct);
+                        if(killPct > 0.05f)
+                            retVal = true;
+                    }
+                }
+            }
+        }
+        return retVal;
     }
 }
