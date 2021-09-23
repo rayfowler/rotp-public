@@ -1275,6 +1275,11 @@ public class AIDiplomat implements Base, Diplomat {
         if(empire.alliedWith(v.empId()))
             return false;
         float totalPotentialBombard = 0.0f;
+        for (Transport trn : v.empire().transports())
+        {
+            if(trn.destination().empire() == empire && empire.visibleShips().contains(trn))
+                totalPotentialBombard += 4 * trn.size() / trn.destination().planet().maxSize();
+        }
         for (int id=0;id<empire.sv.count();id++) 
         {
             StarSystem current = gal.system(id);
@@ -1291,7 +1296,6 @@ public class AIDiplomat implements Base, Diplomat {
             //seed out false positives from recently colonized systems
             if(galaxy().currentTurn() - colonizationTurn < 10)
                 continue;
-            totalPotentialBombard += 4 * empire.enemyTransportsInTransit(current) / current.colony().maxSize();
             for(ShipFleet orbiting : current.orbitingFleets())
             {
                 if(orbiting.empId != v.empId())
@@ -1373,11 +1377,11 @@ public class AIDiplomat implements Base, Diplomat {
             warAllowed = false;*/
         for(int i = 0; i < NUM_CATEGORIES; ++i)
         {
-            int levelToCheck = (int)Math.ceil(empire.tech().avgTechLevel());
+            int levelToCheck = (int)Math.ceil(empire.tech().category(i).techLevel());
             float techCost = empire.tech().category(i).baseResearchCost(levelToCheck) * levelToCheck * levelToCheck * empire.techMod(i);
-            //System.out.println(galaxy().currentTurn()+" "+empire.name()+" cat: "+empire.tech().category(i).id()+" techlevel: "+levelToCheck+" techcost: "+techCost+" income: "+empire.totalIncome());
             if(techCost < empire.totalIncome())
             {
+                //System.out.println(galaxy().currentTurn()+" "+empire.name()+" cat: "+empire.tech().category(i).id()+" techlevel: "+levelToCheck+" techcost: "+techCost+" income: "+empire.totalIncome());
                 warAllowed = false;
                 break;
             }
