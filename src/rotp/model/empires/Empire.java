@@ -992,10 +992,9 @@ public final class Empire implements Base, NamedObject, Serializable {
     public int enemyTransportsInTransit(StarSystem s) {
         int transports = s.orbitingTransports(id);
         
-        boolean[] enemyMap = enemyMap();
         for (Ship sh: visibleShips) {
             if (sh.isTransport()) {
-                if (enemyMap[sh.empId()] && (sh.destSysId() == s.id))
+                if (aggressiveWith(sh.empId()) && sh.destSysId() == s.id)
                     transports += ((Transport)sh).size();
             }
         }
