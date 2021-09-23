@@ -125,7 +125,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
     }
     private void countdownObsoleteDesigns() {
         if(((empire.shipMaintCostPerBC() > (empire.fleetCommanderAI().maxShipMaintainance() * 1.5) && empire.enemies().isEmpty() && !empire.fleetCommanderAI().inExpansionMode()))
-                || empire.netIncome() <= 0)
+                || (empire.netIncome() <= 0 && !empire.atWar()))
         {
             //System.out.print("\n"+empire.name()+" scrapWorstDesign max-maint: "+empire.fleetCommanderAI().maxShipMaintainance());
             scrapWorstDesign(empire.netIncome() <= 0);
@@ -635,9 +635,9 @@ public class AIShipDesigner implements Base, ShipDesigner {
         float totalFightingSpace = 0;
         for (int i=0; i<maxWeapons(); i++)
         {
-            totalWeaponSpace += d.weapon(i).space(d);
+            totalWeaponSpace += d.weapon(i).space(d) * d.wpnCount(i);
             if(!d.weapon(i).groundAttacksOnly())
-                totalFightingSpace += d.weapon(i).space(d);
+                totalFightingSpace += d.weapon(i).space(d) * d.wpnCount(i);
         }
         float fAd = 0;
         if(totalWeaponSpace > 0)
@@ -651,9 +651,9 @@ public class AIShipDesigner implements Base, ShipDesigner {
         float totalBombingSpace = 0;
         for (int i=0; i<maxWeapons(); i++)
         {
-            totalWeaponSpace += d.weapon(i).space(d);
+            totalWeaponSpace += d.weapon(i).space(d) * d.wpnCount(i);
             if(d.weapon(i).groundAttacksOnly())
-                totalBombingSpace += d.weapon(i).space(d);
+                totalBombingSpace += d.weapon(i).space(d) * d.wpnCount(i);
         }
         float bAd = 0;
         if(totalWeaponSpace > 0)
