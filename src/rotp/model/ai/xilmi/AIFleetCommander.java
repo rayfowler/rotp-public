@@ -317,6 +317,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                     continue;
                 if(current.distanceTo(target) + fleet.distanceTo(target) / 3 >= fleet.distanceTo(target))
                     continue;
+                if(current.distanceTo(target) + fleet.distanceTo(current) > 1.5 * fleet.distanceTo(target))
+                    continue;
                 float enemyBc = 0.0f;
                 if(systemInfoBuffer.containsKey(id))
                 {
@@ -772,6 +774,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                     boolean onlyBomberTargets = false;
                     boolean onlyColonizerTargets = false;
                     boolean targetIsGatherPoint = false;
+                    boolean onlyAllowRealTarget = false;
                     
                     if(fleet.numFighters() == 0 || notEnoughFighters)
                         onlyBomberTargets = true;
@@ -797,6 +800,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                             keepAmount = 1;
                         if(target == null)
                             keepAmount = 1;
+                        if(keepAmount < 1)
+                            onlyAllowRealTarget = true;
                     }
                     
                     //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" keep: "+keepAmount);
@@ -839,7 +844,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                             && fleet.system() != stagingPoint 
                             && fleet.travelTurns(target) > (int)Math.ceil(fleet.travelTime(stagingPoint, target, fleetSpeed)) 
                             && fleet.travelTurns(target) > fleet.travelTurns(stagingPoint)
-                            && !(fleet.canColonizeSystem(target) && empire.sv.empire(target.id) == null) )
+                            && !(fleet.canColonizeSystem(target) && empire.sv.empire(target.id) == null)
+                            && !onlyAllowRealTarget)
                         {
                             //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" going to "+target.name()+" stages at: "+stagingPoint.name());
                             stagingPoint = smartPath(fleet, stagingPoint);
@@ -1040,7 +1046,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                                 }
                             }
                             else if(stagingPoint != null
-                                && fleet.system() != stagingPoint)
+                                && fleet.system() != stagingPoint
+                                && !onlyAllowRealTarget)
                             {
                                 stagingPoint = smartPath(fleet, stagingPoint);
                                 attackWithFleet(fleet, stagingPoint, sendAmount, false, allowFighters, allowBombers, allowColonizers, keepBc, true);
