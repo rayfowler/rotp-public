@@ -114,26 +114,24 @@ public class NewShipTemplate implements Base {
         costMultiplier[3] = race.shipDesignMods[1];       
         // add another entry for the current design, using the cost multiplier for its size
 
-        // how many ships of each design can we build for virtual tests?
-        // use top 3 colonies
-        int coloniesForBudget = 3;
-        if (role == DesignType.BOMBER)
-            coloniesForBudget = 1;
-        float shipBudgetBC = shipProductionBudget(ai, coloniesForBudget);
-        
         SortedMap<Float, ShipDesign> designSorter = new TreeMap<>();
         
         for (int i = 0; i<costMultiplier.length; i++) {
             ShipDesign design = shipDesigns[i];
-            // number of whole designs we can build within our budget
-            int count = (int) Math.floor(shipBudgetBC / (design.cost() * costMultiplier[i]));
-            if(count < 1 && (i == 0 || i == 1))
-                count = 1;
-            float score = 0;
-            if(count >= 1)
-                score = design.spaceUsed() / design.totalSpace();
-            if(design.firepower(0) == 0)
-                score = 0;
+            if(ai.empire().totalPlanetaryIncome() / ai.empire().tech().topSpeed() < design.cost() && design.size() > 1)
+                continue;
+            float score = (weaponSpace(design) + specialSpace(design)) / design.cost();
+            float defScore = design.hits() / design.cost();
+            float hitPct = (5 + design.attackLevel() - (design.beamDefense() + design.missileDefense()) / 2) / 10;
+            hitPct = max(.05f, hitPct);
+            hitPct = min(hitPct, 1.0f);
+            float absorbPct = 1.0f;
+            if(design.firepowerAntiShip(0) > 0)
+                absorbPct = design.firepowerAntiShip(design.shieldLevel()) / design.firepowerAntiShip(0);
+            float mitigation = 1 - (hitPct * absorbPct);
+            defScore *= mitigation;
+            score *= defScore;
+            
             if(role.BOMBER == role)
             {
                 boolean hasBombs = false;
@@ -148,9 +146,7 @@ public class NewShipTemplate implements Base {
                 if (!hasBombs)
                     score = 0;
             }
-            for (int j=0;j<maxSpecials();j++)
-                if(!design.special(j).isNone())
-                    score *= 1.1;
+            //System.out.print("\n"+ai.empire().name()+" "+design.name()+" Role: "+role+" size: "+design.size()+" score: "+score+" defscore: "+defScore+" hitPct: "+hitPct+" absorbPct: "+absorbPct+" mitigation: "+mitigation);
             designSorter.put(score, design);
         }
         // lastKey is design with greatest damage
@@ -294,7 +290,7 @@ public class NewShipTemplate implements Base {
         // however, unless it isn't 1.0 or close to it of available space after engines and BC, it doesn't matter
         int weightsSum = shieldWeight + ecmWeight + maneuverWeight + armorWeight + specialsWeight;
 
-        float shieldSpace = modulesSpace * shieldWeight / weightsSum;
+        float shieldSpace = d.totalSpace() * 0.2f;
         float ecmSpace = modulesSpace * ecmWeight / weightsSum;
         float maneuverSpace = modulesSpace * maneuverWeight / weightsSum;
         float armorSpace = modulesSpace * armorWeight / weightsSum;
@@ -341,7 +337,6 @@ public class NewShipTemplate implements Base {
         switch (role) {
             case BOMBER:
                 setFittingSpecial(ai, d, specialsSpace, specials);
-                setFittingShields(ai, d, shieldSpace);
                 setFittingArmor(ai, d, armorSpace, reinforcedArmorAllowed);
                 setFittingManeuver(ai, d, maneuverSpace, sameSpeedAllowed);
                 setFittingECM(ai, d, ecmSpace);
@@ -457,6 +452,7 @@ public class NewShipTemplate implements Base {
         List<ShipShield> shields = ai.lab().shields();
         for (int i=shields.size()-1; (i >= 0) && (!foundIt); i--) {
             d.shield(shields.get(i));
+            //System.out.print("\n"+ai.empire().name()+" "+d.name()+" "+d.name()+" shieldspace: "+spaceAllowed+" "+shields.get(i).name()+" "+shields.get(i).space(d));
             if ((initialSpace - d.availableSpace()) <= spaceAllowed)
                 foundIt = true;
         }
@@ -861,5 +857,23 @@ public class NewShipTemplate implements Base {
         if(DesignsWithRegularBombs > 1 && DesignsWithBioWeapons < 2)
             allow = true;
         return allow;
+    }
+    public float weaponSpace(ShipDesign d)
+    {
+        float totalWeaponSpace = 0;
+        for (int i=0; i<maxWeapons(); i++)
+        {
+            totalWeaponSpace += d.weapon(i).space(d) * d.wpnCount(i);
+        }
+        return totalWeaponSpace;
+    }
+    public float specialSpace(ShipDesign d)
+    {
+        float totalSpecialSpace = 0;
+        for (int i=0; i<maxSpecials(); i++)
+        {
+            totalSpecialSpace += d.special(i).space(d) * d.wpnCount(i);
+        }
+        return totalSpecialSpace;
     }
 }
