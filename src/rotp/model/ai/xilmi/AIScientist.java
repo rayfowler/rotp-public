@@ -134,7 +134,7 @@ public class AIScientist implements Base, Scientist {
             boolean researchingSomethingWeDontReallyWant = false;
             if(currentTechResearching != null)
             {
-                if(researchPriority(currentTechResearching) == 0)
+                if(researchPriority(currentTechResearching) == 0 && currentTechResearching.level() > empire.tech().avgTechLevel() - 5)
                 {
                     researchingSomethingWeDontReallyWant = true;
                     //System.out.print("\n"+empire.name()+" "+empire.tech().category(j).id()+" reduced because "+currentTechResearching.name()+" is either owned by someone else or not something we want.");
@@ -153,7 +153,7 @@ public class AIScientist implements Base, Scientist {
                 Tech currentTechResearching = empire.tech().category(j).tech(empire.tech().category(j).currentTech());
                 boolean researchingSomethingWeDontReallyWant = false;
                 if(currentTechResearching != null)
-                    if(researchPriority(currentTechResearching) == 0)
+                    if(researchPriority(currentTechResearching) == 0 && currentTechResearching.level() > empire.tech().avgTechLevel() - 5)
                         researchingSomethingWeDontReallyWant = true;
                 if (!empire.tech().category(j).possibleTechs().isEmpty()
                         && discoveryChanceOfCategoryIfAllocationWasZero(j) <= empire.tech().category(j).allocation()
