@@ -923,6 +923,21 @@ public class AIGeneral implements Base, General {
         additionalColonizersToBuild = additional;
         return additionalColonizersToBuild;
     }
+    public int fightersToBuild()
+    {
+        int fighterNeed = 0;
+        if(empire.hasAnyContact())
+        {
+            fighterNeed = empire.allColonizedSystems().size();
+        }
+        int[] counts = galaxy().ships.shipDesignCounts(empire.id);
+        for (int i=0;i<counts.length;i++) 
+        {
+            if(empire.shipLab().design(i).isArmedForShipCombat())
+                fighterNeed -= counts[i];
+        }
+        return fighterNeed;
+    }
     @Override
     public boolean strongEnoughToAttack()
     {
