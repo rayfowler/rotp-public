@@ -36,6 +36,11 @@ public class GenocideIncident extends DiplomaticIncident {
         dateOccurred = galaxy().currentYear();
         duration = obs.diplomatAI().leaderGenocideDurationMod();
         
+        if (galaxy().council().finalWar())
+            duration = 0;
+        else if (att.alliedWith(obs.id) && obs.atWarWith(vic.id)) 
+            severity /= 2;
+
         // zero duration means zero severity. That's aggressive!
         if (duration == 0) {
             duration = 1; // avoid /0 errors
