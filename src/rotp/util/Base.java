@@ -941,27 +941,46 @@ public interface Base {
         return wrappedLines(g, text, maxWidth, 0);
     }
     public default List<String> wrappedLines(Graphics g, String text, int maxWidth, int line1Indent) {
-        List<String> words = substrings(text, ' ');
+        
         List<String> lines = new ArrayList<>();
 
         FontMetrics fm = g.getFontMetrics();
         int indent = line1Indent;
-
         String currentLine = "";
-        for (String word: words) {
-            String newLine = currentLine;
-            if (newLine.isEmpty())
+
+        
+        if (LanguageManager.current().currentLogographic()) {
+            for (int i=0;i<text.length();i++) {
+                String newLine = currentLine;
+                String word = text.substring(i, i+1);
                 newLine = newLine + word;
-            else
-                newLine = newLine + " " + word;
-            int newWidth = fm.stringWidth(newLine);
-            if (newWidth > (maxWidth-indent)) {
-                lines.add(currentLine);
-                indent = 0;
-                currentLine = word;
+                int newWidth = fm.stringWidth(newLine);
+                if (newWidth > (maxWidth-indent)) {
+                    lines.add(currentLine);
+                    indent = 0;
+                    currentLine = word;
+                }
+                else
+                    currentLine = newLine;                
             }
-            else
-                currentLine = newLine;
+        }
+        else {
+            List<String> words = substrings(text, ' ');
+            for (String word: words) {
+                String newLine = currentLine;
+                if (newLine.isEmpty())
+                    newLine = newLine + word;
+                else
+                    newLine = newLine + " " + word;
+                int newWidth = fm.stringWidth(newLine);
+                if (newWidth > (maxWidth-indent)) {
+                    lines.add(currentLine);
+                    indent = 0;
+                    currentLine = word;
+                }
+                else
+                    currentLine = newLine;
+            }
         }
 
         if (!currentLine.isEmpty())
