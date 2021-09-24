@@ -78,7 +78,7 @@ PLANET_ORION_GUARDIAN             | Wächter
 
 // Nebula names  ("starName" Nebula)
 NEBULA_NAME                       | %1 Nebula
-NEBULA_ID                         | NCG %1
+NEBULA_ID                         | NGC %1
 
 // Government names
 GOVT_EMPIRE                       | %1 Reich

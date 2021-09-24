@@ -83,7 +83,7 @@ PLANET_ORION_GUARDIAN             | Guardian
 
 // Nebula names  ("starName" Nebula)
 NEBULA_NAME                       | %1 Nebula
-NEBULA_ID                         | NCG %1
+NEBULA_ID                         | NGC %1
 
 // In this, %1 is the race's title when using with the name ("_nameTitle" in the races labels.txt file)
 // and %2 is the leader's actual name
