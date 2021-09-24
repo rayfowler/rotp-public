@@ -306,12 +306,25 @@ public class ManageDiplomatsUI  extends BasePanel implements MouseListener, Mous
         if (button2W > 0) {
             int w3 = x4-x3;
             g.setFont(narrowFont(20));
-            String label2 = ourRecalled ? text("RACES_MANAGE_REINSTATE_DIPLOMAT") : text("RACES_MANAGE_RECALL_DIPLOMAT");
-            Rectangle rect2 = diploBoxes.get(index);
+            if (view.embassy().alliance()) {
+                Rectangle rect2 = diploBoxes.get(index);
+                rect2.setBounds(0,0,0,0);
+                String label2 = text("RACES_ALLY");
+                g.setFont(narrowFont(18));
+                int sw2 = g.getFontMetrics().stringWidth(label2);
+                int x0 = x3+((w3-sw2)/2);
+                int y0 = y+h-s10;
+                g.setColor(SystemPanel.whiteText);
+                g.drawString(label2, x0, y0);
+            }
+            else {
+                String label2 = ourRecalled ? text("RACES_MANAGE_REINSTATE_DIPLOMAT") : text("RACES_MANAGE_RECALL_DIPLOMAT");
+                Rectangle rect2 = diploBoxes.get(index);
 
-            drawButton(g, rect2, label2, null, x3+s15, y+s5, w3-s30, h-s10);
-            g.setColor(brownDividerC);
-            g.drawLine(x, y+h, x+w-s20, y+h);
+                drawButton(g, rect2, label2, null, x3+s15, y+s5, w3-s30, h-s10);
+                g.setColor(brownDividerC);
+                g.drawLine(x, y+h, x+w-s20, y+h);
+            }
         }
 
         
