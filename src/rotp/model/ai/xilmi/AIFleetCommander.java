@@ -179,7 +179,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             }
             if(current.colony() != null)
             {
-                buffy.enemyIncomingTransports += empire.enemyTransportsInTransit(current) * empire.maxRobotControls();
+                buffy.enemyIncomingTransports += empire.unfriendlyTransportsInTransit(current) * empire.maxRobotControls();
                 buffy.myIncomingTransports += empire.transportsInTransit(current) * empire.maxRobotControls();
             }
             systemInfoBuffer.put(id, buffy);
@@ -898,7 +898,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                             }
                             if(target.empire() != null)
                             {
-                                if(empire.alliedWith(target.empId()) && (enemyBC > 0 || empire.enemyTransportsInTransit(target) > 0))
+                                if(empire.alliedWith(target.empId()) && (enemyBC > 0 || empire.unfriendlyTransportsInTransit(target) > 0))
                                 {
                                     allowBombers = false;
                                     allowColonizers = false;
@@ -906,7 +906,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                                     float ourEffectiveBC = bcValue(fleet, false, allowFighters, allowBombers, allowColonizers);
                                     if(ourEffectiveBC - keepBc > 0)
                                     {
-                                        sendAmount = min(1.0f - keepAmount, (empire.enemyTransportsInTransit(target) * empire.maxRobotControls() + enemyBC) * 2 / (ourEffectiveBC));
+                                        sendAmount = min(1.0f - keepAmount, (empire.unfriendlyTransportsInTransit(target) * empire.maxRobotControls() + enemyBC) * 2 / (ourEffectiveBC));
                                     }
                                     else
                                     {
