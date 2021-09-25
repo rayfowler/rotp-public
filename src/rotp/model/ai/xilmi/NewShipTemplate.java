@@ -104,23 +104,18 @@ public class NewShipTemplate implements Base {
         // create a blank design, one for each size. Add the current design as a 5th entry
         ShipDesign[] shipDesigns = new ShipDesign[4];
         for (int i = 0; i<4; i++) 
-            shipDesigns[i] = newDesign(ai, role, i); 
-
-        // race's design cost multiplier for each hull size (set in definition.txt file)
-        float[] costMultiplier = new float[4];
-        costMultiplier[0] = race.shipDesignMods[1];
-        costMultiplier[1] = race.shipDesignMods[1];
-        costMultiplier[2] = race.shipDesignMods[1];
-        costMultiplier[3] = race.shipDesignMods[1];       
-        // add another entry for the current design, using the cost multiplier for its size
+        {
+            shipDesigns[i] = newDesign(ai, role, i);
+        }
 
         SortedMap<Float, ShipDesign> designSorter = new TreeMap<>();
-        
-        for (int i = 0; i<costMultiplier.length; i++) {
+        float costLimit = ai.empire().totalPlanetaryProduction() * ai.empire().fleetCommanderAI().maxShipMaintainance() * 50 / ai.empire().allColonizedSystems().size();
+        //System.out.print("\n"+galaxy().currentTurn()+" "+ai.empire().name()+" costlimit: "+costLimit);
+        for (int i = 0; i<4; i++) {
             ShipDesign design = shipDesigns[i];
-            if(ai.empire().totalPlanetaryIncome() / ai.empire().tech().topSpeed() < design.cost() && design.size() > 1)
-                continue;
             float score = (weaponSpace(design) + specialSpace(design)) / design.cost();
+            if(design.cost() > costLimit)
+                score /= design.cost() / costLimit;
             float defScore = design.hits() / design.cost();
             float hitPct = (5 + design.attackLevel() - (design.beamDefense() + design.missileDefense()) / 2) / 10;
             hitPct = max(.05f, hitPct);
@@ -132,21 +127,23 @@ public class NewShipTemplate implements Base {
             defScore *= mitigation;
             score *= defScore;
             
-            if(role.BOMBER == role)
+            boolean hasBombs = false;
+            for (int j=0; j<maxWeapons(); j++)
             {
-                boolean hasBombs = false;
-                for (int j=0; j<maxWeapons(); j++)
+                if(design.weapon(j).groundAttacksOnly())
                 {
-                    if(design.weapon(j).groundAttacksOnly())
-                    {
-                        hasBombs = true;
-                        break;
-                    }
+                    hasBombs = true;
+                    break;
                 }
-                if (!hasBombs)
-                    score = 0;
             }
-            //System.out.print("\n"+ai.empire().name()+" "+design.name()+" Role: "+role+" size: "+design.size()+" score: "+score+" defscore: "+defScore+" hitPct: "+hitPct+" absorbPct: "+absorbPct+" mitigation: "+mitigation);
+            if (!hasBombs)
+            {
+                if(role.BOMBER == role)
+                    score = 0;
+                if(ai.empire().shipDesignerAI().wantHybrid())
+                    score *= ai.empire().generalAI().defenseRatio();
+            }
+            //System.out.print("\n"+ai.empire().name()+" "+design.name()+" Role: "+role+" size: "+design.size()+" score: "+score+" defscore: "+defScore+" hitPct: "+hitPct+" absorbPct: "+absorbPct+" mitigation: "+mitigation+" costlimit: "+costLimit);
             designSorter.put(score, design);
         }
         // lastKey is design with greatest damage
