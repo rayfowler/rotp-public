@@ -109,13 +109,13 @@ public class NewShipTemplate implements Base {
         }
 
         SortedMap<Float, ShipDesign> designSorter = new TreeMap<>();
-        float costLimit = ai.empire().totalPlanetaryProduction() * ai.empire().fleetCommanderAI().maxShipMaintainance() * 50 / ai.empire().allColonizedSystems().size();
+        float costLimit = ai.empire().totalPlanetaryProduction() * ai.empire().fleetCommanderAI().maxShipMaintainance() * 50 / ai.empire().systemsInShipRange(ai.empire()).size();
         //System.out.print("\n"+galaxy().currentTurn()+" "+ai.empire().name()+" costlimit: "+costLimit);
         for (int i = 0; i<4; i++) {
             ShipDesign design = shipDesigns[i];
-            float score = (weaponSpace(design) + specialSpace(design)) / design.cost();
-            if(design.cost() > costLimit)
-                score /= design.cost() / costLimit;
+            if(role == role.DESTROYER && i > 0)
+                continue;
+            float score = weaponSpace(design) / design.cost();
             float defScore = design.hits() / design.cost();
             float hitPct = (5 + design.attackLevel() - (design.beamDefense() + design.missileDefense()) / 2) / 10;
             hitPct = max(.05f, hitPct);
@@ -126,6 +126,9 @@ public class NewShipTemplate implements Base {
             float mitigation = 1 - (hitPct * absorbPct);
             defScore *= mitigation;
             score *= defScore;
+            //System.out.print("\n"+ai.empire().name()+" "+design.name()+" Role: "+role+" size: "+design.size()+" score wo. costlimit: "+score+" costlimit-dividor: "+design.cost() / costLimit);
+            if(design.cost() > costLimit)
+                score /= design.cost() / costLimit;
             
             boolean hasBombs = false;
             for (int j=0; j<maxWeapons(); j++)
@@ -143,7 +146,7 @@ public class NewShipTemplate implements Base {
                 if(ai.empire().shipDesignerAI().wantHybrid())
                     score *= ai.empire().generalAI().defenseRatio();
             }
-            //System.out.print("\n"+ai.empire().name()+" "+design.name()+" Role: "+role+" size: "+design.size()+" score: "+score+" defscore: "+defScore+" hitPct: "+hitPct+" absorbPct: "+absorbPct+" mitigation: "+mitigation+" costlimit: "+costLimit);
+            //System.out.print("\n"+ai.empire().name()+" "+design.name()+" Role: "+role+" size: "+design.size()+" score: "+score+" offScore: "+weaponSpace(design) / design.cost()+" defscore: "+defScore+" costlimit: "+costLimit);
             designSorter.put(score, design);
         }
         // lastKey is design with greatest damage
@@ -174,7 +177,8 @@ public class NewShipTemplate implements Base {
         nameDesign(ai, d);
         setFastestEngine(ai, d);
         // battle computers are always the priority in MOO1 mechanics
-        setBestBattleComputer(ai, d); 
+        if(role != role.DESTROYER)
+            setBestBattleComputer(ai, d); 
         
         float totalSpace = d.availableSpace();
         Race race = ai.empire().dataRace();
@@ -338,6 +342,10 @@ public class NewShipTemplate implements Base {
                 setFittingManeuver(ai, d, maneuverSpace, sameSpeedAllowed);
                 setFittingECM(ai, d, ecmSpace);
                 break;
+            case DESTROYER:
+                setFittingArmor(ai, d, armorSpace, reinforcedArmorAllowed);
+                setFittingManeuver(ai, d, maneuverSpace, sameSpeedAllowed);
+                break;
             case FIGHTER:
             default:
                 setFittingSpecial(ai, d, specialsSpace, specials);
@@ -371,12 +379,17 @@ public class NewShipTemplate implements Base {
                 setOptimalWeapon(ai, d, d.availableSpace(), 1, false, false, false, topSpeed, avgECM, bestSHD, antiDote);
                 //setOptimalWeapon(ai, d, d.availableSpace(), 3, needRange, true, false, topSpeed, avgECM, bestSHD); // uses slot 1
                 break;
+            case DESTROYER:
+                setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, bestSHD, antiDote); // uses slots 0-3
             case FIGHTER:
             default:
                 setOptimalWeapon(ai, d, d.availableSpace() * hybridBombRatio, 1, false, false, false, topSpeed, avgECM, bestSHD, antiDote);
                 setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, bestSHD, antiDote); // uses slots 0-3
                 break;
         }
+        //Since destroyer is always tiny and we want to make sure we have a weapon, the computer is added afterwards
+        if(role == role.DESTROYER)
+            setBestBattleComputer(ai, d); 
         ai.lab().iconifyDesign(d);
         for (int i = 0; i <= 2; ++i) {
             if (d.special(i) != null) {
