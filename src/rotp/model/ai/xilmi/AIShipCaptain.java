@@ -1041,7 +1041,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             for (CombatStackMissile miss: st.missiles()) {
                 if (miss.target == currStack && st.isShip())
                 {
-                    if(miss.maxMove <= currStack.maxMove * sqrt(2) || miss.distanceTo(currStack.x(), currStack.y()) + currStack.maxMove > miss.missile.range())
+                    if(miss.maxMove <= currStack.maxMove || miss.distanceTo(currStack.x(), currStack.y()) + currStack.maxMove > miss.missile.range())
                     {
                         float hitPct;
                         hitPct = (5 + miss.attackLevel - miss.target.missileDefense()) / 10;
