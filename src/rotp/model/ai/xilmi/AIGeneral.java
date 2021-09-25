@@ -143,7 +143,6 @@ public class AIGeneral implements Base, General {
             //System.out.println(galaxy().currentTurn()+" "+empire.name()+" should order "+desiredCount+" colonizers at "+bestCol.name());
             additionalColonizersToBuild-=desiredCount;
         }
-
         Galaxy gal = galaxy();
         for (int id=0;id<empire.sv.count();id++) 
             reviseFleetPlan(gal.system(id));
@@ -253,6 +252,16 @@ public class AIGeneral implements Base, General {
         if (!empire.sv.inShipRange(sysId))
             return;
 
+        if(needScoutRepellers() && (sys.empire() == empire || (!empire.sv.isColonized(sysId) && empire.sv.isScouted(sysId))))
+        {
+            //System.out.println(galaxy().currentTurn()+" "+empire.name()+" making repel-plan for "+sys.name());
+            FleetPlan fp = empire.sv.fleetPlan(sys.id);
+            fp.priority = FleetPlan.REPEL;
+            if(empire.sv.isBorderSystem(sysId))
+                fp.priority += 100;
+            fp.addShips(empire.shipLab().destroyerDesign(), 1);
+        }
+        
         // for uncolonized systems
         if (!empire.sv.isColonized(sysId)) {
             return;
@@ -1051,5 +1060,27 @@ public class AIGeneral implements Base, General {
         y /= totalPopCap;
         Location center = new Location(x, y);
         return center;
+    }
+    @Override
+    public boolean needScoutRepellers()
+    {
+        boolean need = true;
+        int totalOpponents = 0;
+        int opponentsWithUnarmed = 0;
+        for(Empire opponent : galaxy().activeEmpires())
+        {
+            totalOpponents++;
+            int unarmedDesigns = 0;
+            for(ShipDesign enemyDesign : opponent.shipLab().designs())
+            {
+                if(!enemyDesign.isArmedForShipCombat())
+                    unarmedDesigns++;
+            }
+            if(unarmedDesigns > 0)
+                opponentsWithUnarmed++;
+        }
+        if(opponentsWithUnarmed == 0 && totalOpponents > 0)
+            need = false;
+        return need;
     }
 }

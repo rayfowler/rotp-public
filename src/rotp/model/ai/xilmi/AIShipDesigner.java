@@ -419,7 +419,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         //System.out.print("\n"+galaxy().currentYear()+" "+empire.name()+" Fighter upgrade "+currDesign.name()+" val: "+upgradeChance+" better-Engine: "+betterEngine+" betterArmor: "+betterArmor+" curr-id: "+currDesign.id());
         
         //System.out.print("\n"+empire.name()+" designed new fighter which is "+upgradeChance+" better and should go to slot: "+slot);
-        if (slot < 0 && !betterSpecial && !betterComputer && !betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) && !needRange && currDesign.active())
+        if (slot < 0 && !betterSpecial && !betterComputer && !betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) && !needRange && (currDesign.active()))
             return;
 
         // if there is a slot available, use it for the new design
@@ -437,14 +437,31 @@ public class AIShipDesigner implements Base, ShipDesigner {
         }
     }
     public void updateDestroyerDesign() {
-        //ail: don't use destroyer, just free up the design-slot here for more fighters and bombers
         ShipDesignLab lab = lab();
+        // if we are not using scouts anymore, quit
+        if (!empire.generalAI().needScoutRepellers())
+        {
+            //ail: don't need to scrap immediately, can also be made obsolete and scrapped later
+            ShipDesign currDesign = lab.destroyerDesign();
+            if(currDesign.active() && currDesign.isDestroyer())
+            {
+                currDesign.becomeObsolete(OBS_DESTROYER_TURNS);
+            }
+            return;
+        }
         
         ShipDesign currDesign = lab.destroyerDesign();
-        if(currDesign.active() && currDesign.isDestroyer())
-        {
-            ScrapDesign(currDesign);
-        }
+        int currSlot = currDesign.id();
+        if (currDesign.engine() == lab.fastestEngine() && currDesign.active())
+            return;
+
+        ShipDesign newDestroyer = newDestroyerDesign(0);
+        if (newDestroyer.matchesDesign(currDesign, false) && currDesign.active())
+            return;
+        scrapWorstDesign(false);
+        currDesign.becomeObsolete(OBS_DESTROYER_TURNS);
+        currSlot = lab.availableDesignSlot();
+        lab.setDestroyerDesign(newDestroyer, currSlot);
     }
     @Override
     public ShipDesign newScoutDesign() {
@@ -600,7 +617,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
     }
     @Override
     public ShipDesign newDestroyerDesign(int size) {
-    //    ShipDesign design = ShipDestroyerTemplate.newDesign(this);
         ShipDesign design = NewShipTemplate.newDestroyerDesign(this);
         design.mission(ShipDesign.DESTROYER);
         design.maxUnusedTurns(OBS_DESTROYER_TURNS);

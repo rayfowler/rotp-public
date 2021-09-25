@@ -53,11 +53,13 @@ public class AIGovernor implements Base, Governor {
     public boolean readyToBuild(Colony col, ShipPlan sh, int designCost) {
         float pct = col.currentProductionCapacity();
         float estProd = col.industry().factories()*col.planet().productionAdj();
+        //System.out.println(galaxy().currentTurn()+" "+empire.name()+" "+col.name()+" estProd: "+estProd+" designCost: "+designCost+" sh.plan.priority(): "+sh.plan.priority()+" Repel: "+FleetPlan.REPEL+" enemy-fleet: "+!empire.enemyFleets().isEmpty());
         if (pct >= 1.0)  // ail: I don't want them to build scouts instead of factories
             return true;
-        else if (pct > 0.75) // modnar: change to 75%, colonize is the lowest priority we can build
-            return sh.plan.priority() >= FleetPlan.COLONIZE;
-        
+        else if (!empire.enemyFleets().isEmpty())
+        {
+            return sh.plan.priority() >= FleetPlan.REPEL;
+        }
         return false;
     }
     @Override

@@ -1118,6 +1118,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                 {
                     continue;
                 }
+                if(d.isDestroyer())
+                    num--;
                 if(d.hasColonySpecial() && !includeColonizer)
                 {
                     continue;
