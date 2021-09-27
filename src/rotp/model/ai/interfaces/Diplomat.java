@@ -128,4 +128,5 @@ public interface Diplomat {
     default int techLevelRank() { return 1; }
     default int facCapRank() { return 1; }
     default int militaryRank(Empire etc) { return 1; }
+    default int popLossToTriggerWar() { return 30; }
 }

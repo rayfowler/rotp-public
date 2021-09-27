@@ -1872,5 +1872,10 @@ public class AIDiplomat implements Base, Diplomat {
         }
         return factories / factoryCap;
     }
+    @Override
+    public int popLossToTriggerWar()
+    {
+        return 1;
+    }
 }
 
