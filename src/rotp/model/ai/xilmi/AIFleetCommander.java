@@ -708,6 +708,8 @@ public class AIFleetCommander implements Base, FleetCommander {
         empire.sv.fleetPlan(id).priority = FleetPlan.RETREAT;
     }
     private void setScoutFleetPlan (int id) {
+        if (empire.shipLab().scoutDesign().obsolete())
+            return;
         FleetPlan plan = empire.sv.fleetPlan(id);
         if (empire.sv.isScouted(id))
             plan.priority = FleetPlan.SCOUT_TO_EXPLORED;
@@ -715,14 +717,8 @@ public class AIFleetCommander implements Base, FleetCommander {
             float closeRangeBonus = 100 - empire.sv.distance(id)/10;
             plan.priority = FleetPlan.SCOUT_TO_UNEXPLORED + closeRangeBonus;
         }
-
-        if (empire.shipLab().scoutDesign().obsolete())
-            return;
-
         if (empire.shipLab().needScouts)
             plan.addShips(empire.shipLab().scoutDesign(), 1);
-        else if (empire.sv.inShipRange(id))
-            plan.addShips(empire.shipLab().fighterDesign(), 1);
     }
     private void handleTransports()
     {
