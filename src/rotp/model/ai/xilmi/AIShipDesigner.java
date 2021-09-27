@@ -452,7 +452,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         
         ShipDesign currDesign = lab.destroyerDesign();
         int currSlot = currDesign.id();
-        if (currDesign.engine() == lab.fastestEngine() && currDesign.active())
+        if (currDesign.engine() == lab.fastestEngine() && currDesign.active() && currDesign.isDestroyer())
             return;
 
         ShipDesign newDestroyer = newDestroyerDesign(0);
