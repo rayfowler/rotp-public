@@ -26,7 +26,6 @@ import rotp.model.incidents.FinalWarIncident;
 import rotp.model.tech.Tech;
 import rotp.ui.diplomacy.DialogueManager;
 import rotp.ui.notifications.CouncilVoteNotification;
-import rotp.ui.notifications.DiplomaticNotification;
 import rotp.ui.notifications.GNNNotification;
 import rotp.util.Base;
 
@@ -278,17 +277,13 @@ public class GalacticCouncil implements Base, Serializable {
                 ally.tech().acquireTechThroughTrade(tech.id, leader.id);
         }
         if (leader.isPlayerControlled()) {
-            for (Empire rebel: rebels) {
-                EmpireView v = rebel.viewForEmpire(leader);
-                DiplomaticNotification.create(v, DialogueManager.WARNING_REBELLING_AGAINST); 
-            }
+            for (Empire rebel: rebels) 
+                rebel.respond(DialogueManager.WARNING_REBELLING_AGAINST, leader);
         }
         else {
             for (Empire rebel: rebels) {
-                if (!rebel.isPlayerControlled()) {
-                    EmpireView v = rebel.viewForEmpire(leader);
-                    DiplomaticNotification.create(v, DialogueManager.PRAISE_REBELLING_WITH); 
-                }
+                if (!rebel.isPlayerControlled()) 
+                    rebel.respond(DialogueManager.PRAISE_REBELLING_WITH, player(), leader, "leader");
             }
         }
     }
