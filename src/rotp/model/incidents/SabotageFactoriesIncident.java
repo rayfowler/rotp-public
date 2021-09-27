@@ -88,6 +88,7 @@ public class SabotageFactoriesIncident extends DiplomaticIncident {
         s1 = galaxy().empire(empVictim).replaceTokens(s1, "victim");
         s1 = s1.replace("[system]", systemName());
         s1 = s1.replace("[amt]", str(destroyed));
+        s1 = s1.replace("[target]", text("SABOTAGE_FACTORIES"));
         return s1;
     }
 }
