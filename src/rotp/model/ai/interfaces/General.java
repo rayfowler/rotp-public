@@ -42,4 +42,5 @@ public interface General {
     default float warROI() { return Float.MAX_VALUE; }
     default int minTransportSize() { return 5; }
     default boolean needScoutRepellers() { return false; }
+    default boolean sensePotentialAttack() { return false; }
 }

@@ -20,6 +20,7 @@ import rotp.model.ai.ShipPlan;
 import rotp.model.ai.interfaces.Governor;
 import rotp.model.colony.Colony;
 import rotp.model.colony.ColonySpendingCategory;
+import static rotp.model.colony.ColonySpendingCategory.MAX_TICKS;
 import rotp.model.combat.CombatStackColony;
 import rotp.model.combat.ShipCombatManager;
 import rotp.model.empires.Empire;
@@ -56,11 +57,7 @@ public class AIGovernor implements Base, Governor {
         //System.out.println(galaxy().currentTurn()+" "+empire.name()+" "+col.name()+" estProd: "+estProd+" designCost: "+designCost+" sh.plan.priority(): "+sh.plan.priority()+" Repel: "+FleetPlan.REPEL+" enemy-fleet: "+!empire.enemyFleets().isEmpty());
         if (pct >= 1.0)  // ail: I don't want them to build scouts instead of factories
             return true;
-        else if (!empire.enemyFleets().isEmpty())
-        {
-            return sh.plan.priority() >= FleetPlan.REPEL;
-        }
-        return false;
+        return sh.plan.priority() >= FleetPlan.GUARD_BORDER_COLONY;
     }
     @Override
     public void setColonyAllocations(Colony col) {
@@ -223,18 +220,14 @@ public class AIGovernor implements Base, Governor {
             }
         }
         
-        // for systems that are flagged as rush ship, do that and forget
-        // everything else until the project is done
-        if (empire.generalAI().rushShipSystems().contains(col.starSystem())) {
-            float totalProd = col.totalIncome();
-            float cleanCost = col.minimumCleanupCost();
-            col.clearSpending();
-            col.pct(ECOLOGY, cleanCost/totalProd);
-            col.allocation(SHIP, maxAllocation - col.totalAmountAllocated());
-            return;
-        }
-
         //System.out.print("\n"+empire.name()+" col.shipyard().maxSpendingNeeded(): "+col.shipyard().maxSpendingNeeded()+" bldg: "+col.shipyard().design().id()+ " active: "+col.shipyard().design().active());
+        boolean needToMilitarize = false;
+        if(empire.atWar() || empire.generalAI().sensePotentialAttack())
+        {
+            if(empire.diplomatAI().militaryRank(empire) > empire.diplomatAI().popCapRank() || empire.generalAI().sensePotentialAttack())
+                if(col.currentProductionCapacity() > 0.5f)
+                    needToMilitarize = true;
+        }
         float netFactoryProduction = 1;
         if(!empire.ignoresPlanetEnvironment())
             netFactoryProduction -= empire.tech().factoryWasteMod() / empire.tech().wasteElimination();
@@ -242,10 +235,7 @@ public class AIGovernor implements Base, Governor {
         float factoryROI = empire.tech().newFactoryCost(col.industry().robotControls()) / col.planet().productionAdj() / netFactoryProduction;
         if(col.industry().factories() > 0)
             factoryROI = (empire.tech().newFactoryCost(col.industry().robotControls()) + col.industry().upgradeCost() / col.industry().factories()) / col.planet().productionAdj() / netFactoryProduction;
-        float warROI = Float.MAX_VALUE;
         //if our factories need to be refitted
-        if(col.currentProductionCapacity() > 0.5f)
-            warROI = empire.generalAI().warROI();
         if(col.industry().factories() > col.maxUseableFactories())
             factoryROI += workerROI;
         float popGrowthROI = Float.MAX_VALUE;
@@ -255,21 +245,21 @@ public class AIGovernor implements Base, Governor {
         float prodScore = productionScore(col.starSystem());
         float factoriesNeeded = max(0, col.maxUseableFactories() + col.normalPopGrowth() * empire.maxRobotControls() - col.industry().factories());
         float workerGoal = max(0, col.industry().factories() / empire.maxRobotControls() - col.workingPopulation() - col.normalPopGrowth());
-        if(min(popGrowthROI, warROI) > workerROI)
+        if(popGrowthROI > workerROI || needToMilitarize)
             workerGoal = col.maxSize() - col.workingPopulation();
         
         workerGoal -= empire.transportsInTransit(col.starSystem());
         
         //float colShipTime = empire.shipLab().colonyDesign().cost() / (col.totalIncome() - col.minimumCleanupCost()) / col.planet().productionAdj();
         
-        boolean buildingColonyShip = false;
+        boolean buildingVitalShip = false;
         //Mostly for Sakkra and Meklar, so they expand quicker when they can 72% pop is where the growth drops below 80%
         if(col.shipyard().building() 
-                && col.shipyard().design() == empire.shipLab().colonyDesign()
-                && col.currentProductionCapacity() > 0.5f)
+                && ((col.shipyard().design() == empire.shipLab().colonyDesign() && col.currentProductionCapacity() > 0.5f)
+                    || col.shipyard().design() == empire.shipLab().destroyerDesign()))
         {
             workerGoal = 0;
-            buildingColonyShip = true;
+            buildingVitalShip = true;
         }
         
         //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+col.name()+" popGrowthROI: "+popGrowthROI+" colship-time: "+colShipTime);
@@ -278,7 +268,7 @@ public class AIGovernor implements Base, Governor {
         
         suggestMissileBaseCount(col);
         col.clearSpending();
-
+        
         lowerExpenses(col);
         float totalProd = col.totalIncome();
         float cleanCost = col.minimumCleanupCost();
@@ -305,7 +295,9 @@ public class AIGovernor implements Base, Governor {
             col.pct(SHIP, 0);
         }
         if (col.totalAmountAllocated() >= maxAllocation)
+        {
             return;
+        }
 
         float enemyBombardPower = 0.0f;
         
@@ -317,19 +309,42 @@ public class AIGovernor implements Base, Governor {
             }
         }
         float popLoss = enemyBombardPower / 200;
+
+        int totalAlloc = col.allocation(SHIP)+col.allocation(DEFENSE)+col.allocation(INDUSTRY)+col.allocation(ECOLOGY);
+        if (!col.shipyard().buildingObsoleteDesign()
+        && col.shipyard().desiredShips() > 0){
+            shipCost = min(maxShipBC, col.shipyard().maxSpendingNeeded());
+            float shipPct = shipCost/totalProd;
+            if(col.shipyard().design().isShip())
+            {
+                ShipDesign d = (ShipDesign)col.shipyard().design();
+                if(d.hasColonySpecial())
+                    shipPct = netProd/totalProd;
+            }
+            col.pct(SHIP, shipPct);
+            //System.out.println("\n"+empire.name()+" "+col.name()+" shipPct: "+shipPct+" shipCost-A: "+shipCost+" maxShipBC: "+maxShipBC+" col.shipyard().maxSpendingNeeded(): "+col.shipyard().maxSpendingNeeded()+" totalProd: "+totalProd+" totalAlloc: "+totalAlloc);
+            shipCost = col.pct(SHIP) * totalProd;
+            netProd -= shipCost;
+            //System.out.println("\n"+empire.name()+" "+col.name()+" shipPct: "+shipPct+" col.pct(SHIP): "+col.pct(SHIP)+" col.pct(ECOLOGY): "+col.pct(ECOLOGY)+" shipCost-B: "+shipCost+" maxShipBC: "+maxShipBC+" totalProd: "+totalProd);
+        }
+        
+        
+
         // prod spending gets up to 100% of planet's remaining net prod
         if((col.industry().factories() < col.maxUseableFactories() + col.normalPopGrowth() * empire.maxRobotControls())
             && enemyBombardPower == 0
-            && factoryROI < warROI
-            && !buildingColonyShip)
+            && !needToMilitarize)
         {
             float prodCost = min(netProd, col.industry().maxSpendingNeeded(), factoriesNeeded * empire.tech().newFactoryCost(col.industry().robotControls()));
-            col.pct(INDUSTRY, prodCost/totalProd);
+            int alloc = (int)Math.ceil(prodCost/totalProd*MAX_TICKS);
+            alloc = min(alloc, col.allocationRemaining());
+            col.allocation(INDUSTRY, alloc);
             prodCost = col.pct(INDUSTRY) * totalProd;
             netProd -= prodCost;
-
             if (col.totalAmountAllocated() >= maxAllocation)
+            {
                 return;
+            }
         }
         //for experiment:
         float workerCost = workerGoal * empire.tech().populationCost();
@@ -342,30 +357,15 @@ public class AIGovernor implements Base, Governor {
         float ecoCost = max(0, min(netProd, workerCost));
         col.pct(ECOLOGY, (ecoCost + cleanCost)/totalProd);
         
-        int totalAlloc = col.allocation(SHIP)+col.allocation(DEFENSE)+col.allocation(INDUSTRY)+col.allocation(ECOLOGY);
-        if (!col.shipyard().buildingObsoleteDesign()
-        && col.shipyard().desiredShips() > 0){
-            shipCost = min(maxShipBC, col.shipyard().maxSpendingNeeded());
-            float shipPct = shipCost/totalProd;
-            if(col.shipyard().design().isShip())
-            {
-                ShipDesign d = (ShipDesign)col.shipyard().design();
-                if(d.hasColonySpecial())
-                    shipPct = totalProd;
-            }
-            col.pct(SHIP, shipPct);
-            //System.out.println("\n"+empire.name()+" "+col.name()+" shipPct: "+shipPct+" shipCost-A: "+shipCost+" maxShipBC: "+maxShipBC+" col.shipyard().maxSpendingNeeded(): "+col.shipyard().maxSpendingNeeded()+" totalProd: "+totalProd+" totalAlloc: "+totalAlloc);
-            shipCost = col.pct(SHIP) * totalProd;
-            //System.out.println("\n"+empire.name()+" "+col.name()+" shipPct: "+shipPct+" col.pct(SHIP): "+col.pct(SHIP)+" col.pct(ECOLOGY): "+col.pct(ECOLOGY)+" shipCost-B: "+shipCost+" maxShipBC: "+maxShipBC+" shipTurns: "+shipTurns+" totalProd: "+totalProd);
-        }
-
         if (col.pct(ECOLOGY) < 0) {
             err("Eco pct < 0");
             throw new RuntimeException("Minimum cleanup cost < 0");
         }
 
         if (col.totalAmountAllocated() >= maxAllocation)
+        {
             return;
+        }
 
         // ail: Remove spending limit since bases are now only built at border and we want to get it over with quickly
         // ail: only build defense when a shield is needed. Otherwise never worth it
@@ -376,7 +376,9 @@ public class AIGovernor implements Base, Governor {
         }
 
         if (col.totalAmountAllocated() >= maxAllocation)
+        {
             return;
+        }
 
         // research gets the rest
         // ail: build military, if we want
@@ -427,7 +429,7 @@ public class AIGovernor implements Base, Governor {
             float maxShipMaintainance = 0.0f;
             float fighterPercentage = 1.0f;
             
-            if(enemy)
+            if(enemy || empire.generalAI().sensePotentialAttack())
             {
                 maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
                 /*if(myFleetBc > 4 * totalEnemyBc && highestNonEnemyBc <= myFleetBc * 4)
@@ -485,6 +487,7 @@ public class AIGovernor implements Base, Governor {
             if(empire.divertColonyExcessToResearch())
                 empire.toggleColonyExcessToResearch();
         }
+        if(col.industry().factories() < col.maxUseableFactories() + col.normalPopGrowth() * empire.maxRobotControls())
         
         if(enemyBombardPower > 0)
             shiftResearchToIndustry = false;
@@ -497,6 +500,7 @@ public class AIGovernor implements Base, Governor {
 
         for (int i=0;i<col.spending.length;i++)
             col.locked(i, false);
+        //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+col.name()+" col.pct(SHIP): "+col.pct(SHIP)+" col.pct(DEFENSE): "+col.pct(DEFENSE)+" col.pct(INDUSTRY): "+col.pct(INDUSTRY)+" col.pct(ECOLOGY): "+col.pct(ECOLOGY)+" col.pct(TECH): "+col.pct(RESEARCH));
     }
     @Override
     public float maxShipBCPermitted(Colony col) {

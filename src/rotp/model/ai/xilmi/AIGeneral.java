@@ -86,8 +86,11 @@ public class AIGeneral implements Base, General {
         totalEmpirePopulationCapacity = -1;
         warROI = -1;
         
+        Galaxy gal = galaxy();
+        for (int id=0;id<empire.sv.count();id++) 
+            reviseFleetPlan(gal.system(id));
         additionalColonizersToBuild = additionalColonizersToBuild(false);
-        if(empire.atWar())
+        if(empire.atWar() || sensePotentialAttack())
         {
             int[] counts = galaxy().ships.shipDesignCounts(empire.id);
             ShipDesignLab lab = empire.shipLab();
@@ -110,6 +113,8 @@ public class AIGeneral implements Base, General {
                 additionalColonizersToBuild--;
                 colonizerCost -= lab.colonyDesign().cost();
             }
+            if(empire.diplomatAI().militaryRank(empire) > empire.diplomatAI().popCapRank())
+                additionalColonizersToBuild = 0;
             //System.out.println(galaxy().currentTurn()+" "+empire.name()+" col-need after: "+additionalColonizersToBuild);
         }
         while (additionalColonizersToBuild > 0)
@@ -121,6 +126,8 @@ public class AIGeneral implements Base, General {
                     continue;
                 StarSystem sys = galaxy().system(id);
                 Colony col = sys.colony();
+                if(col.currentProductionCapacity() <= 0.5f)
+                    continue;
                 float score = empire.ai().governor().productionScore(sys);
                 //System.out.println(empire.name()+" "+col.name()+" score: "+score);
                 if(col.shipyard().building())
@@ -143,9 +150,6 @@ public class AIGeneral implements Base, General {
             //System.out.println(galaxy().currentTurn()+" "+empire.name()+" should order "+desiredCount+" colonizers at "+bestCol.name());
             additionalColonizersToBuild-=desiredCount;
         }
-        Galaxy gal = galaxy();
-        for (int id=0;id<empire.sv.count();id++) 
-            reviseFleetPlan(gal.system(id));
     }
     // modnar: adjustments to invasion valuation
     // Desire value to invade planet, factor in both planet size and factories
@@ -252,14 +256,19 @@ public class AIGeneral implements Base, General {
         if (!empire.sv.inShipRange(sysId))
             return;
 
-        if(needScoutRepellers() && (sys.empire() == empire || (!empire.sv.isColonized(sysId) && empire.sv.isScouted(sysId))))
+        if(needScoutRepellers() && (sys.empire() == empire || !empire.sv.isColonized(sysId)) && !sys.hasMonster())
         {
             //System.out.println(galaxy().currentTurn()+" "+empire.name()+" making repel-plan for "+sys.name());
-            FleetPlan fp = empire.sv.fleetPlan(sys.id);
-            fp.priority = FleetPlan.REPEL;
-            if(empire.sv.isBorderSystem(sysId))
-                fp.priority += 100;
-            fp.addShips(empire.shipLab().destroyerDesign(), 1);
+            //the destroyer-design can vanish and reappear, so we check whether it's still valid by checking that it is distinct from other designs and not obsolete
+            if(empire.shipLab().destroyerDesign().isDestroyer())
+            {
+                FleetPlan fp = empire.sv.fleetPlan(sys.id);
+                fp.priority = 1000;
+                if(empire.sv.isBorderSystem(sysId))
+                    fp.priority += 50;
+                //System.out.print("\n"+galaxy().currentTurn()+" "+sys.name()+" wants: "+empire.shipLab().destroyerDesign().name());
+                fp.addShips(empire.shipLab().destroyerDesign(), 1);
+            }
         }
         
         // for uncolonized systems
@@ -960,7 +969,7 @@ public class AIGeneral implements Base, General {
                     totalArmedFleetCost += (counts[i] * d.cost());
             }
         }
-        //System.out.println(galaxy().currentTurn()+" "+empire.name()+" "+totalArmedFleetCost+" / "+attackThreshold+" "+empire.shipMaintCostPerBC()+" / "+empire.fleetCommanderAI().maxShipMaintainance() / 4+" Enough: "+enoughMaintenance);
+        //System.out.println(galaxy().currentTurn()+" "+empire.name()+" "+totalArmedFleetCost+" / "+attackThreshold+" "+" milRank: "+empire.diplomatAI().militaryRank(empire)+" popcaprank: "+empire.diplomatAI().popCapRank());
         if(totalArmedFleetCost > attackThreshold && empire.diplomatAI().militaryRank(empire) <= empire.diplomatAI().popCapRank())
             return true;
         return false;
@@ -1079,8 +1088,40 @@ public class AIGeneral implements Base, General {
             if(unarmedDesigns > 0)
                 opponentsWithUnarmed++;
         }
-        if(opponentsWithUnarmed == 0 && totalOpponents > 0)
+        if((opponentsWithUnarmed == 0 && totalOpponents > 0) || empire.enemyFleets().isEmpty())
             need = false;
+        //System.out.println(galaxy().currentTurn()+" "+empire.name()+" needs scout repeller: "+need);
         return need;
+    }
+    @Override
+    public boolean sensePotentialAttack()
+    {
+        boolean senseDanger = false;
+        for(Ship sh : empire.visibleShips())
+        {
+            if(empire.aggressiveWith(sh.empId()))
+            {
+                if(!sh.nullDest() && galaxy().system(sh.destSysId()).empire() == empire)
+                {
+                    if(sh.isTransport())
+                    {
+                        senseDanger = true;
+                        break;
+                    }
+                    else
+                    {
+                        ShipFleet sf = (ShipFleet)sh;
+                        if(sf.isArmed())
+                        {
+                            senseDanger = true;
+                            break;
+                        }
+                    }
+                }
+            }
+        }
+        /*if(senseDanger)
+            System.out.println(galaxy().currentTurn()+" "+empire.name()+" fears being attacked.");*/
+        return senseDanger;
     }
 }
