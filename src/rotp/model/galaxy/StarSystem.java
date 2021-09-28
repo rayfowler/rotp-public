@@ -191,10 +191,15 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
         else if (abandoned && !b) 
             galaxy().abandonedSystems().remove(this);
            
-        transportSprite = null;
+        clearTransportSprite();
         abandoned = b; 
     }
-
+    public void clearTransportSprite()          { 
+        transportSprite = null; 
+        transportDestId = StarSystem.NULL_ID;
+        transportAmt = 0;
+    }
+    
     public StarType starType()                  {
         if (starType == null)
             starType = StarType.keyed(starTypeKey);
