@@ -1372,7 +1372,7 @@ public class AIDiplomat implements Base, Diplomat {
         boolean warAllowed = true;
         if(empire.generalAI().additionalColonizersToBuild(false) > 0)
             warAllowed = false;
-        int popCapRank = popCapRank();
+        int popCapRank = popCapRank(false);
         /*if(!everyoneMet() && popCapRank < 3)
             warAllowed = false;*/
         for(int i = 0; i < NUM_CATEGORIES; ++i)
@@ -1676,7 +1676,10 @@ public class AIDiplomat implements Base, Diplomat {
                 return false;
         }
         if(!empire.inShipRange(v.empId()))
+        {
+            //System.out.println(galaxy().currentTurn()+" "+empire.name()+" is war-weary because "+v.empire().name()+" is not in range.");
             return true;
+        }
         //ail: no war-weariness in always-war-mode
         if(galaxy().options().baseAIRelationsAdj() <= -30)
             return false;
@@ -1799,13 +1802,15 @@ public class AIDiplomat implements Base, Diplomat {
     @Override
     public  boolean leaderHatesAllSpies() { return false; }
     @Override
-    public int popCapRank()
+    public int popCapRank(boolean inAttackRange)
     {
         int rank = 1;
         float myPopCap = empire.generalAI().totalEmpirePopulationCapacity(empire);
         for(Empire emp:empire.contactedEmpires())
         {
             if(!empire.inEconomicRange(emp.id))
+                continue;
+            if(inAttackRange && !empire.inShipRange(emp.id))
                 continue;
             //System.out.println(galaxy().currentTurn()+" "+empire.name()+" looking at: "+emp.name()+" "+empire.generalAI().totalEmpirePopulationCapacity(emp)+" mine: "+myPopCap);
             if(empire.generalAI().totalEmpirePopulationCapacity(emp) > myPopCap)
@@ -1830,15 +1835,20 @@ public class AIDiplomat implements Base, Diplomat {
         return rank;
     }
     @Override
-    public int militaryRank(Empire etc)
+    public int militaryRank(Empire etc, boolean inAttackRange)
     {
         int rank = 1;
-        float myMilitaryPower = etc.militaryPowerLevel(etc);
-        for(Empire emp:etc.contactedEmpires())
+        float myMilitaryPower = empire.militaryPowerLevel(empire);
+        float etcMilitaryPower = etc.militaryPowerLevel(etc);
+        if(empire != etc && myMilitaryPower > etcMilitaryPower)
+            rank++;
+        for(Empire emp:empire.contactedEmpires())
         {
-            if(!etc.inEconomicRange(emp.id))
+            if(!empire.inEconomicRange(emp.id))
                 continue;
-            if(emp.militaryPowerLevel(emp) > myMilitaryPower)
+            if(inAttackRange && !empire.inShipRange(emp.id))
+                continue;
+            if(emp.militaryPowerLevel(emp) > etcMilitaryPower)
                 rank++;
         }
         return rank;

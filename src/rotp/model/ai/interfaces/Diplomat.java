@@ -124,9 +124,9 @@ public interface Diplomat {
     default boolean setSeverityAndDuration(TradeIncomeIncident inc)  { return false; }
     
     //Xilmi-AI:
-    default int popCapRank() { return 1; }
+    default int popCapRank(boolean inAttackRange) { return 1; }
     default int techLevelRank() { return 1; }
     default int facCapRank() { return 1; }
-    default int militaryRank(Empire etc) { return 1; }
+    default int militaryRank(Empire etc, boolean inAttackRange) { return 1; }
     default int popLossToTriggerWar() { return 30; }
 }

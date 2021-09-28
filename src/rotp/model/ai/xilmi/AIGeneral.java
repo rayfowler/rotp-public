@@ -113,7 +113,7 @@ public class AIGeneral implements Base, General {
                 additionalColonizersToBuild--;
                 colonizerCost -= lab.colonyDesign().cost();
             }
-            if(empire.diplomatAI().militaryRank(empire) > empire.diplomatAI().popCapRank())
+            if(empire.diplomatAI().militaryRank(empire, false) > empire.diplomatAI().popCapRank(false))
                 additionalColonizersToBuild = 0;
             //System.out.println(galaxy().currentTurn()+" "+empire.name()+" col-need after: "+additionalColonizersToBuild);
         }
@@ -263,7 +263,7 @@ public class AIGeneral implements Base, General {
             if(empire.shipLab().destroyerDesign().isDestroyer())
             {
                 FleetPlan fp = empire.sv.fleetPlan(sys.id);
-                fp.priority = 1000;
+                fp.priority = 1100;
                 if(empire.sv.isBorderSystem(sysId))
                     fp.priority += 50;
                 //System.out.print("\n"+galaxy().currentTurn()+" "+sys.name()+" wants: "+empire.shipLab().destroyerDesign().name());
@@ -725,10 +725,10 @@ public class AIGeneral implements Base, General {
             bestVictim = archEnemy;
             return bestVictim;
         }
-        int opponentsInRange = 0;
+        int opponentsInRange = 1;
         for(Empire emp : empire.contactedEmpires())
         {
-            if(empire.inEconomicRange(emp.id))
+            if(empire.inShipRange(emp.id))
                 opponentsInRange++;
         }
         for(Empire emp : empire.contactedEmpires())
@@ -741,11 +741,11 @@ public class AIGeneral implements Base, General {
             //The bigger we are, the more careful we are about whom to pick
             if(!empire.warEnemies().contains(emp))
             {
-                int upToWhatRank = 2 + opponentsInRange - empire.diplomatAI().popCapRank();
-                //System.out.println(galaxy().currentTurn()+" "+empire.name()+" "+emp.name()+" military-rank: "+empire.diplomatAI().militaryRank(emp) +" threshold: "+upToWhatRank);
-                if(empire.diplomatAI().militaryRank(emp) < upToWhatRank)
+                int upToWhatRank = 1 + opponentsInRange - empire.diplomatAI().popCapRank(true);
+                //System.out.println(galaxy().currentTurn()+" "+empire.name()+" my popcaprank: "+empire.diplomatAI().popCapRank(true)+" "+emp.name()+" military-rank: "+empire.diplomatAI().militaryRank(emp, true) +" threshold: "+upToWhatRank+" / "+opponentsInRange);
+                if(empire.diplomatAI().militaryRank(emp, true) < upToWhatRank)
                 {
-                    //System.out.println(galaxy().currentTurn()+" "+empire.name()+" skips "+emp.name()+" as potential enemy because military-rank: "+empire.diplomatAI().militaryRank(emp) +" is better than "+upToWhatRank);
+                    //System.out.println(galaxy().currentTurn()+" "+empire.name()+" skips "+emp.name()+" as potential enemy because military-rank: "+empire.diplomatAI().militaryRank(emp, true) +" is better than "+upToWhatRank);
                     continue;
                 }
             }
@@ -970,7 +970,7 @@ public class AIGeneral implements Base, General {
             }
         }
         //System.out.println(galaxy().currentTurn()+" "+empire.name()+" "+totalArmedFleetCost+" / "+attackThreshold+" "+" milRank: "+empire.diplomatAI().militaryRank(empire)+" popcaprank: "+empire.diplomatAI().popCapRank());
-        if(totalArmedFleetCost > attackThreshold && empire.diplomatAI().militaryRank(empire) <= empire.diplomatAI().popCapRank())
+        if(totalArmedFleetCost > attackThreshold && empire.diplomatAI().militaryRank(empire, false) <= empire.diplomatAI().popCapRank(false))
             return true;
         return false;
     }
