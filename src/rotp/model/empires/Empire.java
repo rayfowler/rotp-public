@@ -627,15 +627,23 @@ public final class Empire implements Base, NamedObject, Serializable {
         if (!colonizedSystems.contains(s)) {
             colonizedSystems.add(s);
             setRecalcDistances();
+            refreshViews();
             for (Empire ally: allies())
+            {
                 ally.setRecalcDistances();       
+                ally.refreshViews();
+            }
         }
     }
     public void removeColonizedSystem(StarSystem s) {
         colonizedSystems.remove(s);
         setRecalcDistances();
+        refreshViews();
         for (Empire ally: allies())
+        {
             ally.setRecalcDistances();
+            ally.refreshViews();
+        }
         
         if (colonizedSystems.isEmpty())
             goExtinct();
