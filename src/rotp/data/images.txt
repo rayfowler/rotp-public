@@ -84,4 +84,33 @@ TECH_MISSILE_SHIELD_03        | images/techs/Lightning_Shield.png
 TECH_ENERGY_PULSAR            | images/techs/Energy_Pulsar.png
 TECH_IONIC_PULSAR             | images/techs/Ionic_Pulsar.png
 
+TECH_CLONING                  | images/techs/Cloning.png
+TECH_ADV_CLONING              | images/techs/Advanced_Cloning.png
+TECH_BIOTOXIN_ANTIDOTE        | images/techs/Bio_Toxin_Antidote.png
+TECH_UNIVERSAL_ANTIDOTE       | images/techs/Universal_Antidote.png
+TECH_BIO_TERMINATOR           | images/techs/Bio_Terminator.png
+TECH_DEATH_SPORES             | images/techs/Death_Spores.png
+TECH_DOOM_VIRUS               | images/techs/Doom_Virus.png
+TECH_CONTROL_BARREN           | images/techs/Control_Barren.png
+TECH_CONTROL_DEAD             | images/techs/Control_Dead.png
+TECH_CONTROL_INFERNO          | images/techs/Control_Inferno.png
+TECH_CONTROL_IRRADIATED       | images/techs/Control_Irradiated.png
+TECH_CONTROL_TOXIC            | images/techs/Control_Toxic.png
+TECH_CONTROL_TUNDRA           | images/techs/Control_Tundra.png
+TECH_ECO_RESTORATION_3        | images/techs/Eco_Restoration_3.png
+TECH_ECO_RESTORATION_5        | images/techs/Eco_Restoration_5.png
+TECH_ECO_RESTORATION_10       | images/techs/Eco_Restoration_10.png
+TECH_ECO_RESTORATION_20       | images/techs/Eco_Restoration_20.png
+TECH_IMPR_TERRAFORM_10        | images/techs/Impr_Terraforming_10.png
+TECH_IMPR_TERRAFORM_20        | images/techs/Impr_Terraforming_20.png
+TECH_IMPR_TERRAFORM_30        | images/techs/Impr_Terraforming_30.png
+TECH_IMPR_TERRAFORM_40        | images/techs/Impr_Terraforming_40.png
+TECH_IMPR_TERRAFORM_50        | images/techs/Impr_Terraforming_50.png
+TECH_IMPR_TERRAFORM_60        | images/techs/Impr_Terraforming_60.png
+TECH_IMPR_TERRAFORM_80        | images/techs/Impr_Terraforming_80.png
+TECH_IMPR_TERRAFORM_100       | images/techs/Impr_Terraforming_100.png
+TECH_SOIL_ENRICHMENT          | images/techs/Soil_Enrichment.png
+TECH_ADV_SOIL_ENRICHMENT      | images/techs/Advanced_Soil_Enrichment.png
+TECH_ATMO_TERRAFORM           | images/techs/Atmospheric_Terraforming.png
+
 
