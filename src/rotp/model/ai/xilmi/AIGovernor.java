@@ -57,7 +57,7 @@ public class AIGovernor implements Base, Governor {
         //System.out.println(galaxy().currentTurn()+" "+empire.name()+" "+col.name()+" estProd: "+estProd+" designCost: "+designCost+" sh.plan.priority(): "+sh.plan.priority()+" Repel: "+FleetPlan.REPEL+" enemy-fleet: "+!empire.enemyFleets().isEmpty());
         if (pct >= 1.0)  // ail: I don't want them to build scouts instead of factories
             return true;
-        return sh.plan.priority() >= FleetPlan.GUARD_BORDER_COLONY;
+        return sh.plan.priority() >= 1100;
     }
     @Override
     public void setColonyAllocations(Colony col) {
@@ -224,7 +224,7 @@ public class AIGovernor implements Base, Governor {
         boolean needToMilitarize = false;
         if(empire.atWar() || empire.generalAI().sensePotentialAttack())
         {
-            if(empire.diplomatAI().militaryRank(empire) > empire.diplomatAI().popCapRank() || empire.generalAI().sensePotentialAttack())
+            if(empire.diplomatAI().militaryRank(empire, false) > empire.diplomatAI().popCapRank(false) || empire.generalAI().sensePotentialAttack())
                 if(col.currentProductionCapacity() > 0.5f)
                     needToMilitarize = true;
         }
