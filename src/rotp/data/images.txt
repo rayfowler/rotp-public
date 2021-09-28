@@ -109,6 +109,7 @@ TECH_IMPR_TERRAFORM_50        | images/techs/Impr_Terraforming_50.png
 TECH_IMPR_TERRAFORM_60        | images/techs/Impr_Terraforming_60.png
 TECH_IMPR_TERRAFORM_80        | images/techs/Impr_Terraforming_80.png
 TECH_IMPR_TERRAFORM_100       | images/techs/Impr_Terraforming_100.png
+TECH_IMPR_TERRAFORM_120       | images/techs/Impr_Terraforming_120.png
 TECH_SOIL_ENRICHMENT          | images/techs/Soil_Enrichment.png
 TECH_ADV_SOIL_ENRICHMENT      | images/techs/Advanced_Soil_Enrichment.png
 TECH_ATMO_TERRAFORM           | images/techs/Atmospheric_Terraforming.png
