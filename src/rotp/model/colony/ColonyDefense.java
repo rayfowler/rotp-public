@@ -215,7 +215,7 @@ public class ColonyDefense extends ColonySpendingCategory {
         }
         return ((int) bases * baseCost * .02f); 
     }
-    private float missileUpgradeCost()  { return bases * (tech().newMissileBaseCost() - missileBase.cost(empire())); }
+    private float missileUpgradeCost()  { return bases * (tech().bestMissileBase().cost(empire()) - missileBase.cost(empire())); }
     public boolean isArmed()             { return missileBases() >= 1; }
     public int shieldLevel()             { return (int) (shield / 5) * 5; }
     public int missileBases()            { return (int) bases; }
