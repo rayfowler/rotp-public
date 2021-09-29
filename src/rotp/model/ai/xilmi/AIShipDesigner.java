@@ -223,7 +223,11 @@ public class AIShipDesigner implements Base, ShipDesigner {
         if (currDesign.matchesDesign(newDesign, true) && currDesign.active())
         {
             //System.out.print("\n"+empire.name()+" "+newDesign.name()+" size: "+newDesign.size()+" matches with "+currDesign.name()+" size: "+currDesign.size()); 
-            return;
+            //When adding a weapon for the first time, we want to redesign regardless of otherwise not caring about weapons
+            boolean currCanFight = fightingAdapted(currDesign) > 0;
+            boolean newCanFight = fightingAdapted(newDesign) > 0;
+            if(currCanFight == newCanFight)
+                return;
         }
         
         int slot = lab.availableDesignSlot();
