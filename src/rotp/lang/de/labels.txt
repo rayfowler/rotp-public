@@ -78,7 +78,7 @@ PLANET_ORION_GUARDIAN             | Wächter
 
 // Nebula names  ("starName" Nebula)
 NEBULA_NAME                       | %1 Nebula
-NEBULA_ID                         | NCG %1
+NEBULA_ID                         | NGC %1
 
 // Government names
 GOVT_EMPIRE                       | %1 Reich
@@ -576,6 +576,7 @@ MAIN_COLONY_HOMEWORLD             | %1 Heimatwelt
 MAIN_COLONY_FOUNDED               | %1 Kolonie
 MAIN_COLONY_POPULATION            | Bevölkerung
 MAIN_COLONY_FACTORIES             | Fabriken
+MAIN_COLONY_VALUE+                | %1+
 MAIN_COLONY_SHIELD                | Schild Level
 MAIN_COLONY_BASES                 | Basen
 MAIN_COLONY_PRODUCTION            | Produktion - Net (Gross)

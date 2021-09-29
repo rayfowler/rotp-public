@@ -30,18 +30,31 @@ public class Ships implements Base, Serializable {
     private final List<ShipFleet> allFleets = new ArrayList<>();
      private List<ShipFleet> allFleetsCopy() { return new ArrayList<>(allFleets); }
     
-    public void buildRallyShips(int empId, int sysId, int designId, int count, int rallySysId) {
-        // are we relocating new ships? If so, do so as long as dest is still allied with us
-        ShipFleet existingFleet = rallyingFleet(empId, sysId, rallySysId);
+    public void rallyOrbitingShips(int empId, int sysId, int designId, int count, int rallySysId) {
+        ShipFleet orbitingFleet = orbitingFleet(empId, sysId);
+        if (orbitingFleet == null)
+            return;   // no ships in orbit to rally
         
-        if (existingFleet == null) {
+        int rallyCount = min(count, orbitingFleet.num(designId));
+        
+        if (rallyCount == 0)
+            return;   // no orbiting ships of this design to rally
+
+        // check for an existing rally fleet
+        ShipFleet rallyingFleet = rallyingFleet(empId, sysId, rallySysId);
+        
+        // if none, create one
+        if (rallyingFleet == null) {
             StarSystem sys = galaxy().system(sysId);
-            existingFleet = new ShipFleet(empId, sys);
-            existingFleet.rallySysId(rallySysId);
-            existingFleet.makeDeployed();
-            allFleets.add(existingFleet);
+            rallyingFleet = new ShipFleet(empId, sys);
+            rallyingFleet.rallySysId(rallySysId);
+            rallyingFleet.makeDeployed();
+            allFleets.add(rallyingFleet);
         }       
-        existingFleet.addShips(designId, count);   
+        
+        // move rallyCount ships from orbitingFleet to rallyingFleet
+        rallyingFleet.addShips(designId, rallyCount);  
+        orbitingFleet.removeShips(designId, rallyCount, true);
     }
     public void forwardRallyFleet(ShipFleet fl, int empId, int sysId, int rallySysId) {
         ShipFleet existingFleet = rallyingFleet(empId, sysId, rallySysId);
@@ -342,6 +355,33 @@ public class Ships implements Base, Serializable {
 
         return retreatingFleet;
     }
+    public boolean cancelRetreatingFleets(int empId, int sysId) {
+        List<ShipFleet> retreatingFleets = retreatingFleets(empId, sysId);
+        ShipFleet orbitingFleet = orbitingFleet(empId, sysId);
+        
+        boolean cancelled = !retreatingFleets.isEmpty();
+        
+        for (ShipFleet fl: retreatingFleets) {
+            if (orbitingFleet == null) {
+                orbitingFleet = fl;
+                orbitingFleet.makeOrbiting();
+                orbitingFleet.retreating(false);
+                orbitingFleet.rallySysId(StarSystem.NULL_ID);
+                orbitingFleet.destSysId(StarSystem.NULL_ID);
+            }
+            else {
+                for (int i=0;i<fl.num.length;i++) {
+                    int a = fl.num(i);
+                    int b = orbitingFleet.num(i);
+                    orbitingFleet.num(i, a+b);
+                    fl.num(i,0);
+                }
+                deleteFleet(fl);
+                session().replaceVarValue(fl, orbitingFleet);            
+            }
+        }
+        return cancelled;
+    }
     public boolean undeployFleet(ShipFleet sourceFleet) {
         if (!sourceFleet.deployed() && !sourceFleet.isRalliedThisTurn())
             return false;
@@ -551,6 +591,16 @@ public class Ships implements Base, Serializable {
                 return fl;
         }
         return null;
+    }
+    public List<ShipFleet> retreatingFleets(int empId, int sysId) {
+        List<ShipFleet> fleetsAll = allFleetsCopy();
+        List<ShipFleet> retreating = new ArrayList<>();
+        for (ShipFleet fl: fleetsAll) {
+            if ((fl.empId == empId) && (fl.sysId() == sysId) 
+            && fl.isDeployed() && fl.retreating())
+                retreating.add(fl);
+        }
+        return retreating;
     }
     public ShipFleet deployedFleet(int empId, int sysId, int destSysId, int turns) {
         List<ShipFleet> fleetsAll = allFleetsCopy();

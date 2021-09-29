@@ -1,0 +1,78 @@
+// race-specific variables (must start with _)
+_empire                    | Silikoidska Imperija, Ignioidska Imperija, Sidimoidska Imperija, Granitoidska Imperija, Magmoidska Imperija
+_empireStvo                | Silikoidsku Imperiju, Ignioidsku Imperiju, Sidimoidsku Imperiju, Granitoidsku Imperiju, Magmoidsku Imperiju
+_empireStva                | Silikoidske Imperije, Ignioidske Imperije, Sidimoidske Imperije, Granitoidske Imperije, Magmoidske Imperije
+_empireStvu                | Silikoidskoj Imperiji, Ignioidskoj Imperiji, Sidimoidskoj Imperiji, Granitoidskoj Imperiji, Magmoidskoj Imperiji
+_empireStvom               | Silikoidskom Imperijom, Ignioidskom Imperijom, Sidimoidskom Imperijom, Granitoidskom Imperijom, Magmoidskom Imperijom
+_empireSkog                | Silikoidskog Imperijalnog, Ignioidskog Imperijalnog, Sidimoidskog Imperijalnog, Granitoidskog Imperijalnog, Magmoidskog Imperijalnog
+_empireSki                 | Silikoidski Imperijalni, Ignioidski Imperijalni, Sidimoidski Imperijalni, Granitoidski Imperijalni, Magmoidski Imperijalni
+_empireSku                 | Silikoidsku Imperijalni, Ignioidsku Imperijalni, Sidimoidsku Imperijalni, Granitoidsku Imperijalni, Magmoidsku Imperijalni
+_empireSka                 | Silikoidska Imperijalna, Ignioidska Imperijalna, Sidimoidska Imperijalna, Granitoidska Imperijalna, Magmoidska Imperijalna
+_empireSke                 | Silikoidske Imperijalne, Ignioidske Imperijalne, Sidimoidske Imperijalne, Granitoidske Imperijalne, Magmoidske Imperijalne
+_race                      | Silikoidi, Ignioidi, Sidimoidi, Granitoidi, Magmoidi
+_raceSkog                  | Silikoidskog, Ignioidskog, Sidimoidskog, Granitoidskog, Magmoidskog
+_raceSki                   | Silikoidski, Ignioidski, Sidimoidski, Granitoidski, Magmoidski
+_raceSkih                  | Silikoidskih, Ignioidskih, Sidimoidskih, Granitoidskih, Magmoidskih
+_raceSku                   | Silikoidsku, Ignioidsku, Sidimoidsku, Granitoidsku, Magmoidsku
+_raceSka                   | Silikoidska, Ignioidska, Sidimoidska, Granitoidska, Magmoidska
+_raceSke                   | Silikoidske, Ignioidske, Sidimoidske, Granitoidske, Magmoidske
+_raceSkom                  | Silikoidskom, Ignioidskom, Sidimoidskom, Granitoidskom, Magmoidskom
+_raceSkoj                  | Silikoidskoj, Ignioidskoj, Sidimoidskoj, Granitoidskoj, Magmoidskoj
+_raceIja                   | Silikoida, Ignioida, Sidimoida, Granitoida, Magmoida
+_race_plural               | Silikoidi, Ignioidi, Sidimoidi, Granitoidi, Magmoidi
+_raceVoc                   | Silikoide, Ignioide, Sidimoide, Granitoide, Magmoide
+_title                     | Kristalni Imperator
+_titleV                    | Kristalni Imperatore
+_titleA                    | Kristalnog Imperatora
+_titleI                    | Kristalnim Imperatorom
+_nameTitle                 | Kristalni Imperator
+_nameTitleV                | Kristalni Imperatore
+_nameTitleA                | Kristalnog Imperatora
+_nameTitleI                | Kristalnim Imperatorom
+
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Advisor text
+MAIN_ADVISOR_TITLE         | Silikoidski Savetnik
+MAIN_ADVISOR_BUTTON_OK     | Otpusti
+MAIN_ADVISOR_SCOUT         | Bože-Imperatore, vaši izviđači su spremni za pratnju prvog broda kolonista ka bilo kom svetu koji poželite! Dajte naređenje i vaša volja će biti izvršena!
+MAIN_ADVISOR_TRANSPORT     | Osnovana je kolonija na %1 sistemu u vaše ime, moćni Bože-Imperatore! Ako želite da pošaljemo još transportera kako bismo podržali vašu novu imperiju, samo dajte naređenje i mi ćemo ga izvršiti!
+MAIN_ADVISOR_DIPLOMACY     | Bože-Imperatore! Pred vaš tron je stigao predstavnik tuđinske imperije! Možda baš oni postanu naš najveći neprijatelj! Budimo oprezni!
+MAIN_ADVISOR_SHIP_ENGINE   | Vaši naučnici su usavršili nove brodske motore! Oni mogu da modifikuju modele brodova vaših flota čim vi to poželite! 
+MAIN_ADVISOR_RALLY_POINTS  | Najzad! Naš sveti rat počinje, Bože-Imperatore! Naredite svojim flotama da se okupe u bilo kom svetu koji vi kontrolišete i oni će doneti brzu smrt našem omraženom neprijatelju!
+MAIN_ADVISOR_MISSILE_BASES | Vaši generali veruju da bi gradnja odbrambenih raketnih baza na našim najugroženijim kolonijama bila mudar poduhvat! Ako se složite, Bože-Imperatore, gradnja će odmah započeti!
+MAIN_ADVISOR_SHIP_WEAPON   | Bože-Imperatore! Vaši naučnici vam predstavljaju svoj najnoviji napredak u tehnologiji naoružanja! Opremićemo našu flotu ovim oružjem, vi samo treba da date zapovest!
+MAIN_ADVISOR_COUNCIL       | Uskoro će se desiti sastanak gospodara po imenu "Galaktički Savet"! Naš drevni neprijatelj mora biti skriven među onima koji se tamo okupljaju! Moramo ih razotkriti kako bi naš plemeniti sveti rat mogao započeti!
+MAIN_ADVISOR_REBELLION     | Moćni Imperatore! Desilo se nezamislivo. Naši ljudi, nesumnjivo zaraženi našim podlim drevnim neprijateljem, pobunili su se protiv vas na %1 sistemu. Moramo odmah zaustaviti ovu korupciju!
+MAIN_ADVISOR_RESIST_COUNCIL   | Smelost ovih budala! Bože-Imperatore, naše flote su spremne! Vodi nas do pobede u ovoj sudbonosnoj bici!
+MAIN_ADVISOR_COUNCIL_RESISTED | Naravno da deca našeg neprijatelja nisu mogla prihvatiti [my_raceSku] dominaciju! Naš narod je u euforičan: konačno će se proročanstvo ispuniti!
+
+// text for endings... '#' represents a paragraph break
+// variables: %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 is special race-specific text described below
+GAME_OVER_MILITARY_LOSS2          | Vaš sveti rat je došao svom sumornom kraju.#Svaki pojedinačni svet u dugovečnoj Silikoidskoj Imperiji je osvojen od strane čudnih i tuđinskih stvorenja. Vi ste bili Kristalni Imperator koji je obećao da će vaš narod odvesti ka ispunjenju njihovog najstarijeg i najsvetijeg proročanstva: da jednom i zauvek oslobodi galaksiju od odvratnog Legla Kvaralon. Umesto toga, doveli ste ih samo do propasti, a kako se sunce izdiže nad poslednjim uporištem kolonije Silikoida protiv tuđinskih snaga, imperije koje ostaju u ovoj galaksiji uskoro će osetiti veličinu vašeg neuspeha.#Imperija je zauvek istrebljena, a sa odlaskom vašeg naroda, nesumnjivo je da će Kvaralonsko podlo potomstvo nesporno vladati ovom galaksijom, od sada i zauvek...
+GAME_OVER_MILITARY_WIN2           | Vaš sveti rat se završio vrhunskom pobedom!#Kako niste mogli da potvrdite identitet svog najstarijeg neprijatelja, izabrali ste jedinu dostupnu opciju: istrebiti sve koji naseljavaju ovu galaksiju bez milosti. Nijedna rasa nije uspela da nadmaši vašu nezaustavljivu predanost i vašu nepopustljivu snagu. Sve rase su pale pred vašom moći, a njihovi svetovi su sada očišćeni od bilo kakvog mogućeg uticaja Kvaralonske štroke. A da bi osigurao da ostanu čisti, Imperija će dovesti svaku planetu u svoje okrilje, naseliti ih i čuvati do kraja vremena.#Vaša imperija će sada nesumnjivo postojati do samog kraja vremena i niko se nikada neće dići protiv vas jer više niko i ne postoji! Živeo Kristalni Imperator! Živela Imperija!
+GAME_OVER_MILITARY_ALLIANCE_WIN2  | Vaš sveti rat je napokon urodio plodom.#Iako niste uspeli da utvrdite pravi identitet dece Kvaralona, neki od onih koji naseljavaju galaksiju pokazali da najverovatnije nisu izrodi vašeg najomraženijeg neprijatelja. Oni koji to nisu uspeli da pokažu su se susreli sa svojom konačnom sudbinom u vidu vaših nesalomljivih legija. Sada preostajete samo vi i oni koji su se pokazali lojalni i čistog srca, a galaksija je vaša da radite sa njom šta poželite.#Avaj, ako ste pogrešili u vezi sa identitetima onih kojima ste dozvolili da ostanu živi, možda će jednog dana vaš sveti rat morati da se nastavi...
+GAME_OVER_COUNCIL_LOSS2           | Vaš sveti rat je došao svom sumornom kraju.#Tokom svog putovanja po galaksiji vodili ste ratove, osvajali svetove i sklapali saveze sa brojnim tuđinskim civilizacijama. Ipak, uprkos vašim najvećim naporima, nitiste uspeli da ubedite imperije ove galaksije da shvate veliku pretnju koju im predstavlja Kvaralonsko Leglo, niti ste posedovali dovoljno snažnu vojnu silu da ih naterate da se povinuju zakonima svetog rata. Sada su izabrali bednu [leader_raceSku] rasu da ih vodi u budućnost.#Dok se nadaju da će budućnost biti prosperitetna i mirna, samo vi znate istinu i šta čeka sve one koje niste uspeli da ubedite da podele vaš cilj. Možda će u budućnosti neki drugi Kristalni Imperator uspeti tamo gde vi niste uspeli, i možda će jednog dana vatra vašeg svetog rata ponovo goreti...
+GAME_OVER_REBELLION_LOSS2         | Vaš sveti rat je stigao do svog sumornog kraja.#Formiranje Nove Republike pod Galaktičkim Savetom koji je predvodila opaka [leader_raceSka] rasa, ostavilo vam je jedini mogući izbor u zlosretnoj pobuni u nadi da će vaši pravedni rat moći da se nastavi. Iako nade na putu koji ste izabrali nikad nije bilo u izobilju, ipak je postojala, i da su vaše odluke bile mudrije, možda biste čak i uspeli da uživate u blistavoj pobedi.#Ali za vas više nema ničega blistavog, niti ima Imperije i dok galaksijom %8, vaše poslednje misli su o Kvaralonu i njegovoj deci, vašem neuspehu da ih pronađete i uništite i brutalnoj sudbini koja sada čeka ovu galaksiju bez vašeg naroda da je brani...
+GAME_OVER_REBELLION_WIN2          | Vaš sveti rat se završio vrhunskom pobedom!#Patetične imperije ove galaksije su napravile najgluplji izbor. Ujedinjujući se pod zastavom bedne [leader_raceSke] rase i okrećući se zahtevima vašeg svetog rata, odlučili su da zapečate svoju sudbinu kao i ostatka galaksije. Ali vi, Kristalni Imperatore, znali ste da to neće proći i veštinom heroja iz legende ste odveli svoj narod do pobede u nemogućem ratu protiv celokupne galaksije!#Da su samo budale poslušale vaša upozorenja, možda bi poživeli dovoljno da shvate grešku u svojim odlukama. Ali sada, konačno, galaksija može da doživi jedini istinski mir koji je ikada mogla znati. Pozdrav za pobedu, Kristalni Imperatore! Pozdrav za silu Silikoidske Imperije!
+GAME_OVER_REBEL_ALLIANCE_WIN2     | Vaš sveti rat je urodio plodom.#Dok poslednji od vaših neprijatelja pada pred vašom silom, osećate uzbuđenje kada vidite koliko je napredovao vaš sveti rat od njegovog početka. Pogrešile su patetične rase koja naseljavaju ovu galaksiju da izaberu [leader_raceSku] rasu koja ih je odvukla od poziva da učestvuju u svetom ratu. Okretanjem leđa vašoj mudrosti, oni su prkosili i vama i proročanstvu Krajslona: čin koji se nije mogao tolerisati i zbog kojeg bi nesumnjivo zažalili da su poživeli dovoljno dugo.#Samo oni dovoljno mudri da poslušaju vaša upozorenja i pomognu vam u ratu, sada mogu da uživaju u novom miru podeljenom galaksijom jer je pretnja Kvaralona zauvek eliminisana. Naravno, ukoliko se pokaže da je neko od njih prerušena Kvaralonova deca...
+GAME_OVER_COUNCIL_ALLIANCE_WIN2   | Vaš sveti rat je stigao do neočekivanog kraja.#Silikoidska Imperija je učinila mnogo u svojoj misiji širom galaksije. Pod vašim vođstvom, vaši ljudi su se susreli sa brojnim tuđinskim civilizacijama. Mnoge od ovih rasa dokazale su da su neprijatelji i potencijalni prenosioci zle krvi Kvaralona. Ipak, neočekivano, neki su se pokazali da su prijatelji vaše drevne imperije. Sada, uoči stvaranja Nove Republike, dali ste svoj glas za [leader_empireStvo], omogućavajući im da vladaju novom erom mira u galaksiji.#Dok se pripremate da ustupite budućnost %8, nadate se da će njihova snaga i mudrost biti dovoljni da zaštite galaksiju od najvećeg zla vašeg iz vašeg drevnog proročanstva. Jer ako ste pogrešno izabrali, mir koji je obećavao kovanjem ovog saveza pokazaće se vrlo kratkotrajnim...
+GAME_OVER_COUNCIL_WIN2            | Vaš sveti rat je napokon urodio plodom.#Nekada ste bili Kristalni Imperator Silikoidske Imperije, a sada sedite na tronu kao Gospodar Nove Republike koju su formirale razne imperije Galaktičkog Saveta. Nijedna rasa se nije usudila da uloži prigovor na ovu predodređenu sudbinu, nesumnjivo shvatajući da bi njihova energija bila bolje potrošena na pomoć vašoj misiji. Jer neprijatelji Imperije sada su neprijatelji galaksije, a to može samo značiti propast za decu Kvaralona.#Ako ih nađete dok lutaju po galaksiji, svaka rasa će se ujediniti pod vašom zastavom i potpuno ih izbrisati. Ako ih nađete skrivene među rasama Saveta, teško onima koji bi se tako dugo usuđivali da se kriju od vas...
+GAME_OVER_COUNCIL_MILITARY_WIN2   | Vaš sveti rat je napokon urodio plodom.#Nakon vašeg uspona na presto Saveta i vaše propisno izabrane vladavine nad Novom Republikom, postavljena je pozornica za novo poglavlje u svetom ratu koji ima za cilj čišćenje prljavštine Kvaralonovih legla. Pobuna protiv vas od početka je bila loše zamišljena i osuđena na propast, a životi izgubljeni u njenom gušenju nisu bezrazložno izgubljeni: u dokazivanju svojih sposobnosti kao zapovednik zacementirali ste svoju poziciju vladara ne samo da biste bili poštovani, već i da vi vas se bojali.#Cela vojska Nove Republike stoji iza vašeg zastave i spremna je da učini sve što potrebe svetog rata zahtevaju. Vaš drevni neprijatelj neće imati gde da se sakrije, a ako bi se Kvaralonov lik otkrio među onima kojima vi sada vladate, čitava moć galaksije biće usmerena protiv njih u brzoj odmazdi. Treba samo da pronađete gde se vaš neprijatelj krije da biste započeli konačni rat i zauvek doveli galaksiju do mira...
+GAME_OVER_COUNCIL_MILITARY_LOSS2  | Vaš sveti rat je stigao do svog sumornog kraja.#Bili ste Gospodar Nove Republike, spremni da povede legije u bitku protiv svih neprijatelja svetog proročanstva. Međutim, pobuna koja se podigla protiv vas bila je neočekivana i, nažalost, previše jaka za vas. Bilo zbog kukavičluka vaših podanika ili vojnih grešaka koje ste počinili kao komandant, Silikoidske Imperije više nema, a niže rase sada napadaju vaše svetove.#Padom Imperije i smrću kratkotrajne Nove Republike, sada niko ne postoji ko će moći da pronađe Kvaralonov izrod, a kamoli da ih pobedi i donese mir galaksiji. Možda da ste bili veštiji u zapovedanju svojom vojskom, proročanstvo bi se ispunilo i izbegla katastrofa. Sada sa vašim porazom, to proročanstvo stoji zakopano u pesku vremena, i više se nikada neće ispuniti, ili čak ni znati za njega...
+
+// This text is the %8 variable in some of the game over text... when this race wins the game
+GAME_OVER_ALLIANCE_WIN3           | nepopustljivi fanatizam Silikoida
+GAME_OVER_REBELLION_LOSS3         | fanatična revnost Silikoida zahvata

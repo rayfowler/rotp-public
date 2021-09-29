@@ -53,6 +53,13 @@ public class BioweaponIncident extends DiplomaticIncident {
         sysId = sys.id;
         dateOccurred = galaxy().currentYear();
         
+        // no penalty in final war
+        if (galaxy().council().finalWar()) {
+            duration = 1;
+            severity = 0;
+            return;
+        }
+
         if (n.diplomatAI().setSeverityAndDuration(this))
             return;
               

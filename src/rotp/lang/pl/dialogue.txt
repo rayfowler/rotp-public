@@ -1,395 +1,150 @@
-// General dialogue for all races unless overridden by race
-
-CONTACT_HONORABLE          | A więc kolejna rasa wkroczyła na terytorium rasy [my_race]. Uważajcie by nie zirytować potężnego i mądrego Imperatora [my_name].
-CONTACT_HONORABLE          | Imperium rasy [my_race] wita ciepło rasę [your_race], mając nadzieję na wasz rozwój pod naszym panowaniem.
-CONTACT_HONORABLE          | Słuchajcie Imperatora imieniem [your_name] - oto przybyła wspaniała, światła i boska rasa [my_race].
-CONTACT_HONORABLE          | Słuchajcie mądrego i prawego Imperatora imieniem [your_name]. Rasa [my_race] wita nową erę honoru pomiędzy naszymi imperiami.
-CONTACT_HONORABLE          | Wasza rasa jest patetyczna i bezwartościowa w porównaniu z wspaniałym imperium rasy [my_race].
-CONTACT_PACIFIST           | Imperator [my_name] rasy [my_race] przesyła pozdrowienia, wyrażając pragnienie pokojowej przyszłości pomiędzy naszymi imperiami.
-CONTACT_PACIFIST           | Pokój wam, Imperatorze [your_name]! Rasa [my_race] wyraża pragnienie przyszłości wolnej od konfliktów i niesnasek.
-CONTACT_PACIFIST           | O wspaniały [your_name], zapewne rasy [your_race] oraz [my_race] są w stanie żyć w pokoju i harmonii.
-CONTACT_PACIFIST           | Niech żyje Imperator [your_name] i jego imperium rasy [your_race]. Rasa [my_race] serdecznie wita.``
-CONTACT_DIPLOMATIC         | Cześć Imperatorowi imieniem [your_name]. Imperium rasy [my_race] ochoczo oczekuje przyszłych relacji.
-CONTACT_DIPLOMATIC         | Rasa [my_race] jest zachwycona pierwszym kontaktem z rasą [your_race]. Zbudujmy razem korzystne relacje na przyszłość.
-CONTACT_DIPLOMATIC         | Imperium rasy [my_race] zdaje sobie sprawę z trudności pierwszego kontaktu z inną rasą. Jesteśmy przekonani, że uda się nam wspólnie pokonać wzajemną nieufność.
-CONTACT_DIPLOMATIC         | Teraz gdy rasa [your_race] oraz [my_race] współdzielą terytorium, nasze przetrwanie zależy od wzajemnej kooperacji.
-CONTACT_RUTHLESS           | Poddaj się Imperatorze [your_name] i zachowaj swoją rasę od niechybnego podbicia przez rasę [my_race].
-CONTACT_RUTHLESS           | Imperia ras [my_race] i [your_race] będą współistnieć doputy, dopóki będziecie będziecie akceptować naszą doskonałość.
-CONTACT_RUTHLESS           | Teraz gdy rasa [my_race] zdaje sobie sprawę z istnienia rasy [your_race], będziemy bacznie was obserwować i nie tolerować przejawów agresji.
-CONTACT_RUTHLESS           | Nie łudź się Imperatorze [your_name]. Imperium rasy [my_race] absolutnie nie będzie tolerować ingerencji rasy [your_race].
-CONTACT_AGGRESSIVE         | Miej się na baczności Imperatorze [your_name], imperium rasy [my_race] przybyło aby uwolnić galaktykę od terroru rasy [your_race].
-CONTACT_AGGRESSIVE         | Miej się na baczności Imperatorze [your_name]. Odpowiedzią na jakikolwiek przejaw agresji będzie natychmiastowy kontratak imperium rasy [my_race].
-CONTACT_AGGRESSIVE         | Drżyj Imperatorze [your_name]. Wkrótce cała galaktyka ugnie się przed żelazną pięścią imperium rasy [my_race].
-CONTACT_AGGRESSIVE         | Opór jest bezcelowy, los rasy [your_race] jest przesądzony. Przygotujcie się na poddanie imperium rasy [my_race].
-CONTACT_XENOPHOBIC         | Imperatorze [your_name], wkroczcie na terytorium rasy [my_race] a natychmiast zostaniecie zniszczeni.
-CONTACT_XENOPHOBIC         | Imperium rasy [my_race] nie życzy sobie kontaktów z obrzydliwą rasą [your_race].
-CONTACT_XENOPHOBIC         | Trzymajcie się z dala od terytorium rasy [my_race]. Sam fakt waszego istnienia przyprawia nas o mdłości.
-CONTACT_XENOPHOBIC         | Rasa [my_race] nie jest zainteresowana kontaktami z pomniejszymi gatunkami. Trzymajcie się z dala od naszego terytorium. 
-
 //
-GREETING_01                | Pomimo waszej buty i aroganckiej dumy, [my_name] rasy [my_race] niniejszym udziela wam audiencji.
-GREETING_02                | Oczekujemy, że przybyliście ofiarować reparacje ludowi rasy [my_race].
-GREETING_03                | Imperator [my_name] udziela krótkiej audiencji niehonorowemu Imperatorowi imieniem [your_name].
-GREETING_04                | Niechętnie udzielamy wam audiencji. Strzeszczajcie się bo nasz czas jest cenny.
-GREETING_05                | Imperator [my_name] nie ma dla was zbyt wiele czasu.
-GREETING_06                | Pozdrowienia od [my_name], Imperatora rasy [my_race].
-GREETING_07                | Cześć boskiemu Imperatorowi rasy [your_race]. [my_name] przekazuje pozdrowienia od najpotężniejszej rasy [my_race].
-GREETING_08                | Cześć potężnemu Imperatorowi imieniem [your_name]. Przekazuję pozdrowienia od najmądrzejszego: [my_name] rasy [my_race].
-GREETING_09                | Cześć wspaniałemu Imperatorowi imieniem [your_name]. Przekazuję pozdrowienia od [my_name], przywódcy rasy [my_race].
+// Dialogue that is not race-specific
 //
-DIPLO_MAIN_MENU_01           | Jak nasze Imperium może wam służyć?
-DIPLO_TECH_REQUEST_MENU_01   | Jaki typ technologii was interesuje?
-DIPLO_TECH_COUNTER_MENU_01   | Co oferujecie w zamian?
-DIPLO_TRADE_MENU_01          | Proponujesz traktat handlowy za:
-DIPLO_TREATY_MENU_01         | Proponujesz traktat:
-DIPLO_DECLARE_WAR_MENU_01    | Komu mamy wypowiedzieć wojnę?
-DIPLO_BREAK_ALLIANCE_MENU_01 | Jakie przymierze mamy złamać?
-DIPLO_THREATEN_MENU_01       | Twoje działania:
 
-DECLINE_OFFER_01           | Imperator [my_name] odmawia.
-DECLINE_OFFER_02           | Rasa [my_race] przemyślała waszą ofertę i ostatecznie ją odrzuciła.
+DIPLO_TECH_REQUEST_MENU_01   | Jaki rodzaj technologii was interesuje?
+DIPLO_TECH_COUNTER_MENU_01   | Co za nią przehandlujecie?
+DIPLO_TRADE_MENU_01          | Proponujesz umowę handlową:
+DIPLO_TREATY_MENU_01         | Co chcesz zrobić?
+DIPLO_THREATEN_MENU_01       | Czym chcesz zagrozić?
+DIPLO_DECLARE_WAR_MENU_01    | Czy na pewno chcesz wypowiedzieć wojnę?
+DIPLO_JOINT_WAR_MENU_01      | Komu powinniśmy wypowiedzieć wojnę?
+DIPLO_BREAK_ALLIANCE_MENU_01 | Który sojusz powinniśmy zerwać?
+DIPLO_OFFER_AID_MENU_01      | Co chcesz przekazać?
+DIPLO_OFFER_TECH_MENU_01     | Co chcesz przekazać?
+
+DECLINE_OFFER_01           | [my_nameTitle] [my_name] odmawia.
+DECLINE_OFFER_02           | Rasa [my_race3] przemyślała waszą ofertę i ostatecznie ją odrzuciła.
 DECLINE_OFFER_03           | Z całym szacunkiem odrzucamy waszą ofertę.
 DECLINE_OFFER_04           | W tej chwili nie jesteśmy tym zainteresowani.
-DECLINE_OFFER_05           | Rasa [my_race] nie uważa waszej oferty za uczciwą.
+DECLINE_OFFER_05           | Rasa [my_race3] nie uważa waszej oferty za uczciwą.
 DECLINE_OFFER_06           | W tej chwili przyjęcie waszej oferty nie leży w naszym interesie.
 DECLINE_OFFER_07           | Macie nas za łatwowiernych głupców? Odrzucamy waszą ofertę.
 DECLINE_OFFER_08           | Wasza oferta nie wydaje się uczciwa.
 DECLINE_OFFER_09           | Przykro nam, ale musimy odmówić.
 
-DECLINE_ANNOYED_01         | Rasa [your_race] ma słomiany zapał. Męczy nas wasze gadanie.
-DECLINE_ANNOYED_01         | Imperatorze [your_name], wystawiasz naszą cierpliwość na próbę. Być może porozmawiamy kiedy indziej.
-DECLINE_ANNOYED_01         | Imperator [my_name] usłyszał wszystko. Porozmawiamy kiedy indziej.
-DECLINE_ANNOYED_02         | Męczą nas dyplomatyczne negocjacje. Będziemy kontynuować dyskusję kiedy indziej.
-DECLINE_ANNOYED_02         | Te rozmowy do niczego nie prowadzą, żegnajcie.
-DECLINE_ANNOYED_02         | Żegnajcie.
-DECLINE_ANNOYED_03         | Prosimy o wybaczenie, Imperatorze [your_name], inne obowiązki wzywają.
-DECLINE_ANNOYED_03         | Wybaczcie, czas rozmowy dobiegł końca.
-DECLINE_ANNOYED_03         | Mamy mało czasu a wiele do zrobienia. Być może porozmawiamy kiedy indziej.
+DECLINE_ENEMY_ALLY_01      | [my_race] nigdy nie układaliby się z sojusznikami znienawidzonych [other_race3].
+DECLINE_ALREADY_ALLIED_01  | [my_race] i nasi sojusznicy nie rozpatrzą waszego żądania kiedy jesteście w sojuszu z innymi imperiami.
+DECLINE_NO_WAR_ON_ALLY_01  | Nie wypowiemy wojny sojusznikowi.
+DECLINE_PEACE_TREATY_01    | Nie złamiemy traktatu pokojowego z rasą [other_race3].
+
+DECLINE_ANNOYED_01         | Rasa [your_race3] dużo gada a mało robi. Męczy nas wasze gadanie.
+DECLINE_ANNOYED_01         | [your_nameTitle] [your_name]... sprawdzasz naszą cierpliwość. Być może porozmawiamy później.
+DECLINE_ANNOYED_01         | [my_nameTitle] [my_name] usłyszał wystarczająco wiele. Porozmawiamy później.
+DECLINE_ANNOYED_02         | Nużą nas dyplomatyczne negocjacje. Będziemy kontynuować dyskusje kiedy indziej.
+DECLINE_ANNOYED_02         | Te rozmowy są bezowocne. Do widzenia.
+DECLINE_ANNOYED_02         | Idziemy.
+DECLINE_ANNOYED_03         | [your_nameTitle] [your_name]... Stokrotne przeprosiny lecz obowiązki wzywają.
+DECLINE_ANNOYED_03         | Prosimy o wybaczenie, ale nasz czas dobiegł końca.
+DECLINE_ANNOYED_03         | Mamy mało czasu a wiele do zrobienia. Być może będziemy mogli porozmawiać później.
 
 
-DECLINE_OATHBREAKER_01     | W tej chwili nie jesteśmy zainteresowani układem ponieważ w przeszłości je łamaliście.
-DECLINE_OATHBREAKER_01     | Nie honorowaliście poprzednich porozumień. Nie mamy powodów by zaufać wam teraz.
-DECLINE_OATHBREAKER_01     | Dlaczego mamy wam zaufać teraz, gdy złamaliście tak wiele porozumień w przeszłości?
-DECLINE_OATHBREAKER_01     | Nie widzimy powodu układać się z kimś, kto i tak nie przestrzega obietnic.
-DECLINE_OATHBREAKER_01     | Nie będziemy układać się z niemającą honoru rasą [your_race].
+DECLINE_OATHBREAKER_01     | Nie jesteśmy skłonni do zawarcia traktatu w tym momencie, ponieważ w przeszłości je łamaliście.
+DECLINE_OATHBREAKER_01     | Nie dotrzymaliście poprzednich umów. Nie widzimy więc powodu, by ufać wam teraz.
+DECLINE_OATHBREAKER_01     | Dlaczego mielibyśmy wam teraz zaufać, skoro złamaliście tak wiele poprzednich traktatów?
+DECLINE_OATHBREAKER_01     | Nie widzimy powodu aby zgadzać się z kimś, kto nie wywiązał się z wcześniejszych obietnic.
+DECLINE_OATHBREAKER_01     | Nie będziemy się zadawać z rasą [your_race3], którzy nie mają honoru.
 
-DECLINE_ESPIONAGE_01       | Złodziejskie psy, kradnące owoce naszych badań. Odrzucamy wasze żądania.
-DECLINE_ESPIONAGE_01       | Nasza technologia jest dla rasy [my_race]. Nie macie prawa jej kraść. Porozmawiamy jak przestaniecie rabować.
-DECLINE_ESPIONAGE_01       | Dlaczego mielibyśmy dawać wam cokolwiek? Wasi szpiedzy i tak kradną wszystko czego potrzebujecie!
-DECLINE_ESPIONAGE_01       | Jak możecie oczekiwać od nas zgody gdy wasi szpiedzy kradną naszą technologię?
-DECLINE_ESPIONAGE_01       | Usuńcie szpiegów, wtedy będziemy rozmawiać.
+DECLINE_ESPIONAGE_01       | Wy złodziejskie psy, kradniecie owoce naszych badań. Odrzucamy wasze żądanie.
+DECLINE_ESPIONAGE_01       | Nasza technologia jest tylko dla nas, rasy [my_race3]. Nie macie prawa jej kraść. Odezwiemy się, gdy przestaniecie to robić.
+DECLINE_ESPIONAGE_01       | Dlaczego mielibyśmy wam dać cokolwiek? Wasi szpiedzy już kradną wszystko, czego potrzebujecie!
+DECLINE_ESPIONAGE_01       | Jak mamy się zgodzić, skoro wasi szpiedzy kradną naszą technologię?
+DECLINE_ESPIONAGE_01       | Usuńcie swoich szpiegów, wtedy porozmawiamy.
 
-DECLINE_SABOTAGE_01        | Nie zapomnieliśmy waszego ostatniego sabotażu. Nie będziemy z wami rozmawiać dopóki nie okażecie się godni zaufania.
-DECLINE_SABOTAGE_01        | Nasz lud cierpiał z powodu waszego sabotażu. Nie będziemy z wami rozmawiać dopóki będzie miało to miejsce.
-DECLINE_SABOTAGE_01        | Jeszcze czego! Oczekujecie naszej zgody kiedy sabotujecie nam [target]?
-DECLINE_SABOTAGE_01        | Zniszczyliście nam [target]. Dlaczego mielibyśmy się z wami układać?
-DECLINE_SABOTAGE_01        | Rozważymy tę kwestię kiedy przestaniecie sabotować nam [target].
+DECLINE_SABOTAGE_01        | Nie zapomnieliśmy ostatniego incydentu sabotażowego. Nie będziemy się z wami zadawać dopóki nie udowodnicie, że jesteście godni zaufania.
+DECLINE_SABOTAGE_01        | Nasi ludzie cierpieli z powodu waszego sabotażu. Nie będziemy się z wami zadawać, dopóki nie przestaniecie.
+DECLINE_SABOTAGE_01        | Co?! Oczekujecie że się zgodzimy kiedy jednocześnie niszczycie [target]?
+DECLINE_SABOTAGE_01        | Kiedy przestaniecie sabotować [target], możemy rozważyć tę sprawę ponownie.
 
-DECLINE_BUILDUP_01         | Nie będziemy o tym rozmawiać podczas gdy koncentrujecie statki na naszej granicy.
-DECLINE_BUILDUP_01         | Usuńcie statki z naszej granicy a to przemyślimy, inaczej nie jesteśmy zainteresowani.
-DECLINE_BUILDUP_01         | Wasze statki na naszej granicy nie stanowią dla nas zagrożenia, lecz odmawiamy układów dopóki tam się znajdują.
-DECLINE_BUILDUP_01         | Jeśli chcecie układać się z rasą [my_race], groźcie innym swoimi statkami.
+DECLINE_BUILDUP_01         | Nie będziemy o tym mówić, gdy gromadzicie statki w pobliżu naszych granic.
+DECLINE_BUILDUP_01         | Usuńcie swoje statki z naszych granic, a rozważymy przyjęcie tej propozycji. Do tego czasu nie jesteśmy zainteresowani.
+DECLINE_BUILDUP_01         | Wasze statki na naszych granicach nie stanowią dla nas zagrożenia. Odmawiamy jednak zawarcia umowy, dopóki one tam się znajdują.
+DECLINE_BUILDUP_01         | Jeśli chcecie się układać z imperium znanym jako [my_empire] to wysyłajcie swoje statki aby zagrażały innym a nie nam.
 
-DECLINE_ENCROACH_01        | Wasza flota zagraża przestrzeni rasy [my_race]. Przemieśćcie ją a wówczas porozmawiamy.
+DECLINE_ENCROACH_01        | Wasze floty wkraczają w przestrzeń rasy [my_race3]. Usuńcie je, to porozmawiamy.
 
-DECLINE_SKIRMISH_01        | Zaatakowaliście nasze statki bez powodu i oczekujecie od nas zgody? Nie ma mowy.
-DECLINE_SKIRMISH_01        | Nie możemy zaakceptować oferty kogoś, kto atakuje naszą flotę.
-DECLINE_SKIRMISH_01        | Porozmawiamy kiedy wasza flota przestanie atakować naszą.
-DECLINE_SKIRMISH_01        | Jeśli chcecie układać się z rasą [my_race], zostawcie naszą flotę w spokoju.
-DECLINE_SKIRMISH_01        | Imperator [my_name] gardzi waszą destrukcją naszej floty. Odpowiedź brzmi nie.
+DECLINE_SKIRMISH_01        | Atakujecie nasze statki bez prowokacji i oczekujecie, że się zgodzimy? Nie będziemy się układać.
+DECLINE_SKIRMISH_01        | Nie możemy przyjąć oferty od kogoś, kto atakuje naszą flotę.
+DECLINE_SKIRMISH_01        | Porozmawiamy jak tylko wasze floty przestaną atakować nasze.
+DECLINE_SKIRMISH_01        | Jeśli chcecie się układać z imperium znanym jako [my_empire] to zostawcie nasze floty w spokoju.
+DECLINE_SKIRMISH_01        | [my_nameTitle] [my_name] nie pochwala niszczenia naszych flot. Nie zgadzam się.
 
-DECLINE_ATTACK_01          | Wasz bezpardonowy atak na system [system] nie pozostawia wam dużego pola manewru.
-DECLINE_ATTACK_01          | Nie zapomnieliśmy o ataku na kolonię w systemie [system]. O zgodzie nie może być mowy.
+DECLINE_ATTACK_01          | Wasz nieuzasadniony atak na system [system] daje wam niewielkie pole do negocjacji.
+DECLINE_ATTACK_01          | Nie zapomnieliśmy ataku na kolonię [system]. Nie ma mowy, żebyśmy się zgodzili.
 
-DECLINE_INVASION_01        | Nasz lud nie ma ochoty układać się z rzeźnikami systemu [system]. Odkupcie najpierw swoje uczynki.
-DECLINE_INVASION_01        | Krew z systemu [system] plami wasze słowa. Nie możemy zaakceptować waszej propozycji.
-DECLINE_INVASION_01        | Ofiary z systemu [system] wyją dopominając się zemsty. Ich wycie słychać głośniej niż waszą ofertę.
+DECLINE_INVASION_01        | Nie chcemy mieć do czynienia z rzeźnikami systemu [system]. Najpierw to zrekompensujcie.
+DECLINE_INVASION_01        | Nasza krew w systemie [system] plami wasze słowa. Nie możemy przyjąć waszej oferty.
+DECLINE_INVASION_01        | Nasza strata w systemie [system] woła o odpłatę. Ból, który czujemy, jest większy niż wasza oferta.
 
-DECLINE_BIOWEAPONS_01      | Rasa [my_race] nie będzie się układać z rasą zdolną do użycia broni biologicznej.
-DECLINE_BIOWEAPONS_01      | Nie jesteśmy w stanie układać się z kimś zdesperowanym na tyle, by użyć broni biologicznej.
-DECLINE_BIOWEAPONS_01      | Używacie broni wywołującej koszmar niewinnych ludzi. Odmawiamy układów z takimi szaleńcami.
-DECLINE_BIOWEAPONS_01      | Bogowie brzydzą się tymi, którzy są w stanie niszczyć planety bronią biologiczną. Rasa [my_race] nie może na to pozwolić.
-DECLINE_BIOWEAPONS_01      | Krzyki zabitych waszą bronią biologiczną wypełniają nasze uszy. Nie słyszymy waszej propozycji.
+DECLINE_BIOWEAPONS_01      | Rasa [my_race3] nie będzie wchodzić w układy z kimś, kto użyłby broni biologicznej.
+DECLINE_BIOWEAPONS_01      | Nie możemy układać się z kimś na tyle zdesperowanym, by używać broni biologicznej.
+DECLINE_BIOWEAPONS_01      | Używacie broni, która wywołuje u nas niewyobrażalne przerażenie. Nie chcemy mieć nic do czynienia z takim szaleństwem.
+DECLINE_BIOWEAPONS_01      | Bogowie brzydzą się tymi, którzy niszczą planety bronią biologiczną. Rasa [my_race3] nie może na to pozwolić.
+DECLINE_BIOWEAPONS_01      | Ból zadawany nam przez waszą broń biologiczną wypełnia nasze uszy. Nie możemy wysłuchać waszej oferty.
 
-DECLINE_ANNOYED_01         | Męczą nas dyplomatyczne negocjacje. Będziemy kontynuować dyskusję kiedy indziej.
-DECLINE_ANNOYED_01         | Te rozmowy do niczego nie prowadzą, żegnajcie.
-DECLINE_ANNOYED_01         | Imperator [my_name] usłyszał wszystko. Porozmawiamy kiedy indziej.
-DECLINE_ANNOYED_01         | Imperatorze [your_name], wystawiasz naszą cierpliwość na próbę. Być może porozmawiamy kiedy indziej.
-DECLINE_ANNOYED_01         | Prosimy o wybaczenie, Imperatorze [your_name], inne obowiązki wzywają.
-DECLINE_ANNOYED_01         | Mamy mało czasu a wiele do zrobienia. Być może porozmawiamy kiedy indziej.
-DECLINE_ANNOYED_01         | Rasa [your_race] ma słomiany zapał. Męczy nas wasze gadanie.
-DECLINE_ANNOYED_01         | Żegnajcie.
-DECLINE_ANNOYED_01         | Wybaczcie, czas rozmowy dobiegł końca.
+DECLINE_ANNOYED_01         | Rasa [your_race3] dużo gada a mało robi. Męczy nas wasze gadanie.
+DECLINE_ANNOYED_01         | [your_nameTitle] [your_name], testujesz naszą cierpliwość. Być może porozmawiamy później.
+DECLINE_ANNOYED_01         | [my_nameTitle] [my_name] usłyszał dość. Porozmawiamy później.
+DECLINE_ANNOYED_01         | Negocjacje nas męczą. Będziemy mogli porozmawiać później.
+DECLINE_ANNOYED_01         | Te rozmowy do niczego nie prowadzą. Musimy odejść.
+DECLINE_ANNOYED_02         | Żegnamy.
+DECLINE_ANNOYED_03         | Ogromnie przepraszamy, [your_nameTitle] [your_name], ale inne obowiązki wzywają.
+DECLINE_ANNOYED_03         | Proszę nam wybaczyć, ale nasz czas dobiegł końca.
+DECLINE_ANNOYED_03         | Mamy mało czasu i wiele do zrobienia. Może porozmawiamy później.
 
-DECLINE_TECH_TRADE_01      | Nie macie technologii, które nas interesują.
-DECLINE_TECH_TRADE_01      | Nie mamy potrzeby korzystania z zabawek rasy [your_race].
+DECLINE_TECH_TRADE_01      | Nie posiadacie technologii, która by nas interesowała.
+DECLINE_TECH_TRADE_01      | Nie potrzebujemy zabawek rasy [your_race3].
 DECLINE_TECH_TRADE_01      | Wasze prymitywne wynalazki nas nie interesują.
-DECLINE_TECH_TRADE_01      | Rasa [my_race] posiada technologię znacznie przekraczającą waszą.
-DECLINE_TECH_TRADE_01      | Imperatorze [your_name], oferta waszych naukowców mało nas interesuje.
-DECLINE_TECH_TRADE_01      | Imperator [my_name] nie jest zainteresowany waszą technologią.
+DECLINE_TECH_TRADE_01      | Rasa [my_race3] jest daleko poza waszą technologią.
+DECLINE_TECH_TRADE_01      | [your_nameTitle] [your_name] tego nie potrzebuje.
+DECLINE_TECH_TRADE_01      | [my_nameTitle] [my_name] nie jest zainteresowany waszą technologią.
 
-OFFER_TECH_EXCHANGE_01     | Imperium rasy [my_race] jest niezwykle zainteresowane waszą technologią o nazwie [tech]. Czy bylibyście chętni dokonać jej wymiany na którąś z naszych?
-OFFER_TECH_EXCHANGE_01     | Rasa [my_race] wie, że posiedliście wiedzę na temat technologii o nazwie [tech]. Może zainteresujemy was którąś z nasych technologii w celu wymiany?
-OFFER_TECH_EXCHANGE_01     | Imperator [my_name] rasy [my_race] życzy sobie sekretu technologii o nazwie [tech]. Wymienicie ją za któreś z naszych odkryć?
-OFFER_TECH_EXCHANGE_01     | Rasa [my_race] jest oszołomiona cudem technologii o nazwie [tech]. Co możemy wam zaoferować w zamian za jej sekret?
+OFFER_TECH_EXCHANGE_01     | Imperium znane jako [my_empire] bardzo potrzebuje technologii o nazwie [tech]. Być może jesteście skłonni wymienić ją na którąś z naszych?
+OFFER_TECH_EXCHANGE_01     | Imperium znane jako [my_empire] wie, że poznaliście następujący sekret: [tech]. Czy możemy zaoferować wam w zamian nieco naszej technologii?
+OFFER_TECH_EXCHANGE_01     | [my_nameTitle] [my_name] z imperium znanego jako [my_empire] chciałby poznać tajniki technologii o nazwie [tech]. Czy wymienicie je na jeden z naszych?
+OFFER_TECH_EXCHANGE_01     | Jestem zachwycony naukowymi cudami rasy [your_race3] a szczególnie technologią nazwie [tech]. Co możemy zaoferować wam za jej sekret?
 
-ACCEPT_TECH_EXCHANGE_01    | Doskonale. Imperator [my_name] zgadza się wymienić sekrety technologii o nazwie [techGiven] rasy [my_race] za technologię o nazwie [techReceived].
+ACCEPT_TECH_EXCHANGE_01    | Doskonale. [my_nameTitle] [my_name] zgadza się wymienić cudowne sekrety rasy [my_race3] o nazwie [techGiven] na [techReceived].
+ACCEPT_FINANCIAL_AID_01    | [my_nameTitle] [my_name] przyjmuje wasz dar w wysokości [amt] BC.
+ACCEPT_TECHNOLOGY_AID_01   | [my_nameTitle] [my_name] przyjmuje wasz dar w postaci technologii o nazwie [tech].
 
-BREAK_TRADE_01             | Lud rasy [my_race] nie ma już ochoty na wymianę handlową z imperium rasy [your_race].
-OFFER_TRADE_01             | Imperium rasy [my_race] chce zawrzeć wymianę handlową w wysokości [amt] BC rocznie.
-OFFER_TRADE_01             | Handel pomiedzy Imperiami ras [your_race] i [my_race] byłby korzystny dla obu stron. Zgodzicie się na wymianę handlową w wysokości [amt] BC rocznie?
-OFFER_TRADE_01             | Rasa [my_race] pożąda waszych produktów. Zawrzemy wymianę handlową w wysokoći [amt] BC rocznie?
-ANNOUNCE_TRADE_01          | W roku [year], imperia ras [my_race] i [your_race] zawierają wymianę handlową w wysokości [amt] BC rocznie.
-ACCEPT_TRADE_01            | Porozumienie handlowe w wysokości [amt] BC brzmi dobrze.
-ACCEPT_TRADE_01            | Rasa [my_race] ochoczo oczekuje produktów oferowanych przez rasę [your_race]. Akceptujemy wymianę handlową w wysokości [amt] BC rocznie.
-ACCEPT_TRADE_01            | Imperator [my_name] zgadza się na wymianę handlową w wysokości [amt] BC rocznie.
-ACCEPT_TRADE_01            | Cóż, Imperatorze [your_name], oceniamy waszą ofertę wymiany handlowej w wysokości [amt] BC rocznie jako uczciwą.
+BREAK_TRADE_01             | [my_race] nie mają dalszego zapotrzebowania na towary handlowe od imperium znanego jako [your_empire].
+ANNOUNCE_TRADE_01          | Od [year], imperia znane jako [my_empire] i [your_empire] zgadzają się na wymianę handlową [amt] BC rocznie.
 
-OFFER_PEACE_01             | Wielki Imperatorze o imieniu [your_name], wojna pomiędzy [your_race] i [my_race] stanowi brzemię na obu naszych imperiach. Podpiszcie traktat pokojowy byśmy mogli zakończyć ten bezsensowny konflikt.
-OFFER_PEACE_01             | Ta wojna pomiędzy [your_race] i [my_race] nie ma sensu. Zakończmy ją traktatem pokojowym.
-OFFER_PEACE_01             | Zarówno rasa [your_race] jak i [my_race] nacierpiały się już wystarczająco. Czy to nie czas na pokój?
-OFFER_PEACE_01             | Imperatorze o imieniu [your_name], Imperium rasy [my_race] przynosi wam ofertę pokoju od naszego znakomitego władcy imieniem [my_name].
-OFFER_PEACE_01             | Czy wciąż chcecie cierpieć? Imperium rasy [my_race] nie widzi powodu do wrogości. Zawrzyjmy pokój.
-OFFER_PEACE_01             | Imperium rasy [my_race] nie jest w stanie kontynuować tej straszliwej wojny. Proponujemy traktat pokojowy potężnej rasie [your_race].
-ANNOUNCE_PEACE_01          | W roku [year] imperia ras [my_race] i [your_race] zgadzają się zaprzestać wszelkich wrogich działań.
-ANNOUNCE_PEACE_01          | Imperator [my_name] niniejszym nakazał zakończenie wszelkich wrogich działań pomiędzy naszymi dwoma imperiami.
-ACCEPT_PEACE_01            | Zgadzamy się, że nadszedł czas na zaniechanie konfliktu.
-ACCEPT_PEACE_01            | Akceptujemy waszą ofertę pokoju. Wstrzymajcie ogień przeciwko siłom rasy [my_race], a w odpowiedzi przestaniemy atakować wasze.
-ACCEPT_PEACE_01            | Jesteśmy wyczerpani tą bezsensowną destrukcją. Rasa [my_race] akceptuje waszą ofertę pokoju.
+ANNOUNCE_PEACE_01          | W roku [year], rasa [my_race3] i [your_race3] zgadzają się zakończyć wszelkie działania wojenne.
+ANNOUNCE_PEACE_01          | [my_nameTitle] [my_name] rozkazuje niniejszym zakończyć wszelkie działania wojenne między wami a mną.
+ACCEPT_PEACE_01            | Zgadzamy się, że nadszedł czas aby zakończyć nasze drobne sprzeczki.
+ACCEPT_PEACE_01            | Przyjmujemy waszą ofertę pokoju. Wstrzymajcie ogień w stronę rasy [my_race3], a my przestaniemy atakować wasze siły.
+ACCEPT_PEACE_01            | Męczą nas te bezsensowne zniszczenia a więc zgoda. Imperium [my_empire] pragnie tylko pokoju.
 
-BREAK_PACT_01              | Ostrzeżenie dla imperium rasy [your_race] od rasy [my_race]: nasz Pakt o Nieagresji został złamany!
-OFFER_PACT_01              | W interesie przyszłego pokoju, imperium rasy [my_race] proponuje zawarcie Paktu o Nieagresji pomiędzy naszymi dwoma narodami.
-OFFER_PACT_01              | Ekspansja jest niebezpieczna. Nikt nie jest pewien rozmieszczenia sił drugiej strony, dlatego też proponujemy Pakt o Nieagresji w celu zapobieżenia przypadkowemu konfliktowi pomiędzy [your_race] i [my_race].
-OFFER_PACT_01              | Rasa [my_race] nie życzy źle rasie [your_race]. Zawrzyjmy Pakt o Nieagresji aby zapewnić harmonię w przyszłości.
-OFFER_PACT_01              | Interesy rasy [my_race] nie są związane z imperium rasy [your_race]. Zawrzyjmy Pakt o Niagresji abyśmy mogli skoncentrować siły na innych.
-ANNOUNCE_PACT_01           | W roku [year] imperium rasy [my_race] zawiera Pakt o Nieagresji i przysięga nie atakować floty rasy [your_race], chyba że znajduje się ona na orbicie jej kolonii.
-ACCEPT_PACT_01             | Rasa [my_race] zawiera Pakt o Nieagresji. Żadna ze stron nie zaatakuje floty drugiej strony, chyba że będzie się znajdować na orbicie jej kolonii.
-ACCEPT_PACT_01             | Jeśli zgadzacie się nie wysyłać statków do naszych kolonii, lud rasy [my_race] przysięga nie atakować waszych statków.
-ACCEPT_PACT_01             | Imperator [my_name] zgadza się na waszą propozycję zawarcia Paktu o Nieagresji. Jak zostało zapisane, tak będzie!
-ACCEPT_PACT_01             | Zgoda. Dopóki nie zaatakujecie naszych kolonii, Imperium rasy [my_race] będzie przestrzegać ustaleń Paktu o Nieagresji.
+BREAK_PACT_01              | Ostrzeżenie od [my_race3] dla imperium znanego jako [your_empire]: nasz Pakt o Nieagresji został złamany!
+ANNOUNCE_PACT_01           | W roku [year] imperium znane jako [your_empire] zobowiązuje się przestrzegać Paktu o Nieagresji i nie atakować flot rasy [your_race3], chyba że będą one orbitować wokół jednej z naszych kolonii.
+ACCEPT_PACT_01             | Imperium  [my_empire] zgadza się na Pakt o Nieagresji. Żadna ze stron nie będzie atakować flot drugiej, chyba że ta wejdzie na orbitę kolonii przeciwnika.
+ACCEPT_PACT_01             | Jeśli zgodzicie się nie wysyłać flot do naszych kolonii, rasa [my_race3] zobowiązuje się nie atakować żadnego z waszych statków.
+ACCEPT_PACT_01             | [my_nameTitle] [my_name] zgadza się na proponowany przez was Pakt o Nieagresji. Jak zostało zapisane, tak się stanie!
+ACCEPT_PACT_01             | A zatem zgoda. Dopóki nie zaatakujecie naszych kolonii, mocarstwo znane jako [my_empire] będzie przestrzegać Paktu o Nieagresji.
 
-BREAK_ALLIANCE_01          | Imperium rasy [my_race] nie może kontynuować Sojuszu z imperium rasy [your_race].
-OFFER_ALLIANCE_01          | Nadszedł czas na zawarcie wiecznego Sojuszu między imperiami ras [your_race] i [my_race].
-OFFER_ALLIANCE_01          | Imperia rasy [my_race] i [your_race] znajdują się w punkcie, gdy mogą koegzystować w doskonałej harmonii.
-OFFER_ALLIANCE_01          | Rasa [my_race] oferuje Imperium rasy [your_race] dozgonną lojalność i wierność.
-OFFER_ALLIANCE_01          | Imperium rasy [my_race] przysięga wieczną przyjaźń i lojalność.
-OFFER_ALLIANCE_01          | Imperatorze imieniem [your_name], scementujmy nasze stosunki Sojuszem pomiędzy rasą [your_race] i [my_race].
-ANNOUNCE_ALLIANCE_01       | W roku [year] imperium ras [my_race] i [your_race] formują Sojusz i nie będą atakować swych flot i kolonii.
-ANNOUNCE_ALLIANCE_01       | A więc Sojusz został zawarty. Wasze statki mogą odwiedzać nasze kolonie kiedy chcą, korzystając z naszych baz w celach tankowania.
-ACCEPT_ALLIANCE_01         | Imperator [my_name] wita Sojusz z naszym dobrym przyjacielem, Imperatorem o imieniu [your_name].
-ACCEPT_ALLIANCE_01         | Imperia ras [my_race] i [your_race] zawarły dzisiaj Sojusz. Śmierć naszym wrogom!
-ACCEPT_ALLIANCE_01         | Imperator [my_name] widzi przyszłość w Sojuszu z Imperium rasy [your_race]. Niech tak się stanie!
+BREAK_ALLIANCE_01          | Sojusz pomiędzy imperiami znanymi jako [my_empire] a [your_empire] nie może dłużej istnieć.
+ANNOUNCE_ALLIANCE_01       | W roku [year] imperia znane jako [my_empire] i [your_empire] zgadzają się zawrzeć sojusz, w którym żadna ze stron nie będzie atakować flot ani kolonii drugiej strony.
+ANNOUNCE_ALLIANCE_01       | Tak oto nasz Sojusz został zawarty. Wasze statki mogą odwiedzać nasze kolonie kiedy tylko zechcecie i pobierać paliwo z naszych baz.
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] cieszy się z Sojuszu z naszym dobrym przyjacielem o imieniu [your_nameTitle] [your_name].
+ACCEPT_ALLIANCE_01         | [my_empire] i [your_empire] zawierają dziś Sojusz. Śmierć naszym wrogom!
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] widzi mądrość w Sojuszu z imperium znanym jako [your_empire]. Niech tak będzie!
 
-ACCEPT_BREAK_ALLIANCE_01   | Zgadzamy się, rasie [other_race] nie można już wierzyć i złamaliśmy z nimi przymierze.
-ACCEPT_BREAK_ALLIANCE_01   | Mimo, że niechętnie odwracamy się plecami do rasy [other_race], tak zrobimy.
-ACCEPT_BREAK_ALLIANCE_01   | Imperium rasy [other_race] nie jest już sojusznikiem rasy [my_race].
-ACCEPT_BREAK_ALLIANCE_01   | Sojusz imperiów ras [my_race] i [other_race] został właśnie przez nas zdeptany.
-ACCEPT_BREAK_ALLIANCE_01   | Jak sobie życzysz, od tej chwili rasa [other_race] nie jest już naszym sojusznikiem.
-
-ACCEPT_JOINT_WAR_01        | Imperium rasy [other_race] musi upaść w obliczu połączonych sił ras [my_race] i [your_race].
-ACCEPT_JOINT_WAR_01        | W obliczu sojuszu ras [my_race] i [your_race], rasa [other_race] nie przetrwa długo.
-ACCEPT_JOINT_WAR_01        | W roku [year], imperia ras [my_race] i [your_race] łączą siły w celu pozbycia się z galaktyki zagrożenia ze strony rasy [other_race].
-
-RESPOND_CLOSE_EMBASSY_01   | Niech i tak będzie. Relacje między naszymi imperiami zostają zawieszone.
+OFFER_JOINT_WAR_01         | Nadszedł czas na połączenie siły imperiów znanych jako [your_empire] oraz [my_empire] w wojnie przeciwko rasie [other_race3].
+ACCEPT_JOINT_WAR_01        | Imperium znane jako [other_empire] musi upaść przed połączonymi siłami imperiów znanych jako [your_empire] oraz [my_empire].
+ACCEPT_JOINT_WAR_01        | Kiedy rasy [my_race3] i [your_race3] są sojusznikami, [other_race] will not last long.
+ACCEPT_JOINT_WAR_01        | W roku [year], [my_empire] oraz [your_empire] połączyły siły aby pozbyć się z galaktyki zagrożenia w postaci rasy [other_race3].
+COUNTER_JOINT_WAR_01       | Dołączymy w waszej wojnie przeciwko imperium znanemu jako [other_empire] w zamian za następującą rekompensatę:
+RESPOND_CLOSE_EMBASSY_01   | Niech będzie i tak. Nasze imperia nie będą więcej negocjować.
 
 RESPOND_BREAK_TRADE_01     | Zapamiętamy to.
-RESPOND_BREAK_TRADE_01     | A więc, Imperatorze imieniem [your_name], nie potrafisz dotrzymać danego słowa. Nie zapomnimy o tym.
+RESPOND_BREAK_TRADE_01     | A więc [your_nameTitle] [your_name] nie jest w stanie dotrzymać danego słowa. Nie zapomnimy tego.
 
-RESPOND_BREAK_PACT_01      | Wyskrobiemy słowa złamanych przez ciebie układów na twoim nagrobku, Imperatorze [your_name].
-RESPOND_BREAK_PACT_01      | Imperium rasy [your_race] obróci się w proch pod ciężarem swych własnych złamanych obietnic.
+RESPOND_BREAK_PACT_01      | Wyryjemy słowa twoich złamanych traktatów na Twoim nagrobku, liderze znany jako [your_nameTitle] [your_name].
+RESPOND_BREAK_PACT_01      | Mocarstwo znane jako [your_empire] zostanie pogrzebane pod ciężarem swoich własnych złamanych obietnic.
 
-RESPOND_BREAK_ALLIANCE_01  | Nie honorujecie ustaleń. Nasz sojusz właśnie przestał istnieć.
-RESPOND_BREAK_ALLIANCE_01  | Doskonale, pokazaliście prawdziwe oblicze. Nasz sojusz właśnie przestał istnieć.
-RESPOND_BREAK_ALLIANCE_01  | Nie potrzebujemy układów, które nie są przestrzegane. Nasz sojusz właśnie przestał istnieć.
-RESPOND_BREAK_ALLIANCE_01  | Niech i tak będzie. Nasz sojusz właśnie przestał istnieć.
-
-RESPOND_DECLARE_WAR_01     | Ignorujemy puste groźby szalonych lunatyków.
-RESPOND_DECLARE_WAR_01     | Kiepsko blefujecie, Imperatorze [your_name]. Wasze groźby nie robią na nas wrażenia.
-RESPOND_DECLARE_WAR_01     | Śmiało, młodzież rasy [my_race] czasem również robi podobne sceny.
-RESPOND_DECLARE_WAR_01     | Śmiecie grozić potężnemu Imperatorowi imieniem [my_name]! Nie wiecie z kim macie do czynienia!
-RESPOND_DECLARE_WAR_01     | Jesteśmy głusi na wasze groźby, Imperatorze [your_name].
-RESPOND_DECLARE_WAR_01     | Ryczycie jak Rigelski osioł, Imperatorze [your_name], i tak też potraktujemy wasze groźby.
-RESPOND_DECLARE_WAR_01     | Nie rzucajcie słów na wiatr, Imperatorze [your_name], bo gniew rasy [my_race] jest straszliwy.
-
-DECLAREWAR_HATE_01         | Śmieciu rasy [your_race], potężne Imperium rasy [my_race] wkrótce zakończy waszą żałosną egzystencję.
-DECLAREWAR_HATE_01         | Słabowite Imperium rasy [your_race] stało się dokuczliwe dla rasy [my_race] i nie możemy go dłużej ignorować. Przygotujcie się na śmierć.
-DECLAREWAR_HATE_02         | Rasa [my_race] cały czas przypuszczała, że nie można ufać rasie [your_race]. Zadamy więc pierwszy cios!
-DECLAREWAR_HATE_02         | Imperium rasy [my_race] znajdzie was w najciemniejszym zakątku galaktyki i oczyści wszechświat z plagi jaką jest rasa [your_race] raz na zawsze.
-DECLAREWAR_HATE_03         | Nie będziemy dłużej tolerować waszych ingerencji. Imperium rasy [my_race] będzie walczyć z tyranią rasy [your_race] do samego końca.
-DECLAREWAR_HATE_03         | Wystarczy. Pokorna rasa [my_race] nadal jest w stanie ranić, nawet aroganckie Imperium rasy [your_race].
-//
-DECLAREWAR_ERRATIC_01      | Koniunkcja planet wskazuje na to, że rasa [my_race] musi oczyścić galaktykę z rasy [your_race].
-DECLAREWAR_ERRATIC_02      | Imperator [my_name] miał wizję, w której starożytni obwieścili że rasa [my_race] musi ukarać niewierną rasę [your_race]. Przygotujcie się na śmierć, pogańskie śmiecie.
-DECLAREWAR_ERRATIC_03      | Kalendarz rasy [my_race] wskazuje, że to dobry rok na wojnę. Żegnaj, Imperatorze [your_name]!
-DECLAREWAR_ERRATIC_04      | Imperator [my_name] Imperium rasy [my_race] zadeklarował sezon na rasę [your_race]. Polowanie czas zacząć!
-DECLAREWAR_ERRATIC_05      | Rasa [your_race] ukrywa się za dyplomatyczną maską przyjaźni. Rasa [my_race] uderzy pierwsza, zanim pokażecie swe prawdziwe oblicze.
-//
-DECLAREWAR_MILITARY_01     | Nie jesteśmy zainteresowani dalszym kontaktem z waszą żałosną rasą. Rasa [my_race] mobilizuje floty i przygotowuje się do wojny.
-DECLAREWAR_MILITARY_02     | Podczas gdy nasz ambasador obiecał pokój, Imperator [my_name] przygotował rasę [my_race] do wojny. Teraz zginiecie.
-DECLAREWAR_MILITARY_03     | Imperator [my_name] rasy [my_race] znudził się dyplomatycznymi gierkami a nabrał ochoty na gry wojenne.
-DECLAREWAR_MILITARY_04     | Imperium rasy [my_race] znudziło się dyplomatycznymi gierkami. Drżyj, Imperatorze [your_name], bo idziemy po ciebie.
-DECLAREWAR_MILITARY_05     | Zrobimy z was przykład dla innych, że opór wobec Imperium rasy [my_race] jest niemożliwy.
-DECLAREWAR_MILITARY_06     | Pozostawiacie rasie [my_race] tylko jeden wybór: obrócimy wasze imperium w proch.
-//
-DECLAREWAR_ALLIANCE_01     | Imperium rasy [my_race] jest zdeterminowane uwolnić wszechświat od tyranii rasy [your_race]!
-DECLAREWAR_ALLIANCE_02     | Imperium rasy [my_race] wkrótce wyleczy galaktykę z szaleństwa rasy [your_race].
-DECLAREWAR_ALLIANCE_03     | Rasa [my_race] rozumie, że nawet imperatorzy popełniają głupie błędy. Poddaj się a unikniesz wstydu zostania obalonym.
-DECLAREWAR_ALLIANCE_04     | Prosimy o wybaczenie, Imperatorze [your_name], ale Imperium rasy [my_race] musi was zniszczyć.
-//
-DECLAREWAR_SPYING_01       | Psie rasy [your_race]. Ostrzeżenia nie wystarczyły, więc poczujecie teraz prawdziwą siłę Imperium rasy [my_race].
-DECLAREWAR_SPYING_02       | Tolerowaliśmy waszą ingerencję w sprawy rasy [my_race] wystarczająco długo. Czas na wojnę!
-DECLAREWAR_SPYING_03       | Nie możemy dłużej tolerować waszych działań. Przygotujcie się na śmierć z rąk rasy [my_race].
-DECLAREWAR_SPYING_04       | Mimo, że Imperium rasy [my_race] niechętnie bierze udział w międzygalaktycznej wojnie, to musimy powstrzymać wasze bezpardonowe akty terroryzmu.
-DECLAREWAR_SPYING_05       | Wasze działania przeciwko rasie [my_race] nieodwołalnie zmieniły los naszych imperiów i doprowadziły do wojny, w której nie będzie zwycięzcy.
-DECLAREWAR_SPYING_06       | Rasa [my_race] wiele razy próbowała przemówić wam do rozsądku. Nie pozostawiliście nam innego wyboru niż wojna.
-DECLAREWAR_SPYING_07       | Imperatorze [your_name], a więc odpowiedzieliście działaniami zaczepnymi na żądania pokoju rasy [my_race]. Niech i tak będzie. Zmieciemy rasę [your_race], która gnębi wszechświat.
-
-DECLAREWAR_ATTACK_07       | Jak śmiecie wkraczać na terytorium rasy [my_race] i atakować naszą kolonię? Odpłacimy wam pięknym za nadobne.
-DECLAREWAR_ATTACK_08       | Atak na nasza kolonię w systemie [system] nie był mądrym posunięciem. Imperium rasy [my_race] nie będzie przyglądać się bezczynnie jak jego lud jest masakrowany przez psy rasy [your_race].
-DECLAREWAR_ATTACK_09       | Imperium rasy [my_race] uważa atak na system [system] za niesprowokowany akt wypowiedzenia wojny.
-
-
-WARN_SPYING_01             |
-
-WARN_ATTACKED_ALLY_01      | Imperator [my_name], przywódca rasy [my_race], jest poważnie zaniepokojony atakami rasy [your_race] na naszych sojuszników rasy [other_race].
-
-WARN_TRESPASSING_01        | Imperator [my_name] sugeruje natychmiastowe usunięcie waszych statków rasy [your_race] z systemu [system].
-WARN_TRESPASSING_02        | Nie grajcie w gry wojenne z potężnym imperium rasy [my_race]. Usuńcie wasze statki z orbity systemu [system].
-WARN_TRESPASSING_03        | Imperator [my_name] przewiduje poważne konsekwencje wobec statków rasy [your_race] pozostających zbyt blisko kolonii rasy [my_race] w systemie [system].
-WARN_TRESPASSING_04        | Jakiekolwiek statki rasy [your_race] pojmane w systemie [system] będą przejęte jako zadośćuczynienie rasie [my_race] za wasz brak zdolności dyplomatycznych.
-WARN_TRESPASSING_05        | Młodzi rasy [my_race] będą wkrótce podziwiać eksponaty w muzeach w postaci antycznych statków rasy [your_race], które orbitują system [system].
-
-WARN_ENCROACHING_01        | Imperium rasy [your_race] zdecydowanie za bardzo się rozrosło. W przypadku dalszej ekspansji Imperium rasy [my_race] będzie zmuszone do podjęcia działań militarnych.
-WARN_ENCROACHING_02        | Wasza lekkomyślna ekspansja zaczyna zagrażań terytorium rasy [my_race]. Wycofajcie się z naszych obszarów albo zostaniecie zniszczeni.
-WARN_ENCROACHING_03        | Wasza ekspansja nie może pozostać bez odpowiedzi. Jeżeli nie zaczniecie się wycofywać, będziemy zmuszeni odbić terytorium rasy [my_race] siłą.
-WARN_ENCROACHING_04        | Wstrzymajcie ekspansję na terytorium rasy [my_race] albo zniszczymy waszą patetyczną rasę.
-WARN_ENCROACHING_05        | Cierpliwość rasy [my_race] została wyczerpana. Dalsza ekspansja doprowadzi do wojny.
-
-WARN_EXPANSION_01          | Imperium rasy [your_race] stało się zdecydowanie zbyt potężne. Rasa [my_race] ostrzega: dalsza ekspansja poskutkuje waszą eliminacją.
-WARN_EXPANSION_02          | Imperium rasy [your_race] stało się zagrożeniem dla całej galaktyki. Wstrzymajcie ekspansję albo poczujecie gniew imperium rasy [my_race].
-WARN_EXPANSION_03          | Imperium rasy [my_race] nie będzie dalej patrzeć jak rasa [your_race] przejmuje kontrolę nad galaktyką. Wycofajcie się albo przygotujcie się na śmierć, Imperatorze [your_name].
-WARN_EXPANSION_04          | Rasa [my_race] nie pozwoli rasie [your_race] na przejęcie kontroli nad galaktyką. Jeśli okaże się to konieczne, uratujemy wszechświat przed szaleństwem rasy [your_race].
-WARN_EXPANSION_05          | Rozprzestrzeniliście się po galaktyce niczym choroba. Wstrzymajcie ekspansję na oślep albo rasa [my_race] będzie zmuszona wyeliminować zagrożenie z waszej strony.
-
-WARN_BUILDUP_01            | Imperatorze [your_name], wasza flota znajduje się zbyt blisko naszych granic. Imperator [my_name] rasy [my_race] żąda ich natychmiastowego usunięcia, albo zrobimy to sami.
-WARN_BUILDUP_02            | Obrońcy rasy [my_race] są czujni i zmiotą jakiekolwiek wtargnięcie pobliskiej floty rasy [your_race]. Sugerujemy, żebyście prężyli swe wątłe muskuły gdzie indziej.
-WARN_BUILDUP_03            | Czy oczekiwaliście, że patetyczny pokaz siły w pobliżu granic rasy [my_race] zrobi na nas wrażenie? Niszczymy większe floty na ćwiczeniach.
-WARN_BUILDUP_04            | Imperatorze [your_name], czy sądzisz że rasa [my_race] nie zauważyła koncetracji waszych statków w pobliżu naszych granic? Odpowiemy siłą na jakiekolwiek akcje zaczepne.
-WARN_BUILDUP_05            | Flota rasy [your_race] przebywająca w pobliżu naszych granic jest zbyt duża. Przemieśćcie ją, jeśli chcecie utrzymać stabilne relacje.
-WARN_BUILDUP_06            | Przekażcie tchórzliwemu Imperatorowi imieniem [your_name], że nasza flota jest gotowa zniszczyć flotę rasy [your_race] naruszającą przestrzeń rasy [my_race].
-WARN_BUILDUP_07            | Cześć tobie, wielki i cudowny Imperatorze [your_name]! Rasa [my_race] zakłada, że wasza potężna flota koncentruje się w pobliżu naszych granic w celu wzajemnej ochrony.
-WARN_BUILDUP_08            | Cześć tobie, wielki Imperatorze [your_name]! Zauważyliśmy flotę rasy [your_race] w pobliżu granic rasy [my_race]. Z pewnością nie uważacie nas za zagrożenie.
-WARN_BUILDUP_09            | Czy tak ma wyglądać koniec rasy [my_race], zmiecenie przez zliżającą się flotę rasy [your_race]? Bądźcie pewni, że przeklniemy was w ostatnich słowach.
-
-WARN_SKIRMISH_01           | Cześć tobie, Imperatorze [your_name]! Rasa [my_race] z rozmysłem umieściła na złomowisku wasze statki, które zbłądziły w pobliże systemu [system].
-WARN_SKIRMISH_02           | Jeżeli Imperator [your_name] naprawdę życzy sobie deklaracji wojny wobec potężnego imperium rasy [my_race] Empire, to poinformujcie go że napotka flotę większą niż ta z systemu [system].
-WARN_SKIRMISH_03           | Aroganckie psy! Kolejny atak w rodzaju tego z systemu [system] a rasa [my_race] będzie wkrótce skrobać z podeszw szczątki waszej cywilizacji. Miejcie się na baczności albo zgińcie.
-WARN_SKIRMISH_04           | Tylko głupiec sprowokowałby kosztowną wojnę z przyjacielem. Rasa [my_race] ufa, że incydent w systemie [system] był szkolną pomyłką.
-WARN_SKIRMISH_05           | Imperatorze [your_name], potyczka w systemie [system] to przedsmak bezsensownej wojny, która wyczerpie zarówno rasę [your_race] jak i [my_race].
-WARN_SKIRMISH_06           | Głupcy! Jeżeli atak w systemie [system] miał być preludium do dalszych działań wojennych, to rasa [my_race] z przyjemnością zabierze rasę [your_race] ze sobą do grobu.
-WARN_SKIRMISH_07           | Cześć tobie, wspaniały [your_name]! Rasa [my_race] ma nadzieję, że niefortunny incydent w systemie [system] był pomyłką i patrzy z nadzieją na przyszłe relacje z potężną rasą [your_race].
-WARN_SKIRMISH_08           | Skąd atak na rasę [my_race] w systemie [system]? Zapewne istnieją poważniejsze zagrożenia, z którymi musi sobie poradzić potężne Imperium rasy [your_race].
-WARN_SKIRMISH_09           | Poinformujcie rzeźnikom, którzy zorganizowali atak na system [system], że nawet najmniejsza siła rasy [my_race] może dotkliwie pokąsać w obliczu zagrożenia.
-
-WARN_ATTACKED_04           | Czuj się wyróżniony, Imperatorze [your_name], że imperium rasy [my_race] nie jest jeszcze gotowe na bezsensowną wojnę wywołaną incydentem w systemie [system].
-WARN_ATTACKED_05           | Wasz bezsensowny atak na system [system] należący do rasy [my_race] stworzył zagrożenie dla milionów mieszkańców obu światów.
-WARN_ATTACKED_06           | Chyba nie oczekujecie bierności ze strony rasy [my_race] w obliczu bezpardonowego ataku w systemie [system].
-WARN_ATTACKED_07           | Zbliżcie się do systemu [system] jeszcze raz a rasa [my_race] będzie zmuszona zniszczyć rasę [your_race].
-WARN_ATTACKED_08           | Wielu spośród rasy [my_race] żąda podjęcia bardziej zdecydowanych działań. Kolejny atak w rodzaju tego z systemu [system] doprowadzi do wojny.
-WARN_ATTACKED_09           | Relacje pomiędzy naszymi imperiami stają się kiepskie. Atak na rasę [my_race] w systemie [system] był bezpardonowy i może wkrótce doprowadzić do wojny.
-
-WARN_INVADED_04            | Rasa [my_race] żąda wstrzymania wszelkich działań zaczepnych w systemie [system]. W przeciwnym razie poniesiecie konsekwencje.
-WARN_INVADED_05            | Konflikty w rodzaju bitwy w systemie [system] mogą zostać zinterpretowanie jedynie jako preludium do wojny z rasą [my_race].
-WARN_INVADED_06            | Bądź przeklęty, Imperatorze [your_name]! Wystawiasz na ciężką próbę przyszłość naszych narodów swoimi bezsensownymi atakami na kolonie rasy [my_race].
-WARN_INVADED_07            | Nie jesteśmy głupcami. Zapewne nie oczekujesz, że rasa [my_race] uwierzy że atak w systemie [system] został sprowokowany przez rebeliantów.
-WARN_INVADED_08            | Bezlitosny atak na kolonię rasy [my_race] w systemie [system] zniszczył potencjalnie piękną przyszłość naszych imperiów.
-WARN_INVADED_09            | Destrukcję naszej floty przetrzymamy, natomiast rzeź kolonistów rasy [my_race] z pewnością doprowadzi do wojny.
-
-WARN_ESPIONAGE_01          | Niewdzięczny Imperatorze [your_name], kontynuując działania szpiegowskie przeciwko rasie [my_race] ryzykujecie utratę naszych boskich względów.
-WARN_ESPIONAGE_02          | Mądre są dzieci proszące rodziców o upominki, zamiast je zwykle przywłaszczać. Zaniechajcie natychmiast działań szpiegowskich przeciwko rasie [my_race] albo poniesiecie konsekwencje.
-WARN_ESPIONAGE_03          | Wasz bezczelny przywódca doprowadzi rasę [your_race] jedynie do ruiny swoimi patetycznymi próbami szpiegowania Imperium rasy [my_race].
-WARN_ESPIONAGE_04          | Rasa [my_race] miała świadomość waszych działań szpiegowskich od dłuższego czasu i nasza cierpliwość się kończy.
-WARN_ESPIONAGE_05          | Miej się na baczności, Imperatorze [your_name]. Nie będziemy dłużej toletować działań szpiegowskich przeciwko imperium rasy [my_race].
-WARN_ESPIONAGE_06          | Tolerowaliśmy do tej pory wasze niezdarne próby szpiegowania, lecz wkrótce poczujecie gniew imperium rasy [my_race].
-WARN_ESPIONAGE_07          | Imperium rasy [my_race] składa protest przeciwko usilnym próbom szpiegowania podejmowanym przez rasę [your_race].
-WARN_ESPIONAGE_08          | Wasze próby szpiegowania napinają stosunki pomiędzy imperiami ras [my_race] i [your_race].
-WARN_ESPIONAGE_09          | To oczywiste, że przeceniście cierpliwość rasy [my_race] jeśli chodzi o szpiegostwo podejmowane przez rasę [your_race]. Kontynuacja tych działań spotka się z konsekwencjami.
-
-WARN_SABOTAGE_01           | Imperium rasy [my_race] było w przeszłości łaskawe dla podrzędnych gatunków, lecz jeśli będziecie kontynuować sabotaż naszych kolonii to wyeliminujemy zagrożenie ze strony [your_race] raz na zawsze.
-WARN_SABOTAGE_02           | Imperatorze [your_name], zapewne zdajesz sobie sprawę że sabotaż zagraża przyszłym relacjom z rasą [my_race].
-WARN_SABOTAGE_03           | Doskonale! Wasze akty sabotażu przeciwko rasie [my_race] stanowią wygodny powód do eliminacji waszego żałosnego gatunku.
-WARN_SABOTAGE_04           | Rasa [my_race] nie życzy wam źle, lecz bezsensowne próby sabotażu stanowią ryzyko wojny mogącej pochłonąć oba nasze imperia.
-WARN_SABOTAGE_04           | Imperatorze [your_name], zaprzestań dalszych prób sabotażu przeciwko imperium rasy [my_race] albo poniesiesz konsekwencje swych czynów.
-WARN_SABOTAGE_05           | Kontynuacja prób sabotażu przeciw koloniom rasy [my_race] wkrótce postawi nasze imperia na skraju wojny.
-WARN_SABOTAGE_05           | Kontynuacja prób sabotażu przeciw koloniom rasy [my_race] wywoła głupią i kosztowną wojnę.
-WARN_SABOTAGE_05           | Wasze niezdarne próby sabotażu przeciw koloniom rasy [my_race] niszczą resztki pokoju między nami.
-WARN_SABOTAGE_06           | Ach, więc podstępna rasa [your_race] zamierza wywołać wojnę prowadzącą do obopólnej eksterminacji? Po waszych ostatnich próbach sabotażu, imperium rasy [my_race] znajduje się na krawędzi.
-WARN_SABOTAGE_07           | Imperatorze [your_name], jeśli chcecie uniknąć bezsensownego konfliktu to prosimy byście zaniechali wszelkich działań sabotażowych przeciwko imperium [my_race].
-WARN_SABOTAGE_08           | Rasa [my_race] nie będzie długo tolerować aktów terroru i sabotażu potężnego imperium rasy [your_race]. Wojny wybuchały już z bardziej błahych powodów.
-WARN_SABOTAGE_09           | Szlachetna rasa [my_race] zawsze przeciwstawi się tyranii Imperium rasy [your_race] i jego szalonym aktom terroru.
-
-WARN_GENOCIDE_04           | Imperatorze [your_name], przesadzasz! Potężna rasa [my_race] nie patrzy łaskawie na wasze ludobójstwo rasy [victim].
-WARN_GENOCIDE_05           | Pamiętajcie [yourself], że ludobójstwo to miecz o dwóch ostrzach. *TODO*
-WARN_GENOCIDE_06           | Przyjazna rasa [my_race] ma nadzieję, że potężne Imperium rasy [your_race] nadal będzie w stanie odróżnić przyjaciela od wroga.
-WARN_GENOCIDE_07           | Wasza rzeź rasy [victim] przypomina Imperium potężnej rasy [my_race], że my również nie pałamy sympatią do waszego patetycznego gatunku.
-WARN_GENOCIDE_08           | Wasza całkowita eliminacja rasy [victim] jasno pokazuje, że przemoc jest jedyną lekcją rozumianą przez wasz gatunek.
-WARN_GENOCIDE_09           | Wasze barbarzyńskie akty przeciwko [victim] zdradzają bezwzględność wobec całej galaktyki. *TODO*
-
-WARN_FINAL_WAR_01          | Imperium rasy [my_race] wkrótce zakończy waszą patetyczną rebelię.
-WARN_FINAL_WAR_01          | Nie oprzecie się potędze Nowej Republiki. Przygotujcie się na śmierć.
-WARN_FINAL_WAR_01          | Czy chcecie zmienić swój głos? Niestety już na to za późno.
-WARN_FINAL_WAR_01          | Nowa Republika nie spocznie póki zdradziecka rasa [your_race] nie zostanie wymazana z kart historii.
-WARN_FINAL_WAR_01          | Nowa Republika musi dać przykład jak kończą się rebelie przez całkowite zniszczenie waszej cywilizacji.
-
-WARN_BIOWEAPON_01          | To oczywiste, że rasą [your_race] kieruje szaleniec zdecydowany użyć broni biologicznej wedle kaprysu. Wkrótce imperium rasy [my_race] zakończy to szaleństwo.
-WARN_BIOWEAPON_02          | Imperatorze [your_name], retoryka nie usprawiedliwi użycia przez was broni biologicznej.
-WARN_BIOWEAPON_03          | Nie ma honoru ni prawdy w słowach tego kto używa broni biologicznej.
-WARN_BIOWEAPON_04          | To oczywiste, że rasą [your_race] kieruje szaleniec zdecydowany użyć broni biologicznej wedle kaprysu.  Wkrótce imperium rasy [my_race] zakończy to szaleństwo.
-WARN_BIOWEAPON_05          | Nie ma wymówki wobec użycia biologicznej broni wobec ludności cywilnej.
-WARN_BIOWEAPON_06          | Nie ma honoru ni prawdy w słowach tego kto używa broni biologicznej.
-WARN_BIOWEAPON_07          | Szumowiny. Drogo zapłacicie za użycie broni biologicznej wobec niewinnych kolonistów.
-WARN_BIOWEAPON_08          | Użycie broni biologicznej umieściło nasze imperia na krawędzi wojny.
-WARN_BIOWEAPON_09          | Nie ma honoru ni prawdy w słowach tego kto używa broni biologicznej.
-
-WARN_COUNCIL_VOTE_01       | Wasz głos przeciwko rasie [my_race] ośmieszył nas przed całą galaktyką. Nie zapomnimy szybko tego poniżenia.
-WARN_COUNCIL_VOTE_01       | Et tu, [your_name]? Miejcie się na baczności, bo gdy wyjmę sztylet z pleców nauczę was nigdy więcej nie głosować przeciw nam.
-WARN_COUNCIL_VOTE_01       | Nasza cierpliwość się wyczerpuje. Głosowanie przeciwko rasie [my_race] jest pomyłką, którą popełnia się tylko raz.
-WARN_COUNCIL_VOTE_01       | Pchnięty w plecy, na oczach wszystkich! Historia waszych głosów wygląda jak podręcznik politycznego zabójcy.
-WARN_COUNCIL_VOTE_02       | Jeżeli będziecie kontynuować podłe ataki na naszą dobrą reputację, napiszemy bardzo przykre zakończenie tej historii.
-WARN_COUNCIL_VOTE_02       | Nie bawi nas fakt, że oddaliście głos przeciw nam.
-WARN_COUNCIL_VOTE_02       | Jak mogliście nie oddać głosu na rasę [my_race]? Jeżeli będziecie kontynuować podobne działania, poczujecie mój gniew.
-WARN_COUNCIL_VOTE_02       | Nauczyliśmy się trzymac przyjaciół blisko lecz wrogów jeszcze bliżej. Zagłosujcie w Radzie Galaktycznej ponownie przeciw rasie [my_race] a możemy znaleźć się w zasięgu strzały z lasera.
-WARN_COUNCIL_VOTE_03       | Jak pokazuje wasz głos w Radzie Galaktycznej, ci którzy nie są z nami są przeciwko nam. Właśnie awansowaliście o kilka pozycji na naszej liście śmierci.
-WARN_COUNCIL_VOTE_03       | Oczywiście zdajecie sobie sprawę z naszej potęgi. Zgnieciemy was jak insekta w odwecie za to zdradzieckie głosowanie.
-WARN_COUNCIL_VOTE_03       | Istnieje kara za oddanie głosu przeciwko rasie [my_race], i wkrótce się o tym przekonacie.
-
-WARN_OATHBREAKER_01        | Jak podejrzewaliśmy, rasa [your_race] okazała się pozbawiona honoru.
-WARN_OATHBREAKER_01        | Imperator, który nie honoruje zawartych porozumień jest gorszy niż Pełzacz Ściekowy z Denebu.
-
-PRAISE_COUNCIL_VOTE_01     | Hurra! I pamiętajcie, głos oddany na rasę [my_race] jest głosem na pokój i stabilność.
-PRAISE_COUNCIL_VOTE_01     | Cieszy nas głos oddany przez was. Róbcie tak dalej a Imperator [my_name] wkrótce zjednoczy galaktykę.
-PRAISE_COUNCIL_VOTE_01     | Pochlebia nam, że oddaliście głos na rasę [my_race]. Musicie wkrótce złożyć formalną wizytę a być może odpowiemy tym samym.
-
-PRAISE_COUNCIL_VOTE_02     | Odbieramy wasz głos oddany na nas jako jasną ofertę poprawy relacji z potężnym Imperium [my_race].
-PRAISE_COUNCIL_VOTE_02     | Pomimo że nie wygraliśmy wyborów, jesteśmy bardzo zadoloweni że oddaliście głos na rasę [my_race].
-PRAISE_COUNCIL_VOTE_02     | Cóż, [your_name], to może być początek pięknej współpracy. Dziękujemy za wasz głos na zebraniu Rady Galaktycznej.
-
-PRAISE_COUNCIL_VOTE_03     | Pomimo że bardzo doceniamy wasz głos, wrodzony cynizm każe nam zastanawiać się co może być tego powodem.
-PRAISE_COUNCIL_VOTE_03     | Okazaliście mądrość oddając na nas głos. Pomimo wielu trudnych kwestii być może czeka nas świetlana przyszłość.
-
-PRAISE_ATTACKED_ENEMY_01   | Wygląda na to że zarówno rasa [your_race] jak i [my_race] ma wspólnego wroga w postaci wstrętnej rasy [other_race].
-PRAISE_ATTACKED_ENEMY_01   | Imperia ras [your_race] i [my_race] są w stanie wspólnie odeprzeć zagrożenie ze strony imperium paskudnej rasy [other_race].
-PRAISE_ATTACKED_ENEMY_01   | Imperatorze [your_name], ty również musisz sobie zdawać sprawę z potwornego zagrożenia ze strony imperium [other_race] dla obu ras [your_race] oraz [my_race].
-PRAISE_ATTACKED_ENEMY_01   | To oczywiste, że zagrożenie ze strony [other_race] dotarło nawet do imperium rasy [your_race]. Ukarzemy wspólnie te niewierne psy.
-PRAISE_ATTACKED_ENEMY_01   | Rasa [my_race] teraz widzi, że wasze ataki skierowane przeciwko podstępnej rasie [other_race] są dowodem honoru waszych pokojowych słów.
-
-PRAISE_TRADE_01            | Handel pomiędzy imperiami ras [my_race] i [your_race] zdecydowanie złagodził obecne napięcie.
-PRAISE_TRADE_01            | Pomimo że nasze imperia nie we wszystkim się zgadzają, wspólny handel pomiędzy kupcami ras [yourace] i [my_race] zdecydowanie złagodził część napięcia.
-PRAISE_TRADE_01            | Imperatorze [your_name], wasz handel z imperium rasy [my_race] nie tylko zwiększył naszą produkcję ale także sformował bazę wzajemnego szacunku i kooperacji.
-PRAISE_TRADE_01            | Wasz wkład w stworzenie wzajemnych relacji handlowych pomiędzy naszymi imperiami zdecydowanie polepszył relacje pomiędzy rasami [your_race] i [my_race].
-PRAISE_TRADE_01            | Okres prosperity wywołanego handlem między imperami ras [your_race] i [my_race] uformował solidną finansową podstawę korzystną dla obu naszych imperiów.
-PRAISE_TRADE_01            | Kontynuacja handlu pomiędzy imperiami [my_race] i [your_race] jest niezmiernie istotna jeżeli nasze imperia mają zamiar opierać się zagrożeniom z zewnątrz.
-PRAISE_TRADE_01            | Okres prosperity wywołanego handlem między imperami ras [your_race] i [my_race] dostarczył doskonałych powodów dla utrzymania długotrwałego pokoju między naszymi dwoma imperiami.
-PRAISE_TRADE_01            | Handel rozpoczął nową erę współpracy pomiędzy imperiami ras [my_race] i [your_race].
-PRAISE_TRADE_01            | Handel, który zaoferowaliście stworzył imperiom ras [your_race] i [my_race] możliwość umocnienia sojuszu.
-
+RESPOND_BREAK_ALLIANCE_01  | Zhańbiliście umowę. Sojusz zostaje zerwany.
+RESPOND_BREAK_ALLIANCE_01  | Bardzo dobrze. Wasze niegodne zaufania intencje zostały ujawnione. Sojusz zostaje zerwany.
+RESPOND_BREAK_ALLIANCE_01  | Nie potrzebujemy traktatów, które nie są honorowane. Sojusz zostaje zerwany.
+RESPOND_BREAK_ALLIANCE_01  | Niech będzie i tak. Sojusz zostaje zerwany.

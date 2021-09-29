@@ -15,7 +15,7 @@ soldierMug:    PsilonSoldierMug, 120@60|440x330
 diploProfile:  PsilonDiploMug, 70@0|630x480
 lab:           PsilonLaboratory
 embassy:       PsilonLaboratory
-holograph:     PsilonHolograph
+holograph:     
 diplomat:      PsilonDiplomat
 scientist:     PsilonScientist
 trooper:       PsilonSoldier

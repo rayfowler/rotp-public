@@ -42,6 +42,13 @@ public class ParanoiaIncident extends DiplomaticIncident {
         dateOccurred = galaxy().currentYear();
         duration = 1;
 
+        // no penalty in final war
+        if (galaxy().council().finalWar()) {
+            duration = 1;
+            severity = 0;
+            return;
+        }
+
         float multiplier = 1.0f;
         if (ev.owner().leader().isXenophobic())
             multiplier *= 2;

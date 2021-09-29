@@ -1,6 +1,9 @@
 SilWin        | races/Silicoid/WinSplash.jpg
 SilLoss       | races/Silicoid/LossSplash.jpg
 
+SilSab01      | races/Silicoid/SabotageMissiles/Frame000.jpg
+SilSab02      | races/Silicoid/SabotageRebellion/Frame000.jpg
+
 SilFlagWar   | races/Silicoid/banner_war.png
 SilFlagNorm  | races/Silicoid/banner_norm.png
 SilFlagPact  | races/Silicoid/banner_pact.png
@@ -12,7 +15,6 @@ SilDlgPact   | races/Silicoid/dialogue_pact.png
 SilicoidTroopIcon | races/Silicoid/troop_icon.png
 
 SilLab       | races/Silicoid/Silicoid_Laboratory_Base.jpg
-SilLab01     | races/Silicoid/Silicoid_Laboratory_Holograph.png
 SilLabGlowA  | races/Silicoid/Silicoid_Laboratory_GlowA.png
 SilLabGlowB  | races/Silicoid/Silicoid_Laboratory_GlowB.png
 SilCouncil   | races/Silicoid/Council_01.jpg

@@ -17,6 +17,7 @@ package rotp.ui.game;
 
 import java.awt.AlphaComposite;
 import java.awt.Color;
+import java.awt.Composite;
 import java.awt.Desktop;
 import java.awt.Font;
 import java.awt.Graphics;
@@ -109,7 +110,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     int languageX;
     BaseText discussText, continueText, newGameText, loadGameText, saveGameText, settingsText, exitText, restartText;
     BaseText versionText;
-    BaseText developerText, artistText, graphicDsnrText, writerText, soundText, translatorText;
+    BaseText developerText, artistText, graphicDsnrText, writerText, soundText, translatorText, slideshowText;
     BaseText shrinkText, enlargeText;
     BaseText hoverBox;
     Rectangle languageBox = new Rectangle();
@@ -124,6 +125,8 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     String imageKey1, imageKey2;
     int animationTimer = BG_DURATION;
     private final GameLanguagePane languagePanel = new GameLanguagePane();
+    float slideshowFade = 1.0f;
+    long slideshowTime = 0;
 
     public static Color langShade()               { return langShade[opt()]; }
     public static Color titleColor()              { return titleColor[opt()]; }
@@ -309,8 +312,17 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     private static int opt = -1;
     private static final String[] backImgKeys = { 
         "LANDSCAPE_RUINS_ORION", "LANDSCAPE_RUINS_ANTARAN", 
-        "AlkCouncil", "BulCouncil", "DarCouncil01", "HumCouncil", "KlaCouncil", "MekCouncil", "MrrCouncil", 
-        "PsiCouncil", "SakCouncil", "SilCouncil" };
+        "AlkCouncil", "AlkWin", "AlkLoss", "AlkSab01", "AlkSab02",
+        "BulCouncil", "BulWin", "BulLoss", "BulSab01", "BulSab02", 
+        "DarCouncil01", "DarWin", "DarLoss", "DarSab01", "DarSab02",
+        "HumCouncil", "HumWin", "HumLoss",  "HumSab01", "HumSab02", 
+        "KlaCouncil", "KlaWin", "KlaLoss", "KlaSab01", "KlaSab02",
+        "MekCouncil", "MekWin", "MekLoss", "MekSab01", "MekSab02", 
+        "MrrCouncil", "MrrWin", "MrrLoss", "MrrSab01", "MrrSab02",
+        "PsiCouncil", "PsiWin", "PsiLoss", "PsiSab01", "PsiSab02",
+        "SakCouncil", "SakWin", "SakLoss", "SakSab01", "SakSab02",
+        "SilCouncil", "SilWin", "SilLoss", "SilSab01", "SilSab02",
+         };
     public Image background() { return backImg; }
     public static int opt()     {
         return 0;
@@ -348,6 +360,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         writerText      = new BaseText(this, false,16, -210,-44,  enabledC,  enabledC, hoverC, depressedC, Color.black, 1, 1, 1);
         soundText       = new BaseText(this, false,16, -210,-27,  enabledC,  enabledC, hoverC, depressedC, Color.black, 1, 1, 1);
         translatorText  = new BaseText(this, false,16, -210,-10,  enabledC,  enabledC, hoverC, depressedC, Color.black, 1, 1, 1);
+        slideshowText   = new BaseText(this, false,16, -210,-10,  enabledC,  enabledC, hoverC, depressedC, Color.black, 1, 1, 1);
 
         developerText.disabled(true);
         artistText.disabled(true);
@@ -355,7 +368,19 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         writerText.disabled(true);
         soundText.disabled(true);
         translatorText.disabled(true);
+        slideshowText.disabled(true);
         versionText.disabled(true);
+        developerText.bordered(true);
+        artistText.bordered(true);
+        graphicDsnrText.bordered(true);
+        writerText.bordered(true);
+        soundText.bordered(true);
+        translatorText.bordered(true);
+        slideshowText.bordered(true);
+        versionText.bordered(true);
+        discussText.bordered(true);
+        shrinkText.bordered(true);
+        enlargeText.bordered(true);
         setTextValues();
         initModel();
     }
@@ -384,12 +409,16 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         writerText.displayText(text("CREDITS_WRITER"));
         soundText.displayText(text("CREDITS_SOUND"));
         translatorText.displayText(text("CREDITS_TRANSLATOR"));
+        slideshowText.displayText(text("CREDITS_ILLUSTRATOR"));
         versionText.displayText(text("GAME_VERSION", str(Rotp.releaseId)));
     }
     @Override
     public void animate() {
         if (glassPane() != null)
             return;
+        
+        if (slideshowTime == 0) 
+            slideshowTime = System.currentTimeMillis();
         
         animationTimer--;
         if (animationTimer == 0) {
@@ -415,6 +444,13 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             //imgG.fillRect(0,0,img.getWidth(),img.getHeight());
             imgG.dispose();
             backImg = img;
+            if ((animationTimer >= 10) && (slideshowFade > 0) && !languagePanel.isVisible()) {
+                long curTime = System.currentTimeMillis();
+                if ((curTime - slideshowTime) >= (BG_DURATION * RotPUI.ANIMATION_TIMER))
+                    slideshowFade = (animationTimer - 10)/10f;
+                else if (animationTimer == 10)
+                    slideshowTime = curTime;
+            }
             repaint();
         }
     }
@@ -439,6 +475,24 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         int imgH = back.getHeight(null);
         g.drawImage(back, 0, 0, getWidth(), getHeight(), 0, 0, imgW, imgH, this);
 
+        Composite prevComp = g.getComposite();
+        if (slideshowFade < 1) {
+            AlphaComposite ac = java.awt.AlphaComposite.getInstance(AlphaComposite.SRC_OVER,max(0,1-slideshowFade));
+            g.setComposite(ac);
+            slideshowText.draw(g);
+        }
+ 
+        if (slideshowFade == 0) {
+            languagePanel.setVisible(false);
+            g.setComposite(prevComp);
+            return;
+        }
+        
+        if (slideshowFade < 1) {
+            AlphaComposite ac = java.awt.AlphaComposite.getInstance(AlphaComposite.SRC_OVER,max(0,slideshowFade));
+            g.setComposite(ac);
+        }
+        
         String titleStr1 = text("GAME_TITLE_LINE_1");
         String titleStr2 = text("GAME_TITLE_LINE_2");
         String titleStr3 = text("GAME_TITLE_LINE_3");
@@ -473,13 +527,19 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         }
         
         g.drawImage(titleImg, 0, s100, null);
-        if (hideText)
+        if (hideText) {
+            g.setComposite(prevComp);
             return;
+        }
 
         int lw = languagePanel.w;
         int lh = languagePanel.h;
         languagePanel.setBounds(w-lw-s15,s5,lw,lh);
 
+        if (languagePanel.isVisible()) {
+            g.setColor(langShade());
+            g.fillRoundRect(w-s55, s5, s40, s40,s10,s10);
+        }
         Image img = image("LANGUAGE_ICON");
         g.drawImage(img, w-s55, s5, s40, s40, this);
         languageBox.setBounds(w-s55, s5, s40, s40);
@@ -535,6 +595,8 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         enlargeText.visible(UserPreferences.windowed());
         shrinkText.draw(g);
         enlargeText.draw(g);
+        
+        g.setComposite(prevComp);
     }
     private boolean canContinue()    { return session().status().inProgress() || session().hasRecentSession(); }
     private boolean canNewGame()     { return true; }
@@ -553,6 +615,13 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         settingsText.rescale();
         exitText.rescale();
     }
+    private void resetSlideshowTimer() {
+        if (slideshowFade < 1) {
+            slideshowFade = 1;
+            slideshowTime = System.currentTimeMillis();
+            repaint();
+        }        
+    }
     @Override
     public void keyReleased(KeyEvent e) {
         int k = e.getKeyCode();
@@ -562,6 +631,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     }
     @Override
     public void keyPressed(KeyEvent e) {
+        resetSlideshowTimer();
         int k = e.getKeyCode();
         switch (k) {
             case KeyEvent.VK_MINUS:
@@ -675,6 +745,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     public void mouseExited(MouseEvent e) { }
     @Override
     public void mousePressed(MouseEvent e) {
+        resetSlideshowTimer();
         mouseDepressed = true;
         if (hoverBox != null)
             hoverBox.mousePressed();
@@ -719,11 +790,13 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         int x = e.getX();
         int y = e.getY();
 
+        resetSlideshowTimer();
+
         if (hideText)
             return;
 
         BaseText newHover = null;
-        if (languageBox.contains(x,y))
+        if (languageBox.contains(x,y)) 
             languagePanel.setVisible(true);
         else if (discussText.contains(x,y))
             newHover = discussText;
@@ -811,7 +884,9 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         @Override
         public void mouseClicked(MouseEvent e) { }
         @Override
-        public void mousePressed(MouseEvent e) { }
+        public void mousePressed(MouseEvent e) { 
+            resetSlideshowTimer();
+        }
         @Override
         public void mouseReleased(MouseEvent e) {
             for (int i=0;i<lang.length;i++) {
@@ -834,6 +909,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         public void mouseMoved(MouseEvent e) {
             int x = e.getX();
             int y = e.getY();
+            resetSlideshowTimer();
             Rectangle prevHover = hoverBox;
             hoverBox = null;
             for (Rectangle box: lang) {

@@ -75,7 +75,7 @@ spyRebellion:  37
 dialogTextX:   200,200
 dialogTextY:   530
 councilDiplo:  0.6, 75, 0, 0.6
-labFlagX:      0.78
+labFlagX:      0.79
 flagSize:      400x400
 flagWar:       MrrFlagWar
 flagNormal:    MrrFlagNorm

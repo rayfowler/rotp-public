@@ -1,9 +1,9 @@
 // all possible names
-name: Sakkra, Reptara, Sauria
+name: Sakkra, Gad, Saur, Reptar, Tyran
 
 desc1: Agresywni ekspansjoniści
 desc2: Zwiększone tempo wzrostu populacji
-desc3: Zeloci Konklawe Sakkra usiłują doprowadzać do perfekcji podbite przez siebie światy.
+desc3: Zeloci rasy o nazwie [race] pragną doprowadzać do perfekcji podbite przez siebie światy.
 
 // possible home system names
 home: Sssla, Sssana, Sssihs, Sssha, Sssss, Hsssa
@@ -19,3 +19,4 @@ ship1: Gekon, Kameleon, Jaszczur, Iguana, Scynk, Anolis, Jaszczurka
 ship2: Tegu, Waran, Kajman, Aligator, Krokodyl, Gawial, Bazyliszek
 ship3: Dinozaur, Raptor, Pterodaktyl, Teropod, Ceratops, Drapieżca, Plezjozaur
 ship4: Tytan, Kolos, Smok, Godzilla, Kraken, Gorgona, Tyranozaur
+

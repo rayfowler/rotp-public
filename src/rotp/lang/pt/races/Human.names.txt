@@ -1,0 +1,22 @@
+// all possible names
+name: Humano, Orbiano, Tellano, Primaliano, Midgardiano
+
+desc1: Diplomatas Honrados
+desc2: Peritos em Negócios e Diplomacia
+desc3: Os eloquentes Humanos são mestres em persuadir os outros a servir os interesses dos Humanos.
+
+// possible home system names
+home: Terra, Orbe, Tellus, Primal, Midgard
+
+title:     Triúnviro
+fulltitle: Triúnviro
+
+// possible leader names
+leader: Aleksandre, Bladrov II, Durash IV, Johann III, Gnaeus, Estrabo
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Sentinela, Agente, Estafeta, Exploradora, Procuradora, Mensageiro, Vigia
+ship2: Fragata, Corveta, Canhoeira, Algoz, Brigadeira, Majestade, Comando
+ship3: Cruzadora, Nau, Paladina, Emissária, Vanguarda, Pandora, Audaz
+ship4: Galeão, Artilheira, Aquiles, Hércules, Vingadora, Perseu, Helepolis
+

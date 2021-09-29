@@ -15,7 +15,7 @@ soldierMug:    AlkariSoldierMug, 160@30|440x330
 diploProfile:  AlkariDiploMug, 100@30|630x480
 lab:           AlkariLaboratory
 embassy:       AlkariLaboratory
-holograph:     AlkariHolograph
+holograph:     
 diplomat:      AlkariDiplomat
 scientist:     AlkariScientist
 trooper:       AlkariSoldier

@@ -1,0 +1,83 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Darlok specific dialogue
+
+CONTACT_AGGRESSIVE         | Pozdravljamo vas danas, svojeglavi građanine kosmičke praznine. Takođe nudimo reč opreza: nemojte nas ometati u našoj misiji ili nećete poživeti dovoljno dugo da se pokajete zbog ovog sudbonosnog susreta.
+CONTACT_RUTHLESS           | Pozdravljamo vas, stanovnici ovog čudnog svemira. Bilo bi najbolje za vas da učinite sve što možete kako biste osigurali da naš suživot... bude obostrano koristan.
+CONTACT_ERRATIC            | Sudbonosni sastanak u moru zvezda. Pazite se tame u ovom nebeskom ponoru, jer ćete videti da skriva mnoge tajne...
+//
+GREETING_01                | Pokazali ste da ste korisni za naš cilj. Učinićemo sve što možemo da vam pomognemo vašem.
+GREETING_04                | Recite.
+GREETING_07                | Ne znate kakvu drskost iskazujete kada tražite našu pomoć. Nama je to gotovo zabavno. 
+//
+DECLAREWAR_HATE_01         | Mnogo smo tolerisali u težnji za našim ciljem, ali zahvalni smo što ne moramo više da tolerišemo vaše prisustvo, [your_raceVoc].
+DECLAREWAR_HATE_02         | Dosadni bedniče! Nećemo više trpeti vašu glupost! Bilo da su vaše vojske spremne ili ne, sledi vam jednak kraj!
+DECLAREWAR_HATE_03         | Zlikovci! Ne vidimo logiku da naša rasa ovde prosperira samo da bi delili galaksiju sa vašom vrstom. Pripremite se! Jer, ćemo vas izbrisati iz ovog svemira makar i poslednji od nas nestane u pokušaju.
+DECLAREWAR_ERRATIC_01      | Naš narod često kaže da nož na bojnom polju ubija jednako lako kao i nož u mraku. Vaša vrsta će uskoro saznati zašto.
+DECLAREWAR_ERRATIC_02      | Da li ste ikada zagledali zvezde i poželeli da znate šta se krije u tami između svetla? Zar ne znate mudrost koja kaže da treba biti oprezan u svojim željama?
+DECLAREWAR_ERRATIC_03      | U neizvesnim vremenima možete pronaći neupadljiva bića koja su sposobna da zadaju fatalan udarac.
+DECLAREWAR_MILITARY_01     | Još uvek nismo pronašli ono što najviše želimo, i zato ćemo vam uzeti mesta koja naše oči još nisu videle. Predajte svoje svetove ili nestanite braneći ih.
+DECLAREWAR_MILITARY_02     | Postoji mogućnost da se odgovori koje tražimo kriju na planeti vaše imperije, i zato ćemo ih sve preuzeti. Znajte da to nije lično, [your_raceVoc], ali očajnička vremena zahtevaju očajničke mere.
+DECLAREWAR_MILITARY_03     | Ako već ne možemo da nađemo odgovor za našu enigmu, nema smisla da nastavimo dalje! Ako odgovor leži na nekom od vaših svetova, daćemo sve od sebe da ga osvojimo!
+DECLAREWAR_ALLIANCE_01     | Budalo! Dobili ste neprijatelja u našem savezniku i samim tim ste stvorili neprijatelja u nama! Naš udarac će biti munjevit: nemamo vremena da gubimo na vaše greške i ludosti!
+DECLAREWAR_ALLIANCE_02     | Retko se mešamo direktno u poslove drugih. Ali, kada saveznik koji nam je pomogao u našoj misiji zatraži našu pomoć, učinićemo sve što možemo da im pomognemo.
+DECLAREWAR_ALLIANCE_03     | Drago nam je kada vidimo da se vaše imperije međusobno bore, ali razumemo pretnju koju nam predstavljate. Rado ćemo pomoći [defender_raceSkoj] rasi da ukloni prepreku koje vaše postojanje predstavlja.
+DECLAREWAR_SPYING_01       | Smešno je što sprovodite takve akcije protiv onih koji su ovladali tajnovitost bolje nego bilo ko. Ali, kazna za neuspeh biće mnogo manje smešna.
+DECLAREWAR_SPYING_02       | Pohvalno je što pokušavate da nas nadmudrite u pitanjima tajnovitosti. Pitam se, hoće li se vaša vojna moć pokazati jednako pohvalnom koliko i vaša drskost?
+DECLAREWAR_SPYING_03       | Da li ste verovali da će ova budalasta nespretnost proći neopaženo pred našim revnosnim pogledom? Ako ste toliko arogantni da verujete da bi vaše špijuniranje moglo proći neprimećeno, dovoljno ste arogantni za nas da vas smrvimo u borbi.
+DECLAREWAR_ATTACK_01       | Drskost! Da nas tako otvoreno napadnete može samo da znači da priželjkujete vaše potpuno uništenje!
+DECLAREWAR_ATTACK_02       | Nepodnošljivi huligani! Uskoro ćemo saznati da li samopouzdanje koje vam dozvoljava da udarite na nas prati jednaka snaga!
+DECLAREWAR_ATTACK_03       | Bitange! Zlikovci! Nećemo popustiti ni vama ni bilo kome drugom dok naše veliko delo ne bude završeno! Pripremite se za našu odmazdu!
+DECLAREWAR_OPPORTUNITY_01  | Politika je čist oportunizam. Mi nalazimo da oni koji najviše koriste svoje šanse su oni koji na kraju trijumfuju. Tako je bilo uvek, tako će uvek i biti.
+DECLAREWAR_ASSASSIN_01     | Nečuveno, svesno ste ubili ambasadora koji vam dolazi nenaoružan! Otkrićemo vaše tajne a solarni vetrovi će rasejati pepeo vašeg naroda po univerzumu!
+
+OFFER_PEACE_01             | To je dovoljno ubistava za jedan rat, ambasadore. Nijedan od naših naroda ne može sebi priuštiti da tako bezobzirno baca živote. Predlažemo neposredni kraj ovog sukoba, zarad budućnosti naših naroda.
+OFFER_TRADE_01             | Iako direktan pristup nekad može biti najbolji, nije jedini način na koji imperija može napredovati u svojim ciljevima. Postoji i vreme za dobronamernu trgovinu i mi verujemo da je vreme sada. Da započnemo sa... [amt] MK svake godine?
+OFFER_PACT_01              | Ovo beskrajno prostranstvo skriva nepoznate opasnosti za one koji se odluče da istražuju. Nema potrebe da dodajemo tim opasnostima ako nije neophodno. Ugovor o Nenapadanju između naših naroda će smanjiti rizike dok se širimo kroz galaksiju.
+OFFER_ALLIANCE_01          | Postoje oni koji nas gledaju i dopuštaju da im strah pomuti sud. Ne verujemo da je među njima i vaša vrsta. Formirajmo Savez između [my_raceIja] i [your_raceIja] i iskoristimo strah koji drugih kao prednost za obe naše imperije. 
+
+WARN_TRESPASSING_01        | Trenutno ne želimo rat protiv vas, ali vaše prisustvo u [system] sistemu je teško protumačiti kao bilo šta drugo nego prekoračenje granica. Sklonite se odmah i dokažite nam da su naši strahovi neutemeljeni.
+WARN_EXPANSION_01          | Nismo slepi za potrebe širenja teritorije. Ali ne možemo ni da gledamo skrštenih ruku dok vi kradete sve svetove za sebe. Upozoreni ste, ambasadore [your_empireStva].
+WARN_BUILDUP_01            | Da li nameravate da koristite vašu moćnu flotu da naterate sve oko sebe da se potčine u strahu od vas? Znajte ovo: ako nastavite da se šepurite vašom vojnom silom, možda ćete naći da su reakcije drugih imperija manje... susretljive nego što bi ste se nadali.
+WARN_SKIRMISH_01           | Šta imate da kažete o okršaju u [system] sistemu? Nadamo se zbog vas da ste nas pomešali sa nekom drugom imperijom. U suprotnom posledice za vas mogu biti strašne. Zaista jako strašne.
+WARN_ATTACKED_01           | Usuđujete se da pokrenete napad na naš narod, ambasadore?! Imate sreću što naša pažnja usresređena na druge stvari: sledeći put vaša drskost neće ostati bez odgovora!
+WARN_INVADED_01            | Useljavate se u naš prostor kao da je vaš. Hrabar trik, ali znajte da smo predvideli vaš dolazak i puštamo vas da manevrišete na ovaj način... za sada.
+WARN_ESPIONAGE_01          | Vaš jadni pokušaj špijunaže nam je smešan. Ovog puta dozvoljavamo da se vaš špijun vrati kod vas, ali znajte da će nam svaki sledeći pokušaj biti daleko manje zabavan. [framed]
+WARN_SABOTAGE_01           | Dakle, [spy_empire] želi da sabotira? Vaš poduhvat je bio suviše beznačajan da bi zahtevao našu odmazdu, ali ako pokušate ponovo, možda ćemo se ophoditi prema vama kao prema štetočini kad se već tako i ponašate! [forced]
+WARN_BIOWEAPON_01          | Ružna stvar, to oružje. Još je ružniji onaj koji odluči da ga koristi na bespomoćnim civilima. Njihovi urlici agonije će vekovima odjekivati svemirom, a mi ćemo se pridružiti tom pevjaućem refrenu dok proklinje vaše odvratno ime.
+WARN_GENOCIDE_01           | Pretnja genocidom nije nepoznata našem narodu, ali da vidimo neko to tako neobavezno shvata... gadite nam se na načine koji su neoprostivi, ambasadore.
+WARN_FINAL_WAR_01          | Dok vreme mira započinje u galaksiji, svi koji učestvuju će naći ono što traže. Ako [rebel_race_plural] ugrožavaju taj mir, ugrožavaju i naš krajnji cilj, a mi ćemo učiniti sve što možemo da vas proteramo u stranice istorije.
+WARN_COUNCIL_VOTE_01       | Nije da ne cenimo suptilna politička manevrisanja, već nam smeta kada ti manevri rade protiv nas. Povlačite svoje poteze oprezno, ambasadore: možda vam nećemo pružiti priliku da iznova manevrišete na ovaj način.
+WARN_OATHBREAKER_01        | Bezobzirne kukavice! Avaj, zašto naši ljudi moraju da podnesu nepoverenje čitave galaksije, kada tako drsko dokazujete da ste vi zaslužni takvog neprijateljstva!
+WARN_ATTACKED_ALLY_01      | Upozoravamo vas samo jednom, ambasadore. Zaustavite svoju agresiju prema [defender_raceSkoj] rasi: oni stoje uz nas, i mi stojimo uz njih.
+WARN_REBELLING_AGAINST_01  | Usuđujete se da uzurpirate naše najbitnije mesto u Savetu, njegovog pravičnog gospodara? Vaš narod će zažaliti ovaj dan, ambasadore.
+//
+PRAISE_COUNCIL_VOTE_01     | Naš cilj zahteva mnogo, ambasadore, i mi smo večno zahvalni što možemo da se oslonimo na [voter_empireStvo] u Savetu. Budite uvereni da ovo nećemo zaboraviti ako zatražite pomoć mog naroda.
+PRAISE_COUNCIL_VOTE_02     | Bilo je lepo od vas što ste nam danas ukazali poverenje, ambasadore. Znajte da mi uvek pamtimo one koji nam pomažu u postizanju našeg konačnog cilja.
+PRAISE_COUNCIL_VOTE_03     | Sigurno je da vaš narod ima skriveni motiv kada nam pružaju podršku. Mi smo još uvek obazrivi prema vama i vašoj vrsti, ali smo i pored toga zahvalni.
+
+PRAISE_ATTACKED_ENEMY_01   | Znali smo da ćete nam pomoći u ovom ratu, ambasadore! Uz našu zajedničku odlučnost, čak ni [defender_race_plural] ne mogu da nam se dugo suprotstavljaju!
+PRAISE_ATTACKED_ENEMY_02   | Dobro je videti da se i drugi uključe u borbu protiv odvratnih [defender_raceIja]. Hajde da zajedno radimo i da ovo brzo završimo kako bismo mogli da se usredsredimo na mnogo važnije ciljeve.
+PRAISE_ATTACKED_ENEMY_03   | Ako mislite da zaslužite divljenje našeg naroda, znajte da će to biti skoro nemoguće. Ali napad na [defender_raceSku] rasu je svakako izvrstan prvi korak.
+
+PRAISE_TRADE_01            | Nije li neverovatno kako tako jednostavna stvar poput trgovine može otvoriti toliko vrata za obe strane? Naš narod je zaista zadovoljan, a nadamo se da je i vaš takodđe zadovoljan.
+PRAISE_TRADE_02            | Naše kontinuirano iskreno trgovanje pokazalo se kao blagodet za oba naša naroda. Nadamo se, ambasadore, da ćemo se i dalje oslanjati jedni na druge na ovaj način.
+
+PRAISE_REBELLING_WITH_01   | Kao što smo i znali da će se desiti, budale u Savetu su pogrešno odabrale. U pravu ste što se borite protiv njih, a mi smo u pravu kad smo se pridružili vašoj pobuni.
+
+ACCEPT_TRADE_01            | Mnogo pomažete ostvarenje našeg cilja ovim trgovinskim sporazumom, [your_raceVoc]. [amt] MK svake godine će nam pomoći više nego što znate.
+RESPOND_IGNORE_THREAT_01   | Pazite kome pretite. Možda vam naš odgovor iz senke puno zasmeta.
+RESPOND_STOP_SPYING_01     | Kako to da ste VI uspeli da uhvatite jednog od naših špijuna? Nema veze, vratite nam ga odmah i mi ćemo od sada prestati sa svojim aktivnostima.
+RESPOND_STOP_ATTACKING_01  | Sada ćemo se opozvati naše flote zbog vas, ali zapamtite da je najopasnija sila ona koja ostaje sakrivena.

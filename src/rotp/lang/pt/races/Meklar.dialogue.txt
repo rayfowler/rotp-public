@@ -1,0 +1,143 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Meklar specific dialogue
+
+CONTACT_ERRATIC            | Espécie: [your_race_female]. Designação de Líder: [your_title]. Inovações Tecnológicas: Variadas. Análise de ameaça: Inconclusiva
+CONTACT_HONORABLE          | A espécie [your_race_female] apresenta interesse. A [my_empire] estima potencial para cooperar em benefício mútuo. Resultados por auferir.
+CONTACT_RUTHLESS           | [my_empire] agora ciente da existência [your_race_female]. O [my_title] transmite aviso a toda a espécie [your_race_female]: não interferir com objetivos da Jurisdição. Resultado: Extinção dos [your_race_male_plural].
+//
+GREETING_01                | Identidade de embaixador aliado - confirmada. Colocar pedido aa Jurisdição. A Jurisdição assiste se possível. 
+GREETING_04                | A [my_empire] reconhece embaixador [your_race_male]. A Jurisdição pode processar pedidos neste momento.
+GREETING_07                | Colocar pedido. É improvável a Jurisdição enviar pedidos de [your_race_male] a [my_title] para processamento.
+//
+DECLAREWAR_HATE_01         | A [my_empire] não está mais disposta a tolerar presença de [your_empire]. Força da espécie [your_race_female] comparativamente primitiva. Executando protocolo de procurar e destruir...
+DECLAREWAR_HATE_02         | O [my_title] não permite mais interferência da espécie [your_race_female] em objetivos da Jurisdição. Jurisdição pronto para investir em preservação de diretiva primária.
+DECLAREWAR_HATE_03         | Impossível Jurisdição continuar diretivas com persistência de [your_empire]. A Jurisdição deve terminar espécie. 0 alternativas encontradas.
+DECLAREWAR_ERRATIC_01      | O [my_title] conclui que existência da espécie [your_race_female] ameaça objetivos da Jurisdição. A Jurisdição executa protocolo de extermínio imediatamente.
+DECLAREWAR_ERRATIC_02      | O [my_title] avalia que é provável a espécie [your_race_female] ocultar segredo para avanço de objetivo [my_race_male]. A Jurisdição vai adquirir segredos da espécie [your_race_female] pela força.
+DECLAREWAR_ERRATIC_03      | O [my_title] infere que espécie [your_race_female] é uma variável inaceitável nos planos da Jurisdição. A Jurisdição vai erradicar [your_race_male] ou cessar de existir no processo.
+DECLAREWAR_MILITARY_01     | A [my_empire] deve alargar proliferação galáctica em busca de objetivo final. [your_empire] inibe expansão. O problema está a ser retificado...
+DECLAREWAR_MILITARY_02     | Jurisdição incapaz de localizar objetivo primário. Possibilidade de planetas próximos de ou pertencendo a [your_empire] conterem objetivo. Guerra inevitável.
+DECLAREWAR_MILITARY_03     | Jurisdição forçado a expandir território. Força da espécie [your_race_female] não pode ser fator de dissuasão. Guerra irracional, mas necessária.
+DECLAREWAR_ALLIANCE_01     | [your_empire] declarou guerra a aliado da Jurisdição. A Jurisdição vai proteger interesse investido em objetivos erradicando a ameaça [your_race_male].
+DECLAREWAR_ALLIANCE_02     | A Jurisdição recebeu pedido de assistência de [other_empire]. A Jurisdição ajudará aliado em guerra contra espécie [your_race_female] enquanto conflito persistir.
+DECLAREWAR_ALLIANCE_03     | A espécie [your_race_female] revela arrogância com declaração de guerra. A Jurisdição vai assistir outro império em remoção de espécie [your_race_female] from galaxy.
+DECLAREWAR_SPYING_01       | A espécie [your_race_female] está envolvida em ação secreta contra a Jurisdição. Consequências para a Jurisdição: Insignificantes. Consequências para a espécie [your_race_female]: Fatais.
+DECLAREWAR_SPYING_02       | Armadilha detetada em território da Jurisdição. Fonte confirmada da espécie [your_race_female]. Protocolos da Jurisdição exigem guerra como resposta.
+DECLAREWAR_SPYING_03       | A Jurisdição detetou tentativa óbvia de desestabilização por [your_empire]. Impossível espécie [your_race_female] continuar a interferir com objetivos. A Jurisdição deve retaliar a qualquer custo.
+DECLAREWAR_ATTACK_01       | Espécie [your_race_female] hostil apesar de evidente superioridade [my_race_female]. A Jurisdição vai proceder à remoção completa da ameaça.
+DECLAREWAR_ATTACK_02       | A espécie [your_race_female] impede os objetivos da Jurisdição com ataque direto. Guerra inevitável.
+DECLAREWAR_ATTACK_03       | A espécie [your_race_female] tenta impedir a Jurisdição de atingir objetivo com erradicação de elementos [my_race_male_plural]. A Jurisdição vai retaliar com o total de força militar.
+DECLAREWAR_OPPORTUNITY_01  | O [my_title] calcula que a espécie [your_race_female] vai ser detrimento em atingir diretiva primária. A Jurisdição vai erradicar a espécie [your_race_female] antes de ameaça ser consumada.
+DECLAREWAR_ASSASSIN_01     | Embaixador da Jurisdição sofreu downgrade por espécie [your_race_female]. Embaixador da Jurisdição inoperável antes de reintegração em Servidor. As ações da espécie [your_race_female] requerem retaliação violenta.
+
+OFFER_PEACE_01             | O [my_title] chegou a novo arbítrio. A guerra não é mais dispêndio aceitável para a Jurisdição. A Jurisdição deseja negociar a paz imediatamente. 
+OFFER_TRADE_01             | A espécie [your_race_female] possui recursos relevantes. A Jurisdição também possui itens de valor. A Jurisdição propõe um acordo comercial equivalente a [amt] BM per year.  
+OFFER_PACT_01              | A Jurisdição aspira a resultado que não conflito irracional. Pacto de não-agressão com espécie [your_race_female] tido como meio mais racional de obter o resultado mencionado. 
+OFFER_ALLIANCE_01          | O [my_title] valoriza a diplomacia com a espécie [your_race_female]. A Jurisdição propõe aliança formal para reforçar sobrevivência de espécie [your_race_female] e espécie [my_race_male]. Resposta imediata necessária.
+
+WARN_TRESPASSING_01        | Espécie [your_race_male] detetada em sistema [system]. Área anteriormente reclamada pela Jurisdição. Libertem o espaço imediatamente.
+WARN_EXPANSION_01          | Expansão rápida da espécie [your_race_female] considerada ameaça aos objetivos da Jurisdição. Continuação de crescimento territorial vai forçar resposta de ação militar.
+WARN_BUILDUP_01            | A rede de vigilância da Jurisdição identificou potencial ameaça de frotas [your_race_female_plural]. A vigilância  foi reforçada sobre a espécie [your_race_female] para garantir que os interesses da Jurisdição não são comprometidos.
+WARN_SKIRMISH_01           | Conflito entre naves da Jurisdição e da espécie [your_race_female] detetado em [system]. A Jurisdição adverte contra reincidências: A Jurisdição encontra-se preparado para responder simetricamente se a advertência for ignorada.
+WARN_ATTACKED_01           | Agressão por [attacker_race_male_plural] detetada em [system]. O [defender_title] envia mensagem a embaixador: ameaça continuada à segurança da Jurisdição resultará em extinção da espécie [attacker_race_female]. 
+WARN_INVADED_01            | Lembrete da Jurisdição: a espécie [attacker_race_female] não possui direitos sobre espaço [defender_race_male]. Removam as frotas imediatamente sob risco de aniquilação integral.
+WARN_ESPIONAGE_01          | Atividades de espionagem [spy_race_female_plural] intercetadas em território da Jurisdição. Os protocolos de segurança da Jurisdição são superiores aos módulos de espionagem [spy_race_male_plural]. Desafiar a Jurisdição outra vez pode ser fatal. [framed]
+WARN_SABOTAGE_01           | A Jurisdição conhece o envolvimento da espécie [spy_race_female] em sabotagem recente. Tentativa de causar desordem demasiado rudimentar para desencadear retaliação. Tentativas futuras de sabotagem garantem 100% de retribuição. [forced]
+WARN_BIOWEAPON_01          | A Jurisdição observa o uso violento de arma biológica. Dispositivo eficaz. A avaliação da ameaça [attacker_race_female] subiu 3 níveis.
+WARN_GENOCIDE_01           | O genocídio da espécie [victim_race_female] por espécie [attacker_race_female] foi gravado. Erro: Jurisdição incapaz de descodificar causa possível. A avaliação da ameaça [attacker_race_female] subiu 5 níveis.  
+WARN_FINAL_WAR_01          | Todas as espécies conhecidas criaram um acordo para paz duradoura na galáxia. A espécie [rebel_race_female] é a única dissidente. A Jurisdição tomará a ação lógica.
+WARN_COUNCIL_VOTE_01       | Jurisdição ciente das ações [voter_race_male_plural] em Conselho. Motivação irrelevante. Resultado avaliado como detrimento a objetivos [candidate_race_male_plural]. A avaliação diplomática foi ajustada.  
+WARN_OATHBREAKER_01        | O [my_title] emite juízo: a espécie [your_race_female] não é mais confiável. Todas as conversações futuras agora objeto de revisão com base em ruptura [your_race_male] de acordo vinculativo. 
+WARN_ATTACKED_ALLY_01      | Conflito processado entre espécie [your_race_female] e espécie [defender_race_female]. A espécie [defender_race_female] é um aliado conhecido da Jurisdição. Terminem atos bélicos ou preparem-se para as consequências. 
+WARN_REBELLING_AGAINST_01  | A espécie [your_race_female] é agora obstáculo aos objetivos da Jurisdição. Liderança no Conselho Galáctico inaceitával. Aguardando resposta de Mediador Supremo...
+
+
+PRAISE_COUNCIL_VOTE_01     | O embaixador da espécie [voter_race_female] continua a fornecer assistência no avanço de objetivos [candidate_race_male_plural]. A Jurisdição reconhece benefício em relação continuada com espécie [voter_race_female] species. A Jurisdição pagará favor quando solicitado.
+PRAISE_COUNCIL_VOTE_02     | Jurisdição ciente de voto positivo em Conselho. A Jurisdição vai ajustar a avaliação [voter_race_female] em conformidade.
+PRAISE_COUNCIL_VOTE_03     | A Jurisdição reconhece a probabilidade de traição por espécie [voter_race_female]. Assistência continuada aa Jurisdição em Conselho pode diminuir suspeitas. 
+
+PRAISE_ATTACKED_ENEMY_01   | Atacar inimigos da Jurisdição prova dedicação a objetivos [my_race_male_plural]. A Jurisdição compromete-se a manter baixas de espécie [attacker_race_female] em mínimo absoluto. 
+PRAISE_ATTACKED_ENEMY_02   | A Jurisdição aceita assistência contra espécie [defender_race_female]. Esta guerra pode implicar recomeço entre [my_race_male_plural] e a espécie [attacker_race_female]. 
+PRAISE_ATTACKED_ENEMY_03   | Atacar espécie [defender_race_female] não elimina crimes passados contra a Jurisdição. A Jurisdição vai reavaliar a ameaça [attacker_race_female] com base em ações da espécie [attacker_race_female] na guerra.
+
+PRAISE_TRADE_01            | Jurisdição e [your_race_male] prosperando com troca continuada. A Jurisdição deseja manutenção de acordo comercial enquanto a sua avaliação for benéfica.
+PRAISE_TRADE_02            | A Jurisdição manifesta satisfação sobre acordo comercial com espécie [your_race_female]. Assegurar a manutenção do acordo equivale a prosperidade mútua.
+PRAISE_REBELLING_WITH_01     | A Jurisdição partilha mesma conclusão: Soberano do Conselho Galáctico - inapto. Objeção de espécie [your_race_female] processada. A Jurisdição vai assistir espécie [your_race_female] em rebelião.
+ 
+ACCEPT_TRADE_01            | Pedido comercial da espécie [your_race_female] recebido. Valor proposto: [amt] BM. A Jurisdição aceita.
+RESPOND_IGNORE_THREAT_01   | A ameaça da espécie [your_race_female] constitui um enigma. A civilização [your_race_male] é substancialmente inferior às frotas da Jurisdição. Ignorando...
+RESPOND_STOP_SPYING_01     | Espião da Jurisdição capturado em processo de recolha de informação sobre formas de vida [your_race_female_plural]. A Jurisdição emite um pedido de desculpas. Reconduzam o [my_race_male] capturado assim que possível.
+RESPOND_STOP_ATTACKING_01  | Demonstração de capacidade militar da Jurisdição para civilização [your_race_female]: Sucesso. Reconduzindo frotas até coordenadas de estacionamento designadas.
+
+DIPLO_TECH_REQUEST_MENU_01   | Especificar tecnologia.
+DIPLO_TECH_COUNTER_MENU_01   | Especificar compensação.
+DIPLO_TRADE_MENU_01          | Especificar magnitude.
+DIPLO_TREATY_MENU_01         | Especificar tratado.
+DIPLO_DECLARE_WAR_MENU_01    | Confirmar antes de avançar.
+DIPLO_SUGGEST_WAR_MENU_01    | Especificar alvo.
+DIPLO_BREAK_ALLIANCE_MENU_01 | Especificar aliado.
+DIPLO_THREATEN_MENU_01       | Especificar.
+DIPLO_OFFER_AID_MENU_01      | Especificar.
+DIPLO_OFFER_TECH_MENU_01     | Especificar tecnologia.
+
+DECLINE_OFFER_01           | Pedido recusado.
+DECLINE_OFFER_02           | Pedido recusado.
+DECLINE_OFFER_03           | Pedido recusado.
+DECLINE_OFFER_04           | Pedido recusado.
+DECLINE_OFFER_05           | Pedido recusado.
+DECLINE_OFFER_06           | Pedido recusado.
+DECLINE_OFFER_07           | Pedido recusado.
+DECLINE_OFFER_08           | Pedido recusado.
+DECLINE_OFFER_09           | Pedido recusado.
+DECLINE_ENEMY_ALLY_01      | Pedido recusado.
+DECLINE_NO_WAR_ON_ALLY_01  | Pedido recusado.
+DECLINE_PEACE_TREATY_01    | Pedido recusado.
+DECLINE_ANNOYED_01         | Pedido recusado.
+DECLINE_ANNOYED_02         | Pedido recusado.
+DECLINE_ANNOYED_03         | Pedido recusado.
+DECLINE_OATHBREAKER_01     | Pedido recusado.
+DECLINE_ESPIONAGE_01       | Pedido recusado.
+DECLINE_SABOTAGE_01        | Pedido recusado.
+DECLINE_BUILDUP_01         | Pedido recusado.
+DECLINE_ENCROACH_01        | Pedido recusado.
+DECLINE_SKIRMISH_01        | Pedido recusado.
+DECLINE_ATTACK_01          | Pedido recusado.
+DECLINE_INVASION_01        | Pedido recusado.
+DECLINE_BIOWEAPONS_01      | Pedido recusado.
+DECLINE_TECH_TRADE_01      | Pedido recusado.
+OFFER_TECH_EXCHANGE_01     | A Jurisdição pede tecnologia: [tech]. Especificar compensação.
+ACCEPT_TECH_EXCHANGE_01    | Confirmação gravada.
+ACCEPT_FINANCIAL_AID_01    | Confirmação gravada.
+ACCEPT_TECHNOLOGY_AID_01   | Confirmação gravada.
+
+BREAK_TRADE_01             | Acordo comercial terminado.
+ANNOUNCE_PEACE_01          | Confirmação gravada.
+ACCEPT_PEACE_01            | Pedido aceite.
+
+BREAK_PACT_01              | Pacto de não-agressão terminado.
+ANNOUNCE_PACT_01           | Confirmação gravada.
+ACCEPT_PACT_01             | Pedido aceite.
+
+BREAK_ALLIANCE_01          | Alliance terminado.
+ANNOUNCE_ALLIANCE_01       | Confirmação gravada.
+ACCEPT_ALLIANCE_01         | Pedido aceite.
+ACCEPT_JOINT_WAR_01        | Pedido aceite.
+
+RESPOND_CLOSE_EMBASSY_01   | Ações gravadas.
+RESPOND_BREAK_TRADE_01     | Ações gravadas.
+RESPOND_BREAK_PACT_01      | Ações gravadas.
+RESPOND_BREAK_ALLIANCE_01  | Ações gravadas.
+RESPOND_DECLARE_WAR_01     | Ações gravadas.

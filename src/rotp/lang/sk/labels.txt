@@ -78,7 +78,7 @@ PLANET_ORION_GUARDIAN             | Guardian
 
 // Nebula names  ("starName" Nebula)
 NEBULA_NAME                       | %1 Nebula
-NEBULA_ID                         | NCG %1
+NEBULA_ID                         | NGC %1
 
 // %2 is the leader's actual name
 TITLE_LEADERNAME                  | [alien_nameTitle] %2

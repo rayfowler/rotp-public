@@ -1,6 +1,5 @@
 
 KlackonLaboratory    | races/Klackon/animationLaboratory.txt
-KlackonHolograph     | races/Bulrathi/animationHolograph.txt
 KlackonDiploMug      | races/Klackon/animationDiploMug.txt
 KlackonSpyMug        | races/Klackon/animationSpyMug.txt
 KlackonSoldierMug    | races/Klackon/animationSoldierMug.txt

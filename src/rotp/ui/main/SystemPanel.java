@@ -199,6 +199,8 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
         else 
             index = (index == 0) ? systems.size()-1 : index -1;
 
+        if (spritePanel() == null)
+            return;
         IMapHandler topPanel = spritePanel().parent;
         topPanel.clickedSprite(systems.get(index));
         topPanel.map().recenterMapOn(systems.get(index));

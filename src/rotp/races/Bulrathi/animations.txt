@@ -1,7 +1,6 @@
 
 
 BulrathiLaboratory    | races/Bulrathi/animationLaboratory.txt
-BulrathiHolograph     | races/Bulrathi/animationHolograph.txt
 BulrathiDiploMug      | races/Bulrathi/animationMugshot.txt
 BulrathiSpyMug        | races/Bulrathi/animationSpyMug.txt
 BulrathiSoldierMug    | races/Bulrathi/animationSoldierMug.txt

@@ -15,7 +15,7 @@ soldierMug:    MeklarSoldierMug, 120@30|440x330
 diploProfile:  MeklarDiploMug, 60@30|630x480
 lab:           MeklarLaboratory
 embassy:       MeklarLaboratory
-holograph:     MeklarHolograph
+holograph:     
 diplomat:      MeklarDiplomat
 scientist:     MeklarScientist
 trooper:       MeklarSoldier
@@ -76,7 +76,7 @@ council:       MekCouncil
 shield:        MeklarShield,    0@0|420x450
 councilDiplo:  0.42, -220, -120, 0.6
 introTextX:    680
-labFlagX:      0.74
+labFlagX:      0.75
 flagSize:      200x200
 flagWar:       MekFlagWar
 flagNormal:    MekFlagNorm

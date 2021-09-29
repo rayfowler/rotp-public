@@ -33,7 +33,9 @@ import java.awt.geom.Point2D;
 import java.awt.geom.RoundRectangle2D;
 import java.awt.image.BufferedImage;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.ShipView;
@@ -56,7 +58,10 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
     private final Rectangle shipListBox = new Rectangle();
     private final Rectangle shipScroller = new Rectangle();
     public static BufferedImage shipIconBackImg;
+    private final RacesShipRenameUI renameShipUI;
 
+    private final Map<ShipDesign,Rectangle> renameBoxes = new HashMap<>();
+    private Rectangle hoverNameBox;
     private Shape hoverShape;
     private final Polygon maxBasesIncr = new Polygon();
     private final Polygon maxBasesDecr = new Polygon();
@@ -66,6 +71,7 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
 
     public RacesMilitaryUI(RacesUI p) {
         parent = p;
+        renameShipUI = new RacesShipRenameUI();
         initModel();
     }
     @Override
@@ -73,6 +79,7 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
     @Override
     public String textureName()     { return TEXTURE_BROWN; }
     public void changedEmpire()     { 
+        renameBoxes.clear();      
         ships = null;
         shipY = 0;
     }
@@ -436,7 +443,10 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
     private void drawShipDesignListing(Graphics2D g, Empire emp, int x, int y, int w, int h) {
         g.setColor(RacesUI.darkBrown);
         g.fillRect(x, y, w, h);
-       
+        
+        for (Rectangle r: renameBoxes.values())
+            r.setBounds(0,0,0,0);
+        
         if (ships().isEmpty()) {
             drawNoShipData(g,emp,x,y,w,h);
             return;
@@ -525,14 +535,22 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         int h0 = h-s10;
         
         ShipDesign d = view.design();
+        
+        if (!renameBoxes.containsKey(d))
+            renameBoxes.put(d, new Rectangle());
+        Rectangle nameBox = renameBoxes.get(d);
+        
+        Color c0 = hoverNameBox == nameBox ? SystemPanel.yellowText : SystemPanel.whiteText;
+        
         g.setFont(narrowFont(20));
         String s = d.name();
         scaledFont(g,s,w0-s10,20,10);
         int sw = g.getFontMetrics().stringWidth(s);
         int x1 = x+((x0-x-sw)/2);
         int y1 = y+(h/2)-s10;
-        drawShadowedString(g, s, 1, x1, y1, SystemPanel.blackText, SystemPanel.whiteText);
+        drawShadowedString(g, s, 1, x1, y1, SystemPanel.blackText, c0);
         
+        nameBox.setBounds(x1-s5,y1-s18,sw+s10,s22);
         
         String status, status2 = null;
         if (view.empire().isPlayer()) {
@@ -725,6 +743,11 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
             drawString(g,c, x+w-sw, y+h-s10);
         }
     }
+    private void openRenameDialog(ShipDesign d) {
+        renameShipUI.targetDesign(d);
+        enableGlassPane(renameShipUI);
+        return;
+    }
     @Override
     public void mouseDragged(MouseEvent e) {
         int x = e.getX();
@@ -761,7 +784,9 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         int x = e.getX();
         int y = e.getY();
         Shape prevHover = hoverShape;
+        Rectangle prevNameBox = hoverNameBox;
         hoverShape = null;
+        hoverNameBox = null;
         if (maxBasesIncr.contains(x,y))
             hoverShape = maxBasesIncr;
         else if (maxBasesDecr.contains(x,y))
@@ -773,7 +798,14 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
         else if (shipListBox.contains(x,y))
             hoverShape = shipListBox;
 
-        if (hoverShape != prevHover) 
+        for (Rectangle r: renameBoxes.values()) {
+            if (r.contains(x,y)) {
+                hoverNameBox = r;
+                break;
+            }
+        }
+        if ((hoverShape != prevHover) 
+        || (hoverNameBox != prevNameBox))
             repaint();
     }
     @Override
@@ -797,6 +829,14 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
                 repaint();
             return;
         }
+        else if (hoverNameBox != null) {
+            for (ShipDesign des: renameBoxes.keySet()) {
+                if (renameBoxes.get(des) == hoverNameBox) {
+                    openRenameDialog(des);
+                    break;
+                }
+            }
+        }
 
     }
     
@@ -806,6 +846,7 @@ public final class RacesMilitaryUI extends BasePanel implements MouseListener, M
     public void mouseExited(MouseEvent e) {
         if (hoverShape != null) {
             hoverShape = null;
+            hoverNameBox = null;
             repaint();
         }
     }

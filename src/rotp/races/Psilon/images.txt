@@ -1,6 +1,8 @@
 PsiWin        | races/Psilon/WinSplash.jpg
 PsiLoss       | races/Psilon/LossSplash.jpg
 
+PsiSab01      | races/Psilon/SabotageMissiles/Frame000.jpg
+PsiSab02      | races/Psilon/SabotageRebellion/Frame000.jpg
 
 PsiFlagWar  | races/Psilon/banner_war.png
 PsiFlagNorm | races/Psilon/banner_norm.png
@@ -13,7 +15,6 @@ PsiDlgPact  | races/Psilon/dialogue_pact.png
 PsilonTroopIcon | races/Psilon/troop_icon.png
 
 PsiLab      | races/Psilon/Psilon_Laboratory.jpg
-PsiLab01    | races/Psilon/Psilon_Laboratory_effect.png
 PsiCouncil  | races/Psilon/Council_01.jpg
 
 PsiLeader    | races/Psilon/CouncilLeader.png

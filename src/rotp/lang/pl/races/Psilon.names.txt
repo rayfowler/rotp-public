@@ -1,9 +1,9 @@
 // all possible names
-name: Psilon, Mentalon, Psychon
+name: Psilon, Mentalon, Psychon, Cerebron, Neuralon
 
 desc1: Pacyfistyczni technokraci
 desc2: Doskonałe techniki naukowe
-desc3: Republika Psilonów dąży do pokojowej i oświeconej współegzystencji z innymi rasami.
+desc3: Republika rasy [race] dąży do pokojowej i oświeconej koegzystencji z innymi rasami.
 
 // possible home system names
 home: Mentar, Cogitar, Psilar, Metrica, Neura
@@ -12,7 +12,7 @@ title:     Kanclerz
 fulltitle: Wielki Kanclerz
 
 // possible leader names
-leader: Dynalon, Kelvan, Mezon, Kwark, Tachaon, Zygota
+leader: Dynalon, Kelvan, Mezon, Kwark, Tachaon, Zygot
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
 ship1: Elektron, Neutrino, Kwark, Neutron, Proton, Atom, Molekuła

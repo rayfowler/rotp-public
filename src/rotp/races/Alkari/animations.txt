@@ -1,6 +1,5 @@
 
 AlkariLaboratory    | races/Alkari/animationLaboratory.txt
-AlkariHolograph     | races/Alkari/animationHolograph.txt
 AlkariDiploMug      | races/Alkari/animationMugshot.txt
 AlkariSpyMug        | races/Alkari/animationSpyMug.txt
 AlkariSoldierMug    | races/Alkari/animationSoldierMug.txt

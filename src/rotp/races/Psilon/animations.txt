@@ -1,7 +1,6 @@
 
 
 PsilonLaboratory    | races/Psilon/animationLaboratory.txt
-PsilonHolograph     | races/Psilon/animationHolograph.txt
 PsilonDiploMug      | races/Psilon/animationMugshot.txt
 PsilonSpyMug        | races/Psilon/animationSpyMug.txt
 PsilonSoldierMug    | races/Psilon/animationSoldierMug.txt

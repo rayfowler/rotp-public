@@ -1,0 +1,21 @@
+// all possible names
+name: Bulrati, Bearati, Ursinati, Paurati, Grizliati
+
+desc1: Agresivni Ekolozi
+desc2: Odlični borci na tlu
+desc3: Žestoko odani Bulrati cene snagu i mudrost njihovog Kralja-Filozofa.
+
+// possible home system names
+home: Ursa, Kanis, Grizla, Pandara, Bruin
+
+title:     Vrhovni Arhijerej
+fulltitle: Vrhovni Arhijerej
+
+// possible leader names
+leader: Buluks, Durp, Grank, Krango, Monk, Smurč
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Šapa, Patrola, Kandža, Očnjak, Zub, Vepar, Ursin
+ship2: Lovac, Gladijator, Stražar, Pecaroš, Tragač, Mesojed, Panda
+ship3: Ratni Medved, Zver, Predator, Zastrašivač, Ubica, Čuvar, Zaštitnik
+ship4: Grizli, Kaznenik, Rino, Kodiak, Razarač, Kerber, Malj

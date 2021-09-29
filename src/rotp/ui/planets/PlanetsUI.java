@@ -539,6 +539,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
     public void keyPressed(KeyEvent e) {
         boolean repaint = false;
         boolean shift = e.isShiftDown();
+        boolean control = e.isControlDown();
         switch(e.getKeyCode()) {
             case KeyEvent.VK_F1:
                 showHelp();
@@ -566,6 +567,11 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             case KeyEvent.VK_F:
                 colonyFoundedPane.toggleFlagColor(shift); 
                 instance.repaint();
+                return;
+            case KeyEvent.VK_A:
+                if (control) {
+                    selectAllSystems();
+                }
                 return;
         }
         if (repaint)
@@ -611,6 +617,16 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             sessionVar("COLONYUI_SELECTED_SYSTEMS", systems);
         }
         return systems;
+    }
+    private void selectAllSystems() {
+        List<StarSystem> selectedSystems = selectedSystems();
+        selectedSystems.clear();
+        selectedSystems.addAll(allSystems());
+        
+        if (selectedSystems.size() > 1)
+            showMultiPlanetPanel();
+        repaint();
+        setAnchorSystem(selectedSystems().get(0), true);
     }
     private void shiftSelectedSystem(StarSystem sys, boolean updateFieldValues) {
         StarSystem anchor = anchorSystem();

@@ -1,17 +1,18 @@
 // all possible names
-name: Silicoid, Igneoid, Sedimoid
+name: Sylikoid, Wulkanoid, Mineraloid, Granitoid, Magmoid
 
 desc1: Ksenofobiczni ekspansjoniści
 desc2: Odporność na nieprzyjazne środowisko
-desc3: Zagadkowi, żywiący się minerałami Silikoidzi przeczesują galaktykę w poszukiwaniu odwiecznego wroga.
+desc3: Zagadkowi, żywiący się minerałami [race]zi przeczesują galaktykę w poszukiwaniu odwiecznego wroga.
 
 // possible home system names
 home: Cryslon, Geode, Karst, Igneous, Silican
+
 title:     Imperator
 fulltitle: Kryształowy Imperator
 
 // possible leader names
-leader: Carnax, Crystous, Geode, Granid, Igneous, Sedimin
+leader: Karnax, Krystous, Geoda, Granid, Igneus, Sedymin
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
 ship1: Osad, Żwir, Kamień, Skała, Kryształ, Minerał, Piach

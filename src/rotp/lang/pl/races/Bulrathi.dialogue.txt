@@ -1,0 +1,81 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Bulrathi specific dialogue
+
+CONTACT_AGGRESSIVE         | Jestem ambasadorem [my_empire]. Radzę ci nie irytować mojego władcy, mały [your_race2]. Wystarczy bowiem, że powie słowo, a twój rodzaj zginie w furii, której nie jesteś w stanie sobie wyobrazić.
+CONTACT_RUTHLESS           | Jakież z was małe istoty! Musicie wiedzieć tylko dwie rzeczy: po pierwsze że nazywamy się "[my_race]", po drugie - że sprzeciwianie się naszym podbojom zagwarantuje jedynie waszą śmierć!
+CONTACT_ERRATIC            | My z [my_empire] pozdrawiamy was, maluchy. Nasze przeznaczenie leży pośród rozproszonych światów i płonących gwiazd. Ciekawie będzie zobaczyć gdzie wpasujecie się w nasz wielki projekt.
+//
+GREETING_01                | Postąpiliście honorowo, więc i my was uhonorujemy. Powiedz czego potrzebujesz, mały przyjacielu. 
+GREETING_04                | Mów szybko, mały [your_race2]. Nie kuś naszego gniewu fałszywymi obietnicami i jednostronnymi układami.
+GREETING_07                | Przybycie tutaj i rozmowa z nami to wielka odwaga jak na kogoś tak małego. Odwaga ta zapewni ci na razie bezpieczeństwo.
+
+DECLAREWAR_HATE_01         | Mali [your_race_plural] na swych małych światach z ich małymi planami. [my_title] jest zmęczony waszą ciągłą ingerencją w sprawy galaktyki. Nie przetrwacie zagłady, którą na was sprowadzimy!
+DECLAREWAR_HATE_02         | Dość tego! Przeznaczenie naszego ludu jest zapisane w gwiazdach. Nie pozwolimy, aby tak małe istoty jak wy dłużej się nam sprzeciwiały!
+DECLAREWAR_HATE_03         | Przygotuj się do bitwy, mały [your_race2]! Pokażemy że dzikość jest jedyną siłą, która przynosi zwycięstwo na polu bitwy!
+DECLAREWAR_ERRATIC_01      | Mądrość filozofów może zastanawiać tych, którzy nie są w stanie jej zrozumieć. Kiedy nasze najtęższe umysły każą atakować, nasi wojownicy będą posłuszni.
+DECLAREWAR_ERRATIC_02      | Wszystko ma swój czas i miejsce w tym wszechświecie. Wojna i pokój, życie i śmierć, dominacja i uległość. Dla nas jest to czas uderzenia, a dla was - czas obrony.
+DECLAREWAR_ERRATIC_03      | Czy kiedykolwiek myślałeś nad przeznaczeniem, ambasadorze? To zabawny sposób urzeczywistniania tego, co wydaje się niemożliwe. Sprawdźmy wspólnie przeznaczenie, mali [your_race], i zobaczmy co ma w zanadrzu.
+DECLAREWAR_MILITARY_01     | Łupy zdobywają silni. [my_race] są silną rasą więc zdobędziemy łupy, niezależnie od tego do kogo one należą.
+DECLAREWAR_MILITARY_02     | Twoi ludzie dobrze walczą jak na tak małych, ambasadorze. Przekonajmy się, jak dobrze będą walczyć z potęgą rasy [my_race3], która ich do tego zmusi!
+DECLAREWAR_MILITARY_03     | Ta galaktyka należy do potężnych, a nasza potęga nie pozwoli, by wasza ją przyćmiła. Brońcie dobrze swoich światów, albo je wam odbierzemy!
+DECLAREWAR_ALLIANCE_01     | Sojusznik Imperium poprosił nas o pomoc! Pokażemy zarówno wam, jak i rasie [defender_race3] prawdziwą potęgę [my_race3] w pełnej krasie!
+DECLAREWAR_ALLIANCE_02     | Wypowiadacie wojnę naszemu sojusznikowi, bez wątpienia nieświadomi tego, że tym samym wypowiadacie wojnę nam. To walka, z której wasi ludzie nie wyjdą zwycięsko, ambasadorze. Możesz na to liczyć.
+DECLAREWAR_ALLIANCE_03     | Nawet z całą swoją potęgą nie macie szans przeciwko rasie [defender_race3], jeśli [my_race] się z nimi połączą! Przygotuj się, mały [your_race2]!
+DECLAREWAR_SPYING_01       | Zdrada! Ale kiedy musisz istnieć w tak małym ciele, nie masz innego wyboru: oczywiście nie masz szans na polu bitwy, co z łatwością udowodnimy.
+DECLAREWAR_SPYING_02       | Pomyśleć, że takie maluchy nie mogą odnieść sukcesu nawet w tajnych operacjach. Powieście swoich szpiegów wysoko, aby wasze światy mogły ich zobaczyć; zapłacicie za ich błędy własnym życiem! 
+DECLAREWAR_SPYING_03       | Myślisz, że jesteśmy zbyt słabi by odpowiedzieć na takie podstępne działania, mały? Pokażemy wam, jak poważny błąd popełniliście!
+DECLAREWAR_ATTACK_01       | Jeśli tak bardzo chcecie walczyć, wystarczy o to poprosić, mały [your_race2]. Jednym uderzeniem, na waszych oczach zmiażdżymy wszystko co jest wam drogie !
+DECLAREWAR_ATTACK_02       | Taki bezczelny atak - zupełnie jakbyście byli znacznie silniejsi niż jesteście. Działanie odważne, ale błędne.
+DECLAREWAR_ATTACK_03       | Niech będzie i tak! Może to i prawda, że macie przewagę liczebną, ale pokonamy was mimo to!
+DECLAREWAR_OPPORTUNITY_01  | Nasi ludzie zawsze szukają okazji do podszlifowania swoich umiejętności bojowych, a wasi ludzie mogą okazać się godnym wyzwaniem. Upewnij się, że dacie z siebie wszystko - tak aby o Twoim rodzaju mówiono z uznaniem w naszych kronikach.
+DECLAREWAR_ASSASSIN_01     | Niczego innego nie oczekiwaliśmy: rasa tak słaba fizycznie, że musi uciekać się do zabicia nieuzbrojonego ambasadora, aby podbudować swoje ambicje. Módl się do bogów, jakich masz, mały [your_race2], bo dopilnujemy by to była Twoja ostatnia bitwa.
+OFFER_PEACE_01             | Twoi ludzie dobrze walczą, mały, ale w tej wojnie przelano już wystarczająco dużo krwi. Jesteśmy gotowi zapomnieć o naszych sporach i dążyć do pokoju, jeśli Ty również jesteś na tyle odważny, by to uczynić.
+OFFER_TRADE_01             | To, czego brakuje ci w wielkości, nadrabiasz zaradnością. Nasi ludzie proponują coroczną wymianę handlową w wysokości [amt] BC, mając nadzieję, że dla nas obu okaże się ona korzystniejsza niż konflikt.
+OFFER_PACT_01              | My [my_race_plural] mamy różne opinie na temat ras, które spotkaliśmy. Zwłaszcza Twoja rasa nas bawi i nasz władca życzy sobie, abyś podpisał z nami pakt o nieagresji, aby zapobiec niepotrzebnym sporom w przyszłości. 
+OFFER_ALLIANCE_01          | Choć nie mamy sobie równych w walce, nie jesteśmy aż tak barbarzyńscy, by odrzucić więzi z rasą taką jak wasza tylko po to, by poczuć dreszcz zwycięstwa. Mały ambasadorze, sformalizujmy sojusz i spotkajmy się na polu bitwy jako przyjaciele, a nie wrogowie.
+//
+WARN_TRESPASSING_01        | Twoja obecność w systemie [system] zaczęła nas irytować. Byłoby rozsądnie, gdybyście stamtąd odeszli zanim nasz gniew się zwiększy.
+WARN_EXPANSION_01          | Zabór terytorium jest prawem najsilniejszych imperiów. Ostrzegamy was przed dalszą ekspansją, mały, chyba że chcesz, abyśmy bronili przyszłego terytorium rasy [my_race3] jeszcze zanim formalnie stanie się ono nasze.
+WARN_BUILDUP_01            | Przestrzeń kosmiczna to teatr tchórzy: prawdziwego męstwa można dowieść tylko na powierzchni planety. Choć wasza flota jest ogromna, nie możecie jej użyć do ucieczki przed naszą furią jeżeli zdecydujecie się ją dalej powiększać.
+WARN_SKIRMISH_01           | Potyczka w systemie [system] jest dla nas niewielkim kłopotem. Nie przeszkadzajcie nam więcej, albo zgnieciemy was jak szkodnika, którym tak uparcie chcecie być!
+WARN_ATTACKED_01           | Żałosny pokaz ze strony równie żałosnej rasy! Ciesz się, że [defender_title] ma ważniejsze sprawy na głowie niż wasz mizerny pokaz siły, ale wiedz, że jeśli chcecie wojny, to z przyjemnością spełnimy to życzenie, maleńki. 
+WARN_INVADED_01            | Ha! Taka odwaga od tak małego ludu. Opuśćcie nasze terytoria, zanim zrobicie coś, czego na pewno będziecie wkrótce żałować.
+WARN_ESPIONAGE_01          | Tchórze! Skradać się wśród [victim_race3] jak szczury. Bądź wdzięczny że nie zmiażdżyliśmy waszego szpiega i nie zmuszaj nas do ponownej odpowiedzi! [framed]
+WARN_SABOTAGE_01           | Dlaczego nie staniecie do walki z nami, mały? Nudziłaby nas walka z rasą na tyle płochliwą, by polegać na sabotażu, lecz jeśli zrobisz to ponownie to możemy znieść tę nudę tylko po to, by się was pozbyć! [forced]
+WARN_BIOWEAPON_01          | Ostateczny akt tchórzostwa - użyć broni biologicznej przeciwko tym, którzy nie mogą się nawet bronić! Twoi ludzie będą nosić ten wstyd do końca istnienia waszego imperium, mały: nic nigdy nie wyczyści tej hańby.
+WARN_GENOCIDE_01           | [victim_race_plural] byli słabi i delikatni więc nie są wielką stratą dla galaktyki. Najbardziej niepokoi nas jednak to, że tak mało znaczący lud jak wasz jest odpowiedzialny za ich wyginięcie.
+WARN_FINAL_WAR_01          | Podziwiamy odwagę tych, którzy próbują przeciwstawić się galaktyce, gdy ta postanowiła zjednoczyć się w pokoju. Zapiszemy waszą odwagę w kronikach, mały - zaraz po tym, jak zmiażdżymy was do ostatniego dziecka!
+WARN_COUNCIL_VOTE_01       | Ta rada jest zgromadzeniem głupców, którzy wolą dyskutować o swoich problemach niż rozstrzygać je jak wojownicy! Ale to, że odczuwamy taką pogardę dla jej obrad nie oznacza, że łatwo wybaczymy twój sprzeciw!
+WARN_OATHBREAKER_01        | Mały! Złamać słowo to hańba największa! Wiemy, że twój rodzaj jest słaby na ciele, ale bycie słabym w słowach nawet nas zaskakuje!
+WARN_ATTACKED_ALLY_01      | Mali [defender_race] są pod naszą ochroną! Zaprzestańcie wojny i naprawcie swoje błędy, albo zginiecie z naszej ręki zanim się zorientujecie co was uderzy!
+WARN_REBELLING_AGAINST_01    | Wielki Hierarcha jest jedynym, który może zasiąść na tronie Rady Galaktycznej! Nigdy nie zaakceptujemy waszej nikczemnej uzurpacji!
+//
+PRAISE_COUNCIL_VOTE_01     | Ha! Wyraz ich twarzy, gdy stanąłeś po naszej stronie, był naprawdę zabawny. Teraz wiedzą, gdzie leży prawdziwa władza. Dziękujemy naszym małym przyjaciołom za tę nauczkę! 
+PRAISE_COUNCIL_VOTE_02     | Dość nużące jest być zmuszonym do znoszenia bełkoczących starców podczas tych spotkań. Bez względu na to, czy pomogłeś nam zakończyć je szybciej, czy też po prostu jesteś świadomy naszej mocy - doceniamy to, co dziś zrobiłeś.
+PRAISE_COUNCIL_VOTE_03     | Intrygujesz nas, mały. To dobrze dla twojego ludu, że zdecydowałeś się dziś uznać naszą potęgę. Dla waszego dobra mam nadzieję, że nadal będziesz to robił.
+
+PRAISE_ATTACKED_ENEMY_01   | Ha ha! Dobrze was dziś widzieć na polu bitwy, mały przyjacielu! Zmiażdżmy razem tych żałosnych [defender_race3]! Niech ich krew spłynie po ich światach, aż nie pozostanie ani jeden! 
+PRAISE_ATTACKED_ENEMY_02   | Jakże chwalebną bitwę dziś stoczymy, mały! Pokaż nam, jak walczysz przeciwko rasie [defender_race3], abyśmy mogli od dziś darzyć cię należytym szacunkiem!  
+PRAISE_ATTACKED_ENEMY_03   | To boleśnie oczywiste, że walczysz z rasą [defender_race3] tylko dlatego, że my też to robimy. Jednak fakt, że nie odżegnujesz się od walki... może jednak źle cię oceniliśmy.
+
+PRAISE_TRADE_01            | Nasza umowa handlowa była bardzo korzystna dla obu ras, mały przyjacielu. Zaufanie jest jednak najcenniejszą monetą i będziemy ci ufać tak długo, jak długo będziecie postępować w ten sposób.
+PRAISE_TRADE_02            | Choć wojna może być najbardziej ekscytującym sposobem na rozwój, nie jest to jedyna droga, czego dowodzi nasza umowa handlowa. Oby trwała ona nadal, aby naszym narodom dobrze się powodziło! 
+PRAISE_REBELLING_WITH_01   | Ha ha! Myślisz więc, że sami będziecie walczyć z galaktyką? Czy sądziłeś, że nie weźmiemy udziału w tak chwalebnej bitwie? Stańcie dumni, bo imperium znane jako [my_empire] stoi wraz z wami!
+
+ACCEPT_TRADE_01            | Wasze negocjacje nadrabiają braki w wielkości, mały [your_race2]! Imperium z przyjemnością będzie od teraz co roku handlować z wami [amt] BC.
+RESPOND_IGNORE_THREAT_01   | Hahaha, a dlaczego mielibyśmy słuchać gróźb od tak małych istot? Idź już i dziękuj, że jesteśmy dziś w tak wyrozumiałym nastroju!
+RESPOND_STOP_SPYING_01     | Oj. Te małe chomiki, których używamy do szpiegowania, zostały złapane, prawda? Oddaj nam je i naszych szpiegów bez szwanku, a dopilnujemy by nie sprawiały wam więcej kłopotów.
+RESPOND_STOP_ATTACKING_01  | Floty Imperium są przerażające, czyż nie? Nie obawiaj się mały - nasz pokaz odniósł zamierzony skutek i teraz zostaną odwołane.

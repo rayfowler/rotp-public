@@ -16,7 +16,7 @@ advisorMug:    BulrathiDiplomat, 185@0|440x640
 diploProfile:  BulrathiDiploMug, 95@0|630x480
 lab:           BulrathiLaboratory
 embassy:       BulrathiLaboratory
-holograph:     BulrathiHolograph
+holograph:     
 diplomat:      BulrathiDiplomat
 scientist:     BulrathiScientist
 trooper:       BulrathiSoldier
@@ -77,7 +77,7 @@ spyRebellion:  45
 dialogTextX:   180,180
 dialogTextY:   550
 councilDiplo:  0.4, 375, -160, 0.6
-labFlagX:      0.71
+labFlagX:      0.73
 flagSize:      200x200
 flagWar:       BulFlagWar
 flagNormal:    BulFlagNorm

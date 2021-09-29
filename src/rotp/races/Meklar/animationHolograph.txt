@@ -1,5 +1,0 @@
-#
-# Laboratory Animation
-# #1 - No animations
-
-Base, _ALL_  , MekLab01

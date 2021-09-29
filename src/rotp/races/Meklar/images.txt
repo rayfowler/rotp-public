@@ -1,6 +1,9 @@
 MekWin        | races/Meklar/WinSplash.jpg
 MekLoss       | races/Meklar/LossSplash.jpg
 
+MekSab01      | races/Meklar/SabotageMissiles/Frame000.jpg
+MekSab02      | races/Meklar/SabotageRebellion/Frame000.jpg
+
 MekFlagWar  | races/Meklar/banner_war.png
 MekFlagNorm | races/Meklar/banner_norm.png
 MekFlagPact | races/Meklar/banner_pact.png
@@ -16,7 +19,6 @@ MeklarShield  | races/Meklar/Fortress_shield.png
 MekLab      | races/Meklar/Meklar_Laboratory.jpg
 MekLabGlowA | races/Meklar/Meklar_Laboratory_glowA.png
 MekLabGlowB | races/Meklar/Meklar_Laboratory_glowB.png
-MekLab01    | races/Meklar/Meklar_Laboratory_Holograph.png
 MekCouncil  | races/Meklar/Council_01.jpg
 
 MekLeader    | races/Meklar/CouncilLeader.png

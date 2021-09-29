@@ -1,0 +1,227 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Klackon specific dialogue
+
+CONTACT_AGGRESSIVE         | Ja sam [my_name], i ti si... [your_name]? Čudno ime za drugog kao ja, ali ti kažeš da nisi sličan meni? Ovo postaje vrlo... iritantan susret.
+CONTACT_RUTHLESS           | Mene znaju pod imenom [my_name]. Ti si [your_name]? Šta je [your_name]? Ja nemam puno potrebe za vrstom koja uživa u takvim komplikacijama!
+CONTACT_XENOPHOBIC         | Kada sam započeo moj put, znao sam da postoji još neko kao ja, ali ti nisi uopšte kao ja... Ti si različit... stran... i opasan.
+//
+GREETING_01                | Moj prijatelj! Srećan sam što si došao! Nadam se da ti mogu pružiti sve što tražiš. 
+GREETING_04                | Čudni [your_name] me zove. Šta ti treba, čudni [your_name]?
+GREETING_07                | Ponašaš se neobično i ne sviđa mi se. Samo reci šta si došao da kažeš i idi.
+//
+
+DECLAREWAR_HATE_01         | Predugo sam čekao, moram naći drugog koji je sličan meni! I dalje stojiš na mom putu, a ja neću da čekam više ni sekund da te se otarasim.
+DECLAREWAR_HATE_02         | Kad pomislim na tebe, bude mi odvratno, na način na koji nisam ni znao da mogu da se osećam. Daću sve od sebe da te uništim zauvek!
+DECLAREWAR_HATE_03         | Ne! Nemoguće da sam krenuo na svoj put samo da bih našao nešto poput vas u ovoj galaksiji! Neću nastaviti da živim s tobom kao komšija! Ili ćeš ti nestati, ili ću ja!
+DECLAREWAR_ERRATIC_01      | Ne možeš da me prevariš svojim trikovima! Znam da ćeš mi zadati udarac u kada tebi to najviše odgovara! Ali ubiću te pre nego što se to dogodi!
+DECLAREWAR_ERRATIC_02      | Tvoje ponašanje je čudno i nepredvidivo. Neizvesnost koju osećam zbog tebe me mnogo muči i ne vidim zašto bih to dalje morao da trpim. Pripremi se da uđeš u zaborav!
+DECLAREWAR_ERRATIC_03      | Šta to radiš, šta to radiš? Šta te pokreće? I da li ćete naterati da mi jednog dana objaviš rat? Ne mogu da samo čekam da vidim šta ćeš dalje: zarad moje budućnosti moram odmah da ti objavim rat!
+DECLAREWAR_MILITARY_01     | Još uvek nisam pronašao nekoga ko je poput mene. Znam da mora da postoji i tragaću za njim na svakom od vaših svetova kad ih uzmem od vas!
+DECLAREWAR_MILITARY_02     | Šta kriješ od mene [your_name]? Neću znati sa sigurnošću dok ne ispitam svaki tvoj svet, i da bih to mogao učiniti sada ću ih uzeti!
+DECLAREWAR_MILITARY_03     | Neću vam dozvoliti da više prikrivate svrhu moje misije! Znam da je onaj koga tražim u jednom od tvojih svetova. Neću sebi dati oduška dok mi ih ne date!
+DECLAREWAR_ALLIANCE_01     | Moj prijatelj po imenu [other_name] mi je pomogao u mojoj misiji više nego što možeš da znaš. Sretan sam da im vratim uslugu tako što ću da te se otarasim!
+DECLAREWAR_ALLIANCE_02     | Oni koji mi pomognu u mom traganju će uvek imati moju večitu zahvalnost, i rado ću učiniti sve da ispoštujem mog prijatelja [other_name]. Pripremi se za smrt, [your_name]!
+DECLAREWAR_ALLIANCE_03     | Guraš se sa svima u galaksiji jer misliš da niko neće da se usudi da ti se suprotstavi. Ako će ti [other_name] doneti rat, onda ću i ja!
+DECLAREWAR_SPYING_01       | Ništa se ne događa ni na jednom od mojih svetova što promakne mojim očima. Pošto insistiraš na tako podlom ponašanju, ne ostavljaš mi drugu opciju osim da te uništim.
+DECLAREWAR_SPYING_02       | Smešni [your_name], dosta mi je tvojih igara! Nećeš imati vremena za podle spletke ako budeš morao da se braniš od moje vojske! Pripremi se za rat!
+DECLAREWAR_SPYING_03       | Šta si se nadao da ćeš dobiti delanjem protiv mene? Sad mi ne preostaje ništa drugo nego da se borim s tobom, bez obzira na razlike u našoj vojsci!
+DECLAREWAR_ATTACK_01       | Šta je ovo, [your_name]? Da li si mislio da me ometeš u potrazi napadom na jedan od mojih svetova? Izgleda da će mi tvoje uništenje pružiti zabavnu, makar i kratku, distrakciju.
+DECLAREWAR_ATTACK_02       | Da li je ovo ono što se naziva ratni čin? Želiš li da tvoje vojske i flote vode bitku protiv mojih? Idemo onda u rat: nestrpljiv sam da naučim više!
+DECLAREWAR_ATTACK_03       | Kako se samo usuđuješ da udariš na mene?! Želiš da me sprečiš u mom traganju, ali umesto toga ćeš sada osetiti žestinu mog gneva!
+DECLAREWAR_OPPORTUNITY_01  | Kada se nešto pokaže kao prepreka, najbolji način da se to reši je potpuno uklanjanje. Ne znam sve načine za diplomatiju, ali znam da će tvoje  uklanjanje sa mog puta biti smešno jednostavna stvar.
+DECLAREWAR_ASSASSIN_01     | Napad na jedno od mojih tela je napad na sva moja tela. Pošto si odlučio da ubiješ jednog od mene, ja vas zauzvrat sve pobiti!
+
+OFFER_PEACE_01             | Ne sviđa mi se ovo što vi nazivate rat. To je nemilosrdno i surovo, a oboje imamo važnije stvari od nastavka ovog neprekidnog ubijanja. Završimo ovo u miru, [your_name].
+OFFER_TRADE_01             | Oboje smo krenuli u galaksiju sa svojim ciljevima, [your_name]. Zašto ne bismo pomogli jedan drugom u ostvarenju naših ambicija? Trgovinski Ugovor od [amt] MK svake godine bi učinio upravo to, zar ne?
+OFFER_PACT_01              | Na svom putovanju kroz svemir sreo sam mnoga čudna stvorenja, a mnoga su po prirodi svadljiva i nasilna. Čini mi se da ti nisi takav, pa hajde da sprečimo bilo kakve nesporazume Ugovorom o Nenapadanju.
+OFFER_ALLIANCE_01          | Naš odnos je bio izuzetno koristan za oboje, [your_name]. Postanimo saveznici rečima i delom, tako da svi u galaksiji znaju da stojimo ujedinjeni!
+ 
+WARN_TRESPASSING_01        | To što ste u [system] sistemu čini me veoma nervoznim. Uklonite flotu [your_name] iz tog područja, ili ću biti prisiljen da uzvratim.
+WARN_EXPANSION_01          | Neću ti dozvoliti da me sprečiš u mom traganju tako što ćeš da zauzmeš svaki svet koji vidiš. Prestani odmah, ili se pripremi za rat!
+WARN_BUILDUP_01            | Povećao si svoje flote do impresivnih brojki, [your_name]. Pažljivo kako ih koristiš, moje flote su spremne. 
+WARN_SKIRMISH_01           | Incident na [system] sistemu me uznemirava. Da li je u pitanju samo nesporazum? Uveri se da se to ne ponovi: ne želim da se borim protiv tebe, [your_name], ako ne moram.
+WARN_ATTACKED_01           | Šta se može dobiti napadom na mene? Prestani odmah sa svojom agresijom, ili ćeš me prisiliti da ti vratim stostruko! 
+WARN_INVADED_01            | Zašto si napao moju teritoriju u [system] sistemu?! Da li nameravaš da započneš sukob ili si jednostavno izgubio kontrolu nad svojim telima?
+WARN_ESPIONAGE_01          | Ne razumem te, [spy_name]. Ponašaš se kao da ne želiš sukob, ali onda pokušaš da ukradeš moje tajne? Ako insistiraš da nastaviš ovim putem, obećavam da ti ćeš to zažaliti! [framed]
+WARN_SABOTAGE_01           | Rugaš mi se ovim činom sabotaže! Moja misija dolazi pre svega, ali ako se ovo ponovi, pauziraću moju misiju da bih se lično obračunao sa tobom! [forced]
+WARN_BIOWEAPON_01          | Ovo tvoje oružje je apsolutno užasno. Samim tim što ga uopšte koristiš govori dosta o tebi, ali kada ga koristiš na živim bićima je meni kompletno jezivo!
+WARN_GENOCIDE_01           | Kako bezobzirno! Nikada nisam očekivao da ćeš ići tako daleko da potpuno uništiš onoga ko se zove [victim_name]. Nikada neću zaboraviti varvarstvo koje si pokazao danas.
+WARN_FINAL_WAR_01          | Sad shvatam da bih ostvario svoj san, galaksija mora biti u miru. Ali dok god postojiš, mir se nikada ne može ostvariti. Odgovor je očigledan: [rebel_name] mora biti uništen! 
+WARN_COUNCIL_VOTE_01       | Priznajem da mi nisu poznati detalji onoga što vi nazivate „političkim manevrisanjem“. Ali znam da si glasanjem za [other_name] povukao potez protiv mene i neću zaboraviti one koji me tako ometaju.
+WARN_OATHBREAKER_01        | Da li ovako funkcionišeš, [your_name]? Dogovoriš se, samo da bi prekršio dogovor kada to tebi odgovara? Znao sam da nisi nimalo sličan meni, a tvoji postupci to dokazuju!
+WARN_ATTACKED_ALLY_01      | Zašto napadate mog prijatelja [defender_name], [your_name]? Pronađi drugi način za rešavanje tvojih problema: Neće mi se svideti ako budem primoran da intervenišem!
+WARN_REBELLING_AGAINST_01  | Ne sviđaš mi se [your_name], a još manje mi se sviđa što si izabran za vođu Saveta! Moram da razmislim o onome što se danas dogodilo, a ti bi trebalo da razmisliš o tome kako ću uskoro biti primoran da reagujem!
+
+PRAISE_COUNCIL_VOTE_01     | [voter_name]! Nemoj da misliš da tvoj glas u Savetu uzimam zdravo za gotovo! Iako smo ti i ja veoma različiti, zaista sam srećan što sam na svom putu uspeo da upoznam tako divnog prijatelja kao što si ti.
+PRAISE_COUNCIL_VOTE_02     | U svom dugom postojanju nikada nisam imao potrebu za "politikom", ali ono što si uradio je za moju dobrobit, zar ne? Razgovarajmo uskoro ponovo, kako bismo bolje naučili kako da pomognemo jedan drugom. 
+PRAISE_COUNCIL_VOTE_03     | Tvoj glas za mene u Savetu je samo tvoj pokušaj da preispitam svoje mišljenje o tebi. Međutim, verujem da će se to i desiti ako mi tvoji postupci budu pomagali i u budućnosti.
+PRAISE_ATTACKED_ENEMY_01   | Da! Napadnut sam i prijatelj mi priskače u pomoć! Pokažimo odvratnom [defender_name] da se zajedno borimo i imamo neraskidivu vezu!
+PRAISE_ATTACKED_ENEMY_02   | Hvala ti [attacker_name]! Dobro je videti da postoji još jedan koji prepoznaje kakvu pretnju predstavlja onaj poznat po imenu "[defender_name]". Dođi! Zajedno ćemo ga napasti dok od njega ništa bude ostalo!
+PRAISE_ATTACKED_ENEMY_03   | Ne znam šta se nadaš da ćeš dobiti u napadu na [defender_name], [attacker_name]. Ti si nepredvidiv i ne spadaš u one kojima treba verovati, ali ipak ću ovo zapamtiti u svakom slučaju.
+PRAISE_TRADE_01            | Do sada smo uspeli da preživimo radeći zajedno na obostranu korist. Neka prosperitet stečen našom trgovinom traje dok oboje ne pronađemo ono što tražimo!
+PRAISE_TRADE_02            | Drago mi je koliko nam naš trgovinski ugovor pomaže obojici. I tebe je ovo obradovalo, zar ne, [your_name]?  
+PRAISE_REBELLING_WITH_01   | [your_name] zove u pomoć! Pridružiću ti se u borbi protiv ovog smešnog Saveta! Ti si moj prijatelj, a to znači da se nikada nećeš boriti sam!
+
+DIPLO_TECH_REQUEST_MENU_01   | Koja tehnologija te zanima?
+DIPLO_TECH_COUNTER_MENU_01   | Šta želiš ta menjaš za nju?
+DIPLO_TRADE_MENU_01          | Predlažeš trgovinski ugovor od:
+DIPLO_TREATY_MENU_01         | Predlažeš ugovor
+DIPLO_DECLARE_WAR_MENU_01    | Da li si siguran da želiš da započneš rat?
+DIPLO_SUGGEST_WAR_MENU_01    | Kome bi trebalo da objavim rat?
+DIPLO_BREAK_ALLIANCE_MENU_01 | Koji savez treba da raskinem?
+DIPLO_THREATEN_MENU_01       | Tvoji postupci:
+
+DECLINE_OFFER_01           | Odbijam.
+DECLINE_OFFER_02           | Razmislio sam o tvojoj ponudi i odbijam.
+DECLINE_OFFER_03           | S poštovanjem odbijam tvoju ponudu.
+DECLINE_OFFER_04           | Nisam trenutno zainteresovan.
+DECLINE_OFFER_05           | Ne smatram da je tvoja ponuda fer.
+DECLINE_OFFER_06           | Trenutno ne bi bilo u mom najboljem interesu da prihvatim tvoju ponudu.
+DECLINE_OFFER_07           | Možda me smatraš za lakovernu budalu. Odbijam tvoju ponudu.
+DECLINE_OFFER_08           | Tvoja ponuda mi se ne čini fer.
+DECLINE_OFFER_09           | Žao mi je, ali moram da odbijem.
+
+DECLINE_ENEMY_ALLY_01      | Nikada ne bih sarađivao sa saveznikom omraženog [other_name].
+
+DECLINE_ANNOYED_01         | [your_name] je stvorenje koje laje a ne ujeda. Dosta mi je tvog razglabanja.
+DECLINE_ANNOYED_01         | [your_name], oprobavaš moje strpljenje. Možda bi bilo bolje da nastavimo razgovor nekom drugom prilikom.
+DECLINE_ANNOYED_01         | Čuo sam dovoljno. Pričaćemo drugom prilikom.
+DECLINE_ANNOYED_02         | Umoran sam od diplomatskih pregovora. Možemo da nastavim diskusiju drugom prilikom.
+DECLINE_ANNOYED_02         | Ovi razgovori ne vode ničemu. Moram da se povučem.
+DECLINE_ANNOYED_02         | Idem sada.
+DECLINE_ANNOYED_03         | Mnogo se izvinjavam, [your_name], ali druge dužnosti zovu.
+DECLINE_ANNOYED_03         | Izvinite, moje vreme je isteklo.
+DECLINE_ANNOYED_03         | Imam malo vremena i puno toga da odradim. Možda možemo da razgovaramo neki drugi put.
+
+
+DECLINE_OATHBREAKER_01     | Trenutno ne želim da sklopim sporazum jer si u prošlosti kršio sporazume.
+DECLINE_OATHBREAKER_01     | Nisi ispoštovao svoje prošle dogovore. Sada ne vidim razlog da ti verujem.
+DECLINE_OATHBREAKER_01     | Zašto bi ti verovao sada, kada si prekršio toliko prošlih sporazuma?
+DECLINE_OATHBREAKER_01     | Ne vidim razlog da se dogovaram sa nekim ko nije ispunio prošla obećanja.
+DECLINE_OATHBREAKER_01     | Nećemo se sporazumevati sa tobom, [your_nameV] jer nemate čast.
+
+DECLINE_ESPIONAGE_01       | Ti si lopov, kradeš plodove mog istraživanja. Odbijam tvoj zahtev.
+DECLINE_ESPIONAGE_01       | Naša tehnologija je samo za mene. Nemaš prava da je kradeš. Razgovaraćemo kad prestaneš da kradeš.
+DECLINE_ESPIONAGE_01       | Zašto bi ti išta dao? Tvoji špijuni već kradu sve što ti treba!
+DECLINE_ESPIONAGE_01       | Kako možeš da očekuješ da prihvatim kada tvoji špijuni kradu moju tehnologiju?
+DECLINE_ESPIONAGE_01       | Ukloni špijune, pa ćemo razgovarati.
+
+DECLINE_SABOTAGE_01        | Nisam zaboravio tvoj poslednji incident sa sabotažom. Dok se ne pokažeš da si vredan mog poverenja, neću imati posla s vama.
+DECLINE_SABOTAGE_01        | Ja sam propatio zbog tvoje sabotaže. Neću imati nikakvog posla sa tobom dok to ne prestane.
+DECLINE_SABOTAGE_01        | Šta! Očekuješ da pregovaramo dok sabotiraš naš [target]?
+DECLINE_SABOTAGE_01        | Ti uništavaš [target]. Zašto bi pregovarao sa vama?
+DECLINE_SABOTAGE_01        | Kada prestaneš da sabotiraš naš [target], mogu da razmislimo o ovome.
+
+DECLINE_BUILDUP_01         | Neću da razgovaram o ovome dok gomilaš brodove blizu mojih granica
+DECLINE_BUILDUP_01         | Ukloni svoje brodove duž mojih granica i razmisliću da prihvatim. Do tada me ne zanima.
+DECLINE_BUILDUP_01         | Tvoji brodovi na mojim granicama mi ne predstavljaju pretnju. Ali odbijam da pregovaram dok su tu.
+DECLINE_BUILDUP_01         | Ako želiš da razgovaraš sa mnom, onda pošalji tvoje brodove da prete drugima, ne meni.
+
+DECLINE_ENCROACH_01        | Tvoje flote uznemiravaju moj prostor. Skloni ih, pa ćemo tada razgovarati.
+
+DECLINE_SKIRMISH_01        | Napadaš moje brodove bez provokacije i očekuješ da prihvatim? Odbijam da pregovaram.
+DECLINE_SKIRMISH_01        | Ne mogu da prihvatim ponude od onoga koji napada moje flote.
+DECLINE_SKIRMISH_01        | Kad tvoje flote prestanu da napadaju moje, možemo razgovarati.
+DECLINE_SKIRMISH_01        | Ako želiš da pregovaraš sa mnom, ostavi moje flote na miru.
+DECLINE_SKIRMISH_01        | Ne cenim tvoje uništavanje mojih flota. Ne prihvatam.
+
+DECLINE_ATTACK_01          | Tvoj neopravdani napad na [system] ti daje malo prostora za cenkanje.
+DECLINE_ATTACK_01          | Nisam zaboravio napad na [system] koloniju. Nema šanse da prihvatim.
+
+DECLINE_INVASION_01        | Ne želim da imam bilo kakva posla sa koljačima [system] sistema. Prvo ispravite tvoju grešku.
+DECLINE_INVASION_01        | Krv sa [system] sistema ti je uprljala ruke. Ne mogu da prihvatim tvoju ponudu.
+DECLINE_INVASION_01        | Moj gubitak na [system] sistemu plače za osvetom. Bol koji osećam je glasniji od tvoje ponude.
+
+DECLINE_BIOWEAPONS_01      | Ne želim da pregovaram sa onim koji koristi biološko oružje.
+DECLINE_BIOWEAPONS_01      | Ne mogu da pregovaram bilo kim ko je toliko očajan da koristi biološko oružje.
+DECLINE_BIOWEAPONS_01      | Koristiš oružje koje meni prouzrokuje neizrecive strahote. Odbijam da se bavim takvim ludilom.
+DECLINE_BIOWEAPONS_01      | Bogovi se gnušaju onih koji bi uništavali planete biološkim oružjem. To ne mogu da dopustim.
+DECLINE_BIOWEAPONS_01      | Bol nanesen tvojim biološkim oružjem mi puni uši. Ne mogu da čujemo tvoju ponudu.
+
+DECLINE_TECH_TRADE_01      | Nemaš tehnologiju koja me zanima.
+DECLINE_TECH_TRADE_01      | Ne želim tvoje igračke.
+DECLINE_TECH_TRADE_01      | Tvoji primitivni izumi me ne zanimaju.
+DECLINE_TECH_TRADE_01      | Ja sam daleko napredniji od tvoje tehnologije.
+DECLINE_TECH_TRADE_01      | [your_name], ne vidim potrebu za onim što mi nude tvoji naučnici.
+DECLINE_TECH_TRADE_01      | Nemam puno interesovanja za tvoju tehnologiju.
+
+DECLINE_NO_WAR_ON_ALLY_01  | Neću da objavim rat savezniku.
+DECLINE_PEACE_TREATY_01    | Neću da raskinem mirovni ugovor sa [other_name].
+
+OFFER_TECH_EXCHANGE_01     | Meni je preko potrebna [tech] tehnologija. Možda želiš da se menjaš za neku od naših tehnologija.
+OFFER_TECH_EXCHANGE_01     | Znam da si otkrio tajne [tech] tehnologije. Mogu li da ti ponudim neku od mojih tehnologija u zamenu?
+OFFER_TECH_EXCHANGE_01     | Želim da mi otkriješ tajne [tech] tehnologije. Želiš li da se menjaš za neke od mojih tehnologija?
+OFFER_TECH_EXCHANGE_01     | Zadivljen sam naučnim dostignućima [tech] tehnologije. Šta mogu da ti ponudim za otkrivanje te tajne?
+
+ACCEPT_TECH_EXCHANGE_01    | Vrlo dobro. Prihvatam razmenu čudnovatih tajni [techGiven] tehnologije za [techReceived] tehnologiju.
+ACCEPT_FINANCIAL_AID_01    | Prihvatam tvoj poklon od [amt] MK.
+ACCEPT_TECHNOLOGY_AID_01   | Prihvatam tvoj poklon [tech].
+
+BREAK_TRADE_01             | Ne želim više da trgujem sa [your_name].
+ANNOUNCE_TRADE_01          | Efektivno od [year], Ja i [your_name] sklapamo trgovinski ugovor od [amt] MK godišnje.
+ACCEPT_TRADE_01            | Trgovinski Ugovor od [amt] MK je prihvatljiv.
+ACCEPT_TRADE_01            | Nestrpljivo očekujem finu robu koju nudiš, [your_name]. Prihvatam ugovor od [amt] MK godišnje.
+ACCEPT_TRADE_01            | Prihvatam da započnemo trgovinu od [amt] MK godišnje.
+ACCEPT_TRADE_01            | Pa, [your_name], nalazim da je tvoja ponuda od [amt] MK godišnje fer i pravedna.
+
+ANNOUNCE_PEACE_01          | Godine [year], ja i [your_name] prihvatamo da prekinemo sa svim neprijateljskim akcijama.
+ANNOUNCE_PEACE_01          | Ovim poručujem da se sva neprijateljstva prekinu između tebe i mene.
+ACCEPT_PEACE_01            | Slažem se da je došlo vreme da okončamo naše sitne prepirke.
+ACCEPT_PEACE_01            | Prihvatam tvoju ponudu mira. Prekini vatru na mene i ja ću prestati da napadam vaše snage.
+ACCEPT_PEACE_01            | Umaram se od ovog besmislenog uništavanja. Prihvatam tvoju ponudu za mir.
+
+BREAK_PACT_01              | Upozoravam te, [your_name]: naš Ugovor o Nenapadanju je raskinut!
+ANNOUNCE_PACT_01           | Godine [year], obećavam da ću se pridržavati Ugovora o Nenapadanju i da neću napadati vaše flote osim ako ne orbitiraju oko neke od mojih kolonija.
+ACCEPT_PACT_01             | Pristajem na Ugovor o Nenapadanju. Nećemo napadati flotu jedan drugome, osim ako ne uđu u orbitu protivničke kolonije.
+ACCEPT_PACT_01             | Ako se složiš da nećeš slati brodove ni u jednu od mojih kolonija, zakleću se da neću napadati vaše brodove.
+ACCEPT_PACT_01             | Slažem se sa vašim predlogom za Ugovor o Nenapadanju. Tako je napisano, tako će biti i učinjeno!
+ACCEPT_PACT_01             | Dogovoreno, onda. Sve dok ne napadneš moje kolonije, ja ću se pridržavati Ugovora o Nenapadanju.
+
+BREAK_ALLIANCE_01          | Ne mogu više da održavam savez sa [your_name].
+ANNOUNCE_ALLIANCE_01       | Godine [year] ja i [your_name] sklapamo savez u kojem nećemo napadati protivničke flote ili kolonije.
+ANNOUNCE_ALLIANCE_01       | Dakle, naš savez je sklopljen. Tvoji brodovi mogu posećivati moje kolonije po želji i uzimati gorivo iz mojih baza.
+ACCEPT_ALLIANCE_01         | Pozdravljam savez sa mojim dobrim prijateljem, [your_name].
+ACCEPT_ALLIANCE_01         | Ja i [your_name] danas sklapamo savez. Smrt našim neprijateljima!
+ACCEPT_ALLIANCE_01         | Vidim mudrost u savezu sa [your_name]. Neka tako bude!
+
+ACCEPT_BREAK_ALLIANCE_01   | Slažem se, [other_name] više ne zaslužuje moje poverenje i ja sam raskino savez sa njim.
+ACCEPT_BREAK_ALLIANCE_01   | Iako me boli da okrenem leđa [other_name], ipak sam to uradio.
+ACCEPT_BREAK_ALLIANCE_01   | [other_name] više nije moj saveznik
+ACCEPT_BREAK_ALLIANCE_01   | Savez između mene i [other_name] je sada u ruševinama.
+ACCEPT_BREAK_ALLIANCE_01   | Kao što želiš, ja više neću nazivati [other_name] mojim saveznikom.
+
+ACCEPT_JOINT_WAR_01        | [other_name] mora pasti pred kombinovanim moći [your_name] i mene.
+ACCEPT_JOINT_WAR_01        | Kada smo [your_name] i ja u savezu, [other_name] neće dugo trajati.
+ACCEPT_JOINT_WAR_01        | Godine [year], ja i [your_name] udružujemo snage da bi otarasili galaksiju [other_name] pretnje.
+
+RESPOND_CLOSE_EMBASSY_01   | Neka tako bude. Neće biti daljih pregovora između mene i [your_name].
+
+RESPOND_BREAK_TRADE_01     | Zapamtiću ovo.
+RESPOND_BREAK_TRADE_01     | Znači, [your_name], ne možeš da držiš reč. Neću ovo zaboraviti.
+
+RESPOND_BREAK_PACT_01      | Urezaću reči tvojih prekršenih ugovora na tvoj nadgrobni spomenik, [your_name].
+RESPOND_BREAK_PACT_01      | [your_name] će se srušiti pod teretom sopstvenih prekršenih obećanja.
+
+RESPOND_BREAK_ALLIANCE_01  | Prekršio si sporazum. Savez je raskinut.
+RESPOND_BREAK_ALLIANCE_01  | Veoma dobro. Pokazao si tvoju zlonamernost. Savez je raskinut.
+RESPOND_BREAK_ALLIANCE_01  | Nisu mi potrebni ugovori koji se ne poštuju. Savez je raskinut.
+RESPOND_BREAK_ALLIANCE_01  | Neka tako bude. Savez je raskinut.
+
+ACCEPT_TRADE_01            | Želiš da trguješ sa mnom? Koliko si rekao? [amt] MK godišnje? Da... da mislim da mogu da prihvatim takav dogovor [your_name].
+RESPOND_IGNORE_THREAT_01   | Nemoj da mi pretiš, glupi [your_name]. Postoji toliko mnogo mene da se nikad ne bi mogao da pobediš ako bismo ratovali. Odlazi!
+RESPOND_STOP_SPYING_01     | Samo sam hteo da vidim kako se [your_name] ponaša kad je sam sa sobom. Neću ovo ponoviti. Možeš li da mi vratiš mog špijuna, molim te?
+RESPOND_STOP_ATTACKING_01  | Haha! Vidi kako sam jak! [your_name] se ne može uporediti sa mnom! Ne zaboravi to kada budem vratio flote kući!
+

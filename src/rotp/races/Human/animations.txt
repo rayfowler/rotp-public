@@ -1,6 +1,5 @@
 
 HumanLaboratory    | races/Human/animationLaboratory.txt
-HumanHolograph     | races/Bulrathi/animationHolograph.txt
 HumanDiploMug      | races/Human/animationDiploMug.txt
 HumanSpyMug        | races/Human/animationSpyMug.txt
 HumanSoldierMug    | races/Human/animationSoldierMug.txt

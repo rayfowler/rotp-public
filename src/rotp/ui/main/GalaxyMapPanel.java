@@ -1022,15 +1022,12 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
     @Override
     public void mouseClicked(MouseEvent e) {}
     @Override
-    public void mouseEntered(MouseEvent arg0) {
-        setCrosshairsCursor();
-    }
+    public void mouseEntered(MouseEvent arg0) { }
     @Override
     public void mouseExited(MouseEvent e) {
         if (parent.hoveringSprite() != null)
             parent.hoveringSprite().mouseExit(this);
         parent.hoveringOverSprite(null);
-        setDefaultCursor();
     }
     @Override
     public void mousePressed(MouseEvent e) {

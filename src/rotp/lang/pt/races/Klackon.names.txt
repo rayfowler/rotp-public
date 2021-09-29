@@ -1,0 +1,22 @@
+// all possible names
+name: Klackon, Klackant, Klockan, Arthropon, Coleopteron
+
+desc1: Industrialistas Xenofóbicos
+desc2: Mente Coletiva e Maior Produção
+desc3: Espécie de uma única mente centralizada, os industriosos Klackons são imperscrutáveis ao exterior.
+
+// possible home system names
+home: Kholdan, Kholdant, Khaldon, Klokdon, Khakdon
+
+title:     
+fulltitle:
+
+// possible leader names
+leader: Ixitixl, Kaxal, Kikitik, Klaquan, K'kalak, Xantak
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Zangão, Ferrão, Louva-a-Deus, Besouro, Abelhão, Arácnida, Mandíbula
+ship2: Vespa, Toxina, Tira-olhos, Lacrau, Carocha, Aguilhão, Peçonha 
+ship3: Víbora, Serpente, Naja, Cascavel, Escorpião, Tarântula, Escolopendra
+ship4: Viúva-negra, Leviatã, Naga, Mamba, Cobra-real, Boa, Paraponera 
+

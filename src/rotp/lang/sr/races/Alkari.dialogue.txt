@@ -1,0 +1,96 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Alkari specific dialogue
+
+CONTACT_HONORABLE          | Pozdrav vama, o vi [your_nameTitleV] [your_name] iz [your_empireStva]! Mi iz [my_empireStva] šaljemo srdačni pozdrav, i radujemo se časnim odnosima sa vašom vrstom.
+CONTACT_PACIFIST           | Najiskreniji pozdravi vama, [your_titleV] i [your_empireStvu]. Nemojte da dovedete rat pred prag našeg Kraljevstva i zajedno ćemo napredovati u međusobnom prijateljstvu . 
+CONTACT_ERRATIC            | Ja sam ambasador iz [my_empireStva]. Moj narod šalje tople pozdrave po našem običaju. Vaša vrsta je poznata po imenu [your_race_plural]? Vrlo... interesantno.
+
+//
+GREETING_01                | Pozdrav, ambasadore! Kakvu bi službu Kraljevstvo moglo pružiti tako poštovanom savezniku na današnji dan? 
+GREETING_04                | Pozdravljam vas, ambasadore. Kraljevstvo je spremno da sasluša vaš zahtev, ali da li ćemo moći da ga ispunimo, tek ćemo videti...
+GREETING_07                | Govorite brzo, ambasadore! Prema našim zakonima moramo poštovati sve protokole, ali to ne znači da ćemo gubiti vreme u ispunjavanju vaših trivijalnih zahteva!
+
+//
+DECLAREWAR_HATE_01         | Rasa poput vaše, koju nije briga o pristojnosti i učtivosti, ne pripada galaksiji kojom vlada Kraljevstvo, ambasadore! Pripremite se za bitku! 
+DECLAREWAR_HATE_02         | Vaša sirovost i arogancija su dovele do ovoga! Imamo poruku za vašeg [your_titleA]: Objavljujemo vam rat!
+DECLAREWAR_HATE_03         | Kakva vulgarnost! [my_empire] bi radije prestalo da postoji nego da i dalje deli kosmos sa tako odvratnim narodom, ambasadore!
+//
+DECLAREWAR_ERRATIC_01      | Ambasadore, bilo je prijatno sklapati dogovore se tako intrigantnom rasom kao što je vaša. Žao nam je što sada ti dogovori moraju okončati.
+DECLAREWAR_ERRATIC_02      | Zabavljali ste nas od kada su se naši narodi prvi put susreli. Kraljevstvo želi da vidi da li ćete se pokazati jednako zabavnim u vreme rata, ambasadore!
+DECLAREWAR_ERRATIC_03      | Pozdrav, ambasadore [your_empireStva]! [my_empire] želi da se testira u časnoj borbi protiv vaših znatnih snaga. Pripremite svoje flote i svoj narod za rat!
+//
+DECLAREWAR_MILITARY_01     | Kraljevstvo mora da nastavi da povećava svoju teritoriju da bi obezbedili budućnost našeg naroda. Kada ne možemo da nađemo nenaseljeni svet, uzimamo svetove manjih imperija. Vaša imperija je manja od naše, i zato će vaši svetovi sada postati naši.
+DECLAREWAR_MILITARY_02     | Napokon je došlo vreme, ambasadore! Jednim krilom, Kraljevstvo će raširiti ratnu senku iznad vas, a drugim će staviti vaše svetove u svoje okrilje. 
+DECLAREWAR_MILITARY_03     | Žalosno je što su stvari došle do ovoga, ambasadore. Moramo da preuzmemo vaše planete za svoju upotrebu ili da nestanemo u pokušaju. Nemamo izbora, pripremite se za rat!
+//
+DECLAREWAR_ALLIANCE_01     | Diplomate [other_empireStva] su nas obavestili da su u ratu sa vašim narodom. Čast [my_empireStva] nas obavezuje da pomognemo našim saveznicima u ratnim vremenima: to je činjenica zbog koje ćete uskoro zažaliti, ambasadore. 
+DECLAREWAR_ALLIANCE_02     | Naši saveznici traže pomoć, a Kraljevstvo odgovara na poziv! Vaš kraj je pred vama, ambasadore: ne možete dugo da se suprotstavljate našoj kombinovanoj floti!
+DECLAREWAR_ALLIANCE_03     | Muči nas što ste na ovaj način odlučili da ratujete protiv jednog od naših saveznika. Prema našim najsvetijim zakonima, sada im moramo pomoći u borbi protiv vas! Molim vas, skrenite se sa ovog puta pre nego što bude prekasno za sve nas!
+//
+DECLAREWAR_SPYING_01       | Bili smo zadovoljni održavanjem prijateljskih odnosa sa vašim narodom, ambasadore. Vaša nečasna dela protiv krune su nas naterala da se preispitamo.
+DECLAREWAR_SPYING_02       | Takva beščašća neće proći nekažnjeno, ambasadore! Oni koji žele da deluju u tajnosti protiv nas biće osetiće naš gnev!
+DECLAREWAR_SPYING_03       | Ambasadore! Kako se vaš narod usuđuje da čini tako gnusna dela protiv Kraljevstva?! Za ovo ćemo isterati pravdu po svaku cenu! Pripremite se za rat!
+//
+DECLAREWAR_ATTACK_01       | Pfff! Kakva glupa odluka, ambasadore! Ali ako je rat ono što želite, onda će vam Kraljevstvo dati rat!
+DECLAREWAR_ATTACK_02       | I tako to počinje, ambasadore! Ako je [my_raceSki] narod mogao da preživi beskraje ratove Krvavog Milenijuma, lako ćemo preživeti rat protiv vaše vrste!
+DECLAREWAR_ATTACK_03       | Trebali smo očekivati ovakvu vulgarnost od neotesane rase poput vaše, ambasadore! Nemojte misliti da će vam se Kraljevstvo nepobitno predati!
+//
+DECLAREWAR_OPPORTUNITY_01  | Kao što vidite, mi iz [my_empireStva] smo postigli velike uspehe u istraživanju svemira. Nažalost, ambasadore, naše potrebe nalažu da naš sledeći uspeh mora doći na štetu vaše imperije.  
+DECLAREWAR_ASSASSIN_01     | Kakva je ovo ludost? Počinili ste tako monstruozno delo, hladnokrvno ubistvo ambasadora? Kraljevstvo više neće trpeti postojanje tako gnusne rase kao što je vaša!
+
+
+
+
+OFFER_PEACE_01             | Istorija Krvavog Milenijuma se ne sme ponoviti, ambasadore! Zahtevamo da donesete čast [your_raceSkoj] i [my_raceSkoj] rasi potpisivanjem ovog mirovnog sporazuma da bi sprečili dalje krvoproliće!
+OFFER_TRADE_01             | Sigurno je da su civilizovane rase poput naših sposobne da pomažu jedna drugoj u časnoj saradnji. [my_empire] želi da potpiše trgovinski ugovor sa [your_empireStvom] od [amt] MK godišnje. Šta je vaš odgovor, ambasadore?
+OFFER_PACT_01              | Kraljevstvo je zadovoljno kako se vaš narod pokazao u diplomatskim poslovima. Da bismo pokazali koliko cenimo našu vezu, želimo da potpišemo Ugovor o Nenapadanju, osiguravajući da niko od nas ne postane žrtva... pogrešnog tumačenja namera.
+OFFER_ALLIANCE_01          | Svojim postupcima ste stekli veliko poštovanje Kraljevstva, ambasadore! Kralj nebesa je odredio da se potpiše Savez između [your_raceIja] i [my_raceIja] odmah! Samo čekamo na vaš potpis!
+
+WARN_TRESPASSING_01        | Krajnje je neprikladno da se [your_raceSke] flote vrte oko [system] sistema kao da je u pitanju njihova teritorija. U najboljem interesu svih, ambasadore, je da ovo ispravite odmah. 
+WARN_EXPANSION_01          | Sa nekontrolisanim širenjem gde god poželite pokazujete veliko nepoštovanje prema komšijama, ambasadore! Toplo vam savetujem da više prekinete sa takvim nepoštovanjem prema Kraljevstvu.
+WARN_BUILDUP_01            | Zar mislite da smo slepi, ambasadore?! Vidimo da se vaše flote i dalje povećavaju u brojevima i snazi. Pokažite nam da nemate zle namere prekidom ovog nagomilavanja flota, ili ćete dobiti naš preventivni odgovor!
+WARN_SKIRMISH_01           | Dobro znamo o okršaju u [system] sistemu, ambasadore! Kraljevstvo će ovaj put prevideti vaše postupke. Zašto? Ne vidim razlog da na to pitanje odgovorim nekome kao što ste vi!
+WARN_ATTACKED_01           | Takav bestidan napad proizlazi samo iz potpunog nedostatka poštovanja, ambasadore! Zaista ste srećni što se Kralj Nebesa nije udostojio da ukori vašu drskost. Možda sledeći put nećete biti te sreće! 
+WARN_INVADED_01            | Dakle, vi tražite da uzmete ono što vam ne pripada, ambasadore?! Ne iskušavajte više naš bes: rado bismo se rešili te bezvredne planete ako to znači da bi se oslobodili vaše gluposti!
+WARN_ESPIONAGE_01          | Hmfhmfhmf, ne iznenađuje nas što bi tako grozna rasa pribegla špijunaži kako bi postigla svoje ciljeve. Zapamtite, ambasadore: oči [my_raceIja] su toliko izoštrene da im nište ne može promaći. [framed]
+WARN_SABOTAGE_01           | Apsolutno odvratno, ambasadore! Šunjati se u mraku i vršiti sabotaže poput zlikovaca u noći!? Ali vi ste glupi koliko ste i sirovi: zgrade koje ste uništili nisu bile dovoljno važne da bi zahtevale naš odgovor! [forced]
+WARN_BIOWEAPON_01          | Sramota! Sramota! Upotrebili ste nezamislivo užasnu vrstu oružja protiv onih koji ne mogu ni da podignu štit da bi se zaštitili! Vaša zaslužena sramota će vas pratiti do kraja, ambasadore!
+WARN_GENOCIDE_01           | Iako se slažem da je [victim_raceSka] rasa bila bedna horda drskih gamadi, Kraljevstvo se snažno protivi vršenju genocida. Pitamo se, ambasadore, da li je vaš narod sposoban da ponovi takvo delo sa više... civilizovanom rasom?
+WARN_FINAL_WAR_01          | Nema odvažnosti na ovom putu koji ste izabrali, ambasadore. Ne pogrešite: sada kada ste odlučili da se suprotstavite pravično izabranom vođi galaksije, čast nas obavezuje da učinimo sve što možemo da vas zaustavimo!
+WARN_COUNCIL_VOTE_01       | Toliko o slavnom ambasadoru [your_empireStva]! Da li ste zaista verovali da nećemo saznati za vašu obmanu u Savetu? Trebalo bi da se bojite za svoj narod, ambasadore: Kralj Nebesa će biti vrlo nezadovoljan.
+WARN_OATHBREAKER_01        | Skandalozno! Znate koliko mi poštujemo čast, a ipak tako otvoreno kršite reč samo da biste zadovoljili svoje želje?! Kraljevstvo će zauvek pamtiti ovu uvredu, ambasadore, i sigurno će vam vratiti istom merom!
+WARN_ATTACKED_ALLY_01      | Uznemirujuće je, ambasadore, što je vaš narod i [defender_empire] odlučili da se tako prepiru. Ne treba da se nadate da ćete moći da se suprotstavite našoj kombinovanoj snazi, ambasadore: Kraljevstvo urgira da preispitate svoje postupke.
+WARN_REBELLING_AGAINST_01  | Jeste li mislili da smo zaboravili koliko ste se pokazali nečasnim? Nije važno da li se moramo boriti protiv vas ili protiv čitave galaksije: nikada nećete sedeti na tronu Saveta sve dok živi Kralj Nebesa!
+ 
+PRAISE_COUNCIL_VOTE_01     | Cenjeni i časni ambasadore [your_empireStva]! Dužni smo za vašu uslugu na ovom sastanku Saveta i nestrpljivi smo da nadoknadimo taj dug kad god odlučite kako to najbolje možemo da učinimo.
+PRAISE_COUNCIL_VOTE_02     | Pozdrav, ambasadore. Ukazali ste nam čast glasom koji govori u prilog našem cilju pred okupljenima ovde. Siguran sam da će Kralj Nebesa želeti da sazna više tako časnom narodu čim mu podnesem izveštaj. 
+PRAISE_COUNCIL_VOTE_03     | Hmfhmhmf, sigurno ne očekujete da verujemo da ste se stali na stranu Kraljevstva iz poštovanja ili osećaja časti, ambasadore? Ipak, možda ćete i dalje dokazivati vašu vrednost ako vam pružimo još jednu priliku za to?
+
+PRAISE_ATTACKED_ENEMY_01   | Ah! Naš cenjeni prijatelj i saveznik donosi dobre vesti u ovo ratno vreme! Dođite ambasadore: neka se naši narodi zajedno bore protiv ovih užasnih [defender_raceIja] kao saborci!
+PRAISE_ATTACKED_ENEMY_02   | Ovaj rat će brzo biti gotov, ambasadore. Čak i samo Kraljevstvo bi lako savladalo ove vulgarne [defender_raceSke] zveri. Ali zajedno? Zajedno ćemo zauvek obrisati iz galaksije mrlju njihove rase!
+PRAISE_ATTACKED_ENEMY_03   | Siguran sam da delujete oportunistički kao što sam siguran da ne znate značenje reči "čast"! Dopuštamo vam da nam pomognete protiv [defender_raceIja], ako zbog ničeg drugog, da bi smanjili naše žrtve!
+
+PRAISE_TRADE_01            | Ovo je veće olakšanje nego što znate, ambasadore, što vaši ljudi posluju tako časno. Kraljevstvo poštuje vas i vaš narod i ceniće naše prijateljstvo čak i više nego što poštuje naš kontinuirani trgovinski sporazum!
+PRAISE_TRADE_02            | Postoji mnogo načina da dokažete nečiju čast, ambasadore. Pošteno i dobronamerno poslovanje jedan je od najboljih načina da se to učini, a to je nešto što Kraljevstvo izuzetno ceni od onih koje susrećemo u ovoj galaksiji.
+
+PRAISE_REBELLING_WITH_01   | Te sirovine u Savetu nas potcenjuju, ambasadore! Zajedno ćemo im pokazati šta u stvari znači pojam "fatalna greška"!
+
+ACCEPT_TRADE_01            | Kraljevstvo je uvek sretno da sklopi ugovor sa [your_empireStvom]. Godišnja količina od [amt] MK nam odgovara, hvala. 
+RESPOND_IGNORE_THREAT_01   | Usuđujete se da isprovocirate [my_empireStvo]? Nosite svoje smešne šale negde drugde pre nego što prestanu da nam budu zabavne.
+RESPOND_STOP_SPYING_01     | Čini se da su vaše oči oštre kao naše kad je u pitanju pronalaženje špijuna. Smatrajte da je naše špijuniranje došlo kraju.
+RESPOND_STOP_ATTACKING_01  | Sad vidite moć našeg suvereniteta? Sve dok ne zaboravite našu moć, nećemo vas više mučiti našim flotama.
+
+ 

@@ -16,13 +16,13 @@
 package rotp.util;
 
 import java.awt.Font;
+import java.awt.FontFormatException;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import rotp.Rotp;
 
 public enum FontManager implements Base {
     INSTANCE;
@@ -154,7 +154,7 @@ public enum FontManager implements Base {
                 logoSize = fontSizing;
             }
         }
-        catch (Exception e) {
+        catch (FontFormatException | IOException e) {
             err("FontManager.loadFont -- Exception: " + e.getMessage());
         }
     }
@@ -186,6 +186,10 @@ public enum FontManager implements Base {
 
         List<String> fields = substrings(input, ',');
         String fontName = fields.get(0);
+        
+        if (!fontName.equalsIgnoreCase("language"))
+            return;
+        
         String filename = fields.size() > 1 ? fields.get(1) : fields.get(0);
         int fontSizing = fields.size() > 2 ? parseInt(fields.get(2)): 100;
 
@@ -196,11 +200,9 @@ public enum FontManager implements Base {
         }
 
         try {
-            if (fontName.equalsIgnoreCase("language")) {
-                Font newFont = Font.createFont(Font.TRUETYPE_FONT, is);
-                languageFonts.put(langCode, newFont);
-                languageFontSizes.put(langCode, fontSizing);
-            }
+            Font newFont = Font.createFont(Font.TRUETYPE_FONT, is);
+            languageFonts.put(langCode, newFont);
+            languageFontSizes.put(langCode, fontSizing);
         }
         catch (Exception e) {
             err("FontManager.loadFont -- Exception: " + e.getMessage());

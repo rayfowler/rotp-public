@@ -1,0 +1,88 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Mrrshan specific dialogue
+
+CONTACT_AGGRESSIVE         | Witam cię, dziwna istoto. Jestem z [my_race3] i jestem sługą Złotego Chana. Mam nadzieję, że jesteś silny, [your_race2], nie tylko dla dobra swego ludu lecz także dla dobra skarbów, które są ci najdroższe. 
+CONTACT_RUTHLESS           | Jesteśmy [my_race], [your_race2] i wyznajemy tylko jedno przekonanie: silny bierze, a słaby daje. Jeśli jeszcze nie rozumiesz mądrości takiej filozofii, z pewnością wkrótce cię jej nauczymy.
+CONTACT_XENOPHOBIC         | Módl się aby Złoty Chan uznał cię za godnego, [your_race2]. Wzbudź jego gniew, a nie będzie miał skrupułów by zesłać na ciebie floty rasy [my_race3].
+//
+GREETING_01                | Wiele razy udowodniłeś nam swoją wartość. Jesteśmy zaszczyceni, że możemy coś zrobić aby udowodnić ci to samo.
+GREETING_04                | Wysłucham twych słów, ambasadorze, ale nie jestem zobowiązany dać ci tego, czego szukasz.
+GREETING_07                | Niewątpliwie jesteś odważny, zbliżając się do sługi chana. Powiedz co masz do powiedzenia i bądź gotów do ucieczki jeśli tylko marnujesz mój czas.
+//
+DECLAREWAR_HATE_01         | Wasze relikwie się u was marnują! Ozdobimy nasze sale na Fierias waszymi kośćmi i waszymi skarbami. Będą one wszystkim co pozostanie z waszego ludu, gdy skończymy!
+DECLAREWAR_HATE_02         | Dość tego! Zwykłe najazdy nie zaspokoją naszej wrogości wobec waszego gatunku: [your_race] zasługują na znacznie bardziej zakrojone działania!
+DECLAREWAR_HATE_03         | Zwykła świadomość, że tak słaba rasa jak wasza ma wpływy w tym wszechświecie jest wystarczająca, by przyprawić nas o mdłości. Bez względu na przeciwności obiecuję, że zrobimy wszystko co w naszej mocy, by nauczyć was gdzie jest wasze miejsce.
+//
+DECLAREWAR_ERRATIC_01      | Szpony Chanatu potrzebują ostrzenia, ambasadorze. Wasi ludzie powinni zapewnić nam trening którego potrzebujemy, by być gotowymi na bardziej godnych przeciwników.
+DECLAREWAR_ERRATIC_02      | Wasz lud naprawdę posiada jedne z najpiękniejszych skarbów, [your_race2]. Nie możemy się doczekać by zobaczyć, jak zaciekle będziecie walczyć, by je zachować!
+DECLAREWAR_ERRATIC_03      | Minęło zbyt wiele czasu, odkąd zdobyliśmy legendarne łupy. Wasi ludzie dobrze walczą, ale czy mogą powstrzymać nas przed zabraniem błyszczących trofeów, gdy są w zasięgu ręki?
+//
+DECLAREWAR_MILITARY_01     | Silni biorą, a słabi dają: to żelazne prawo wszechświata. Wkrótce przekonasz się, że odnosi się ono nie tylko do waszych skarbów, ale także do waszych planet.
+DECLAREWAR_MILITARY_02     | Choć rzadko błyszczy jak złoto, ziemia jest często sama w sobie wartościową nagrodą. A wszystkie dobre nagrody są warte walki. Czyż nie, ambasadorze?
+DECLAREWAR_MILITARY_03     | Potrzeby Chanatu są ważniejsze niż potrzeby rasy [your_race3]. Może i posiadacie imponującą technologię, ale wątpię by dorównywała jej wasza dzikość!
+//
+DECLAREWAR_ALLIANCE_01     | Grałeś w niebezpieczną grę, aby zrobić sobie wroga z sojusznika Chanatu. Ta gra wkrótce dobiegnie szybkiego i krwawego końca!
+DECLAREWAR_ALLIANCE_02     | Nasz sojusznik, [other_race_plural], to honorowy ale słaby lud. Moglibyście wygrać gdyby w tej wojnie brały udział tylko wasze dwa imperia, ale z nami po ich stronie nie macie szans na zwycięstwo!
+DECLAREWAR_ALLIANCE_03     | Wolelibyśmy zachować zaszczyt obalenia waszego imperium tylko dla siebie. Wygląda jednak na to, że tym razem będziemy musieli podzielić się chwałą i łupami z rasą [other_race3].
+//
+DECLAREWAR_SPYING_01       | Tchórze - angażować się w szpiegostwo zamiast walczyć z honorem! Wasze czyny odpowiadają waszej słabości, a teraz za to zapłacicie!
+DECLAREWAR_SPYING_02       | Jakie to uczucie, [your_race2]? Ryzykować tak wiele tylko po to, by sprowadzić na swój lud jedynie wojnę?
+DECLAREWAR_SPYING_03       | Powiedz swojemu władcy: szpiegostwo to teatr dla kundli. Działanie w tak tchórzliwy sposób oznacza, że tylko nasza dzikość doprowadzi nas do zwycięstwa!
+//
+DECLAREWAR_ATTACK_01       | Ha! Mieliśmy was za tchórzliwych słabeuszy, ale wygląda na to że jednak macie w sobie trochę woli walki! Szkoda tylko, że nie zostaniecie tu na tyle długo, by świętować to skromne zwycięstwo!
+DECLAREWAR_ATTACK_02       | Przenosząc walkę w nasze progi wyświadczyliście nam nie lada przysługę! Odwdzięczymy się wam w ten sposób, że wasi ludzie umrą na polu bitwy jak prawdziwi wojownicy!
+DECLAREWAR_ATTACK_03       | Na Twoim miejscu unikałbym arogancji, ambasadorze. Furia naszych wojowników nigdy nie zostanie pokonana przez technologię, bez względu na to jak jest ona zaawansowana!
+//
+DECLAREWAR_OPPORTUNITY_01  | Twój gatunek już dawno przestał być użyteczny. Zapewnisz jednak najmłodszym i najbardziej niedoświadczonym z naszych wojowników odpowiednią rozrywkę, gdy będą doskonalić swoje umiejętności bojowe.
+DECLAREWAR_ASSASSIN_01     | Nie jestem w najmniejszym stopniu zszokowany, że wasz gatunek zachował się tak tchórzliwie. Zabójstwo ambasadora to największa hańba, jaką można na siebie sprowadzić, a w chwili śmierci Twoi ludzie będą przeklinać twoje imię za wydanie takiego rozkazu!
+
+OFFER_PEACE_01             | Na wszystko jest czas, ambasadorze, a teraz nadszedł czas by zakończyć nasze wrogie działania. Zatrzymaj swoje relikwie; pokój to wszystko, czego teraz od ciebie oczekujemy!
+OFFER_TRADE_01             | Nie ma wątpliwości, że najszybszym sposobem na zdobycie trofeów jest odebranie ich tym, którzy są zbyt słabi, by cię powstrzymać! Handel może być również akceptowalnym sposobem. Zacznijmy od [amt] BC każdego roku aby zobaczyć jak wiele możemy... zyskać od siebie nawzajem.
+OFFER_PACT_01              | Nie ma potrzeby, aby tak wyrównane imperia walczyły między sobą, gdy jest wiele słabszych ras do podboju. Zawrzyjmy oficjalny pakt o nieagresji, aby nasza energia mogła być lepiej spożytkowana na tych którzy mają skarby łatwiejsze do zdobycia!
+OFFER_ALLIANCE_01          | Przychodzę dziś do ciebie, aby zaproponować formalny sojusz między Chanatem a mocarstewm o nazwie [your_empire]. Ufam, że nie będziecie tracić czasu i podpiszecie ten traktat? Pamiętaj: równy udział w sojuszu oznacza równy udział w łupach wojennych!
+ 
+WARN_TRESPASSING_01        | Jeśli wasze statki nie są w systemie [system] aby dostarczyć daninę, sugeruję abyście nakazali im zawrócić i opuścić ten system tak szybko jak to możliwe.
+WARN_EXPANSION_01          | Choć wolimy kosztowności, którymi możemy ozdobić ściany naszych świątyń, nie jesteśmy tak ślepi by ignorować skarb jakim jest niezajęta ziemia. Ograniczcie się lepiej do swojego obecnego terytorium albo poczujecie nasz gniew, ambasadorze.
+WARN_BUILDUP_01            | Jeśli budujecie flotę po to by zaatakować inną rasę to nie spotkacie się z naszym sprzeciwem. Dopóki jednak nie otrzymamy zapewnień w tej sprawie, będziemy zakładać że wasze floty są skierowane na nas i nie zawahamy się podjąć działań wyprzedzających.
+WARN_SKIRMISH_01           | To była zabawna mała potyczka, prawda? Takie małe bitwy są nudne i bez nagrody: jeśli nalegacie na ich kontynuowanie, z przyjemnością wypowiemy wam bardziej oficjalną wojnę!
+WARN_ATTACKED_01           | Ha! Czy to była poważna próba prowokacji, ambasadorze? Wasz lud jest słaby, a wasze skarby nieczyste! Zaprzestańcie tej głupiej gry zanim zmusicie nas do odpowiedzi!
+WARN_INVADED_01            | Ta wasza mała inwazja to żart, prawda? Macie szczęście, że nie mieliśmy zbyt wiele pożytku z systemu [system]. Jeśli jednak skierujecie swój wzrok na bardziej wartościowe systemy - upewnimy się, że już nigdy nikomu nic nie odbierzecie!
+WARN_ESPIONAGE_01          | W jak podstępne gierki grają wasi ludzie! Jeśli chcecie zdobyć dla siebie tajemnice chanatu to będziecie musieli włożyć w to dużo więcej wysiłku. Zabierz ze sobą swojego szpiega i odejdź, zanim ta gra przestanie być zabawna. [framed]
+WARN_SABOTAGE_01           | Niebezpieczne sztuczki, ambasadorze. Gdyby w budynku który chcieliście zniszczyć znajdowały się wielkie kosztowności, z pewnością ulice waszej ojczyzny spłynęłyby waszą krwią. Zalecam, abyście nie rozważali więcej sabotażu. [forced]
+WARN_BIOWEAPON_01          | Trofea należy zdobywać w honorowej walce, a nie kraść z kości tych, którzy nawet za życia byli bezbronni! Jeśli jeszcze kiedykolwiek użyjecie tak nikczemnej broni to zapewniam, że będzie to ostatni raz!
+WARN_GENOCIDE_01           | Niezła decyzja, wyplenić cały gatunek [victim_race3] i zabrać wszystkie ich skarby dla siebie. Wątpię, byś był na tyle głupi, by spróbować czegoś takiego z nami, ale wasze możliwości są jednak dość niepokojące.
+WARN_FINAL_WAR_01          | Głupi [your_race2]! Sprzeciwianie się decyzji rady jest sprzeciwianiem się woli [my_race3]! Zabierzemy wasze trofea i spalimy je wszystkie! Nic nie pozostanie z waszego rodzaju!
+WARN_COUNCIL_VOTE_01       | Chanat ma ważniejsze sprawy do załatwienia niż polityczne gierki w komnatach rady. Byłoby dla nas lepiej, gdybyście po prostu poddali się naszym życzeniom. Byłoby też lepiej dla was, gdyby moje zdanie było jasne.
+WARN_OATHBREAKER_01        | Pff! Tylko desperaci łamią przysięgi. Nie ma sprawy! Od tej pory będziemy postępować z wami tak jak postępujemy z wszystkimi, którym nie można ufać.
+WARN_ATTACKED_ALLY_01      | Nie mogę powiedzieć, że nie rozumiem, dlaczego zaatakowałeś [defender_race3]. Ich skarby są tak bardzo piękne... ale będą należeć do nas, kiedy będziemy chcieli je zagarnąć, nie do was!
+WARN_REBELLING_AGAINST_01  | Pokój, za którym opowiada się rada, nigdy nie spodobałby się naszym ludziom. Pragniemy tylko jednego: odebrać skarby słabym i uczynić je naszymi!
+
+PRAISE_COUNCIL_VOTE_01     | Twoje wsparcie w radzie jest zawsze cenione, ambasadorze. Sam Złoty Chan życzył sobie, byś wiedział że wasi ludzie są cennym nabytkiem dla Chanatu i jeśli zechcesz odwiedzić naszą rodzimą planetę, w Twoim imieniu odbędzie się uczta!
+PRAISE_COUNCIL_VOTE_02     | Czy widziałeś, jak ten przedstawiciel [rival_race3] się skrzywił? Ha! Niech sobie szydzą! Dopóki takie mądre jednostki jak Ty będą uznawać naszą potęgę, dopóty chanat nie będzie miał się czego obawiać!
+PRAISE_COUNCIL_VOTE_03     | Czy obawiasz się naszych najazdów, ambasadorze? Czy masz nadzieję, że ułagodzenie nas w radzie powstrzyma naszych poszukiwaczy skarbów? Hmhmhmhm, cóż. Z pewnością nie zaszkodzi to waszym szansom, prawda?
+PRAISE_ATTACKED_ENEMY_01   | Dziś będzie wielki dzień dla obu naszych narodów, [attacker_race]! Rasa [defender_race3] nie ma szans w starciu z naszą połączoną siłą! Dla wszystkich znajdzie się mnóstwo skarbów: największym wojownikom przypadają największe łupy!
+PRAISE_ATTACKED_ENEMY_02   | Macie nadzieję na skarb, ambasadorze? Dobrze, zawrzyjmy układ: pomóżcie nam pozbyć się tych szkodników [defender_race3], a my zadbamy o to byście otrzymali odpowiednią nagrodę.
+PRAISE_ATTACKED_ENEMY_03   | To oczywiste, że bierzecie udział w tej wojnie tylko dla bogactwa, które możecie zagarnąć dla siebie. [defender_race] mają żałosne relikwie, więc bardzo możliwe że jeśli nam pomożecie, zostawimy dla was to czego nie chcemy wziąć dla siebie.
+PRAISE_TRADE_01            | Pamiętasz, kiedy zawarłem naszą umowę handlową? Powiedziałem że zobaczymy jak wiele zyskamy od siebie nawzajem i cieszę się, że korzyść ta jest obopólna.
+PRAISE_TRADE_02            | Zawsze przyjemniej jest walczyć o bogactwa i wracać do domu ze statkami wypełnionymi łupami! No cóż, przypuszczam że ta umowa handlowa jest przynajmniej nieco bardziej opłacalna, jeśli wziąć pod uwagę koszty. Dopilnuj aby tak pozostało, ambasadorze.
+PRAISE_REBELLING_WITH_01   | To mi się podoba! Nie ma to jak dobra walka, co? A tyle łupów aż prosi się o zdobycie... Mam nadzieję, że nie macie nic przeciwko temu, że Chanat chce się przyłączyć do zabawy!
+
+ACCEPT_TRADE_01            | Przypuszczam, że nie możemy łupić każdej cywilizacji jaką napotkamy. Chcecie handlować za ile BC rocznie? [amt]? Dobrze...
+RESPOND_IGNORE_THREAT_01   | Wybacz, że się śmieję, lecz te groźby są po prostu komicznie puste. Uciekaj, zanim nasi grabieżcy postanowią wyostrzyć sobie pazury o wasze kolonie.
+RESPOND_STOP_SPYING_01     | Znaleźliście szpiega, który według ciebie należy do nas? Bzdura. Nigdy nie przyszłoby nam do głowy szpiegowanie [your_empire2]. Zróbcie z nim co chcecie, nie ma to dla nas żadnego znaczenia.
+RESPOND_STOP_ATTACKING_01  | Martwisz się najazdem, [your_race2]? Nie martw się, nie interesuje nas to co posiadasz. Przesuniemy floty. Nie chcielibyśmy was przecież przestraszyć.
+
+

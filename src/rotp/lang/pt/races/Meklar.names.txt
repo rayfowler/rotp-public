@@ -1,0 +1,21 @@
+// all possible names
+name: Meklar, Mecanar, Cibernar, Digitar, Tecnar
+
+desc1: Industrialistas Voláteis
+desc2: Controlos Industriais Melhorados
+desc3: Os cidadãos da Jurisdição Meklar buscam atingir a perfeição e a imortalidade através da tecnologia.
+
+// possible home system names
+home: Meklon, Colosson, Calculon, Bender, Optimus
+
+title:     Mediador
+fulltitle: Mediador Supremo
+
+// possible leader names
+leader: CB-715, INT-986, MS-35, QX-537, TVC-15, TX-1138
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Byte, Transistor, Componente, Circuito, Dígito, Chave, Lógica 
+ship2: Processador, Calculador, Computador, Algoritmo, Rede, Cálculo
+ship3: Dínamo, Bateria, Java, Python, Conexo, Placa-mãe, CPU
+ship4: Némesis, Devastador, Aniquilador, Usurpador, Hyperion, Atormentador, Penetrador

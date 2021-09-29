@@ -423,6 +423,21 @@ public class ShipCombatManager implements Base {
             }          
         }
         
+        // cancel the retreat of any ships that belong to the combat victor
+        Empire victor = results.victor();
+        if (victor != null) {
+            List<ShipDesign> retreatedShips = new ArrayList<>(results.shipsRetreated().keySet());
+            boolean retreatsCancelled = false;
+            for (ShipDesign des: retreatedShips) {
+                if (victor.shipLab().design(des.id()) == des) {
+                    results.shipsRetreated().remove(des);
+                    retreatsCancelled = true;
+                }        
+            }
+            if (retreatsCancelled)
+                galaxy().ships.cancelRetreatingFleets(victor.id, system().id);
+        }
+        
         // ensure rebels are killed in proportionn to overall population
         results.killRebels();
 

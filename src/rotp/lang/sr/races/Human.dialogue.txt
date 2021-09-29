@@ -1,0 +1,89 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Human specific dialogue
+
+CONTACT_HONORABLE          | Mi smo [my_race_plural] sa planete Zemlje, [your_titleV], i veoma smo uzbuđeni što ćemo uspostaviti kontakt sa vama. Ako vam treba nešto od Triumvirata, bilo šta, molim vas, ne ustručavajte se da pitate.
+CONTACT_PACIFIST           | Srdačan pozdrav, [your_name]. Vi ste [your_empire]? Predstavljam [my_empireStvo] i nadam se da će ovo biti prva od bezbroj prijateljskih razmena između naših ljudi.
+CONTACT_ERRATIC            | Ljudi na Zemlji obično više vole da svoje probleme rešavaju pregovorima i diplomatijom. Ako vaši ljudi ipak vole nasilnije metode, bićemo srećni da vam ugodimo, [your_raceVoc].
+//
+GREETING_01                | Ah! Ambasador [your_empireStva] je ovde! Mogu li vam doneti nešto za pojesti ili popiti? Molim vas, raskomotite se i recite mi šta možemo učiniti za vas danas.
+GREETING_04                | Zdravo! Treba vam nešto od Triumvirata? Nisam siguran da li mogu da prosledim vaš zahtev Trijumvirima, ali možda vam treba nešto oko čega ne bi morali da im smetamo? 
+GREETING_07                | Ah, stigao je ambasador [your_raceIja]. Šta tačno želite od nas? Najbolje bi bilo da vaši prohtevi ne budu nerazumni.
+//
+DECLAREWAR_HATE_01         | Trijumvirat će vam rado pokazati zašto ne biste trebali iritirati rasu čija snaga zasenjuje vašu. Trebali bi da nešto naučite iz ove lekcije... ako je preživite.
+DECLAREWAR_HATE_02         | Žalosti me kada pomislim na sve vreme koje smo proveli "glumeći finoću" sa vama kada smo očigledno bili predodređeni za dugi i krvavi rat.
+DECLAREWAR_HATE_03         | Nema smisla više da se pretvaramo! Više ni sekundu nećemo trošiti na tolerisanje vašeg prisustva u ovoj galaksiji! Bez obzira koju cenu moramo da platimo!
+
+DECLAREWAR_ERRATIC_01      | U poslednje vreme se puno govori o tome da naša vojska postaje lenja i nemarna. Nadamo se da će ih rat sa vama dobro pripremiti za opasnije neprijatelje Trijumvirata.
+DECLAREWAR_ERRATIC_02      | Da li znate za ratne igre, ambasadore? Lažne borbe u kojima svoje snage usmeravamo jedna protiv druge u svrhe obuke. Pa, nadamo se da bi pravi rat sa vašim narodom mogao biti korisniji u tom cilju.
+DECLAREWAR_ERRATIC_03      | Ništa ne ujedinjuje stanovništvo kao zajednički neprijatelj, ambasadore! Ako nećete da služite našim interesima putem diplomatije, možete nam barem biti od koristi kao sila koja ujedinjuje naše ljude. 
+//
+DECLAREWAR_MILITARY_01     | Bilo bi bolje da ste se složili da nam ustupite teritoriju diplomatskim putem. Vaše odbijanje da to učinite primorava nas na alternativne mere.
+DECLAREWAR_MILITARY_02     | Kao što dobro znate, rastuća populacija zahteva stalno širenje teritorije kako bi se zadovoljile sve veće potrebe. Došlo je vreme da se proširimo, a teritorija koja nam je potrebna je vaša.
+DECLAREWAR_MILITARY_03     | Trijumviri su posvećeni svom narodu kao što su i ljudi posvećeni Trijumvirima. Ako naše potrebe nalažu da su nam potrebni vaši svetovi za kolonizaciju, oni će sa zadovoljstvom dati svoj život za to!
+//
+DECLAREWAR_ALLIANCE_01     | Postoji mnogo načina da saveznici budu impresionirani, ambasadore. Ako vas eliminišemo, sigurno ćemo povećati našu reputaciju sa [other_raceSkom] rasom, pa pokušajte da im pružimo dobru predstavu, ako možete?
+DECLAREWAR_ALLIANCE_02     | Trijumvirat nikada neće napustiti saveznike da se sami suočavaju sa svojim neprijateljima! Ujedinjeni Ljudi i [other_race_plural] će zasigurno odneti pobedu!
+DECLAREWAR_ALLIANCE_03     | To što imate jaku vojsku ne znači da je galaksija neophodno vaša. Rado se pridružujemo [other_raceSkoj] rasi i zajedno ćemo vas kazniti za vaše nebrojene zločine!
+//
+DECLAREWAR_SPYING_01       | Izgleda da ste mislili da biste mogli da se provučete sa vašim podmuklim taktikama samo zbog naše naklonosti ka diplomatskim rešenjima. Ne bojte se! Pomoći ćemo vam da naučite koliko ste veliku grešku napravili!
+DECLAREWAR_SPYING_02       | Za nas bi bilo bolje da ste i vi bili posvećeni diplomatiji kao i mi. Odgovorićemo na vaše podmetanje sa više... tradicionalnim načinom ratovanja.
+DECLAREWAR_SPYING_03       | Nadali smo se da ćete se složiti sa našim pogledima i koristiti diplomatiju kao sredstvo za postizanje ciljeva. Budući da očigledno imate podle ideje, bojim se da nemamo drugog izbora osim da odgovorimo na ovaj način.
+//
+DECLAREWAR_ATTACK_01       | Nema više potrebe za diplomatskom fasadom! Napad na nas jednostavno dokazuje da ste nadživeli svoju korisnost. Ali ne brinite! Siguran sam da ćemo negde pronaći stranicu za vaše ljude u našim istorijskim knjigama.
+DECLAREWAR_ATTACK_02       | Ne potcenjujte vojsku Trijumvirata! Ako je to borba ono što želite, drage volje ćemo vam učiniti, ambasadore!
+DECLAREWAR_ATTACK_03       | Čovečanstvo je prošlo kroz mnoga mračna vremena, ali svaki put smo postali jači i mudriji nego što smo bili pre. Uveravam vas, ambasadore, ni ovaj put neće biti drugačije.
+//
+DECLAREWAR_OPPORTUNITY_01  | Svaka naša akcija služi u korist našim ciljevima, ambasadore. Obično više volimo da koristimo diplomatiju, ali pošto nema stvarnog razloga da vas držimo u životu, brzi rat sa vama će nam bolje poslužiti.
+DECLAREWAR_ASSASSIN_01     | Bio sam šokiran kad sam saznao da naizgled inteligentna rasa može učiniti nešto tako gnusno kao što je ubistvo ambasadora. Napravićemo primer od vas, tako da nijedna imperija nikada više neće preduzeti neštko ovako protiv Trijumvirata!
+
+OFFER_PEACE_01             | Sigurno sada vidite da ratovi poput ovog donose samo tragediju. Zaustavimo ovu ludost pre nego što nastavi da se proliva dragocena krv [your_raceIja] i [my_raceIja]. Pridružite nam se u okončanju rata i kovanju nove budućnosti koju će naša deca ponosno naslediti!
+OFFER_TRADE_01             | [my_home] ima izreku "rat je neizbežan", ali davno smo naučili da se to nikada ne obistini tamo gde vlada prosperitet. Udružimo se u potrazi za tim prosperitetom. Da započnemo, oh, [amt] MK godišnje? 
+OFFER_PACT_01              | Oboje znamo da ratovi mogu početi slučajno kada se imperije rasprostru širom galaksije. Poslednja stvar koju Trijumvirat želi je rat sa narodom koji je primeran poput vašeg, a Ugovor o Nenapadanju bi nam svima doneo miran san. Slažete li se?
+OFFER_ALLIANCE_01          | [your_race_plural] su zaista divni! Ambasadore, upravo mi je pala na pamet ideja: da formalizujemo Savez između [your_raceIja] i [my_raceIja]. Zajedno možemo podučiti mase iz ove galaksije da je diplomatija, a ne nasilje, jedini put napred! 
+
+WARN_TRESPASSING_01        | Ambasadore, čini se da je [your_raceSka] flota zauzela položaje u [my_raceSkom] prostoru. Sigurno znate da ovo ne možemo dozvoliti? Sve je u redu, jednostavno uklonite svoju flotu i mi ćemo zaboraviti da se to ikada dogodilo.
+WARN_EXPANSION_01          | Iako Triumvirat želi da poštuje volju vašeg naroda, jednostavno ne možemo da sedimo skrštenih ruku pred tako agresivnim teritorijalnim širenjem. Siguran sam da ćete prekinuti sa tim u ime očuvanja naših diplomatskih veza, zar ne ambasadore?
+WARN_BUILDUP_01            | Ambasadore, molim vas! Naše vojskovođe su pod uzbunom zbog vaših nedavnih gomilanja flota! Molim vas da usporite izgradnju brodova kako biste pokazali vojnim budalama da su njihovi strahovi neutemeljeni!
+WARN_SKIRMISH_01           | Upravo sam primio sumorni izveštaj o okršaju između brodova Trijumvirata i flote koja pripada [your_empireStvu]. Molimo vas pripazite da se ovo više nikada ne ponovi, inače se bojim da će rat biti neizbežan u budućnosti!
+WARN_ATTACKED_01           | Nije dobro ambasador: uopšte nije dobro. Da nas napadnete na [system] sistemu... Šta ste mislili? Pokušavam da držim vojsku na odstojanju zbog naše posvećenosti diplomatiji, ali ako tako nastavite, neću moći više da ih zadržim.
+WARN_INVADED_01            | Naši generali su besni zbog poslednje akciju koju je vaš narod preduzeo! Zbog vašeg napada na [system] sistem, spremni su za borbu! Morate ovo odmah zaustaviti! Ne pokušavate valjda da započnete rat?!
+WARN_ESPIONAGE_01          | Mom narodu špijuniranje nije strano, i ono je proželo našu kulturu od gorkog hladnog rata pre mnogo vekova. Ali morate znati da će ponovljeni pokušaji krađe naših tajni u budućnosti naići na odmazdu? [framed] 
+WARN_SABOTAGE_01           | Špijunažu bismo mogli da razumemo, ali sabotažu?! Učiniću sve što mogu da generali ostanu smireni, ali ako ponovo pokušate nešto slično sumnjam da ću moći ili biti voljan da vam pomognem u budućnosti. [forced]
+WARN_BIOWEAPON_01          | Privuklo nam je pažnju da ste koristili biološko oružje na civile u [system] sistemu. Ja sam... iskreno ostao bez reči. Za dobrobit naših diplomatskih veza učiniću sve što mogu, ali ne mogu reći da sam optimista kada se radi o reakciji unutar Trijumvirata. 
+WARN_GENOCIDE_01           | Šta ste to učinili?! Prelepa i drevna kultura zauvek je izgubljena! Drhtim kad pomislim kako će Trijumviri reagovati na ovu vest: genocid [victim_raceIja] apsolutno predstavlja antitezu našoj filozofiji! 
+WARN_FINAL_WAR_01          | Napokon je galaksija odlučila da se udruži i krene ka miru, a baš ste vi odlučili da prkosite našem demokratski izabranom smeru delovanja? Posle svih naših odnosa pogrešio sam što sam bolje mislio o vama. Ali znam da će uskoro ta greška biti ispravljena! 
+WARN_COUNCIL_VOTE_01       | Priznajem da sam razočaran vašim postupcima u Savetu, ambasadore. Nadam se da je ovo bila vaša jedina greška i da ovo možemo da stavimo iza nas, i kako mi ljudi volimo da kažemo, "vreme leči sve".
+WARN_OATHBREAKER_01        | Poverenje je osnova svake diplomatije, ambasadore. Kršeći reč, pljunuli ste na naše poverenje i uveravam vas da je našim diplomatskim odnosima zadat udarac od kojeg se verovatno nikada neće oporaviti.
+WARN_ATTACKED_ALLY_01      | Ambasadore, toplo vam savetujem da ne napadate dalje na [defender_raceSku] rasu. Mi smo sa njima u savezu, pa čak ni ja neću moći da držim našu vojsku na odstojanju ako insistirate da nastavite ovo nasilničko ponašanje!
+WARN_REBELLING_AGAINST_01  | Nije moguće da ste vi izabrani umesto nas da vodite Galaktički Savet! Trijumviri će biti besni! Bojim se da će oni videti rat kao jedinu preostalu mogućnost!
+//
+PRAISE_COUNCIL_VOTE_01     | Moj dobri prijatelje, ambasadore! Samo sam hteo da vam kažem: bravo za danas u Savetu! Trijumvirat uvek ceni one koji podržavaju naše ciljeve i srećni smo što saveznik poput vas nastavlja da pridobija našu zahvalnost.
+PRAISE_COUNCIL_VOTE_02     | Ah, ambasadore [voter_empireStva]. Drago mi je što sam te našao pre nego što smo se rastali. Srećan sam što vidim da je vaša vera u ideale Trijumvirata tako jaka! Kad se vratimo domovima, obavezno mi se obratite kako bismo ojačali naše diplomatske veze!
+PRAISE_COUNCIL_VOTE_03     | Dakle, ipak ste glasali za nas? Drago mi je što ste konačno došli sebi. Ako ste spremni da uložite trud u stvaranje novih diplomatskih veza sa Triumviratom, mogao bih da se založim za vas.
+
+PRAISE_ATTACKED_ENEMY_01   | Ne sumnjam da [defender_raceSka] rasa nije očekivala da će Trijumvirat ikada krenuti u rat, ali znam i da nisu očekivali da će nam se pridružiti i naši prijatelji, [your_raceSka] rasa! Zajedno ćemo im pokazati zašto su diplomatija i poverenje najvažniji alati kojima se može ovladati!
+PRAISE_ATTACKED_ENEMY_02   | Danas je dobar dan za bitku, ambasadore. Više volimo da se sprijateljimo pod mirnijim okolnostima, ali ako rat protiv [defender_raceSke] rase označava početak dugog prijateljstva između mog i vašeg naroda, onda je ovo nesumnjivo rat vredan borbe!
+PRAISE_ATTACKED_ENEMY_03   | Trijumvirat je više nego sposoban da savlada svakog neprijatelja koji sa prezirom gleda na naše pokušaje građenja miroljubivih odnosa. Ali, ako insistirate da se pridružite ovoj borbi iz dobrih namera, sigurno je da nećemo učiniti ništa da vam stanemo na put!
+
+PRAISE_TRADE_01            | E ovo je ono o čemu pričamo! Dobri prijatelji i prosperitetni trgovinski ugovori su vredniji od neprijatelja i razarajućih ratova! Drago mi je što je vaš narod izabrao da nam budu prijatelji i siguran sam da se Trijumviri osećaju potpuno isto! 
+PRAISE_TRADE_02            | Da, poverenje je temelj diplomatije, ali obostrano korisna trgovina sigurno ne škodi, zar ne? Nadam se da ćemo moći da nastavimo naš sporazum zauvek i da će se otkriti novi načini da međusobno pomažemo jedni drugima. Kao što mi ljudi volimo da kažemo, "ruka ruku mije!" 
+
+PRAISE_REBELLING_WITH_01   | Ne bojte se, ambasadore! Mi takođe vidimo Savet onakav kakav jeste: korumpirana diktatura koja se maskira kao pokret za miran suživot. Mi ćemo se ujediniti i nećemo se zaustaviti dok se jednom zauvek ne rešimo ovih despota!
+
+ACCEPT_TRADE_01            | Ovaj trgovinski ugovor će nam oboma koristiti, ambasadore. [my_empire] i [your_empire], budimo prijatelji uz razmenu od [amt] MK godišnje! Ta cifra ima lep prizvuk, zar se ne slažete?
+RESPOND_IGNORE_THREAT_01   | Oh, sigurno je ova vaša pretnja neka vrsta šale? Da, da, šala! Haha, vrlo zabavno, ambasadore!
+RESPOND_STOP_SPYING_01     | Ovo je prljava afera. Trijumvirat se ograđuje i tvrdimo da nismo imali znanje o ovom prevarantu koji je svojevoljno postupio u špijuniranju vašeg naroda. Molimo vas da nam ga vratite i uveravam vas da se to neće ponoviti.
+RESPOND_STOP_ATTACKING_01  | Ovo je stara tradicija [my_raceIja] koju nazivamo "ratno koškanje". Smatrajte da smo se adekvatno pokoškali, ambasadore: naše flote će se sada opozvati.

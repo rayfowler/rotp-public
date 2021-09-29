@@ -1,4 +1,0 @@
-#
-# Laboratory effect
-
-Base, _ALL_  , BulLab01

@@ -1,5 +1,3 @@
-
-
 //
 // Armor techs
 // 
@@ -36,13 +34,13 @@ ARMOR_5_DETAIL   | Zwiększa żywotność statków oraz transportów o 250%. Ule
 ARMOR_6_NAME     | Pancerz z Neutronium
 ARMOR_6_ITEM     | Neutronium
 ARMOR_6_BRIEF    | Żywotność %1
-ARMOR_6_DETAIL   | Zwiększa żywotność statków oraz transportów o 250%. Ulepsza także pancerz żołnierzy, dodając 25 do wszystkich ataków naziemnych.
+ARMOR_6_DETAIL   | Zwiększa żywotność statków oraz transportów o 250%. Ulepsza także pancerz żołnierzy, dodając 30 do wszystkich ataków naziemnych.
 
 
 //
 // Atmospheric Terraforming techs
 // 
-ATMOSPHERE_0_NAME      | Terraformowanie Atmosferyczne
+ATMOSPHERE_0_NAME      | Terraformacja Atmosferyczna
 ATMOSPHERE_0_DETAIL    | Konwertuje Nieprzyjazne środowiska na Normalne środowiska kosztem 150 BC.
 
 
@@ -131,24 +129,24 @@ BATTLESUIT_0_NAME    | Pancerz
 BATTLESUIT_0_DETAIL  |
 
 BATTLESUIT_1_NAME    | Pancerz Bitewny
-BATTLESUIT_1_DETAIL  | Pancerz, który nie tylko chroni ale i dodaje siły. Plus 10 do wszystkich ataków naziemnych.
+BATTLESUIT_1_DETAIL  | Pancerz, który nie tylko chroni ale też dodaje siły. Plus 10 do wszystkich ataków naziemnych.
 
 BATTLESUIT_2_NAME    | Opancerzony Egzoszkielet
-BATTLESUIT_2_DETAIL  | Zaawansowany pancerz mobilny, który nie tylko dodaje mocy i zapewnia lepszą ochronę ale również umożliwia lewitację. Plus 20 do wszystkich ataków naziemnych.
+BATTLESUIT_2_DETAIL  | Zaawansowany pancerz mobilny, który nie tylko dodaje mocy i zapewnia lepszą ochronę, ale również umożliwia lewitację. Plus 20 do wszystkich ataków naziemnych.
 
 BATTLESUIT_3_NAME    | Powered Armor
 BATTLESUIT_3_DETAIL  | Połączenie wysokiej mobilności, technik antygrawitacyjnych i ciężkiego pancerza w celu stworzenia najbardziej zaawansowanego rozwiązania dla wojsk naziemnych. Plus 30 do wszystkich ataków naziemnych.
-
 
 //
 // Energy Focus techs for beam weapons
 // 
 BEAMFOCUS_0_NAME    | Wysokie Skupienie Energii
+BEAMFOCUS_0_BRIEF   | Plus 3 do zasięgu broni energetycznych
 BEAMFOCUS_0_DETAIL  | Zwiększa zasięg broni energetycznych o 3.
 
 BEAMFOCUS_1_NAME    | Interfejs Wyroczni
+BEAMFOCUS_1_BRIEF   | Koncentracja broni promieniowych, połowa wrogich osłon
 BEAMFOCUS_1_DETAIL  | Koncentruje atak broni promieniowych w jeden skupiony promień, ignorując połowę siły wrogich osłon.
-
 
 //
 // Biological antidote techs 
@@ -158,7 +156,6 @@ BIOANTIDOTE_0_DETAIL  | Zmniejsza straty spowodowane bronią biologiczną o 1M n
 
 BIOANTIDOTE_1_NAME    | Antidotum Uniwersalne
 BIOANTIDOTE_1_DETAIL  | Zmniejsza straty spowodowane bronią biologiczną o 2M na atak.
-
 
 //
 // Biological weapon techs 
@@ -171,7 +168,7 @@ BIOWEAPON_1_NAME     | Wirus Zagłady
 BIOWEAPON_1_BRIEF    | Broń biologiczna
 BIOWEAPON_1_DETAIL   | Straszliwa broń biologiczna zdolna do redukji maksymalnej populacji planet o 2M na atak.
 
-BIOWEAPON_2_NAME     | Bio Terminator
+BIOWEAPON_2_NAME     | Bioterminator
 BIOWEAPON_2_BRIEF    | Broń biologiczna
 BIOWEAPON_2_DETAIL   | Potworna broń biologiczna zdolna do redukji maksymalnej populacji planet o 3M na atak.
 
@@ -180,7 +177,6 @@ BIOWEAPON_2_DETAIL   | Potworna broń biologiczna zdolna do redukji maksymalnej 
 //
 BLACKHOLE_0_NAME     | Generator Czarnych Dziur
 BLACKHOLE_0_DETAIL   | Tworzy pole zakrzywiające czas i przestrzeń powodując powstanie czarnej dziury niszczącej 25% do 100% wrogich statków lub baz rakietowych, minus 2% na klasę osłony.
-
 
 //
 // Bomb weapon tech
@@ -270,6 +266,7 @@ CONTROLENV_6_BRIEF   | Pozwala lądować na planetach Napromieniowanych
 CONTROLENV_6_DETAIL  | Umożliwia kolonizację napromieniowanych planet.
 
 
+
 //
 // Deflector Shield tech
 //
@@ -301,38 +298,39 @@ DEFLECTOR_4_DETAIL    | Pochłania 4 pkt obrażeń z ataków.
 
 DEFLECTOR_5_NAME      | Tarcza Deflektorowa Klasy V
 DEFLECTOR_5_ITEM      | Klasa V
-DEFLECTOR_5_BRIEF     | Pochłania 5 uderzenia
+DEFLECTOR_5_BRIEF     | Pochłania 5 uderzeń
 DEFLECTOR_5_DETAIL    | Pochłania 5 pkt obrażeń z ataków.
 
 DEFLECTOR_6_NAME      | Tarcza Deflektorowa Klasy VI
 DEFLECTOR_6_ITEM      | Klasa VI
-DEFLECTOR_6_BRIEF     | Pochłania 6 uderzenia
+DEFLECTOR_6_BRIEF     | Pochłania 6 uderzeń
 DEFLECTOR_6_DETAIL    | Pochłania 6 pkt obrażeń z ataków.
 
 DEFLECTOR_7_NAME      | Tarcza Deflektorowa Klasy VII
 DEFLECTOR_7_ITEM      | Klasa VII
-DEFLECTOR_7_BRIEF     | Pochłania 7 uderzenia
+DEFLECTOR_7_BRIEF     | Pochłania 7 uderzeń
 DEFLECTOR_7_DETAIL    | Pochłania 7 pkt obrażeń z ataków.
 
 DEFLECTOR_8_NAME      | Tarcza Deflektorowa Klasy IX
 DEFLECTOR_8_ITEM      | Klasa IX
-DEFLECTOR_8_BRIEF     | Pochłania 9 uderzenia
+DEFLECTOR_8_BRIEF     | Pochłania 9 uderzeń
 DEFLECTOR_8_DETAIL    | Pochłania 9 pkt obrażeń z ataków.
 
 DEFLECTOR_9_NAME      | Tarcza Deflektorowa Klasy XI
 DEFLECTOR_9_ITEM      | Klasa XI
-DEFLECTOR_9_BRIEF     | Pochłania 11 uderzenia
+DEFLECTOR_9_BRIEF     | Pochłania 11 uderzeń
 DEFLECTOR_9_DETAIL    | Pochłania 11 pkt obrażeń z ataków.
 
 DEFLECTOR_10_NAME     | Tarcza Deflektorowa Klasy XIII
 DEFLECTOR_10_ITEM     | Klasa XIII
-DEFLECTOR_10_BRIEF    | Pochłania 13 uderzenia
+DEFLECTOR_10_BRIEF    | Pochłania 13 uderzeń
 DEFLECTOR_10_DETAIL   | Pochłania 13 pkt obrażeń z ataków.
 
 DEFLECTOR_11_NAME     | Tarcza Deflektorowa Klasy XV
 DEFLECTOR_11_ITEM     | Klasa XV
-DEFLECTOR_11_BRIEF    | Pochłania 15 uderzenia
+DEFLECTOR_11_BRIEF    | Pochłania 15 uderzeń
 DEFLECTOR_11_DETAIL   | Pochłania 15 pkt obrażeń z ataków.
+
 
 
 //
@@ -375,32 +373,33 @@ ECMJAMMER_4_DETAIL    | Dodaje 4 poziomy do obrony przeciw wrogim atakom rakieto
 ECMJAMMER_5_NAME      | Zakłócacz ECM Typ V
 ECMJAMMER_5_ITEM      | Zakłócacz V
 ECMJAMMER_5_BRIEF     | Obrona przeciwrakietowa 5
-ECMJAMMER_5_DETAIL    | Dodaje 5 poziomy do obrony przeciw wrogim atakom rakietowym.
+ECMJAMMER_5_DETAIL    | Dodaje 5 poziomów do obrony przeciw wrogim atakom rakietowym.
 
 ECMJAMMER_6_NAME      | Zakłócacz ECM Typ VI
 ECMJAMMER_6_ITEM      | Zakłócacz VI
 ECMJAMMER_6_BRIEF     | Obrona przeciwrakietowa 6
-ECMJAMMER_6_DETAIL    | Dodaje 6 poziomy do obrony przeciw wrogim atakom rakietowym.
+ECMJAMMER_6_DETAIL    | Dodaje 6 poziomów do obrony przeciw wrogim atakom rakietowym.
 
 ECMJAMMER_7_NAME      | Zakłócacz ECM Typ VII
 ECMJAMMER_7_ITEM      | Zakłócacz VII
 ECMJAMMER_7_BRIEF     | Obrona przeciwrakietowa 7
-ECMJAMMER_7_DETAIL    | Dodaje 7 poziomy do obrony przeciw wrogim atakom rakietowym.
+ECMJAMMER_7_DETAIL    | Dodaje 7 poziomów do obrony przeciw wrogim atakom rakietowym.
 
 ECMJAMMER_8_NAME      | Zakłócacz ECM Typ VIII
 ECMJAMMER_8_ITEM      | Zakłócacz VIII
 ECMJAMMER_8_BRIEF     | Obrona przeciwrakietowa 8
-ECMJAMMER_8_DETAIL    | Dodaje 8 poziomy do obrony przeciw wrogim atakom rakietowym.
+ECMJAMMER_8_DETAIL    | Dodaje 8 poziomów do obrony przeciw wrogim atakom rakietowym.
 
 ECMJAMMER_9_NAME      | Zakłócacz ECM Typ IX
 ECMJAMMER_9_ITEM      | Zakłócacz IX
 ECMJAMMER_9_BRIEF     | Obrona przeciwrakietowa 9
-ECMJAMMER_9_DETAIL    | Dodaje 9 poziomy do obrony przeciw wrogim atakom rakietowym.
+ECMJAMMER_9_DETAIL    | Dodaje 9 poziomów do obrony przeciw wrogim atakom rakietowym.
 
 ECMJAMMER_10_NAME     | Zakłócacz ECM Typ X
 ECMJAMMER_10_ITEM     | Zakłócacz X
 ECMJAMMER_10_BRIEF    | Obrona przeciwrakietowa 10
-ECMJAMMER_10_DETAIL   | Dodaje 10 poziomy do obrony przeciw wrogim atakom rakietowym.
+ECMJAMMER_10_DETAIL   | Dodaje 10 poziomów do obrony przeciw wrogim atakom rakietowym.
+
 
 
 //
@@ -427,7 +426,7 @@ ECORESTORATION_4_DETAIL | Eliminuje 20 jednostki odpadów przemysłowych kosztem
 //
 PULSAR_0_NAME     | Pulsar Energetyczny
 PULSAR_0_BRIEF    | Rozpręża się powodując 1-5 uderzeń
-PULSAR_0_DETAIL   | Silna modyfikacja silnika generująca nagły sferyczny impuls energii, który uderza wszystkie pobliskie statki za 5 pkt obrażeń, +1 pkt na 2 statki.
+PULSAR_0_DETAIL   | Silna modyfikacja silnika generująca nagły sferyczny impuls energii, który uderza wszystkie pobliskie statki za 5 pkt obrażeń, +1 pkt na dwa statki.
 
 PULSAR_1_NAME     | Pulsar Jonowy
 PULSAR_1_BRIEF    | Rozpręża się powodując 2-10 uderzeń
@@ -438,63 +437,63 @@ PULSAR_1_DETAIL   | Potężna modyfikacja silnika generująca nagły sferyczny i
 // Engine techs
 //
 ENGINE_0_NAME    | Silnik Retro
-ENGINE_0_DETAIL  | Porusza statki z prędkością Warp 1 i umożliwia manewrowość klasy I w walce.
+ENGINE_0_DETAIL  | Przemieszcza statki z prędkością Warp %1 i umożliwia manewrowość klasy I w walce.
 ENGINE_0_ITEM    | Retro
 ENGINE_0_ITEM2   | Klasa 1
 ENGINE_0_BRIEF   | Warp 1  Obrona %1
 ENGINE_0_BRIEF2  | Szybkość Bitewna %1
 
 ENGINE_1_NAME    | Silnik Nuklearny
-ENGINE_1_DETAIL  | Porusza statki z prędkością Warp 2 i umożliwia manewrowość klasy II w walce.
+ENGINE_1_DETAIL  | Przemieszcza statki z prędkością Warp %1 i umożliwia manewrowość klasy II w walce.
 ENGINE_1_ITEM    | Nuklearny
 ENGINE_1_ITEM2   | Klasa 2
 ENGINE_1_BRIEF   | Warp 2  Obrona %1
 ENGINE_1_BRIEF2  | Szybkość Bitewna %1
 
 ENGINE_2_NAME    | Silnik Podświetlny
-ENGINE_2_DETAIL  | Porusza statki z prędkością Warp 3 i umożliwia manewrowość klasy III w walce.
+ENGINE_2_DETAIL  | Przemieszcza statki z prędkością Warp %1 i umożliwia manewrowość klasy III w walce.
 ENGINE_2_ITEM    | Podświetlny
 ENGINE_2_ITEM2   | Klasa 3
 ENGINE_2_BRIEF   | Warp 3  Obrona %1
 ENGINE_2_BRIEF2  | Szybkość Bitewna %1
 
 ENGINE_3_NAME    | Silnik Fuzyjny
-ENGINE_3_DETAIL  | Porusza statki z prędkością Warp 4 i umożliwia manewrowość klasy IV w walce.
+ENGINE_3_DETAIL  | Przemieszcza statki z prędkością Warp %1 i umożliwia manewrowość klasy IV w walce.
 ENGINE_3_ITEM    | Fuzyjny
 ENGINE_3_ITEM2   | Klasa 4
 ENGINE_3_BRIEF   | Warp 4  Obrona %1
 ENGINE_3_BRIEF2  | Szybkość Bitewna %1
 
 ENGINE_4_NAME    | Silnik Impulsowy
-ENGINE_4_DETAIL  | Porusza statki z prędkością Warp 5 i umożliwia manewrowość klasy V w walce.
+ENGINE_4_DETAIL  | Przemieszcza statki z prędkością Warp %1 i umożliwia manewrowość klasy V w walce.
 ENGINE_4_ITEM    | Impulsowy
 ENGINE_4_ITEM2   | Klasa 5
 ENGINE_4_BRIEF   | Warp 5  Obrona %1
 ENGINE_4_BRIEF2  | Szybkość Bitewna %1
 
 ENGINE_5_NAME    | Silnik Jonowy
-ENGINE_5_DETAIL  | MPorusza statki z prędkością Warp 6 i umożliwia manewrowość klasy VI w walce.
+ENGINE_5_DETAIL  | Przemieszcza statki z prędkością Warp %1 i umożliwia manewrowość klasy VI w walce.
 ENGINE_5_ITEM    | Jonowy
 ENGINE_5_ITEM2   | Klasa 6
 ENGINE_5_BRIEF   | Warp 6  Obrona %1
 ENGINE_5_BRIEF2  | Szybkość Bitewna %1
 
-ENGINE_6_NAME    | Silnik Przeciwmaterii
-ENGINE_6_DETAIL  | Porusza statki z prędkością Warp 7 i umożliwia manewrowość klasy VII w walce.
-ENGINE_6_ITEM    | Przeciwmaterii
+ENGINE_6_NAME    | Silnik Antymaterii
+ENGINE_6_DETAIL  | Przemieszcza statki z prędkością Warp %1 i umożliwia manewrowość klasy VII w walce.
+ENGINE_6_ITEM    | Antymateria
 ENGINE_6_ITEM2   | Klasa 7
 ENGINE_6_BRIEF   | Warp 7  Obrona %1
 ENGINE_6_BRIEF2  | Szybkość Bitewna %1
 
 ENGINE_7_NAME    | Silnik Międzyfazowy
-ENGINE_7_DETAIL  | Porusza statki z prędkością Warp 8 i umożliwia manewrowość klasy VIII w walce.
+ENGINE_7_DETAIL  | Przemieszcza statki z prędkością Warp %1 i umożliwia manewrowość klasy VIII w walce.
 ENGINE_7_ITEM    | Międzyfazowy
 ENGINE_7_ITEM2   | Klasa 8
 ENGINE_7_BRIEF   | Warp 8  Obrona %1
 ENGINE_7_BRIEF2  | Szybkość Bitewna %1
 
 ENGINE_8_NAME    | Silnik Hiper
-ENGINE_8_DETAIL  | Porusza statki z prędkością Warp 9 i umożliwia manewrowość klasy IX w walce.
+ENGINE_8_DETAIL  | Przemieszcza statki z prędkością Warp %1 i umożliwia manewrowość klasy IX w walce.
 ENGINE_8_ITEM    | Hiper
 ENGINE_8_ITEM2   | Klasa 9
 ENGINE_8_BRIEF   | Warp 9  Obrona %1
@@ -505,28 +504,28 @@ ENGINE_8_BRIEF2  | Szybkość Bitewna %1
 // Fuel Range techs
 //
 FUELRANGE_0_NAME   | Zbiorniki Paliwa
-FUELRANGE_0_DETAIL | Rezerwy paliwa pozwalają statkom podróżować na odległość do 3 lat świetlnych od najbliższej kolonii.
+FUELRANGE_0_DETAIL | Rezerwy paliwa pozwalają statkom podróżować na odległość do %1 lat świetlnych od najbliższej kolonii.
 
 FUELRANGE_1_NAME   | Ogniwa Paliwa Wodorowego
-FUELRANGE_1_DETAIL | Rezerwy paliwa pozwalają statkom podróżować na odległość do 4 lat świetlnych od najbliższej kolonii.
+FUELRANGE_1_DETAIL | Rezerwy paliwa pozwalają statkom podróżować na odległość do %1 lat świetlnych od najbliższej kolonii.
 
 FUELRANGE_2_NAME   | Ogniwa Paliwa Irydowego
-FUELRANGE_2_DETAIL | Rezerwy paliwa pozwalają statkom podróżować na odległość do 5 lat świetlnych od najbliższej kolonii.
+FUELRANGE_2_DETAIL | Rezerwy paliwa pozwalają statkom podróżować na odległość do %1 lat świetlnych od najbliższej kolonii.
 
 FUELRANGE_3_NAME   | Ogniwa Paliwa Irydowego
-FUELRANGE_3_DETAIL | Rezerwy paliwa pozwalają statkom podróżować na odległość do 6 lat świetlnych od najbliższej kolonii.
+FUELRANGE_3_DETAIL | Rezerwy paliwa pozwalają statkom podróżować na odległość do %1 lat świetlnych od najbliższej kolonii.
 
 FUELRANGE_4_NAME   | Kryształy Dotomitu
-FUELRANGE_4_DETAIL | Rezerwy paliwa pozwalają statkom podróżować na odległość do 7 lat świetlnych od najbliższej kolonii.
+FUELRANGE_4_DETAIL | Rezerwy paliwa pozwalają statkom podróżować na odległość do %1 lat świetlnych od najbliższej kolonii.
 
 FUELRANGE_5_NAME   | Ogniwa Paliwa Uridium
-FUELRANGE_5_DETAIL | Rezerwy paliwa pozwalają statkom podróżować na odległość do 8 lat świetlnych od najbliższej kolonii.
+FUELRANGE_5_DETAIL | Rezerwy paliwa pozwalają statkom podróżować na odległość do %1 lat świetlnych od najbliższej kolonii.
 
 FUELRANGE_6_NAME   | Ogniwa Paliwa Reajax II
-FUELRANGE_6_DETAIL | Rezerwy paliwa pozwalają statkom podróżować na odległość do 9 lat świetlnych od najbliższej kolonii.
+FUELRANGE_6_DETAIL | Rezerwy paliwa pozwalają statkom podróżować na odległość do %1 lat świetlnych od najbliższej kolonii.
 
 FUELRANGE_7_NAME   | Kryształy Trójlitium
-FUELRANGE_7_DETAIL | Rezerwy paliwa pozwalają statkom podróżować na odległość do 10 lat świetlnych od najbliższej kolonii.
+FUELRANGE_7_DETAIL | Rezerwy paliwa pozwalają statkom podróżować na odległość do %1 lat świetlnych od najbliższej kolonii.
 
 FUELRANGE_8_NAME   | Ogniwa Thorium
 FUELRANGE_8_DETAIL | Rezerwy paliwa pozwalają statkom podróżować na dowolny dystans od najbliższej kolonii.
@@ -536,204 +535,204 @@ FUELRANGE_8_DETAIL | Rezerwy paliwa pozwalają statkom podróżować na dowolny 
 // Future Computer techs
 //
 FUTURECOMP_0_NAME    | Komputer Przyszłości I
-FUTURECOMP_0_DETAIL  | Ogólne usprawnienia technik komputerowych.
+FUTURECOMP_0_DETAIL  | Ogólne usprawnienia technologii komputerowych.
 
 FUTURECOMP_1_NAME    | Komputer Przyszłości II
-FUTURECOMP_1_DETAIL  | Ogólne usprawnienia technik komputerowych.
+FUTURECOMP_1_DETAIL  | Ogólne usprawnienia technologii komputerowych.
 
 FUTURECOMP_2_NAME    | Komputer Przyszłości III
-FUTURECOMP_2_DETAIL  | Ogólne usprawnienia technik komputerowych.
+FUTURECOMP_2_DETAIL  | Ogólne usprawnienia technologii komputerowych.
 
 FUTURECOMP_3_NAME    | Komputer Przyszłości IV
-FUTURECOMP_3_DETAIL  | Ogólne usprawnienia technik komputerowych.
+FUTURECOMP_3_DETAIL  | Ogólne usprawnienia technologii komputerowych.
 
 FUTURECOMP_4_NAME    | Komputer Przyszłości V
-FUTURECOMP_4_DETAIL  | Ogólne usprawnienia technik komputerowych.
+FUTURECOMP_4_DETAIL  | Ogólne usprawnienia technologii komputerowych.
 
 FUTURECOMP_5_NAME    | Komputer Przyszłości VI
-FUTURECOMP_5_DETAIL  | Ogólne usprawnienia technik komputerowych.
+FUTURECOMP_5_DETAIL  | Ogólne usprawnienia technologii komputerowych.
 
 FUTURECOMP_6_NAME    | Komputer Przyszłości VII
-FUTURECOMP_6_DETAIL  | Ogólne usprawnienia technik komputerowych.
+FUTURECOMP_6_DETAIL  | Ogólne usprawnienia technologii komputerowych.
 
 FUTURECOMP_7_NAME    | Komputer Przyszłości VIII
-FUTURECOMP_7_DETAIL  | Ogólne usprawnienia technik komputerowych.
+FUTURECOMP_7_DETAIL  | Ogólne usprawnienia technologii komputerowych.
 
 FUTURECOMP_8_NAME    | Komputer Przyszłości IX
-FUTURECOMP_8_DETAIL  | Ogólne usprawnienia technik komputerowych.
+FUTURECOMP_8_DETAIL  | Ogólne usprawnienia technologii komputerowych.
 
 FUTURECOMP_9_NAME    | Komputer Przyszłości X
-FUTURECOMP_9_DETAIL  | Ogólne usprawnienia technik komputerowych.
+FUTURECOMP_9_DETAIL  | Ogólne usprawnienia technologii komputerowych.
 
 
 //
 // Future Construction techs
 //
 FUTURECONST_0_NAME    | Konstrukcja Przyszłości I
-FUTURECONST_0_DETAIL  | Ogólne usprawnienia technik konstrukcyjnych.
+FUTURECONST_0_DETAIL  | Ogólne usprawnienia technologii konstrukcyjnych.
 
 FUTURECONST_1_NAME    | Konstrukcja Przyszłości II
-FUTURECONST_1_DETAIL  | Ogólne usprawnienia technik konstrukcyjnych.
+FUTURECONST_1_DETAIL  | Ogólne usprawnienia technologii konstrukcyjnych.
 
 FUTURECONST_2_NAME    | Konstrukcja Przyszłości III
-FUTURECONST_2_DETAIL  | Ogólne usprawnienia technik konstrukcyjnych.
+FUTURECONST_2_DETAIL  | Ogólne usprawnienia technologii konstrukcyjnych.
 
 FUTURECONST_3_NAME    | Konstrukcja Przyszłości IV
-FUTURECONST_3_DETAIL  | Ogólne usprawnienia technik konstrukcyjnych.
+FUTURECONST_3_DETAIL  | Ogólne usprawnienia technologii konstrukcyjnych.
 
 FUTURECONST_4_NAME    | Konstrukcja Przyszłości V
-FUTURECONST_4_DETAIL  | Ogólne usprawnienia technik konstrukcyjnych.
+FUTURECONST_4_DETAIL  | Ogólne usprawnienia technologii konstrukcyjnych.
 
 FUTURECONST_5_NAME    | Konstrukcja Przyszłości VI
-FUTURECONST_5_DETAIL  | Ogólne usprawnienia technik konstrukcyjnych.
+FUTURECONST_5_DETAIL  | Ogólne usprawnienia technologii konstrukcyjnych.
 
 FUTURECONST_6_NAME    | Konstrukcja Przyszłości VII
-FUTURECONST_6_DETAIL  | Ogólne usprawnienia technik konstrukcyjnych.
+FUTURECONST_6_DETAIL  | Ogólne usprawnienia technologii konstrukcyjnych.
 
 FUTURECONST_7_NAME    | Konstrukcja Przyszłości VIII
-FUTURECONST_7_DETAIL  | Ogólne usprawnienia technik konstrukcyjnych.
+FUTURECONST_7_DETAIL  | Ogólne usprawnienia technologii konstrukcyjnych.
 
 FUTURECONST_8_NAME    | Konstrukcja Przyszłości IX
-FUTURECONST_8_DETAIL  | Ogólne usprawnienia technik konstrukcyjnych.
+FUTURECONST_8_DETAIL  | Ogólne usprawnienia technologii konstrukcyjnych.
 
 FUTURECONST_9_NAME    | Konstrukcja Przyszłości X
-FUTURECONST_9_DETAIL  | Ogólne usprawnienia technik konstrukcyjnych.
+FUTURECONST_9_DETAIL  | Ogólne usprawnienia technologii konstrukcyjnych.
 
 
 //
 // Future Force Field techs
 //
 FUTUREFORCE_0_NAME    | Pole Siłowe Przyszłości I
-FUTUREFORCE_0_DETAIL  | Ogólne usprawnienia technik pól siłowych.
+FUTUREFORCE_0_DETAIL  | Ogólne usprawnienia technologii pola siłowego.
 
 FUTUREFORCE_1_NAME    | Pole Siłowe Przyszłości II
-FUTUREFORCE_1_DETAIL  | Ogólne usprawnienia technik pól siłowych.
+FUTUREFORCE_1_DETAIL  | Ogólne usprawnienia technologii pola siłowego.
 
 FUTUREFORCE_2_NAME    | Pole Siłowe Przyszłości III
-FUTUREFORCE_2_DETAIL  | Ogólne usprawnienia technik pól siłowych.
+FUTUREFORCE_2_DETAIL  | Ogólne usprawnienia technologii pola siłowego.
 
 FUTUREFORCE_3_NAME    | Pole Siłowe Przyszłości IV
-FUTUREFORCE_3_DETAIL  | Ogólne usprawnienia technik pól siłowych.
+FUTUREFORCE_3_DETAIL  | Ogólne usprawnienia technologii pola siłowego.
 
 FUTUREFORCE_4_NAME    | Pole Siłowe Przyszłości V
-FUTUREFORCE_4_DETAIL  | Ogólne usprawnienia technik pól siłowych.
+FUTUREFORCE_4_DETAIL  | Ogólne usprawnienia technologii pola siłowego.
 
 FUTUREFORCE_5_NAME    | Pole Siłowe Przyszłości VI
-FUTUREFORCE_5_DETAIL  | Ogólne usprawnienia technik pól siłowych.
+FUTUREFORCE_5_DETAIL  | Ogólne usprawnienia technologii pola siłowego.
 
 FUTUREFORCE_6_NAME    | Pole Siłowe Przyszłości VII
-FUTUREFORCE_6_DETAIL  | Ogólne usprawnienia technik pól siłowych.
+FUTUREFORCE_6_DETAIL  | Ogólne usprawnienia technologii pola siłowego.
 
 FUTUREFORCE_7_NAME    | Pole Siłowe Przyszłości VIII
-FUTUREFORCE_7_DETAIL  | Ogólne usprawnienia technik pól siłowych.
+FUTUREFORCE_7_DETAIL  | Ogólne usprawnienia technologii pola siłowego.
 
 FUTUREFORCE_8_NAME    | Pole Siłowe Przyszłości IX
-FUTUREFORCE_8_DETAIL  | Ogólne usprawnienia technik pól siłowych.
+FUTUREFORCE_8_DETAIL  | Ogólne usprawnienia technologii pola siłowego.
 
 FUTUREFORCE_9_NAME    | Pole Siłowe Przyszłości X
-FUTUREFORCE_9_DETAIL  | Ogólne usprawnienia technik pól siłowych.
+FUTUREFORCE_9_DETAIL  | Ogólne usprawnienia technologii pola siłowego.
 
 
 //
 // Future Planetology techs
 //
 FUTUREPLANET_0_NAME    | Planetologia Przyszłości I
-FUTUREPLANET_0_DETAIL  | Ogólne usprawnienia technik planetologii.
+FUTUREPLANET_0_DETAIL  | Ogólne usprawnienia technologii planetologicznych.
 
 FUTUREPLANET_1_NAME    | Planetologia Przyszłości II
-FUTUREPLANET_1_DETAIL  | Ogólne usprawnienia technik planetologii.
+FUTUREPLANET_1_DETAIL  | Ogólne usprawnienia technologii planetologicznych.
 
 FUTUREPLANET_2_NAME    | Planetologia Przyszłości III
-FUTUREPLANET_2_DETAIL  | Ogólne usprawnienia technik planetologii.
+FUTUREPLANET_2_DETAIL  | Ogólne usprawnienia technologii planetologicznych.
 
 FUTUREPLANET_3_NAME    | Planetologia Przyszłości IV
-FUTUREPLANET_3_DETAIL  | Ogólne usprawnienia technik planetologii.
+FUTUREPLANET_3_DETAIL  | Ogólne usprawnienia technologii planetologicznych.
 
 FUTUREPLANET_4_NAME    | Planetologia Przyszłości V
-FUTUREPLANET_4_DETAIL  | Ogólne usprawnienia technik planetologii.
+FUTUREPLANET_4_DETAIL  | Ogólne usprawnienia technologii planetologicznych.
 
 FUTUREPLANET_5_NAME    | Planetologia Przyszłości VI
-FUTUREPLANET_5_DETAIL  | Ogólne usprawnienia technik planetologii.
+FUTUREPLANET_5_DETAIL  | Ogólne usprawnienia technologii planetologicznych.
 
 FUTUREPLANET_6_NAME    | Planetologia Przyszłości VII
-FUTUREPLANET_6_DETAIL  | Ogólne usprawnienia technik planetologii.
+FUTUREPLANET_6_DETAIL  | Ogólne usprawnienia technologii planetologicznych.
 
 FUTUREPLANET_7_NAME    | Planetologia Przyszłości VIII
-FUTUREPLANET_7_DETAIL  | Ogólne usprawnienia technik planetologii.
+FUTUREPLANET_7_DETAIL  | Ogólne usprawnienia technologii planetologicznych.
 
 FUTUREPLANET_8_NAME    | Planetologia Przyszłości IX
-FUTUREPLANET_8_DETAIL  | Ogólne usprawnienia technik planetologii.
+FUTUREPLANET_8_DETAIL  | Ogólne usprawnienia technologii planetologicznych.
 
 FUTUREPLANET_9_NAME    | Planetologia Przyszłości X
-FUTUREPLANET_9_DETAIL  | Ogólne usprawnienia technik planetologii.
+FUTUREPLANET_9_DETAIL  | Ogólne usprawnienia technologii planetologicznych.
 
 
 //
 // Future Propulsion techs
 //
 FUTUREPROP_0_NAME    | Napęd Przyszłości I
-FUTUREPROP_0_DETAIL  | Ogólne usprawnienia technik napędowych.
+FUTUREPROP_0_DETAIL  | Ogólne usprawnienia technologii napędowych.
 
 FUTUREPROP_1_NAME    | Napęd Przyszłości II
-FUTUREPROP_1_DETAIL  | Ogólne usprawnienia technik napędowych.
+FUTUREPROP_1_DETAIL  | Ogólne usprawnienia technologii napędowych.
 
 FUTUREPROP_2_NAME    | Napęd Przyszłości III
-FUTUREPROP_2_DETAIL  | Ogólne usprawnienia technik napędowych.
+FUTUREPROP_2_DETAIL  | Ogólne usprawnienia technologii napędowych.
 
 FUTUREPROP_3_NAME    | Napęd Przyszłości IV
-FUTUREPROP_3_DETAIL  | Ogólne usprawnienia technik napędowych.
+FUTUREPROP_3_DETAIL  | Ogólne usprawnienia technologii napędowych.
 
 FUTUREPROP_4_NAME    | Napęd Przyszłości V
-FUTUREPROP_4_DETAIL  | Ogólne usprawnienia technik napędowych.
+FUTUREPROP_4_DETAIL  | Ogólne usprawnienia technologii napędowych.
 
 FUTUREPROP_5_NAME    | Napęd Przyszłości VI
-FUTUREPROP_5_DETAIL  | Ogólne usprawnienia technik napędowych.
+FUTUREPROP_5_DETAIL  | Ogólne usprawnienia technologii napędowych.
 
 FUTUREPROP_6_NAME    | Napęd Przyszłości VII
-FUTUREPROP_6_DETAIL  | Ogólne usprawnienia technik napędowych.
+FUTUREPROP_6_DETAIL  | Ogólne usprawnienia technologii napędowych.
 
 FUTUREPROP_7_NAME    | Napęd Przyszłości VIII
-FUTUREPROP_7_DETAIL  | Ogólne usprawnienia technik napędowych.
+FUTUREPROP_7_DETAIL  | Ogólne usprawnienia technologii napędowych.
 
 FUTUREPROP_8_NAME    | Napęd Przyszłości IX
-FUTUREPROP_8_DETAIL  | Ogólne usprawnienia technik napędowych.
+FUTUREPROP_8_DETAIL  | Ogólne usprawnienia technologii napędowych.
 
 FUTUREPROP_9_NAME    | Napęd Przyszłości X
-FUTUREPROP_9_DETAIL  | Ogólne usprawnienia technik napędowych.
+FUTUREPROP_9_DETAIL  | Ogólne usprawnienia technologii napędowych.
 
 
 //
 // Future Weapon techs
 //
 FUTUREWEAPON_0_NAME    | Broń Przyszłości I
-FUTUREWEAPON_0_DETAIL  | Ogólne usprawnienia technik militarnych.
+FUTUREWEAPON_0_DETAIL  | Ogólne usprawnienia technologii militarnych.
 
 FUTUREWEAPON_1_NAME    | Broń Przyszłości II
-FUTUREWEAPON_1_DETAIL  | Ogólne usprawnienia technik militarnych.
+FUTUREWEAPON_1_DETAIL  | Ogólne usprawnienia technologii militarnych.
 
 FUTUREWEAPON_2_NAME    | Broń Przyszłości III
-FUTUREWEAPON_2_DETAIL  | Ogólne usprawnienia technik militarnych.
+FUTUREWEAPON_2_DETAIL  | Ogólne usprawnienia technologii militarnych.
 
 FUTUREWEAPON_3_NAME    | Broń Przyszłości IV
-FUTUREWEAPON_3_DETAIL  | Ogólne usprawnienia technik militarnych.
+FUTUREWEAPON_3_DETAIL  | Ogólne usprawnienia technologii militarnych.
 
 FUTUREWEAPON_4_NAME    | Broń Przyszłości V
-FUTUREWEAPON_4_DETAIL  | Ogólne usprawnienia technik militarnych.
+FUTUREWEAPON_4_DETAIL  | Ogólne usprawnienia technologii militarnych.
 
 FUTUREWEAPON_5_NAME    | Broń Przyszłości VI
-FUTUREWEAPON_5_DETAIL  | Ogólne usprawnienia technik militarnych.
+FUTUREWEAPON_5_DETAIL  | Ogólne usprawnienia technologii militarnych.
 
 FUTUREWEAPON_6_NAME    | Broń Przyszłości VII
-FUTUREWEAPON_6_DETAIL  | Ogólne usprawnienia technik militarnych.
+FUTUREWEAPON_6_DETAIL  | Ogólne usprawnienia technologii militarnych.
 
 FUTUREWEAPON_7_NAME    | Broń Przyszłości VIII
-FUTUREWEAPON_7_DETAIL  | Ogólne usprawnienia technik militarnych.
+FUTUREWEAPON_7_DETAIL  | Ogólne usprawnienia technologii militarnych.
 
 FUTUREWEAPON_8_NAME    | Broń Przyszłości IX
-FUTUREWEAPON_8_DETAIL  | Ogólne usprawnienia technik militarnych.
+FUTUREWEAPON_8_DETAIL  | Ogólne usprawnienia technologii militarnych.
 
 FUTUREWEAPON_9_NAME    | Broń Przyszłości X
-FUTUREWEAPON_9_DETAIL  | Ogólne usprawnienia technik militarnych.
+FUTUREWEAPON_9_DETAIL  | Ogólne usprawnienia technologii militarnych.
 
 
 //
@@ -796,31 +795,31 @@ IMPRINDUSTRY_7_DETAIL   | Redukuje koszt produkcji fabryki do 2 BC.
 //
 // Improved Terraforming techs
 //
-IMPRTFORM_0_NAME        | Ulepszone Terraformowanie +10
+IMPRTFORM_0_NAME        | Ulepszona Terraformacja +10
 IMPRTFORM_0_DETAIL      | Zwiększa maksymalną populację planety o 10M kosztem 5 BC za milion.
 
-IMPRTFORM_1_NAME        | Ulepszone Terraformowanie +20
+IMPRTFORM_1_NAME        | Ulepszona Terraformacja +20
 IMPRTFORM_1_DETAIL      | Zwiększa maksymalną populację planety o 20M kosztem 5 BC za milion.
 
-IMPRTFORM_2_NAME        | Ulepszone Terraformowanie +30
+IMPRTFORM_2_NAME        | Ulepszona Terraformacja +30
 IMPRTFORM_2_DETAIL      | Zwiększa maksymalną populację planety o 30M kosztem 4 BC za milion.
 
-IMPRTFORM_3_NAME        | Ulepszone Terraformowanie +40
+IMPRTFORM_3_NAME        | Ulepszona Terraformacja +40
 IMPRTFORM_3_DETAIL      | Zwiększa maksymalną populację planety o 40M kosztem 4 BC za milion.
 
-IMPRTFORM_4_NAME        | Ulepszone Terraformowanie +50
+IMPRTFORM_4_NAME        | Ulepszona Terraformacja +50
 IMPRTFORM_4_DETAIL      | Zwiększa maksymalną populację planety o 50M kosztem 3 BC za milion.
 
-IMPRTFORM_5_NAME        | Ulepszone Terraformowanie +60
+IMPRTFORM_5_NAME        | Ulepszona Terraformacja +60
 IMPRTFORM_5_DETAIL      | Zwiększa maksymalną populację planety o 60M kosztem 3 BC za milion.
 
-IMPRTFORM_6_NAME        | Ulepszone Terraformowanie +80
+IMPRTFORM_6_NAME        | Ulepszona Terraformacja +80
 IMPRTFORM_6_DETAIL      | Zwiększa maksymalną populację planety o 80M kosztem 2 BC za milion.
 
-IMPRTFORM_7_NAME        | Ulepszone Terraformowanie +100
+IMPRTFORM_7_NAME        | Ulepszona Terraformacja +100
 IMPRTFORM_7_DETAIL      | Zwiększa maksymalną populację planety o 100M kosztem 2 BC za milion.
 
-IMPRTFORM_8_NAME        | Terraformowanie Całkowite
+IMPRTFORM_8_NAME        | Terraformacja Całkowita
 IMPRTFORM_8_DETAIL      | Zwiększa maksymalną populację planety o 120M kosztem 2 BC za milion.
 
 
@@ -963,7 +962,7 @@ REPULSOR_0_DETAIL  | Odpycha wrogie statki o 1 pole od broniącego się statku. 
 // Reserve Fuel tech 
 //
 RSRVFUEL_0_NAME    | Rezerwowe Zbiorniki Paliwa
-RSRVFUEL_0_BRIEF   | Zwiększa zasięg statku o 3 lata świetlne.
+RSRVFUEL_0_BRIEF   | Zwiększa zasięg statku o %1 lata świetlne.
 RSRVFUEL_0_DETAIL  | Rezerwowe Zbiorniki Paliwa zwiększają zasięg statku kosmicznego.
 
 
@@ -986,20 +985,26 @@ ROBOTCTRL_4_NAME     | Ulepszona Robotyka VII
 ROBOTCTRL_4_DETAIL   | Pozwala jednostce populacji obsługiwać 7 fabryk. Koszt modernizacji to 2.5 standardowego kosztu budowy fabryki.
 
 
+
 //
 // Scanner techs 
 //
 SCANNER_0_NAME       | Skaner Bitewny
+SCANNER_0_BRIEF      | Scanuje wrogie statki podczas bitwy
 SCANNER_0_DETAIL     | Pokazuje techniczne specyfikacje wrogich statków podczas bitwy.
 
 SCANNER_1_NAME       | Głęboki Skaner Przestrzeni
+SCANNER_1_BRIEF      | Wykrywa wrogie statki w odległości do 5 lś
 SCANNER_1_DETAIL     | Wykrywa wrogie statki do 5 lat świetlnych od twoich kolonii i 1 rok świetlny od twoich statków.
 
 SCANNER_2_NAME       | Ulepszony Skaner Przestrzeni
+SCANNER_2_BRIEF      | Wykrywa wrogie statki i punkty docelowe w odległości do 7 lś
 SCANNER_2_DETAIL     | Wykrywa wrogie statki do 7 lat świetlnych od twoich kolonii i 2 lata świetlne od twoich statków. Ujawnia punkt docelowy wrogiej floty.
 
 SCANNER_3_NAME       | Zaawansowany Skaner Przestrzeni
+SCANNER_3_BRIEF      | Pozwala na wykrycie planet w odległości do 9 lś
 SCANNER_3_DETAIL     | Wykrywa wrogie statki do 9 lat świetlnych od twoich kolonii i 3 lata świetlne od twoich statków.
+
 
 
 //
@@ -1014,8 +1019,9 @@ SHIPINERTIAL_1_BRIEF    | Plus +4 do manewrowości
 SHIPINERTIAL_1_DETAIL   | Eliminuje inercję statków, dodając 2 klasy manewrowości w walce. Dodatkowo redukuje efekty ataku typu Czarna Dziura o 30%.
 
 
+
 //
-// Ship Nullifier techs 
+// Ship Inertial techs 
 //
 SHIPNULLIFIER_0_NAME     | Eliminator Technologiczny
 SHIPNULLIFIER_0_BRIEF    | Niszczy komputery wroga
@@ -1119,6 +1125,7 @@ SHIPWPN_23_NAME        | Kryształowy Promień
 SHIPWPN_23_DETAIL      | Promień okalający tarcze wroga, powodujący 4 ataki po 100-300 pkt obrażeń każdy. Posiada zasięg 3 pól.
 
 
+
 //
 // Soil Enrichment techs
 //
@@ -1127,6 +1134,7 @@ SOILENRICH_0_DETAIL   | Konwertuje standardowe planety w środowiska żyzne, zwi
 
 SOILENRICH_1_NAME     | Zaawansowane Wzbogacanie Gleby
 SOILENRICH_1_DETAIL   | Konwertuje standardowe planety w środowiska typu gaia, dwukrotnie zwiększając wzrost populacji oraz bazowy rozmiar planety o 50%, jednorazowym kosztem 300 BC.
+
 
 
 //
@@ -1161,6 +1169,7 @@ STREAMWPN_1_DETAIL  | Emituje skoncentrowaną wiązkę neutronów, redukując pa
 //
 SUBSPACEINT_0_NAME    | Interdyktor Podprzestrzenny
 SUBSPACEINT_0_DETAIL  | Uniemożliwia wrogowi użycie teleporterów podprzestrzennych i transporterów bitewnych. Urządzenie to jest automatycznie instalowane w bazach rakietowych.
+
 
 
 //

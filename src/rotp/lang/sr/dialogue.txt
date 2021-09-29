@@ -1,0 +1,141 @@
+//
+// Dialogue that is not race-specific
+//
+
+DIPLO_TECH_REQUEST_MENU_01   | Koja tehnologija vas zanima?
+DIPLO_TECH_COUNTER_MENU_01   | Šta biste menjali za nju?
+DIPLO_TRADE_MENU_01          | Predlažete trgovinski ugovor od:
+DIPLO_TREATY_MENU_01         | Šta želite da uradite?
+DIPLO_THREATEN_MENU_01       | Čime pretite?
+DIPLO_DECLARE_WAR_MENU_01    | Da li ste sigurni da želite da započnete rat?
+DIPLO_JOINT_WAR_MENU_01      | Kome bi trebalo da objavimo rat?
+DIPLO_BREAK_ALLIANCE_MENU_01 | Koji savez želite da prekinete?
+DIPLO_OFFER_AID_MENU_01      | Šta želite da poklonite?
+DIPLO_OFFER_TECH_MENU_01     | Šta želite da poklonite?
+
+DECLINE_OFFER_01           | [my_nameTitle] [my_name] odbija.
+DECLINE_OFFER_02           | [my_raceSka] rasa je razmotrila vašu ponudu i odbili su je.
+DECLINE_OFFER_03           | S poštovanjem odbijamo vašu ponudu.
+DECLINE_OFFER_04           | Trenutno nismo zainteresovani.
+DECLINE_OFFER_05           | [my_race] rasa ne smatraju da je vaša ponuda fer.
+DECLINE_OFFER_06           | Trenutno ne bi bilo u našem najboljem interesu da prihvatimo vašu ponudu.
+DECLINE_OFFER_07           | Možda se nas pomešali sa nekim lakovernim budalama. Odbijamo vašu ponudu.
+DECLINE_OFFER_08           | Vaša ponuda nam ne deluje da je fer.
+DECLINE_OFFER_09           | Nažalost moramo da odbijemo.
+
+DECLINE_ENEMY_ALLY_01      | [my_race_plural] nikada neće sarađivati sa saveznicima omraženih [other_raceIja].
+DECLINE_ALREADY_ALLIED_01  | [my_race_plural] i naši saveznici ne mogu da uzmu u obzir vaš zahtev sve dok ste u savezu sa drugim imperijama.
+DECLINE_NO_WAR_ON_ALLY_01  | Nećemo objaviti rat našim saveznicima.
+DECLINE_PEACE_TREATY_01    | Nećemo da prekršimo mirovni sporazum sa [other_race] rasom.
+
+DECLINE_ANNOYED_01         | [your_race_plural] su stvorenja koja laju a ne ujedaju. Dosta nam je vašeg razglabanja.
+DECLINE_ANNOYED_01         | [your_nameTitle] [your_name], oprobavate naše strpljenje. Možda bi bilo bolje da nastavimo razgovor nekom drugom prilikom.
+DECLINE_ANNOYED_01         | [my_nameTitle] [my_name] je čuo dovoljno. Pričaćemo nekom drugom prilikom. 
+DECLINE_ANNOYED_02         | Umorni smo od diplomatskih pregovora. Možemo da nastavim diskusiju drugom prilikom.
+DECLINE_ANNOYED_02         | Ovi razgovori ne vode ničemu. Moramo se povući.
+DECLINE_ANNOYED_02         | Idemo sada.
+DECLINE_ANNOYED_03         | Mnogo se izvinjavamo, [your_nameTitle] [your_name], ali druge dužnosti nas zovu.
+DECLINE_ANNOYED_03         | Izvinite, naše vreme je isteklo.
+DECLINE_ANNOYED_03         | Imamo malo vremena i puno toga da odradimo. Možda možemo da razgovaramo neki drugi put.
+
+
+DECLINE_OATHBREAKER_01     | Trenutno ne želimo da sklopimo sporazum jer ste u prošlosti kršili sporazume.
+DECLINE_OATHBREAKER_01     | Niste ispoštovali svoje prošle dogovore. Sada ne vidimo razlog da vam verujemo.
+DECLINE_OATHBREAKER_01     | Zašto bismo vam verovali sada, kad ste prekršili toliko prošlih sporazuma?
+DECLINE_OATHBREAKER_01     | Ne vidimo razlog da se dogovaramo sa nekim ko nije ispunio prošla obećanja.
+DECLINE_OATHBREAKER_01     | Nećemo se sporazumevati sa tobom, [your_raceVoc] jer nemate čast.
+
+DECLINE_ESPIONAGE_01       | Vi ste lopovi, kradete plodove našeg istraživanja. Odbijamo vaš zahtev.
+DECLINE_ESPIONAGE_01       | Naša tehnologija je za [my_race] rasu. Nemate prava da je kradete. Razgovaraćemo kad prestanete da kradete.
+DECLINE_ESPIONAGE_01       | Zašto bismo vam išta dali? Vaši špijuni već kradu sve što vam treba!
+DECLINE_ESPIONAGE_01       | Kako možete očekivati da prihvatimo kada vaši špijuni kradu našu tehnologiju? 
+DECLINE_ESPIONAGE_01       | Uklonite špijune, pa ćemo razgovarati.
+
+DECLINE_SABOTAGE_01        | Nismo zaboravili vaš poslednji incident sa sabotažom. Dok se ne pokažete da ste vredni našeg poverenja, nećemo imati posla s vama. 
+DECLINE_SABOTAGE_01        | Naš narod je propatio zbog vaše sabotaže. Nećemo imati nikakvog posla sa vama dok to ne prestane.
+DECLINE_SABOTAGE_01        | Šta! Očekujete da pregovaramo dok sabotirate naš [target]?
+DECLINE_SABOTAGE_01        | Vi uništavate [target]. Zašto bi smo pregovarali sa vama?
+DECLINE_SABOTAGE_01        | Kada prestanete da sabotirate naš [target], možemo da razmislimo o ovome.
+
+DECLINE_BUILDUP_01         | Nećemo da razgovaramo o ovome dok gomilate brodove blizu naših granica.
+DECLINE_BUILDUP_01         | Uklonite svoje brodove duž naših granica i mi ćemo razmisliti da prihvatimo. Do tada nas ne zanima.
+DECLINE_BUILDUP_01         | Vaši brodovi na našim granicama nam ne predstavljaju pretnju. Ali odbijamo da pregovaramo dok su tu. 
+DECLINE_BUILDUP_01         | Ako želite da razgovarate sa [my_empire], onda pošaljite vaše brodove da prete drugima, ne nama.
+
+DECLINE_ENCROACH_01        | Faše flote uznemiravaju [my_raceSki] prostor. Sklonite ih, pa ćemo tada razgovarati.
+
+DECLINE_SKIRMISH_01        | Napadate naše brodove bez provokacije i očekujete da prihvatimo? Odbijamo da pregovaramo.
+DECLINE_SKIRMISH_01        | Ne možemo prihvatiti ponude od onih koji napadaju naše flote.
+DECLINE_SKIRMISH_01        | Kad vaša flote prestanu da napadaju naše, možemo razgovarati.
+DECLINE_SKIRMISH_01        | Ako želite da pregovarate sa [my_empire], ostavite naše flote na miru.
+DECLINE_SKIRMISH_01        | [my_nameTitle] [my_name] ne ceni vaše uništavanje naših flota. Ne prihvatamo. 
+
+DECLINE_ATTACK_01          | Vaš neopravdani napad na [system] vam daje malo prostora za cenkanje.
+DECLINE_ATTACK_01          | Nismo zaboravili napad na [system] koloniju. Nema šanse da prihvatimo.
+
+DECLINE_INVASION_01        | Naš narod ne želi da ima bilo kakva posla sa koljačima [system] sistema. Prvo ispravite vašu grešku.
+DECLINE_INVASION_01        | Krv sa [system] sistema vam je uprljala ruke. Ne možemo da prihvatimo vašu ponudu.
+DECLINE_INVASION_01        | Mrtvi sa [system] kolonije vrište za osvetom. Njihov urlik je glasniji od vaše ponude.
+
+DECLINE_BIOWEAPONS_01      | [my_race] rasa neće da pregovara sa rasom koja koristi biološko oružje.
+DECLINE_BIOWEAPONS_01      | Ne možemo pregovarati sa bilo kim ko je toliko očajan da koristi biološko oružje.
+DECLINE_BIOWEAPONS_01      | Koristite oružje koje prouzrokuje neizrecive strahote nedužnog stanovništva. Odbijamo da se bavimo takvim ludilom. 
+DECLINE_BIOWEAPONS_01      | Bogovi se gnušaju onih koji bi uništavali planete biološkim oružjem. [my_race_plural] to ne mogu da dopuste.
+DECLINE_BIOWEAPONS_01      | Vapaji onih koji su ubijeni vašim biološkim oružjem pune nam uši. Ne možemo da čujemo vašu ponudu.
+
+DECLINE_TECH_TRADE_01      | Nemate tehnologiju koja nas zanima.
+DECLINE_TECH_TRADE_01      | Ne želimo [your_raceSke] igračke.
+DECLINE_TECH_TRADE_01      | Vaši primitivni izumi nas ne zanimaju.
+DECLINE_TECH_TRADE_01      | [my_race_plural] su daleko napredniji od vaše tehnologije. 
+DECLINE_TECH_TRADE_01      | [your_nameTitle] [your_name], ne vidimo potrebu za onim što nam nude vaši naučnici.
+DECLINE_TECH_TRADE_01      | [my_nameTitle] [my_name] nema puno interesovanja za vašu tehnologiju.
+
+OFFER_TECH_EXCHANGE_01     | [your_empireStvu] je preko potrebna vaša [tech] tehnologija. Možda želite da se menjate za neku od naših tehnologija.
+OFFER_TECH_EXCHANGE_01     | [your_empire] zna da ste otkrili tajne [tech] tehnologije. Možemo li da vam ponudimo neku od naših tehnologija u zamenu?
+OFFER_TECH_EXCHANGE_01     | [your_nameTitle] [your_name] od [your_empire] želi da otkrijete tajne [tech] tehnologije. Želite li da se menjamo za neke od naših tehnologija?
+OFFER_TECH_EXCHANGE_01     | [your_race] rasa je zadivljena naučnim dostignućima [tech] tehnologije. Šta možemo da vam ponudite za otkrivanje te tajne?
+
+ACCEPT_TECH_EXCHANGE_01    | Vrlo dobro. [my_nameTitle] [my_name] prihvata razmenu čudnovatih [my_raceSkih] tajni [techGiven] tehnologije za [techReceived] tehnologiju.
+ACCEPT_FINANCIAL_AID_01    | [my_nameTitle] [my_name] prihvata vaš poklon od [amt] MK.
+ACCEPT_TECHNOLOGY_AID_01   | [my_nameTitle] [my_name] prihvata vaš poklon [tech].
+
+BREAK_TRADE_01             | [my_raceSki] narod nema više želje da trguje sa [your_empireStvom].
+ANNOUNCE_TRADE_01          | Efektivno od [year], [my_empire] i [your_empire] sklapaju trgovinski ugovor od [amt] MK godišnje.
+
+ANNOUNCE_PEACE_01          | Godine [year] [my_raceSka] i [your_raceSka] imperija se slažu da prekinu sve napade.
+ANNOUNCE_PEACE_01          | [my_nameTitle] [my_name] ovime naređuje da se svi napadi okončaju između naših imperija.
+ACCEPT_PEACE_01            | Slažemo se da je došlo vreme da okončamo naše sitne prepirke.
+ACCEPT_PEACE_01            | Prihvatamo vašu ponudu za mir. Prekinite napade na [my_raceSke] snage, i mi ćemo prestati da napadamo vaše.
+ACCEPT_PEACE_01            | Umorni smo od ovog besmislenog uništavanja. [my_empire] prihvata vašu ponudu mira.
+
+BREAK_PACT_01              | Šaljemo upozorenje [your_empireStvu] od [my_raceIja]: naš ugovor o nenapadanju je istekao!
+ANNOUNCE_PACT_01           | Godine [year] [my_empire] se obavezuje da će se pridržavati ugovora o nenapadanju i da neće napadati [your_raceSke] flote osim ako nisu u orbiti naših kolonija.
+ACCEPT_PACT_01             | [my_empire] prihvata ugovor o nenapadanju. Nijedna strana neće napadati tuđe flote, osim ako ne orbitiraju neku od tuđih kolonija.
+ACCEPT_PACT_01             | Ako se slažete da ne šaljete vaše brodove na naše kolonije, [my_raceSki] narod se zaklinje da neće napadati vaše brodove.
+ACCEPT_PACT_01             | [my_nameTitle] [my_name] prihvata vaš predlog ugovora o nenapdanjz. Tako je zapisano i neka tako i bude!
+ACCEPT_PACT_01             | Dogovoreno, onda. Dok god ne napadate naše kolonije, [my_empire] pridržavaće se ugovora o nenapadanju.
+
+BREAK_ALLIANCE_01          | [my_empire] više ne može da održava savez sa [your_empireStvom].
+ANNOUNCE_ALLIANCE_01       | Godine [year] [my_empire] i [your_empire] se dogovaraju da sklope sazves gde neće napadati jedni drugima brodove ili kolonije.
+ANNOUNCE_ALLIANCE_01       | Dakle, naš savez je iskovan. Vaši brodovi mogu posećivati naše kolonije po vašoj želji i dopunjavati gorivo iz naših baza.
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] pozdravlja savez sa našim dobrim prijateljem, [your_nameTitle] [your_name].
+ACCEPT_ALLIANCE_01         | [my_empire] i [your_empire] danas sklapa savez između naših naroda. Smrt našim neprijateljima!
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] prepoznaje mudrost odluke da sklopi savez sa [your_empireStvom]. Neka tako bude!
+
+OFFER_JOINT_WAR_01         | Došlo je vreme da se [your_empire] i [my_empire] ujedine u ratu protiv [other_raceIja].
+ACCEPT_JOINT_WAR_01        | [other_empire] mora da padne pred kombinovanom moći [my_empireStva] i [your_empireStva].
+ACCEPT_JOINT_WAR_01        | Dok su [my_race_plural] i [your_race_plural] ujedinjeni, [other_race_plural] neće dugo istrajati.
+ACCEPT_JOINT_WAR_01        | Godine [year], [my_empire] i [your_empire] udružuju snage da bi se oslobodili galaksiju od [other_raceSke] opasnosti.
+COUNTER_JOINT_WAR_01       | Pridružićemo vam se u ratu protiv [other_empireStva] u zamenu za sledeću kompenzaciju:
+RESPOND_CLOSE_EMBASSY_01   | Neka tako bude. Neće biti daljih razgovora između naših imperija. 
+
+RESPOND_BREAK_TRADE_01     | Zapamtićemo vam ovo.
+RESPOND_BREAK_TRADE_01     | Znači, [your_nameTitle] [your_name], ne možete da održite vašu reč. Nećemo vam ovo zaboraviti.
+
+RESPOND_BREAK_PACT_01      | Urezaćemo reči vaših prekršenih ugovora na vaš nadgrobni spomenik, [your_nameTitle] [your_name].
+RESPOND_BREAK_PACT_01      | [your_empire] će se srušiti pod teretom sopstvenih prekršenih obećanja.
+
+RESPOND_BREAK_ALLIANCE_01  | Prekršili ste sporazum. Savez je raskinut.
+RESPOND_BREAK_ALLIANCE_01  | Veoma dobro. Pokazali ste vašu zlonamernost. Savez je raskinut.
+RESPOND_BREAK_ALLIANCE_01  | Nisu nam potrebni ugovori koji se ne poštuju. Savez je raskinut.
+RESPOND_BREAK_ALLIANCE_01  | Neka tako bude. Savez je raskinut.

@@ -39,6 +39,9 @@ public class RandomEventAssassination implements Base, Serializable, RandomEvent
     }
     @Override
     public void trigger(Empire emp) {
+        if (galaxy().council().finalWar())
+            return;
+        
         // find a contacted empire that is not at war
         List<Empire> emps = new ArrayList<>();
         for (Empire e: emp.contactedEmpires()) {

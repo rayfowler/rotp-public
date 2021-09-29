@@ -1,0 +1,22 @@
+// all possible names
+name: Sakra, Reptara, Saura, Raptora, Tajrani
+
+desc1: Agresivni Ekspanzionisti
+desc2: Povećan Rast Stanovništva
+desc3: Fanatici Sakranske Konklave streme ka perfekcioniranju svetova koje osvoje.
+
+// possible home system names
+home: Sssla, Sssna, SSsihs, Sssša, Sssss, Hsssa
+
+title:     Magistar
+fulltitle: Primarni Magistar
+
+// possible leader names
+leader: Guanar, Hissa, Krissta, Saurak, Sauron, Tiranid
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Geko, Kameleon, Gušter, Iguana, Skink, Anol, Gmizavac
+ship2: Tegu, Monitor, Kajman, Aligator, Krokodil, Gavial, Bazilisk
+ship3: Dinosaurus, Raptor, Pterodaktil, Teropod, Ceratops, Predator, Plesiosaur
+ship4: Titan, Kolos, Zmaj, Godzila, Kraken, Gorgon, Tiranosaurus
+

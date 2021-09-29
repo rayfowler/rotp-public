@@ -1,7 +1,6 @@
 
 
 SilicoidLaboratory    | races/Silicoid/animationLaboratory.txt
-SilicoidHolograph     | races/Silicoid/animationHolograph.txt
 SilicoidDiploMug      | races/Silicoid/animationMugshot.txt
 SilicoidSpyMug        | races/Silicoid/animationSpyMug.txt
 SilicoidSoldierMug    | races/Silicoid/animationSoldierMug.txt

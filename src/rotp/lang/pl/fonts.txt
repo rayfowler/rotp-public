@@ -1,8 +1,6 @@
 // These are the fonts used for the 5 font types within the game.
-// Default for each font is in the language english directory
-// Set these values only if you need to override the font(s)
-// for a specific language and then put those fonts in the directory
-// for that language
+
+name,       Polski ,
 
 logo,       Amarante-Regular.otf,     100
 dialogue,   Xolonium-Regular.otf,     100

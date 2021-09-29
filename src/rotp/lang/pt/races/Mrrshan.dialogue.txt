@@ -1,0 +1,89 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Mrrshan specific dialogue
+
+CONTACT_AGGRESSIVE         | Olá, estrangeiro. Pertenço aos [my_race_male_plural] e sirvo o Cã Dourado. Espero que sejas forte, [your_race_male], não só pelo bem da tua gente, mas pelos teus tesouros mais valiosos.
+CONTACT_RUTHLESS           | Somos os [my_race_male_plural], [your_race_male_plural], e aderimos a uma única crença: os fortes tiram e os fracos dão. Se ainda não estão familiarizados com uma tal filosofia, ensinar-vo-la-emos muito em breve.
+CONTACT_XENOPHOBIC         | Reza para que o Cã Dourado te ache digno, [your_race_male]. Se provocares a sua ira, ele não terá quaisquer reservas em enviar frotas [my_race_female_plural] na vossa direção.
+//
+GREETING_01                | Já nos demonstraram o vosso mérito vezes e vezes sem conta. Será uma honra fazer o que for possível para retribuir o exemplo.
+GREETING_04                | Vou ouvi-lo, embaixador, mas nada me obriga a dar-lhe o que procura.
+GREETING_07                | Tens muita coragem para te aproximares de um servo do Cã. Diz o que tens a dizer e prepara-te para fugir se for só uma perda do meu tempo.
+//
+DECLAREWAR_HATE_01         | Os vossos tesouros são um desperdício na vossa posse! Adornaremos os salões de Fierias com os vossos ossos e riquezas - e serão tudo o que restará de vocês quando tivermos terminado!
+DECLAREWAR_HATE_02         | Já chega! Meros saques não satisfarão a nossa inimizade para convosco: vocês [your_race_male_plural] pedem uma abordagem de larga escala!
+DECLAREWAR_HATE_03         | O mero conhecimento de que uma raça tão fraca como a vossa tem influência neste universo é suficiente para nos deixar indispostos. Não importa se as probabilidades estão a nosso favor, garanto que faremos o que estiver ao nosso alcance para vos pôr no vosso lugar.
+//
+DECLAREWAR_ERRATIC_01      | As garras do Canato têm de ser afiadas, embaixador. O teu povo vai-nos proporcionar o desporto necessário para nos mantermos em forma para quando vierem oponentes à nossa altura.
+DECLAREWAR_ERRATIC_02      | O teu povo realmente tem um dos tesouros mais belos, [your_race_male]. Mal podemos esperar para ver com quanta vontade lutam para os defender!
+DECLAREWAR_ERRATIC_03      | Já passou demasiado tempo desde a última vez que conseguimos uns saques memoráveis. A vossa gente sabe lutar, mas será que conseguem impedir-nos quando tantos troféus cintilantes estiverem ao nosso alcance?
+//
+DECLAREWAR_MILITARY_01     | Os fortes tiram e os fracos dão: uma lei incontornável do universo. Em breve verão como se aplica, não só aos vossos tesouros, mas também aos vossos planetas.
+DECLAREWAR_MILITARY_02     | A terra raramente brilha como o ouro, mas costuma ser um prémio valioso em si mesma. E todos os bons prémios merecem que se lute por eles, não é, embaixador?
+DECLAREWAR_MILITARY_03     | As necessidades do Canato excedem as da raça [your_race_female]. A vossa tecnologia pode ser impressionante, mas duvido que tenham a valentia para a acompanhar!
+//
+DECLAREWAR_ALLIANCE_01     | É um jogo arriscado fazerem-se inimigos de um aliado do Canato. Mas a partida vai acabar rapida e sanguinariamente não tarda!
+DECLAREWAR_ALLIANCE_02     | Os nossos aliados, os [other_race_male_plural], são um povo honrado, mas fraco. Vocês poderiam ganhar se esta guerra envolvesse apenas os vossos dois impérios, mas connosco do seu lado, não vos resta nenhuma chance de vitória!
+DECLAREWAR_ALLIANCE_03     | Teríamos preferido a honra de assolar o vosso império sozinhos. Parece que desta vez teremos de dividir a glória e os bens com os [other_race_male_plural].
+//
+DECLAREWAR_SPYING_01       | Cobardes, envolvidos em intrigas em vez de lutarem com honra! As vossas ações expõem a vossa fraqueza e agora haverão de pagar por isso! 
+DECLAREWAR_SPYING_02       | Qual é a sensação, [your_race_male], de arriscar tanto só para acabar a trazer a guerra para o nosso povo?
+DECLAREWAR_SPYING_03       | Diz isto ao [your_nameTitle] [your_name]: a cabala é o palco dos rafeiros sem dois... dedos de testa. Agir tão cobardemente só pode significar que a nossa coragem bastará para vos derrotar!
+//
+DECLAREWAR_ATTACK_01       | Ha! E nós que vos tomámos por uns fracotes e uns cobardes... Mas parece que afinal sempre têm alguma garra! É só uma pena que não vão estar por cá por muito mais tempo para celebrar esta parca vitória!
+DECLAREWAR_ATTACK_02       | Fizeram-nos um grande favor ao trazerem o combate até nós! Vamos recompensar-vos garantindo que a vossa gente morre no campo de batalha como guerreiros a sério!
+DECLAREWAR_ATTACK_03       | Eu tentaria ser menos arrogante se fosse a ti, embaixador. A fúria dos nossos guerreiros nunca se deixará ser superada pela tecnologia, por muito robusta que a vossa seja!
+//
+DECLAREWAR_OPPORTUNITY_01  | A vossa espécie já passou da vida útil. Mas não se preocupem, pois são justamente a caça de que os nossos guerreiros mais jovens e inexperientes precisam para apurar as aptidões de combate.
+DECLAREWAR_ASSASSIN_01     | Não me espanta que a vossa raça tenha agido tão cobardemente. Assassinar um embaixador é a maior desonra que poderão causar a vocês mesmos e o povo vai amaldiçoar o teu nome entre espasmos de agonia por teres permitido uma tal coisa!
+
+
+OFFER_PEACE_01             | Há uma altura para tudo, embaixador, e esta é a altura de pôr fim às hostilidades. Fiquem com as vossas riquezas; a paz é tudo o que desejamos de vocês neste momento!
+OFFER_TRADE_01             | Não há dúvidas de que a via mais rápida para obter riquezas é arrancando-as de quem é demasiado fraco para te impedir! Mas trocar também é um meio aceitável de dois impérios extraírem benefícios. Comecemos com [amt] BM todos os anos para avaliar o quanto poderemos... ganhar um do outro.
+OFFER_PACT_01              | Não há necessidade de dois impérios tão equiparáveis lutarem entre si quando há muitas outras raças menores para pilhar e arrasar. Vamos acordar num pacto oficial de não-agressão para que as nossas energias possam ser melhor empregues naqueles com tesouros mais fáceis de arrecadar.
+OFFER_ALLIANCE_01          | Venho hoje propor uma aliança formal entre o Canato e a [your_empire]. Acredito que não perderá tempo a ponderar a assinatura? E recordo-o: uma aliança igualitária equivale a uma partilha igualitária do saque de guerra!
+ 
+WARN_TRESPASSING_01        | A não ser que as vossas naves estejam no sistema [system] para nos entregarem tributos, sugiro que dêm meia-volta o quanto antes.
+WARN_EXPANSION_01          | Preferimos os objetos preciosos, com os quais podemos adornar as paredes dos nossos templos, mas não ignoramos o valor da terra por reclamar. Revejam a vossa expansão ou arrisquem-se a provocar a nossa ira, embaixador.
+WARN_BUILDUP_01            | Se estão a juntar as frotas para invadir o território de outra raça, nós não nos opomos. Mas até termos certezas disso, vamos partir do pressuposto de que as naves estão apontadas para nós e não hesitaremos em tomar medidas preventivas. 
+WARN_SKIRMISH_01           | Que disputazinha engraçada, não foi? Porém, estas pequenas batalhas são aborrecidas e infrutíferas: se insistirem em continuá-las, o prazer em declarar uma guerra formal será nosso!
+WARN_ATTACKED_01           | Ha! Aquilo foi uma tentativa séria de nos provocar, embaixador? O teu povo é fraco e os seus tesouros estão enferrujados! Acabem lá com esta ofensiva presunçosa antes que nos obriguem a acabar com vocês!
+WARN_INVADED_01            | Vocês brincam com esta invasãozinha! A vossa sorte é que o sistema [system] nunca nos serviu de muito, mas se começam a ter na mira sistemas mais valiosos, certificar-nos-emos de que não tiram mais nada a ninguém!
+WARN_ESPIONAGE_01          | Que joguinhos matreiros que vocês jogam! Terão de investir muito mais esforço se desejam obter os segredos do Canato. Leva o teu espião e vai-te embora antes que a brincadeira perca a graça. [framed]
+WARN_SABOTAGE_01           | Esquemas perigosos, embaixador. Se o edifício que desejavam destruir tivesse muito valor, sem dúvida que já estariam a limpar o sangue das vossas ruas. Recomendo-vos seriamente que considerem não sabotar outra vez. [forced]
+WARN_BIOWEAPON_01          | Os troféus são para serem ganhos em combate honrado, não arrancados das ossadas de quem esteve indefeso mesmo com vida! Se tornam a usar armas tão desprezíveis, asseguro-te de que será a última vez!
+WARN_GENOCIDE_01           | Não foi uma má decisão erradicar a raça [victim_race_female] inteira e ficar com todas as riquezas para vocês. Embora eu duvide que seriam desmiolados o suficiente para tentarem algo assim connosco, a vossa capacidade continua a ser importuna.
+WARN_FINAL_WAR_01          | [your_race_male] estúpido! Desafiar a vontade do Conselho é desafiar a vontade dos [my_race_male_plural]! Nós vamos ficar com os vossos tesouros e derretê-los até à última pepita! Não vai restar nada da vossa espécie quando tivermos terminado!
+WARN_COUNCIL_VOTE_01       | O Canato tem assuntos mais importantes a tratar para além dos jogos políticos das câmaras do Conselho. Seria melhor para nós se se limitassem a ceder aos nossos desejos. E para vocês também, se é que me faço entender.
+WARN_OATHBREAKER_01        | Hmpf! Só um desesperado rompe o vínculo da própria palavra. Não tem importância! A partir de agora, lidaremos com vocês da mesma maneira que lidamos com os outros que são demasiado hipócritas para serem confiados.
+WARN_ATTACKED_ALLY_01      | Não posso dizer que não entendo um ataque aos [defender_race_male_plural] - os tesouros são hipnotizantes... mas eles estão reservados para quando os quisermos: não vos pertencem!
+WARN_REBELLING_AGAINST_01  | Esta paz anunciada pelo Conselho nunca nos cairia bem. Nós não queremos outra coisa além de tirar tesouros aos mais fracos e fazer deles nossos!
+
+PRAISE_COUNCIL_VOTE_01     | O seu apoio no Conselho é sempre apreciado, embaixador. O próprio Cã Dourado fez questão de que soubesse que o seu povo é um apoio valioso para o Canato e que se quiser fazer uma visita a [candidate_home], um banquete será organizado em seu nome! 
+PRAISE_COUNCIL_VOTE_02     | Viu aquele representante [rival_race] a franzir o sobrolho? Ha!Eles que amuem! Enquanto gente sensata como vocês continuar a reconhecer o nosso poder, o Canato não tem nada a temer! 
+PRAISE_COUNCIL_VOTE_03     | Teme as nossas incursões, embaixador? Espera que, agradando-nos no Conselho, consiga manter os nossos salteadores longe dos vossos planetas? Hmhmhmhm, prejudicar-vos, não prejudica, não é verdade?
+PRAISE_ATTACKED_ENEMY_01   | Hoje é um grande dia para ambos os nossos povos, [attacker_race_male]! Os [defender_race_male_plural] nem uma prece têm contra a nossa força combinada! Há riqueza que chegue para os dois: aos maiores guerreiros, os maiores troféus!
+PRAISE_ATTACKED_ENEMY_02   | À cata do tesouro, embaixador? Muito bem, proponho o seguinte negócio: vocês ajudam-nos a livrarmo-nos destas pestes [defender_race_female_plural] e eu certificar-me-ei de que recebem a justa recompensa.
+PRAISE_ATTACKED_ENEMY_03   | É óbvio que só se envolveram nesta guerra pelo saque que podem adquirir. Mas estes [defender_race_male_plural] têm tesouros miseráveis - portanto, já que nos ajudam, suponho que podemos deixar para vocês os restos que não quisermos.
+PRAISE_TRADE_01            | Lembra-se de quando comecei o nosso acordo comercial? Eu disse que queria ver quanto é que poderíamos ganhar um com o outro e fico contente por ver que o lucro tem sido mútuo.
+PRAISE_TRADE_02            | É sempre mais entusiasmante lutar pela fortuna e voltar a casa com as naves carregadas do espólio vitorioso! Mas enfim, suponho que o nosso acordo comercial acaba por ser um pouquinho mais rentável quando consideramos os custos. Certifique-se de que continua assim, embaixador. 
+PRAISE_REBELLING_WITH_01   | Assim é que é falar! Nada como uma boa briga, hã? E tanta fortuna a pedir para ser pilhada... Espero que não se importem que o Canato se queira juntar à diversão! 
+
+ACCEPT_TRADE_01            | Suponho que não podemos saquear todas as civilizações que encontramos. Queriam quanto por ano? [amt] BM? Está bem...
+RESPOND_IGNORE_THREAT_01   | Vais-me desculpar pela gargalhada, mas as vossas ameaças são uma piada. Foge, que os meus salteadores podem querer afiar as garras.
+RESPOND_STOP_SPYING_01     | Encontraram um espião que dizem que nos pertence? Impossível. Nunca sonharíamos espiar os ilustres da [your_empire]. Façam o que quiserem com o espião, não nos diz respeito.
+RESPOND_STOP_ATTACKING_01  | Receosos com uma invasão, [your_race_male_plural]? Não se preocupem, o que vocês oferecem não nos interessa. Vamos mover as naves agora. Afinal, não vos queremos assustar.
+
+

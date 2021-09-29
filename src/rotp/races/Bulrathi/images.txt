@@ -1,6 +1,9 @@
 BulWin        | races/Bulrathi/WinSplash.jpg
 BulLoss       | races/Bulrathi/LossSplash.jpg
 
+BulSab01      | races/Bulrathi/SabotageMissiles/Frame000.jpg
+BulSab02      | races/Bulrathi/SabotageRebellion/Frame000.jpg
+
 BulFlagWar  | races/Bulrathi/banner_war.png
 BulFlagNorm | races/Bulrathi/banner_norm.png
 BulFlagPact | races/Bulrathi/banner_pact.png
@@ -10,7 +13,6 @@ BulDlgNorm  | races/Bulrathi/dialogue_norm.png
 BulDlgPact  | races/Bulrathi/dialogue_pact.png
 
 BulLab      | races/Bulrathi/Bulrathi_Laboratory.jpg
-BulLab01    | races/Bulrathi/Bulrathi_Laboratory_holograph.png
 BulCouncil  | races/Bulrathi/Council_01.jpg
 
 BulLeader    | races/Bulrathi/CouncilLeader.png

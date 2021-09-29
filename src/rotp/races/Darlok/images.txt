@@ -1,6 +1,9 @@
 DarWin        | races/Darlok/WinSplash.jpg
 DarLoss       | races/Darlok/LossSplash.jpg
 
+DarSab01      | races/Darlok/SabotageMissiles/Frame000.jpg
+DarSab02      | races/Darlok/SabotageRebellion/Frame000.jpg
+
 DarFlagWar    | races/Darlok/banner_war.png
 DarFlagNorm   | races/Darlok/banner_norm.png
 DarFlagPact   | races/Darlok/banner_pact.png
@@ -11,11 +14,11 @@ DarDlgPact    | races/Darlok/dialogue_pact.png
 
 DarFort01     | races/Darlok/Fortress_01.png
 
-DarLab01      | races/Darlok/Laboratory_01.png
-DarLab02      | races/Darlok/Laboratory_02.png
-DarLab03      | races/Darlok/Laboratory_03.png
-DarLab04      | races/Darlok/Laboratory_04.png
-DarLab05      | races/Darlok/Laboratory_05.png
+DarLab01      | races/Darlok/Laboratory_01.jpg
+DarLab02      | races/Darlok/Laboratory_02.jpg
+DarLab03      | races/Darlok/Laboratory_03.jpg
+DarLab04      | races/Darlok/Laboratory_04.jpg
+DarLab05      | races/Darlok/Laboratory_05.jpg
 DarLabFog01   | races/Darlok/LabFog_01.png
 DarLabFog02   | races/Darlok/LabFog_02.png
 DarLabFog03   | races/Darlok/LabFog_03.png

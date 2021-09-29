@@ -1429,7 +1429,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             int index = i/2;
             int yAdj = y2+s85+(index*shipBoxH);
             int xAdj = i%2 == 0 ? x2+s20 : x2+w2-s50-shipW;
-            drawShipResult(g, xAdj, yAdj, shipW, shipH, design, start, dead, retr);
+            drawShipResult(g, xAdj, yAdj, shipW, shipH, design, start, dead, retr, false);
         }  
         if (colonyEmp == leftEmpire) {
             int rows= (ships.size()+1)/2;
@@ -1474,7 +1474,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
                 int index = i/2;
                 int yAdj = y3+s85+(index*shipBoxH);
                 int xAdj = i%2 == 0 ? x3+s20 : x3+w2-s50-shipW;
-                drawShipResult(g, xAdj, yAdj, shipW, shipH, design, start, dead, retr);
+                drawShipResult(g, xAdj, yAdj, shipW, shipH, design, start, dead, retr, true);
             }
             if (colonyEmp == rightEmpire) {
                 int rows= (ships.size()+1)/2;
@@ -1566,9 +1566,15 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         
         
     }
-    private void drawShipResult(Graphics2D g, int x, int y, int w, int h, ShipDesign d, int start, int dead, int retreat) {
+    private void drawShipResult(Graphics2D g, int x, int y, int w, int h, ShipDesign d, int start, int dead, int retreat, boolean reversed) {
         Image img = d.image();
-        g.drawImage(img, x, y, x+w, y+h, img.getWidth(null), img.getHeight(null), 0,0,null);
+        int w0 = img.getWidth(null);
+        int h0 = img.getHeight(null);
+        //g.drawImage(img, x, y, x+w, y+h, img.getWidth(null), img.getHeight(null), 0,0,null);
+        if (reversed)  // XOR
+            g.drawImage(img, x, y, x+w, y+h, w0, 0, 0, h0, null);
+        else
+            g.drawImage(img, x, y, x+w, y+h, 0, 0, w0, h0, null);
         if (retreat > 0) {
             g.setFont(narrowFont(30));
             String summary = text("SHIP_COMBAT_RESULTS_RETREATED");

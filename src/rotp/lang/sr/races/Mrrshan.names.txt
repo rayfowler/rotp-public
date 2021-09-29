@@ -1,0 +1,22 @@
+// all possible names
+name: Mršan, Pršan, Mjaušan, Kandžan, Hišan
+
+desc1: Nemilosrdni Militaristi
+desc2: Superiorne Nišandžije
+desc3: Horde Mršana tragaju za ratnim trofejima dok se šire po galaksiji.
+
+// possible home system names
+home: Fijeras, Fijerina, Mijamara, Mjairana, Jailarija
+
+title:     Kan
+fulltitle: Kan
+
+// possible leader names
+leader: Džasana, Mijamar, Mirana, Prša, Šandra, Jalara
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Vučjak, Divljak, Omčica, Jazavac, Mačkast, Mišolovac, Kaliko
+ship2: Ris, Ketamaunt, Tigrasta Mačka, Divlja Mačka, Karakal, Margai, Serval
+ship3: Panter, Leopard, Ratna Mačka, Gepard, Ratni Ris, Ocelot, Jaguarundi
+ship4: Sabljasti Tigar, Puma, Tigar, Lav, Jaguar, Ligar, Kuguar
+

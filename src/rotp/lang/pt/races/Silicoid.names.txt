@@ -1,0 +1,21 @@
+// all possible names
+name: Silicóide, Igneóide, Sedimóide, Quartzóide, Magmóide
+
+desc1: Expansionistas Xenofóbicos
+desc2: Imunes a Ambientes Hostis
+desc3: Os Silicóides são mistérios líticos que esquadrinham a galáxia em busca do seu arqui-inimigo.
+
+// possible home system names
+home: Cryslon, Minerode, Carste, Igneus, Silican
+
+title:     Imperador
+fulltitle: Imperador de Cristal
+
+// possible leader names
+leader: Carnax, Crystus, Geode, Zirconax, Hialin, Sedimin
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Rocha, Fraga, Cristal, Mineral, Sedimento, Terrosa, Zeolite
+ship2: Granito, Quartzo, Obsidiana, Sulfúr, Piroclasto, Pirite, Pomes 
+ship3: Magma, Lava, Sílex, Platina, Vulcano, Mica, Basalto
+ship4: Diamante, Safira, Esmeralda, Rubi, Ametista, Topázio, Granada

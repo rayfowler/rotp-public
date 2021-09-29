@@ -1,18 +1,18 @@
 // all possible names
-name: Mrrshan, Prrsah, Meowshan
+name: Mrrszan, Prrszan, Miauszan, Pazurszan, Syczszan
 
 desc1: Bezlitośni militaryści
 desc2: Doskonali strzelcy
-desc3: Hordy Mrrshan poszukują trofeów wojennych w swej galaktycznej wędrówce.
+desc3: Hordy rasy znanej jako [race] poszukują trofeów wojennych w swej galaktycznej wędrówce.
 
 // possible home system names
 home: Fierias, Fierina, Miamara, Miriana, Yailaria
 
-title:     Imperator
-fulltitle: Imperator
+title:     Khan
+fulltitle: Khan
 
 // possible leader names
-leader: Jasana, Miamar, Mirana, Prrsha, Shandra, Yalara
+leader: Jasana, Miamar, Mirana, Prrsza, Szandra, Jalara
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
 ship1: Rosomak, Dzikus, Fretka, Borsuk, Kocię, Dachowiec, Perkal

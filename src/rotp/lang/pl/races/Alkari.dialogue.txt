@@ -1,0 +1,92 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Alkari specific dialogue
+
+CONTACT_HONORABLE          | Witaj, o honorowy władco [your_empire2]! [my_empire] serdecznie pozdrawia i czeka na zaszczytne kontakty z waszym gatunkiem. 
+CONTACT_PACIFIST           | Pozdrawiamy serdecznie władcę [your_empire2]. Nie przynoś wojny w progi naszej Autonomii a będziemy prosperować z wzajemnością.
+CONTACT_ERRATIC            | Jestem ambasadorem długowiecznej [my_empire2]. Moi ludzie składają pozdrowienia, jak to jest w naszym zwyczaju. twój gatunek jest znany jako [your_race_plural]? To bardzo... intrygujące.
+
+//
+GREETING_01                | Witaj, ambasadorze! Jaką przysługę Autonomia mogłaby zaoferować w tym dniu tak szanowanemu sojusznikowi?
+GREETING_04                | Witam cię, ambasadorze. Autonomia jest gotowa wysłuchać twojej prośby, ale jak daleko się posuniemy aby ją przyjąć to się okaże...
+GREETING_07                | Mów szybko, ambasadorze! Nasze prawo wymaga od nas przestrzegania wszelkich należytych przyzwoitości, ale to nie znaczy, że będziemy tracić czas na spełnianie twoich błahych żądań!
+
+//
+DECLAREWAR_HATE_01         | Ambasadorze - rasa taka jak wasza, która nie uznaje przyzwoitości ani uprzejmości, nie może należeć do galaktyki rządzonej przez Autonomia! Przygotuj się do bitwy!
+DECLAREWAR_HATE_02         | To Twoja bezczelność i arogancja do tego doprowadziły! Przekaż tę wiadomość do swego monarchy: wojna nadeszła!
+DECLAREWAR_HATE_03         | Co za wulgarność! Moi ludzie woleliby raczej przestać istnieć, niż dalej dzielić kosmos z takimi prostakami jak wy, ambasadorze!
+//
+DECLAREWAR_ERRATIC_01      | Ambasadorze - nie możemy zaprzeczyć, że przyjemnie było utrzymywać kontakt z tak intrygującą rasą jak wasza. Żałujemy, że kontakty te muszą się teraz zakończyć.
+DECLAREWAR_ERRATIC_02      | Bawisz nas, odkąd nasze imperia się spotkały. Autonomia z niecierpliwością wyczekuje, czy okażesz się równie zabawny w czasie wojny, ambasadorze!
+DECLAREWAR_ERRATIC_03      | Witaj, ambasadorze [your_empire2]! [my_empire] chce sprawdzić się w honorowej walce z waszą potęgą. Przygotuj swoje floty i lud na wojnę!
+//
+DECLAREWAR_MILITARY_01     | Autonomia musi nadal powiększać swoje terytorium, aby zapewnić rozwój swoim stadom. Gdy nie możemy znaleźć niezamieszkanych światów, bierzemy światy słabszych imperiów. twoje imperium jest słabsze od naszego, więc twoje światy staną się teraz naszymi.
+DECLAREWAR_MILITARY_02     | Wreszcie nadszedł czas, ambasadorze! Jednym skrzydłem Autonomia rozpościera nad wami cień wojny, a drugim zmiata wasze światy.
+DECLAREWAR_MILITARY_03     | Szkoda, że do tego doszło, ambasadorze. Musimy zdobyć wasze planety na własny użytek lub zginąć próbując tego dokonać. Nie mamy wyboru, przygotuj się do wojny!
+//
+DECLAREWAR_ALLIANCE_01     | Dyplomaci z [other_empire2] poinformowali nas, że toczą wojnę z waszym ludem. Moje imperium ma honorowy obowiązek pomagać sojusznikom w czasie wojny: to fakt, którego wkrótce będziesz żałować, ambasadorze.
+DECLAREWAR_ALLIANCE_02     | Nasz sojusznik woła o pomoc, a Autonomia odpowiada! Wasz koniec się zbliża, ambasadorze: nie możecie długo przeciwstawiać się naszym połączonym flotom!
+DECLAREWAR_ALLIANCE_03     | Irytuje nas, że zdecydowaliście się wypowiedzieć wojnę jednemu z naszych sojuszników. Zgodnie z naszymi najświętszymi prawami musimy teraz pomóc im w walce! Proszę, zawróćcie z tej ścieżki zanim będzie za późno dla nas wszystkich!
+//
+DECLAREWAR_SPYING_01       | Byliśmy radzi utrzymywać przyjazne stosunki z waszym ludem, ambasadorze. To, że zdecydowaliście się angażować w tak haniebne czyny przeciwko koronie, zmusiło nas do ponownego rozważenia naszej pozycji.
+DECLAREWAR_SPYING_02       | Taki postępek nie pozostanie bezkarny, ambasadorze! ci, którzy będą działać w tajemnicy przeciwko nam, zostaną przywołani do porządku siłą!
+DECLAREWAR_SPYING_03       | Ambasadorze! Jak śmiecie popełniać tak haniebne czyny przeciwko Niepodległości?! Otrzymamy zadośćuczynienie za wszelką cenę! Przygotuj się na wojnę!
+//
+DECLAREWAR_ATTACK_01       | Ech! Taka nierozważna decyzja, ambasadorze! Ale jeśli wojna jest tym czego pragniesz, to wojna jest tym, co Autonomia ci przyniesie!
+DECLAREWAR_ATTACK_02       | A więc to tak, ambasadorze! Jeśli lud [my_race3] zdołał przetrwać niekończące się wojny Krwawego Milenium, z łatwością przetrwamy też wojnę z waszym gatunkiem!
+DECLAREWAR_ATTACK_03       | Tego rodzaju wulgaryzmów należało się spodziewać po nieokrzesanej rasie, takiej jak wasza, ambasadorze! Nie myśl jednak, że Autonomia podda się bez walki!
+//
+DECLAREWAR_OPPORTUNITY_01  | Jak zapewne wiecie, my z [my_empire2] odnieśliśmy wiele sukcesów w kosmosie. Niestety ambasadorze - nasze potrzeby powodują że kolejny sukces musi nastąpić waszym kosztem.
+DECLAREWAR_ASSASSIN_01     | Co to ma być? Popełniłbyś tak potworny czyn, jak zabicie ambasadora z zimną krwią? Autonomia nie będzie już więcej znosić tak odrażającej rasy jak wasza!
+
+
+OFFER_PEACE_01             | Nie można pozwolić, aby historia Krwawego Milenium się powtórzyła, ambasadorze! Prosimy, abyś przyniósł honor obu rasom: [your_race3] i [my_race3], podpisując ten traktat pokojowy, aby zapobiec dalszemu rozlewowi krwi!
+OFFER_TRADE_01             | Z pewnością cywilizowane rasy, takie jak nasze, są w stanie pomagać sobie nawzajem w honorowej współpracy. [my_empire] życzy sobie corocznej umowy handlowej z mocarstwem o nazwie [your_empire] ustalonej na [amt] BC. Jaka jest Twoja odpowiedź, ambasadorze?
+OFFER_PACT_01              | Autonomia jest zadowolona z tego, jak wasz lud prezentuje się w sprawach dyplomatycznych. Aby pokazać, jak bardzo cenimy nasze relacje, chcemy podpisać pakt o nieagresji gwarantujący, że żadne z nas nie padnie ofiarą... błędnej interpretacji swoich intencji.
+OFFER_ALLIANCE_01          | Twoje czyny przyniosły ci wielkie uznanie u Autonomia, ambasadorze! Król Iglicy postanowił, że sojusz między rasami [your_race3] i [my_race3] musi zostać zawarty natychmiast! Czekamy tylko na twój podpis!
+
+WARN_TRESPASSING_01        | Jest wysoce niewłaściwe, aby floty [your_race3] włóczyły się po systemie [system] jakby był ich własnością. Ambasadorze, w najlepszym interesie wszystkich jest, abyś natychmiast to naprawił.
+WARN_EXPANSION_01          | Ekspansja bez ograniczeń gdziekolwiek chcecie to przejaw braku szacunku dla sąsiadów, ambasadorze! Radzę wam, abyście nie kontynuowali tego braku szacunku dla Niepodległości.
+WARN_BUILDUP_01            | Myślisz, że jesteśmy ślepi, ambasadorze?! Widzimy, że twoje floty wciąż rosną pod względem wielkości i siły. Pokaż nam, że nie masz złych zamiarów ograniczając te działania albo rzeczywiście możesz otrzymać zapobiegawczą odpowiedź!
+WARN_SKIRMISH_01           | Doskonale wiemy o potyczce w [system], ambasadorze! Tym razem Autonomia zignoruje wasze działania. Dlaczego? Nie widzę powodu, aby odpowiadać na takie pytanie od takich jak Ty!
+WARN_ATTACKED_01           | Tak śmiały atak wynika tylko z całkowitego braku szacunku, ambasadorze! Naprawdę masz szczęście, że Król Iglicy nie raczy zganić waszej bezczelności. Następnym razem możecie go nie mieć aż tyle!
+WARN_INVADED_01            | Więc chcecie zabrać to, co do was nie należy, ambasadorze?! Nie kuście więcej naszego gniewu: chętnie pozbędziemy się tej bezwartościowej planety, jeśli będzie to oznaczało pozbycie się waszej głupoty!
+WARN_ESPIONAGE_01          | Hmm, nie dziwi nas, że tak potworna rasa ucieka się do szpiegostwa, aby osiągnąć swoje cele. Pamiętaj, ambasadorze: oczy rasy [my_race3] są tak ostre, że nic nie umknie ich spojrzeniu. [framed]
+WARN_SABOTAGE_01           | Absolutnie obrzydliwe, ambasadorze! Skradać się po cichu i dokonywać sabotażu jak lis w nocy?! Ale jesteś równie głupi, jak tępi: budynki które zniszczyliście nie były na tyle ważne, aby uzasadnić reakcję! [forced]
+WARN_BIOWEAPON_01          | Hańba! Hańba! Użyliście najbardziej niewyobrażalnego rodzaju broni przeciwko tym, którzy nie mogą nawet podnieść tarczy, aby się chronić! Wasza zasłużona niesława pozostanie z wami do samego końca, ambasadorze!
+WARN_GENOCIDE_01           | Chociaż zgadzam się, że rasa [victim_race3] była plagą zwykłego robactwa, to Autonomia zdecydowanie sprzeciwia się popełnieniu ludobójstwa. Zastanawiamy się, ambasadorze, czy wasi ludzie są w stanie powtórzyć te działania z bardziej... cywilizowanymi rasami?
+WARN_FINAL_WAR_01          | Wybrany przez was kurs nie ma przyszłości, ambasadorze. Miejscie świadomość, że teraz gdy zdecydowaliście się wystąpić przeciwko należycie wybranemu przywódcy galaktyki nasz honor zmusza nas do zrobienia wszystkiego co w naszej mocy aby aby was powstrzymać!
+WARN_COUNCIL_VOTE_01       | A więc to tyle, jeśli chodzi o wybitnego ambasadora mocarstwa znanego jako [your_empire]! Czy naprawdę wierzyłeś, że nie dowiemy się o Twoim oszustwie podczas narady? Powinieneś bać się o swój lud, ambasadorze: Król Iglicy będzie bardzo niezadowolony.
+WARN_OATHBREAKER_01        | Skandal! Wiesz jak bardzo cenimy honor. Tak otwarcie łamiesz swoje słowo tylko po to, by zaspokoić własne pragnienia?! Autonomia na zawsze zapamięta tę zniewagę, ambasadorze, i z pewnością odwdzięczy się pięknym za nadobne!
+WARN_ATTACKED_ALLY_01      | To kłopotliwe, ambasadorze, że Twoi ludzie i [defender_empire] doprowadzili do takiej kłótni. Nie miej nadziei, że dorównasz naszej połączonej potędze, ambasadorze: Autonomia zachęca was do ponownego rozważenia waszych działań.
+WARN_REBELLING_AGAINST_01  | Czy myślisz, że zapomnieliśmy, jak okazaliście się niehonorowi? Nie ma znaczenia czy musimy walczyć z wami czy z całą galaktyką: nigdy nie zasiądziecie na tronie rady, dopóki żyje Król Iglicy!
+ 
+PRAISE_COUNCIL_VOTE_01     | Szanowny i czcigodny ambasadorze imperium znanego jako [your_empire]! Jesteśmy wam dłużni za waszą służbę na tym posiedzeniu rady i chętnie spłacimy ten dług kiedy tylko zdecydujesz jak zrobić to najlepiej.
+PRAISE_COUNCIL_VOTE_02     | Pozdrawiam, ambasadorze. Zaszczycasz nas głosem, który przemawia za naszą sprawą przed zgromadzonymi tutaj. Jestem pewien, że Król Iglicy będzie chciał dowiedzieć się więcej o tak honorowych ludziach, gdy tylko złożę mu raport.
+PRAISE_COUNCIL_VOTE_03     | Hmm, na pewno nie spodziewasz się że uwierzymy, że stanąłeś po stronie Niepodległości z szacunku lub poczucia honoru, ambasadorze? Ale może nadal będziesz chciał nam to udowadniać, jeśli tylko damy ci kolejną szansę, aby to zrobić?
+PRAISE_ATTACKED_ENEMY_01   | Ach! Nasz cenny przyjaciel i sprzymierzeniec przynosi dobrą nowinę w tym czasie wojny! Ambasadorze, pozwól naszym ludziom walczyć razem z tą okropną rasą [defender_race3] jako towarzysze broni!
+PRAISE_ATTACKED_ENEMY_02   | Ta wojna szybko się skończy, ambasadorze. Nawet w pojedynkę Autonomia z łatwością pokonałaby te wulgarne bestie rasy [defender_race3]. Ale razem? Razem na zawsze usuniemy ich rasę z galaktyki!
+PRAISE_ATTACKED_ENEMY_03   | Jestem równie pewien że korzystasz z okazji, jak jestem pewien że nie znasz znaczenia słowa "honor"! Pozwalamy ci jednak pomóc nam w walce z rasą [defender_race3] - choćby po to aby nie ponieść tylu ofiar ile byśmy mogli w innym przypadku!
+
+PRAISE_TRADE_01            | Ulżyło mi bardziej niż przypuszczasz ambasadorze, że wasi ludzie tak honorowo prowadzą interesy. Autonomia szanuje ciebie i twój lud, i będzie cenić naszą przyjaźń nawet bardziej niż naszą stałą umowę handlową!
+PRAISE_TRADE_02            | Jest wiele sposobów by udowodnić swój honor, ambasadorze. Prowadzenie interesów w sposób uczciwy i w dobrej wierze jest jednym z najlepszych sposobów osiągnięcia tego celu i czymś, co suwerenność wysoko ceni w stosunku do tych, których spotykamy w tej galaktyce.
+
+PRAISE_REBELLING_WITH_01   | Te brutale z rady nas nie doceniają, ambasadorze! Razem pokażemy im, co naprawdę oznacza termin "śmiertelny błąd"!
+
+ACCEPT_TRADE_01            | Autonomia zawsze jest zadowolona z prowadzenia interesów z waszą rasą. Dziękuję - roczna kwota [amt] BC jest całkiem przyjemna.
+RESPOND_IGNORE_THREAT_01   | Czy chcesz nas sprowokować? Zabierz swoje nieśmieszne żarty gdzie indziej.
+RESPOND_STOP_SPYING_01     | Wasze oczy wydają się być równie ostre jak nasze, jeśli chodzi o znajdowanie szpiegów. Niniejszym nasze próby szpiegostwa dobiegły końca.
+RESPOND_STOP_ATTACKING_01  | Czy teraz widzicie potęgę naszej Niepodległości? Dopóki nie zapomnicie o naszej mocy, nie będziemy więcej sprawiać wam kłopotów naszymi flotami.
+

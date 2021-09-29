@@ -1,0 +1,22 @@
+// all possible names
+name: Klakon, Klakant, Klokan, Artropon, Żuk
+
+desc1: Ksenofobiczni industrialiści
+desc2: Umysł roju i zwiększona produkcja robotników
+desc3: Pracowita rasa znana jako [race] to niepojęty dla obcych gatunek mający jeden kontrolujący umysł.
+
+// possible home system names
+home: Kholdan, Kholdant, Khaldon, Klokdon, Khakdon
+
+title:     
+fulltitle: 
+
+// possible leader names
+leader: Ixitixl, Kaxal, Kikitik, Klaquan, K'kalak, Xantak
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Trzmiel, Igła, Modliszka, Żuk, Dron, Pająk, Żuchwa
+ship2: Szerszeń, Trucizna, Jad, Ważka, Żądło, Skarabeusz, Osa
+ship3: Tarantula, Żmija, Kobra, Boleń, Wąż, Mamba, Skorpion
+ship4: Kobra Królewska, Czarna Wdowa, Zaskroniec, Grzechotnik, Naga, Żmija Zygzakowata, Czarna Mamba
+

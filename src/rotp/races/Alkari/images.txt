@@ -1,6 +1,9 @@
 AlkWin        | races/Alkari/WinSplash.jpg
 AlkLoss       | races/Alkari/LossSplash.jpg
 
+AlkSab01      | races/Alkari/SabotageMissiles/Frame000.jpg
+AlkSab02      | races/Alkari/SabotageRebellion/Frame000.jpg
+
 AlkFlagWar   | races/Alkari/banner_war.png
 AlkFlagNorm  | races/Alkari/banner_norm.png
 AlkFlagPact  | races/Alkari/banner_pact.png
@@ -10,7 +13,6 @@ AlkDlgNorm   | races/Alkari/dialogue_norm.png
 AlkDlgPact   | races/Alkari/dialogue_pact.png
 
 AlkLab       | races/Alkari/Alkari_Laboratory.jpg
-AlkLab01     | races/Alkari/Alkari_Laboratory_holograph.png
 AlkCouncil   | races/Alkari/Council_01.jpg
 AlkCouncil   | races/Alkari/Council_02.jpg
 AlkCouncil   | races/Alkari/Council_03.jpg

@@ -1,0 +1,141 @@
+//
+// Dialogue that is not race-specific
+//
+
+DIPLO_TECH_REQUEST_MENU_01   | Яка технологія вас цікавить?
+DIPLO_TECH_COUNTER_MENU_01   | Що ви можете запропонувати за це?
+DIPLO_TRADE_MENU_01          | Ви пропонуєте торгову угоду:
+DIPLO_TREATY_MENU_01         | Що ви бажаєте зробити?
+DIPLO_THREATEN_MENU_01       | Чи ви хочете виставити ультиматум?
+DIPLO_DECLARE_WAR_MENU_01    | Ви впевнені, що хочете розпочати війну?
+DIPLO_JOINT_WAR_MENU_01      | Кому ви хочете, щоб ми оголосили війну?
+DIPLO_BREAK_ALLIANCE_MENU_01 | Який союз, ви хочете, щоб ми розірвали?
+DIPLO_OFFER_AID_MENU_01      | Що саме ви хочете подарувати?
+DIPLO_OFFER_TECH_MENU_01     | Що саме ви хочете подарувати?
+
+DECLINE_OFFER_01           | [my_nameTitle] [my_name] відмовляє.
+DECLINE_OFFER_02           | [my_race_plural] розглянули вашу пропозицію та відхилили її.
+DECLINE_OFFER_03           | Ми з повагою відхиляємо вашу пропозицію.
+DECLINE_OFFER_04           | Ми не зацікавлені.
+DECLINE_OFFER_05           | [my_race_plural] не вважають вашу пропозицію справедливою.
+DECLINE_OFFER_06           | Наразі не в наших інтересах прийняти вашу пропозицію.
+DECLINE_OFFER_07           | Можливо, ви прийняли нас за довірливих дурнів. Ми відхиляємо вашу пропозицію.
+DECLINE_OFFER_08           | Ваша пропозиція не здається нам справедливою.
+DECLINE_OFFER_09           | На жаль, ми повинні відмовитись.
+
+DECLINE_ENEMY_ALLY_01      | [my_race_plural] ніколи не матимуть справу з союзниками ненависних [other_race_plural2].
+DECLINE_ALREADY_ALLIED_01  | [my_race_plural] і наші союзники не можуть розглядати ваш запит, доки ви є союзником інших імперій.
+DECLINE_NO_WAR_ON_ALLY_01  | Ми не оголошуватимемо війну своїм союзникам!
+DECLINE_PEACE_TREATY_01    | Ми не порушимо наш мирний договір з [other_race_plural5].
+
+DECLINE_ANNOYED_01         | [your_race_plural] багато говорять, але мало роблять. Нас втомлює ваше базікання.
+DECLINE_ANNOYED_01         | [your_nameTitle] [your_name], ти випробуєш наше терпіння. Можливо, нам слід поговорити ще раз пізніше.
+DECLINE_ANNOYED_01         | [my_nameTitle] [my_name] вважає цю розмову марною. Можливо, нам слід поговорити ще раз пізніше.
+DECLINE_ANNOYED_02         | Ми втомилися від дипломатичних переговорів. Ми можемо продовжити обговорення пізніше.
+DECLINE_ANNOYED_02         | Зараз ми не можемо знайти з вами консенсус. Можливо краще перенести цю розмову на наступний раз.
+DECLINE_ANNOYED_02         | Нам пора.
+DECLINE_ANNOYED_03         | Вибачте мені, [your_nameTitle] [your_name], але моєї уваги вимагають інші справи.
+DECLINE_ANNOYED_03         | Пробачте, але мій час закінчився.
+DECLINE_ANNOYED_03         | У нас мало часу і багато чого робити. Можливо, ми зможемо поговорити ще раз пізніше.
+
+
+DECLINE_OATHBREAKER_01     | Тепер ми не хочемо укладати договори з вами, оскільки ви вже їх порушували раніше.
+DECLINE_OATHBREAKER_01     | Ви не дотримувались домовленостей у минулому. Тепер ми не можемо вам довіряти.
+DECLINE_OATHBREAKER_01     | Чому ми повинні довіряти вам зараз, коли ви порушили стільки договорів?
+DECLINE_OATHBREAKER_01     | Ми не бачимо підстав договорюватися з тим, хто не дотримувався минулих обіцянок.
+DECLINE_OATHBREAKER_01     | Ми не матимемо справу з такими безчесними істотами, як [your_race_plural]!
+
+DECLINE_ESPIONAGE_01       | Ви, безчесні тварі, крадете плоди наших досліджень! Ми відхиляємо ваш запит.
+DECLINE_ESPIONAGE_01       | Наши технологія призначені лише для [my_race_plural2]. Ви не маєте права їх красти. Нам нема про що говорити.
+DECLINE_ESPIONAGE_01       | Чому ми повинні вам щось давати? Ваші шпигуни вже крадуть все, що вам потрібно!
+DECLINE_ESPIONAGE_01       | Як ви можете очікувати, що ми погоджуватимемося, коли ваші шпигуни крадуть наші технології?
+DECLINE_ESPIONAGE_01       | Відкличте своїх шпигунів, тоді ми поговоримо.
+
+DECLINE_SABOTAGE_01        | Ми не забули вашу останню диверсійну спробу. Доки ви не доведете свою надійність, ми не матимемо з вами справу.
+DECLINE_SABOTAGE_01        | Мій народ постраждав від вашого саботажу. Ми не матимемо з вами справу, доки це не припиниться.
+DECLINE_SABOTAGE_01        | Що?! Ви очікуєте від нас згоди, коли ви саботували наші [target]?
+DECLINE_SABOTAGE_01        | Ти знищив наші [target]. Чому ми повинні мати з вами справу?
+DECLINE_SABOTAGE_01        | Коли ви перестаєте саботувати наші [target], ми зможемо розглянути це питання далі.
+
+DECLINE_BUILDUP_01         | Ми не обговорюватимемо цю згоду, поки ваш флот збільшується біля наших кордонів. 
+DECLINE_BUILDUP_01         | Доки ваш флот збирається біля наших кордонів, я не бачу сенсу мати з вами справу!
+DECLINE_BUILDUP_01         | Ваші кораблі на кордоні нам не страшні, але ми не хочемо мати справу з подобними агресорами.
+DECLINE_BUILDUP_01         | Якщо ви хочете мати справу з [my_empire5], то відправте свої кораблі погрожувати іншим.
+
+DECLINE_ENCROACH_01        | Ваш флот вторгається в космічний простір [my_race_plural2]. Відкличте їх, тоді ми поговоримо.
+
+DECLINE_SKIRMISH_01        | Ви не можете атакувати нас без причини, а потім поводитися якби нічого не трапилось! Ми відхиляємо пропозицію.
+DECLINE_SKIRMISH_01        | Ми не можемо прийняти пропозицію від тих, хто атакує наш флот.
+DECLINE_SKIRMISH_01        | Коли ваш флот перестане атакувати наш, ми зможемо поговорити.
+DECLINE_SKIRMISH_01        | Якщо ви хочете мати будь-які діла з [my_empire5], не чіпайте наші кораблі!
+DECLINE_SKIRMISH_01        | [my_nameTitle] [my_name] не хоче навіть розглядати ваші пропозиції після вашого знищення наших кораблів. Ми не погоджуємося.
+
+DECLINE_ATTACK_01          | Нам надто складно закривати очі на ваш напад на [system]. Ми не погоджуємося.
+DECLINE_ATTACK_01          | Ми не забули вашу атаку на колонію [system] і не забудемо всіх тих жертв вашої жорстокості.
+
+DECLINE_INVASION_01        | Наші люди не хочуть мати справу з різниками системи [system].
+DECLINE_INVASION_01        | Ви пролили кров мого народу в системі [system]. Я не прийму вашу пропозицію.
+DECLINE_INVASION_01        | Багато людей загинуло від ваших рук в системі [system] і нам не варто забувати про це, коли ми маємо з вами справу. Ми не погоджуємося.
+
+DECLINE_BIOWEAPONS_01      | [my_race_plural] не укладатимуть угод з расою, яка застосовує біологічну зброю.
+DECLINE_BIOWEAPONS_01      | Невже ви не знаєте, що є чесним боєм? Ті істоти, яких ви вбили біологічною зброєю, не могли захиститися!
+DECLINE_BIOWEAPONS_01      | Ви використовуєте зброю, яку більшість з нас вважає безчесною. Ми відмовляємося мати справу з таким божевіллям.
+DECLINE_BIOWEAPONS_01      | Ви не знайдете у нас пробачення за гріх використання біологічної зброї. [my_race_plural] не можуть цього дозволити.
+DECLINE_BIOWEAPONS_01      | Чи ви вважаєте, що всі ті, хто загинув від вашої біологічної зброї, дозволили б нам здійснювати з вами угоди?
+
+DECLINE_TECH_TRADE_01      | У вас немає технологій, які б нас цікавили.
+DECLINE_TECH_TRADE_01      | У [your_race_plural2] нема нічого цікавого для нас.
+DECLINE_TECH_TRADE_01      | Ваші примітивні винаходи нас не цікавлять.
+DECLINE_TECH_TRADE_01      | Технологічний рівень [my_race_plural2] занадто вищій від вашого.
+DECLINE_TECH_TRADE_01      | [your_nameTitle] [your_name], ми не потребуємо в тому, що пропонують нам ваші вчені.
+DECLINE_TECH_TRADE_01      | [my_nameTitle] [my_name] не зацікавлений у ваших технологіях.
+
+OFFER_TECH_EXCHANGE_01     | The [your_empire] is in great need of your [tech] technology. Perhaps you are willing to exchange it for some of our technology.
+OFFER_TECH_EXCHANGE_01     | The [your_empire] knows you have learned the secrets of [tech]. Can we offer you some of our technology in exchange?
+OFFER_TECH_EXCHANGE_01     | [your_nameTitle] [your_name] of the [your_empire] wishes for the secret of the [tech] technology. Will you exchange it for one of our advances?
+OFFER_TECH_EXCHANGE_01     | The [your_race] race is awed by the scientific wonders of [tech]. What can we offer you for its secret?
+
+ACCEPT_TECH_EXCHANGE_01    | Добре! [my_nameTitle] [my_name] погоджується на обмін секретів технології "[techGiven]" [my_race_plural2] на технологію "[techReceived]".
+ACCEPT_FINANCIAL_AID_01    | [my_nameTitle] [my_name] приймає ваш подарунок у вигляді [amt] Б.К.
+ACCEPT_TECHNOLOGY_AID_01   | [my_nameTitle] [my_name] приймає ваш подарунок у вигляді технології "[tech]".
+
+BREAK_TRADE_01             | Мій народ більш не бажає торгувати з [your_empire5].
+ANNOUNCE_TRADE_01          | У [year] році [my_empire] та [your_empire] погоджуються на торгову угоду у вигляді [amt] Б.К. щорічно.
+
+ANNOUNCE_PEACE_01          | У [year] році [my_race_plural] та [your_race_plural] погоджуються припинити всі бойові дії між їх імперіями.
+ANNOUNCE_PEACE_01          | [my_nameTitle] [my_name] наказує припинити всі бойові дії між нашими імперіями.
+ACCEPT_PEACE_01            | Ми погоджуємось, що настав час закінчити наші дрібні сварки.
+ACCEPT_PEACE_01            | Ми приймаємо вашу пропозицію миру. Припиніть вогонь, і ми відповімо тим самим.
+ACCEPT_PEACE_01            | Ми втомилися від цієї безглуздої битви. [my_empire] приймає вашу пропозицію миру.
+
+BREAK_PACT_01              | Попередження [your_empire3] від [my_race_plural2]: наш Пакт про ненапад розірвано!
+ANNOUNCE_PACT_01           | Починаючи з [year] року [my_empire] зобов'язується дотримуватися Пакту про ненапад і не нападати на кораблі [your_race_plural2], за винятком тих випадків, коли вони обертаються навколо однієї з наших колоній.
+ACCEPT_PACT_01             | [my_empire] погоджується на Пакт про ненапад. Жодна зі сторін не буде атакувати флоти іншої, якщо вони не ввійдуть в орбіту колонії одне одного.
+ACCEPT_PACT_01             | Якщо ви згодні не порушувати наші кордони, [my_race_plural] обіцяють не атакувати ваші кораблі.
+ACCEPT_PACT_01             | [my_nameTitle] [my_name] погоджується підписати Пакт про ненапад. Новий етап миру розпочався для наших імперій!
+ACCEPT_PACT_01             | Тоді домовились. Ви не атакуєте наші колонії - [my_empire] не атакує ваші кораблі.
+
+BREAK_ALLIANCE_01          | [my_empire] більше не може підтримувати союз з [your_empire5].
+ANNOUNCE_ALLIANCE_01       | У [year] році було сформовано союз [my_empire2] та [your_empire2], в якому жоден з них не нападатиме на флоти та колонії одне одного.
+ANNOUNCE_ALLIANCE_01       | Тож наш альянс було сформовано. Тепер ваші кораблі можуть відвідувати наші колонії й запрошувати паливо.
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] бачить в вас союзника, [your_nameTitle] [your_name]. Ми погоджуємося на альянс.
+ACCEPT_ALLIANCE_01         | Це історичний день для [my_empire2] та [your_empire2]. Сьогодні дві великі держави сформували союз!
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] бачить мудрість вашого бажання союзу з [your_empire5]. Нехай буде так!
+
+OFFER_JOINT_WAR_01         | Настав час [your_empire3] та [my_empire3] об'єднатися у війні проти [other_race2].
+ACCEPT_JOINT_WAR_01        | [other_empire] впаде від об'єднаної могутності [my_empire2] та [your_empire2].
+ACCEPT_JOINT_WAR_01        | Об'єднана міць [my_race2] та [your_race2] дуже швидко знищить сили [other_race2].
+ACCEPT_JOINT_WAR_01        | У [year] році, [my_empire] та [your_empire] об’єднали зусилля, щоб позбутися від галактичної загрози - [other_race2].
+COUNTER_JOINT_WAR_01       | Ми приєднаємося до вашої війни проти [other_empire2], якщо ми отримаємо:
+RESPOND_CLOSE_EMBASSY_01   | Нехай буде так. Подальших дискусій між нашими імперіями не буде.
+
+RESPOND_BREAK_TRADE_01     | Ми це запам’ятаємо.
+RESPOND_BREAK_TRADE_01     | Тобто, [your_nameTitle] [your_name], ви не дотримуєтесь свого слова? Ми цього не забудемо.
+
+RESPOND_BREAK_PACT_01      | Ваші безчесні дії приведуть вас у могилу, [your_nameTitle] [your_name].
+RESPOND_BREAK_PACT_01      | [your_empire] розвалиться під вагою власних порушених обіцянок...
+
+RESPOND_BREAK_ALLIANCE_01  | Ви знеславили угоду. Ми розриваємо цей союз.
+RESPOND_BREAK_ALLIANCE_01  | Добре. Тепер ми бачимо ваші справжні наміри. Цей союз тепер розірваний.
+RESPOND_BREAK_ALLIANCE_01  | Нам мало потрібні договори, які не дотримуються. Союз розірваний.
+RESPOND_BREAK_ALLIANCE_01  | Нехай буде так. Ми розриваємо цей союз.

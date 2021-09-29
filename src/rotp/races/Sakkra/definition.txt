@@ -15,7 +15,7 @@ soldierMug:     SakkraSoldierMug, 220@80|440x330
 diploProfile:   SakkraDiploMug, 100@20|630x480
 lab:            SakkraLaboratory
 embassy:        SakkraLaboratory
-holograph:      SakkraHolograph
+holograph:      
 diplomat:       SakkraDiplomat
 scientist:      SakkraScientist
 trooper:        SakkraSoldier
@@ -76,7 +76,7 @@ spyRebellion:   45
 dialogTextX:    160,160
 dialogTextY:    550
 councilDiplo:   0.4, -180, 70, 0.6
-labFlagX:       0.75
+labFlagX:       0.77
 flagSize:       200x200
 flagWar:        SakFlagWar
 flagNormal:     SakFlagNorm

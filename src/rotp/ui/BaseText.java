@@ -43,6 +43,7 @@ public class BaseText implements Base {
     private BufferedImage textShadow;
     private int bufferedLanguage = -1;
     private boolean logoFont = false;
+    private boolean bordered = false;
     private int fontSize = 10;
     private int xOrig;
     private int yOrig;
@@ -88,6 +89,7 @@ public class BaseText implements Base {
     public Rectangle bounds()         { return bounds; }
     public void disabled(boolean b)   { disabled = b; }
     public void visible(boolean b)    { visible = b; }
+    public void bordered(boolean b)   { bordered = b; }
     public void preceder(BaseText t)  { preceder = t; }
     public boolean isEmpty()          { return text.isEmpty(); }
     public void setBounds(int x, int y, int w, int h) {
@@ -179,7 +181,10 @@ public class BaseText implements Base {
         int sw = stringWidth(g);
         int fontH = g.getFontMetrics().getHeight();
         setBounds(x1,y1-fontH,sw+scaled(5),fontH+(fontH/5));
-        drawString(g,displayText(), x1, y1);
+        if (bordered)
+            drawBorderedString(g,displayText(), x1, y1, Color.black,textColor());
+        else 
+            drawString(g,displayText(), x1,y1);
         return x1+sw;
     }
     public int drawCentered(Graphics g) {

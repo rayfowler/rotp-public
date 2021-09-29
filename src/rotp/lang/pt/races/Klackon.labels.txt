@@ -1,0 +1,96 @@
+// race-specific variables (must start with _)
+_empire                           | Colónia Klackon, Colónia Klackant, Colónia Klockan, Colónia Arthropon, Colónia Coleopteron
+_race_male                        | Klackon, Klackant, Klockan, Arthropon, Coleopteron
+_race_male_plural                 | Klackones, Klackantes, Klockanes, Arthropones, Coleopterones
+_race_female                      | Klackon, Klackant, Klockan, Arthropon, Coleopteron
+_race_female_plural               | Klackones, Klackantes, Klockanes, Arthropones, Coleopterones
+_title                            | 
+_nameTitle                        |
+
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Advisor text
+MAIN_ADVISOR_TITLE                | %2
+MAIN_ADVISOR_BUTTON_OK            | Dispensar
+MAIN_ADVISOR_SCOUT                | Até que enfim, as minhas naves estão completas. Tenho de usar os meus batedores para descobrir novos mundos onde aterrar.
+MAIN_ADVISOR_TRANSPORT            | Estabeleci-me neste novo mundo. Tenho que enviar reforços de casa para me expandir nele. Não há novas formas de vida aqui e, por isso, a minha busca continua.
+MAIN_ADVISOR_DIPLOMACY            | Nova vida, finalmente! Que estranho, comunica por ruídos e gestos. Tenho de contemplar a informação diplomática e confidencial acerca deles antes de prosseguir.
+MAIN_ADVISOR_SHIP_ENGINE          | Eu continuo a melhorar com este aperfeiçoamento dos meus motores espaciais. Tenho de revisitar os modelos das minhas naves para integrar os motores na frota.
+MAIN_ADVISOR_RALLY_POINTS         | Por que me atacam? Não compreendo. Tenho de escolher um ponto de reunião para as minhas naves me defenderem enquanto tento perceber o porquê deste evento.
+MAIN_ADVISOR_MISSILE_BASES        | Vejo agora que nem toda a vida aprendeu a dádiva da cooperação. Tenho de fortificar os meus mundos exteriores com bases de mísseis para segurar as minhas possessões.
+MAIN_ADVISOR_SHIP_WEAPON          | Eu continuo a progredir e a minha nova tecnologia de armamento vai assegurar-me mais poder assim que a integrar nos modelos das minhas naves.
+MAIN_ADVISOR_COUNCIL              | Uma reunião de várias espécies vai ter lugar em breve. Que formas de vida se encontrarão lá? Se melhorar a minha posição junto das que já me conhecem, talvez isso facilite a apresentação às novas.
+MAIN_ADVISOR_REBELLION            | O que é isto? Perdi controlo de mim mesma em %1. Não importa, tenho apenas de ir lá e mostrar-lhes que sou eu que mando.
+MAIN_ADVISOR_RESIST_COUNCIL       | Impossível! Outra soberania foi escolhida para governar estes bobos sem graça, enquanto a minha inteligência é ignorada! Não tem importância: vou rapidamente extingui-los a todos!
+MAIN_ADVISOR_COUNCIL_RESISTED     | Por que insistem este tolos em ser tão desagradáveis? O Conselho é meu, a galáxia é minha e eles hão de aprender qual é o seu lugar no meu domínio! 
+
+MAIN_SCOUT_TITLE                  | Eu Exploro um Novo Sistema Estelar
+MAIN_COLONIZE_TITLE               | Eu orbito %1, um sistema por reclamar.
+MAIN_COLONIZE_ANIMATION_TITLE     | No ano %1, eu formo uma nova colónia.
+MAIN_ALERT_SPY_CAPTURED           | Eu capturei um espião da [alien_empire], forçando uma confissão das suas atividades de %2.
+MAIN_ALERT_TRANSPORTS_KILLED      | A minha tentativa de chegar a %2 foi impedida por forças defensivas [alien_race_female_plural].
+MAIN_ALERT_INVADERS_KILLED        | Os transportes [alien_race_male_plural] que tentavam invadir %1 foram completamente destruídos por mim.
+MAIN_BOMBARD_TITLE                | Eu orbito uma colónia [alien_race_female] inimiga.
+
+TECH_RESEARCH_COMPUTER            | Tenho de selecionar a próxima tecnologia de Computadores para me focar..
+TECH_RESEARCH_CONSTRUCTION        | Tenho de selecionar a próxima tecnologia de Engenharia para me focar..
+TECH_RESEARCH_FORCE_FIELD         | Tenho de selecionar a próxima tecnologia de Campos de Forças para me focar..
+TECH_RESEARCH_PLANETOLOGY         | Tenho de selecionar a próxima tecnologia de Planetologia para me focar..
+TECH_RESEARCH_PROPULSION          | Tenho de selecionar a próxima tecnologia de Propulsão para me focar..
+TECH_RESEARCH_WEAPON              | Tenho de selecionar a próxima tecnologia de Armamento para me focar..
+TECH_DISCOVERY_TITLE              | Eu Faço uma Descoberta Revolucionária em %1
+TECH_SCOUTED_TITLE                | Eu Descubro uma Nova Tecnologia em Excursão às Ruínas de %1
+TECH_STOLEN_TITLE                 | Eu Infiltrei-me no Centro de Investigação %1 em %2.
+TECH_TRADED_TITLE                 | Eu Adquiro Tecnologia de Cientistas [alien_race_male_plural]
+TECH_PLUNDERED_TITLE              | Eu Descobri uma Nova Tecnologia no Saque às Ruínas de %1
+TECH_ALLOCATE_SHIELD              | Deveria aumentar os investimentos em Defesa em todas as minhas colónias para poder construir novos escudos planetários?
+TECH_ALLOCATE_MISSILE_BASES       | Deveria aumentar os investimentos em Defesa em todas as minhas colónias para poder melhorar as minhas bases de mísseis?
+TECH_ALLOCATE_FACTORIES           | Deveria aumentar os investimentos em Indústria em todas as minhas colónias para poder melhorar os meus Controlos Industriais?
+TECH_ALLOCATE_CLEAN_WASTE         | Deveria reduzir os investimentos em Ecologia em todas as minhas colónias para o mínimo necessário ao seu saneamento? 
+TECH_ALLOCATE_ENRICH_SOIL         | Deveria aumentar os investimentos em Ecologia em todas as minhas colónias com ambientes medianos para poder começar a terraformar os planetas?
+TECH_ALLOCATE_ATMOSPHERE          | Deveria aumentar os investimentos em Ecologia em todas as minhas colónias com ambientes hostis para poder começar a terraformar os planetas?
+TECH_ALLOCATE_TERRAFORM           | Deveria aumentar os investimentos em Ecologia em todas as minhas colónias para poder começar a terraformar os planetas?
+
+NOTICE_ESPIONAGE_TITLE            | Eu infiltrei-me numa base [alien_race_female].
+NOTICE_ESPIONAGE_FRAME_TITLE      | Eu consegui incriminar outra raça pelo furto.
+
+SHIP_COMBAT_TITLE_DESC            | Eu encontro uma frota [alien_race_female] hostil.
+
+SABOTAGE_FACTORIES_RESULT         | Eu destruí %1 fábricas.
+SABOTAGE_BASES_RESULT             | Eu destruí %1 bases de mísseis.
+SABOTAGE_REBELS_RESULT            | Eu incitei %1 rebeldes.
+SABOTAGE_REBELS_TOTAL             | Eu incitei %1 rebels. A agitação está agora nos %2%.
+SABOTAGE_REBELS_REVOLT            | Eu desencadeei uma revolta!
+
+COUNCIL_CAST_PROMPT               | Eu vou ter de escolher (%1 votos)...
+
+// text for endings... '#' represents a paragraph break
+// variables: %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 is special race-specific text described below
+GAME_OVER_MILITARY_LOSS2          | Parece que te aguardava um final sinistro.#No começo da tua jornada ao desconhecido, adentraste-te pelo espaço com esperanças de encontrar outra forma de vida tão singular como tu. Infelizmente, o teu sonho ficou por concretizar até ao dia em que deixaste de existir. Não só as vidas inteligentes se revelaram completamente diferentes de ti, como também trataram a tua demanda de forma violenta e antipática. Essa mesma violência destruiu a tua esperança e todos os teus planetas estão agora nas mãos daqueles que te detestaram desde o primeiro contacto.#Cada um dos teus corpos jaz disforme e sem vida onde foi massacrado, desde o teu planeta natal à mais longínqua das tuas ex-colónias. O brilho abandona o olhar da tua última peça mortal e cais no entendimento de que o universo está prestes a perder a sua mais excecional forma de vida para sempre...
+GAME_OVER_MILITARY_WIN2           | A tua aventura chega ao fim... por agora.#Foi com grandes esperanças que te atreveste a sonhar com uma consciência como tu algures nos confins do espaço. Mesmo tendo conhecido muitas outras formas de vida inteligente, tornou-se demasiado claro que nenhuma delas equivaleria à singularidade que só tu possuis. E pior: receando aquilo que não compreendiam, atacaram-te, gerando a mais terrível das respostas vinda de ti e dos incontáveis corpos que habitas. Foi com um enorme pesar que as atacaste e é com uma tristeza ainda maior que dás por ti sozinha, como a única inteligência que resta nesta galáxia.#Contudo, nem tudo está perdido. Estas raças alienígenas podem não ter correspondido à tua busca com as suas formas de ser particulares, mas tu compreendes agora que existe todo um universo lá fora para explorar. Tudo o que te resta agora é espalhares-te a todos os cantos da galáxia, recomeçando a demanda uma vez mais...
+GAME_OVER_MILITARY_ALLIANCE_WIN2  | A tua aventura chega ao fim... por agora.#Invade-te uma mágoa incomportável pelos atos que foste obrigada a cometer. Procurando por pares entre os planetas desta galáxia, acabaste por encontrar, exclusivamente, uma multidão de criaturas ignorantes que se viravam contra ti por seres tão diferente delas. Quando as ameaças se tornaram ações violentas, derrotaste-os em legítima defesa e dos teus interesses, esperando, no entanto, que acabassem por ver o absurdo da sua posição e te aceitassem pela forma de vida única que tu constituis. As tuas esperanças acabariam por se desmoronar e todos os que te cumprimentaram com agressão foram silenciados para sempre.#Mas alegra-te, velho artrópode! Não encontraste uma consciência como a tua, mas conseguiste fazer aliados fiéis antes que a tua jornada terminasse. São esquisitos, mas pelo menos olham para ti com a mesma amizade que sentes por eles. Se o impulso para determinar se és mesmo única no universo voltar a ressurgir, podes sempre rumar às outras galáxias quando te convier. Mas por agora, podes descansar e desfrutar do sentimento de camaradagem que obtiveste desta experiência e de todos os benefícios que esse companheirismo, sem dúvida, traz.
+GAME_OVER_COUNCIL_LOSS2           | A tua aventura chega ao fim... por agora.#Não era este o desfecho que pretendias para a tua odisseia por um semelhante num mar de estrelas. Conquanto tenhas conhecido muitas estranhas e fascinantes criaturas no decorrer da tua busca, também encontraste muitas culturas perversas e simplesmente mesquinhas. Infelizmente, é o líder da mais insofrível de todas que agora se senta no trono do Soberano da Nova República. Tens dúvidas de que este líder venha a ser gentil para contigo - e toda a prova de que necessitas para corroborar um tal medo reside nas vossas interações passadas com o dito alienígena.#O teu único desejo era o de encontrar outro que fosse tão especial como tu. Mas agora, só te resta aguardar, submissa, os desígnios de um poder maior. Pedes apenas que esse %5 te deixe em paz, pois se eles assim o ditarem, a força combinada da galáxia inteira poderá abater-se sobre ti.
+GAME_OVER_COUNCIL_ALLIANCE_WIN2   | A tua aventura chega ao fim... por agora.#Vai ter início uma nova era para os Klackones, com o vosso fiél aliado, %5, prontos para liderar a Nova República rumo a um futuro glorioso. Embora sejam muitos os aspetos que vos diferenciam, estes teus amigo olha-te com interesse e compaixão e a tua confiança pode repousar em que ele te permitirá prosseguir com a tua demanda assim que o trabalho nesta aliança estiver terminado. Vai demorar muito até que espécies tão díspares atinjam uma coexistência harmoniosa, mas tu sabes que %8 facilitará a tarefa.#Este desfecho não te deixa nada mais além de uma sensação contentamento. Por outro lado, as manhas do jogo político nunca te entusiasmaram muito e dás-te como satisfeita por os teus amigos te retirarem, permanentemente, um tamanho fardo dos ombros. Tudo o que desejavas era encontrar um espírito como o teu algures nesta galáxia. Quem sabe um dia...
+GAME_OVER_REBELLION_LOSS2         | Parece que te aguardava um final sinistro.#Estavas só no princípio e permaneces só no fim. Incapaz de atingir a grande meta da tua demanda, saltaste de civilização em civilização novas até que as mais visionárias de entre elas se uniram para formar a Nova República. Pressentindo uma conclusão prematura da tua jornada e com %5 tomando as rédeas da liderança, escolheste lutar contra esse destino no lugar de simplesmente te submeteres a ele. Não foi o primeiro erro que cometeste, mas acabaria por ser, tristemente, o último.#Agora, com %8 percorrendo a galáxia, dás graças, com o teu derradeiro suspiro, por a morte ao menos trazer o fim do teu sofrimento. Se tivesses encontrado outra como tu, alguém que compreendesse quem e o que tu és, talvez tivessem podido inverter o curso do destino pegando nas mesmas armas...
+GAME_OVER_REBELLION_WIN2          | A tua aventura chega ao fim... por agora.#Opondo-se aos teus desejos mais profundos, a galáxia decidiu contra a tua ascenção, obrigando-te a retribuir apropriadamente. Incapaz de aceitar a governação xenofóbica de %5, pegaste em armas sozinha para te defenderes, e à tua demanda, do seu reinado pavoroso. E sabias que aqueles que haviam sido manipulados pelos tiranos hipócritas provavelmente se uniriam contra ti, mas não aceitarias que a continuação da tua demanda fosse posta causa sob nenhuma circunstância. Então, foi com tristeza que esmagaste todos os que te fizeram frente.#Se ao menos estas raças não tivessem cedido ao medo e ao ódio pelo diferente, talvez tivessem podido coexistir pacificamente contigo. Mas este não é um resultado completamente desanimador, pois guardarás uma história emocionante para partilhares com o objeto da tua busca, se alguma vez o encontrares...
+GAME_OVER_REBEL_ALLIANCE_WIN2     | A tua aventura chega ao fim... por agora.#Tu já sabias que isto aconteceria desde a primeira reunião do Conselho Galáctico. Apesar dos teus avisos aos outros impérios que habitavam a galáxia, o vil traidor %5 conseguiu tomar o poder da Nova República, ameaçando infetar a galáxia com a sua xenofobia atroz. Lutaste corajosamente contra ele e, embora muitos tenham sucedido nas suas tentativas de te enfrentar, acabaste sempre por conseguir defender os teus interesses.#Talvez o mais feliz tenha sido o auxílio recebido dos teus amigos nesta guerra final. Eles foram sábios para ver o perigo e compassivos para te ajudar e ficaste contente por não teres de travar esta luta sozinha. Agora poderão atingir uma coexistência verdadeiramente pacífica e partilhar os recursos da galáxia. No futuro não muito distante, talvez te aventures pelo espaço ainda mais profundo, deixando esta galáxia na esperança de encontrar as formas de vida que idealizas há muito, muito tempo...
+GAME_OVER_COUNCIL_WIN2            | Não previste este desfecho para a tua aventura.#Descobriste muito desde que te aventuraste para fora do teu velho mundo natal pela primeira vez em busca de uma consciência como a tua. Embora ainda tenhas esse sonho para preencher, os conhecimentos e amizades que ganhaste daqueles com que te cruzaste acabam por ser doces recompensas. Os teus aliados não só superaram o seu receio do diferente, como escolheram eleger-te Soberano da Nova República. Um futuro que nunca imaginaste para ti estende-se agora à tua frente - e para ele guiarás os teus novos amigos com toda a paciência e confiança que depositaram em ti.#Quem sabe se um dia não partes para uma nova demanda, na esperança de encontrar alguém que exista como tu. Mas há muito a fazer por agora e a tua investigação terá de esperar até que todo esse trabalho esteja terminado. Quando estiver, poderás até descobrir que esse teu impulso visceral diminuiu - afinal, pela primeira vez na tua longa vida, não estás só.
+GAME_OVER_COUNCIL_MILITARY_WIN2   | Não previste este desfecho para a tua aventura.#Finalmente, dás as tuas batalhas por terminadas. Depois de assumires o cargo de Soberano da Nova República, conseguiste que todas as formas de vida conscientes se sentassem numa távola redonda da amizade - isto é, até que uma rebelião penosamente mal-preparada se formou contra ti. Movidos pelo medo e pela xenofobia por aquilo que tu és, estes que te tentaram derrubar não podiam nem imaginar a complexidade da tua mente singular nem a fúria dos teus aliados na defesa da República. Foram aniquilados. Chegando a todos os mundos que agora são teus, a paz invadirá a galáxia como a água que corre pelos leitos dos rios até aos oceanos.#Tu e os teus aliados dividem os territórios dos rebeldes entre vocês, e o teu pensamento foge, por momentos, para a missão que te fez deixar o conforto do planeta natal há já tanto tempo. É verdade que nunca conheceste o objeto da tua procura e que, em muitos aspetos, permaneces sozinha no universo. Mas é com entusiasmo que te apercebes de que, com os amigos que cultivaste pelo caminho, nunca mais estarás só.
+GAME_OVER_COUNCIL_MILITARY_LOSS2  | Parece que te aguardava um final sinistro.#Ninguém te pode censurar por quereres levar a galáxia à paz como Soberano da Nova República. Ninguém te pode censurar por dares o teu melhor para unir tantas civilizações com diferenças gigantescas. Mas apesar dos teus melhores esforços, a rebelião que se ergueu contra ti foi capaz, não só de fomentar, mas de provocar o teu derrube enquanto líder e esmagar a Nova República com todo o poder que lhe estava ao alcance. É possível que os teus aliados, há muito falecidos, se tenham arrependido da sua eleição antes de os seus impérios ruírem em pó e cinzas diante dos seus olhos. Pelo menos, não terás de suportar as suas elegias, já que as vozes foram para sempre silenciadas.#Os últimos dos teus corpos preparam-se para enfrentar o fim nos esconderijos que escavaram tentando escapar aos inimigos. Sem comida nem água, o tempo está a contar. Se tivesses conseguido encontrar outra como tu, alguém que te compreendesse de verdade e que lutasse a teu lado com a mesma determinação que terias tido para com ela, o desfecho teria sido diferente? Talvez. Enfim, jamais saberás...
+
+
+// This text is the %8 variable in some of the game over text... when this race wins the game
+GAME_OVER_ALLIANCE_WIN3           | a indefetível mente única dos Klackons
+GAME_OVER_REBELLION_LOSS3         | as hordas desalmadas de Klackons

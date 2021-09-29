@@ -1,6 +1,9 @@
 SakWin        | races/Sakkra/WinSplash.jpg
 SakLoss       | races/Sakkra/LossSplash.jpg
 
+SakSab01      | races/Sakkra/SabotageMissiles/Frame000.jpg
+SakSab02      | races/Sakkra/SabotageRebellion/Frame000.jpg
+
 SakFlagWar   | races/Sakkra/banner_war.png
 SakFlagNorm  | races/Sakkra/banner_norm.png
 SakFlagPact  | races/Sakkra/banner_pact.png
@@ -10,7 +13,6 @@ SakDlgNorm   | races/Sakkra/dialogue_norm.png
 SakDlgPact   | races/Sakkra/dialogue_pact.png
 
 SakLab       | races/Sakkra/Sakkra_Laboratory.jpg
-SakLab01     | races/Sakkra/Sakkra_Laboratory_holograph.png
 SakLabGlow1  | races/Sakkra/Sakkra_Laboratory_Glow_01.png
 SakLabGlow2  | races/Sakkra/Sakkra_Laboratory_Glow_02.png
 SakLabGlow3  | races/Sakkra/Sakkra_Laboratory_Glow_03.png

@@ -1,9 +1,9 @@
 // all possible names
-name: Darlok, Sarlok, Shadelok
+name: Darlok, Sarlok, Szpielok, Cień, Nazlok
 
 desc1: Agresywni technokraci
 desc2: Doskonali szpiedzy
-desc3: Darlokowie to nienaturalne i tajemnicze widma pochodzące z innego wymiaru.
+desc3: Rasa [race] to nienaturalne i tajemnicze widma pochodzące z innego wymiaru.
 
 // possible home system names
 home: Nazin, Mordor, Hades, Abyssal, Hel
@@ -18,3 +18,4 @@ ship1: Mgła, Opar, Iskra, Całun, Omen, Eter, Błysk
 ship2: Miraż, Cień, Sen, Iluzja, Odbicie, Wizja, Postrach
 ship3: Fantom, Widmo, Upiór, Mrok, Duch, Zjawa, Poltergeist
 ship4: Koszmar, Fantazm, Terror, Horror, Odrodzony, Ponury Żniwiarz, Fobos
+

@@ -64,7 +64,7 @@ WARN_OATHBREAKER_01        | Feckless cowards! Alas that our people must endure 
 WARN_ATTACKED_ALLY_01      | We warn you only once, ambassador. Halt your aggression towards the [defender_race_plural]: they stand with us, and we stand with them.
 WARN_REBELLING_AGAINST_01  | You dare usurp the highest seat on the council from us, its rightful masters? Your people will live to regret this day, ambassador.
 //
-PRAISE_COUNCIL_VOTE_01     | Our cause demands much, ambassador, and we are eternally grateful to be able to rely on the [voter_empire] in council. Rest assured that we wil not forget this the next time you come to call on my people.
+PRAISE_COUNCIL_VOTE_01     | Our cause demands much, ambassador, and we are eternally grateful to be able to rely on the [voter_empire] in council. Rest assured that we will not forget this the next time you come to call on my people.
 PRAISE_COUNCIL_VOTE_02     | It was good of you to place confidence in us today, ambassador. Know that we remember those who aid us in achieving our final goal. 
 PRAISE_COUNCIL_VOTE_03     | Of course your people have an ulterior motive in voicing support for us. We are still most wary of you and your kind, but we are also appreciative nonetheless.  
 

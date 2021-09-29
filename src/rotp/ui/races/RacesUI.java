@@ -43,7 +43,7 @@ import rotp.util.AnimationManager;
 
 public class RacesUI extends BasePanel {
     private static final long serialVersionUID = 1L;
-    private static RacesUI instance;
+    public static RacesUI instance;
     
     private static final String DIPLOMACY_PANEL = "Diplomacy";
     private static final String INTELLIGENCE_PANEL = "Intelligence";
