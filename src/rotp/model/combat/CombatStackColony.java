@@ -262,4 +262,11 @@ public class CombatStackColony extends CombatStack {
         else
             return scatterPack.name();
     }
+    @Override
+    public int maxFiringRange(CombatStack tgt) {
+        int maxRange = 0;
+        if(num > 0)
+            maxRange = 9;
+        return maxRange;
+    }
 }
