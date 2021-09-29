@@ -899,6 +899,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         return inTransport();
     }
     public void clearTransport() {
+        starSystem().clearTransportSprite();
         transport().reset(empire);
     }
     public int maxTransportsAllowed() {
