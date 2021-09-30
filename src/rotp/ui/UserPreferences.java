@@ -66,8 +66,10 @@ public class UserPreferences {
     private static boolean playSounds = true;
     private static int musicVolume = 10;
     private static int soundVolume = 10;
+    private static int defaultMaxBases = 1;
     private static boolean displayYear = true;
     private static boolean autoColonize = false;
+    private static boolean divertColonyExcessToResearch = false;
     private static String autoBombardMode = AUTOBOMBARD_NO;
     private static String displayMode = WINDOW_MODE;
     private static String graphicsMode = GRAPHICS_HIGH;
@@ -223,6 +225,8 @@ public class UserPreferences {
     }
     public static void toggleYearDisplay()    { displayYear = !displayYear; save(); }
     public static boolean displayYear()       { return displayYear; }
+    public static int defaultMaxBases()    { return defaultMaxBases; }
+    public static boolean divertColonyExcessToResearch()  { return divertColonyExcessToResearch; }
     public static void uiTexturePct(int i)    { uiTexturePct = i / 100.0f; }
     public static float uiTexturePct()        { return uiTexturePct; }
 
@@ -270,6 +274,8 @@ public class UserPreferences {
             out.println(keyFormat("SENSITIVITY")+sensitivityToSettingName(sensitivityMode));
             out.println(keyFormat("SHOW_MEMORY")+ yesOrNo(showMemory));
             out.println(keyFormat("DISPLAY_YEAR")+ yesOrNo(displayYear));
+            out.println(keyFormat("DEFAULT_MAX_BASES") + defaultMaxBases);
+            out.println(keyFormat("DIVERT_COLONY_EXCESS_TO_RESEARCH")+ yesOrNo(divertColonyExcessToResearch));
             out.println(keyFormat("SCREEN_SIZE_PCT")+ screenSizePct());
             out.println(keyFormat("UI_TEXTURE_LEVEL")+(int) (uiTexturePct()*100));
             out.println(keyFormat("LANGUAGE")+ languageDir());
@@ -316,6 +322,8 @@ public class UserPreferences {
             case "SENSITIVITY":  sensitivityMode = sensitivityFromSettingName(val); return;
             case "SHOW_MEMORY":  showMemory = yesOrNo(val); return;
             case "DISPLAY_YEAR": displayYear = yesOrNo(val); return;
+            case "DEFAULT_MAX_BASES": defaultMaxBases = Integer.valueOf(val); return;
+            case "DIVERT_COLONY_EXCESS_TO_RESEARCH": divertColonyExcessToResearch = yesOrNo(val); return;
             case "SCREEN_SIZE_PCT": screenSizePct(Integer.valueOf(val)); return;
             case "UI_TEXTURE_LEVEL": uiTexturePct(Integer.valueOf(val)); return;
             case "LANGUAGE":     selectLanguage(val); return;
