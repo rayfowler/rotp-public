@@ -83,7 +83,7 @@ public class ShipDecision implements Base, Serializable {
             return;
 
         // reassign fleet if possible (may currently be in transit to another location)
-        if (fleetOrders.owningFleet.canSend() && fleetOrders.owningFleet.canSendTo(shipPlan.plan.destId)) {
+        if (fleetOrders.owningFleet.canSend() && fleetOrders.owningFleet.canSendDesignTo(bestDesign, shipPlan.plan.destId)) {
             if (shipPlan.plan.goToStagingPoint) 
                 fleetOrders.reassignShip(bestDesign, shipPlan.plan.currentDestId(), numShips);
             else

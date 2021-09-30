@@ -630,15 +630,23 @@ public final class Empire implements Base, NamedObject, Serializable {
         if (!colonizedSystems.contains(s)) {
             colonizedSystems.add(s);
             setRecalcDistances();
+            refreshViews();
             for (Empire ally: allies())
+            {
                 ally.setRecalcDistances();       
+                ally.refreshViews();
+            }
         }
     }
     public void removeColonizedSystem(StarSystem s) {
         colonizedSystems.remove(s);
         setRecalcDistances();
+        refreshViews();
         for (Empire ally: allies())
+        {
             ally.setRecalcDistances();
+            ally.refreshViews();
+        }
         
         if (colonizedSystems.isEmpty())
             goExtinct();
@@ -999,6 +1007,18 @@ public final class Empire implements Base, NamedObject, Serializable {
         for (Ship sh: visibleShips) {
             if (sh.isTransport()) {
                 if (enemyMap[sh.empId()] && (sh.destSysId() == s.id))
+                if (aggressiveWith(sh.empId()) && sh.destSysId() == s.id)
+                    transports += ((Transport)sh).size();
+            }
+        }
+        return transports;
+    }
+    public int unfriendlyTransportsInTransit(StarSystem s) {
+        int transports = s.orbitingTransports(id);
+        
+        for (Ship sh: visibleShips) {
+            if (sh.isTransport()) {
+                if (aggressiveWith(sh.empId()) && sh.destSysId() == s.id)
                     transports += ((Transport)sh).size();
             }
         }

@@ -560,6 +560,26 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
         
         return true;
     }
+    public boolean canSendDesignTo(ShipDesign d, int id) {
+        if (id == StarSystem.NULL_ID)
+            return false;
+
+        // retreating fleets can only go to different systems, colonized by friendly empire
+        if (retreating)  {
+            StarSystem sys = galaxy().system(id);
+            return isRetreatingThisTurn() && (id != sysId) && sys.isColonized() && sys.empire().alliedWith(empId());
+        }
+        if (!canSend())
+            return false;
+
+        //cannot send if already orbiting the sv.system
+        if (!inTransit() && (sysId == id))
+            return false;
+        if (!empire().sv.withinRange(id, d.range()))
+            return false;
+        
+        return true;
+    }
     public boolean canSend(Empire c) {
         return canSend() && (empire() == c);
     }

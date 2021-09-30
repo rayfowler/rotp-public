@@ -245,7 +245,9 @@ public class ColonyEcology extends ColonySpendingCategory {
             }
         }
         if (colony().population() < 0)
+        {
             err("ERROR: bad pop for ", colony().name(), " pop:"+colony().population(), " newGrown:", str(newGrownPopulation), " newPurchased:", str(newPurchasedPopulation));
+        }
 
         if (!empire().divertColonyExcessToResearch())
             empire().addReserve(unallocatedBC);

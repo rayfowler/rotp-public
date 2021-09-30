@@ -15,18 +15,15 @@
  */
 package rotp.model.ai.xilmi;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import rotp.model.ai.interfaces.SpyMaster;
 import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
-import rotp.model.empires.Leader;
 import rotp.model.empires.SpyNetwork;
 import rotp.model.empires.SpyNetwork.Sabotage;
 import rotp.model.galaxy.StarSystem;
-import rotp.model.tech.Tech;
 import rotp.util.Base;
 
 public class AISpyMaster implements Base, SpyMaster {
@@ -44,25 +41,19 @@ public class AISpyMaster implements Base, SpyMaster {
         // MAX_SECURITY_TICKS = 10 in model/empires/Empire.java
 
         float paranoia = 0;
-        float avgOpponentTechLevel = 0;
-        float avgOpponentComputerLevel = 0;
-        float opponentCount = 0;
+        float highestOpponentTechLevel = 0;
         for (EmpireView cv : empire.empireViews()) {
             if ((cv != null) && cv.embassy().contact() && cv.inEconomicRange()) {
-                avgOpponentTechLevel += cv.empire().tech().avgTechLevel();
-                avgOpponentComputerLevel += cv.empire().tech().computer().techLevel();
-                opponentCount++;
+                if(cv.empire().tech().avgTechLevel() > highestOpponentTechLevel)
+                    highestOpponentTechLevel = cv.empire().tech().avgTechLevel();
             }
         }
-        if(opponentCount > 0)
-        {
-            avgOpponentTechLevel /= opponentCount;
-            avgOpponentComputerLevel /= opponentCount;
-            paranoia = empire.tech().avgTechLevel() - avgOpponentTechLevel;
-        }
+        paranoia = empire.tech().avgTechLevel() - highestOpponentTechLevel;
+        if(highestOpponentTechLevel == 0)
+            paranoia = 0;
         if (paranoia < 0)
             paranoia = 0;
-        //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" counter-espionage: "+paranoia+" mt: "+empire.tech().avgTechLevel()+" ot: "+avgOpponentTechLevel+" mct: "+empire.tech().computer().techLevel()+" pct: "+avgOpponentComputerLevel);
+        //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" counter-espionage: "+paranoia+" mt: "+empire.tech().avgTechLevel()+" ot: "+highestOpponentTechLevel);
         return min(10, (int)Math.round(paranoia)); // modnar: change max to 10, MAX_SECURITY_TICKS = 10
     }
     @Override

@@ -17,6 +17,7 @@ package rotp.model.ships;
 
 import rotp.model.combat.CombatStack;
 import rotp.model.combat.CombatStackColony;
+import rotp.model.tech.TechBiologicalWeapon;
 
 public class ShipWeapon extends ShipComponent {
     private static final long serialVersionUID = 1L;
@@ -71,6 +72,12 @@ public class ShipWeapon extends ShipComponent {
         int num = bombardAttacks();
         float shieldMod = source.targetShieldMod(this);
         float shieldLevel = shieldMod * target.shieldLevel();
+        if(isBioWeapon() && target.num == 0)
+        {
+            float targetAntiDote = target.empire.tech().antidoteLevel();
+            float damage = TechBiologicalWeapon.avgDamage(maxDamage(), (int)targetAntiDote) * 200;
+            return damage * num;
+        }
         return firepower(shieldLevel)* num;
     }
     @Override
@@ -78,6 +85,12 @@ public class ShipWeapon extends ShipComponent {
         int num = bombardAttacks();
         float shieldMod = des.targetShieldMod(this);
         float shieldLevel = shieldMod * target.shieldLevel();
+        if(isBioWeapon() && target.num == 0)
+        {
+            float targetAntiDote = target.empire.tech().antidoteLevel();
+            float damage = TechBiologicalWeapon.avgDamage(maxDamage(), (int)targetAntiDote) * 200;
+            return damage * num;
+        }   
         return firepower(shieldLevel)* num;
     }
     @Override

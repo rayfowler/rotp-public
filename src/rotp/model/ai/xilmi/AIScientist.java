@@ -97,6 +97,9 @@ public class AIScientist implements Base, Scientist {
     public void setTechTreeAllocations() {
         // invoked after nextTurn() processing is complete on each civ's turn
         setDefaultTechTreeAllocations();
+        //ail: This happens at the beginning before we see whether we want to switch this off. But we want accidental excess to go to research so to not waste it.
+        if(!empire.divertColonyExcessToResearch())
+            empire.toggleColonyExcessToResearch();
         //ail: first I stop researching where there's no techs left
         int leftOverAlloc = 0;
         for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
@@ -131,7 +134,7 @@ public class AIScientist implements Base, Scientist {
             boolean researchingSomethingWeDontReallyWant = false;
             if(currentTechResearching != null)
             {
-                if(researchPriority(currentTechResearching) == 0)
+                if(researchPriority(currentTechResearching) == 0 && currentTechResearching.level() > empire.tech().avgTechLevel() - 5)
                 {
                     researchingSomethingWeDontReallyWant = true;
                     //System.out.print("\n"+empire.name()+" "+empire.tech().category(j).id()+" reduced because "+currentTechResearching.name()+" is either owned by someone else or not something we want.");
@@ -150,7 +153,7 @@ public class AIScientist implements Base, Scientist {
                 Tech currentTechResearching = empire.tech().category(j).tech(empire.tech().category(j).currentTech());
                 boolean researchingSomethingWeDontReallyWant = false;
                 if(currentTechResearching != null)
-                    if(researchPriority(currentTechResearching) == 0)
+                    if(researchPriority(currentTechResearching) == 0 && currentTechResearching.level() > empire.tech().avgTechLevel() - 5)
                         researchingSomethingWeDontReallyWant = true;
                 if (!empire.tech().category(j).possibleTechs().isEmpty()
                         && discoveryChanceOfCategoryIfAllocationWasZero(j) <= empire.tech().category(j).allocation()
@@ -270,16 +273,7 @@ public class AIScientist implements Base, Scientist {
         empire.tech().propulsion().allocationPct(totalTechMod/empire.race().techMod[4]);
         empire.tech().weapon().allocationPct(totalTechMod/empire.race().techMod[5]);
         
-        // if in special mode, change ratios
-        if (empire.generalAI().inWarMode()) {
-            empire.tech().computer().adjustAllocation(4);
-            empire.tech().construction().adjustAllocation(-3);
-            empire.tech().forceField().adjustAllocation(1);
-            empire.tech().planetology().adjustAllocation(-3);
-            empire.tech().propulsion().adjustAllocation(-3);
-            empire.tech().weapon().adjustAllocation(4);
-        }
-        else if (empire.fleetCommanderAI().inExpansionMode()) {
+        if (empire.fleetCommanderAI().inExpansionMode()) {
             if(empire.ignoresPlanetEnvironment())
             {
                 empire.tech().computer().adjustAllocation(-3);
@@ -799,7 +793,7 @@ public class AIScientist implements Base, Scientist {
         TechShipWeapon curr = empire.tech().topShipWeaponTech();
         float val = 0;
         Tech best = empire.tech().allTechsOfType(t.techType).get(empire.tech().allTechsOfType(t.techType).size()-1);
-        if(curr != null && t != best)
+        if(curr != null && t != best && !t.heavyAllowed)
             val -= curr.level();
         val += (t.quintile() - 1) * 5 + t.quintile() * 5 - t.level() + 1;
         return val;
