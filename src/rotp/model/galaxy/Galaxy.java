@@ -251,7 +251,6 @@ public class Galaxy implements Base, Serializable {
         Galaxy gal = galaxy();
         for (int i=0; i<gal.numStarSystems(); i++) {
             gal.system(i).resolveAnyShipConflict();
-            gal.ships.disembarkRalliedFleets();
         }
     }
     public void refreshEmpireViews(Empire e) {
@@ -383,6 +382,7 @@ public class Galaxy implements Base, Serializable {
         NoticeMessage.resetSubstatus(text("TURN_ASSESS"));
         for (Empire e: empires)
             e.assessTurn();
+        ships.disembarkRalliedFleets();
         NoticeMessage.resetSubstatus(text("TURN_DIPLOMACY"));
         for (Empire e: empires)
             e.makeDiplomaticOffers();
