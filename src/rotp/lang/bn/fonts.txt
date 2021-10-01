@@ -1,8 +1,0 @@
-// These are the fonts used for the 5 font types within the game.
-
-logo,       Atma-Medium.ttf,          100
-dialogue,   Atma-Medium.ttf,          100
-narrow,     Atma-Medium.ttf,          100
-normal,     Atma-Medium.ttf,          100
-plain,      Atma-Medium.ttf,          100
-language,   Atma-Medium.ttf,          100

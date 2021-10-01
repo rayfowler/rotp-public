@@ -1,8 +1,0 @@
-// These are the fonts used for the 5 font types within the game.
-
-logo,       NewTegomin-Regular.ttf,   100
-dialogue,   NewTegomin-Regular.ttf,   100
-narrow,     NewTegomin-Regular.ttf,   100
-normal,     NewTegomin-Regular.ttf,   100
-plain,      NewTegomin-Regular.ttf,   100
-language,   NewTegomin-Regular.ttf,   100

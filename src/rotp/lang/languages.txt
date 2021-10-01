@@ -18,6 +18,7 @@ pt,  Português        ,  ,   ,
 sr,  Srpski           ,  ,   , 
 sr2, Српски           ,  ,   , 
 uk,  Українська       ,  ,   , 
+//zh,  中国人            ,  ,   , Y
 
 
 //bn,     , বাংলা     , 
@@ -36,4 +37,3 @@ uk,  Українська       ,  ,   ,
 //sv,     , Svenska    ,
 //tr,     , Türk       ,
 //vi,     , Tiếng Việt ,
-//zh,     , 中国人      ,

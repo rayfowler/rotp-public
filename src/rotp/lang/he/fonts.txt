@@ -1,8 +1,0 @@
-// These are the fonts used for the 5 font types within the game.
-
-logo,       FrankRuhlLibre-Bold.ttf,    100
-dialogue,   FrankRuhlLibre-Light.ttf,   100
-narrow,     FrankRuhlLibre-Medium.ttf,  100
-normal,     FrankRuhlLibre-Medium.ttf,  100
-plain,      FrankRuhlLibre-Medium.ttf,  100
-language,   FrankRuhlLibre-Medium.ttf,  100

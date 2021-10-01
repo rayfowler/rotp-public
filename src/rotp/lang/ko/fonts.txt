@@ -1,8 +1,0 @@
-// These are the fonts used for the 5 font types within the game.
-
-logo,       NanumMyeongjo-Regular.ttf,   100
-dialogue,   NanumMyeongjo-Regular.ttf,   100
-narrow,     NanumMyeongjo-Regular.ttf,   100
-normal,     NanumMyeongjo-Regular.ttf,   100
-plain,      NanumMyeongjo-Regular.ttf,   100
-language,  NanumMyeongjo-Regular.ttf,    100
