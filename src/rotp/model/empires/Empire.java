@@ -65,6 +65,7 @@ import rotp.model.tech.Tech;
 import rotp.model.tech.TechRoboticControls;
 import rotp.model.tech.TechTree;
 import rotp.ui.NoticeMessage;
+import rotp.ui.UserPreferences;
 import rotp.ui.diplomacy.DialogueManager;
 import rotp.ui.diplomacy.DiplomaticReply;
 import rotp.ui.main.GalaxyMapPanel;
@@ -121,11 +122,11 @@ public final class Empire implements Base, NamedObject, Serializable {
     private int securityAllocation = 0;
     private int empireTaxLevel = 0;
     private boolean empireTaxOnlyDeveloped = true;
-    private boolean divertColonyExcessToResearch = false;
+    private boolean divertColonyExcessToResearch = UserPreferences.divertColonyExcessToResearch();
     private float totalReserve = 0;
     private float tradePiracyRate = 0;
     private NamedObject lastAttacker;
-    private int defaultMaxBases = 1;
+    private int defaultMaxBases = UserPreferences.defaultMaxBases();
     private final String dataRaceKey;
     
     private transient float avgX, avgY, nameX1, nameX2;

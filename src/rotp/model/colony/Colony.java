@@ -1163,6 +1163,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         tr.empire().addColonizedSystem(sys);
 
         empire = tr.empire();
+        defense().maxBases(empire.defaultMaxBases());
         buildFortress();
         shipyard().goToNextDesign();
 
