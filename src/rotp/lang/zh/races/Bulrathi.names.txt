@@ -1,0 +1,22 @@
+// all possible names
+name: Bulrathi, Bearathi, Ursinathi, Pawrathi, Grizzlathi
+
+desc1: 好斗的生态主义者
+desc2: 出色的地面格斗家
+desc3: 忠诚的[race]高度重视他们哲人王的力量和智慧。
+
+
+// possible home system names
+home: Ursa, Canis, Grizzla, Pandara, Bruin
+
+title:     Grand Hierarch
+fulltitle: Grand Hierarch
+
+// possible leader names
+leader: Bullux, Durpp, Grunk, Krungo, Monch, Smurch
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Paw, Patrol, Claw, Fang, Tooth, Boar, Ursine
+ship2: Hunter, Gladiator, Sentinel, Fisher, Tracker, Carnivore, Panda
+ship3: Warbear, Brute, Predator, Intimidator, Killer, Guardian, Protector
+ship4: Grizzly, Punisher, Rhino, Kodiak, Destroyer, Cerberus, Mauler

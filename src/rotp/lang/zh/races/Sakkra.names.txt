@@ -1,0 +1,22 @@
+// all possible names
+name: Sakkra, Reptara, Saura, Raptora, Tyranna
+
+desc1: 好斗的扩张主义者
+desc2: 较快的人口增速
+desc3: 狂热的[race]想要通过征服让宇宙变得完美。
+
+// possible home system names
+home: Sssla, Sssana, Sssihs, Sssha, Sssss, Hsssa
+
+title:     Magister
+fulltitle: Prime Magister
+
+// possible leader names
+leader: Guanar, Hissa, Kryssta, Saurak, Sauron, Tyranid
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Gecko, Chameleon, Lizard, Iguana, Skink, Anole, Whiptail
+ship2: Tegu, Monitor, Caiman, Alligator, Crocodile, Gavial, Basilisk
+ship3: Dinosaur, Raptor, Pterodactyl, Theropod, Ceratops, Predator, Plesiosaur
+ship4: Titan, Colossus, Dragon, Godzilla, Kraken, Gorgon, Tyrannosaur
+

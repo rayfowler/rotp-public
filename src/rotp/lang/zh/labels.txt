@@ -1,0 +1,1976 @@
+// This is the label text file for Remnants of the Precursors
+// comment lines should start with '/'  they are ignored
+//  
+// the format for each line is   key | label
+//    where 'key' is the code used by the game to retrieve the label
+//    You cannot create new keys! The game will not use them
+//    You can only use keys that the game is looking for.
+//
+// Large number formatting
+NUM_FORMAT_THOUSANDS              | %1K
+NUM_FORMAT_MILLIONS               | %1M
+NUM_FORMAT_BILLIONS               | %1B
+
+// Star descriptions
+RED_STAR_DESCRIPTION              | 红色恒星是暮气沉沉的恒星，它的行星一般资源匮乏。
+YELLOW_STAR_DESCRIPTION           | 黄色恒星有最大的概率找到类地行星和近似类地行星。
+ORANGE_STAR_DESCRIPTION           | 橙色恒星的亮度中等，有大量的行星类型。
+BLUE_STAR_DESCRIPTION             | 蓝色恒星是相对年轻的恒星，有矿产丰富但没有生命的星球。
+WHITE_STAR_DESCRIPTION            | 白色恒星异常炙热，这里行星一般环境恶劣。
+PURPLE_STAR_DESCRIPTION           | 中子星很少见，有最大的可能找到资源丰富的行星。
+
+// Planet Types
+PLANET_ARID                       | 干旱
+PLANET_BARREN                     | 沙暴
+PLANET_DEAD                       | 死寂
+PLANET_DESERT                     | 荒漠
+PLANET_INFERNO                    | 熔炉
+PLANET_JUNGLE                     | 丛林
+PLANET_MINIMAL                    | 袖珍
+PLANET_NONE                       | 无
+PLANET_OCEAN                      | 海洋
+PLANET_RADIATED                   | 辐射
+PLANET_STEPPE                     | 草原
+PLANET_TERRAN                     | 类地行星
+PLANET_TOXIC                      | 剧毒
+PLANET_TUNDRA                     | 冻土
+
+// Spy Missions
+SPY_HIDE                          | 潜伏
+SPY_ESPIONAGE                     | 窃密
+SPY_SABOTAGE                      | 破坏
+SPY_CAUGHT                        | [Your spies were caught.]
+SPY_FRAMED                        | [You were framed.]
+SPY_FORCED_CONFESSION             | [A false confession was forced.]
+SPY_WARNING                       | [You have been warned.]
+
+ARID_DESC_BIOLOGICAL              | 干旱行星是有少量植被的世界，水覆盖面积不到40%。
+BARREN_DESC_BIOLOGICAL            | 沙暴行星是干燥的、尘土飞扬的世界，这里大气稀薄，没有地表水。
+DEAD_DESC_BIOLOGICAL              | 死寂行星是极寒的、没有生命痕迹的世界，这里大气稀薄，没有地表水。
+DESERT_DESC_BIOLOGICAL            | 沙漠行星是干燥的世界，植被非常稀疏，地表水覆盖面积不超过 20%。
+INFERNO_DESC_BIOLOGICAL           | 熔炉行星是极其炎热的世界，有着厚厚的大气层和猛烈的风暴。
+JUNGLE_DESC_BIOLOGICAL            | 丛林行星是茂密的热带世界，覆盖着茂密的森林、丛林和沼泽。
+MINIMAL_DESC_BIOLOGICAL           | 袖珍行星干燥、荒凉的世界，几乎就要不可居住了。
+NONE_DESC_BIOLOGICAL              | 由于没有石质行星，这些充满小行星的星系在理论上不可能形成真正的行星。
+OCEAN_DESC_BIOLOGICAL             | 海洋行星几乎完全被水覆盖，因此通常很难获取资源。
+RADIATED_DESC_BIOLOGICAL          | 受辐射的行星是没有空气、没有生命的世界，被附近恒星的辐射所笼罩
+STEPPE_DESC_BIOLOGICAL            | 草原行星是温度较低的世界，以冬天和极地环境为主。
+TERRAN_DESC_BIOLOGICAL            | 类地行星是最适合生存的世界，大片的温带地区支持着各种各样的生物群落。
+TOXIC_DESC_BIOLOGICAL             | 剧毒行星是冰冻的世界，有着寒冷的、以甲烷为基础的生态系统。
+TUNDRA_DESC_BIOLOGICAL            | 冻土行星是处于休眠状态的极端寒冷的世界。
+
+// Planet Specials
+PLANET_ARTIFACTS                  | 史前遗迹
+PLANET_ULTRA_POOR                 | 非常匮乏
+PLANET_POOR                       | 资源匮乏
+PLANET_RICH                       | 资源丰富
+PLANET_ULTRA_RICH                 | 非常丰富
+PLANET_HOSTILE                    | 恶劣
+PLANET_FERTILE                    | 肥沃
+PLANET_GAIA                       | 天堂
+
+// Planet Descriptors for Race
+PLANET_HOMEWORLD                  | [alien_race] 母星
+PLANET_WORLD                      | [alien_race] 世界
+PLANET_COLONY                     | [alien_race] 殖民地
+PLANET_ORION                      | 猎户座
+PLANET_ORION_GUARDIAN             | 守卫
+
+// Nebula names  ("starName" Nebula)
+NEBULA_NAME                       | %1 星云
+NEBULA_ID                         | %1号星云
+
+// %2 is the leader's actual name
+TITLE_LEADERNAME                  | [alien_nameTitle] %2
+
+// Extended Colony Name prefix when we run out of names
+COLONY_NAME_2                     | 新%1
+COLONY_NAME_3                     | 边%1
+COLONY_NAME_4                     | 外%1
+COLONY_NAME_5                     | 远%1
+
+// Space Monster Names
+SPACE_AMOEBA                      | 太空变形虫
+SPACE_CRYSTAL                     | 太空水晶
+ORION_GUARDIAN                    | 猎户座守卫
+
+// Personality types (adjective)
+LEADER_ERRATIC                    | 神经质的
+LEADER_PACIFIST                   | 和平的
+LEADER_HONORABLE                  | 正直的
+LEADER_RUTHLESS                   | 冷酷的
+LEADER_AGGRESSIVE                 | 好斗的
+LEADER_XENOPHOBIC                 | 排他的
+
+// Leader Objective Types (noun)
+LEADER_DIPLOMAT                   | 外交家
+LEADER_MILITARIST                 | 军事家
+LEADER_ECOLOGIST                  | 生态主义者
+LEADER_INDUSTRIALIST              | 工业主义者
+LEADER_EXPANSIONIST               | 扩张主义者
+LEADER_TECHNOLOGIST               | 科学家
+// Leader Personality & Objective displayed together
+LEADER_PERSONALITY_FORMAT         | %1 %2
+
+// Technology names and descriptions 
+TECH_COMPUTERS                    | 计算科学
+TECH_CONSTRUCTION                 | 制造研究
+TECH_FORCE_FIELDS                 | 力场研究
+TECH_PLANETOLOGY                  | 行星学
+TECH_PROPULSION                   | 动力学
+TECH_WEAPONS                      | 武器研究
+
+// Random Events
+EVENT_ACCIDENT                    | [target_race] 世界的 [system] 星系出现了一个巨大的工业事故，工业废料彻底破坏了星球生态并造成了永久的辐射。
+EVENT_ASSASSINATION               | 来自 [assassin_empire] 的恐怖分子刺杀了 [victim_race] 的外交官，两个帝国来到了战争边缘。
+EVENT_COMET                       | [system] 星系探测到一个巨大的彗星，它即将在 [years] 年后与 [target_race] 相撞，除非一个强大的舰队被部署在该星系并摧毁彗星。
+EVENT_COMET_2                     | 一个巨大的彗星会在 [years] 年后毁灭 [target_race] 世界在 [system] 星系的所有生命。需要更多武装飞船才能逆转这个灾难。
+EVENT_COMET_3                     | 因为 [target_race] 舰队的努力，[system] 的彗星已经被毁灭了
+EVENT_COMET_4                     | 致命的彗星摧毁了 [target_race] 世界的 [system] 星系。
+EVENT_DONATION                    | 一个富商大贾为了支持 [target_race] 的事业，向其国库捐助了可观的 [amt] BC。
+EVENT_DEPLETED                    | [target_race] 世界的 [system] 已经耗尽了自己的重金属储藏，变成了资源匮乏的星球。
+EVENT_DERELICT                    | [target_empire] 的舰队发现了一艘上古废弃飞船。[target_race] 科学家掌握了多个该飞船的力场技术和武器技术。
+EVENT_EARTHQUAKE                  | 一场破坏力强大的地震发生在 [target_race] 的 [system] 星系，破坏了大量工厂的同时也造成了 [amt] 百万的人员伤亡。
+EVENT_ENRICHED                    | [target_race] [system] 星系的采矿活动发现了一个巨大的、从未被探索过的重金属矿藏，该行星成为资源丰富的行星。
+EVENT_FERTILE                     | [target_race] [system] 星系内行星轴发生了偏移，这改变了星球的环境，使其变为肥沃星球，人口增长率增加50%。
+EVENT_PIRACY                      | 太空海盗破坏了 [target_race] 各个星系的贸易活动，导致贸易收入降低 [amt]%。武装舰船需要驶入 [system] 星系才能破坏太空海盗的总部。
+EVENT_PIRACY_2                    | [system] 的太空海盗持续地破坏着 [target_ract] 的贸易活动，导致贸易收入u减少了 [amt]%。
+EVENT_PIRACY_3                    | [target_race] 消灭了总部位于 [system] 星系的间谍活动。贸易水平已经恢复正常。
+EVENT_PLAGUE                      | 致命的传染病在 [target_race] 世界的 [system] 的星系爆发。隔离区已经创建。每年都会有几百万人死亡，除非科学家找到传染病的治疗方法。
+EVENT_PLAGUE_2                    | [system] 星系的致命传染病仍然在肆虐。科学家估计还需要 [amt] RP 的投入才能研究出治疗方法。
+EVENT_PLAGUE_3                    | [target_race] 科学家发现了肆虐 [system] 星系的传染病的治疗方法。该星系的隔离已经结束。
+EVENT_REBELLION                   | [target_race] 世界的 [system] 星系发动了起义，所有工业生产都停止了。起义会持续进行下去，除非军队被登陆星球进行武力镇压。
+EVENT_SUPERNOVA                   | [target_race] 的科学家预测 [system] 星系的恒星会在 [years] 年后变成超新星。科学家们建议将该星系的所有资源都投入研究，以探索一个解决方案。
+EVENT_SUPERNOVA_2                 | [system] 星系内恒星在 [years] 年内变成超新星威胁仍然存在。科学家预计还需要 [amt] RP 才能避免这个灾难的发生。
+EVENT_SUPERNOVA_3                 | 经过努力的工作，[target_race] 世界 [system] 星系的物理学家找到了一个延迟附近恒星变成超新星的方案。
+EVENT_SUPERNOVA_4                 | [system] 星系的恒星变成了超新星，辐射了 [target_rate] 世界，毁灭了环境，造成了数百万人死亡。
+EVENT_VIRUS                       | 一个巨大破坏力的计算机病毒袭击了 [target_race] 的研究中心，导致 [technology] 的研究进展归零。
+EVENT_SPACE_AMOEBA                | 一个被命名为“太空变形虫”的巨大外星生物被发现正在接近 [system] 星系。[victim_race] 的居民和舰队正在做最坏的打算。
+EVENT_SPACE_AMOEBA_1              | 一个被命名为“太空变形虫”的巨大外星生物被发现正在接近 [system] 星系。
+EVENT_SPACE_AMOEBA_2              | 太空变形虫彻底吞噬了 [system] 星系的 [victim_race] 殖民地。
+EVENT_SPACE_AMOEBA_3              | 太空变形虫被 [system] 星系的 [victim_race] 力量给消灭了。
+EVENT_SPACE_CRYSTAL               | 一个被命名为“太空水晶”的巨大物体在 [system] 星系的附近被发现。[victim_race] 的居民和舰队在做最坏的打算。
+EVENT_SPACE_CRYSTAL_1             | 一个被命名为“太空水晶”的巨大物体在 [system] 星系的附近被发现。
+EVENT_SPACE_CRYSTAL_2             | 太空睡觉彻底消灭了 [system] 星系的 [victim_race] 的生命。
+EVENT_SPACE_CRYSTAL_3             | 太空水晶被 [system] 星系的 [victim_race] 力量给消灭了。
+
+SYSEVENT_HOMEWORLD                | [alien_race]的母星。
+SYSEVENT_SCOUTED                  | [alien_race]首先发现。
+SYSEVENT_COLONIZED                | 被[alien_race]殖民。
+SYSEVENT_CAPTURED                 | 被[alien_race]占领。
+SYSEVENT_ABANDONED                | 被[alien_race]遗弃。
+SYSEVENT_DESTROYED                | 被[alien_race]军舰毁灭。
+SYSEVENT_DESTROYED_MONSTER        | 被%1毁灭。
+SYSEVENT_DESTROYED_UNKNOWN        | 已毁灭。
+SYSEVENT_ATMOSPHERE_TERRAFORMED   | 该星球的大气被改造了。
+SYSEVENT_SOIL_ENRICHED            | 该星球的土壤被改造了，变成了肥沃的星球。
+SYSEVENT_GAIA_TERRAFORMING        | 该星球被改造成了天堂星球。
+SYSEVENT_REBELLION                | 殖民地陷入叛乱。
+SYSEVENT_COMET                    | 彗星撞击了行星。
+SYSEVENT_PLAGUE                   | 致命的瘟疫在行星里爆发。
+SYSEVENT_PLAGUE_ENDED             | 瘟疫结束了。
+SYSEVENT_ENRICHED                 | 行星发现了丰富的矿藏资源。
+SYSEVENT_DEPLETED                 | 行星的矿藏被挖掘殆尽。
+SYSEVENT_ACCIDENT                 | 一个巨大的工业事故让整个行星被辐射。
+SYSEVENT_SUPERNOVA                | 超新星爆炸让行星陷入被辐射状态。
+
+
+// Diplomatic Incident titles & descriptions
+INC_ASSASSINATION_TITLE           | 暗杀
+INC_ASSASSINATION_DESC            | 来自[assassin_empire]的恐怖分子刺杀了[victim_race]的外交官。
+INC_ATTACKED_ALLY_TITLE           | 盟友遭袭
+INC_ATTACKED_ALLY_DESC            | [attacker_empire]进攻了 [my_empire] 的盟友 [defender_empire]。
+INC_ATTACKED_ENEMY_TITLE          | 敌人遭袭
+INC_ATTACKED_ENEMY_DESC           | [attacker_empire] 进攻了 [my_empire] 的敌人 [defender_empire]。
+INC_USED_BIOWEAPONS_TITLE         | 生化武器
+INC_USED_BIOWEAPONS_DESC          | [attacker_empire] 在 [system] 星系使用生化武器攻击了 [victim_empire]。
+INC_KILLED_MONSTER_TITLE          | %1
+INC_KILLED_MONSTER_DESC           | [your_empire] 击败了 [monster]，解决了所有帝国的共同威胁。
+INC_KILLED_GUARDIAN_TITLE         | 猎户守卫
+INC_KILLED_GUARDIAN_DESC          | [your_empire] 击败了猎户座的守卫飞船，揭露了上古文明的秘密。
+INC_NO_RELATIONS_TITLE            | 无外交关系
+INC_NO_RELATIONS_DESC             | [your_empire] 和 [my_empire] 当前并无外交关系。
+INC_ALLIED_WITH_ENEMY_TITLE       | 与虎谋皮
+INC_ALLIED_WITH_ENEMY_DESC        | [my_empire] 的民众反对你与令人厌恶的 [other_empire] 结盟。
+INC_AT_WAR_WITH_ALLY_TITLE        | 盟友之争
+INC_AT_WAR_WITH_ALLY_DESC         | 你正在跟 [my_empire] 的盟友 [other_empire] 开战。
+INC_CLOSED_EMBASSY_TITLE          | 召回外相
+INC_CLOSED_EMBASSY_DESC           | [your_empire] 停止了与 [my_empire] 的外交关系。
+INC_EVICTED_SPIES_TITLE           | 驱逐外相
+INC_EVICTED_SPIES_DESC            | [your_empire] 驱逐了 [my_empire] 的所有不重要的外交官。
+INC_BROKE_ALLIANCE_TITLE          | 联盟破裂
+INC_BROKE_ALLIANCE_DESC           | [your_empire] 解除了与 [my_empire] 的联盟关系。 [spiesCaught]
+INC_BROKE_PACT_TITLE              | 解除互不侵犯条约
+INC_BROKE_PACT_DESC               | [your_empire] 解除了与 [my_empire] 的互不侵犯条约。 [spiesCaught]
+INC_BROKE_TRADE_TITLE             | 解除贸易协议
+INC_BROKE_TRADE_DESC              | [your_empire] 解除了与 [my_empire] 的贸易协议。
+INC_ATTACKED_COLONY_TITLE         | 进攻殖民地
+INC_ATTACKED_COLONY_DESC          | [attacker_empire] 的舰队进攻了 [defender_race] 的 [system] 星系。 [amt]百万居民丧生。
+INC_CAPTURED_COLONY_TITLE         | 占领殖民地
+INC_CAPTURED_COLONY_DESC          | [attacker_empire] 的军队入侵并占领了 [defender_race] 的 [system] 星系。[amt]百万居民丧生。
+INC_DESTROYED_COLONY_TITLE        | 摧毁殖民地
+INC_DESTROYED_COLONY_DESC         | [attacker_empire] 的舰队彻底摧毁了 [defender_race] 的 [system] 星系。[amt]百万居民丧生。
+INC_FIRST_CONTACT_TITLE           | 首次接触
+INC_FIRST_CONTACT_DESC            | 第一次与 [your_empire] 产生了接触。请小心。
+INC_INVADED_COLONY_TITLE          | 入侵殖民地
+INC_INVADED_COLONY_DESC           | [attacker_empire] 的军队入侵了 [defender_race] 的 [system] 星系，但没能成功占领。[amt]百万居民丧生。
+INC_COUNCIL_VOTE_TITLE            | 委员会投票
+INC_COUNCIL_VOTE_FOR_DESC         | [voter_race] 投票支持 [candidate_race] 的领导人 [candidate_name]。
+INC_COUNCIL_VOTE_AGAINST_DESC     | [voter_race] 投票反对 [candidate_race] 的领导人 [candidate_name]。
+INC_COUNCIL_ABSTAIN_DESC          | [voter_race] 在星际委员会选举中弃权 ，拒绝给 [candidate_race] 的领导人 [candidate_name] 投票。
+INC_DECLARED_WAR_TITLE            | 宣战
+INC_DECLARED_WAR_DESC             | [aggressor_empire] 宣布像 [victim_empire] 开战。
+INC_ERRATIC_WAR_TITLE             | 奇怪的行动
+INC_ERRATIC_WAR_DESC              | [aggressor_race] 宣布像 [victim_empire] 开战，没有人知道原因是什么。
+INC_DEMANDED_TRIBUTE_TITLE        | 要求上贡
+INC_ENCROACHING_TITLE             | 侵入边界
+INC_ENCROACHING_DESC              | [your_empire] 殖民了 [system] 星系，侵入了 [my_empire] 的边界。
+INC_TECH_STOLEN_TITLE             | 技术偷窃
+INC_TECH_STOLEN_DESC              | [spy_race] 偷窃了 [victim_race] 的机密技术 [tech]。
+INC_TECH_FRAMED_DESC              | 未知间谍偷走了 [victim_race] 的机密技术（你被栽赃了）。
+INC_TECH_EXCHANGE_TITLE           | 技术交易
+INC_TECH_EXCHANGE_DESC            | [my_empire] 与 [your_empire] 发生了技术交易，[my_empire] 学会了 [techReceived]，[your_empire] 学会了 [techGiven]。
+INC_FINANCIAL_AID_TITLE           | 经济资助
+INC_FINANCIAL_AID_DESC            | [your_empire] 无条件资助了 [my_empire] [amt] BC。
+INC_TECHNOLOGY_AID_TITLE          | 技术援助
+INC_TECHNOLOGY_AID_DESC           | [your_empire] 免费把机密技术 [tech] 分享给了 [my_empire]。
+INC_TECHNOLOGY_AID_DESC_MULT      | [your_empire] 免费把下列机密技术分享给了 [my_empire]：[techs]。
+INC_TECHNOLOGY_TECH_LIST_COMMA    | , 
+INC_ENEMY_AID_TITLE               | 敌人获得援助 
+INC_ENEMY_AID_MONEY_DESC          | [your_empire] 资助了 [my_empire] 的敌人 [enemy_empire] [amt] BC。
+INC_ENEMY_AID_TECH_DESC           | [your_empire] 向 [my_empire] 的敌人 [enemy_empire] 赠送了机密技术 [tech]。
+INC_PARANOIA_TITLE                | 偏执狂
+INC_PARANOIA_DESC1                | [my_empire] 一群激进的阴谋论者可笑地认为 [your_race] 是对他们种族的威胁。[your_empire] 目前占据了[num]个最开始由 [my_empire] 发现的星系。
+INC_PARANOIA_DESC2                | [my_empire] 的边缘群体认为 [your_race] 是对他们种族的威胁。[your_empire] 目前占据了[num]个最开始由 [my_empire] 发现的星系。
+INC_PARANOIA_DESC3                | [my_empire] 的一个敢于发声的少数派别表达了一种担忧：[your_race] 是对他们种族的威胁。[your_empire] 目前占据了[num]个最开始由 [my_empire] 发现的星系。
+INC_PARANOIA_DESC4                | [my_empire] 的许多人担心 [your_race] 确实是对他们种族的威胁，他们要求对 [your_race] 采取行动。[your_empire] 目前占据了[num]个最开始由 [my_empire] 发现的星系。
+INC_PARANOIA_DESC5                | [my_empire] 出现了大规模的恐慌，人们意识到 [your_race] 已经变成了对他们种族清晰的威胁。[your_empire] 目前占据了[num]个最开始由 [my_empire] 发现的星系。
+INC_EXPANSION_TITLE               | 扩张
+INC_EXPANSION_DESC                | 控制了[num]个星系后，[your_empire] 已经变得太大了。
+INC_GENOCIDE_TITLE                | 种族灭绝
+INC_GENOCIDE_DESC                 | [attacker_empire] 已经彻底消灭了 [victim_race] 种族。
+INC_FINAL_WAR_TITLE               | 大决战！
+INC_FINAL_WAR_DESC                | [rebel_empire] 已经武力反抗星级委员会，宇宙中的其他帝国决定联手彻底毁灭 [rebel_empire]。
+INC_MILITARY_BUILDUP_TITLE        | 军事行动
+INC_MILITARY_BUILDUP_DESC         | [your_empire] 正在 [system] 集结舰队。
+INC_OATHBREAKER_TITLE             | 破坏誓言
+INC_DESTROYED_BASES_TITLE         | 破坏导弹基地
+INC_DESTROYED_BASES_DESC          | 在 [spy_empire] 搞破坏的间谍捣毁了 [system] 星系的 [amt] 个导弹基地。
+INC_DESTROYED_FACTORIES_TITLE     | 破坏工厂
+INC_DESTROYED_FACTORIES_DESC      | 在 [spy_empire] 搞破坏的间谍捣毁了 [system] 星系的 [amt] 个工厂。
+INC_INCITED_REBELLION_TITLE       | 煽动起义
+INC_INCITED_REBELLION_DESC        | 在 [spy_empire] 教唆起义的间谍在 [system] 星系煽动了 [amt] 百万人的起义。
+INC_SIGNED_ALLIANCE_TITLE         | 结盟
+INC_SIGNED_ALLIANCE_DESC          | [my_empire] 和 [your_empire] 结成了联盟，许诺共同对抗外敌。
+INC_JOINT_WAR_TITLE               | 宣战
+INC_LEFT_ALLIANCE_TITLE           | 破坏联盟
+INC_SIGNED_PACT_TITLE             | 互不侵犯条约
+INC_SIGNED_PACT_DESC              | [my_empire] 和 [your_empire] 签订了一个互不侵犯条约，避免军舰在中立星球开战。
+INC_SIGNED_PEACE_TITLE            | 停战协议
+INC_SIGNED_PEACE_DESC             | [my_empire] 和 [your_empire] 签订了停战协定，许诺在 [endYear] 之前中止敌对行动。
+INC_SIGNED_TRADE_TITLE            | 贸易协议
+INC_SIGNED_TRADE_DESC             | [my_empire] 和 [your_empire] 协商确定了一个年数额最高达到 [amt] BC的贸易协议。
+INC_SKIRMISH_TITLE                | 冲突
+INC_SKIRMISH_DESC                 | [my_race] 和 [your_race] 的舰队在 [system] 星系发生了一次武装冲突。
+INC_SPY_CONFESSION_TITLE          | 间谍招认
+INC_SPY_CONFESS_ESPIONAGE_DESC    | [spy_empire] 的间谍被抓住并坦白了当前正在进行的针对 [victim_empire] 的窃密行动。
+INC_SPY_CONFESS_SABOTAGE_DESC     | [spy_empire] 的间谍被抓住并坦白了当前正在进行的针对 [victim_empire] 的破坏行动。
+INC_SPY_CAPTURED_DESC             | [spy_empire] 的间谍被抓住并被迫承认了当前正在进行的针对 [victim_empire] 的破坏行动。
+INC_TRADE_INCOME_TITLE            | 贸易利润
+INC_TRADE_INCOME_DESC             | [your_empire] 和 [my_empire] 的贸易协议已经产生了 [amt] BC的利润。
+INC_TRESPASSING_TITLE             | 非法侵入
+INC_TRESPASSING_DESC              | [your_race] 正在非法穿过属于 [my_empire] 的 [system] 星系。
+
+// generic click to skip or continue messages
+CLICK_SKIP                        | 单击或点击ESC跳过动画
+CLICK_CONTINUE                    | 单击或点击ESC以继续...
+CLICK_EXIT                        | 单击或点击ESC以退出...
+BUTTON_EXIT                       | 返回
+
+// GAME/SETUP UI 
+GAME_TITLE_LINE_1                 | 文明的余烬
+GAME_TITLE_LINE_2                 | 
+GAME_TITLE_LINE_3                 | 
+GAME_DISCUSS_ONLINE               | 进入社区
+GAME_MENU_CONTINUE                | 继续游戏
+GAME_MENU_NEW_GAME                | 新游戏
+GAME_MENU_LOAD_GAME               | 加载游戏
+GAME_MENU_SAVE_GAME               | 保存游戏
+GAME_MENU_SETTINGS                | 设置
+GAME_MENU_EXIT                    | 退出
+GAME_MENU_RESTART                 | 重启游戏
+GAME_VERSION                      | 版本号: %1
+GAME_SHRINK                       | 缩小 -
+GAME_ENLARGE                      | 放大
+
+// Game Settings UI
+GAME_SETTINGS_TITLE               | 游戏设置
+GAME_SETTINGS_DESCRIPTION         | 单击可修改各个设置
+GAME_SETTINGS_EXIT                | 返回
+GAME_SETTINGS_DEFAULT             | 默认设置
+GAME_SETTINGS_DISPLAY_MODE        | 显示模式: %1
+GAME_SETTINGS_WINDOWED            | 窗口
+GAME_SETTINGS_BORDERLESS          | 无边框
+GAME_SETTINGS_FULLSCREEN          | 全屏幕
+GAME_SETTINGS_DISPLAY_MODE_DESC   | 需要重启。窗口模式使用固定比例、可调整尺寸。无边框模式是最大化的窗口。全屏是个独占窗口。
+GAME_SETTINGS_GRAPHICS            | 画面质量: %1
+GAME_SETTINGS_GRAPHICS_LOW        | 低
+GAME_SETTINGS_GRAPHICS_MED        | 中
+GAME_SETTINGS_GRAPHICS_HIGH       | 高
+GAME_SETTINGS_GRAPHICS_DESC       | 调整游戏的画面质量。 中: 关闭抗锯齿。 低：无动画。
+GAME_SETTINGS_TEXTURES            | 纹理: %1
+GAME_SETTINGS_TEXTURES_NO         | 无
+GAME_SETTINGS_TEXTURES_INTERFACE  | UI界面
+GAME_SETTINGS_TEXTURES_MAP        | 宇宙地图
+GAME_SETTINGS_TEXTURES_BOTH       | UI界面和地图
+GAME_SETTINGS_TEXTURES_DESC       | 切换纹理的使用场景。
+GAME_SETTINGS_SENSITIVITY         | 光标悬浮敏感度: %1
+GAME_SETTINGS_SENSITIVITY_HIGH    | 高
+GAME_SETTINGS_SENSITIVITY_MEDIUM  | 中
+GAME_SETTINGS_SENSITIVITY_LOW     | 低
+GAME_SETTINGS_SENSITIVITY_DESC    | 鼠标悬浮在地图上的星系时，会展示该星系的信息面板。这里可以调整交互的敏感程度。
+GAME_SETTINGS_MEMORY              | 展示内存使用情况: %1
+GAME_SETTINGS_MEMORY_YES          | 是
+GAME_SETTINGS_MEMORY_NO           | 否
+GAME_SETTINGS_MEMORY_DESC         | 是否在游戏右下角显示内存的使用情况。对监控内存有帮助。
+GAME_SETTINGS_SOUNDS              | 音效: %1
+GAME_SETTINGS_SOUNDS_OFF          | 静音
+GAME_SETTINGS_SOUNDS_ON           | %1/10
+GAME_SETTINGS_SOUNDS_DESC         | 单击以禁止或播放游戏音效。使用鼠标滑轮来提高或降低音量。
+GAME_SETTINGS_SOUNDS_DISABLED     | 无法使用
+GAME_SETTINGS_SOUNDS_ERR_DESC     | 因为以下原因音效无法使用: %1
+GAME_SETTINGS_MUSIC               | 音乐: %1
+GAME_SETTINGS_MUSIC_OFF           | 静音
+GAME_SETTINGS_MUSIC_ON            | %1/10
+GAME_SETTINGS_MUSIC_DESC          | 单击以禁止或播放音乐。使用鼠标滑轮啊调整音量。
+GAME_SETTINGS_AUTOCOLONIZE        | 殖民: %1
+GAME_SETTINGS_AUTOCOLONIZE_YES    | 自动
+GAME_SETTINGS_AUTOCOLONIZE_NO     | 总是提示
+GAME_SETTINGS_AUTOCOLONIZE_DESC   | 当殖民飞船到达行星时，是否自动殖民该星球。在大地图使用自动殖民可以节约时间。
+GAME_SETTINGS_AUTOBOMBARD         | 轰炸: %1
+GAME_SETTINGS_AUTOBOMBARD_NO      | 总是提示
+GAME_SETTINGS_AUTOBOMBARD_NEVER   | 不轰炸
+GAME_SETTINGS_AUTOBOMBARD_YES     | 总是轰炸
+GAME_SETTINGS_AUTOBOMBARD_WAR     | 仅限战争
+GAME_SETTINGS_AUTOBOMBARD_INVADE  | 仅限战争，且无派遣军队
+GAME_SETTINGS_AUTOBOMBARD_DESC    | 切换自动轰炸设定。提示是否轰炸、自动轰炸、仅在战争状态自动轰炸、在战争状态且无派遣军队时轰炸。
+GAME_SETTINGS_BACKUP_OFF          | 关闭
+GAME_SETTINGS_BACKUP_ON           | 每%1回合
+GAME_SETTINGS_BACKUP              | 自动备份: %1
+GAME_SETTINGS_BACKUP_DESC         | 将你当前的游戏定期自动备份到 backup 文件夹，这能允许你载入之前的回合。
+GAME_SETTINGS_SAVEDIR             | 存档文件夹: %1
+GAME_SETTINGS_SAVEDIR_DEFAULT     | 默认
+GAME_SETTINGS_SAVEDIR_CUSTOM      | 自定义
+GAME_SETTINGS_SAVEDIR_DESC1       | 存档文件夹默认是游戏所在文件夹。
+GAME_SETTINGS_SAVEDIR_DESC2       | 当前的存档文件夹是: %1
+
+// Load Game UI
+LOAD_GAME_TITLE                   | 载入游戏
+LOAD_GAME_AUTOSAVE                | 自动存档
+LOAD_GAME_BACKUP_DIR              | 备份文件夹: %1 文件
+LOAD_GAME_SAVE_DIR                | 保存到文件夹: %1 文件
+LOAD_GAME_FILENAME                | 按文件名
+LOAD_GAME_DATE                    | 日期
+LOAD_GAME_SIZE                    | 大小
+LOAD_GAME_LOADING                 | 载入中...
+LOAD_GAME_BAD_VERSION             | 无法载入存档: %1. 这个文件可能已被损坏。
+LOAD_GAME_CANCEL                  | 取消
+LOAD_GAME_OK                      | 载入
+LOAD_GAME_TOO_LONG                | ...
+
+// Save Game UI
+SAVE_GAME_TITLE                   | 保存游戏
+SAVE_GAME_FILENAME                | 按文件名
+SAVE_GAME_DATE                    | 日期
+SAVE_GAME_SIZE                    | 尺寸
+SAVE_GAME_SAVING                  | 保存中...
+SAVE_GAME_CANCEL                  | 取消
+SAVE_GAME_OK                      | 保存
+
+// Intro UI
+INTRO_BEGIN                       | 开始
+
+// MAIN UI - Bottom Navigation options
+MAIN_NAVIGATION_GAME              | 游戏
+MAIN_NAVIGATION_DESIGN            | 设计
+MAIN_NAVIGATION_FLEETS            | 舰队
+MAIN_NAVIGATION_SYSTEMS           | 星系
+MAIN_NAVIGATION_RACES             | 种族
+MAIN_NAVIGATION_COLONIES          | 殖民地
+MAIN_NAVIGATION_TECH              | 科技
+MAIN_NAVIGATION_NEXT_TURN         | 下一回合
+MAIN_NAVIGATION_NEXT_YEAR         | 下一年
+MAIN_YEAR_DISPLAY                 | %1年
+MAIN_TURN_DISPLAY                 | 第%1回合
+MAIN_SPY_REPORT                   | 谍报
+MAIN_TECH_NONE                    | 没有研究
+MAIN_TECH_COMPLETED               | 研究完成
+MAIN_TECH_RP_REMAINING            | 还差 %1 RP
+MAIN_TECH_RP_DISCOVERY            | 即将成功
+MAIN_TECH_RESERVE_BC              | %1 BC
+MAIN_TECH_RESERVE_TAX_ALL         | 对所有殖民地征收%1%的税
+MAIN_TECH_RESERVE_TAX             | 对发达殖民地征收%1%的税
+MAIN_TECH_RESERVE_TAX_NONE        | 没有征税
+MAIN_HELP_ALL                     | 帮助：点击按钮，切换帮助信息。按 ESC 键取消。
+MAIN_HELP_1A                      | 每个星系的发展分为5个模块。灰色表示该部分的资源分配被锁定，无法再修改。单击切换锁定/非锁定状态。
+MAIN_HELP_1B                      | 船坞：建造被选中的舰船，大型舰船可能需要若干回合建造。
+MAIN_HELP_1C                      | 防御：建造、升级导弹基地和护盾等级。
+MAIN_HELP_1D                      | 工厂：建造工厂，提高殖民地的产出。
+MAIN_HELP_1E                      | 生态 ：清理污染，改造行星，增加人口。
+MAIN_HELP_1F                      | 科技：将资源投入帝国的科研计划。
+MAIN_HELP_1G                      | 滚动条展示个该模块的投入情况。每一个模块的投入可以用如下方式调整：鼠标滑轮、点击滚动条的内部、或滚动条两边的按钮。
+MAIN_HELP_1H                      | 预期生产结果展示在滚动条的右边。
+MAIN_HELP_2A                      | 殖民地的护盾等级。 在星云内无法建造护盾。
+MAIN_HELP_2B                      | 导弹基地数量/预期建造数量。 单击或使用鼠标滑轮修改预期建造数量。
+MAIN_HELP_2C                      | 总产出。受到人口和工厂数量的影响。
+MAIN_HELP_2D                      | 净产出。在总产出的基础上扣除了贸易开支，间谍和安全开支，导弹基地和舰船维护费用。
+MAIN_HELP_2E                      | 改变船坞里的舰船型号。 未完成船只的累计投入将使新船只的生产速度加快50%, 直到该累计投入耗尽。单击或使用鼠标滑轮修改在建型号。
+MAIN_HELP_2F                      | 设置集合点，使新建船只开往另一个殖民星球。
+MAIN_HELP_2G                      | 派遣殖民者去支援另一个殖民地，或派遣军队去入侵敌对星球。 殖民地需要一次性支付交通成本。
+MAIN_HELP_2H                      | 彻底遗弃一个行星，把所有人口转移到另一个殖民地。
+MAIN_HELP_2I                      | 当前人口/最大人口。未被改造的母星的人口上限是100。
+MAIN_HELP_2J                      | 当前工厂数量/最大工厂数量。最大工厂数量受到人口数量和自动化技术的影响。
+MAIN_HELP_2K                      | 给星系插一面旗，让它在宇宙地图里更突出
+MAIN_HELP_2L                      | 国库里的存款数量。
+MAIN_HELP_2M                      | 6个研究领域的研究进展。
+MAIN_HELP_3A                      | 游戏：返回游戏菜单。你可以调整设置、保存、载入或开始新游戏。
+MAIN_HELP_3B                      | 星系：按不同主题展示星系的现状
+MAIN_HELP_3C                      | 舰队：大规模地控制舰队和舰船建造
+MAIN_HELP_3D                      | 设计：设计新的舰船。你可以采用最新的科技，并移除老的设计方案。
+MAIN_HELP_3E                      | 种族：已遭遇种族的信息展示和外交选择。
+MAIN_HELP_3F                      | 殖民地：殖民地的详细信息，以及帝国的开支情况。
+MAIN_HELP_3G                      | 科技：展示科研成果。你可以在这里调整6大领域的资源分配。
+MAIN_HELP_3H                      | 下一年：让游戏进入下一年。
+MAIN_HELP_3I                      | 当前回合：展示游戏的当前回合或帝国纪元。单击可切换。
+MAIN_HELP_3J                      | 地图设置：单击可调整宇宙地图的展示设置。
+
+MAIN_SYSTEM_DETAIL_PFB            | 人口 %1  工业 %2  导弹 %3
+MAIN_SYSTEM_DETAIL_PF             | 人口 %1  工业 %2
+MAIN_SYSTEM_DETAIL_NO_DATA        | 无数据
+MAIN_UNEXPLORED_SYSTEM            | 未探索
+MAIN_ALLIED_COLONY                | 盟友殖民地
+MAIN_SYSTEM_RANGE                 | %1 光年
+MAIN_OUT_OF_RANGE_DESC            | 航程外
+MAIN_SCOUT_RANGE_DESC             | 需要备用燃料箱
+MAIN_IN_RANGE_DESC                | 航程内
+MAIN_NO_PLANETS                   | 无法生存的星球
+MAIN_NO_COLONIES                  | 未殖民
+MAIN_UNSCOUTED                    | 未探索
+MAIN_ABANDONED                    | 已遗弃
+MAIN_ALIEN_COLONY                 | %1 殖民地
+MAIN_UNKNOWN_COLONY               | 异族殖民地
+MAIN_NEBULA_DESC                  | 穿过星云的飞船速度被限制在第1阶曲速
+MAIN_PLANET_SIZE                  | 空间 %1
+MAIN_PLANET_SIZE+                 | 空间 %1+
+MAIN_PLANET_POP                   | 人口 %1
+MAIN_PLANET_POP_SIZE              | 人口 %1/%2
+MAIN_PLANET_REBELLION             | 起义中
+MAIN_PLANET_QUARANTINE            | 被隔离
+MAIN_PLANET_EVENT_COMET           | 彗星
+MAIN_PLANET_EVENT_PIRACY          | 海盗
+MAIN_PLANET_EVENT_PLAGUE          | 瘟疫
+MAIN_PLANET_EVENT_SUPERNOVA       | 超新星
+MAIN_PLANET_EVENT_AMOEBA          | 太空变形虫
+MAIN_PLANET_EVENT_CRYSTAL         | 太空水晶
+MAIN_ADVANCING_YEAR               | 进入%1年...
+MAIN_ADVANCING_TURN               | 进入%1回合...
+TURN_SAVING                       | 保存进度
+TURN_LAUNCHING_FLEETS             | 舰队行动
+TURN_SHIP_COMBAT                  | 舰队战斗
+TURN_BOMBARDMENT                  | 轰炸行星
+TURN_TRANSPORTS                   | 运输
+TURN_COLONIES                     | 殖民中
+TURN_SPIES                        | 间谍活动
+TURN_REBELLION                    | 起义
+TURN_COUNCIL                      | 议会状态
+TURN_RESEARCH                     | 研究
+TURN_ASSESS                       | 完成内务
+TURN_DIPLOMACY                    | 外交
+TURN_ACQUIRE_TECHS                | 学习交换科技
+TURN_MAKE_DECISIONS               | 决策
+TURN_RECALC_DISTANCES             | 重新计算星系距离
+TURN_REFRESHING                   | 刷新视窗
+TURN_SCRAP_SHIPS                  | 拆除舰船
+TURN_FLEET_PLANS                  | 舰队计划
+TURN_DEPLOY_FLEETS                | 部署舰船
+TURN_DEPLOY_FLEET_X               | 部署舰船 (已完成%1/%2)
+TURN_RETREAT_FLEETS               | 舰船撤退
+TURN_DESIGN_SHIPS                 | 设计舰船
+TURN_COLONY_SPENDING              | 殖民地分配
+
+// Fleet labels
+MAIN_FLEET_TITLE                  | [fleet_race]舰队
+MAIN_FLEET_TITLE_UNKNOWN          | 未知舰队
+MAIN_FLEET_IN_ORBIT               | 轨道环绕
+MAIN_FLEET_DEPLOYED               | 部署中
+MAIN_FLEET_IN_TRANSIT             | 航行中
+MAIN_FLEET_RETREATING             | 撤退中
+MAIN_FLEET_LOCATION               | 位置 %1
+MAIN_FLEET_ORIGIN                 | 起点 %1
+MAIN_FLEET_DESTINATION            | 终点 %1
+MAIN_FLEET_DEST_UNSCOUTED         | 探索未知星球
+MAIN_FLEET_ALLY                   | 盟友
+MAIN_FLEET_ENEMY                  | 敌人
+MAIN_FLEET_DEPLOYMENT             | 舰队部署
+MAIN_FLEET_DISPLAY                | 查看舰队
+MAIN_FLEET_CHOOSE_DEST            | 选择目的和需要部署的数量
+MAIN_FLEET_OUT_OF_RANGE_DESC      | 目标在舰队航程之外，离最近的殖民地%1光年
+MAIN_FLEET_INVALID_RETREAT        | 只有派往盟军殖民地的飞船可以撤回
+MAIN_FLEET_ETA_UNNAMED            | 预计耗时: %1年 
+MAIN_FLEET_ETA_NAMED              | 到达%1耗时: %2年
+MAIN_FLEET_SET_RALLY              | 集结中
+MAIN_FLEET_AUTO_RETREAT           | 到达后直接返回
+MAIN_FLEET_ETA_UNKNOWN            | 扫描设备无法确定其目的地
+MAIN_FLEET_THROUGH_NEBULA         | 星云内的飞行速度被限制在曲速1
+
+MAIN_FLEET_CANCEL                 | 取消
+MAIN_FLEET_OUT_OF_RANGE           | 无法到达
+MAIN_FLEET_DEPLOY_FLEET           | 部署
+MAIN_FLEET_UNDEPLOY_FLEET         | 取消部署
+MAIN_FLEET_INVALID_RETREAT        | 无效的撤退
+MAIN_FLEET_INVALID_DESTINATION    | 无法部署到%1
+MAIN_FLEET_INVALID_DESTINATION2   | 无法部署到这个星系
+
+// Rally Point labels
+MAIN_RALLY_TITLE                  | 设置集结点
+MAIN_RALLY_PROMPT                 | 选择一个你的殖民星球以集结新的舰艇
+MAIN_RALLY_FORWARD                | 将友军转移到此处
+MAIN_RALLY_TRAVEL_TIME            | 飞往%1耗时: %2年
+MAIN_RALLY_INSTANT_TIME           | 飞往%1耗时: 立刻
+MAIN_RALLY_WILL_CANCEL            | 选择这个目的地会清除之前的集结点
+MAIN_RALLY_ERROR                  | 你只能选择自己控制下的星球
+MAIN_RALLY_NO_SELECTION           | 尚未选择
+MAIN_RALLY_CANCEL                 | 返回
+MAIN_RALLY_START                  | 开始集结
+MAIN_RALLY_STOP                   | 取消集结
+
+// Transport labels
+MAIN_TRANSPORTS_EMPIRE            | %1 运输机
+MAIN_TRANSPORTS_COUNT             | %1 人员
+MAIN_TRANSPORTS_CANCEL            | 取消
+MAIN_TRANSPORTS_SHOW_DEST         | 到达%1的预计耗时: %2 years
+MAIN_TRANSPORT_TITLE              | 输送人员
+MAIN_TRANSPORT_ABANDON_TITLE      | 遗弃星系
+MAIN_TRANSPORT_PROMPT             | 选择一个己方星系，派遣平民；或选择敌人星系，派遣军队。
+MAIN_TRANSPORT_ABANDON_PROMPT     | 选择一个星系来接收所有的人口
+MAIN_TRANSPORT_SELECT_POP         | 选择要派遣的平民数量 (至多为%1一半的人口)
+MAIN_TRANSPORT_SELECT_TROOPS      | 选择要派遣的军队数量 (至多为%1一半的人口)
+MAIN_TRANSPORT_POP_LABEL          | 人数
+MAIN_TRANSPORT_TOTAL_POP_LABEL    | 总人数: %1
+MAIN_TRANSPORT_ETA                | 到达%1的航行时间: %2年
+MAIN_TRANSPORT_ERROR              | 你必须选择一个已被殖民的星系。
+MAIN_TRANSPORT_ABANDON_ERROR      | 你必须选择一个 %1 星系。
+MAIN_TRANSPORT_OUT_OF_RANGE       | 这个星系在我们的军队输送范围之外。
+MAIN_TRANSPORT_UNSCOUTED          | 我们无法把人员输送到未探索的信息。
+MAIN_TRANSPORT_HOSTILE            | 我们没有登陆这个环境的技术。
+MAIN_TRANSPORT_NO_ROOM            | 警告 - 目标行星已达最大人口。
+MAIN_TRANSPORT_SIZE_WARNING       | 警告 - 目标行星只能再容纳%1百万人。
+MAIN_TRANSPORT_NO_SELECTION       | 未选择
+MAIN_TRANSPORT_CANCEL             | 取消
+MAIN_TRANSPORT_SEND               | 输送人员
+MAIN_TRANSPORT_ABANDON            | 确定遗弃
+MAIN_TRANSPORT_CLEAR              | 取消输送
+MAIN_TRANSPORT_SURRENDER          | 到达后自动投降
+
+// Colony labels
+MAIN_COLONY_HOMEWORLD             | %1 母星
+MAIN_COLONY_FOUNDED               | %1 殖民地
+MAIN_COLONY_POPULATION            | 人口
+MAIN_COLONY_FACTORIES             | 工业
+MAIN_COLONY_VALUE+                | %1+
+MAIN_COLONY_SHIELD                | 护盾等级
+MAIN_COLONY_BASES                 | 导弹基地
+MAIN_COLONY_PRODUCTION            | 产能 - 净值 (总值)
+MAIN_COLONY_SHIP                  | 船坞
+MAIN_COLONY_DEFENSE               | 防御
+MAIN_COLONY_INDUSTRY              | 工业
+MAIN_COLONY_ECOLOGY               | 生态
+MAIN_COLONY_TECHNOLOGY            | 科技
+MAIN_COLONY_ALLOCATE_SPENDING     | 分配资源
+MAIN_COLONY_SPENDING_NONE         | 无
+MAIN_COLONY_SPENDING_RESERVE      | 国库
+MAIN_COLONY_SPENDING_TECH         | 科技
+MAIN_COLONY_SPENDING_CONVERT      | 转化
+MAIN_COLONY_SPENDING_REFIT        | 升级
+MAIN_COLONY_SPENDING_MAX_FACT     | 已达最大
+MAIN_COLONY_SPENDING_WASTE        | 污染
+MAIN_COLONY_SPENDING_ECO_GROWTH   | 增长 %1
+MAIN_COLONY_SPENDING_ATMOSPHERE   | 大气
+MAIN_COLONY_SPENDING_ENRICH_SOIL  | 土壤
+MAIN_COLONY_SPENDING_TERRAFORM    | 改造
+MAIN_COLONY_SPENDING_CLEANUP      | 干净
+MAIN_COLONY_SPENDING_GROWTH       | 增长
+MAIN_COLONY_SPENDING_SHIELD       | 护盾
+MAIN_COLONY_SPENDING_UPG_BASES    | 升级
+MAIN_COLONY_SPENDING_PLAGUE       | 瘟疫
+MAIN_COLONY_SPENDING_SUPERNOVA    | 超新星
+MAIN_COLONY_SPENDING_RP           | %1 RP
+MAIN_COLONY_COMPLETION_YEAR       | 1年
+MAIN_COLONY_COMPLETION_YEARS      | %1年
+MAIN_COLONY_COMPLETION_CENTURY    | %1年
+MAIN_COLONY_COMPLETION_PER_YEAR   | %1/年
+MAIN_COLONY_SHIPYARD_COMPLETED    | 已完成: %1
+MAIN_COLONY_SHIPYARD_LIMIT        | 制造上限:
+MAIN_COLONY_SHIPYARD_LIMIT_NONE   | 无
+MAIN_COLONY_SHIPYARD_CONSTRUCTION | 舰船生产队列
+MAIN_COLONY_RELOCATE_LABEL        | 设置集合点
+MAIN_COLONY_TRANSPORTS_LABEL      | 派遣殖民者
+MAIN_COLONY_ABANDON_LABEL         | 遗弃
+MAIN_COLONY_SHIP_SCRAPPED         | 被遗弃
+MAIN_COLONY_NO_SHIELD             | 星云
+
+// System Scouted Notification
+MAIN_SCOUT_TITLE                  | 科学家归类了一个新的星系
+MAIN_SCOUT_SUBTITLE_1             | 我们的飞船已经完成这个星系的侦察
+MAIN_SCOUT_SUBTITLE_2             | 宇航员已经搜集了这个星球的数据
+MAIN_SCOUT_SUBTITLE_3             | 盟友跟我们分享这个星球的数据
+MAIN_SCOUT_TYPE                   | 归类: %1      空间: %2
+MAIN_SCOUT_NO_PLANET              | 没有找到可生存星球。
+MAIN_SCOUT_HOSTILE_DESC           | 环境: 恶劣 - 人口增长减半。
+MAIN_SCOUT_FERTILE_DESC           | 环境: 肥沃 - 人口增长加快50%。
+MAIN_SCOUT_GAIA_DESC              | 环境: 天堂 - 人口增长翻倍。
+MAIN_SCOUT_ARTIFACTS_DESC         | 上古遗迹: 科技研究效果翻倍。
+MAIN_SCOUT_ANCIENTS_DESC          | 上古家园: 科技研究效果翻三倍。
+MAIN_SCOUT_ULTRA_POOR_DESC        | 资源: 非常匮乏 - 工业产值仅为正常情况的三分之一。
+MAIN_SCOUT_POOR_DESC              | 资源: 匮乏 - 工业产值减半。
+MAIN_SCOUT_RICH_DESC              | 资源: 丰富 - 工业产值翻倍。
+MAIN_SCOUT_ULTRA_RICH_DESC        | 资源: 非常丰富 - 工业产值为正常情况的三倍。
+
+// Colonization prompt
+MAIN_COLONIZE_TITLE               | 我们的殖民者正围绕%1飞行，这是一个未被殖民的星系。
+MAIN_COLONIZE_PROMPT              | 建造一个新的殖民地?
+MAIN_COLONIZE_YES                 | 是
+MAIN_COLONIZE_NO                  | 否
+MAIN_COLONIZE_ANIMATION_TITLE     | %1年, [player_empire]创建了一个新的殖民地。
+MAIN_COLONIZE_NAME_PROMPT         | 殖民地名称
+MAIN_COLONIZE_NAME_OK             | 确定
+
+// Reasons to ask player to reallocate a system (during next turn)
+MAIN_ALLOCATE_TITLE               | 支出分配
+MAIN_ALLOCATE_DESIGN_SCRAPPED     | %1 的在建飞船已经被拆除。
+MAIN_ALLOCATE_COLONIZED           | • %1 已经被殖民。
+MAIN_ALLOCATE_STARGATE_COMPLETE   | • %1 已经完成星门的建造。
+MAIN_ALLOCATE_SHIPS_COMPLETE      | • %1 已经完成了要求建造的 %2 飞船。
+MAIN_ALLOCATE_SHIELD_COMPLETE     | • %1 已经完成了 %2 的建造。
+MAIN_ALLOCATE_BASES_COMPLETE      | • %1 已经完成了 %2 个导弹基地的建造。
+MAIN_ALLOCATE_BASES_UPGRADED      | • %1 已经完成导弹基地的升级。
+MAIN_ALLOCATE_MAX_FACTORIES       | • %1 的工厂数量已经达到了的上限 %2。
+MAIN_ALLOCATE_MAX_POPULATION      | • %1 的人口数量已经达到了上限 %2。
+MAIN_ALLOCATE_TERRAFORM_COMPLETE  | • %1 已经完成了行星改造。
+MAIN_ALLOCATE_ATMOSPHERE_COMPLETE | • %1 完成了大气改造，人口增长速度现在是正常水平。
+MAIN_ALLOCATE_FERTILE_COMPLETE    | • %1 已经变成了肥沃的行星，人口增长速度是正常水平的1.5倍。
+MAIN_ALLOCATE_GAIA_COMPLETE       | • %1 已经变成了天堂行星，人口增长速度是正常水平的2倍。
+MAIN_ALLOCATE_SABOTAGE_BASES      | • %1 的 %2 个导弹基地被 %3 个间谍破坏了。
+MAIN_ALLOCATE_SABOTAGE_FACTORIES  | • %1 的 %2 个工厂被 %3 个间谍破坏了。
+MAIN_ALLOCATE_COLONY_CAPTURED     | • %1 被 %2 个军队占领了。
+MAIN_ALLOCATE_ECO_LOCKED_WASTE    | • %1 的生态支出被人为控制在了一个没有办法清理污染的水平。
+MAIN_ALLOCATE_PROJECT_ENDED       | • %1 不再研究这个项目：%2。
+MAIN_ALLOCATE_CHANGE_SPENDING     | 星系的支出可以在这里调整。
+MAIN_ALLOCATE_NOTICE_NUMBER       | 报告 %1/%2
+MAIN_ALLOCATE_BRIEF_NUMBER        | %1/%2
+MAIN_ALLOCATE_PREV_SYSTEM         | 前一条
+MAIN_ALLOCATE_NEXT_SYSTEM         | 下一条
+MAIN_ALLOCATE_CLOSE               | 关闭
+
+// Fleet Production display (during next turn)
+MAIN_FLEET_PRODUCTION_TITLE       | 舰船建造总结
+MAIN_FLEET_SHIP_COUNT             | %1/%2
+
+// 32-bit Java Warning
+MAIN_JAVA_32BIT_TITLE             | 警告! 你使用的是32位 Java
+MAIN_JAVA_32BIT_DESC              | 你正在用32位 Java 运行这个游戏。这会极大影响可用内存和游戏速度。
+MAIN_JAVA_32BIT_DESC_2            | 尽管游戏可以在这个模式下运行，但使用64位 Java 会大大优化你的游戏体验。
+MAIN_JAVA_32BIT_DESC_3            | 如果你想获取升级 Java 的帮助，请访问 www.reddit.com/r/rotp 获取帮助
+MAIN_JAVA_32BIT_OK                | 好的
+
+// Memory Low Warning
+MAIN_MEMORY_LOW_TITLE             | 警告! 游戏内存不足
+MAIN_MEMORY_LOW_DESC              | 游戏的可用内存不足。这可能是因为游戏地图太大，或电脑的可用内存不够。
+MAIN_MEMORY_LOW_DESC_2            | 点击“重新启动”，重新启动游戏，并从当前进度继续。如果不重启游戏，可能会导致无法预测的后果，比如游戏存档丢失。
+MAIN_MEMORY_LOW_DESC_3            | 如果你频繁看到这个提示，请尝试在重启前关闭其他应用。
+MAIN_MEMORY_LOW_RESTART           | 重新启动
+MAIN_MEMORY_LOW_SKIP              | 忽略
+
+// Autosave Failed Warning
+MAIN_AUTOSAVE_FAILED_TITLE        | 警告! 自动存档失败
+MAIN_AUTOSAVE_FAILED_DESC         | 游戏在你点击“下一回合”后自动存档。自动存档失败了。这可能是一个临时的内存错误，但请你在继续游戏前重启一次。
+MAIN_AUTOSAVE_FAILED_DESC_2       | 错误信息: %1
+MAIN_AUTOSAVE_FAILED_DESC_3       | 如果你经常看到这个信息，请访问 www.reddit.com/r/rotp，并提供截图。
+MAIN_AUTOSAVE_FAILED_OK           | 好的
+
+// Alerts
+MAIN_ALERT_TITLE                  | 情报
+MAIN_ALERT_TITLE_COUNT            | 情报： %1/%2
+MAIN_ALERT_SPY_REPORT             | 我们的情报官员汇报了一个新的间谍活动情报。
+MAIN_ALERT_TECH_STOLEN            | 安全部门发现了来自 [alien_race] 的间谍活动。
+MAIN_ALERT_FACTORIES_DESTROYED    | 为 [alien_empire] 工作的间谍破坏了%2星系的%1个工厂。
+MAIN_ALERT_BASES_DESTROYED        | 为 [alien_empire] 工作的间谍破坏了%2星系的%1个导弹基地。
+MAIN_ALERT_FACTORIES_DESTROYED2   | 未知间谍破坏了%2星系的%1个工厂。
+MAIN_ALERT_BASES_DESTROYED2       | 未知间谍破坏了%2星系的%1个导弹基地。
+MAIN_ALERT_TRANSPORTS_PERISHED    | %1星系的殖民地已经毁灭。我们尝试着陆的殖民者都丧生了。
+MAIN_ALERT_TRANSPORTS_CAPTURED    | 我们登陆%1星系的%2人员已经向 [alien_race] 的军队投降。
+MAIN_ALERT_TRANSPORTS_KILLED      | 我方尝试登陆%1星系的%2人员已经被 [alien_race] 的守军击溃。
+MAIN_ALERT_INVADERS_CAPTURED      | %2 [alien_race] 登陆%1星系的人员已经向我方守军投降。
+MAIN_ALERT_INVADERS_KILLED        | %2 [alien_race] 想要入侵%1的人员已经彻底被我方守军击溃。
+MAIN_ALERT_TRESPASSING1           | [alien_race] 的飞船正在穿过我们在%1星系的殖民地。
+MAIN_ALERT_TRESPASSING2           | [alien_race] 的大使抗议我们的飞船经过了%1星系。
+MAIN_ALERT_TRADE_MATURED          | 我们与%1的贸易协议达到了协定的%2BC。
+MAIN_ALERT_ALLIANCE_WEAKENING     | 我们与 [ally_empire] 的联盟关系变弱了。
+MAIN_ALERT_ALLIANCE_BREAKING      | 我们与 [ally_empire] 的联盟关系在崩溃的边缘！
+
+
+// Colony Listing UI
+PLANETS_TITLE                     | %1 殖民地
+PLANETS_VIEW_ECOLOGY              | 生态
+PLANETS_VIEW_INDUSTRY             | 工业
+PLANETS_VIEW_MILITARY             | 军事
+PLANETS_SPENDING_COSTS            | 帝国开支
+PLANETS_COSTS_DESC                | 每个殖民地都支付一定比例的产出以维持帝国开支。
+PLANETS_COSTS_SHIPS               | 战舰维护
+PLANETS_COSTS_BASES               | 导弹基地
+PLANETS_COSTS_STARGATES           | 星门
+PLANETS_COSTS_SPYING              | 间谍
+PLANETS_COSTS_SECURITY            | 安全
+PLANETS_TOTAL_INCOME              | 年收入
+PLANETS_INCOME_TRADE              | 贸易收入
+PLANETS_INCOME_PLANETS            | 殖民地产出
+PLANETS_INCOME_TOTAL              | 总收入
+PLANETS_TREASURY                  | 帝国国库
+PLANETS_TREASURY_FUNDS            | 国库储备
+PLANETS_TAX_DESC                  | 对殖民地征税以增加国库收入
+PLANETS_RESERVE_TAX               | 税收
+PLANETS_RESERVE_INCREASE          | +%1 BC/年
+PLANETS_RESERVE_NO_TAX            | 无税收
+PLANETS_RESERVE_ONLY_DEVELOPED    | 只对完全发展殖民地征税
+PLANETS_BUTTON_TRANSFER           | 转账
+PLANETS_BUTTON_EXIT               | 返回
+PLANETS_AMT_PCT                   | %1%
+PLANETS_AMT_BC                    | %1 BC
+PLANETS_TRANSFER_DESC             | 从国库转移资金到%1
+PLANETS_TRANSFER_CANCEL           | 取消
+PLANETS_TRANSFER_ACCEPT           | 转账
+PLANETS_COLONY_TRANSFER_TITLE     | 转移资金
+PLANETS_COLONY_TRANSFER_DETAIL    | 从国库转移资金到殖民地以临时增加殖民地产出。
+PLANETS_COLONY_TRANSFER_BUTTON    | 从国库转移资金
+PLANETS_LIST_NUM                  | 
+PLANETS_LIST_NAME                 | 名称
+PLANETS_LIST_POPULATION           | 人口
+PLANETS_LIST_POP                  | 人口
+PLANETS_LIST_SIZE                 | 大小
+PLANETS_LIST_TYPE                 | 类型
+PLANETS_LIST_FACTORIES            | 工厂
+PLANETS_LIST_WASTE                | 污染
+PLANETS_LIST_BASES                | 导弹
+PLANETS_LIST_SHIELD               | 护盾
+PLANETS_LIST_PRODUCTION           | 产出
+PLANETS_LIST_CAPACITY             | 产能
+PLANETS_LIST_RESERVE              | 存款
+PLANETS_LIST_SHIPYARD             | 船坞
+PLANETS_LIST_NOTES                | 备注
+PLANETS_LIST_TURNS                | 回合
+PLANETS_LIST_YEARS                | 年
+PLANETS_LIST_TRANSPORTS           | 人数
+PLANETS_LIST_RESOURCES            | 资源
+PLANETS_MULTI_SYSTEMS             | %1个星系
+PLANETS_AGGREGATE_VALUES          | 总数量
+PLANETS_SPENDING_0                | 无投入：%1
+PLANETS_SPENDING_25               | 25% 投入：%1
+PLANETS_SPENDING_50               | 50% 投入：%1
+PLANETS_SPENDING_75               | 75% 投入：%1
+PLANETS_SPENDING_MAX              | 最大投入： %1
+PLANETS_HELP_ALL                  | 纵览：这个界面展示了帝国的经济情况，你可以按指标修改各个殖民地的排序。
+PLANETS_HELP_1A                   | 生态：单击以展示殖民地的生态数据。
+PLANETS_HELP_1B                   | 工业：单击以展示殖民地的工业数据。
+PLANETS_HELP_1C                   | 军事：单击以展示殖民地的军事数据。
+PLANETS_HELP_1D                   | 可以在右侧界面修改殖民地的支出分配。
+PLANETS_HELP_1E                   | 从国库转移资金到殖民地，至多增加殖民地50%的产出。
+PLANETS_HELP_1F                   | 你帝国的总产出。
+PLANETS_HELP_1G                   | 你帝国的开支情况，以收入的百分比形式展现。
+PLANETS_HELP_1H                   | 对殖民地征税以增加国库收入。可以只对已经完成生态、工业和防御建设的殖民地征税。
+PLANETS_HELP_2A                   | 名称：殖民地的名称。可以编辑。
+PLANETS_HELP_2B                   | 人口：当前人口，以及相比上一回合的变化数量。
+PLANETS_HELP_2C                   | 地形：星球的地形。绿色表示肥沃星球。
+PLANETS_HELP_2D                   | 资源：星球的资源丰富或匮乏，以及是否有史前遗迹。
+PLANETS_HELP_2E                   | 大小：星球当前的大小。
+PLANETS_HELP_2F                   | 污染：星球当前的污染情况。
+PLANETS_HELP_2G                   | 备注：该星系的备注。可编辑。
+PLANETS_HELP_3A                   | 名称：殖民地的名称。可以编辑。
+PLANETS_HELP_3B                   | 人口：当前人口，以及相比上一回合的变化数量。
+PLANETS_HELP_3C                   | 资源：星球的资源丰富或匮乏，以及是否有史前遗迹。
+PLANETS_HELP_3D                   | 工厂：工厂的数量，包括相比上一回合的变化数量。
+PLANETS_HELP_3E                   | 产出：殖民地的总产出。
+PLANETS_HELP_3F                   | 存款：当前殖民地的存款。
+PLANETS_HELP_3G                   | 备注：该星系的备注。可编辑。
+PLANETS_HELP_3H                   | 产能：当前产出占最大可能产出的百分比。
+PLANETS_HELP_4A                   | 名称：殖民地的名称。可以编辑。
+PLANETS_HELP_4B                   | 人口：当前人口，以及相比上一回合的变化数量。
+PLANETS_HELP_4C                   | 资源：星球的资源丰富或匮乏，以及是否有史前遗迹。
+PLANETS_HELP_4D                   | 产出：殖民地的总产出。
+PLANETS_HELP_4E                   | 护盾：星球护盾等级。
+PLANETS_HELP_4F                   | 导弹：星球的导弹基地数量。如果技术已过时，会被标为红色。
+PLANETS_HELP_4G                   | 船坞：当前正在建造的飞船型号。
+PLANETS_HELP_4H                   | 备注：该星系的备注。可编辑。
+PLANETS_HELP_4I                   | 旗帜：你可以为星系设置一个标记旗帜。
+
+// Bombardment prompt
+MAIN_BOMBARDED_TITLE             | %1 被 %2 的舰队轰炸了。
+MAIN_BOMBARD_TITLE               | 我们的舰队正在围绕 [alien_race] 殖民地飞行。
+MAIN_BOMBARD_TROOPS              | %1 [alien_race] 舰队正在围绕该殖民地或驶向该殖民地。
+MAIN_BOMBARD_PROMPT              | 是否轰炸该殖民地?
+MAIN_BOMBARD_YES                 | 是
+MAIN_BOMBARD_NO                  | 否
+MAIN_BOMBARD_POPULATION          | 人口: %1
+MAIN_BOMBARD_FACTORIES           | 工厂: %1
+MAIN_BOMBARD_BASES               | 导弹基地: %1
+MAIN_BOMBARD_SHIELD              | 护盾: %1
+MAIN_BOMBARD_COMPLETE            | 完成轰炸。
+MAIN_BOMBARD_DESTROYED           | 摧毁殖民地
+MAIN_BOMBARD_DMG                 | (%1)
+MAIN_BOMBARD_NAME_PROMPT         | 殖民地名称
+
+// Fleet listing UI
+FLEETS_TITLE                      | 舰队
+FLEETS_SELECT_SYSTEMS             | 选择星系
+FLEETS_SELECT_FLEETS              | 选择舰队
+FLEETS_SELECT_ALL                 | 选择全部
+FLEETS_DESELECT_ALL               | 反选全部
+FLEETS_FILTER_BY                  | 筛选：
+FLEETS_CONSTRUCTING_DESIGN        | 建造条件：
+FLEETS_INCLUDES_SHIP_TYPE         | 只部署下列类型的舰艇：
+FLEETS_SELECTED_SHIPS             | 被选中的飞船
+FLEETS_BUILDING_DESIGN            | %1
+FLEETS_HAS_STARGATE               | 星系有星门
+FLEETS_HAS_NO_STARGATE            | 星系无星门
+FLEETS_HAS_RALLY_POINT            | 星系有集结点
+FLEETS_HAS_NO_RALLY_POINT         | 星系无集结点
+FLEETS_SENDING_TRANSPORTS         | 星系正在派遣人员
+FLEETS_NOT_SENDING_TRANSPORTS     | 星系没有派遣人员
+FLEETS_IS_RICH                    | 星系资源丰富或非常丰富
+FLEETS_IS_ULTRA_RICH              | 星系资源非常丰富
+FLEETS_IS_POOR                    | 星系资源匮乏或非常匮乏
+FLEETS_IS_ULTRA_POOR              | 星系资源非常匮乏
+FLEETS_IS_STANDARD                | 星系的资源状况正常
+FLEETS_SYSTEMS_SELECTED           | 选中%1个星系
+FLEETS_FLEETS_SELECTED            | 选中%1艘舰船
+FLEETS_MULTIPLE_DESIGNS           | 多种飞船
+FLEETS_RELOCATE_LABEL             | 设置集结点
+FLEETS_TRANSPORTS_LABEL           | 派遣人员
+FLEETS_SPENDING_LABEL             | 调整造船投入
+FLEETS_HAS_ORDERS                 | 飞船正在移动
+FLEETS_HAS_NO_ORDERS              | 飞船正在轨道绕行
+FLEETS_IS_RALLYING                | 飞船正在集结
+FLEETS_DESIGN_COUNT               | %1 %2
+FLEETS_DEPLOY_FLEETS              | 部署舰队
+FLEETS_SET_RALLY_POINTS           | 设置集结点
+FLEETS_STOP_RALLIES_DESC          | %1个被选中的星系已经有被设置好的集结点
+FLEETS_STOP_RALLIES               | 停止集结
+FLEETS_SETTING_RALLY_POINTS       | 开启集结点
+FLEETS_START_RALLIES_DESC         | 选择一个你控制的星系，将所有被选中星系的新造舰船都部署到这个星系。
+FLEETS_START_RALLIES              | 开始集结
+FLEETS_SEND_TRANSPORTS            | 派遣人员
+FLEETS_ADJUST_SPENDING_SELECT     | 选择要调整造船比例的星系
+FLEETS_ADJUST_SPENDING_DESC       | 为选中的%1个星系设置造船投入比例
+FLEETS_ADJUST_SPENDING_DESC2      | 其他投入模块会自动调整。
+FLEETS_ADJUST_SPENDING_DESC3      | 生态投入会调整到足够清理污染的最小值。
+FLEETS_ADJUST_SPENDING            | 调整造船投入
+FLEETS_SPENDING_0                 | 无造船投入
+FLEETS_SPENDING_25                | 投入产出的25%
+FLEETS_SPENDING_50                | 投入产出的50%
+FLEETS_SPENDING_75                | 投入产出的75%
+FLEETS_SPENDING_MAX               | 最大化造船投入
+FLEETS_SPENDING_CANCEL            | 取消
+FLEETS_CANCEL_TRANSPORTS_DESC     | %1个被选中的星系已经有计划中的派遣任务
+FLEETS_CANCEL_TRANSPORTS          | 取消派遣
+FLEETS_DEPLOYING_TRANSPORTS_DESC  | 选择一个航程内的行星以派遣平民或军队。
+FLEETS_DEPLOY_TRANSPORTS          | 确定派遣人员
+FLEETS_FLEET_DEPLOYMENT           | 舰队部署
+FLEETS_UNDEPLOYING_FLEETS         | %1个被选中的飞船已经有部署任务。
+FLEETS_CANCEL_DEPLOYMENTS         | 取消部署
+FLEETS_DEPLOYING_FLEETS           | 正在部署
+FLEETS_DEPLOYING_FLEETS_DESC      | 选择一个航程内的星系以部署被选中的飞船。
+FLEETS_DEPLOY_FLEETS              | 部署舰艇
+FLEETS_TRANSPORTS_TITLE           | 从下列行星派遣:
+FLEETS_TRANSPORTS_SEND            | 派遣%1人员
+FLEETS_TRANSPORTS_SYNCH           | 同步
+FLEETS_TRANSPORTS_UNSYNCH         | 不同步
+FLEETS_TRANSPORT_NO_ROOM          | 警告：目标星球已经达到最大人口！
+FLEETS_TRANSPORT_SIZE_WARNING     | 警告：目标星球仅支持%1人口!
+FLEETS_TRANSPORT_TIME             | 抵达时间: %1年后
+FLEETS_TRANSPORT_TIME_RANGE       | 抵达时间: %1到%2年后
+FLEETS_CANNOT_SEND_TRANSPORTS     | %1无法排遣人员
+FLEETS_EXISTING_TRANSPORT         | 派遣%1人员到%2
+FLEETS_EXISTING_STOP              | 放弃
+FLEETS_CANCEL                     | 取消
+FLEETS_HELP_ALL                   | 总览：这个界面允许你批量管理舰队、人员派遣和战舰建造。一般来说，你会选择一组飞船或星系，然后筛选出子集，再进一步操作。
+FLEETS_HELP_1A                    | 选择星系：有3种方式。1. 选择地图上的星系；2. 右键在地图上拖拽；3. 使用“选择全部”和“反选全部”。
+FLEETS_HELP_1B                    | 筛选：勾选单选框以缩小被选中的星系，选项也可以被点击以切换内容。
+FLEETS_HELP_1C                    | 建造条件：根据在建飞船在筛选星系。
+FLEETS_HELP_1D                    | 舰艇型号：改变被选中星系的在建型号。空白表示被选中星系在建造不同的飞船。注意：这个操作没有确认键。
+FLEETS_HELP_1E                    | 派遣人员： 从被选中星系派遣人员到某个目标星系。
+FLEETS_HELP_1F                    | 设置集结点：将被选中星系的集结点设置为某个星系。
+FLEETS_HELP_2A                    | 选择舰艇：有3种方法。1. 在地图上点选；2.右键在地图上拖拽；3. 使用“选择全部”和“反选全部”。
+FLEETS_HELP_2B                    | 筛选：勾选单选框以缩小被选中的星系，选项也可以被点击以切换内容。
+FLEETS_HELP_2C                    | 只部署下列类型的舰艇：限制你想要部署的飞船类型。
+FLEETS_HELP_2D                    | 被选中的飞船： 被选中飞船里各种类型的数量。
+FLEETS_HELP_2E                    | 部署舰艇：将被选中的飞船部署到某个目标星系。
+
+// Select Next Tech to Research UI
+TECH_RESEARCH_COMPUTER            | 选择科学家研究的下一个计算科学技术。
+TECH_RESEARCH_CONSTRUCTION        | 选择科学家研究的下一个制造技术。
+TECH_RESEARCH_FORCE_FIELD         | 选择科学家研究的下一个力场技术。
+TECH_RESEARCH_PLANETOLOGY         | 选择科学家研究的下一个行星学技术。
+TECH_RESEARCH_PROPULSION          | 选择科学家研究的下一个动力技术。
+TECH_RESEARCH_WEAPON              | 选择科学家研究的下一个武器技术。
+TECH_TOP_TIER_DETAIL              | 掌握这个技术将会解锁更高级的技术。
+TECH_OBSOLETE_DETAIL              | 这个科技已经过时了。
+TECH_CAN_CHANGE                   | 在进入下一回合前，你的决定可以在科技界面修改。
+TECH_CHOOSE_RESEARCH_COST         | %1 RP
+TECH_CHOOSE_RESEARCH_TIER         | %1阶
+TECH_TRADE_TIER_COST_INFO         | (Tier %1 - %2 RP)
+TECH_CONFIRM_CHOICE               | 选择
+TECH_DISCOVERY_TITLE              | [player_race]科学家实现了一个%1突破
+TECH_SCOUTED_TITLE                | 侦察人员探索了%1发现的遗迹
+TECH_STOLEN_TITLE                 | 间谍渗透了%2的1%研究中心。
+TECH_TRADED_TITLE                 | [player_race]科学家从[alien_race]科学家处获取了技术
+TECH_PLUNDERED_TITLE              | 军队在掠夺%1后的废墟 
+TECH_DERELICT_TITLE               | [player_race]探索者获取到了一个上古技术
+TECH_GUARDIAN_TITLE               | [player_race]士兵发现了一个上古武器
+TECH_ALLOCATE_SHIELD              | 是否提高所有殖民地的防御开支比例，以建造新的护盾?
+TECH_ALLOCATE_MISSILE_BASES       | 是否提高所有殖民地的防御开支比例，以升级导弹基地?
+TECH_ALLOCATE_FACTORIES           | 是否提高所有殖民地的工业开支比例，以提高工厂数量?
+TECH_ALLOCATE_CLEAN_WASTE         | 是否减少所有殖民地的生态开支，仅把星球的生态状况维持在“干净”?
+TECH_ALLOCATE_ENRICH_SOIL         | 是否提高正常环境的殖民地的生态投入，以开始行星的环境改造。
+TECH_ALLOCATE_ATMOSPHERE          | 是否提高恶劣环境的殖民地的生态投入，以开始行星的环境改造。
+TECH_ALLOCATE_TERRAFORM           | 是否提高所有殖民地的生态投入，以开始星星的环境改造。
+TECH_ALLOCATE_NO                  | 不
+TECH_ALLOCATE_PCT                 | +%1%
+TECH_COMPLETED_TITLE              | 研究完成!
+TECH_COMPLETED_COMPUTER           | 我们完成了计算科学领域的所有研究！该领域已经没有更多的研究了。
+TECH_COMPLETED_CONSTRUCTION       | 我们完成了制造研究领域的所有研究！该领域已经没有更多的研究了。
+TECH_COMPLETED_FORCE_FIELD        | 我们完成了力场研究领域的所有研究！该领域已经没有更多的研究了。
+TECH_COMPLETED_PLANETOLOGY        | 我们完成了行星学领域的所有研究！该领域已经没有更多的研究了。
+TECH_COMPLETED_PROPULSION         | 我们完成了动力学领域的所有研究！该领域已经没有更多的研究了。
+TECH_COMPLETED_WEAPON             | 我们完成了武器研究领域的所有研究！该领域已经没有更多的研究了。
+TECH_COMPLETED_ALL                | 我们已经完成了所有科学研究。研究的时代已经结束了。从今往后所有研究资金都会进入国库。
+TECH_COMPLETED_VERIFY             | 确认未来研究的投入分配方案已经正确设置。
+
+// prompt for espionage
+NOTICE_ESPIONAGE_TITLE            | 我们的间谍渗透了一个[alien_race]基地。
+NOTICE_ESPIONAGE_SUBTITLE         | 选择一个想要投偷窃的技术
+NOTICE_ESPIONAGE_NO_TECH          | 无可用技术
+NOTICE_ESPIONAGE_MANY_TECHS       | %1个可用技术
+NOTICE_ESPIONAGE_FOOTER           | 如果被发现，会导致外交争端。
+NOTICE_ESPIONAGE_FRAME_TITLE      | 我们的间谍成功把技术盗窃案栽赃给了另一个种族。
+NOTICE_ESPIONAGE_FRAME_SUBTITLE   | 选择被栽赃种族：
+
+// Spy Capture display (during next turn)
+NOTICE_SPIES_TITLE                | 当前情报
+NOTICE_SPIES_NO_ACTIVITY          | 当前没有重要的情报活动。
+NOTICE_SPIES_ACTIVITY             | 当前活动:
+NOTICE_SPIES_LOST_DESC            | • [alien_empire] 捣毁了我方的%1个间谍网络。
+NOTICE_SPIES_LOST_CONFESSED       | 我方间谍坦白了正在进行的破坏活动。
+NOTICE_SPIES_LOST_CONFESSED2      | 我方间谍坦白了正在进行的窃密活动。
+NOTICE_SPIES_LOST_CONFESSED3      | 我方间谍被迫承认了正在进行的破坏活动。
+NOTICE_SPIES_CAUGHT_DESC          | • 我方安全部门捣毁了%1个 [alien_empire] 的间谍网络。
+NOTICE_SPIES_CAUGHT_CONFESSED     | 对方间谍承认在进行破坏活动。
+NOTICE_SPIES_CAUGHT_CONFESSED2    | 对方间谍承认在进行窃密活动。
+NOTICE_SPIES_FRAMED               | • 我方被栽赃为 [alien_empire] 窃密事件的幕后黑手。
+NOTICE_SPIES_ESPIONAGE            | • 我方间谍偷窃了 [alien_empire] 的机密技术 %1。
+NOTICE_SPIES_ESPIONAGE_FRAME      | 我们成功把本次窃密行动栽赃给了 [framed_empire]。
+NOTICE_SPIES_SABOTAGE_FACTORIES   | • 我方间谍成功破坏了 %2 星系的 %1 个工厂。
+NOTICE_SPIES_SABOTAGE_BASES       | • 我方间谍成功破坏了 %2 星系的 %1 个导弹基地。
+NOTICE_SPIES_SABOTAGE_REBELS      | • 我方间谍成功在 %2 星系培养了反叛力量。
+NOTICE_SPIES_SABOTAGE_REBELLION   | • 我方间谍成功在 %2 星系煽动了起义。
+NOTICE_SPIES_LEARNED_TECH         | • 我方间谍汇报：[alien_empire] 近期发现了一个我方尚未掌握的新技术：%1。
+
+// this just details how to concatenate a list of multiple technology (English uses ,)
+NOTICE_SPIES_MULTIPLE_TECHS       | %1, %2
+NOTICE_SPIES_THREATEN             | 威胁
+NOTICE_SPIES_MANAGE               | 管理间谍
+NOTICE_SPIES_CLOSE                | 关闭
+
+// Ground Combat UI
+INVASION_BATTLE                   | %1年，[attacker_race] 和 [defender_race] 为争夺 %2 发生战斗。
+INVASION_BATTLE_REBELS            | %1年，[attacker_race] 与反叛军为争夺 %2 发生战斗。
+INVASION_TROOPS_LANDED            | %1 [attacker_race] 的部队登陆了。
+INVASION_SOME_TROOPS_LANDED       | %2 个 [attacker_race] 部队中有 %1 个登陆了。
+INVASION_WIN                      | [attacker_race] 的部队占领了 %2。
+INVASION_LOSS                     | [defender_race] 的部队成功守护了 %2。
+INVASION_ATTACKERS_TITLE          | %1 [attacker_race] 部队
+INVASION_DEFENDERS_TITLE          | %1 [defender_race] 部队
+INVASION_REBELS_TITLE             | %1 [defender_race] 起义军
+INVASION_TROOP_ARMOR_DESC         | %1 %2
+
+// GNN Text
+GNN_TITLE                         | [player_race] 星际新闻网络报告：
+GNN_EMPIRE_RANKING                | %1. [empire_race]
+GNN_EXTINCTION_KNOWN_VICTIM       | [victim_race]
+GNN_EXTINCTION_KNOWN_KILLER       | [killer_race]
+GNN_EXTINCTION_UNKNOWN_VICTIM     | 一个未知文明
+GNN_EXTINCTION_UNKNOWN_KILLER     | 一个未知帝国
+GNN_EXTINCTION                    | %1 已经彻底被 %2 消灭。
+GNN_EXTINCTION_NO_KILLER          | %1 已经彻底被消灭。
+GNN_EXPANSION_1                   | [expanding_empire] 已经占据 %1 个星系，超过了所有其他种族。
+GNN_EXPANSION_2                   | [expanding_empire] 已经占有 %1 个星系。如果他们的扩张不被阻止，他们很快就会占领整个银河系。
+GNN_EXPANSION_3                   | [expanding_empire] 几乎控制了大部分星系。领导者已经准备好加入这个强大的帝国。
+GNN_ALLIANCE_FORMED               | [first_empire] 已经与 [second_empire] 结成同盟。
+GNN_ALLIANCE_BROKEN               | [first_empire] 和 [second_empire] 之间的同盟已经被毁掉。
+GNN_FLEETS_RANKING                | 当前舰队实力排名：
+GNN_CENSUS_RANKING                | 当前人口数量排名：
+GNN_PRODUCTION_RANKING            | 当前经济实力排名：
+GNN_TECHNOLOGY_RANKING            | 当前技术实力排名：
+GNN_PLAYER_REBELLION              | %1 已经叛变并拒绝再为 [rebelling_empire] 进行生产。至少 %2 百万叛军控制了殖民地。地面部队必须登陆该星球平定判断。 
+GNN_ALIEN_REBELLION               | %1 已经叛变并拒绝再为 [rebelling_empire] 进行生产。至少 %2 百万叛军控制了殖民地。
+GNN_PLAYER_REBELLION_SPREAD       | 叛乱继续在 [rebelling_empire] 传播，至少 %2 叛乱分子控制了 %1 的殖民地。
+GNN_OVERTHROW                     | [alien_empire] 出现了一个新的领导者。传闻他是一个 %1。我们的关系变成了中立，且所有贸易都中断了。
+GNN_END_COUNCIL                   | 宇宙中仅剩下两个帝国，通过星际委员会实现统一已经不再可行。领导者们开始辩论什么样的最终解决方案才能给宇宙带来和平。
+GNN_FORM_COUNCIL                  | 为了追求和平，各个种族的代表即将举行会议，将从两个人口最多的帝国中投票选出领导全宇宙的皇帝。
+GNN_ALLY_AT_WAR                   | 我方的盟友 [ally_empire] 与 [other_empire] 爆发战争。
+
+// Error UI text
+ERROR_TITLE                       | 出现了一个错误  :(
+ERROR_MESSAGE                     | 如果你想要帮助修复这个问题，请将截图和最近的存档文件 'recent.ropt' 通过邮件发给 Ray Fowler，或者在 ROTP 的 Reddit 论坛上发一个帖子。
+ERROR_EMAIL                       | 邮件： rayfowler@fastmail.com
+ERROR_REDDIT                      | Reddit: www.Reddit.com/r/rotp
+
+// Setup UI
+SETUP_SELECT_RACE                 | 选择你的种族
+SETUP_SELECT_OPPONENTS            | 选择对手
+SETUP_SELECT_GALAXY               | 选择宇宙
+SETUP_SELECT_GALAXY_OPTIONS       | 选择选项
+SETUP_GALAXY_RULESET_LABEL        | 规则
+SETUP_INSUFFICIENT_MEMORY         | 内存不足
+SETUP_CREATING_GALAXY             | 创建宇宙...
+SETUP_RULESET_ORION               | 猎户座
+SETUP_RULESET_ANTARES             | 心宿二
+SETUP_RULESET_SIRIUS              | 天狼星
+SETUP_GALAXY_SIZE_LABEL           | 尺寸
+SETUP_RACE_MULTIPLIER             | x%1
+SETUP_GALAXY_SHAPE_LABEL          | 形状
+SETUP_GALAXY_SIZE_TINY            | 很小
+SETUP_GALAXY_SIZE_SMALL           | 小
+SETUP_GALAXY_SIZE_SMALL2          | 小
+SETUP_GALAXY_SIZE_AVERAGE         | 普通
+SETUP_GALAXY_SIZE_AVERAGE2        | 普通
+SETUP_GALAXY_SIZE_LARGE           | 大
+SETUP_GALAXY_SIZE_LARGE2          | 大
+SETUP_GALAXY_SIZE_HUGE            | 很大
+SETUP_GALAXY_SIZE_HUGE2           | 很大
+SETUP_GALAXY_SIZE_MASSIVE         | 巨大
+SETUP_GALAXY_SIZE_MASSIVE2        | 巨大
+SETUP_GALAXY_SIZE_MASSIVE3        | 巨大
+SETUP_GALAXY_SIZE_MASSIVE4        | 巨大
+SETUP_GALAXY_SIZE_MASSIVE5        | 巨大
+SETUP_GALAXY_SIZE_INSANE          | 非常大
+SETUP_GALAXY_SIZE_LUDICROUS       | 超级大
+SETUP_GALAXY_SIZE_MAXIMUM         | 最大
+SETUP_GALAXY_SHAPE_RECTANGLE      | 分散
+SETUP_GALAXY_SHAPE_CIRCULAR       | 圆形
+SETUP_GALAXY_SHAPE_RING           | 环形
+SETUP_GALAXY_SHAPE_ELLIPSE        | 椭圆
+SETUP_GALAXY_SHAPE_SPIRAL         | 螺旋
+SETUP_GALAXY_SHAPE_STAR           | 恒星
+SETUP_GALAXY_SHAPE_BARSPIRAL      | 条状螺旋
+SETUP_GALAXY_SHAPE_TEXT           | 文字
+SETUP_GALAXY_SHAPE_CLUSTER        | 集合
+SETUP_GALAXY_SHAPE_SWIRLCLUSTERS  | 漩涡集合
+SETUP_GALAXY_SHAPE_GRID           | 格子
+SETUP_GALAXY_SHAPE_SPIRALARMS     | 旋臂
+SETUP_GALAXY_SHAPE_MAZE           | 迷宫
+SETUP_GALAXY_SHAPE_VOID           | 虚空
+SETUP_GALAXY_SHAPE_SHURIKEN       | 忍者镖
+SETUP_GALAXY_SHAPE_BULLSEYE       | 靶心
+SETUP_GALAXY_SHAPE_LORENZ         | 洛伦兹
+SETUP_GALAXY_SHAPE_LORENZ2        | 洛伦兹 2
+SETUP_GALAXY_SHAPE_FRACTAL        | 分形
+SETUP_GALAXY_SHAPE_CHAOSGAME      | 混沌游戏
+SETUP_GALAXY_MAP_OPTION_LABEL     | 选项
+SETUP_GALAXY_MAP_OPTION_A         | 选项 A
+SETUP_GALAXY_MAP_OPTION_B         | 选项 B
+SETUP_GALAXY_MAP_OPTION_C         | 选项 C
+SETUP_GALAXY_AGE_NORMAL           | 普通
+SETUP_GALAXY_AGE_YOUNG            | 年轻
+SETUP_GALAXY_AGE_OLD              | 老
+SETUP_RANDOM_EVENTS_ON            | 开
+SETUP_RANDOM_EVENTS_OFF           | 关
+SETUP_RANDOM_EVENTS_NO_MONSTERS   | 无太空怪物
+SETUP_GALAXY_NUMBER_EMPIRES       | 帝国数量: %1
+SETUP_GALAXY_NUMBER_SYSTEMS       | 星系数量: %1
+SETUP_GALAXY_MAX_OPPONENTS        | 最大敌人数量: %1
+SETUP_OPPONENTS_HEADER_1          | %1 vs.
+SETUP_OPPONENTS_HEADER_2          | 对手
+SETUP_OPPONENT_RANDOM             | ???
+SETUP_OPPONENT_AI                 | AI 设置:
+SETUP_OPPONENT_AI_BASE            | AI: 原版
+SETUP_OPPONENT_AI_MODNAR          | AI: Modnar版
+SETUP_OPPONENT_AI_XILMI           | AI: Xilmi版
+SETUP_OPPONENT_AI_SELECT          | AI: 可选
+SETUP_AUTOPLAY_OFF                | 无
+SETUP_AUTOPLAY_AI_BASE            | AI: 原版
+SETUP_AUTOPLAY_AI_MODNAR          | AI: Modnar版
+SETUP_AUTOPLAY_AI_XILMI           | AI: Xilmi版
+SETUP_GAME_DIFFICULTY_LABEL       | 难度
+SETUP_DIFFICULTY_EASIEST          | 最简单
+SETUP_DIFFICULTY_EASIER           | 很简单
+SETUP_DIFFICULTY_EASY             | 简单
+SETUP_DIFFICULTY_NORMAL           | 普通
+SETUP_DIFFICULTY_HARD             | 困难
+SETUP_DIFFICULTY_HARDER           | 很困难
+SETUP_DIFFICULTY_HARDEST          | 最困难
+SETUP_RESEARCH_RATE_NORMAL        | 普通
+SETUP_RESEARCH_RATE_SLOW          | 慢
+SETUP_RESEARCH_RATE_SLOWER        | 很慢
+SETUP_RESEARCH_RATE_SLOWEST       | 最慢
+SETUP_TECH_TRADING_YES            | 允许
+SETUP_TECH_TRADING_ALLIES         | 仅限盟友
+SETUP_TECH_TRADING_NO             | 无
+SETUP_WARP_SPEED_NORMAL           | 普通
+SETUP_WARP_SPEED_FAST             | 快
+SETUP_NEBULA_NONE                 | 无
+SETUP_NEBULA_RARE                 | 很少
+SETUP_NEBULA_UNCOMMON             | 少
+SETUP_NEBULA_NORMAL               | 正常
+SETUP_NEBULA_COMMON               | 常见
+SETUP_NEBULA_FREQUENT             | 很多
+SETUP_COUNCIL_NONE                | 无
+SETUP_COUNCIL_IMMEDIATE           | 立即胜利
+SETUP_COUNCIL_REBELS              | 允许反叛
+SETUP_STAR_DENSITY_LOWEST         | 最低
+SETUP_STAR_DENSITY_LOWER          | 很低
+SETUP_STAR_DENSITY_LOW            | 低
+SETUP_STAR_DENSITY_NORMAL         | 普通
+SETUP_STAR_DENSITY_HIGH           | 高
+SETUP_STAR_DENSITY_HIGHER         | 很高
+SETUP_STAR_DENSITY_HIGHEST        | 最高
+SETUP_AI_HOSTILITY_LOWEST         | 最友好
+SETUP_AI_HOSTILITY_LOWER          | 很友好
+SETUP_AI_HOSTILITY_LOW            | 友好
+SETUP_AI_HOSTILITY_NORMAL         | 普通
+SETUP_AI_HOSTILITY_HIGH           | 高
+SETUP_AI_HOSTILITY_HIGHER         | 很高
+SETUP_AI_HOSTILITY_HIGHEST        | 最高
+SETUP_GAME_NUMBER_OPPONENTS       | 敌人数量
+SETUP_PLANET_QUALITY_POOR         | 糟糕
+SETUP_PLANET_QUALITY_MEDIOCRE     | 平庸
+SETUP_PLANET_QUALITY_NORMAL       | 普通
+SETUP_PLANET_QUALITY_GOOD         | 好
+SETUP_PLANET_QUALITY_GREAT        | 优质
+SETUP_TERRAFORMING_NORMAL         | 正常
+SETUP_TERRAFORMING_REDUCED        | 少
+SETUP_TERRAFORMING_NONE           | 无
+SETUP_COLONIZING_NORMAL           | 正常
+SETUP_COLONIZING_RESTRICTED       | 受限
+SETUP_FUEL_RANGE_NORMAL           | 普通
+SETUP_FUEL_RANGE_HIGH             | 强
+SETUP_FUEL_RANGE_HIGHER           | 很强
+SETUP_FUEL_RANGE_HIGHEST          | 最强
+SETUP_RANDOMIZE_AI_NONE           | 无
+SETUP_RANDOMIZE_AI_PERSONALITY    | 天性
+SETUP_RANDOMIZE_AI_ABILITY        | 特长
+SETUP_RANDOMIZE_AI_BOTH           | 天性和特长
+SETUP_RACE_LABEL                  | 可选种族
+SETUP_RACE_COLOR                  | 帝国颜色:
+SETUP_HOMEWORLD_NAME_LABEL        | 母星:
+SETUP_LEADER_NAME_LABEL           | 领袖:
+SETUP_FLAG_LABEL                  | 旗帜
+SETUP_BUTTON_CANCEL               | 取消
+SETUP_BUTTON_BACK                 | 返回
+SETUP_BUTTON_NEXT                 | 下一步
+SETUP_BUTTON_START                | 开始
+SETUP_BUTTON_SETTINGS             | 高级设置
+
+SETUP_SPIRAL_2_ARMS               | 双臂
+SETUP_SPIRAL_3_ARMS               | 三臂
+SETUP_SPIRAL_4_ARMS               | 四臂
+SETUP_SPIRAL_5_ARMS               | 五臂
+SETUP_SPIRAL_6_ARMS               | 六臂
+SETUP_SPIRAL_7_ARMS               | 七臂
+SETUP_SPIRAL_8_ARMS               | 八臂
+SETUP_SPIRAL_ROTATION_0           | 无旋转
+SETUP_SPIRAL_ROTATION_1           | 旋转1
+SETUP_SPIRAL_ROTATION_2           | 旋转2
+SETUP_SPIRAL_ROTATION_3           | 旋转3
+SETUP_SPIRAL_ROTATION_4           | 旋转4
+SETUP_SPIRAL_ROTATION_5           | 旋转5
+SETUP_SPIRAL_ROTATION_6           | 旋转6
+SETUP_ELLIPSE_0                   | 圆形
+SETUP_ELLIPSE_1                   | 椭圆 1
+SETUP_ELLIPSE_2                   | 椭圆 2
+SETUP_ELLIPSE_3                   | 椭圆 3
+SETUP_ELLIPSE_4                   | 椭圆 4
+SETUP_VOID_0                      | 无虚空
+SETUP_VOID_1                      | 虚空 1
+SETUP_VOID_2                      | 虚空 2
+SETUP_VOID_3                      | 虚空 3
+SETUP_VOID_4                      | 虚空 4
+
+
+// Advanced Settings
+SETTINGS_TITLE                    | 高级游戏设置
+SETTINGS_DESCRIPTION              | 单击切换设置
+SETTINGS_EXIT                     | 返回
+SETTINGS_DEFAULT                  | 默认设置
+SETTINGS_STAR_DENSITY             | 星系密度: %1
+SETTINGS_RANDOM_EVENTS            | 随机事件: %1
+SETTINGS_RESEARCH_RATE            | 研究速度: %1
+SETTINGS_COUNCIL_WIN              | 议会胜利: %1
+SETTINGS_RANDOMIZE_AI             | 随机 AI: %1
+SETTINGS_AUTOPLAY                 | 自动游戏: %1
+SETTINGS_TECH_TRADING             | 技术交易: %1
+SETTINGS_GALAXY_AGE               | 宇宙年龄: %1
+SETTINGS_WARP_SPEED               | 曲速飞行速度: %1
+SETTINGS_NEBULAE                  | 星云: %1
+SETTINGS_PLANET_QUALITY           | 行星质量: %1
+SETTINGS_TERRAFORMING             | 环境改造效果: %1
+SETTINGS_COLONIZING               | 殖民设置: %1
+SETTINGS_FUEL_RANGE               | 燃料效果: %1
+SETTINGS_AI_HOSTILITY             | 敌意: %1
+SETTINGS_RANDOM_EVENTS_DESC       | 太空怪物属于随机事件，是游戏中期值得注意的威胁。你可以关闭太空怪物或所有随机事件。 
+SETTINGS_WARP_SPEED_DESC          | 提高高级曲速飞行技术的速度。这对大地图很有帮助。
+SETTINGS_GALAXY_AGE_DESC          | 相比于普通宇宙，年轻宇宙有更多的白色和蓝色星球，老年宇宙有更多红色和中子星球。
+SETTINGS_TECH_TRADING_DESC        | 取消技术交易，或仅限盟友之间的技术交易。
+SETTINGS_STAR_DENSITY_DESC        | 把星系密度调高可以让各个文明离得更近。
+SETTINGS_RESEARCH_RATE_DESC       | 降低科技的研究速率，延长当前科技的使用寿民。
+SETTINGS_NEBULAE_DESC             | 星云会降低飞船移动速度，且让护盾无效。这个设置可以增加或减少星云的出现频率。
+SETTINGS_PLANET_QUALITY_DESC      | 增加或减少高质量行星的出现频率。
+SETTINGS_TERRAFORMING_DESC        | 减少或移除环境改造技术的效果。
+SETTINGS_COLONIZING_DESC          | 殖民星球技术只能殖民对应类型的星球。
+SETTINGS_COUNCIL_DESC             | 取消议会胜利条件，或者允许敌对帝国反抗议会胜利。
+SETTINGS_RANDOMIZE_AI_DESC        | 随机AI玩家的天性、种族特长。
+SETTINGS_AUTOPLAY_DESC            | 让AI代表玩家游戏。这能让你看到AI是如何游戏的。
+SETTINGS_AUTOPLAY_WARNING         | 警告! 你启用了自动游戏，这会让你无法操作。请在高级设置中取消这个设置。
+SETTINGS_FUEL_RANGE_DESC          | 提高燃料科技和备用油箱的航程效果。
+SETTINGS_AI_HOSTILITY_DESC        | 增加或降低不同种族间的敌对程度。
+
+// Tech UI labels
+TECH_RESEARCH                     | 科技研究
+TECH_RESEARCH_POINTS              | 研究点数
+TECH_EMPIRE_SPENDING              | 帝国科技投入
+TECH_EMPIRE_SPENDING_DESC         | 所有殖民地的科技投入之和
+TECH_EMPIRE_TECH_RESERVE_OPT      | 把每年的国库储备投入科技
+TECH_EMPIRE_BALANCED_DESC         | 平均分配投入可以增加总的RP。
+TECH_EMPIRE_DETAIL_1              | 投入%1BC获得
+TECH_EMPIRE_DETAIL_2              | %2 RP/年
+TECH_TOTAL_RP                     | %1 RP
+TECH_DISCOVERY_PCT                | %1%
+TECH_CHANGE_RESEARCH              | 单击以研究这个技术
+TECH_NEXT_TIER_TITLE              | 暂不可见。
+TECH_FIRST_TIER_DESC              | 在该领域投入研究点以解锁。
+TECH_NEXT_TIER_DESC               | 掌握前一个阶段的技术以解锁。
+TECH_FUTURE_TIER_DESC             | 掌握前一个阶段的所有技术以解锁。
+TECH_ALLOCATE_POINTS              | 分配研究点
+TECH_EQUALIZE                     | 平均分配
+TECH_RESEARCH_COMPLETED           | 研究完成
+TECH_RESEARCHING                  | 正在研究:
+TECH_NONE_RESEARCHED              | 无
+TECH_PLANETARY_SHIELDS            | 行星护盾
+TECH_PLANETARY_SHIELDS_NONE       | 无
+TECH_PLANETARY_SHIELDS_CLASS      | %1级
+TECH_GROUND_COMBAT                | 地面战斗
+TECH_GROUND_COMBAT_NO_BONUS       | 无增益
+TECH_GROUND_COMBAT_BONUS          | +%1%
+TECH_TERRAFORM                    | 环境改造
+TECH_TERRAFORM_NO_BONUS           | 无增益
+TECH_TERRAFORM_BONUS              | 最大人口+%1
+TECH_FACTORY_CONTROLS             | 工厂数量
+TECH_FACTORY_CONTROLS_BONUS       | %1/每人
+TECH_PLANET_SCANNER               | 侦察范围
+TECH_PLANET_SCANNER_NONE          | 无
+TECH_PLANET_SCANNER_RANGE         | %1光年
+TECH_WASTE_REDUCTION              | 污染减少
+TECH_WASTE_REDUCTION_NONE         | 无
+TECH_WASTE_REDUCTION_AMT          | -%1%
+TECH_WASTE_CLEANUP                | 污染清理
+TECH_WASTE_CLEANUP_BONUS          | %1污染/BC
+TECH_SHIP_RANGE                   | 飞船航程
+TECH_SHIP_RANGE_AMT               | %1光年
+TECH_SHIP_SPEED                   | 最高速度
+TECH_SHIP_SPEED_AMT               | 曲速%1
+TECH_BUTTON_EXIT                  | EXIT
+
+// Tech UI help
+TECH_HELP_1A                      | 总揽：这个界面让调整6个科技领域的研究投入。你可以查看已经学会的科技（绿色），正在研究的科技（黄色）或可研究的科技（棕色）。
+TECH_HELP_1B                      | 单击或点击鼠标滑轮查看某个领域的科技情况。
+TECH_HELP_1C                      | 当科技点数（RP）被投入该领域时，圆形会被填充。一旦填满，掌握这门技术的概率每年都会提高。
+TECH_HELP_1D                      | 当前正在研究的科技。可以查看科技描述了解其价值。
+TECH_HELP_1E                      | 当前领域科技提供的通用增益。
+TECH_HELP_1F                      | 科技研究的总经费（BC），以及经费产生的科技点数（RP）。
+TECH_HELP_1G                      | 殖民地的多余经费可以直接转入科技研究，而不是进入国库。
+TECH_HELP_1H                      | 每个领域的滚动条。点击科技名称可以锁定该滚动条。每个滚动条的前1/6部分会获得25%的额外收益。
+TECH_HELP_1I                      | 对未锁定的滚动条，平均分配投入。
+
+// =========================================================================
+//   ALPHA 4
+// =========================================================================
+
+// Ship Design UI
+SHIP_DESIGN_TITLE                 | 舰船设计
+SHIP_DESIGN_SLOTS                 | 设计栏位
+SHIP_DESIGN_AVAILABLE             | 可用
+SHIP_DESIGN_AVAILABLE_DESC        | 选择这个栏位以开启一个新设计。
+SHIP_DESIGN_AVAILABLE_DESC2       | 部署这个设计以让殖民地开始建造。
+SHIP_DESIGN_PROTOTYPE             | 模板飞船
+SHIP_DESIGN_PROTOTYPE_DESC        | 模板设计无法被部署
+SHIP_DESIGN_SLOT_DESC             | 总数量:
+SHIP_DESIGN_SLOT_DESC2            | 轨道绕行:
+SHIP_DESIGN_SLOT_DESC3            | 航行中:
+SHIP_DESIGN_SLOT_DESC4            | 殖民地在建造:
+SHIP_DESIGN_NEW                   | 新的设计
+SHIP_DESIGN_PROTOTYPE_TITLE       | 舰船设计原型
+SHIP_DESIGN_SIZE_SMALL            | 小
+SHIP_DESIGN_SIZE_MEDIUM           | 中
+SHIP_DESIGN_SIZE_LARGE            | 大
+SHIP_DESIGN_SIZE_HUGE             | 巨大
+SHIP_DESIGN_SIZE_LABEL            | 尺寸
+SHIP_DESIGN_TYPE_LABEL            | 类型
+SHIP_DESIGN_COUNT_LABEL           | 数量
+SHIP_DESIGN_DAMAGE_LABEL          | 伤害
+SHIP_DESIGN_POWER_LABEL           | 能耗
+SHIP_DESIGN_RANGE_LABEL           | 航程
+SHIP_DESIGN_SPEED_LABEL           | 速度
+SHIP_DESIGN_COST_LABEL            | 成本
+SHIP_DESIGN_DESCRIPTION_LABEL     | 描述
+SHIP_DESIGN_RANGE_VALUE           | %1光年
+SHIP_DESIGN_RANGE_UNLIMITED       | 无限
+SHIP_DESIGN_SPEED_VALUE           | 曲速%1
+SHIP_DESIGN_COST_VALUE            | %1BC
+SHIP_DESIGN_TOTAL_SPACE_LABEL     | 已用空间
+SHIP_DESIGN_AVAIL_SPACE_LABEL     | 可用空间
+SHIP_DESIGN_COLORS                | 颜色
+SHIP_DESIGN_COMBAT_STATS_TITLE    | 战斗参数
+SHIP_DESIGN_HIT_POINTS_LABEL      | 护甲值
+SHIP_DESIGN_MISSILE_DEF_LABEL     | 导弹防御
+SHIP_DESIGN_BEAM_DEF_LABEL        | 激光防御
+SHIP_DESIGN_ATTACK_LEVEL_LABEL    | 进攻等级
+SHIP_DESIGN_COMBAT_SPEED_LABEL    | 战场速度
+SHIP_DESIGN_COMBAT_SPEED_VALUE    | %1格
+SHIP_DESIGN_ENGINES_TITLE         | 引擎
+SHIP_DESIGN_ENGINES_DESC          | 为你的飞船和组件提供能量
+SHIP_DESIGN_ENGINE_TYPE           | 类型
+SHIP_DESIGN_ENGINE_SPEED          | 速度
+SHIP_DESIGN_ENGINE_COST1          | 成本/个
+SHIP_DESIGN_ENGINE_SIZE1          | 尺寸/个
+SHIP_DESIGN_ENGINE_POWER1         | 能量/个
+SHIP_DESIGN_POWER_REQUIREMENTS    | 总能耗需求
+SHIP_DESIGN_ENGINES_REQUIRED      | 引擎需求量
+SHIP_DESIGN_ENGINES_SIZE          | 引擎总尺寸
+SHIP_DESIGN_ENGINES_COST          | 引擎总成本
+SHIP_DESIGN_COPY_BUTTON           | 复制
+SHIP_DESIGN_CLEAR_BUTTON          | 重制
+SHIP_DESIGN_RENAME_BUTTON         | 重命名
+SHIP_DESIGN_DEPLOY_BUTTON         | 部署设计
+SHIP_DESIGN_DEPLOY_DESC           | 一旦部署，你就能在殖民地建造新的设计，你只能重命名或废除该设计。
+SHIP_DESIGN_SCRAP_BUTTON          | 废除设计
+SHIP_DESIGN_SCRAP_CONFIRM1        | 确定要废除设计 %1 吗？
+SHIP_DESIGN_SCRAP_CONFIRM2        | 我们将拆除 %1 个飞船，并把 %2 BC 存入国库。
+SHIP_DESIGN_SCRAP_CONFIRM3        | 当前没有正在服役的该型号飞船。
+SHIP_DESIGN_SCRAP_CANCEL          | 取消
+SHIP_DESIGN_SCRAP_OK              | 废除
+SHIP_DESIGN_RENAME_CONFIRM        | 重命名你的设计
+SHIP_DESIGN_DEPLOY_CONFIRM        | 给新设计命名
+SHIP_DESIGN_DEPLOY_CANCEL         | 取消
+SHIP_DESIGN_DEPLOY_OK             | 部署
+SHIP_DESIGN_RENAME_OK             | 重命名
+SHIP_DESIGN_UNNAMED_DESIGN        | 未命名
+SHIP_DESIGN_COMPONENT_NONE        | 无
+
+
+// ship design selection dialogs
+SHIP_DESIGN_STARGATE_NAME         | 星门
+SHIP_DESIGN_1ST_SCOUT_NAME        | 侦察机
+SHIP_DESIGN_1ST_FIGHTER_NAME      | 战斗机
+SHIP_DESIGN_1ST_DESTROYER_NAME    | 毁灭者
+SHIP_DESIGN_1ST_BOMBER_NAME       | 轰炸机
+SHIP_DESIGN_1ST_COLONY_NAME       | 殖民飞船
+SHIP_DESIGN_COMPUTER_TITLE        | 舰载电脑
+SHIP_DESIGN_COMPUTER_TYPE         | 型号
+SHIP_DESIGN_COMPUTER_COST         | 成本
+SHIP_DESIGN_COMPUTER_SIZE         | 尺寸
+SHIP_DESIGN_COMPUTER_POWER        | 能耗
+SHIP_DESIGN_COMPUTER_SPACE        | 空间
+SHIP_DESIGN_SHIELD_TITLE          | 力场盾
+SHIP_DESIGN_SHIELD_TYPE           | 型号
+SHIP_DESIGN_SHIELD_COST           | 成本
+SHIP_DESIGN_SHIELD_SIZE           | 尺寸
+SHIP_DESIGN_SHIELD_POWER          | 能耗
+SHIP_DESIGN_SHIELD_SPACE          | 空间
+SHIP_DESIGN_ECM_TITLE             | 电子干扰器
+SHIP_DESIGN_ECM_TYPE              | 型号
+SHIP_DESIGN_ECM_COST              | 成本
+SHIP_DESIGN_ECM_SIZE              | 尺寸
+SHIP_DESIGN_ECM_POWER             | 能耗
+SHIP_DESIGN_ECM_SPACE             | 空间
+SHIP_DESIGN_ARMOR_TITLE           | 装甲
+SHIP_DESIGN_ARMOR_TYPE            | 型号
+SHIP_DESIGN_ARMOR_COST            | 成本
+SHIP_DESIGN_ARMOR_SIZE            | 尺寸
+SHIP_DESIGN_ENGINE_TITLE          | 引擎
+SHIP_DESIGN_ENGINE_TYPE           | 类型
+SHIP_DESIGN_ENGINE_NUM            | 引擎数量
+SHIP_DESIGN_ENGINE_SPACE          | 空间
+SHIP_DESIGN_ENGINE_COST           | 成本
+SHIP_DESIGN_ENGINE_SIZE           | 尺寸
+SHIP_DESIGN_ENGINE_POWER          | 能耗
+SHIP_DESIGN_MANEUVER_TITLE        | 机动装置
+SHIP_DESIGN_MANEUVER_TYPE         | 型号
+SHIP_DESIGN_MANEUVER_SPEED        | 速度
+SHIP_DESIGN_MANEUVER_COST         | 成本
+SHIP_DESIGN_MANEUVER_POWER        | 能耗
+SHIP_DESIGN_MANEUVER_SPACE        | 空间
+SHIP_DESIGN_WEAPON_TITLE          | 武器
+SHIP_DESIGN_WEAPON_MAX            | 最大数量
+SHIP_DESIGN_WEAPON_TYPE           | 型号
+SHIP_DESIGN_WEAPON_DESCRIPTION    | 描述
+SHIP_DESIGN_WEAPON_DAMAGE         | 伤害
+SHIP_DESIGN_WEAPON_DMG_RANGE      | %1-%2
+SHIP_DESIGN_WEAPON_COST           | 成本
+SHIP_DESIGN_WEAPON_SIZE           | 尺寸
+SHIP_DESIGN_WEAPON_POWER          | 能耗
+SHIP_DESIGN_WEAPON_SPACE          | 空间
+SHIP_DESIGN_SPECIAL_TITLE         | 特殊装置
+SHIP_DESIGN_SPECIAL_TYPE          | 类型
+SHIP_DESIGN_SPECIAL_DESCRIPTION   | 描述
+SHIP_DESIGN_SPECIAL_COST          | 成本
+SHIP_DESIGN_SPECIAL_SIZE          | 尺寸
+SHIP_DESIGN_SPECIAL_POWER         | 能耗
+SHIP_DESIGN_SPECIAL_SPACE         | 空间
+
+// Ship Design help
+SHIP_DESIGN_HELP_ALL              | 总览：每个帝国可以有6种舰船型号。设计时，需要先选择船架，然后选择其他组件，比如护甲、力场盾和武器。每个组件都有尺寸、成本和能耗。能耗的能量来源是引擎。每个组件的占用空间等于组件本身的尺寸加上提供能量的所需引擎数量。一旦部署，该型号就能够在你的任何一个殖民地建造。
+SHIP_DESIGN_HELP_1A               | 尺寸：更大的船架会增加成本，但能提供更多空间。
+SHIP_DESIGN_HELP_1B               | 航程：飞船能够飞离你的星系多远。
+SHIP_DESIGN_HELP_1C               | 速度：在宇宙中的飞行速度。  
+SHIP_DESIGN_HELP_1D               | 成本：总的建造成本。
+SHIP_DESIGN_HELP_1E               | 已用空间：该飞船各个组件已经占用的空间。
+SHIP_DESIGN_HELP_1F               | 可用空间：该飞船未使用的空间。
+SHIP_DESIGN_HELP_1G               | 护甲值：如果护甲变为0，飞船就会被毁掉。
+SHIP_DESIGN_HELP_1H               | 导弹防御：战斗中对导弹武器的防御能力。
+SHIP_DESIGN_HELP_1I               | 激光防御：战斗中对激光武器的防御能力。
+SHIP_DESIGN_HELP_1J               | 进攻等级：战斗中武器的进攻等级。
+SHIP_DESIGN_HELP_1K               | 战场速度：战斗中每回合的可移动距离。
+SHIP_DESIGN_HELP_1L               | 颜色：改变飞船的颜色。
+SHIP_DESIGN_HELP_2A               | 引擎型号：飞船的引擎型号。
+SHIP_DESIGN_HELP_2B               | 速度：引擎提供的速度。
+SHIP_DESIGN_HELP_2C               | 成本：每个引擎的成本。
+SHIP_DESIGN_HELP_2D               | 尺寸：每个引擎占据的空间。
+SHIP_DESIGN_HELP_2E               | 能量：每个引擎提供的能量。
+SHIP_DESIGN_HELP_2F               | 总能耗需求：所有飞船组件的能耗之和。
+SHIP_DESIGN_HELP_2G               | 引擎需求量：为了满足总能耗需要的引擎数量。
+SHIP_DESIGN_HELP_2H               | 引擎总尺寸：引擎需要的总的船体空间。
+SHIP_DESIGN_HELP_2I               | 引擎总成本：所有引擎需要的总成本。
+SHIP_DESIGN_HELP_2J               | 舰船的外型。每个尺寸的船架都有6种不同的造型。设计舰船时，可以单击以选择不同的选项。
+SHIP_DESIGN_HELP_2K               | 舰船型号的名称
+SHIP_DESIGN_HELP_3A               | 舰载电脑：影响飞船在战场中的攻击力。
+SHIP_DESIGN_HELP_3B               | 装甲：影响舰船可以承受的伤害，重型装甲的可承受伤害会增加50%。
+SHIP_DESIGN_HELP_3C               | 力场盾：可以减少攻击造成的伤害。
+SHIP_DESIGN_HELP_3D               | 电子干扰器：该装置能够干扰敌方导弹的制导，增加你对导弹的防御力。
+SHIP_DESIGN_HELP_3E               | 机动装置：增加战斗中的速度和防御。
+SHIP_DESIGN_HELP_3F               | 武器：可以对敌舰或殖民地造成伤害。每个飞船可以安装至多4种武器。
+SHIP_DESIGN_HELP_3G               | 特殊装置：能够给飞船提供特殊能力。每个飞船可以安装至多3个特殊装置。
+SHIP_DESIGN_HELP_4A               | 改名：让你能够给当前设计改名。
+SHIP_DESIGN_HELP_4B               | 废除设计：废除一种正在服役的型号。被拆除的飞船会把25%的制造成本返还到国库。
+SHIP_DESIGN_HELP_4C               | 已经部署的设计可以在任何一个殖民地建造。
+SHIP_DESIGN_HELP_4D               | 点击可用设计栏位，可以创造一个新的设计。
+SHIP_DESIGN_HELP_4E               | 复制：复制一个当前的设计，将其作为新设计的初始形态。
+SHIP_DESIGN_HELP_4F               | 重置：重置所有被选中的组件。
+SHIP_DESIGN_HELP_4G               | 部署设计：当你完成了设计，就可以部署它，你需要给它一个名字，然后就可以建造了。
+
+// Ship Combat UI
+SHIP_COMBAT_TITLE_SYSTEM          | %1 发生了空战!
+SHIP_COMBAT_TITLE_UNSCOUTED       | 未探索星系发生了空战!
+SHIP_COMBAT_TITLE_DESC            | 我方舰队遭遇了敌对的 [alien_race] 舰队。
+SHIP_COMBAT_TITLE_MONSTER_DESC    | 我方舰队遭遇了敌对的 %1。
+SHIP_COMBAT_BASES                 | %1 导弹基地
+SHIP_COMBAT_SHIELD                | %1 级护盾
+SHIP_COMBAT_POPULATION            | %1 人口
+SHIP_COMBAT_FACTORIES             | %1 工厂
+SHIP_COMBAT_ENTER_BATTLE          | 进入战斗
+SHIP_COMBAT_MISS                  | 丢失
+SHIP_COMBAT_DEFLECTED             | 偏转
+SHIP_COMBAT_DESTROYED             | 摧毁!
+SHIP_COMBAT_STASIS                | 静止
+SHIP_COMBAT_TITLE                 | %1 战斗
+SHIP_COMBAT_TITLE_UNNAMED         | 未知星系战斗
+SHIP_COMBAT_SYSTEM_POP            | 人口
+SHIP_COMBAT_SYSTEM_FACT           | 工厂
+SHIP_COMBAT_SYSTEM_BASE           | 导弹
+SHIP_COMBAT_TITLE_VICTORIOUS      | 胜利
+SHIP_COMBAT_SHIP_TOTALS           | %1 🡒 %2
+SHIP_COMBAT_RESULTS_RETREATED     | 撤退
+SHIP_COMBAT_RESULTS_DESTROYED     | 被摧毁
+SHIP_COMBAT_RETREAT_ALL           | 全体撤退
+SHIP_COMBAT_NEXT                  | 下一组舰船
+SHIP_COMBAT_AUTO_RESOLVE          | 自动快速战斗
+SHIP_COMBAT_AUTO_RESOLVING        | 快速战斗中...
+SHIP_COMBAT_PLAY_BATTLE           | 自动战斗
+SHIP_COMBAT_PAUSE_BATTLE          | 暂停战斗
+SHIP_COMBAT_EXIT                  | 退出
+SHIP_COMBAT_COUNT_NAME            | %1  %2
+SHIP_COMBAT_MONSTER_TARGET        | 瞄准太空怪物
+SHIP_COMBAT_ENEMY_TARGET          | 瞄准敌军舰船
+SHIP_COMBAT_ALLY_TARGET           | 瞄准友军舰船
+SHIP_COMBAT_ENEMY_COLONY          | 瞄准敌人行星
+SHIP_COMBAT_ALLY_COLONY           | 瞄准友军行星
+SHIP_COMBAT_CURRENT_TARGET        | 瞄准当前舰船
+SHIP_COMBAT_SELECT_ACTION         | 选择一个行动
+SHIP_COMBAT_SELECT_WEAPON         | 选择武器或装置
+SHIP_COMBAT_FIRE_WEAPON           | 开火
+SHIP_COMBAT_ACTION_NEXT_SHIP      | 下一组舰船
+SHIP_COMBAT_ACTION_TURN_DONE      | 回合结束
+SHIP_COMBAT_ACTION_RETREAT        | 撤退
+SHIP_COMBAT_ACTION_FIRE_ALL       | 所有武器开火
+SHIP_COMBAT_ACTION_CLOAK          | 隐身
+SHIP_COMBAT_ACTION_MOVE           | 飞行到此处
+SHIP_COMBAT_ACTION_TELEPORT       | 传送到此处
+SHIP_COMBAT_ACTION_RANGE          | 射程外
+SHIP_COMBAT_ACTION_NO_MISSILES    | 没有导弹了
+SHIP_COMBAT_ACTION_NO_BOMBS       | 没有炸弹了
+SHIP_COMBAT_ACTION_FIRED          | 已开火
+SHIP_COMBAT_ACTION_USED           | 已使用
+SHIP_COMBAT_ACTION_BAD_TARGET     | 无效目标
+SHIP_COMBAT_ACTION_WPN_COUNT      | %1 x%2
+SHIP_COMBAT_ACTION_WPN_COUNT_SHOTS| %1 x%2 x%3
+SHIP_COMBAT_INFO_LABEL            | 舰船信息
+SHIP_COMBAT_SCAN_LABEL            | 扫描检查信息
+SHIP_COMBAT_SCAN_HIT_POINTS       | 护甲值
+SHIP_COMBAT_SCAN_MISSILE_DEF      | 导弹防御
+SHIP_COMBAT_SCAN_BEAM_DEF         | 激光防御
+SHIP_COMBAT_SCAN_SHIELD_CLASS     | 护盾等级
+SHIP_COMBAT_SCAN_ATTACK_LEVEL     | 进攻等级
+SHIP_COMBAT_SCAN_SPEED            | 速度
+SHIP_COMBAT_SCAN_WEAPONS          | 武器
+SHIP_COMBAT_SCAN_DEVICES          | 装置
+SHIP_COMBAT_SCAN_HITS_VALUE       | %1/%2
+SHIP_COMBAT_SCAN_WEAPON_CNT       | %1 x %2
+SHIP_COMBAT_SCAN_UNSCANNED_VALUE  | ???
+SHIP_COMBAT_COLONY_LABEL          | 殖民地信息
+SHIP_COMBAT_COLONY_SCAN_LABEL     | 扫描殖民地信息
+SHIP_COMBAT_COLONY_POPULATION     | 人口
+SHIP_COMBAT_COLONY_SHIELD         | 护盾
+SHIP_COMBAT_COLONY_FACTORIES      | 工厂
+SHIP_COMBAT_COLONY_BASES          | 导弹基地
+SHIP_COMBAT_COLONY_BASE_HITS      | 导弹基地护甲值
+SHIP_COMBAT_COLONY_BASE_ATTACK    | 导弹进攻等级
+SHIP_COMBAT_ACTION_FMT            | %1 - %2
+
+RELATIONS_FEUD                    | 死敌
+RELATIONS_HATE                    | 仇恨
+RELATIONS_DISCORD                 | 不和
+RELATIONS_TROUBLED                | 忧虑
+RELATIONS_TENSE                   | 紧张
+RELATIONS_RESTLESS                | 警惕
+RELATIONS_WARY                    | 谨慎
+RELATIONS_UNEASE                  | 不安
+RELATIONS_NEUTRAL                 | 中立
+RELATIONS_RELAXED                 | 放松
+RELATIONS_AMIABLE                 | 温和
+RELATIONS_CALM                    | 平静
+RELATIONS_AFFABLE                 | 善意
+RELATIONS_PEACEFUL                | 和平
+RELATIONS_FRIENDLY                | 友好
+RELATIONS_UNITY                   | 团结
+RELATIONS_HARMONY                 | 和谐
+
+RACES_TITLE                       | 种族报告
+RACES_SELECTOR_TITLE              | 选择帝国
+RACES_TAB_DIPLOMACY               | 外交
+RACES_TAB_INTELLIGENCE            | 情报
+RACES_TAB_MILITARY                | 军事
+RACES_TAB_STATUS                  | 现状
+RACES_KNOWN_EMPIRES               | 已发现%1个帝国
+RACES_RECALLED_DIPLOMATS          | 已召回%1个外交官
+RACES_NO_TREATY                   | 无外交关系
+RACES_AT_FINAL_WAR                | 决战
+RACES_AT_WAR                      | 战争中
+RACES_PEACE                       | 和平协定
+RACES_PACT                        | 互不侵犯协定
+RACES_ALLY                        | 盟友
+RACES_UNITY                       | 一体化
+RACES_OUT_OF_RANGE                | 航程外
+RACES_TRADE_LEVEL                 | %1BC贸易协议
+RACES_TRADE_NONE                  | 无贸易协议
+RACES_DIPLOMAT_RECALLED           | [alien_race]已撤回外交官
+RACES_DIPLOMATS_RECALLED          | 外交官已撤回
+
+RACES_DIPLOMACY_HOMEWORLD         | 母星
+RACES_DIPLOMACY_LEADER            | 领袖
+RACES_DIPLOMACY_CURRENT_TRADE     | 当前贸易收入
+RACES_DIPLOMACY_TOTAL_TRADE       | 贸易协议总额
+RACES_DIPLOMACY_TRADE_AMT         | %1 BC
+RACES_DIPLOMACY_CHARACTER         | 性格
+RACES_DIPLOMACY_STATUS            | 外交现状
+RACES_DIPLOMACY_RELATIONS_METER   | 关系
+RACES_DIPLOMACY_RELATIONS_UNKNOWN | 我们的外交官和情报人员无法理解 [alien_empire] 的想法和动机。
+RACES_DIPLOMACY_BUREAU            | 外交官员
+RACES_DIPLOMACY_BUREAU_DESC1      | 照会其他帝国的外交官，或从其他帝国召回我们的外交官。
+RACES_DIPLOMACY_BUREAU_DESC       | 照会[alien_race]的外交官；如果你的外交官已经被撤回，就建立外交关系。
+RACES_DIPLOMACY_BUREAU_DESC_RANGE | 我们无法跟航程范围之外的帝国建立外交关系。
+RACES_DIPLOMACY_BUREAU_DESC_FINAL | 我们与新成立的共和国处于决战状态，不再有外交可能。
+RACES_DIPLOMACY_KNOWN_EMPIRES     | 已知的外星帝国
+RACES_DIPLOMACY_RECALLED_DIPLOMAT | 召回外交官
+RACES_DIPLOMACY_MANAGE_DIPLOMATS  | 管理外交事务
+RACES_DIPLOMACY_AUDIENCE          | 会面
+RACES_DIPLOMACY_CONTACT           | 建立联系
+RACES_DIPLOMACY_TRADE_SUMMARY     | 贸易情况
+RACES_DIPLOMACY_TRADE_DESC        | 联系[alien_race]外交官以协商贸易协定。贸易网络需要时间和金钱建立，但一旦成功建立，就会给帝国带来收入。
+RACES_DIPLOMACY_TRADE_DESC_RANGE  | 我们无法与航程范围之外的帝国建立贸易协议。
+RACES_DIPLOMACY_TRADE_DESC_FINAL  | 我们与新成立的共和国处于决战状态，不再有贸易可能。
+RACES_DIPLOMACY_TRADE_TREATY      | 贸易协议
+RACES_DIPLOMACY_FOREIGN_RELATIONS | 外交关系
+RACES_DIPLOMACY_FOREIGN_RANGE     | 在与[alien_empire]建立外交关系前，我们无法判断外交关系。
+RACES_DIPLOMACY_FOREIGN_DESC      | [alien_race_plural]与下列帝国的关系：
+RACES_DIPLOMACY_COUNTER_BUREAU    | 反间谍部门
+RACES_DIPLOMACY_COUNTER_DESC      | 提高安全开支可以增加你发现敌人间谍的成功率。
+RACES_DIPLOMACY_COUNTER_DESC2     | 对殖民地征税以提高安全开支。
+RACES_DIPLOMACY_EVENT_YEAR        | 年
+RACES_DIPLOMACY_EVENT_TURN        | 回合
+RACES_DIPLOMACY_EVENT_RACE        | 种族
+RACES_DIPLOMACY_EVENT_TITLE       | 外交事件
+RACES_DIPLOMACY_EVENT_EFFECT      | 影响
+RACES_MANAGE_DIALOG_OK            | 好的
+RACES_MANAGE_REINSTATE_DIPLOMAT   | 重派外交官
+RACES_MANAGE_RECALL_DIPLOMAT      | 召回外交官
+RACES_MANAGE_OUR_RECALLED         | 我方外交官已撤回
+RACES_MANAGE_THEIR_RECALLED       | 对方外交官已撤回
+RACES_MANAGE_BOTH_RECALLED        | 双方外交官已撤回
+
+RACES_INTEL_TITLE                 | [alien_race]情报
+RACES_COUNTER_INTEL_TITLE         | 反间谍工作
+RACES_INTEL_SECURITY_BONUS        | 安全系数
+RACES_INTEL_TOTAL_SPENDING        | 总开支
+RACES_INTEL_SECURITY_TAX          | 安全税
+RACES_INTEL_TAX_DESC              | 对殖民地征收安全税以提高你发现外国间谍的成功率
+RACES_INTEL_TAX_OUT_OF_RANGE      | 与外星文明接触后会开始支出
+RACES_INTEL_SECURITY_BONUS_AMT    | +%1%
+RACES_INTEL_SECURITY_BONUS_NONE   | 无
+RACES_INTEL_REPORT_AGE            | 报告时间
+RACES_INTEL_SPY_NETWORK           | 间谍网络
+RACES_INTEL_SPENDING              | 支出
+RACES_INTEL_SPENDING_DESC         | 增加开支以培养间谍
+RACES_INTEL_SPENDING_DESC_UNITY   | 在新共和国里技术已经可以自由分享，间谍网络不再有存在必要。
+RACES_INTEL_SPENDING_CAPPED       | 打到情报开支上限。对情报工作的投入会减少 %1%。
+RACES_INTEL_SPENDING_RANGE        | 无法在航程范围外的帝国设置情报网络。
+RACES_INTEL_PERCENT_AMT           | %1%
+RACES_INTEL_YEARS                 | %1年
+RACES_INTEL_NO_SPIES              | 无间谍
+RACES_INTEL_1_SPY                 | 1 间谍
+RACES_INTEL_N_SPIES               | %1 间谍
+RACES_INTEL_SPIES                 | %1 / %2
+RACES_INTEL_SPENDING_ANNUAL       | %1 BC/年
+RACES_INTEL_CURRENT               | 最新
+RACES_INTEL_NO_DATA               | 无数据
+RACES_INTEL_SPENDING_NONE         | 无
+RACES_INTEL_COMPLETION_YEARS      | %1年
+RACES_INTEL_COMPLETION_PER_YEAR   | %1/年
+RACES_INTEL_BUREAU_TITLE          | 情报部门
+RACES_INTEL_BUREAU_DESC           | 让你的间谍窃取技术，或破坏敌人殖民地。
+RACES_INTEL_BUREAU_SPIES          | 间谍总数
+RACES_INTEL_BUREAU_MANAGE         | 管理间谍
+RACES_INTEL_BUREAU_SPENDING       | 总开支
+RACES_INTEL_SPY_ORDERS            | 间谍目标
+RACES_INTEL_SPY_ORDERS_DESC       | 命令你的间谍潜伏、窃取技术或破坏[alien_race]殖民地。你的间谍数量越多，每回合你的成功率就越高，只要没有间谍被抓住并坦白。
+RACES_INTEL_SPY_WARNING           | 该任务一旦暴露，会破坏我们与[alien_race]的贸易协议。
+RACES_INTEL_SPY_WARNING_WAR       | 该任务一旦暴露，会导致[alien_race]与我们开战。
+RACES_INTEL_KNOWN_TECHNOLOGY      | [alien_race] 已知科技
+RACES_INTEL_KNOWN_TECH_DESC       | 间谍汇报 [alien_race] 掌握了如下技术。我们未掌握的技术高亮显示。
+RACES_INTEL_UNKNOWN_TECHNOLOGY    | 未知技术报告
+RACES_INTEL_UNKNOWN_TECH_DESC     | 情报部门报告外星文明已经掌握了如下技术。我们未掌握的技术高亮显示。
+
+RACES_MILITARY_TITLE              | [alien_race]  舰队
+RACES_MILITARY_SUBTITLE           | 舰船统计，按尺寸
+RACES_MILITARY_UNSCANNED          | ??
+RACES_MILITARY_UNSCANNED_LONG     | 未扫描
+RACES_MILITARY_SMALL              | 小
+RACES_MILITARY_MEDIUM             | 中
+RACES_MILITARY_LARGE              | 大
+RACES_MILITARY_HUGE               | 巨大
+RACES_MILITARY_REPORT_CURRENT     | 飞船报告已更新
+RACES_MILITARY_DEFENSE            | 防御
+RACES_MILITARY_DEF_PLANET_SHIELD  | 行星护盾
+RACES_MILITARY_DEF_DEFL_SHIELD    | 力场盾
+RACES_MILITARY_DEF_ARMOR          | 装甲
+RACES_MILITARY_TROOP_BONUS        | 地面部队加成
+RACES_MILITARY_DEF_MISSILE        | 导弹基地型号
+RACES_MILITARY_DEF_MISSILE_MAX    | 新殖民地的默认导弹基地数量
+RACES_MILITARY_NO_SHIELD          | 无
+RACES_MILITARY_REPORT_NONE        | 无数据，需要更多间谍以获取信息
+RACES_MILITARY_REPORT_OLD         | 舰队报告时间：%1年前。
+RACES_MILITARY_NO_SHIPS           | 没有发现飞船
+RACES_MILITARY_HULL               | 尺寸
+RACES_MILITARY_ARMOR              | 护甲值
+RACES_MILITARY_ATTACK_LEVEL       | 进攻等级
+RACES_MILITARY_MISSILE_DEFENSE    | 导弹防御
+RACES_MILITARY_BEAM_DEFENSE       | 激光防御
+RACES_MILITARY_SHIELD             | 护盾等级
+RACES_MILITARY_COMBAT_SPEED       | 战场速度
+RACES_MILITARY_TRAVEL_SPEED       | 航行速度
+RACES_MILITARY_WEAPON_CNT         | %2 x%1
+RACES_MILITARY_NO_WEAPONS         | 无武器
+RACES_MILITARY_NO_SPECIALS        | 无特殊装置
+RACES_MILITARY_ACTIVE             | 服役中
+RACES_MILITARY_INACTIVE           | 已退役
+RACES_MILITARY_LAST_SEEN          | 上次目击时间
+RACES_MILITARY_SCAN_AGE           | %1 年前
+RACES_MILITARY_TACTICAL           | 型号信息
+RACES_MILITARY_WEAPONS            | 武器
+RACES_MILITARY_SPECIALS           | 特殊装置
+
+RACES_STATUS_THE_EMPIRE           | [alien_empire]
+RACES_STATUS_VS                   | vs.
+RACES_STATUS_KNOWN_EMPIRES        | %1 已知帝国
+RACES_STATUS_HISTORY              | 展示[alien_race]历史
+RACES_STATUS_NO_DATA              | 无数据
+RACES_STATUS_OLD_DATA             | 老数据
+RACES_STATUS_FLEET_STRENGTH       | 舰队实力
+RACES_STATUS_POPULATION           | 人口
+RACES_STATUS_TECHNOLOGY           | 科技
+RACES_STATUS_PLANETS              | 行星
+RACES_STATUS_PRODUCTION           | 经济
+RACES_STATUS_TOTAL_POWER          | 总体国力
+RACES_UNKNOWN_DATA                | ???
+
+RACES_SET_COLOR_TITLE             | 为[alien_empire]选择新的地图颜色
+RACES_SET_COLOR_DESC              | 如果被选择的颜色已经被用在其他帝国上，它们的颜色就会互换。
+
+// Races UI help
+RACES_HELP_0A                     | 概览：这个界面展示你所遇到的外星文明的信息。
+RACES_HELP_0B                     | 外交：处理与被选中帝国的外交事务。
+RACES_HELP_0C                     | 情报：展示外星文明的技术，并管理你的谍报网络。
+RACES_HELP_0D                     | 军事：展示舰队数量和舰船型号。
+RACES_HELP_0E                     | 现状：各个帝国的实力比较。
+RACES_HELP_0F                     | 选中你的帝国可以让你在一个界面管理各个对手的外交事务。
+RACES_HELP_0G                     | 选中一个对手，可以让你查看这个对手的详细情况。
+RACES_HELP_1A                     | 被选中帝国的基本情况。
+RACES_HELP_1B                     | 在这里批量管理外交事务。
+RACES_HELP_1C                     | 增收安全税，以提高发现敌人间谍的概率。
+RACES_HELP_1D                     | 在这里批量管理情报事务。
+RACES_HELP_1E                     | 影响其他文明对你态度的外交事件。效果会随着时间流逝而逐渐归零。
+RACES_HELP_1F                     | 单击以修改该种族在地图上的展示颜色。
+RACES_HELP_2A                     | 被选中帝国的基本信息。
+RACES_HELP_2B                     | 与该帝国的外交官会面。
+RACES_HELP_2C                     | 与该帝国的贸易协议信息。
+RACES_HELP_2D                     | 该帝国与其他帝国的关系。
+RACES_HELP_2E                     | 影响该帝国对你态度的外交事件。效果会随着时间流逝而逐渐归零。
+RACES_HELP_2F                     | 与被选中帝国的当前关系。
+RACES_HELP_3A                     | 增收安全税，以提高发现敌人间谍的概率。
+RACES_HELP_3B                     | 在这里批量管理情报事务。
+RACES_HELP_3C                     | 所有其他文明的技术，信息来自你的间谍提供。你没有掌握的技术，会被标为黄色。
+RACES_HELP_4A                     | 设置你想在该帝国安排的情报网络数量，以及你每年的资金投入。
+RACES_HELP_4B                     | 设置情报人员在该帝国的工作目标。潜伏：获取信息。偷窃：窃取技术。破坏：诱发起义、破坏工厂和导弹基地。
+RACES_HELP_4C                     | 该帝国的所有技术。你没有掌握的技术会被标记为黄色。
+RACES_HELP_5A                     | 被选中种族的舰艇数量，按照舰船大小统计。只要你在该帝国安排了活跃的情报人员，这个信息就会保持更新。
+RACES_HELP_5B                     | 舰船型号以及参数。老的型号可能已经退役。这里的信息主要在战斗中搜集。
+RACES_HELP_5C                     | 被选中工帝国的防御能力。
+RACES_HELP_6A                     | 这个界面展示了不同维度下的实力排名。信息来自我们安插在各个帝国的情报人员。
+RACES_HELP_6A2                    | 这个界面展示了我方和对方在不同维度下的历史实力对比。信息来自我们安插在该帝国的情报人员。
+RACES_HELP_6B                     | 舰队实力：基于舰船大小和数量计算。
+RACES_HELP_6C                     | 人口：各个殖民星系的总人口。
+RACES_HELP_6D                     | 研究：六大研究领域的平均等级。
+RACES_HELP_6E                     | 行星：殖民地的数量。
+RACES_HELP_6F                     | 经济：各个帝国的总产能。
+RACES_HELP_6G                     | 总实力：结合了军事、科技和经济的总体实力。
+
+// Sabotage UI
+SABOTAGE_TITLE                    | 我方间谍已渗透 [alien_race] 殖民地，并准备好了执行命令。
+SABOTAGE_PROMPT                   | 选择想要对 [alien_empire] 的 %1 星系展开的破坏活动。
+SABOTAGE_WARNING                  | 警告！任何破坏活动都会破坏我方与 [alien_empire] 的协议。
+SABOTAGE_SELECT_TARGET            | 选择一个目标
+SABOTAGE_BUTTON_FACTORIES         | 破坏工厂
+SABOTAGE_BUTTON_BASES             | 破坏导弹基地
+SABOTAGE_BUTTON_REBELLION         | 煽动叛乱
+SABOTAGE_BUTTON_NO_ACTION         | 不采取行动
+SABOTAGE_FACTORIES_RESULT         | 你的间谍破坏了 %1 个工厂。
+SABOTAGE_BASES_RESULT             | 你的间谍破坏了 %1 个导弹基地。
+SABOTAGE_REBELS_TOTAL             | 你的间谍培养了 %1 个反叛力量，反叛分子占星系人口的 %2%。
+SABOTAGE_REBELS_REVOLT            | 你的间谍煽动了叛乱！
+SABOTAGE_BASES                    | 导弹基地
+SABOTAGE_FACTORIES                | 工厂
+NOTICE_SPYING_MISSION_HIDE        | 渗透
+NOTICE_SPYING_MISSION_ESPIONAGE   | 窃密
+NOTICE_SPYING_MISSION_SABOTAGE    | 破坏
+
+// History UI
+HISTORY_TITLE                     | 已探索宇宙的历史
+HISTORY_TITLE_ALL                 | 全部宇宙的历史
+HISTORY_TURN_DESC                 | 回合： %1 / %2
+HISTORY_FORWARD                   | 前进
+HISTORY_BACK                      | 后退
+HISTORY_PLAY                      | 播放
+HISTORY_PAUSE                     | 暂停
+HISTORY_RESET                     | 重置
+HISTORY_EXIT                      | 退出
+HISTORY_EXTINCT                   | 灭绝
+HISTORY_SYSTEMS                   | 星系
+HISTORY_EMPIRE                    | 帝国
+
+
+
+// Council UIs
+COUNCIL_CONVENE_TITLE             | 星际委员会
+COUNCIL_CONVENE                   | 星际委员会召开了集会，目的是选举一个星际领袖。
+COUNCIL_CONVENE2                  | 每个帝国拥有等比例于其人口的票数。候选人需要获取到总票数的2/3才能当选。候选人是两个人口最多的帝国的领导者：[first_empire] 的 [first_name] 和 [second_empire] 的 [second_name]。
+COUNCIL_ADJOURN_TITLE             | 星际委员会休会
+COUNCIL_ADJOURN                   | 投票已经完成，没有候选人活到2/3的票数。没有选举出最终领导人。星际委员会将在25年后重新召开会议。
+COUNCIL_SUMMARY_TITLE             | 投票情况汇总
+COUNCIL_SUMMARY                   | 星际委员会按照人口数量确定了投票顺序。需要获得%1张选票才能赢得选举。
+COUNCIL_BEGIN_VOTING              | 开始投票
+COUNCIL_SHOW_VOTING               | 继续投票
+COUNCIL_SKIP_TO_PLAYER            | 快进到 [player_race] 投票
+COUNCIL_COMPLETE_VOTING           | 完成所有投票
+COUNCIL_SHOW_RESULTS              | 展示结果
+COUNCIL_VIEW_SUMMARY              | 展示投票情况汇总
+COUNCIL_VOTES_REQUIRED            | 需要%1张选票引得选举。
+COUNCIL_CAST_PROMPT               | 我们必须投出自己的%1票。
+COUNCIL_CAST_PROMPT_TITLE         | 选择一个候选人。
+COUNCIL_CHOICE_ABSTAIN            | 弃权
+COUNCIL_CAST_VOTE                 | [voter_empire] 为 [candidate_name] 投出 %1 票。 
+COUNCIL_CAST_ABSTAIN              | [voter_empire] 弃权了 (%1 票)。
+COUNCIL_CHOICE_ABSTAIN            | 弃权
+COUNCIL_VOTE_COUNT                | %1 票
+COUNCIL_VOTE_CAST                 | %1 票 - 支持 [alien_race]
+COUNCIL_VOTE_ABSTAINED            | %1 票 - 弃权
+COUNCIL_TREATY_CANDIDATE          | [alien_race]: 候选人
+COUNCIL_TREATY_ALLIANCE           | [alien_race]: 盟友
+COUNCIL_TREATY_PACT               | [alien_race]: 互不侵犯
+COUNCIL_TREATY_NONE               | [alien_race]: 无协议
+COUNCIL_TREATY_WAR                | [alien_race]: 战争中
+COUNCIL_CONTINUE                  | 继续
+COUNCIL_ELECTED_TITLE             | 选出了宇宙的领导者！
+COUNCIL_ACCEPT_RULING             | 接受统治
+COUNCIL_REJECT_RULING             | 拒绝统治
+
+
+// Credit text
+CREDITS_DEVELOPER                 | 开发者 Ray Fowler
+CREDITS_ILLUSTRATOR               | 插画师 Petar Penev
+CREDITS_GRAPHIC_DESIGN            | 视觉设计 Kaitlin Lindsay
+CREDITS_MUSIC                     | 音乐 Efe Tozan
+CREDITS_WRITER                    | 剧本 Jeff Colucci
+CREDITS_SOUND                     | 音效 Remi Agullo
+CREDITS_TRANSLATOR                | 
+
+// Systems UI
+SYSTEMS_TITLE                     | 星系
+SYSTEMS_TAB_EXPLORE               | 探索
+SYSTEMS_TAB_EXPAND                | 扩张
+SYSTEMS_TAB_EXPLOIT               | 开发
+SYSTEMS_TAB_EXTERMINATE           | 征服
+SYSTEMS_RANGE                     | %1 光年
+SYSTEMS_ENVIRONMENT_SIZE          | %1 %2
+SYSTEMS_ENVIRONMENT_TYPE          | %1 %2
+SYSTEMS_SHIELD                    | 护盾 %1
+SYSTEMS_BASES                     | 导弹 %1
+SYSTEMS_ENTER_NOTES               | 在这里输入星系备注
+SYSTEMS_ALERT                     | 星系警告
+SYSTEMS_NO_ALERTS                 | 当前无警告。
+SYSTEMS_HISTORY                   | 星系历史
+SYSTEMS_UNSCOUTED                 | 未探索该星系，但星系在 scout 的航程范围内。
+SYSTEMS_UNSCOUTED_NEED_TECH       | 星系未被探索，在研究完"%1"后会在航程范围内。
+SYSTEMS_UNSCOUTED_COLONIZED       | 星系未探索，且不被我们的盟友控制。
+SYSTEMS_UNSCOUTED_ENEMY           | 星系未探索，且被敌对帝国控制。
+SYSTEMS_UNSCOUTED_GUARDED         | 星系在被守卫时无法探索。
+SYSTEMS_UNSCOUTED_UNREACHABLE     | 星系未探索，且当下无法抵达。
+SYSTEMS_CAN_COLONIZE              | 当前技术可以探索并殖民该星系。
+SYSTEMS_CAN_COLONIZE_EN_ROUTE     | 一个殖民飞船正驶向该星系。预计%1回合后到达。
+SYSTEMS_CAN_COLONIZE_ENEMY        | 星系可被探索和殖民，但此时正被敌对的[alien_race]军舰绕行。
+SYSTEMS_UNCOLONIZED_NEED_TECH     | 在研究完 "%1" 后该星系可以被殖民。
+SYSTEMS_UNCOLONIZED_NEED_TECHS    | 在研究完 "%1" 和 "%2" 后该星系可以被殖民。
+SYSTEMS_UNCOLONIZEABLE            | 星系无法被殖民。
+SYSTEMS_EXPLOIT_PCT               | 殖民地已实现最大生产力水平的 %1%。
+SYSTEMS_EXPLOIT_WASTE             | 殖民地在制造工业垃圾。
+SYSTEMS_EXPLOIT_COMPLETE          | 殖民地已实现最大生产力水平。
+SYSTEMS_EXPLOIT_TRANSPORTS        | %1 的人口在运输中。
+SYSTEMS_EXT_ENEMY                 | 敌人的殖民地。
+SYSTEMS_EXT_ENEMY_FLEET           | 敌人的飞船在轨道绕行。
+SYSTEMS_EXT_ENEMY_FLEET_PLAYER    | 敌人飞船在我方殖民地绕行。
+SYSTEMS_EXT_ENEMY_FLEET_ALLY      | 敌人飞船在我们盟友的殖民地绕行。
+SYSTEMS_EXT_INC_FLEET_PLAYER      | 敌舰在驶向我方殖民地。
+SYSTEMS_EXT_INC_FLEET_ALLY        | 敌舰在驶向我们盟友的殖民地。
+SYSTEMS_EXT_NEED_DEFENSE          | 该殖民地的防御未升级完毕。
+SYSTEMS_EXT_INC_TRANSPORTS        | %1 [player_race] 的军队在运输中。
+SYSTEMS_HELP_1A                   | 总览：这个界面的目的是给玩家提供宇宙中值得注意的信息。紧急或危险情况会以颜色表示：红色表示最紧急，绿色表示最不重要。
+SYSTEMS_HELP_1B                   | 探索：展示 scout 能够探索的星系，或经过科学研究后可以抵达的星系。
+SYSTEMS_HELP_1C                   | 扩张：展示可抵达范围内未殖民的星系，或经过科学研究后可以殖民的星系。
+SYSTEMS_HELP_1D                   | 开发：展示仍有经济发展空间的殖民地。同时展示有资源的未殖民星系。
+SYSTEMS_HELP_1E                   | 征服：展示当前受到攻击或有敌人舰队开往的星系。
+SYSTEMS_HELP_1F                   | 星系警告： 展示被选中信息的警告情况。
+SYSTEMS_HELP_1G                   | 星系备注：玩家可以在这里对信息做备注。
+SYSTEMS_HELP_1H                   | 星系历史：该星系内发生的重要事件的记录。
+SYSTEMS_STATUS_REBELLION          | 该星系正发生起义。
+SYSTEMS_STATUS_COMET              | 彗星会在%1年后撞击这个星系。
+SYSTEMS_STATUS_SUPERNOVA          | 星系的恒星会在%1年后变成超新星。物理学家需要%2RP才能阻止这个灾难。
+SYSTEMS_STATUS_PLAGUE             | 殖民地正在经历全球范围的瘟疫，需要%1RP才能控制疫情。
+SYSTEMS_STATUS_PIRACY             | 海盗在影响这个星系的商业贸易。
+SYSTEMS_STATUS_SPACE_AMOEBA       | 一个巨大的太空变形虫正要袭击这个星系。
+SYSTEMS_STATUS_SPACE_CRYSTAL      | 一个巨大的太空水晶正准备袭击这个星系。
+
+
+DIPLOMACY_RECEIVING               | 正在翻译消息...
+DIPLOMACY_MENU_CONTINUE           | 继续
+DIPLOMACY_MENU_ACKNOWLEDGE        | 承认
+DIPLOMACY_MENU_ACCEPT             | 接受
+DIPLOMACY_MENU_ACCEPT_NEED_BC     | 接受 (金钱不足)
+DIPLOMACY_MENU_FORGET_IT          | 算了吧
+DIPLOMACY_TRADE_LEVEL             | %1 BC / 年
+DIPLOMACY_MENU_TREATIES           | 提出协议
+DIPLOMACY_MENU_TRADE              | 贸易
+DIPLOMACY_MENU_TECHNOLOGY         | 交换科技
+DIPLOMACY_MENU_OFFER_AID          | 提供援助
+DIPLOMACY_MENU_AMT                | %1 BC
+DIPLOMACY_MENU_OFFER_TECHS        | 提供科技
+DIPLOMACY_MENU_THREATEN           | 威胁
+DIPLOMACY_MENU_DECLARE_WAR        | 宣战
+DIPLOMACY_MENU_EVICT_SPIES        | 撤回间谍 (会降低关系)
+DIPLOMACY_MENU_STOP_SPYING        | 停止间谍行动
+DIPLOMACY_MENU_STOP_ATTACKING     | 停止攻击
+DIPLOMACY_MENU_GOODBYE            | 再见
+DIPLOMACY_MENU_PACT               | 提议互不侵犯条约
+DIPLOMACY_MENU_ALLIANCE           | 提议结盟
+DIPLOMACY_MENU_PEACE              | 提议停战
+DIPLOMACY_MENU_TRADE              | 提议贸易
+DIPLOMACY_MENU_JOINT_WAR          | 加入对另一个种族的宣战
+DIPLOMACY_MENU_PROPOSE_BREAK_ALLY | 与另一个种族断绝联盟关系
+DIPLOMACY_MENU_BREAK_TRADE        | 破坏贸易协议
+DIPLOMACY_MENU_BREAK_PACT         | 破坏互不侵犯条约
+DIPLOMACY_MENU_BREAK_ALLIANCE     | 破坏结盟关系
+DIPLOMACY_TRADE_MENU_BREAK        | 破坏贸易协议
+DIPLOMACY_THREATEN_MENU_0         | 召回大使
+DIPLOMACY_THREATEN_MENU_1         | 要求上贡
+DIPLOMACY_THREATEN_MENU_2         | 破坏互不侵犯条约
+DIPLOMACY_THREATEN_MENU_3         | 破坏结盟关系
+DIPLOMACY_THREATEN_MENU_BR        | 破坏贸易协议
+DIPLOMACY_THREATEN_MENU_5         | 宣战
+DIPLOMACY_ACCEPT_OFFER            | 接受
+DIPLOMACY_ACCEPT_JOIN_WAR         | 接受 (加入战争)
+DIPLOMACY_ACCEPT_END_WAR          | 接受 (停止战争，召回军队)
+DIPLOMACY_ACCEPT_FORM_PACT        | 接受 (订立条约)
+DIPLOMACY_ACCEPT_FORM_ALLIANCE    | 接受 (结成联盟)
+DIPLOMACY_ACCEPT_ESTABLISH_TRADE  | 接受 (确定贸易)
+DIPLOMACY_DECLINE_OFFER           | 拒绝
+DIPLOMACY_DECLINE_BREAK_ALLIANCE  | 拒绝 (破坏联盟)
+DIPLOMACY_IGNORE_THREAT           | 无视威胁
+DIPLOMACY_SHUTDOWN_SPIES          | 关闭所有位于 [alien_empire] 的情报网络
+DIPLOMACY_HIDE_SPIES              | 命令所有 [alien_empire] 的间谍进入潜伏状态
+DIPLOMACY_RETREAT_SHIPS           | 命令所有环绕或驶向 [ailen_race] 星系的舰船撤回
+
+// types of endings
+GAME_OVER_OVERTHROWN_LOSS         | 政权倒台失败
+GAME_OVER_MILITARY_LOSS           | 军事失败
+GAME_OVER_DIPLOMATIC_LOSS         | 外交失败
+GAME_OVER_NEW_REPUBLIC_LOSS       | 新共和国失败
+GAME_OVER_REBELLION_LOSS          | 起义失败
+GAME_OVER_DIPLOMATIC_WIN          | 外交胜利
+GAME_OVER_MILITARY_WIN            | 军事胜利
+GAME_OVER_MILITARY_ALLIANCE_WIN   | 联盟军事胜利
+GAME_OVER_NEW_REPUBLIC_WIN        | 新共和国胜利
+GAME_OVER_REBELLION_WIN           | 起义胜利
+GAME_OVER_REBEL_ALLIANCE_WIN      | 联盟反叛胜利
+GAME_OVER_ALLIANCE_WIN            | 盟友胜利
+GAME_OVER_NO_COLONIES_LOSS        | 社会崩溃失败
+
+GAME_OVER_EXIT                    | 退出
+GAME_OVER_REPLAY                  | 重新游戏
+
+// text for race-generic endings
+// %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 special text
+GAME_OVER_NO_COLONIES_LOSS2       | %2 的统治结束了。#With no civilized worlds on which to land safely, any surviving %3 transports are unable to sustain the technological progress made by your society.#Barbarism is the natural state of society. Civilization is unnatural. It is a whim of circumstance. And barbarism must ultimately triumph.
