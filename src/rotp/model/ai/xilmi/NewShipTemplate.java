@@ -111,6 +111,25 @@ public class NewShipTemplate implements Base {
         SortedMap<Float, ShipDesign> designSorter = new TreeMap<>();
         float costLimit = ai.empire().totalPlanetaryProduction() * ai.empire().fleetCommanderAI().maxShipMaintainance() * 50 / ai.empire().systemsInShipRange(ai.empire()).size();
         //System.out.print("\n"+galaxy().currentTurn()+" "+ai.empire().name()+" costlimit: "+costLimit);
+        float biggestShipWeaponSize = 0;
+        float biggestBombSize = 0;
+        for (int i = 0; i<4; i++) {
+            ShipDesign design = shipDesigns[i];
+            for (int j=0; j<maxWeapons(); j++)
+            {
+                if(design.weapon(j).groundAttacksOnly())
+                {
+                    if(design.weapon(j).size(design) > biggestBombSize)
+                        biggestBombSize = design.weapon(j).size(design);
+                }
+                else
+                {
+                    if(design.weapon(j).size(design) > biggestShipWeaponSize)
+                        biggestShipWeaponSize = design.weapon(j).size(design);
+                }
+            }
+        }
+        
         for (int i = 0; i<4; i++) {
             ShipDesign design = shipDesigns[i];
             if(role == role.DESTROYER && i > 0)
@@ -131,22 +150,30 @@ public class NewShipTemplate implements Base {
                 score /= design.cost() / costLimit;
             
             boolean hasBombs = false;
+            float spaceWpnSize = 0;
+            float bombWpnSize = 0;
             for (int j=0; j<maxWeapons(); j++)
             {
                 if(design.weapon(j).groundAttacksOnly())
                 {
-                    hasBombs = true;
-                    break;
+                    if(design.weapon(j).size(design) > bombWpnSize)
+                        bombWpnSize = design.weapon(j).size(design);
+                }
+                else
+                {
+                    if(design.weapon(j).size(design) > spaceWpnSize)
+                        spaceWpnSize = design.weapon(j).size(design);
                 }
             }
-            if (!hasBombs)
-            {
-                if(role.BOMBER == role)
-                    score = 0;
-                if(ai.empire().shipDesignerAI().wantHybrid())
-                    score *= ai.empire().generalAI().defenseRatio();
-            }
-            //System.out.print("\n"+ai.empire().name()+" "+design.name()+" Role: "+role+" size: "+design.size()+" score: "+score+" offScore: "+weaponSpace(design) / design.cost()+" defscore: "+defScore+" costlimit: "+costLimit);
+            float weaponSizeMod = 1.0f;
+            if(role.BOMBER == role)
+                weaponSizeMod *= bombWpnSize / biggestBombSize;
+            else
+                weaponSizeMod *= spaceWpnSize / biggestShipWeaponSize;
+            if(ai.empire().shipDesignerAI().wantHybrid())
+                weaponSizeMod *= ai.empire().generalAI().defenseRatio() + (1 - ai.empire().generalAI().defenseRatio()) * bombWpnSize / biggestBombSize;
+            score *= weaponSizeMod;
+            //System.out.print("\n"+ai.empire().name()+" "+design.name()+" Role: "+role+" size: "+design.size()+" score: "+score+" tonnageScore: "+design.spaceUsed() / design.cost()+" defscore: "+defScore+" wpnScore: "+weaponSizeMod+" costlimit: "+costLimit);
             designSorter.put(score, design);
         }
         // lastKey is design with greatest damage
