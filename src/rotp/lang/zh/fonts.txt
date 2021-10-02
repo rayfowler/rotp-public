@@ -1,8 +1,10 @@
 // These are the fonts used for the 5 font types within the game.
 
-logo,       ZCOOLXiaoWei-Regular.ttf,     100
-dialogue,   ZCOOLXiaoWei-Regular.ttf,     100
-narrow,     ZCOOLXiaoWei-Regular.ttf,     100
-normal,     ZCOOLXiaoWei-Regular.ttf,     100
-plain,      ZCOOLXiaoWei-Regular.ttf,     100
-language,   ZCOOLXiaoWei-Regular.ttf,     100
+name,       中文
+
+logo,       NotoSansSC-Thin.otf,    100
+dialogue,   NotoSansSC-Thin.otf, 100
+narrow,     NotoSansSC-Thin.otf,     100
+normal,     NotoSansSC-Thin.otf,     100
+plain,      NotoSansSC-Thin.otf,  100
+language,   NotoSansSC-Regular.otf,  100

@@ -1,0 +1,1238 @@
+
+
+//
+// Armor techs
+// 
+ARMOR_0_NAME     | 钛装甲
+ARMOR_0_ITEM     | 钛
+ARMOR_0_BRIEF    | 护甲值%1
+ARMOR_0_DETAIL   | 入门装甲技术。对飞船装甲或地面部队没有增益。
+
+ARMOR_1_NAME     | 合金装甲
+ARMOR_1_ITEM     | 合金
+ARMOR_1_BRIEF    | 护甲值%1
+ARMOR_1_DETAIL   | 飞船护甲值增加50%。地面部队的装甲+5。
+
+ARMOR_2_NAME     | 锆装甲
+ARMOR_2_ITEM     | 锆
+ARMOR_2_BRIEF    | 护甲值%1
+ARMOR_2_DETAIL   | 飞船护甲值增加100%。地面战斗的装甲+10。
+
+ARMOR_3_NAME     | 瑞钢装甲
+ARMOR_3_ITEM     | 瑞钢
+ARMOR_3_BRIEF    | 护甲值%1
+ARMOR_3_DETAIL   | 飞船护甲值增加150%。地面战斗的装甲+15。
+
+ARMOR_4_NAME     | 三钛装甲
+ARMOR_4_ITEM     | 三钛
+ARMOR_4_BRIEF    | 护甲值%1
+ARMOR_4_DETAIL   | 飞船护甲值增加200%。地面战斗的装甲+20。
+
+ARMOR_5_NAME     | 精金装甲
+ARMOR_5_ITEM     | 精金
+ARMOR_5_BRIEF    | 护甲值%1
+ARMOR_5_DETAIL   | 飞船护甲值增加250%。地面战斗的装甲+25。
+
+ARMOR_6_NAME     | 中子装甲
+ARMOR_6_ITEM     | 中子
+ARMOR_6_BRIEF    | 护甲值%1
+ARMOR_6_DETAIL   | 飞船护甲值增加300%。地面战斗的装甲+30。
+
+
+//
+// Atmospheric Terraforming techs
+// 
+ATMOSPHERE_0_NAME      | 大气改造
+ATMOSPHERE_0_DETAIL    | 花费150BC，把恶劣环境改变为正常环境
+
+//
+// Automated Repair techs
+// 
+AUTOREPAIR_0_NAME      | 自动修理系统
+AUTOREPAIR_0_BRIEF     | 每回合修复飞船15%的护甲值
+AUTOREPAIR_0_DETAIL    | 未被击毁的飞船能在回合结束时回复15%的护甲值
+
+AUTOREPAIR_1_NAME      | 高级自动修理系统
+AUTOREPAIR_1_BRIEF     | 每回合修复飞船30%的护甲值
+AUTOREPAIR_1_DETAIL    | 未被击毁的飞船能在回合结束时回复30%的护甲值
+
+
+//
+// Battle Computer techs
+// 
+// this is the Ship Design entry for selecting no battle computer
+COMPUTER_0_NAME    | 
+COMPUTER_0_ITEM    |  
+COMPUTER_0_BRIEF   | 进攻等级0
+COMPUTER_0_DETAIL  |
+
+COMPUTER_1_NAME    | 制导系统1
+COMPUTER_1_ITEM    | 型号1
+COMPUTER_1_BRIEF   | 进攻等级1
+COMPUTER_1_DETAIL  | 将武器精准度提高到等级1.
+
+COMPUTER_2_NAME    | 制导系统2
+COMPUTER_2_ITEM    | 型号2
+COMPUTER_2_BRIEF   | 进攻等级2
+COMPUTER_2_DETAIL  | 将武器精准度提高到等级2.
+
+COMPUTER_3_NAME    | 制导系统3
+COMPUTER_3_ITEM    | 型号3
+COMPUTER_3_BRIEF   | 进攻等级3
+COMPUTER_3_DETAIL  | 将武器精准度提高到等级3.
+
+COMPUTER_4_NAME    | 制导系统4
+COMPUTER_4_ITEM    | 型号4
+COMPUTER_4_BRIEF   | 进攻等级4
+COMPUTER_4_DETAIL  | 将武器精准度提高到等级4.
+
+COMPUTER_5_NAME    | 制导系统5
+COMPUTER_5_ITEM    | 型号5
+COMPUTER_5_BRIEF   | 进攻等级5
+COMPUTER_5_DETAIL  | 将武器精准度提高到等级5.
+
+COMPUTER_6_NAME    | 制导系统6
+COMPUTER_6_ITEM    | 型号6
+COMPUTER_6_BRIEF   | 进攻等级6
+COMPUTER_6_DETAIL  | 将武器精准度提高到等级6.
+
+COMPUTER_7_NAME    | 制导系统7
+COMPUTER_7_ITEM    | 型号7
+COMPUTER_7_BRIEF   | 进攻等级7
+COMPUTER_7_DETAIL  | 将武器精准度提高到等级7.
+
+COMPUTER_8_NAME    | 制导系统8
+COMPUTER_8_ITEM    | 型号8
+COMPUTER_8_BRIEF   | 进攻等级8
+COMPUTER_8_DETAIL  | 将武器精准度提高到等级8.
+
+COMPUTER_9_NAME    | 制导系统9
+COMPUTER_9_ITEM    | 型号9
+COMPUTER_9_BRIEF   | 进攻等级9
+COMPUTER_9_DETAIL  | 将武器精准度提高到等级9.
+
+COMPUTER_10_NAME   | 制导系统10
+COMPUTER_10_ITEM   | 型号10
+COMPUTER_10_BRIEF  | 进攻等级10
+COMPUTER_10_DETAIL | 将武器精准度提高到等级10.
+
+COMPUTER_11_NAME   | 制导系统11
+COMPUTER_11_ITEM   | 型号11
+COMPUTER_11_BRIEF  | 进攻等级11
+COMPUTER_11_DETAIL | 将武器精准度提高到等级11.
+
+
+//
+// Battle Suit techs for ground combat
+// 
+// this is for default, no-bonus armor that player starts with
+BATTLESUIT_0_NAME    | 
+BATTLESUIT_0_DETAIL  |
+
+BATTLESUIT_1_NAME    | 普通机甲
+BATTLESUIT_1_DETAIL  | 该机甲会提供防护和力量。地面战斗的点数+10。
+
+BATTLESUIT_2_NAME    | 动力机甲
+BATTLESUIT_2_DETAIL  | 提高力量、防御，有一定的飞行能力。地面战斗的点数+20。
+
+BATTLESUIT_3_NAME    | 强力机甲
+BATTLESUIT_3_DETAIL  | 提供高机动性、反重力飞行和强力护甲，最强的地面装备。地面战斗的点数+30。
+
+
+//
+// Energy Focus techs for beam weapons
+// 
+BEAMFOCUS_0_NAME    | 高能聚焦
+BEAMFOCUS_0_BRIEF   | 对敌武器的距离+3
+BEAMFOCUS_0_DETAIL  | 使所有对敌武器的距离+3
+
+BEAMFOCUS_1_NAME    | 破盾之光
+BEAMFOCUS_1_BRIEF   | 使敌人的力场盾减半
+BEAMFOCUS_1_DETAIL  | 协调所有激光武器，发出一道超强光线，将敌人的力场盾减半。
+
+
+//
+// Biological antidote techs 
+// 
+BIOANTIDOTE_0_NAME    | 病毒抗体
+BIOANTIDOTE_0_DETAIL  | 遭到生化武器攻击后的伤亡减少1百万。
+
+BIOANTIDOTE_1_NAME    | 强力抗体
+BIOANTIDOTE_1_DETAIL  | 遭到生化武器攻击后的伤亡减少2百万。
+
+
+//
+// Biological weapon techs 
+// 
+BIOWEAPON_0_NAME     | 死亡孢子
+BIOWEAPON_0_BRIEF    | 生化武器
+BIOWEAPON_0_DETAIL   | 可怕的生化武器，每次攻击让行星人口减少1百万。
+
+BIOWEAPON_1_NAME     | 末日病毒
+BIOWEAPON_1_BRIEF    | 生化武器
+BIOWEAPON_1_DETAIL   | 致命的生化武器，每次攻击让行星人口减少2百万。
+
+BIOWEAPON_2_NAME     | 死神之吻
+BIOWEAPON_2_BRIEF    | 生化武器
+BIOWEAPON_2_DETAIL   | 人神共愤的生化武器，每次攻击让行星人口减少3百万。
+
+//
+// Black Hole Generator tech
+//
+BLACKHOLE_0_NAME     | 黑洞生成器
+BLACKHOLE_0_DETAIL   | 创造一个扭曲时空的子空间，生成的黑洞会破坏25%到100%的敌军飞船或导弹基地。力场等级每提高1级，会减少2%的伤害。
+
+
+
+//
+// Bomb weapon tech
+//
+BOMB_0_NAME     | 原子炸弹
+BOMB_0_BRIEF    | 仅限对地攻击
+BOMB_0_DETAIL   | 炸弹会对目标造成3-12点的伤害，仅限对地攻击。
+
+
+BOMB_1_NAME     | 核聚变炸弹
+BOMB_1_BRIEF    | 仅限对地攻击
+BOMB_1_DETAIL   | 炸弹会对目标造成5-20点的伤害，仅限对地攻击。
+
+BOMB_2_NAME     | 反物质炸弹
+BOMB_2_BRIEF    | 仅限对地攻击
+BOMB_2_DETAIL   | 炸弹会对目标造成10-40点的伤害，仅限对地攻击。
+
+
+BOMB_3_NAME     | 欧米伽炸弹
+BOMB_3_BRIEF    | 仅限对地攻击
+BOMB_3_DETAIL   | 炸弹会对目标造成20-50点的伤害，仅限对地攻击。
+
+BOMB_4_NAME     | 中子炸弹
+BOMB_4_BRIEF    | 仅限对地攻击
+BOMB_4_DETAIL   | 炸弹会对目标造成40-70点的伤害，仅限对地攻击。
+
+//
+// Cloaking tech
+//
+CLOAK_0_NAME     | 隐形装置
+CLOAK_0_BRIEF    | 让飞船几乎隐形
+CLOAK_0_DETAIL   | 让飞船几乎隐形，直到他们发动攻击的时候。增加5点防御力。飞船必须显形才能攻击，并且会在他们不攻击的回合回到隐形状态。
+
+
+//
+// Cloning tech
+//
+CLONE_0_NAME     | 克隆
+CLONE_0_DETAIL   | 以每1百万人/10BC的价格，产出克隆人。
+
+CLONE_1_NAME     | 进阶克隆
+CLONE_1_DETAIL   | 以每1百万人/5BC的价格，产出克隆人。
+
+
+//
+// Combat Transporter tech
+//
+COMBATTRANSPORT_0_NAME     | 军队传送器
+COMBATTRANSPORT_0_DETAIL   | 装备了这个装置的运输机有50%的概率直接将军队传送到敌人星球的地面，避免敌机和导弹基地的攻击。
+
+
+//
+// Control Environment tech
+//
+CONTROLENV_0_NAME    | 控制正常环境
+CONTROLENV_0_ITEM    | 殖民基地：标准
+CONTROLENV_0_BRIEF   | 允许在正常星球登陆
+CONTROLENV_0_DETAIL  | 允许在正常行星殖民。
+
+CONTROLENV_1_NAME    | 控制沙暴环境
+CONTROLENV_1_ITEM    | 殖民基地：沙暴
+CONTROLENV_1_BRIEF   | 允许在沙暴星球登陆
+CONTROLENV_1_DETAIL  | 允许在沙暴和环境好于沙暴的行星殖民。
+
+CONTROLENV_2_NAME    | 控制冻土环境
+CONTROLENV_2_ITEM    | 殖民基地：冻土
+CONTROLENV_2_BRIEF   | 允许在冻土星球登陆
+CONTROLENV_2_DETAIL  | 允许在冻土和环境好于冻土的行星殖民。
+
+CONTROLENV_3_NAME    | 控制死亡环境
+CONTROLENV_3_ITEM    | 殖民基地：死寂
+CONTROLENV_3_BRIEF   | 允许在死寂星球登陆
+CONTROLENV_3_DETAIL  | 允许在死寂和环境好于死寂的行星殖民。
+
+CONTROLENV_4_NAME    | 控制熔炉环境
+CONTROLENV_4_ITEM    | 殖民基地：熔炉
+CONTROLENV_4_BRIEF   | 允许在熔炉星球登陆
+CONTROLENV_4_DETAIL  | 允许在熔炉和环境好于熔炉的行星殖民。
+
+CONTROLENV_5_NAME    | 控制剧毒环境
+CONTROLENV_5_ITEM    | 殖民基地：剧毒
+CONTROLENV_5_BRIEF   | 允许在剧毒星球登陆
+CONTROLENV_5_DETAIL  | 允许在剧毒和环境好于剧毒的行星殖民。
+
+CONTROLENV_6_NAME    | 控制辐射环境
+CONTROLENV_6_ITEM    | 殖民基地：辐射
+CONTROLENV_6_BRIEF   | 允许在辐射星球登陆
+CONTROLENV_6_DETAIL  | 允许在辐射和环境好于辐射的行星殖民。
+
+
+//
+// Deflector Shield tech
+//
+// this is the entry on Ship Design for selecting no deflector shield
+
+// 中注：我对“力场盾”不太满意。
+
+DEFLECTOR_0_NAME      | 
+DEFLECTOR_0_ITEM      |   
+DEFLECTOR_0_BRIEF     |  
+DEFLECTOR_0_DETAIL    | 
+
+DEFLECTOR_1_NAME      | 力场盾1阶
+DEFLECTOR_1_ITEM      | 1阶
+DEFLECTOR_1_BRIEF     | 吸收1点伤害
+DEFLECTOR_1_DETAIL    | 吸收所有攻击的1点伤害。
+
+DEFLECTOR_2_NAME      | 力场盾2阶
+DEFLECTOR_2_ITEM      | 2阶
+DEFLECTOR_2_BRIEF     | 吸收2点伤害
+DEFLECTOR_2_DETAIL    | 吸收所有攻击的2点伤害。
+
+DEFLECTOR_3_NAME      | 力场盾3阶
+DEFLECTOR_3_ITEM      | 3阶
+DEFLECTOR_3_BRIEF     | 吸收3点伤害
+DEFLECTOR_3_DETAIL    | 吸收所有攻击的3点伤害。
+
+DEFLECTOR_4_NAME      | 力场盾4阶
+DEFLECTOR_4_ITEM      | 4阶
+DEFLECTOR_4_BRIEF     | 吸收4点伤害
+DEFLECTOR_4_DETAIL    | 吸收所有攻击的4点伤害。
+
+DEFLECTOR_5_NAME      | 力场盾5阶
+DEFLECTOR_5_ITEM      | 5阶
+DEFLECTOR_5_BRIEF     | 吸收5点伤害
+DEFLECTOR_5_DETAIL    | 吸收所有攻击的5点伤害。
+
+DEFLECTOR_6_NAME      | 力场盾6阶
+DEFLECTOR_6_ITEM      | 6阶
+DEFLECTOR_6_BRIEF     | 吸收6点伤害
+DEFLECTOR_6_DETAIL    | 吸收所有攻击的6点伤害。
+
+DEFLECTOR_7_NAME      | 力场盾7阶
+DEFLECTOR_7_ITEM      | 7阶
+DEFLECTOR_7_BRIEF     | 吸收7点伤害
+DEFLECTOR_7_DETAIL    | 吸收所有攻击的7点伤害。
+
+DEFLECTOR_8_NAME      | 力场盾9阶
+DEFLECTOR_8_ITEM      | 9阶
+DEFLECTOR_8_BRIEF     | 吸收9点伤害
+DEFLECTOR_8_DETAIL    | 吸收所有攻击的9点伤害。
+
+DEFLECTOR_9_NAME      | 力场盾11阶
+DEFLECTOR_9_ITEM      | 11阶
+DEFLECTOR_9_BRIEF     | 吸收11点伤害
+DEFLECTOR_9_DETAIL    | 吸收所有攻击的11点伤害。
+
+DEFLECTOR_10_NAME     | 力场盾13阶
+DEFLECTOR_10_ITEM     | 13阶
+DEFLECTOR_10_BRIEF    | 吸收13点伤害
+DEFLECTOR_10_DETAIL   | 吸收所有攻击的13点伤害。
+
+DEFLECTOR_11_NAME     | 力场盾15阶
+DEFLECTOR_11_ITEM     | 15阶
+DEFLECTOR_11_BRIEF    | 吸收15点伤害
+DEFLECTOR_11_DETAIL   | 吸收所有攻击的15点伤害。
+
+
+//
+// Displacement tech
+//
+DISPLACEMENT_0_NAME   | 位面转移装置
+DISPLACEMENT_0_BRIEF  | 敌人1/3的攻击会落空
+DISPLACEMENT_0_DETAIL | 装备了此装置的飞船会进行随机位面切换，让它躲避1/3的敌人的单体武器攻击。
+
+//
+// ECM Jammer tech
+//
+// this is the entry on Ship Design for selecting no ECM Jammer
+ECMJAMMER_0_NAME      | 
+ECMJAMMER_0_ITEM      | 
+ECMJAMMER_0_BRIEF     | 导弹防御0
+ECMJAMMER_0_DETAIL    | 
+
+ECMJAMMER_1_NAME      | 电子干扰器1
+ECMJAMMER_1_ITEM      | 干扰器1
+ECMJAMMER_1_BRIEF     | 导弹防御1
+ECMJAMMER_1_DETAIL    | 舰船的反导弹能力增加1级。
+
+ECMJAMMER_2_NAME      | 电子干扰器2
+ECMJAMMER_2_ITEM      | 干扰器2
+ECMJAMMER_2_BRIEF     | 导弹防御2
+ECMJAMMER_2_DETAIL    | 舰船的反导弹能力增加2级。
+
+ECMJAMMER_3_NAME      | 电子干扰器3
+ECMJAMMER_3_ITEM      | 干扰器3
+ECMJAMMER_3_BRIEF     | 导弹防御3
+ECMJAMMER_3_DETAIL    | 舰船的反导弹能力增加3级。
+
+ECMJAMMER_4_NAME      | 电子干扰器4
+ECMJAMMER_4_ITEM      | 干扰器4
+ECMJAMMER_4_BRIEF     | 导弹防御4
+ECMJAMMER_4_DETAIL    | 舰船的反导弹能力增加4级。
+
+ECMJAMMER_5_NAME      | 电子干扰器5
+ECMJAMMER_5_ITEM      | 干扰器5
+ECMJAMMER_5_BRIEF     | 导弹防御5
+ECMJAMMER_5_DETAIL    | 舰船的反导弹能力增加5级。
+
+ECMJAMMER_6_NAME      | 电子干扰器6
+ECMJAMMER_6_ITEM      | 干扰器6
+ECMJAMMER_6_BRIEF     | 导弹防御6
+ECMJAMMER_6_DETAIL    | 舰船的反导弹能力增加6级。
+
+ECMJAMMER_7_NAME      | 电子干扰器7
+ECMJAMMER_7_ITEM      | 干扰器7
+ECMJAMMER_7_BRIEF     | 导弹防御7
+ECMJAMMER_7_DETAIL    | 舰船的反导弹能力增加7级。
+
+ECMJAMMER_8_NAME      | 电子干扰器8
+ECMJAMMER_8_ITEM      | 干扰器8
+ECMJAMMER_8_BRIEF     | 导弹防御8
+ECMJAMMER_8_DETAIL    | 舰船的反导弹能力增加8级。
+
+ECMJAMMER_9_NAME      | 电子干扰器9
+ECMJAMMER_9_ITEM      | 干扰器9
+ECMJAMMER_9_BRIEF     | 导弹防御9
+ECMJAMMER_9_DETAIL    | 舰船的反导弹能力增加9级。
+
+ECMJAMMER_10_NAME     | 电子干扰器10
+ECMJAMMER_10_ITEM     | 干扰器10
+ECMJAMMER_10_BRIEF    | 导弹防御10
+ECMJAMMER_10_DETAIL   | 舰船的反导弹能力增加10级。
+
+
+//
+// Ecological Restoration techs
+//
+ECORESTORATION_0_NAME   | 入门恢复生态学
+ECORESTORATION_0_DETAIL | 消耗1BC治理2单位工业污染。
+
+ECORESTORATION_1_NAME   | 进阶恢复生态学
+ECORESTORATION_1_DETAIL | 消耗1BC治理3单位工业污染。
+
+ECORESTORATION_2_NAME   | 中阶恢复生态学
+ECORESTORATION_2_DETAIL | 消耗1BC治理5单位工业污染。
+
+ECORESTORATION_3_NAME   | 高阶恢复生态学
+ECORESTORATION_3_DETAIL | E消耗1BC治理10单位工业污染。
+
+ECORESTORATION_4_NAME   | 终极恢复生态学
+ECORESTORATION_4_DETAIL | 消耗1BC治理20单位工业污染。
+
+
+//
+// Energy Pulsar techs
+//
+PULSAR_0_NAME     | 能量脉冲
+PULSAR_0_BRIEF    | 对区域范围造成1到5点伤害
+PULSAR_0_DETAIL   | 有效的能量脉冲武器，产生一个圆形区域的能量脉冲，对附近的飞船造成至多5点伤害；每多2个飞船开启脉冲攻击，就增加1点伤害。
+
+PULSAR_1_NAME     | 磁力脉冲
+PULSAR_1_BRIEF    | 对区域范围造成2到10点伤害
+PULSAR_1_DETAIL   | 强大的能量脉冲武器，产生一个圆形区域的能量脉冲，对附近的飞船造成至多10点伤害；每多1个飞船开启脉冲攻击，就增加1点伤害。
+
+//
+// Engine techs
+//
+ENGINE_0_NAME    | 传统动力引擎
+ENGINE_0_DETAIL  | 飞船以曲速%1移动，在战斗中有1级灵活性。
+ENGINE_0_ITEM    | 传统动力
+ENGINE_0_ITEM2   | 1级
+ENGINE_0_BRIEF   | 曲速 1  防御 %1
+ENGINE_0_BRIEF2  | 战场速度 %1
+
+ENGINE_1_NAME    | 核动力引擎 
+ENGINE_1_DETAIL  | 飞船以曲速%1移动，在战斗中有2级灵活性。
+ENGINE_1_ITEM    | 核动力
+ENGINE_1_ITEM2   | 2级
+ENGINE_1_BRIEF   | 曲速 2  防御 %1
+ENGINE_1_BRIEF2  | 战场速度 %1
+
+ENGINE_2_NAME    | 亚光速引擎
+ENGINE_2_DETAIL  | 飞船以曲速%1移动，在战斗中有3级灵活性。
+ENGINE_2_ITEM    | 亚光速
+ENGINE_2_ITEM2   | 3级
+ENGINE_2_BRIEF   | 曲速 3  防御 %1
+ENGINE_2_BRIEF2  | 战场速度 %1
+
+ENGINE_3_NAME    | 核聚变引擎
+ENGINE_3_DETAIL  | 飞船以曲速%1移动，在战斗中有3级灵活性。
+ENGINE_3_ITEM    | 核聚变
+ENGINE_3_ITEM2   | 4级
+ENGINE_3_BRIEF   | 曲速 4  防御 %1
+ENGINE_3_BRIEF2  | 战场速度 %1
+
+ENGINE_4_NAME    | 脉冲引擎
+ENGINE_4_DETAIL  | 飞船以曲速%1移动，在战斗中有5级灵活性。
+ENGINE_4_ITEM    | 脉冲
+ENGINE_4_ITEM2   | 5级
+ENGINE_4_BRIEF   | 曲速 5  防御 %1
+ENGINE_4_BRIEF2  | 战场速度 %1
+
+ENGINE_5_NAME    | 离子引擎
+ENGINE_5_DETAIL  | 飞船以曲速%1移动，在战斗中有6级灵活性。
+ENGINE_5_ITEM    | 离子
+ENGINE_5_ITEM2   | 6级
+ENGINE_5_BRIEF   | 曲速 6  防御 %1
+ENGINE_5_BRIEF2  | 战场速度 %1
+
+ENGINE_6_NAME    | 反物质引擎
+ENGINE_6_DETAIL  | 飞船以曲速%1移动，在战斗中有7级灵活性。
+ENGINE_6_ITEM    | 反物质
+ENGINE_6_ITEM2   | 7级
+ENGINE_6_BRIEF   | 曲速 7  防御 %1
+ENGINE_6_BRIEF2  | 战场速度 %1
+
+ENGINE_7_NAME    | 位面引擎
+ENGINE_7_DETAIL  | 飞船以曲速%1移动，在战斗中有8级灵活性。
+ENGINE_7_ITEM    | 位面
+ENGINE_7_ITEM2   | 8级
+ENGINE_7_BRIEF   | 曲速 8  防御 %1
+ENGINE_7_BRIEF2  | 战场速度 %1
+
+ENGINE_8_NAME    | 极引擎
+ENGINE_8_DETAIL  | 飞船以曲速%1移动，在战斗中有9级灵活性。
+ENGINE_8_ITEM    | 极
+ENGINE_8_ITEM2   | 9级
+ENGINE_8_BRIEF   | 曲速 9  防御 %1
+ENGINE_8_BRIEF2  | 战场速度 %1
+
+
+//
+// Fuel Range techs
+//
+FUELRANGE_0_NAME   | 燃料电池
+FUELRANGE_0_DETAIL | 能让飞船移动到殖民星球%1光年之外。
+
+FUELRANGE_1_NAME   | 氢燃料电池
+FUELRANGE_1_DETAIL | 能让飞船移动到殖民星球%1光年之外。
+
+FUELRANGE_2_NAME   | 甲醛燃料电池
+FUELRANGE_2_DETAIL | 能让飞船移动到殖民星球%1光年之外。
+
+FUELRANGE_3_NAME   | 铱燃料电池
+FUELRANGE_3_DETAIL | 能让飞船移动到殖民星球%1光年之外。
+
+FUELRANGE_4_NAME   | 云石结晶
+FUELRANGE_4_DETAIL | 能让飞船移动到殖民星球%1光年之外。
+
+FUELRANGE_5_NAME   | 油铱燃料电池
+FUELRANGE_5_DETAIL | 能让飞船移动到殖民星球%1光年之外。
+
+FUELRANGE_6_NAME   | 雷钾燃料电池
+FUELRANGE_6_DETAIL | 能让飞船移动到殖民星球%1光年之外。
+
+FUELRANGE_7_NAME   | 三锂结晶
+FUELRANGE_7_DETAIL | 能让飞船移动到殖民星球%1光年之外。
+
+FUELRANGE_8_NAME   | 钍电池
+FUELRANGE_8_DETAIL | 能让飞船移动到任何地方。
+
+
+//
+// Future Computer techs
+//
+FUTURECOMP_0_NAME    | 次世代电脑1代
+FUTURECOMP_0_DETAIL  | 提高计算科学技术。
+
+FUTURECOMP_1_NAME    | 次世代电脑2代
+FUTURECOMP_1_DETAIL  | 提高计算科学技术。
+
+FUTURECOMP_2_NAME    | 次世代电脑3代
+FUTURECOMP_2_DETAIL  | 提高计算科学技术。
+
+FUTURECOMP_3_NAME    | 次世代电脑4代
+FUTURECOMP_3_DETAIL  | 提高计算科学技术。
+
+FUTURECOMP_4_NAME    | 次世代电脑5代
+FUTURECOMP_4_DETAIL  | 提高计算科学技术。
+
+FUTURECOMP_5_NAME    | 次世代电脑6代
+FUTURECOMP_5_DETAIL  | 提高计算科学技术。
+
+FUTURECOMP_6_NAME    | 次世代电脑7代
+FUTURECOMP_6_DETAIL  | 提高计算科学技术。
+
+FUTURECOMP_7_NAME    | 次世代电脑8代
+FUTURECOMP_7_DETAIL  | 提高计算科学技术。
+
+FUTURECOMP_8_NAME    | 次世代电脑9代
+FUTURECOMP_8_DETAIL  | 提高计算科学技术。
+
+FUTURECOMP_9_NAME    | 次世代电脑10代
+FUTURECOMP_9_DETAIL  | 提高计算科学技术。 
+
+
+//
+// Future Construction techs
+//
+FUTURECONST_0_NAME    | 高级制造研究1阶
+FUTURECONST_0_DETAIL  | 提高制造研究的水平。
+
+FUTURECONST_1_NAME    | 高级制造研究2阶
+FUTURECONST_1_DETAIL  | 提高制造研究的水平。
+
+FUTURECONST_2_NAME    | 高级制造研究3阶
+FUTURECONST_2_DETAIL  | 提高制造研究的水平。
+
+FUTURECONST_3_NAME    | 高级制造研究4阶
+FUTURECONST_3_DETAIL  | 提高制造研究的水平。
+
+FUTURECONST_4_NAME    | 高级制造研究5阶
+FUTURECONST_4_DETAIL  | 提高制造研究的水平。
+
+FUTURECONST_5_NAME    | 高级制造研究6阶
+FUTURECONST_5_DETAIL  | 提高制造研究的水平。
+
+FUTURECONST_6_NAME    | 高级制造研究7阶
+FUTURECONST_6_DETAIL  | 提高制造研究的水平。
+
+FUTURECONST_7_NAME    | 高级制造研究8阶
+FUTURECONST_7_DETAIL  | 提高制造研究的水平。
+
+FUTURECONST_8_NAME    | 高级制造研究9阶
+FUTURECONST_8_DETAIL  | 提高制造研究的水平。
+
+FUTURECONST_9_NAME    | 高级制造研究10阶
+FUTURECONST_9_DETAIL  | 提高制造研究的水平。 
+
+
+//
+// Future Force Field techs
+//
+FUTUREFORCE_0_NAME    | 高级力场研究1阶
+FUTUREFORCE_0_DETAIL  | 提高力场研究的水平。
+
+FUTUREFORCE_1_NAME    | 高级力场研究2阶
+FUTUREFORCE_1_DETAIL  | 提高力场研究的水平。
+
+FUTUREFORCE_2_NAME    | 高级力场研究3阶
+FUTUREFORCE_2_DETAIL  | 提高力场研究的水平。
+
+FUTUREFORCE_3_NAME    | 高级力场研究4阶
+FUTUREFORCE_3_DETAIL  | 提高力场研究的水平。
+
+FUTUREFORCE_4_NAME    | 高级力场研究5阶
+FUTUREFORCE_4_DETAIL  | 提高力场研究的水平。
+
+FUTUREFORCE_5_NAME    | 高级力场研究6阶
+FUTUREFORCE_5_DETAIL  | 提高力场研究的水平。
+
+FUTUREFORCE_6_NAME    | 高级力场研究7阶
+FUTUREFORCE_6_DETAIL  | 提高力场研究的水平。
+
+FUTUREFORCE_7_NAME    | 高级力场研究8阶
+FUTUREFORCE_7_DETAIL  | 提高力场研究的水平。
+
+FUTUREFORCE_8_NAME    | 高级力场研究9阶
+FUTUREFORCE_8_DETAIL  | 提高力场研究的水平。
+
+FUTUREFORCE_9_NAME    | 高级力场研究10阶
+FUTUREFORCE_9_DETAIL  | 提高力场研究的水平。
+
+
+//
+// Future Planetology techs
+//
+FUTUREPLANET_0_NAME    | 高级行星学1阶
+FUTUREPLANET_0_DETAIL  | 提高行星学研究水平。
+
+FUTUREPLANET_1_NAME    | 高级行星学2阶
+FUTUREPLANET_1_DETAIL  | 提高行星学研究水平。
+
+FUTUREPLANET_2_NAME    | 高级行星学3阶
+FUTUREPLANET_2_DETAIL  | 提高行星学研究水平。
+
+FUTUREPLANET_3_NAME    | 高级行星学4阶
+FUTUREPLANET_3_DETAIL  | 提高行星学研究水平。
+
+FUTUREPLANET_4_NAME    | 高级行星学5阶
+FUTUREPLANET_4_DETAIL  | 提高行星学研究水平。
+
+FUTUREPLANET_5_NAME    | 高级行星学6阶
+FUTUREPLANET_5_DETAIL  | 提高行星学研究水平。
+
+FUTUREPLANET_6_NAME    | 高级行星学7阶
+FUTUREPLANET_6_DETAIL  | 提高行星学研究水平。
+
+FUTUREPLANET_7_NAME    | 高级行星学8阶
+FUTUREPLANET_7_DETAIL  | 提高行星学研究水平。
+
+FUTUREPLANET_8_NAME    | 高级行星学9阶
+FUTUREPLANET_8_DETAIL  | 提高行星学研究水平。
+
+FUTUREPLANET_9_NAME    | 高级行星学10阶
+FUTUREPLANET_9_DETAIL  | 提高行星学研究水平。
+
+
+//
+// Future Propulsion techs
+//
+FUTUREPROP_0_NAME    | 高级动力学1阶
+FUTUREPROP_0_DETAIL  | 提高动力学水平。
+
+FUTUREPROP_1_NAME    | 高级动力学2阶
+FUTUREPROP_1_DETAIL  | 提高动力学水平。
+
+FUTUREPROP_2_NAME    | 高级动力学3阶
+FUTUREPROP_2_DETAIL  | 提高动力学水平。
+
+FUTUREPROP_3_NAME    | 高级动力学4阶
+FUTUREPROP_3_DETAIL  | 提高动力学水平。
+
+FUTUREPROP_4_NAME    | 高级动力学5阶
+FUTUREPROP_4_DETAIL  | 提高动力学水平。
+
+FUTUREPROP_5_NAME    | 高级动力学6阶
+FUTUREPROP_5_DETAIL  | 提高动力学水平。
+
+FUTUREPROP_6_NAME    | 高级动力学7阶
+FUTUREPROP_6_DETAIL  | 提高动力学水平。
+
+FUTUREPROP_7_NAME    | 高级动力学8阶
+FUTUREPROP_7_DETAIL  | 提高动力学水平。
+
+FUTUREPROP_8_NAME    | 高级动力学9阶
+FUTUREPROP_8_DETAIL  | 提高动力学水平。
+
+FUTUREPROP_9_NAME    | 高级动力学10阶
+FUTUREPROP_9_DETAIL  | 提高动力学水平。
+
+
+//
+// Future Weapon techs
+//
+FUTUREWEAPON_0_NAME    | 高级武器研究1阶
+FUTUREWEAPON_0_DETAIL  | 提高武器技术。
+
+FUTUREWEAPON_1_NAME    | 高级武器研究2阶
+FUTUREWEAPON_1_DETAIL  | 提高武器技术。
+
+FUTUREWEAPON_2_NAME    | 高级武器研究3阶
+FUTUREWEAPON_2_DETAIL  | 提高武器技术。
+
+FUTUREWEAPON_3_NAME    | 高级武器研究4阶
+FUTUREWEAPON_3_DETAIL  | 提高武器技术。
+
+FUTUREWEAPON_4_NAME    | 高级武器研究5阶
+FUTUREWEAPON_4_DETAIL  | 提高武器技术。
+
+FUTUREWEAPON_5_NAME    | 高级武器研究6阶
+FUTUREWEAPON_5_DETAIL  | 提高武器技术。
+
+FUTUREWEAPON_6_NAME    | 高级武器研究7阶
+FUTUREWEAPON_6_DETAIL  | 提高武器技术。
+
+FUTUREWEAPON_7_NAME    | 高级武器研究8阶
+FUTUREWEAPON_7_DETAIL  | 提高武器技术。
+
+FUTUREWEAPON_8_NAME    | 高级武器研究9阶
+FUTUREWEAPON_8_DETAIL  | 提高武器技术。
+
+FUTUREWEAPON_9_NAME    | 高级武器研究10阶
+FUTUREWEAPON_9_DETAIL  | 提高武器技术。 
+
+
+//
+// Hand Weapon techs
+//
+HANDWEAPON_0_NAME      | 
+HANDWEAPON_0_DETAIL    | 
+
+HANDWEAPON_1_NAME      | 手持镭射枪
+HANDWEAPON_1_DETAIL    | 单体镭射枪，地面部队的战斗点数+5。
+
+HANDWEAPON_2_NAME      | 离子步枪
+HANDWEAPON_2_DETAIL    | 单体激光武器，地面部队的战斗点数+10。
+
+HANDWEAPON_3_NAME      | 聚变步枪
+HANDWEAPON_3_DETAIL    | 不稳定但强大的激光武器，地面部队的战斗点数+20。
+
+HANDWEAPON_4_NAME      | 向量步枪
+HANDWEAPON_4_DETAIL    | 强大的手持能量武器，遭到攻击的敌人会被原子化。 地面部队的战斗点数+25。
+
+HANDWEAPON_5_NAME      | 等离子步枪
+HANDWEAPON_5_DETAIL    | 最有破坏力的手持武器。地面部队的战斗点数+30。
+
+
+//
+// Hyperspace Communication tech
+//
+HYPERSPACE_0_NAME      | Hyperspace Communications
+HYPERSPACE_0_DETAIL    | Allows you to communicate with ship fleets in hyperspace, and change their destinations while en route.
+
+
+//
+// Improved Industrial techs
+//
+IMPRINDUSTRY_0_NAME     | 工厂成本9
+IMPRINDUSTRY_0_DETAIL   | 将每个工厂的建造成本降低为9BC。
+
+
+IMPRINDUSTRY_1_NAME     | 工厂成本8
+IMPRINDUSTRY_1_DETAIL   | 将每个工厂的建造成本降低为8BC。
+
+IMPRINDUSTRY_2_NAME     | 工厂成本7
+IMPRINDUSTRY_2_DETAIL   | 将每个工厂的建造成本降低为7BC。
+
+IMPRINDUSTRY_3_NAME     | 工厂成本6
+IMPRINDUSTRY_3_DETAIL   | 将每个工厂的建造成本降低为6BC。
+
+IMPRINDUSTRY_4_NAME     | 工厂成本5
+IMPRINDUSTRY_4_DETAIL   | 将每个工厂的建造成本降低为5BC。
+
+IMPRINDUSTRY_5_NAME     | 工厂成本4
+IMPRINDUSTRY_5_DETAIL   | 将每个工厂的建造成本降低为4BC。
+
+IMPRINDUSTRY_6_NAME     | 工厂成本3
+IMPRINDUSTRY_6_DETAIL   | 将每个工厂的建造成本降低为3BC。
+
+IMPRINDUSTRY_7_NAME     | 工厂成本2
+IMPRINDUSTRY_7_DETAIL   | 将每个工厂的建造成本降低为2BC。
+
+
+//
+// Improved Terraforming techs
+//
+IMPRTFORM_0_NAME        | 环境改造+10
+IMPRTFORM_0_DETAIL      | 行星人口上限增加10单位，每单位成本为5。
+
+
+IMPRTFORM_1_NAME        | 环境改造+20
+IMPRTFORM_1_DETAIL      | 行星人口上限增加20单位，每单位成本为5。
+
+IMPRTFORM_2_NAME        | 环境改造+30
+IMPRTFORM_2_DETAIL      | 行星人口上限增加30单位，每单位成本为4。
+
+IMPRTFORM_3_NAME        | 环境改造+40
+IMPRTFORM_3_DETAIL      | 行星人口上限增加40，每单位成本为4。
+
+IMPRTFORM_4_NAME        | 环境改造+50
+IMPRTFORM_4_DETAIL      | 行星人口上限增加50，每单位成本为3。
+
+IMPRTFORM_5_NAME        | 环境改造+60
+IMPRTFORM_5_DETAIL      | 行星人口上限增加60，每单位成本为3。
+
+IMPRTFORM_6_NAME        | 环境改造+80
+IMPRTFORM_6_DETAIL      | 行星人口上限增加80，每单位成本为2。
+
+IMPRTFORM_7_NAME        | 环境改造+100
+IMPRTFORM_7_DETAIL      | 行星人口上限增加100，每单位成本为2。
+
+IMPRTFORM_8_NAME        | 彻底环境改造
+IMPRTFORM_8_DETAIL      | 行星人口上限增加120，每单位成本为2。
+
+
+//
+// Industrial Waste techs
+//
+INDWASTE_0_NAME         | 工业污染减少80%
+INDWASTE_0_DETAIL       | 工厂造成的污染是正常水平的80%。
+
+INDWASTE_1_NAME         | 工业污染减少60%
+INDWASTE_1_DETAIL       | 工厂造成的污染是正常水平的60%。
+
+INDWASTE_2_NAME         | 工业污染减少40%
+INDWASTE_2_DETAIL       | 工厂造成的污染是正常水平的40%。
+
+INDWASTE_3_NAME         | 工业污染减少20%
+INDWASTE_3_DETAIL       | 工厂造成的污染是正常水平的20%。
+
+INDWASTE_4_NAME         | 工业0污染
+INDWASTE_4_DETAIL       | 工厂不再制造污染。
+
+
+//
+// Missile Defense techs
+//
+MISSDEF_0_NAME      | 反导弹火箭
+MISSDEF_0_BRIEF     | 40%的概率摧毁导弹
+MISSDEF_0_DETAIL    | 超光速反导火箭。能够以40%的概率摧毁以自己为目标的导弹。对方导弹等级每提高1级，反导效果降低1%。
+
+MISSDEF_1_NAME      | 零盾反导系统
+MISSDEF_1_BRIEF     | 75%的概率摧毁导弹
+MISSDEF_1_DETAIL    | 初级能量盾。能够以75%的概率摧毁以自己为目标的导弹。对方导弹等级每提高1级，反导效果降低1%。
+
+
+MISSDEF_2_NAME      | 闪电盾反导系统
+MISSDEF_2_BRIEF     | 100%的概率摧毁导弹
+MISSDEF_2_DETAIL    | 高级能量盾。能够以100%的概率摧毁以自己为目标的导弹。对方导弹等级每提高1级，反导效果降低1%。
+
+//
+// Missile Weapon techs
+//
+MISSWPN_0_NAME      | 核导弹
+MISSWPN_0_BRIEF     | 2发, +1速度
+MISSWPN_0_BRIEF2    | 5发
+MISSWPN_0_DETAIL    | 搭载核弹头的导弹，爆炸时造成4点伤害，移动速度为2。
+
+
+MISSWPN_1_NAME      | 五号火箭弹
+MISSWPN_1_BRIEF     | 2发, +1速度
+MISSWPN_1_BRIEF2    | 5发
+MISSWPN_1_DETAIL    | 高速导弹，爆炸时造成6点伤害，移动速度为2.5。
+
+
+MISSWPN_2_NAME      | 十号火箭弹
+MISSWPN_2_BRIEF     | 2发, +1精准
+MISSWPN_2_BRIEF2    | 5发, +1精准
+MISSWPN_2_DETAIL    | 装载了高能弹头的导弹，爆炸时造成8点伤害，移动速度为2.5，精准度+1。
+
+MISSWPN_3_NAME      | 5弹头分离式火箭弹
+MISSWPN_3_BRIEF     | 2发, +1速度
+MISSWPN_3_BRIEF2    | 5发
+MISSWPN_3_DETAIL    | 多弹头型号的五号火箭弹，能在空中分离出5个弹头，每个造成6点伤害，移动速度为2.5。
+
+MISSWPN_4_NAME      | 水星导弹
+MISSWPN_4_BRIEF     | 2发, +2精准
+MISSWPN_4_BRIEF2    | 5发, +2精准
+MISSWPN_4_DETAIL    | 强力的高速导弹，爆炸时造成10点伤害，移动速度为2，精准度+2。
+
+MISSWPN_5_NAME      | 毒刺导弹
+MISSWPN_5_BRIEF     | 2发, +3精准
+MISSWPN_5_BRIEF2    | 5发, +3精准
+MISSWPN_5_DETAIL    | 非常精准的导弹。造成15点伤害，移动速度3.5，精准度+3。
+
+MISSWPN_6_NAME      | 7弹头分离式火箭弹
+MISSWPN_6_BRIEF     | 2发, 分离弹头7
+MISSWPN_6_BRIEF2    | 5发, 分离弹头7
+MISSWPN_6_DETAIL    | 多弹头型号的五号火箭弹，能在空中分离出7个弹头，每个造成10点伤害，移动速度为3，精准度+2。
+
+
+MISSWPN_7_NAME      | 脉冲导弹
+MISSWPN_7_BRIEF     | 2发, +4精准
+MISSWPN_7_BRIEF2    | 5发, +4精准
+MISSWPN_7_DETAIL    | 搭载了反物质弹头的导弹，爆炸时造成20点伤害，移动速度为4，精准度+4。
+
+
+MISSWPN_8_NAME      | 赫拉克勒斯导弹
+MISSWPN_8_BRIEF     | 2发, +5精准
+MISSWPN_8_BRIEF2    | 5发, +5精准
+MISSWPN_8_DETAIL    | 先进的导弹，爆炸时造成25伤害，移动速度为4.5，精准度+5。
+
+
+MISSWPN_9_NAME      | 锡安导弹
+MISSWPN_9_BRIEF     | 2发, +6精准
+MISSWPN_9_BRIEF2    | 5发, +6精准
+MISSWPN_9_DETAIL    | 导弹技术的精华产物，造成30点伤害，移动速度为5，精准度+6。
+
+
+MISSWPN_10_NAME      | 10弹头分离式导弹
+MISSWPN_10_BRIEF     | 2发, 分离弹头10
+MISSWPN_10_BRIEF2    | 5发, 分离弹头10
+MISSWPN_10_DETAIL    | 多弹头型号的毒刺导弹，能分离出10个弹头，每个弹头造成15点伤害，速度为3.5，制导系统等级+3。
+
+
+//
+// Personal Shield techs for ground combat
+//
+// default "no shield" tech that each player starts with
+PERSSHIELD_0_NAME     | 
+PERSSHIELD_0_DETAIL   | 
+
+PERSSHIELD_1_NAME     | 单兵力场盾
+PERSSHIELD_1_DETAIL   | 为地面部队提供单方向的立场盾。地面战斗的点数+10。
+
+
+PERSSHIELD_2_NAME     | 单兵吸收盾
+PERSSHIELD_2_DETAIL   | 吸收手持武器的伤害。地面战斗的点数+20。
+
+PERSSHIELD_3_NAME     | 单兵无限盾
+PERSSHIELD_3_DETAIL   | 将士兵包围在一个几乎不可穿透的力场中。地面战斗的点数+30。
+
+
+//
+// Planetary Shield techs 
+//
+PLANETSHIELD_0_NAME    | 5级行星盾
+PLANETSHIELD_0_DETAIL  | 吸收5点对行星地表造成的伤害，增强导弹基地的力场盾等级。
+
+PLANETSHIELD_1_NAME    | 10级行星盾
+PLANETSHIELD_1_DETAIL  | 吸收10点对行星地表造成的伤害，增强导弹基地的力场盾等级。
+
+PLANETSHIELD_2_NAME    | 15级行星盾
+PLANETSHIELD_2_DETAIL  | 吸收15点对行星地表造成的伤害，增强导弹基地的力场盾等级。
+
+PLANETSHIELD_3_NAME    | 20级行星盾
+PLANETSHIELD_3_DETAIL  | 吸收20点对行星地表造成的伤害，增强导弹基地的力场盾等级。
+
+
+//
+// Repulsor tech 
+//
+REPULSOR_0_NAME    | 弹射激光
+REPULSOR_0_BRIEF   | 将敌方飞船弹开1格
+REPULSOR_0_DETAIL  | 将敌方飞船从防御飞船的身边弹开1格，这个武器对1格内的敌人起作用。
+
+
+
+
+//
+// Reserve Fuel tech 
+//
+RSRVFUEL_0_NAME    | 备用燃料箱
+RSRVFUEL_0_BRIEF   | 将飞船的航行距离提高%1光年
+RSRVFUEL_0_DETAIL  | 备用燃料箱可以提高飞船的航行距离
+
+
+//
+// Robotic Controls techs 
+//
+ROBOTCTRL_0_NAME     | 自动化控制3阶
+ROBOTCTRL_0_DETAIL   | 允许每单位人口控制2个工厂。升级改装成本等于工厂的制造成本。
+
+ROBOTCTRL_1_NAME     | 自动化控制4阶
+ROBOTCTRL_1_DETAIL   | 允许每单位人口控制4个工厂。升级改装成本等于工厂的制造成本。
+
+ROBOTCTRL_2_NAME     | 自动化控制5阶
+ROBOTCTRL_2_DETAIL   | 允许每单位人口控制2个工厂。升级改装成本等于工厂制造成本的1.5倍。
+
+ROBOTCTRL_3_NAME     | 自动化控制6阶
+ROBOTCTRL_3_DETAIL   | 允许每单位人口控制6个工厂。升级改装成本等于工厂的制造成本的2倍。
+
+ROBOTCTRL_4_NAME     | 自动化控制7阶
+ROBOTCTRL_4_DETAIL   | 允许每单位人口控制7个工厂。升级改装成本等于工厂的制造成本的2.5倍。
+
+
+//
+// Scanner techs 
+//
+SCANNER_0_NAME       | 战场扫描
+SCANNER_0_BRIEF      | 扫描战场上的敌方舰船
+SCANNER_0_DETAIL     | 展示敌方舰船的科技参数。
+
+SCANNER_1_NAME       | 太空雷达
+SCANNER_1_BRIEF      | 探测5光年内的敌方舰船
+SCANNER_1_DETAIL     | 能够探测到距离殖民地5光年、或距离己方舰船1光年的敌方舰船。
+
+
+SCANNER_2_NAME       | 增强太空雷达
+SCANNER_2_BRIEF      | 探测7光年内的敌方舰船
+SCANNER_2_DETAIL     | 能够探测到距离殖民地7光年、或距离己方舰船2光年的敌方舰船。能够了解到对方的目的地。
+
+SCANNER_3_NAME       | 高级太空雷达
+SCANNER_3_BRIEF      | 探测9光年内的敌方舰船
+SCANNER_3_DETAIL     | 能够探测到距离殖民地9光年、或距离己方舰船3光年的敌方舰船。
+
+
+//
+// Ship Inertial techs 
+//
+SHIPINERTIAL_0_NAME     | 惯性稳定器
+SHIPINERTIAL_0_BRIEF    | 可操作性+2
+SHIPINERTIAL_0_DETAIL   | 降低飞船的惯性，战斗中飞船的可操作性+2，且增加2点防御和1点速度。
+
+
+SHIPINERTIAL_1_NAME     | 惯性吸收器
+SHIPINERTIAL_1_BRIEF    | 可操作性+4
+SHIPINERTIAL_1_DETAIL   | 抵消飞船的惯性，战斗中飞船的可操作性+4，同时让黑洞的效果减少30%。
+
+
+//
+// Ship Inertial techs 
+//
+SHIPNULLIFIER_0_NAME     | 科技破坏者
+SHIPNULLIFIER_0_BRIEF    | 破坏敌舰的电脑
+SHIPNULLIFIER_0_DETAIL   | 损坏敌舰的电脑和电子干扰器，每次攻击将其等级降低2到6级。它的射程超过大部分武器。
+
+SHIPNULLIFIER_1_NAME     | 曲速干扰器
+SHIPNULLIFIER_1_BRIEF    | 降低敌人飞船的速度
+SHIPNULLIFIER_1_DETAIL   | 曲速干扰器是一种长距离武器，每次攻击时能够降低敌人的速度。
+
+//
+// Ship Weapon techs 
+//
+SHIPWPN_0_NAME         | 激光炮
+SHIPWPN_0_ITEM2        | 重激光炮
+SHIPWPN_0_DETAIL       | 激光武器，能造成1到4点伤害。重激光炮的射程有2格，能造成1到7点伤害。
+
+
+SHIPWPN_1_NAME         | 加特林激光炮
+SHIPWPN_1_BRIEF        | 每回合开火4次
+SHIPWPN_1_DETAIL       | 一种进阶激光武器，一回合至多开火4次，每次击中能够造成1到4点伤害。
+
+SHIPWPN_2_NAME         | 中子压力炮
+SHIPWPN_2_BRIEF        | 力场盾减半
+SHIPWPN_2_DETAIL       | 粒子光速武器，能将敌人力场盾的效果减半，并造成2到5点伤害。
+
+SHIPWPN_3_NAME         | 离子炮
+SHIPWPN_3_ITEM2        | 重型离子炮
+SHIPWPN_3_DETAIL       | 粒子炮是一种高强度的激光武器，能够造成3到8点伤害。重型离子炮造成3到15点伤害，有2格射程。
+
+
+SHIPWPN_4_NAME         | 质量炮
+SHIPWPN_4_BRIEF        | 力场盾减半
+SHIPWPN_4_DETAIL       | 一种线性激光武器，能将敌舰的力场盾效果减半，造成5到8点伤害。
+
+
+SHIPWPN_5_NAME         | 中子大炮
+SHIPWPN_5_ITEM2        | 重型中子大炮
+SHIPWPN_5_DETAIL       | 能量强大的激光武器，能造成3到12点伤害。重型中子大炮能造成3到24点伤害，有2格射程。
+
+SHIPWPN_6_NAME         | 引力子激光炮
+SHIPWPN_6_BRIEF        | 流体攻击
+SHIPWPN_6_DETAIL       | 能将飞船瞬间摧毁的牵引光速炮，造成1到15点伤害。流体效果还能持续伤害到其他飞船。
+
+SHIPWPN_7_NAME         | 硬质激光炮
+SHIPWPN_7_BRIEF        | 力场盾减半
+SHIPWPN_7_DETAIL       | 一种把能量转化为实体的激光炮，能将敌舰的效果减半，造成8到12点伤害。
+
+SHIPWPN_8_NAME         | 融合激光炮
+SHIPWPN_8_ITEM2        | 重型融合激光炮
+SHIPWPN_8_DETAIL       | 高强度的激光武器，能造成4到16点伤害。重型融合激光炮能造成4到30点伤害，有2格攻击距离。
+
+SHIPWPN_9_NAME         | 万束炮
+SHIPWPN_9_BRIEF        | +3精准
+SHIPWPN_9_DETAIL       | 往一个区域发射多束强光。增加30%的命中率，造成2到20点伤害。
+
+
+SHIPWPN_10_NAME        | 相位炮
+SHIPWPN_10_ITEM2       | 重型相位炮
+SHIPWPN_10_DETAIL      | 基于相位能量的激光武器，造成5到20点伤害。重型相位炮造成5到40点伤害，有2格射程。
+
+
+SHIPWPN_11_NAME        | 自动炮
+SHIPWPN_11_BRIEF       | 每回合3次攻击
+SHIPWPN_11_DETAIL      | 一种每回合能射击3次的中子激光炮，造成4到16点伤害。
+
+
+SHIPWPN_12_NAME        | 速子激光炮
+SHIPWPN_12_BRIEF       | 流体攻击
+SHIPWPN_12_DETAIL      | 发出一道超光速粒子，造成1到25点伤害。持续的流体效果能伤害到其他飞船。
+
+
+
+SHIPWPN_13_NAME        | 高斯机动炮
+SHIPWPN_13_BRIEF       | 力场盾减半，开火4次
+SHIPWPN_13_DETAIL      | 一种先进的粒子加速武器，能每回合开火4次，造成7到10点伤害，能将敌人的力场盾减半。
+
+
+SHIPWPN_14_NAME        | 粒子激光炮
+SHIPWPN_14_BRIEF       | 力场盾减半
+SHIPWPN_14_DETAIL      | 高强度的粒子加速武器，造成10到20点伤害，将力场盾的效果减半。
+
+
+SHIPWPN_15_NAME        | 等离子炮
+SHIPWPN_15_DETAIL      | 发出数道等离子激光，造成6到10点伤害，射程为1格。
+
+
+SHIPWPN_16_NAME        | 死亡光线
+SHIPWPN_16_DETAIL      | 一种来自上古文明的致命武器，造成200到1000点伤害，有1格射程。
+
+
+
+SHIPWPN_17_NAME        | 扰动炮
+SHIPWPN_17_DETAIL      | 发出数导纯能量光线，击中至多两格外的敌人，造成10到40点伤害。
+
+
+SHIPWPN_18_NAME        | 脉冲相位炮
+SHIPWPN_18_BRIEF       | 每回合开火3次
+SHIPWPN_18_DETAIL      | 一种先进的相位炮，每回合能够开火3次，造成5到20点伤害。
+
+
+SHIPWPN_19_NAME        | 三合等离子炮
+SHIPWPN_19_DETAIL      | 发出3道等离子光速，造成20到50点伤害。
+
+
+SHIPWPN_20_NAME        | 恒星转换器
+SHIPWPN_20_BRIEF       | 
+SHIPWPN_20_DETAIL      | 创造一个包围敌舰的反物质能量场，每次攻击造成10到35点，攻击距离为3格。
+
+
+
+SHIPWPN_21_NAME        | 毛勒炮
+SHIPWPN_21_DETAIL      | 向敌人发出多束强烈激光，造成20到100点伤害。
+
+SHIPWPN_22_NAME        | 变形光线
+SHIPWPN_22_DETAIL      | 造成250到1000伤害的强力光线武器。流体效果能还能伤害到其他飞船。
+
+
+SHIPWPN_23_NAME        | 水晶射线
+SHIPWPN_23_DETAIL      | 包裹住敌方飞船的水晶射线，能发动4次攻击，造成100到300点伤害，有3格攻击距离。
+
+
+//
+// Soil Enrichment techs
+//
+SOILENRICH_0_NAME     | 土壤改良
+SOILENRICH_0_DETAIL   | 将普通星球改造为肥沃星球，人口增长率提高50%，耗费150BC，将星球人口上限提高25%。
+
+
+SOILENRICH_1_NAME     | 进阶土壤改良
+SOILENRICH_1_DETAIL   | 将普通和肥沃星球改造为天堂星球，让人口增长率翻倍，耗费300BC，将星球的人口上限提高50%。
+
+
+//
+// Stargate tech
+//
+STARGATE_0_NAME      | 星门
+STARGATE_0_DETAIL    | 让你的飞船在建造了星门的行星之间穿梭，建造费用为3000BC。
+
+
+//
+// Stasis Field tech
+//
+STASIS_0_NAME      | 极冻之域
+STASIS_0_BRIEF     | 敌人无法行动1回合
+STASIS_0_DETAIL    | 将敌舰冰冻1回合，射程为1格。被冰冻的飞船无法攻击和被攻击。
+
+
+//
+// Stream Weapon techs
+//
+STREAMWPN_0_NAME    | 离子束发射器
+STREAMWPN_0_BRIEF   | 敌军护甲减少20%
+STREAMWPN_0_DETAIL  | 发出一道强大的离子光束，降低敌舰20%的护甲。每多2艘飞船发射离子光束，效果加1%，至多减少50%的护甲。
+
+
+STREAMWPN_1_NAME    | 中子束发射器
+STREAMWPN_1_BRIEF   | 敌军护甲减少40%
+STREAMWPN_1_DETAIL  | 发出一道强大的中子光束，降低敌舰40%的护甲。每多2艘飞船发射离子光束，效果加1%，至多减少75%的护甲。
+
+
+//
+// Subspace Interdictor tech
+//
+SUBSPACEINT_0_NAME    | 亚空间拦截器
+SUBSPACEINT_0_DETAIL  | 限制敌人使用亚空间传送器和军队传送器。这个装置会被自动安装在行星的导弹基地上。
+
+
+//
+// Subspace Teleporter tech
+//
+SUBSPACETEL_0_NAME    | 亚空间传送器
+SUBSPACETEL_0_BRIEF   | 飞船可以在战场上传送
+SUBSPACETEL_0_DETAIL  | 飞船在移动或攻击前，可以直接把飞船传送到战场的任何位置。
+
+
+
+
+//
+// Ship Torpedo Weapon techs
+//
+TORPEDO_0_NAME        | 反物质鱼雷
+TORPEDO_0_BRIEF       | 每2回合发射1次
+TORPEDO_0_DETAIL      | 自动瞄准鱼雷，每次造成30点伤害，但隔1回合才能发射1次。每个鱼雷都配备了让精准度+4的制导设备。
+
+TORPEDO_1_NAME        | 地狱火鱼雷
+TORPEDO_1_BRIEF       | 
+TORPEDO_1_DETAIL      | 高速鱼雷，它的速度为5，配备了精准度为6的制导设备，造成4次25点伤害。
+
+
+
+TORPEDO_2_NAME        | 质子鱼雷
+TORPEDO_2_BRIEF       | 每2回合发射1次
+TORPEDO_2_DETAIL      | 一种能量鱼雷，造成75点伤害，但每隔1回合才能发射1次。配备了精准度为+6的制导设备。
+
+
+
+TORPEDO_3_NAME        | 等离子鱼雷
+TORPEDO_3_BRIEF       | 伤害-15/每格
+TORPEDO_3_DETAIL      | 一种高精度能量鱼雷，造成150点伤害，移动速度为6。每移动1格，它的伤害就减少15。每隔1回合才能发射1次。配备了精准度为+7的制导设备。

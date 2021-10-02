@@ -1,8 +1,0 @@
-// These are the fonts used for the 5 font types within the game.
-
-logo,       YatraOne-Regular.ttf,     100
-dialogue,   YatraOne-Regular.ttf,     100
-narrow,     YatraOne-Regular.ttf,     100
-normal,     YatraOne-Regular.ttf,     100
-plain,      YatraOne-Regular.ttf,     100
-language,   YatraOne-Regular.ttf,     100
