@@ -216,6 +216,7 @@ public class NewShipTemplate implements Base {
         float topSpeed = 0;
         float antiDote = 0;
         float avgECM = 0;
+        float avgHP = 0;
         float bestSHD = 0;
         float longRangePct = 0;
         float totalCost = 0;
@@ -266,6 +267,7 @@ public class NewShipTemplate implements Base {
                     topSpeed = enemyDesign.combatSpeed();
                 float count = ev.empire().shipDesignCount(enemyDesign.id());
                 avgECM += enemyDesign.ecm().level() * enemyDesign.cost() * count;
+                avgHP += enemyDesign.hits() * enemyDesign.cost() * count;
                 if(enemyDesign.shieldLevel() > bestSHD)
                     bestSHD = enemyDesign.shieldLevel();
                 if(isLongRange)
@@ -286,6 +288,7 @@ public class NewShipTemplate implements Base {
         {
             longRangePct /= totalCost;
             avgECM /= totalCost;
+            avgHP /= totalCost;
         }
         if(missileTotal+nonMissileTotal > 0)
         {
@@ -383,6 +386,10 @@ public class NewShipTemplate implements Base {
                 break;
         }
         
+        //if we couldn't determine other's HP, we take our own after putting on armor
+        if(avgHP == 0)
+            avgHP = d.hits();
+        
         for (int j=0;j<maxSpecials();j++)
         {
             if(d.special(j).beamRangeBonus() > 0)
@@ -403,15 +410,15 @@ public class NewShipTemplate implements Base {
         
         switch (role) {
             case BOMBER:
-                setOptimalWeapon(ai, d, d.availableSpace(), 1, false, false, false, topSpeed, avgECM, bestSHD, antiDote, false);
+                setOptimalWeapon(ai, d, d.availableSpace(), 1, false, false, false, topSpeed, avgECM, bestSHD, antiDote, false, avgHP);
                 //setOptimalWeapon(ai, d, d.availableSpace(), 3, needRange, true, false, topSpeed, avgECM, bestSHD); // uses slot 1
                 break;
             case DESTROYER:
-                setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, bestSHD, antiDote, true); // uses slots 0-3
+                setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, bestSHD, antiDote, true, avgHP); // uses slots 0-3
             case FIGHTER:
             default:
-                setOptimalWeapon(ai, d, d.availableSpace() * hybridBombRatio, 1, false, false, false, topSpeed, avgECM, bestSHD, antiDote, false);
-                setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, bestSHD, antiDote, false); // uses slots 0-3
+                setOptimalWeapon(ai, d, d.availableSpace() * hybridBombRatio, 1, false, false, false, topSpeed, avgECM, bestSHD, antiDote, false, avgHP);
+                setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, bestSHD, antiDote, false, avgHP); // uses slots 0-3
                 break;
         }
         //Since destroyer is always tiny and we want to make sure we have a weapon, the computer is added afterwards
@@ -730,7 +737,7 @@ public class NewShipTemplate implements Base {
     
 // ********* FUNCTIONS SETTING ANTI-SHIP AND ANTI-PLANET WEAPONS ********** //
 
-    private void setOptimalWeapon(ShipDesigner ai, ShipDesign d, float spaceAllowed, int numSlotsToUse, boolean mustBeRanged, boolean mustTargetShips, boolean prohibitMissiles, float missileSpeedMinimum, float avgECM, float avgSHD, float antiDote, boolean downSize) {
+    private void setOptimalWeapon(ShipDesigner ai, ShipDesign d, float spaceAllowed, int numSlotsToUse, boolean mustBeRanged, boolean mustTargetShips, boolean prohibitMissiles, float missileSpeedMinimum, float avgECM, float avgSHD, float antiDote, boolean downSize, float avgHP) {
         List<ShipWeapon> allWeapons = ai.lab().weapons();
         ShipWeapon bestWeapon = null;
         float bestScore = 0.0f;
@@ -765,9 +772,15 @@ public class NewShipTemplate implements Base {
                         missileDamageMod *= swm.shots() / 5.0f;
                     }
                     float currentScore = wpn.firepower(shield) * missileDamageMod / wpn.space(d);
+                    float overKillMod = 1.0f;
+                    float expectedDamagePerShot = max(0,(wpn.minDamage() + wpn.maxDamage()) / 2.0f - shield);
+                    if(expectedDamagePerShot > avgHP && mustTargetShips)
+                        overKillMod = avgHP / expectedDamagePerShot;
+                    currentScore *= overKillMod;
+                        
                     if(wpn.isBioWeapon() && allowBioWeapons(ai))
                         currentScore = bioWeaponScoreMod(ai) * TechBiologicalWeapon.avgDamage(wpn.maxDamage(), (int)antiDote) * 200 / wpn.space(d);
-                    //System.out.print("\n"+ai.empire().name()+" "+d.name()+" wpn: "+wpn.name()+" score: "+currentScore);
+                    //System.out.print("\n"+ai.empire().name()+" "+d.name()+" wpn: "+wpn.name()+" score: "+currentScore+" overKillMod: "+overKillMod+" avgHP: "+avgHP+" expectedDamagePerShot: "+expectedDamagePerShot);
                     if(currentScore > bestScore)
                     {
                         bestWeapon = wpn;
