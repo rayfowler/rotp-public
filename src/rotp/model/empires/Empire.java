@@ -123,7 +123,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     private int securityAllocation = 0;
     private int empireTaxLevel = 0;
     private boolean empireTaxOnlyDeveloped = true;
-    private boolean divertColonyExcessToResearch = UserPreferences.divertColonyExcessToResearch();
+    private boolean divertColonyExcessToResearch = false;
     private float totalReserve = 0;
     private float tradePiracyRate = 0;
     private NamedObject lastAttacker;
@@ -381,8 +381,10 @@ public final class Empire implements Base, NamedObject, Serializable {
         status = new EmpireStatus(this);
         sv = new SystemInfo(this);
         // many things need to know if this is the player civ, so set it early
-        if (empId == Empire.PLAYER_ID) 
+        if (empId == Empire.PLAYER_ID) {
+            divertColonyExcessToResearch = UserPreferences.divertColonyExcessToResearch();
             g.player(this);
+        }
 
         // if not the player, we may randomize the race ability
         if ((empId != Empire.PLAYER_ID) && options().randomizeAIAbility())
