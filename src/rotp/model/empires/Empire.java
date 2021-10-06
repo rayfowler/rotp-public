@@ -56,6 +56,7 @@ import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.Ships;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.galaxy.Transport;
+import rotp.model.incidents.DiplomaticIncident;
 import rotp.model.incidents.GenocideIncident;
 import rotp.model.planet.PlanetType;
 import rotp.model.ships.ShipDesign;
@@ -433,6 +434,13 @@ public final class Empire implements Base, NamedObject, Serializable {
         message = listener.replaceTokens(message, "your");
         if (other != null)
             message = other.replaceTokens(message, otherName);
+        return DiplomaticReply.answer(true, message);
+    }
+    public DiplomaticReply respond(String reason, DiplomaticIncident inc, Empire listener) {
+        String message = DialogueManager.current().randomMessage(reason, this);
+        message = replaceTokens(message, "my");
+        message = listener.replaceTokens(message, "your");
+        message = inc.decode(message);
         return DiplomaticReply.answer(true, message);
     }
     public void chooseNewCapital() {
