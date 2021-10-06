@@ -1,0 +1,89 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Human specific dialogue
+
+CONTACT_HONORABLE          | Vi är [my_race_plural], och jag har blivit sänd i kommunikationssyfte, [your_title], och jag kan börja med att säga att vi är väldigt glada att få etablera kontakt med er. Om ni behöver något från Triumviratet, vad som helst, tveka inte att fråga.
+CONTACT_PACIFIST           | Varmt hälsade, [your_race_plural]. Ni representerar [your_empire]? Jag representerar [my_empire], och jag hoppas att det här kommer vara det första av många utbyten som vänner mellan våra två folk.
+CONTACT_ERRATIC            | Vi människor föredrar att lösa våra problem med förhandlingar och diplomatiska interaktioner. Om ert folk skulle vara sådana som föredrar mer våldsamma metoder, då kan vi ta vid de sätt som ni trivs bäst med också, [your_race_plural].
+//
+GREETING_01                | Ah! Ambassadören från [your_empire] är här! Vill du ha något att äta eller dricka? Gör dig bekväm och låt oss höra vad vi kan göra för dig idag.
+GREETING_04                | Hallå! Önskar ni efterfråga något av Triumviratet? Jag är inte säker på att jag kan framföra ärendet till vårt högsta ledarskap, men kanske ert ärende inte gäller något som behöver involvera dem?
+GREETING_07                | Sedär, [your_raceposs] ambassadör är här på ärende. Vad exakt är det ni behöver av oss? Det vore bäst att inte sikta alltför högt med förfrågningarna.
+//
+DECLAREWAR_HATE_01         | Triumviratet är mer än gärna villigt att visa varför man inte ska irritera ett imperium med överlägsen militär styrka. Ni gör väl i att lära er något från den här läxan... om ni skulle överleva, det vill säga.
+DECLAREWAR_HATE_02         | Det smärtar mig att tänka på all tid och möda vi lagt på att vara trevliga och tålmodiga med er när vi uppenbarligen var ämnade för ett långt och blodigt krig.
+DECLAREWAR_HATE_03         | Vi har inte längre skäl att hålla en smilande front längre! Vi kommer inte att tolera vad som krävs av oss för att dela galaxen med er sort ens en sekund längre! Oavsett det pris vi måste betala!
+
+DECLAREWAR_ERRATIC_01      | Det har många gånger förts på tal här på sistone att vår militär börjar bli lata och bekväma. Förhoppningsvis kommer ett krig med er få dem i form i tid för Triumviratets mer farliga fiender.
+DECLAREWAR_ERRATIC_02      | Känner ni till stridsövningar, ambassadör? Simulerade battaljer där vi låter våra styrkor mötas i träningssyfte. Nu hoppas vi att ett verkligt krig med er kommer att tjäna det syftet än bättre.
+DECLAREWAR_ERRATIC_03      | Inget enar folkmassorna på riktigt samma sätt som en gemensam fiende, ambassadör! Om ni inte tjänar våra syften å den diplomatiska sidan, så kan ni åtminstone vara till nytta som en distraktion för vårt folk att samlas inför.
+//
+DECLAREWAR_MILITARY_01     | Det hade varit bättre för er att lämna territorium till oss genom diplomatiska metoder. Att ni vägrar tvingar oss nu att ta till alternativa medel.
+DECLAREWAR_MILITARY_02     | Som ni mycket väl vet, behöver en växande befolkning kontinuerligt expanderande territorium för att kunna bemöta dess olika behov. Tiden är nu inne för oss att expandera, och det territorium vi behöver är det som ligger i era händer.
+DECLAREWAR_MILITARY_03     | Våra Triumvirer är lika hängivna folket, som folket är hängivna Triumvirerna. Om våra behov leder oss till slutsatsen att vi behöver era planeter för kolonisation, då ger de gladeligen sin liv för det större syftet!
+//
+DECLAREWAR_ALLIANCE_01     | Det finns många sätt att imponera på sina allierade med, ambassadör. Att röja er ur vägen kommer säkerligen förhöja [other_raceposs] åsikt om oss, så ni kan väl försöka att visa vår bästa sida.
+DECLAREWAR_ALLIANCE_02     | Triumviratet kommer aldrig att lämna sina allierade ensamma med deras fiender! Med Människan och [other_race] enade, så har ni ingen chans till seger!
+DECLAREWAR_ALLIANCE_03     | Galaxen tillhör inte automagiskt er bara för att ni har stark militär. Vi sluter med iver upp med [other_race], och tillsammans kommer vi se till att ni blir straffade för era många brott!
+//
+DECLAREWAR_SPYING_01       | Det verkar som om ni trodde att ni skulle kunna komma undan med fulspel bara för att vi föredrar diplomati. Ingen fara! Vi kommer att hjälpa er inse just vilket pass stort misstag ni begått!
+DECLAREWAR_SPYING_02       | Det skulle ha varit bättre för oss båda om ni hade visat samma tillgivenhet till diplomati som oss. Vår respons till ert lilla krig under bordet kommer vara ett något mer... traditionellt sätt att föra krig.
+DECLAREWAR_SPYING_03       | Vi hade hoppats på att ni skulle kunna hålla med om att använda diplomatiska förhandlingar som den metod som används för att erhålla sina intressen. Eftersom ni så uppenbarligen har mörkare idéer, är jag rädd att vi inte har annat val än detta typ av gensvar.
+//
+DECLAREWAR_ATTACK_01       | Nu behöver vi inte längre stå oss med en diplomatisk fasad. Er attack mot oss uttrycker ett enkelt bevis för att ni utjänat er bruklighet. Men oroa er inte! Jag kan säkert tänka mig att vi kan avvara en sida för ert folk i historieböckerna någonstans.
+DECLAREWAR_ATTACK_02       | Underskatta inte Triumviratets militär! Om det är strid ni vill ha, då kan vi gladeligen säga att det är strid ni ska få, ambassadör!
+DECLAREWAR_ATTACK_03       | Mänskligheten har genomgått flertalet mörka tidsåldrar, men varje gång har vi kommit ur dem starkare och visare än vi var innan. Jag kan försäkra dig, ambassadör, att den här gången kommer inte att vara annorlunda.
+//
+DECLAREWAR_OPPORTUNITY_01  | Varje val vi gör är till sist ändå för att tjäna våra egna syften, ambassadör. Vanligtvis föredrar vi förhandlingar, men eftersom det inte tjänar mycket till att ha er kvar, så kan ett snabbt litet krig mot er bättre tjäna våra syften.
+DECLAREWAR_ASSASSIN_01     | Jag blev stum av häpnad då jag hörde att vad som verkade vara ett intelligent folkslag skulle kunna göra något så avskyvärt som att mörda en ambassadör. Vi kommer statuera ett exempel användandes er här, så att inget annat imperium någonsin kommer att handla på det här viset mot Triumviratet som ni gjort!
+
+OFFER_PEACE_01             | Vid det här laget måste ni väl ändå kunna se att krig som dessa endast för med sig repeterade tragedier. Låt oss sätta stopp för den här dårskapen innan mer av [your_race] och [my_raceposs] dyrbara blod spills. Slut upp med oss i ett fredsavtal, ett slut på kriget och formandet av en ny framtid som våra barn kan vara stolta att ha ärvt!
+OFFER_TRADE_01             | Det finns ett talesätt hos oss vid [my_home] att "krig är oundvikligt", men vi lärde oss för länge sedan att det inte slår in om rikedom och välfärd får flöda. Låt oss förena oss i sökandet efter den välfärden. Vad sägs om att börja med, säg, [amt] BC per år? 
+OFFER_PACT_01              | Vi vet båda att krig kan börja plötsligt och av rena olyckshändelser när stora imperier måste expandera genom galaxen. Och det vore det sista Triumviratet skulle önska, att gå till krig mot ett folk så pass exemplariskt som ert, och ett avtal om Icke-aggression skulle låta båda våra folk sova lugnare om natten. Håller ni inte med? 
+OFFER_ALLIANCE_01          | Ni [your_race] är sannerligen ståtliga! Ambassadör, en tanke slog mig just: låt oss formalisera en allians mellan [your_race] och vi [my_race]. Tillsammans kan vi lära den här galaxens avskum att diplomati, och inte våld, är den enda sanna vägen!
+
+WARN_TRESPASSING_01        | Ambassadör, det verkar som om en flotta tillhörandes [your_race] har tagit upp position i [my_raceposs] rymdutrymme. Ni kan säkert förstå att det här är något vi inte kan tillåta? Ingen fara, ni kan helt enkelt avlägsna era flottor, så kan vi glömma att det här någonsin hänt. 
+WARN_EXPANSION_01          | Även om Triumviratet önskar respektera ert folks önskningar, så kan vi inte blunda för en så pass aggressiv expansion av territorium. Ni kommer säkerligen avböja vidare expansion till fördel för att kunna bevara våra diplomatiska band, stämmer inte det, ambassadör?
+WARN_BUILDUP_01            | Ambassadör, du som är vettig. Våra militära officerare håller på och lever om över de stora flottor ni samlat upp! Bevisa att de har fel att oroa sig över det här genom att dra tillbaka på skeppsbyggandet!
+WARN_SKIRMISH_01           | Jag har just fått en bister rapport om en skärmytsling mellan Triumviratets skepp och en flotta tillhörandes [your_empire]. Se till att det här inte händer igen, och att vi kan bibehålla öppen förbindelse, annars är jag rädd att krig kommer vara vår ofrånkomliga framtid!
+WARN_ATTACKED_01           | Inte bra, ambassadör: väldigt inte bra. Att anfalla oss vid [system]... vad tänker ni egentligen? Jag försöker hålla nere militärens hundar för min hängivenhet till diplomati, men om ni fortsätter på det här viset kommer det inte finnas något jag kan göra för att stilla deras vrede.
+WARN_INVADED_01            | Våra generaler är utom sig av ilska över detta tilldrag ert folk tagit till! Med er invasion av [system]-systemet, så är de redo att gå till strid till fullo! Ni måste sätta stopp för det här! Det är väl inte så att ni försöker starta krig!?
+WARN_ESPIONAGE_01          | Mitt folk är inte obekanta med spionage, och det har varit en del av vår kultur sedan ett bistert frostigt krig för många sekler sedan. Men ni måste väl ändå förstå att kontinuerliga försök att stjäla våra hemligheter kommer i framtiden att gengäldas? [framed]
+WARN_SABOTAGE_01           | Vanligt spionage kan vi begripa, men sabotage!? Jag ska göra vad jag kan för att lugna ner våra generaler, men om ni försöker er på något sådant här igen tvivlar jag på att jag kommer kunna, eller ens vilja, hjälpa er igen. [forced]
+WARN_BIOWEAPON_01          | Jag har blivit notifierad att ni använt ett biovapen på civila vid [system]. Jag är... ärligt talad förstummad. Jag ska göra vad jag kan för våra diplomatiska bands skull, men jag kan inte säga att jag känner mig entusiastisk om reaktionen inifrån Triumviratet.
+WARN_GENOCIDE_01           | Vad har ni gjort?! En enastående, antik kultur har gått förlorad för alltid! Jag ryser av tanken på hur Triumvirerna kommer reagera på nyheterna: att folkutrota [victim_race] är den fullständiga motsatsen till vår filosofi!
+WARN_FINAL_WAR_01          | Äntligen har galaxen fattat beslut att förenas i fred och överenskommelse, men ni, ni av alla vägrar vårt demokratiskt valda tillvägagångssätt? Efter alla våra tidigare välvilliga interaktioner hade jag fel då jag trodde bättre om er. Men jag är varse om att ert svek snart kommer att åtgärdas!
+WARN_COUNCIL_VOTE_01       | Jag kan erkänna att jag blev lite besviken i det galaktiska rådet, ambassadör. Jag hoppas att det här var blott ett misstag, och också en engångsföreteelse, så att vi snart kan, som vi människor gillar att säga, "dra ett streck över vad som varit".
+WARN_OATHBREAKER_01        | Pålitlighet är grunden för all diplomati, ambassadör. Genom att bryta ert ord, så har ni spottat på vår tillit, och jag kan försäkra er om att våra diplomatiska förbindelser har tilldelats ett sår som troligtvis aldrig riktigt kommer att läka.
+WARN_ATTACKED_ALLY_01      | Ambassadör, jag rekommenderar starkt att ni undviker vidare attacker mot [defender_race]. Vi har svurit ed och bildat en allians med dem, och inte ens jag kommer kunna hålla tillbaka vår militär om ni insisterar på att fortsätta med det här våldsmäkleriet!
+WARN_REBELLING_AGAINST_01  | Det är omöjligt att DU och inte VI har blivit vald att leda det Galaktiska Rådet! Triumvirerna kommer bli utom sig av vrede! Jag är rädd att de kommer att se krig som enda kvarvarande alternativ!
+//
+PRAISE_COUNCIL_VOTE_01     | Min gode vän ambassadören! Jag ville bara kort säga: bra gjort i det galaktiska rådet idag! Triumviratet uppskattar alltid de som stöder vår filosofi, och vi är mycket glada att en storslagen allierad som ni fortsätter att förtjäna den uppskattningen.
+PRAISE_COUNCIL_VOTE_02     | Ah, ambassadören från [voter_empire]. Jag är glad att jag fick tag på dig innan vi alla begav oss iväg. Den tro ni visar för Triumviratets ideal är ett exempel för oss alla! Se till att kontakta mig efter att vi återvänt hem igen, så att vi vidare kan utveckla våra diplomatiska band!
+PRAISE_COUNCIL_VOTE_03     | Så ni röstade på oss trots allt, hm? Det gläder mig att ni äntligen fattat vettet. Om ni nu är villiga att smörja era diplomatiska förbindelser till Triumviratet, då skulle kanske jag kunna vara villig att lägga in ett gott ord om er.
+
+PRAISE_ATTACKED_ENEMY_01   | Jag tvivlar inte på att [defender_race] inte förväntade sig att Triumviratet skulle dra ut i krig, men jag vet säkert att de inte förväntade sig att våra vänner [your_race] att också sluta sig samman! Tillsammans kommer vi visa dem att diplomati och tillit är de mest viktiga verktyg man kan bemästra!
+PRAISE_ATTACKED_ENEMY_02   | Idag är en bra dag för krig, ambassadör. Vi föredrar att bilda vänskap under mycket mer fredliga omständigheter, men om kriget mot [defender_race] är början på en lång vänskap mellan mitt folk och ert, då är det här otvivelaktigen ett krig värt att utkämpas!
+PRAISE_ATTACKED_ENEMY_03   | Triumviratet är mer än nog kapabelt att ta sig an en fiende som fnyser åt våra initiativ till att upprätthålla fredliga relationer. Men, om ni insisterar på att gå med i den här striden för att visa er välvilja, då kommer vi definitivt inte att störa eller stå i er väg!
+
+PRAISE_TRADE_01            | Det här är precis vad livet handlar om! Goda vänner och berikande handelsavtal är är värt långt mer än fiender och förödande krig! Jag är väldigt glad att ert folk väljer att vara våra vänner, och jag är säker på att Triumvirerna känner sig precis lika glada!
+PRAISE_TRADE_02            | Ja, tillit är grunden för diplomatiska relationer, men ömsesidigt gynnsam handel skader verkligen inte, eller hur? Jag hoppas att vi kan fortsätta uppehålla avtalet in i evigheten, och att vi också kan upptäcka nya sätt för oss att hjälpa varandra. "Tjänster och gentjänster", som vi människor gillar att säga!
+
+PRAISE_REBELLING_WITH_01   | Frukta icke, ambassadör! Vi känner också igen det galaktiska rådets sanna skepnad: en korrupt diktatur som försöker framställa sig som fredlig samexistens. Vi kommer stå tillsammans med er, och inget kommer att kunna stoppa oss innan vi till sist blir fria dessa despoter för alltid!
+
+ACCEPT_TRADE_01            | Detta handelsavtal kommer gynna oss båda, ambassadör. [my_empire] och [your_empire], vänner till en melodi om [amt] BC årligen! Det låter inte så tokigt, håller du inte med? 
+RESPOND_IGNORE_THREAT_01   | Det här hotet ni kommer med är något sorts skämt, antar jag? Ja, förstås, ett skämt! Haha! Underhållande, ambassadör!
+RESPOND_STOP_SPYING_01     | Ja det här blev stökigt. Triumviratet känner inte vid denne ströspelare till agent som agerade på eget bevåg genom att utföra spionage mot ert folk. Sänd över dem, så ska vi lära dem en läxa, och jag försäkrar att det här inte kommer att hända igen.
+RESPOND_STOP_ATTACKING_01  | Det här är en gammal tradition för oss [my_race], som vi kallar "vapenrassel." Ni kan tänka våra vapen som adekvat rasslade, ambassadör: våra flottor kommer återvända hem igen nu.

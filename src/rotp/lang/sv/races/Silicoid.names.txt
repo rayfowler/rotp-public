@@ -1,0 +1,21 @@
+// all possible names
+name: Kiseloider, Vulkanoider, Magmoider, Granitoider, Sedimentoider
+
+desc1: Xenofobiska Expansionister
+desc2: Immuna mot Ogästvänligt klimat
+desc3: [race] är ett gåtfullt och mineralätande folk som genomsöker galaxen i jakt på deras evige fiende.
+
+// possible home system names
+home: Krislon, Geode, Kvartshem, Magmati, Kalcito
+
+title:     Kejsare
+fulltitle: Kristallkejsare
+
+// possible leader names
+leader: Carnax, Krystallin, Sten-Steir, Granid, Igneous, Sedimin
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Gruskorn, Skiffer, Kula, Kristall, Pjäs, Mineral, Sand
+ship2: Glimmer, Marmor, Kvarts, Porfyr, Scoria, Sediment, Gabbro
+ship3: Magma, Lava, Fältspat, Ryolit, Granit, Basalt, Migmatisk
+ship4: Ametist, Granat, Smaragd, Topaz, Rubin, Safir, Diamant

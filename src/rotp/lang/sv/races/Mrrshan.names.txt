@@ -1,0 +1,22 @@
+// all possible names
+name: Mrrshan, Prrshan, Mjaushan, Svanshan, Vässhan
+
+desc1: Skoningslösa Militarister
+desc2: Pricksäkra Skyttar
+desc3: [raceposs] flockar utforskar galaxen i jakt på byte.
+
+// possible home system names
+home: Fierias, Fierina, Miamara, Miriana, Yailaria
+
+title:     Khan
+fulltitle: Khan
+
+// possible leader names
+leader: Jasana, Miamar, Mirana, Prrsha, Shandara, Yalara
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Vässla, Iller, Vild, Skogskatt, Tigeröga, Lejontand, Spänst
+ship2: Lodjur, Järv, Karakal, Serval, Oncilla, Manul, Djungelkatt
+ship3: Panter, Leopard, Stridskatt, Gepard, Ozelot, Puma, Jaguarundi
+ship4: Elitjägare, Tiger, Sabeltandad, Lejon, Jaguar, Liger, Snöleopard
+

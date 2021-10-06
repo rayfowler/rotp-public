@@ -1,0 +1,83 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Darlok specific dialogue
+
+CONTACT_AGGRESSIVE         | Vi hälsar er denna dag, strövandrare av det kosmiska tomrummet. Vi vill också erbjuda ett varningens ord: förhindra inte vårt sökande, eller så kanske ni inte kommer leva länge nog att ångra det.
+CONTACT_RUTHLESS           | Vi hälsar er, innevånare av främmande rymd. Det vore bäst för er om ni gjorde ert bästa för att försäkra er om att våra relationer hålls... ömsesidigt förmånliga.
+CONTACT_ERRATIC            | En märklig tillfällighet leder till ett möte bland ett hav av stjärnor. Var på er vakt mot mörkret i denna himlavalvens avgrund, för ni kan finna att den håller många ting man inte förmår se...
+//
+GREETING_01                | Ni har visat er ha värde för våra planer. Vi kommer göra vad vi kan för att assistera er i vad nu som kan vara era.
+GREETING_04                | Tala.
+GREETING_07                | Du förstår inte vilken fräckhet du uppvisar när du efterfrågar vår hjälp. Det är nästan så att det är roande.
+//
+DECLAREWAR_HATE_01         | Vi har tolererat mycket i strävan för vad vi behöver, men vi är tacksamma att vi inte behöver tolerera er närvaro mycket längre, [your_race].
+DECLAREWAR_HATE_02         | Oupphörliga otyg! Vi kommer inte längre vara till tåls med er dårskap! Om era arméer är förberedda eller inte, kommer ni ändå att möta ert slut oavsett!
+DECLAREWAR_HATE_03         | Skurkar! Vad är meningen med att vårt folk lever väl här, då vi ändå måste dela galaxen med er sort. Ta vid era förberedande initiativ! Vi kommer nämligen vräka ut er från denna tidsrymd även om varenda en av oss dör i försöket.
+DECLAREWAR_ERRATIC_01      | Vårt folk säger ofta att kniven på stridsfältet dödar lika väl som kniven i mörkret. Ni kommer snart bli varse varför.
+DECLAREWAR_ERRATIC_02      | Har du någonsin skådat upp bland stjärnorna och undrat vad som gömmer sig i mörkret mellan ljuspunkterna? Känner ni inte till visdomen i att vara återhållsam med sina önskningar, eftersom de kan gå i uppfyllelse?
+DECLAREWAR_ERRATIC_03      | I tider av stor osäkerhet, kan du mitt i allt upptäcka att den mest ringaktiga varelse ändå kan utdela ett dödligt utfall.
+DECLAREWAR_MILITARY_01     | Vi har ännu inte funnit vad vi strävar efter, härnäst kommer alltså att vi ta från er platser våra ögon ännu inte skådat. Lämna över era planeter, eller stupa försvarandes dem.
+DECLAREWAR_MILITARY_02     | Det är inte omöjligt att svaren vi söker ligger dolda på en planet i ert imperium, så vi kommer ta dem alla. Vet att det är inget personligt, [your_race], men desperata tider kräver desperat handling.
+DECLAREWAR_MILITARY_03     | Om vi inte kan finna svaret på vår svårbesvarade gåta, finns det ingen mening med att ens fortsätta! Om lösningen ligger på en av era världar, då kommer vi att ge allt vi behöver för att få tag på den!
+DECLAREWAR_ALLIANCE_01     | Vettvilling! Ni har gjort vår allierade till er fiende, och har på så vis gjort oss till er fiende! Vi kommer att slå ned er snarast: vi har inte tid att slösa på ert fumlande och sjabbel!
+DECLAREWAR_ALLIANCE_02     | Det är inte ofta som vi lägger oss i andras bestyr. Men, när en allierad som bistått vår strävan bönar om vår assistans, då kommer vi nog ändå att göra vad vi kan för att hjälpa dem.
+DECLAREWAR_ALLIANCE_03     | Det är mycket förnöjsamt att se era imperier slåss med varandra, men vi känner till det hot ni betyder. Vi hjälper mer än gärna [defender_race] att avlägsna den olägenhet för oss er fortsatta existens innebär.
+DECLAREWAR_SPYING_01       | Det roar oss att ni försöker med sådana här tilltag mot de som bemästrat ämnet "sekretess". Bestraffningen för ert misslyckande, däremot, kommer vara betydligt mindre lustigt.
+DECLAREWAR_SPYING_02       | Imponerande, att ni försöker utmanövrera oss med operationer i det fördolda. Jag kan inte låta bli att undra, kommer er militära styrka visa sig vara lika imponerande som er våghalsighet?
+DECLAREWAR_SPYING_03       | Trodde ni verkligen att detta klumpiga stövlande omkring skulle undgå vår ständigt vaksamma blick? Om ni är så pass arroganta att ni trodde att ert spionerande kunde undgå upptäckt, då är ni arroganta nog för att vi lätt ska kunna krossa i strid.
+DECLAREWAR_ATTACK_01       | Maken till fräckhet! Att anfalla oss helt öppet kan bara betyda att ni blivit intresserade i total utrotning!
+DECLAREWAR_ATTACK_02       | Odrägliga drumlar! Vi kommer snart få veta om den ihärdighet ni visar genom ert utfall mot oss matchas med en styrka i krig också!
+DECLAREWAR_ATTACK_03       | Lymmel! Skurkar! Vi kommer inte ge vika för er eller någon annan innan vår stora strävan är fullbordad! Bered er på vår hämnd!
+DECLAREWAR_OPPORTUNITY_01  | Politik handlar helt enkelt om att fånga tillfället. Vad vi kan märka så är det den som utnyttjar mest tillfällen som kommer ut som segrare. Det här är en sanning som gällt alltgenom historien, men också gäller nu.
+DECLAREWAR_ASSASSIN_01     | Skandalöst, att medvetet undanröja en ambassadör som kommer till er helt obeväpnad! Vi kommer ta er esoteriska kunskap för oss själva, och strö ert folks kvarlämnors aska i solvindarna!
+
+OFFER_PEACE_01             | Det där är tillräckligt med dödande för ett krig, ambassadör. Ett sådant slöseri med liv lär inte vara något som varken ert folk eller vårt har råd med. Vi föreslår ett direkt avslut på konflikten, för bådas vår framtid.
+OFFER_TRADE_01             | Även om det ibland är bäst med direkt problemlösning, så är det inte det enda sättet för ett imperium att avancera sina planer. Det finns en tid för handel i god tro, och vi tror att den tiden kan vara nu. Ska vi förslagsvis börja med... [amt] BC varje år?
+OFFER_PACT_01              | Dessa oändliga vidder håller okända faror för de som vågar utforska den. Låt oss minska hur mycket fara vi utsätter oss för. Ett avtal om icke-aggression mellan våra folk kommer att reducera riskerna med expansion över galaxen.
+OFFER_ALLIANCE_01          | Det finns de som skulle låta sina sina sinnen fördunklas av fruktan när de ser på oss. Vi tror inte att ert folk är bland de som ter sig på det viset. Låt oss sluta en allians mellan [my_race] och [your_race], och använda den fruktan andra har som en fördel för båda våra imperier.
+
+WARN_TRESPASSING_01        | Vi skulle helst inte vilja att gå till krig mot er just nu, men er närvaro vid [system] är svår att tolka som något annat än intrång på vår domän. Dra er genast undan, så kan ni visa att det här inte var något värre.
+WARN_EXPANSION_01          | Vi är inte blinda för de behov man kan uppfylla genom att expandera sitt territorium. Men vi behöver inte heller sitta och titta på medan ni roffar åt er varenda värld för egen del. Det är vår varning, ni nu fått höra, ambassadör av [your_empire]. 
+WARN_BUILDUP_01            | Har ni tänkt använda en så pass massiv flotta för att betrycka de runt omkring er med bruk av fruktan? Vet detta: om ni kommer fortsätta att hålla er med sådan överrustad militär, då kommer ni finna att andra imperier kommer att vara... mindre tillmötesgående än vad ni skulle hoppas på.
+WARN_SKIRMISH_01           | Vad har ni att säga om den mindre striden vid [system]-systemet? Vi hoppas för er skull att ni misstagit oss för ett annat imperium. Annars kan konsekvenserna vara digra och tunga. Mycket svåra minsann.
+WARN_ATTACKED_01           | Hur vågar ni gå till attack mot vårt folk, ambassadör?! Ni kan skatta er lyckliga att vår uppmärksamhet är fokuserad på något annat: nästa gång kommer ert mod mötas med gensvar!
+WARN_INVADED_01            | Ni far in i vårt utrymme som om det vore ert eget. En djärv plan, men vet väl att vi såg er komma, och tillåter er fria färd... än så länge.
+WARN_ESPIONAGE_01          | Vi finner ert bedrövliga försök till spionage riktigt lustigt. Vi tillåter er spion fri hemfärd den här gången, men vet väl att vi kommer finna ytterligare försök mycket mindre lustiga. [framed]
+WARN_SABOTAGE_01           | Så, [spy_empire] ämnar begå sabotage? Ert lilla försök här var för obetydligt för att vi ska hämnas, men om ni skulle försöka det här igen kan det hända att vi bemöter er som det skadedjur ni verkar försöka gestalta! [forced]
+WARN_BIOWEAPON_01          | En eländig sak, det där vapnet. Än värre är den som väljer att bruka det mot hjälplösa civila. Deras våndaskri kommer att eka genom rymden i sekel, och vi kommer stämma in i den refrängen när den förbannar ditt avskyvärda namn.
+WARN_GENOCIDE_01           | Hotet om sitt folks fullständiga utplåning är något jag inte är obekant med, men att se det så pass ledigt utfört... ni äcklar oss på sätt jag tvivlar att vi någonsin kommer ursäkta, ambassadör.
+WARN_FINAL_WAR_01          | När fred omsluter galaxen i sin varma famn, kommer alla som deltar finna vad de söker efter. Om ni [rebel_race_plural] hotar den freden, då hotar ni vår Strävan, och vi kommer att göra allt vi kan för att kasta ut er och låta er hamna i galaxens historieböcker.
+WARN_COUNCIL_VOTE_01       | Det är inte så att vi saknar uppskattning för sluga politiska manövrar, det är bara det att vi blir högst missnöjda när sådana manövrar försvårar saker för oss. Var försiktig, ambassadör: vi kanske inte ger er tillfälle att manövrera på det här viset igen.
+WARN_OATHBREAKER_01        | Värdelösa uslingar! Ack att vårt folk måste uthärda hela galaxens misstro, när det är ni som så oförläget bevisar att det är ni som är värdiga den attityden!
+WARN_ATTACKED_ALLY_01      | Vi varnar er bara en gång, ambassadör. Upphör med er aggression mot [defender_race]: de står med oss, och vi står samman med dem.
+WARN_REBELLING_AGAINST_01  | Ni är så fräcka att ni rycker det galaktiska rådets högsta säte ur våra händer, dess rätta mästare? Ert folk kommer att ångra den här dagen i misär, ambassadör.
+//
+PRAISE_COUNCIL_VOTE_01     | Vår strävan begär mycket av oss, ambassadör, och vi är evigt tacksamma att kunna lita på [voter_empire] i det galaktiska rådet. Var så säker att vi inte kommer att glömma det här nästa gång ni behöver hörsamma mitt folk.
+PRAISE_COUNCIL_VOTE_02     | Det var gott att se ert förtroende för oss idag, ambassadör. Vet väl att vi kommer ihåg vilka som bistått oss i vår strävan.
+PRAISE_COUNCIL_VOTE_03     | Självfallet så har ert folk någon sorts baktanke med att rösta på, och stödja oss. Vi är fortfarande på vår vakt mot dig och er sort, men det finns också ett visst mått av tacksamhet ändå.
+
+PRAISE_ATTACKED_ENEMY_01   | Vi förutsåg att ni skulle hjälpa oss i detta krig, ambassadör! Med vår kombinerade överlåtelse, kommer inte ens [defender_race] kunna stå emot oss särskilt länge!
+PRAISE_ATTACKED_ENEMY_02   | Det är gott att se andra sluta upp i striden mot de avskyvärda [defender_race]. Låt oss samarbeta för att avsluta det här med hast, så att vi sedan kan fortsätta söka efter viktigare mål.
+PRAISE_ATTACKED_ENEMY_03   | Om ni försöker att vinna mitt folks gunst, vet väl att ni kommer att finna det nära på oöverkomligt. Men att attackera [defender_race] är ett berömvärt första steg ändå.
+
+PRAISE_TRADE_01            | Är det inte märkligt hur något så pass enkelt som handel kan öppna så många dörrar för båda parter? Vårt folk är mycket nöjda, minsann, och vi hoppas ert folk också är nöjda.
+PRAISE_TRADE_02            | Vår pågående, ärliga handel visar sig vara en fortlöpande välsignelse för båda våra folk. Vi hoppas på att kunna fortsätta lita på varandra på det här viset, ambassadör.
+
+PRAISE_REBELLING_WITH_01   | Dårarna i rådet har valt illa, precis som vi visste att de skulle komma att göra. Ni gör helt rätt i att slåss mot dem, och vi gör rätt i att gå med i ert uppror.
+
+ACCEPT_TRADE_01            | Ni bidrar stort till vår strävan med detta handelsavtal, [your_race]. [amt] BC varje år kommer att hjälpa oss mer än ni anar.
+RESPOND_IGNORE_THREAT_01   | Beakta vem ni hotar. Ni kan finna gensvaret dolt i skuggorna mycket... problematiskt.
+RESPOND_STOP_SPYING_01     | Hur är det möjligt att NI lyckades fånga en av våra spioner? Nåväl, återlämna dem till oss med detsamma, så kommer vi att upphöra med våra små projekt från och med nu.
+RESPOND_STOP_ATTACKING_01  | Vi kommer återkalla våra flottor nu för er skull, men ni gör väl i att komma ihåg att det farligaste hotet är det som undgår upptäckt.

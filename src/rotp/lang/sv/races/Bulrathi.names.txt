@@ -1,0 +1,21 @@
+// all possible names
+name: Bulrathi, Ursathi, Ramrathi, Grizzlathi, Ursinus
+
+desc1: Aggressiva Ekologister
+desc2: Enastående Markstridstrupper
+desc3: De djärva och lojala [race] sätter värde på både styrka och visdom i deras filosofiske Härskare.
+
+// possible home system names
+home: Ursa, Ramhem, Grizzla, Pandara, Canis
+
+title:     Överhärskare
+fulltitle: Överhärskare
+
+// possible leader names
+leader: Bullux, Karge, Stronk, Krungo, Knaper, Krosslena
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Ram, Klo, Vasstand, Krokbete, Huggtand, Språng, Bärstjälk
+ship2: Jägare, Tapper, Spårare, Fiskare, Väderkorn, Rovdjur, Plockare
+ship3: Krigsbjörn, Vilde, Bärsärkagång, Väktare, Slaktare, Gladiator, Djärv
+ship4: Grizzly, Bestraffare, Bjärven, Skogsmara, Kosmospandan, Noshörning, Mörbultare

@@ -1,0 +1,84 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Silicoid specific dialogue
+
+CONTACT_XENOPHOBIC         | [my_empire] understår sig att erkänna er existens, [your_race] [your_name]. Vi kommer att kontakta er vid behov.
+CONTACT_RUTHLESS           | Imperiet ser er, [your_race]. Ni får hoppas för er skull, och för allt ni håller kärt, att vår [my_title] inte tycker illa om er åsyn.
+CONTACT_AGGRESSIVE         | Vi är [my_race_plural], vårt välde är stort, och vår makt utan like. Små [your_race], jag varnar er att ni inte frestar vår vrede, annars kommer ni att förstå meningen av en brinnande krigsiver.
+
+//
+GREETING_01                | Var hälsad, ambassadör. Låt höra vad du önskar av vår [my_title], och om er förfrågan är värdig kan vi ta en stund från vårt heliga krig att tillägna er.
+GREETING_04                | Håll er kort, ambassadör: [my_titlebest] prioriterar vårt heliga krig över allt annat.
+GREETING_07                | Förbannade [your_race]! Att störa oss i vårt heliga krig är att inbjuda vår vrede att falla över er!
+//
+DECLAREWAR_HATE_01         | Det har blivit alltmer tydligt att ni faktiskt är Quaralon's Avkomma vi sökt efter! Vi kommer finna den yttersta glädje i att utrota er från galaxen, som den farsot ni är!
+DECLAREWAR_HATE_02         | Vår profetias tid har äntligen kommit! Tag till vapen, ni Quaralon's Avkomma! Oavsett vem som vinner, så kommer vårt heliga krig snart se sitt slut!
+DECLAREWAR_HATE_03         | Äntligen har vi funnit er, Quaralon's Avkomma! Till strid! Er militära kapabilitet är utan vikt: Diamodus styrka kommer att leda oss till slutet!
+DECLAREWAR_ERRATIC_01      | Sedan vi först möttes har [my_titlebest] funderat över om ni kan vara vår svurne fiende. Att kriga och decimera ert folk kommer att ge oss en bättre idé om så är fallet.
+DECLAREWAR_ERRATIC_02      | Vår tid som grannar i Världsrymden har inte varit illa, men även den minsta chans att ni är Quaralon's Avkomma förklädda är skäl nog för oss att förklara krig.
+DECLAREWAR_ERRATIC_03      | Även den minsta risk att ni skulle vilja oss illa är mer än vad vi kan tolerera. Vi ska rena galaxen från er smuts, eller dö försökandes.
+DECLAREWAR_MILITARY_01     | Ni understår er att göra intrång på vårt territorium? Nåväl, ni kommer snart att bli viss att vår vrede inte är något att leka med, [your_race], och därmed kommer ni förstå djupet av ert misstag.
+DECLAREWAR_MILITARY_02     | Ni gör bäst i att komma ihåg detta, patetiska [your_race]: alla världar i Världsrymden tillhör [my_empire] av gudomlig rätt, och vi kommer att ta upp strid över vår rätt med en krigsiver som skakar stjärnorna!
+DECLAREWAR_MILITARY_03     | Vi kommer inte tillåta er beslagta ens en sten till på världar som egentligen tillhör oss! Er militära styrka kommer ställas mot vår iver och övertygelse i tro. Låt oss se vem som går segrande ur den striden!
+DECLAREWAR_ALLIANCE_01     | Det var ett misstag att förklara krig på en av Imperiets allierade. Be att ni era gudar har nåd med er, för ni kommer inte finna någon från oss.
+DECLAREWAR_ALLIANCE_02     | Vår allierade har informerat oss att ni har valt att gå till krig mot dem: i och med det har ni således förklarat krig mot oss också. Bered er för strid!
+DECLAREWAR_ALLIANCE_03     | Vi bryr oss inte om [other_raceposs] öde, men vi kan använda det här tillfället som en möjlighet att utrota ert släkte från galaxen, så att vi kan fortsätta söka vårt heliga krigs syfte.
+DECLAREWAR_SPYING_01       | Patetiska [your_race]! Denna dag kommer ni bli viss dårskapen i att stjäla Imperiets hemligheter!
+DECLAREWAR_SPYING_02       | Ni vill så pass gärna uppdaga våra hemligheter? Låt mig då uppenbara den mest viktiga av dem: Vi förlåter inte, och vi glömmer inte. Bered er för krig!
+DECLAREWAR_SPYING_03       | Tror ni er verkligen vara i en position där ni kan stjäla våra hemligheter utan konsekvens eller mothugg? Ni kommer snart bli viss dårskapen i er arrogans.
+DECLAREWAR_ATTACK_01       | Äntligen har ni visat er sanna skepnad, Quaralon's Avkomma! Ingen, utom vår mest hatade fiendes yngel, skulle vara dåraktig nog att så pass djärvt utmana oss! Bered er för er slutliga strid!
+DECLAREWAR_ATTACK_02       | Länge har vi misstänkt att ni var vår evige fiendes avkomma! Med detta utfall har ni bekräftat det som bestående faktum! Till sist kommer vår profetia äntligen att uppfyllas!
+DECLAREWAR_ATTACK_03       | Banditer! Skurkar! I vår mörka tid understår ni er att göra ett sådant utfall mot OSS!? Nu har ni sannerligen gett er till känna som vår evige fiende, ingen skillnad i militär styrka kommer att hålla oss tillbaka från att utrota er!
+DECLAREWAR_OPPORTUNITY_01  | När vi färdas genom Världsrymden, i kampanj för vårt heliga krig, måste vi ta varje tillfälle att förstärka vårt övertag. Den tiden är här nu, och att beslagta era världar är vårt tillfälle. Farväl, lilla [your_race].
+DECLAREWAR_ASSASSIN_01     | Hur *vågar* ni döda en av Imperiets gudagivna ambassadörer!? Bara en i Quaralon's likhet skulle kunna begå sådana illdåd i ont sinne! Bered era flottor för strid.
+
+OFFER_PEACE_01             | De säger att för att lära känna någon, måste man först mötas i strid. Vi har stridit, och vi märker att ni inte är barn till det monster som är Quaralon. Vi vill nu sluta fred, så att vi kan rikta vår uppmärksamhet mot de som verkligen förtjänar vår vrede.
+OFFER_TRADE_01             | Att utforska världsrymdens djup kostar oss dyrbara mineraler. Imperiet föreslår därför att vi ska utöva byteshandel. [amt] BC per år skulle både kunna hjälpa oss med vårt heliga krig, men också bistå er, och ert folk. Vad säger ni? 
+OFFER_PACT_01              | Vårt mål är att söka upp Quaralon och hans undersåtar allena, för att sen förgöra dem. Så länge vi tror att ni inte är dem, så har vi inga problem med er. Vi kan bevisa vår välvilja med ett avtal om Icke-aggression. Huruvida ni väljer att skriva under är helt upp till er.
+OFFER_ALLIANCE_01          | Vi har mött många bisarra och hemska varelser på vår heliga kampanj att rena galaxen. Av de vi har mött, tror vi er den minst sannolika att vara vår evige fiende. Låt oss gå ihop i en Allians, [your_name], och vinn [my_titlebest]'s gunst! 
+
+WARN_TRESPASSING_01        | Ni förpestar [system]'s helgade rymd med er oinbjudna närvaro! Dra era skepp undan omedelbart, eller så får de känna på vår heliga eld!
+WARN_EXPANSION_01          | Tror ni att Världsrymden tillhör er allena? Sätt stopp för er vårdslösa expansion omedelbart, eller gå hela Imperiets vrede till mötes!
+WARN_BUILDUP_01            | Endast Imperiet kan tillåtas ha de största flottorna i Världsrymden, för endast Imperiet kan döma de onda. Utmana detta dekret på eget bevåg, [your_race].  
+WARN_SKIRMISH_01           | Vad menas med det här, ambassadör? En mindre skärmytsling kan vi tolerera en enda gång: låt inte det här upprepas!
+WARN_ATTACKED_01           | Vanvett! Hur vågar ni göra ett utfall mot Imperiet!? I sin visdom har [defender_titlebest] beordrat oss att hålla tillbaka vår vedergällning, för att utläsa vad ni gör härnäst. Är det ändå så att det är ni som är vår länge eftersökte evige fiende?!
+WARN_INVADED_01            | Säkerligen en [attacker_race] desperationsakt, att stjäla territorium från Imperiet? Ni bör veta att [system] inte var av vikt, men om ni fortsätter att ta vad som tillhör Imperiet kommer ni att rista er egen gravsten.  
+WARN_ESPIONAGE_01          | Beslutet att stjäla våra teknologiska hemligheter var ett gravt misstag. Jag uppmanar er att träda fram varsamt: om inte era försök var så pass skrattretande, skulle det förvärvt vår sanna vrede! [framed]
+WARN_SABOTAGE_01           | Vad för falskspel är det här? Sabotage är en oärlig sak som endast veklingar och bovar understår sig ge sig i färd med! Visar ni er vara vår vedervärdige fiende från profetiorna trots allt? Vår [victim_title] ska avgöra ert öde... [forced]
+WARN_BIOWEAPON_01          | Otänkbart! Kroppar är svaga nog mot konventionella vapen, men mot biologiska är de verkligen chanslösa. Och använda mot civila också!? Säkerligen har ert släkte Quaralon's mörka blod i era ådror!
+WARN_GENOCIDE_01           | Förklara för oss varför ni begått folkmord mot [victim_raceposs] slag. Välj era ord nogrannt: ert svar avgör hur våra två folk kommer att förhålla sig till varandra framöver.
+WARN_FINAL_WAR_01          | Endast genom allianser kan vi här fullborda vårt heliga krig! Vi står samman som enade folk, endast ni står ensamma som krigets och kaosets budbärare. Profetian kommer här besannas: det är ni som är Quaralon's avkomma!
+WARN_COUNCIL_VOTE_01       | Det skulle vara bättre om det här galaktiska rådet upplöses, och Imperiet allena fick ansvara för galaxens öde. Då skulle ert folk vara i konflikt med de andra när ni mottalar oss på detta vis!
+WARN_OATHBREAKER_01        | Vi finner det här oroväckande, att bryta sina löften är att bryta sin pålitlighet. Det råder inga tvivel om att en av de som skulle understå sig att agera på det viset är Fienden från våra profetior!
+WARN_ATTACKED_ALLY_01      | [defender_race] har vunnit äran att räknas som en vän till Imperiet! Hör vår varning angående ert utfall: jag kan försäkra er om att vi bara ger den en end gång!
+WARN_REBELLING_AGAINST_01  | Vi tolererar inga förseningar för vårt heliga krig! Inte från dårarna i rådet, och inte från er! Må de rättfärdiga bevara sig, ambassadör: en helig storm är snart över era huvuden!
+
+PRAISE_COUNCIL_VOTE_01     | Vår trogna allierade vinner vår gunst, än en gång! Med er röst av förnuft i rådet, kommer vårt heliga krigs eld aldrig att falna! Ni har förvärvt er Imperiets tacksamhet idag, [voter_race]. 
+PRAISE_COUNCIL_VOTE_02     | Ert folk har ännu inte bevisat sig oklanderligt, ambassadör. Fortsätt med att stödja vårt heliga syfte i det galaktiska rådet, och bevisa så er plats som en bundsförvant i vårt heliga krig.
+PRAISE_COUNCIL_VOTE_03     | Tro inte att en enskild röst i rådet i fördel för Imperiets styre kommer att rentvå er från all misstanke! Ert slag har mycket mer att bevisa innan våra tvivelsmoln kan skingras!
+
+PRAISE_ATTACKED_ENEMY_01   | Vi är ännu inte säkra om [defender_race] är de oförlåtliga Quaralon's barn, men att se våra bundsförvanter sluta sig till oss i krig stärker våra själar i krigstider! Framåt! För Rättvisa! För Imperiet!  
+PRAISE_ATTACKED_ENEMY_02   | Så ni vill sluta er till i strid mot [defender_race]? Låt er militär träda fram, och visa oss hur ni för er på stridsfältet. Seger kommer förbättra ert rykte i Imperiets Hov, men nederlag för endast med sig död!
+PRAISE_ATTACKED_ENEMY_03   | Ni trodde väl inte oss simpla nog att tro att ni är oskyldiga, bara för att ni sluter er till oss i strid mot [defender_race]? Fienden från våra profetior är lömsk nog att göra just så för att dölj sin sanna identitet. Träd nu fram! Visa oss hur ni strider, så ska vi döma hur renhjärtade ni verkligen är!
+
+PRAISE_TRADE_01            | Imperiet sänder sina välönskningar, ni vän av heligt syfte. Vårt handelsavtal har bistått med medel för otaliga strider i vår jakt på Quaralon's yngel. Imperiet hoppas att ert folk också har gynnats lika väl.
+PRAISE_TRADE_02            | Medan vi inte kan säga att ni är fria från misstankar, så kan vi säga att ert bistånd till vårt heliga krig genom handel har stärkt vår tro på er. Låt oss fortsätta i denna anda, ambassadör!
+PRAISE_REBELLING_WITH_01   | Vår fiende är funnen! Quaralons hiskeliga avkomma har stulit åt sig den galaktiska tronen! Låt oss gå ut i strid: [my_raceposs] och [your_raceposs] flottor ska enas och rena galaxen från detta befläckande!
+ 
+ACCEPT_TRADE_01            | Imperiet accepterar, [your_race]. Ett avtal om [amt] BC varje år, så att vi kan expandera vår heliga krigsföring.
+RESPOND_IGNORE_THREAT_01   | Ni kan inte avskräcka oss från vårt heliga syfte med era futtiga hot. Hitta någon annan att tramsa med, annars riskerar ni att drabbas av vår vrede.
+RESPOND_STOP_SPYING_01     | Vi var bara ute efter att avslöja Quaralon's lömska avkommas sanna identitet. Vi är nöjda med att ni inte verkar vara vår evige fiende i förklädnad.
+RESPOND_STOP_ATTACKING_01  | Våra flottor sökte Imperiets verkliga fiende. Om ni inte är dem, då tjänar det inget till att ha våra skepp i offensiv position längre.
+

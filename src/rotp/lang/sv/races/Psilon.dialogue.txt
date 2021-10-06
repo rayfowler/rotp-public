@@ -1,0 +1,83 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Psilon specific dialogue
+CONTACT_PACIFIST           | Varma hälsningar, ambassadör! Vi av den [my_empire] har för länge sedan lärt oss fördelarna av samarbete i fredstider. Vi hoppas att våra utrikes diplomatiska band med er kommer att fungera lika harmoniskt som vårt inrikes samarbete.
+CONTACT_HONORABLE          | Idag är en dag av fröjd, att få bemöta andra som färdas genom dessa oändliga räckvidder! Vi kallar oss [my_race_plural], och vi kommer att göra vad vi kan för att vara till nytta vid varje tillfälle.
+CONTACT_ERRATIC            | [my_empire] sänder sina välönskningar. Ni gav er till känna som... [your_empire], var det? Fascinerande. Verkligen... fascinerande, så sant.
+
+//
+GREETING_01                | Vi gläder oss att få höra från en värdesatt vän. Hur kan den [my_empire] stå till hjälp?
+GREETING_04                | Var hälsad, ambassadör. Det är min uppgift jag gladeligen uppfyller att ta era förfrågningar till Rådet för... överläggande.
+GREETING_07                | Samtalet är anslutet, ambassadör. Vad är det som ni... önskar frambringa?
+//
+DECLAREWAR_HATE_01         | Vi har gjort allt vi kan för att... anpassa oss till er närvaro, men ett folkslag så ointelligent som ert är helt enkelt för mycket för att kunna tolerera i en stellär granne. Men oroa er inte, ert slut kommer bli snabbt och smärtfritt.
+DECLAREWAR_HATE_02         | Vi har spenderat mycket tid överläggandes i den här frågan. Det är... beklagligt, men vi bedömt ert folkslag lämpligt för eliminering från galaxen för tillfället.
+DECLAREWAR_HATE_03         | Även om vi föredrar fred i de flesta sammanhang, så kan vi inte förbli obrydda i ert nuvarande handlingssätt. Vi kommer... att göra vad som behövs för att återställa frid i galaxen.
+DECLAREWAR_ERRATIC_01      | Jag medger att jag finner Rådets beslut förvirrande, men de har bedömt att ert folk har nått gränsen av sin intelligence och måste... avlägsnas. Tyvärr, är jag bara en ambassadör, och har ingen möjlighet att försöka övertala dem till annat.
+DECLAREWAR_ERRATIC_02      | För att lämpligen förstå värdet i fred, så måste vi ibland... påminna oss om krigets burdusitet. Håller ni inte med, ambassadör?
+DECLAREWAR_ERRATIC_03      | Tiden för strid är nu över oss, ambassadör. När vi är färdiga kommer ett av våra imperier för evigt bli påminda om krigets pris. Det andra imperiet kommer, olyckligtvis, att upphöra att existera.
+DECLAREWAR_MILITARY_01     | Jag ber om ursäkt, ambassadör, men tiden har kommit för Republiken att expandera sitt inflytande. Om vi inte kan... gagna dessa territorier i fredstider, så måste vi ta dem med utövat våld.
+DECLAREWAR_MILITARY_02     | Få saker i galaxen är värt att bryta freden för. Ni håller säkerligen med, ambassadör, att territorium är en av dessa anledningar?
+DECLAREWAR_MILITARY_03     | Jag kommer med bud om krig, ambassadör. Rådet har utmätt att vi måste utöka Republikens territorium just nu. Även om era stridsfärdigheter må vara... imponerande, så kommer Rådets vilja inte att förnekas.
+DECLAREWAR_ALLIANCE_01     | En av våra allierade, [other_race], har kommit till oss för att begära vår assistans i deras krig med er. Rådet har lyssnat till dem och gett sitt medhåll, och vår assistans de nu ska få.
+DECLAREWAR_ALLIANCE_02     | Att ert folk och [other_race] har brutit freden är... värt att sörja. Att vi måste sluta upp i strid mot er är än värre.
+DECLAREWAR_ALLIANCE_03     | Det är nu uppenbart att ert slag är för bråkigt för att någon... längre fred ska kunna hålla. Om [other_race] har beslutat att gå till krig med er, då gör vi också det.
+DECLAREWAR_SPYING_01       | Jag är nyfiken hur ni trodde att det här förloppet skulle utspela sig. Att ta till sådana medel mot Republiken... kanske överskattade vi, trots allt, er intelligens.
+DECLAREWAR_SPYING_02       | Om ni önskade att... få ut något från oss, så skulle vi föredragit om ni helt enkelt frågade, istället för att ta till gärningar i det dolda. Nu ger ni oss inget annat val än att bryta den här freden vi kämpat för att bevara.
+DECLAREWAR_SPYING_03       | Det är ledsamt, ambassadör. Det fanns så många alternativ ni och era spioner kunnat överväga, och nu måste båda våra folk genomlida krigets stora laster och besvär.
+DECLAREWAR_ATTACK_01       | Era handlingar saknar logik, ambassadör. Att anfalla ett folk som enbart söker fred samtidigt som de så klart utklassar er militärt är... förbryllande. Det verkar som om ert slag är långt mindre intellektuellt kapabelt än vad vi trodde.
+DECLAREWAR_ATTACK_02       | En... mörk dag för båda våra riken. Vi önskade inget annat än en harmonisk samvaro med ert folk. Varför tvingar ni oss till det här?
+DECLAREWAR_ATTACK_03       | Var ni tvungna att välja det här stråket? Vi är ett fredsälskande folk ända in i djupet av vårt väsen, men ni kan vara säkra på att vi vet hur man försvarar sig i tider som dessa.
+DECLAREWAR_OPPORTUNITY_01  | Vad ska vi säga? Det har varit en intressant erfarenhet, ambassadör. Men nu har tiden kommit för oss att fastställa er historias slut. Vår prognos är att de med en så pass försumlig intellektuell förmåga till sist kommer att vara ett hinder för våra planer.
+DECLAREWAR_ASSASSIN_01     | Jag får ändå... gratulera er. Få handlingar kan få det [my_empire] att gå till krig med sådan beslutsam beredskap, men att mörda en obeväpnad ambassadör är otvivelaktigt en av dem.
+
+OFFER_PEACE_01             | Krig är alltid samma historia, ambassadör. Så mycket dödande, förstörelse, och allt det för vad? Kan vi snälla se förbi våra... tidigare förseelser och påbörja en ny era av fred.
+OFFER_TRADE_01             | Civiliserade och... intelligenta folkslag som våra två förstår att välfärd, inte krig, bevisligen är det mest gynnsamma. Republiken skulle efterfråga ömsesidig framgång med ert folk, och ett handelsavtal om [amt] BC per år är det första resonliga steget.
+OFFER_PACT_01              | Ju mer tid vi spenderar ibland ert slag, desto mer värderar vi våra diplomatiska band. Vi borde göra allt vi kan för att... bevara det bandet, och ett avtal om icke-aggression mellan våra två folk kommer försäkra om att banden håller, är det inte så, ambassadör?
+OFFER_ALLIANCE_01          | Tiden har kommit, ambassadör: en allians mellan det [my_empire] och [your_empire] måste slutas. I oss kommer hela galaxen se att en fredlig samexistens är det enda acceptabla valet!
+
+WARN_TRESPASSING_01        | Er närvaro i [system] har höjt rådets ögonbryn. Var vänlig återkalla era skepp snarast, innan freden vi kämpat för att uppehålla istället blir bruten.
+WARN_EXPANSION_01          | Det finns ett fåtal sätt vi kan tolka er hastiga... expansion av er sfär av influens. Inget av alternativen är bra för att bibehålla freden mellan våra folk.
+WARN_BUILDUP_01            | Att så pass bygga upp era stridsflottor på det här viset skulle kunna... båda illa för freden, ambassadör. Betänk hur en sådan hotfull flotta kommer att skådas av andra, Republiken inkluderad.
+WARN_SKIRMISH_01           | Drabbningen vid [system] är... bekymrande. Ska vi tolka det här som att ni tagit en kort ledighet från vettet? Eller ett tecken på att något långt värre snart skulle kunna komma att ske?
+WARN_ATTACKED_01           | Det här är en skandal! Sådana här utfall kan inte tolereras fortsätta! Jag varnar er, ambassadör: ta inte så lätt på att hota freden mellan [attacker_empire] och Republiken.
+WARN_INVADED_01            | Ambassadör, var är meningen med detta intrång av territorium tillhörandes [defender_race]!? Säkerligen har ni inte tänkt att bryta vår fred med aggressioner?
+WARN_ESPIONAGE_01          | Spioneri, ambassadör? Skulle det inte varit mer lämpligt att helt enkelt... förhandla om vad ni nu är ute efter? Vi kan förbise det här, i strävan efter harmonisk samexistens, men vi kanske inte är så pass toleranta nästa gång... [framed]
+WARN_SABOTAGE_01           | Jag skulle aldrig kunnat drömma [spy_empire] kapabla till sådant... förkastligt sabotage. I fredens namn, ber jag att ni inte gör om det här dåraktiga misstaget igen. [forced]
+WARN_BIOWEAPON_01          | Det här... saknar motstycke, ambassadör. Att använda biovapen mot civila ens en enda gång tvingar oss tänka om vår bedömning av er på alla sätt och vinklar!
+WARN_GENOCIDE_01           | Och plötsligt, är en röst i galaxens körsång nu svunnen för evigt. Att ett folk ens är kapabla till sådan ondska... Jag är rädd att vi kanske inte kommer kunna skipa en långvarig fred med er ändå.
+WARN_FINAL_WAR_01          | Galaxen är på gränsen till att finna harmoni, och ändå så envisas ni med att ställa er i vägen. Om det är så att... avlägsnandet av [rebel_empire] är kostnaden för en evig fred, då kommer vi göra vad vi kan för att se den kostnaden betald.
+WARN_COUNCIL_VOTE_01       | [candidate_empire] strävar efter inget annat än fred, så att alla ska kunna ta del av den välgång den för med sig. Om ni önskar den mest gynnsamma... framtiden för ert folk, då kommer ni inte att rösta emot Republiken i det galaktiska rådet igen.
+WARN_OATHBREAKER_01        | Skandalöst och vanhedrande, ambassadör. Vi funderar på om ni lika väl skulle bryta mot freden lika lätt som ni bryter era andra avtal, och vi är beredda om ni någon gång skulle känna för att göra just det.
+WARN_ATTACKED_ALLY_01      | Återkalla dessa attacker ni för er med, ambassadör! Ni vet att vi är allierade med [defender_race]. Kan vi inte istället sammanträda om fred genom dialog, istället för att ni tvingar oss alla till krig?
+WARN_REBELLING_AGAINST_01  | Nej! Du är inte trovärdig att leda det galaktiska rådet till fred! Vår tillgivenhet till fred står långt högre än er, men det kan falla sig så att ni snart tvingar oss att ge upp den tillgivenheten!
+
+PRAISE_COUNCIL_VOTE_01     | Våra vänner av [voter_empire] sviker aldrig! Republiken utsträcker sin uppskattning till er för ert... bidrag i det galaktiska rådet idag, och vi ser fram emot ambassadörens besök av [candidate_home] så snart ni finner tillfälle.
+PRAISE_COUNCIL_VOTE_02     | Visdomsfulla beslut fattades vi det galaktiska rådet, men av dem var kanske det visaste den röst ni gav Republiken. Vi undergår inte att märka en sådan... tillgivenhet till fred, och vi kommer att kunna fira en vänskap med er så länge som den tillgivenheten kvarstår.
+PRAISE_COUNCIL_VOTE_03     | Vi är medvetna om ert beslut att rösta för Republiken i det galaktiska rådet. Ni har förvånat oss, ambassadör, och vi överväger om vi underskattat ert folks intelligens.
+
+PRAISE_ATTACKED_ENEMY_01   | Ambassadör! Er assistans är mycket... uppskattad. Tillsammans kan vi avlägsna det hot som kallar sig [defender_race], och återställa den fred som den här galaxen så illa behöver.
+PRAISE_ATTACKED_ENEMY_02   | Vi ser och ärar de handlingar [attacker_empire] utfört, som ett bidrag till våra ideal om en större fred. Ni kan vara trygga i det faktum att så snart som vi... tvingar [defender_race] att sluta upp, så kan sedan den freden låtas återupptas.
+PRAISE_ATTACKED_ENEMY_03   | Ert folk är både våldsamt och... vågat, så det är föga förvånande att ni sluter upp i krig med sådan beredskap. Men ändå, det faktum att ni vänder era vapen mot parten som inte går till strid för fred måste åtminstone... erkännas.
+
+PRAISE_TRADE_01            | Att bedriva handel med en annan som visar dedikation för fred är ett framsteg i sig, men handel med en vän tillgiven till fred är ett genombrott. Må våra handelsavtal, såväl som vår vänskap, hålla till galaxens själva slut!
+PRAISE_TRADE_02            | Är det inte härligt, ambassadör? Ser ni hur sådan enkel, liten handel gynnar alla parter! Vi hoppas att det här kommer vara till fortsatt nytta för båda våra folkslag i eoner!
+PRAISE_REBELLING_WITH_01   | Vi [my_race_plural] har alltid trott att krig aldrig är svaret. Det här Rådet, dessvärre, har visat oss att vi hade fel. Förbered ert krig, ambassadör,  och vet att Republiken står med er!
+ 
+ACCEPT_TRADE_01            | Ja, vi håller med om att ömsesidigt gynnsam handel är den bästa vägen till fred, ambassadör. [amt] BC varje år är nog så acceptabelt, och vi tackar er för er generositet.
+RESPOND_IGNORE_THREAT_01   | Missta inte vår pacifism för svaghet! Ert hot var säkerligen ett befängt uttalande utav irrationell ilska, och således kommer vi att ursäkta ert urvräkande för denna gång.
+RESPOND_STOP_SPYING_01     | En spion från [my_race], säger ni? Det här måste säkerligen vara ett missförstånd. Var god sänd vår medborgare hit, så ska vi gå till botten av det här ärendet, och ni kan vara trygga i att spioneri är det sista vi skulle ha till sinnes.
+RESPOND_STOP_ATTACKING_01  | Må denna högt stridskapabla flotta avskräcka de som är dåraktiga nog att påbörja kostsamma krig, och må vårt avlägsnande av den, utan order att sätta sin kapacitet i bruk, användas för att demonstrera vår hängivenhet till fred.
+

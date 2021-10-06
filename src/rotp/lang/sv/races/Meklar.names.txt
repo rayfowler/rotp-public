@@ -1,0 +1,21 @@
+// all possible names
+name: Meklar, Mekanar, Cybernar, Digitar, Technar
+
+desc1: Oberäkneliga Industrialister
+desc2: Förbättrade Fabrikskontroller
+desc3: Innevånarna av [race] Domän strävar efter odödlighet och perfektion genom teknologi.
+
+// possible home system names
+home: Meklon, Kollosson, Kalculon, Plåtniklon, Optimus
+
+title:     Domare
+fulltitle: Upphöjde Domare
+
+// possible leader names
+leader: CB-715, INT-986, MS-35, QX-537, TVC-15, TX-1138
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Byte, Transistor, Kapacitans, Resistor, Diod, Kondensator, Regulator
+ship2: Processor, Kalkylator, Krets, Binär, Brytare, Komponent, Digital           
+ship3: Dynamo, Batteri, Nätverk, Algoritm, Sluss, Datoriserad, Resistans
+ship4: Nexus, Primär, Logik, Övertag, Övervinnare, Ledare, Planerad

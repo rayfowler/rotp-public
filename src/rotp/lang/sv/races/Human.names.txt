@@ -1,0 +1,22 @@
+// all possible names
+name: Människor, Jordfolk, Tellaner, Midgårdare, Primaner
+
+desc1: Hedervärda Diplomater
+desc2: Experter på Handel och Enastående Diplomater
+desc3: De vältaliga Människorna är mästare på att övertyga andra att stå till Mänsklighetens tjänst.
+
+// possible home system names
+home: Jorden, Terra, Tellus, Midgård, Primär
+
+title:     Triumvir
+fulltitle: Triumvir
+
+// possible leader names
+leader: Alexander, Bladrov II, Östen IV, Johann III, Lasitus, Stefan XII
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Vakt, Kurir, Sökare, Budbärare, Patrull, Nattvakt, Härold
+ship2: Korvett, Röjare, Slup, Skonare, Brigg, Karavell, Karack
+ship3: Brigad, Fregatt, Galleon, Kryssare, Linjefartyg, Eskort, Kommando
+ship4: Jagare, Stridsfartyg, Kanonbåt, Slagskepp, Förödare, Hämnare, Förstörare
+

@@ -1,0 +1,87 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Mrrshan specific dialogue
+
+CONTACT_AGGRESSIVE         | Jag hälsar dig, du konstiga sak. Jag är av [my_race], och en tjänare till vår Gyllene Khan. Jag hoppas att ni är starka, [your_race], inte bara för ert folks skull, utan också för de skatter ni håller mest kära.
+CONTACT_RUTHLESS           | Vi är [my_race], [your_race], och vi håller oss till endast en tro: de starka tar, och de veka ger. Om ni inte redan förstår insikten i en sådan filosofi, så kommer vi snart göra er varse.
+CONTACT_XENOPHOBIC         | Bäst att hoppas att vår Gyllene Khan dömer er värdiga, [your_race]. Väck hans vrede, så kommer han inte dra sig för att låta [my_raceposs] flottor gå till jakt mot er.
+//
+GREETING_01                | Ni har bevisat er position gång på gång. Vi är hedrade att göra vad vi kan för att bevisa vår pålitlighet likaså.
+GREETING_04                | Jag lyssnar, ambassadör, men jag har ingen särskild plikt att ge er vad det nu kan vara ni söker.
+GREETING_07                | Ni har ändå en djärv sida, med tanke på att ni går en Khanens tjänare till mötes. Säg vad ni har att säga, och bered er att fly om ni slösar min tid.
+//
+DECLAREWAR_HATE_01         | Era värdesaker är bortslösade på er! Vi kommer utsmycka våra salar på vår hemvärld med era ben och era skatter, och de kommer vara allt som finns kvar av ert folk efter vi är klara med er!
+DECLAREWAR_HATE_02         | Nu får det vara nog! Räder och plundring är inte längre tillräckligt för intensiteten i vår fiendskap: ni [your_race_plural] är väl förtjänta av en mycket mer storskalig offensiv!
+DECLAREWAR_HATE_03         | Bara vetskapen om att en sort så pass vek som er har inflytande i det här universumet gör oss illamående. Oavsett oddsen, lovar jag er att vi kommer göra allt vad vi kan för att lära er er plats.
+//
+DECLAREWAR_ERRATIC_01      | Khanatets klor är i behov av att vässas, ambassadör. Ert folk borde vara lämpligt byte som uppvärmning, i förberedelse för de sant värdiga måltavlorna.
+DECLAREWAR_ERRATIC_02      | Ert folk har verkligen en del ypperligt praktfulla skatter, [your_race]. Vi ser förväntansfullt fram emot hur ivriga ni kommer vara i kampen för att behålla dem!
+DECLAREWAR_ERRATIC_03      | Det är alltför länge sedan vi har kunnat ta hem byte värt legender. Ert folk kan hålla sitt eget i strid, men kan ni också hålla era värdesaker när de är inom vår räckvidd för plundring?
+//
+DECLAREWAR_MILITARY_01     | De starka tar och de svaga ger: en av universums fundamentala lagar. Ni kommer snart att märka att det inte bara gäller för era värdesaker, utan också era planeter.
+DECLAREWAR_MILITARY_02     | Även om det oftast inte skimrar som guld, så är land ofta en värdig vinning i sig självt. Och alla värdiga byten är värda att strida för, håller ni inte med, ambassadör?
+DECLAREWAR_MILITARY_03     | Khanatets behov är av högre vikt än [your_raceposs] behov. Ni kanske besitter imponerande teknologi, men jag tvivlar att ni besitter kampviljan att matcha den!
+//
+DECLAREWAR_ALLIANCE_01     | Ni har spelat ett farligt spel när ni gjort Kanatets allierade till er fiende. Det spelet kommer snart komma till ett tvärt, blodigt slut!
+DECLAREWAR_ALLIANCE_02     | Våra allierade, [other_race], är ett hedervärt men vekt folk. Ni kanske hade vunnit om det här kriget bara hade gällt era två imperier, men med oss på deras sida har ni längre ingen chans att vinna!
+DECLAREWAR_ALLIANCE_03     | Vi hade föredragit att ha äran att störta er nation helt för oss själva. Det verkar som om att vi kommer behöva dela den äran, och också bytet, med [other_race] den här gången.
+//
+DECLAREWAR_SPYING_01       | Fega vekling, att föra sig med lömska lönndrag hellre än att slåss med ära! Era handlingar är lämpliga för er svaghet, och nu kommer ni att få betala priset!
+DECLAREWAR_SPYING_02       | Hur känns det, [your_race]? Att riskera så mycket för att inte ro hem föga annat än krig för ert folk?
+DECLAREWAR_SPYING_03       | Låt [your_nameTitle] [your_name] veta detta: sekretess är ett fegungars skådespel. Att ni valt att agera med sådant svagt sinne innebär att vår djärvhet kommer garantera vår seger!
+//
+DECLAREWAR_ATTACK_01       | Ha! Och här trodde vi att ni var några fega ynklingar, men det verkar som om ni har lite stridsvilja ändå! Det är bara synd att er existens kommer vara så pass kort att ni knappt kommer kunna fira er lilla seger här!
+DECLAREWAR_ATTACK_02       | Ni har gjort oss en tjänst då ni tagit striden till vår själva tröskel! Låt oss återgälda tjänsten genom att försäkra att ert folk kan möta sitt slut på stridsfältet som sanna krigare!
+DECLAREWAR_ATTACK_03       | Jag hade undvikit arrogans om jag vore ni, ambassadör. Våra krigares brinnande stridsvilja kommer aldrig att förlora till teknologi, oavsett hur utvecklad ni gjort er!
+//
+DECLAREWAR_OPPORTUNITY_01  | Ert slag har sedan länge passerat ert användbara bäst-före-datum. Men oroa er inte, ni kommer vara lämpligt byte för de yngsta och mest oerfarna av våra krigare att träna sina färdigheter i strid på.
+DECLAREWAR_ASSASSIN_01     | Jag är inte förvånad i det minsta att sådana som er skulle agera som riktiga ynkryggar. Att låta en ambassadör lönnmördas är den värsta sortens vanära man kan föra sig med, och med deras död kommer ert folk att förbanna ditt namn för att du gav ordern att utföra det!
+
+
+OFFER_PEACE_01             | Allt har sin tid, ambassadör, och tiden har nu kommit för oss att upphöra med våra aggressioner. Behåll ni era reliker och skatter; fred är den vinning vi jagar nu!
+OFFER_TRADE_01             | Det råder inga tvivel att det snabbaste sättet att vinna troféer är helt enkelt att ta från de som är för svaga för att hindra dig! Men handelsutbyte kan också vara ett bra sätt för två imperier att finna vinning. Låt oss börja med [amt] BC varje år för att se hur mycket som... står att vinna från varandra.
+OFFER_PACT_01              | När två imperier är så pass jämnt matchade är det inte så viktigt att tampas med varandra, när det finns gott om vekare nationer att plundra och bränna. Låt oss sluta upp i en officiell pakt om icke-aggression, så att vi bättre kan spendera vår energi på dem med mer lättillgängliga skatter att ta!
+OFFER_ALLIANCE_01          | Vi uppsöker ett möte idag för att föreslå en offentlig allians mellan Khanatet och [your_empire]. Jag förmodar att ni inte kommer dröja med att underteckna? Kom också ihåg detta: en gemensam uppdelning av resurser i en allians betyder också att man delar i krigsbyte!
+ 
+WARN_TRESPASSING_01        | Såvida era skepp inte är vid [system] för att erbjuda tribut-gåvor, föreslår jag att ni beordrar dem att vända på svansen och lämna systemet omedelbart.
+WARN_EXPANSION_01          | Även om vi föredrar värdesaker att utsmycka våra tempel med, är vi inte så passa blinda att vi ignorerar den värdesak som är oägd mark. Betänk ert expansiva sätt eller riskera vår vrede, ambassadör.
+WARN_BUILDUP_01            | Om det är för att göra räder mot ett annat folk, hör ni ingen protest från oss. Men innan vi är säkra om att det är ert mål, kommer vi tvingas anta att era flottor är riktade mot oss, och inte tvivla att agera i förebyggande syfte.
+WARN_SKIRMISH_01           | Där hade vi en roande liten skärmytsling, håller ni inte med? Men vi måste ändå säga att dessa små strider är tråkiga utan lämplig vinning: om ni insisterar på att fortsätta med dem, då är vi mer än glada att mer formellt förklara krig!
+WARN_ATTACKED_01           | Hah! Var det där ett seriöst försök att sporra vår aggression, ambassadör? Ert folk är ett gäng veklingar, och era skatter är ärgade! Om det här är något sorts dåraktigt öppnande drag till strategi bör ni upphöra innan ni tvingar oss att göra er om intet!
+WARN_INVADED_01            | Vad är det här för skämt till ynklig invasion ni håller på med? Ni har tur att vi inte såg mycket värde i [system]-systemet, men om ni tar mer värdefulla system som mål, då kommer vi att se till att ni inte kan ta någonting mer, från någon annan någonsin igen!
+WARN_ESPIONAGE_01          | Vilket slugt spel ni kör! Men ni kommer behöva anstränga er bra mycket mer än så om ni drömmer om att ta Khanatets hemligheter för egen vinning. Ta er spion hem igen och lämna oss, innan det här spelet upphör att vara roande. [framed]
+WARN_SABOTAGE_01           | Farliga små knep, ambassadör. Om byggnaden ni förstört hade hållit betydliga värdesaker, så hade vi otvivelaktigen fått skura er hemvärlds gator från blod. Jag skulle starkt rekommendera att ni inte överväger sabotage något mer. [forced]
+WARN_BIOWEAPON_01          | Troféer ska man vinna i ärbar strid, och inte snattas från liken av de som inte kan försvara sig om de ens vore vid liv! Om ni någonsin tar till sådana avskyvärda vapen igen, kan jag försäkra er att det kommer vara er sista gång någonsin!
+WARN_GENOCIDE_01           | Ingen dålig idé, att utrota hela [victim_race] folk och ta deras skatter för egen vinning. Men även om jag tvivlar på att ni vore korkade nog att pröva ett sådant påfund mot oss, så är er själva kapabilitet fortfarande något oroande.
+WARN_FINAL_WAR_01          | Dåraktiga [your_race]! Att vägra det galaktiska rådets vilja är att vägra [my_race]! Vi kommer att ta era troféer och bränna dem, ner till det minsta småpyntet! Inget kommer finnas kvar av ert slag efter vi är färdiga med er!
+WARN_COUNCIL_VOTE_01       | Khanatet har viktigare saker för sig än att svansa runt med politiskt spel i det galaktiska rådets salar. Det skulle vara mycket bättre om ni bara gav vika för våra önskemål. Och det skulle också vara bättre för er, om ni förstår vad jag menar.
+WARN_OATHBREAKER_01        | Hmf! Bara de riktigt desperata bryter sina löften och sitt ord. Glöm det! Vi gör helt enkelt så att från och med nu så bemöter vi er som vi bemöter de vi bedömer för falskspelande för att kunna lita på.
+WARN_ATTACKED_ALLY_01      | På sätt och vis kan jag förstå varför ni anfallit [defender_race]. Deras värdesaker är delikata... men de är för oss att ta när tiden är inne för oss att slå till: ni får inte röra dem!
+WARN_REBELLING_AGAINST_01  | Den här freden som det galaktiska rådet förespråkar skulle inte passa vårt folk. Vi har bara en önskan: att ta värdesaker från de veka för vår egen vinning!
+
+PRAISE_COUNCIL_VOTE_01     | Ert stöd i det galaktiska rådet är alltid uppskattat, ambassadör. Vår Gyllene Khan själv önskar låta er veta att ert folk är en värdesatt tillgång till Khanatet, och om ni skulle vilja besöka [candidate_home], kommer vi slå på stort med firande i ert namn!
+PRAISE_COUNCIL_VOTE_02     | Såg ni [rival_raceposs] representants blick? Hah! Låt dem vara bistra! Så länge som vettigt folk som ert fortsätter att bekänna vår kapabilitet, så har Khanatet inget att frukta!
+PRAISE_COUNCIL_VOTE_03     | Räds ni våra räder, ambassadör? Hoppas ni att ni kan hålla våra skattletare borta fråna era världar om ni kliar vår sida i det galaktiska rådet? Hmhmhmhrm, tja... det skadar väl inte att försöka, eller hur?
+PRAISE_ATTACKED_ENEMY_01   | Idag kommer vara en stor dag för båda våra folk, [attacker_race]! [defender_race] har inte en dröm till chans mot våra gemensamma styrkor! Det finns gott om värdesaker för oss båda: till de djärvaste krigarna går de bästa skatterna!
+PRAISE_ATTACKED_ENEMY_02   | Är det så att ni på jakt efter byte idag? Låt gå, här är mitt förslag: hjälp oss bli av med den här ohyran, [defender_race], så ska vi se till att ni blir lämpligen belönade för er insats.
+PRAISE_ATTACKED_ENEMY_03   | Det är uppenbart att ni bara slutit upp i krig för att ta skatter för er själva. Men de här [defender_race] har ömkliga värdesaker, så om ni hjälper oss kan vi nog lämna åt er vad vi inte är intresserade av att ta för egen vinning.
+PRAISE_TRADE_01            | Kommer ni ihåg när jag först tog upp det här om handelsavtal? Jag sa ju att vi kunde se hur mycket vi stod att vinna från utbytet, och jag är nöjd med att kunna säga att vi båda vunnit på det.
+PRAISE_TRADE_02            | Det bästa som finns är att slåss om rikedomar och att fara hem med skeppen fullastade med byte! Nåja, man kan åtminstone säga att det är en god vinning på det här handelsavtalet om man räknar med kostnaderna. Se till att det kommer fortsätta vara lönsamt, ambassadör.
+PRAISE_REBELLING_WITH_01   | Sådärja! Inget klår en riktigt bra strid, håller ni inte med? Och allt byte som bara ber om att erövras... Jag hoppas att ni inte tar illa upp att Khanatet hakar på med allt det här roliga!
+
+ACCEPT_TRADE_01            | Det stämmer nog att vi inte kan plundra varenda civilisation vi stöter på. Ni föreslår ett handelsavtal om hur mycket årligen? [amt]? Låt gå...
+RESPOND_IGNORE_THREAT_01   | Ursäkta att jag skrattar, men era hot är bara så komiskt tomma. Se så, spring iväg nu, innan våra plundringsskvadroner bestämmer sig för att vässa klorna på era kolonier.
+RESPOND_STOP_SPYING_01     | Ni säger att ni funnit en spion som tillhör oss? Det kan väl inte stämma. Vi skulle aldrig drömma om att spionera på det ärbara [your_empire]. Gör vad ni vill med spionen, för oss är det detsamma.
+RESPOND_STOP_ATTACKING_01  | Är ni oroliga för en räd, [your_race]? Oroa er inte, vi finner inte era ägodelar särskilt intressanta. Vi kommer förflytta vår skepp till andra positioner. Vi vill ju inte råka skrämma er, eller hur?

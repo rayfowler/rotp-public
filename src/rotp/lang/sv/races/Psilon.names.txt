@@ -1,0 +1,21 @@
+// all possible names
+name: Psilon, Mentalon, Psychon, Cerebron, Neuralon
+
+desc1: Pacifister, Teknologister
+desc2: Högpresterande Forsknings-metodik
+desc3: Den [racedef] Republiken eftersöker en fredlig och insiktsgivande samvaro med andra folkslag.
+
+// possible home system names
+home: Mentar, Kognitar, Psailar, Metrica, Neura
+
+title:     Ordförande
+fulltitle: Högste Ordförande
+
+// possible leader names
+leader: Dynalon, Kelvan, Meson, Kvark, Tachaon, Zygot
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Elektron, Neutrino, Foton, Neutron, Proton, Atom, Molekyl
+ship2: Sigma, Sinus, Radian, Hypotenusa, Algebra, Tangent, Logaritm
+ship3: Parallax, Ellips, Kalkyl, Integral, Fraktal, Differential, Derivata
+ship4: Krigsmätare, Kontinuitet, Fredsmäklare, Kontinuum, Analyserare, Infinit, Odelbar

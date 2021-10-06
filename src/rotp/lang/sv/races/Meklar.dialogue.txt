@@ -1,0 +1,143 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Meklar specific dialogue
+
+CONTACT_ERRATIC            | Artbestämning: [your_race]. Ledare: [your_title]. Teknologiska framsteg: varierade. Riskbedömning: Ej färdigställd.
+CONTACT_HONORABLE          | Art [your_race] är ett föremål av intresse. [my_empire] utmäter viss potential för samarbete och ömsesidig gynning. Resultatmätningar köade för senare tillfälle.
+CONTACT_RUTHLESS           | [my_empire] nu medvetna om [your_race] existens. [my_title] dikterar en varning till art-typ, [your_race]: hindra inte Domänens huvudsyfte. Specifierad handling väntar resultat: [your_race] utrotning.
+//
+GREETING_01                | Allierad ambassadör identifierad och bekräftad. Uppdaga förfrågningar av Domänen. Domänen assisterar om möjligt.
+GREETING_04                | [my_empire] vidkänner [your_race] ambassadör. Domänen redo att processa efterfrågningar detta tillfälle.
+GREETING_07                | Ange ärende. Osannolikt att Domänen framför efterfrågningar från [your_race] till [my_title] för vidare hantering.
+//
+DECLAREWAR_HATE_01         | [my_empire] inte längre villigt till tolerans av [your_empire] närvaro. [your_race] styrkor jämförelsevis primitiva. Aktiverar uppsök-och-förstör-protokoll.
+DECLAREWAR_HATE_02         | [my_title] kommer inte längre tillåta [your_race] arts negativa påverkan av Domänens huvudsyfte. Domänen är beredd att tilldela anseliga resurser för det primära direktivets säkerställande.
+DECLAREWAR_HATE_03         | Domänen kan inte fullborda sina direktiv medan [your_empire] förhindrar. Arttyp köad för terminering. Alternativa handlingsvägar saknas.
+DECLAREWAR_ERRATIC_01      | [my_title] fastställer [your_race] existens som hot för Domänens målsättningar. Domänen att påbörja utrotnings-protokoll omedelbart.
+DECLAREWAR_ERRATIC_02      | [my_title] bedömer att [your_race] är troligt alternativ till att hålla hemligheter möjliga att främja Domänens huvudsyfte. Domänen förbereder att extrahera [your_race] hemligheter med våld.
+DECLAREWAR_ERRATIC_03      | [my_title] bedömer [your_race] art som en oacceptabel variabel till etablerad plansättning. Domänen kommer att eliminera [your_race] art eller slås sönder i processen.
+DECLAREWAR_MILITARY_01     | [my_empire] måste fortsatt spridas över galaxen i strävan efter det ultimata målet. [your_empire] obstruerar expansion. Problemet adresseras, verksamt omedelbart.
+DECLAREWAR_MILITARY_02     | Primär målsättning ej funnen. Potential för planeter nära eller tillhörandes [your_empire] att hålla behövda medel. Krig oundvikligt.
+DECLAREWAR_MILITARY_03     | Domänen tvingad till expansion av territorium. [your_race] arts styrka ej en avslående faktor. Krig beklagligt, men en nödvändighet.
+DECLAREWAR_ALLIANCE_01     | [your_empire] har förklarat krig på Domänen allierad. Domänen kommer att skydda sina intressen och målsättningar genom utrotning av [your_race].
+DECLAREWAR_ALLIANCE_02     | Domänen förfrågat om krigsassistans av [other_empire]. Går nu vidare med biståndsprotokoll för allierade i krig i motsättning till [your_race] art för konfliktens varaktighet.
+DECLAREWAR_ALLIANCE_03     | [your_race] art uppvisar arrogans genom krigsförklaringar. Domänen initierar assistans till allierat imperium i syfte för bortlägsnande av [your_race] art från galaxen.
+DECLAREWAR_SPYING_01       | [your_race] art uppvisar förtäckta handlingar motsättandes Domänen. Konsekvenser uppmätta för Domänen: försumbara. Konsekvenser uppmätta för [your_race] art: dödliga.
+DECLAREWAR_SPYING_02       | Förtäckta aktioner lokaliserade i Domänen territorium. Källa bekräftad [your_race] art. Domänen protokoll dikterar krig som respons.
+DECLAREWAR_SPYING_03       | Domänen lokaliserat markanta aktiviteter i syfte att destabilisera, utfört av [your_empire]. [your_race] art kan inte tillåtas fortsätta hindra Domänens huvudsyfte. Måste besvara med signifikant respons.
+DECLAREWAR_ATTACK_01       | [your_race] art bevisad aggressiv i syfte, oavsett uppenbar [my_race] överlägsenhet. Domänen mobiliserar i hotavlägsnande syfte, med totalitet som målsättning.
+DECLAREWAR_ATTACK_02       | [your_race] art visar sig vara en kil i Domänen maskineri genom utförda attacker. Konfrontation oundviklig.
+DECLAREWAR_ATTACK_03       | [your_race] art uppvisar interferens med Domänens målsättning genom eliminering av [my_race] enheter. Domänen kommer att utföra återgäldande med all tillgänglig militär potential.
+DECLAREWAR_OPPORTUNITY_01  | [my_title] tror [your_race] art kommer oundvikligen visa sig detrimentala mot strävan för primärdirektivet. Domänen kommer utrota [your_race] art innan potentiellt hot fullt realiseras.
+DECLAREWAR_ASSASSIN_01     | Domänen Ambassadör gjord inaktiv av [your_race] art innan överföring för re-integration till Huvuddatorn var möjliggjord. [your_race] handling utmäts en ytterst våldsam återgäld.
+
+OFFER_PEACE_01             | [my_title] når ny slutsats för datasammanställning. Krig inte längre en acceptabel kostnad för Domänen. Kontaktar angående fredsmäklande med snarast möjliga verkan.
+OFFER_TRADE_01             | [your_race] art vidhåller märkbara resurser. Domänen innehar också objekt av värde. Domänen föreslår handelsavtal på [amt] BC per år.  
+OFFER_PACT_01              | Domänen eftersöker statusläge annat än vildsinta konflikter. Avtal om Icke-aggression med [your_race] art bedömt lämplig väg till att uppnå önskat resultat.
+OFFER_ALLIANCE_01          | [my_title] värdesätter diplomatiska relationer med [your_race] art. Domänen föreslår formell allians i syfte för försäkran av både [your_race] art och [my_race] överlevnad. Efterfrågar omedelbar respons.  
+
+WARN_TRESPASSING_01        | [your_race] arts närvaro uppmätt i [system]-systemet. Området är inmutat för Domänen. Begäran: Utrym omedelbart.
+WARN_EXPANSION_01          | Eskalerande expansionskurvor för [your_race] art bedömt som ett hot för Domänens huvudsyfte. Fortsatt expansion av territorium kommer framtvinga militära mothandlingar i respons.
+WARN_BUILDUP_01            | Domänen övervakningsnätverk identifierar [your_race] flottor som potentiell högrisk mot statssäkerhet. Utökar bevakning av [your_race] art i syfte att försäkra Domänens målsättningar.
+WARN_SKIRMISH_01           | Konflikt mellan Domänen och [your_race] flottor rapporterad vid [system]. Domänen avråder upprepat orsakande av interferens: Domänen beredd att lämpligen respondera om varningskontakt visar sig ineffektiv.
+WARN_ATTACKED_01           | [attacker_race] aggression noterad vid [system]. [defender_title] meddelar ambassadör: fortsatt kompromiserande av Domänen säkerhet kommer resultera i [attacker_race] arts utrotning. 
+WARN_INVADED_01            | Påminnelsekontakt från Domänen om att [attacker_race] art saknar inmutningsrätt på [defender_race] område. Avlägsna flottor verksamt omedelbart eller bemöt total utplåning.
+WARN_ESPIONAGE_01          | [spy_race] spionagehandlingar noterat i Domänen territorium. Domänens säkerhetsprotokoll okompromiserade, verkningsgrad högre än [spy_race] espionageförmåga. Återkommande oöverenskomna beprövningar av system kan visa sig ha dödligt resultat för er. [framed]
+WARN_SABOTAGE_01           | Domänen bekräftat [spy_race] art involverat i nyligen begått sabotage. Försök till störning lågverksamt nog att ignoreras. Vidare försök till sabotage kommer försäkra strängare åtgärd. [forced]
+WARN_BIOWEAPON_01          | Domänen har observerat bruk av brutalt biovapen. Effektiv destruktion. [attacker_race] art riskbedömning förhöjd med 3 nivåsteg.
+WARN_GENOCIDE_01           | Folkutrotning av [victim_race] art utfört av [attacker_race] art noterat. Domänen bedömer skäl eller alternativa vägar ej av intresse. [attacker_race] art riskbedömning förhöjd med 5 nivåsteg.  
+WARN_FINAL_WAR_01          | Alla kända arter sammankommit för överenskommelse om fastslagen fred i galaxen. [rebel_race] art ensam rebell. Domänen kommer vidta lämplig åtgärd.
+WARN_COUNCIL_VOTE_01       | Domänen noterar [voter_race] röstning i galaktiska rådet. Orsak irrelevant. Resultatet bedömt motsatt till [candidate_race] målsättningar. Diplomatiskt förhållande lämpligen justerat.  
+WARN_OATHBREAKER_01        | [my_title] uttalar dom: [your_race] art ej längre värderade som pålitliga. All framtida korrespondens måste revideras bedömandes [your_race] art brott av bindande avtal. 
+WARN_ATTACKED_ALLY_01      | Konflikt noterad mellan [your_race] art och [defender_race] art. [defender_race] art erkänd allierad till Domänen. Upphör med stridsinitiativ eller bered er för konsekvenser.
+WARN_REBELLING_AGAINST_01  | [your_race] art bedömt som hinder för Domänens huvudsyfte. Galaktiska Rådets slutsats oacceptabel. Väntar svar från Upphöjde Domaren.
+
+
+PRAISE_COUNCIL_VOTE_01     | Ambassadör från [voter_race] art erbjuder fortsatt hjälp med avancemanget av [candidate_race] målsättningar. Domänen utvärderar fördelar med fortsatta relationer till [voter_race] art. Domänen kommer att gengälda tjänster efter behov.
+PRAISE_COUNCIL_VOTE_02     | Domänen noterar er främjande röstning i Galaktiska Rådet. Domänen kommer justera utvärdering av [voter_race] art lämpligen.
+PRAISE_COUNCIL_VOTE_03     | Domänen utvärderar en trolighet om svepskäl och manövrar under täckmantel av [voter_race] art. Fortsatt bistånd till Domänen i röstningssituationer kan mitigera eventuella misstankar.
+
+PRAISE_ATTACKED_ENEMY_01   | Anfall mot fiender till Domänen visar på [my_race] som gynnsam komponent för Domänens syften. Domänen initierar protokoll för att begränsa [attacker_race] art förluster till absoluta minimum.
+PRAISE_ATTACKED_ENEMY_02   | Domänen välkomnar assistans emot [defender_race] art. Denna krigsföring kan betyda ny början för [my_race] och [attacker_race] art. 
+PRAISE_ATTACKED_ENEMY_03   | Ert anfall mot [defender_race] art eliminerar inte tidigare överträdelser mot Domänen. Domänen kommer återevaluera [attacker_race] arts riskbedömning beroende på prestanda i nuvarande krig.
+
+PRAISE_TRADE_01            | Domänen och [your_race] art fortsätter vinna mycket av pågående handel. Domänen önskar fortsätta handelsavtal så länge som överenskommelsen behåller positiv status.
+PRAISE_TRADE_02            | Domänen uttrycker förnöjsamhet över handelsavtal med [your_race] art. Vidta åtgärder för långvarigt avtals säkerhet, så att båda parter kan se lönsamhet.
+PRAISE_REBELLING_WITH_01     | Domänen uttrycker medhåll över otillförlitlighet i Galaktiska Rådets ledarskap. [your_race] art invändning noterad. Domänen kommer bistå [your_race] art i uppror. 
+ 
+ACCEPT_TRADE_01            | [your_race] art förfrågan om handelsavtal mottaget. [amt] BC föreslagen summa. Domänen accepterar.
+RESPOND_IGNORE_THREAT_01   | [your_race] arts hot förbryllande. [your_raceposs] krigspotential uppmätt som märkvärt underlägsen Domänens flottor. Klassat "Ignorera".
+RESPOND_STOP_SPYING_01     | Domänen spion tillfångatagen utförandes protokoll för rekognoscens för [your_race]-livsformer. Domänen uttrycker ursäkt. Återbörda tillfångatagen [my_race] vid snarast möjliga tillfälle.
+RESPOND_STOP_ATTACKING_01  | Domänen demonstration av militär stridsförmåga för [your_race] beräknad som lyckad. Återkallar flottor till designerade positioner för passiv positionering.
+
+DIPLO_TECH_REQUEST_MENU_01   | Specifiera teknologi.
+DIPLO_TECH_COUNTER_MENU_01   | Specifiera kompensation.
+DIPLO_TRADE_MENU_01          | Specifiera kvantitet.
+DIPLO_TREATY_MENU_01         | Specifiera avtal.
+DIPLO_DECLARE_WAR_MENU_01    | Bekräfta innan aktivering.
+DIPLO_SUGGEST_WAR_MENU_01    | Specifiera riktpunkt.
+DIPLO_BREAK_ALLIANCE_MENU_01 | Specifiera allierad.
+DIPLO_THREATEN_MENU_01       | Specifiera.
+DIPLO_OFFER_AID_MENU_01      | Specifiera.
+DIPLO_OFFER_TECH_MENU_01     | Specifiera teknologi.
+
+DECLINE_OFFER_01           | Förfrågan nekad.Förfrågan nekad.
+DECLINE_OFFER_02           | Förfrågan nekad.
+DECLINE_OFFER_03           | Förfrågan nekad.
+DECLINE_OFFER_04           | Förfrågan nekad.
+DECLINE_OFFER_05           | Förfrågan nekad.
+DECLINE_OFFER_06           | Förfrågan nekad.
+DECLINE_OFFER_07           | Förfrågan nekad.
+DECLINE_OFFER_08           | Förfrågan nekad.
+DECLINE_OFFER_09           | Förfrågan nekad.
+DECLINE_ENEMY_ALLY_01      | Förfrågan nekad.
+DECLINE_NO_WAR_ON_ALLY_01  | Förfrågan nekad.
+DECLINE_PEACE_TREATY_01    | Förfrågan nekad.
+DECLINE_ANNOYED_01         | Förfrågan nekad.
+DECLINE_ANNOYED_02         | Förfrågan nekad.
+DECLINE_ANNOYED_03         | Förfrågan nekad.
+DECLINE_OATHBREAKER_01     | Förfrågan nekad.
+DECLINE_ESPIONAGE_01       | Förfrågan nekad.
+DECLINE_SABOTAGE_01        | Förfrågan nekad.
+DECLINE_BUILDUP_01         | Förfrågan nekad.
+DECLINE_ENCROACH_01        | Förfrågan nekad.
+DECLINE_SKIRMISH_01        | Förfrågan nekad.
+DECLINE_ATTACK_01          | Förfrågan nekad.
+DECLINE_INVASION_01        | Förfrågan nekad.
+DECLINE_BIOWEAPONS_01      | Förfrågan nekad.
+DECLINE_TECH_TRADE_01      | Förfrågan nekad.
+OFFER_TECH_EXCHANGE_01     | Domänen fordrar [tech] teknologi. Specifiera kompensation.
+ACCEPT_TECH_EXCHANGE_01    | Acceptans noterad.
+ACCEPT_FINANCIAL_AID_01    | Acceptans noterad.
+ACCEPT_TECHNOLOGY_AID_01   | Acceptans noterad.
+
+BREAK_TRADE_01             | Trade agreement terminated.
+ANNOUNCE_PEACE_01          | Acceptans noterad.
+ACCEPT_PEACE_01            | Förfrågan accepterad.
+
+BREAK_PACT_01              | Avtal om Icke-aggression terminerat.
+ANNOUNCE_PACT_01           | Acceptans noterad.
+ACCEPT_PACT_01             | Förfrågan accepterad.
+
+BREAK_ALLIANCE_01          | Allians terminerad.
+ANNOUNCE_ALLIANCE_01       | Acceptans noterad.
+ACCEPT_ALLIANCE_01         | Förfrågan accepterad.
+ACCEPT_JOINT_WAR_01        | Förfrågan accepterad.
+
+RESPOND_CLOSE_EMBASSY_01   | Handling noterad.
+RESPOND_BREAK_TRADE_01     | Handling noterad.
+RESPOND_BREAK_PACT_01      | Handling noterad.
+RESPOND_BREAK_ALLIANCE_01  | Handling noterad.
+RESPOND_DECLARE_WAR_01     | Handling noterad.
