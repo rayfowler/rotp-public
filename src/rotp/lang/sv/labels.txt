@@ -77,7 +77,7 @@ PLANET_ORION_GUARDIAN             | Väktaren
 
 // Nebula names  ("starName" Nebula)
 NEBULA_NAME                       | %1 Nebulosa
-NEBULA_ID                         | NCG %1
+NEBULA_ID                         | NGC %1
 
 // In this, %1 is the race's title when using with the name ("_nameTitle" in the races labels.txt file)
 // and %2 is the leader's actual name
@@ -567,9 +567,9 @@ MAIN_TRANSPORT_NO_ROOM            | Varning - Målet är för tillfället vid ma
 MAIN_TRANSPORT_SIZE_WARNING       | Varning - Målet kan bara uppehålla %1 miljoner!
 MAIN_TRANSPORT_NO_SELECTION       | Inget Mål Valt
 MAIN_TRANSPORT_CANCEL             | Avbryt
-MAIN_TRANSPORT_SEND               | Skicka Transportskepp
+MAIN_TRANSPORT_SEND               | Skicka Transporter
 MAIN_TRANSPORT_ABANDON            | Evakuera
-MAIN_TRANSPORT_CLEAR              | Rensa Transportorder
+MAIN_TRANSPORT_CLEAR              | Rensa Order
 MAIN_TRANSPORT_SURRENDER          | Ge upp utan strid vid ankomst
 
 // Colony labels
@@ -577,6 +577,7 @@ MAIN_COLONY_HOMEWORLD             | %1 Hemvärld
 MAIN_COLONY_FOUNDED               | %1 Koloni
 MAIN_COLONY_POPULATION            | Population
 MAIN_COLONY_FACTORIES             | Fabriker
+MAIN_COLONY_VALUE+                | %1+
 MAIN_COLONY_SHIELD                | Nivå av Sköldar
 MAIN_COLONY_BASES                 | Baser
 MAIN_COLONY_PRODUCTION            | Produktion - Netto (Brutto)
@@ -1850,7 +1851,7 @@ CREDITS_GRAPHIC_DESIGN            | Kaitlin Lindsay, Grafikdesign
 CREDITS_MUSIC                     | Efe Tozan, Musik
 CREDITS_WRITER                    | Jeff Colucci, Författare
 CREDITS_SOUND                     | Remi Agullo, Ljuddesign
-CREDITS_TRANSLATOR                | 
+CREDITS_TRANSLATOR                | Zed Lindberg, Svensk Översättning
 
 // Systems UI
 SYSTEMS_TITLE                     | System

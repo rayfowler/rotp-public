@@ -2,7 +2,7 @@
 
 name, Svenska 
 
-logo,       bolstbo.ttf,             100
+logo,       BNMachine.ttf,            100
 dialogue,   CRANBERR.otf,             100
 narrow,     MyriadPro-BoldCond.otf,   100
 normal,     MyriadPro-Bold.otf,       100
