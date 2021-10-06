@@ -195,7 +195,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             }
         }
         if((empire.tech().planetology().techLevel() > 19 || empire.ignoresPlanetEnvironment())
-                    && empire.shipLab().needScouts == false)
+            && empire.shipLab().needScouts == false)
         {
             return false;
         }
@@ -921,7 +921,10 @@ public class AIFleetCommander implements Base, FleetCommander {
                                     EmpireView ev = empire.viewForEmpire(empire.sv.empId(target.id));
                                     if(needToGuess && ev != null)
                                     {
-                                        enemyBC = max(enemyBC, target.empire().totalFleetCost() * target.colony().production() / target.empire().totalIncome());
+                                        if(target.empire().totalIncome() > 0)
+                                            enemyBC = max(enemyBC, target.empire().totalFleetCost() * target.colony().production() / target.empire().totalIncome());
+                                        else
+                                            enemyBC = max(enemyBC, target.empire().totalFleetCost() * 1.0f / target.empire().allColonizedSystems().size());
                                     }
                                     enemyBaseBC = empire.sv.bases(target.id)*target.empire().tech().newMissileBaseCost();
                                     if(ev != null)
@@ -1114,7 +1117,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                 {
                     continue;
                 }
-                if(d.isDestroyer())
+                if(d.isDestroyer() && num > 0)
                     num--;
                 if(d.hasColonySpecial() && !includeColonizer)
                 {

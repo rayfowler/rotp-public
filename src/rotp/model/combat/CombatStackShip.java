@@ -215,7 +215,7 @@ public class CombatStackShip extends CombatStack {
     public float missileInterceptPct(ShipWeaponMissileType wpn)   {
         return design.missileInterceptPct(wpn);
     }
-    private float designShipRepairPct() {
+    public float designShipRepairPct() {
         float healPct = 0;
         for (int i=0;i<ShipDesign.maxSpecials();i++)
             healPct = max(healPct, design.special(i).shipRepairPct());

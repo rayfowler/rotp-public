@@ -86,6 +86,8 @@ public class AIGeneral implements Base, General {
         totalEmpirePopulationCapacity = -1;
         warROI = -1;
         
+        //empire.tech().learnAll();
+        
         Galaxy gal = galaxy();
         for (int id=0;id<empire.sv.count();id++) 
             reviseFleetPlan(gal.system(id));
@@ -1082,15 +1084,21 @@ public class AIGeneral implements Base, General {
             int unarmedDesigns = 0;
             for(ShipDesign enemyDesign : opponent.shipLab().designs())
             {
+                if(galaxy().ships.shipDesignCount(opponent.id, enemyDesign.id()) == 0)
+                    continue;
                 if(!enemyDesign.isArmedForShipCombat())
+                {
+                    //System.out.println(galaxy().currentTurn()+" "+empire.name()+" thinks that "+opponent.name()+"'s design "+enemyDesign.name()+" is unarmed.");
                     unarmedDesigns++;
+                }
             }
+            //System.out.println(galaxy().currentTurn()+" "+empire.name()+" thinks that "+opponent.name()+" has "+unarmedDesigns+" unarmed designs.");
             if(unarmedDesigns > 0)
                 opponentsWithUnarmed++;
         }
-        if((opponentsWithUnarmed == 0 && totalOpponents > 0) || empire.enemyFleets().isEmpty())
+        if((opponentsWithUnarmed == 0 && totalOpponents > 0) || empire.enemyFleets().isEmpty() || empire.tech().topFuelRangeTech().unlimited)
             need = false;
-        //System.out.println(galaxy().currentTurn()+" "+empire.name()+" needs scout repeller: "+need);
+        //System.out.println(galaxy().currentTurn()+" "+empire.name()+" needs scout repeller: "+need+" totalOpponents: "+totalOpponents+" opponentsWithUnarmed: "+opponentsWithUnarmed);
         return need;
     }
     @Override

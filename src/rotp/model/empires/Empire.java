@@ -2205,7 +2205,11 @@ public final class Empire implements Base, NamedObject, Serializable {
         // recalc properly
         List<StarSystem> allSystems = allColonizedSystems();
         for (StarSystem sys: allSystems)
+        {
+            if(sys.colony() == null)
+                continue;
             sys.colony().toggleRecalcSpending();
+        }
     }
     public boolean hasTrade() {
         for (EmpireView v : empireViews()) {

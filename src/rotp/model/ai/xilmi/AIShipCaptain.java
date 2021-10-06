@@ -95,20 +95,11 @@ public class AIShipCaptain implements Base, ShipCaptain {
             }
             //ail: if our target to move to is not the same as the target we can currently shoot at, we shoot before moving
             // check for retreating
-            if(tgtBeforeClose != null && stack.movePointsTo(tgtBeforeClose) >= stack.move + stack.optimalFiringRange(tgtBeforeClose))
+            if(tgtBeforeClose != null && stack.movePointsTo(tgtBeforeClose) > stack.move + stack.optimalFiringRange(tgtBeforeClose))
             {  
                 chooseTarget(stack, true, false);
-                if (stack.canAttack(currentTarget) && stack.movePointsTo(tgtBeforeClose) <= stack.optimalFiringRange(stack) ) 
+                if (stack.canAttack(currentTarget)) 
                     performSmartAttackTarget(stack, currentTarget);
-                if (wantToRetreat(stack) && stack.canRetreat()) {
-                    CombatStackShip shipStack = (CombatStackShip) stack;
-                    StarSystem dest = retreatSystem(shipStack.mgr.system());
-                    if (dest != null) {
-                        mgr.retreatStack(shipStack, dest);
-                        //System.out.print("\n"+stack.fullName()+" target: "+currentTarget.fullName()+" retreat because it wants to.");
-                        return;
-                    }
-                }
                 if(stack.isShip())
                 {
                     if(shouldDodgeMissile((CombatStackShip)stack))
@@ -125,7 +116,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                                 mgr.performMoveStackAlongPath(stack, bestPathToSaveSpot);
                             //System.out.print("\n"+stack.fullName()+" Kiting performed: "+(bestPathToSaveSpot != null));
                         }
-                        turnActive = false;
+                        //turnActive = false;
                     }
                 }
                 currentTarget = tgtBeforeClose;
@@ -145,6 +136,19 @@ public class AIShipCaptain implements Base, ShipCaptain {
             /*if(currentTarget != null)
                 System.out.println(stack.fullName()+" target: "+currentTarget.fullName()+" distaftermove: "+(stack.movePointsTo(currentTarget) - stack.move)+" DistToBeAt: "+DistanceToBeAt(stack, currentTarget));*/
             // if we need to move towards target, do it now
+            if(currentTarget != null && stack.movePointsTo(currentTarget) >= stack.move + stack.optimalFiringRange(currentTarget))
+            {  
+                if (wantToRetreat(stack) && stack.canRetreat()) {
+                    CombatStackShip shipStack = (CombatStackShip) stack;
+                    StarSystem dest = retreatSystem(shipStack.mgr.system());
+                    if (dest != null) {
+                        mgr.retreatStack(shipStack, dest);
+                        //System.out.print("\n"+stack.fullName()+" target: "+currentTarget.fullName()+" retreat because it wants to.");
+                        return;
+                    }
+                }
+            }
+            
             if (currentTarget != null) {
                 if (stack.mgr.autoResolve) {
                     Point destPt = findClosestPoint(stack, currentTarget);
@@ -182,6 +186,10 @@ public class AIShipCaptain implements Base, ShipCaptain {
                     shouldPerformKiting = true;
             }
          
+            boolean enemyColonyPresent = false;
+            if (stack.mgr.results().colonyStack != null && stack.mgr.results().colonyStack.colony.empire() != empire)
+                enemyColonyPresent = true;
+            
             //ail: only move away if I have fired at our best target and am a missile-user or have repulsors
             boolean atLeastOneWeaponCanStillFire = false;
             boolean allWeaponsCanStillFire = true;
@@ -189,7 +197,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             {
                 CombatStackShip shipStack = (CombatStackShip)stack;
                 for (int i=0;i<stack.numWeapons(); i++) {
-                    if(tgtBeforeClose != null && !tgtBeforeClose.isColony() && stack.weapon(i).groundAttacksOnly())
+                    if(stack.weapon(i).groundAttacksOnly() && !enemyColonyPresent)
                         continue;
                     if(stack.weapon(i).isSpecial())
                         continue;
@@ -230,7 +238,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                         mgr.performMoveStackAlongPath(stack, bestPathToSaveSpot);
                     //System.out.print("\n"+stack.fullName()+" Kiting performed: "+(bestPathToSaveSpot != null));
                 }
-                turnActive = false;
+                //turnActive = false;
             }
             // SANITY CHECK:
             // make sure we fall out if we haven't moved 
@@ -737,14 +745,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
             }
         }
         // calculate ally kills & deaths
-        float allyKills = 0;
-        float enemyKills = 0;
-        
-        float allyValue = 0;
-        float enemyValue = 0;
-        
-        float allyKillsPerTurn = 0;
-        float enemyKillsPerTurn = 0;
+        float allyKillTime = 0;
+        float enemyKillTime = 0;
         
         List<CombatStack> friends = new ArrayList<>();
         for (CombatStack ally: allies()) {
@@ -759,89 +761,75 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 foes.add(enemy);
         }
 
-//        log("friends:"+friends.size()+"   foes:"+foes.size());
-        boolean repulsorEnemy = false;
-        int repulsorCounterers = 0;
-        for (CombatStack st1 : friends) {
-            if(st1.inStasis)
-                continue;
-            float maxKillValue = -1;
-            float bestPerTurnKills = 0;
-            float pctOfMaxHP = ((st1.num-1) * st1.maxHits + st1.hits) / (st1.num * st1.maxHits);
-            allyValue += st1.num * pctOfMaxHP * st1.designCost();
-            //System.out.print("\n"+st1.fullName()+" pctOfMaxHP: "+pctOfMaxHP+" allyValue: "+allyValue);
-            for (CombatStack st2: foes) {
-                if(st2.inStasis)
-                    continue;
-                float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
-                //ail: If the enemy has brought a colonizer, we split our kill because otherwise each of our stacks thinks they can kill all the colonizers despite it's already dead
-                if(st2.isShip() && st2.design().isColonyShip())
-                    killPct /= friends.size();
-                //ail: 0 damage possible when they have repulsor and we can't outrange
-                if(st1.maxFiringRange(st2) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
-                {
-                    //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
-                    killPct = 0;
-                }
-                if(st2.repulsorRange() > 0)
-                {
-                    repulsorEnemy = true;
-                    if(killPct != 0)
-                        repulsorCounterers++;
-                }
-                float killValue = killPct*st2.num*st2.designCost();
-                //System.out.print("\n"+stack.fullName()+" "+st1.fullName()+" thinks it can kill "+killPct+" val: "+killValue+" of "+st2.fullName()+" it has: "+pctOfMaxHP);
-//                log(st1.name()+"="+killPct+"    "+st2.name());
-                if (killValue > maxKillValue)
-                {
-                    maxKillValue = killValue;
-                    bestPerTurnKills = killPct*st2.num;
-                }
-            }
-            allyKillsPerTurn += bestPerTurnKills;
-            allyKills += maxKillValue;
-        }
         for (CombatStack st1 : foes) {
             if(st1.inStasis)
                 continue;
-            float maxKillValue = -1;
-            float bestPerTurnKills = 0;
             float pctOfMaxHP = ((st1.num-1) * st1.maxHits + st1.hits) / (st1.num * st1.maxHits);
-            enemyValue += st1.num * pctOfMaxHP * st1.designCost();
+            float damagePerTurn = 0;
             for (CombatStack st2: friends) {
                 if(st2.inStasis)
                     continue;
-                //ail: When we have brought colonizers to a battle and are not the colonizer ourselves, we ignore their lack of combat-power for our own retreat-decision. They can still retreat when they are too scared!
-                if(stack != st2 && st2.isShip() && st2.design().isColonyShip())
-                    continue;
-                float killPct = min(1.0f,st1.estimatedKillPct(st2)); // modnar: killPct should have max of 1.00 instead of 100?
-                if(st1.maxFiringRange(st2) <= st2.repulsorRange() && !st1.canCloak && !st1.canTeleport())
+                float killPct = min(1.0f,st2.estimatedKillPct(st1));
+                if(st2.maxFiringRange(st1) <= st1.repulsorRange() && !st2.canCloak && !st2.canTeleport())
                 {
-                    //System.out.print("\n"+stack.fullName()+" seeing uncountered repulsor.");
                     killPct = 0;
                 }
-                float killValue = killPct*st2.num*st2.designCost();
-//                log(st1.name()+"="+killPct+"    "+st2.name());
-                //System.out.print("\n"+stack.fullName()+" "+st1.fullName()+" thinks it can kill "+killPct+" val: "+killValue+" of "+st2.fullName()+" it has: "+pctOfMaxHP);
-                if (killValue > maxKillValue)
-                {
-                    maxKillValue = killValue;
-                    bestPerTurnKills = killPct*st2.num;
-                }
+                damagePerTurn += killPct;
             }
-            enemyKills += maxKillValue;
-            enemyKillsPerTurn += bestPerTurnKills;
+            float healPerTurn = 0;
+            if(st1.isShip())
+            {
+                CombatStackShip ship = (CombatStackShip)st1;
+                healPerTurn = ship.designShipRepairPct() / st1.num;
+            }
+            damagePerTurn -= healPerTurn;
+            //System.out.print("\n"+stack.mgr.system().name()+" "+st1.fullName()+" takes "+damagePerTurn+" damage per turn.");
+            if(damagePerTurn > 0)
+                allyKillTime += pctOfMaxHP / damagePerTurn;
+            else
+            {
+                allyKillTime = Float.MAX_VALUE;
+                break;
+            }
         }
-        if(repulsorEnemy == true && repulsorCounterers == 0)
-            allyKills = 0;
-        //System.out.print("\n"+stack.mgr.system().name()+" "+stack.fullName()+" we can kill per turn: "+allyKillsPerTurn+" enemy can kill per turn: "+enemyKillsPerTurn);
-        if (enemyKills == 0)
+        
+        for (CombatStack st1 : friends) {
+            if(st1.inStasis)
+                continue;
+            float pctOfMaxHP = ((st1.num-1) * st1.maxHits + st1.hits) / (st1.num * st1.maxHits);
+            float damagePerTurn = 0;
+            for (CombatStack st2: foes) {
+                if(st2.inStasis)
+                    continue;
+                float killPct = min(1.0f,st2.estimatedKillPct(st1));
+                if(st2.maxFiringRange(st1) <= st1.repulsorRange() && !st2.canCloak && !st2.canTeleport())
+                {
+                    killPct = 0;
+                }
+                damagePerTurn += killPct;
+            }
+            float healPerTurn = 0;
+            if(st1.isShip())
+            {
+                CombatStackShip ship = (CombatStackShip)st1;
+                healPerTurn = ship.designShipRepairPct() / st1.num;
+            }
+            damagePerTurn -= healPerTurn;
+            //System.out.print("\n"+stack.mgr.system().name()+" "+st1.fullName()+" takes "+damagePerTurn+" damage per turn.");
+            if(damagePerTurn > 0)
+                enemyKillTime += pctOfMaxHP / damagePerTurn;
+            else
+            {
+                enemyKillTime = Float.MAX_VALUE;
+                break;
+            }
+        }
+        
+        //System.out.print("\n"+stack.mgr.system().name()+" "+stack.fullName()+" allyKillTime: "+allyKillTime+" enemyKillTime: "+enemyKillTime);
+        if (enemyKillTime == allyKillTime)
             return false;
-        else if (allyKills == 0)
-            return true;
         else {
-            //System.out.print("\n"+stack.mgr.system().name()+" "+stack.fullName()+" enemy-superiority: "+(enemyKills * enemyValue) / (allyKills * allyValue)+" kills (Enemy vs. mine): "+enemyKills / allyKills+" Cost: (enemy vs. mine): "+enemyValue/allyValue);
-            return (enemyKills * enemyValue) / (allyKills * allyValue) > 1.0f;
+            return allyKillTime > enemyKillTime;
         }
     }
     @Override
