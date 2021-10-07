@@ -115,7 +115,7 @@ public class AIGeneral implements Base, General {
                 additionalColonizersToBuild--;
                 colonizerCost -= lab.colonyDesign().cost();
             }
-            if(empire.diplomatAI().militaryRank(empire, false) > empire.diplomatAI().popCapRank(false))
+            if(empire.diplomatAI().militaryRank(empire, false) > empire.diplomatAI().popCapRank(empire, false))
                 additionalColonizersToBuild = 0;
             //System.out.println(galaxy().currentTurn()+" "+empire.name()+" col-need after: "+additionalColonizersToBuild);
         }
@@ -740,22 +740,8 @@ public class AIGeneral implements Base, General {
                 continue;
             if(!empire.inShipRange(emp.id))
                 continue;
-            //The bigger we are, the more careful we are about whom to pick
-            if(!empire.warEnemies().contains(emp))
-            {
-                int upToWhatRank = 1 + opponentsInRange - empire.diplomatAI().popCapRank(true);
-                //System.out.println(galaxy().currentTurn()+" "+empire.name()+" my popcaprank: "+empire.diplomatAI().popCapRank(true)+" "+emp.name()+" military-rank: "+empire.diplomatAI().militaryRank(emp, true) +" threshold: "+upToWhatRank+" / "+opponentsInRange);
-                if(empire.diplomatAI().militaryRank(emp, true) < upToWhatRank)
-                {
-                    //System.out.println(galaxy().currentTurn()+" "+empire.name()+" skips "+emp.name()+" as potential enemy because military-rank: "+empire.diplomatAI().militaryRank(emp, true) +" is better than "+upToWhatRank);
-                    continue;
-                }
-            }
-            boolean incomingInvasion = false;
-            float currentScore = 1 / fleetCenter(empire).distanceTo(colonyCenter(emp));
-            if(incomingInvasion)
-                currentScore *= 2;
-            //System.out.println(galaxy().currentTurn()+" "+empire.name()+" vs "+emp.name()+" dist: "+fleetCenter(empire).distanceTo(colonyCenter(emp))+" score: "+currentScore);
+            float currentScore = ((float)empire.diplomatAI().militaryRank(emp, true) / (float)empire.diplomatAI().popCapRank(emp, true)) * (fleetCenter(emp).distanceTo(colonyCenter(empire)) / fleetCenter(empire).distanceTo(colonyCenter(emp)));
+            //System.out.println(galaxy().currentTurn()+" "+empire.name()+" vs "+emp.name()+" dist: "+fleetCenter(empire).distanceTo(colonyCenter(emp))+" rev-dist: "+fleetCenter(emp).distanceTo(colonyCenter(empire))+" milrank: "+empire.diplomatAI().militaryRank(emp, true)+" poprank: "+empire.diplomatAI().popCapRank(emp, true)+" score: "+currentScore);
             if(currentScore > highestScore)
             {
                 highestScore = currentScore;
@@ -972,7 +958,7 @@ public class AIGeneral implements Base, General {
             }
         }
         //System.out.println(galaxy().currentTurn()+" "+empire.name()+" "+totalArmedFleetCost+" / "+attackThreshold+" "+" milRank: "+empire.diplomatAI().militaryRank(empire)+" popcaprank: "+empire.diplomatAI().popCapRank());
-        if(totalArmedFleetCost > attackThreshold && empire.diplomatAI().militaryRank(empire, false) <= empire.diplomatAI().popCapRank(false))
+        if(totalArmedFleetCost > attackThreshold && empire.diplomatAI().militaryRank(empire, false) <= empire.diplomatAI().popCapRank(empire, false))
             return true;
         return false;
     }

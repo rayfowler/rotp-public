@@ -560,7 +560,6 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
         if (!v.otherView().embassy().readyForPeace())
             return false;
-
         return warWeary(v);
     }
     //-----------------------------------
@@ -1372,7 +1371,7 @@ public class AIDiplomat implements Base, Diplomat {
         boolean warAllowed = true;
         if(empire.generalAI().additionalColonizersToBuild(false) > 0)
             warAllowed = false;
-        int popCapRank = popCapRank(false);
+        int popCapRank = popCapRank(empire, false);
         /*if(!everyoneMet() && popCapRank < 3)
             warAllowed = false;*/
         for(int i = 0; i < NUM_CATEGORIES; ++i)
@@ -1455,11 +1454,11 @@ public class AIDiplomat implements Base, Diplomat {
             return castVoteFor(civ2);
         if (cv2.embassy().anyWar() && !cv1.embassy().anyWar())
             return castVoteFor(civ1);
-
+        
         //ail: I want it to be deterministic, so I pick whoever I fear more
-        if(empire.generalAI().timeToKill(civ1, empire) < empire.generalAI().timeToKill(civ2, empire))
+        if(empire.generalAI().timeToKill(civ1, empire) < empire.generalAI().timeToKill(civ2, empire) && empire.generalAI().timeToKill(empire, civ1) < empire.generalAI().timeToKill(civ1, empire))
             return castVoteFor(civ1);
-        if(empire.generalAI().timeToKill(civ2, empire) < empire.generalAI().timeToKill(civ1, empire))
+        if(empire.generalAI().timeToKill(civ2, empire) < empire.generalAI().timeToKill(civ1, empire) && empire.generalAI().timeToKill(empire, civ2) < empire.generalAI().timeToKill(civ2, empire))
             return castVoteFor(civ2);
         // return undecided
         return castVoteFor(null);
@@ -1706,6 +1705,19 @@ public class AIDiplomat implements Base, Diplomat {
             if(treaty.date() < newestWarDate)
                 return true;
         }
+        boolean everythingUnderSiege = true;
+        for(StarSystem sys : empire.allColonizedSystems())
+        {
+            if(sys.colony() == null)
+                continue;
+            if(!sys.enemyShipsInOrbit(empire) && sys.colony().currentProductionCapacity() > 0.5)
+            {
+                everythingUnderSiege = false;
+                break;
+            }
+        }
+        if(everythingUnderSiege)
+            return true;
         return false;
     }
     /*
@@ -1802,10 +1814,13 @@ public class AIDiplomat implements Base, Diplomat {
     @Override
     public  boolean leaderHatesAllSpies() { return false; }
     @Override
-    public int popCapRank(boolean inAttackRange)
+    public int popCapRank(Empire etc, boolean inAttackRange)
     {
         int rank = 1;
         float myPopCap = empire.generalAI().totalEmpirePopulationCapacity(empire);
+        float etcPopCap = empire.generalAI().totalEmpirePopulationCapacity(etc);
+        if(empire != etc && myPopCap > etcPopCap)
+            rank++;
         for(Empire emp:empire.contactedEmpires())
         {
             if(!empire.inEconomicRange(emp.id))
@@ -1813,7 +1828,7 @@ public class AIDiplomat implements Base, Diplomat {
             if(inAttackRange && !empire.inShipRange(emp.id))
                 continue;
             //System.out.println(galaxy().currentTurn()+" "+empire.name()+" looking at: "+emp.name()+" "+empire.generalAI().totalEmpirePopulationCapacity(emp)+" mine: "+myPopCap);
-            if(empire.generalAI().totalEmpirePopulationCapacity(emp) > myPopCap)
+            if(empire.generalAI().totalEmpirePopulationCapacity(emp) > etcPopCap)
                 rank++;
         }
         return rank;

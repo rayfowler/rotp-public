@@ -224,7 +224,7 @@ public class AIGovernor implements Base, Governor {
         boolean needToMilitarize = false;
         if(empire.atWar() || empire.generalAI().sensePotentialAttack())
         {
-            if(empire.diplomatAI().militaryRank(empire, false) > empire.diplomatAI().popCapRank(false) || empire.generalAI().sensePotentialAttack())
+            if(empire.diplomatAI().militaryRank(empire, false) > empire.diplomatAI().popCapRank(empire, false) || empire.generalAI().sensePotentialAttack())
                 if(col.currentProductionCapacity() > 0.5f)
                     needToMilitarize = true;
         }
