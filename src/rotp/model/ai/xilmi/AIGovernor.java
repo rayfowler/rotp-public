@@ -427,14 +427,13 @@ public class AIGovernor implements Base, Governor {
         {
             //System.out.print("\n"+empire.name()+" "+col.name()+" production-score "+productionScore(col.starSystem()));
             float maxShipMaintainance = 0.0f;
-            float fighterPercentage = 1.0f;
+            float fighterPercentage = empire.generalAI().defenseRatio();
             
             if(enemy || empire.generalAI().sensePotentialAttack())
             {
                 maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
                 /*if(myFleetBc > 4 * totalEnemyBc && highestNonEnemyBc <= myFleetBc * 4)
                     maxShipMaintainance /= 4.0f;*/
-                fighterPercentage = 0.5f + empire.generalAI().defenseRatio() * 0.5f;
                 //fighterPercentage = empire.generalAI().defenseRatio();
             }
             else if(inAttackRange)
@@ -443,7 +442,6 @@ public class AIGovernor implements Base, Governor {
                     maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
                 else
                     maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance() / 4;
-                fighterPercentage = 0.75f;
             }
             if(empire.shipDesignerAI().bombingAdapted(lab.fighterDesign()) > 0
                 || empire.shipDesignerAI().bombingAdapted(lab.bomberDesign()) < 0.5f)

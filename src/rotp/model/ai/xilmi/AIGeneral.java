@@ -780,51 +780,39 @@ public class AIGeneral implements Base, General {
             return defenseRatio;
         }
         float dr = 1.0f;
-        float totalReachableEnemyProduction = 0.0f;
-        float totalProductionReachableByEnemies = 0.0f;
         float totalMissileBaseCost = 0.0f;
         float totalShipCost = 0.0f;
-        float reachableEnemies = 0;
+        float popBCToKill = 0;
+        float shipBCToKill = 0;
         for(Empire enemy : empire.contactedEmpires())
         {
             if(!empire.inShipRange(enemy.id))
                 continue;
+            if(empire.alliedWith(enemy.id))
+                continue;
+            float populationInRange = 0;
             for(StarSystem enemySystem : empire.systemsInShipRange(enemy))
             {
                 if(enemySystem.colony() != null)
                 {
-                    totalReachableEnemyProduction += max(enemySystem.colony().production(), 1.0f);
+                    populationInRange += enemySystem.population();
                 }
             }
-            for(StarSystem mySystem : enemy.systemsInShipRange(empire))
-            {
-                if(mySystem.colony() != null)
-                {
-                    totalProductionReachableByEnemies += max(mySystem.colony().production(), 1.0f);
-                }
-            }
+            popBCToKill += populationInRange * enemy.tech().populationCost();
+            if(enemy.totalPlanetaryPopulation() > 0)
+                shipBCToKill += enemy.totalFleetCost() * populationInRange / enemy.totalPlanetaryPopulation();
+            //System.out.print("\n"+empire.name()+" "+enemy.name()+" FleetCost: "+enemy.totalFleetCost()+" scaled with: "+populationInRange / enemy.totalPlanetaryPopulation()+ " to: "+enemy.totalFleetCost() * populationInRange / enemy.totalPlanetaryPopulation());
             totalMissileBaseCost += enemy.missileBaseCostPerBC();
             totalShipCost += enemy.shipMaintCostPerBC();
-            reachableEnemies++;
         }
-        if(totalReachableEnemyProduction > 0)
-        {
-            dr = totalProductionReachableByEnemies / (totalReachableEnemyProduction + totalProductionReachableByEnemies);
-        }
-        //System.out.print("\n"+empire.name()+" totalReachableEnemyProduction: "+totalReachableEnemyProduction+" totalProductionReachableByEnemies: "+totalProductionReachableByEnemies+" dr: "+dr);
+        if(shipBCToKill + popBCToKill > 0)
+            dr = shipBCToKill / (shipBCToKill + popBCToKill);
+        //System.out.print("\n"+empire.name()+" totalFleetCost: "+shipBCToKill+" totalPopCost: "+popBCToKill+" dr: "+dr);
         if(totalMissileBaseCost+totalShipCost > 0)
         {
             dr = min(dr, totalShipCost / (totalMissileBaseCost+totalShipCost));
         }
         //System.out.print("\n"+empire.name()+" totalShipCost: "+totalShipCost+" totalMissileBaseCost: "+totalMissileBaseCost+" dr: "+dr);
-        float avgEnemyShipCost = totalShipCost;
-        if(reachableEnemies > 0)
-            avgEnemyShipCost /= reachableEnemies;
-        if(avgEnemyShipCost > 0)
-        {
-            dr /= max(1, empire.shipMaintCostPerBC() / avgEnemyShipCost);
-        }
-        //System.out.print("\n"+empire.name()+" adjusted-defense-ratio: "+dr);
         defenseRatio = dr;
         return defenseRatio;
     }

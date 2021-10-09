@@ -401,7 +401,7 @@ public class NewShipTemplate implements Base {
         float hybridBombRatio = 0;
         if(ai.wantHybrid())
         {
-            hybridBombRatio = 0.5f - 0.5f * ai.empire().generalAI().defenseRatio();
+            hybridBombRatio = 1 - ai.empire().generalAI().defenseRatio();
         }
         //System.out.print("\n"+galaxy().currentTurn()+" "+ai.empire().name()+" hybridBombRatio: "+hybridBombRatio);
         // what's left will be used on non-bombs for bombers, second best weapon for destroyers
@@ -899,7 +899,7 @@ public class NewShipTemplate implements Base {
                         hasRegular = true;
                 }
             }
-            if(hasRegular)
+            if(hasRegular && ai.empire().shipDesignerAI().MaintenanceLimitReached(ourDesign))
                 DesignsWithRegularBombs++;
             if(hasBio)
                 DesignsWithBioWeapons++;
