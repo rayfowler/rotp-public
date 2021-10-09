@@ -488,6 +488,8 @@ public class AIShipDesigner implements Base, ShipDesigner {
         
         for(StarSystem unexplored:empire.unexploredSystems())
         {
+            if(unexplored.monster() != null)
+                continue;
             if(empire.sv.inShipRange(unexplored.id))
             {
                 unexploredInRange = true;
@@ -515,7 +517,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
                 && (empire.tech().propulsion().techLevel() >= rangeTechLevelThreshold && empire.tech().researchingShipRange() <= empire.shipRange() || empire.tech().propulsion().techLevel() >= 2 * rangeTechLevelThreshold))
             allowHuge = true;
             
-        //System.out.print("\n"+empire.name()+" colonizable in normal range: "+empire.uncolonizedPlanetsInRange(empire.shipRange()).size()+" colonizable in extended-range: "+empire.uncolonizedPlanetsInRange(empire.scoutRange()).size()+" unexplored in range: "+unexploredInRange+" huge allowed: "+allowHuge+" rtlt: "+rangeTechLevelThreshold);
+        //System.out.print("\n"+empire.name()+" colonizable in normal range: "+empire.uncolonizedPlanetsInRange(empire.shipRange()).size()+" colonizable in extended-range: "+empire.uncolonizedPlanetsInRange(empire.scoutRange()).size()+" unexplored in range: "+unexploredInRange+" huge allowed: "+allowHuge+" rtlt: "+rangeTechLevelThreshold+" prop-lvl: "+empire.tech().propulsion().techLevel()+" res-Range: "+empire.tech().researchingShipRange()+" unexplored in range: "+unexploredInRange+" uncolonized in range: "+empire.uncolonizedPlanetsInRange(empire.scoutRange()).size());
         // if we don't need regular-range colony ship
         if (extendedRangeNeeded) {
             ShipSpecial special = lab.specialReserveFuel();
@@ -672,6 +674,8 @@ public class AIShipDesigner implements Base, ShipDesigner {
     @Override
     public boolean wantHybrid()
     {
+        if(empire.generalAI().defenseRatio() < 0.5)
+            return false;
         int freeSlots = 0;
         for (int slot=0;slot<ShipDesignLab.MAX_DESIGNS;slot++) {
             ShipDesign d = lab().design(slot);
