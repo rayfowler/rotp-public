@@ -1050,6 +1050,9 @@ public class AIGeneral implements Base, General {
     public boolean needScoutRepellers()
     {
         boolean need = true;
+        //ail: during a hot war, we can't afford to reserve a slot for that
+        if(empire.atWar())
+            return false;
         int totalOpponents = 0;
         int opponentsWithUnarmed = 0;
         for(Empire opponent : galaxy().activeEmpires())

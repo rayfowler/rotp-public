@@ -141,6 +141,10 @@ public class AIShipDesigner implements Base, ShipDesigner {
                 {
                     keepScore = ((float)d.engine().warp() / (float)lab().fastestEngine().warp()) * ((float)(d.special(0).tech()).level / (float)bestColonySpecial().tech().level);
                 }
+                else if(d.isScout())
+                {
+                    keepScore = (float)d.engine().warp() / (float)lab().fastestEngine().warp();
+                }
                 else
                 {
                     keepScore = 1 - d.availableSpace()/d.totalSpace();
@@ -177,11 +181,11 @@ public class AIShipDesigner implements Base, ShipDesigner {
         // if we are not using scouts anymore, quit
         if (!lab.needScouts)
         {
-            //ail: free up the slot for other designs
+            //ail: don't need to scrap immediately, can also be made obsolete and scrapped later
             ShipDesign currDesign = lab.scoutDesign();
             if(currDesign.active() && currDesign.isScout())
             {
-                ScrapDesign(currDesign);
+                currDesign.becomeObsolete(OBS_SCOUT_TURNS);
             }
             return;
         }
@@ -711,6 +715,8 @@ public class AIShipDesigner implements Base, ShipDesigner {
             if(empire.shipLab().needScouts)
                 slotsForCombat--;
             if(empire.generalAI().needScoutRepellers())
+                slotsForCombat--;
+            if(!wantHybrid())
                 slotsForCombat--;
             //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+d.name()+" maintenancePercentage: "+maintenancePercentage+" percentageOfMaxMaintenance: "+percentageOfMaxMaintenance+" combined: "+maintenancePercentage * percentageOfMaxMaintenance +" / "+1.0f / slotsForCombat);
             if(maintenancePercentage * percentageOfMaxMaintenance > 1.0f / slotsForCombat)
