@@ -92,7 +92,12 @@ public class AIFleetCommander implements Base, FleetCommander {
                 }
             }
             float threatFactor = 0.04f;
-            if(techsLeft)
+            float enemyPower = 0;
+            for(Empire enemy : empire.enemies())
+            {
+                enemyPower += enemy.militaryPowerLevel();
+            }
+            if(techsLeft && enemyPower < empire.militaryPowerLevel())
                 maxMaintenance = sqrt(max(10, empire.tech().avgTechLevel())) * threatFactor;
             else
                 maxMaintenance = 0.9f;
@@ -1143,11 +1148,11 @@ public class AIFleetCommander implements Base, FleetCommander {
                 {
                     continue;
                 }
-                if(empire.shipDesignerAI().bombingAdapted(d) >= 0.8f && !includeBombers && !d.isColonyShip())
+                if(empire.shipDesignerAI().bombingAdapted(d) >= 0.5f && !includeBombers && !d.isColonyShip())
                 {
                     continue;
                 }
-                if(empire.shipDesignerAI().fightingAdapted(d) > 0.8f && !includeFighters && !d.isColonyShip())
+                if(empire.shipDesignerAI().fightingAdapted(d) > 0.5f && !includeFighters && !d.isColonyShip())
                 {
                     continue;
                 }
@@ -1199,6 +1204,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                 break;
         }
     }
+    @Override
     public float bcValue(ShipFleet fl, boolean countScouts, boolean countFighters, boolean countBombers, boolean countColonizers) {
         float bc = 0;
         ShipDesignLab lab = fl.empire().shipLab();
@@ -1209,14 +1215,14 @@ public class AIFleetCommander implements Base, FleetCommander {
                 float bcValueFactor = 1;
                 if(des == null)
                     continue;
-                if(des.isScout() && !countScouts)
+                if(des.range() == des.empire().scoutRange() && !des.hasColonySpecial() && !countScouts)
+                    continue;
+                if(des.hasColonySpecial() && !countColonizers)
                     continue;
                 if(countBombers)
                     bcValueFactor = empire.shipDesignerAI().bombingAdapted(des);
                 if(countFighters)
                     bcValueFactor = empire.shipDesignerAI().fightingAdapted(des);
-                if(des.hasColonySpecial() && !countColonizers)
-                    continue;
                 //System.out.print("\n"+empire.name()+" Fleet at "+fl.system().name()+" adds "+(num * des.cost() * bcValueFactor)+" for "+num+" "+des.name());
                 bc += (num * des.cost() * bcValueFactor);
             }
