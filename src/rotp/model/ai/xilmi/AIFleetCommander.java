@@ -185,8 +185,8 @@ public class AIFleetCommander implements Base, FleetCommander {
             }
             if(current.colony() != null)
             {
-                buffy.enemyIncomingTransports += empire.unfriendlyTransportsInTransit(current) * empire.maxRobotControls();
-                buffy.myIncomingTransports += empire.transportsInTransit(current) * empire.maxRobotControls();
+                buffy.enemyIncomingTransports += empire.unfriendlyTransportsInTransit(current);
+                buffy.myIncomingTransports += empire.transportsInTransit(current);
             }
             systemInfoBuffer.put(id, buffy);
         }
@@ -845,7 +845,16 @@ public class AIFleetCommander implements Base, FleetCommander {
                     if(target != null)
                     {
                         UpdateSystemInfo(fleet.sysId());
-                        keepBc = max(keepBc, ((systemInfoBuffer.get(fleet.sysId()).enemyIncomingTransports + systemInfoBuffer.get(fleet.sysId()).myIncomingTransports) * empire.maxRobotControls() + systemInfoBuffer.get(fleet.sysId()).enemyFightingBc * 2));
+                        float stayToKillTransports = 0;
+                        float transportsToDealWith = max(systemInfoBuffer.get(fleet.sysId()).enemyIncomingTransports, systemInfoBuffer.get(fleet.sysId()).myIncomingTransports);
+                        if(transportsToDealWith > 0)
+                        {
+                            float TransportKills = fleet.firepowerAntiShip(0) * transportGauntletRounds(max(1, empire.tech().topEngineWarpTech().baseWarp() - 1)) / empire.tech().topArmorTech().transportHP;
+                            transportsToDealWith *= 1 - empire.combatTransportPct();
+                            stayToKillTransports = fleet.bcValue() * min(1, transportsToDealWith / TransportKills);
+                            //System.out.print("\n"+galaxy().currentTurn()+" "+fleet.empire().name()+" Fleet at "+fleet.system().name()+" should be able to kill "+TransportKills+"/"+transportsToDealWith+" transports. Need to keep: "+stayToKillTransports+" of "+fleet.bcValue());
+                        }
+                        keepBc = max(keepBc, systemInfoBuffer.get(fleet.sysId()).enemyFightingBc * 2, stayToKillTransports);
                         if(systemInfoBuffer.get(fleet.sysId()).enemyFightingBc > bcValue(fleet, false, true, false, false))
                             keepBc = 0;
                         //System.out.print("\n"+galaxy().currentTurn()+" "+fleet.empire().name()+" Fleet at "+fleet.system().name()+" keepBc: "+keepBc);
@@ -1274,5 +1283,17 @@ public class AIFleetCommander implements Base, FleetCommander {
         if(sys.empire() != empire)
             return 0;
         return totalBudget * sys.population() / empire.totalPlanetaryPopulation();
+    }
+    public int transportGauntletRounds(float speed) {
+        switch((int)speed) {
+            case 0: case 1: case 2: case 3: case 4:
+                return 4;
+            case 5: case 6:
+                return 3;
+            case 7: case 8:
+                return 2;
+            case 9: default:
+                return 1;
+        }
     }
 }
