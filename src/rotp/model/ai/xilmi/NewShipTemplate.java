@@ -109,8 +109,7 @@ public class NewShipTemplate implements Base {
         }
 
         SortedMap<Float, ShipDesign> designSorter = new TreeMap<>();
-        float costLimit = ai.empire().totalPlanetaryProduction() * ai.empire().fleetCommanderAI().maxShipMaintainance() * 50 / ai.empire().systemsInShipRange(ai.empire()).size();
-        //System.out.print("\n"+galaxy().currentTurn()+" "+ai.empire().name()+" costlimit: "+costLimit);
+        float costLimit = ai.empire().totalPlanetaryProduction() * 0.125f * 50 / ai.empire().systemsInShipRange(ai.empire()).size();
         float biggestShipWeaponSize = 0;
         float biggestBombSize = 0;
         for (int i = 0; i<4; i++) {
@@ -120,16 +119,16 @@ public class NewShipTemplate implements Base {
                 if(design.weapon(j).groundAttacksOnly())
                 {
                     if(design.weapon(j).size(design) > biggestBombSize)
-                        biggestBombSize = design.weapon(j).size(design);
+                        biggestBombSize = design.weapon(j).space(design);
                 }
                 else
                 {
                     if(design.weapon(j).size(design) > biggestShipWeaponSize)
-                        biggestShipWeaponSize = design.weapon(j).size(design);
+                        biggestShipWeaponSize = design.weapon(j).space(design);
                 }
             }
         }
-        
+        //System.out.print("\n"+galaxy().currentTurn()+" "+ai.empire().name()+" costlimit: "+costLimit+" biggestShipWeaponSize: "+biggestShipWeaponSize);
         for (int i = 0; i<4; i++) {
             ShipDesign design = shipDesigns[i];
             if(role == role.DESTROYER && i > 0)
@@ -156,24 +155,24 @@ public class NewShipTemplate implements Base {
             {
                 if(design.weapon(j).groundAttacksOnly())
                 {
-                    if(design.weapon(j).size(design) > bombWpnSize)
-                        bombWpnSize = design.weapon(j).size(design);
+                    if(design.weapon(j).space(design) > bombWpnSize)
+                        bombWpnSize = design.weapon(j).space(design);
                 }
                 else
                 {
-                    if(design.weapon(j).size(design) > spaceWpnSize)
-                        spaceWpnSize = design.weapon(j).size(design);
+                    if(design.weapon(j).space(design) > spaceWpnSize)
+                        spaceWpnSize = design.weapon(j).space(design);
                 }
             }
             float weaponSizeMod = 1.0f;
-            if(role.BOMBER == role)
+            if(role.BOMBER == role && biggestBombSize > 0)
                 weaponSizeMod *= bombWpnSize / biggestBombSize;
-            else
+            else if(biggestShipWeaponSize > 0)
                 weaponSizeMod *= spaceWpnSize / biggestShipWeaponSize;
-            if(ai.empire().shipDesignerAI().wantHybrid())
+            if(ai.empire().shipDesignerAI().wantHybrid() && biggestBombSize > 0)
                 weaponSizeMod *= ai.empire().generalAI().defenseRatio() + (1 - ai.empire().generalAI().defenseRatio()) * bombWpnSize / biggestBombSize;
             score *= weaponSizeMod;
-            //System.out.print("\n"+ai.empire().name()+" "+design.name()+" Role: "+role+" size: "+design.size()+" score: "+score+" tonnageScore: "+design.spaceUsed() / design.cost()+" defscore: "+defScore+" wpnScore: "+weaponSizeMod+" costlimit: "+costLimit);
+            //System.out.print("\n"+ai.empire().name()+" "+design.name()+" Role: "+role+" size: "+design.size()+" score: "+score+" tonnageScore: "+design.spaceUsed() / design.cost()+" defscore: "+defScore+" wpnScore: "+weaponSizeMod+" costlimit: "+costLimit+" spaceWpnSize: "+spaceWpnSize);
             designSorter.put(score, design);
         }
         // lastKey is design with greatest damage
