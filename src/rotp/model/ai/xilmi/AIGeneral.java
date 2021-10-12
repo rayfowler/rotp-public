@@ -55,6 +55,8 @@ public class AIGeneral implements Base, General {
     private int additionalColonizersToBuild = -1;
     private float totalEmpirePopulationCapacity = -1;
     private float warROI = -1;
+    private float visibleEnemyFighterCost = -1;
+    private float myFighterCost = -1;
 
     public AIGeneral (Empire c) {
         empire = c;
@@ -85,6 +87,8 @@ public class AIGeneral implements Base, General {
         totalArmedFleetCost = -1;
         totalEmpirePopulationCapacity = -1;
         warROI = -1;
+        visibleEnemyFighterCost = -1;
+        myFighterCost = -1;
         
         //empire.tech().learnAll();
         
@@ -772,6 +776,36 @@ public class AIGeneral implements Base, General {
             totalEmpirePopulationCapacity = capacity;
         return capacity;
     }
+    public float visibleEnemyFighterCost()
+    {
+        if(visibleEnemyFighterCost >= 0)
+            return visibleEnemyFighterCost;
+        float cost = 0;
+        for(ShipFleet fl:empire.enemyFleets())
+        {
+            if(empire.enemies().contains(fl.empire()))
+            {
+                //System.out.print("\n"+empire.name()+" see fleet of "+fl.empire().name()+" with Fgtr-value: "+empire.fleetCommanderAI().bcValue(fl, false, true, false, false));
+                cost += empire.fleetCommanderAI().bcValue(fl, false, true, false, false);
+            }
+        }
+        visibleEnemyFighterCost = cost;
+        return visibleEnemyFighterCost;
+    }
+    public float myFighterCost()
+    {
+        if(myFighterCost >= 0)
+            return myFighterCost;
+        float fighterCost = 0.0f;
+        for (ShipDesign design:empire.shipLab().designs()) 
+        {
+            if(design.hasColonySpecial())
+                continue;
+            fighterCost += design.cost() * galaxy().ships.shipDesignCount(empire.id, design.id()) * empire.shipDesignerAI().fightingAdapted(design);
+        }
+        myFighterCost = fighterCost;
+        return myFighterCost;
+    }
     @Override
     public float defenseRatio()
     {
@@ -780,39 +814,43 @@ public class AIGeneral implements Base, General {
             return defenseRatio;
         }
         float dr = 1.0f;
-        float totalMissileBaseCost = 0.0f;
-        float totalShipCost = 0.0f;
-        float popBCToKill = 0;
-        float shipBCToKill = 0;
-        for(Empire enemy : empire.contactedEmpires())
+        //System.out.print("\n"+empire.name()+" myFighterCost: "+myFighterCost()+" visibleEnemyFighterCost: "+visibleEnemyFighterCost());
+        if(!empire.enemies().isEmpty() && myFighterCost() >= visibleEnemyFighterCost())
         {
-            if(!empire.inShipRange(enemy.id))
-                continue;
-            if(empire.alliedWith(enemy.id))
-                continue;
-            float populationInRange = 0;
-            for(StarSystem enemySystem : empire.systemsInShipRange(enemy))
+            float totalMissileBaseCost = 0.0f;
+            float totalShipCost = 0.0f;
+            float popBCToKill = 0;
+            float shipBCToKill = 0;
+            for(Empire enemy : empire.contactedEmpires())
             {
-                if(enemySystem.colony() != null)
+                if(!empire.inShipRange(enemy.id))
+                    continue;
+                if(empire.alliedWith(enemy.id))
+                    continue;
+                float populationInRange = 0;
+                for(StarSystem enemySystem : empire.systemsInShipRange(enemy))
                 {
-                    populationInRange += enemySystem.population();
+                    if(enemySystem.colony() != null)
+                    {
+                        populationInRange += enemySystem.population();
+                    }
                 }
+                popBCToKill += populationInRange * enemy.tech().populationCost();
+                if(enemy.totalPlanetaryPopulation() > 0)
+                    shipBCToKill += enemy.totalFleetCost() * populationInRange / enemy.totalPlanetaryPopulation();
+                //System.out.print("\n"+empire.name()+" "+enemy.name()+" FleetCost: "+enemy.totalFleetCost()+" scaled with: "+populationInRange / enemy.totalPlanetaryPopulation()+ " to: "+enemy.totalFleetCost() * populationInRange / enemy.totalPlanetaryPopulation());
+                totalMissileBaseCost += enemy.missileBaseCostPerBC();
+                totalShipCost += enemy.shipMaintCostPerBC();
             }
-            popBCToKill += populationInRange * enemy.tech().populationCost();
-            if(enemy.totalPlanetaryPopulation() > 0)
-                shipBCToKill += enemy.totalFleetCost() * populationInRange / enemy.totalPlanetaryPopulation();
-            //System.out.print("\n"+empire.name()+" "+enemy.name()+" FleetCost: "+enemy.totalFleetCost()+" scaled with: "+populationInRange / enemy.totalPlanetaryPopulation()+ " to: "+enemy.totalFleetCost() * populationInRange / enemy.totalPlanetaryPopulation());
-            totalMissileBaseCost += enemy.missileBaseCostPerBC();
-            totalShipCost += enemy.shipMaintCostPerBC();
+            if(shipBCToKill + popBCToKill > 0)
+                dr = shipBCToKill / (shipBCToKill + popBCToKill);
+            //System.out.print("\n"+empire.name()+" totalFleetCost: "+shipBCToKill+" totalPopCost: "+popBCToKill+" dr: "+dr);
+            if(totalMissileBaseCost+totalShipCost > 0)
+            {
+                dr = min(dr, totalShipCost / (totalMissileBaseCost+totalShipCost));
+            }
         }
-        if(shipBCToKill + popBCToKill > 0)
-            dr = shipBCToKill / (shipBCToKill + popBCToKill);
-        //System.out.print("\n"+empire.name()+" totalFleetCost: "+shipBCToKill+" totalPopCost: "+popBCToKill+" dr: "+dr);
-        if(totalMissileBaseCost+totalShipCost > 0)
-        {
-            dr = min(dr, totalShipCost / (totalMissileBaseCost+totalShipCost));
-        }
-        //System.out.print("\n"+empire.name()+" totalShipCost: "+totalShipCost+" totalMissileBaseCost: "+totalMissileBaseCost+" dr: "+dr);
+        //System.out.print("\n"+empire.name()+" dr: "+dr);
         defenseRatio = dr;
         return defenseRatio;
     }
