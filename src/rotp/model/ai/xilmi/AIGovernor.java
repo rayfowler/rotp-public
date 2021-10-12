@@ -224,7 +224,7 @@ public class AIGovernor implements Base, Governor {
         boolean needToMilitarize = false;
         if(empire.atWar() || empire.generalAI().sensePotentialAttack())
         {
-            if(empire.diplomatAI().militaryRank(empire, false) > empire.diplomatAI().popCapRank(false) || empire.generalAI().sensePotentialAttack())
+            if(empire.diplomatAI().militaryRank(empire, false) > empire.diplomatAI().popCapRank(empire, false) || empire.generalAI().sensePotentialAttack())
                 if(col.currentProductionCapacity() > 0.5f)
                     needToMilitarize = true;
         }
@@ -427,14 +427,13 @@ public class AIGovernor implements Base, Governor {
         {
             //System.out.print("\n"+empire.name()+" "+col.name()+" production-score "+productionScore(col.starSystem()));
             float maxShipMaintainance = 0.0f;
-            float fighterPercentage = 1.0f;
+            float fighterPercentage = empire.generalAI().defenseRatio();
             
             if(enemy || empire.generalAI().sensePotentialAttack())
             {
                 maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
                 /*if(myFleetBc > 4 * totalEnemyBc && highestNonEnemyBc <= myFleetBc * 4)
                     maxShipMaintainance /= 4.0f;*/
-                fighterPercentage = 0.5f + empire.generalAI().defenseRatio() * 0.5f;
                 //fighterPercentage = empire.generalAI().defenseRatio();
             }
             else if(inAttackRange)
@@ -443,7 +442,6 @@ public class AIGovernor implements Base, Governor {
                     maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
                 else
                     maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance() / 4;
-                fighterPercentage = 0.75f;
             }
             if(empire.shipDesignerAI().bombingAdapted(lab.fighterDesign()) > 0
                 || empire.shipDesignerAI().bombingAdapted(lab.bomberDesign()) < 0.5f)
@@ -500,7 +498,7 @@ public class AIGovernor implements Base, Governor {
 
         for (int i=0;i<col.spending.length;i++)
             col.locked(i, false);
-        //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+col.name()+" col.pct(SHIP): "+col.pct(SHIP)+" col.pct(DEFENSE): "+col.pct(DEFENSE)+" col.pct(INDUSTRY): "+col.pct(INDUSTRY)+" col.pct(ECOLOGY): "+col.pct(ECOLOGY)+" col.pct(TECH): "+col.pct(RESEARCH));
+        //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+col.name()+" col.pct(SHIP): "+col.pct(SHIP)+" col.pct(DEFENSE): "+col.pct(DEFENSE)+" col.pct(INDUSTRY): "+col.pct(INDUSTRY)+" col.pct(ECOLOGY): "+col.pct(ECOLOGY)+" col.pct(TECH): "+col.pct(RESEARCH)+" yard: "+col.shipyardProject());
     }
     @Override
     public float maxShipBCPermitted(Colony col) {

@@ -141,6 +141,10 @@ public class AIShipDesigner implements Base, ShipDesigner {
                 {
                     keepScore = ((float)d.engine().warp() / (float)lab().fastestEngine().warp()) * ((float)(d.special(0).tech()).level / (float)bestColonySpecial().tech().level);
                 }
+                else if(d.isScout())
+                {
+                    keepScore = (float)d.engine().warp() / (float)lab().fastestEngine().warp();
+                }
                 else
                 {
                     keepScore = 1 - d.availableSpace()/d.totalSpace();
@@ -177,11 +181,11 @@ public class AIShipDesigner implements Base, ShipDesigner {
         // if we are not using scouts anymore, quit
         if (!lab.needScouts)
         {
-            //ail: free up the slot for other designs
+            //ail: don't need to scrap immediately, can also be made obsolete and scrapped later
             ShipDesign currDesign = lab.scoutDesign();
             if(currDesign.active() && currDesign.isScout())
             {
-                ScrapDesign(currDesign);
+                currDesign.becomeObsolete(OBS_SCOUT_TURNS);
             }
             return;
         }
@@ -488,6 +492,8 @@ public class AIShipDesigner implements Base, ShipDesigner {
         
         for(StarSystem unexplored:empire.unexploredSystems())
         {
+            if(unexplored.monster() != null)
+                continue;
             if(empire.sv.inShipRange(unexplored.id))
             {
                 unexploredInRange = true;
@@ -515,7 +521,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
                 && (empire.tech().propulsion().techLevel() >= rangeTechLevelThreshold && empire.tech().researchingShipRange() <= empire.shipRange() || empire.tech().propulsion().techLevel() >= 2 * rangeTechLevelThreshold))
             allowHuge = true;
             
-        //System.out.print("\n"+empire.name()+" colonizable in normal range: "+empire.uncolonizedPlanetsInRange(empire.shipRange()).size()+" colonizable in extended-range: "+empire.uncolonizedPlanetsInRange(empire.scoutRange()).size()+" unexplored in range: "+unexploredInRange+" huge allowed: "+allowHuge+" rtlt: "+rangeTechLevelThreshold);
+        //System.out.print("\n"+empire.name()+" colonizable in normal range: "+empire.uncolonizedPlanetsInRange(empire.shipRange()).size()+" colonizable in extended-range: "+empire.uncolonizedPlanetsInRange(empire.scoutRange()).size()+" unexplored in range: "+unexploredInRange+" huge allowed: "+allowHuge+" rtlt: "+rangeTechLevelThreshold+" prop-lvl: "+empire.tech().propulsion().techLevel()+" res-Range: "+empire.tech().researchingShipRange()+" unexplored in range: "+unexploredInRange+" uncolonized in range: "+empire.uncolonizedPlanetsInRange(empire.scoutRange()).size());
         // if we don't need regular-range colony ship
         if (extendedRangeNeeded) {
             ShipSpecial special = lab.specialReserveFuel();
@@ -672,6 +678,8 @@ public class AIShipDesigner implements Base, ShipDesigner {
     @Override
     public boolean wantHybrid()
     {
+        if(empire.generalAI().defenseRatio() < 0.5)
+            return false;
         int freeSlots = 0;
         for (int slot=0;slot<ShipDesignLab.MAX_DESIGNS;slot++) {
             ShipDesign d = lab().design(slot);
@@ -707,6 +715,8 @@ public class AIShipDesigner implements Base, ShipDesigner {
             if(empire.shipLab().needScouts)
                 slotsForCombat--;
             if(empire.generalAI().needScoutRepellers())
+                slotsForCombat--;
+            if(!wantHybrid())
                 slotsForCombat--;
             //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+d.name()+" maintenancePercentage: "+maintenancePercentage+" percentageOfMaxMaintenance: "+percentageOfMaxMaintenance+" combined: "+maintenancePercentage * percentageOfMaxMaintenance +" / "+1.0f / slotsForCombat);
             if(maintenancePercentage * percentageOfMaxMaintenance > 1.0f / slotsForCombat)

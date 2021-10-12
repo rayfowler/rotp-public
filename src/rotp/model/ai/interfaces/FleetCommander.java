@@ -15,6 +15,7 @@
  */
 package rotp.model.ai.interfaces;
 
+import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
 
 public interface FleetCommander {
@@ -22,4 +23,7 @@ public interface FleetCommander {
     void nextTurn();
     float transportPriority(StarSystem sys);
     float maxShipMaintainance();
+    
+    //Xilmi
+    default float bcValue(ShipFleet fl, boolean countScouts, boolean countFighters, boolean countBombers, boolean countColonizers) { return 0; }
 }
