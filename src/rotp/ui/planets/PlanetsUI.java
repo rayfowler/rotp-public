@@ -827,6 +827,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             int x0 = gap+helpW;
             int tabW = (w-helpW-(6*gap))/4;
             String title = text("PLANETS_TITLE", player().raceName());
+            title = player().replaceTokens(title, "player");
             String ecoLabel = text("PLANETS_VIEW_ECOLOGY");
             String indLabel =  text("PLANETS_VIEW_INDUSTRY");
             String milLabel =  text("PLANETS_VIEW_MILITARY");

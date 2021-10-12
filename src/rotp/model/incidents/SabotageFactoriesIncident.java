@@ -62,8 +62,11 @@ public class SabotageFactoriesIncident extends DiplomaticIncident {
         && (destroyed > 0)) {
             StarSystem sys = m.starSystem();
             FactoriesDestroyedAlert.create(ev.empire(), destroyed, sys);
-            if (sys.isColonized() && sys.colony().industry().allocation() == 0)
-                session().addSystemToAllocate(sys, text("MAIN_ALLOCATE_SABOTAGE_FACTORIES", systemName(), str(destroyed), ev.empire().raceName()));
+            if (sys.isColonized() && sys.colony().defense().allocation() == 0) {
+                String str1 = text("MAIN_ALLOCATE_SABOTAGE_FACTORIES", systemName(), str(destroyed), ev.empire().raceName());
+                str1 = ev.empire().replaceTokens(str1, "spy");
+                session().addSystemToAllocate(sys, str1);
+            }
         }
     }
     private String systemName()      { return player().sv.name(sysId); }

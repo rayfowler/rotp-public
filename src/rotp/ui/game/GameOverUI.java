@@ -280,8 +280,10 @@ public final class GameOverUI extends FadeInPanel implements MouseListener, Mous
             String special = ruler.race().text("GAME_OVER_REBELLION_LOSS3");
             resultText = text("GAME_OVER_REBELLION_LOSS2", year, pName, pRace, pEmpire, rName, rRace, rEmpire, special);
         }
-        else if (session().status().lostNoColonies())
+        else if (session().status().lostNoColonies()) {
             resultText = text("GAME_OVER_NO_COLONIES_LOSS2", year, pName, pRace, pEmpire, rName, rRace, rEmpire);
+            resultText = player().replaceTokens(resultText, "player");
+        }
         else if (session().status().wonDiplomatic())
             resultText = text("GAME_OVER_COUNCIL_WIN2", year, pName, pRace, pEmpire, rName, rRace, rEmpire);
         else if (session().status().wonMilitary())

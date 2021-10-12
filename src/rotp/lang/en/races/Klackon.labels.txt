@@ -50,7 +50,7 @@ TECH_RESEARCH_PROPULSION          | I must select the next propulsion technology
 TECH_RESEARCH_WEAPON              | I must select the next weapon technology to focus on.
 TECH_DISCOVERY_TITLE              | I Achieve a %1 Breakthrough
 TECH_SCOUTED_TITLE                | While Exploring the Ruins of %1, I discover a new Technology
-TECH_STOLEN_TITLE                 | I have infiltrated the %1 research center at %2.
+TECH_STOLEN_TITLE                 | I have infiltrated the [alien_race] research center at %2.
 TECH_TRADED_TITLE                 | I Acquire Technology from [alien_race] Scientists
 TECH_PLUNDERED_TITLE              | While Plundering the Ruins of %1, I discover a new Technology
 TECH_ALLOCATE_SHIELD              | Should I increase the defense ratios of all of my colonies to build the new planetary shields?

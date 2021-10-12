@@ -15,6 +15,7 @@
  */
 package rotp.ui.notifications;
 
+import rotp.model.empires.Empire;
 import rotp.model.game.GameSession;
 
 public class TradeTreatyMaturedAlert extends GameAlert {
@@ -25,8 +26,10 @@ public class TradeTreatyMaturedAlert extends GameAlert {
     }
     @Override
     public String description() {
-        String name = galaxy().empire(empId).name();
-        return text("MAIN_ALERT_TRADE_MATURED", name, str(amt));
+        Empire emp = galaxy().empire(empId);
+        String str1 = text("MAIN_ALERT_TRADE_MATURED", emp.name(), str(amt));
+        str1 = emp.replaceTokens(str1, "alien");
+        return str1;
     }
     private TradeTreatyMaturedAlert(int id, int tradeAmt) {
         empId = id;

@@ -1132,7 +1132,9 @@ public final class Colony implements Base, IMappedObject, Serializable {
             allocation(INDUSTRY,0);
             allocation(ECOLOGY,0);
             allocation(RESEARCH,0);
-            session().addSystemToAllocate(starSystem(), text("MAIN_ALLOCATE_COLONY_CAPTURED", pl.sv.name(starSystem().id), pl.raceName()));
+            String str1 = text("MAIN_ALLOCATE_COLONY_CAPTURED", pl.sv.name(starSystem().id), pl.raceName());
+            str1 = pl.replaceTokens(str1, "spy");
+            session().addSystemToAllocate(starSystem(), str1);
         }
         // list of possible techs that could be recovered from factories
         List<Tech> possibleTechs = empire().tech().techsUnknownTo(tr.empire());
