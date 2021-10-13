@@ -486,6 +486,7 @@ public class AIGovernor implements Base, Governor {
                 empire.toggleColonyExcessToResearch();
         }
         if(col.industry().factories() < col.maxUseableFactories() + col.normalPopGrowth() * empire.maxRobotControls())
+            shiftResearchToIndustry = true;
         
         if(enemyBombardPower > 0)
             shiftResearchToIndustry = false;
