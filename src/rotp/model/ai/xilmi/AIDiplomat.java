@@ -1374,17 +1374,8 @@ public class AIDiplomat implements Base, Diplomat {
         int popCapRank = popCapRank(empire, false);
         /*if(!everyoneMet() && popCapRank < 3)
             warAllowed = false;*/
-        for(int i = 0; i < NUM_CATEGORIES; ++i)
-        {
-            int levelToCheck = (int)Math.ceil(empire.tech().category(i).techLevel());
-            float techCost = empire.tech().category(i).baseResearchCost(levelToCheck) * levelToCheck * levelToCheck * empire.techMod(i);
-            if(techCost < empire.totalIncome())
-            {
-                //System.out.println(galaxy().currentTurn()+" "+empire.name()+" cat: "+empire.tech().category(i).id()+" techlevel: "+levelToCheck+" techcost: "+techCost+" income: "+empire.totalIncome());
-                warAllowed = false;
-                break;
-            }
-        }
+        if(empire.tech().topEngineWarpTech().warp() < 2 || empire.tech().weapon().techLevel() < 6)
+            warAllowed = false;
         if(techLevelRank() > popCapRank || facCapRank() > 1)
         {
             warAllowed = false;
@@ -1456,9 +1447,9 @@ public class AIDiplomat implements Base, Diplomat {
             return castVoteFor(civ1);
         
         //ail: I want it to be deterministic, so I pick whoever I fear more
-        if(empire.generalAI().timeToKill(civ1, empire) < empire.generalAI().timeToKill(civ2, empire) && empire.generalAI().timeToKill(empire, civ1) < empire.generalAI().timeToKill(civ1, empire))
+        if(empire.generalAI().timeToKill(civ1, empire) < empire.generalAI().timeToKill(civ2, empire) && empire.generalAI().timeToKill(empire, civ1) > empire.generalAI().timeToKill(civ1, empire))
             return castVoteFor(civ1);
-        if(empire.generalAI().timeToKill(civ2, empire) < empire.generalAI().timeToKill(civ1, empire) && empire.generalAI().timeToKill(empire, civ2) < empire.generalAI().timeToKill(civ2, empire))
+        if(empire.generalAI().timeToKill(civ2, empire) < empire.generalAI().timeToKill(civ1, empire) && empire.generalAI().timeToKill(empire, civ2) > empire.generalAI().timeToKill(civ2, empire))
             return castVoteFor(civ2);
         // return undecided
         return castVoteFor(null);
@@ -1687,24 +1678,9 @@ public class AIDiplomat implements Base, Diplomat {
             return true;
         //ail: only colonies and factories relevant for war-weariness. Population and Military are merely tools to achieve our goals
         TreatyWar treaty = (TreatyWar) v.embassy().treaty();
-        //ail: If I have more than one war, I'd like to get rid of the older wars.
+        //ail: If I have more than one war, we try to go to peace with everyone of our multiple enemies to increase the likelyness of at least one saying yes
         if(empire.warEnemies().size() > 1)
-        {
-            float newestWarDate = 0;
-            for(Empire warEnemy : empire.warEnemies())
-            {
-                EmpireView warView = empire.viewForEmpire(warEnemy);
-                //ail need to differentiate with final war as that one cannot be cast
-                if(warView.embassy().treaty().isWar())
-                {
-                    TreatyWar war = (TreatyWar)warView.embassy().treaty();
-                    if(war.date() > newestWarDate)
-                        newestWarDate = war.date();
-                }
-            }
-            if(treaty.date() < newestWarDate)
-                return true;
-        }
+            return true;
         boolean everythingUnderSiege = true;
         for(StarSystem sys : empire.allColonizedSystems())
         {
