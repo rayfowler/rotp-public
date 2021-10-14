@@ -630,12 +630,8 @@ public class AIGeneral implements Base, General {
     {
         float avgFleetDistance = 0;
         float fleetDistanceCounts = 0;
-        float avgPopDistance = 0;
-        float popDistanceCounts = 0;
         float avgProductionDistance = 0;
         float productionDistanceCounts = 0;
-        float totalPopGrowthPerTurnPotential = 0;
-        boolean popGrowthSet = false;
         for(StarSystem theirs: defender.allColonizedSystems())
         {
             for(ShipFleet fleet: attacker.allFleets())
@@ -652,37 +648,23 @@ public class AIGeneral implements Base, General {
                 float speed = attacker.tech().topSpeed();
                 if(theirs.inNebula())
                     speed = 1;
-                float popSpeed = max(speed-1, 1);
                 float colonyContributionValue = mine.colony().totalIncome() * mine.planet().productionAdj();
-                float baseGrowthRate = (1 - ((min(mine.colony().population(),mine.planet().currentSize() / 2)) / mine.planet().currentSize())) / 10;
-                baseGrowthRate *= attacker.growthRateMod();
-                if (!attacker.ignoresPlanetEnvironment())
-                    baseGrowthRate *= mine.planet().growthAdj();
-                float newGrownPopulation = min(mine.colony().population(),mine.planet().currentSize() / 2) * baseGrowthRate;
                 //System.out.println(attacker.name()+" "+mine.name()+" can make "+newGrownPopulation+" per turn. so far: "+popDistanceCounts);
                 float dist = mine.distanceTo(theirs);
-                avgPopDistance += max(dist / popSpeed, 1) * newGrownPopulation;
-                popDistanceCounts += newGrownPopulation;
-                if(popGrowthSet == false)
-                    totalPopGrowthPerTurnPotential += newGrownPopulation;
                 avgProductionDistance += max(dist / speed, 1) * colonyContributionValue;
                 productionDistanceCounts += colonyContributionValue;
             }
-            popGrowthSet = true;
         }
         if(fleetDistanceCounts > 0)
             avgFleetDistance /= fleetDistanceCounts;
         if(productionDistanceCounts > 0)
             avgProductionDistance /= productionDistanceCounts;
-        if(popDistanceCounts > 0)
-            avgPopDistance /= popDistanceCounts;
         avgFleetDistance *= 2;
         avgProductionDistance *= 2;
         float averageDamagerPerBc = 0;
         TechBombWeapon bomb = attacker.tech().topBombWeaponTech();
         averageDamagerPerBc = (max(0, bomb.damageLow() - defender.tech().maxPlanetaryShieldLevel()) + max(0, bomb.damageHigh() - defender.tech().maxPlanetaryShieldLevel())) / 2;
         averageDamagerPerBc /= bomb.cost * bomb.costMiniaturization(attacker) * 4;
-        float averageDamagePerPop = 200 / attacker.troopKillRatio(galaxy().system(defender.homeSysId()));
         
         float killTime = Float.MAX_VALUE;
         if(avgFleetDistance == 0)
@@ -690,18 +672,14 @@ public class AIGeneral implements Base, General {
         if(avgProductionDistance == 0)
             avgProductionDistance = Float.MAX_VALUE;
         float ProductionTurnsForKillInOneTurn = Float.MAX_VALUE;
-        float PopKillTime = Float.MAX_VALUE;
         if(averageDamagerPerBc > 0)
         {
             killTime = defender.totalPlanetaryPopulation() * 200 / (attacker.totalFleetCost() * averageDamagerPerBc) + avgFleetDistance;
             ProductionTurnsForKillInOneTurn = defender.totalPlanetaryPopulation() * 200 / (attacker.totalPlanetaryProduction() * averageDamagerPerBc) + avgProductionDistance;
         }
-        if(averageDamagePerPop > 0)
-            PopKillTime = defender.totalPlanetaryPopulation() * 200 / (averageDamagePerPop * totalPopGrowthPerTurnPotential) + avgPopDistance;
-
         //System.out.println(attacker.name()+" vs. "+defender.name()+" popKillTime: "+PopKillTime+" totalPopGrowthPerTurnPotential: "+totalPopGrowthPerTurnPotential+" avgPopDistance: "+avgPopDistance);
-        float totalKillTime = 1 / (1 / killTime + 1 / ProductionTurnsForKillInOneTurn + 1 / PopKillTime);
-        //System.out.println(attacker.name()+" vs. "+defender.name()+" totalKillTime: "+totalKillTime+" ship-killtime: "+killTime+" prod-killtime: "+ProductionTurnsForKillInOneTurn+" pop-killtime: "+PopKillTime);
+        float totalKillTime = 1 / (1 / killTime + 1 / ProductionTurnsForKillInOneTurn);
+        //System.out.println(attacker.name()+" vs. "+defender.name()+" totalKillTime: "+totalKillTime+" ship-killtime: "+killTime+" prod-killtime: "+ProductionTurnsForKillInOneTurn);
         return totalKillTime;
     }
     @Override
