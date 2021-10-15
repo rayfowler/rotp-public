@@ -79,7 +79,7 @@ PLANET_ORION_GUARDIAN             | Guardiano
 
 // Nebula names  ("starName" Nebula)
 NEBULA_NAME                       | Nebula %1
-NEBULA_ID                         | NCG %1
+NEBULA_ID                         | NGC %1
 
 // In this, %1 is the race's title when using with the name ("_nameTitle" in the races labels.txt file)
 // and %2 is the leader's actual name
@@ -579,6 +579,7 @@ MAIN_COLONY_HOMEWORLD             | Pianeta Natale %1
 MAIN_COLONY_FOUNDED               | Colonia %1
 MAIN_COLONY_POPULATION            | Populazione
 MAIN_COLONY_FACTORIES             | Fabbriche
+MAIN_COLONY_VALUE+                | %1+
 MAIN_COLONY_SHIELD                | Livello del Scudo
 MAIN_COLONY_BASES                 | Basi
 MAIN_COLONY_PRODUCTION            | produzione lorda netta

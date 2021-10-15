@@ -39,6 +39,7 @@ PLANET_TUNDRA                     | Tundra
 SPY_HIDE                          | Dolda
 SPY_ESPIONAGE                     | Spionage
 SPY_SABOTAGE                      | Sabotage
+SPY_CAUGHT                        | [Dina spioner blev tillfångatagna.]
 SPY_FRAMED                        | [Du har blivit beskylld.]
 SPY_FORCED_CONFESSION             | [Ett falskt erkännande har blivit framtvingat.]
 SPY_WARNING                       | [Du har blivit varnad.]
@@ -988,8 +989,6 @@ NOTICE_SPIES_THREATEN             | Hota
 NOTICE_SPIES_MANAGE               | Hantera Spioner
 NOTICE_SPIES_CLOSE                | Stäng  
   
-SPY_CAUGHT                        | [Dina spioner blev tillfångatagna.]
-
 // Ground Combat UI
 INVASION_BATTLE                   | År %1, går [attacker_race] och [defender_race] till strid om %2.
 INVASION_BATTLE_REBELS            | År %1, går [attacker_race] och rebellerna vid %2 till strid.
