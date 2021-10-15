@@ -550,7 +550,15 @@ public final class Colony implements Base, IMappedObject, Serializable {
         // always ensure we are at least at clean
         if (allocation[ECOLOGY] < cleanAlloc) {
             allocation[ECOLOGY] = cleanupAllocation = cleanAlloc;
-            realignSpending(ecology());
+            redistributeReducedEcoSpending();
+            return;
+        }
+        
+        // if we are over clean but the colony started its turn at clean
+        // then lower
+        if ((allocation[ECOLOGY] > cleanAlloc) && keepEcoLockedToClean) {
+            allocation[ECOLOGY] = cleanupAllocation = cleanAlloc;
+            redistributeReducedEcoSpending();
         }
     }
     public void lowerECOToCleanIfEcoComplete() {
