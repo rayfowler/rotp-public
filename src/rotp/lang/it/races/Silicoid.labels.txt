@@ -40,6 +40,8 @@ MAIN_ADVISOR_MISSILE_BASES | I Suoi generali credono che costruire basi missilis
 MAIN_ADVISOR_SHIP_WEAPON   | Dio-Imperatore! I Suoi scienziati presentano i loro ultimi progressi nella tecnologia bellica! Equipaggiamo le nostre flotte con questi strumenti di guerra, se solo ci dà il Suo comando!
 MAIN_ADVISOR_COUNCIL       | Presto ci sarà una riunione di governanti conosciuta come il Consiglio Galattico! Il nostro antico nemico deve essere nascosto tra coloro che vi si radunano! Dobbiamo smascherarli affinché la nostra nobile crociata possa davvero iniziare!
 MAIN_ADVISOR_REBELLION     | Altissimo Imperatore! Accade l'impensabile. La nostra gente, senza dubbio infettata dal nostro nefasto Antico Nemico, si ribella contro di Lei su %1. Dobbiamo porre fine subito a questa corruzione!
+MAIN_ADVISOR_RESIST_COUNCIL   | La temerarietà di questi sciocchi! Dio-Imperatore, le nostre flotte sono pronte! Ci guidi alla vittoria in questa battaglia predestinata!
+MAIN_ADVISOR_COUNCIL_RESISTED | Ovviamente la prole del nostro nemico non poteva accettare il dominio [my_race_pluralnounof]! Il nostro popolo va in delirio: finalmente la profezia si avvererà!
 
 // text for endings... '#' represents a paragraph break
 // variables: %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 is special race-specific text described below
