@@ -400,6 +400,8 @@ public class EmpireColonySpendingPane extends BasePanel {
                             pct = 1;
                         float prevTech = mapListener == null ? 0 : colony.totalPlanetaryResearch();
                         colony.forcePct(category, pct);
+                        if (category == Colony.ECOLOGY)
+                            colony.keepEcoLockedToClean = false;
                         if (mapListener == null)
                             RotPUI.instance().techUI().resetPlanetaryResearch();
                         else {

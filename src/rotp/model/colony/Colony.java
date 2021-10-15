@@ -100,7 +100,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
             new ColonyIndustry(), new ColonyEcology(), new ColonyResearch() };
 
     private boolean underSiege = false;
-    private boolean keepEcoLockedToClean; 
+    public boolean keepEcoLockedToClean; 
     private transient boolean hasNewOrders = false;
     private transient int cleanupAllocation = 0;
     private transient boolean recalcSpendingForNewTaxRate;
@@ -303,6 +303,9 @@ public final class Colony implements Base, IMappedObject, Serializable {
         || (newValue > MAX_TICKS))
             return false;
 
+        if (catNum == ECOLOGY)
+            keepEcoLockedToClean = false;
+            
         allocation(catNum, newValue);
         realignSpending(spending[catNum]);
         spending[catNum].removeSpendingOrders();
