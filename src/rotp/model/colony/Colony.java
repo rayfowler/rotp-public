@@ -676,23 +676,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         }
     }
     private void redistributeReducedEcoSpending() {
-        int maxAllocation = ColonySpendingCategory.MAX_TICKS;
-        // determine how much categories are over/under spent
-        int spendingTotal = 0;
-        for (int i = 0; i < NUM_CATS; i++)
-            spendingTotal += spending[i].allocation();
-
-        int adj = maxAllocation - spendingTotal;
-        if (adj == 0)
-            return;
-        
-        // funnel excess to industry if it's not completed
-        if (!industry().isCompleted())
-            adj -= spending[INDUSTRY].adjustValue(adj);
-        
-        // put whatever is left in research
-        if (adj > 0)
-            spending[RESEARCH].adjustValue(adj);
+        realignSpending(ecology());
     }
     public void realignSpending(ColonySpendingCategory cat) {
         int maxAllocation = ColonySpendingCategory.MAX_TICKS;
