@@ -1,0 +1,22 @@
+// all possible names
+name: Sakkra, Reptara, Saura, Lasserta, Tyranna
+
+desc1: Aggressiva Expansionister
+desc2: Ökad Befolkningstillväxt
+desc3: Den ivriga befolkningen av [race] Samfund strävar med perfektionism att förädla de planeter de kommer över.
+
+// possible home system names
+home: Sssla, Sssana, Sssihs, Sssha, Sssss, Hsssa
+
+title:     Odlare
+fulltitle: Främste Odlare
+
+// possible leader names
+leader: Guanar, Väsla, Särsskild, Saurak, Ödlen, Raktok
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Gecko, Kameleont, Lacerta, Skink, Skogsödla, Slingra, Pisksnärt
+ship2: Leguan, Salamander, Kajman, Spanare, Giftbett, Såningsskepp, Skördeskepp
+ship3: Alligator, Krokodil, Rovdjur, Dinosaurie, Triceratops, Stegosaurus, Plesiosaurus
+ship4: Basilisk, Titan, Dragon, Godzilla, Koloss, Gorgon, Tyrannosaurus
+

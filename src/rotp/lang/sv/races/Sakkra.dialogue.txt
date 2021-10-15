@@ -1,0 +1,88 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Sakkra specific dialogue
+
+CONTACT_AGGRESSIVE         | Hejsan! Vårt folk kallar sig [my_race], men det är inte så viktigt. Vad som *är* viktigt, är att ni känner till vårt mål att utveckla varje planets ekologi till fulländad perfektion, och det gäller alla planeter i galaxen till vilket pris som än krävs, OK? Hej då!
+CONTACT_RUTHLESS           | Hallå där! Vi är [my_race]! Jag hoppas att ni inte är vårdslösa med era planeters ekosystem. I så fall skulle vi måsta åtgärda det omedelbart, och det skulle inte vara så kul för er, vore det?
+CONTACT_ERRATIC            | Wow, ett helt nytt folkslag! Vi är [my_race], och ni är? [your_race]? Fantastiskt! Bara så ni vet, så kan vi rekommendera att ni brukar era planeter väl, är ni med? Vi kommer att försäkra oss om att ni gör det genom att hålla många, skarpa ögon på er.
+//
+GREETING_01                | Hej där, ambassadör! Alltid roligt att höra från en vän som er! Behöver ni något?
+GREETING_04                | Nämen titta, ambassadören av [your_empire]! Vi är upptagna med att finjustera några planetära ekosystem, men vi lyssnar på vad ni har att säga.
+GREETING_07                | Ah, det är ni. Vad vill ni? Ni vet att vi gillar inte särskilt att socialisera med en smutsig sort som er, eller hur?
+//
+DECLAREWAR_HATE_01         | Ni kan verkligen inte låta bli att förpesta varenda planet ni får tag på, va? Vi kommer röja upp er smutsiga närvaro från galaxen på mindre tid än det tar att bygga en Ekokupol!
+DECLAREWAR_HATE_02         | Ända sen vi träffat er, så håller ni fortsatt på att sabba era ekosystem på alla möjliga, konstiga sätt! Vi har bestämt oss för att stoppa er innan ni kan skada ännu fler planeter!
+DECLAREWAR_HATE_03         | Vi står inte längre ut med att se er förstöra era klimat och befläcka era världar! Det kanske kommer kosta oss, men ibland helgar ändamålen medlen med rejäl marginal!
+//
+DECLAREWAR_ERRATIC_01      | Wow, ert folk är verkligen smutsiga. Vi skulle kunna hjälpa er städa upp era världar, men det skulle vara mycket enklare att avlägsna er, och sen fixa dem själva.
+DECLAREWAR_ERRATIC_02      | Hej hej! Redo för krig? Inte? Rackarns också, men vi ser en del av era planeter som bara bönar om optimisering och vi bara *måste* ta oss an dem.
+DECLAREWAR_ERRATIC_03      | Hej där! Visste ni att vi nyligen har designat en ännu mer energieffektiv ekokupol? Vi skulle vilja testa dem på några riktigt smutsiga planeter, så vi tänkte rena några av era, om det är OK?
+//
+DECLAREWAR_MILITARY_01     | Ni är medvetna om att Samfundet är ute efter ta varje klimat på varje planet i galaxen till perfektion, eller hur? Nu är det så att vi tänkte börja jobba med några av era planeter. Vi rekommenderar att ni lämnar dem nu. Och ni borde lämna dem snart: ni har ingen chans att klå oss om ni försöker ta upp strid!
+DECLAREWAR_MILITARY_02     | Vår [my_title] säger att vi måste avlägsna ert folk från era planeter nu, så att vi kan börja fixa dem. Kommer ni lämna dem utan strid? Inte? Det var ju synd!
+DECLAREWAR_MILITARY_03     | Det är några fantastiska ekologiska pussel ni har att lösa där i era territorier, och ni behandlar dem som om de inte ens fanns! Vi står inte ut längre! Det är dags för oss att ta dem från er, utan att hålla tillbaka!
+//
+DECLAREWAR_ALLIANCE_01     | Vi har hört att ni och [other_race] slogs om någonting. Jag är säker på att det är fånigt och oviktigt, men det här är vår bästa chans att ta era kolonier för oss själva, så att vi äntligen kan fixa all skada ni vållat klimatet!
+DECLAREWAR_ALLIANCE_02     | Jag kan definitivt inte förneka att [other_race] är ett skitigt folk. Ni är däremot långt skitigare än vad de är, så om de är villiga att bekämpa er, då sluter vi gärna till det goda syftet.
+DECLAREWAR_ALLIANCE_03     | Nu har ni trampat i klaveret, ambassadör! Ni måste ha förstått att vi skulle komma att sluta upp med en allierad som går till krig mot er, även om denna allierade är lika smutsig som [other_race]. Eller, visste ni inte det? Oj ojojdå...
+//
+DECLAREWAR_SPYING_01       | Vad tror ni att ni pysslar med? Någon så smutsig som ert folk skulle aldrig kunna bedriva espionage mot Samfundet utan att lämna ett spår av nedsmutsning efter er för oss att spåra us, vet ni väl.
+DECLAREWAR_SPYING_02       | Det faktum att ni lönn-agerar mot Samfundet gör oss arga, men att ni befläckade våra planeter med er vidriga närvaro gör oss rosenrasande!
+DECLAREWAR_SPYING_03       | Ni har begått misstaget att tro att vi inte skulle slå tillbaka när ni bestämde er för att spionera på oss. Bara för att er militära truppstorlek är lite större än vår, betyder inte det att vi inte är villiga att gå till krig med er smutshandlare!
+//
+DECLAREWAR_ATTACK_01       | Vad sysslar ni med!? Hur vågar någon smutsig vekling som er skada våra vackra planeter?! För detta översteg kommer vi att bränna ert folk som det skräp ni är!
+DECLAREWAR_ATTACK_02       | Jasså, ni vill gå till krig med oss? Oroa er inte, vi kommer att plocka isär er, en koloni i taget, och befria era planeter från deras vämjeliga förorenare!
+DECLAREWAR_ATTACK_03       | Smutsigt! Smutsigt! Smutsigt! Ni har besudlat vår planet med er hemska blodtörst! Samfundet kommer att frammana varje uns av dess styrka för att driva er tillbaka till den avfallsgrop ni kom från!
+//
+DECLAREWAR_OPPORTUNITY_01  | Vår [my_title] har funderat över ert slag på sistone. De kom fram till att det vore bäst för oss att förhindra er från att sprida ut er över galaxen snarare hellre än senare. På det viset behöver vi inte städa upp lika många planeter, efter att vi eliminerat er!
+DECLAREWAR_ASSASSIN_01     | Vad har ni *gjort*?! Jag visste att er sort inte gick att lita på! Om ni inte drar er för att mörda en obeväpnad ambassadör, ryser jag över tanken på vad ni gör mot era ekosystem! Bered er för krig, Prepare for war, orena [your_race].
+
+
+OFFER_PEACE_01             | De stackars planeterna! Vi står bara inte längre ut med att se dem ärrde av det här dumma kriget! Låt oss sätta ett slut på stridandet nu, ambassadör, och påbörja helandet av dessa världar vi inte tagit väl vara på!
+OFFER_TRADE_01             | Fantastiskt, det finns så många komplexa klimat bland alla de här planeterna! Vi skulle vilja förstärka vår ekonomi för att kunna finansiera alla dessa projekt, och handel med er skulle hjälpa massor! [amt] BC per år skulle gå fint, va?
+OFFER_PACT_01              | Ni verkar ta hand om er planeter väl nog, och krig ställer till med sån oreda vid de världar de utkämpas. Skulle ni vilja sluta ett avtal om icke-aggression med oss? Det skulle betyda att inget av våra vackra ekosystem skulle behöva frukta!
+OFFER_ALLIANCE_01          | Otroligt, vi är imponerade! Det sätt som ni brukar och bryr er om era planeter, det är nästan som om ni själva är Sakkra! Gå ihop i en allians med oss, ambassadör! Vi kan då beskydda varandras världar tillsammans: ingen kommer hota oss så länge vi står enade!
+ 
+WARN_TRESPASSING_01        | Alltså hallå där! [system] är under Samfundets beskydd! Ni hör inte hemma här, förstår ni väl? Schas! Nu! Vad väntar ni på? Försvinn!
+WARN_EXPANSION_01          | Ni tar mycket mer för er själva än vad ni borde, ambassadör! Ni är inte framstående nog att bevara alla dessa världar, och vi kommer inte låta er slösa alla dessa ekologiska pusssel! Tygla er expansion, annars så!
+WARN_BUILDUP_01            | Vad många stridsskepp ni har! Om ni fortsätter samla ihop mer, så kommer nog vissa imperier börja bli nervösa. De kanske kommer börja sikta sina vapen mot er. De kanske till och med avlossar ett skott eller två! Om ni fortsätter samla en ännu större flotta, alltså.
+WARN_SKIRMISH_01           | Alltså jag kan bara inte fatta att det varit en sammandrabbning vid [system]! Vad tänkte ni egentligen, ambassadör? Vi kan se genom fingrarna med det för den här gången, eftersom ni inte skadade några planeter, men passa era flottor från och med nu, dumma [your_race]! 
+WARN_ATTACKED_01           | Vad tror ni att ni håller på med?! Kan ni sluta hålla på och strula! Vi är väldigt upptagna med att optimisera ekologin i [system] till max, vi behöver verkligen inte era skepp omkringsurrandes som försvårar det hela!
+WARN_INVADED_01            | Har ni helt tappat vettet?! Eller den lilla ärta till hjärna ni dumma [your_race] har?! Det kommer att ta åratal att reparera den skada ni orsakat! Dessa skämt har gått för långt! Lägg ner ert fulspel eller så kommer vi se till att ni får ångra det!
+WARN_ESPIONAGE_01          | Tror ni att ni kan spionera på oss och lyckas hålla det hemligt? Du är rolig du, ambassadör. Men om det här slutar att vara särskilt lustigt, kommer vi förmodligen sätta igång med att döda er, okej? [framed]
+WARN_SABOTAGE_01           | Vad har ni gjort?! Ni hade sönder biokupolen, och nu är det helt öppet! Alla värdefulla insamlade prover, alla förstörda experiment! Ni går för långt: förvänta er gensvar om detta fortsätter, smutsiga [your_race]! [forced]
+WARN_BIOWEAPON_01          | Nu har ni gått över gränsen! Ett biologiskt vapen?! Ett biologiskt vapen!! Tänk på den omätbara skada ni vållat ekologin på den där försvarslösa planeten! Ditt monster: ni kommer att få uppleva sann ånger för det här!
+WARN_GENOCIDE_01           | Ni har avlägsnat [victim_race] eller hur? Bra, de började verkligen att gå oss på nerverna. Självfallet kommer ni att ge oss deras världar för ekologisk återställning. Jasså inte? Då vet jag...
+WARN_FINAL_WAR_01          | Ni vet om att vi alla har beslutat oss att förenas för det bästa för alla planeter, eller hur? Varför vill ni bekämpa vår enighet, ambassadör? Det spelar förvisso snart ingen roll. Men oroa er inte! Vi kommer att ta väl hand om era planeter efter er bortgång.
+WARN_COUNCIL_VOTE_01       | Det där var inte så schysst att göra i det galaktiska rådet. Jag trodde vi var överens om något här, ambassadör? Att [candidate_race] var det rätta valet? Klanta er inte igen, smutsiga [your race]!
+WARN_OATHBREAKER_01        | Vi har alltid tyckt att ni var fysiskt motbjudande, med era konstiga kroppar och lustiga odörer. Men nu ser vi att handlingarna också matchar gestalten! Försvinn från min syn nu, ambassadör: jag blir faktiskt riktigt illamående.
+WARN_ATTACKED_ALLY_01      | Alltså kolla här, [defender_race] är inte våra favoriter direkt, även om vi tekniskt sett är allierade. Sluta bara upp med ert gnabbande, annars måste vi kliva in här.
+WARN_REBELLING_AGAINST_01  | Hur kunde det galaktiska rådet göra så här mot oss?! Hur kunde de välja *ER* av alla att leda den här galaxen? Vi kan inte låta det här bero... ni är bara... så... SMUTSIGA!
+
+PRAISE_COUNCIL_VOTE_01     | Du, ambassadör! Tack för att ni är så pålitliga i det galaktiska rådet. De där andra folkraserna är så vidriga, men att ha backning från sådana som er? Alltså, det får oss att känna som om vi ändå gör någonting rätt. Låt oss bara veta om ni behöver något, okej?
+PRAISE_COUNCIL_VOTE_02     | Ni gjorde bra ifrån er idag i Rådets samlingssal. Jag är verkligen glad att veta att ni ser vettet i våra metoder. Jag hoppas att era planeter gynnas lika mycket av er visdom som Samfundet gör!
+PRAISE_COUNCIL_VOTE_03     | Hmm, vad har ni för planer, försöker ni vinna vår gunst genom att rösta på oss i Rådsmötet? Nåväl, hursomhelst tror jag säkert att vi kommer snart nog se om det är viktigt. Tack för backningen, i alla fall, smutsling.
+PRAISE_ATTACKED_ENEMY_01   | Ni hörde planeternas nödrop, gjorde ni inte, ambassadör? De måste befrias från [defender_raceposs] betryck så snart som möjligt. Jag bara visste att ni var liknande oss i hjärtat ändå! Nu kommer resten av Samfundet också att veta det!
+PRAISE_ATTACKED_ENEMY_02   | Haha, kör hårt! Så där ska det se ut! Driv bort de där smutsiga [defender_race_plural] hela vägen tillbaka, tills de inte längre har någonstans att fly! Försök bara att inte skada planeterna för mycket, okej? Vi kommer behöva dem när vi är färdiga.
+PRAISE_ATTACKED_ENEMY_03   | Slåss ni också med [defender_race], smutsling? Det är stanken, eller hur? Den genomsyrar allt i sin närvaro. Håll er bara borta från oss när ni är klara! Den kommer säkert besudla er också!
+PRAISE_TRADE_01            | Det är handelsavtalet är fantastiskt! Det har möjliggjort så många av våra projekt. Jag tackar er uppriktigt, och världarna i [my_empire] sjunger eviga lovsånger i ert namn!
+PRAISE_TRADE_02            | Där är ni! Vår [my_title] har bett mig gratulera er till ert upprätthållande av ett felfritt handelsavtal med Samfundet. Han hoppas också att ni ser fördelarna i dess fortsättning, eftersom vi har många projekt kvar att testa ännu! Det var allt. Hej då!
+PRAISE_REBELLING_WITH_01   | Det galaktiska rådet har visat totalt vanvett med sitt val av de vidriga [leader_race_plural] för den tron som är ledarsätet. Deras äckliga stank har redan gjort vårt folk illamående. Låt hjälpa er att störta dem, ambassadör!
+ 
+ACCEPT_TRADE_01            | Handelsdags! Handelsdags! [amt] BC varje år räcker långt när vi ska anlägga våra biokupoler! Tack, vänner!
+RESPOND_IGNORE_THREAT_01   | Oj ojoj, ni är sura på riktigt alltså? Nåja, det är inte som om ni skulle kunna göra något, även om ni verkligen var det. Kan ni vara snälla att dra nu, jag är väldigt upptagen med mina senaste prover från växtligheten här idag.
+RESPOND_STOP_SPYING_01     | Jasså ni plockade en spion? Oroa er inte, vi kollade bara så att ni var snälla med era planeter. Det verkar som att ni var det, så kan ni återställa vår monitor i tjänst, så att vi inte behöver skicka några nya!
+RESPOND_STOP_ATTACKING_01  | Har ni sett vad många skepp vi har? Och hur varenda en har stora, läskiga vapen? Om vi någonsin kommer på er med att vanvårda era planeter, så kommer vi behöva skicka dem mot er igen, och ingen av oss vill att saker går så långt! Okej hejrå!
+

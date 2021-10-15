@@ -125,6 +125,7 @@ public class TransportPanel extends BasePanel {
             // draw title
             g.setFont(narrowFont(32));
             String str1 = text("MAIN_TRANSPORTS_EMPIRE", tr.empire().raceName());
+            str1 = tr.empire().replaceTokens(str1, "empire");
             drawBorderedString(g, str1, 2, s15, s37, Color.black, SystemPanel.orangeText);
 
             // draw orbiting data, bottom up

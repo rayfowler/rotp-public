@@ -1,0 +1,96 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Alkari specific dialogue
+
+CONTACT_HONORABLE          | Var hälsad [your_nameTitle] [your_name] av [your_empire]! Vi av [my_empire] utsträcker härmed vår vinge i hälsning, och ser fram emot hedervärda överläggningar mellan våra två imperier.
+CONTACT_PACIFIST           | Ruvande hälsningar till er, [your_title] av [your_empire]. Avhåll er från att ta krig till [my_race] skyar, så kan vi båda frodas under stjärnornas frid.
+CONTACT_ERRATIC            | Jag är ambassadören sänd från [my_empire]. Mitt folk utsträcker vår vinge i hälsning, såsom är vår sed. Ert folk kallar sig för [your_race]? Så förunderligt... intressant.
+
+//
+GREETING_01                | Var hälsad, ambassadör! Vad kan den stora Överheten erbjuda vår värdige allierade denna strålande dag? 
+GREETING_04                | Jag hälsar er, ambassadör. Överheten är redo att lyssna till era förfrågningar, men hur mycket vi sjunger med återstår att se.
+GREETING_07                | Håll er kort, ambassadör! Vi tvingas möta er i förhandlingar i enlighet med våra lagars stadgar, men det betyder inte att vi är intresserade av att slösa tid med ert omkring-flaxande.
+
+//
+DECLAREWAR_HATE_01         | En folkras som er, komplett avsaknande respekt för äganderätt eller seder och bruk, hör inte hemma i en galax styrd av oss! Bered er för strid!
+DECLAREWAR_HATE_02         | Er burdusitet och arrogans har dragit det här över era huvuden! Framför till er [your_title], ni kan nu räkna med krig och våra flottors terror.
+DECLAREWAR_HATE_03         | Sådan vulgarism ni för er med! Ambassadör, [my_empire] skulle hellre tuppa av än att dela de oändliga skyarna med ett sådant burdust och taffligt folk. Krig är nu över oss.
+//
+DECLAREWAR_ERRATIC_01      | Ambassadör, vi kan inte förneka att det har varit förnöjsamt att möta ett sådant intressant folk som er. Vi beklagar att vi måste byta nöje mot krig, hoppas att ni inte tar illa upp.
+DECLAREWAR_ERRATIC_02      | Ni har fortsatt att roa oss sedan vårt första möte. Överheten hoppas nu att krig med er kan vara lika underhållande, ambassadör.
+DECLAREWAR_ERRATIC_03      | Var hälsad, ambassadör av [your_empire]! [my_empire] önskar pröva sig genom ett värdigt krig med er märkvärda styrka. Förbered ert folk och era flottor för krig!
+//
+DECLAREWAR_MILITARY_01     | Vi behöver större territorium för att försörja våra flockar. Då vi inte kan finna lediga världar, tar vi från lägre imperier. Ert imperie är lägre än vårt, så därför kommer vi att rycka era världar i våra egna klor.
+DECLAREWAR_MILITARY_02     | Tiden har kommit, till sist, ambassadör! Med en vinge kommer Överheten att bringa krigets skugga över er, och med den andra sveps era planeter in under vårt ledarskap.
+DECLAREWAR_MILITARY_03     | Vi finner det... beklagligt att vi kommit till denna punkt. Vi behöver era planeter, om vi ska om möjligt kunna undvika att gå ett digert öde till mötes. Vi har inget annat val, bered er för krig!
+//
+DECLAREWAR_ALLIANCE_01     | Diplomaterna från [other_empire] tog upp med oss att de ligger i krig med ert folkslag. [my_empire] är förpliktigad att bestå våra allierade med hjälp i krigstid: ett faktum som ni, ambassadör, snart kommer finna betyngande.
+DECLAREWAR_ALLIANCE_02     | Vår allierade har kallat på hjälp, och Överheten svarar! Ert taffliga slut hänger över era huvuden, ambassadör: Ni kommer inte kunna bestå under våra sammanslagna flottor!
+DECLAREWAR_ALLIANCE_03     | Det besvärar oss att ni har gått till krig med våra allierade. I enlighet med våra helgade lagar måste vi nu stå vid deras sida i strid mot er! Jag ber er, vänd om från detta störtandes till krig innan det är för sent.
+//
+DECLAREWAR_SPYING_01       | Ambassadör, vi var nöjda med att hålla vår relation varm och tillmötesgående. Att ni engagerat er i vanhedrande akter i form av infiltratörer och spionage har tvingat oss att tänka om, angående er.
+DECLAREWAR_SPYING_02       | En sådan skymf kommer inte bli sedd ovederbördad, ambassadör! De som smusslar runt oärligt i skuggorna blir snart lyftna fram i ljuset, där de kommer möta vår vrede!
+DECLAREWAR_SPYING_03       | Ambassadör! Hur vågar ni skända Överheten med era infiltratörer?! Vi kräver att rättvisa skipas för era överträdelser! Bered er för krig!
+//
+DECLAREWAR_ATTACK_01       | Pyttsan! Vi vänder näbben från er oförnämlighet! Men om det är krig ni önskar, då är det krig Överheten kommer drabba er med!
+DECLAREWAR_ATTACK_02       | Så det här är början på vår historia, ambassadör! Om [my_race] kunda överleva de ändlösa krigen från det Blodröda Millenniet, då kommer vi med lätthet överleva ett krig med er sort!
+DECLAREWAR_ATTACK_03       | Vi skulle ha förväntat oss sådana burdusiteter från ett vulgärt folkslag såsom ert, ambassadör. Tro inte att Överheten kommer att ge till vika så lätt!
+//
+DECLAREWAR_OPPORTUNITY_01  | Som ni kan se, har [my_empire] lett stora framgångar vad gäller rymdfarande utfärder. Tyvärr, ambassadör, dikterar våra behov att vår nästa framgång kommer att ske på er bekostnad.
+DECLAREWAR_ASSASSIN_01     | Vad är det här för skandalöst uppförande? Ni drar er inte för att kallblodigt mörda en ambassadör, som är länken mellan oss? Överheten dignar inte ned till en så pass låg nivå att vi tolererar ett folk som ert!
+
+
+
+
+OFFER_PEACE_01             | Det Blodröda Milleniet får absolut inte upprepas, ambassadör. Vi förfrågar att ni hedrar både [your_race] och [my_race] med att underteckna ett fredsavtal, för att förhindra ytterligare blodsspillan.
+OFFER_TRADE_01             | Civiliserade folkslag som våra kan säkerligen stötta varandra genom hedervärt samarbete. [my_empire] önskar att upprätta ett handelsavtal med [your_empire], med en potential på [amt] BC, varje år. Vad är er respons i den frågan, ambassadör?
+OFFER_PACT_01              | Vi av Överheten är nöjda med ert folks diplomatiska uppförande. För att fastställa vår uppskattning framför vi härmed ett avtal om icke-aggression, för att undvika att ingen av oss blir riven av... missförstånd mellan oss.
+OFFER_ALLIANCE_01          | Ert upprätta handlande har förärvat er vår aktning, ambassadör. Ledaren av Höjden har gett bud om att en allians ska slutas mellan [your_race] och [my_race]! Endast er underskrift kvarstår!
+
+WARN_TRESPASSING_01        | Det är en hög grad av oförskämdhet att era flottor spatserar runt i [system]-systemet som om det var en av [your_raceposs] ägor. Det är i allas intresse att ni rättar till detta anskrämliga beteende genast.
+WARN_EXPANSION_01          | Att hänsynslöst expandera, helt efter egen pipa, visar en avsaknad av respekt mot era grannar, ambassadör! Jag rekommenderar starkt att ni i framtiden avhåller er från den typen av beteende.
+WARN_BUILDUP_01            | Tror ni oss vara blinda, ambassadör?! Vi kan se era flottor expandera i storlek och styrka. Visa oss att ni inte menar oss illa genom att stilla denna aggressiva uppbyggnad, eller så kanske vi måste tillämpa förebyggande åtgärder.
+WARN_SKIRMISH_01           | Vi är fullt uppdaterade om drabbningen vid [system]. Överheten kan se det här mellan klorna den här gången. Varför? Vi har ingen anledning att svara på frågor från sådana som er!
+WARN_ATTACKED_01           | En sådan djärv attack kommer endast av en fullständig brist av respekt, ambassadör! Ni har verkligen turen med er att Ledaren av Höjden inte är intresserad av att gensvara på era överträdelser. Nästa gång kanske ni inte har samma tur.
+WARN_INVADED_01            | Så ni söker att ta det som inte tillhör er, ambassadör?! Fresta inte vår vrede: vi ger gärna en värdelös planet i utbyte mot friden av att få slippa er dårskap!
+WARN_ESPIONAGE_01          | Jaha ja, det förvånar oss inte att ett sådant vulgärt folkslag som ert vänder sig till espionage för att uppnå sina mål. Kom ihåg, ambassadör: [my_race] ögon är så pass skarpa att inget undgår oss. [framed]
+WARN_SABOTAGE_01           | Vilket vedervärdigt sätt ni för er med! Att smyga omkring i mörkret och begå sabotage som maror om natten?! Men ni är lika dåraktiga som ni är burdusa: byggnaderna ni förstörde var inte så pass viktiga att vi skulle vidta aggressiva åtgärder i respons! [forced]
+WARN_BIOWEAPON_01          | Vanära! Ni har vanärat er! Ni har använt vapen man inte ens ska nämna vid namn mot de som saknar en sköld att höja i försvar! Ert välförtjänta dåliga rykte kommer att följa er i graven, ambassadör!
+WARN_GENOCIDE_01           | Medan jag faktiskt håller med att [victim_race] var en samling klumpiga bufflar till ohyra, så är Överheten starkt motsatt fullständiga folkmord. Vi undrar, ambassadör, om ert folk är förmögna att upprepa detta agerande mot mer... civiliserade riken?
+WARN_FINAL_WAR_01          | Det finns ingen heder på denna väg ni valt att ta, ambassadör. Märk väl: när ni nu har bestämt er att stå upp i uppror mot den rättmätigt utvalde ledaren av galaxen, så är vi hederssvurna att göra allt vi kan för att stoppa er!
+WARN_COUNCIL_VOTE_01       | Så detta är vad som tillräknas en ambassadör av [your_empire]!? Trodde ni verkligen att vi inte skulle få reda på ert lönnspel i Rådet? Ni bör ängslas för ert folk, ambassadör: Ledaren av Höjden kommer att vara märkbart missnöjd.
+WARN_OATHBREAKER_01        | Skandalöst! Ni vet hur högt vi värderar heder, ändå bryter ni era löften, helt öppet, bara för att uppfylla era egna begär?! Överheten kommer evigen att komma ihåg denna förolämpning, ambassadör, och kommer säkerligen gengälda tjänsten!
+WARN_ATTACKED_ALLY_01      | Det besvärar oss, ambassadör, att ert folk och [defender_empire] gnabbas på detta vis. Ni kan väl inte förmoda kunna svara på vår gemensamma militära styrka: Överheten önskar att ni tog era gärningar på allvar, och igen överlägger om det skulle vara värt det.
+WARN_REBELLING_AGAINST_01  | Trodde ni att vi glömt hur helt befriade från skam och heder ni visat er att vara? Vi bryr oss inte om vi måste gå till strid mot er eller hela galaxen: ni kommer aldrig att sitta på det Galaktiska rådets tron så länge Ledaren av Höjden lever!
+ 
+PRAISE_COUNCIL_VOTE_01     | Den ärevördige ambassadören av [your_empire]! Vi står i hedersskuld till er, för ert bidrag vid Rådets senaste sammanträde, och vill återbörda den skulden, när ni bestämt er för hur vi bäst kan göra det.
+PRAISE_COUNCIL_VOTE_02     | Var hälsad, ambassadör. Ni hedrar oss med en röst i favör för vår sak, inför de samlade i rådet. Jag är säker på att vår högvördige ledare kommer vilja höra mer om ett sådant hedervärdigt folk, så snart jag lämnat min rapport inför honom.
+PRAISE_COUNCIL_VOTE_03     | *Hrmhrmhrm*, säkerligen förväntar ni oss inte att tro att ni tagit Överhetens sida baserat på respekt eller heder, ambassadör? Men ändå, skulle det kunna vara så att ni fortsätter bevisa er värdiga, om vi bara gav er en ny chans att göra det?
+
+PRAISE_ATTACKED_ENEMY_01   | Se där! Vår högt aktade vän och allierade för med sig goda nyheter i denna krigstid! Låt oss se, ambassadör: låt våra folk gå till strid mot dessa avskyvärda [defender_race] tillsammans som stridsbröder!
+PRAISE_ATTACKED_ENEMY_02   | Det här kriget kommer snart vara över, ambassadör. Överheten allena skulle lätt kunna övervinna dessa vulgära bestar som kallar sig [defender_race]. Tillsammans? Tillsammans ska vi svepa bort den fläck som deras folk är, rent bort från galaxen för evigt!
+PRAISE_ATTACKED_ENEMY_03   | Jag är lika säker på att ni söker att utnyttja tillfället, som jag är säker på att ni inte vet vad order "heder" betyder! Vi tillåter er bidra i kampen mot [defender_race], om inte annat, så för att begränsa våra möjliga förluster i strid!
+
+PRAISE_TRADE_01            | Jag är mer lättad än du kan ana, ambassadör, att ert folk driver affärer med heder. Överheten hälsar er och ert folk, och kommer värdesätta vår vänskap än mer än vårt fortsatta handelsavtal!
+PRAISE_TRADE_02            | Det finns många sätt att bevisa sin heder, ambassadör. Att göra affärer rättvist och i god tro är ett av de bättre sätten att göra så, och något Överheten uppskattar högt bland de vi möter i denna vida galax.
+
+PRAISE_REBELLING_WITH_01   | Barbarerna på rådet underskattar oss, ambassadör! Tillsammans ska vi visa dem betydelsen av något vi kallar "ett dödligt felsteg".
+
+ACCEPT_TRADE_01            | Vi av Överheten finner det angenämnt att få göra affärer med [your_empire]. Ett avtal om en årlig mängd av [amt] BC i handelsutbyte är mycket acceptabelt, tack.
+RESPOND_IGNORE_THREAT_01   | Ni *vågar* provocera [my_empire]? Ta ert skrattretande trams någon annanstans, innan vi ledsnar och slutar med att le.
+RESPOND_STOP_SPYING_01     | Era ögon verkar vara lika skarpa som våra, vad gäller att finna spioner. Betrakta oss som färdiga med dolda operationer av det slaget.
+RESPOND_STOP_ATTACKING_01  | Ser ni nu Överhetens makt? Så länge ni inte glömmer vår militära prakt, kommer ni inte behöva oroa er under dessa flottors vingar mer.
+
+ 

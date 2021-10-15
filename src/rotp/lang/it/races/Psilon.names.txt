@@ -1,0 +1,20 @@
+// all possible names
+name: Psilon, Mentalon, Psychon, Cerebron, Neuralon
+
+desc1: Tecnologi Pacifisti
+desc2: Tecniche di Ricerca Superiori
+desc3: La Repubblica [race] cerca la convivenza pacifica e illuminata con le altre razze.
+// possible home system names
+home: Mentar, Cogitar, Psilar, Metrica, Neura
+
+title:     Consigliere
+fulltitle: Alto Consigliere
+
+// possible leader names
+leader: Dynalon, Kelvan, Meson, Quark, Tachaon, Zygot
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+nave1: Elettrone, Neutrino, Quark, Neutrone, Protone, Atomo, Molecola
+nave2: Sigma, Prime, Raggio, Ipotenusa, Algebra, Tangente, Logaritmo
+nave3: Parallasse, Ellisse, Asse, Onda Sinusoidale, Frattale, Calcolo, Derivazione
+nave4: Fuoco Solare, Constellazione, Nova, Quasar, Galassia, Nebulosa, Corona

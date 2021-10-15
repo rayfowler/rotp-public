@@ -1,0 +1,227 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Klackon specific dialogue
+
+CONTACT_AGGRESSIVE         | Jag är [my_name], och du är [your_name]? Ett udda namn för en annan som mig, men du säger att vi inte alls är lika? Det här börjar vara en något... frustrerande dialog.
+CONTACT_RUTHLESS           | Jag är välkänd som [my_name]. Du är den som är [your_name]? Vad är en [your_name]? Jag har svårt att se någon nytta hos en sort som är så besvärliga som ni är!
+CONTACT_XENOPHOBIC         | Jag visste vid början av min resa att det måste finnas någon annan lik mig, men du är inte alls lik mig... Du är annorlunda... främmande... och farlig.
+//
+GREETING_01                | Vän! Jag är glad att du kom! Jag hoppas att jag kan erbjuda vad det nu är du söker för något.
+GREETING_04                | Den märkliga [your_name] kallar på mig. Vad önskar du, den udda [your_name]?
+GREETING_07                | Ni uppför er konstigt och jag tycker inte om det. Ut med vad ni har att säga och lämna mig sen.
+//
+
+DECLAREWAR_HATE_01         | Jag har väntat alltför länge, jag måste hitta en annan som är lik mig! Du är fortsatt i vägen för mig, och jag kan inte längre vänta en enda sekund på att bli av med dig.
+DECLAREWAR_HATE_02         | När jag tänker på dig känner jag en avsmaklig känsla jag inte ens visste att jag kunde känna. Jag kommer att göra allt i min makt för att se dig krossad en gång för alla!
+DECLAREWAR_HATE_03         | Nej! Det kan inte vara sant att jag gav mig ut på den här resan bara för att finna sådana som er, här i galaxen! Jag vägrar att fortsätta leva med er som grannar! Antingen kommer det här vara ert slut eller mitt!
+DECLAREWAR_ERRATIC_01      | Ni kan inte lura mig med ert falska uppförande! Jag vet att ni kommer slå till mot mig vid just det tillfälle som passar er bäst! Innan det kan hända, kommer jag att döda er först!
+DECLAREWAR_ERRATIC_02      | Ert uppförande är bisarrt och oberäkneligt. Jag plågas av osäkerheten ni får mig att känna, och jag ser ingen anledning till att fortsätta lida på det här viset. Förbered er för ert slutliga öde!
+DECLAREWAR_ERRATIC_03      | Varför är ni så här? Vad är det som driver er? Kommer ni drivas till att föra krig mot mig en dag? Jag kan inte längre bara vänta på att se vad ni gör härnäst: för min framtids skull, måste jag gå till krig mot er nu med detsamma!
+DECLAREWAR_MILITARY_01     | Jag har ännu inte funnit den som skulle vara min like. Med visshet, så måste de finnas, och jag kommer söka efter dem på varenda en av era planeter efter att jag tagit dem från er!
+DECLAREWAR_MILITARY_02     | Vad döljer ni för mig [your_name]? Jag kan inte veta säkert förrän jag undersökt era planeter nogrannt, och det är nu jag kommer ta dem från er så att jag kan göra det!
+DECLAREWAR_MILITARY_03     | Jag kan inte låta er gömma undan vad jag letar efter något mer! Jag vet att den jag söker är på en av era världar. Jag kommer inte längre hålla tillbaka förrän ni har gett dem åt mig!
+DECLAREWAR_ALLIANCE_01     | Min vän [other_name] har hjälpt mig i mitt sökande mer än du kan ana. Jag är väldigt glad att jag kan återbetala dem genom att göra dem av med er!
+DECLAREWAR_ALLIANCE_02     | De som hjälper mig i mitt sökande har min obevekliga uppskattning, och jag ger fritt och villigt av mina tjänster för att hedra min vän [other_name]. Bered er att dö, [your_name]!
+DECLAREWAR_ALLIANCE_03     | Ni pressar vem än ni kommer över i galaxen eftersom ni tror att ingen vågat motsätta sig er vilja. Om [other_name] har tagit upp striden mot er, då göra jag det också!
+DECLAREWAR_SPYING_01       | Det finns inget som sker på någon av mina planeter som undkommer mitt öga. Eftersom ni insisterar på att vara så sluga och lömska har jag inget annat val än att göra er om intet.
+DECLAREWAR_SPYING_02       | Fåniga [your_name], nu har jag fått nog av era påhitt! Ni kommer inte ha tid för sluga planer om ni måste försvara er från mina arméer! Det är dags för krig!
+DECLAREWAR_SPYING_03       | Vad hoppades du åstadkomma med dessa manövrar mot mig? Nu har jag inget annat val än att slåss mot dig, oavsett skillnaderna mellan våra flottor!
+DECLAREWAR_ATTACK_01       | Vad är detta, [your_name]? Försöker du störa mitt sökande med en attack mot en av mina världar? Jag skulle kunna tänka mig att det kan vara en roande, om något kort, distraktion att rasera din domän.
+DECLAREWAR_ATTACK_02       | Är det det här som är en så kallad krigsförklaring? Du vill dina arméer och flottor möts i strid med mina? Låt oss gå till krig då: Jag vill gärna lära mig mer!
+DECLAREWAR_ATTACK_03       | Ni har mage att göra ett oprovocerat tillslag mot mig!? Ni försöker stoppa mig från att finna vad jag letar efter, men istället kommer ni få känna på min fullskaliga aggression!
+DECLAREWAR_OPPORTUNITY_01  | När något visar sig vara ett hinder, är det bästa sättet att bli av med det total eliminering. Jag är inte kunnig i diplomatins färdigheter, men vad jag vet är att det kommer vara skrattretande enkelt att röja er ur min väg.
+DECLAREWAR_ASSASSIN_01     | Att anfalla en av mina kroppar, är att anfalla alla. Då ni valt att döda en av mig, så väljer jag att döda er alla i gengäld!
+
+OFFER_PEACE_01             | Jag gillar inte det här ni kallar krig. Det är skoningslöst och våldsamt, och vi har båda viktigare saker att göra än att fortsätta med detta ändlösa dödande. Låt oss avsluta det här med fred, [your_name].
+OFFER_TRADE_01             | Vi båda gav oss in i galaxens djup med våra egna motiveringar, [your_name]. Varför inte hjälpas åt att fullborda våra ambitioner? Ett handelsavtal om [amt] BC varje år, skulle tjäna just det syftet.
+OFFER_PACT_01              | Jag har mött många udda varelser på min färd genom rymden, och många av dem är bråkiga och våldsamma av naturen. Du verkar inte vara sådan alls, så låt oss förhindra eventuella missförstånd genom ett avtal om icke-aggression.
+OFFER_ALLIANCE_01          | Våra relationer gentemot varandra har varit utomordentligt gynnsamma för oss båda, [your_name]. Låt oss sluta samman som allierade i ord och band, så att alla i galaxen får veta att vi står enade samman!
+ 
+WARN_TRESPASSING_01        | Att du närvarar vid [system] gör mig orolig och rastlös. Ta bort din [your_name]-flotta därifrån, eller så kanske jag blir tvungen att åtgärda det själv.
+WARN_EXPANSION_01          | Jag kan inte låta er hindra mig från mitt sökande genom att ta varenda planet i er åsyn. Upphör med detta beteende genast, annars blir det krig!
+WARN_BUILDUP_01            | Ni har byggt imponerande stora flottor, [your_name]. Var försiktig med hur ni använder dem, annars kanske jag måste använda mina flottor.
+WARN_SKIRMISH_01           | Det lilla missödet vid [system] gör mig lite olustig. Är det något sorts misstag å din sida? Försäkra att det här inte sker igen: Jag vill inte slåss mot [your_name]ingarna om jag inte måste.
+WARN_ATTACKED_01           | Och vad exakt är er vinning från detta utfall? Upphör med ert aggressiva beteende genast, eller så tvingar ni mig att betala tillbaka hundra gånger om, förstår ni?
+WARN_INVADED_01            | Varför inkräktar ni på mitt område vid [system]?! Är det dags för krig eller har du bara tappat kontrollen över dina kroppar?
+WARN_ESPIONAGE_01          | Jag förstår er inte, [spy_name]. Först agerar ni som om ni inte vill ha konflikt, men sen försöker ni stjäla mina värdefulla hemligheter? Om ni insisterar med att föra er på det här viset, då kommer jag måsta ta till farliga åtgärder! [framed]
+WARN_SABOTAGE_01           | Tror ni verkligen att jag är någon man bara kör över med sabotage? Mitt sökande har allra högsta prioritet, men om det här fortsätter kommer jag låta det vänta för att ta itu med dig personligen! [forced]
+WARN_BIOWEAPON_01          | Det här vapnet du har släppt lös är fullständigt skräckinjagande. Att använda sig av sådana medel säger allt om vem du verkligen är, men att också sätta det i bruk mot en annan levande varelse är fullständigt absurdt!
+WARN_GENOCIDE_01           | Vilket oförfinat beteende! Jag trodde aldrig att du skulle gå så långt som att helt omintetgöra den som kallade sig [victim_name]. Jag kommer aldrig att glömma den burdusitet ni visat idag.
+WARN_FINAL_WAR_01          | Jag förstår nu att om jag ska kunna uppnå min dröm, då måste galaxen ha fred. Men så länge som du existerar kan den freden aldrig förverkligas. Det här leder till en uppenbar slutsats: [rebel_name]en måste omintetgöras! 
+WARN_COUNCIL_VOTE_01       | Jag måste erkänna att jag inte helt begriper de fina detaljerna av vad som kallas "politiska manövrar". Men jag vet att genom att du röstat på [other_name] så har du utfört ett drag emot mig, och jag glömmer inte de som besvärar och hindrar mig.
+WARN_OATHBREAKER_01        | Är det så här du fungerar, [your_name]? Att först sluta avtal bara för att sen bryta det när du känner att det passar dig? Jag visste att du inte alls var som jag är, och dina handlingar bevisar detta bortom all förmodan!
+WARN_ATTACKED_ALLY_01      | Varför anfaller du min vän [defender_name], [your name]? Ni får hitta ett annat sätt att göra upp: Jag kommer inte vara nöjd om jag tvingas ingripa!
+WARN_REBELLING_AGAINST_01  | Jag gillar inte [your_name]lingen, och jag gillar än mindre att du blev vald ledare av det galaktiska rådet! Jag måste fundera över det här, och du borde fundera över vad jag kan fundera över vad jag kanske kommer behöva att göra!
+
+PRAISE_COUNCIL_VOTE_01     | [voter_name]! Tro inte att jag inte alls tänker på din röstning i Rådet och tar den för given! Även om du och jag är väldigt annorlunda, så är jag glad att jag kunde träffa på en sådan bra vän som dig på min resa.
+PRAISE_COUNCIL_VOTE_02     | Jag har aldrig haft behov för den här "politiken" under min långa livstid, men du har gjort något som är bra för mig, är det inte så? Låt oss talas vid igen snart, så att vi bättre kan förstå hur vi kan gynna varandra.
+PRAISE_COUNCIL_VOTE_03     | Din röst på mig i det galaktiska rådet är bara ett försök att få mig att ändra min åsikt om dig. Däremot tror jag att jag kanske kommer behöva göra det om du *fortsätter* att göra sådant som gynnar mig.
+PRAISE_ATTACKED_ENEMY_01   | Lysande! Medan jag är under anfall så kommer min vän och hjälper! Låt oss visa den skräpaktige [defender_name] att vi slåss tillsammans med ett orubbligt samförstånd!
+PRAISE_ATTACKED_ENEMY_02   | Tack, [attacker_name]! Det är gott att se att någon annan också förstår vilket farligt hot den som kallar sig "[defender_name]" poserar. Kom nu! Vi anfaller den här saken båda två tills de är helt gjorda till ingenting.
+PRAISE_ATTACKED_ENEMY_03   | Jag vet inte vad du hoppas åstadkomma genom att anfalla [defender_name], [attacker_name]. Du är oberäkneligt svårförståelig och kan inte litas på, men jag kommer ändå notera det här till din fördel.
+PRAISE_TRADE_01            | Det är bara genom vårt samarbete för gemensam vinning som vi lyckats komma så pass långt. Låt denna gynnsamhet vunnen genom vår handel hålla tills vi båda funnit vad vi söker!
+PRAISE_TRADE_02            | Jag är väldigt nöjd med hur mycket vårt handelsavtal hjälper oss båda. Du är också nöjd med det här, eller hur, [your_name]?  
+PRAISE_REBELLING_WITH_01   | [your_name]lingen kallar på hjälp! Jag slår mig samman med dig för att ta till vapen mot det här löjliga rådet! Du är min vän, och det betyder att du kommer aldrig behöva kämpa ensam!
+
+DIPLO_TECH_REQUEST_MENU_01   | Vilken teknologi skulle vara av intresse?
+DIPLO_TECH_COUNTER_MENU_01   | Vad skulle du ge i utbyte?
+DIPLO_TRADE_MENU_01          | Du föreslår ett handelsavtal om ett belopp på:
+DIPLO_TREATY_MENU_01         | Du föreslår ett avtal, alltså
+DIPLO_DECLARE_WAR_MENU_01    | Är du säker på att du vill gå till krig?
+DIPLO_SUGGEST_WAR_MENU_01    | Vem skulle jag förklara krig mot?
+DIPLO_BREAK_ALLIANCE_MENU_01 | Vilken allians skulle jag bryta?
+DIPLO_THREATEN_MENU_01       | Du tänkte alltså på:
+
+DECLINE_OFFER_01           | Jag tackar nej.
+DECLINE_OFFER_02           | Jag har övervägt ditt förslag, och tackar nej.
+DECLINE_OFFER_03           | Jag vill inte, med respekt för ditt förslag.
+DECLINE_OFFER_04           | Jag är inte intresserad för tillfället.
+DECLINE_OFFER_05           | Jag ser inte det här som ett rättvist utbyte.
+DECLINE_OFFER_06           | Med tanke på mina intressen kommer jag inte acceptera för tillfället.
+DECLINE_OFFER_07           | Du kanske misstog mig för en godtrogen idiot. Jag avstår ditt förslag.
+DECLINE_OFFER_08           | Ditt förslag verkar inte lämpligt i mina ögon.
+DECLINE_OFFER_09           | Jag måste nog tacka nej.
+
+DECLINE_ENEMY_ALLY_01      | Jag skulle aldrig göra utbyten med allierade till den hatade [other_name].
+
+DECLINE_ANNOYED_01         | [your_name] är en varelse med mycket prat och lite handling. Jag tröttnar på ditt babblande.
+DECLINE_ANNOYED_01         | [your_name], du prövar mitt tålamod. Du kanske skulle försöka vid ett senare tillfälle.
+DECLINE_ANNOYED_01         | Jag har hört nog. Vi kan talas vid igen senare.
+DECLINE_ANNOYED_02         | Jag är utled dessa diplomatiska förhandlingar. Vi kan fortsätta konversera vid ett annat tillfälle.
+DECLINE_ANNOYED_02         | Vi kommer ingenvart med detta pratande. Det är dags för mig att ta avsked.
+DECLINE_ANNOYED_02         | Jag avslutar samtalet här.
+DECLINE_ANNOYED_03         | Jag ber så hemskt mycket om ursäkt, [your_name], men andra förpliktiganden kallar mig.
+DECLINE_ANNOYED_03         | Ursäkta här, men tiden avsatt för samtal tar slut här.
+DECLINE_ANNOYED_03         | Jag har lite extra tid och mycket att göra. Vi kanske kan talas vid senare.
+
+
+DECLINE_OATHBREAKER_01     | Jag är ovillig att sluta avtal för tillfället, eftersom du tidigare brutit mot dina.
+DECLINE_OATHBREAKER_01     | Du har inte hedrat våra tidigare avtal. Jag ser inte någon särskilt bra anledning att lita på dig nu.
+DECLINE_OATHBREAKER_01     | Varför skulle jag tro dig nu, när du har brutit så många tidigare avtal? 
+DECLINE_OATHBREAKER_01     | Jag ser inte logiken i att acceptera avtal med någon som tidigare inte levt upp till sina löften.
+DECLINE_OATHBREAKER_01     | Jag förhandlar inte med [your_name] som helt verkar sakna trovärdighet.
+
+DECLINE_ESPIONAGE_01       | Era tjyvaktiga skator, ni stjäl mitt hårda arbetes forskningsresultat. Jag vägrar er förfrågan.
+DECLINE_ESPIONAGE_01       | Min teknologi är till för att tjäna mig, och mina syften. Ni har ingen rätt att stjäla den. Jag kommer inte vara tillgänglig för samtal förrän ni slutar upp med att stjäla.
+DECLINE_ESPIONAGE_01       | Varför skulle jag ge er något? Era spioner stjäl redan allt ni behöver!
+DECLINE_ESPIONAGE_01       | Hur exakt förväntar du dig att jag ska kunna acceptera när dina spioner stjäl min teknologi?
+DECLINE_ESPIONAGE_01       | Avlägsna dina spioner, sedan kan vi samtala.
+
+DECLINE_SABOTAGE_01        | Jag har inte glömt ditt senaste sabotage. Jag kommer inte förhandla med dig förrän du visat dig mer trovärdig.
+DECLINE_SABOTAGE_01        | Jag är plågad av ditt sabotage. Jag kommer inte förhandla med dig innan det helt upphör.
+DECLINE_SABOTAGE_01        | Ursäkta?! Du förväntar dig att jag ska acceptera när du begår sabotage mot mina [target]?
+DECLINE_SABOTAGE_01        | Du förstör mina [target]. Varför ska jag lyssna på dig?
+DECLINE_SABOTAGE_01        | När du slutar sabotera mina [target], kan jag överväga dina förslag på riktigt.
+
+DECLINE_BUILDUP_01         | Kommer inte på tal medan du samlar flottor vid mina territoriegränser.
+DECLINE_BUILDUP_01         | Avlägsna dina skepp vid mina gränser, så ska jag överväga om jag kan acceptera. Tills dess är jag inte intresserad.
+DECLINE_BUILDUP_01         | Dina skepp vid mina gränser är inte något särskilt hot mot mig. Men jag vägrar förhandla medan de är kvar.
+DECLINE_BUILDUP_01         | Om du vill samtala med mig, sänd då dina skepp att hota någon annan, någon som inte är jag.
+
+DECLINE_ENCROACH_01        | Dina flottor inkräktar på mitt område. Avlägsna dem, så kan vi samtala sedan.
+
+DECLINE_SKIRMISH_01        | Du anfaller mina skepp oprovocerat och förväntar dig sedan att jag ska acceptera? Jag vägrar.
+DECLINE_SKIRMISH_01        | Jag kan inte acceptera förslag från en som anfaller mina flottor.
+DECLINE_SKIRMISH_01        | När dina flottor slutar anfalla mina, då kan vi samtala.
+DECLINE_SKIRMISH_01        | Om du vill förhandla med den som är mig, lämna då mina flottor i fred.
+DECLINE_SKIRMISH_01        | Jag uppskattar inte ditt förstörande av mina flottor. Jag accepterar inte.
+
+DECLINE_ATTACK_01          | Ditt oberättigade överfall mot [system] lämnar lite utrymme för förhandlingar.
+DECLINE_ATTACK_01          | Jag har inte glömt anfallet mot kolonin vid [system]. Det finns ingen möjlighet att jag potentiellt skulle acceptera.
+
+DECLINE_INVASION_01        | Jag önskar inte samtala med de som begick massdödande vid [system]. Åtgärda de reparationer som krävs först.
+DECLINE_INVASION_01        | Mitt blod vid [system] befläckar dina ord. Jag kan omöjligen acceptera ditt förslag.
+DECLINE_INVASION_01        | Mina förluster vid [system] ropar ut om återgäldning. Smärtan jag känner talar starkare än dina förslag.
+
+DECLINE_BIOWEAPONS_01      | Jag förhandlar inte med en som använder biologiska vapen.
+DECLINE_BIOWEAPONS_01      | Jag kan inte förhandla med någon som är desperat nog att ta till biologiska vapen.
+DECLINE_BIOWEAPONS_01      | Du använder vapen som orsakar obeskrivlig fasa mot mig. Jag vägrar interagera med sådant vansinne.
+DECLINE_BIOWEAPONS_01      | Gudarna avskyr de som ödelägger planeter med biologiska vapen. Jag kan inte acceptera er.
+DECLINE_BIOWEAPONS_01      | Smärtan ni orsakat mig av era biologiska vapen fyller mitt väsen. Jag kan inte höra era förslag.
+
+DECLINE_TECH_TRADE_01      | Du har ingen teknologi som intresserar mig.
+DECLINE_TECH_TRADE_01      | Jag har inget behov av dina leksaker.
+DECLINE_TECH_TRADE_01      | Dina primitiva uppfinningar intresserar mig inte.
+DECLINE_TECH_TRADE_01      | Jag är långt bortom dig i teknologiska framsteg.
+DECLINE_TECH_TRADE_01      | [your_name], jag har inget behov av vad du erbjuder mig.
+DECLINE_TECH_TRADE_01      | Jag ser inte något av intresse i din teknologi.
+
+DECLINE_NO_WAR_ON_ALLY_01  | Jag tänker inte förklara krig mot min allierade.
+DECLINE_PEACE_TREATY_01    | Jag kommer inte att bryta mitt fredsavtal med [other_name].
+
+OFFER_TECH_EXCHANGE_01     | Jag är i stort behov av din teknologi, [tech]. Du kanske är villig att genomföra ett utbyte, för någon av mina teknologier.
+OFFER_TECH_EXCHANGE_01     | Jag vet om att du har blivit varse hemligheterna bakom [tech]. Kan jag erbjuda någon av mina teknologier i utbyte?
+OFFER_TECH_EXCHANGE_01     | Jag skulle vilja ha [tech]-teknologin. Skulle du kunna tänka dig att byta den mot något av mina teknologiska framsteg?
+OFFER_TECH_EXCHANGE_01     | Jag är fascinerad av [tech]. Vad skulle jag kunna erbjuda i utbyte för den teknologin?
+
+ACCEPT_TECH_EXCHANGE_01    | Jag accepterar. Jag ger min fantastiska kunskap om [techGiven] i utbyte för teknologin [techReceived].
+ACCEPT_FINANCIAL_AID_01    | Jag accepterar din gåva om [amt] BC.
+ACCEPT_TECHNOLOGY_AID_01   | Jag accepterar din gåva av [tech].
+
+BREAK_TRADE_01             | Jag är inte längre intresserad av handelsutbyte med [your_name].
+ANNOUNCE_TRADE_01          | Med verkan från år [year], kommer jag och [your_name] överens om ett handelsavtal om [amt] BC per år.
+ACCEPT_TRADE_01            | Ett handelsavtal på [amt] BC är acceptabelt.
+ACCEPT_TRADE_01            | Jag väntar med iver på de fina produkter [your_name] erbjuder. Jag accepterar ett avtal om [amt] BC per år.
+ACCEPT_TRADE_01            | Jag accepterar ett handelsavtal om [amt] BC per år.
+ACCEPT_TRADE_01            | Nåväl, [your_name], jag finner ditt erbjudande om [amt] BC per år att vara lämpligt och rättvist.
+
+ANNOUNCE_PEACE_01          | Året [year], kommer jag och [your_name] överens om att upphäva krigstillståndet.
+ANNOUNCE_PEACE_01          | Härmed sänder jag ut ordern om att upphäva krigstillståndet mellan dig och mig, verksamt nu.
+ACCEPT_PEACE_01            | Jag sträcker ut mitt medhåll att tiden har kommit för oss att avsluta vårt småaktiga gnabbande.
+ACCEPT_PEACE_01            | Jag accepterar ditt erbjudande om fred. Upphäv ordrar om att ge eld mot mig, så kommer jag sluta anfalla dina styrkor.
+ACCEPT_PEACE_01            | Jag tröttnar på denna sanslösa förstörelse. Jag accepterar ditt erbjudande om fred.
+
+BREAK_PACT_01              | En varning till [your_name]lingen från mig: vårt avtal om Icke-Aggression upphävs härmed!
+ANNOUNCE_PACT_01           | Året [year], binder jag mig till ett Avtal om Icke-Aggression och att inte anfalla dina flottor om de inte är i omloppsbana vid någon av mina kolonier.
+ACCEPT_PACT_01             | Jag accepterar avtalet om Icke-Aggression. Ingen av oss kommer anfalla den andres flottor, såvida inte man har trätt in i omloppsbana vid den andres koloni.
+ACCEPT_PACT_01             | Om du går med på att inte sända några skepp till någon av mina kolonier, då lovar jag att inte anfalla några av dina skepp.
+ACCEPT_PACT_01             | Jag accepterar ditt förslagna Icke-Aggressions-Avtal. Som det är nedtecknat, så skall det uppfyllas!
+ACCEPT_PACT_01             | Då accepterar jag. Så länge som du inte anfaller mina kolonier, så kommer jag hålla vid avtalet om Icke-Aggression.
+
+BREAK_ALLIANCE_01          | Jag kan inte längre uppehålla Alliansen med [your_name].
+ANNOUNCE_ALLIANCE_01       | År [year], kommer jag och [your_name] överens att sluta upp i en allians i vilken ingen av oss kommer anfalla den andres flottor eller kolonier.
+ANNOUNCE_ALLIANCE_01       | Så befästs vår Allians. Dina skepp kan besöka mina kolonier vid behov, och efterfråga om bränsle vid mina baser.
+ACCEPT_ALLIANCE_01         | Jag välkomnar en Allians med min gode vän, [your_name].
+ACCEPT_ALLIANCE_01         | Jag och [your_name] sluter idag upp i en Allians. Död åt våra fiender!
+ACCEPT_ALLIANCE_01         | En Allians med [your_name] låter vettigt. Låt gå!
+
+ACCEPT_BREAK_ALLIANCE_01   | Jag accepterar, [other_name] är inte längre trovärdiga, och jag har brutit min alliance med dem.
+ACCEPT_BREAK_ALLIANCE_01   | Även om det smärtar mig att vända ryggen till [other_name], så har jag nu gjort det.
+ACCEPT_BREAK_ALLIANCE_01   | [other_name] är inte längre min allierade.
+ACCEPT_BREAK_ALLIANCE_01   | Alliansen mellan mig och [other_name] ligger nu i slamsor vid våra fötter.
+ACCEPT_BREAK_ALLIANCE_01   | Som du vill, jag ska inte längre vända mig till [other_name] som en allierad.
+
+ACCEPT_JOINT_WAR_01        | [other_name] måste besegras av [your_name] och jag, då vi kombinerar våra styrkor.
+ACCEPT_JOINT_WAR_01        | Med [your_name] och jag som allierade, så kommer [other_name] inte vara länge.
+ACCEPT_JOINT_WAR_01        | År [year], sluter jag och [your_name] oss samman för att tillsammans befria galaxen från det hot som kallar sig [other_name].
+
+RESPOND_CLOSE_EMBASSY_01   | Låt gå. Det kommer inte hållas några mer samtal mellan mig och [your_name].
+
+RESPOND_BREAK_TRADE_01     | Jag kommer komma ihåg det här.
+RESPOND_BREAK_TRADE_01     | Så, [your_name], du är sådan som inte håller ditt ord. Jag kommer inte att glömma det här.
+
+RESPOND_BREAK_PACT_01      | Jag kommer att rista in dina brutna avtal på din gravsten, [your_name].
+RESPOND_BREAK_PACT_01      | [your_name] kommer att krossas under ansvaret för sina brutna löften.
+
+RESPOND_BREAK_ALLIANCE_01  | Du har vanhedrat vårt avtal. Alliansen är nu bruten.
+RESPOND_BREAK_ALLIANCE_01  | Låt gå. Du har visat din otrovärdighet. Alliansen är bruten.
+RESPOND_BREAK_ALLIANCE_01  | Jag ser ingen mening i avtal som inte respekteras. Du kan nu räkna alliansen som bruten.
+RESPOND_BREAK_ALLIANCE_01  | Jag förstår. Alliansen är nu uppbruten.
+
+ACCEPT_TRADE_01            | Ni vill bedriva handel med mig? För hur mycket? [amt] BC varje år? Hmm... ja, jag tror att jag kan acceptera ett sådant arrangemang med [your_name].
+RESPOND_IGNORE_THREAT_01   | Kom inte till mig med dina hot, fåniga [your_name]. Det finns så många av mig att du aldrig ens skulle kunna drömma om att vinna om vi gick till krig. Iväg med dig!
+RESPOND_STOP_SPYING_01     | Jag ville bara se hur [your_name] betedde sig när du var bland dig själva. Jag kommer inte att upprepa det här. Skulle ni kunna vara vänliga och ge tillbaka min spion nu?
+RESPOND_STOP_ATTACKING_01  | Haha! Ser ni hur stark jag är! [your_name] kan inte jämföras med mig! Kom nu ihåg det efter att jag fört hem mina flottor!
+

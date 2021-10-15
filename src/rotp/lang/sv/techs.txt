@@ -1,0 +1,1197 @@
+
+
+//
+// Armor techs
+// 
+ARMOR_0_NAME     | Titanpansar
+ARMOR_0_ITEM     | Titan
+ARMOR_0_BRIEF    | Hit Points %1
+ARMOR_0_DETAIL   | Den tidigaste anpassningen av pansar för strid mellan rymdskepp. Ingen extra effektivitet för skeppspansar eller markstrid.
+
+ARMOR_1_NAME     | Duralloy-pansar
+ARMOR_1_ITEM     | Duralloy
+ARMOR_1_BRIEF    | Hit Points %1
+ARMOR_1_DETAIL   | Ökar mängden skadepoäng stridsskepp och transportskepp tål med 50%. Marktruppers stridsutrustning förhöjs också i effektivitet, vilket tillägger +5 till all markstrid.
+
+ARMOR_2_NAME     | Zortrium-pansar
+ARMOR_2_ITEM     | Zortrium
+ARMOR_2_BRIEF    | Hit Points %1
+ARMOR_2_DETAIL   | Ökar mängden skadepoäng stridsskepp och transportskepp tål med 100%. Marktruppers stridsutrustning förhöjs också i effektivitet, vilket tillägger +10 till all markstrid.
+
+ARMOR_3_NAME     | Andrium-pansar
+ARMOR_3_ITEM     | Andrium
+ARMOR_3_BRIEF    | Hit Points %1
+ARMOR_3_DETAIL   | Ökar mängden skadepoäng stridsskepp och transportskepp tål med 150%. Marktruppers stridsutrustning förhöjs också i effektivitet, vilket tillägger +15 till all markstrid.
+
+ARMOR_4_NAME     | Tritanium-pansar
+ARMOR_4_ITEM     | Tritanium
+ARMOR_4_BRIEF    | Hit Points %1
+ARMOR_4_DETAIL   | Ökar mängden skadepoäng stridsskepp och transportskepp tål med 200%. Marktruppers stridsutrustning förhöjs också i effektivitet, vilket tillägger +20 till all markstrid.
+
+ARMOR_5_NAME     | Adamantium-pansar
+ARMOR_5_ITEM     | Adamantium
+ARMOR_5_BRIEF    | Hit Points %1
+ARMOR_5_DETAIL   | Ökar mängden skadepoäng stridsskepp och transportskepp tål med 250%. Marktruppers stridsutrustning förhöjs också i effektivitet, vilket tillägger +25 till all markstrid.
+
+ARMOR_6_NAME     | Neutronium-pansar
+ARMOR_6_ITEM     | Neutronium
+ARMOR_6_BRIEF    | Hit Points %1
+ARMOR_6_DETAIL   | Ökar mängden skadepoäng stridsskepp och transportskepp tål med 300%. Marktruppers stridsutrustning förhöjs också i effektivitet, vilket tillägger +30 till all markstrid.
+
+
+//
+// Atmospheric Terraforming techs
+// 
+ATMOSPHERE_0_NAME      | Atmosfärisk Terraformering
+ATMOSPHERE_0_DETAIL    | Omvandlar Ogästvänliga klimat till Normala klimat för en kostnad på 150 BC.
+
+//
+// Automated Repair techs
+// 
+AUTOREPAIR_0_NAME      | Automatiserat Reparationssystem
+AUTOREPAIR_0_BRIEF     | Återställer 15% av ett skepps skadepoäng per tur i strid
+AUTOREPAIR_0_DETAIL    | Överlevande skepp kan reparera upp till 15% av skeppets totala skadepoäng efter varje tur, i strid.
+
+AUTOREPAIR_1_NAME      | Avancerad Hantering av Skada
+AUTOREPAIR_1_BRIEF     | Återställer 30% av ett skepps skadepoäng per tur i strid
+AUTOREPAIR_1_DETAIL    | Överlevande skepp kan reparera upp till 30% av skeppets totala skadepoäng efter varje tur, i strid.
+
+
+//
+// Battle Computer techs
+// 
+// this is the Ship Design entry for selecting no battle computer
+COMPUTER_0_NAME    | 
+COMPUTER_0_ITEM    |  
+COMPUTER_0_BRIEF   | Precision Nivå 0
+COMPUTER_0_DETAIL  |
+
+COMPUTER_1_NAME    | Stridsdator fm/1
+COMPUTER_1_ITEM    | fm/1
+COMPUTER_1_BRIEF   | Precision Nivå 1
+COMPUTER_1_DETAIL  | Tar precisionsprestandan för vapen till Nivå 1.
+
+COMPUTER_2_NAME    | Stridsdator m/2
+COMPUTER_2_ITEM    | m/2
+COMPUTER_2_BRIEF   | Precision Nivå 2
+COMPUTER_2_DETAIL  | Tar precisionsprestandan för vapen till Nivå 2.
+
+COMPUTER_3_NAME    | Stridsdator m/3
+COMPUTER_3_ITEM    | m/3
+COMPUTER_3_BRIEF   | Precision Nivå 3
+COMPUTER_3_DETAIL  | Tar precisionsprestandan för vapen till Nivå 3.
+
+COMPUTER_4_NAME    | Stridsdator m/4
+COMPUTER_4_ITEM    | m/4
+COMPUTER_4_BRIEF   | Precision Nivå 4
+COMPUTER_4_DETAIL  | Tar precisionsprestandan för vapen till Nivå 4.
+
+COMPUTER_5_NAME    | Stridsdator m/5
+COMPUTER_5_ITEM    | m/5
+COMPUTER_5_BRIEF   | Precision Nivå 5
+COMPUTER_5_DETAIL  | Tar precisionsprestandan för vapen till Nivå 5.
+
+COMPUTER_6_NAME    | Stridsdator m/6
+COMPUTER_6_ITEM    | m/6
+COMPUTER_6_BRIEF   | Precision Nivå 6
+COMPUTER_6_DETAIL  | Tar precisionsprestandan för vapen till Nivå 6.
+
+COMPUTER_7_NAME    | Stridsdator m/7
+COMPUTER_7_ITEM    | m/7
+COMPUTER_7_BRIEF   | Precision Nivå 7
+COMPUTER_7_DETAIL  | Tar precisionsprestandan för vapen till Nivå 7.
+
+COMPUTER_8_NAME    | Stridsdator m/8
+COMPUTER_8_ITEM    | m/8
+COMPUTER_8_BRIEF   | Precision Nivå 8
+COMPUTER_8_DETAIL  | Tar precisionsprestandan för vapen till Nivå 8.
+
+COMPUTER_9_NAME    | Stridsdator m/9
+COMPUTER_9_ITEM    | m/9
+COMPUTER_9_BRIEF   | Precision Nivå 9
+COMPUTER_9_DETAIL  | Tar precisionsprestandan för vapen till Nivå 9.
+
+COMPUTER_10_NAME    | Stridsdator m/10
+COMPUTER_10_ITEM    | m/10
+COMPUTER_10_BRIEF   | Precision Nivå 10
+COMPUTER_10_DETAIL  | Tar precisionsprestandan för vapen till Nivå 10.
+
+COMPUTER_11_NAME    | Stridsdator m/11
+COMPUTER_11_ITEM    | m/11
+COMPUTER_11_BRIEF   | Precision Nivå 11
+COMPUTER_11_DETAIL  | Tar precisionsprestandan för vapen till Nivå 11.
+
+
+//
+// Battle Suit techs for ground combat
+// 
+// this is for default, no-bonus armor that player starts with
+BATTLESUIT_0_NAME    | Pansar
+BATTLESUIT_0_DETAIL  |
+
+BATTLESUIT_1_NAME    | Stridsdräkter
+BATTLESUIT_1_DETAIL  | En mekanisk rustning som inte bara beskyddar, utan också förhöjer styrka. Lägger till +10 till utfall för markstrid mellan trupper.
+
+BATTLESUIT_2_NAME    | Bepansrade Externskelett
+BATTLESUIT_2_DETAIL  | Avancerade stridsdräkter som inte bara förhöjer styrka och tålighet hos marktrupper, utan också erbjuder rörlighet i form av flygförmåga och långa hopp. Lägger till +20 till utfall för markstrid mellan trupper.
+
+BATTLESUIT_3_NAME    | Högmotoriserade Stridsdräkter
+BATTLESUIT_3_DETAIL  | Kombinerar hög rörlighet, anti-gravi-flygförmåga, och multifunktionellt pansar i den mest avancerade rustning man kan erbjuda marktrupper. Lägger till 30 till utfall för markstrid mellan trupper.
+
+
+//
+// Energy Focus techs for beam weapons
+// 
+BEAMFOCUS_0_NAME    | Högenergisfokusering
+BEAMFOCUS_0_BRIEF   | Höjer räckvidden på energibaserade vapen med +3
+BEAMFOCUS_0_DETAIL  | Specialutrustning som förhöjer räckvidden av alla energibaserade vapen med tre.
+
+BEAMFOCUS_1_NAME    | Gränssnitt: Orakel
+BEAMFOCUS_1_BRIEF   | Koncentrera strålvapen, ½ fiendens sköldar
+BEAMFOCUS_1_DETAIL  | Koordinerar alla strålvapen att skjuta i en gemensam superstråle, vilket halverar effektiviteten av sköldar som försvar.
+
+
+//
+// Biological antidote techs 
+// 
+BIOANTIDOTE_0_NAME    | Motgift mot Biotoxiner
+BIOANTIDOTE_0_DETAIL  | Minskar antalet dödade av biologiska massförstörelsevapen med 1M per attack.
+
+BIOANTIDOTE_1_NAME    | Universellt Motgift
+BIOANTIDOTE_1_DETAIL  | Minskar antalet dödade av biologiska massförstörelsevapen med 2M per attack.
+
+
+//
+// Biological weapon techs 
+// 
+BIOWEAPON_0_NAME     | Dödssporer
+BIOWEAPON_0_BRIEF    | Biologiskt Vapen
+BIOWEAPON_0_DETAIL   | Hemska biologiska massförstörelsevapen kapabla att förminska den maximala planetära befolkningsmängden med 1M per attack.
+
+BIOWEAPON_1_NAME     | Domedagsvirus
+BIOWEAPON_1_BRIEF    | Biologiskt Vapen
+BIOWEAPON_1_DETAIL   | Fasansfulla biologiska massförstörelsevapen kapabla att förminska den maximala planetära befolkningsmängden med 2M per attack.
+
+BIOWEAPON_2_NAME     | Livsförintaren
+BIOWEAPON_2_BRIEF    | Biologiskt Vapen
+BIOWEAPON_2_DETAIL   | Avskyvärda biologiska massförstörelsevapen kapabla att förminska den maximala planetära befolkningsmängden med 3M per attack.
+
+//
+// Black Hole Generator tech
+//
+BLACKHOLE_0_NAME     | Svart-håls-generator
+BLACKHOLE_0_DETAIL   | Skapar ett parallellrymdsfält som förvrider vanlig rumtid, vilket orsakar ett svart hål som förstör 25% till 100% av fientliga skepp eller missilbaser, med 2% subtraherat per nivåklass av sköldar.
+
+
+//
+// Bomb weapon tech
+//
+BOMB_0_NAME     | Atombomb
+BOMB_0_BRIEF    | Endast Markattacker
+BOMB_0_DETAIL   | Bomber som exploderar orsakandes 3-12 skadepoäng, begränsat till mål på marknivå.
+
+BOMB_1_NAME     | Fusionsbomb
+BOMB_1_BRIEF    | Endast Markattacker
+BOMB_1_DETAIL   | Bomber som exploderar orsakandes 5-20 skadepoäng, begränsat till mål på marknivå.
+
+BOMB_2_NAME     | Anti-Materiabomb
+BOMB_2_BRIEF    | Endast Markattacker
+BOMB_2_DETAIL   | Bomber som exploderar orsakandes 10-40 skadepoäng, begränsat till mål på marknivå.
+
+BOMB_3_NAME     | Omega-5-Bomb
+BOMB_3_BRIEF    | Endast Markattacker
+BOMB_3_DETAIL   | Bomber som exploderar orsakandes 20-50 skadepoäng, begränsat till mål på marknivå.
+
+BOMB_4_NAME     | Neutroniumbomb
+BOMB_4_BRIEF    | Endast Markattacker
+BOMB_4_DETAIL   | Bomber som exploderar orsakandes 40-70 skadepoäng, begränsat till mål på marknivå.
+
+
+//
+// Cloaking tech
+//
+CLOAK_0_NAME     | Mantelanordning
+CLOAK_0_BRIEF    | Döljer skeppet till nära inpå osynlighet
+CLOAK_0_DETAIL   | Döljer skeppet till nära inpå osynlighet upp till dess att det anfaller, vilket lägger till +5 till skeppets Försvar. Skepp måste avmantla för att aktivera vapen, och påmantlar automatiskt när det spenderat en tur utan att anfalla.
+
+
+//
+// Cloning tech
+//
+CLONE_0_NAME     | Kloning
+CLONE_0_DETAIL   | Möjliggör biokonstruerade kolonister för produktion, av en kostnad på 10 BC per 1M.
+
+CLONE_1_NAME     | Advancerad Kloning
+CLONE_1_DETAIL   | Möjliggör biokonstruerade kolonister för produktion, av en kostnad på 5 BC per 1M.
+
+
+//
+// Combat Transporter tech
+//
+COMBATTRANSPORT_0_NAME     | Strids-transporter
+COMBATTRANSPORT_0_DETAIL   | Transporter utrustade med den här tekniken har 50% chans att teleportera förbi eventuellt försvar för att nå ytan för markstrid.
+
+
+//
+// Control Environment tech
+//
+CONTROLENV_0_NAME    | Kontrollerat Klimat: Normal
+CONTROLENV_0_ITEM    | Kolonibas: Standardutgåva
+CONTROLENV_0_BRIEF   | Möjliggör Kolonisering av Normala Planeter
+CONTROLENV_0_DETAIL  | Möjliggör kolonisering av standardplaneter.
+
+CONTROLENV_1_NAME    | Kontrollerat Klimat: Öde
+CONTROLENV_1_ITEM    | Kolonibas: Öde
+CONTROLENV_1_BRIEF   | Möjliggör Kolonisering av Öde Klimat
+CONTROLENV_1_DETAIL  | Möjliggör kolonisering av öde planeter.
+
+CONTROLENV_2_NAME    | Kontrollerat Klimat: Tundra
+CONTROLENV_2_ITEM    | Kolonibas: Tundra
+CONTROLENV_2_BRIEF   | Möjliggör Kolonisering av Tundra-klimat
+CONTROLENV_2_DETAIL  | Möjliggör kolonisering av tundra-planeter samt mindre ogästvänliga klimat.
+
+CONTROLENV_3_NAME    | Kontrollerat Klimat: Dött
+CONTROLENV_3_ITEM    | Kolonibas: Dött
+CONTROLENV_3_BRIEF   | Möjliggör Kolonisering av Dött Klimat.
+CONTROLENV_3_DETAIL  | Möjliggör kolonisering av döda planeter samt mindre ogästvänliga klimat.
+
+CONTROLENV_4_NAME    | Kontrollerat Klimat: Inferno
+CONTROLENV_4_ITEM    | Kolonibas: Inferno
+CONTROLENV_4_BRIEF   | Möjliggör Kolonisering av Inferno-klimat.
+CONTROLENV_4_DETAIL  | Möjliggör kolonisering av inferno-planeter samt mindre ogästvänliga klimat.
+
+CONTROLENV_5_NAME    | Kontrollerat Klimat: Giftigt
+CONTROLENV_5_ITEM    | Kolonibas: Giftigt
+CONTROLENV_5_BRIEF   | Möjliggör Kolonisering av Giftigt Klimat
+CONTROLENV_5_DETAIL  | Möjliggör kolonisering av giftiga planeter samt mindre ogästvänliga klimat.
+
+CONTROLENV_6_NAME    | Kontrollerat Klimat: Högbestrålat
+CONTROLENV_6_ITEM    | Kolonibas: Högbestrålat
+CONTROLENV_6_BRIEF   | Möjliggör Kolonisering av Högbestrålat Klimat
+CONTROLENV_6_DETAIL  | Möjliggör kolonisering av högbestrålade planeter samt mindre ogästvänliga klimat.
+
+
+//
+// Deflector Shield tech
+//
+// this is the entry on Ship Design for selecting no deflector shield
+DEFLECTOR_0_NAME      | 
+DEFLECTOR_0_ITEM      |   
+DEFLECTOR_0_BRIEF     |  
+DEFLECTOR_0_DETAIL    | 
+
+DEFLECTOR_1_NAME      | Klass I Sköldteknik
+DEFLECTOR_1_ITEM      | Klass I
+DEFLECTOR_1_BRIEF     | Absorberar 1 skada
+DEFLECTOR_1_DETAIL    | Absorberar 1 skadepoäng från alla attacker.
+
+DEFLECTOR_2_NAME      | Klass II Sköldteknik
+DEFLECTOR_2_ITEM      | Klass II
+DEFLECTOR_2_BRIEF     | Absorberar 2 skada
+DEFLECTOR_2_DETAIL    | Absorberar 2 skadepoäng från alla attacker.
+
+DEFLECTOR_3_NAME      | Klass III Sköldteknik
+DEFLECTOR_3_ITEM      | Klass III
+DEFLECTOR_3_BRIEF     | Absorberar 3 skada
+DEFLECTOR_3_DETAIL    | Absorberar 3 skadepoäng från alla attacker.
+
+DEFLECTOR_4_NAME      | Klass IV Sköldteknik
+DEFLECTOR_4_ITEM      | Klass IV
+DEFLECTOR_4_BRIEF     | Absorberar 4 skada
+DEFLECTOR_4_DETAIL    | Absorberar 4 skadepoäng från alla attacker.
+
+DEFLECTOR_5_NAME      | Klass V Sköldteknik
+DEFLECTOR_5_ITEM      | Klass V
+DEFLECTOR_5_BRIEF     | Absorberar 5 skada
+DEFLECTOR_5_DETAIL    | Absorberar 5 skadepoäng från alla attacker.
+
+DEFLECTOR_6_NAME      | Klass VI Sköldteknik
+DEFLECTOR_6_ITEM      | Klass VI
+DEFLECTOR_6_BRIEF     | Absorberar 6 skada
+DEFLECTOR_6_DETAIL    | Absorberar 6 skadepoäng från alla attacker.
+
+DEFLECTOR_7_NAME      | Klass VII Sköldteknik
+DEFLECTOR_7_ITEM      | Klass VII
+DEFLECTOR_7_BRIEF     | Absorberar 7 skada
+DEFLECTOR_7_DETAIL    | Absorberar 7 skadepoäng från alla attacker.
+
+DEFLECTOR_8_NAME      | Klass IX Sköldteknik
+DEFLECTOR_8_ITEM      | Klass IX
+DEFLECTOR_8_BRIEF     | Absorberar 9 skada
+DEFLECTOR_8_DETAIL    | Absorberar 9 skadepoäng från alla attacker.
+
+DEFLECTOR_9_NAME      | Klass XI Sköldteknik
+DEFLECTOR_9_ITEM      | Klass XI
+DEFLECTOR_9_BRIEF     | Absorberar 11 skada
+DEFLECTOR_9_DETAIL    | Absorberar 11 skadepoäng från alla attacker.
+
+DEFLECTOR_10_NAME     | Klass XIII Sköldteknik
+DEFLECTOR_10_ITEM     | Klass XIII
+DEFLECTOR_10_BRIEF    | Absorberar 13 skada
+DEFLECTOR_10_DETAIL   | Absorberar 13 skadepoäng från alla attacker.
+
+DEFLECTOR_11_NAME     | Klass XV Sköldteknik
+DEFLECTOR_11_ITEM     | Klass XV
+DEFLECTOR_11_BRIEF    | Absorberar 15 skada
+DEFLECTOR_11_DETAIL   | Absorberar 15 skadepoäng från alla attacker.
+
+
+//
+// Displacement tech
+//
+DISPLACEMENT_0_NAME   | Forcerad-Miss-Instrument
+DISPLACEMENT_0_BRIEF  | 1/3 av alla inkommande attacker missar
+DISPLACEMENT_0_DETAIL | Låter utrustade skepp skifta in och ut från vanlig rumstid på måfå, vilket leder till att 1/3 av alla attacker som inte är områdesdetonerande.
+
+
+//
+// ECM Jammer tech
+//
+// this is the entry on Ship Design for selecting no ECM Jammer
+ECMJAMMER_0_NAME      | 
+ECMJAMMER_0_ITEM      | 
+ECMJAMMER_0_BRIEF     | Missilförsvar 0
+ECMJAMMER_0_DETAIL    | 
+
+ECMJAMMER_1_NAME      | ECM Störsändare fm/1
+ECMJAMMER_1_ITEM      | Störsändare I
+ECMJAMMER_1_BRIEF     | Missilförsvar 1
+ECMJAMMER_1_DETAIL    | Lägger till +1 till Försvarsnivå mot fientliga missilangrepp.
+
+ECMJAMMER_2_NAME      | ECM Störsändare m/2
+ECMJAMMER_2_ITEM      | Störsändare II
+ECMJAMMER_2_BRIEF     | Missilförsvar 2
+ECMJAMMER_2_DETAIL    | Lägger till +2 till Försvarsnivå mot fientliga missilangrepp.
+
+ECMJAMMER_3_NAME      | ECM Störsändare m/3
+ECMJAMMER_3_ITEM      | Störsändare III
+ECMJAMMER_3_BRIEF     | Missilförsvar 3
+ECMJAMMER_3_DETAIL    | Lägger till +3 till Försvarsnivå mot fientliga missilangrepp.
+
+ECMJAMMER_4_NAME      | ECM Störsändare m/4
+ECMJAMMER_4_ITEM      | Störsändare IV
+ECMJAMMER_4_BRIEF     | Missilförsvar 4
+ECMJAMMER_4_DETAIL    | Lägger till +4 till Försvarsnivå mot fientliga missilangrepp.
+
+ECMJAMMER_5_NAME      | ECM Störsändare m/5
+ECMJAMMER_5_ITEM      | Störsändare V
+ECMJAMMER_5_BRIEF     | Missilförsvar 5
+ECMJAMMER_5_DETAIL    | Lägger till +5 till Försvarsnivå mot fientliga missilangrepp.
+
+ECMJAMMER_6_NAME      | ECM Störsändare m/6
+ECMJAMMER_6_ITEM      | Störsändare VI
+ECMJAMMER_6_BRIEF     | Missilförsvar 6
+ECMJAMMER_6_DETAIL    | Lägger till +6 till Försvarsnivå mot fientliga missilangrepp.
+
+ECMJAMMER_7_NAME      | ECM Störsändare m/7
+ECMJAMMER_7_ITEM      | Störsändare VII
+ECMJAMMER_7_BRIEF     | Missilförsvar 7
+ECMJAMMER_7_DETAIL    | Lägger till +7 till Försvarsnivå mot fientliga missilangrepp.
+
+ECMJAMMER_8_NAME      | ECM Störsändare m/8
+ECMJAMMER_8_ITEM      | Störsändare VIII
+ECMJAMMER_8_BRIEF     | Missilförsvar 8
+ECMJAMMER_8_DETAIL    | Lägger till +8 till Försvarsnivå mot fientliga missilangrepp.
+
+ECMJAMMER_9_NAME      | ECM Störsändare m/9
+ECMJAMMER_9_ITEM      | Störsändare IX
+ECMJAMMER_9_BRIEF     | Missilförsvar 9
+ECMJAMMER_9_DETAIL    | Lägger till +9 till Försvarsnivå mot fientliga missilangrepp.
+
+ECMJAMMER_10_NAME     | ECM Störsändare m/10
+ECMJAMMER_10_ITEM     | Störsändare X
+ECMJAMMER_10_BRIEF    | Missilförsvar 10
+ECMJAMMER_10_DETAIL   | Lägger till +10 till Försvarsnivå mot fientliga missilangrepp.
+
+
+//
+// Ecological Restoration techs
+//
+ECORESTORATION_0_NAME   | Ekologisk Återställning
+ECORESTORATION_0_DETAIL | Eliminerar 2 enheter industriavfall för en kostnad av 1 BC.
+
+ECORESTORATION_1_NAME   | Förbättrad Ekoåterställning
+ECORESTORATION_1_DETAIL | Eliminerar 3 enheter industriavfall för en kostnad av 1 BC.
+
+ECORESTORATION_2_NAME   | Effektiviserad Ekoåterställning
+ECORESTORATION_2_DETAIL | Eliminerar 5 enheter industriavfall för en kostnad av 1 BC.
+
+ECORESTORATION_3_NAME   | Avancerad Ekoåterställning
+ECORESTORATION_3_DETAIL | Eliminerar 10 enheter industriavfall för en kostnad av 1 BC.
+
+ECORESTORATION_4_NAME   | Fullständig Ekoåterställning
+ECORESTORATION_4_DETAIL | Eliminerar 20 enheter industriavfall för en kostnad av 1 BC.
+
+
+//
+// Energy Pulsar techs
+//
+PULSAR_0_NAME     | Pulsvågs-enhet
+PULSAR_0_BRIEF    | Expanderar i radie för 1-5 skada
+PULSAR_0_DETAIL   | En effektfull enhet installerad med motorerna som explosionsartat genererar en sfärisk urladdning av energi som träffar alla intilliggande skepp samtidigt för upp till 5 skadepoäng +1 per två angripande skepp.
+
+PULSAR_1_NAME     | Jonisk Pulsvågs-enhet
+PULSAR_1_BRIEF    | Expanderar i radie för 2-10 skada
+PULSAR_1_DETAIL   | En effektfull enhet installerad med motorerna som explosionsartat genererar en sfärisk urladdning av energi som träffar alla intilliggande skepp samtidigt för upp till 10 skadepoäng +1 per angripande skepp.
+
+
+//
+// Engine techs
+//
+ENGINE_0_NAME    | Retro-Motorer
+ENGINE_0_DETAIL  | Förflyttar skepp i en hastighet av Warp %1, och tillåter en maximal Manövrering av klass I i strid.
+ENGINE_0_ITEM    | Retro
+ENGINE_0_ITEM2   | Klass 1
+ENGINE_0_BRIEF   | Warp 1  Förs %1
+ENGINE_0_BRIEF2  | Stridssteg %1
+
+ENGINE_1_NAME    | Kärnkraftsmotorer
+ENGINE_1_DETAIL  | Förflyttar skepp i en hastighet av Warp %1, och tillåter en maximal Manövrering av klass II i strid.
+ENGINE_1_ITEM    | Kärnkraft
+ENGINE_1_ITEM2   | Klass 2
+ENGINE_1_BRIEF   | Warp 2  Förs %1
+ENGINE_1_BRIEF2  | Stridssteg %1
+
+ENGINE_2_NAME    | Beta-fusions-motorer
+ENGINE_2_DETAIL  | Förflyttar skepp i en hastighet av Warp %1, och tillåter en maximal Manövrering av klass III i strid.
+ENGINE_2_ITEM    | Betafusion
+ENGINE_2_ITEM2   | Klass 3
+ENGINE_2_BRIEF   | Warp 3  Förs %1
+ENGINE_2_BRIEF2  | Stridssteg %1
+
+ENGINE_3_NAME    | Fusionsmotorer
+ENGINE_3_DETAIL  | Förflyttar skepp i en hastighet av Warp %1, och tillåter en maximal Manövrering av klass IV i strid.
+ENGINE_3_ITEM    | Fusion
+ENGINE_3_ITEM2   | Klass 4
+ENGINE_3_BRIEF   | Warp 4  Förs %1
+ENGINE_3_BRIEF2  | Stridssteg %1
+
+ENGINE_4_NAME    | Impulsmotorer 
+ENGINE_4_DETAIL  | Förflyttar skepp i en hastighet av Warp %1, och tillåter en maximal Manövrering av klass V i strid.
+ENGINE_4_ITEM    | Impuls
+ENGINE_4_ITEM2   | Klass 5
+ENGINE_4_BRIEF   | Warp 5  Förs %1
+ENGINE_4_BRIEF2  | Stridssteg %1
+
+ENGINE_5_NAME    | Jon-motorer
+ENGINE_5_DETAIL  | Förflyttar skepp i en hastighet av Warp %1, och tillåter en maximal Manövrering av klass VI i strid.
+ENGINE_5_ITEM    | Jon
+ENGINE_5_ITEM2   | Klass 6
+ENGINE_5_BRIEF   | Warp 6  Förs %1
+ENGINE_5_BRIEF2  | Stridssteg %1
+
+ENGINE_6_NAME    | Anti-Materia-motorer
+ENGINE_6_DETAIL  | Förflyttar skepp i en hastighet av Warp %1, och tillåter en maximal Manövrering av klass VII i strid.
+ENGINE_6_ITEM    | Anti-Materia
+ENGINE_6_ITEM2   | Klass 7
+ENGINE_6_BRIEF   | Warp 7  Förs %1
+ENGINE_6_BRIEF2  | Stridssteg %1
+
+ENGINE_7_NAME    | Fissions-resonans-motorer
+ENGINE_7_DETAIL  | Förflyttar skepp i en hastighet av Warp %1, och tillåter en maximal Manövrering av klass VIII i strid.
+ENGINE_7_ITEM    | Fissionsresonans
+ENGINE_7_ITEM2   | Klass 8
+ENGINE_7_BRIEF   | Warp 8  Förs %1
+ENGINE_7_BRIEF2  | Stridssteg %1
+
+ENGINE_8_NAME    | Hyperdrift
+ENGINE_8_DETAIL  | Förflyttar skepp i en hastighet av Warp %1, och tillåter en maximal Manövrering av klass IX i strid.
+ENGINE_8_ITEM    | Hyperdrift
+ENGINE_8_ITEM2   | Klass 9
+ENGINE_8_BRIEF   | Warp 9  Förs %1
+ENGINE_8_BRIEF2  | Stridssteg %1
+
+
+//
+// Fuel Range techs
+//
+FUELRANGE_0_NAME   | Bränsleceller
+FUELRANGE_0_DETAIL | Bränslereserverna låter skepp färdas upp till %1 ljusår från koloniserade planeter.
+
+FUELRANGE_1_NAME   | Vätebaserade Bränsleceller
+FUELRANGE_1_DETAIL | Bränslereserverna låter skepp färdas upp till %1 ljusår från koloniserade planeter.
+
+FUELRANGE_2_NAME   | Deuterium-Bränsleceller
+FUELRANGE_2_DETAIL | Bränslereserverna låter skepp färdas upp till %1 ljusår från koloniserade planeter.
+
+FUELRANGE_3_NAME   | Irridium-Bränsleceller
+FUELRANGE_3_DETAIL | Bränslereserverna låter skepp färdas upp till %1 ljusår från koloniserade planeter.
+
+FUELRANGE_4_NAME   | Dotomit-Kristaller
+FUELRANGE_4_DETAIL | Bränslereserverna låter skepp färdas upp till %1 ljusår från koloniserade planeter.
+
+FUELRANGE_5_NAME   | Uridium-Bränsleceller
+FUELRANGE_5_DETAIL | Bränslereserverna låter skepp färdas upp till %1 ljusår från koloniserade planeter.
+
+FUELRANGE_6_NAME   | Reajax II Bränsleceller
+FUELRANGE_6_DETAIL | Bränslereserverna låter skepp färdas upp till %1 ljusår från koloniserade planeter.
+
+FUELRANGE_7_NAME   | Trilithium-Kristaller
+FUELRANGE_7_DETAIL | Bränslereserverna låter skepp färdas upp till %1 ljusår från koloniserade planeter.
+
+FUELRANGE_8_NAME   | Thoriumceller
+FUELRANGE_8_DETAIL | Dessa bränslereserver möjliggör fri färd utan hänsyn till distans för skepp.
+
+
+//
+// Framtida Datorer techs
+//
+FUTURECOMP_0_NAME    | Framtida Datorer I
+FUTURECOMP_0_DETAIL  | Allmänna Förbättringar inom Datorteknologi.
+
+FUTURECOMP_1_NAME    | Framtida Datorer II
+FUTURECOMP_1_DETAIL  | Allmänna Förbättringar inom Datorteknologi.
+
+FUTURECOMP_2_NAME    | Framtida Datorer III
+FUTURECOMP_2_DETAIL  | Allmänna Förbättringar inom Datorteknologi.
+
+FUTURECOMP_3_NAME    | Framtida Datorer IV
+FUTURECOMP_3_DETAIL  | Allmänna Förbättringar inom Datorteknologi.
+
+FUTURECOMP_4_NAME    | Framtida Datorer V
+FUTURECOMP_4_DETAIL  | Allmänna Förbättringar inom Datorteknologi.
+
+FUTURECOMP_5_NAME    | Framtida Datorer VI
+FUTURECOMP_5_DETAIL  | Allmänna Förbättringar inom Datorteknologi.
+
+FUTURECOMP_6_NAME    | Framtida Datorer VII
+FUTURECOMP_6_DETAIL  | Allmänna Förbättringar inom Datorteknologi.
+
+FUTURECOMP_7_NAME    | Framtida Datorer VIII
+FUTURECOMP_7_DETAIL  | Allmänna Förbättringar inom Datorteknologi.
+
+FUTURECOMP_8_NAME    | Framtida Datorer IX
+FUTURECOMP_8_DETAIL  | Allmänna Förbättringar inom Datorteknologi.
+
+FUTURECOMP_9_NAME    | Framtida Datorer X
+FUTURECOMP_9_DETAIL  | Allmänna Förbättringar inom Datorteknologi. 
+
+
+//
+// Framtida Konstruktion techs
+//
+FUTURECONST_0_NAME    | Framtida Konstruktion I
+FUTURECONST_0_DETAIL  | Allmänna Förbättringar inom Bygg- och Maskinteknologi.
+
+FUTURECONST_1_NAME    | Framtida Konstruktion II
+FUTURECONST_1_DETAIL  | Allmänna Förbättringar inom Bygg- och Maskinteknologi.
+
+FUTURECONST_2_NAME    | Framtida Konstruktion III
+FUTURECONST_2_DETAIL  | Allmänna Förbättringar inom Bygg- och Maskinteknologi.
+
+FUTURECONST_3_NAME    | Framtida Konstruktion IV
+FUTURECONST_3_DETAIL  | Allmänna Förbättringar inom Bygg- och Maskinteknologi.
+
+FUTURECONST_4_NAME    | Framtida Konstruktion V
+FUTURECONST_4_DETAIL  | Allmänna Förbättringar inom Bygg- och Maskinteknologi.
+
+FUTURECONST_5_NAME    | Framtida Konstruktion VI
+FUTURECONST_5_DETAIL  | Allmänna Förbättringar inom Bygg- och Maskinteknologi.
+
+FUTURECONST_6_NAME    | Framtida Konstruktion VII
+FUTURECONST_6_DETAIL  | Allmänna Förbättringar inom Bygg- och Maskinteknologi.
+
+FUTURECONST_7_NAME    | Framtida Konstruktion VIII
+FUTURECONST_7_DETAIL  | Allmänna Förbättringar inom Bygg- och Maskinteknologi.
+
+FUTURECONST_8_NAME    | Framtida Konstruktion IX
+FUTURECONST_8_DETAIL  | Allmänna Förbättringar inom Bygg- och Maskinteknologi.
+
+FUTURECONST_9_NAME    | Framtida Konstruktion X
+FUTURECONST_9_DETAIL  | Allmänna Förbättringar inom Bygg- och Maskinteknologi. 
+
+
+//
+// Framtida Kraftfält techs
+//
+FUTUREFORCE_0_NAME    | Framtida Kraftfält I
+FUTUREFORCE_0_DETAIL  | Allmänna Förbättringar inom Kraftfältsteknologi.
+
+FUTUREFORCE_1_NAME    | Framtida Kraftfält II
+FUTUREFORCE_1_DETAIL  | Allmänna Förbättringar inom Kraftfältsteknologi.
+
+FUTUREFORCE_2_NAME    | Framtida Kraftfält III
+FUTUREFORCE_2_DETAIL  | Allmänna Förbättringar inom Kraftfältsteknologi.
+
+FUTUREFORCE_3_NAME    | Framtida Kraftfält IV
+FUTUREFORCE_3_DETAIL  | Allmänna Förbättringar inom Kraftfältsteknologi.
+
+FUTUREFORCE_4_NAME    | Framtida Kraftfält V
+FUTUREFORCE_4_DETAIL  | Allmänna Förbättringar inom Kraftfältsteknologi.
+
+FUTUREFORCE_5_NAME    | Framtida Kraftfält VI
+FUTUREFORCE_5_DETAIL  | Allmänna Förbättringar inom Kraftfältsteknologi.
+
+FUTUREFORCE_6_NAME    | Framtida Kraftfält VII
+FUTUREFORCE_6_DETAIL  | Allmänna Förbättringar inom Kraftfältsteknologi.
+
+FUTUREFORCE_7_NAME    | Framtida Kraftfält VIII
+FUTUREFORCE_7_DETAIL  | Allmänna Förbättringar inom Kraftfältsteknologi.
+
+FUTUREFORCE_8_NAME    | Framtida Kraftfält IX
+FUTUREFORCE_8_DETAIL  | Allmänna Förbättringar inom Kraftfältsteknologi.
+
+FUTUREFORCE_9_NAME    | Framtida Kraftfält X
+FUTUREFORCE_9_DETAIL  | Allmänna Förbättringar inom Kraftfältsteknologi.
+
+
+//
+// Future Planetology techs
+//
+FUTUREPLANET_0_NAME    | Framtida Planetologi I
+FUTUREPLANET_0_DETAIL  | Allmänna Förbättringar inom Planetär Teknologi.
+
+FUTUREPLANET_1_NAME    | Framtida Planetologi II
+FUTUREPLANET_1_DETAIL  | Allmänna Förbättringar inom Planetär Teknologi.
+
+FUTUREPLANET_2_NAME    | Framtida Planetologi III
+FUTUREPLANET_2_DETAIL  | Allmänna Förbättringar inom Planetär Teknologi.
+
+FUTUREPLANET_3_NAME    | Framtida Planetologi IV
+FUTUREPLANET_3_DETAIL  | Allmänna Förbättringar inom Planetär Teknologi.
+
+FUTUREPLANET_4_NAME    | Framtida Planetologi V
+FUTUREPLANET_4_DETAIL  | Allmänna Förbättringar inom Planetär Teknologi.
+
+FUTUREPLANET_5_NAME    | Framtida Planetologi VI
+FUTUREPLANET_5_DETAIL  | Allmänna Förbättringar inom Planetär Teknologi.
+
+FUTUREPLANET_6_NAME    | Framtida Planetologi VII
+FUTUREPLANET_6_DETAIL  | Allmänna Förbättringar inom Planetär Teknologi.
+
+FUTUREPLANET_7_NAME    | Framtida Planetologi VIII
+FUTUREPLANET_7_DETAIL  | Allmänna Förbättringar inom Planetär Teknologi.
+
+FUTUREPLANET_8_NAME    | Framtida Planetologi IX
+FUTUREPLANET_8_DETAIL  | Allmänna Förbättringar inom Planetär Teknologi.
+
+FUTUREPLANET_9_NAME    | Framtida Planetologi X
+FUTUREPLANET_9_DETAIL  | Allmänna Förbättringar inom Planetär Teknologi.
+
+
+//
+// Future Propulsion techs
+//
+FUTUREPROP_0_NAME    | Framtida Framdrivningssystem I
+FUTUREPROP_0_DETAIL  | Allmänna Förbättringar inom Teknologi för Framdrivning.
+
+FUTUREPROP_1_NAME    | Framtida Framdrivningssystem II
+FUTUREPROP_1_DETAIL  | Allmänna Förbättringar inom Teknologi för Framdrivning.
+
+FUTUREPROP_2_NAME    | Framtida Framdrivningssystem III
+FUTUREPROP_2_DETAIL  | Allmänna Förbättringar inom Teknologi för Framdrivning.
+
+FUTUREPROP_3_NAME    | Framtida Framdrivningssystem IV
+FUTUREPROP_3_DETAIL  | Allmänna Förbättringar inom Teknologi för Framdrivning.
+
+FUTUREPROP_4_NAME    | Framtida Framdrivningssystem V
+FUTUREPROP_4_DETAIL  | Allmänna Förbättringar inom Teknologi för Framdrivning.
+
+FUTUREPROP_5_NAME    | Framtida Framdrivningssystem VI
+FUTUREPROP_5_DETAIL  | Allmänna Förbättringar inom Teknologi för Framdrivning.
+
+FUTUREPROP_6_NAME    | Framtida Framdrivningssystem VII
+FUTUREPROP_6_DETAIL  | Allmänna Förbättringar inom Teknologi för Framdrivning.
+
+FUTUREPROP_7_NAME    | Framtida Framdrivningssystem VIII
+FUTUREPROP_7_DETAIL  | Allmänna Förbättringar inom Teknologi för Framdrivning.
+
+FUTUREPROP_8_NAME    | Framtida Framdrivningssystem IX
+FUTUREPROP_8_DETAIL  | Allmänna Förbättringar inom Teknologi för Framdrivning.
+
+FUTUREPROP_9_NAME    | Framtida Framdrivningssystem X
+FUTUREPROP_9_DETAIL  | Allmänna Förbättringar inom Teknologi för Framdrivning.
+
+
+//
+// Future Weapon techs
+//
+FUTUREWEAPON_0_NAME    | Framtida Vapen I
+FUTUREWEAPON_0_DETAIL  | Allmänna Förbättringar för Vapenteknologi.
+
+FUTUREWEAPON_1_NAME    | Framtida Vapen II
+FUTUREWEAPON_1_DETAIL  | Allmänna Förbättringar för Vapenteknologi.
+
+FUTUREWEAPON_2_NAME    | Framtida Vapen III
+FUTUREWEAPON_2_DETAIL  | Allmänna Förbättringar för Vapenteknologi.
+
+FUTUREWEAPON_3_NAME    | Framtida Vapen IV
+FUTUREWEAPON_3_DETAIL  | Allmänna Förbättringar för Vapenteknologi.
+
+FUTUREWEAPON_4_NAME    | Framtida Vapen V
+FUTUREWEAPON_4_DETAIL  | Allmänna Förbättringar för Vapenteknologi.
+
+FUTUREWEAPON_5_NAME    | Framtida Vapen VI
+FUTUREWEAPON_5_DETAIL  | Allmänna Förbättringar för Vapenteknologi.
+
+FUTUREWEAPON_6_NAME    | Framtida Vapen VII
+FUTUREWEAPON_6_DETAIL  | Allmänna Förbättringar för Vapenteknologi.
+
+FUTUREWEAPON_7_NAME    | Framtida Vapen VIII
+FUTUREWEAPON_7_DETAIL  | Allmänna Förbättringar för Vapenteknologi.
+
+FUTUREWEAPON_8_NAME    | Framtida Vapen IX
+FUTUREWEAPON_8_DETAIL  | Allmänna Förbättringar för Vapenteknologi.
+
+FUTUREWEAPON_9_NAME    | Framtida Vapen X
+FUTUREWEAPON_9_DETAIL  | Allmänna Förbättringar för Vapenteknologi. 
+
+
+//
+// Hand Weapon techs
+//
+HANDWEAPON_0_NAME      | 
+HANDWEAPON_0_DETAIL    | 
+
+HANDWEAPON_1_NAME      | Handlasrar
+HANDWEAPON_1_DETAIL    | Personliga handhållna lasrar som lägger till +5 till utfall för markstrid.
+
+HANDWEAPON_2_NAME      | Jon-gevär
+HANDWEAPON_2_DETAIL    | Personliga strålvapen som lägger till +10 till utfall för markstrid.
+
+HANDWEAPON_3_NAME      | Fusions-gevär
+HANDWEAPON_3_DETAIL    | Kraftfulla strålvapen med låg precision som lägger till +20 till utfall för markstrid.
+
+HANDWEAPON_4_NAME      | Hand-fasrar
+HANDWEAPON_4_DETAIL    | Effektivt handhållet energivapen kapabelt till att reducera en motståndare till lösa atomer. Lägger till +25 till utfall för markstrid.
+
+HANDWEAPON_5_NAME      | Plasmagevär
+HANDWEAPON_5_DETAIL    | Det mest förödande handhållna vapnet tillgängligt. Lägger till +30 till utfall för markstrid.
+
+
+//
+// Hyperspace Communication tech
+//
+HYPERSPACE_0_NAME      | Hyperrymdskommunikation
+HYPERSPACE_0_DETAIL    | Möjliggör kommunikation med flottor som färdas i hyperrymden, och att nya direktiv kan anges i färd.
+
+
+//
+// Improved Industrial techs
+//
+IMPRINDUSTRY_0_NAME     | Förbättrad Fabriksteknik 9
+IMPRINDUSTRY_0_DETAIL   | Reducerar kostnaden för att bygga fabriker till 9 BC styck.
+
+IMPRINDUSTRY_1_NAME     | Förbättrad Fabriksteknik 8
+IMPRINDUSTRY_1_DETAIL   | Reducerar kostnaden för att bygga fabriker till 8 BC styck.
+
+IMPRINDUSTRY_2_NAME     | Förbättrad Fabriksteknik 7
+IMPRINDUSTRY_2_DETAIL   | Reducerar kostnaden för att bygga fabriker till 7 BC styck.
+
+IMPRINDUSTRY_3_NAME     | Förbättrad Fabriksteknik 6
+IMPRINDUSTRY_3_DETAIL   | Reducerar kostnaden för att bygga fabriker till 6 BC styck.
+
+IMPRINDUSTRY_4_NAME     | Förbättrad Fabriksteknik 5
+IMPRINDUSTRY_4_DETAIL   | Reducerar kostnaden för att bygga fabriker till 5 BC styck.
+
+IMPRINDUSTRY_5_NAME     | Förbättrad Fabriksteknik 4
+IMPRINDUSTRY_5_DETAIL   | Reducerar kostnaden för att bygga fabriker till 4 BC styck.
+
+IMPRINDUSTRY_6_NAME     | Förbättrad Fabriksteknik 3
+IMPRINDUSTRY_6_DETAIL   | Reducerar kostnaden för att bygga fabriker till 3 BC styck.
+
+IMPRINDUSTRY_7_NAME     | Förbättrad Fabriksteknik 2
+IMPRINDUSTRY_7_DETAIL   | Reducerar kostnaden för att bygga fabriker till 2 BC styck.
+
+
+//
+// Improved Terraforming techs
+//
+IMPRTFORM_0_NAME        | Förbättrad Terraformering +10
+IMPRTFORM_0_DETAIL      | Utökar kapaciteten för population på en planet med 10M för en kostnad av 5 BC per miljon.
+
+IMPRTFORM_1_NAME        | Förbättrad Terraformering +20
+IMPRTFORM_1_DETAIL      | Utökar kapaciteten för population på en planet med 20M för en kostnad av 5 BC per million.
+
+IMPRTFORM_2_NAME        | Förbättrad Terraformering +30
+IMPRTFORM_2_DETAIL      | Utökar kapaciteten för population på en planet med 30M för en kostnad av 4 BC per million.
+
+IMPRTFORM_3_NAME        | Förbättrad Terraformering +40
+IMPRTFORM_3_DETAIL      | Utökar kapaciteten för population på en planet med 40M för en kostnad av 4 BC per million.
+
+IMPRTFORM_4_NAME        | Förbättrad Terraformering +50
+IMPRTFORM_4_DETAIL      | Utökar kapaciteten för population på en planet med 50M för en kostnad av 3 BC per million.
+
+IMPRTFORM_5_NAME        | Förbättrad Terraformering +60
+IMPRTFORM_5_DETAIL      | Utökar kapaciteten för population på en planet med 60M för en kostnad av 3 BC per million.
+
+IMPRTFORM_6_NAME        | Förbättrad Terraformering +80
+IMPRTFORM_6_DETAIL      | Utökar kapaciteten för population på en planet med 80M för en kostnad av 2 BC per million.
+
+IMPRTFORM_7_NAME        | Förbättrad Terraformering +100
+IMPRTFORM_7_DETAIL      | Utökar kapaciteten för population på en planet med 100M för en kostnad av 2 BC per million.
+
+IMPRTFORM_8_NAME        | Fullständig Terrformering
+IMPRTFORM_8_DETAIL      | Utökar kapaciteten för population på en planet med 120M för en kostnad av 2 BC per million.
+
+
+//
+// Industrial Waste techs
+//
+INDWASTE_0_NAME         | Reducerat Industriavfall 80%
+INDWASTE_0_DETAIL       | Minskar föroreningar orsakade av fabriker till 80% av normala nivåer.
+
+INDWASTE_1_NAME         | Reducerat Industriavfall 60%
+INDWASTE_1_DETAIL       | Minskar föroreningar orsakade av fabriker till 60% av normala nivåer.
+
+INDWASTE_2_NAME         | Reducerat Industriavfall 40%
+INDWASTE_2_DETAIL       | Minskar föroreningar orsakade av fabriker till 40% av normala nivåer.
+
+INDWASTE_3_NAME         | Reducerat Industriavfall 20%
+INDWASTE_3_DETAIL       | Minskar föroreningar orsakade av fabriker till 20% av normala nivåer.
+
+INDWASTE_4_NAME         | Eliminering av Industriavfall
+INDWASTE_4_DETAIL       | Fabriker blir helt befriade från föroreningar och avfall.
+
+
+//
+// Missile Defense techs
+//
+MISSDEF_0_NAME      | Anti-Missil-Raketer
+MISSDEF_0_BRIEF     | 40% chans att missiler förstörs
+MISSDEF_0_DETAIL    | Överljus-raketer som förstör 40% av inkommande fientliga missiler, -1% per teknologinivå av missil.
+
+MISSDEF_1_NAME      | Zyro-Sköldar
+MISSDEF_1_BRIEF     | 75% chans att missiler förstörs
+MISSDEF_1_DETAIL    | Ett energifält som förstör 75% av inkommande fientliga missiler och torpeder, -1% per teknologinivå av missil.
+
+MISSDEF_2_NAME      | Blixt-Sköldar
+MISSDEF_2_BRIEF     | 100% chans att missiler förstörs
+MISSDEF_2_DETAIL    | Ett energifält som förstör 100% av inkommande fientliga missiler och torpeder, -1% per teknologinivå av missil.
+
+
+//
+// Missile Weapon techs
+//
+MISSWPN_0_NAME      | Kärnvapensmissil
+MISSWPN_0_BRIEF     | 2 skott, +1 hastighet
+MISSWPN_0_BRIEF2    | 5 skott
+MISSWPN_0_DETAIL    | Missiler med kärnvapenstridsspetsar som exploderar för 4 skadepoäng och färdas vid en hastighet av 2.
+
+MISSWPN_1_NAME      | Hyper-V-Raketer
+MISSWPN_1_BRIEF     | 2 skott, +1 hastighet
+MISSWPN_1_BRIEF2    | 5 skott
+MISSWPN_1_DETAIL    | Snabba missiler som exploderar för 6 skadepoäng och färdas vid en hastighet av 2.5.
+
+MISSWPN_2_NAME      | Hyper-X-Raketer
+MISSWPN_2_BRIEF     | 2 skott, +1 precision
+MISSWPN_2_BRIEF2    | 5 skott, +1 precision
+MISSWPN_2_DETAIL    | Missiler utrustade med högenergi-stridsspetsar som exploderar för 8 skadepoäng, färdas vid en hastighet av 2.5, och kontrolleras av en +1 precisionsdator.
+
+MISSWPN_3_NAME      | Spridpack-V-Raketer
+MISSWPN_3_BRIEF     | 2 skott, +1 hastighet
+MISSWPN_3_BRIEF2    | 5 skott
+MISSWPN_3_DETAIL    | MIRV-versionen av Hyper-V-Raketer, delas upp i 5 separata stridsspetsar, där varje exploderar för 6 skadepoäng och färdas vid en hastighet av 2.5.
+
+MISSWPN_4_NAME      | Merkulit-Missiler
+MISSWPN_4_BRIEF     | 2 skott, +2 precision
+MISSWPN_4_BRIEF2    | 5 skott, +2 precision
+MISSWPN_4_DETAIL    | Effektfulla, snabba missiler som exploderar för 10 skadepoäng, färdas vid en hastighet av 3, och kontrolleras av en +2 precisionsdator.
+
+MISSWPN_5_NAME      | Ödes-Missiler
+MISSWPN_5_BRIEF     | 2 skott, +3 precision
+MISSWPN_5_BRIEF2    | 5 skott, +3 precision
+MISSWPN_5_DETAIL    | Långsamma, superträffsäkra missiler som orsakar 15 skadepoäng, färdas vid en hastighet av 3.5, och kontrolleras av en sofistikerad +3 precisionsdator.
+
+MISSWPN_6_NAME      | Spridpack-VII-Raketer
+MISSWPN_6_BRIEF     | 2 skott, MIRV för 7
+MISSWPN_6_BRIEF2    | 5 skott, MIRV för 7
+MISSWPN_6_DETAIL    | MIRV-versionen av Hyper-X-Raketer, delas upp i 7 separata stridsspetsar, där varje exploderar för 10 skadepoäng, färdas vid en hastighet av 3, och är utrustade med en +2 precisionsdator.
+
+MISSWPN_7_NAME      | Pulsvågs-Missiler
+MISSWPN_7_BRIEF     | 2 skott, +4 precision
+MISSWPN_7_BRIEF2    | 5 skott, +4 precision
+MISSWPN_7_DETAIL    | Kraftfulla missiler utrustade med anti-materia-stridsspetsar som exploderar för 20 skadepoäng, färdas vid en hastighet av 4, och kontrolleras av en +4 precisionsdator.
+
+MISSWPN_8_NAME      | Herkulär Missil
+MISSWPN_8_BRIEF     | 2 skott, +5 precision
+MISSWPN_8_BRIEF2    | 5 skott, +5 precision
+MISSWPN_8_DETAIL    | Komplex, avancerad missil på hög nivå som exploderar för 25 skadepoäng. Missilen färdas vid en hastighet av 4.5 och kontrolleras av en +5 precisionsdator.
+
+MISSWPN_9_NAME      | Zeon-Missiler
+MISSWPN_9_BRIEF     | 2 skott, +6 precision
+MISSWPN_9_BRIEF2    | 5 skott, +6 precision
+MISSWPN_9_DETAIL    | De mest avancerade missilerna tillgängliga. Kapabla till att träffa fiender för 30 skadepoäng och färdas på en hastighet av 5. Missilen guidas av en +6 precisionsdator.
+
+MISSWPN_10_NAME      | Spridpack-X-Missiler
+MISSWPN_10_BRIEF     | 2 skott, MIRV för 10
+MISSWPN_10_BRIEF2    | 5 skott, MIRV för 10
+MISSWPN_10_DETAIL    | MIRV-version av Ödes-Missiler, delas upp i 10 separata stridsspetsar, där varje exploderar för 15 skadepoäng, färdas vid en hastighet av 3.5, och kontrolleras av en +3 precisionsdator.
+
+
+//
+// Personal Shield techs for ground combat
+//
+// default "no shield" tech that each player starts with
+PERSSHIELD_0_NAME     | 
+PERSSHIELD_0_DETAIL   | 
+
+PERSSHIELD_1_NAME     | Personlig Deflektorsköld
+PERSSHIELD_1_DETAIL   | Skyddar individuella markstridstrupper med ett riktat kraftfält. Lägger till +10 till all markstrid.
+
+PERSSHIELD_2_NAME     | Personlig Absorbtionssköld
+PERSSHIELD_2_DETAIL   | Absorberar skada från alla handhållna vapen. Lägger till +20 till all markstrid.
+
+PERSSHIELD_3_NAME     | Personlig Barriärsköld
+PERSSHIELD_3_DETAIL   | Omsluter en soldat fullständigt i en nära på ogenomträngbar sköld. Lägger till +30 till all markstrid.
+
+
+//
+// Planetary Shield techs 
+//
+PLANETSHIELD_0_NAME    | Klass V Planetära Sköldar
+PLANETSHIELD_0_DETAIL  | Absorberar 5 skadepoäng från alla attacker mot planetens yta, tilläggningsvis till missilbasers vanliga sköldar.
+
+PLANETSHIELD_1_NAME    | Klass X Planetära Sköldar
+PLANETSHIELD_1_DETAIL  | Absorberar 10 skadepoäng från alla attacker mot planetens yta, tilläggningsvis till missilbasers vanliga sköldar.
+
+PLANETSHIELD_2_NAME    | Klass XV Planetära Sköldar
+PLANETSHIELD_2_DETAIL  | Absorberar 15 skadepoäng från alla attacker mot planetens yta, tilläggningsvis till missilbasers vanliga sköldar.
+
+PLANETSHIELD_3_NAME    | Klass XX Planetära Sköldar
+PLANETSHIELD_3_DETAIL  | Absorberar 20 skadepoäng från alla attacker mot planetens yta, tilläggningsvis till missilbasers vanliga sköldar.
+
+
+//
+// Repulsor tech 
+//
+REPULSOR_0_NAME    | Bortstötar-Stråle
+REPULSOR_0_BRIEF   | Knuffar tillbaka fiendeskepp 1 stridssteg.
+REPULSOR_0_DETAIL  | Stöter bort fientliga skepp ett stridssteg bakåt, bort från det försvarande skeppet. Denna Specialutrustning har en räckvidd på 1.
+
+
+//
+// Reserve Fuel tech 
+//
+RSRVFUEL_0_NAME    | Extrareserver för Bränsle
+RSRVFUEL_0_BRIEF   | Utökar ett Skepps Räckvidd med %1 ljusår
+RSRVFUEL_0_DETAIL  | Extrareserver för Bränsle utökar ett skepps räckvidd.
+
+
+//
+// Robotic Controls techs 
+//
+ROBOTCTRL_0_NAME     | Förbättrade Robot-Kontroller III
+ROBOTCTRL_0_DETAIL   | Möjliggör att 3 fabriker kan skötas per enhet population. Upprustningskostnaden för att uppgradera är halva standardkostnaden per fabrik.
+
+ROBOTCTRL_1_NAME     | Förbättrade Robot-Kontroller IV
+ROBOTCTRL_1_DETAIL   | Möjliggör att 4 fabriker kan skötas per enhet population. Upprustningskostnaden för att uppgradera är standardkostnaden för varje fabrik.
+
+ROBOTCTRL_2_NAME     | Förbättrade Robot-Kontroller V
+ROBOTCTRL_2_DETAIL   | Möjliggör att 5 fabriker kan skötas per enhet population. Upprustningskostnaden för att uppgradera är en och en halv gång standardkostnaden för varje fabrik.
+
+ROBOTCTRL_3_NAME     | Förbättrade Robot-Kontroller VI
+ROBOTCTRL_3_DETAIL   | Möjliggör att 6 fabriker kan skötas per enhet population. Upprustningskostnaden för att uppgradera är två gånger standardkostnaden för varje fabrik.
+
+ROBOTCTRL_4_NAME     | Förbättrade Robot-Kontroller VII
+ROBOTCTRL_4_DETAIL   | Möjliggör att 7 fabriker kan skötas per enhet population. Upprustningskostnaden för att uppgradera är 2.5 gånger standardkostnaden för varje fabrik.
+
+
+//
+// Scanner techs 
+//
+SCANNER_0_NAME       | Strids-skannrar
+SCANNER_0_BRIEF      | Skannar fientliga skepp i strid
+SCANNER_0_DETAIL     | Observerar tekniska specifikationer för fientliga rymdskepp i strid.
+
+SCANNER_1_NAME       | Djuprymds-skanner
+SCANNER_1_BRIEF      | Upptäcker skepp upp till 5 ljusår bort
+SCANNER_1_DETAIL     | Upptäcker rivalers skepp upp till 5 ljusår bort från din närmsta koloni, och 1 ljusår bort från närmsta skepp.
+
+SCANNER_2_NAME       | Förbättrad Rymd-skanner
+SCANNER_2_BRIEF      | Upptäcker skepp och destinationer upp till 7 ljusår bort
+SCANNER_2_DETAIL     | Upptäcker rivalers skepp upp till 7 ljusår bort från din närmsta koloni, och 2 ljusår bort från närmsta skepp. Kan också bedöma rivalers mål för färd.
+
+SCANNER_3_NAME       | Advancerad Rymd-skanner
+SCANNER_3_BRIEF      | Möjliggör skannad utforskning av planeter upp till 9 ljusår bort
+SCANNER_3_DETAIL     | Möjliggör skannad utforskning av planeter utifrån egna kolonibaser, utför skanningar upp till 9 ljusår bort, upptäcker rivalers skepp upp till 3 ljusår bort från närmsta skepp.
+
+
+//
+// Ship Inertial techs 
+//
+SHIPINERTIAL_0_NAME     | Tröghets-Stabiliserare
+SHIPINERTIAL_0_BRIEF    | Lägger till +2 till Manövrering
+SHIPINERTIAL_0_DETAIL   | Minskar ett skepps fysikaliska tröghet, vilket lägger till 2 klasser av manövrerbarhet i strid (+2 Försvar och +1 Stridssteg)
+
+SHIPINERTIAL_1_NAME     | Tröghets-Nollställare
+SHIPINERTIAL_1_BRIEF    | Lägger till +4 till Manövrering
+SHIPINERTIAL_1_DETAIL   | Eliminerar effekten av fysikalisk tröghet för skepp, vilket lägger till 4 klasser av manövrerbarhet i strid. Reducerar också Svart-Hål-attackers effekt med -30%.
+
+
+//
+// Ship Inertial techs 
+//
+SHIPNULLIFIER_0_NAME     | Elektronik-Nollställare
+SHIPNULLIFIER_0_BRIEF    | Förstör fienders datorsystem
+SHIPNULLIFIER_0_DETAIL   | Förvränger fiendens Stridsdatorer och ECM, vilket reducerar deras effekt med 2-6 nivåer per attack. Längre räckvidd än de flesta skeppsvapen.
+
+SHIPNULLIFIER_1_NAME     | Warp-Avledare
+SHIPNULLIFIER_1_BRIEF    | Reducerar stridssteg för fientliga skepp
+SHIPNULLIFIER_1_DETAIL   | Warp-Avledare är långdistans-vapen som saboterar fiendens rymdskeppsmotorer, vilket minskar deras hastighet med varje attack.
+
+
+//
+// Ship Weapon techs 
+//
+SHIPWPN_0_NAME         | Laser
+SHIPWPN_0_ITEM2        | Förstärkt Laser
+SHIPWPN_0_DETAIL       | Strålvapen med direkt eldgivning som orsakar 1-4 skadepoäng. Förstärkta lasrar har en räckvidd på 2 och gör 1-7 skadepoäng.
+
+SHIPWPN_1_NAME         | Batteri-Laser
+SHIPWPN_1_BRIEF        | Avfyrar 4 ggr/tur
+SHIPWPN_1_DETAIL       | En avancerad laser som avfyras upp till fyra gånger per tur för 1-4 skadepoäng med varje träff.
+
+SHIPWPN_2_NAME         | Neutron-Pellets-Avfyrare
+SHIPWPN_2_BRIEF        | Halverar Sköldstyrka
+SHIPWPN_2_DETAIL       | Tungt partikelflödesvapen som halverar effektiviteten för fiendens sköldar, och orsakar 2 till 5 skadepoäng.
+
+SHIPWPN_3_NAME         | Jonkanon
+SHIPWPN_3_ITEM2        | Tung Jonkanon
+SHIPWPN_3_DETAIL       | Högintensitets-strålvapen kapabelt att orsaka 3-8 skadepoäng. Tunga jonkanoner avfyrar för 3-15 och har en räckvidd på 2.
+
+SHIPWPN_4_NAME         | Magnetkanon
+SHIPWPN_4_BRIEF        | Halverar Sköldstyrka
+SHIPWPN_4_DETAIL       | Ett rälsvapen som accelererar projektiler som halverar effektiviteten för fiendens sköldar, och orsakar 5-8 skadepoäng.
+
+SHIPWPN_5_NAME         | Neutronsprängare
+SHIPWPN_5_ITEM2        | Förstärkt Neutronsprängare
+SHIPWPN_5_DETAIL       | Högenergi-strålvapen kapabelt till att orsaka 3-12 skadepoäng. Heavy neutron blasters avfyrar för 3-24 skada och har en räckvidd på 2.
+
+SHIPWPN_6_NAME         | Graviton-Stråle
+SHIPWPN_6_BRIEF        | Strömmande Attack
+SHIPWPN_6_DETAIL       | Kombination av traktor-bortstötar-strålar kapabla till att slita skepp i bitar. Avfyrar för 1-15 skadepoäng, och den kontinuerliga strömmande effekten låter överflödig skada fortsätta in på andra skepp.
+
+SHIPWPN_7_NAME         | Hårdstrålande Vapen
+SHIPWPN_7_BRIEF        | Halverar Sköldstyrka
+SHIPWPN_7_DETAIL       | Ett energi-till-materia-strålvapen som halverar effektiviteten på fiendens sköldar, och orsakar 8-12 skadepoäng.
+
+SHIPWPN_8_NAME         | Fusions-Stråle
+SHIPWPN_8_ITEM2        | Förstärkt Fusions-Stråle
+SHIPWPN_8_DETAIL       | Höginensitets-strålvapen kapabelt att orsaka 4-16 skadepoäng. Förstärkta fusions-strålar avfyrar för 4-30 skada och har en räckvidd på 2.
+
+SHIPWPN_9_NAME         | Megaljungeld
+SHIPWPN_9_BRIEF        | +3 precisionsnivå
+SHIPWPN_9_DETAIL       | Urladdar flera stråk av ren energi i ett vidspritt område. Har en +30% bonus till precision och avfyrar för 2-20 skadepoäng.
+
+SHIPWPN_10_NAME        | Fasrar
+SHIPWPN_10_ITEM2       | Förstärkta Fasrar
+SHIPWPN_10_DETAIL      | Fas-energi-strålvapen kapabelt till att orsaka 5 till 20 skadepoäng. Förstärkta Fasrar avfyrar för 5-40 skadepoäng och har en räckvidd på 2.
+
+SHIPWPN_11_NAME        | Auto-Sprängare
+SHIPWPN_11_BRIEF       | Avfyrar 3 ggr/tur
+SHIPWPN_11_DETAIL      | En avancerad neutronsprängare som avfyrar upp till tre gånger per tur för 4-16 skadepoäng per träff.
+
+SHIPWPN_12_NAME        | Tachyon-Stråle
+SHIPWPN_12_BRIEF       | Strömmande Attack
+SHIPWPN_12_DETAIL      | Avfyrar en intensiv ström av tachyon-partiklar som orsakar 1-25 skada. Den kontinuerliga strömmande effekten låter överflödig skada fortsätta in på andra skepp.
+
+SHIPWPN_13_NAME        | Gauss Autokanon
+SHIPWPN_13_BRIEF       | 1/2 Sköldar, Avfyrar 4x
+SHIPWPN_13_DETAIL      | Ett avancerat rälsvapen kapabelt att avfyra 4 explosiva salvor per tur som orsakar 7 to 10 skadepoäng var. Dessa projektiler halverar också effektiviteten på fiendens sköldar.
+
+SHIPWPN_14_NAME        | Partikelstråle
+SHIPWPN_14_BRIEF       | Halverar Sköldstyrka
+SHIPWPN_14_DETAIL      | Högintensitets-partikelacceleratorer kapabla till att orsaka 10-20 skadepoäng och halvera effektiviteten av sköldar.
+
+SHIPWPN_15_NAME        | Plasmakanon
+SHIPWPN_15_DETAIL      | Avfyrar intensiva klusterstrålar med plasma som orsakar 6-30 skadepoäng, med en räckvidd av 1.
+
+SHIPWPN_16_NAME        | Dödsstråle
+SHIPWPN_16_DETAIL      | Ett uråldrigt vapen med ofantlig potential till förstörelse som orsakar 200-1000 skadepoäng, med en räckvidd av 1.
+
+SHIPWPN_17_NAME        | Rubbningsstråle
+SHIPWPN_17_DETAIL      | Avlossar enorma omfattningar av strålar av ren energi som kan träffa fientliga mål upp till två steg bort för 10-40 skadepoäng.
+
+SHIPWPN_18_NAME        | Pulserande Fasrar
+SHIPWPN_18_BRIEF       | Avfyrar 3 ggr/tur
+SHIPWPN_18_DETAIL      | Avancerade fasrar kapabel till att avfyra 3 salvor per tur för 5-20 skadepoäng med varje träff.
+
+SHIPWPN_19_NAME        | Trippel-Fokus Plasmakanon
+SHIPWPN_19_DETAIL      | Avfyrar en triad av hög-intensitets-plasmastrålar som orsakar 20 to 50 skadepoäng.
+
+SHIPWPN_20_NAME        | Stellär Konverterare
+SHIPWPN_20_BRIEF       | Träffar Alla Sköldar
+SHIPWPN_20_DETAIL      | Omsluter fienden med ett extremt kraftfullt energi-materia-konverteringsfält, vilket orsakar fyra attacker för 10-35 skadepoäng, med en räckvidd av 3 steg.
+
+SHIPWPN_21_NAME        | Mörbultar-Anordning
+SHIPWPN_21_DETAIL      | Avlossar enorma mängder fokuserad energi mot fiendemål, orsakandes 20-100 skadepoäng.
+
+SHIPWPN_22_NAME        | Amöba-strömstråle
+SHIPWPN_22_DETAIL      | En strömmande attack som orsakar 250-1000 skadepoäng på en räckvidd av 3 steg. Dess kontinuerliga, strömmande effekt överför överflödig skada från ett skepp till nästa.
+
+SHIPWPN_23_NAME        | Förintar-strålen
+SHIPWPN_23_DETAIL      | En strålattack som omsluter målets sköldar, orsakandes 4 attacker för 100-300 skadepoäng per styck. Räckvidden är 3 steg.
+
+
+//
+// Soil Enrichment techs
+//
+SOILENRICH_0_NAME     | Jordmånsberikning
+SOILENRICH_0_DETAIL   | Förvandlar standardplaneter till bördigt klimat, vilket ökar befolkningstillväxten med 50% och ökar planetens naturliga storlek med +25%, ett engångsprojekt för en kostnad av 150 BC.
+
+SOILENRICH_1_NAME     | Advancerad Jordmånsberikning
+SOILENRICH_1_DETAIL   | Förvandlar standard- och bördiga planeter till gaia-klimat, vilket fördubblar befolkningstillväxten och ökar planetens naturliga storlek med +50%, ett engångsprojekt för en kostnad av 300 BC.
+
+
+//
+// Stargate tech
+//
+STARGATE_0_NAME      | Integalaktiska Stjärnportar
+STARGATE_0_DETAIL    | Tillåter färd för rymdskepp mellan två planeter utrustade med stjärnportar att utföras på endast en tur. Kostar 3000 BC att bygga.
+
+
+//
+// Stasis Field tech
+//
+STASIS_0_NAME      | Stasisfält
+STASIS_0_BRIEF     | Fiende frusen 1 tur
+STASIS_0_DETAIL    | Fryser en grupp fientliga skepp, upp till ett steg bort, med en turs varaktighet. Frusna skepp kan inte anfalla eller bli anfallna.
+
+
+//
+// Stream Weapon techs
+//
+STREAMWPN_0_NAME    | Jonströmsprojektor
+STREAMWPN_0_BRIEF   | Reducerar fiendeskepps pansar med 20%
+STREAMWPN_0_DETAIL  | Avfyrar en intensiv jonisk sprängning som reducerar pansareffektivitet i en hel fiendegrupp med 20% plus 1% per 2 eldgivande skepp, upp till en maximumreduktion på 50% av skeppens initiella pansartålighet per attack.
+
+STREAMWPN_1_NAME    | Neutrinoströmsprojektor
+STREAMWPN_1_BRIEF   | Reducerar fiendeskepps pansar med 40%
+STREAMWPN_1_DETAIL  | Avfyrar en sprängmängd koncentrerade neutriner, vilket reducerar pansareffektivitet i en hel fiendegrupp med 40% plus 1% per eldgivande skepp, upp till en maximumreduktion av 75% av dess skadetålighet per attack.
+
+
+//
+// Subspace Interdictor tech
+//
+SUBSPACEINT_0_NAME    | Pararymds-Interferens-Enhet
+SUBSPACEINT_0_DETAIL  | Förebygger bruk av fiendens pararymds-teleportering och stridstransportskepps förmåga att passera försvar. Enheten installeras automatiskt vid missilbaser.
+
+
+//
+// Subspace Teleporter tech
+//
+SUBSPACETEL_0_NAME    | Pararymds-Teleportering
+SUBSPACETEL_0_BRIEF   | Teleporterar skepp i strid
+SUBSPACETEL_0_DETAIL  | Teleporterar skepp till valfritt utrymme på stridskartan och innan initiativ för strid normalt beräknas.
+
+
+//
+// Ship Torpedo Weapon techs
+//
+TORPEDO_0_NAME        | Anti-Materia-Torpeder
+TORPEDO_0_BRIEF       | Avfyrar en gång per 2 turer
+TORPEDO_0_DETAIL      | Målsökande högenergi-torpeder som orsakar 30 skadepoäng men kan endast avfyras varannan tur. Varje torped är utrustad med en +4 nivå precisionsdator.
+
+TORPEDO_1_NAME        | Hellfire-Torpeder
+TORPEDO_1_BRIEF       | Träffar alla sköldar
+TORPEDO_1_DETAIL      | Torpeder för omslutande energi som träffar alla sköldar samtidigt. De färdas vid en hastighet av 5, guidas av en +6 nivå precisionsdator, och orsakar skada till en summa av fyra 25-poängsattacker.
+
+TORPEDO_2_NAME        | Proton-Torpeder
+TORPEDO_2_BRIEF       | Avfyrar en per 2 turer
+TORPEDO_2_DETAIL      | Energitorpeder med massiv sprängladdning som orsakar 75 skadepoäng men kan endast avfyras varannan tur. Varje torped är utrustad med en +6 precisionsdator.
+
+TORPEDO_3_NAME        | Plasma-Torpeder
+TORPEDO_3_BRIEF       | Förlorar 15 skada/steg
+TORPEDO_3_DETAIL      | Torpeder av ren energi som orsakar 150 skadepoäng och färdas vid en hastighet av 6, men förlorar 15 damage per stridssteg de färdas. Avfyrar varannan tur och har en +7 precisionsdator.
+

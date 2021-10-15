@@ -1,0 +1,22 @@
+// all possible names
+name: Klackon, Klackrant, Klyckrin, Arthropon, Coleopteron
+
+desc1: Xenofobisk Industrialist
+desc2: Enat Koloni-medvetande och Ökad Produktion för Population
+desc3: En livsform med ett enda sinne som kontrollerar alla, de flitiga [race] är obegripliga för andra folkslag.
+
+// possible home system names
+home: Kholdan, Kholdant, Khaldon, Klykdon, Khakdon
+
+title:     Den som är
+fulltitle: Den som är
+
+// possible leader names
+leader: Ixitixl, Kaxal, Kikitik, Klaquan, K'kalak, Xantak
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Humla, Gadd, Fjäril, Skalbagge, Drönare, Vinge, Hästfluga
+ship2: Geting, Stekel, Skarabé, Åkerbräms, Giftbett, Bönsyrsa, Trollslända
+ship3: Tarantula, Spindel, Kungsgadd, Galaxvinge, Kitinbärare, Cephalon, Rymdexoskelett
+ship4: Svarta Änkan, Korsspindel, Skorpion, Titanbock, Goliatbagge, Megaloprepus, Stjärnkärrspindel
+

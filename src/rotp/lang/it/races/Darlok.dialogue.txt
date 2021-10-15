@@ -1,0 +1,84 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Darlok specific dialogue
+
+CONTACT_AGGRESSIVE         | La salutiamo oggi, cittadino ribelle del vuoto cosmico. Offriamo anche una parola di cautela: non ci ostacoli nella nostra ricerca, o potrebbe non vivere per rimpiangere questo fatidico incontro.
+CONTACT_RUTHLESS           | Vi salutiamo, abitanti dello spazio straniero. Sarebbe meglio che faceste il possibile per assicurarvi che la nostra coesistenza sia... reciprocamente vantaggiosa.
+CONTACT_ERRATIC            | Un incontro casuale in un mare di stelle. Diffida delle tenebre in questo abisso celeste, perché scoprirà che nasconde molte cose invisibili...
+//
+GREETING_01                | Si è dimostrato prezioso per la nostra causa. Faremo il possibile per assisterLa nel suo.
+GREETING_04                | Parla.
+GREETING_07                | Non conosce l'impudenza che mostra quando chiede il nostro aiuto. Lo troviamo quasi divertente.
+//
+DECLAREWAR_HATE_01         | Abbiamo tollerato molto nel perseguimento del nostro obiettivo, ma siamo grati di non dover tollerare la Sua presenza ancora per molto, [your_raceadjec].
+DECLAREWAR_HATE_02         | Interminabile disgraziato! Non soffriremo più la vostra follia! Essendo i vostri eserciti preparati o meno, incontrerete la finalità lo stesso!
+DECLAREWAR_HATE_03         | Cattivi! Non ha senso che la nostra razza prosperi qui solo per condividere la galassia con la vostra specie. Preparatevi! Perché vi cacceremo fuori da questo spazio anche se ognuno di noi cadrà allo stesso modo.
+DECLAREWAR_ERRATIC_01      | La nostra gente dice spesso che il coltello sul campo di battaglia uccide facilmente quanto il coltello nell'oscurità. La Sua specie scoprirà presto perché.
+DECLAREWAR_ERRATIC_02      | Ha mai guardato le stelle e desiderato sapere cosa si nasconde nell'oscurità tra le luci? Non conosce la saggezza di stare attento a ciò che desidera?
+DECLAREWAR_ERRATIC_03      | In tempi di grande incertezza, potrebbe trovare le creature più modeste ancora in grado di sferrare un colpo fatale.
+DECLAREWAR_MILITARY_01     | Non abbiamo ancora trovato quello che più desideriamo, e così vi porteremo via i luoghi che i nostri occhi non hanno ancora visto. Arrendete i vostri mondi o cadete in loro difesa.
+DECLAREWAR_MILITARY_02     | Esiste la possibilità che le risposte che cerchiamo si nascondano su un pianeta del vostro impero, e così le avremo tutte. Sappiate che non è personale, [your_race_pluraladjec], ma i tempi disperati richiedono un'azione disperata.
+DECLAREWAR_MILITARY_03     | Se non riusciamo a raggiungere la soluzione del nostro enigma, non ha senso continuare ad andare avanti! Se la risposta si trova su uno dei vostri mondi, daremo tutto ciò che dobbiamo per ottenere
+no!
+DECLAREWAR_ALLIANCE_01     | Stolto! Ha fatto del nostro alleato un nemico, e come tale ha fatto di noi un nemico! Vi abbatteremo in fretta: non abbiamo tempo da perdere con i vostri errori e le vostre follie!
+DECLAREWAR_ALLIANCE_02     | È raro che ci intromettiamo direttamente negli affari degli altri. Ma quando un alleato che ha aiutato la nostra ricerca chiede il nostro aiuto, faremo il possibile per aiutarlo.
+DECLAREWAR_ALLIANCE_03     | Siamo lieti di vedere i vostri imperi combattere tra loro, ma conosciamo la minaccia che ci presentate. Aiuteremo volentieri [defender_race_pluralnoun] a rimuovere l'impedimento che pone la vostra esistenza.
+DECLAREWAR_SPYING_01       | È divertente che perseguiate tali azioni contro coloro che hanno così imparato la segretezza. La punizione per il fallimento, tuttavia, sarà notevolmente meno divertente.
+DECLAREWAR_SPYING_02       | Ammirevole, per cercare di superarci in astuzia in materia di segretezza. Mi chiedo, la vostra potenza militare si dimostrerà encomiabile quanto la vostra audacia?
+DECLAREWAR_SPYING_03       | Credeva che questo goffo pasticcio sarebbe sfuggito al nostro sguardo vigile? Se è così arrogante da credere che il vostro spionaggio possa passare inosservato, siete abbastanza arrogante da farci schiacciare in battaglia.
+DECLAREWAR_ATTACK_01       | Impudenza! Attaccarci così apertamente può solo significare che desiderate l'annientamento totale!
+DECLAREWAR_ATTACK_02       | Insopportabili zoticoni! Scopriremo presto se la fiducia che deriva dal colpire contro di noi è accompagnata dalla forza per eguagliare!
+DECLAREWAR_ATTACK_03       | Calamità! Cattivi! Non cederemo né a voi né a nessun altro finché il nostro grande lavoro non sarà terminato! Preparatevi per la nostra punizione!
+DECLAREWAR_OPPORTUNITY_01  | La politica è solo un gioco di opportunità. Scopriamo che colui che sfrutta maggiormente le proprie opportunità è colui che ne esce vittorioso. Così è sempre stato, e così sarà sempre.
+DECLAREWAR_ASSASSIN_01     | Scandaloso, screditare consapevolmente un ambasciatore che viene da Lei disarmato! Prenderemo per noi i vostri segreti e spargeremo i corpi del Suo popolo come cenere sui venti solari!
+
+OFFER_PEACE_01             | È abbastanza uccisione per una guerra, ambasciatore. Sicuramente nessuno dei nostri popoli può permettersi di sprecare la vita in modo così arbitrario. Proponiamo la fine immediata di questo conflitto, per il bene di entrambi i nostri futuri.
+OFFER_TRADE_01             | Sebbene gli approcci diretti a volte possano essere i migliori, non sono l'unico modo in cui un impero può portare avanti i suoi obiettivi. C'è un tempo per il commercio in buona fede e crediamo che il tempo sia adesso. Cominciamo con... [amt] BC ogni anno?
+OFFER_PACT_01              | Questa distesa infinita nasconde pericoli sconosciuti per coloro che scelgono di esplorarla. Non aggiungiamoli se non necessario. Un patto di non aggressione tra i nostri popoli ridurrà i rischi dell'espansione in tutta la galassia.
+OFFER_ALLIANCE_01          | Ci sono quelli che ci guardano e lasciano che la loro paura offuschi il loro giudizio. Non crediamo che la Sua specie sia tra queste. Formalizziamo un'alleanza tra [my_race_pluralnoun] e [your_race_pluralnoun], e usiamo la paura che gli altri hanno come vantaggio per entrambi i nostri imperi.
+
+WARN_TRESPASSING_01        | Non desideriamo una guerra contro di voi in questo momento, ma la vostra presenza a [system] è difficile da interpretare come qualcosa di diverso da un sconfinamento. Partite subito e dimostrate che i nostri timori sono infondati.
+WARN_EXPANSION_01          | Non siamo ciechi alle esigenze che l'espansione del vostro territorio porterà. Né dobbiamo restare a guardare e lasciarvi rubare ogni mondo per voi stessi. È stato così avvertito, ambasciatore [your_empireof].
+WARN_BUILDUP_01            | Intendete usare una flotta così potente per far sottomettere alla paura coloro che vi circondano? Sappia questo: se continuate a vantare una tale potenza militare, potreste trovare le reazioni di altri imperi meno... accomodanti di quanto avevate sperato.
+WARN_SKIRMISH_01           | Cosa ha da dire sulla schermaglia nel sistema [system]? Speriamo per il vostro bene che ci abbiate confuso per un altro impero. Altrimenti le conseguenze potrebbero essere disastrose. Davvero molto terribile.
+WARN_ATTACKED_01           | Osate lanciare un attacco contro la nostra gente, ambasciatore?! Si ritenga fortunato, la nostra attenzione è altrove: la prossima volta la vostra audacia non rimarrà senza risposta!
+WARN_INVADED_01            | Entrate nel nostro spazio come se fosse vostro. Uno stratagemma audace, ma sappia che abbiamo previsto il vostro arrivo e vi permettiamo di manovrare in questo modo... per ora.
+WARN_ESPIONAGE_01          | Il vostro faticoso tentativo di spionaggio si è rivelato molto divertente per noi. Permettiamo alla vostra spia di tornare da Lei questa volta, ma sappia che troveremo ulteriori tentativi per essere molto meno divertenti. [framed]
+WARN_SABOTAGE_01           | Quindi [spy_empire] intende sabotare? Il vostro sforzo è stato troppo insignificante per forzare la nostra rappresaglia, ma se dovesse riprovare potremmo scegliere di trattarvi come la peste che insistete a essere! [forced]
+WARN_BIOWEAPON_01          | Una cosa brutta, quell'arma. Ancora più brutto è colui che sceglie di usarlo su civili inermi. Le loro urla di agonia echeggeranno nello spazio per secoli, e noi ci uniremo a quel ritornello cadenzato mentre maledice il vostro spregevole nome.
+WARN_GENOCIDE_01           | La minaccia del genocidio non è sconosciuta alla mia gente, ma vederla realizzata così casualmente... ci disgusta in modi che dubito che perdoneremo mai, ambasciatore.
+WARN_FINAL_WAR_01          | All'alba della pace nella galassia, tutti coloro che partecipano troveranno ciò che cercano. Se [rebel_race_pluralnoun] minacciano quella pace, minacciano il nostro obiettivo finale e faremo tutto il possibile per bandirvi negli annali della galassia.
+WARN_COUNCIL_VOTE_01       | Non è che ci manchi l'apprezzamento per le sottili manovre politiche, solo che diventiamo più scontenti quando quelle manovre lavorano contro di noi. Proceda con leggerezza, ambasciatore: potremmo non darLe l'opportunità di manovrare di nuovo in questa direzione.
+WARN_OATHBREAKER_01        | Incapaci codardi! Ahimè, il nostro popolo deve sopportare la sfiducia dell'intera galassia quando dimostrate così sfacciatamente che siete voi a meritare tale inimicizia!
+WARN_ATTACKED_ALLY_01      | La avvertiamo solo una volta, ambasciatore. Fermate la vostra aggressività verso [defender_race_pluralnoun]: loro stanno con noi e noi stiamo con loro.
+WARN_REBELLING_AGAINST_01  | Osate usurpare il seggio più alto nel consiglio da noi, suoi legittimi padroni? La Sua gente vivrà per rimpiangere questo giorno, ambasciatore.
+//
+PRAISE_COUNCIL_VOTE_01     | La nostra causa richiede molto, ambasciatore, e siamo eternamente grati di poter contare su [voter_empire]  in consiglio. Sia certo che non lo dimenticheremo la prossima volta che verrà a chiamare la mia gente.
+PRAISE_COUNCIL_VOTE_02     | È stato gentile da parte sua riporre fiducia in noi oggi, ambasciatore. Sappia che ricordiamo coloro che ci aiutano a raggiungere il nostro obiettivo finale.
+PRAISE_COUNCIL_VOTE_03     | Ovviamente la Sua gente ha un secondo motivo nel darci sostegno. Siamo ancora molto diffidenti nei confronti di voi e della Sua specie, ma siamo riconoscente comunque.
+
+PRAISE_ATTACKED_ENEMY_01   | Sapevamo che ci avreste aiutato in questa guerra, ambasciatore! Con la nostra determinazione combinata, nemmeno [defender_race_pluralnoun] possono resistere a lungo a noi!
+PRAISE_ATTACKED_ENEMY_02   | È bello vedere altri unirsi alla lotta contro i disprezzabili [defender_race_pluraladjec]. Lavoriamo insieme per porre fine a tutto questo rapidamente in modo da poter riprendere a perseguire obiettivi molto più importanti.
+PRAISE_ATTACKED_ENEMY_03   | Se intendete guadagnare l'ammirazione della mia gente, sappia che troverà il compito quasi impossibile. Ma attaccare [defender_race_pluralnoun] è comunque un ammirevole primo passo.
+
+PRAISE_TRADE_01            | Non è sorprendente come una cosa così semplice come il commercio possa aprire così tante porte per entrambe le parti coinvolte? La nostra gente è davvero molto contenta, e speriamo che lo sia anche la Sua.
+PRAISE_TRADE_02            | Il nostro commercio onesto in corso si rivela un vantaggio continuo per entrambi i nostri popoli. Speriamo, ambasciatore, di continuare a fare affidamento l'uno sull'altro in questo modo.
+
+PRAISE_REBELLING_WITH_01   | Gli sciocchi del consiglio hanno scelto in modo errato come sapevamo che avrebbero fatto. Avete ragione a combattere contro di loro, e abbiamo ragione ad unirci alla vostra ribellione.
+
+ACCEPT_TRADE_01            | Con questo accordo commerciale aiutate molto la nostra ricerca, [your_race_pluraladjec]. [amt] BC ogni anno ci aiuterà più di quanto immaginate.
+RESPOND_IGNORE_THREAT_01   | Faccia attenzione a chi minacciate. Potreste trovare che una risposta nascosta nell'ombra molto sgradevole.
+RESPOND_STOP_SPYING_01     | Com'è che è stato LEI a prendere una delle nostre spie? Non importa, ce lo restituisca subito e da qui in poi cesseremo le nostre attività.
+RESPOND_STOP_ATTACKING_01  | Richiameremo le nostre flotte ora per il vostro bene, ma ricordi che il potere più pericoloso è quello che non si vede.

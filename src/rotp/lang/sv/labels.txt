@@ -1,0 +1,1980 @@
+// This is the label text file for Remnants of the Precursors
+// comment lines should start with '/'  they are ignored
+//  
+// the format for each line is   key | label
+//    where 'key' is the code used by the game to retrieve the label
+//    You cannot create new keys! The game will not use them
+//    You can only use keys that the game is looking for.
+//
+// Large number formatting
+NUM_FORMAT_THOUSANDS              | %1t
+NUM_FORMAT_MILLIONS               | %1mn
+NUM_FORMAT_BILLIONS               | %1md
+
+// Star descriptions
+RED_STAR_DESCRIPTION              | Röda dvärgstjärnor är gamla stjärnor, som brinner med lägre intensitet, och ofta har mineralfattiga planeter.
+YELLOW_STAR_DESCRIPTION           | Gula stjärnor ger den bästa chansen att finna planeter av jordisk typ, eller liknande planetklasser.
+ORANGE_STAR_DESCRIPTION           | Orange stjärnor är av mediumintensitet och planetklasserna kan variera mellan olika typer.
+BLUE_STAR_DESCRIPTION             | Blå stjärnor är relativt unga stjärnor med mineralrika, livlösa planeter.
+WHITE_STAR_DESCRIPTION            | Vita dvärgstjärnor brinner hett, med mycket UV-ljus, och har generellt planeter med ogästvänligt klimat.
+PUFPLE_STAR_DESCRIPTION           | Neutronstjärnor är sällsynta, men har god chans att ha planeter rika på mineraler.
+
+// Planet Typs
+PLANET_ARID                       | Torrt
+PLANET_BARREN                     | Öde
+PLANET_DEAD                       | Dött
+PLANET_DESERT                     | Öken
+PLANET_INFERNO                    | Inferno
+PLANET_JUNGLE                     | Djungel
+PLANET_MINIMAL                    | Marginell
+PLANET_NONE                       | Planetlöst
+PLANET_OCEAN                      | Ocean
+PLANET_RADIATED                   | Högbestrålat
+PLANET_STEPPE                     | Stäpp
+PLANET_TERRAN                     | Jordisk
+PLANET_TOXIC                      | Giftigt
+PLANET_TUNDRA                     | Tundra
+
+// Spy Missions
+SPY_HIDE                          | Dolda
+SPY_ESPIONAGE                     | Spionage
+SPY_SABOTAGE                      | Sabotage
+SPY_CAUGHT                        | [Dina spioner blev tillfångatagna.]
+SPY_FRAMED                        | [Du har blivit beskylld.]
+SPY_FORCED_CONFESSION             | [Ett falskt erkännande har blivit framtvingat.]
+SPY_WARNING                       | [Du har blivit varnad.]
+
+ARID_DESC_BIOLOGICAL              | Torra planeter är vattenfattiga jordiska planeter med begränsad vegetation och under 40% av ytan består av vattenmassor.
+BARREN_DESC_BIOLOGICAL            | Öde planeter är torra, dammiga världar med tunn atmosfär och utan bestående vattenmassor vid ytan.
+DEAD_DESC_BIOLOGICAL              | Döda planeter är kalla, karga planeter utan vatten.
+DESERT_DESC_BIOLOGICAL            | Öken-planeter är torra planeter något likt jordiskt klimat, med väldigt begränsad vegetation och under 20% yta av vattenmassor.
+INFERNO_DESC_BIOLOGICAL           | Inferno-planeter har extremt hög temperatur, tjock atmosfär och våldsamma stormar.
+JUNGLE_DESC_BIOLOGICAL            | Djungel-planeter är frodiga, tropiska världar täckta av täta skogar, djungler och träsk.
+MINIMAL_DESC_BIOLOGICAL           | Marginella planeter är underbevattnade planeter av jordiskt klimat, på gränsen av odlingsbart och väl beboeligt klimat.
+NONE_DESC_BIOLOGICAL              | Utan någon planet av särskild storlek, har de här asteroidfyllda stjärnsystemen undgått den naturliga ordningen att klumpa samman och forma en massiv himlakropp.
+OCEAN_DESC_BIOLOGICAL             | Oceaniska planeter är nästan helt täckta av vatten, vilket ofta försvårar mineralutvinning.
+RADIATED_DESC_BIOLOGICAL          | Högbestrålade planeter är luftlösa, livlösa världar som blir bestrålade till hög grad av närliggande stjärnor.
+STEPPE_DESC_BIOLOGICAL            | Stäpp-planeter har ett liknande jordiskt klimat, men kännetecknas av att vara kyliga och blåsiga, med stränga vintrar och nätter.
+TERRAN_DESC_BIOLOGICAL            | Jordiska planeter är paradis för vanliga kolbaserade livsformer, med stora tempererade zoner som stöder en mångfald av flora och fauna.
+TOXIC_DESC_BIOLOGICAL             | Giftiga planeter är frusna världar med metan-baserade ekosystem som inte lämpar sig för vissa livsformer.
+TUNDRA_DESC_BIOLOGICAL            | Tundra-planeter är slumrande jordiska världar, fast i en bestående isålder.
+
+// Planet Specials
+PLANET_ARTIFACTS                  | Reliker
+PLANET_ULTRA_POOR                 | Extra fattigt
+PLANET_POOR                       | Mineralfattigt
+PLANET_RICH                       | Mineralrikt
+PLANET_ULTRA_RICH                 | Extra rikt
+PLANET_HOSTILE                    | Ogästvänlig
+PLANET_FERTILE                    | Bördig
+PLANET_GAIA                       | Gaia
+
+// Planet Descriptors for Race
+PLANET_HOMEWORLD                  | [alien_raceposs] Hemvärld
+PLANET_WORLD                      | [alien_raceposs] planet
+PLANET_COLONY                     | [alien_race]-koloni
+PLANET_ORION                      | Orion
+PLANET_ORION_GUARDIAN             | Väktaren
+
+// Nebula names  ("starName" Nebula)
+NEBULA_NAME                       | %1 Nebulosa
+NEBULA_ID                         | NGC %1
+
+// In this, %1 is the race's title when using with the name ("_nameTitle" in the races labels.txt file)
+// and %2 is the leader's actual name
+TITLE_LEADERNAME                  | [alien_nameTitle] %2
+
+// Extended Colony Name prefix when we run out of names
+COLONY_NAME_2                     | Nya %1
+COLONY_NAME_3                     | Bortre %1
+COLONY_NAME_4                     | Yttre %1
+COLONY_NAME_5                     | Hoppet om %1
+
+// Space Monster Names
+SPACE_AMOEBA                      | Rymd-amöba
+SPACE_CRYSTAL                     | Förintar-kristall
+ORION_GUARDIAN                    | Orions Väktare
+
+// Personality types (adjective)
+LEADER_ERRATIC                    | Oberäknelig
+LEADER_PACIFIST                   | Pacifist
+LEADER_HONORABLE                  | Hedervärd
+LEADER_RUTHLESS                   | Hänsynslös
+LEADER_AGGRESSIVE                 | Aggressiv
+LEADER_XENOPHOBIC                 | Xenofobisk
+
+// Leader Objective Typs (noun)
+LEADER_DIPLOMAT                   | Diplomat
+LEADER_MILITARIST                 | Militant
+LEADER_ECOLOGIST                  | Ekologisk
+LEADER_INDUSTRIALIST              | Industrialist
+LEADER_EXPANSIONIST               | Expansionär
+LEADER_TECHNOLOGIST               | Teknologisk
+// Leader Personality & Objective displayed together
+LEADER_PERSONALITY_FORMAT         | %1 %2
+
+// Teknologi names and descriptions 
+TECH_COMPUTERS                    | Datorteknik
+TECH_CONSTRUCTION                 | Bygg- och maskinteknik
+TECH_FORCE_FIELDS                 | Kraftfält
+TECH_PLANETOLOGY                  | Planetologi
+TECH_PROPULSION                   | Framdrivningssystem
+TECH_WEAPONS                      | Vapenteknik
+
+// Random Events
+EVENT_ACCIDENT                    | En industriolycka av planetär grad har drabbat [target_race], vid deras koloni [system]. Klimatet har blivit permanent ärrat och ekologiska räddningsinsatser håller på att tillämpas.
+EVENT_ASSASSINATION               | En terrorist tillhörandes [assassin_empire] har mördat en ledande diplomat sänd från [victim_race], med följd av att de två parterna nu är nära på att gå till krig.
+EVENT_COMET                       | En komet av planetförstörande klass har blivit upptäckt på kurs mot [system]-systemet, och kommer att kollidera med [target_race]'s värld om [years] år, såvida inte en tillräckligt stor rymd-flotta stationeras för att omintetgöra hotet.
+EVENT_COMET_2                     | Den komet av planetförstörande klass på väg mot [system]-systemet, tillhörandes [target_race] förväntas utrota allt liv om bara [years] år. Mer beväpnade skepp kommer behövas för att avstyra den potentiella ödeläggande katastrofen.
+EVENT_COMET_3                     | Kometen som hotade [system]-systemet har nu blivit demolerad, tack vare insatserna från flottan utsänd av [target_race].
+EVENT_COMET_4                     | Den planetförstörande komet som hotade [system]-systemet har slagit igenom och förstört [target_raceposs] beboeliga planet.
+EVENT_DONATION                    | En rik individ från merkantila sektorn har beslutat sig för att stötta [target_race] med en signifikant donation av [amt] BC till den Planetära reserven.
+EVENT_DEPLETED                    | [target_race] har använt upp mineraltillgångarna i [system]-systemet, med resultatet att det där nu är Mineralfattigt.
+EVENT_DERELICT                    | Flottorna av [target_empire] har upptäckt en uråldrig kvarlämning i form av ett skeppsvrak. Forskare har nu lyckats avläsa teknologiska framsteg i vapenteknik och kraftfält från upptäckten.
+EVENT_EARTHQUAKE                  | En förödande jordbävning har drabbat [target_raceposs] planet i [system]-systemet. [amt] miljoner av befolkningen har bekräftats döda, samt stora områden av industriell vikt förstörda.
+EVENT_ENRICHED                    | Djupnivås-borrningar i utforskande syfte har uppdagat stora mängder viktiga mineralfyndigheter på [target_raceposs] planet i [system]-systemet. Planeten kan numer klassas som Mineralrik, med följd av förhöjd produktion.
+EVENT_FERTILE                     | En plötslig skiftning i planetens lutning har lett till att [target_raceposs] planet i [system]-systemet har förbättrat klimat till den grad att planeten nu klassas Bördig. Befolkningstillväxten beräknas öka med 50%.
+EVENT_PIRACY                      | En grupp Pirater har gjort [target_race] sitt primära mål, och den interplanetära handeln är nu under hot. Handelsintäkter beräknas sänkas med [amt]%. [target_race] kommer behöva skicka en beväpnad flotta till [system]-systemet för att försöka slå ut piraternas högkvarter, och därmed adressera hotet.
+EVENT_PIRACY_2                    | Piraterna som plågar [target_race] håller fortsatt på med plundring av handel. Deras högkvarter i [system]-systemet står ännu, och plundringen beräknas sänka handelsintäkter med [amt]%. 
+EVENT_PIRACY_3                    | [target_raceposs] flottor har förstört de högkvarter i [system]-systemet som var navet för de pirater som hade drabbat imperiet. Handeln är nu tillbaka på normala nivåer, med hotet ur vägen.
+EVENT_PLAGUE                      | En farsot med hög dödlighet har drabbat [target_raceposs] planet i [system]-systemet. Planeten har blivit satt i karantän, och miljoner beräknas dö varje år innan forskare kan finna och utveckla ett botemedel.
+EVENT_PLAGUE_2                    | Den farsot med hög dödlighet som plågar [system]-systemet fortsätter att härja. Enligt forskares beräkningar kommer det behövas ytterligare [amt] FP för att finna ett botemedel.
+EVENT_PLAGUE_3                    | [target_raceposs] forskare har utvecklat ett botemedel för den farsot som har härjat planeten vid [system]. Karantänen har lyfts och populationen förväntas kunna uppta normal aktivitet igen.
+EVENT_REBELLION                   | [target_raceposs] planet i [system]-systemet har gjort uppror och all planetär produktion står på noll. [target_race] kommer behöva sända trupptransporter för att kväsa upproret och återställa kontroll över planeten.
+EVENT_SUPERNOVA                   | Vetenskapsmän av [target_empire] förutspår att stjärnan i [system]-systemet kommer att utlösa en stjärnexplosion om [years] år. De rekommenderar att satsa alla planetens resurser på forskning, för att kunna finna en lämplig respons på hotet.
+EVENT_SUPERNOVA_2                 | Hotet från den ankommande stjärnexplosionen i [system]-systemet kvarstår, och väntas hända om [years] år. Forskare beräknar att [amt] FP kommer behövas för att kunna förebygga naturkatastrofen.
+EVENT_SUPERNOVA_3                 | Genom hårt arbete har fysiker och ingenjörer från [target_empire] lyckats utveckla en lösning för att förebygga den stjärnexplosion som hotade planeten i [system]-systemet. Katastrofen förväntas vara fördröjd bortom den närmaste framtiden.
+EVENT_SUPERNOVA_4                 | Stjärnan i [system]-systemet har enligt förväntningarna exploderat och skickat en våg av strålning och stjärnpartiklar. [target_raceposs] planet i systemet har blivit strålningsskadad, vilket har ödelagt klimatet samt dödat miljoner av befolkningen.
+EVENT_VIRUS                       | Ett högdestruktivt datorvirus har drabbat forskningscentra hos [target_race]. År av arbete i [technology] har blivit förlorade i skadegörelsen.
+EVENT_SPACE_AMOEBA                | En gigantisk livsform dubbad "Rymd-amöban" har blivit upptäckt färdas mot [system]-systemet. [victim_race] förväntas komma att behöva försvara sig militärt mot hotet.
+EVENT_SPACE_AMOEBA_1              | En gigantisk livsform dubbad "Rymd-amöban" har blivit upptäckt färdandes mot det obefolkade [system]-systemet.
+EVENT_SPACE_AMOEBA_2              | Rymd-amöban som hotade [victim_race] har slukat den koloni som fanns i [system]-systemet. Ingen av befolkningen som fanns på planeten har förväntats klara sig.
+EVENT_SPACE_AMOEBA_3              | Rymd-amöban som hotade [victim_race] har blivit omintetgjord av försvaret i [system]-systemet.
+EVENT_SPACE_CRYSTAL               | En enorm kristallin livsform dubbad "Förintar-kristallen" har blivit upptäckt färdandes mot [system]-systemet. [victim_race] förväntas komma att behöva försvara sig militärt mot hotet.
+EVENT_SPACE_CRYSTAL_1             | En enorm kristallin livsform dubbad "Förintar-kristallen" har blivit upptäckt färdandes mot det obefolkade [system]-systemet. 
+EVENT_SPACE_CRYSTAL_2             | Förintar-kristallen har omintetgjort allt liv på kolonin tillhörande [victim_race] i [system]-systemet.
+EVENT_SPACE_CRYSTAL_3             | Förintar-kristallen har blivit förstörd av det militära försvar [victim_race] samlat i [system]-systemet. Miljoner kan nu andas ut i lättnad.
+
+SYSEVENT_HOMEWORLD                | [alien_raceposs] Hemvärld
+SYSEVENT_SCOUTED                  | Först utforskad av [alien_race].
+SYSEVENT_COLONIZED                | Koloniserad av [alien_race].
+SYSEVENT_CAPTURED                 | Tillfångatagen av [alien_raceposs] styrkor.
+SYSEVENT_ABANDONED                | Övergiven av [alien_race].
+SYSEVENT_DESTROYED                | Ödelagd av [alien_raceposs] styrkor placerade i omloppsbana.
+SYSEVENT_DESTROYED_MONSTER        | Ödelagd av %1.
+SYSEVENT_DESTROYED_UNKNOWN        | Förstörd.
+SYSEVENT_ATMOSPHERE_TERRAFORMED   | Planetens klimat har blivit jordisk-anpassat.
+SYSEVENT_SOIL_ENRICHED            | Jord och klimat har blivit berikat och justerat, och planeten är nu Bördig.
+SYSEVENT_GAIA_TERRAFORMING        | Planeten har blivit omjusterad till idealklimatet Gaia.
+SYSEVENT_REBELLION                | Kolonin är i uppror.
+SYSEVENT_COMET                    | En komet har kolliderat med planeten.
+SYSEVENT_PLAGUE                   | En farsot av hög dödlighet härjar planeten.
+SYSEVENT_PLAGUE_ENDED             | Farsoten som plågade planeten har blivit eliminerad.
+SYSEVENT_ENRICHED                 | Stora fyndigheter av värdefulla mineral har upptäckts på planeten.
+SYSEVENT_DEPLETED                 | Malm-fyndigheterna på planeten har sinat.
+SYSEVENT_ACCIDENT                 | En massiv planetär industriolycka har lett till radioaktiva skador.
+SYSEVENT_SUPERNOVA                | Planeten har blivit strålningsskadad av en stjärnexplosion.
+
+
+// Diplomatic Incident titles & descriptions
+INC_ASSASSINATION_TITLE           | Lönnmördande händelse
+INC_ASSASSINATION_DESC            | En terrorist från [assassin_empire] har lönnmördat diplomaten tillhörandes [victim_race].
+INC_ATTACKED_ALLY_TITLE           | Överfallit allierad
+INC_ATTACKED_ALLY_DESC            | [attacker_empire] har anfallit [defender_empire], som var allierad med [my_empire].
+INC_ATTACKED_ENEMY_TITLE          | Anfallit fiende
+INC_ATTACKED_ENEMY_DESC           | [attacker_empire] har anfallit [defender_empire], en av deras fiender.
+INC_USED_BIOWEAPONS_TITLE         | Använt biologiska vapen
+INC_USED_BIOWEAPONS_DESC          | [attacker_empire] har använt biologiska vapen av massförstörelse mot [victim_empire] vid [system].
+INC_KILLED_MONSTER_TITLE          | %1
+INC_KILLED_MONSTER_DESC           | [your_empire] har övervunnit [monster], vilket satt stopp för vad som beräknats varit ett galaktiskt hot mot alla imperier.
+INC_KILLED_GUARDIAN_TITLE         | Orion's väktare
+INC_KILLED_GUARDIAN_DESC          | [your_empire] har förstört Orion's Väktare, och har därmed fått tag på en del av hemligheterna från de Förelöpande imperierna.
+INC_NO_RELATIONS_TITLE            | Avhållna diplomatiska förbindelser
+INC_NO_RELATIONS_DESC             | För tillfället finns inga diplomatiska förbindelser mellan [your_empire] och [my_empire].
+INC_ALLIED_WITH_ENEMY_TITLE       | Allierad med Fienden
+INC_ALLIED_WITH_ENEMY_DESC        | [my_empire] motsätter sig er allians med de hatade [other_empire].
+INC_AT_WAR_WITH_ALLY_TITLE        | Krig med Allierad
+INC_AT_WAR_WITH_ALLY_DESC         | Ni är i krig med [other_empire], en allierad till [my_empire].
+INC_CLOSED_EMBASSY_TITLE          | Återkallad Ambassadör
+INC_CLOSED_EMBASSY_DESC           | [your_empire] har brutit diplomatisk kontakt med [my_empire].
+INC_EVICTED_SPIES_TITLE           | Deporterat Diplomater
+INC_EVICTED_SPIES_DESC            | [your_empire] har utvisat alla diplomater från [my_empire], utom de mest nödvändiga.
+INC_BROKE_ALLIANCE_TITLE          | Brutit Allians
+INC_BROKE_ALLIANCE_DESC           | [your_empire] har brutit deras Allians med [my_empire].
+INC_BROKE_PACT_TITLE              | Brutit Avtal om Icke-Aggression
+INC_BROKE_PACT_DESC               | [your_empire] har brutit deras Avtal om Icke-Aggression med [my_empire].
+INC_BROKE_TRADE_TITLE             | Brutit Handelsavtal
+INC_BROKE_TRADE_DESC              | [your_empire] har brutit deras Handelsavtal med [my_empire].
+INC_ATTACKED_COLONY_TITLE         | Anfallit Koloni
+INC_ATTACKED_COLONY_DESC          | En flotta från [attacker_empire] har anfallit [defender_raceposs] planet vid [system]. [amt] miljoner innevånare beräknas ha omkommit.
+INC_CAPTURED_COLONY_TITLE         | Tillfångatagit Koloni
+INC_CAPTURED_COLONY_DESC          | Trupper från [attacker_empire] har invaderat och tillfångatagit [defender_raceposs] planet vid [system]. [amt] miljoner innevånare beräknas ha omkommit.
+INC_DESTROYED_COLONY_TITLE        | Förstört Koloni
+INC_DESTROYED_COLONY_DESC         | En flotta från [attacker_empire] har fullständigt demolerat [defender_raceposs] koloni i [system]. [amt] miljoner innevånare beräknas ha omkommit.
+INC_FIRST_CONTACT_TITLE           | Öppnande Kontakt
+INC_FIRST_CONTACT_DESC            | Öppnande kontakt har etablerats med ett främmande imperium, [your_empire]. Var på er vakt.
+INC_INVADED_COLONY_TITLE          | Invaderat Koloni
+INC_INVADED_COLONY_DESC           | Trupper från [attacker_race] invaderade [defender_race] men misslyckades med att tillfångata kolonin vid [system]. [amt] miljoner innevånare beräknas ha omkommit.
+INC_COUNCIL_VOTE_TITLE            | Röstning i Rådet
+INC_COUNCIL_VOTE_FOR_DESC         | [voter_race] röstade på [candidate_name], ledare av [candidate_race].
+INC_COUNCIL_VOTE_AGAINST_DESC     | [voter_race] röstade mot [candidate_name], ledare av [candidate_race].
+INC_COUNCIL_ABSTAIN_DESC          | [voter_race] avstod röstning i det Galaktiska Rådet, vägrandes [candidate_name], leader of the [candidate_race], sin röst.
+INC_DECLARED_WAR_TITLE            | Förklarade Krig
+INC_DECLARED_WAR_DESC             | [aggressor_empire] har förklarat krig mot [victim_empire].
+INC_ERRATIC_WAR_TITLE             | Nyckfullt Uppförande
+INC_ERRATIC_WAR_DESC              | [aggressor_race] har blivit uppviglade mot [victim_empire] och har förklarat krig, ingen är riktigt säker varför.
+INC_DEMANDED_TRIBUTE_TITLE        | Krävt Tribut
+INC_ENCROACHING_TITLE             | Inkräktande
+INC_ENCROACHING_DESC              | [your_empire] har koloniserat en planet vid [system], vilket inkräktar på gränsterritoriet till [my_empire].
+INC_TECH_STOLEN_TITLE             | Teknologi Stulen
+INC_TECH_STOLEN_DESC              | Spioner från [spy_race] har stulit upplägget om [tech] från [victim_race].
+INC_TECH_FRAMED_DESC              | Oidentifierade spioner har stulit klassifierad teknologi från [victim_race]. (du har blivit beskylld)
+INC_TECH_EXCHANGE_TITLE           | Teknologi Utbytt
+INC_TECH_EXCHANGE_DESC            | [my_empire] har delat med sig av [techGiven] till [your_empire] i utbyte mot kunskapen om [techReceived].
+INC_FINANCIAL_AID_TITLE           | Finansiellt Bistånd
+INC_FINANCIAL_AID_DESC            | [your_empire] har donerat [amt] BC till [my_empire].
+INC_TECHNOLOGY_AID_TITLE          | Teknologiskt Bistånd
+INC_TECHNOLOGY_AID_DESC           | [your_empire] har delat med sig av kunskapen om [tech] till [my_empire], helt utan återkrav.
+INC_TECHNOLOGY_AID_DESC_MULT      | [your_empire] har donerat flertalet teknologier till [my_empire], helt utan återkrav: [techs]
+INC_TECHNOLOGY_TECH_LIST_COMMA    | , 
+INC_ENEMY_AID_TITLE               | Bistånd till Fiende 
+INC_ENEMY_AID_MONEY_DESC          | [your_empire] har donerat [amt] BC i stöd till [enemy_empire], en fiende till [my_empire].
+INC_ENEMY_AID_TECH_DESC           | [your_empire] har donerat kunskapen om [tech] till [enemy_empire], en fiende till [my_empire].
+INC_PARANOIA_TITLE                | Paranoid Uppfattning
+INC_PARANOIA_DESC1                | En radikal grupp från [my_empire] håller vid löjliga konspirationsteorier om att [your_race] är ett hot mot deras folks själva existens. [your_empire] ockuperar nu [num] olika kolonier som först grundades av [my_empire].
+INC_PARANOIA_DESC2                | En mindre grupp inom [my_empire] har omfamnat en övertygelse att [your_race] representerar ett existentiellt hot mot hela deras folkslag. [your_empire] ockuperar nu [num] olika kolonier som först grundades av [my_empire].
+INC_PARANOIA_DESC3                | En högröstad minoritetsgrupp inom [my_empire] demonstrerar nu över en oro att [your_race] representer ett existentiellt hot mot hela deras folkslag. [your_empire] ockuperar nu [num] olika kolonier som först grundades av [my_empire].
+INC_PARANOIA_DESC4                | Stora demonstrationer i [my_empire] höjer nu rösten i kall på åtgärder angående den växande oron att [your_race] verkligen kan vara ett hot mot deras folks fortsatta existens. [your_empire] ockuperar nu [num] olika kolonier som först grundades av [my_empire].
+INC_PARANOIA_DESC5                | Folkmassorna rasar i panik i [my_empire] på grund av att [your_race] med klarhet poserar ett existentiellt hot mot deras folk. [your_empire] ockuperar nu [num] olika kolonier som först grundades av [my_empire].
+INC_EXPANSION_TITLE               | Expansion
+INC_EXPANSION_DESC                | Nu kontrollerandes [num] stjärnsystem, så räknas [your_empire] ha vuxit för stort för att kunna accepteras.
+INC_GENOCIDE_TITLE                | Folkutrotning
+INC_GENOCIDE_DESC                 | [attacker_empire] har fullständigt utrotat [victim_raceposs] välde.
+INC_FINAL_WAR_TITLE               | Ändtidens Krig!
+INC_FINAL_WAR_DESC                | [rebel_empire] har gjort uppror mot det Galaktiska Rådets beslut, vilket har resulterat i att de återstående allierade raserna i galaxen har dömt dem till utrotning.
+INC_MILITARY_BUILDUP_TITLE        | Militär Ansamling
+INC_MILITARY_BUILDUP_DESC         | [your_empire] är i färd med att samla ihop en anselig beväpnad flotta vid [system].
+INC_OATHBREAKER_TITLE             | Edsbrott
+INC_DESTROYED_BASES_TITLE         | Missilbaser Förstörda
+INC_DESTROYED_BASES_DESC          | Sabotörer från [spy_empire] har förstört [amt] defensiva missilbaser vid [system]-systemet.
+INC_DESTROYED_FACTORIES_TITLE     | Fabriker Förstörda
+INC_DESTROYED_FACTORIES_DESC      | Sabotörer från [spy_empire] har förstört [amt] fabriker vid [system]-systemet.
+INC_INCITED_REBELLION_TITLE       | Uppror Uppviglat
+INC_INCITED_REBELLION_DESC        | Upprorsmakare på uppdrag från [spy_empire] har uppviglat [amt] miljoner rebeller vid [system].
+INC_SIGNED_ALLIANCE_TITLE         | Allians
+INC_SIGNED_ALLIANCE_DESC          | [my_empire] och [your_empire] har slutit samman i en Allians, med löfte om att gemensamt försvara varandra från utvändes hot.
+INC_JOINT_WAR_TITLE               | Förklarat Krig
+INC_LEFT_ALLIANCE_TITLE           | Brutit Allians
+INC_SIGNED_PACT_TITLE             | Avtal om Icke-Aggression
+INC_SIGNED_PACT_DESC              | [my_empire] och [your_empire] har undertecknat ett Avtal om Icke-Aggression, för att undvika beväpnad konflikt i oägda, neutrala stjärnsystem.
+INC_SIGNED_PEACE_TITLE            | Fredsavtal
+INC_SIGNED_PEACE_DESC             | [my_empire] och [your_empire] har undertecknat ett Fredsavtal, vilket satt punkt för all aggression fram till [endYear].
+INC_SIGNED_TRADE_TITLE            | Handelsavtal
+INC_SIGNED_TRADE_DESC             | [my_empire] och [your_empire] har undertecknat ett Handelsavtal, up till ett årligt maximumbelopp på [amt] BC.
+INC_SKIRMISH_TITLE                | Mindre Drabbning
+INC_SKIRMISH_DESC                 | [my_race] och [your_race] flottor öppnade upp i strid mot varandra vid [system]-systemet.
+INC_SPY_CONFESSION_TITLE          | Erkännande från Spion
+INC_SPY_CONFESS_ESPIONAGE_DESC    | En spion tillhörandes [spy_empire] har blivit tillfångatagen och har erkänt pågående espionage och planer därav mot [victim_empire].
+INC_SPY_CONFESS_SABOTAGE_DESC     | En spion tillhörandes [spy_empire] har blivit tillfångatagen och har erkänt pågående sabotage och planer därav mot [victim_empire].
+INC_SPY_CAPTURED_DESC             | En spion tillhörandes [spy_empire] har blivit tillfångatagen och tvingats erkänna pågående sabotage och planer därav mot [victim_empire].
+INC_TRADE_INCOME_TITLE            | Handelsinkomst
+INC_TRADE_INCOME_DESC             | Handel mellan [your_empire] och [my_empire] har gett en vinning på [amt] BC.
+INC_TRESPASSING_TITLE             | Inkräktande
+INC_TRESPASSING_DESC              | [your_race] flottor har inkräktat vid [system]-systemet, en del av [my_empire].
+
+// generic click to skip or continue messages
+CLICK_SKIP                        | Tryck Escape eller Klicka för att hoppa över animationen...
+CLICK_CONTINUE                    | Klicka eller tryck Escape för att Fortsätta...
+CLICK_EXIT                        | Klicka eller tryck Escape för att Avsluta...
+BUTTON_EXIT                       | Avsluta
+
+// GAME/SETUP UI 
+GAME_TITLE_LINE_1                 | FÖRELÖPARNAS
+GAME_TITLE_LINE_2                 |  
+GAME_TITLE_LINE_3                 | KVARLÄMNOR
+GAME_DISCUSS_ONLINE               | Mötesplats Online
+GAME_MENU_CONTINUE                | Fortsätt på senaste
+GAME_MENU_NEW_GAME                | Ny omgång
+GAME_MENU_LOAD_GAME               | Ladda
+GAME_MENU_SAVE_GAME               | Spara
+GAME_MENU_SETTINGS                | Inställningar
+GAME_MENU_EXIT                    | Avsluta
+GAME_MENU_RESTART                 | Starta om
+GAME_VERSION                      | Version: %1
+GAME_SHRINK                       | Minska -
+GAME_ENLARGE                      | Förstora
+
+// Game Settings UI
+GAME_SETTINGS_TITLE               | Inställningar
+GAME_SETTINGS_DESCRIPTION         | Klicka för att göra tillval av varje individuell inställning.
+GAME_SETTINGS_EXIT                | Gå tillbaka
+GAME_SETTINGS_DEFAULT             | Återställ till Standard
+GAME_SETTINGS_DISPLAY_MODE        | Klientläge: %1
+GAME_SETTINGS_WINDOWED            | Fönster
+GAME_SETTINGS_BORDERLESS          | Kantlöst fönster
+GAME_SETTINGS_FULLSCREEN          | Helskärm
+GAME_SETTINGS_DISPLAY_MODE_DESC   | Kräver omstart. Fönsterläge är en bestämd ratio som kan justeras i storlek. Kantlöst läge är ett maximerat fönster. Helskärm är ett exklusivt, maximerat fönster.
+GAME_SETTINGS_GRAPHICS            | Grafiknivå: %1
+GAME_SETTINGS_GRAPHICS_LOW        | Låg
+GAME_SETTINGS_GRAPHICS_MED        | Mellan
+GAME_SETTINGS_GRAPHICS_HIGH       | Hög
+GAME_SETTINGS_GRAPHICS_DESC       | Välj den allmänna kvaliteten på grafiken. Medium: Anti-Aliasing är inaktiverat. Låg: Animationer är inaktiverade.
+GAME_SETTINGS_TEXTURES            | Texturer: %1
+GAME_SETTINGS_TEXTURES_NO         | Nej
+GAME_SETTINGS_TEXTURES_INTERFACE  | Användargränssnittet
+GAME_SETTINGS_TEXTURES_MAP        | Karta över galaxen
+GAME_SETTINGS_TEXTURES_BOTH       | Gränssnitt plus karta
+GAME_SETTINGS_TEXTURES_DESC       | Aktivera bruk av texturer för galaxkartan eller andra visuella delar av spelet.
+GAME_SETTINGS_SENSITIVITY         | Känslighet för pekarnärvaro: %1
+GAME_SETTINGS_SENSITIVITY_HIGH    | Hög
+GAME_SETTINGS_SENSITIVITY_MEDIUM  | Mellan
+GAME_SETTINGS_SENSITIVITY_LOW     | Låg
+GAME_SETTINGS_SENSITIVITY_DESC    | Justera hur snabbt galaxkartan responderar till muspekarens placering, för att välja vilken panel som visas.
+GAME_SETTINGS_MEMORY              | Visa minnesanvändning: %1
+GAME_SETTINGS_MEMORY_YES          | Ja
+GAME_SETTINGS_MEMORY_NO           | Nej
+GAME_SETTINGS_MEMORY_DESC         | Aktiverar visning av minnesanvändning i det nedre högra hörnet. Användbart för att hålla koll på minnesprestanda.
+GAME_SETTINGS_SOUNDS              | Ljud: %1
+GAME_SETTINGS_SOUNDS_OFF          | Av
+GAME_SETTINGS_SOUNDS_ON           | %1/10
+GAME_SETTINGS_SOUNDS_DESC         | Klicka för att aktivera eller inaktivera ljudeffekter. Skrolla med mushjulet för att höja eller sänka volymen.
+GAME_SETTINGS_SOUNDS_DISABLED     | Avaktiverat
+GAME_SETTINGS_SOUNDS_ERR_DESC     | Ljudet är avaktiverat på grund av följande anledning: %1
+GAME_SETTINGS_MUSIC               | Musik: %1
+GAME_SETTINGS_MUSIC_OFF           | Av
+GAME_SETTINGS_MUSIC_ON            | %1/10
+GAME_SETTINGS_MUSIC_DESC          | Klicka för att aktivera eller inaktivera musik i spelet. Skrolla med mushjulet för att höja eller sänka volymen.
+GAME_SETTINGS_AUTOCOLONIZE        | Kolonisation: %1
+GAME_SETTINGS_AUTOCOLONIZE_YES    | Automatisk
+GAME_SETTINGS_AUTOCOLONIZE_NO     | Fråga alltid
+GAME_SETTINGS_AUTOCOLONIZE_DESC   | Aktivera för en automatisk kolonisering där planeter blir koloniserade och namngivna så fort koloniskepp anländer. Kan vara tidsbesparande för extra stora kartor.
+GAME_SETTINGS_AUTOBOMBARD         | Bombardemang: %1
+GAME_SETTINGS_AUTOBOMBARD_NO      | Fråga alltid
+GAME_SETTINGS_AUTOBOMBARD_NEVER   | Aldrig
+GAME_SETTINGS_AUTOBOMBARD_YES     | Alltid automatisk
+GAME_SETTINGS_AUTOBOMBARD_WAR     | Bara i krig
+GAME_SETTINGS_AUTOBOMBARD_INVADE  | Bara i krig och om inga trupptransporter är på väg.
+GAME_SETTINGS_AUTOBOMBARD_DESC    | Välj mellan att alltid fråga om bombsläpp, aldrig bombardera, alltid automatiskt bombardera, bara auto-bombardera vid krig, eller bara auto-bombardera vid krig och när det inte är några trupptransporter på väg.
+GAME_SETTINGS_BACKUP_OFF          | Av
+GAME_SETTINGS_BACKUP_ON           | Varje %1 turer
+GAME_SETTINGS_BACKUP              | Backup: %1
+GAME_SETTINGS_BACKUP_DESC         | Aktivera för att din nuvarande omgång periodiskt ska sparas med en backup, vilket tillåter dig ladda omgång från tidigare turer.
+GAME_SETTINGS_SAVEDIR             | Målmapp för sparfiler: %1
+GAME_SETTINGS_SAVEDIR_DEFAULT     | Standard
+GAME_SETTINGS_SAVEDIR_CUSTOM      | Egen
+GAME_SETTINGS_SAVEDIR_DESC1       | Målmappen för sparfiler är i samma mapp som spelklienten.
+GAME_SETTINGS_SAVEDIR_DESC2       | Målmappen för sparfiler är satt till: %1
+
+// Load Game UI
+LOAD_GAME_TITLE                   | Ladda Omgång
+LOAD_GAME_AUTOSAVE                | Senaste Autosparat
+LOAD_GAME_BACKUP_DIR              | Backup-mapp: %1 files
+LOAD_GAME_SAVE_DIR                | Sparfiler: %1 files
+LOAD_GAME_FILENAME                | Sortera efter Namn
+LOAD_GAME_DATE                    | efter Datum
+LOAD_GAME_SIZE                    | efter Storlek
+LOAD_GAME_LOADING                 | Laddar...
+LOAD_GAME_BAD_VERSION             | Kan inte ladda sparfil: %1. Filen kan vara skadad eller misstämma med klientversionen.
+LOAD_GAME_CANCEL                  | Avbryt
+LOAD_GAME_OK                      | Ladda
+LOAD_GAME_TOO_LONG                | ...
+
+// Save Game UI
+SAVE_GAME_TITLE                   | Spara Omgång
+SAVE_GAME_FILENAME                | Sortera efter Namn
+SAVE_GAME_DATE                    | efter Datum
+SAVE_GAME_SIZE                    | efter Storlek
+SAVE_GAME_SAVING                  | Sparar...
+SAVE_GAME_CANCEL                  | Avbryt
+SAVE_GAME_OK                      | Spara
+
+// Intro UI
+INTRO_BEGIN                       | Börja
+
+// MAIN UI - Bottom Navigation options
+MAIN_NAVIGATION_GAME              | Spel
+MAIN_NAVIGATION_DESIGN            | Designer
+MAIN_NAVIGATION_FLEETS            | Flottor
+MAIN_NAVIGATION_SYSTEMS           | System
+MAIN_NAVIGATION_RACES             | Kontakter
+MAIN_NAVIGATION_COLONIES          | Kolonier
+MAIN_NAVIGATION_TECH              | Forskning
+MAIN_NAVIGATION_NEXT_TURN         | Nästa Tur
+MAIN_NAVIGATION_NEXT_YEAR         | Nästa År
+MAIN_YEAR_DISPLAY                 | År  %1
+MAIN_TURN_DISPLAY                 | Tur  %1
+MAIN_SPY_REPORT                   | Spion
+MAIN_TECH_NONE                    | Ingen Forskning
+MAIN_TECH_COMPLETED               | Forskning Fullbordad
+MAIN_TECH_FP_REMAINING            | %1 FP Kvar
+MAIN_TECH_FP_DISCOVERY            | På gränsen till upptäckt
+MAIN_TECH_RESERVE_BC              | %1 BC
+MAIN_TECH_RESERVE_TAX_ALL         | Beskattar %1% av alla koloniers produktion
+MAIN_TECH_RESERVE_TAX             | Beskattar %1% av alla färdigställda koloniers produktion
+MAIN_TECH_RESERVE_TAX_NONE        | Ingen beskattning av produktionen
+MAIN_HELP_ALL                     | Hjälp - klicka för att stegvis gå igenom hjälpinformationen för den relevanta sektionen. Tryck Escape för att avbryta.
+MAIN_HELP_1A                      | Varje stjärnsystem fördelar sin produktion inom fem olika områden. Utgråade mätare indikerar att den produktionsmätaren har blivit låst och kommer inte ändras vid manipulation. Klicka på respektive mätares namn för att låsa/låsa upp.
+MAIN_HELP_1B                      | Skeppsvarv - konstruerar utvald skeppsdesign. Stora skepp kan ta flera turer att producera.
+MAIN_HELP_1C                      | Försvar - bygger och uppgraderar missilbaser upp till den angivna begränsningsnivån, och också planetära sköldar när de är tillgängliga för konstruktion.
+MAIN_HELP_1D                      | Industri - bygger fabriker som utökar kolonins produktion.
+MAIN_HELP_1E                      | Ekologi  - städar upp industriavfall, terraformerar planeten, och kan också stimulera befolkningstillväxten.
+MAIN_HELP_1F                      | Forskning - producerar forskning för ditt imperiums sammanlagda forskningsresultat.
+MAIN_HELP_1G                      | Ratiostaplar visar fördelningen av en planets produktion. Hur mycket resurser som ska tillägnas varje mätare kan justeras med mushjulet, genom att klicka inom mätarområdet, eller genom att klicka på vänster/höger pil för varje individuell mätare.
+MAIN_HELP_1H                      | Det förväntade resultatet för den givna produktionen inom varje område visas till höger om varje mätare. Överflödigt spenderad stimulans förs automatiskt över till imperiets statskassa.
+MAIN_HELP_2A                      | Nivån av Planetära Sköldar för kolonin. Sköldar kan inte konstrueras på planeter inom en nebulosa.
+MAIN_HELP_2B                      | Antalet missilbaser och önskad slutnivå för den här planeten. Klicka eller använd mushjulet för att ändra begränsningsnivån och slutmaximum.
+MAIN_HELP_2C                      | Total planetär produktion sammanlagt från industri och population.
+MAIN_HELP_2D                      | Effektiv produktion efter justering av imperievida effekter som handelsinkomster/avgifter, avgifter för spioner och säkerhet, samt uppehåll av rymdskepp och missilbaser.
+MAIN_HELP_2E                      | Här kan du byta vilken skeppsdesign som konstrueras i skeppsvarvet i planetens omloppsbana. Ansamlad produktion som ej lett till ett färdigställt skepp sparas och accelererar produktionen av nya skepp med 50% tills resurserna är fullt spenderade. Klicka eller använda mushjulet för att ändra valet av design av skepp.
+MAIN_HELP_2F                      | Välj ut en Samlingspunkt för att automatiskt sända nyligen färdigställda skepp till en annan koloni.
+MAIN_HELP_2G                      | Transportera population för att befästa en annan koloni, eller sända markstridstrupper för invasion av en fiendes planet. Kolonin spenderar en viss produktionskostnad för transportskeppen.
+MAIN_HELP_2H                      | Här kan du helt överge och evakuera en planet genom att föra över all population till en annan koloni.
+MAIN_HELP_2I                      | Nuvarande och maximala antalet planetär population. 100 representerar en fullbefolkad hemplanet som inte förbättrats med extra terraformering.
+MAIN_HELP_2J                      | Nuvarande och maximala antalet fabriker möjliga. Maximala antalet fabriker beräknas baserat på potentiell population, samt teknologi för robotkontroll.
+MAIN_HELP_2K                      | Märk ett system med en flagga för att göra det mer synligt på galaxkartan.
+MAIN_HELP_2L                      | Mängden reserver tillgängliga i imperiets statskassa.
+MAIN_HELP_2M                      | Det nuvarande läget för forskningen inom de sex olika områdena av teknologi.
+MAIN_HELP_3A                      | Spel - återvänder till huvudmenyn. Låter dig justera inställningar eller spara, ladda, och påbörja spelomgångar.
+MAIN_HELP_3B                      | System - galaxkarta som visar olika systems status utöver galaxen, skiljt med olika kriterier.
+MAIN_HELP_3C                      | Flottor - storskalig kontroll av flottor och konstruktion vid skeppsvarv inom ditt imperium.
+MAIN_HELP_3D                      | Designer - skapa skeppsdesigner för dina flottor genom att välja mellan dina olika teknologier. En oönskad design kan ratas.
+MAIN_HELP_3E                      | Kontakter - detaljerad information och diplomatiska alternativ för de främmande folkslag du bemött.
+MAIN_HELP_3F                      | Kolonier - detaljerade och sorterbara listor av dina kolonier. Visar också imperiets inkomster och kostnader.
+MAIN_HELP_3G                      | Forskning - visar tillgängliga teknologier. Låter dig fokusera eller balansera forskning mellan upp till sex områden av teknologi.
+MAIN_HELP_3H                      | Nästa År - låter ett år passera i spelet för det nästa.
+MAIN_HELP_3I                      | Nuvarande Tur - visar spelomgångens nuvarande tur eller ditt imperiums nuvarande år, enligt deras tidräkning. Klicka för att välja typ av visning.
+MAIN_HELP_3J                      | Kartalternativ - klicka för att stegvis rotera genom olika visningsalternativ för galaxkartan.
+
+MAIN_SYSTEM_DETAIL_PFB            | Pop %1  Fab %2  Baser %3
+MAIN_SYSTEM_DETAIL_PF             | Pop %1  Fab %2
+MAIN_SYSTEM_DETAIL_NO_DATA        | Ingen Data
+MAIN_UNEXPLORED_SYSTEM            | Outforskad
+MAIN_ALLIED_COLONY                | Allierad Koloni
+MAIN_SYSTEM_RANGE                 | %1 Ljusår
+MAIN_OUT_OF_RANGE_DESC            | Utom Räckvidd
+MAIN_SCOUT_RANGE_DESC             | Extrareserver för Bränsle Nödvändigt
+MAIN_IN_RANGE_DESC                | Inom Räckvidd
+MAIN_NO_PLANETS                   | Inga Koloniserbara Planeter
+MAIN_NO_COLONIES                  | Okoloniserad
+MAIN_UNSCOUTED                    | Orekognoscerat
+MAIN_ABANDONED                    | Övergiven
+MAIN_ALIEN_COLONY                 | %1 Koloni
+MAIN_UNKNOWN_COLONY               | Främmande Koloni
+MAIN_NEBULA_DESC                  | Rymdfärdshastighet för skepp genom nebulosa är begränsat till Warp 1
+MAIN_PLANET_SIZE                  | Storlek %1
+MAIN_PLANET_SIZE+                 | Storlek %1+
+MAIN_PLANET_POP                   | Pop %1
+MAIN_PLANET_POP_SIZE              | Pop %1/%2
+MAIN_PLANET_REBELLION             | I Uppror
+MAIN_PLANET_QUARANTINE            | I Karantän
+MAIN_PLANET_EVENT_COMET           | Komet
+MAIN_PLANET_EVENT_PIRACY          | Pirater
+MAIN_PLANET_EVENT_PLAGUE          | Epidemi
+MAIN_PLANET_EVENT_SUPERNOVA       | Supernova
+MAIN_PLANET_EVENT_AMOEBA          | Rymd-amöba
+MAIN_PLANET_EVENT_CRYSTAL         | Förintar-kristall
+MAIN_ADVANCING_YEAR               | Går vidare till År  %1...
+MAIN_ADVANCING_TURN               | Går vidare till Tur  %1...
+TURN_SAVING                       | Sparar omgång
+TURN_LAUNCHING_FLEETS             | Skepp Färdas
+TURN_SHIP_COMBAT                  | Skeppsbataljer
+TURN_BOMBARDMENT                  | Planetärt Bombardemang
+TURN_TRANSPORTS                   | Transporter
+TURN_COLONIES                     | Kolonisering
+TURN_SPIES                        | Aktiviteter för Spionage
+TURN_REBELLION                    | Uppror 
+TURN_COUNCIL                      | Rådets Status
+TURN_RESEARCH                     | Forskning
+TURN_ASSESS                       | Färdigställer Internt
+TURN_DIPLOMACY                    | Diplomatik
+TURN_ACQUIRE_TECHS                | Etablerar Handelsutbytta Teknologier
+TURN_MAKE_DECISIONS               | Fattar Beslut
+TURN_RECALC_DISTANCES             | Omkalkylerar Systemavstånd
+TURN_REFRESHING                   | Uppdaterar Synfält
+TURN_SCRAP_SHIPS                  | Skrotar Skepp
+TURN_FLEET_PLANS                  | Planering för Flottor
+TURN_DEPLOY_FLEETS                | Färdriktning för Skepp
+TURN_DEPLOY_FLEET_X               | Färdriktning för Skepp (%1/%2 completed)
+TURN_RETREAT_FLEETS               | Flottor i Reträtt
+TURN_DESIGN_SHIPS                 | Designar Skepp
+TURN_COLONY_SPENDING              | Koloniers Resursfördelning
+
+// Fleet labels
+MAIN_FLEET_TITLE                  | [fleet_raceposs] Flotta
+MAIN_FLEET_TITLE_UNKNOWN          | Okänd Flotta
+MAIN_FLEET_IN_ORBIT               | I omloppsbana
+MAIN_FLEET_DEPLOYED               | Med uppdrag
+MAIN_FLEET_IN_TRANSIT             | I färd
+MAIN_FLEET_RETREATING             | Retirerande
+MAIN_FLEET_LOCATION               | vid %1
+MAIN_FLEET_ORIGIN                 | från %1
+MAIN_FLEET_DESTINATION            | till %1
+MAIN_FLEET_DEST_UNSCOUTED         | till Outforskad
+MAIN_FLEET_ALLY                   | Allierad
+MAIN_FLEET_ENEMY                  | Fientlig
+MAIN_FLEET_DEPLOYMENT             | Färduppdrag för Flotta
+MAIN_FLEET_DISPLAY                | Flottpanel
+MAIN_FLEET_CHOOSE_DEST            | Välj destination och antalet skepp att sända.
+MAIN_FLEET_OUT_OF_RANGE_DESC      | Destinationen är utanför räckvidden för flottor, %1 ljusår från närmaste koloni.
+MAIN_FLEET_INVALID_RETREAT        | Retirerande flottor kan bara sändas till egenägda kolonier.
+MAIN_FLEET_ETA_UNNAMED            | ETA för destinationen: %1 År
+MAIN_FLEET_ETA_NAMED              | ETA för %1: %2 År
+MAIN_FLEET_SET_RALLY              | Uppsamling Pågår
+MAIN_FLEET_AUTO_RETREAT           | Ta reträtt automatiskt vid anländande
+MAIN_FLEET_ETA_UNKNOWN            | Skanningar kan inte utröna destinationen
+MAIN_FLEET_THROUGH_NEBULA         | Maximal färdhastighet begränsad till Warb 1 av nebulosa
+
+MAIN_FLEET_CANCEL                 | Avbryt
+MAIN_FLEET_OUT_OF_RANGE           | Utom Räckvidd
+MAIN_FLEET_DEPLOY_FLEET           | Sänd Flotta
+MAIN_FLEET_UNDEPLOY_FLEET         | Avbryt Order
+MAIN_FLEET_INVALID_RETREAT        | Olämplig Reträttväg
+MAIN_FLEET_INVALID_DESTINATION    | Kan inte sända flotta till %1
+MAIN_FLEET_INVALID_DESTINATION2   | Kan inte sända flotta till systemet
+
+// Rally Point labels
+MAIN_RALLY_TITLE                  | Välj Samlingspunkt
+MAIN_RALLY_PROMPT                 | Välj ett system under din kontroll att sända nybyggda skepp till.
+MAIN_RALLY_FORWARD                | Vidarebefodra Inkommande Insamlingar
+MAIN_RALLY_TRAVEL_TIME            | Färdtid till %1: %2 År
+MAIN_RALLY_INSTANT_TIME           | Färdtid till %1: Omedelbar
+MAIN_RALLY_WILL_CANCEL            | Om du väljer den här destinationen kommer tidigare order om samlingspunkt att canceleras.
+MAIN_RALLY_ERROR                  | Endast system under egen kontroll.
+MAIN_RALLY_NO_SELECTION           | Mål Saknas
+MAIN_RALLY_CANCEL                 | Avbryt
+MAIN_RALLY_START                  | Påbörja Uppsamling
+MAIN_RALLY_STOP                   | Stoppa Uppsamling
+
+// Transport labels
+MAIN_TRANSPORTS_EMPIRE            | %1 Transportskepp
+MAIN_TRANSPORTS_COUNT             | %1 Transportskepp
+MAIN_TRANSPORTS_CANCEL            | Avbryt
+MAIN_TRANSPORTS_SHOW_DEST         | ETA till %1: %2 År
+MAIN_TRANSPORT_TITLE              | Förbereder Transportskepp
+MAIN_TRANSPORT_ABANDON_TITLE      | Evakuera System
+MAIN_TRANSPORT_PROMPT             | Välj ett koloniserat system att sända civila eller militära transportskepp till.
+MAIN_TRANSPORT_ABANDON_PROMPT     | Välj ett koloniserat system att evakuera alla civila transporter till.
+MAIN_TRANSPORT_SELECT_POP         | Välj mängden civil population att skicka (upp till hälften av %1's population).
+MAIN_TRANSPORT_SELECT_TROOPS      | Välj mängden militära trupper att skicka (upp till hälften av %1's population).
+MAIN_TRANSPORT_POP_LABEL          | Population
+MAIN_TRANSPORT_TOTAL_POP_LABEL    | Total Population: %1
+MAIN_TRANSPORT_ETA                | Färdtid till %1: %2 År
+MAIN_TRANSPORT_ERROR              | Måste ha ett koloniserat system som mål.
+MAIN_TRANSPORT_ABANDON_ERROR      | Du måste välja ett system tillhörandes %1.
+MAIN_TRANSPORT_OUT_OF_RANGE       | Systemet är utom räckvidd för våra militära transporter.
+MAIN_TRANSPORT_UNSCOUTED          | Vi kan inte skicka transportskepp till outforskade system.
+MAIN_TRANSPORT_HOSTILE            | Vi saknar teknologin att kunna landa i det här klimatet.
+MAIN_TRANSPORT_NO_ROOM            | Varning - Målet är för tillfället vid maximal befolkning!
+MAIN_TRANSPORT_SIZE_WARNING       | Varning - Målet kan bara uppehålla %1 miljoner!
+MAIN_TRANSPORT_NO_SELECTION       | Inget Mål Valt
+MAIN_TRANSPORT_CANCEL             | Avbryt
+MAIN_TRANSPORT_SEND               | Skicka Transporter
+MAIN_TRANSPORT_ABANDON            | Evakuera
+MAIN_TRANSPORT_CLEAR              | Rensa Order
+MAIN_TRANSPORT_SURRENDER          | Ge upp utan strid vid ankomst
+
+// Colony labels
+MAIN_COLONY_HOMEWORLD             | %1 Hemvärld
+MAIN_COLONY_FOUNDED               | %1 Koloni
+MAIN_COLONY_POPULATION            | Population
+MAIN_COLONY_FACTORIES             | Fabriker
+MAIN_COLONY_VALUE+                | %1+
+MAIN_COLONY_SHIELD                | Nivå av Sköldar
+MAIN_COLONY_BASES                 | Baser
+MAIN_COLONY_PRODUCTION            | Produktion - Netto (Brutto)
+MAIN_COLONY_SHIP                  | Skepp
+MAIN_COLONY_DEFENSE               | Förs
+MAIN_COLONY_INDUSTRY              | Ind
+MAIN_COLONY_ECOLOGY               | Eko
+MAIN_COLONY_TECHNOLOGY            | Tekn
+MAIN_COLONY_ALLOCATE_SPENDING     | Allokera Resurser
+MAIN_COLONY_SPENDING_NONE         | Ingen
+MAIN_COLONY_SPENDING_RESERVE      | Reserv
+MAIN_COLONY_SPENDING_TECH         | Tekn
+MAIN_COLONY_SPENDING_CONVERT      | Konversion
+MAIN_COLONY_SPENDING_REFIT        | Upprusta
+MAIN_COLONY_SPENDING_MAX_FACT     | Max
+MAIN_COLONY_SPENDING_WASTE        | Avfall
+MAIN_COLONY_SPENDING_ECO_GROWTH   | Tillväxt %1
+MAIN_COLONY_SPENDING_ATMOSPHERE   | Atmos
+MAIN_COLONY_SPENDING_ENRICH_SOIL  | Jord
+MAIN_COLONY_SPENDING_TERRAFORM    | T-form
+MAIN_COLONY_SPENDING_CLEANUP      | Bevarande
+MAIN_COLONY_SPENDING_GROWTH       | Tillväxt
+MAIN_COLONY_SPENDING_SHIELD       | Sköld
+MAIN_COLONY_SPENDING_UPG_BASES    | Uppgradering
+MAIN_COLONY_SPENDING_PLAGUE       | Epidemi
+MAIN_COLONY_SPENDING_SUPERNOVA    | Supernova
+MAIN_COLONY_SPENDING_FP           | %1 FP
+MAIN_COLONY_COMPLETION_YEAR       | 1 År
+MAIN_COLONY_COMPLETION_YEARS      | %1 År
+MAIN_COLONY_COMPLETION_CENTURY    | %1 År
+MAIN_COLONY_COMPLETION_PER_YEAR   | %1/År
+MAIN_COLONY_SHIPYARD_COMPLETED    | Färdigbyggt: %1
+MAIN_COLONY_SHIPYARD_LIMIT        | Upp till:
+MAIN_COLONY_SHIPYARD_LIMIT_NONE   | Ingen
+MAIN_COLONY_SHIPYARD_CONSTRUCTION | Kö för Skeppsbygge
+MAIN_COLONY_RELOCATE_LABEL        | Välj Samlingspunkt
+MAIN_COLONY_TRANSPORTS_LABEL      | Skicka Transporter
+MAIN_COLONY_ABANDON_LABEL         | Evakuera
+MAIN_COLONY_SHIP_SCRAPPED         | Skrotat
+MAIN_COLONY_NO_SHIELD             | Nebulosa
+
+// System Scouted Notification
+MAIN_SCOUT_TITLE                  | Våra Forskare Katalogiserar Ett Nytt Stjärnsystem
+MAIN_SCOUT_SUBTITLE_1             | Våra skepp har rekognoserat i det här systemet
+MAIN_SCOUT_SUBTITLE_2             | Våra astronomer har samlat data här
+MAIN_SCOUT_SUBTITLE_3             | Våra allierade har delat denna information
+MAIN_SCOUT_TYPE                   | Klassifikation: %1      Storlek: %2
+MAIN_SCOUT_NO_PLANET              | Inga Beboeliga Planeter Funna
+MAIN_SCOUT_HOSTILE_DESC           | Klimat: Ogästvänligt - Populationstillväxten är halverad i takt.
+MAIN_SCOUT_FERTILE_DESC           | Klimat: Bördig - Populationstillväxten ökar med +50%.
+MAIN_SCOUT_GAIA_DESC              | Klimat: Gaia - Populationstillväxten ökar med +100% jämfört med normalt.
+MAIN_SCOUT_ARTIFACTS_DESC         | Uråldriga Ruiner: Teknologiinsatser producerar dubbelt så mycket Forskningspoäng.
+MAIN_SCOUT_ANCIENTS_DESC          | Förelöparnas Ruiner: Teknologiinsatser producerar fyra gånger så mycket Forskningspoäng.
+MAIN_SCOUT_ULTRA_POOR_DESC        | Resurser: Extra fattigt - Industriproduktion sänkt till en tredjedel.
+MAIN_SCOUT_POOR_DESC              | Resurser: Mineralfattigt - Industriproduktion sänkt till hälften.
+MAIN_SCOUT_RICH_DESC              | Resurser: Mineralrikt - Industriproduktion fördubblad.
+MAIN_SCOUT_ULTRA_RICH_DESC        | Resurser: Extra rikt - Industriproduktion tredubblad.
+
+// Colonization prompt
+MAIN_COLONIZE_TITLE               | Våra Kolonister är i omloppsbana vid %1, ett okoloniserat system.
+MAIN_COLONIZE_PROMPT              | Etablera ny koloni?
+MAIN_COLONIZE_YES                 | Ja
+MAIN_COLONIZE_NO                  | Nej
+MAIN_COLONIZE_ANIMATION_TITLE     | År %1, formar [player_empire] en ny koloni.
+MAIN_COLONIZE_NAME_PROMPT         | Namnge Koloni
+MAIN_COLONIZE_NAME_OK             | OK
+
+// Reasons to ask player to reallocate a system (during next turn)
+MAIN_ALLOCATE_TITLE               | Budgetjusteringar
+MAIN_ALLOCATE_DESIGN_SCRAPPED     | Skeppsdesignen under konstruktion vid %1 har skrotats.
+MAIN_ALLOCATE_COLONIZED           | • %1 har koloniserats.
+MAIN_ALLOCATE_STARGATE_COMPLETE   | • %1 har färdigställt konstruktion av Stjärnport.
+MAIN_ALLOCATE_SHIPS_COMPLETE      | • %1 har färdigställt konstruktionen av %2 efterfrågade skepp.
+MAIN_ALLOCATE_SHIELD_COMPLETE     | • %1 har färdigställt konstruktion av %2.
+MAIN_ALLOCATE_BASES_COMPLETE      | • %1 har färdigställt konstruktion av %2 missilbaser.
+MAIN_ALLOCATE_BASES_UPGRADED      | • %1 har upgraderat sina missilbaser.
+MAIN_ALLOCATE_MAX_FACTORIES       | • %1 har nått sitt fabriksmaximum på %2 fabriker.
+MAIN_ALLOCATE_MAX_POPULATION      | • %1 har nått sitt populationsmaximum av %2 kolonister.
+MAIN_ALLOCATE_TERRAFORM_COMPLETE  | • %1 har färdigställt klimatanpassad terraformering.
+MAIN_ALLOCATE_ATMOSPHERE_COMPLETE | • %1 har terraformerats till ett normalt klimat med normal befolkningstillväxt.
+MAIN_ALLOCATE_FERTILE_COMPLETE    | • %1 har terraformerats till bördigt klimat med 150% av normal befolkningstillväxt.
+MAIN_ALLOCATE_GAIA_COMPLETE       | • %1 has terraformerats till ett gaia-klimat med dubbla den normala befolkningstillväxten.
+MAIN_ALLOCATE_SABOTAGE_BASES      | • %1 har fått %2 av sina missilbaser förstörda av %3 sabotörer.
+MAIN_ALLOCATE_SABOTAGE_FACTORIES  | • %1 har fått %2 av sina fabriker förstörda av %3 sabotörer.
+MAIN_ALLOCATE_COLONY_CAPTURED     | • %1 har tillfångatagits av trupper från %2.
+MAIN_ALLOCATE_ECO_LOCKED_WASTE    | • %1 har sin ekologiska budget manuellt låst vid en nivå som är otillräcklig för att röja upp industriavfall.
+MAIN_ALLOCATE_PROJECT_ENDED       | • %1 forskar inte längre på sitt särskilda projekt: %2
+MAIN_ALLOCATE_CHANGE_SPENDING     | Budgetallokeringar för systemet kan vid detta tillfälle justeras.
+MAIN_ALLOCATE_NOTICE_NUMBER       | Notis %1 av %2
+MAIN_ALLOCATE_BRIEF_NUMBER        | %1 av %2
+MAIN_ALLOCATE_PREV_SYSTEM         | Tidigare
+MAIN_ALLOCATE_NEXT_SYSTEM         | Nästa
+MAIN_ALLOCATE_CLOSE               | Stäng
+
+// Fleet Production display (during next turn)
+MAIN_FLEET_PRODUCTION_TITLE       | Summering av Producerade Skepp
+MAIN_FLEET_SHIP_COUNT             | %1/%2
+
+// 32-bit Java Warning
+MAIN_JAVA_32BIT_TITLE             | Varning! 32-bitars Java i bruk
+MAIN_JAVA_32BIT_DESC              | Du använder för tillfället en 32-bitars version av Java för att köra spelet. Det här kan markant påverka mängden tillgängligt minne och spelets prestanda.
+MAIN_JAVA_32BIT_DESC_2            | Även om Förelöparnas Kvarlämnor kan köras i det här läget, kommer en uppgradering till 64-bitars Java förbättra spelupplevelsen.
+MAIN_JAVA_32BIT_DESC_3            | Om du behöver hjälp med att uppgradera Java, var vänlig besök www.reddit.com/r/rotp online och fråga om assistans.
+MAIN_JAVA_32BIT_OK                | OK
+
+// Memory Low Warning
+MAIN_MEMORY_LOW_TITLE             | Varning! Lågt Tillgängligt Minne
+MAIN_MEMORY_LOW_DESC              | Minnet tillgängligt för spelet ligger på låga nivåer. Det här kan orsakas av långa sessioner med klienten öppen eller att man inte startat med nog ledigt minne.
+MAIN_MEMORY_LOW_DESC_2            | Tryck på "Starta om" för att starta om klienten och fortsätta härifrån. Fortsatt spelande utan omstart kan resultera i oförutsedda konsekvenser, inkluderande förlust av sparad data och omgång.
+MAIN_MEMORY_LOW_DESC_3            | Om det här meddelandet återkommande dyker upp, prova stäng andra appar och program på din dator innan omstart.
+MAIN_MEMORY_LOW_RESTART           | Starta om
+MAIN_MEMORY_LOW_SKIP              | Skippa
+
+// Autosave Failed Warning
+MAIN_AUTOSAVE_FAILED_TITLE        | Varning! Autosparande Misslyckat
+MAIN_AUTOSAVE_FAILED_DESC         | Den automatiska Autosparande funktionen som aktiveras vid tryck av "Nästa Tur" har misslyckats att fungera. Det här kan vara ett tillfälligt litet missöde, men det är bäst att spara omgången manuellt innan vidare fortsättning av spel.
+MAIN_AUTOSAVE_FAILED_DESC_2       | Klientens felavläsande meddelande lyder: %1
+MAIN_AUTOSAVE_FAILED_DESC_3       | Om det här meddelandet återkommande dyker upp, var god besök www.reddit.com/r/rotp online och bifoga den här skärmdumpen.
+MAIN_AUTOSAVE_FAILED_OK           | OK
+
+// Alerts
+MAIN_ALERT_TITLE                  | Larm
+MAIN_ALERT_TITLE_COUNT            | Alarm - %1 av %2
+MAIN_ALERT_SPY_REPORT             | Vår underrättelsebyrå rapporterar ny information om nyligen utförd spionaktivitet.
+MAIN_ALERT_TECH_STOLEN            | Intern säkerhet har avslöjat möjligt espionage av spioner från [alien_race].
+MAIN_ALERT_FACTORIES_DESTROYED    | Agenter i tjänst för [alien_empire] har förstört %1 fabriker vid %2-systemet.
+MAIN_ALERT_BASES_DESTROYED        | Agenter i tjänst för [alien_empire] har förstört %1 missilbaser på planeten i %2.
+MAIN_ALERT_FACTORIES_DESTROYED2   | Oupptäckta sabotörer har har förstört %1 fabriker vid %2-systemet.
+MAIN_ALERT_BASES_DESTROYED2       | Oupptäckta sabotörer har förstört %1 missilbaser på planeten i %2.
+MAIN_ALERT_TRANSPORTS_PERISHED    | Kolonin vid %1 har blivit förstörd. Våra transporter som sökte ansluta sig till kolonin har alla förgåtts.
+MAIN_ALERT_TRANSPORTS_CAPTURED    | Våra %2 transporter anländades vid %1 har kapitulerat till [alien_raceposs] styrkor.
+MAIN_ALERT_TRANSPORTS_KILLED      | Våra %3 transporter som försökte nå %2 har blivit förstörda av försvarande %1 styrkor.
+MAIN_ALERT_INVADERS_CAPTURED      | %2 [alien_race] transporter anländandes i %1-systemet har kapitulerat till vårt försvar.
+MAIN_ALERT_INVADERS_KILLED        | %2 [alien_race] transporter som försökte invadera %1 har fullständigt förstörts av våra defensiva styrkor.
+MAIN_ALERT_TRESPASSING1           | [alien_race] skepp har upptäckts inkräktande på vårt område vid %1.
+MAIN_ALERT_TRESPASSING2           | [alien_race] ambassadör protesterar mot våra skepps inkräktande vid %1.
+MAIN_ALERT_TRADE_MATURED          | Vårt handelsavtal med %1 har nått sitt maxvärde på %2 BC per år.
+MAIN_ALERT_ALLIANCE_WEAKENING     | Vår allians med [ally_empire] håller på att försvagas.
+MAIN_ALERT_ALLIANCE_BREAKING      | Vår allians med [ally_empire] är på gränsen till att brista!
+
+// Colony Listing UI
+PLANETS_TITLE                     | %1 Kolonier
+PLANETS_VIEW_ECOLOGY              | Ekologi-Översyn
+PLANETS_VIEW_INDUSTRY             | Industri-Översyn
+PLANETS_VIEW_MILITARY             | Militär Översyn
+PLANETS_SPENDING_COSTS            | Statsbudget
+PLANETS_COSTS_DESC                | Varje koloni betalar en procent av sin produktion till imperiets kostnader.
+PLANETS_COSTS_SHIPS               | Underhåll av Flottor
+PLANETS_COSTS_BASES               | Missilbaser
+PLANETS_COSTS_STARGATES           | Stjärnportar
+PLANETS_COSTS_SPYING              | Spionage
+PLANETS_COSTS_SECURITY            | Säkerhet
+PLANETS_TOTAL_INCOME              | Årlig Inkomst
+PLANETS_INCOME_TRADE              | Handelsinkomst
+PLANETS_INCOME_PLANETS            | Koloniproduktion
+PLANETS_INCOME_TOTAL              | Totalt
+PLANETS_TREASURY                  | Statskassa
+PLANETS_TREASURY_FUNDS            | Tillgångar
+PLANETS_TAX_DESC                  | Beskatta dina kolonier för att föra över medel till statskassan.
+PLANETS_RESERVE_TAX               | Skatt för Reserver
+PLANETS_RESERVE_INCREASE          | +%1 BC/År
+PLANETS_RESERVE_NO_TAX            | Ingen Beskattning
+PLANETS_RESERVE_ONLY_DEVELOPED    | Beskatta endast färdigutbyggda kolonier.
+PLANETS_BUTTON_TRANSFER           | ÖVERFÖR
+PLANETS_BUTTON_EXIT               | AVBRYT
+PLANETS_AMT_PCT                   | %1%
+PLANETS_AMT_BC                    | %1 BC
+PLANETS_TRANSFER_DESC             | Överför Statliga Medel till %1
+PLANETS_TRANSFER_CANCEL           | Avbryt
+PLANETS_TRANSFER_ACCEPT           | Överför
+PLANETS_COLONY_TRANSFER_TITLE     | Injicera Kapital
+PLANETS_COLONY_TRANSFER_DETAIL    | Använd statskassans reserver för att injicera medel för att stimulera en kolonis produktion.
+PLANETS_COLONY_TRANSFER_BUTTON    | Överför Kapital Från Statskassan
+PLANETS_LIST_NUM                  | 
+PLANETS_LIST_NAME                 | Namn
+PLANETS_LIST_POPULATION           | Population
+PLANETS_LIST_POP                  | Pop.
+PLANETS_LIST_SIZE                 | Storlek
+PLANETS_LIST_TYPE                 | Typ
+PLANETS_LIST_FACTORIES            | Fabriker
+PLANETS_LIST_WASTE                | Avfall
+PLANETS_LIST_BASES                | Baser
+PLANETS_LIST_SHIELD               | Sköld
+PLANETS_LIST_PRODUCTION           | Prod
+PLANETS_LIST_CAPACITY             | Kapacitet
+PLANETS_LIST_RESERVE              | Reserv
+PLANETS_LIST_SHIPYARD             | Skeppsvarv
+PLANETS_LIST_NOTES                | Anteckningar
+PLANETS_LIST_TURNS                | Turer
+PLANETS_LIST_YEARS                | År
+PLANETS_LIST_TRANSPORTS           | Transporter
+PLANETS_LIST_RESOURCES            | Resurser
+PLANETS_MULTI_SYSTEMS             | %1 System
+PLANETS_AGGREGATE_VALUES          | Sammanlagda Värden
+PLANETS_SPENDING_0                | Ingen %1 Allokering
+PLANETS_SPENDING_25               | 25% %1 Allokering
+PLANETS_SPENDING_50               | 50% %1 Allokering
+PLANETS_SPENDING_75               | 75% %1 Allokering
+PLANETS_SPENDING_MAX              | Maximal %1 Allokering
+PLANETS_HELP_ALL                  | ÖVERSIKT - Denna display visar ditt imperiums ekonomiska information samt en detaljerad lista av dina kolonier, sorterbart efter olika kategorier.
+PLANETS_HELP_1A                   | Ekologi - Klicka på fliken för att visa ekologisk översikt för kolonier.
+PLANETS_HELP_1B                   | Industry - Klicka på fliken för att visa industriell översikt för kolonier.
+PLANETS_HELP_1C                   | Military - Klicka på fliken för att visa militär översikt för kolonier.
+PLANETS_HELP_1D                   | Allokering av en kolonis budget kan justeras på samma sätt som huvudpanelen.
+PLANETS_HELP_1E                   | Utöka en kolonis produktion med upp till 50% genom att överföra medel från statskassan.
+PLANETS_HELP_1F                   | Total Inkomst för hela imperiet.
+PLANETS_HELP_1G                   | Sammanlagda Utgifter för hela imperiet, uttryckt som en procent av inkomsten.
+PLANETS_HELP_1H                   | Samla in resurser från dina kolonier genom beskattning för att lägga till statskassan. Med alternativ till att begränsa beskattning till endast kolonier som färdigställt sina projekt inom Ekologi, Industri och Försvar.
+PLANETS_HELP_2A                   | Namn - Systemets namn. Redigerbart.
+PLANETS_HELP_2B                   | Population - Nuvarande population, inklusive tillväxt från turen innan.
+PLANETS_HELP_2C                   | Typ - Klimat- och terrängstyp av planet. Grön representerar Bördiga planeter.
+PLANETS_HELP_2D                   | Resurser - visar planeters resursstatus: Mineralrika, Mineralfattiga och Reliker.
+PLANETS_HELP_2E                   | Storlek - Planetens nuvarande storlek.
+PLANETS_HELP_2F                   | Avfall - nivåerna av industriellt avfall på en planet. 
+PLANETS_HELP_2G                   | Anteckningar - Spelarens egna anteckningar. Redigerbart.
+PLANETS_HELP_3A                   | Namn - Systemets namn. Redigerbart.
+PLANETS_HELP_3B                   | Population - Nuvarande population, inklusive tillväxt från turen innan.
+PLANETS_HELP_3C                   | Resurser - visar planeters resursstatus: Mineralrika, Mineralfattiga och Reliker.
+PLANETS_HELP_3D                   | Fabriker - Antalet fabriker, inklusive de tillagda sedan turen innan. 
+PLANETS_HELP_3E                   | Produktion - kolonins totala produktion.
+PLANETS_HELP_3F                   | Reserv - totala reserven för tillfället lagrad på kolonin.
+PLANETS_HELP_3G                   | Anteckningar - Spelarens egna anteckningar. Redigerbart.
+PLANETS_HELP_3H                   | Kapacitet - procent av maximala potentiala produktionen.
+PLANETS_HELP_4A                   | Namn - Systemets namn. Redigerbart.
+PLANETS_HELP_4B                   | Population - Nuvarande population, inklusive tillväxt från turen innan.
+PLANETS_HELP_4C                   | Resurser - visar planeters resursstatus: Mineralrika, Mineralfattiga och Reliker.
+PLANETS_HELP_4D                   | Produktion - kolonins totala produktion.
+PLANETS_HELP_4E                   | Sköld - nivå av planetär sköld.
+PLANETS_HELP_4F                   | Baser - antalet missilbaser på planeten. Markerat i rött om de inte är utrustade med den senaste teknologin.
+PLANETS_HELP_4G                   | Skeppsvarv - den skeppsdesign som konstrueras.
+PLANETS_HELP_4H                   | Anteckningar - Spelarens egna anteckningar. Redigerbart.
+PLANETS_HELP_4I                   | Flagga - användar-vald flagga för ett system.
+
+// Bombardment prompt
+MAIN_BOMBARDED_TITLE             | %1 har blivit bombarderad av %2 styrkor.
+MAIN_BOMBARD_TITLE               | Våra styrkor är i omloppsbana vid en fientlig koloni tillhörandes %2.
+MAIN_BOMBARD_TROOPS              | %1 %2 trupper är i omloppsbana eller på väg mot den här kolonin.
+MAIN_BOMBARD_PROMPT              | Bombardera planeten?
+MAIN_BOMBARD_YES                 | Ja
+MAIN_BOMBARD_NO                  | Nej
+MAIN_BOMBARD_POPULATION          | Population: %1
+MAIN_BOMBARD_FACTORIES           | Fabriker: %1
+MAIN_BOMBARD_BASES               | Baser: %1
+MAIN_BOMBARD_SHIELD              | Sköld: %1
+MAIN_BOMBARD_COMPLETE            | Bombardemang Färdigt.
+MAIN_BOMBARD_DESTROYED           | Koloni Förstörd
+MAIN_BOMBARD_DMG                 | (%1)
+MAIN_BOMBARD_NAME_PROMPT         | Kolonins Namn
+
+
+// Fleet listing UI
+FLEETS_TITLE                      | Flottor
+FLEETS_SELECT_SYSTEMS             | Välj System
+FLEETS_SELECT_FLEETS              | Välj Flottor
+FLEETS_SELECT_ALL                 | Välj Alla
+FLEETS_DESELECT_ALL               | Avmarkera Alla
+FLEETS_FILTER_BY                  | Filtrera efter:
+FLEETS_CONSTRUCTING_DESIGN        | Och byggandes:
+FLEETS_INCLUDES_SHIP_TYPE         | Sänd Enbart Skepp av Typ:
+FLEETS_SELECTED_SHIPS             | Markerad för Färddirektiv
+FLEETS_BUILDING_DESIGN            | %1
+FLEETS_HAS_STARGATE               | System har en Stjärnport
+FLEETS_HAS_NO_STARGATE            | System har inte en Stjärnport
+FLEETS_HAS_RALLY_POINT            | System har en Samlingspunkt
+FLEETS_HAS_NO_RALLY_POINT         | System har inte en Samlingpunkt
+FLEETS_SENDING_TRANSPORTS         | System sänder transportskepp
+FLEETS_NOT_SENDING_TRANSPORTS     | System sänder inte transporter
+FLEETS_IS_RICH                    | System är mineralrikt eller extra rikt
+FLEETS_IS_ULTRA_RICH              | System är extra rikt
+FLEETS_IS_POOR                    | System är mineralfattigt eller extra fattigt
+FLEETS_IS_ULTRA_POOR              | System är extra fattigt
+FLEETS_IS_STANDARD                | System har normala resurser
+FLEETS_SYSTEMS_SELECTED           | %1  System Valda
+FLEETS_FLEETS_SELECTED            | %1  Flottor Valda
+FLEETS_MULTIPLE_DESIGNS           | Multipla
+FLEETS_RELOCATE_LABEL             | Välj Samlingspunkt
+FLEETS_TRANSPORTS_LABEL           | Sänd Transporter
+FLEETS_SPENDING_LABEL             | Allokera Skeppsbudget
+FLEETS_HAS_ORDERS                 | Flotta är i färd
+FLEETS_HAS_NO_ORDERS              | Flotta är i omloppsbana
+FLEETS_IS_RALLYING                | Flotta är i färd för uppsamling
+FLEETS_DESIGN_COUNT               | %1 %2
+FLEETS_DEPLOY_FLEETS              | Sänd Flottor
+FLEETS_SET_RALLY_POINTS           | Välj Samlingspunkter
+FLEETS_STOP_RALLIES_DESC          | %1 valda system har redan designerade samlingspunkter
+FLEETS_STOP_RALLIES               | Avbryt Uppsamling
+FLEETS_SETTING_RALLY_POINTS       | Öppnande Samlingspunkter
+FLEETS_START_RALLIES_DESC         | Välj ett system under din kontroll att sända nybyggda skepp till från alla system valda med markering.
+FLEETS_START_RALLIES              | Påbörja Uppsamlingar
+FLEETS_SEND_TRANSPORTS            | Sänd Transporter
+FLEETS_ADJUST_SPENDING_SELECT     | Välj system för justering av allokering för skeppsbygge
+FLEETS_ADJUST_SPENDING_DESC       | Välj önskade budgetnivåer för skeppsbygge i alla %1 valda system
+FLEETS_ADJUST_SPENDING_DESC2      | De andra allokeringarna kommer automatiskt att justeras.
+FLEETS_ADJUST_SPENDING_DESC3      | Ekologi kommer behålla minimi-allokering för att hålla efter industriavfall.
+FLEETS_ADJUST_SPENDING            | Justera Budget för Skeppsbygge
+FLEETS_SPENDING_0                 | Ingen Skeppsallokering
+FLEETS_SPENDING_25                | 25% Skeppsallokering
+FLEETS_SPENDING_50                | 50% Skeppsallokering
+FLEETS_SPENDING_75                | 75% Skeppsallokering
+FLEETS_SPENDING_MAX               | Maximal Skeppsallokering
+FLEETS_SPENDING_CANCEL            | Avbryt
+FLEETS_CANCEL_TRANSPORTS_DESC     | %1 valda system har redan planerade mål för transportskepp
+FLEETS_CANCEL_TRANSPORTS          | Ångra Transporter
+FLEETS_DEPLOYING_TRANSPORTS_DESC  | Välj ett system inom räckvidd som mål för transporter av kolonister eller militära trupper.
+FLEETS_DEPLOY_TRANSPORTS          | Sänd Transporter
+FLEETS_FLEET_DEPLOYMENT           | Sänd Flottor
+FLEETS_UNDEPLOYING_FLEETS         | %1 valda flottor har redan designerad order om färd.
+FLEETS_CANCEL_DEPLOYMENTS         | Ångra Färddirektiv
+FLEETS_DEPLOYING_FLEETS           | Sänder Flottor
+FLEETS_DEPLOYING_FLEETS_DESC      | Välj ett system inom räckvidd för att ge alla valda flottor order om utfärd.
+FLEETS_DEPLOY_FLEETS              | Sänd Flottor
+FLEETS_TRANSPORTS_TITLE           | Sänd Transporter Från:
+FLEETS_TRANSPORTS_SEND            | Sänd %1 Transporter
+FLEETS_TRANSPORTS_SYNCH           | Synka
+FLEETS_TRANSPORTS_UNSYNCH         | Avsynka
+FLEETS_TRANSPORT_NO_ROOM          | Varning - Målet är för tillfället vid maximal befolkning!
+FLEETS_TRANSPORT_SIZE_WARNING     | Varning - Målet kan bara uppehålla %1 miljoner!
+FLEETS_TRANSPORT_TIME             | Beräknad ankomst: %1 år
+FLEETS_TRANSPORT_TIME_RANGE       | Beräknad ankomst: %1 till %2 år
+FLEETS_CANNOT_SEND_TRANSPORTS     | %1 kan inte skicka transportskepp
+FLEETS_EXISTING_TRANSPORT         | Skickar %1 transporter till %2
+FLEETS_EXISTING_STOP              | Stopp
+FLEETS_CANCEL                     | Avbryt
+FLEETS_HELP_ALL                   | ÖVERSIKT - Denna display visar hantering av flottor, transporter och skeppsbyggande i makroskala. Generellt kommer du använda den för att välja en grupp flottor eller system, filtrera dem till en mer specifik grupp, och sen välja den aktion du vill utföra.
+FLEETS_HELP_1A                    | Välj System - det finns tre sätt att välja system: 1) genom att klicka på system på kartan, 2) genom att höger-klicka och dra en box över kartan, och 3) genom att använda knapparna för "Markera Alla" och "Avmarkera Alla".
+FLEETS_HELP_1B                    | Filtrera Efter - markera kryssrutor för att begränsa listningen av markerade system. Du kan också klicka på filtren för att rotera igenom relaterade alternativ.
+FLEETS_HELP_1C                    | Byggandes - filtrera system efter skeppsdesignen under konstruktion.
+FLEETS_HELP_1D                    | Skeppsdesign - byt vilken skeppsdesign som konstrueras i det markerade systemen. Om bild saknas betyder det att de markerade systemen håller på att bygga olika skeppsdesigner. Beakta! Ingen förfrågan om att bekräfta ditt val kommer att ställas.
+FLEETS_HELP_1E                    | Skicka Transporter - skicka transporter från de markerade systemen till ett enda utvalt planetärt mål.
+FLEETS_HELP_1F                    | Välj Samlingspunkt - välj samlingspunkter för de markerade systemen till ett enda system.
+FLEETS_HELP_2A                    | Markera Flottor - det finns tre sätt att markera flottor: 1) genom att klicka på flottor på kartan, 2) genom att dra en box med höger musknapp över kartan, och 3) genom att använda knapparna för "Markera Alla" och "Avmarkera Alla".
+FLEETS_HELP_2B                    | Filtrera Efter - markera kryssrutor för att begränsa listningen av markerade flottor. Du kan också klicka på filtren för att rotera igenom relaterade alternativ.
+FLEETS_HELP_2C                    | Sänd Endast Skepp av Typ - begränsa vilken typ av skepp du vill ge färddirektiv bland dina flottor.
+FLEETS_HELP_2D                    | Markerade för Färd - ett specifierat antal skepp, efter typ, som kommer att sändas.
+FLEETS_HELP_2E                    | Sänd Flottor - sänd de markerade flottorna till ett specifikt system.
+
+// Select Next Tech to Research UI
+TECH_RESEARCH_COMPUTER            | Välj nästa datorteknologi våra forskare ska fokusera på.
+TECH_RESEARCH_CONSTRUCTION        | Välj nästa konstruktionsteknologi våra forskare ska fokusera på.
+TECH_RESEARCH_FORCE_FIELD         | Välj nästa kraftfältsteknologi våra forskare ska fokusera på.
+TECH_RESEARCH_PLANETOLOGY         | Välj nästa planetära teknologi våra forskare ska fokusera på.
+TECH_RESEARCH_PROPULSION          | Välj nästa driftrelaterad teknologi våra forskare ska fokusera på.
+TECH_RESEARCH_WEAPON              | Välj nästa vapenteknologi våra forskare ska fokusera på.
+TECH_TOP_TIER_DETAIL              | När det här forskningsalternativet är genomfört kommer val av mer avancerade teknologier bli tillgängliga.
+TECH_OBSOLETE_DETAIL              | Den här teknologin är förlegad och är inte i bruk.
+TECH_CAN_CHANGE                   | Ditt val kan ändras under Forskning, om ändringen sker innan nästa tur.
+TECH_CHOOSE_RESEARCH_COST         | %1 FP
+TECH_CHOOSE_RESEARCH_TIER         | Nivå %1
+TECH_TRADE_TIER_COST_INFO         | (Nivå %1 - %2 FP)
+TECH_CONFIRM_CHOICE               | Välj
+TECH_DISCOVERY_TITLE              | [player_race] Forskare har nått ett Genombrott för %1
+TECH_SCOUTED_TITLE                | Spejare Utforskandes Ruinerna vid %1 Upptäckte
+TECH_STOLEN_TITLE                 | Våra spioner har infiltrerat %1 forskningscenter vid %2.
+TECH_TRADED_TITLE                 | [player_raceposs] Forskare Erhåller Teknologi från [alien_race] Forskare
+TECH_PLUNDERED_TITLE              | Trupperna vid Ruinerna av %1 har Plundrat 
+TECH_DERELICT_TITLE               | [player_race] Spejare har Plundrat en Uråldrig Teknologi
+TECH_GUARDIAN_TITLE               | [player_race] Trupper Extraherar ett Uråldrigt Vapen
+TECH_ALLOCATE_SHIELD              | Vill du automatiskt justera allokeringen av alla koloniers försvarsbudget för att bygga de nya planetära sköldarna?
+TECH_ALLOCATE_MISSILE_BASES       | Vill du automatiskt justera allokeringen av alla koloniers försvarsbudget för att uppgradera våra missilbaser?
+TECH_ALLOCATE_FACTORIES           | Vill du höja industribudgeten på alla kolonier för att uppgradera kontrollerna för fabrikerna?
+TECH_ALLOCATE_CLEAN_WASTE         | Vill du automatiskt reducera ekologibudgeten på alla kolonier till minsta möjliga mängd för att hålla dem rena?
+TECH_ALLOCATE_ENRICH_SOIL         | Ska vi höja ekologibudgeten på våra kolonier med standard-klimat för att börja terraformera våra planeter?
+TECH_ALLOCATE_ATMOSPHERE          | Ska vi höja ekologibudgeten på våra kolonier med ogästvänligt klimat för att börja terraformera våra planeter?
+TECH_ALLOCATE_TERRAFORM           | Ska vi höja ekologibudgeten på våra alla våra kolonier för att börja terraformera våra planater?
+TECH_ALLOCATE_NO                  | Nej
+TECH_ALLOCATE_PCT                 | +%1%
+TECH_COMPLETED_TITLE              | Forskning Färdig!
+TECH_COMPLETED_COMPUTER           | Vi har fullbordat all tillgänglig forskning inom Datorteknik! Det finns inte längre några teknologier att forska fram.
+TECH_COMPLETED_CONSTRUCTION       | Vi har fullbordat all tillgänglig forskning inom Bygg- och maskinteknik! Det finns inte längre några teknologier att forska fram.
+TECH_COMPLETED_FORCE_FIELD        | Vi har fullbordat all tillgänglig forskning inom Kraftfältsteknik! Det finns inte längre några teknologier att forska fram.
+TECH_COMPLETED_PLANETOLOGY        | Vi har fullbordat all tillgänglig forskning inom Planetologi! Det finns inte längre några teknologier att forska fram.
+TECH_COMPLETED_PROPULSION         | Vi har fullbordat all tillgänglig forskning inom Framdrivningssystem! Det finns inte längre några teknologier att forska fram.
+TECH_COMPLETED_WEAPON             | Vi har fullbordat all tillgänglig forskning inom Vapenteknik! Det finns inte längre några teknologier att forska fram.
+TECH_COMPLETED_ALL                | Vi har fullbordat all tillgänglig forskning. Tiden för sådana grubblerier är över. All framtida budget lagd på forskning kommer överföras till statskassan.
+TECH_COMPLETED_VERIFY             | Var god bekräfta att budgetallokeringen för kvarvarande fält av forskning är lämpligt inställda.
+
+// prompt for espionage
+NOTICE_ESPIONAGE_TITLE            | Våra spioner har infiltrerat en bas tillhörandes [alien_race].
+NOTICE_ESPIONAGE_SUBTITLE         | Välj typ av teknologi att stjäla.
+NOTICE_ESPIONAGE_NO_TECH          | Ingen Tillgänglig Teknologi
+NOTICE_ESPIONAGE_MANY_TECHS       | %1 Tillgängliga Teknologier
+NOTICE_ESPIONAGE_FOOTER           | Om du blir upptäckt kan det orsaka en Diplomatisk Incident.
+NOTICE_ESPIONAGE_FRAME_TITLE      | Våra spioner har lyckats beskylla ett annat imperium för stölden.
+NOTICE_ESPIONAGE_FRAME_SUBTITLE   | Välj vem du vill beskylla:
+
+// Spy Capture display (during next turn)
+NOTICE_SPIES_TITLE                | Spionrapport
+NOTICE_SPIES_NO_ACTIVITY          | Ingen särskild spionaktivitet observerad.
+NOTICE_SPIES_ACTIVITY             | Händelser:
+NOTICE_SPIES_LOST_DESC            | • [alien_empire] har kontrat %1 av våra spionnätverk.
+NOTICE_SPIES_LOST_CONFESSED       | Våra spioner har erkänt pågående initiativ till sabotage.
+NOTICE_SPIES_LOST_CONFESSED2      | Våra spioner har erkänt pågående initiativ till spionage.
+NOTICE_SPIES_LOST_CONFESSED3      | Våra spioner tvingades erkänna pågående initiativ till sabotage.
+NOTICE_SPIES_CAUGHT_DESC          | • Våra interna säkerhetsstyrkor har kontrat %1 spionnätverk tillhörandes [alien_empire].
+NOTICE_SPIES_CAUGHT_CONFESSED     | Deras spioner har bekänt pågående initiativ till sabotage.
+NOTICE_SPIES_CAUGHT_CONFESSED2    | Deras spioner har bekänt pågående initiativ till spionage.
+NOTICE_SPIES_FRAMED               | • Vi har beskyllts för spionage i [alien_empire].
+NOTICE_SPIES_ESPIONAGE            | • Våra spioner har stulit hemligheterna bakom %1 från [alien_empire].
+NOTICE_SPIES_ESPIONAGE_FRAME      | Vi har lyckats beskylla [framed_empire] för stölden.
+NOTICE_SPIES_SABOTAGE_FACTORIES   | • Våra spioner har lyckats förstöra %1 fabriker i %2-systemet.
+NOTICE_SPIES_SABOTAGE_BASES       | • Våra spioner har lyckats förstöra %1 missilbaser på planetens yta vid %2.
+NOTICE_SPIES_SABOTAGE_REBELS      | • Våra spioner har lyckats uppvigla rebeller i %2-systemet.
+NOTICE_SPIES_SABOTAGE_REBELLION   | • Våra spioner har lyckats få uppror att bryta ut i %2-systemet.
+NOTICE_SPIES_LEARNED_TECH         | • Våra spioner rapporterar att [alien_empire] nyligen har utrönt följande teknologier vi inte bemästrat ännu: %1
+// this just details how to concatenate a list of multiple technology (English uses ,)
+NOTICE_SPIES_MULTIPLE_TECHS       | %1, %2
+NOTICE_SPIES_THREATEN             | Hota
+NOTICE_SPIES_MANAGE               | Hantera Spioner
+NOTICE_SPIES_CLOSE                | Stäng  
+  
+// Ground Combat UI
+INVASION_BATTLE                   | År %1, går [attacker_race] och [defender_race] till strid om %2.
+INVASION_BATTLE_REBELS            | År %1, går [attacker_race] och rebellerna vid %2 till strid.
+INVASION_TROOPS_LANDED            | %1 [attacker_race] trupper har landat.
+INVASION_SOME_TROOPS_LANDED       | %1 of %2 [attacker_race] trupper har landat.
+INVASION_WIN                      | [attacker_race] transportskepp tillfångatar %2.
+INVASION_LOSS                     | [defender_raceposs] trupper lyckas försvara %2.
+INVASION_ATTACKERS_TITLE          | %1 [attacker_race] Trupper
+INVASION_DEFENDERS_TITLE          | %1 [defender_race] Trupper
+INVASION_REBELS_TITLE             | %1 [defender_race] Rebeller
+INVASION_TROOP_ARMOR_DESC         | %1 %2
+
+// GNN Text
+GNN_TITLE                         | [player_race] Galaktiska Nyheters Kanal rapporterar:
+GNN_EMPIRE_RANKING                | %1. [empire_race]
+GNN_EXTINCTION_KNOWN_VICTIM       | [victim_race]
+GNN_EXTINCTION_KNOWN_KILLER       | [killer_race]
+GNN_EXTINCTION_UNKNOWN_VICTIM     | En okänd civilisation 
+GNN_EXTINCTION_UNKNOWN_KILLER     | ett okänt imperium
+GNN_EXTINCTION                    | %1 har fullständigt utrotats av %2.
+GNN_EXTINCTION_NO_KILLER          | %1 har blivit totalt eliminerat.
+GNN_EXPANSION_1                   | [expanding_empire] innefattar nu %1 stjärnsystem, utklassande alla andra folkslag.
+GNN_EXPANSION_2                   | [expanding_empire] innefattar nu %1 stjärnsystem. Om deras expansion inte kan tyglas in, kommer de snart kontrollera galaxen.
+GNN_EXPANSION_3                   | [expanding_empire] dominerar nu majoriteten av galaxens beboeliga system. Ledare håller redan på att förbereda sig för att inneslutas i det mäktiga imperiet.
+GNN_ALLIANCE_FORMED               | [first_empire] har slutit samman i en Allians med [second_empire].
+GNN_ALLIANCE_BROKEN               | Alliansen mellan [first_empire] och [second_empire] har blivit bruten.
+GNN_FLEETS_RANKING                | Den nuvarande rangordningen av militära rymdflottors storlek:
+GNN_CENSUS_RANKING                | Rangordningen av högsta population efter folkräkning:
+GNN_PRODUCTION_RANKING            | Den nuvarande rangordningen för imperiers olika totalproduktion:
+GNN_TECHNOLOGY_RANKING            | Den nuvarande rangordningen för mest avancerad teknologi:
+GNN_PLAYER_REBELLION              | %1 har gjort uppror och vägrar bidra till [rebelling_empire] mer. Minst %2 miljoner rebeller kontrollerar nu kolonin. Man kommer måsta sända trupper för att stävja revolten.
+GNN_ALIEN_REBELLION               | %1 har gjort uppror och vägrar bidra till [rebelling_empire] mer. Minst %2 miljoner rebeller kontrollerar nu kolonin.
+GNN_PLAYER_REBELLION_SPREAD       | Revolterna fortsätter att spridas genom [rebelling_empire]. Åtminstone %2 miljoner rebeller har nu tagit kontroll över kolonin vid %1. 
+GNN_OVERTHROW                     | En ny ledare har klivit fram i [alien_empire]. Det ryktas om att denne nye regent är en %1. Alla diplomatiska relationer har nu blivit neutrala och alla handelsavtal avbrutna.
+GNN_END_COUNCIL                   | Med endast två återstående Imperier, har försök att ena galaxen genom det Galaktiska Rådet kommit till sitt slut. Ledare och officerare debatterar nu vilket sorts sista slut galaxen kan få, och om det kan etableras en bestående fred.
+GNN_FORM_COUNCIL                  | I strävan efter fred i galaxen kommer representanter från varje folkslag snart sammanträda för att utvälja en Galaktisk Kejsare. Valet står mellan ledarna av de två imperier som har högst population.
+GNN_ALLY_AT_WAR                   | Vår allierade, [ally_empire], har gått till krig mot [other_empire].
+
+// Error UI text
+ERROR_TITLE                       | Ett fel har uppstått!  :(
+ERROR_MESSAGE                     | Om du vill hjälpa till med att se till att problemet blir adresserat, vänligen skicka en skärmdump av nuvarande UI, samt sparfilen 'recent.rotp' till Ray Fowler, eller uppmärksamma honom om problemet på den engelska subredditen för ROTP / Remnants of the Precursors.
+ERROR_EMAIL                       | Email: rayfowler@fastmail.com
+ERROR_REDDIT                      | Reddit: www.Reddit.com/r/rotp
+
+// Setup UI
+SETUP_SELECT_RACE                 | Välj Ditt Folkslag
+SETUP_SELECT_OPPONENTS            | Välj Motståndare
+SETUP_SELECT_GALAXY               | Välj Galax
+SETUP_SELECT_GALAXY_OPTIONS       | Välj Inställningar
+SETUP_GALAXY_RULESET_LABEL        | Regelval
+SETUP_INSUFFICIENT_MEMORY         | Otillräckligt Minne
+SETUP_CREATING_GALAXY             | Skapar Galaxen...
+SETUP_RULESET_ORION               | Orion
+SETUP_RULESET_ANTARES             | Antares
+SETUP_RULESET_SIRIUS              | Sirius
+SETUP_GALAXY_SIZE_LABEL           | Storlek
+SETUP_RACE_MULTIPLIER             | x%1
+SETUP_GALAXY_SHAPE_LABEL          | Form
+SETUP_GALAXY_SIZE_TINY            | Pytte
+SETUP_GALAXY_SIZE_SMALL           | Liten
+SETUP_GALAXY_SIZE_SMALL2          | Liten
+SETUP_GALAXY_SIZE_AVERAGE         | Mellan
+SETUP_GALAXY_SIZE_AVERAGE2        | Mellan
+SETUP_GALAXY_SIZE_LARGE           | Stor
+SETUP_GALAXY_SIZE_LARGE2          | Stor
+SETUP_GALAXY_SIZE_HUGE            | Enorm
+SETUP_GALAXY_SIZE_HUGE2           | Enorm
+SETUP_GALAXY_SIZE_MASSIVE         | Gigantisk
+SETUP_GALAXY_SIZE_MASSIVE2        | Gigantisk
+SETUP_GALAXY_SIZE_MASSIVE3        | Gigantisk
+SETUP_GALAXY_SIZE_MASSIVE4        | Gigantisk
+SETUP_GALAXY_SIZE_MASSIVE5        | Gigantisk
+SETUP_GALAXY_SIZE_INSANE          | Vansinnig
+SETUP_GALAXY_SIZE_LUDICROUS       | Löjlig
+SETUP_GALAXY_SIZE_MAXIMUM         | Maximum
+SETUP_GALAXY_SHAPE_RECTANGLE      | Stjärnfält
+SETUP_GALAXY_SHAPE_CIRCULAR       | Circulär
+SETUP_GALAXY_SHAPE_RING           | Ring
+SETUP_GALAXY_SHAPE_ELLIPSE        | Ellips
+SETUP_GALAXY_SHAPE_SPIRAL         | Spiral
+SETUP_GALAXY_SHAPE_STAR           | Stjärna
+SETUP_GALAXY_SHAPE_BARSPIRAL      | Raklinjespiral
+SETUP_GALAXY_SHAPE_TEXT           | Text
+SETUP_GALAXY_SHAPE_CLUSTER        | Kluster
+SETUP_GALAXY_SHAPE_SWIRLCLUSTERS  | Virvel-Kluster
+SETUP_GALAXY_SHAPE_GRID           | Rutnät
+SETUP_GALAXY_SHAPE_SPIRALARMS     | Spiralarmar
+SETUP_GALAXY_SHAPE_MAZE           | Labyrint
+SETUP_GALAXY_SHAPE_VOID           | Öde
+SETUP_GALAXY_SHAPE_SHURIKEN       | Shuriken
+SETUP_GALAXY_SHAPE_BULLSEYE       | Måltavla
+SETUP_GALAXY_SHAPE_LORENZ         | Lorenz
+SETUP_GALAXY_SHAPE_LORENZ2        | Lorenz 2
+SETUP_GALAXY_SHAPE_FRACTAL        | Fraktal
+SETUP_GALAXY_SHAPE_CHAOSGAME      | Kaos
+SETUP_GALAXY_MAP_OPTION_LABEL     | Alternativ
+SETUP_GALAXY_MAP_OPTION_A         | Alternativ A
+SETUP_GALAXY_MAP_OPTION_B         | Alternativ B
+SETUP_GALAXY_MAP_OPTION_C         | Alternativ C
+SETUP_GALAXY_AGE_NORMAL           | Normal
+SETUP_GALAXY_AGE_YOUNG            | Ung
+SETUP_GALAXY_AGE_OLD              | Gammal
+SETUP_RANDOM_EVENTS_ON            | På
+SETUP_RANDOM_EVENTS_OFF           | Av
+SETUP_RANDOM_EVENTS_NO_MONSTERS   | Inga Monster
+SETUP_GALAXY_NUMBER_EMPIRES       | Antal Imperier: %1
+SETUP_GALAXY_NUMBER_SYSTEMS       | Antal System: %1
+SETUP_GALAXY_MAX_OPPONENTS        | Maxantal Motståndare: %1
+SETUP_OPPONENTS_HEADER_1          | %1 mot
+SETUP_OPPONENTS_HEADER_2          | Rival-imperier
+SETUP_OPPONENT_RANDOM             | ???
+SETUP_OPPONENT_AI                 | Spela mot:
+SETUP_OPPONENT_AI_BASE            | AI: Standard
+SETUP_OPPONENT_AI_MODNAR          | AI: Modnar
+SETUP_OPPONENT_AI_XILMI           | AI: Xilmi
+SETUP_OPPONENT_AI_SELECT          | AI: Valbar
+SETUP_AUTOPLAY_OFF                | Av
+SETUP_AUTOPLAY_AI_BASE            | AI: Standard
+SETUP_AUTOPLAY_AI_MODNAR          | AI: Modnar
+SETUP_AUTOPLAY_AI_XILMI           | AI: Xilmi
+SETUP_GAME_DIFFICULTY_LABEL       | Svårighetsgrad
+SETUP_DIFFICULTY_EASIEST          | Lättaste
+SETUP_DIFFICULTY_EASIER           | Lättare
+SETUP_DIFFICULTY_EASY             | Lätt
+SETUP_DIFFICULTY_NORMAL           | Normal
+SETUP_DIFFICULTY_HARD             | Svår
+SETUP_DIFFICULTY_HARDER           | Svårare
+SETUP_DIFFICULTY_HARDEST          | Svårast
+SETUP_RESEARCH_RATE_NORMAL        | Normal
+SETUP_RESEARCH_RATE_SLOW          | Långsam
+SETUP_RESEARCH_RATE_SLOWER        | Långsammare
+SETUP_RESEARCH_RATE_SLOWEST       | Långsammast
+SETUP_TECH_TRADING_YES            | Ja
+SETUP_TECH_TRADING_ALLIES         | Bara Allierade
+SETUP_TECH_TRADING_NO             | Nej
+SETUP_WARP_SPEED_NORMAL           | Normal
+SETUP_WARP_SPEED_FAST             | Snabb
+SETUP_NEBULA_NONE                 | Inga
+SETUP_NEBULA_RARE                 | Sällsynt
+SETUP_NEBULA_UNCOMMON             | Ovanligt
+SETUP_NEBULA_NORMAL               | Normal
+SETUP_NEBULA_COMMON               | Vanligt
+SETUP_NEBULA_FREQUENT             | Frekvent
+SETUP_COUNCIL_NONE                | Inget G-Råd
+SETUP_COUNCIL_IMMEDIATE           | Omedelbart
+SETUP_COUNCIL_REBELS              | Tillåt Rebeller
+SETUP_STAR_DENSITY_LOWEST         | Lägsta
+SETUP_STAR_DENSITY_LOWER          | Lägre
+SETUP_STAR_DENSITY_LOW            | Låg
+SETUP_STAR_DENSITY_NORMAL         | Normal
+SETUP_STAR_DENSITY_HIGH           | Hög
+SETUP_STAR_DENSITY_HIGHER         | Högre
+SETUP_STAR_DENSITY_HIGHEST        | Högst
+SETUP_AI_HOSTILITY_LOWEST         | Snällast
+SETUP_AI_HOSTILITY_LOWER          | Snällare
+SETUP_AI_HOSTILITY_LOW            | Snäll
+SETUP_AI_HOSTILITY_NORMAL         | Normal
+SETUP_AI_HOSTILITY_HIGH           | Arg
+SETUP_AI_HOSTILITY_HIGHER         | Argare
+SETUP_AI_HOSTILITY_HIGHEST        | Argast
+SETUP_GAME_NUMBER_OPPONENTS       | Motståndare
+SETUP_PLANET_QUALITY_POOR         | Dåligt
+SETUP_PLANET_QUALITY_MEDIOCRE     | Mediokert
+SETUP_PLANET_QUALITY_NORMAL       | Normal
+SETUP_PLANET_QUALITY_GOOD         | Bra
+SETUP_PLANET_QUALITY_GREAT        | Fantastiska
+SETUP_TERRAFORMING_NORMAL         | Normal
+SETUP_TERRAFORMING_REDUCED        | Reducerad
+SETUP_TERRAFORMING_NONE           | Ingen
+SETUP_COLONIZING_NORMAL           | Normal
+SETUP_COLONIZING_RESTRICTED       | Begränsad
+SETUP_FUEL_RANGE_NORMAL           | Normal
+SETUP_FUEL_RANGE_HIGH             | Hög
+SETUP_FUEL_RANGE_HIGHER           | Högre
+SETUP_FUEL_RANGE_HIGHEST          | Högst
+SETUP_RANDOMIZE_AI_NONE           | Ingen
+SETUP_RANDOMIZE_AI_PERSONALITY    | Personlighet
+SETUP_RANDOMIZE_AI_ABILITY        | Fokus
+SETUP_RANDOMIZE_AI_BOTH           | Båda
+SETUP_RACE_LABEL                  | Tillgängliga Val
+SETUP_RACE_COLOR                  | Imperiets Färg:
+SETUP_HOMEWORLD_NAME_LABEL        | Hemvärld:
+SETUP_LEADER_NAME_LABEL           | Ledare:
+SETUP_FLAG_LABEL                  | Flagga
+SETUP_BUTTON_CANCEL               | Avbryt
+SETUP_BUTTON_BACK                 | Tillbaka
+SETUP_BUTTON_NEXT                 | Nästa
+SETUP_BUTTON_START                | Börja
+SETUP_BUTTON_SETTINGS             | Advancerade Alternativ
+
+SETUP_SPIRAL_2_ARMS               | Två Armar
+SETUP_SPIRAL_3_ARMS               | Tre Armar
+SETUP_SPIRAL_4_ARMS               | Fyra Armar
+SETUP_SPIRAL_5_ARMS               | Fem Armar
+SETUP_SPIRAL_6_ARMS               | Sex Armar
+SETUP_SPIRAL_7_ARMS               | Sju Armar
+SETUP_SPIRAL_8_ARMS               | Åtta Armar
+SETUP_SPIRAL_ROTATION_0           | Ingen Rotation
+SETUP_SPIRAL_ROTATION_1           | Rotation 1
+SETUP_SPIRAL_ROTATION_2           | Rotation 2
+SETUP_SPIRAL_ROTATION_3           | Rotation 3
+SETUP_SPIRAL_ROTATION_4           | Rotation 4
+SETUP_SPIRAL_ROTATION_5           | Rotation 5
+SETUP_SPIRAL_ROTATION_6           | Rotation 6
+SETUP_ELLIPSE_0                   | Cirkulär
+SETUP_ELLIPSE_1                   | Ellips 1
+SETUP_ELLIPSE_2                   | Ellips 2
+SETUP_ELLIPSE_3                   | Ellips 3
+SETUP_ELLIPSE_4                   | Ellips 4
+SETUP_VOID_0                      | Inget Tomrum
+SETUP_VOID_1                      | Tomrum 1
+SETUP_VOID_2                      | Tomrum 2
+SETUP_VOID_3                      | Tomrum 3
+SETUP_VOID_4                      | Tomrum 4
+
+
+// Advanced Settings
+SETTINGS_TITLE                    | Advancerade Spelinställningar
+SETTINGS_DESCRIPTION              | Klicka för att rotera eller aktivera inställningar för spelomgång.
+SETTINGS_EXIT                     | Klar
+SETTINGS_DEFAULT                  | Återställ till Standard
+SETTINGS_STAR_DENSITY             | Stjärntäthet: %1
+SETTINGS_RANDOM_EVENTS            | Händelser: %1
+SETTINGS_RESEARCH_RATE            | Forskningstakt: %1
+SETTINGS_COUNCIL_WIN              | Galaktiskt Råd: %1
+SETTINGS_RANDOMIZE_AI             | Randomisera AI: %1
+SETTINGS_AUTOPLAY                 | Autospelande: %1
+SETTINGS_TECH_TRADING             | Utbyte av Teknologi: %1
+SETTINGS_GALAXY_AGE               | Galaxålder: %1
+SETTINGS_WARP_SPEED               | Warphastighet: %1
+SETTINGS_NEBULAE                  | Nebulosor: %1
+SETTINGS_PLANET_QUALITY           | Planetkvalitet: %1
+SETTINGS_TERRAFORMING             | Ogästvänlig Terraformering: %1
+SETTINGS_COLONIZING               | Colonizing: %1
+SETTINGS_FUEL_RANGE               | Fuel Räckvidd: %1
+SETTINGS_AI_HOSTILITY             | Hostility: %1
+SETTINGS_RANDOM_EVENTS_DESC       | Rymdmonster är Händelser och farliga hot runt mitten-nivån av spelets utveckling. Stäng av rymdmonster eller alla Händelser. 
+SETTINGS_WARP_SPEED_DESC          | Höj färdhastigheten på de mer avancerade warp-motorerna. Kan vara behövligt på extra stora kartor.
+SETTINGS_GALAXY_AGE_DESC          | Jämfört med normala galaxer, så har unga galaxer mer vita och blå stjärnor, medan gamla galaxer har mer röda- och neutronstjärnor.
+SETTINGS_TECH_TRADING_DESC        | Välj bort alla utbyten av teknologi, eller begränsa dem till utbyten mellan allierade.
+SETTINGS_STAR_DENSITY_DESC        | Välj en högre densitet för att undvika för långa avstånd tidigt i spelet.
+SETTINGS_RESEARCH_RATE_DESC       | Sakta ner forskningstakten för nya teknologier, vilket förlänger tidigare teknologiers livslängd.
+SETTINGS_NEBULAE_DESC             | Nebulosor saktar ner skepp som färdas genom dem, och inaktiverar helt sköldar. Välj hur frekvent de förekommer.
+SETTINGS_PLANET_QUALITY_DESC      | Sänk eller höj hur ofta planeter av högre kvalitet förekommer.
+SETTINGS_TERRAFORMING_DESC        | Reducera eller ta bort fördelarna av Förbättrad Terraformering-teknologier på planeter med ogästvänligt klimat.
+SETTINGS_COLONIZING_DESC          | Begränsa kolonisering av system till att behöva specifika teknologier, och inte bara de högsta.
+SETTINGS_COUNCIL_DESC             | Avaktivera vinst genom det galaktiska rådet; eller tillåt fiender att göra uppror mot en spelares seger.
+SETTINGS_RANDOMIZE_AI_DESC        | Randomisera AI-kontrollerade spelares personligheter, folkförmåga, eller båda.
+SETTINGS_AUTOPLAY_DESC            | Automatisera spelet fullständigt genom att låta en AI sköta spelarens turer. Användbart för att kunna observera hur AI:n bär sig åt.
+SETTINGS_AUTOPLAY_WARNING         | Varning! Autospelande är aktiverat vilket förhindrar spelarens kontroll. Använd "Avancerade Inställningar" för att avaktivera.
+SETTINGS_FUEL_RANGE_DESC          | Aktivera högre räckvidder från bränsleteknologier och extrareserver för bränsle.
+SETTINGS_AI_HOSTILITY_DESC        | Höj eller sänk den allmänna nivån av aggression mellan de olika imperierna.
+
+// Tech UI labels
+TECH_RESEARCH                     | Teknologisk Forskning
+TECH_RESEARCH_POINTS              | Forskningspoäng
+TECH_EMPIRE_SPENDING              | Total Forskningsbudget
+TECH_EMPIRE_SPENDING_DESC         | Summan av alla koloniers forskningsbudget.
+TECH_EMPIRE_TECH_RESERVE_OPT      | Tilldela överflödiga koloniresurser från statskassan till forskning
+TECH_EMPIRE_BALANCED_DESC         | Jämlika nivåer av forskningsinsatser ökar effektiviteten av forskningspoäng.
+TECH_EMPIRE_DETAIL_1              | %1 BC för 
+TECH_EMPIRE_DETAIL_2              | %2 FP / År
+TECH_TOTAL_FP                     | %1 FP
+TECH_DISCOVERY_PCT                | %1%
+TECH_CHANGE_RESEARCH              | Klicka för att börja Efterforska denna Teknologi
+TECH_NEXT_TIER_TITLE              | Inte tillgängligt.
+TECH_FIRST_TIER_DESC              | Börja spendera forskningspoäng i den här kategorin för att aktivera.
+TECH_NEXT_TIER_DESC               | Forska fram en teknologi i den tidigare nivån för att göra tillgänglig.
+TECH_FUTURE_TIER_DESC             | Forska fram alla teknologier under tidigare nivåer för att göra tillgängligt.
+TECH_ALLOCATE_POINTS              | Allokera Forskningspoäng
+TECH_EQUALIZE                     | Jämställ Allokering
+TECH_RESEARCH_COMPLETED           | Forskning Färdig
+TECH_RESEARCHING                  | Forskar:
+TECH_NONE_RESEARCHED              | Ingen
+TECH_PLANETARY_SHIELDS            | Planetära Sköldar
+TECH_PLANETARY_SHIELDS_NONE       | Inga
+TECH_PLANETARY_SHIELDS_CLASS      | Klass %1
+TECH_GROUND_COMBAT                | Markstrid
+TECH_GROUND_COMBAT_NO_BONUS       | Ingen Bonus
+TECH_GROUND_COMBAT_BONUS          | +%1%
+TECH_TERRAFORM                    | Terraformera
+TECH_TERRAFORM_NO_BONUS           | Ingen Bonus
+TECH_TERRAFORM_BONUS              | +%1 Max Pop.
+TECH_FACTORY_CONTROLS             | Fabrikskontroller
+TECH_FACTORY_CONTROLS_BONUS       | %1 per Kolonist
+TECH_PLANET_SCANNER               | Skanners Räckvidd
+TECH_PLANET_SCANNER_NONE          | Ingen
+TECH_PLANET_SCANNER_RANGE         | %1 ljusår
+TECH_WASTE_REDUCTION              | Utsläppsreduktion
+TECH_WASTE_REDUCTION_NONE         | Ingen
+TECH_WASTE_REDUCTION_AMT          | -%1%
+TECH_WASTE_CLEANUP                | Avfallsröjning
+TECH_WASTE_CLEANUP_BONUS          | %1 Avfall/BC
+TECH_SHIP_RANGE                   | Räckvidd för Skepp
+TECH_SHIP_RANGE_AMT               | %1 ljusår
+TECH_SHIP_SPEED                   | Topphastighet
+TECH_SHIP_SPEED_AMT               | Warp %1
+TECH_BUTTON_EXIT                  | KLAR
+
+// Tech UI help
+TECH_HELP_1A                      | ÖVERSIKT - Den här sektionen låter dig justera budgetallokeringen över de sex fält av forskning som är tillgängliga. Du kan också se över vilka teknologier du redan upptäckt (gröna), som forskas i för närvarande (gula), eller är tillgängliga för framtida forskning (bruna).
+TECH_HELP_1B                      | Klicka eller skrolla med mushjulet för överblicka teknologierna för ett område av forskning.
+TECH_HELP_1C                      | Den här mätaren fylls i allt eftersom forskningspoäng (FP) investeras i ett område. När den är fullt fylld, försöker man sedan få till ett genombrott, vilket är en gradvis ökande procenthalt för varje tur.
+TECH_HELP_1D                      | Vilken teknologi som forskas i för närvarande. I beskrivningen kan du läsa om teknologins detaljer.
+TECH_HELP_1E                      | Allmänna effekter från redan upptäckta teknologier inom området.
+TECH_HELP_1F                      | Total produktion (BC) allokerad till forskning, och de totala forskningspoäng (FP) som produceras i följd.
+TECH_HELP_1G                      | Överflödiga resurser från koloniers allokering kan ställas in att föras över till forskning istället för statskassan.
+TECH_HELP_1H                      | Varje område för forskning har en mätare för budgetallokering. Klicka på namnet för att låsa en mätare. Första 1/6 delarna av mätaren genererar 25% mer forskningspoäng.
+TECH_HELP_1I                      | Jämställ budgetallokeringen för mätare som inte är låsta.
+
+// =========================================================================
+//   ALPHA 4
+// =========================================================================
+
+// Ship Design UI
+SHIP_DESIGN_TITLE                 | Skeppsdesign
+SHIP_DESIGN_SLOTS                 | Antal Designer
+SHIP_DESIGN_AVAILABLE             | Tillgängliga
+SHIP_DESIGN_AVAILABLE_DESC        | Välj det här design-utrymmet för att börja planera en ny skeppsdesign.
+SHIP_DESIGN_AVAILABLE_DESC2       | Verkställ design för att kunna börja konstruktion i skeppsvarv.
+SHIP_DESIGN_PROTOTYPE             | Prototyp
+SHIP_DESIGN_PROTOTYPE_DESC        | Prototyps-designer kan inte verkställas
+SHIP_DESIGN_SLOT_DESC             | Totalt antal i flottor:
+SHIP_DESIGN_SLOT_DESC2            | I Omloppsbana:
+SHIP_DESIGN_SLOT_DESC3            | I Färd:
+SHIP_DESIGN_SLOT_DESC4            | Kolonier Bygger:
+SHIP_DESIGN_NEW                   | Ny Skeppsdesign
+SHIP_DESIGN_PROTOTYPE_TITLE       | Skeppsdesign Prototyp
+SHIP_DESIGN_SIZE_SMALL            | Litet
+SHIP_DESIGN_SIZE_MEDIUM           | Medium
+SHIP_DESIGN_SIZE_LARGE            | Stort
+SHIP_DESIGN_SIZE_HUGE             | Gigant
+SHIP_DESIGN_SIZE_LABEL            | Storlek
+SHIP_DESIGN_TYPE_LABEL            | Typ
+SHIP_DESIGN_COUNT_LABEL           | Antal
+SHIP_DESIGN_DAMAGE_LABEL          | Skada
+SHIP_DESIGN_POWER_LABEL           | Energi
+SHIP_DESIGN_RANGE_LABEL           | Räckvidd
+SHIP_DESIGN_SPEED_LABEL           | Stridssteg
+SHIP_DESIGN_COST_LABEL            | Kostnad
+SHIP_DESIGN_DESCRIPTION_LABEL     | Beskrivning
+SHIP_DESIGN_RANGE_VALUE           | %1 ljusår
+SHIP_DESIGN_RANGE_UNLIMITED       | Obegränsad
+SHIP_DESIGN_SPEED_VALUE           | Warp %1
+SHIP_DESIGN_COST_VALUE            | %1 BC
+SHIP_DESIGN_TOTAL_SPACE_LABEL     | Totalt Utrymme
+SHIP_DESIGN_AVAIL_SPACE_LABEL     | Tillgängligt Utrymme
+SHIP_DESIGN_COLORS                | Färgton
+SHIP_DESIGN_COMBAT_STATS_TITLE    | Stridsspecifikationer
+SHIP_DESIGN_HIT_POINTS_LABEL      | Skadepoäng
+SHIP_DESIGN_MISSILE_DEF_LABEL     | Missilförsvar
+SHIP_DESIGN_BEAM_DEF_LABEL        | Strålförsvar
+SHIP_DESIGN_ATTACK_LEVEL_LABEL    | Precisionsnivå
+SHIP_DESIGN_COMBAT_SPEED_LABEL    | Hastighet
+SHIP_DESIGN_COMBAT_SPEED_VALUE    | %1 steg
+SHIP_DESIGN_ENGINES_TITLE         | Motorer
+SHIP_DESIGN_ENGINES_DESC          | Driver skeppet och dess komponenter.
+SHIP_DESIGN_ENGINE_TYPE           | Typ
+SHIP_DESIGN_ENGINE_SPEED          | Speed
+SHIP_DESIGN_ENGINE_COST1          | Kostnad, per motor
+SHIP_DESIGN_ENGINE_SIZE1          | Storlek, per motor
+SHIP_DESIGN_ENGINE_POWER1         | Energi, per motor
+SHIP_DESIGN_POWER_REQUIREMENTS    | Energi Requirements
+SHIP_DESIGN_ENGINES_REQUIRED      | Engines Required
+SHIP_DESIGN_ENGINES_SIZE          | Totalt Motorutrymme
+SHIP_DESIGN_ENGINES_COST          | Total Motorkostnad
+SHIP_DESIGN_COPY_BUTTON           | Kopiera
+SHIP_DESIGN_CLEAR_BUTTON          | Rensa
+SHIP_DESIGN_RENAME_BUTTON         | Byt namn
+SHIP_DESIGN_DEPLOY_BUTTON         | Verkställ Design
+SHIP_DESIGN_DEPLOY_DESC           | Väl verkställd kan du konstruera det här skeppet på dina kolonier, och ändringar på designen begränsas till namngivning och kassering.
+SHIP_DESIGN_SCRAP_BUTTON          | Kassera Design
+SHIP_DESIGN_SCRAP_CONFIRM1        | Är du säker på att du vill kassera designen %1?
+SHIP_DESIGN_SCRAP_CONFIRM2        | Åtgärden kommer att skrota %1 skepp i din flotta och ge %2 BC till statskassan.
+SHIP_DESIGN_SCRAP_CONFIRM3        | Du har för närvarande inte några konstruerade skepp av den här designen.
+SHIP_DESIGN_SCRAP_CANCEL          | Avbryt
+SHIP_DESIGN_SCRAP_OK              | Kassera
+SHIP_DESIGN_RENAME_CONFIRM        | Byt namn på din skeppsdesign
+SHIP_DESIGN_DEPLOY_CONFIRM        | Namnge din nya skeppsdesign
+SHIP_DESIGN_DEPLOY_CANCEL         | Avbryt
+SHIP_DESIGN_DEPLOY_OK             | Verkställ
+SHIP_DESIGN_RENAME_OK             | Byt namn
+SHIP_DESIGN_UNNAMED_DESIGN        | Namn saknas
+SHIP_DESIGN_COMPONENT_NONE        | Ingen
+
+
+// ship design selection dialogs
+SHIP_DESIGN_STARGATE_NAME         | Stjärnport
+SHIP_DESIGN_1ST_SCOUT_NAME        | Spejare
+SHIP_DESIGN_1ST_FIGHTER_NAME      | Stridsskepp
+SHIP_DESIGN_1ST_DESTROYER_NAME    | Förstörare
+SHIP_DESIGN_1ST_BOMBER_NAME       | Bombare
+SHIP_DESIGN_1ST_COLONY_NAME       | Koloniskepp
+SHIP_DESIGN_COMPUTER_TITLE        | Datorer
+SHIP_DESIGN_COMPUTER_TYPE         | Typ
+SHIP_DESIGN_COMPUTER_COST         | Kostnad
+SHIP_DESIGN_COMPUTER_SIZE         | Storlek
+SHIP_DESIGN_COMPUTER_POWER        | Energi
+SHIP_DESIGN_COMPUTER_SPACE        | Utrymme
+SHIP_DESIGN_SHIELD_TITLE          | Sköldar
+SHIP_DESIGN_SHIELD_TYPE           | Typ
+SHIP_DESIGN_SHIELD_COST           | Kostnad
+SHIP_DESIGN_SHIELD_SIZE           | Storlek
+SHIP_DESIGN_SHIELD_POWER          | Energi
+SHIP_DESIGN_SHIELD_SPACE          | Utrymme
+SHIP_DESIGN_ECM_TITLE             | ECM Störsändare
+SHIP_DESIGN_ECM_TYPE              | Typ
+SHIP_DESIGN_ECM_COST              | Kostnad
+SHIP_DESIGN_ECM_SIZE              | Storlek
+SHIP_DESIGN_ECM_POWER             | Energi
+SHIP_DESIGN_ECM_SPACE             | Utrymme
+SHIP_DESIGN_ARMOR_TITLE           | Pansar
+SHIP_DESIGN_ARMOR_TYPE            | Typ
+SHIP_DESIGN_ARMOR_COST            | Kostnad
+SHIP_DESIGN_ARMOR_SIZE            | Storlek
+SHIP_DESIGN_ENGINE_TITLE          | Motorer
+SHIP_DESIGN_ENGINE_TYPE           | Typ
+SHIP_DESIGN_ENGINE_NUM            | # Motorer
+SHIP_DESIGN_ENGINE_SPACE          | Utrymme
+SHIP_DESIGN_ENGINE_COST           | Kostnad
+SHIP_DESIGN_ENGINE_SIZE           | Storlek
+SHIP_DESIGN_ENGINE_POWER          | Energi
+SHIP_DESIGN_MANEUVER_TITLE        | Manöver
+SHIP_DESIGN_MANEUVER_TYPE         | Typ
+SHIP_DESIGN_MANEUVER_SPEED        | Stridssteg
+SHIP_DESIGN_MANEUVER_COST         | Kostnad
+SHIP_DESIGN_MANEUVER_POWER        | Energi
+SHIP_DESIGN_MANEUVER_SPACE        | Utrymme
+SHIP_DESIGN_WEAPON_TITLE          | Vapen
+SHIP_DESIGN_WEAPON_MAX            | Max
+SHIP_DESIGN_WEAPON_TYPE           | Typ
+SHIP_DESIGN_WEAPON_DESCRIPTION    | Beskrivning
+SHIP_DESIGN_WEAPON_DAMAGE         | Skada
+SHIP_DESIGN_WEAPON_DMG_RANGE      | %1-%2
+SHIP_DESIGN_WEAPON_COST           | Kostnad
+SHIP_DESIGN_WEAPON_SIZE           | Storlek
+SHIP_DESIGN_WEAPON_POWER          | Energi
+SHIP_DESIGN_WEAPON_SPACE          | Utrymme
+SHIP_DESIGN_SPECIAL_TITLE         | Specialutrustning
+SHIP_DESIGN_SPECIAL_TYPE          | Typ
+SHIP_DESIGN_SPECIAL_DESCRIPTION   | Beskrivning
+SHIP_DESIGN_SPECIAL_COST          | Kostnad
+SHIP_DESIGN_SPECIAL_SIZE          | Storlek
+SHIP_DESIGN_SPECIAL_POWER         | Energi
+SHIP_DESIGN_SPECIAL_SPACE         | Utrymme
+
+// Skeppsdesign help
+SHIP_DESIGN_HELP_ALL              | ÖVERSIKT - ett imperium kan ha upp till sex aktiva skeppsdesigner. För varje design, välj ett skrov och fyll det sedan med olika komponenter liksom pansar, sköldar och vapen. Varje komponent har en storlek, energiförbrukning och produktionskostnad. Det totala utrymmet som krävs för en komponent är dess storlek plus storleken för motorerna som krävs för att driva komponenten. När en design är verkställd, kan den konstrueras i vilken som helst av dina kolonier.
+SHIP_DESIGN_HELP_1A               | Storlek - större storlekar av skrov har högre kostnad, men mer utrymme
+SHIP_DESIGN_HELP_1B               | Räckvidd - hur långt bort skeppet kan färdas från dina system. 
+SHIP_DESIGN_HELP_1C               | Hastighet - färdhastighet genom rymden på färd mellan stjärnor.
+SHIP_DESIGN_HELP_1D               | Kostnad  - sammanlagda kostnaden att bygga skeppet.
+SHIP_DESIGN_HELP_1E               | Totalt Utrymme - sammanlagda utrymmet som upptas av komponenter i designplanen.
+SHIP_DESIGN_HELP_1F               | Tillgängligt Utrymme - oanvänt utrymme för denna design.
+SHIP_DESIGN_HELP_1G               | Skadepoäng - mängden skada som krävs för att förstöra skeppet i strid.
+SHIP_DESIGN_HELP_1H               | Missilförsvar - försvar mot missilvapen i strid.
+SHIP_DESIGN_HELP_1I               | Strålförsvar - försvarsnivå mot strålvapen i strid.
+SHIP_DESIGN_HELP_1J               | Precisionsnivå - attacknivån dikterar precisionen för vapen i strid.
+SHIP_DESIGN_HELP_1K               | Stridssteg - hur långt ett skepp kan färdas i strid, per tur. 
+SHIP_DESIGN_HELP_1L               | Färgton - ändrar skeppets färger.
+SHIP_DESIGN_HELP_2A               | Motortyp - typen av motor som driver skeppsdesignen.
+SHIP_DESIGN_HELP_2B               | Hastighet - färdhastighet med denna typ av motor.
+SHIP_DESIGN_HELP_2C               | Kostnad - kostnaden för varje motor som behövs för energi och drift.
+SHIP_DESIGN_HELP_2D               | Storlek - det utrymme som krävs i skrovet per motor.
+SHIP_DESIGN_HELP_2E               | Energi - mängden tillförd energi per motor.
+SHIP_DESIGN_HELP_2F               | Energikrav - total energiförbrukning som krävs för alla skeppets komponenter.
+SHIP_DESIGN_HELP_2G               | Motorbehov - antalet motorer som behövs för att uppfylla energikravet.
+SHIP_DESIGN_HELP_2H               | Totalt Utrymme - det totala utrymme av skrovet som upptas av alla motorer sammanlagt.
+SHIP_DESIGN_HELP_2I               | Total Kostnad - den totala konstruktionskostnaden för alla motorer.
+SHIP_DESIGN_HELP_2J               | Utseende associerat med utvald skeppsdesign. Det finns sex olika utseenden för varje typ av skrovstorlek. Vid skapande av design, klicka för att rotera igenom alternativen.
+SHIP_DESIGN_HELP_2K               | Skeppsdesignens namn.
+SHIP_DESIGN_HELP_3A               | Datorer - påverkar ditt skepps precisionsnivå i strid.
+SHIP_DESIGN_HELP_3B               | Pansar - bestämmer hur många skadepoäng skeppet tål. Tungt pansar ökar antalet med 50%.
+SHIP_DESIGN_HELP_3C               | Sköldar - reducerar skada från inkommande attacker.
+SHIP_DESIGN_HELP_3D               | ECM Signalstörare - ECM är ett låneuttryck för "Electronic Counter Measures", en teknik som stör utrustningen på missiler, och minskar chansen att bli träffad.
+SHIP_DESIGN_HELP_3E               | Manöver - ökar antalet stridssteg och skeppets försvar.
+SHIP_DESIGN_HELP_3F               | Weapons - orsakar skada mot fiendeskepp och kolonier. Upp till fyra olika typer av vapen kan läggas till på en skeppsdesign.
+SHIP_DESIGN_HELP_3G               | Special - utrustning som erbjuder unika förmågor till dina skepp. Upp till tre olika enheter specialutrustning kan läggas till på en skeppsdesign.
+SHIP_DESIGN_HELP_4A               | Byt namn - låter dig byta namn på en existerande design.
+SHIP_DESIGN_HELP_4B               | Kassera Design - kasserar en befintlig design. Skrotade skepp återgäldar 25% av sitt konstruktionsvärde tillbaka till statskassan.
+SHIP_DESIGN_HELP_4C               | Verkställda skeppsdesigner kan konstrueras vid valfri koloni.
+SHIP_DESIGN_HELP_4D               | Tillgängliga designutrymmen kan väljas för att utfyllas med en ny design.
+SHIP_DESIGN_HELP_4E               | Kopiera - kopiera en existerande design att använda som startpunkt för en ny design.
+SHIP_DESIGN_HELP_4F               | Rensa - tömmer skrovet från alla valda komponenter.
+SHIP_DESIGN_HELP_4G               | Verkställ Design - när din nya design är färdig kan du verkställa den, för att ge den ett namn och bereda för konstruktion.
+
+
+// Ship Combat UI
+SHIP_COMBAT_TITLE_SYSTEM          | Skeppsstrid vid %1!
+SHIP_COMBAT_TITLE_UNSCOUTED       | Skeppsstrid i outforskat system!
+SHIP_COMBAT_TITLE_DESC            | Våra styrkor har träffat på en aggressiv [alien_race] flotta.
+SHIP_COMBAT_TITLE_MONSTER_DESC    | Våra styrkor har träffat på en fientlig %1.
+SHIP_COMBAT_BASES                 | %1 Missilbaser
+SHIP_COMBAT_SHIELD                | Nivå %1 Planetära Sköld
+SHIP_COMBAT_POPULATION            | %1 Population
+SHIP_COMBAT_FACTORIES             | %1 Fabriker
+SHIP_COMBAT_ENTER_BATTLE          | Engagera Strid
+SHIP_COMBAT_MISS                  | Miss
+SHIP_COMBAT_DEFLECTED             | Absorberat
+SHIP_COMBAT_DESTROYED             | Förstörd!
+SHIP_COMBAT_STASIS                | Stasis
+SHIP_COMBAT_TITLE                 | Strid vid %1
+SHIP_COMBAT_TITLE_UNNAMED         | Strid i outforskat system
+SHIP_COMBAT_SYSTEM_POP            | Population
+SHIP_COMBAT_SYSTEM_FACT           | Fabriker
+SHIP_COMBAT_SYSTEM_BASE           | Baser
+SHIP_COMBAT_TITLE_VICTORIOUS      | SEGRARE
+SHIP_COMBAT_SHIP_TOTALS           | %1 🡒 %2
+SHIP_COMBAT_RESULTS_RETREATED     | RETIRERAT
+SHIP_COMBAT_RESULTS_DESTROYED     | FÖRSTÖRD
+SHIP_COMBAT_RETREAT_ALL           | Retirera Alla
+SHIP_COMBAT_NEXT                  | Nästa Skepp
+SHIP_COMBAT_AUTO_RESOLVE          | Auto-Beräkna Strid
+SHIP_COMBAT_AUTO_RESOLVING        | Beräknar Battalj...
+SHIP_COMBAT_PLAY_BATTLE           | Auto-Spela Strid
+SHIP_COMBAT_PAUSE_BATTLE          | Pausa Strid
+SHIP_COMBAT_EXIT                  | Avsluta
+SHIP_COMBAT_COUNT_NAME            | %1  %2
+SHIP_COMBAT_MONSTER_TARGET        | Rymdmonster som anfallsmål.
+SHIP_COMBAT_ENEMY_TARGET          | Fiendeflotta som anfallsmål.
+SHIP_COMBAT_ALLY_TARGET           | Ofientlig flotta som anfallsmål.
+SHIP_COMBAT_ENEMY_COLONY          | Fiendes planet som anfallsmål.
+SHIP_COMBAT_ALLY_COLONY           | Ofientlig planet som anfallsmål.
+SHIP_COMBAT_CURRENT_TARGET        | Nuvarande flotta som anfallsmål.
+SHIP_COMBAT_SELECT_ACTION         | Välj handling.
+SHIP_COMBAT_SELECT_WEAPON         | Välj vapen eller utrustning.
+SHIP_COMBAT_FIRE_WEAPON           | Avfyra vapen.
+SHIP_COMBAT_ACTION_NEXT_SHIP      | Nästa skepp
+SHIP_COMBAT_ACTION_TURN_DONE      | Färdig
+SHIP_COMBAT_ACTION_RETREAT        | Reträtt
+SHIP_COMBAT_ACTION_FIRE_ALL       | Avfyra Alla Vapen
+SHIP_COMBAT_ACTION_CLOAK          | Mantla
+SHIP_COMBAT_ACTION_MOVE           | Förflytta hit
+SHIP_COMBAT_ACTION_TELEPORT       | Teleportera hit
+SHIP_COMBAT_ACTION_RANGE          | Utanför Räckvidd
+SHIP_COMBAT_ACTION_NO_MISSILES    | Slut missilammunition
+SHIP_COMBAT_ACTION_NO_BOMBS       | Slut bombammunition
+SHIP_COMBAT_ACTION_FIRED          | Redan avfyrat
+SHIP_COMBAT_ACTION_USED           | Redan förbrukat
+SHIP_COMBAT_ACTION_BAD_TARGET     | Ogiltigt mål
+SHIP_COMBAT_ACTION_WPN_COUNT      | %1 x%2
+SHIP_COMBAT_ACTION_WPN_COUNT_SHOTS| %1 x%2 x%3
+SHIP_COMBAT_INFO_LABEL            | Skeppsinformation
+SHIP_COMBAT_SCAN_LABEL            | Skepps Skannade Information
+SHIP_COMBAT_SCAN_HIT_POINTS       | Skadepoäng
+SHIP_COMBAT_SCAN_MISSILE_DEF      | Missilförsvar
+SHIP_COMBAT_SCAN_BEAM_DEF         | Strålförsvar
+SHIP_COMBAT_SCAN_SHIELD_CLASS     | Sköldnivå
+SHIP_COMBAT_SCAN_ATTACK_LEVEL     | Precisionsnivå
+SHIP_COMBAT_SCAN_SPEED            | Stridssteg
+SHIP_COMBAT_SCAN_WEAPONS          | Vapen
+SHIP_COMBAT_SCAN_DEVICES          | Specialutrustning
+SHIP_COMBAT_SCAN_HITS_VALUE       | %1/%2
+SHIP_COMBAT_SCAN_WEAPON_CNT       | %1 x %2
+SHIP_COMBAT_SCAN_UNSCANNED_VALUE  | ???
+SHIP_COMBAT_COLONY_LABEL          | Kolonis Information
+SHIP_COMBAT_COLONY_SCAN_LABEL     | Kolonis Skannade Information
+SHIP_COMBAT_COLONY_POPULATION     | Population
+SHIP_COMBAT_COLONY_SHIELD         | Sköld
+SHIP_COMBAT_COLONY_FACTORIES      | Fabriker
+SHIP_COMBAT_COLONY_BASES          | Missilbaser
+SHIP_COMBAT_COLONY_BASE_HITS      | Missilebasers Skadepoäng
+SHIP_COMBAT_COLONY_BASE_ATTACK    | Missilers Precisionsnivå
+SHIP_COMBAT_ACTION_FMT            | %1 - %2
+
+RELATIONS_FEUD                    | Fejd
+RELATIONS_HATE                    | Hat
+RELATIONS_DISCORD                 | Konflikt
+RELATIONS_TROUBLED                | Oroad
+RELATIONS_TENSE                   | Spänd
+RELATIONS_RESTLESS                | Rastlös
+RELATIONS_WARY                    | Vaksam
+RELATIONS_UNEASE                  | Osäker
+RELATIONS_NEUTRAL                 | Neutral
+RELATIONS_RELAXED                 | Avslappnad
+RELATIONS_AMIABLE                 | Säker
+RELATIONS_CALM                    | Fridfull
+RELATIONS_AFFABLE                 | Välvillig
+RELATIONS_PEACEFUL                | Vänlig
+RELATIONS_FRIENDLY                | Varm
+RELATIONS_UNITY                   | Enhet
+RELATIONS_HARMONY                 | Harmoni
+
+RACES_TITLE                       | Rapporter
+RACES_SELECTOR_TITLE              | Markeringsverktyg
+RACES_TAB_DIPLOMACY               | Diplomati
+RACES_TAB_INTELLIGENCE            | Underrättelse
+RACES_TAB_MILITARY                | Militär
+RACES_TAB_STATUS                  | Status
+RACES_KNOWN_EMPIRES               | %1 upptäckta imperier
+RACES_RECALLED_DIPLOMATS          | %1 återkallade diplomater
+RACES_NO_TREATY                   | Inga avtal
+RACES_AT_FINAL_WAR                | Sista Kriget
+RACES_AT_WAR                      | I krig
+RACES_PEACE                       | Fredsavtal
+RACES_PACT                        | Avtal om Icke-aggression
+RACES_ALLY                        | Allians
+RACES_UNITY                       | Enighet
+RACES_OUT_OF_RANGE                | Utom Räckvidd
+RACES_TRADE_LEVEL                 | %1 BC handelsavtal
+RACES_TRADE_NONE                  | Inget handelsavtal
+RACES_DIPLOMAT_RECALLED           | [alien_race] diplomat återkallad
+RACES_DIPLOMATS_RECALLED          | Diplomater återkallade
+
+
+RACES_DIPLOMACY_HOMEWORLD         | Hemvärld
+RACES_DIPLOMACY_LEADER            | Ledare
+RACES_DIPLOMACY_CURRENT_TRADE     | Nuvarande Handelsinkomst
+RACES_DIPLOMACY_TOTAL_TRADE       | Totala Handelsavtal
+RACES_DIPLOMACY_TRADE_AMT         | %1 BC
+RACES_DIPLOMACY_CHARACTER         | Karaktär
+RACES_DIPLOMACY_STATUS            | Status
+RACES_DIPLOMACY_RELATIONS_METER   | Relationsmätare
+RACES_DIPLOMACY_RELATIONS_UNKNOWN | Humöret och motiven för [alien_empire] är outgrundliga för våra diplomater och spioner.
+RACES_DIPLOMACY_BUREAU            | Byrå för Diplomati
+RACES_DIPLOMACY_BUREAU_DESC1      | Kontakta utländska imperier eller återkalla dina diplomater för att förhindra imperier från att kontakta dig.
+RACES_DIPLOMACY_BUREAU_DESC       | Kontakta [alien_race] ambassadör för en audiens eller återetablera kontakt om dina diplomater har återkallats. 
+RACES_DIPLOMACY_BUREAU_DESC_RANGE | Vi kan inte upprätta diplomatiska relationer med imperier som är utanför skeppräckvidd.
+RACES_DIPLOMACY_BUREAU_DESC_FINAL | Vi är engagerade i ett slutkrig med den Nya Republiken. Diplomati är inte längre ett alternativ. 
+RACES_DIPLOMACY_KNOWN_EMPIRES     | Kända Främmande Imperier
+RACES_DIPLOMACY_RECALLED_DIPLOMAT | Återkallade Diplomater
+RACES_DIPLOMACY_MANAGE_DIPLOMATS  | Hantera Diplomater
+RACES_DIPLOMACY_AUDIENCE          | Audiens
+RACES_DIPLOMACY_CONTACT           | Upprätta Kontakt
+RACES_DIPLOMACY_TRADE_SUMMARY     | Totalrapport för Handel
+RACES_DIPLOMACY_TRADE_DESC        | Kontakta [alien_race] ambassadör för att förhandla om handelsavtal. Handelsnätverk kräver tid och pengar att starta, men när de når sin fulla potentioal drar de in pengar till imperiets statskassa.
+RACES_DIPLOMACY_TRADE_DESC_RANGE  | Vi kan inte upprätta handelsnätverk med imperier som är utanför skeppsräckvidd.
+RACES_DIPLOMACY_TRADE_DESC_FINAL  | Vi är engagerade i ett slutgiltigt krig med den Nya Republiken. Handel är inte längre möjlig. 
+RACES_DIPLOMACY_TRADE_TREATY      | Handelssavtal
+RACES_DIPLOMACY_FOREIGN_RELATIONS | Utländska Relationer
+RACES_DIPLOMACY_FOREIGN_RANGE     | Vi kan inte känna till de relationer [alien_empire] befintligen har innan vi har upprättat en diplomatisk kontakt.
+RACES_DIPLOMACY_FOREIGN_DESC      | [alien_race_plural] är i kontakt med följande folkslag:
+RACES_DIPLOMACY_COUNTER_BUREAU    | Byrå för Kontraspionage
+RACES_DIPLOMACY_COUNTER_DESC      | Allokering för säkerhetsbudget ökar kostnaden för en högre chans att upptäcka spioner från andra imperier.
+RACES_DIPLOMACY_COUNTER_DESC2     | Beskatta dina kolonier för att utöka säkerhetsbudgeten.
+RACES_DIPLOMACY_EVENT_YEAR        | År
+RACES_DIPLOMACY_EVENT_TURN        | Tur
+RACES_DIPLOMACY_EVENT_RACE        | Folkslag
+RACES_DIPLOMACY_EVENT_TITLE       | Diplomatisk Incident
+RACES_DIPLOMACY_EVENT_EFFECT      | Effekt
+RACES_MANAGE_DIALOG_OK            | OK
+RACES_MANAGE_REINSTATE_DIPLOMAT   | Återinsätt Diplomat
+RACES_MANAGE_RECALL_DIPLOMAT      | Återkalla Diplomat
+RACES_MANAGE_OUR_RECALLED         | Vår diplomat återkallad
+RACES_MANAGE_THEIR_RECALLED       | Deras diplomat återkallad
+RACES_MANAGE_BOTH_RECALLED        | Bådas diplomater återkallade
+
+
+RACES_INTEL_TITLE                 | [alien_race] Informationsrapport
+RACES_COUNTER_INTEL_TITLE         | Rapport för Kontraspionage
+RACES_INTEL_SECURITY_BONUS        | Bonus för Säkerhet
+RACES_INTEL_TOTAL_SPENDING        | Total Budget
+RACES_INTEL_SECURITY_TAX          | Beskattning för Säkerhet
+RACES_INTEL_TAX_DESC              | Beskatta dina kolonier för att öka din chans att upptäcka utomstående spioner.
+RACES_INTEL_TAX_OUT_OF_RANGE      | Beskattning påbörjar när främmande imperier är inom räckvidd.
+RACES_INTEL_SECURITY_BONUS_AMT    | +%1%
+RACES_INTEL_SECURITY_BONUS_NONE   | Ingen
+RACES_INTEL_REPORT_AGE            | Rapports Ålder
+RACES_INTEL_SPY_NETWORK           | Spionnätverk
+RACES_INTEL_SPENDING              | Budget
+RACES_INTEL_SPENDING_DESC         | Öka din budget för att lägga till spioner till nätverket över tid.
+RACES_INTEL_SPENDING_DESC_UNITY   | Spionagenätverk är onödiga eftersom teknologin delas fritt mellan medlemmarna av den Nya Republiken. 
+RACES_INTEL_SPENDING_CAPPED       | Imperiets budgetgräns för spionage uppnådd. Finansiering för spionagenätverk reducerad med %1%.
+RACES_INTEL_SPENDING_RANGE        | Kan inte skapa spionagenätverk för imperier utanför skeppsräckvidd.
+RACES_INTEL_PERCENT_AMT           | %1%
+RACES_INTEL_YEARS                 | %1 år
+RACES_INTEL_NO_SPIES              | Inga spioner
+RACES_INTEL_1_SPY                 | 1 spion
+RACES_INTEL_N_SPIES               | %1 spioner
+RACES_INTEL_SPIES                 | %1 / %2
+RACES_INTEL_SPENDING_ANNUAL       | %1 BC/år
+RACES_INTEL_CURRENT               | Nuvarande
+RACES_INTEL_NO_DATA               | Ingen data
+RACES_INTEL_SPENDING_NONE         | Ingen
+RACES_INTEL_COMPLETION_YEARS      | %1 År
+RACES_INTEL_COMPLETION_PER_YEAR   | %1/År
+RACES_INTEL_BUREAU_TITLE          | Underrättelsetjänst
+RACES_INTEL_BUREAU_DESC           | Anvisa dina spioner att stjäla teknologi eller sabotera utomstående folkslag.
+RACES_INTEL_BUREAU_SPIES          | Totala Spioner
+RACES_INTEL_BUREAU_MANAGE         | Hantera Spioner
+RACES_INTEL_BUREAU_SPENDING       | Total Budget
+RACES_INTEL_SPY_ORDERS            | Spiondirektiv
+RACES_INTEL_SPY_ORDERS_DESC       | Direktera dina spioner att gömma sig, stjäla hemligheter, eller sabotera [alien_raceposs] kolonier. Ju större ditt spionnätverk, desto större chans för framgång varje tur, så länge ingen av dina spioner tillfångatas och erkänner.
+RACES_INTEL_SPY_WARNING           | Om vi blir upptäckta, kommer uppdraget bryta avtalet med [alien_race].
+RACES_INTEL_SPY_WARNING_WAR       | Om vi blir upptäckta, kan detta uppdraget starta ett krig med [alien_race].
+RACES_INTEL_KNOWN_TECHNOLOGY      | [alien_race] Identifierade Teknologier
+RACES_INTEL_KNOWN_TECH_DESC       | Våra spioner rapporterar att [alien_race] har bemästrat följande teknologier. All teknologi vi ännu inte upptäckt är markerad.
+RACES_INTEL_UNKNOWN_TECHNOLOGY    | Rapport för Okända Teknologier
+RACES_INTEL_UNKNOWN_TECH_DESC     | Våra spioner rapporterar att utomstående folkslag har bemästrat följande teknologier som ännu inte upptäckt.
+
+RACES_MILITARY_TITLE              | [alien_race]  Rymdflotta
+RACES_MILITARY_SUBTITLE           | Sortera efter Storlek
+RACES_MILITARY_UNSCANNED          | ??
+RACES_MILITARY_UNSCANNED_LONG     | Oskannat
+RACES_MILITARY_SMALL              | Liten
+RACES_MILITARY_MEDIUM             | Mellan
+RACES_MILITARY_LARGE              | Stor
+RACES_MILITARY_HUGE               | Enormt
+RACES_MILITARY_REPORT_CURRENT     | Flottrapport är uppdaterad.
+RACES_MILITARY_DEFENSE            | Försvar
+RACES_MILITARY_DEF_PLANET_SHIELD  | Planetära Sköldar
+RACES_MILITARY_DEF_DEFL_SHIELD    | Sköldar
+RACES_MILITARY_DEF_ARMOR          | Pansar
+RACES_MILITARY_TROOP_BONUS        | Marktruppsbonus
+RACES_MILITARY_DEF_MISSILE        | Missilbas
+RACES_MILITARY_DEF_MISSILE_MAX    | Standard Max antal Missilbaser för Nya Kolonier
+RACES_MILITARY_NO_SHIELD          | Inga
+RACES_MILITARY_REPORT_NONE        | Ingen Data. Fler spioner krävs för att infiltrera.
+RACES_MILITARY_REPORT_OLD         | Flottrapport ålder: %1 år.
+RACES_MILITARY_NO_SHIPS           | Inga Skepp Upptäckta
+RACES_MILITARY_HULL               | Skrov
+RACES_MILITARY_ARMOR              | Pansar
+RACES_MILITARY_ATTACK_LEVEL       | Precisionsnivå
+RACES_MILITARY_MISSILE_DEFENSE    | Missilförsvar
+RACES_MILITARY_BEAM_DEFENSE       | Strålförsvar
+RACES_MILITARY_SHIELD             | Sköldnivå
+RACES_MILITARY_COMBAT_SPEED       | Stridshastiget
+RACES_MILITARY_TRAVEL_SPEED       | Färdhastighet
+RACES_MILITARY_WEAPON_CNT         | %2 x%1
+RACES_MILITARY_NO_WEAPONS         | Inga Vapen
+RACES_MILITARY_NO_SPECIALS        | Ingen Special-
+RACES_MILITARY_ACTIVE             | Aktiva
+RACES_MILITARY_INACTIVE           | Inaktiva
+RACES_MILITARY_LAST_SEEN          | Senast Sedda
+RACES_MILITARY_SCAN_AGE           | %1 År
+RACES_MILITARY_TACTICAL           | Taktisk Information
+RACES_MILITARY_WEAPONS            | Vapen
+RACES_MILITARY_SPECIALS           | Specialutrustning
+
+RACES_STATUS_THE_EMPIRE           | [alien_empire]
+RACES_STATUS_VS                   | mot
+RACES_STATUS_KNOWN_EMPIRES        | %1 Kända Imperier
+RACES_STATUS_HISTORY              | Visa [alien_raceposs] Historia
+RACES_STATUS_NO_DATA              | Ingen Data
+RACES_STATUS_OLD_DATA             | Gammal Data
+RACES_STATUS_FLEET_STRENGTH       | Flottas Styrka
+RACES_STATUS_POPULATION           | Population
+RACES_STATUS_TECHNOLOGY           | Teknologi
+RACES_STATUS_PLANETS              | Planeter
+RACES_STATUS_PRODUCTION           | Produktion
+RACES_STATUS_TOTAL_POWER          | Total Imperiestyrka
+RACES_UNKNOWN_DATA                | ???
+
+RACES_SET_COLOR_TITLE             | Välj ny färg för [alien_empire]
+RACES_SET_COLOR_DESC              | Om vald färg eller form redan används av ett annat imperium, så kommer färgerna att bytas.
+
+// Races UI help
+RACES_HELP_0A                     | ÖVERSIKT: Den här skärmen ger detaljerad information angånde varje utomjordiskt folkslag som du stött på.
+RACES_HELP_0B                     | Diplomati - Kontakta markerat imperium för diplomatiska interaktioner.
+RACES_HELP_0C                     | Information - Visa utomjordisk teknologi och hantera dina spionnätverk.
+RACES_HELP_0D                     | Militär - Visa flotta och skeppsdesigner.
+RACES_HELP_0E                     | Status - Jämförelser för flera kategorier.
+RACES_HELP_0F                     | Genom att välja ditt eget imperium kan du hantera information för alla kontaktade folkslag på varje flik.
+RACES_HELP_0G                     | Genom att välja ett främmande imperium visas mer detaljerad information för det folkslaget på varje flik.
+RACES_HELP_1A                     | Allmän information för markerat imperium.
+RACES_HELP_1B                     | Ger direkt tillgång till diplomater för alla kontaktade imperier.
+RACES_HELP_1C                     | Höj säkerhetsskatten för att förbättra dina chanser att hindra fiendens spioner.
+RACES_HELP_1D                     | Ger direktåtkomst för att hantera dina spioner i alla kontaktade imperier.
+RACES_HELP_1E                     | Diplomatiska incidenter som påverkar hur andra imperier reagerar mot dig. Effekterna kommer att närma sig noll över tid.
+RACES_HELP_1F                     | Klicka för att ändra färgen för ett imperium som visas på kartan
+RACES_HELP_2A                     | Allmän information för markerat imperium.
+RACES_HELP_2B                     | Beviljar en audiens med en diplomat för det markerade imperiet.
+RACES_HELP_2C                     | Information om det markerade imperiets undertecknade handelsavtal.
+RACES_HELP_2D                     | Andra imperier som det markerade imperiet har kontaktat.
+RACES_HELP_2E                     | Diplomatiska incidenter som påverkar hur det markerade imperiet reagerar på dig. Effekterna kommer att närma sig noll över tid.
+RACES_HELP_2F                     | Det nuvarande förhållandet med det markerade imperiet, representerat av ett utmätt värde. 
+RACES_HELP_3A                     | Höj säkerhetsskatten för att förbättra dina chanser att hindra fiendens spioner.
+RACES_HELP_3B                     | Ger direktåtkomst för att hantera dina spioner i alla kontaktade imperier.
+RACES_HELP_3C                     | All teknologi upptäckt av andra imperier, som samlats av dina spioner. Teknologier som du ännu inte upptäckt visas i gult.
+RACES_HELP_4A                     | Ange antalet spionnätverk du vill upprätta i det markerade imperiet och hur mycket du vill spendera årligen.
+RACES_HELP_4B                     | Ge order till spionerna som infiltrerar det markerade imperiet. Dolda - samla in data. Spionage - försök att stjäla teknik. Sabotage - hetsa uppror eller förstör fabriker och missilbaser.
+RACES_HELP_4C                     | All teknologi känd av det markerade imperiet. Teknologier du inte upptäckt visas i gult.
+RACES_HELP_5A                     | Det kända antalet skepp i flottan för det markerade imperiet, efter skrovstorlek. Denna information kommer att förbli aktuell så länge du har ett aktivt spionnätverk i det markerade imperiet.
+RACES_HELP_5B                     | Kända funktioner för olika skeppsdesigner. Äldre designer kan ha slutat användas. Denna information samlas främst under skeppsstrid.
+RACES_HELP_5C                     | Det markerade imperiets kända defensiva kapacitet. 
+RACES_HELP_6A                     | Denna skärm ger en aktuell rangordning, i olika kategorier, av vårt imperium jämfört med andra kända imperier. Denna information samlas in från våra spionnätverk inom dessa imperier.
+RACES_HELP_6A2                    | Denna skärm ger en historisk jämförelse, i olika kategorier, av vårt imperium jämfört med ett utvalt imperium. Denna information samlas in från våra spionnätverk inom dessa imperier.
+RACES_HELP_6B                     | Flottstyrka - kombinerar antal och storlek av skepp.
+RACES_HELP_6C                     | Befolkning - total befolkning av alla koloniserade system.
+RACES_HELP_6D                     | Teknologi - genomsnittlig nivå av teknologiska framsteg inom alla forskningsområden.
+RACES_HELP_6E                     | Planeter - antalet koloniserade system.
+RACES_HELP_6F                     | Produktion - total industriproduktion för imperiet.
+RACES_HELP_6G                     | Total Styrka - en kombination av flottstyrka, teknologi och produktionsnivåer.
+
+// Sabotage UI
+SABOTAGE_TITLE                    | Våra spioner har infiltrerat [alien_race] kolonier och är redo att utföra order.
+SABOTAGE_PROMPT                   | Välj den form av sabotage som ska begås mot [alien_empire] vid %1.
+SABOTAGE_WARNING                  | Varning! Aktivt sabotage kommer att bryta vårt avtal med [alien_empire].
+SABOTAGE_SELECT_TARGET            | Välj ett mål
+SABOTAGE_BUTTON_FACTORIES         | Förstör Fabriker
+SABOTAGE_BUTTON_BASES             | Förstör Missilbaser
+SABOTAGE_BUTTON_REBELLION         | Uppvigla Uppror
+SABOTAGE_BUTTON_NO_ACTION         | Avstå Åtgärder
+SABOTAGE_FACTORIES_RESULT         | Dina spioner förstörde %1 fabriker.
+SABOTAGE_BASES_RESULT             | Dina spioner förstörde %1 missilbaser.
+SABOTAGE_REBELS_TOTAL             | Dina spioner uppviglade %1 rebeller. Oro nu på %2%.
+SABOTAGE_REBELS_REVOLT            | Dina spioner utlöste ett uppror!
+SABOTAGE_BASES                    | missilbaser
+SABOTAGE_FACTORIES                | fabriker
+NOTICE_SPYING_MISSION_HIDE        | Infiltration
+NOTICE_SPYING_MISSION_ESPIONAGE   | Spionage
+NOTICE_SPYING_MISSION_SABOTAGE    | Sabotage
+
+// History UI
+HISTORY_TITLE                     | Känd Galaktisk Historia
+HISTORY_TITLE_ALL                 | Fullständig Galaktisk Historia
+HISTORY_TURN_DESC                 | Tur %1 av %2
+HISTORY_FORWARD                   | Framåt
+HISTORY_BACK                      | Bakåt
+HISTORY_PLAY                      | Spela
+HISTORY_PAUSE                     | Pausa
+HISTORY_RESET                     | Återställ
+HISTORY_EXIT                      | Avsluta
+HISTORY_EXTINCT                   | Utplånad
+HISTORY_SYSTEMS                   | System
+HISTORY_EMPIRE                    | Imperium
+
+
+
+// Council UIs
+COUNCIL_CONVENE_TITLE             | Högsta Rådet Sammanträder
+COUNCIL_CONVENE                   | Högsta Rådet har samlats för att välja en ledare som Regent av Galaxen.
+COUNCIL_CONVENE2                  | Varje imperium lägger en andel röster i proportion till dess befolkning. En kandidat måste samla minst två tredjedelar av alla röster för att bli vald. Kandidaterna är ledarna för de två mest befolkade imperierna: [first_name] av [first_empire] och [second_name] av [second_empire].
+COUNCIL_ADJOURN_TITLE             | Högsta Rådet Avslutar Mötet
+COUNCIL_ADJOURN                   | Omröstningen har avslutats och ingen av kandidaterna har samlat två tredjedelar av rösterna. Ingen regent har namngetts. Högsta rådet kommer att sammankalla för ytterligare en omröstning om 25 år.
+COUNCIL_SUMMARY_TITLE             | Väljaröversikt
+COUNCIL_SUMMARY                   | Röster görs i befolkningsordning. %1 röster krävs för att vinna val.
+COUNCIL_BEGIN_VOTING              | Börja Rösta
+COUNCIL_SHOW_VOTING               | Fortsätt Rösta
+COUNCIL_SKIP_TO_PLAYER            | Hoppa till [player_race] Röstning
+COUNCIL_COMPLETE_VOTING           | Slutför All Röstning
+COUNCIL_SHOW_RESULTS              | Visa Resultat
+COUNCIL_VIEW_SUMMARY              | Visa Väljaröversikt
+COUNCIL_VOTES_REQUIRED            | %1 röster krävs för att vinna valet.
+COUNCIL_CAST_PROMPT               | Vi måste avge våra %1 röster.
+COUNCIL_CAST_PROMPT_TITLE         | Välj en kandidat.
+COUNCIL_CHOICE_ABSTAIN            | Avstå
+COUNCIL_CAST_VOTE                 | [voter_empire] gav %1 röster för [candidate_name]!
+COUNCIL_CAST_ABSTAIN              | [voter_empire] avstår (%1 votes)
+COUNCIL_CHOICE_ABSTAIN            | Avstå
+COUNCIL_VOTE_COUNT                | %1 röster
+COUNCIL_VOTE_CAST                 | %1 röster - för [alien_race]
+COUNCIL_VOTE_ABSTAINED            | %1 röster - Avstod
+COUNCIL_TREATY_CANDIDATE          | [alien_race]: Kandidat
+COUNCIL_TREATY_ALLIANCE           | [alien_race]: Allians
+COUNCIL_TREATY_PACT               | [alien_race]: Avtal om Icke-aggression
+COUNCIL_TREATY_NONE               | [alien_race]: Inget Avtal
+COUNCIL_TREATY_WAR                | [alien_race]: I Krig
+COUNCIL_CONTINUE                  | Fortsätt
+COUNCIL_ELECTED_TITLE             | Galaxens Regent har blivit vald!
+COUNCIL_ACCEPT_RULING             | Acceptera Beslut
+COUNCIL_REJECT_RULING             | Vägra Beslut
+
+
+// Credit text
+CREDITS_DEVELOPER                 | Ray Fowler, Utvecklare
+CREDITS_ILLUSTRATOR               | Petar Penev, Illustratör
+CREDITS_GRAPHIC_DESIGN            | Kaitlin Lindsay, Grafikdesign
+CREDITS_MUSIC                     | Efe Tozan, Musik
+CREDITS_WRITER                    | Jeff Colucci, Författare
+CREDITS_SOUND                     | Remi Agullo, Ljuddesign
+CREDITS_TRANSLATOR                | Zed Lindberg, Svensk Översättning
+
+// Systems UI
+SYSTEMS_TITLE                     | System
+SYSTEMS_TAB_EXPLORE               | Utforska
+SYSTEMS_TAB_EXPAND                | Utvidga
+SYSTEMS_TAB_EXPLOIT               | Utnyttja
+SYSTEMS_TAB_EXTERMINATE           | Utplåna
+SYSTEMS_RANGE                     | %1 ly
+SYSTEMS_ENVIRONMENT_SIZE          | %1 %2
+SYSTEMS_ENVIRONMENT_TYPE          | %1 %2
+SYSTEMS_SHIELD                    | Sköld %1
+SYSTEMS_BASES                     | Baser %1
+SYSTEMS_ENTER_NOTES               | Ange anteckningar här.
+SYSTEMS_ALERT                     | Systempålysning
+SYSTEMS_NO_ALERTS                 | Inga pålysningar för tillfället.
+SYSTEMS_HISTORY                   | Systemhistorik
+SYSTEMS_UNSCOUTED                 | Systemet är outforskat men är inom räckhåll för våra spejarskepp.
+SYSTEMS_UNSCOUTED_NEED_TECH       | Systemet är outforskat och kan nås efter att forskning i "%1" är färdig.
+SYSTEMS_UNSCOUTED_COLONIZED       | Systemet är outforskat och kontrollerat av ett imperium som inte är en allierad.
+SYSTEMS_UNSCOUTED_ENEMY           | Systemet är outforskat och kontrollerat av ett fientligt imperium.
+SYSTEMS_UNSCOUTED_GUARDED         | Det går inte att utforska medan systemet är bevakat.
+SYSTEMS_UNSCOUTED_UNREACHABLE     | Systemet är outforskat och för tillfället utom räckvidd.
+SYSTEMS_CAN_COLONIZE              | System kan nås och koloniseras med vår nuvarande teknik.
+SYSTEMS_CAN_COLONIZE_EN_ROUTE     | Ett koloniskepp är på väg till detta system. ETA är %1 turer.
+SYSTEMS_CAN_COLONIZE_ENEMY        | System kan nås och koloniseras men en fientlig [alien_race] flotta ligger i omloppsbana.
+SYSTEMS_UNCOLONIZED_NEED_TECH     | Systemet kan koloniseras efter forskningen i "%1" är klar.
+SYSTEMS_UNCOLONIZED_NEED_TECHS    | Systemet kan koloniseras efter att forskning i "%1" och "%2" är klar.
+SYSTEMS_UNCOLONIZEABLE            | Systemet kan inte koloniseras.
+SYSTEMS_EXPLOIT_PCT               | Koloni vid %1% av total produktionskapacitet.
+SYSTEMS_EXPLOIT_WASTE             | Koloni genererar industriavfall.
+SYSTEMS_EXPLOIT_COMPLETE          | Kolonin är vid maximal produktionskapacitet.
+SYSTEMS_EXPLOIT_TRANSPORTS        | %1 transportskepp är på väg.
+SYSTEMS_EXT_ENEMY                 | Fiendekoloni.
+SYSTEMS_EXT_ENEMY_FLEET           | Fientlig flotta i omloppsbana.
+SYSTEMS_EXT_ENEMY_FLEET_PLAYER    | En fiendeflotta i omloppsbana vid vår koloni.
+SYSTEMS_EXT_ENEMY_FLEET_ALLY      | En fiendeflotta i omloppsbana vid en allierad koloni.
+SYSTEMS_EXT_INC_FLEET_PLAYER      | Fiendeflotta i färd mot vår koloni.
+SYSTEMS_EXT_INC_FLEET_ALLY        | Fiendeflotta i färd mot en allierad koloni.
+SYSTEMS_EXT_NEED_DEFENSE          | Försvaret i denna koloni är inte fullt uppgraderat.
+SYSTEMS_EXT_INC_TRANSPORTS        | %1 [player_race] trupper i färd.
+SYSTEMS_HELP_1A                   | ÖVERSIKT - Syftet med den här skärmen är att markera system i galaxen som kan behöva uppmärksammas av spelaren. Brådska eller fara betecknas med färg: blinkande rött, som är det högsta, och grönt är det lägsta.
+SYSTEMS_HELP_1B                   | Utforska - visar outforskade system inom räckhåll för spejare, eller potentiellt med ännu oupptäckta teknologier.
+SYSTEMS_HELP_1C                   | Utvidga - visar koloniserbara system inom räckhåll för skepp, eller potentiellt med ännu oupptäckta teknologier.
+SYSTEMS_HELP_1D                   | Utnyttja - visar kolonier som saknar ekonomisk utveckling. Visar också okoloniserade system med resurser.
+SYSTEMS_HELP_1E                   | Utplåna - visar kolonier som är under attack eller har inkommande fiendeflottor.
+SYSTEMS_HELP_1F                   | Systempålysning - beskriver pålysningar, om någon, för det valda systemet
+SYSTEMS_HELP_1G                   | Systemanteckningar - textfält för spelaren att lämna anteckningar.
+SYSTEMS_HELP_1H                   | Systemhistorik - en kronologisk lista över viktiga händelser som har inträffat i detta system.
+
+
+SYSTEMS_STATUS_REBELLION          | Kolonin är i uppror.
+SYSTEMS_STATUS_COMET              | En komet kommer att träffa denna planet om %1 år.
+SYSTEMS_STATUS_SUPERNOVA          | Systemets stjärna kommer gå supernova om %1 år. Fysiker behöver %2 FP för att avvärja denna katastrof.
+SYSTEMS_STATUS_PLAGUE             | Kolonin upplever en global epidemi som kräver %1 FP för att bota.
+SYSTEMS_STATUS_PIRACY             | Pirater påverkar handelsvägarna i detta system.
+SYSTEMS_STATUS_SPACE_AMOEBA       | En gigantisk rymdamöba är på väg mot detta system.
+SYSTEMS_STATUS_SPACE_CRYSTAL      | En gigantisk rymdkristall är på väg mot detta system.
+
+DIPLOMACY_RECEIVING               | Översätter Inkommande Meddelande...
+DIPLOMACY_MENU_CONTINUE           | Fortsätt
+DIPLOMACY_MENU_ACKNOWLEDGE        | Uppfattat
+DIPLOMACY_MENU_ACCEPT             | Acceptera
+DIPLOMACY_MENU_ACCEPT_NEED_BC     | Acceptera (betalmedel saknas)
+DIPLOMACY_MENU_FORGET_IT          | Glöm Det
+DIPLOMACY_TRADE_LEVEL             | %1 BC / År
+DIPLOMACY_MENU_TREATIES           | Föreslå Avtal
+DIPLOMACY_MENU_TRADE              | Handelsavtal
+DIPLOMACY_MENU_TECHNOLOGY         | Utbyte av Teknologi
+DIPLOMACY_MENU_OFFER_AID          | Erbjud Stöd
+DIPLOMACY_MENU_AMT                | %1 BC
+DIPLOMACY_MENU_OFFER_TECHS        | Erbjud Teknologi
+DIPLOMACY_MENU_THREATEN           | Hota
+DIPLOMACY_MENU_DECLARE_WAR        | Förklara Krig
+DIPLOMACY_MENU_EVICT_SPIES        | Avlägsna Spioner (reducerar relationer)
+DIPLOMACY_MENU_STOP_SPYING        | Sluta Upp med Spionage
+DIPLOMACY_MENU_STOP_ATTACKING     | Sluta Attackera
+DIPLOMACY_MENU_GOODBYE            | Adjö
+DIPLOMACY_MENU_PACT               | Föreslå Avtal om Icke-aggression
+DIPLOMACY_MENU_ALLIANCE           | Föreslå Allians
+DIPLOMACY_MENU_PEACE              | Föreslå Fredsavtal	
+DIPLOMACY_MENU_TRADE              | Föreslå Handelsavtal
+DIPLOMACY_MENU_JOINT_WAR          | Gemensam Krigsförklaring mot ett annat Imperium
+DIPLOMACY_MENU_PROPOSE_BREAK_ALLY | Bryt Alliansen med Annat Folkslag
+DIPLOMACY_MENU_BREAK_TRADE        | Bryt Handelsavtal
+DIPLOMACY_MENU_BREAK_PACT         | Bryt Avtal om Icke-aggression
+DIPLOMACY_MENU_BREAK_ALLIANCE     | Bryt Allians
+DIPLOMACY_TRADE_MENU_BREAK        | Bryt Handelsavtal
+DIPLOMACY_THREATEN_MENU_0         | Återkalla Ambassadör
+DIPLOMACY_THREATEN_MENU_1         | Begär Tribut 
+DIPLOMACY_THREATEN_MENU_2         | Bryt Avtal om Icke-aggression
+DIPLOMACY_THREATEN_MENU_3         | Bryt Allians
+DIPLOMACY_THREATEN_MENU_BR        | Bryt Handelsavtal
+DIPLOMACY_THREATEN_MENU_5         | Förklara Krig
+DIPLOMACY_ACCEPT_OFFER            | Acceptera
+DIPLOMACY_ACCEPT_JOIN_WAR         | Acceptera (Går med i Krig)
+DIPLOMACY_ACCEPT_END_WAR          | Acceptera (Avslutar Krig, Återkallar Styrkor)
+DIPLOMACY_ACCEPT_FORM_PACT        | Acceptera (Formar Avtal)
+DIPLOMACY_ACCEPT_FORM_ALLIANCE    | Acceptera (Formar Allians)
+DIPLOMACY_ACCEPT_ESTABLISH_TRADE  | Acceptera (Etablerar Handel)
+DIPLOMACY_DECLINE_OFFER           | Avböj
+DIPLOMACY_DECLINE_BREAK_ALLIANCE  | Avböj (Bryter Allians)
+DIPLOMACY_IGNORE_THREAT           | Ignorera Hot
+DIPLOMACY_SHUTDOWN_SPIES          | Stäng ner alla spionnätverk i [alien_empire] 
+DIPLOMACY_HIDE_SPIES              | Beordra alla spioner i [alien_empire] till Dolda.
+DIPLOMACY_RETREAT_SHIPS           | Beordra alla fartyg som kretsar kring eller färdas till [alien_race] system att Retirera
+
+// types of endings
+GAME_OVER_OVERTHROWN_LOSS         | Underkuvad Förlust
+GAME_OVER_MILITARY_LOSS           | Militär Förlust
+GAME_OVER_DIPLOMATIC_LOSS         | Diplomatisk Förlust
+GAME_OVER_NEW_REPUBLIC_LOSS       | Nya Republiken-Förlust
+GAME_OVER_REBELLION_LOSS          | Upprors-Förlust
+GAME_OVER_DIPLOMATIC_WIN          | Diplomatisk Vinst
+GAME_OVER_MILITARY_WIN            | Militär Vinst
+GAME_OVER_MILITARY_ALLIANCE_WIN   | Militär-Allians Vinst
+GAME_OVER_NEW_REPUBLIC_WIN        | Nya Republiken Vinst
+GAME_OVER_REBELLION_WIN           | Uppror Vinst
+GAME_OVER_REBEL_ALLIANCE_WIN      | Upprors-Allians Vinst
+GAME_OVER_ALLIANCE_WIN            | Allians Vinst
+GAME_OVER_NO_COLONIES_LOSS        | Samhällskollaps Förlust
+
+GAME_OVER_EXIT                    | Avsluta
+GAME_OVER_REPLAY                  | Repris
+
+
+// text for race-generic endings
+// %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 special text

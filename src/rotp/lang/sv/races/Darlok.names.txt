@@ -1,0 +1,21 @@
+// all possible names
+name: Darlok, Sarlok, Spiolok, Skugglok, Tengilok
+
+desc1: Aggressiva Diplomater
+desc2: Överlägsna Spioner
+desc3: [race]-folket är onaturliga, hemlighetsfulla, spökliknande väsen med ursprung från en annan dimension
+
+// possible home system names
+home: Nazin, Mordor, Hades, Abyssal, Hel
+title:     Emperor
+fulltitle: Emperor
+
+// possible leader names
+leader: Darquan, Morfane, Narzina, Nazgur, Shador, Ssithra
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Dis, Ånga, Gnista, Slöja, Omen, Eter, Glimmer
+ship2: Skugga, Dröm, Illusion, Hägring, Reflektion, Vision, Bländverk
+ship3: Fantom, Vålnad, Gast, Spöke, Myling, Skuggväsen, Gengångare
+ship4: Terror, Fasa, Förfäran, Förskräckelse, Xenofobi, Lieman, Mara
+

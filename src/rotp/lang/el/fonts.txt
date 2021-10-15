@@ -1,5 +1,7 @@
 // These are the fonts used for the 5 font types within the game.
 
+name,       Ελληνικά
+
 logo,       TheanoDidot-Regular.ttf,    100
 dialogue,   MyriadPro-BoldCond.otf,     100
 narrow,     MyriadPro-BoldCond.otf,     100

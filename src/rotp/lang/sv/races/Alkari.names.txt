@@ -1,0 +1,22 @@
+// all possible names
+name: Alkari, Avesi, Perigrini, Fjäderling, Psittacini
+
+desc1: Hedervärdiga Militarister
+desc2: Skickliga Piloter
+desc3: [race] Överhet är ett feodaliskt krigar-samhälle som värderar ära i strid.
+
+// possible home system names
+home: Altair, Aegir, Avetar, Volary, Psittar
+
+title:     Ledare
+fulltitle: Ledaren av Höjden
+
+// possible leader names
+leader: Skarpöga, Blånäbb, Högburen, Rödvinge, Skarpklo, Hökan
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Tita, Fink, Siska, Sparv, Svala, Kungsfiskare, Sidensvans
+ship2: Gröngöling, Trast, Hackspett, Pilgrimsfalk, Falcon, Skyhök, Stenknäck
+ship3: Rymdsångare, Tornfalk, Korp, Stridsörn, Krigsuggla, Lömska Göken, Stjärnvinge
+ship4: Åskfågel, Kondor, Planetgam, Fenix, Domherre, Kungsörn, Regala Ugglan
+

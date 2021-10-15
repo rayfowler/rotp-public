@@ -1,0 +1,140 @@
+//
+// Dialogue that is not race-specific
+//
+
+DIPLO_TECH_REQUEST_MENU_01   | Vilken teknologi skulle vara av intresse?
+DIPLO_TECH_COUNTER_MENU_01   | Vad skulle ni ge i utbyte?
+DIPLO_TRADE_MENU_01          | Du föreslår ett handelsutbyte för:
+DIPLO_TREATY_MENU_01         | Vad tänker ni er?
+DIPLO_THREATEN_MENU_01       | Vad hotar du att göra? 
+DIPLO_DECLARE_WAR_MENU_01    | Är du säker på att du vill förklara krig?
+DIPLO_JOINT_WAR_MENU_01      | Vilka skulle vi gå till krig mot?
+DIPLO_BREAK_ALLIANCE_MENU_01 | Vilken allians skulle vi bryta?
+DIPLO_OFFER_AID_MENU_01      | Vad vill du skänka bort?
+DIPLO_OFFER_TECH_MENU_01     | Vad vill du skänka bort?
+
+DECLINE_OFFER_01           | [my_nameTitle] [my_name] avböjer.
+DECLINE_OFFER_02           | [my_race] har övervägt ditt erbjudande, och avvisar det.
+DECLINE_OFFER_03           | Vi avböjer med respekt. 
+DECLINE_OFFER_04           | För tillfället är vi inte intresserade.
+DECLINE_OFFER_05           | [my_race] finner inte erbjudandet lämpligt.
+DECLINE_OFFER_06           | Med hänsyn till våra intressen kommmer vi inte att acceptera just nu.
+DECLINE_OFFER_07           | Har ni misstagit oss för att vara godtrogna dårar? Vi avvisar erbjudandet.
+DECLINE_OFFER_08           | Ert erbjudande verkar inte rättvist.
+DECLINE_OFFER_09           | Vi måste nog avstå.
+
+DECLINE_ENEMY_ALLY_01      | [my_race] skulle aldrig beblanda oss med de som allierar sig med de avskyvärda [other_race].
+DECLINE_ALREADY_ALLIED_01  | [my_race] med allierade kan inte överväga ert erbjudande på grund av era redan existerande allianser.
+DECLINE_NO_WAR_ON_ALLY_01  | Vi kommer inte förråda våra allierade.
+DECLINE_PEACE_TREATY_01    | Vi kommer inte bryta fredsavtalet med [other_race].
+
+DECLINE_ANNOYED_01         | Ni [your_race] verkar vara sådana som är generösa med ord, men snåla i handling. Vi tröttnar på er konversationsparad.
+DECLINE_ANNOYED_01         | [your_nameTitle] [your_name], du  prövar vårt tålamod. Du kanske skulle fortsätta det här vid annat tillfälle.
+DECLINE_ANNOYED_01         | [my_nameTitle] [my_name] har hört nog. Vi talas vid igen vid annat tillfälle.
+DECLINE_ANNOYED_02         | Vi är utled dessa diplomatiska förhandlingar. Låt oss ta vid igen i framtiden.
+DECLINE_ANNOYED_02         | Det här konverserandet leder ingenvart. Det är dags för oss att lämna sessionen.
+DECLINE_ANNOYED_02         | Vi avbryter här.
+DECLINE_ANNOYED_03         | Vi ber hemskt mycket om ursäkt, [your_nameTitle] [your_name], men andra ärenden kräver vår uppmärksamhet.
+DECLINE_ANNOYED_03         | Ursäkta, men sessionen har här nått sitt slut.
+DECLINE_ANNOYED_03         | Vi har mycket att göra, och lite tid att avvara. Kanske vi kan talas vid senare.
+
+DECLINE_OATHBREAKER_01     | Vi är ovilliga att upprätta avtal med er för tillfället, med tanke på era tidigare avtalsbrott.
+DECLINE_OATHBREAKER_01     | Ni har inte hedrat våra tidigare överenskommelser. Varför skulle vi tro er den här gången?
+DECLINE_OATHBREAKER_01     | Varför skulle vi tro er nu, när ni har en historia av att bryta er avtal.
+DECLINE_OATHBREAKER_01     | Vi ser ingen anledning att acceptera, när ni tidigare varit sådana som svikit.
+DECLINE_OATHBREAKER_01     | De som är hederlösa som [your_race] är inte värda några avtal.
+
+DECLINE_ESPIONAGE_01       | Ni är tjuvar och skälmar, inkräktar på vår värdefulla forskning. Vi vägrar era åberopanden.
+DECLINE_ESPIONAGE_01       | Vår forskning och våra framsteg tillhör [my_race]. Ni har inte rätt till det. När ni lagt tjuverierna på hyllan kan vi talas vid igen.
+DECLINE_ESPIONAGE_01       | Varför skulle vi ge er något? Era spioner stjäl redan allt ni behöver.
+DECLINE_ESPIONAGE_01       | Hur förväntar ni er att vi ska kunna acceptera när era spioner stjäl vår teknologi?
+DECLINE_ESPIONAGE_01       | Avlägsna era spioner, då kanske vi kan snacka.
+
+DECLINE_SABOTAGE_01        | Vi har ännu inte glömt ert senaste sabotage. Innan ni visat er mer pålitliga kommer ni inte att höra av oss.
+DECLINE_SABOTAGE_01        | Vårt folk lider på grund av ert sabotage! Det måste upphöra innan vi kan komma någon vart med diplomatin.
+DECLINE_SABOTAGE_01        | Menar du allvar? Du förväntar oss att acceptera medan ni saboterar [target]?
+DECLINE_SABOTAGE_01        | Era sabotörer härjar vid [target]. Hur skulle vi kunna ta er seriöst under de här förhållandena?
+DECLINE_SABOTAGE_01        | När sabotaget mot [target] upphör skulle vi kunna överväga era förslag.
+
+DECLINE_BUILDUP_01         | Så länge ni ansamlar flottor vid våra gränser kommer vi vara diplomatiskt avvaktande.
+DECLINE_BUILDUP_01         | Avlägsna era skepp längs våra gränser, så kan vi överväga att acceptera då. Tills dess är vi inte intresserade.
+DECLINE_BUILDUP_01         | Era flottor som hänger vid vår gräns är inget hot mot oss. Men vi vägrar dialog så länge de hänger där.
+DECLINE_BUILDUP_01         | Om ni vill förhandla med [my_empire], sänd då er lilla skeppsparad mot någon annan. Kanske den kan imponera på dem.
+
+DECLINE_ENCROACH_01        | Era skepp gör intrång på [my_race]'s område. Avlägsna dem först, så talar vi sen.
+
+DECLINE_SKIRMISH_01        | Ni överfaller våra skepp oprovocerat, och du förväntar oss att sedan tålmodigt lyssna? Vi vägrar ert babbel.
+DECLINE_SKIRMISH_01        | Vi kan inte acceptera erbjudanden från dem som attackerar våra skepp.
+DECLINE_SKIRMISH_01        | När era flottor avhåller sig från aggression mot våra kan vi uppta dialog igen.
+DECLINE_SKIRMISH_01        | Om ni vill upprätta komunikation med [my_empire]'s nation, lämna då våra rymdskepp i fred.
+DECLINE_SKIRMISH_01        | [my_nameTitle] [my_name] saknar uppskattning för er förstörelse av våra flottor eller flottiljer. Vi avböjer.
+
+DECLINE_ATTACK_01          | Ert oberättigade angrepp mot [system] ger er föga utrymme för förhandling.
+DECLINE_ATTACK_01          | Vi har ännu inte glömt attacken mot [system]. Det finns ingen chans att vi skulle ta era förhandlingar seriöst.
+
+DECLINE_INVASION_01        | Vårt folk vägrar närmanden från de som slaktade [system] och tog vad de ville med våld. Förlikelse skulle kräva ansenliga medel.
+DECLINE_INVASION_01        | [system]-systemets blod befläckar era ord. Vi kan omöjligen acceptera.
+DECLINE_INVASION_01        | De döda från [system] ropar ut och begär vedergällning. Deras rop hörs högre än era erbjudanden.
+
+DECLINE_BIOWEAPONS_01      | [my_race] är inte sådana som förhandlar med de som använder biologiska vapen för massförstörelse.
+DECLINE_BIOWEAPONS_01      | Vi har inget tålamod för de som går så långt att de använder biologiska vapen.
+DECLINE_BIOWEAPONS_01      | Ni använder vapen som orsakar den värsta sortens skräckscenarion emot en oskyldig befolkning. Vi vägrar förhandla med sådan absurditet i åtanke.
+DECLINE_BIOWEAPONS_01      | Gudarna avskyr de som brukar biologiska vapen för att skända planeter. [my_race] kan aldrig tillåta sådant.
+DECLINE_BIOWEAPONS_01      | Ropen från vårt folk som blev härjat av era biologiska vapen upptar vår hörsel. Vi kan inte höra vad ni har att säga.
+
+DECLINE_TECH_TRADE_01      | Ni har ingen teknologi av intresse för oss.
+DECLINE_TECH_TRADE_01      | [your_race]'s leksaker är inte till någon nytta.
+DECLINE_TECH_TRADE_01      | Era primitiva påhitt är ointressanta.
+DECLINE_TECH_TRADE_01      | [my_race] är bortom er i utveckling och teknologi.
+DECLINE_TECH_TRADE_01      | [your_nameTitle] [your_name], vi ser föga nytta av vad era forskare har att erbjuda.
+DECLINE_TECH_TRADE_01      | [my_nameTitle] [my_name] är inte imponerad av er teknologi.
+
+OFFER_TECH_EXCHANGE_01     | Er [tech]-teknologi är av stort intresse för oss. Vi kanske skulle kunna genomföra ett utbyte med ett av våra framsteg?
+OFFER_TECH_EXCHANGE_01     | [my_empire] har fått reda på att ni har rett ut pusslet kring [tech]. Skulle vi kunna erbjuda någon av våra teknologier i utbyte?
+OFFER_TECH_EXCHANGE_01     | [my_nameTitle] [my_name] of the [my_empire] eftertraktar [tech]-teknologins mysterium. Skulle ni erbjuda dess hemligheter mot ett av våra storslagna framsteg?
+OFFER_TECH_EXCHANGE_01     | [your_race]-folket förundras över [tech]. Vad skulle vi kunna erbjuda för att få reda på hemligheten bakom teknologin?
+
+ACCEPT_TECH_EXCHANGE_01    | Låt gå. [my_nameTitle] [my_name] accepterar avtalet att utbyta [my_race]'s hemligheter om [techGiven] för teknologin [techReceived].
+ACCEPT_FINANCIAL_AID_01    | [my_nameTitle] [my_name] accepterar din donation av [amt] BC.
+ACCEPT_TECHNOLOGY_AID_01   | [my_nameTitle] [my_name] accepterar din donation av [tech].
+
+BREAK_TRADE_01             | [my_empire]'s medborgare ser inte längre glädjen i handelsavtalet angående utbyte av varor från [your_empire].
+ANNOUNCE_TRADE_01          | År [year], fastställer [my_empire] och [your_empire] ett avtal om handel av gods till ett värde av [amt] BC årligen.
+
+ANNOUNCE_PEACE_01          | År [year] enas [my_race] och [your_race] om att avstå från vidare krigsföring och sluta fred.
+ANNOUNCE_PEACE_01          | Härmed beordrar [my_nameTitle] [my_name] alla våra flottor och soldater att upphöra med aggressionerna, och att istället fred ska få råda mellan våra imperier.
+ACCEPT_PEACE_01            | Vi håller med att det nu är tid att sluta upp med vårt kivande.
+ACCEPT_PEACE_01            | Vi accepterar ert fredserbjudande. Vapenstillestånd råder, och vi kommer inte längre utbyta aggressioner.
+ACCEPT_PEACE_01            | Vi tröttnar på all förstörelse och ovett. [my_empire] accepterar ert fredsavtal.
+
+BREAK_PACT_01              | [my_empire] notifierar er härmed att vårt avtal angående Icke-aggression kommer att upphävas, med verkan omedelbart.
+ANNOUNCE_PACT_01           | År [year] erkänner [my_empire] ett avtal angående Icke-aggression mellan våra två imperier. Vi kommer inte att anfalla [your_race]'s flottor, så länge de inte går in i omloppsbana vid en av våra kolonier.
+ACCEPT_PACT_01             | [my_empire] går med på att sluta Icke-aggressionsavtal. Vardera sida avhåller sig från att anfalla den andres skepp, såvida de inte är i omloppsbana vid den andres koloni.
+ACCEPT_PACT_01             | Om ni går med på att inte placera era skepp vid våra kolonier, då lovar [my_race] att inte gå till attack.
+ACCEPT_PACT_01             | [my_nameTitle] [my_name] accepterar ert föreslagna avtal om Icke-aggression. Skrivet, stadgat och undertecknat!
+ACCEPT_PACT_01             | Vi accepterar. Så länge som ni lämnar våra kolonier i fred, så kommer [my_empire] respektera vårt avtal om Icke-aggression.
+
+BREAK_ALLIANCE_01          | [my_empire] kan inte längre upprätthålla Alliansen med [your_empire].
+ANNOUNCE_ALLIANCE_01       | År [year], stadfäster [my_empire] och [your_empire] en Allians, där båda parter kommer att avstå attacker och våld mot den andre.
+ANNOUNCE_ALLIANCE_01       | Härmed är vår Allians sluten. Era skepp kan, i enlighet med vårt avtal, besöka våra kolonier och få tillgång till bränsle för rymdfärd.
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] välkomnar en Allians med vår gode vän, [your_nameTitle] [your_name].
+ACCEPT_ALLIANCE_01         | [my_empire] och [your_empire] sluter idag en Allians mellan våra två folk. Död åt våra fiender!
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] ser förnuftet i att upprätta en Allians med [your_empire]. Låt ske, vi accepterar!
+
+OFFER_JOINT_WAR_01         | Tiden har kommit för [your_empire] och [my_empire] att gå samman i krig mot [other_race].
+ACCEPT_JOINT_WAR_01        | Må [other_empire] falla inför [my_empire] och [your_empire] förenade styrkor. 
+ACCEPT_JOINT_WAR_01        | Med [my_race] och [your_race] allierade, så kommer inte [other_race] att kunna hålla ut länge.
+ACCEPT_JOINT_WAR_01        | År [year], så förenar sig [my_empire] och [your_empire] för att befria galaxen från plågan som är [other_race].
+COUNTER_JOINT_WAR_01       | Vi skulle kunna tänka oss att sluta upp med er i krig mot [other_empire], om ni skulle kunna kompensera oss med följande:
+RESPOND_CLOSE_EMBASSY_01   | Låt ske. Inga fler konversationer mellan våra imperier kommer att tillämpas.
+
+RESPOND_BREAK_TRADE_01     | Tro inte att vi kommer glömma det här.
+RESPOND_BREAK_TRADE_01     | Vi märker här alltså, [your_nameTitle] [your_name], att ni kan inte hålla ert ord. Vi kommer inte glömma det här.
+
+RESPOND_BREAK_PACT_01      | Vi kommer rista in era brutna avtal i er gravsten, [your_nameTitle] [your_name].
+RESPOND_BREAK_PACT_01      | [your_empire] kommer krossas under vikten av dess brutna löften.
+
+RESPOND_BREAK_ALLIANCE_01  | Ni har vanärat vårt avtal. Alliansen är härmed bruten.
+RESPOND_BREAK_ALLIANCE_01  | Nåväl. Ni har avslöjat ert opålitliga uppsåt. Alliansen är inte mer.
+RESPOND_BREAK_ALLIANCE_01  | Vi ser ingen vinning i avtal som inte hedras. Vår allians ser här sitt slut.
+RESPOND_BREAK_ALLIANCE_01  | Som ni vill. Alliansen upphör här.

@@ -1,0 +1,22 @@
+// all possible names
+name: Klackon, Klackant, Klockan, Arthropon, Coleopteron
+
+desc1: Industriali Xenofobi
+desc2: Mente Alveare e Aumento della Produzione dei Lavoratori
+desc3: Una specie con un'unica mente controllante, gli industriosi [_race_pluraladjec] sono imperscrutabili per gli estranei.
+
+// possible home system names
+casa: Kholdan, Kholdant, Khaldon, Klokdon, Khakdon
+
+titulo:     Il
+titulo completo: Il
+
+// possible leader names
+leader: Ixitixl, Kaxal, Kikitik, Klaquan, K'kalak, Xantak
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+nave1: Bombo, Ago, Mantide, Scarafaggio, Drone, Ragno, Mandibola
+nave2: Calabrone, Veleno, Venom, Libellula, Pungiglione, Scarabeo, Vespa
+nave3: Tarantola, Vipera, Cobra, Aspis, Serpente, Mamba, Scorpione
+nave4: Cobra Reale, Malmignatte, Death Wyn, Crotalini, Naga, Marasso, Mamba Nero
+

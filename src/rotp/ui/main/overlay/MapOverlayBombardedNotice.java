@@ -179,6 +179,7 @@ public class MapOverlayBombardedNotice  extends MapOverlay {
         drawBorderedString(g, yearStr, 2, x0, boxY+boxH1-s20, SystemPanel.textShadowC, SystemPanel.orangeText);
 
         String titleStr = text("MAIN_BOMBARDED_TITLE", sysName, fleet.empire().raceName());
+        titleStr = fleet.empire().replaceTokens(titleStr, "alien");
         scaledFont(g, titleStr, boxW-leftW, 22, 16);
         drawShadowedString(g, titleStr, 4, boxX+leftW, boxY+s30, SystemPanel.textShadowC, Color.white);
         String contStr = text("CLICK_CONTINUE");

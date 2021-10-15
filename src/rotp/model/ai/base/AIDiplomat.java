@@ -1084,9 +1084,9 @@ public class AIDiplomat implements Base, Diplomat {
         EmpireView v = empire.viewForEmpire(e);
 
         v.embassy().noteRequest();
-        DiplomaticIncident inc = v.otherView().embassy().declareWar();
+        DiplomaticIncident inc = v.embassy().declareWar();
 
-        return v.otherView().accept(DialogueManager.DECLARE_HATE_WAR, inc);
+        return empire.respond(DialogueManager.DECLARE_HATE_WAR, inc, e);
     }
     private boolean decidedToBreakAlliance(EmpireView view) {
         if (!wantToBreakAlliance(view))

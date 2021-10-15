@@ -545,7 +545,7 @@ MAIN_RALLY_START                  | Start Rally
 MAIN_RALLY_STOP                   | Stop Rally
 
 // Transport labels
-MAIN_TRANSPORTS_EMPIRE            | %1 Transports
+MAIN_TRANSPORTS_EMPIRE            | [empire_race] Transports
 MAIN_TRANSPORTS_COUNT             | %1 Transports
 MAIN_TRANSPORTS_CANCEL            | Cancel
 MAIN_TRANSPORTS_SHOW_DEST         | ETA to %1: %2 years
@@ -660,8 +660,8 @@ MAIN_ALLOCATE_TERRAFORM_COMPLETE  | • %1 has completed environmental terraform
 MAIN_ALLOCATE_ATMOSPHERE_COMPLETE | • %1 has been terraformed to a normal environment with the standard growth rate.
 MAIN_ALLOCATE_FERTILE_COMPLETE    | • %1 has been terraformed to a fertile environment with 150% of the standard growth rate.
 MAIN_ALLOCATE_GAIA_COMPLETE       | • %1 has been terraformed to a gaia environment with double the standard growth rate.
-MAIN_ALLOCATE_SABOTAGE_BASES      | • %1 has had %2 missile bases destroyed by %3 saboteurs.
-MAIN_ALLOCATE_SABOTAGE_FACTORIES  | • %1 has had %2 factories destroyed by %3 saboteurs.
+MAIN_ALLOCATE_SABOTAGE_BASES      | • %1 has had %2 missile bases destroyed by [spy_race] saboteurs.
+MAIN_ALLOCATE_SABOTAGE_FACTORIES  | • %1 has had %2 factories destroyed by [spy_race] saboteurs.
 MAIN_ALLOCATE_COLONY_CAPTURED     | • %1 was recently captured by %2 troops.
 MAIN_ALLOCATE_ECO_LOCKED_WASTE    | • %1 has ecological spending manually locked at a level insufficient to clean pollution.
 MAIN_ALLOCATE_PROJECT_ENDED       | • %1 is no longer researching a special project: %2
@@ -714,12 +714,12 @@ MAIN_ALERT_INVADERS_CAPTURED      | %2 [alien_race] transports arriving in the %
 MAIN_ALERT_INVADERS_KILLED        | %2 [alien_race] transports attempting to invade %1 have been completely destroyed by our defensive forces.
 MAIN_ALERT_TRESPASSING1           | [alien_race] ships have been spotted trespassing near our colony in the %1 system.
 MAIN_ALERT_TRESPASSING2           | The [alien_race] ambassador protests our ships trespassing in the %1 system.
-MAIN_ALERT_TRADE_MATURED          | Our trade treaty with the %1 has reached its maximum value of %2 BC.
+MAIN_ALERT_TRADE_MATURED          | Our trade treaty with the [alien_empire] has reached its maximum value of %2 BC.
 MAIN_ALERT_ALLIANCE_WEAKENING     | Our alliance with the [ally_empire] is weakening.
 MAIN_ALERT_ALLIANCE_BREAKING      | Our alliance with the [ally_empire] is on the verge of collapse!
 
 // Colony Listing UI
-PLANETS_TITLE                     | %1 Colonies
+PLANETS_TITLE                     | [player_race] Colonies
 PLANETS_VIEW_ECOLOGY              | Ecology View
 PLANETS_VIEW_INDUSTRY             | Industry View
 PLANETS_VIEW_MILITARY             | Military View
@@ -812,7 +812,7 @@ PLANETS_HELP_4H                   | Notes - Player system notes. Editable.
 PLANETS_HELP_4I                   | Flag - user-selected system flag.
 
 // Bombardment prompt
-MAIN_BOMBARDED_TITLE             | %1 has been bombarded by %2 forces.
+MAIN_BOMBARDED_TITLE             | %1 has been bombarded by [alien_race] forces.
 MAIN_BOMBARD_TITLE               | Our forces are orbiting an enemy [alien_race] colony.
 MAIN_BOMBARD_TROOPS              | %1 [alien_race] troops are orbiting or in transit to this colony.
 MAIN_BOMBARD_PROMPT              | Bombard the planet?
@@ -930,7 +930,7 @@ TECH_TRADE_TIER_COST_INFO         | (Tier %1 - %2 RP)
 TECH_CONFIRM_CHOICE               | Select
 TECH_DISCOVERY_TITLE              | [player_race] Scientists Achieve a %1 Breakthrough
 TECH_SCOUTED_TITLE                | Scouts Exploring the Ruins of %1 Discover
-TECH_STOLEN_TITLE                 | Our spies have infiltrated the %1 research center at %2.
+TECH_STOLEN_TITLE                 | Our spies have infiltrated the [alien_race] research center at %2.
 TECH_TRADED_TITLE                 | [player_race] Scientists Acquire Technology from [alien_race] Scientists
 TECH_PLUNDERED_TITLE              | Troopers at the Ruins of %1 Plunder
 TECH_DERELICT_TITLE               | [player_race] Explorers Plunder an Ancient Technology
@@ -1974,4 +1974,4 @@ GAME_OVER_REPLAY                  | Replay
 
 // text for race-generic endings
 // %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 special text
-GAME_OVER_NO_COLONIES_LOSS2       | The rule of %2 has ended, undone by imperial incompetence.#With no civilized worlds on which to land safely, any surviving %3 transports are unable to sustain the technological progress made by your society.#Barbarism is the natural state of society. Civilization is unnatural. It is a whim of circumstance. And barbarism must ultimately triumph.
+GAME_OVER_NO_COLONIES_LOSS2       | The rule of %2 has ended, undone by imperial incompetence.#With no civilized worlds on which to land safely, any surviving [player_race] transports are unable to sustain the technological progress made by your society.#Barbarism is the natural state of society. Civilization is unnatural. It is a whim of circumstance. And barbarism must ultimately triumph.

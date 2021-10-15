@@ -1,0 +1,6 @@
+[0430/210336.275:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Ingrid\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\4a660f76-bac3-4549-af67-07feffc5ba1b: Det går inte att hitta sökvägen. (0x3)
+[0430/210336.275:ERROR:directory_reader_win.cc(43)] FindFirstFile: Det går inte att hitta sökvägen. (0x3)
+[0430/210336.275:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Ingrid\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\5b28bad3-b83a-48a5-ad54-dfca52f009c0: Det går inte att hitta sökvägen. (0x3)
+[0430/210336.275:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Ingrid\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\b857b357-a068-4d39-8525-f02a1f774ed5: Det går inte att hitta sökvägen. (0x3)
+[0430/210336.275:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Ingrid\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\f958a27a-9145-4795-97f5-76c2545a6eed: Det går inte att hitta sökvägen. (0x3)
+[0430/210336.275:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\Ingrid\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\b49f7857-7209-4e02-a368-b46c79527fc3: Det går inte att hitta sökvägen. (0x3)

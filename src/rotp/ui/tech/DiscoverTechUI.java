@@ -219,6 +219,7 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
         player().race().resetSpy();
         mission = m;
         title = text("TECH_STOLEN_TITLE", text(sourceEmpire.raceName()), player().sv.name(system.id));
+        title = sourceEmpire.replaceTokens(title, "alien");
         finished = false;
         frameEmpire1 = mission.canFrame() ? mission.empiresToFrame().get(0) : null;
         frameEmpire2 = mission.canFrame() ? mission.empiresToFrame().get(1) : null;

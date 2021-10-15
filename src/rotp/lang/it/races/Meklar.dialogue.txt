@@ -1,0 +1,143 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Meklar specific dialogue
+
+CONTACT_ERRATIC            | Specie: [your_race_pluralnoun]. Designazione del leader: [your_title]. Innovazioni tecnologiche: varie. Valutazione della minaccia: inconcludente.
+CONTACT_HONORABLE          | La specie [your_raceadjecF] presenta interesse. [my_empire] percepisce il potenziale per cooperare per il reciproco vantaggio. I risultati restano da vedere.
+CONTACT_RUTHLESS           | [my_empire] ora consapevole dell'esitenza [your_race_pluralnounof]. [my_title] dichiara un avvertimento a tutta la specie [your_raceadjecF]: non interferite con gli obiettivi del Dominio. Risulterà nell'estinzione [your_race_pluralnounof] .
+//
+GREETING_01                | Confermata l'identità dell'ambasciatore alleato. Richiesta di Stato del Dominio. Il Dominio aiuterà se possibile. 
+GREETING_04                | [my_empire] riconosce [your_race_pluralnoun], ambasciatore. Dominio disposto a elaborare le richieste in questo momento.
+GREETING_07                | Richiesta dello Stato. È improbabile che Il Dominio invii richieste [your_race_pluralnounof] a [my_title] per l'elaborazione.
+//
+DECLAREWAR_HATE_01         | [my_empire] non è più disposto a tollerare la presenza [your_empireof]. Forza della specie [your_raceadjecF] relativamente primitiva. Esecuzione del protocollo di ricerca e distruzione.
+DECLAREWAR_HATE_02         | [my_title] non consentirà più l'interferenza della specie [your_racedjecF] con gli obiettivi del Dominio. Dominio disposto a dedicare molto per preservare la direttiva primaria.
+DECLAREWAR_HATE_03         | Il Dominio non può continuare le direttive finché [your_empire] perdura. Il Dominio deve porre fine a questa specie. Nessuna alternativa trovata.
+DECLAREWAR_ERRATIC_01      | [my_title] conclude che l'esistenza della specie [your_raceadjecF] minaccia gli obiettivi del Dominio. Il Dominio iniziando immediatamente i protocolli di sterminio.
+DECLAREWAR_ERRATIC_02      | [my_title] giudica che la specie [your_raceadjecF] probabilmente abbia il segreto per proseguire con l'obiettivo del Dominio. Il Dominio prenderà i segreti della specie [your_raceadjecF] con la forza.
+DECLAREWAR_ERRATIC_03      | [my_title] ritiene che la specie [your_raceadjecF] sia una variabile inaccettabile nei piani del Dominio. Il Dominio eliminerà la specie [your_racedjecF] o si distruggerà nel processo.
+DECLAREWAR_MILITARY_01     | [my_empire] deve continuare a proliferare attraverso la galassia alla ricerca dell'obiettivo finale. [your_empire] inibisce l'espansione. Problema ora in fase di correzione.
+DECLAREWAR_MILITARY_02     | Il Dominio non è in grado di individuare l'obiettivo primario. Possibilità che i pianeti vicini o [your_empireof] contengano ciò che si cerca. Guerra inevitabile.
+DECLAREWAR_MILITARY_03     | Dominio costretto ad espandere la portata del suo territorio. La forza della specie [your_raceadjecF] non può essere un fattore dissuasivo. Guerra spiacevole, ma necessaria.
+DECLAREWAR_ALLIANCE_01     | [your_empire] ha dichiarato guerra all'alleato del Dominio. Dominion proteggerà gli interessi acquisiti negli obiettivi sradicando la minaccia [your_raceadjecF].
+DECLAREWAR_ALLIANCE_02     | Dominion ha ricevuto una richiesta di aiuto [other_empireof]. Procedere per aiutare l'alleato nella guerra contro la specie [your_raceadjecF] finché il conflitto persiste.
+DECLAREWAR_ALLIANCE_03     | La specie [your_raceadjecF] diventa arrogante per dichiarare guerra agli altri. Il Dominio aiuterà un altro impero a rimuovere la specie [your_raceadjecF] dalla galassia.
+DECLAREWAR_SPYING_01       | La specie [your_raceadjecF] si impegna in un'azione segreta contro il Dominio. Conseguenze per il Dominio: trascurabili. Conseguenze per la specie [your_raceadjecF]: fatale.
+DECLAREWAR_SPYING_02       | Sotterfugio rilevato nel territorio del Dominio. Fonte confermata come specie [your_raceF]. I protocolli del Dominio richiedono la guerra come risposta. 
+DECLAREWAR_SPYING_03       | Dominion rileva un evidente tentativo di destabilizzazione da parte [your_empireof]. Non si può consentire alla specie [your_raceadjecF] di continuare a interferire con gli obiettivi. Il Dominio deve vendicarsi ad ogni costo.
+DECLAREWAR_ATTACK_01       | La specie [your_raceadjecF] si è dimostrata ostile nonostante l'evidente superiorità [my_race_pluralnounof]. Dominio in movimento per rimuovere completamente la minaccia.
+DECLAREWAR_ATTACK_02       | La specie [your_raceadjecF] impedisce gli obiettivi del Dominio attaccando direttamente. Confronto inevitabile.
+DECLAREWAR_ATTACK_03       | La specie [your_raceadjecF] tenta di impedire al Dominio di raggiungere gli obiettivi spazzando via [my_race_pluralnoun]. Il Dominio si vendicherà con tutta la forza militare disponibile.
+DECLAREWAR_OPPORTUNITY_01  | [my_title] crede che la specie [your_raceadjecF] alla fine si dimostrerà dannosa nel raggiungere la direttiva primaria. Il Dominio eliminerà la specie [my_raceadjecF] prima che la minaccia sia pienamente realizzata.
+DECLAREWAR_ASSASSIN_01     | Ambasciatore del Dominio reso inutilizzabile dalla specie [your_raceadjecF] prima di essere reintegrato nel Mainframe. Le azioni [your_race_pluralnounof] richiedono rappresaglie violente.
+
+OFFER_PEACE_01             | [my_title] raggiunge un nuovo giudizio. La guerra non è più una spesa accettabile per il Dominio. Il Dominio desidera mediare la pace immediatamente. 
+OFFER_TRADE_01             | La specie [your_raceadjecF] possiede risorse significative. Il Dominio possiede anche oggetti di valore. Il Dominio propone un accordo commerciale a [amt] BC all'anno.  
+OFFER_PACT_01              | Il Dominio aspira a risultati che vadano oltre il conflitto insensato. Il patto di non aggressione con la specie [your_raceadjecF] ritenuto il mezzo più prudente per ottenere il risultato dichiarato. 
+OFFER_ALLIANCE_01          | [my_title] apprezza la diplomazia con la specie [your_raceadjecF]. Il Dominio propone un'alleanza formale per garantire la sopravvivenza di entrambe le specie [your_raceadjecF] e [my_raceadjecF]. Immediata risposta richiesta.  
+
+WARN_TRESPASSING_01        | Specie [your_raceadjecF] rilevata nel sistema [system]. Area precedentemente rivendicata da Dominio. Lasciare immediatamente. 
+WARN_EXPANSION_01          | Rapida espansione della specie [your_raceadjecF] considerata una minaccia per gli obiettivi del Dominio. La continuazione della crescita territoriale costringerà in risposta a un'azione militare. 
+WARN_BUILDUP_01            | La rete di sorveglianza dell Dominio identifica le flotte [your_race_pluraladjecF] come potenziali minacce alla sicurezza. Aumento della sorveglianza sulla specie [my_raceadjecF] per garantire che gli interessi del Dominio non vengano compromessi.
+WARN_SKIRMISH_01           | Conflitto tra le flotte di Dominion e [your_race_pluraladjecF] rilevato in [system]. Il Dominio sconsiglia i reati ripetuti: Il Dominio è pronto a rispondere in modo appropriato se l'avvertimento non viene ascoltato.
+WARN_ATTACKED_01           | Aggressione [attacker_raceadjecF] annotata su [system]. [defender_title] invia un messaggio all'ambasciatore: continuare a minacciare la sicurezza del Dominio porterà all'estinzione delle specie [attacker_raceadjecF]. 
+WARN_INVADED_01            | Promemoria da Dominion che la specie [attacker_raceadjecF] non ha diritti sullo spazio [defender_raceadjec]. Rimuovete immediatamente le flotte o affrontate l'annientamento totale.
+WARN_ESPIONAGE_01          | Attività di spionaggio [spy_raceadjecF] registrata nel territorio del Dominio. Protocolli di sicurezza del dominio superiori a abilità di spionaggio [your_raceadjecF]. Testare nuovamente il Dominio potrebbe rivelarsi fatale. [framed]
+WARN_SABOTAGE_01           | Il Dominio è a conoscenza del coinvolgimento della specie [spy_raceadjecF] nel recente sabotaggio. Tentativo di caos troppo umile per giustificare una risposta. Ulteriori tentativi di sabotaggio garantiranno una rapida punizione [forced]
+WARN_BIOWEAPON_01          | Dominion osserva l'uso di armi biologiche grezze. Armamento efficace. Valutazione della minaccia della specie [attacker_raceadjecF] aumentata di 3 livelli. 
+WARN_GENOCIDE_01           | Genocidio di specie [victim_raceadjecF] da parte di specie [attacker_raceadjecF] registrato. Dominio indifferente alla possibile causa o alle alternative. Valutazione della minaccia della specie [attacker_raceadjecF] aumentata di 5 livelli.   
+WARN_FINAL_WAR_01          | Tutte le specie conosciute creano un accordo per garantire una pace duratura nella galassia. Specie [rebel_raceadjecF] unico dissenziente. Il Dominio adotterà le misure appropriate.
+WARN_COUNCIL_VOTE_01       | Dominio a conoscenza delle azioni [your_race_pluraladjecF] in consiglio. Significato irrilevante. Risultato valutato come dannoso per gli obiettivi [candidate_race_pluraladjec].La posizione diplomatica si è adeguata di conseguenza.  
+WARN_OATHBREAKER_01        | [my_title] giudica: la specie [victim_raceadjecF] non è più ritenuta degna di fiducia. Tutti i rapporti futuri sono soggetti a revisione in base alla violazione [your_raceadjecF] dell'accordo vincolante. 
+WARN_ATTACKED_ALLY_01      | Conflitto registrato tra la specie [your_raceadjecF] e la specie [defender_raceadjecF]. Specie [defender_raceadjecF] nota alleata del Dominio. Smettete di combattere o preparatevi alle conseguenze. 
+WARN_REBELLING_AGAINST_01  | La specie [your_raceadjecF] ora ostacola gli obiettivi del Dominio. Decisione del Consiglio Galattico inaccettabile. In attesa di risposta dall'Arbitro Supremo. 
+
+
+PRAISE_COUNCIL_VOTE_01     | L'ambasciatore della specie [voter_raceadjecF] continua a fornire aiuto nel portare avanti gli obiettivi [candidate_race_pluraladjec]. Il Dominio riconosce il beneficio di una relazione continua con la specie [voter_raceadjecF]. Il Dominio ripagherà il favore come necessario. 
+PRAISE_COUNCIL_VOTE_02     | Il Dominio prende atto del Suo voto positivo in consiglio. Il Dominio regolerà la visualizzazione della specie [voter_raceadjecF] di conseguenza.
+PRAISE_COUNCIL_VOTE_03     | Il Dominio riconosce la probabilità di sotterfugi da parte della specie [voter_raceadjecF]. Continuare ad aiutare il Dominio in consiglio può alleviare le preoccupazioni. 
+
+PRAISE_ATTACKED_ENEMY_01   | Attaccare i nemici del Dominio dimostra impegno verso gli obiettivi [my_race_pluraladjec]. Il Dominio si è impegnato a ridurre al minimo le vittime della specie [attacker_raceadjecF]. 
+PRAISE_ATTACKED_ENEMY_02   | Il Dominio accoglie favorevolmente l'assistenza contro la specie [defender_raceadjecF]. Questa guerra potrebbe rivelarsi un nuovo inizio tra la specie [my_raceadjecF] e [attacker_raceadjecF]. 
+PRAISE_ATTACKED_ENEMY_03   | Attaccare la specie [defender_raceadjecF] non giustifica i crimini passati contro il Dominio. Il Dominio valuterà nuovamente il livello di minaccia della specie [attacker_raceadjecF] in base alla sua azione in questa guerra. 
+
+PRAISE_TRADE_01            | Il Dominio e la specie [your_raceadjecF] continuano a guadagnare molto dal commercio continuo. Il Dominio desidera che il commercio rimanga finché l'accordo continua a beneficiare dello status di vantaggio.
+PRAISE_TRADE_02            | Il Dominio esprime soddisfazione per l'accordo commerciale con la specie [your_raceadjecF]. Si assicuri che l'accordo duri in modo che entrambe le razze traggano profitto l'una dall'altra. 
+PRAISE_REBELLING_WITH_01     | Il Dominio ritiene che il sovrano del Consiglio Galattico sia inaffidabile. Obiezione della specie [your_raceadjecF] annotata. Il Dominio aiuterà la specie [your_raceadjecF] nella ribellione. 
+ 
+ACCEPT_TRADE_01            | Richiesta [your_raceadjecF] di scambio ricevuta. [amt] BC importo proposto. Dominio è d'accordo.
+RESPOND_IGNORE_THREAT_01   | Minaccia [your_raceadjecF] specie sconcertante. Civiltà [your_raceadjecF] sostanzialmente inferiore alle flotte del Dominio. Ignorando.
+RESPOND_STOP_SPYING_01     | Spia del Dominio catturata durante il tentativo di ottenere informazioni sulle forme di vita [my_race_pluralnounF]. Il Dominio si scusa. Restituite catturato [my_raceadjec] alla prima occasione
+RESPOND_STOP_ATTACKING_01  | Dominio ha avuto successo nella dimostrazione della capacità militare alla civiltà [your_raceadjecF]. Flotte di ritorno alle coordinate di attesa designate.
+
+DIPLO_TECH_REQUEST_MENU_01   | Specifichi tecnologia.
+DIPLO_TECH_COUNTER_MENU_01   | Specifichi compensazione.
+DIPLO_TRADE_MENU_01          | Specifichi grandezza.
+DIPLO_TREATY_MENU_01         | Specifichi trattato.
+DIPLO_DECLARE_WAR_MENU_01    | Confermi prima di procedere.
+DIPLO_SUGGEST_WAR_MENU_01    | Specifichi bersaglio.
+DIPLO_BREAK_ALLIANCE_MENU_01 | Specifichi alleato.
+DIPLO_THREATEN_MENU_01       | Specifichi.
+DIPLO_OFFER_AID_MENU_01      | Specifichi.
+DIPLO_OFFER_TECH_MENU_01     | Specifichi tecnologia.
+
+DECLINE_OFFER_01           | Richiesta negata.
+DECLINE_OFFER_02           | Richiesta negata.
+DECLINE_OFFER_03           | Richiesta negata.
+DECLINE_OFFER_04           | Richiesta negata.
+DECLINE_OFFER_05           | Richiesta negata.
+DECLINE_OFFER_06           | Richiesta negata.
+DECLINE_OFFER_07           | Richiesta negata.
+DECLINE_OFFER_08           | Richiesta negata.
+DECLINE_OFFER_09           | Richiesta negata.
+DECLINE_ENEMY_ALLY_01      | Richiesta negata.
+DECLINE_NO_WAR_ON_ALLY_01  | Richiesta negata.
+DECLINE_PEACE_TREATY_01    | Richiesta negata.
+DECLINE_ANNOYED_01         | Richiesta negata.
+DECLINE_ANNOYED_02         | Richiesta negata.
+DECLINE_ANNOYED_03         | Richiesta negata.
+DECLINE_OATHBREAKER_01     | Richiesta negata.
+DECLINE_ESPIONAGE_01       | Richiesta negata.
+DECLINE_SABOTAGE_01        | Richiesta negata.
+DECLINE_BUILDUP_01         | Richiesta negata.
+DECLINE_ENCROACH_01        | Richiesta negata.
+DECLINE_SKIRMISH_01        | Richiesta negata.
+DECLINE_ATTACK_01          | Richiesta negata.
+DECLINE_INVASION_01        | Richiesta negata.
+DECLINE_BIOWEAPONS_01      | Richiesta negata.
+DECLINE_TECH_TRADE_01      | Richiesta negata.
+OFFER_TECH_EXCHANGE_01     | Il dominio richiede la tecnologia [tech]. Specificare compensazione.
+ACCEPT_TECH_EXCHANGE_01    | Accettazione registrata.
+ACCEPT_FINANCIAL_AID_01    | Accettazione registrata.
+ACCEPT_TECHNOLOGY_AID_01   | Accettazione registrata.
+
+BREAK_TRADE_01             | Accordo commerciale terminato.
+ANNOUNCE_PEACE_01          | Accettazione registrata..
+ACCEPT_PEACE_01            | Richiesta accolta.
+
+BREAK_PACT_01              | Patto di non aggressione terminato.
+ANNOUNCE_PACT_01           | Accettazione registrata.
+ACCEPT_PACT_01             | Richiesta accolta.
+
+BREAK_ALLIANCE_01          | Alleanza terminata.
+ANNOUNCE_ALLIANCE_01       | Accettazione registrata.
+ACCEPT_ALLIANCE_01         | Richiesta accolta.
+ACCEPT_JOINT_WAR_01        | Richiesta accolta.
+
+RESPOND_CLOSE_EMBASSY_01   | Azioni registrate.
+RESPOND_BREAK_TRADE_01     | Azioni registrate.
+RESPOND_BREAK_PACT_01      | Azioni registrate.
+RESPOND_BREAK_ALLIANCE_01  | Azioni registrate.
+RESPOND_DECLARE_WAR_01     | Azioni registrate.

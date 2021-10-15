@@ -1,0 +1,86 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Bulrathi specific dialogue
+
+CONTACT_AGGRESSIVE         | Jag är ambassadören av [my_empire]. Jag rekommenderar er att visa vår [my_title] er bästa sida, lilla [your_race]. Eftersom han bara behöver ge en enda order och sedan kommer ert slag krossas under ett raseri värre än vad ni kan föreställa er.
+CONTACT_RUTHLESS           | Vilka småttingar ni är! Hör här, ni behöver bara veta två saker: 1, att vi kallas "[my_race]", 2, att motsätta sig vår storslagna kampanj är början på ert förestående slut.
+CONTACT_ERRATIC            | Vi av [my_empire] hälsar er, ni småväxta. Vårt öde ligger någonstans bland dessa spridda världar och brinnande stjärnor. Det kommer att bli intressant att se vart ni passar in i den stora planen.
+//
+GREETING_01                | Ni har agerat med heder, varför vi också kommer bemöta er med heder. Låt höra vad ni har i sinnes, små vänner.
+GREETING_04                | Håll er kort, lilla [your_race]. Fresta inte vår vrede med falska löften och ofördelaktiga förslag.
+GREETING_07                | För er att träda fram för att tala med oss visar ett stort mod för någon så liten. Er djärvhet försäkrar er ohotade tillvaro, för tillfället.
+
+DECLAREWAR_HATE_01         | Små [your_race_plural] på era futtiga världar med sina småsinniga planer. Vår [my_title] tröttnar på era fasoner. Ni kommer nog inte att överleva den dom vi bringar er!
+DECLAREWAR_HATE_02         | Nog med det här! Vårt folks öde är kartlagt i stjärnorna. Vi kommer inte tillåta era tillkortakommanden att försöka resa sig upp mot oss längre!
+DECLAREWAR_HATE_03         | Förbered er för strid, lilla [your_race]! Vi kommer visa er att ursinne är den enda styrkan som för med sig seger på stridsfältet!
+DECLAREWAR_ERRATIC_01      | De eftertänksamma filosofernas vishet kan förbrylla de som är oförmögna att förstå den. När våra största tänkare ger ordern om anfall, då lyder förstås våra krigare.
+DECLAREWAR_ERRATIC_02      | Var sak har sin tid och plats i detta universum. Krig och fred, liv och död, dominans och undergivelse. För oss är det en tid för att slå till, och för er en tid för försvar.
+DECLAREWAR_ERRATIC_03      | Har du någonsin förundrats över ödets nycker, ambassadör? Det är lustigt hur saker som verkar omöjligt blir gjort till verklighet. Låt oss pröva ödet tillsammans, lilla [your_race], och se vad som ligger bakom horisonten.
+DECLAREWAR_MILITARY_01     | Segraren får vila på gamla lagrar. [my_race] har många segrar, men vi vill inte längre vila på våra lagrar, utan skaffa oss nya segrar, oavsett vem som står i vår väg.
+DECLAREWAR_MILITARY_02     | Ert folk kämpar väl för er storlek, ambassadör. Låt oss se hur väl ni kan kämpa när [my_raceposs] makt bryter fram över er!
+DECLAREWAR_MILITARY_03     | Denna galax tillhör de mäktiga, och vår makt kan inte tillåta er att resa sig över den. Försvara era världar väl, eller så blir de vårt byte att ta!
+DECLAREWAR_ALLIANCE_01     | En av Väldets allierade har begärt vår assistans! Vi kommer att visa både er och [defender_race] [my_raceposs] sanna styrka lössläppt på världarna!
+DECLAREWAR_ALLIANCE_02     | Ni går till krig med vår allierade, förmodligen ovetande om att ni på så vis också går till krig mot oss också. Det här är en strid som ert folk inte kommer gå vinnande ur, ambassadör. Ni kan räkna med det.
+DECLAREWAR_ALLIANCE_03     | Om än ni besitter sådan makt, så har ni ingen chans mot [defender_race] om vi [my_race] sluter upp med dem! Bered er, lilla [your_race]!
+DECLAREWAR_SPYING_01       | Sådant falskspel! Men när ni måste uthärda tillvaron så pass småväxta som ni är, har ni förmodligen inget annat val: ni är chanslösa på stridsfältet, vilket vi nu kommer bevisa med lätthet.
+DECLAREWAR_SPYING_02       | Att ni som är så små inte kan lyckas att undgå upptäckt med ert smygeri. Häng upp era spioner högt för alla era världar att se; ni kommer att betala för deras misstag med ert liv!
+DECLAREWAR_SPYING_03       | Lilla ni, tror ni oss för veka för att ge svar på erat prassel under bordet? Vi kommer visa er just hur drumligt ni trampat i klaveret!
+DECLAREWAR_ATTACK_01       | Om ni så pass gärna vill slåss behöver ni bara säga till, lilla [your_race]. Vi kommer att krossa allt ni håller kärt framför era ögon med ett enda svep av vår ram!
+DECLAREWAR_ATTACK_02       | Att anfalla oss med sådan fräckhet, som om ni vore mycket starkare än vad ni är. Inte så pjåkigt, men i slutänden ändå ett misstag.
+DECLAREWAR_ATTACK_03       | Låt gå, till strid! Det kanske är så att våra skepp inte är lika välutrustade, men ni kommer snart märka att ni ändå är i underläge!
+DECLAREWAR_OPPORTUNITY_01  | Vårt folk letar alltid efter tillfällen till att växa i stridsförmåga, och ert folk kan visa sig vara en lämplig utmaning. Se till att göra ert bästa och visa god sportsmannaanda, så att ni kan nämnas med respekt i våra historieböcker.
+DECLAREWAR_ASSASSIN_01     | Vi förväntade oss inte mer än annat: ett folkslag så pass fysiskt underlägset att de måste ta till metoder som att mörda en utsatt ambassadör för att främja sina ambitioner. Be och åkalla vad än för gudar ni har, lilla [your_race], för vi kommer försäkra oss om att det här kommer vara er sista kamp.
+
+OFFER_PEACE_01             | Ert folk har ändå lite kämpaglöd, du småväxte sak, men mer än nog blod har spillts i detta krig. Vi är beredda att lämna våra tidigare dispyter till historien och avancera mot fred, om ni också har modet till att göra det.
+OFFER_TRADE_01             | Ni kompenserar för er ringa storlek med er finurlighet. Vårt folk är här för att erbjuda handelsavtal om [amt] BC, varje år, i hopp om att handeln kan visa sig vara mer fördelaktigt än diverse konflikter mellan oss.
+OFFER_PACT_01              | Vi [my_race_plural] har blandad uppfattning om de många folkslag vi bemött hittills. Ert slag roar vår [my_title] särskilt, och han önskar underteckna ett avtal om icke-aggression med er för att förhindra onödiga dispyter framöver.
+OFFER_ALLIANCE_01          | Även om vi saknar like i strid, så är vi inte så barbariska att vi skulle ge upp våra band med ett folkslag som ert bara för att känna segerruset efter vunnen kamp. Hör upp, lille ambassadör, låt oss formalisera en allians, och mötas på stridsfältet som vänner istället för fiender.
+//
+WARN_TRESPASSING_01        | Er närvaro vid [system] har börjat störa oss. Det finns en visdom i att låta oss vara i fred, innan ni frestar vår vrede något ytterligare.
+WARN_EXPANSION_01          | Att ta territorium är de starkaste imperiernas rätt. Vi varnar för vidare expansioner, lille du, såvida ni inte önskar att vi försvarar framtida [my_race] territorium innan det formellt blivit gjort vårt.
+WARN_BUILDUP_01            | Rymden är en teaterarena för ynkryggar: sant hjältemod kan bara visas på en planets yta. Även om era flottor växer sig stora, så kan ni inte använda dem för att dölja er från den vrede vi skulle ha om ni skulle fortsätta låta dem växa ännu större.
+WARN_SKIRMISH_01           | Skärmytslingen vid [system] är blott ett mindre störningsmoment för oss. Stör oss inte mer, annars kommer vi stampa ned er som den störiga ohyra ni verkar eftersträva att vara liksom!
+WARN_ATTACKED_01           | En patetisk uppvisning från ett patetiskt släkte lika så! Ni har tur att vår [defender_title] har viktigare saker för sig än era småaktiga kraftdemonstrationer, men vet väl att om det är krig ni vill ha, så är det krig ni ska få, lille du.
+WARN_INVADED_01            | Ha! Sådan bravur från ett så pass småväxt folk. Lämna våra territorier nu, du småväxte sak, innan ni väcker monstret ni säkerligen skulle ångra att ni störde.
+WARN_ESPIONAGE_01          | Fega uslingar! Att smyga runt bland [victim_race_plural] som chommkingar som rymt från sina rör. Var tacksam att vi inte pulveriserade er spion, och tvinga oss inte att gensvara på sådan ynkrygghet igen! [framed]
+WARN_SABOTAGE_01           | Varför inte möta oss i strid, lillen? Det skulle vara rätt så tråkigt att gå till strid med ett folkslag så pass skyggt att de måste förlita sig på sabotage, men om ni fortsätter på det här viset så kanske vi får tåla den uttråkningen för att kunna bli av med er! [forced] 
+WARN_BIOWEAPON_01          | Den absoluta höjden av feghet, att använda biovapen mot de som inte ens kan försvara sig! Ert folk kommer få bära den här skammen tills ert imperiums slut: inget ni gör kommer någonsin att kunna göra det här ogjort.
+WARN_GENOCIDE_01           | [victim_race_plural] saknade styrka och reslighet, och är ingen större förlust för galaxens skull. Att ett folk så pass oanseligt som ert skulle vara vad som stod bakom deras utplåning, är vad vi finner något oroande.
+WARN_FINAL_WAR_01          | Vi beundrar modet i de som står upp mot hela galaxen, när den valt att enas genom avtal. Vi kommer skriva ner er djärvhet i våra historieböcker, du småväxte, efter att vi krossat er ned till det allra sista barnet!
+WARN_COUNCIL_VOTE_01       | Det galaktiska rådet är en samling flinande dårar som hellre diskuterar om sina meningsskiljaktigheter än gör upp om saken som krigare! Men bara för att vi ringaktar dessa förfaranden betyder inte det att vi tolererar att ni motsätter er oss i dessa möten!
+WARN_OATHBREAKER_01        | Småväxtling! Att bryta sitt ord är den största skammen! Vi visste att er sort är klen i kroppen, men att ni också är klena i ord förvånar även oss!
+WARN_ATTACKED_ALLY_01      | De små [defender_race] är under vårt beskydd! Sluta upp med ert krigande och försonas, eller så får ni betala med ert liv innan ni ens fattat vad som slagit till!
+WARN_REBELLING_AGAINST_01    | Överhärskaren är den ende lämplig nog att sitta på det Galaktiska Rådets tron! Vi kommer aldrig acceptera ert fula tillskansande av den tronen!
+//
+PRAISE_COUNCIL_VOTE_01     | Ha! Deras ansiktsuttryck när du tog vår sida var alltför roande. Men nu vet de vart den sanna makten ligger, och vi tackar er, våra små vänner, för er tjänst när ni pekade ut det åt dem. 
+PRAISE_COUNCIL_VOTE_02     | Det är rätt så tröttsamt att tvingas uthärda babblande senildementa under Rådets sammanträden. Om ni bistod oss för att skynda på avslutningen av mötet, eller om det var för att ni är medvetna om vår styrka, så erkänner vi er handling hursomhelst.
+PRAISE_COUNCIL_VOTE_03     | Er småväxta sort fascinerar oss. Men det är väl att ert folk valt att erkänna vår makt idag. Jag hoppas att ni kommer fortsätta att göra det, för er skull.
+
+PRAISE_ATTACKED_ENEMY_01   | Ha ha! Gott att se er på stridsfältet idag, små vänner. Låt oss krossa dessa patetiska [defender_race] tillsammans! Låt deras blod flöda över deras världar tills inte en enda återstår!
+PRAISE_ATTACKED_ENEMY_02   | Vilken härlig strid som väntar oss, lille vän! Demonstrera er kampanda mot [defender_race], så att vi kan visa er lämplig respekt från denna dag framöver!
+PRAISE_ATTACKED_ENEMY_03   | Det är ruskigt uppenbart att ni bara slåss mot [defender_race] för att vi också gör det. Men ändå, att ni inte drar er helt från att strida... kanske har vi missbedömt er trots allt.
+
+PRAISE_TRADE_01            | Vårt handelsavtal har varit mycket gynnsamt för båda våra folk, lille vän. Men tillförlitlighet är den mest värdefulla valutan, och vi kommer att visa er tillit så länge som ni fortsätter att uppvisa den sortens beteende.
+PRAISE_TRADE_02            | Även om krig är den väg till framgång som är fylld med mest spänning, så är det inte den enda vägen, som vårt handelsavtal bevisar. Må det länge fortsätta att uppehållas, så att båda våra folk kan frodas!
+
+PRAISE_REBELLING_WITH_01   | Ha ha! Så ni tror att ni kan utmana hela galaxen själva? Trodde ni att vi skulle skygga undan en sådan makalös strid? Res på er och fatta mod, för [my_empire] står samman med er!
+
+ACCEPT_TRADE_01            | Er småväxta storlek uppvägs av era vettiga förhandlingar, lilla [your_race]! Vårt Välde kommer med belåtenhet bedriva handel om [amt] BC med ert imperium årligen från och med nu.
+RESPOND_IGNORE_THREAT_01   | Hahaha, och varför exakt skulle vi hörsamma hot från sådana småttingar? Stick iväg nu, och skatta er lyckliga att vi är på tolerant humör idag!
+RESPOND_STOP_SPYING_01     | Jasså ni tog till fånga de små chommkingar vi använder för espionage? Nåja, återställ både dem och våra spioner till oss utan skada, så ska vi se till att de inte kommer att störa er mer.
+RESPOND_STOP_ATTACKING_01  | Väldets flottor är skräckinjagande, som ni kan märka. Oroa er inte, småttingar, vår uppvisning hade sin ämnade verkan, och vi kan återkalla skeppen nu.
+
+
+
