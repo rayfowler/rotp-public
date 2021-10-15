@@ -1,0 +1,102 @@
+// race-specific variables (must start with _)
+_empire                           | L'Alveare Klackoniano, L'Alveare Klackantiano, L'Alveare Klockaniano, L'Alveare Artroponiano, L'Alveare Coleopteroniano
+_empireof                         | dell'Alveare Klackoniano, dell'Alveare Klackantiano, dell'Alveare Klockaniano, dell'Alveare Artroponiano, dell'Alveare Coleopteroniano
+_raceadjec                        | Klackoniano, Klackantiano, Klockaniano, Artroponiano, Coleopteroniano
+_raceadjecF                       | Klackoniana, Klackantiana, Klockaniana, Artroponiana, Coleopteroniana
+_race_pluralnoun                  | i Klackoniani, i Klackantiani, i Klockaniani, gli Artroponiani, i Coleopteroniani
+_race_pluralnounF                 | le Klackoniane, le Klackantiane, le Klockaniane, le Artroponiane, le Coleopteroniane
+_race_pluralnounof                | dei Klackoniani, dei Klackantiani, dei Klockaniani, degli Artroponiani, dei Coleopteroniani
+_race_pluralnounto                | ai Klackoniani, ai Klackantiani, ai Klockaniani, agli Artroponiani, ai Coleopteroniani
+_race_pluraladjec                 | Klackoniani, Klackantiani, Klockaniani, Artroponiani, Coleopteroniani
+_race_pluraladjecF                | Klackoniane, Klackantiane, Klockaniane, Artroponiane, Coleopteroniane
+_title                            | Righello
+_nameTitle                        |
+
+
+
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Advisor text
+MAIN_ADVISOR_TITLE                | Consulente %2
+MAIN_ADVISOR_BUTTON_OK            | Congega
+MAIN_ADVISOR_SCOUT                | Finalmente le mie navi hanno raggiunto il completamento. Devo usare i miei esploratori per trovare nuovi mondi su cui far atterrare la mia nave colonia.
+MAIN_ADVISOR_TRANSPORT            | Mi sono stabilito in questo nuovo mondo e devo inviare altro da casa mia per espanderlo. Non c'è nuova vita qui, e così la mia ricerca continua.
+MAIN_ADVISOR_DIPLOMACY            | Nuova vita finalmente! Che strana forma di vita è per comunicarsi con rumori e gesti. Devo contemplare le informazioni diplomatiche e di intelligence che conosco su di loro prima di fare la mia prossima mossa.
+MAIN_ADVISOR_SHIP_ENGINE          | Continuo a migliorare con questo perfezionamento dei motori dei miei veicoli spaziali. Devo rivisitare i miei progetti di navi per integrarli nella mia flotta.
+MAIN_ADVISOR_RALLY_POINTS         | Perché mi attaccano? Non capisco. Devo scegliere un punto di raccolta per le mie navi per difendermi mentre cerco di capire perché è successo.
+MAIN_ADVISOR_MISSILE_BASES        | Vedo ora che non tutta la vita ha imparato il vantaggio della cooperazione. Devo fortificare i miei mondi esterni con basi missilistiche per mantenere al sicuro le mie acquisizioni.
+MAIN_ADVISOR_SHIP_WEAPON          | Continuo ad avanzare e la mia nuova tecnologia per le armi mi garantirà più potere non appena le integrerò nei progetti della mia nave.
+MAIN_ADVISOR_COUNCIL              | Eccitazione! Presto avrà luogo un incontro di molte specie. Quali forme di vita saranno raccolte lì? Se mi metto in una luce migliore tra quelli che conosco, forse faciliteranno la mia introduzione a qualsiasi nuova specie.
+MAIN_ADVISOR_REBELLION            | Cos'è questo? Ho perso il controllo di me stesso su %1. Non importa, devo semplicemente andare lì e mostrare loro che sono io al capo.
+MAIN_ADVISOR_RESIST_COUNCIL       | Impossibile! Che un altro sia stato scelto per governare questi imbecilli mentre la mia saggezza rimane ignorata! Ma non importa: metterò fine a tutti loro immediatamente!
+MAIN_ADVISOR_COUNCIL_RESISTED     | Perché questi sciocchi persistono nell'essere così sgradevoli? Il consiglio è mio, la galassia è mia e ora impareranno il loro posto nel mio dominio!
+
+MAIN_SCOUT_TITLE                  | Esploro un Nuovo Sistema Stellare
+MAIN_COLONIZE_TITLE               | I am orbiting %1, an uncolonized system.
+MAIN_COLONIZE_ANIMATION_TITLE     | Nell'anno %1, ho formato una nuova colonia.
+MAIN_ALERT_SPY_CAPTURED           | Ho catturato una spia [ofalien_empire], costringendolo a confessare le loro attività %2 .
+MAIN_ALERT_TRANSPORTS_KILLED      | I miei tentativi di raggiungere %2 sono stati fermati difendendo le forze [alien_race].
+MAIN_ALERT_INVADERS_KILLED        | I trasporti [alien_race_plural] che tentavano di invadere %2 sono stati completamente distrutti da me.
+MAIN_BOMBARD_TITLE                | Sto orbitando attorno a una colonia nemica [alien_raceF].
+
+TECH_RESEARCH_COMPUTER            | Devo selezionare la prossima tecnologia informatica su cui concentrarmi.
+TECH_RESEARCH_CONSTRUCTION        | Devo selezionare la prossima tecnologia di costruzione su cui concentrarmi.
+TECH_RESEARCH_FORCE_FIELD         | Devo selezionare la prossima tecnologia di campo di forza su cui concentrarmi.
+TECH_RESEARCH_PLANETOLOGY         | Devo selezionare la prossima tecnologia di planetologia su cui concentrarmi.
+TECH_RESEARCH_PROPULSION          | Devo selezionare la prossima tecnologia di propulsione su cui concentrarmi.
+TECH_RESEARCH_WEAPON              | Devo selezionare la prossima tecnologia bellica su cui concentrarmi.
+TECH_DISCOVERY_TITLE              | Raggiungo una svolta %1
+TECH_SCOUTED_TITLE                | Mentre esploro le rovine di %1, scopro una nuova tecnologia
+TECH_STOLEN_TITLE                 | Mi sono infiltrato nel centro di ricerca %1 a %2.
+TECH_TRADED_TITLE                 | Acquisto tecnologia da scienziati [alien_race_plural]
+TECH_PLUNDERED_TITLE              | Durante il saccheggio delle rovine di %1, scopro una nuova tecnologia
+TECH_ALLOCATE_SHIELD              | Devo aumentare i rapporti di difesa di tutte le mie colonie per costruire i nuovi scudi planetari?
+TECH_ALLOCATE_MISSILE_BASES       | Devo aumentare i rapporti di difesa di tutte le mie colonie per potenziare le mie basi missilistiche?
+TECH_ALLOCATE_FACTORIES           | Devo aumentare i rapporti industriali di tutte le mie colonie per aggiornare i controlli della mia fabbrica?
+TECH_ALLOCATE_CLEAN_WASTE         | Devo ridurre i rapporti ecologici di tutte le mie colonie alla quantità minima necessaria per mantenerle pulite?
+TECH_ALLOCATE_ENRICH_SOIL         | Devo aumentare i rapporti ecologici delle mie colonie con ambienti standard per iniziare a terraformare i miei pianeti?
+TECH_ALLOCATE_ATMOSPHERE          | Devo aumentare i rapporti ecologici delle mie colonie con ambienti ostili per iniziare a terraformare i miei pianeti?
+TECH_ALLOCATE_TERRAFORM           | Devo aumentare i rapporti ecologici di tutte le mie colonie per iniziare a terraformare i miei pianeti?
+
+NOTICE_ESPIONAGE_TITLE            | Mi sono infiltrato in una base [alien_raceF].
+NOTICE_ESPIONAGE_FRAME_TITLE      | Sono riuscito a incastrare un'altra razza per il furto.
+
+SHIP_COMBAT_TITLE_DESC            | Incontro una flotta [alien_race] ostile.
+
+SABOTAGE_FACTORIES_RESULT         | Ho distrutto %1 fabbriche.
+SABOTAGE_BASES_RESULT             | Ho distrutto %1 basi missilistiche.
+SABOTAGE_REBELS_RESULT            | Ho incitato %1 ribelli.
+SABOTAGE_REBELS_TOTAL             | Ho incitato %1 ribelli. Disordini ora a %2%.
+SABOTAGE_REBELS_REVOLT            | Ho scatenato una rivolta!
+
+COUNCIL_CAST_PROMPT               | Devo scegliere (%1 voti)...
+
+// text for endings... '#' represents a paragraph break
+// variables: %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 is special race-specific text described below
+GAME_OVER_MILITARY_LOSS2          | Hai incontrato un destino terribile.#All'inizio del tuo viaggio verso l'ignoto, ti sei lanciato nello spazio con la speranza di trovare un'altra forma di vita unica come te. Sfortunatamente, il tuo sogno è rimasto irrealizzato fino al giorno della tua morte. Non solo le altre forme di vita intelligenti che hai trovato si sono dimostrate completamente diverse da te, ma si sono anche mostrate violente e indifferenti alla tua ricerca. Quella violenza è diventata la rovina della tua speranza, e tutti i tuoi mondi sono ora nelle mani di coloro che ti hanno odiato dal momento del tuo primo incontro.#Ognuno dei tuoi corpi giace spezzato e senza vita dove sono stati uccisi, dal tuo pianeta natale alle tue ex colonie più lontane. Mentre la luce lascia gli occhi della tua ultima spira mortale rimasta, ti accorgi che l'universo sta per perdere per sempre la sua forma di vita più unica...
+GAME_OVER_MILITARY_WIN2           | La tua ricerca è giunta al termine... per ora.#Con grandi speranze hai osato sognare di trovare un'altra coscienza come la tua da qualche parte nelle profondità dello spazio. Sebbene tu abbia incontrato molte altre forme di intelligenza superiore, è diventato fin troppo evidente che nessuna di esse era simile all'unicità che solo tu possiedi. E peggio: temendo ciò che non capivano, ti hanno attaccato, provocando in te e negli innumerevoli corpi che abiti una reazione terribilissima. Con un cuore pesante li abbatti, e con un cuore più pesante ora ti ritrovi come l'unica intelligenza che abita questa galassia.#Eppure, non tutto è perduto. Sebbene queste razze aliene con le loro forme uniche di sé non abbiano soddisfatto la tua ricerca, ti rendi conto ora che c'è un intero universo là fuori da esplorare. Non ti resta che diffonderti in ogni angolo di questa galassia e ricominciare la tua ricerca...
+GAME_OVER_MILITARY_ALLIANCE_WIN2  | La tua ricerca è giunta al termine... per ora.#Sei pieno di dolore oltre misura per gli atti che sei stato costretto a commettere. Nella ricerca della parentela tra i pianeti di questa galassia, hai invece incontrato esclusivamente una sfilza di creature ignoranti che si sono scagliate contro di te per quanto eri diverso da loro. Quando le loro parole si sono trasformate in azioni violente, le hai colpite per difendere te stesso e i tuoi interessi, sperando nel frattempo che vedessero l'errore dei loro modi e venissero a trovarti per la forma di vita unica che sei. Le tue speranze alla fine sono state deluse e tutti coloro che ti hanno incontrato con violenza sono stati messi a tacere per sempre.#Ma gioisci, anziano! Sebbene tu non sia riuscito a trovare una coscienza simile alla tua, sei stato in grado di creare alleati fidati prima che il tuo viaggio giungesse alla fine. Strano a dirsi, almeno ti considerano con la stessa amicizia che provi per loro. Se il desiderio di scoprire se sei veramente unico nell'universo ti colpisce ancora, puoi partire per altre galassie ogni volta che lo desideri. Ma per ora, puoi rilassarti e goderti questo senso di compagnia che hai trovato, e goderti anche tutti i benefici che senza dubbio porterà.
+GAME_OVER_COUNCIL_LOSS2           | La tua ricerca è giunta al termine... per ora.#Questo non era il finale che volevi nella tua ricerca di parentela attraverso il mare di stelle. Sebbene tu abbia incontrato molti popoli strani e meravigliosi durante la tua ricerca, hai incontrato anche molte culture vili e irascibili. Ahimè, il più insopportabile che hai incontrato ora siede come Maestro della Nuova Repubblica. Dubiti che questo nuovo leader sarà gentile con te, e tutte le prove di cui hai bisogno per questa paura provengono dai rapporti passati che hai avuto con questo leader alieno.#Tutto ciò che desideravi era trovare un altro che fosse unico come te. Ora puoi solo aspettare in sottomissione alle calcagna di un potere più grande. Preghi solo che %5 ti lasci in pace, perché se lo volessero, l'intera potenza della galassia si scatenerebbe contro di te...
+GAME_OVER_COUNCIL_ALLIANCE_WIN2   | La tua ricerca è giunta al termine... per ora.#Una nuova era per i Klackoni sta per iniziare e i tuoi fidati amici, %5, sono ora pronti a guidare la Nuova Repubblica verso un futuro glorioso. Sebbene diversi da te sotto molti aspetti, i tuoi amici ti considerano con interesse e compassione, e tu riponi la tua fiducia in loro per permetterti di continuare la tua ricerca una volta terminato il lavoro su questa nuova alleanza. Ci vorrà molto perché specie così diverse raggiungano una coesistenza armoniosa, ma sai che %8 se ne occuperà.#Puoi solo provare un senso di appagamento per questo risultato. In ogni caso, non ti è mai importato molto della complessità delle manovre politiche, e sei felice che il tuo amico si toglierà per sempre un tale fardello dalle tue spalle. Tutto ciò che desideravi era trovare un'anima come la tua da qualche parte in questa galassia.Forse, un giorno, ce la farai ... 
+GAME_OVER_REBELLION_LOSS2         | Hai incontrato un destino terribile.#All'inizio eri solo e alla fine sei ancora solo.Incapace di raggiungere l'obiettivo finale della tua ricerca, sei passato dall'incontrare una strana civiltà all'altra fino a quelle con più lungimiranza di quelle che hai unito per formare la Nuova Repubblica. Sentendo che la tua ricerca sarebbe giunta a una fine prematura quando %5 ha assunto il ruolo di leader, hai scelto di combattere contro questo destino piuttosto che sottometterti docilmente. Non è stato il primo errore che hai commesso durante il tuo viaggio, ma si è rivelato, sfortunatamente, l'ultimo.#Ora, come %8 la galassia, pensi in silenzio a te stesso nei tuoi ultimi momenti che, almeno nella morte, le tue preoccupazioni finiranno. Se solo avessi potuto trovare un altro come te, o almeno uno che capisse chi e cosa sei, forse il tuo destino potrebbe essere cambiato quando entrambi avete preso le armi insieme...
+GAME_OVER_REBELLION_WIN2          | La tua ricerca è giunta al termine... per ora.#Contro i tuoi desideri più profondi, la galassia si è rivolta contro di te e ti ha costretto a ripagarlo in natura. Incapace di accettare la sentenza dello xenofobo %5, hai impugnato le armi da solo per difendere te stesso e la tua ricerca dal loro orribile governo. Sapevi che coloro che erano stati manipolati da questi ambigui tiranni probabilmente si sarebbero schierati contro di te, ma la continuazione della tua ricerca non poteva essere messa a repentaglio in nessuna circostanza.Quindi con tristezza nel tuo cuore hai schiacciato tutti coloro che ti si opponevano.#Se una di queste razze non avesse ceduto alla paura e all'odio per l'ignoto, forse sarebbe stata in grado di vivere con te in pacifica coesistenza. Ma questo non è uno stato di cose del tutto doloroso, perché almeno avrai una storia straziante da condividere con colui che è l'oggetto della tua ricerca, se mai riuscirai a trovarli...
+GAME_OVER_REBEL_ALLIANCE_WIN2     | La tua ricerca è giunta al termine... per ora.#Sapevi che questo sarebbe accaduto sin dalla prima riunione del Consiglio Galattico. Nonostante i tuoi avvertimenti agli altri imperi che abitavano la galassia, il traditore e vile %5 era riuscito a prendere il timone della Nuova Repubblica e minacciava di infettare la galassia con la loro vile xenofobia. Bravely you fought against them, and though many in the galaxy decided to throw their lot in against you, you were able to defend your interests successfully in the end.#Perhaps happiest of all was the support you received from your friends in this final war. Wise enough to see the danger and compassionate enough to aid you, you were happy not to have been in this fight alone. Now you may achieve a truly peaceful co-existence, and share in the bounty of this galaxy together. One day soon, you may find your way into even deeper space, and leave the galaxy hoping to meet the one you have sought after for so very, very long...
+GAME_OVER_COUNCIL_WIN2            | Your search has come to an unexpected end.#You have discovered much since you first set out from your ancient homeworld in search of another consciousness like your own. Though you have yet to fulfill that dream, the knowledge and friendship you have gained from those you have encountered has proven to be a sweet bounty indeed. I tuoi alleati non solo hanno superato la paura della tua unicità, ma hanno scelto di eleggerti Maestro della Nuova Repubblica. Un futuro che non avevi mai scandagliato per te stesso giace davanti a te, e condurrai i tuoi nuovi amici in esso con tutta la pazienza e la fiducia che ti hanno mostrato.#Forse un giorno riprenderai la tua ricerca, per trovare qualcun altro che esiste come te. Per ora, però, c'è molto lavoro da fare per te e la tua ricerca dovrà aspettare fino a quando quel lavoro non sarà terminato. E quando sarà finito, potresti scoprire che il tuo desiderio primordiale è notevolmente diminuito. Dopotutto, per la prima volta nella tua lunga vita, non sei più solo.
+GAME_OVER_COUNCIL_MILITARY_WIN2   | La tua ricerca è giunta a una fine inaspettata.#Ora, finalmente, le tue battaglie sono terminate. Dopo aver assunto la carica di Maestro della Nuova Repubblica, eri riuscito a portare tutte le forme di vita superiori di questa galassia a sedere al tavolo dell'amicizia. Almeno finché non si è formata una ribellione tristemente impreparata contro di te. Fondati dalla xenofobia e dalla paura per ciò che sei, coloro che hanno cercato di rovesciarti non sono riusciti a capire né le profondità della tua forza risoluta né la furia dei tuoi alleati nel difendere la repubblica. Sono stati schiacciati e la pace scorrerà attraverso la galassia come l'acqua negli oceani dei numerosi mondi che ora chiamate vostri.#Mentre i territori dei ribelli sono divisi tra te e i tuoi alleati, la tua mente passa brevemente alla ricerca che ti ha mandato da casa tanto tempo fa. È vero, non hai mai trovato l'oggetto della tua ricerca e rimani solo nell'universo sotto molti aspetti. Ma felicemente ti rendi conto che con gli alleati che ti sei fatto nel tuo viaggio, non sarai mai più solo.
+GAME_OVER_COUNCIL_MILITARY_LOSS2  | Hai incontrato un destino terribile.#Nessuno può criticarti per aver sperato di condurre la galassia alla pace come Maestro della Nuova Repubblica. Nessuno può criticarti per aver fatto del tuo meglio per legare insieme così tante civiltà così diverse. Ma nonostante i tuoi migliori sforzi, la ribellione che è sorta contro di te è stata in grado non solo di fomentarti, ma anche di spodestarti come leader e schiacciare la Nuova Repubblica con tutto il potere che poteva raccogliere. I tuoi alleati, morti da tempo, forse si sono pentiti di averti scelto per guidarli prima che i loro imperi si trasformassero in cenere davanti ai loro occhi. Almeno non puoi sentire i loro lamenti poiché le loro voci sono state messe a tacere per sempre.#Gli ultimi dei tuoi corpi si stanno preparando a incontrare il loro destino nei nascondigli che hanno scavato per se stessi cercando di sfuggire ai tuoi nemici. Senza cibo né acqua, il loro tempo sta per finire. Se solo avessi trovato un altro come te, uno che capisse veramente e combattesse al tuo fianco con la stessa tenacia che avresti mostrato per loro. Le cose sarebbero andate diversamente? Forse. Ahimè, però, non lo saprai mai con certezza...
+
+// This text is the %8 variable in some of the game over text... when this race wins the game
+GAME_OVER_ALLIANCE_WIN3           | l'infallibile risolutezza dei Klackoni
+GAME_OVER_REBELLION_LOSS3         | dominano le orde senz'anima dei Klackoni

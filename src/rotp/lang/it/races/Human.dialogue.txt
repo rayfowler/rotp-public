@@ -1,0 +1,89 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Human specific dialogue
+
+CONTACT_HONORABLE          | Siamo [my_race_pluralnoun] della Terra, [your_title], e siamo molto entusiasti di entrare in contatto con voi. Se avete bisogno di qualcosa del Triumvirato, qualsiasi cosa, non esitate a chiedere.
+CONTACT_PACIFIST           | Un caro saluto, [your_name]. Siete [your_empire]? Rappresento [my_empire] e spero che questo sia il primo di innumerevoli scambi amichevoli tra le nostre gente.
+CONTACT_ERRATIC            | La gente della Terra di solito preferisce risolvere i nostri problemi con la negoziazione e la diplomazia. Se la vostra gente preferisce metodi più violenti, saremo più che felici di accontentarvi, [your_race_pluraladjec].
+//
+GREETING_01                | Ah! L'ambasciatore [your_empireof] è qui! Potrei offrirLe cibo o bevande? Per favore si metta comodo e mi dica cosa possiamo fare per Lei oggi.
+GREETING_04                | Salve! Ha Lei bisogno di qualcosa del Triumvirato? Non sono sicuro di poter far passare la Sua richiesta ai Triumviri, ma forse ha bisogno di qualcosa di cui non devono preoccuparsi loro?
+GREETING_07                | Bene, appare l'ambasciatore [your_raceadjec]. Cosa vuole esattamente da noi? Sarebbe meglio non chiedere niente di troppo irragionevole.
+//
+DECLAREWAR_HATE_01         | Il Triumvirato è felice di mostrarvi perché non dovrebbe irritare una razza il cui potere sminuisce il vostro. Dovrebbe imparare da questa lezione... se sopravviverete.
+DECLAREWAR_HATE_02         | Mi rattrista pensare a tutto il tempo che abbiamo sprecato a ci comportare bene con voi quando eravamo così ovviamente destinati a una guerra lunga e sanguinosa.
+DECLAREWAR_HATE_03         | Non ha più senso nel fare finta! Non tollereremo le richieste che ci fa condividere la galassia con voi anche per un secondo! Non importa quale prezzo dobbiamo pagare!
+
+DECLAREWAR_ERRATIC_01      | Ultimamente si è parlato molto del fatto che i nostri militari siano diventati pigri e compiacenti. Speriamo che una guerra con voi li riporti in forma per i nemici più pericolosi del Triumvirato.
+DECLAREWAR_ERRATIC_02      | Conosce i giochi di guerra, ambasciatore? Finte battaglie in cui mettiamo le nostre forze l'una contro l'altra per scopi di addestramento. Bene, speriamo che una vera guerra con la Sua gente possa essere più vantaggiosa a tal fine. 
+DECLAREWAR_ERRATIC_03      | Niente unisce un popolo come un nemico comune, ambasciatore! Se non servirete i nostri interessi tramite la diplomazia, potete almeno esserci utile come forza che unisce il nostro popolo. 
+//
+DECLAREWAR_MILITARY_01     | Sarebbe stato meglio per voi accettare di cederci il territorio per via diplomatica. Il vostro rifiuto di farlo ci costringe a intraprendere un'azione alternativa. 
+DECLAREWAR_MILITARY_02     | Come ben lo sa Lei, una popolazione in crescita ha bisogno di un territorio in continua espansione per soddisfare i suoi bisogni sempre crescenti. È giunto il momento per noi di espanderci e il territorio di cui abbiamo bisogno è vostro. 
+DECLAREWAR_MILITARY_03     | I Triumviri sono devoti al popolo tanto quanto il popolo è devoto ai Triumviri. Se i nostri bisogni impongono che abbiamo bisogno dei vostro mondi da colonizzare, daranno felicemente la loro vita per vederlo realizzato!
+//
+DECLAREWAR_ALLIANCE_01     | Ci sono molti modi per impressionare i propri alleati, ambasciatore. L'eliminazione di voi aumenterà sicuramente la nostra posizione con [other_race_pluralnoun], quindi cercate di dare spettacolo, va bene?
+DECLAREWAR_ALLIANCE_02     | Il Triumvirato non abbandonerà mai i suoi alleati per affrontare da solo i propri nemici! Con gli Umani e [other_race_pluralnoun] uniti, non avete speranza di vittoria!
+DECLAREWAR_ALLIANCE_03     | Solo perché avete un forte esercito non significa che la galassia sia vostra per impostazione predefinita. Ci uniamo volentieri con [other_race_pluralnoun] e insieme vi vedremo puniti per i vostri innumerevoli crimini!
+//
+DECLAREWAR_SPYING_01       | Sembra che Lei pensasse di poter farla franca con tattiche così subdole solo a causa delle nostre preferenze diplomatiche. Non abbia paura! La aiuteremo a capire quanto grande errore ha commesso!
+DECLAREWAR_SPYING_02       | Sarebbe stato meglio per entrambi se foste stato impegnati nella diplomazia come lo siamo noi. Risponderemo alla vostra guerra di sotterfugi con un metodo di guerra più... tradizionale.
+DECLAREWAR_SPYING_03       | Speravamo che foste d'accordo con le nostre opinioni sulla diplomazia come mezzo per raggiungere obiettivi. Dato che ovviamente avete idee più nefaste, temo che non abbiamo altra scelta che rispondere in questo modo.
+//
+DECLAREWAR_ATTACK_01       | Non c'è più bisogno di una facciata diplomatica! Attaccarci dimostra semplicemente che siete sopravvissuti alla vostra utilità. Ma non vi preoccupate! Sono sicuro che troveremo una pagina per la Sua gente nei nostri libri di storia da qualche parte.
+DECLAREWAR_ATTACK_02       | Non sottovalutate la forza militare del Triumvirato! Se volete combattere, saremo più che felici di affrontarvi, ambasciatore!
+DECLAREWAR_ATTACK_03       | L'umanità ha attraversato numerosi periodi bui, ma ogni volta ne siamo emersi più forti e più saggi di prima. Le assicuro, ambasciatore, che questa volta non sarà diverso.
+//
+DECLAREWAR_OPPORTUNITY_01  | Ogni azione che facciamo è per servire i nostri obiettivi, ambasciatore. Di solito preferiamo usare la diplomazia, ma poiché non c'è una vera ragione per tenervi in giro, una guerra veloce con voi servirà meglio ai nostri fini.
+DECLAREWAR_ASSASSIN_01     | Sono rimasto scioccato nell'apprendere che una razza apparentemente intelligente potrebbe fare qualcosa di così atroce come uccidere un ambasciatore. Faremo di voi un esempio, in modo che nessun impero intraprenderà mai questa azione contro il Triumvirato come l'avete fatto voi!
+
+OFFER_PEACE_01             | Sicuramente ora può vedere che guerre come questa portano solo tragedie. Fermiamo questa follia prima che il sangue più prezioso [your_raceof] e [my_raceof] venga versato. Unitevi a noi per porre fine alla guerra e forgiare un nuovo futuro che i nostri figli saranno orgogliosi di ereditare!
+OFFER_TRADE_01             | C'è un detto su [my_home] che "la guerra è inevitabile", ma abbiamo imparato molto tempo fa che non si avvera mai dove regna la prosperità. Uniamoci nel perseguimento di quella prosperità. Cominciamo da, oh, [amt] BC all'anno?
+OFFER_PACT_01              | Sappiamo entrambi che le guerre possono iniziare accidentalmente quando gli imperi si espandono in tutta la galassia. L'ultima cosa che il Triumvirato vuole è la guerra con un popolo esemplare come il Suo, e un patto di non aggressione farà riposare entrambi i nostri popoli più facilmente la notte. Non è d'accordo?
+OFFER_ALLIANCE_01          | [your_race_pluralnoun] sono davvero meravigliosi! Ambasciatore, mi è appena venuta un'idea: formalizziamo un'alleanza tra [your_race_pluralnoun]  e [my_race_pluralnoun]. Insieme possiamo insegnare alla plebaglia di questa galassia che la diplomazia, non la violenza, è l'unico modo per andare avanti!
+
+WARN_TRESPASSING_01        | Ambasciatore, sembra che una flotta [your_raceadjecF] abbia preso posizione nello spazio [my_raceadjec]. Sicuramente sa che non possiamo permetterlo. Va tutto bene, rimovete semplicemente le vostre flotte e dimenticheremo che sia mai successo.
+WARN_EXPANSION_01          | Sebbene il Triumvirato desideri rispettare la volontà del Suo popolo, non possiamo semplicemente chiudere un occhio su un'espansione territoriale così aggressiva. Sono sicuro che cesserete tutto questo in nome della preservazione dei nostri rapporti diplomatici. Vero, ambasciatore?
+WARN_BUILDUP_01            | Ambasciatore, per favore! I nostri capi militari sono in subbuglio per il recente accumulo delle vostre flotte! Le chiedo di rallentare la vostra costruzione di navi per mostrare a quegli sciocchi militari che le loro paure sono infondate!
+WARN_SKIRMISH_01           | Ho appena ricevuto un triste rapporto su una schermaglia tra navi del Triumvirato e una flotta appartenente [your__race_pluralnounto]. Per favore, si assicuri che questo non accada mai più, altrimenti temo che la guerra sarà un futuro inevitabile!
+WARN_ATTACKED_01           | Non bravo ambasciatore: per niente bravo. Attaccarci a [system]... cosa state pensando? Sto cercando di tenere a bada i militari a causa del mio impegno per la diplomazia, ma se continuate così non potrò fare nulla per saziarli.
+WARN_INVADED_01            | I nostri generali sono furiosi per l'ultima azione intrapresa dal Suo popolo! Se invadete il sistema [system], sono pronti per andare in battaglia! Devete smetterla subito! Non state cercando di iniziare una guerra, vero?!
+WARN_ESPIONAGE_01          | La mia gente non è estranea allo spionaggio, e ha pervaso la nostra cultura da una guerra gelida e amara molti secoli fa. Ma dovete sapere che i ripetuti tentativi di rubare i nostri segreti saranno accolti con rappresaglia in futuro? [framed]
+WARN_SABOTAGE_01           | Spionaggio potremmo capire, ma sabotaggio?! Farò il possibile per calmare i generali, ma se proverete di nuovo a fare qualcosa del genere dubito che sarò in grado o anche solo disposto ad aiutarvi in futuro. [forced]
+WARN_BIOWEAPON_01          | Mi è venuto in mente che avete usato un'arma biologica sui civili a [system]. Sono... francamente a corto di parole. Per il bene delle nostre relazioni diplomatiche farò quello che posso, ma non posso dire di essere entusiasta di quale sarà la risposta all'interno del Triumvirato.
+WARN_GENOCIDE_01           | Cos'avete fatto?! Una cultura bella e antica è andata perduta per sempre! Mi vengono i brividi a pensare come reagiranno i Triumviri a questa notizia: commettere un genocidio contro [victim_race_pluralnoun] è l'assoluta antitesi della nostra filosofia!
+WARN_FINAL_WAR_01          | Alla fine la galassia ha scelto di unirsi e muoversi per la pace, eppure Lei tra tutte le persone sceglie di sfidare la nostra linea d'azione scelta democraticamente? Dopo tutti i nostri affari mi sbagliavo a pensare meglio di Lei. Ma so che presto quell'errore sarà corretto!
+WARN_COUNCIL_VOTE_01       | Confesso di essere deluso dalle Sue azioni in consiglio, ambasciatore. Spero che questo sia stato un solo errore da parte Sua e che questo possa diventare, come piace dire a noi umani, "acqua passata".
+WARN_OATHBREAKER_01        | La fiducia è la base di tutta la diplomazia, ambasciatore. Infrangendo la Sua parola, ha sputato sulla nostra fiducia, e Le assicuro che alle nostre relazioni diplomatiche è stato inferto un colpo dal quale probabilmente non si riprenderanno mai.
+WARN_ATTACKED_ALLY_01      | Ambasciatore, vi sconsiglio vivamente di ulteriori attacchi [defender_race_pluralnounto]. Abbiamo giurato un'alleanza con loro, e nemmeno io sarò in grado di tenere a bada i nostri militari se insisterete nel continuare questa violenta linea d'azione!
+WARN_REBELLING_AGAINST_01  | Non può essere che siete stati scelti voi al posto nostro per guidare il Consiglio Galattico! I Triumviri saranno furiosi! Temo che vedranno la guerra come l'unica opzione praticabile rimasta!
+//
+PRAISE_COUNCIL_VOTE_01     | Mio buon amico l'ambasciatore! Volevo solo dirLe: ben fatto oggi in consiglio! Il Triumvirato apprezza sempre coloro che sostengono le nostre cause e sono felice che un alleato così grande come Lei continua a guadagnare questo apprezzamento.
+PRAISE_COUNCIL_VOTE_02     | Ah, l'ambasciatore [voter_empireof]. Sono contento di averLa trovato prima che ci aggiornassimo. Sono felice di vedere che la Sua fede negli ideali del Triumvirato è così forte! Quando torneremo a casa, si assicuri di contattarmi in modo che possiamo rafforzare i nostri legami diplomatici!
+PRAISE_COUNCIL_VOTE_03     | Quindi ha votato per noi, eh? Sono contento che Lei stia finalmente tornando in sé. Se è disposto a impegnarsi per stringere nuovi legami diplomatici con il Triumvirato, potrei essere disposto a mettere una buona parola per Lei.
+
+PRAISE_ATTACKED_ENEMY_01   | Non ho dubbi che [defender_race_pluralnoun] non si aspettassero che il Triumvirato combattesse una guerra, ma so che non si aspettavano che anche i nostri amici [your_race_pluraladjec] si unissero! Insieme mostreremo loro perché la diplomazia e la fiducia sono gli strumenti più importanti che si possono padroneggiare!
+PRAISE_ATTACKED_ENEMY_02   | Oggi è un buon giorno per la battaglia, ambasciatore. Preferiamo fare amicizia in circostanze molto più pacifiche, ma se una guerra contro [defender_race_pluralnoun] segna l'inizio di una lunga amicizia tra la mia gente e la Sua, allora questa è senza dubbio una guerra che vale la pena combattere!
+PRAISE_ATTACKED_ENEMY_03   | Il Triumvirato è più che in grado di affrontare qualsiasi nemico che disprezza i nostri tentativi di relazioni pacifiche. Ma, se insistete a unirvi a questa battaglia come atto di buona fede, di certo non faremo nulla per ostacolarvi!
+
+PRAISE_TRADE_01            | Ecco di cosa si tratta! Buoni amici e prosperi accordi commerciali valgono più dei nemici e delle guerre devastanti! Sono contento che la vostra gente abbia scelto di essere nostri amici, e sono sicuro che i Triumviri la pensano allo stesso modo!
+PRAISE_TRADE_02            | Sì, la fiducia è il fondamento della diplomazia, ma il commercio reciprocamente vantaggioso di certo non fa mai male, eh? Spero che possiamo continuare il nostro accordo indefinitamente e che emergano nuovi modi per aiutarci a vicenda. Come piace dire a noi umani, "se mi gratti la schiena, allora io gratto la tua!"
+
+PRAISE_REBELLING_WITH_01   | Non abbia paura, ambasciatore! Anche noi riconosciamo il consiglio per quello che è: dittatura corrotta mascherata da pacifica convivenza. Resteremo uniti e non ci fermeremo finché non ci saremo sbarazzati di questi despoti una volta per tutte!
+
+ACCEPT_TRADE_01            | Questo accordo commerciale gioverà a entrambi, ambasciatore. [my_empire] e [your_empire], amici al ritmo di [amt] BC ogni anno! Ha un bel suono, non è d'accordo?
+RESPOND_IGNORE_THREAT_01   | Oh, sicuramente questa vostra minaccia è uno scherzo di qualche tipo? Sì, sì, uno scherzo! Haha, molto divertente, ambasciatore!
+RESPOND_STOP_SPYING_01     | Beh, questo è un affare disordinato. Il Triumvirato rinnega qualsiasi conoscenza di questo agente ribelle che ha agito di propria iniziativa spiando la Sua gente. Vi preghiamo di restituirceli e vi assicuro che questo non accadrà di nuovo.
+RESPOND_STOP_ATTACKING_01  | Questa è una vecchia tradizione [my_race_pluralnounof] che chiamiamo "tintinnio di sciabola". Consideri la sciabola adeguatamente tintinnata, ambasciatore: le nostre flotte torneranno da noi ora.

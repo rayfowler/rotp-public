@@ -1,0 +1,21 @@
+// all possible names
+nome: Silicoide, Igneoide, Sedimoide, Granitoide, Magmoide
+
+desc1: Espansionisti Xenofobi
+desc2: Immune agli Ambienti Ostili
+desc3: [_race_pluralnoun] enigmatichi e litovorichi cercano nella galassia il loro eterno nemico.
+
+// possible home system names
+casa: Cryslon, Geode, Karst, Igneous, Silican
+
+titulo:     Emperor
+titulo completo: Crystal Emperor
+
+// possible leader names
+leader: Carnax, Crystous, Geode, Granid, Igneous, Sedimin
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+nave1: Sedimento,  Ciottolo, Pieta, Roccia, Cristallo, Minerale, Sabbia
+nave2: Granito, Marmo, Ardesia, Quarzo, Pomice, Gabbro, Ossidiana
+nave3: Magma, Lava, Feldspato, Riolite, Mica, Basalto, Dacite
+nave4: Diamante, Zaffiro, Smeraldo, Rubino, Ametista, Topazio, Granato

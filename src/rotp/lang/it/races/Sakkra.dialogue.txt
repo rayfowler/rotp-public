@@ -1,0 +1,88 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Sakkra specific dialogue
+
+CONTACT_AGGRESSIVE         | Ciao! Siamo conosciuti come [my_race_pluralnoun], ma non è importante. Ciò che è importante, però, è che sappiate che abbiamo in programma di perfezionare l'ecologia di ogni pianeta della galassia con ogni mezzo necessario, ok? Ciao, per ora!
+CONTACT_RUTHLESS           | Hey! Siamo [my_race_pluralnoun]! Spero che non abbiate maltrattato gli ecosistemi dei vostri pianeti. Dovremmo risolverlo immediatamente e probabilmente non sarebbe molto divertente per voi, vero?
+CONTACT_ERRATIC            | Caspita, una nuova specie! Noi siamo [my_race_pluralnoun], e voi? [your_race_pluralnoun]? Belissimo. Solo per farvi sapere che dovreste mantenere puliti i vostri pianeti, ok? Ci assicureremo che lo facciate tenendovi d'occhio molto, molto da vicino.
+//
+GREETING_01                | Ehi ambasciatore! Sempre felice di sentire un amico come te! Hai bisogno di aiuto con qualcosa?
+GREETING_04                | È l'ambasciatore [your_empireof]! Siamo impegnati a mettere a punto alcuni ecosistemi planetari, ma ascolteremo quello che hai da dire. 
+GREETING_07                | Oh sei tu. Cosa vuoi? Sai che non ci piace molto associarci a gare sporche come la tua, vero?
+//
+DECLAREWAR_HATE_01         | Sembra che la tua gente non smetta di contaminare ogni pianeta su cui mette le mani, eh? Cancelleremo la vostra sporcizia dalla galassia in meno tempo di quello necessario per costruire una biocupola!
+DECLAREWAR_HATE_02         | Da quando vi abbiamo incontrati, continuate a rovinare i vostri ecosistemi nei modi più inconcepibili! Ci occuperemo di voi prima che possiate ferire ancora questi pianeti!
+DECLAREWAR_HATE_03         | Non possiamo più sopportare di vedervi rovinare i vostri mondi! Ci costerà molto, ma a volte il fine giustifica davvero i mezzi!
+//
+DECLAREWAR_ERRATIC_01      | Wow, la tua gente è sicuramente sporca. Potremmo aiutarvi a ripulire i vostri mondi, ma sarebbe molto più veloce liberarci di voi e sistemarli da soli.
+DECLAREWAR_ERRATIC_02      | Ciao! Pronti per la guerra? Non lo siate? Beh, è un peccato! Ma vediamo alcuni dei vostri mondi che chiedono solo l'ottimizzazione e non ci resta che metterci le mani sopra.
+DECLAREWAR_ERRATIC_03      | Ehilà! Sapevi che di recente abbiamo progettato una biocupola ancora più efficiente dal punto di vista energetico? Vorremmo testarli su alcuni pianeti davvero sporchi, quindi vi dispiace se purifichiamo alcuni dei vostri così possiamo iniziare?
+//
+DECLAREWAR_MILITARY_01     | Lo sai che il Conclave perfezionerà l'ambiente di ogni pianeta di questa galassia, vero? Bene, inizieremo a lavorare sui vostri mondi. Dovreste lasciarli adesso. Dovreste lasciarli presto: non ci batterete mai se provate a combattere!
+DECLAREWAR_MILITARY_02     | Il [my_title] dice che dobbiamo portare la tua gente fuori dai loro pianeti ora, così possiamo iniziare a ripararli. Li lascerete pacificamente? No? Peccato!
+DECLAREWAR_MILITARY_03     | Avete alcuni dei più meravigliosi enigmi ecologici da risolvere nei vostri territori e li trattate come se non fossero nemmeno lì! Non ne possiamo più! Non importa come, ve li prenderemo!
+//
+DECLAREWAR_ALLIANCE_01     | Abbiamo sentito che voi e [other_race_pluralnoun] stavate litigando per qualcosa. Sono sicuro che sia stupido e irrilevante, ma questa è la migliore occasione per noi di prendere le vostree colonie per noi stessi così possiamo finalmente riparare tutti i danni che avete causato!
+DECLAREWAR_ALLIANCE_02     | Non posso assolutamente negare che [other_race_pluralnoun] siano una razza sporca. Tuttavia, siete molto più sporchi di loro, quindi se sono disposti a combattervi, ci uniremo volentieri alla causa.
+DECLAREWAR_ALLIANCE_03     | Hai decisamente sbagliato questa volta, ambasciatore! Dovevi sapere che ci saremmo uniti a un alleato che sarebbe andato in guerra con voi, anche se quell'alleato è sporco come [other_race_pluralnoun]. Aspetta, non lo sapevi? Mamma mia...
+//
+DECLAREWAR_SPYING_01       | Cosa pensi di star facendo esattamente? Qualcuno così sporco come la tua gente non potrebbe mai condurre uno spionaggio contro il Conclave senza lasciare dietro di voi una scia di sporcizia che noi seguiamo, sai?
+DECLAREWAR_SPYING_02       | Il fatto che abbiate agito in tale segretezza contro il Conclave ci fa impazzire, ma il fatto che abbiate sporcato i nostri pianeti con la vostra disgustosa presenza ci rende assolutamente lividi!
+DECLAREWAR_SPYING_03       | Hai fatto l'errore di pensare che non avremmo risposto quando avete deciso di spiarci. Solo perché il tuo esercito è un po' più grande del nostro non significa che non siamo disposti ad andare in guerra con voi sporchi!
+//
+DECLAREWAR_ATTACK_01       | Cosa stai facendo?! Come osa uno sporco debole come voi danneggiare i nostri preziosi pianeti?! Per questo bruceremo la vostra gente come la spazzatura che sono!
+DECLAREWAR_ATTACK_02       | Volete combattere una guerra contro di noi, eh? Non vi preoccupate, vi abbatteremo, una colonia alla volta, e libereremo i vostri pianeti dai loro orribili profanatori!
+DECLAREWAR_ATTACK_03       | Sporco! Sporco! Sporco! Avete macchiato il nostro pianeta con la vostra orribile sete di sangue! l Conclave raccoglierà ogni briciola di forza che ha per riportarvi al pozzo di scorie da cui siete venuti!
+//
+DECLAREWAR_OPPORTUNITY_01  | Il [my_title] stava pensando alla tua gente di recente. È giunto alla conclusione che sarà meglio per noi impedire che vi diffondete nella galassia prima piuttosto che dopo. In questo modo, non avremo tanti mondi da ripulire dopo aver eliminato voi!
+DECLAREWAR_ASSASSIN_01     | Cos'hai fatto?! Sapevo che non ci si poteva fidare della tua specie! Se uccidete un ambasciatore disarmato, tremo al pensiero di cosa fate ai vostri ecosistemi! Vi preparate per la guerra, sporco [your_raceadjec].
+
+
+OFFER_PEACE_01             | Quei poveri pianeti! Non possiamo sopportare di vederli più segnati da questa stupida guerra! Mettiamo fine ai combattimenti ora, ambasciatore, e iniziamo a guarire questi mondi in cui abbiamo sbagliato così tanto!  
+OFFER_TRADE_01             | Caspita, ci sono così tanti ambienti complessi in tutti questi mondi! Vorremmo rendere la nostra economia più solida per finanziare tutti questi progetti e fare trading con voi sarebbe di grande aiuto![amt] BC ogni anno va bene, giusto? 
+OFFER_PACT_01              | Sembra che tu vi prendete cura dei vostri pianeti abbastanza bene, e le guerre fanno cose così brutte ai mondi su cui vengono combattute. Vorreste un patto di non aggressione con noi? In questo modo nessuno dei nostri splendidi ecosistemi avrà nulla da temere! 
+OFFER_ALLIANCE_01          | Caspita, sono impressionato! Il modo in cui vi prendete cura dei vostri pianeti, è quasi come se fosste voi stessi Sakkriani! Stringi un'alleanza con noi, ambasciatore! Proteggeremo insieme i mondi dell'altro: nessuno ci minaccerà finché saremo uniti! 
+ 
+WARN_TRESPASSING_01        | Ehi! Ehi! Ehi! [system] è sotto la protezione del Conclave! Non appartente a questo posto, lo sapete? Andatevene! Ora! Cosa state aspettando? Via! 
+WARN_EXPANSION_01          | Prendete per voi molto più di quanto dovreste, ambasciatore! Non siete abbastanza avanzati per occuparvi di ciascuno di questi mondi e non vi lasceremo sprecare tutti questi enigmi ecologici! Rallentate la vostra espansione, altrimenti!
+WARN_BUILDUP_01            | Ci sono un sacco di navi che avete lì! Se continuate a portare di più, alcuni imperi potrebbero iniziare a innervosirsi. Potrebbero iniziare a puntare le armi verso di voi. Potrebbero anche sparare un tiro o due! Se continuate a portare altre navi, ovviamente. 
+WARN_SKIRMISH_01           | Non posso credere che ci sia stata una schermaglia a [system]! A cosa stavate pensando, ambasciatore? Questa volta guarderemo oltre dato che non avete danneggiato nessun pianeta, ma d'ora in poi guardate le vostre flotte, stupido [your_raceadjec]! 
+WARN_ATTACKED_01           | Cosa pensate di star facendo?! Smettila di scimmiottare! Siamo molto impegnati a cercare di perfezionare l'ecologia nel [system], non abbiamo bisogno che le vostre navi volino in giro e rendano le cose ancora più impegnative! 
+WARN_INVADED_01            | Avete perso la testa?! O qualunque piccole teste che voi stupidi [your_race_pluraladjec] avete?! Ci vorranno anni per riparare il danno che avete fatto! Queste battute non sono più divertenti! Smettete di giocare o ve lo faremo pentire! 
+WARN_ESPIONAGE_01          | Pensi di poterci spiare e riuscire a tenerlo segreto? Sei divertente, ambasciatore. Ma se smette di essere così divertente, probabilmente ti uccideremo, ok? [framed]
+WARN_SABOTAGE_01           | Cos'avete fatto?! Avete spalancato la biocupola! Tutti quei campioni preziosi, tutti quegli esperimenti rovinati! Vi spingete troppo oltre: aspettate una nostra risposta se continuate così, sporchi [your_race_pluraladjec]! [forced]
+WARN_BIOWEAPON_01          | Ora ce l'hai fatta! Un'arma biologica?! Un'arma biologica!! Pensa ai danni indicibili che hai fatto all'ecologia di quel pianeta indifeso! Tu mostro assoluto: vivrai per rimpiangere questo!
+WARN_GENOCIDE_01           | Avete rimosso [victim_race_pluralnoun] vero? Bene, stavano davvero cominciando a darci sui nervi. Naturalmente ci darete i loro mondi per il restauro ecologico. Invece no? Capisco...
+WARN_FINAL_WAR_01          | Sai che abbiamo deciso tutti di unirci per il bene di tutti i mondi, vero? Perché volete opporvi alla nostra unità, ambasciatore? Immagino che non importerà presto. Ma non preoccuparti! Ci prenderemo cura dei vostri pianeti dopo che ve ne sarete andati.
+WARN_COUNCIL_VOTE_01       | Non è stata una cosa molto carina da fare in consiglio. Pensavo avessimo un'intesa, ambasciatore? Che la volontà [candidate_raceadjecF] sia sempre stata la scelta giusta da fare? No sbagliare di nuovo, sporco [your_raceadjec]!
+WARN_OATHBREAKER_01        | Abbiamo sempre pensato che foste fisicamente disgustosi, con i vostri corpi strani e i cattivi odori. Ma ora vediamo che le azioni corrispondono al volto! Sparisci dalla mia vista ora, ambasciatore: Comincio a sentirmi davvero molto male.
+WARN_ATTACKED_ALLY_01      | Guarda, non siamo davvero fan [defender_race_pluralof] anche se siamo tecnicamente alleati. Smettila con i tuoi stupidi battibecchi, altrimenti dovremo coinvolgerci.
+WARN_REBELLING_AGAINST_01  | Come potrebbe il consiglio farci questo?! Come hanno potuto scegliere TE tra tutte le persone per guidare questa galassia? Non possiamo lasciare che questo passi... sei proprio... così... IMMONDO! 
+
+PRAISE_COUNCIL_VOTE_01     | Ehi ambasciatore! Grazie per essere così affidabile in consiglio. Quelle altre gare sono così disgustose, ma avere il supporto di persone come te? Beh, ci fa sentire come se stessimo facendo qualcosa di giusto. Fammi solo sapere se hai bisogno di qualcosa, ok? 
+PRAISE_COUNCIL_VOTE_02     | Hai fatto molto bene oggi nele camere del Consiglio. Sono davvero felice di sapere che vedi la saggezza nei nostri modi. Spero che i tuoi pianeti traggano beneficio dalla tua saggezza tanto quanto fa il Conclave! 
+PRAISE_COUNCIL_VOTE_03     | Hmm, cosa stai tramando, cercando di essere dalla nostra parte votandoci nella riunione del consiglio? Beh, non importa, sono sicuro che scopriremo di cosa si tratta abbastanza presto, se è importante. Grazie comunque per il supporto, schifo. 
+PRAISE_ATTACKED_ENEMY_01   | Hai sentito il richiamo di quei mondi, vero ambasciatore? Devono essere liberati dall'oppressione [defender_raceadjecF] il prima possibile. Sapevo solo che eravate come noi nel cuore! Ora lo saprà anche il resto del Conclave! 
+PRAISE_ATTACKED_ENEMY_02   | Haha, già! Ecco come si fa! Respingi indietro quegli sporchi [defender_race_pluraladjec] finché non avranno più un posto dove scappare! Cerca solo di non danneggiare troppo i pianeti, ok? Ne avremo bisogno quando avremo finito. 
+PRAISE_ATTACKED_ENEMY_03   | State combattendo anche contro [defender_race_plurarnoun], schifoso? È l'odore, vero? Permea tutto ciò che lo circonda. Stai lontano da noi quando avrete finito! Sono sicuro che infetterà anche voi! 
+PRAISE_TRADE_01            | Questo accordo commerciale è fantastico! Siamo stati in grado di generare supporto per così tanti progetti da lui. Vi ringrazio sinceramente, e i mondi [my_empireof] cantano lodi eterne al vostro nome! 
+PRAISE_TRADE_02            | Eccoti! Il [my_title] voleva che vi congratulassi per aver mantenuto un perfetto accordo commerciale con il Conclave. Spera che vedrete la saggezza nel continuare, poiché abbiamo molti progetti da esplorare!Tutto qui, ciao! 
+PRAISE_REBELLING_WITH_01   | Il consiglio è impazzito per mettere quei disgustosi [leader_race_pluraladjec] sul trono proverbiale. Il loro fetore di rango sta già facendo ammalare la nostra gente. Lascia che vi aiutiamo a sconfiggerli, ambasciatore!  
+ 
+ACCEPT_TRADE_01            | È l'ora di commerciare! È l'ora di commerciare! [amt] BC ogni anno contribuirà notevolmente alla creazione delle nostre biosfere! Grazie amico!
+RESPOND_IGNORE_THREAT_01   | Oh, cavolo, sei davvero arrabbiato vero? Oh beh, non è che potresti fare qualsiasi cosa anche se lo fossi! Ora vattene per favore, sono molto impegnato con questi campioni di flora oggi.
+RESPOND_STOP_SPYING_01     | Avete catturato una spia, vero? Non preoccuparti, stavamo solo controllando che foste gentili con i vostri pianeti. Sembra che lo siete, quindi restituiscici il nostro monitore e non avremo bisogno di inviarne un altro!
+RESPOND_STOP_ATTACKING_01  | Vedi quante navi abbiamo? E ognuno ha armi grandi e spaventose! Se mai scopriamo che state abusando dei vostri pianeti, dovremo rimandarli indietro, e nessuno di noi vuole che ciò accada! Ciao!
+
