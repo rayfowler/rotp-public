@@ -780,9 +780,7 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechShipInertial t) {
-        float val = 0;
-        val += t.level();
-        return val;
+        return 1;
     }
     @Override
     public float baseValue(TechShipNullifier t) {
