@@ -47,7 +47,7 @@ import rotp.util.Base;
 public final class Colony implements Base, IMappedObject, Serializable {
     private static final long serialVersionUID = 1L;
     private static final int[] validationSeq = { 3, 2, 0, 1, 4 };
-    private static final int[] spendingSeq = { 4, 0, 1, 2, 3 };
+    private static final int[] spendingSeq = { 2, 3, 1, 4, 0 };
     private static final int[] cleanupSeq =  { 2, 4, 1, 0, 3 };
     private static final String[] categoryNames = { "MAIN_COLONY_SHIP", "MAIN_COLONY_DEFENSE", "MAIN_COLONY_INDUSTRY",
                     "MAIN_COLONY_ECOLOGY", "MAIN_COLONY_TECHNOLOGY" };
