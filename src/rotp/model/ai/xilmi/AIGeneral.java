@@ -722,8 +722,8 @@ public class AIGeneral implements Base, General {
                 continue;
             if(!empire.inShipRange(emp.id))
                 continue;
-            float currentScore = ((float)empire.diplomatAI().militaryRank(emp, true) / (float)empire.diplomatAI().popCapRank(emp, true)) * (fleetCenter(emp).distanceTo(colonyCenter(empire)) / fleetCenter(empire).distanceTo(colonyCenter(emp)));
-            //System.out.println(galaxy().currentTurn()+" "+empire.name()+" vs "+emp.name()+" dist: "+fleetCenter(empire).distanceTo(colonyCenter(emp))+" rev-dist: "+fleetCenter(emp).distanceTo(colonyCenter(empire))+" milrank: "+empire.diplomatAI().militaryRank(emp, true)+" poprank: "+empire.diplomatAI().popCapRank(emp, true)+" score: "+currentScore);
+            float currentScore = totalEmpirePopulationCapacity(emp) / emp.militaryPowerLevel() * (fleetCenter(emp).distanceTo(colonyCenter(empire)) / fleetCenter(empire).distanceTo(colonyCenter(emp)));
+            //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" vs "+emp.name()+" dist: "+fleetCenter(empire).distanceTo(colonyCenter(emp))+" rev-dist: "+fleetCenter(emp).distanceTo(colonyCenter(empire))+" milrank: "+empire.diplomatAI().militaryRank(emp, true)+" poprank: "+empire.diplomatAI().popCapRank(emp, true)+" score: "+currentScore);
             if(currentScore > highestScore)
             {
                 highestScore = currentScore;
@@ -795,34 +795,19 @@ public class AIGeneral implements Base, General {
         //System.out.print("\n"+empire.name()+" myFighterCost: "+myFighterCost()+" visibleEnemyFighterCost: "+visibleEnemyFighterCost());
         if(!empire.enemies().isEmpty() && myFighterCost() >= visibleEnemyFighterCost())
         {
+            dr = 0.0f;
             float totalMissileBaseCost = 0.0f;
             float totalShipCost = 0.0f;
-            float popBCToKill = 0;
-            float shipBCToKill = 0;
+            float highestPower = 0.0f;
             for(Empire enemy : empire.contactedEmpires())
             {
-                if(!empire.inShipRange(enemy.id))
-                    continue;
-                if(empire.alliedWith(enemy.id))
-                    continue;
-                float populationInRange = 0;
-                for(StarSystem enemySystem : empire.systemsInShipRange(enemy))
-                {
-                    if(enemySystem.colony() != null)
-                    {
-                        populationInRange += enemySystem.population();
-                    }
-                }
-                popBCToKill += populationInRange * enemy.tech().populationCost();
-                if(enemy.totalPlanetaryPopulation() > 0)
-                    shipBCToKill += enemy.totalFleetCost() * populationInRange / enemy.totalPlanetaryPopulation();
-                //System.out.print("\n"+empire.name()+" "+enemy.name()+" FleetCost: "+enemy.totalFleetCost()+" scaled with: "+populationInRange / enemy.totalPlanetaryPopulation()+ " to: "+enemy.totalFleetCost() * populationInRange / enemy.totalPlanetaryPopulation());
                 totalMissileBaseCost += enemy.missileBaseCostPerBC();
                 totalShipCost += enemy.shipMaintCostPerBC();
+                if(enemy.militaryPowerLevel() > highestPower)
+                    highestPower = enemy.militaryPowerLevel();
             }
-            if(shipBCToKill + popBCToKill > 0)
-                dr = shipBCToKill / (shipBCToKill + popBCToKill);
-            //System.out.print("\n"+empire.name()+" totalFleetCost: "+shipBCToKill+" totalPopCost: "+popBCToKill+" dr: "+dr);
+            if(highestPower + empire.militaryPowerLevel() > 0)
+                dr = highestPower / (highestPower + empire.militaryPowerLevel());
             if(totalMissileBaseCost+totalShipCost > 0)
             {
                 dr = min(dr, totalShipCost / (totalMissileBaseCost+totalShipCost));
