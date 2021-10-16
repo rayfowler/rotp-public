@@ -693,7 +693,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         // put whatever is left or take whatever is missing acording to the spending-sequence
         for (int i = 0; i < NUM_CATS; i++) {
             ColonySpendingCategory currCat = spending[spendingSeq[i]];
-            if ((i != ECOLOGY) && !locked(spendingSeq[i]))
+            if ((spendingSeq[i] != ECOLOGY) && !locked(spendingSeq[i]))
                 adj -= currCat.adjustValue(adj);
         }
     }
