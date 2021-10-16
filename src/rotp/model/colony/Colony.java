@@ -687,12 +687,15 @@ public final class Colony implements Base, IMappedObject, Serializable {
             return;
         
         // funnel excess to industry if it's not completed
-        if (!industry().isCompleted())
+        if (!industry().isCompleted() && adj > 0)
             adj -= spending[INDUSTRY].adjustValue(adj);
         
-        // put whatever is left in research
-        if (adj > 0)
-            spending[RESEARCH].adjustValue(adj);
+        // put whatever is left or take whatever is missing acording to the spending-sequence
+        for (int i = 0; i < NUM_CATS; i++) {
+            ColonySpendingCategory currCat = spending[spendingSeq[i]];
+            if ((i != ECOLOGY) && !locked(spendingSeq[i]))
+                adj -= currCat.adjustValue(adj);
+        }
     }
     public void realignSpending(ColonySpendingCategory cat) {
         int maxAllocation = ColonySpendingCategory.MAX_TICKS;
