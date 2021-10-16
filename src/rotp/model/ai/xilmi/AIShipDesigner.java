@@ -678,7 +678,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
     @Override
     public boolean wantHybrid()
     {
-        if(empire.generalAI().defenseRatio() < 0.5)
+        if(empire.generalAI().defenseRatio() < 0.5 || empire.generalAI().defenseRatio() == 1.0)
             return false;
         int freeSlots = 0;
         for (int slot=0;slot<ShipDesignLab.MAX_DESIGNS;slot++) {
