@@ -82,6 +82,7 @@ public class TradeRoute implements Base, Serializable {
 
         profit = newPct * newLevel;
         level = newLevel;
+        view().owner().flagColoniesToRecalcSpending();
 
         //if not done yet, increase the route on the "other" side of the relationship
         EmpireView otherView = otherView();
@@ -92,6 +93,7 @@ public class TradeRoute implements Base, Serializable {
         EmpireView otherView = otherView();
         level = 0;
         profit = 0;
+        view().owner().flagColoniesToRecalcSpending();
         if (otherView.trade().active())
             otherView.trade().stopRoute();
     }
