@@ -204,7 +204,7 @@ public class NewShipTemplate implements Base {
         setFastestEngine(ai, d);
         // battle computers are always the priority in MOO1 mechanics
         if(role != role.DESTROYER)
-            setBestBattleComputer(ai, d); 
+            setBestBattleComputer(ai, d, role); 
         
         float totalSpace = d.availableSpace();
         Race race = ai.empire().dataRace();
@@ -422,7 +422,7 @@ public class NewShipTemplate implements Base {
         }
         //Since destroyer is always tiny and we want to make sure we have a weapon, the computer is added afterwards
         if(role == role.DESTROYER)
-            setBestBattleComputer(ai, d); 
+            setBestBattleComputer(ai, d, role); 
         ai.lab().iconifyDesign(d);
         for (int i = 0; i <= 2; ++i) {
             if (d.special(i) != null) {
@@ -440,9 +440,16 @@ public class NewShipTemplate implements Base {
         d.engine(ai.lab().fastestEngine());
     }
 
-    private void setBestBattleComputer(ShipDesigner ai, ShipDesign d) {
+    private void setBestBattleComputer(ShipDesigner ai, ShipDesign d, DesignType role) {
         List<ShipComputer> comps = ai.lab().computers();
         for (int i=comps.size()-1; i >=0; i--) {
+            if(role == role.BOMBER)
+            {
+                //Bombers don't need more than +5 Attack, so if race-bonus + computer-level of the next smaller computer are 5 or more, we skip the current one
+                //System.out.print("\n"+ai.empire().name()+" "+d.name()+" "+d.name()+" Attack-Level for bombs with "+comps.get(i).name()+": "+(comps.get(i).level() + ai.empire().race().shipAttackBonus()));
+                if(i > 0 && comps.get(i - 1).level() + ai.empire().race().shipAttackBonus() >= 5)
+                    continue;
+            }
             d.computer(comps.get(i));
             if (d.availableSpace() >= 0)
                 return;
