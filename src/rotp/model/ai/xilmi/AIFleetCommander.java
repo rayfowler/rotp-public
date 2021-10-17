@@ -289,7 +289,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             //distance to our fleet also plays a role but it's importance is heavily scince we are at peace and have time to travel
             float speed = fleet.slowestStackSpeed();
             if(current.inNebula())
-                speed = 1;
+                currentScore *= 1 / speed;
             currentScore /=  sqrt(max(fleet.distanceTo(current) / speed, 1) + mySystemsInShipRange.size());
             //System.out.print("\n"+fleet.empire().name()+" "+empire.sv.name(fleet.system().id)+" score to gather at: "+empire.sv.name(current.id)+" score: "+currentScore);
             if(currentScore > bestScore)
@@ -537,8 +537,13 @@ public class AIFleetCommander implements Base, FleetCommander {
                 score = 10;
             }
             boolean ignoreTravelTime = false;
-            if(fleet.canColonizeSystem(current) && empire.shipLab().colonyDesign().size() > 2)
-                ignoreTravelTime = true;
+            if(fleet.canColonizeSystem(current))
+            {
+                if(colonizerEnroute)
+                    score /= systemInfoBuffer.get(id).colonizersEnroute + 1;
+                if(empire.shipLab().colonyDesign().size() > 2)
+                    ignoreTravelTime = true;
+            }
             if(!ignoreTravelTime)
             {
                 float speed = fleet.slowestStackSpeed();
