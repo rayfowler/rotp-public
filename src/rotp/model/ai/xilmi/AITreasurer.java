@@ -65,7 +65,7 @@ public class AITreasurer implements Base, Treasurer {
                 }
                 if (pl.isResourceRich() || pl.isResourceUltraRich()) {
                     //ail: If the system with the event is rich, we mustn't remove it from the list of receivers!
-                    if(!sys.colony().research().hasProject())
+                    if(!sys.colony().research().hasProject() && sys.colony().currentProductionCapacity() >= 1.0f)
                     {
                         systems.remove(sys);
                         richSystems.add(sys); // modnar: make richSystems list
@@ -101,7 +101,7 @@ public class AITreasurer implements Base, Treasurer {
         // assist in prod to build factories on smaller colonies
         if (empire.totalReserve() > reserveGoal) {
             List<StarSystem> remainingSystems = new ArrayList<>(systems);
-            Collections.sort(remainingSystems,StarSystem.BASE_PRODUCTION);
+            Collections.sort(remainingSystems,StarSystem.CAPACITY);
             for (StarSystem sys : remainingSystems) {
                 if (empire.totalReserve() <= 0)
                     break;
