@@ -283,6 +283,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         boolean oldHasBHG = false;
         boolean newHasBHG = false;
         boolean maintenanceLimitReached = MaintenanceLimitReached(currDesign);
+        boolean oldIsBomber = bombingAdapted(currDesign) > 0.5;
         
         for (int i=0;i<maxSpecials();i++) {
             if(currDesign.special(i).allowsCloaking() == true)
@@ -308,8 +309,9 @@ public class AIShipDesigner implements Base, ShipDesigner {
         
         //System.out.print("\n"+galaxy().currentYear()+" "+empire.name()+" Bomber upgrade "+currDesign.name()+" val: "+upgradeChance+" DPBC: "+newDPBC / currentDPBC+" better-Engine: "+betterEngine+" betterArmor: "+betterArmor);
         
-        if (slot < 0 && !maintenanceLimitReached && !betterComputer && !betterSpecial && !betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) && currDesign.active() )
-            return;
+        if(oldIsBomber)
+            if (slot < 0 && !maintenanceLimitReached && !betterComputer && !betterSpecial && !betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) && currDesign.active() )
+                return;
         
         //System.out.print("\n"+empire.name()+" designed new bomber which is "+upgradeChance+" better and should go to slot: "+slot);
 
@@ -657,6 +659,8 @@ public class AIShipDesigner implements Base, ShipDesigner {
         float fAd = 0;
         if(totalWeaponSpace > 0)
             fAd = totalFightingSpace / totalWeaponSpace;
+        if(d.hasColonySpecial())
+            fAd = totalFightingSpace / d.spaceUsed();
         return fAd;
     }
     @Override
@@ -694,7 +698,8 @@ public class AIShipDesigner implements Base, ShipDesigner {
         //System.out.print("\n"+empire.name()+" free slots: "+freeSlots);
         if(freeSlots < 2)
         {
-            lab().bomberDesign().obsolete(true);
+            if(bombingAdapted(lab().bomberDesign()) > 0.5f)
+                lab().bomberDesign().obsolete(true);
             return true;
         }
         return false;
