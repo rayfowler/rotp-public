@@ -102,7 +102,6 @@ public class AITreasurer implements Base, Treasurer {
         if (empire.totalReserve() > reserveGoal) {
             List<StarSystem> remainingSystems = new ArrayList<>(systems);
             Collections.sort(remainingSystems,StarSystem.BASE_PRODUCTION);
-            Collections.reverse(remainingSystems);
             for (StarSystem sys : remainingSystems) {
                 if (empire.totalReserve() <= 0)
                     break;
