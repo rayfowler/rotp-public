@@ -57,7 +57,9 @@ public class AIGovernor implements Base, Governor {
         //System.out.println(galaxy().currentTurn()+" "+empire.name()+" "+col.name()+" estProd: "+estProd+" designCost: "+designCost+" sh.plan.priority(): "+sh.plan.priority()+" Repel: "+FleetPlan.REPEL+" enemy-fleet: "+!empire.enemyFleets().isEmpty());
         if (pct >= 1.0)  // ail: I don't want them to build scouts instead of factories
             return true;
-        return sh.plan.priority() >= 1100;
+        if(sh.plan.priority() >= 1100)
+            return estProd > designCost * 5;
+        return false;
     }
     @Override
     public void setColonyAllocations(Colony col) {
@@ -224,7 +226,7 @@ public class AIGovernor implements Base, Governor {
         boolean needToMilitarize = false;
         if(empire.atWar() || empire.generalAI().sensePotentialAttack())
         {
-            if(empire.diplomatAI().militaryRank(empire, false) > empire.diplomatAI().popCapRank(empire, false) || empire.generalAI().sensePotentialAttack())
+            if(empire.diplomatAI().militaryRank(empire, false) > empire.diplomatAI().popCapRank(empire, false))
                 if(col.currentProductionCapacity() > 0.5f)
                     needToMilitarize = true;
         }
@@ -331,7 +333,7 @@ public class AIGovernor implements Base, Governor {
         
 
         // prod spending gets up to 100% of planet's remaining net prod
-        if((col.industry().factories() < col.maxUseableFactories() + col.normalPopGrowth() * empire.maxRobotControls())
+        if((col.industry().factories() < col.maxUseableFactories() + (col.normalPopGrowth() + empire.transportsInTransit(col.starSystem())) * empire.maxRobotControls())
             && enemyBombardPower == 0
             && !needToMilitarize)
         {
@@ -419,7 +421,7 @@ public class AIGovernor implements Base, Governor {
         float turnsBeforeColonyDestroyed = Float.MAX_VALUE;
         if(popLoss > 0)
             turnsBeforeColonyDestroyed = col.population() / popLoss;
-        float fighterBuildTime = lab.fighterDesign().cost() / totalProd;
+        float fighterBuildTime = empire.shipDesignerAI().BestDesignToFight().cost() / totalProd;
         if(fighterBuildTime > turnsBeforeColonyDestroyed)
             viableForShipProduction = false;
         //System.out.print("\n"+empire.name()+" "+col.name()+" col.allocation(SHIP): "+col.allocation(SHIP));
@@ -443,8 +445,8 @@ public class AIGovernor implements Base, Governor {
                 else
                     maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance() / 4;
             }
-            if(empire.shipDesignerAI().bombingAdapted(lab.fighterDesign()) > 0
-                || empire.shipDesignerAI().bombingAdapted(lab.bomberDesign()) < 0.5f)
+            if(empire.shipDesignerAI().bombingAdapted(empire.shipDesignerAI().BestDesignToFight()) > 0
+                || empire.shipDesignerAI().bombingAdapted(empire.shipDesignerAI().BestDesignToBomb()) < 0.5f)
                 fighterPercentage = 1.0f;
             float maxShipMaintainanceBeforeAdj = maxShipMaintainance;
             maxShipMaintainance *= prodScore;
@@ -462,12 +464,12 @@ public class AIGovernor implements Base, Governor {
             if(!techsLeft)
                 maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
             //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+col.name()+" adjMaxMaint: "+maxShipMaintainance+" baseMaxMaint: "+maxShipMaintainanceBeforeAdj+" CurrMaint: "+empire.shipMaintCostPerBC());
-            col.shipyard().design(lab.fighterDesign());
+            col.shipyard().design(empire.shipDesignerAI().BestDesignToFight());
             //System.out.print("\n"+empire.name()+" fighterCost: "+fighterCost+" bomberCost: "+bomberCost+" F% reached: "+fighterCost / (bomberCost + fighterCost)+" of "+fighterPercentage);
             if(fighterCost / (bomberCost + fighterCost) > fighterPercentage 
                 && enemyBombardPower == 0)
             {
-                col.shipyard().design(empire.shipLab().bomberDesign());
+                col.shipyard().design(empire.shipDesignerAI().BestDesignToBomb());
             }
             if(empire.shipMaintCostPerBC() < maxShipMaintainance)
             {

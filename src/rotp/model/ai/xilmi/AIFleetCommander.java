@@ -738,8 +738,6 @@ public class AIFleetCommander implements Base, FleetCommander {
         empire.sv.fleetPlan(id).priority = FleetPlan.RETREAT;
     }
     private void setScoutFleetPlan (int id) {
-        if (empire.shipLab().scoutDesign().obsolete())
-            return;
         FleetPlan plan = empire.sv.fleetPlan(id);
         if (empire.sv.isScouted(id))
             plan.priority = FleetPlan.SCOUT_TO_EXPLORED;
@@ -748,7 +746,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             plan.priority = FleetPlan.SCOUT_TO_UNEXPLORED + closeRangeBonus;
         }
         if (empire.shipLab().needScouts)
-            plan.addShips(empire.shipLab().scoutDesign(), 1);
+            plan.addShips(empire.shipDesignerAI().BestDesignToScout(), 1);
     }
     private void handleTransports()
     {
@@ -1150,6 +1148,11 @@ public class AIFleetCommander implements Base, FleetCommander {
         if(fl.isInTransit())
             splitBySpeed = false;
         
+        ShipDesign Repeller = null;
+        
+        if(empire.generalAI().needScoutRepellers())
+            Repeller = empire.shipDesignerAI().BestDesignToRepell();
+        
         for (int speed=(int)fl.slowestStackSpeed();speed<=(int)empire.tech().topSpeed();speed++)
         {
             boolean haveToDeploy = false;
@@ -1163,7 +1166,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                 {
                     continue;
                 }
-                if(d.isDestroyer() && num > 0)
+                if(d == Repeller && num > 0)
                     num--;
                 if(d.hasColonySpecial() && !includeColonizer)
                 {

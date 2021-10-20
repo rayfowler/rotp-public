@@ -112,12 +112,12 @@ public class AIGeneral implements Base, General {
                 }
                 fighterCost += lab.design(i).cost() * counts[i] * empire.shipDesignerAI().fightingAdapted(lab.design(i));
             }
-            colonizerCost += additionalColonizersToBuild * lab.colonyDesign().cost();
+            colonizerCost += additionalColonizersToBuild * empire.shipDesignerAI().BestDesignToColonize().cost();
             //System.out.println(galaxy().currentTurn()+" "+empire.name()+" fightercost: "+fighterCost+" col-cost: "+colonizerCost+" col-need before: "+additionalColonizersToBuild);
             while(colonizerCost > fighterCost && additionalColonizersToBuild > 0)
             {
                 additionalColonizersToBuild--;
-                colonizerCost -= lab.colonyDesign().cost();
+                colonizerCost -= empire.shipDesignerAI().BestDesignToColonize().cost();
             }
             if(empire.diplomatAI().militaryRank(empire, false) > empire.diplomatAI().popCapRank(empire, false))
                 additionalColonizersToBuild = 0;
@@ -146,7 +146,7 @@ public class AIGeneral implements Base, General {
             }
             if(bestCol == null)
                 break;
-            ShipDesign design = empire.shipLab().colonyDesign();
+            ShipDesign design = empire.shipDesignerAI().BestDesignToColonize();
             bestCol.shipyard().design(design);
             bestCol.shipyard().addQueuedBC(design.cost());
             float colonyProduction = (bestCol.totalIncome() - bestCol.minimumCleanupCost()) * bestCol.planet().productionAdj();
@@ -265,15 +265,14 @@ public class AIGeneral implements Base, General {
         if(needScoutRepellers() && (sys.empire() == empire || !empire.sv.isColonized(sysId)) && !sys.hasMonster())
         {
             //System.out.println(galaxy().currentTurn()+" "+empire.name()+" making repel-plan for "+sys.name());
-            //the destroyer-design can vanish and reappear, so we check whether it's still valid by checking that it is distinct from other designs and not obsolete
-            if(empire.shipLab().destroyerDesign().isDestroyer())
+            if(empire.shipDesignerAI().BestDesignToRepell() != null)
             {
                 FleetPlan fp = empire.sv.fleetPlan(sys.id);
                 fp.priority = 1100;
                 if(empire.sv.isBorderSystem(sysId))
                     fp.priority += 50;
                 //System.out.print("\n"+galaxy().currentTurn()+" "+sys.name()+" wants: "+empire.shipLab().destroyerDesign().name());
-                fp.addShips(empire.shipLab().destroyerDesign(), 1);
+                fp.addShips(empire.shipDesignerAI().BestDesignToRepell(), 1);
             }
         }
         
@@ -331,7 +330,7 @@ public class AIGeneral implements Base, General {
         if (!empire.canSendTransportsTo(sys))
             return false;
         //we gain factories, save us from building a colonizer and killing enemy-population also has value to us of half of what they pay for it
-        float invasionGain = invasionGain(v, sys) + empire.shipLab().colonyDesign().cost();
+        float invasionGain = invasionGain(v, sys) + empire.shipDesignerAI().BestDesignToColonize().cost();
         //System.out.println(galaxy().currentTurn()+" "+empire.name()+": Considering invasion of "+sys.name()+" cost: "+invasionCost(v, sys)+" gain: "+invasionGain+" cs: "+empire.shipLab().colonyDesign().cost());
         return invasionCost(v, sys) <= invasionGain;
     }
@@ -792,7 +791,7 @@ public class AIGeneral implements Base, General {
             return defenseRatio;
         }
         float dr = 1.0f;
-        //System.out.print("\n"+empire.name()+" myFighterCost: "+myFighterCost()+" visibleEnemyFighterCost: "+visibleEnemyFighterCost());
+        System.out.print("\n"+empire.name()+" myFighterCost: "+myFighterCost()+" visibleEnemyFighterCost: "+visibleEnemyFighterCost());
         if(!empire.enemies().isEmpty() && myFighterCost() >= visibleEnemyFighterCost())
         {
             dr = 0.0f;
@@ -813,7 +812,7 @@ public class AIGeneral implements Base, General {
                 dr = min(dr, totalShipCost / (totalMissileBaseCost+totalShipCost));
             }
         }
-        //System.out.print("\n"+empire.name()+" dr: "+dr);
+        System.out.print("\n"+empire.name()+" dr: "+dr);
         defenseRatio = dr;
         return defenseRatio;
     }
@@ -823,7 +822,7 @@ public class AIGeneral implements Base, General {
         if(additionalColonizersToBuild >= 0 && !returnPotentialUncolonizedInstead)
             return additionalColonizersToBuild;
         int additional = 0;
-        int colonizerRange = empire.shipLab().colonyDesign().range();
+        int colonizerRange = empire.shipDesignerAI().BestDesignToColonize().range();
         List<StarSystem> alreadyCounted = new ArrayList<>();
         for(StarSystem sys : empire.uncolonizedPlanetsInRange(colonizerRange))
         {
@@ -851,7 +850,7 @@ public class AIGeneral implements Base, General {
         }
         //System.out.print("\n"+empire.name()+" "+additional+" from uncolonized scouted without en-route.");
         //ail: when we have huge colonizer, don't count the unlocks for how many we need since we don't want to spam them like normal one's
-        if(empire.shipLab().colonyDesign().size() < 3)
+        if(empire.shipDesignerAI().BestDesignToColonize().size() < 3)
         {
             for(ShipFleet fleet:empire.allFleets())
             {
@@ -900,9 +899,9 @@ public class AIGeneral implements Base, General {
         int[] counts = galaxy().ships.shipDesignCounts(empire.id);
         for (int i=0;i<counts.length;i++) 
         {
-            if(empire.shipLab().design(i).isColonyShip())
+            if(empire.shipLab().design(i).hasColonySpecial())
             {
-                if(empire.shipLab().design(i).range() < empire.shipLab().colonyDesign().range())
+                if(empire.shipLab().design(i).range() < empire.shipDesignerAI().BestDesignToColonize().range())
                     continue;
                 //ail: no idea how this can be null, but I have a savegame from /u/Elkad, where this is the case
                 if(empire.tech().topControlEnvironmentTech() == null)
@@ -1050,34 +1049,9 @@ public class AIGeneral implements Base, General {
     @Override
     public boolean needScoutRepellers()
     {
-        boolean need = true;
-        //ail: during a hot war, we can't afford to reserve a slot for that
-        if(empire.atWar())
-            return false;
-        int totalOpponents = 0;
-        int opponentsWithUnarmed = 0;
-        for(Empire opponent : galaxy().activeEmpires())
-        {
-            totalOpponents++;
-            int unarmedDesigns = 0;
-            for(ShipDesign enemyDesign : opponent.shipLab().designs())
-            {
-                if(galaxy().ships.shipDesignCount(opponent.id, enemyDesign.id()) == 0)
-                    continue;
-                if(!enemyDesign.isArmedForShipCombat())
-                {
-                    //System.out.println(galaxy().currentTurn()+" "+empire.name()+" thinks that "+opponent.name()+"'s design "+enemyDesign.name()+" is unarmed.");
-                    unarmedDesigns++;
-                }
-            }
-            //System.out.println(galaxy().currentTurn()+" "+empire.name()+" thinks that "+opponent.name()+" has "+unarmedDesigns+" unarmed designs.");
-            if(unarmedDesigns > 0)
-                opponentsWithUnarmed++;
-        }
-        if((opponentsWithUnarmed == 0 && totalOpponents > 0) || empire.enemyFleets().isEmpty() || empire.tech().topFuelRangeTech().unlimited)
-            need = false;
-        //System.out.println(galaxy().currentTurn()+" "+empire.name()+" needs scout repeller: "+need+" totalOpponents: "+totalOpponents+" opponentsWithUnarmed: "+opponentsWithUnarmed);
-        return need;
+        if(empire.enemies().isEmpty() && !empire.enemyFleets().isEmpty())
+            return true;
+        return false;
     }
     @Override
     public boolean sensePotentialAttack()
