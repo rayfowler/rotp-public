@@ -793,6 +793,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
             }
         }
         
+        CombatStack invulnerableFriend = null;
+        
         for (CombatStack st1 : friends) {
             if(st1.inStasis)
                 continue;
@@ -820,10 +822,15 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 enemyKillTime += pctOfMaxHP / damagePerTurn;
             else
             {
+                invulnerableFriend = st1;
                 enemyKillTime = Float.MAX_VALUE;
                 break;
             }
         }
+        
+        //If we have an invulnerable friend, we should retreat and let him do the work. Due to the rule-change we will even stay where we are.
+        if(invulnerableFriend != null && invulnerableFriend != stack)
+            return true;
         
         //System.out.print("\n"+stack.mgr.system().name()+" "+stack.fullName()+" allyKillTime: "+allyKillTime+" enemyKillTime: "+enemyKillTime);
         if (enemyKillTime == allyKillTime)
