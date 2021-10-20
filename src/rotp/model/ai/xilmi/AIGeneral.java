@@ -791,7 +791,7 @@ public class AIGeneral implements Base, General {
             return defenseRatio;
         }
         float dr = 1.0f;
-        System.out.print("\n"+empire.name()+" myFighterCost: "+myFighterCost()+" visibleEnemyFighterCost: "+visibleEnemyFighterCost());
+        //System.out.print("\n"+empire.name()+" myFighterCost: "+myFighterCost()+" visibleEnemyFighterCost: "+visibleEnemyFighterCost());
         if(!empire.enemies().isEmpty() && myFighterCost() >= visibleEnemyFighterCost())
         {
             dr = 0.0f;
@@ -812,7 +812,7 @@ public class AIGeneral implements Base, General {
                 dr = min(dr, totalShipCost / (totalMissileBaseCost+totalShipCost));
             }
         }
-        System.out.print("\n"+empire.name()+" dr: "+dr);
+        //System.out.print("\n"+empire.name()+" dr: "+dr);
         defenseRatio = dr;
         return defenseRatio;
     }

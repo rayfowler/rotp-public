@@ -730,7 +730,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
     } 
     public void ScrapDesign(ShipDesign d)
     {
-        System.out.print("\n"+empire.name()+" "+d.name()+" is scrapped.");
+        //System.out.print("\n"+empire.name()+" "+d.name()+" is scrapped.");
         if(lab().canScrapADesign())
             lab().scrapDesign(d);
     }

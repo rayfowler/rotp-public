@@ -445,9 +445,6 @@ public class AIGovernor implements Base, Governor {
                 else
                     maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance() / 4;
             }
-            if(empire.shipDesignerAI().bombingAdapted(empire.shipDesignerAI().BestDesignToFight()) > 0
-                || empire.shipDesignerAI().bombingAdapted(empire.shipDesignerAI().BestDesignToBomb()) < 0.5f)
-                fighterPercentage = 1.0f;
             float maxShipMaintainanceBeforeAdj = maxShipMaintainance;
             maxShipMaintainance *= prodScore;
             if(maxShipMaintainance > maxShipMaintainanceBeforeAdj)
@@ -469,7 +466,8 @@ public class AIGovernor implements Base, Governor {
             if(fighterCost / (bomberCost + fighterCost) > fighterPercentage 
                 && enemyBombardPower == 0)
             {
-                col.shipyard().design(empire.shipDesignerAI().BestDesignToBomb());
+                if(empire.shipDesignerAI().BestDesignToBomb() != null)
+                    col.shipyard().design(empire.shipDesignerAI().BestDesignToBomb());
             }
             if(empire.shipMaintCostPerBC() < maxShipMaintainance)
             {
