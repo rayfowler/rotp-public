@@ -150,7 +150,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
                 }
                 else
                 {
-                    keepScore = 1 - d.availableSpace()/d.totalSpace();
+                    keepScore = (1 - d.availableSpace()/d.totalSpace()) * (float)d.engine().warp() / (float)lab().fastestEngine().warp();
                 }
                 keepScore *= keepScore;
                 keepScore *= shipCounts[d.id()] * d.cost();
@@ -774,14 +774,24 @@ public class AIShipDesigner implements Base, ShipDesigner {
         ShipDesignLab lab = lab();
         ShipDesign repeller = null;
         float cheapestCost = Float.MAX_VALUE;
+        float highestCount = 0;
         for (int slot=0;slot<ShipDesignLab.MAX_DESIGNS;slot++) {
             ShipDesign d = lab.design(slot);
-            if(fightingAdapted(d) == 0)
+            if(fightingAdapted(d) == 0 || d.hasColonySpecial())
                 continue;
-            if(d.cost() < cheapestCost)
+            if(shipCounts[d.id()] > highestCount)
             {
-                cheapestCost = d.cost();
+                highestCount = shipCounts[d.id()];
                 repeller = d;
+                cheapestCost = Float.MAX_VALUE;
+            }
+            if(shipCounts[d.id()] == highestCount)
+            {
+                if(d.cost() < cheapestCost)
+                {
+                    cheapestCost = d.cost();
+                    repeller = d;
+                }
             }
         }
         return repeller;

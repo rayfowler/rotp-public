@@ -236,6 +236,9 @@ public class AIScientist implements Base, Scientist {
                 }
             }
         }
+        /*for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
+            System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+empire.tech().category(j).key()+": "+empire.tech().category(j).currentTechName()+": "+empire.tech().category(j).allocationPct()+" of "+empire.totalPlanetaryResearch());
+        }*/
     }
     @Override
     public void setDefaultTechTreeAllocations() {
