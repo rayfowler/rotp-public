@@ -388,22 +388,13 @@ public class AIGovernor implements Base, Governor {
         totalAlloc = col.allocation(SHIP)+col.allocation(DEFENSE)+col.allocation(INDUSTRY)+col.allocation(ECOLOGY);
         ShipDesignLab lab = empire.shipLab();
         //System.out.print("\n"+empire.name()+" "+col.name()+" colonizer-production-score "+productionScore(col.starSystem(), true));
-        boolean inAttackRange = false;
         boolean enemy = false;
-        float highestNonEnemyBc = 0.0f;
-        float myFleetBc = empire.totalFleetCost() * (empire.tech().avgTechLevel() + 10);
         for(Empire emp : empire.contactedEmpires())
         {
             EmpireView v = empire.viewForEmpire(emp);
             if(v.embassy().isEnemy() && empire.inShipRange(emp.id))
             {
                 enemy = true;
-            }
-            else if(empire.inShipRange(emp.id) || emp.inShipRange(empire.id))
-            {
-                inAttackRange = true;
-                if(emp.totalFleetCost() > highestNonEnemyBc)
-                    highestNonEnemyBc = emp.totalFleetCost() * (emp.tech().avgTechLevel() + 10);
             }
         }
         int[] counts = galaxy().ships.shipDesignCounts(empire.id);
@@ -434,17 +425,8 @@ public class AIGovernor implements Base, Governor {
             if(enemy || empire.generalAI().sensePotentialAttack())
             {
                 maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
-                /*if(myFleetBc > 4 * totalEnemyBc && highestNonEnemyBc <= myFleetBc * 4)
-                    maxShipMaintainance /= 4.0f;*/
-                //fighterPercentage = empire.generalAI().defenseRatio();
             }
-            else if(inAttackRange)
-            {
-                if(highestNonEnemyBc > myFleetBc * 4)
-                    maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
-                else
-                    maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance() / 4;
-            }
+
             float maxShipMaintainanceBeforeAdj = maxShipMaintainance;
             maxShipMaintainance *= prodScore;
             if(maxShipMaintainance > maxShipMaintainanceBeforeAdj)
