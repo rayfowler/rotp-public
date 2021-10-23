@@ -50,6 +50,7 @@ class AISystemInfo {
     float myIncomingTransports;
     int additionalSystemsInRangeWhenColonized;
     boolean ignore;
+    boolean inScannerRange;
     int colonizersEnroute;
 }
 
@@ -188,6 +189,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                 buffy.enemyIncomingTransports += empire.unfriendlyTransportsInTransit(current);
                 buffy.myIncomingTransports += empire.transportsInTransit(current);
             }
+            buffy.inScannerRange = empire.canScanTo(current);
             systemInfoBuffer.put(id, buffy);
         }
     }
@@ -393,6 +395,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             float bc = 0.0f;
             int colonizationBonus = 0;
             boolean colonizerEnroute = false;
+            boolean canScanTo = false;
             UpdateSystemInfo(id);
             if(systemInfoBuffer.containsKey(id))
             {
@@ -404,9 +407,14 @@ public class AIFleetCommander implements Base, FleetCommander {
                 myTransports = systemInfoBuffer.get(id).myIncomingTransports;
                 colonizationBonus = systemInfoBuffer.get(id).additionalSystemsInRangeWhenColonized;
                 colonizerEnroute = systemInfoBuffer.get(id).colonizersEnroute > 0;
+                canScanTo = systemInfoBuffer.get(id).inScannerRange;
                 if(systemInfoBuffer.get(id).ignore)
                     continue;
             }
+            //If we already sent a fleet to an enemy system out of our scanner-range we don't send more there to reinforce as long as we don't get better information
+            if((bc > 0 || bombardDamage > 0) && !canScanTo && empire.aggressiveWith(empire.sv.empId(id)))
+                continue;
+
             //ail: incase we have hyperspace-communications and are headed to current, we have to substract ourself from the values
             //This needs to happen always, not just when we are about to buffer it
             //System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" => "+empire.sv.name(current.id)+" bc: "+bc+" bomb: "+bombardDamage);
@@ -897,7 +905,6 @@ public class AIFleetCommander implements Base, FleetCommander {
                         {
                             float enemyFightingBC = 0.0f;
                             float enemyBaseBC = 0.0f;
-                            boolean needToGuess = false;
                             float targetTech = civTech;
                             for(ShipFleet orbiting : target.orbitingFleets())
                             {
@@ -907,7 +914,6 @@ public class AIFleetCommander implements Base, FleetCommander {
                                 {
                                     if(!empire.visibleShips().contains(orbiting))
                                     {
-                                        needToGuess = true;
                                         continue;
                                     }
                                     EmpireView ev = empire.viewForEmpire(orbiting.empId());
@@ -961,13 +967,6 @@ public class AIFleetCommander implements Base, FleetCommander {
                                 {
                                     //ail: if we can't see the system, assume there's at least a fair share of ships for defense
                                     EmpireView ev = empire.viewForEmpire(empire.sv.empId(target.id));
-                                    if(needToGuess && ev != null)
-                                    {
-                                        if(target.empire().totalIncome() > 0)
-                                            enemyFightingBC = max(enemyFightingBC, target.empire().totalFleetCost() * target.colony().production() / target.empire().totalIncome());
-                                        else
-                                            enemyFightingBC = max(enemyFightingBC, target.empire().totalFleetCost() * 1.0f / target.empire().allColonizedSystems().size());
-                                    }
                                     enemyBaseBC = empire.sv.bases(target.id)*target.empire().tech().newMissileBaseCost();
                                     if(ev != null)
                                     {
@@ -1099,6 +1098,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                             else
                             {
                                 //Fleet too small to attack and no staging-point found either.
+                                //System.out.print("\n"+empire.name()+" fleet at "+fleet.system().name()+" not sent to "+target.name()+" cause too small.");
                                 if(allowBombers == false &&  notEnoughFighters == false)
                                 {
                                     notEnoughFighters = true;
