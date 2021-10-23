@@ -1374,13 +1374,25 @@ public class AIDiplomat implements Base, Diplomat {
         int popCapRank = popCapRank(empire, false);
         /*if(!everyoneMet() && popCapRank < 3)
             warAllowed = false;*/
-        if(empire.tech().topEngineWarpTech().warp() < 2 || empire.tech().weapon().techLevel() < 6)
+        boolean reseachHasGoodROI = false;
+        for(int i = 0; i < NUM_CATEGORIES; ++i)
+        {
+            int levelToCheck = (int)Math.ceil(empire.tech().category(i).techLevel());
+            float techCost = empire.tech().category(i).baseResearchCost(levelToCheck) * levelToCheck * levelToCheck * empire.techMod(i);
+            if(techCost < empire.totalIncome())
+            {
+                //System.out.println(galaxy().currentTurn()+" "+empire.name()+" cat: "+empire.tech().category(i).id()+" techlevel: "+levelToCheck+" techcost: "+techCost+" income: "+empire.totalIncome());
+                reseachHasGoodROI = true;
+                break;
+            }
+        }
+        if(reseachHasGoodROI && techLevelRank() > 1)
             warAllowed = false;
         if(techLevelRank() > popCapRank || facCapRank() > 1)
         {
             warAllowed = false;
         }
-        //System.out.println(galaxy().currentTurn()+" "+empire.name()+" popCap: "+empire.generalAI().totalEmpirePopulationCapacity(empire)+" popCapRank: "+popCapRank+" facCapRank: " +facCapRank()+" tech-rank: "+techLevelRank()+" war Allowed: "+warAllowed);
+        //System.out.println(galaxy().currentTurn()+" "+empire.name()+" popCap: "+empire.generalAI().totalEmpirePopulationCapacity(empire)+" popCapRank: "+popCapRank+" facCapRank: " +facCapRank()+" tech-rank: "+techLevelRank()+" has good RP-ROI: "+reseachHasGoodROI+" war Allowed: "+warAllowed);
         if(warAllowed)
             if(v.empire() == empire.generalAI().bestVictim())
             {
