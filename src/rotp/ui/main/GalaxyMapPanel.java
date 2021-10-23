@@ -45,6 +45,7 @@ import rotp.model.galaxy.IMappedObject;
 import rotp.model.galaxy.Location;
 import rotp.model.galaxy.Nebula;
 import rotp.model.galaxy.Ship;
+import static rotp.model.galaxy.Ship.EMPIRE_ID;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.tech.TechCategory;
 import rotp.ui.BasePanel;
@@ -807,6 +808,7 @@ public class GalaxyMapPanel extends BasePanel implements ActionListener, MouseLi
         if (scaleX() <= MAX_FLEET_HUGE_SCALE) {
             if (parent.hoverOverFleets()) {
                 ships = new ArrayList<>(pl.visibleShips());
+                ships.sort(EMPIRE_ID);
                 float minDistance = Float.MAX_VALUE;
                 Sprite closestShip = null;
                 for (Ship sh: ships) {
