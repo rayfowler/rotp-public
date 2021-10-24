@@ -293,7 +293,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         for (int i=0;i<stack.numWeapons(); i++) {
             if(stack.selectedWeapon().isSpecial()
                     || !((CombatStackShip)stack).shipComponentCanAttack(target, i)
-                    || (stack.weapon(i).isMissileWeapon() && stack.movePointsTo(target) > 2))
+                    || (stack.weapon(i).isMissileWeapon() && stack.movePointsTo(target) > stack.optimalFiringRange(target)))
             {
                 continue;
             }
@@ -305,7 +305,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
         //3rd run: fire whatever is left, except missiles if we are too far
         for (int i=0;i<stack.numWeapons(); i++) {
-            if(stack.weapon(i).isMissileWeapon() && stack.movePointsTo(target) > 2)
+            if(stack.weapon(i).isMissileWeapon() && stack.movePointsTo(target) > stack.optimalFiringRange(target))
                 continue;
             if(((CombatStackShip)stack).shipComponentCanAttack(target, i))
             {
@@ -342,6 +342,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 continue;
             // pct of target that this stack thinks it can kill
             float killPct = max(stack.estimatedKillPct(target), expectedPopLossPct(stack, target)); 
+            //reduce attractiveness of target depending on how much damage it already has incoming from missiles
             // threat level target poses to this stack (or its ward if applicable)
             CombatStack ward = stack.hasWard() ? stack.ward() : stack;
             // want to adjust threat upward as target gets closer to ward
@@ -363,7 +364,12 @@ public class AIShipCaptain implements Base, ShipCaptain {
             //System.out.print("\n"+stack.fullName()+" onlyships: "+onlyShips+" onlyInAttackRange: "+onlyInAttackRange+" looking at "+target.fullName()+" killPct: "+killPct+" rangeAdj: "+rangeAdj+" cnt: "+target.num+" target.designCost(): "+target.designCost());
             if (killPct > 0) {
                 killPct = min(1,killPct);
-                float desirability = killPct * max(1, target.num) * target.designCost() * rangeAdj;
+                float adjustedKillPct = killPct - incomingMissileKillPct(target);
+                float desirability = 0;
+                if(adjustedKillPct > 0)
+                    desirability = adjustedKillPct * max(1, target.num) * target.designCost() * rangeAdj;
+                else
+                    desirability = killPct * max(1, target.num) * target.designCost() * rangeAdj / 100;
                 if(!target.canPotentiallyAttack(stack))
                 {
                     if(!target.isColony() || onlyShips)
@@ -555,9 +561,9 @@ public class AIShipCaptain implements Base, ShipCaptain {
     {
         int distanceToBeAt = st.optimalFiringRange(tgt);
         if(st.repulsorRange() > 0 && st.optimalFiringRange(tgt) > 1 && tgt.optimalFiringRange(st) < st.optimalFiringRange(tgt) && !tgt.ignoreRepulsors())
-            distanceToBeAt = 2;
+            distanceToBeAt = max(distanceToBeAt, 2);
         if(tgt.repulsorRange() > 0 && !st.ignoreRepulsors())
-            distanceToBeAt = 2;
+            distanceToBeAt = max(distanceToBeAt, 2);
         boolean shallGoForFirstStrike = true;
         if(galaxy().shipCombat().results().damageSustained(st.empire) > 0
                 || galaxy().shipCombat().results().damageSustained(tgt.empire) > 0)
@@ -1052,6 +1058,25 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 }
             }
         }
+        return retVal;
+    }
+    public float incomingMissileKillPct(CombatStack currStack)
+    {
+        float retVal = 0;
+        List<CombatStack> activeStacks = new ArrayList<>(currStack.mgr.activeStacks());
+        for (CombatStack st: activeStacks)
+            for (CombatStackMissile miss: st.missiles())
+                if (miss.target == currStack)
+                {
+                    float hitPct;
+                    hitPct = (5 + miss.attackLevel - miss.target.missileDefense()) / 10;
+                    hitPct = max(.05f, hitPct);
+                    hitPct = min(hitPct, 1.0f);
+                    float killPct = ((miss.maxDamage()-miss.target.shieldLevel())*miss.num*hitPct)/(miss.target.maxHits*miss.target.num);
+                    float maxHit = (miss.maxDamage() - currStack.shieldLevel()) * miss.num;
+                    //System.out.print("\n"+currStack.fullName()+" will be hit by missiles for approx "+killPct);
+                    retVal += killPct;
+                }
         return retVal;
     }
 }
