@@ -332,12 +332,17 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
     public void mouseWheelMoved(MouseWheelEvent e) {
         int x = e.getX();
         int y = e.getY();
-        SystemButton button = matchingButton(x,y);
-        if ((button != null) && button.wantsMouseWheel()) {
-            Sprite sprite = matchingSprite(x,y);
-            button.mouseWheelMoved(sprite.system(), e);
-            topParent.repaint();
-            return;
+        // if y < rowHeight() then we are clicking on the header row
+        // we don't want to accidentally trigger row buttons that are
+        // vertically scrolled up behind the header row
+        if (y >= rowHeight()) {
+            SystemButton button = matchingButton(x,y);
+            if ((button != null) && button.wantsMouseWheel()) {
+                Sprite sprite = matchingSprite(x,y);
+                button.mouseWheelMoved(sprite.system(), e);
+                topParent.repaint();
+                return;
+            }
         }
         if (!scrolling)
             return;
@@ -464,12 +469,17 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
             return;
 
         // check for hovering buttons within rows first
-        SystemButton button = matchingButton(x,y);
-        if ((button != null) && button.wantsMouseRelease()) {
-            Sprite sprite = matchingSprite(x,y);
-            button.mouseReleased(sprite.system(), e);
-            topParent.repaint();
-            return;
+        // if y < rowHeight() then we are clicking on the header row
+        // we don't want to accidentally trigger row buttons that are
+        // vertically scrolled up behind the header row
+        if (y >= rowHeight()) {
+            SystemButton button = matchingButton(x,y);
+            if ((button != null) && button.wantsMouseRelease()) {
+                Sprite sprite = matchingSprite(x,y);
+                button.mouseReleased(sprite.system(), e);
+                topParent.repaint();
+                return;
+            }
         }
 
         Sprite sprite = matchingSprite(x,y);
@@ -1140,6 +1150,8 @@ public abstract class SystemListingUI extends BasePanel implements MouseListener
         @Override
         public void mouseReleased(StarSystem sys, MouseEvent e) {
             if (e.getButton() > 3)
+                return;
+            if (sys == null)
                 return;
             int maxSendingSize = player().sv.maxTransportsToSend(sys.id);
             float pct = (float) (e.getX() -x) / width;
