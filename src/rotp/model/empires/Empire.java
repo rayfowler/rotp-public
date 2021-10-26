@@ -674,8 +674,8 @@ public final class Empire implements Base, NamedObject, Serializable {
         StarSystem home = galaxy().system(capitalSysId);
         sys.addEvent(new SystemColonizedEvent(id));
         newSystems.add(sys);
-        addColonizedSystem(sys);
         Colony c = sys.becomeColonized(sysName, this);
+        addColonizedSystem(sys);
         governorAI().setInitialAllocations(c);
         if (isPlayerControlled()) {
             int maxTransportPop =(int)(sys.planet().maxSize()-sys.colony().population());
@@ -1266,12 +1266,9 @@ public final class Empire implements Base, NamedObject, Serializable {
         return false;
     }
     public boolean shipsCanScanTo(IMappedObject loc) {
-        if (shipScanningRange == 0)
-            return false;
-
         List<ShipFleet> fleets = galaxy().ships.allFleets(id);
         for (ShipFleet fl : fleets) {
-            if (fl.distanceTo(loc) < shipScanningRange)
+            if (fl.distanceTo(loc) <= shipScanningRange)
                 return true;
         }
         return false;
