@@ -861,7 +861,7 @@ public final class GameSession implements Base, Serializable {
             newSession.validate();
             newSession.validateOnLoadOnly();
             loadPreviousSession(newSession, startUp);
-            saveRecentSession(false);
+            // saveRecentSession(false); only load don't store, maybe the user forget to save and the recentSession is the only valid file.
         }
         catch(IOException e) {
             throw new RuntimeException(text("LOAD_GAME_BAD_VERSION", filename));

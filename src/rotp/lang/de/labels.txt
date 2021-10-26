@@ -70,9 +70,9 @@ PLANET_FERTILE                    | fruchtbar
 PLANET_GAIA                       | Gaia
 
 // Planet Descriptors for Race
-PLANET_HOMEWORLD                  | %1 Heimatwelt
-PLANET_WORLD                      | %1 Welt
-PLANET_COLONY                     | %1 Kolonie
+PLANET_HOMEWORLD                  | [alien_race] Heimatwelt
+PLANET_WORLD                      | [alien_race] Welt
+PLANET_COLONY                     | [alien_race] Kolonie
 PLANET_ORION                      | Orion
 PLANET_ORION_GUARDIAN             | Wächter
 
@@ -82,7 +82,7 @@ NEBULA_ID                         | NGC %1
 
 // Government names
 GOVT_EMPIRE                       | %1 Reich
-TITLE_LEADERNAME                  | %1 %2
+TITLE_LEADERNAME                  | [alien_nameTitle] %2
 
 // Extended Colony Names
 COLONY_NAME_2                     | Neu %1
@@ -145,21 +145,21 @@ EVENT_SUPERNOVA_2                 | Die drohende Supernova im [system] System in
 EVENT_SUPERNOVA_3                 | Nach fieberhafter Forschung haben [target_race] Physiker im [system] System eine Möglichkeit gefunden, die Supernova abzuwenden.
 EVENT_SUPERNOVA_4                 | Der Stern im [system] System wurde zu einer Supernova und verstrahlte die [target_race] Welt, zerstörte damit die Umwelt und tötete Millionen.
 EVENT_VIRUS                       | Ein zerstörerische Computervirus legte die [target_race] Forschungszentren lahm und zerstörte Jahre der Forschung im [technology]-Bereich.
-EVENT_SPACE_AMOEBA                | Eine monströse Lebensform namens "Weltraumamöbe" wurde auf dem Weg ins [system] System gesichtet. Verteidigende Einheiten der [race] Kolonisten und deren Flotte erwarten das Schlimmste.
+EVENT_SPACE_AMOEBA                | Eine monströse Lebensform namens "Weltraumamöbe" wurde auf dem Weg ins [system] System gesichtet. Verteidigende Einheiten der [victim_race] Kolonisten und deren Flotte erwarten das Schlimmste.
 EVENT_SPACE_AMOEBA_1              | Eine monströse Lebensform namens "Weltraumamöbe" wurde auf dem Weg in das unbewohnte [system] System gesichtet.
-EVENT_SPACE_AMOEBA_2              | Die Weltraumamöbe hat alles Leben der [race] Kolonie im [system] System vernichtet.
-EVENT_SPACE_AMOEBA_3              | Die Weltraumamöbe wurde durch die [race]-Verteidiger im [system] System zerstört.
-EVENT_SPACE_CRYSTAL               | Eine gigantische kristalline Entität namens "Weltraumkristall" wurde auf dem Weg ins [system] System gesichtet. Verteidigende Einheiten der [race] Kolonisten und deren Flotte erwarten das Schlimmste.
+EVENT_SPACE_AMOEBA_2              | Die Weltraumamöbe hat alles Leben der [victim_race] Kolonie im [system] System vernichtet.
+EVENT_SPACE_AMOEBA_3              | Die Weltraumamöbe wurde durch die [victim_race]-Verteidiger im [system] System zerstört.
+EVENT_SPACE_CRYSTAL               | Eine gigantische kristalline Entität namens "Weltraumkristall" wurde auf dem Weg ins [system] System gesichtet. Verteidigende Einheiten der [victim_race] Kolonisten und deren Flotte erwarten das Schlimmste.
 EVENT_SPACE_CRYSTAL_1             | Eine gigantische kristalline Entität namens "Weltraumkristall" wurde auf dem Weg in das unbewohnte [system] System gesichtet.
-EVENT_SPACE_CRYSTAL_2             | Der Weltraumkristall hat alles Leben in der [race] Kolonie im [system] System ausgelöscht.
-EVENT_SPACE_CRYSTAL_3             | Der Weltraumkristall wurde durch [race]-Verteidiger im [system] System zerstört.
+EVENT_SPACE_CRYSTAL_2             | Der Weltraumkristall hat alles Leben in der [victim_race] Kolonie im [system] System ausgelöscht.
+EVENT_SPACE_CRYSTAL_3             | Der Weltraumkristall wurde durch [victim_race]-Verteidiger im [system] System zerstört.
 
-SYSEVENT_HOMEWORLD                | Heimatwelt der %1.
-SYSEVENT_SCOUTED                  | Zuerst erkundet durch %1.
-SYSEVENT_COLONIZED                | Kolonisiert durch %1.
-SYSEVENT_CAPTURED                 | Erobert durch Kräfte der %1.
-SYSEVENT_ABANDONED                | Verlassen von den %1.
-SYSEVENT_DESTROYED                | Zerstört durch Orbitalbombardement der %1.
+SYSEVENT_HOMEWORLD                | Heimatwelt der [alien_race].
+SYSEVENT_SCOUTED                  | Zuerst erkundet durch [alien_race].
+SYSEVENT_COLONIZED                | Kolonisiert durch [alien_race].
+SYSEVENT_CAPTURED                 | Erobert durch Kräfte der [alien_race].
+SYSEVENT_ABANDONED                | Verlassen von den [alien_race].
+SYSEVENT_DESTROYED                | Zerstört durch Orbitalbombardement der [alien_race].
 SYSEVENT_DESTROYED_MONSTER        | Zerstört durch %1.
 SYSEVENT_DESTROYED_UNKNOWN        | Zerstört.
 SYSEVENT_ATMOSPHERE_TERRAFORMED   | Atmosphärische Terraformung abgeschlossen.
@@ -304,8 +304,8 @@ GAME_ENLARGE                      | Expandieren
 
 // Game Settings UI
 GAME_SETTINGS_TITLE               | Einstellungen
-GAME_SETTINGS_DESCRIPTION         | Zum Ãndern die jeweilige Einstellung bitte klicken. Für einen Reset bitte die Remnants.cfg löschen.
-GAME_SETTINGS_EXIT                | Ausgang
+GAME_SETTINGS_DESCRIPTION         | Zum Ändern die jeweilige Einstellung bitte klicken. Für einen Reset bitte die Remnants.cfg löschen.
+GAME_SETTINGS_EXIT                | Übernehmen
 GAME_SETTINGS_DEFAULT             | Zurücksetzen
 GAME_SETTINGS_DISPLAY_MODE        | Display Mode: %1
 GAME_SETTINGS_WINDOWED            | Fenster
@@ -420,10 +420,10 @@ MAIN_HELP_1F                      | Technologie -Planetarer Beitrag zur Forschun
 MAIN_HELP_1G                      | Ratio-Balken zeigen die Verwendung der planetaren Produktion.  Die Höhe jedes Balkens kann per Mausrad, auf den Balken klicken oder per Klick auf die links/rechts Pfeile jedes Balkens geändert werden.
 MAIN_HELP_1H                      | Das erwartete Ergebnis für den Bereich wird auf der rechten Seite des Balkens angezeigt. Überproduktion wird in der Staatskasse vergütet.
 MAIN_HELP_2A                      | Planetares Schildlevel der Kolonie. Schilde können nicht auf Planeten in Nebeln installiert werden.
-MAIN_HELP_2B                      | Nummer der Raketenbasen und das gewünschte Maximum für diesen Planeten. Klick oder Mausrad zum Ã„ndern des Maximums.
+MAIN_HELP_2B                      | Nummer der Raketenbasen und das gewünschte Maximum für diesen Planeten. Klick oder Mausrad zum Ändern des Maximums.
 MAIN_HELP_2C                      | Komplette planetare Produktion der Industrie und Bevölkerung.
 MAIN_HELP_2D                      | Tatsächliche Produktion bereinigt um imperiumsweite Handelseinnahmen, Spionage- und Sicherheitskosten sowie die Wartung von Raketenbasen und Schiffen.
-MAIN_HELP_2E                      | Ã„ndern Sie das Schiffsdesign, um in der Werft im Orbit des Planeten zu bauen. Die für unfertige Schiffe angefallene Produktion beschleunigt die Produktion neuer Schiffe um 50 %, bis sie verbraucht ist. Klicken oder Mausrad, um das Schiffsdesign zu ändern.
+MAIN_HELP_2E                      | Ändern Sie das Schiffsdesign, um in der Werft im Orbit des Planeten zu bauen. Die für unfertige Schiffe angefallene Produktion beschleunigt die Produktion neuer Schiffe um 50 %, bis sie verbraucht ist. Klicken oder Mausrad, um das Schiffsdesign zu ändern.
 MAIN_HELP_2F                      | Setzen Sie einen Sammelpunkt, um neu gebaute Schiffe automatisch zu einer anderen Kolonie zu schicken.
 MAIN_HELP_2G                      | Transportieren Sie Bevölkerung, um eine andere Kolonie zu befestigen oder Truppen zur Invasion eines feindlichen Planeten zu schicken. Für den Transport entstehen der Kolonie einmalige Produktionskosten.
 MAIN_HELP_2H                      | Einen Planeten komplett aufgeben kann man, indem man die gesamte Bevölkerung von ihm auf eine andere Kolonie übertragt.
@@ -498,7 +498,7 @@ TURN_DESIGN_SHIPS                 | Shiff planen
 TURN_COLONY_SPENDING              | Koloniezuteilung
 
 // Fleet labels
-MAIN_FLEET_TITLE                  | %1 Flotte
+MAIN_FLEET_TITLE                  | [fleet_race] Flotte
 MAIN_FLEET_TITLE_UNKNOWN          | Unbekannte Flotte
 MAIN_FLEET_IN_ORBIT               | Im Orbit
 MAIN_FLEET_DEPLOYED               | Auf dem Weg
@@ -518,7 +518,7 @@ MAIN_FLEET_INVALID_RETREAT        | Zurückziehende Flotten können nur an freun
 MAIN_FLEET_ETA_UNNAMED            | ETA zum Ziel: %1 Jahre
 MAIN_FLEET_ETA_NAMED              | ETA nach %1: %2 Jahre
 MAIN_FLEET_SET_RALLY              | Rallypoint setzen
-MAIN_FLEET_AUTO_RETREAT           | Automatischer Rückzug nach Ankunft
+MAIN_FLEET_AUTO_RETREAT           | Rückzug nach Ankunft
 MAIN_FLEET_ETA_UNKNOWN            | Scanner können Entfernung nicht bestimmen
 MAIN_FLEET_THROUGH_NEBULA         | Speed limited by nebula
 
@@ -544,7 +544,7 @@ MAIN_RALLY_START                  | Start Route
 MAIN_RALLY_STOP                   | Stoppe Route
 
 // Transport labels
-MAIN_TRANSPORTS_EMPIRE            | %1 Transport
+MAIN_TRANSPORTS_EMPIRE            | [empire_race] Transport
 MAIN_TRANSPORTS_COUNT             | %1 Transportschiffe
 MAIN_TRANSPORTS_CANCEL            | Abbrechen
 MAIN_TRANSPORTS_SHOW_DEST         | ETA bis %1: %2 Jahre
@@ -623,7 +623,7 @@ MAIN_SCOUT_TITLE                  | Kundschafter haben ein neues Sternensystem e
 MAIN_SCOUT_SUBTITLE_1             | Unsere Schiffe haben das System erkundet
 MAIN_SCOUT_SUBTITLE_2             | Unsere Astronomen haben die Daten gesammelt
 MAIN_SCOUT_SUBTITLE_3             | Unsere Alliierten haben die Daten mit uns geteilt.
-MAIN_SCOUT_TYPE                   | Klassifikation: %1      Größe: %2
+MAIN_SCOUT_TYPE                   | Klassifikation: %1     Größe: %2
 MAIN_SCOUT_NO_PLANET              | Keine bewohnbaren Planeten gefunden
 MAIN_SCOUT_HOSTILE_DESC           | Feindliche Umgebung - Bevölkerungswachstum ist halbiert.
 MAIN_SCOUT_FERTILE_DESC           | Fruchtbare Umgebung - Bevölkerungswachstum +50%.
@@ -640,7 +640,7 @@ MAIN_COLONIZE_TITLE               | Unser Kolonieschiff umkreist %1, ein unbewoh
 MAIN_COLONIZE_PROMPT              | Aufbau einer Kolonie?
 MAIN_COLONIZE_YES                 | Ja
 MAIN_COLONIZE_NO                  | Nein
-MAIN_COLONIZE_ANIMATION_TITLE     | Im Jahr %1 gründet das %2 Reich eine neue Kolonie.
+MAIN_COLONIZE_ANIMATION_TITLE     | Im Jahr %1 gründet das [player_empire] Reich eine neue Kolonie.
 MAIN_COLONIZE_NAME_PROMPT         | Koloniename
 MAIN_COLONIZE_NAME_OK             | OK
 
@@ -659,8 +659,8 @@ MAIN_ALLOCATE_TERRAFORM_COMPLETE  | %1 hat die Terraformung abgeschlossen.
 MAIN_ALLOCATE_ATMOSPHERE_COMPLETE | %1 wurde zu einem normalen Planeten mit einer Standardgeburtenrate umgewandelt.
 MAIN_ALLOCATE_FERTILE_COMPLETE    | %1 wurde zu einem fruchtbaren Planeten mit einer Geburtenrate von 150% zum Standard umgewandelt.
 MAIN_ALLOCATE_GAIA_COMPLETE       | %1 wurde zu einem Gaia-Planeten mit verdoppelter Geburtenrate umgewandelt.
-MAIN_ALLOCATE_SABOTAGE_BASES      | Auf %1 wurden %2 Raketenbasen durch %3 Saboteure zerstört.
-MAIN_ALLOCATE_SABOTAGE_FACTORIES  | Auf %1 wurden %2 Fabriken durch %3 Saboteure zerstört.
+MAIN_ALLOCATE_SABOTAGE_BASES      | Auf %1 wurden %2 Raketenbasen durch [spy_race] Saboteure zerstört.
+MAIN_ALLOCATE_SABOTAGE_FACTORIES  | Auf %1 wurden %2 Fabriken durch [spy_race] Saboteure zerstört.
 MAIN_ALLOCATE_COLONY_CAPTURED     | %1 wurde durch %2 Truppen erobert.
 MAIN_ALLOCATE_ECO_LOCKED_WASTE    | %1 hat die ökologischen Ausgaben auf ein Niveau gebracht, das nicht ausreicht, um die Verschmutzung zu beseitigen.
 MAIN_ALLOCATE_PROJECT_ENDED       | %1 forscht nicht länger am Spezialprojekt: %2
@@ -701,24 +701,24 @@ MAIN_AUTOSAVE_FAILED_OK           | OK
 MAIN_ALERT_TITLE                  | Alarm 
 MAIN_ALERT_TITLE_COUNT            | Alarm - %1 von %2
 MAIN_ALERT_TECH_STOLEN            | Interne Sicherheitsprotokolle weisen darauf hin, dass ein Spion der %1 das Wissen um %2 gestohlen hat.
-MAIN_ALERT_SPY_CAPTURED           | Wir haben einen Spion des %1 Reichs gefangen und verhören ihn für ein Geständnis über die %2 Aktivitäten.
+MAIN_ALERT_SPY_CAPTURED           | Wir haben einen Spion des [alien_race] Reichs gefangen und verhören ihn für ein Geständnis über die %1 Aktivitäten.
 MAIN_ALERT_SPY_CONFESSED          | Die %1 haben einen unserer Spione gefangengenommen und haben ihn zu einem Geständnis über %2 Aktivitäten gezwungen.
-MAIN_ALERT_FACTORIES_DESTROYED    | Agenten des %1 Reich haben %2 Fabriken im %3 System zerstört.
-MAIN_ALERT_BASES_DESTROYED        | Agenten des %1 Reich haben %2 Raketenbasen im %3 System zerstört.
+MAIN_ALERT_FACTORIES_DESTROYED    | Agenten des [alien_empire] Reich haben %1 Fabriken im %2 System zerstört.
+MAIN_ALERT_BASES_DESTROYED        | Agenten des [alien_empire] Reich haben %1 Raketenbasen im %2 System zerstört.
 MAIN_ALERT_FACTORIES_DESTROYED2   | Unbekannte Saboteure haben %1 Fabriken im %2 System zerstört.
 MAIN_ALERT_BASES_DESTROYED2       | Unbekannte Saboteure haben %1 Raketenbasen im %2 System zerstört.
 MAIN_ALERT_TRANSPORTS_PERISHED    | Die %1 Kolonie im %2 wurde zerstört. Unser Transporte, die landen sollten, wurden zerstört.
-MAIN_ALERT_TRANSPORTS_CAPTURED    | Unsere %3 Transporter haben sich nach der Ankunft im System %2 den %1 Kräften ergeben.
-MAIN_ALERT_TRANSPORTS_KILLED      | Unsere Transporte nach %2 wurden durch verteidigende %1 Truppen zerstört.
-MAIN_ALERT_INVADERS_CAPTURED      | %3 %1 Transporte haben das %2 System erreicht und haben sich unseren Kräften ergeben.
-MAIN_ALERT_INVADERS_KILLED        | Der %1 Transport zur Invasion von %2 wurde komplett durch unsere verteidigende Truppen zerstört.
-MAIN_ALERT_TRESPASSING1           | %1 Schiffe wurden beim Grenzübertritt nahe unserer Kolonie %2 System entdeckt.
-MAIN_ALERT_TRESPASSING2           | Der %1 Botschafter protestiert, dass unsere Schiffe die Grenzen bei %2 überschritten haben.
+MAIN_ALERT_TRANSPORTS_CAPTURED    | Unsere %2 Transporter haben sich nach der Ankunft im System %1 den [alien_race] Kräften ergeben.
+MAIN_ALERT_TRANSPORTS_KILLED      | Unsere Transporte nach %1 wurden durch verteidigende [alien_race] Truppen zerstört.
+MAIN_ALERT_INVADERS_CAPTURED      | %2 [alien_race] Transporte haben das %1 System erreicht und haben sich unseren Kräften ergeben.
+MAIN_ALERT_INVADERS_KILLED        | Der [alien_race] Transport zur Invasion von %1 wurde komplett durch unsere verteidigende Truppen zerstört.
+MAIN_ALERT_TRESPASSING1           | [alien_race] Schiffe wurden beim Grenzübertritt nahe unserer Kolonie %1 System entdeckt.
+MAIN_ALERT_TRESPASSING2           | Der [alien_race] Botschafter protestiert, dass unsere Schiffe die Grenzen bei %1 überschritten haben.
 MAIN_ALERT_TRADE_MATURED          | Unser Handelsvertrag mit den %1 hat ein maximales Volumen von %2 BC erreicht.
-MAIN_ALERT_SPY_NEW_TECH           | Unsere Spione informieren uns, dass die %1 die Geheimnisse hinter %2 kennen. 
+MAIN_ALERT_SPY_NEW_TECH           | Unsere Spione informieren uns, dass die [ally_empire] die Geheimnisse hinter %1 kennen. 
 
 // Colony Listing UI
-PLANETS_TITLE                     | %1 Kolonie
+PLANETS_TITLE                     | [player_race] Kolonie
 PLANETS_VIEW_ECOLOGY              | Ökologische Ansicht
 PLANETS_VIEW_INDUSTRY             | Industrie Ansicht
 PLANETS_VIEW_MILITARY             | Militär Ansicht
@@ -811,9 +811,9 @@ PLANETS_HELP_4H                   | Name - Name des Systems. Editierbar.
 PLANETS_HELP_4I                   | Flagge - Benutzergewählte Systemflagge
 
 // Bombardment prompt
-MAIN_BOMBARDED_TITLE             | %1 hat die %2 Kräfte bombardiert.
-MAIN_BOMBARD_TITLE               | Unsere Kräfte sind im Orbit von %1, einem feindlichen %2 System.
-MAIN_BOMBARD_TROOPS              | %1 %2 troops are orbiting or in transit to this colony.
+MAIN_BOMBARDED_TITLE             | %1 hat die [alien_race] Kräfte bombardiert.
+MAIN_BOMBARD_TITLE               | Unsere Kräfte sind im Orbit von %1, einem feindlichen [alien_race] System.
+MAIN_BOMBARD_TROOPS              | %1 [alien_race] Truppen sind im Orbit oder im Anflug zu dieser Kolonie.
 MAIN_BOMBARD_PROMPT              | Planetares Bombardement?
 MAIN_BOMBARD_YES                 | Ja
 MAIN_BOMBARD_NO                  | Nein
@@ -828,7 +828,7 @@ MAIN_BOMBARD_NAME_PROMPT         | Koloniename
 
 
 // Fleet listing UI
-FLEETS_TITLE                      | %1 Flotte
+FLEETS_TITLE                      | Flotte
 FLEETS_SELECT_SYSTEMS             | Wähle System
 FLEETS_SELECT_FLEETS              | Wähle Flotte
 FLEETS_SELECT_ALL                 | Wähle alles
@@ -903,7 +903,7 @@ FLEETS_HELP_ALL                   | Überblick - Dieser Bildschirm ermöglicht d
 FLEETS_HELP_1A                    | Systeme auswählen - es gibt drei Möglichkeiten, Systeme auszuwählen: 1) durch Anklicken von Systemen auf der Karte, 2) durch Ziehen mit der rechten Maustaste über die Karte und 3) mit den Schaltflächen "Alle auswählen" und "Alle abwählen".
 FLEETS_HELP_1B                    | Filtern nach - Aktiviere Kontrollkästchen, um die Liste der ausgewählten Systeme einzugrenzen. Filter können auch angeklickt werden, um durch verwandte Optionen zu blättern
 FLEETS_HELP_1C                    | Und bauen - Filtersysteme entsprechend dem zu bauenden Schiffsdesign. 
-FLEETS_HELP_1D                    | Schiffsdesign - Ã„ndere das Schiffsdesign, das in den ausgewählten Systemen gebaut werden soll. Ein leeres Bild bedeutet, dass die ausgewählten Systeme derzeit andere Designs bauen. Achtung! Für diese Aktion gibt es keine Sicherheitsabfrage.
+FLEETS_HELP_1D                    | Schiffsdesign - Ändere das Schiffsdesign, das in den ausgewählten Systemen gebaut werden soll. Ein leeres Bild bedeutet, dass die ausgewählten Systeme derzeit andere Designs bauen. Achtung! Für diese Aktion gibt es keine Sicherheitsabfrage.
 FLEETS_HELP_1E                    | Transporte senden - sendet Transporte aus den ausgewählten Systemen an ein einzelnes Zielsystem.
 FLEETS_HELP_1F                    | Sammelpunkte setzen - setzt die Sammelpunkte für die ausgewählten Systeme auf ein einzelnes Zielsystem. 
 FLEETS_HELP_2A                    | Flotten auswählen - es gibt drei Möglichkeiten, Flotten auszuwählen: 1) durch Anklicken von Flotten auf der Karte, 2) durch Ziehen mit der rechten Maustaste über die Karte und 3) mit den Schaltflächen "Alle auswählen" und "Alle abwählen".
@@ -926,13 +926,13 @@ TECH_CHOOSE_RESEARCH_COST         | %1 TP
 TECH_CHOOSE_RESEARCH_TIER         | Tier %1
 TECH_TRADE_TIER_COST_INFO         | (Tier %1 - %2 RP)
 TECH_CONFIRM_CHOICE               | Wählen
-TECH_DISCOVERY_TITLE              | %1 Wissenschaftler haben einen Durchbruch bei %2!
+TECH_DISCOVERY_TITLE              | [player_race] Wissenschaftler haben einen Durchbruch bei %1!
 TECH_SCOUTED_TITLE                | Kundschafter haben in den Ruinen von %1 etwas entdeckt.
-TECH_STOLEN_TITLE                 | Unsere Spione haben das %1 Entwicklungscenter auf %2 infiltriert.
-TECH_TRADED_TITLE                 | %1 Wisenschaftler haben die Technologie von %2 bekommen.
+TECH_STOLEN_TITLE                 | Unsere Spione haben das [alien_race] Entwicklungscenter auf %2 infiltriert.
+TECH_TRADED_TITLE                 | [player_race] Wisenschaftler haben die Technologie von [alien_race] bekommen.
 TECH_PLUNDERED_TITLE              | Truppen haben in den Ruinen von %1 gefunden.
-TECH_DERELICT_TITLE               | %1 Entdecker plündern eine uralte Technologie
-TECH_GUARDIAN_TITLE               | %1 Soldaten bergen eine uralte Waffe
+TECH_DERELICT_TITLE               | [player_race] Entdecker plündern eine uralte Technologie
+TECH_GUARDIAN_TITLE               | [player_race] Soldaten bergen eine uralte Waffe
 TECH_ALLOCATE_SHIELD              | Sollen wir den Verteidigungsanteil aller Kolonien für den Bau von neuen Schilden erhöhen?
 TECH_ALLOCATE_MISSILE_BASES       | Sollen wir den Verteidigungsanteil aller Kolonien für das Upgrade der Raketenbasen erhöhen?
 TECH_ALLOCATE_FACTORIES           | Sollen wir den Indsutrieanteil aller Kolonien für das Upgrade unserer Firmenkontrollen erhöhen?
@@ -953,7 +953,7 @@ TECH_COMPLETED_ALL                | Wir haben alle möglichen Forschungen abgesc
 TECH_COMPLETED_VERIFY             | Überprüfe, ob die Ausgabenzuweisungen in den übrigen Forschungsfeldern richtig eingestellt sind.
 
 // prompt for espionage
-NOTICE_ESPIONAGE_TITLE            | Unsere Spione haben eine %1 Basis infiltriert.
+NOTICE_ESPIONAGE_TITLE            | Unsere Spione haben eine [alien_race] Basis infiltriert.
 NOTICE_ESPIONAGE_SUBTITLE         | Wähle einen ausspionierten Technologietyp.
 NOTICE_ESPIONAGE_NO_TECH          | Keine Technologien vorhanden.
 NOTICE_ESPIONAGE_MANY_TECHS       | %1 verfügbare Technologien
@@ -1008,8 +1008,8 @@ GNN_UNKNOWN_SUBJECT               | Eine unbekannte Zivilisation
 GNN_UNKNOWN_PREDICATE             | Ein unbekanntes Reich
 GNN_EXTINCTION                    | Die %1 wurden von den %2 komplett zerstört.
 GNN_EXTINCTION_UNKNOWN            | Die %1 wurden komplett zerstört.
-GNN_EXPANSION_1                   | Die [expanding_empire] haben jetzt %2 Sternensysteme unter Kontrolle und liegen weit vor den anderen Rassen.
-GNN_EXPANSION_2                   | Die [expanding_empire] kontrollieren jetzt %2 Sternensysteme. Wenn Ihre Expansion nicht eingedämmt wird, beherrschen sie bald die Galaxis.
+GNN_EXPANSION_1                   | Die [expanding_empire] haben jetzt %1 Sternensysteme unter Kontrolle und liegen weit vor den anderen Rassen.
+GNN_EXPANSION_2                   | Die [expanding_empire] kontrollieren jetzt %1 Sternensysteme. Wenn Ihre Expansion nicht eingedämmt wird, beherrschen sie bald die Galaxis.
 GNN_EXPANSION_3                   | Die [expanding_empire] kontrollieren den Großteil der Galaxis. Die Anführer bereiten eine Verschmelzung mit dem riesigen Reich vor.
 GNN_ALLIANCE_FORMED               | The [first_empire] sind eine Allianz mit den [second_empire] eingegangen.
 GNN_ALLIANCE_BROKEN               | Die Allianz zwischen den [first_empire] und den [second_empire] ist zerbrochen.
@@ -1018,8 +1018,8 @@ GNN_CENSUS_RANKING                | Der aktuelle Census zur bevölkerungsstärke
 GNN_PRODUCTION_RANKING            | Das Ranking der Produktionsstatistik:
 GNN_TECHNOLOGY_RANKING            | Das Ranking der weit entwickelsten Völker:
 GNN_PLAYER_REBELLION              | %1 hat rebelliert und arbeitet nicht mehr mit dem [rebelling_empire] zusammen. Mindestens %2 Millionen Rebellen kontrollieren die Kolonie. Truppen müssen zur Beendigung entsandt werden.
-GNN_ALIEN_REBELLION               | %1 hat rebelliert und arbeitet nicht mehr mit dem [rebelling_empire] zusammen.Mindestens %3 Millionen Rebellen kontrollieren die Kolonie.
-GNN_PLAYER_REBELLION_SPREAD       | Die Rebellion breitet sich weiter im [rebelling_empire] aus. Mindestens %3 Millionen Rebellen kontrollieren jetzt unsere Kolonie bei %1. Es müssen Truppen entsandt werden, um den Aufstand niederzuschlagen. 
+GNN_ALIEN_REBELLION               | %1 hat rebelliert und arbeitet nicht mehr mit dem [rebelling_empire] zusammen.Mindestens %2 Millionen Rebellen kontrollieren die Kolonie.
+GNN_PLAYER_REBELLION_SPREAD       | Die Rebellion breitet sich weiter im [rebelling_empire] aus. Mindestens %2 Millionen Rebellen kontrollieren jetzt unsere Kolonie bei %1. Es müssen Truppen entsandt werden, um den Aufstand niederzuschlagen. 
 GNN_OVERTHROW                     | Ein neue Anführer führt jetzt das [alien_empire] . Gerüchte besagen, dass der neue Anführer ein %2 ist. Das Verhältnis wurde Neutral gesetzt und der Handel auf 0 gesetzt.
 GNN_END_COUNCIL                   | Mit nur noch zwei verbleibenden Mitgliedern werden die Versuche des Galaktischen Rats eingestellt. Viele Anführer diskutieren jetzt, welche endgültige Lösung möglich ist.
 GNN_FORM_COUNCIL                  | Auf der Suche nach Frieden werden die Vertreter jeder Rasse bald einberufen, um einen galaktischen Anführer zu wählen, der von allen Führern aus den beiden bevölkerungsreichsten Reiche gewählt werden soll.
@@ -1206,7 +1206,7 @@ SETUP_VOID_4                      | Leerraum 4
 // Advanced Settings
 SETTINGS_TITLE                    | Erweiterte Spieloptionen
 SETTINGS_DESCRIPTION              | Klick um jede Spieleinstellung umzuschalten.
-SETTINGS_EXIT                     | Ausgang
+SETTINGS_EXIT                     | Übernehmen
 SETTINGS_DEFAULT                  | Zurücksetzen
 SETTINGS_STAR_DENSITY             | Sternendichte: %1
 SETTINGS_RANDOM_EVENTS            | Zufällige Events: %1
@@ -1446,7 +1446,7 @@ SHIP_DESIGN_HELP_1H               | Raketenabwehr - Verteidigung gegen Raketenwa
 SHIP_DESIGN_HELP_1I               | Strahlenabwehr - Verteidigung gegen Strahlenwaffen im Kampf.
 SHIP_DESIGN_HELP_1J               | Angriffsstufe - Angriffsstufe für Waffen im Kampf. 
 SHIP_DESIGN_HELP_1K               | Kampfgeschwindigkeit -  Entfernung, die das Schiff im Kampf zurücklegen kann, pro Runde.
-SHIP_DESIGN_HELP_1L 		  | Farbe - ändert die Farbe des Schiffes.
+SHIP_DESIGN_HELP_1L 	          | Farbe - ändert die Farbe des Schiffes.
 SHIP_DESIGN_HELP_2A               | Antriebstyp - Typ, der für den Antrieb dieses Schiffsdesigns verwendet wird.
 SHIP_DESIGN_HELP_2B               | Geschwindigkeit - Reisegeschwindigkeit durch den jeweiligen Antrieb.
 SHIP_DESIGN_HELP_2C               | Kosten - die Kosten für jeden Antrieb, der für die Leistung benötigt wird.
@@ -1633,7 +1633,7 @@ RACES_MANAGE_OUR_RECALLED         | Unseren Diplomaten abgerufen
 RACES_MANAGE_THEIR_RECALLED       | Deren Diplomaten abgerufen
 RACES_MANAGE_BOTH_RECALLED        | Beide Diplomaten abgerufen
 
-RACES_INTEL_TITLE                 | %1 Geheimdienst Report
+RACES_INTEL_TITLE                 | [alien_race] Geheimdienst Report
 RACES_COUNTER_INTEL_TITLE         | Gegenspionage Report
 RACES_INTEL_SECURITY_BONUS        | Sicherheits Bonus
 RACES_INTEL_TOTAL_SPENDING        | Komplette Ausgaben
@@ -1670,8 +1670,8 @@ RACES_INTEL_SPY_ORDERS            | Spionagebefehle
 RACES_INTEL_SPY_ORDERS_DESC       | Setze Spione ein, um sich zu verstecken, Geheimnisse zu stehlen oder [alien_race] Kolonien zu sabotieren. Je größer das Spionagenetzwerk ist, desto größer ist die Chance auf Erfolg in jeder Runde, solange kein Spione gefangen genommen wird und gesteht.
 RACES_INTEL_SPY_WARNING           | Wenn diese Mission entdeckt wird, bricht diese Mission unseren Vertrag mit den [alien_race].
 RACES_INTEL_SPY_WARNING_WAR       | Wenn diese Mission entdeckt wird, könnte sie einen Krieg mit den [alien_race].
-RACES_INTEL_KNOWN_TECHNOLOGY      | %1 bekannte Technologie
-RACES_INTEL_KNOWN_TECH_DESC       | Unsere Spione berichten, dass die %1 die folgenden Technologien beherrschen. Jede uns unbekannte Technologie ist hervorgehoben.
+RACES_INTEL_KNOWN_TECHNOLOGY      | [alien_race] bekannte Technologie
+RACES_INTEL_KNOWN_TECH_DESC       | Unsere Spione berichten, dass die [alien_race] die folgenden Technologien beherrschen. Jede uns unbekannte Technologie ist hervorgehoben.
 RACES_INTEL_UNKNOWN_TECHNOLOGY    | Unbekannte Technologienreport
 RACES_INTEL_UNKNOWN_TECH_DESC     | Unsere Spione berichten, dass fremde Rassen die folgenden, uns unbekannten Technologien beherrschen.
 
@@ -1758,7 +1758,7 @@ RACES_HELP_4A                     | Lege die Anzahl der Spionagenetzwerke fest, 
 RACES_HELP_4B                     | Lege die Aufträge für die Spione fest, die das ausgewählte Reich infiltrieren. Verstecken - Daten sammeln. Spionage - versuche, Technologie zu stehlen. Sabotage - Rebellionen anzetteln oder Fabriken und Raketenbasen zerstören.
 RACES_HELP_4C                     | Alle Technologien, die das ausgewählte Reich kennt. Technologien, die wir nicht kennen, werden gelb dargestellt.
 RACES_HELP_5A                     | Die bekannte Anzahl von Schiffen in der Flotte des ausgewählten Volkes, nach Hüllengröße. Diese Informationen bleiben aktuell, solange ein aktives Spionagenetz im ausgewählten Reich ist.
-RACES_HELP_5B                     | Die bekannten Fähigkeiten von Schiffsdesigns. Ã„ltere Konstruktionen können außer Betrieb sein. Diese Informationen werden in erster Linie während des Schiffskampfes gesammelt.
+RACES_HELP_5B                     | Die bekannten Fähigkeiten von Schiffsdesigns. Ältere Konstruktionen können außer Betrieb sein. Diese Informationen werden in erster Linie während des Schiffskampfes gesammelt.
 RACES_HELP_5C                     | Die bekannten Verteidigungsfähigkeiten des ausgewählten Reiches. 
 RACES_HELP_6A                     | Dieser Bildschirm zeigt eine aktuelle Rangliste unseres Reichs in verschiedenen Kategorien im Vergleich zu anderen bekannten Reichen. Diese Daten werden von unseren Spionagenetzwerken innerhalb dieser Imperien gesammelt.
 RACES_HELP_6A2                    | Dieser Bildschirm bietet einen historischen Vergleich, in verschiedenen Kategorien, unseres Imperiums mit einem ausgewählten Imperium. Diese Daten werden von unseren Spionagenetzwerken innerhalb dieser Imperien gesammelt.
@@ -1770,9 +1770,9 @@ RACES_HELP_6F                     | Produktion - gesamte Industrieproduktion fü
 RACES_HELP_6G                     | Macht insgesamt - eine Kombination aus Flottenstärke, Technologie und Produktionsniveau.
 
 // Sabotage UI
-SABOTAGE_TITLE                    | Unsere Spione haben die %1-Kolonien infiltriert und sind bereit, Aufträge auszuführen.
-SABOTAGE_PROMPT                   | Wähle die Form der Sabotage, die gegen die %1 im System %2 begangen werden soll.
-SABOTAGE_WARNING                  | Warnung! Jeder Sabotageakt bricht unseren Vertrag mit dem %1.
+SABOTAGE_TITLE                    | Unsere Spione haben die [alien_race]-Kolonien infiltriert und sind bereit, Aufträge auszuführen.
+SABOTAGE_PROMPT                   | Wähle die Form der Sabotage, die gegen die [alien_empire] im System %1 begangen werden soll.
+SABOTAGE_WARNING                  | Warnung! Jeder Sabotageakt bricht unseren Vertrag mit dem [alien_empire].
 SABOTAGE_SELECT_TARGET            | Ziel aussuchen
 SABOTAGE_BUTTON_FACTORIES         | Zerstöre Fabriken
 SABOTAGE_BUTTON_BASES             | Zerstöre Raketenbasen
@@ -1807,7 +1807,7 @@ HISTORY_EMPIRE                    | Imperium
 // Council UIs
 COUNCIL_CONVENE_TITLE             | Der Hohe Rat tagt
 COUNCIL_CONVENE                   | Der Hohe Rat ist zusammengetreten, um einen Anführer zum Herrscher der Galaxis zu wählen.
-COUNCIL_CONVENE2                  | Jedes Reich gibt einen Anteil an Stimmen proportional zu seiner Bevölkerung ab. Ein Kandidat muss mindestens zwei Drittel aller Stimmen sammeln, um gewählt zu werden. Die Kandidaten sind die Anführer der beiden bevölkerungsreichsten Reiche: %1 des %2 und %3 des %4.
+COUNCIL_CONVENE2                  | Jedes Reich gibt einen Anteil an Stimmen proportional zu seiner Bevölkerung ab. Ein Kandidat muss mindestens zwei Drittel aller Stimmen sammeln, um gewählt zu werden. Die Kandidaten sind die Anführer der beiden bevölkerungsreichsten Reiche: [first_name] des [first_empire] und [second_name] des [second_empire].
 COUNCIL_ADJOURN_TITLE             | Der Hohe Rat vertagt sich
 COUNCIL_ADJOURN                   | Die Abstimmung ist beendet und keiner der beiden Kandidaten hat zwei Drittel der Stimmen erhalten. Es wurde noch kein Herrscher ernannt. Der Hohe Rat wird in 25 Jahren für eine weitere Abstimmung wieder zusammenkommen.
 COUNCIL_SUMMARY_TITLE             | Wahlzusammenfassung
@@ -1817,7 +1817,7 @@ COUNCIL_SHOW_VOTING               | Abstimmung fortsetzen
 COUNCIL_SKIP_TO_PLAYER            | Sprung zur [player_race] Abstimmung
 COUNCIL_COMPLETE_VOTING           | Alle Stimmen
 COUNCIL_SHOW_RESULTS              | Zeige Ergebnis
-COUNCIL_VIEW_SUMMARY              | ZEige Wahlzusammenfassung
+COUNCIL_VIEW_SUMMARY              | Zeige Wahlzusammenfassung
 COUNCIL_VOTES_REQUIRED            | %1 Stimmen erforderlich, um die Wahl zu gewinnen.
 COUNCIL_CAST_PROMPT               | Wir müssen unsere %1-Stimmen abgeben.
 COUNCIL_CAST_PROMPT_TITLE         | Wähle einen Kandidaten.
@@ -1826,7 +1826,7 @@ COUNCIL_CAST_VOTE                 | Die [voter_empire] haben %1 Stimmen für [ca
 COUNCIL_CAST_ABSTAIN              | Die [voter_empire] enthalten sich (%1 Stimmen)
 COUNCIL_CHOICE_ABSTAIN            | Enthalten
 COUNCIL_VOTE_COUNT                | %1 Stimmen
-COUNCIL_VOTE_CAST                 | %1 Stimmen - für %2
+COUNCIL_VOTE_CAST                 | %1 Stimmen - für [alien_race]
 COUNCIL_VOTE_ABSTAINED            | %1 Stimmen - Enthaltungen
 COUNCIL_TREATY_CANDIDATE          | [alien_race]: Kandidaten
 COUNCIL_TREATY_ALLIANCE           | [alien_race]: Allianz

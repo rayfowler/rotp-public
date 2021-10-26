@@ -235,7 +235,7 @@ COMBATTRANSPORT_0_DETAIL   | Transporte mit dieser Einrichtung haben eine 50%ige
 //
 // Control Environment tech
 //
-CONTROLENV_0_NAME    | normale Umgebungskontrolle
+CONTROLENV_0_NAME    | Normale Umgebungskontrolle
 CONTROLENV_0_ITEM    | Koloniebasis, Standard
 CONTROLENV_0_BRIEF   | Erlaubt Landung auf normalen Planeten
 CONTROLENV_0_DETAIL  | Erlaubt Landung auf normalen Planeten
@@ -256,19 +256,19 @@ CONTROLENV_3_BRIEF   | Erlaubt Landung auf toten Planeten
 CONTROLENV_3_DETAIL  | Erlaubt Landung auf toten Planeten
 
 CONTROLENV_4_NAME    | Umgebungskontrolle für Inferno Planeten
-CONTROLENV_4_ITEM    | Koloniebasis, Tote 
-CONTROLENV_4_BRIEF   | Erlaubt Landung auf toten Planeten
-CONTROLENV_4_DETAIL  | Erlaubt Landung auf toten Planeten
+CONTROLENV_4_ITEM    | Koloniebasis, Inferno 
+CONTROLENV_4_BRIEF   | Erlaubt Landung auf Inferno Planeten
+CONTROLENV_4_DETAIL  | Erlaubt Landung auf Inferno Planeten
 
-CONTROLENV_5_NAME    | Umgebungskontrolle für Inferno Planeten
-CONTROLENV_5_ITEM    | Koloniebasis, Inferno 
-CONTROLENV_5_BRIEF   | Erlaubt Landung auf Inferno Planeten
-CONTROLENV_5_DETAIL  | Erlaubt Landung auf Inferno Planeten
+CONTROLENV_5_NAME    | Umgebungskontrolle für toxische Planeten
+CONTROLENV_5_ITEM    | Koloniebasis, Toxisch 
+CONTROLENV_5_BRIEF   | Erlaubt Landung auf toxischen Planeten
+CONTROLENV_5_DETAIL  | Erlaubt Landung auf toxischen Planeten
 
-CONTROLENV_6_NAME    | Umgebungskontrolle für toxische Planeten
-CONTROLENV_6_ITEM    | Koloniebasis, Toxisch 
-CONTROLENV_6_BRIEF   | Erlaubt Landung auf toxischen Planeten
-CONTROLENV_6_DETAIL  | Erlaubt Landung auf toxischen Planeten
+CONTROLENV_6_NAME    | Umgebungskontrolle für verstrahlte Planeten
+CONTROLENV_6_ITEM    | Koloniebasis, Verstahlt 
+CONTROLENV_6_BRIEF   | Erlaubt Landung auf verstrahlten Planeten
+CONTROLENV_6_DETAIL  | Erlaubt Landung auf verstrahlten Planeten
 
 
 //
@@ -442,63 +442,63 @@ ENGINE_0_NAME    | Retro-Antrieb
 ENGINE_0_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse I im Kampf.
 ENGINE_0_ITEM    | Retros
 ENGINE_0_ITEM2   | Klasse 1
-ENGINE_0_BRIEF   | Warp %1  Def %1
+ENGINE_0_BRIEF   | Warp 1  Def %1
 ENGINE_0_BRIEF2  | Kampfgeschwindigkeit %1
 
 ENGINE_1_NAME    | Nuklear-Antrieb 
 ENGINE_1_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse II im Kampf.
 ENGINE_1_ITEM    | Nuclear
 ENGINE_1_ITEM2   | Klasse 2
-ENGINE_1_BRIEF   | Warp %1  Def %1
+ENGINE_1_BRIEF   | Warp 2  Def %1
 ENGINE_1_BRIEF2  | Kampfgeschwindigkeit %1
 
 ENGINE_2_NAME    | SubLight Antrieb 
 ENGINE_2_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse III im Kampf.
 ENGINE_2_ITEM    | SubLight
 ENGINE_2_ITEM2   | Klasse 3
-ENGINE_2_BRIEF   | Warp %1  Def %1
+ENGINE_2_BRIEF   | Warp 3  Def %1
 ENGINE_2_BRIEF2  | Kampfgeschwindigkeit %1
 
 ENGINE_3_NAME    | Fusionsantrieb
 ENGINE_3_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse IV im Kampf.
 ENGINE_3_ITEM    | Fusion
 ENGINE_3_ITEM2   | Klasse 4
-ENGINE_3_BRIEF   | Warp %1  Def %1
+ENGINE_3_BRIEF   | Warp 4  Def %1
 ENGINE_3_BRIEF2  | Kampfgeschwindigkeit %1
 
 ENGINE_4_NAME    | Impulsantrieb
 ENGINE_4_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse V im Kampf.
 ENGINE_4_ITEM    | Impuls
 ENGINE_4_ITEM2   | Klasse 5
-ENGINE_4_BRIEF   | Warp %1  Def %1
+ENGINE_4_BRIEF   | Warp 5  Def %1
 ENGINE_4_BRIEF2  | Kampfgeschwindigkeit %1
 
 ENGINE_5_NAME    | Ionenantrieb
 ENGINE_5_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse VI im Kampf.
 ENGINE_5_ITEM    | Ion
 ENGINE_5_ITEM2   | Klasse 6
-ENGINE_5_BRIEF   | Warp %1  Def %1
+ENGINE_5_BRIEF   | Warp 6  Def %1
 ENGINE_5_BRIEF2  | Kampfgeschwindigkeit %1
 
 ENGINE_6_NAME    | Antimaterie-Antrieb
 ENGINE_6_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse VII im Kampf.
 ENGINE_6_ITEM    | Antimaterie
 ENGINE_6_ITEM2   | Klasse 7
-ENGINE_6_BRIEF   | Warp %1  Def %1
+ENGINE_6_BRIEF   | Warp 7  Def %1
 ENGINE_6_BRIEF2  | Kampfgeschwindigkeit %1
 
 ENGINE_7_NAME    | InterPhasen-Antrieb
 ENGINE_7_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse VIII im Kampf.
 ENGINE_7_ITEM    | InterPhase
 ENGINE_7_ITEM2   | Klasse 8
-ENGINE_7_BRIEF   | Warp %1  Def %1
+ENGINE_7_BRIEF   | Warp 8  Def %1
 ENGINE_7_BRIEF2  | Kampfgeschwindigkeit %1
 
 ENGINE_8_NAME    | Hyper Antrieb
 ENGINE_8_DETAIL  | Bewegt Schiffe mit Warp %1 und erlaubt eine maximale Bewegungsrate Klasse IX im Kampf.
 ENGINE_8_ITEM    | Hyper
 ENGINE_8_ITEM2   | Klasse 9
-ENGINE_8_BRIEF   | Warp %1  Def %1
+ENGINE_8_BRIEF   | Warp 9  Def %1
 ENGINE_8_BRIEF2  | Kampfgeschwindigkeit %1
 
 
@@ -752,7 +752,7 @@ HANDWEAPON_2_DETAIL    | Tragbare Strahlenwaffe, die 10 zum Bodenkampf hinzufüg
 HANDWEAPON_3_NAME      | Fusiongewehr
 HANDWEAPON_3_DETAIL    | Ungenaue, aber mächtige Explosionswaffe, die 20 zum Bodenkampf hinzufügt.
 
-HANDWEAPON_4_NAME      | Phasor
+HANDWEAPON_4_NAME      | Handphasor
 HANDWEAPON_4_DETAIL    | Starke tragbare Energiewaffe, die den Gegner in seine einzelnen Atome zerlegen kann. Fügt 25 zum Bodenkampf hinzu.
 
 HANDWEAPON_5_NAME      | Plasmagewehr
@@ -964,7 +964,7 @@ REPULSOR_0_DETAIL  | Stößt gegnerische Schiffe ein Feld vom verteidigenden Sch
 // Reserve Fuel tech 
 //
 RSRVFUEL_0_NAME    | Erweiterte Treibstofftanks
-RSRVFUEL_0_BRIEF   | Erweitert die Schiffreichweite um 3 Lichtjahre.
+RSRVFUEL_0_BRIEF   | Erweitert die Schiffreichweite um %1 Lichtjahre.
 RSRVFUEL_0_DETAIL  | Treibstofftanks erhöhen die Reichweite von Raumschiffen.
 
 
