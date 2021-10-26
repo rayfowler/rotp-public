@@ -381,7 +381,6 @@ public final class GameSession implements Base, Serializable {
                     log("Notifications processed 4 - back to MainPanel");
                     RotPUI.instance().selectMainPanel();
                 }
-                gal.refreshAllEmpireViews();
 
                 gal.makeNextTurnDecisions();
 
@@ -399,7 +398,7 @@ public final class GameSession implements Base, Serializable {
                 NoticeMessage.resetSubstatus(text("TURN_REFRESHING"));
                 validate();
                 player().setEmpireMapAvgCoordinates();
-
+                gal.refreshAllEmpireViews();
                 log("Autosaving post-turn");
                 log("NEXT TURN PROCESSING TIME: ", str(timeMs()-startMs));
                 NoticeMessage.resetSubstatus(text("TURN_SAVING"));
