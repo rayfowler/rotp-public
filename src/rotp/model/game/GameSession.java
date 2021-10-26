@@ -346,7 +346,6 @@ public final class GameSession implements Base, Serializable {
                 gal.council().nextTurn();
                 GNNRankingNoticeCheck.nextTurn();
                 GNNExpansionEvent.nextTurn();
-                gal.refreshAllEmpireViews();
                 gal.nextEmpireTurns();
                 
                 // test game over conditions
@@ -399,7 +398,6 @@ public final class GameSession implements Base, Serializable {
                 log("Refreshing Player Views");
                 NoticeMessage.resetSubstatus(text("TURN_REFRESHING"));
                 validate();
-                gal.refreshEmpireViews(player());
                 player().setEmpireMapAvgCoordinates();
 
                 log("Autosaving post-turn");
