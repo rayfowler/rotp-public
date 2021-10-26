@@ -1,0 +1,20 @@
+// all possible names
+name: Darlok, Sarlok, Caslok, Karlok, Nazlok
+
+desc1: Agresif Diplomatlar
+desc2: Üstün Casuslar
+desc3: [race] ırkı, başka bir boyuttan gelen gizlilik düşkünü doğaüstü hayaletlerdir 
+
+// possible home system names
+home: Nazin, Mordor, Hades, Tamu, Duzah
+title: imparator
+fulltitle: imparator
+
+// possible leader names
+leader: Darkuan, Morfane, Narzina, Nazgur, Gölgan, Ketubey
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Sis, Buhar, Kıvılcım, Peçe, Alamet, Eter, Parıltı
+ship2: Serap, Gölge, Rüya, İllüzyon, Yansıma, Vizyon, Peri
+ship3: Tayf, Gulyabani, Hayalet, Gölge, Cin, Ruh, Töz
+ship4: Kâbus, Hülya, Dehşet, Korku, Hortlak, Azrail, Korku

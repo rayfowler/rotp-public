@@ -1,0 +1,83 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Darlok specific dialogue
+
+CONTACT_AGGRESSIVE         | Bugün seni selamlıyoruz, kozmik boşluğun yaramaz vatandaşı. Ayrıca bir uyarı da sunuyoruz: Aramalarımıza engel olmayın, yoksa bu mukadder karşılaşmamızdan pişman olarak kadar yaşamayacaksınız.
+CONTACT_RUTHLESS           | Sizleri selamlıyoruz, yabancı uzayın sakinleri. Bir arada yaşamamızın ortak faydamıza olmasını sağlamak için elinizden geleni yapmanız sizin için en iyisi olacaktır.
+CONTACT_ERRATIC            | Yıldızlar denizinde hasbelkader bir buluşma. Bu göksel boşluğun karanlığına karşı dikkatli ol, çünkü göreceksin ki görünmeyen birçok şeyi gizliyor...
+//
+GREETING_01                | Davamız için değerli olduğunu gösterdin. Biz de sana davanda yardımcı olmak için elimizden geleni yapacağız.
+GREETING_04                | Konuş.
+GREETING_07                | Yardımımızı talep ettiğinde gösterdiğin küstahlığı bilmiyorsun. Bunu neredeyse eğlenceli buluyoruz.
+//
+DECLAREWAR_HATE_01         | Hedefimize ulaşmak için çok şeye müsamaha gösterdik, ancak varlığınıza katlanmamıza artık gerek kalmadığı için müteşekkiriz, [your_race].
+DECLAREWAR_HATE_02         | Bitmek bilmeyen zavallılar! Aptallıklarına daha fazla katlanmayacağız! Orduların hazır olsun ya da olmasın, kaçınılmaz sonla yüzleşeceksin!
+DECLAREWAR_HATE_03         | Adiler! Irkımızın burada sonunda galaksiyi ırkınla paylaşmak için kalkınmasının bir anlamı yok. Kendini hazırla! Çünkü her birimiz tek tek devrilsek bile seni bu uzaydan kovacağız.
+DECLAREWAR_ERRATIC_01      | Halkımız, sık sık savaş alanındaki bıçağın da karanlıktaki bıçak kadar kolay öldürdüğünü söyler. Türün yakında nedenini öğrenecek.
+DECLAREWAR_ERRATIC_02      | Hiç yıldızlara bakıp, ışıkların ortasındaki karanlıkta neyin saklandığını bilmek istedin mi? Ne istediğine dikkat etmenin hikmetini bilmiyor musun?
+DECLAREWAR_ERRATIC_03      | Belirsizliğin büyük olduğu zamanlarda, en mütevazi yaratıkların bile ölümcül darbeler verebileceğini görebilirsin.
+DECLAREWAR_MILITARY_01     | En çok arzuladığımız şeyi henüz bulamadığımızdan, gözlerimizin henüz görmediği yerleri senden alacağız. Dünyalarını teslim et ya da savunurken telef ol.
+DECLAREWAR_MILITARY_02     | Aradığımız cevapların imparatorluğundaki bir gezegende saklanma olduğundan hepsini ele geçireceğiz. Kişisel olmadığını bilin [your_race], ancak vahim zamanlar vahim eylemler gerektirir.
+DECLAREWAR_MILITARY_03     | Muammamızın çözümüne ulaşamıyorsak, devam etmemizin bir anlamı yok! Cevap dünyalarından birinde saklıysa, onu elde etmek için ne gerekiyorsa veririz!
+DECLAREWAR_ALLIANCE_01     | Aptal! Dostumuzu düşman belleyince, bizi de düşman edindin! Sizi çabucak yere sereceğiz: acemilikleriniz ve ahmaklıklarınızla kaybedecek zamanımız yok!
+DECLAREWAR_ALLIANCE_02     | Başkalarının işlerine doğrudan karışmamız nadirdir. Ancak, arayışımıza yardım eden bir müttefik desteğimiz için yalvardığında, onlara yardım etmek için elimizden geleni yaparız.
+DECLAREWAR_ALLIANCE_03     | İmparatorluklarınızın kendi aralarında savaştığını izlemekten memnunuz, ancak bize oluşturduğunuz tehdidin farkındayız. Varlığınızın yarattığı ayak bağını kaldırmak için [defender_race] ulusuna memnuniyetle yardım edeceğiz.
+DECLAREWAR_SPYING_01       | Gizliliği aşmış bitirmişlere karşı böyle eylemlerde bulunman çok eğlenceli. Bununla birlikte, başarısızlığın cezası ciddi ölçüde daha az olacaktır.
+DECLAREWAR_SPYING_02       | Gizlilik meselelerinde bizi alt etmeye çalışmak takdire şayan. Merak ediyorum, askeri gücün de cesaretin kadar övgüye mazhar olacak mı?
+DECLAREWAR_SPYING_03       | Bu ahmakça sakarlığın bizim dikkatli bakışlarımızdan kaçacağına inandın mı? Casusluğunun fark edilmeyeceğine inanacak kadar kibirliysen, savaşta ezeceğimiz kadar da kibirlisindir.
+DECLAREWAR_ATTACK_01       | Arsızlık! Bize bu kadar açık bir şekilde saldırmak, yalnızca tamamen yok olmayı dilediğiniz anlamına gelebilir!
+DECLAREWAR_ATTACK_02       | Çekilmez hödükler! Bize karşı saldırının gösterdiği özgüvene denk düşen gücün eşlik edip etmediğini yakında öğreneceğiz!
+DECLAREWAR_ATTACK_03       | Baş belaları! Adiler! Büyük görevimiz bitene kadar ne sana ne de bir başkasına boyun eğeceğiz! İntikamımıza hazırlan!
+DECLAREWAR_OPPORTUNITY_01  | Politika sadece fırsat oyunlarıdır. Muzaffer olanın fırsatlarından en çok yararlanan olduğunu biliyoruz. Hep böyle olmuştur ve her zaman böyle olacaktır.
+DECLAREWAR_ASSASSIN_01     | Sana silahsız gelen bir büyükelçiyi bilerek yere sermek haddi aşıyor! Sırlarını kendimize alacağız ve halkının bedenlerini kül gibi güneş rüzgârlarına saçacağız!
+
+OFFER_PEACE_01             | Bir savaş için bu kadar öldürme yeter, büyükelçi. Tabii ki, ikimizin halkı da hayatlarını bu kadar sebepsizce çarçur etmeyi göze alamaz. İkimizin de geleceği için bu çatışmaya bir an önce son verilmesini öneriyoruz.
+OFFER_TRADE_01             | Doğrudan girişim bazen en iyisi olsa da, bir imparatorluğun hedeflerini ilerletebilmesinin tek yolu değildir. İyi niyetle ticaretin bir zamanı var ve bize sorarsan o zaman şimdi. Her yıl... [amt] BC meblağıyla başlayalım mı? 
+OFFER_PACT_01              | Bu sonsuz genişlik, onu keşfetmeyi tercih edenler için bilinmeyen tehlikeler barındırır. Gerekmedikçe yenilerini çıkarmayalım. Halklarımız arasında kuracağımız bir saldırmazlık paktı, galaksinin köşelerine yayılırken karşılaşacağımız riskleri bir azaltacaktır. 
+OFFER_ALLIANCE_01          | Bize bakıp korkularının yargılarını bulandırmasına izin verenler var. Senin türünün bunlardan olduğuna inanmıyoruz. [my_race] ve [your_race] arasında bir ittifakı resmileştirip diğerlerinin korkusunu imparatorluklarımızın her ikisi için de bir avantaj olarak kullanalım. 
+
+WARN_TRESPASSING_01        | Şu anda size karşı bir savaş istemesek de, [system] mevkisindeki varlığınızı ihlalden başka bir şey olarak yorumlamak zor. Derhal uzaklaşıp korkularımızın yersiz olduğunu gösterin. 
+WARN_EXPANSION_01          | Bölgenizi genişletmenin karşıladığı ihtiyaçlar hakkında kör değiliz. Ancak boş boş oturup her dünyayı kendin için çalmana da izin veremeyiz. Bu uyarımızdı, [your_empire] büyükelçisi. 
+WARN_BUILDUP_01            | Etrafınızdakileri korkuyla boyun eğdirmek için mi böyle güçlü bir filo kullanmayı düşünüyorsunuz? Şunu bil: Bu askeri güçle övünmeye devam edersen, diğer imparatorlukların tepkilerini... beklediğinden daha az uzlaşmacı bulabilirsin. 
+WARN_SKIRMISH_01           | [system] sistemindeki çatışma hakkında ne söylemek istersin? Umarız bizi başka bir imparatorluk sanmışsınızdır. Aksi takdirde sonuçları vahim olabilir. Gerçekten çok vahim.
+WARN_ATTACKED_01           | Halkımıza saldırmaya nasıl cüret edersiniz, büyükelçi?! Şanslısınız ki, dikkatimiz başka yerde: bir dahaki sefere cüretiniz cevapsız kalmayacak! 
+WARN_INVADED_01            | Bizim alanımıza babanızın malıymış gibi giriyorsunuz. Cesur bir hamle, ama geleceğinizi tahmin ettiğimizi ve bu şekilde manevra yapmanıza izin verdiğimizi bilin... şimdilik. 
+WARN_ESPIONAGE_01          | Hantal casusluk girişiminiz bize oldukça komik geldi. Casusunuzun bu sefer size geri dönmesine izin veriyoruz, ancak yeni girişimleri bu kadar komik bulmayacağımızı bilin. [framed]
+WARN_SABOTAGE_01           | Demek [spy_empire] ulusu sabotaja kalkışıyor? Çabanız, bizi misillemeye sevkedemeyecek kadar önemsizdi, ancak bunu tekrar denerseniz, size olmaya azmettiğiniz haşereler gibi davranmayı seçebiliriz! [forced]
+WARN_BIOWEAPON_01          | Çirkin bir şey, o silah. Daha da çirkin olanı, onu çaresiz siviller üzerinde kullanmayı seçen kişidir. Onların ıstırap çığlıkları uzayda yüzyıllarca yankılanacak ve senin aşağılık adını lanetlerken biz de o salınan nakarata katılacağız.
+WARN_GENOCIDE_01           | Soykırım tehdidi halkımca bilinmez değil, ancak bunun böylesine gelişigüzel gerçekleştirildiğini görmek... bizi bir daha affedeceğimiz şüpheli şekillerde iğrendiriyorsunuz, büyükelçi. 
+WARN_FINAL_WAR_01          | Galakside barış doğarken, katılan herkes aradığını bulacak. Eğer siz [rebel_race_plural] bu barışı tehdit ederseniz, nihai hedefimizi tehdit etmiş olursunuz ve biz de sizi galaksinin almanaklarına sürgün etmek için elimizden gelen her şeyi yaparız. 
+WARN_COUNCIL_VOTE_01       | İnce siyasi manevraları takdir etmiyor değiliz, sadece bu manevralar aleyhimize çalıştığında memnuniyetsizliğe sevk oluyoruz. Ayağını denk al, büyükelçi: Sana tekrar böyle bir manevra yapma fırsatı vermeyebiliriz.
+WARN_OATHBREAKER_01        | Beceriksiz korkaklar! Heyhat, bunun gibi bir düşmanlığı hak ettiğinizi böyle yüzsüzlükle kanıtladığınızda, tüm galaksinin güvensizliğine katlanması gereken bizim halkımız oluyor! 
+WARN_ATTACKED_ALLY_01      | Sizi sadece bir kez uyarıyoruz, büyükelçi. [defender_race_plural] ulusuna yönelik saldırganlığınızı durdurun: onlar bizimle, biz de onlarla birlikteyiz.
+WARN_REBELLING_AGAINST_01  | Konseyin en yüksek koltuğunu bizden, onun gerçek hakimlerinden gasp etmeye mi cüret ediyorsunuz? Halkınız bugünü sonradan pişmanlıkla hatırlayacak, büyükelçi.
+//
+PRAISE_COUNCIL_VOTE_01     | Davamız çok şey talep ediyor büyükelçi ve konseyde [voter_empire] ulusuna güvenebildiğimiz için ebediyen minnettarız. Bir dahaki sefere halkıma çağrıda bulunduğunda bunu unutmayacağımızdan emin olabilirsin.
+PRAISE_COUNCIL_VOTE_02     | Bugün bize güvenmeniz iyi oldu, büyükelçi. Nihai hedefimize ulaşmamızda bize yardım edenleri hatırladığımızı bil. 
+PRAISE_COUNCIL_VOTE_03     | Elbette halkının bize desteğini dile getirmesinde gizli bir amaçları vardır. Sen ve türün hakkında hâlâ çok temkinliyiz, ama yine de minnettarız. 
+
+PRAISE_ATTACKED_ENEMY_01   | Bu savaşta bize yardım edeceğinizi biliyorduk, büyükelçi! Müşterek kararlılığımızla [defender_race] bile bize karşı uzun süre dayanamaz! 
+PRAISE_ATTACKED_ENEMY_02   | Başkalarının aşağılık [defender_race] karşısındaki mücadeleye katıldığını görmek güzel. Bu işi çabucak bitirmek için birlikte çalışalım ki, çok daha önemli hedefler peşinde koşmaya devam edebilelim.
+PRAISE_ATTACKED_ENEMY_03   | Halkımın beğenisini kazanmak amacındaysan bil ki bu hedefi neredeyse imkânsız bulacaksın. Yine de [defender_race] ulusuna saldırmak, takdire değer bir ilk adımdır.
+
+PRAISE_TRADE_01            | Ticaret gibi basit bir şeyin her iki taraf için de bu kadar çok kapı açabilmesi şaşırtıcı değil mi? Halkımız gerçekten çok memnun, umarız sizinki de memnundur. 
+PRAISE_TRADE_02            | Devam eden dürüst ticaretimiz, her iki halk için de bereketli olmaya devam ediyor. Büyükelçi, birbirimize bu şekilde güvenmeye devam etmeyi umuyoruz. 
+
+PRAISE_REBELLING_WITH_01   | Konseydeki aptallar, tahmin ettiğimiz gibi yanlış seçim yaptılar. Onlara karşı savaşmakta haklısınız, biz de isyanınıza katılmakta haklıyız.
+
+ACCEPT_TRADE_01            | Bu ticaret anlaşması ile arayışımıza büyük ölçüde yardımcı oluyorsunuz, [your_race]. Her yıl [amt] BC meblağı bize sandığınızdan daha fazla yardımcı olacak.
+RESPOND_IGNORE_THREAT_01   | Kimi tehdit ettiğine dikkat et. Gölgelerde gizlenmiş bir yanıtı alabildiğine can sıkıcı bulabilirsin.
+RESPOND_STOP_SPYING_01     | Nasıl oldu da casuslarımızdan birini SİZ yakalayabildiniz? Neyse, onu hemen bize iade edin de, bundan sonra faaliyetlerimizi durduralım.
+RESPOND_STOP_ATTACKING_01  | Filolarımızı şimdi hatırınız için geri çağıracağız ama unutmayın ki en tehlikeli güç görünmeyen güçtür.

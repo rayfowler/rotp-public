@@ -1,0 +1,21 @@
+// all possible names
+name: Sakkralar, Sürünalar, Zoralar, Yırtaralar, Reksalar
+
+desc1: Agresif Yayılmacılar
+desc2: Artan Nüfus Artışı
+desc3: [race] Kurulu'nun bağnazları, fethettikleri dünyaları mükemmelleştirmeye çalışır.
+
+// possible home system names
+home: Sssla, Sssana, Sssihs, Ssşa, Sssss, Hsssa
+
+title: Şef
+fulltitle: Baş Şef
+
+// possible leader names
+leader: Guanar, Hissa, Krissta, Zorak, Zoron, Tiranid
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Geko, Bukalemun, Kertenkele, İguana, Uzunayak, Anol, Varan
+ship2: Tegu, Monitör, Kayman, Timsah, Alavan, Garyal, Basilisk
+ship3: Dinozor, Raptor, Pterodaktil, Teropod, Ceratops, Avcı, Plesiyozor
+ship4: Titan, Dev, Ejderha, Godzilla, Kraken, Gorgon, Tiranozor

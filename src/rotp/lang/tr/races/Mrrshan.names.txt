@@ -1,0 +1,21 @@
+// all possible names
+name: Mırşan, Purşan, Miyavşan, Pençan, Sısşan
+
+desc1: Acımasız Militaristler
+desc2: Üstün Topçular
+desc3: [race] aşiretleri galaksiye yayılırken savaş ganimetlerinin peşindedir.
+
+// possible home system names
+home: Fieryas, Fierina, Miyamara, Mıryana, Murlaya
+
+title: Kağan
+fulltitle: Kağan
+
+// possible leader names
+leader: Jasana, Miyamar, Mirana, Purşa, Şandıra, Yalara
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Porsuk, Vahşi, Gelincik, Porsuk, Kedi, Yabani, Patiska
+ship2: Vaşak, Karakulak, Kaplancık, Yaban Kedisi, Dağ Aslanı, Margay, Serval
+ship3: Panter, Leopar, Pars, Çita, Doru, Oselo, Yaguarundi
+ship4: Kılıçdiş, Puma, Kaplan, Aslan, Jaguar, Kaslan, Pallas

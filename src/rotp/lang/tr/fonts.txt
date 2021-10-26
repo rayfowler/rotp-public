@@ -1,0 +1,10 @@
+// These are the fonts used for the 5 font types within the game.
+
+name,       Türkçe     
+
+logo,       Amarante-Regular.otf,     100
+dialogue,   CRANBERR.otf,             100
+narrow,     MyriadPro-BoldCond.otf,   100
+normal,     MyriadPro-Bold.otf,       100
+plain,      MyriadPro-Cond.otf,       100
+language,   MyriadPro-BoldCond.otf,     100

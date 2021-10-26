@@ -19,6 +19,7 @@ pt,  Português        ,  ,   ,
 sr,  Srpski           ,  ,   , 
 sr2, Српски           ,  ,   , 
 sv,  Svenska          ,  ,   ,
+tr,  Türkçe           ,  ,   ,
 uk,  Українська       ,  ,   , 
 //zh,  中国人            ,  ,   , Y
 

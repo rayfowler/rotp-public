@@ -1,0 +1,143 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Meklar specific dialogue
+
+CONTACT_ERRATIC            | Tür: [your_race]. Lider ünvanı: [your_title]. Teknolojik yenilikler: çeşitli. Tehdit değerlendirmesi: Kesin değil.
+CONTACT_HONORABLE          | [your_race] türü ilgi çekiyor. [my_empire], karşılıklı yarar için işbirliği yapma potansiyelini seziyor. Sonuçlar ileride görülecek.
+CONTACT_RUTHLESS           | [my_empire] artık [your_race] varlığından haberdar. [my_title], tüm [your_race] türlerine bir uyarı bildiriyor: İdare amaçlarına müdahale etmeyin. [your_race] neslinin tükenmesiyle sonuçlanır.
+//
+GREETING_01                | Müttefik büyükelçinin kimliği doğrulandı. İdarenin devlet talebi. İdare mümkünse yardımcı olacaktır. 
+GREETING_04                | [my_empire], [your_race] elçisini tanıyor. İdare şu anda istekleri işlemeye istekli.
+GREETING_07                | Devlet isteği. İdare, büyük ihtimalle [your_race] ırkının [my_title] adresine isteklerini işlenmek üzere göndermeyecek.
+//
+DECLAREWAR_HATE_01         | [my_empire] artık [your_empire] ulusunun varlığına tahammül etmeye istekli değil. [your_race] türünün gücü nispeten ilkel. Arama ve yok etme protokolü başlatılıyor.
+DECLAREWAR_HATE_02         | [my_title] artık [your_race] türünün İdare amaçlarına müdahalesine izin vermeyecek. İdare, birincil yönergesini muhafaza için çok şey tahsise hazır.
+DECLAREWAR_HATE_03         | İdare, [your_empire] devam ederken yönergeleri takip edemiyor. İdare bu türü sonlandırmalıdır. Alternatif bulunamadı.
+DECLAREWAR_ERRATIC_01      | [my_title], [your_race] türünün varlığının İdare hedeflerini tehdit ettiği sonucuna varıyor. İdare derhal imha protokollerine başlayacak.
+DECLAREWAR_ERRATIC_02      | [my_title], [your_race] türünün İdare hedeflerinin ilerletilmesinin sırrını haiz olduğu hükmünde. İdare, sırları [your_race] türünden zorla alacak.
+DECLAREWAR_ERRATIC_03      | [my_title], [your_race] türünü İdare planlarında kabul edilemez değişken olarak görüyor. İdare, [your_race] türünü ortadan kaldıracak yahut süreç zarfında kendisini sonlandıracaktır.
+DECLAREWAR_MILITARY_01     | [my_empire], nihai hedefin peşinde galakside çoğalmaya devam etmelidir. [your_empire] genişlemeyi engelliyor. Sorun şu anda düzeltiliyor.
+DECLAREWAR_MILITARY_02     | İdare birincil hedefin yerini tespit edemiyor. [your_empire] yakınındaki veya dahilindeki gezegenlerin arananı içerme olasılığı var. Savaş kaçınılmaz.
+DECLAREWAR_MILITARY_03     | İdare, topraklarının alanını genişletmek zorunda kaldı. [your_race] türünün gücü caydırıcı bir faktör olamaz. Savaş üzücü ama gerekli.
+DECLAREWAR_ALLIANCE_01     | [your_empire] İdare müttefikine savaş ilan etti. İdare, amaçlara yönelik kazanılmış menfaatleri [your_race] tehdidini ortadan kaldırarak koruyacaktır.
+DECLAREWAR_ALLIANCE_02     | İdare, [other_empire] ulusundan yardım talebi aldı. Çatışma devam ettiği sürece [your_race] türüne karşı savaşta müttefike yardım etme yürürlükte.
+DECLAREWAR_ALLIANCE_03     | [your_race] türü, başkalarına savaş ilan edecek kadar kibirli bir hal almış. İdare, diğer imparatorlukların [your_race] türünü galaksiden temizlemesine yardımcı olacak.
+DECLAREWAR_SPYING_01       | [your_race] türü, İdare'ye karşı gizli bir eylemde bulundu. İdare için Sonuçlar: ihmal edilebilir. [your_race] türü için sonuçlar: ölümcül.
+DECLAREWAR_SPYING_02       | İdare bölgesinde dalavere tespit edildi. Kaynak [your_race] türü olarak onaylandı. İdare protokolleri, yanıt olarak savaş gerektiriyor. 
+DECLAREWAR_SPYING_03       | İdare, [your_empire] ulusunun bariz bir istikrarsızlaştırma girişimini tespit etti. [your_race] türünün amaçlara müdahaleye devam etmesine izin verilemez. İdare ne pahasına olursa olsun misilleme yapmalıdır.
+DECLAREWAR_ATTACK_01       | Âşikâr [my_race] üstünlüğüne rağmen [your_race] türünden düşmanca tavır görüldü. İdare tehdidi tamamen ortadan kaldırmak için hareket ediyor.
+DECLAREWAR_ATTACK_02       | [your_race] türü, doğrudan saldırarak İdare amaçlarına set koyuyor. Yüzleşme kaçınılmaz.
+DECLAREWAR_ATTACK_03       | [your_race] türü, [my_race] türünü yok ederek İdare'nin hedeflere ulaşmasını engellemeye çalışıyor. İdare, mevcut tüm askeri gücüyle misilleme yapacak.
+DECLAREWAR_OPPORTUNITY_01  | [my_title], [your_race] türünün birincil yönergeyi izlemede esasında zararlı olacağına inanıyor. İdare, tehdit tamamen olgunlaşmadan önce [your_race] türünü ortadan kaldıracak.
+DECLAREWAR_ASSASSIN_01     | İdare Büyükelçisi, Anaçatı'ya yeniden entegre edilmeden önce [your_race] türü tarafından çalışamaz hale getirildi. [your_race] eylemleri şiddetli misilleme gerektiriyor.
+
+OFFER_PEACE_01             | [my_title] yeni bir karara varıyor. Savaş artık İdare için makul bir harcama değil. İdare barışı derhal sağlamak istiyor. 
+OFFER_TRADE_01             | [your_race] türü önemli kaynaklara sahiptir. İdare de değerli unsurlara sahiptir. İdare, yılda [amt] BC'lik ticaret anlaşması teklif ediyor. 
+OFFER_PACT_01              | İdare, anlamsız çatışmanın üstünde bir sonuç elde etmeyi arzuluyor. [your_race] türüyle yapılacak bir saldırmazlık paktı, ifade edilen sonucu elde etmenin en ihtiyatlı yolu olarak anlaşıldı. 
+OFFER_ALLIANCE_01          | [my_title], [your_race] türüyle diplomasiye önem veriyor. İdare, hem [your_race] hem de [my_race] türlerinin hayatta kalmasını sağlamak için resmi bir ittifak öneriyor. Yanıt hemen isteniyor. 
+
+WARN_TRESPASSING_01        | [system] sisteminde [your_race] türü tespit edildi. Daha önce İdare tarafından edinilen bir alan. Hemen boşaltın. 
+WARN_EXPANSION_01          | [your_race] türünün hızlı genişlemesi, İdare amaçlarına bir tehdit olarak görülüyor. Bölgesel büyümenin devam etmesi, yanıt olarak askeri harekâtı zorunlu kılacaktır. 
+WARN_BUILDUP_01            | İdare gözetim ağı, [your_race] filolarını potansiyel güvenlik tehdidi olarak tanımlıyor. İdare çıkarlarının tehlikede olmadığından emin olmak için [your_race] türünün izlemesi artırılıyor.
+WARN_SKIRMISH_01           | [system] mevkisinde İdare ve [your_race] filoları arasında bir çatışma tespit edildi. İdare, suç tekrarına karşı uyarıda bulunuyor: İdare, uyarısı dikkate alınmazsa uygun şekilde yanıt vermeye hazırdır. 
+WARN_ATTACKED_01           | [system] mevkisinde [attacker_race] saldırganlığı kaydedildi. [defender_title] büyükelçiye mesaj veriyor: İdare güvenliğini tehdit etmeye devam etmek [attacker_race] türünün yok olmasına neden olur. 
+WARN_INVADED_01            | İdare'den, [attacker_race] türünün [defender_race] alanı üzerinde hiçbir iddiası olmadığına dair hatırlatma. Filoları derhal çekin yahut tam imha ile yüzleşin.
+WARN_ESPIONAGE_01          | [spy_race] İdare bölgesinde casusluk etkinliği kaydedildi. İdare güvenlik protokolleri [spy_race] casusluk becerisinden daha üstün. İdare'yi tekrar sınamak ölümcül olabilir. [framed]
+WARN_SABOTAGE_01           | İdare, [spy_race] türünün son sabotajda rol aldığının farkında. Tepkiyi hak etmek için fazla önemsiz bir kargaşa denemesi. Başka sabotaj girişimleri, çabuk bir intikamı getirecektir.
+WARN_BIOWEAPON_01          | İdare, ilkel bir biyolojik silah kullanımını gözlemledi. Etkili silahlanma. [attacker_race] türünün tehdit değerlendirmesi 3 seviye yükseltildi. 
+WARN_GENOCIDE_01           | [attacker_race] türünün [victim_race] türüne yaptığı soykırım kaydedildi. İdare olası neden veya alternatiflerle ilgilenmiyor. [attacker_race] türünün tehdit değerlendirmesi 5 seviye yükseltildi. 
+WARN_FINAL_WAR_01          | Bilinen tüm türler, galakside kalıcı barışı sağlamak için anlaşma yapıyorlar. Tek muhalif [rebel_race]. İdare gerekli önlemleri alacaktır.
+WARN_COUNCIL_VOTE_01       | İdare, konseydeki [voter_race] eylemlerinden haberdar. Anlam önemsiz. Sonuç [candidate_race] hedeflerine zararlı olarak değerlendirildi. Diplomatik duruş buna göre güncellendi. 
+WARN_OATHBREAKER_01        | [my_title] yargıya vardı: [your_race] türü artık güvenilir görülmüyor. Gelecekteki tüm anlaşmalar, [your_race] türünün bağlayıcı anlaşmaları ihlal edebileceği hesaba katılarak revizyona tabidir. 
+WARN_ATTACKED_ALLY_01      | [your_race] ile [defender_race] türleri arasında çatışma kaydedildi. [defender_race] İdare'nin müttefiki olarak bilinen türdür. Savaşmayı bırak veya sonuçlara hazırlan. 
+WARN_REBELLING_AGAINST_01  | [your_race] türü artık İdare hedeflerine engel oluyor. Galaktik Konsey kararı kabul edilemez. Yüksek Arabulucu'dan yanıt bekleniyor. 
+
+
+PRAISE_COUNCIL_VOTE_01     | [voter_race] türünün elçisi, [candidate_race] amaçlarına ilerlemede yardım sağlamaya devam ediyor. İdare, [voter_race] türü ile devam eden ilişkinin yararını kabul ediyor. İdare, bu iyiliği telafi edecek. 
+PRAISE_COUNCIL_VOTE_02     | İdare, konseydeki olumlu oyunu kayda geçiriyor. İdare, [voter_race] türüne dair izlenimini buna göre ayarlayacaktır.
+PRAISE_COUNCIL_VOTE_03     | İdare, [voter_race] türünün dalavere olasılığını hesaba katıyor. İdare'ye konseyde yardım etmeye devam etmek endişeleri giderebilir. 
+
+PRAISE_ATTACKED_ENEMY_01   | İdarenin düşmanlarına saldırmak, [my_race] amaçlarına bağlılığı kanıtlıyor. İdare, [attacker_race] türünün zayiatını mutlak minimumda tutmayı taahhüt etti. 
+PRAISE_ATTACKED_ENEMY_02   | İdare, [defender_race] türüne karşı yardımı memnuniyetle karşılar. Bu savaş, [my_race] ve [attacker_race] türleri arasında yeni bir başlangıç olabilir. 
+PRAISE_ATTACKED_ENEMY_03   | [defender_race] türüne saldırmak, geçmişte İdare'ye karşı işlenen suçları mazur göstermez. İdare, bu savaştaki eylemlerine bağlı olarak [attacker_race] türünün tehdit seviyesini yeniden değerlendirecek. 
+
+PRAISE_TRADE_01            | İdare ve [your_race] türleri sürekli ticaretten çok kazanmaya devam ediyor. İdare, düzenlemenin faydalı durumu devam ettiği sürece ticaretin sürmesini istiyor.
+PRAISE_TRADE_02            | İdare, [your_race] türüyle yapılan ticaret anlaşmasından duyduğu memnuniyeti ifade ediyor. Her iki ırkın da birbirinden yararlanabilmesi için anlaşmanın devam etmesini sağla. 
+PRAISE_REBELLING_WITH_01     | İdare, Galaktik Konsey yöneticisinin güvenilmez olduğuna hemfikir. [your_race] türünün itirazı kaydedildi. İdare, isyanda [your_race] türüne yardım edecek. 
+ 
+ACCEPT_TRADE_01            | [your_race] türünün takas talebi alındı. [amt] BC önerilen miktar. İdare kabul ediyor.
+RESPOND_IGNORE_THREAT_01   | [your_race] türünden gelen tehdit şaşırtıcı. [your_race] uygarlığı İdare filolarından önemli ölçüde daha ilkel. Yok sayılıyor.
+RESPOND_STOP_SPYING_01     | İdare casusu [your_race] yaşam formları hakkında bilgi edinmeye çalışırken yakalandı. İdare özrünü sunuyor. Yakalanan [my_race] bireyini ilk fırsatta iade et
+RESPOND_STOP_ATTACKING_01  | İdare, [your_race] uygarlığına askeri yeteneğini göstermeyi tamamladı. Filolar belirlenen bekleme koordinatlarına geri dönüyor.
+
+DIPLO_TECH_REQUEST_MENU_01   | Teknolojiyi belirt.
+DIPLO_TECH_COUNTER_MENU_01   | Karşılığı belirt.
+DIPLO_TRADE_MENU_01          | Büyüklüğü belirt.
+DIPLO_TREATY_MENU_01         | Anlaşmayı belirt.
+DIPLO_DECLARE_WAR_MENU_01    | Devam etmeden önce onayla.
+DIPLO_SUGGEST_WAR_MENU_01    | Hedef belirt.
+DIPLO_BREAK_ALLIANCE_MENU_01 | Müttefik belirt.
+DIPLO_THREATEN_MENU_01       | Belirt.
+DIPLO_OFFER_AID_MENU_01      | Belirt.
+DIPLO_OFFER_TECH_MENU_01     | Teknolojiyi belirt.
+
+DECLINE_OFFER_01           | Talep reddedildi.
+DECLINE_OFFER_02           | Talep reddedildi.
+DECLINE_OFFER_03           | Talep reddedildi.
+DECLINE_OFFER_04           | Talep reddedildi.
+DECLINE_OFFER_05           | Talep reddedildi.
+DECLINE_OFFER_06           | Talep reddedildi.
+DECLINE_OFFER_07           | Talep reddedildi.
+DECLINE_OFFER_08           | Talep reddedildi.
+DECLINE_OFFER_09           | Talep reddedildi.
+DECLINE_ENEMY_ALLY_01      | Talep reddedildi.
+DECLINE_NO_WAR_ON_ALLY_01  | Talep reddedildi.
+DECLINE_PEACE_TREATY_01    | Talep reddedildi.
+DECLINE_ANNOYED_01         | Talep reddedildi.
+DECLINE_ANNOYED_02         | Talep reddedildi.
+DECLINE_ANNOYED_03         | Talep reddedildi.
+DECLINE_OATHBREAKER_01     | Talep reddedildi.
+DECLINE_ESPIONAGE_01       | Talep reddedildi.
+DECLINE_SABOTAGE_01        | Talep reddedildi.
+DECLINE_BUILDUP_01         | Talep reddedildi.
+DECLINE_ENCROACH_01        | Talep reddedildi.
+DECLINE_SKIRMISH_01        | Talep reddedildi.
+DECLINE_ATTACK_01          | Talep reddedildi.
+DECLINE_INVASION_01        | Talep reddedildi.
+DECLINE_BIOWEAPONS_01      | Talep reddedildi.
+DECLINE_TECH_TRADE_01      | Talep reddedildi.
+OFFER_TECH_EXCHANGE_01     | İdare [tech] teknolojisine ihtiyaç duyuyor. Karşılık belirt.
+ACCEPT_TECH_EXCHANGE_01    | Kabul kaydedildi.
+ACCEPT_FINANCIAL_AID_01    | Kabul kaydedildi.
+ACCEPT_TECHNOLOGY_AID_01   | Kabul kaydedildi.
+
+BREAK_TRADE_01             | Ticaret anlaşması feshedildi.
+ANNOUNCE_PEACE_01          | Kabul kaydedildi.
+ACCEPT_PEACE_01            | Talep verildi.
+
+BREAK_PACT_01              | Saldırmazlık paktı feshedildi.
+ANNOUNCE_PACT_01           | Kabul kaydedildi.
+ACCEPT_PACT_01             | Talep verildi.
+
+BREAK_ALLIANCE_01          | İttifak feshedildi.
+ANNOUNCE_ALLIANCE_01       | Kabul kaydedildi.
+ACCEPT_ALLIANCE_01         | Talep verildi.
+ACCEPT_JOINT_WAR_01        | Talep verildi.
+
+RESPOND_CLOSE_EMBASSY_01   | İşlemler kaydedildi.
+RESPOND_BREAK_TRADE_01     | İşlemler kaydedildi.
+RESPOND_BREAK_PACT_01      | İşlemler kaydedildi.
+RESPOND_BREAK_ALLIANCE_01  | İşlemler kaydedildi.
+RESPOND_DECLARE_WAR_01     | İşlemler kaydedildi.

@@ -1,0 +1,21 @@
+// all possible names
+name: Klakon, Klakan, Klokan, Eklembacak, Kınkanat
+
+desc1: Yabancı Düşmanı Sanayiciler
+desc2: Kolektif Akıl ve Ek İşçi Hasılası
+desc3: Kontrolün tek bir zihinden yapıldığı bir tür olan, çalışkan [race] yabancılar için esrarengizdir.
+
+// possible home system names
+home: Holdan, Holdant, Haldun, Klokya, Kakdon
+
+title:     x
+fulltitle:     x
+
+// possible leader names
+leader: Iksitıksil, Kaksal, Kikitik, Klakuvan, K'kalak, Kısantak
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Arı, Sinek, Çekirge, Uğur Böceği, Balarısı, Örümcek, Duyarga
+ship2: Eşekarısı, Zehir, Asit, Yusufçuk, İğne, Hamamböceği, Yabanarısı
+ship3: Geyikböceği, Engerek, Kobra, Katıryılanı, Yılan, Mamba, Akrep
+ship4: Kral Kobra, Karadul, Goliat, Piton, Boa, Tarantula, Kara Mamba

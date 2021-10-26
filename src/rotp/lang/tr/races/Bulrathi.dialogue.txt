@@ -1,0 +1,87 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Bulrathi specific dialogue
+
+CONTACT_AGGRESSIVE         | [my_empire] ulusunun elçisiyim. [my_title] efendimizle ters düşmemeni tavsiye ederim, küçük [your_race]. Çünkü senin türünün hayal bile edemeyeceği bir öfkenin altında yok olmanız için tek bir kelime etmesi yeterli.
+CONTACT_RUTHLESS           | Ne kadar küçük yaratıklarsınız! Sadece iki şeyi bilmen yeterli: birincisi, adımızın "[my_race]" olduğu ve ikincisi, fetihlerimize karşı çıkmanın yalnızca ölümünüzü kesinleştirdiği!
+CONTACT_ERRATIC            | [my_empire] ulusundan bizler sizi selamlıyoruz, küçükler. Kaderimiz bu serpilmiş dünyalar ve yanan yıldızlar arasında bir yerde yatıyor. Büyük planımızın neresinde yer alacağını görmek ilginç olacak.
+//
+GREETING_01                | Madem ki sen şerefle hareket ettin, biz de seni şereflendirmek için hareket edeceğiz. Neye ihtiyacın olduğunu söyle bize, küçük dostum. 
+GREETING_04                | Çabuk konuş, küçük [your_race]. Boş vaatler ve tek taraflı anlaşmalarla öfkemizi celbetmeyin.
+GREETING_07                | Gelip bizimle konuşmak, böyle küçük biri için büyük bir cesaret göstergesidir. O cesaret şimdilik sana güvenliğini sağlıyor.
+
+DECLAREWAR_HATE_01         | Minik [your_race_plural] minik dünyalarında, minik planlarıyla. [my_title], sürekli kurcalamanızdan bıktı. Üzerinize getirdiğimiz felaketten sağ çıkamayacaksınız!
+DECLAREWAR_HATE_02         | Bu kadar yeter! Halkımızın kaderi yıldızlarda çizildi. Artık bize böyle miniciklerin karşı çıkmasına tahammülümüz yok!
+DECLAREWAR_HATE_03         | Kendini savaşa hazırla, küçük [your_race]! Sana yırtıcılığın savaş alanında zafer getiren tek güç olduğunu göstereceğiz!
+DECLAREWAR_ERRATIC_01      | Filozofların hikmeti, onu anlamayanların kafasını karıştırabilir. En büyük zihinlerimiz bize saldırmamızı söylediğinde, savaşçılarımız elbette itaat edeceklerdir.
+DECLAREWAR_ERRATIC_02      | Bu evrende her şeyin bir yeri ve zamanı vardır. Savaş ve barış, yaşam ve ölüm, tahakküm ve boyun eğiş. Bizim için saldırı, sizin için ise savunma zamanı.
+DECLAREWAR_ERRATIC_03      | Hiç kadere kafa yordun mu, büyükelçi? İlginç bir şekilde imkânsız gibi görüneni gerçeğe dönüştürüp durur. Kaderi birlikte deneyelim, küçük [your_race] ve neler olduğunu görelim.
+DECLAREWAR_MILITARY_01     | Hasıla güçlünündür. [my_race] güçlüdür ve bu yüzden hasılayı kime ait olduğuna bakmaksızın kazanacağız.
+DECLAREWAR_MILITARY_02     | Halkınız miniklere göre iyi savaşıyor, büyükelçi. Tepelerine çöken [my_race] ulusunun gücüyle ne kadar iyi savaşacaklarını görelim bakalım!
+DECLAREWAR_MILITARY_03     | Bu galaksi güçlülere ait ve gücümüz sizinkinin onu geçmesine müsaade etmeyecek. Dünyalarınızı iyi koruyun, yoksa onları sırayla sizden alırız!
+DECLAREWAR_ALLIANCE_01     | İmparatorluğun bir müttefiki yardımımızı istedi! Hem size hem de [defender_race] ulusuna, salıverilmiş [my_race] ulusunun gerçek gücünü göstereceğiz!
+DECLAREWAR_ALLIANCE_02     | Şüphesiz bize de savaş açtığından habersiz olarak müttefikimize savaş açıyorsun. Bu, halkının galip gelemeyeceği bir savaş, büyükelçi. Emin ol.
+DECLAREWAR_ALLIANCE_03     | Tüm gücünüzle bile, [defender_race] karşısında, biz [my_race] onlara katılırsak hiç şansınız yok! Kendini hazırla küçük [your_race]!
+DECLAREWAR_SPYING_01       | Nasıl bir ihanet! Ancak o kadar küçük bir bedende yaşamak zorunda kalınca, pek seçeneğiniz olmasa gerek: Şimdi basitçe kanıtlayacağımız gibi, savaş alanında tabii ki hiç şansınız yok.
+DECLAREWAR_SPYING_02       | Bu kadar küçük insanların gizli saklı operasyonlarda başarılı olamayacağını düşünmek. Dünyalarının görmesi için casuslarını yükseğe as; hatalarını hayatınla ödeyeceksin! 
+DECLAREWAR_SPYING_03       | Böyle sinsi hareketlere cevap veremeyecek kadar zayıf olduğumuzu mu düşünüyorsun, küçüğüm? Kararında ne kadar ağır bir hata yaptığını sana göstereceğiz!
+DECLAREWAR_ATTACK_01       | Eğer savaşmayı bu kadar çok istiyorsan, sorman yeterli, küçük [your_race]. Değer verdiğin her şeyi gözlerinin önünde tek hamlede ezeceğiz!
+DECLAREWAR_ATTACK_02       | Bize böyle küstahça, sanki olduğundan daha güçlüymüşsün gibi saldırmak. Övgüye değer, ama esasında hatalı.
+DECLAREWAR_ATTACK_03       | Öyle olsun! Daha çok silahınız olduğu doğru olabilir, ama anlayacaksın ki bizim daha çok gücümüz var!
+DECLAREWAR_OPPORTUNITY_01  | Halkımız her zaman savaş becerilerini geliştirmek için fırsatlar arar ve halkın önemli bir müsabaka olabilir. Türünüzden vakayinamelerimizde sevgiyle bahsedilmesi için müsabakada centilmenlik gösterin.
+DECLAREWAR_ASSASSIN_01     | Size yakışanı yaptınız: Fiziksel olarak o kadar yetersiz bir ırk ki, hırslarına erişmek için çareyi silahsız bir büyükelçiyi öldürmekte buluyorlar. Sahip olduğunuz tanrılara dua edin, küçük [your_race], çünkü bunun sizin son savaşınız olmasını temin edeceğiz.
+
+OFFER_PEACE_01             | Halkın iyi savaşıyor ufaklık ama bu savaşta gereğinden fazla kan döküldü. Eğer sizin de cesaretiniz varsa, anlaşmazlıklarımızı geçmişte bırakıp barışa ilerlemeye hazırız.
+OFFER_TRADE_01             | Sanki boyutça eksiğinizi, becerikliliğinizle telafi ediyorsunuz. Halkımız, ticaretin her ikimiz için de çatışmadan daha faydalı olacağı umuduyla her yıl [amt] BC miktarında bir ticaret teklif ediyor.
+OFFER_PACT_01              | Biz  [my_race_plural] karşılaştığımız sayısız ırk için çeşit çeşit görüşlere sahibiz. Sizin türünüz özellikle [my_title] efendimizi eğlendiriyor ve gelecekte gereksiz anlaşmazlıkları önlemek için bizimle saldırmazlık paktı imzalamanızı istiyor. 
+OFFER_ALLIANCE_01          | Savaşta eşsiz olsak da, sırf zaferin heyecanını hissetmek için sizinki gibi bir ırkla bağlarımızı koparacak kadar barbar değiliz. Küçük büyükelçi, ittifakımızı resmileştirip ve savaş alanında düşman yerine dost olarak buluşalım.
+//
+WARN_TRESPASSING_01        | [system] mevkisindeki varlığınız bizi rahatsız etmeye başladı. Öfkemizi daha fazla kışkırtmadan gitmeniz akıllıca olur. 
+WARN_EXPANSION_01          | Toprak almak en güçlü imparatorlukların hakkıdır. Henüz resmen olmasa da, [my_race] müstakbel topraklarını savunmamızı istemiyorsan, seni daha fazla genişlemeye karşı uyarıyoruz, ufaklık. 
+WARN_BUILDUP_01            | Uzay korkakların sahnesidir: gerçek cesaret ancak bir gezegenin sathında kanıtlanabilir. Filonuz genişlese de, onu daha da genişletmeye devam ederseniz, gazabımızdan saklanmak için işe yaramazlar. 
+WARN_SKIRMISH_01           |  [system] mevkisindeki çatışma başımızı çok ağrıtıyor. Bizi daha fazla rahatsız etmeyin, yoksa sizi öykündüğünüz haşereler gibi ezeriz!
+WARN_ATTACKED_01           | Zavallı bir ırka yakışır zavallı bir gösteri! [defender_title] ulusunun kıytırık güç gösterinizden daha önemli meseleleri olduğu için şükret, ama şunu bil ki istediğiniz savaşsa, sizi mutlu etmekten mutluluk duyarız küçüğüm. 
+WARN_INVADED_01            | Hah! Bu kadar küçük bir halktan böyle bir cesaret. Kısa sürede pişman olacağın bir şey yapmadan önce topraklarımızı hemen şimdi terk et küçüğüm. 
+WARN_ESPIONAGE_01          | Korkaklar! Tüplerinden kaçan yavrular gibi [victim_race_plural] arasına gizlice girmek. Casusunuzu ezmediğimize şükret ve bizi bir daha böyle bir omurgasızlığa karşılık vermeye zorlama! [framed]
+WARN_SABOTAGE_01           | Neden savaşta bizimle yüzleşmiyorsun, ufaklık? Sabotaja yönelecek kadar ürkek bir ırkla savaşmak bize pek sıkıcı gelecek, ama bunu bir daha yaparsanız, sırf sizden kurtulmak için bu can sıkıntısına katlanabiliriz! [forced] 
+WARN_BIOWEAPON_01          | En büyük korkaklık, kendilerini savunacak durumda bile olmayanlara karşı biyolojik silah kullanmaktır! Halkın bu lekeyi imparatorluğunun sonuna kadar taşıyacak küçüğüm: Yaptığınız hiçbir şey bu utancı temizleyemeyecek. 
+WARN_GENOCIDE_01           | [victim_race_plural] zayıf ve kırılgandı ve yokoluşları galaksi için büyük bir kayıp değil. Bizi en çok rahatsız eden evrenden silinmelerinin sizin gibi önemsiz bir halk eliyle olması.
+WARN_FINAL_WAR_01          | Galaksi barış içinde birleşmeyi seçtiğinde ona karşı durmak isteyenlerin cesaretine hayranız. Cesaretinizi kayıtlarımıza geçireceğiz küçüğüm, sizi en son çocuğa kadar ezdikten sonra! 
+WARN_COUNCIL_VOTE_01       | Bu konsey, anlaşmazlıklarını birer savaşçı gibi çözmektense, tartışmayı tercih eden yapmacık aptalların bir araya geldiği bir toplantı! Ancak bu oturumları bu kadar küçümsüyor oluşumuz, süreç sırasındaki muhalefetinizi kolayca affedeceğimiz anlamına gelmez!
+WARN_OATHBREAKER_01        | Minik! Sözünü tutmamak en büyük utançtır! Türünün bedenen çürük olduğunu biliyoruz, ancak sözlerde de çürük olmanız bizi bile şaşırtıyor! 
+WARN_ATTACKED_ALLY_01      | Küçük [defender_race] korumamız altında! Savaşınızı kesin ve özür dileyin, yoksa bizim elimizde neye uğradığınızı anlamadan ölürsünüz!
+WARN_REBELLING_AGAINST_01    | Büyük Obabaşı, Galaktik Konseyin tahtına oturmaya uygun tek kişidir! Alçak gaspını asla kabul etmeyeceğiz!
+//
+PRAISE_COUNCIL_VOTE_01     | Hah! Bizim tarafımıza geçtiğinde yüzlerinin aldığı şekil eğlenceli. Ama artık gerçek gücün nerede olduğunu biliyorlar ve küçük dostlarımıza öğrenmelerine yardım ettikleri için teşekkür ediyoruz! 
+PRAISE_COUNCIL_VOTE_02     | Bu toplantılar boyunca geveze bunaklara katlanmak zorunda olmak oldukça sıkıcı. Bize yardımın ister toplantıyı daha çabuk bitirmek için, isterse gücümüzün farkında olduğunuz için olsun, bugün ne yaptığınızı görüyoruz.
+PRAISE_COUNCIL_VOTE_03     | İlgimizi çekiyorsun küçüğüm. Ama bugün gücümüzü tanımayı seçmiş olmanız, halkınız için iyi. İyiliğiniz için umarım böyle devam edersiniz. 
+
+PRAISE_ATTACKED_ENEMY_01   | Ha ha! Bugün seni savaş alanında görmek güzel, küçük dostum! Bu zavallı [defender_race] ulusunu birlikte ezelim! Kanları topraklarına tek bir sağ kalmayana kadar aksın! 
+PRAISE_ATTACKED_ENEMY_02   | Bugün alabildiğine şanlı bir savaş yapacağız küçüğüm! [defender_race] ulusuna karşı nasıl savaştığını bize göster de bundan böyle sana gereken saygıyı gösterebilelim! 
+PRAISE_ATTACKED_ENEMY_03   | Sadece [defender_race] ile savaştığınız çok açık çünkü biz de aynı durumdayız. Yine de, dövüşten tamamen kaçmıyorsunuz... belki de sizi yanlış değerlendirdik.
+
+PRAISE_TRADE_01            | Ticaret anlaşmamız iki ırkımız için de çok kârlı oldu, küçük dostum. Ama güven en değerli akçedir ve böyle hareket ettiğiniz sürece size güvenmeye devam edeceğiz.
+PRAISE_TRADE_02            | Savaş ilerlemenin en coşkulu yolu olsa da, ticaret anlaşmamızın gösterdiği üzere, tek yolu değil. Uzun süre devam etsin, böylece ikimizin de halkı refaha kavuşsun! 
+
+PRAISE_REBELLING_WITH_01   | Ha ha! Yani galaksiye tek başına karşı koymayı mı düşünüyorsunuz? Böyle şanlı bir savaştan çekineceğimizi mi düşündün? Dik durun, çünkü [my_empire] yanınızda!
+
+ACCEPT_TRADE_01            | Müzakerelerdeki bilgeliğiniz, cüsse eksikliğinizi telafi ediyor, küçük [your_race]! İmparatorluk, bundan böyle her yıl sizinle [amt] BC'lik ticaret yapmaktan memnuniyet duyar.
+RESPOND_IGNORE_THREAT_01   | Hahaha, peki neden böyle küçük mahluklardan gelen tehditleri dinleyelim? Şimdi git ve bugün çok bağışlayıcı bir havada olduğumuz için kendini şanslı say!
+RESPOND_STOP_SPYING_01     | Casusluk için kullandığımız küçük enikler yakalandı, öyle mi? Ah peki, hem onları hem de casuslarımızı sağ salim bize geri verirseniz sizi bir daha rahatsız etmemelerini sağlayacağız.
+RESPOND_STOP_ATTACKING_01  | İmparatorluğun filoları korkunç, değil mi? Korkmayın ufaklık, geçidimiz amaçlanan etkisini gösterdi ve şimdi onları geri çağıracağız.
+
+
+
+

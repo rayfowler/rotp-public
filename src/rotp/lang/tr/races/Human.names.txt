@@ -1,0 +1,21 @@
+// all possible names
+name: İnsan, Dünyalı, Arzlı, Cihanlı, Yerküreli
+
+desc1: Onurlu Diplomatlar
+desc2: Uzman Tüccarlar ve Muhteşem Diplomatlar
+desc3: Dilbaz İnsanlar, başkalarını İnsan çıkarlarına hizmet etmeye ikna etmekte ustadırlar.
+
+// possible home system names
+Home: Dünya, Yerküre, Cihan, Arz, Terra
+
+title: Erk
+fulltitle: Erk
+
+// possible leader names
+leader: İskender, Bladrov II, Yanoş IV, Yohan III, Peter, Mehmet
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Nöbetçi, Tetkik, Kurye, Kâşif, Sonda, Haberci, Devriye
+ship2: Fırkateyn, Korvet, Kadırga, Savaşçı, Tugay, Saksağan, Komando
+ship3: Kruvazör, Refakat, Savaş Gemisi, Müdafi, Taşıyıcı, Öncü,  Baştarde
+ship4: Dretnot, Harp Gemisi, Afetyıldızı, Muhrip, Harp Kruvazörü, Müntakim, Tahripkâr
