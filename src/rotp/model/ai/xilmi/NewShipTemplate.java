@@ -22,14 +22,11 @@ import java.util.SortedMap;
 import java.util.TreeMap;
 import java.util.Iterator;
 
-import rotp.model.ai.EnemyShipTarget;
-import rotp.model.ai.EnemyColonyTarget;
 import rotp.model.ai.interfaces.ShipDesigner;
 
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.Race;
-import rotp.model.empires.ShipView;
 import rotp.model.galaxy.StarSystem;
 
 import rotp.model.ships.ShipArmor;
@@ -51,7 +48,6 @@ import rotp.util.Base;
 
 public class NewShipTemplate implements Base {
     private static final NewShipTemplate instance = new NewShipTemplate();
-    private static final ShipDesign mockDesign = new ShipDesign();
 
     enum DesignType { FIGHTER, BOMBER, DESTROYER };
 
@@ -100,7 +96,6 @@ public class NewShipTemplate implements Base {
     }
 
     private ShipDesign bestDesign(ShipDesigner ai, DesignType role) {
-        Race race = ai.empire().dataRace();
         // create a blank design, one for each size. Add the current design as a 5th entry
         ShipDesign[] shipDesigns = new ShipDesign[4];
         for (int i = 0; i<4; i++) 
@@ -131,8 +126,6 @@ public class NewShipTemplate implements Base {
         //System.out.print("\n"+galaxy().currentTurn()+" "+ai.empire().name()+" costlimit: "+costLimit+" biggestShipWeaponSize: "+biggestShipWeaponSize);
         for (int i = 0; i<4; i++) {
             ShipDesign design = shipDesigns[i];
-            if(role == role.DESTROYER && i > 0)
-                continue;
             float score = design.spaceUsed() / design.cost();
             float defScore = design.hits() / design.cost();
             float hitPct = (5 + design.attackLevel() - (design.beamDefense() + design.missileDefense()) / 2) / 10;
@@ -148,7 +141,6 @@ public class NewShipTemplate implements Base {
             if(design.cost() > costLimit)
                 score /= design.cost() / costLimit;
             
-            boolean hasBombs = false;
             float spaceWpnSize = 0;
             float bombWpnSize = 0;
             for (int j=0; j<maxWeapons(); j++)
@@ -165,15 +157,18 @@ public class NewShipTemplate implements Base {
                 }
             }
             float weaponSizeMod = 1.0f;
-            if(role.BOMBER == role && biggestBombSize > 0)
+            if(role == role.BOMBER && biggestBombSize > 0)
                 weaponSizeMod *= bombWpnSize / biggestBombSize;
             else if(biggestShipWeaponSize > 0)
                 weaponSizeMod *= spaceWpnSize / biggestShipWeaponSize;
             if(ai.empire().shipDesignerAI().wantHybrid() && biggestBombSize > 0)
                 weaponSizeMod *= ai.empire().generalAI().defenseRatio() + (1 - ai.empire().generalAI().defenseRatio()) * bombWpnSize / biggestBombSize;
             score *= weaponSizeMod;
-            //System.out.print("\n"+ai.empire().name()+" "+design.name()+" Role: "+role+" size: "+design.size()+" score: "+score+" tonnageScore: "+design.spaceUsed() / design.cost()+" defscore: "+defScore+" wpnScore: "+weaponSizeMod+" costlimit: "+costLimit+" spaceWpnSize: "+spaceWpnSize);
+            //System.out.print("\n"+ai.empire().name()+" "+design.name()+" Role: "+role+" size: "+design.size()+" score: "+score+" tonnageScore: "+design.spaceUsed() / design.cost()+" defscore: "+defScore+" wpnScore: "+weaponSizeMod+" costlimit: "+costLimit+" spaceWpnSize: "+spaceWpnSize+" bomb-adpt: "+ai.bombingAdapted(design));
             designSorter.put(score, design);
+            //For bombers we want the smallest that has the best bomb because it's easiest to "dose"
+            if(role == role.BOMBER && weaponSizeMod == 1)
+                break;
         }
         // lastKey is design with greatest damage
         return designSorter.get(designSorter.lastKey()); 
@@ -200,7 +195,7 @@ public class NewShipTemplate implements Base {
         ShipDesign d = ai.lab().newBlankDesign(size);
         // name it first so we can use name for reference in debugging
         // engines are always the priority in MOO1 mechanics
-        nameDesign(ai, d);
+        ai.lab().nameDesign(d);
         setFastestEngine(ai, d);
         // battle computers are always the priority in MOO1 mechanics
         if(role != role.DESTROYER)
@@ -410,7 +405,7 @@ public class NewShipTemplate implements Base {
         switch (role) {
             case BOMBER:
                 setOptimalWeapon(ai, d, d.availableSpace(), 1, false, false, false, topSpeed, avgECM, bestSHD, antiDote, false, avgHP);
-                //setOptimalWeapon(ai, d, d.availableSpace(), 3, needRange, true, false, topSpeed, avgECM, bestSHD); // uses slot 1
+                setOptimalWeapon(ai, d, d.availableSpace(), 3, needRange, true, false, topSpeed, avgECM, bestSHD, antiDote, false, avgHP); // even though bombs should use all space, this is run in case of it running into the max-required-bombs per design-limit
                 break;
             case DESTROYER:
                 setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, bestSHD, antiDote, true, avgHP); // uses slots 0-3
