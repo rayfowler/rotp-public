@@ -1233,11 +1233,12 @@ public class AIDiplomat implements Base, Diplomat {
             return true;          
         }
         
-        if (wantToDeclareWarOfPrevention(view)) {
+        //No longer necessary due to empire.generalAI().sensePotentialAttack() and the resulting defensive-maneuvers.
+        /*if (wantToDeclareWarOfPrevention(view)) {
             //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" starts Prevention-War vs. "+view.empire().name());            
             beginErraticWar(view);
             return true;
-        }
+        }*/
         return false;
     }
     @Override
