@@ -22,6 +22,7 @@ import java.util.List;
 import java.util.Set;
 import rotp.model.ai.FleetPlan;
 import rotp.model.ai.interfaces.General;
+import static rotp.model.ai.xilmi.AIGovernor.RESEARCH;
 import rotp.model.colony.Colony;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
@@ -123,6 +124,7 @@ public class AIGeneral implements Base, General {
                 additionalColonizersToBuild = 0;
             //System.out.println(galaxy().currentTurn()+" "+empire.name()+" col-need after: "+additionalColonizersToBuild);
         }
+        ShipDesign design = empire.shipDesignerAI().BestDesignToColonize();
         while (additionalColonizersToBuild > 0)
         {
             float highestScore = 0;
@@ -132,7 +134,7 @@ public class AIGeneral implements Base, General {
                     continue;
                 StarSystem sys = galaxy().system(id);
                 Colony col = sys.colony();
-                if(col.currentProductionCapacity() <= 0.5f)
+                if(col.currentProductionCapacity() <= 0.5f && col.production() < design.cost())
                     continue;
                 float score = empire.ai().governor().productionScore(sys);
                 //System.out.println(empire.name()+" "+col.name()+" score: "+score);
@@ -146,7 +148,6 @@ public class AIGeneral implements Base, General {
             }
             if(bestCol == null)
                 break;
-            ShipDesign design = empire.shipDesignerAI().BestDesignToColonize();
             bestCol.shipyard().design(design);
             bestCol.shipyard().addQueuedBC(design.cost());
             float colonyProduction = (bestCol.totalIncome() - bestCol.minimumCleanupCost()) * bestCol.planet().productionAdj();
@@ -264,14 +265,14 @@ public class AIGeneral implements Base, General {
 
         if(needScoutRepellers() && (sys.empire() == empire || !empire.sv.isColonized(sysId)) && !sys.hasMonster())
         {
-            //System.out.println(galaxy().currentTurn()+" "+empire.name()+" making repel-plan for "+sys.name());
+            //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" making repel-plan for "+sys.name());
             if(empire.shipDesignerAI().BestDesignToRepell() != null)
             {
                 FleetPlan fp = empire.sv.fleetPlan(sys.id);
                 fp.priority = 1100;
                 if(empire.sv.isBorderSystem(sysId))
                     fp.priority += 50;
-                //System.out.print("\n"+galaxy().currentTurn()+" "+sys.name()+" wants: "+empire.shipLab().destroyerDesign().name());
+                //System.out.print("\n"+galaxy().currentTurn()+" "+sys.name()+" wants: "+empire.shipDesignerAI().BestDesignToRepell().name());
                 fp.addShips(empire.shipDesignerAI().BestDesignToRepell(), 1);
             }
         }
@@ -1049,6 +1050,8 @@ public class AIGeneral implements Base, General {
     @Override
     public boolean needScoutRepellers()
     {
+        if(empire.tech().topFuelRangeTech().unlimited == true || empire.scanPlanets())
+            return false;
         if(empire.enemies().isEmpty() && !empire.enemyFleets().isEmpty())
             return true;
         return false;
