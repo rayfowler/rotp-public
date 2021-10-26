@@ -72,7 +72,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
             boolean wantHybrid = wantHybrid();
             MarkObsolete();
             updateFighterDesign();
-            updateDestroyerDesign();
             if(!wantHybrid)
                 updateBomberDesign();
             updateColonyDesign();
@@ -153,9 +152,10 @@ public class AIShipDesigner implements Base, ShipDesigner {
                     keepScore = (1 - d.availableSpace()/d.totalSpace()) * (float)d.engine().warp() / (float)lab().fastestEngine().warp();
                 }
                 keepScore *= keepScore;
+                float keepBeforeCounts = keepScore;
                 keepScore *= shipCounts[d.id()] * d.cost();
                 //we can scrap all that we don't need at all
-                //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+d.name()+" keepScore: "+keepScore+" role: "+d.mission());
+                //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+d.name()+" keepScore: "+keepScore+" before counts: "+keepBeforeCounts+" role: "+d.mission());
                 if(keepScore == 0 || forceCosting)
                 {
                     ScrapDesign(d);
@@ -166,9 +166,9 @@ public class AIShipDesigner implements Base, ShipDesigner {
                 }
                 else if(keepScore < lowestKeepScore)
                 {
-                    //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+d.name()+" keepScore: "+keepScore);
                     lowestKeepScore = keepScore;
                     designToScrap = d;
+                    //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+designToScrap.name()+" keepScore: "+keepScore+" shouldScrap: "+shouldScrap);
                 }
             }
         }
@@ -340,7 +340,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         
         //System.out.print("\n"+galaxy().currentYear()+" "+empire.name()+" Bomber upgrade "+currDesign.name()+" val: "+upgradeChance+" DPBC: "+newDPBC / currentDPBC+" better-Engine: "+betterEngine+" betterArmor: "+betterArmor);
         
-        if(oldIsBomber)
+        if(oldIsBomber || currDesign.matchesDesign(newDesign))
             if (!maintenanceLimitReached && !betterComputer && !betterSpecial && !betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) && currDesign.active() )
                 return;
         
@@ -351,7 +351,6 @@ public class AIShipDesigner implements Base, ShipDesigner {
             log("Slot available: Bomber upgrade chance:"+upgradeChance);
             lab.setBomberDesign(newDesign, slot);
             currDesign.becomeObsolete(OBS_BOMBER_TURNS);
-            return;
         }
         else
         {
@@ -460,6 +459,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         //System.out.print("\n"+empire.name()+" designed new fighter which is "+upgradeChance+" better and should go to slot: "+slot);
         if (!maintenanceLimitReached && !betterSpecial && !betterComputer && !betterEngine && !betterArmor && (upgradeChance < upgradeThreshold) && !needRange && currDesign.active())
             return;
+        //System.out.print("\n"+empire.name()+" designed new fighter and it went through.");
 
         // if there is a slot available, use it for the new design
         if (slot >= 0) {
@@ -494,8 +494,8 @@ public class AIShipDesigner implements Base, ShipDesigner {
         design.setSmallestSize();
         design.mission(ShipDesign.SCOUT);
         design.maxUnusedTurns(OBS_SCOUT_TURNS);
-        //lab.nameDesign(design);
-        NewShipTemplate.nameShipDesign(this, design);
+        lab.nameDesign(design);
+        //NewShipTemplate.nameShipDesign(this, design);
         lab.iconifyDesign(design);
         return design;
     }
@@ -505,7 +505,8 @@ public class AIShipDesigner implements Base, ShipDesigner {
     public ShipDesign newColonyDesign(boolean weaponNeeded, boolean extendedRangeNeeded) {
         ShipDesignLab lab = lab();
         ShipDesign design = lab.newBlankDesign(ShipDesign.LARGE);
-        NewShipTemplate.nameShipDesign(this, design);
+        lab().nameDesign(design);
+        //NewShipTemplate.nameShipDesign(this, design);
         design.special(0, bestColonySpecial());
         design.engine(lab.fastestEngine());
         design.mission(ShipDesign.COLONY);
@@ -734,6 +735,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         if(lab().canScrapADesign())
             lab().scrapDesign(d);
     }
+    @Override
     public boolean MaintenanceLimitReached(ShipDesign d)
     {
         boolean reached = false;
@@ -750,6 +752,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         }
         return reached;
     }
+    @Override
     public ShipDesign BestDesignToScout()
     {
         ShipDesignLab lab = lab();
@@ -769,6 +772,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         }
         return scout;
     }
+    @Override
     public ShipDesign BestDesignToRepell()
     {
         ShipDesignLab lab = lab();
@@ -796,6 +800,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         }
         return repeller;
     }
+    @Override
     public ShipDesign BestDesignToFight()
     {
         ShipDesignLab lab = lab();
@@ -811,7 +816,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
                 fighter = d;
                 lowestCount = Integer.MAX_VALUE;
             }
-            if(score == fightScore)
+            if(score > 0 && score == fightScore)
             {
                 int count = galaxy().ships.shipDesignCount(empire.id, d.id());
                 if(count < lowestCount)
@@ -823,6 +828,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         }
         return fighter;
     }
+    @Override
     public ShipDesign BestDesignToBomb()
     {
         ShipDesignLab lab = lab();
@@ -838,7 +844,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
                 bomber = d;
                 lowestCount = Integer.MAX_VALUE;
             }
-            if(score == bombScore)
+            if(score > 0 && score == bombScore)
             {
                 int count = galaxy().ships.shipDesignCount(empire.id, d.id());
                 if(count < lowestCount)
@@ -850,6 +856,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         }
         return bomber;
     }
+    @Override
     public ShipDesign BestDesignToColonize()
     {
         ShipDesignLab lab = lab();
@@ -880,9 +887,9 @@ public class AIShipDesigner implements Base, ShipDesigner {
                 continue;
             if(d == BestDesignToColonize())
                 continue;
-            if(d == BestDesignToFight() && empire.generalAI().defenseRatio() > 0)
+            if(d == BestDesignToFight())
                 continue;
-            if(d == BestDesignToBomb() && empire.generalAI().defenseRatio() < 1)
+            if(d == BestDesignToBomb() && !wantHybrid())
                 continue;
             if(d == BestDesignToScout() && empire.shipLab().needScouts)
                 continue;
