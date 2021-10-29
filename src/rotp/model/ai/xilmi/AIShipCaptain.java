@@ -285,7 +285,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             }
             else
             {
-                stack.fireWeapon(target, i);
+                stack.fireWeapon(target, i, true);
                 performedAttack = true;
             }
         }
@@ -299,7 +299,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             }
             else
             {
-                stack.fireWeapon(target, i);
+                stack.fireWeapon(target, i, true);
                 performedAttack = true;
             }
         }
@@ -309,7 +309,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 continue;
             if(((CombatStackShip)stack).shipComponentCanAttack(target, i))
             {
-                stack.fireWeapon(target, i);
+                stack.fireWeapon(target, i, true);
                 performedAttack = true;
             }
         }
@@ -361,6 +361,18 @@ public class AIShipCaptain implements Base, ShipCaptain {
                     }
                 }
             }
+            if(target.isShip())
+            {
+                boolean canStillFireShipWeapon = false;
+                for (int i=0;i<stack.numWeapons(); i++) {
+                    if(!stack.weapon(i).groundAttacksOnly() && stack.shotsRemaining(i) > 0)
+                    {
+                        canStillFireShipWeapon = true;
+                    }
+                }
+                if(!canStillFireShipWeapon)
+                    killPct = 0;
+            }
             //System.out.print("\n"+stack.fullName()+" onlyships: "+onlyShips+" onlyInAttackRange: "+onlyInAttackRange+" looking at "+target.fullName()+" killPct: "+killPct+" rangeAdj: "+rangeAdj+" cnt: "+target.num+" target.designCost(): "+target.designCost());
             if (killPct > 0) {
                 killPct = min(1,killPct);
@@ -370,12 +382,14 @@ public class AIShipCaptain implements Base, ShipCaptain {
                     desirability = adjustedKillPct * max(1, target.num) * target.designCost() * rangeAdj;
                 else
                     desirability = killPct * max(1, target.num) * target.designCost() * rangeAdj / 100;
+                if(!stack.canAttack(target))
+                    desirability /= 100;
                 if(!target.canPotentiallyAttack(stack))
                 {
                     if(!target.isColony() || onlyShips)
                         desirability /= 100;
                 }
-                //System.out.print("\n"+stack.fullName()+" looking at "+target.fullName()+" desirability: "+desirability+" oir: "+onlyInAttackRange+" os: "+onlyShips);
+                //System.out.print("\n"+stack.fullName()+" looking at "+target.fullName()+" desirability: "+desirability+" oir: "+onlyInAttackRange+" os: "+onlyShips+" can attack: "+stack.canAttack(target));
                 if (desirability > maxDesirability) {  // this might be a better target, adjust desirability for pathing
                     if (stack.mgr.autoResolve) {
                         bestTarget = target;
