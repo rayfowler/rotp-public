@@ -828,7 +828,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 enemyKillTime += pctOfMaxHP / damagePerTurn;
             else
             {
-                invulnerableFriend = st1;
+                if(st1.isColony())
+                    invulnerableFriend = st1;
                 enemyKillTime = Float.MAX_VALUE;
                 break;
             }
