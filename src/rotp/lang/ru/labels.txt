@@ -1,0 +1,1978 @@
+
+// This is the label text file for Remnants of the Precursors
+// comment lines should start with '/'  they are ignored
+//  
+// the format for each line is   key | label
+//    where 'key' is the code used by the game to retrieve the label
+//    You cannot create new keys! The game will not use them
+//    You can only use keys that the game is looking for.
+//
+// Large number formatting
+NUM_FORMAT_THOUSANDS              | %1 тыс.
+NUM_FORMAT_MILLIONS               | %1 мил.
+NUM_FORMAT_BILLIONS               | %1 млрд.
+
+// Star descriptions
+RED_STAR_DESCRIPTION              | Красные звезды - старые и тусклые. Часто имеют планеты бедные ресурсами.
+YELLOW_STAR_DESCRIPTION           | Желтые звезды чаще всего имеют планеты с земными и суб-земными средами.
+ORANGE_STAR_DESCRIPTION           | Оранжевые звезды - средние по яркости и имеют широкий диапазон возможных сред для их планет.
+BLUE_STAR_DESCRIPTION             | Синие звезды сравнительно молодые и часто имеют планеты враждебные для жизни, но богатые ресурсами.
+WHITE_STAR_DESCRIPTION            | Белые звезды невероятно горячие и в основном имеют планеты враждебные для жизни.
+PURPLE_STAR_DESCRIPTION           | Нейтронные звезды - редкие, и имеют планеты богатые ресурсами намного чаще, чем другие типы звезд.
+
+// Planet Types
+PLANET_ARID                       | Засушливая
+PLANET_BARREN                     | Пустая
+PLANET_DEAD                       | Мертвая
+PLANET_DESERT                     | Пустынная
+PLANET_INFERNO                    | Вулканистая
+PLANET_JUNGLE                     | Тропическая
+PLANET_MINIMAL                    | Минимальная
+PLANET_NONE                       | Астероиды
+PLANET_OCEAN                      | Океаническая
+PLANET_RADIATED                   | Облученная
+PLANET_STEPPE                     | Степная
+PLANET_TERRAN                     | Земная
+PLANET_TOXIC                      | Токсичная
+PLANET_TUNDRA                     | Ледяная
+
+// Spy Missions
+SPY_HIDE                          | Инфильтрация
+SPY_ESPIONAGE                     | Кража Технологий
+SPY_SABOTAGE                      | Диверсия
+SPY_CAUGHT                        | [Ваши шпионы были пойманы.]
+SPY_FRAMED                        | [Вас ложно обвинили.]
+SPY_FORCED_CONFESSION             | [Шпион был вынужден соврать о миссии.]
+SPY_WARNING                       | [Вас предупредили.]
+
+ARID_DESC_BIOLOGICAL              | Засушливые планеты - сухие, скалистые миры с небольшим количеством растительности. Вода занимает не более 40% поверхности.
+BARREN_DESC_BIOLOGICAL            | Пустые планеты - сухие, пыльные миры с разряженной атмосферой и полным отсутствием воды на поверхности.
+DEAD_DESC_BIOLOGICAL              | Мертвые планеты - холодные миры с разряженной атмосферой и полным отсутствием воды и тектонической активности. 
+DESERT_DESC_BIOLOGICAL            | Пустынные планеты - сухие, скалистые миры с очень небольшим количеством растительности. Вода занимает не более 20% поверхности.
+INFERNO_DESC_BIOLOGICAL           | Вулканистые планеты - миры с очень высокими температурами, густой атмосферой и сильными бурями.
+JUNGLE_DESC_BIOLOGICAL            | Тропические планеты - богатые растительностью миры покрытые густыми лесами, джунглями и болотами.
+MINIMAL_DESC_BIOLOGICAL           | Минимальные планеты - очень сухие, с почти полным отсутствием жизни миры, малопригодные для обитания.
+NONE_DESC_BIOLOGICAL              | Вообще не имея планет, эти полные астероидов системы бросают вызов всем теориям о формировании планет.
+OCEAN_DESC_BIOLOGICAL             | Океанические планеты - почти полностью покрыты водой, что часто затрудняет доступ к ресурсам.
+RADIATED_DESC_BIOLOGICAL          | Облученные планеты - не имеющие атмосферы миры, облучаемые большим количеством радиации соседних звезд.
+STEPPE_DESC_BIOLOGICAL            | Степные планеты - холодные, горные миры с суровыми зимами и арктическим климатом.
+TERRAN_DESC_BIOLOGICAL            | Земные планеты - наиболее пригодные для жизни, имеющие большие умеренные зоны и поддерживающие широкое разнообразие биомов.
+TOXIC_DESC_BIOLOGICAL             | Токсичные планеты - замерзшие миры с экосистемами, основанными на метане.
+TUNDRA_DESC_BIOLOGICAL            | Ледяные планеты - спящие миры, скованные вечной мерзлотой ледникового периода.
+
+// Planet Specials
+PLANET_ARTIFACTS                  | Артефакты
+PLANET_ULTRA_POOR                 | Оч. Бедная
+PLANET_POOR                       | Бедная
+PLANET_RICH                       | Богатая
+PLANET_ULTRA_RICH                 | Оч. Богатая
+PLANET_HOSTILE                    | Враждебная
+PLANET_FERTILE                    | Плодородная
+PLANET_GAIA                       | Райская
+
+// Planet Descriptors for Race
+PLANET_HOMEWORLD                  | Родная Планета [alien_race_plural_rod]
+PLANET_WORLD                      | Мир [alien_race_plural_rod]
+PLANET_COLONY                     | Колония [alien_race_plural_rod]
+PLANET_ORION                      | Орион
+PLANET_ORION_GUARDIAN             | Страж
+
+// Nebula names  ("starName" Nebula)
+NEBULA_NAME                       | Туманность %1
+NEBULA_ID                         | NGC %1
+
+// %2 is the leader's actual name
+TITLE_LEADERNAME                  | [alien_nameTitle] %2
+
+// Extended Colony Name prefix when we run out of names
+COLONY_NAME_2                     | Нью-%1
+COLONY_NAME_3                     | %1 Экстернус
+COLONY_NAME_4                     | %1 Нова
+COLONY_NAME_5                     | %1 Семотус
+
+// Space Monster Names
+SPACE_AMOEBA                      | Космическая Амёба
+SPACE_CRYSTAL                     | Космический Кристал
+ORION_GUARDIAN                    | Страж Ориона
+
+// Personality types (adjective)
+LEADER_ERRATIC                    | Неустойчивый
+LEADER_PACIFIST                   | Мирный
+LEADER_HONORABLE                  | Благородный
+LEADER_RUTHLESS                   | Аморальный
+LEADER_AGGRESSIVE                 | Агрессивный
+LEADER_XENOPHOBIC                 | Параноидный
+
+// Leader Objective Types (noun)
+LEADER_DIPLOMAT                   | Дипломат
+LEADER_MILITARIST                 | Кораблестроитель
+LEADER_ECOLOGIST                  | Эколог
+LEADER_INDUSTRIALIST              | Промышленник
+LEADER_EXPANSIONIST               | Экспансионист
+LEADER_TECHNOLOGIST               | Ученый
+// Leader Personality & Objective displayed together
+LEADER_PERSONALITY_FORMAT         | %1 %2
+
+// Technology names and descriptions 
+TECH_COMPUTERS                    | Компьютеры
+TECH_CONSTRUCTION                 | Строительство
+TECH_FORCE_FIELDS                 | Силовые Поля
+TECH_PLANETOLOGY                  | Планетология
+TECH_PROPULSION                   | Двигатели
+TECH_WEAPONS                      | Оружие
+
+// Random Events
+EVENT_ACCIDENT                    | Большая авария на одном из заводов колонии [target_race_plural_rod] в системе [system] загрязнила планету промышленными отходами, нанося ущерб экологии и облучая планету огромным количеством радиации.
+EVENT_ASSASSINATION               | Террорист из [assassin_empire_rodit] убил дипломата [victim_race_plural_rod], поставив две империи на грань войны.
+EVENT_COMET                       | В системе [system] была обнаружена огромная комета, грозящая столкновением с колонизированной [target_race_plural_rod] планетой через [years] лет. Своевременно посланные для её уничтожения корабли могут предотвратить эту катастрофу.
+EVENT_COMET_2                     | Ожидается, что огромная комета уничтожит всю жизнь на поверхности планеты [target_race_plural_rod] в системе [system] через [years] лет. Для предотвращения этой катастрофы, необходимо послать больше вооруженных кораблей.
+EVENT_COMET_3                     | Комета в системе [system] была уничтожена благодаря усилиям [target_race_adj_rod] флота.
+EVENT_COMET_4                     | Смертоносная комета уничтожила [target_race_adj_acc] колонию в системе [system].
+EVENT_DONATION                    | Богатый предприниматель, желающий поддержать свою родную империю сделал существенное пожертвование [amt] МК в Планетарный Резерв [target_empire_rodit].
+EVENT_DEPLETED                    | Планета [target_race_plural_rod] в системе [system] исчерпала свои месторождения тяжелых металлов. Планетарный статус ресурсов изменён на "Бедный".
+EVENT_DERELICT                    | Звездный флот [target_empire_rodit] обнаружил древний заброшенный корабль. [target_race_adj_plural] ученые с тех пор реконструировали несколько технологий в области Силовых Полей и Оружий благодаря данным и оборудованию на корабле.
+EVENT_EARTHQUAKE                  | Разрушительное землетрясение на планете [target_race_plural_rod] в системе [system] убило [amt] миллионов колонистов, а также нанесло ущерб многим промышленным районам.
+EVENT_ENRICHED                    | Геологическая экспедиция на планете [target_race_plural_rod] в системе [system] нашла огромное, ранее не обнаруженное месторождение тяжелых металлов. Планетарный статус ресурсов изменён на "Богатый".
+EVENT_FERTILE                     | Внезапное смещение оси планеты [target_race_plural_rod] в системе [system] сделало среду планеты более плодородной. Прирост населения колонии повышен на 50%.
+EVENT_PIRACY                      | Космические пираты начали причинять неудобства в межзвездной торговле в системах [target_race_plural_rod], снижая доходы от торговли на [amt]%. Вооруженные корабли необходимы в системе [system], чтобы уничтожить их базу.
+EVENT_PIRACY_2                    | Пираты из системы [system] продолжают причинять неудобства торговой деятельности планет [target_race_plural_rod], снижая доходы от торговли на [amt]%.
+EVENT_PIRACY_3                    | Звездный флот [target_race_plural_rod] уничтожил крупную базу пиратов в системе [system]. Доходы от торговли вернулись к норме.
+EVENT_PLAGUE                      | Космическая чума поразила планету [target_race_plural_rod] в системе [system]. В системе введен карантин и ожидается, что миллионы будут умирать каждый год, пока ученые не создадут вакцину.
+EVENT_PLAGUE_2                    | Колонисты в системе [system] продолжают умирать от космической чумы. По оценкам ученых, для создания вакцины необходимо ещё [amt] ЕИ.
+EVENT_PLAGUE_3                    | [target_race_adj_plural] ученые создали вакцину от космической чумы, поразившей систему [system]. Карантин снят.
+EVENT_REBELLION                   | Население планеты [target_race_plural_rod] в системе [system] восстало, прекратив всё производство. Восстание будет продолжаться и распространяться до тех пор, пока повстанцы не будут ликвидированы.
+EVENT_SUPERNOVA                   | Ученые [target_race_plural_rod] прогнозируют, что звезда системы [system] станет сверхновой через [years] лет. Они рекомендуют направить все доступные ресурсы системы для поиска решения этой проблемы.
+EVENT_SUPERNOVA_2                 | Угроза возникновения сверхновой в системе [system] через [years] лет все еще не нейтрализована. По оценкам ученых, [amt] ЕИ, возможно, будет достаточно, чтобы предотвратить эту катастрофу.
+EVENT_SUPERNOVA_3                 | Лихорадочно работая, физики [target_race_plural_rod] в системе [system] нашли способ омолодить звезду, предотвращая ее превращение в сверхновую.
+EVENT_SUPERNOVA_4                 | Звезда в системе [system] превратилась в сверхновую, облучая [target_race_adj_acc] колонию, разрушая экологию и убивая миллионы.
+EVENT_VIRUS                       | Разрушительный компьютерный вирус поразил научно-исследовательские институты [target_race_plural_rod], сведя на нет годы исследований, относящихся к технологии [technology].
+EVENT_SPACE_AMOEBA                | Чудовищный организм, получивший название "Космическая Амёба" был замечен рядом с системой [system]. Живущие там [victim_race_adj_plural] колонисты и их флоты готовятся к худшему.
+EVENT_SPACE_AMOEBA_1              | Чудовищный организм, получивший название "Космическая Амёба" был замечен рядом с неколонизированной системой [system].
+EVENT_SPACE_AMOEBA_2              | Космическая Амёба поглотила [victim_race_adj_acc] колонию в системе [system].
+EVENT_SPACE_AMOEBA_3              | Космическая Амёба была уничтожена защищающимися [victim_race_plural_tvor] в системе [system].
+EVENT_SPACE_CRYSTAL               | Гигантский кристаллический организм, получивший название "Космический Кристал" был замечен рядом с системой [system]. Живущие там [victim_race_adj_plural] колонисты и их флоты готовятся к худшему.
+EVENT_SPACE_CRYSTAL_1             | Гигантский кристаллический организм, получивший название "Космический Кристал" был замечен рядом с неколонизированной системой [system].
+EVENT_SPACE_CRYSTAL_2             | Космический Кристал полностью уничтожил всю жизнь на планете [victim_race_plural_rod] в системе [system].
+EVENT_SPACE_CRYSTAL_3             | Космический Кристал был уничтожен защищающимися [victim_race_plural_tvor] в системе [system].
+
+SYSEVENT_HOMEWORLD                | Родная планета [alien_race_plural_rod].
+SYSEVENT_SCOUTED                  | Система впервые разведана [alien_race_plural_tvor].
+SYSEVENT_COLONIZED                | Планета колонизирована [alien_race_plural_tvor].
+SYSEVENT_CAPTURED                 | Колония захвачена войсками [alien_race_plural_rod].
+SYSEVENT_ABANDONED                | Планета эвакуирована [alien_race_plural_tvor].
+SYSEVENT_DESTROYED                | Колония уничтожена кораблями [alien_race_plural_rod] с орбиты.
+SYSEVENT_DESTROYED_MONSTER        | Колония уничтожена существом %1.
+SYSEVENT_DESTROYED_UNKNOWN        | Колония уничтожена.
+SYSEVENT_ATMOSPHERE_TERRAFORMED   | На планете создана искусственная атмосфера пригодная для дыхания.
+SYSEVENT_SOIL_ENRICHED            | Почва планеты обогащена, делая мир плодородным.
+SYSEVENT_GAIA_TERRAFORMING        | Планета преобразована в райский мир.
+SYSEVENT_REBELLION                | Колония восстала.
+SYSEVENT_COMET                    | Комета столкнулась с планетой.
+SYSEVENT_PLAGUE                   | Началась пандемия космической чумы.
+SYSEVENT_PLAGUE_ENDED             | Против чумы создана вакцина.
+SYSEVENT_ENRICHED                 | Найдены большие рудные месторождения.
+SYSEVENT_DEPLETED                 | Рудные месторождения исчерпаны.
+SYSEVENT_ACCIDENT                 | Большая авария на одном из заводов привела к огромному выбросу радиации.
+SYSEVENT_SUPERNOVA                | Сверхновая облучила планету.
+
+
+// Diplomatic Incident titles & descriptions
+INC_ASSASSINATION_TITLE           | Политическое Убийство
+INC_ASSASSINATION_DESC            | Террорист из [assassin_empire_rodit] убил дипломата [victim_race_plural_rod].
+INC_ATTACKED_ALLY_TITLE           | Нападение на Союзника
+INC_ATTACKED_ALLY_DESC            | Флоты [attacker_empire_rodit] напали на [defender_empire_acc], союзника [my_empire_rodit].
+INC_ATTACKED_ENEMY_TITLE          | Нападение на Врага
+INC_ATTACKED_ENEMY_DESC           | Флоты [attacker_empire_rodit] напали на [defender_empire_acc], врага [my_empire_rodit].
+INC_USED_BIOWEAPONS_TITLE         | Использование Биологического Оружия
+INC_USED_BIOWEAPONS_DESC          | Флоты [attacker_empire] использовали биологическое оружие против [victim_empire_rodit] на планете [system].
+INC_KILLED_MONSTER_TITLE          | %1
+INC_KILLED_MONSTER_DESC           | Флоты [your_empire_rodit] уничтожили существо "[monster]", тем самым ликвидируя угрозу для всех галактических империй.
+INC_KILLED_GUARDIAN_TITLE         | Страж Ориона
+INC_KILLED_GUARDIAN_DESC          | Флоты [your_empire_rodit] уничтожили Стража планеты Ориона, тем самым раскрыв тайны предшественников.
+INC_NO_RELATIONS_TITLE            | Нет Дипломатических Отношений
+INC_NO_RELATIONS_DESC             | На данный момент между [your_empire_tvor] и [my_empire_tvor] нет дипломатических отношений.
+INC_ALLIED_WITH_ENEMY_TITLE       | В Союзе с Врагом
+INC_ALLIED_WITH_ENEMY_DESC        | [my_empire] возражает против Вашего союза с ненавистным лидером [other_empire_rodit].
+INC_AT_WAR_WITH_ALLY_TITLE        | Война с Союзником
+INC_AT_WAR_WITH_ALLY_DESC         | Вы в состоянии войны с [other_empire_tvor], союзником [my_empire_rodit].
+INC_CLOSED_EMBASSY_TITLE          | Отозванный Посол
+INC_CLOSED_EMBASSY_DESC           | Лидер [your_empire_rodit] прекратил дипломатические отношения с [my_empire_tvor].
+INC_EVICTED_SPIES_TITLE           | Изгнанные Дипломаты
+INC_EVICTED_SPIES_DESC            | Лидер [your_empire_rodit] изгнал всех второстепенных дипломатов из [my_empire_rodit].
+INC_BROKE_ALLIANCE_TITLE          | Разорванный Союз
+INC_BROKE_ALLIANCE_DESC           | Лидер [your_empire_rodit] разорвал Союз с [my_empire_tvor].
+INC_BROKE_PACT_TITLE              | Разорванный Пакт о Ненападении
+INC_BROKE_PACT_DESC               | Лидер [your_empire_rodit] разорвал Пакт о Ненападении с [my_empire_tvor].
+INC_BROKE_TRADE_TITLE             | Разорванный Торговый Договор
+INC_BROKE_TRADE_DESC              | Лидер [your_empire_rodit] разорвал Торговый Договор с [my_empire_tvor].
+INC_ATTACKED_COLONY_TITLE         | Нападение на Колонию
+INC_ATTACKED_COLONY_DESC          | Флот [attacker_empire_rodit] напал на планету [defender_race_plural_rod] в системе [system]. [amt] миллионов граждан погибли.
+INC_CAPTURED_COLONY_TITLE         | Завоевание Колонии
+INC_CAPTURED_COLONY_DESC          | Солдаты [attacker_empire_rodit] вторглись и захватили колонию [defender_race_plural_rod] в системе [system]. [amt] миллионов граждан погибли.
+INC_DESTROYED_COLONY_TITLE        | Уничтожение Колонии
+INC_DESTROYED_COLONY_DESC         | Флот [attacker_empire_rodit] полностью уничтожил колонию [defender_race_plural_rod] в системе [system]. [amt] миллионов граждан погибли.
+INC_FIRST_CONTACT_TITLE           | Первый Контакт
+INC_FIRST_CONTACT_DESC            | Установлен первый контакт с [your_empire_tvor]. Будьте бдительны.
+INC_INVADED_COLONY_TITLE          | Вторжение
+INC_INVADED_COLONY_DESC           | Солдаты [attacker_empire_rodit] вторглись, но не смогли захватить колонию [defender_race_plural_rod] в системе [system]. [amt] миллионов граждан погибли.
+INC_COUNCIL_VOTE_TITLE            | Голосование в Совете
+INC_COUNCIL_VOTE_FOR_DESC         | [voter_race_plural] проголосовали за [candidate_race_plural_rod].
+INC_COUNCIL_VOTE_AGAINST_DESC     | [voter_race_plural] проголосовали против [candidate_race_plural_rod].
+INC_COUNCIL_ABSTAIN_DESC          | [voter_race_plural] не принимали участия в голосовании, отказавшись голосовать за [candidate_race_plural_rod].
+INC_DECLARED_WAR_TITLE            | Объявление Войны
+INC_DECLARED_WAR_DESC             | Лидер [your_empire_rodit] объявил войну [victim_empire_dativs].
+INC_ERRATIC_WAR_TITLE             | Неустойчивое Поведение
+INC_ERRATIC_WAR_DESC              | [aggressor_race_plural] объявили войну [victim_empire_dativs]. Причина неизвестна.
+INC_DEMANDED_TRIBUTE_TITLE        | Потребовала Дань
+INC_ENCROACHING_TITLE             | Посягательство
+INC_ENCROACHING_DESC              | Колонисты [your_empire_rodit] колонизировали систему [system], посягая на границы [my_empire_rodit].
+INC_TECH_STOLEN_TITLE             | Кража Технологии
+INC_TECH_STOLEN_DESC              | [spy_race_adj_plural] шпионы украли технологию [tech] у [victim_race_plural_rod].
+INC_TECH_FRAMED_DESC              | Неизвестные шпионы украли технологию [tech] у [victim_race_plural_rod]. (Вас ложно обвинили)
+INC_TECH_EXCHANGE_TITLE           | Обмен Технологиями
+INC_TECH_EXCHANGE_DESC            | Лидер [my_empire_rodit] передал технологию [techGiven] ученым [your_empire_rodit] в обмен на технологию [techReceived].
+INC_FINANCIAL_AID_TITLE           | Финансовая Помощь
+INC_FINANCIAL_AID_DESC            | Лидер [your_empire_rodit] совершил пожертвование в количестве [amt] МК [my_empire_dativs].
+INC_TECHNOLOGY_AID_TITLE          | Технологическая Помощь
+INC_TECHNOLOGY_AID_DESC           | Лидер [your_empire_rodit] принес в дар технологию [tech] [my_empire_dativs].
+INC_TECHNOLOGY_AID_DESC_MULT      | Лидер [your_empire_rodit] принес в дар [my_empire_dativs] несколько технологий ([techs]).
+INC_TECHNOLOGY_TECH_LIST_COMMA    | , 
+INC_ENEMY_AID_TITLE               | Помощь Врагу
+INC_ENEMY_AID_MONEY_DESC          | Лидер [your_empire_rodit] пожертвовал [amt] МК [enemy_empire_dativs], врагу [my_empire_rodit].
+INC_ENEMY_AID_TECH_DESC           | Лидер [your_empire_rodit] принес в дар технологию [tech] [enemy_empire_dativs], врагу [my_empire_rodit].
+INC_PARANOIA_TITLE                | Паранойя
+INC_PARANOIA_DESC1                | Радикальная группа сторонников теорий заговора внутри [my_empire_rodit] безосновательно полагает, что [your_race_plural] представляют собой "экзистенциальную угрозу" для их вида. [your_empire] сейчас обладает [num] системами, изначально принадлежащих [my_empire_dativs].
+INC_PARANOIA_DESC2                | Небольшая фракция внутри [my_empire_rodit] считает, что [your_race_plural] представляют собой экзистенциальную угрозу для их вида. [your_empire] сейчас обладает [num] системами, изначально принадлежащих [my_empire_dativs].
+INC_PARANOIA_DESC3                | Крикливое меньшинство внутри [my_empire_rodit] выражает озабоченность по поводу того, что [your_race_plural] могут представлять собой экзистенциальную угрозу для их вида. [your_empire] сейчас обладает [num] системами, изначально принадлежащих [my_empire_dativs].
+INC_PARANOIA_DESC4                | Многие в [my_empire_rodit] призывают к действию по поводу растущих опасений в том, что [your_race_plural] действительно могут представлять собой экзистенциальную угрозу для их вида. [your_empire] сейчас обладает [num] системами, изначально принадлежащих [my_empire_dativs].
+INC_PARANOIA_DESC5                | [my_empire_acc] охватила массовая паника из-за осознания того, что [your_race_plural] стали явной экзистенциальной угрозой для их вида. [your_empire] сейчас владеет [num] системами, изначально принадлежащих [my_empire_dativs].
+INC_EXPANSION_TITLE               | Расширение
+INC_EXPANSION_DESC                | Владея [num] системами, размер [your_empire_rodit] стал слишком большой.
+INC_GENOCIDE_TITLE                | Геноцид
+INC_GENOCIDE_DESC                 | Вооруженные силы [attacker_empire_rodit] полностью истребили [victim_race_plural_rod].
+INC_FINAL_WAR_TITLE               | Последняя Война!
+INC_FINAL_WAR_DESC                | Лидер [rebel_race_plural_rod] не признал решение Галактического Совета, что привело к призыву к полному истреблению [rebel_race_adj] расы оставшимися союзными войсками.
+INC_MILITARY_BUILDUP_TITLE        | Наращивание Вооруженных Сил
+INC_MILITARY_BUILDUP_DESC         | [your_empire] собирает большой вооруженный звездный флот в системе [system].
+INC_OATHBREAKER_TITLE             | Нарушенная Клятва
+INC_DESTROYED_BASES_TITLE         | Уничтожение Ракетных Баз
+INC_DESTROYED_BASES_DESC          | Диверанты из [spy_empire_rodit] уничтожили [amt] оборонительных ракетных баз в системе [system].
+INC_DESTROYED_FACTORIES_TITLE     | Уничтожение Заводов
+INC_DESTROYED_FACTORIES_DESC      | Диверанты из [spy_empire_rodit] уничтожили [amt] заводов в системе [system].
+INC_INCITED_REBELLION_TITLE       | Подстрекание Восстания
+INC_INCITED_REBELLION_DESC        | Шпионы из [spy_empire_rodit] радикализировали [amt] миллионов повстанцев в системе [system].
+INC_SIGNED_ALLIANCE_TITLE         | Союз
+INC_SIGNED_ALLIANCE_DESC          | [my_empire] и [your_empire] заключили Союз, обещая защищать друг друга от внешних угроз. 
+INC_JOINT_WAR_TITLE               | Объявление Войны
+INC_LEFT_ALLIANCE_TITLE           | Разорванный Союз
+INC_SIGNED_PACT_TITLE             | Пакт о Ненападении
+INC_SIGNED_PACT_DESC              | [my_empire] и [your_empire] заключили Пакт о Ненападении, предотвращая конфликт между кораблями в нейтральных системах.
+INC_SIGNED_PEACE_TITLE            | Мирный Договор
+INC_SIGNED_PEACE_DESC             | [my_empire] и [your_empire] заключили мирный договор, прекращая любую агрессию до [endYear] года.
+INC_SIGNED_TRADE_TITLE            | Торговый Договор
+INC_SIGNED_TRADE_DESC             | [my_empire] и [your_empire] заключили Торговый Договор на максимальную годовую прибыль [amt] МК.
+INC_SKIRMISH_TITLE                | Стычка
+INC_SKIRMISH_DESC                 | [my_race_adj_plural] и [your_race_adj_plural] флоты участвовали в бою в системе [system].
+INC_SPY_CONFESSION_TITLE          | Признание Шпиона
+INC_SPY_CONFESS_ESPIONAGE_DESC    | Шпион из [spy_empire_rodit] был пойман и признался в шпионской деятельности против [victim_empire_rodit].
+INC_SPY_CONFESS_SABOTAGE_DESC     | Шпион из [spy_empire_rodit] был пойман и признался в диверсии, запланированной против [victim_empire_rodit].
+INC_SPY_CAPTURED_DESC             | Шпион из [spy_empire_rodit] был пойман и был вынужден "признаться" в диверсии, запланированной против [victim_empire_rodit].
+INC_TRADE_INCOME_TITLE            | Прибыль от Торговли
+INC_TRADE_INCOME_DESC             | Торговля между [your_empire_tvor] и [my_empire_tvor] принесла прибыль в размере [amt] МК.
+INC_TRESPASSING_TITLE             | Нарушение Границ
+INC_TRESPASSING_DESC              | [your_race_adj_plural] флоты нарушили границы в системе [system], являющейся частью [my_empire_rodit].
+
+// generic click to skip or continue messages
+CLICK_SKIP                        | Нажмите клавишу Escape или щёлкните, чтобы пропустить анимацию
+CLICK_CONTINUE                    | Щёлкните или нажмите Escape, чтобы продолжить...
+CLICK_EXIT                        | Щёлкните или нажмите Escape, чтобы выйти...
+BUTTON_EXIT                       | Выйти
+
+// GAME/SETUP UI 
+GAME_TITLE_LINE_1                 | REMNANTS
+GAME_TITLE_LINE_2                 | of the
+GAME_TITLE_LINE_3                 | PRECURSORS
+GAME_DISCUSS_ONLINE               | 
+GAME_MENU_CONTINUE                | Продолжить Игру
+GAME_MENU_NEW_GAME                | Новая Игра
+GAME_MENU_LOAD_GAME               | Загрузить Игру
+GAME_MENU_SAVE_GAME               | Сохранить Игру
+GAME_MENU_SETTINGS                | Настройки
+GAME_MENU_EXIT                    | Выйти
+GAME_MENU_RESTART                 | Рестартовать
+GAME_VERSION                      | Версия: %1
+GAME_SHRINK                       | Уменьшить -
+GAME_ENLARGE                      | Увеличить
+
+// Game Settings UI
+GAME_SETTINGS_TITLE               | Настройки Игры
+GAME_SETTINGS_DESCRIPTION         | Нажимайте, чтобы менять настройки игры.
+GAME_SETTINGS_EXIT                | Выйти
+GAME_SETTINGS_DEFAULT             | Установить по умолчанию
+GAME_SETTINGS_DISPLAY_MODE        | Режим отображения: %1
+GAME_SETTINGS_WINDOWED            | Оконный
+GAME_SETTINGS_BORDERLESS          | Окно без рамки
+GAME_SETTINGS_FULLSCREEN          | Полноэкранный
+GAME_SETTINGS_DISPLAY_MODE_DESC   | Требует рестарта. Оконный режим имеет фиксированное соотношение и изменяемый размер. Окно без рамки - развернутое окно. Полноэкранный - это развернутое окно, которое полностью контролирует монитор.
+GAME_SETTINGS_GRAPHICS            | Уровень графики: %1
+GAME_SETTINGS_GRAPHICS_LOW        | Низкий
+GAME_SETTINGS_GRAPHICS_MED        | Средний
+GAME_SETTINGS_GRAPHICS_HIGH       | Высокий
+GAME_SETTINGS_GRAPHICS_DESC       | Регулирует качество графики в игре. Средний: Сглаживание картинок отключено. Низкий: Анимация отключена.
+GAME_SETTINGS_TEXTURES            | Текстуры: %1
+GAME_SETTINGS_TEXTURES_NO         | Отсутствуют
+GAME_SETTINGS_TEXTURES_INTERFACE  | Только в Интерфейсе
+GAME_SETTINGS_TEXTURES_MAP        | Только в Карте Галактики
+GAME_SETTINGS_TEXTURES_BOTH       | В Интерфейсе и Карте
+GAME_SETTINGS_TEXTURES_DESC       | Регулирует использование текстур. Можно отключить текстуры в галактической карте или в различных экранах в игре.
+GAME_SETTINGS_SENSITIVITY         | Чувствительность при наведении: %1
+GAME_SETTINGS_SENSITIVITY_HIGH    | Высокая
+GAME_SETTINGS_SENSITIVITY_MEDIUM  | Средняя
+GAME_SETTINGS_SENSITIVITY_LOW     | Низкая
+GAME_SETTINGS_SENSITIVITY_DESC    | Регулирует, на сколько быстро галактическая карта реагирует на движение мыши во время обновления панели с данными о выбранной системе.
+GAME_SETTINGS_MEMORY              | Показывать использование памяти: %1
+GAME_SETTINGS_MEMORY_YES          | Да
+GAME_SETTINGS_MEMORY_NO           | Нет
+GAME_SETTINGS_MEMORY_DESC         | Включает или выключает отображение статистики использования памяти в правом нижнем углу игры. Полезно для наблюдения за использованием памяти.
+GAME_SETTINGS_SOUNDS              | Звуки: %1
+GAME_SETTINGS_SOUNDS_OFF          | Отключены
+GAME_SETTINGS_SOUNDS_ON           | %1/10
+GAME_SETTINGS_SOUNDS_DESC         | Регулирует звуковые эффекты в игре. Пользуйте колёсико мышки, чтобы повысить или понизить громкость, нажмите, чтобы включить или отключить.
+GAME_SETTINGS_SOUNDS_DISABLED     | Отключены (из-за ошибки)
+GAME_SETTINGS_SOUNDS_ERR_DESC     | Звуки отключены из-за следующей ошибки: %1
+GAME_SETTINGS_MUSIC               | Музыка: %1
+GAME_SETTINGS_MUSIC_OFF           | Отключена
+GAME_SETTINGS_MUSIC_ON            | %1/10
+GAME_SETTINGS_MUSIC_DESC          | Регулирует музыку в игре. Пользуйте колёсико мышки, чтобы повысить или понизить громкость, нажмите, чтобы включить или отключить.
+GAME_SETTINGS_AUTOCOLONIZE        | Колонизация: %1
+GAME_SETTINGS_AUTOCOLONIZE_YES    | Автоматическая
+GAME_SETTINGS_AUTOCOLONIZE_NO     | Ручная
+GAME_SETTINGS_AUTOCOLONIZE_DESC   | В автоматическом режиме, колонизаторы автоматически колонизируют планеты сразу после прибытия в систему. Это может сэкономить много времени в больших галактиках.
+GAME_SETTINGS_AUTOBOMBARD         | Бомбардировка: %1
+GAME_SETTINGS_AUTOBOMBARD_NO      | Ручная
+GAME_SETTINGS_AUTOBOMBARD_NEVER   | Отключена
+GAME_SETTINGS_AUTOBOMBARD_YES     | Автоматическая
+GAME_SETTINGS_AUTOBOMBARD_WAR     | Только во время войны
+GAME_SETTINGS_AUTOBOMBARD_INVADE  | Только когда война + нет вторжения
+GAME_SETTINGS_AUTOBOMBARD_DESC    | Переключайте, чтобы: всегда спрашивать подтверждение бомбардировки; никогда не бомбардировать; всегда бомбардировать; бомбардировать автоматически в состоянии войны; или то же самое, но только если нет солдатов в пути к планете.
+GAME_SETTINGS_BACKUP_OFF          | Отключена
+GAME_SETTINGS_BACKUP_ON           | Раз за %1 ходов
+GAME_SETTINGS_BACKUP              | Резервная Копия Сохранений: %1
+GAME_SETTINGS_BACKUP_DESC         | Если это активировано, то ваши игры будут периодически сохранены в папке резервных сохранений с уникальным названием. Это позволит вам перезагрузить игру с предыдущих ходов.
+GAME_SETTINGS_SAVEDIR             | Папка резервных сохранений: %1
+GAME_SETTINGS_SAVEDIR_DEFAULT     | По умолчанию
+GAME_SETTINGS_SAVEDIR_CUSTOM      | Пользовательская
+GAME_SETTINGS_SAVEDIR_DESC1       | Папка с сохранениями - папка, в которой находится игра.
+GAME_SETTINGS_SAVEDIR_DESC2       | Папка с сохранениями: %1
+
+// Load Game UI
+LOAD_GAME_TITLE                   | Загрузить Игру
+LOAD_GAME_AUTOSAVE                | Последнее автосохранение
+LOAD_GAME_BACKUP_DIR              | Резервная папка: %1 файлов
+LOAD_GAME_SAVE_DIR                | Папка с сохранениями: %1 файлов
+LOAD_GAME_FILENAME                | Сортировать по названию
+LOAD_GAME_DATE                    | по Дате
+LOAD_GAME_SIZE                    | по Размеру
+LOAD_GAME_LOADING                 | Загрузка...
+LOAD_GAME_BAD_VERSION             | Невозможно загрузить сохраненную игру "%1". Возможно, файл поврежден или был создан в старой версии игры.
+LOAD_GAME_CANCEL                  | Отменить
+LOAD_GAME_OK                      | Загрузить
+LOAD_GAME_TOO_LONG                | ...
+
+// Save Game UI
+SAVE_GAME_TITLE                   | Сохранить Игру
+SAVE_GAME_FILENAME                | Сортировать по названию
+SAVE_GAME_DATE                    | по Дате
+SAVE_GAME_SIZE                    | по Размеру
+SAVE_GAME_SAVING                  | Сохраняется...
+SAVE_GAME_CANCEL                  | Отменить
+SAVE_GAME_OK                      | Сохранить
+
+// Intro UI
+INTRO_BEGIN                       | Начать
+
+// MAIN UI - Bottom Navigation options
+MAIN_NAVIGATION_GAME              | Меню
+MAIN_NAVIGATION_DESIGN            | Дизайны
+MAIN_NAVIGATION_FLEETS            | Флоты
+MAIN_NAVIGATION_SYSTEMS           | Системы
+MAIN_NAVIGATION_RACES             | Империи
+MAIN_NAVIGATION_COLONIES          | Колонии
+MAIN_NAVIGATION_TECH              | Технологии
+MAIN_NAVIGATION_NEXT_TURN         | Следующий Ход
+MAIN_NAVIGATION_NEXT_YEAR         | Следующий Год
+MAIN_YEAR_DISPLAY                 | Год  %1
+MAIN_TURN_DISPLAY                 | Ход  %1
+MAIN_SPY_REPORT                   | СИБ
+MAIN_TECH_NONE                    | Нет Цели
+MAIN_TECH_COMPLETED               | Исследования Завершены
+MAIN_TECH_RP_REMAINING            | Осталось %1 ЕИ
+MAIN_TECH_RP_DISCOVERY            | Прорыв Близок
+MAIN_TECH_RESERVE_BC              | %1 МК
+MAIN_TECH_RESERVE_TAX_ALL         | %1% производства облагается налогом во всех колониях
+MAIN_TECH_RESERVE_TAX             | %1% производства облагается налогом в развитых колониях
+MAIN_TECH_RESERVE_TAX_NONE        | Производство колоний не облагается налогом
+MAIN_HELP_ALL                     | Помощь - щёлкните, чтобы просмотреть информацию об определенном экране. Нажмите Escape, чтобы отменить.
+MAIN_HELP_1A                      | Каждая звездная система делит МК (Миллионы Кредитов), которые она производит на пять областей. Эти области показаны Вам в виде горизонтальных столбиков. Серые столбики указывают на то, что расходы на область производства заблокированы и не изменятся. Нажмите на название области, чтобы заблокировать / разблокировать её.
+MAIN_HELP_1B                      | Кораблестроение - строит выбранный дизайн корабля. Чтобы построить более большие корабли, может понадобиться несколько ходов.
+MAIN_HELP_1C                      | Оборона - строит и модернизирует ракетные базы до указанного лимита, а также устанавливает планетарные щиты, если это возможно.
+MAIN_HELP_1D                      | Производство - строит заводы, которые увеличивают производственную мощность колонии.
+MAIN_HELP_1E                      | Экология  - ликвидирует промышленные отходы, терраформирует планету и повышает прирост населения, если это возможно.
+MAIN_HELP_1F                      | Исследования - производит ЕИ (Единицы Исследования), которые позволяют исследовать новые технологии.
+MAIN_HELP_1G                      | Столбики показывают, как распределено производство планеты. Расходы на каждую область можно регулировать с помощью колёсика мыши, щёлкнув внутри столбика или щёлкнув на стрелки влево / вправо каждой области.
+MAIN_HELP_1H                      | Ожидаемый результат расходов на область отображается справа от неё. Избыточные траты будут отправлены в казну империи.
+MAIN_HELP_2A                      | Уровень планетарного щита колонии. Они не могут быть установлены на планетах внутри туманностей.
+MAIN_HELP_2B                      | Количество ракетных баз и максимальное желаемое их кол-во на этой планете. Нажмите на стрелки или воспользуйтесь колёсиком мыши, чтобы изменить желаемое кол-во.
+MAIN_HELP_2C                      | Общее кол-во МК, произведенных каждый год промышленностью и населением.
+MAIN_HELP_2D                      | Настоящее производство, скорректированное с учетом торговых договоров, расходов на шпионаж и контршпионаж, а также содержания ракетных баз и кораблей.
+MAIN_HELP_2E                      | Выберите дизайн корабля, чтобы построить его на орбитальной верфи планеты. МК, потраченные на корабль, строительство которого было отменено ускорят производство новых кораблей на 50%, пока МК не будут израсходованы. Щёлкните мышью или воспользуйтесь колёсиком мыши, чтобы изменить дизайн корабля.
+MAIN_HELP_2F                      | Отметьте точку сбора на другой Вашей колонии, чтобы автоматически посылать туда все в будущем построенные корабли в этой системе.
+MAIN_HELP_2G                      | Транспортируйте колонистов для укрепления другой колонии или отправляйте войска для вторжения на вражеские планеты. Колония несет единовременные затраты на строительство и запуск транспортов.
+MAIN_HELP_2H                      | Полная эвакуация планеты. Запускает всё население колонии в транспортах на другую колонию.
+MAIN_HELP_2I                      | Текущее и максимальное население планеты. 100 представляет собой полностью заполненную родную планету, которая не была терраформирована.
+MAIN_HELP_2J                      | Текущее и максимально возможное кол-во заводов. Кол-во вычисляется с помощью населения планеты и технологий "Улучшенное Управление Роботами".
+MAIN_HELP_2K                      | Отметьте эту планету флагом, чтобы помочь ей выделиться на галактической карте.
+MAIN_HELP_2L                      | Кол-во производства в имперской казне.
+MAIN_HELP_2M                      | Статус научного прогресса в каждой из 6 технологических категорий.
+MAIN_HELP_3A                      | Меню - возвращает Вас в начальное меню. Позволяет изменять настройки или сохранять, загружать и запускать игры.
+MAIN_HELP_3B                      | Системы - галактическая карта, показывающая состояние систем в галактике по различным параметрам.
+MAIN_HELP_3C                      | Флоты - позволяет осуществлять крупномасштабный контроль над Вашими флотами и кораблестроением внутри Вашей империи.
+MAIN_HELP_3D                      | Дизайны - создавайте дизайны кораблей для Ваших флотов, используя новейшие технологии. Нежелаемые дизайны могут быть утилизированы.
+MAIN_HELP_3E                      | Империи - возможность взаимодействовать с любыми известными Вам инопланетными расами, и подробная информация о них.
+MAIN_HELP_3F                      | Колонии - подробный и сортируемый список Ваших колоний. Также имеет информацию о доходах и расходах империи.
+MAIN_HELP_3G                      | Технологии - показывает доступные технологии. Позволяет фокусироваться на одной или сбалансировано исследовать до шести технологий.
+MAIN_HELP_3H                      | Следующий Год - продвигает игру на один год.
+MAIN_HELP_3I                      | Текущий ход - отображает текущий ход игры или текущий год для Вашей империи. Щёлкните для переключения.
+MAIN_HELP_3J                      | Управление Картой - щёлкните для изменения различных настроек, меняющих отображение карты галактики.
+
+MAIN_SYSTEM_DETAIL_PFB            | Нас %1    Зав %2    База %3
+MAIN_SYSTEM_DETAIL_PF             | Нас %1    Зав %2 
+MAIN_SYSTEM_DETAIL_NO_DATA        | Нет Данных
+MAIN_UNEXPLORED_SYSTEM            | Неиссл.
+MAIN_ALLIED_COLONY                | Колония Союзников
+MAIN_SYSTEM_RANGE                 | %1 световых лет
+MAIN_OUT_OF_RANGE_DESC            | Вне Диапазона Действия
+MAIN_SCOUT_RANGE_DESC             | Необходимо Резерв. Топл.
+MAIN_IN_RANGE_DESC                | Внутри Диапазона Действия
+MAIN_NO_PLANETS                   | Астероиды
+MAIN_NO_COLONIES                  | Неколонизированная
+MAIN_UNSCOUTED                    | Неразвед.
+MAIN_ABANDONED                    | Эвакуированная
+MAIN_ALIEN_COLONY                 | %1 Colony
+MAIN_UNKNOWN_COLONY               | Колония (???)
+MAIN_NEBULA_DESC                  | Скорость межзвездных полетов в туманностях ограничена до Варпа 1
+MAIN_PLANET_SIZE                  | Размер %1
+MAIN_PLANET_SIZE+                 | Размер %1+
+MAIN_PLANET_POP                   | Нас. %1
+MAIN_PLANET_POP_SIZE              | Нас. %1/%2
+MAIN_PLANET_REBELLION             | Восстание
+MAIN_PLANET_QUARANTINE            | В Карантине
+MAIN_PLANET_EVENT_COMET           | Комета
+MAIN_PLANET_EVENT_PIRACY          | Логово Пиратов
+MAIN_PLANET_EVENT_PLAGUE          | Чума
+MAIN_PLANET_EVENT_SUPERNOVA       | Сверхновая
+MAIN_PLANET_EVENT_AMOEBA          | Космическая Амёба
+MAIN_PLANET_EVENT_CRYSTAL         | Космический Кристал
+MAIN_ADVANCING_YEAR               | Продвижение к Году %1...
+MAIN_ADVANCING_TURN               | Продвижение к Ходу  %1...
+TURN_SAVING                       | Игра Сохраняется
+TURN_LAUNCHING_FLEETS             | Флоты Запускаются
+TURN_SHIP_COMBAT                  | Космические Битвы
+TURN_BOMBARDMENT                  | Бомбардировка Планет
+TURN_TRANSPORTS                   | Транспорты
+TURN_COLONIES                     | Колонизация
+TURN_SPIES                        | Шпионаж
+TURN_REBELLION                    | Восстания
+TURN_COUNCIL                      | Статус Совета
+TURN_RESEARCH                     | Технологический Прогресс
+TURN_ASSESS                       | Завершение Внутренних
+TURN_DIPLOMACY                    | Дипломатия
+TURN_ACQUIRE_TECHS                | Анализ Полученных Технологий
+TURN_MAKE_DECISIONS               | Принятие Решений
+TURN_RECALC_DISTANCES             | Пересчет Расстояний Систем
+TURN_REFRESHING                   | Обновление Экранов
+TURN_SCRAP_SHIPS                  | Утилизация Кораблей
+TURN_FLEET_PLANS                  | Планирование Флотов
+TURN_DEPLOY_FLEETS                | Запуск Кораблей
+TURN_DEPLOY_FLEET_X               | Запуск Кораблей (%1/%2)
+TURN_RETREAT_FLEETS               | Отступление Флотов
+TURN_DESIGN_SHIPS                 | Дизайн Кораблей
+TURN_COLONY_SPENDING              | Колониальные Аллокации
+
+// Fleet labels
+MAIN_FLEET_TITLE                  | Флот [fleet_race_plural_rod]
+MAIN_FLEET_TITLE_UNKNOWN          | Флот ???
+MAIN_FLEET_IN_ORBIT               | На Орбите
+MAIN_FLEET_DEPLOYED               | Послан
+MAIN_FLEET_IN_TRANSIT             | В пути
+MAIN_FLEET_RETREATING             | Отступает
+MAIN_FLEET_LOCATION               | в системе %1
+MAIN_FLEET_ORIGIN                 | от системы %1
+MAIN_FLEET_DESTINATION            | до системы %1
+MAIN_FLEET_DEST_UNSCOUTED         | до (Неиссл.)
+MAIN_FLEET_ALLY                   | Союзный
+MAIN_FLEET_ENEMY                  | Вражеский
+MAIN_FLEET_DEPLOYMENT             | Отправление Флотов
+MAIN_FLEET_DISPLAY                | Отображение Флотов
+MAIN_FLEET_CHOOSE_DEST            | Выберите назначение и количество кораблей, которых отправить.
+MAIN_FLEET_OUT_OF_RANGE_DESC      | Назначение находится вне дальности действия флота, %1 св. лет от ближайшей колонии.
+MAIN_FLEET_INVALID_RETREAT        | Отступающие флоты могут быть отправлены только к дружественным колониям
+MAIN_FLEET_ETA_UNNAMED            | До назначения: %1 Лет 
+MAIN_FLEET_ETA_NAMED              | До системы %1: %2 Лет
+MAIN_FLEET_SET_RALLY              | Собирается
+MAIN_FLEET_AUTO_RETREAT           | Автоматически отступить
+MAIN_FLEET_ETA_UNKNOWN            | Сканнеры не могут определить назначение
+MAIN_FLEET_THROUGH_NEBULA         | Туманность ограничивает макс. скорость до Варпа 1
+
+MAIN_FLEET_CANCEL                 | Отменить
+MAIN_FLEET_OUT_OF_RANGE           | Вне Диапазона Действия
+MAIN_FLEET_DEPLOY_FLEET           | Отправить Флот
+MAIN_FLEET_UNDEPLOY_FLEET         | Отменить Приказ
+MAIN_FLEET_INVALID_RETREAT        | Невозможное Отступление
+MAIN_FLEET_INVALID_DESTINATION    | Невозможно отправить флот в систему %1
+MAIN_FLEET_INVALID_DESTINATION2   | Невозможно отправить флот в эту систему
+
+// Rally Point labels
+MAIN_RALLY_TITLE                  | Установка Точки Сбора
+MAIN_RALLY_PROMPT                 | Выберите систему (принадлежащую Вам), куда будут отправлять построенные корабли.
+MAIN_RALLY_FORWARD                | Перенаправлять собирающиеся здесь корабли
+MAIN_RALLY_TRAVEL_TIME            | До системы %1: %2 Года
+MAIN_RALLY_INSTANT_TIME           | До системы %1: 1 Год
+MAIN_RALLY_WILL_CANCEL            | Если Вы выберете это назначение, существующие точки сбора будут удалены.
+MAIN_RALLY_ERROR                  | Вы должны выбрать систему принадлежащую Вам.
+MAIN_RALLY_NO_SELECTION           | Нет Выбора
+MAIN_RALLY_CANCEL                 | Отменить
+MAIN_RALLY_START                  | Начать Сбор
+MAIN_RALLY_STOP                   | Остановить Сбор
+
+// Transport labels
+MAIN_TRANSPORTS_EMPIRE            | Транспорты [empire_race_plural_rod]
+MAIN_TRANSPORTS_COUNT             | %1 Транспортов
+MAIN_TRANSPORTS_CANCEL            | Отменить
+MAIN_TRANSPORTS_SHOW_DEST         | До системы %1: %2 лет
+MAIN_TRANSPORT_TITLE              | Транспорты Посылаются
+MAIN_TRANSPORT_ABANDON_TITLE      | Система Эвакуируется
+MAIN_TRANSPORT_PROMPT             | Выберите колонию, куда запустить транспорты с солдатами или мирным населением.
+MAIN_TRANSPORT_ABANDON_PROMPT     | Выберите колонию, куда эвакуировать всё мирное население.
+MAIN_TRANSPORT_SELECT_POP         | Сколько мирного населения послать (до половины населения планеты %1).
+MAIN_TRANSPORT_SELECT_TROOPS      | Сколько военных единиц послать (до половины населения планеты %1).
+MAIN_TRANSPORT_POP_LABEL          | Население
+MAIN_TRANSPORT_TOTAL_POP_LABEL    | Население Системы: %1
+MAIN_TRANSPORT_ETA                | До системы %1: %2 лет
+MAIN_TRANSPORT_ERROR              | Вы должны выбрать колонизированную систему.
+MAIN_TRANSPORT_ABANDON_ERROR      | Вы должны выбрать систему, принадлежащую нам.
+MAIN_TRANSPORT_OUT_OF_RANGE       | Эта система вне диапазона действия наших военных транспортов.
+MAIN_TRANSPORT_UNSCOUTED          | Мы не можем посылать транспорты в неразведанные системы.
+MAIN_TRANSPORT_HOSTILE            | Отсутствует технология, необходимая для выживания солдат в этой среде.
+MAIN_TRANSPORT_NO_ROOM            | Внимание - Планета достигла максимального населения!
+MAIN_TRANSPORT_SIZE_WARNING       | Внимание - Планета может поддержать только дополнительные %1 миллионов!
+MAIN_TRANSPORT_NO_SELECTION       | Нет Выбора
+MAIN_TRANSPORT_CANCEL             | Отменить
+MAIN_TRANSPORT_SEND               | Запустить
+MAIN_TRANSPORT_ABANDON            | Эвакуировать
+MAIN_TRANSPORT_CLEAR              | Отменить Запуск
+MAIN_TRANSPORT_SURRENDER          | Автоматически сдаться при прибытии
+
+// Colony labels
+MAIN_COLONY_HOMEWORLD             | %1 Homeworld
+MAIN_COLONY_FOUNDED               | %1 Colony
+MAIN_COLONY_POPULATION            | Население
+MAIN_COLONY_FACTORIES             | Заводы
+MAIN_COLONY_VALUE+                | %1+
+MAIN_COLONY_SHIELD                | Уровень Щита
+MAIN_COLONY_BASES                 | Базы
+MAIN_COLONY_PRODUCTION            | МК/Год - Нетто (Брутто)
+MAIN_COLONY_SHIP                  | Кораб.
+MAIN_COLONY_DEFENSE               | Обор.
+MAIN_COLONY_INDUSTRY              | Пр-во.
+MAIN_COLONY_ECOLOGY               | Экол.
+MAIN_COLONY_TECHNOLOGY            | Иссл.
+MAIN_COLONY_ALLOCATE_SPENDING     | Распределение МК
+MAIN_COLONY_SPENDING_NONE         | Нет
+MAIN_COLONY_SPENDING_RESERVE      | Резерв
+MAIN_COLONY_SPENDING_TECH         | Техн.
+MAIN_COLONY_SPENDING_CONVERT      | Интегр.
+MAIN_COLONY_SPENDING_REFIT        | Переобор.
+MAIN_COLONY_SPENDING_MAX_FACT     | Макс.
+MAIN_COLONY_SPENDING_WASTE        | Отходы
+MAIN_COLONY_SPENDING_ECO_GROWTH   | Прирост %1
+MAIN_COLONY_SPENDING_ATMOSPHERE   | Атмо.
+MAIN_COLONY_SPENDING_ENRICH_SOIL  | Почва
+MAIN_COLONY_SPENDING_TERRAFORM    | Т-форм.
+MAIN_COLONY_SPENDING_CLEANUP      | Чисто
+MAIN_COLONY_SPENDING_GROWTH       | Рост
+MAIN_COLONY_SPENDING_SHIELD       | Щит
+MAIN_COLONY_SPENDING_UPG_BASES    | Модерн.
+MAIN_COLONY_SPENDING_PLAGUE       | Чума
+MAIN_COLONY_SPENDING_SUPERNOVA    | Сверхновая
+MAIN_COLONY_SPENDING_RP           | %1 ЕИ
+MAIN_COLONY_COMPLETION_YEAR       | 1 Год
+MAIN_COLONY_COMPLETION_YEARS      | %1 Лет
+MAIN_COLONY_COMPLETION_CENTURY    | %1 Лет
+MAIN_COLONY_COMPLETION_PER_YEAR   | %1/Год
+MAIN_COLONY_SHIPYARD_COMPLETED    | Построено: %1
+MAIN_COLONY_SHIPYARD_LIMIT        | Лимит:
+MAIN_COLONY_SHIPYARD_LIMIT_NONE   | Нет
+MAIN_COLONY_SHIPYARD_CONSTRUCTION | Кораблестроение
+MAIN_COLONY_RELOCATE_LABEL        | Отметить Точку Сбора
+MAIN_COLONY_TRANSPORTS_LABEL      | Запуск Транспортов
+MAIN_COLONY_ABANDON_LABEL         | Эвакуация
+MAIN_COLONY_SHIP_SCRAPPED         | Утилизирован
+MAIN_COLONY_NO_SHIELD             | Туманность
+
+// System Scouted Notification
+MAIN_SCOUT_TITLE                  | Ученые Вносят в Каталог Новую Зв. Систему
+MAIN_SCOUT_SUBTITLE_1             | Наши корабли разведывали эту систему
+MAIN_SCOUT_SUBTITLE_2             | Наши астрономы собрали эти данные
+MAIN_SCOUT_SUBTITLE_3             | Наши союзники поделились этими данными
+MAIN_SCOUT_TYPE                   | Среда: %1      Размер: %2
+MAIN_SCOUT_NO_PLANET              | Планеты не были найдены
+MAIN_SCOUT_HOSTILE_DESC           | Планета: Враждебная Жизни - Прирост населения на 50% меньше обычного. 
+MAIN_SCOUT_FERTILE_DESC           | Планета: Плодородная - Прирост населения на 50% больше обычного.
+MAIN_SCOUT_GAIA_DESC              | Планета: Райская - Прирост населения на 100% больше обычного.
+MAIN_SCOUT_ARTIFACTS_DESC         | Древние Руины: ЕИ в 2 раза больше.
+MAIN_SCOUT_ANCIENTS_DESC          | Родной Мир Предшественников: ЕИ в 4 раза больше.
+MAIN_SCOUT_ULTRA_POOR_DESC        | Ресурсов: Оч. Мало - МК в промышленности в 3 раза меньше.
+MAIN_SCOUT_POOR_DESC              | Ресурсов: Мало - МК в промышленности в 2 раза меньше.
+MAIN_SCOUT_RICH_DESC              | Ресурсов: Много - МК в промышленности в 2 раза больше.
+MAIN_SCOUT_ULTRA_RICH_DESC        | Ресурсов: Оч. Много - МК в промышленности в 3 раза больше.
+
+// Colonization prompt
+MAIN_COLONIZE_TITLE               | Наши колонисты на орбите вокруг планеты %1.
+MAIN_COLONIZE_PROMPT              | Основать новую колонию?
+MAIN_COLONIZE_YES                 | Да
+MAIN_COLONIZE_NO                  | Нет
+MAIN_COLONIZE_ANIMATION_TITLE     | В году %1 колонисты [player_empire_rodit] основали новую колонию.
+MAIN_COLONIZE_NAME_PROMPT         | Название Колонии
+MAIN_COLONIZE_NAME_OK             | ОК
+
+// Reasons to ask player to reallocate a system (during next turn)
+MAIN_ALLOCATE_TITLE               | Изменение Расходов
+MAIN_ALLOCATE_DESIGN_SCRAPPED     | Тип корабля, который строили в системе %1 был утилизирован.
+MAIN_ALLOCATE_COLONIZED           | • Планета %1 была колонизирована.
+MAIN_ALLOCATE_STARGATE_COMPLETE   | • В системе %1 закончено строительство Звездных Врат.
+MAIN_ALLOCATE_SHIPS_COMPLETE      | • Орбитальная верфь планеты %1 закончила строительство заданного количества кораблей класса %2.
+MAIN_ALLOCATE_SHIELD_COMPLETE     | • На планете %1 закончено строительство %2.
+MAIN_ALLOCATE_BASES_COMPLETE      | • На планете %1 закончено строительство %2 ракетных баз.
+MAIN_ALLOCATE_BASES_UPGRADED      | • На планете %1 закончена модернизация ракетных баз.
+MAIN_ALLOCATE_MAX_FACTORIES       | • Планета %1 достигла промышленного максимума - %2 заводов. 
+MAIN_ALLOCATE_MAX_POPULATION      | • Планета %1 достигла максимального населения - %2 колонистов.
+MAIN_ALLOCATE_TERRAFORM_COMPLETE  | • На планете %1 было завершено терраформирование окружающей среды.
+MAIN_ALLOCATE_ATMOSPHERE_COMPLETE | • Планета %1 была преобразована в стандартную среду со стандартным приростом населения.
+MAIN_ALLOCATE_FERTILE_COMPLETE    | • Планета %1 была преобразована в плодородную среду с приростом населения на 50% больше обычного.
+MAIN_ALLOCATE_GAIA_COMPLETE       | • Планета %1 была преобразована в райский мир с приростом населения на 100% больше обычного.
+MAIN_ALLOCATE_SABOTAGE_BASES      | • На планете %1, диверсанты [spy_race_plural_rod] разрушили %2 ракетных баз.
+MAIN_ALLOCATE_SABOTAGE_FACTORIES  | • На планете %1, диверсанты [spy_race_plural_rod] разрушили %2 заводов.
+MAIN_ALLOCATE_COLONY_CAPTURED     | • Планета %1 была захвачена солдатами [spy_race_plural_rod].
+MAIN_ALLOCATE_ECO_LOCKED_WASTE    | • На планете %1, расходы на экологию заблокированы на уровне, недостаточном для ликвидации всех промышленных отходов.
+MAIN_ALLOCATE_PROJECT_ENDED       | • Планета %1 больше не тратит ЕИ на специальный проект: %2
+MAIN_ALLOCATE_CHANGE_SPENDING     | В данный момент можно изменить расходы в этой системе.
+MAIN_ALLOCATE_NOTICE_NUMBER       | Увеломление %1 из %2
+MAIN_ALLOCATE_BRIEF_NUMBER        | %1 из %2
+MAIN_ALLOCATE_PREV_SYSTEM         | Назад
+MAIN_ALLOCATE_NEXT_SYSTEM         | Дальше
+MAIN_ALLOCATE_CLOSE               | Закончить
+
+// Fleet Production display (during next turn)
+MAIN_FLEET_PRODUCTION_TITLE       | Построенные Корабли
+MAIN_FLEET_SHIP_COUNT             | %1/%2
+
+// 32-bit Java Warning
+MAIN_JAVA_32BIT_TITLE             | Внимание! Используется 32-битная Java
+MAIN_JAVA_32BIT_DESC              | Вы играете в эту игру, пользуя 32-битную версию Java. Это может намного уменьшить доступную память и негативно повлиять на скорость игры.
+MAIN_JAVA_32BIT_DESC_2            | Хотя Remnants of the Precursors будет функционировать в 32-битной Java, рекомендуется установление 64-битной.
+MAIN_JAVA_32BIT_DESC_3            | 
+MAIN_JAVA_32BIT_OK                | ОК
+
+// Memory Low Warning
+MAIN_MEMORY_LOW_TITLE             | Внимание! Низкая доступная память
+MAIN_MEMORY_LOW_DESC              | Память, доступная игре стала низкой. Это может произойти, если игра была открыта долгое время, или из-за того, что игра не запустилась с необходимым количеством памяти.
+MAIN_MEMORY_LOW_DESC_2            | Нажмите кнопку "Рестартовать", чтобы рестартовать игру и продолжить с этой же точки. Если Вы будете продолжать играть без рестарта, то возможно встретите непредсказуемые проблемы, включая потерю данных.
+MAIN_MEMORY_LOW_DESC_3            | Если Вы видели это сообщение несколько раз, попробуйте закрыть другие аппликации на своем компьютере перед тем, как сделать рестарт.
+MAIN_MEMORY_LOW_RESTART           | Рестартовать
+MAIN_MEMORY_LOW_SKIP              | Пропустить
+
+// Autosave Failed Warning
+MAIN_AUTOSAVE_FAILED_TITLE        | Внимание! Автосохранение не сработало
+MAIN_AUTOSAVE_FAILED_DESC         | Автоматическое сохранение, которое происходит каждый раз при нажатии кнопки "Следующий Ход", не сработало.
+MAIN_AUTOSAVE_FAILED_DESC_2       | Сообщение, данное игре для этой ошибки: %1
+MAIN_AUTOSAVE_FAILED_DESC_3       | 
+MAIN_AUTOSAVE_FAILED_OK           | ОК
+
+// Alerts
+MAIN_ALERT_TITLE                  | Предупреждение 
+MAIN_ALERT_TITLE_COUNT            | Предупреждение - %1 из %2
+MAIN_ALERT_SPY_REPORT             | Служба Имперской Безопасности создала новый отчет.
+MAIN_ALERT_TECH_STOLEN            | Служба Имперской Безопасности сообщает, что шпионам [alien_race_plural_rod] приказано красть наши технологии.
+MAIN_ALERT_FACTORIES_DESTROYED    | Диверсанты [alien_empire_rodit] уничтожили %1 заводов на планете %2.
+MAIN_ALERT_BASES_DESTROYED        | Диверсанты [alien_empire_rodit] уничтожили %1 оборонительных ракетных баз на планете %2.
+MAIN_ALERT_FACTORIES_DESTROYED2   | Диверсанты неизвестной империи уничтожили %1 заводов на планете %2.
+MAIN_ALERT_BASES_DESTROYED2       | Диверсанты неизвестной империи уничтожили %1 оборонительных ракетных баз на планете %2.
+MAIN_ALERT_TRANSPORTS_PERISHED    | Колония в системе %1 была уничтожена. Наши солдаты, пытавшиеся приземлиться, погибли.
+MAIN_ALERT_TRANSPORTS_CAPTURED    | Солдаты в наших %2 транспортах, достигнувшие систему %1 сдались [alien_race_plural_dativs].
+MAIN_ALERT_TRANSPORTS_KILLED      | Наши %2 транспортов, пытающиеся достигнуть планету %1 были уничтожены [alien_race_race_plural_tvor].
+MAIN_ALERT_INVADERS_CAPTURED      | Солдаты в %2 транспортах [alien_race_plural_rod], достигнувшие систему %1, сдались нашим вооруженным силам.
+MAIN_ALERT_INVADERS_KILLED        | %2 транспортов [alien_race_plural_rod], пытающиеся захватить планету %1, были полностью уничтожены нашими вооруженными силами.
+MAIN_ALERT_TRESPASSING1           | Корабли [alien_race_plural_rod] были замечены при нарушении границ рядом с нашей колонией в системе %1.
+MAIN_ALERT_TRESPASSING2           | Посол [alien_race_plural_rod] недоволен тем, что наши корабли нарушают границы в системе %1.
+MAIN_ALERT_TRADE_MATURED          | Посол [alien_empire_rodit] сообщает, что наш торговый договор с ними достиг своего максимального дохода - %2 МК.
+MAIN_ALERT_ALLIANCE_WEAKENING     | Наш союз с [ally_empire_tvor] слабеет.
+MAIN_ALERT_ALLIANCE_BREAKING      | Наш союз с [ally_empire_tvor] находится на грани краха!
+
+// Colony Listing UI
+PLANETS_TITLE                     | Колонии
+PLANETS_VIEW_ECOLOGY              | Экология
+PLANETS_VIEW_INDUSTRY             | Промышленность
+PLANETS_VIEW_MILITARY             | Военное Дело
+PLANETS_SPENDING_COSTS            | Расходы Империи
+PLANETS_COSTS_DESC                | Каждая колония платит проценты из всех МК, которые она производит, чтобы поддерживать расходы Империи.
+PLANETS_COSTS_SHIPS               | Обсл. Кораблей
+PLANETS_COSTS_BASES               | Ракетные Базы
+PLANETS_COSTS_STARGATES           | Звездные Врата
+PLANETS_COSTS_SPYING              | Шпионаж
+PLANETS_COSTS_SECURITY            | Контршпионаж
+PLANETS_TOTAL_INCOME              | Годовой Доход
+PLANETS_INCOME_TRADE              | Доход от Торговли
+PLANETS_INCOME_PLANETS            | Произв. Колоний
+PLANETS_INCOME_TOTAL              | Итого
+PLANETS_TREASURY                  | Имперская Казна
+PLANETS_TREASURY_FUNDS            | Казначейские Средства
+PLANETS_TAX_DESC                  | Облагайте колонии налогами, чтобы увеличить поступления в казну.
+PLANETS_RESERVE_TAX               | Налог
+PLANETS_RESERVE_INCREASE          | +%1 МК/Год
+PLANETS_RESERVE_NO_TAX            | Нет Налога
+PLANETS_RESERVE_ONLY_DEVELOPED    | Налоги платят только полностью развитые колонии
+PLANETS_BUTTON_TRANSFER           | ПЕРЕДАТЬ
+PLANETS_BUTTON_EXIT               | ВЫЙТИ
+PLANETS_AMT_PCT                   | %1%
+PLANETS_AMT_BC                    | %1 МК
+PLANETS_TRANSFER_DESC             | Передать Казначейские Средства планете %1
+PLANETS_TRANSFER_CANCEL           | Отменить
+PLANETS_TRANSFER_ACCEPT           | Передать
+PLANETS_COLONY_TRANSFER_TITLE     | Передать Средства
+PLANETS_COLONY_TRANSFER_DETAIL    | Передайте фонды из имперской казны, чтобы увеличить производимые МК этой колонии.
+PLANETS_COLONY_TRANSFER_BUTTON    | Передать Средства из Казны
+PLANETS_LIST_NUM                  | 
+PLANETS_LIST_NAME                 | Название
+PLANETS_LIST_POPULATION           | Население
+PLANETS_LIST_POP                  | Нас.
+PLANETS_LIST_SIZE                 | Размер
+PLANETS_LIST_TYPE                 | Среда
+PLANETS_LIST_FACTORIES            | Заводы
+PLANETS_LIST_WASTE                | Отходы
+PLANETS_LIST_BASES                | Базы
+PLANETS_LIST_SHIELD               | Щит
+PLANETS_LIST_PRODUCTION           | Произ.
+PLANETS_LIST_CAPACITY             | Промыш.
+PLANETS_LIST_RESERVE              | Резерв
+PLANETS_LIST_SHIPYARD             | Верфь
+PLANETS_LIST_NOTES                | Заметки
+PLANETS_LIST_TURNS                | Ходов
+PLANETS_LIST_YEARS                | Лет
+PLANETS_LIST_TRANSPORTS           | Транспорты
+PLANETS_LIST_RESOURCES            | Ресурсы
+PLANETS_MULTI_SYSTEMS             | %1 Систем(-ы)
+PLANETS_AGGREGATE_VALUES          | Общие Данные
+PLANETS_SPENDING_0                | 0% МК на %1
+PLANETS_SPENDING_25               | 25% МК на %1
+PLANETS_SPENDING_50               | 50% МК на %1
+PLANETS_SPENDING_75               | 75% МК на %1
+PLANETS_SPENDING_MAX              | Максимальное кол-во МК на %1
+PLANETS_HELP_ALL                  | ОБЗОР - на этом экране отображаются экономические данные о Вашей империи вместе со списком Ваших колоний, отсортированных по различным параметрам.
+PLANETS_HELP_1A                   | Экология - нажмите на эту вкладку, чтобы просмотреть экологические данные о колониях.
+PLANETS_HELP_1B                   | Промышленность - нажмите на эту вкладку, чтобы просмотреть промышленные данные о колониях.
+PLANETS_HELP_1C                   | Военное Дело - нажмите на эту вкладку, чтобы просмотреть военные данные о колониях.
+PLANETS_HELP_1D                   | МК можно распределять, как на главном экране.
+PLANETS_HELP_1E                   | Увеличьте производство колонии на дополнительные 50%, переводя МК из казны империи.
+PLANETS_HELP_1F                   | Общий доход Вашей империи.
+PLANETS_HELP_1G                   | Общие расходы Вашей империи, выраженные в процентах от дохода.
+PLANETS_HELP_1H                   | Облагайте свои колонии налогом, чтобы пополнять казну империи. При желании, Вы можете ограничить этот налог, применяя его только к колониям, достигнувшим максимального количества населения, заводов и ракетных баз.
+PLANETS_HELP_2A                   | Название - название Вашей системы. Можно редактировать.
+PLANETS_HELP_2B                   | Население - текущее население, включая изменения по сравнению с предыдущим ходом.
+PLANETS_HELP_2C                   | Тип - ландшафтный тип планеты. Зеленый для Плодородных и Райских планет.
+PLANETS_HELP_2D                   | Ресурсы - планеты с Артефактами, и Богатые/Бедные ресурсами.
+PLANETS_HELP_2E                   | Размер - текущий размер планеты.
+PLANETS_HELP_2F                   | Отходы - уровень промышленных отходов на планете.
+PLANETS_HELP_2G                   | Примечания - Ваши примечания о системе. Можно редактировать.
+PLANETS_HELP_3A                   | Название - название Вашей системы. Можно редактировать.
+PLANETS_HELP_3B                   | Население - текущее население, включая изменения по сравнению с предыдущим ходом.
+PLANETS_HELP_3C                   | Ресурсы - для планет, Богатых и Бедных ресурсами, а так же планет с Артефактами.
+PLANETS_HELP_3D                   | Заводы - количество заводов, включая изменения по сравнению с предыдущим ходом.
+PLANETS_HELP_3E                   | Производство - общее кол-во произведенных МК за год в колонии.
+PLANETS_HELP_3F                   | Резерв - общий резерв, хранящийся в настоящее время в колонии.
+PLANETS_HELP_3G                   | Примечания - Ваши примечания о системе. Можно редактировать.
+PLANETS_HELP_3H                   | Промышленность - % от максимально возможного производства колонии.
+PLANETS_HELP_4A                   | Название - название Вашей системы. Можно редактировать.
+PLANETS_HELP_4B                   | Население - текущее население, включая изменения по сравнению с предыдущим ходом.
+PLANETS_HELP_4C                   | Ресурсы - для планет, Богатых и Бедных ресурсами, а так же планет с Артефактами.
+PLANETS_HELP_4D                   | Производство - общее кол-во произведенных МК за год в колонии.
+PLANETS_HELP_4E                   | Щит - уровень планетарного щита.
+PLANETS_HELP_4F                   | Базы - кол-во ракетных баз на планете. Красное, если пользуют устаревшую технологию.
+PLANETS_HELP_4G                   | Верфь - строящееся корабли.
+PLANETS_HELP_4H                   | Примечания - Ваши примечания о системе. Можно редактировать.
+PLANETS_HELP_4I                   | Флаг - выбранный Вами флаг для системы.
+
+// Bombardment prompt
+MAIN_BOMBARDED_TITLE             | Планета %1 была бомбардирована кораблями [alien_race_plural_rod].
+MAIN_BOMBARD_TITLE               | Наши корабли находятся на орбите вражеской колонии [alien_race_plural_rod].
+MAIN_BOMBARD_TROOPS              | %1 транспортов находятся на орбите или в пути к этой колонии.
+MAIN_BOMBARD_PROMPT              | Бомбардировать Планету?
+MAIN_BOMBARD_YES                 | Да
+MAIN_BOMBARD_NO                  | Нет
+MAIN_BOMBARD_POPULATION          | Население: %1
+MAIN_BOMBARD_FACTORIES           | Заводы: %1
+MAIN_BOMBARD_BASES               | Базы: %1
+MAIN_BOMBARD_SHIELD              | Щит: %1
+MAIN_BOMBARD_COMPLETE            | Бомбардировка Завершена.
+MAIN_BOMBARD_DESTROYED           | Колония Уничтожена
+MAIN_BOMBARD_DMG                 | (%1)
+MAIN_BOMBARD_NAME_PROMPT         | Название Колонии
+
+
+// Fleet listing UI
+FLEETS_TITLE                      | Флоты
+FLEETS_SELECT_SYSTEMS             | Выбрать Системы
+FLEETS_SELECT_FLEETS              | Выбрать Флоты
+FLEETS_SELECT_ALL                 | Выбрать Всё
+FLEETS_DESELECT_ALL               | Отменить Выбор
+FLEETS_FILTER_BY                  | Отфильтровать по:
+FLEETS_CONSTRUCTING_DESIGN        | и строящая:
+FLEETS_INCLUDES_SHIP_TYPE         | Посылать корабли только типа:
+FLEETS_SELECTED_SHIPS             | Выбраны для запуска
+FLEETS_BUILDING_DESIGN            | %1
+FLEETS_HAS_STARGATE               | Система имеет Звездные Врата
+FLEETS_HAS_NO_STARGATE            | Система не имеет Звездные Врата
+FLEETS_HAS_RALLY_POINT            | Система имеет Точку Сбора
+FLEETS_HAS_NO_RALLY_POINT         | Система не имеет Точку Сбора
+FLEETS_SENDING_TRANSPORTS         | Система запускает транспорты
+FLEETS_NOT_SENDING_TRANSPORTS     | Система не запускает транспорты
+FLEETS_IS_RICH                    | Система Богатая или Оч. Богатая
+FLEETS_IS_ULTRA_RICH              | Система Оч. Богатая
+FLEETS_IS_POOR                    | Система Бедная или Оч. Бедная
+FLEETS_IS_ULTRA_POOR              | Система Оч. Бедная
+FLEETS_IS_STANDARD                | Система имеет стандартное кол-во ресурсов
+FLEETS_SYSTEMS_SELECTED           | %1  Систем Выбрано
+FLEETS_FLEETS_SELECTED            | %1  Флотов Выбрано
+FLEETS_MULTIPLE_DESIGNS           | Различные
+FLEETS_RELOCATE_LABEL             | Отметить Точку Сбора
+FLEETS_TRANSPORTS_LABEL           | Запуск Транспортов
+FLEETS_SPENDING_LABEL             | Изменить расходы
+FLEETS_HAS_ORDERS                 | Флот в пути
+FLEETS_HAS_NO_ORDERS              | Флот на орбите
+FLEETS_IS_RALLYING                | Флот собирается
+FLEETS_DESIGN_COUNT               | %1 кораблей класса %2
+FLEETS_DEPLOY_FLEETS              | Послать Флоты
+FLEETS_SET_RALLY_POINTS           | Отметить Точку Сбора
+FLEETS_STOP_RALLIES_DESC          | %1 из выбранных систем уже имеют Точки Сбора
+FLEETS_STOP_RALLIES               | Остановить Сбор
+FLEETS_SETTING_RALLY_POINTS       | Точки Сбора Активированы
+FLEETS_START_RALLIES_DESC         | Отметьте систему, куда будут направляться корабли, построенные в выбранных системах.
+FLEETS_START_RALLIES              | Начать Сбор
+FLEETS_SEND_TRANSPORTS            | Запустить Транспорты
+FLEETS_ADJUST_SPENDING_SELECT     | Выберите системы, где необходимо изменить расходы на кораблестроение
+FLEETS_ADJUST_SPENDING_DESC       | Выберите желаемый уровень расходов в %1 выбранных системах
+FLEETS_ADJUST_SPENDING_DESC2      | Расходы в остальных областях будут изменены автоматически.
+FLEETS_ADJUST_SPENDING_DESC3      | Расходы на экологию будут понижены до минимума, необходимого для ликвидации отходов.
+FLEETS_ADJUST_SPENDING            | Изменить расходы
+FLEETS_SPENDING_0                 | Никаких расходов
+FLEETS_SPENDING_25                | 25% МК
+FLEETS_SPENDING_50                | 50% МК
+FLEETS_SPENDING_75                | 75% МК
+FLEETS_SPENDING_MAX               | Максимальное кол-во МК
+FLEETS_SPENDING_CANCEL            | Отменить
+FLEETS_CANCEL_TRANSPORTS_DESC     | %1 из выбранных систем уже готовятся запускать транспорты
+FLEETS_CANCEL_TRANSPORTS          | Отменить Запуск
+FLEETS_DEPLOYING_TRANSPORTS_DESC  | Выберите колонию внутри дальности действия кораблей, куда посылать солдатов или мирное население.
+FLEETS_DEPLOY_TRANSPORTS          | Послать Транспорты
+FLEETS_FLEET_DEPLOYMENT           | Отправление Флотов
+FLEETS_UNDEPLOYING_FLEETS         | %1 из выбранных флотов уже отправлены.
+FLEETS_CANCEL_DEPLOYMENTS         | Отменить Приказ
+FLEETS_DEPLOYING_FLEETS           | Отправление Флотов
+FLEETS_DEPLOYING_FLEETS_DESC      | Выберите систему внутри дальности действия, куда отправить все выбранные флоты.
+FLEETS_DEPLOY_FLEETS              | Отправить Флоты
+FLEETS_TRANSPORTS_TITLE           | Послать Транспорты с:
+FLEETS_TRANSPORTS_SEND            | Послать %1 Транспортов
+FLEETS_TRANSPORTS_SYNCH           | Синхр.
+FLEETS_TRANSPORTS_UNSYNCH         | Несинхр.
+FLEETS_TRANSPORT_NO_ROOM          | Внимание - Планета достигла максимального населения!
+FLEETS_TRANSPORT_SIZE_WARNING     | Внимание - Планета может поддержать только дополнительные %1 миллионов!
+FLEETS_TRANSPORT_TIME             | Планир. прибытие: %1 лет
+FLEETS_TRANSPORT_TIME_RANGE       | Планир. прибытие: %1 до %2 лет
+FLEETS_CANNOT_SEND_TRANSPORTS     | Система %1 не может посылать транспорты
+FLEETS_EXISTING_TRANSPORT         | Запускаются %1 транспортов к системе %2
+FLEETS_EXISTING_STOP              | Отменить
+FLEETS_CANCEL                     | Отменить
+FLEETS_HELP_ALL                   | ОБЗОР - Этот экран позволяет легко управлять флотами, транспортами и кораблестроением во всей Вашей империи. Как правило, Вы будете выбирать группы систем или кораблей, пользовать фильтры для уменьшения количества выбранных объектов, решив в дальнейшем, что с ними делать.
+FLEETS_HELP_1A                    | Выбрать Системы - есть 3 способа выбрать системы: 1) нажать на системы на карте, 2) нажать правую кнопку мыши и провести ею по карте, and 3) пользовать кнопки "Выбрать Всё" и "Отменить Выбор".
+FLEETS_HELP_1B                    | Отфильтровать по - поставьте галочки, чтобы сузить список выбранных систем. Также можно нажимать на фильтры для смены параметров.
+FLEETS_HELP_1C                    | и строящая - фильтрование систем согласно строящимся кораблям.
+FLEETS_HELP_1D                    | Дизайн Корабля - возможность изменения строящегося класса корабля в выбранных системах. Пустое изображение означает, что выбранные системы в настоящее время строят различные классы кораблей. Внимание! У этого действия нет запроса на подтверждение.
+FLEETS_HELP_1E                    | Послать Транспорты - запуск транспортов из выбранных систем к одному пункту назначения.
+FLEETS_HELP_1F                    | Отметить Точку Сбора - отметка Точки Сбора. Выбранные системы будут посылать построенные корабли в указанную систему.
+FLEETS_HELP_2A                    | Выбрать Флоты - есть 3 способа выбрать флоты: 1) нажать на флоты на карте, 2) нажать правую кнопку мыши и провести ею по карте, and 3) пользовать кнопки "Выбрать Всё" и "Отменить Выбор".
+FLEETS_HELP_2B                    | Отфильтровать по - поставьте галочки, чтобы сузить список выбранных флотов. Также можно нажимать на фильтры, чтобы поменять их параметры.
+FLEETS_HELP_2C                    | Посылать корабли только типа - ограничить типы кораблей из вашего флота, которые Вы хотите отправить в другие системы.
+FLEETS_HELP_2D                    | Выбраны для запуска - количество кораблей по типу, которые будут запущены.
+FLEETS_HELP_2E                    | Послать Флоты - отправление выбранных флотов в одну систему-назначение.
+
+// Select Next Tech to Research UI
+TECH_RESEARCH_COMPUTER            | Выберите следующую технологию в области Компьютеров, на которой нашим ученым сфокусироваться.
+TECH_RESEARCH_CONSTRUCTION        | Выберите следующую технологию в области Строительства, на которой нашим ученым сфокусироваться.
+TECH_RESEARCH_FORCE_FIELD         | Выберите следующую технологию в области Силовых Полей, на которой нашим ученым сфокусироваться.
+TECH_RESEARCH_PLANETOLOGY         | Выберите следующую технологию в области Планетологии, на которой нашим ученым сфокусироваться.
+TECH_RESEARCH_PROPULSION          | Выберите следующую технологию в области Движения, на которой нашим ученым сфокусироваться.
+TECH_RESEARCH_WEAPON              | Выберите следующую технологию в области Оружий, на которой нашим ученым сфокусироваться.
+TECH_TOP_TIER_DETAIL              | Исследование этой технологии даст нам возможность исследовать более продвинутые технологии.
+TECH_OBSOLETE_DETAIL              | Эта технология устарела.
+TECH_CAN_CHANGE                   | Исследуемую технологию можно поменять в экране Технологий до начала следующего хода.
+TECH_CHOOSE_RESEARCH_COST         | %1 ЕИ
+TECH_CHOOSE_RESEARCH_TIER         | Уровень %1
+TECH_TRADE_TIER_COST_INFO         | (Уровень %1 - %2 ЕИ)
+TECH_CONFIRM_CHOICE               | Выбрать
+TECH_DISCOVERY_TITLE              | Наши Ученые Достигли Прорыва В Области "%1".
+TECH_SCOUTED_TITLE                | Изучая Руины Планеты %1, Разведчики Нашли
+TECH_STOLEN_TITLE                 | Наши шпионы инфильтрировались в лаборатории [race_plural_rod] на планете %2.
+TECH_TRADED_TITLE                 | Наши Ученые Получили Технологию от Ученых [alien_race_plural_rod]
+TECH_PLUNDERED_TITLE              | Среди Руин Планеты %1, Солдаты Нашли
+TECH_DERELICT_TITLE               | Исследователи Нашли Древнюю Технологию
+TECH_GUARDIAN_TITLE               | Солдаты Извлекли Древнее Оружие
+TECH_ALLOCATE_SHIELD              | Повысить расходы на оборону во всех колониях, чтобы установить новые планетарные щиты?
+TECH_ALLOCATE_MISSILE_BASES       | Повысить расходы на оборону во всех колониях, чтобы модернизировать ракетные базы?
+TECH_ALLOCATE_FACTORIES           | Повысить расходы на промышленность во всех колониях, чтобы переоборудовать заводы?
+TECH_ALLOCATE_CLEAN_WASTE         | Понизить расходы на экологию во всех колониях до минимума, необходимого для ликвидации отходов?
+TECH_ALLOCATE_ENRICH_SOIL         | Повысить расходы на экологию во всех колониях со стандартными средами для обогащения их почвы?
+TECH_ALLOCATE_ATMOSPHERE          | Повысить расходы на экологию во всех колониях с враждебными средами для создания искусственной атмосферы?
+TECH_ALLOCATE_TERRAFORM           | Повысить расходы на экологию во всех колониях, чтобы начать их терраформировать?
+TECH_ALLOCATE_NO                  | Нет
+TECH_ALLOCATE_PCT                 | +%1%
+TECH_COMPLETED_TITLE              | Исследования Завершены!
+TECH_COMPLETED_COMPUTER           | Мы достигли предела развития Компьютерных технологий. Дальнейшие исследования в этой области невозможны.
+TECH_COMPLETED_CONSTRUCTION       | Мы достигли предела развития Строительных технологий. Дальнейшие исследования в этой области невозможны.
+TECH_COMPLETED_FORCE_FIELD        | Мы достигли предела развития технологий Силовых Полей. Дальнейшие исследования в этой области невозможны.
+TECH_COMPLETED_PLANETOLOGY        | Мы достигли предела развития Планетологических технологий. Дальнейшие исследования в этой области невозможны.
+TECH_COMPLETED_PROPULSION         | Мы достигли предела развития технологий Движения. Дальнейшие исследования в этой области невозможны.
+TECH_COMPLETED_WEAPON             | Мы достигли предела развития Оружейных технологий. Дальнейшие исследования в этой области невозможны.
+TECH_COMPLETED_ALL                | Мы достигли предела развития науки. Время для учёбы прошло. Все будущие расходы на исследования будут переведены в казну империи.
+TECH_COMPLETED_VERIFY             | Убедитесь, что распределение расходов по остальным областям исследований установлено правильно.
+
+// prompt for espionage
+NOTICE_ESPIONAGE_TITLE            | Наши шпионы проникли в базу [alien_race_plural_rod].
+NOTICE_ESPIONAGE_SUBTITLE         | Выберете, какой тип технологии украсть.
+NOTICE_ESPIONAGE_NO_TECH          | Нет Доступных Технологий
+NOTICE_ESPIONAGE_MANY_TECHS       | %1 Доступных Технологий
+NOTICE_ESPIONAGE_FOOTER           | Если действие будет замечено, произойдет Дипломатический Инцидент.
+NOTICE_ESPIONAGE_FRAME_TITLE      | Нашим шпионам удалось переложить вину за кражу на другую расу.
+NOTICE_ESPIONAGE_FRAME_SUBTITLE   | Выберете жертву:
+
+// Spy Capture display (during next turn)
+NOTICE_SPIES_TITLE                | Отчет о Шпионаже
+NOTICE_SPIES_NO_ACTIVITY          | Никакой значительной шпионской деятельности не было обнаружено.
+NOTICE_SPIES_ACTIVITY             | Текущая Активность:
+NOTICE_SPIES_LOST_DESC            | • Служба Имперской Безопасности [alien_empire_rodit] ликвидировала %1 наших шпионских сетей.
+NOTICE_SPIES_LOST_CONFESSED       | Наши шпионы признались в запланированных диверсиях.
+NOTICE_SPIES_LOST_CONFESSED2      | Наши шпионы признались в запланированной краже технологии.
+NOTICE_SPIES_LOST_CONFESSED3      | Наши шпионы были заставлены "признаться" в планированных диверсиях.
+NOTICE_SPIES_CAUGHT_DESC          | • Служба Имперской Безопасности ликвидировала %1 шпионских сетей [alien_empire_rodit].
+NOTICE_SPIES_CAUGHT_CONFESSED     | Их шпионы признались в запланированных диверсиях.
+NOTICE_SPIES_CAUGHT_CONFESSED2    | Их шпионы признались в запланированной краже технологии.
+NOTICE_SPIES_FRAMED               | • Нас ложно обвинили в краже технологии [alien_empire_rodit].
+NOTICE_SPIES_ESPIONAGE            | • Наши шпионы успешно украли технологию %1 у [alien_empire_rodit].
+NOTICE_SPIES_ESPIONAGE_FRAME      | Нам удалось переложить вину за эту кражу на [framed_empire].
+NOTICE_SPIES_SABOTAGE_FACTORIES   | • Наши шпионы успешно уничтожили %1 заводов на планете %2.
+NOTICE_SPIES_SABOTAGE_BASES       | • Наши шпионы успешно уничтожили %1 ракетных баз на планете %2.
+NOTICE_SPIES_SABOTAGE_REBELS      | • Наши шпионы успешно радикализировали повстанцев в системе %2.
+NOTICE_SPIES_SABOTAGE_REBELLION   | • Наши шпионы успешно спровоцировали восстание в системе %2.
+NOTICE_SPIES_LEARNED_TECH         | • Наши шпионы сообщают, что [alien_empire] владеет неизвестными нам технологиями: %1
+// this just details how to concatenate a list of multiple technology (English uses ,)
+NOTICE_SPIES_MULTIPLE_TECHS       | %1, %2
+NOTICE_SPIES_THREATEN             | Пригрозить
+NOTICE_SPIES_MANAGE               | Управление Шпионами
+NOTICE_SPIES_CLOSE                | Закрыть
+
+// Ground Combat UI
+INVASION_BATTLE                   | В году %1, [attacker_race_plural] и [defender_race_plural] борются за господство на планете %2.
+INVASION_BATTLE_REBELS            | В году %1, [attacker_race_plural] и повстанцы борются за господство на планете %2.
+INVASION_TROOPS_LANDED            | Приземлилось %1 солдат [attacker_race_plural_rod]. 
+INVASION_SOME_TROOPS_LANDED       | Приземлилось %1 из %2 солдат [attacker_race_plural_rod].
+INVASION_WIN                      | [attacker_race_plural] захватили планету %2.
+INVASION_LOSS                     | [defender_race_plural] успешно защитили планету %2.
+INVASION_ATTACKERS_TITLE          | %1 Солдат [attacker_race_plural_rod]
+INVASION_DEFENDERS_TITLE          | %1 Солдат [defender_race_plural_rod]
+INVASION_REBELS_TITLE             | %1 Повстанцев [defender_race_plural_rod]
+INVASION_TROOP_ARMOR_DESC         | %2 (%1)
+
+// GNN Text
+GNN_TITLE                         | Галактическая Служба Новостей сообщает:
+GNN_EMPIRE_RANKING                | %1. [empire_empire]
+GNN_EXTINCTION_KNOWN_VICTIM       | Вид [victim_race_plural_rod]
+GNN_EXTINCTION_KNOWN_KILLER       | [killer_race_plural_tvor]
+GNN_UNKNOWN_SUBJECT               | Неизвестная цивилизация 
+GNN_UNKNOWN_PREDICATE             | неизвестная империя
+GNN_EXTINCTION                    | %1 был полностью уничтожен %2.
+GNN_EXTINCTION_NO_KILLER          | %1 был полностью уничтожен.
+GNN_EXPANSION_1                   | Территория [expanding_empire_rodit] охватывает %1 звездных систем, опережая все другие расы.
+GNN_EXPANSION_2                   | [expanding_empire] владеет %1 звездными системами. Если их расширение не будет остановлено, они скоро будут контролировать Галактику.
+GNN_EXPANSION_3                   | [expanding_empire] почти полностью контролирует Галактику. Лидеры готовятся к объединению с могучей империей.
+GNN_ALLIANCE_FORMED               | Между [first_empire_tvor] и [second_empire_tvor] был заключён Союз.
+GNN_ALLIANCE_BROKEN               | Союз между [first_empire_tvor] и [second_empire_tvor] был разорван.
+GNN_FLEETS_RANKING                | Империи с самыми огромными звездными флотами:
+GNN_CENSUS_RANKING                | Империи с самыми большим населением:
+GNN_PRODUCTION_RANKING            | Крупнейшие экономики Галактики:
+GNN_TECHNOLOGY_RANKING            | Технологические лидеры Галактики:
+GNN_PLAYER_REBELLION              | Планета %1 восстала и отказывается вносить свой вклад в [rebelling_empire_acc]. На планете находится по крайней мере %2 миллионов повстанцев. Для подавления восстания на планету необходимо послать солдат.
+GNN_ALIEN_REBELLION               | Планета %1 восстала и отказывается вносить свой вклад в [rebelling_empire_acc]. На планете находится по крайней мере %2 миллионов повстанцев.
+GNN_PLAYER_REBELLION_SPREAD       | Восстание продолжает распространяться по [rebelling_empire_dativs]. По крайней мере %2 миллионов повстанцев теперь контролируют колонию %1.
+GNN_OVERTHROW                     | Из хаоса, происходящего внутри [alien_empire_rodit] появился новый лидер. По слухам, новый правитель - %1. Отношения с другими империями стали нейтральными, и вся межзвездная торговля прервалась.
+GNN_END_COUNCIL                   | Поскольку в Галактике осталось только две Империи, попытки объединить Галактику Галактическим Советом прекратились. Идут дебаты о том, какое окончательное решение может помочь достигнуть мира во всей Галактике.
+GNN_FORM_COUNCIL                  | В своём стремлении к миру, представители каждой расы вскоре соберутся для избрания Правителя Галактики, который будет выбран из лидеров двух самых густонаселенных империй.
+GNN_ALLY_AT_WAR                   | Наши союзники [ally_race_plural] объявили войну [other_empire_dativs].
+
+// Error UI text
+ERROR_TITLE                       | Произошла ошибка
+ERROR_MESSAGE                     | 
+ERROR_EMAIL                       | 
+ERROR_REDDIT                      | 
+
+// Setup UI
+SETUP_SELECT_RACE                 | Выберите Вашу Расу
+SETUP_SELECT_OPPONENTS            | Выберите Конкурентов
+SETUP_SELECT_GALAXY               | Выберите Галактику
+SETUP_SELECT_GALAXY_OPTIONS       | Выберите Настройки Игры
+SETUP_GALAXY_RULESET_LABEL        | Набор Правил
+SETUP_INSUFFICIENT_MEMORY         | Недостаточно Памяти
+SETUP_CREATING_GALAXY             | Создается Галактика...
+SETUP_RULESET_ORION               | Орион
+SETUP_RULESET_ANTARES             | Антарес
+SETUP_RULESET_SIRIUS              | Сириус
+SETUP_GALAXY_SIZE_LABEL           | Размер
+SETUP_RACE_MULTIPLIER             | x%1
+SETUP_GALAXY_SHAPE_LABEL          | Форма
+SETUP_GALAXY_SIZE_TINY            | Маленький
+SETUP_GALAXY_SIZE_SMALL           | Небольшой
+SETUP_GALAXY_SIZE_SMALL2          | Небольшой
+SETUP_GALAXY_SIZE_AVERAGE         | Средний
+SETUP_GALAXY_SIZE_AVERAGE2        | Средний
+SETUP_GALAXY_SIZE_LARGE           | Большой
+SETUP_GALAXY_SIZE_LARGE2          | Большой
+SETUP_GALAXY_SIZE_HUGE            | Огромный
+SETUP_GALAXY_SIZE_HUGE2           | Огромный
+SETUP_GALAXY_SIZE_MASSIVE         | Массивный
+SETUP_GALAXY_SIZE_MASSIVE2        | Массивный
+SETUP_GALAXY_SIZE_MASSIVE3        | Массивный
+SETUP_GALAXY_SIZE_MASSIVE4        | Массивный
+SETUP_GALAXY_SIZE_MASSIVE5        | Массивный
+SETUP_GALAXY_SIZE_INSANE          | Невероятный
+SETUP_GALAXY_SIZE_LUDICROUS       | Непостижимый
+SETUP_GALAXY_SIZE_MAXIMUM         | Максимальный
+SETUP_GALAXY_SHAPE_RECTANGLE      | Поле Звезд
+SETUP_GALAXY_SHAPE_CIRCULAR       | Круг
+SETUP_GALAXY_SHAPE_RING           | Кольцо
+SETUP_GALAXY_SHAPE_ELLIPSE        | Эллипс
+SETUP_GALAXY_SHAPE_SPIRAL         | Спираль
+SETUP_GALAXY_SHAPE_STAR           | Звезда
+SETUP_GALAXY_SHAPE_BARSPIRAL      | Перемычковая Спираль
+SETUP_GALAXY_SHAPE_TEXT           | Текст
+SETUP_GALAXY_SHAPE_CLUSTER        | Скопление
+SETUP_GALAXY_SHAPE_SWIRLCLUSTERS  | Вихревые Скопления
+SETUP_GALAXY_SHAPE_GRID           | Сетка
+SETUP_GALAXY_SHAPE_SPIRALARMS     | Спиральные Рукава
+SETUP_GALAXY_SHAPE_MAZE           | Лабиринт
+SETUP_GALAXY_SHAPE_VOID           | Пустота
+SETUP_GALAXY_SHAPE_SHURIKEN       | Сюрикэн
+SETUP_GALAXY_SHAPE_BULLSEYE       | Яблочко
+SETUP_GALAXY_SHAPE_LORENZ         | Лоренц
+SETUP_GALAXY_SHAPE_LORENZ2        | Лоренц 2
+SETUP_GALAXY_SHAPE_FRACTAL        | Фрактал
+SETUP_GALAXY_SHAPE_CHAOSGAME      | Хаосовая Игра
+SETUP_GALAXY_MAP_OPTION_LABEL     | Вариант
+SETUP_GALAXY_MAP_OPTION_A         | Вариант A
+SETUP_GALAXY_MAP_OPTION_B         | Вариант B
+SETUP_GALAXY_MAP_OPTION_C         | Вариант C
+SETUP_GALAXY_AGE_NORMAL           | Средний
+SETUP_GALAXY_AGE_YOUNG            | Молодой
+SETUP_GALAXY_AGE_OLD              | Старый
+SETUP_RANDOM_EVENTS_ON            | Включены
+SETUP_RANDOM_EVENTS_OFF           | Выключены
+SETUP_RANDOM_EVENTS_NO_MONSTERS   | Без Монстров
+SETUP_GALAXY_NUMBER_EMPIRES       | Всего Империй: %1
+SETUP_GALAXY_NUMBER_SYSTEMS       | Всего Систем: %1
+SETUP_GALAXY_MAX_OPPONENTS        | Макс. Кол-во. Конкурентов: %1
+SETUP_OPPONENTS_HEADER_1          | %1 против
+SETUP_OPPONENTS_HEADER_2          | Конкурентов
+SETUP_OPPONENT_RANDOM             | ???
+SETUP_OPPONENT_AI                 | Игра Против:
+SETUP_OPPONENT_AI_BASE            | ИИ: Стандартный
+SETUP_OPPONENT_AI_MODNAR          | ИИ: Усов. Ст.
+SETUP_OPPONENT_AI_XILMI           | ИИ: Человекоподобный
+SETUP_OPPONENT_AI_SELECT          | ИИ: По выбору
+SETUP_AUTOPLAY_OFF                | Отключен
+SETUP_AUTOPLAY_AI_BASE            | ИИ: Стандартный
+SETUP_AUTOPLAY_AI_MODNAR          | ИИ: Усов. Ст.
+SETUP_AUTOPLAY_AI_XILMI           | ИИ: Человекоподобный
+SETUP_GAME_DIFFICULTY_LABEL       | Сложность
+SETUP_DIFFICULTY_EASIEST          | Самая Простая
+SETUP_DIFFICULTY_EASIER           | Легче
+SETUP_DIFFICULTY_EASY             | Легкая
+SETUP_DIFFICULTY_NORMAL           | Средняя
+SETUP_DIFFICULTY_HARD             | Сложная
+SETUP_DIFFICULTY_HARDER           | Сложнее
+SETUP_DIFFICULTY_HARDEST          | Самая Сложная
+SETUP_RESEARCH_RATE_NORMAL        | Стандартная
+SETUP_RESEARCH_RATE_SLOW          | Медленная
+SETUP_RESEARCH_RATE_SLOWER        | Более Медленная
+SETUP_RESEARCH_RATE_SLOWEST       | Самая Медленная
+SETUP_TECH_TRADING_YES            | Включен
+SETUP_TECH_TRADING_ALLIES         | Только с Союзниками
+SETUP_TECH_TRADING_NO             | Отключен
+SETUP_WARP_SPEED_NORMAL           | Стандартная
+SETUP_WARP_SPEED_FAST             | Ускоренная
+SETUP_NEBULA_NONE                 | Отсутствуют
+SETUP_NEBULA_RARE                 | Редкие
+SETUP_NEBULA_UNCOMMON             | Незаурядные
+SETUP_NEBULA_NORMAL               | Стандартные
+SETUP_NEBULA_COMMON               | Заурядные
+SETUP_NEBULA_FREQUENT             | Частые
+SETUP_COUNCIL_NONE                | Совет Отключен
+SETUP_COUNCIL_IMMEDIATE           | Немедленная
+SETUP_COUNCIL_REBELS              | Позволить Восстания
+SETUP_STAR_DENSITY_LOWEST         | Самая Низкая
+SETUP_STAR_DENSITY_LOWER          | Ниже
+SETUP_STAR_DENSITY_LOW            | Низкая
+SETUP_STAR_DENSITY_NORMAL         | Стандартная
+SETUP_STAR_DENSITY_HIGH           | Высокая
+SETUP_STAR_DENSITY_HIGHER         | Выше
+SETUP_STAR_DENSITY_HIGHEST        | Самая высокая
+SETUP_AI_HOSTILITY_LOWEST         | Самая низкая
+SETUP_AI_HOSTILITY_LOWER          | Ниже
+SETUP_AI_HOSTILITY_LOW            | Низкая
+SETUP_AI_HOSTILITY_NORMAL         | Стандартная
+SETUP_AI_HOSTILITY_HIGH           | Высокая
+SETUP_AI_HOSTILITY_HIGHER         | Выше
+SETUP_AI_HOSTILITY_HIGHEST        | Самая высокая
+SETUP_GAME_NUMBER_OPPONENTS       | Конкуренты
+SETUP_PLANET_QUALITY_POOR         | Низкое
+SETUP_PLANET_QUALITY_MEDIOCRE     | Среднее
+SETUP_PLANET_QUALITY_NORMAL       | Стандартное
+SETUP_PLANET_QUALITY_GOOD         | Хорошее
+SETUP_PLANET_QUALITY_GREAT        | Оч. Хорошее
+SETUP_TERRAFORMING_NORMAL         | Стандартное
+SETUP_TERRAFORMING_REDUCED        | Пониженное
+SETUP_TERRAFORMING_NONE           | Отключено
+SETUP_COLONIZING_NORMAL           | Стандартное
+SETUP_COLONIZING_RESTRICTED       | Ограниченное
+SETUP_FUEL_RANGE_NORMAL           | Стандартный
+SETUP_FUEL_RANGE_HIGH             | Высокий
+SETUP_FUEL_RANGE_HIGHER           | Выше
+SETUP_FUEL_RANGE_HIGHEST          | Самый высокий
+SETUP_RANDOMIZE_AI_NONE           | Отключено
+SETUP_RANDOMIZE_AI_PERSONALITY    | Характер
+SETUP_RANDOMIZE_AI_ABILITY        | Расовый бонус
+SETUP_RANDOMIZE_AI_BOTH           | Оба
+SETUP_RACE_LABEL                  | Доступные Расы
+SETUP_RACE_COLOR                  | Цвет Империи:
+SETUP_HOMEWORLD_NAME_LABEL        | Родная планета:
+SETUP_LEADER_NAME_LABEL           | Лидер:
+SETUP_FLAG_LABEL                  | Флаг
+SETUP_BUTTON_CANCEL               | Отменить
+SETUP_BUTTON_BACK                 | Назад
+SETUP_BUTTON_NEXT                 | Вперед
+SETUP_BUTTON_START                | Начать
+SETUP_BUTTON_SETTINGS             | Продвинутые Опции
+
+SETUP_SPIRAL_2_ARMS               | Два Рукава
+SETUP_SPIRAL_3_ARMS               | Три Рукава
+SETUP_SPIRAL_4_ARMS               | Четыре Рукава
+SETUP_SPIRAL_5_ARMS               | Пять Рукав
+SETUP_SPIRAL_6_ARMS               | Шесть Рукав
+SETUP_SPIRAL_7_ARMS               | Семь Рукав
+SETUP_SPIRAL_8_ARMS               | Восемь Рукав
+SETUP_SPIRAL_ROTATION_0           | Без Вращения
+SETUP_SPIRAL_ROTATION_1           | Вращение 1
+SETUP_SPIRAL_ROTATION_2           | Вращение 2
+SETUP_SPIRAL_ROTATION_3           | Вращение 3
+SETUP_SPIRAL_ROTATION_4           | Вращение 4
+SETUP_SPIRAL_ROTATION_5           | Вращение 5
+SETUP_SPIRAL_ROTATION_6           | Вращение 6
+SETUP_ELLIPSE_0                   | Круглый
+SETUP_ELLIPSE_1                   | Эллипс 1
+SETUP_ELLIPSE_2                   | Эллипс 2
+SETUP_ELLIPSE_3                   | Эллипс 3
+SETUP_ELLIPSE_4                   | Эллипс 4
+SETUP_VOID_0                      | Нет Пустоты
+SETUP_VOID_1                      | Пустота 1
+SETUP_VOID_2                      | Пустота 2
+SETUP_VOID_3                      | Пустота 3
+SETUP_VOID_4                      | Пустота 4
+
+
+// Advanced Settings
+SETTINGS_TITLE                    | Продвинутые Опции
+SETTINGS_DESCRIPTION              | В этом экране вы можете менять настройки игры.
+SETTINGS_EXIT                     | Выйти
+SETTINGS_DEFAULT                  | Установить по умолчанию
+SETTINGS_STAR_DENSITY             | Плотность Звезд: %1
+SETTINGS_RANDOM_EVENTS            | Случайные События: %1
+SETTINGS_RESEARCH_RATE            | Скорость Техн. Прогресса: %1
+SETTINGS_COUNCIL_WIN              | Победа в Совете: %1
+SETTINGS_RANDOMIZE_AI             | Рандомизация Соперников: %1
+SETTINGS_AUTOPLAY                 | Автоматизация Игры: %1
+SETTINGS_TECH_TRADING             | Обмен Технологиями: %1
+SETTINGS_GALAXY_AGE               | Возраст Галактики: %1
+SETTINGS_WARP_SPEED               | Скорость Варпа: %1
+SETTINGS_NEBULAE                  | Туманности: %1
+SETTINGS_PLANET_QUALITY           | Качество Планет: %1
+SETTINGS_TERRAFORMING             | Т-форм. Враждебных Миров: %1
+SETTINGS_COLONIZING               | Колонизация Планет: %1
+SETTINGS_FUEL_RANGE               | Диапазон Действия: %1
+SETTINGS_AI_HOSTILITY             | Враждебность Между Империями: %1
+SETTINGS_RANDOM_EVENTS_DESC       | Космические Монстры - это случайные события и значительные угрозы в середине игры. Вы можете отключить космических монстров или все случайные события.
+SETTINGS_WARP_SPEED_DESC          | Вы можете увеличить межзвездную скорость более продвинутых двигателей. Это может быть желательным в очень больших галактиках.
+SETTINGS_GALAXY_AGE_DESC          | По сравнению с обычными галактиками, в молодых можно найти больше белых и синих звезд, а в старых - больше красных и нейтронных.
+SETTINGS_TECH_TRADING_DESC        | Вы можете отключить обмен технологиями вообще или разрешить его только для союзников.
+SETTINGS_STAR_DENSITY_DESC        | Увеличьте этот параметр, чтобы понизить шанс империй застрять в начале игры.
+SETTINGS_RESEARCH_RATE_DESC       | Вы можете понизить скорость технологического прогресса, чтобы продлить срок службы каждой технологии.
+SETTINGS_NEBULAE_DESC             | Туманности сильно замедляют межзвездные перелёты и делают щиты бесполезными. Вы можете увеличить или уменьшить их частоту.
+SETTINGS_PLANET_QUALITY_DESC      | Повышает или понижает количество высококачественных планет в галактике.
+SETTINGS_TERRAFORMING_DESC        | Вы можете понизить или полностью отключить использование технологий Улучшенное Терраформирование на враждебных жизни планетах.
+SETTINGS_COLONIZING_DESC          | Вы можете ограничить колонизацию враждебных жизни планет, позволяя колонизацию планет только если на колонизаторе установлена колониальная база именно для этой среды.
+SETTINGS_COUNCIL_DESC             | Вы можете полностью отключить Галактический Совет, а также регулировать, могут ли другие империи восстать против Вашего правления.
+SETTINGS_RANDOMIZE_AI_DESC        | Вы можете рандомизировать характер лидеров других империй, их расовый бонус или обе эти вещи.
+SETTINGS_AUTOPLAY_DESC            | Полная автоматизация игры - ИИ играет за Вас. Это позволяет наблюдать, как работает каждый вид ИИ.
+SETTINGS_AUTOPLAY_WARNING         | Внимание! Активирована автоматизация игры - Вы никак не сможете повлиять на ход игры. Вы можете отключить это в экране "Продвинутые Опции".
+SETTINGS_FUEL_RANGE_DESC          | Вы можете увеличить расстояние, на которое корабли могут перемещаться от колоний.
+SETTINGS_AI_HOSTILITY_DESC        | Вы можете увеличить или понизить общий уровень враждебности между инопланетными расами.
+
+// Tech UI labels
+TECH_RESEARCH                     | Исследование Технологий
+TECH_RESEARCH_POINTS              | Единицы Исследования
+TECH_EMPIRE_SPENDING              | Расходы Империи на Науку
+TECH_EMPIRE_SPENDING_DESC         | Сумма расходов всех колоний на исследования.
+TECH_EMPIRE_TECH_RESERVE_OPT      | Перенаправление лишних колониальных расходов из резерва на исследования
+TECH_EMPIRE_BALANCED_DESC         | Балансированое распределение увеличивает всеобщие единицы исследования.
+TECH_EMPIRE_DETAIL_1              | %1 МК дают 
+TECH_EMPIRE_DETAIL_2              | %2 ЕИ / Год
+TECH_TOTAL_RP                     | %1 ЕИ
+TECH_DISCOVERY_PCT                | %1%
+TECH_CHANGE_RESEARCH              | Нажмите, чтобы исследовать эту технологию
+TECH_NEXT_TIER_TITLE              | Пока что недоступно.
+TECH_FIRST_TIER_DESC              | Тратьте единицы исследования в этой категории, чтобы разблокировать.
+TECH_NEXT_TIER_DESC               | Исследуйте технологию на предыдущем уровне, чтобы разблокировать.
+TECH_FUTURE_TIER_DESC             | Исследуйте все технологии на предыдущих уровнях, чтобы разблокировать.
+TECH_ALLOCATE_POINTS              | Распределение ЕИ
+TECH_EQUALIZE                     | Уравнять Распределение
+TECH_RESEARCH_COMPLETED           | Исследования Закончены
+TECH_RESEARCHING                  | Исследуется:
+TECH_NONE_RESEARCHED              | Ничего
+TECH_PLANETARY_SHIELDS            | Планетарные Щиты
+TECH_PLANETARY_SHIELDS_NONE       | Никаких
+TECH_PLANETARY_SHIELDS_CLASS      | Класс %1
+TECH_GROUND_COMBAT                | Наземные Сражения
+TECH_GROUND_COMBAT_NO_BONUS       | Нет Бонуса
+TECH_GROUND_COMBAT_BONUS          | +%1%
+TECH_TERRAFORM                    | Терраформ.
+TECH_TERRAFORM_NO_BONUS           | Нет Бонуса
+TECH_TERRAFORM_BONUS              | +%1 Нас.
+TECH_FACTORY_CONTROLS             | Упр. Заводами
+TECH_FACTORY_CONTROLS_BONUS       | %1 за колониста
+TECH_PLANET_SCANNER               | Диапазон Сканеров
+TECH_PLANET_SCANNER_NONE          | Никакого
+TECH_PLANET_SCANNER_RANGE         | %1 св. лет
+TECH_WASTE_REDUCTION              | Уменьшение Отходов
+TECH_WASTE_REDUCTION_NONE         | Никакого
+TECH_WASTE_REDUCTION_AMT          | -%1%
+TECH_WASTE_CLEANUP                | Ликвидация Отходов
+TECH_WASTE_CLEANUP_BONUS          | %1 Отходов/BC
+TECH_SHIP_RANGE                   | Диапазон Действия
+TECH_SHIP_RANGE_AMT               | %1 св. лет
+TECH_SHIP_SPEED                   | Макс. Скорость
+TECH_SHIP_SPEED_AMT               | Варп %1
+TECH_BUTTON_EXIT                  | ВЫХОД
+
+// Tech UI help
+TECH_HELP_1A                      | ОБЗОР - Этот экран позволяет Вам регулировать расходы по шести областям технологий, которые Вы можете изучать. Вы можете просмотреть уже изученные технологии (зелёные), те, которые на данные момент ученые исследуют (жёлтые) или доступные для исследования в будущем (коричневые). 
+TECH_HELP_1B                      | Щёлкните и проведите мышкой по экрану, или прокрутите колёсико мыши, чтобы просмотреть технологии в технологической области.
+TECH_HELP_1C                      | Заполняется, когда в области тратятся Единицы Исследования (ЕИ). После заполнения с каждым ходом увеличивается шанс получить технологию.
+TECH_HELP_1D                      | Технология, которая сейчас исследуется. Прочитайте её описание, чтобы узнать, какие преимущества она дает.
+TECH_HELP_1E                      | Общие преимущества, предоставляемые технологиями, уже изученными в этой области.
+TECH_HELP_1F                      | Общее производство (МК), применённое для исследований, и общее количество единиц исследования (ЕИ), полученных от них.
+TECH_HELP_1G                      | Лишние расходы в колониях могут быть направлены на исследования, а не в казну империи.
+TECH_HELP_1H                      | Для каждой технологической области есть столбик расходов. Щёлкните на название области, чтобы заблокировать расходы в ней. Расходы на первую 1/6 шкалы увеличивают ЕИ на 25%.
+TECH_HELP_1I                      | Выравнивание распределения ЕИ для разблокированных столбиков. 
+
+// =========================================================================
+//   ALPHA 4
+// =========================================================================
+
+// Ship Design UI
+SHIP_DESIGN_TITLE                 | Дизайн Кораблей
+SHIP_DESIGN_SLOTS                 | Слоты Дизайнов
+SHIP_DESIGN_AVAILABLE             | Доступный
+SHIP_DESIGN_AVAILABLE_DESC        | Выберете этот слот, чтобы создать новый дизайн.
+SHIP_DESIGN_AVAILABLE_DESC2       | Завершите этот дизайн, чтобы строить его в колониях.
+SHIP_DESIGN_PROTOTYPE             | Прототип
+SHIP_DESIGN_PROTOTYPE_DESC        | Прототипы не могут быть построены
+SHIP_DESIGN_SLOT_DESC             | Всего:
+SHIP_DESIGN_SLOT_DESC2            | На орбите:
+SHIP_DESIGN_SLOT_DESC3            | В пути:
+SHIP_DESIGN_SLOT_DESC4            | Верфи строят:
+SHIP_DESIGN_NEW                   | Новый Класс Корабля
+SHIP_DESIGN_PROTOTYPE_TITLE       | Прототип Класса Корабля
+SHIP_DESIGN_SIZE_SMALL            | Маленький
+SHIP_DESIGN_SIZE_MEDIUM           | Средний
+SHIP_DESIGN_SIZE_LARGE            | Большой
+SHIP_DESIGN_SIZE_HUGE             | Огромный
+SHIP_DESIGN_SIZE_LABEL            | Размер
+SHIP_DESIGN_TYPE_LABEL            | Тип
+SHIP_DESIGN_COUNT_LABEL           | Кол-во
+SHIP_DESIGN_DAMAGE_LABEL          | Урон
+SHIP_DESIGN_POWER_LABEL           | Энерг.
+SHIP_DESIGN_RANGE_LABEL           | Диап.
+SHIP_DESIGN_SPEED_LABEL           | Скорость
+SHIP_DESIGN_COST_LABEL            | МК
+SHIP_DESIGN_DESCRIPTION_LABEL     | Описание
+SHIP_DESIGN_RANGE_VALUE           | %1 св. лет
+SHIP_DESIGN_RANGE_UNLIMITED       | Неограниченный
+SHIP_DESIGN_SPEED_VALUE           | Варп %1
+SHIP_DESIGN_COST_VALUE            | %1 МК
+SHIP_DESIGN_TOTAL_SPACE_LABEL     | Занятое Место
+SHIP_DESIGN_AVAIL_SPACE_LABEL     | Доступное Место
+SHIP_DESIGN_COLORS                | Оттенок
+SHIP_DESIGN_COMBAT_STATS_TITLE    | Боевая Стат.
+SHIP_DESIGN_HIT_POINTS_LABEL      | Целост. Корпуса
+SHIP_DESIGN_MISSILE_DEF_LABEL     | Оборона от Ракет
+SHIP_DESIGN_BEAM_DEF_LABEL        | Оборона от Лучей
+SHIP_DESIGN_ATTACK_LEVEL_LABEL    | Уровень Атаки
+SHIP_DESIGN_COMBAT_SPEED_LABEL    | Боевая Скорость
+SHIP_DESIGN_COMBAT_SPEED_VALUE    | %1 клеток
+SHIP_DESIGN_ENGINES_TITLE         | Двигатели
+SHIP_DESIGN_ENGINES_DESC          | Питает корабль и его оборудование.
+SHIP_DESIGN_ENGINE_TYPE           | Тип
+SHIP_DESIGN_ENGINE_SPEED          | Скорость
+SHIP_DESIGN_ENGINE_COST1          | МК, за двигатель
+SHIP_DESIGN_ENGINE_SIZE1          | Размер, за двигатель
+SHIP_DESIGN_ENGINE_POWER1         | Энергия, за двигатель
+SHIP_DESIGN_POWER_REQUIREMENTS    | Энерг. требования
+SHIP_DESIGN_ENGINES_REQUIRED      | Необх. Двигатели
+SHIP_DESIGN_ENGINES_SIZE          | Размер Всех Двигателей
+SHIP_DESIGN_ENGINES_COST          | МК за все Двигатели
+SHIP_DESIGN_COPY_BUTTON           | Копировать
+SHIP_DESIGN_CLEAR_BUTTON          | Очистить
+SHIP_DESIGN_RENAME_BUTTON         | Переименовать
+SHIP_DESIGN_DEPLOY_BUTTON         | Завершить
+SHIP_DESIGN_DEPLOY_DESC           | По завершению, этот дизайн можно будет строить в колониях, но в этом экране - только утилизировать или переименовать.
+SHIP_DESIGN_SCRAP_BUTTON          | Утилизировать
+SHIP_DESIGN_SCRAP_CONFIRM1        | Вы уверены, что хотите утилизировать дизайн "%1"?
+SHIP_DESIGN_SCRAP_CONFIRM2        | Это уничтожит %1 кораблей и добавит %2 МК в Имперскую казну.
+SHIP_DESIGN_SCRAP_CONFIRM3        | У Вас нет построенных кораблей этого дизайна.
+SHIP_DESIGN_SCRAP_CANCEL          | Отменить
+SHIP_DESIGN_SCRAP_OK              | Утилизировать
+SHIP_DESIGN_RENAME_CONFIRM        | Переименовать дизайн
+SHIP_DESIGN_DEPLOY_CONFIRM        | Назовите новый дизайн
+SHIP_DESIGN_DEPLOY_CANCEL         | Отменить
+SHIP_DESIGN_DEPLOY_OK             | Завершить
+SHIP_DESIGN_RENAME_OK             | Переименовать
+SHIP_DESIGN_UNNAMED_DESIGN        | Неназванный
+SHIP_DESIGN_COMPONENT_NONE        | Нет
+
+
+// ship design selection dialogs
+SHIP_DESIGN_STARGATE_NAME         | Звездные Врата
+SHIP_DESIGN_1ST_SCOUT_NAME        | Разведчик
+SHIP_DESIGN_1ST_FIGHTER_NAME      | Истребитель
+SHIP_DESIGN_1ST_DESTROYER_NAME    | Ракетоносец
+SHIP_DESIGN_1ST_BOMBER_NAME       | Бомбардировщик
+SHIP_DESIGN_1ST_COLONY_NAME       | Колонизатор
+SHIP_DESIGN_COMPUTER_TITLE        | Компьютеры
+SHIP_DESIGN_COMPUTER_TYPE         | Тип
+SHIP_DESIGN_COMPUTER_COST         | МК
+SHIP_DESIGN_COMPUTER_SIZE         | Размер
+SHIP_DESIGN_COMPUTER_POWER        | Энерг.
+SHIP_DESIGN_COMPUTER_SPACE        | Место
+SHIP_DESIGN_SHIELD_TITLE          | Щиты
+SHIP_DESIGN_SHIELD_TYPE           | Тип
+SHIP_DESIGN_SHIELD_COST           | МК
+SHIP_DESIGN_SHIELD_SIZE           | Размер
+SHIP_DESIGN_SHIELD_POWER          | Энерг.
+SHIP_DESIGN_SHIELD_SPACE          | Место
+SHIP_DESIGN_ECM_TITLE             | Радиоэл. Подав
+SHIP_DESIGN_ECM_TYPE              | Тип
+SHIP_DESIGN_ECM_COST              | МК
+SHIP_DESIGN_ECM_SIZE              | Размер
+SHIP_DESIGN_ECM_POWER             | Энерг.
+SHIP_DESIGN_ECM_SPACE             | Место
+SHIP_DESIGN_ARMOR_TITLE           | Корпус
+SHIP_DESIGN_ARMOR_TYPE            | Тип
+SHIP_DESIGN_ARMOR_COST            | МК
+SHIP_DESIGN_ARMOR_SIZE            | Размер
+SHIP_DESIGN_ENGINE_TITLE          | Двигатели
+SHIP_DESIGN_ENGINE_TYPE           | Тип
+SHIP_DESIGN_ENGINE_NUM            | Кол-во Двиг.
+SHIP_DESIGN_ENGINE_SPACE          | Место
+SHIP_DESIGN_ENGINE_COST           | МК
+SHIP_DESIGN_ENGINE_SIZE           | Размер
+SHIP_DESIGN_ENGINE_POWER          | Энерг.
+SHIP_DESIGN_MANEUVER_TITLE        | Маневренность
+SHIP_DESIGN_MANEUVER_TYPE         | Тип
+SHIP_DESIGN_MANEUVER_SPEED        | Бой. Скорость
+SHIP_DESIGN_MANEUVER_COST         | МК
+SHIP_DESIGN_MANEUVER_POWER        | Энергия
+SHIP_DESIGN_MANEUVER_SPACE        | Место
+SHIP_DESIGN_WEAPON_TITLE          | Оружия
+SHIP_DESIGN_WEAPON_MAX            | Макс.
+SHIP_DESIGN_WEAPON_TYPE           | Тип
+SHIP_DESIGN_WEAPON_DESCRIPTION    | Описание
+SHIP_DESIGN_WEAPON_DAMAGE         | Урон
+SHIP_DESIGN_WEAPON_DMG_RANGE      | %1-%2
+SHIP_DESIGN_WEAPON_COST           | МК
+SHIP_DESIGN_WEAPON_SIZE           | Размер
+SHIP_DESIGN_WEAPON_POWER          | Энерг.
+SHIP_DESIGN_WEAPON_SPACE          | Место
+SHIP_DESIGN_SPECIAL_TITLE         | Модули
+SHIP_DESIGN_SPECIAL_TYPE          | Тип
+SHIP_DESIGN_SPECIAL_DESCRIPTION   | Описание
+SHIP_DESIGN_SPECIAL_COST          | МК
+SHIP_DESIGN_SPECIAL_SIZE          | Размер
+SHIP_DESIGN_SPECIAL_POWER         | Энерг.
+SHIP_DESIGN_SPECIAL_SPACE         | Место
+
+// Ship Design help
+SHIP_DESIGN_HELP_ALL              | ОБЗОР - в империи может быть до шести классов кораблей. Выберите размер корпуса, а затем заполните его различным оборудованием, например, бронёй, генераторами щитов и оружием. Оборудование имеет размер, необходимое кол-во энергии и стоимость. Место, необходимое для оборудования складывается из его размера и двигателей, необходимых для удовлетворения энергетических требований. После завершения дизайна, корабль можно будет построить в любой из Ваших колоний.
+SHIP_DESIGN_HELP_1A               | Размер - большие корабли строятся дольше, но имеют больше доступного места.
+SHIP_DESIGN_HELP_1B               | Диапазон действия - как далеко корабль может улететь от Ваших систем.
+SHIP_DESIGN_HELP_1C               | Скорость - скорость перемещения в межзвездном пространстве.
+SHIP_DESIGN_HELP_1D               | МК  - сколько МК надо потратить, чтобы построить этот корабль.
+SHIP_DESIGN_HELP_1E               | Занятое Место - сколько место занимают все компоненты этого корабля.
+SHIP_DESIGN_HELP_1F               | Доступное Место - неиспользуемое место на этом корабле.
+SHIP_DESIGN_HELP_1G               | Целостность Корпуса - урон, необходимый для уничтожения этого корабля в бою.
+SHIP_DESIGN_HELP_1H               | Защита от Ракет - уровень защиты против ракет в бою.
+SHIP_DESIGN_HELP_1I               | Защита от Лучей - уровень защиты против лучевого оружия в бою.
+SHIP_DESIGN_HELP_1J               | Уровень Атаки - уровень атаки оружия в бою.
+SHIP_DESIGN_HELP_1K               | Боевая Скорость - расстояние, которое корабль может пролететь за один боевой ход.
+SHIP_DESIGN_HELP_1L               | Оттенок - меняет цвет корабля.
+SHIP_DESIGN_HELP_2A               | Тип Двигателя - тип двигателя, используемого для получения энергии в этом корабле.
+SHIP_DESIGN_HELP_2B               | Скорость - скорость перемещения в межзвездном пространстве, которую обеспечивает двигатель.
+SHIP_DESIGN_HELP_2C               | МК - стоимость каждого двигателя, необходимого для удовлетворения энергетических требований оборудования.
+SHIP_DESIGN_HELP_2D               | Размер - место, необходимое для каждого двигателя.
+SHIP_DESIGN_HELP_2E               | Энергия - сколько энергии дает каждый двигатель.
+SHIP_DESIGN_HELP_2F               | Энергетические Требования - кол-во энергии, необходимое для работы всех компонентов корабля.
+SHIP_DESIGN_HELP_2G               | Необходимые Двигатели - кол-во двигателей, необходимое для удовлетворения энерг. требований.
+SHIP_DESIGN_HELP_2H               | Размер - место, необходимое для всех двигателей.
+SHIP_DESIGN_HELP_2I               | МК - стоимость всех двигателей.
+SHIP_DESIGN_HELP_2J               | Как выглядит этот класс корабля. Есть шесть разных изображений для каждого из четырех размеров корпуса. При создании нового дизайна корабля, Вы можете щелкать мышью, чтобы перелистывать варианты.
+SHIP_DESIGN_HELP_2K               | Название класса корабля.
+SHIP_DESIGN_HELP_3A               | Компьютеры - влияют на уровень атаки вашего корабля в бою.
+SHIP_DESIGN_HELP_3B               | Броня - влияет на целостность корпуса вашего корабля. Тяжелая броня увеличивает его на 50%.
+SHIP_DESIGN_HELP_3C               | Щиты - уменьшают урон, нанесенный кораблю.
+SHIP_DESIGN_HELP_3D               | Системы РЭП - системы радиоэлектронного подавления улучшают оборону от ракет.
+SHIP_DESIGN_HELP_3E               | Маневренность - увеличивает боевую скорость и оборону.
+SHIP_DESIGN_HELP_3F               | Оружия - могут наносить урон вражеским кораблям и колониям. Корабли могут иметь до четырех различных типов оружия.
+SHIP_DESIGN_HELP_3G               | Модули - устройства, которые обеспечивают уникальные возможности кораблю. Корабли могут иметь до трех специальных устройств.
+SHIP_DESIGN_HELP_4A               | Переименовать - позволяет переименовать существующий дизайн.
+SHIP_DESIGN_HELP_4B               | Утилизировать - утилизирует существующий дизайн. Утилизированные корабли возвращают в казну 25% стоимости их строительства.
+SHIP_DESIGN_HELP_4C               | Завершенные дизайны кораблей могут быть построены в любой из Ваших колоний.
+SHIP_DESIGN_HELP_4D               | Доступные слоты могут быть выбраны для создания нового дизайна.
+SHIP_DESIGN_HELP_4E               | Копировать - скопируйте существующий дизайн, чтобы он мог служить основой нового дизайна.
+SHIP_DESIGN_HELP_4F               | Очистить - сбрасывает все выбранные компоненты.
+SHIP_DESIGN_HELP_4G               | Завершить Дизайн - когда Вы закончили редактировать Ваш новый дизайн, эта кнопка позволит Вам назвать и строить его.
+
+
+// Ship Combat UI
+SHIP_COMBAT_TITLE_SYSTEM          | Космическая Битва в системе %1!
+SHIP_COMBAT_TITLE_UNSCOUTED       | Космическая Битва в неразведанной системе!
+SHIP_COMBAT_TITLE_DESC            | Наши корабли встретили вражеский флот [alien_race_plural_rod].
+SHIP_COMBAT_TITLE_MONSTER_DESC    | Наши корабли встретили агрессивное существо "%1".
+SHIP_COMBAT_BASES                 | %1 Ракетных Баз
+SHIP_COMBAT_SHIELD                | Планетарный Щит Класса %1
+SHIP_COMBAT_POPULATION            | %1 Населения
+SHIP_COMBAT_FACTORIES             | %1 Заводов
+SHIP_COMBAT_ENTER_BATTLE          | Вступить в бой
+SHIP_COMBAT_MISS                  | Промах
+SHIP_COMBAT_DEFLECTED             | Отражен
+SHIP_COMBAT_DESTROYED             | Уничтожено!
+SHIP_COMBAT_STASIS                | Стазис
+SHIP_COMBAT_TITLE                 | Битва в системе %1
+SHIP_COMBAT_TITLE_UNNAMED         | Битва в неразведанной системе
+SHIP_COMBAT_SYSTEM_POP            | Население
+SHIP_COMBAT_SYSTEM_FACT           | Заводы
+SHIP_COMBAT_SYSTEM_BASE           | Базы
+SHIP_COMBAT_TITLE_VICTORIOUS      | ПОБЕДА
+SHIP_COMBAT_SHIP_TOTALS           | %1 🡒 %2
+SHIP_COMBAT_RESULTS_RETREATED     | ОТСТУПЛИЛ
+SHIP_COMBAT_RESULTS_DESTROYED     | УНИЧТОЖЕН
+SHIP_COMBAT_RETREAT_ALL           | Полное Отступление
+SHIP_COMBAT_NEXT                  | Следующий Корабль
+SHIP_COMBAT_AUTO_RESOLVE          | Перейти к Результату
+SHIP_COMBAT_AUTO_RESOLVING        | Результат Вычисляется...
+SHIP_COMBAT_PLAY_BATTLE           | Передать Управление ИИ
+SHIP_COMBAT_PAUSE_BATTLE          | Пауза
+SHIP_COMBAT_EXIT                  | Выйти
+SHIP_COMBAT_COUNT_NAME            | %1  %2
+SHIP_COMBAT_MONSTER_TARGET        | Нацелен космический монстр.
+SHIP_COMBAT_ENEMY_TARGET          | Нацелен вражеский флот.
+SHIP_COMBAT_ALLY_TARGET           | Нацелен дружеский флот.
+SHIP_COMBAT_ENEMY_COLONY          | Нацелена вражеская планета.
+SHIP_COMBAT_ALLY_COLONY           | Нацелена дружеская планета.
+SHIP_COMBAT_CURRENT_TARGET        | Нацелен активный флот.
+SHIP_COMBAT_SELECT_ACTION         | Выберите действие.
+SHIP_COMBAT_SELECT_WEAPON         | Выберите оружие или устройство.
+SHIP_COMBAT_FIRE_WEAPON           | Выстрелить
+SHIP_COMBAT_ACTION_NEXT_SHIP      | След. Корабль
+SHIP_COMBAT_ACTION_TURN_DONE      | Ход завершен
+SHIP_COMBAT_ACTION_RETREAT        | Отступить
+SHIP_COMBAT_ACTION_FIRE_ALL       | Выстрелить из всех
+SHIP_COMBAT_ACTION_CLOAK          | Невидимость
+SHIP_COMBAT_ACTION_MOVE           | Двигаться
+SHIP_COMBAT_ACTION_TELEPORT       | Телепорт
+SHIP_COMBAT_ACTION_RANGE          | Вне Диап. Действ.
+SHIP_COMBAT_ACTION_NO_MISSILES    | Ракеты закончились
+SHIP_COMBAT_ACTION_NO_BOMBS       | Бомбы закончились
+SHIP_COMBAT_ACTION_FIRED          | Уже выстрелены
+SHIP_COMBAT_ACTION_USED           | Уже использованы
+SHIP_COMBAT_ACTION_BAD_TARGET     | Неверная цель
+SHIP_COMBAT_ACTION_WPN_COUNT      | %1 x%2
+SHIP_COMBAT_ACTION_WPN_COUNT_SHOTS| %1 x%2 x%3
+SHIP_COMBAT_INFO_LABEL            | Информация
+SHIP_COMBAT_SCAN_LABEL            | Сканированная Информация
+SHIP_COMBAT_SCAN_HIT_POINTS       | Цел. Корпуса
+SHIP_COMBAT_SCAN_MISSILE_DEF      | Защита от Ракет
+SHIP_COMBAT_SCAN_BEAM_DEF         | Защита от Лучей
+SHIP_COMBAT_SCAN_SHIELD_CLASS     | Класс Щита
+SHIP_COMBAT_SCAN_ATTACK_LEVEL     | Уровень Атаки
+SHIP_COMBAT_SCAN_SPEED            | Скорость
+SHIP_COMBAT_SCAN_WEAPONS          | Оружия
+SHIP_COMBAT_SCAN_DEVICES          | Модули
+SHIP_COMBAT_SCAN_HITS_VALUE       | %1/%2
+SHIP_COMBAT_SCAN_WEAPON_CNT       | %1 x %2
+SHIP_COMBAT_SCAN_UNSCANNED_VALUE  | ???
+SHIP_COMBAT_COLONY_LABEL          | Информация о Колонии
+SHIP_COMBAT_COLONY_SCAN_LABEL     | Скан. Инф. о Колонии 
+SHIP_COMBAT_COLONY_POPULATION     | Население
+SHIP_COMBAT_COLONY_SHIELD         | Щит
+SHIP_COMBAT_COLONY_FACTORIES      | Заводов
+SHIP_COMBAT_COLONY_BASES          | Ракетных Баз
+SHIP_COMBAT_COLONY_BASE_HITS      | Целостность Баз
+SHIP_COMBAT_COLONY_BASE_ATTACK    | Уровень Атаки Баз
+SHIP_COMBAT_ACTION_FMT            | %1 - %2
+
+RELATIONS_FEUD                    | Кровная Вражда
+RELATIONS_HATE                    | Ненависть
+RELATIONS_DISCORD                 | Раздор
+RELATIONS_TROUBLED                | Волнение
+RELATIONS_TENSE                   | Напряженные
+RELATIONS_RESTLESS                | Напряженные
+RELATIONS_WARY                    | Беспокойство
+RELATIONS_UNEASE                  | Беспокойство
+RELATIONS_NEUTRAL                 | Нейтралитет
+RELATIONS_RELAXED                 | Спокойные
+RELATIONS_AMIABLE                 | Спокойные
+RELATIONS_CALM                    | Дружелюбные
+RELATIONS_AFFABLE                 | Приветливость
+RELATIONS_PEACEFUL                | Мир
+RELATIONS_FRIENDLY                | Большое Дружелюбие
+RELATIONS_UNITY                   | Единство
+RELATIONS_HARMONY                 | Гармония
+
+RACES_TITLE                       | Отчеты об Империях
+RACES_SELECTOR_TITLE              | Выбор Империи
+RACES_TAB_DIPLOMACY               | Дипломатия
+RACES_TAB_INTELLIGENCE            | Разведка
+RACES_TAB_MILITARY                | Воор. Силы
+RACES_TAB_STATUS                  | Статус
+RACES_KNOWN_EMPIRES               | %1 известных империй
+RACES_RECALLED_DIPLOMATS          | %1 отозв. дипломатов
+RACES_NO_TREATY                   | Нет договоров
+RACES_AT_FINAL_WAR                | Последняя война
+RACES_AT_WAR                      | Война
+RACES_PEACE                       | Мирный договор
+RACES_PACT                        | Пакт о Ненападении 
+RACES_ALLY                        | Союз
+RACES_UNITY                       | Единство
+RACES_OUT_OF_RANGE                | Вне Дальн. Действия
+RACES_TRADE_LEVEL                 | Торг. Дог. на %1 МК
+RACES_TRADE_NONE                  | Нет Торг. Договора
+RACES_DIPLOMAT_RECALLED           | Дипломат [alien_race_plural_rod] Отозван
+RACES_DIPLOMATS_RECALLED          | Дипломаты Отозваны
+
+RACES_DIPLOMACY_HOMEWORLD         | Столица
+RACES_DIPLOMACY_LEADER            | Лидер
+RACES_DIPLOMACY_CURRENT_TRADE     | Доход от Торговли
+RACES_DIPLOMACY_TOTAL_TRADE       | Торговый Договор на
+RACES_DIPLOMACY_TRADE_AMT         | %1 МК
+RACES_DIPLOMACY_CHARACTER         | Характер Лидера
+RACES_DIPLOMACY_STATUS            | Статус
+RACES_DIPLOMACY_RELATIONS_METER   | Отношения
+RACES_DIPLOMACY_RELATIONS_UNKNOWN | [alien_race_plural]. Их мотивы и мнение о нас непостижимы нашим дипломатам и шпионам.
+RACES_DIPLOMACY_BUREAU            | Дипломатическое Бюро
+RACES_DIPLOMACY_BUREAU_DESC1      | Свяжитесь с империями или отзовите своих дипломатов, чтобы другие империи не могли связываться с Вами.
+RACES_DIPLOMACY_BUREAU_DESC       | Свяжитесь с послом [alien_race_plural_rod] для аудиенции или установите контакт, если Ваши дипломаты отозваны. 
+RACES_DIPLOMACY_BUREAU_DESC_RANGE | Мы не можем связаться с империями, которые находятся вне диапазона действия наших кораблей.
+RACES_DIPLOMACY_BUREAU_DESC_FINAL | Мы участвуем в последней войне. Дипломатия невозможна.
+RACES_DIPLOMACY_KNOWN_EMPIRES     | Известные Империи
+RACES_DIPLOMACY_RECALLED_DIPLOMAT | Отозванные Дипломаты
+RACES_DIPLOMACY_MANAGE_DIPLOMATS  | Управлять Дипломатами
+RACES_DIPLOMACY_AUDIENCE          | Аудиенция
+RACES_DIPLOMACY_CONTACT           | Установить Контакт
+RACES_DIPLOMACY_TRADE_SUMMARY     | Сводка Торговли
+RACES_DIPLOMACY_TRADE_DESC        | Свяжитесь с послом [alien_race_plural_rod], чтобы заключить торговый договор. Торговые договора требуют денег и времени для установления, но позже повышают производительность колоний.
+RACES_DIPLOMACY_TRADE_DESC_RANGE  | Мы не можем заключать торговые договора с [alien_race_plural_tvor], в то время как они находятся вне диапазона действия наших кораблей.
+RACES_DIPLOMACY_TRADE_DESC_FINAL  | Мы участвуем в последней войне. Торговля невозможна. 
+RACES_DIPLOMACY_TRADE_TREATY      | Торговый Договор
+RACES_DIPLOMACY_FOREIGN_RELATIONS | Межрасовые Отношения
+RACES_DIPLOMACY_FOREIGN_RANGE     | Мы не сможем узнать об отношениях других империй с [alien_race_plural_tvor] пока не установим дипломатический контакт.
+RACES_DIPLOMACY_FOREIGN_DESC      | [alien_race_plural] в контакте с данными расами:
+RACES_DIPLOMACY_COUNTER_BUREAU    | Служба Имперской Безопасности
+RACES_DIPLOMACY_COUNTER_DESC      | Расходы на контршпионаж увеличивают шанс поймать шпионов и диверсантов. 
+RACES_DIPLOMACY_COUNTER_DESC2     | Облагайте свои колонии налогами, чтобы повысить расходы на контршпионаж.
+RACES_DIPLOMACY_EVENT_YEAR        | Год
+RACES_DIPLOMACY_EVENT_TURN        | Ход
+RACES_DIPLOMACY_EVENT_RACE        | Раса
+RACES_DIPLOMACY_EVENT_TITLE       | Дипломатический Инцидент
+RACES_DIPLOMACY_EVENT_EFFECT      | Эффект
+RACES_MANAGE_DIALOG_OK            | ОК
+RACES_MANAGE_REINSTATE_DIPLOMAT   | Восстановить Дипломата
+RACES_MANAGE_RECALL_DIPLOMAT      | Отозвать Дипломата
+RACES_MANAGE_OUR_RECALLED         | Наш дипломат отозван
+RACES_MANAGE_THEIR_RECALLED       | Их дипломат отозван
+RACES_MANAGE_BOTH_RECALLED        | Оба дипломата отозваны
+
+RACES_INTEL_TITLE                 | Отчет Разведки про [alien_race_plural_rod]
+RACES_COUNTER_INTEL_TITLE         | Отчет Контрразведки
+RACES_INTEL_SECURITY_BONUS        | Бонус Контршпионажу
+RACES_INTEL_TOTAL_SPENDING        | Общие Расходы
+RACES_INTEL_SECURITY_TAX          | Налог
+RACES_INTEL_TAX_DESC              | Облагайте свои колонии налогами, чтобы повысить расходы на контршпионаж.
+RACES_INTEL_TAX_OUT_OF_RANGE      | Начнется только когда инопланетяне будут внутри диапазона действия кораблей.
+RACES_INTEL_SECURITY_BONUS_AMT    | +%1%
+RACES_INTEL_SECURITY_BONUS_NONE   | Нет
+RACES_INTEL_REPORT_AGE            | Сколько Отчету Лет
+RACES_INTEL_SPY_NETWORK           | Шпионские Сети
+RACES_INTEL_SPENDING              | Расходы
+RACES_INTEL_SPENDING_DESC         | Повышайте расходы, чтобы постепенно создавать шпионские сети. 
+RACES_INTEL_SPENDING_DESC_UNITY   | Шпионаж не нужен, так как члены Новой Республики делятся друг с другом всеми своими технологиями.
+RACES_INTEL_SPENDING_CAPPED       | Лимит расходов на шпионаж достигнут. Расходы на создание шпионских сетей понижены на %1%.
+RACES_INTEL_SPENDING_RANGE        | Невозможно создавать шпионские сети в империях, которые находятся вне диапазона действия кораблей.
+RACES_INTEL_PERCENT_AMT           | %1%
+RACES_INTEL_YEARS                 | %1 лет
+RACES_INTEL_NO_SPIES              | Нет шпионов
+RACES_INTEL_1_SPY                 | 1 шпион
+RACES_INTEL_N_SPIES               | %1 шпионов
+RACES_INTEL_SPIES                 | %1 / %2
+RACES_INTEL_SPENDING_ANNUAL       | %1 МК/год
+RACES_INTEL_CURRENT               | Текущий
+RACES_INTEL_NO_DATA               | Нет Данных
+RACES_INTEL_SPENDING_NONE         | Нет
+RACES_INTEL_COMPLETION_YEARS      | %1 лет
+RACES_INTEL_COMPLETION_PER_YEAR   | %1/Год
+RACES_INTEL_BUREAU_TITLE          | Бюро Разведки
+RACES_INTEL_BUREAU_DESC           | Прикажите своим шпионам красть технологии или совершать диверсии в колониях других рас.
+RACES_INTEL_BUREAU_SPIES          | Кол-во Шпионов
+RACES_INTEL_BUREAU_MANAGE         | Управлять Шпионами
+RACES_INTEL_BUREAU_SPENDING       | Общие Расходы
+RACES_INTEL_SPY_ORDERS            | Приказы Шпионам
+RACES_INTEL_SPY_ORDERS_DESC       | Прикажите своим шпионам красть технологии или совершать диверсии в колониях [alien_race_plural_rod]. Чем больше шпионских сетей, тем выше шансы успеха, при условии, что ни один из шпионов не пойман и не признался в своей деятельности.
+RACES_INTEL_SPY_WARNING           | При обнаружении, эта миссия нарушит наш договор с [alien_empire_tvor].
+RACES_INTEL_SPY_WARNING_WAR       | При обнаружении, эта миссия может начать войну с [alien_empire_tvor].
+RACES_INTEL_KNOWN_TECHNOLOGY      | Известные [alien_race_plural_dativs] Технологии
+RACES_INTEL_KNOWN_TECH_DESC       | Наши шпионы сообщают, что [alien_race_plural] освоили следующие технологии. Технологии неизвестные нам - выделены.
+RACES_INTEL_UNKNOWN_TECHNOLOGY    | Отчет о Неизвестных Технологиях
+RACES_INTEL_UNKNOWN_TECH_DESC     | Наши шпионы сообщают, что другие расы освоили технологии неизвестные нам.
+
+RACES_MILITARY_TITLE              | Звездный Флот [alien_race_plural_rod]
+RACES_MILITARY_SUBTITLE           | Корабли по Размеру Корпуса
+RACES_MILITARY_UNSCANNED          | ??
+RACES_MILITARY_UNSCANNED_LONG     | Не Просканированный
+RACES_MILITARY_SMALL              | Маленькие
+RACES_MILITARY_MEDIUM             | Средние
+RACES_MILITARY_LARGE              | Большие
+RACES_MILITARY_HUGE               | Огромные
+RACES_MILITARY_REPORT_CURRENT     | Отчет о Звездном Флоте текущий.
+RACES_MILITARY_DEFENSE            | Оборона
+RACES_MILITARY_DEF_PLANET_SHIELD  | Планетарные Щиты
+RACES_MILITARY_DEF_DEFL_SHIELD    | Отражающие Щиты
+RACES_MILITARY_DEF_ARMOR          | Броня
+RACES_MILITARY_TROOP_BONUS        | Бонус к Наземным Сражениям
+RACES_MILITARY_DEF_MISSILE        | Ракетные Базы
+RACES_MILITARY_DEF_MISSILE_MAX    | Стандартное Максимальное кол-во Ракетных Баз на новых колониях
+RACES_MILITARY_NO_SHIELD          | Нет
+RACES_MILITARY_REPORT_NONE        | Нет данных. Необходимо большее кол-во шпионов в империи.
+RACES_MILITARY_REPORT_OLD         | Возраст отчета о звездном флоте: %1 лет.
+RACES_MILITARY_NO_SHIPS           | Кораблей Не Обнаружено
+RACES_MILITARY_HULL               | Размер
+RACES_MILITARY_ARMOR              | Корпус
+RACES_MILITARY_ATTACK_LEVEL       | Уровень Атаки
+RACES_MILITARY_MISSILE_DEFENSE    | Защита от Ракет
+RACES_MILITARY_BEAM_DEFENSE       | Защита от Лучей
+RACES_MILITARY_SHIELD             | Класс Щита
+RACES_MILITARY_COMBAT_SPEED       | Боевая Скорость
+RACES_MILITARY_TRAVEL_SPEED       | Межзв. Скорость
+RACES_MILITARY_WEAPON_CNT         | %2 x%1
+RACES_MILITARY_NO_WEAPONS         | Не Вооружен
+RACES_MILITARY_NO_SPECIALS        | Нет Модулей
+RACES_MILITARY_ACTIVE             | Активен
+RACES_MILITARY_INACTIVE           | Неактивен
+RACES_MILITARY_LAST_SEEN          | Последний Раз Замечен
+RACES_MILITARY_SCAN_AGE           | %1 Лет Назад
+RACES_MILITARY_TACTICAL           | Тактическая Информация
+RACES_MILITARY_WEAPONS            | Оружия
+RACES_MILITARY_SPECIALS           | Модули
+
+RACES_STATUS_THE_EMPIRE           | [alien_empire]
+RACES_STATUS_VS                   | против
+RACES_STATUS_KNOWN_EMPIRES        | %1 Известных Империй
+RACES_STATUS_HISTORY              | Просмотреть Историю [alien_race_plural_rod]
+RACES_STATUS_NO_DATA              | Нет Данных
+RACES_STATUS_OLD_DATA             | Старые Данные
+RACES_STATUS_FLEET_STRENGTH       | Звездный Флот
+RACES_STATUS_POPULATION           | Население
+RACES_STATUS_TECHNOLOGY           | Технология
+RACES_STATUS_PLANETS              | Планеты
+RACES_STATUS_PRODUCTION           | Производство
+RACES_STATUS_TOTAL_POWER          | Общая Мощность
+RACES_UNKNOWN_DATA                | ???
+
+RACES_SET_COLOR_TITLE             | Выберете новый цвет для [alien_empire_rodit]
+RACES_SET_COLOR_DESC              | Если выбранный цвет и форму пользует другая империя - цвета поменяются местами.
+
+// Races UI help
+RACES_HELP_0A                     | ОБЗОР: Этот экран предоставляет подробную информацию о каждой инопланетной расе, с которой Вы столкнулись.
+RACES_HELP_0B                     | Дипломатия - Дипломатически взаимодействуйте с выбранной империей.
+RACES_HELP_0C                     | Разведка - Информация об инопланетных технологиях и управление шпионами.
+RACES_HELP_0D                     | Вооруженные силы - Информация о классах кораблей и вооруженных силах.
+RACES_HELP_0E                     | Статус - Сравнение империй по различным категориям.
+RACES_HELP_0F                     | Выбрав свою империю, Вы можете просмотреть информацию о всех известных Вам расах.
+RACES_HELP_0G                     | Выбрав инопланетную империю, на каждой вкладке отобразится более подробная информация об этой расе.
+RACES_HELP_1A                     | Общая информация о выбранной империи.
+RACES_HELP_1B                     | Позволяет Вам связаться с дипломатами во всех известных Вам империях.
+RACES_HELP_1C                     | Вы можете уделять больше ресурсов на контршпионаж, чтобы повысить свои шансы противодействовать вражеским шпионам.
+RACES_HELP_1D                     | Предоставляет прямой доступ к управлению Вашими шпионами во всех известных Вам империях.
+RACES_HELP_1E                     | Дипломатические инциденты, влияющие на отношения с другими империями. Со временем, их последствия приблизятся к нулю.
+RACES_HELP_1F                     | Нажмите, чтобы поменять цвет, который пользует раса на галактической карте.
+RACES_HELP_2A                     | Общая информация о выбранной империи.
+RACES_HELP_2B                     | Предоставляет аудиенцию с дипломатом выбранной империи.
+RACES_HELP_2C                     | Информация о торговых договорах с выбранной империей.
+RACES_HELP_2D                     | Другие империи, известные выбранной расе.
+RACES_HELP_2E                     | Дипломатические инциденты, влияющие на отношения с другими империями. Со временем, последствия приблизятся к нулю.
+RACES_HELP_2F                     | Текущие отношения с выбранной империей.
+RACES_HELP_3A                     | Увеличьте налог на контршпионаж, чтобы повысить свои шансы противодействовать вражеским шпионам.
+RACES_HELP_3B                     | Предоставляет прямой доступ к управлению вашими шпионами во всех известных Вам империях.
+RACES_HELP_3C                     | Все технологии, известные другим империям, данные о которых были собраны Вашими шпионами. Незнакомые Вам технологии отмечены желтым цветом.
+RACES_HELP_4A                     | Установите количество шпионских сетей, которые Вы хотите создать в выбранной империи, и МК, которые Вы хотите тратить ежегодно на их создание.
+RACES_HELP_4B                     | Отдайте приказы шпионам в выбранной империи. Инфильтрация - сбор данных. Кража Технологий - пытаться украсть технологию. Диверсия - подстрекание восстаний или уничтожение заводов / ракетных баз.
+RACES_HELP_4C                     | Все технологии, известные выбранной империи. Незнакомые Вам технологии отмечены желтым цветом.
+RACES_HELP_5A                     | Известное количество кораблей во флоте выбранной расы, отсортированное по размеру корпуса. Эта информация будет актуальной, если у Вас есть активная шпионская сеть в выбранной империи.
+RACES_HELP_5B                     | Известные способности кораблей выбранной расы. Старые дизайны могут уже не существовать. Эта информация в основном собрана во время космических битв.
+RACES_HELP_5C                     | Известные оборонительные способности выбранной империи. 
+RACES_HELP_6A                     | На этом экране отображается текущий рейтинг Вашей империи в различных категориях по сравнению с другими известными империями. Эти данные собираются Вашими шпионскими сетями внутри этих империй.
+RACES_HELP_6A2                    | Этот экран показывает историческое сравнение Вашей империи с выбранной империей в различных категориях. Эти данные собираются Вашими шпионскими сетями внутри этих империй.
+RACES_HELP_6B                     | Звездный Флот - количество и размер кораблей.
+RACES_HELP_6C                     | Население - общее население всех колонизированных систем.
+RACES_HELP_6D                     | Технология - средний технологический уровень во всех категориях исследования.
+RACES_HELP_6E                     | Планеты - количество колонизированных систем.
+RACES_HELP_6F                     | Производство - общее промышленное производство империи.
+RACES_HELP_6G                     | Общая Мощность - сочетание звездного флота, технологий и уровня производства.
+
+// Sabotage UI
+SABOTAGE_TITLE                    | Наши диверсанты инфильтрировались в колониях [alien_race_plural_rod] и готовы выполнять приказы.
+SABOTAGE_PROMPT                   | Выберите, что сделать шпионам в колонии [alien_race_plural_rod] в системе %1.
+SABOTAGE_WARNING                  | Внимание! Любая диверсия разорвет наш договор с [alien_empire_tvor].
+SABOTAGE_SELECT_TARGET            | Выберите Цель
+SABOTAGE_BUTTON_FACTORIES         | Уничтожить Заводы
+SABOTAGE_BUTTON_BASES             | Уничтожить Ракетные Базы
+SABOTAGE_BUTTON_REBELLION         | Спровоцировать Восстание
+SABOTAGE_BUTTON_NO_ACTION         | Отменить Диверсию
+SABOTAGE_FACTORIES_RESULT         | Ваши диверсанты уничтожили %1 заводов.
+SABOTAGE_BASES_RESULT             | Ваши диверсанты уничтожили %1 ракетных баз.
+SABOTAGE_REBELS_TOTAL             | Ваши диверсанты радикализировали %1 повстанцев, %2% населения.
+SABOTAGE_REBELS_REVOLT            | Ваши диверсанты спровоцировали восстание!
+SABOTAGE_BASES                    | ракетные базы
+SABOTAGE_FACTORIES                | заводы
+NOTICE_SPYING_MISSION_HIDE        | Инфильтрация
+NOTICE_SPYING_MISSION_ESPIONAGE   | Шпионаж
+NOTICE_SPYING_MISSION_SABOTAGE    | Диверсия
+
+// History UI
+HISTORY_TITLE                     | Известная История Галактики
+HISTORY_TITLE_ALL                 | Полная История Галактики
+HISTORY_TURN_DESC                 | Ход %1/%2
+HISTORY_FORWARD                   | Вперед
+HISTORY_BACK                      | Назад
+HISTORY_PLAY                      | Воспроизвести
+HISTORY_PAUSE                     | Пауза
+HISTORY_RESET                     | Сбросить
+HISTORY_EXIT                      | Выйти
+HISTORY_EXTINCT                   | Вымерли
+HISTORY_SYSTEMS                   | Системы
+HISTORY_EMPIRE                    | Империя
+
+
+
+// Council UIs
+COUNCIL_CONVENE_TITLE             | Заседание Галактического Совета
+COUNCIL_CONVENE                   | Галактический Совет собрался, чтобы выбрать одного лидера Правителем Галактики.
+COUNCIL_CONVENE2                  | Каждая империя имеет количество голосов пропорциональное её населению. Кандидат должен получить не менее 2/3 всех голосов, чтобы быть избранным. Кандидаты - лидеры двух империй с самым высоким населением: [first_name] [first_empire_rodit] и [second_name] [second_empire_rodit].
+COUNCIL_ADJOURN_TITLE             | Галактический Совет Делает Перерыв
+COUNCIL_ADJOURN                   | Голосование окончено, но не один из кандитатов не набрал 2/3 всех голосов. Правитель Галактики не был избран. Галактический Совет соберется для следующего голосования через 25 лет.
+COUNCIL_SUMMARY_TITLE             | Сводка Голосов
+COUNCIL_SUMMARY                   | Империи голосуют в порядке численности их населения. Для того чтобы быть избранным, необходимо набрать %1 голосов.
+COUNCIL_BEGIN_VOTING              | Начать Голосование
+COUNCIL_SHOW_VOTING               | Продолжить Голосовать
+COUNCIL_SKIP_TO_PLAYER            | Перейти к очереди [player_race_plural_rod]
+COUNCIL_COMPLETE_VOTING           | Перейти к результату
+COUNCIL_SHOW_RESULTS              | Показать результат
+COUNCIL_VIEW_SUMMARY              | Посмотреть Сводку Голосов
+COUNCIL_VOTES_REQUIRED            | Для того, чтобы быть избранным, необходимо набрать %1 голосов.
+COUNCIL_CAST_PROMPT               | Мы должны голосовать. (Мы имеем %1 голосов)
+COUNCIL_CAST_PROMPT_TITLE         | Выберите кандидата.
+COUNCIL_CHOICE_ABSTAIN            | Воздержаться
+COUNCIL_CAST_VOTE                 | Население [voter_empire_rodit], имея %1 голосов, проголосовало за [candidate_empire_acc]!
+COUNCIL_CAST_ABSTAIN              | Население [voter_empire_rodit] воздержалось от голосования, имея %1 голосов
+COUNCIL_CHOICE_ABSTAIN            | Воздержаться
+COUNCIL_VOTE_COUNT                | %1 голосов
+COUNCIL_VOTE_CAST                 | %1 голосов - за [alien_race_plural_rod]
+COUNCIL_VOTE_ABSTAINED            | %1 голосов - Воздержались
+COUNCIL_TREATY_CANDIDATE          | [alien_race_plural]: Кандидат
+COUNCIL_TREATY_ALLIANCE           | [alien_race_plural]: Союз
+COUNCIL_TREATY_PACT               | [alien_race_plural]: Пакт о Ненападении
+COUNCIL_TREATY_NONE               | [alien_race_plural]: Нет договора
+COUNCIL_TREATY_WAR                | [alien_race_plural]: Война
+COUNCIL_CONTINUE                  | Продолжить
+COUNCIL_ELECTED_TITLE             | Правитель Галактики Избран!
+COUNCIL_ACCEPT_RULING             | Согласиться с Решением
+COUNCIL_REJECT_RULING             | Не Согласиться с Решением
+
+
+// Credit text
+CREDITS_DEVELOPER                 | Рэй Фаулер, Разработчик
+CREDITS_ILLUSTRATOR               | Петар Пенев, Иллюстратор
+CREDITS_GRAPHIC_DESIGN            | Кэйтлин Линдсэй, Граф. Дизайнер
+CREDITS_MUSIC                     | Эфе Тозан, Музыка
+CREDITS_WRITER                    | Джефф Колюччи, Писатель
+CREDITS_SOUND                     | Реми Агулло, Звуковой Дизайнер
+CREDITS_TRANSLATOR                | 
+
+// Systems UI
+SYSTEMS_TITLE                     | Системы
+SYSTEMS_TAB_EXPLORE               | Разведывание
+SYSTEMS_TAB_EXPAND                | Колонизация
+SYSTEMS_TAB_EXPLOIT               | Экономика
+SYSTEMS_TAB_EXTERMINATE           | Оборона
+SYSTEMS_RANGE                     | %1 св. л.
+SYSTEMS_ENVIRONMENT_SIZE          | %1 %2
+SYSTEMS_ENVIRONMENT_TYPE          | %1 %2
+SYSTEMS_SHIELD                    | Щит %1
+SYSTEMS_BASES                     | Базы %1
+SYSTEMS_ENTER_NOTES               | Введите примечания о системе.
+SYSTEMS_ALERT                     | Предупреждение в Системе
+SYSTEMS_NO_ALERTS                 | На Данный Момент Предупреждений Нет.
+SYSTEMS_HISTORY                   | История Системы
+SYSTEMS_UNSCOUTED                 | Система неразведанная, но находится внутри диапазона действия разведчиков.
+SYSTEMS_UNSCOUTED_NEED_TECH       | Система неразведанная и станет досягаемой после завершения исследования технологии "%1".
+SYSTEMS_UNSCOUTED_COLONIZED       | Система неразведанная и принадлежит империи, которая не является союзником.
+SYSTEMS_UNSCOUTED_ENEMY           | Система неразведанная и принадлежит вражеской империи.
+SYSTEMS_UNSCOUTED_GUARDED         | Систему невозможно разведать, до того, как Страж не будет уничтожен.
+SYSTEMS_UNSCOUTED_UNREACHABLE     | Система неразведанная и на данный момент недосягаемая.
+SYSTEMS_CAN_COLONIZE              | Система досягаема и может быть колонизирована с текущей технологией.
+SYSTEMS_CAN_COLONIZE_EN_ROUTE     | Колонизатор в пути к этой планете. До цели - %1 ходов.
+SYSTEMS_CAN_COLONIZE_ENEMY        | Система досягаема и может быть колонизирована, но на орбите находится агрессивный флот [alien_race_plural_rod].
+SYSTEMS_UNCOLONIZED_NEED_TECH     | Систему можно будет колонизировать после того как будет исследована технология "%1".
+SYSTEMS_UNCOLONIZED_NEED_TECHS    | Систему можно будет колонизировать после того как будут исследованы технологии "%1" и "%2".
+SYSTEMS_UNCOLONIZEABLE            | Систему невозможно колонизировать.
+SYSTEMS_EXPLOIT_PCT               | Производство колонии - %1% от максимально возможного.
+SYSTEMS_EXPLOIT_WASTE             | Колония создает промышленные отходы.
+SYSTEMS_EXPLOIT_COMPLETE          | Производство колонии - 100% от максимально возможного.
+SYSTEMS_EXPLOIT_TRANSPORTS        | %1 транспортов в пути.
+SYSTEMS_EXT_ENEMY                 | Вражеская колония.
+SYSTEMS_EXT_ENEMY_FLEET           | Вражеский флот на орбите.
+SYSTEMS_EXT_ENEMY_FLEET_PLAYER    | Вражеский флот на орбите вокруг нашей колонии.
+SYSTEMS_EXT_ENEMY_FLEET_ALLY      | Вражеский флот на орбите вокруг союзной колонии.
+SYSTEMS_EXT_INC_FLEET_PLAYER      | Вражеский флот в пути к нашей колонии.
+SYSTEMS_EXT_INC_FLEET_ALLY        | Вражеский флот в пути к союзной колонии.
+SYSTEMS_EXT_NEED_DEFENSE          | Оборона этой колонии не полностью модернизирована.
+SYSTEMS_EXT_INC_TRANSPORTS        | %1 транспортов [player_race_plural_rod] в пути.
+SYSTEMS_HELP_1A                   | ОБЗОР - Цель этого экрана - выделить системы в галактике, которые заслуживают Вашего внимания. Важность или опасность обозначается цветом: мигающий красный - самый высокий, зеленый - самый низкий.
+SYSTEMS_HELP_1B                   | Разведывание - показывает неисследованные системы внутри диапазона действия разведчиков, или те, которые могли бы быть с неизученными технологиями.
+SYSTEMS_HELP_1C                   | Колонизация - показывает колонизируемые системы внутри диапазона действия кораблей или те, которые могли бы быть в нём с неизученными технологиями.
+SYSTEMS_HELP_1D                   | Экономика - показывает колонии, которые не полностью экономически развиты. Также показаны неколонизированные системы с особыми ресурсами.
+SYSTEMS_HELP_1E                   | Оборона - показывает колонии, с нападающим или приближающимся вражеским флотом.
+SYSTEMS_HELP_1F                   | Предупреждение в Системе - описывает системное предупреждение, если оно есть, для выбранной системы.
+SYSTEMS_HELP_1G                   | Примечания о Системе - место, в котором Вы можете оставлять заметки.
+SYSTEMS_HELP_1H                   | История Системы - хронологический список значимых событий, произошедших в этой системе.
+
+SYSTEMS_STATUS_REBELLION          | Колонию контролируют повстанцы.
+SYSTEMS_STATUS_COMET              | Комета столкнется с этой планетой через %1 лет.
+SYSTEMS_STATUS_SUPERNOVA          | Звезда этой системы станет сверхновой через %1 лет. Физикам необходимо %2 ЕИ, чтобы предотвратить эту катастрофу.
+SYSTEMS_STATUS_PLAGUE             | В колонии пандемия космической чумы. Для того чтобы синтезировать вакцину, необходимо %1 ЕИ.
+SYSTEMS_STATUS_PIRACY             | Пираты в этой системе вызывают неудобства для межзвездной торговли.
+SYSTEMS_STATUS_SPACE_AMOEBA       | К этой системе движется гигантская космическая амёба.
+SYSTEMS_STATUS_SPACE_CRYSTAL      | К этой системе движется гигантский космический кристал.
+
+
+DIPLOMACY_RECEIVING               | Перевод Входящего Сообщения...
+DIPLOMACY_MENU_CONTINUE           | Продолжить
+DIPLOMACY_MENU_ACKNOWLEDGE        | Подтвердить
+DIPLOMACY_MENU_ACCEPT             | Согласиться
+DIPLOMACY_MENU_ACCEPT_NEED_BC     | Согласиться (недостаточно МК)
+DIPLOMACY_MENU_FORGET_IT          | Мы Передумали
+DIPLOMACY_TRADE_LEVEL             | %1 МК / Год
+DIPLOMACY_MENU_TREATIES           | Дипломатические Действия
+DIPLOMACY_MENU_TRADE              | Торговый договор
+DIPLOMACY_MENU_TECHNOLOGY         | Обмен Технологиями
+DIPLOMACY_MENU_OFFER_AID          | Предложить Помощь
+DIPLOMACY_MENU_AMT                | %1 МК
+DIPLOMACY_MENU_OFFER_TECHS        | Предложить Технологию
+DIPLOMACY_MENU_THREATEN           | Пригрозить
+DIPLOMACY_MENU_DECLARE_WAR        | Объявить Войну
+DIPLOMACY_MENU_EVICT_SPIES        | Убрать Всех Шпионов (понижает отношения)
+DIPLOMACY_MENU_STOP_SPYING        | Прекратить Шпионские Действия
+DIPLOMACY_MENU_STOP_ATTACKING     | Прекратить Агрессию
+DIPLOMACY_MENU_GOODBYE            | До Свидания
+DIPLOMACY_MENU_PACT               | Предложить Пакт о Ненападении
+DIPLOMACY_MENU_ALLIANCE           | Предложить Союз
+DIPLOMACY_MENU_PEACE              | Предложить Мирный Договор
+DIPLOMACY_MENU_TRADE              | Предложить Торговый Договор
+DIPLOMACY_MENU_JOINT_WAR          | Совместное Объявление Войны Другой Расе
+DIPLOMACY_MENU_PROPOSE_BREAK_ALLY | Разорвите Союз с Другой Расой
+DIPLOMACY_MENU_BREAK_TRADE        | Разорвать Торговый Договор
+DIPLOMACY_MENU_BREAK_PACT         | Разорвать Пакт о Ненападении
+DIPLOMACY_MENU_BREAK_ALLIANCE     | Разорвать Союз
+DIPLOMACY_TRADE_MENU_BREAK        | Разорвать Торговый Договор
+DIPLOMACY_THREATEN_MENU_0         | Отозвать Дипломатов
+DIPLOMACY_THREATEN_MENU_1         | Требовать Дань 
+DIPLOMACY_THREATEN_MENU_2         | Разорвать Пакт о Ненападении
+DIPLOMACY_THREATEN_MENU_3         | Разорвать Союз
+DIPLOMACY_THREATEN_MENU_BR        | Разорвать Торговый Договор
+DIPLOMACY_THREATEN_MENU_5         | Объявить Войну
+DIPLOMACY_ACCEPT_OFFER            | Согласиться
+DIPLOMACY_ACCEPT_JOIN_WAR         | Согласиться (Присоединиться к Войне)
+DIPLOMACY_ACCEPT_END_WAR          | Согласиться (Заканчивает Войну, Отзывает Войска)
+DIPLOMACY_ACCEPT_FORM_PACT        | Согласиться (Заключает Пакт)
+DIPLOMACY_ACCEPT_FORM_ALLIANCE    | Согласиться (Заключает Союз)
+DIPLOMACY_ACCEPT_ESTABLISH_TRADE  | Согласиться (Налаживает Торговлю)
+DIPLOMACY_DECLINE_OFFER           | Отказаться
+DIPLOMACY_DECLINE_BREAK_ALLIANCE  | Отказаться (Разрывает Союз)
+DIPLOMACY_IGNORE_THREAT           | Игнорировать угрозу
+DIPLOMACY_SHUTDOWN_SPIES          | Ликвидировать все шпионские сети внутри [alien_empire_rodit] 
+DIPLOMACY_HIDE_SPIES              | Приказать всем шпионам внутри [alien_empire_rodit] прекратить шпионские действия
+DIPLOMACY_RETREAT_SHIPS           | Приказать всем кораблям на орбите или в пути к системам [alien_race_plural_rod] отступить
+
+// types of endings
+GAME_OVER_OVERTHROWN_LOSS         | Революция
+GAME_OVER_MILITARY_LOSS           | Истребление
+GAME_OVER_DIPLOMATIC_LOSS         | Инопланетные Правители
+GAME_OVER_NEW_REPUBLIC_LOSS       | Крах Новой Республики
+GAME_OVER_REBELLION_LOSS          | Уничтожение Восстания
+GAME_OVER_DIPLOMATIC_WIN          | Лидеры Объедененной Галактики
+GAME_OVER_MILITARY_WIN            | Завоевание Галактики
+GAME_OVER_MILITARY_ALLIANCE_WIN   | Лидеры Союза
+GAME_OVER_NEW_REPUBLIC_WIN        | Лидеры Новой Республики
+GAME_OVER_REBELLION_WIN           | Завоевание Новой Республики
+GAME_OVER_REBEL_ALLIANCE_WIN      | Лидеры Повстанческого Союза
+GAME_OVER_ALLIANCE_WIN            | Союзники Лидера Галактики
+GAME_OVER_NO_COLONIES_LOSS        | Социальный Коллапс
+
+GAME_OVER_EXIT                    | Выйти
+GAME_OVER_REPLAY                  | Воспроизвести
+
+// text for race-generic endings
+// %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 special text
+GAME_OVER_NO_COLONIES_LOSS2       | Ваше правление было покончено некомпетентностью имперской бюрократии.#Не имея цивилизованных миров, где можно было бы безопасно приземлиться, любые выжившие представители Вашего вида не могут сохранить технологические достижения общества, в котором Вы когда-то жили.#Варварство - это естественное состояние общества. Цивилизация - вещь неестественная, прихоть обстоятельств. И варварство, в конце концов, должно восторжествовать.

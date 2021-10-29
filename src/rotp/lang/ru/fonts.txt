@@ -1,0 +1,10 @@
+// These are the fonts used for the 5 font types within the game.
+
+name,       Русский
+
+logo,       Xolonium-Regular.otf,	  100
+dialogue,   MyriadPro-Bold.otf,       100
+narrow,     MyriadPro-BoldCond.otf,   95
+normal,     MyriadPro-Bold.otf,       90
+plain,      MyriadPro-Cond.otf,       100
+language,   MyriadPro-BoldCond.otf,   100
