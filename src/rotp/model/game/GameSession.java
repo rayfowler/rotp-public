@@ -381,7 +381,7 @@ public final class GameSession implements Base, Serializable {
                     log("Notifications processed 4 - back to MainPanel");
                     RotPUI.instance().selectMainPanel();
                 }
-
+                gal.refreshAllEmpireViews();
                 gal.makeNextTurnDecisions();
 
                 if (processNotifications()){
