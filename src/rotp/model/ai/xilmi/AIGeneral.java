@@ -1013,6 +1013,7 @@ public class AIGeneral implements Base, General {
     {
         return 1;
     }
+    @Override
     public Location fleetCenter(Empire emp)
     {
         float x = 0;
@@ -1031,6 +1032,7 @@ public class AIGeneral implements Base, General {
             center = colonyCenter(emp);
         return center;
     }
+    @Override
     public Location colonyCenter(Empire emp)
     {
         float x = 0;
@@ -1050,7 +1052,7 @@ public class AIGeneral implements Base, General {
     @Override
     public boolean needScoutRepellers()
     {
-        if(empire.tech().topFuelRangeTech().unlimited == true || empire.scanPlanets())
+        if(empire.tech().topFuelRangeTech().unlimited == true || empire.scanPlanets() || !empire.shipLab().needScouts)
             return false;
         if(empire.enemies().isEmpty() && !empire.enemyFleets().isEmpty())
             return true;
@@ -1086,5 +1088,29 @@ public class AIGeneral implements Base, General {
         /*if(senseDanger)
             System.out.println(galaxy().currentTurn()+" "+empire.name()+" fears being attacked.");*/
         return senseDanger;
+    }
+    @Override
+    public Empire biggestThreat()
+    {
+        Empire biggestThreat = empire;
+        float highestThreat = 0;
+        for(Empire emp : empire.contactedEmpires())
+        {
+            if(!empire.inShipRange(emp.id))
+                continue;
+            if(!empire.enemies().isEmpty() && !empire.enemies().contains(emp))
+                continue;
+            if(emp == empire)
+                continue;
+            float threat = emp.powerLevel(emp) * 1 / (fleetCenter(emp).distanceTo(colonyCenter(empire)));
+            //System.out.println(galaxy().currentTurn()+" "+empire.name()+" fear-level of: "+emp.name()+": "+threat);
+            if(threat > highestThreat)
+            {
+                highestThreat = threat;
+                biggestThreat = emp;
+            }
+        }
+        //System.out.println(galaxy().currentTurn()+" "+empire.name()+" highest Threat: "+biggestThreat.name()+": "+highestThreat);
+        return biggestThreat;
     }
 }

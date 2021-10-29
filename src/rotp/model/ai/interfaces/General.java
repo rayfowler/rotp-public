@@ -17,6 +17,7 @@ package rotp.model.ai.interfaces;
 
 import java.util.List;
 import rotp.model.empires.Empire;
+import rotp.model.galaxy.Location;
 import rotp.model.galaxy.StarSystem;
 
 public interface General {
@@ -28,6 +29,7 @@ public interface General {
     
     // specific to Xilmi AI
     default Empire bestVictim()               { return null; }
+    default Empire biggestThreat() { return null; }
     default float defenseRatio()              { return 0.5f; }
     default float totalEmpirePopulationCapacity(Empire emp) { return 0; }
     default int additionalColonizersToBuild(boolean returnPotentialUncolonizedInstead) { return 0; }
@@ -43,4 +45,6 @@ public interface General {
     default int minTransportSize() { return 5; }
     default boolean needScoutRepellers() { return false; }
     default boolean sensePotentialAttack() { return false; }
+    default Location colonyCenter(Empire emp) { return new Location(0, 0); }
+    default Location fleetCenter(Empire emp) { return new Location(0, 0); }
 }
