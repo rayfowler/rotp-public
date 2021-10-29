@@ -207,7 +207,7 @@ public class CombatStackShip extends CombatStack {
                 // to account for diagonal movement
                 missileRange = (int) max(tgt.repulsorRange() + 1, repulsorRange() + 1, missileRange, ((weaponRange(wpn)/1.414f)-maxRetreatMove));
             else
-                weaponRange = max(weaponRange,weaponRange(wpn));
+                weaponRange = 1; //ail: optimal firing-range for beam-weapons should be as close as possible due to the attack-rating-penalty you get from being further away, also you don't get to use several specials you might want to use
         }
         return weaponRange < 0 ? missileRange: weaponRange;
     }
