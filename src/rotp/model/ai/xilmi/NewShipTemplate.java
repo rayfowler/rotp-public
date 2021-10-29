@@ -107,6 +107,7 @@ public class NewShipTemplate implements Base {
         float costLimit = ai.empire().totalPlanetaryProduction() * 0.125f * 50 / ai.empire().systemsInShipRange(ai.empire()).size();
         float biggestShipWeaponSize = 0;
         float biggestBombSize = 0;
+        float highestSpecialCount = 0;
         for (int i = 0; i<4; i++) {
             ShipDesign design = shipDesigns[i];
             for (int j=0; j<maxWeapons(); j++)
@@ -122,6 +123,14 @@ public class NewShipTemplate implements Base {
                         biggestShipWeaponSize = design.weapon(j).space(design);
                 }
             }
+            int specials = 0;
+            for (int s=0; s<maxSpecials(); s++)
+            {
+                if(!design.special(s).isNone())
+                    specials++;
+            }
+            if(specials > highestSpecialCount)
+                highestSpecialCount = specials;
         }
         //System.out.print("\n"+galaxy().currentTurn()+" "+ai.empire().name()+" costlimit: "+costLimit+" biggestShipWeaponSize: "+biggestShipWeaponSize);
         for (int i = 0; i<4; i++) {
@@ -156,6 +165,14 @@ public class NewShipTemplate implements Base {
                         spaceWpnSize = design.weapon(j).space(design);
                 }
             }
+            float specials = 0;
+            for (int s=0; s<maxSpecials(); s++)
+            {
+                if(!design.special(s).isNone())
+                    specials++;
+            }
+            float specialsMod = (1 + specials) / (1 + highestSpecialCount);
+            score *= specialsMod;
             float weaponSizeMod = 1.0f;
             if(role == role.BOMBER && biggestBombSize > 0)
                 weaponSizeMod *= bombWpnSize / biggestBombSize;
