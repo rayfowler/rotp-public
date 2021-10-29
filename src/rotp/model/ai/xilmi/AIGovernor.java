@@ -209,19 +209,6 @@ public class AIGovernor implements Base, Governor {
             return;
         }
 
-        // for systems that are flagged as rush defense, do that and forget
-        // everything else until the project is done
-        if (empire.generalAI().rushDefenseSystems().contains(col.starSystem())) {
-            if (col.defense().maxSpendingNeeded() > 0 && col.defense().maxBases() > 0) {    //ail: only start rush-defense when at least one base should be built, otherwise freshly colonized planets sometimes start with a shield
-                float totalProd = col.totalIncome();
-                float cleanCost = col.minimumCleanupCost();
-                col.clearSpending();
-                col.pct(ECOLOGY, cleanCost/totalProd);
-                col.allocation(DEFENSE, maxAllocation - col.totalAmountAllocated());
-                return;
-            }
-        }
-        
         //System.out.print("\n"+empire.name()+" col.shipyard().maxSpendingNeeded(): "+col.shipyard().maxSpendingNeeded()+" bldg: "+col.shipyard().design().id()+ " active: "+col.shipyard().design().active());
         boolean needToMilitarize = false;
         if(empire.atWar() || empire.generalAI().sensePotentialAttack())
@@ -278,6 +265,8 @@ public class AIGovernor implements Base, Governor {
         col.pct(ECOLOGY, cleanCost/totalProd);
         float netProd = totalProd - totalProd * col.pct(ECOLOGY);
         float shipCost = 0;
+        
+        //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+col.name()+" totalProd: "+totalProd+" netProd: "+netProd+" TPI: "+col.totalProductionIncome()+" Res: "+col.maxReserveIncome());
 
         if (col.allocation(ECOLOGY) < 0) {
             err("Minimum cleanup cost < 0");
@@ -305,7 +294,8 @@ public class AIGovernor implements Base, Governor {
         {
             if(fleet.empire().aggressiveWith(col.empire().id))
             {
-                enemyBombardPower += fleet.expectedBombardDamage();
+                if(empire.visibleShips().contains(fleet))
+                    enemyBombardPower += fleet.expectedBombardDamage();
             }
         }
         float popLoss = enemyBombardPower / 200;
