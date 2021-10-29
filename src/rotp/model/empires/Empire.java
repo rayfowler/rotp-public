@@ -965,13 +965,6 @@ public final class Empire implements Base, NamedObject, Serializable {
             ai().sendTransports();
         }
 
-        // colony development (sometimes done for player if auto-pilot)
-        NoticeMessage.setSubstatus(text("TURN_COLONY_SPENDING"));
-        for (int n=0; n<sv.count(); n++) {
-            if (sv.empId(n) == id)
-                governorAI().setColonyAllocations(sv.colony(n));
-        }
-
         if (isAIControlled()) {
             ai().treasurer().allocateReserve();
             // diplomatic activities
@@ -979,6 +972,13 @@ public final class Empire implements Base, NamedObject, Serializable {
                 if ((ev != null) && ev.embassy().contact())
                     ev.setSuggestedAllocations();
             }
+        }
+        
+        // colony development (sometimes done for player if auto-pilot)
+        NoticeMessage.setSubstatus(text("TURN_COLONY_SPENDING"));
+        for (int n=0; n<sv.count(); n++) {
+            if (sv.empId(n) == id)
+                governorAI().setColonyAllocations(sv.colony(n));
         }
     }
     public String decode(String s, Empire listener) {
