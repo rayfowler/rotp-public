@@ -917,18 +917,30 @@ public class AIFleetCommander implements Base, FleetCommander {
                                 allowColonizers = false;
                                 attackThreshold = 1.0f;
                                 float ourFightingBC = bcValue(fleet, false, true, false, false);
+                                float incomingTransports = empire.unfriendlyTransportsInTransit(target);
+                                float TransportKillBCNeeded = 0;
+                                if(incomingTransports > 0)
+                                {
+                                    float TransportKills = fleet.firepowerAntiShip(0) * transportGauntletRounds(max(1, empire.tech().topEngineWarpTech().baseWarp() - 1)) / empire.tech().topArmorTech().transportHP;
+                                    incomingTransports *= 1 - empire.combatTransportPct();
+                                    TransportKillBCNeeded = fleet.bcValue() * min(1, incomingTransports / TransportKills);
+                                    //System.out.print("\n"+galaxy().currentTurn()+" "+fleet.empire().name()+" Fleet at "+fleet.system().name()+" should be able to kill "+TransportKills+"/"+transportsToDealWith+" transports. Need to keep: "+stayToKillTransports+" of "+fleet.bcValue());
+                                }
                                 if(ourFightingBC - keepBc > 0)
                                 {
-                                    sendAmount = min(1.0f, (empire.unfriendlyTransportsInTransit(target) * empire.maxRobotControls() + enemyFightingBC) * 2 / (ourFightingBC));
+                                    sendAmount = min(1.0f, max(TransportKillBCNeeded,  enemyFightingBC * 2) / ourFightingBC);
                                 }
                                 else
                                 {
                                     sendAmount = 1.0f;
                                 }
+                                sendBombAmount = 0;
                                 if (target.hasEvent()) {
                                     if (target.eventKey().equals("MAIN_PLANET_EVENT_PIRACY")
                                             || target.eventKey().equals("MAIN_PLANET_EVENT_COMET")) {
                                         sendAmount = 1.0f;
+                                        sendBombAmount = 1.0f;
+                                        allowBombers = true;
                                     }
                                 }
                             }
@@ -953,13 +965,13 @@ public class AIFleetCommander implements Base, FleetCommander {
                                     //System.out.print("\n"+galaxy().currentTurn()+" "+fleet.empire().name()+" Fleet at "+fleet.system().name()+" sendBombAmount before: "+sendBombAmount);
                                     sendBombAmount = min(1.0f - keepAmount, (locationBonus + target.colony().untargetedHitPoints()) / fleet.expectedBombardDamage(target));
                                     //System.out.print("\n"+galaxy().currentTurn()+" "+fleet.empire().name()+" Fleet at "+fleet.system().name()+" sendBombAmount after: "+sendBombAmount);
-                                    sendAmount = 1.0f - keepAmount;
                                 }
                                 else
                                 {
                                     sendBombAmount = 1.0f - keepAmount;
-                                    sendAmount = 1.0f - keepAmount;
                                 }
+                                sendAmount = sendBombAmount;
+                                //System.out.print("\n"+galaxy().currentTurn()+" "+fleet.empire().name()+" Fleet at "+fleet.system().name()+" sendBombAmount: "+sendBombAmount+" sendAmount: "+sendAmount+" keepAmount: "+keepAmount);
                             }
                         }
                         else
@@ -995,10 +1007,10 @@ public class AIFleetCommander implements Base, FleetCommander {
                             enemyFightingBC *= 1 + 0.125f * tgtEmpire.shipAttackBonus() + 0.2f * tgtEmpire.shipDefenseBonus();
                         //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" => "+target.name()+" ourEffectiveBC: "+ourEffectiveBC+" ourEffectiveBombBC: "+ourEffectiveBombBC+" ourColonizerBC: "+ourColonizerBC+" keepBc: "+keepBc+" col-adpt: "+empire.shipDesignerAI().fightingAdapted(empire.shipLab().colonyDesign()));
                         //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" thinks "+target.name()+" has "+enemyFightingBC+" our effective: "+(ourEffectiveBC - keepBc));
-                        if(ourEffectiveBC - keepBc > 0)
-                            sendAmount = max(sendAmount, min(1.0f, enemyFightingBC*(targetTech+10.0f)*2.0f / ((ourEffectiveBC - keepBc) * (civTech+10.0f))));
                         if(ourEffectiveBombBC > 0)
                             sendBombAmount = max(sendBombAmount, min(1.0f - keepAmount, enemyBaseBC*(targetTech+10.0f)*2.0f / (ourEffectiveBombBC *(civTech+10.0f))));
+                        if(ourEffectiveBC - keepBc > 0)
+                            sendAmount = max(sendBombAmount, sendAmount, min(1.0f, enemyFightingBC*(targetTech+10.0f)*2.0f / ((ourEffectiveBC - keepBc) * (civTech+10.0f))));
                         //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" should attack "+empire.sv.name(target.id)+" "+bcValue(fleet, false, allowFighters, allowBombers, allowColonizers)+":"+enemyFightingBC+" sendAmount: "+sendAmount+" sendBombAmount: "+sendBombAmount);
                         //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" should attack "+empire.sv.name(target.id)+" HP "+target.colony().untargetedHitPoints() +" Bomb-Dmg: "+fleet.expectedBombardDamage(target)*sendAmount);
                         //ail: if we have Hyperspace-communications, we can't split
