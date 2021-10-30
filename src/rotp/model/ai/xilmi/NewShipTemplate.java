@@ -103,11 +103,20 @@ public class NewShipTemplate implements Base {
             shipDesigns[i] = newDesign(ai, role, i);
         }
 
+        int ReachableSystems = 0;
+        for (int id=0;id<ai.empire().sv.count();id++) 
+        {
+            if(ai.empire().sv.inShipRange(id))
+                ReachableSystems++;
+        }
+        
         SortedMap<Float, ShipDesign> designSorter = new TreeMap<>();
-        float costLimit = ai.empire().totalPlanetaryProduction() * 0.125f * 50 / ai.empire().systemsInShipRange(ai.empire()).size();
+        float costLimit = ai.empire().totalPlanetaryProduction() * 0.125f * 50 / ReachableSystems;
+        //System.out.print("\n"+galaxy().currentTurn()+" "+ai.empire().name()+" costlimit: "+costLimit+" reachables: "+ReachableSystems+" totalCost at limit: "+(costLimit*ai.empire().systemsInShipRange(ai.empire()).size() / 50));
         float biggestShipWeaponSize = 0;
         float biggestBombSize = 0;
-        float highestSpecialCount = 0;
+        float highestAttackLevel = 0;
+        float highestShieldLevel = 0;
         for (int i = 0; i<4; i++) {
             ShipDesign design = shipDesigns[i];
             for (int j=0; j<maxWeapons(); j++)
@@ -123,27 +132,23 @@ public class NewShipTemplate implements Base {
                         biggestShipWeaponSize = design.weapon(j).space(design);
                 }
             }
-            int specials = 0;
-            for (int s=0; s<maxSpecials(); s++)
-            {
-                if(!design.special(s).isNone())
-                    specials++;
-            }
-            if(specials > highestSpecialCount)
-                highestSpecialCount = specials;
+            if(design.attackLevel() > highestAttackLevel)
+                highestAttackLevel = design.attackLevel();
         }
         //System.out.print("\n"+galaxy().currentTurn()+" "+ai.empire().name()+" costlimit: "+costLimit+" biggestShipWeaponSize: "+biggestShipWeaponSize);
         for (int i = 0; i<4; i++) {
             ShipDesign design = shipDesigns[i];
             float score = design.spaceUsed() / design.cost();
             float defScore = design.hits() / design.cost();
-            float hitPct = (5 + design.attackLevel() - (design.beamDefense() + design.missileDefense()) / 2) / 10;
+            float hitPct = (5 + highestAttackLevel - (design.beamDefense() + design.missileDefense()) / 2) / 10;
             hitPct = max(.05f, hitPct);
             hitPct = min(hitPct, 1.0f);
             float absorbPct = 1.0f;
             if(design.firepowerAntiShip(0) > 0)
                 absorbPct = design.firepowerAntiShip(design.shieldLevel()) / design.firepowerAntiShip(0);
-            float mitigation = 1 - (hitPct * absorbPct);
+            float mitigation = Float.MAX_VALUE;
+            if(hitPct > 0 && absorbPct > 0)    
+                mitigation = (1 / hitPct) * (1 / absorbPct);
             defScore *= mitigation;
             score *= defScore;
             //System.out.print("\n"+ai.empire().name()+" "+design.name()+" Role: "+role+" size: "+design.size()+" score wo. costlimit: "+score+" costlimit-dividor: "+design.cost() / costLimit);
@@ -165,23 +170,27 @@ public class NewShipTemplate implements Base {
                         spaceWpnSize = design.weapon(j).space(design);
                 }
             }
-            float specials = 0;
+            float specialsMod = 1;
             for (int s=0; s<maxSpecials(); s++)
             {
-                if(!design.special(s).isNone())
-                    specials++;
+                //Intertial doesn't add to score because it's already taken into account for in the mitigation
+                if(!design.special(s).isNone() && !design.special(s).isInertial())
+                    specialsMod*=1.26;
             }
-            float specialsMod = (1 + specials) / (1 + highestSpecialCount);
+
             score *= specialsMod;
             float weaponSizeMod = 1.0f;
             if(role == role.BOMBER && biggestBombSize > 0)
                 weaponSizeMod *= bombWpnSize / biggestBombSize;
             else if(biggestShipWeaponSize > 0)
                 weaponSizeMod *= spaceWpnSize / biggestShipWeaponSize;
-            if(ai.empire().shipDesignerAI().wantHybrid() && biggestBombSize > 0)
-                weaponSizeMod *= ai.empire().generalAI().defenseRatio() + (1 - ai.empire().generalAI().defenseRatio()) * bombWpnSize / biggestBombSize;
+            if(ai.empire().shipDesignerAI().wantHybrid())
+                if(biggestBombSize > 0)
+                    weaponSizeMod *= ai.empire().generalAI().defenseRatio() + (1 - ai.empire().generalAI().defenseRatio()) * bombWpnSize / biggestBombSize;
+                else
+                    weaponSizeMod *= ai.empire().generalAI().defenseRatio(); 
             score *= weaponSizeMod;
-            //System.out.print("\n"+ai.empire().name()+" "+design.name()+" Role: "+role+" size: "+design.size()+" score: "+score+" tonnageScore: "+design.spaceUsed() / design.cost()+" defscore: "+defScore+" wpnScore: "+weaponSizeMod+" costlimit: "+costLimit+" spaceWpnSize: "+spaceWpnSize+" bomb-adpt: "+ai.bombingAdapted(design));
+            //System.out.print("\n"+ai.empire().name()+" "+design.name()+" Role: "+role+" size: "+design.size()+" score: "+score+" tonnageScore: "+design.spaceUsed() / design.cost()+" defscore: "+defScore+" wpnScore: "+weaponSizeMod+" costlimit: "+costLimit+" spaceWpnSize: "+spaceWpnSize+" bomb-adpt: "+ai.bombingAdapted(design)+" specialsMod: "+specialsMod+" absorbPct: "+absorbPct+ " hitPct: "+hitPct);
             designSorter.put(score, design);
             //For bombers we want the smallest that has the best bomb because it's easiest to "dose"
             if(role == role.BOMBER && weaponSizeMod == 1)
