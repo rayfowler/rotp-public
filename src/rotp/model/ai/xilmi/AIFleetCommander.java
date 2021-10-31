@@ -410,7 +410,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             //If we already sent a fleet to an enemy system out of our scanner-range we don't send more there to reinforce as long as we don't get better information
             if((bc > 0 || bombardDamage > 0) && !canScanTo && empire.aggressiveWith(empire.sv.empId(id)))
             {
-                //System.out.print("\n"+fleet.empire().name()+" ignores "+empire.sv.name(current.id)+" because not scanned and has incoming.");
+                //System.out.print("\n"+fleet.empire().name()+" check if I can attack "+empire.sv.name(current.id)+" out of range expected bombard: "+fleet.expectedBombardDamage(empire.sv.system(id))+" HP: "+empire.sv.system(id).colony().untargetedHitPoints());
                 if(fleet.expectedBombardDamage(empire.sv.system(id)) < empire.sv.system(id).colony().untargetedHitPoints())
                     continue;
             }
@@ -813,7 +813,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                         }
                         float expectedBombardDamage = fleet.expectedBombardDamage();
                         boolean canInvade = empire.canColonize(fleet.system().planet().type());
-                        //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" raw keepAmount: "+requiredBombardDamage / expectedBombardDamage);
+                        //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" raw keepAmount: "+requiredBombardDamage / expectedBombardDamage+" expected: "+expectedBombardDamage+" required: "+requiredBombardDamage);
                         if(expectedBombardDamage > 0 && canInvade)
                             keepAmount = min(1, requiredBombardDamage / expectedBombardDamage);
                         if(keepAmount < 1)
@@ -821,8 +821,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                     }
                     
                     //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" keep: "+keepAmount);
-                    /*if(keepAmount >= 1)
-                        break;*/
+                    if(keepAmount >= 1)
+                        break;
 
                     if(target == null)
                     {
