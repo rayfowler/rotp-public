@@ -186,14 +186,6 @@ public class CombatStackShip extends CombatStack {
         int missileRange = -1;
         int weaponRange = -1;
         
-        int maxX = ShipCombatManager.maxX;
-        int maxY = ShipCombatManager.maxY;
-        float maxRetreatMove = 2*tgt.maxMove; // allow 2 turns to retreat before missiles hit
-        if (maxRetreatMove > 0) {
-            // won't retreat more than the distance to the nearest corner of the map
-            float moveToCorner = min(distance(tgt.x,tgt.y,0,0), distance(tgt.x,tgt.y,0,maxY), distance(tgt.x,tgt.y,maxX,0), distance(tgt.x,tgt.y,maxX,maxY));
-            maxRetreatMove = min(maxRetreatMove, moveToCorner);
-        }
         for (int i=0;i<weapons.size();i++) {
             ShipComponent wpn = weapons.get(i);
             // if we are bombing a planet, ignore other weapons
@@ -202,14 +194,17 @@ public class CombatStackShip extends CombatStack {
                 continue;
             if (tgt.isColony() && wpn.groundAttacksOnly())
                 return 1;
-            else if (wpn.isMissileWeapon()) 
-                // missiles move by distance, not tiles, so adjust minimum range downward by sqrt(2)
-                // to account for diagonal movement
-                missileRange = (int) max(tgt.repulsorRange() + 1, repulsorRange() + 1, missileRange, ((weaponRange(wpn)/1.414f)-maxRetreatMove));
+            else if (wpn.isMissileWeapon() && roundsRemaining[i] > 0)
+            {
+                float mslRange = 1;
+                float requiredRange = 2 * tgt.maxMove * sqrt(2) - 0.7f;
+                mslRange = max(weaponRange(wpn) - requiredRange, mslRange);
+                missileRange = (int) max(tgt.repulsorRange() + 1, repulsorRange() + 1, missileRange, mslRange);
+            }
             else
                 weaponRange = 1; //ail: optimal firing-range for beam-weapons should be as close as possible due to the attack-rating-penalty you get from being further away, also you don't get to use several specials you might want to use
         }
-        return weaponRange < 0 ? missileRange: weaponRange;
+        return max(missileRange, weaponRange);
     }
     @Override
     public float missileInterceptPct(ShipWeaponMissileType wpn)   {
