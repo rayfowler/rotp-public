@@ -1411,7 +1411,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     }
     public boolean atWar() {
         for (EmpireView v: empireViews()) {
-            if ((v != null) && v.embassy().anyWar())
+            if ((v != null) && !v.empire().extinct() && v.embassy().anyWar())
                 return true;
         }
         return false;
