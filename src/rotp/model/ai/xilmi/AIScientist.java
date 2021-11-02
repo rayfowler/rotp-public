@@ -417,7 +417,11 @@ public class AIScientist implements Base, Scientist {
 
         // return highest priority
         cat.currentTech(techs.get(0));
-        //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+cat.id()+": "+cat.currentTechName()+" "+researchPriority(techs.get(0)));
+        /*for(Tech t : techs)
+        {
+            System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+cat.id()+" option: "+t.name()+" "+researchPriority(t));
+        }
+        System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+cat.id()+" picked: "+cat.currentTechName()+" "+researchPriority(techs.get(0)));*/
     }
     //
     //  RESEARCH VALUES for various types of tech
@@ -429,6 +433,8 @@ public class AIScientist implements Base, Scientist {
             if(!ev.inEconomicRange())
                 continue;
             if(!galaxy().options().canTradeTechs(empire, ev.empire()))
+                continue;
+            if(empire.atWarWith(ev.empId()))
                 continue;
             if(ev.empire().race().internalSecurityAdj() > empire.race().spyInfiltrationAdj())
                 continue;
