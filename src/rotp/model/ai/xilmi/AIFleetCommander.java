@@ -388,10 +388,9 @@ public class AIFleetCommander implements Base, FleetCommander {
             float enemyFightingBc = 0.0f;
             float enemyBombardDamage = 0.0f;
             float bombardDamage = 0.0f;
-            float myFightingBc = 0.0f;
             float bc = 0.0f;
             int colonizationBonus = 0;
-            boolean colonizerEnroute = false;
+            int colonizerEnroute = 0;
             boolean canScanTo = false;
             UpdateSystemInfo(id);
             if(systemInfoBuffer.containsKey(id))
@@ -400,13 +399,13 @@ public class AIFleetCommander implements Base, FleetCommander {
                 enemyBombardDamage = systemInfoBuffer.get(id).enemyBombardDamage;
                 transports = systemInfoBuffer.get(id).enemyIncomingTransports;
                 bombardDamage = systemInfoBuffer.get(id).myBombardDamage;
-                myFightingBc = systemInfoBuffer.get(id).myFightingBc;
                 bc = systemInfoBuffer.get(id).myTotalBc;
                 myTransports = systemInfoBuffer.get(id).myIncomingTransports;
                 colonizationBonus = systemInfoBuffer.get(id).additionalSystemsInRangeWhenColonized;
-                colonizerEnroute = systemInfoBuffer.get(id).colonizersEnroute > 0;
+                colonizerEnroute = systemInfoBuffer.get(id).colonizersEnroute;
                 canScanTo = systemInfoBuffer.get(id).inScannerRange;
             }
+            //When it is ourselves who are en-route, don't let that reduce the score
             //If we already sent a fleet to an enemy system out of our scanner-range we don't send more there to reinforce as long as we don't get better information
             if((bc > 0 || bombardDamage > 0) && !canScanTo && empire.aggressiveWith(empire.sv.empId(id)))
             {
@@ -422,7 +421,9 @@ public class AIFleetCommander implements Base, FleetCommander {
                 continue;*/
             if(fleet.inTransit() && fleet.destination() == current)
             {
-                myFightingBc -= bcValue(fleet, false, true, false, false);
+                bc -= fleet.bcValue();
+                if(fleet.hasColonyShip())
+                    colonizerEnroute--;
                 bombardDamage -= fleet.expectedBombardDamage(current);
                 //System.out.print("\n"+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" => "+empire.sv.name(current.id)+" bc: "+bc+" bomb: "+bombardDamage);
             }
@@ -503,7 +504,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             if(bombardDamage > 0 && fleet.system() != current)
             {
                 //we only reduce the attractiveness of the system, if it isn't about to become a new colony of ours
-                if((!fleet.canColonizeSystem(current) && myTransports == 0 && !colonizerEnroute) || colonizationBonus == 0)
+                if((!fleet.canColonizeSystem(current) && myTransports == 0 && colonizerEnroute == 0) || colonizationBonus == 0)
                     if(empire.sv.system(current.id).colony() != null)
                         score *= Math.min(empire.sv.system(current.id).colony().untargetedHitPoints() / bombardDamage, 1.0f);
             } 
@@ -525,7 +526,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                 score *= sqrt(2.0f);
                 if (bc > 0 && fleet.sysId() != current.id && (currEmp == null || empire.alliedWith(empire.sv.empId(id))))
                 {
-                    if(!(currEmp == null && fleet.canColonizeSystem(current) && !colonizerEnroute))
+                    if(!(currEmp == null && fleet.canColonizeSystem(current) && colonizerEnroute == 0))
                         score /= bc;
                 }
             }
@@ -536,7 +537,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             boolean ignoreTravelTime = false;
             if(fleet.canColonizeSystem(current))
             {
-                if(colonizerEnroute)
+                if(colonizerEnroute > 0)
                     score /= (systemInfoBuffer.get(id).colonizersEnroute * 10) + 1;
                 if(empire.shipLab().colonyDesign().size() > 2)
                     ignoreTravelTime = true;
@@ -812,9 +813,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                             requiredBombardDamage *= 0.9f;
                         }
                         float expectedBombardDamage = fleet.expectedBombardDamage();
-                        boolean canInvade = empire.canColonize(fleet.system().planet().type());
                         //System.out.print("\n"+fleet.empire().name()+" Fleet at "+fleet.system().name()+" raw keepAmount: "+requiredBombardDamage / expectedBombardDamage+" expected: "+expectedBombardDamage+" required: "+requiredBombardDamage);
-                        if(expectedBombardDamage > 0 && canInvade)
+                        if(expectedBombardDamage > 0)
                             keepAmount = min(1, requiredBombardDamage / expectedBombardDamage);
                         if(keepAmount < 1)
                             onlyAllowRealTarget = true;
