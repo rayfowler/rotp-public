@@ -1393,6 +1393,9 @@ public class AIDiplomat implements Base, Diplomat {
         {
             warAllowed = false;
         }
+        //Ail: If there's only two empires left, there's no time for preparation. We cannot allow them the first-strike-advantage!
+        if(galaxy().numActiveEmpires() < 3)
+            warAllowed = true;
         //System.out.println(galaxy().currentTurn()+" "+empire.name()+" popCap: "+empire.generalAI().totalEmpirePopulationCapacity(empire)+" popCapRank: "+popCapRank+" facCapRank: " +facCapRank()+" tech-rank: "+techLevelRank()+" has good RP-ROI: "+reseachHasGoodROI+" war Allowed: "+warAllowed);
         if(warAllowed)
             if(v.empire() == empire.generalAI().bestVictim())
@@ -1670,7 +1673,7 @@ public class AIDiplomat implements Base, Diplomat {
         return -1.0f*lostBC*100/totalIndustry;
     }
    private boolean warWeary(EmpireView v) {
-        if (v.embassy().finalWar())
+        if (v.embassy().finalWar() || galaxy().activeEmpires().size() < 3)
             return false;
         //ail: when we have incoming transports, we don't want them to perish
         for(Transport trans:empire.transports())
@@ -1842,8 +1845,8 @@ public class AIDiplomat implements Base, Diplomat {
     public int militaryRank(Empire etc, boolean inAttackRange)
     {
         int rank = 1;
-        float myMilitaryPower = empire.militaryPowerLevel(empire);
-        float etcMilitaryPower = etc.militaryPowerLevel(etc);
+        float myMilitaryPower = empire.militaryPowerLevel();
+        float etcMilitaryPower = etc.militaryPowerLevel();
         if(empire != etc && myMilitaryPower > etcMilitaryPower)
             rank++;
         for(Empire emp:empire.contactedEmpires())
@@ -1852,7 +1855,8 @@ public class AIDiplomat implements Base, Diplomat {
                 continue;
             if(inAttackRange && !empire.inShipRange(emp.id))
                 continue;
-            if(emp.militaryPowerLevel(emp) > etcMilitaryPower)
+            //System.out.print("\n"+empire.galaxy().currentTurn()+" "+etc.name()+" power: "+etcMilitaryPower+" "+emp.name()+" power: "+emp.militaryPowerLevel(emp));
+            if(emp.militaryPowerLevel() > etcMilitaryPower)
                 rank++;
         }
         return rank;
