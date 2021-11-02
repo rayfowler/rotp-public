@@ -119,9 +119,12 @@ public final class ShipCombatResults implements Base {
     public ShipCombatResults(ShipCombatManager mgr, StarSystem s, Empire emp1, Empire emp2) {
         system = s;
         monster = null;
-        // set up default attacker/defender assignment
+        
+        // set up default attacker/defender assignment. 
         attacker = emp1;
         defender = emp2;
+        
+        boolean neutralSystem = !system.isColonized();
 
         // if system is colonized and one of the fleet is allied to it,
         // set it up as a defender
@@ -144,6 +147,24 @@ public final class ShipCombatResults implements Base {
                 attacker = emp1;
                 if (defender == sysEmpire)
                     colonyStack = new CombatStackColony(system().colony(), mgr);
+            }
+            else
+                neutralSystem = true;
+        }
+        
+        // when there are two fleets in combat over a neutral colony (or in an
+        // uncolonized system), then randomize which fleet is the "attacker" and
+        // which is the "defender". This prevents using the combat turn limit as 
+        // a way to maintain control in a system without engaging in combat since
+        // the expiring turn limit requires the attacker fleet to retreat
+        if (neutralSystem) {
+            if (random() < 0.5) {
+                attacker = emp1; 
+                defender = emp2;
+            }
+            else {
+                attacker = emp2;
+                defender = emp1;
             }
         }
 
