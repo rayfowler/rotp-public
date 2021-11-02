@@ -399,17 +399,17 @@ public class AIGovernor implements Base, Governor {
             bomberCost += lab.design(i).cost() * counts[i] * empire.shipDesignerAI().bombingAdapted(lab.design(i));
         }
         //ail: No use to build any ships if they won't do damage anyways. Better tech up.
-        boolean viableForShipProduction = true;
+        boolean viableForShipProduction = prodScore >= 1 || needToMilitarize;
         float turnsBeforeColonyDestroyed = Float.MAX_VALUE;
         if(popLoss > 0)
             turnsBeforeColonyDestroyed = col.population() / popLoss;
         float fighterBuildTime = empire.shipDesignerAI().BestDesignToFight().cost() / totalProd;
         if(fighterBuildTime > turnsBeforeColonyDestroyed)
             viableForShipProduction = false;
+        //System.out.print("\n"+empire.name()+" "+col.name()+" production-score "+productionScore(col.starSystem())+" needToMilitarize: "+needToMilitarize+" viableForShipProduction: "+viableForShipProduction+" Mil-Rank: "+empire.diplomatAI().militaryRank(empire, false)+" Pop-Rank: "+empire.diplomatAI().popCapRank(empire, false));
         //System.out.print("\n"+empire.name()+" "+col.name()+" col.allocation(SHIP): "+col.allocation(SHIP));
         if(col.allocation(SHIP) == 0 && viableForShipProduction)
         {
-            //System.out.print("\n"+empire.name()+" "+col.name()+" production-score "+productionScore(col.starSystem()));
             float maxShipMaintainance = 0.0f;
             float fighterPercentage = empire.generalAI().defenseRatio();
             
