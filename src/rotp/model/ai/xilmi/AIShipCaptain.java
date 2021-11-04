@@ -116,7 +116,10 @@ public class AIShipCaptain implements Base, ShipCaptain {
                                 mgr.performMoveStackAlongPath(stack, bestPathToSaveSpot);
                             //System.out.print("\n"+stack.fullName()+" Kiting performed: "+(bestPathToSaveSpot != null));
                         }
-                        //turnActive = false;
+                        //after we dodge we need to pick a new target including path to it as otherwise we think the path starts where we were before
+                        bestPathToTarget = chooseTarget(stack, false, false);
+                        //we also set our remaing move-points to 0 so we still attack stuff nearby but won't move back towards the missiles we just fled from
+                        stack.move = 0;
                     }
                 }
                 currentTarget = tgtBeforeClose;
@@ -496,7 +499,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 }
             }
         }
-        //System.out.println("Safest space for "+st.fullName()+" x: "+bestX+" y: "+bestY+" score: "+safestScore);
+        //System.out.print("\nSafest space for "+st.fullName()+" x: "+bestX+" y: "+bestY+" score: "+safestScore);
         Point pt = new Point(st.x, st.y);
         pt.x = bestX;
         pt.y = bestY;
