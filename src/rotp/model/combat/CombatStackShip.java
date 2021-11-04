@@ -67,7 +67,7 @@ public class CombatStackShip extends CombatStack {
         origNum = num = fl.num(index);
         startingMaxHits = maxHits = design.hits();
         maxMove = design.moveRange();
-        maxShield = design.shieldLevel();
+        maxShield = m.system().inNebula() ? 0 : design.shieldLevel();
         attackLevel = design.attackLevel() + empire.shipAttackBonus();
         maneuverability = design.maneuverability();
         repulsorRange = design.repulsorRange();
