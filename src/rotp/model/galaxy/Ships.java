@@ -534,9 +534,6 @@ public class Ships implements Base, Serializable {
         }
         if (sys.isColonized())
             sys.empire().scanFleet(orbitingFleet);
-
-        if (!sys.orbitingShipsInConflict())
-            orbitingFleet.empire().sv.refreshFullScan(sys.id);  
         return false;
     }
     public List<ShipFleet> visibleFleets(int empId) {
