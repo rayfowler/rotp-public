@@ -347,6 +347,7 @@ public final class GameSession implements Base, Serializable {
                 GNNRankingNoticeCheck.nextTurn();
                 GNNExpansionEvent.nextTurn();
                 gal.nextEmpireTurns();
+                player().setVisibleShips();
                 
                 // test game over conditions
                 //randomlyEndGame();
@@ -366,6 +367,7 @@ public final class GameSession implements Base, Serializable {
                     log("Notifications processed 2 - back to MainPanel");
                     RotPUI.instance().selectMainPanel();
                 }
+                gal.refreshAllEmpireViews();
                 gal.postNextTurn2();
 
                 if (!inProgress())
@@ -381,7 +383,6 @@ public final class GameSession implements Base, Serializable {
                     log("Notifications processed 4 - back to MainPanel");
                     RotPUI.instance().selectMainPanel();
                 }
-                gal.refreshAllEmpireViews();
                 gal.makeNextTurnDecisions();
 
                 if (processNotifications()){
