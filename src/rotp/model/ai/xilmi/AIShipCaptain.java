@@ -1097,4 +1097,9 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 }
         return retVal;
     }
+    @Override
+    public boolean useSmartRangeForBeams()
+    {
+        return true;
+    }
 }
