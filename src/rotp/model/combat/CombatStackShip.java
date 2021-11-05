@@ -202,7 +202,12 @@ public class CombatStackShip extends CombatStack {
                 missileRange = (int) max(tgt.repulsorRange() + 1, repulsorRange() + 1, missileRange, mslRange);
             }
             else
-                weaponRange = 1; //ail: optimal firing-range for beam-weapons should be as close as possible due to the attack-rating-penalty you get from being further away, also you don't get to use several specials you might want to use
+            {
+                if(tgt.maxFiringRange(this) > repulsorRange()) //If our enemy has a bigger range than our repulsors we close in no matter what
+                    weaponRange = 1;
+                else
+                    weaponRange = min(repulsorRange() + 1, weaponRange(wpn)); //ail: optimal firing-range for beam-weapons should be as close as possible but still take advantage of repulsor
+            }
         }
         return max(missileRange, weaponRange);
     }
