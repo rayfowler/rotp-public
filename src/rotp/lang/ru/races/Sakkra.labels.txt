@@ -63,4 +63,4 @@ GAME_OVER_COUNCIL_MILITARY_LOSS2  | Судьба всех миров решен�
 
 // This text is the %8 variable in some of the game over text... when this race wins the game
 GAME_OVER_ALLIANCE_WIN3           | преданность экологиям Саккр
-GAME_OVER_REBELLION_LOSS3         | непоколебимые убеждения Саккр поглощают
+GAME_OVER_REBELLION_LOSS3         | непоколебимые убеждения Саккр поглотили

@@ -70,4 +70,4 @@ GAME_OVER_COUNCIL_MILITARY_LOSS2  | Вам болезненно напомнил
 
 // This text is the %8 variable in some of the game over text... when this race wins the game
 GAME_OVER_ALLIANCE_WIN3           | механическая точность Мекларов
-GAME_OVER_REBELLION_LOSS3         | холодная бесчувственность Мекларов захватывает
+GAME_OVER_REBELLION_LOSS3         | холодная бесчувственность Мекларов охватывает

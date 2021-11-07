@@ -65,4 +65,4 @@ GAME_OVER_COUNCIL_MILITARY_LOSS2  | Ярость Вашей Империи со�
 
 // This text is the %8 variable in some of the game over text... when this race wins the game
 GAME_OVER_ALLIANCE_WIN3   | непревзойденная ярость Булрати
-GAME_OVER_REBELLION_LOSS3 | необузданная ярость Булрати захватывает
+GAME_OVER_REBELLION_LOSS3 | необузданная ярость Булрати охватывает
