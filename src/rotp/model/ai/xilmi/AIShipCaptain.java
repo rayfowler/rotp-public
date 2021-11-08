@@ -721,8 +721,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
                         hitPct = max(.05f, hitPct);
                         hitPct = min(hitPct, 1.0f);
                         float killPct = ((miss.maxDamage()-miss.target.shieldLevel())*miss.num*hitPct)/(miss.target.maxHits*miss.target.num);
-                        float maxHit = (miss.maxDamage() - currStack.shieldLevel()) * miss.num;
-                        //System.out.print("\n"+currStack.fullName()+" will be hit by missiles for approx "+killPct);
+                        float maxHit = (miss.maxDamage() - currStack.shieldLevel()) * miss.num*hitPct;
+                        //System.out.print("\n"+currStack.fullName()+" will be hit by missiles for approx "+killPct+" dmg: "+maxHit+" hp: "+currStack.hits);
                         if(killPct > 0.2f && maxHit >= currStack.hits )
                             return true;
                     }
