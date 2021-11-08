@@ -76,7 +76,7 @@ public class ShipWeaponMissileType extends ShipWeapon {
         float damageLoss = damageLoss(source.distance);
         float shieldMod = source.targetShieldMod(this)*shieldMod();
         boolean successfullyHit = false;
-        for (int i=0;i<source.num;i++) {
+        for (int i=0;i<count;i++) {
             if (random() <= hitPct) {
                 successfullyHit = true;
                 float damage = 0;
