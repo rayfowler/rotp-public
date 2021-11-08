@@ -110,11 +110,23 @@ public class CombatStackColony extends CombatStack {
     public float beamDamageMod()      { return BEAM_DAMAGE_MOD; }
     @Override
     public float missileInterceptPct(ShipWeaponMissileType missile)   {
-        return (missileBase() == null)? 0 : missileBase().missileInterceptPct(missile);
+        return (missileBase() == null || !isArmed())? 0 : missileBase().missileInterceptPct(missile);
+    }
+    @Override
+    public float beamDefense() {
+        return (missileBase() == null || !isArmed())? 0 : missileBase().beamDefense();
+    }
+    @Override
+    public float missileDefense() {
+        return (missileBase() == null || !isArmed())? 0 : missileBase().missileDefense();
     }
     @Override
     public float bioweaponDefense() {
-        return (missileBase() == null)? 0 : missileBase().bombDefense();
+        return (missileBase() == null || !isArmed())? 0 : missileBase().bombDefense();
+    }
+    @Override
+    public float bombDefense() {
+        return (missileBase() == null || !isArmed())? 0 : missileBase().bombDefense();
     }
     @Override
     public float shieldLevel() {
