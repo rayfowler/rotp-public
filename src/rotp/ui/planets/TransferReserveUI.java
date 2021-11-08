@@ -30,6 +30,7 @@ import java.awt.event.MouseMotionListener;
 import java.awt.event.MouseWheelEvent;
 import java.awt.event.MouseWheelListener;
 import java.awt.geom.Point2D;
+import java.util.List;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.StarSystem;
 import rotp.ui.BasePanel;
@@ -52,7 +53,7 @@ public final class TransferReserveUI extends BasePanel implements MouseListener,
     private static final Color sliderBoxBlue = new Color(34,140,142);
     static final int MAX_TICKS = 50;
 
-    private StarSystem targetSystem;
+    private List<StarSystem> targetSystems;
 
     private Shape hoverBox;
     private boolean initted = false;
@@ -82,10 +83,13 @@ public final class TransferReserveUI extends BasePanel implements MouseListener,
         addMouseMotionListener(this);
         addMouseWheelListener(this);
     }
-    public void targetSystem(StarSystem sys) {
-        targetSystem = sys;
-        initted = false;
-        setDefaultAmt(sys);
+    public void targetSystems(List<StarSystem> syslist)
+    {
+        targetSystems = syslist;
+        if(!syslist.isEmpty())
+        {
+            setDefaultAmt(syslist.get(0));
+        }
     }
     @Override
     public String textureName()     { return TEXTURE_BROWN; }
@@ -106,7 +110,13 @@ public final class TransferReserveUI extends BasePanel implements MouseListener,
 
         // get length of title and determine box width
         g.setFont(narrowFont(24));
-        String title = text("PLANETS_TRANSFER_DESC", player().sv.name(targetSystem.id));
+        String title = text("PLANETS_TRANSFER_DESC", player().sv.name(targetSystems.get(0).id));
+        if(targetSystems.size() > 1)
+        {
+            title = text("PLANETS_TRANSFER_DESC", targetSystems.size());
+            title +=" "+text("SYSTEMS_TITLE");
+        }           
+
         int titleSW = g.getFontMetrics().stringWidth(title);
 
         int boxWidth = titleSW+s70;
@@ -330,7 +340,12 @@ public final class TransferReserveUI extends BasePanel implements MouseListener,
         else if (hoverBox == okButton) {
             float pct = (float) amt / MAX_TICKS;
             int amount = (int) (pct*player().totalReserve());
-            player().allocateReserve(targetSystem.colony(), amount);
+            for(StarSystem sys : targetSystems)
+            {
+                player().allocateReserve(sys.colony(), amount);
+                if(player().totalReserve() == 0)
+                    break;
+            }
             exit();
             return;
         }
