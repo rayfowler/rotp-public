@@ -1,14 +1,14 @@
 // race-specific variables (must start with _)
-_empire                           | Clan Mrrshan, Clan Prrshan, Clan Meowshan, Clan Clawshan, Clan Hisshan
-_empireof                         | del Clan Mrrshan, del Clan Prrshan, del Clan Meowshan, del Clan Clawshan, del Clan Hisshan
-_raceadjec                        | Mrrshan, Prrshan, Meowshan, Clawshan, Hisshan
-_raceadjecF                       | Mrrshan, Prrshan, Meowshan, Clawshan, Hisshan 
-_race_pluralnoun                  | i Mrrshan, i Prrshan, i Meowshan, i Clawshan, i Hisshan
-_race_pluralnounF                 | le Mrrshan, le Prrshan, le Meowshan, le Clawshan, le Hisshan 
-_race_pluralnounof                | dei Mrrshan, dei Prrshan, dei Meowshan, dei Clawshan, dei Hisshan
-_race_pluralnounto                | ai Mrrshan, ai Prrshan, ai Meowshan, ai Clawshan, ai Hisshan
-_race_pluraladjec                 | Mrrshan, Prrshan, Meowshan, Clawshan, Hisshan
-_race_pluraladjecF                | Mrrshan, Prrshan, Meowshan, Clawshan, Hisshan
+_empire                           | Clan Mrrshan, Clan Prrshan, Clan Mewshan, Clan Clawshan, Clan Hisshan
+_empireof                         | del Clan Mrrshan, del Clan Prrshan, del Clan Mewshan, del Clan Clawshan, del Clan Hisshan
+_raceadjec                        | Mrrshan, Prrshan, Mewshan, Clawshan, Hisshan
+_raceadjecF                       | Mrrshan, Prrshan, Mewshan, Clawshan, Hisshan 
+_race_pluralnoun                  | i Mrrshan, i Prrshan, i Mewshan, i Clawshan, i Hisshan
+_race_pluralnounF                 | le Mrrshan, le Prrshan, le Mewshan, le Clawshan, le Hisshan 
+_race_pluralnounof                | dei Mrrshan, dei Prrshan, dei Mewshan, dei Clawshan, dei Hisshan
+_race_pluralnounto                | ai Mrrshan, ai Prrshan, ai Mewshan, ai Clawshan, ai Hisshan
+_race_pluraladjec                 | Mrrshan, Prrshan, Mewshan, Clawshan, Hisshan
+_race_pluraladjecF                | Mrrshan, Prrshan, Mewshan, Clawshan, Hisshan
 _title                            | Khan
 _nameTitle                        | Khan
 
