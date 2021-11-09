@@ -1093,7 +1093,7 @@ SETUP_GALAXY_AGE_YOUNG            | Молодой
 SETUP_GALAXY_AGE_OLD              | Старый
 SETUP_RANDOM_EVENTS_ON            | Включены
 SETUP_RANDOM_EVENTS_OFF           | Отключены
-SETUP_RANDOM_EVENTS_NO_MONSTERS   | Без Монстров
+SETUP_RANDOM_EVENTS_NO_MONSTERS   | Без Чудовищ
 SETUP_GALAXY_NUMBER_EMPIRES       | Всего Империй: %1
 SETUP_GALAXY_NUMBER_SYSTEMS       | Всего Систем: %1
 SETUP_GALAXY_MAX_OPPONENTS        | Макс. Кол-во. Конкурентов: %1
@@ -1225,7 +1225,7 @@ SETTINGS_TERRAFORMING             | Т-форм. Враждебных Миров
 SETTINGS_COLONIZING               | Колонизация Планет: %1
 SETTINGS_FUEL_RANGE               | Диапазон Действия: %1
 SETTINGS_AI_HOSTILITY             | Враждебность Между Империями: %1
-SETTINGS_RANDOM_EVENTS_DESC       | Космические Монстры - это случайные события и значительные угрозы в середине игры. Вы можете отключить космических монстров или все случайные события.
+SETTINGS_RANDOM_EVENTS_DESC       | Космические Чудовища - это случайные события и значительные угрозы в середине игры. Вы можете отключить космические чудовища или все случайные события.
 SETTINGS_WARP_SPEED_DESC          | Вы можете увеличить межзвездную скорость более продвинутых двигателей. Это может быть желательным в очень больших галактиках.
 SETTINGS_GALAXY_AGE_DESC          | По сравнению с обычными галактиками, в молодых можно найти больше белых и синих звезд, а в старых - больше красных и нейтронных.
 SETTINGS_TECH_TRADING_DESC        | Вы можете отключить обмен технологиями вообще или разрешить его только для союзников.
@@ -1507,7 +1507,7 @@ SHIP_COMBAT_PLAY_BATTLE           | Передать Управление ИИ
 SHIP_COMBAT_PAUSE_BATTLE          | Пауза
 SHIP_COMBAT_EXIT                  | Выйти
 SHIP_COMBAT_COUNT_NAME            | %1  %2
-SHIP_COMBAT_MONSTER_TARGET        | Нацелен космический монстр.
+SHIP_COMBAT_MONSTER_TARGET        | Нацелено космическое чудовище.
 SHIP_COMBAT_ENEMY_TARGET          | Нацелен вражеский флот.
 SHIP_COMBAT_ALLY_TARGET           | Нацелен дружеский флот.
 SHIP_COMBAT_ENEMY_COLONY          | Нацелена вражеская планета.
