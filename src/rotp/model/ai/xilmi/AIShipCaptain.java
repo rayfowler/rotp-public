@@ -87,8 +87,10 @@ public class AIShipCaptain implements Base, ShipCaptain {
             else*/
             bestPathToTarget = chooseTarget(stack, false, false);
             CombatStack tgtBeforeClose = currentTarget;
+            System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+stack.fullName()+" performTurn");
             if (stack.isColony() && stack.canAttack(currentTarget)) 
             {
+                System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+stack.fullName()+" supposed to fire at: "+currentTarget.fullName());
                 stack.target = currentTarget;
                 mgr.performAttackTarget(stack);
                 mgr.turnDone(stack);
@@ -354,27 +356,30 @@ public class AIShipCaptain implements Base, ShipCaptain {
             if(!onlyInAttackRange)
                 distAfterMove = 1;
             float rangeAdj = 10.0f/distAfterMove;
-            if(target.isColony() && target.num == 0)
+            if(stack.isShip())
             {
-                for (int i=0;i<stack.numWeapons(); i++) {
-                    if(!stack.weapon(i).groundAttacksOnly() && !stack.shipComponentIsUsed(i))
-                    {
+                if(target.isColony() && target.num == 0)
+                {
+                    for (int i=0;i<stack.numWeapons(); i++) {
+                        if(!stack.weapon(i).groundAttacksOnly() && !stack.shipComponentIsUsed(i))
+                        {
+                            killPct = 0;
+                            break;
+                        }
+                    }
+                }
+                if(target.isShip())
+                {
+                    boolean canStillFireShipWeapon = false;
+                    for (int i=0;i<stack.numWeapons(); i++) {
+                        if(!stack.weapon(i).groundAttacksOnly() && stack.shotsRemaining(i) > 0)
+                        {
+                            canStillFireShipWeapon = true;
+                        }
+                    }
+                    if(!canStillFireShipWeapon)
                         killPct = 0;
-                        break;
-                    }
                 }
-            }
-            if(target.isShip())
-            {
-                boolean canStillFireShipWeapon = false;
-                for (int i=0;i<stack.numWeapons(); i++) {
-                    if(!stack.weapon(i).groundAttacksOnly() && stack.shotsRemaining(i) > 0)
-                    {
-                        canStillFireShipWeapon = true;
-                    }
-                }
-                if(!canStillFireShipWeapon)
-                    killPct = 0;
             }
             //System.out.print("\n"+stack.fullName()+" onlyships: "+onlyShips+" onlyInAttackRange: "+onlyInAttackRange+" looking at "+target.fullName()+" killPct: "+killPct+" rangeAdj: "+rangeAdj+" cnt: "+target.num+" target.designCost(): "+target.designCost());
             if (killPct > 0) {
@@ -385,6 +390,8 @@ public class AIShipCaptain implements Base, ShipCaptain {
                     desirability = adjustedKillPct * max(1, target.num) * target.designCost() * rangeAdj;
                 else
                     desirability = killPct * max(1, target.num) * target.designCost() * rangeAdj / 100;
+                if(stack.isColony())
+                    desirability *= 1 + target.estimatedKillPct(stack);
                 if(!stack.canAttack(target))
                     desirability /= 100;
                 if(!target.canPotentiallyAttack(stack))
