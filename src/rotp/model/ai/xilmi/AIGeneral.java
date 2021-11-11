@@ -339,25 +339,33 @@ public class AIGeneral implements Base, General {
         launchRebellionTroops(sys);
     }
     public void orderInvasionFleet(EmpireView v, StarSystem sys) {
-        boolean haveOrbitingFleet = true;
+        float expectedDefenders = 0;
+        float attackers = 0;
+        float allowableTurns = (float) (1 + Math.min(7, Math.floor(22 / empire.tech().topSpeed())));
+        if(sys.colony() != null)
+            expectedDefenders += allowableTurns * sys.colony().totalProductionIncome() * sys.planet().productionAdj() + sys.colony().defense().bases() * sys.colony().defense().missileBase().cost(sys.empire());
         for(ShipFleet orbiting : sys.orbitingFleets())
         {
+            if(!orbiting.isArmed())
+                continue;
             if(orbiting.empire() == empire)
-                haveOrbitingFleet = true;
-            if(!orbiting.empire().alliedWith(empire.id))
-            {
-                haveOrbitingFleet = false;
-                break;
-            }
+                attackers += empire.ai().fleetCommander().bcValue(orbiting, false, true, false, false);
+            else if (orbiting.empire().aggressiveWith(empire.id) && empire.visibleShips().contains(orbiting))
+                expectedDefenders += empire.ai().fleetCommander().bcValue(orbiting, false, true, false, false);
         }
-
+        for(ShipFleet incoming : sys.incomingFleets())
+        {
+            if(!incoming.isArmed())
+                continue;
+            if(incoming.empire() == empire)
+                attackers += empire.ai().fleetCommander().bcValue(incoming, false, true, false, false);
+            else if (incoming.empire().aggressiveWith(empire.id) && empire.visibleShips().contains(incoming))
+                expectedDefenders += empire.ai().fleetCommander().bcValue(incoming, false, true, false, false);
+        }
         //ail: old check would also be positive when our fleet is retreating
         //System.out.println(galaxy().currentTurn()+" "+empire.name()+" invading "+sys.name()+" haveOrbitingFleet: "+haveOrbitingFleet+" bases: "+sys.colony().defense().bases());
-        if (haveOrbitingFleet
-                && sys.colony().defense().bases() < 1)
+        if (attackers > expectedDefenders && attackers > troopsNecessaryToTakePlanet(v, sys) * empire.tech().populationCost())
             launchGroundTroops(v, sys, 1);
-        else if (empire.combatTransportPct() > 0)
-            launchGroundTroops(v, sys, 1/empire.combatTransportPct());
     }
     
     public void launchGroundTroops(EmpireView v, StarSystem target, float mult) {
