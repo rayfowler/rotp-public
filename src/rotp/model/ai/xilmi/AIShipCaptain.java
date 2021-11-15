@@ -607,7 +607,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
         if(!enemiesBesidesTarget && !friendsBesidesMe)
             shallGoForFirstStrike = true;
-        if(st.maxMove <= tgt.maxMove && st.empire == galaxy().shipCombat().results().attacker())
+        if(st.maxMove <= tgt.maxMove)
             shallGoForFirstStrike = false;
         if(st.move < st.movePointsTo(tgt) - st.optimalFiringRange(tgt) && shallGoForFirstStrike)
         {
