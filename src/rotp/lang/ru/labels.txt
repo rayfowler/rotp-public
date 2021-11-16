@@ -1800,7 +1800,7 @@ HISTORY_PLAY                      | Воспроизвести
 HISTORY_PAUSE                     | Пауза
 HISTORY_RESET                     | Сбросить
 HISTORY_EXIT                      | Выйти
-HISTORY_EXTINCT                   | Вымерли
+HISTORY_EXTINCT                   | Истреблены
 HISTORY_SYSTEMS                   | Системы
 HISTORY_EMPIRE                    | Империя
 
