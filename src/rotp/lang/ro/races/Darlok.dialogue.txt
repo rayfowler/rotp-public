@@ -1,0 +1,83 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Darlok specific dialogue
+
+CONTACT_AGGRESSIVE         | Vă salutăm în această zi, cetățeni al golului cosmic. De asemenea, oferim un cuvânt de precauție: să nu ne împiedicați în căutarea noastră, sau poate că nu veți trăi pentru a regreta această fatidică întâlnire.
+CONTACT_RUTHLESS           | Vă salutăm, locuitorii spațiului străin. Cel mai bine ar fi să faceți tot ce puteți pentru a ne asigura că coexistența noastră este ... reciproc avantajoasă.
+CONTACT_ERRATIC            | O întâlnire întâmplătoare într-o mare de stele. Aveți grijă în întunericul din acest abis ceresc, pentru că veți găsi că ascunde multe lucruri nevăzute ...
+//
+GREETING_01                | V-ați dovedit valoroși pentru cauza noastră. Vom face tot ce putem pentru a vă ajuta în cauza voastră.
+GREETING_04                | Vorbește.
+GREETING_07                | Nu știți obrăznicia pe care o afișați atunci când solicitați ajutorul nostru. Ni se pare aproape amuzant.
+//
+DECLAREWAR_HATE_01         | Am tolerat mult în îndeplinirea obiectivului nostru, dar suntem recunoscători că nu trebuie să tolerăm prezența voastră mult mai mult, [your_race].
+DECLAREWAR_HATE_02         | Interminabil nenorocit! Nu vom mai suferi prostia ta! Indiferent dacă armatele tale sunt sau nu pregătite, vei întâlni finalitatea la fel!
+DECLAREWAR_HATE_03         | Ticăloși! Nu are niciun rost ca specia noastră să prospere aici doar să împărtășim galaxia cu creaturi ca voi. Pregătiți-vă! Căci vă vom izgoni din acest spațiu chiar dacă vom dispărea și noi.
+DECLAREWAR_ERRATIC_01      | Oamenii noștri spun adesea că cuțitul de pe câmpul de luptă ucide la fel de ușor ca și cuțitul în întuneric. Specia ta va afla în curând de ce.
+DECLAREWAR_ERRATIC_02      | Te-ai uitat vreodată la stele și ai dorit să știi ce se ascunde în întunericul dintre lumini? Nu știi înțelepciunea în a fi atent la ceea ce îți dorești?
+DECLAREWAR_ERRATIC_03      | În vremuri de mare incertitudine, este posibil să găsiți cea mai modestă creatură încă capabilă să dea o lovitură fatală.
+DECLAREWAR_MILITARY_01     | Încă nu am găsit lucrul pe care îl dorim cel mai mult, și așa că vom lua de la voi locurile pe care ochii noștri încă nu le-au văzut. Predă-ți lumile sau cădeți apărându-le.
+DECLAREWAR_MILITARY_02     | Există posibilitatea ca răspunsurile pe care le căutăm să se ascundă pe o planetă din imperiul vostru și astfel le vom avea pe toate. Să știți că nu este personal, [your_race], dar vremurile disperate necesită acțiuni disperate.
+DECLAREWAR_MILITARY_03     | Dacă nu putem ajunge la soluția enigmei noastre, nu are rost să continuăm! Dacă răspunsul se află pe una dintre lumile voastre, vom da tot ce trebuie pentru a-l obține!
+DECLAREWAR_ALLIANCE_01     | Proști! Ați devenit un dușman al aliatului nostru și, ca atare, ai devenit un dușman al nostru! Vă vom lovi rapid: nu avem timp să pierdem luptând cu voi!
+DECLAREWAR_ALLIANCE_02     | Este rar să ne amestecăm direct în treburile altora. Dar, atunci când un aliat care ne-a ajutat căutarea ne cere ajutorul, vom face tot ce putem pentru a-i ajuta.
+DECLAREWAR_ALLIANCE_03     | Suntem încântați să privim cum imperiile voastre se luptă, dar știm amenințarea pe care ni-o prezentați. Îl vom ajuta cu plăcere pe [defender_race] să înlăture impedimentul pe care îl prezintă existența voastră.
+DECLAREWAR_SPYING_01       | Este amuzant că ați continua astfel de acțiuni împotriva celor care au stăpânit atât de mult discreția. Cu toate acestea, pedeapsa pentru eșec va fi semnificativ mai mică.
+DECLAREWAR_SPYING_02       | Admirabil, să încercați să ne depășiți în domeniul spionajului. Mă întreb, se va dovedi puterea voastră militară la fel de lăudabilă ca și îndrăzneala voastră?
+DECLAREWAR_SPYING_03       | Ați crezut că acești proști neîndemânatici vor scăpa de privirea noastră vigilentă? Dacă sunteți atât de aroganți încât credeți că spionajul vostru ar putea trece neobservat, atunci sunteți suficient de aroganți pentru a ne zdrobi în luptă.
+DECLAREWAR_ATTACK_01       | Obrăznicie! A ne ataca atât de deschis poate însemna doar că doriți anihilarea totală!
+DECLAREWAR_ATTACK_02       | Bădărani nesuferiți! În curând vom afla dacă încrederea care vine din acest atac împotriva noastră este însoțită de puterea necesară pentru a ne face față!
+DECLAREWAR_ATTACK_03       | Ticăloși! Nu vom ceda în fața voastră sau a altcuiva până când marea noastră lucrare nu va fi terminată! Pregătiți-vă pentru răzbunarea noastră!
+DECLAREWAR_OPPORTUNITY_01  | Politica este doar un joc al oportunității. Constatăm că cel care valorifică cel mai mult oportunitățile lor este cel care iese învingător. Așa a fost dintotdeauna și așa va fi întotdeauna.
+DECLAREWAR_ASSASSIN_01     | Scandalos, să ucideți cu bună știință un ambasador care vine la voi neînarmat! Vom lua secretele voastre pentru noi și vom împrăștia trupurile poporului vostru ca cenușa pe vânturile solare!
+
+OFFER_PEACE_01             | Acest război a făcut destule victime, ambasador. Cu siguranță niciunul dintre popoarele noastre nu își poate permite să piardă atâtea vieți. Propunem sfârșitul imediat al acestui conflict, de dragul viitorului nostru.
+OFFER_TRADE_01             | Deși abordările directe pot fi uneori cele mai bune, ele nu sunt singurul mod în care un imperiu își poate avansa obiectivele. Există un timp pentru comerțul cu bună credință și credem că timpul este acum. Să începem cu... [amt] BC în fiecare an?
+OFFER_PACT_01              | Această întindere infinită conține pericole necunoscute pentru cei care aleg să o exploreze. Să nu adăugăm mai multe dacă nu este necesar. Un Pact de Neagresiune între popoarele noastre va reduce cu unul riscurile extinderii teritoriale în galaxie.
+OFFER_ALLIANCE_01          | Există cei care ne privesc și permit fricii lor să le întunece judecata. Nu credem că voi sunteți printre ei. Să formalizăm o alianță între [my_race] și [your_race], și să folosim frica pe care o au ceilalți ca un avantaj pentru ambele noastre imperii.
+
+WARN_TRESPASSING_01        | Nu dorim un război împotriva voastră în acest moment, dar prezența voastră în [system] este greu de interpretat ca altceva decât agresiune. Pleacă imediat și dovedește că temerile noastre sunt nefondate.
+WARN_EXPANSION_01          | Nu suntem orbi la nevoile pe care le îndeplinește extinderea teritoriului vostru. Și nici nu trebuie să stăm și să vă lăsăm să furați fiecare lume pe care o vedeți. Ai fost atât de avertizat, ambasador al [your_empire]. 
+WARN_BUILDUP_01            | Intenționați să folosești o flotă atât de puternică pentru a-i face pe cei din jur să se supună prin frică? Să știți acest lucru: dacă continuați să vă lăudați cu o astfel de putere militară, este posibil să găsiți reacțiile altor imperii să fie mai puțin... plăcute decât sperați.
+WARN_SKIRMISH_01           | Ce ai de spus despre bătălia din sistemul [system]? Sperăm de dragul vostru că ne-ați confundat cu un alt imperiu. În caz contrar, consecințele pot fi cumplite. Foarte cumplite.
+WARN_ATTACKED_01           | Îndrăznești să lansezi un atac împotriva poporului nostru, ambasador?! Consideră-te norocos că atenția noastră se află în altă parte: data viitoare îndrăzneala ta nu va rămâne fără răspuns!
+WARN_INVADED_01            | Vă mutați în spațiul nostru de parcă ar fi al vostru. Un truc îndrăzneț, dar să știți că v-am prevăzut venirea și vă permitem să faceți această manevră... deocamdată.
+WARN_ESPIONAGE_01          | Încercarea voastră de spionaj s-a dovedit a fi plină de umor. Vom permite spionului vostru să se întoarcă la voi de data aceasta, dar să știți că nu vom găsi încercări suplimentare la fel de amuzante. [blamat]
+WARN_SABOTAGE_01           | Deci [spy_empire] încearcă să ne saboteze? Efortul vostru a fost prea nesemnificativ pentru a forța represaliile noastre, dar dacă încercați din nou, putem opta să vă tratăm ca pe paraziții pe care insistați săi imitați! [forțat]
+WARN_BIOWEAPON_01          | Un lucru urât, acea armă. Și mai urât este cel care alege să o folosească împotriva unor civili neajutorați. Țipetele lor de agonie vor răsuna în spațiu timp de secole. Ne vom alătura victimelor acestei crime și vă vom blestema numele cu dispreț.
+WARN_GENOCIDE_01           | Amenințarea genocidului nu este necunoscută poporului meu, dar să o vedem realizată într-un astfel de mod... ne dezgustă în moduri în care mă îndoiesc că le vom ierta vreodată, ambasador.
+WARN_FINAL_WAR_01          | Pe măsură ce pacea răsare în galaxie, toți cei care participă vor găsi ceea ce caută. Dacă [rebel_race_plural] amenință acea pace, atunci ne amenință și scopul final și vom face tot ce putem pentru ai șterge din analele galaxiei.
+WARN_COUNCIL_VOTE_01       | În timp ce apreciem manevrele politice subtile, devenim nemulțumiți când acestea sunt folosite împotriva intereselor noastre. Atenție, ambasador: s-ar putea să nu-ți mai prezentăm o ocazia ca asta.
+WARN_OATHBREAKER_01        | Lași necăjiți! Vai de oamenii noștri ce trebuie să suporte neîncrederea întregii galaxii atunci când dovediți cu atâta îndrăzneală că voi sunteți cei care meritați o asemenea dușmănie!
+WARN_ATTACKED_ALLY_01      | Vă avertizăm o singură dată, ambasador. Opriți această agresiunea împotriva [defender_race_plural]: ei sunt alături de noi, iar noi suntem alături de ei.
+WARN_REBELLING_AGAINST_01  | Îndrăzniți să furați cea mai înaltă poziție a consiliului din mâinile noastre, deținătorii săi de drept? Oamenii tăi vor regreta această zi, ambasador.
+//
+PRAISE_COUNCIL_VOTE_01     | Cauza noastră cere multe, ambasador, și suntem etern recunoscători că ne putem baza pe [voter_empire] în interiorul consiliului. Fiți siguri că nu vom uita asta data viitoare când veți apela la oamenii noștri.
+PRAISE_COUNCIL_VOTE_02     | A fost bine că ați avut încredere în noi astăzi, ambasador. Să știți că ne amintim de cei care ne ajută să ne atingem obiectivul final.
+PRAISE_COUNCIL_VOTE_03     | Desigur, oamenii voștri au un motiv ulterior în exprimarea sprijinului față de cauza noastră. Suntem încă foarte precauți față de voi și de specia voastră, dar apreciem acțiunile voastre.
+
+PRAISE_ATTACKED_ENEMY_01   | Știam că ne veți ajuta în acest război, ambasador! Cu determinarea noastră combinată, nici măcar [defender_race] nu va rezista mult timp împotriva noastră! 
+PRAISE_ATTACKED_ENEMY_02   | Este bine să-i vedem pe alții participând la lupta împotriva [defender_race] demni de dispreț. Să lucrăm împreună pentru a încheia acest război cât mai repede, astfel încât să putem relua urmărirea unor obiective mult mai importante.
+PRAISE_ATTACKED_ENEMY_03   | Dacă vrei să câștigi admirația poporului meu, vei găsi sarcina aproape imposibilă. Dar atacarea [defender_race] este totuși un prim pas admirabil.
+
+PRAISE_TRADE_01            | Nu este uimitor cum un lucru atât de simplu precum comerțul poate deschide atât de multe uși pentru ambele părți implicate? Oamenii noștri sunt foarte mulțumiți într-adevăr și sperăm că și ai voștri vor fi mulțumiți. 
+PRAISE_TRADE_02            | Tranzacția noastră onestă continuă să reprezinte un avantaj continuu pentru ambele noastre popoare. Sper, ambasador, că putem continua să ne bazăm unul pe celălalt în acest fel.
+
+PRAISE_REBELLING_WITH_01   | Prostii din consiliu au ales greșit așa cum știam că vor face. Ne vom alătura rebeliunii voastre corecte.
+
+ACCEPT_TRADE_01            | Ne ajutați în mare măsură căutarea cu acest acord comercial, [your_race]. [amt] BC în fiecare an ne va ajuta mai mult decât știți.
+RESPOND_IGNORE_THREAT_01   | Fiți atenți pe cine amenințați. S-ar putea să găsiți un răspuns ascuns în umbră ce va fi foarte neplăcut.
+RESPOND_STOP_SPYING_01     | Cum ați reușit VOI să capturați unul din spionii noștri? Nu contează, eliberațil și noi vom înceta activitățile de spionaj de acum încolo.
+RESPOND_STOP_ATTACKING_01  | Ne vom chema înapoi flotele de dragul vostru, dar amintiți-vă că cea mai periculoasă putere este cea care rămâne nevăzută.

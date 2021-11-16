@@ -1,0 +1,143 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Meklar specific dialogue
+
+CONTACT_ERRATIC            | Specie: [your_race]. Desemnarea liderului: [your_title]. Inovații tehnologice: variate. Evaluare a amenințărilor: Neconcludent.
+CONTACT_HONORABLE          | Specia [your_race] prezintă interes. [my_empire] simte potențialul de a coopera în beneficiul reciproc. Rezultatele rămân de văzut.
+CONTACT_RUTHLESS           | [my_empire] acum conștient de existența speciei [your_race]. [my_title] afirmă un avertisment pentru toți membrii speciei [your_race]: nu interferați cu obiectivele Dominionului. Va rezulta în dispariția speciei [your_race].
+//
+GREETING_01                | Identitatea ambasadorului aliat confirmată. Prezentați cererea. Dominionul va ajuta dacă este posibil.
+GREETING_04                | [my_empire] recunoaște ambasadorul speciei [your_race]. Dominionul este dispus să proceseze cererile în acest moment.
+GREETING_07                | Prezentați cererea. Este puțin probabil ca Dominion să trimită cereri de la [your_race] către [my_title] pentru procesare.
+//
+DECLAREWAR_HATE_01         | [my_empire] nu mai este dispus să tolereze prezența [your_empire]. Puterea speciei [your_race] este relativ primitivă. Executarea protocolului de căutare și distrugere.
+DECLAREWAR_HATE_02         | [my_title] nu va mai permite speciei [your_race] să interfereze cu obiectivele Dominionului. Dominion pregătit să dedice mult pentru a păstra directiva primară.
+DECLAREWAR_HATE_03         | Dominionul nu poate continua directivele în timp ce [your_empire] persistă. Dominionul trebuie să pună capăt acestei specii. Nu s-a găsit nicio alternativă.
+DECLAREWAR_ERRATIC_01      | [my_title] concluzionează existența speciei [your_race] amenință obiectivele Dominionului. Dominionul să înceapă imediat protocoalele de exterminare.
+DECLAREWAR_ERRATIC_02      | [my_title] judecă că specia [your_race] probabil păstrează secretul obiectivului Dominionului. Dominionul va lua secrete de la specia [your_race] cu forța.
+DECLAREWAR_ERRATIC_03      | [my_title] consideră specia [your_race] ca o variabilă inacceptabilă în planurile Dominionului. Dominionul va eradica specia [your_race] sau va muri încercând.
+DECLAREWAR_MILITARY_01     | [my_empire] trebuie să continue să se prolifereze în întreaga galaxie în căutarea scopului final. [your_empire] inhibă expansiunea. Problemă în proces de rezolvare.
+DECLAREWAR_MILITARY_02     | Dominionul nu poate găsi obiectivul primar. Posibilitatea ca planetele apropiate de sau aparținând [your_empire] să conțină ceea ce se caută. Războiul este inevitabil.
+DECLAREWAR_MILITARY_03     | Dominionul este forțat să-și extindă teritoriul. Puterea speciei [your_race] nu poate fi un factor de descurajare. Războiul este regretabil, dar necesar.
+DECLAREWAR_ALLIANCE_01     | [your_empire] a declarat război unui aliat al Dominionului. Dominionul își va proteja interesele prin eradicarea amenințării [your_race].
+DECLAREWAR_ALLIANCE_02     | Dominionul a primit o cerere de ajutor de la [other_empire]. Dominionul își va ajuta aliatul împotriva [your_race] atâta timp cât conflictul persistă.
+DECLAREWAR_ALLIANCE_03     | Specia [your_race] a devenit arogantă pentru a declara război altora. Dominionul va ajuta alt imperiu să elimine specia [your_race] din galaxie.
+DECLAREWAR_SPYING_01       | Specia [your_race] se angajează în acțiuni secrete împotriva Dominionului. Consecințe pentru Dominion: neglijabile. Consecințe pentru specia [your_race]: fatale.
+DECLAREWAR_SPYING_02       | Spionaj detectat în teritoriul Dominionului. Sursă confirmată: specia [your_race]. Protocoalele Dominionului necesită război ca răspuns.
+DECLAREWAR_SPYING_03       | Dominionul detectează o încercare evidentă de destabilizare de către [your_empire]. Nu putem permite [your_race] să continue să ne stea în cale. Dominionul trebuie să riposteze cu orice preț.
+DECLAREWAR_ATTACK_01       | Specia [your_race] s-a dovedit ostilă în ciuda superiorității [my_race]. Dominionul va elimina în întregime amenințarea.
+DECLAREWAR_ATTACK_02       | Specia [your_race] stă în fața obiectivelor Dominionului prin acest atac. Confruntarea este inevitabilă.
+DECLAREWAR_ATTACK_03       | Specia [your_race] încearcă să împiedice Dominionul să își atingă obiective, eliminând [my_race]. Dominionul va riposta cu toate forțele militare disponibile.
+DECLAREWAR_OPPORTUNITY_01  | [my_title] consideră că specia [your_race] se va dovedi în cele din urmă dăunătoare în atingerea directivei primare. Dominionul va eradica specia [your_race] înainte ca amenințarea să fie pe deplin realizată.
+DECLAREWAR_ASSASSIN_01     | Ambasadorul Dominionului a fost incapacitat de către specia [your_race]. Acțiunile speciei [your_race] necesită represalii violente.
+
+OFFER_PEACE_01             | [my_title] a ajuns la o realizare. Războiul nu mai este profitabil pentru Dominion. Dominionul dorește să încheie pacea imediat.
+OFFER_TRADE_01             | Specia [your_race] deține resurse semnificative. Dominionul deține, de asemenea, obiecte de valoare. Dominionul propune un acord comercial de [amt] BC pe an.  
+OFFER_PACT_01              | Dominionul dorește obiective dincolo de conflicte fără sens. Un Pact de Neagresiune cu specia [your_race] considerat ca fiind cea mai prudentă cale de a obține aceste obiective. 
+OFFER_ALLIANCE_01          | [my_title] apreciază diplomația cu specia [your_race]. Dominionul propune o alianță formală pentru a asigura supraviețuirea atât a speciei [your_race] cât și a [my_race]. Răspuns solicitat. 
+
+WARN_TRESPASSING_01        | Specia [your_race] a fost detectată în sistemul [system]. Zona a fost revendicată anterior de Dominion. Părăsiți imediat zona.
+WARN_EXPANSION_01          | Extinderea rapidă a speciei [your_race] este considerată ca o amenințare. Continuarea extinderii teritoriale va fi oprită cu forța militară. 
+WARN_BUILDUP_01            | Rețelele de informații ale Dominionului au identificat flotele speciei [your_race] ca o posibilă amenințare. Dominionul va continua să supravegheze specia [your_race] pentru a se asigura că obiectivele sale nu sunt compromise de aceasta.
+WARN_SKIRMISH_01           | Un conflict între flotele Dominionului și ale speciei [your_race] a fost detectat în sistemul [system]. Dominionul recomandă împotriva infracțiunilor repetate: Dominionul este pregătit să răspundă în mod adecvat dacă avertismentul este ignorat.
+WARN_ATTACKED_01           | Agresiunea [attacker_race] observată în sistemul [system]. [defender_title] transmite un mesaj ambasadorului: continuarea amenințării securității Dominionului va duce la exterminarea speciei [attacker_race]. 
+WARN_INVADED_01            | Dominionul reamintește: specia [attacker_race] nu are nicio pretenție asupra spațiului [defender_race]. Îndepărtați flotele imediat sau veți fi anihilați.
+WARN_ESPIONAGE_01          | Activitățile de spionaj ale [spy_race] au fost înregistrate pe teritoriul Dominionului. Protocoale de securitate ale Dominionului sunt superioare abilităților de spionaj ale speciei [spy_race]. Continuarea acțiunilor de spionaj se poate dovedii a fi fatală. [blamat]
+WARN_SABOTAGE_01           | Dominionul este conștient de implicarea speciei [spy_race] în actele recente de sabotaj. Încercarea de haos prea slabă pentru a justifica răspunsul. Încercările ulterioare de sabotaj vor asigura un răspuns rapid. [forțat]
+WARN_BIOWEAPON_01          | Dominionul observă utilizarea unei arme biologice. Armament eficient. Nivelul de amenințare a speciei [attacker_race]: crescut cu 3 nivele.
+WARN_GENOCIDE_01           | Exterminarea speciei [victim_race] de către specia [attacker_race] a fost observată. Dominionul nu este interesat de alternative. Nivelul de amenințare a speciei [attacker_race]: crescut cu 5 nivele.
+WARN_FINAL_WAR_01          | Toate speciile cunoscute creează un acord pentru a asigura o pace durabilă în galaxie. Specia [rebel_race] reprezintă un disident unic. Dominionul va lua măsurile corespunzătoare.
+WARN_COUNCIL_VOTE_01       | Dominionul este conștient de acțiunile [voter_race] în consiliu. Rezultatul a fost evaluat în detrimentul obiectivelor [candidate_race]. Statutul diplomatic ajustat în consecință. 
+WARN_OATHBREAKER_01        | [my_title] judecă: specia [your_race] nu mai este considerată de încredere. Toate tranzacțiile viitoare pot fi revizuite pe baza încălcării acordurilor semnate de către specia [your_race]. 
+WARN_ATTACKED_ALLY_01      | Conflict înregistrat între specia [your_race] și specia [defender_race]. Specia [defender_race] este un aliat al Dominionului. Încetați lupta sau pregătiți-vă pentru consecințe.
+WARN_REBELLING_AGAINST_01  | Specia [your_race] este acum un obstacol în fața obiectivelor Dominionului. Hotărârea Consiliului Galactic este inacceptabilă. Se așteaptă răspunsul Arbitrului Suprem.
+
+
+PRAISE_COUNCIL_VOTE_01     | Ambasadorul speciei [voter_race] continuă să ofere ajutor pentru avansarea obiectivelor [candidate_race]. Dominionul recunoaște beneficiul unei relații continue cu specia [voter_race]. Dominionul va rambursa favoarea după cum este necesar. 
+PRAISE_COUNCIL_VOTE_02     | Dominionul a observat votul vostru pozitiv în consiliu. Dominionul va ajusta analiza speciei [voter_race] în consecință.
+PRAISE_COUNCIL_VOTE_03     | Dominion recunoaște probabilitatea de subterfugiu de către specia [voter_race]. Continuarea ajutorării Dominionului în consiliu poate atenua îngrijorările. 
+
+PRAISE_ATTACKED_ENEMY_01   | A ataca dușmanii Dominionului demonstrează angajamentul față de obiectivele [my_race]. Dominionul este angajat să păstreze victimele speciei [attacker_race] la minimum absolut posibil.
+PRAISE_ATTACKED_ENEMY_02   | Dominionul acceptă asistența împotriva speciei [defender_race]. Acest război se poate dovedi un nou început între speciile [my_race] și [attacker_race]. 
+PRAISE_ATTACKED_ENEMY_03   | Atacarea speciei [defender_race] u scuză crimele din trecut împotriva Dominionului. Dominionul va reevalua nivelul de amenințare a speciei [attacker_race] în funcție de acțiunile sale în acest război. 
+
+PRAISE_TRADE_01            | Dominionul și specia [your_race] continuă să câștige mult din comerțul continuu. Dominionul dorește ca comerțul să rămână atât timp cât acordul continuă să beneficieze de un statut benefic.
+PRAISE_TRADE_02            | Dominionul își exprimă satisfacția față de acordul comercial cu specia [your_race]. Asigurați-vă că acordul durează astfel încât ambele specii să profite.
+PRAISE_REBELLING_WITH_01     | Dominionul este de acord că conducătorul Consiliului Galactic nu este de încredere. Obiecțiile speciei [your_race] au fost notate. Dominionul va ajuta specia [your_race] în rebeliune.
+ 
+ACCEPT_TRADE_01            | Oferta speciei [your_race] a fost primită. Suma propusă: [amt] BC. Dominionul acceptă.
+RESPOND_IGNORE_THREAT_01   | Amenințarea speciei [your_race]: derutantă. Civilizația [your_race] substanțial inferioară flotelor Dominionului. Ignoră.
+RESPOND_STOP_SPYING_01     | Spionul Dominionului capturat observând specimene ale speciei [your_race]. Dominionul exprimă scuze. Returnați [my_race] capturat: cât mai curând posibil.
+RESPOND_STOP_ATTACKING_01  | Afișarea capacității militare a Dominionului. Ținta: Civilizația [your_race]. Rezultat: Succes. Status flotă: Întoarcere la coordonatele desemnate.
+
+DIPLO_TECH_REQUEST_MENU_01   | Specifică tehnologia.
+DIPLO_TECH_COUNTER_MENU_01   | Specifică compensația.
+DIPLO_TRADE_MENU_01          | Specifică magnitudinea.
+DIPLO_TREATY_MENU_01         | Specifică tratatul.
+DIPLO_DECLARE_WAR_MENU_01    | Confirmați înainte de a continua.
+DIPLO_SUGGEST_WAR_MENU_01    | Specifică ținta.
+DIPLO_BREAK_ALLIANCE_MENU_01 | Specifică aliatul.
+DIPLO_THREATEN_MENU_01       | Specifică.
+DIPLO_OFFER_AID_MENU_01      | Specifică.
+DIPLO_OFFER_TECH_MENU_01     | Specifică tehnologia.
+
+DECLINE_OFFER_01           | Cerere respinsă.
+DECLINE_OFFER_02           | Cerere respinsă.
+DECLINE_OFFER_03           | Cerere respinsă.
+DECLINE_OFFER_04           | Cerere respinsă.
+DECLINE_OFFER_05           | Cerere respinsă.
+DECLINE_OFFER_06           | Cerere respinsă.
+DECLINE_OFFER_07           | Cerere respinsă.
+DECLINE_OFFER_08           | Cerere respinsă.
+DECLINE_OFFER_09           | Cerere respinsă.
+DECLINE_ENEMY_ALLY_01      | Cerere respinsă.
+DECLINE_NO_WAR_ON_ALLY_01  | Cerere respinsă.
+DECLINE_PEACE_TREATY_01    | Cerere respinsă.
+DECLINE_ANNOYED_01         | Cerere respinsă.
+DECLINE_ANNOYED_02         | Cerere respinsă.
+DECLINE_ANNOYED_03         | Cerere respinsă.
+DECLINE_OATHBREAKER_01     | Cerere respinsă.
+DECLINE_ESPIONAGE_01       | Cerere respinsă.
+DECLINE_SABOTAGE_01        | Cerere respinsă.
+DECLINE_BUILDUP_01         | Cerere respinsă.
+DECLINE_ENCROACH_01        | Cerere respinsă.
+DECLINE_SKIRMISH_01        | Cerere respinsă.
+DECLINE_ATTACK_01          | Cerere respinsă.
+DECLINE_INVASION_01        | Cerere respinsă.
+DECLINE_BIOWEAPONS_01      | Cerere respinsă.
+DECLINE_TECH_TRADE_01      | Cerere respinsă.
+OFFER_TECH_EXCHANGE_01     | Dominionul necesită tehnologia [tech]. Specifică compensația.
+ACCEPT_TECH_EXCHANGE_01    | Acceptare înregistrată.
+ACCEPT_FINANCIAL_AID_01    | Acceptare înregistrată.
+ACCEPT_TECHNOLOGY_AID_01   | Acceptare înregistrată.
+
+BREAK_TRADE_01             | Tratat Comercial terminat.
+ANNOUNCE_PEACE_01          | Acceptare înregistrată.
+ACCEPT_PEACE_01            | Cerere aprobată.
+
+BREAK_PACT_01              | Pactul de Neagresiune terminat.
+ANNOUNCE_PACT_01           | Acceptare înregistrată.
+ACCEPT_PACT_01             | Cerere aprobată.
+
+BREAK_ALLIANCE_01          | Alianță terminată.
+ANNOUNCE_ALLIANCE_01       | Acceptare înregistrată.
+ACCEPT_ALLIANCE_01         | Cerere aprobată.
+ACCEPT_JOINT_WAR_01        | Cerere aprobată.
+
+RESPOND_CLOSE_EMBASSY_01   | Acțiuni înregistrate.
+RESPOND_BREAK_TRADE_01     | Acțiuni înregistrate.
+RESPOND_BREAK_PACT_01      | Acțiuni înregistrate.
+RESPOND_BREAK_ALLIANCE_01  | Acțiuni înregistrate.
+RESPOND_DECLARE_WAR_01     | Acțiuni înregistrate.

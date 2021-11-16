@@ -1,0 +1,22 @@
+// all possible names
+name: Klackon, Klackant, Klockan, Arthropon, Coleopteron
+
+desc1: Industriași Xenofobi
+desc2: Conștiință Colectivă și Producție Crescută
+desc3: O specie controlată de o singură minte colectivă, [race] sunt o enigmă totală pentru toți străinii.
+
+// possible home system names
+home: Kholdan, Kholdant, Khaldon, Klokdon, Khakdon
+
+title:     
+fulltitle: 
+
+// possible leader names
+leader: Ixitixl, Kaxal, Kikitik, Klaquan, K'kalak, Xantak
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Bondar, Ac, Călugăriță, Gândac, Trântor, Păianjen, Mandibulă
+ship2: Gărgăun, Otravă, Venin, Libelulă, Mantodea, Omidă, Viespe
+ship3: Tarantulă, Piton, Nerodia, Scarabeu, Șarpe, Mamba, Scorpion
+ship4: Cobră, Arahnidă, Jormungand, Viperă, Naga, Leviatan, Naja
+

@@ -1,0 +1,86 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Bulrathi specific dialogue
+
+CONTACT_AGGRESSIVE         | Sunt un ambasador al [my_empire]. Vă sfătuiesc să rămâneți în bunele grații ale [my_title], mici [your_race]. Căci el trebuie doar să spună cuvântul și specia voastră va pieri sub o furie pe care nu o puteți imagina.
+CONTACT_RUTHLESS           | Atât de mici creaturi sunteți! Trebuie doar să știți două lucruri: în primul rând, că suntem numiți "[my_race]", și, în al doilea rând, faptul că opunerea la cucerirea noastră vă garantează doar moartea!
+CONTACT_ERRATIC            | Noi din [my_empire] vă salutăm, micuților. Destinul nostru se află undeva printre aceste lumi împrăștiate și stele aprinse. Va fi interesant să vedeți unde vă veți încadra în marele nostru plan.
+//
+GREETING_01                | Ați acționat cu onoare și noi vom acționa pentru a vă onora. Spuneți-ne de ce aveți nevoie, prieteni.
+GREETING_04                | Vorbește repede, mic [your_race]. Nu ispiti furia noastră cu promisiuni false și oferte unilaterale.
+GREETING_07                | A veni și a vorbi cu noi arată curaj mare pentru unul atât de mic. Această vitejie îți câștigă siguranța deocamdată.
+
+DECLAREWAR_HATE_01         | [your_race_plural] mici, pe micile lor lumi cu micile lor scheme. [my_title] s-a plictisit de interferența voastră constantă. Nu veți supraviețui pedeapsa pe care o vom aducem asupra voastră!
+DECLAREWAR_HATE_02         | Destul cu asta! Destinul cetățenilor noștri este înscris în stele. Nu vom permite unor creaturi atât de diminutive să ne stea în cale!
+DECLAREWAR_HATE_03         | Pregătește-te pentru luptă, [your_race] mic! Vă vom arăta că ferocitatea este singura forță care aduce victoria pe câmpul de luptă!
+DECLAREWAR_ERRATIC_01      | Înțelepciunea filosofilor îi poate încurca pe cei incapabili să o înțeleagă. Când mințile noastre cele mai mari ne vor spune să atacăm, războinicii noștri se vor supune, desigur.
+DECLAREWAR_ERRATIC_02      | Fiecare lucru are un timp și un loc în acest univers. Război și pace, viață și moarte, dominație și supunere. Pentru noi este acum momentul să atacăm, iar pentru voi este momentul să vă apărați.
+DECLAREWAR_ERRATIC_03      | Te-ai minunat vreodată de soartă, ambasador? Are un mod amuzant de a face real ceea ce pare imposibil. Haideți să testăm soarta împreună, [your_race] mic, și să vedem ce are în rezervă pentru noi.
+DECLAREWAR_MILITARY_01     | Cei puternici câștigă prada. [my_race] sunt puternici, așa că vom câștiga pradă, indiferent de originea acesteia.
+DECLAREWAR_MILITARY_02     | Oamenii tăi luptă bine pentru creaturi așa mici, ambasador. Să aflăm cât de bine se vor lupta cu puterea [my_race] adusă asupra lor!
+DECLAREWAR_MILITARY_03     | Această galaxie aparține celor puternici, iar puterea noastră nu va permite ca puterii voastre să o eclipseze. Apărăți-vă bine lumile, altfel le vom lua de la voi, una câte una!
+DECLAREWAR_ALLIANCE_01     | Un aliat al Imperiului ne-a cerut ajutorul! Vă vom arăta atât vouă câț și [defender_race] adevărata putere dezlănțuită a [my_race]!
+DECLAREWAR_ALLIANCE_02     | Declari război aliatului nostru, fără să realizezi că declari război și pe noi. Aceasta este o luptă din care poporul tău nu va ieși învingător, ambasador. Fi sigur de asta.
+DECLAREWAR_ALLIANCE_03     | Chiar și cu toată puterea ta, nu ai nicio șansă împotriva [defender_race] dacă noi [my_race] ne alăturăm lor! Pregătiți-vă, [your_race] micuți!
+DECLAREWAR_SPYING_01       | O astfel de trădare! Dar când trebuie să exiști într-un corp atât de mic, nu ai de ales: evident, nu aveți nicio șansă pe câmpul de luptă, așa cum vă vom demonstra acum cu ușurință.
+DECLAREWAR_SPYING_02       | Să crezi că oamenii atât de mici nu pot reuși în astfel de operațiuni secrete. Spânzurați-vă spionii sus pentru ca poporul vostru să ii vadă; veți plăti pentru gafele lor cu viața voastră!
+DECLAREWAR_SPYING_03       | Credeți că suntem prea slabi pentru a răspunde unor astfel de acțiuni viclene, micuților? Vă vom arăta cât de greșită este judecata voastră!
+DECLAREWAR_ATTACK_01       | Dacă doriți să luptați atât de mult, trebuie doar să întrebați, [your_race] mici. Vom zdrobi tot ce vă este mai drag într-o singură lovitură!
+DECLAREWAR_ATTACK_02       | Să ne atacați așa, de parcă ați fi mult mai puternici decât sunteți. Lăudabil, dar greșit în cele din urmă.
+DECLAREWAR_ATTACK_03       | Așa să fie! S-ar putea să fie adevărat că aveți mai multe forțe decât noi, dar vă veți găsi în continuare clar depășiți de superioritatea forțelor noastre!
+DECLAREWAR_OPPORTUNITY_01  | Oamenii noștri caută întotdeauna șanse să-și îmbunătățească abilitățile de luptă, iar oamenii tăi s-ar putea dovedi a fi o provocare demnă. Asigurați-vă că sunteți o partidă bună, astfel încât specia voastră să fie vorbită cu drag în cronicile noastre.
+DECLAREWAR_ASSASSIN_01     | Nu ne așteptam la nimic mai puțin: o specie atât de inferioară din punct de vedere fizic încât trebuie să recurgă la uciderea unui ambasador neînarmat pentru a-și continua ambiția. Roagă-te oricărui zeu ai, [your_race] micuți, căci ne vom asigura că aceasta este bătălia voastră finală.
+
+OFFER_PEACE_01             | Oamenii tăi luptă bine, micuțule, dar s-a vărsat mai mult decât suficient sânge în acest război. Suntem pregătiți să lăsăm disputele noastre în trecut și să mergem spre pace, dacă sunteți suficient de curajoși să faceți și voi acest lucru.
+OFFER_TRADE_01             | Ceea ce îți lipsește în dimensiune pare să fie compensată în inventivitate. Oamenii noștri propun un Tratat Comercial de [amt] BC, în fiecare an, în speranța că comerțul se dovedește mai benefic decât conflictul pentru ambele noastre popoare.
+OFFER_PACT_01              | Noi [my_race_plural] avem opinii variate pentru numeroasele specii pe care le-am întâlnit. Specia voastră îl amuză în special pe [my_title], și acesta dorește să semnați un Pact de Neagresiune cu noi pentru a preveni orice dispute inutile în viitor.
+OFFER_ALLIANCE_01          | Deși suntem de neegalat în luptă, nu suntem atât de barbari încât ne-am arunca legăturile cu o specie precum a ta doar pentru a simți fiorul victoriei. Micuț ambasador, hai să formalizăm o Alianță și să ne întâlnim pe câmpul de luptă ca prieteni în loc de dușmani.
+//
+WARN_TRESPASSING_01        | Prezența voastră în [system] a început să ne enerveze. Ar fi înțelept să plecați înainte să ne ispitiți mai departe mânia.
+WARN_EXPANSION_01          | A lua teritoriu este dreptul celor mai puternice imperii. Vă avertizăm împotriva extinderii ulterioare, micuților, cu excepția cazului în care doriți să apărăm viitorul teritoriu [my_race] înainte ca acesta să devină formal al nostru. 
+WARN_BUILDUP_01            | Spațiul este teatrul lașilor: adevărata vitejie poate fi dovedită doar pe suprafața unei planete. Deși flota voastră devine vastă, nu o veți putea folosi pentru a vă ascunde de furia noastră dacă veți continua să o creșteți și mai mult.
+WARN_SKIRMISH_01           | Bătălia din [system] este decât o pacoste mică pentru noi. Nu ne mai deranjați, altfel vă vom zdrobi ca pe paraziții pe care sunteți atât de insistenți să ii imitați!
+WARN_ATTACKED_01           | O afișare jalnică a unei specii la fel de jalnice! Numărați-vă binecuvântările, [defender_title] are lucruri mai bune de făcut decât să vă arate de ce suntem capabili. Dar să știți că dacă doriți un război, suntem fericiți să vi-l oferim, micuților.
+WARN_INVADED_01            | Ha! O astfel de vitejie de la un popor atât de mic. Părăsiți teritoriile noastre acum micuților, înainte de a face ceva pe care, cu siguranță, îl veți regreta imediat după aceea.
+WARN_ESPIONAGE_01          | Lași! Să vă strecurați printre [victim_race_plural] precum chommka-urile care scapă din tuburi. Fii recunoscători că nu v-am zdrobit spionul și nu ne forțați să răspundem din nou la o astfel de lipsă de respect! [blamat]
+WARN_SABOTAGE_01           | De ce nu ne înfrunți în luptă, micuțule? Ne-ar plictisi o luptă cu o specie suficient de timidă pentru a se baza pe sabotaj, dar dacă veți face asta din nou, vom suporta acea plictiseală doar ca să scăpăm de voi! [forțat] 
+WARN_BIOWEAPON_01          | Actul suprem de lașitate, de a folosi o armă biologică împotriva celor care nici măcar nu se pot apăra! Poporul tău va suporta această rușine până la sfârșitul imperiului tău, micuțule: nimic din ceea ce faci nu va șterge vreodată această rușine.
+WARN_GENOCIDE_01           | [victim_race_plural] au fost slabi și fragili și nu sunt o mare pierdere pentru galaxie. Că un popor la fel de nesemnificativ ca al tău ar fi cel responsabil de dispariția lor este ceea ce considerăm cel mai deranjant.
+WARN_FINAL_WAR_01          | Admirăm vitejia celor care încearcă să stea împotriva galaxiei atunci când aceasta a ales să se unească în pace! Vă vom înregistra îndrăzneala în istoriile noastre, micuților, după ce v-am zdrobit până la ultimul copil!
+WARN_COUNCIL_VOTE_01       | Acest consiliu este o adunare de proști, care ar prefera să discute nemulțumirile lor decât să le rezolve ca niște războinici! Dar doar pentru că avem un asemenea dispreț pentru aceste proceduri nu înseamnă că vă vom ierta cu ușurință opoziția din timpul lor!
+WARN_OATHBREAKER_01        | Micuțule! A-ți încălca cuvântul este rușinea supremă! Știm că specia ta este slabă în trup, dar să fie și slabă în demnitate ne surprinde și pe noi!
+WARN_ATTACKED_ALLY_01      | Micuții [defender_race] sunt sub protecția noastră! Încetați imediat acest război, altfel veți muri de mâna noastră înainte să știți ce vă va lovii!
+WARN_REBELLING_AGAINST_01    | Marele Ierarh este singurul potrivit pentru a sta pe tronul Consiliului Galactic! Nu vom accepta niciodată uzurparea voastră ticăloasă!
+//
+PRAISE_COUNCIL_VOTE_01     | Ha! Privirile de pe fețele lor în timp ce ni v-ați alăturat au fost foarte amuzante. Dar acum știu unde se află adevărata putere și le mulțumim micilor noștri prieteni pentru că i-au ajutat să învețe!
+PRAISE_COUNCIL_VOTE_02     | Este destul de plictisitor să fii forțat să asculți toată bâlbâiala din timpul acestor întâlniri. Indiferent dacă ne-ați ajutat să o încheiem mai repede sau pentru că sunteți conștienți de puterea noastră, recunoaștem ceea ce ați făcut astăzi.
+PRAISE_COUNCIL_VOTE_03     | Ne intrigi, micuțule. Dar este bine pentru oamenii tăi că ai ales să ne recunoști puterea în ziua de azi. De dragul tău, sper să o faci în continuare.
+
+PRAISE_ATTACKED_ENEMY_01   | Ha ha! Mă bucur să te văd astăzi pe câmpul de luptă, prietene! Haide să zdrobim împreună acești [defender_race] patetici împreună! Lasă-le sângele să curgă peste lumile lor până când nu rămâne nici una!
+PRAISE_ATTACKED_ENEMY_02   | Ce glorioasă bătălie vom face astăzi, micuților! Arătați-ne cum luptați împotriva [defender_race], astfel încât să vă putem oferi respectul corespunzător din această zi înainte!
+PRAISE_ATTACKED_ENEMY_03   | Este dureros de evident că lupți împotriva [defender_race] doar pentru că și noi o facem. Totuși, că nu te îndepărtezi complet de luptă ... poate că te-am judecat greșit la urma urmei.
+
+PRAISE_TRADE_01            | Acordul nostru comercial a fost foarte profitabil pentru ambele rase, prietene. Dar încrederea este cea mai valoroasă monedă și vom continua să avem încredere în tine atâta timp cât acționezi în același fel.
+PRAISE_TRADE_02            | Deși războiul poate fi cel mai entuziasmant mod de a avansa, acesta nu este singurul mod, așa cum dovedește acordul nostru comercial. Multă vreme să continue, astfel încât oamenii noștri să prospere!
+
+PRAISE_REBELLING_WITH_01   | Ha ha! Deci te gândești să stai singur împotriva galaxiei? Ai crezut că ne vom feri de o bătălie atât de glorioasă? Stai în picioare, pentru că [my_empire] stă cu tine!
+
+ACCEPT_TRADE_01            | Înțelepciunea negocierilor tale compensează lipsa ta de dimensiuni, micuț [your_race]! Imperiul este mulțumit să facă comerț cu tine pentru [amt] BC în fiecare an.
+RESPOND_IGNORE_THREAT_01   | Hahaha, și de ce ar trebui să ascultăm amenințările unor ființe atât de mici? Du-te acum și consideră-te norocos că suntem astăzi într-o dispoziție atât de iertătoare!
+RESPOND_STOP_SPYING_01     | Chommkas-urile pe care le-am folosim pentru spionaj au fost prinse, nu-i așa? Ei bine, întoarceți-i nevătămați pe ei și pe spionii noștri și ne vom asigura că nu vă vor mai tulbura.
+RESPOND_STOP_ATTACKING_01  | Flotele Imperiului sunt terifiante, nu-i așa? Nu vă temeți de mic, acțiunea noastră a avut efectul dorit, așa că vom retrage acum flotele.
+
+
+

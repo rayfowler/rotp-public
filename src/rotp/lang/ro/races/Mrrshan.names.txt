@@ -1,0 +1,22 @@
+// all possible names
+name: Mrrshan, Prrshan, Mewshan, Clawshan, Hisshan
+
+desc1: Militariști Nemiloși
+desc2: Artileriști Superiori
+desc3: Hoardele [race] caută trofee de luptă pe măsură ce se răspândesc în toată galaxia.
+
+// possible home system names
+home: Fierias, Fierina, Miamara, Miriana, Yailaria
+
+title:     Han
+fulltitle: Han
+
+// possible leader names
+leader: Jasana, Miamar, Mirana, Prrsha, Shandra, Yalara
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Gluton, Sălbatic, Dihor, Bursuc, Felină, Pisică, Calico
+ship2: Manul, Catamount, Oncilla, Silvestris, Caracal, Margay, Serval
+ship3: Panteră, Leopard, Râs, Ghepard, Profelis, Ocelot, Jaguarundi
+ship4: Felidae, Pumă, Tigru, Leu, Jaguar, Ligru, Kodkod
+

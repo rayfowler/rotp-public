@@ -1,0 +1,21 @@
+// all possible names
+name: Psilon, Mentalon, Psychon, Cerebron, Neuralon
+
+desc1: Tehnologi Pacifiști
+desc2: Tehnici Superioare de Cercetare
+desc3: Republica [race] caută coexistența pașnică și iluminată cu alte rase în galaxie.
+
+// possible home system names
+home: Mentar, Cogitar, Psilar, Metrica, Neura
+
+title:     Consilier
+fulltitle: Înalt Consilier
+
+// possible leader names
+leader: Dynalon, Kelvan, Meson, Quark, Tachaon, Zygot
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Electron, Neutrin, Quark, Neutron, Proton, Atom, Moleculă
+ship2: Sigma, Prim, Rază, Ipotenuză, Algebră, Tangentă, Logaritm
+ship3: Paralaxă, Elipsă, Axă, Undă, Fractal, Azimut, Derivată
+ship4: Univers, Constelație, Nova, Quasar, Galaxie, Nebuloasă, Corona
