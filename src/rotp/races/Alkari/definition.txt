@@ -26,8 +26,8 @@ gnn:           AlkariGNN
 gnnHost:       AlkariGNNHost
 gnnColor:      Lavender
 gnnTextColor:  185,154,250
-winSplash:     ,255,255,255
-lossSplash:    ,255,255,255
+winSplash:     AlkWin,255,255,255
+lossSplash:    AlkLoss,255,255,255
 
 advisorScout:      AlkariDiplomat, 195@30|440x640
 advisorTransport:  AlkariDiplomat, 195@30|440x640
