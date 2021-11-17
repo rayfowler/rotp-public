@@ -134,7 +134,7 @@ public class AIGeneral implements Base, General {
                     continue;
                 StarSystem sys = galaxy().system(id);
                 Colony col = sys.colony();
-                if(col.currentProductionCapacity() <= 0.5f && col.production() < design.cost())
+                if(col.currentProductionCapacity() <= 0.5f && col.production() < design.cost() && col.shipyard().desiredShips() > 0)
                     continue;
                 float score = empire.ai().governor().productionScore(sys);
                 //System.out.println(empire.name()+" "+col.name()+" score: "+score);
