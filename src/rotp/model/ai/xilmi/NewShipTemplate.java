@@ -145,7 +145,7 @@ public class NewShipTemplate implements Base {
             hitPct = min(hitPct, 1.0f);
             float absorbPct = 1.0f;
             if(design.firepowerAntiShip(0) > 0)
-                absorbPct = design.firepowerAntiShip(design.shieldLevel()) / design.firepowerAntiShip(0);
+                absorbPct = max(design.firepowerAntiShip(design.shieldLevel()) / design.firepowerAntiShip(0), 0.05f); //more than 95% absorb will be normalized so score doesn't become infinity
             float mitigation = Float.MAX_VALUE;
             if(hitPct > 0 && absorbPct > 0)    
                 mitigation = (1 / hitPct) * (1 / absorbPct);
@@ -387,7 +387,7 @@ public class NewShipTemplate implements Base {
         
         switch (role) {
             case BOMBER:
-                setFittingSpecial(ai, d, specialsSpace, specials);
+                setFittingSpecial(ai, d, specialsSpace, specials, true);
                 setFittingArmor(ai, d, armorSpace, reinforcedArmorAllowed);
                 setFittingManeuver(ai, d, maneuverSpace, sameSpeedAllowed);
                 setFittingECM(ai, d, ecmSpace);
@@ -398,7 +398,7 @@ public class NewShipTemplate implements Base {
                 break;
             case FIGHTER:
             default:
-                setFittingSpecial(ai, d, specialsSpace, specials);
+                setFittingSpecial(ai, d, specialsSpace, specials, false);
                 setFittingArmor(ai, d, armorSpace, reinforcedArmorAllowed);
                 setFittingECM(ai, d, ecmSpace);
                 setFittingShields(ai, d, shieldSpace);
@@ -428,17 +428,18 @@ public class NewShipTemplate implements Base {
         // repeat calls of setOptimalShipCombatWeapon() will result in a weapon from another category (beam, missile, streaming) than already installed
         // fighters will have a single best weapon over all four slots
         
+        ShipWeapon bestNonBomb = null;
         switch (role) {
             case BOMBER:
                 setOptimalWeapon(ai, d, d.availableSpace(), 1, false, false, false, topSpeed, avgECM, bestSHD, antiDote, false, avgHP);
-                setOptimalWeapon(ai, d, d.availableSpace(), 3, needRange, true, false, topSpeed, avgECM, bestSHD, antiDote, false, avgHP); // even though bombs should use all space, this is run in case of it running into the max-required-bombs per design-limit
+                bestNonBomb = setOptimalWeapon(ai, d, d.availableSpace(), 3, needRange, true, false, topSpeed, avgECM, bestSHD, antiDote, true, avgHP); // even though bombs should use all space, this is run in case of it running into the max-required-bombs per design-limit
                 break;
             case DESTROYER:
-                setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, bestSHD, antiDote, true, avgHP); // uses slots 0-3
+                bestNonBomb = setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, bestSHD, antiDote, true, avgHP); // uses slots 0-3
             case FIGHTER:
             default:
                 setOptimalWeapon(ai, d, d.availableSpace() * hybridBombRatio, 1, false, false, false, topSpeed, avgECM, bestSHD, antiDote, false, avgHP);
-                setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, bestSHD, antiDote, false, avgHP); // uses slots 0-3
+                bestNonBomb = setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, bestSHD, antiDote, false, avgHP); // uses slots 0-3
                 break;
         }
         //Since destroyer is always tiny and we want to make sure we have a weapon, the computer is added afterwards
@@ -447,8 +448,22 @@ public class NewShipTemplate implements Base {
         ai.lab().iconifyDesign(d);
         for (int i = 0; i <= 2; ++i) {
             if (d.special(i) != null) {
-                //System.out.print("\n"+ai.empire().name()+" "+d.name()+" special: "+d.special(i).name());
+                d.special(i, ai.lab().noSpecial());
             }
+        }
+        //if removing beam-bonus gave us some space back, we re-add something else
+        boolean skipBeamBonus = false;
+        if((bestNonBomb != null && !bestNonBomb.isBeamWeapon()) || bestNonBomb == null)
+            skipBeamBonus = true;
+        setFittingSpecial(ai, d, d.availableSpace(), specials, skipBeamBonus);
+        //if we still have space cram in whatever weapon still fits
+        switch(role)
+        {
+            case BOMBER:
+                setOptimalWeapon(ai, d, d.availableSpace(), 1, false, false, false, topSpeed, avgECM, bestSHD, antiDote, true, avgHP);
+                break;
+            default:
+                setOptimalWeapon(ai, d, d.availableSpace(), 4, needRange, true, false, topSpeed, avgECM, bestSHD, antiDote, true, avgHP);
         }
         return d;
     }
@@ -704,7 +719,7 @@ public class NewShipTemplate implements Base {
         return specials; 
     }
 
-    private float setFittingSpecial(ShipDesigner ai, ShipDesign d, float spaceAllowed, SortedMap<Float, ShipSpecial> specials) {
+    private float setFittingSpecial(ShipDesigner ai, ShipDesign d, float spaceAllowed, SortedMap<Float, ShipSpecial> specials, boolean skipBeamBonus) {
         int nextSlot = d.nextEmptySpecialSlot();
         if (nextSlot < 0)
             return spaceAllowed;
@@ -716,6 +731,8 @@ public class NewShipTemplate implements Base {
         for(ShipSpecial spec : specials.values())
         {
             if(spec.isNone())
+                continue;
+            if((spec.beamRangeBonus() > 0 || spec.beamShieldMod() < 1) && skipBeamBonus)
                 continue;
             if(spec.space(d) <= remainingSpace)
             {
@@ -757,7 +774,7 @@ public class NewShipTemplate implements Base {
     
 // ********* FUNCTIONS SETTING ANTI-SHIP AND ANTI-PLANET WEAPONS ********** //
 
-    private void setOptimalWeapon(ShipDesigner ai, ShipDesign d, float spaceAllowed, int numSlotsToUse, boolean mustBeRanged, boolean mustTargetShips, boolean prohibitMissiles, float missileSpeedMinimum, float avgECM, float avgSHD, float antiDote, boolean downSize, float avgHP) {
+    private ShipWeapon setOptimalWeapon(ShipDesigner ai, ShipDesign d, float spaceAllowed, int numSlotsToUse, boolean mustBeRanged, boolean mustTargetShips, boolean prohibitMissiles, float missileSpeedMinimum, float avgECM, float avgSHD, float antiDote, boolean downSize, float avgHP) {
         List<ShipWeapon> allWeapons = ai.lab().weapons();
         ShipWeapon bestWeapon = null;
         float bestScore = 0.0f;
@@ -825,7 +842,7 @@ public class NewShipTemplate implements Base {
                     continue;
                 }
                 if(shield < 0)
-                    return;
+                    return null;
             }
         }
         int weaponSlotsOccupied = 0;
@@ -864,6 +881,9 @@ public class NewShipTemplate implements Base {
                 num -= numSlot;
             }
         }
+        if(num > 0 && bestWeapon != null)
+            return bestWeapon;
+        return null;
     }
     
     private float shipProductionBudget(ShipDesigner ai, int topSystems) {
