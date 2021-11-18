@@ -1395,7 +1395,7 @@ public class AIDiplomat implements Base, Diplomat {
                 //System.out.println(galaxy().currentTurn()+" "+empire.name()+" war against " +empire.generalAI().bestVictim()+" should be allowed.");
                 return true;
             }
-        return true;
+        return false;
     }
     private DiplomaticIncident worstWarnableIncident(Collection<DiplomaticIncident> incidents) {
         DiplomaticIncident worstIncident = null;
