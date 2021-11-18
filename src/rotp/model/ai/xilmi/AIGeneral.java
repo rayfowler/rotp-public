@@ -39,6 +39,7 @@ import rotp.model.ships.ShipDesignLab;
 import rotp.model.ships.ShipWeapon;
 import rotp.model.tech.Tech;
 import rotp.model.tech.TechBombWeapon;
+import rotp.ui.UserPreferences;
 import rotp.util.Base;
 
 public class AIGeneral implements Base, General {
@@ -92,6 +93,7 @@ public class AIGeneral implements Base, General {
         myFighterCost = -1;
         
         //empire.tech().learnAll();
+        //System.out.println(galaxy().currentTurn()+" "+empire.name()+" "+empire.leader().name()+" personality: "+empire.leader().personality()+" objective: "+empire.leader().objective());
         
         Galaxy gal = galaxy();
         for (int id=0;id<empire.sv.count();id++) 
@@ -730,7 +732,25 @@ public class AIGeneral implements Base, General {
                 continue;
             if(!empire.inShipRange(emp.id))
                 continue;
+            //Honorable will not attack trade-partners
             float currentScore = totalEmpirePopulationCapacity(emp) / emp.militaryPowerLevel() * (fleetCenter(emp).distanceTo(colonyCenter(empire)) / fleetCenter(empire).distanceTo(colonyCenter(emp)));
+            if(UserPreferences.xilmiRoleplayMode() && empire.leader().isHonorable())
+            {
+                if(!empire.atWar())
+                    continue;
+                currentScore = emp.totalPlanetaryIncome() + emp.totalFleetCost();
+            }
+            if(UserPreferences.xilmiRoleplayMode() && empire.leader().isErratic())
+            {
+                //As Erratic we want to do something that is arbitrary but not random.
+                currentScore = 0;
+                for(EmpireView ev : emp.contacts())
+                {
+                    if(emp.atWarWith(ev.empId()))
+                        continue;
+                    currentScore += emp.contactAge(ev.empire());
+                }
+            }
             //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" vs "+emp.name()+" dist: "+fleetCenter(empire).distanceTo(colonyCenter(emp))+" rev-dist: "+fleetCenter(emp).distanceTo(colonyCenter(empire))+" milrank: "+empire.diplomatAI().militaryRank(emp, true)+" poprank: "+empire.diplomatAI().popCapRank(emp, true)+" score: "+currentScore);
             if(currentScore > highestScore)
             {
@@ -1093,33 +1113,36 @@ public class AIGeneral implements Base, General {
                 }
             }
         }
-        for(Empire contact : empire.contactedEmpires())
+        if(!(UserPreferences.xilmiRoleplayMode() && empire.leader().isTechnologist()))
         {
-            if(!contact.inShipRange(empire.id))
-                continue;
-            if(contact.atWar())
-                continue;
-            if(contact.alliedWith(empire.id))
-                continue;
-            float bestScoreForContactToAttack = 0;
-            Empire bestTargetOfContact = null;
-            for(Empire contactOfContact : contact.contactedEmpires())
+            for(Empire contact : empire.contactedEmpires())
             {
-                if(!contact.inShipRange(contactOfContact.id))
+                if(!contact.inShipRange(empire.id))
                     continue;
-                if(contactOfContact.alliedWith(contact.id))
+                if(contact.atWar())
                     continue;
-                float score = fleetCenter(contact).distanceTo(colonyCenter(contactOfContact));
-                if(score > bestScoreForContactToAttack)
+                if(contact.alliedWith(empire.id))
+                    continue;
+                float bestScoreForContactToAttack = 0;
+                Empire bestTargetOfContact = null;
+                for(Empire contactOfContact : contact.contactedEmpires())
                 {
-                    bestTargetOfContact = contactOfContact;
-                    bestScoreForContactToAttack = score;
+                    if(!contact.inShipRange(contactOfContact.id))
+                        continue;
+                    if(contactOfContact.alliedWith(contact.id))
+                        continue;
+                    float score = fleetCenter(contact).distanceTo(colonyCenter(contactOfContact));
+                    if(score > bestScoreForContactToAttack)
+                    {
+                        bestTargetOfContact = contactOfContact;
+                        bestScoreForContactToAttack = score;
+                    }
                 }
-            }
-            if(bestTargetOfContact == empire && contact.militaryPowerLevel() > empire.militaryPowerLevel())
-            {
-                senseDanger = true;
-                break;
+                if(bestTargetOfContact == empire && contact.militaryPowerLevel() > empire.militaryPowerLevel())
+                {
+                    senseDanger = true;
+                    break;
+                }
             }
         }
         /*if(senseDanger)
@@ -1149,5 +1172,10 @@ public class AIGeneral implements Base, General {
         }
         //System.out.println(galaxy().currentTurn()+" "+empire.name()+" highest Threat: "+biggestThreat.name()+": "+highestThreat);
         return biggestThreat;
+    }
+    @Override
+    public boolean masksDiplomacy()
+    {
+        return true;
     }
 }

@@ -33,6 +33,7 @@ import rotp.model.planet.Planet;
 import rotp.model.ships.ShipDesign;
 import rotp.model.ships.ShipDesignLab;
 import rotp.model.tech.TechTree;
+import rotp.ui.UserPreferences;
 import rotp.util.Base;
 
 public class AIGovernor implements Base, Governor {
@@ -413,7 +414,7 @@ public class AIGovernor implements Base, Governor {
             float maxShipMaintainance = 0.0f;
             float fighterPercentage = empire.generalAI().defenseRatio();
             
-            if(enemy || empire.generalAI().sensePotentialAttack())
+            if(enemy || empire.generalAI().sensePotentialAttack() || (UserPreferences.xilmiRoleplayMode() && empire.leader().isMilitarist()))
             {
                 maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
             }
