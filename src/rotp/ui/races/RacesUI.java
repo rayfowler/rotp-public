@@ -1036,7 +1036,7 @@ public class RacesUI extends BasePanel {
                     y1 += s20;
                     drawString(g,text("RACES_OUT_OF_RANGE"), x1, y1);
                 }
-                if (!emp.race().masksDiplomacy) 
+                if (!emp.masksDiplomacy()) 
                     drawRelationsBar(g, emp, x1, y0+h0-s25, w0-x1-s10, s10, s10, s5);
             }
             
