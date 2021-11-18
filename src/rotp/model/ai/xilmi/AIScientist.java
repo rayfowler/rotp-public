@@ -833,7 +833,7 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechScanner t) {
-        return 1;
+        return 2; //more important than ECM for proper attack-fleet-sizing and avoiding having to retreat
     }
     @Override
     public float baseValue(TechShipInertial t) {
