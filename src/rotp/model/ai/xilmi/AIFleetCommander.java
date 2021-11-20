@@ -831,7 +831,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                     if(keepAmount >= 1)
                         break;
 
-                    if(target == null)
+                    if(target == null && !onlyAllowRealTarget)
                     {
                         //System.out.print("\n"+galaxy().currentTurn()+" "+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" didn't find a target at first.");
                         if(onlyColonizerTargets == false && fleet.hasColonyShip())
