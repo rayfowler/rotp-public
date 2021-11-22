@@ -114,4 +114,30 @@ TECH_SOIL_ENRICHMENT          | images/techs/Soil_Enrichment.png
 TECH_ADV_SOIL_ENRICHMENT      | images/techs/Advanced_Soil_Enrichment.png
 TECH_ATMO_TERRAFORM           | images/techs/Atmospheric_Terraforming.png
 
-
+TECH_FUEL_DEUTERIUM           | images/techs/Deuterium_Fuel_Cells.png
+TECH_FUEL_DOTOMITE            | images/techs/Dotomite_Crystals.png
+TECH_FUEL_HYDROGEN            | images/techs/Hydrogen_Fuel_Cells.png
+TECH_FUEL_IRRIDIUM            | images/techs/Irridium_Fuel_Cells.png
+TECH_FUEL_REAJAX              | images/techs/Reajax_II_Fuel_Cells.png
+TECH_FUEL_THORIUM             | images/techs/Thorium_Cells.png
+TECH_FUEL_TRILITHIUM          | images/techs/Trilithium_Crystals.png
+TECH_FUEL_URIDIUM             | images/techs/Uridium_Fuel_Cells.png
+TECH_WARP_ANTIMATTER          | images/techs/Anti-Matter_Engines.png
+TECH_WARP_FUSION              | images/techs/Fusion_Drives.png
+TECH_WARP_HYPER               | images/techs/Hyper_Drives.png
+TECH_WARP_IMPULSE             | images/techs/Impulse_Engines.png
+TECH_WARP_INTERPHASED         | images/techs/Inter-Phased_Drives.png
+TECH_WARP_ION                 | images/techs/Ion_Drives.png
+TECH_WARP_NUCLEAR             | images/techs/Nuclear_Engines.png
+TECH_WARP_SUBLIGHT            | images/techs/SubLight_Drives.png
+TECH_COMBAT_TRANSPORTERS      | images/techs/Combat_Transporters.png
+TECH_DISPLACEMENT_DEVICE      | images/techs/Displacement_Device.png
+TECH_HIGH_ENERGY_FOCUS        | images/techs/High_Energy_Focus.png
+TECH_STARGATES                | images/techs/Intergalactic_Star_Gates.png
+TECH_ORACLE_INTERFACE         | images/techs/Oracle_Interface.png
+TECH_SUBSPACE_INTERDICTOR     | images/techs/Sub-Space_Interdictor.png
+TECH_SUBSPACE_TELEPORTER      | images/techs/Sub-Space_Teleporter.png
+TECH_INERTIAL_STABILIZER      | images/techs/Inertial_Stabilizer.png
+TECH_INERTIAL_NULLIFIER       | images/techs/Inertial_Nullifier.png
+TECH_TECH_NULLIFIER           | images/techs/Technology_Nullifier.png
+TECH_WARP_DISSIPATOR          | images/techs/Warp_Dissipator.png
