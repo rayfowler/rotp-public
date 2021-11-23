@@ -951,7 +951,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
             empire.setVisibleShips();
     }
     public void acceptTransport(Transport t) {
-        if (adjustPopulation(t.size()) > 0) {
+        if ((adjustPopulation(t.size()) > 0) && t.empire().isPlayerControlled()) {
             // TODO: Some transports lost because max population was reached. Ought to be an alert?
         }
         log("Accepting ", str(t.size()), " transports at: ", starSystem().name(), ". New pop:", fmt(population(), 2));
