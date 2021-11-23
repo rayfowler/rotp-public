@@ -269,14 +269,13 @@ public final class Colony implements Base, IMappedObject, Serializable {
     public float population()             { return population; }
     private void population(float pop)    { population = pop; }
     public int setPopulation(float pop) {
-        float newPop = population() + pop;
         float currentMaxPop = planet().currentSize();
-        float lost = newPop - currentMaxPop;
+        float lost = pop - currentMaxPop;
         if (lost > 0) {
             population(currentMaxPop);
             return (int) lost;
         }
-        population(newPop);
+        population(pop);
         return 0;
     }
     public float adjustPopulation(float pop) {
