@@ -285,10 +285,15 @@ public class AIGeneral implements Base, General {
         EmpireView ev = empire.viewForEmpire(empire.sv.empId(sysId));
         float targetTech = ev.spies().tech().avgTechLevel(); // modnar: target tech level
         
-        if (empire.sv.hasFleetForEmpire(sys.id, empire))
+        if (empire.sv.orbitingFleet(sys.id) != null)
             launchGroundTroops(v, sys, mult);
-        else if (empire.combatTransportPct() > 0)
-            launchGroundTroops(v, sys, mult/empire.combatTransportPct());
+        else if (empire.combatTransportPct() > 0) {
+            float transPct = empire.combatTransportPct();
+            if (ev.spies().tech().subspaceInterdiction()) {
+                transPct /= 2;
+            }
+            launchGroundTroops(v, sys, mult / transPct);
+        }
 
         float baseBCPresent = empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost();
         float bcMultiplier = 1 + (empire.sv.hostilityLevel(sys.id));
