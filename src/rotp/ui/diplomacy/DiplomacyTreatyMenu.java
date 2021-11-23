@@ -50,10 +50,13 @@ public class DiplomacyTreatyMenu extends DiplomaticMessage {
             options.add(PROPOSE_PEACE);
         else if (plAI.canOfferTradeTreaty(dip))
             options.add(PROPOSE_TRADE);
-        else if (tr.isNoTreaty())
-            options.add(PROPOSE_PACT);
-        else if (tr.isPact())
-            options.add(PROPOSE_ALLIANCE);
+        
+        if (pl.tradingWith(dip)) {
+            if (tr.isNoTreaty())
+                options.add(PROPOSE_PACT);
+            else if (tr.isPact())
+                options.add(PROPOSE_ALLIANCE);
+        }
         
         if (tr.isPact())
             options.add(BREAK_PACT);

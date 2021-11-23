@@ -651,9 +651,7 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
         if (!empire.inEconomicRange(id(e)))
             return false; 
-        if (empire.atWarWith(id(e)))
-            return false;
-        if (!empire.hasTradeWith(e))
+        if (!empire.pactWith(id(e)))
             return false;
         if (empire.alliedWith(id(e)))
             return false;
