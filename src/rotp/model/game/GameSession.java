@@ -859,7 +859,9 @@ public final class GameSession implements Base, Serializable {
             newSession.validate();
             newSession.validateOnLoadOnly();
             loadPreviousSession(newSession, startUp);
-            saveRecentSession(false);
+            // do not autosave the current session if that is the file we are trying to reload
+            if (!filename.equals(RECENT_SAVEFILE))
+                saveRecentSession(false); 
         }
         catch(IOException e) {
             throw new RuntimeException(text("LOAD_GAME_BAD_VERSION", filename));

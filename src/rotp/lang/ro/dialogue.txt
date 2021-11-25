@@ -1,0 +1,151 @@
+//
+// Dialogue that is not race-specific
+//
+
+DIPLO_TECH_REQUEST_MENU_01   | Ce tip de tehnologie vă interesează?
+DIPLO_TECH_COUNTER_MENU_01   | Ce veți oferi în schimb?
+DIPLO_TRADE_MENU_01          | Propuneți un acord comercial pentru:
+DIPLO_TREATY_MENU_01         | Ce doriți să faceți?
+DIPLO_THREATEN_MENU_01       | Ce amenințați?
+DIPLO_DECLARE_WAR_MENU_01    | Sunteți siguri că doriți să începeți un război?
+DIPLO_JOINT_WAR_MENU_01      | Pe cine ar trebui să declarăm război?
+DIPLO_BREAK_ALLIANCE_MENU_01 | Ce alianță ar trebui să rupem?
+DIPLO_OFFER_AID_MENU_01      | Ce doriți să oferiți?
+DIPLO_OFFER_TECH_MENU_01     | Ce doriți să oferiți?
+
+DECLINE_OFFER_01           | [my_nameTitle] [my_name] refuză.
+DECLINE_OFFER_02           | [my_race] v-au luat în considerare oferta și am respins-o.
+DECLINE_OFFER_03           | Respingem respectuos oferta voastră.
+DECLINE_OFFER_04           | Nu suntem interesați în acest moment.
+DECLINE_OFFER_05           | [my_race] nu consideră că oferta voastră este echitabilă.
+DECLINE_OFFER_06           | Nu ar fi în interesul nostru să acceptăm oferta voastră în acest moment.
+DECLINE_OFFER_07           | Poate că ne-ați confundat cu proști creduli. Respingem oferta voastră.
+DECLINE_OFFER_08           | Oferta voastră nu pare a fi echitabilă.
+DECLINE_OFFER_09           | Ne temem că trebuie să refuzăm.
+
+DECLINE_ENEMY_ALLY_01      | [my_race] nu ar lucra niciodată cu aliații [other_race].
+DECLINE_ALREADY_ALLIED_01  | [my_race] și aliații noștri nu vă pot lua în considerare cererea atâta timp cât sunteți aliați cu alte imperii.
+DECLINE_NO_WAR_ON_ALLY_01  | Nu vom declara război aliaților noștri.
+DECLINE_PEACE_TREATY_01    | Nu vom încălca tratatul nostru de pace cu [other_race].
+
+DECLINE_ANNOYED_01         | [your_race] sunt creaturi de multă vorbă și puțină acțiune. Ne-am săturat de vorbăria voastră.
+DECLINE_ANNOYED_01         | [your_nameTitle] [your_name], ne încercați răbdarea. Poate că ar trebui să vorbiți din nou mai târziu.
+DECLINE_ANNOYED_01         | [my_nameTitle] [my_name] a auzit destule. Vom vorbi din nou mai târziu.
+DECLINE_ANNOYED_02         | Ne-am săturat de negocieri diplomatice. Putem continua discuțiile în altă zi.
+DECLINE_ANNOYED_02         | Aceste discuții nu ne duc nicăieri. Trebuie să plecăm.
+DECLINE_ANNOYED_02         | Plecăm acum.
+DECLINE_ANNOYED_03         | O mie de scuze, [your_nameTitle] [your_name], dar avem și alte îndatoriri.
+DECLINE_ANNOYED_03         | Iertați-ne, dar timpul nostru se sfârșește acum.
+DECLINE_ANNOYED_03         | Avem puțin timp și multe de făcut. Poate putem vorbi din nou mai târziu.
+
+
+DECLINE_OATHBREAKER_01     | Nu suntem dispuși să încheiem un tratat în acest moment, deoarece ați încălcat alte tratate în trecut.
+DECLINE_OATHBREAKER_01     | Nu v-ați onorat acordurile din trecut. Vedem puține motive să avem încredere în voi acum.
+DECLINE_OATHBREAKER_01     | De ce ar trebui să avem încredere în voi acum, când ați încălcat atâtea tratate din trecut?
+DECLINE_OATHBREAKER_01     | Nu vedem niciun motiv să fim de acord cu cineva care nu a respectat promisiunile din trecut.
+DECLINE_OATHBREAKER_01     | Nu vom face înțelegeri cu [your_race] fără onoare.
+
+DECLINE_ESPIONAGE_01       | Câini hoțomani, furați roadele cercetării noastre. Vă respingem solicitarea.
+DECLINE_ESPIONAGE_01       | Tehnologia noastră este doar pentru specia [my_race]. Nu aveți niciun drept să o furați. Vom vorbi când nu veți mai fura.
+DECLINE_ESPIONAGE_01       | De ce ar trebui să vă oferim ceva? Spionii voștri fură deja tot ce aveți nevoie!
+DECLINE_ESPIONAGE_01       | Cum vă puteți aștepta să acceptăm când spionii voștri ne fură tehnologia?
+DECLINE_ESPIONAGE_01       | Rechemați-vă spionii, apoi vom vorbi.
+
+DECLINE_SABOTAGE_01        | Nu am uitat ultimul vostru incident de sabotaj. Până nu veți dovedi că sunteți mai de încredere, nu vom avea de-a face cu voi.
+DECLINE_SABOTAGE_01        | Oamenii noștri au suferit din cauza sabotajul vostru. Nu vom avea de-a face cu voi până când acest sabotaj nu încetează.
+DECLINE_SABOTAGE_01        | Ce! Vă așteptați să fim de acord atunci când ne sabotați [target]?
+DECLINE_SABOTAGE_01        | Ne-ați distrus [target]. De ce am avea de-a face cu voi?
+DECLINE_SABOTAGE_01        | Când încetați să ne mai sabotați [target], atunci vom putea să discutăm despre această chestiune.
+
+DECLINE_BUILDUP_01         | Nu vom vorbi despre asta în timp ce adunați nave de război lângă granițele noastre.
+DECLINE_BUILDUP_01         | Îndepărtați-vă navele de-a lungul frontierelor noastre și vom lua în considerare oferta voastră. Până atunci nu ne interesează.
+DECLINE_BUILDUP_01         | Navele voastre de la granițele noastre nu reprezintă o amenințare pentru noi. Dar refuzăm să discutăm atâta timp cât acestea vor rămâne acolo.
+DECLINE_BUILDUP_01         | Dacă doriți să aveți de-a face cu [my_empire], atunci trimiteți-vă navele pentru a amenința pe altcineva, nu pe noi.
+
+DECLINE_ENCROACH_01        | Flotele voastre intră în spațiul [my_race]. Mutați-le, apoi vom vorbi.
+
+DECLINE_SKIRMISH_01        | Ne atacați navele fără provocăre și vă așteptați să acceptăm? Refuzăm această ofertă.
+DECLINE_SKIRMISH_01        | Nu putem accepta oferta cuiva care ne atacă flotele.
+DECLINE_SKIRMISH_01        | Odată ce flotele voastre au încetat să le atace pe ale noastre, vom putem vorbi.
+DECLINE_SKIRMISH_01        | Dacă doriți să negociați cu [my_empire], atunci lasați-ne flotele în pace.
+DECLINE_SKIRMISH_01        | [my_nameTitle] [my_name] nu apreciază distrugerea flotelor noastre. Nu acceptăm.
+
+DECLINE_ATTACK_01          | Atacul vostru nejustificat asupra [system] vă oferă puțină putere de negociere.
+DECLINE_ATTACK_01          | Nu am uitat de atacul asupra coloniei din sistemul [system]. Nu putem accepta.
+
+DECLINE_INVASION_01        | Poporul nostru nu dorește să negocieze cu măcelarii din [system].
+DECLINE_INVASION_01        | Sângele din [system] vă murdărește cuvintele. Nu putem accepta oferta voastră.
+DECLINE_INVASION_01        | Morții din [system] strigă pentru răzbunare. Le auzim strigătele mai tare decât oferta voastră.
+
+DECLINE_BIOWEAPONS_01      | [my_race] nu va face nicio înțelegere cu o specie care ar folosi arme biologice.
+DECLINE_BIOWEAPONS_01      | Nu putem face nicio înțelegere cu cineva suficient de disperat pentru a folosi armament biologic.
+DECLINE_BIOWEAPONS_01      | Folosiți arme care provoacă orori nespuse populațiilor nevinovate. Refuzăm să negociem cu o asemenea nebunie.
+DECLINE_BIOWEAPONS_01      | Zeii îi urăsc pe cei care ar distruge planetele cu arme biologice. [my_race] nu pot permite așa ceva.
+DECLINE_BIOWEAPONS_01      | Strigătele celor uciși de armele voastre biologice ne umple urechile. Nu putem auzi oferta voastră.
+
+DECLINE_ANNOYED_01         | Ne-am săturat de negocieri diplomatice. Putem continua discuțiile în altă zi.
+DECLINE_ANNOYED_01         | Aceste discuții nu ne duc nicăieri. Trebuie să plecăm.
+DECLINE_ANNOYED_01         | [my_nameTitle] [my_name] a auzit destule. Vom vorbi din nou mai târziu. 
+DECLINE_ANNOYED_01         | [your_nameTitle] [your_name], ne încercați răbdarea. Poate că ar trebui să vorbiți din nou mai târziu.
+DECLINE_ANNOYED_01         | O mie de scuze, [your_nameTitle] [your_name], dar avem și alte îndatoriri.
+DECLINE_ANNOYED_01         | Avem puțin timp și multe de făcut. Poate putem vorbi din nou mai târziu.
+DECLINE_ANNOYED_01         | [your_race] sunt creaturi de multă vorbă și puțină acțiune. Ne-am săturat de vorbăria voastră.
+DECLINE_ANNOYED_01         | Plecăm acum.
+DECLINE_ANNOYED_01         | Iertați-ne, dar timpul nostru se sfârșește acum.
+
+DECLINE_TECH_TRADE_01      | Nu aveți nicio tehnologie care să ne intereseze.
+DECLINE_TECH_TRADE_01      | Nu avem nevoie de jucării făcute de [your_race].
+DECLINE_TECH_TRADE_01      | Invențiile voastre primitive nu ne interesează.
+DECLINE_TECH_TRADE_01      | [my_race] sunt cu mult dincolo de tehnologia voastră.
+DECLINE_TECH_TRADE_01      | [your_nameTitle] [your_name], avem puțină nevoie de ceea ce ne oferă oamenii voștri de știință.
+DECLINE_TECH_TRADE_01      | [my_nameTitle] [my_name] nu vede nimic interesant în tehnologia voastră.
+
+OFFER_TECH_EXCHANGE_01     | [your_empire] are mare nevoie de tehnologia [tech]. Poate că sunteți dispuși să o schimbați cu una dintre tehnologiile noastre.
+OFFER_TECH_EXCHANGE_01     | [your_empire] știe că ați stăpânit secretele tehnologiei [tech]. Vă putem oferi una dintre tehnologiile noastre în schimb?
+OFFER_TECH_EXCHANGE_01     | [your_nameTitle] [your_name] al [your_empire] dorește secretul tehnologiei [tech]. O veți schimba cu una dintre tehnologiile noastre?
+OFFER_TECH_EXCHANGE_01     | Specia [your_race] este uimită de [tech]. Ce vă putem oferi pentru acest secret tehnologic?
+
+ACCEPT_TECH_EXCHANGE_01    | Foarte bine. [my_nameTitle] [my_name] este de acord să schimbe minunatele secrete ale [techGiven] descoperite de [my_race] pentru tehnologia [techReceived].
+ACCEPT_FINANCIAL_AID_01    | [my_nameTitle] [my_name] acceptă darul tău de [amt] BC.
+ACCEPT_TECHNOLOGY_AID_01   | [my_nameTitle] [my_name] acceptă darul tău de [tech].
+
+BREAK_TRADE_01             | Cetățenii [my_race] nu mai au nevoie de bunurile comerciale oferite de [your_empire].
+ANNOUNCE_TRADE_01          | În vigoare din [year], [my_empire] și [your_empire] sunt de acord să tranzacționeze [amt] BC pe an.
+
+ANNOUNCE_PEACE_01          | În anul [year], [my_race] și [your_race] au fost de acord să înceteze toate ostilitățile.
+ANNOUNCE_PEACE_01          | [my_nameTitle] [my_name] ordonă să se încheie toate ostilitățile între imperiile noastre.
+ACCEPT_PEACE_01            | Suntem de acord că a sosit momentul să punem capăt certurilor noastre meschine.
+ACCEPT_PEACE_01            | Acceptăm oferta voastră de pace. Încetați atacurile împotriva forțelor [my_race] iar noi vom înceta atacurile împotriva forțelor voastre.
+ACCEPT_PEACE_01            | Suntem obosiți de această distrugere fără sens. [my_empire] acceptă oferta voastră de pace.
+
+BREAK_PACT_01              | Un avertisment către [your_empire] de la [my_race]: Pactul nostru de Neagresiune este rupt!
+ANNOUNCE_PACT_01           | În anul [year], [my_empire] a intrat într-un Pact de Neagresiune cu [your_race] și promite să nu atace flotele acestora cu excepția cazului în care acestea orbitează una dintre coloniile noastre.
+ACCEPT_PACT_01             | [my_empire] este de acord cu un Pact de Neagresiune. Niciuna dintre părți nu va ataca flotele celeilalte, cu excepția cazului în care acestea intră în orbita unei colonii.
+ACCEPT_PACT_01             | Dacă sunteți de acord să nu trimiteți nave către niciuna dintre coloniile noastre, atunci poporul [my_race] jură să nu atace niciuna dintre navele voastre.
+ACCEPT_PACT_01             | [my_nameTitle] [my_name] este de acord cu Pactul de Neagresiune propus de voi. Așa este scris, așa va fi făcut!
+ACCEPT_PACT_01             | De acord, atunci. Atâta timp cât nu ne atacați coloniile, [my_empire] va respecta Pactul de Neagresiune.
+
+BREAK_ALLIANCE_01          | [my_empire] nu mai poate menține o Alianță cu [your_empire].
+ANNOUNCE_ALLIANCE_01       | În anul [year], [my_empire] și [your_empire] au fost de acord să formeze o alianță în care nicio parte nu va ataca flotele sau coloniile celeilalte.
+ANNOUNCE_ALLIANCE_01       | Deci Alianța noastră este forjată. Navele voastre pot vizita coloniile noastre după cum doriți și pot obține combustibil din bazele noastre.
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] salută o Alianță cu bunul nostru prieten, [your_nameTitle] [your_name].
+ACCEPT_ALLIANCE_01         | [my_empire] și [your_empire] forjează astăzi o alianță între popoarele noastre. Moarte dușmanilor noștri!
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] vede înțelepciunea unei Alianțe cu [your_empire]. Așa să fie!
+
+OFFER_JOINT_WAR_01         | A sosit timpul ca [your_empire] și [my_empire] să își unească forțele într-un război împotriva [other_race].
+ACCEPT_JOINT_WAR_01        | [my_empire] și [your_empire] vor face [other_empire] să îngenuncheze în fața forțelor noastre unite.
+ACCEPT_JOINT_WAR_01        | Cu [my_race] și [your_race] într-o alianță, [other_race] nu vor rezista mult.
+ACCEPT_JOINT_WAR_01        | În anul [year], [my_empire] și [your_empire] și-au unit forțele pentru a scăpa galaxia de amenințarea prezentată de [other_race].
+COUNTER_JOINT_WAR_01       | Ne vom alătura războiului vostru împotriva [other_empire] în schimbul următoarelor compensații:
+RESPOND_CLOSE_EMBASSY_01   | Așa să fie. Nu vor mai exista discuții între imperiile noastre.
+
+RESPOND_BREAK_TRADE_01     | O să ținem minte asta.
+RESPOND_BREAK_TRADE_01     | Deci, [your_nameTitle] [your_name], promisiunile tale nu înseamnă nimic. Nu vom uita acest lucru.
+
+RESPOND_BREAK_PACT_01      | Vom înscrie cuvintele tratatelor încălcate de tine pe piatra ta de mormânt, [your_nameTitle] [your_name].
+RESPOND_BREAK_PACT_01      | [your_empire] se va sfărâma sub greutatea propriilor promisiuni încălcate.
+
+RESPOND_BREAK_ALLIANCE_01  | Ați dezonorat acordul. Alianța este ruptă.
+RESPOND_BREAK_ALLIANCE_01  | Foarte bine. Intențiile voastre neserioase au fost arătate. Alianța este ruptă.
+RESPOND_BREAK_ALLIANCE_01  | Avem puțină nevoie de tratate care nu sunt onorate. Alianța este ruptă.
+RESPOND_BREAK_ALLIANCE_01  | Așa să fie. Alianța este ruptă.

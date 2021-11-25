@@ -1,0 +1,21 @@
+// all possible names
+name: Alkari, Tayyari, Gıdakari, Telekari, Kanatari
+
+desc1: Onurlu Militaristler
+desc2: Üstün Pilotlar
+desc3: [race] Egemenliği, savaşta onura önem veren organize bir savaşçı toplumudur.
+
+// possible home system names
+home: Altayr, Kartal, Havadar, Kümes, Poyraz
+
+title: Kral
+fulltitle:  Kule Kralı
+
+// possible leader names
+leader: Arel, Atibey, Yüksekuçan, Alkanat, Keskinpençe, Gökbey
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Karga, Atmaca, Pelikan, İspinoz, Çalıkuşu, Kuzgun, Tüy
+ship2: Doğan, Gök Şahini, Uzay Martısı, Savaş Baykuşu, Kukumav, Yıldızkanat
+ship3: Harpkuşu, Harpşahini, Harpkartalı, Kırlangıç, Akbaba, Leylek, Turna
+ship4: Şimşekkuşu, Afetkanat, Gökusta, Roh, Ateşkanat, Ejdersoy, Anka

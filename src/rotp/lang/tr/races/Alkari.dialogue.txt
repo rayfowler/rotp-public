@@ -1,0 +1,94 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Alkari specific dialogue
+
+CONTACT_HONORABLE          | Selam sana, ey [your_empire] imparatorluğundan [your_nameTitle] [your_name]. [my_empire] ulusundan bizler, içten selamlarımızı iletiyor ve sizinle onurlu ilişkiler kurmayı sabırsızlıkla bekliyoruz. 
+CONTACT_PACIFIST           | Sana en içten selamlar, [your_title], [your_empire]. Hegemonyamızın kapısına savaş getirme ve ikimiz de arkadaşlık içinde refaha erelim. 
+CONTACT_ERRATIC            | Ben uzun ömürlü [my_empire] için bir elçiyim. Halkım, âdetimiz olduğu üzere selamını aktarıyor. Türünüz [your_race_plural] olarak mı biliniyor? Ne kadar... ilginç.
+
+//
+GREETING_01                | Selam sana büyükelçi! Hegemonya, bu gün böyle saygıdeğer bir müttefikine nasıl yardımcı olabilir?
+GREETING_04                | Sizi selamlıyorum büyükelçi. Hegemonya isteğini dinlemeye hazır, ancak talebini yerine getirmeye ne kadar istekli olacağımız henüz belli değil...
+GREETING_07                | Çabuk konuş, büyükelçi! Yasalarımıza göre, tüm münasip görgü kurallarına uymalıyız, ancak bu, önemsiz taleplerini yerine getirmek için zamanımızı boşa harcayacağımız anlamına gelmez!
+
+//
+DECLAREWAR_HATE_01         | Sizin gibi nezaket ve letafet kaygısı olmayan bir ırk, Hegemonya tarafından yönetilen bir galaksiye yakışmaz, büyükelçi! Muharebeye hazırlan!
+DECLAREWAR_HATE_02         | Senin kabalığın ve kendini beğenmişliğin buna sebep oldu! Şu mesajı [your_title] efendine ilet: Savaş üzerinize çöktü!
+DECLAREWAR_HATE_03         | Ne kabalık! [my_empire], kozmosu böyle kaba bir halkla paylaşmaya devam etmektense, yok olmayı tercih eder, büyükelçi!
+//
+DECLAREWAR_ERRATIC_01      | Büyükelçi, sizinki kadar ilginç bir ırkla iş tutmanın keyifli olduğunu inkar edemeyiz. Bu ilişkiler artık sona ermesi gerektiği için üzgünüz.
+DECLAREWAR_ERRATIC_02      | Halklarımız ilk tanıştığından beri bizi eğlendirmeye devam ettiniz. Hegemonya, savaş zamanında da bu kadar eğlenceli olup olmayacağınızı görmek için sabırsızlanıyor, büyükelçi!
+DECLAREWAR_ERRATIC_03      | Selam, [your_empire] büyükelçisi! [my_empire], sizin hatırı sayılır gücünüze karşı onurlu bir savaşta kendisini sınamak istiyor. Filolarınızı ve halkınızı savaşa hazırlayın!
+//
+DECLAREWAR_MILITARY_01     | Hegemonya, sürülerimizi beslemek için topraklarını büyütmeye devam etmelidir. Yerleşimsiz dünya bulamadığımızda, daha küçük imparatorlukların dünyalarını alırız. İmparatorluğun bizimkinden daha küçük ve bu yüzden dünyalarınız artık bizim olacak.
+DECLAREWAR_MILITARY_02     | Nihayet vakit geldi, büyükelçi! Hegemonya bir kanadıyla savaşın gölgesini üzerinize düşürür, diğeriyle dünyalarınızı kendi tarafına süpürür.
+DECLAREWAR_MILITARY_03     | İşlerin bu noktaya gelmesi... üzücü, büyükelçi. Gezegenlerinize kendi kullanımımız için ulaşmalı ya da bu uğurda telef olmalıyız. Başka seçeneğimiz yok, savaşa hazırlanın!
+//
+DECLAREWAR_ALLIANCE_01     | [other_empire] diplomatları, halkınla savaş halinde olduklarını bize bildirdiler. [my_empire], savaş zamanlarında müttefiklerimize yardım etmekten onur duyar: yakında seni üzecek bir gerçek, büyükelçi. 
+DECLAREWAR_ALLIANCE_02     | Müttefikimiz yardım istiyor ve Hegemonya cevap veriyor! Sonunuz geldi büyükelçi: Birleşik filolarımıza karşı uzun süre dayanamazsınız!
+DECLAREWAR_ALLIANCE_03     | Müttefiklerimizden birine böyle savaş açmayı seçmeniz bizim canımızı sıktı. En kutsal yasalarımıza göre, şimdi size karşı savaşta onlara yardım etmeliyiz! Lütfen hepimiz için çok geç olmadan bu yoldan geri dönün!
+//
+DECLAREWAR_SPYING_01       | Halkınızla dostane ilişkiler sürdürmekten memnunduk, büyükelçi. Tahta karşı böyle onursuz davranışlarda bulunmanız bizi yeniden düşünmeye zorladı.
+DECLAREWAR_SPYING_02       | Böyle bir rezillik cezasız kalmayacak büyükelçi! Bize karşı gizlilik içinde hareket edenler gazabımız altında dize getirilecekler!
+DECLAREWAR_SPYING_03       | Büyükelçi! Halkınız Hegemonya'ya karşı böyle iğrenç eylemlerde bulunmaya nasıl cüret eder?! Bunu adaletsizliği ne pahasına olursa olsun düzelteceğiz! Savaşa hazırlanın!
+//
+DECLAREWAR_ATTACK_01       | Hıh! Ne kadar aptalca bir karar, büyükelçi! Ama istediğin savaşsa, o zaman Hegemonya savaşı sana getirecek!
+DECLAREWAR_ATTACK_02       | Şimdi başlıyor, büyükelçi! [my_race] halkı Kızıl Binyıl'ın bitmeyen savaşlarında hayatta kalabildiyse, senin türüne karşı bir savaşta hayli hayli hayatta kalabiliriz!
+DECLAREWAR_ATTACK_03       | Sizinki gibi hoyrat bir ırktan böyle bir kabalığı beklemeliydik, büyükelçi! Hegemonya'nın size direnmeden teslim olacağını sanmayın!
+//
+DECLAREWAR_OPPORTUNITY_01  | Gördüğün gibi, [my_empire] ulusundan bizler, uzay yolculuğu maceramızda büyük başarılar elde ettik. Büyükelçi, ne yazık ki, ihtiyaçlarımız bir sonraki başarımızın imparatorluğunuz pahasına olmasını gerektiriyor. 
+DECLAREWAR_ASSASSIN_01     | Bu ne densizlik? Soğukkanlılıkla bir büyükelçiyi öldürmek gibi korkunç bir şeyi nasıl yaparsın? Hegemonya, artık seninki gibi iğrenç bir ırka daha fazla tahammül etmeyecek!
+
+
+
+
+OFFER_PEACE_01             | Kızıl Binyıl hikâyesinin tekrarlanmasına izin verilemez, büyükelçi! Bu barış anlaşmasını daha fazla kan dökülmesini önlemek için imzalayıp hem [your_race] hem de [my_race] uluslarını onurlandırmanı talep ediyoruz!
+OFFER_TRADE_01             | Elbette bizimki gibi medeni ırklar, birbirlerine onurlu bir işbirliği içinde yardım edebilirler. [my_empire], [your_empire] ile her yıl [amt] BC meblağında belirlenmiş bir ticaret anlaşması yapmak istiyor. Cevabın nedir, büyükelçi?
+OFFER_PACT_01              | Hegemonya, halkının diplomatik ilişkilerdeki duruşundan memnun. İlişkimize ne kadar değer verdiğimizi göstermek ve birbirimizin niyetlerini yanlış yorumlama tuzağından kaçınmak için saldırmazlık paktı imzalamak istiyoruz.
+OFFER_ALLIANCE_01          | Eylemleriniz, Hegemonya nezdinde size çok itibar kazandırdı, büyükelçi! Kule Kralı,  bir ittifakın [your_race] ve [my_race] arasında bir an önce yapılmasına karar verdi! Sadece imzanı bekliyoruz!
+
+WARN_TRESPASSING_01        | [your_race] filolarının [system] sisteminde kendi mekânlarıymış gibi dolaşması son derece uygunsuzdur. Bunu bir an önce düzeltmeniz herkesin yararınadır, büyükelçi. 
+WARN_EXPANSION_01          | Dilediğiniz yerde kontrolsüzce genişlemek komşunuza büyük saygısızlıktır büyükelçi! Hegemonya'ya karşı bu saygısızlığı daha fazla sürdürmemenizi şiddetle tavsiye ediyorum. 
+WARN_BUILDUP_01            | Bizi kör mü sanıyorsun, büyükelçi?! Filolarınızın boyut ve güç olarak artıp durduğunu görüyoruz. Bu yığınağı bozarak iyi niyetinizi bize gösterin, yoksa gerçekten önünüzü kesecek bir yanıt alabilirsiniz!
+WARN_SKIRMISH_01           | [system] mevkisindeki çatışmayı çok iyi biliyoruz, büyükelçi! Hegemonya bu seferlik hareketlerinizi görmezden gelecek. Neden? Sizin gibilerin böyle bir sorusuna cevap vermek için hiçbir sebep göremiyorum! 
+WARN_ATTACKED_01           | Böyle cüretkâr bir saldırı, olsa olsa tam bir saygısızlıktan kaynaklanır, büyükelçi! Kule Kralı küstahlığınızı kınamaya tenezzül etmediği için hakikaten şanslısınız. Bir dahaki sefere bu kadar şanslı olmayabilirsiniz! 
+WARN_INVADED_01            | Demek size ait olmayanı mı almaya çalışıyorsunuz, büyükelçi?! Gazabımızı daha fazla kışkırtmayın: aptallığınızdan kurtulacağımız manasına geliyorsa, o kıytırık gezegenden seve seve kurtuluruz! 
+WARN_ESPIONAGE_01          | Hıhıhıhıhı, böyle rezil bir ırkın amaçlarına ulaşmak için casusluğa başvurması bizi şaşırtmıyor. Unutma, büyükelçi: [my_race] ulusunun gözleri öyle keskindir ki bakışlarından hiçbir şey kaçmaz. [framed]
+WARN_SABOTAGE_01           | Son derece mide bulandırıcı, büyükelçi! Karanlığa karışıp sinsi tilkiler gibi sabotaj yapmak ha!? Ama kaba olduğunuz kadar da aptalsınız da: yıktığınız binalar bir karşılık verecek kadar önemli değildi ki! [forced]
+WARN_BIOWEAPON_01          | Şerefsizlik! Şerefsizlik! Kendini korumak için kalkan bile kaldıramayanlara karşı ağza alınmaz silah türünü kullandın! Hak ettiğiniz kötü şöhretiniz sizi sonsuza kadar takip edecek büyükelçi! 
+WARN_GENOCIDE_01           | [victim_race] ulusunun sefil bir vahşi haşereler sürüsü olduğuna hemfikir olsam da, Hegemonya soykırım işlemeye şiddetle karşı çıkıyor. Merak ediyoruz, büyükelçi, halkınız bu eylemleri daha medeni ırklarla tekrarlamaya kabil mi?
+WARN_FINAL_WAR_01          | Seçtiğiniz bu istikamette fazilet yok büyükelçi. Emin olabilirsin: Madem ki galaksinin usule uygun olarak seçilmiş liderine karşı durmaya karar verdiniz, şerefimiz gereği sizi durdurmak için elimizden gelen her şeyi yapacağız! 
+WARN_COUNCIL_VOTE_01       | [your_empire] ulusunun elçisinin namı buraya kadarmış. Aldatmacanızı konseyde öğrenemeyeceğimize gerçekten inandın mı? Büyükelçi, halkınız için korkmalısınız: Kule Kralı çok gücenecek. 
+WARN_OATHBREAKER_01        | Ne skandal ama! Şerefimize ne kadar kıymet verdiğimizi bilmene rağmen, yine de sırf kendi arzularını tatmin etmek için böyle sözünden apaçık cayıyor musun?! Hegemonya bu hakareti sonsuza kadar hatırlayacak ve mutlaka dengiyle ödeyecektir büyükelçi! 
+WARN_ATTACKED_ALLY_01      | Halkınızın ve [defender_empire] ulusunun böyle didişmeyi seçmesi can sıkıcı, büyükelçi. Birleşik gücümüzle boy ölçüşemezsiniz, büyükelçi: Hegemonya, eylemlerinizi tekrar gözden geçirmeniz için sizi teşvik ediyor.
+WARN_REBELLING_AGAINST_01  | Nasıl bir alçaklık ettiğini unuttuğumuzu mu sandın? Seninle ya da tüm galaksiyle savaşacaksak da önemli değil: Kule Kralı yaşadığı sürece asla konseyin tahtına oturmayacaksın! 
+ 
+PRAISE_COUNCIL_VOTE_01     | [your_empire] ulusunun itibarlı ve saygıdeğer elçisi! Bu konsey toplantısında bize verdiğiniz hizmetten dolayı borçluyuz ve bu borcu en iyi nasıl ödeyebileceğimize karar verdiğinizde, geri ödemeye hevesliyiz. 
+PRAISE_COUNCIL_VOTE_02     | Selam size, büyükelçi. Burada toplananların önünde davamızın lehinde konuşan sesinizle bizi onurlandırıyorsunuz. Ona raporumu sunar sunmaz, Kule Kralı'nın böylesine onurlu bir halk hakkında daha fazla şey öğrenmek isteyeceğinden eminim. 
+PRAISE_COUNCIL_VOTE_03     | Hıhıhıhıhı, Hegemonyanın tarafını saygıdan ya da onur duygusundan dolayı tuttuğunuza inanmamızı beklemiyorsun herhalde, büyükelçi? Yine de, belki bunu yapmak için bir şans daha versek, bize kendinizi kanıtlamaya devam edeceksinizdir. 
+
+PRAISE_ATTACKED_ENEMY_01   | Ah! Değerli dostumuz ve müttefikimiz bu savaş zamanında iyi haberlerle geliyor! Haydi büyükelçi: Halklarımız bu korkunç [defender_race] ulusuna karşı silah arkadaşları olarak yanyana savaşsın! 
+PRAISE_ATTACKED_ENEMY_02   | Bu savaş çabucak bitecek, büyükelçi. Hegemonya tek başına bile bu bayağı [defender_race] canavarlarını kolayca alt edebilirdi. Peki birlikte? Birlikte ırklarının lekesini galaksiden sonsuza dek sileceğiz! 
+PRAISE_ATTACKED_ENEMY_03   | "Onur" kelimesinin anlamını bilmediğinizden ne kadar eminsem, fırsattan istifade ettiğinizden de o kadar eminim! [defender_race] ulusuna karşı bize yardım etmenize, sadece aksi durumda verebileceğimiz zayiat miktarını belki biraz düşürürsünüz diye izin veriyoruz! 
+
+PRAISE_TRADE_01            | Halkının işlerini böylesine onurlu bir şekilde yürütmesinin beni ne kadar rahatlattığını bilemezsin büyükelçi. Hegemonya sizi ve halkınıza hürmet ediyor ve dostluğumuza, devam eden ticaret anlaşmamızdan daha da fazla değer verecek! 
+PRAISE_TRADE_02            | Birinin onurunu kanıtlamasının birçok yolu vardır, büyükelçi. İşleri adil ve iyi niyetle yürütmek, bunu yapmanın en iyi yollarından biridir ve Hegemonya'nın bu galakside karşılaştığımız kişilerde çok değer verdiği bir şeydir. 
+
+PRAISE_REBELLING_WITH_01   | Konseydeki o vahşiler bizi hafife alıyor büyükelçi! Birlikte onlara "vahim hata" teriminin gerçekte ne manaya geldiğini göstereceğiz! 
+
+ACCEPT_TRADE_01            | Hegemonya, [your_empire] ile anlaşma yapmaktan her zaman memnuniyet duyar. Yıllık [amt] BC miktarı oldukça makul, teşekkürler.
+RESPOND_IGNORE_THREAT_01   | [my_empire] ulusunu denemeye ve kışkırtmaya mı cüret ediyorsun? Gülünç şakalarının komikliği bitmeden git onları başka bir yerde yap.
+RESPOND_STOP_SPYING_01     | Konu casus bulmaya geldiğinde gözlerin bizimkiler kadar keskin görünüyor. Çevirdiğimiz dolapların son bulacağını bil.
+RESPOND_STOP_ATTACKING_01  | Şimdi Hegemonya'mızın gücünü görüyor musun? Gücümüzü unutmadığınız sürece bu filolar sizi bir daha rahatsız etmeyecek.

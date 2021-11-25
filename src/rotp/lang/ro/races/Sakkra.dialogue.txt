@@ -1,0 +1,88 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Sakkra specific dialogue
+
+CONTACT_AGGRESSIVE         | Bună! Suntem cunoscuți ca [my_race], dar asta nu este important. Totuși, ceea ce este important este să știi că intenționăm să perfecționăm ecologia fiecărei planete din galaxie prin orice mijloace necesare, ok? Pa acum!
+CONTACT_RUTHLESS           | Hei! Noi suntem [my_race]! Sper că nu ați maltratat ecosistemele planetelor voastre. Ar trebui să rezolvăm asta imediat și probabil că nu ar fi foarte distractiv pentru voi, nu-i așa?
+CONTACT_ERRATIC            | Wow, o specie nouă! Noi suntem [my_race], si voi sunteți? [your_race]? Uimitor! Oh, trebuie să vă avertizăm că ar trebui să vă păstrați planetele curate, ok? Ne vom asigura că reușiți, urmărindu-vă foarte, foarte aproape.
+//
+GREETING_01                | Hei ambasador! Întotdeauna mă bucur să aud de la un prieten ca tine! Ai nevoie de ajutor cu ceva?
+GREETING_04                | Este ambasadorul din [your_empire]! Suntem puțin ocupați cu reglarea fină a unor ecosisteme planetare, dar vom asculta ce aveți de spus. 
+GREETING_07                | Oh tu ești. Ce vrei? Știi că nu prea ne place să fim asociați cu o specie murdară ca a ta, nu?
+//
+DECLAREWAR_HATE_01         | Oamenii tăi par să nu înceteze să pângărească fiecare planetă pe care pun mâna, nu? Vă vom șterge murdăria din galaxie în mai puțin timp decât este nevoie pentru a construi un biodom!
+DECLAREWAR_HATE_02         | De când v-am întâlnit, continuați să vă maltratați ecosistemele! Vă vom elimina înainte să mai răniți și alte planete!
+DECLAREWAR_HATE_03         | Nu mai putem suporta să vă vedem cum vă murdăriți lumile! Ne va costa mult, dar uneori scopurile justifică mijloacele!
+//
+DECLAREWAR_ERRATIC_01      | Uau, oamenii tăi sigur sunt murdari. Am putea să vă ajutăm să vă curățați lumile, dar ar fi mult mai rapid să scăpăm de voi și să le reparăm singuri.
+DECLAREWAR_ERRATIC_02      | Salut! Gata de război? Nu sunteți? Ei bine, e prea rău! Dar vedem un număr de lumi sub controlul vostru care cerșesc să fie optimizate și trebuie neapărat să punem mâna pe ele.
+DECLAREWAR_ERRATIC_03      | Buna! Știați că recent am proiectat un biodom și mai eficient din punct de vedere energetic? Am dori să le testăm pe niște planete cu adevărat murdare, așa că vă supărați dacă ocupăm unele dintre planetele voastre pentru a putea începe?
+//
+DECLAREWAR_MILITARY_01     | Știi că Conclava va perfecționa mediul fiecărei planete din această galaxie, nu? Ei bine, vom începe să lucrăm la lumile voastre. Ar trebui să le părăsiți în curând: nu aveți cum să ne învingeți dacă încerca-ți să luptați!
+DECLAREWAR_MILITARY_02     | [my_title] spune că trebuie să-ți scoatem oamenii de pe planetele lor acum, ca să putem începe să le reparăm. Aveți de gând să le părăsiți în pace? Nu? E prea rău!
+DECLAREWAR_MILITARY_03     | Aveți unele dintre cele mai minunate puzzle-uri ecologice de rezolvat în teritoriile voastre și le tratați de parcă nici măcar nu ar fi acolo! Nu mai rezistam! Indiferent de preț, o să le luăm de la voi!
+//
+DECLAREWAR_ALLIANCE_01     | Am auzit că voi și [other_race] vă certați pentru ceva. Sunt sigur că este stupid și lipsit de importanță, dar aceasta este cea mai bună șansă pentru noi de a vă lua coloniile, astfel încât să putem repara în sfârșit toate daunele pe care le-ați provocat!
+DECLAREWAR_ALLIANCE_02     | Cu siguranță nu pot nega că [other_race] sunt un popor murdar. Totuși, sunteți mult mai murdari decât ei, așa că, dacă sunt dispuși să lupte cu voi, ne vom alătura cu plăcere cauzei.
+DECLAREWAR_ALLIANCE_03     | Cu siguranță ai făcut o gafă de data asta, ambasador! Trebuia să fi știut că ne vom alătura unui aliat care va intra în război cu tine, chiar dacă acel aliat este la fel de murdar ca și [other_race]. Stai, nu știai? Vai...
+//
+DECLAREWAR_SPYING_01       | Ce crezi că faci mai exact? Cineva la fel de murdari ca oamenii tăi nu ar putea niciodată să spioneze împotriva Conclavei fără a lase o urmă de murdărie în urma lor pe care să o urmăm noi, știi?
+DECLAREWAR_SPYING_02       | Faptul că ați acționa într-un mod atât de secretos împotriva Conclavei ne enervează, dar faptul că ne-ați murdărit planetele cu prezența voastră dezgustătoare ne face absolut furioși!
+DECLAREWAR_SPYING_03       | Ați făcut greșeala de a crede că nu vom riposta atunci când ați decis să ne spionați. Doar pentru că armata voastră este un pic mai mare decât a noastră, nu înseamnă că nu suntem dispuși să mergem la război cu voi, mizerilor!
+//
+DECLAREWAR_ATTACK_01       | Ce faci?! Cum îndrăznește un slăbănog murdar ca tine să ne distrugă prețioasele planete?! Pentru asta vom arde toți oamenii tăi de parcă am arde gunoaie!
+DECLAREWAR_ATTACK_02       | Vreți să purtați un război împotriva noastră, nu? Nu vă faceți griji, vă vom captura câte o colonie pe rând, și vă vom elibera planetele de populația voastră murdară!
+DECLAREWAR_ATTACK_03       | Murdar! Murdar! Murdar! Ne-ai pătat planeta cu pofta ta de sânge îngrozitoare! Conclava va strânge toată puterea pe care o are pentru a te împinge înapoi în groapa de zgură din care ai venit!
+//
+DECLAREWAR_OPPORTUNITY_01  | [my_title] se gândea recent la oamenii tăi. A ajuns la concluzia că cel mai bine ar fi pentru noi să vă împiedicăm să vă răspândiți în galaxie mai devreme decât mai târziu. Astfel, nu vom avea atât de multe lumi de curățat după ce vă vom elimina!
+DECLAREWAR_ASSASSIN_01     | Ce ai făcut?! Știam că nu putem avea încredere în oamenii tăi! Dacă ai ucide un ambasador neînarmat, mă înfiorăm să mă gândesc ce ai putea face ecosistemelor tale! Pregătește-te de război, [your_race] murdar.
+
+
+OFFER_PEACE_01             | Bietele planete! Pur și simplu nu mai suportăm să le vedem marcate de acest război stupid! Să punem capăt luptei acum, ambasador, și să începem să vindecăm aceste lumi pe care le-am rănit atât de mult!  
+OFFER_TRADE_01             | Uau, există atât de multe medii complexe pe toate aceste lumi! Am dori să facem economia noastră mai solidă pentru a finanța toate proiectele noastre, iar tranzacționarea cu voi ar fi de mare ajutor!! [amt] BC în fiecare an este bine, nu?
+OFFER_PACT_01              | Se pare că aveți grijă de planetele voastre suficient de bine, iar războaiele distrug toate planetele pe care le ating. Doriți un pact de neagresiune cu noi? În acest fel, niciunul dintre ecosistemele noastre frumoase nu va avea de ce să se teamă!
+OFFER_ALLIANCE_01          | Wow, sunt impresionat! Felul în care ai grijă de planetele tale, este aproape ca și cum ai fi un Sakkra! Fă o alianță cu noi, ambasador! Ne vom proteja lumile unul altuia împreună: nimeni nu ne va amenința atâta timp cât vom rămâne uniți!
+ 
+WARN_TRESPASSING_01        | Hei! Hei! Hei! [system] se află sub protecția Conclavei! Nu aveți ce căuta aici, știți? Ieșiți! Acum! Ce mai așteptați? Plecați!
+WARN_EXPANSION_01          | Luați pentru voi mult mai mult decât ar trebui, ambasador! Nu sunteți suficient de avansați pentru a avea grijă de fiecare dintre aceste lumi și nu intenționăm să vă lăsăm să irosiți toate aceste puzzle-uri ecologice! Încetiniți-vă expansiunea!
+WARN_BUILDUP_01            | Sunt multe nave pe care le aveți acolo! Dacă veți continua să aduceți mai multe, unele imperii pot începe să devină agitate. S-ar putea să înceapă să-și îndrepte armele spre voi. Poate chiar să tragă un foc sau două! Asta dacă continuați să aduceți mai multe nave.
+WARN_SKIRMISH_01           | Nu pot să cred că a fost o luptă în [system]! La ce te gândeai, ambasador? Vă vom ierta de data asta pentru că nu ați rănit nicio planetă, dar ai grijă de flotele tale de acum înainte, [your_race] prost! 
+WARN_ATTACKED_01           | Ce crezi ca faci?! Nu te mai prosti! Suntem foarte ocupați să încercăm să perfecționăm ecologia în [system], nu avem nevoie de navele tale să zboare și să facă lucrurile și mai grele!
+WARN_INVADED_01            | Ți-ai pierdut mințile?! Sau ce minți mici aveți voi, [your_race] prost?! Va dura ani de zile pentru a repara daunele pe care le-ați făcut! Aceste glume nu mai sunt amuzante! Nu vă mai jucați sau vă vom face să regretați! 
+WARN_ESPIONAGE_01          | Crezi că ai putea să ne spionezi și să reușești să păstrezi acest lucru un secret? Ești amuzant, ambasador. Dar dacă asta va înceta să fie atât de amuzant, atunci probabil că o să te ucidem, bine?[blamat]
+WARN_SABOTAGE_01           | Ce ați făcut?! Ați spart biodomul! Toate acele mostre prețioase, toate acele experimente distruse! Mergeți prea departe: așteptați-vă la un răspuns de la noi dacă acest lucru continuă, [your_race] murdar! [forțat]
+WARN_BIOWEAPON_01          | Acum ai făcut-o! O armă biologică?! O armă biologică!! Gândește-te la pagubele nespuse pe care le-ai făcut asupra ecologiei acelei planete fără apărare! Monstru absolut: vei trăi ca să regreți asta!
+WARN_GENOCIDE_01           | Ați eliminat specia [victim_race] , nu-i așa? Bine, chiar începeau să ne calce pe nervi. Desigur, ne veți oferi lumile lor pentru o restaurare ecologică. Nu vei face asta? Înțeleg...
+WARN_FINAL_WAR_01          | Știi că toți am decis să ne unim pentru binele tuturor lumilor, nu? De ce vrei să te opui unității noastre, ambasador? Bănuiesc că motivul tău nu va mai conta în curând. Dar nu-ți face griji! Vom avea grijă de planetele tale după ce vei muri.
+WARN_COUNCIL_VOTE_01       | Nu ai făcut un lucru foarte frumos de în consiliu. Am crezut că am avut o înțelegere, ambasador? Că voința [candidate_race] a fost întotdeauna alegerea corectă de făcut? Nu mai face astfel de greșeli, [your race] murdar!
+WARN_OATHBREAKER_01        | Întotdeauna am crezut că sunteți dezgustători din punct de vedere fizic, cu corpurile voastre ciudate și cu mirosurile neplăcute. Dar acum vedem că acțiunile se potrivesc cu chipul! Dispari din ochii mei, ambasador: chiar încep să mă simt foarte rău.
+WARN_ATTACKED_ALLY_01      | Uite, nu suntem cu adevărat fani ai speciei [defender_race] chiar dacă suntem aliați din punct de vedere tehnic. Înceta-ți aceste certuri proaste, altfel va trebui să ne implicăm.
+WARN_REBELLING_AGAINST_01  | Cum a putut consiliul să ne facă asta?! Cum au putut ei să vă aleagă pe VOI dintre toate popoarele să conduceți această galaxie? Nu putem accepta asta... sunteți doar... așa... MURDARI!
+
+PRAISE_COUNCIL_VOTE_01     | Hei ambasador! Mulțumesc că sunteți atât de încredere în consiliu. Celelalte specii sunt atât de groaznice, dar să ai sprijin de la oameni ca voi? Ei bine, ne face să simțim că facem ceva bine. Doar spune-mi dacă ai nevoie de ceva, ok?
+PRAISE_COUNCIL_VOTE_02     | Te-ai descurcat foarte bine astăzi în camerele consiliului. Mă bucur cu adevărat să știu că vezi valoarea speciei mele. Sper că planetele voastre beneficiază de înțelepciunea voastră la fel de mult ca și Conclava!
+PRAISE_COUNCIL_VOTE_03     | Hmm, ce plănuiești, încercând să treci în grațiile noastre votându-ne în ședința de consiliu? Ei bine, oricum, sunt sigur că vom afla de ce ai făcut asta destul de curând. Mulțumesc oricum pentru susținere, jegosule. 
+PRAISE_ATTACKED_ENEMY_01   | Ai auzit chemarea acelor lumi, nu-i așa, ambasador? Trebuie să fie eliberate de sub controlul [defender_race] cât mai curând posibil. Știam că ești ca noi la suflet! Acum o să știe și restul Conclavei!
+PRAISE_ATTACKED_ENEMY_02   | Haha, da! Aceea este calea! Împingeți-i pe acei [defender_race_plural] murdari înapoi până când nu mai au unde să se retragă! Încearcați să nu răniți prea multe planete, bine? Vom avea nevoie de ele când vom termina această luptă.
+PRAISE_ATTACKED_ENEMY_03   | Vă luptați și voi cu [defender_race], jegoșilor? Este mirosul, nu? Pătrunde tot ce îl înconjoară. Stați departe de noi când ați terminat! Sunt sigur că vă va infecta și pe voi!
+PRAISE_TRADE_01            | Acest acord comercial este atât de grozav! Am reușit să organizăm atât de multe proiecte datorită acestuia. Îți mulțumesc sincer, iar lumile din [my_empire] îți cântă laude eterne! 
+PRAISE_TRADE_02            | Iată-te! [my_title] a vrut să vă felicit pentru menținerea unui acord comercial impecabil cu Conclava. El speră că veți vedea înțelepciunea în continuare, deoarece avem multe proiecte de explorat! Asta e tot. Pa acum!
+PRAISE_REBELLING_WITH_01   | Consiliul a înnebunit pentru a-i pune pe acești [leader_race_plural] dezgustători pe tronul proverbial al galaxiei. Duhoarea lor ne îmbolnăvește deja poporul. Lăsați-ne să vă ajutăm să îi eliminați, ambasador!
+ 
+ACCEPT_TRADE_01            | Este timpul pentru comerț! Este timpul pentru comerț! [amt] BC în fiecare an va contribui mult la crearea biosferelor noastre! Mulțumesc prietene!
+RESPOND_IGNORE_THREAT_01   | O, băiete, ești chiar supărat, nu-i așa? Ei bine, nu se pare că ai putea face nimic chiar dacă ai fi! Pleacă acum te rog, sunt foarte ocupat cu aceste mostre de floră astăzi.
+RESPOND_STOP_SPYING_01     | Ați prins un spion, nu-i așa? Ei bine, nu vă faceți griji, doar verificam să ne asigurăm că ați fost buni cu planetele voastre. Se pare că ați fost, așa că dați-ne spionul înapoi și nu va mai fi nevoie să trimitem altul!
+RESPOND_STOP_ATTACKING_01  | Vezi câte nave avem? Și fiecare are arme mari și înfricoșătoare! Dacă aflăm vreodată că abuzați planetele pe care le controlați, atunci va trebui să le trimitem înapoi și niciunul dintre noi nu vrea să se întâmple asta! Pa acum!
+

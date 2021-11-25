@@ -1,0 +1,1203 @@
+
+
+//
+// Armor techs
+// 
+ARMOR_0_NAME     | Titanyum Zırh
+ARMOR_0_ITEM     | Titanyum
+ARMOR_0_BRIEF    | Can: %1
+ARMOR_0_DETAIL   | Başlangıç zırh teknolojisi. Gemi zırhına yahut kara saldırısına bonusu yoktur.
+
+ARMOR_1_NAME     | Dayalaşım Zırhı
+ARMOR_1_ITEM     | Dayalaşım
+ARMOR_1_BRIEF    | Can: %1
+ARMOR_1_DETAIL   | Gemi ve taşıtların canını yüzde 50 artırır. Şahsi muharebe zırhları da iyileştirilir ve bütün yer saldırılarına 5 ekler.
+
+ARMOR_2_NAME     | Zortıryum Zırhı
+ARMOR_2_ITEM     | Zortıryum
+ARMOR_2_BRIEF    | Can: %1
+ARMOR_2_DETAIL   | Gemi ve taşıtların canını yüzde 100 artırır. Şahsi muharebe zırhları da iyileştirilir ve bütün yer saldırılarına 10 ekler.
+
+ARMOR_3_NAME     | Andryum Zırhı
+ARMOR_3_ITEM     | Andryum
+ARMOR_3_BRIEF    | Can: %1
+ARMOR_3_DETAIL   | Gemi ve taşıtların canını yüzde 150 artırır. Şahsi muharebe zırhları da iyileştirilir ve bütün yer saldırılarına 15 ekler.
+
+ARMOR_4_NAME     | Tritanyum Zırhı
+ARMOR_4_ITEM     | Tritanyum
+ARMOR_4_BRIEF    | Can: %1
+ARMOR_4_DETAIL   | emi ve taşıtların canını yüzde 200 artırır. Şahsi muharebe zırhları da iyileştirilir ve bütün yer saldırılarına 20 ekler.
+
+ARMOR_5_NAME     | Adamantiyum Zırhı
+ARMOR_5_ITEM     | Adamantiyum
+ARMOR_5_BRIEF    | Can: %1
+ARMOR_5_DETAIL   | Gemi ve taşıtların canını yüzde 250 artırır. Şahsi muharebe zırhları da iyileştirilir ve bütün yer saldırılarına 25 ekler.
+
+ARMOR_6_NAME     | Nötronyum Zırhı
+ARMOR_6_ITEM     | Nötronyum
+ARMOR_6_BRIEF    | Can: %1
+ARMOR_6_DETAIL   | Gemi ve taşıtların canını yüzde 300 artırır. Şahsi muharebe zırhları da iyileştirilir ve bütün yer saldırılarına 30 ekler.
+
+
+//
+// Atmospheric Terraforming techs
+// 
+ATMOSPHERE_0_NAME      | Atmosferik Yerselleştirme
+ATMOSPHERE_0_DETAIL    | 150 BC karşılığında Hasmane ortamları Normal ortamlara çevirir.
+
+//
+// Automated Repair techs
+// 
+AUTOREPAIR_0_NAME      | Otomatik Tamir Sistemi.
+AUTOREPAIR_0_BRIEF     | Her tur, geminin hasarlarının yüzde 15'ini iyileştirir.
+AUTOREPAIR_0_DETAIL    | Yok edilmemiş gemiler her tur toplam canlarının yüzde 15'ine kadar kendilerini tamir edebilirler.
+
+AUTOREPAIR_1_NAME      | İleri Hasar Kontrolü
+AUTOREPAIR_1_BRIEF     | Her tur, geminin hasarlarının yüzde 30'unu iyileştirir.
+AUTOREPAIR_1_DETAIL    | Yok edilmemiş gemiler her tur toplam canlarının yüzde 30'una kadar kendilerini tamir edebilirler.
+
+
+//
+// Battle Computer techs
+// 
+// this is the Ship Design entry for selecting no battle computer
+COMPUTER_0_NAME    | 
+COMPUTER_0_ITEM    |  
+COMPUTER_0_BRIEF   | Saldırı Seviyesi I
+COMPUTER_0_DETAIL  |
+
+COMPUTER_1_NAME    | Harp Bilgisayarı Sürüm I
+COMPUTER_1_ITEM    | Sürüm I
+COMPUTER_1_BRIEF   | Saldırı Seviyesi I
+COMPUTER_1_DETAIL  | Silah isabetini 1. Seviyeye çıkarır.
+
+COMPUTER_2_NAME    | Harp Bilgisayarı Sürüm II
+COMPUTER_2_ITEM    | Sürüm II
+COMPUTER_2_BRIEF   | Saldırı Seviyesi II
+COMPUTER_2_DETAIL  | Silah isabetini 2. Seviyeye çıkarır.
+
+COMPUTER_3_NAME    | Harp Bilgisayarı Sürüm III
+COMPUTER_3_ITEM    | Sürüm III
+COMPUTER_3_BRIEF   | Saldırı Seviyesi III
+COMPUTER_3_DETAIL  | Silah isabetini 3. Seviyeye çıkarır.
+
+COMPUTER_4_NAME    | Harp Bilgisayarı Sürüm IV
+COMPUTER_4_ITEM    | Sürüm IV
+COMPUTER_4_BRIEF   | Saldırı Seviyesi IV
+COMPUTER_4_DETAIL  | Silah isabetini 4. Seviyeye çıkarır.
+
+COMPUTER_5_NAME    | Harp Bilgisayarı Sürüm V
+COMPUTER_5_ITEM    | Sürüm V
+COMPUTER_5_BRIEF   | Saldırı Seviyesi V
+COMPUTER_5_DETAIL  | Silah isabetini 5. Seviyeye çıkarır.
+
+COMPUTER_6_NAME    | Harp Bilgisayarı Sürüm VI
+COMPUTER_6_ITEM    | Sürüm VI
+COMPUTER_6_BRIEF   | Saldırı Seviyesi VI
+COMPUTER_6_DETAIL  | Silah isabetini 6. Seviyeye çıkarır.
+
+COMPUTER_7_NAME    | Harp Bilgisayarı Sürüm VII
+COMPUTER_7_ITEM    | Sürüm VII
+COMPUTER_7_BRIEF   | Saldırı Seviyesi VII
+COMPUTER_7_DETAIL  | Silah isabetini 7. Seviyeye çıkarır.
+
+COMPUTER_8_NAME    | Harp Bilgisayarı Sürüm VIII
+COMPUTER_8_ITEM    | Sürüm VIII
+COMPUTER_8_BRIEF   | Saldırı Seviyesi VIII
+COMPUTER_8_DETAIL  | Silah isabetini 8. Seviyeye çıkarır.
+
+COMPUTER_9_NAME    | Harp Bilgisayarı Sürüm IX
+COMPUTER_9_ITEM    | Sürüm IX
+COMPUTER_9_BRIEF   | Saldırı Seviyesi IX
+COMPUTER_9_DETAIL  | Silah isabetini 9. Seviyeye çıkarır.
+
+COMPUTER_10_NAME   | Harp Bilgisayarı Sürüm X
+COMPUTER_10_ITEM   | Sürüm X
+COMPUTER_10_BRIEF  | Saldırı Seviyesi X
+COMPUTER_10_DETAIL | Silah isabetini 10. Seviyeye çıkarır
+
+COMPUTER_11_NAME   | Harp Bilgisayarı Sürüm XI
+COMPUTER_11_ITEM   | Sürüm XI
+COMPUTER_11_BRIEF  | Saldırı Seviyesi XI
+COMPUTER_11_DETAIL | Silah isabetini 11. Seviyeye çıkarır
+
+
+//
+// Battle Suit techs for ground combat
+// 
+// this is for default, no-bonus armor that player starts with
+BATTLESUIT_0_NAME    | Zırh
+BATTLESUIT_0_DETAIL  |
+
+BATTLESUIT_1_NAME    | Harp Tulumu
+BATTLESUIT_1_DETAIL  | Korumasının yanında gücü de artıran bir zırh. Bütün savaş zarlarına 10 ekler.
+
+BATTLESUIT_2_NAME    | Zırhlı Dışiskelet
+BATTLESUIT_2_DETAIL  | Sadece gücü ve korunmayı artırmakla kalmayıp, aynı zamanda sınırlı miktarda uçuş da sağlayan gelişmiş mobil zırhlar. Bütün savaş zarlarına 20 ekler.
+
+BATTLESUIT_3_NAME    | Güçlendirilmiş Zırh
+BATTLESUIT_3_DETAIL  | Yüksek manevra kabiliyeti, anti-yerçekimi uçuşu ve ağır zırh kaplamasına sahip, kara birimleri için mevcut en gelişmiş zırh. Bütün savaş zarlarına 30 ekler.
+
+
+//
+// Energy Focus techs for beam weapons
+// 
+BEAMFOCUS_0_NAME    | Yüksek Enerji Odağı
+BEAMFOCUS_0_BRIEF   | Enerji silahı menziline +3 ekler.
+BEAMFOCUS_0_DETAIL  | Bütün enerji silahlarının atış menziline üç ekler.
+
+BEAMFOCUS_1_NAME    | Kâhin Arayüzü
+BEAMFOCUS_1_BRIEF   | Işın silahlarını odakla, düşman zırhlarını yarıla
+BEAMFOCUS_1_DETAIL  | Bütün ışın silahı saldırısını eşzamanlı tek bir atışa yoğunlaştırarak, düşmanın zırh gücünü yarılar.
+
+
+//
+// Biological antidote techs 
+// 
+BIOANTIDOTE_0_NAME    | Biyo Toksin Panzehiri
+BIOANTIDOTE_0_DETAIL  | Biyolojik silahların yol açtığı zaiyatı saldırı başına 1M düşürür.
+
+BIOANTIDOTE_1_NAME    | Umumi Panzehir
+BIOANTIDOTE_1_DETAIL  | Biyolojik silahların yol açtığı zaiyatı saldırı başına 2M düşürür.
+
+
+//
+// Biological weapon techs 
+// 
+BIOWEAPON_0_NAME     | Ölüm Sporları
+BIOWEAPON_0_BRIEF    | Biyolojik Silah
+BIOWEAPON_0_DETAIL   | Maksimum gezegen nüfuslarını her saldırıda 1M düşüren korkunç biyolojik silahlar.
+
+BIOWEAPON_1_NAME     | Kıyamet Virüsü
+BIOWEAPON_1_BRIEF    | Biyolojik Silah
+BIOWEAPON_1_DETAIL   | Maksimum gezegen nüfuslarını her saldırıda 2M düşüren dehşetli biyolojik silahlar.
+
+BIOWEAPON_2_NAME     | Biyo Terminatör
+BIOWEAPON_2_BRIEF    | Biyolojik Silah
+BIOWEAPON_2_DETAIL   | Maksimum gezegen nüfuslarını her saldırıda 3M düşüren tüyler ürpetici biyolojik silahlar.
+
+//
+// Black Hole Generator tech
+//
+BLACKHOLE_0_NAME     | Kara Delik Üreticisi
+BLACKHOLE_0_DETAIL   | Normal uzayı büküp, düşman gemilerinin veya füze üslerinin, her kalkan sınıfı için yüzde 2 daha az olmak üzere yüzde 25 ila 100'ünü yok eden bir alt-uzay sahası yaratır.
+
+
+//
+// Bomb weapon tech
+//
+BOMB_0_NAME     | Nükleer Bomba
+BOMB_0_BRIEF    | Sadece Yer Saldırıları
+BOMB_0_DETAIL   | Patlamasıyla sadece yer hedeflerine 3-12 hasar veren bombalar.
+
+BOMB_1_NAME     | Füzyon Bombası
+BOMB_1_BRIEF    | Sadece Yer Saldırıları
+BOMB_1_DETAIL   | Patlamasıyla sadece yer hedeflerine 5-20 hasar veren bombalar.
+
+BOMB_2_NAME     | Anti-Madde Bombası
+BOMB_2_BRIEF    | Sadece Yer Saldırıları
+BOMB_2_DETAIL   | Patlamasıyla sadece gezegen hedeflerine 10-40 hasar veren bombalar.
+
+BOMB_3_NAME     | Omega-V Bombası
+BOMB_3_BRIEF    | Sadece Yer Saldırıları
+BOMB_3_DETAIL   | Patlamasıyla sadece yer hedeflerine 20-50 hasar veren bombalar.
+
+BOMB_4_NAME     | Nötronyum Bombası
+BOMB_4_BRIEF    | Sadece Yer Saldırıları
+BOMB_4_DETAIL   | Patlamasıyla sadece yer hedeflerine 40-70 hasar veren bombalar.
+
+
+//
+// Cloaking tech
+//
+CLOAK_0_NAME     | Gizleme Ekipmanı
+CLOAK_0_BRIEF    | Gemiyi hemen hemen görünmez kılar
+CLOAK_0_DETAIL   | Gemiyi saldırana kadar hemen hemen görünmez kılar ve savunmasını +5 artırır. Gemiler saldırmak için görünür olmalıdırlar ve saldırmadıkları turlardan sonra otomatik olarak yeniden gizlenirler.
+
+
+//
+// Cloning tech
+//
+CLONE_0_NAME     | Klonlama
+CLONE_0_DETAIL   | 1M başına 10BC'ye, biyomühendislikle oluşturulmuş kolonistlerin yetiştirilmesine izin verir.
+
+CLONE_1_NAME     | Gelişmiş Klonlama
+CLONE_1_DETAIL   | 1M başına 5BC'ye, biyomühendislikle oluşturulmuş kolonistlerin yetiştirilmesine izin verir.
+
+
+//
+// Combat Transporter tech
+//
+COMBATTRANSPORT_0_NAME     | Muharebe Taşıyıcıları
+COMBATTRANSPORT_0_DETAIL   | Bununla donanmış taşıyıcılar yüzde elli ihtimalle düşman gemileri ve füze savunma üsleri onlara saldıramadan önce düşman satıhlarının üstüne ışınlanma şansına sahiptir.
+
+
+//
+// Control Environment tech
+//
+CONTROLENV_0_NAME    | Normal Ortam Kontrolü
+CONTROLENV_0_ITEM    | Standard Koloni Üssü
+CONTROLENV_0_BRIEF   | Normal Gezegen İnişlerine İzin Verir
+CONTROLENV_0_DETAIL  | Standart gezegenlerin kolonizasyonuna izin verir.
+
+CONTROLENV_1_NAME    | Kıraç Ortam Kontrolü
+CONTROLENV_1_ITEM    | Kıraç Koloni Üssü
+CONTROLENV_1_BRIEF   | Kıraç Gezegen İnişlerine İzin Verir
+CONTROLENV_1_DETAIL  | Kıraç ve daha az zorlu gezegenlerin kolonizasyonuna izin verir.
+
+CONTROLENV_2_NAME    | Tundra Ortam Kontrolü
+CONTROLENV_2_ITEM    | Tundra Koloni Üssü
+CONTROLENV_2_BRIEF   | Tundra Gezegen İnişlerine İzin Verir
+CONTROLENV_2_DETAIL  | Tundra ve daha az zorlu gezegenlerin kolonizasyonuna izin verir.
+
+CONTROLENV_3_NAME    | Yaşamsız Ortam Kontrolü
+CONTROLENV_3_ITEM    | Yaşamsız Koloni Üssü
+CONTROLENV_3_BRIEF   | Yaşamsız Gezegen İnişlerine İzin Verir
+CONTROLENV_3_DETAIL  | Yaşamsız ve daha az zorlu gezegenlerin kolonizasyonuna izin verir.
+
+CONTROLENV_4_NAME    | Volkan Ortam Kontrolü
+CONTROLENV_4_ITEM    | Volkan Koloni Üssü
+CONTROLENV_4_BRIEF   | Volkan Gezegen İnişlerine İzin Verir
+CONTROLENV_4_DETAIL  | Volkan ve daha az zorlu gezegenlerin kolonizasyonuna izin verir.
+
+CONTROLENV_5_NAME    | Zehirli Ortam Kontrolü
+CONTROLENV_5_ITEM    | Zehirli Koloni Üssü
+CONTROLENV_5_BRIEF   | Zehirli Gezegen İnişlerine İzin Verir
+CONTROLENV_5_DETAIL  | Zehirli ve daha az zorlu gezegenlerin kolonizasyonuna izin verir.
+
+CONTROLENV_6_NAME    | Radyasyonlu Ortam Kontrolü
+CONTROLENV_6_ITEM    | Radyasyonlu Koloni Üssü
+CONTROLENV_6_BRIEF   | Radyasyonlu Gezegen İnişlerine İzin Verir
+CONTROLENV_6_DETAIL  | Radyasyonlu ve daha az zorlu gezegenlerin kolonizasyonuna izin verir.
+
+
+//
+// Deflector Shield tech
+//
+// this is the entry on Ship Design for selecting no deflector shield
+DEFLECTOR_0_NAME      | 
+DEFLECTOR_0_ITEM      |   
+DEFLECTOR_0_BRIEF     |  
+DEFLECTOR_0_DETAIL    | 
+
+DEFLECTOR_1_NAME      | Sınıf I Yansıtma Kalkanları
+DEFLECTOR_1_ITEM      | Sınıf I
+DEFLECTOR_1_BRIEF     | 1 Hasar Azaltır
+DEFLECTOR_1_DETAIL    | Bütün saldırılardan 1 hasar azaltır.
+
+DEFLECTOR_2_NAME      | Sınıf II Yansıtma Kalkanları
+DEFLECTOR_2_ITEM      | Sınıf II
+DEFLECTOR_2_BRIEF     | 2 Hasar Azaltır
+DEFLECTOR_2_DETAIL    | Bütün saldırılardan 2 hasar azaltır.
+
+DEFLECTOR_3_NAME      | Sınıf III Yansıtma Kalkanları
+DEFLECTOR_3_ITEM      | Sınıf III
+DEFLECTOR_3_BRIEF     | 3 Hasar Azaltır
+DEFLECTOR_3_DETAIL    | Bütün saldırılardan 3 hasar azaltır.
+
+DEFLECTOR_4_NAME      | Sınıf IV Yansıtma Kalkanları
+DEFLECTOR_4_ITEM      | Sınıf IV
+DEFLECTOR_4_BRIEF     | 4 Hasar Azaltır
+DEFLECTOR_4_DETAIL    | Bütün saldırılardan 4 hasar azaltır.
+
+DEFLECTOR_5_NAME      | Sınıf V Yansıtma Kalkanları
+DEFLECTOR_5_ITEM      | Sınıf V
+DEFLECTOR_5_BRIEF     | 5 Hasar Azaltır
+DEFLECTOR_5_DETAIL    | Bütün saldırılardan 5 hasar azaltır.
+
+DEFLECTOR_6_NAME      | Sınıf VI Yansıtma Kalkanları
+DEFLECTOR_6_ITEM      | Sınıf VI
+DEFLECTOR_6_BRIEF     | 6 Hasar Azaltır
+DEFLECTOR_6_DETAIL    | Bütün saldırılardan 6 hasar azaltır.
+
+DEFLECTOR_7_NAME      | Sınıf VII Yansıtma Kalkanları
+DEFLECTOR_7_ITEM      | Sınıf VII
+DEFLECTOR_7_BRIEF     | 7 Hasar Azaltır
+DEFLECTOR_7_DETAIL    | Bütün saldırılardan 7 hasar azaltır.
+
+DEFLECTOR_8_NAME      | Sınıf IX Yansıtma Kalkanları
+DEFLECTOR_8_ITEM      | Sınıf IX
+DEFLECTOR_8_BRIEF     | 9 Hasar Azaltır
+DEFLECTOR_8_DETAIL    | Bütün saldırılardan 9 hasar azaltır.
+
+DEFLECTOR_9_NAME      | Sınıf XI Yansıtma Kalkanları
+DEFLECTOR_9_ITEM      | Sınıf XI
+DEFLECTOR_9_BRIEF     | 11 Hasar Azaltır
+DEFLECTOR_9_DETAIL    | Bütün saldırılardan 11 hasar azaltır.
+
+DEFLECTOR_10_NAME     | Sınıf XIII Yansıtma Kalkanları
+DEFLECTOR_10_ITEM     | Sınıf XIII
+DEFLECTOR_10_BRIEF    | 13 Hasar Azaltır
+DEFLECTOR_10_DETAIL   | Bütün saldırılardan 13 hasar azaltır.
+
+DEFLECTOR_11_NAME     | Sınıf XV Yansıtma Kalkanları
+DEFLECTOR_11_ITEM     | Sınıf XV
+DEFLECTOR_11_BRIEF    | 15 Hasar Azaltır
+DEFLECTOR_11_DETAIL   | Bütün saldırılardan 15 hasar azaltır.
+
+
+//
+// Displacement tech
+//
+DISPLACEMENT_0_NAME   | Yer Değiştirme Aygıtı
+DISPLACEMENT_0_BRIEF  | Düşman saldırılarının üçte biri ıskalar.
+DISPLACEMENT_0_DETAIL | Gemileri rastgele bir şekilde, normal uzayın dışına çıkarıp geri getirerek alana yönelik olmayan silah saldırılarının üçte birinden kaçınmalarını sağlar.
+
+
+//
+// ECM Jammer tech
+//
+// this is the entry on Ship Design for selecting no ECM Jammer
+ECMJAMMER_0_NAME      | 
+ECMJAMMER_0_ITEM      | 
+ECMJAMMER_0_BRIEF     | Füze Savunma 0
+ECMJAMMER_0_DETAIL    | 
+
+ECMJAMMER_1_NAME      | Elektronik Karıştırıcı Sürüm I
+ECMJAMMER_1_ITEM      | Karıştırıcı I
+ECMJAMMER_1_BRIEF     | Füze Savunma 1
+ECMJAMMER_1_DETAIL    | Düşman füze saldırılarına karşı savunmaya 1 seviye ekler.
+
+ECMJAMMER_2_NAME      | Elektronik Karıştırıcı Sürüm II
+ECMJAMMER_2_ITEM      | Karıştırıcı II
+ECMJAMMER_2_BRIEF     | Füze Savunma 2
+ECMJAMMER_2_DETAIL    | Düşman füze saldırılarına karşı savunmaya 2 seviye ekler.
+
+ECMJAMMER_3_NAME      | Elektronik Karıştırıcı Sürüm III
+ECMJAMMER_3_ITEM      | Karıştırıcı III
+ECMJAMMER_3_BRIEF     | Füze Savunma 3
+ECMJAMMER_3_DETAIL    | Düşman füze saldırılarına karşı savunmaya 3 seviye ekler.
+
+ECMJAMMER_4_NAME      | Elektronik Karıştırıcı Sürüm IV
+ECMJAMMER_4_ITEM      | Karıştırıcı IV
+ECMJAMMER_4_BRIEF     | Füze Savunma 4
+ECMJAMMER_4_DETAIL    | Düşman füze saldırılarına karşı savunmaya 4 seviye ekler.
+
+ECMJAMMER_5_NAME      | Elektronik Karıştırıcı Sürüm V
+ECMJAMMER_5_ITEM      | Karıştırıcı V
+ECMJAMMER_5_BRIEF     | Füze Savunma 5
+ECMJAMMER_5_DETAIL    | Düşman füze saldırılarına karşı savunmaya 5 seviye ekler.
+
+ECMJAMMER_6_NAME      | Elektronik Karıştırıcı Sürüm VI
+ECMJAMMER_6_ITEM      | Karıştırıcı VI
+ECMJAMMER_6_BRIEF     | Füze Savunma 6
+ECMJAMMER_6_DETAIL    | Düşman füze saldırılarına karşı savunmaya 6 seviye ekler.
+
+ECMJAMMER_7_NAME      | Elektronik Karıştırıcı Sürüm VII
+ECMJAMMER_7_ITEM      | Karıştırıcı VII
+ECMJAMMER_7_BRIEF     | Füze Savunma 7
+ECMJAMMER_7_DETAIL    | Düşman füze saldırılarına karşı savunmaya 7 seviye ekler.
+
+ECMJAMMER_8_NAME      | Elektronik Karıştırıcı Sürüm VIII
+ECMJAMMER_8_ITEM      | Karıştırıcı VIII
+ECMJAMMER_8_BRIEF     | Füze Savunma 8
+ECMJAMMER_8_DETAIL    | Düşman füze saldırılarına karşı savunmaya 8 seviye ekler.
+
+ECMJAMMER_9_NAME      | Elektronik Karıştırıcı Sürüm IX
+ECMJAMMER_9_ITEM      | Karıştırıcı IX
+ECMJAMMER_9_BRIEF     | Füze Savunma 9
+ECMJAMMER_9_DETAIL    | Düşman füze saldırılarına karşı savunmaya 9 seviye ekler.
+
+ECMJAMMER_10_NAME     | Elektronik Karıştırıcı Sürüm X
+ECMJAMMER_10_ITEM     | Karıştırıcı X
+ECMJAMMER_10_BRIEF    | Füze Savunma 10
+ECMJAMMER_10_DETAIL   | Düşman füze saldırılarına karşı savunmaya 10 seviye ekler.
+
+
+//
+// Ecological Restoration techs
+//
+ECORESTORATION_0_NAME   | Ekolojik Restorasyon
+ECORESTORATION_0_DETAIL | 1 BC maliyetiyle 2 birimlik endüstriyel atığı temizler.
+
+ECORESTORATION_1_NAME   | Pekiştirilmiş Ekolojik Restorasyon
+ECORESTORATION_1_DETAIL | 3 BC maliyetiyle 2 birimlik endüstriyel atığı temizler.
+
+ECORESTORATION_2_NAME   | Gelişmiş Ekolojik Restorasyon
+ECORESTORATION_2_DETAIL | 5 BC maliyetiyle 2 birimlik endüstriyel atığı temizler.
+
+ECORESTORATION_3_NAME   | İleri Ekolojik Restorasyon
+ECORESTORATION_3_DETAIL | 10 BC maliyetiyle 2 birimlik endüstriyel atığı temizler.
+
+ECORESTORATION_4_NAME   | Tam Ekolojik Restorasyon
+ECORESTORATION_4_DETAIL | 20 BC maliyetiyle 2 birimlik endüstriyel atığı temizler.
+
+
+//
+// Energy Pulsar techs
+//
+PULSAR_0_NAME     | Enerji Titreşimi
+PULSAR_0_BRIEF    | Genişleyip 1-5 hasar verir.
+PULSAR_0_DETAIL   | Bütün bitişik gemilere her iki gemi başına 2 olmak üzere, 5 hasara kadar zarar veren ani bir küresel enerji patlaması sağlayan etkili bir motor tadilatı.
+
+
+PULSAR_1_NAME     | İyon Titreşimi
+PULSAR_1_BRIEF    | Genişleyip 2-10 hasar verir.
+PULSAR_1_DETAIL   | Bütün bitişik gemilere her saldıran gemi başına 1 olmak üzere, 10 hasara kadar zarar veren aşamalı bir küresel enerji patlaması sağlayan güçlü bir motor tadilatı.
+
+
+
+//
+// Engine techs
+//
+ENGINE_0_NAME    | Retro Motorlar 
+ENGINE_0_DETAIL  | Gemileri %1 Eğimde hareket ettirir ve savaşta maksimum sınıf I manevra kabiliyeti sağlar.
+ENGINE_0_ITEM    | Retro
+ENGINE_0_ITEM2   | Sınıf 1
+ENGINE_0_BRIEF   | Eğim 1  Sav %1
+ENGINE_0_BRIEF2  | Muharebe Hızı %1
+
+ENGINE_1_NAME    | Nükleer Motorlar
+ENGINE_1_DETAIL  | MGemileri %1 Eğimde hareket ettirir ve savaşta maksimum sınıf II manevra kabiliyeti sağlar.
+ENGINE_1_ITEM    | Nükleer
+ENGINE_1_ITEM2   | Sınıf 2
+ENGINE_1_BRIEF   | Eğim 2  Sav %1
+ENGINE_1_BRIEF2  | Muharebe Hızı %1
+
+ENGINE_2_NAME    | IşıkAltı İticileri
+ENGINE_2_DETAIL  | Gemileri %1 Eğimde hareket ettirir ve savaşta maksimum sınıf III manevra kabiliyeti sağlar.
+ENGINE_2_ITEM    | IşıkAltı
+ENGINE_2_ITEM2   | Sınıf 3
+ENGINE_2_BRIEF   | Eğim 3  Sav %1
+ENGINE_2_BRIEF2  | Muharebe Hızı %1
+
+ENGINE_3_NAME    | Füzyon İticileri
+ENGINE_3_DETAIL  | Gemileri %1 Eğimde hareket ettirir ve savaşta maksimum sınıf IV manevra kabiliyeti sağlar.
+ENGINE_3_ITEM    | Füzyon
+ENGINE_3_ITEM2   | Sınıf 4
+ENGINE_3_BRIEF   | Eğim 4  Sav %1
+ENGINE_3_BRIEF2  | Muharebe Hızı %1
+
+ENGINE_4_NAME    | Tepki İticileri
+ENGINE_4_DETAIL  | Gemileri %1 Eğimde hareket ettirir ve savaşta maksimum sınıf V manevra kabiliyeti sağlar.
+ENGINE_4_ITEM    | Tepki
+ENGINE_4_ITEM2   | Sınıf 5
+ENGINE_4_BRIEF   | Eğim 5  Sav %1
+ENGINE_4_BRIEF2  | Muharebe Hızı %1
+
+ENGINE_5_NAME    | İyon İticileri
+ENGINE_5_DETAIL  | Gemileri %1 Eğimde hareket ettirir ve savaşta maksimum sınıf VI manevra kabiliyeti sağlar.
+ENGINE_5_ITEM    | İyon
+ENGINE_5_ITEM2   | Sınıf 6
+ENGINE_5_BRIEF   | Eğim 6  Sav %1
+ENGINE_5_BRIEF2  | Muharebe Hızı %1
+
+ENGINE_6_NAME    | Anti-Madde İticileri
+ENGINE_6_DETAIL  | Gemileri %1 Eğimde hareket ettirir ve savaşta maksimum sınıf VII manevra kabiliyeti sağlar.
+ENGINE_6_ITEM    | Anti-Madde
+ENGINE_6_ITEM2   | Sınıf 7
+ENGINE_6_BRIEF   | Eğim 7  Sav %1
+ENGINE_6_BRIEF2  | Muharebe Hızı %1
+
+ENGINE_7_NAME    | Arafaz İticileri
+ENGINE_7_DETAIL  | Gemileri %1 Eğimde hareket ettirir ve savaşta maksimum sınıf VII manevra kabiliyeti sağlar.
+ENGINE_7_ITEM    | Arafaz
+ENGINE_7_ITEM2   | Sınıf 8
+ENGINE_7_BRIEF   | Eğim 8  Sav %1
+ENGINE_7_BRIEF2  | Muharebe Hızı %1
+
+ENGINE_8_NAME    | Hiperiticiler
+ENGINE_8_DETAIL  | Gemileri %1 Eğimde hareket ettirir ve savaşta maksimum sınıf IX manevra kabiliyeti sağlar.
+ENGINE_8_ITEM    | Hiper
+ENGINE_8_ITEM2   | Sınıf 9
+ENGINE_8_BRIEF   | Eğim 9  Sav %1
+ENGINE_8_BRIEF2  | Muharebe Hızı %1
+
+
+//
+// Fuel Range techs
+//
+FUELRANGE_0_NAME   | Yakıt Deposu
+FUELRANGE_0_DETAIL | Gemilerin koloni gezegenlerinden %1 ışık yılı uzağa gidebilmelerini sağlayan yakıt rezervleri.
+
+FUELRANGE_1_NAME   | Hidrojen Yakıt Deposu
+FUELRANGE_1_DETAIL | Gemilerin koloni gezegenlerinden %1 ışık yılı uzağa gidebilmelerini sağlayan yakıt rezervleri.
+
+FUELRANGE_2_NAME   | Döteryum Yakıt Deposu
+FUELRANGE_2_DETAIL | Gemilerin koloni gezegenlerinden %1 ışık yılı uzağa gidebilmelerini sağlayan yakıt rezervleri.
+
+FUELRANGE_3_NAME   | İridyum Yakıt Deposu
+FUELRANGE_3_DETAIL | Gemilerin koloni gezegenlerinden %1 ışık yılı uzağa gidebilmelerini sağlayan yakıt rezervleri.
+
+FUELRANGE_4_NAME   | Dotomit Kristalleri
+FUELRANGE_4_DETAIL | Gemilerin koloni gezegenlerinden %1 ışık yılı uzağa gidebilmelerini sağlayan yakıt rezervleri.
+
+FUELRANGE_5_NAME   | Uridyum Yakıt Deposu
+FUELRANGE_5_DETAIL | Gemilerin koloni gezegenlerinden %1 ışık yılı uzağa gidebilmelerini sağlayan yakıt rezervleri.
+
+FUELRANGE_6_NAME   | Reajax II Yakıt Deposu
+FUELRANGE_6_DETAIL | Gemilerin koloni gezegenlerinden %1 ışık yılı uzağa gidebilmelerini sağlayan yakıt rezervleri.
+
+FUELRANGE_7_NAME   | Trilityum Kristalleri
+FUELRANGE_7_DETAIL | Gemilerin koloni gezegenlerinden %1 ışık yılı uzağa gidebilmelerini sağlayan yakıt rezervleri.
+
+FUELRANGE_8_NAME   | Toryum Depoları
+FUELRANGE_8_DETAIL | Gemilerin koloni gezegenlerinden olası her yere gidebilmelerini sağlayan yakıt rezervleri.
+
+
+//
+// Future Computer techs
+//
+FUTURECOMP_0_NAME    | Gelecek Bilgisayarı I
+FUTURECOMP_0_DETAIL  | Bilgisayar teknolojisinde genel geliştirmeler.
+
+FUTURECOMP_1_NAME    | Gelecek Bilgisayarı  II
+FUTURECOMP_1_DETAIL  | Bilgisayar teknolojisinde genel geliştirmeler.
+
+FUTURECOMP_2_NAME    | FGelecek Bilgisayarı  III
+FUTURECOMP_2_DETAIL  | Bilgisayar teknolojisinde genel geliştirmeler.
+
+FUTURECOMP_3_NAME    | Gelecek Bilgisayarı  IV
+FUTURECOMP_3_DETAIL  | Bilgisayar teknolojisinde genel geliştirmeler.
+
+FUTURECOMP_4_NAME    | Gelecek Bilgisayarı  V
+FUTURECOMP_4_DETAIL  | Bilgisayar teknolojisinde genel geliştirmeler.
+
+FUTURECOMP_5_NAME    | Gelecek Bilgisayarı  VI
+FUTURECOMP_5_DETAIL  | Bilgisayar teknolojisinde genel geliştirmeler.
+
+FUTURECOMP_6_NAME    | Gelecek Bilgisayarı  VII
+FUTURECOMP_6_DETAIL  | Bilgisayar teknolojisinde genel geliştirmeler.
+
+FUTURECOMP_7_NAME    | Gelecek Bilgisayarı  VIII
+FUTURECOMP_7_DETAIL  | Bilgisayar teknolojisinde genel geliştirmeler.
+
+FUTURECOMP_8_NAME    | Gelecek Bilgisayarı  IX
+FUTURECOMP_8_DETAIL  | Bilgisayar teknolojisinde genel geliştirmeler.
+
+FUTURECOMP_9_NAME    | Gelecek Bilgisayarı  X
+FUTURECOMP_9_DETAIL  | Bilgisayar teknolojisinde genel geliştirmeler.
+
+//
+// Future Construction techs
+//
+FUTURECONST_0_NAME    | Gelecek İnşaatı I
+FUTURECONST_0_DETAIL  | İnşaat teknolojisinde genel geliştirmeler.
+
+FUTURECONST_1_NAME    | Gelecek İnşaatıII
+FUTURECONST_1_DETAIL  | İnşaat teknolojisinde genel geliştirmeler.
+
+FUTURECONST_2_NAME    | Gelecek İnşaatı III
+FUTURECONST_2_DETAIL  | İnşaat teknolojisinde genel geliştirmeler.
+
+FUTURECONST_3_NAME    | Gelecek İnşaatı IV
+FUTURECONST_3_DETAIL  | İnşaat teknolojisinde genel geliştirmeler.
+
+FUTURECONST_4_NAME    | Gelecek İnşaatı V
+FUTURECONST_4_DETAIL  | İnşaat teknolojisinde genel geliştirmeler.
+
+FUTURECONST_5_NAME    | Gelecek İnşaatı VI
+FUTURECONST_5_DETAIL  | İnşaat teknolojisinde genel geliştirmeler.
+
+FUTURECONST_6_NAME    | Gelecek İnşaatı VII
+FUTURECONST_6_DETAIL  | İnşaat teknolojisinde genel geliştirmeler.
+
+FUTURECONST_7_NAME    | Gelecek İnşaatı VIII
+FUTURECONST_7_DETAIL  | İnşaat teknolojisinde genel geliştirmeler.
+
+FUTURECONST_8_NAME    | Gelecek İnşaatı IX
+FUTURECONST_8_DETAIL  | İnşaat teknolojisinde genel geliştirmeler.
+
+FUTURECONST_9_NAME    | Gelecek İnşaatı X
+FUTURECONST_9_DETAIL  | İnşaat teknolojisinde genel geliştirmeler.
+
+
+//
+// Future Force Field techs
+//
+FUTUREFORCE_0_NAME    | Gelecek Güç Kalkanı Force Field I
+FUTUREFORCE_0_DETAIL  | Güç kalkanı teknolojisinde genel geliştirmeler.
+
+FUTUREFORCE_1_NAME    | Gelecek Güç Kalkanı II
+FUTUREFORCE_1_DETAIL  | Güç kalkanı teknolojisinde genel geliştirmeler.
+
+FUTUREFORCE_2_NAME    | Gelecek Güç Kalkanı III
+FUTUREFORCE_2_DETAIL  | Güç kalkanı teknolojisinde genel geliştirmeler.
+
+FUTUREFORCE_3_NAME    | Gelecek Güç Kalkanı IV
+FUTUREFORCE_3_DETAIL  | Güç kalkanı teknolojisinde genel geliştirmeler.
+
+FUTUREFORCE_4_NAME    | Gelecek Güç Kalkanı V
+FUTUREFORCE_4_DETAIL  | Güç kalkanı teknolojisinde genel geliştirmeler.
+
+FUTUREFORCE_5_NAME    | Gelecek Güç Kalkanı VI
+FUTUREFORCE_5_DETAIL  | Güç kalkanı teknolojisinde genel geliştirmeler.
+
+FUTUREFORCE_6_NAME    | Future Force Field VII
+FUTUREFORCE_6_DETAIL  | Güç kalkanı teknolojisinde genel geliştirmeler.
+
+FUTUREFORCE_7_NAME    | Future Force Field VIII
+FUTUREFORCE_7_DETAIL  | Güç kalkanı teknolojisinde genel geliştirmeler.
+
+FUTUREFORCE_8_NAME    | Future Force Field IX
+FUTUREFORCE_8_DETAIL  | Güç kalkanı teknolojisinde genel geliştirmeler.
+
+FUTUREFORCE_9_NAME    | Future Force Field X
+FUTUREFORCE_9_DETAIL  | Güç kalkanı teknolojisinde genel geliştirmeler.
+
+
+//
+// Future Planetology techs
+//
+FUTUREPLANET_0_NAME    | Gelecek Gezegenbilimi I
+FUTUREPLANET_0_DETAIL  | Gezegenbilim teknolojisinde genel geliştirmeler.
+
+FUTUREPLANET_1_NAME    | Gelecek Gezegenbilimi II
+FUTUREPLANET_1_DETAIL  | Gezegenbilim teknolojisinde genel geliştirmeler.
+
+FUTUREPLANET_2_NAME    | Gelecek Gezegenbilimi III
+FUTUREPLANET_2_DETAIL  | Gezegenbilim teknolojisinde genel geliştirmeler.
+
+FUTUREPLANET_3_NAME    | Gelecek Gezegenbilimi IV
+FUTUREPLANET_3_DETAIL  | Gezegenbilim teknolojisinde genel geliştirmeler.
+
+FUTUREPLANET_4_NAME    | Gelecek Gezegenbilimi V
+FUTUREPLANET_4_DETAIL  | Gezegenbilim teknolojisinde genel geliştirmeler.
+
+FUTUREPLANET_5_NAME    | Gelecek Gezegenbilimi VI
+FUTUREPLANET_5_DETAIL  | Gezegenbilim teknolojisinde genel geliştirmeler.
+
+FUTUREPLANET_6_NAME    | Gelecek Gezegenbilimi VII
+FUTUREPLANET_6_DETAIL  | Gezegenbilim teknolojisinde genel geliştirmeler.
+
+FUTUREPLANET_7_NAME    | Gelecek Gezegenbilimi VIII
+FUTUREPLANET_7_DETAIL  | Gezegenbilim teknolojisinde genel geliştirmeler.
+
+FUTUREPLANET_8_NAME    | Gelecek Gezegenbilimi IX
+FUTUREPLANET_8_DETAIL  | Gezegenbilim teknolojisinde genel geliştirmeler.
+
+FUTUREPLANET_9_NAME    | Gelecek Gezegenbilimi X
+FUTUREPLANET_9_DETAIL  | Gezegenbilim teknolojisinde genel geliştirmeler.
+
+
+//
+// Future Propulsion techs
+//
+FUTUREPROP_0_NAME    | Gelecek İticisi I
+FUTUREPROP_0_DETAIL  | İtici teknolojisinde genel geliştirmeler.
+
+FUTUREPROP_1_NAME    | Gelecek İticisi II
+FUTUREPROP_1_DETAIL  | İtici teknolojisinde genel geliştirmeler.
+
+FUTUREPROP_2_NAME    | Gelecek İticisi III
+FUTUREPROP_2_DETAIL  | İtici teknolojisinde genel geliştirmeler.
+
+FUTUREPROP_3_NAME    | Gelecek İticisi IV
+FUTUREPROP_3_DETAIL  | İtici teknolojisinde genel geliştirmeler.
+
+FUTUREPROP_4_NAME    | Gelecek İticisi V
+FUTUREPROP_4_DETAIL  | İtici teknolojisinde genel geliştirmeler.
+
+FUTUREPROP_5_NAME    | Gelecek İticisi VI
+FUTUREPROP_5_DETAIL  | İtici teknolojisinde genel geliştirmeler.
+
+FUTUREPROP_6_NAME    | Gelecek İticisi VII
+FUTUREPROP_6_DETAIL  | İtici teknolojisinde genel geliştirmeler.
+
+FUTUREPROP_7_NAME    | Gelecek İticisi VIII
+FUTUREPROP_7_DETAIL  | İtici teknolojisinde genel geliştirmeler.
+
+FUTUREPROP_8_NAME    | Gelecek İticisi IX
+FUTUREPROP_8_DETAIL  | İtici teknolojisinde genel geliştirmeler.
+
+FUTUREPROP_9_NAME    | Gelecek İticisi X
+FUTUREPROP_9_DETAIL  | İtici teknolojisinde genel geliştirmeler.
+
+
+//
+// Future Weapon techs
+//
+FUTUREWEAPON_0_NAME    | Gelecek Silahı I
+FUTUREWEAPON_0_DETAIL  | Silah teknolojisinde genel geliştirmeler.
+
+FUTUREWEAPON_1_NAME    | Gelecek Silahı II
+FUTUREWEAPON_1_DETAIL  | Silah teknolojisinde genel geliştirmeler.
+
+FUTUREWEAPON_2_NAME    | Gelecek Silahı III
+FUTUREWEAPON_2_DETAIL  | Silah teknolojisinde genel geliştirmeler.
+
+FUTUREWEAPON_3_NAME    | Gelecek Silahı IV
+FUTUREWEAPON_3_DETAIL  | Silah teknolojisinde genel geliştirmeler.
+
+FUTUREWEAPON_4_NAME    | Gelecek Silahı V
+FUTUREWEAPON_4_DETAIL  | Silah teknolojisinde genel geliştirmeler.
+
+FUTUREWEAPON_5_NAME    | Gelecek Silahı VI
+FUTUREWEAPON_5_DETAIL  | Silah teknolojisinde genel geliştirmeler.
+
+FUTUREWEAPON_6_NAME    | Gelecek Silahı VII
+FUTUREWEAPON_6_DETAIL  | Silah teknolojisinde genel geliştirmeler.
+
+FUTUREWEAPON_7_NAME    | Gelecek Silahı VIII
+FUTUREWEAPON_7_DETAIL  | Silah teknolojisinde genel geliştirmeler.
+
+FUTUREWEAPON_8_NAME    | Gelecek Silahı IX
+FUTUREWEAPON_8_DETAIL  | Silah teknolojisinde genel geliştirmeler.
+
+FUTUREWEAPON_9_NAME    | Gelecek Silahı X
+FUTUREWEAPON_9_DETAIL  | Silah teknolojisinde genel geliştirmeler. 
+
+
+//
+// Hand Weapon techs
+//
+HANDWEAPON_0_NAME      | 
+HANDWEAPON_0_DETAIL    | 
+
+HANDWEAPON_1_NAME      | Lazer Tabancası
+HANDWEAPON_1_DETAIL    | Karadaki savaş zarlarına 5 ekleyen bireysel lazerler.
+
+HANDWEAPON_2_NAME      | İyon Tüfeği
+HANDWEAPON_2_DETAIL    | Karadaki savaş saldırılarına 10 ekleyen bireysel ışın silahları.
+
+HANDWEAPON_3_NAME      | Füzyon Tüfeği
+HANDWEAPON_3_DETAIL    | Karadaki savaş zarlarına 20 ekleyen isabetsiz ancak inanılmaz kuvvetli ışın silahları.
+
+HANDWEAPON_4_NAME      | Fazör Tabancası
+HANDWEAPON_4_DETAIL    | Bir düşmanı bileşen atomlarına ayıran enerji tabancaları. Kara savaş zarlarına 25 ekler.
+
+HANDWEAPON_5_NAME      | Plazma Tüfeği
+HANDWEAPON_5_DETAIL    | Mevcut olan en tahripkâr piyade silahı. Kara savaş zarlarına 30 ekler.
+
+
+//
+// Hyperspace Communication tech
+//
+HYPERSPACE_0_NAME      | Hiperuzay İletişimi
+HYPERSPACE_0_DETAIL    | Hiperuzaydaki gemi filolarıyla iletişimi sağlayıp yoldayken rotalarını değiştirmeye izin verir.
+
+
+//
+// Improved Industrial techs
+//
+IMPRINDUSTRY_0_NAME     | Gelişmiş Sanayi Teknolojisi 9
+IMPRINDUSTRY_0_DETAIL   | Fabrika inşa maliyetlerini tanesi 9 BC'ye indirir.
+
+IMPRINDUSTRY_1_NAME     | Gelişmiş Sanayi Teknolojisi 8
+IMPRINDUSTRY_1_DETAIL   | Fabrika inşa maliyetlerini tanesi 8 BC'ye indirir.
+
+IMPRINDUSTRY_2_NAME     | Gelişmiş Sanayi Teknolojisi 7
+IMPRINDUSTRY_2_DETAIL   | Fabrika inşa maliyetlerini tanesi 7 BC'ye indirir.
+
+IMPRINDUSTRY_3_NAME     | Gelişmiş Sanayi Teknolojisi 6
+IMPRINDUSTRY_3_DETAIL   | Fabrika inşa maliyetlerini tanesi 6 BC'ye indirir.
+
+IMPRINDUSTRY_4_NAME     | Gelişmiş Sanayi Teknolojisi 5
+IMPRINDUSTRY_4_DETAIL   | Fabrika inşa maliyetlerini tanesi 5 BC'ye indirir.
+
+IMPRINDUSTRY_5_NAME     | Gelişmiş Sanayi Teknolojisi 4
+IMPRINDUSTRY_5_DETAIL   | Fabrika inşa maliyetlerini tanesi 4 BC'ye indirir.
+
+IMPRINDUSTRY_6_NAME     | Gelişmiş Sanayi Teknolojisi 3
+IMPRINDUSTRY_6_DETAIL   | Fabrika inşa maliyetlerini tanesi 3 BC'ye indirir.
+
+IMPRINDUSTRY_7_NAME     | Gelişmiş Sanayi Teknolojisi 2
+IMPRINDUSTRY_7_DETAIL   | Fabrika inşa maliyetlerini tanesi 2 BC'ye indirir.
+
+
+//
+// Improved Terraforming techs
+//
+IMPRTFORM_0_NAME        | Gelişmiş Yerselleştirme +10
+IMPRTFORM_0_DETAIL      | Gezegenlerin nüfus kapasitelerini milyon başına 5 BC ile 10 milyona kadar artrır.
+
+IMPRTFORM_1_NAME        | Gelişmiş Yerselleştirme +20
+IMPRTFORM_1_DETAIL      | Gezegenlerin nüfus kapasitelerini milyon başına 5 BC ile 20 milyona kadar artrır.
+
+IMPRTFORM_2_NAME        | Gelişmiş Yerselleştirme +30
+IMPRTFORM_2_DETAIL      | Gezegenlerin nüfus kapasitelerini milyon başına 4 BC ile 30 milyona kadar artrır.
+
+IMPRTFORM_3_NAME        | Gelişmiş Yerselleştirme +40
+IMPRTFORM_3_DETAIL      | Gezegenlerin nüfus kapasitelerini milyon başına 4 BC ile 40 milyona kadar artrır.
+
+IMPRTFORM_4_NAME        | Gelişmiş Yerselleştirme +50
+IMPRTFORM_4_DETAIL      | Gezegenlerin nüfus kapasitelerini milyon başına 3 BC ile 50 milyona kadar artrır.
+
+IMPRTFORM_5_NAME        | Gelişmiş Yerselleştirme +60
+IMPRTFORM_5_DETAIL      | Gezegenlerin nüfus kapasitelerini milyon başına 3 BC ile 60 milyona kadar artrır.
+
+IMPRTFORM_6_NAME        | Gelişmiş Yerselleştirme +80
+IMPRTFORM_6_DETAIL      | Gezegenlerin nüfus kapasitelerini milyon başına 2 BC ile 80 milyona kadar artrır.
+
+IMPRTFORM_7_NAME        | Gelişmiş Yerselleştirme +100
+IMPRTFORM_7_DETAIL      | Gezegenlerin nüfus kapasitelerini milyon başına 2 BC ile 100 milyona kadar artrır.
+
+IMPRTFORM_8_NAME        | Tam Yerselleştirme
+IMPRTFORM_8_DETAIL      | Gezegenlerin nüfus kapasitelerini milyon başına 2 BC ile 120 milyona kadar artrır.
+
+
+//
+// Industrial Waste techs
+//
+INDWASTE_0_NAME         | Azaltılmış Endüstriyel Atık Yüzde 80
+INDWASTE_0_DETAIL       | Fabrika kirliliğini normalin yüzde 80'ine indirir.
+
+INDWASTE_1_NAME         | Azaltılmış Endüstriyel Atık Yüzde 60
+INDWASTE_1_DETAIL       | Fabrika kirliliğini normalin yüzde 60'ına indirir.
+
+INDWASTE_2_NAME         | Azaltılmış Endüstriyel Atık Yüzde 40
+INDWASTE_2_DETAIL       | Fabrika kirliliğini normalin yüzde 40'ına indirir.
+
+INDWASTE_3_NAME         | Azaltılmış Endüstriyel Atık Yüzde 20
+INDWASTE_3_DETAIL       | Fabrika kirliliğini normalin yüzde 20'sine indirir.
+
+INDWASTE_4_NAME         | Endüstriyel Atık İptali
+INDWASTE_4_DETAIL       | Fabrika kirliliğini bitirir.
+
+
+//
+// Missile Defense techs
+//
+MISSDEF_0_NAME      | Anti-Füze Roketleri
+MISSDEF_0_BRIEF     | Füze yok edilmesi ihtimali: Yüzde 40
+MISSDEF_0_DETAIL    | Gelen düşman roketlerini yüzde 40, (eksi füzenin her bir teknoloji seviyesi için eksi 1) ihtimalle yok eden ışıkgeçişli roketler. 
+
+MISSDEF_1_NAME      | Zyro Kalkanı
+MISSDEF_1_BRIEF     | Füze yok edilmesi ihtimali: Yüzde 75
+MISSDEF_1_DETAIL    | Gelen düşman roket ve füzelerini yüzde 75, (eksi füzenin her bir teknoloji seviyesi için eksi 1) ihtimalle yok eden bir enerji sahası.
+
+MISSDEF_2_NAME      | Elektrik Kalkanı
+MISSDEF_2_BRIEF     | Füze yok edilmesi ihtimali: Yüzde 100
+MISSDEF_2_DETAIL    | Gelen düşman roket ve füzelerini yüzde 100, (eksi füzenin her bir teknoloji seviyesi için eksi 1) ihtimalle yok eden bir enerji sahası.
+
+//
+// Missile Weapon techs
+//
+MISSWPN_0_NAME      | Nükleer Füze
+MISSWPN_0_BRIEF     | 2 atış, +1 hız
+MISSWPN_0_BRIEF2    | 5 atış
+MISSWPN_0_DETAIL    | Patladığında 4 hasar veren ve 2 hızla ilerleyen nükleer başlıklı füzeler.
+
+MISSWPN_1_NAME      | Hiper-V Roketleri
+MISSWPN_1_BRIEF     | 2 atış, +1 hız
+MISSWPN_1_BRIEF2    | 5 atış
+MISSWPN_1_DETAIL    | Patladığında 6 hasar veren ve 2.5 hızla ilerleyen hızlı roketler.
+
+MISSWPN_2_NAME      | Hiper-X Roketleri
+MISSWPN_2_BRIEF     | 2 atış, +1 isabet
+MISSWPN_2_BRIEF2    | 5 atış, +1 isabet
+MISSWPN_2_DETAIL    | Patladığında 8 hasar veren, 2.5 hızla ilerleyen ve +1 seviye hedefleme bilgisayarı tarafından kontrol edilen yüksek enerjili başlıklara sahip roketler. 
+
+MISSWPN_3_NAME      | Saçma Yığını V Roketleri
+MISSWPN_3_BRIEF     | 2 atış, +1 hız
+MISSWPN_3_BRIEF2    | 5 atış
+MISSWPN_3_DETAIL    | Hiper-V roketlerinin çoklu hali, patladığında her biri 6 hasar veren ve 2.5 hızla ilerleyen beş ayrı savaş başlığına bölünür. 
+
+MISSWPN_4_NAME      | Merkülit Füzeleri
+MISSWPN_4_BRIEF     | 2 atış, +2 isabet
+MISSWPN_4_BRIEF2    | 5 atış, +2 isabet
+MISSWPN_4_DETAIL    | Patladığında 10 hasar veren, 3 hızla ilerleyen ve +2 hedefleme bilgisayarı tarafından kontrol edilen hızlı ve yüksek etkili füzeler.
+
+MISSWPN_5_NAME      | İğne Füzeleri
+MISSWPN_5_BRIEF     | 2 atış, +3 isabet
+MISSWPN_5_BRIEF2    | 5 atış, +3 isabet
+MISSWPN_5_DETAIL    | 15 hasar veren, 3.5 hızla ilerleyen ve +3 komplike bir hedefleme bilgisayarı tarafından kontrol edilen yavaş, yüksek isabetli füzeler.
+
+MISSWPN_6_NAME      | Saçma Yığını VII Roketleri
+MISSWPN_6_BRIEF     | 2 atış, 7'ye ayrılır
+MISSWPN_6_BRIEF2    | 5 atış, 7'ye ayrılır
+MISSWPN_6_DETAIL    | Hiper-X roketlerinin çoklu hali, patladığında her biri 10 hasar veren, 3 hızla ilerleyen ve +2 hedefleme bilgisayarı tarafından kontrol edilen 7 ayrı savaş başlığına bölünür.
+
+MISSWPN_7_NAME      | Pulson Füzeleri
+MISSWPN_7_BRIEF     | 2 atış, +4 isabet
+MISSWPN_7_BRIEF2    | 5 atış, +4 isabet
+MISSWPN_7_DETAIL    | Patladığında 20 hasar veren, 4 hızla ilerleyen ve +4 hedefleme bilgisayarı tarafından kontrol edilen anti-madde başlıklı güçlü füzeler.
+
+MISSWPN_8_NAME      | Herkül Füzeleri
+MISSWPN_8_BRIEF     | 2 atış, +5 isabet
+MISSWPN_8_BRIEF2    | 5 atış, +5 isabet
+MISSWPN_8_DETAIL    | Patladığında 25 hasar veren son derece ileri düzey füze. Herkül Füzesi 4.5 hızla hareket eder ve +5 hedefleme bilgisayarı tarafından kontrol edilir.
+
+MISSWPN_9_NAME      | Zeon Füzeleri
+MISSWPN_9_BRIEF     | 2 atış, +6 isabet
+MISSWPN_9_BRIEF2    | 5 atış, +6 isabet
+MISSWPN_9_DETAIL    | Mevcut en gelişmiş füze. Düşman gemilerine 30 hasar verebilir ve 5 hızıyla ilerler. Füze +6 hedefleme bilgisayarı tarafından kontrol edilir.
+
+MISSWPN_10_NAME      | Saçma Yığını X Füzeleri
+MISSWPN_10_BRIEF     | 2 atış, 10'a ayrılır
+MISSWPN_10_BRIEF2    | 5 atış, 10'a ayrılır
+MISSWPN_10_DETAIL    | İğne Füzelerinin çoklu hali, patladığında her biri 15 hasar veren, 3.5 hızla ilerleyen ve +3 hedefleme bilgisayarı tarafından kontrol edilen 10 ayrı savaş başlığına bölünür.
+
+
+//
+// Personal Shield techs for ground combat
+//
+// default "no shield" tech that each player starts with
+PERSSHIELD_0_NAME     | 
+PERSSHIELD_0_DETAIL   | 
+
+PERSSHIELD_1_NAME     | Kişisel Saptırıcı Kalkan
+PERSSHIELD_1_DETAIL   | Karadaki bireysel kuvvetleri doğrultulu bir güç sahası ile korur. Tüm kara savaş zarlarına +10 ekler.
+
+PERSSHIELD_2_NAME     | Kişisel Soğurucu Kalkan
+PERSSHIELD_2_DETAIL   | Bütün tabanca hasarlarını azaltır. Tüm kara savaş zarlarına +20 ekler.
+
+PERSSHIELD_3_NAME     | Kişisel Bariyer Kalkanı
+PERSSHIELD_3_DETAIL   | Askeri neredeyse dokunulmaz bir güç sahasıyla çevreler. Tüm kara savaş zarlarına +30 ekler.
+
+
+//
+// Planetary Shield techs 
+//
+PLANETSHIELD_0_NAME    | Sınıf V Gezegen Kalkanları
+PLANETSHIELD_0_DETAIL  | Temel füze yansıtma kalkanlarına ek olarak, gezegen yüzeylerine yapılan tüm hasarları 5 azaltır.
+
+PLANETSHIELD_1_NAME    | Sınıf X Gezegen Kalkanları
+PLANETSHIELD_1_DETAIL  | Temel füze yansıtma kalkanlarına ek olarak, gezegen yüzeylerine yapılan tüm hasarları 10 azaltır.
+
+PLANETSHIELD_2_NAME    | Sınıf XV Gezegen Kalkanları
+PLANETSHIELD_2_DETAIL  | Temel füze yansıtma kalkanlarına ek olarak, gezegen yüzeylerine yapılan tüm hasarları 15 azaltır.
+
+PLANETSHIELD_3_NAME    | Sınıf XX Gezegen Kalkanları
+PLANETSHIELD_3_DETAIL  | Temel füze yansıtma kalkanlarına ek olarak, gezegen yüzeylerine yapılan tüm hasarları 20 azaltır.
+
+
+//
+// Repulsor tech 
+//
+REPULSOR_0_NAME    | Tepme Işını
+REPULSOR_0_BRIEF   | Düşman gemilerini 1 hücre iter.
+REPULSOR_0_DETAIL  | Düşman gemilerini savunan gemiden bir hücre geriye iter. Bu özel silahın menzili bir hücredir.
+
+
+//
+// Reserve Fuel tech 
+//
+RSRVFUEL_0_NAME    | Yedek Yakıt Haznesi
+RSRVFUEL_0_BRIEF   | Geminin Erişimini by %1 ışıkyılı uzatır.
+RSRVFUEL_0_DETAIL  | Yedek Yakıt Haznesi bir geminin erişimini artırır.
+
+
+//
+// Robotic Controls techs 
+//
+ROBOTCTRL_0_NAME     | Gelişmiş Robotik Kontroller III
+ROBOTCTRL_0_DETAIL   | Nüfus başına 3 fabrika kontrolüne imkân verir. Uyarlama maliyeti her fabrikanın standart maliyetinin yarısıdır.
+
+ROBOTCTRL_1_NAME     | Gelişmiş Robotik Kontroller IV
+ROBOTCTRL_1_DETAIL   | Nüfus başına 4 fabrika kontrolüne imkân verir. Uyarlama maliyeti her fabrikanın standart maliyetidir.
+
+ROBOTCTRL_2_NAME     | Gelişmiş Robotik Kontroller V
+ROBOTCTRL_2_DETAIL   | Nüfus başına 5 fabrika kontrolüne imkân verir. Uyarlama maliyeti her fabrikanın standart maliyetinin bir buçuk katıdır.
+
+ROBOTCTRL_3_NAME     | Gelişmiş Robotik Kontroller VI
+ROBOTCTRL_3_DETAIL   | Nüfus başına 6 fabrika kontrolüne imkân verir. Uyarlama maliyeti her fabrikanın standart maliyetinin iki katıdır.
+
+ROBOTCTRL_4_NAME     | Gelişmiş Robotik Kontroller VII
+ROBOTCTRL_4_DETAIL   | Nüfus başına 7 fabrika kontrolüne imkân verir. Uyarlama maliyeti her fabrikanın standart maliyetinin 2.5 katıdır.
+
+
+//
+// Scanner techs 
+//
+SCANNER_0_NAME       | Savaş Tarayıcısı
+SCANNER_0_BRIEF      | Savaşta düşman gemilerini tarar
+SCANNER_0_DETAIL     | Reveals technical specifications of enemy spacecraft in combat.
+
+SCANNER_1_NAME       | Derin Uzay Tarayıcısı
+SCANNER_1_BRIEF      | 5 ışık yılı uzağa kadarki gemileri tespit eder
+SCANNER_1_DETAIL     | Kolonilerinden 5 ışık yılı ve gemilerinden 1 ışıkyılı uzağa kadarki düşman gemilerini tespit eder.
+
+SCANNER_2_NAME       | Gelişmiş Uzay Tarayıcısı
+SCANNER_2_BRIEF      | 7 ışık yılı uzağa kadarki gemileri tespit eder
+SCANNER_2_DETAIL     | Kolonilerinden 7 ışık yılı ve gemilerinden 2 ışıkyılı uzağa kadarki düşman gemilerini tespit eder. Düşman istikametleri belirlenebilir.
+
+
+SCANNER_3_NAME       | İleri Uzay Tarayıcısı
+SCANNER_3_BRIEF      | 9 ışıkyılı uzağa kadarki gezegenlerin keşfine imkân verir
+SCANNER_3_DETAIL     | Kolonilerinden 9 ışıkyılı uzağa kadar gezegenlerin keşfine ve gemilerinden 3 ışıkyılı uzağa kadar gemilerin tespitine imkân verir.
+
+
+//
+// Ship Inertial techs 
+//
+SHIPINERTIAL_0_NAME     | Eylemsizlik Dengeleyicisi
+SHIPINERTIAL_0_BRIEF    | Manevra kabiliyetine +2 to ekler
+SHIPINERTIAL_0_DETAIL   | Gemilerin eylemsizliğini azaltır ve savaşta 2 seviye manevra kabiliyeti ekler (+2 savunma and +1 savaş hızı).
+
+SHIPINERTIAL_1_NAME     | Eylemsizlik İptal Edicisi
+SHIPINERTIAL_1_BRIEF    | Manevra kabiliyetine +4 to ekler
+SHIPINERTIAL_1_DETAIL   | Gemilerin eylemsizliğini iptal edip savaşta 4 seviye manevra kabiliyeti ekler. Ayrıca Kara Delik saldırılarının etkisini yüzde 30 düşürür.
+
+
+//
+// Ship Inertial techs 
+//
+SHIPNULLIFIER_0_NAME     | Teknoloji İptal Edicisi
+SHIPNULLIFIER_0_BRIEF    | Düşman Bilgisayarlarını Yok eder
+SHIPNULLIFIER_0_DETAIL   | Düşman Harp Bilgisayarlarını ve elektronik aksamlarını karıştırıp onları 2-6 seviye düşürür. Menzili gemilerin çoğu silahından fazladır.
+
+SHIPNULLIFIER_1_NAME     | Eğim Savurucu
+SHIPNULLIFIER_1_BRIEF    | Düşman gemilerinin hızını azaltır
+SHIPNULLIFIER_1_DETAIL   | Eğim Savurucular düşman yıldızgemilerinin motorlarını altüst edip her saldırıda hızlarını kesen uzun menzilli silahlardır.
+
+
+//
+// Ship Weapon techs 
+//
+SHIPWPN_0_NAME         | Lazer
+SHIPWPN_0_ITEM2        | Ağır Lazer
+SHIPWPN_0_DETAIL       | 1-4 puanlık hasar veren doğrudan ateşli ışın silahı. Ağır lazerlerin iki hücre menzili vardır ve 1-7 puan arası hasar verirler.
+
+
+SHIPWPN_1_NAME         | Taramalı Lazer
+SHIPWPN_1_BRIEF        | Tur başına 4 kez ateş eder
+SHIPWPN_1_DETAIL       | Tur başına dört defaya kadar her vuruşta 1-4 puanlık hasar verecek şekilde ateş eder.
+
+SHIPWPN_2_NAME         | Nötron Tekli Silahı
+SHIPWPN_2_BRIEF        | Kalkan Gücünü Yarılar
+SHIPWPN_2_DETAIL       | Düşman saptırıcı kalkanlarının etkisini yarıya düşüren ve 2 ila 5 hasar veren ağır parçacık akımı.
+
+SHIPWPN_3_NAME         | İyon Topu
+SHIPWPN_3_ITEM2        | Ağır İyon Topu
+SHIPWPN_3_DETAIL       | 3-8 hasar veren yüksek yoğunluklu ışın silahı. Ağır iyon topları 3-15 hasar verirler ve iki hücre menzile sahiptirler.
+
+SHIPWPN_4_NAME         | Çoklu Sürücü
+SHIPWPN_4_BRIEF        | Kalkan Gücünü Yarılar
+SHIPWPN_4_DETAIL       | Düşman saptırıcı kalkanlarının etkisini yarıya düşüren ve 5 ila 8 hasar veren bir doğrusal hızlandırıcı.
+
+SHIPWPN_5_NAME         | Nötron Ateşleyicisi
+SHIPWPN_5_ITEM2        | Ağır Nötron Ateşleyicisi
+SHIPWPN_5_DETAIL       | 3-12 puanlık hasar veren çok güçlü ışın silahı. Ağır nötron ateşleyicilerinin iki hücre menzili vardır ve 3-24 puan arası hasar verirler.
+
+SHIPWPN_6_NAME         | Ağıncık Işını
+SHIPWPN_6_BRIEF        | Akım Saldırısı
+SHIPWPN_6_DETAIL       | Gemileri parça parça edebilen çekici-itici ışınlar. 1-15 hasar verir ve devam eden akış, artan hasarın diğer gemilere sıçrayabilmesine olanak verir.
+
+
+SHIPWPN_7_NAME         | Ağır Işın
+SHIPWPN_7_BRIEF        | Kalkan Gücünü Yarılar
+SHIPWPN_7_DETAIL       | Düşman saptırıcı kalkanlarının etkisini yarıya düşüren ve 8-12 hasar veren bir enerjiden maddeye ışın silahı.
+
+SHIPWPN_8_NAME         | Füzyon Işını
+SHIPWPN_8_ITEM2        | Ağır Füzyon Işını
+SHIPWPN_8_DETAIL       | 4-16 puanlık hasar verebilen yüksek yoğunluklu ışın silahı. Ağır füzyon ışınlarının iki hücre menzili vardır ve 4-30 puan arası hasar verirler.
+
+SHIPWPN_9_NAME         | Megaok Topu
+SHIPWPN_9_BRIEF        | +3 isabet seviyesi
+SHIPWPN_9_DETAIL       | Geniş bir alana çoklu saf enerji okları atar. İsabet ihtimaline yüzde 30 bonus verir ve atışlar 2-20 puanlık hasar verir.
+
+SHIPWPN_10_NAME        | Fazör
+SHIPWPN_10_ITEM2       | Ağır Fazör
+SHIPWPN_10_DETAIL      | 5 ila 20 puanlık hasar verebilen aşamalı enerji ışını. Ağır fazörlerin iki hücre menzili vardır ve 5-40 puan arası hasar verirler.
+
+SHIPWPN_11_NAME        | Oto Ateşleyici
+SHIPWPN_11_BRIEF       | Tur başına 3 kez ateş eder
+SHIPWPN_11_DETAIL      | Tur başına üç defaya kadar her vuruşta 4-16 puanlık hasar verecek şekilde ateş eden gelişmiş bir nötron ateşleyicisi.
+
+SHIPWPN_12_NAME        | Takiyon Işını
+SHIPWPN_12_BRIEF       | Akım Saldırısı
+SHIPWPN_12_DETAIL      | Gemilere 1-25 hasar veren takiyon parçacıklarından yoğun bir akım atar. Devam eden akışın etkisi, artan hasarın diğer gemilere sıçrayabilmesine olanak verir.
+
+SHIPWPN_13_NAME        | Gauss Ototopu
+SHIPWPN_13_BRIEF       | 1/2 Kalkanlar, 4 kere ateş
+SHIPWPN_13_DETAIL      | Tur başına beş kez, her biri 7 ila 10 hasar verebilecek 4 patlayıcı atışta bulunan gelişmiş bir doğrusal hızlandırıcı. Bu atışlar ayrıca düşman kalkanlarının etkisini de yarıya indirir.
+
+SHIPWPN_14_NAME        | Particle Beam
+SHIPWPN_14_BRIEF       | Kalkan Gücünü Yarılar
+SHIPWPN_14_DETAIL      | Düşman gemilerine 10-20 hasar veren ve saptırıcı kalkanların etkisini yarıya indiren yüksek yoğunluklu parçacık hızlandırıcıları.
+
+SHIPWPN_15_NAME        | Plazma Topu
+SHIPWPN_15_DETAIL      | 1 menzilde, 6-30 hasar veren yüksek yoğunluklu enerji okları fırlatır.
+
+SHIPWPN_16_NAME        | Ölüm Işını
+SHIPWPN_16_DETAIL      | 1 menzilde, 200-1000 hasar veren inanılmaz yıkıcılıkta bir güce sahip kadim bir silah.
+
+SHIPWPN_17_NAME        | Bozguncu
+SHIPWPN_17_DETAIL      | İki hücreye kadar uzaktaki düşman hedeflerine, 10-40 puanlık hasar verebilen muazzam saf enerji okları atar.
+
+SHIPWPN_18_NAME        | Atım Fazörü
+SHIPWPN_18_BRIEF       | Tur başına 3 kez ateş eder
+SHIPWPN_18_DETAIL      | Her tur, her biri 5-20 hasar verebilen 3 atış yapan gelişmiş fazör.
+
+SHIPWPN_19_NAME        | Üçodaklı Plazma Topu
+SHIPWPN_19_DETAIL      | 20-50 arası hasar verebilen üçlü yüksek yoğunluklu plazma ışını atar.
+
+SHIPWPN_20_NAME        | Haşmetli Dönüştürücü
+SHIPWPN_20_BRIEF       | Hits All Four Shields
+SHIPWPN_20_DETAIL      | Hedefi aşırı güçlü bir madde-enerji dönüştürücüsü sahasıyla kaplar ve dört defa 10-35 puanlık hasar verir. 3 hücrelik menzile sahiptir.
+
+SHIPWPN_21_NAME        | Tokmak Cihazı
+SHIPWPN_21_DETAIL      | Düşman hedeflerine devasa miktarlarda odaklanmış enerji salar ve 20-100 puanlık hasar verir.
+
+SHIPWPN_22_NAME        | Amip Akışı
+SHIPWPN_22_DETAIL      | 250-1000 hasar veren ve 3 hücrelik menzili olan bir akış. Devam eden akışın etkisi, artan hasarın diğer gemilere sıçrayabilmesine olanak verir.
+
+SHIPWPN_23_NAME        | Kristal Işını
+SHIPWPN_23_DETAIL      | Bir hedefin kalkanlarını çevreleyen ve 4 defa 100-300 puanlık hasar veren bir ışın. 3 hücrelik menzile sahiptir.
+
+
+//
+// Soil Enrichment techs
+//
+SOILENRICH_0_NAME     | Toprak Zenginleştirme
+SOILENRICH_0_DETAIL   | Standart gezegenleri verimli ortamlara dönüştürür, nüfus artışını yüzde 50 artırır ve temel gezegen boyutunu tek seferlik 150 BC maliyetle yüzde 25 artırır.
+
+SOILENRICH_1_NAME     | Gelişmiş Toprak Zenginleştirme
+SOILENRICH_1_DETAIL   | Standart ve verimli gezegenleri münbit ortamlara dönüştürür, nüfus artışını ikiye katlar ve temel gezegen boyutunu tek seferlik 300 BC maliyetle yüzde 50 artırır.
+
+
+//
+// Stargate tech
+//
+STARGATE_0_NAME      | Galaksiler Arası Yıldız Kapıları
+STARGATE_0_DETAIL    | Gemilerinin yıldız kapılarına sahip herhangi iki gezegen arasında yalnızca bir turda hareket etmesine imkân verir. 3000 BC'ye inşa edilir.
+
+
+//
+// Stasis Field tech
+//
+STASIS_0_NAME      | Yavaşlama Alanı
+STASIS_0_BRIEF     | Düşmanlar bir turluğuna donar
+STASIS_0_DETAIL    | Bir hücre uzaklıktaki grup düşman gemisini bir turluğuna dondurur. Donan gemiler saldıramaz ve bu gemilere saldırılamaz.
+
+
+//
+// Stream Weapon techs
+//
+STREAMWPN_0_NAME    | İyon Akımı Yansıtıcısı
+STREAMWPN_0_BRIEF   | Düşman zırhını yüzde 20 düşürür
+STREAMWPN_0_DETAIL  | Düşman öbekteki her hedefin zırhını asıl ​​can puanlarının maksimum yüzde 50'sine kadar olmak üzere, yüzde 20 artı ateş eden her 2 gemi başına artı yüzde 1 azaltan yoğun bir iyonik patlama ateşler.
+
+STREAMWPN_1_NAME    | Nötron Akımı Yansıtıcısı
+STREAMWPN_1_BRIEF   | Düşman zırhını yüzde 40 düşürür
+STREAMWPN_1_DETAIL  | Düşman öbekteki her hedefin zırhını asıl ​​can puanlarının maksimum yüzde 75'ine kadar olmak üzere, yüzde 40 artı ateş eden her gemi başına artı yüzde 1 azaltanodaklanmış bir nötron patlaması ateşler.
+
+
+
+//
+// Subspace Interdictor tech
+//
+SUBSPACEINT_0_NAME    | Alt-Uzay Önleyicisi
+SUBSPACEINT_0_DETAIL  | Düşman alt-uzay ışınlayıcılarının ve muharebe taşıyıcılarının kullanımını engeller. Cihaz otomatik olarak füze üslerine eklenir.
+
+
+
+//
+// Subspace Teleporter tech
+//
+SUBSPACETEL_0_NAME    | Alt-Uzay Işınlayıcısı
+SUBSPACETEL_0_BRIEF   | Gemileri savaşa ışınlar.
+SUBSPACETEL_0_DETAIL  | Gemileri savaş haritasındaki herhangi bir alana ve savaş sırasının normal belirlenmesinden belirlemeden önce ışınlar.
+
+
+//
+// Ship Torpedo Weapon techs
+//
+TORPEDO_0_NAME        | Anti-Madde Roketleri
+TORPEDO_0_BRIEF       | İki turda bir ateşler
+TORPEDO_0_DETAIL      | 30 puanlık hasar veren ancak yalnızca iki turda bir ateşlenebilen yüksek enerjili izleyici roketler. Her roket, +4 seviyeli bir hedefleme bilgisayarı ile donatılmıştır.
+
+
+TORPEDO_1_NAME        | Karia Roketleri
+TORPEDO_1_BRIEF       | Her dört zırhı vurur.
+TORPEDO_1_DETAIL      | Tüm kalkanlara aynı anda çarpan, sarmalayıcı enerji roketleri. 5 hızında hareket ederler, +6 seviyeli bir hedef bilgisayar tarafından yönlendirilirler ve dört adet 25 puanlık saldırıya eşit hasar verirler.
+
+TORPEDO_2_NAME        | Proton Roketleri
+TORPEDO_2_BRIEF       | İki turda bir ateşler
+TORPEDO_2_DETAIL      | 75 puanlık hasar veren ancak yalnızca iki turda bir ateşlenebilen yüksek verimli enerji roketler. Her roket, +6 seviyeli bir hedefleme bilgisayarı ile donatılmıştır.
+
+TORPEDO_3_NAME        | Plazma Roketleri
+TORPEDO_3_BRIEF       | Hücre başına 15 hasar yitirir
+TORPEDO_3_DETAIL      | 150 puanlık hasar veren ve 6 hızında hareket eden, ancak seyahat edilen hücre başına 15 hasar yitiren saf enerji roketleri. Atıcı her turda çalışır ve +7 yönlendirme bilgisayarına sahiptir.
+

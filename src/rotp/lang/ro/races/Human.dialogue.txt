@@ -1,0 +1,89 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Human specific dialogue
+
+CONTACT_HONORABLE          | Noi suntem [my_race_plural] de pe Pământ, [your_title], și suntem foarte încântați să facem contact cu voi. Dacă aveți nevoie de ceva din Triumvirat, de orice, vă rugăm să nu ezitați să întrebați.
+CONTACT_PACIFIST           | Un salut cald, [your_name]. Și voi sunteți [your_empire]? Reprezint [my_empire], și sper că acesta va fi primul dintre nenumăratele schimburi prietenoase între oamenii noștri.
+CONTACT_ERRATIC            | Oamenii de pe Pământ preferă de obicei să rezolve problemele prin negociere și diplomație. Dacă oamenii voștri preferă totuși metode mai violente, ne-ar face plăcere să ii mulțumim, [your_race].
+//
+GREETING_01                | Ah! Ambasadorul din [your_empire] este aici! Pot să vă aduc mâncare sau băutură? Vă rog să vă simțiți confortabil și să-mi spuneți ce putem face pentru voi astăzi.
+GREETING_04                | Bună! Aveți nevoie de ceva din Triumvirat? Nu sunt sigur că pot transmite cererea voastră către Triumviri, dar poate că aveți nevoie de ceva cu care nu trebuie deranjați în primul rând?
+GREETING_07                | Ei bine, apare ambasadorul din [your_race]. Ce anume vrei de la noi? Cel mai bine ar fi să nu ceri nimic prea nerezonabil.
+//
+DECLAREWAR_HATE_01         | Triumviratul este fericit să vă arate de ce nu ar trebui să iritați o rasă a cărei putere o eclipsează pe a voastră. Ar trebui să învățați din această lecție... dacă trăiți prin ea, asta este.
+DECLAREWAR_HATE_02         | Mă întristează să mă gândesc la tot timpul pe care l-am pierdut „jucându-ne frumos” cu voi când eram atât de evident destinați unui război lung și sângeros.
+DECLAREWAR_HATE_03         | Nu mai are rost să ne prefacem! Nu vom tolera să împărtășim galaxia cu voi din acest moment! Indiferent ce preț trebuie să plătim!
+
+DECLAREWAR_ERRATIC_01      | În ultimul timp s-a vorbit mult despre cum armata noastră a devenit leneșă. Sperăm că un război cu voi îi va readuce în formă pentru dușmanii mai periculoși ai Triumviratului.1
+DECLAREWAR_ERRATIC_02      | Știi despre jocurile de război, ambasador? Bătălii simulate în care ne punem forțele unii contra celorlalți în scopuri de antrenament. Ei bine, sperăm că un război real împotriva oamenilor tăi va fi un antrenament mai bun!
+DECLAREWAR_ERRATIC_03      | Nimic nu unește o populație ca un dușman comun, ambasador! Dacă nu ne veți servi interesele prin intermediul diplomației, ne puteți fi cel puțin de folos ca o forță care să unească oamenii noștri.
+//
+DECLAREWAR_MILITARY_01     | Ar fi fost mai bine pentru voi să fi fost de acord să ne cedați teritoriul prin mijloace diplomatice. Refuzul vostru de a face acest lucru ne obligă să luăm măsuri alternative.
+DECLAREWAR_MILITARY_02     | După cum știți bine, o populație în creștere necesită un teritoriu în continuă expansiune pentru a satisface nevoile sale din ce în ce mai mari. A venit timpul să ne extindem, iar teritoriul de care avem nevoie este al vostru. 
+DECLAREWAR_MILITARY_03     | Triumvirii sunt la fel de devotați oamenilor precum oamenii sunt devotați Triumvirilor. Dacă nevoile noastre cer ca lumile voastre să fie colonizate de noi, atunci ei își vor da viața cu bucurie să vadă acest lucru realizat!
+//
+DECLAREWAR_ALLIANCE_01     | Există multe modalități de a-ți impresiona aliații, ambasador. Dacă vă eliminăm, atunci relațiile noastre diplomatice cu [other_race] vor crește semnificativ, așa că încercați să fiți un spectacol bun, okay?
+DECLAREWAR_ALLIANCE_02     | Triumviratul nu își va abandona niciodată aliații! Acum că suntem uniți cu [other_race], nu aveți nicio speranță pentru victorie!
+DECLAREWAR_ALLIANCE_03     | Doar pentru că ai o armată puternică nu înseamnă că galaxia este a ta în mod implicit. Ne alăturăm cu bucurie [other_race], și împreună vă vom vedea pedepsiți pentru nenumăratele voastre crime!
+//
+DECLAREWAR_SPYING_01       | Se pare că ați crezut că preferințelor noastre diplomatice vă vor permite să folosiți astfel de tactici clandestine fără consecințe. Nu vă temeți! Vă vom ajuta să realizați cât de mare a fost greșeala pe care ați făcut-o!
+DECLAREWAR_SPYING_02       | Ar fi fost mai bine pentru amândoi dacă ați fi fost la fel de dedicați diplomației precum suntem noi. Vom răspunde războiului vostru de subterfugiu cu un război... mai tradițional.
+DECLAREWAR_SPYING_03       | Am sperat că ați fost de acord cu opiniile noastre despre diplomație ca mijloc de atingere a obiectivelor. Întrucât aveți atât de evident idei mai nefaste, mă tem că nu avem altă opțiune decât să răspundem în acest fel.
+//
+DECLAREWAR_ATTACK_01       | Nu mai este nevoie de o fațadă diplomatică! Prin acest atac ați dovedit că v-ați depășit utilitatea. Dar nu vă faceți griji! Sunt sigur că vom găsi undeva o pagină pentru oamenii voștri în cărțile noastre de istorie.
+DECLAREWAR_ATTACK_02       | Nu subestimați armata Triumviratului! Dacă doriți o luptă, atunci suntem mai mult decât fericiți să vă oferim una, ambasador!
+DECLAREWAR_ATTACK_03       | Omenirea a trecut prin numeroase vremuri întunecate, dar de fiecare dată am ieșit mai puternici și mai înțelepți decât am fost înainte. Vă asigur, ambasador, că această dată nu va fi diferită.
+//
+DECLAREWAR_OPPORTUNITY_01  | Fiecare acțiune pe care o facem este să ne servim propriile obiective, ambasador. De obicei, preferăm să folosim diplomația, dar din moment ce nu există niciun motiv real pentru a vă ține în preajmă, un război rapid cu voi ne va servi mai bine scopurilor.
+DECLAREWAR_ASSASSIN_01     | Am fost șocat să aflu că o rasă aparent inteligentă ar putea face ceva atât de urât ca uciderea unui ambasador. Vom face un exemplu din voi, pentru a ne asigura că niciun alt imperiu nu va face vreodată aceași greșeală ca voi!
+
+OFFER_PEACE_01             | Cu siguranță puteți vedea acum că războaie de acest gen aduc doar tragedie. Haideți să oprim această nebunie înainte ca mai mult sânge prețios al [your_race] și [my_race] să fie vărsat. Alăturați-vă nouă în a pune capăt acestui război!
+OFFER_TRADE_01             | Există o zicală pe [my_home] ce spune că „războiul este inevitabil”, dar am aflat demult că nu se împlinește niciodată acolo unde domnește prosperitatea. Haideți să ne unim în căutarea acestei prosperități. Să începem de la, oh, [amt] BC pe an? 
+OFFER_PACT_01              | Amândoi știm că războaiele pot începe accidental atunci când imperiile se extind în toată galaxia. Ultimul lucru pe care Triumviratul îl dorește este războiul cu un popor la fel de exemplar ca al tău, iar un Pact de Neagresiune îi va face pe toți oamenii noștri să se odihnească mai ușor noaptea. Nu ești de acord?
+OFFER_ALLIANCE_01          | [your_race_plural] sunt într-adevăr minunați! Ambasador, tocmai mi-a venit o idee: să formalizăm o alianță între [your_race] și [my_race]. Împreună putem învăța gloata din această galaxie că diplomația, nu violența, este singura cale de urmat!
+
+WARN_TRESPASSING_01        | Ambasador, se pare că o flotă a [your_race] a preluat o poziție în spațiul controlat de [my_race]. Sigur știi că nu putem permite asta? Este în regulă, pur și simplu scoateți-vă flotele și vom uita că s-a întâmplat asta vreodată.
+WARN_EXPANSION_01          | În timp ce Triumviratul dorește să respecte voința poporului tău, pur și simplu nu putem închide ochii la o astfel de expansiune teritorială agresivă. Sunt sigur că veți înceta acest lucru în numele păstrării legăturilor noastre diplomatice, nu ambasador?
+WARN_BUILDUP_01            | Ambasador, te rog! Liderii noștri militari sunt neliniștiți de recenta voastră acumulare de flote! Vă rog să încetiniți construcția navelor pentru a le arăta acelor militari proști că temerile lor sunt nefondate!
+WARN_SKIRMISH_01           | Tocmai am primit un raport sumbru despre o luptă între navele Triumvirate și o flotă aparținând [your_empire]. Vă rugăm să vă asigurați că acest lucru nu se va mai întâmpla niciodată, altfel mă tem că războiul va fi un viitor inevitabil!
+WARN_ATTACKED_01           | Nu este bine ambasador: nu este deloc bine. Să ne atacați în [system]... Ce va trecut prin cap? Încerc să țin armata la distanță datorită angajamentului meu față de diplomație, dar dacă veți continua aceste acțiuni nu ii voi putea opri!
+WARN_INVADED_01            | Generalii noștri sunt furioși! Odată cu invadarea sistemului [system] aceștia sunt gata să meargă la luptă! Trebuie să opriți asta imediat! Nu încercați să începeți un război, nu-i așa?!
+WARN_ESPIONAGE_01          | Oamenii mei nu sunt străini spionajului, acesta pătrunzând în cultura noastră de la un război amar și rece, cu multe secole în urmă. Dar trebuie să știți că încercările repetate de a ne fura secretele vor fi întâmpinate cu represalii în viitor. [blamat]
+WARN_SABOTAGE_01           | Putem înțelege spionajul, dar sabotaj?! Voi face tot ce pot pentru a-i ține pe generali în frâu, dar dacă încercați din nou așa ceva, mă îndoiesc că voi fi în stare sau chiar dispus să vă ajut în viitor. [forțat]
+WARN_BIOWEAPON_01          | Mi-a venit în atenție că ați folosit o armă biologică pe civilii din [system]. Sunt... sincer, nu pot găsi cuvintele. Pentru binele legăturilor noastre diplomatice voi face tot ce pot, dar nu pot spune că sunt entuziasmat de răspunsul pe care îl voi găsi în Triumvirat.
+WARN_GENOCIDE_01           | Ce ați facut?! O cultură frumoasă și antică a fost pierdută pentru totdeauna! ă înfiorez să mă gândesc cum vor reacționa Triumvirii la această veste: genocidul [victim_race] este antiteza absolută a filozofiei noastre!
+WARN_FINAL_WAR_01          | În cele din urmă, galaxia a ales să se unească și să meargă către pace, și totuși voi dintre toți oamenii alegeți să sfidați cursul nostru de acțiune ales democratic? După toate relațiile noastre, se pare că m-am înșelat despre voi. Dar știu că în curând această greșeală va fi corectată!
+WARN_COUNCIL_VOTE_01       | Mă mărturisesc dezamăgit de acțiunile tale în consiliu, ambasador. Sper că a fost o singură greșeală din partea ta și că aceasta poate deveni, așa cum ne place nouă oamenilor să spunem, „apă sub pod”.
+WARN_OATHBREAKER_01        | Încrederea este baza întregii diplomații, ambasador. Încălcându-vă cuvântul, ați scuipat încrederea noastră și vă asigur că relațiile noastre diplomatice au primit o lovitură din care probabil că nu se vor mai recupera niciodată.
+WARN_ATTACKED_ALLY_01      | Ambasador, vă sfătuiesc cu tărie împotriva unor noi atacuri asupra [defender_race]. Am jurat o alianță cu ei și nici măcar eu nu voi putea ține la distanță armata noastră dacă insistați să continuați acest curs violent de acțiune!
+WARN_REBELLING_AGAINST_01  | Nu poate fi că ați fost aleși peste noi pentru a conduce Consiliul Galactic! Triumvirii vor fi furioși! Mă tem că vor vedea doar război, deoarece rămâne doar această opțiune viabilă!
+//
+PRAISE_COUNCIL_VOTE_01     | Bunul meu prieten ambasadorul! Voiam doar să vă spun: bine făcut astăzi în consiliu! Triumviratul îi apreciază întotdeauna pe cei care susțin cauzele noastre și sunt fericiți că un aliat la fel de măreț ca tine continuă să câștige această apreciere.
+PRAISE_COUNCIL_VOTE_02     | Ah, ambasadorul [voter_empire]. Mă bucur că te-am găsit înainte să încheiem. Mă bucur să văd credința ta în idealurile Triumviratului sunt atât de puternice! Când ne întoarcem acasă, asigurați-vă că mă contactați, pentru a ne consolida legăturile diplomatice!
+PRAISE_COUNCIL_VOTE_03     | Deci ne-ați votat până la urmă, nu? Mă bucur că în sfârșit vă reveniți în fire. Dacă sunteți dispus să depuneți eforturi pentru a stabili noi legături diplomatice cu Triumviratul, aș fi dispus să vă fac o recomandare.
+
+PRAISE_ATTACKED_ENEMY_01   | Nu mă îndoiesc că [defender_race] nu se aștepta ca Triumviratul să lupte vreodată într-un război, dar știu că nu se așteptau ca și prietenii noștri [your_race] să se alăture! Împreună le vom arăta de ce diplomația și încrederea sunt cele mai importante instrumente pe care le poți stăpâni!
+PRAISE_ATTACKED_ENEMY_02   | Astăzi este o zi bună pentru luptă, ambasador. Preferăm să ne împrietenim în circumstanțe mult mai pașnice, dar dacă un război împotriva [defender_race] marchează începutul unei lungi prietenii între oamenii mei și ai tăi, atunci acesta este, fără îndoială, un război care merită luptat!
+PRAISE_ATTACKED_ENEMY_03   | Triumviratul este mai mult decât capabil să preia orice inamic care disprețuiește încercările noastre de relații pașnice. Dar, dacă insistați să vă alăturați acestei lupte ca un act de bună credință, cu siguranță nu vom face nimic pentru a vă sta în cale!
+
+PRAISE_TRADE_01            | Acum despre asta este vorba! Prietenii buni și acordurile comerciale prospere valorează mai mult decât dușmanii și războaiele devastatoare! Mă bucur că oamenii tăi aleg să fie prietenii noștri și sunt sigur că Triumvirii simt exact același lucru! 
+PRAISE_TRADE_02            | Da, încrederea este fundația diplomației, dar comerțul reciproc benefic cu siguranță nu dăunează niciodată, nu? Sper că putem continua acordul nostru la nesfârșit și să apară noi modalități de a ne ajuta reciproc.
+
+PRAISE_REBELLING_WITH_01   | Nu vă temeți, ambasador! Și noi recunoaștem consiliul pentru ceea ce este: dictatura coruptă mascată ca o coexistență pașnică. Vom sta ca unul și nu ne vom opri până nu vom scăpa de acești despoți odată pentru totdeauna!
+
+ACCEPT_TRADE_01            | Amândoi vom profita din acest acord comercial, ambasador. [my_empire] și [your_empire], prieteni pe tonul a [amt] BC în fiecare an! Sună bine, nu ești de acord?
+RESPOND_IGNORE_THREAT_01   | Oh, cu siguranță această amenințare a ta este un fel de glumă? Da, da, o glumă! Haha, foarte amuzant, ambasador!
+RESPOND_STOP_SPYING_01     | Ei bine, aceasta este o afacere dezordonată. Triumviratul respinge orice cunoștință despre acest agent necinstit care a acționat din propria voință în imperiul vostru. Vă rugăm să ni-l returnați și vă asigur că acest lucru nu se va mai întâmpla.
+RESPOND_STOP_ATTACKING_01  | Aceasta este o tradiție [my_race] veche pe care o numim „zăngănit de sabie” Puteți considera sabia zăngănită, ambasador: flotele noastre se vor întoarce la noi acum.

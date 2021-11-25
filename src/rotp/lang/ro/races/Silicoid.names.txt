@@ -1,0 +1,21 @@
+// all possible names
+name: Silicoid, Igneoid, Sedimoid, Granitoid, Magmoid
+
+desc1: Expansioniști Xenofobi
+desc2: Imuni la Mediile Ostile
+desc3: Enigmatici și litotrofi, [race] cutreieră galaxia în căutarea dușmanului lor etern.
+
+// possible home system names
+home: Cryslon, Geode, Karst, Igneous, Silican
+
+title:     Împărat
+fulltitle: Împărat Cristalin
+
+// possible leader names
+leader: Carnax, Crystous, Geode, Granid, Igneous, Sedimin
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Sediment, Pietricică, Piatră, Rocă, Cristal, Mineral, Nisip
+ship2: Granit, Marmură, Ardezie, Cuarț, Ponce, Gabro, Obsidian
+ship3: Magmă, Lavă, Ortoză, Riolit, Mică, Bazalt, Dacit
+ship4: Diamant, Safir, Smarald, Rubin, Ametist, Topaz, Granat

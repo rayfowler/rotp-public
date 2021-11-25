@@ -1,0 +1,151 @@
+//
+// Dialogue that is not race-specific
+//
+
+DIPLO_TECH_REQUEST_MENU_01   | Ne tür bir teknoloji ilgini çeker?
+DIPLO_TECH_COUNTER_MENU_01   | Bunun için ne teklif ediyorsun?
+DIPLO_TRADE_MENU_01          | Aşağıdakiler için bir ticaret anlaşması öneriyorsun:
+DIPLO_TREATY_MENU_01         | Ne yapmak istiyorsun?
+DIPLO_THREATEN_MENU_01       | Tehdidin nedir?
+DIPLO_DECLARE_WAR_MENU_01    | Savaş başlatmak istediğinden emin misin?
+DIPLO_JOINT_WAR_MENU_01      | Kime savaş açmalıyız?
+DIPLO_BREAK_ALLIANCE_MENU_01 | Hangi ittifakı bozmalıyız?
+DIPLO_OFFER_AID_MENU_01      | Ne vermek istiyorsun?
+DIPLO_OFFER_TECH_MENU_01     | Ne vermek istiyorsun?
+
+DECLINE_OFFER_01           | [my_nameTitle] [my_name] reddediyor.
+DECLINE_OFFER_02           | [my_race] teklifini değerlendirdi ve reddetti.
+DECLINE_OFFER_03           | Teklifini saygıyla reddediyoruz.
+DECLINE_OFFER_04           | Şu an ilgilenmiyoruz.
+DECLINE_OFFER_05           | [my_race] teklifini adil bulmuyor.
+DECLINE_OFFER_06           | Şu anda teklifini kabul etmek bizim yararımıza olmaz.
+DECLINE_OFFER_07           | Belki de bizi saf aptallarla karıştırdın. Teklifini reddediyoruz.
+DECLINE_OFFER_08           | Teklifin bize adil görünmüyor.
+DECLINE_OFFER_09           | Maalesef reddedeceğiz.
+
+DECLINE_ENEMY_ALLY_01      | [my_race], nefret ettiğimiz [other_race] ulusunun müttefikleriyle iş tutmaz.
+DECLINE_ALREADY_ALLIED_01  | [my_race] ve müttefiklerimiz, diğer imparatorluklarla müttefik olduğun sürece isteğini dikkate alamaz.
+DECLINE_NO_WAR_ON_ALLY_01  | Müttefiklerimize savaş ilan etmeyeceğiz.
+DECLINE_PEACE_TREATY_01    | [other_race] ile barış anlaşmamızı bozmayacağız.
+
+DECLINE_ANNOYED_01         | [your_race] alevden çok duman çıkaran yaratıklar. Senin gevezeliğinden bıktık.
+DECLINE_ANNOYED_01         | [your_nameTitle] [your_name], sabrımızı deniyorsun. Belki şimdi susup, sonra konuşmalısın.
+DECLINE_ANNOYED_01         | [my_nameTitle] [my_name] yeterince dinledi. Daha sonra tekrar konuşacağız. 
+DECLINE_ANNOYED_02         | Diplomatik müzakerelerden bıktık. Görüşmelere daha sonra devam edebiliriz.
+DECLINE_ANNOYED_02         | Bu konuşmalar bizi bir yere götürmez. İznimizi isteyelim.
+DECLINE_ANNOYED_02         | Gidiyoruz.
+DECLINE_ANNOYED_03         | Binlerce özür, [your_nameTitle] [your_name], ancak diğer görevler bizi çağırıyor.
+DECLINE_ANNOYED_03         | Affedersin, ama zamanımız sona erdi.
+DECLINE_ANNOYED_03         | Çok az zamanımız ve yapacak çok işimiz var. Belki daha sonra tekrar konuşabiliriz.
+
+
+DECLINE_OATHBREAKER_01     | Geçmişte anlaşmalar bozduğun için şu anda bir anlaşmaya girmek istemiyoruz.
+DECLINE_OATHBREAKER_01     | Geçmişteki anlaşmalarına uymadın. Şimdi sana güvenmek için çok az sebep görüyoruz.
+DECLINE_OATHBREAKER_01     | Geçmişte birçok anlaşma ihlal etmişken, şimdi sana neden güvenelim?
+DECLINE_OATHBREAKER_01     | Geçmişteki vaatlerini yerine getirmeyen biriyle uzlaşmak için hiçbir neden görmüyoruz.
+DECLINE_OATHBREAKER_01     | Onuru olmayan [your_race] ile uğraşmayacağız.
+
+DECLINE_ESPIONAGE_01       | Siz hırsız köpekler, araştırmamızın meyvelerini çalıyorsunuz. İsteğini reddediyoruz.
+DECLINE_ESPIONAGE_01       | Teknolojimiz [my_race] ırkı içindir. Onu çalmaya hakkın yok. Hırsızlığı bıraktığın zaman konuşuruz.
+DECLINE_ESPIONAGE_01       | Neden sana bir şey verelim? Casusların zaten ihtiyacın olan her şeyi çalıyor!
+DECLINE_ESPIONAGE_01       | Casusların teknolojimizi çalarken bunu kabul etmemizi nasıl beklersin?
+DECLINE_ESPIONAGE_01       | Casuslarını çıkar, sonra konuşuruz.
+
+DECLINE_SABOTAGE_01        | Son sabotaj olayını unutmadık. Daha güvenilir olduğunu kanıtlayana kadar seninle iş tutmayacağız.
+DECLINE_SABOTAGE_01        | Halkımız sabotajından zarar gördü. O eskiye dönene kadar seninle iş tutmayacağız.
+DECLINE_SABOTAGE_01        | Ne! Bir sürü [target] sabote ederken uzlaşmamızı mı bekliyorsun?
+DECLINE_SABOTAGE_01        | Bize ait bir [target] yok ettin. Neden seninle iş tutalım?
+DECLINE_SABOTAGE_01        | [target] sabote etmeyi bıraktığında, konuyu ele alabiliriz.
+
+DECLINE_BUILDUP_01         | Sen sınırlarımızın dibine gemi yığarken bunu gündeme almayacağız.
+DECLINE_BUILDUP_01         | Sınırlarımızdaki gemilerini çek, kabul etmeyi düşünelim. O zamana kadar ilgilenmiyoruz.
+DECLINE_BUILDUP_01         | Sınırlarımızdaki gemilerin bizim için tehdit değil. Ama onlar oradayken anlaşmayı reddediyoruz.
+DECLINE_BUILDUP_01         | [my_empire] ile iş tutmak istiyorsan, gemilerini tehdit için bize değil başkalarına gönder.
+
+DECLINE_ENCROACH_01        | Filoların [my_race] sahasına izinsiz giriyor. Onları uzaklaştır, sonra konuşuruz.
+
+DECLINE_SKIRMISH_01        | Durduk yere gemilerimize saldırıp razı olmamızı mı bekliyorsun? Anlaşmayı reddediyoruz.
+DECLINE_SKIRMISH_01        | Filolarımıza saldıran birinin teklifini kabul edemeyiz.
+DECLINE_SKIRMISH_01        | Filoların bizimkilere saldırmayı bıraktığında konuşabiliriz.
+DECLINE_SKIRMISH_01        | [my_empire] ile iş tutmak istiyorsanız, o zaman filolarımızı rahat bırak.
+DECLINE_SKIRMISH_01        | [my_nameTitle] [my_name] filolarımızı yok etmenden memnun değil. Kabul etmiyoruz.
+
+DECLINE_ATTACK_01          | [system] mevkisine haksız saldırın sana pazarlık için çok az alan bırakıyor.
+DECLINE_ATTACK_01          | [system] kolonisine yapılan saldırıyı unutmadık. Kabul etmemizin bir yolu yok.
+
+DECLINE_INVASION_01        | Halkımız [system] mevkisinin kasaplarıyla uğraşmak istemiyor. Önce suçunu telafi et.
+DECLINE_INVASION_01        | [system] mevkisinin kanı sözlerine bulaşmış. Teklifini kabul edemeyiz.
+DECLINE_INVASION_01        | [system] mevkisinin ölüleri intikam için haykırıyor. Çığlıklarını teklifinden daha yüksek sesle duyuyoruz.
+
+DECLINE_BIOWEAPONS_01      | [my_race] biyolojik silah kullanabilen bir ırkla herhangi bir anlaşma yapmaz.
+DECLINE_BIOWEAPONS_01      | Biyolojik silah kullanacak kadar umutsuz kimseyle iş tutmayız.
+DECLINE_BIOWEAPONS_01      | Masum toplulukları tarifsiz dehşetlere maruz bırakan silahlar kullanıyorsun. Böyle bir çılgınlıkla iş tutmayı reddediyoruz.
+DECLINE_BIOWEAPONS_01      | Tanrılar, gezegenleri biyolojik silahlarla yok edenlerden nefret eder. [my_race] buna izin veremez.
+DECLINE_BIOWEAPONS_01      | Biyolojik silahların tarafından öldürülenlerin çığlıkları kulaklarımızı dolduruyor. Teklifini duyamıyoruz.
+
+DECLINE_ANNOYED_01         | Diplomatik müzakerelerden bıktık. Görüşmelere daha sonra devam edebiliriz.
+DECLINE_ANNOYED_01         | Bu konuşmalar bizi bir yere götürmez. İznimizi isteyelim.
+DECLINE_ANNOYED_01         | [my_nameTitle] [my_name] yeterince dinledi. Daha sonra tekrar konuşacağız. 
+DECLINE_ANNOYED_01         | [your_nameTitle] [your_name], sabrımızı deniyorsun. Belki şimdi susup, sonra konuşmalısın.
+DECLINE_ANNOYED_01         | Binlerce özür, [your_nameTitle] [your_name], ancak diğer görevler bizi çağırıyor.
+DECLINE_ANNOYED_01         | Çok az zamanımız ve yapacak çok işimiz var. Belki daha sonra tekrar konuşabiliriz.
+DECLINE_ANNOYED_01         | [your_race] alevden çok duman çıkaran yaratıklar. Senin gevezeliğinden bıktık.
+DECLINE_ANNOYED_01         | Gidiyoruz.
+DECLINE_ANNOYED_01         | Affedersin, ama zamanımız sona erdi.
+
+DECLINE_TECH_TRADE_01      | İlgimizi çeken hiçbir teknolojin yok.
+DECLINE_TECH_TRADE_01      | [your_race] oyuncaklarına ihtiyacımız yok.
+DECLINE_TECH_TRADE_01      | İlkel icatların bizi ilgilendirmiyor.
+DECLINE_TECH_TRADE_01      | [my_race] senin teknolojinin çok ötesinde. 
+DECLINE_TECH_TRADE_01      | [your_nameTitle] [your_name], bilim adamlarının bize sunduklarına pek ihtiyacımız yok.
+DECLINE_TECH_TRADE_01      | [my_nameTitle] [my_name], teknolojine çok az ilgi gösteriyor.
+
+OFFER_TECH_EXCHANGE_01     | [your_empire], [tech] teknolojine büyük ihtiyaç duyuyor. Belki de onu bazı teknolojilerimizle takas etmek istersin.
+OFFER_TECH_EXCHANGE_01     | [your_empire], [tech] teknolojisini öğrendiğini biliyor. Karşılığında sana bazı teknolojilerimizi sunabilir miyiz?
+OFFER_TECH_EXCHANGE_01     | [your_empire] ulusundan [your_nameTitle] [your_name], [tech] teknolojisinin sırrını istiyor. Onu bizim keşiflerimizden biriyle takas eder misin?
+OFFER_TECH_EXCHANGE_01     | [your_race] ırkı, [tech] teknolojisinin bilimsel mucizesine hayran. Sırrı için sana ne önerebiliriz?
+
+ACCEPT_TECH_EXCHANGE_01    | Çok iyi. [my_nameTitle] [my_name], harika [techGiven] [my_race] sırlarını [techReceived] teknolojisiyle değiştirmeyi kabul ediyor.
+ACCEPT_FINANCIAL_AID_01    | [my_nameTitle] [my_name], [amt] BC'lik hediyeni kabul ediyor.
+ACCEPT_TECHNOLOGY_AID_01   | [my_nameTitle] [my_name], [tech] hediyeni kabul ediyor.
+
+BREAK_TRADE_01             | [my_race] vatandaşlarının [your_empire] ulusu ticari mallarına artık hiçbir talepleri yok.
+ANNOUNCE_TRADE_01          | [year] yılından itibaren, [my_empire] ve [your_empire], yılda [amt] BC'lik ticaret etmeyi kabul eder.
+
+ANNOUNCE_PEACE_01          | [year] yılında [my_race] ve [your_race] imparatorlukları tüm düşmanlıkları sona erdirmeyi kabul eder.
+ANNOUNCE_PEACE_01          | [my_nameTitle] [my_name], imparatorluklarımız arasındaki tüm düşmanlıkların sona ermesini emrediyor.
+ACCEPT_PEACE_01            | Küçük çekişmelerimize son verme zamanının geldiği konusunda hemfikiriz.
+ACCEPT_PEACE_01            | Barış teklifini kabul ediyoruz. [my_race] kuvvetlerine ateşi kes, biz de seninkilere saldırmayı bırakalım.
+ACCEPT_PEACE_01            | Bu anlamsız yıkımdan bıktık. [my_empire] barış teklifini kabul ediyor.
+
+BREAK_PACT_01              | [my_race] [your_empire] ulusunu uyarıyor: Saldırmazlık Paktımız bozuldu!
+ANNOUNCE_PACT_01           | [year] yılında [my_empire] Saldırmazlık Paktı'na bağlı kalacağını ve kolonilerimizden birinin yörüngesinde dolanmadıkça [your_race] filolarına saldırmayacağını taahhüt eder.
+ACCEPT_PACT_01             | [my_empire] Saldırmazlık Paktı'nı kabul eder. İki taraf da birbirlerinin koloni yörüngelerine girmedikçe, birbirlerinin filolarına saldırmayacaktır.
+ACCEPT_PACT_01             | Kolonilerimizden herhangi birine gemi göndermemeyi kabul edersen, [my_race] halkı hiçbir gemine saldırmayacağını taahhüt eder.
+ACCEPT_PACT_01             | [my_nameTitle] [my_name], önerilen Saldırmazlık Paktını kabul ediyor. Kayda geçsin ve artık böyle yapılsın!
+ACCEPT_PACT_01             | Anlaştık öyleyse. Kolonilerimize saldırmadığın sürece [my_empire] Saldırmazlık Paktı'na bağlı kalacaktır.
+
+BREAK_ALLIANCE_01          | [my_empire], [your_empire] ile İttifakını artık sürdüremez.
+ANNOUNCE_ALLIANCE_01       | [year] yılında [my_empire] ve [your_empire], hiçbirinin diğerinin filolarına veya kolonilerine saldırmayacağı bir ittifak oluşturmayı kabul eder.
+ANNOUNCE_ALLIANCE_01       | Böylece İttifakımız doğdu. Gemilerin kolonilerimizi dilediğin gibi ziyaret edebilir, üslerimizden yakıt alabilir.
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name], dostumuz [your_nameTitle] [your_name] ile bir İttifakı memnuniyetle karşılıyor.
+ACCEPT_ALLIANCE_01         | [my_empire] ve [your_empire] bugün halklarımız arasında bir İttifak oluşturuyor. Düşmanlarımıza ölüm!
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name], [your_empire] ile bir İttifakın hikmetini görüyor. Bunu onaylıyoruz.
+
+OFFER_JOINT_WAR_01         | [your_empire] ve [my_empire] imparatorluklarının [other_race] ulusuna karşı birlikte savaşma zamanı geldi.
+ACCEPT_JOINT_WAR_01        | [other_empire], [my_empire] ve [your_empire] uluslarının birleşik gücüyle ezilecektir.
+ACCEPT_JOINT_WAR_01        | [other_race] , [my_race] ve [your_race] ittifakının karşısında uzun süre duramayacak.
+ACCEPT_JOINT_WAR_01        | [year] yılında, [my_empire] ve [your_empire] galaksideki [other_race] tehdidine son vermek için güçlerini birleştiriyor.
+COUNTER_JOINT_WAR_01       | [other_empire] ulusuna karşı savaşında sana şunun karşılığında katılacağız:
+RESPOND_CLOSE_EMBASSY_01   | Öyle olsun. İmparatorluklarımız arasında daha fazla görüşme olmayacak.
+
+RESPOND_BREAK_TRADE_01     | Bunu hatırlayacağız.
+RESPOND_BREAK_TRADE_01     | [your_nameTitle] [your_name], demek sözüne sadık değilsin. Bunu unutmayacağız.
+
+RESPOND_BREAK_PACT_01      | Bozulan anlaşmalarının bahsini mezar taşına yazacağız, [your_nameTitle] [your_name].
+RESPOND_BREAK_PACT_01      | [your_empire], tutmadığı vaatlerinin ağırlığı altında çatırdayacak.
+
+RESPOND_BREAK_ALLIANCE_01  | Anlaşmayı çiğnedin. İttifak bozuldu.
+RESPOND_BREAK_ALLIANCE_01  | Pekâlâ. Güvenilmez niyetlerin açığa çıktı. İttifak bozuldu.
+RESPOND_BREAK_ALLIANCE_01  | İtibar edilmeyen anlaşmalara ihtiyacımız yok. İttifak bozuldu.
+RESPOND_BREAK_ALLIANCE_01  | Öyle olsun. İttifak bozuldu.

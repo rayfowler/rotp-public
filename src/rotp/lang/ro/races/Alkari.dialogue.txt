@@ -1,0 +1,96 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Alkari specific dialogue
+
+CONTACT_HONORABLE          | Salutări ție, [your_nameTitle] [your_name] din [your_empire]! Noi din [my_empire] vă oferim salutări cordiale și așteptăm cu nerăbdare să încheiem afaceri onorabile cu voi.
+CONTACT_PACIFIST           | Cele mai sincere salutări, [your_title] din [your_empire]. Nu aduceți războiul la pragul Suveranității noastre și vom prospera amândoi în prietenia celuilalt.
+CONTACT_ERRATIC            | Eu sunt ambasadorul pentru [my_empire]. Poporul meu oferă salutări, după cum dictează obiceiurile noastre. Oamenii tăi sunt cunoscuți ca [your_race_plural]? Cât de ... interesant.
+
+//
+GREETING_01                | Salutări, ambasador! Ce servicii ar putea oferi Suveranitatea unui aliat atât de venerat în această zi?
+GREETING_04                | Te salut, ambasador. Suveranitatea este pregătită să audă cererea voastră, dar cât de departe vom merge pentru a o acomoda rămâne de văzut...
+GREETING_07                | Vorbește repede, ambasador! Legile ne cer să respectăm toate protocoalele corespunzătoare, dar asta nu înseamnă că ne vom pierde timpul îndeplinind cerințele voastre banale!
+
+//
+DECLAREWAR_HATE_01         | Ambasador! O specie precum a ta, care nu are nicio preocupare pentru corectitudine și politețe, nu are ce căuta într-o galaxie condusă de Suveranitate noastră! Pregătește-te de luptă!
+DECLAREWAR_HATE_02         | Vulgaritatea și aroganța voastră au adus acest lucru! Livrează acest mesaj către [your_title] vostru: Războiul este acum asupra voastră!
+DECLAREWAR_HATE_03         | O asemenea vulgaritate! [my_empire] ar prefera să înceteze să mai existe decât să continue să împărtășească cosmosul cu un popor atât de scârbos!
+//
+DECLAREWAR_ERRATIC_01      | Ambasador, nu putem nega faptul că a fost plăcut să negociem cu o specie la fel de interesantă ca a ta. Regretăm că acum aceste relații trebuie să se încheie.
+DECLAREWAR_ERRATIC_02      | Ați continuat să ne amuzați de când oamenii noștri s-au întâlnit pentru prima dată. Suveranitatea este dornică să vadă dacă vă veți dovedi la fel de amuzanți și în timpul războiului!
+DECLAREWAR_ERRATIC_03      | Salutări, ambasador al [your_empire]! [my_empire] dorește să se testeze în lupta onorabilă împotriva puterii tale considerabile. Pregătește-ți flotele și oamenii pentru război!
+//
+DECLAREWAR_MILITARY_01     | Suveranitatea trebuie să-și dezvolte în continuare teritoriul pentru a asigura prosperitatea cetățenilor noștri. Când nu putem găsi lumi nelocuite, luăm lumile imperiilor mai mici. Imperiul tău este mai mic decât al nostru și, prin urmare, lumile tale vor deveni acum ale noastre.
+DECLAREWAR_MILITARY_02     | În cele din urmă a sosit timpul! Cu o aripă, Suveranitatea va răspândi umbra războiului deasupra voastră și, cu cealaltă, va mătura lumile voastre.
+DECLAREWAR_MILITARY_03     | Este ... regretabil că s-a ajuns la asta. Trebuie să vă capturăm planetele pentru uzul nostru sau să pierim încercând. Nu avem de ales, pregătește-te pentru război!
+//
+DECLAREWAR_ALLIANCE_01     | Diplomați ai [other_empire] ne-au informat că sunt în război cu oamenii tăi. [my_empire] este obligată își ajute aliații pe timp de război: fapt pe care îl vei regreta în curând, ambasador.
+DECLAREWAR_ALLIANCE_02     | Aliatul nostru solicită ajutor, iar Suveranitatea răspunde! Sfârșitul tău este peste tine, ambasador: nu puteți rezista mult timp împotriva flotelor noastre combinate!
+DECLAREWAR_ALLIANCE_03     | Ne supără faptul că ați ales să purtați un război împotriva unuia dintre aliații noștri. Prin cele mai sacre legi ale noastre, trebuie să-i asistăm acum în lupta împotriva voastră! Vă rog, întoarceți-vă de pe această drum înainte să fie prea târziu pentru noi toți!
+//
+DECLAREWAR_SPYING_01       | Ne-am mulțumit să menținem relații amiabile cu oamenii tăi, ambasador. Faptul că v-ați angaja în astfel de acte dezonorante împotriva coroanei ne-a obligat să reconsiderăm acest lucru.
+DECLAREWAR_SPYING_02       | O astfel de indignare nu va rămâne nepedepsită, ambasador! Cei care ar acționa în secret împotriva noastră vor fi forțați să îngenuncheze în fața noastră!
+DECLAREWAR_SPYING_03       | Ambasador! Cum îndrăznesc oamenii tăi să comită astfel de acte odioase împotriva Suveranității?! Vom avea dreptate pentru asta cu orice preț! Pregătiți-vă pentru război!
+//
+DECLAREWAR_ATTACK_01       | Hmph! O decizie atât de nebună! Dar dacă războiul este ceea ce doriți, atunci războiul este ceea ce Suveranitatea vă va oferii!
+DECLAREWAR_ATTACK_02       | Așa începe, ambasador! Dacă poporul [my_race] a putut supraviețui războaielor nesfârșite din timpul Mileniului Sângeriu, atunci acesta va putea supraviețui cu ușurință un război cu voi!
+DECLAREWAR_ATTACK_03       | Ar fi trebuit să ne așteptăm la acest gen de vulgaritate de la o specie necivilizată ca a ta, ambasador! Să nu credeți că Suveranitatea va ceda în fața voastră!
+//
+DECLAREWAR_OPPORTUNITY_01  | După cum puteți vedea, noi din [my_empire] am reușit foarte mult succes în proiectele noastre. Din păcate, ambasador, nevoile noastre dictează că următorul nostru succes trebuie să vină în detrimentul imperiului tău.
+DECLAREWAR_ASSASSIN_01     | Ce nebunie este aceasta? Ați comite un act atât de monstruos ca uciderea unui ambasador cu sânge rece? Suveranitatea nu va suferi o specie atât de odioasă ca a voastră să mai existe!
+
+
+
+
+OFFER_PEACE_01             | Povestea Mileniului Sângeriu nu poate fi lăsată să se repete, ambasador! Vă solicităm să aduceți onoare atât [your_race] cât și [my_race] prin semnarea acestui Tratat de Pace pentru a preveni o altă vărsare de sânge!
+OFFER_TRADE_01             | Cu siguranță, speciile civilizate precum ale noastre sunt capabile să se ajute reciproc într-o cooperare onorabilă. [my_empire] dorește un Tratat Comercial cu [your_empire] stabilit la [amt] BC, pe an. Care este răspunsul tău, ambasador?
+OFFER_PACT_01              | Suveranitatea este mulțumită de modul în care poporul tău se prezintă în treburile diplomatice. Pentru a arăta cât de mult prețuim relația noastră, dorim să semnăm un Pact de Neagresiune, asigurându-ne că niciunul dintre noi nu cade pradă ... interpretării greșite a intențiilor celuilalt.
+OFFER_ALLIANCE_01          | Acțiunile voastre v-au câștigat multă stimă cu Suveranitatea, ambasador! Regele Turlei a decretat că o Alianță între [your_race] și [my_race] trebuie formată cât mai repede! Așteptăm doar semnătura voastră!
+
+WARN_TRESPASSING_01        | Este foarte impropriu ca flotele [your_race] să pătrundă în sistemul [system] ca și cum ar fi propriul lor domeniu. Este în interesul tuturor, ambasador, să rectificați imediat acest lucru.
+WARN_EXPANSION_01          | Să te extinzi necontrolat oriunde dorești arată o mare lipsă de respect față de vecinii tăi, ambasador! Vă sfătuiesc cu tărie să nu mai continuați această lipsă de respect față de Suveranitate.
+WARN_BUILDUP_01            | Ne crezi orbi, ambasador ?! Vedem că flotele voastre continuă să crească în dimensiune. Arătați-ne că nu vreți să faceți nimic rău anulând această acumulare sau puteți obține într-adevăr un răspuns preventiv!
+WARN_SKIRMISH_01           | Știm foarte bine despre bătălia din [system], ambassador! Suveranitatea va trece cu vederea acțiunile voastre o singură dată. De ce? Nu văd niciun motiv pentru a răspunde la o astfel de întrebare!
+WARN_ATTACKED_01           | Un astfel de atac îndrăzneț poate proveni doar dintr-o lipsă totală de respect, ambasador! Sunteți, într-adevăr, norocoși că Regele Turlei nu a hotărât să pedepsească această insolență. Poate că nu veți fi la fel de norocoși data viitoare!
+WARN_INVADED_01            | Așadar, căutați să luați ceea ce nu vă aparține, ambasador?! Nu ne mai ispitiți mânia: ne-am debarasa cu bucurie de acea planetă lipsită de valoare dacă înseamnă că vom scăpa de prostia voastră!
+WARN_ESPIONAGE_01          | Hmfhmfhmf, nu ne surprinde că o specie atât de zgârcită ar recurge la spionaj pentru a-și atinge obiectivele. Amintiți-vă, ambasador: ochii [my_race] sunt atât de ageri încât nimic nu le scapă din privire. [blamat]
+WARN_SABOTAGE_01           | Absolut dezgustător, ambasador! Să vă strecurați în întuneric și să comiți acte de sabotaj ca demonii în noapte !? Dar sunteți la fel de proști pe cât sunteți grosolani: clădirile pe care le-ați distrus nu au fost suficient de importante pentru a justifica un răspuns! [forțat]
+WARN_BIOWEAPON_01          | Dezonoare! Dezonoare! Ați folosit cel mai îngrozitor tip de armă împotriva celor care nu pot nici măcar să ridice un scut pentru a se proteja! Infamia voastră vă va urma până la capăt, ambasador!
+WARN_GENOCIDE_01           | Deși sunt de acord că [victim_race] au fost o hoardă mizerabilă de paraziți, Suveranitatea se opune cu tărie genocidului. Ne întrebăm, ambasador, dacă oamenii tăi sunt capabili să repete aceste acțiuni cu rase mai ... civilizate?
+WARN_FINAL_WAR_01          | Nu există nicio virtute în acest curs pe care l-ați ales, ambasador. Nu vă înșelați: acum, după ce ați decis să vă opuneți liderului ales al galaxiei, suntem obligați să facem tot ce putem pentru a vă opri!
+WARN_COUNCIL_VOTE_01       | Atât de mult pentru ilustrul ambasador al [your_empire]! Ai crezut cu adevărat că nu vom afla despre înșelăciunea ta în consiliu? Ar trebui să te temi pentru poporul tău, ambasador: Regele Turlei va fi cel mai nemulțumit.
+WARN_OATHBREAKER_01        | Ce scandalos! Știți stima pe care o acordăm onoarei, totuși vă încălcați atât de deschis cuvântul doar pentru a vă satisface propriile dorințe?! Suveranitatea își va aminti pentru totdeauna această insultă, ambasador și cu siguranță o va returna!
+WARN_ATTACKED_ALLY_01      | Este supărător, ambasador, că poporul tău și [defender_empire] au ales să se certe în felul ăsta. Nu aveți nicio speranță să vă împotriviți puterilor noastre combinate: Suveranitatea vă îndeamnă să vă reconsiderați acțiunile.
+WARN_REBELLING_AGAINST_01  | Ați crezut că am uitat cât de dezonoranți ați dovedit că sunteți? Nu contează dacă trebuie să ne luptăm cu voi sau cu întreaga galaxie: nu veți sta niciodată pe tronul consiliului atât timp cât va trăi Regele Turlei!
+ 
+PRAISE_COUNCIL_VOTE_01     | Venerabilul ambasador al [your_empire]! Suntem datori pentru serviciul pe care ni l-ați acordat la această ședință a consiliului și suntem nerăbdători să plătim această datorie când vă decideți asupra unui moment potrivit.
+PRAISE_COUNCIL_VOTE_02     | Salutări, ambasador. Ne onorezi cu o voce care suportă cauza noastră în fața celor adunați aici. Sunt sigur că Regele Turlei va dori să afle mai multe despre un astfel de om onorabil de îndată ce voi raporta această situație.
+PRAISE_COUNCIL_VOTE_03     | Hmfhmfhmf, cu siguranță nu vă așteptați să credem că ați fost de partea Suveranității din respect sau din simțul onoarei, ambasador? Cu toate acestea, poate că veți continua să ne demonstrați asta dacă vă oferim o altă șansă să faceți acest lucru?
+
+PRAISE_ATTACKED_ENEMY_01   | Ah! Prietenul și aliatul nostru stimat aduce vești bune în acest timp de război! Veniți ambasador: lăsați soldații noștri să lupte împotriva acestor groaznici [defender_race] alături de forțele voastre!
+PRAISE_ATTACKED_ENEMY_02   | Acest război se va termina rapid, ambasador. Chiar și singură, Suveranitatea ar învinge cu ușurință aceste fiare [defender_race] vulgare. Dar împreună? Împreună vom șterge specia lor de pe fața galaxie pentru totdeauna!
+PRAISE_ATTACKED_ENEMY_03   | Suntem la fel de siguri că acționați din oportunitate, precum suntem siguri că nu știți semnificația cuvântului „onoare”! Vă permitem să ne ajutați împotriva [defender_race], dacă nu pentru nimic altceva decât să ne faceți să luăm mai puține victime de război!
+
+PRAISE_TRADE_01            | Mă bucură mai mult decât știi, ambasador, că oamenii tăi își desfășoară activitatea cu atâta onoare. Suveranitatea te onorează pe tine și pe poporul tău și va aprecia prietenia noastră chiar mai mult decât apreciază Tratatul Comercial dintre imperiile noastre! 
+PRAISE_TRADE_02            | Există multe modalități de a-ți dovedi onoarea, ambasador. Desfășurarea corectă și cu bună-credință a afacerilor comerciale este una dintre cele mai bune modalități de a face acest lucru.
+
+PRAISE_REBELLING_WITH_01   | Brutele alea din consiliu ne subestimează! Împreună le vom arăta ce înseamnă cu adevărat termenul de „pas greșit fatal”!
+
+ACCEPT_TRADE_01            | Suveranitatea este întotdeauna încântată să întrețină relații comerciale cu [your_empire]. O sumă anuală de [amt] BC este destul de agreabilă, mulțumesc.
+RESPOND_IGNORE_THREAT_01   | Îndrăzniți să încercați să provocați [my_empire]? Luați-vă glumele proaste de aici înainte ca acestea să înceteze din a mai fi amuzante.
+RESPOND_STOP_SPYING_01     | Ochii voștri par a fi la fel de ageri ca ai noștri atunci când vine vorba de găsirea spionilor. Considerați eforturile noastre de subterfugiu ca fiind finalizate.
+RESPOND_STOP_ATTACKING_01  | Acum vedeți puterea Suveranității noastre? Atâta timp cât nu uitați puterea noastră, nu vă vom mai tulbura cu aceste flote.
+
+ 

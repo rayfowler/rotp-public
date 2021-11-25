@@ -1,0 +1,1197 @@
+
+
+//
+// Armor techs
+// 
+ARMOR_0_NAME     | Armură de Titan
+ARMOR_0_ITEM     | Titan
+ARMOR_0_BRIEF    | Puncte de Viață %1
+ARMOR_0_DETAIL   | Începutul tehnologiei armurilor. Fără bonusuri pentru armura navelor sau a atacurilor terestre.
+
+ARMOR_1_NAME     | Armură de Duralloy
+ARMOR_1_ITEM     | Duralloy
+ARMOR_1_BRIEF    | Puncte de Viață %1
+ARMOR_1_DETAIL   | Crește numărul de Puncte de Viață ale navelor și transporturilor militare cu 50%. Armura personală este de asemenea îmbunătățită, adăugând 5 la toate atacurile terestre.
+
+ARMOR_2_NAME     | Armură de Zortrium
+ARMOR_2_ITEM     | Zortrium
+ARMOR_2_BRIEF    | Puncte de Viață %1
+ARMOR_2_DETAIL   | Crește numărul de Puncte de Viață ale navelor și transporturilor militare cu 100%. Armura personală este de asemenea îmbunătățită, adăugând 10 la toate atacurile terestre.
+
+ARMOR_3_NAME     | Armură de Andrium
+ARMOR_3_ITEM     | Andrium
+ARMOR_3_BRIEF    | Puncte de Viață %1
+ARMOR_3_DETAIL   | Crește numărul de Puncte de Viață ale navelor și transporturilor militare cu 150%. Armura personală este de asemenea îmbunătățită, adăugând 15 la toate atacurile terestre.
+
+ARMOR_4_NAME     | Armură de Tritanium
+ARMOR_4_ITEM     | Tritanium
+ARMOR_4_BRIEF    | Puncte de Viață %1
+ARMOR_4_DETAIL   | Crește numărul de Puncte de Viață ale navelor și transporturilor militare cu 200%. Armura personală este de asemenea îmbunătățită, adăugând 20 la toate atacurile terestre.
+
+ARMOR_5_NAME     | Armură de Adamantium
+ARMOR_5_ITEM     | Adamantium
+ARMOR_5_BRIEF    | Puncte de Viață %1
+ARMOR_5_DETAIL   | Crește numărul de Puncte de Viață ale navelor și transporturilor militare cu 250%. Armura personală este de asemenea îmbunătățită, adăugând 25 la toate atacurile terestre.
+
+ARMOR_6_NAME     | Armură de Neutronium
+ARMOR_6_ITEM     | Neutronium
+ARMOR_6_BRIEF    | Puncte de Viață %1
+ARMOR_6_DETAIL   | Crește numărul de Puncte de Viață ale navelor și transporturilor militare cu 300%. Armura personală este de asemenea îmbunătățită, adăugând 30 la toate atacurile terestre.
+
+
+//
+// Atmospheric Terraforming techs
+// 
+ATMOSPHERE_0_NAME      | Terraformare Atmosferică
+ATMOSPHERE_0_DETAIL    | Transformă medii Ostile în medii Normale pentru un cost de 150 BC.
+
+//
+// Automated Repair techs
+// 
+AUTOREPAIR_0_NAME      | Sistem Automat de Reparații
+AUTOREPAIR_0_BRIEF     | Repară 15% din loviturile susținute de o navă pe tură
+AUTOREPAIR_0_DETAIL    | Navele nedistruse pot repara până la 15% din numărul lor de Puncte de Viață la finalul fiecărei ture.
+
+AUTOREPAIR_1_NAME      | Sisteme Avansate de Reparații.
+AUTOREPAIR_1_BRIEF     | Repară 30% din loviturile susținute de o navă pe tură
+AUTOREPAIR_1_DETAIL    | Navele nedistruse pot repara până la 30% din numărul lor de Puncte de Viață la finalul fiecărei ture.
+
+
+//
+// Battle Computer techs
+// 
+// this is the Ship Design entry for selecting no battle computer
+COMPUTER_0_NAME    | 
+COMPUTER_0_ITEM    |  
+COMPUTER_0_BRIEF   | Nivel de Atac 0
+COMPUTER_0_DETAIL  |
+
+COMPUTER_1_NAME    | Computer de Luptă Marca I
+COMPUTER_1_ITEM    | Marca I
+COMPUTER_1_BRIEF   | Nivel de Atac I
+COMPUTER_1_DETAIL  | Crește acuratețea armelor la Nivelul 1.
+
+COMPUTER_2_NAME    | Computer de Luptă Marca II
+COMPUTER_2_ITEM    | Marca II
+COMPUTER_2_BRIEF   | Nivel de Atac II
+COMPUTER_2_DETAIL  | Crește acuratețea armelor la Nivelul 2.
+
+COMPUTER_3_NAME    | Computer de Luptă Marca III
+COMPUTER_3_ITEM    | Marca III
+COMPUTER_3_BRIEF   | Nivel de Atac III
+COMPUTER_3_DETAIL  | Crește acuratețea armelor la Nivelul 3.
+
+COMPUTER_4_NAME    | Computer de Luptă Marca IV
+COMPUTER_4_ITEM    | Marca IV
+COMPUTER_4_BRIEF   | Nivel de Atac IV
+COMPUTER_4_DETAIL  | Crește acuratețea armelor la Nivelul 4.
+
+COMPUTER_5_NAME    | Computer de Luptă Marca V
+COMPUTER_5_ITEM    | Marca V
+COMPUTER_5_BRIEF   | Nivel de Atac V
+COMPUTER_5_DETAIL  | Crește acuratețea armelor la Nivelul 5.
+
+COMPUTER_6_NAME    | Computer de Luptă Marca VI
+COMPUTER_6_ITEM    | Marca VI
+COMPUTER_6_BRIEF   | Nivel de Atac VI
+COMPUTER_6_DETAIL  | Crește acuratețea armelor la Nivelul 6.
+
+COMPUTER_7_NAME    | Computer de Luptă Marca VII
+COMPUTER_7_ITEM    | Marca VII
+COMPUTER_7_BRIEF   | Nivel de Atac VII
+COMPUTER_7_DETAIL  | Crește acuratețea armelor la Nivelul 7.
+
+COMPUTER_8_NAME    | Computer de Luptă Marca VIII
+COMPUTER_8_ITEM    | Marca VIII
+COMPUTER_8_BRIEF   | Nivel de Atac VIII
+COMPUTER_8_DETAIL  | Crește acuratețea armelor la Nivelul 8.
+
+COMPUTER_9_NAME    | Computer de Luptă Marca IX
+COMPUTER_9_ITEM    | Marca IX
+COMPUTER_9_BRIEF   | Nivel de Atac IX
+COMPUTER_9_DETAIL  | Crește acuratețea armelor la Nivelul 9.
+
+COMPUTER_10_NAME   | Computer de Luptă Marca X
+COMPUTER_10_ITEM   | Marca X
+COMPUTER_10_BRIEF  | Nivel de Atac X
+COMPUTER_10_DETAIL | Crește acuratețea armelor la Nivelul 10.
+
+COMPUTER_11_NAME   | Computer de Luptă Marca XI
+COMPUTER_11_ITEM   | Marca XI
+COMPUTER_11_BRIEF  | Nivel de Atac XI
+COMPUTER_11_DETAIL | Crește acuratețea armelor la Nivelul 11.
+
+
+//
+// Battle Suit techs for ground combat
+// 
+// this is for default, no-bonus armor that player starts with
+BATTLESUIT_0_NAME    | Armură
+BATTLESUIT_0_DETAIL  |
+
+BATTLESUIT_1_NAME    | Costume de Luptă
+BATTLESUIT_1_DETAIL  | Armură care nu numai că protejează, ci și crește puterea utilizatorului. Adaugă 10 la toate luptele terestre.
+
+BATTLESUIT_2_NAME    | Exoschelet Blindat
+BATTLESUIT_2_DETAIL  | Costume mobile de luptă avansate care nu numai că sporesc puterea și capacitatea de apărarea, dar oferă trupelor terestre și abilitatea de a zbura într-o măsură limitată. Adaugă 20 la toate luptele terestre.
+
+BATTLESUIT_3_NAME    | Armură 
+BATTLESUIT_3_DETAIL  | Combină mobilitate, propulsoare anti-gravitație și plăci grele din materiale compozite pentru a crea cea mai bună armură accesibilă trupelor terestre. Adaugă 30 la toate luptele terestre.
+
+
+//
+// Energy Focus techs for beam weapons
+// 
+BEAMFOCUS_0_NAME    | Focus Energetic
+BEAMFOCUS_0_BRIEF   | Adaugă +3 la raza armelor pe bază de energie
+BEAMFOCUS_0_DETAIL  | Crește raza de foc a tuturor armelor pe bază de energie de trei ori.
+
+BEAMFOCUS_1_NAME    | Interfață Oracol
+BEAMFOCUS_1_BRIEF   | Concentrează armele pe bază de fascicul, înjumătățind scuturile inamicului
+BEAMFOCUS_1_DETAIL  | Coordonează focul tuturor armelor pe bază de fascicul într-un singur atac, înjumătățind puterea scuturilor inamice.
+
+
+//
+// Biological antidote techs 
+// 
+BIOANTIDOTE_0_NAME    | Antidot Împotriva Bio-Toxinelor
+BIOANTIDOTE_0_DETAIL  | Reduce victimele atacurilor cu arme biologice cu 1M pe atac.
+
+BIOANTIDOTE_1_NAME    | Antidot Universal
+BIOANTIDOTE_1_DETAIL  | Reduce victimele atacurilor cu arme biologice cu 2M pe atac.
+
+
+//
+// Biological weapon techs 
+// 
+BIOWEAPON_0_NAME     | Spori Mortali
+BIOWEAPON_0_BRIEF    | Armă Biologică
+BIOWEAPON_0_DETAIL   | Arme biologice oribile ce pot reduce populația unei planete cu până la 1M pe atac.
+
+BIOWEAPON_1_NAME     | Virus Mortal
+BIOWEAPON_1_BRIEF    | Armă Biologică
+BIOWEAPON_1_DETAIL   | Arme biologice îngrozitoare ce pot reduce populația unei planete cu până la 2M pe atac.
+
+BIOWEAPON_2_NAME     | Bio Terminator
+BIOWEAPON_2_BRIEF    | Armă Biologică
+BIOWEAPON_2_DETAIL   | Arme biologice abominabile ce pot reduce populația unei planete cu până la 3M pe atac.
+
+//
+// Black Hole Generator tech
+//
+BLACKHOLE_0_NAME     | Generator de Găuri Negre
+BLACKHOLE_0_DETAIL   | Creează un câmp sub-spațial ce distorsionează spațiul normal, creând o gaură neagră ce distruge între 25% și 100% din navele și bazele deținute de către inamici, mai puțin 2% pe fiecare clasă de scut.
+
+
+//
+// Bomb weapon tech
+//
+BOMB_0_NAME     | Bombă Nucleară
+BOMB_0_BRIEF    | Doar Atacuri Terestre
+BOMB_0_DETAIL   | Bombă care reduce 3-12 din numărul de Puncte de Viață ale țintelor terestre.
+
+BOMB_1_NAME     | Bombă cu Hidrogen
+BOMB_1_BRIEF    | Doar Atacuri Terestre
+BOMB_1_DETAIL   | Bombă care reduce 5-20 din numărul de Puncte de Viață ale țintelor terestre.
+
+BOMB_2_NAME     | Bombă Anti-Materie
+BOMB_2_BRIEF    | Doar Atacuri Terestre
+BOMB_2_DETAIL   | Bombă care reduce 10-40 din numărul de Puncte de Viață ale țintelor terestre.
+
+BOMB_3_NAME     | Bombă Omega-V
+BOMB_3_BRIEF    | Doar Atacuri Terestre
+BOMB_3_DETAIL   | Bombă care reduce 20-50 din numărul de Puncte de Viață ale țintelor terestre.
+
+BOMB_4_NAME     | Bombă cu Neutronium
+BOMB_4_BRIEF    | Doar Atacuri Terestre
+BOMB_4_DETAIL   | Bombă care reduce 40-70 din numărul de Puncte de Viață ale țintelor terestre.
+
+
+//
+// Cloaking tech
+//
+CLOAK_0_NAME     | Dispozitiv de Acoperire
+CLOAK_0_BRIEF    | Face navele aproape invizibile
+CLOAK_0_DETAIL   | Face navele aproape invizibile până când atacă, crescându-le apărarea cu +5. Navele care atacă își pierd acoperirea și o primesc înapoi în orice tură în care nu atacă.
+
+
+//
+// Cloning tech
+//
+CLONE_0_NAME     | Clonare
+CLONE_0_DETAIL   | Permite coloniștilor bio-proiectați să fie crescuți la o rată de 1M pe 10 BC.
+
+CLONE_1_NAME     | Clonare Avansată
+CLONE_1_DETAIL   | Permite coloniștilor bio-proiectați să fie crescuți la o rată de 1M pe 5 BC.
+
+
+//
+// Combat Transporter tech
+//
+COMBATTRANSPORT_0_NAME     | Transportatoare Militare
+COMBATTRANSPORT_0_DETAIL   | Navele de Transport echipate cu aceste dispozitive au o șansă de 50% de a se teleporta pe suprafețele inamice înainte să poată fi atacate de către navele și bazele inamice.
+
+
+//
+// Control Environment tech
+//
+CONTROLENV_0_NAME    | Medii Normale Controlate
+CONTROLENV_0_ITEM    | Bază Colonială Standard
+CONTROLENV_0_BRIEF   | Permite colonizarea Planetelor Normale
+CONTROLENV_0_DETAIL  | Permite colonizarea Planetelor Normale.
+
+CONTROLENV_1_NAME    | Medii Sterpe Controlate
+CONTROLENV_1_ITEM    | Bază Colonială pe Planete Sterpe
+CONTROLENV_1_BRIEF   | Permite colonizarea Planetelor Sterpe
+CONTROLENV_1_DETAIL  | Permite colonizarea Planetelor Sterpe și a planetelor mai puțin ostile.
+
+CONTROLENV_2_NAME    | Medii Subarctice Controlate
+CONTROLENV_2_ITEM    | Bază Colonială pe Planete Subarctice
+CONTROLENV_2_BRIEF   | Permite colonizarea Planetelor Subarctice
+CONTROLENV_2_DETAIL  | Permite colonizarea Planetelor Subarctice și a planetelor mai puțin ostile.
+
+CONTROLENV_3_NAME    | Medii Moarte Controlate
+CONTROLENV_3_ITEM    | Bază Colonială pe Planete Moarte
+CONTROLENV_3_BRIEF   | Permite colonizarea Planetelor Moarte
+CONTROLENV_3_DETAIL  | Permite colonizarea Planetelor Moarte și a planetelor mai puțin ostile.
+
+CONTROLENV_4_NAME    | Medii Infernale Controlate
+CONTROLENV_4_ITEM    | Bază Colonială pe Planete Infernale
+CONTROLENV_4_BRIEF   | Permite colonizarea Planetelor Infernale
+CONTROLENV_4_DETAIL  | Permite colonizarea Planetelor Infernale și a planetelor mai puțin ostile.
+
+CONTROLENV_5_NAME    | Medii Toxice Controlate
+CONTROLENV_5_ITEM    | Bază Colonială pe Planete Toxice
+CONTROLENV_5_BRIEF   | Permite colonizarea Planetelor Toxice
+CONTROLENV_5_DETAIL  | Permite colonizarea Planetelor Toxice și a planetelor mai puțin ostile.
+
+CONTROLENV_6_NAME    | Medii Iradiate Controlate
+CONTROLENV_6_ITEM    | Bază Colonială pe Planete Iradiate
+CONTROLENV_6_BRIEF   | Permite colonizarea Planetelor Iradiate
+CONTROLENV_6_DETAIL  | Permite colonizarea Planetelor Iradiate și a planetelor mai puțin ostile.
+
+
+//
+// Deflector Shield tech
+//
+// this is the entry on Ship Design for selecting no deflector shield
+DEFLECTOR_0_NAME      | 
+DEFLECTOR_0_ITEM      |   
+DEFLECTOR_0_BRIEF     |  
+DEFLECTOR_0_DETAIL    | 
+
+DEFLECTOR_1_NAME      | Scut Deflector Clasa I
+DEFLECTOR_1_ITEM      | Clasa I
+DEFLECTOR_1_BRIEF     | Absoarbe o lovitură
+DEFLECTOR_1_DETAIL    | Absoarbe un punct de daune din toate atacurile.
+
+DEFLECTOR_2_NAME      | Scut Deflector Clasa II
+DEFLECTOR_2_ITEM      | Clasa II
+DEFLECTOR_2_BRIEF     | Absoarbe 2 lovituri
+DEFLECTOR_2_DETAIL    | Absoarbe 2 puncte de daune din toate atacurile.
+
+DEFLECTOR_3_NAME      | Scut Deflector Clasa III
+DEFLECTOR_3_ITEM      | Clasa III
+DEFLECTOR_3_BRIEF     | Absoarbe 3 lovituri
+DEFLECTOR_3_DETAIL    | Absoarbe 3 puncte de daune din toate atacurile.
+
+DEFLECTOR_4_NAME      | Scut Deflector Clasa IV
+DEFLECTOR_4_ITEM      | Clasa IV
+DEFLECTOR_4_BRIEF     | Absoarbe 4 lovituri
+DEFLECTOR_4_DETAIL    | Absoarbe 4 puncte de daune din toate atacurile.
+
+DEFLECTOR_5_NAME      | Scut Deflector Clasa V
+DEFLECTOR_5_ITEM      | Clasa V
+DEFLECTOR_5_BRIEF     | Absoarbe 5 lovituri
+DEFLECTOR_5_DETAIL    | Absoarbe 5 puncte de daune din toate atacurile.
+
+DEFLECTOR_6_NAME      | Scut Deflector Clasa VI
+DEFLECTOR_6_ITEM      | Clasa VI
+DEFLECTOR_6_BRIEF     | Absoarbe 6 lovituri
+DEFLECTOR_6_DETAIL    | Absoarbe 6 puncte de daune din toate atacurile.
+
+DEFLECTOR_7_NAME      | Scut Deflector Clasa VII
+DEFLECTOR_7_ITEM      | Clasa VII
+DEFLECTOR_7_BRIEF     | Absoarbe 7 lovituri
+DEFLECTOR_7_DETAIL    | Absoarbe 7 puncte de daune din toate atacurile.
+
+DEFLECTOR_8_NAME      | Scut Deflector Clasa IX
+DEFLECTOR_8_ITEM      | Clasa IX
+DEFLECTOR_8_BRIEF     | Absoarbe 9 lovituri
+DEFLECTOR_8_DETAIL    | Absoarbe 9 puncte de daune din toate atacurile.
+
+DEFLECTOR_9_NAME      | Scut Deflector Clasa XI
+DEFLECTOR_9_ITEM      | Clasa XI
+DEFLECTOR_9_BRIEF     | Absoarbe 11 lovituri
+DEFLECTOR_9_DETAIL    | Absoarbe 11 puncte de daune din toate atacurile.
+
+DEFLECTOR_10_NAME     | Scut Deflector Clasa XIII
+DEFLECTOR_10_ITEM     | Clasa XIII
+DEFLECTOR_10_BRIEF    | Absoarbe 13 lovituri
+DEFLECTOR_10_DETAIL   | Absoarbe 13 puncte de daune din toate atacurile.
+
+DEFLECTOR_11_NAME     | Scut Deflector Clasa XV
+DEFLECTOR_11_ITEM     | Clasa XV
+DEFLECTOR_11_BRIEF    | Absoarbe 15 lovituri
+DEFLECTOR_11_DETAIL   | Absoarbe 15 puncte de daune din toate atacurile.
+
+
+//
+// Displacement tech
+//
+DISPLACEMENT_0_NAME   | Dispozitiv de Dislocare
+DISPLACEMENT_0_BRIEF  | 1/3 din atacurile inamicilor ratează
+DISPLACEMENT_0_DETAIL | Dislocă la întâmplare toate navele echipate cu acest dispozitiv, permițându-le să evite 1/3 din toate atacurile inamice ce nu au o arie de efect.
+
+
+//
+// Bruiaj Anti-Rachete tech
+//
+// this is the entry on Ship Design for selecting no Bruiaj Anti-Rachete
+ECMJAMMER_0_NAME      | 
+ECMJAMMER_0_ITEM      | 
+ECMJAMMER_0_BRIEF     | Apărare Anti-Rachete 0
+ECMJAMMER_0_DETAIL    | 
+
+ECMJAMMER_1_NAME      | Bruiaj Anti-Rachete Marca I
+ECMJAMMER_1_ITEM      | Bruiaj I
+ECMJAMMER_1_BRIEF     | Apărare Anti-Rachete 1
+ECMJAMMER_1_DETAIL    | Adaugă un nivel de apărare împotriva atacurilor cu rachetelor ale inamicilor.
+
+ECMJAMMER_2_NAME      | Bruiaj Anti-Rachete Marca II
+ECMJAMMER_2_ITEM      | Bruiaj II
+ECMJAMMER_2_BRIEF     | Apărare Anti-Rachete 2
+ECMJAMMER_2_DETAIL    | Adaugă 2 nivele de apărare împotriva atacurilor cu rachetelor ale inamicilor. 
+
+ECMJAMMER_3_NAME      | Bruiaj Anti-Rachete Marca III
+ECMJAMMER_3_ITEM      | Bruiaj III
+ECMJAMMER_3_BRIEF     | Apărare Anti-Rachete 3
+ECMJAMMER_3_DETAIL    | Adaugă 3 nivele de apărare împotriva atacurilor cu rachetelor ale inamicilor. 
+
+ECMJAMMER_4_NAME      | Bruiaj Anti-Rachete Marca IV
+ECMJAMMER_4_ITEM      | Bruiaj IV
+ECMJAMMER_4_BRIEF     | Apărare Anti-Rachete 4
+ECMJAMMER_4_DETAIL    | Adaugă 4 nivele de apărare împotriva atacurilor cu rachetelor ale inamicilor. 
+
+ECMJAMMER_5_NAME      | Bruiaj Anti-Rachete Marca V
+ECMJAMMER_5_ITEM      | Bruiaj V
+ECMJAMMER_5_BRIEF     | Apărare Anti-Rachete 5
+ECMJAMMER_5_DETAIL    | Adaugă 5 nivele de apărare împotriva atacurilor cu rachetelor ale inamicilor. 
+
+ECMJAMMER_6_NAME      | Bruiaj Anti-Rachete Marca VI
+ECMJAMMER_6_ITEM      | Bruiaj VI
+ECMJAMMER_6_BRIEF     | Apărare Anti-Rachete 6
+ECMJAMMER_6_DETAIL    | Adaugă 6 nivele de apărare împotriva atacurilor cu rachetelor ale inamicilor. 
+
+ECMJAMMER_7_NAME      | Bruiaj Anti-Rachete Marca VII
+ECMJAMMER_7_ITEM      | Bruiaj VII
+ECMJAMMER_7_BRIEF     | Apărare Anti-Rachete 7
+ECMJAMMER_7_DETAIL    | Adaugă 7 nivele de apărare împotriva atacurilor cu rachetelor ale inamicilor. 
+
+ECMJAMMER_8_NAME      | Bruiaj Anti-Rachete Marca VIII
+ECMJAMMER_8_ITEM      | Bruiaj VIII
+ECMJAMMER_8_BRIEF     | Apărare Anti-Rachete 8
+ECMJAMMER_8_DETAIL    | Adaugă 8 nivele de apărare împotriva atacurilor cu rachetelor ale inamicilor. 
+
+ECMJAMMER_9_NAME      | Bruiaj Anti-Rachete Marca IX
+ECMJAMMER_9_ITEM      | Bruiaj IX
+ECMJAMMER_9_BRIEF     | Apărare Anti-Rachete 9
+ECMJAMMER_9_DETAIL    | Adaugă 9 nivele de apărare împotriva atacurilor cu rachetelor ale inamicilor. 
+
+ECMJAMMER_10_NAME     | Bruiaj Anti-Rachete Marca X
+ECMJAMMER_10_ITEM     | Bruiaj X
+ECMJAMMER_10_BRIEF    | Apărare Anti-Rachete 10
+ECMJAMMER_10_DETAIL   | Adaugă 10 nivele de apărare împotriva atacurilor cu rachetelor ale inamicilor. 
+
+
+//
+// Ecological Restoration techs
+//
+ECORESTORATION_0_NAME   | Restaurarea Ecologică
+ECORESTORATION_0_DETAIL | Elimină 2 unități de deșeuri industriale pentru un cost de 1 BC.
+
+ECORESTORATION_1_NAME   | Restaurarea Ecologică Îmbunătățită
+ECORESTORATION_1_DETAIL | Elimină 3 unități de deșeuri industriale pentru un cost de 1 BC.
+
+ECORESTORATION_2_NAME   | Restaurarea Ecologică Superioară
+ECORESTORATION_2_DETAIL | Elimină 5 unități de deșeuri industriale pentru un cost de 1 BC.
+
+ECORESTORATION_3_NAME   | Restaurarea Ecologică Avansată
+ECORESTORATION_3_DETAIL | Elimină 10 unități de deșeuri industriale pentru un cost de 1 BC.
+
+ECORESTORATION_4_NAME   | Restaurarea Ecologică Completă
+ECORESTORATION_4_DETAIL | Elimină 20 unități de deșeuri industriale pentru un cost de 1 BC.
+
+
+//
+// Energy Pulsar techs
+//
+PULSAR_0_NAME     | Pulsar Energetic
+PULSAR_0_BRIEF    | Atac pentru a provoca 1-5 lovituri.
+PULSAR_0_DETAIL   | O modificare a motorului capabilă să genereze o speră de energie ce lovește toate navele din împrejurimi pentru a provoca până la 5 puncte de daune +1 pentru fiecare 2 nave care iau parte la atac.
+
+PULSAR_1_NAME     | Pulsar Ionic
+PULSAR_1_BRIEF    | Atac pentru a provoca 5-10 lovituri.
+PULSAR_1_DETAIL   | O modificare puternică a motorului capabilă să genereze o speră de energie ce lovește toate navele din împrejurimi pentru a provoca până la 10 puncte de daune +1 pentru fiecare navă care ia parte la atac.
+
+
+//
+// Engine techs
+//
+ENGINE_0_NAME    | Motoare Retro 
+ENGINE_0_DETAIL  | Propulsează navele la Warp %1, și oferă un nivel de mobilitate de clasa I în luptă.
+ENGINE_0_ITEM    | Retro
+ENGINE_0_ITEM2   | Clasa 1
+ENGINE_0_BRIEF   | Warp 1  Apărare %1
+ENGINE_0_BRIEF2  | Viteză în Luptă %1
+
+ENGINE_1_NAME    | Motoare Nucleare 
+ENGINE_1_DETAIL  | Propulsează navele la Warp %1, și oferă un nivel de mobilitate de clasa II în luptă.
+ENGINE_1_ITEM    | Nuclear
+ENGINE_1_ITEM2   | Clasa 2
+ENGINE_1_BRIEF   | Warp 2  Apărare %1
+ENGINE_1_BRIEF2  | Viteză în Luptă %1
+
+ENGINE_2_NAME    | Motoare Sub-Solare 
+ENGINE_2_DETAIL  | Propulsează navele la Warp %1, și oferă un nivel de mobilitate de clasa III în luptă.
+ENGINE_2_ITEM    | Sub-Solar
+ENGINE_2_ITEM2   | Clasa 3
+ENGINE_2_BRIEF   | Warp 3  Apărare %1
+ENGINE_2_BRIEF2  | Viteză în Luptă %1
+
+ENGINE_3_NAME    | Motoare pe Fuziune 
+ENGINE_3_DETAIL  | Propulsează navele la Warp %1, și oferă un nivel de mobilitate de clasa IV în luptă.
+ENGINE_3_ITEM    | Fuziune
+ENGINE_3_ITEM2   | Clasa 4
+ENGINE_3_BRIEF   | Warp 4  Apărare %1
+ENGINE_3_BRIEF2  | Viteză în Luptă %1
+
+ENGINE_4_NAME    | Motoare pe Impuls 
+ENGINE_4_DETAIL  | Propulsează navele la Warp %1, și oferă un nivel de mobilitate de clasa V în luptă.
+ENGINE_4_ITEM    | Impuls
+ENGINE_4_ITEM2   | Clasa 5
+ENGINE_4_BRIEF   | Warp 5  Apărare %1
+ENGINE_4_BRIEF2  | Viteză în Luptă %1
+
+ENGINE_5_NAME    | Motoare pe Ioni 
+ENGINE_5_DETAIL  | Propulsează navele la Warp %1, și oferă un nivel de mobilitate de clasa VI în luptă.
+ENGINE_5_ITEM    | Ion
+ENGINE_5_ITEM2   | Clasa 6
+ENGINE_5_BRIEF   | Warp 6  Apărare %1
+ENGINE_5_BRIEF2  | Viteză în Luptă %1
+
+ENGINE_6_NAME    | Motoare Anti-Materie 
+ENGINE_6_DETAIL  | Propulsează navele la Warp %1, și oferă un nivel de mobilitate de clasa VII în luptă.
+ENGINE_6_ITEM    | Anti-Materie
+ENGINE_6_ITEM2   | Clasa 7
+ENGINE_6_BRIEF   | Warp 7  Apărare %1
+ENGINE_6_BRIEF2  | Viteză în Luptă %1
+
+ENGINE_7_NAME    | Motoare Inter-Faze
+ENGINE_7_DETAIL  | Propulsează navele la Warp %1, și oferă un nivel de mobilitate de clasa VIII în luptă.
+ENGINE_7_ITEM    | Inter-Faze
+ENGINE_7_ITEM2   | Clasa 8
+ENGINE_7_BRIEF   | Warp 8  Apărare %1
+ENGINE_7_BRIEF2  | Viteză în Luptă %1
+
+ENGINE_8_NAME    | Hyper-Motoare
+ENGINE_8_DETAIL  | Propulsează navele la Warp %1, și oferă un nivel de mobilitate de clasa IX în luptă.
+ENGINE_8_ITEM    | Hyper
+ENGINE_8_ITEM2   | Clasa 9
+ENGINE_8_BRIEF   | Warp 9  Apărare %1
+ENGINE_8_BRIEF2  | Viteză în Luptă %1
+
+
+//
+// Fuel Range techs
+//
+FUELRANGE_0_NAME   | Rezervoare de Combustibil
+FUELRANGE_0_DETAIL | Rezerve de combustibil ce permit navelor să se deplaseze până la %1 ani-lumină depărtare față de planetele colonizate.
+
+FUELRANGE_1_NAME   | Rezervoare de Combustibil de Hidrogen
+FUELRANGE_1_DETAIL | Rezerve de combustibil ce permit navelor să se deplaseze până la %1 ani-lumină depărtare față de planetele colonizate.
+
+FUELRANGE_2_NAME   | Rezervoare de Combustibil de Deuteriu
+FUELRANGE_2_DETAIL | Rezerve de combustibil ce permit navelor să se deplaseze până la %1 ani-lumină depărtare față de planetele colonizate.
+
+FUELRANGE_3_NAME   | Rezervoare de Combustibil de Iridiu
+FUELRANGE_3_DETAIL | Rezerve de combustibil ce permit navelor să se deplaseze până la %1 ani-lumină depărtare față de planetele colonizate.
+
+FUELRANGE_4_NAME   | Rezervoare de Combustibil de Dotomit
+FUELRANGE_4_DETAIL | Rezerve de combustibil ce permit navelor să se deplaseze până la %1 ani-lumină depărtare față de planetele colonizate.
+
+FUELRANGE_5_NAME   | Rezervoare de Combustibil de Uridiu
+FUELRANGE_5_DETAIL | Rezerve de combustibil ce permit navelor să se deplaseze până la %1 ani-lumină depărtare față de planetele colonizate.
+
+FUELRANGE_6_NAME   | Rezervoare de Combustibil de Reajax
+FUELRANGE_6_DETAIL | Rezerve de combustibil ce permit navelor să se deplaseze până la %1 ani-lumină depărtare față de planetele colonizate.
+
+FUELRANGE_7_NAME   | Rezervoare de Combustibil de Trilitiu
+FUELRANGE_7_DETAIL | Rezerve de combustibil ce permit navelor să se deplaseze până la %1 ani-lumină depărtare față de planetele colonizate.
+
+FUELRANGE_8_NAME   | Rezervoare de Combustibil de Toriu
+FUELRANGE_8_DETAIL | Rezerve de combustibil ce permit navelor să se deplaseze orice distanță față de planetele colonizate.
+
+
+//
+// Future Computer techs
+//
+FUTURECOMP_0_NAME    | Computerul Viitorului I
+FUTURECOMP_0_DETAIL  | Îmbunătățiri Generale în Tehnologia Computerelor.
+
+FUTURECOMP_1_NAME    | Computerul Viitorului II
+FUTURECOMP_1_DETAIL  | Îmbunătățiri Generale în Tehnologia Computerelor.
+
+FUTURECOMP_2_NAME    | Computerul Viitorului III
+FUTURECOMP_2_DETAIL  | Îmbunătățiri Generale în Tehnologia Computerelor.
+
+FUTURECOMP_3_NAME    | Computerul Viitorului IV
+FUTURECOMP_3_DETAIL  | Îmbunătățiri Generale în Tehnologia Computerelor.
+
+FUTURECOMP_4_NAME    | Computerul Viitorului V
+FUTURECOMP_4_DETAIL  | Îmbunătățiri Generale în Tehnologia Computerelor.
+
+FUTURECOMP_5_NAME    | Computerul Viitorului VI
+FUTURECOMP_5_DETAIL  | Îmbunătățiri Generale în Tehnologia Computerelor.
+
+FUTURECOMP_6_NAME    | Computerul Viitorului VII
+FUTURECOMP_6_DETAIL  | Îmbunătățiri Generale în Tehnologia Computerelor.
+
+FUTURECOMP_7_NAME    | Computerul Viitorului VIII
+FUTURECOMP_7_DETAIL  | Îmbunătățiri Generale în Tehnologia Computerelor.
+
+FUTURECOMP_8_NAME    | Computerul Viitorului IX
+FUTURECOMP_8_DETAIL  | Îmbunătățiri Generale în Tehnologia Computerelor.
+
+FUTURECOMP_9_NAME    | Computerul Viitorului X
+FUTURECOMP_9_DETAIL  | Îmbunătățiri Generale în Tehnologia Computerelor.
+
+
+//
+// Future Construction techs
+//
+FUTURECONST_0_NAME    | Construcțiile Viitorului I
+FUTURECONST_0_DETAIL  | Îmbunătățiri Generale în Tehnologia Construcțiilor.
+
+FUTURECONST_1_NAME    | Construcțiile Viitorului II
+FUTURECONST_1_DETAIL  | Îmbunătățiri Generale în Tehnologia Construcțiilor.
+
+FUTURECONST_2_NAME    | Construcțiile Viitorului III
+FUTURECONST_2_DETAIL  | Îmbunătățiri Generale în Tehnologia Construcțiilor.
+
+FUTURECONST_3_NAME    | Construcțiile Viitorului IV
+FUTURECONST_3_DETAIL  | Îmbunătățiri Generale în Tehnologia Construcțiilor.
+
+FUTURECONST_4_NAME    | Construcțiile Viitorului V
+FUTURECONST_4_DETAIL  | Îmbunătățiri Generale în Tehnologia Construcțiilor.
+
+FUTURECONST_5_NAME    | Construcțiile Viitorului VI
+FUTURECONST_5_DETAIL  | Îmbunătățiri Generale în Tehnologia Construcțiilor.
+
+FUTURECONST_6_NAME    | Construcțiile Viitorului VII
+FUTURECONST_6_DETAIL  | Îmbunătățiri Generale în Tehnologia Construcțiilor.
+
+FUTURECONST_7_NAME    | Construcțiile Viitorului VIII
+FUTURECONST_7_DETAIL  | Îmbunătățiri Generale în Tehnologia Construcțiilor.
+
+FUTURECONST_8_NAME    | Construcțiile Viitorului IX
+FUTURECONST_8_DETAIL  | Îmbunătățiri Generale în Tehnologia Construcțiilor.
+
+FUTURECONST_9_NAME    | Construcțiile Viitorului X
+FUTURECONST_9_DETAIL  | Îmbunătățiri Generale în Tehnologia Construcțiilor.
+
+
+//
+// Future Force Field techs
+//
+FUTUREFORCE_0_NAME    | Câmpuri de Forțe ale Viitorului I
+FUTUREFORCE_0_DETAIL  | Îmbunătățiri Generale în Tehnologia Câmpurilor de Forțe.
+
+FUTUREFORCE_1_NAME    | Câmpuri de Forțe ale Viitorului II
+FUTUREFORCE_1_DETAIL  | Îmbunătățiri Generale în Tehnologia Câmpurilor de Forțe.
+
+FUTUREFORCE_2_NAME    | Câmpuri de Forțe ale Viitorului III
+FUTUREFORCE_2_DETAIL  | Îmbunătățiri Generale în Tehnologia Câmpurilor de Forțe.
+
+FUTUREFORCE_3_NAME    | Câmpuri de Forțe ale Viitorului IV
+FUTUREFORCE_3_DETAIL  | Îmbunătățiri Generale în Tehnologia Câmpurilor de Forțe.
+
+FUTUREFORCE_4_NAME    | Câmpuri de Forțe ale Viitorului V
+FUTUREFORCE_4_DETAIL  | Îmbunătățiri Generale în Tehnologia Câmpurilor de Forțe.
+
+FUTUREFORCE_5_NAME    | Câmpuri de Forțe ale Viitorului VI
+FUTUREFORCE_5_DETAIL  | Îmbunătățiri Generale în Tehnologia Câmpurilor de Forțe.
+
+FUTUREFORCE_6_NAME    | Câmpuri de Forțe ale Viitorului VII
+FUTUREFORCE_6_DETAIL  | Îmbunătățiri Generale în Tehnologia Câmpurilor de Forțe.
+
+FUTUREFORCE_7_NAME    | Câmpuri de Forțe ale Viitorului VIII
+FUTUREFORCE_7_DETAIL  | Îmbunătățiri Generale în Tehnologia Câmpurilor de Forțe.
+
+FUTUREFORCE_8_NAME    | Câmpuri de Forțe ale Viitorului IX
+FUTUREFORCE_8_DETAIL  | Îmbunătățiri Generale în Tehnologia Câmpurilor de Forțe.
+
+FUTUREFORCE_9_NAME    | Câmpuri de Forțe ale Viitorului X
+FUTUREFORCE_9_DETAIL  | Îmbunătățiri Generale în Tehnologia Câmpurilor de Forțe.
+
+
+//
+// Planetologia Viitorului techs
+//
+FUTUREPLANET_0_NAME    | Planetologia Viitorului I
+FUTUREPLANET_0_DETAIL  | Îmbunătățiri Generale în Tehnologia Planetologiei.
+
+FUTUREPLANET_1_NAME    | Planetologia Viitorului II
+FUTUREPLANET_1_DETAIL  | Îmbunătățiri Generale în Tehnologia Planetologiei.
+
+FUTUREPLANET_2_NAME    | Planetologia Viitorului III
+FUTUREPLANET_2_DETAIL  | Îmbunătățiri Generale în Tehnologia Planetologiei.
+
+FUTUREPLANET_3_NAME    | Planetologia Viitorului IV
+FUTUREPLANET_3_DETAIL  | Îmbunătățiri Generale în Tehnologia Planetologiei.
+
+FUTUREPLANET_4_NAME    | Planetologia Viitorului V
+FUTUREPLANET_4_DETAIL  | Îmbunătățiri Generale în Tehnologia Planetologiei.
+
+FUTUREPLANET_5_NAME    | Planetologia Viitorului VI
+FUTUREPLANET_5_DETAIL  | Îmbunătățiri Generale în Tehnologia Planetologiei.
+
+FUTUREPLANET_6_NAME    | Planetologia Viitorului VII
+FUTUREPLANET_6_DETAIL  | Îmbunătățiri Generale în Tehnologia Planetologiei.
+
+FUTUREPLANET_7_NAME    | Planetologia Viitorului VIII
+FUTUREPLANET_7_DETAIL  | Îmbunătățiri Generale în Tehnologia Planetologiei.
+
+FUTUREPLANET_8_NAME    | Planetologia Viitorului IX
+FUTUREPLANET_8_DETAIL  | Îmbunătățiri Generale în Tehnologia Planetologiei.
+
+FUTUREPLANET_9_NAME    | Planetologia Viitorului X
+FUTUREPLANET_9_DETAIL  | Îmbunătățiri Generale în Tehnologia Planetologiei.
+
+
+//
+// Propulsia Viitorului techs
+//
+FUTUREPROP_0_NAME    | Propulsia Viitorului I 
+FUTUREPROP_0_DETAIL  | Îmbunătățiri Generale în Tehnologia Propulsiei.
+
+FUTUREPROP_1_NAME    | Propulsia Viitorului II
+FUTUREPROP_1_DETAIL  | Îmbunătățiri Generale în Tehnologia Propulsiei.
+
+FUTUREPROP_2_NAME    | Propulsia Viitorului III
+FUTUREPROP_2_DETAIL  | Îmbunătățiri Generale în Tehnologia Propulsiei.
+
+FUTUREPROP_3_NAME    | Propulsia Viitorului IV
+FUTUREPROP_3_DETAIL  | Îmbunătățiri Generale în Tehnologia Propulsiei.
+
+FUTUREPROP_4_NAME    | Propulsia Viitorului V
+FUTUREPROP_4_DETAIL  | Îmbunătățiri Generale în Tehnologia Propulsiei.
+
+FUTUREPROP_5_NAME    | Propulsia Viitorului VI
+FUTUREPROP_5_DETAIL  | Îmbunătățiri Generale în Tehnologia Propulsiei.
+
+FUTUREPROP_6_NAME    | Propulsia Viitorului VII
+FUTUREPROP_6_DETAIL  | Îmbunătățiri Generale în Tehnologia Propulsiei.
+
+FUTUREPROP_7_NAME    | Propulsia Viitorului VIII
+FUTUREPROP_7_DETAIL  | Îmbunătățiri Generale în Tehnologia Propulsiei.
+
+FUTUREPROP_8_NAME    | Propulsia Viitorului IX
+FUTUREPROP_8_DETAIL  | Îmbunătățiri Generale în Tehnologia Propulsiei.
+
+FUTUREPROP_9_NAME    | Propulsia Viitorului X
+FUTUREPROP_9_DETAIL  | Îmbunătățiri Generale în Tehnologia Propulsiei.
+
+
+//
+// Armamentul Viitorului techs
+//
+FUTUREWEAPON_0_NAME    | Armamentul Viitorului I
+FUTUREWEAPON_0_DETAIL  | Îmbunătățiri Generale în Tehnologia Armamentului.
+
+FUTUREWEAPON_1_NAME    | Armamentul Viitorului II
+FUTUREWEAPON_1_DETAIL  | Îmbunătățiri Generale în Tehnologia Armamentului.
+
+FUTUREWEAPON_2_NAME    | Armamentul Viitorului III
+FUTUREWEAPON_2_DETAIL  | Îmbunătățiri Generale în Tehnologia Armamentului.
+
+FUTUREWEAPON_3_NAME    | Armamentul Viitorului IV
+FUTUREWEAPON_3_DETAIL  | Îmbunătățiri Generale în Tehnologia Armamentului.
+
+FUTUREWEAPON_4_NAME    | Armamentul Viitorului V
+FUTUREWEAPON_4_DETAIL  | Îmbunătățiri Generale în Tehnologia Armamentului.
+
+FUTUREWEAPON_5_NAME    | Armamentul Viitorului VI
+FUTUREWEAPON_5_DETAIL  | Îmbunătățiri Generale în Tehnologia Armamentului.
+
+FUTUREWEAPON_6_NAME    | Armamentul Viitorului VII 
+FUTUREWEAPON_6_DETAIL  | Îmbunătățiri Generale în Tehnologia Armamentului.
+
+FUTUREWEAPON_7_NAME    | Armamentul Viitorului VIII
+FUTUREWEAPON_7_DETAIL  | Îmbunătățiri Generale în Tehnologia Armamentului.
+
+FUTUREWEAPON_8_NAME    | Armamentul Viitorului IX
+FUTUREWEAPON_8_DETAIL  | Îmbunătățiri Generale în Tehnologia Armamentului.
+
+FUTUREWEAPON_9_NAME    | Armamentul Viitorului X
+FUTUREWEAPON_9_DETAIL  | Îmbunătățiri Generale în Tehnologia Armamentului. 
+
+
+//
+// Hand Weapon techs
+//
+HANDWEAPON_0_NAME      | 
+HANDWEAPON_0_DETAIL    | 
+
+HANDWEAPON_1_NAME      | Lasere Personale
+HANDWEAPON_1_DETAIL    | Arme personale ce adaugă 5 puncte în calcularea luptelor terestre.
+
+HANDWEAPON_2_NAME      | Pușcă pe bază de Ioni
+HANDWEAPON_2_DETAIL    | Arme personale ce adaugă 10 puncte în calcularea luptelor terestre.
+
+HANDWEAPON_3_NAME      | Pușcă pe bază de Fuziune
+HANDWEAPON_3_DETAIL    | Arme personale ce adaugă 20 puncte în calcularea luptelor terestre.
+
+HANDWEAPON_4_NAME      | Pușcă Fazică
+HANDWEAPON_4_DETAIL    | Arme personale ce adaugă 25 puncte în calcularea luptelor terestre.
+
+HANDWEAPON_5_NAME      | Pușcă pe bază de Plasmă
+HANDWEAPON_5_DETAIL    | Arme personale ce adaugă 30 puncte în calcularea luptelor terestre.
+
+
+//
+// Hyperspace Communication tech
+//
+HYPERSPACE_0_NAME      | Comunicații Hyper-Spațiale
+HYPERSPACE_0_DETAIL    | Permite comunicarea cu navele aflate în hyper-spațiu, și schimbarea destinației acestora.
+
+
+//
+// Improved Industrial techs
+//
+IMPRINDUSTRY_0_NAME     | Tehnologie Industrială Îmbunătățită 9 
+IMPRINDUSTRY_0_DETAIL   | Reduce prețul de construcție al fabricilor la 9 BC fiecare.
+
+IMPRINDUSTRY_1_NAME     | Tehnologie Industrială Îmbunătățită 8
+IMPRINDUSTRY_1_DETAIL   | Reduce prețul de construcție al fabricilor la 8 BC fiecare.
+
+IMPRINDUSTRY_2_NAME     | Tehnologie Industrială Îmbunătățită 7
+IMPRINDUSTRY_2_DETAIL   | Reduce prețul de construcție al fabricilor la 7 BC fiecare.
+
+IMPRINDUSTRY_3_NAME     | Tehnologie Industrială Îmbunătățită 6
+IMPRINDUSTRY_3_DETAIL   | Reduce prețul de construcție al fabricilor la 6 BC fiecare.
+
+IMPRINDUSTRY_4_NAME     | Tehnologie Industrială Îmbunătățită 5
+IMPRINDUSTRY_4_DETAIL   | Reduce prețul de construcție al fabricilor la 5 BC fiecare.
+
+IMPRINDUSTRY_5_NAME     | Tehnologie Industrială Îmbunătățită 4
+IMPRINDUSTRY_5_DETAIL   | Reduce prețul de construcție al fabricilor la 4 BC fiecare.
+
+IMPRINDUSTRY_6_NAME     | Tehnologie Industrială Îmbunătățită 3
+IMPRINDUSTRY_6_DETAIL   | Reduce prețul de construcție al fabricilor la 3 BC fiecare.
+
+IMPRINDUSTRY_7_NAME     | Tehnologie Industrială Îmbunătățită 2
+IMPRINDUSTRY_7_DETAIL   | Reduce prețul de construcție al fabricilor la 2 BC fiecare.
+
+
+//
+// Improved Terraforming techs
+//
+IMPRTFORM_0_NAME        | Terraformare Îmbunătățită +10 
+IMPRTFORM_0_DETAIL      | Crește capacitatea de populație a planetelor cu 10M pentru un cost de 5BC pe milion.
+
+IMPRTFORM_1_NAME        | Terraformare Îmbunătățită +20
+IMPRTFORM_1_DETAIL      | Crește capacitatea de populație a planetelor cu 20M pentru un cost de 5BC pe milion.
+
+IMPRTFORM_2_NAME        | Terraformare Îmbunătățită +30
+IMPRTFORM_2_DETAIL      | Crește capacitatea de populație a planetelor cu 30M pentru un cost de 4BC pe milion.
+
+IMPRTFORM_3_NAME        | Terraformare Îmbunătățită +40
+IMPRTFORM_3_DETAIL      | Crește capacitatea de populație a planetelor cu 40M pentru un cost de 4BC pe milion.
+
+IMPRTFORM_4_NAME        | Terraformare Îmbunătățită +50
+IMPRTFORM_4_DETAIL      | Crește capacitatea de populație a planetelor cu 50M pentru un cost de 3BC pe milion.
+
+IMPRTFORM_5_NAME        | Terraformare Îmbunătățită +60
+IMPRTFORM_5_DETAIL      | Crește capacitatea de populație a planetelor cu 60M pentru un cost de 3BC pe milion.
+
+IMPRTFORM_6_NAME        | Terraformare Îmbunătățită +80
+IMPRTFORM_6_DETAIL      | Crește capacitatea de populație a planetelor cu 80M pentru un cost de 2BC pe milion.
+
+IMPRTFORM_7_NAME        | Terraformare Îmbunătățită +100
+IMPRTFORM_7_DETAIL      | Crește capacitatea de populație a planetelor cu 100M pentru un cost de 2BC pe milion.
+
+IMPRTFORM_8_NAME        | Terraformare Completă
+IMPRTFORM_8_DETAIL      | Crește capacitatea de populație a planetelor cu 120M pentru un cost de 2BC pe milion.
+
+
+//
+// Industrial Waste techs
+//
+INDWASTE_0_NAME         | Reducerea Deșeurilor Industriale 80% 
+INDWASTE_0_DETAIL       | Scade rata de poluare a fabricilor la 80% din rata normală a acesteia.
+
+INDWASTE_1_NAME         | Reducerea Deșeurilor Industriale 60%
+INDWASTE_1_DETAIL       | Scade rata de poluare a fabricilor la 60% din rata normală a acesteia.
+
+INDWASTE_2_NAME         | Reducerea Deșeurilor Industriale 40%
+INDWASTE_2_DETAIL       | Scade rata de poluare a fabricilor la 40% din rata normală a acesteia.
+
+INDWASTE_3_NAME         | Reducerea Deșeurilor Industriale 20%
+INDWASTE_3_DETAIL       | Scade rata de poluare a fabricilor la 20% din rata normală a acesteia.
+
+INDWASTE_4_NAME         | Eliminarea Deșeurilor Industriale
+INDWASTE_4_DETAIL       | Fabricile nu mai produc poluare.
+
+
+//
+// Missile Defense techs
+//
+MISSDEF_0_NAME      | Proiectile Anti-Rachetă
+MISSDEF_0_BRIEF     | Șansă de 40% de a elimina rachetele
+MISSDEF_0_DETAIL    | Un sistem anti-rachetă ce distruge rachetele inamicilor 40% din timp, -1% pentru fiecare nivel de tehnologie al rachetelor.
+
+MISSDEF_1_NAME      | Scuturi Zyro
+MISSDEF_1_BRIEF     | Șansă de 75% de a elimina rachetele
+MISSDEF_1_DETAIL    | Un câmp de energie ce distruge rachetele și torpilele inamicilor 75% din timp, -1% pentru fiecare nivel de tehnologie al rachetelor.
+
+MISSDEF_2_NAME      | Scuturi Fulger
+MISSDEF_2_BRIEF     | Șansă de 100% de a elimina rachetele
+MISSDEF_2_DETAIL    | Un câmp de energie ce distruge rachetele și torpilele inamicilor 100% din timp, -1% pentru fiecare nivel de tehnologie al rachetelor.
+
+
+//
+// Missile Weapon techs
+//
+MISSWPN_0_NAME      | Rachete Nucleare
+MISSWPN_0_BRIEF     | 2 focuri, +1 viteză
+MISSWPN_0_BRIEF2    | 5 focuri
+MISSWPN_0_DETAIL    | Rachete care explodează pentru 4 puncte de daune și se mișcă cu o viteză de 2.
+
+MISSWPN_1_NAME      | Rachete Hyper-V
+MISSWPN_1_BRIEF     | 2 focuri, +1 viteză
+MISSWPN_1_BRIEF2    | 5 focuri
+MISSWPN_1_DETAIL    | Rachete care explodează pentru 6 puncte de daune și se mișcă cu o viteză de 2.5.
+
+MISSWPN_2_NAME      | Rachete Hyper-X
+MISSWPN_2_BRIEF     | 2 focuri, +1 să lovească
+MISSWPN_2_BRIEF2    | 5 focuri, +1 să lovească
+MISSWPN_2_DETAIL    | Rachete care explodează pentru 8 puncte de daune și se mișcă cu o viteză de 2.5 și care sunt controlate de un computer de direcționare de nivelul +1.
+
+MISSWPN_3_NAME      | Rachete cu Pachet de Răspândire V
+MISSWPN_3_BRIEF     | 2 focuri, +1 viteză
+MISSWPN_3_BRIEF2    | 5 focuri
+MISSWPN_3_DETAIL    | Versiunea MIRV a Rachetei Hyper-V care se împarte în 5 obuze separate, fiecare explodând pentru 6 puncte de daune și care se mișcă cu o viteză de 2.5.
+
+MISSWPN_4_NAME      | Rachete Merculite
+MISSWPN_4_BRIEF     | 2 focuri, +2 să lovească
+MISSWPN_4_BRIEF2    | 5 focuri, +2 să lovească
+MISSWPN_4_DETAIL    | Rachete care explodează pentru 10 puncte de daune și se mișcă cu o viteză de 3 și care sunt controlate de un computer de direcționare de nivelul +2.
+
+MISSWPN_5_NAME      | Rachete Stinger
+MISSWPN_5_BRIEF     | 2 focuri, +3 să lovească
+MISSWPN_5_BRIEF2    | 5 focuri, +3 să lovească
+MISSWPN_5_DETAIL    | Rachete care explodează pentru 15 puncte de daune și se mișcă cu o viteză de 3.5 și care sunt controlate de un computer de direcționare de nivelul +3.
+
+MISSWPN_6_NAME      | Rachete cu Pachet de Răspândire VII
+MISSWPN_6_BRIEF     | 2 focuri, MIRVS la 7
+MISSWPN_6_BRIEF2    | 5 focuri, MIRVS la 7
+MISSWPN_6_DETAIL    | Versiunea MIRV a Rachetei Hyper-X care se împarte în 7 obuze separate, fiecare explodând pentru 10 puncte de daune, care se mișcă cu o viteză de 3 și care sunt controlate de un computer de direcționare de nivelul +2.
+
+MISSWPN_7_NAME      | Rachete Pulson
+MISSWPN_7_BRIEF     | 2 focuri, +4 să lovească
+MISSWPN_7_BRIEF2    | 5 focuri, +4 să lovească
+MISSWPN_7_DETAIL    | Rachete care explodează pentru 20 puncte de daune și se mișcă cu o viteză de 4 și care sunt controlate de un computer de direcționare de nivelul +4.
+
+MISSWPN_8_NAME      | Rachete Hercular
+MISSWPN_8_BRIEF     | 2 focuri, +5 să lovească
+MISSWPN_8_BRIEF2    | 5 focuri, +5 să lovească
+MISSWPN_8_DETAIL    | Rachete care explodează pentru 25 puncte de daune și se mișcă cu o viteză de 4.5 și care sunt controlate de un computer de direcționare de nivelul +5.
+
+MISSWPN_9_NAME      | Rachete Zeon
+MISSWPN_9_BRIEF     | 2 focuri, +6 să lovească
+MISSWPN_9_BRIEF2    | 5 focuri, +6 să lovească
+MISSWPN_9_DETAIL    | Rachete care explodează pentru 30 puncte de daune și se mișcă cu o viteză de 5 și care sunt controlate de un computer de direcționare de nivelul +6.
+
+MISSWPN_10_NAME      | Rachete cu Pachet de Răspândire X
+MISSWPN_10_BRIEF     | 2 focuri, MIRVS la 10
+MISSWPN_10_BRIEF2    | 5 focuri, MIRVS la 10
+MISSWPN_10_DETAIL    | Versiunea MIRV a Rachetei Hyper-X care se împarte în 10 obuze separate, fiecare explodând pentru 15 puncte de daune, care se mișcă cu o viteză de 3.5 și care sunt controlate de un computer de direcționare de nivelul +3.
+
+
+//
+// Personal Shield techs for ground combat
+//
+// default "no shield" tech that each player starts with
+PERSSHIELD_0_NAME     | 
+PERSSHIELD_0_DETAIL   | 
+
+PERSSHIELD_1_NAME     | Scut Deflector Personal
+PERSSHIELD_1_DETAIL   | Protejează trupele terestre individuale cu un câmp de forțe direcțional. Adaugă +10 la toate luptele terestre.
+
+PERSSHIELD_2_NAME     | Scut Absorbant Personal
+PERSSHIELD_2_DETAIL   | Absoarbe focul tuturor armelor personale ale inamicilor. Adaugă +20 la toate luptele terestre.
+
+PERSSHIELD_3_NAME     | Scut Barieră Personal
+PERSSHIELD_3_DETAIL   | Înconjoară complet soldatul cu un câmp de forțe aproape impenetrabil. Adaugă +30 la toate luptele terestre.
+
+
+//
+// Planetary Shield techs 
+//
+PLANETSHIELD_0_NAME    | Scut Planetar Clasa V
+PLANETSHIELD_0_DETAIL  | Absoarbe 5 puncte de daună din toate atacurile asupra suprafeței planetei, adăugând la scuturile bazelor cu rachete.
+
+PLANETSHIELD_1_NAME    | Scut Planetar Clasa X
+PLANETSHIELD_1_DETAIL  | Absoarbe 10 puncte de daună din toate atacurile asupra suprafeței planetei, adăugând la scuturile bazelor cu rachete.
+
+PLANETSHIELD_2_NAME    | Scut Planetar Clasa XV
+PLANETSHIELD_2_DETAIL  | Absoarbe 15 puncte de daună din toate atacurile asupra suprafeței planetei, adăugând la scuturile bazelor cu rachete.
+
+PLANETSHIELD_3_NAME    | Scut Planetar Clasa XX
+PLANETSHIELD_3_DETAIL  | Absoarbe 20 puncte de daună din toate atacurile asupra suprafeței planetei, adăugând la scuturile bazelor cu rachete.
+
+
+//
+// Repulsor tech 
+//
+REPULSOR_0_NAME    | Laser de Repulsie 
+REPULSOR_0_BRIEF   | Împinge o navă inamică un spațiu în spate.
+REPULSOR_0_DETAIL  | Împinge o navă inamică un spațiu în spate față de nava ce folosește laserul. Această armă specială are o rază de acțiune de un spațiu.
+
+
+//
+// Reserve Fuel tech 
+//
+RSRVFUEL_0_NAME    | Rezervoare de Combustibil de Rezervă
+RSRVFUEL_0_BRIEF   | Extinde Raza de Acțiune a Navelor cu %1 ani-lumină.
+RSRVFUEL_0_DETAIL  | Rezervoare de combustibil de rezervă ce cresc raza de acțiune ale navelor.
+
+
+//
+// Robotic Controls techs 
+//
+ROBOTCTRL_0_NAME     | Controale Robotizate Îmbunătățite III 
+ROBOTCTRL_0_DETAIL   | Permite operarea a 3 fabrici per populație. Costul pentru acest upgrade este prețul standard al fiecărei fabrici.
+
+ROBOTCTRL_1_NAME     | Controale Robotizate Îmbunătățite IV
+ROBOTCTRL_1_DETAIL   | Permite operarea a 4 fabrici per populație. Costul pentru acest upgrade este prețul standard al fiecărei fabrici.
+
+ROBOTCTRL_2_NAME     | Controale Robotizate Îmbunătățite V
+ROBOTCTRL_2_DETAIL   | Permite operarea a 5 fabrici per populație. Costul pentru acest upgrade este x1.5 din prețul standard al fiecărei fabrici.
+
+ROBOTCTRL_3_NAME     | Controale Robotizate Îmbunătățite VI
+ROBOTCTRL_3_DETAIL   | Permite operarea a 6 fabrici per populație. Costul pentru acest upgrade este x2 prețul standard al fiecărei fabrici.
+
+ROBOTCTRL_4_NAME     | Controale Robotizate Îmbunătățite VII
+ROBOTCTRL_4_DETAIL   | Permite operarea a 7 fabrici per populație. Costul pentru acest upgrade este x2.5 prețul standard al fiecărei fabrici.
+
+
+//
+// Scanner techs 
+//
+SCANNER_0_NAME       | Scaner de Luptă
+SCANNER_0_BRIEF      | Scanează navele inamice în luptă
+SCANNER_0_DETAIL     | Dezvăluie specificațiile tehnice ale navelor inamice în luptă.
+
+SCANNER_1_NAME       | Scaner de Luptă cu Rază Lungă
+SCANNER_1_BRIEF      | Detectează navele inamice până la 5 ani-lumină depărtare
+SCANNER_1_DETAIL     | Detectează navele inamice până la 5 ani-lumină depărtare față de coloniile tale și 1 an-lumină față de navele tale.
+
+SCANNER_2_NAME       | Scaner de Luptă Îmbunătățit
+SCANNER_2_BRIEF      | Detectează navele inamice până la 7 ani-lumină depărtare
+SCANNER_2_DETAIL     | Detectează navele inamice până la 7 ani-lumină depărtare față de coloniile tale și 2 ani-lumină față de navele tale. Destinația navelor inamice poate fi determinată.
+
+SCANNER_3_NAME       | Scaner de Luptă Avansat
+SCANNER_3_BRIEF      | Detectează navele inamice până la 9 ani-lumină depărtare
+SCANNER_3_DETAIL     | Permite explorarea planetelor de către bazele coloniale până la 9 ani-lumină depărtare de acestea. De asemenea, navele tale pot detecta navele inamicilor într-o rază de 3 ani-lumină de acestea.
+
+
+//
+// Ship Inertial techs 
+//
+SHIPINERTIAL_0_NAME     | Stabilizator Inerțial
+SHIPINERTIAL_0_BRIEF    | Adaugă +2 la manevrabilitate
+SHIPINERTIAL_0_DETAIL   | Reduce din inerția navelor, adăugând 2 clase de manevrabilitate în luptă (+2 apărare și +1 viteză în luptă).
+
+SHIPINERTIAL_1_NAME     | Anulator Inerțial
+SHIPINERTIAL_1_BRIEF    | Adaugă +4 la manevrabilitate
+SHIPINERTIAL_1_DETAIL   | Elimină inerția navelor, adăugând 4 clase de manevrabilitate în luptă. De asemenea, reduce efectele atacurilor cu găuri negre cu -30%.
+
+
+//
+// Ship Inertial techs 
+//
+SHIPNULLIFIER_0_NAME     | Anulator Tehnologic
+SHIPNULLIFIER_0_BRIEF    | Distruge computerele inamice
+SHIPNULLIFIER_0_DETAIL   | Afectează Computerele de Luptă și sistemele de Bruiaj Anti-Rachetă ale inamicului, reducând 2-6 nivele ale acestora. Raza de acțiune a acestui dispozitiv depășește raza majorității armelor inamice.
+
+SHIPNULLIFIER_1_NAME     | Disipator Spațial
+SHIPNULLIFIER_1_BRIEF    | Reduce din viteza navelor inamice
+SHIPNULLIFIER_1_DETAIL   | Disipatoarele Spațiale sunt arme ce reduc viteza navelor inamice cu fiecare atac.
+
+
+//
+// Ship Weapon techs 
+//
+SHIPWPN_0_NAME         | Laser
+SHIPWPN_0_ITEM2        | Laser Greu
+SHIPWPN_0_DETAIL       | Armă cu raze care provoacă 1-4 puncte de daună. Laserele grele au o rază de două spații și provoacă 1-7 puncte de daună.
+
+SHIPWPN_1_NAME         | Laser Rapid
+SHIPWPN_1_BRIEF        | Trage de 4 ori pe tură
+SHIPWPN_1_DETAIL       | Un laser avansat care trage de patru ori pe tură pentru 1-4 puncte de daună.
+
+SHIPWPN_2_NAME         | Tun cu Pelete Neutronice
+SHIPWPN_2_BRIEF        | Înjumătățește Scuturile
+SHIPWPN_2_DETAIL       | Armă grea care înjumătățește scuturile inamicilor și provoacă între 2 și 5 puncte de daună.
+
+SHIPWPN_3_NAME         | Tun cu Ioni
+SHIPWPN_3_ITEM2        | Tun cu Ioni Greu
+SHIPWPN_3_DETAIL       | Armă de intensitate ridicată care provoacă 3-8 puncte de daună. Tunurile cu Ioni Grele au o rază de două spații și provoacă 3-15 puncte de daună.
+
+SHIPWPN_4_NAME         | Accelerator de Masă
+SHIPWPN_4_BRIEF        | Înjumătățește Scuturile
+SHIPWPN_4_DETAIL       | Un accelerator linear care înjumătățește scuturile inamicilor și provoacă între 5 și 8 puncte de daună.
+
+SHIPWPN_5_NAME         | Tun cu Neutroni
+SHIPWPN_5_ITEM2        | Tun cu Neutroni Greu
+SHIPWPN_5_DETAIL       | Laser de intensitate ridicată care provoacă 3-12 puncte de daună. Tunurile cu Neutroni Grele au o rază de două spații și provoacă 3-24 puncte de daună.
+
+SHIPWPN_6_NAME         | Rază Gravitonică
+SHIPWPN_6_BRIEF        | Atac continuu
+SHIPWPN_6_DETAIL       | Rază cu efect gravitațional ce fărâmă navele inamice. Produce 1-15 puncte de daună, iar aspectul continuu al acesteia permite punctelor de daună în exces să lovească altă navă inamică.
+
+SHIPWPN_7_NAME         | Rază Grea
+SHIPWPN_7_BRIEF        | Înjumătățește Scuturile
+SHIPWPN_7_DETAIL       | Rază grea care înjumătățește scuturile inamicilor și provoacă între 8 și 12 puncte de daună.
+
+SHIPWPN_8_NAME         | Rază de Fuziune
+SHIPWPN_8_ITEM2        | Rază de Fuziune Grea
+SHIPWPN_8_DETAIL       | Rază de intensitate ridicată care provoacă 4-16 puncte de daună. Raza de Fuziune Grea are o rază de două spații și provoacă 4-30 puncte de daună.
+
+SHIPWPN_9_NAME         | Tun Megabolt
+SHIPWPN_9_BRIEF        | +3 nivele să lovească
+SHIPWPN_9_DETAIL       | Lansează multiple raze de energie pură într-o arie de atac mare. Acestea au +30% șanse să lovească navele inamice și provoacă 2-20 de puncte de daună.
+
+SHIPWPN_10_NAME        | Fazor
+SHIPWPN_10_ITEM2       | Fazor Greu
+SHIPWPN_10_DETAIL      | Raze de energie fazice ce provoacă 5-20 puncte de daună. Fazorul Greu are o rază de două spații și provoacă 5-40 puncte de daună.
+
+SHIPWPN_11_NAME        | Auto-Tun de Neutroni
+SHIPWPN_11_BRIEF       | Trage de 3 ori pe tură
+SHIPWPN_11_DETAIL      | O armă grea pe bază de neutroni care trage de trei ori pe tură și provoacă 4-16 puncte de daună.
+
+SHIPWPN_12_NAME        | Rază cu Tahioni
+SHIPWPN_12_BRIEF       | Atac Continuu
+SHIPWPN_12_DETAIL      | Armă ce produce o rază continuă de tahioni ce provoacă 1-25 puncte de daună. Aspectul continuu al acesteia permite punctelor de daună în exces să lovească altă navă inamică.
+
+SHIPWPN_13_NAME        | Accelerator de Masă Automat
+SHIPWPN_13_BRIEF       | Înjumătățește Scuturile, Trage de 4 ori pe tură
+SHIPWPN_13_DETAIL      | Un accelerator linear avansat capabil să tragă 4 obuze explosive ce provoacă 7-10 puncte de daună fiecare. Aceste obuze înjumătățesc scuturile navelor inamice.
+
+SHIPWPN_14_NAME        | Rază de Particule
+SHIPWPN_14_BRIEF       | Înjumătățește Scuturile
+SHIPWPN_14_DETAIL      | Rază de particule de intensitate ridicată ce provoacă 10-20 puncte de daună și înjumătățește scuturile navelor inamice.
+
+SHIPWPN_15_NAME        | Tun de Plasmă
+SHIPWPN_15_DETAIL      | Armă energetică ce provoacă între 6 și 30 de puncte de daună la o rază de 1.
+
+SHIPWPN_16_NAME        | Raza Morții
+SHIPWPN_16_DETAIL      | O armă antică ce deține o putere destructivă inimaginabilă. Provoacă între 200 și 1000 puncte de daună și are o rază de un spațiu.
+
+SHIPWPN_17_NAME        | Perturbator
+SHIPWPN_17_DETAIL      | Dezlănțuie atacuri de energie pură ce provoacă 10-40 puncte de daună într-o rază de două spații.
+
+SHIPWPN_18_NAME        | Fazor Rapid
+SHIPWPN_18_BRIEF       | Trage de 3 ori pe tură
+SHIPWPN_18_DETAIL      | Un fazor avansat ce poate trage de 3 ori pe tură, provocând între 5 și 20 de puncte de daună cu fiecare atac.
+
+SHIPWPN_19_NAME        | Tun de Plasmă Triplu
+SHIPWPN_19_DETAIL      | Armă grea ce provoacă 20-50 puncte de daună.
+
+SHIPWPN_20_NAME        | Convertor Stelar
+SHIPWPN_20_BRIEF       | Lovește toate cele patru scuturi
+SHIPWPN_20_DETAIL      | Înconjoară ținta cu un câmp ce convertește materia în energie, atacând de 4 ori provocând 10-35 puncte de daună. Acesta are o rază de 3 spații.
+
+SHIPWPN_21_NAME        | Dispozitiv Sfâșietor
+SHIPWPN_21_DETAIL      | Dezlănțuie o cantitate enormă de energie asupra navelor inamice, provocând între 20 și 100 puncte de daună.
+
+SHIPWPN_22_NAME        | Atacul Amibelor
+SHIPWPN_22_DETAIL      | Un atac continuu care are o rază de 3 spații și care provoacă 250-1000 puncte de daună navelor inamice. Aspectul continuu al acesteia permite punctelor de daună în exces să lovească altă navă inamică.
+
+SHIPWPN_23_NAME        | Raza de Cristal
+SHIPWPN_23_DETAIL      | O rază ce înconjoară scuturile inamicului, producând 4 atacuri de provoacă 100-300 puncte de daună fiecare. Aceasta are o rază de 3 spații.
+
+
+//
+// Soil Enrichment techs
+//
+SOILENRICH_0_NAME     | Îmbogățirea Solului
+SOILENRICH_0_DETAIL   | Convertește planetele standard în medii fertile, crescând rata natalității populației cu 50% și mărind dimensiunea planetei de bază cu +25% pentru un cost unic de 150 BC.
+
+SOILENRICH_1_NAME     | Îmbogățirea Avansată a Solului
+SOILENRICH_1_DETAIL   | Convertește planetele standard și fertile în medii perfecte, dublând rata natalității populației și mărind dimensiunea planetei de bază cu +50% pentru un cost unic de 300 BC.
+
+
+//
+// Stargate tech
+//
+STARGATE_0_NAME      | Porți Stelare Intergalactice
+STARGATE_0_DETAIL    | Permite navelor tale să se deplaseze între orice două planete echipate cu porți stelare într-o singură tură. Acestea costă 3000 BC pentru a fi construite.
+
+
+//
+// Stasis Field tech
+//
+STASIS_0_NAME      | Câmp de Stază
+STASIS_0_BRIEF     | Inamicul este înghețat pentru o tură
+STASIS_0_DETAIL    | Îngheață un grup de nave inamice, până la un spațiu depărtare, pentru o tură. Navele înghețate nu pot ataca și nu pot fi atacate.
+
+
+//
+// Stream Weapon techs
+//
+STREAMWPN_0_NAME    | Proiector de Ioni
+STREAMWPN_0_BRIEF   | Reduce armura inamicilor cu 20%
+STREAMWPN_0_DETAIL  | Produce o rază intensă de ioni, reducând armura navelor inamice cu 20%,plus 1% pentru fiecare 2 nave care atacă, până la un maxim de 50% din numărul de Puncte de Viață cu care încep per atac.
+
+STREAMWPN_1_NAME    | Proiector de Neutroni
+STREAMWPN_1_BRIEF   | Reduce armura inamicilor cu 40%
+STREAMWPN_1_DETAIL  | Produce o rază intensă de neutroni, reducând armura navelor inamice cu 40%,plus 1% pentru fiecare navă care atacă, până la un maxim de 75% din numărul de Puncte de Viață cu care încep per atac.
+
+
+//
+// Subspace Interdictor tech
+//
+SUBSPACEINT_0_NAME    | Interdicție Sub-Spațială
+SUBSPACEINT_0_DETAIL  | Previne utilizarea teleportoarelor și a transportatoarelor militare de către inamic. Acest dispozitiv este adăugat automat tuturor bazelor de rachete.
+
+
+//
+// Subspace Teleporter tech
+//
+SUBSPACETEL_0_NAME    | Teleportor Sub-Spațial
+SUBSPACETEL_0_BRIEF   | Teleportează nave în timpul luptei
+SUBSPACETEL_0_DETAIL  | Teleportează navele echipate către orice punct pe harta de luptă înaintea stabilirii inițiativei în mod normal.
+
+
+//
+// Ship Torpedo Weapon techs
+//
+TORPEDO_0_NAME        | Torpile Anti-Materie
+TORPEDO_0_BRIEF       | Lansează o torpilă odată la 2 ture
+TORPEDO_0_DETAIL      | Torpilă puternică ce provoacă 30 de puncte de daună, dar care poate fi lansată odată la 2 ture. Fiecare torpilă este echipată cu un computer de direcționare de nivel +4.
+
+TORPEDO_1_NAME        | Torpile Infernale
+TORPEDO_1_BRIEF       | Lovește toate cele patru scuturi
+TORPEDO_1_DETAIL      | Torpile învăluitoare ce lovesc toate cele 4 scuturile în același timp, provocând 25 de puncte de daună cu fiecare atac. Acestea se mișcă cu o viteză de 5. Fiecare torpilă este echipată cu un computer de direcționare de nivel +6.
+
+TORPEDO_2_NAME        | Torpile de Protoni
+TORPEDO_2_BRIEF       | Lansează o torpilă odată la 2 ture
+TORPEDO_2_DETAIL      | Torpilă puternică ce provoacă 75 de puncte de daună, dar care poate fi lansată odată la 2 ture. Fiecare torpilă este echipată cu un computer de direcționare de nivel +6.
+
+TORPEDO_3_NAME        | Torpile de Plasmă
+TORPEDO_3_BRIEF       | Lansează o torpilă odată la 2 ture, pierde 15 puncte de daună per spațiu
+TORPEDO_3_DETAIL      | Torpilă formată din energie pură ce provoacă 150 de puncte de daună și se mișcă cu o viteză de 6, dar pierde 15 puncte de daună cu fiecare spațiu traversat. Fiecare torpilă este echipată cu un computer de direcționare de nivel +7 și poate fi lansată odată la 2 ture.
+

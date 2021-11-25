@@ -216,14 +216,29 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
         drawString(g,text("RACES_COUNTER_INTEL_TITLE"), x+s10, y+h-s15);
     }
     private void drawPlayerBaseInfo(Graphics2D g, Empire emp, int x, int y, int w, int h) {
-        g.setColor(RacesUI.darkBrown);
-        g.fillRect(x, y, w, h);
-
         int lineH = s30;
         int y1 = y+lineH-s5;
         int y2 = y1+lineH;
         int y3 = y2+lineH;
         int x0 = x+s20;
+
+        String desc = text("RACES_INTEL_TAX_DESC");
+        if (!inRange)
+            desc = desc + " "+text("RACES_INTEL_TAX_OUT_OF_RANGE");
+        
+        g.setFont(narrowFont(15));
+        List<String> lines = wrappedLines(g, desc, w-s50);
+        int y4 = y3+s20;
+        if (lines.size() == 1)
+            y4 += s10;
+
+        int h0 = h;
+        if (lines.size() > 2) 
+            h0 += s16;
+        
+        g.setColor(RacesUI.darkBrown);
+        g.fillRect(x, y, w, h0);
+
         g.setFont(narrowFont(22));
         Color textC = SystemPanel.whiteText;
         drawShadowedString(g, text("RACES_INTEL_SECURITY_BONUS"), 1, x0, y1, SystemPanel.blackText, textC);
@@ -232,16 +247,8 @@ public final class RacesIntelligenceUI extends BasePanel implements MouseListene
 
         g.setFont(narrowFont(15));
         g.setColor(SystemPanel.blackText);
-        String desc = text("RACES_INTEL_TAX_DESC");
-        if (!inRange)
-            desc = desc + " "+text("RACES_INTEL_TAX_OUT_OF_RANGE");
-        
-        List<String> lines = wrappedLines(g, desc, w-s50);
-        int y4 = y3+s20;
-        if (lines.size() == 1)
-            y4 += s10;
         for (String line: lines) {
-            drawString(g,line, x0+20, y4);
+            drawString(g,line, x0+s10, y4);
             y4 += s16;
         }
 

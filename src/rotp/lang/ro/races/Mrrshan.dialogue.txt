@@ -1,0 +1,89 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Mrrshan specific dialogue
+
+CONTACT_AGGRESSIVE         | Te salut, creatură ciudată. Sunt din [my_race], și un slujitor al marelui Han. Sper că ești puternic, [your_race], nu doar de dragul poporului tău, dar și de dragul celor mai valoroase comori ale tale.
+CONTACT_RUTHLESS           | Noi suntem [my_race], [your_race], si aderam la o singura idee: cei puternici vor lua si cei slabi vor da. Dacă nu înțelegeți deja înțelepciunea unei astfel de filozofii, vă vom învăța cu siguranță foarte curând.
+CONTACT_XENOPHOBIC         | Roagă-te ca Hanul de Aur să te considere demn, [your_race]. Stârnește-i furia și flotele [my_race] vă vor distruge într-o clipire.
+//
+GREETING_01                | Ne-ați dovedit valoarea voastră în repetate rânduri. Suntem onorați să facem tot ce putem pentru a vă dovedi valoarea noastră.
+GREETING_04                | Îți voi asculta cuvintele ambasador, dar nu sunt obligat să-ți dau ceea ce cauți.
+GREETING_07                | Ai ceva îndrăzneală în tine să te apropii de un servitor al Hanului. Spune ce ai de spus și fii pregătit să fugi dacă doar îmi irosești timpul.
+//
+DECLAREWAR_HATE_01         | Relicvele tale sunt irosite pe tine! Ne vom împodobi sălile de pe Fierias cu oasele tale și comoara ta, fiind singurele rămășite ale poporului tău când vom termina!
+DECLAREWAR_HATE_02         | Destul! Simplele raiduri nu vor satisface dușmănia noastră față de specia voastră: voi [your_race_plural] meritați o abordare mult mai mare!
+DECLAREWAR_HATE_03         | Doar știind că o specie la fel de slabă ca a ta are influență în acest univers este suficient pentru a ne dezgusta. Indiferent de șanse, îți promit că vom face tot ce putem pentru a vă pune la locul vostru.
+//
+DECLAREWAR_ERRATIC_01      | Ghearele Hanatului trebuie să fie ascuțite, ambasador. Oamenii tăi ar trebui să prezinte sportul de care avem nevoie pentru a ne menține pregătiți pentru inamici mai demni.
+DECLAREWAR_ERRATIC_02      | Oamenii tăi au cu adevărat unele dintre cele mai frumoase comori, [your_race]. Suntem nerăbdători să vedem cât de înverșunat te vei lupta pentru a le păstra!
+DECLAREWAR_ERRATIC_03      | A trecut mult prea mult timp de când am adus înapoi o prada legendară. Oamenii tăi luptă bine, dar ne vor putea împiedica să luăm atâtea trofee strălucitoare atunci când sunt atât de aproape de ghearele noastră?
+//
+DECLAREWAR_MILITARY_01     | Cei puternici iau și cei slabi dau: o lege de fier a universului. Vei vedea în curând că se aplică nu doar comorilor tale, ci și planetelor tale.
+DECLAREWAR_MILITARY_02     | Deși rar strălucește ca și aurul, pământul este adesea un premiu demn în sine. Și pentru toate premiile bune merită să lupți, nu-i așa, ambasador?
+DECLAREWAR_MILITARY_03     | Nevoile Clanurilor depășesc nevoile speciei [your_race]. S-ar putea să aveți o tehnologie impresionantă, dar mă îndoiesc că aveți ferocitatea să o egalați!
+//
+DECLAREWAR_ALLIANCE_01     | Jucați un joc periculos atacând un aliat al Hanatului. Acel joc se va sfârși rapid și sângeros!
+DECLAREWAR_ALLIANCE_02     | Aliații noștri, [other_race_plural], sunt un popor onorabil, dar slab. Ați fi putut să câștigați acest război dacă aceștia ar fi luptat singuri, dar cu noi de partea lor nu aveți nicio șansă de victorie!
+DECLAREWAR_ALLIANCE_03     | Am fi preferat să avem onoarea de a vă dărâma imperiul de unii singuri. Se pare că va trebui să împărțim gloria și prada cu [other_race] de data aceasta.
+//
+DECLAREWAR_SPYING_01       | Laș, să te folosești de spionaj mai degrabă decât să lupți cu onoare! Acțiunile tale se potrivesc cu slăbiciunea ta și acum vei plăti prețul!
+DECLAREWAR_SPYING_02       | Cum se simte, [your_race]? Să riști atât de mult pentru a nu aduce nimic altceva decât război asupra poporului tău?
+DECLAREWAR_SPYING_03       | Spune-i [your_nameTitle]-ului [your_name] asta: spionajul este teatrul cursurilor fără curaj. Faptul că ai acționa într-un mod atât de laș înseamnă că numai ferocitatea noastră ne va duce la biruință!
+//
+DECLAREWAR_ATTACK_01       | Ha! Aici te-am luat drept niște lași slabi, dar se pare că aveți ceva luptă în voi până la urmă! Păcat că nu veți trăii destul de mult timp pentru a sărbători această victorie slabă!
+DECLAREWAR_ATTACK_02       | Ne-ați făcut o favoare aducând lupta la ușa noastră! Vă vom răsplăti asigurându-ne că oamenii voștri își vor întâlnii finalul pe câmpul de luptă ca niște războinici adevărați!
+DECLAREWAR_ATTACK_03       | Aș evita aroganța dacă aș fi în locul tău, ambasador. Furia războinicilor noștri nu va fi niciodată învinsă de tehnologie, indiferent cât de puternic ai făcut-o pe a ta!
+//
+DECLAREWAR_OPPORTUNITY_01  | Specia ta nu ne mai este folositoare. Dar măcar veți fi un sport adecvat pentru cei mai tineri și cei mai neexperimentați dintre războinicii noștri, perfect pentru a-și perfecționa abilitățile de luptă.
+DECLAREWAR_ASSASSIN_01     | Nu sunt deloc șocat că oamenii tăi s-ar comporta într-un mod atât de dezonorant. Asasinarea unui ambasador este cea mai gravă dezonoare pe care o poți face. În chinurile lor ce vor urma, oamenii tăi îți vor blestema numele pentru că ai ordonat un astfel de lucru!
+
+
+OFFER_PEACE_01             | Există un timp pentru toate, ambasador, și acum a sosit momentul pentru a pune capăt ostilităților noastre. Păstrează-ți comorile; pacea este tot ce ne dorim de la tine acum!
+OFFER_TRADE_01             | Nu există nicio îndoială că cea mai rapidă modalitate de a câștiga trofee este să le iei de la cei prea slabi să te oprească! Dar comerțul poate fi o modalitate acceptabilă pentru două imperii de a câștiga unul de la celălalt. Să începem de la [amt] BC în fiecare an pentru a vedea cât de mult putem... câștiga unii de la alții.
+OFFER_PACT_01              | Două imperii atât de egale în puterea lor nu ar trebui să se lupte atunci când există o mulțime de specii mai slabe de jefuit și arse. Să cădem de acord cu un pact oficial de neagresiune pentru ca energiile noastre să fie mai bine utilizate pe cei cu comori mai ușor de luat!
+OFFER_ALLIANCE_01          | Vin astăzi la voi să propun o alianță oficială între Hanatul nostru și [your_empire]. Sunt sigur că nu veți pierde timpul și că veți semna acest tratat cât mai repede, da? Și țineți minte: o parte egală într-o alianță înseamnă o parte egală în prada de război!
+ 
+WARN_TRESPASSING_01        | Cu excepția cazului în care navele voastre sunt în sistemul [system] pentru a oferi tribut, vă sugerez să le ordonați să plece cât mai curând posibil.
+WARN_EXPANSION_01          | Deși preferăm obiectele de valoare cu care putem împodobi pereții templelor noastre, nu suntem atât de orbi încât să ignorăm comoara reprezentată de pământul nerevendicat. Încetiniți-vă expansiunea sau riscați să ne stârniți furia, ambasador.
+WARN_BUILDUP_01            | Dacă vă construiți flotele pentru a ataca o altă specie, nu veți primi obiecții din partea noastră. Dar până când vom avea asigurări în acest scop, vom presupune că flotele voastre vor fi îndreptate către noi și nu vom ezita să acționăm preventiv.
+WARN_SKIRMISH_01           | A fost o mică încăierare amuzantă, nu-i așa? Totuși, aceste mici bătălii sunt plictisitoare și fără recompensă: dacă insistați să le continuați, vom fi bucuroși să facem o declarație de război mai formală!
+WARN_ATTACKED_01           | Ha! A fost o încercare serioasă de provocare, ambasador? Oamenii tăi sunt slabi și comorile lor sunt lipsite de valoare! Încetează acest gambit nebun înainte să ne forțezi să-ți punem capăt!
+WARN_INVADED_01            | Cu siguranță glumiți cu această mică invazie a voastră? Sunteți norocoși că am folosit puțin sistemul [system], dar dacă vă puneți ochii pe sisteme mai valoroase, ne vom asigura că nu veți mai putea lua nimic de la nimeni!
+WARN_ESPIONAGE_01          | Ce jocuri ascunse joacă oamenii tăi! Va trebui să depui mult mai mult efort decât atât dacă vrei să obții secretele Hanatului. Ia-ți spionul înapoi cu tine și pleacă, înainte ca acest joc să înceteze să fie amuzant. [blamat]
+WARN_SABOTAGE_01           | Uneltiri periculoase, ambasador. Dacă clădirea pe care ai vrut să o distrugi ar fi adăpostit lucruri mari de valoare, fără îndoială ți-am fi spălat sângele de pe străzile lumii tale natale. Ti-aș recomanda cu căldură să nu te mai gândești la sabotaj. [forțat]
+WARN_BIOWEAPON_01          | Trofeele trebuie câștigate în luptă onorabilă, nu furate dintre oasele celor care erau fără apărare chiar și când erau în viață! Dacă vei mai folosi vreodată astfel de arme disprețuitoare, te asigur că va fi ultima oară când o vei face!
+WARN_GENOCIDE_01           | Nu este o decizie rea, de a eradica întreaga specie [victim_race] și de a lua fiecare dintre comorile lor. Deși mă îndoiesc că ați fi suficient de proști încât să încercați așa ceva cu noi, capacitățile voastre sunt încă destul de tulburătoare.
+WARN_FINAL_WAR_01          | [your_race] stupid! A sfidați voința deciziei consiliului înseamnă a sfidați voința [my_race]! Vă vom lua trofeele și le vom arde până când nu va mai rămâne nimic! Nimic nu va rămâne din specia ta odată ce vom termina!
+WARN_COUNCIL_VOTE_01       | Hanatul are probleme mai importante de rezolvat decât să joace jocuri politice în camerele consiliului. Ar fi mai bine pentru noi dacă pur și simplu ați ceda dorințelor noastre. Și ar fi mai bine și pentru voi, dacă înțelegi ce vreau să spun.
+WARN_OATHBREAKER_01        | Hmph! Doar cei disperați își încalcă cuvântul. Nu contează! De acum înainte vă vom trata la fel cum îi tratăm pe cei prea duplicitari pentru a fi de încredere.
+WARN_ATTACKED_ALLY_01      | Nu pot spune că nu văd de ce ai ataca [defender_race]. Comorile lor sunt atât de frumoase... dar ne vor aparține nouă atunci când dorim să le luăm: nu vă vor aparține vouă!
+WARN_REBELLING_AGAINST_01  | Această pace susținută de consiliu nu va fi niciodată acceptată de poporul nostru. Ne dorim un singur lucru: să luăm comori de la cei slabi!
+
+PRAISE_COUNCIL_VOTE_01     | Sprijinul tău în consiliu este întotdeauna apreciat, ambasador. Hanul de Aur însuși a dorit să știi că oamenii tăi sunt un bun prețuit de Hanat și, dacă vei vizita [candidate_home] vreodată, un festin va fi organizat în numele tău! 
+PRAISE_COUNCIL_VOTE_02     | Ai văzut cum acel ambasador [rival_race] a reacționat? Ha! Lasă-i să rânjească! Atâta timp cât oamenii înțelepți ca tine continuă să ne recunoască puterea, atunci Hanatul nu are de ce să se teamă!
+PRAISE_COUNCIL_VOTE_03     | Îți este teamă de raidurile noastre, ambasador? Speri că dacă ne vei susține în consiliu nu vom căuta comori pe planetele oamenilor tăi? Hmhmhmhm, ei bine, cu siguranță acest lucru nu v-ar strica șansele, nu-i așa?
+PRAISE_ATTACKED_ENEMY_01   | Astăzi va fi o zi grozavă pentru amândoi, [attacker_race]! [defender_race] nu are nicio șansă împotriva forțelor noastre combinate! Există o mulțime de comori pentru amândoi: cei mai puternici războinici vor câștiga cele mai mari comori!
+PRAISE_ATTACKED_ENEMY_02   | Sper să ai o șansă să câștigi o comoară astăzi, ambasador? Foarte bine, hai să facem o înțelegere: ajută-ne să scăpăm de [defender_race] ăștia dăunători și ne vom asigura că o să câștigi o recompensă potrivită.
+PRAISE_ATTACKED_ENEMY_03   | Este evident că ești în acest război doar pentru bogățiile pe care le poți lua pentru tine. Dar acești [defender_race] au niște comori absolut jalnice, așa că presupun că dacă ne ajuți, atunci îți vom lăsa tot ceea ce nu dorim să luăm pentru noi înșine. 
+PRAISE_TRADE_01            | Îți amintești când am început acordul nostru comercial? V-am spus că vom vedea cât de mult vom câștiga unii de la alții și mă bucur să văd că valoarea câștigată a fost reciprocă.
+PRAISE_TRADE_02            | Este întotdeauna mai distractiv să lupți pentru bogății și să te întorci acasă cu navele încărcate cu prada victoriei! Ei bine, presupun că acest acord comercial este puțin mai profitabil atunci când luăm în considerare costurile. Asigură-te că lucrurile vor rămâne așa, ambasador.
+PRAISE_REBELLING_WITH_01   | Așa mai merge! Nu e nimic ca o luptă bună, nu? Și atât de multă pradă cerșind să fie câștigată... Sper că nu te superi că Hanatul vrea să se alăture distracției!
+
+ACCEPT_TRADE_01            | Presupun că nu putem jefui fiecare civilizație pe care o întâlnim. Cât BC pe an vrei? [amt]? Bine...
+RESPOND_IGNORE_THREAT_01   | Iartă-mă că râd, dar amenințările tale sunt foarte amuzante. Pleacă acum înainte ca războinicii noștri să decidă să-și ascute ghearele pe coloniilor tale.
+RESPOND_STOP_SPYING_01     | Ați găsit un spion despre care spuneți că ne aparține? Cu siguranță nu. N-am visa niciodată să spionăm mărețul [your_empire]. Faceți ce vreți cu spionul, nu ne pasă de soarta lui.
+RESPOND_STOP_ATTACKING_01  | Gândul la un raid te îngrijorează, [your_race]? Nu vă faceți griji, nu avem niciun interes în ceea ce aveți. Vom pleca acum. Nu dorim să vă speriem până la urma.
+
+

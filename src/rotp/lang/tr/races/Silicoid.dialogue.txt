@@ -1,0 +1,84 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Silicoid specific dialogue
+
+CONTACT_XENOPHOBIC         | [your_race] ulusundan [your_name], [my_empire] varlığınızı tanımaya tenezzül etti. Seninle ihtiyaçlarımızın gerektirdiği şekilde iletişime geçeceğiz.
+CONTACT_RUTHLESS           | Hakimiyet'in gözleri sizin üzerinde, [your_race]. Kendinin ve değer verdiğin herkesin iyiliği için [my_title] efendimizin sana olumlu bakması için dua et.
+CONTACT_AGGRESSIVE         | Biz [my_race_plural] ulusuyuz, cılız [your_race]. Topraklarımız geniş ve gücümüzün dengi yok. Gazabımızı kışkırtmaman için seni uyarıyorum, yoksa ölümcül intikamın anlamını öğrenirsiniz.
+
+//
+GREETING_01                | Selamlar büyükelçi. [my_title] efendimizden ne istediğinizi belirt. Sizi buna layık görürse, kutsal savaşımızı size yardım etmek için durduracağız.
+GREETING_04                | Kısa olun, büyükelçi: [my_title], kutsal seferimizi bir hiç uğruna durduruyor.
+GREETING_07                | Sefil [your_race]! Kutsal savaşımızı bekletmek, gazabımızı üzerinize çağırmaktır!
+//
+DECLAREWAR_HATE_01         | Halkının Kuaralon'un uzun zamandır aranan Çocukları olduğu şimdi her zamankinden daha kesin! Bu galaksinin başına bela olan türünü bu galaksiden külliyen çıkarmaktan büyük zevk alacağız!
+DECLAREWAR_HATE_02         | Efsanelerde bahsedilen zaman sonunda geldi! Kendini hazırla, Kuaralon Dölü! Kim kazanırsa kazansın, kutsal seferimiz yakında sona erecek!
+DECLAREWAR_HATE_03         | Sonunda seni bulduk, Kuaralon Dölü! Ve şimdi savaşa tutuşacağız! Gücünüzün bir ehemmiyeti yok: Diyamodus'un gücü bize yol gösterecek!
+DECLAREWAR_ERRATIC_01      | İlk görüşmemizden beri [my_title] en nefret ettiğimiz düşmanımız olup olmadığınızı düşünüp durdu. Irkınıza bir son verdikten sonra da bunu yapmaya devam edecek.
+DECLAREWAR_ERRATIC_02      | Göksel komşular olarak şimdiye yeterince dostane eriştik, ancak halkının Kuaralon'un Çocukları olması konusunda en ufak bir ihtimal bile savaş ilan etmemiz için yeterlidir.
+DECLAREWAR_ERRATIC_03      | Sizden gelebilecek en ufak bir alçaklık riskini bile kabul etmeyi uygun görmüyoruz. Pisliğinizi galaksiden temizleyeceğiz ya da bu yolda öleceğiz.
+DECLAREWAR_MILITARY_01     | Sınırlarımızı böyle ihlal etmeye cüret mi ediyorsun? Öyle olsun! Yakında gazabımızı öğreneceksiniz [your_race] ve bu size aptallığınızın azametini de bildirecek.
+DECLAREWAR_MILITARY_02     | Şunu hatırlayın, acınası [your_race]: bu galaksideki tüm dünyalar ilahi hakla [my_empire] ulusuna aittir ve onlar için yıldızları titretecek bir öfkeyle savaşacağız!
+DECLAREWAR_MILITARY_03     | Bizim olan ya da olacak dünyalarda bundan böyle tek bir kayayı bile talep etmenize izin vermeyeceğiz! Ordunuzun gücünün karşısına bizim inançlarımızın gücü çıkacak. Bakalım hangisi galip gelecek!
+DECLAREWAR_ALLIANCE_01     | Hakimiyet'in bir müttefikine savaş ilan etmek mantıksız bir karardı. Tanrılarınıza merhamet için dua edin, çünkü bizden merhamet görmeyeceksiniz.
+DECLAREWAR_ALLIANCE_02     | Müttefikimiz, onlara karşı savaşa kalkıştığınızı bize bildiriyor: böyle yaparak bize de savaş açmış oluyorsunuz. Kendinizi hazırlayın!
+DECLAREWAR_ALLIANCE_03     | [other_race] ulusunun kaderi umrumuzda değil, ancak bu fırsatı, kutsal cihadımıza devam edebilelim diye, galaksiyi sizin türünüzden kurtarmak için kullanacağız. 
+DECLAREWAR_SPYING_01       | Acınası [your_race]! Bu gün Hakimiyet'in sırlarını çalmanın ahmaklığını size göstereceğiz!
+DECLAREWAR_SPYING_02       | Sırlarımızı öğrenmeyi o kadar çok mu istiyorsunuz? O zaman size en önemlisini söyleyeceğim: Affetmeyiz... ve unutmayız. Savaşa hazırlanın!
+DECLAREWAR_SPYING_03       | Sırlarımıza bedel ödemeden el koyabilecek bir konumda olduğunuza mı inanıyorsunuz? Yakında böyle kibirli bir hamledeki budalalığı anlayacaksınız.
+DECLAREWAR_ATTACK_01       | Sonunda kendinizi ifşa ettiniz, Kuaralon'un Çocukları! En menfur düşmanımızın dölleri dışında hiç kimse bize böyle cesurca meydan okuyacak kadar aptal olamaz! Son savaşa hazırlanın!
+DECLAREWAR_ATTACK_02       | Kadim düşmanımızın torunları olduğunuzdan uzun zamandır şüpheleniyoruz! Bu hamleyle bu gerçeği tamamıyla doğruladınız! Sonunda, kehanetimiz gerçekleşecek!
+DECLAREWAR_ATTACK_03       | Hainler! Allah'ın belaları! En karanlık anımızda bize karşı böyle bir saldırı mı başlatıyorsunuz?! Ezelî düşmanımız olarak yüzünüzü bir kere gösterdiniz ya, artık gücümüzdeki hiçbir değişiklik sizi yok etmemizi önleyemeyecek!
+DECLAREWAR_OPPORTUNITY_01  | Galaksideki kutsal cihadımıza devam ederken, avantajlarımızı artırmak için her fırsatı değerlendirmeliyiz. Vakit geldi çattı ve fırsat senin türünü temizlemektir. Elveda, zavallı [your_race].
+DECLAREWAR_ASSASSIN_01     | Hakimiyet'İn bir büyükelçisini öldürmeye nasıl cüret edersiniz!? Sadece bir Kuaralon dölü böyle şeytanca bir zihinle hareket edebilir! Filolarınızı savaşa hazırlayın! 
+
+OFFER_PEACE_01             | Birini tanımak için önce onunla savaşmalısın derler. Savaştık ve sizin canavar Kuaralon'un çocukları olmadığınızı görebiliyoruz. Şimdi sizinle barışalım da, dikkatimizi öfkemize muhatap olmayı hak edenlere verebilelim. 
+OFFER_TRADE_01             | Uzayın derinliklerini keşfetmek maliyetli bir girişimdir. İmparatorluk açık ticaret önermek istiyor. Yıllık [amt] BC, hem kutsal cihadımıza ödenek sağlayacak edecek hem de halkının servetini çoğaltacak. Ne diyorsun? 
+OFFER_PACT_01              | Biz sadece Kuaralon'un ve onun türünün yok edilmesini istiyoruz. Halkının onlar olmadığına inandığımız sürece, sizinle ilgili hiçbir tereddüdümüz yok. Niyetlerimizi bir saldırmazlık paktı ile ispatlayabiliriz. İmzalamayıp imzalamamak sizin kararınız.
+OFFER_ALLIANCE_01          | Galaksiyi temizlemek için yaptığımız kutsal savaşta bir sürü garip ve aşağılık yaratıkla tanıştık. Karşılaştıklarımız arasından, sizin sefil düşmanımız olma ihtimalinizin en düşük olduğuna inanıyoruz. Bizimle müttefik olun [your_race] ve [my_title] efendimizin inayetini kazanın! 
+
+WARN_TRESPASSING_01        | Davetsiz misafirliğinizle [system] kutsal sahasını kirletiyorsunuz! Derhal geri çekilin yoksa sizi erdemin ateşiyle kovarız! 
+WARN_EXPANSION_01          | Galaksinin sadece size ait olduğuna mı inanıyorsunuz? Bu pervasız genişlemeyi derhal durdurun ya da tüm Hakimiyet'in gazabıyla yüzleşin!
+WARN_BUILDUP_01            | Sadece Hakimiyet galaksideki en güçlü filolara sahip olabilir, çünkü sadece Hakkimiyet günahkârlar hakkında doğru hükmü verebilir. Bu ilkeye meydan okursanız başınıza geleceklerden siz sorumlusunuz, [your_race]. 
+WARN_SKIRMISH_01           | Bununla neyi kastediyorsunuz, büyükelçi? Bir kereliğine görmezden geleceğimiz basit bir çatışma: Bunun bir daha tekrarlamasına izin vermeyin! 
+WARN_ATTACKED_01           | Delilik! Hakimiyet'e böyle saldırmaya cüret mi ediyorsun!? [defender_title], bilgeliğiyle sırada ne yapacağınızı görebilmesi için misillememizin bekletilmesini emretti.  Neticede gerçekten uzun zamandır aradılığımız düşmanlarımız mısınız?! 
+WARN_INVADED_01            | Elbette Hakimiyet'ten toprak çalmak [attacker_race] çaresizliğini gösteren bir eylemdir. [system] mevkisinin bizim için anlamsız olduğunu bilin, ancak Hakimiyet'e ait olana el koymaya devam etmek yalnızca sonunuz demek olabilir! 
+WARN_ESPIONAGE_01          | Sırlarımızı çalma kararınız büyük bir hesaplama hatasıydı, büyükelçi. Sizi dikkatli olmaya davet ediyorum: girişiminiz böylesine gülünç olmasaydı, kesinlikle daha korkunç bir karşılık görürdü! [framed]
+WARN_SABOTAGE_01           | Bu fesat da ne? Sabotaj, yalnızca korkaklara ve alçaklara layık, kınanacak bir eylemdir! En sonunda kehanetlerimizdeki aşağılık düşmanımız olduğunu ifşa mı ediyorsun? [victim_title] karar verecek... [forced]
+WARN_BIOWEAPON_01          | Düşünülemez! Etten bedenler, geleneksel silahlara karşı zaten yeterince zayıfsa da, biyolojik silahlara karşı hiç şansı yoktur. Üstelik sivillere karşı?! Elbette Kuaralon'un kara kanı türünün damarlarında dolaşıyor!
+WARN_GENOCIDE_01           | Şimdi bize [victim_race] ırkına karşı neden soykırım yaptığınızı söyleyin. Kelimelerinizi dikkatli seçin: Cevabınız, halklarımızın birbirine bundan sonra nasıl davranacağını belirleyecek!
+WARN_FINAL_WAR_01          | Kutsal cihadımızı ancak ittifaklar kurarak tamamlayabiliriz! Biz birleşik halklar olarak bir aradayız, ama siz kaosun ve savaşın sesi olarak yalnızsınız. Kehanet yürürlükte: Siz gerçekten Kuaralon'un soyusunuz! 
+WARN_COUNCIL_VOTE_01       | Bu konsey feshedilip galaktik olayların tek kontrolünün Hakimiyet'e verilmesi kesinlikle daha iyi olurdu. O zaman, bize karşı böyle konuştuğunuzda, halkın düşmanlığımızı kazanabilirdi! 
+WARN_OATHBREAKER_01        | Ne kadar can sıkıcı, birinin sözünü tutmaması, güveni çöpe atmasıdır. Kehanetlerdeki Düşmanın tam da böyle davranmaya cesaret edeceğine şüphe yok! 
+WARN_ATTACKED_ALLY_01      | [defender_race] Hakimiyet ile dostluk onurunu taşıyor! Saldırınıza karşılık uyarımızı dikkate alın: Sizi temin ederim ki, uyarımızı sadece bir kere duyacaksınız!
+WARN_REBELLING_AGAINST_01  | Cihadımız ertelenmeyecek! Ne konseydeki budalalar tarafından, ne de sizin tarafınızdan! Hazır ol büyükelçi: yakında kutsal bir fırtına size ulaşacak!
+
+PRAISE_COUNCIL_VOTE_01     | Güvenilir müttefikimiz övgülerimizi bir kez daha kazanıyor! Cihadımız konseye aklın sesini sunman sayesinde, asla aksamayacak! Bugün Hakimiyetin şükranını kazandınız, [voter_race]. 
+PRAISE_COUNCIL_VOTE_02     | Irkın masum olduğunu henüz kanıtlamadı, büyükelçi. Konseyde davamızı desteklemeye devam edip cihadımızın bir müttefiki olduğunuzu gösterin. 
+PRAISE_COUNCIL_VOTE_03     | Konseyde Hakimiyet'e verilecek tek bir oyun sizi şüphelerden arındıracağını sanmayın! Şüphelerimiz giderilene kadar türünün ispatlayacağı daha çok şeyi var! 
+
+PRAISE_ATTACKED_ENEMY_01   | [defender_race] ırkının  Kuaralon'un en hain çocukları olup olmadığını henüz bilmiyoruz, ancak müttefiklerimizin bize seve seve katılmasını görmek bu savaştaki heyecanımızı artırıyor! İleri! Adalet için! Hakimiyet için! 
+PRAISE_ATTACKED_ENEMY_02   | [defender_race] ulusuna karşı savaşımıza katılmak ister misin? Öyleyse ilerleyip savaş alanında nasıl davrandığınızı bize gösterin. Zafer, Hakimiyet sarayında daha yüksek bir statü getirirken, yenilgi sadece ölüm getirecek! 
+PRAISE_ATTACKED_ENEMY_03   | Sırf [defender_race] ulusuna karşı savaşımızda bize katıldığınız için masumiyetinize inanacak kadar aptal olduğumuzu düşünmediniz herhalde? Kehanetteki Düşman, kimliğini gizlemek için tam da gerekeni yapardı. Şimdi gidin! Bize nasıl dövüştüğünüzü gösterin, biz de ne kadar pak olduğunuzu değerlendirelim! 
+
+PRAISE_TRADE_01            | Hakimiyet sana iyi dileklerini sunuyor, cihadın dostu! Ticaret anlaşmamız, Kuaralon'un döllerini ararken yaptığımız sayısız savaşı finanse etti. Hakimiyet, halkının da aynı şekilde kâr ettiğini umuyor. 
+PRAISE_TRADE_02            | Hakkınızdaki şüphelerimiz tamamen geçmemişse de, kutsal savaşımızı ticaret yoluyla doğrudan finanse etmenin size olan inancımızı güçlendirdiğini söyleyebiliriz. Devamına ön ayak ol, büyükelçi! 
+PRAISE_REBELLING_WITH_01   | Düşmanımız bulundu! Kuaralon'un korkunç dölleri galaktik tahtı gasp etti! Savaşa yürüyelim: [my_race] ve [your_race] filoları birleşip galaksideki bu pisliği temizleyecek!
+ 
+ACCEPT_TRADE_01            | Hakimiyet teklifinizi kabul ediyor, [your_race]. Kutsal cihadımızı devam ettirmek için sizinle her yıl [amt] BC'lik ticaret yapacağız.
+RESPOND_IGNORE_THREAT_01   | Cihadımız sizin boş tehditleriniz tarafından yıldırılamaz. Rahatsız edecek başka birini bul ya da gazabımızı göze alın!
+RESPOND_STOP_SPYING_01     | Biz sadece Kuaralon'un döllerinin kimliğini belirlemek istiyorduk. Halkınızın kılık değiştirmiş can düşmanlarımız olmadığına kaniyiz.
+RESPOND_STOP_ATTACKING_01  | Filolarımız Hakimiyet'in düşmanlarını arıyordu. Düşmanımız değilseniz, orada kalmalarına gerek yok.
+

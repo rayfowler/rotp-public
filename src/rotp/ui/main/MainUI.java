@@ -640,8 +640,8 @@ public class MainUI extends BasePanel implements IMapHandler {
 
         int x1 = w-scaled(779);
         int w1 = scaled(430);
-        int y1 = scaled(160);
-        HelpSpec sp1 = helpUI.addBlueHelpText(x1, y1, w1, 3, text("MAIN_HELP_1A"));
+        int y1 = scaled(140);
+        HelpSpec sp1 = helpUI.addBlueHelpText(x1, y1, w1, 4, text("MAIN_HELP_1A"));
         y1 += (sp1.height()+s10);
         HelpSpec sp2 = helpUI.addBlueHelpText(x1, y1, w1, 2, text("MAIN_HELP_1B"));
         sp2.setLine(x1+w1, y1+(sp2.height()/2), w-scaled(244), scaled(312));
@@ -659,9 +659,9 @@ public class MainUI extends BasePanel implements IMapHandler {
         sp6.setLine(x1+w1, y1+(sp6.height()/2), w-scaled(244), scaled(432));
 
         int x2 = w-scaled(299);
-        int y2 = scaled(170);
+        int y2 = scaled(150);
         int w2 = scaled(280);
-        HelpSpec sp7 = helpUI.addBlueHelpText(x2,y2,w2, 5, text("MAIN_HELP_1G"));
+        HelpSpec sp7 = helpUI.addBlueHelpText(x2,y2,w2, 6, text("MAIN_HELP_1G"));
         sp7.setLine(x2+(w2/2), y2+sp7.height(), w-scaled(154), scaled(310));
 
         int x3 = w-scaled(304);
@@ -706,34 +706,34 @@ public class MainUI extends BasePanel implements IMapHandler {
         sp2.setLine(x2+w2, y2+s15, w-scaled(64), y2+s15, w-scaled(49), scaled(245));
 
         int x4= x1;
-        int y4 = scaled(295);
+        int y4 = scaled(294);
         int w4= scaled(400);
-        HelpSpec sp4 = helpUI.addBlueHelpText(x4, y4, w4, 2, text("MAIN_HELP_2D"));
-        sp4.setLine(x4+w4, y4+(sp4.height()/2), w-scaled(74), scaled(265));
+        HelpSpec sp4 = helpUI.addBlueHelpText(x4, y4, w4, 3, text("MAIN_HELP_2D"));
+        sp4.setLine(x4+w4, y4+(sp4.height()/2), w-scaled(69), scaled(265));
 
         int x3= x1;
-        int y3 = scaled(355);
+        int y3 = scaled(372);
         int w3= scaled(400);
         HelpSpec sp3 = helpUI.addBlueHelpText(x3, y3, w3, 2, text("MAIN_HELP_2C"));
-        sp3.setLine(x3+w3, y3+(sp3.height()/2), w-scaled(49), scaled(270));
+        sp3.setLine(x3+w3, y3+(sp3.height()/2), w-scaled(44), scaled(265));
 
         int x5= x1;
-        int y5 = scaled(415);
+        int y5 = scaled(433);
         int w5 = scaled(400);
-        HelpSpec sp5 = helpUI.addBlueHelpText(x5, y5, w5, 4, text("MAIN_HELP_2E"));
+        HelpSpec sp5 = helpUI.addBlueHelpText(x5, y5, w5, 5, text("MAIN_HELP_2E"));
         sp5.setLine(x5+w5, y5+(sp5.height()/2), w-scaled(214), scaled(502));
 
-        int x6 = x1;
-        int y6 = scaled(525);
+        int x6 = x1+s50;
+        int y6 = scaled(545); int y6a = scaled(555);
         int w6 = scaled(350);
         HelpSpec sp6 = helpUI.addBlueHelpText(x6, y6, w6, 2, text("MAIN_HELP_2F"));
-        sp6.setLine(x6+w6, y6+(sp6.height()/2), w-scaled(154), y6+(sp6.height()/2), w-scaled(144), scaled(545));
+        sp6.setLine(x6+w6, y6a, w-scaled(154), y6a, w-scaled(144), scaled(545));
 
-        int x7 = w-scaled(579);
-        int y7 = scaled(585);
-        int w7 = scaled(280);
+        int x7 = x1+s50;
+        int y7 = scaled(605);
+        int w7 = scaled(350);
         HelpSpec sp7 = helpUI.addBlueHelpText(x7,y7,w7, 4, text("MAIN_HELP_2G"));
-        sp7.setLine(x7+w7, y7+(sp7.height()/4), w-scaled(244), scaled(580));
+        sp7.setLine(x7+w7, y7+s10, w-scaled(244), scaled(580));
 
         int x8 = w-scaled(269);
         int y8 = scaled(605);

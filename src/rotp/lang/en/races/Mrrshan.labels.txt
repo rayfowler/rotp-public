@@ -1,7 +1,7 @@
 // race-specific variables (must start with _)
-_empire                           | Mrrshan Clan, Prrshan Clan, Meowshan Clan, Clawshan Clan, Hisshan Clan
-_race                             | Mrrshan, Prrshan, Meowshan, Clawshan, Hisshan
-_race_plural                      | Mrrshan, Prrshan, Meowshan, Clawshan, Hisshan
+_empire                           | Mrrshan Clan, Prrshan Clan, Mewshan Clan, Clawshan Clan, Hisshan Clan
+_race                             | Mrrshan, Prrshan, Mewshan, Clawshan, Hisshan
+_race_plural                      | Mrrshan, Prrshan, Mewshan, Clawshan, Hisshan
 _title                            | Khan
 _nameTitle                        | Khan
 

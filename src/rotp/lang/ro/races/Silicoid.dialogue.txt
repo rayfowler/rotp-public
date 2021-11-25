@@ -1,0 +1,84 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Silicoid specific dialogue
+
+CONTACT_XENOPHOBIC         | [my_empire] s-a decis să-ți recunoască prezența, [your_name] al [your_race]. Vă vom contacta conform nevoilor noastre.
+CONTACT_RUTHLESS           | Ochii Imperiului sunt asupra ta, [your_race]. De dragul tău și de dragul a tot ceea ce îți este drag, roagă-te că [my_title] te va privii favorabil.
+CONTACT_AGGRESSIVE         | Suntem [my_race_plural], [your_race] slab. Teritoriul nostru este vast și puterea noastră este de neegalat. Te avertizez să nu ne ispitești mânia, altfel vei învăța semnificația răzbunării.
+
+//
+GREETING_01                | Salutari ambasador. Spuneți ce solicitați de la [my_title] și, dacă majestatea s-a vă va consideră cerința demnă de atenție, vom întrerupe războiul nostru sfânt pentru a vă ajuta.
+GREETING_04                | Fii succint, ambasador: [my_title] nu va oprii sfânta cruciadă pentru nimicuri.
+GREETING_07                | [your_race] mizerabil! A întrerupe războiul nostru sacru înseamnă a ne invita mânia asupra!
+//
+DECLAREWAR_HATE_01         | Este mai clar acum decât niciodată că oamenii tăi sunt mult căutați Copii ai lui Quaralon! Ne va face cea mai mare plăcere să scăpăm galaxia de ciuma reprezentată de oamenilor tăi!
+DECLAREWAR_HATE_02         | Momentul prevestit în legendă a sosit în sfârșit! Pregătește-te, Progenitură a lui Quaralon! Căci, indiferent cine va câștiga, cruciada noastră se va termina în curând!
+DECLAREWAR_HATE_03         | În sfârșit, te-am găsit, Progenitură a lui Quaralon! Iar acum bătălia noastră se va încheia în sfârșit! Puterea ta este neînsemnată: puterea lui Diamodus ne va ghida spre victorie!
+DECLAREWAR_ERRATIC_01      | De la prima noastră întâlnire, [my_title] s-a întrebat dacă sunteți sau nu cel mai urât dușman al poporului nostru. Va continua să facă acest lucru și după ce vă vom extermina din această galaxie.
+DECLAREWAR_ERRATIC_02      | Timpul nostru ca vecini a fost destul de amiabil, dar chiar și cea mai mică șansă ca oamenii tăi să fie Progeniturile lui Quaralon este suficientă pentru a vă declara război.
+DECLAREWAR_ERRATIC_03      | Chiar și cel mai mic risc de viclenie din partea voastră depășește ceea ce suntem pregătiți să acceptăm. Vă vom curăța murdăria din galaxie sau vom muri încercând.
+DECLAREWAR_MILITARY_01     | Îndrăzniți să invadați teritoriul nostru în acest fel? Așa să fie! În curând veți ajunge să cunoașteți mânia noastră, [your_race] , și, făcând asta, veți vedea adâncurile prostiei voastre!
+DECLAREWAR_MILITARY_02     | Amintește-ți asta, [your_race] patetic: toate lumile din această galaxie aparțin [my_empire] prin drept divin și vom lupta pentru ele cu o furie care va zgudui chiar și stelele!
+DECLAREWAR_MILITARY_03     | Nu vă vom permite să revendicați nici măcar o altă piatră de pe lumile care sunt sau care vor fi ale noastre! Va fi puterea armatelor voastre împotriva puterii convingerilor noastre. Să vedem care va triumfa!
+DECLAREWAR_ALLIANCE_01     | A fost o decizie neînțeleaptă să declarați război unui aliat al Imperiului. Cerșiți milă în fața zeilor voștri, căci nu veți primii nici un strop de la noi.
+DECLAREWAR_ALLIANCE_02     | Aliații noștri ne-au informat că ați ales să declarați război împotriva lor: făcând acest lucru ați declarat război și împotriva noastră. Pregătiți-vă!
+DECLAREWAR_ALLIANCE_03     | Nu ne pasă de soarta [other_race], dar vom folosi această șansă pentru a scăpa galaxia de specia voastră, astfel încât să putem continua sfânta noastră cruciadă.
+DECLAREWAR_SPYING_01       | [your_race] jalnic! În această zi vei învăța ce greșeală enormă ați făcut atunci când ați îndrăznit să furați din Imperiu!
+DECLAREWAR_SPYING_02       | Vă doriți atât de mult să aflați secretele noastre? În acest caz să vom dezvălui cel mai important secret al nostru: nu iertăm și nu uităm. Pregătiți-vă de război!
+DECLAREWAR_SPYING_03       | Credeți că sunteți în măsură să ne luați secretele fără consecințe? În curând veți realiza prostia unei decizii atât de arogante.
+DECLAREWAR_ATTACK_01       | În sfârșit, v-ați expus, Progenituri ale lui Quaralon! Nimeni, în afară de puietul celui mai urât dușman al nostru, nu ar fi suficient de prost pentru a ne provoca atât de îndrăzneț! Pregătiți-vă pentru bătălia finală!
+DECLAREWAR_ATTACK_02       | De mult am bănuit că sunteți urmașii vechiului nostru dușman! Cu acest atac ați confirmat acest fapt pentru totdeauna! În sfârșit, profeția noastră se va împlini!
+DECLAREWAR_ATTACK_03       | Ticăloși! Nemernici! În cea mai întunecată oră a noastră lansați un astfel de atac?! Acum că v-ați făcut cunoscuți ca urmași ai dușmanul nostru etern, nimic nu ne va împiedica să vă anihilăm!
+DECLAREWAR_OPPORTUNITY_01  | Pe măsură ce continuăm sfânta noastră cruciadă, trebuie să profităm de orice oportunitate pentru a ne spori avantajul. Acum este o asemenea ocazie, iar eliminarea speciei voastre este oportunitatea. Adio, [your_race].
+DECLAREWAR_ASSASSIN_01     | Cum îndrăzni-ți să ucideți un ambasador al Imperiului!? Doar o Progenitură a lui Quaralon ar putea acționa cu o minte atât de malefică! Pregătiți-vă flotele pentru război!
+
+OFFER_PEACE_01             | Se spune că pentru a cunoaște pe cineva trebuie mai întâi să te lupți cu el. Ne-am luptat și vedem că nu sunteți progeniturile fiarei Quaralon. Dorim să facem pace cu voi acum, ca să ne putem concentra atenția asupra celor care merită să simtă furia noastră.
+OFFER_TRADE_01             | A explora adâncurile spațiului este o aventură costisitoare. Imperiul dorește să propună comerțul deschis între popoarele noastre. [amt] BC pe an va finanța sfânta noastră cruciada și va acumula mai multă bogăție pentru poporul vostru. Ce spuneți?
+OFFER_PACT_01              | Căutăm doar distrugerea lui Quaralon și a progeniturilor lui. Atâta timp cât credem că oamenii voștri nu sunt ei, nu avem nimic împotriva voastră. Ne-am dovedi intențiile cu un pact de neagresiune. Decizia este a voastră.
+OFFER_ALLIANCE_01          | Am întâlnit numeroase creaturi ciudate și josnice în războiul nostru sfânt pentru a curăța galaxia. Dintre cei pe care i-am întâlnit, credem că sunteți cei mai puțin probabili să fiți nenorocitul nostru dușman. Aliați-vă cu noi, [your_race], și câștigați binecuvântarea [my_title]! 
+
+WARN_TRESPASSING_01        | Pângăriți spațiul consacrat al [system] cu prezența voastră neinvitată! Retrageți-vă imediat sau vă vom izgoni cu forța! 
+WARN_EXPANSION_01          | Credeți că galaxia este a voastră și numai a voastră? Opriți imediat această expansiune nesăbuită sau înfruntați mânia întregului Imperiu!
+WARN_BUILDUP_01            | Numai Imperiul poate deține cele mai puternice flote din galaxie, deoarece numai Imperiul îi poate judeca corect pe cei răi. Ignorați această avertizare pe propriul vostru risc, [your_race].  
+WARN_SKIRMISH_01           | Ce vrei să transmiți cu asta, ambasador? Putem trece cu vederea o simplă încăierare o singură dată: nu repetați această greșeală din nou!
+WARN_ATTACKED_01           | Nebunie! Îndrăzniți să atacați Imperiul!? În înțelepciunea sa [defender_title] a ordonat să nu ne mobilizăm forțele, pentru a vedea ce veți face în continuare. La urma urmei, sunteți cu adevărat dușmanul nostru mult căutat?! 
+WARN_INVADED_01            | Cu siguranță un act făcut din disperarea [attacker_race], de a fura un teritoriu de-al Imperiului. Să știți că [system] nu are nicio valoare în ochi noștri, dar dacă continuați să luați ceea ce nu vă aparține nu vom fi la fel de iertători!
+WARN_ESPIONAGE_01          | Decizia de a ne fura secretele a fost o greșeală gravă de judecată, ambasador. Vă îndemn să fiți atenți: dacă încercarea voastră nu ar fi fost atât de ridicolă, cu siguranță ar fi câștigat un răspuns mai îngrozitor! [blamat]
+WARN_SABOTAGE_01           | Ce șiretlic este ăsta? Sabotajul este o acțiune condamnabilă demnă doar de lași și ticăloși! La urma urmei, vă dezvăluiți că sunteți dușmanul nostru ticălos din vechile profeții? [victim_title] va decide... [forțat]
+WARN_BIOWEAPON_01          | De necrezut! Carnea este suficient de slabă împotriva armelor convenționale, dar împotriva armelor biologice nu are nicio șansă. Și împotriva civililor?! Cu siguranță sângele întunecat al lui Quaralon curge prin venele speciei voastre!
+WARN_GENOCIDE_01           | Spuneți-ne acum de ce ați comis genocid împotriva speciei [victim_race]. Alegeți-vă cu grijă cuvintele: răspunsul vostru va determina cum vă vom privii de acum înainte!
+WARN_FINAL_WAR_01          | Numai prin formarea de alianțe ne putem finaliza sfânta cruciada! Toată galaxia stă unită, dar voi ați decis să deveniți vocea haosului și a războiului. Profeția este în mișcare: voi sunteți cu adevărat Progeniturile lui Quaralon!
+WARN_COUNCIL_VOTE_01       | Ar fi cu siguranță mai bine dacă acest consiliu ar fi dizolvat și tot controlul asupra afacerilor galactice cedat Imperiului. Atunci poporul tău ar putea să ne câștige vrăjmășia atunci când ați vorbi împotriva noastră în felul asta!
+WARN_OATHBREAKER_01        | Cât de tulburător, să îți încalci cuvântul este să îți rupi încrederea. Nu există nicio îndoială că Dușmanul Profețiilor ar îndrăzni să acționeze în acest fel!
+WARN_ATTACKED_ALLY_01      | [defender_race] au onoarea de a fi prieteni ai Imperiului! Băgați de seamă acest avertisment: vă asigur că îl veți primi o singură dată!
+WARN_REBELLING_AGAINST_01  | Cruciada noastră nu va fi amânată! Nu de idioții din consiliu consiliului, și nici de voi! Pregătiți-vă, ambasador: o furtună sfântă va veni în curând asupra voastră!
+
+PRAISE_COUNCIL_VOTE_01     | Aliatul nostru de încredere câștigă încă o dată laudele noastre! Atâta timp cât vei continua să fi o voce a rațiunii în Consiliu, cruciada noastră nu va putea fi oprită! Ai câștigat recunoștința Imperiului astăzi, [voter_race]. 
+PRAISE_COUNCIL_VOTE_02     | Specia ta nu s-a dovedit încă nevinovată, ambasador. Continuați să susțineți cauza noastră în consiliu și dovediți că sunteți un aliat al cruciadei noastre.
+PRAISE_COUNCIL_VOTE_03     | Să nu credeți că un singur vot pentru Imperiu în consiliu vă scutește de suspiciuni! Oamenii voștri au multe de demonstrat înainte ca îndoielile noastre să fie atenuate!
+
+PRAISE_ATTACKED_ENEMY_01   | Nu știm încă dacă [defender_race] sunt cele mai nenorocite Progenituri ale lui Quaralon, dar să-i vedem pe aliații noștri alăturându-ne atât de ușor ne întărește spiritele în acest război! Mai departe! Pentru Justiție! Pentru Imperiu!
+PRAISE_ATTACKED_ENEMY_02   | Doriți să vă alăturați luptei noastre împotriva [defender_race]? Înaintați atunci și arătați-ne cum vă comportați pe câmpul de luptă. Victoria va aduce un statut mai înalt în rândul Curții Imperiale, dar înfrângerea va aduce doar moartea!
+PRAISE_ATTACKED_ENEMY_03   | Sigur nu ne-ați considerat suficient de proști încât să vă credem nevinovăția doar pentru că v-ați alăturat în lupta împotriva [defender_race]? Dușmanul Profeției ar face exact lucrul pentru a-și masca identitatea. Mergeți acum! Arătați-ne cum luptați și noi vom judeca cât de puri sunteți cu adevărat!
+
+PRAISE_TRADE_01            | Imperiul îți urează bine, prietene al cruciadei! Acordul nostru comercial a finanțat nenumărate bătălii în căutarea Progeniturile lui Quaralon. Imperiul speră că oamenii tăi au profitat la fel de bine.
+PRAISE_TRADE_02            | Deși nu putem spune că vă ținem deasupra suspiciunilor, putem spune că finanțarea directă a războiului nostru sfânt prin comerț ne-a întărit credința în voi. Asigură-te că acesta continuă, ambasador!
+PRAISE_REBELLING_WITH_01   | Dușmanul nostru a fost găsit! Hidoasele Progenituri ale lui Quaralon au uzurpat tronul galactic! Mai departe spre luptă: flotele [my_race] și [your_race] se vor uni și vor curăța această mizerie din galaxie!
+ 
+ACCEPT_TRADE_01            | Imperiul acceptă oferta voastră, [your_race]. Vom face comerț în valoare de [amt] BC în fiecare an cu voi, astfel încât să putem continua sfânta noastră cruciadă.
+RESPOND_IGNORE_THREAT_01   | Cruciada noastră nu va fi descurajată de amenințările voastre inutile. Găsiți pe altcineva pe care să enervați sau ne veți risca mânia!
+RESPOND_STOP_SPYING_01     | Am vrut doar să stabilim identitatea progeniturilor murdare ale lui Quaralon. Suntem mulțumiți că oamenii voștri nu sunt dușmanii noștri de moarte deghizați.
+RESPOND_STOP_ATTACKING_01  | Flotele noastre au căutat dușmani ai Imperiului. Dacă nu sunteți dușmanii noștri, acestea nu au nevoie să rămână acolo unde sunt.
+

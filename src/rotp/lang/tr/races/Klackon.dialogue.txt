@@ -1,0 +1,227 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Klackon specific dialogue
+
+CONTACT_AGGRESSIVE         | Ben [my_name] ve sen... [your_name]? Benim gibi biri için garip bir isim ama benim gibi olmadığını mı söylüyorsun? Bu çok... rahatsız edici bir karşılaşma oluyor.
+CONTACT_RUTHLESS           | [my_name] olarak biliniyorum. Sen [your_name] misin? Bir [your_name] nedir? Böyle kıvrımlarla serpilen bir türe hiç ihtiyacım yok!
+CONTACT_XENOPHOBIC         | Yolculuğuma başladığımda benim gibi başkaları olması gerektiğini biliyordum, ama sen hiç benim gibi değilsin... Sen farklısın... uzaylı... ve tehlikelisin.
+//
+GREETING_01                | Arkadaşım! Geldiğin için mutluyum! Umarım aradığın her neyse sağlayabilirim.
+GREETING_04                | Garip [your_name] beni istemiş. Ne istiyorsun, garip [your_name]?
+GREETING_07                | Garip davranıyorsun ve bundan hoşlanmıyorum. Sadece söylemeye geldiğin şeyi söyle ve git.
+//
+
+DECLAREWAR_HATE_01         | Çok bekledim, benim gibi birini bulmalıyım! Yoluma çıkmaya devam edersen, senden kurtulmak için bir saniye daha beklemeyeceğim.
+DECLAREWAR_HATE_02         | Seni düşündüğümde, hissedebildiğimden haberimin olmadığı bir iğrenme hissi kaplıyor içimi. Seni tek seferde tamamıyla yok edildiğini görmek için ne gerekiyorsa yapacağım!
+DECLAREWAR_HATE_03         | Hayır! Yolculuğuma bu galakside sadece senin gibi bir şeyi bulmak için yolculuğuma çıkmış olmam mümkün değil! Yaşamıma seninle komşu olarak devam etmeyeceğim! Ya sen yok olacaksın ya da ben!
+DECLAREWAR_ERRATIC_01      | Beni oyunlarınla kandıramazsın! Bana sana en uygun zamanda çatacağını biliyorum! Ama seni bu olamadan önce öldüreceğim!
+DECLAREWAR_ERRATIC_02      | Davranışın garip ve tahmin edilemez. Bana hissettirdiğin belirsizlik bana çok sıkıntı veriyor ve buna neden daha fazla katlanmam gerektiğini anlamıyorum. Unutulmaya hazırlan!
+DECLAREWAR_ERRATIC_03      | Bu yaptıklarını neden yapıyorsun? Seni güdüleyen ne? Ve bu seni savaşı bir gün bana getirmeye itecek mi? Bundan sonra ne yapacağını görmek için sabırsızlanıyorum: geleceğim için sana hemen savaş açmalıyım!
+DECLAREWAR_MILITARY_01     | Benim gibisini hâlâ bulamadım. Var olduklarına eminim ve dünyalarını senden aldığımda onları her birinde tek tek arayacağım!
+DECLAREWAR_MILITARY_02     | Benden ne saklıyorsun [your_name]? Dünyalarının her birini incelemeden kesin olarak bilemeyeceğim ve inceleyebilmem için onları senden alacağım!
+DECLAREWAR_MILITARY_03     | Aramamın hedefini daha fazla saklamana izin vermeyeceğim! Aradığım kişinin senin dünyalarından birinde olduğunu biliyorum. Onu bana verene kadar rahat etmeyeceğim!
+DECLAREWAR_ALLIANCE_01     | [other_name] adlı arkadaşım, arayışımda bana tahmin edebileceğinden çok daha fazla yardımcı oldu. Onlara borcumu senden kurtularak ödediğim için mutluyum!
+DECLAREWAR_ALLIANCE_02     | Arayışımda bana yardım edenlere sonsuz minnettarlık içindeyim ve [other_name] arkadaşımı onurlandırmak için elimden geleni seve seve yapacağım. Ölmeye hazırlan, [your_name]!
+DECLAREWAR_ALLIANCE_03     | Kimsenin iradene karşı çıkmaya cesaret edemeyeceğini düşündüğünden galaksideki herkesi zorluyorsun. [other_name] dövüşü kapına getirecekse, bir ucundan da ben tutacağım!
+DECLAREWAR_SPYING_01       | Dünyalarımdan olan hiçbir şey gözümden kaçmaz. Böyle alçakça davranmakta ısrar ettiğinden, bana seni yok etmekten başka seçenek bırakmıyorsun.
+DECLAREWAR_SPYING_02       | Aptal [your_name], oyunlarından bıktım! Ordularımı savuşturmak zorunda kaldığında, böyle sinsi planlara zamanın kalmayacak! Savaşa hazırlan!
+DECLAREWAR_SPYING_03       | Bana karşı böyle hareket ederek ne kazanmayı umuyordun? Ordularımız arasındaki fark ne olursa olsun, şimdi seninle savaşmaktan başka yolum yok!
+DECLAREWAR_ATTACK_01       | Bu nedir, [your_name]? Dünyalarımdan birine saldırarak aramama sekte vurmak mı istiyorsun? Sanırım seni yok etmek, kısa da olsa eğlenceli bir oyalanma sağlayacaktır.
+DECLAREWAR_ATTACK_02       | Savaş nedeni olarak bilinen şey bu mu? Ordularının ve filonun benimkine karşı savaşmasını mı istiyorsun? Haydi savaşalım o zaman: Daha fazlasını öğrenmek için can atıyorum!
+DECLAREWAR_ATTACK_03       | Bana karşı böyle bir saldırıya nasıl cüret edersin?! Arayışımı tamamlamamı engellemek isterken onun yerine şimdi tüm öfkemle yüzleşeceksin!
+DECLAREWAR_OPPORTUNITY_01  | Bir şeyin engel olduğu anlaşıldığında, ondan kurtulmanın en iyi yolu onu tamamen ortadan kaldırmaktır. Diplomasinin tüm yollarını bilmesem de seni yolumdan çıkarmanın gülünç derecede basit bir şey olacağını biliyorum.
+DECLAREWAR_ASSASSIN_01     | Bedenlerimden birine saldırmak, tüm bedenlerime saldırmak demektir. Benden birini öldürmeyi seçtiğine göre ben de karşılığında hepinizi öldüreceğim!
+
+OFFER_PEACE_01             | Savaş dediğin bu şeyden hoşlanmıyorum. Acımasız ve merhametsiz ve ikimizin de bu bitmek bilmeyen katliamı sürdürmekten daha önemli işleri var. Bunu barış içinde bitirelim, [your_name].
+OFFER_TRADE_01             | İkimiz de galaksiye kendi amaçlarımız girdik, [your_name]. Emellerimizi gerçekleştirmek için birbirimize neden yardım etmeyelim? Her yıl [amt] BC'lik bir ticaret anlaşması tam da bunu yapar, değil mi?
+OFFER_PACT_01              | Uzayda yaptığım yolculukta pek çok garip yaratıkla tanıştım ve bunların çoğu doğası gereği kavgacı ve saldırgandır. Bunların ikisi gibi de görünmüyorsun, o yüzden saldırmazlık paktı ile yanlış anlaşılmaları önleyelim. 
+OFFER_ALLIANCE_01          | İlişkimiz ikimiz için de fazlasıyla faydalı oldu [your_name]. Sözde ve tözde müttefik olalım da, galaksideki herkes tek vücut olduğumuzu bilsin! 
+ 
+WARN_TRESPASSING_01        | [system] mevkisinde olman beni çok tedirgin ediyor. [your_name] filosunu bölgeden uzaklaştır, yoksa misilleme yapmak zorunda kalabilirim. 
+WARN_EXPANSION_01          | Arayışımı tamamlamama gözünü diktiğin her dünyaya el koyarak engel olmana izin vermeyeceğim. Derhal dur yahut kendini savaşa hazırla!
+WARN_BUILDUP_01            | Filonu etkileyici bir büyüklüğe getirdin, [your_name]. Onu benim filolarım etraftayken nasıl kullandığına dikkat et. 
+WARN_SKIRMISH_01           | [system] mevkisindeki vukuat huzurumu kaçırıyor. Bu sadece senin açından bir yanlış anlama mıydı? Bunun tekrarlamamasını sağla: Mecbur kalmadıkça [your_name] ile savaşmak istemiyorum. 
+WARN_ATTACKED_01           | Bana böyle saldırmanın kazancı nedir? Saldırganlığını bir an önce kesmezsen beni yüz katıyla karşılık vermeye mecbur bırakacaksın! 
+WARN_INVADED_01            | Neden [system] sisteminde arazimi ihlal ettin?! Bir çatışma başlatmak mı niyetindesin yoksa sadece bedenlerinizin kontrolünü mi kaybettiniz? 
+WARN_ESPIONAGE_01          | Seni anlamıyorum, [spy_name]. Çatışma istemez gibi davranıp sonra sırlarımı çalmaya mı çalışıyorsun? Böyle devam etmekte diretirsen, seni pişman edeceğime söz veriyorum! [framed]
+WARN_SABOTAGE_01           | Bu sabotajınla benimle alay ediyorsun! Görevim her şeyden önce gelir, ancak bunu tekrarlarsan seninle kişisel olarak ilgilenmek için arayışımı durduracağım! [forced]
+WARN_BIOWEAPON_01          | Bu silahın kesinlikle korkunç. Onu sadece kullanman bile senin gerçekte ne olduğunu anlatırken bir de başka bir canlının vücutlarında kullanman beni tamamen çileden çıkarıyor! 
+WARN_GENOCIDE_01           | Nasıl bir taş kalplilik! [victim_name] olarak bilineni tamamen yok edecek kadar ileri gitmeni hiç beklemiyordum. Bugün gösterdiğin barbarlığı asla unutmayacağım. 
+WARN_FINAL_WAR_01          | Şimdi görüyorum ki hayalimi gerçekleştirebilmem için galaksinin huzur içinde olması gerekiyor. Ama sen var olduğun sürece bu barış asla gerçekleşemez. Cevap açık: [rebel_name] yok edilmeli! 
+WARN_COUNCIL_VOTE_01       | "Politik manevra" dediğin şeyin nüanslarına aşina olmadığımı itiraf ediyorum. Ama [other_name] için oy vererek bana karşı bir hamle yaptığını biliyorum ve bana ayak bağı olanları unutmam. 
+WARN_OATHBREAKER_01        | [your_name], senin hareket tarzın böyle mi yani? Bir anlaşmayı yapıp uygun gördüğünde bozuvermek mi? Benim gibi olmadığını biliyordum ve davranışların bunu hiçbir şüpheye yer bırakmayacak şekilde kanıtlıyor! 
+WARN_ATTACKED_ALLY_01      | Neden arkadaşım [defender_name] ulusuna, saldırıyorsun [your name]? Sorunlarınızı çözmenin başka bir yolunu bulun: Müdahaleye mecbur bırakılmaktan hazzetmeyeceğim! 
+differences: I will not like being forced to intervene! 
+WARN_REBELLING_AGAINST_01  | [your_name], seni sevmiyorum ve konsey lideri olarak seçilmeni daha da sevmiyorum! Bugün neler olduğunu değerlendirmeliyim ve sen de yakında mecburen nasıl bir yanıt vereceğimi değerlendirmelisin! 
+
+PRAISE_COUNCIL_VOTE_01     |  [voter_name]! Konseydeki oyunu çantada keklik saydığımı düşünme! Sen ve ben çok farklı olsak da, yolculuğumda senin gibi harika bir arkadaşla tanışabildiğim için gerçekten mutluyum. 
+PRAISE_COUNCIL_VOTE_02     | Uzun varlığım süresince hiçbir zaman "siyaset"e ihtiyaç duymadım ama yaptığın bana fayda sağlayan bir şey, değil mi? Yakında tekrar konuşalım, böylece birbirimize nasıl fayda sağlayacağımızı daha iyi öğrenebiliriz. 
+PRAISE_COUNCIL_VOTE_03     | Konseyde bana oy vermen sadece hakkındaki fikrimi yeniden düşünmem için bir girişim. Ancak, eylemlerin bana fayda sağlamaya devam ederse, bunu yapmaya sevk edileceğime inanıyorum. 
+PRAISE_ATTACKED_ENEMY_01   | Evet! Saldırıya uğradım ve arkadaşım yardımıma geliyor! Kırılmaz bir bağla birlikte savaştığımızı aşağılık [defender_name] ulusuna gösterelim! 
+PRAISE_ATTACKED_ENEMY_02   | Teşekkürler [attacker_name]! "[defender_name]" olarak bilinenin nasıl büyük bir tehdit oluşturduğunu fark eden başka birinin olduğunu görmek güzel. Gel! Birlikte, geriye bir şey kalmayana kadar saldıracağız! 
+PRAISE_ATTACKED_ENEMY_03   | [attacker_name], [defender_name] ulusuna saldırarak ne kazanmayı umduğunu bilmiyorum. Dengesizsin ve güvenilecek biri değilsin, ama yine de bunu hatırlayacağım.
+PRAISE_TRADE_01            | Bu noktaya ancak karşılıklı yarar için birlikte çalışarak gelebildik. Alışverişlerimizden elde ettiğimiz refah, ikimiz de aradığımız şeyi bulana kadar sürsün! 
+PRAISE_TRADE_02            | Ticaret anlaşmamızın ikimize de bu kadar yardımcı olması beni memnun ediyor. Sen de bundan memnunsun, değil mi [your_name? 
+PRAISE_REBELLING_WITH_01   | [your_name] yardım çağırıyor! Bu gülünç konseye karşı silaha sarılmanda sana katılacağım! Sen benim arkadaşımsın ve bu asla yalnız savaşmayacaksın demek!
+
+DIPLO_TECH_REQUEST_MENU_01   | Ne tür bir teknoloji ilgini çeker?
+DIPLO_TECH_COUNTER_MENU_01   | Bunun için ne teklif ediyorsun?
+DIPLO_TRADE_MENU_01          | Aşağıdakiler için bir ticaret anlaşması öneriyorsun:
+DIPLO_TREATY_MENU_01         | Bir anlaşma teklif ediyorsun
+DIPLO_DECLARE_WAR_MENU_01    | Savaş başlatmak istediğinden emin misin?
+DIPLO_SUGGEST_WAR_MENU_01    | Kime savaş açayım?
+DIPLO_BREAK_ALLIANCE_MENU_01 | Hangi ittifakı bozayım?
+DIPLO_THREATEN_MENU_01       | Eylemlerin:
+
+DECLINE_OFFER_01           | Reddediyorum.
+DECLINE_OFFER_02           | Teklifini değerlendirdim ve reddettim.
+DECLINE_OFFER_03           | Teklifini saygıyla reddediyorum.
+DECLINE_OFFER_04           | Şu anda ilgilenmiyorum.
+DECLINE_OFFER_05           | Teklifini adil bulmuyorum.
+DECLINE_OFFER_06           | Şu anda teklifini kabul etmek benim yararıma olmaz.
+DECLINE_OFFER_07           | Belki de beni saf bir aptalla karıştırdın. Teklifini reddediyorum.
+DECLINE_OFFER_08           | Teklifin bana adil görünmüyor.
+DECLINE_OFFER_09           | Maalesef reddeceğim.
+
+DECLINE_ENEMY_ALLY_01      | Nefret ettiğim [other_name] ulusunun müttefikleriyle asla iş tutmam
+
+DECLINE_ANNOYED_01         | [your_name] alevden çok duman çıkaran bir yaratık. Senin gevezeliğinden bıktım. Senin gevezeliğinden bıktım.
+DECLINE_ANNOYED_01         | [your_name], sabrımı deniyorsun. Belki şimdi susup, sonra konuşmalısın.
+DECLINE_ANNOYED_01         | Yeterince dinledim. Daha sonra tekrar konuşacağız.
+DECLINE_ANNOYED_02         | Diplomatik müzakerelerden bıktım. Görüşmelere daha sonra devam edebiliriz.
+DECLINE_ANNOYED_02         | Bu konuşmalar bizi bir yere götürmez. İznimi isteyeyim.
+DECLINE_ANNOYED_02         | Gidiyorum.
+DECLINE_ANNOYED_03         | Binlerce özür, [your_name], ancak diğer görevler beni çağırıyor.
+DECLINE_ANNOYED_03         | Affedersin, ama zamanım sona erdi.
+DECLINE_ANNOYED_03         | Çok az zamanım ve yapacak çok işim var. Belki daha sonra tekrar konuşabiliriz.
+
+
+DECLINE_OATHBREAKER_01     | Geçmişte anlaşmalar bozduğun için şu anda bir anlaşmaya girmek istemiyorum.
+DECLINE_OATHBREAKER_01     | Geçmişteki anlaşmalarınıza uymadın. Şimdi sana güvenmek için çok az sebep görüyorum.
+DECLINE_OATHBREAKER_01     | Geçmişte birçok anlaşma ihlal etmişken, şimdi sana neden güveneyim?
+DECLINE_OATHBREAKER_01     |  Geçmişteki vaatlerini yerine getirmeyen biriyle uzlaşmak için hiçbir neden görmüyorum.
+DECLINE_OATHBREAKER_01     | Onuru olmayan [your_name] ile uğraşmayacağım.
+
+DECLINE_ESPIONAGE_01       | Siz hırsız köpekler, araştırmamın meyvelerini çalıyorsunuz. İsteğini reddediyorum.
+DECLINE_ESPIONAGE_01       | Teknolojim sadece benim için. Onu çalmaya hakkın yok. Hırsızlığı bıraktığın zaman konuşuruz.
+DECLINE_ESPIONAGE_01       | Neden sana bir şey vereyim? Casusların zaten ihtiyacın olan her şeyi çalıyor!
+DECLINE_ESPIONAGE_01       | Casusların teknolojimi çalarken bunu kabul etmemi nasıl beklersin?
+DECLINE_ESPIONAGE_01       | Casuslarınızı çıkar, sonra konuşuruz.
+
+DECLINE_SABOTAGE_01        | Son sabotaj olayını unutmadım. Daha güvenilir olduğunu kanıtlayana kadar seninle iş tutmayacağım.
+DECLINE_SABOTAGE_01        | Sabotajın canımı yaktı. O eskiye dönene kadar seninle iş tutmayacağım.
+DECLINE_SABOTAGE_01        | Ne! Bir sürü [target] sabote ederken uzlaşmamızı mı bekliyorsun?
+DECLINE_SABOTAGE_01        | Bana ait bir [target] yok ettin. Neden seninle iş tutayım?
+DECLINE_SABOTAGE_01        | [target] sabote etmeyi bıraktığında, konuyu ele alabiliriz.
+
+DECLINE_BUILDUP_01         |  Sen sınırlarımızın dibine gemi yığarken bunu gündeme almayacağım.
+DECLINE_BUILDUP_01         | Sınırlarımdaki gemilerini çek, kabul etmeyi düşünelim. O zamana kadar ilgilenmiyorum.
+DECLINE_BUILDUP_01         | Sınırlarımdaki gemilerini benim için tehdit değil. Ama onlar oradayken anlaşmayı reddediyorum.
+DECLINE_BUILDUP_01         | [my_empire] ile iş tutmak istiyorsan, gemilerini tehdit için bana değil başkalarına gönder.
+
+DECLINE_ENCROACH_01        | Filoların alanıma izinsiz giriyor. Onları uzaklaştır, sonra konuşuruz.
+
+DECLINE_SKIRMISH_01        | Durduk yere gemilerime saldırıp razı olmamı mı bekliyorsun? Anlaşmayı reddediyorum.
+DECLINE_SKIRMISH_01        | Filolarıma saldıran birinin teklifini kabul edemem.
+DECLINE_SKIRMISH_01        | Filoların benimkilere saldırmayı bıraktığında konuşabiliriz.
+DECLINE_SKIRMISH_01        | Benimle iş tutmak istiyorsan, filolarımı rahat bırak.
+DECLINE_SKIRMISH_01        | Filolarımı yok etmenden memnun değilim. Kabul etmiyorum.
+
+DECLINE_ATTACK_01          | [system] mevkisine haksız saldırın sana pazarlık için çok az alan bırakıyor.
+DECLINE_ATTACK_01          | [system] kolonisine yapılan saldırıyı unutmadım. Kabul etmemin bir yolu yok.
+
+DECLINE_INVASION_01        | [system] mevkisinin kasaplarıyla uğraşmak istemiyorum. Önce suçunu telafi et.
+DECLINE_INVASION_01        | [system] mevkisindeki kanım sözlerine bulaşmış. Teklifini kabul edemem.
+DECLINE_INVASION_01        | [system] mevkisinde kaybettiğim, intikam için haykırıyor. Hissettiğim acı senin teklifinden daha yüksek sesli.
+
+DECLINE_BIOWEAPONS_01      | Biyolojik silah kullanabilen biriyle anlaşma yapmayacağım.
+DECLINE_BIOWEAPONS_01      | Biyolojik silah kullanacak kadar umutsuz kimseyle iş tutmam.
+DECLINE_BIOWEAPONS_01      | Üzerimde tarifsiz dehşet uyandıran silahlar kullanıyorsun. Böyle bir çılgınlıkla uğraşmayı reddediyorum.
+DECLINE_BIOWEAPONS_01      | Tanrılar, gezegenleri biyolojik silahlarla yok edenlerden nefret eder. Buna izin veremem.
+DECLINE_BIOWEAPONS_01      | Biyolojik silahlarının bana verdiği acı kulaklarımı dolduruyor. Teklifini duyamıyorum.
+
+DECLINE_TECH_TRADE_01      | Beni ilgilendiren hiçbir teknolojin yok.
+DECLINE_TECH_TRADE_01      | Senin oyuncaklarına ihtiyacım yok.
+DECLINE_TECH_TRADE_01      | İlkel icatların beni ilgilendirmiyor.
+DECLINE_TECH_TRADE_01      | Senin teknolojinin çok ötesindeyim.
+DECLINE_TECH_TRADE_01      | [your_name], bilim adamlarının bize sunduklarına pek ihtiyacım yok.
+DECLINE_TECH_TRADE_01      | Teknolojin pek ilgimi çekmiyor.
+
+DECLINE_NO_WAR_ON_ALLY_01  | Bir müttefike savaş ilan etmeyeceğim.
+DECLINE_PEACE_TREATY_01    | [other_name] ile barış anlaşmamı bozmayacağım.
+
+OFFER_TECH_EXCHANGE_01     | [tech] teknolojine büyük ihtiyaç duyuyorum. Belki de onu bazı teknolojilerimle takas etmek istersin.
+OFFER_TECH_EXCHANGE_01     | [tech] teknolojisini öğrendiğini biliyorum. Karşılığında sana bazı teknolojimi sunabilir miyim?
+OFFER_TECH_EXCHANGE_01     | [tech] teknolojisinin sırrını istiyorum. Onu benim keşiflerimden biriyle takas eder misin?
+OFFER_TECH_EXCHANGE_01     | [tech] teknolojisinin bilimsel mucizesine hayranım. Sırrı için sana ne önerebilirim?
+
+ACCEPT_TECH_EXCHANGE_01    | Çok iyi. Harika [techGiven] sırlarımı [techReceived] teknolojisiyle değiştirmeyi kabul ediyorum.
+ACCEPT_FINANCIAL_AID_01    | [amt] BC'lik hediyeni kabul ediyorum.
+ACCEPT_TECHNOLOGY_AID_01   | [tech] hediyeni kabul ediyorum.
+
+BREAK_TRADE_01             | [your_name] şahsının ticari mallarına artık arzu duymuyorum.
+ANNOUNCE_TRADE_01          | [year] yılından itibaren, ben ve [your_name] her yıl [amt] yılda [amt] BC'lik ticaret etmeyi kabul eder.
+ACCEPT_TRADE_01            | [amt] BC'lik bir ticaret anlaşması kabul edilebilir.
+ACCEPT_TRADE_01            | [your_name] şahsının sunduğu güzel ürünleri sabırsızlıkla bekliyorum. Yıllık [amt] BC'lik bir anlaşmayı kabul ediyorum.
+ACCEPT_TRADE_01            | [amt] BC'lik ticaret yapmayı kabul ediyorum.
+ACCEPT_TRADE_01            | Yani, [your_name], yıllık [amt] BC'lik teklifini adil ve hakkaniyetli buluyorum.
+
+ANNOUNCE_PEACE_01          | [year] yılında, ben ve [your_name] tüm düşmanlıkları sona erdirmeyi kabul ediyoruz.
+ANNOUNCE_PEACE_01          | Seninle benim aramızdaki tüm düşmanlıkların sona ermesini emrediyorum.
+ACCEPT_PEACE_01            | Küçük çekişmelerimize son verme zamanının geldiği konusunda hemfikiriz.
+ACCEPT_PEACE_01            | Barış teklifini kabul ediyorum. Kuvvetlerime ateşi kes, ben de seninkilere saldırmayı bırakayım.
+ACCEPT_PEACE_01            | Bu anlamsız yıkımdan bıktım usandım. Barış teklifini kabul ediyorum.
+
+BREAK_PACT_01              | Benden sana bir uyarı, [your_name]: Saldırmazlık Anlaşmamız bozuldu!
+ANNOUNCE_PACT_01           | [year] yılında Saldırmazlık Paktı'na bağlı kalacağıma ve kolonilerimden birinin yörüngesinde dolanmadıkça filolarına saldırmayacağıma söz veriyorum.
+ACCEPT_PACT_01             | Saldırmazlık Paktı'nı kabul ediyorum. İkimiz de da birbirimizin koloni yörüngelerine girmedikçe, birbirimizin filolarına saldırmayacağız.
+ACCEPT_PACT_01             | Kolonilerimden herhangi birine gemi göndermemeyi kabul edersen, hiçbir gemine saldırmayacağımı taahhüt ederim.
+ACCEPT_PACT_01             | Önerdiğin Saldırmazlık Paktı'nı kabul ediyorum. Kayda geçsin ve artık böyle yapılsın!
+ACCEPT_PACT_01             | Anlaştık öyleyse. Kolonilerime saldırmadığın sürece Saldırmazlık Paktı'na bağlı kalacağım.
+
+BREAK_ALLIANCE_01          | [your_name] ile İttifakımı artık sürdüremem.
+ANNOUNCE_ALLIANCE_01       | [year] yılında ben ve [your_name], birbirimizin filolarına veya kolonilerimize saldırmayacağımız bir ittifak oluşturmayı kabul ediyoruz.
+ANNOUNCE_ALLIANCE_01       | Böylece İttifakımız doğdu. Gemilerin kolonilerimi dilediğin gibi ziyaret edebilir, üslerimden yakıt alabilir.
+ACCEPT_ALLIANCE_01         | Dostum [your_name] ile bir İttifakı memnuniyetle karşılıyorum.
+ACCEPT_ALLIANCE_01         | Ben ve [your_name] bugün bir İttifak oluşturuyoruz. Düşmanlarımıza ölüm!
+ACCEPT_ALLIANCE_01         | [your_name] ile bir İttifakın hikmetini görüyorum. Bunu onaylıyorum.
+
+ACCEPT_BREAK_ALLIANCE_01   | Katılıyorum, [other_name] artık güvenilir değil ve onlarla olan ittifakımı bozdum.
+ACCEPT_BREAK_ALLIANCE_01   | Bunu [other_name] kişisine sırt çevirmek bana acı verse de, yaptım.
+ACCEPT_BREAK_ALLIANCE_01   | [other_name] artık benim müttefikim değil
+ACCEPT_BREAK_ALLIANCE_01   | Benimle [other_name] İttifakı şimdi ayaklarımızın altında paramparça yatıyor.
+ACCEPT_BREAK_ALLIANCE_01   | İstediğin gibi olsun, artık [other_name] şahsını müttefiklerimden saymayacağım.
+
+ACCEPT_JOINT_WAR_01        | [other_name], [your_name] ve benim birleşik gücümüzle ezilecektir.
+ACCEPT_JOINT_WAR_01        | [other_name], [your_name] ve benim ittifakımız karşısında uzun süre duramayacak.
+ACCEPT_JOINT_WAR_01        | [year] yılında, ben ve [your_name] galaksideki [other_race] tehdidine son vermek için güçlerimizi birleştiriyoruz.
+
+RESPOND_CLOSE_EMBASSY_01   | Öyle olsun. Ben ve [your_name] arasında daha fazla görüşme olmayacak.
+
+RESPOND_BREAK_TRADE_01     | Bunu hatırlayacağım.
+RESPOND_BREAK_TRADE_01     | [your_name], demek sözüne sadık değilsin. Bunu unutmayacağım.
+
+RESPOND_BREAK_PACT_01      | Bozulan anlaşmalarının bahsini mezar taşına yazacağım, [your_name].
+RESPOND_BREAK_PACT_01      | [your_name] tutmadığı vaatlerinin ağırlığı altında çatırdayacak.
+
+RESPOND_BREAK_ALLIANCE_01  | Anlaşmayı çiğnedin. İttifak bozuldu.
+RESPOND_BREAK_ALLIANCE_01  | Pekâlâ. Güvenilmez niyetlerin açığa çıktı. İttifak bozuldu.
+RESPOND_BREAK_ALLIANCE_01  |  İtibar edilmeyen anlaşmalara ihtiyacım yok. İttifak bozuldu.
+RESPOND_BREAK_ALLIANCE_01  | Öyle olsun. İttifak bozuldu.`
+
+ACCEPT_TRADE_01            | Benimle ticaret yapmak mı istiyorsun? Ne kadarlık? Her yıl [amt] BC mi? Evet... evet sanırım [your_name] kişisiyle böyle bir sözleşmeyi kabul edebilirim.
+RESPOND_IGNORE_THREAT_01   | Beni tehdit etme, aptal [your_name]. Benden o kadar çok var ki, savaşa girersek kazanmayı umman bile imkânsız. Bas git!
+RESPOND_STOP_SPYING_01     | Sadece kendi kendine yalnızken [your_name] nasıldır anlamaya çalışıyordum. Bunu tekrar yapmayacağım. Lütfen casusumu şimdi geri verir misin?
+RESPOND_STOP_ATTACKING_01  | Hah ha! Ne kadar güçlü olduğumu gördün mü! [your_name] benimle boy ölçüşemez! Bunu filolarımı geri çağırdıktan sonra da unutma!

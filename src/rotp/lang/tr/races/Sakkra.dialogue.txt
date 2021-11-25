@@ -1,0 +1,87 @@
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Sakkra specific dialogue
+
+CONTACT_AGGRESSIVE         | Merhaba! [my_race] olarak biliniyoruz, ancak bu önemli değil. Önemli olan, galaksideki her gezegenin ekolojisini her türlü yola başvurarak mükemmelleştirmeyi planladığımızı bilmen, tamam mı? Şimdilik hoşçakal!
+CONTACT_RUTHLESS           | Hey! [my_race] biziz! Umarım gezegenlerinizin ekosistemlerine kötü davranmıyorsunuzdur. Bunu hemen düzeltmemiz gerekirdi ve bu muhtemelen senin için pek eğlenceli olmazdı, değil mi?
+CONTACT_ERRATIC            | Vay, yeni bir tür! Biz [my_race] türüyüz, ya siz? [your_race]? Harika! Sadece gezegenlerini temiz tutman gerektiğini bilmeni istiyorum, tamam mı? Sizi çok, çok yakından takip ederek bunu yaptığından emin olacağız.
+//
+GREETING_01                | Hey büyükelçi! Senin gibi bir arkadaştan haber almak her zaman sevindirici! Bir konuda yardıma mı ihtiyacın var?
+GREETING_04                | [your_empire] ulusunun elçisi! Bazı gezegen ekosistemlerinde ince ayar yapmakla meşgulsek de, söyleyeceklerini dinleyeceğiz. 
+GREETING_07                | Ah demek sensin. Ne istiyorsun? Seninki gibi pis ırklarla ilişki kurmaktan pek hoşlanmadığımızı biliyorsun, değil mi?
+//
+DECLAREWAR_HATE_01         | Halkın ellerine geçen her gezegeni pisletmeyi bırakamıyor, ha? Galaksideki kirlerinizi bir biyokubbe inşa etmek için gereken süreden daha kısa sürede temizleyeceğiz!
+DECLAREWAR_HATE_02         | İlk tanıştığımızdan beri, ekosistemlerinizi en akıl almaz şekillerde mahvetmeye devam ediyorsunuz! Bu gezegenlere daha fazla zarar vermeden önce sizi ortadan kaldıracağız!
+DECLAREWAR_HATE_03         | Artık dünyalarınızı kirletmenize seyirci kalamıyoruz! Bize çok pahalıya mal olacak, ama bazen hedefe giden bütün yollar mübahtır!
+//
+DECLAREWAR_ERRATIC_01      | Vay canına, halkın cidden çok pis. Dünyalarınızı temizlemenize yardımcı olabilirdik, ancak sizi sepetleyip onları kendimiz adam etmemiz çok daha hızlı olur.
+DECLAREWAR_ERRATIC_02      | Selam! Savaşa hazır mısınız? Değil misiniz? Bu pek kötü doğrusu! Ama dünyalarınızdan bazılarının iyileştirmeye muhtaç olduğunu görüyoruz ve sadece onları ele geçirsek yeter.
+DECLAREWAR_ERRATIC_03      | Selam sana! Yakın zamanda enerji açısından daha da verimli bir biyokubbe tasarladığımızı biliyor muydun? Onları gerçekten pis bazı gezegenlerde test etmek istiyoruz, o yüzden işe sizinkilerden bazılarını temizleyerek başlamamızın bir sakıncası var mı?
+//
+DECLAREWAR_MILITARY_01     | Kurulun bu galaksideki her gezegenin ortamını mükemmelleştireceğini biliyorsun, değil mi? Peki, dünyalarınız üzerinde çalışmaya başlayacağız. Onları şimdi bırakıp gitmelisiniz. Onları yakında terk etmelisin: Savaşmaya çalışırsanız bizi yenmeniz mümkün değil!
+DECLAREWAR_MILITARY_02     | [my_title], gezegenlerinizi düzeltmeye başlayabilmemiz için halkını oralardan hemen çıkarmamız gerektiğini söylüyor. Onları olaysız biçimde terk edecek misiniz? Hayır? Bu çok kötü!
+DECLAREWAR_MILITARY_03     | Bölgenizde henüz çözülmemiş ekolojik bulmacalardan en harika bazılarına sahipsiniz ve sanki yoklarmış gibi davranıyorsunuz! Artık dayanamıyoruz! Ne olursa olsun, onları sizden alacağız!
+//
+DECLAREWAR_ALLIANCE_01     | Senin ve [other_race] ulusunun bir şey uğruna dövüştüğünü duyduk. Aptalca ve önemsiz bir şey olduğuna eminim, ama bu, kolonilerinizi kendi başımıza alıp neden olduğunuz tüm hasarı nihayet düzeltebilmemiz için çok iyi bir fırsat!
+DECLAREWAR_ALLIANCE_02     | [other_race] ulusunun kirli bir halk olduğunu kesinlikle inkâr edemem. Yine de sen onlardan çok daha pissin, bu yüzden seninle savaşmak istiyorlarsa seve seve yardıma koşarız.
+DECLAREWAR_ALLIANCE_03     | Bu sefer kesinlikle tökezlediniz, büyükelçi! Müttefikimiz [other_race] kadar kirli olsa bile, sizinle savaşa girdiklerinde onlara destek olacağımızı bilmeliydiniz. Bir dakika, bilmiyor muydun? Hay Allah...
+//
+DECLAREWAR_SPYING_01       | Tam olarak ne yaptığını sanıyorsun? Sizin gibi pis bir halk, Kurul'a karşı casusluk yaparsa muhakkak arkasında takip edebileceğimiz bir pislik izi bırakacaktır, anlıyor musun?
+DECLAREWAR_SPYING_02       | Kurul'a karşı böyle gizlilik içinde hareket etmeniz bizi zaten kızdırıyor ama bir de iğrenç varlığınızla gezegenlerimizi kirletmiş olmanız kanımızı beynimize sıçratıyor!
+DECLAREWAR_SPYING_03       | Bizi gözetlemeye karar verdiğinde karşılık vermeyeceğimizi düşünerek hata yaptınız. Ordunuzun bizimkinden birazcık daha büyük olması, siz püsürseverlerle savaşa girmek istemeyeceeğimiz anlamına gelmez!
+//
+DECLAREWAR_ATTACK_01       | Ne yapıyorsun?! Sizin gibi zavallılar değerli gezegenlerimize zarar vermeye nasıl cüret eder?! Bunun için halkını çerçöp gibi yakacağız!
+DECLAREWAR_ATTACK_02       | Bize karşı savaşmak istiyorsunuz, ha? Endişelenmeyin, koloni koloni ele geçirip gezegenlerinizi korkunç kirleticilerinden kurtaracağız!
+DECLAREWAR_ATTACK_03       | Pis! Pis! Pis! Korkunç kana susamışlığınla gezegenimizi lekeledin! Kurul, sizi geldiğiniz çöp çukuruna geri göndermek için tüm gücünü toplayacak!
+//
+DECLAREWAR_OPPORTUNITY_01  | [my_title] son zamanlarda halkın hakkında düşünüyordu. Galaksiye yayılmanızı er ya da geç engellemenin bizim için en iyisi olacağı sonucuna vardı. Bu şekilde, sizi paketledikten sonra temizlememiz gereken çok fazla dünyamız olmayacak!
+DECLAREWAR_ASSASSIN_01     | Ne yaptınız siz?! Türüne güvenilemeyeceğini biliyordum! Silahsız bir büyükelçiyi öldürenlerin, ekosistemlerine neler yaptığını düşünmek bile titriyorum! Savaşa hazırlanın, pis [your_race].
+
+
+OFFER_PEACE_01             | Ah o zavallı gezegenler! Onların bu aptal savaşla daha fazla yaralandığını görmeye dayanamayız! Büyükelçi, şimdi savaşa bir son verip canlarını çok yaktığımız bu dünyaları iyileştirmeye başlayalım! 
+OFFER_TRADE_01             | Vay canına, tüm bu dünyalarda bir sürü karmaşık ortamlar var! Tüm bu projelere kaynak bulmak için ekonomimizi daha güçlü hale getirmek istiyoruz ve sizinle ticaret yapmak bize çok yardım edecektir! Her yıl [amt] uygundur, değil mi? 
+OFFER_PACT_01              | Gezegenlerinize yeterince iyi bakıyor gibisiniz ve savaşlar, vuku buldukları dünyalara çok çirkin şeyler yapıyor. Bizimle saldırmazlık paktı imzalamak misiniz? Bu şekilde güzel ekosistemlerimizin ikisinin de korkacak bir şeyi olmayacak! 
+OFFER_ALLIANCE_01          | Vay, etkilendim! Gezegenlerinize bakma şeklinizle, neredeyse siz de Sakkra'sınız! Bizimle ittifak yapın büyükelçi! Birbirimizin dünyalarını birlikte koruyacağız: Bir olduğumuz sürece kimse bizi tehdit edemeyecek! 
+ 
+WARN_TRESPASSING_01        | Hey! Hey! Hey! [system] Kurulun koruması altında! Burada işin yok, biliyorsun di mi? Çık git! Şimdi! Ne bekliyorsun? Git! 
+WARN_EXPANSION_01          | Hak ettiğinden fazlasına el koyuyorsunuz, büyükelçi! Bu dünyaların hepsine bakacak kadar medeni değilsiniz ve tüm bu ekolojik ilginçlikleri mundar etmene izin vermeyeceğiz! Genişlemenizi yavaşlatın, yoksa!
+WARN_BUILDUP_01            | Orada bir sürü gemi görüyorum! Başka gemiler getirmeye devam ederseniz, bazı imparatorluklar tedirgin olabilir. Silahlarını size doğrultmaya başlayabilirler. Hatta bir iki el ateş bile edebilirler! Başka gemi getirmeye devam ederseniz, yani. 
+WARN_SKIRMISH_01           | [system] mevkisinde bir çatışma olduğuna inanamıyorum! Ne düşünüyordunuz, büyükelçi? Herhangi bir gezegene zarar vermediğiniz için bu seferlik görmezden geleceğiz, ama bundan sonra filolarına göz kulak ol, aptal [your_race]! 
+WARN_ATTACKED_01           | Ne yaptığınızı sanıyorsunuz?! Maskaralığı bırakın! [system] ekolojisini mükemmelleştirmekle zaten çok meşgulüz, bir de gemilerinizin etrafta uçup işleri daha da zorlaştırmasına gerek yok! 
+WARN_INVADED_01            | Aklınızı mı kaçırdınız?! Ya da aptal [your_race] türünün zekâsı bu kadar mı kıt?! Verdiğiniz hasarı onarmak yıllar alacak! Bu şakalar artık tadı kaçtı! Oyunlar oynamayı bırakın yoksa sizi pişman ederiz! 
+WARN_ESPIONAGE_01          | Bizi gözetleyip bunu gizlemeyi başarabileceğinizi mi düşünüyordun? Komiksin, büyükelçi. Ama bu eğlenceli olmayı bıraktığında, muhtemelen gereğini yapıp seni öldüreceğiz, tamam mı? [framed]
+WARN_SABOTAGE_01           | Ne yaptınız siz?! Biyokubbeyi baştanbaşa çatlattın! Tüm o değerli numuneler, tüm o deneyler mahvoldu! Çok ileri gittiniz: Bu devam ederse bizden bir yanıt bekleyin, pis [your_race]! [forced]
+WARN_BIOWEAPON_01          | Şimdi haddi aştınız! Biyolojik silah mı? Biyolojik silah!! O savunmasız gezegenin ekolojisine verdiğiniz dile gelmez zararı bir düşünün! Süzme canavarlar: buna pişman olacaksınız!
+WARN_GENOCIDE_01           | [victim_race] ırkını temizledin, değil mi? Güzel, gerçekten sinirlerimizi bozmaya başlamışlardı. Tabii ki onların dünyalarını ekolojik restorasyon için bize vereceksiniz. Vermeyecek misiniz? Anlıyorum...
+WARN_FINAL_WAR_01          | Hepimizin tüm dünyaların iyiliği için bir araya gelmeye karar verdiğini biliyorsun, değil mi? Neden birliğimize karşı çıkmak istiyorsunuz, büyükelçi? Sanırım yakında pek önemi olmayacak. Ama endişelenme! Siz gittikten sonra gezegenlerinize iyi bakacağız.
+WARN_COUNCIL_VOTE_01       | Konseyde yaptığın pek hoş bir şey değildi. Birbirimizi anladığımızı sanıyordum, büyükelçi? Doğru tercihin her zaman [candidate_race] iradesi olduğu konusunda. Bir daha tökezlemeyin, pis [your race]!
+WARN_OATHBREAKER_01        | Tuhaf vücutlarınız ve kötü kokunuzla her zaman fiziksel açıdan iğrenç olduğunuzu düşünürdük. Şimdi görüyoruz ki eylemler de eşgalle örtüşüyor. Gözümün önünden çekil büyükelçi: Gerçekten midem bulanmaya başladı.
+WARN_ATTACKED_ALLY_01      | Bakın, teknik olarak müttefik olsak bile [defender_race] ırkının hayranı sayılmayız. Aptalca çekişmeyi bırakın, yoksa müdahil olmak zorunda kalacağız.
+WARN_REBELLING_AGAINST_01  | Konsey bunu bize nasıl yapar?! Bu galaksiye liderlik etmek için o kadar halk dururken SİZİ nasıl seçebilirler? Buna izin veremeyiz... siz son derece... böylesine... KİRLİYKEN! 
+
+PRAISE_COUNCIL_VOTE_01     | Hey büyükelçi! Konseyde böyle güvenilir olduğun için teşekkürler. Diğer ırklar çok iğrenç olsa da sizin gibi bir halktan destek almak? Yani, bu bize doğru yolda olduğumuzu hissettiriyor. Bir şeye ihtiyacınız olursa haber ver, tamam mı? 
+PRAISE_COUNCIL_VOTE_02     | Bugün konsey salonlarında çok iyi iş çıkardın. Erkanımızdaki bilgeliği gördüğünü bilmekten gerçekten memnunum. Umarım gezegenleriniz de bilgeliğinizden Kurul kadar faydalanıyordur! 
+PRAISE_COUNCIL_VOTE_03     | Hmm, konsey toplantısında bize oy verip bize hoş görünerek için planladığın nedir? Her neyse, eğer önemli bir şeyse, yakında ne olduğunu öğreneceğimize eminim. Yine de destek için teşekkürler, pislik. 
+PRAISE_ATTACKED_ENEMY_01   | O dünyaların çığırdığını sen de duydun, değil mi büyükelçi? [defender_race] zulmünden bir an önce kurtulmaları gerekiyor. Özünüzde bizim gibi olduğunuzu biliyordum! Artık Kurul'un geri kalanı da bunu öğrenecek! 
+PRAISE_ATTACKED_ENEMY_02   | Haha, evet! Yordam budur! O kirli [defender_race_plural] milletini kaçacak yerleri kalmayana kadar kovalayın! Sadece gezegenlere çok zarar vermemeye çalışın, tamam mı? İşimiz bittiğinde onlar lazım olacak. 
+PRAISE_ATTACKED_ENEMY_03   | Sen de mi [defender_race] ile savaşıyorsun, pislik? Kokuları yüzünden değil mi? Etraftaki her şeye siniyor. Sadece işiniz bittiğinde bizden uzak durun! Eminim size de bulaşacaktır! 
+PRAISE_TRADE_01            | Bu ticaret anlaşması çok kıyak! Vesilesiyle pek çok projeye destek sağlayabildik. Size içtenlikle teşekkür ediyorum ve [my_empire] dünyaları adınıza sonsuz övgüler yağdırıyor! 
+PRAISE_TRADE_02            | İşte buradasın! [my_title], Kurul ile kusursuz bir ticaret anlaşmasını sürdürdüğünüz için sizi tebrik etmemi istedi. Araştıracak bir sürü projemiz olduğundan, devam etmemizdeki irfanı göreceğinizi umuyor! Hepsi bu. Şimdilik hoşçakal! 
+PRAISE_REBELLING_WITH_01   | Konsey, o [leader_race_plural] ulusunu meşhur tahtlarına çıkarmak için çıldırmış olmalı. İğrenç kokuları şimdiden halkımı hasta ediyor. Onları devirmenize yardım edelim, büyükelçi! 
+ 
+ACCEPT_TRADE_01            | Ticaret zamanı! Ticaret zamanı! Her yıl biyosferlerimizi oluşturma yolunda [amt] BC'nin büyük yardımı dokunacak! Teşekkürler arkadaşım!
+RESPOND_IGNORE_THREAT_01   | Ah birader, demek gerçekten delisiniz. Ah, öyle de olsanız elinizden bir halt gelmez! Şimdi git lütfen, bugün bu flora örnekleriyle çok meşgulüm.
+RESPOND_STOP_SPYING_01     | Bir casus yakalamışsın, di mi? Endişelenme, sadece gezegenlerine iyi davranıp davranmadığınızı kontrol ediyorduk. Sıkıntı görünmüyor, bu yüzden bize izleyicimizi geri ver de başka bir tane göndermemize gerek kalmasın!
+RESPOND_STOP_ATTACKING_01  | Bakın kaç gemimiz var. Ve her birinin korkunç, kocaman silahları var! Gezegenlerinize kötü davrandığınızı öğrenirsek, onları geri yollamak zorunda kalacağız ve ikimiz de bunun olmasını istemeyiz! Şimdilik hoşçakal!
+

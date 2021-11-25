@@ -111,7 +111,10 @@ public class TransportPanel extends BasePanel {
             // draw ship image
             if (displayedRace != tr.empire().race()) {
                 displayedRace = tr.empire().race();
-                shipImg = tr.empire().race().transport();
+                if (pl.hasContact(tr.empire()))
+                    shipImg = tr.empire().race().transport();
+                else
+                    shipImg = pl.race().transport();
             }
             int imgW = shipImg.getWidth(null);
             int imgH = shipImg.getHeight(null);
@@ -124,7 +127,11 @@ public class TransportPanel extends BasePanel {
 
             // draw title
             g.setFont(narrowFont(32));
-            String str1 = text("MAIN_TRANSPORTS_EMPIRE", tr.empire().raceName());
+            String str1;
+            if (pl.hasContact(tr.empire()))
+                str1 = text("MAIN_TRANSPORTS_EMPIRE", tr.empire().raceName());
+            else
+                str1 = text("MAIN_FLEET_TITLE_UNKNOWN");
             str1 = tr.empire().replaceTokens(str1, "empire");
             drawBorderedString(g, str1, 2, s15, s37, Color.black, SystemPanel.orangeText);
 
@@ -229,7 +236,11 @@ public class TransportPanel extends BasePanel {
             }
         }
         private void drawTransports(Graphics2D g, Transport tr, int x, int y, int w, int h) {
-            Image img = tr.empire().race().transport();
+            Image img;
+            if (player().hasContact(tr.empire()))
+                img = tr.empire().race().transport();
+            else
+                img = player().race().transport();
             int n = min(tr.launchSize(),MAX_DISPLAY);
             for (int i=n-1;i>=0;i--)
                 drawTransport(g, img, w, h, i);

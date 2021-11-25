@@ -1,0 +1,21 @@
+// all possible names
+name: Silikoid, Magmoid, Alüvyoid, Granitoid, Tortuloid
+
+desc1: Yabancı Düşmanı Yayılmacılar
+desc2: Zorlu Ortamlardan Etkilenmezler
+desc3: Gizemli ve litotforik [race] ulusu galakside ezelî düşmanlarını arıyor.
+
+// possible home system names
+home: Krasylon, Kovuk, Karst, Magmatik, Silikon
+
+title: İmparator
+fulltitle: Kristal İmparator
+
+// possible leader names
+leader: Karnaks, Kristoz, Jeot, Granit, Magmatik, Tortu
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Tortu, Çakıl, Taş, Kaya, Kristal, Mineral, Kum
+ship2: Granit, Mermer, Kayrak, Kuvars, Ponza, Gabro, Obsidyen
+ship3: Magma, Lav, Feldspat, Riyolit, Mika, Bazalt, Dasit
+ship4: Elmas, Safir, Zümrüt, Yakut, Ametist, Topaz, Laltaşı

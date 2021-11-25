@@ -1,0 +1,21 @@
+// all possible names
+name: Meklar, Mekanar, Sibernar, Dijitar, Teknar
+
+desc1: Gelgitli Sanayiciler
+desc2: Gelişmiş Fabrika Kontrolleri
+desc3: [race] İdaresi vatandaşları teknoloji aracılığıyla mükemmelliği ve ölümsüzlüğü ararlar.
+
+// possible home system names
+home: Meklon, Kolloson, Hesabon, Gönye, Optimus
+
+title: İmparator
+fulltitle: Yüksek Arabulucu
+
+// possible leader names
+leader: CB-715, INT-986, MS-35, QX-537, TVC-15, TX-1138
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Bayt, Transistör, Anahtar, Bileşen, Devre, Rakam, Mantık 
+ship2: İşlemci, Hesap Makinesi, Bilgisayar, Algoritma, Ağ, Analiz
+ship3: Dinamo, Pil, Ajax, Tayfun, Ram, Çapulcu, Drahmi
+ship4: Dumrul, Yıkıcı, Ezici, Yok Edici, Zorlu, Delgeç, Kahir

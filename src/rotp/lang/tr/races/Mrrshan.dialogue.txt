@@ -1,0 +1,90 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Mrrshan specific dialogue
+
+CONTACT_AGGRESSIVE         | Seni selamlıyorum, garip şey. Ben [my_race] ırkındanım ve Altın Kağan'ın hizmetkârıyım. Umarım güçlüsündür [my_race], sadece halkının iyiliği için değil, aynı zamanda en çok değer verdiğin hazinelerin için de. 
+CONTACT_RUTHLESS           | Biz [my_race] ırkıyız, [my_race] ve tek bir inanca bağlıyız: güçlüler alır ve zayıflar verir. Böyle bir felsefenin bilgeliğini henüz anlamadıysan, çok yakında sana bunu öğretmeyi unutmayacağız.
+CONTACT_XENOPHOBIC         | Altın Kağan'ın seni saygın görmesi için dua et, [my_race]. Öfkesini uyandırırsanız [my_race] filolarının üzerine çullanmasından hiç çekinmez.
+//
+GREETING_01                | Kendini bize defalarca kanıtladın. Kendimizi sana aynı şekilde kanıtlamak için elimizden geleni yapmaktan onur duyuyoruz.
+GREETING_04                | Laflarını dinleyeceğim büyükelçi ama istediğin her şeyi sana vermek zorunda değilim.
+GREETING_07                | Kağan'ın bir hizmetkârına yaklaştığına göre cesur olmalısın. Ne söyleyeceksen söyle ve eğer zamanımı boşa harcıyorsan kaçmaya hazır ol.
+//
+DECLAREWAR_HATE_01         | Yadigârların sende olması bir israf! Fierias'taki salonlarımızı kemiklerin ve hazinenle süsleyeceğiz ve işimiz bittiğinde halkından geriye kalan tek şey onlar olacak!
+DECLAREWAR_HATE_02         | Bu kadar yeter! Sadece baskınlar sizin türünüze olan düşmanlığımızı tatmin etmeyecek: siz [your_race_plural] çok daha geniş çaplı bir yaklaşımı hak ediyorsunuz!
+DECLAREWAR_HATE_03         | Sizinki kadar zayıf bir ırkın bu evrende bir etkisi olduğunu bilmek bile bizi hasta etmeye yeter. Olasılıklar ne olursa olsun, size haddinizi bildirmek için elimizden gelen her şeyi yapacağımıza söz veriyorum.
+//
+DECLAREWAR_ERRATIC_01      | Hanlığın pençelerinin bilenmesi gerekiyor, büyükelçi. Halkın, kendimizi daha değerli düşmanlara hazır tutmak için ihtiyacımız olan antremanı bize sağlamalı.
+DECLAREWAR_ERRATIC_02      | Halkın gerçekten en güzel hazinelerden bazılarına sahip, [your_race]. Onlara sahip çıkmak için ne derece şiddetle savaşacağınızı görmek için sabırsızlanıyoruz!
+DECLAREWAR_ERRATIC_03      | Efsanevi ganimetler geri getirmeyeli çok uzun zaman oldu. Halkın iyi dövüşüyor, ama parıldayan ganimetler parmaklarımızın ucunda olduğunda, onları ele geçirmemizi engelleyebilirler mi?
+//
+DECLAREWAR_MILITARY_01     | Güçlü alır ve zayıf verir: evrenin demir zırhlı bir yasası. Yakında bunun sadece hazineleriniz için değil, gezegenleriniz için de geçerli olduğunu göreceksin.
+DECLAREWAR_MILITARY_02     | Nadiren altın gibi parıldasa da, toprak genellikle başlı başına değerli bir armağandır. Ve tüm iyi armağanların uğrunda savaşmaya değer, değil mi büyükelçi?
+DECLAREWAR_MILITARY_03     | Hanlığın ihtiyaçları [your_race] ırkının ihtiyaçlarından daha ağır basıyor. Etkileyici bir teknolojiye sahip olabilirsiniz, ama buna uygun cabbarlığa sahip olduğunuzdan şüpheliyim!
+//
+DECLAREWAR_ALLIANCE_01     | Hanlığın müttefikini düşman edinerek tehlikeli bir oyun oynadınız. Bu oyun yakında hızlı ve kanlı bir sonla bitecek!
+DECLAREWAR_ALLIANCE_02     | Müttefikimiz, [other_race_plural], onurlu ama zayıf bir halktır. Bu savaşa sadece iki imparatorluk dahil olsaydı kazanabilirdiniz, ama biz onların tarafındayken zafer şansınız yok!
+DECLAREWAR_ALLIANCE_03     | İmparatorluğunuzu tamamen devirme onuruna sadece kendimiz sahip olmayı tercih ederdik. Görünüşe göre zaferi ve ganimeti bu seferlik [other_race]  ile bölüşmemiz gerekecek.
+//
+DECLAREWAR_SPYING_01       | Şerefle savaşmaktansa gizliliğe girişmek... Korkak! Hareketlerin zayıflığınla örtüşüyor ve şimdi bedel ödeyeceksin! 
+DECLAREWAR_SPYING_02       | Nasıl hissettiriyor, [your_race]? Bu kadar riske atılıp, halkına savaştan başka bir şey kazandırmamak?
+DECLAREWAR_SPYING_03       | [your_nameTitle] [your_name] kişisine diyin ki: gizlilik, pısırık pisliklerin tiyatrosudur. Böyle korkakça davranmanız, olsa olsa gaddarlığımızın bizi zafere ulaştıracağı anlamına geliyor!
+//
+DECLAREWAR_ATTACK_01       | Hah! Sizi korkak zayıflarla karıştırmıştık ama, görünüşe göre dişleriniz sandığımızdan keskin! Bu önemsiz zaferi kutlamak için buralarda uzun süre olamayacak olman çok kötü!
+DECLAREWAR_ATTACK_02       | Kavgayı ayağımıza getirerek bize büyük bir iyilik yaptınız! Bu iyiliği halkının sonlarına gerçek savaşçılar gibi savaş alanında kavuşmasını sağlayarak size geri ödeyeceğiz!
+DECLAREWAR_ATTACK_03       | Yerinde olsam kibirden kaçınırdım büyükelçi. Savaşçılarınızı ne kadar güçlendirmiş olursanız olun, bizimkilerin gazabı teknoloji tarafından asla yenilmeyecektir!
+//
+DECLAREWAR_OPPORTUNITY_01  | Türün kullanışlılığını uzun zaman önce yitirdi. Ancak, en genç ve en deneyimsiz savaşçılarımıza savaş becerilerini geliştirmelerine uygun alıştırmaları sağlayacağınızdan emin olabilirsin.
+DECLAREWAR_ASSASSIN_01     | Türünün böylesine omurgasız davranmasına hiç şaşırmadım. Bir büyükelçiye suikast düzenlemek, alnına çalabileceğin en büyük lekedir ve halkın can çekişirken bunu emrettiğin için sana lanet edecek!
+
+
+OFFER_PEACE_01             | Büyükelçi, her şeyin bir zamanı var ve artık düşmanlıklarımıza bir son vermenin zamanı geldi. Yadigârlarınız sizin olsun; artık tek istediğimiz barış!
+OFFER_TRADE_01             | Ganimet kazanmanın en hızlı yolu, hiç şüphesiz, onları seni durduramayacak kadar zayıf olanlardan almaktır! Ancak ticaret, iki imparatorluğun da birbirlerinden fayda görmesi için kabul edilebilir bir yol olabilir. Birbirimizden ne kadar kazanabileceğimizi görmek için her yıl [amt] BC ile başlayalım. 
+OFFER_PACT_01              | Yağmalamaya ve ateşe vermeye uygun bir sürü zayıf ırk varken, böyle eşit imparatorlukların kendi aralarında savaşmalarına gerek yok. Resmi bir saldırmazlık paktı üzerinde anlaşalım da enerjimizi alması daha kolay hazinelerin sahiplerine harcayalım! 
+OFFER_ALLIANCE_01          | Bugün sana Hanlık ve [your_empire] arasında resmi bir ittifak önermeye geldim. Bu anlaşmayı imzalamak için bir dakika beklemezsin herhalde. Şunu da unutma: Bir ittifakta eşitlik, savaş ganimetlerinde de eşitlik demektir! 
+ 
+WARN_TRESPASSING_01        | Gemilerin [system] sistemine haraç vermeye gelmemişse, onlara bir an önce geriye dönüp uzaklaşmalarını emretmeni öneririm. 
+WARN_EXPANSION_01          | Tapınaklarımızın duvarlarını süsleyebilecek değerli eşyaları tercih etsek de, sahipsiz toprak hazinelerini görmezden gelecek kadar kör değiliz. Genişlemenizi dizginleyin veya öfkemizi uyandırma riskiyle yüzleşin, büyükelçi. 
+WARN_BUILDUP_01            | Filolarınızı başka bir ırka baskın yapmak için toparlıyorsanız, bizden hiçbir itiraz duymayacaksınız. Ancak bu konuda güvencemiz olana kadar, filolarınızın bize doğrultulacağını varsayıp ilk hamleyi yapmakta tereddüt etmeyeceğiz. 
+WARN_SKIRMISH_01           | Bu eğlenceli bir küçük çatışmaydı, değil mi? Yine de, bu küçük savaşlar sıkıcı ve kazançsız: eğer onları sürdürmekte ısrar edecekseniz, daha resmi bir savaş ilan etmekten memnuniyet duyarız! 
+WARN_ATTACKED_01           | Hah! Bu bizi kışkırtmaya yönelik ciddi bir girişim miydi, büyükelçi? Halkın zayıf ve hazineleriniz paslanmış! Bizi size son vermeye mecbur etmeden önce bu aptalca kumarı bırakın! 
+WARN_INVADED_01            | Bu cılız ufak istilanla herhalde şaka yapıyorsun? [system] sistemi işimize pek yaramadığı için şanslısınız, ancak daha değerli sistemlere odaklanacak olursanız, bir daha hiç kimseden hiçbir şey alamamanızı garanti edeceğiz! 
+WARN_ESPIONAGE_01          | Halkın ne sinsi oyunlar oynuyor! Hanlığın sırlarını ele geçirmek istiyorsanız, bundan çok daha fazla çaba göstermeniz gerekecek. Casusunuzu yanına al ve bu oyun eğlenceli olmayı bırakmadan önce gidin. [framed]
+WARN_SABOTAGE_01           | Tehlikeli numaralar, büyükelçi. Yıkmaya çalıştığınız bina paha biçilemez eşyalar barındırıyor olsaydı, şüphesiz  anavatanınızın sokaklarından kanlarınızı yıkıyor olurduk. Bir daha sabotajı aklınıza getirmemenizi şiddetle tavsiye ederim. [forced]
+WARN_BIOWEAPON_01          | Ganimetler onurlu bir savaşta kazanılmalı, hayattayken dahi savunmasız olanların kemiklerinden çalınmamalı! Bir daha böyle aşağılık silahlar kullanırsanız, seni temin ederim ki son kez olacak! 
+WARN_GENOCIDE_01           | Tüm [victim_race] türünü ortadan kaldırıp hazinelerinin tek tek hepsini kendinize almak kötü bir karar değil. Böyle bir şeyi bizimle deneyecek kadar aptal olacağını sanmıyorum ama yeteneklerin yine de oldukça endişe verici. 
+WARN_FINAL_WAR_01          | Aptal [your_race]! Konsey kararının iradesine meydan okumak, [my_race] iradesine meydan okumaktır! Yadigârlarınızı alıp en küçük bibloya kadar yakacağız! İşimiz bittiğinde türünden geriye hiçbir şey kalmayacak! 
+WARN_COUNCIL_VOTE_01       | Hanlığın, meclis salonlarında siyasi oyunlar oynamaktan daha önemli meseleleri var. İsteklerimize işi dolandırmadan boyun eğersen bizim için daha iyi olur. Ve demek istediğim anlaşılıyorsa, sizin için de daha iyi olur.
+WARN_OATHBREAKER_01        | Hıh! Sadece çaresizler sözlerinin bağını koparır. Önemli değil! Bundan böyle, güvenilemeyecek kadar ikiyüzlü diğerleriyle nasıl ilgileniyorsak, sizinle de öyle ilgileneceğiz. 
+WARN_ATTACKED_ALLY_01      | [defender_race] ulusuna saldırınızın nedenini anlamadığımı söyleyemem. Hazineleri cidden çok güzel... ama onları almak istediğimizde bize ait olacaklar: size ait olmayacaklar!
+WARN_REBELLING_AGAINST_01  | Konseyin benimsediği bu barış, halkımızın kafasına asla yatmaz. Sadece ve yalnızca tek bir şey istiyoruz: zayıflardan hazineler alıp onlara el koymak! 
+
+PRAISE_COUNCIL_VOTE_01     | Konseydeki desteğin her zaman değerlidir, büyükelçi. Altın Kağan'ın kendisi, halkının Hanlık için değerli bir varlık olduğunu bilmeni istedi ve [candidate_home] gezegenini ziyaret etmek istersen, adına bir ziyafet düzenlenecek! 
+PRAISE_COUNCIL_VOTE_02     | [rival_race] temsilcisinin kaşlarını çattığını gördün mü? Ha! Bırak alay etsinler! Sizin gibi bilge kişiler gücümüzü tanımaya devam ettiği sürece, Hanlığın korkacak hiçbir şeyi yok! 
+PRAISE_COUNCIL_VOTE_03     | Baskınlarımızdan korkuyor musun büyükelçi? Konseyde bizi pohpohlamanın hazine arayıcılarımızı dünyalarınızdan uzak tutacağını mı umuyorsun? Hımhımhım, yani tabi sonuçta bu riski artıran bir şey sayılmaz, değil mi?
+PRAISE_ATTACKED_ENEMY_01   | Bugün her ikimizin halkı için de muhteşem olacak [attacker_race]! [defender_race], birleşik gücümüze karşı en ufak umuda sahip değil! İkimiz için de bolca hazine var: en büyük ganimetler en büyük savaşçılara gitsin! 
+PRAISE_ATTACKED_ENEMY_02   | Bugün biraz hazine bulma şansı mı bekliyordun, büyükelçi? Pekâlâ, sana bir anlaşma sunacağım: Bu [defender_race] zararlılarından kurtulmamıza yardım edin, biz de adil bir karşılık kazanmanızı sağlayalım. 
+PRAISE_ATTACKED_ENEMY_03   | Bu savaşta olma sebebinin sadece ele geçirebileceğin zenginlikler olduğu çok açık. Ama bu [defender_race] kıymetsiz yadigârlara sahip, bu yüzden bize yardım ederseniz, kendimiz için almak istemediklerimizi size bırakacağız sanırım. 
+PRAISE_TRADE_01            | Ticaret anlaşmamızı başlattığım zamanı hatırlıyor musun? Birbirimizden ne kadar kazanacağımızı görelim demiştim ve şimdi kazanılan değerin karşılıklı olduğunu görmek beni mutlu ediyor. 
+PRAISE_TRADE_02            | Zenginlik için savaşıp zaferin ganimetleriyle dolu gemilerle eve dönmek her zaman daha eğlencelidir! Ah, sanırım bu ticaret anlaşması, en azından maliyetleri hesaba kattığımızda biraz daha kârlı. Böyle devam etmesini sağlayın, büyükelçi.
+PRAISE_REBELLING_WITH_01   | İşte tam da bu! İyi bir dövüş gibisi yok, değil mi? Ve elde edilmek için yalvaran bu kadar çok ganimet... Umarım Hanlığın eğlenceye katılmak istemesi canını sıkmaz! 
+
+ACCEPT_TRADE_01            | Karşımıza çıkan her uygarlığı yağmalayamayız herhalde. Yılda ne kadar BC'lik ticaret yapmak istiyorsunuz? [amt]? İyi..
+RESPOND_IGNORE_THREAT_01   | Güldüğüm için beni bağışla, tehditlerin gülünç bir şekilde boş. Şimdi, akıncılarımız pençelerini kolonileriniz üzerinde keskinleştirmeye karar vermeden önce çık git.
+RESPOND_STOP_SPYING_01     | Bizden olduğunu söylediğin bir casus mu buldunuz? Tabii ki hayır. Yüce [your_empire] içinde casusluk yapmayı asla hayal etmeyiz. Casusa istediğinizi yapın, bizim için hiçbir önemi yok.
+RESPOND_STOP_ATTACKING_01  | Bir baskın sizi endişelendiriyor mu, [your_race]? Endişelenme, sahip olduklarınla ilgilenmiyoruz. Şimdi onları götüreceğiz. Sonuçta seni korkutmak istemeyiz.
+
+
+

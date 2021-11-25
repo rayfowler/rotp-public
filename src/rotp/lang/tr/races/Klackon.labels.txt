@@ -1,0 +1,93 @@
+// race-specific variables (must start with _)
+_empire                           | Klakon Kovanı, Klakan Kovanı, Klokan Kovanı, Eklembacaklı Kovanı, Kınkanatlı Kovanı
+_race                             | Klakon, Klakan, Klokan, Eklembacak, Kınkanat
+_race_plural                      | Klakonlar, Klakanlar, Klokanlar, Eklembacaklar, Kınkanatlar
+_title                            | yönetici
+_nameTitle                        
+
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Advisor text
+MAIN_ADVISOR_TITLE                | 0.02
+MAIN_ADVISOR_BUTTON_OK            | Reddet
+MAIN_ADVISOR_SCOUT                | Sonunda gemilerim tamamlandı. Koloni gemimin ineceği yeni dünyalar bulmak için izcilerimi kullanmalıyım.
+MAIN_ADVISOR_TRANSPORT            | Bu yeni dünyaya kuruldum ve onu genişletmek için evimden daha fazla şey göndermeliyim. Burada yeni bir hayat yok ve bu yüzden arayışım devam ediyor.
+MAIN_ADVISOR_DIPLOMACY            | Sonunda yeni hayat! Sesler ve jestlerle iletişim kurmak için ne garip bir yaşam formu. Bir sonraki hamlemi yapmadan önce onlar hakkında bildiğim diplomatik ve istihbarî bilgileri düşünmeliyim.
+MAIN_ADVISOR_SHIP_ENGINE          | Uzay aracı motorlarımdaki bu iyileştirme ile gelişmeye devam ediyorum. Filoma entegre etmek için gemi tasarımlarımı tekrar ziyaret etmeliyim.
+MAIN_ADVISOR_RALLY_POINTS         | Neden bana saldırıyorlar? Anlamıyorum. Bunun neden olduğunu anlamaya çalışırken gemilerimin kendimi savunması için bir toplanma noktası seçmeliyim.
+MAIN_ADVISOR_MISSILE_BASES        | Şimdi görüyorum ki, yaşamın tamamı işbirliğinin bereketini öğrenmemiş. Elimdekileri güvende tutmak için uç dünyalarımı füze üsleriyle güçlendirmeliyim.
+MAIN_ADVISOR_SHIP_WEAPON          | İlerlemeye devam ediyorum ve yeni silah teknolojim, onları gemi tasarımlarıma entegre eder etmez bana daha fazla güç verecek.
+MAIN_ADVISOR_COUNCIL              | Heyecan! Yakında birçok türün buluşması gerçekleşecek. Orada hangi yaşam formları toplanacak? Tanıdıklarım arasında kendimi daha iyi sunarsam, belki de yeni türlerle tanışmamı kolaylaştırırlar.
+MAIN_ADVISOR_REBELLION            | Bu ne? %1 üzerinde kendi kontrolümü kaybettim. Ne olursa olsun, oraya gitmeli ve onlara kontrolün bende olduğumu göstermeliyim.
+MAIN_ADVISOR_RESIST_COUNCIL       | İmkânsız! Benim bilgeliğim görmezden gelinip, bu taşkafa budalaları yönetmesi için bir başkası seçildi! Ama dert değil: Hepsine bir son vereceğim, hemen! 
+MAIN_ADVISOR_COUNCIL_RESISTED     | Bu aptallar bu kadar aksi olmakta neden ısrar ediyorlar? Konsey benim, galaksi benim ve şimdi benim egemenliğimdeki yerlerini öğrenecekler! 
+
+MAIN_SCOUT_TITLE                  | Yeni Bir Yıldız Sistemi Keşfediyorum
+MAIN_COLONIZE_TITLE               | Yerleşimsiz bir sistem olan %1 yörüngesindeyim.
+MAIN_COLONIZE_ANIMATION_TITLE     | %1 yılında yeni bir koloni oluşturuyorum.
+MAIN_ALERT_SPY_CAPTURED           | [alien_empire] ulusunun bir casusunu yakaladım ve onu %2 etkinliklerini itiraf etmeye zorladım.
+MAIN_ALERT_TRANSPORTS_KILLED      | [alien_race] savunma kuvvetleri tarafından %2 mevkisine girişimlerim durduruldu.
+MAIN_ALERT_INVADERS_KILLED        | %2 mevkisini istila etmeye çalışan [alien_race] taşıyıcıları benim tarafımdan tamamen yok edildi.
+MAIN_BOMBARD_TITLE                | Bir düşman [alien_race] kolonisinin yörüngesindeyim.
+
+TECH_RESEARCH_COMPUTER            | Bir sonraki bilgisayar teknolojisi odağını seçmeliyim.
+TECH_RESEARCH_CONSTRUCTION        | Bir sonraki inşaat teknolojisi odağını seçmeliyim.
+TECH_RESEARCH_FORCE_FIELD         | Bir sonraki güç alanı teknolojisi odağını seçmeliyim.
+TECH_RESEARCH_PLANETOLOGY         | Bir sonraki gezegenbilim teknolojisi odağını seçmeliyim.
+TECH_RESEARCH_PROPULSION          | Bir sonraki itki teknolojisi odağını seçmeliyim.
+TECH_RESEARCH_WEAPON              | Bir sonraki silah teknolojisi odağını seçmeliyim.
+TECH_DISCOVERY_TITLE              | %1 Konusunda Bir Atılım Başardım
+TECH_SCOUTED_TITLE                | %1 Harabelerini Keşfederken Yeni Bir Teknoloji Keşfettim
+TECH_STOLEN_TITLE                 | %2 mevkisindeki %1 araştırma merkezine sızdım.
+TECH_TRADED_TITLE                 | [alien_race] Bilim Adamlarından Teknoloji Edindim
+TECH_PLUNDERED_TITLE              | %1 Harabelerini Yağmalarken Yeni Bir Teknoloji Keşfettim
+TECH_ALLOCATE_SHIELD              |  Yeni gezegen kalkanları inşa etmek için tüm kolonilerimin savunma oranlarını artırayım mı?
+TECH_ALLOCATE_MISSILE_BASES       | Füze üslerimi güncellemek için tüm kolonilerimin savunma oranlarını artırayım mı?
+TECH_ALLOCATE_FACTORIES           | Fabrika kontrollerimi güncellemek için tüm kolonilerimin endüstri oranlarını artırayım mı?
+TECH_ALLOCATE_CLEAN_WASTE         | Tüm kolonilerimin ekoloji oranlarını, onları temiz tutmak için gereken minimum miktara düşüreyim mi?
+TECH_ALLOCATE_ENRICH_SOIL         | Gezegenlerimi yerselleştirmeye başlamak için standart ortama sahip kolonilerimin ekoloji oranlarını artırmalı mıyım?
+TECH_ALLOCATE_ATMOSPHERE          | Gezegenlerimi yerselleştirmeye başlamak için zorlu ortamlara sahip kolonilerimin ekoloji oranlarını artırmalı mıyım?
+TECH_ALLOCATE_TERRAFORM           | Gezegenlerimi yerselleştirmeye başlamak için bütün kolonilerimin ekoloji oranlarını artırmalı mıyım?
+
+NOTICE_ESPIONAGE_TITLE            | Bir [alien_race] üssüne sızdım.
+NOTICE_ESPIONAGE_FRAME_TITLE      | Hırsızlığın çamurunu başka bir ırka atmayı başardım.
+
+SHIP_COMBAT_TITLE_DESC            | Düşman bir [alien_race] filosuyla karşılaşıyorum.
+
+SABOTAGE_FACTORIES_RESULT         | %1 fabrikayı yok ettim.
+SABOTAGE_BASES_RESULT             | %1 füze üssünü yok ettim.
+SABOTAGE_REBELS_RESULT            | %1 isyancıyı kışkırttım.
+SABOTAGE_REBELS_TOTAL             | %1 isyancıyı kışkırttım. %2 karıştı.
+SABOTAGE_REBELS_REVOLT            | Bir isyanı tetikledim!
+
+COUNCIL_CAST_PROMPT               | Seçmeliyim (%1 oy)...
+
+// text for endings... '#' represents a paragraph break
+// variables: %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 is special race-specific text described below
+GAME_OVER_MILITARY_LOSS2          | Korkunç bir kaderle karşılaştın.#Bilinmeyene yolculuğunun başlangıcında, senin kadar eşsiz başka bir yaşam formu bulma umuduyla uzaya atıldın. Ne yazık ki, hayalin ölene kadar gerçekleşmedi. Bulduğun diğer akıllı yaşam formları sadece senden tamamen farklı olduklarını kanıtlamakla kalmayıp, aynı zamanda arayışına karşı şiddetli ve anlayışsız olduklarını da gösterdiler. Bu şiddet, umudunun yıkılışı oldu ve tüm dünyaların, ilk karşılaştığınız andan itibaren sana nefret duyanların edenlerin elinde.#Vücudunun her biri, anavatanından en uzaktaki geçmiş kolonilerine kadar katledildikleri yerlerde kırık ve cansız bir şekilde yatıyor. Işık, kalan son fani kalıbının gözlerinden ayrılırken, evrenin en eşsiz yaşam biçimini sonsuza dek kaybetmek üzere olduğunu anlıyorsun...
+GAME_OVER_MILITARY_WIN2           | Araman sona erdi... şimdilik.#Büyük umutlarla, uzayın derinliklerinde bir yerde senin gibi başka bir bilinç bulmayı hayal etmeyi gözün kesti. Başka birçok yüksek zeka formuyla tanışmış olsan da, bunların hiçbirinin yalnızca senin sahip olduğun eşsizliğe benzemediği çok barizdi. Daha da kötüsü: Anlamadıkları şeyden korkarak sana saldırıp senden ve içinde yaşadığın sayısız bedenden çok korkunç bir karşılık gördüler. İstemeyerek onları temizledin ve kasvetle kendinin şimdi bu galakside yaşayan tek zeka olduğunu gördün.#Yine de hâlâ umut var. Bu uzaylı ırkları, kendilerine özgü formları ile arayışının cevabı olmasa da, şimdi dışarıda keşfedilecek koca bir evren olduğunu anlıyorsun. Sana kalan tek şey bu galaksinin her köşesine yayılıp aramaya yeniden başlaman...
+GAME_OVER_MILITARY_ALLIANCE_WIN2  | Araman sona erdi... şimdilik.#Yapmak zorunda kaldığın eylemler seni ölçüsüz bir kederle dolduruyor. Bu galaksinin gezegenleri arasında yakınlar ararken, münhasıran onlardan böylesine farklı olduğun için sana saldıran bir dizi cahil yaratıkla karşılaştın. Sözleri şiddet eylemine dönüştüğünde, yollarının yanlışlığını anlayacaklarını ve seni olduğun benzersiz yaşam biçimi olarak kabul edeceklerini umarak, kendini ve çıkarlarını savunmak için onlara saldırdın. Sonunda umutların suya düştü ve seni şiddetle karşılayan herkes sonsuza dek susturuldu.#Ama neşelen, kadim olan! Kendine benzer bir bilinç bulamamış olsan da, yolculuğun sona ermeden önce güvenilir müttefikler edinmeyi başardın. Biraz garip olsa da, en azından sana onlara hissettiğin dostlukla bakıyorlar. Evrende gerçekten eşsiz olup olmadığını bulma özlemi yeniden baş gösterirse, istediğin zaman başka galaksilere gidebilirsin. Ama şimdilik, rahatlayıp bulduğun bu yoldaşlık duygusunun tadını çıkarabilir ve kuşkusuz getireceği tüm faydaların tadını çıkarabilirsin.
+GAME_OVER_COUNCIL_LOSS2           | Araman sona erdi... şimdilik.#Yıldızlar denizinde muadil arayışında istediğin son bu değildi. Araman sırasında birçok garip ve harika insanla tanışsan da, birçok aşağılık ve huysuz kültürle de tanıştın. Ne yazık ki, karşılaştıklarının en katlanılmazı şimdi Yeni Cumhuriyet'in Efendisi olarak oturuyor. Bu yeni liderin sana karşı nazik olacağından şüphe ediyorsun ve bu korkunun dayandığı tüm kanıt, bu uzaylı liderle geçmişteki ilişkilerde mevcut.#Tek dilediğin, senin kadar eşsiz birini bulmaktı. Artık sadece daha büyük bir güce karşı boyun eğerek bekleyebilirsin. Sadece %5 ulusunun seni rahat bırakması için dua ediyorsun, çünkü eğer dilerlerse galaksinin tüm gücü sana karşı harekete geçecek...
+GAME_OVER_COUNCIL_ALLIANCE_WIN2   | Araman sona erdi... şimdilik.#Klakon için yeni bir çağ başlıyor ve güvenilir arkadaşların %5, şimdi Yeni Cumhuriyet'i görkemli bir geleceğe götürmeye hazırlanıyor. Birçok yönden senden farklı olsalar da, arkadaşların sana ilgi ve şefkatle bakıyor ve bu yeni ittifakla ilgili çalışmalar bittiğinde arayışına devam edebilmeniz için onlara güveniyorsun. Bu kadar farklı türlerin uyumlu bir şekilde bir arada yaşaması çok zaman alsa da, biliyorsun ki %8 desteği bunu temin edecek.#Bu sonuç sana memnuniyetten başka bir şey hissettirmez. Zaten siyasi manevraların inceliklerini pek umursamazdın ve arkadaşının bu yükü sonsuza kadar omuzlarından almasından memnunsun. Tek dilediğin bu galakside bir yerde senin gibi bir ruh bulmaktı. Belki, bir gün, tam istediğin olur...
+GAME_OVER_REBELLION_LOSS2         | Korkunç bir kaderle karşılaştın.#Başlangıçta yalnızdın ve sonuçta hâlâ yalnızsın. Görevinin nihai amacına ulaşamadın ve senden daha fazla öngörüye sahip olanlar Yeni Cumhuriyet'i oluşturana kadar bir garip medeniyetle tanışmaktan diğerine sürüklendin. %5 liderlik vasfını üstlendiğinde, arayışının erken sona ereceğini hissederek, uysalca boyun eğmek yerine bu kadere karşı savaşmayı seçtin. Yolculuğunda yaptığın ilk hata değildi, ama ne yazık ki son hatan olduğu ortaya çıktı.#Şimdi, %8, son anlarında, yalnız başına sessizce duruyor ve ölümün en azından endişelerine bir son vereceğini düşünüyorsun. Keşke senin gibi birini ya da en azından kim veya ne olduğunu anlayan birini bulabilseydin, belki ikiniz birlikte silaha sarıldığında kaderiniz değişebilirdi...
+GAME_OVER_REBELLION_WIN2          | Araman sona erdi... şimdilik.#En halis emellerine rağmen, galaksi sana karşı tavır aldı ve seni aynı şekildecevap vermeye zorladı. Yabancı düşmanı %5 senin yönetimini kabul edemedi ve kendini ve arayışını onların korkunç tahakkümünden korumak için tek başına silaha sarıldın. Bu ikiyüzlü zorbaların manipüle ettiklerinin muhtemelen sana karşı duracağını bilsen de, arayışının devamı hiçbir koşulda tehlikeye atılamazdı. Böylece sana karşı çıkan herkesi kalbinde bir hüzünle ezdin.#Bu ırklardan biri bilinmeyene duyduğu korku ve nefretine yenik düşmemiş olsa, belki de seninle birlikte barış içinde yaşayabilirlerdi. Ama bu tamamen kederli bir durum sayılmaz, çünkü en azından arayışının hedefiyle paylaşacak acıklı bir hikayen olacak, tabi eğer onları bulmayı başarırsan...
+GAME_OVER_REBEL_ALLIANCE_WIN2     | Araman sona erdi... şimdilik.#Galaktik Konseyin ilk toplantısından beri bunun olacağını biliyordun. Galakside yaşayan diğer imparatorluklara uyarılarına rağmen, hain ve aşağılık %5, Yeni Cumhuriyet'in başına geçmeyi başarıp, rezil yabancı düşmanlığını galaksiye bulaştıracağını belli etmişti. Galaksideki birçok kişi taraflarını senin karşında seçmiş olsa da, cesurca onlara karşı savaşıp, sonunda çıkarlarını başarılı bir şekilde savunabildin.#Belki de en sevindirici olanı, savaşta arkadaşlarından aldığın destekti. Tehlikeyi görecek kadar bilge ve sana yardım edecek kadar merhametli idiler ve sen, bu savaşta yalnız olmadığın için mutluydun. Şimdi gerçekten barış içinde bir arada yaşamayı başarıp bu galaksinin nimetlerini birlikte paylaşabilirsiniz. Yakında bir gün, uzayın daha da derinlerine giden yolu bulabilir ve çok, çok uzun zamandır aradığınla tanışma ümidiyle bu galaksiyi terk edebilirsin...
+GAME_OVER_COUNCIL_WIN2            | Araman beklenmedik bir şekilde sona erdi.#Kendine benzer başka bir bilinci aramak için kadim anavatanından yola çıktığından beri bir sürü şey keşfettin. Henüz bu hayalini gerçekleştirmemiş olsan da, karşılaştıklarından edindiğin bilgi ve dostluğun gerçekten de tatlı bir armağan olduğunu gördün. Müttefiklerin yalnızca benzersiz oluşuna ilişkin korkularını yenmekle kalmayıp, aynı zamanda seni Yeni Cumhuriyet'in Efendisi olarak seçmeye de karar verdi. Kendin için asla tasavvur etmediğin bir gelecek önünde uzanıyor ve yeni arkadaşlarını sana gösterdikleri tüm sabır ve güvenle oraya yönlendireceksin.#Belki bir gün yine varlığı seninkine denk birini bulmak için arayışa koyulursun. Ancak şimdilik, yapman gereken bir sürü iş var ve görevinin bu iş bitene kadar beklemesi gerekiyor. Ve bittiğinde, belki de en baştaki doğandan gelen özleminin büyük ölçüde azaldığını göreceksin. Sonuçta, uzun hayatında ilk kez artık yalnız değilsin.
+GAME_OVER_COUNCIL_MILITARY_WIN2   | Araman beklenmedik bir şekilde sona erdi.#Sonunda savaşların bitti. Yeni Cumhuriyetin Efendisi makamına geldikten sonra, bu galaksideki tüm yüksek yaşam formlarını dostluk masasına oturtmayı başardın. En azından, sana karşı epey hazırlıksız bir isyan başlayana kadar. Yabancı düşmanlığı ve varlığının niteliğine dair korkularından yola çıkıp, seni devirmek isteyenler, ne ortak zihinli gücünün derinliğini ne de müttefiklerinin cumhuriyeti savunmadaki gazabını anlayabilirlerdi. Ezildiler ve barış galaksiden artık senin olan sayısız dünyanın okyanuslarına su gibi akacak.#Asilerin toprakları sen ve müttefiklerin arasında bölünürken, aklından kısa bir süreliğine çok uzun zaman önce uğruna evinden çıktığın görev geçiyor. Doğru, aramanın hedefini asla bulamadın ve birçok açıdan evrende yalnız kaldın. Ama mutlulukla, yolculuğunda edindiğin müttefikler sayesinde bir daha asla gerçekten yalnız olmayacağının farkına varıyorsun.
+GAME_OVER_COUNCIL_MILITARY_LOSS2  | Korkunç bir kaderle karşılaştın.#Hiç kimse, Yeni Cumhuriyet'in Efendisi olarak galaksiyi barışa götürmeyi umduğun için seni suçlayamaz. Bu kadar çok farklı uygarlığı birbirine bağlamak için elinden gelenin en iyisini yapmaya çalıştığın için kimse seni suçlayamaz. Ama tüm çabalarına rağmen, sana karşı çıkan isyan sadece fesat çıkarmakla kalmadı, aynı zamanda liderlik tahtını elinden alıp, toplayabildiği tüm güçle Yeni Cumhuriyet'i ezdi. Çoktandır ölü müttefiklerin, imparatorlukları gözlerinin önünde küle dönüşmeden önce yönetici olarak seni seçtiklerinden belki de pişman olmuşlardı. En azından sesleri sonsuza kadar susturulduğu için feryatlarını duyamayacaksın.#Bedenlerinin sonuncuları, düşmanlarından kaçmaya çalışırken kendileri için kazdıkları sığınaklarda kaderleriyle yüzleşmeye hazırlanıyorlar. Erzakları ve suları olmadan, zamanları sona ermek üzere. Keşke senin gibi bir başkasını, seni gerçekten anlayan ve onlar için gösterdiğin kararlılıkla senin yanında savaşan birini bulsaydın. Her şeyin sonu daha farklı olur muydu? Belki. Ne yazık ki, hiçbir zaman kesin olarak bilemeyeceksin...
+
+// This text is the %8 variable in some of the game over text... when this race wins the game
+GAME_OVER_ALLIANCE_WIN3           | Klakon'un mutlak kararlılığının
+GAME_OVER_REBELLION_LOSS3         | Klakon'un ruhsuz bedenleri galaksiye hükmederken

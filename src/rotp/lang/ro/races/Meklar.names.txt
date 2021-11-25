@@ -1,0 +1,21 @@
+// all possible names
+name: Meklar, Mechanar, Cybernar, Digitar, Technar
+
+desc1: Industriași Eratici
+desc2: Controale Robotizate Îmbunătățite
+desc3: Cetățenii Dominionului [race] încearcă să atingă perfecțiunea și nemurirea prin tehnologie.
+
+// possible home system names
+home: Meklon, Collosson, Calculon, Bender, Optimus
+
+title:     Împărat
+fulltitle: Arbitru Suprem
+
+// possible leader names
+leader: CB-715, INT-986, MS-35, QX-537, TVC-15, TX-1138
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Octet, Tranzistor, Intrerupător, Componentă, Circuit, Cifră, Logică  
+ship2: Procesor, Calculator, Computer, Algoritm, Rețea, Algebră
+ship3: Dinam, Baterie, Ajax, Tornadă, Nexus, Jefuitor, Drahmă
+ship4: Nemesis, Devastator, Anihilator, Intrus, Hyperion, Prometeu, Chinuitor

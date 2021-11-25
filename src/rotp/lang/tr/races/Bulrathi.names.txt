@@ -1,0 +1,21 @@
+// all possible names
+name: Bulrati, Sağpati, Pençati, Solpati, Bozati
+
+desc1: Agresif Çevreciler
+desc2: Müthiş Yer Savaşçıları
+desc3: Son derece sadık [race], filozof krallarının hem gücüne hem de bilgeliğine hürmet gösterir.
+
+// possible home system names
+home: Ursa, Köpekdişi, Bozistan, Pandara, Bozya
+
+title: Büyük Obabaşı
+fulltitle: Büyük Obabaşı
+
+// possible leader names
+leader: Boğaç, Çaranç, Gırang, Kurungo, Hamır, Humur
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Pençe, Devriye, Pençe, Diş, Çivi, Yaban, Ursin
+ship2: Avcı, Gladyatör, Bekçi, Balıkçı, Takipçi, Etçil, Panda
+ship3: Harpayısı, Cabbar, Yırtıcı, Yaban, Katil, Muhafız, Koruyucu
+ship4: Boz, Cezalandırıcı, Gergedan, Bolu, Yok Edici, Kerberos, Hırpani

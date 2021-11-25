@@ -1,0 +1,84 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Psilon specific dialogue
+CONTACT_PACIFIST           | Selamlar ve saygılar! [my_empire] olarak bizler, barışçıl işbirliğinin faydalarını uzun zaman önce öğrendik. Sizinle diplomatik ilişkilerimizin kendi içişlerimiz kadar uyumlu olmasını diliyoruz.
+CONTACT_HONORABLE          | Bu sonsuz genişlikte seyahat eden başkalarıyla tanışmak ne keyifli bir durum! Biz [my_race_plural] olarak adlandırılıyoruz ve her fırsatta size fayda sağlamak için elimizden geleni yapacağız.
+CONTACT_ERRATIC            | [my_empire] size iyi dileklerini sunuyor. Halkınızı... [your_empire] olarak bilmeliyiz, değil mi? Ne kadar etkileyici. Evet... gerçekten büyüleyici.
+
+//
+GREETING_01                | Böyle değerli bir arkadaşımızdan haber almak bizi çok mutlu etti. [my_empire] nasıl yardımcı olabilir?
+GREETING_04                | Selamlar büyükelçi. İsteklerini Konsey'e... müzakereler için iletmekten mutluluk duyarım.
+GREETING_07                | Hat açık, büyükelçi. Hangi konuda... konuşmak istersin?
+//
+DECLAREWAR_HATE_01         | Varlığınıza alışmak için elimizden geleni yapsak da sizinki kadar kavrayışsız bir ırka, göksel bir komşu olarak katlanmamız mümkün değil. Korkmayın, sonunuz hem hızlı hem de acısız olacak.
+DECLAREWAR_HATE_02         | Müzakerelere çok zaman harcadık. Bu... üzücü, ama bu aralar halkının galaksiden temizlenmesi gerektiğine karar verdik.
+DECLAREWAR_HATE_03         | Her halükârda barışı tercih etsek de, şimdiye kadarki gibi davranmaya devam etmene tahammül edemeyiz. Galaksiye barışı geri getirmek için ne gerekiyorsa yapacağız.
+DECLAREWAR_ERRATIC_01      | Konseyin eylemlerini kafa karıştırıcı bulduğumu kabul ediyorum, ancak halkının zekâlarının sınırına ulaştığını ve... ortadan kaldırılmaları gerektiğini düşündüler. Ne yazık ki, ben sadece bir büyükelçiyim ve onları başka türlüsüne ikna edecek hiçbir yolum yok.
+DECLAREWAR_ERRATIC_02      | Barışa gerektiği değeri vermek için, ara sıra... kendimize savaşın çirkinliğini hatırlatmalıyız. Katılmıyor musun, büyükelçi?
+DECLAREWAR_ERRATIC_03      | Savaş zamanı geldi büyükelçi. İşimiz bittiğinde, imparatorluklarımızdan biri sonsuza kadar savaşmanın bedelini hatırlayacak. Diğer imparatorluk maalesef artık var olmayacak.
+DECLAREWAR_MILITARY_01     | Özür dilerim büyükelçi ama Cumhuriyet'in nüfuzunu genişletme zamanı geldi. Bu toprakları barışçıl yollarla kazanamıyorsak, zorla almalıyız.
+DECLAREWAR_MILITARY_02     | Bu galakside uğrunda barışı bozmaya değecek çok az şey var. Bu bölgenin onlardan biri olduğuna tabii ki katılıyorsunuz değil mi, büyükelçi?
+DECLAREWAR_MILITARY_03     | Savaş haberleri ile geliyorum, büyükelçi. Konsey, yakın zamanda Cumhuriyetin topraklarını genişletmemiz gerektiğine karar verdi. Savaştaki hünerin... etkileyici olsa da, Konsey'in iradesi reddedilmeyecek.
+DECLAREWAR_ALLIANCE_01     | Müttefiklerimizden biri, [other_race], bize, size karşı mücadelelerinde yardımımızı istemek için geldi. Konsey onları duydu ve arzularını kabul etti, yani yardımımız onlara ulaşacak.
+DECLAREWAR_ALLIANCE_02     | Irkınızın ve [other_race] ırkının barışı bozmuş olması... üzücü. Size karşı mücadeleye katılmamızın gerekmesi daha da üzücü. 
+DECLAREWAR_ALLIANCE_03     | Türünüzün herhangi bir kalıcı barış için arabuluculuk yapılamayacak kadar kavgacı olduğu âşikâr. [other_race] sizinle savaşa gitmeyi seçtiyse, biz de böyle yapacağız.
+DECLAREWAR_SPYING_01       | Bu rotanın nereye varacağını düşündüğünüzü merak ediyorum. Cumhuriyet'e karşı bu tür eylemlerde bulunuyorsunuz... belki de zekânızı abartmışızdır. 
+DECLAREWAR_SPYING_02       | Bizden bir şey... elde etmek istiyorduysanız, gizlice hareket etmektense sadece sormanızı tercih ederdik. Şimdi bize, korumak için çok uğraştığımız bu barışı bozmaktan başka seçenek bırakmıyorsunuz. 
+DECLAREWAR_SPYING_03       | Üzücü, büyükelçi. Sizin ve casuslarınızın değerlendirebileceği pek çok başka seçenek vardı ve şimdi her ikimizin de halkının savaşın büyük rezilliğini çekmesi gerekiyor.
+DECLAREWAR_ATTACK_01       | Eylemleriniz mantıksız, büyükelçi. Sizden böylesine üstün olmasına rağmen yalnızca barışı arzulayan bir halka saldırmak... kafa karıştırıcı. Görünüşe göre ırkın önceden düşündüğümüzden çok daha az zeki. 
+DECLAREWAR_ATTACK_02       | İkimizin imparatorluğu için de... karanlık bir gün. Halkınla uyum içinde bir arada yaşamaktan başka bir şey istemiyorduk. Neden bizi buna zorladınız ki?
+DECLAREWAR_ATTACK_03       | Neden bu rotayı seçtiniz? Biz özümüze kadar barışçıl bir halkız, ancak böyle zamanlarda kendimizi nasıl savunacağımızı bildiğimizden emin olabilirsin.
+DECLAREWAR_OPPORTUNITY_01  | Ah...yani... kesinlikle ilginç bir deneyimdi, büyükelçi. Ancak tarihinize bir son vermemizin zamanı geldi. Böyle küçücük entelektüel yetenekleri olanların eninde sonunda hedeflerimize ayak bağı olacağına inanıyoruz.
+DECLAREWAR_ASSASSIN_01     | Seni bir yere kadar... tebrik etmeliyim. Çok az eylem [my_empire] ulusunun savaş için bu kadar kolay seferber olmasına neden olabilirdi, ancak silahsız bir büyükelçiyi öldürmek şüphesiz bunlardan biridir.
+
+OFFER_PEACE_01             | Savaş asla değişmez, büyükelçi. Bu kadar öldürme, bu kadar yıkım, hepsi ne için? Lütfen... geçmişteki hatalarımızı kabul edip yeni bir barış çağına başlayalım. 
+OFFER_TRADE_01             | Uygar ve... bizimki gibi zeki ırklar, en faydalı olanın savaş değil, refah olduğunu bilir. Cumhuriyet, halkınla birlikte refaha erişmeyi ve başlangıç için en iyi düzey olarak her yıl [amt] BC'lik bir ticaret anlaşmasını arzuluyor. 
+OFFER_PACT_01              | Türünüz arasında ne kadar çok zaman geçirirsek, diplomatik ilişkilerimize o kadar değer veririz. Bu bağı korumak için elimizden gelen her şeyi yapmalıyız ve halklarımız arasında bir saldırmazlık paktı bunun sürmesini sağlayacaktır, değil mi büyükelçi? 
+OFFER_ALLIANCE_01          | Zamanı geldi büyükelçi: [my_empire] ve [your_empire] arasında bir ittifak oluşturulmalı. Bizim vesilemizle galaksi, birlikte barış içinde yaşamanın makbul tek seçenek olduğunu görecek! 
+
+WARN_TRESPASSING_01        | [system] sistemindeki varlığınız konseyde şaşkınlık yarattı. Lütfen, başarmak için çok uğraştığımız barış bozulmadan bir an önce geri çekilin. 
+WARN_EXPANSION_01          | Etki alanınızı böyle... hızla genişletmenizi yorumlayabilmemizin çok yolu yok. Yapabildiğimiz hiçbir yorum halklarımız arasındaki barışı korumayı haklı kılmıyor.
+WARN_BUILDUP_01            | Filolarınızı böyle yığmanız, barış için kötü bir işaret olabilir, büyükelçi. Böyle göz korkutucu bir filonun Cumhuriyet de dahil olmak üzere, başkaları tarafından nasıl yorumlanacağını hesaba katın.
+WARN_SKIRMISH_01           | [system] mevkisindeki çatışma... can sıkıcı. Bunu aklın geçici bir gidip gelmesi olarak mı yorumlayalım? Yoksa yakında çok daha tehlikeli bir şeyin olabileceğine dair bir işaret olarak mı? 
+WARN_ATTACKED_01           | Bu ölçüyü açıyor! Bu tür saldırıların devam etmesine izin verilemez! Seni uyarıyorum büyükelçi: [attacker_empire] ile Cumhuriyet arasındaki barışı bu kadar kolay tehlikeye atmayın. 
+WARN_INVADED_01            | Büyükelçi, [defender_race] bölgesine ihlalinizin anlamı nedir!? Herhalde böyle agresif davranarak barışımızı bozmak niyetinde değilsinizdir? 
+WARN_ESPIONAGE_01          | Casusluk mu, büyükelçi? Aradıklarınız için sadece... pazarlık etmeniz daha ihtiyatlı olmaz mıydı? Uyumlu bir arada yaşamak uğruna buna ses çıkarmıyoruz, ancak bir dahaki sefere bu kadar bağışlayıcı olmayabiliriz... [framed]
+WARN_SABOTAGE_01           |  [spy_empire] ulusunun böyle alçakça sabotaj yapabileceğini aklıma bile getirmezdim. Barış adına, bu aptalca hatayı bir daha tekrarlamamanız için dua ediyorum. [forced]
+WARN_BIOWEAPON_01          | Bu... duyulmamış bir şey, büyükelçi. Sivil hedeflere karşı biyolojik silahı tek bir sefer bile kullanmanız, bizi sizi olabilecek her şekilde yeniden değerlendirmeye zorluyor! 
+WARN_GENOCIDE_01           | Ve bir anda, galaksinin korosundaki bir ses sonsuza kadar kaybolur. Bir halkın bu kadar kötülüğe kabil olabilmesi... Korkarım sizinle kalıcı bir barış sağlayabilmemiz mümkün olmayacak.
+WARN_FINAL_WAR_01          | Galaksi uyumun eşiğinde, ama siz inatla ayak diremeyi seçiyorsunuz. Eğer [rebel_empire] ortadan kaldırılması sonsuz barışın bedeliyse, bu bedelin ödenmesine elimizden gelen katkıyı yapacağız. 
+WARN_COUNCIL_VOTE_01       | [candidate_empire], refahından herkesin pay alabilmesi için barıştan başka bir şey istemez. Halkın için... en iyi geleceği umuyorsan, mecliste bir daha Cumhuriyet aleyhine oy kullanmazsın.
+WARN_OATHBREAKER_01        | Küstah ve onursuz bir tavır, büyükelçi. Barışı anlaşmaları bozduğunuz kadar kolay bozup bozmayacağınızı merak ediyoruz ve ola ki bozduğunuzda biz de hazır olacağız.
+WARN_ATTACKED_ALLY_01      | Bu saldırılarınızı durdurun, büyükelçi! [defender_race] ulusunun müttefiki olduğumuzu biliyorsun. Hepimizi savaşa zorlamaktansa diyalog yoluyla barışa ortam sağlayamaz mıyız? 
+WARN_REBELLING_AGAINST_01  | Hayır! Konseyi barışa yöneltmek için size güvenilemez! Barışa olan bağlılığımız sizinkinden çok daha fazladır, ancak bizi yakında bu bağlılığı bırakmaya zorlayabilirsiniz! 
+
+PRAISE_COUNCIL_VOTE_01     | [voter_empire] ulusundaki arkadaşlarımız bizi daha önce hiç hayal kırıklığına uğratmadı! Cumhuriyet, bugün konseydeki eylemlerin için sana minnettarlığını iletiyor ve zaman ayırabildiğiniz en kısa sürede seni [candidate_home] gezegeninde ağırlamayı dört gözle bekliyoruz. 
+PRAISE_COUNCIL_VOTE_02     | Konseyde akıllıca kararlar alındı ama belki de en akıllıcası senin Cumhuriyet'e verdiğin oydu. Barışa olan bu... bağlılığı kabul ediyoruz ve sizinle dostluğun tadını bu bağlılık devam ettiği sürece çıkarabiliriz. 
+PRAISE_COUNCIL_VOTE_03     | Konseyde Cumhuriyet için verdiğiniz oydan haberdarız. Şaşırdık. İnsanlarınızın zekâsını hafife almış olabiliriz, büyükelçi. 
+
+PRAISE_ATTACKED_ENEMY_01   | Büyükelçi! Yardımını çok... takdir ediyoruz. Birlikte [defender_race] tehdidini ortadan kaldırıp bu galaksinin umutsuzca hasret olduğu barışı yeniden sağlayacağız. 
+PRAISE_ATTACKED_ENEMY_02   | [attacker_empire] eylemlerini daha büyük barış idealimize bağlılık olarak yorumluyor ve onurlandırıyoruz. [defender_race] ulusunu yatışmaya... zorlayabildiğimiz anda, barışın yeniden başlamasına izin verilebileceğinden emin olabilirsiniz. 
+PRAISE_ATTACKED_ENEMY_03   | Halkınız hem zorba hem de yüzsüz, bu yüzden bir savaşa bu kadar kolay katılmanız pek şaşırtıcı değil. Yine de, silahlarınızı barış için savaşmayan tarafa çevirdiğiniz gerçeğinin en azından... altı çizilmelidir. 
+
+PRAISE_TRADE_01            | Kendini barışa adamış birileriyle ticaret yapmak zaten iyiyse de, kendini barışa adamış bir arkadaşla ticaret yapmak hakikaten bir nimettir. Ticaret anlaşmalarımız ve dostluğumuz galaksinin sonuna kadar sürsün! 
+PRAISE_TRADE_02            | Harika değil mi, büyükelçi? Basit ticari eylemler müdahil tüm taraflara ne kadar da fayda sağlıyor! Bunun, gelecek çağlar boyunca her ikimizin ırkı için de bir bereket olmaya devam edeceğini umuyoruz! 
+PRAISE_REBELLING_WITH_01   | Biz [my_race_plural] her zaman savaşın asla bir çözüm olmadığına inandık. Ancak bu konsey bize baştan beri hatalı olduğumuzu gösteriyor. Savaşınıza atılın büyükelçi ve bil ki Cumhuriyet sizinle! 
+ 
+ACCEPT_TRADE_01            | Evet büyükelçi, karşılıklı ticaretin barışa giden en iyi yol olduğu konusunda hemfikiriz. Yıllık [amt] BC'lik miktar oldukça iyi ve cömertliğiniz için teşekkür ederiz.
+RESPOND_IGNORE_THREAT_01   | Barış yanlılığımızı zayıflıkla karıştırmayın! Herhalde bu tehdit ağızdan mantıksız bir öfkeyle çıktığından, çıkışını bu seferlik bağışlayacağız.
+RESPOND_STOP_SPYING_01     | [my_race] casusu mu diyorsunuz? Eminim bu bir yanlış anlaşılmadır. Lütfen vatandaşımızı bize geri gönderin ki bu işin özüne inebilelim, casusluğun aklımızdan geçecek son şey olduğunu bilin ve rahat olun.
+RESPOND_STOP_ATTACKING_01  | Dilerim bu güçlü filo, maliyetli bir savaş başlatacak kadar aptal olan herkesi caydırsın ve kullanılmasını emretmeden onu geri çekmemiz, barışa olan bağlılığımızı göstersin.
+
+

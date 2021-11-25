@@ -1,0 +1,82 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Psilon specific dialogue
+CONTACT_PACIFIST           | Salutări! Noi cei din [my_empire] am aflat cu mult timp în urmă de beneficiile cooperării pașnice. Sperăm că legăturile noastre diplomatice cu voi vor fi la fel de armonioase ca și propriile noastre afaceri interne.
+CONTACT_HONORABLE          | Ce ocazie fericită de a-i întâlni pe alții care traversează această întindere infinită! Suntem numiți [my_race_plural] și vom face tot ce putem pentru a vă fi de folos cu fiecare ocazie.
+CONTACT_ERRATIC            | [my_empire] va urează numai bine. Ar trebui să-ți cunoaștem poporul drept... [your_empire], nu-i așa? Cât de fascinant. Da... chiar fascinant.
+
+//
+GREETING_01                | Ne bucurăm enorm să auzim de la un prieten atât de stimat. Cum poate [my_empire] să fie de ajutor?
+GREETING_04                | Salutari ambasador. Sunt bucuros să aduc solicitările dumneavoastră Consiliului pentru... deliberare.
+GREETING_07                | Linia este deschisă, ambasador. Ce... vrei să discuți?
+//
+DECLAREWAR_HATE_01         | Am făcut tot ce ne-a stat în putință pentru a... acomoda prezența ta, dar o specie la fel de neinteligentă ca a ta este pur și simplu prea mult de suportat ca un vecin ceresc. Nu te teme, sfârșitul tău va fi pe cât de rapid, pe atât de nedureros.
+DECLAREWAR_HATE_02         | Am petrecut mult timp în deliberare. Este... regretabil, dar am stabilit că oamenii tăi trebuie eliminați din galaxie în acest moment.
+DECLAREWAR_HATE_03         | Deși preferăm pacea în toate cazurile, nu vă putem permite să continuați să acționați așa cum ați făcut până acum. Vom... face ceea ce trebuie pentru a restabili pacea în galaxie.
+DECLAREWAR_ERRATIC_01      | Recunosc că găsesc acțiunile Consiliului puțin derutante, dar acesta a considerat că oamenii tăi au atins limita inteligenței lor și trebuie... înlăturați. Din păcate, sunt doar un ambasador și nu am mijloace să-i conving altfel.
+DECLAREWAR_ERRATIC_02      | Pentru a aprecia în mod corespunzător pacea, trebuie uneori... să ne amintim de urâțenia războiului. Nu sunteți de acord, ambasador?
+DECLAREWAR_ERRATIC_03      | A sosit timpul pentru luptă, ambasador. Când lupta va fi încheiată, unul dintre imperiile noastre își va aminti pentru totdeauna de costurile războiului. Celălalt imperiu va înceta, din păcate, să mai existe.
+DECLAREWAR_MILITARY_01     | Îmi cer scuze ambasador, dar a sosit momentul ca Republica să-și extindă influența. Dacă nu putem... câștiga aceste teritorii în mod pașnic, trebuie să le luăm cu forța.
+DECLAREWAR_MILITARY_02     | Puține lucruri din această galaxie sunt destul de valoroase pentru a rupe pacea pentru ele. Cu siguranță ai fi de acord, ambasador, că teritoriul este unul dintre ele?
+DECLAREWAR_MILITARY_03     | Vin cu vești de război, ambasador. Consiliul a decretat că trebuie să mărim teritoriul Republicii în acest moment. Deși priceperea ta în luptă poate fi... impresionantă, voința Consiliului nu va fi refuzată.
+DECLAREWAR_ALLIANCE_01     | Unul dintre aliații noștri, [other_race], a venit la noi pentru a cere ajutorul nostru în lupta lor împotriva voastră. Consiliul i-a ascultat și a fost de acord, așa că vor avea ajutorul nostru.
+DECLAREWAR_ALLIANCE_02     | Faptul că specia ta și [other_race] au rupt pacea este... întristător. Faptul că trebuie să ne alăturăm luptei împotriva ta este cu atât mai mult.
+DECLAREWAR_ALLIANCE_03     | Este evident că oamenii tăi sunt prea certăreți pentru ca orice... pace de durată să fie intermediată. Dacă [other_race] a ales să intre într-un război cu voi, atunci o vom face și noi.
+DECLAREWAR_SPYING_01       | Sunt curios cum ai crezut că se va desfășura acest curs. Pentru a lua astfel de acțiuni împotriva Republicii... poate că ți-am supraestimat inteligența până la urmă.
+DECLAREWAR_SPYING_02       | Dacă ai fi dorit să... câștigi ceva de la noi, am fi preferat să ceri, mai degrabă decât să acționezi pe ascuns. Acum nu ne lași de ales decât să rupem această pace pe care ne-am străduit atât de mult să o păstrăm. 
+DECLAREWAR_SPYING_03       | Întristător, ambasador. Erau atât de multe alte opțiuni pe care tu și spionii tăi ar fi trebuit să le luați în considerare, iar acum ambele popoare trebuie să sufere marea ignominie a războiului.
+DECLAREWAR_ATTACK_01       | Acțiunile tale sunt fără logică, ambasador. A ataca un popor care își dorește numai pacea în timp ce ei sunt mult mai puternici este... derutant. S-ar părea că specia ta este mult mai puțin inteligentă decât se credea anterior.  
+DECLAREWAR_ATTACK_02       | O... zi întunecată pentru ambele noastre imperii. Nu ne-am dorit altceva decât să conviețuim armonios cu oamenii tăi. De ce ne forțezi mâna așa?
+DECLAREWAR_ATTACK_03       | De ce ai ales acest curs? Suntem un popor pașnic până la esența noastră, dar fiți siguri că știm să ne apărăm în vremuri ca acestea.
+DECLAREWAR_OPPORTUNITY_01  | Ei bine, cu siguranță a fost o experiență interesantă, ambasador. Totuși a sosit timpul să punem capăt istoriei voastre. Credem că cei cu astfel de capacități intelectuale diminuate vor interfera în cele din urmă cu obiectivele noastre.
+DECLAREWAR_ASSASSIN_01     | Trebuie să-ți ofer un anumit nivel de... felicitări. Puține acțiuni ar putea determina [my_empire] să se mobilizeze atât de ușor pentru război, dar uciderea unui ambasador neînarmat este, fără îndoială, una dintre ele.
+
+OFFER_PEACE_01             | Războiul nu se schimbă niciodată, ambasador. Atâta ucidere, atâta distrugere, totul pentru ce? Te rog, permiteți-ne să ne recunoaștem... greșelile din trecut și să începem o nouă eră a păcii.
+OFFER_TRADE_01             | Speciile civilizate și... inteligente ca ale noastre știu că prosperitatea, nu războiul, se dovedește cea mai benefică. Republica dorește prosperitate reciprocă cu poporul tău și un acord comercial de [amt] BC în fiecare an este cel mai bun loc pentru a începe. 
+OFFER_PACT_01              | Cu cât petrecem mai mult timp printre cei din specia ta, cu atât prețuim mai mult relațiile noastre diplomatice. Ar trebui să facem tot ce ne stă în putință pentru a... păstra această legătură, iar un pact de neagresiune între oamenii noștri va asigura că aceasta va continua să dureze, nu-i așa, ambasador?
+OFFER_ALLIANCE_01          | A sosit timpul ambasador: trebuie formată o alianță între [my_empire] și [your_empire]. Prin noi, galaxia va vedea că coexistența pașnică este singura alegere acceptabilă!
+
+WARN_TRESPASSING_01        | Prezența voastră în [system] a ridicat sprâncene în consiliu. Vă rog, retrageți-vă imediat înainte ca pacea pe care am muncit atât de mult să o atingem să fie ruptă.
+WARN_EXPANSION_01          | Există puține moduri prin care putem să vă interpretăm atât de rapida... expansiune teritorială. Niciunul dintre ele nu este bun pentru menținerea păcii între oamenii noștri.
+WARN_BUILDUP_01            | Să construiți flote în acest fel s-ar putea dovedi o... amenințare pentru pace, ambasador. Fiți atenți la modul în care o astfel de flotă intimidantă va fi interpretată de alții, inclusiv de Republică.
+WARN_SKIRMISH_01           | Înfruntarea din [system] este... supărătoare. Trebuie să interpretăm asta ca un caz temporar de nebunie? Sau un semn că ceva mult mai periculos s-ar putea întâmpla în curând?
+WARN_ATTACKED_01           | Acest lucru este scandalos! Astfel de atacuri nu pot fi lăsate să continue! Vă avertizez ambasador: nu puneți în pericol pacea dintre [attacker_empire] și Republică atât de ușor. 
+WARN_INVADED_01            | Ambasador, care este obiectivul invadării voastre a teritoriului [defender_race]!? Sigur nu intenționați să ne rupeți pacea acționând atât de agresiv?
+WARN_ESPIONAGE_01          | Spionaj, ambasador? Nu ar fi fost mai prudent să... negociezi pentru lucrurile pe care le cauți? Vom permite acest lucru în numele coexistenței armonioase, dar s-ar putea să nu fim atât de iertători data viitoare... [blamat]
+WARN_SABOTAGE_01           | N-aș fi visat niciodată că [spy_empire] s-ar implica în acte de... sabotaj josnic. În numele păcii, mă rog să nu mai repetați această greșeală nebună. [forțat]
+WARN_BIOWEAPON_01          | Asta e... nemaiauzit, ambasador. A folosi o armă biologică asupra țintelor civile, chiar și o singură dată, ne obligă să reconsiderăm în orice mod posibil modul în care vă percepem! 
+WARN_GENOCIDE_01           | Și așa, o voce din corul galaxiei este pierdută pentru totdeauna. Pentru ca un popor să fie capabil de un lucru atât de malefic... Mă tem că nu vom putea forma o pace de durată cu voi în cele din urmă.
+WARN_FINAL_WAR_01          | Galaxia este în pragul armoniei și totuși alegeți cu încăpățânare să ne stați în cale. Dacă... eliminarea [rebel_empire] este costul păcii eterne, atunci vom face tot ce putem pentru a vedea acest cost plătit.  
+WARN_COUNCIL_VOTE_01       | [candidate_empire] nu caută decât pacea, pentru ca toți să se poată bucura de prosperitatea pe care o aduce. Dacă îți dorești cel mai bun... viitor pentru poporul tău, nu vei mai vota împotriva Republicii în consiliu.
+WARN_OATHBREAKER_01        | Dezonorant, ambasador. Ne întrebăm dacă ați rupe pacea la fel de ușor cum ați încălca acordurile și vom fi pregătiți dacă alegeți vreodată să faceți acest lucru.
+WARN_ATTACKED_ALLY_01      | Renunțați la aceste atacuri ale voastre, ambasador! Știți că suntem aliați ai [defender_race]. Nu putem, în schimb, să intermediam o pace prin dialog, în loc să ne forțați pe toți într-un război?
+WARN_REBELLING_AGAINST_01  | Nu! Nu putem avea încredere că veți conduce consiliul spre pace! Devotamentul nostru pentru pace îl depășește cu mult pe al vostru, dar ne puteți obliga să renunțăm curând la această devotament!
+
+PRAISE_COUNCIL_VOTE_01     | Prietenii noștri din [voter_empire] nu ne-au dezamăgit niciodată până acum! Republica vă mulțumește pentru... acțiunile voastre de astăzi din consiliu și așteptăm cu nerăbdare să vă găzduim pe [candidate_home] de îndată ce veți putea economisi timpul pentru o vizită.
+PRAISE_COUNCIL_VOTE_02     | S-au luat decizii înțelepte în consiliu, dar poate cel mai înțelept a fost votul pe care l-ați dat Republicii. Recunoaștem o astfel de... dăruire pentru pace și ne putem bucura de prietenie cu voi atâta timp cât această dăruire continuă.
+PRAISE_COUNCIL_VOTE_03     | Suntem la curent cu votul tău pentru Republică în consiliu. Suntem surprinși, ambasador, și poate că am subestimat inteligența oamenilor tăi.
+
+PRAISE_ATTACKED_ENEMY_01   | Ambasador! Ajutorul vostru este foarte... apreciat. Împreună vom elimina amenințarea reprezentată de specia [defender_race] și vom restabili pacea pe care această galaxie o tânjește atât de mult.
+PRAISE_ATTACKED_ENEMY_02   | Vedem și onorăm acțiunile [attacker_empire] ca pe un angajament față de idealurile noastre pentru o pace mai durabilă. Fiți siguri că, de îndată ce... forțăm [defender_race] să cedeze, pacea se va putea întoarce în galaxie.
+PRAISE_ATTACKED_ENEMY_03   | Oamenii tăi sunt deopotrivă violenți și nesăbuiți, așa că nu este de mirare că te-ai alătura într-un război atât de ușor. Totuși, faptul că ți-ai îndreptat armele către facțiunea care nu luptă pentru pace trebuie cel puțin... recunoscut. 
+
+PRAISE_TRADE_01            | Să faci comerț cu alt popor care este dedicat păcii este o binecuvântare, dar să faci comerț cu un popor de prieteni care sunt dedicați păcii este cu adevărat o binecuvântare. Fie ca acordurile noastre comerciale și prietenia noastră să dureze până la sfârșitul galaxiei!
+PRAISE_TRADE_02            | Nu este minunat, ambasador? Vedeți cât de mult beneficiază toate părțile implicate actele simple de comerț! Sperăm că acestea vor continua să fie o binecuvântare pentru ambele specii pentru restul timpului!
+PRAISE_REBELLING_WITH_01   | Noi [my_race_plural] am crezut întotdeauna că războiul nu este niciodată răspunsul. Acest consiliu, însă, ne arată că am greșit în tot acest timp. Pregătește-te de război, ambasador, și fii sigur că Republica este alături de tine!
+ 
+ACCEPT_TRADE_01            | Da, ambasador, suntem de acord că comerțul reciproc este cea mai bună cale către pace. [amt] BC în fiecare an este suficient de bine și vă mulțumim pentru generozitate.
+RESPOND_IGNORE_THREAT_01   | Nu confunda pacifismul nostru cu slăbiciune! Cu siguranță amenințarea ta a fost rostită din cauza furiei iraționale, așa că de data aceasta îți vom ierta izbucnirea.
+RESPOND_STOP_SPYING_01     | Un spion [my_race], spui? Cu siguranță asta trebuie să fie o neînțelegere. Vă rugăm să ne returnați cetățeanul, astfel încât să putem examina această situație și să vă relaxați știind că spionajul este ultimul lucru pe care îl avem în minte..
+RESPOND_STOP_ATTACKING_01  | Fie ca această flotă puternică să descurajeze pe oricine suficient de nebun să înceapă un război costisitor și fie ca înlăturarea ei fără a ordona să fie folosită să arate angajamentul nostru față de pace.

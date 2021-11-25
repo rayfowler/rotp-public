@@ -1,0 +1,93 @@
+// race-specific variables (must start with _)
+_empire                           | Cuibul Klackon, Cuibul Klackant, Cuibul Klockan, Cuibul Arthropon, Cuibul Coleopteron
+_race                             | Klackon, Klackant, Klockan, Arthropon, Coleopteron
+_race_plural                      | Klackoni, Klackanți, Klockanși, Arthroponși, Coleopteronși
+_title                            | lider
+_nameTitle                        |
+
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Advisor text
+MAIN_ADVISOR_TITLE                | %2
+MAIN_ADVISOR_BUTTON_OK            | Închide
+MAIN_ADVISOR_SCOUT                | În sfârșit, navele mele au fost construite. Trebuie să-mi folosesc cercetașii pentru a găsi noi lumi pe care să trimit navele mele coloniale.
+MAIN_ADVISOR_TRANSPORT            | M-am stabilit pe această lume nouă și trebuie să trimit mai multe corpuri de acasă pentru a o dezvolta. Nu există viață nouă aici, așa că căutarea mea continuă.
+MAIN_ADVISOR_DIPLOMACY            | Viață nouă în sfârșit! Ce formă de viață ciudată, care comunică prin zgomote și gesturi. Trebuie să mă gândesc la informațiile despre diplomație și inteligență pe care le cunosc despre ele înainte de a face următoarea mișcare.
+MAIN_ADVISOR_SHIP_ENGINE          | Continui să mă îmbunătățesc cu acest rafinament al motoarelor mele spațiale. Trebuie să modific planurile navelor mele pentru a le integra în flota mea.
+MAIN_ADVISOR_RALLY_POINTS         | De ce mă atacă? Nu înțeleg. Trebuie să aleg un punct de regrupare pentru navele mele, pentru a mă putea apăra, în timp ce încerc să înțeleg de ce s-a întâmplat asta.
+MAIN_ADVISOR_MISSILE_BASES        | Văd acum că nu toată viața a învățat avantajul cooperării. Trebuie să-mi întăresc lumile exterioare cu baze de rachete pentru a-mi păstra achizițiile în siguranță.
+MAIN_ADVISOR_SHIP_WEAPON          | Continui să avansez, iar noua mea tehnologie de arme îmi va oferi mai multă putere de îndată ce le voi integra în planurile navelor mele.
+MAIN_ADVISOR_COUNCIL              | Entuziasm! În curând va avea loc o întâlnire a mai multor specii. Ce forme de viață vor fi adunate acolo? Dacă mă pun într-o lumină mai bună printre cei pe care îi cunosc, poate că aceștia îmi vor ușura eforturile diplomatice cu celelalte specii.
+MAIN_ADVISOR_REBELLION            | Ce este asta? Mi-am pierdut controlul pe %1. Indiferent, trebuie pur și simplu să merg acolo și să le arăt că eu sunt cel care conduce.
+MAIN_ADVISOR_RESIST_COUNCIL       | Imposibil! Altcineva a fost ales să conducă acești prostănaci, în timp ce înțelepciunea mea rămâne ignorată! Dar nu contează: le voi pune capăt imediat!
+MAIN_ADVISOR_COUNCIL_RESISTED     | De ce proștii ăștia persistă să fie atât de neplăcuți? Consiliul este al meu, galaxia este a mea și acum vor învăța că locul lor este sub stăpânirea mea!
+
+MAIN_SCOUT_TITLE                  | Explorez un Nou Sistem Solar.
+MAIN_COLONIZE_TITLE               | Orbitez %1, un sistem necolonizat.
+MAIN_COLONIZE_ANIMATION_TITLE     | În anul %1, formez o nouă colonie.
+MAIN_ALERT_SPY_CAPTURED           | Am capturat un spion din [alien_empire], forțând-ul să mărturisească activitățile lui de %2.
+MAIN_ALERT_TRANSPORTS_KILLED      | Încercările mele de a ajunge la %2 au fost oprite de forțele de apărare [alien_race].
+MAIN_ALERT_INVADERS_KILLED        | [alien_race] transporturile care încearcă să invadeze %2 au fost complet distruse de mine.
+MAIN_BOMBARD_TITLE                | Orbitez o colonie inamică [alien_race].
+
+TECH_RESEARCH_COMPUTER            | Trebuie să aleg următoarea tehnologie în domeniul calculatoarelor pe care să mă concentrez.
+TECH_RESEARCH_CONSTRUCTION        | Trebuie să aleg următoarea tehnologie în domeniul construcției pe care să mă concentrez.
+TECH_RESEARCH_FORCE_FIELD         | Trebuie să aleg următoarea tehnologie în domeniul câmpurilor de forțe pe care să mă concentrez.
+TECH_RESEARCH_PLANETOLOGY         | Trebuie să aleg următoarea tehnologie în domeniul planetologiei pe care să mă concentrez.
+TECH_RESEARCH_PROPULSION          | Trebuie să aleg următoarea tehnologie în domeniul propulsiei pe care să mă concentrez.
+TECH_RESEARCH_WEAPON              | Trebuie să aleg următoarea tehnologie în domeniul armamentului pe care să mă concentrez.
+TECH_DISCOVERY_TITLE              | Am realizat o Descoperire în domeniul %1 
+TECH_SCOUTED_TITLE                | În timp ce exploram ruinele din %1, am descoperit o nouă tehnologie
+TECH_STOLEN_TITLE                 | M-am infiltrat în centrul de cercetare %1 din %2.
+TECH_TRADED_TITLE                 | Am obținut o tehnologie de la Oamenii de Știință [alien_race]
+TECH_PLUNDERED_TITLE              | În timp ce jefuiam ruinele din %1, am descoperit o nouă tehnologie
+TECH_ALLOCATE_SHIELD              | Ar trebui să măresc bugetul de apărare a tuturor coloniilor mele pentru a construi noile scuturi planetare?
+TECH_ALLOCATE_MISSILE_BASES       | Ar trebui să măresc bugetul de apărare a tuturor coloniilor mele pentru a-mi îmbunătăți bazele de rachete?
+TECH_ALLOCATE_FACTORIES           | Ar trebui să măresc bugetul industrial a tuturor coloniilor mele pentru a-mi îmbunătăți fabricile?
+TECH_ALLOCATE_CLEAN_WASTE         | Ar trebui să reduc bugetul ecologic a tuturor coloniilor mele la cantitatea minimă necesară pentru a le menține curate?
+TECH_ALLOCATE_ENRICH_SOIL         | Ar trebui să măresc bugetul ecologic a coloniilor mele cu medii standard pentru a începe terraformarea planetelor mele?
+TECH_ALLOCATE_ATMOSPHERE          | Ar trebui să măresc bugetul ecologic a coloniilor mele cu medii ostile pentru a începe terraformarea planetelor mele?
+TECH_ALLOCATE_TERRAFORM           | Ar trebui să măresc bugetul ecologic a tuturor coloniilor mele pentru a începe terraformarea planetelor mele?
+
+NOTICE_ESPIONAGE_TITLE            | M-am infiltrat într-o bază [alien_race].
+NOTICE_ESPIONAGE_FRAME_TITLE      | Am reușit să blamez o altă specie pentru furt.
+
+SHIP_COMBAT_TITLE_DESC            | Întâlnesc o flotă [alien_race] ostilă.
+
+SABOTAGE_FACTORIES_RESULT         | Am distrus %1 fabrici.
+SABOTAGE_BASES_RESULT             | Am distrus %1 baze de rachete.
+SABOTAGE_REBELS_RESULT            | Am incitat %1 rebeli.
+SABOTAGE_REBELS_TOTAL             | Am incitat %1 rebeli. Stabilitatea acum la %2%.
+SABOTAGE_REBELS_REVOLT            | Am declanșat o revoltă!
+
+COUNCIL_CAST_PROMPT               | Trebuie să aleg (%1 votes)...
+
+// text for endings... '#' represents a paragraph break
+// variables: %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 is special race-specific text described below
+GAME_OVER_MILITARY_LOSS2          | Ai întâmpinat o soartă groaznică. #La începutul călătoriei tale în necunoscut, ai năvălit în spațiu cu speranța de a găsi o altă formă de viață la fel de unică ca și tine. Din păcate, visul tău a rămas nerealizat până în ziua morții tale. Nu numai că celelalte forme de viață inteligente pe care le-ai găsit s-au dovedit a fi complet diferite de tine, dar s-au dovedit a fi violente și neînțelegătoare față de căutarea ta. Acea violență a devenit distrugerea speranței tale, iar toate lumile tale sunt acum în mâinile celor care te-au urât din momentul primei întâlniri. #Toate corpurile tale zac rupte și lipsite de viață acolo unde au fost ucise, de la lumea ta natală până la cele mai îndepărtate foste colonii ale tale. Pe măsură ce lumina părăsește ochii ultimei tale forme rămase, îți dai seama că universul este pe cale să-și piardă cea mai unică formă de viață pentru totdeauna...
+GAME_OVER_MILITARY_WIN2           | Căutarea ta s-a încheiat... deocamdată. #Cu mari speranțe ai îndrăznit să visezi momentul în care ai fi găsit o altă conștiință ca a ta undeva în adâncurile spațiului. Deși ai întâlnit multe alte forme de inteligență superioară, a devenit prea evident că niciuna dintre ele nu era asemănătoare în niciun fel cu unicitatea ta. Și mai rău: temându-se de ceea ce nu au înțeles, te-au atacat, provocând din partea ta și a nenumăratelor tale trupuri cea mai teribilă reacție posibilă. Cu o inimă grea le-ai eliminat, iar cu o inimă mai grea te găsești acum ca singura formă de viață inteligență care locuiește în această galaxie. #Totuși, nu totul este pierdut. Deși aceste rase extraterestre cu conștiințele lor separate nu ți-au satisfăcut căutarea, îți dai seama acum că există un întreg univers de explorat. Tot ce a mai rămas este să te răspândești în fiecare colț al acestei galaxii și să îți începi din nou căutarea...
+GAME_OVER_MILITARY_ALLIANCE_WIN2  | Căutarea ta s-a încheiat... deocamdată. #Ești plin de o întristare peste măsură pentru faptele pe care ai fost forțat să le comiți. În căutarea unei forme de viață asemănătoare ție pe planetele din această galaxie, ai întâlnit în schimb doar o grămadă de creaturi ignorante care te-au atacat pentru cât de diferit erai de ele. Când cuvintele lor s-au transformat în acțiuni violente, ai ripostat pentru a te apăra și pentru a-ți proteja interesele, sperând tot timpul că ei vor vedea greșeala acțiunilor lor și vor începe să te vadă precum forma unică de viață care ești. Speranțele tale s-au spulberat în cele din urmă și toți cei care te-au întâmpinat cu violență au fost eliminați pentru totdeauna. #Dar bucură-te! Deși nu ai reușit să găsești o conștiință similară cu a ta, ai reușit să-ți faci un număr de aliați de încredere înainte ca călătoria ta să se încheie. Deșii aceștia sunt ciudați cu siguranță, ei măcar te tratează cu aceeași prietenie pe care tu o simți pentru ei. Dacă dorința de a afla dacă ești cu adevărat unic în univers se va reaprinde din nou, poți pleca în alte galaxii oricând dorești. Dar, deocamdată, te poți relaxa și te poți bucura de această camaraderie pe care ai găsit-o și, de asemenea, te poți bucura de toate beneficiile pe care, fără îndoială, le va aduce aceasta.
+GAME_OVER_COUNCIL_LOSS2           | Căutarea ta s-a încheiat... deocamdată. #Acesta nu a fost finalul pe care l-ai dorit în căutarea ta. Deși ai întâlnit multe popoare ciudate și minunate în căutarea ta, ai întâlnit și multe culturi josnice și violente. Din păcate, cea mai insuportabilă dintre acestea stă acum pe tronul Noii Republici. Te îndoiești că acest nou lider va fi bun cu tine și toate dovezile de care ai nevoie pentru această frică provin din relațiile anterioare pe care le-ai avut cu acest lider extraterestru. #Tot ceea ce ți-ai dorit a fost să găsești o altă ființă care să fie la fel de unică ca și tine. Acum nu poți decât să aștepți în supunere la călcâiele unei puteri mai mari. Te rogi doar că %5 te va lăsa în pace, pentru că, dacă ar dorii, întreaga putere a galaxiei ar putea fi folosită împotriva ta...
+GAME_OVER_COUNCIL_ALLIANCE_WIN2   | Căutarea ta s-a încheiat... deocamdată. #O nouă eră pentru Klackoni este pe cale să înceapă, iar prietenul tău de încredere, %5, este acum pregătit să conducă Noua Republică înainte într-un viitor glorios. Deși sunt diferiți de tine în multe privințe, prietenii tăi te privesc cu interes și compasiune iar tu îți pui încrederea în ei, știind că îți vor permite să-ți continui căutarea odată ce munca la această nouă alianță este încheiată. Va fi nevoie de mult efort pentru a garanta că specii atât de diferite vor fi capabili să trăiască în pace și armonie, dar ști că %8 va realiza această viziune. #Poți simți doar un sentiment de mulțumire când te gândești la acest rezultat. Oricum, niciodată nu ți-a păsat prea mult de complexitatea manevrelor politice și te bucuri că prietenul tău va lua o asemenea povară de pe umeri tăi pentru totdeauna. Tot ce ți-ai dorit a fost să găsești un suflet ca al tău undeva în această galaxie. Poate, într-o zi, vei reușii...
+GAME_OVER_REBELLION_LOSS2         | Ai întâmpinat o soartă groaznică. #Ai fost singur la început, iar la sfârșit ești la fel de singur. Neputând atinge scopul final al căutării tale, ai trecut de la o întâlnirea cu o civilizație ciudată la alta până când cei cu mai multă înțelepciune decât tine s-au unit pentru a forma Noua Republică. Simțind că căutarea ta va ajunge la un sfârșit prematur pe măsură ce %5 și-a asumat poziția de lider, ai ales să lupți împotriva acestui destin, mai degrabă decât să te supui în fața lui fără o luptă. Nu a fost prima greșeală pe care ai făcut-o în călătoria ta, dar s-a dovedit, din păcate, a fi ultima. #Acum, cum %8 galaxia, te gândești în ultimele tale momente că în moarte, cel puțin, grijile tale se vor încheia cel puțin. Dacă ai fi putut o altă ființă ca și tine, sau măcar unul care să înțeleagă cine și ce ești, poate că destinul tău s-ar fi schimbat pe măsură ce amândoi ați fi ridicat armele împreună...
+GAME_OVER_REBELLION_WIN2          | Căutarea ta s-a încheiat... deocamdată. #Împotriva dorințelor tale cele mai profunde, galaxia a decis să se împotrivească dorințelor tale și te-a forțat să plătești înapoi înzecit această trădare. Incapabil să accepți domnia xenofobului %5, ai ridicat armele singur pentru a te apăra pe tine și căutarea ta. Știai că cei care au fost manipulați de acești tirani duplicitari vor fi probabil împotriva ta, dar continuarea căutării tale nu putea fi pusă în pericol sub nicio circumstanță. Așa că, cu tristețe în inimă, i-ai zdrobit pe toți cei care ți s-au împotrivit. #Dacă una dintre aceste specii nu ar fi avut frica și ura lor față de necunoscut, poate că ar fi putut trăi cu tine într-o coexistență pașnică. Dar aceasta nu este o stare de lucruri cu totul dureroasă, căci măcar vei avea o poveste chinuitoare de împărtășit cu cel care face obiectul căutării tale, dacă reușești vreodată să îl găsești...
+GAME_OVER_REBEL_ALLIANCE_WIN2     | Căutarea ta s-a încheiat... deocamdată. #Știai că asta se va întâmpla încă de la prima ședință a Consiliului Galactic. În ciuda avertismentelor tale adresate celorlalte imperii care locuiau în galaxia, trădătorii și ticăloșii %5 reușiseră să preia cârma Noii Republici și amenințaseră galaxia cu xenofobia lor ticăloasă. Cu curaj ai luptat împotriva lor și, deși mulți din galaxie au decis să lupte împotriva ta, ai reușit să-ți aperi interesele cu succes în cele din urmă. #Poate că cel mai fericit dintre toate a fost sprijinul primit de la prietenii tăi în acest război final. Destul de înțelepți încât să vadă pericolul și plini de compasiune pentru a te ajuta, ai fost fericit că nu ai fost singur în această luptă. Acum puteți obține o conviețuire cu adevărat pașnică și puteți împărtăși împreună bogăția acestei galaxii. Într-o zi, în curând, s-ar putea să-ți găsești destinul și mai adânc în spațiu și să părăsești galaxia sperând să-l întâlnești pe cel pe care l-ai căutat atât de mult timp...
+GAME_OVER_COUNCIL_WIN2            | Căutarea ta a ajuns la un sfârșit neașteptat. #Ai descoperit multe de când ai plecat prima dată de pe lumea ta natală antică în căutarea unei alte conștiințe asemănătoare ție. Deși încă nu ți-ai îndeplinit acel vis, cunoștințele și prietenia pe care le-ai câștigat de la cei pe care i-ai întâlnit s-au dovedit a fi într-adevăr o recompensă dulce. Aliații tăi nu numai că și-au depășit teama de unicitatea ta, dar au ales să te aleagă drept Stăpân al Noii Republici. Un viitor pe care nu l-ai gândit niciodată pentru tine se află în fața ta și îți vei conduce noii prieteni în el cu toată răbdarea și încrederea pe care ți-au arătat-o. #Poate că într-o zi vei porni din nou în căutarea ta, pentru a găsi pe altcineva ca tine. Deocamdată, totuși, ai multă muncă de făcut, iar căutarea ta va trebui să aștepte până când acea muncă este finalizată. Iar când aceasta este în final terminată, s-ar putea să descoperi că dorința ta primară s-a diminuat foarte mult. La urma urmei, pentru prima dată în lunga ta viață, nu mai ești singur.
+GAME_OVER_COUNCIL_MILITARY_WIN2   | Căutarea ta a ajuns la un sfârșit neașteptat. #Acum, în sfârșit, bătăliile tale s-au încheiat. După ce ai asumat postul de Maestru al Noii Republici, ai reușit să aduni toate formele superioare de viață din această galaxie pentru a sta la masa prieteniei. Cel puțin, până când s-a format împotriva ta o rebeliune îngrozitor de nepregătită. Întemeiată din xenofobie și frică pentru ceea ce ești, alianța care a căutat să te elimine nu au putut înțelege nici adâncul puterii tale unice, nici furia aliaților tăi. Ei au fost zdrobiți și pacea va curge prin galaxie ca și apa în oceanele numeroaselor lumi care sunt acum ale tale. #Pe măsură ce teritoriile rebelilor sunt împărțite între tine și aliații tăi, mintea ta trece pentru scurt timp la căutarea care te-a trimis de acasă cu mult timp în urmă. Adevărat, nu ai găsit niciodată obiectul căutării tale și rămâi singur în univers în multe privințe. Dar, din fericire, realizezi că, cu aliații pe care i-ai făcut în călătoria ta, nu vei mai fi niciodată singur cu adevărat.
+GAME_OVER_COUNCIL_MILITARY_LOSS2  | Ai întâmpinat o soartă groaznică. #Nimeni nu te poate condamna pentru că ai avut dorința de a conduce galaxia către pace ca Stăpân al Noii Republici. Nimeni nu te poate condamna că ai făcut tot posibilul să legi atât de multe civilizații foarte diferite. Dar, în ciuda eforturilor tale, rebeliunea care a apărut împotriva ta a fost capabilă nu numai să înlăture de la putere, dar și să zdrobească Noua Republică cu toată puterea pe care a putut-o aduna. Aliații tăi, morți de mult, au regretat probabil că te-au ales să-i conduci înainte ca imperiile lor să se transforme în scrum în fața ochilor lor. Cel puțin nu le poți auzi lamentările, deoarece vocile lor au fost reduse la tăcere pentru totdeauna. #Ultimele dintre corpurile tale se pregătesc să-și întâmpine soarta în ascunzătoarele pe care le-au săpat încercând să scape de inamicii tăi. Fără mâncare sau apă, timpul lor este pe cale să se încheie. Dacă ai fi găsit pe altul ca tine, unul care te-ar fi înțeles cu adevărat și s-ar fi luptat alături de tine cu aceeași tenacitate pe care tu însuți ai deținut-o, atunci poate s-ar fi terminat altfel lucrurile. Poate. Din păcate, totuși, nu vei ști niciodată cu siguranță...
+
+// This text is the %8 variable in some of the game over text... when this race wins the game
+GAME_OVER_ALLIANCE_WIN3           | determinarea infailibilă a Klackonilor
+GAME_OVER_REBELLION_LOSS3         | hoardele fără suflet ale Klackonilor domină

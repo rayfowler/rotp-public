@@ -1,5 +1,5 @@
 // all possible names
-name: Mrrshan, Prrsah, Meowshan
+name: Mrrshan, Prrsah, Mewshan
 
 desc1: Rücksichtslose Militaristen
 desc2: Überragende Schützen

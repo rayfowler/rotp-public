@@ -1,0 +1,22 @@
+// all possible names
+name: Sakkra, Reptara, Saura, Raptora, Tyranna
+
+desc1: Expansioniști Agresivi
+desc2: Rata Natalității Crescută
+desc3: Zeloții Conclavei [race] se străduiesc să perfecționeze lumile pe care le cuceresc.
+
+// possible home system names
+home: Sssla, Sssana, Sssihs, Sssha, Sssss, Hsssa
+
+title:     Magister
+fulltitle: Prim Magister
+
+// possible leader names
+leader: Guanar, Hissa, Kryssta, Saurak, Sauron, Tyranid
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Gecko, Cameleon, Șopârlă, Iguană, Șarpe, Anolis, Ameiva
+ship2: Tegu, Varan, Caiman, Aligator, Crocodil, Gharial, Basilisc
+ship3: Kentropyx, Velociraptor, Pterodactil, Theropod, Ceratops, Prădător, Plesiozaur
+ship4: Titan, Colosus, Dragon, Dinozaur, Kraken, Gorgonă, Tiranozaur
+

@@ -1,0 +1,21 @@
+// all possible names
+name: Darloki, Sarloki, Spyloki, Shadeloki, Nazloki
+
+desc1: Diplomați Agresivi
+desc2: Spioni Supremi
+desc3: [race] sunt spectre nenaturale și secretive, originare dintr-o altă dimensiune.
+
+// possible home system names
+home: Nazin, Mordor, Hades, Abyssal, Hel
+title:     Împărat
+fulltitle: Împărat
+
+// possible leader names
+leader: Darquan, Morfane, Narzina, Nazgur, Shador, Ssithra
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Ceaţă, Abur, Scânteie, Voal, Augur, Eter, Licărire
+ship2: Miraj, Umbră, Vis, Iluzie, Reflecție, Viziune, Bântuire
+ship3: Fantomă, Spectru, Moroi, Umbră, Nălucă, Spirit, Poltergeist
+ship4: Coșmar, Fantasmă, Teroare, Groază, Strigoi, Oroare, Phobos
+

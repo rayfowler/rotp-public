@@ -1,0 +1,21 @@
+// all possible names
+name: Bulrathi, Bearathi, Ursinathi, Pawrathi, Grizzlathi
+
+desc1: Ecologiști Agresivi
+desc2: Luptători Tereștri Grozavi
+desc3: Mereu loiali și demni de încredere, [race] apreciază atât puterea, cât și înțelepciunea în liderul lor.
+
+// possible home system names
+home: Ursa, Canis, Grizzla, Pandara, Bruin
+
+title:     Marele Ierarh
+fulltitle: Marele Ierarh
+
+// possible leader names
+leader: Bullux, Durpp, Grunk, Krungo, Monch, Smurch
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Labă, Escortă, Gheară, Colț, Dinte, Mistreț, Urs
+ship2: Vânător, Gladiator, Santinelă, Hărțuitor, Urmăritor, Carnivor, Panda
+ship3: Strajă, Brută, Bătăuș, Intimidator, Ucigaș, Gardian, Protector
+ship4: Grizzly, Callisto, Rinocer, Kodiak, Distrugător, Cerber, Prădător

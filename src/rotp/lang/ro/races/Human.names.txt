@@ -1,0 +1,22 @@
+// all possible names
+name: Oameni, Terrani, Tellani, Primani, Midgardiani
+
+desc1: Diplomați Onorabili
+desc2: Comercianți Experți și Diplomați Minunați
+desc3: Oamenii cu limbă argintie sunt stăpâni în a-i convinge pe alții să slujească intereselor Umanității.
+
+// possible home system names
+home: Pământ, Terra, Tellus, Prime, Midgard
+
+title:     Triumvir
+fulltitle: Triumvir
+
+// possible leader names
+leader: Alexander, Bladrov II, Durash IV, Johann III, Lasitus, Strader
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Santinelă, Studiu, Curier, Explorator, Căutător, Mesager, Patrulă
+ship2: Bric, Goeletă, Canonieră, Vânător, Brigadă, Strigăt, Comando
+ship3: Corvetă, Escortă, Bastiment, Apărător, Frigată, Avangardă, Interceptor
+ship4: Crucișător, Cruisant, Monitor, Devastator, Portavion, Răzbunător, Distrugător
+

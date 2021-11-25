@@ -1,0 +1,1978 @@
+// This is the label text file for Remnants of the Precursors
+// comment lines should start with '/'  they are ignored
+//  
+// the format for each line is   key | label
+//    where 'key' is the code used by the game to retrieve the label
+//    You cannot create new keys! The game will not use them
+//    You can only use keys that the game is looking for.
+//
+// Large number formatting
+NUM_FORMAT_THOUSANDS              | %1K
+NUM_FORMAT_MILLIONS               | %1M
+NUM_FORMAT_BILLIONS               | %1B
+
+// Star descriptions
+RED_STAR_DESCRIPTION              | Stelele roșii sunt stele bătrâne și plictisitoare. În orbita acestora se găsesc, în general, planete sărace.
+YELLOW_STAR_DESCRIPTION           | Stelele galbene reprezintă cea mai bună șansă de a descoperii planete asemănătoare pământului.
+ORANGE_STAR_DESCRIPTION           | Stelele portocalii au o luminozitate moderată. În orbita acestora se pot găsii o gamă largă de tipuri de planete.
+BLUE_STAR_DESCRIPTION             | Stelele albastre sunt stele relativ tinere, în jurul cărora orbitează planete bogate în minerale și lipsite de viață.
+WHITE_STAR_DESCRIPTION            | Stelele albe sunt stele care ard foarte puternic. În jurul acestora se pot găsii, în general, planete ostile vieții.
+PURPLE_STAR_DESCRIPTION           | Stelele neutronice sunt rare și oferă cea mai mare șansă de a găsii planete foarte bogate.
+
+// Planet Types
+PLANET_ARID                       | Aridă
+PLANET_BARREN                     | Stearpă
+PLANET_DEAD                       | Moartă
+PLANET_DESERT                     | Deșertică
+PLANET_INFERNO                    | Infernală
+PLANET_JUNGLE                     | Tropicală
+PLANET_MINIMAL                    | Minimală
+PLANET_NONE                       | Inexistentă
+PLANET_OCEAN                      | Oceanică
+PLANET_RADIATED                   | Iradiată
+PLANET_STEPPE                     | Semi-Aridă
+PLANET_TERRAN                     | Terrană
+PLANET_TOXIC                      | Toxică
+PLANET_TUNDRA                     | Subarctică
+
+// Spy Missions
+SPY_HIDE                          | Ascundere
+SPY_ESPIONAGE                     | Spionaj
+SPY_SABOTAGE                      | Sabotaj
+SPY_FRAMED                        | [Ați fost blamați.]
+SPY_FORCED_CONFESSION             | [O confesiune falsă a fost forțată.]
+SPY_WARNING                       | [Ați fost avertizați.]
+
+ARID_DESC_BIOLOGICAL              | Planetele Aride sunt lumi terestriale uscate ce susțin putină vegetație. Mai puțin de 40% din suprafața acestora este acoperită de apă.
+BARREN_DESC_BIOLOGICAL            | Planetele Sterpe sunt lumi terestre uscate și prăfuite, ce dețin atmosfere subțiri. Apa nu poate fi găsită pe suprafața lor.
+DEAD_DESC_BIOLOGICAL              | Planetele Moarte sunt lumi terestre reci și lipsite de viață. Acestea dețin atmosfere foarte subțiri, iar apa nu poate fi găsită pe suprafața lor.
+DESERT_DESC_BIOLOGICAL            | Planetele Deșertice sunt lumi terestre uscate cu puțină vegetație. Mai puțin de 20% din suprafața acestora este acoperită de apă.
+INFERNO_DESC_BIOLOGICAL           | Planetele Infernale sunt lumi terestre fierbinți, cu atmosfere groase și furtuni violente.
+JUNGLE_DESC_BIOLOGICAL            | Planetele Tropicale sunt lumi terestre pline de viață, acoperite de păduri, jungle și mlaștini.
+MINIMAL_DESC_BIOLOGICAL           | Planetele Minimale sunt lumi terestre mici și uscate, aflate la granița habitabilității.
+NONE_DESC_BIOLOGICAL              | Aceste sisteme solare nu deține planete, sfidânt toate teoriile ce țin de formarea planetară.
+OCEAN_DESC_BIOLOGICAL             | Planetele oceanice sunt lumi acoperite aproape în totalitate de apă, rezultând într-un acces redus la resursele acestora.
+RADIATED_DESC_BIOLOGICAL          | Planetele iradiate sunt lumi moarte, lipsite de atmosferă și bombardate de radiație solară.
+STEPPE_DESC_BIOLOGICAL            | Planetele Semi-Aride sunt lumi terestre relativ reci, dominate de ierni geroase și medii arctice.
+TERRAN_DESC_BIOLOGICAL            | Planetele Terrane sunt paradise terestre asemănătoare Pământului. Acestea au zone temperate mari care susțin un număr mare de biomuri.
+TOXIC_DESC_BIOLOGICAL             | Planetele Toxice sunt lumi înghețate ce susțin ecosisteme pe bază de metan.
+TUNDRA_DESC_BIOLOGICAL            | Planetele Subarctice sunt planete terestre somnolente, blocate într-o era glacială.
+
+// Planet Specials
+PLANET_ARTIFACTS                  | Artefacte
+PLANET_ULTRA_POOR                 | Foarte Săracă
+PLANET_POOR                       | Săracă
+PLANET_RICH                       | Bogată
+PLANET_ULTRA_RICH                 | Foarte Bogată
+PLANET_HOSTILE                    | Ostilă
+PLANET_FERTILE                    | Fertilă
+PLANET_GAIA                       | Gaia
+
+// Planet Descriptors for Race
+PLANET_HOMEWORLD                  | Lumea Mamă a %1
+PLANET_WORLD                      | Lume a %1
+PLANET_COLONY                     | Colonie a %1
+PLANET_ORION                      | Orion
+PLANET_ORION_GUARDIAN             | Gardian
+
+// Nebula names  ("starName" Nebula)
+NEBULA_NAME                       | %1 Nebuloasă
+NEBULA_ID                         | NGC %1
+
+// In this, %1 is the race's title when using with the name ("_nameTitle" in the races labels.txt file)
+// and %2 is the leader's actual name
+TITLE_LEADERNAME                  | %1 %2
+
+// Extended Colony Name prefix when we run out of names
+COLONY_NAME_2                     | Noul/a %1
+COLONY_NAME_3                     | %1 Exterior/ă
+COLONY_NAME_4                     | Îndepărtatul/a %1
+COLONY_NAME_5                     | Distantul/a %1
+
+// Space Monster Names
+SPACE_AMOEBA                      | Amibă Spațială
+SPACE_CRYSTAL                     | Cristal Spațial
+ORION_GUARDIAN                    | Gardian al Orionului
+
+// Personality types (adjective)
+LEADER_ERRATIC                    | Eratici
+LEADER_PACIFIST                   | Pacifiști
+LEADER_HONORABLE                  | Onorabili
+LEADER_RUTHLESS                   | Nemiloși
+LEADER_AGGRESSIVE                 | Agresivi
+LEADER_XENOPHOBIC                 | Xenofobi
+
+// Leader Objective Types (noun)
+LEADER_DIPLOMAT                   | Diplomați
+LEADER_MILITARIST                 | Militari
+LEADER_ECOLOGIST                  | Ecologiști
+LEADER_INDUSTRIALIST              | Industriași
+LEADER_EXPANSIONIST               | Expansioniști
+LEADER_TECHNOLOGIST               | Tehnologi
+// Leader Personality & Objective displayed together
+LEADER_PERSONALITY_FORMAT         | %1 %2
+
+// Technology names and descriptions 
+TECH_COMPUTERS                    | Computere
+TECH_CONSTRUCTION                 | Construcții
+TECH_FORCE_FIELDS                 | Câmpuri de Forțe
+TECH_PLANETOLOGY                  | Planetologie
+TECH_PROPULSION                   | Propulsie
+TECH_WEAPONS                      | Armament
+
+// Random Events
+EVENT_ACCIDENT                    | Un accident industrial major a poluat lumea ocupată de [target_race] în sistemul [system] cu deșeuri industriale nocive, deteriorându-i ecologia și iradiind permanent planeta.
+EVENT_ASSASSINATION               | Un terorist din [assassin_empire] a asasinat diplomatul ce reprezenta interesele [victim_race] , plasând cele două imperii la porțile războiului..
+EVENT_COMET                       | O cometă imensă a fost detectată în sistemul [system] și se va izbi de planeta ocupată de [target_race] în [years] ani, dacă aceasta nu va fi oprită de către o flotă navală.
+EVENT_COMET_2                     | O cometă imensă va eradica toată viața de pe planeta ocupată de [target_race] în sistemul [system] în doar [years] ani. Mai multe nave sunt necesare pentru a opri această calamitate.
+EVENT_COMET_3                     | Cometa din sistemul [system] a fost distrusă, datorită flotelor ce aparțin [target_race].
+EVENT_COMET_4                     | Cometa mortală a distrus lumea ocupată de [target_race] în sistemul [system].
+EVENT_DONATION                    | Un comerciant bogat asociat cu [target_race] a oferit acestora o donație de [amt] BC.
+EVENT_DEPLETED                    | Lumea ocupată de [target_race] în sistemul [system] și-a epuizat resursele de metale grele. Aceasta a devenit Săracă în Minerale.
+EVENT_DERELICT                    | Flota navală a [target_empire] a descoperit o navă antică abandonată. Oamenii de știință a [target_race] au recuperat un număr de tehnologii ce țin de domeniul câmpurilor de forță și al armamentelor din aceasta.
+EVENT_EARTHQUAKE                  | Un cutremur devastator a lovit planeta ocupată de [target_race] în sistemul [system], omorând [amt] milioane de coloniști și deteriorând zone importante ale activității industriale ale planetei.
+EVENT_ENRICHED                    | Explorarea minieră executată pe planeta ocupată de [target_race] în sistemul [system] a rezvăluit un depozit imens de metale grele. Planeta a devenit Bogată în Minerale.
+EVENT_FERTILE                     | O schimbare bruscă în axa de rotație a planetei ocupate de [target_race] în sistemul [system] a schimbat mediul acesteia, devenind mai fertilă, rata natalității pe suprafața acesteia crescând cu 50%.
+EVENT_PIRACY                      | Un grup de pirați a început să atace rutele comerciale dintre sistemele deținute de [target_race], reducând veniturile comerciale ale acestora cu [amt]%. Navele militare sunt necesare în sistemul [system] pentru a combate activitățile criminale.
+EVENT_PIRACY_2                    | Bazele deținute de pirați în sistemul [system] continuă să atace rutele comerciale deținute de [target_race], reducând activitațile comerciale cu [amt]%.
+EVENT_PIRACY_3                    | Flota deținută de [target_race] a distrus un grup important de pirați în sistemul [system]. Nivelele activităților comerciale s-au întors la normal.
+EVENT_PLAGUE                      | A boală mortală a apărut pe planeta ocupată de [target_race] în sistemul [system]. Sistemul a fost pus sub carantină până când o cură va fi obținută.
+EVENT_PLAGUE_2                    | Boala mortală din sistemul [system] persistă. Oamenii de știință estimează că încă [amt] RP sunt necesare pentru a putea obține o cură.
+EVENT_PLAGUE_3                    | Oamenii de știință a [target_race] au descoperit în final o cură pentru boala mortală ce a făcut ravagii în sistemul [system]. Starea de carantină a fost ridicată.
+EVENT_REBELLION                   | O revoltă a îzbucnit pe lumea ocupată de [target_race] în sistemul [system], oprind toată producția planetară. Revolta va continua până când va fi înabușită de forța militară.
+EVENT_SUPERNOVA                   | Oamenii de știință a [target_race] au determinat faptul că steaua din sistemul [system] va exploda într-o supernova în aproximativ [years] ani. Aceștia recomandă devierea tuturor eforturilor stiințifice pentru a găsii o soluție la această problemă.
+EVENT_SUPERNOVA_2                 | Amenințarea supernovei în sistemul [system] în [years] ani rămâne. Oamenii de știință estimează că încă [amt] RP ar mai fi necesare pentru întârzierea acestei catastrofe.
+EVENT_SUPERNOVA_3                 | Oamenii de știință a [target_race] din sistemul [system] au descoperit o metodă de a amâna explozia supernova a stelei locale pentru viitorul previzibil.
+EVENT_SUPERNOVA_4                 | Steaua din sistemul [system] a explodat într-o supernova, iradiind planeta ocupată de [target_race] world, devastândui biosfera și omorând milioane de locuitori.
+EVENT_VIRUS                       | Un virus digital a lovit centrele de cercetare a [target_race] distrugând ani întregi de cercetare în domeniul [technology].
+EVENT_SPACE_AMOEBA                | O monstrozitate biologică poreclită ”Amibă Spațială” a fost observată apropiindu-se de sistemul [system]. Coloniștii [victim_race] și flotele acestora se pregătesc pentru a înfrunta aceast monstru.
+EVENT_SPACE_AMOEBA_1              | O monstrozitate biologică poreclită ”Amibă Spațială” a fost observată apropiindu-se de sistemul necolonizat [system].
+EVENT_SPACE_AMOEBA_2              | Amiba Spațială a consumat complet colonia ocupată de [victim_race] în sistemul [system].
+EVENT_SPACE_AMOEBA_3              | Amiba Spațială a fost distrusă de către forțele deținute de apărătorii [victim_race] în sistemul [system].
+EVENT_SPACE_CRYSTAL               | O monstrozitate cristalină poreclită ”Cristal Spațial” a fost observată apropiindu-se de sistemul [system]. Coloniștii [victim_race] și flotele acestora se pregătesc pentru a înfrunta aceast anomalie.
+EVENT_SPACE_CRYSTAL_1             | O monstrozitate cristalină poreclită ”Cristal Spațial” a fost observată apropiindu-se de sistemul necolonizat [system].
+EVENT_SPACE_CRYSTAL_2             | Cristalul Spațial a distrus toată viața de pe colonia ocupată de [victim_race] în sistemul [system].
+EVENT_SPACE_CRYSTAL_3             | Cristalul Spațial a fost distrus de către forțele deținute de apărătorii [victim_race] în sistemul [system].
+
+SYSEVENT_HOMEWORLD                | Lumea Mamă a [alien_race].
+SYSEVENT_SCOUTED                  | Explorat inițial de către [alien_race].
+SYSEVENT_COLONIZED                | Colonizat de către [alien_race].
+SYSEVENT_CAPTURED                 | Capturat de către forțele armate ale [alien_race].
+SYSEVENT_ABANDONED                | Abandonat de către [alien_race].
+SYSEVENT_DESTROYED                | Distrus de către forțele orbitale ale [alien_race].
+SYSEVENT_DESTROYED_MONSTER        | Distrus de %1.
+SYSEVENT_DESTROYED_UNKNOWN        | Distrus.
+SYSEVENT_ATMOSPHERE_TERRAFORMED   | Atmosfera planetei a fost terraformată.
+SYSEVENT_SOIL_ENRICHED            | Solul acestei planete a fost înbogățit, făcând-o fertilă.
+SYSEVENT_GAIA_TERRAFORMING        | Această planetă a fost transformată într-o lume Gaia.
+SYSEVENT_REBELLION                | Colonia a început o rebeliune.
+SYSEVENT_COMET                    | Planeta a fost lovită de către o cometă.
+SYSEVENT_PLAGUE                   | O boală mortală a infectat planeta.
+SYSEVENT_PLAGUE_ENDED             | Boala ce a afectat planeta a fost înlăturată.
+SYSEVENT_ENRICHED                 | Depozite imense de minerale au fost descoperite pe planetă.
+SYSEVENT_DEPLETED                 | Depozitele minerale ale planetei au fost epuizate.
+SYSEVENT_ACCIDENT                 | Un accident industrial masiv a iradiat planeta.
+SYSEVENT_SUPERNOVA                | Planeta a fost iradiată de o explozie supernova.
+
+
+// Diplomatic Incident titles & descriptions
+INC_ASSASSINATION_TITLE           | Asasinat
+INC_ASSASSINATION_DESC            | Un terorist din [assassin_empire] a asasinat un diplomat a [victim_race].
+INC_ATTACKED_ALLY_TITLE           | Aliat Atacat
+INC_ATTACKED_ALLY_DESC            | [attacker_empire] a atacat [defender_empire], un aliat al [my_empire].
+INC_ATTACKED_ENEMY_TITLE          | Inamic Atacat
+INC_ATTACKED_ENEMY_DESC           | [attacker_empire] a atacat [defender_empire], un inamic al [my_empire].
+INC_USED_BIOWEAPONS_TITLE         | A Utilizat Arme Biologice
+INC_USED_BIOWEAPONS_DESC          | [attacker_empire] a utilizat arme biologice împotriva [victim_empire] în [system].
+INC_KILLED_MONSTER_TITLE          | %1
+INC_KILLED_MONSTER_DESC           | [your_empire] a distrus [monster], punând capăt unui pericol galactic pentru toate imperiile.
+INC_KILLED_GUARDIAN_TITLE         | Gardian al Orionului
+INC_KILLED_GUARDIAN_DESC          | [your_empire] a distrus nava Gardian a Orionului, dezvăluind secretele precursorilor.
+INC_NO_RELATIONS_TITLE            | Nicio Relație Diplomatică
+INC_NO_RELATIONS_DESC             | În momentul de față nu există nicio relație diplomatică între [your_empire] și [my_empire].
+INC_ALLIED_WITH_ENEMY_TITLE       | Aliat cu Inamicul
+INC_ALLIED_WITH_ENEMY_DESC        | [my_empire] se opune alianței tale cu perfizii din [other_empire].
+INC_AT_WAR_WITH_ALLY_TITLE        | La Război cu Aliatul
+INC_AT_WAR_WITH_ALLY_DESC         | Ești la război cu  [other_empire], un aliat al [my_empire].
+INC_CLOSED_EMBASSY_TITLE          | Ambasador Rechemat
+INC_CLOSED_EMBASSY_DESC           | [your_empire] a încetat relațiile diplomatice cu [my_empire].
+INC_EVICTED_SPIES_TITLE           | Diplomați Expulzați
+INC_EVICTED_SPIES_DESC            | [your_empire] a expulzat toți diplomații non-esențiali din [my_empire].
+INC_BROKE_ALLIANCE_TITLE          | Alianță Ruptă
+INC_BROKE_ALLIANCE_DESC           | [your_empire] a rupt alianța cu [my_empire].
+INC_BROKE_PACT_TITLE              | Pact de Neagresiune Rupt
+INC_BROKE_PACT_DESC               | [your_empire] a rupt pactul de neagresiune cu [my_empire].
+INC_BROKE_TRADE_TITLE             | Tratat Comercial Rupt
+INC_BROKE_TRADE_DESC              | [your_empire] a rupt contractul comercial cu [my_empire].
+INC_ATTACKED_COLONY_TITLE         | Colonie Atacată
+INC_ATTACKED_COLONY_DESC          | O flotă a [attacker_empire] a atacat o planetă ocupată de [defender_race] în sistemul [system]. [amt] milioane de cetățeni au fost pierduți în urma atacului.
+INC_CAPTURED_COLONY_TITLE         | Colonie Capturată
+INC_CAPTURED_COLONY_DESC          | Trupe ale [attacker_empire] au invadat și capturat o colonie a [defender_race] în sistemul [system]. [amt] milioane de cetățeni au fost pierduți în urma atacului.
+INC_DESTROYED_COLONY_TITLE        | Colonie Distrusă
+INC_DESTROYED_COLONY_DESC         | O flotă a [attacker_empire] a distrus complet o colonie a [defender_race] în sistemul [system]. [amt] milioane de cetățeni au fost pierduți în urma atacului.
+INC_FIRST_CONTACT_TITLE           | Primul Contact
+INC_FIRST_CONTACT_DESC            | Primul contact a fost stabilit cu [your_empire]. Fi precaut.
+INC_INVADED_COLONY_TITLE          | Colonie Invadată
+INC_INVADED_COLONY_DESC           | Trupe ale [attacker_race] au invadat dar nu au reușit să captureze o colonie a [defender_race] în sistemul [system]. [amt] milioane de cetățeni au fost pierduți în urma atacului.
+INC_COUNCIL_VOTE_TITLE            | Vot în Consiliu
+INC_COUNCIL_VOTE_FOR_DESC         | [voter_race] au votat pentru [candidate_name], lider al [candidate_race].
+INC_COUNCIL_VOTE_AGAINST_DESC     | [voter_race] au votat împotriva [candidate_name], lider al [candidate_race].
+INC_COUNCIL_ABSTAIN_DESC          | [voter_race] s-au abținut în alegerile Consiliului Galactic, refuzând să voteze pentru [candidate_name], lider al [candidate_race].
+INC_DECLARED_WAR_TITLE            | Război Declarat
+INC_DECLARED_WAR_DESC             | [aggressor_empire] a declarat război împotriva [victim_empire].
+INC_ERRATIC_WAR_TITLE             | Comportament Eratic
+INC_ERRATIC_WAR_DESC              | [aggressor_race] au devenit agitați și au declarat război împotriva [victim_empire], și nimeni nu știe cu exactitate cauza.
+INC_DEMANDED_TRIBUTE_TITLE        | Tribut Cerut
+INC_ENCROACHING_TITLE             | Amenințare Teritorială
+INC_ENCROACHING_DESC              | [your_empire] au colonizat sistemul [system], încălcând revendicările teritoriale ale [my_empire].
+INC_TECH_STOLEN_TITLE             | Tehnologie Furată
+INC_TECH_STOLEN_DESC              | Spioni ai [spy_race] au furat secretele [tech] de la [victim_race].
+INC_TECH_FRAMED_DESC              | Spioni necunoscuți au furat secrete tehnologice de la [victim_race]. (Ați fost blamați)
+INC_TECH_EXCHANGE_TITLE           | Schimb de Tehnologie
+INC_TECH_EXCHANGE_DESC            | [my_empire] au oferit secretele [techGiven] [your_empire] în schimbul [techReceived].
+INC_FINANCIAL_AID_TITLE           | Ajutor Financiar
+INC_FINANCIAL_AID_DESC            | [your_empire] a oferit cadou [amt] BC către [my_empire].
+INC_TECHNOLOGY_AID_TITLE          | Ajutor Tehnologic
+INC_TECHNOLOGY_AID_DESC           | [your_empire] a împărtășit secretele [tech] cu [my_empire].
+INC_TECHNOLOGY_AID_DESC_MULT      | [your_empire] a împărtășit cu [my_empire] secretele tehnologiilor: [techs]
+INC_TECHNOLOGY_TECH_LIST_COMMA    | , 
+INC_ENEMY_AID_TITLE               | Ajutor către Inamic
+INC_ENEMY_AID_MONEY_DESC          | [your_empire] a oferit [amt] BC către [enemy_empire], un inamic al [my_empire].
+INC_ENEMY_AID_TECH_DESC           | [your_empire] a împărtășit secretele [tech] cu [enemy_empire], un inamic al [my_empire].
+INC_PARANOIA_TITLE                | Paranoia
+INC_PARANOIA_DESC1                | Un grup conspiratist radical în [my_empire] crede în mod ridicol că [your_race] reprezintă un pericol existențial pentru specia lor. [your_empire] ocupă în prezent [num] sisteme fondate original de către [my_empire].
+INC_PARANOIA_DESC2                | Un grup marginal în [my_empire] crede că [your_race] reprezintă un pericol existențial pentru specia lor. [your_empire] ocupă în prezent [num] sisteme fondate original de către [my_empire].
+INC_PARANOIA_DESC3                | O minoritate vocală în [my_empire] susține că [your_race] reprezintă un pericol existențial pentru specia lor. [your_empire] ocupă în prezent [num] sisteme fondate original de către [my_empire].
+INC_PARANOIA_DESC4                | O parte mare din populația din [my_empire] dorește acțiuni față de frica că [your_race] reprezintă un pericol existențial pentru specia lor. [your_empire] ocupă în prezent [num] sisteme fondate original de către [my_empire].
+INC_PARANOIA_DESC5                | Panici în masă au acaparat populația din [my_empire] față de realizarea că [your_race] a devenit în mod clar un pericol existențial pentru specia lor. [your_empire] ocupă în prezent [num] sisteme fondate original de către [my_empire].
+INC_EXPANSION_TITLE               | Expansiune
+INC_EXPANSION_DESC                | Controlând [num] sisteme, [your_empire] a crescut prea mare.
+INC_GENOCIDE_TITLE                | Genocid
+INC_GENOCIDE_DESC                 | [attacker_empire] a distrus complet specia [victim_race].
+INC_FINAL_WAR_TITLE               | Război Final!
+INC_FINAL_WAR_DESC                | [rebel_empire] sa revoltat împotriva autorității Consiliului Galactic, rezultând într-o cruciadă de eradicare a acestora de către restul forțelor aliate din galaxie.
+INC_MILITARY_BUILDUP_TITLE        | Acumulare Militară
+INC_MILITARY_BUILDUP_DESC         | [your_empire] adună o flotă în [system].
+INC_OATHBREAKER_TITLE             | Jurământ Rupt
+INC_DESTROYED_BASES_TITLE         | Baze de Rachete Distruse
+INC_DESTROYED_BASES_DESC          | Sabotori care lucrează pentru [spy_empire] au distrus [amt] baze de rachete în sistemul [system].
+INC_DESTROYED_FACTORIES_TITLE     | Fabrici Distruse
+INC_DESTROYED_FACTORIES_DESC      | Sabotori care lucrează pentru [spy_empire] au distrus [amt] fabrici în sistemul [system].
+INC_INCITED_REBELLION_TITLE       | Incitare la Rebeliune
+INC_INCITED_REBELLION_DESC        | Sediționiști care lucrează pentru [spy_empire] au incitat [amt] milioane de rebeli în sistemul [system].
+INC_SIGNED_ALLIANCE_TITLE         | Alianță
+INC_SIGNED_ALLIANCE_DESC          | [my_empire] și [your_empire] s-au alăturat într-o Alianță, promițând să se apere reciproc în cazul unui conflict militar.
+INC_JOINT_WAR_TITLE               | Război Declarat
+INC_LEFT_ALLIANCE_TITLE           | Alianță Ruptă
+INC_SIGNED_PACT_TITLE             | Pact de Neagresiune
+INC_SIGNED_PACT_DESC              | [my_empire] și [your_empire] au semnat un tratat de Neagresiune, evitând conflictul între nave în sisteme neutre.
+INC_SIGNED_PEACE_TITLE            | Tratat de Pace
+INC_SIGNED_PEACE_DESC             | [my_empire] și [your_empire] au semnat un tratat de Pace, încetând toate ostilitățile până în [endYear].
+INC_SIGNED_TRADE_TITLE            | Tratat Comercial
+INC_SIGNED_TRADE_DESC             | [my_empire] și [your_empire] au semnat un contract comercial. Acesta poate avea un profit anual maxim de [amt] BC.
+INC_SKIRMISH_TITLE                | Încaierare Militară
+INC_SKIRMISH_DESC                 | Flotele navale a [my_race] și a [your_race] s-au confruntat în sistemul [system].
+INC_SPY_CONFESSION_TITLE          | Confesiunea Spionului
+INC_SPY_CONFESS_ESPIONAGE_DESC    | Un spion din [spy_empire] a fost capturat și a dezvăluit activități de spionaj planificate împotriva [victim_empire].
+INC_SPY_CONFESS_SABOTAGE_DESC     | A spy for the [spy_empire] a fost capturat și a dezvăluit activități de sabotaj planificate împotriva [victim_empire].
+INC_SPY_CAPTURED_DESC             | A spy for the [spy_empire] a fost capturat și a fost forțat să dezvăluie activități de sabotaj planificate împotriva [victim_empire].
+INC_TRADE_INCOME_TITLE            | Profit Comercial
+INC_TRADE_INCOME_DESC             | Comerțul dintre [your_empire] și [my_empire] a rezultat într-un profit de [amt] BC.
+INC_TRESPASSING_TITLE             | Încălcare Teritorială
+INC_TRESPASSING_DESC              | Flotele navale a [your_race] au intrat ilegal în sistemul [system], parte a [my_empire].
+
+// generic click to skip or continue messages
+CLICK_SKIP                        | Click sau Escape pentru a Sări Peste Animație.
+CLICK_CONTINUE                    | Click sau Escape pentru a Continua...
+CLICK_EXIT                        | Click sau Escape pentru a Ieși...
+BUTTON_EXIT                       | Ieșire
+
+// GAME/SETUP UI 
+GAME_TITLE_LINE_1                 | RĂMĂȘIŢELE
+GAME_TITLE_LINE_2                 | 
+GAME_TITLE_LINE_3                 | PRECURSORILOR
+GAME_DISCUSS_ONLINE               | Discută Online
+GAME_MENU_CONTINUE                | Continuă Jocul
+GAME_MENU_NEW_GAME                | Joc Nou
+GAME_MENU_LOAD_GAME               | Încarcă Jocul
+GAME_MENU_SAVE_GAME               | Salvează Jocul
+GAME_MENU_SETTINGS                | Setări
+GAME_MENU_EXIT                    | Ieșire
+GAME_MENU_RESTART                 | Restart
+GAME_VERSION                      | Versiune: %1
+GAME_SHRINK                       | Micșorează -
+GAME_ENLARGE                      | Mărește
+
+// Game Settings UI
+GAME_SETTINGS_TITLE               | Setările Jocului
+GAME_SETTINGS_DESCRIPTION         | Click pentru a activa toate setările jocului. 
+GAME_SETTINGS_EXIT                | Ieșire
+GAME_SETTINGS_DEFAULT             | Setările Originale 
+GAME_SETTINGS_DISPLAY_MODE        | Mod Afișare: %1
+GAME_SETTINGS_WINDOWED            | Windowed
+GAME_SETTINGS_BORDERLESS          | Borderless
+GAME_SETTINGS_FULLSCREEN          | Full Screen
+GAME_SETTINGS_DISPLAY_MODE_DESC   | Necesită un Restart. Windowed reprezintă un ratio fix și redimensionabil. Borderless reprezintă o fereastră maxinizată. Fullscreen reprezintă o fereastră maximizată exclusivă.
+GAME_SETTINGS_GRAPHICS            | Nivelul Graficilor: %1
+GAME_SETTINGS_GRAPHICS_LOW        | Scăzut
+GAME_SETTINGS_GRAPHICS_MED        | Mediu
+GAME_SETTINGS_GRAPHICS_HIGH       | Ridicat
+GAME_SETTINGS_GRAPHICS_DESC       | Ajustă setările grafice ale jocului. Mediu: Anti-Aliasing-ul imaginilor este dezactivat. Scăzut: Animațiile sunt dezactivate.
+GAME_SETTINGS_TEXTURES            | Texturi: %1
+GAME_SETTINGS_TEXTURES_NO         | Nu
+GAME_SETTINGS_TEXTURES_INTERFACE  | Interfața Utilizatorului
+GAME_SETTINGS_TEXTURES_MAP        | Harta Galactică
+GAME_SETTINGS_TEXTURES_BOTH       | Interfață și Hartă
+GAME_SETTINGS_TEXTURES_DESC       | Setează utilizarea de texturi pe harta galactică sau în diversele ecrane din interiorul jocului.
+GAME_SETTINGS_SENSITIVITY         | Sensibilitate Plasare Mouse: %1
+GAME_SETTINGS_SENSITIVITY_HIGH    | Ridicată
+GAME_SETTINGS_SENSITIVITY_MEDIUM  | Medie
+GAME_SETTINGS_SENSITIVITY_LOW     | Scăzută
+GAME_SETTINGS_SENSITIVITY_DESC    | Setează viteza reacțiilor hărții galactice în relație cu miscările mouse-ului.
+GAME_SETTINGS_MEMORY              | Afișează Utilizarea Memoriei: %1
+GAME_SETTINGS_MEMORY_YES          | Da
+GAME_SETTINGS_MEMORY_NO           | Nu
+GAME_SETTINGS_MEMORY_DESC         | Setează afișarea nivelului de utilizare a memoriei în colțul din dreapta jos al ecranului.
+GAME_SETTINGS_SOUNDS              | Sunete: %1
+GAME_SETTINGS_SOUNDS_OFF          | Sunete Dezactivate
+GAME_SETTINGS_SOUNDS_ON           | %1/10
+GAME_SETTINGS_SOUNDS_DESC         | Click pentru a activa sau dezactiva efectele sonore ale jocului.
+GAME_SETTINGS_SOUNDS_DISABLED     | Dezactivate
+GAME_SETTINGS_SOUNDS_ERR_DESC     | Sunetele au fost dezactivate din cauza următoarelor probleme: %1
+GAME_SETTINGS_MUSIC               | Muzică: %1
+GAME_SETTINGS_MUSIC_OFF           | Muzică Dezactivată
+GAME_SETTINGS_MUSIC_ON            | %1/10
+GAME_SETTINGS_MUSIC_DESC          | Click pentru a activa sau dezactiva muzica jocului.
+GAME_SETTINGS_AUTOCOLONIZE        | Colonizare: %1
+GAME_SETTINGS_AUTOCOLONIZE_YES    | Automat
+GAME_SETTINGS_AUTOCOLONIZE_NO     | Întrabă Întodeauna
+GAME_SETTINGS_AUTOCOLONIZE_DESC   | Setează autocolonizarea și numirea luminor în momentul sosirii navelor coloniale.
+GAME_SETTINGS_AUTOBOMBARD         | Bombardament: %1
+GAME_SETTINGS_AUTOBOMBARD_NO      | Întrabă Întodeauna
+GAME_SETTINGS_AUTOBOMBARD_NEVER   | Niciodată
+GAME_SETTINGS_AUTOBOMBARD_YES     | Întodeauna
+GAME_SETTINGS_AUTOBOMBARD_WAR     | Doar în Timp de Război
+GAME_SETTINGS_AUTOBOMBARD_INVADE  | Doar în Timp de Război și Neinvadând
+GAME_SETTINGS_AUTOBOMBARD_DESC    | Setează când au loc bombardamente planetare. 
+GAME_SETTINGS_BACKUP_OFF          | Oprit
+GAME_SETTINGS_BACKUP_ON           | Fiecare %1 ture
+GAME_SETTINGS_BACKUP              | Salvare de Rezervă: %1
+GAME_SETTINGS_BACKUP_DESC         | Permite salvarea periodică automată a jocului într-un folder unic, permitând reîncărcarea jocului dintr-o tură precedentă.
+GAME_SETTINGS_SAVEDIR             | Locație Salvări: %1
+GAME_SETTINGS_SAVEDIR_DEFAULT     | Original
+GAME_SETTINGS_SAVEDIR_CUSTOM      | Customizat
+GAME_SETTINGS_SAVEDIR_DESC1       | Salvările sunt stocate în aceași locație cu jocul.
+GAME_SETTINGS_SAVEDIR_DESC2       | Salvările sunt stocate în: %1
+
+// Load Game UI
+LOAD_GAME_TITLE                   | Încarcă Jocul
+LOAD_GAME_AUTOSAVE                | Cea mai Recentă Auto-Salvare
+LOAD_GAME_BACKUP_DIR              | Locație Salvări de Rezervă: %1 files
+LOAD_GAME_SAVE_DIR                | Locație Salvări: %1 files
+LOAD_GAME_FILENAME                | Sortează după Numele Filei
+LOAD_GAME_DATE                    | după Dată
+LOAD_GAME_SIZE                    | după Mărime
+LOAD_GAME_LOADING                 | Încărcare...
+LOAD_GAME_BAD_VERSION             | Nu se poate încărca salvarea: %1. Această filă poate fi coruptă.
+LOAD_GAME_CANCEL                  | Anulează
+LOAD_GAME_OK                      | Încarcă
+LOAD_GAME_TOO_LONG                | ...
+
+// Save Game UI
+SAVE_GAME_TITLE                   | Salvează Jocul
+SAVE_GAME_FILENAME                | Sortează după Numele Filei
+SAVE_GAME_DATE                    | după Dată
+SAVE_GAME_SIZE                    | după Mărime
+SAVE_GAME_SAVING                  | Se Salvează...
+SAVE_GAME_CANCEL                  | Anulează
+SAVE_GAME_OK                      | Salvează
+
+// Intro UI
+INTRO_BEGIN                       | Începe
+
+// MAIN UI - Bottom Navigation options
+MAIN_NAVIGATION_GAME              | Joc
+MAIN_NAVIGATION_DESIGN            | Modele Nave
+MAIN_NAVIGATION_FLEETS            | Flote
+MAIN_NAVIGATION_SYSTEMS           | Sisteme
+MAIN_NAVIGATION_RACES             | Specii
+MAIN_NAVIGATION_COLONIES          | Colonii
+MAIN_NAVIGATION_TECH              | Tehnologie
+MAIN_NAVIGATION_NEXT_TURN         | Următoarea Tură
+MAIN_NAVIGATION_NEXT_YEAR         | Următorul An
+MAIN_YEAR_DISPLAY                 | Anul  %1
+MAIN_TURN_DISPLAY                 | Tura  %1
+MAIN_SPY_REPORT                   | Spionaj
+MAIN_TECH_NONE                    | Niciun Proiect de Cercetare Ales
+MAIN_TECH_COMPLETED               | Cercetare Completă
+MAIN_TECH_RP_REMAINING            | %1 RP Rămase
+MAIN_TECH_RP_DISCOVERY            | Descoperire Iminentă
+MAIN_TECH_RESERVE_BC              | %1 BC
+MAIN_TECH_RESERVE_TAX_ALL         | Taxăm %1% din producția tuturor coloniilor
+MAIN_TECH_RESERVE_TAX             | Taxăm %1% din producția coloniilor dezvoltate
+MAIN_TECH_RESERVE_TAX_NONE        | Nicio taxă impusă pe producția colonială
+MAIN_HELP_ALL                     | Help - click to cycle through help information for a particular screen. Hit escape to cancel.
+MAIN_HELP_1A                      | Fiecare sistem solar își împarte producția în cinci domenii.Barele gri indică faptul că bara de producție a fost blocată și nu se va schimba. Click pe nume pentru a bloca/debloca.
+MAIN_HELP_1B                      | Șantier Naval - construiește modelul naval selectat. Navele mari pot lua ture multiple.
+MAIN_HELP_1C                      | Apărare - construiește și modernizează bazele de rachete și scuturile planetare, unde este cazul.
+MAIN_HELP_1D                      | Industrie - construiește fabrici ce cresc nivelul de producție a coloniei.
+MAIN_HELP_1E                      | Ecologie  - curăță deșeurile industriale, terraformează planeta, și crește rata natalității.
+MAIN_HELP_1F                      | Tehnologie - adaugă la cercetarea imperiului.
+MAIN_HELP_1G                      | Barele de rații arată cum este împărțită producția unei planete. Cheltuielile pentru fiecare bară pot fi ajustate cu rotița mouse-ului, printr-un click în interiorul barei, sau cu săgețile fiecărei bare.
+MAIN_HELP_1H                      | Rezultatul scontat al cheltuielilor pentru o zonă este afișat în dreapta fiecărei bare. 
+MAIN_HELP_2A                      | Nivelul scuturilor planetare aflate pe colonie. Scuturile planetare nu pot fi construite pe planete aflate într-o nebuloasă
+MAIN_HELP_2B                      | Numărul de baze de rachete și numărul maxim dorit pentru această planetă. Click sau rotița mouse-ului pentru a modifica numărul maxim.
+MAIN_HELP_2C                      | Producția planetară totală din industrie și populație.
+MAIN_HELP_2D                      | Producția actuală ajustată pentru veniturile comerciale, costurile de spionaj și securitate și costurile de întreținere a navelor și a bazelor militare.
+MAIN_HELP_2E                      | Schimă modelul navei ce se construiește în șantierul naval al planetei. Producția deja acumulată pentru nava necompletată va accelera producția navelor noi cu 50% până la epuizarea acestora. Click sau rotița mouse-ului pentru a schimba modelul navei.
+MAIN_HELP_2F                      | Setați un punct de regrupare pentru a trimite navele proaspăt construite automat la altă colonie.
+MAIN_HELP_2G                      | Transportați populație pentru a fortifica o altă colonie sau trimiteți trupe pentru a invada o planetă inamică. Colonia suportă un cost unic de producție pentru transport.
+MAIN_HELP_2H                      | Abandonați complet o planetă, transferând toată populația din aceasta într-o altă colonie.
+MAIN_HELP_2I                      | Populația planetară curentă și maximă. 100 reprezintă o planetă mamă ce nu a fost terraformată.
+MAIN_HELP_2J                      | Fabricile planetare curente și maxime. Numărul maxim de colonii este bazat pe populația planetei și pe tehnologie.
+MAIN_HELP_2K                      | Plasează un steag pe sistem pentru al ajuta să iasă în evidență pe harta galactică.
+MAIN_HELP_2L                      | Cantitatea de rezerve stocate în trezoreria imperiului.
+MAIN_HELP_2M                      | Starea actuală a cercetării pentru fiecare dintre cele șase domenii tehnologice.
+MAIN_HELP_3A                      | Joc - revine la meniul de început. Vă permite să ajustați setările sau să salvați, să încărcați și să începeți jocuri noi.
+MAIN_HELP_3B                      | Sisteme - hartă galactică care arată starea sistemelor din galaxie după diferite criterii.
+MAIN_HELP_3C                      | Flote - permite controlul pe scară largă al flotelor și construcției navale în imperiul tău.
+MAIN_HELP_3D                      | Modele Nave - creați modele de nave pentru flotele navale utilizând cea mai recentă tehnologie. Modelele nedorite pot fi casate.
+MAIN_HELP_3E                      | Specii - informații detaliate și opțiuni diplomatice pentru orice rasă extraterestră pe care ați întâlnit-o.
+MAIN_HELP_3F                      | Colonii - listarea detaliată și sortabilă a coloniilor controlate. De asemenea, arată veniturile și costurile imperiului.
+MAIN_HELP_3G                      | Tehnologie - prezintă tehnologiile disponibile. Permite să vă concentrați sau să echilibrați cercetarea pe până la șase tehnologii.
+MAIN_HELP_3H                      | Următorul An - avansează jocul la anul următor.
+MAIN_HELP_3I                      | Tura Curentă - afișează tura curentă a jocului sau anul curent al imperiului. Click pentru a comuta între cele două.
+MAIN_HELP_3J                      | Controalele Hărții - click pentru a parcurge diferite setări de afișare pentru harta galaxiei.
+
+MAIN_SYSTEM_DETAIL_PFB            | Pop %1  Fab %2  Bază %3
+MAIN_SYSTEM_DETAIL_PF             | Pop %1  Fab %2
+MAIN_SYSTEM_DETAIL_NO_DATA        | Fără Date
+MAIN_UNEXPLORED_SYSTEM            | Neexplorat
+MAIN_ALLIED_COLONY                | Colonie Aliată
+MAIN_SYSTEM_RANGE                 | %1 Ani-Lumină
+MAIN_OUT_OF_RANGE_DESC            | În Afara Razei de Acțiune
+MAIN_SCOUT_RANGE_DESC             | Rezervoare de Combustibil de Rezervă Necesare
+MAIN_IN_RANGE_DESC                | În Raza de Acțiune
+MAIN_NO_PLANETS                   | Fără Planete Colonizabile
+MAIN_NO_COLONIES                  | Necolonizat
+MAIN_UNSCOUTED                    | Necercetat
+MAIN_ABANDONED                    | Abandonat
+MAIN_ALIEN_COLONY                 | Colonie a %1
+MAIN_UNKNOWN_COLONY               | Colonie Extraterestră
+MAIN_NEBULA_DESC                  | Viteza navelor ce traversează prin Nebuloase este limitată la Warp 1
+MAIN_PLANET_SIZE                  | Mărime %1
+MAIN_PLANET_SIZE+                 | Mărime %1+
+MAIN_PLANET_POP                   | Pop %1
+MAIN_PLANET_POP_SIZE              | Pop %1/%2
+MAIN_PLANET_REBELLION             | În Rebeliune
+MAIN_PLANET_QUARANTINE            | În Carantină
+MAIN_PLANET_EVENT_COMET           | Cometă
+MAIN_PLANET_EVENT_PIRACY          | Piraterie
+MAIN_PLANET_EVENT_PLAGUE          | Boală
+MAIN_PLANET_EVENT_SUPERNOVA       | Supernova
+MAIN_PLANET_EVENT_AMOEBA          | Amibă Spațială
+MAIN_PLANET_EVENT_CRYSTAL         | Cristal Spațial
+MAIN_ADVANCING_YEAR               | Avansare la Anul  %1...
+MAIN_ADVANCING_TURN               | Avansare la Tura  %1...
+TURN_SAVING                       | Salvare Joc
+TURN_LAUNCHING_FLEETS             | Lansare Flote
+TURN_SHIP_COMBAT                  | Luptă Navală
+TURN_BOMBARDMENT                  | Bombardament Planetar
+TURN_TRANSPORTS                   | Transporturi
+TURN_COLONIES                     | Colonizare
+TURN_SPIES                        | Activități de Spionaj
+TURN_REBELLION                    | Rebeliuni
+TURN_COUNCIL                      | Status Consiliu
+TURN_RESEARCH                     | Cercetare Tehnologică
+TURN_ASSESS                       | Finalizare Internă
+TURN_DIPLOMACY                    | Diplomație
+TURN_ACQUIRE_TECHS                | Învățarea Tehnologiilor Achiziționate
+TURN_MAKE_DECISIONS               | Luare de Decizii
+TURN_RECALC_DISTANCES             | Recalcularea Distanțelor Dintre Sisteme
+TURN_REFRESHING                   | Reîmprospătarea Viziunii
+TURN_SCRAP_SHIPS                  | Casare Nave
+TURN_FLEET_PLANS                  | Planurile Flotei
+TURN_DEPLOY_FLEETS                | Mobilizarea Navelor
+TURN_DEPLOY_FLEET_X               | Mobilizarea Navelor (%1/%2 completate)
+TURN_RETREAT_FLEETS               | Retragerea Flotelor
+TURN_DESIGN_SHIPS                 | Proiectarea Navelor
+TURN_COLONY_SPENDING              | Alocațiile Coloniale
+
+// Fleet labels
+MAIN_FLEET_TITLE                  | Flotă a [fleet_race]
+MAIN_FLEET_TITLE_UNKNOWN          | Flotă Necunoscută
+MAIN_FLEET_IN_ORBIT               | În orbită
+MAIN_FLEET_DEPLOYED               | Mobilizată
+MAIN_FLEET_IN_TRANSIT             | În tranzit
+MAIN_FLEET_RETREATING             | În retragere
+MAIN_FLEET_LOCATION               | lângă %1
+MAIN_FLEET_ORIGIN                 | din %1
+MAIN_FLEET_DESTINATION            | către %1
+MAIN_FLEET_DEST_UNSCOUTED         | către Neexplorat
+MAIN_FLEET_ALLY                   | Aliat
+MAIN_FLEET_ENEMY                  | Inamic
+MAIN_FLEET_DEPLOYMENT             | Mobilizare Flotă
+MAIN_FLEET_DISPLAY                | Afișarea flotei
+MAIN_FLEET_CHOOSE_DEST            | Alegeți destinația și numărul de nave de trimis.
+MAIN_FLEET_OUT_OF_RANGE_DESC      | Destinația se află în afara razei de acțiune a flotei, %1 ani-lumină de cea mai apropiată colonie.
+MAIN_FLEET_INVALID_RETREAT        | Flotele în retragere pot fi trimise numai către coloniile prietenoase
+MAIN_FLEET_ETA_UNNAMED            | ETA către destinație: %1 Ani 
+MAIN_FLEET_ETA_NAMED              | ETA către %1: %2 Ani
+MAIN_FLEET_SET_RALLY              | Set. Pct. de Regrupare
+MAIN_FLEET_AUTO_RETREAT           | Retragere automată la sosire
+MAIN_FLEET_ETA_UNKNOWN            | Scanerele nu pot determina destinația
+MAIN_FLEET_THROUGH_NEBULA         | Viteza maximă Warp 1 datorită nebuloasei
+
+MAIN_FLEET_CANCEL                 | Anulează
+MAIN_FLEET_OUT_OF_RANGE           | Înafara Razei de Acțiune
+MAIN_FLEET_DEPLOY_FLEET           | Mobilizează Flota
+MAIN_FLEET_UNDEPLOY_FLEET         | Oprește Flota
+MAIN_FLEET_INVALID_RETREAT        | Retragere Invalidă
+MAIN_FLEET_INVALID_DESTINATION    | Flota nu poate fi trimisă la %1
+MAIN_FLEET_INVALID_DESTINATION2   | Flota nu poate fi trimisă la acest sistem
+
+// Rally Point labels
+MAIN_RALLY_TITLE                  | Setare Punct de Regrupare
+MAIN_RALLY_PROMPT                 | Selectați un sistem controlat pentru a trimite navele recent construite.
+MAIN_RALLY_FORWARD                | Înaintează regrupările ce sosesc
+MAIN_RALLY_TRAVEL_TIME            | Timp de călătorie până la %1: %2 Ani
+MAIN_RALLY_INSTANT_TIME           | Timp de călătorie până la %1: Instant
+MAIN_RALLY_WILL_CANCEL            | Selectarea acestei destinații va elimina orice punct de regrupare existent.
+MAIN_RALLY_ERROR                  | Trebuie să selectați un sistem controlat.
+MAIN_RALLY_NO_SELECTION           | Fără Selecție
+MAIN_RALLY_CANCEL                 | Anulează
+MAIN_RALLY_START                  | Începe Regruparea
+MAIN_RALLY_STOP                   | Oprește Regruparea
+
+// Transport labels
+MAIN_TRANSPORTS_EMPIRE            | Transporturi ale %1
+MAIN_TRANSPORTS_COUNT             | %1 Transporturi
+MAIN_TRANSPORTS_CANCEL            | Anulează
+MAIN_TRANSPORTS_SHOW_DEST         | ETA până la %1: %2 ani
+MAIN_TRANSPORT_TITLE              | Trimitere de Transporturi
+MAIN_TRANSPORT_ABANDON_TITLE      | Abandonare Sistem
+MAIN_TRANSPORT_PROMPT             | Selectați un sistem colonizat la care să trimiteți nave de transport civil sau militar.
+MAIN_TRANSPORT_ABANDON_PROMPT     | Selectați un sistem colonizat pentru a evacua toate navele civile de transport.
+MAIN_TRANSPORT_SELECT_POP         | Selectați populația civilă de trimis (până la jumătate din populația de pe %1).
+MAIN_TRANSPORT_SELECT_TROOPS      | Selectați numărul de unități militare de trimis (până la populația de pe %1).
+MAIN_TRANSPORT_POP_LABEL          | Populație
+MAIN_TRANSPORT_TOTAL_POP_LABEL    | Populație Totală: %1
+MAIN_TRANSPORT_ETA                | Timp de călătorie până la %1: %2 Ani
+MAIN_TRANSPORT_ERROR              | Trebuie să selectați un sistem colonizat.
+MAIN_TRANSPORT_ABANDON_ERROR      | Trebuie să selectați un sistem %1.
+MAIN_TRANSPORT_OUT_OF_RANGE       | Acest sistem nu se află în raza de acțiune a transporturilor noastre militare.
+MAIN_TRANSPORT_UNSCOUTED          | Nu putem trimite transporturi către sisteme neexplorate.
+MAIN_TRANSPORT_HOSTILE            | Nu avem tehnologia necesară pentru a ateriza în acest mediu.
+MAIN_TRANSPORT_NO_ROOM            | Avertisment - Planeta țintă este la populația maximă!
+MAIN_TRANSPORT_SIZE_WARNING       | Avertisment - Planeta țintă poate suporta doar %1 milioane!
+MAIN_TRANSPORT_NO_SELECTION       | Fără Selecție
+MAIN_TRANSPORT_CANCEL             | Anulează
+MAIN_TRANSPORT_SEND               | Trimite Transporturi
+MAIN_TRANSPORT_ABANDON            | Abandonează
+MAIN_TRANSPORT_CLEAR              | Curăță Transporturi
+MAIN_TRANSPORT_SURRENDER          | Capitulați automat la sosire
+
+// Colony labels
+MAIN_COLONY_HOMEWORLD             | Lumea Mamă a %1
+MAIN_COLONY_FOUNDED               | Colonie a %1
+MAIN_COLONY_POPULATION            | Populație
+MAIN_COLONY_FACTORIES             | Fabrici
+MAIN_COLONY_VALUE+                | %1+
+MAIN_COLONY_SHIELD                | Nivel Scut
+MAIN_COLONY_BASES                 | Baze
+MAIN_COLONY_PRODUCTION            | Producție - Net
+MAIN_COLONY_SHIP                  | Nave
+MAIN_COLONY_DEFENSE               | Apărare
+MAIN_COLONY_INDUSTRY              | Ind
+MAIN_COLONY_ECOLOGY               | Eco
+MAIN_COLONY_TECHNOLOGY            | Teh
+MAIN_COLONY_ALLOCATE_SPENDING     | Alocați Cheltuieli
+MAIN_COLONY_SPENDING_NONE         | Niciuna
+MAIN_COLONY_SPENDING_RESERVE      | Rezerve
+MAIN_COLONY_SPENDING_TECH         | Teh
+MAIN_COLONY_SPENDING_CONVERT      | Conversie
+MAIN_COLONY_SPENDING_REFIT        | Reajustare
+MAIN_COLONY_SPENDING_MAX_FACT     | Max
+MAIN_COLONY_SPENDING_WASTE        | Deșeuri
+MAIN_COLONY_SPENDING_ECO_GROWTH   | Creștere %1
+MAIN_COLONY_SPENDING_ATMOSPHERE   | Atmo
+MAIN_COLONY_SPENDING_ENRICH_SOIL  | Sol
+MAIN_COLONY_SPENDING_TERRAFORM    | T-form
+MAIN_COLONY_SPENDING_CLEANUP      | Curățare
+MAIN_COLONY_SPENDING_GROWTH       | Creștere
+MAIN_COLONY_SPENDING_SHIELD       | Scut
+MAIN_COLONY_SPENDING_UPG_BASES    | Modernizare
+MAIN_COLONY_SPENDING_PLAGUE       | Boală
+MAIN_COLONY_SPENDING_SUPERNOVA    | Supernova
+MAIN_COLONY_SPENDING_RP           | %1 RP
+MAIN_COLONY_COMPLETION_YEAR       | 1 An
+MAIN_COLONY_COMPLETION_YEARS      | %1 Ani
+MAIN_COLONY_COMPLETION_CENTURY    | %1 Ani
+MAIN_COLONY_COMPLETION_PER_YEAR   | %1/An
+MAIN_COLONY_SHIPYARD_COMPLETED    | Completat: %1
+MAIN_COLONY_SHIPYARD_LIMIT        | Limită Construcții:
+MAIN_COLONY_SHIPYARD_LIMIT_NONE   | Niciuna
+MAIN_COLONY_SHIPYARD_CONSTRUCTION | Ordine de Construcție a Navelor
+MAIN_COLONY_RELOCATE_LABEL        | Punct de Regrupare
+MAIN_COLONY_TRANSPORTS_LABEL      | Trimite Transporturi
+MAIN_COLONY_ABANDON_LABEL         | Abandonează
+MAIN_COLONY_SHIP_SCRAPPED         | Casată
+MAIN_COLONY_NO_SHIELD             | Nebuloasă
+
+// System Scouted Notification
+MAIN_SCOUT_TITLE                  | Oamenii de Știință Catalogează un Nou Sistem Solar
+MAIN_SCOUT_SUBTITLE_1             | Navele noastre au explorat acest sistem
+MAIN_SCOUT_SUBTITLE_2             | Astronomii noștri au colectat aceste date
+MAIN_SCOUT_SUBTITLE_3             | Aliații noștri au împărtășit aceste date
+MAIN_SCOUT_TYPE                   | Clasificare: %1      Mărime: %2
+MAIN_SCOUT_NO_PLANET              | Nu s-au găsit planete habitabile
+MAIN_SCOUT_HOSTILE_DESC           | Mediu: Ostil - Rata natalității este redusă la jumătate.
+MAIN_SCOUT_FERTILE_DESC           | Mediu: Fertil - Rata natalițății crește cu 50%.
+MAIN_SCOUT_GAIA_DESC              | Mediu: Gaia - Rata natalității crește cu 100%.
+MAIN_SCOUT_ARTIFACTS_DESC         | Ruine Antice: Punctele tehnologice(RP) din cercetare sunt dublate.
+MAIN_SCOUT_ANCIENTS_DESC          | Lume Mamă Antică: Punctele tehnologice(RP) din cercetare cresc de patru ori.
+MAIN_SCOUT_ULTRA_POOR_DESC        | Resurse: Foarte Săracă - Producția din industrie este redusă la o treime.
+MAIN_SCOUT_POOR_DESC              | Resurse: Săracă - Producția din industrie este redusă la jumătate.
+MAIN_SCOUT_RICH_DESC              | Resurse: Bogată - Producția din industrie este dublată.
+MAIN_SCOUT_ULTRA_RICH_DESC        | Resurse: Ultra Bogată - Producția din industrie este triplată.
+
+// Colonization prompt
+MAIN_COLONIZE_TITLE               | Coloniștii noștri orbitează %1, un sistem necolonizat.
+MAIN_COLONIZE_PROMPT              | Fondați o colonie nouă?
+MAIN_COLONIZE_YES                 | Da
+MAIN_COLONIZE_NO                  | Nu
+MAIN_COLONIZE_ANIMATION_TITLE     | În anum %1, [player_empire] a fondat o nouă colonie.
+MAIN_COLONIZE_NAME_PROMPT         | Numele Coloniei
+MAIN_COLONIZE_NAME_OK             | OK
+
+// Reasons to ask player to reallocate a system (during next turn)
+MAIN_ALLOCATE_TITLE               | Ajustări de Cheltuieli
+MAIN_ALLOCATE_DESIGN_SCRAPPED     | Proiectul navei în construcție la %1 a fost casat.
+MAIN_ALLOCATE_COLONIZED           | • %1 a fost colonizat/ă.
+MAIN_ALLOCATE_STARGATE_COMPLETE   | • %1 a finalizat construirea unui Stargate.
+MAIN_ALLOCATE_SHIPS_COMPLETE      | • %1 a finalizat construirea numărului solicitat de nave de tipul %2.
+MAIN_ALLOCATE_SHIELD_COMPLETE     | • %1 a finalizat construirea %2.
+MAIN_ALLOCATE_BASES_COMPLETE      | • %1 a finalizat construirea a %2 baze de rachete.
+MAIN_ALLOCATE_BASES_UPGRADED      | • %1 a finalizat modernizarea bazelor sale de rachete.
+MAIN_ALLOCATE_MAX_FACTORIES       | • %1 a atins numărul maximă de %2 fabrici construibile.
+MAIN_ALLOCATE_MAX_POPULATION      | • %1 a atins numărul maxim de %2 colonists.
+MAIN_ALLOCATE_TERRAFORM_COMPLETE  | • %1 si-a finalizat terraformarea.
+MAIN_ALLOCATE_ATMOSPHERE_COMPLETE | • %1 a fost terraformată într-un mediu normal cu rata standard a natalității.
+MAIN_ALLOCATE_FERTILE_COMPLETE    | • %1 a fost terraformată într-un mediu fertil cu o rată de 150% a natalității.
+MAIN_ALLOCATE_GAIA_COMPLETE       | • %1 a fost terraformată într-un mediu Gaia cu o rată dublă a natalității.
+MAIN_ALLOCATE_SABOTAGE_BASES      | • %1 a avut %2 baze de rachete distruse de sabotori din %3.
+MAIN_ALLOCATE_SABOTAGE_FACTORIES  | • %1 a avut %2 fabrici distruse de sabotori din %3.
+MAIN_ALLOCATE_COLONY_CAPTURED     | • %1 a fost capturat recent de trupe din %2.
+MAIN_ALLOCATE_ECO_LOCKED_WASTE    | • %1 are cheltuieli ecologice blocate manual la un nivel insuficient pentru a curăța poluarea.
+MAIN_ALLOCATE_PROJECT_ENDED       | • %1 nu mai cercetează un proiect special: %2
+MAIN_ALLOCATE_CHANGE_SPENDING     | Alocările de cheltuieli ale sistemului pot fi ajustate în acest moment.
+MAIN_ALLOCATE_NOTICE_NUMBER       | Anunț %1 din %2
+MAIN_ALLOCATE_BRIEF_NUMBER        | %1 din %2
+MAIN_ALLOCATE_PREV_SYSTEM         | Anterior
+MAIN_ALLOCATE_NEXT_SYSTEM         | Următorul
+MAIN_ALLOCATE_CLOSE               | Închide
+
+// Fleet Production display (during next turn)
+MAIN_FLEET_PRODUCTION_TITLE       | Rezumatul Producției Flotei
+MAIN_FLEET_SHIP_COUNT             | %1/%2
+
+// 32-bit Java Warning
+MAIN_JAVA_32BIT_TITLE             | Avertizare! Java pe 32 de biți în uz
+MAIN_JAVA_32BIT_DESC              | Rulați acest joc cu o versiune de 32 de biți a Java. Acest lucru poate reduce considerabil memoria disponibilă și poate afecta performanța jocului.
+MAIN_JAVA_32BIT_DESC_2            | Deși Rămășițele Precursorilor va funcționa în acest mod, actualizarea la 64 de biți Java va îmbunătăți experiența de joc.
+MAIN_JAVA_32BIT_DESC_3            | Dacă aveți nevoie de asistență pentru actualizarea Java, accesați www.reddit.com/r/rotp și solicitați asistență.
+MAIN_JAVA_32BIT_OK                | OK
+
+// Memory Low Warning
+MAIN_MEMORY_LOW_TITLE             | Avertizare! Memorie Pentru Joc Scăzută
+MAIN_MEMORY_LOW_DESC              | Memoria disponibilă pentru acest joc se apropie de epuizare. Acest lucru poate fi cauzat de o perioadă de joc extinsă sau de lipsa de memorie suficientă.
+MAIN_MEMORY_LOW_DESC_2            | Apăsați „Reporniți” pentru a reporni acest joc și a relua din acest moment. Continuarea jocului fără repornire poate duce la un comportament imprevizibil, inclusiv pierderea datelor salvate.
+MAIN_MEMORY_LOW_DESC_3            | Dacă vedeți acest mesaj în mod repetat, încercați să închideți alte aplicații de pe computer înainte de a reporni.
+MAIN_MEMORY_LOW_RESTART           | Restart
+MAIN_MEMORY_LOW_SKIP              | Ignoră
+
+// Autosave Failed Warning
+MAIN_AUTOSAVE_FAILED_TITLE        | Avertizare! Auto-salvare Eșuată
+MAIN_AUTOSAVE_FAILED_DESC         | Funcția de salvare automată care se declanșează la apăsarea „Următoarea Tura” a eșuat. Vă rugăm să salvați manual acest joc înainte de a continua.
+MAIN_AUTOSAVE_FAILED_DESC_2       | Mesajul furnizat jocului pentru această eroare este: %1
+MAIN_AUTOSAVE_FAILED_DESC_3       | Dacă vedeți frecvent acest mesaj, vă rugăm să mergeți online la www.reddit.com/r/rotp și să postați această captură de ecran.
+MAIN_AUTOSAVE_FAILED_OK           | OK
+
+// Alerts
+MAIN_ALERT_TITLE                  | Alertă 
+MAIN_ALERT_TITLE_COUNT            | Alertă - %1 of %2
+MAIN_ALERT_SPY_REPORT             | Biroul nostru de informații a furnizat un nou raport privind activitatățile recente de spionaj.
+MAIN_ALERT_TECH_STOLEN            | Securitatea Internă a descoperit activitățile de spionaj întreținute de spionii care lucrează pentru [alien_race].
+MAIN_ALERT_FACTORIES_DESTROYED    | Agenți care lucrează pentru [alien_empire] au distrus %1 fabrici în sistemul %2.
+MAIN_ALERT_BASES_DESTROYED        | Agenți care lucrează pentru [alien_empire] au distrus %1 baze de rachete în sistemul %2.
+MAIN_ALERT_FACTORIES_DESTROYED2   | Sabotori necunoscuți au distrus %1 fabrici în sistemul %2.
+MAIN_ALERT_BASES_DESTROYED2       | Sabotori necunoscuți au distrus %1 baze de rachete în sistemul %2.
+MAIN_ALERT_TRANSPORTS_PERISHED    | Colonia din sistemul %1 a fost distrusă. Transporturile noastre care au încearcat să aterizeze acolo au pierit.
+MAIN_ALERT_TRANSPORTS_CAPTURED    | %2 din transporturile noastre care au ajuns la %1 s-au predat forțelor [alien_race].
+MAIN_ALERT_TRANSPORTS_KILLED      | %3 din transporturile noastre care au încercat să ajungă la %2 au fost distruse de către forțele %1.
+MAIN_ALERT_INVADERS_CAPTURED      | %2 transporturi ale [alien_race] care au ajuns în sistemul %1 s-au predat forțelor noastre defensive.
+MAIN_ALERT_INVADERS_KILLED        | %2 transporturi ale [alien_race] care au încercat să invadeze %1 au fost complet distruse de către forțele noastre defensive.
+MAIN_ALERT_TRESPASSING1           | Nave ale [alien_race] au fost detectate încălcându-ne granița lângă colonia noastră in sistemul %1.
+MAIN_ALERT_TRESPASSING2           | Ambasadorul [alien_race] protestează navele noastre care au intrat în sistemul %1.
+MAIN_ALERT_TRADE_MATURED          | Tratatul nostru comercial cu %1 a atins valoarea maximă de %2 BC.
+MAIN_ALERT_ALLIANCE_WEAKENING     | Alianța noastră cu [ally_empire] a fost slăbită.
+MAIN_ALERT_ALLIANCE_BREAKING      | Alianța noastră cu [ally_empire] este pe punctul de a se prăbușii.
+
+// Colony Listing UI
+PLANETS_TITLE                     | %1 Colonies
+PLANETS_VIEW_ECOLOGY              | Ecologie
+PLANETS_VIEW_INDUSTRY             | Industrie
+PLANETS_VIEW_MILITARY             | Forțe Militare
+PLANETS_SPENDING_COSTS            | Cheltuielile Imperiului
+PLANETS_COSTS_DESC                | Fiecare colonie plătește un procent din producția sa pentru a sprijini cheltuielile imperiului.
+PLANETS_COSTS_SHIPS               | Întreținearea Navelor
+PLANETS_COSTS_BASES               | Baze de Rachete
+PLANETS_COSTS_STARGATES           | Porți Stelare
+PLANETS_COSTS_SPYING              | Spionaj
+PLANETS_COSTS_SECURITY            | Securitate
+PLANETS_TOTAL_INCOME              | Venituri Anuale
+PLANETS_INCOME_TRADE              | Venituri Comerciale
+PLANETS_INCOME_PLANETS            | Producție Colonială
+PLANETS_INCOME_TOTAL              | Total
+PLANETS_TREASURY                  | Trezoreria Imperiului
+PLANETS_TREASURY_FUNDS            | Fondurile Trezoreriei
+PLANETS_TAX_DESC                  | Impozitează coloniile pentru a adăuga fonduri trezoreriei imperiului.
+PLANETS_RESERVE_TAX               | Impozit pe Rezerve
+PLANETS_RESERVE_INCREASE          | +%1 BC/An
+PLANETS_RESERVE_NO_TAX            | Fără Taxe
+PLANETS_RESERVE_ONLY_DEVELOPED    | Impozitează doar coloniile complet dezvoltate
+PLANETS_BUTTON_TRANSFER           | TRANSFER
+PLANETS_BUTTON_EXIT               | IEȘIRE
+PLANETS_AMT_PCT                   | %1%
+PLANETS_AMT_BC                    | %1 BC
+PLANETS_TRANSFER_DESC             | Transferă Fonduri Imperiale Către %1
+PLANETS_TRANSFER_CANCEL           | Anulează
+PLANETS_TRANSFER_ACCEPT           | Transferă
+PLANETS_COLONY_TRANSFER_TITLE     | Transfer Funduri
+PLANETS_COLONY_TRANSFER_DETAIL    | Transferă fonduri din trezoreria imperiului pentru a crește nivelul de producție al acestei planete.
+PLANETS_COLONY_TRANSFER_BUTTON    | Transferă Fonduri din Trezorerie
+PLANETS_LIST_NUM                  | 
+PLANETS_LIST_NAME                 | Nume
+PLANETS_LIST_POPULATION           | Populație
+PLANETS_LIST_POP                  | Pop.
+PLANETS_LIST_SIZE                 | Mărime
+PLANETS_LIST_TYPE                 | Tip
+PLANETS_LIST_FACTORIES            | Fabrici
+PLANETS_LIST_WASTE                | Deșeuri
+PLANETS_LIST_BASES                | Baze
+PLANETS_LIST_SHIELD               | Scut
+PLANETS_LIST_PRODUCTION           | Prod
+PLANETS_LIST_CAPACITY             | Capacitate
+PLANETS_LIST_RESERVE              | Rezerve
+PLANETS_LIST_SHIPYARD             | Șantier Naval
+PLANETS_LIST_NOTES                | Note
+PLANETS_LIST_TURNS                | Ture
+PLANETS_LIST_YEARS                | Ani
+PLANETS_LIST_TRANSPORTS           | Transporturi
+PLANETS_LIST_RESOURCES            | Resurse
+PLANETS_MULTI_SYSTEMS             | %1 Sisteme
+PLANETS_AGGREGATE_VALUES          | Valori Agregate
+PLANETS_SPENDING_0                | Fără Cheltuieli %1
+PLANETS_SPENDING_25               | 25% Cheltuieli %1
+PLANETS_SPENDING_50               | 50% Cheltuieli %1
+PLANETS_SPENDING_75               | 75% Cheltuieli %1
+PLANETS_SPENDING_MAX              | Cheltuieli %1 Maxime
+PLANETS_HELP_ALL                  | PREZENTARE GENERALĂ - Acest ecran afișează datele economice ale imperiului dvs. împreună cu o listă a coloniilor dvs. sortabile după diferite date.
+PLANETS_HELP_1A                   | Ecologie - Faceți clic pe această filă pentru a afișa datele ecologice pentru colonii.
+PLANETS_HELP_1B                   | Industrie - Faceți clic pe această filă pentru a afișa datele industriale pentru colonii.
+PLANETS_HELP_1C                   | Forțe Militare - Faceți clic pe această filă pentru a afișa datele militare pentru colonii.
+PLANETS_HELP_1D                   | Cheltuielile coloniale pot fi ajustate ca pe ecranul principal.
+PLANETS_HELP_1E                   | Creșteți producția colonială cu până la 50% prin transferul de fonduri din trezoreria imperiului.
+PLANETS_HELP_1F                   | Veniturile Totale ale Imperiului.
+PLANETS_HELP_1G                   | Cheltuieli Totale ale Imperiului exprimate ca un procent din venituri.
+PLANETS_HELP_1H                   | Colectați o taxă asupra coloniilor dvs. pentru a o adăuga la trezoreria imperiului. Opțional, limitați această taxă numai la coloniile care și-au finalizat cheltuielile de Ecologie, Industrie și Apărare.
+PLANETS_HELP_2A                   | Nume - Numele sistemului. Editabil.
+PLANETS_HELP_2B                   | Populație - Populația actuală a coloniei și schimbările acesteia față de tura anterioară.
+PLANETS_HELP_2C                   | Tip - Tipul de teren al planetei. Verde pentru planetele fertile.
+PLANETS_HELP_2D                   | Resurse - Pentru planete Bogate, Sărace și Artefacte.
+PLANETS_HELP_2E                   | Mărime - Mărimea actuală a planetei.
+PLANETS_HELP_2F                   | Deșeuri - Nivelul de deșeuri industriale pe planetă.
+PLANETS_HELP_2G                   | Note - Notele Jucătorului. Editabile.
+PLANETS_HELP_3A                   | Nume - Numele Sistemului. Editabil.
+PLANETS_HELP_3B                   | Populație - Populația actuală a coloniei și schimbările acesteia față de tura anterioară.
+PLANETS_HELP_3C                   | Resurse - Pentru planete Bogate, Sărace și Artefacte.
+PLANETS_HELP_3D                   | Fabrici - Numărul de fabrici și schimbările acestora față de tura anterioară.
+PLANETS_HELP_3E                   | Producție - Producția totală a coloniei.
+PLANETS_HELP_3F                   | Rezerve - Rezervele totale actuale stocate pe colonie.
+PLANETS_HELP_3G                   | Note - Notele Jucătorului. Editabile.
+PLANETS_HELP_3H                   | Capacitate - Procent din producția maximă posibilă.
+PLANETS_HELP_4A                   | Nume - Numele Sistemului. Editabil.
+PLANETS_HELP_4B                   | Populație - Populația actuală a coloniei și schimbările acesteia față de tura anterioară.
+PLANETS_HELP_4C                   | Resurse - Pentru planete Bogate, Sărace și Artefacte.
+PLANETS_HELP_4D                   | Producție - Producția totală a coloniei.
+PLANETS_HELP_4E                   | Scut - Nivelul Scutului Planetar
+PLANETS_HELP_4F                   | Baze - Bazele de Rachete pe planetă. Roșu dacă tehnologia acestora este învechită.
+PLANETS_HELP_4G                   | Șantier Naval - Modelul de Navă în construcție.
+PLANETS_HELP_4H                   | Note - Notele Jucătorului. Editabile.
+PLANETS_HELP_4I                   | Steag - Steagul sistemului selectat de către Jucător.
+
+// Bombardment prompt
+MAIN_BOMBARDED_TITLE             | %1 a fost bombardat/ă de forțe ale %2.
+MAIN_BOMBARD_TITLE               | Forțele noastre orbitează o colonie inamică a %2.
+MAIN_BOMBARD_TROOPS              | %1 trupe ale %2 orbitează sau sunt în tranzit către această colonie.
+MAIN_BOMBARD_PROMPT              | Bombardează planeta?
+MAIN_BOMBARD_YES                 | Da
+MAIN_BOMBARD_NO                  | Nu
+MAIN_BOMBARD_POPULATION          | Populație: %1
+MAIN_BOMBARD_FACTORIES           | Fabrici: %1
+MAIN_BOMBARD_BASES               | Baze: %1
+MAIN_BOMBARD_SHIELD              | Scut: %1
+MAIN_BOMBARD_COMPLETE            | Bombardament Complet.
+MAIN_BOMBARD_DESTROYED           | Colonie Distrusă
+MAIN_BOMBARD_DMG                 | (%1)
+MAIN_BOMBARD_NAME_PROMPT         | Numele Coloniei
+
+
+// Fleet listing UI
+FLEETS_TITLE                      | Flote
+FLEETS_SELECT_SYSTEMS             | Selectează Sisteme
+FLEETS_SELECT_FLEETS              | Selectează Flote
+FLEETS_SELECT_ALL                 | Selectează Toate
+FLEETS_DESELECT_ALL               | Deselectează Toate
+FLEETS_FILTER_BY                  | Filtrează după:
+FLEETS_CONSTRUCTING_DESIGN        | Și construiește:
+FLEETS_INCLUDES_SHIP_TYPE         | Mobilizează Doar Nave de Tipul:
+FLEETS_SELECTED_SHIPS             | Selectate Pentru Mobilizare
+FLEETS_BUILDING_DESIGN            | %1
+FLEETS_HAS_STARGATE               | Sistemul are o Poartă Stelară
+FLEETS_HAS_NO_STARGATE            | Sistemul nu are o Poartă Stelară
+FLEETS_HAS_RALLY_POINT            | Sistemul are un Punct de Regrupare
+FLEETS_HAS_NO_RALLY_POINT         | Sistemul nu are un Punct de Regrupare
+FLEETS_SENDING_TRANSPORTS         | Sistemul trimite transporturi
+FLEETS_NOT_SENDING_TRANSPORTS     | Sistemul nu trimite transporturi
+FLEETS_IS_RICH                    | Sistemul este Bogat sau Foarte Bogat
+FLEETS_IS_ULTRA_RICH              | Sistemul este Foarte Bogat
+FLEETS_IS_POOR                    | Sistemul este Sărac sau Foarte Sărac
+FLEETS_IS_ULTRA_POOR              | Sisteuul este Foarte Sărac
+FLEETS_IS_STANDARD                | Sistemul deține resurse standard.
+FLEETS_SYSTEMS_SELECTED           | %1  Sisteme Selectate
+FLEETS_FLEETS_SELECTED            | %1  Flote Selectate
+FLEETS_MULTIPLE_DESIGNS           | Multiple
+FLEETS_RELOCATE_LABEL             | Set. Pct. de Regrupare
+FLEETS_TRANSPORTS_LABEL           | Trimite Transporturi
+FLEETS_SPENDING_LABEL             | Reglează Cheltuielile Navelor
+FLEETS_HAS_ORDERS                 | Flota este în tranzit
+FLEETS_HAS_NO_ORDERS              | Flota este în orbită
+FLEETS_IS_RALLYING                | Flota se regrupează
+FLEETS_DESIGN_COUNT               | %1 %2
+FLEETS_DEPLOY_FLEETS              | Mobilizează Flotele
+FLEETS_SET_RALLY_POINTS           | Set. Pct. de Regrupare
+FLEETS_STOP_RALLIES_DESC          | %1 din sistemele selectate dețin deja puncte de regrupare
+FLEETS_STOP_RALLIES               | Oprește Regrupările
+FLEETS_SETTING_RALLY_POINTS       | Pct. de Regrupare de Început
+FLEETS_START_RALLIES_DESC         | Selectați un sistem pe care îl controlați pentru a trimite nave construite recent din toate sistemele selectate.
+FLEETS_START_RALLIES              | Începe Regrupările
+FLEETS_SEND_TRANSPORTS            | Trimite Transporturi
+FLEETS_ADJUST_SPENDING_SELECT     | Selectați sisteme pentru a seta cheltuielile navelor
+FLEETS_ADJUST_SPENDING_DESC       | Selectați nivelul de cheltuieli a navelor pentru %1 sisteme selectate
+FLEETS_ADJUST_SPENDING_DESC2      | Alte categorii de cheltuieli vor fi ajustate automat.
+FLEETS_ADJUST_SPENDING_DESC3      | Ecologia va păstra cheltuielile minime necesare pentru curățarea poluării.
+FLEETS_ADJUST_SPENDING            | Ajustați Cheltuielile Navelor
+FLEETS_SPENDING_0                 | Fără Cheltuieli Navale
+FLEETS_SPENDING_25                | 25% din Cheltuielile Navale
+FLEETS_SPENDING_50                | 50% din Cheltuielile Navale
+FLEETS_SPENDING_75                | 75% din Cheltuielile Navale
+FLEETS_SPENDING_MAX               | Cheltuieli Navale Maxime
+FLEETS_SPENDING_CANCEL            | Anulează
+FLEETS_CANCEL_TRANSPORTS_DESC     | %1 sisteme selectate au transporturi deja programate.
+FLEETS_CANCEL_TRANSPORTS          | Anulează Transporturi
+FLEETS_DEPLOYING_TRANSPORTS_DESC  | Selectați un sistem în raza de acțiune pentru a trimite transporturi coloniale sau trupe militare.
+FLEETS_DEPLOY_TRANSPORTS          | Mobilizează Transporturi
+FLEETS_FLEET_DEPLOYMENT           | Mobilizare Flotă
+FLEETS_UNDEPLOYING_FLEETS         | %1 flote selectate au deja ordine de mobilizare.
+FLEETS_CANCEL_DEPLOYMENTS         | Anulează Mobilizarea
+FLEETS_DEPLOYING_FLEETS           | Mobilizează Flotele
+FLEETS_DEPLOYING_FLEETS_DESC      | Selectați un sistem din raza de acțiune pentru a mobiliza toate flotele selectate.
+FLEETS_DEPLOY_FLEETS              | Mobilizează Flotele
+FLEETS_TRANSPORTS_TITLE           | Trimite Transporturi din:
+FLEETS_TRANSPORTS_SEND            | Trimite %1 Transporturi
+FLEETS_TRANSPORTS_SYNCH           | Sincronizează
+FLEETS_TRANSPORTS_UNSYNCH         | Dezincronizează
+FLEETS_TRANSPORT_NO_ROOM          | Avertisment - Planeta țintă este la populația maximă!
+FLEETS_TRANSPORT_SIZE_WARNING     | Avertisment - Planeta țintă poate suporta doar %1 milioane!
+FLEETS_TRANSPORT_TIME             | Sosire planificată: %1 ani
+FLEETS_TRANSPORT_TIME_RANGE       | Sosire planificată: între %1 și %2 ani
+FLEETS_CANNOT_SEND_TRANSPORTS     | %1 nu poate trimite transporturi
+FLEETS_EXISTING_TRANSPORT         | Trimite %1 transporturi către %2
+FLEETS_EXISTING_STOP              | Stop
+FLEETS_CANCEL                     | Anulează
+FLEETS_HELP_ALL                   | PREZENTARE GENERALĂ - Acest ecran permite gestionarea flotelor, transporturilor și construcției navale la scară largă. În general, veți selecta un grup de flote sau sisteme de gestionat, le veți filtra într-un set mai mic și apoi veți alege acțiunea pe care să o efectuați.
+FLEETS_HELP_1A                    | Selectează Sisteme - Există trei moduri de a selecta sistemele: 1) făcând clic pe sistemele de pe hartă, 2) făcând clic dreapta și glisând pe hartă și 3) folosind butoanele „Selectați toate” și „Deselectați toate”.
+FLEETS_HELP_1B                    | Filtrează După - Bifați casetele de selecție pentru a restrânge lista sistemelor selectate. De asemenea, se poate face clic pe filtre pentru a parcurge opțiunile conexe.
+FLEETS_HELP_1C                    | Și Construiește - Filtrare în funcție de navele în curs de construcție. 
+FLEETS_HELP_1D                    | Model Naval - Schimbă tipul de navă ce se construiește în sistemele selectate. O imagine goală înseamnă că sistemele selectate construiesc tipuri diferite de nave. Atenția! Nu există nicio confirmare pentru această acțiune.
+FLEETS_HELP_1E                    | Trimite Transporturi - trimite transporturi din sistemele selectate către un singur sistem țintă.
+FLEETS_HELP_1F                    | Set. Pct. de Regrupare - setează puncte de regrupare pentru sistemele selectate într-un un singur sistem țintă. 
+FLEETS_HELP_2A                    | Selectează Flote - există trei moduri de a selecta flotele: 1) făcând clic pe flote pe hartă, 2) făcând clic dreapta și glisând pe hartă și 3) folosind butoanele „Selectează Toate” și „Deselectează Toate”.
+FLEETS_HELP_2B                    | Filtrează după - bifați casetele de selectare pentru a restrânge lista flotelor selectate. De asemenea, se poate face clic pe filtre pentru a parcurge opțiunile conexe.
+FLEETS_HELP_2C                    | Mobilizează Doar Nave de Tipul - restricționează tipurile de nave pe care vrei să le mobilizezi din flotele tale.
+FLEETS_HELP_2D                    | Selectate pentru Mobilizare - numărul de nave, după tip, care vor fi mobilizate.
+FLEETS_HELP_2E                    | Mobilizează Flotele - Mobilizează toate flotele selectate către un singul sistem țintă.
+
+// Select Next Tech to Research UI
+TECH_RESEARCH_COMPUTER            | Selectează următoarea tehnologie din domeniul computerelor pe care cercetătorii noștri ar trebui să se concentreze.
+TECH_RESEARCH_CONSTRUCTION        | Selectează următoarea tehnologie din domeniul construcțiilor pe care cercetătorii noștri ar trebui să se concentreze.
+TECH_RESEARCH_FORCE_FIELD         | Selectează următoarea tehnologie din domeniul câmpurilor de forțe pe care cercetătorii noștri ar trebui să se concentreze.
+TECH_RESEARCH_PLANETOLOGY         | Selectează următoarea tehnologie din domeniul planetologiei pe care cercetătorii noștri ar trebui să se concentreze.
+TECH_RESEARCH_PROPULSION          | Selectează următoarea tehnologie din domeniul propulsiei pe care cercetătorii noștri ar trebui să se concentreze.
+TECH_RESEARCH_WEAPON              | Selectează următoarea tehnologie din domeniul armamentului pe care cercetătorii noștri ar trebui să se concentreze.
+TECH_TOP_TIER_DETAIL              | Finalizarea acestei cercetări va face disponibile tehnologii mai avansate.
+TECH_OBSOLETE_DETAIL              | Această tehnologie este învechită.
+TECH_CAN_CHANGE                   | Această alegere poate fi modificată pe ecranul „Tehnologie” înainte de a trece la următoarea tură.
+TECH_CHOOSE_RESEARCH_COST         | %1 RP
+TECH_CHOOSE_RESEARCH_TIER         | Nivel %1
+TECH_TRADE_TIER_COST_INFO         | (Nivel %1 - %2 RP)
+TECH_CONFIRM_CHOICE               | Selectează
+TECH_DISCOVERY_TITLE              | Oamenii de Știință ai [player_race] au Realizat o Descoperire în %1
+TECH_SCOUTED_TITLE                | Navele ce Explorau Ruinele din %1 au Descoperit
+TECH_STOLEN_TITLE                 | Spionii noștri au infiltrat centrul de cercetare a %1 în %2.
+TECH_TRADED_TITLE                 | Oamenii de Știință ai [player_race] au Obținut o Tehnologie de la Oamenii de Stiință ai [alien_race]
+TECH_PLUNDERED_TITLE              | Trupele Aflate în Ruinele pe de %1 Pradă
+TECH_DERELICT_TITLE               | Exploratorii [player_race] Pradă o Tehnologie Antică
+TECH_GUARDIAN_TITLE               | Soldații [player_race] Recuperează o Armă Antică
+TECH_ALLOCATE_SHIELD              | Ar trebui să creștem raporturile de apărare ale tuturor coloniilor noastre pentru a construi noile scuturi planetare?
+TECH_ALLOCATE_MISSILE_BASES       | Ar trebui să creștem raporturile de apărare ale tuturor coloniilor noastre pentru a ne actualiza bazele de rachete?
+TECH_ALLOCATE_FACTORIES           | Ar trebui să creștem ratele industriei tuturor coloniilor noastre pentru a actualiza controalele robotizate ale fabricilor?
+TECH_ALLOCATE_CLEAN_WASTE         | Ar trebui să reducem raporturile ecologice ale tuturor coloniilor noastre la cantitatea minimă necesară pentru a le menține curate?
+TECH_ALLOCATE_ENRICH_SOIL         | Ar trebui să creștem raporturile ecologice ale coloniilor noastre cu medii standard pentru a începe să terraformăm planetele noastre?
+TECH_ALLOCATE_ATMOSPHERE          | Ar trebui să creștem raporturile ecologice ale coloniilor noastre cu medii ostile pentru a începe să terraformăm planetele noastre?
+TECH_ALLOCATE_TERRAFORM           | Ar trebui să creștem raporturile ecologice ale tuturor coloniilor noastre pentru a începe să terraformăm planetele noastre?
+TECH_ALLOCATE_NO                  | Nu
+TECH_ALLOCATE_PCT                 | +%1%
+TECH_COMPLETED_TITLE              | Cercetare Finalizată!
+TECH_COMPLETED_COMPUTER           | Am finalizat toate cercetările posibile în domeniul Computerelor! Nu mai există tehnologii de cercetat în acest domeniu.
+TECH_COMPLETED_CONSTRUCTION       | Am finalizat toate cercetările posibile în domeniul Constucțiilor! Nu mai există tehnologii de cercetat în acest domeniu.
+TECH_COMPLETED_FORCE_FIELD        | Am finalizat toate cercetările posibile în domeniul Câmpurilor de Forțe! Nu mai există tehnologii de cercetat în acest domeniu.
+TECH_COMPLETED_PLANETOLOGY        | Am finalizat toate cercetările posibile în domeniul Planetologiei! Nu mai există tehnologii de cercetat în acest domeniu.
+TECH_COMPLETED_PROPULSION         | Am finalizat toate cercetările posibile în domeniul Propulsiei! Nu mai există tehnologii de cercetat în acest domeniu.
+TECH_COMPLETED_WEAPON             | Am finalizat toate cercetările posibile în domeniul Armamentului! Nu mai există tehnologii de cercetat în acest domeniu.
+TECH_COMPLETED_ALL                | Am finalizat toate cercetările științifice posibile. Timpul pentru studiu s-a încheiat. Toate finanțările viitoare în cercetare vor fi transferate în trezoreria imperiului.
+TECH_COMPLETED_VERIFY             | Verificați dacă alocările de cheltuieli în celelalte domenii de cercetare sunt stabilite corect.
+
+// prompt for espionage
+NOTICE_ESPIONAGE_TITLE            | Spionii noștri au infiltrat o bază a [alien_race].
+NOTICE_ESPIONAGE_SUBTITLE         | Selectează un tip de tehnologie de furat.
+NOTICE_ESPIONAGE_NO_TECH          | Nu sunt Tehnologii Disponibile
+NOTICE_ESPIONAGE_MANY_TECHS       | %1 Tehnologii Disponibile
+NOTICE_ESPIONAGE_FOOTER           | Un incident diplomatic poate izbucnii dacă vom fi descoperiți.
+NOTICE_ESPIONAGE_FRAME_TITLE      | Spionii noștri au reușit să blameze altă specie pentru furt.
+NOTICE_ESPIONAGE_FRAME_SUBTITLE   | Alege specia victimă:
+
+// Spy Capture display (during next turn)
+NOTICE_SPIES_TITLE                | Raport Curent de Spionaj
+NOTICE_SPIES_NO_ACTIVITY          | Nu a fost observată nicio activitate de spionaj semnificativă.
+NOTICE_SPIES_ACTIVITY             | Activitate Curentă:
+NOTICE_SPIES_LOST_DESC            | • [alien_empire] a eliminat %1 din rețelele noastre de spionaj.
+NOTICE_SPIES_LOST_CONFESSED       | Spionii noștri au dezvăluit activitățile noastre de sabotaj în curs.
+NOTICE_SPIES_LOST_CONFESSED2      | Spionii noștri au dezvăluit activitățile noastre de spionaj în curs.
+NOTICE_SPIES_LOST_CONFESSED3      | Spionii noștri au fost forțați să dezvăluie activitățile noastre de sabotaj în curs.
+NOTICE_SPIES_CAUGHT_DESC          | • Forțele noastre de securitate internă au eliminat %1 rețele de spionaj ale [alien_empire].
+NOTICE_SPIES_CAUGHT_CONFESSED     | Spionii lor au dezvăluit activitățile lor de sabotaj în curs.
+NOTICE_SPIES_CAUGHT_CONFESSED2    | Spionii lor au dezvăluit activitățile lor de spionaj în curs.
+NOTICE_SPIES_FRAMED               | • Am fost blamați pentru activități de spionaj în [alien_empire].
+NOTICE_SPIES_ESPIONAGE            | • Spionii noștri au furat secretele %1 din [alien_empire].
+NOTICE_SPIES_ESPIONAGE_FRAME      | Am blamat cu succes [framed_empire] pentru furtul nostru.
+NOTICE_SPIES_SABOTAGE_FACTORIES   | • Spionii noștri au distrus %1 fabrici în sistemul %2.
+NOTICE_SPIES_SABOTAGE_BASES       | • Spionii noștri au distrus %1 baze de rachete în sistemul %2.
+NOTICE_SPIES_SABOTAGE_REBELS      | • Spionii noștri au încurajat rebeli în sistemul %2.
+NOTICE_SPIES_SABOTAGE_REBELLION   | • Spionii noștri au declanșat o rebeliune în sistemul %2.
+NOTICE_SPIES_LEARNED_TECH         | • Spionii noștri raportează faptul că [alien_empire] au descoperit următoarele tehnologii pe care noi nu le deținem: %1
+// this just details how to concatenate a list of multiple technology (English uses ,)
+NOTICE_SPIES_MULTIPLE_TECHS       | %1, %2
+NOTICE_SPIES_THREATEN             | Amenință
+NOTICE_SPIES_MANAGE               | Gestionează Spionii
+NOTICE_SPIES_CLOSE                | Închide
+SPY_CAUGHT                        | [Spionii voștri au fost prinși.]
+
+// Ground Combat UI
+INVASION_BATTLE                   | În anul %1, [attacker_race] și [defender_race] s-au luptat pentru %2.
+INVASION_BATTLE_REBELS            | În anul %1, [attacker_race] și rebeli s-au luptat pentru %2.
+INVASION_TROOPS_LANDED            | %1 transporturi [attacker_race] au aterizat. 
+INVASION_SOME_TROOPS_LANDED       | %1 din %2 transporturi [attacker_race] au aterizat.
+INVASION_WIN                      | Transporturile [attacker_race] capturează %2.
+INVASION_LOSS                     | Trupele [defender_race] apără cu succes %2.
+INVASION_ATTACKERS_TITLE          | %1 Trupe [attacker_race]
+INVASION_DEFENDERS_TITLE          | %1 Trupe [defender_race]
+INVASION_REBELS_TITLE             | %1 Rebeli [defender_race]
+INVASION_TROOP_ARMOR_DESC         | %1 %2
+
+// GNN Text
+GNN_TITLE                         | Rețeaua de Știri Galactice a [player_race] raportează:
+GNN_EMPIRE_RANKING                | %1. [empire_race]
+GNN_EXTINCTION_KNOWN_VICTIM       | [victim_race]
+GNN_EXTINCTION_KNOWN_KILLER       | [killer_race]
+GNN_EXTINCTION_UNKNOWN_VICTIM     | O civilizație necunoscută
+GNN_EXTINCTION_UNKNOWN_KILLER     | un imperiu necunoscut
+GNN_EXTINCTION                    | %1 a fost complet distrusă de %2.
+GNN_EXTINCTION_NO_KILLER          | %1 a fost complet distrusă.
+GNN_EXPANSION_1                   | [expanding_empire] controlează acum %1 sisteme solare, depășind toate celelalte specii.
+GNN_EXPANSION_2                   | [expanding_empire] controlează acum %1 sisteme solare. Dacă expansiunea lor nu este oprită, ei vor controla în curând galaxia.
+GNN_EXPANSION_3                   | [expanding_empire] controlează aproape toată galaxia. Liderii deja se pregătesc pentru a se combina cu mărețul imperiu.
+GNN_ALLIANCE_FORMED               | [first_empire] a format o Alianță cu [second_empire].
+GNN_ALLIANCE_BROKEN               | Alianța dintre [first_empire] și [second_empire] a fost ruptă.
+GNN_FLEETS_RANKING                | Clasamentul actual al forțelor flotelor navale:
+GNN_CENSUS_RANKING                | Clasamentul recensământului populațiilor imperiilor:
+GNN_PRODUCTION_RANKING            | Clasamentul actual al producției imperiilor:
+GNN_TECHNOLOGY_RANKING            | Liderii actuali în tehnologie:
+GNN_PLAYER_REBELLION              | %1 sa răsculat și refuză să contribuie la [rebelling_empire]. Cel puțin %2 milioane de rebeli controlează colonia. Trebuie trimise trupe pentru a înăbuși răscoala.
+GNN_ALIEN_REBELLION               | %1 sa răsculat și a refuzat să contribuie la [rebelling_empire]. Cel puțin %2 milioane de rebeli controlează colonia.
+GNN_PLAYER_REBELLION_SPREAD       | Rebeliunea continuă să se răspândească în [rebelling_empire]. Cel puțin %2 milioane de rebeli controlează acum colonia în %1. 
+GNN_OVERTHROW                     | Un nou lider a preluat puterea în [alien_empire]. Zvonurile spun că noul împărat este un %1. Relațiile au devenit neutre, iar comerțul a fost întrerupt.
+GNN_END_COUNCIL                   | Cu doar două Imperii rămase, încercările de unificare a galaxiei printr-un Consiliu Galactic s-au încheiat. Mulți lideri dezbat acum ce fel de soluție finală poate aduce o pace durabilă.
+GNN_FORM_COUNCIL                  | În căutarea păcii, reprezentanții fiecărei specii se vor întruni în curând pentru a alege un Împărat Galactic, ales dintre liderii celor două cele mai populate imperii.
+GNN_ALLY_AT_WAR                   | Aliatul nostru, [ally_empire], a intrat într-un război cu [other_empire].
+
+// Error UI text
+ERROR_TITLE                       | A avut loc o eroare  :(
+ERROR_MESSAGE                     | Dacă doriți să ajutați la rezolvarea acestei probleme, vă rugăm să trimiteți o captură de ecran și fișierul de salvare „recent.rotp” către Ray Fowler sau să îi aduceți la cunoștință pe subreditul ROTP.
+ERROR_EMAIL                       | Email: rayfowler@fastmail.com
+ERROR_REDDIT                      | Reddit: www.Reddit.com/r/rotp
+
+// Setup UI
+SETUP_SELECT_RACE                 | Selectează Specia
+SETUP_SELECT_OPPONENTS            | Selectează Oponenții
+SETUP_SELECT_GALAXY               | Selectează Galaxia
+SETUP_SELECT_GALAXY_OPTIONS       | Selectează Opțiunile
+SETUP_GALAXY_RULESET_LABEL        | Set Reguli
+SETUP_INSUFFICIENT_MEMORY         | Memorie Insuficientă
+SETUP_CREATING_GALAXY             | Se Crează Galaxia...
+SETUP_RULESET_ORION               | Orion
+SETUP_RULESET_ANTARES             | Antares
+SETUP_RULESET_SIRIUS              | Sirius
+SETUP_GALAXY_SIZE_LABEL           | Mărime
+SETUP_RACE_MULTIPLIER             | x%1
+SETUP_GALAXY_SHAPE_LABEL          | Formă
+SETUP_GALAXY_SIZE_TINY            | Minusculă
+SETUP_GALAXY_SIZE_SMALL           | Mică
+SETUP_GALAXY_SIZE_SMALL2          | Mică
+SETUP_GALAXY_SIZE_AVERAGE         | Medie
+SETUP_GALAXY_SIZE_AVERAGE2        | Medie
+SETUP_GALAXY_SIZE_LARGE           | Mare
+SETUP_GALAXY_SIZE_LARGE2          | Mare
+SETUP_GALAXY_SIZE_HUGE            | Imensă
+SETUP_GALAXY_SIZE_HUGE2           | Imensă
+SETUP_GALAXY_SIZE_MASSIVE         | Masivă
+SETUP_GALAXY_SIZE_MASSIVE2        | Masivă
+SETUP_GALAXY_SIZE_MASSIVE3        | Masivă
+SETUP_GALAXY_SIZE_MASSIVE4        | Masivă
+SETUP_GALAXY_SIZE_MASSIVE5        | Masivă
+SETUP_GALAXY_SIZE_INSANE          | Nebună
+SETUP_GALAXY_SIZE_LUDICROUS       | Absurdă
+SETUP_GALAXY_SIZE_MAXIMUM         | Maximă
+SETUP_GALAXY_SHAPE_RECTANGLE      | Câmp Stelar
+SETUP_GALAXY_SHAPE_CIRCULAR       | Circulară
+SETUP_GALAXY_SHAPE_RING           | Inel
+SETUP_GALAXY_SHAPE_ELLIPSE        | Elipsă
+SETUP_GALAXY_SHAPE_SPIRAL         | Spirală
+SETUP_GALAXY_SHAPE_STAR           | Stea
+SETUP_GALAXY_SHAPE_BARSPIRAL      | Spirală Alungită
+SETUP_GALAXY_SHAPE_TEXT           | Text
+SETUP_GALAXY_SHAPE_CLUSTER        | Grup
+SETUP_GALAXY_SHAPE_SWIRLCLUSTERS  | Grupuri Vârtej
+SETUP_GALAXY_SHAPE_GRID           | Grilă
+SETUP_GALAXY_SHAPE_SPIRALARMS     | Brațe Spirală
+SETUP_GALAXY_SHAPE_MAZE           | Labirint
+SETUP_GALAXY_SHAPE_VOID           | Void
+SETUP_GALAXY_SHAPE_SHURIKEN       | Shuriken
+SETUP_GALAXY_SHAPE_BULLSEYE       | Bullseye
+SETUP_GALAXY_SHAPE_LORENZ         | Lorenz
+SETUP_GALAXY_SHAPE_LORENZ2        | Lorenz 2
+SETUP_GALAXY_SHAPE_FRACTAL        | Fractală
+SETUP_GALAXY_SHAPE_CHAOSGAME      | Joc Haos
+SETUP_GALAXY_MAP_OPTION_LABEL     | Opțiune
+SETUP_GALAXY_MAP_OPTION_A         | Opțiuna A
+SETUP_GALAXY_MAP_OPTION_B         | Opțiuna B
+SETUP_GALAXY_MAP_OPTION_C         | Opțiuna C
+SETUP_GALAXY_AGE_NORMAL           | Normală
+SETUP_GALAXY_AGE_YOUNG            | Tânără
+SETUP_GALAXY_AGE_OLD              | Bătrână
+SETUP_RANDOM_EVENTS_ON            | Pornite
+SETUP_RANDOM_EVENTS_OFF           | Oprite
+SETUP_RANDOM_EVENTS_NO_MONSTERS   | Fără Monștrii
+SETUP_GALAXY_NUMBER_EMPIRES       | Imperii Totale: %1
+SETUP_GALAXY_NUMBER_SYSTEMS       | Sisteme Totale: %1
+SETUP_GALAXY_MAX_OPPONENTS        | Oponenți Maximi: %1
+SETUP_OPPONENTS_HEADER_1          | %1 vs.
+SETUP_OPPONENTS_HEADER_2          | Imperii Rivale
+SETUP_OPPONENT_RANDOM             | ???
+SETUP_OPPONENT_AI                 | Joacă Împotriva:
+SETUP_OPPONENT_AI_BASE            | AI: Bază
+SETUP_OPPONENT_AI_MODNAR          | AI: Modnar
+SETUP_OPPONENT_AI_XILMI           | AI: Xilmi
+SETUP_OPPONENT_AI_SELECT          | AI: Selectabil
+SETUP_AUTOPLAY_OFF                | Oprit
+SETUP_AUTOPLAY_AI_BASE            | AI: Bază
+SETUP_AUTOPLAY_AI_MODNAR          | AI: Modnar
+SETUP_AUTOPLAY_AI_XILMI           | AI: Xilmi
+SETUP_GAME_DIFFICULTY_LABEL       | Dificultate
+SETUP_DIFFICULTY_EASIEST          | Cea Mai Ușoară
+SETUP_DIFFICULTY_EASIER           | Mai Ușoară 
+SETUP_DIFFICULTY_EASY             | Ușoară
+SETUP_DIFFICULTY_NORMAL           | Normală
+SETUP_DIFFICULTY_HARD             | Grea
+SETUP_DIFFICULTY_HARDER           | Mai Grea
+SETUP_DIFFICULTY_HARDEST          | Cea Mai Grea
+SETUP_RESEARCH_RATE_NORMAL        | Normală
+SETUP_RESEARCH_RATE_SLOW          | Lentă
+SETUP_RESEARCH_RATE_SLOWER        | Mai Lentă
+SETUP_RESEARCH_RATE_SLOWEST       | Cea Mai Lentă
+SETUP_TECH_TRADING_YES            | Da
+SETUP_TECH_TRADING_ALLIES         | Doar cu Aliații
+SETUP_TECH_TRADING_NO             | Nu
+SETUP_WARP_SPEED_NORMAL           | Normală
+SETUP_WARP_SPEED_FAST             | Rapidă
+SETUP_NEBULA_NONE                 | Fără
+SETUP_NEBULA_RARE                 | Rare
+SETUP_NEBULA_UNCOMMON             | Neobișnuite
+SETUP_NEBULA_NORMAL               | Normale
+SETUP_NEBULA_COMMON               | Obișnuite
+SETUP_NEBULA_FREQUENT             | Frecvente
+SETUP_COUNCIL_NONE                | Fără Consiliu
+SETUP_COUNCIL_IMMEDIATE           | Imediat
+SETUP_COUNCIL_REBELS              | Permite Rebeliunea
+SETUP_STAR_DENSITY_LOWEST         | Cea Mai Mică
+SETUP_STAR_DENSITY_LOWER          | Mai Mică
+SETUP_STAR_DENSITY_LOW            | Mică
+SETUP_STAR_DENSITY_NORMAL         | Normală
+SETUP_STAR_DENSITY_HIGH           | Mare
+SETUP_STAR_DENSITY_HIGHER         | Mai Mare
+SETUP_STAR_DENSITY_HIGHEST        | Cea Mai Mare
+SETUP_AI_HOSTILITY_LOWEST         | Cei Mai Prietenoși
+SETUP_AI_HOSTILITY_LOWER          | Mai Prietenoși
+SETUP_AI_HOSTILITY_LOW            | Prietenoși
+SETUP_AI_HOSTILITY_NORMAL         | Normală
+SETUP_AI_HOSTILITY_HIGH           | Furioși
+SETUP_AI_HOSTILITY_HIGHER         | Mai Furioși
+SETUP_AI_HOSTILITY_HIGHEST        | Cei Mai Furioși
+SETUP_GAME_NUMBER_OPPONENTS       | Oponenți
+SETUP_PLANET_QUALITY_POOR         | Proaste
+SETUP_PLANET_QUALITY_MEDIOCRE     | Mediocre
+SETUP_PLANET_QUALITY_NORMAL       | Normale
+SETUP_PLANET_QUALITY_GOOD         | Bune
+SETUP_PLANET_QUALITY_GREAT        | Grozave
+SETUP_TERRAFORMING_NORMAL         | Normală
+SETUP_TERRAFORMING_REDUCED        | Redusă
+SETUP_TERRAFORMING_NONE           | Fără
+SETUP_COLONIZING_NORMAL           | Normală
+SETUP_COLONIZING_RESTRICTED       | Restricționată
+SETUP_FUEL_RANGE_NORMAL           | Normală
+SETUP_FUEL_RANGE_HIGH             | Ridicată
+SETUP_FUEL_RANGE_HIGHER           | Mai Ridicată
+SETUP_FUEL_RANGE_HIGHEST          | Cea Mai Ridicată
+SETUP_RANDOMIZE_AI_NONE           | Fără
+SETUP_RANDOMIZE_AI_PERSONALITY    | Personalitate
+SETUP_RANDOMIZE_AI_ABILITY        | Abilitate
+SETUP_RANDOMIZE_AI_BOTH           | Ambele
+SETUP_RACE_LABEL                  | Specii Disponibile
+SETUP_RACE_COLOR                  | Culoarea Imperiului:
+SETUP_HOMEWORLD_NAME_LABEL        | Lumea Mamă:
+SETUP_LEADER_NAME_LABEL           | Lider:
+SETUP_FLAG_LABEL                  | Steag
+SETUP_BUTTON_CANCEL               | Anulează
+SETUP_BUTTON_BACK                 | Înapoi
+SETUP_BUTTON_NEXT                 | Înainte
+SETUP_BUTTON_START                | Start
+SETUP_BUTTON_SETTINGS             | Opțiuni Avansate
+
+SETUP_SPIRAL_2_ARMS               | Două Brațe
+SETUP_SPIRAL_3_ARMS               | Trei Brațe
+SETUP_SPIRAL_4_ARMS               | Patru Brațe
+SETUP_SPIRAL_5_ARMS               | Cinci Brațe
+SETUP_SPIRAL_6_ARMS               | Șase Brațe
+SETUP_SPIRAL_7_ARMS               | Șapte Brațe
+SETUP_SPIRAL_8_ARMS               | Opt Brațe
+SETUP_SPIRAL_ROTATION_0           | Fără Rotație
+SETUP_SPIRAL_ROTATION_1           | Rotația 1
+SETUP_SPIRAL_ROTATION_2           | Rotația 2
+SETUP_SPIRAL_ROTATION_3           | Rotația 3
+SETUP_SPIRAL_ROTATION_4           | Rotația 4
+SETUP_SPIRAL_ROTATION_5           | Rotația 5
+SETUP_SPIRAL_ROTATION_6           | Rotația 6
+SETUP_ELLIPSE_0                   | Circulară
+SETUP_ELLIPSE_1                   | Elipsa 1
+SETUP_ELLIPSE_2                   | Elipsa 2
+SETUP_ELLIPSE_3                   | Elipsa 3
+SETUP_ELLIPSE_4                   | Elipsa 4
+SETUP_VOID_0                      | Fără Void
+SETUP_VOID_1                      | Void 1
+SETUP_VOID_2                      | Void 2
+SETUP_VOID_3                      | Void 3
+SETUP_VOID_4                      | Void 4
+
+
+// Advanced Settings
+SETTINGS_TITLE                    | Opțiuni Avansate de Joc
+SETTINGS_DESCRIPTION              | Click pentru a schimba fiecare setare a jocului.
+SETTINGS_EXIT                     | Ieșire
+SETTINGS_DEFAULT                  | Setați la Valorile Implicite
+SETTINGS_STAR_DENSITY             | Densitatea Stelelor: %1
+SETTINGS_RANDOM_EVENTS            | Evenimente Aleatorii: %1
+SETTINGS_RESEARCH_RATE            | Rata Cercetării: %1
+SETTINGS_COUNCIL_WIN              | Victorie Prin Consiliu: %1
+SETTINGS_RANDOMIZE_AI             | Randomizare AI: %1
+SETTINGS_AUTOPLAY                 | Autoplay: %1
+SETTINGS_TECH_TRADING             | Schimb de Tehnologii: %1
+SETTINGS_GALAXY_AGE               | Vârsta Galaxiei: %1
+SETTINGS_WARP_SPEED               | Viteza Warp: %1
+SETTINGS_NEBULAE                  | Nebuloase: %1
+SETTINGS_PLANET_QUALITY           | Calitatea Planetelor: %1
+SETTINGS_TERRAFORMING             | Terraformarea Ostilă: %1
+SETTINGS_COLONIZING               | Colonizarea: %1
+SETTINGS_FUEL_RANGE               | Raza de Acțiune: %1
+SETTINGS_AI_HOSTILITY             | Ostilitatea: %1
+SETTINGS_RANDOM_EVENTS_DESC       | Monștrii Spațiali sunt evenimente aleatorii și amenințări considerabile la mijlocul jocului. Dezactivează Monștrii Spațiali sau toate evenimentele aleatorii.
+SETTINGS_WARP_SPEED_DESC          | Crește viteza Warp oferită de tehnologiile mai avansate. Această opțiune poate fi de dorit pe hărți foarte mari.
+SETTINGS_GALAXY_AGE_DESC          | Comparativ cu galaxiile normale, galaxiile tinere au mai multe stele albe și albastre, în timp ce galaxiile bătrâne au mai multe stele roșii și neutronice.
+SETTINGS_TECH_TRADING_DESC        | Opriți toate schimburile de tehnologie sau limitați aceste schimburi la aliați.
+SETTINGS_STAR_DENSITY_DESC        | Opțiunile ridicate reduc șansa ca imperiile să fie blocate la începutul jocului.
+SETTINGS_RESEARCH_RATE_DESC       | Reduceți viteza de cercetare a tehnologiilor noi, prelungind durata de viață utilă a tehnologiilor actuale.
+SETTINGS_NEBULAE_DESC             | Nebuloasele încetinesc navele și fac scuturile inutile. Mărește sau micșorează frecvența acestora.
+SETTINGS_PLANET_QUALITY_DESC      | Crește sau scade frecvența planetelor de calitate superioară.
+SETTINGS_TERRAFORMING_DESC        | Reduce sau elimină avantajele oferite de Tehnologia de Terraformare planetelor ostile.
+SETTINGS_COLONIZING_DESC          | Limitați colonizarea sistemelor doar la cele pentru care ați dobândit tehnologia specifică.
+SETTINGS_COUNCIL_DESC             | Dezactivează condiția victoriei consiliului sau permite imperiilor inamice să se răzvrătească împotriva victoriei unui jucător.
+SETTINGS_RANDOMIZE_AI_DESC        | Randomizează personalitatea jucătorilor AI, abilitatea specială a acestora, sau ambele.
+SETTINGS_AUTOPLAY_DESC            | Automatizează complet jocul având un AI drept jucător. Acest mod este util pentru a vedea în mod direct cum funcționează jucătorii AI.
+SETTINGS_AUTOPLAY_WARNING         | Avertizare! Opțiunea Autoplay este activată în prezent, ceea ce va împiedica utilizatorul să interacționeze cu jocul. Accesați „Opțiuni Avansate” pentru a dezactiva.
+SETTINGS_FUEL_RANGE_DESC          | Crește raza de acțiune a navelor oferită de tehnologie.
+SETTINGS_AI_HOSTILITY_DESC        | Crește sau reduce nivelul general de ostilitate între speciile extraterestre.
+
+// Tech UI labels
+TECH_RESEARCH                     | Cercetare Tehnologică
+TECH_RESEARCH_POINTS              | Puncte de Cercetare
+TECH_EMPIRE_SPENDING              | Cheltuieli pt. Tehnologie
+TECH_EMPIRE_SPENDING_DESC         | Suma cheltuielilor tehnologice ale tuturor coloniilor. 
+TECH_EMPIRE_TECH_RESERVE_OPT      | Transferă fondurile în excess din trezorerie în cercetare
+TECH_EMPIRE_BALANCED_DESC         | Cheltuielile echilibrate măresc punctele generale de cercetare.
+TECH_EMPIRE_DETAIL_1              | %1 BC pentru 
+TECH_EMPIRE_DETAIL_2              | %2 RP / An
+TECH_TOTAL_RP                     | %1 RP
+TECH_DISCOVERY_PCT                | %1%
+TECH_CHANGE_RESEARCH              | Click Pentru a Cerceta Această Tehnologie
+TECH_NEXT_TIER_TITLE              | Nu este disponibil încă.
+TECH_FIRST_TIER_DESC              | Folosiți puncte de cercetare în această categorie pentru a debloca.
+TECH_NEXT_TIER_DESC               | Cercetați o tehnologie din nivelul anterior pentru a debloca.
+TECH_FUTURE_TIER_DESC             | Cercetați toate tehnologiile din nivelurile anterioare pentru a debloca.
+TECH_ALLOCATE_POINTS              | Alocați Puncte de Cercetare
+TECH_EQUALIZE                     | Egalizează Alocările
+TECH_RESEARCH_COMPLETED           | Cercetare Finalizată
+TECH_RESEARCHING                  | Se Cercetează:
+TECH_NONE_RESEARCHED              | Nimic
+TECH_PLANETARY_SHIELDS            | Scut Planetar
+TECH_PLANETARY_SHIELDS_NONE       | Fară
+TECH_PLANETARY_SHIELDS_CLASS      | Clasa %1
+TECH_GROUND_COMBAT                | Luptă Terestră
+TECH_GROUND_COMBAT_NO_BONUS       | Niciun Bonus
+TECH_GROUND_COMBAT_BONUS          | +%1%
+TECH_TERRAFORM                    | Terraformare
+TECH_TERRAFORM_NO_BONUS           | Niciun Bonus
+TECH_TERRAFORM_BONUS              | +%1 Pop. Maximă
+TECH_FACTORY_CONTROLS             | Controale Robotizate
+TECH_FACTORY_CONTROLS_BONUS       | %1 pe colonist
+TECH_PLANET_SCANNER               | Raza Scanerelor
+TECH_PLANET_SCANNER_NONE          | Fără
+TECH_PLANET_SCANNER_RANGE         | %1 Ani-Lumină
+TECH_WASTE_REDUCTION              | Reducerea Deșeurilor
+TECH_WASTE_REDUCTION_NONE         | Fără
+TECH_WASTE_REDUCTION_AMT          | -%1%
+TECH_WASTE_CLEANUP                | Curățarea Deșeurilor
+TECH_WASTE_CLEANUP_BONUS          | %1 Deșeuri/BC
+TECH_SHIP_RANGE                   | Raza de Acțiune
+TECH_SHIP_RANGE_AMT               | %1 Ani-Lumină
+TECH_SHIP_SPEED                   | Viteza Maximă
+TECH_SHIP_SPEED_AMT               | Warp %1
+TECH_BUTTON_EXIT                  | IEȘIRE
+
+// Tech UI help
+TECH_HELP_1A                      | PREZENTARE GENERALĂ - Acest ecran vă permite să ajustați cheltuielile în cele șase domenii de tehnologie pe care le puteți studia. Puteți examina tehnologiile deja învățate (verde), actuale în cercetare (galben) sau disponibile pentru a fi cercetate (maro).
+TECH_HELP_1B                      | Click sau scroll pentru a vizualiza tehnologiile dintr-o zonă de cercetare.
+TECH_HELP_1C                      | Se umple atunci când punctele de cercetare (RP) sunt cheltuite într-o zonă. Odată umplut, există o șansă din ce în ce mai mare în fiecare tură de a cerceta tehnologia.
+TECH_HELP_1D                      | Tehnologia în curs de cercetare. Consultați descrierea acesteia pentru beneficii.
+TECH_HELP_1E                      | Avantajele generale oferite de tehnologiile deja cercetate în acest domeniu.
+TECH_HELP_1F                      | Producția totală (BC) aplicată cercetării și numărul total de puncte de cercetare (RP) rezultate din aceasta.
+TECH_HELP_1G                      | Fondurile neutilizate într-o colonie pot fi direcționate către cercetare în locul trezoreriei imperiului.
+TECH_HELP_1H                      | Fiecare zonă tehnologică are o bară de cheltuieli. Faceți clic pe nume pentru a bloca o bară. Cheltuielile pentru prima 1/6 din bară câștigă un bonus de cercetare de 25%.
+TECH_HELP_1I                      | Egalizați alocările de cheltuieli pentru barele deblocate. 
+
+// =========================================================================
+//   ALPHA 4
+// =========================================================================
+
+// Ship Design UI
+SHIP_DESIGN_TITLE                 | Modele Nave
+SHIP_DESIGN_SLOTS                 | Sloturi Modele
+SHIP_DESIGN_AVAILABLE             | Disponibil
+SHIP_DESIGN_AVAILABLE_DESC        | Selectează acest slot pentru a crea un model nou de navă.
+SHIP_DESIGN_AVAILABLE_DESC2       | Aprobă acest model pentru a-l putea construii pe colonii.
+SHIP_DESIGN_PROTOTYPE             | Prototipuri
+SHIP_DESIGN_PROTOTYPE_DESC        | Modelele Prototip nu pot fi aprobate.
+SHIP_DESIGN_SLOT_DESC             | Total in fleet:
+SHIP_DESIGN_SLOT_DESC2            | În Orbită:
+SHIP_DESIGN_SLOT_DESC3            | În Tranzit:
+SHIP_DESIGN_SLOT_DESC4            | Colonies Building:
+SHIP_DESIGN_NEW                   | Model de Navă Nou
+SHIP_DESIGN_PROTOTYPE_TITLE       | Prototip Model de Navă
+SHIP_DESIGN_SIZE_SMALL            | Mică
+SHIP_DESIGN_SIZE_MEDIUM           | Medie
+SHIP_DESIGN_SIZE_LARGE            | Mare
+SHIP_DESIGN_SIZE_HUGE             | Uriașă
+SHIP_DESIGN_SIZE_LABEL            | Mărime
+SHIP_DESIGN_TYPE_LABEL            | Tip
+SHIP_DESIGN_COUNT_LABEL           | Număr
+SHIP_DESIGN_DAMAGE_LABEL          | Pct. Daune
+SHIP_DESIGN_POWER_LABEL           | Putere
+SHIP_DESIGN_RANGE_LABEL           | Rază
+SHIP_DESIGN_SPEED_LABEL           | Viteză
+SHIP_DESIGN_COST_LABEL            | Cost
+SHIP_DESIGN_DESCRIPTION_LABEL     | Descriere
+SHIP_DESIGN_RANGE_VALUE           | %1 ani-lumină
+SHIP_DESIGN_RANGE_UNLIMITED       | Nelimitată
+SHIP_DESIGN_SPEED_VALUE           | Warp %1
+SHIP_DESIGN_COST_VALUE            | %1 BC
+SHIP_DESIGN_TOTAL_SPACE_LABEL     | Spațiu Total
+SHIP_DESIGN_AVAIL_SPACE_LABEL     | Spațiu Disponibil
+SHIP_DESIGN_COLORS                | Tentă
+SHIP_DESIGN_COMBAT_STATS_TITLE    | Statistici de Luptă
+SHIP_DESIGN_HIT_POINTS_LABEL      | Pct. de Viață
+SHIP_DESIGN_MISSILE_DEF_LABEL     | Ap. Anti-Rachetă
+SHIP_DESIGN_BEAM_DEF_LABEL        | Ap. Anti-Laser
+SHIP_DESIGN_ATTACK_LEVEL_LABEL    | Nivel de Atac
+SHIP_DESIGN_COMBAT_SPEED_LABEL    | Viteză în Luptă
+SHIP_DESIGN_COMBAT_SPEED_VALUE    | %1 square(s)
+SHIP_DESIGN_ENGINES_TITLE         | Motoare
+SHIP_DESIGN_ENGINES_DESC          | Împinge nava și generează putere pentru componentele acesteia.
+SHIP_DESIGN_ENGINE_TYPE           | Tip
+SHIP_DESIGN_ENGINE_SPEED          | Viteză
+SHIP_DESIGN_ENGINE_COST1          | Cost, pe motor
+SHIP_DESIGN_ENGINE_SIZE1          | Mărime, pe motor
+SHIP_DESIGN_ENGINE_POWER1         | Putere, pe motor
+SHIP_DESIGN_POWER_REQUIREMENTS    | Putere Necesară
+SHIP_DESIGN_ENGINES_REQUIRED      | Motoare Necesare
+SHIP_DESIGN_ENGINES_SIZE          | Mărimea Totală a Motoarelor
+SHIP_DESIGN_ENGINES_COST          | Costul Total al Motoarelor
+SHIP_DESIGN_COPY_BUTTON           | Copiază
+SHIP_DESIGN_CLEAR_BUTTON          | Curăță
+SHIP_DESIGN_RENAME_BUTTON         | Redenumește
+SHIP_DESIGN_DEPLOY_BUTTON         | Aprobă Modelul
+SHIP_DESIGN_DEPLOY_DESC           | Odată aprobată, această navă va putea fi construită pe colonii, iar acest model va putae fi doar redenumit sau casat.
+SHIP_DESIGN_SCRAP_BUTTON          | Casează Modelul
+SHIP_DESIGN_SCRAP_CONFIRM1        | Sunteți sigur/ă că doriți să casați modelul %1?
+SHIP_DESIGN_SCRAP_CONFIRM2        | Această acțiune va distruge %1 nave din flotele imperiului și va plasa %2 BC în rezerva planetară.
+SHIP_DESIGN_SCRAP_CONFIRM3        | În prezent nu aveți nave de acest model construite.
+SHIP_DESIGN_SCRAP_CANCEL          | Anulează
+SHIP_DESIGN_SCRAP_OK              | Casează
+SHIP_DESIGN_RENAME_CONFIRM        | Redenumește modelul de navă
+SHIP_DESIGN_DEPLOY_CONFIRM        | Denumește noul modelul de navă
+SHIP_DESIGN_DEPLOY_CANCEL         | Anulează
+SHIP_DESIGN_DEPLOY_OK             | Aprobă
+SHIP_DESIGN_RENAME_OK             | Redenumește
+SHIP_DESIGN_UNNAMED_DESIGN        | Nenumit
+SHIP_DESIGN_COMPONENT_NONE        | Fără
+
+
+// ship design selection dialogs
+SHIP_DESIGN_STARGATE_NAME         | Poartă Stelară
+SHIP_DESIGN_1ST_SCOUT_NAME        | Explorator
+SHIP_DESIGN_1ST_FIGHTER_NAME      | Interceptor
+SHIP_DESIGN_1ST_DESTROYER_NAME    | Distrugător
+SHIP_DESIGN_1ST_BOMBER_NAME       | Bombardier
+SHIP_DESIGN_1ST_COLONY_NAME       | Navă Colonială
+SHIP_DESIGN_COMPUTER_TITLE        | Computere
+SHIP_DESIGN_COMPUTER_TYPE         | Tip
+SHIP_DESIGN_COMPUTER_COST         | Cost
+SHIP_DESIGN_COMPUTER_SIZE         | Mărime
+SHIP_DESIGN_COMPUTER_POWER        | Putere
+SHIP_DESIGN_COMPUTER_SPACE        | Spațiu
+SHIP_DESIGN_SHIELD_TITLE          | Scuturi
+SHIP_DESIGN_SHIELD_TYPE           | Tip
+SHIP_DESIGN_SHIELD_COST           | Cost
+SHIP_DESIGN_SHIELD_SIZE           | Mărime
+SHIP_DESIGN_SHIELD_POWER          | Putere
+SHIP_DESIGN_SHIELD_SPACE          | Spațiu
+SHIP_DESIGN_ECM_TITLE             | Bruiaj Anti-Rachetă
+SHIP_DESIGN_ECM_TYPE              | Tip
+SHIP_DESIGN_ECM_COST              | Cost
+SHIP_DESIGN_ECM_SIZE              | Mărime
+SHIP_DESIGN_ECM_POWER             | Putere
+SHIP_DESIGN_ECM_SPACE             | Spațiu
+SHIP_DESIGN_ARMOR_TITLE           | Armură
+SHIP_DESIGN_ARMOR_TYPE            | Tip
+SHIP_DESIGN_ARMOR_COST            | Cost
+SHIP_DESIGN_ARMOR_SIZE            | Mărime
+SHIP_DESIGN_ENGINE_TITLE          | Motoare
+SHIP_DESIGN_ENGINE_TYPE           | Tip
+SHIP_DESIGN_ENGINE_NUM            | Număr Motoare
+SHIP_DESIGN_ENGINE_SPACE          | Spațiu
+SHIP_DESIGN_ENGINE_COST           | Cost
+SHIP_DESIGN_ENGINE_SIZE           | Mărime
+SHIP_DESIGN_ENGINE_POWER          | Putere
+SHIP_DESIGN_MANEUVER_TITLE        | Manevră
+SHIP_DESIGN_MANEUVER_TYPE         | Tip
+SHIP_DESIGN_MANEUVER_SPEED        | Viteză
+SHIP_DESIGN_MANEUVER_COST         | Cost
+SHIP_DESIGN_MANEUVER_POWER        | Putere
+SHIP_DESIGN_MANEUVER_SPACE        | Spațiu
+SHIP_DESIGN_WEAPON_TITLE          | Arme
+SHIP_DESIGN_WEAPON_MAX            | Max
+SHIP_DESIGN_WEAPON_TYPE           | Tip
+SHIP_DESIGN_WEAPON_DESCRIPTION    | Descriere
+SHIP_DESIGN_WEAPON_DAMAGE         | Pct. de Daună
+SHIP_DESIGN_WEAPON_DMG_RANGE      | %1-%2
+SHIP_DESIGN_WEAPON_COST           | Cost
+SHIP_DESIGN_WEAPON_SIZE           | Mărime
+SHIP_DESIGN_WEAPON_POWER          | Putere
+SHIP_DESIGN_WEAPON_SPACE          | Spațiu
+SHIP_DESIGN_SPECIAL_TITLE         | Dispozitive Speciale
+SHIP_DESIGN_SPECIAL_TYPE          | Tip
+SHIP_DESIGN_SPECIAL_DESCRIPTION   | Descriere
+SHIP_DESIGN_SPECIAL_COST          | Cost
+SHIP_DESIGN_SPECIAL_SIZE          | Mărime
+SHIP_DESIGN_SPECIAL_POWER         | Putere
+SHIP_DESIGN_SPECIAL_SPACE         | Spațiu
+
+// Ship Design help
+SHIP_DESIGN_HELP_ALL              | PREZENTARE GENERALĂ - un imperiu poate avea până la șase modele de nave active. Pentru fiecare model, se alege o dimensiune a nave, apoi se umple cu diverse componente, cum ar fi armuri, scuturi și arme. Fiecare componentă are o mărime, putere și cost. Spațiul total necesar pentru o componentă este mărimea sa plus mărimea numărului de motoare necesare pentru alimentarea acesteia. Odată aprobat, un model de navă poate fi construit în orice colonie controlată.
+SHIP_DESIGN_HELP_1A               | Mărime - Navele de dimensiuni mari costă mai mult dar au mai mult spațiu disponibil pentru componente.
+SHIP_DESIGN_HELP_1B               | Rază - Cât de departe de sistemele controlate pot să călătorească navele.
+SHIP_DESIGN_HELP_1C               | Viteză - Viteza de deplasare a navelor în spațiul dintre stele. 
+SHIP_DESIGN_HELP_1D               | Cost  - Costul total pentru construirea acestei nave.
+SHIP_DESIGN_HELP_1E               | Spațiu Total - Spațiul total ocupat de componentele acestui model de navă.
+SHIP_DESIGN_HELP_1F               | Spațiu Disponibil - Spațiul neutilizat în acest model de navă.
+SHIP_DESIGN_HELP_1G               | Puncte de Viață - Punctele de daună necesare pentru a distruge această navă.
+SHIP_DESIGN_HELP_1H               | Apărare Anti-Rachetă - Nivelul de apărare vs. armele cu rachetă în luptă.
+SHIP_DESIGN_HELP_1I               | Apărare Anti-Laser - Nivelul de apărare vs. armele laser în luptă.
+SHIP_DESIGN_HELP_1J               | Nivel de Atac - Nivelul de atac al armelor în timpul luptei. 
+SHIP_DESIGN_HELP_1K               | Viteză în Luptă - Distanța pe care o navă o poate parcurge în luptă, pe tură.
+SHIP_DESIGN_HELP_1L               | Tentă - Alterează culoarea navelor.
+SHIP_DESIGN_HELP_2A               | Tip de Motor - Tipul de motor folosit de acest model de navă.
+SHIP_DESIGN_HELP_2B               | Viteză - Viteza de deplasare oferită de motor.
+SHIP_DESIGN_HELP_2C               | Cost - Costul fiecărui motor.
+SHIP_DESIGN_HELP_2D               | Mărime - Spațiul folosit de fiecare motor.
+SHIP_DESIGN_HELP_2E               | Putere - Puterea oferită de fiecare motor.
+SHIP_DESIGN_HELP_2F               | Putere Necesară - Puterea totală folosită de componentele navei.
+SHIP_DESIGN_HELP_2G               | Motoare Necesare - Numărul de motoare necesare pentru a genera puterea folosită de componentele navei.
+SHIP_DESIGN_HELP_2H               | Mărimea Totală - Spațiul ocupat de toate motoarele navei.
+SHIP_DESIGN_HELP_2I               | Costul Total - Costul total al motoarelor navei.
+SHIP_DESIGN_HELP_2J               | Imaginea atribuită modelului naval. Există șase imagini diferite pentru fiecare dintre cele patru dimensiuni ale navelor. Click pentru a parcurge opțiunile.
+SHIP_DESIGN_HELP_2K               | Numele modelului naval.
+SHIP_DESIGN_HELP_3A               | Computere - Afectează nivelul de atac al navei în luptă.
+SHIP_DESIGN_HELP_3B               | Armură - Afectează numărul de Puncte de Viață al navei. Armura grea crește acest lucru cu 50%.
+SHIP_DESIGN_HELP_3C               | Scuturi - Reduce din Punctele de Daună ale atacurilor inamice.
+SHIP_DESIGN_HELP_3D               | Bruiaj Anti-Rachetă - Contra-măsuri electronice ce îmbunătățesc apărarea împotriva rachetelor.
+SHIP_DESIGN_HELP_3E               | Manevră - Crește viteza în luptă și apărarea navei.
+SHIP_DESIGN_HELP_3F               | Arme - Pot provoca puncte de daune navelor și coloniilor inamice. O navă poate avea până la patru tipuri diferite de arme.
+SHIP_DESIGN_HELP_3G               | Dispozitive Speciale - Dispozitive care oferă capabilități unice navelor. O navă poate avea până la trei tipuri de dispozitive speciale.
+SHIP_DESIGN_HELP_4A               | Renumește - Permite redenumirea unui model de navă deja existent.
+SHIP_DESIGN_HELP_4B               | Casează Modelul - Casează un model de navă existent. Navele casate returnează 25% din costul de construcție al acestora înapoi în trezorerie.
+SHIP_DESIGN_HELP_4C               | Modelele de nave aprobate pot fi construite în toate coloniile imperiului.
+SHIP_DESIGN_HELP_4D               | Sloturile disponibile pot fi selectate pentru a crea un nou model de navă.
+SHIP_DESIGN_HELP_4E               | Copiază - Copiază un model de navă existent pentru a servi drept punct de plecare pentru un model nou.
+SHIP_DESIGN_HELP_4F               | Curăță - Resetează toate componentele selectate.
+SHIP_DESIGN_HELP_4G               | Aprobă Modelul - Când noul model de navă este complet, aprobarea acestuia va permite denumirea acestuia și îl va face disponibil pentru construcție.
+
+
+// Ship Combat UI
+SHIP_COMBAT_TITLE_SYSTEM          | Luptă Navală la %1!
+SHIP_COMBAT_TITLE_UNSCOUTED       | Luptă Navală într-un sistem neexplorat!
+SHIP_COMBAT_TITLE_DESC            | Forțele noastre au întâlnit o flotă ostilă a [alien_race].
+SHIP_COMBAT_TITLE_MONSTER_DESC    | Forțele noastre au întâlnit un/o %1.
+SHIP_COMBAT_BASES                 | %1 Baze de Rachete
+SHIP_COMBAT_SHIELD                | Scut Planetar de Nivelul %1
+SHIP_COMBAT_POPULATION            | %1 Populație
+SHIP_COMBAT_FACTORIES             | %1 Fabrici
+SHIP_COMBAT_ENTER_BATTLE          | Intră în Luptă
+SHIP_COMBAT_MISS                  | Ratare
+SHIP_COMBAT_DEFLECTED             | Deviere
+SHIP_COMBAT_DESTROYED             | Distrus!
+SHIP_COMBAT_STASIS                | Stază
+SHIP_COMBAT_TITLE                 | Luptă la %1
+SHIP_COMBAT_TITLE_UNNAMED         | Luptă într-un sistem neexplorat
+SHIP_COMBAT_SYSTEM_POP            | Populație
+SHIP_COMBAT_SYSTEM_FACT           | Fabrici
+SHIP_COMBAT_SYSTEM_BASE           | Baze
+SHIP_COMBAT_TITLE_VICTORIOUS      | VICTORIOS
+SHIP_COMBAT_SHIP_TOTALS           | %1 🡒 %2
+SHIP_COMBAT_RESULTS_RETREATED     | RETRAS
+SHIP_COMBAT_RESULTS_DESTROYED     | DISTRUS
+SHIP_COMBAT_RETREAT_ALL           | Retrage Toate Navele
+SHIP_COMBAT_NEXT                  | Următoarea Navă
+SHIP_COMBAT_AUTO_RESOLVE          | Rezolvă Automat Lupta
+SHIP_COMBAT_AUTO_RESOLVING        | Rezolvare Luptă...
+SHIP_COMBAT_PLAY_BATTLE           | Execută Lupta Prin Auto-Play
+SHIP_COMBAT_PAUSE_BATTLE          | Pauză Luptă
+SHIP_COMBAT_EXIT                  | Ieșire
+SHIP_COMBAT_COUNT_NAME            | %1  %2
+SHIP_COMBAT_MONSTER_TARGET        | Monstru Spațial țintit.
+SHIP_COMBAT_ENEMY_TARGET          | Flotă Inamică țintită.
+SHIP_COMBAT_ALLY_TARGET           | Flotă Prietenoasă țintită.
+SHIP_COMBAT_ENEMY_COLONY          | Planetă Inamică țintită.
+SHIP_COMBAT_ALLY_COLONY           | Planetă Prietenoasă țintită.
+SHIP_COMBAT_CURRENT_TARGET        | Flotă Curentă țintită.
+SHIP_COMBAT_SELECT_ACTION         | Selectează o acțiune.
+SHIP_COMBAT_SELECT_WEAPON         | Selectează o armă sau un dispozitiv.
+SHIP_COMBAT_FIRE_WEAPON           | Trage arma.
+SHIP_COMBAT_ACTION_NEXT_SHIP      | Următoarea navă
+SHIP_COMBAT_ACTION_TURN_DONE      | Tură completată
+SHIP_COMBAT_ACTION_RETREAT        | Retragere
+SHIP_COMBAT_ACTION_FIRE_ALL       | Trage Toate Armele
+SHIP_COMBAT_ACTION_CLOAK          | Acoperire
+SHIP_COMBAT_ACTION_MOVE           | Mută aici
+SHIP_COMBAT_ACTION_TELEPORT       | Teleportează aici
+SHIP_COMBAT_ACTION_RANGE          | În Afara Razei
+SHIP_COMBAT_ACTION_NO_MISSILES    | Nicio rachetă rămasă
+SHIP_COMBAT_ACTION_NO_BOMBS       | Nicio bombă rămasă
+SHIP_COMBAT_ACTION_FIRED          | Deja tras
+SHIP_COMBAT_ACTION_USED           | Deja utilizat
+SHIP_COMBAT_ACTION_BAD_TARGET     | Țintă invalidă
+SHIP_COMBAT_ACTION_WPN_COUNT      | %1 x%2
+SHIP_COMBAT_ACTION_WPN_COUNT_SHOTS| %1 x%2 x%3
+SHIP_COMBAT_INFO_LABEL            | Informații Despre Navă
+SHIP_COMBAT_SCAN_LABEL            | Informații Despre Nava Scanată
+SHIP_COMBAT_SCAN_HIT_POINTS       | Puncte de Viață
+SHIP_COMBAT_SCAN_MISSILE_DEF      | Apărare Anti-Rachetă
+SHIP_COMBAT_SCAN_BEAM_DEF         | Apărare Anti-Laser
+SHIP_COMBAT_SCAN_SHIELD_CLASS     | Clasă Scut
+SHIP_COMBAT_SCAN_ATTACK_LEVEL     | Nivel de Atac
+SHIP_COMBAT_SCAN_SPEED            | Viteză
+SHIP_COMBAT_SCAN_WEAPONS          | Arme
+SHIP_COMBAT_SCAN_DEVICES          | Dispozitive
+SHIP_COMBAT_SCAN_HITS_VALUE       | %1/%2
+SHIP_COMBAT_SCAN_WEAPON_CNT       | %1 x %2
+SHIP_COMBAT_SCAN_UNSCANNED_VALUE  | ???
+SHIP_COMBAT_COLONY_LABEL          | Informații Despre Colonie
+SHIP_COMBAT_COLONY_SCAN_LABEL     | Informații Despre Colonia Scanată
+SHIP_COMBAT_COLONY_POPULATION     | Populație
+SHIP_COMBAT_COLONY_SHIELD         | Scut
+SHIP_COMBAT_COLONY_FACTORIES      | Fabrici
+SHIP_COMBAT_COLONY_BASES          | Baze de Rachete
+SHIP_COMBAT_COLONY_BASE_HITS      | Puncte de Viață a Bazelor de Rachete
+SHIP_COMBAT_COLONY_BASE_ATTACK    | Nivel de Atac al Rachetelor
+SHIP_COMBAT_ACTION_FMT            | %1 - %2
+
+RELATIONS_FEUD                    | Dușmănie
+RELATIONS_HATE                    | Ură
+RELATIONS_DISCORD                 | Discordie
+RELATIONS_TROUBLED                | Tulburată
+RELATIONS_TENSE                   | Tensionată
+RELATIONS_RESTLESS                | Agitată
+RELATIONS_WARY                    | Precaută
+RELATIONS_UNEASE                  | Neliniștită
+RELATIONS_NEUTRAL                 | Neutră
+RELATIONS_RELAXED                 | Relaxată
+RELATIONS_AMIABLE                 | Amabilă
+RELATIONS_CALM                    | Calmă
+RELATIONS_AFFABLE                 | Afabilă
+RELATIONS_PEACEFUL                | Pașnică
+RELATIONS_FRIENDLY                | Prietenoasă
+RELATIONS_UNITY                   | Unitate
+RELATIONS_HARMONY                 | Armonie
+
+RACES_TITLE                       | Raport Specii
+RACES_SELECTOR_TITLE              | Selector Imperii
+RACES_TAB_DIPLOMACY               | Diplomație
+RACES_TAB_INTELLIGENCE            | Inteligență
+RACES_TAB_MILITARY                | Forță Militară
+RACES_TAB_STATUS                  | Status
+RACES_KNOWN_EMPIRES               | %1 imperii cunoscute
+RACES_RECALLED_DIPLOMATS          | %1 diplomați rechemați
+RACES_NO_TREATY                   | Niciun tratat diplomatic
+RACES_AT_FINAL_WAR                | Război Final
+RACES_AT_WAR                      | La război
+RACES_PEACE                       | Tratat de Pace
+RACES_PACT                        | Pact de Neagresiune
+RACES_ALLY                        | Alianță
+RACES_UNITY                       | Unitate
+RACES_OUT_OF_RANGE                | În Afara Razei de Acțiune
+RACES_TRADE_LEVEL                 | Tratat comercial de %1 BC
+RACES_TRADE_NONE                  | Niciun tratat comercial
+RACES_DIPLOMAT_RECALLED           | Diplomați ai [alien_race] rechemați
+RACES_DIPLOMATS_RECALLED          | Diplomați rechemați
+
+RACES_DIPLOMACY_HOMEWORLD         | Lume Mamă
+RACES_DIPLOMACY_LEADER            | Lider
+RACES_DIPLOMACY_CURRENT_TRADE     | Venit Comercial Actual
+RACES_DIPLOMACY_TOTAL_TRADE       | Tratate Comerciale Totale
+RACES_DIPLOMACY_TRADE_AMT         | %1 BC
+RACES_DIPLOMACY_CHARACTER         | Caracter
+RACES_DIPLOMACY_STATUS            | Stare
+RACES_DIPLOMACY_RELATIONS_METER   | Contor Relații
+RACES_DIPLOMACY_RELATIONS_UNKNOWN | Starea de spirit și motivele [alien_empire] sunt inscrutabile pentru diplomații și spionii noștri.
+RACES_DIPLOMACY_BUREAU            | Biroul Diplomatic
+RACES_DIPLOMACY_BUREAU_DESC1      | Contactează imperii străine sau recheamă diplomații pentru a împiedica alte imperiile să vă contacteze.
+RACES_DIPLOMACY_BUREAU_DESC       | Contactează ambasadorul [alien_race] pentru o audiență sau stabiliți un contact dacă diplomații au fost rechemați.
+RACES_DIPLOMACY_BUREAU_DESC_RANGE | Nu putem stabili relații diplomatice cu imperii care nu se află în raza de acțiune a navelor noastre.
+RACES_DIPLOMACY_BUREAU_DESC_FINAL | Suntem angajați într-un război final cu Noua Republică. Diplomația nu mai este o opțiune. 
+RACES_DIPLOMACY_KNOWN_EMPIRES     | Imperii Străine Cunoscute
+RACES_DIPLOMACY_RECALLED_DIPLOMAT | Diplomați Rechemați
+RACES_DIPLOMACY_MANAGE_DIPLOMATS  | Gestionează Diplomați
+RACES_DIPLOMACY_AUDIENCE          | Audiență
+RACES_DIPLOMACY_CONTACT           | Stabilește Contact
+RACES_DIPLOMACY_TRADE_SUMMARY     | Rezumat Comerț
+RACES_DIPLOMACY_TRADE_DESC        | Contactează ambasadorul [alien_race] pentru a negocia un tratat comercial. Rețelele comerciale necesită timp și bani pentru a se înființa, dar odată maturizate aduc bani în trezoreria imperiului tău.
+RACES_DIPLOMACY_TRADE_DESC_RANGE  | We cannot establish trade networks with empires that are out of our ship range.
+RACES_DIPLOMACY_TRADE_DESC_FINAL  | We are engaged in a final war with the New Republic. Trade is no longer possible. 
+RACES_DIPLOMACY_TRADE_TREATY      | Tratat Comercial
+RACES_DIPLOMACY_FOREIGN_RELATIONS | Relații Externe
+RACES_DIPLOMACY_FOREIGN_RANGE     | Nu putem cunoaște relațiile externe ale [imperiului_alien] până când nu am stabilit un contact diplomatic.
+RACES_DIPLOMACY_FOREIGN_DESC      | [alien_race_plural] sunt în contact cu următoarele specii:
+RACES_DIPLOMACY_COUNTER_BUREAU    | Biroul Contra-Inteligență
+RACES_DIPLOMACY_COUNTER_DESC      | Cheltuielile de securitatea măresc cheltuielile și șansele de a descoperi spioni străini.
+RACES_DIPLOMACY_COUNTER_DESC2     | Impozitează coloniile controlate pentru a crește cheltuielile de securitate.
+RACES_DIPLOMACY_EVENT_YEAR        | Anul
+RACES_DIPLOMACY_EVENT_TURN        | Tura
+RACES_DIPLOMACY_EVENT_RACE        | Specia
+RACES_DIPLOMACY_EVENT_TITLE       | Incident Diplomatic
+RACES_DIPLOMACY_EVENT_EFFECT      | Efect
+RACES_MANAGE_DIALOG_OK            | OK
+RACES_MANAGE_REINSTATE_DIPLOMAT   | Restabilește Diplomatul
+RACES_MANAGE_RECALL_DIPLOMAT      | Recheamă Diplomatul
+RACES_MANAGE_OUR_RECALLED         | Diplomatul nostru a fost rechemat
+RACES_MANAGE_THEIR_RECALLED       | Diplomatul lor a fost rechemat
+RACES_MANAGE_BOTH_RECALLED        | Ambii diplomați au fost rechemați
+
+RACES_INTEL_TITLE                 | Raportul de Informații pentru [alien_race]
+RACES_COUNTER_INTEL_TITLE         | Raport de Contra-Inteligență
+RACES_INTEL_SECURITY_BONUS        | Bonus de Securitate
+RACES_INTEL_TOTAL_SPENDING        | Cheltuieli Totale
+RACES_INTEL_SECURITY_TAX          | Taxă de Securitate
+RACES_INTEL_TAX_DESC              | Taxați coloniile pentru a crește șansele de a descoperi spioni străini.
+RACES_INTEL_TAX_OUT_OF_RANGE      | 
+RACES_INTEL_SECURITY_BONUS_AMT    | +%1%
+RACES_INTEL_SECURITY_BONUS_NONE   | Fără
+RACES_INTEL_REPORT_AGE            | Vârsta Raportului
+RACES_INTEL_SPY_NETWORK           | Rețele de Spionaj
+RACES_INTEL_SPENDING              | Cheltuieli
+RACES_INTEL_SPENDING_DESC         | Crește cheltuielile pentru a adăuga spioni în rețea în timp. 
+RACES_INTEL_SPENDING_DESC_UNITY   | Rețelele de spionaj sunt inutile, deoarece tehnologia este distribuită în mod liber între membrii Noii Republici.
+RACES_INTEL_SPENDING_CAPPED       | A fost atinsă limita de cheltuieli pentru spioni. Finanțarea pentru rețelele de spionaj a fost redusă cu %1%.
+RACES_INTEL_SPENDING_RANGE        | Nu se pot crea rețele de spionaj în imperiile care se află în afara raza de acțiune a navelor noastre.
+RACES_INTEL_PERCENT_AMT           | %1%
+RACES_INTEL_YEARS                 | %1 ani
+RACES_INTEL_NO_SPIES              | Fără spioni
+RACES_INTEL_1_SPY                 | 1 spion
+RACES_INTEL_N_SPIES               | %1 spioni
+RACES_INTEL_SPIES                 | %1 / %2
+RACES_INTEL_SPENDING_ANNUAL       | %1 BC/an
+RACES_INTEL_CURRENT               | Actual
+RACES_INTEL_NO_DATA               | Fără date
+RACES_INTEL_SPENDING_NONE         | Fără
+RACES_INTEL_COMPLETION_YEARS      | %1 Ani
+RACES_INTEL_COMPLETION_PER_YEAR   | %1/An
+RACES_INTEL_BUREAU_TITLE          | Biroul de Informații
+RACES_INTEL_BUREAU_DESC           | Assign your spies to steal technology or sabotage foreign races.
+RACES_INTEL_BUREAU_SPIES          | Total Spioni
+RACES_INTEL_BUREAU_MANAGE         | Gestionează Spionii
+RACES_INTEL_BUREAU_SPENDING       | Cheltuieli Totale
+RACES_INTEL_SPY_ORDERS            | Ordine Spioni
+RACES_INTEL_SPY_ORDERS_DESC       | Desemnează spionii să se ascundă, să fure secrete, sau să saboteze coloniile [alien_race]. Cu cât rețeaua de spioni este mai mare, cu atât sunt mai mari șansele de succes în fiecare tură, atâta timp cât niciunul dintre spioni nu este capturat.
+RACES_INTEL_SPY_WARNING           | Dacă va fi descoperită, această misiune ne va rupe tratatul cu [alien_race].
+RACES_INTEL_SPY_WARNING_WAR       | Dacă va fi descoperită, această misiune ar putea declanșa un război cu [alien_race].
+RACES_INTEL_KNOWN_TECHNOLOGY      | Tehnologie Cunoscută de [alien_race]
+RACES_INTEL_KNOWN_TECH_DESC       | Spionii noștri raportează că [alien_race] a descoperit următoarele tehnologii. Orice tehnologie necunoscută pentru noi este evidențiată.
+RACES_INTEL_UNKNOWN_TECHNOLOGY    | Raport Tehnologic Necunoscut
+RACES_INTEL_UNKNOWN_TECH_DESC     | Spionii noștri raportează că specii străine au descoperit următoarele tehnologii necunoscute nouă.
+
+RACES_MILITARY_TITLE              | Flotă Navală a [alien_race]
+RACES_MILITARY_SUBTITLE           | Nave După Dimensiune
+RACES_MILITARY_UNSCANNED          | ??
+RACES_MILITARY_UNSCANNED_LONG     | Nescanate
+RACES_MILITARY_SMALL              | Mici
+RACES_MILITARY_MEDIUM             | Medii
+RACES_MILITARY_LARGE              | Mari
+RACES_MILITARY_HUGE               | Uriașe
+RACES_MILITARY_REPORT_CURRENT     | Raportul naval este actual.
+RACES_MILITARY_DEFENSE            | Forțe Defensive
+RACES_MILITARY_DEF_PLANET_SHIELD  | Scuturi Planetare
+RACES_MILITARY_DEF_DEFL_SHIELD    | Scuturi Personale
+RACES_MILITARY_DEF_ARMOR          | Armură
+RACES_MILITARY_TROOP_BONUS        | Bonus Trupe Terestre
+RACES_MILITARY_DEF_MISSILE        | Baze de Rachete
+RACES_MILITARY_DEF_MISSILE_MAX    | Numărul Maxim Implicit de Baze de Rachete Pentru Coloniile Noi
+RACES_MILITARY_NO_SHIELD          | Fără
+RACES_MILITARY_REPORT_NONE        | Fără date. Mai mulți spioni infiltrați sunt necesari.
+RACES_MILITARY_REPORT_OLD         | Vârsta raportului Naval: %1 ani.
+RACES_MILITARY_NO_SHIPS           | Nicio Navă Detectată
+RACES_MILITARY_HULL               | Mărime
+RACES_MILITARY_ARMOR              | Armură
+RACES_MILITARY_ATTACK_LEVEL       | Nivel de Atac
+RACES_MILITARY_MISSILE_DEFENSE    | Apărare Anti-Rachetă
+RACES_MILITARY_BEAM_DEFENSE       | Apărare Anti-Laser
+RACES_MILITARY_SHIELD             | Clasa Scutului
+RACES_MILITARY_COMBAT_SPEED       | Viteză în Luptă
+RACES_MILITARY_TRAVEL_SPEED       | Viteză de Călătorie
+RACES_MILITARY_WEAPON_CNT         | %2 x%1
+RACES_MILITARY_NO_WEAPONS         | Fără Arme
+RACES_MILITARY_NO_SPECIALS        | Fără Dispozitive Speciale
+RACES_MILITARY_ACTIVE             | Activă
+RACES_MILITARY_INACTIVE           | Inactivă
+RACES_MILITARY_LAST_SEEN          | Văzut Ultima Dată
+RACES_MILITARY_SCAN_AGE           | %1 Ani
+RACES_MILITARY_TACTICAL           | Informații Tactice
+RACES_MILITARY_WEAPONS            | Arme
+RACES_MILITARY_SPECIALS           | Dispozitive Speciale
+
+RACES_STATUS_THE_EMPIRE           | [alien_empire]
+RACES_STATUS_VS                   | vs.
+RACES_STATUS_KNOWN_EMPIRES        | %1 Imperii Cunoscute
+RACES_STATUS_HISTORY              | Arată Istoria [alien_race]
+RACES_STATUS_NO_DATA              | Fără Date
+RACES_STATUS_OLD_DATA             | Date Învechite
+RACES_STATUS_FLEET_STRENGTH       | Forța Flotelor
+RACES_STATUS_POPULATION           | Populație
+RACES_STATUS_TECHNOLOGY           | Tehnologie
+RACES_STATUS_PLANETS              | Planete
+RACES_STATUS_PRODUCTION           | Producție
+RACES_STATUS_TOTAL_POWER          | Putere Totală
+RACES_UNKNOWN_DATA                | ???
+
+RACES_SET_COLOR_TITLE             | Alegeți o culoare nouă pentru [alien_empire]
+RACES_SET_COLOR_DESC              | Dacă culoarea și forma selectate sunt utilizate de un alt imperiu, culorile vor fi schimbate.
+
+// Races UI help
+RACES_HELP_0A                     | PREZENTARE GENERALĂ: Acest ecran oferă informații detaliate despre fiecare dintre speciile extraterestre pe care le-ați întâlnit.
+RACES_HELP_0B                     | Diplomație - Intră în discuții diplomatice cu imperiul selectat.
+RACES_HELP_0C                     | Inteligență - Afișează tehnologie extraterestră și gestionează-ți rețelele de spionaj.
+RACES_HELP_0D                     | Forță Militară - Afișați modelele navelor și a flotelor.
+RACES_HELP_0E                     | Status - Comparații în mai multe categorii.
+RACES_HELP_0F                     | Selectarea propiului imperiu va permite gestionarea informațiilor despre toate speciile contactate.
+RACES_HELP_0G                     | Selectarea unui imperiu extraterestru va arăta informații mai detaliate despre acesta în fiecare categorie.
+RACES_HELP_1A                     | Informații generale despre imperiul selectat.
+RACES_HELP_1B                     | Oferă acces direct către diplomații tuturor imperiilor contactate.
+RACES_HELP_1C                     | Crește taxa de securitate pentru a îmbunătăți șansele de a contracara spionii inamici.
+RACES_HELP_1D                     | Oferă acces direct pentru gestionarea spionilor din toate imperiile contactate.
+RACES_HELP_1E                     | Incidente diplomatice ce afectează modul în care alte imperii reacționează la acțiunile noastre. Efectele vor dispărea în timp.
+RACES_HELP_1F                     | Faceți clic pentru a schimba culoarea unei specii afișate pe hartă
+RACES_HELP_2A                     | Informații generale despre imperiul selectat.
+RACES_HELP_2B                     | Acordă o audiență cu un diplomat al imperiului selectat.
+RACES_HELP_2C                     | Informații despre tratatele comerciale semnate cu imperiul selectat.
+RACES_HELP_2D                     | Alte imperii pe care imperiul selectat le-a contactat.
+RACES_HELP_2E                     | Incidente diplomatice ce afectează modul în care alte imperii reacționează la acțiunile noastre. Efectele vor dispărea în timp.
+RACES_HELP_2F                     | O măsură a stării actuale a relațiilor diplomatice cu imperiul selectat.
+RACES_HELP_3A                     | Crește taxa de securitate pentru a îmbunătăți șansele de a contracara spionii inamici.
+RACES_HELP_3B                     | Oferă acces direct pentru gestionarea spionilor din toate imperiile contactate.
+RACES_HELP_3C                     | Toate tehnologiile cunoscute de alte imperii, conform spionilor tăi. Tehnologiile pe care nu le cunoașteți sunt afișate în galben.
+RACES_HELP_4A                     | Setați numărul de rețele de spionaj pe care doriți să le stabiliți în imperiul selectat și suma pe care doriți să o cheltuiți anual.
+RACES_HELP_4B                     | Setează ordinele pentru spionii infiltrați în imperiul selectat. Ascundere - adună date. Spionaj - încearcă să furi o tehnologie. Sabotaj - incită la rebeliuni sau distruge fabrici și baze de rachete.
+RACES_HELP_4C                     | Toate tehnologiile cunoscute de imperiul selectat. Tehnologiile pe care nu le cunoașteți sunt afișate în galben.
+RACES_HELP_5A                     | Numărul cunoscut de nave din flota speciei selectate, după dimensiunea acestora. Aceste informații vor rămâne actuale atâta timp cât aveți o rețea de spionaj activă în imperiul selectat.
+RACES_HELP_5B                     | Capacitățile cunoscute ale modelelor navale. Modelele mai vechi ar putea fi scoase din uz. Aceste informații sunt colectate în principal în timpul luptelor navale.
+RACES_HELP_5C                     | Capacitățile defensive cunoscute ale imperiului selectat. 
+RACES_HELP_6A                     | Acest ecran oferă o clasare actuală, în diferite categorii, a imperiului nostru în comparație cu alte imperii cunoscute. Aceste date sunt colectate de rețelele noastre de spioni aflate în aceste imperii.
+RACES_HELP_6A2                    | Acest ecran oferă o comparație istorică, în diferite categorii, a imperiului nostru cu un imperiu selectat. Aceste date sunt colectate de rețelele noastre de spioni aflate în aceste imperii.
+RACES_HELP_6B                     | Forța Flotelor - Combină numărul și dimensiunea navelor.
+RACES_HELP_6C                     | Populație - Populația totală a tuturor sistemelor colonizate.
+RACES_HELP_6D                     | Tehnologie - Nivelul mediu de tehnologie în toate domeniile de cercetare.
+RACES_HELP_6E                     | Planete - Numărul de sisteme colonizate.
+RACES_HELP_6F                     | Producție - Producția industrială totală a imperiului.
+RACES_HELP_6G                     | Putere Totală - O combinație a forței flotelor, tehnologiei și a nivelului de producție.
+
+// Sabotage UI
+SABOTAGE_TITLE                    | Spionii noștri au infiltrat coloniile [alien_race] și sunt gata să execute comenzi.
+SABOTAGE_PROMPT                   | Selectează forma de sabotaj pe care să o comiteți împotriva [alien_empire] în sistemul %1.
+SABOTAGE_WARNING                  | Avertizare! Orice act de sabotaj ne va rupe tratatul cu [alien_empire].
+SABOTAGE_SELECT_TARGET            | Selectează o țintă
+SABOTAGE_BUTTON_FACTORIES         | Distruge Fabrici
+SABOTAGE_BUTTON_BASES             | Distruge Baze de Rachete
+SABOTAGE_BUTTON_REBELLION         | Provoacă o Rebeliune
+SABOTAGE_BUTTON_NO_ACTION         | Take No Action
+SABOTAGE_FACTORIES_RESULT         | Spionii tăi au distrus %1 fabrici.
+SABOTAGE_BASES_RESULT             | Spionii tăi au distrus %1 baze de rachete.
+SABOTAGE_REBELS_TOTAL             | Spionii tăi au incitat %1 rebeli. Starea de neliniște este acum la %2%.
+SABOTAGE_REBELS_REVOLT            | Spionii tăi au provocat o rebeliune!
+SABOTAGE_BASES                    | baze de rachete
+SABOTAGE_FACTORIES                | fabrici
+NOTICE_SPYING_MISSION_HIDE        | Infiltrare
+NOTICE_SPYING_MISSION_ESPIONAGE   | Spionaj
+NOTICE_SPYING_MISSION_SABOTAGE    | Sabotaj
+
+// History UI
+HISTORY_TITLE                     | Istoria Galactică Cunoscută
+HISTORY_TITLE_ALL                 | Istoria Galactică Completă
+HISTORY_TURN_DESC                 | Tura %1 din %2
+HISTORY_FORWARD                   | Înainte
+HISTORY_BACK                      | Înapoi
+HISTORY_PLAY                      | Redă
+HISTORY_PAUSE                     | Pauză
+HISTORY_RESET                     | Resetează
+HISTORY_EXIT                      | Ieșire
+HISTORY_EXTINCT                   | Dispărut
+HISTORY_SYSTEMS                   | Sisteme
+HISTORY_EMPIRE                    | Imperiu
+
+
+
+// Council UIs
+COUNCIL_CONVENE_TITLE             | Înaltul Consiliu a Fost Convocat
+COUNCIL_CONVENE                   | Înaltul Consiliu a fost convocat pentru a alege un lider care să fie Conducătorul Galaxiei.
+COUNCIL_CONVENE2                  | Fiecare imperiu acordă o cotă de voturi proporțională cu populația sa. Un candidat trebuie să adune cel puțin două treimi din toate voturile pentru a fi ales. Candidații sunt liderii celor două cele mai populate imperii: [first_name] al [first_empire] și [second_name] al [second_empire].
+COUNCIL_ADJOURN_TITLE             | Înaltul Consiliu Se Suspendă
+COUNCIL_ADJOURN                   | Votarea s-a încheiat și niciun candidat nu a adunat două treimi din voturi. Niciun conducător nu a fost numit. Înaltul Consiliu se va reuni pentru un alt vot peste 25 de ani.
+COUNCIL_SUMMARY_TITLE             | Rezumatul Alegătorilor
+COUNCIL_SUMMARY                   | Voturile sunt exprimate în ordinea populației. %1 voturi sunt necesare pentru a câștiga alegerile.
+COUNCIL_BEGIN_VOTING              | Începeți Votul
+COUNCIL_SHOW_VOTING               | Continuă Votul
+COUNCIL_SKIP_TO_PLAYER            | Treci la Votul [player_race]
+COUNCIL_COMPLETE_VOTING           | Finalizează Votul
+COUNCIL_SHOW_RESULTS              | Arată Rezultatele
+COUNCIL_VIEW_SUMMARY              | Vizualizați Rezumatul Alegătorilor
+COUNCIL_VOTES_REQUIRED            | %1 voturi necesare pentru a câștiga alegerile.
+COUNCIL_CAST_PROMPT               | Trebuie să acordăm cele %1 voturi ce ne aparțin.
+COUNCIL_CAST_PROMPT_TITLE         | Selectează un candidat.
+COUNCIL_CHOICE_ABSTAIN            | Abținere
+COUNCIL_CAST_VOTE                 | [voter_empire] a acordat %1 voturi pentru [candidate_name]!
+COUNCIL_CAST_ABSTAIN              | [voter_empire] s-a abținut de la vot (%1 voturi)
+COUNCIL_CHOICE_ABSTAIN            | Abținere
+COUNCIL_VOTE_COUNT                | %1 voturi
+COUNCIL_VOTE_CAST                 | %1 voturi - pentru [alien_race]
+COUNCIL_VOTE_ABSTAINED            | %1 votes - Abținute
+COUNCIL_TREATY_CANDIDATE          | [alien_race]: Candidat
+COUNCIL_TREATY_ALLIANCE           | [alien_race]: Alianță
+COUNCIL_TREATY_PACT               | [alien_race]: Pact de Neagresiune
+COUNCIL_TREATY_NONE               | [alien_race]: Fără Tratat
+COUNCIL_TREATY_WAR                | [alien_race]: La Război
+COUNCIL_CONTINUE                  | Continuă
+COUNCIL_ELECTED_TITLE             | Conducătorul Galaxiei a Fost Ales!
+COUNCIL_ACCEPT_RULING             | Acceptă Hotărârea
+COUNCIL_REJECT_RULING             | Refuză Hotărârea
+
+
+// Credit text
+CREDITS_DEVELOPER                 | Ray Fowler, Dezvoltator
+CREDITS_ILLUSTRATOR               | Petar Penev, Ilustrator
+CREDITS_GRAPHIC_DESIGN            | Kaitlin Lindsay, Designer Grafic
+CREDITS_MUSIC                     | Efe Tozan, Muzică
+CREDITS_WRITER                    | Jeff Colucci, Scriitor
+CREDITS_SOUND                     | Remi Agullo, Designer de Sunet
+CREDITS_TRANSLATOR                | Daniel Minculescu, Traducător
+
+// Systems UI
+SYSTEMS_TITLE                     | Sisteme
+SYSTEMS_TAB_EXPLORE               | Explorare
+SYSTEMS_TAB_EXPAND                | Expansiune
+SYSTEMS_TAB_EXPLOIT               | Exploatare
+SYSTEMS_TAB_EXTERMINATE           | Exterminare
+SYSTEMS_RANGE                     | %1 al
+SYSTEMS_ENVIRONMENT_SIZE          | %1 %2
+SYSTEMS_ENVIRONMENT_TYPE          | %1 %2
+SYSTEMS_SHIELD                    | Scut %1
+SYSTEMS_BASES                     | Baze %1
+SYSTEMS_ENTER_NOTES               | Introduceți aici notele sistemului.
+SYSTEMS_ALERT                     | Alertă Sistem
+SYSTEMS_NO_ALERTS                 | Nicio alertă la această dată.
+SYSTEMS_HISTORY                   | Istoria Sistemului
+SYSTEMS_UNSCOUTED                 | Sistemul este neexplorat, dar este la îndemâna navelor noastre de explorare.
+SYSTEMS_UNSCOUTED_NEED_TECH       | Sistemul este neexplorat și poate fi accesat după finalizarea cercetării în „%1”.
+SYSTEMS_UNSCOUTED_COLONIZED       | Sistemul este neexplorat și controlat de un imperiu care nu este un aliat.
+SYSTEMS_UNSCOUTED_ENEMY           | Sistemul este neexplorat și controlat de un imperiu inamic.
+SYSTEMS_UNSCOUTED_GUARDED         | Nu se poate explora în timp ce sistemul este păzit.
+SYSTEMS_UNSCOUTED_UNREACHABLE     | Sistemul este neexplorat și în prezent inaccesibil. 
+SYSTEMS_CAN_COLONIZE              | Sistemul poate fi accesat și colonizat cu tehnologia noastră actuală.
+SYSTEMS_CAN_COLONIZE_EN_ROUTE     | O navă colonială este în drum spre acest sistem. ETA-ul este de %1 ture.
+SYSTEMS_CAN_COLONIZE_ENEMY        | Sistemul poate fi atins și colonizat, dar este orbitat de o flotă ostilă a [alien_race].
+SYSTEMS_UNCOLONIZED_NEED_TECH     | Sistemul poate fi colonizat după finalizarea cercetării în „%1”.
+SYSTEMS_UNCOLONIZED_NEED_TECHS    | Sistemul poate fi colonizat după finalizarea cercetării în „%1” și „%2”.
+SYSTEMS_UNCOLONIZEABLE            | Sistemul nu poate fi colonizat.
+SYSTEMS_EXPLOIT_PCT               | Colonie la %1% din capacitate totală de producție.
+SYSTEMS_EXPLOIT_WASTE             | Colonia creează deșeuri industriale.
+SYSTEMS_EXPLOIT_COMPLETE          | Colonia este la capacitatea maximă de producție.
+SYSTEMS_EXPLOIT_TRANSPORTS        | %1 transporturi sunt in tranzit.
+SYSTEMS_EXT_ENEMY                 | Colonie inamică.
+SYSTEMS_EXT_ENEMY_FLEET           | Flota inamică în orbită.
+SYSTEMS_EXT_ENEMY_FLEET_PLAYER    | Flotă inamică ce orbitează în jurul coloniei noastre.
+SYSTEMS_EXT_ENEMY_FLEET_ALLY      | Flota inamică ce orbitează o colonie aliată.
+SYSTEMS_EXT_INC_FLEET_PLAYER      | Flota inamică în tranzit către colonia noastră.
+SYSTEMS_EXT_INC_FLEET_ALLY        | Flota inamică în tranzit către o colonie aliată.
+SYSTEMS_EXT_NEED_DEFENSE          | Sistemele de apărare a acestei colonii nu sunt actualizate complet.
+SYSTEMS_EXT_INC_TRANSPORTS        | %1 trupe [player_race] sunt în tranzit.
+SYSTEMS_HELP_1A                   | PREZENTARE GENERALĂ - Scopul acestui ecran este de a evidenția sistemele din galaxie care justifică atenția jucătorului. Urgența sau pericolul se notează prin culoare: roșu intermitent este cel mai mare, iar verde este cel mai mic.
+SYSTEMS_HELP_1B                   | Explorare - Arată sisteme neexplorate la îndemâna exploratorilor sau potențial cu tehnologii neexplorate.
+SYSTEMS_HELP_1C                   | Expansiune- Arată sisteme colonizabile la îndemâna navelor sau potențial cu tehnologii neexplorate.
+SYSTEMS_HELP_1D                   | Exploatare - Arată coloniile ce duc lipsă de dezvoltare economică. Arată, de asemenea, și sisteme necolonizate cu resurse.
+SYSTEMS_HELP_1E                   | Exterminare - Arată coloniile care sunt atacate sau care au flote inamice ce se apropie de acestea.
+SYSTEMS_HELP_1F                   | Alertă Sistem - Descrie alerta sistemului, dacă există, pentru sistemul selectat.
+SYSTEMS_HELP_1G                   | Notele Sistemului - Câmp liber pentru ca jucătorul să lase note.
+SYSTEMS_HELP_1H                   | Istoria Sistemului - O listă cronologică a evenimentelor semnificative care au avut loc în acest sistem.
+
+SYSTEMS_STATUS_REBELLION          | Colonia este în rebeliune.
+SYSTEMS_STATUS_COMET              | O cometă va lovi această planetă în %1 ani.
+SYSTEMS_STATUS_SUPERNOVA          | Steaua sistemului va exploda într-o supernova în %1 ani. Fizicienii au nevoie de %2 RP-uri pentru a evita această catastrofă.
+SYSTEMS_STATUS_PLAGUE             | Colonia se confruntă cu o boală globală ce necesită %1 RP pentru a fi vindecată.
+SYSTEMS_STATUS_PIRACY             | Pirații atacă rutele comerciale din acest sistem.
+SYSTEMS_STATUS_SPACE_AMOEBA       | O Amibă Spațială gigantică se îndreaptă spre acest sistem.
+SYSTEMS_STATUS_SPACE_CRYSTAL      | Un Cristal Spațial gigantic se îndreaptă spre acest sistem.
+
+
+DIPLOMACY_RECEIVING               | Traducem Mesajul Primit...
+DIPLOMACY_MENU_CONTINUE           | Continuă
+DIPLOMACY_MENU_ACKNOWLEDGE        | Confirmă
+DIPLOMACY_MENU_ACCEPT             | Acceptă
+DIPLOMACY_MENU_ACCEPT_NEED_BC     | Acceptă (fonduri insuficiente)
+DIPLOMACY_MENU_FORGET_IT          | Las-o Baltă
+DIPLOMACY_TRADE_LEVEL             | %1 BC / An
+DIPLOMACY_MENU_TREATIES           | Propune Tratat
+DIPLOMACY_MENU_TRADE              | Tratat Comercial
+DIPLOMACY_MENU_TECHNOLOGY         | Schimbă Tehnologie
+DIPLOMACY_MENU_OFFER_AID          | Oferă Ajutor
+DIPLOMACY_MENU_AMT                | %1 BC
+DIPLOMACY_MENU_OFFER_TECHS        | Oferă Tehnologie
+DIPLOMACY_MENU_THREATEN           | Amenință
+DIPLOMACY_MENU_DECLARE_WAR        | Declară Război
+DIPLOMACY_MENU_EVICT_SPIES        | Înlătură Toți Spionii (scade relațiile)
+DIPLOMACY_MENU_STOP_SPYING        | Oprește Activitățile de Spionaj
+DIPLOMACY_MENU_STOP_ATTACKING     | Oprește Atacurile
+DIPLOMACY_MENU_GOODBYE            | La Revedere
+DIPLOMACY_MENU_PACT               | Propune Pact de Neagresiune
+DIPLOMACY_MENU_ALLIANCE           | Propune Alianță
+DIPLOMACY_MENU_PEACE              | Propune Tratat de Pace
+DIPLOMACY_MENU_TRADE              | Propune Tratat Comercial
+DIPLOMACY_MENU_JOINT_WAR          | Declarație Comună de Război Împotriva Altei Specii
+DIPLOMACY_MENU_PROPOSE_BREAK_ALLY | Rupe Alianța cu o Altă Specie
+DIPLOMACY_MENU_BREAK_TRADE        | Rupe Tratatul Comercial 
+DIPLOMACY_MENU_BREAK_PACT         | Rupe Tratatul de Neagresiune
+DIPLOMACY_MENU_BREAK_ALLIANCE     | Rupe Alianța
+DIPLOMACY_TRADE_MENU_BREAK        | Rupe Tratatul Comercial
+DIPLOMACY_THREATEN_MENU_0         | Recheamă Ambasadorul
+DIPLOMACY_THREATEN_MENU_1         | Cere Tribut
+DIPLOMACY_THREATEN_MENU_2         | Rupe Pactul de Neagresiune
+DIPLOMACY_THREATEN_MENU_3         | Rupe Alianța
+DIPLOMACY_THREATEN_MENU_BR        | Rupe Tratatul Comercial
+DIPLOMACY_THREATEN_MENU_5         | Declară Război
+DIPLOMACY_ACCEPT_OFFER            | Acceptă
+DIPLOMACY_ACCEPT_JOIN_WAR         | Acceptă (Se Alătură Războiului)
+DIPLOMACY_ACCEPT_END_WAR          | Acceptă (Încheie Războiul, Recheamă Forțele)
+DIPLOMACY_ACCEPT_FORM_PACT        | Acceptă (Formează Pactul)
+DIPLOMACY_ACCEPT_FORM_ALLIANCE    | Acceptă (Formează Alianță)
+DIPLOMACY_ACCEPT_ESTABLISH_TRADE  | Acceptă (Stabilește Comerțul)
+DIPLOMACY_DECLINE_OFFER           | Refuză
+DIPLOMACY_DECLINE_BREAK_ALLIANCE  | Refuză (Rupe Alianța)
+DIPLOMACY_IGNORE_THREAT           | Ignoră Amenințarea
+DIPLOMACY_SHUTDOWN_SPIES          | Închide toate rețelele de spionaj din [alien_empire] 
+DIPLOMACY_HIDE_SPIES              | Ordonează toți spionii din [alien_empire] să se Ascundă
+DIPLOMACY_RETREAT_SHIPS           | Ordonează toate navele care orbitează sau se află în tranzit către sistemele deținute de [alien_race] să se Retragă.
+
+// types of endings
+GAME_OVER_OVERTHROWN_LOSS         | Pierdere Detronare
+GAME_OVER_MILITARY_LOSS           | Pierdere Militară
+GAME_OVER_DIPLOMATIC_LOSS         | Pierdere Diplomatică
+GAME_OVER_NEW_REPUBLIC_LOSS       | Pierdere Noua Republică
+GAME_OVER_REBELLION_LOSS          | Pierdere Rebeliune
+GAME_OVER_DIPLOMATIC_WIN          | Victorie Diplomatică
+GAME_OVER_MILITARY_WIN            | Victorie Militară
+GAME_OVER_MILITARY_ALLIANCE_WIN   | Victorie Militară Aliată
+GAME_OVER_NEW_REPUBLIC_WIN        | Victorie Noua Republică
+GAME_OVER_REBELLION_WIN           | Victorie Rebeliune
+GAME_OVER_REBEL_ALLIANCE_WIN      | Victorie Rebeliune Aliată
+GAME_OVER_ALLIANCE_WIN            | Victorie Alianță
+GAME_OVER_NO_COLONIES_LOSS        | Pierdere Colaps Social
+
+GAME_OVER_EXIT                    | Ieșire
+GAME_OVER_REPLAY                  | Reluare
+
+// text for race-generic endings
+// %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 special text
+GAME_OVER_NO_COLONIES_LOSS2       | Domnia lui %2 s-a încheiat, distrusă de incompetența imperială.#Fără lumi civilizate pe care să aterizeze în condiții de siguranță, orice transporturi supraviețuitoare ale %3 nu sunt în măsură să susțină progresul tehnologic realizat de societatea voastră.#Barbarismul este starea naturală a societății. Civilizația este nefirească. Este un capriciu al circumstanței. Și barbarismul trebuie să triumfe în cele din urmă.

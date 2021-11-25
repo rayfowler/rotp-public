@@ -1,0 +1,21 @@
+// all possible names
+name: Psaylon, Aklon, Psikon, Beynon, Nörlon
+
+desc1: Pasifist Teknologlar
+desc2: Üstün Araştırma Teknikleri
+desc3: [race] Cumhuriyeti, diğer ırklarla barış ve açık fikirlilikle bir arada yaşamayı amaçlar.
+
+// possible home system names
+home: Mentar, Bilişar, Psaylar, Metrika, Nöristan
+
+title: Müsteşar
+fulltitle: Yüksek Müsteşar
+
+// possible leader names
+leader: Dinalon, Kelvan, Mezon, Kuark, Taçaon, Zigot
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Elektron, Nötrino, Kuark, Nötron, Proton, Atom, Molekül
+ship2: Sigma, Asal, Yarıçap, Hipotenüs, Cebir, Tanjant, Logaritma
+ship3: Paralaks, Elips, Eksen, Sinüs Dalgası, Fraktal, Kalkülüs, Türev
+ship4: Güneş Ateşi, Takımyıldız, Nova, Kuasar, Galaksi, Nebula, Korona

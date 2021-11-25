@@ -1,0 +1,22 @@
+// all possible names
+name: Alkari, Aviari, Cluckari, Feathari, Fowlari
+
+desc1: Militari Onorabili
+desc2: Piloți Superiori
+desc3: Suveranitatea [race] este o societate războinică organizată care valorifică onoarea în luptă.
+
+// possible home system names
+home: Altair, Aegir, Aviar, Volar, Aerie
+
+title:     Rege
+fulltitle: Regele Turlei
+
+// possible leader names
+leader: Ariel, Farseer, Highsoar, Redwing, Sharpclaw, Skylord
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Rândunică, Vrabie, Pelican, Cinteză, Pănțuruș, Corb, Pană
+ship2: Șoricar, Gaiță, Pescăruș, Bufniță, Papagal, Aripă
+ship3: Uliu, Șoim, Acvilă, Uligan, Vultur, Harpie, Condor
+ship4: Caladriu, Sirin, Alconost, Roc, Rodan, Grifon, Fenix
+
