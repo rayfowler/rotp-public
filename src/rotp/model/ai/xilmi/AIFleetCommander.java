@@ -158,8 +158,6 @@ public class AIFleetCommander implements Base, FleetCommander {
                 {
                     if(!empire.visibleShips().contains(incoming))
                         continue;
-                    if(incoming.arrivalTime() > galaxy().currentTime() + 1)
-                        continue;
                     buffy.enemyBombardDamage += incoming.expectedBombardDamage(current);
                     if(incoming.isArmed())
                         buffy.enemyFightingBc += bcValue(incoming, false, true, false, false);
@@ -908,8 +906,6 @@ public class AIFleetCommander implements Base, FleetCommander {
                             if(incoming.empire().aggressiveWith(empire.id))
                             {
                                 if(!empire.visibleShips().contains(incoming))
-                                    continue;
-                                if(incoming.arrivalTime() > galaxy().currentTime() + 1)
                                     continue;
                                 EmpireView ev = empire.viewForEmpire(incoming.empId());
                                 targetTech = ev.spies().tech().avgTechLevel(); // modnar: target tech level
