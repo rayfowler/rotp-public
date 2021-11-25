@@ -441,8 +441,6 @@ public class ShipCombatManager implements Base {
         // ensure rebels are killed in proportionn to overall population
         results.killRebels();
 
-        results.refreshSystemScans();
-        
         // update treaty with results
         Empire defender = results.defender();
         Empire attacker = results.attacker();
