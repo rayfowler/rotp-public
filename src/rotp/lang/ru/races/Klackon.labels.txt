@@ -132,7 +132,7 @@ COUNCIL_SKIP_TO_PLAYER            | Перейти к Вашей очереди
 COUNCIL_CAST_PROMPT               | Вы должны голосовать (Вы имеете %1 голосов)...
 SYSTEMS_STATUS_SUPERNOVA          | Звезда этой системы станет сверхновой через %1 лет. Необходимо %2 ЕИ, чтобы предотвратить эту катастрофу.
 GAME_OVER_NO_COLONIES_LOSS        | Коллапс
-GAME_OVER_DIPLOMATIC_WIN          | Лидер Объедененной Галактики
+GAME_OVER_DIPLOMATIC_WIN          | Лидер Объединенной Галактики
 GAME_OVER_MILITARY_ALLIANCE_WIN   | Лидер Союза
 GAME_OVER_NEW_REPUBLIC_WIN        | Лидер Новой Республики
 GAME_OVER_REBEL_ALLIANCE_WIN      | Лидер Повстанческого Союза
