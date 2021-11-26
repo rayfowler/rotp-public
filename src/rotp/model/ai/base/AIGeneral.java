@@ -287,8 +287,13 @@ public class AIGeneral implements Base, General {
         
         if (empire.sv.hasFleetForEmpire(sys.id, empire))
             launchGroundTroops(v, sys, mult);
-        else if (empire.combatTransportPct() > 0)
-            launchGroundTroops(v, sys, mult/empire.combatTransportPct());
+        else if (empire.combatTransportPct() > 0) {
+            // adj pct if enemy has subspace interdictors: fix by ajkfreelance
+            float transPct = empire.combatTransportPct();
+            if (ev.spies().tech().subspaceInterdiction()) 
+                transPct /= 2;
+            launchGroundTroops(v, sys, mult/transPct);
+        }
 
         float baseBCPresent = empire.sv.bases(sys.id)*empire.tech().newMissileBaseCost();
         float bcMultiplier = 1 + (empire.sv.hostilityLevel(sys.id));
