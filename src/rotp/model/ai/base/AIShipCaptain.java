@@ -351,6 +351,10 @@ public class AIShipCaptain implements Base, ShipCaptain {
             if (activeStacks.contains(currStack.ward())) 
                 return false;
         }
+        
+        // if we are out of ammo, bail
+        if (!currStack.isArmed())
+            return true;
 
         // don't retreat if all enemies can only target planets
         boolean canBeTargeted = false;

@@ -359,8 +359,10 @@ public class CombatStack implements Base {
         boolean missilesFinished = true;
 
         List<CombatStackMissile> targetCopy = new ArrayList<>(targetingMissiles);
-        for (CombatStackMissile miss : targetCopy) 
+        for (CombatStackMissile miss : targetCopy) {
+            miss.move = miss.moveRate;
             missilesFinished = miss.pursue(MOVE_STEP) && missilesFinished;
+        }
         
         if (mgr.showAnimations()) 
             mgr.ui.paintAllImmediately(20);

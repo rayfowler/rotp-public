@@ -899,10 +899,7 @@ public class ShipCombatManager implements Base {
             CombatStack stack = currentTurnList.get(i);
             if (stack.destroyed())
                 continue;
-            if (stack.isColony() && !stack.isArmed())
-            {
-                //ail: We still need to call begin- and endTurn() because otherwise missiles won't fly towards it
-                stack.beginTurn();
+            if (stack.isColony() && !stack.isArmed()) {
                 stack.endTurn();
                 continue;
             }

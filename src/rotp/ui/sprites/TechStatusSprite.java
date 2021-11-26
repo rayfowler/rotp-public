@@ -48,6 +48,8 @@ public class TechStatusSprite extends MapControlSprite {
         if (!map.parent().showTreasuryResearchBar())
             return;
         
+        boolean show = hovering || map.parent().showAllCurrentResearch();
+        
         TechCategory cat = player().tech().category(category);
         Tech tech = tech(cat.currentTech());
         String label = "";
@@ -58,7 +60,7 @@ public class TechStatusSprite extends MapControlSprite {
         int labelW2 = 0;
         
         int w = width;
-        if (hovering) {
+        if (show) {
             if (tech == null)
                 label = text("MAIN_TECH_NONE");
             else if (cat.researchCompleted())
@@ -87,7 +89,7 @@ public class TechStatusSprite extends MapControlSprite {
         if (tech != null)
             RotPUI.instance().techUI().drawResearchBubble(g2, cat, true, Color.lightGray, blueBucketC, blueBucketBackC, startX+BasePanel.s1+(width/2), startY+BasePanel.s7+(height/2));
 
-        if (hovering) {
+        if (show) {
             g2.setColor(Color.lightGray);
             int y1 = startY+height-BasePanel.s18;
             int x1 = startX+width+BasePanel.s10;
@@ -120,7 +122,9 @@ public class TechStatusSprite extends MapControlSprite {
         g2.setColor(map.parent().backC());
         g2.drawRoundRect(startX, startY, width, height, cnr, cnr);
         
-        if (hovering) {
+        boolean show = hovering || map.parent().showAllCurrentResearch();
+        
+        if (show) {
             g2.setStroke(BasePanel.stroke2);
             g2.setColor(SystemPanel.yellowText);
             g2.drawRoundRect(startX, startY, w, height, cnr, cnr);

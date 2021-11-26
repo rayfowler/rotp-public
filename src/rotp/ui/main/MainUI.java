@@ -209,6 +209,9 @@ public class MainUI extends BasePanel implements IMapHandler {
     public boolean showTreasuryResearchBar()       { return overlay != overlayAdvice; }
     @Override
     public boolean showSpyReportIcon()             { return (overlay != overlayAdvice) && session().spyActivity(); }
+    @Override
+    public boolean showAllCurrentResearch()        { return (overlay == overlayEspionageMission); }
+    
     public void setOverlay(MapOverlay lay) {
         overlay = lay;
     }
