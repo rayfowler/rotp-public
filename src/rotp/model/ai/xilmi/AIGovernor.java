@@ -414,7 +414,7 @@ public class AIGovernor implements Base, Governor {
             float maxShipMaintainance = 0.0f;
             float fighterPercentage = empire.generalAI().defenseRatio();
             
-            if(enemy || empire.generalAI().sensePotentialAttack() || (UserPreferences.xilmiRoleplayMode() && empire.leader().isMilitarist()))
+            if(enemy || empire.generalAI().sensePotentialAttack())
             {
                 maxShipMaintainance = empire.fleetCommanderAI().maxShipMaintainance();
             }
