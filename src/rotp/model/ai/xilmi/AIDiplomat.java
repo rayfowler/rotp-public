@@ -621,6 +621,7 @@ public class AIDiplomat implements Base, Diplomat {
     }
     //ail: pacts just restrict us unnecessarily
     private boolean willingToOfferPact(EmpireView v) {
+        /*
         if(UserPreferences.xilmiRoleplayMode() && empire.leader().isPacifist())
             return true;
         if(UserPreferences.xilmiRoleplayMode() && empire.leader().isHonorable())
@@ -631,6 +632,7 @@ public class AIDiplomat implements Base, Diplomat {
                     return true;
             }
         }
+        */
         return false;
     }
     //-----------------------------------
@@ -713,6 +715,7 @@ public class AIDiplomat implements Base, Diplomat {
             if(popRatioOfAllianceAmongstContatacts(empire) < (galaxy().options().baseAIRelationsAdj() * 3.33) / 100.0)
                 return true;
         }
+        /*
         if(UserPreferences.xilmiRoleplayMode() && empire.leader().isPacifist())
         {
             if(!e.atWar())
@@ -726,6 +729,7 @@ public class AIDiplomat implements Base, Diplomat {
                     return true;
             }
         }
+        */
         /*if(e == bestAlly())
             return true;*/
         return false;
