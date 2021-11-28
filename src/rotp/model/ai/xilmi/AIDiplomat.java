@@ -621,6 +621,16 @@ public class AIDiplomat implements Base, Diplomat {
     }
     //ail: pacts just restrict us unnecessarily
     private boolean willingToOfferPact(EmpireView v) {
+        if(UserPreferences.xilmiRoleplayMode() && empire.leader().isPacifist())
+            return true;
+        if(UserPreferences.xilmiRoleplayMode() && empire.leader().isHonorable())
+        {
+            for(Empire enemy : empire.enemies())
+            {
+                if(v.empire().warEnemies().contains(enemy))
+                    return true;
+            }
+        }
         return false;
     }
     //-----------------------------------
@@ -631,9 +641,7 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
         if (!empire.inEconomicRange(id(e)))
             return false; 
-        if (empire.atWarWith(id(e)))
-            return false;
-        if (!empire.hasTradeWith(e))
+        if (!empire.pactWith(id(e)))
             return false;
         if (empire.alliedWith(id(e)))
             return false;
@@ -704,6 +712,19 @@ public class AIDiplomat implements Base, Diplomat {
             //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" <3 "+e.name()+" ally-Popratio: "+popRatioOfAllianceAmongstContatacts(empire)+" agree when below: "+(galaxy().options().baseAIRelationsAdj() * 3.33 + personalityAllianceMod) / 100.0);
             if(popRatioOfAllianceAmongstContatacts(empire) < (galaxy().options().baseAIRelationsAdj() * 3.33) / 100.0)
                 return true;
+        }
+        if(UserPreferences.xilmiRoleplayMode() && empire.leader().isPacifist())
+        {
+            if(!e.atWar())
+                return true;
+        }
+        if(UserPreferences.xilmiRoleplayMode() && empire.leader().isHonorable())
+        {
+            for(Empire enemy : empire.enemies())
+            {
+                if(v.empire().warEnemies().contains(enemy))
+                    return true;
+            }
         }
         /*if(e == bestAlly())
             return true;*/
@@ -977,7 +998,6 @@ public class AIDiplomat implements Base, Diplomat {
     private boolean decidedToBreakAlliance(EmpireView view) {
         if (!wantToBreakAlliance(view))
             return false;
-
         view.embassy().breakAlliance();
         if (view.empire().isPlayerControlled())
             DiplomaticNotification.create(view, DialogueManager.BREAK_ALLIANCE);
@@ -985,6 +1005,11 @@ public class AIDiplomat implements Base, Diplomat {
     }
     //ail: no good reason to ever break an alliance
     private boolean wantToBreakAlliance(EmpireView v) {
+        if(UserPreferences.xilmiRoleplayMode() && empire.leader().isPacifist())
+        {
+            if(v.empire().atWar())
+                return true;
+        }
         if(!canBreakAlliance(v.empire()))
             return false;
         return false;
@@ -1001,7 +1026,9 @@ public class AIDiplomat implements Base, Diplomat {
     private boolean wantToBreakPact(EmpireView v) {
         if (!v.embassy().pact())
             return false;
-        return true;
+        if(empire.generalAI().bestVictim() == v.empire())
+            return true;
+        return false;
     }
     private boolean decidedToBreakTrade(EmpireView view) {
         if (!wantToBreakTrade(view))
@@ -1026,7 +1053,7 @@ public class AIDiplomat implements Base, Diplomat {
             if(!empire.inShipRange(v.empId()))
                 v.embassy().endWarPreparations();
         }
-        if(UserPreferences.xilmiRoleplayMode() && empire.leader().isXenophobic() && !(!empire.inShipRange(v.empId()) && empire.atWarWith(v.empId())))
+        if(UserPreferences.xilmiRoleplayMode() && empire.leader().isXenophobic() && !empire.atWarWith(v.empId()))
         {
             if(!v.embassy().diplomatGone())
                 v.embassy().recallAmbassador();
@@ -1076,10 +1103,6 @@ public class AIDiplomat implements Base, Diplomat {
             v.empire().diplomatAI().receiveOfferTrade(v.owner(), v.trade().maxLevel());
         }
         
-        if (willingToOfferAlliance(v.empire())) {
-            v.empire().diplomatAI().receiveOfferAlliance(v.owner());
-        }
-        
         decidedToExchangeTech(v);
         //Okay, this was a bit ridiculous ^^
         /*if(UserPreferences.xilmiRoleplayMode() && empire.leader().isErratic())
@@ -1091,8 +1114,11 @@ public class AIDiplomat implements Base, Diplomat {
             }
         }*/
         
-        if (willingToOfferPact(v)) {
+        if (canOfferPact(v.empire()) && willingToOfferPact(v)) {
             v.empire().diplomatAI().receiveOfferPact(empire);
+        }
+        if (canOfferAlliance(v.empire()) && willingToOfferAlliance(v.empire())) {
+            v.empire().diplomatAI().receiveOfferAlliance(v.owner());
         }
         decidedToIssuePraise(v);
     }
@@ -1374,7 +1400,7 @@ public class AIDiplomat implements Base, Diplomat {
         }
         if(reseachHasGoodROI && techLevelRank() > 1)
             warAllowed = false;
-        if(techLevelRank() > popCapRank || facCapRank() > 1)
+        if(techLevelRank() > popCapRank)
         {
             warAllowed = false;
         }
@@ -1681,10 +1707,11 @@ public class AIDiplomat implements Base, Diplomat {
         //ail: If we are not fighting our preferred target, we don't really want a war
         if(v.empire() != empire.generalAI().bestVictim())
             return true;
-        //ail: only colonies and factories relevant for war-weariness. Population and Military are merely tools to achieve our goals
-        TreatyWar treaty = (TreatyWar) v.embassy().treaty();
         //ail: If I have more than one war, we try to go to peace with everyone of our multiple enemies to increase the likelyness of at least one saying yes
         if(empire.warEnemies().size() > 1)
+            return true;
+        //ail: If I'm outteched by others I also don't really want to stick to a war anymore, except for aggressive leader as that would lead to contradictory behavior
+        if(techLevelRank() > popCapRank(empire, false) && !(UserPreferences.xilmiRoleplayMode() && empire.leader().isAggressive()))
             return true;
         boolean everythingUnderSiege = true;
         for(StarSystem sys : empire.allColonizedSystems())
