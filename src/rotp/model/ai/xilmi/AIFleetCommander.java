@@ -239,16 +239,6 @@ public class AIFleetCommander implements Base, FleetCommander {
         Galaxy gal = galaxy();
         StarSystem best = null;
         float bestScore = 0.0f;
-        List<StarSystem> mySystemsInShipRange = empire.systemsInShipRange(empire);
-        List<StarSystem> otherSystemsInShipRange = new ArrayList<>();
-        for(Empire other : empire.contactedEmpires())
-        {
-            if(empire.alliedWith(other.id))
-                continue;
-            if(!empire.inEconomicRange(other.id))
-                continue;
-            otherSystemsInShipRange.addAll(other.allColonizedSystems());
-        }
         float ourFightingBC = bcValue(fleet, false, true, false, false);
         float ourBombingBC = bcValue(fleet, false, false, true, false);
         float civTech = empire.tech().avgTechLevel();
