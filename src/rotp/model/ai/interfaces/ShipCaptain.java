@@ -25,4 +25,7 @@ public interface ShipCaptain {
     boolean wantToRetreat(CombatStack stack);
     boolean facingOverwhelmingForce(CombatStack stack);
     FlightPath pathTo(CombatStack st, int x, int y);
+    
+    //differentiation between behavior in Xilmi- and Base-AI
+    default boolean useSmartRangeForBeams() { return false; }
 }

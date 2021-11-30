@@ -334,7 +334,7 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         this.drawShadowedString(g, str, 1,  x0, y0, SystemPanel.blackText, SystemPanel.whiteText);
         int leftW = g.getFontMetrics().stringWidth(str);
         
-        if (emp.race().masksDiplomacy) {
+        if (emp.masksDiplomacy()) {
             g.setFont(narrowFont(15));
             g.setColor(SystemPanel.blackText);
             String str2 = text("RACES_DIPLOMACY_RELATIONS_UNKNOWN");
@@ -540,7 +540,7 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
  
 
         // severity
-        if (!otherEmpire.race().masksDiplomacy) {
+        if (!otherEmpire.masksDiplomacy()) {
             g.setFont(narrowFont(18));
             sw = g.getFontMetrics().stringWidth(sev);
             x0 = x4+(w4-sw)/2;
@@ -983,7 +983,7 @@ public final class RacesDiplomacyUI extends BasePanel implements MouseListener, 
         // severity
         int x2 = x+w-rightM;
         int w2 = s60;
-        if (!parent.selectedEmpire().race().masksDiplomacy) {
+        if (!parent.selectedEmpire().masksDiplomacy()) {
             g.setFont(narrowFont(18));
             int sw = g.getFontMetrics().stringWidth(sev);
             int x2a = x2+(w2-sw)/2;

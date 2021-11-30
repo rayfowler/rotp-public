@@ -221,6 +221,14 @@ public class MultiColonySpendingPane extends BasePanel implements MouseListener,
         }
         parent.repaintAll();
     }
+    public void setLock(int cat, boolean lock) {
+        List<StarSystem> systems = parent.systemsToDisplay();
+        for (StarSystem sys: systems) {
+            Colony c = sys.colony();
+            c.locked(cat, lock);
+        }
+        parent.repaintAll();
+    }
     @Override
     public void mouseClicked(MouseEvent arg0) {}
     @Override

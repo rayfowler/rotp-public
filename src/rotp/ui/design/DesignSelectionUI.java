@@ -434,6 +434,14 @@ public abstract class DesignSelectionUI extends BasePanel implements MouseListen
             case KeyEvent.VK_DOWN:
                 scrollDown();
                 break;
+            case KeyEvent.VK_HOME:
+                while(startIndex > 0)
+                    scrollUp();
+                break;
+            case KeyEvent.VK_END:
+                while(startIndex < numComponents() - MAX_LIST_SIZE)
+                    scrollDown();
+                break;
         }
     }
 }

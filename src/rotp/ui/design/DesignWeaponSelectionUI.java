@@ -75,7 +75,13 @@ public class DesignWeaponSelectionUI extends DesignSelectionUI {
     void select(int compNum)   { 
         String val = value(compNum, 1, bank);
         selectedDesign.weapon(bank, (ShipWeapon)components().get(compNum)); 
-        selectedDesign.wpnCount(bank, Integer.valueOf(val));
+        int emptyBanks = 1;
+        for(int i = bank; i >= 0; i--)
+        {
+            if(selectedDesign.weapon(i).isNone())
+                emptyBanks++;
+        }
+        selectedDesign.wpnCount(bank, Integer.valueOf(val) / emptyBanks);
     }
 }
 

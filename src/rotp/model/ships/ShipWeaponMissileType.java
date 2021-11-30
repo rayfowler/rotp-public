@@ -52,9 +52,17 @@ public class ShipWeaponMissileType extends ShipWeapon {
     @Override
     public void fireUpon(CombatStack source, CombatStack target, int count) {
         if (random() < target.autoMissPct())
+        {
+            if(target.mgr.showAnimations())
+                drawUnsuccessfulAttack(source, target);
             return;
+        }
         if (target.interceptsMissile(this))
+        {
+            if(target.mgr.showAnimations())
+                drawUnsuccessfulAttack(source, target);
             return;
+        }
 
         boolean isColony = target.isColony();
         int minDamage = minDamage();
@@ -67,8 +75,10 @@ public class ShipWeaponMissileType extends ShipWeapon {
         float totalDamage = 0;
         float damageLoss = damageLoss(source.distance);
         float shieldMod = source.targetShieldMod(this)*shieldMod();
-        for (int i=0;i<source.num;i++) {
+        boolean successfullyHit = false;
+        for (int i=0;i<count;i++) {
             if (random() <= hitPct) {
+                successfullyHit = true;
                 float damage = 0;
                 if (isColony)
                     damage = maxDamage;
@@ -77,11 +87,18 @@ public class ShipWeaponMissileType extends ShipWeapon {
 
                 // adjust dmg for missiles that lose strength as they travel
                 damage = max(0,damage-damageLoss);
-                damage = target.takeBeamDamage(damage, shieldMod);
+                damage = target.takeMissileDamage(damage, shieldMod);
                 totalDamage += damage;
             }
         }
-        if (target.mgr.showAnimations() && (totalDamage >0))
-            tech().drawSuccessfulAttack(null, target, 0, totalDamage);
+        if (target.mgr.showAnimations())
+        {
+            if(totalDamage >0)
+                tech().drawSuccessfulAttack(null, target, 0, totalDamage);
+            else if (successfullyHit)
+                drawIneffectiveAttack(source, target);
+            else
+                drawUnsuccessfulAttack(source, target);
+        }
     }
 }

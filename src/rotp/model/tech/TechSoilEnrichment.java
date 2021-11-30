@@ -32,6 +32,10 @@ public final class TechSoilEnrichment extends Tech {
         init();
     }
     @Override
+    public boolean canBeResearched(Race r)  {
+        return !r.ignoresPlanetEnvironment();  // silicoids don't research these techs
+    }
+    @Override
     public boolean promptToReallocate()     { return super.promptToReallocate() && !player().ignoresPlanetEnvironment(); }
     @Override
     public Colony.Orders followup()         { return Colony.Orders.SOIL; }

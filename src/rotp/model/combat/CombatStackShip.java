@@ -67,7 +67,7 @@ public class CombatStackShip extends CombatStack {
         origNum = num = fl.num(index);
         startingMaxHits = maxHits = design.hits();
         maxMove = design.moveRange();
-        maxShield = design.shieldLevel();
+        maxShield = m.system().inNebula() ? 0 : design.shieldLevel();
         attackLevel = design.attackLevel() + empire.shipAttackBonus();
         maneuverability = design.maneuverability();
         repulsorRange = design.repulsorRange();
@@ -186,14 +186,6 @@ public class CombatStackShip extends CombatStack {
         int missileRange = -1;
         int weaponRange = -1;
         
-        int maxX = ShipCombatManager.maxX;
-        int maxY = ShipCombatManager.maxY;
-        float maxRetreatMove = 2*tgt.maxMove; // allow 2 turns to retreat before missiles hit
-        if (maxRetreatMove > 0) {
-            // won't retreat more than the distance to the nearest corner of the map
-            float moveToCorner = min(distance(tgt.x,tgt.y,0,0), distance(tgt.x,tgt.y,0,maxY), distance(tgt.x,tgt.y,maxX,0), distance(tgt.x,tgt.y,maxX,maxY));
-            maxRetreatMove = min(maxRetreatMove, moveToCorner);
-        }
         for (int i=0;i<weapons.size();i++) {
             ShipComponent wpn = weapons.get(i);
             // if we are bombing a planet, ignore other weapons
@@ -202,14 +194,27 @@ public class CombatStackShip extends CombatStack {
                 continue;
             if (tgt.isColony() && wpn.groundAttacksOnly())
                 return 1;
-            else if (wpn.isMissileWeapon()) 
-                // missiles move by distance, not tiles, so adjust minimum range downward by sqrt(2)
-                // to account for diagonal movement
-                missileRange = (int) max(tgt.repulsorRange() + 1, repulsorRange() + 1, missileRange, ((weaponRange(wpn)/1.414f)-maxRetreatMove));
+            else if (wpn.isMissileWeapon() && roundsRemaining[i] > 0)
+            {
+                float mslRange = 1;
+                float requiredRange = 2 * tgt.maxMove * sqrt(2) - 0.7f;
+                mslRange = max(weaponRange(wpn) - requiredRange, mslRange);
+                missileRange = (int) max(tgt.repulsorRange() + 1, repulsorRange() + 1, missileRange, mslRange);
+            }
             else
-                weaponRange = max(weaponRange,weaponRange(wpn));
+            {
+                if(empire.ai().shipCaptain().useSmartRangeForBeams())
+                {
+                    if(tgt.maxFiringRange(this) > repulsorRange()) //If our enemy has a bigger range than our repulsors we close in no matter what
+                        weaponRange = 1;
+                    else
+                        weaponRange = min(repulsorRange() + 1, weaponRange(wpn)); //ail: optimal firing-range for beam-weapons should be as close as possible but still take advantage of repulsor
+                }
+                else
+                    weaponRange = weaponRange(wpn); //Use longest range for base-AI as it otherwise can't deal with repulsor-beam-ships because it doesn't have a loop around it's path-finding trying bigger ranges when range 1 is blocked
+            }
         }
-        return weaponRange < 0 ? missileRange: weaponRange;
+        return max(missileRange, weaponRange);
     }
     @Override
     public float missileInterceptPct(ShipWeaponMissileType wpn)   {

@@ -45,4 +45,5 @@ public interface Ship extends IMappedObject {
 
     public boolean isPotentiallyArmed(Empire e);
     public static Comparator<Ship> ARRIVAL_TIME = (Ship sh1, Ship sh2) -> Base.compare(sh1.arrivalTime(),sh2.arrivalTime());
+    public static Comparator<Ship> EMPIRE_ID = (Ship sh1, Ship sh2) -> Base.compare(sh1.empId(), sh2.empId());
 }

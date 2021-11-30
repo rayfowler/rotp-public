@@ -227,12 +227,6 @@ public final class ShipCombatResults implements Base {
         else
             shipsRetreated.put(d, count);
     }
-    public void refreshSystemScans() {
-        if (victor() != null)
-            victor().sv.refreshFullScan(system.id);
-        if (colonyStack != null)
-            colonyStack.empire.sv.refreshFullScan(system.id);
-    }
     public void logIncidents() {
         for (Empire e: usedBioweapons)
             BioweaponIncident.create(defender(), e, system());

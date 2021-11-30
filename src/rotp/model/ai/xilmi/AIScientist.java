@@ -74,6 +74,7 @@ import rotp.model.tech.TechSubspaceInterdictor;
 import rotp.model.tech.TechTeleporter;
 import rotp.model.tech.TechTorpedoWeapon;
 import rotp.model.tech.TechTree;
+import rotp.ui.UserPreferences;
 import rotp.ui.notifications.SelectTechNotification;
 import rotp.util.Base;
 
@@ -98,7 +99,9 @@ public class AIScientist implements Base, Scientist {
         // invoked after nextTurn() processing is complete on each civ's turn
         setDefaultTechTreeAllocations();
         //ail: This happens at the beginning before we see whether we want to switch this off. But we want accidental excess to go to research so to not waste it.
-        if(!empire.divertColonyExcessToResearch())
+        if(!empire.divertColonyExcessToResearch() && !empire.tech().researchCompleted())
+            empire.toggleColonyExcessToResearch();
+        if(empire.divertColonyExcessToResearch() && empire.tech().researchCompleted())
             empire.toggleColonyExcessToResearch();
         //ail: first I stop researching where there's no techs left
         int leftOverAlloc = 0;
@@ -236,6 +239,9 @@ public class AIScientist implements Base, Scientist {
                 }
             }
         }
+        /*for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
+            System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+empire.tech().category(j).key()+": "+empire.tech().category(j).currentTechName()+": "+empire.tech().category(j).allocationPct()+" of "+empire.totalPlanetaryResearch());
+        }*/
     }
     @Override
     public void setDefaultTechTreeAllocations() {
@@ -293,6 +299,51 @@ public class AIScientist implements Base, Scientist {
                 empire.tech().weapon().adjustAllocation(-9);
             }
         }
+        else if(UserPreferences.xilmiRoleplayMode())
+        {
+            if(empire.leader().isEcologist()) {
+                empire.tech().computer().allocation(5);
+                empire.tech().construction().allocation(5);
+                empire.tech().forceField().allocation(5);
+                empire.tech().planetology().allocation(35);
+                empire.tech().propulsion().allocation(5);
+                empire.tech().weapon().allocation(5);
+            }
+            if(empire.leader().isExpansionist()) {
+                empire.tech().computer().allocation(5);
+                empire.tech().construction().allocation(5);
+                empire.tech().forceField().allocation(5);
+                empire.tech().planetology().allocation(15);
+                empire.tech().propulsion().allocation(25);
+                empire.tech().weapon().allocation(5);
+            }
+            if(empire.leader().isIndustrialist()) {
+                empire.tech().computer().allocation(15);
+                empire.tech().construction().allocation(15);
+                empire.tech().forceField().allocation(5);
+                empire.tech().planetology().allocation(15);
+                empire.tech().propulsion().allocation(5);
+                empire.tech().weapon().allocation(5);
+            }
+            if(empire.leader().isMilitarist()) {
+                empire.tech().computer().allocation(10);
+                empire.tech().construction().allocation(10);
+                empire.tech().forceField().allocation(10);
+                empire.tech().planetology().allocation(5);
+                empire.tech().propulsion().allocation(10);
+                empire.tech().weapon().allocation(15);
+            }
+            if(empire.leader().isDiplomat()) {
+                empire.tech().computer().allocation(35);
+                empire.tech().construction().allocation(5);
+                empire.tech().forceField().allocation(5);
+                empire.tech().planetology().allocation(5);
+                empire.tech().propulsion().allocation(5);
+                empire.tech().weapon().allocation(5);
+            }
+            //Technolgist is left out on purpose. It'll go with the strengths of the race to maximize RP-usage
+        }
+        
         int futureTechs = 0;
         for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {
             if (empire.tech().category(j).studyingFutureTech()
@@ -414,7 +465,11 @@ public class AIScientist implements Base, Scientist {
 
         // return highest priority
         cat.currentTech(techs.get(0));
-        //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+cat.id()+": "+cat.currentTechName()+" "+researchPriority(techs.get(0)));
+        /*for(Tech t : techs)
+        {
+            System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+cat.id()+" option: "+t.name()+" "+researchPriority(t));
+        }
+        System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+cat.id()+" picked: "+cat.currentTechName()+" "+researchPriority(techs.get(0)));*/
     }
     //
     //  RESEARCH VALUES for various types of tech
@@ -426,6 +481,8 @@ public class AIScientist implements Base, Scientist {
             if(!ev.inEconomicRange())
                 continue;
             if(!galaxy().options().canTradeTechs(empire, ev.empire()))
+                continue;
+            if(empire.atWarWith(ev.empId()))
                 continue;
             if(ev.empire().race().internalSecurityAdj() > empire.race().spyInfiltrationAdj())
                 continue;
@@ -776,13 +833,11 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechScanner t) {
-        return 1;
+        return 2; //more important than ECM for proper attack-fleet-sizing and avoiding having to retreat
     }
     @Override
     public float baseValue(TechShipInertial t) {
-        float val = 0;
-        val += t.level();
-        return val;
+        return 1;
     }
     @Override
     public float baseValue(TechShipNullifier t) {

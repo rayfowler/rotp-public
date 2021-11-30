@@ -538,6 +538,8 @@ public final class TechCategory implements Base, Serializable {
             else
                 setTechToResearch();
         }
+        if (techIdsAvailableForResearch().isEmpty())
+            researchCompleted = true;
         return newTech;
     }
 }

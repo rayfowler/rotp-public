@@ -228,7 +228,7 @@ public class ColonyDefense extends ColonySpendingCategory {
         return missileBases() * missileBase.firepower(shield);
     }
     public int missileShieldLevel() {
-        return empire() == null ? 0 : shieldLevel() + (int) tech().maxDeflectorShieldLevel();
+        return (colony().starSystem().inNebula() || empire() == null) ? 0 : shieldLevel() + (int) tech().maxDeflectorShieldLevel();
     }
     @Override
     public float excessSpending() {

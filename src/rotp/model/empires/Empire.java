@@ -184,6 +184,7 @@ public final class Empire implements Base, NamedObject, Serializable {
         else
             return names.get(i);
     }
+    public boolean masksDiplomacy()               { return race().masksDiplomacy || ai().general().masksDiplomacy(); }
     public List<StarSystem> shipBuildingSystems() { return shipBuildingSystems; }
     public boolean inGalacticAlliance()           { return galacticAlliance; }
     public void joinGalacticAlliance()            { galacticAlliance = true; }
@@ -965,13 +966,6 @@ public final class Empire implements Base, NamedObject, Serializable {
             ai().sendTransports();
         }
 
-        // colony development (sometimes done for player if auto-pilot)
-        NoticeMessage.setSubstatus(text("TURN_COLONY_SPENDING"));
-        for (int n=0; n<sv.count(); n++) {
-            if (sv.empId(n) == id)
-                governorAI().setColonyAllocations(sv.colony(n));
-        }
-
         if (isAIControlled()) {
             ai().treasurer().allocateReserve();
             // diplomatic activities
@@ -979,6 +973,13 @@ public final class Empire implements Base, NamedObject, Serializable {
                 if ((ev != null) && ev.embassy().contact())
                     ev.setSuggestedAllocations();
             }
+        }
+        
+        // colony development (sometimes done for player if auto-pilot)
+        NoticeMessage.setSubstatus(text("TURN_COLONY_SPENDING"));
+        for (int n=0; n<sv.count(); n++) {
+            if (sv.empId(n) == id)
+                governorAI().setColonyAllocations(sv.colony(n));
         }
     }
     public String decode(String s, Empire listener) {
@@ -1266,12 +1267,9 @@ public final class Empire implements Base, NamedObject, Serializable {
         return false;
     }
     public boolean shipsCanScanTo(IMappedObject loc) {
-        if (shipScanningRange == 0)
-            return false;
-
         List<ShipFleet> fleets = galaxy().ships.allFleets(id);
         for (ShipFleet fl : fleets) {
-            if (fl.distanceTo(loc) < shipScanningRange)
+            if (fl.distanceTo(loc) <= shipScanningRange)
                 return true;
         }
         return false;
@@ -1414,7 +1412,7 @@ public final class Empire implements Base, NamedObject, Serializable {
     }
     public boolean atWar() {
         for (EmpireView v: empireViews()) {
-            if ((v != null) && v.embassy().anyWar())
+            if ((v != null) && !v.empire().extinct() && v.embassy().anyWar())
                 return true;
         }
         return false;
