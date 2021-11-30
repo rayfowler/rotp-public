@@ -1,0 +1,21 @@
+// all possible names
+name: Darlokani, Sarlokani, Spylokani, Šadelokani, Nazlokani
+
+desc1: Agresívni diplomati
+desc2: Bezkonkurenční špióni
+desc3: Darlokani, neprirodzené a tajuplné prízraky pochádzajúce z inej dimenzie.  
+
+// possible home system names
+home: Nazin, Mordor, Hades, Abyssal, Hel
+title:     Cisár
+fulltitle: Cisár
+
+// possible leader names
+leader: Darquan, Morfane, Narzina, Nazgur, Shador, Ssithra
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Hmla, Para, Iskra, Závoj, Znamenie, Éter, Záblesk
+ship2: Fatamorgána , Tieň, Sen, Ilúzia, Odraz, Vízia, Strašidlo
+ship3: Fantóm, Prízrak, Zjavenie, Odtieň, Duch, Panika, Poltergeist
+ship4: Nočná mora, Vidina, Teror, Horor, Navrátilec, Smrtka, Strach
+

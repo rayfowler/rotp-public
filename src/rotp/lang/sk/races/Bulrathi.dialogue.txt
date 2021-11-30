@@ -1,0 +1,86 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Bulrathi specific dialogue
+
+CONTACT_AGGRESSIVE         | Som veľvyslanec impéria [my_race_akuzativ]. Radím vám, aby ste boli úctivý voči veľkému hierarchovi, malá ríša [your_race_akuzativ]. Stačí, aby povedal slovo, a váš druh zahynie pod náporom takej zúrivosti, akú si ani neviete predstaviť.
+CONTACT_RUTHLESS           | Také malé stvorenia ste! Potrebujete vedieť len dve veci: po prvé, voláme sa „[my_race_plural]“, a po druhé, že odpor voči nám iba urýchli vašu smrť!
+CONTACT_ERRATIC            | My z impéria [my_race_akuzativ] vás pozdravujeme, drobčekovia. Náš osud leží tam niekde medzi týmito roztrúsenými svetmi a plápolajúcimi hviezdami. Bude zaujímavé sledovať ako do toho všetkého zapadá vaša rasa.
+//
+GREETING_01                | Konali ste so cťou, a tak budeme konať aj my, aby sme si vás uctili. Povedz nám, čo potrebuješ, priateľko. 
+GREETING_04                | Hovorte rýchlo, malá ríša [your_race_akuzativ]. Neopovážte sa nás obalamutiť falošnými sľubmi a nevýhodnými dohodami.
+GREETING_07                | Prísť a dokonca odvážiť sa prehovoriť svedčí o veľkej odvahe na takú malú bytosť. Táto odvaha vám zatiaľ zaručuje bezpečnosť.
+
+DECLAREWAR_HATE_01         | Malí [your_race_plural] žijúci na svojich malých bezvýznamných svetoch so svojimi malými malichernými plánmi. [my_title] je unavený z vášho neustáleho zasahovania. Zosielame na vás zlobu, ktorú isto neprežijete!
+DECLAREWAR_HATE_02         | Už toho bolo dosť! Osud nášho ľudu je predurčený vo hviezdach. Nenecháme sa zbrzdiť takými naničhodníkmi ako ste vy!
+DECLAREWAR_HATE_03         | Pripravte sa na boj, ničomní [your_race_plural]! Ukážeme vám, že krutosť je jediná sila, ktorá prináša víťazstvo na bojisku!
+DECLAREWAR_ERRATIC_01      | Múdrosť filozofov môže zmiasť tých, ktorí ju nedokážu pochopiť. Keď naši najmúdrejší povedia, aby bojovníci zaútočili, oni samozrejme bez rozmyslu poslúchnu.
+DECLAREWAR_ERRATIC_02      | Každá vec má v tomto vesmíre svoj čas a miesto. Vojna a mier, život a smrť, tí čo vládnu a poddaní. Pre nás je čas na útok a pre vás je čas na obranu.
+DECLAREWAR_ERRATIC_03      | Už ste niekedy žasli nad osudom, pán veľvyslanec? Má zvláštny spôsob, ako urobiť skutočným to, čo sa zdá nemožné. Vyskúšajme čo nám i vám osud predučil.
+DECLAREWAR_MILITARY_01     | Silní vždy získajú korisť. [my_race_plural] sme najsilnejší, a tak získame korisť bez ohľadu na to, komu patrí.
+DECLAREWAR_MILITARY_02     | Nato aký sú vaši ľudia krehkí, tak bojujú dobre, veľvyslanec. Zistíme, ako dobre budú bojovať, keď sa na nich vrhne celá sila [my_race_akuzativ]!
+DECLAREWAR_MILITARY_03     | Táto galaxia patrí mocným a silným. Naša sila nedovolí, aby ju zatienila tá vaša. Dobre si bráňte svoje svety, inak vám ich zoberieme!
+DECLAREWAR_ALLIANCE_01     | Náš spojenec  nás požiadal o pomoc! Ukážeme vám aj [defender_race_dativ] skutočnú silu [my_race_akuzativ]!
+DECLAREWAR_ALLIANCE_02     | Vediete vojnu proti nášmu spojencovi. Asi si neuvedomujete, že tým vediete vojnu automaticky i proti nám. Z tohto boja váš ľud nevyjde ako víťaz, pán veľvyslanec. S tým si buďte istý.
+DECLAREWAR_ALLIANCE_03     | Aj pri všetkej svojej sile nemáte proti [defender_race_dativ] žiadnu šancu, ak sa k nim pridáme my! Pripravte sa zomrieť!
+DECLAREWAR_SPYING_01       | Taká zlomyseľnosť! Ale keďže obývate tak malé telá, nemáte na výber iba pokúšať sa o úskoky. Na bojovom poli nemáte žiadnu šancu a to vám práve v tento moment ukážeme.
+DECLAREWAR_SPYING_02       | Takí malí a nejde vám špionáž? Mali by ste vašich špiónov povesiť na rahne. Za ich prešľapy totiž zaplatíte svojím životom! 
+DECLAREWAR_SPYING_03       | Myslíte, že sme príliš slabí na to, aby sme reagovali vaše podlé pokusy o špionáž? Ukážeme vám, ako veľmi ste sa mýlili!
+DECLAREWAR_ATTACK_01       | Ak ste tak veľmi chceli bojovať stačilo pekne poprosiť, milí [your_race_plural]. Všetko, čo je vám vzácne rozdrvíme na prach pred vašimi očami!
+DECLAREWAR_ATTACK_02       | Tak drzo a bez hany na nás zaútočiť. Akoby ste boli oveľa silnejší, než v skutočnosti ste. Chvályhodné, ale nakoniec vám to bude osudné.
+DECLAREWAR_ATTACK_03       | Nech sa tak stane! Je síce pravda, že nás prevyšujete počtom, no i tak nakoniec zistíte, že sme silnejší!
+DECLAREWAR_OPPORTUNITY_01  | Naši ľudia vždy hľadajú príležitosti na zdokonalenie svojich bojových schopností a vaši ľudia sa môžu ukázať ako dôstojná výzva. Uistite sa, že nás zabavíte dostatočne dlho, aby sme na váš druh v našich kronikách spomínali len v dobrom.
+DECLAREWAR_ASSASSIN_01     | Nič iné sme nečakali: rasa, ktorá je tak fyzicky slabá, že sa musí uchýliť k zabitiu neozbrojeného veľvyslanca, aby na seba vôbec upozornila. Modlite sa k akýmkoľvek bohom, ktorých vzývate, lebo sa postaráme o to, aby toto bol posledný boj vašej rasy.
+
+OFFER_PEACE_01             | Váš ľud bojuje dobre, maličký. V tejto vojne sa už prelialo veľa krvi. Sme pripravení zanechať naše spory z minulosti a ísť cestou mieru. Samozrejme, iba v prípade, že i vy ste na to dostatočne odvážni.
+OFFER_TRADE_01             | Zdá sa, že to, čo vám chýba na veľkosti, vynahrádzate svojou vynaliezavosťou. Naši ľudia navrhujú výmenu [amt] BC ročne v nádeji, že obchod bude pre nás oboch výhodnejší ako akýkoľvek konflikt.
+OFFER_PACT_01              | My [my_race_plural] máme rôzne názory na mnohé rasy, s ktorými sme sa stretli. [my_title] ma rád váš druh a veľmi ho baví. Želá si, aby ste s nami podpísali pakt o neútočení, aby sme v budúcnosti mohli predísť zbytočným sporom. 
+OFFER_ALLIANCE_01          | Hoci sme v boji neporovnateľne silnejší, nie sme takí barbari, že zahodíme dobré vzťahy s vami len aby sme pocítili vzrušenie z víťazstva. Malý veľvyslanec, uzavrime spojenectvo a stretnime sa na bojisku ako priatelia, nie ako nepriatelia.
+//
+WARN_TRESPASSING_01        | Vaša prítomnosť v systéme [system] nás začala obťažovať. Bolo by múdre, keby ste odišli skôr, ako náš rozzúrite.  
+WARN_EXPANSION_01          | Zabrať územie je právom iba tých najsilnejších. Varujeme vás pred ďalšou expanziou, maličký, pokiaľ nechcete, aby sme bránili budúce územie ríše [my_race_akuzativ] skôr, než sa formálne stane naším. 
+WARN_BUILDUP_01            | Vesmír je divadlom pre zbabelcov: skutočnú odvahu možno preukázať len na povrchu planéty. Hoci sa vaša flotila rozrastá, nemôžete ju použiť na to, aby ste sa skryli pred naším hnevom. Ukončite rozrastanie vašej flotily.
+WARN_SKIRMISH_01           | Potýčka v systéme [system] je pre nás iba malý rušivá element. Už nás viac neobťažujte, inak vás rozdrvíme ako škodnú, ktorou sa evidentne  veľmi túžite stať!
+WARN_ATTACKED_01           | Žalostný prejav žalostnej rasy! Ďakujte vašim bohom, pretože [defender_title] má dôležitejšie veci na práci, než vašu mizernú demonštráciu sily. No pamätajte, ak si želáte vojnu, radi vám v budúcnosti vyhovieme. 
+WARN_INVADED_01            | Ha! Taká odvaha od takého malého národa. Opustite naše územie, maličkí, skôr než urobíte niečo, čo budete neskôr ľutovať. 
+WARN_ESPIONAGE_01          | Zbabelci! Plížiť sa medzi [victim_race_instrumental] ako chomkaty, ktoré unikajú zo svojich tunelov. Buďte nám vďační, že sme vášho špióna nerozdrapili na kúsky. Nabudúce už nebudeme tak milosrdný ! [framed]
+WARN_SABOTAGE_01           | Prečo sa nám nepostavíte v boji, maličkí? Bojovať s rasou, ktorá je tak bojazlivá, že sa spolieha iba na tie svoje sabotáže, by nás pravdepodobne nudilo. Ale ak sa o to pokúsite ešte raz možno tú nudu pretrpíme, len aby sme sa vás zbavili! [forced]
+WARN_BIOWEAPON_01          | Použiť biologickú zbraň proti tým, ktorí sa nemôžu brániť, je vrcholným prejavom zbabelosti! Váš ľud bude znášať túto hanbu až do konca existencie vašej ríše, maličkí: nič, čo urobíte už túto hanbu nikdy nevymaže.  
+WARN_GENOCIDE_01           | [victim_race_plural] boli slabí a krehkí. Pre túto galaxiu nepredstavujú žiadnu veľkú stratu. No znepokojuje nás, že za ich vyhynutie môže tak bezvýznamný národ, ako je ten váš.
+WARN_FINAL_WAR_01          | Obdivujeme odvahu tých, ktorí sa snažia postaviť proti celej galaxii, ktorá sa rozhodla zjednotiť v mieri. Vašu odvahu si zapíšeme do našich dejín, maličkí, potom čo vás rozdrvíme do posledného potomka! 
+WARN_COUNCIL_VOTE_01       | Táto rada je iba zhromaždenie prostoduchých hlupákov. Hlupákov, ktorí radšej diskutujú o svojich sťažnostiach, než aby ich riešili ako bojovníci! Ale to, že tak pohŕdame týmito rokovaniami, neznamená, že vám odpustíme, že ste stáli proti nám!
+WARN_OATHBREAKER_01        | Maličkí! Porušiť sľub je najväčšia hanba! Vieme, že váš druh je slabý na tele, ale že i vaše slovo je tak slabé, že nemá žiadnu cenu, tak to nás teda prekvapilo! [spiesCaught]
+WARN_ATTACKED_ALLY_01      | Maličkí [defender_race_plural] sú pod našou ochranou! Zastavte útok a okamžite napravte škody, ktoré ste napáchali. Inak zomriete našou rukou skôr, než si uvedomíte, čo ste spôsobili!
+WARN_REBELLING_AGAINST_01    | Veľký Hierarcha je jediný vládca hoden trónu Galaktickej rady! Nikdy nebudeme akceptovať ako ste si ho uzurpoval!
+//
+PRAISE_COUNCIL_VOTE_01     | Ha! Ten ich pohľad v tvári, keď ste sa postavili na našu stranu bol veľmi zábavný. Ale teraz už vedia, kde leží skutočná sila, a my ďakujeme našim malým priateľom, že ste im to mohli ukázať! 
+PRAISE_COUNCIL_VOTE_02     | Je dosť únavné, keď ste počas týchto stretnutí nútení znášať bľabotanie hlupákov. Či už ste nám dnes pomohli pretože ste chceli ukončiť tie prázdne debaty, alebo preto, že ste si vedomí našej moci, uznávame, čo ste dnes urobili.
+PRAISE_COUNCIL_VOTE_03     | Zaujali ste nás, maličkí. Pre váš ľud je dobré, že ste sa dnes rozhodli uznať našu silu. Pre vaše dobro dúfam, že tak budete pokračovať naďalej. 
+
+PRAISE_ATTACKED_ENEMY_01   | Ha ha! Rád vás vidím na bojisku priatelia! Rozdrvíme  tieto úbohé bytosti [defender_race_akuzativ]! Nech sa utopia v krvi, ktora zaplaví všetky ich svety! 
+PRAISE_ATTACKED_ENEMY_02   | Ó, dnes to bude skvelá bitka, maličkí! Ukážte, ako viete bojovať proti [defender_race_dativ], a my vám preukážeme náležitú úctu!  
+PRAISE_ATTACKED_ENEMY_03   | Je evidentné, že proti [defender_race_dativ] bojujete len preto, že to robíme aj my. Napriek tomu, to že sa boju úplne nevyhýbate vás ctí... možno sme vás predsa len zle odhadli.
+
+PRAISE_TRADE_01            | Naša obchodná dohoda bola pre obe naše rasy veľmi výhodná, priateľko. Dôvera je veľmi vzácna komodita a my vám budeme dôverovať iba dovtedy, pokým sa neminie.
+PRAISE_TRADE_02            | Vojna je síce najvzrušujúcejší spôsob napredovania, ale nie jediný, ako dokazuje naša obchodná dohoda. Kiež by pokračovala, aby sa obom našim národom darilo! 
+
+PRAISE_REBELLING_WITH_01   | Ha ha! Takže vy si vážne myslíte, že sa môžte postaviť galaxii sám? Snáď ste si nemysleli, že si taký úžasný boj necháme ujsť? Nehádžte flintu do žita, lebo [my_race_plural] stoja pri vás!
+
+ACCEPT_TRADE_01            | Múdrosť vašich rokovaní vynahradí nedostatok vašej fyzickej veľkosti, malý [your_race]! Ríša s vami odteraz bude každoročne obchodovať za [amt] BC.
+RESPOND_IGNORE_THREAT_01   | Hahaha, a prečo by sme mali počúvať hrozby od takých maličkých bytostí? Utekajte a budte radi, že dnes máme takú zhovievavú náladu!
+RESPOND_STOP_SPYING_01     | Tie chomkaty, ktoré používame na špehovanie, boli chytené? Aha. No dobre, tak nám ich vráťte a teda aj našich špiónov a my sa postaráme, aby vás už viac neobťažovali.
+RESPOND_STOP_ATTACKING_01  | Flotily nášho impéria sú desivé, však? Nebojte sa, maličkí, naša malá ukážka splnila zamýšľaný cieľ a pre teraz ich odvoláme.
+
+
+

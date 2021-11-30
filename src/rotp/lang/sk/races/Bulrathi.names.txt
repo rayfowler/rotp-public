@@ -1,0 +1,21 @@
+// all possible names
+name: Bulrati, Medveďani, Ursinati, Tlabkani, Grizliati
+
+desc1: Útoční ekológovia
+desc2: Ohromní bojovníci
+desc3: Až prehnane oddaná rasa Bulratov si u svojho kráľa-filozofa cení nielen obrovskú silu, ale hlavne múdrosť.
+
+// possible home system names
+home: Ursa, Canis, Grizla, Pandara, Bruin
+
+title:     Veľký hierarcha
+fulltitle: Veľký hierarcha
+
+// possible leader names
+leader: Bullux, Durpp, Grunk, Krungo, Monch, Smurch
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Tlapka, Hliadka, Pazúrik, Tesák, Zub, Diviak, Medvediak
+ship2: Lovec, Gladiátor, Strážca, Rybár, Sledovač, Mäsožravec, Panda
+ship3: Bitkár, Surovec, Dravec, Zastrašovač, Zabijak, Opatrovateľ, Ochranca
+ship4: Grizly, Kat, Nosorožec, Kodiak, Ničiteľ, Kerberos, Drvič

@@ -1,0 +1,88 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Human specific dialogue
+
+CONTACT_HONORABLE          | [your_title] [your_name]! Sme [my_race_plural] a veľmi sa tešíme, že s vami môžeme nadviazať kontakt. Ak budete čokoľvek potrebovať od nášho triumvirátu, neváhajte sa opýtať.
+CONTACT_PACIFIST           | Srdečne vás pozdravujem, [your_name]. Vy ste [your_name]? Zastupujem rasu nazývanú [my_race_plural] a dúfam, že toto bude prvý z mnohých priateľských rozhovorov medzi našimi rasami.
+CONTACT_ERRATIC            | Ľudia na Zemi zvyčajne radšej riešia svoje problémy vyjednávaním a diplomaciou. Ak však vaši ľudia uprednostňujú náhodou násilnejšie metódy, veľmi radi vám vyhovieme, milí [your_race_plural].
+//
+GREETING_01                | Ach, veľvyslanec! [your_race_plural] sú vždy vítaní! Môžem vám priniesť nejaké jedlo alebo pitie? Urobte si pohodlie a povedzte mi, čo pre vás môžeme dnes urobiť.
+GREETING_04                | Dobrý deň! Požadujete niečo od triumvirátu? Nie som si istý či môžem vašu požiadavku odovzdať triumvirom, ale možno potrebujete niečo, čím by sa nemuseli zaoberať priamo oni?
+GREETING_07                | Veľvyslanec, vitajte! Čo presne od nás chcete? Najlepšie by bolo nežiadať o nič príliš nerozumné.
+//
+DECLAREWAR_HATE_01         | Triumvirát vám s radosťou ukáže, prečo by ste nemali dráždiť rasu, ktorej sila prevyšuje tú vašu. Táto lekcia vám bude dobrou príručkou... Ak ju samozrejme prežijete.
+DECLAREWAR_HATE_02         | Je mi smutno, keď si spomeniem na všetok ten čas, ktorý sme premárnili tým, že sme sa s vami „hrali na milých“, hoci nám bola súdená dlhú a krvavá vojna.
+DECLAREWAR_HATE_03         | Nemá zmysel ďalej hrať túto šarádu! Už máme dosť zdieľania priestoru s vami. Z tejto galaxie vás jednoducho vymažeme! Bez ohľadu na to, akú cenu budeme musieť zaplatiť!
+
+DECLAREWAR_ERRATIC_01      | V poslednom čase sa veľa hovorí o tom, že naša armáda zlenivela a zpohodlnela. No tak dúfame, že vojna s vami ich opäť naštartuje, aby sa pripravili na nebezpečnejších nepriateľov triumvirátu.
+DECLAREWAR_ERRATIC_02      | Pán veľvyslanec, už ste niekedy počuli o našich bojových hrách? Zinscenovaných bitkách, v ktorých proti sebe staviame naše sily za účelom výcviku. No a my dúfame, že skutočná vojna s vašimi ľuďmi by vlastne mohla byť pre tento cieľ oveľa prospešnejšia. 
+DECLAREWAR_ERRATIC_03      | Nič tak nezjednocuje obyvateľstvo ako spoločný nepriateľ, veľvyslanec! Ak nechcete slúžiť našim záujmom prostredníctvom diplomacie, môžete nám byť užitočný aspoň ako terč nenávisti nášho ľudu.
+DECLAREWAR_MILITARY_01     | Bolo by lepšie, keby ste súhlasili s odstúpením vášho územia diplomatickou cestou. Váš odmietavý postoj nás prinúti sa zaoberať alternatívnym postupom, ktorý vás bude o to viac bolieť. 
+DECLAREWAR_MILITARY_02     | Ako dobre viete, rastúca populácia si vyžaduje neustále sa rozširujúce územie, aby mohla uspokojiť rastúce potreby na zdroje. A práve nastal čas, aby sme sa rozšírili. Nepríjemnou zhodou okolností územie, ktoré potrebujeme, je vaše. Aká náhoda.
+DECLAREWAR_MILITARY_03     | Triumviri sú oddaní ľuďom rovnako, ako ľudia sú oddaní triumvirom. Ak naše potreby vyžadujú, aby sme kolonizovali vaše svety, s radosťou za to položia svoje životy!
+//
+DECLAREWAR_ALLIANCE_01     | Existuje mnoho spôsobov, ako zapôsobiť na svojich spojencov, pán veľvyslanec. Vaše odstránenie určite zvýši naše postavenie u [other_race_akuzativ], takže sa pokúste predviesť dobrú šou, dobre?
+DECLAREWAR_ALLIANCE_02     | Triumvirát nikdy neopustí svojich spojencov, aby čelil nepriateľom sám! Naši ľudia a [other_race_plural] sú spolu nepremožiteľný. Nemáte proti nám žiadnu nádej!
+DECLAREWAR_ALLIANCE_03     | To, že máte silnú armádu, neznamená, že sa môžte promenádovať po galaxií akoby bola vaša. My a [other_race_plural] sa už spoločne postaráme o to, aby ste boli potrestaní za vaše zločiny!
+//
+DECLAREWAR_SPYING_01       | Zdá sa, že ste si mysleli, že vám takáto zákerná taktika prejde len vďaka našej dobrosrdečnosti a preferencií riešiť veci diplomatickou cestou. Nebojte sa! Ukážeme vám, akú veľkú chybu ste urobili!
+DECLAREWAR_SPYING_02       | Pre nás oboch by bolo lepšie, keby ste boli rovnako oddaní diplomacii ako my. Na vaše lstivé útoky sme sa rozhodli odpovedať trocha... tradičnejším spôsobom boja.
+DECLAREWAR_SPYING_03       | Verili sme, že diplomaciu vidíte ako prostriedok na dosiahnutie cieľov a súhlasíte s našimi názormi. Keďže však máte očividne nečestné úmysly, obávam sa, že nemáme inú možnosť, ako reagovať týmto spôsobom.
+//
+DECLAREWAR_ATTACK_01       | Dosť bolo už tejto diplomatickej šarády! Útoky na nás len dokazujú, že vaša existencia nám už nie je na osoh. Nebojte sa! V našich učebniciach histórie vyhradíme jednu malú stránku pre vašich ľudí.
+DECLAREWAR_ATTACK_02       | Nepodceňujte armádu triumvirátu! Ak chcete bojovať, tak boj aj dostanete, veľvyslanec!
+DECLAREWAR_ATTACK_03       | Ľudstvo prešlo mnohými temnými obdobiami, ale zakaždým sme z nich vyšli silnejší a múdrejší ako predtým. Veľvyslanec, uisťujem vás, že i tentoraz to nebude inak.
+//
+DECLAREWAR_OPPORTUNITY_01  | Každý čin by mal slúžiť k dosiahnutia cieľov, veľvyslanec. Zvyčajne radšej používame diplomaciu, ale keďže ste nám k ničomu, rozhodli sme sa, že rýchla vojna s vami lepšie poslúži našim cieľom.
+DECLAREWAR_ASSASSIN_01     | Bol som šokovaný, keď som sa dozvedel, že zdanlivo inteligentná rasa môže urobiť niečo také ohavné, ako je zabitie veľvyslanca. Urobíme z vás príklad, aby už žiadna ríša nikdy nepodnikla taký ohavný čin proti triumvirátu ako vy!
+
+OFFER_PEACE_01             | Vidíte na vlastné oči, že vojny prinášajú len smútok. Zastavme toto bláznovstvo a bezbrehé zabíjanie. Dosť už bolo preliatej krvi [your_race] a [my_race]. Pridajte sa k nám, aby sme ukončili túto vojnu a vytvorili novú budúcnosť. Budúcnosť, na ktorú môžu byť naše deti hrdé!
+OFFER_TRADE_01             | U nás doma sa hovorí, že „vojna je nevyhnutná“, ale už dávno sme sa naučili, že tam, kde vládne blahobyt, sa to nikdy nenaplní. Spojme sa v úsilí o dosiahnutie blahobytu. Začneme od, povedzme, [amt] BC ročne? 
+OFFER_PACT_01              | Obaja vieme, že keď sa impériá rozšíria po celej galaxii, vojny sa môžu začať úplnou náhodou. Posledná vec, ktorú si triumvirát želá, je vojna s tak príkladným národom ako je váš. Pakt o neútočení umožní obom našim ľuďom ľahšie odpočívať v noci. Nemyslíte? 
+OFFER_ALLIANCE_01          | [your_race_plural] sú naozaj úžasní! Veľvyslanec, práve ma napadla myšlienka: formalizujme spojenectvo medzi [your_race_instrumental] a [my_race_instrumental]. Spoločne môžeme naučiť chamraď tejto galaxie, že jedinou cestou vpred je diplomacia a nie násilie! 
+
+WARN_TRESPASSING_01        | Veľvyslanec, zdá sa, že vaša flotila zaujala pozíciu v našom priestore. Určite viete, že to nemôžeme dovoliť? Odstráňte svoju flotilu a my zabudneme, že sa to vôbec stalo.  
+WARN_EXPANSION_01          | Hoci triumvirát chce rešpektovať vôľu vášho ľudu, nemôže zatvárať oči pred vašou agresívnou expanziou. Som si istý, že v mene zachovania našich dobrých diplomatických vzťahov s tým prestanete. Všakže, pán veľvyslanec? 
+WARN_BUILDUP_01            | Veľvyslanec, prosím! Naši velitelia sú rozrušení z nedávneho posilovania vašich flotíl! Žiadam vás, spomaľte výstavbu vašich lodí a ukážte tým vojenským gumám, že ich obavy sú neopodstatnené! 
+WARN_SKIRMISH_01           | Práve som dostal pochmúrnu správu o potýčke medzi loďami nášho triumvirátu a flotilou patriacou [your_empire_dativ]. Prosím, postarajte sa, aby sa to už nikdy neopakovalo, inak sa obávam, že vojna bude v budúcnosti neodvratnou!
+WARN_ATTACKED_01           | Veľvyslanec neni dobre, to naozaj nie je dobre. Zaútočiť na nás v systéme [system]... čo ste tým chceli dosiahnuť? Snažím sa držať armádu na uzde kvôli záväzku voči diplomacii, ale ak budete takto pokračovať, nič nezmôžem. 
+WARN_INVADED_01            | Naši generáli sú rozzúrení poslednou akciou vašich ľudí! Napadli ste systém [system] a oni sú pripravení ísť do boja! Musíte to okamžite zastaviť! Nesnažíte sa snáď rozpútať vojnu?! 
+WARN_ESPIONAGE_01          | Môjmu ľudu nie je špehovanie cudzie. Do našej kultúry preniklo už pred stáročiami počas mnohých krutých vojen. Akékoľvek opakované pokusy o krádež našich tajomstiev sa v budúcnosti stretnú s odvetou! [framed]
+WARN_SABOTAGE_01           | Špionáž by sme ešte ako tak pochopili, ale sabotáž?! Urobím, čo budem môcť, aby som generálov upokojil. Ak sa však o niečo podobné pokúsite znova, pochybujem, že vám v budúcnosti budem môcť alebo budem ochotný pomôcť. [forced]
+WARN_BIOWEAPON_01          | Dozvedel som sa, že ste použili biologickú zbraň na civilistov v systéme [system]. Úprimne povedané, nemám slov. Pre dobro našich diplomatických vzťahov urobím, čo budem môcť, ale nemôžem povedať, že som nadšený z toho, aká bude reakcia triumvirátu. 
+WARN_GENOCIDE_01           | Čo ste to urobili?! Krásna a starobylá kultúra je navždy stratená! Desím sa, keď si pomyslím, ako na túto správu zareagujú triumviri: genocída [victim_race_akuzativ] je absolútnym protikladom našej filozofie! 
+WARN_FINAL_WAR_01          | Galaxia sa konečne rozhodla spojiť a usilovať sa o mier, ale práve vy ste sa rozhodli vzdorovať nášmu demokraticky zvolenému postupu? Po všetkých tých rokovaniach a ja som sa vo vás tak zmýlil. Ale viem, že tento omyl sa čoskoro napraví! 
+WARN_COUNCIL_VOTE_01       | Priznávam, že som sklamaný z vášho konania v rade, pán veľvyslanec. Dúfam, že z vašej strany išlo o jedinú chybu a nebudeme okolo toho robiť veľký rozruch.
+WARN_OATHBREAKER_01        | Dôvera je základom každej diplomacie, pán veľvyslanec. Tým, že ste porušili svoje slovo, ste našu pošlapali našu dôveru. Ubezpečujem vás, že naše diplomatické vzťahy dostali ranu, z ktorej sa už pravdepodobne nikdy nespamätajú. [spiesCaught]
+WARN_ATTACKED_ALLY_01      | Veľvyslanec, dôrazne vám neodporúčam ďalšie útoky na [defender_race_akuzativ]. Prisahali sme im spojenectvo a ani ja nebudem schopný udržať našu armádu na uzde, ak budete pokračovať v násilí!
+WARN_REBELLING_AGAINST_01  | Nie je možné, aby ste boli zvolený do čela Galaktickej rady! Triumviri budú zúriť! Obávam sa, že vojnu budú považovať za jedinú zostávajúcu možnosť! 
+//
+PRAISE_COUNCIL_VOTE_01     | Veľvyslanec, priateľ môj! Chcel som ti len povedať: dnes sa ti v rade darilo! Triumvirát si vždy váži tých, ktorí podporujú naše ciele, a teší nás, že taký veľkolepý spojenec, ako ste vy, si toto uznanie naďalej získava. 
+PRAISE_COUNCIL_VOTE_02     | Aaaa, veľvyslanec. Som rád, že som vás zastihol, ešte pred prerušením rokovania. Som rád, že vaša viera v ideály triumvirátu je taká silná! Keď sa vrátite domov, určite sa ozvite, aby sme mohli posilniť naše diplomatické vzťahy!
+PRAISE_COUNCIL_VOTE_03     | Takže ste za nás predsa len volili? Som rád, že ste konečne prišli k rozumu. Ak ste ochotný vynaložiť úsilie na nadviazanie nových diplomatických vzťahov s triumvirátom, možno sa za vás prihovorím. 
+
+PRAISE_ATTACKED_ENEMY_01   | Nepochybujem o tom, že [defender_race_plural] čakali, že triumvirát s nimi bude raz bojovať vo vojne. Čo však isto nečakali je, že sa pridajú aj naši priatelia [your_race_plural]! Spoločne im ukážeme, prečo sú diplomacia a dôvera tými najdôležitejšími nástrojmi, ktoré musí človek ovládať! 
+PRAISE_ATTACKED_ENEMY_02   | Dnes je dobrý deň na boj, pán veľvyslanec. Radšej sa priatelíme za oveľa pokojnejších okolností, ale ak vojna proti [defender_race_dativ] znamená začiatok dlhého priateľstva medzi mojím a vaším ľudom, potom je to nepochybne vojna, ktorá stojí za to! 
+PRAISE_ATTACKED_ENEMY_03   | Triumvirát je viac než schopný postaviť sa každému nepriateľovi, ktorý pohŕda našimi pokusmi o mierové vzťahy. Ak však trváte na tom, že sa do tohto boja zapojíte, berieme to ako akt dobrej vôle a neurobíme nič, čo by vám stálo v ceste!
+
+PRAISE_TRADE_01            | Tak toto je to, o čom to celé je! Dobrí priatelia a prosperujúce obchodné dohody majú väčšiu cenu ako nepriatelia a ničivé vojny! Som rád, že si vaši ľudia zvolili za priateľov práve nás, a som si istý, že triumviri to cítia presne rovnako! 
+PRAISE_TRADE_02            | Áno, základom diplomacie je dôvera, ale vzájomne výhodný obchod určite nikdy nie je na škodu, však? Dúfam, že v našej dohode budeme pokračovať na neurčito, a že sa objavia ďalšie spôsoby, ako si obojstranne pomáhať. Ako my ľudia radi hovoríme, aby sa cap nažral, i kapusta ostala celá.“ 
+
+PRAISE_REBELLING_WITH_01   | Nebojte sa, veľvyslanec! Aj my poznáme, čím rada je: skorumpovanou diktatúrou, ktorá sa tvári ako mierové spolužitie. Budeme vystupovať ako jeden celok a nezastavíme sa, kým sa týchto despotov raz a navždy nezbavíme! 
+
+ACCEPT_TRADE_01            | Táto obchodná dohoda bude prínosom pre nás oboch, pán veľvyslanec. [my_empire] a [your_empire], priatelia do výšky [amt] BC ročne! To má pekný zvuk, nemyslíte?
+RESPOND_IGNORE_THREAT_01   | Táto vaša hrozba je určite nejaký žart? Áno, áno, žart! Haha, veľmi zábavné, pán veľvyslanec!
+RESPOND_STOP_SPYING_01     | No toto je nepríjemná záležitosť. Triumvirát odmieta akúkoľvek vedomosť o tomto nečestnom agentovi, ktorý špehoval vašich ľudí z vlastnej iniciatívy. Prosím, navráťte nám ho a ja vás ubezpečujem, že sa to už nebude opakovať. Celá vec bude rázne prešetrená.
+RESPOND_STOP_ATTACKING_01  | Je to stará tradícia nášho ľudu, ktorú nazývame „rinčanie šabľou.“ Považujte rinčanie šable za dostatočné, veľvyslanec: naše flotily sa k nám nateraz vrátia.

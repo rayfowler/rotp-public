@@ -1,0 +1,1983 @@
+// This is the label text file for Remnants of the Precursors
+// comment lines should start with '/'  they are ignored
+//  
+// the format for each line is   key | label
+//    where 'key' is the code used by the game to retrieve the label
+//    You cannot create new keys! The game will not use them
+//    You can only use keys that the game is looking for.
+//
+// Large number formatting
+NUM_FORMAT_THOUSANDS              | %1k
+NUM_FORMAT_MILLIONS               | %1M
+NUM_FORMAT_BILLIONS               | %1B
+
+// Star descriptions
+RED_STAR_DESCRIPTION              | Červené hviezdy sú staré a nevýrazné. Obiehajú ich planéty zvyčajne chudobné na prírodné zdroje.
+YELLOW_STAR_DESCRIPTION           | Žlté hviezdy ponúkajú najlepšiu šancu na objavenie planét pozemského typu.
+ORANGE_STAR_DESCRIPTION           | Oranžové hviezdy sú stredne jasné a je na nich možné objaviť širokú škálu planetárnych typov.
+BLUE_STAR_DESCRIPTION             | Modré hviezdy sú relatívne mladé hviezdy s planétami bez života, no bohatými na prírodné zdroje.
+WHITE_STAR_DESCRIPTION            | Biele hviezdy sa vyznačujú vysokou svietivosťou a spravidla nehostinnými planétami.
+PURPLE_STAR_DESCRIPTION           | Výskyt neutrónových hviezd je zriedkavý, no ponúkajú najväčšiu šancu objaviť planéty bohaté na prírodné zdroje.
+
+// Planet Types
+PLANET_ARID                       | Vyprahnutá
+PLANET_BARREN                     | Neplodná
+PLANET_DEAD                       | Mŕtva
+PLANET_DESERT                     | Púštna
+PLANET_INFERNO                    | Ohnivá
+PLANET_JUNGLE                     | Prales
+PLANET_MINIMAL                    | Minimálna
+PLANET_NONE                       | Žiadna
+PLANET_OCEAN                      | Oceán
+PLANET_RADIATED                   | Rádioaktívna
+PLANET_STEPPE                     | Step
+PLANET_TERRAN                     | Pozemská
+PLANET_TOXIC                      | Jedovatá
+PLANET_TUNDRA                     | Tundra
+
+// Spy Missions
+SPY_HIDE                          | Schovať
+SPY_ESPIONAGE                     | Špionáž
+SPY_SABOTAGE                      | Sabotáž
+SPY_CAUGHT                        | [Vaši špióni boli prichytení pri čine.]
+SPY_FRAMED                        | [Boli ste krivo obvinený.]
+SPY_FORCED_CONFESSION             | [Vynútené falošné doznanie.]
+SPY_WARNING                       | [Boli ste varovaný.]
+
+ARID_DESC_BIOLOGICAL              | Vyprahnuté planéty sú suché svety pozemského typu. Majú obmedzenú vegetáciu a obsah vodnej plochy je menší ako 40 percent.
+BARREN_DESC_BIOLOGICAL            | Neplodné planéty sú suché, prašné svety s tenkou atmosférou a bez povrchovej vody.
+DEAD_DESC_BIOLOGICAL              | Mŕtve planéty sú studené svety pozemského typu bez života s tenkou atmosférou a bez povrchovej vody.  
+DESERT_DESC_BIOLOGICAL            | Púštne planéty sú suché svety pozemského typu s veľmi riedkou vegetáciou a s vodnou plochou menšou ako 20 percent.
+INFERNO_DESC_BIOLOGICAL           | Ohnivé planéty sú mimoriadne horúce svety s hustou atmosférou a zúrivými búrkami.
+JUNGLE_DESC_BIOLOGICAL            | Planéty pralesového typu sú tropické svety pokryté hustými lesmi, džungľami a močiarmi.
+MINIMAL_DESC_BIOLOGICAL           | Planéty s minimálnou podporou života sú pusté svety na pokraji obývateľnosti.
+NONE_DESC_BIOLOGICAL              | Systémy plné asteroidov bez akýchkoľvek planetárnych formácií.
+OCEAN_DESC_BIOLOGICAL             | Oceánske planéty sú takmer úplne pokryté vodou, čo často sťažuje prístup ku zdrojom.
+RADIATED_DESC_BIOLOGICAL          | Rádioaktívne planéty sú neživé svety bez atmosféry neustále bombardovené žiarením z okolitých hviezd.
+STEPPE_DESC_BIOLOGICAL            | Stepné planéty sú chladnejšie suchozemské svety, ktorým dominujú kruté zimy a arktické prostredie.
+TERRAN_DESC_BIOLOGICAL            | Planéty pozemského typu sú planéty s rôznorodými teplotnými pásmami, ktoré podporujú širokú škálu biómov.
+TOXIC_DESC_BIOLOGICAL             | Jedovaté planéty sú zamrznuté svety s chladnými ekosystémami založenými na metáne.
+TUNDRA_DESC_BIOLOGICAL            | Planéty tundry sú suchozemské svety uväznené v období doby ľadovej.
+
+// Planet Specials
+PLANET_ARTIFACTS                  | Artefakty
+PLANET_ULTRA_POOR                 | Veľmi chudobná
+PLANET_POOR                       | Chudobná
+PLANET_RICH                       | Bohatá
+PLANET_ULTRA_RICH                 | Mimoriadne bohatá
+PLANET_HOSTILE                    | Nehostinná
+PLANET_FERTILE                    | Úrodná
+PLANET_GAIA                       | Raj
+
+// Planet Descriptors for Race
+PLANET_HOMEWORLD                  | [alien_race_adjective] domovina
+PLANET_WORLD                      | [alien_race_adjective] kolónia
+PLANET_COLONY                     | [alien_race_adjective] kolónia
+PLANET_ORION                      | Orion
+PLANET_ORION_GUARDIAN             | Strážca
+
+// Nebula names  ("starName" Nebula)
+NEBULA_NAME                       | hmlovina %1 
+NEBULA_ID                         | NGC %1
+
+// %2 is the leader's actual name
+TITLE_LEADERNAME                  | [alien_nameTitle] %2
+
+// Extended Colony Name prefix when we run out of names
+COLONY_NAME_2                     | Nový %1
+COLONY_NAME_3                     | Vonkajší %1
+COLONY_NAME_4                     | Ďaleký %1
+COLONY_NAME_5                     | Vzdialený %1
+
+// Space Monster Names
+SPACE_AMOEBA                      | Kozmická améba
+SPACE_CRYSTAL                     | Kozmický kryštál
+ORION_GUARDIAN                    | Strážca Orionu
+
+// Personality types (adjective)
+LEADER_ERRATIC                    | Nepredvídatelní
+LEADER_PACIFIST                   | Mierumilovní
+LEADER_HONORABLE                  | Čestní
+LEADER_RUTHLESS                   | Krutí
+LEADER_AGGRESSIVE                 | Agresívní
+LEADER_XENOPHOBIC                 | Xenofóbni
+
+// Leader Objective Types (noun)
+LEADER_DIPLOMAT                   | diplomati
+LEADER_MILITARIST                 | militaristi
+LEADER_ECOLOGIST                  | ekológovia
+LEADER_INDUSTRIALIST              | priemyselníci
+LEADER_EXPANSIONIST               | expanzionisti
+LEADER_TECHNOLOGIST               | technológovia
+// Leader Personality & Objective displayed together
+LEADER_PERSONALITY_FORMAT         | %1 %2
+
+// Technology names and descriptions 
+TECH_COMPUTERS                    | Počítače
+TECH_CONSTRUCTION                 | Strojárstvo
+TECH_FORCE_FIELDS                 | Silové polia
+TECH_PLANETOLOGY                  | Planetológia
+TECH_PROPULSION                   | Pohon
+TECH_WEAPONS                      | Zbrane
+
+// Random Events
+EVENT_ACCIDENT                    | Kolónia v systéme [system] patriacia [target_race_dativ] bola zasiahnutá veľkou priemyselnou nehodou. Priemyselý odpad ničí krehký ekosystém a povrch planéty zahlcuje rádioaktivita.
+EVENT_ASSASSINATION               | Atentát na [victim_race_adjective_akuzativ] diplomata spáchaný teroristom z ríše [assassin_race_akuzativ] uvrhol obe ríše na pokraj vojny.
+EVENT_COMET                       | V systéme [system] sa objavila obrovská kométa, ktorá sa o [years] rokov zrazí so svetom, ktorý obývajú [target_race_plural]. Pokiaľ nebude nasadená dostatočne veľká flotila, tento svet je odsúdený na zánik.
+EVENT_COMET_2                     | Očakáva sa, že obrovská kométa vyhladí všetkých [target_race_akuzativ] v systéme [system] za [years] rokov. Na odvrátenie tejto katastrofy je potrebných viac ozbrojených lodí.
+EVENT_COMET_3                     | Kométa v systéme [system] bola zničená vďaka úsiliu flotily patriacej [target_race_dativ].
+EVENT_COMET_4                     | Smrtiaca kométa zničila kolóniu obývanú [target_race_instrumental] v systéme [system].
+EVENT_DONATION                    | Bohatý obchodník je ochotný podporiť správnu vec. [target_race_dativ] venuje značný dar vo výške [amt] BC.
+EVENT_DEPLETED                    | [target_race_adjective] kolónia v systéme [system] vyčerpala všetky zdroje ťažkých kovov. Štatút nerastného bohatstva planéty bol preklasifikovaný na „chudobný.“
+EVENT_DERELICT                    | Flotila [target_race_akuzativ] narazila na vrak prastarej lode. Vedcom sa podarilo úspešne získať viacero zbraňových systémov a technológií silových polí. 
+
+EVENT_EARTHQUAKE                  | Ničivé zemetrasenie zasiahlo kolóniu obývanú [target_race_instrumental] v systéme [system]. Veľké oblasti priemyselnej činnosti boli zničené a o život prišlo [amt] miliónov kolonistov.
+EVENT_ENRICHED                    | Obrovské, predtým nezistené, ložisko ťažkých kovov bolo objavené pri hĺbkovom prieskume v systéme [system]. Svete patriaceho [target_race_dativ]. Štatút nerastného bohatstva planéty bol preklasifikovaný na „bohatý.“
+EVENT_FERTILE                     | Náhly posun na planetárnej osi [target_race_adjective_akuzativ] systému [system] zmenil jeho prostredie tak, že planéta je oveľa úrodnejšia. Rast populácie sa zvyšuje o 50 percent.
+EVENT_PIRACY                      | Piráti začali narúšať obchod v ríši [target_race_akuzativ]. Celkové výnosy z obchodu sa znížili o [amt] precent. V systéme [system] sú potrebné ozbrojené lode, aby sa pirátom postavili.
+EVENT_PIRACY_2                    | Piráti usadení v systéme [system] naďalej [target_race_dativ] narušujú ich obchodnú aktivity. Znižujú celkovú úroveň obchodu o odhadovaných [amt] percent.
+EVENT_PIRACY_3                    | [target_race_adjective] flotila zničila pirátsku základňu v systéme [system]. Úroveň obchodu sa vrátila do normálu.
+
+EVENT_PLAGUE                      | Kolónia patriaca [target_race_dativ] v systéme [system] zasiahla smrtiacia pandémia. V systéme bola zavedená karanténa. Očakáva sa, že každý rok zomrú milióny ľudí, pokým vedci nenájdu liek.
+EVENT_PLAGUE_2                    | Pandémia v systéme [system] pretrváva. Vedci odhadujú, že na nájdenie lieku je potrebných ďalších [amt] BV.
+EVENT_PLAGUE_3                    | Vedci [target_race_akuzativ] objavili liek na smrtiaciu chorobu, ktorá zasiahla systém [system]. Karanténa systému bola zrušná.
+EVENT_REBELLION                   | Svet pod doterajšou kontrolou [target_race_akuzativ] v systéme [system] sa vzbúril. Produkcia na planéte bola zastavená. Vzbura bude pokračovať, pokým nebude povstanie vojensky potlačené.
+EVENT_SUPERNOVA                   | Vedci [target_race_akuzativ] predpovedajú, že hviezda v systéme [system] sa stane supernovou do [years] rokov. Odporúčajú sústrediť výskum v systéme na hľadanie riešenia. 
+EVENT_SUPERNOVA_2                 | Hrozba výbuchu supernovy v systéme [system] o [years] rokov naďalej pretrváva. Vedci odhadujú, že na zabránenie tejto katastrofe bude stačiť ďalších [amt] BV.
+EVENT_SUPERNOVA_3                 | Fyzici [target_race_akuzativ] v systéme [system] našli spôsob ako oddialiť supernovu neďalekej hviezdy.
+EVENT_SUPERNOVA_4                 | Hviezda v systéme [system] sa stala supernovou. Radiácia zdevastovala životné prostredie tohto [target_race_adjective_akuzativ] sveta a milióny obyvateľov prišlo o život.
+
+EVENT_VIRUS                       | Silný počítačový vírus zasiahol výskumné centrá [target_race_akuzativ]. Zasiahnutý výskum: [technology]. Roky výskumu boli stratené. 
+EVENT_SPACE_AMOEBA                | Obludná forma života prezývaná „vesmírna améba“ sa približuje k systému [system]. Kolonisti na planéte patriacej [victim_race_dativ] a blízke flotily sa pripravujú na najhoršie. 
+EVENT_SPACE_AMOEBA_1              | Obludná forma života prezývaná „vesmírna améba“ sa približuje k systému [system].
+EVENT_SPACE_AMOEBA_2              | [victim_race_adjective] kolónia v systéme [system] bola pohltená vesmírnou amébou.
+EVENT_SPACE_AMOEBA_3              | Vesmírna améba bola zničená flotilou [defender_race_akuzativ] v systéme [system].
+EVENT_SPACE_CRYSTAL               | K systému [system] sa blíži obrovská kryštalická entita prezývana „vesmírny kryštál.“ Kolonisti a flotily [victim_race_akuzativ] sa pripravujú na najhoršie.
+EVENT_SPACE_CRYSTAL_1             | K nekolonizovanému systému [system] sa blíži gigantická kryštalická entita nazývaná „vesmírny kryštál.“
+EVENT_SPACE_CRYSTAL_2             | Všetok život v kolónii patriacej [victim_race_dativ] v systéme [system] úplne zničil vesmírny kryštál.
+EVENT_SPACE_CRYSTAL_3             | Vesmírny kryštál bol zničený [victim_race_instrumental] v systéme [system].
+
+SYSEVENT_HOMEWORLD                | [alien_race_adjective] domovina.
+SYSEVENT_SCOUTED                  | Objavená [alien_race_instrumental].
+SYSEVENT_COLONIZED                | Kolonizovaná [alien_race_instrumental].
+SYSEVENT_CAPTURED                 | Obsadená vojenskými silami [alien_race_akuzativ].
+SYSEVENT_ABANDONED                | Opustená [alien_race_instrumental].
+SYSEVENT_DESTROYED                | Zbombardovaná [alien_race_adjective_instrumental] orbitálnymi jednotkami.
+SYSEVENT_DESTROYED_MONSTER        | Zničená (%1).
+SYSEVENT_DESTROYED_UNKNOWN        | Kolónia zničená.
+SYSEVENT_ATMOSPHERE_TERRAFORMED   | Atmosféra planéty bola teraformovaná.
+SYSEVENT_SOIL_ENRICHED            | Pôda planéty sa stala úrodnou.
+SYSEVENT_GAIA_TERRAFORMING        | Planéta bola premenená na raj.
+SYSEVENT_REBELLION                | V kolónii vypukla vzbura.
+SYSEVENT_COMET                    | Do planéty narazila kométa.
+SYSEVENT_PLAGUE                   | Smrteľná nákaza zachvátila celú planétu.
+SYSEVENT_PLAGUE_ENDED             | Nákaza, ktorý sužovala planétu, sa skončila.
+SYSEVENT_ENRICHED                 | Na planéte boli objavené obrovské ložiská vzácnych minerálov.
+SYSEVENT_DEPLETED                 | Ložiská minerálov na planéte boli vyčerpané.
+SYSEVENT_ACCIDENT                 | Obrovská priemyselná havária otrávila planétu radiáciou.
+SYSEVENT_SUPERNOVA                | Supernova zasiahla planétu obrovskou dávkou radiácie.
+
+
+// Diplomatic Incident titles & descriptions
+INC_ASSASSINATION_TITLE           | Atentát
+INC_ASSASSINATION_DESC            | Terorista pochádzajúci z ríše [assassin_race_akuzativ] spáchal atentát na [victim_race_adjective_akuzativ] diplomata.
+INC_ATTACKED_ALLY_TITLE           | Spojenec pod útokom
+INC_ATTACKED_ALLY_DESC            | [attacker_race_plural] zaútočili na [defender_race_akuzativ], spojencov [my_race_akuzativ].
+INC_ATTACKED_ENEMY_TITLE          | Nepriateľ pod útokom
+INC_ATTACKED_ENEMY_DESC           | [attacker_race_plural] zaútočili na [defender_race_akuzativ], nepriateľov [my_race_akuzativ].
+INC_USED_BIOWEAPONS_TITLE         | Nasadenie biologických zbraní v boji
+INC_USED_BIOWEAPONS_DESC          | [attacker_race_plural] v systéme [system] použili biologické zbrane proti [victim_race_dativ]. 
+INC_KILLED_MONSTER_TITLE          | %1
+INC_KILLED_MONSTER_DESC           | [monster] a [your_empire_lowercase] sa utkali v boji. Vašim víťazstvom ste ukončili galaktickú hrozbu, ktorá sužovala všetky ríše.
+INC_KILLED_GUARDIAN_TITLE         | Strážca Orionu
+INC_KILLED_GUARDIAN_DESC          | Strážca Orionského systému bol porazený [your_race_instrumental]. Mnohé tajomstvá prastarej civilizácie boli odhalené.
+INC_NO_RELATIONS_TITLE            | Žiadne diplomatické vzťahy
+INC_NO_RELATIONS_DESC             | [your_empire] a [my_empire_lowercase] sú v súčasnosti bez akýchkoľvek diplomatických vzťahov.
+INC_ALLIED_WITH_ENEMY_TITLE       | Spojenectvo s nepriateľom
+INC_ALLIED_WITH_ENEMY_DESC        | [my_empire] namieta proti vášmu spojenectvu s rasou [other_race_akuzativ].
+INC_AT_WAR_WITH_ALLY_TITLE        | Vo vojne so spojencom
+INC_AT_WAR_WITH_ALLY_DESC         | Ste vo vojne s [other_race_instrumental], spojencami [my_race_akuzativ].
+INC_CLOSED_EMBASSY_TITLE          | Veľvyslanec odvolaný 
+INC_CLOSED_EMBASSY_DESC           | [your_race_plural] ukončili diplomatické vzťahy s [my_race_instrumental].
+INC_EVICTED_SPIES_TITLE           | Diplomati vyhostení 
+INC_EVICTED_SPIES_DESC            | [your_race_plural] vyhostili všetkých diplomatov za ríšu [my_race_akuzativ].
+INC_BROKE_ALLIANCE_TITLE          | Spojenectvo vypovedané
+INC_BROKE_ALLIANCE_DESC           | Ríša [your_race_akuzativ] zrušila spojenectvo s [my_race_instrumental]. [spiesCaught]
+INC_BROKE_PACT_TITLE              | Porušenie paktu o neútočení
+INC_BROKE_PACT_DESC               | Ríša [your_race_akuzativ] porušila pakt o neútočení s [my_race_instrumental]. [spiesCaught]
+INC_BROKE_TRADE_TITLE             | Vypovedanie obchodnej dohody
+INC_BROKE_TRADE_DESC              | Ríša [your_race_akuzativ] vypovedala obchodnú dohodu s [my_race_instrumental].
+INC_ATTACKED_COLONY_TITLE         | Napadnutá kolónia
+INC_ATTACKED_COLONY_DESC          | Flotila [attacker_race_akuzativ] zaútočila na systém [system] patriaci [defender_race_dativ]. O život prišlo asi [amt]mil. obyvateľov.
+INC_CAPTURED_COLONY_TITLE         | Obsadená kolónia
+INC_CAPTURED_COLONY_DESC          | Vojská [attacker_race_akuzativ] napadli a obsadili svet [defender_race_akuzativ] v systéme [system].
+INC_DESTROYED_COLONY_TITLE        | Zdevastovaná kolónia
+INC_DESTROYED_COLONY_DESC         | Flotila [attacker_race_akuzativ] úplne zničila svet [defender_race_akuzativ] v systéme [systeme]. O život prišlo [amt]mil. občanov.
+INC_FIRST_CONTACT_TITLE           | Prvý kontakt
+INC_FIRST_CONTACT_DESC            | Bol nadviazaný prvý kontakt s rasou [your_race_akuzativ]. Buďte opatrní.
+INC_INVADED_COLONY_TITLE          | Napadnutá kolónia
+INC_INVADED_COLONY_DESC           | Vojská [attacker_race_akuzativ] napadli svet [defender_race_akuzativ] v systéme [system], ale nepodarilo sa im ho obsadiť. Strata [amt]mil. občanov.
+INC_COUNCIL_VOTE_TITLE            | Hlasovanie v Galaktickej rade
+INC_COUNCIL_VOTE_FOR_DESC         | [voter_race hlasoval za [candidate_name], lídra [candidate_race].
+INC_COUNCIL_VOTE_AGAINST_DESC     | [voter_race] hlasoval proti [candidate_name], lídrovi [candidate_race].
+INC_COUNCIL_ABSTAIN_DESC          | [voter_race] sa zdržal hlasovania vo voľbách do Galaktickej rady a odmietol hlasovať za [candidate_name], vodcu [candidate_race].
+
+INC_DECLARED_WAR_TITLE            | Vyhlásenie vojny
+INC_DECLARED_WAR_DESC             | [aggressor_race_plural] vyhlásili vojnu [victim_race_dativ].
+INC_ERRATIC_WAR_TITLE             | Nevyspytateľné správanie
+INC_ERRATIC_WAR_DESC              | [aggressor_race_plural] sa rozzúrili a vyhlásili vojnu [victim_race_dativ]. Nikto si nie je istý prečo.
+INC_DEMANDED_TRIBUTE_TITLE        | Požiadavka o dar
+INC_ENCROACHING_TITLE             | Zásah do hraničných práv
+INC_ENCROACHING_DESC              | [your_race_plural] kolonizovali systém [system] a tým zasiahli do hraníc [my_race_akuzativ].
+INC_TECH_STOLEN_TITLE             | Krádež technológie
+INC_TECH_STOLEN_DESC              | Špióni [spy_race_akuzativ] ukradli [victim_race_dativ] tajomstvá: [tech] .
+INC_TECH_FRAMED_DESC              | Neznámi špióni ukradli [victim_race_dativ] technológie (boli ste falošne obvinení).
+INC_TECH_EXCHANGE_TITLE           | Zobchodovaná technológia
+INC_TECH_EXCHANGE_DESC            | [my_race_plural] sa dohodli s [your_race_instrumental] na výmene technológií. [techGiven] za [techReceived].
+INC_FINANCIAL_AID_TITLE           | Finančná výpomoc
+INC_FINANCIAL_AID_DESC            | [your_race_plural] dobrovoľne poskytli [amt] BC [my_race_dativ].
+INC_TECHNOLOGY_AID_TITLE          | Technologická výpomoc
+INC_TECHNOLOGY_AID_DESC           | [your_race_plural] sa dobrovoľne podelili s [my_race_instrumental] o tajomstvá: [tech].
+INC_TECHNOLOGY_AID_DESC_MULT      | [your_race_plural] sa dobrovoľne podelili s [my_race_instrumental] o tajomstvá: [techs].
+INC_TECHNOLOGY_TECH_LIST_COMMA    | , 
+INC_ENEMY_AID_TITLE               | Výpomoc nepriateľom
+INC_ENEMY_AID_MONEY_DESC          | [your_race_plural] darovali [amt] BC ako subvencie [enemy_race_dativ], Naším nepriateľom.
+INC_ENEMY_AID_TECH_DESC           | [your_race_plural] odovzdali [enemy_race_dativ] tajomstvá [tech]. Naším nepriateľom.
+INC_PARANOIA_TITLE                | Paranoja
+INC_PARANOIA_DESC1                | Skupina radikálnych konšpirátorov rasy [my_race_akuzativ] absurdne verí, že [your_race_plural] predstavujú existenčnú hrozbu pre ich druh. [your_race_plural] teraz okupujú [num] systémov, ktoré pôvodne založilo [my_race_plural].
+INC_PARANOIA_DESC2                | Bezvýznamná frakcia v rámci rasy [my_race_akuzativ] verí, že [your_race_plural] predstavujú existenčnú hrozbu pre ich druh. [your_race_plural] teraz okupujú [num] systémov, ktoré pôvodne založili [my_race_plural].
+INC_PARANOIA_DESC3                | Hlasná menšina rasy [my_race_akuzativ] vyjadruje obavy, že [your_race_plural] predstavujú existenčnú hrozbu pre ich druh. [your_race_plural] teraz okupujú [num] systémov, ktoré pôvodne založili [my_race_plural].
+INC_PARANOIA_DESC4                | Majorita rasy [my_race_akuzativ] vyzýva k akcii kvôli rastúcim obavám, že [your_race_plural] môže byť pre ich druh skutočne existenčnou hrozbou. [your_race_plural] okupujú [num] systémov, ktoré pôvodne založili [my_race_plural].
+INC_PARANOIA_DESC5                | [my_race_akuzativ] zachvátila masová panika z toho, že [your_race_plural] sa zjavne stali existenčnou hrozbou pre ich druh. [your_race_plural] teraz okupujú [num] systémov, ktoré pôvodne založili [my_race_plural].
+
+INC_EXPANSION_TITLE               | Expanzia
+INC_EXPANSION_DESC                | S kontrolou nad [num] systémami sa [your_race_plural] príliš rozrástli.
+INC_GENOCIDE_TITLE                | Genocída
+INC_GENOCIDE_DESC                 | Rasa [attacker_race_akuzativ] úplne vyhladila rasu [victim_race_akuzativ].
+INC_FINAL_WAR_TITLE               | Vojna všetkých vojen!
+INC_FINAL_WAR_DESC                | [rebel_race_plural] sa vzbúrili proti rozhodnutiu o vláde Galaktickej rady, čo viedlo k výzve k ich úplnému vyhladeniu zostávajúcimi spojeneckými silami galaxie.
+INC_MILITARY_BUILDUP_TITLE        | Zhromažďovanie vojenských síl
+INC_MILITARY_BUILDUP_DESC         | [your_race_plural] zhromažďuje flotilu v systéme [system].
+INC_OATHBREAKER_TITLE             | Porušenie prísahy
+INC_DESTROYED_BASES_TITLE         | Zničené raketové základne
+INC_DESTROYED_BASES_DESC          | Sabotéri pracujúci pre [spy_race_akuzativ] zaútočili na raketové základne v systéme [system]. Počet zničených veží: [amt]
+INC_DESTROYED_FACTORIES_TITLE     | Zničené továrne
+INC_DESTROYED_FACTORIES_DESC      | Sabotéri pracujúci pre [spy_race_akuzativ] zaútočili na továrne v systéme [system]. Počet zničených tovarní: [amt]
+INC_INCITED_REBELLION_TITLE       | Podnecovanie vzbury
+INC_INCITED_REBELLION_DESC        | Secesionisti pracujúci pre [spy_race_akuzativ] podnecujú rebelov v systéme [system]. Počet ľudí v miliónoch na strane rebelov: [amt]
+INC_SIGNED_ALLIANCE_TITLE         | Spojenectvo
+INC_SIGNED_ALLIANCE_DESC          | [my_race_plural] a [your_race_plural] sa spojili do aliancie a sľúbili si, že sa budú navzájom brániť. 
+INC_JOINT_WAR_TITLE               | Vyhlásenie vojny
+INC_LEFT_ALLIANCE_TITLE           | Spojenectvo odvolané
+INC_SIGNED_PACT_TITLE             | Pakt o neútočení
+INC_SIGNED_PACT_DESC              | [my_race_plural] a [your_race_plural] podpísali pakt o neútočení, ktorým sa vyhýbajú konfliktom lodí v neutrálnych systémoch.
+INC_SIGNED_PEACE_TITLE            | Mierová zmluva
+INC_SIGNED_PEACE_DESC             | [my_race_plural] a [your_race_plural] podpísali mierovú zmluvu, ktorá prikazuje ukončiť všetky nepriateľské akcie do roku [endYear].
+INC_SIGNED_TRADE_TITLE            | Obchodná dohoda
+INC_SIGNED_TRADE_DESC             | [my_race_plural] a [your_race_plural] súhlasili s obchodnou dohodou v hodnote [amt] BC.
+
+INC_SKIRMISH_TITLE                | Vojenský konflikt
+INC_SKIRMISH_DESC                 | Flotila [my_race_akuzativ] bojuje proti flotile [your_race_akuzativ] v systéme [system].
+INC_SPY_CONFESSION_TITLE          | Špión sa priznal
+INC_SPY_CONFESS_ESPIONAGE_DESC    | Špión vyslaný [spy_race_instrumental] bol zajatý a priznal sa k plánovanej špionáži proti [victim_race_dativ].
+INC_SPY_CONFESS_SABOTAGE_DESC     | Špión vyslaný [spy_race_instrumental] bol zajatý a priznal sa k plánovaným sabotážam proti [victim_race_dativ].
+INC_SPY_CAPTURED_DESC             | Špión vyslaný [spy_race_instrumental] bol zajatý a donútený sa priznať k špionáži proti [victim_race_dativ].
+INC_TRADE_INCOME_TITLE            | Zisk z obchodovania
+INC_TRADE_INCOME_DESC             | Výsledkom obchodu medzi [your_race_instrumental] a [my_race_instrumental] je zisk [amt] BC.
+INC_TRESPASSING_TITLE             | Nedovolené prekročenie hraníc
+INC_TRESPASSING_DESC              | Flotily patriace [your_race_dativ] neoprávnene vstúpili do systému [system]. Ten je súčasťou ríše [my_race_akuzativ].
+
+// generic click to skip or continue messages
+CLICK_SKIP                        | Kliknite alebo stlačte kláves Esc na preskočenie animácie
+CLICK_CONTINUE                    | Kliknite alebo stlačte kláves Esc...
+CLICK_EXIT                        | Kliknite alebo stlačete kláves Esc pre koniec...
+BUTTON_EXIT                       | Ukončiť
+
+// GAME/SETUP UI 
+GAME_TITLE_LINE_1                 | REMNANTS
+GAME_TITLE_LINE_2                 | of the
+GAME_TITLE_LINE_3                 | PRECURSORS
+GAME_DISCUSS_ONLINE               | Online diskusia
+GAME_MENU_CONTINUE                | Pokračovať v hre
+GAME_MENU_NEW_GAME                | Nová hra
+GAME_MENU_LOAD_GAME               | Nahrať hru
+GAME_MENU_SAVE_GAME               | Uložiť hru
+GAME_MENU_SETTINGS                | Nastavenia
+GAME_MENU_EXIT                    | Opustiť hru
+GAME_MENU_RESTART                 | Reštart hry
+GAME_VERSION                      | Verzia: %1
+GAME_SHRINK                       | Zmenšiť -
+GAME_ENLARGE                      | Zväčšiť
+
+// Game Settings UI
+GAME_SETTINGS_TITLE               | Herné nastavenia
+GAME_SETTINGS_DESCRIPTION         | Jednotlivé nastavenia hry môžete meniť kliknutím myšou. 
+GAME_SETTINGS_EXIT                | Naspäť
+GAME_SETTINGS_DEFAULT             | Obnoviť pôvodné nastavenia
+GAME_SETTINGS_DISPLAY_MODE        | Režim zobrazenia: %1
+GAME_SETTINGS_WINDOWED            | V okne
+GAME_SETTINGS_BORDERLESS          | Bez okraja
+GAME_SETTINGS_FULLSCREEN          | Celá obrazovka
+GAME_SETTINGS_DISPLAY_MODE_DESC   | Vyžaduje reštart hry. Mód v okne umožňuje meniť veľkosť okna pri zachovaní formátu obrazovky. Bez okraja umožňuje vyplniť obrazovku. Režim celej obrazovky zaberá celú plochu obrazovky a beží v popredí.
+GAME_SETTINGS_GRAPHICS            | Úroveň grafických detailov: %1
+GAME_SETTINGS_GRAPHICS_LOW        | Nízka
+GAME_SETTINGS_GRAPHICS_MED        | Stredná
+GAME_SETTINGS_GRAPHICS_HIGH       | Vysoká
+GAME_SETTINGS_GRAPHICS_DESC       | Nastavuje grafickú úroveň hry. Stredná: Vyhladzovanie (Anti-Aliasing) obrázkov je vypnuté. Nízka: Animácie sú vypnuté.
+GAME_SETTINGS_TEXTURES            | Textúry: %1
+GAME_SETTINGS_TEXTURES_NO         | Nie
+GAME_SETTINGS_TEXTURES_INTERFACE  | Užívateľské rozhranie
+GAME_SETTINGS_TEXTURES_MAP        | Mapa galaxie
+GAME_SETTINGS_TEXTURES_BOTH       | Užívateľské rozhranie a mapa
+GAME_SETTINGS_TEXTURES_DESC       | Umožnuje prepínať použitie textúr na mape galaxie alebo na obrazovkách užívateľského rozhrania.
+GAME_SETTINGS_SENSITIVITY         | Citlivosť prekreslovania myši: %1
+GAME_SETTINGS_SENSITIVITY_HIGH    | Vysoká
+GAME_SETTINGS_SENSITIVITY_MEDIUM  | Stredná
+GAME_SETTINGS_SENSITIVITY_LOW     | Nízka
+GAME_SETTINGS_SENSITIVITY_DESC    | Prepína medzi možnosťami s akou rýchlosťou mapa galaxie reaguje na pohyb myši pri prekreslovaní displeja obrazovky.
+GAME_SETTINGS_MEMORY              | Zobraziť využitie pamäte: %1
+GAME_SETTINGS_MEMORY_YES          | Áno
+GAME_SETTINGS_MEMORY_NO           | Nie
+GAME_SETTINGS_MEMORY_DESC         | Prepína medzi možnosťou zobrazenia štatistiky využitia pamäte v pravom dolnom rohu obrazovky. 
+GAME_SETTINGS_SOUNDS              | Zvukové efekty: %1
+GAME_SETTINGS_SOUNDS_OFF          | Vypnuté
+GAME_SETTINGS_SOUNDS_ON           | %1/10
+GAME_SETTINGS_SOUNDS_DESC         | Kliknutím myšou vypnete alebo zapnete zvukové efekty v hre. Hlasitosť môžete znížiť alebo zvýšiť použitím kolieska na myši.
+GAME_SETTINGS_SOUNDS_DISABLED     | Vypnuté
+GAME_SETTINGS_SOUNDS_ERR_DESC     | Zvukové efekty vypnuté pre chybu: %1
+GAME_SETTINGS_MUSIC               | Hudba: %1
+GAME_SETTINGS_MUSIC_OFF           | Vypnutá
+GAME_SETTINGS_MUSIC_ON            | %1/10
+GAME_SETTINGS_MUSIC_DESC          | Kliknutím myšou vypnete alebo zapnete hudbu v hre. Hlasitosť môžete znížiť alebo zvýšiť použitím kolieska na myši.
+GAME_SETTINGS_AUTOCOLONIZE        | Kolonizovať: %1
+GAME_SETTINGS_AUTOCOLONIZE_YES    | Automaticky
+GAME_SETTINGS_AUTOCOLONIZE_NO     | Vždy spýtať
+GAME_SETTINGS_AUTOCOLONIZE_DESC   | Umožňuje automaticky pomenovať a osídliť planétu ihneď pri pristátí kolonizačnej lode. Pomáha ušetriť čas pri veľmi velkých mapách galaxie.
+GAME_SETTINGS_AUTOBOMBARD         | Bombardovanie: %1
+GAME_SETTINGS_AUTOBOMBARD_NO      | Vždy spýtať
+GAME_SETTINGS_AUTOBOMBARD_NEVER   | Nebombardovať
+GAME_SETTINGS_AUTOBOMBARD_YES     | Vždy bombardovať
+GAME_SETTINGS_AUTOBOMBARD_WAR     | Iba v prípade vojny
+GAME_SETTINGS_AUTOBOMBARD_INVADE  | Vojna bez invázie
+GAME_SETTINGS_AUTOBOMBARD_DESC    | Prepína medzi možnosťami riadenia bombardovania. Vždy vyzvať na bombardovanie , nebombardovať, vždy bombardovať, automaticky bombardovať, keď je vojna alebo, keď nie sú invázne sily na ceste na obežnú dráhu.
+GAME_SETTINGS_BACKUP_OFF          | Vypnúť
+GAME_SETTINGS_BACKUP_ON           | Každé %1 kolá
+GAME_SETTINGS_BACKUP              | Záloha: %1
+GAME_SETTINGS_BACKUP_DESC         | Umožňuje pravidelne ukladať súčasnú hru do záložnej zložky pod jedinečným názvom.
+GAME_SETTINGS_SAVEDIR             | Zložka uložených hier: %1
+GAME_SETTINGS_SAVEDIR_DEFAULT     | Prednastavená
+GAME_SETTINGS_SAVEDIR_CUSTOM      | Úžívateľská
+GAME_SETTINGS_SAVEDIR_DESC1       | Uložené hry sa nachádzajú v rovnakej zložke ako hra.
+GAME_SETTINGS_SAVEDIR_DESC2       | Uložené hry sa nachádzajú v zložke: %1
+
+// Load Game UI
+LOAD_GAME_TITLE                   | Nahrať hru
+LOAD_GAME_AUTOSAVE                | Posledná automaticky uložená pozícia
+LOAD_GAME_BACKUP_DIR              | Zložka záloh: %1 files
+LOAD_GAME_SAVE_DIR                | Zložka uložených hier: %1 s
+LOAD_GAME_FILENAME                | Zoradiť podľa názvu súboru
+LOAD_GAME_DATE                    | podľa dátumu
+LOAD_GAME_SIZE                    | podľa velkosti
+LOAD_GAME_LOADING                 | Nahrávam...
+LOAD_GAME_BAD_VERSION             | Nedokážem nahrať uloženú hru: %1. Súbor môže byť poškodený alebo z nepodporovanej verzie.
+LOAD_GAME_CANCEL                  | Zrušiť
+LOAD_GAME_OK                      | Nahrať
+LOAD_GAME_TOO_LONG                | ...
+
+// Save Game UI
+SAVE_GAME_TITLE                   | Uložiť hru
+SAVE_GAME_FILENAME                | Zoradiť podľa názvu súboru
+SAVE_GAME_DATE                    | podľa dátumu
+SAVE_GAME_SIZE                    | podľa velkosti
+SAVE_GAME_SAVING                  | Ukladám...
+SAVE_GAME_CANCEL                  | Zrušiť
+SAVE_GAME_OK                      | Uložiť
+
+// Intro UI
+INTRO_BEGIN                       | Začať
+
+// MAIN UI - Bottom Navigation options
+MAIN_NAVIGATION_GAME              | Hra
+MAIN_NAVIGATION_DESIGN            | Dizajn
+MAIN_NAVIGATION_FLEETS            | Flotily
+MAIN_NAVIGATION_SYSTEMS           | Systémy
+MAIN_NAVIGATION_RACES             | Rasy
+MAIN_NAVIGATION_COLONIES          | Kolónie
+MAIN_NAVIGATION_TECH              | Technológie
+MAIN_NAVIGATION_NEXT_TURN         | Ďalší ťah
+MAIN_NAVIGATION_NEXT_YEAR         | Ďalší rok
+MAIN_YEAR_DISPLAY                 | Rok  %1
+MAIN_TURN_DISPLAY                 | Ťah  %1
+MAIN_SPY_REPORT                   | Špión
+MAIN_TECH_NONE                    | Žiadny výskum
+MAIN_TECH_COMPLETED               | Výskum ukončený
+MAIN_TECH_RP_REMAINING            | Zostáva %1 BV  
+MAIN_TECH_RP_DISCOVERY            | Blížici sa vedecký objav
+MAIN_TECH_RESERVE_BC              | %1 BC
+MAIN_TECH_RESERVE_TAX_ALL         | Zdanenie %1% produkcie všetkých kolónií
+MAIN_TECH_RESERVE_TAX             | Zdanenie %1% produkcie v rozvinutých kolóniách
+MAIN_TECH_RESERVE_TAX_NONE        | Žiadna daň z koloniálnej produkcie
+MAIN_HELP_ALL                     | Nápoveda - kliknutím otáznika prejdete cez informácie nápovedy pre konkrétnu obrazovku. Stlačením klávesy Esc prerušíte nápovedu.
+MAIN_HELP_1A                      | Každý hviezdny systém rozdeľuje svoju produkciu do piatich oblastí. Šedé pruhy znamenajú, že výrobný pruh bol uzamknutý a nedá sa meniť. Kliknutím na názov ho uzamknete/odomknete.
+MAIN_HELP_1B                      | Lodenice - stavajú vybraný návrh lode. Vyrobiť veľké lode môže trvať viacero ťahov.
+MAIN_HELP_1C                      | Obrana - buduje a vylepšuje do stanoveného limitu raketové základne a ak sú k dispozícii i planetárne štíty.
+MAIN_HELP_1D                      | Priemysel - buduje továrne, ktoré zvyšujú celkovú produkciu kolónie.
+MAIN_HELP_1E                      | Ekológia - zodpovedá za odstránenie priemyselného odpadu, pretvára planétu a môže zvýšiť rast populácie.
+MAIN_HELP_1F                      | Technológia - prispieva k celkovému výskumu ríše.
+MAIN_HELP_1G                      | Pomer stĺpcov znázorňuje rozdelenie produkcie planéty.  Výdavky pre každý stĺpec možno upraviť kolieskom myši, kliknutím v oblasti stĺpca alebo kliknutím na šípky vľavo/vpravo pre každom stĺpeci.
+MAIN_HELP_1H                      | Očakávaný prírastok, prípadne výsledok pre danú oblasť sa zobrazuje napravo od každého stĺpca. Nadbytočné výdavky sa ukladajú do rezervy pokladnice ríše.
+MAIN_HELP_2A                      | Úroveň ochrany planetárneho štítu na kolónií. POZOR: Štíty nie je možné postaviť na planétach v hmlovine.
+MAIN_HELP_2B                      | Počet raketových základní a maximálny požadovaný počet pre túto planétu. Kliknutím alebo pomocou kolieska myši zmeňte maximum.
+MAIN_HELP_2C                      | Súčet planetárnej produkcia z priemyslu a obyvateľstva.
+MAIN_HELP_2D                      | Skutočná produkcia upravená o saldo príjmov celého impéria, náklady na špionáž a bezpečnosť, ako i údržbu raketových základní a lodí.
+MAIN_HELP_2E                      | Vyberte dizajn lode a postavte ju v lodenici na obežnej dráhe planéty. Produkcia nahromadená za nedokončené lode urýchli výrobu nových lodí o 50%, kým sa nevyčerpajú. Dizajn lode vyberiete kliknutím alebo pomocou kolieska myši.
+MAIN_HELP_2F                      | Nastavenie zhromaždiska na automatické odosielanie novopostavených lodí do inej kolónie.
+MAIN_HELP_2G                      | Prepravte obyvateľov, aby ste zosilnili inú kolóniu alebo pošlite vojakov, aby napadli nepriateľskú planétu. Kolónia znáša jednorazové náklady na prepravu.
+MAIN_HELP_2H                      | Úplne opustiť planétu presunutím všetkých obyvateľov na inú kolóniu.
+MAIN_HELP_2I                      | Súčasný a maximálný počet obyvateľov. 100 predstavuje populáciu plnej domovskej planéty, ktorá nebola teraformovaná.
+MAIN_HELP_2J                      | Aktuálny a maximálny počet povolených tovární. Maximálny počet tovární je definovaný počtom obyvateľov a technológiou automatizácie tovární.
+MAIN_HELP_2K                      | Umiestnite na systém vlajku, ktorá ho pomôže zviditeľniť na mape galaxie.
+MAIN_HELP_2L                      | Výška rezervy uloženej v pokladnici ríše.
+MAIN_HELP_2M                      | Súčasný stav výskumu v každej zo šiestich technologických oblastí.
+MAIN_HELP_3A                      | Hra - návrat do úvodného menu. Umožňuje upraviť nastavenia alebo uložiť, načítať či spustiť hru.
+MAIN_HELP_3B                      | Systémy - mapa galaxie zobrazujúca stav systémov v galaxií podľa rôznych kritérií.
+MAIN_HELP_3C                      | Flotily - umožňuje rozsiahlu kontrolu nad flotilami a stavbou lodí vo vašom impériu.
+MAIN_HELP_3D                      | Dizajn - vytvorte návrhy lodí pre svoju flotilu pomocou najnovších technológií. Zastarané návrhy a lode môžete zošrotovať.
+MAIN_HELP_3E                      | Rasy - podrobné informácie a možnosti diplomacie pre všetky rasy, s ktorými ste sa stretli.
+MAIN_HELP_3F                      | Kolónie - podrobný a prehľadný zoznam vašich kolónií. Poskytuje i náhľad na príjmy a náklady ríše.
+MAIN_HELP_3G                      | Technológie - zobrazuje dostupné technológie. Umožňuje zamerať alebo vyvážiť výskum až na šesť technologických okruhov.
+MAIN_HELP_3H                      | Ďalší rok - posunie hru do ďalšieho roka.
+MAIN_HELP_3I                      | Súčasný ťah - zobrazuje aktuálny ťah hry alebo aktuálny rok vašej ríše. Kliknutím prepnete.
+MAIN_HELP_3J                      | Ovládacie prvky mapy - kliknutím prechádzajte rôznymi nastaveniami zobrazenia mapy galaxie.
+
+MAIN_SYSTEM_DETAIL_PFB            | Pop %1  Tov %2  Rak %3
+MAIN_SYSTEM_DETAIL_PF             | Pop %1  Tov %2
+MAIN_SYSTEM_DETAIL_NO_DATA        | Bez údajov
+MAIN_UNEXPLORED_SYSTEM            | Nepreskúmaný
+MAIN_ALLIED_COLONY                | Spojenecká kolónia
+MAIN_SYSTEM_RANGE                 | %1 svetelných rokov
+MAIN_OUT_OF_RANGE_DESC            | Mimo dosahu
+MAIN_SCOUT_RANGE_DESC             | Potrebné rezervné palivové nádrže
+MAIN_IN_RANGE_DESC                | V dosahu
+MAIN_NO_PLANETS                   | Žiadne planéty
+MAIN_NO_COLONIES                  | Nekolonizovaný
+MAIN_UNSCOUTED                    | Nepreskúmaný
+MAIN_ABANDONED                    | Opustený
+MAIN_ALIEN_COLONY                 | %1 kolónia
+MAIN_UNKNOWN_COLONY               | Mimozemská kolónia
+MAIN_NEBULA_DESC                  | Rýchlosť lodí cez hmloviny je obmedzená na warp 1.
+MAIN_PLANET_SIZE                  | Veľkosť %1
+MAIN_PLANET_SIZE+                 | Veľkosť %1+
+MAIN_PLANET_POP                   | Pop %1
+MAIN_PLANET_POP_SIZE              | Pop %1/%2
+MAIN_PLANET_REBELLION             | Povstanie
+MAIN_PLANET_QUARANTINE            | Karanténa
+MAIN_PLANET_EVENT_COMET           | Kométa
+MAIN_PLANET_EVENT_PIRACY          | Piráti
+MAIN_PLANET_EVENT_PLAGUE          | Nákaza
+MAIN_PLANET_EVENT_SUPERNOVA       | Supernova
+MAIN_PLANET_EVENT_AMOEBA          | Vesmírna améba
+MAIN_PLANET_EVENT_CRYSTAL         | Vesmírny kryštál
+MAIN_ADVANCING_YEAR               | Prechod k roku %1...
+MAIN_ADVANCING_TURN               | Prechod ku kolu  %1...
+TURN_SAVING                       | Ukladanie hry
+TURN_LAUNCHING_FLEETS             | Presúvanie flotíl
+TURN_SHIP_COMBAT                  | Súboje lodí
+TURN_BOMBARDMENT                  | Bombardovanie planét
+TURN_TRANSPORTS                   | Preprava kolonistov
+TURN_COLONIES                     | Kolonizácia
+TURN_SPIES                        | Aktivity špiónov
+TURN_REBELLION                    | Povstania 
+TURN_COUNCIL                      | Stav galactickej rady
+TURN_RESEARCH                     | Výskum
+TURN_ASSESS                       | Spracovanie...
+TURN_DIPLOMACY                    | Diplomacia
+TURN_ACQUIRE_TECHS                | Transfer technológií
+TURN_MAKE_DECISIONS               | Prijímanie rozhodnutí
+TURN_RECALC_DISTANCES             | Prepočítavanie vzdialeností
+TURN_REFRESHING                   | Obnovenie pohľadov
+TURN_SCRAP_SHIPS                  | Vyraďovanie lodí
+TURN_FLEET_PLANS                  | Plánovanie flotíl
+TURN_DEPLOY_FLEETS                | Nasadzovanie lodí
+TURN_DEPLOY_FLEET_X               | Nasadzovanie lodí (%1/%2 dokončených)
+TURN_RETREAT_FLEETS               | Ústup flotíl
+TURN_DESIGN_SHIPS                 | Dizajn lodí
+TURN_COLONY_SPENDING              | Prideľovanie prostriedkov na kolóniách
+
+// Fleet labels
+MAIN_FLEET_TITLE                  | Flotila [fleet_race_akuzativ]
+MAIN_FLEET_TITLE_UNKNOWN          | Neznáma flotila
+MAIN_FLEET_IN_ORBIT               | Na orbite
+MAIN_FLEET_DEPLOYED               | Vyslaná
+MAIN_FLEET_IN_TRANSIT             | Na ceste
+MAIN_FLEET_RETREATING             | Ustupujúca
+MAIN_FLEET_LOCATION               | systému %1
+MAIN_FLEET_ORIGIN                 | zo systému %1
+MAIN_FLEET_DESTINATION            | k systému %1
+MAIN_FLEET_DEST_UNSCOUTED         | do neznámeho
+MAIN_FLEET_ALLY                   | Spojenec
+MAIN_FLEET_ENEMY                  | Nepriateľ
+MAIN_FLEET_DEPLOYMENT             | Nasadenie flotily
+MAIN_FLEET_DISPLAY                | Zobrazenie flotily
+MAIN_FLEET_CHOOSE_DEST            | Vyberte cieľ cesty a počet lodí, ktoré chcete odoslať.
+MAIN_FLEET_OUT_OF_RANGE_DESC      | Cieľ je mimo dosahu flotily, %1 svetelných rokov od najbližšej kolónie.
+MAIN_FLEET_INVALID_RETREAT        | Ustupujúce flotily možno poslať len do spriatelených kolónií.
+MAIN_FLEET_ETA_UNNAMED            | Počet rokov do príletu do cieľa: %1 
+MAIN_FLEET_ETA_NAMED              | Počet rokov do príletu na %1: %2
+MAIN_FLEET_SET_RALLY              | Zhromažďovanie
+MAIN_FLEET_AUTO_RETREAT           | Automatický ústupiť po príchode
+MAIN_FLEET_ETA_UNKNOWN            | Skenery nedokážu určiť miesto určenia
+MAIN_FLEET_THROUGH_NEBULA         | Maximálna rýchlosť v hmlovine je obmedzená na Warp 1
+
+MAIN_FLEET_CANCEL                 | Zrušiť
+MAIN_FLEET_OUT_OF_RANGE           | Mimo dosah
+MAIN_FLEET_DEPLOY_FLEET           | Nasadiť flotilu
+MAIN_FLEET_UNDEPLOY_FLEET         | Zrušiť nasadenie
+MAIN_FLEET_INVALID_RETREAT        | Neplatné miesto ústupu
+MAIN_FLEET_INVALID_DESTINATION    | Nemožno poslať flotilu do systému %1
+MAIN_FLEET_INVALID_DESTINATION2   | Nie je možné sem poslať flotilu
+
+// Rally Point labels
+MAIN_RALLY_TITLE                  | Zhromaždište
+MAIN_RALLY_PROMPT                 | Vyberte systém pod vašou kontrolou
+MAIN_RALLY_FORWARD                | Preposlať prichádzajúce zhromaždenia
+MAIN_RALLY_TRAVEL_TIME            | Čas cesty v rokoch: %2
+MAIN_RALLY_INSTANT_TIME           | Čas cesty v rokoch: okamžite
+MAIN_RALLY_WILL_CANCEL            | Výberom tohto cieľa sa zrušia všetky doterajšie body zhromaždenia.
+MAIN_RALLY_ERROR                  | Musíte si vybrať systém, ktorý máte pod kontrolou.
+MAIN_RALLY_NO_SELECTION           | Nie je vybraný cieľ
+MAIN_RALLY_CANCEL                 | Zrušiť
+MAIN_RALLY_START                  | Spustiť 
+MAIN_RALLY_STOP                   | Zastaviť 
+
+// Transport labels
+MAIN_TRANSPORTS_EMPIRE            | Transport
+MAIN_TRANSPORTS_COUNT             | Počet lodí: %1
+MAIN_TRANSPORTS_CANCEL            | Zrušiť
+MAIN_TRANSPORTS_SHOW_DEST         | Čas cesty v rokoch: %2
+MAIN_TRANSPORT_TITLE              | Odoslanie dopravných lodí
+MAIN_TRANSPORT_ABANDON_TITLE      | Opustenie systému
+MAIN_TRANSPORT_PROMPT             | Vyberte kolonizovaný systém kam chcete poslať civilné alebo vojenské dopravné lode.
+MAIN_TRANSPORT_ABANDON_PROMPT     | Vyberte kolonizovaný systém kam chcete evakuovať všetky dopravné lode.
+MAIN_TRANSPORT_SELECT_POP         | Vyberte civilistov, ktorých chcete odoslať (max polovica počtu obyvateľov planéty).
+MAIN_TRANSPORT_SELECT_TROOPS      | Vyberte počet jednotiek, ktoré chcete poslať (max polovica počtu obyvateľov planéty).
+MAIN_TRANSPORT_POP_LABEL          | Obyvateľov
+MAIN_TRANSPORT_TOTAL_POP_LABEL    | Celkový počet obyvateľov: %1
+MAIN_TRANSPORT_ETA                | Počet rokov do cieľa: %2
+MAIN_TRANSPORT_ERROR              | Musíte vybrať kolonizovaný systém.
+MAIN_TRANSPORT_ABANDON_ERROR      | Musíte vybrať systém %1.
+MAIN_TRANSPORT_OUT_OF_RANGE       | Tento systém je mimo dosahu našich vojenských transportov.
+MAIN_TRANSPORT_UNSCOUTED          | Do nezmapovaných systémov nemôžeme posielať transporty.
+MAIN_TRANSPORT_HOSTILE            | Nemáme technológiu na pristátie v tomto prostredí.
+MAIN_TRANSPORT_NO_ROOM            | Varovanie - cieľová planéta už dosiahla maximálny počet obyvateľov!
+MAIN_TRANSPORT_SIZE_WARNING       | Upozornenie - cieľová planéta môže prijať iba %1 miliónov!
+MAIN_TRANSPORT_NO_SELECTION       | Nie je vybraný cieľ
+MAIN_TRANSPORT_CANCEL             | Zrušiť
+MAIN_TRANSPORT_SEND               | Odoslať 
+MAIN_TRANSPORT_ABANDON            | Opustiť
+MAIN_TRANSPORT_CLEAR              | Zrušiť transport
+MAIN_TRANSPORT_SURRENDER          | Automaticky sa vzdať po prílete
+
+// Colony labels
+MAIN_COLONY_HOMEWORLD             | %1 domovský svet
+MAIN_COLONY_FOUNDED               | %1 kolónia
+MAIN_COLONY_POPULATION            | Populácia
+MAIN_COLONY_FACTORIES             | Továrne
+MAIN_COLONY_VALUE+                | %1+
+MAIN_COLONY_SHIELD                | Úroveň štítov
+MAIN_COLONY_BASES                 | Základne
+MAIN_COLONY_PRODUCTION            | Produkcia - netto (brutto)
+MAIN_COLONY_SHIP                  | Lode
+MAIN_COLONY_DEFENSE               | Obrn
+MAIN_COLONY_INDUSTRY              | Prms
+MAIN_COLONY_ECOLOGY               | Eko
+MAIN_COLONY_TECHNOLOGY            | Tech
+MAIN_COLONY_ALLOCATE_SPENDING     | Rozdelenie výdavkov
+MAIN_COLONY_SPENDING_NONE         | Žiadne
+MAIN_COLONY_SPENDING_RESERVE      | Do rezervy
+MAIN_COLONY_SPENDING_TECH         | Technika
+MAIN_COLONY_SPENDING_CONVERT      | Previesť na
+MAIN_COLONY_SPENDING_REFIT        | Úprava
+MAIN_COLONY_SPENDING_MAX_FACT     | Maximum
+MAIN_COLONY_SPENDING_WASTE        | Odpad
+MAIN_COLONY_SPENDING_ECO_GROWTH   | Rast %1
+MAIN_COLONY_SPENDING_ATMOSPHERE   | Atmo
+MAIN_COLONY_SPENDING_ENRICH_SOIL  | Pôda
+MAIN_COLONY_SPENDING_TERRAFORM    | Teraformácia
+MAIN_COLONY_SPENDING_CLEANUP      | Čistenie
+MAIN_COLONY_SPENDING_GROWTH       | Rast
+MAIN_COLONY_SPENDING_SHIELD       | Štíty
+MAIN_COLONY_SPENDING_UPG_BASES    | Úprava
+MAIN_COLONY_SPENDING_PLAGUE       | Nákaza
+MAIN_COLONY_SPENDING_SUPERNOVA    | Supernova
+MAIN_COLONY_SPENDING_RP           | %1 BV
+MAIN_COLONY_COMPLETION_YEAR       | 1 rok
+MAIN_COLONY_COMPLETION_YEARS      | %1 rokov
+MAIN_COLONY_COMPLETION_CENTURY    | %1 rokov
+MAIN_COLONY_COMPLETION_PER_YEAR   | %1/ročne
+MAIN_COLONY_SHIPYARD_COMPLETED    | Ukončené: %1
+MAIN_COLONY_SHIPYARD_LIMIT        | Limit výroby:
+MAIN_COLONY_SHIPYARD_LIMIT_NONE   | Nie
+MAIN_COLONY_SHIPYARD_CONSTRUCTION | Poradovník výroby lodí
+MAIN_COLONY_RELOCATE_LABEL        | Zhromaždište
+MAIN_COLONY_TRANSPORTS_LABEL      | Odoslať transporty
+MAIN_COLONY_ABANDON_LABEL         | Opustiť
+MAIN_COLONY_SHIP_SCRAPPED         | Vyradené
+MAIN_COLONY_NO_SHIELD             | Hmlovina
+
+// System Scouted Notification
+MAIN_SCOUT_TITLE                  | Vedci katalogizovali nový hviezdny systém
+MAIN_SCOUT_SUBTITLE_1             | Naše lode preskúmali tento systém
+MAIN_SCOUT_SUBTITLE_2             | Naši astronómovia zhromaždili tieto údaje
+MAIN_SCOUT_SUBTITLE_3             | Naši spojenci sa podelili o tieto údaje
+MAIN_SCOUT_TYPE                   | Zaradenie: %1      Veľkosť: %2
+MAIN_SCOUT_NO_PLANET              | Nenašli sa žiadne obývateľné planéty
+MAIN_SCOUT_HOSTILE_DESC           | Prostredie: nehostinné - rast populácie sa zníži na polovicu.
+MAIN_SCOUT_FERTILE_DESC           | Prostredie: úrodné - populačný rast je +50%.
+MAIN_SCOUT_GAIA_DESC              | Prostredie: raj - populačný rast je +100%.
+MAIN_SCOUT_ARTIFACTS_DESC         | Starobylé ruiny: technologické body z výskumu sa zdvojnásobujú.
+MAIN_SCOUT_ANCIENTS_DESC          | Starobylý domovský svet: technologické body z výskumu sa zvýšia na štvornásobok.
+MAIN_SCOUT_ULTRA_POOR_DESC        | Zdroje: veľmi chudobné - priemyselná produkcia je tretinová.
+MAIN_SCOUT_POOR_DESC              | Zdroje: chudobné - priemyselná produkcia je polovičná.
+MAIN_SCOUT_RICH_DESC              | Zdroje: bohaté - priemyselná produkcia je dvojnásobná.
+MAIN_SCOUT_ULTRA_RICH_DESC        | Zdroje: veľmi bohaté - priemyselná produkcia je trojnásobná.
+
+// Colonization prompt
+MAIN_COLONIZE_TITLE               | Naši kolonisti obiehajú okolo neobývaneho systému %1.
+MAIN_COLONIZE_PROMPT              | Založiť novú kolóniu?
+MAIN_COLONIZE_YES                 | Áno
+MAIN_COLONIZE_NO                  | Nie
+MAIN_COLONIZE_ANIMATION_TITLE     | V roku %1 [player_race_plural] zakladajú novú kolóniu.
+MAIN_COLONIZE_NAME_PROMPT         | Meno kolónie
+MAIN_COLONIZE_NAME_OK             | OK
+
+// Reasons to ask player to reallocate a system (during next turn)
+MAIN_ALLOCATE_TITLE               | Úpravy výdavkov v systéme
+MAIN_ALLOCATE_DESIGN_SCRAPPED     | Projekt lode vo výstavbe v %1 bol vyradený.
+MAIN_ALLOCATE_COLONIZED           | • Systém %1 bol kolonizovaný.
+MAIN_ALLOCATE_STARGATE_COMPLETE   | • Systém %1 dokončil stavbu hviezdnej brány.
+MAIN_ALLOCATE_SHIPS_COMPLETE      | • Systém %1 dokončil stavbu požadovaného počtu lodí %2.
+MAIN_ALLOCATE_SHIELD_COMPLETE     | • Systém %1 dokončil výstavbu: %2.
+MAIN_ALLOCATE_BASES_COMPLETE      | • Systém %1 dokončil výstavbu raketových základní. Počet: %2
+MAIN_ALLOCATE_BASES_UPGRADED      | • Systém %1 dokončil modernizáciu svojich raketových základní.
+MAIN_ALLOCATE_MAX_FACTORIES       | • Systém %1 dosiahol svoje priemyselné maximum %2 tovární. 
+MAIN_ALLOCATE_MAX_POPULATION      | • Systém %1 dosiahol svoje populačné maximum %2 kolonistov.
+MAIN_ALLOCATE_TERRAFORM_COMPLETE  | • Teraformovanie prostredia ukončené v systéme %1.
+MAIN_ALLOCATE_ATMOSPHERE_COMPLETE | • Systém %1 bol teraformovaný na normálne prostredie so štandardnou rýchlosťou rastu.
+MAIN_ALLOCATE_FERTILE_COMPLETE    | • Systém %1 bol teraformovaný na úrodné prostredie s rýchlosťou rastu 150%.
+MAIN_ALLOCATE_GAIA_COMPLETE       | • Systém %1 bol teraformovaný na prostredie raja s dvojnásobnou rýchlosťou rastu.
+MAIN_ALLOCATE_SABOTAGE_BASES      | • Sabotéri zaútočili v systéme %1 na raketové základne. Zničených: %2 Zodpovední: %3
+MAIN_ALLOCATE_SABOTAGE_FACTORIES  | • %1 má %2 továrne zničené %3 sabotérmi.
+MAIN_ALLOCATE_COLONY_CAPTURED     | • %2 obsadili systém %1.
+MAIN_ALLOCATE_ECO_LOCKED_WASTE    | • %1 má ekologické výdavky ručne zablokované na úrovni, ktorá nepostačuje na čistenie znečistenia.
+MAIN_ALLOCATE_PROJECT_ENDED       | • %1 už nevykonáva výskum špeciálneho projektu: %2
+MAIN_ALLOCATE_CHANGE_SPENDING     | Teraz môžete upraviť výdavky systému.
+MAIN_ALLOCATE_NOTICE_NUMBER       | Správa %1 z %2
+MAIN_ALLOCATE_BRIEF_NUMBER        | %1 z %2
+MAIN_ALLOCATE_PREV_SYSTEM         | Predchádzajúci
+MAIN_ALLOCATE_NEXT_SYSTEM         | Ďalší
+MAIN_ALLOCATE_CLOSE               | Zatvoriť
+
+// Fleet Production display (during next turn)
+MAIN_FLEET_PRODUCTION_TITLE       | Zhrnutie produkcie flotily
+MAIN_FLEET_SHIP_COUNT             | %1/%2
+
+// 32-bit Java Warning
+MAIN_JAVA_32BIT_TITLE             | Varovanie! Používaná 32-bitová Java
+MAIN_JAVA_32BIT_DESC              | Túto hru spúšťate s 32-bitovou verziou Javy. To môže výrazne znížiť dostupnú pamäť a ovplyvniť výkon hry.
+MAIN_JAVA_32BIT_DESC_2            | Hoci hra Remnants of the Precursors bude fungovať aj v tomto režime, prechod na 64-bitovú Javu zlepší herný zážitok.
+MAIN_JAVA_32BIT_DESC_3            | Ak potrebujete pomoc pri aktualizácii Javy, prejdite na stránku www.reddit.com/r/rotp a požiadajte o pomoc.
+MAIN_JAVA_32BIT_OK                | OK
+
+// Memory Low Warning
+MAIN_MEMORY_LOW_TITLE             | Varovanie! Nedostatok pamäte.
+MAIN_MEMORY_LOW_DESC              | Pamäť dostupná pre túto hru je vyčerpaná. Môže to byť spôsobené dlhším hraním alebo tým, že hra nezačala s dostatočným množstvom voľnej pamäte.
+MAIN_MEMORY_LOW_DESC_2            | Stlačením tlačidla „Reštart“ hru reštartujete a pokračujete v nej od tohto bodu. Pokračovanie v hre bez reštartovania môže mať za následok nepredvídateľné správanie vrátane straty uložených údajov.
+MAIN_MEMORY_LOW_DESC_3            | Ak sa táto správa zobrazuje opakovane, skúste pred reštartovaním počítača zatvoriť iné aplikácie v počítači.
+MAIN_MEMORY_LOW_RESTART           | Reštart
+MAIN_MEMORY_LOW_SKIP              | Preskočiť
+
+// Autosave Failed Warning
+MAIN_AUTOSAVE_FAILED_TITLE        | Varovanie! Automatické ukladanie zlyhalo.
+MAIN_AUTOSAVE_FAILED_DESC         | Funkcia automatického ukladania, ktorá sa spustí po stlačení tlačidla „Ďalšie ťah/Ďaľší rok“, zlyhala. Môže ísť o chvíľkovú chybu v matrixe, ale pred pokračovaním v hre ju prosím uložte ručne.
+MAIN_AUTOSAVE_FAILED_DESC_2       | Správa poskytnutá hre pre túto chybu je: %1
+MAIN_AUTOSAVE_FAILED_DESC_3       | Ak sa vám táto správa zobrazuje často, prejdite na stránku www.reddit.com/r/rotp a zverejnite tento snímok obrazovky.
+MAIN_AUTOSAVE_FAILED_OK           | OK
+
+// Alerts
+MAIN_ALERT_TITLE                  | Upozornenie 
+MAIN_ALERT_TITLE_COUNT            | Upozornenie - %1 z %2
+MAIN_ALERT_SPY_REPORT             | Náš spravodajský úrad poskytol novú správu o nedávnej špionážnej činnosti.
+MAIN_ALERT_TECH_STOLEN            | Vnútorná bezpečnosť odhalila špionážnu činnosť špiónov [alien_race_akuzativ].
+MAIN_ALERT_FACTORIES_DESTROYED    | Agenti pracujúci pre [alien_race_akuzativ] zaútočili na továrne v systéme %2. Počet zničených tovarní: %1.
+MAIN_ALERT_BASES_DESTROYED        | Agenti pracujúci pre [alien_race_akuzativ] zaútočili na raketové základne v systéme %2. Počet zničených základní %1.
+MAIN_ALERT_FACTORIES_DESTROYED2   | Neznámi sabotéri zaútočili na továrne v systéme %2. Počet zničených tovární: %1 .
+MAIN_ALERT_BASES_DESTROYED2       | Neznámi sabotéri zaútočili na raketové základne brániace systém %2. Počet zničených základní: %1.
+MAIN_ALERT_TRANSPORTS_PERISHED    | Kolónia v systéme %1 bola zničená. Naše transporty, ktoré sa tam pokúšali pristáť boli zničené.
+MAIN_ALERT_TRANSPORTS_CAPTURED    | Transporty smerujúce do systému %1 sa vzdali [alien_race_dativ]. Počet zajatých transportov: %2 
+MAIN_ALERT_TRANSPORTS_KILLED      | Transporty smerujúce do systému %1 boli zničené [alien_race_instrumental]. Počet zničených transportov: %2 
+MAIN_ALERT_INVADERS_CAPTURED      | Transporty patriace [alien_race_dativ] prichádzajúce do systému %1 sa vzdali našim obranným silám. Počet zajatých transportov: %2 
+MAIN_ALERT_INVADERS_KILLED        | Transporty patriace [alien_race_dativ] prichdzajúce do systému %1 boli úplne zničené našimi obrannými silami. Počet zničených transportov: %2
+MAIN_ALERT_TRESPASSING1           | V blízkosti našej kolónie v systéme %1 boli spozorované lode patriace [alien_race_dativ].
+MAIN_ALERT_TRESPASSING2           | Veľvyslanec [alien_race_akuzativ] protestuje proti vstupu našich lodí do systému %1.
+MAIN_ALERT_TRADE_MATURED          | Naša obchodná dohoda s %1 dosiahla maximálnu hodnotu %2 BC.
+MAIN_ALERT_ALLIANCE_WEAKENING     | Naše spojenectvo s [ally_race_instrumental] slabne.
+MAIN_ALERT_ALLIANCE_BREAKING      | Naše spojenectvo s [ally_race_instrumental] je na pokraji zrútenia!
+
+// Colony Listing UI
+PLANETS_TITLE                     | Kolónie
+PLANETS_VIEW_ECOLOGY              | Ekologický pohľad 
+PLANETS_VIEW_INDUSTRY             | Priemyselný pohľad 
+PLANETS_VIEW_MILITARY             | Vojenský pohľad
+PLANETS_SPENDING_COSTS            | Výdavky ríše
+PLANETS_COSTS_DESC                | Každá kolónia platí určité percento zo svojej produkcie na podporu výdavkov ríše.
+PLANETS_COSTS_SHIPS               | Údržba lodí
+PLANETS_COSTS_BASES               | Raketové základne
+PLANETS_COSTS_STARGATES           | Hviezdne brány
+PLANETS_COSTS_SPYING              | Špionáž
+PLANETS_COSTS_SECURITY            | Kontrašpionáž
+PLANETS_TOTAL_INCOME              | Ročné príjmy
+PLANETS_INCOME_TRADE              | Príjmy z obchodu
+PLANETS_INCOME_PLANETS            | Produkcia v kolóniách
+PLANETS_INCOME_TOTAL              | Suma
+PLANETS_TREASURY                  | Ríšska pokladnica
+PLANETS_TREASURY_FUNDS            | Ríšsky pokladničný fond
+PLANETS_TAX_DESC                  | Zdanťe svoje kolónie a naplňte tak pokladnicu.
+PLANETS_RESERVE_TAX               | Rezervná daň
+PLANETS_RESERVE_INCREASE          | +%1 BC/rok
+PLANETS_RESERVE_NO_TAX            | Žiadne dane
+PLANETS_RESERVE_ONLY_DEVELOPED    | Zdaniť len plne rozvinuté kolónie
+PLANETS_BUTTON_TRANSFER           | PREVOD
+PLANETS_BUTTON_EXIT               | VÝCHOD
+PLANETS_AMT_PCT                   | %1%
+PLANETS_AMT_BC                    | %1 BC
+PLANETS_TRANSFER_DESC             | Previesť z fondu do: %1
+PLANETS_TRANSFER_CANCEL           | Zrušiť
+PLANETS_TRANSFER_ACCEPT           | Previesť
+PLANETS_COLONY_TRANSFER_TITLE     | Prevod prostriedkov
+PLANETS_COLONY_TRANSFER_DETAIL    | Preveďte finančné prostriedky z ríšskej pokladnice na zvýšenie produkcie tejto kolónie.
+PLANETS_COLONY_TRANSFER_BUTTON    | Previesť zo štátnej pokladnice
+PLANETS_LIST_NUM                  | 
+PLANETS_LIST_NAME                 | Názov
+PLANETS_LIST_POPULATION           | Počet obyvateľov
+PLANETS_LIST_POP                  | Pop.
+PLANETS_LIST_SIZE                 | Veľkosť
+PLANETS_LIST_TYPE                 | Typ
+PLANETS_LIST_FACTORIES            | Továrne
+PLANETS_LIST_WASTE                | Odpad
+PLANETS_LIST_BASES                | Základne
+PLANETS_LIST_SHIELD               | Štíty
+PLANETS_LIST_PRODUCTION           | Prod.
+PLANETS_LIST_CAPACITY             | Kapacita
+PLANETS_LIST_RESERVE              | Rezerva
+PLANETS_LIST_SHIPYARD             | Lodenice
+PLANETS_LIST_NOTES                | Poznámky
+PLANETS_LIST_TURNS                | Kolá
+PLANETS_LIST_YEARS                | Roky
+PLANETS_LIST_TRANSPORTS           | Transporty
+PLANETS_LIST_RESOURCES            | Zdroje
+PLANETS_MULTI_SYSTEMS             | Počet systémov: %1
+PLANETS_AGGREGATE_VALUES          | Súhrnné hodnoty
+PLANETS_SPENDING_0                | Výdavky na %1: 0
+PLANETS_SPENDING_25               | Výdavky na %1: 25%
+PLANETS_SPENDING_50               | Výdavky na %1: 50%
+PLANETS_SPENDING_75               | Výdavky na %1: 75%
+PLANETS_SPENDING_MAX              | Výdavky na %1: max 
+PLANETS_HELP_ALL                  | PREHĽAD - na tejto obrazovke sa zobrazujú ekonomické údaje vášej ríše spolu so zoznamom vašich kolónií, ktoré možno triediť podľa rôznych kritérií.
+PLANETS_HELP_1A                   | Ekológia - kliknutím na túto kartu zobrazíte ekologické údaje o kolóniách.
+PLANETS_HELP_1B                   | Priemysel - kliknutím na túto kartu zobrazíte priemyselné údaje pre kolónie.
+PLANETS_HELP_1C                   | Vojenské údaje - kliknutím na túto kartu zobrazíte vojenské údaje pre kolónie.
+PLANETS_HELP_1D                   | Tu môžete upraviť výdavky danej kolónie.
+PLANETS_HELP_1E                   | Zvýšte produkciu kolónie až o 50% presunom prostriedkov z pokladnice ríše.
+PLANETS_HELP_1F                   | Celkový príjem vášej ríše.
+PLANETS_HELP_1G                   | Celkové výdavky vašej ríši vyjadrené ako percento príjmov.
+PLANETS_HELP_1H                   | Vyberajte daň zo svojich kolónií, aby ste naplnili pokladnicu. Túto daň môžete uvaliť len na kolónie, ktoré už dokončili svoje výdavky na ekológiu, priemysel a obranu.
+PLANETS_HELP_2A                   | Názov - názov systému. Možnosť zmeny názvu.
+PLANETS_HELP_2B                   | Počet obyvateľov - aktuálny počet obyvateľov vrátane zmeny oproti predchádzajúcemu obdobiu.
+PLANETS_HELP_2C                   | Typ - typ terénu planéty. Zelená pre úrodné planéty.
+PLANETS_HELP_2D                   | Zdroje - rozdelenie na bohaté, chudobné a planéty s artefaktami.
+PLANETS_HELP_2E                   | Veľkosť - veľkosť planéty.
+PLANETS_HELP_2F                   | Odpad - úroveň priemyselného odpadu na planéte.
+PLANETS_HELP_2G                   | Poznámky - hráčove poznámky k systému.
+PLANETS_HELP_3A                   | Názov - názov systému. Možnosť zmeny názvu.
+PLANETS_HELP_3B                   | Počet obyvateľov - aktuálny počet obyvateľov vrátane zmeny oproti predchádzajúcemu obdobiu.
+PLANETS_HELP_3C                   | Zdroje - rozdelenie na bohaté, chudobné a planéty s artefaktami.
+PLANETS_HELP_3D                   | Továrne - počet tovární vrátane zmeny oproti predchádzajúcemu ťahu.
+PLANETS_HELP_3E                   | Produkcia - celková produkcia za kolóniu.
+PLANETS_HELP_3F                   | Rezerva - celková rezerva uložená v kolónii.
+PLANETS_HELP_3G                   | Poznámky - hráčove poznámky k systému.
+PLANETS_HELP_3H                   | Kapacita - na koľko percent je naplnená produkčná kapacita planéty.
+PLANETS_HELP_4A                   | Názov - názov systému. Možnosť zmeny názvu..
+PLANETS_HELP_4B                   | Počet obyvateľov - aktuálny počet obyvateľov vrátane zmeny oproti predchádzajúcemu obdobiu.
+PLANETS_HELP_4C                   | Zdroje - rozdelenie na bohaté, chudobné a planéty s artefaktami.
+PLANETS_HELP_4D                   | Produkcia - celková produkcia za kolóniu.
+PLANETS_HELP_4E                   | Štít - úroveň planetárneho štítu.
+PLANETS_HELP_4F                   | Základne - raketové základne na planéte. Červené, ak ide o zastaranú technológiu.
+PLANETS_HELP_4G                   | Lodenice - projekt lode vo výstavbe.
+PLANETS_HELP_4H                   | Poznámky - hráčove poznámky k systému.
+PLANETS_HELP_4I                   | Vlajka - používateľom zvolená vlajka na systéme.
+
+// Bombardment prompt
+MAIN_BOMBARDED_TITLE             | %2 bombardovali %1 .
+MAIN_BOMBARD_TITLE               | Naše sily sú na orbite nepriateľskej kolónie patriacej [alien_race_dativ].
+MAIN_BOMBARD_TROOPS              | Na obežnej dráhe sú alebo sa k nej blížia jednotky [alien_race_akuzativ]. Počet: %1 
+MAIN_BOMBARD_PROMPT              | Bombardovať planétu?
+MAIN_BOMBARD_YES                 | Áno
+MAIN_BOMBARD_NO                  | Nie
+MAIN_BOMBARD_POPULATION          | Počet obyvateľov: %1
+MAIN_BOMBARD_FACTORIES           | Továrne: %1
+MAIN_BOMBARD_BASES               | Základne: %1
+MAIN_BOMBARD_SHIELD              | Štít: %1
+MAIN_BOMBARD_COMPLETE            | Bombardovanie ukončené.
+MAIN_BOMBARD_DESTROYED           | Kolónia zničená
+MAIN_BOMBARD_DMG                 | (%1)
+MAIN_BOMBARD_NAME_PROMPT         | Názov kolónie
+
+
+// Fleet listing UI
+FLEETS_TITLE                      | Flotily
+FLEETS_SELECT_SYSTEMS             | Vyberte systémy
+FLEETS_SELECT_FLEETS              | Vyberte flotily
+FLEETS_SELECT_ALL                 | Vybrať všetky
+FLEETS_DESELECT_ALL               | Zrušiť všetky
+FLEETS_FILTER_BY                  | Filtrovať podľa:
+FLEETS_CONSTRUCTING_DESIGN        | a buduje:
+FLEETS_INCLUDES_SHIP_TYPE         | Nasadiť len lode typu:
+FLEETS_SELECTED_SHIPS             | Vybrané na nasadenie
+FLEETS_BUILDING_DESIGN            | %1
+FLEETS_HAS_STARGATE               | Systém má hviezdnu bránu
+FLEETS_HAS_NO_STARGATE            | Systém nemá hviezdnu bránu
+FLEETS_HAS_RALLY_POINT            | Systém má zhromaždište
+FLEETS_HAS_NO_RALLY_POINT         | Systém nemá zhromaždište
+FLEETS_SENDING_TRANSPORTS         | Systém posiela transporty
+FLEETS_NOT_SENDING_TRANSPORTS     | Systém neposiela transporty
+FLEETS_IS_RICH                    | Systém je bohatý alebo veľmi bohatý
+FLEETS_IS_ULTRA_RICH              | Systém je mimoriadne bohatý
+FLEETS_IS_POOR                    | Systém je chudobný alebo veľmi chudobný
+FLEETS_IS_ULTRA_POOR              | Systém je veľmi chudobný
+FLEETS_IS_STANDARD                | Systém má štandardné zdroje
+FLEETS_SYSTEMS_SELECTED           | Vybraných systémov: %1
+FLEETS_FLEETS_SELECTED            | Vybraných flotíl: %1
+FLEETS_MULTIPLE_DESIGNS           | Viaceré
+FLEETS_RELOCATE_LABEL             | Zhromaždište
+FLEETS_TRANSPORTS_LABEL           | Odoslať transporty
+FLEETS_SPENDING_LABEL             | Úprava výdavkov na lode
+FLEETS_HAS_ORDERS                 | Flotila je na ceste
+FLEETS_HAS_NO_ORDERS              | Flotila je na obežnej dráhe
+FLEETS_IS_RALLYING                | Flotila sa zhromažďuje
+FLEETS_DESIGN_COUNT               | %1 %2
+FLEETS_DEPLOY_FLEETS              | Nasadiť flotily
+FLEETS_SET_RALLY_POINTS           | Nastavenie zhromaždišta
+FLEETS_STOP_RALLIES_DESC          | Upozornenie: niekoľko systémov (%1) už má pridelené zhromaždiská.
+FLEETS_STOP_RALLIES               | Zastaviť zhromaždovanie
+FLEETS_SETTING_RALLY_POINTS       | Počiatočné body zhromaždovania
+FLEETS_START_RALLIES_DESC         | Vyberte systém, ktorý ovládate, kam chcete odoslať novopostavené lode z vybraných systémov.
+FLEETS_START_RALLIES              | Spustenie zhromaždišta
+FLEETS_SEND_TRANSPORTS            | Odoslať transporty
+FLEETS_ADJUST_SPENDING_SELECT     | Vyberte systémy na nastavenie úrovne výdavkov na produkciu lodí. 
+FLEETS_ADJUST_SPENDING_DESC       | Pre vybrané systémy zvoľte požadovanú úroveň výdavkov na produkciu lodí. Počet systémov: %1 
+FLEETS_ADJUST_SPENDING_DESC2      | Ostatné kategórie výdavkov sa automaticky upravia. 
+FLEETS_ADJUST_SPENDING_DESC3      | Ekológia zachová minimálne výdavky potrebné na čistenie znečistenia.
+FLEETS_ADJUST_SPENDING            | Úprava výdavkov na lode
+FLEETS_SPENDING_0                 | Nulové výdavky na produkciu lodí
+FLEETS_SPENDING_25                | 25% výdavky na produkciu lodí
+FLEETS_SPENDING_50                | 50% výdavky na produkciu lodí
+FLEETS_SPENDING_75                | 75% výdavky na produkciu lodí
+FLEETS_SPENDING_MAX               | Max výdavky na produkciu lodí
+FLEETS_SPENDING_CANCEL            | Zrušiť
+FLEETS_CANCEL_TRANSPORTS_DESC     | Upozornenie: niekoľko systémov (%1) už má naplánovanú prepravu.
+FLEETS_CANCEL_TRANSPORTS          | Zrušiť prepravu
+FLEETS_DEPLOYING_TRANSPORTS_DESC  | Vyberte systém v dosahu kam chcete poslať koloniálne transporty alebo vojenské jednotky.
+FLEETS_DEPLOY_TRANSPORTS          | Nasadiť transporty
+FLEETS_FLEET_DEPLOYMENT           | Nasadiť flotily
+FLEETS_UNDEPLOYING_FLEETS         | Upozornenie: niekoľko flotíl (%1) už má pridelené nasadenie.
+FLEETS_CANCEL_DEPLOYMENTS         | Zrušiť nasadenie
+FLEETS_DEPLOYING_FLEETS           | Nasadenie flotily
+FLEETS_DEPLOYING_FLEETS_DESC      | Výberom systému v dosahu nasadíte vybrané flotily.
+FLEETS_DEPLOY_FLEETS              | Nasadiť flotily
+FLEETS_TRANSPORTS_TITLE           | Odoslať transporty z:
+FLEETS_TRANSPORTS_SEND            | Odoslať %1
+FLEETS_TRANSPORTS_SYNCH           | Zosynchronizovať
+FLEETS_TRANSPORTS_UNSYNCH         | Zrušiť synchronizáciu
+FLEETS_TRANSPORT_NO_ROOM          | Varovanie - cieľová planéta má maximálny počet obyvateľov!
+FLEETS_TRANSPORT_SIZE_WARNING     | Upozornenie - cieľová planéta môže prijať iba %1 miliónov!
+FLEETS_TRANSPORT_TIME             | Plánovaný príchod v rokoch: %1
+FLEETS_TRANSPORT_TIME_RANGE       | Plánovaný príchod v rokoch: %1 až %2
+FLEETS_CANNOT_SEND_TRANSPORTS     | %1 nedokáže odoslať transporty
+FLEETS_EXISTING_TRANSPORT         | Odoslanie %1 transportov na %2
+FLEETS_EXISTING_STOP              | Zastaviť
+FLEETS_CANCEL                     | Zrušiť
+FLEETS_HELP_ALL                   | PREHĽAD - táto obrazovka umožňuje spravovať flotily, prepravu a stavbu lodí vo veľkom merítku. Vo všeobecnosti vyberiete skupinu flotíl alebo systémov, ktoré chcete spravovať, vyfiltrujete ich na menšiu množinu a potom vyberiete činnosť, ktorú na nich chcete vykonať.
+FLEETS_HELP_1A                    | Vyberte systémy - systémy môžete vybrať tromi spôsobmi: 1) kliknutím na systémy na mape, 2) ťahaním pravého tlačidla myši po mape a 3) použitím tlačidiel „Vybrať všetky“ a „Zrušiť všetky.“
+FLEETS_HELP_1B                    | Filtrovať podľa - výberom začiarkavacích políčok zúžite zoznam vybraných systémov. Kliknutím na filtre môžete tiež prepínať medzi možnosťami.
+FLEETS_HELP_1C                    | A buduje - filtruje systémy podľa typu stavanej lode. 
+FLEETS_HELP_1D                    | Návrh lode - zmena návrhu lode na stavbu vo vybraných systémoch. Prázdny obrázok znamená, že vybrané systémy v súčasnosti stavajú iné návrhy. Pozor! Pri tejto akcii nie je k dispozícii žiadna výzva na potvrdenie.
+FLEETS_HELP_1E                    | Odoslať transporty - odoslanie transportov z vybraných systémov do jedného cieľového systému.
+FLEETS_HELP_1F                    | Zhromaždište - nastavenie zhromaždíšť pre vybrané systémy na vybraný systém. 
+FLEETS_HELP_2A                    | Výber flotily - flotily môžete vybrať tromi spôsobmi: 1) kliknutím na flotily na mape, 2) ťahaním pravého tlačidla myši po mape a 3) použitím tlačidiel „Vybrať všetky“ a „Zrušiť všetky.“
+FLEETS_HELP_2B                    | Filtrovať podľa - výberom začiarkavacích políčok zúžite zoznam vybraných flotíl. Kliknutím na filtre môžete tiež prepínať medzi možnosťami.
+FLEETS_HELP_2C                    | Nasadiť len lode typu - obmedzí typy lodí, ktoré budú nasadené.
+FLEETS_HELP_2D                    | Vybrané na nasadenie - počet lodí podľa typu, ktoré budú nasadené.
+FLEETS_HELP_2E                    | Nasadiť flotily - nasadiť vybrané flotily do jedného cieľového systému.
+
+// Select Next Tech to Research UI
+TECH_RESEARCH_COMPUTER            | Vyberte ďalšiu technológiu z oblasti počítačov, na ktorú by sa mali naši vedci zamerať.
+TECH_RESEARCH_CONSTRUCTION        | Vyberte ďalšiu technológiu z oblasti strojárstva, na ktorú by sa mali naši vedci zamerať.
+TECH_RESEARCH_FORCE_FIELD         | Vyberte ďalšiu technológiu silového poľa, na ktorú by sa mali naši vedci zamerať.
+TECH_RESEARCH_PLANETOLOGY         | Vyberte ďalšiu technológiu z oblasti planetológie, na ktorú by sa mali naši vedci zamerať.
+TECH_RESEARCH_PROPULSION          | Vyberte ďalšiu technológiu pohonu, na ktorú by sa mali naši vedci zamerať.
+TECH_RESEARCH_WEAPON              | Vyberte ďalšiu zbraňovú technológiu, na ktorú by sa mali naši vedci zamerať.
+TECH_TOP_TIER_DETAIL              | Dokončením tohto výskumu sa sprístupnia pokročilejšie technológie.
+TECH_OBSOLETE_DETAIL              | Táto technológia je zastaralá.
+TECH_CAN_CHANGE                   | Túto voľbu môžete zmeniť na obrazovke Technológie pred prechodom do ďalšieho ťahu.
+TECH_CHOOSE_RESEARCH_COST         | %1 BV
+TECH_CHOOSE_RESEARCH_TIER         | Úroveň %1
+TECH_TRADE_TIER_COST_INFO         | (Úroveň %1 - %2 BV)
+TECH_CONFIRM_CHOICE               | Vyberať
+TECH_DISCOVERY_TITLE              | [player_race_plural] dosiahli vedecký prielom v oblasti: %1
+TECH_SCOUTED_TITLE                | Skauti skúmajúci ruiny v systéme %1 objavili
+TECH_STOLEN_TITLE                 | Špióni prenikli do výskumného centra v systéme %2 (%1).
+TECH_TRADED_TITLE                 | [player_race_plural] získali technológiu od [alien_race_akuzativ]
+TECH_PLUNDERED_TITLE              | Plienenie vojenskými oddielmi v ruinách systému %1 
+TECH_DERELICT_TITLE               | Prieskumníci z rasy [player_race_akuzativ]  vyrabovali ruiny a získali starovekú technológiu.
+TECH_GUARDIAN_TITLE               | Vojakom [player_race_akuzativ] sa podarilo získať starobylú zbraň
+TECH_ALLOCATE_SHIELD              | Máme zvýšiť výdavky na obranu v našich kolóniách, aby sme mohli vybudovať nové planetárne štíty?
+TECH_ALLOCATE_MISSILE_BASES       | Máme zvýšiť výdavky na obranu v našich kolóniách, aby sme mohli modernizovať naše raketové základne?
+TECH_ALLOCATE_FACTORIES           | Máme zvýšiť výdavky na priemysel v našich kolóniách, aby sme zautomatizovali a vylepšili naše továrne?
+TECH_ALLOCATE_CLEAN_WASTE         | Máme znížiť výdavky na čistenie ekológie v našich kolóniách na minimum potrebné na udržanie života?
+TECH_ALLOCATE_ENRICH_SOIL         | Máme zvýšiť výdavky na ekológiu v našich kolóniách so štandardným prostredím, aby sme mohli začať planéty teraformovať?
+TECH_ALLOCATE_ATMOSPHERE          | Máme zvýšiť výdavky na ekológiu v našich kolóniách s nehostinným prostredím, aby sme mohli začať planéty teraformovať?
+TECH_ALLOCATE_TERRAFORM           | Máme zvýšiť výdavky na ekológiu v našich kolóniách, aby sme mohli začať planéty teraformovať?
+TECH_ALLOCATE_NO                  | Nie
+TECH_ALLOCATE_PCT                 | +%1%
+TECH_COMPLETED_TITLE              | Výskum ukončený!
+TECH_COMPLETED_COMPUTER           | Ukončili sme všetok výskum v oblasti počítačových technológií! Ďalší výskum v tejto oblasti nie je možný.
+TECH_COMPLETED_CONSTRUCTION       | Ukončili sme všetok výskum v oblasti strojárstva ! Ďalší výskum v tejto oblasti nie je možný.
+TECH_COMPLETED_FORCE_FIELD        | Ukončili sme všetok výskum v oblasti silových polí! Ďalší výskum v tejto oblasti nie je možný.
+TECH_COMPLETED_PLANETOLOGY        | Ukončili sme všetok výskum v oblasti planetológie! Ďalší výskum v tejto oblasti nie je možný.
+TECH_COMPLETED_PROPULSION         | Ukončili sme všetok výskum v oblasti pohonu! Ďalší výskum v tejto oblasti nie je možný.
+TECH_COMPLETED_WEAPON             | Ukončili sme všetok výskum v oblasti technológie zbraní! Ďalší výskum v tejto oblasti nie je možný.
+TECH_COMPLETED_ALL                | Ukončili sme všetok výskum vedecký výskum. Čas štúdia sa skončil. Všetky prostriedky alokované na výskum budú automaticky prevedené do ríšskej pokladnice.
+TECH_COMPLETED_VERIFY             | Overte, či sú správne nastavené alokácie výdavkov v ostatných oblastiach výskumu.
+
+// prompt for espionage
+NOTICE_ESPIONAGE_TITLE            | Naši špióni prenikli na základňu [alien_race_akuzativ].
+NOTICE_ESPIONAGE_SUBTITLE         | Vyberte druh technológie, ktorú chcete ukradnúť.
+NOTICE_ESPIONAGE_NO_TECH          | Žiadne dostupné technológie
+NOTICE_ESPIONAGE_MANY_TECHS       | %1 dostupné technológie
+NOTICE_ESPIONAGE_FOOTER           | Ak vás odhalia, môže to spôsobiť diplomatický incident.
+NOTICE_ESPIONAGE_FRAME_TITLE      | Našim špiónom sa podarilo obviniť z krádeže inú rasu.
+NOTICE_ESPIONAGE_FRAME_SUBTITLE   | Vyberte si obeť:
+
+// Spy Capture display (during next turn)
+NOTICE_SPIES_TITLE                | Aktuálna správa o špionáži
+NOTICE_SPIES_NO_ACTIVITY          | Nebola pozorovaná žiadna významná špionážna činnosť.
+NOTICE_SPIES_ACTIVITY             | Súčasné aktivity:
+NOTICE_SPIES_LOST_DESC            | • [alien_race_dativ] sa podarilo odstaviť naše špionážne siete. Odstavených sietí: %1.
+NOTICE_SPIES_LOST_CONFESSED       | Naši špióni sa priznali k pokusom o sabotáž.
+NOTICE_SPIES_LOST_CONFESSED2      | Naši špióni sa priznali k špionáži.
+NOTICE_SPIES_LOST_CONFESSED3      | Naši špióni boli donútení sa priznať k pokusom o sabotáž.
+NOTICE_SPIES_CAUGHT_DESC          | • Naše vnútorné bezpečnostné sily odstavili  špionážne siete [alien_race_akuzativ]. Odstavených sietí: %1
+NOTICE_SPIES_CAUGHT_CONFESSED     | Ich špióni sa priznali k sabotáži.
+NOTICE_SPIES_CAUGHT_CONFESSED2    | Ich špióni sa priznali k špionáži.
+NOTICE_SPIES_FRAMED               | • Boli sme obvinení zo špionáži v ríši [alien_race_akuzativ].
+NOTICE_SPIES_ESPIONAGE            | • Naši špióni ukradli [alien_race_dativ] technológiu: %1.
+NOTICE_SPIES_ESPIONAGE_FRAME      | Túto krádež sme úspešne hodili na [framed_race_akuzativ].
+NOTICE_SPIES_SABOTAGE_FACTORIES   | • Naši špióni úspešne zničili továrne v systéme %2. Počet zničených tovarní: %1
+NOTICE_SPIES_SABOTAGE_BASES       | • Naši špióni úspešne zničili raketové základne chrániace systém %2. Počet zničených základní: %1 
+NOTICE_SPIES_SABOTAGE_REBELS      | • Naši špióni úspešne podnecovali povstalcov v systéme %2.
+NOTICE_SPIES_SABOTAGE_REBELLION   | • Naši špióni úspešne vyvolali vzburu v systéme %2.
+NOTICE_SPIES_LEARNED_TECH         | • Naši špióni hlásia, že [alien_race_plural] sa nedávno naučili tieto nám neznáme technológie: %1
+// this just details how to concatenate a list of multiple technology (English uses ,)
+NOTICE_SPIES_MULTIPLE_TECHS       | %1, %2
+NOTICE_SPIES_THREATEN             | Vyhrážať
+NOTICE_SPIES_MANAGE               | Spravovať špiónov
+NOTICE_SPIES_CLOSE                | Zavrieť
+
+// Ground Combat UI
+INVASION_BATTLE                   | Roku %1 bojujú [attacker_race_plural] a [defender_race_plural] o systém %2.
+INVASION_BATTLE_REBELS            | Roku %1 bojujú [attacker_race_plural] a rebeli o systém %2.
+INVASION_TROOPS_LANDED            | Jednotky [attacker_race_akuzativ] pristáli. Počet jednotiek: %1
+INVASION_SOME_TROOPS_LANDED       | %1 z %2 jednotiek [attacker_race_akuzativ] pristálo.
+INVASION_WIN                      | [attacker_race_plural] obsadili %2 
+INVASION_LOSS                     | [defender_race_plural] úspešne ubránili %2.
+INVASION_ATTACKERS_TITLE          | Vojsko [attacker_race_akuzativ]: %1
+INVASION_DEFENDERS_TITLE          | Vojsko [defender_race_akuzativ]: %1
+INVASION_REBELS_TITLE             | Rebeli [defender_race_akuzativ]: %1
+INVASION_TROOP_ARMOR_DESC         | %2: %1 
+
+// GNN Text
+GNN_TITLE                         | Mimoriadne galaktické správy
+GNN_EMPIRE_RANKING                | %1. [empire_race_plural]
+GNN_EXTINCTION_KNOWN_VICTIM       | [victim_race_plural]
+GNN_EXTINCTION_KNOWN_KILLER       | [killer_race_plural]
+GNN_EXTINCTION_UNKNOWN_VICTIM     | Neznáma civilizácia 
+GNN_EXTINCTION_UNKNOWN_KILLER     | Neznáma ríša
+GNN_EXTINCTION                    | %1 boli vyhladení. Za ich zničenie sú zodpovední %2.
+GNN_EXTINCTION_NO_KILLER          | %1 boli vyhladení.
+GNN_EXPANSION_1                   | Ríša [expanding_race_akuzativ] predbehla všetky ostatné rasy a rozprestiera sa v %1 hviezdnych sústavách.
+GNN_EXPANSION_2                   | [expanding_race_plural] ovládajú už %1 hviezdnych systémov. Ak sa ich expanzia nezastaví, čoskoro ovládnu celú galaxiu.
+GNN_EXPANSION_3                   | [expanding_race_plural] ovládajú už takmer väčšinu galaxie. Vodcovia sa už pripravujú na spájanie sa s mocným impériom.
+GNN_ALLIANCE_FORMED               | [first_race_plural] uzavreli alianciu s [second_race_instrumental].
+GNN_ALLIANCE_BROKEN               | Aliancia medzi [first_race_instrumental] a [second_race_instrumental] sa rozpadla.
+GNN_FLEETS_RANKING                | Aktuálny rebríček poradia sily vesmírnych flotíl:
+GNN_CENSUS_RANKING                | Rebríček veľkosti ríš podľa posledného sčítania ľudu:
+GNN_PRODUCTION_RANKING            | Aktuálny rebríček produkcie ríš:
+GNN_TECHNOLOGY_RANKING            | Súčasní technologický lídri:
+GNN_PLAYER_REBELLION              | Kolónia v systéme %1 sa vzbúrila a odmieta prispievať na chod ríše [rebelling_race_akuzativ]. Kolóniu ovláda najmenej %2 miliónov rebelov. Na potlačenie povstania musia byť vyslané vojská. 
+GNN_ALIEN_REBELLION               | Kolónia v systéme %1 sa vzbúrila a odmieta prispievať na chod ríše [rebelling_race_akuzativ]. Kolóniu ovláda najmenej %2 miliónov rebelov.
+GNN_PLAYER_REBELLION_SPREAD       | Ďalšie nepokoje v ríši [rebelling_race_akuzativ]. Kolóniu v systéme %1 ovláda najmenej %2 miliónov rebelov. 
+GNN_OVERTHROW                     | %1. Tak by sa po novom dalo povedať ako [alien_race_plural] budú vystupovať navonok ostatným rasám. Vynoril sa totiž nový vodca ríše. Vzťahy sa stali neutrálnymi a všetok obchod bol zrušený.
+GNN_END_COUNCIL                   | Zostali len dve impériá a pokusy o zjednotenie galaxie Galaktickou radou zlyhali. Mnohí vodcovia teraz diskutujú o tom, aké konečné riešenie môže priniesť trvalý mier galxií.
+GNN_FORM_COUNCIL                  | V snahe o nastolenie trvalého mieru sa čoskoro zídu zástupcovia každej rasy, aby zvolili galaktického vládcu, ktorý bude vybraný z vodcov dvoch najľudnatejších ríš.
+GNN_ALLY_AT_WAR                   | Náši spojeneci, [ally_race_plural], vstúpili do vojny proti [other_race_dativ]. 
+
+// Error UI text
+ERROR_TITLE                       | Vyskytla sa chyba :(
+ERROR_MESSAGE                     | Ak chcete pomôcť vyriešiť tento problém, pošlite snímku tejto obrazovky a súbor s uloženou hrou 'recent.rotp' Rayovi Fowlerovi alebo ho na to upozornite na subreddite ROTP.
+ERROR_EMAIL                       | E-mailová adresa: rayfowler@fastmail.com
+ERROR_REDDIT                      | Reddit vlákno: www.Reddit.com/r/rotp
+
+// Setup UI
+SETUP_SELECT_RACE                 | Voľba rasy
+SETUP_SELECT_OPPONENTS            | Voľba oponentov
+SETUP_SELECT_GALAXY               | Voľba galaxie
+SETUP_SELECT_GALAXY_OPTIONS       | Voľba nastavení
+SETUP_GALAXY_RULESET_LABEL        | Voľba pravidiel
+SETUP_INSUFFICIENT_MEMORY         | Nedostatok pamäte
+SETUP_CREATING_GALAXY             | Vytváranie galaxie...
+SETUP_RULESET_ORION               | Orion
+SETUP_RULESET_ANTARES             | Antares
+SETUP_RULESET_SIRIUS              | Sirius
+SETUP_GALAXY_SIZE_LABEL           | Veľkosť
+SETUP_RACE_MULTIPLIER             | x%1
+SETUP_GALAXY_SHAPE_LABEL          | Tvar
+SETUP_GALAXY_SIZE_TINY            | Prťavá
+SETUP_GALAXY_SIZE_SMALL           | Malá
+SETUP_GALAXY_SIZE_SMALL2          | Malá 
+SETUP_GALAXY_SIZE_AVERAGE         | Priemerná
+SETUP_GALAXY_SIZE_AVERAGE2        | Priemerná
+SETUP_GALAXY_SIZE_LARGE           | Veľká
+SETUP_GALAXY_SIZE_LARGE2          | Veľká
+SETUP_GALAXY_SIZE_HUGE            | Obrovská
+SETUP_GALAXY_SIZE_HUGE2           | Obrovská
+SETUP_GALAXY_SIZE_MASSIVE         | Masívna
+SETUP_GALAXY_SIZE_MASSIVE2        | Masívna
+SETUP_GALAXY_SIZE_MASSIVE3        | Masívna
+SETUP_GALAXY_SIZE_MASSIVE4        | Masívna
+SETUP_GALAXY_SIZE_MASSIVE5        | Masívna
+SETUP_GALAXY_SIZE_INSANE          | Šialená
+SETUP_GALAXY_SIZE_LUDICROUS       | Absurdná
+SETUP_GALAXY_SIZE_MAXIMUM         | Maximálna
+SETUP_GALAXY_SHAPE_RECTANGLE      | Pole hviezd
+SETUP_GALAXY_SHAPE_CIRCULAR       | Kruhový
+SETUP_GALAXY_SHAPE_RING           | Prstencový
+SETUP_GALAXY_SHAPE_ELLIPSE        | Elipsoid
+SETUP_GALAXY_SHAPE_SPIRAL         | Špirála
+SETUP_GALAXY_SHAPE_STAR           | Hviezda
+SETUP_GALAXY_SHAPE_BARSPIRAL      | Zahnutá špirála
+SETUP_GALAXY_SHAPE_TEXT           | Text
+SETUP_GALAXY_SHAPE_CLUSTER        | Hviezdokupa
+SETUP_GALAXY_SHAPE_SWIRLCLUSTERS  | Skrútená hviezdokupa
+SETUP_GALAXY_SHAPE_GRID           | Mriežka
+SETUP_GALAXY_SHAPE_SPIRALARMS     | Špirálové ramená
+SETUP_GALAXY_SHAPE_MAZE           | Bludisko
+SETUP_GALAXY_SHAPE_VOID           | Prázdnota
+SETUP_GALAXY_SHAPE_SHURIKEN       | Shuriken
+SETUP_GALAXY_SHAPE_BULLSEYE       | Bullseye
+SETUP_GALAXY_SHAPE_LORENZ         | Lorenzov systém
+SETUP_GALAXY_SHAPE_LORENZ2        | Lorenzov systém 2
+SETUP_GALAXY_SHAPE_FRACTAL        | Fraktál
+SETUP_GALAXY_SHAPE_CHAOSGAME      | Teória chaosu
+SETUP_GALAXY_MAP_OPTION_LABEL     | Možnosť
+SETUP_GALAXY_MAP_OPTION_A         | Možnosť A
+SETUP_GALAXY_MAP_OPTION_B         | Možnosť B
+SETUP_GALAXY_MAP_OPTION_C         | Možnosť C
+SETUP_GALAXY_AGE_NORMAL           | Bežná
+SETUP_GALAXY_AGE_YOUNG            | Mladá
+SETUP_GALAXY_AGE_OLD              | Stará
+SETUP_RANDOM_EVENTS_ON            | Zapnuté
+SETUP_RANDOM_EVENTS_OFF           | Vypnuté
+SETUP_RANDOM_EVENTS_NO_MONSTERS   | Bez príšer
+SETUP_GALAXY_NUMBER_EMPIRES       | Celkový počet impérií: %1
+SETUP_GALAXY_NUMBER_SYSTEMS       | Celkový počet súhvezdí: %1
+SETUP_GALAXY_MAX_OPPONENTS        | Maximálny počet protivníkov: %1
+SETUP_OPPONENTS_HEADER_1          | %1 proti
+SETUP_OPPONENTS_HEADER_2          | súperom
+SETUP_OPPONENT_RANDOM             | ???
+SETUP_OPPONENT_AI                 | Hrať proti:
+SETUP_OPPONENT_AI_BASE            | AI: Základná
+SETUP_OPPONENT_AI_MODNAR          | AI: Modnar
+SETUP_OPPONENT_AI_XILMI           | AI: Xilmi
+SETUP_OPPONENT_AI_SELECT          | AI: Na výber
+SETUP_AUTOPLAY_OFF                | Vypnutá
+SETUP_AUTOPLAY_AI_BASE            | AI: Základná
+SETUP_AUTOPLAY_AI_MODNAR          | AI: Modnar
+SETUP_AUTOPLAY_AI_XILMI           | AI: Xilmi
+SETUP_GAME_DIFFICULTY_LABEL       | Obtiažnosť
+SETUP_DIFFICULTY_EASIEST          | Najľahšia
+SETUP_DIFFICULTY_EASIER           | Veľmi ľahká
+SETUP_DIFFICULTY_EASY             | Ľahká
+SETUP_DIFFICULTY_NORMAL           | Stredná
+SETUP_DIFFICULTY_HARD             | Ťažká
+SETUP_DIFFICULTY_HARDER           | Veľmi ťažká
+SETUP_DIFFICULTY_HARDEST          | Najťažšia
+SETUP_RESEARCH_RATE_NORMAL        | Bežná
+SETUP_RESEARCH_RATE_SLOW          | Pomalá
+SETUP_RESEARCH_RATE_SLOWER        | Pomalšia
+SETUP_RESEARCH_RATE_SLOWEST       | Najpomalša
+SETUP_TECH_TRADING_YES            | Áno
+SETUP_TECH_TRADING_ALLIES         | Iba so spojencami
+SETUP_TECH_TRADING_NO             | Nie
+SETUP_WARP_SPEED_NORMAL           | Bežná
+SETUP_WARP_SPEED_FAST             | Rýchla
+SETUP_NEBULA_NONE                 | Žiadne
+SETUP_NEBULA_RARE                 | Vzácne
+SETUP_NEBULA_UNCOMMON             | Výnimočne
+SETUP_NEBULA_NORMAL               | Bežné
+SETUP_NEBULA_COMMON               | Časté
+SETUP_NEBULA_FREQUENT             | Veľmi časté
+SETUP_COUNCIL_NONE                | Bez koncilu
+SETUP_COUNCIL_IMMEDIATE           | Okamžité
+SETUP_COUNCIL_REBELS              | S rebelmi
+SETUP_STAR_DENSITY_LOWEST         | Najnižšia
+SETUP_STAR_DENSITY_LOWER          | Nižšia
+SETUP_STAR_DENSITY_LOW            | Nízka
+SETUP_STAR_DENSITY_NORMAL         | Bežná
+SETUP_STAR_DENSITY_HIGH           | Vysoká
+SETUP_STAR_DENSITY_HIGHER         | Vyššia
+SETUP_STAR_DENSITY_HIGHEST        | Najvyššia
+SETUP_AI_HOSTILITY_LOWEST         | Najmilší
+SETUP_AI_HOSTILITY_LOWER          | Milší
+SETUP_AI_HOSTILITY_LOW            | Milý
+SETUP_AI_HOSTILITY_NORMAL         | Bežná
+SETUP_AI_HOSTILITY_HIGH           | Hnevlivý
+SETUP_AI_HOSTILITY_HIGHER         | Hnevlivejší
+SETUP_AI_HOSTILITY_HIGHEST        | Najhnevliejší
+SETUP_GAME_NUMBER_OPPONENTS       | Súperi
+SETUP_PLANET_QUALITY_POOR         | Slabá
+SETUP_PLANET_QUALITY_MEDIOCRE     | Podpriemerná 
+SETUP_PLANET_QUALITY_NORMAL       | Bežná
+SETUP_PLANET_QUALITY_GOOD         | Dobrá
+SETUP_PLANET_QUALITY_GREAT        | Skvelá
+SETUP_TERRAFORMING_NORMAL         | Bežná
+SETUP_TERRAFORMING_REDUCED        | Spomalená
+SETUP_TERRAFORMING_NONE           | Vypnutá
+SETUP_COLONIZING_NORMAL           | Bežná
+SETUP_COLONIZING_RESTRICTED       | Obmedzená
+SETUP_FUEL_RANGE_NORMAL           | Bežný
+SETUP_FUEL_RANGE_HIGH             | Vysoký
+SETUP_FUEL_RANGE_HIGHER           | Vyšší 
+SETUP_FUEL_RANGE_HIGHEST          | Najvyšší
+SETUP_RANDOMIZE_AI_NONE           | Nie
+SETUP_RANDOMIZE_AI_PERSONALITY    | Osobnosť
+SETUP_RANDOMIZE_AI_ABILITY        | Schopnosti
+SETUP_RANDOMIZE_AI_BOTH           | Oboje
+SETUP_RACE_LABEL                  | Available Races
+SETUP_RACE_COLOR                  | Farba impéria:
+SETUP_HOMEWORLD_NAME_LABEL        | Domovský svet:
+SETUP_LEADER_NAME_LABEL           | Vodca:
+SETUP_FLAG_LABEL                  | Zástava
+SETUP_BUTTON_CANCEL               | Zrušiť
+SETUP_BUTTON_BACK                 | Späť
+SETUP_BUTTON_NEXT                 | Ďalej
+SETUP_BUTTON_START                | Štart
+SETUP_BUTTON_SETTINGS             | Rozšírené možnosti
+
+SETUP_SPIRAL_2_ARMS               | Dve ramená
+SETUP_SPIRAL_3_ARMS               | Tri ramená
+SETUP_SPIRAL_4_ARMS               | Štyri ramená
+SETUP_SPIRAL_5_ARMS               | Päť ramien
+SETUP_SPIRAL_6_ARMS               | Šesť ramien
+SETUP_SPIRAL_7_ARMS               | Sedem ramien
+SETUP_SPIRAL_8_ARMS               | Osem ramien
+SETUP_SPIRAL_ROTATION_0           | Bez rotácie
+SETUP_SPIRAL_ROTATION_1           | Rotácia 1
+SETUP_SPIRAL_ROTATION_2           | Rotácia 2
+SETUP_SPIRAL_ROTATION_3           | Rotácia 3
+SETUP_SPIRAL_ROTATION_4           | Rotácia 4
+SETUP_SPIRAL_ROTATION_5           | Rotácia 5
+SETUP_SPIRAL_ROTATION_6           | Rotácia 6
+SETUP_ELLIPSE_0                   | Kruhová
+SETUP_ELLIPSE_1                   | Elipsa 1
+SETUP_ELLIPSE_2                   | Elipsa 2
+SETUP_ELLIPSE_3                   | Elipsa 3
+SETUP_ELLIPSE_4                   | Elipsa 4
+SETUP_VOID_0                      | Bez prázdnoty
+SETUP_VOID_1                      | Prázdnota 1
+SETUP_VOID_2                      | Prázdnota 2
+SETUP_VOID_3                      | Prázdnota 3
+SETUP_VOID_4                      | Prázdnota 4
+
+
+// Advanced Settings
+SETTINGS_TITLE                    | Rozšírené možnosti hry
+SETTINGS_DESCRIPTION              | Jednotlivé nastavenia hry môžete meniť kliknutím myšou.
+SETTINGS_EXIT                     | Naspäť
+SETTINGS_DEFAULT                  | Obnoviť pôvodné nastavenia
+SETTINGS_STAR_DENSITY             | Hustota súhvezdí: %1
+SETTINGS_RANDOM_EVENTS            | Náhodné udalosti : %1
+SETTINGS_RESEARCH_RATE            | Rýchlosť výskumu: %1
+SETTINGS_COUNCIL_WIN              | Víťazstvo skrz voľby: %1
+SETTINGS_RANDOMIZE_AI             | Upraviť AI: %1
+SETTINGS_AUTOPLAY                 | Automatická hra: %1
+SETTINGS_TECH_TRADING             | Výmena technológií: %1
+SETTINGS_GALAXY_AGE               | Vek galaxie: %1
+SETTINGS_WARP_SPEED               | Warp rýchlosť: %1
+SETTINGS_NEBULAE                  | Hmloviny: %1
+SETTINGS_PLANET_QUALITY           | Kvalita planét: %1
+SETTINGS_TERRAFORMING             | Teraformácia planét: %1
+SETTINGS_COLONIZING               | Kolonizácia: %1
+SETTINGS_FUEL_RANGE               | Dosah vesmírnych ľodí: %1
+SETTINGS_AI_HOSTILITY             | Nepriateľskosť: %1
+SETTINGS_RANDOM_EVENTS_DESC       | Vesmírne príšery sú náhodné udalosti, ktoré môžu predstavovať významné hrozby v strede hry. Vypne vesmírne príšery alebo všetky náhodné udalosti.
+SETTINGS_WARP_SPEED_DESC          | Zvyšuje rýchlosť warpového výskumu (výskumu pohonu). Môže pomôcť pri hraní hier na extrémne veľkých mapách.
+SETTINGS_GALAXY_AGE_DESC          | V porovnaní s bežnou galaxiou majú mladé galaxie viac bielych a modrých hviezd. Staré galaxie majú naopak viac červených a neutrónových hviezd.
+SETTINGS_TECH_TRADING_DESC        | Vypne všetky možnosti obchodovania s technológiami alebo obmedzí obchodovanie iba na spojencov.
+SETTINGS_STAR_DENSITY_DESC        | Vysoké nastavenie znižuje pravdepodobnosť uviaznutia impérií v počiatkoch hry. 
+SETTINGS_RESEARCH_RATE_DESC       | Spomaľuje rýchlosť výskumu čím predlžuje životnosť technológií.
+SETTINGS_NEBULAE_DESC             | Hmloviny spomaľujú prechádzajúce lode a rušia štíty. Zvyšuje alebo znižuje ich frekvenciu. 
+SETTINGS_PLANET_QUALITY_DESC      | Zvyšuje alebo znižuje frekvenciu úrodných, alebo inak bohatých planét.
+SETTINGS_TERRAFORMING_DESC        | Redukuje alebo eliminuje úžitok z technológií teraformácie planét.
+SETTINGS_COLONIZING_DESC          | Obmedzuje možnosti kolonizácie planét iba na tie, na ktorú máte špecificky použitú technológiu.
+SETTINGS_COUNCIL_DESC             | Ruší možnosť víťazstva hry skrz hlasovanie v koncile alebo umožní vzbúriť sa impériám proti hráčovi.
+SETTINGS_RANDOMIZE_AI_DESC        | Náhodne zmení vlastnosti alebo schopnosti súperiacich impérií ovládaných AI (umelou inteligenciou).
+SETTINGS_AUTOPLAY_DESC            | Úlohu hráča preberie AI (umelá inteligencia). Užitočné v prípade, že chcete vidieť, ako rozmýšľa AI.
+SETTINGS_AUTOPLAY_WARNING         | Pozor! Je zapnutá „Automatická hra“ a zabraňuje hráčovi aktívne sa zapájať. Použite „Rozšírené možnosti“ na vypnutie.
+SETTINGS_FUEL_RANGE_DESC          | Zvyšuje účinnosť technológií doletu vesmírnych lodí a dosah rezervných palivových článkov.
+SETTINGS_AI_HOSTILITY_DESC        | Zvyšuje alebo znižuje úroveň nevraživosti medzi rasami.
+
+// Tech UI labels
+TECH_RESEARCH                     | Výskum a vývoj technológií
+TECH_RESEARCH_POINTS              | Body výskumu (BV)
+TECH_EMPIRE_SPENDING              | Výdavky na výskum
+TECH_EMPIRE_SPENDING_DESC         | Suma výdavkov na výskum z celej ríše
+TECH_EMPIRE_TECH_RESERVE_OPT      | Presunúť úspory zo štátnej pokladnice do výskumu
+TECH_EMPIRE_BALANCED_DESC         | Vyvážené výdavky zvyšujú celkový počet výskumných bodov.
+TECH_EMPIRE_DETAIL_1              | %1 BC produkuje 
+TECH_EMPIRE_DETAIL_2              | %2 BV / ročne
+TECH_TOTAL_RP                     | %1 BV
+TECH_DISCOVERY_PCT                | %1%
+TECH_CHANGE_RESEARCH              | Kliknite pre výskum tejto technológie
+TECH_NEXT_TIER_TITLE              | Zatiaľ nie je k dispozícii.
+TECH_FIRST_TIER_DESC              | Na odomknutie v tejto kategórii treba minúť viac bodov výskumu.
+TECH_NEXT_TIER_DESC               | Na odomknutie preskúmajte technológiu v predchádzajúcej úrovni.
+TECH_FUTURE_TIER_DESC             | Na odomknutie preskúmajte všetky technológie v predchádzajúcich úrovniach.
+TECH_ALLOCATE_POINTS              | Rozdeľte body na výskum
+TECH_EQUALIZE                     | Vyrovnať prostriedky
+TECH_RESEARCH_COMPLETED           | Výskum ukončený
+TECH_RESEARCHING                  | Skúmam:
+TECH_NONE_RESEARCHED              | Žiadne
+TECH_PLANETARY_SHIELDS            | Planetárny štít
+TECH_PLANETARY_SHIELDS_NONE       | Bez 
+TECH_PLANETARY_SHIELDS_CLASS      | Úrovne %1
+TECH_GROUND_COMBAT                | Boj na zemi
+TECH_GROUND_COMBAT_NO_BONUS       | Bez bonusu
+TECH_GROUND_COMBAT_BONUS          | +%1
+TECH_TERRAFORM                    | Teraformácia
+TECH_TERRAFORM_NO_BONUS           | Žiadna
+TECH_TERRAFORM_BONUS              | +%1 Max Pop.
+TECH_FACTORY_CONTROLS             | Automatizácia 
+TECH_FACTORY_CONTROLS_BONUS       | %1 na kolonistu
+TECH_PLANET_SCANNER               | Dosah skenera
+TECH_PLANET_SCANNER_NONE          | Žiaden
+TECH_PLANET_SCANNER_RANGE         | %1 ly
+TECH_WASTE_REDUCTION              | Riadenie odpadu
+TECH_WASTE_REDUCTION_NONE         | Žiadne
+TECH_WASTE_REDUCTION_AMT          | -%1%
+TECH_WASTE_CLEANUP                | Čistenie odpadu
+TECH_WASTE_CLEANUP_BONUS          | %1 Odpad/BC
+TECH_SHIP_RANGE                   | Medzihviezdny dolet
+TECH_SHIP_RANGE_AMT               | %1 ly
+TECH_SHIP_SPEED                   | Maximálna rýchlosť
+TECH_SHIP_SPEED_AMT               | Warp %1
+TECH_BUTTON_EXIT                  | Späť
+
+// Tech UI help
+TECH_HELP_1A                      | PREHĽAD - táto obrazovka vám umožňuje spravovať výdavky na výskumu v šiestich oblastiach. Môžete si prezrieť technológie, ktoré ste už objavili (zelená), ktoré sú práve vo výskume (žltá) alebo ktoré sú k dispozícii pre výskum v budúcnosti (hnedá).
+TECH_HELP_1B                      | Kliknutím, alebo posunutím kolieska myši zobrazíte technológie pre danú oblasť výskumu. 
+TECH_HELP_1C                      | Naplní sa, keď sa v oblasti minú body výskumu (BP). Po ich naplnení sa v každom ťahu zvyšuje šanca, že danú technológiu objavíte.
+TECH_HELP_1D                      | Technológia, ktorá sa v súčasnosti skúma. Pozrite si jej popis a výhody.
+TECH_HELP_1E                      | Výhody z technológií, ktoré ste sa už v tejto oblasti naučili.
+TECH_HELP_1F                      | Celková produkcia v biliónoch kreditov (BC) použitá na výskum a z nej vyplývajúce celkové body výskumu (BV).
+TECH_HELP_1G                      | Prebytočné úspory z kolónii môžu smerovať do výskumu namiesto ríšskej pokladnice.
+TECH_HELP_1H                      | Každá oblasť má panel, kde môžete prideľovať výdavky na výskum. Kliknutím na názov lištu uzamknete. Výdavky v prvej šestine celkovej dĺžky lišty prinášajú 25 percentný bonus k celkovému výskumu.
+TECH_HELP_1I                      | Vyrovnajte alokácie výdavkov pre odomknuté stĺpce. 
+
+// =========================================================================
+//   ALPHA 4
+// =========================================================================
+
+// Ship Design UI
+SHIP_DESIGN_TITLE                 | Návrh lode
+SHIP_DESIGN_SLOTS                 | Zoznam návrhov
+SHIP_DESIGN_AVAILABLE             | K dispozícii
+SHIP_DESIGN_AVAILABLE_DESC        | Ak chcete začať pracovať na novom návrhu lode, vyberte túto položku.
+SHIP_DESIGN_AVAILABLE_DESC2       | Nasadenie tohto návrhu umožní výstavbu v kolóniách.
+SHIP_DESIGN_PROTOTYPE             | Prototyp
+SHIP_DESIGN_PROTOTYPE_DESC        | Prototyp nie je možné nasadiť
+SHIP_DESIGN_SLOT_DESC             | Spolu vo flotile:
+SHIP_DESIGN_SLOT_DESC2            | Na orbite:
+SHIP_DESIGN_SLOT_DESC3            | Presúva sa:
+SHIP_DESIGN_SLOT_DESC4            | Výrábané:
+SHIP_DESIGN_NEW                   | Návrh novej lode
+SHIP_DESIGN_PROTOTYPE_TITLE       | Prototyp návrhu lode
+SHIP_DESIGN_SIZE_SMALL            | Malá
+SHIP_DESIGN_SIZE_MEDIUM           | Stredná
+SHIP_DESIGN_SIZE_LARGE            | Veľká
+SHIP_DESIGN_SIZE_HUGE             | Obrovská
+SHIP_DESIGN_SIZE_LABEL            | Rozmery
+SHIP_DESIGN_TYPE_LABEL            | Typ
+SHIP_DESIGN_COUNT_LABEL           | Počet
+SHIP_DESIGN_DAMAGE_LABEL          | Poškodenie 
+SHIP_DESIGN_POWER_LABEL           | Výkon
+SHIP_DESIGN_RANGE_LABEL           | Dolet
+SHIP_DESIGN_SPEED_LABEL           | Rýchlosť
+SHIP_DESIGN_COST_LABEL            | Cena
+SHIP_DESIGN_DESCRIPTION_LABEL     | Popis
+SHIP_DESIGN_RANGE_VALUE           | %1 ly
+SHIP_DESIGN_RANGE_UNLIMITED       | Neobmedzený
+SHIP_DESIGN_SPEED_VALUE           | Warp %1
+SHIP_DESIGN_COST_VALUE            | %1 BC
+SHIP_DESIGN_TOTAL_SPACE_LABEL     | Obsadený priestor
+SHIP_DESIGN_AVAIL_SPACE_LABEL     | Voľný priestor
+SHIP_DESIGN_COLORS                | Odtieň
+SHIP_DESIGN_COMBAT_STATS_TITLE    | Bojové vlastnosti
+SHIP_DESIGN_HIT_POINTS_LABEL      | Zásahové body
+SHIP_DESIGN_MISSILE_DEF_LABEL     | Obrana: rakety
+SHIP_DESIGN_BEAM_DEF_LABEL        | Obrana: paprsky
+SHIP_DESIGN_ATTACK_LEVEL_LABEL    | Úroveň útoku
+SHIP_DESIGN_COMBAT_SPEED_LABEL    | Rýchlosť v boji
+SHIP_DESIGN_COMBAT_SPEED_VALUE    | %1 štvorec(e)
+SHIP_DESIGN_ENGINES_TITLE         | Pohon
+SHIP_DESIGN_ENGINES_DESC          | Poháňa loď i jej súčasti.
+SHIP_DESIGN_ENGINE_TYPE           | Typ
+SHIP_DESIGN_ENGINE_SPEED          | Rýchlosť
+SHIP_DESIGN_ENGINE_COST1          | Cena/motor
+SHIP_DESIGN_ENGINE_SIZE1          | Veľkosť/motor
+SHIP_DESIGN_ENGINE_POWER1         | Výkon/motor
+SHIP_DESIGN_POWER_REQUIREMENTS    | Potrebný celkový výkon
+SHIP_DESIGN_ENGINES_REQUIRED      | Potrebných motorov
+SHIP_DESIGN_ENGINES_SIZE          | Priestor potrebný na pohon
+SHIP_DESIGN_ENGINES_COST          | Celková cena pohonu
+SHIP_DESIGN_COPY_BUTTON           | Kopírovať
+SHIP_DESIGN_CLEAR_BUTTON          | Vymazať
+SHIP_DESIGN_RENAME_BUTTON         | Premenovať
+SHIP_DESIGN_DEPLOY_BUTTON         | Nasadiť návrh
+SHIP_DESIGN_DEPLOY_DESC           | Po nasadení môžete túto loď stavať v kolóniách. Tento dizajn možno len premenovať alebo zošrotovať.
+SHIP_DESIGN_SCRAP_BUTTON          | Vyradiť návrh
+SHIP_DESIGN_SCRAP_CONFIRM1        | Ste si istí, že chcete vyradiť návrh (%1)?
+SHIP_DESIGN_SCRAP_CONFIRM2        | Počet lodí, ktoré budú zošrotované: %1. Získate %2 BC, ktoré sa uložia do planetárnych rezerv.
+SHIP_DESIGN_SCRAP_CONFIRM3        | V súčasnosti nemáte žiadne postavené lode tejto konštrukcie.
+SHIP_DESIGN_SCRAP_CANCEL          | Zrušiť
+SHIP_DESIGN_SCRAP_OK              | Vyradiť
+SHIP_DESIGN_RENAME_CONFIRM        | Premenovať návrh lode
+SHIP_DESIGN_DEPLOY_CONFIRM        | Pomenujte svoj návrh lode
+SHIP_DESIGN_DEPLOY_CANCEL         | Zrušiť
+SHIP_DESIGN_DEPLOY_OK             | Nasadiť
+SHIP_DESIGN_RENAME_OK             | Premenovať
+SHIP_DESIGN_UNNAMED_DESIGN        | Neuvedené
+SHIP_DESIGN_COMPONENT_NONE        | Bez
+
+
+// ship design selection dialogs
+SHIP_DESIGN_STARGATE_NAME         | Hviezdna brána
+SHIP_DESIGN_1ST_SCOUT_NAME        | Prieskumník
+SHIP_DESIGN_1ST_FIGHTER_NAME      | Stíhač
+SHIP_DESIGN_1ST_DESTROYER_NAME    | Torpédoborec
+SHIP_DESIGN_1ST_BOMBER_NAME       | Bombardér
+SHIP_DESIGN_1ST_COLONY_NAME       | Koloniálna loď
+SHIP_DESIGN_COMPUTER_TITLE        | Počítače
+SHIP_DESIGN_COMPUTER_TYPE         | Typ
+SHIP_DESIGN_COMPUTER_COST         | Cena
+SHIP_DESIGN_COMPUTER_SIZE         | Rozmery
+SHIP_DESIGN_COMPUTER_POWER        | Spotreba
+SHIP_DESIGN_COMPUTER_SPACE        | Priestor
+SHIP_DESIGN_SHIELD_TITLE          | Štíty
+SHIP_DESIGN_SHIELD_TYPE           | Typ
+SHIP_DESIGN_SHIELD_COST           | Cena
+SHIP_DESIGN_SHIELD_SIZE           | Rozmery
+SHIP_DESIGN_SHIELD_POWER          | Spotreba
+SHIP_DESIGN_SHIELD_SPACE          | Priestor
+SHIP_DESIGN_ECM_TITLE             | ECM rušička
+SHIP_DESIGN_ECM_TYPE              | Typ
+SHIP_DESIGN_ECM_COST              | Cena
+SHIP_DESIGN_ECM_SIZE              | Rozmery
+SHIP_DESIGN_ECM_POWER             | Spotreba
+SHIP_DESIGN_ECM_SPACE             | Priestor
+SHIP_DESIGN_ARMOR_TITLE           | Pancier
+SHIP_DESIGN_ARMOR_TYPE            | Typ
+SHIP_DESIGN_ARMOR_COST            | Cena
+SHIP_DESIGN_ARMOR_SIZE            | Rozmery
+SHIP_DESIGN_ENGINE_TITLE          | Motory
+SHIP_DESIGN_ENGINE_TYPE           | Typ
+SHIP_DESIGN_ENGINE_NUM            | Počet motorov
+SHIP_DESIGN_ENGINE_SPACE          | Priestor
+SHIP_DESIGN_ENGINE_COST           | Cena
+SHIP_DESIGN_ENGINE_SIZE           | Rozmery
+SHIP_DESIGN_ENGINE_POWER          | Spotreba
+SHIP_DESIGN_MANEUVER_TITLE        | Manévrovateľnosť
+SHIP_DESIGN_MANEUVER_TYPE         | Typ
+SHIP_DESIGN_MANEUVER_SPEED        | Rýchlosť
+SHIP_DESIGN_MANEUVER_COST         | Cena
+SHIP_DESIGN_MANEUVER_POWER        | Spotreba
+SHIP_DESIGN_MANEUVER_SPACE        | Priestor
+SHIP_DESIGN_WEAPON_TITLE          | Zbrane
+SHIP_DESIGN_WEAPON_MAX            | Max.
+SHIP_DESIGN_WEAPON_TYPE           | Typ
+SHIP_DESIGN_WEAPON_DESCRIPTION    | Popis
+SHIP_DESIGN_WEAPON_DAMAGE         | Poškodenie
+SHIP_DESIGN_WEAPON_DMG_RANGE      | %1-%2
+SHIP_DESIGN_WEAPON_COST           | Cena
+SHIP_DESIGN_WEAPON_SIZE           | Rozmery
+SHIP_DESIGN_WEAPON_POWER          | Spotreba
+SHIP_DESIGN_WEAPON_SPACE          | Priestor
+SHIP_DESIGN_SPECIAL_TITLE         | Špeciálne zariadenia
+SHIP_DESIGN_SPECIAL_TYPE          | Typ
+SHIP_DESIGN_SPECIAL_DESCRIPTION   | Popis
+SHIP_DESIGN_SPECIAL_COST          | Cena
+SHIP_DESIGN_SPECIAL_SIZE          | Rozmery
+SHIP_DESIGN_SPECIAL_POWER         | Spotreba
+SHIP_DESIGN_SPECIAL_SPACE         | Priestor
+
+// Ship Design help
+SHIP_DESIGN_HELP_ALL              | PREHĽAD - vaša ríša môže mať až šesť aktívnych návrhov, dizajnov, lodí. Pre každý návrh si vyberte veľkosť trupu a potom ho naplňte rôznymi komponentmi ako je pancier, štíty a zbrane. Každý komponent má svoje rozmery, spotrebu a cenu. Priestor potrebný pre komponent je jeho veľkosť plus počet motorov potrebných na jeho pohon. Po rozmiestnení môžete návrh lode postaviť v ktorejkoľvek z vašich kolónií.
+SHIP_DESIGN_HELP_1A               | Veľkosť - väčšie rozmery trupu zvyšujú náklady, ale poskytujú viac priestoru.
+SHIP_DESIGN_HELP_1B               | Dosah - ako ďaleko môže loď zaletieť od vami kontrolovaných systémov.
+SHIP_DESIGN_HELP_1C               | Rýchlosť - rýchlosť cestovania medzi hviezdami. 
+SHIP_DESIGN_HELP_1D               | Cena - celkové náklady na stavbu tejto lode.
+SHIP_DESIGN_HELP_1E               | Obsadený priestor - celkový priestor, ktorý zaberajú komponenty tejto konštrukcie lode.
+SHIP_DESIGN_HELP_1F               | Voľný priestor - nevyužitý priestor na tejto konštrukcii lode.
+SHIP_DESIGN_HELP_1G               | Zásahové body - rozsah poškodení potrebých na zničenie tejto lode v boji.
+SHIP_DESIGN_HELP_1H               | Obrana: rakety - úroveň obrany proti raketám v boji.
+SHIP_DESIGN_HELP_1I               | Obrana: paprsky - úroveň obrany proti energetickým zbraniam v boji.
+SHIP_DESIGN_HELP_1J               | Úroveň útoku - úroveň útoku zbraní v boji.  
+SHIP_DESIGN_HELP_1K               | Bojová rýchlosť - vzdialenosť, ktorú môže loď prejsť v boji za ťah.
+SHIP_DESIGN_HELP_1L               | Odtieň - mení farbu lode.
+SHIP_DESIGN_HELP_2A               | Typ - typ pohonu používaného na tejto lodi.
+SHIP_DESIGN_HELP_2B               | Rýchlosť - celková rýchlosť, ktorú zabezpečuje motor.
+SHIP_DESIGN_HELP_2C               | Cena/motor - náklady na jeden motor.
+SHIP_DESIGN_HELP_2D               | Veľkosť/motor - priestor na trupe potrebný pre jeden motor.
+SHIP_DESIGN_HELP_2E               | Výkon/motor - výkon generovaný jedným motorom.
+SHIP_DESIGN_HELP_2F               | Potrebný celkový výkon - celková energia potrebná pre všetky komponenty lode.
+SHIP_DESIGN_HELP_2G               | Potrebných motorov - počet motorov potrebných na uspokojenie celkovej spotreby energie.
+SHIP_DESIGN_HELP_2H               | Priestor potrebný na pohon - celkový priestor trupu potrebný pre všetky motory.
+SHIP_DESIGN_HELP_2I               | Celková cena pohonu - celkové náklady na všetky motory.
+SHIP_DESIGN_HELP_2J               | Obrázok priradený návrhu lode. Pre každú zo štyroch veľkostí trupu je k dispozícii šesť rôznych obrázkov. Kliknutím na šípky ho môžete zmeniť.
+SHIP_DESIGN_HELP_2K               | Názov návrhu lode.
+SHIP_DESIGN_HELP_3A               | Počítače - ovplyvňujú úroveň útoku vašej lode v boji.
+SHIP_DESIGN_HELP_3B               | Pancier - ovplyvňuje zásahové body vašej lode. Ťažký pancier ich zvyšuje o 50%.
+SHIP_DESIGN_HELP_3C               | Štíty - znižujú poškodenie spôsobené prichádzajúcimi útokmi.
+SHIP_DESIGN_HELP_3D               | ECM rušička - elektronické protiopatrenia zlepšujú vašu protiraketovú obranu.
+SHIP_DESIGN_HELP_3E               | Manéverovateľnosť - zvyšuje bojovú rýchlosť a obranu lode.
+SHIP_DESIGN_HELP_3F               | Zbrane - môžu spôsobovať poškodenie nepriateľským lodiam a kolóniám. Možno pridať až štyri rôzne typy zbraní.
+SHIP_DESIGN_HELP_3G               | Špeciálne zariadenia - zariadenia, ktoré poskytujú vašej lodi jedinečné schopnosti. Možno pridať až tri špeciálne zariadenia.
+SHIP_DESIGN_HELP_4A               | Premenovať - umožňuje premenovať existujúci návrh.
+SHIP_DESIGN_HELP_4B               | Vyradiť návrh - vyradí existujúci návrh. 25% hodnoty lodí sa prevedie do pokladnice.
+SHIP_DESIGN_HELP_4C               | Nasadené návrhy lodí môžete postaviť v ktorejkoľvek zo svojich kolónií.
+SHIP_DESIGN_HELP_4D               | Na vytvorenie nového návrhu môžete vybrať dostupné sloty.
+SHIP_DESIGN_HELP_4E               | Kopírovať - skopíruj existujúci dizajn, ktorý bude slúžiť ako východiskový bod pre nový dizajn.
+SHIP_DESIGN_HELP_4F               | Vymazať - odstráni všetky vybrané komponenty.
+SHIP_DESIGN_HELP_4G               | Nasadeniť návrh - keď je váš návrh dokončený, nasadenie vám umožní pomenovať ho a sprístupní ho pre výrobu.
+
+
+// Ship Combat UI
+SHIP_COMBAT_TITLE_SYSTEM          | Súboj v systéme %1!
+SHIP_COMBAT_TITLE_UNSCOUTED       | Súboj v nepreskúmanom systéme!
+SHIP_COMBAT_TITLE_DESC            | Naše sily sa stretli s nepriateľskou flotilou [alien_race_akuzativ].
+SHIP_COMBAT_TITLE_MONSTER_DESC    | Naše sily sa stretli s: %1.
+SHIP_COMBAT_BASES                 | %1 Raketové základne
+SHIP_COMBAT_SHIELD                | Úroveň %1 planetárneho štítu
+SHIP_COMBAT_POPULATION            | %1 Obyvateľov
+SHIP_COMBAT_FACTORIES             | %1 Tovární
+SHIP_COMBAT_ENTER_BATTLE          | Vstúpiť do boja
+SHIP_COMBAT_MISS                  | Bez zásahu
+SHIP_COMBAT_DEFLECTED             | Zbraň odrazená
+SHIP_COMBAT_DESTROYED             | Cieľ zničený!
+SHIP_COMBAT_STASIS                | Stáza
+SHIP_COMBAT_TITLE                 | Bitka o %1
+SHIP_COMBAT_TITLE_UNNAMED         | Bitka o neprebádaný systém
+SHIP_COMBAT_SYSTEM_POP            | Populácia
+SHIP_COMBAT_SYSTEM_FACT           | Továrne
+SHIP_COMBAT_SYSTEM_BASE           | Základne
+SHIP_COMBAT_TITLE_VICTORIOUS      | VÍŤAZ
+SHIP_COMBAT_SHIP_TOTALS           | %1 🡒 %2
+SHIP_COMBAT_RESULTS_RETREATED     | ÚSTUPILA
+SHIP_COMBAT_RESULTS_DESTROYED     | ZNIČENÁ
+SHIP_COMBAT_RETREAT_ALL           | Ústupiť
+SHIP_COMBAT_NEXT                  | Ďalšia loď
+SHIP_COMBAT_AUTO_RESOLVE          | Automaticky vyriešiť súboj
+SHIP_COMBAT_AUTO_RESOLVING        | Riešenie bojovej situácie...
+SHIP_COMBAT_PLAY_BATTLE           | Hrať automaticky
+SHIP_COMBAT_PAUSE_BATTLE          | Stopnúť bitku
+SHIP_COMBAT_EXIT                  | Zrušiť
+SHIP_COMBAT_COUNT_NAME            | %1  %2
+SHIP_COMBAT_MONSTER_TARGET        | Vesmírna príšera zameraná.
+SHIP_COMBAT_ENEMY_TARGET          | Nepriateľská flotila zameraná.
+SHIP_COMBAT_ALLY_TARGET           | Priateľská flotila zameraná.
+SHIP_COMBAT_ENEMY_COLONY          | Nepriateľská planéta zameraná.
+SHIP_COMBAT_ALLY_COLONY           | Priateľská planéta zameraná.
+SHIP_COMBAT_CURRENT_TARGET        | Súčasná flotila zameraná.
+SHIP_COMBAT_SELECT_ACTION         | Zvoľte akciu.
+SHIP_COMBAT_SELECT_WEAPON         | Vyberte zbraň alebo zariadenie.
+SHIP_COMBAT_FIRE_WEAPON           | Vypáľte zbraň.
+SHIP_COMBAT_ACTION_NEXT_SHIP      | Ďalšia loď
+SHIP_COMBAT_ACTION_TURN_DONE      | Ukončiť ťah
+SHIP_COMBAT_ACTION_RETREAT        | Ústupiť
+SHIP_COMBAT_ACTION_FIRE_ALL       | Vypáliť zo všetkých zbraní
+SHIP_COMBAT_ACTION_CLOAK          | Zamaskovať sa
+SHIP_COMBAT_ACTION_MOVE           | Presunúť
+SHIP_COMBAT_ACTION_TELEPORT       | Teleportovať
+SHIP_COMBAT_ACTION_RANGE          | Mimo dosahu
+SHIP_COMBAT_ACTION_NO_MISSILES    | Nezostali vám žiadne rakety
+SHIP_COMBAT_ACTION_NO_BOMBS       | Nezostali vám žiadne bomby
+SHIP_COMBAT_ACTION_FIRED          | Už vystrelené
+SHIP_COMBAT_ACTION_USED           | Už použité
+SHIP_COMBAT_ACTION_BAD_TARGET     | Neplatný cieľ
+SHIP_COMBAT_ACTION_WPN_COUNT      | %1 x%2
+SHIP_COMBAT_ACTION_WPN_COUNT_SHOTS| %1 x%2 x%3
+SHIP_COMBAT_INFO_LABEL            | Informácie o lodi
+SHIP_COMBAT_SCAN_LABEL            | Informácie zo skenovania lode
+SHIP_COMBAT_SCAN_HIT_POINTS       | Zásahové body
+SHIP_COMBAT_SCAN_MISSILE_DEF      | Protiraketová obrana
+SHIP_COMBAT_SCAN_BEAM_DEF         | Obrana proti energetickým zbraniam
+SHIP_COMBAT_SCAN_SHIELD_CLASS     | Úroveň štítu
+SHIP_COMBAT_SCAN_ATTACK_LEVEL     | Úroveň útoku
+SHIP_COMBAT_SCAN_SPEED            | Rýchlosť
+SHIP_COMBAT_SCAN_WEAPONS          | Zbrane
+SHIP_COMBAT_SCAN_DEVICES          | Zariadenia
+SHIP_COMBAT_SCAN_HITS_VALUE       | %1/%2
+SHIP_COMBAT_SCAN_WEAPON_CNT       | %1 x %2
+SHIP_COMBAT_SCAN_UNSCANNED_VALUE  | ???
+SHIP_COMBAT_COLONY_LABEL          | Informácie o kolónii
+SHIP_COMBAT_COLONY_SCAN_LABEL     | Informácie zo skenovania kolónie
+SHIP_COMBAT_COLONY_POPULATION     | Populácia
+SHIP_COMBAT_COLONY_SHIELD         | Štíty
+SHIP_COMBAT_COLONY_FACTORIES      | Továrne
+SHIP_COMBAT_COLONY_BASES          | Raketové základne
+SHIP_COMBAT_COLONY_BASE_HITS      | Zásahové body planéty
+SHIP_COMBAT_COLONY_BASE_ATTACK    | Úroveň raketového útoku
+SHIP_COMBAT_ACTION_FMT            | %1 - %2
+
+RELATIONS_FEUD                    | Nenávisť až za hrob
+RELATIONS_HATE                    | Nenávisť
+RELATIONS_DISCORD                 | Rozbroje
+RELATIONS_TROUBLED                | Problémové
+RELATIONS_TENSE                   | Napäté
+RELATIONS_RESTLESS                | Nepokojné
+RELATIONS_WARY                    | Obozretnosť
+RELATIONS_UNEASE                  | Nepríjemné
+RELATIONS_NEUTRAL                 | Neutrálne
+RELATIONS_RELAXED                 | Uvoľnené
+RELATIONS_AMIABLE                 | Sympatické
+RELATIONS_CALM                    | Pokojné
+RELATIONS_AFFABLE                 | Prívetivé
+RELATIONS_PEACEFUL                | Mierumilovné spolunažívanie
+RELATIONS_FRIENDLY                | Priateľstvo
+RELATIONS_UNITY                   | Súdržnosť
+RELATIONS_HARMONY                 | Harmónia
+
+RACES_TITLE                       | Spravodajstvo o rasách
+RACES_SELECTOR_TITLE              | Voľba ríše
+RACES_TAB_DIPLOMACY               | Diplomacia
+RACES_TAB_INTELLIGENCE            | Spravodajstvo
+RACES_TAB_MILITARY                | Armáda
+RACES_TAB_STATUS                  | Stav
+RACES_KNOWN_EMPIRES               | Známe ríše: %1 
+RACES_RECALLED_DIPLOMATS          | Odvolaní diplomati: %1 
+RACES_NO_TREATY                   | Žiadna dohoda
+RACES_AT_FINAL_WAR                | Konečná vojna
+RACES_AT_WAR                      | Vo vojnovom stave
+RACES_PEACE                       | Mierová zmluva
+RACES_PACT                        | Pakt o neútočení
+RACES_ALLY                        | Aliancia
+RACES_UNITY                       | Jednota
+RACES_OUT_OF_RANGE                | Mimo dosahu lodí
+RACES_TRADE_LEVEL                 | %1 BC obchodná dohoda
+RACES_TRADE_NONE                  | Bez obchodnej dohody
+RACES_DIPLOMAT_RECALLED           | Diplomat [alien_race_akuzativ] odvolaný
+RACES_DIPLOMATS_RECALLED          | Diplomati boli odvolaní
+
+RACES_DIPLOMACY_HOMEWORLD         | Domovský svet
+RACES_DIPLOMACY_LEADER            | Vodca
+RACES_DIPLOMACY_CURRENT_TRADE     | Príjmy z obchodných dohôd
+RACES_DIPLOMACY_TOTAL_TRADE       | Obchodné dohody spolu
+RACES_DIPLOMACY_TRADE_AMT         | %1 BC
+RACES_DIPLOMACY_CHARACTER         | Osobnosť
+RACES_DIPLOMACY_STATUS            | Stav
+RACES_DIPLOMACY_RELATIONS_METER   | Vzťahy
+RACES_DIPLOMACY_RELATIONS_UNKNOWN | Nálady a motívy [alien_race_akuzativ] sú pre našich diplomatov a špiónov neuchopiteľné.
+RACES_DIPLOMACY_BUREAU            | Diplomatická kancelária
+RACES_DIPLOMACY_BUREAU_DESC1      | Kontaktujte iné ríše alebo odvolajte svojich diplomatov, aby ste im zabránili vás kontaktovať.
+RACES_DIPLOMACY_BUREAU_DESC       | Kontaktujte veľvyslanca [alien_race_akuzativ].  Požiadajte o audienciu alebo nadviažte kontakt, ak boli vaši diplomati odvolaní. 
+RACES_DIPLOMACY_BUREAU_DESC_RANGE | Nemôžeme nadviazať diplomatické vzťahy s ríšami, ktoré sú mimo dosahu našich lodí.
+RACES_DIPLOMACY_BUREAU_DESC_FINAL | Sme zapojení do poslednej vojny s Novou republikou. Diplomacia už neprichádza do úvahy. 
+RACES_DIPLOMACY_KNOWN_EMPIRES     | Známe cudzie ríše
+RACES_DIPLOMACY_RECALLED_DIPLOMAT | Odvolaní diplomati
+RACES_DIPLOMACY_MANAGE_DIPLOMATS  | Spravovať diplomatov
+RACES_DIPLOMACY_AUDIENCE          | Audiencia
+RACES_DIPLOMACY_CONTACT           | Nadviazať kontakt
+RACES_DIPLOMACY_TRADE_SUMMARY     | Prehľad obchodých dohôd
+RACES_DIPLOMACY_TRADE_DESC        | Kontaktujte veľvyslanca [alien_race_akuzativ] a dohodnite sa na obchodnej dohode. Založenie obchodných sietí si vyžaduje čas a peniaze, ale rozvinuté prinášajú peniaze do pokladnice.
+RACES_DIPLOMACY_TRADE_DESC_RANGE  | Nemôžeme vytvoriť obchodné siete s ríšami, ktoré sú mimo dosahu našich lodí.
+RACES_DIPLOMACY_TRADE_DESC_FINAL  | Sme zapojení do poslednej vojny s Novou republikou. Obchod už nie je možný.
+RACES_DIPLOMACY_TRADE_TREATY      | Obchodná dohoda
+RACES_DIPLOMACY_FOREIGN_RELATIONS | Zahraničné vzťahy
+RACES_DIPLOMACY_FOREIGN_RANGE     | Zahraničné vzťahy [alien_race_akuzativ] nemôžeme poznať pokým s nimi nenadviažeme diplomatické styky.
+RACES_DIPLOMACY_FOREIGN_DESC      | [alien_race_plural] sú v kontakte s nasledujúcimi rasami:
+RACES_DIPLOMACY_COUNTER_BUREAU    | Úrad kontrarozviedky
+RACES_DIPLOMACY_COUNTER_DESC      | Výdavky na bezpečnosť zvyšujú šancu na odhalenie špiónov ale i celkové výdavky.
+RACES_DIPLOMACY_COUNTER_DESC2     | Zvýšte daňové zaťaženie kolónií, aby ste zvýšili výdavky na bezpečnosť.
+RACES_DIPLOMACY_EVENT_YEAR        | Rok
+RACES_DIPLOMACY_EVENT_TURN        | Ťah
+RACES_DIPLOMACY_EVENT_RACE        | Rasa
+RACES_DIPLOMACY_EVENT_TITLE       | Diplomatická udalosť
+RACES_DIPLOMACY_EVENT_EFFECT      | Dopad
+RACES_MANAGE_DIALOG_OK            | OK
+RACES_MANAGE_REINSTATE_DIPLOMAT   | Obnoviť diplomaticú službu
+RACES_MANAGE_RECALL_DIPLOMAT      | Odvolať diplomatov
+RACES_MANAGE_OUR_RECALLED         | Náš diplomat odvolaný
+RACES_MANAGE_THEIR_RECALLED       | Ich diplomat odvolaný
+RACES_MANAGE_BOTH_RECALLED        | Obaja diplomati odvolaní
+
+RACES_INTEL_TITLE                 | Zložka: [alien_race_plural] 
+RACES_COUNTER_INTEL_TITLE         | Správa kontrarozviedky
+RACES_INTEL_SECURITY_BONUS        | Bonus k bezpečnosti
+RACES_INTEL_TOTAL_SPENDING        | Výdavky spolu
+RACES_INTEL_SECURITY_TAX          | Daň z bezpečnosti
+RACES_INTEL_TAX_DESC              | Zdanením svojich kolónií zvýšite šancu na odhalenie cudzích špiónov.
+RACES_INTEL_TAX_OUT_OF_RANGE      | Výdavky sa začínajú, keď ste v dosahu cudzích rás.
+RACES_INTEL_SECURITY_BONUS_AMT    | +%1%
+RACES_INTEL_SECURITY_BONUS_NONE   | Žiaden
+RACES_INTEL_REPORT_AGE            | Vek správy
+RACES_INTEL_SPY_NETWORK           | Špionážna sieť
+RACES_INTEL_SPENDING              | Výdavky
+RACES_INTEL_SPENDING_DESC         | Navýšte výdavky, aby ste postupne pridávali  špiónov do špionážnej siete. 
+RACES_INTEL_SPENDING_DESC_UNITY   | Špionážne siete nie sú potrebné, pretože technológie sú medzi členmi Novej republiky voľne dostupné. 
+RACES_INTEL_SPENDING_CAPPED       | Limit výdavkov na špionáž v ríši dosiahnutý. Financovanie špionážnych sietí sa znížilo o 1 %.
+RACES_INTEL_SPENDING_RANGE        | Nie je možné vytvoriť špionážne siete pre ríše mimo dosahu našich lodí.
+RACES_INTEL_PERCENT_AMT           | %1%
+RACES_INTEL_YEARS                 | %1 rokov
+RACES_INTEL_NO_SPIES              | Žiadni špióni
+RACES_INTEL_1_SPY                 | 1 špión
+RACES_INTEL_N_SPIES               | %1 špióni
+RACES_INTEL_SPIES                 | %1 / %2
+RACES_INTEL_SPENDING_ANNUAL       | %1 BC/rok
+RACES_INTEL_CURRENT               | Aktuálna
+RACES_INTEL_NO_DATA               | Bez údajov
+RACES_INTEL_SPENDING_NONE         | Bez
+RACES_INTEL_COMPLETION_YEARS      | %1 roky
+RACES_INTEL_COMPLETION_PER_YEAR   | %1/rok
+RACES_INTEL_BUREAU_TITLE          | Spravodajský úrad
+RACES_INTEL_BUREAU_DESC           | Prideľte misie špiónom, aby kradli technológie alebo sabotovali cudzie rasy.
+RACES_INTEL_BUREAU_SPIES          | Celkový počet špiónov
+RACES_INTEL_BUREAU_MANAGE         | Spravovať špiónov
+RACES_INTEL_BUREAU_SPENDING       | Výdavky spolu
+RACES_INTEL_SPY_ORDERS            | Príkazy pre špiónov
+RACES_INTEL_SPY_ORDERS_DESC       | Prideľte svojim špiónom misie: inflitrácia, krádež technológií, alebo sabotáž kolónií [alien_race_akuzativ]. Čím väčšia špionážna sieť, tým väčšia šanca na úspech v každom ťahu. POZOR: Zajatie vašich špiónov ma negatívny dopad.
+RACES_INTEL_SPY_WARNING           | V prípade odhalenia táto misia poruší našu dohodu s [alien_race_instrumental].
+RACES_INTEL_SPY_WARNING_WAR       | V prípade odhalenia by táto misia mohla vyvolať vojnu s [alien_race_instrumental].
+RACES_INTEL_KNOWN_TECHNOLOGY      | [alien_race_dativ] známe technológie
+RACES_INTEL_KNOWN_TECH_DESC       | Naši špióni hlásia, že [alien_race_plural] ovládla nasledujúce technológie. Všetky nám neznáme technológie sú zvýraznené.
+RACES_INTEL_UNKNOWN_TECHNOLOGY    | Správa o neznámych technológiách
+RACES_INTEL_UNKNOWN_TECH_DESC     | Naši špióni hlásia, že cudzie rasy ovládajú tieto nám neznáme technológie.
+
+RACES_MILITARY_TITLE              | [alien_race_adjective] flotila vesmírnych lodí
+RACES_MILITARY_SUBTITLE           | Lode podľa veľkosti trupu
+RACES_MILITARY_UNSCANNED          | ??
+RACES_MILITARY_UNSCANNED_LONG     | Nezoskenované
+RACES_MILITARY_SMALL              | Malé
+RACES_MILITARY_MEDIUM             | Stredné
+RACES_MILITARY_LARGE              | Veľké
+RACES_MILITARY_HUGE               | Obrovské
+RACES_MILITARY_REPORT_CURRENT     | Správa o flotile je aktuálna
+RACES_MILITARY_DEFENSE            | Obranné systémy
+RACES_MILITARY_DEF_PLANET_SHIELD  | Planetárne štíty
+RACES_MILITARY_DEF_DEFL_SHIELD    | Ochranné štíty
+RACES_MILITARY_DEF_ARMOR          | Pancier
+RACES_MILITARY_TROOP_BONUS        | Bonus pozemných jednotiek
+RACES_MILITARY_DEF_MISSILE        | Raketové základne
+RACES_MILITARY_DEF_MISSILE_MAX    | Maximálny počet raketových základní pre nové kolónie
+RACES_MILITARY_NO_SHIELD          | Žiadne
+RACES_MILITARY_REPORT_NONE        | Žiadne údaje. Priraďte viac špiónov.
+RACES_MILITARY_REPORT_OLD         | Posledná aktualizácia pred (v rokoch): %1
+RACES_MILITARY_NO_SHIPS           | Nezistené žiadne lode
+RACES_MILITARY_HULL               | Veľkosť trupu
+RACES_MILITARY_ARMOR              | Pancier
+RACES_MILITARY_ATTACK_LEVEL       | Úroveň útoku
+RACES_MILITARY_MISSILE_DEFENSE    | Protiraketová obrana
+RACES_MILITARY_BEAM_DEFENSE       | Protilaserová obrana
+RACES_MILITARY_SHIELD             | Trieda štítov
+RACES_MILITARY_COMBAT_SPEED       | Rýchlosť v boji
+RACES_MILITARY_TRAVEL_SPEED       | Cestovná rýchlosť
+RACES_MILITARY_WEAPON_CNT         | %2 x%1
+RACES_MILITARY_NO_WEAPONS         | Bez zbraní
+RACES_MILITARY_NO_SPECIALS        | Bez zariadení
+RACES_MILITARY_ACTIVE             | V aktívnej službe
+RACES_MILITARY_INACTIVE           | Mimo prevádzky
+RACES_MILITARY_LAST_SEEN          | Naposledy videná
+RACES_MILITARY_SCAN_AGE           | v rokoch (%1)
+RACES_MILITARY_TACTICAL           | Taktické informácie
+RACES_MILITARY_WEAPONS            | Zbrane
+RACES_MILITARY_SPECIALS           | Špeciálne zariadenia
+
+RACES_STATUS_THE_EMPIRE           | [alien_race_plural]
+RACES_STATUS_VS                   | 
+RACES_STATUS_KNOWN_EMPIRES        | Známy vesmír
+RACES_STATUS_HISTORY              | Ukázať históriu [alien_race_akuzativ]
+RACES_STATUS_NO_DATA              | Žiadne dáta
+RACES_STATUS_OLD_DATA             | Staré údaje
+RACES_STATUS_FLEET_STRENGTH       | Sila flotily
+RACES_STATUS_POPULATION           | Obyvateľstvo
+RACES_STATUS_TECHNOLOGY           | Technológie
+RACES_STATUS_PLANETS              | Planéty
+RACES_STATUS_PRODUCTION           | Výroba
+RACES_STATUS_TOTAL_POWER          | Celková moc
+RACES_UNKNOWN_DATA                | ???
+
+RACES_SET_COLOR_TITLE             | Výber novej farby pre [alien_empire_lowercase]
+RACES_SET_COLOR_DESC              | Ak vybranú farbu a tvar používa iná ríša, farby sa vymenia.
+
+// Races UI help
+RACES_HELP_0A                     | PREHĽAD: na tejto obrazovke nájdete podrobné informácie o každej mimozemskej rase, s ktorou ste sa stretli.
+RACES_HELP_0B                     | Diplomacia - možnosti diplomacie s vybranou ríšou. 
+RACES_HELP_0C                     | Spravodajstvo - spravujte špionážne siete.
+RACES_HELP_0D                     | Armáda - zobrazenie flotíl a návrhov lodí.
+RACES_HELP_0E                     | Stav - porovnanie v niekoľkých kategóriách.
+RACES_HELP_0F                     | Výberom svojej ríše môžete spravovať informácie o všetkých kontaktovaných rasách z jednotlivých kariet.
+RACES_HELP_0G                     | Výberom cudzej ríše sa na karte zobrazia podrobnejšie informácie o danej rase.
+RACES_HELP_1A                     | Všeobecné informácie o vybranej ríši.
+RACES_HELP_1B                     | Poskytuje priamy prístup k diplomatom všetkých kontaktovaných ríš.
+RACES_HELP_1C                     | Zvýšte bezpečnostnú daň, aby ste zvýšili svoje šance na prekazenie plánov nepriateľských špiónov.
+RACES_HELP_1D                     | Poskytuje priamy prístup k správe vašich špiónov vo všetkých kontaktovaných ríšach.
+RACES_HELP_1E                     | Diplomatické udalosti, ktoré ovplyvňujú reakciu ostatných ríš na vás. Účinky sa časom posunú k nule.
+RACES_HELP_1F                     | Kliknutím zmeníte farbu rasy zobrazenej na mape
+RACES_HELP_2A                     | Všeobecné informácie o vybranej ríši.
+RACES_HELP_2B                     | Umožňuje audienciu u diplomata vybranej ríše.
+RACES_HELP_2C                     | Informácie o obchodných zmluvách podpísaných s vybranou ríšou.
+RACES_HELP_2D                     | Ostatné ríše, ktoré vybraná ríša kontaktovala.
+RACES_HELP_2E                     | Diplomatické udalosti, ktoré ovplyvňujú reakciu vybranej ríše na vás. Účinky sa časom posunú smerom k nule.
+RACES_HELP_2F                     | Miera aktuálneho stavu vzťahov s vybranou ríšou. 
+RACES_HELP_3A                     | Zvýšte bezpečnostnú daň, aby ste zvýšili svoje šance na prekazenie plánov nepriateľských špiónov.
+RACES_HELP_3B                     | Poskytuje priamy prístup k správe vašich špiónov vo všetkých kontaktovaných ríšach.
+RACES_HELP_3C                     | Všetky technológie známe iným ríšam, ktoré získali vaši špióni. Technológie, ktoré nepoznáte, sú zobrazené žltou farbou.
+RACES_HELP_4A                     | Nastavte počet špionážnych sietí, ktoré chcete vytvoriť vo vybranej ríši, a sumu, ktorú chcete ročne minúť.
+RACES_HELP_4B                     | Nastavte príkazy pre špiónov, ktorí infiltrujú vybranú ríšu. Schovať sa - zhromažďovanie údajov. Špionáž - pokúsite sa ukradnúť technológiu. Sabotáž - podnecujete povstania alebo ničíte továrne a raketové základne.
+RACES_HELP_4C                     | Všetky technológie známe vybranej ríši. Technológie, ktoré nepoznáte, sú zobrazené žltou farbou.
+RACES_HELP_5A                     | Známy počet lodí vo flotile vybranej rasy podľa veľkosti trupu. Táto informácia zostane aktuálna, kým máte aktívnu špionážnu sieť vo vybranej ríši.
+RACES_HELP_5B                     | Známe schopnosti konštrukcií lodí. Staršie konštrukcie môžu byť mimo prevádzky. Tieto informácie sa získavajú predovšetkým počas bojových akcií lodí.
+RACES_HELP_5C                     | Známe obranné schopnosti vybranej ríše. 
+RACES_HELP_6A                     | Táto obrazovka zobrazuje aktuálne poradie našej ríše v rôznych kategóriách. Tieto údaje sa získavajú z našich špionážnych sietí operujúcich v daných ríšach.
+RACES_HELP_6A2                    | Táto obrazovka poskytuje historické porovnanie našej ríše s vybranou ríšou v rôznych kategóriách. Tieto údaje sa získavajú z našich špionážnych sietí operujúcich v daných ríšach.
+RACES_HELP_6B                     | Sila flotily - kombinuje počet a veľkosť lodí.
+RACES_HELP_6C                     | Populácia - celkový počet obyvateľov všetkých kolonizovaných systémov.
+RACES_HELP_6D                     | Technológia - priemerná technologická úroveň vo všetkých oblastiach výskumu.
+RACES_HELP_6E                     | Planéty - počet kolonizovaných systémov.
+RACES_HELP_6F                     | Výroba - celková priemyselná výroba v ríšach.
+RACES_HELP_6G                     | Celková moc - kombinácia sily flotily, technológie a úrovne výroby.
+
+// Sabotage UI
+SABOTAGE_TITLE                    | Naši špióni prenikli do kolónií ovládaných [alien_race_instrumental] a sú pripravení plniť rozkazy.
+SABOTAGE_PROMPT                   | Vyberte formu sabotáže, ktorú chcete spáchať proti [alien_race_dativ] v systéme %1.
+SABOTAGE_WARNING                  | Varovanie! Akýkoľvek čin sabotáže bude mať za následok porušenie našej zmluvy s [alien_race_instrumental].
+SABOTAGE_SELECT_TARGET            | Vyberte cieľ
+SABOTAGE_BUTTON_FACTORIES         | Zničiť továrne
+SABOTAGE_BUTTON_BASES             | Zničiť raketové základne
+SABOTAGE_BUTTON_REBELLION         | Podnietiť vzburu
+SABOTAGE_BUTTON_NO_ACTION         | Nepodniknúť žiadne kroky
+SABOTAGE_FACTORIES_RESULT         | Počet tovární zničených vašimi špiónmi: %1.
+SABOTAGE_BASES_RESULT             | Počet raketových základní zničených vašimi špiónmi: %1.
+SABOTAGE_REBELS_TOTAL             | Počet povstalcov podnietených vašimi špiónmi: %1. Nepokoje sú teraz na úrovni %2%.
+SABOTAGE_REBELS_REVOLT            | Vaši špióni vyvolali vzburu!
+SABOTAGE_BASES                    | raketových základní
+SABOTAGE_FACTORIES                | tovární
+NOTICE_SPYING_MISSION_HIDE        | Infiltrácia
+NOTICE_SPYING_MISSION_ESPIONAGE   | Špionáž
+NOTICE_SPYING_MISSION_SABOTAGE    | Sabotáž
+
+// History UI
+HISTORY_TITLE                     | Známe dejiny galaxie
+HISTORY_TITLE_ALL                 | Úplné dejiny galaxie
+HISTORY_TURN_DESC                 | Ťah %1 z %2
+HISTORY_FORWARD                   | Dopredu
+HISTORY_BACK                      | Späť
+HISTORY_PLAY                      | Prehrať
+HISTORY_PAUSE                     | Pauza
+HISTORY_RESET                     | Reštart
+HISTORY_EXIT                      | Ukončiť
+HISTORY_EXTINCT                   | Vyhinutá
+HISTORY_SYSTEMS                   | Systémy
+HISTORY_EMPIRE                    | Říša
+
+
+
+// Council UIs
+COUNCIL_CONVENE_TITLE             | Zasadnutie Najvyššej rady
+COUNCIL_CONVENE                   | Najvyššia rada sa zišla, aby zvolila jedného vodcu za Vládcu Galaxie.
+COUNCIL_CONVENE2                  | Každá ríša odovzdáva počet hlasov, ktorý je úmerný počtu jej obyvateľov. Kandidát musí získať aspoň dve tretiny všetkých hlasov, aby bol zvolený. Kandidátmi sú vodcovia dvoch najľudnatejších ríš: [first_name] za [first_race_akuzativ] a [second_name] za [second_race_akuzativ].
+COUNCIL_ADJOURN_TITLE             | Rada odročuje zasadnutie
+COUNCIL_ADJOURN                   | Hlasovanie sa skončilo a ani jeden z kandidátov nezískal dve tretiny hlasov. Vládca Galaxie nebol menovaný. Najvyššia rada sa opäť zíde na ďalšie hlasovanie o 25 rokov.
+COUNCIL_SUMMARY_TITLE             | Súhrn hlasovania
+COUNCIL_SUMMARY                   | Hlasuje sa podľa počtu obyvateľov. Na víťazstvo vo voľbách je potrebných %1 hlasov.
+COUNCIL_BEGIN_VOTING              | Začať hlasovanie
+COUNCIL_SHOW_VOTING               | Pokračovať v hlasovaní
+COUNCIL_SKIP_TO_PLAYER            | Prejsť na hlasovanie [player_race_akuzativ] 
+COUNCIL_COMPLETE_VOTING           | Dokončiť všetky hlasovania
+COUNCIL_SHOW_RESULTS              | Zobraziť výsledky
+COUNCIL_VIEW_SUMMARY              | Zobraziť hlasujúcich
+COUNCIL_VOTES_REQUIRED            | Na víťazstvo vo voľbách je potrebných %1 hlasov.
+COUNCIL_CAST_PROMPT               | Máme %1 hlasov.
+COUNCIL_CAST_PROMPT_TITLE         | Vyberte si kandidáta.
+COUNCIL_CHOICE_ABSTAIN            | Zdržať sa
+COUNCIL_CAST_VOTE                 | [voter_race_plural] hlasovali za [candidate_race_akuzativ]! Počet hlasov: %1
+COUNCIL_CAST_ABSTAIN              | [voter_race_plural] sa zdržali hlasovania (%1 hlasov)
+COUNCIL_CHOICE_ABSTAIN            | Zdržať sa
+COUNCIL_VOTE_COUNT                | Hlasov: %1 
+COUNCIL_VOTE_CAST                 | Hlasov: %1  - za [alien_race_akuzativ]
+COUNCIL_VOTE_ABSTAINED            | Hlasov: %1  - zdržali sa
+COUNCIL_TREATY_CANDIDATE          | [alien_race_plural]: Kandidát
+COUNCIL_TREATY_ALLIANCE           | [alien_race_plural]: Aliancia
+COUNCIL_TREATY_PACT               | [alien_race_plural]: Pakt o neútočení
+COUNCIL_TREATY_NONE               | [alien_race_plural]: Bez dohody
+COUNCIL_TREATY_WAR                | [alien_race_plural]: Vo vojne
+COUNCIL_CONTINUE                  | Pokračovať
+COUNCIL_ELECTED_TITLE             | Vládca galaxie zvolený!
+COUNCIL_ACCEPT_RULING             | Prijať výsledky volieb
+COUNCIL_REJECT_RULING             | Odmietnuť výsledky volieb
+
+
+// Credit text
+CREDITS_DEVELOPER                 | Ray Fowler, vývoj
+CREDITS_ILLUSTRATOR               | Petar Penev, ilustrácie
+CREDITS_GRAPHIC_DESIGN            | Kaitlin Lindsay, grafický dizajn
+CREDITS_MUSIC                     | Efe Tozan, hudba
+CREDITS_WRITER                    | Jeff Colucci, scenár
+CREDITS_SOUND                     | Remi Agullo, dizajn zvuku
+CREDITS_TRANSLATOR                | Branislav Mikulka, preklad
+
+// Systems UI
+SYSTEMS_TITLE                     | Systémy
+SYSTEMS_TAB_EXPLORE               | Preskúmať
+SYSTEMS_TAB_EXPAND                | Rozšíriť
+SYSTEMS_TAB_EXPLOIT               | Využiť
+SYSTEMS_TAB_EXTERMINATE           | Vyhladiť
+SYSTEMS_RANGE                     | %1 ly
+SYSTEMS_ENVIRONMENT_SIZE          | %1 %2
+SYSTEMS_ENVIRONMENT_TYPE          | %1 %2
+SYSTEMS_SHIELD                    | Štíty %1
+SYSTEMS_BASES                     | Raketové základne %1
+SYSTEMS_ENTER_NOTES               | Tu môžete písať poznámky k systému.
+SYSTEMS_ALERT                     | Upozornenia
+SYSTEMS_NO_ALERTS                 | V tejto chvíli žiadne upozornenia.
+SYSTEMS_HISTORY                   | História systému
+SYSTEMS_UNSCOUTED                 | Systém nie je preskúmaný, ale je v dosahu našich prieskumných lodí.
+SYSTEMS_UNSCOUTED_NEED_TECH       | Systém nie je chránený a možno sa doň dostať po dokončení výskumu: %1.
+SYSTEMS_UNSCOUTED_COLONIZED       | Systém nie je preskúmaný a kontroluje ho ríša, ktoré nie je spojencom.
+SYSTEMS_UNSCOUTED_ENEMY           | Systém nie je preskúmaný a kontroluje ho nepriateľská ríša.
+SYSTEMS_UNSCOUTED_GUARDED         | Nie je možné vykonávať prieskum, keď je systém strážený.
+SYSTEMS_UNSCOUTED_UNREACHABLE     | Systém je nezmapovaný a momentálne nedostupný.
+SYSTEMS_CAN_COLONIZE              | Systém je možné dosiahnuť a kolonizovať pomocou našej súčasnej technológie.
+SYSTEMS_CAN_COLONIZE_EN_ROUTE     | Kolonizačná loď je na ceste do tohto systému. Predpokladaný čas príchodu v ťahoch: %1.
+SYSTEMS_CAN_COLONIZE_ENEMY        | Systém je v dosahu a kolonizovateľný, ale obieha ho nepriateľská  flotila patriaca [alien_race_dativ].
+SYSTEMS_UNCOLONIZED_NEED_TECH     | Systém je možné kolonizovať po dokončení výskumu: %1.
+SYSTEMS_UNCOLONIZED_NEED_TECHS    | Systém je možné kolonizovať po dokončení výskumu: %1 a %2.
+SYSTEMS_UNCOLONIZEABLE            | Systém sa nedá kolonizovať.
+SYSTEMS_EXPLOIT_PCT               | Kolónia na úrovni %1% celkovej výrobnej kapacity.
+SYSTEMS_EXPLOIT_WASTE             | Kolónia produkuje nebezpečnú úroveň priemyselného odpadu.
+SYSTEMS_EXPLOIT_COMPLETE          | Kolónia je na maximálnej výrobnej kapacite.
+SYSTEMS_EXPLOIT_TRANSPORTS        | Počet transportov na ceste: %1.
+SYSTEMS_EXT_ENEMY                 | Kolónia nepriateľa.
+SYSTEMS_EXT_ENEMY_FLEET           | Nepriateľská flotila na obežnej dráhe.
+SYSTEMS_EXT_ENEMY_FLEET_PLAYER    | Nepriateľská flotila na orbite našej kolónie.
+SYSTEMS_EXT_ENEMY_FLEET_ALLY      | Nepriateľská flotila na orbite spojeneckej kolónie.
+SYSTEMS_EXT_INC_FLEET_PLAYER      | Nepriateľská flotila na ceste na našu kolóniu.
+SYSTEMS_EXT_INC_FLEET_ALLY        | Nepriateľská flotila na ceste na spojeneckú kolóniu.
+SYSTEMS_EXT_NEED_DEFENSE          | Obrana tejto kolónie nie je úplne zmodernizovaná.
+SYSTEMS_EXT_INC_TRANSPORTS        | Počet jednotiek na ceste: %1.
+SYSTEMS_HELP_1A                   | PREHĽAD - účelom tejto obrazovky je upozorniť na systémy v galaxii, ktoré si vyžadujú hráčovu pozornosť. Naliehavosť alebo vážnosť je značená farbou: blikajúca červená je najvyššia a zelená najnižšia.
+SYSTEMS_HELP_1B                   | Preskúmať - zobrazuje neprebádané systémy v dosahu prieskumných lodí.  
+SYSTEMS_HELP_1C                   | Rozšíriť - zobrazuje kolonizovateľné systémy v dosahu lodí.
+SYSTEMS_HELP_1D                   | Využiť - zobrazuje kolónie a úroveň ich celkového rozvoja. Upozorní na zdroje u nekolonizovaných systémoch.
+SYSTEMS_HELP_1E                   | Vyhladiť - upozorňuje na kolónie, ktoré sú pod útokom alebo ku ktorým sa blížia nepriateľské flotily.
+SYSTEMS_HELP_1F                   | Upozornenia - popis upozornenia pre vybraný systém
+SYSTEMS_HELP_1G                   | Systémové poznámky - textové pole, do ktorého môže hráč zapisovať poznámky.
+SYSTEMS_HELP_1H                   | História systému - chronologický zoznam významných udalostí, ku ktorým došlo v danom systéme.
+
+SYSTEMS_STATUS_REBELLION          | V kolónii vypukla vzbura.
+SYSTEMS_STATUS_COMET              | Počet rokov, keď túto planétu zasiahne kométa: %1.
+SYSTEMS_STATUS_SUPERNOVA          | Počet rokov, keď sa hviezda systému stane supernovou: %1. Fyzici potrebujú %2 BV, aby zabránili tejto katastrofe.
+SYSTEMS_STATUS_PLAGUE             | V kolónii sa nachádza nákaza. Vyliečenie si vyžaduje %1 BV.
+SYSTEMS_STATUS_PIRACY             | Piráti ovplyvňujú obchodné cesty v tomto systéme.
+SYSTEMS_STATUS_SPACE_AMOEBA       | K tomuto systému smeruje obrovská vesmírna améba.
+SYSTEMS_STATUS_SPACE_CRYSTAL      | K tomuto systému smeruje obrovský vesmírny kryštál.
+
+
+DIPLOMACY_RECEIVING               | Preklad prichádzajúcej správy...
+DIPLOMACY_MENU_CONTINUE           | Pokračovať
+DIPLOMACY_MENU_ACKNOWLEDGE        | Potvrdiť
+DIPLOMACY_MENU_ACCEPT             | Prijať
+DIPLOMACY_MENU_ACCEPT_NEED_BC     | Prijať (nedostatok finančných prostriedkov)
+DIPLOMACY_MENU_FORGET_IT          | Zabudnite na to
+DIPLOMACY_TRADE_LEVEL             | %1 BC / rok
+DIPLOMACY_MENU_TREATIES           | Navrhnúť dohodu
+DIPLOMACY_MENU_TRADE              | Obchodná dohoda
+DIPLOMACY_MENU_TECHNOLOGY         | Výmena technológií
+DIPLOMACY_MENU_OFFER_AID          | Ponúknuť pomoc
+DIPLOMACY_MENU_AMT                | %1 BC
+DIPLOMACY_MENU_OFFER_TECHS        | Ponuka technológie
+DIPLOMACY_MENU_THREATEN           | Vyhrážať
+DIPLOMACY_MENU_DECLARE_WAR        | Vyhlásiť vojnu
+DIPLOMACY_MENU_EVICT_SPIES        | Odstrániť všetkých špiónov (poškodí úroveň vzťahov)
+DIPLOMACY_MENU_STOP_SPYING        | Zastavte špionážne aktivity
+DIPLOMACY_MENU_STOP_ATTACKING     | Prestaňte útočiť
+DIPLOMACY_MENU_GOODBYE            | Dovidenia
+DIPLOMACY_MENU_PACT               | Navrhnúť pakt o neútočení
+DIPLOMACY_MENU_ALLIANCE           | Navrhnúť spojenectvo
+DIPLOMACY_MENU_PEACE              | Navrhnúť mierovú dohodu
+DIPLOMACY_MENU_TRADE              | Navrhnúť obchodnú dohodu
+DIPLOMACY_MENU_JOINT_WAR          | Spoločné vyhlásenie vojny inej rase
+DIPLOMACY_MENU_PROPOSE_BREAK_ALLY | Zrušiť alianciu s inou rasou
+DIPLOMACY_MENU_BREAK_TRADE        | Zrušiť obchodnú dohodu
+DIPLOMACY_MENU_BREAK_PACT         | Zrušiť pakt o neútočení
+DIPLOMACY_MENU_BREAK_ALLIANCE     | Zrušiť alianciu
+DIPLOMACY_TRADE_MENU_BREAK        | Prerušenie obchodnej zmluvy
+DIPLOMACY_THREATEN_MENU_0         | Pohroziť odvolaním veľvyslanca
+DIPLOMACY_THREATEN_MENU_1         | Požadovať poplatok 
+DIPLOMACY_THREATEN_MENU_2         | Pohroziť zrušením paktu o neútočení
+DIPLOMACY_THREATEN_MENU_3         | Pohroziť zrušením aliancie
+DIPLOMACY_THREATEN_MENU_BR        | Pohroziť zrušením obchodnej dohody
+DIPLOMACY_THREATEN_MENU_5         | Pohroziť vyhlásením vojny
+DIPLOMACY_ACCEPT_OFFER            | Prijať
+DIPLOMACY_ACCEPT_JOIN_WAR         | Prijať (vstúpite do vojny)
+DIPLOMACY_ACCEPT_END_WAR          | Prijať (ukončenie vojny, stiahnutie vojsk)
+DIPLOMACY_ACCEPT_FORM_PACT        | Prijať (podpíše dohodu)
+DIPLOMACY_ACCEPT_FORM_ALLIANCE    | Prijať (podpíše alianciu)
+DIPLOMACY_ACCEPT_ESTABLISH_TRADE  | Prijať (zavádza obchodú dohodu)
+DIPLOMACY_DECLINE_OFFER           | Odmietnuť
+DIPLOMACY_DECLINE_BREAK_ALLIANCE  | Odmietnuť (zruší alianciu)
+DIPLOMACY_IGNORE_THREAT           | Ignorovať hrozbu
+DIPLOMACY_SHUTDOWN_SPIES          | Zrušiť všetky špionážne siete v oblastiach patriacich [alien_race_dativ]. 
+DIPLOMACY_HIDE_SPIES              | Nariadiť všetkým špiónom operujúcim v oblastiach patriacim [alien_race_dativ], aby sa skryli.
+DIPLOMACY_RETREAT_SHIPS           | Nariadiť všetkým lodiam na obežnej dráhe alebo v tranzite do systémov obývaných [alien_race_instrumental], aby sa stiahli.
+
+// types of endings
+GAME_OVER_OVERTHROWN_LOSS         | Zvrhnutý
+GAME_OVER_MILITARY_LOSS           | Vojenská prehra
+GAME_OVER_DIPLOMATIC_LOSS         | Diplomatická prehra
+GAME_OVER_NEW_REPUBLIC_LOSS       | Porážka Novej republiky
+GAME_OVER_REBELLION_LOSS          | Porážka rebelov
+GAME_OVER_DIPLOMATIC_WIN          | Diplomatické víťazstvo
+GAME_OVER_MILITARY_WIN            | Vojenské víťazstvo
+GAME_OVER_MILITARY_ALLIANCE_WIN   | Víťazstvo vojenskej aliancie
+GAME_OVER_NEW_REPUBLIC_WIN        | Víťazstvo Novej Republiky
+GAME_OVER_REBELLION_WIN           | Víťazstvo rebelov
+GAME_OVER_REBEL_ALLIANCE_WIN      | Víťazstvo aliancie rebelov
+GAME_OVER_ALLIANCE_WIN            | Víťazstvo aliancie 
+GAME_OVER_NO_COLONIES_LOSS        | Totálny kolaps spoločnosti
+
+GAME_OVER_EXIT                    | Ukončiť
+GAME_OVER_REPLAY                  | Prehrať
+
+// text for race-generic endings
+// %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 special text
+GAME_OVER_NO_COLONIES_LOSS2       | Vláda %2 sa skončila, zničila ju neschopnosť.# Bez civilizovaných svetov, na ktorých by sa dalo bezpečne pristáť, nie sú žiadne prežívajúce transporty %3 schopné udržať technologický pokrok, ktorý dosiahla vaša spoločnosť.#Barbarstvo je prirodzeným stavom spoločnosti. Civilizácia je neprirodzená. Je to rozmar okolností. A barbarstvo nakoniec musí i zvíťaziť.

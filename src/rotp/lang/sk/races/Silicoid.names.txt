@@ -1,0 +1,21 @@
+// all possible names
+name: Silikoidi, Igneoidi, Sedimoidi, Granitoidi, Magmoidi
+
+desc1: Rozpínaví xenofóbi 
+desc2: Imunita voči nehostinným planetárnym podmienkam
+desc3: Minerálmi živiaca sa rasa Silikoidov je opradená mnohými záhadami. Prehľadáva galaxiu a hľadá svojho odvekého nepriateľa.
+
+// possible home system names
+home: Cryslon, Geóda, Kras, Vyvrenina, Silán
+
+title:     Cisár
+fulltitle: Kryštálový cisár
+
+// possible leader names
+leader: Karnax, Krystous, Geóda, Granit, Vyvrenina, Usadenina
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Usadenina, Kamienok, Kameň, Skala, Kryštál, Nerast, Piesok
+ship2: Žula, Mramor, Bridlica, Kremeň, Pemza, Gabro, Obsidián
+ship3: Magma, Láva, Živec, Riolit, Sľuda, Čadič, Dacit
+ship4: Diamant, Zafír, Smaragd, Rubín, Ametyst, Topás, Granát

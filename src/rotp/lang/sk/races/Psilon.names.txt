@@ -1,0 +1,21 @@
+// all possible names
+name: Psiloni, Mentaloni, Psychoni, Kerebroni, Neuraloni
+
+desc1: Mierumilovní vedci
+desc2: Pokročilé metódy výskumu
+desc3: Psilonská republika sa usiluje o mierumilovné a duchaplné spolužitie s ostatnými rasami.
+
+// possible home system names
+home: Mentar, Cogitar, Psilar, Metrica, Neura
+
+title:     Radca
+fulltitle: Vrchný radca
+
+// possible leader names
+leader: Dynalon, Kelvan, Meson, Quark, Tachaon, Zygot
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Elektrón, Neutríno, Kvark, Neutrón, Protón, Atóm, Molekula
+ship2: Sigma, Prvočíslo, Polomer, Prepona, Algebra, Dotyčnica, Logaritmus
+ship3: Paralaxa, Elipsa, Os, Sínusoida, Fraktál, Kalkulačka, Derivácia
+ship4: Slnečná erupcia, Hviezdokopa, Nova, Kvazar, Galaxia, Hmlovina, Koróna

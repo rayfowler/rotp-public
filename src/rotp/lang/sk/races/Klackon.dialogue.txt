@@ -1,0 +1,228 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Klackon specific dialogue
+
+CONTACT_AGGRESSIVE         | Ja som [my_name] a ty si... [your_name]? Zvláštne meno pre podobného ako ja, ale hovoríš, že nie si ako ja? Toto stretnutie začína byť veľmi... Otravné.
+CONTACT_RUTHLESS           | Som známy ako [my_name]. Ty si [your_name]? Čo je [your_name]? Naozaj ma nezaujíma druh, ktorý je takto mätúci!
+CONTACT_XENOPHOBIC         | Keď som začínal svoju cestu, vedel som, že musí existovať niekto ako ja, ale ty vôbec nie si ako ja... Si iný... Cudzí... A nebezpečný.
+//
+GREETING_01                | Priateľ! Som rád, že si prišiel! Dúfam, že ty môžem poskytnúť všetko, čo hľadáš.
+GREETING_04                | Volá mi ten čudný [your_name]. Čo žiadaš, čudný [your_name]?
+GREETING_07                | Správaš sa zvláštne a mne sa to nepáči. Jednoducho povedz, čo si prišiel povedať a odíď.
+//
+
+DECLAREWAR_HATE_01         | Čakal som príliš dlho, musím nájsť iného, ktorý je ako ja! Stojíš mi v ceste a ja už nepremrhám ani sekundu, aby som sa ťa zbavil.
+DECLAREWAR_HATE_02         | Keď si na teba spomeniem, cítim odpor, o ktorom som ani netušil. Musím urobiť všetko preto, aby som ťa videl zničeného raz a navždy!
+DECLAREWAR_HATE_03         | Nie! Nemôže sa stať, že by som sa vydal na cestu len preto, aby som v tejto galaxii našiel niečo také ako si ty! Nebudem s tebou ďalej žiť ako so susedom! Buď zahyniem ja, alebo ty!
+DECLAREWAR_ERRATIC_01      | Nemôžeš ma oklamať svojou ľsťou! Viem, že ma zasiahneš v čase, ktorý ti najviac vyhovuje! Ale ja ťa zabijem skôr, ako sa to stane!
+DECLAREWAR_ERRATIC_02      | Tvoje správanie je zvláštne a nepredvídateľné. Neistota, ktorú vo mne vyvolávaš, ma veľmi trápi a nechápem, prečo by som ju mal ďalej znášať. Pripravte sa na upadnutie do zabudnutie!
+DECLAREWAR_ERRATIC_03      | Prečo robíš to, čo robíš? Čo ťa poháňa? A bude ťa to viesť k tomu, aby si mi jedného dňa priniesol pred prah môjho domu vojnu? Nemôžem len čakať, čo urobíš: pre svoju budúcnosť musím okamžite s tebou začať vojnu!
+DECLAREWAR_MILITARY_01     | Stále som nenašiel toho, kto by bol ako ja. Viem, že musí existovať. Budem ho hľadať na všetkých vašich svetoch. Svetoch, ktoré si jeden po druhom zoberiem!
+DECLAREWAR_MILITARY_02     | Čo predo mnou skrývaš [your_name]? Nebudem to vedieť s istotou, kým nepreskúmam každý z tvojich svetov. Teraz si ich všetky vezmem!
+DECLAREWAR_MILITARY_03     | Nedovolím ti, aby si ďalej skrýval predmet môjho pátrania! Viem, že ten, koho hľadám, je na jednom z tvojich svetov. Nedám pokoj, kým mi ich nedáš!
+DECLAREWAR_ALLIANCE_01     | Môj priateľ menom [other_name] mi v mojom hľadaní pomohol viac, než si dokážeš predstaviť. Odvďačím sa im tým, že ťa odstránim!
+DECLAREWAR_ALLIANCE_02     | Tí, ktorí mi pomáhajú pri hľadaní, majú moju nesmiernu vďaku a ja rád urobím, čo môžem, aby som si uctil môjho priateľa menom [other_name]. Priprav sa na smrť, [your_name]!
+DECLAREWAR_ALLIANCE_03     | Utláčaš všetkých v galaxii, pretože si myslíš, že sa nikto neodváži vzoprieť tvojej vôli. Ak sa [other_name] rozhodol pustiť do boja s tebou, potom sa pustím aj ja!
+DECLAREWAR_SPYING_01       | Na žiadnom z mojich svetov sa nestane nič, čo by uniklo môjmu pohľadu. Keďže trváš na takomto podlom správaní, nedávaš mi inú možnosť, ako ťa zničiť.
+DECLAREWAR_SPYING_02       | Hlúpy [your_name], už mám dosť tvojich hier! Nebudeš mať čas na takéto zákerné intrigy, ak budeš musieť odrážať moje armády! Priprav sa na vojnu!
+DECLAREWAR_SPYING_03       | Čo si chcel získať tým, že si sa proti mne takto postavil? Teraz mi nezostáva nič iné, len s tebou bojovať, bez ohľadu na to, aký je rozdiel v našich armádach!
+DECLAREWAR_ATTACK_01       | Čože, [your_name]? Chceš mi brániť v hľadaní tým, že zaútočíš na jeden z mojich svetov? Predpokladám, že to, že ta zničím bude zábavné, i keď krátke rozptýlenie.
+DECLAREWAR_ATTACK_02       | Je toto to, čo sa nazýva vojnový čin? Chceš, aby tvoje armády a tvoja flotila bojovala proti mojim? Poďme teda bojovať: Chcem sa o tom naučiť čo najviac!
+DECLAREWAR_ATTACK_03       | Ako sa opovažuješ proti mne takto zasiahnuť?! Chceš mi brániť v dokončení môjho pátrania? Tak teraz spoznáš moju zlosť!
+DECLAREWAR_OPPORTUNITY_01  | Keď sa niečo ukáže ako prekážka, najlepším spôsobom, ako sa jej zbaviť, je ju úplne odstrániť. Nepoznám všetky spôsoby diplomacie, ale viem, že odstrániť ťa z mojej cesty bude smiešne jednoduchá vec.
+DECLAREWAR_ASSASSIN_01     | Útok na jedno z mojich tiel znamená útok na všetky moje telá. Keďže si sa rozhodol zabiť jedno moje telo, na oplátku ja zabijem všetky tvoje telá!
+
+OFFER_PEACE_01             | Nemám rád to, čomu hovoríte vojna. Je nemilosrdná a krutá a my obaja máme na práci dôležitejšie veci, než pokračovať v neustálom zabíjaní. Ukončime to, nech zavládne mier, [your_name].
+OFFER_TRADE_01             | Obaja sme sa vydali do galaxie s vlastnými cieľmi, [your_name]. Prečo si navzájom nepomôcť pri napĺňaní našich ambícií? Obchodná dohoda v hodnote [amt] BC ročne by to umožnila, čo ty nato?
+OFFER_PACT_01              | Na svojej ceste vesmírom som stretol mnoho zvláštnych bytostí a mnohé z nich sú od prírody hašterivé a násilnícke. Zdá sa, že ty nie si  ani jedno z toho. Zabráňme nedorozumeniam paktom o neútočení. 
+OFFER_ALLIANCE_01          | Náš vzťah bol pre nás oboch, [your_name], mimoriadne prospešný. Staňme sa spojencami na papieri i v skutočnosti, aby všetci v galaxii vedeli, že sme jeden! 
+ 
+WARN_TRESPASSING_01        | Tvoja prítomnosť v systéme [system] ma veľmi znepokojuje. [your_name], odstráň svoju flotilu z oblasti, inak budem nútený vykonať odvetné opatrenia.  
+WARN_EXPANSION_01          | Nedovolím ti, aby si mi zabránil dokončiť moje hľadanie tým, že si budeš nárokovať každý svet, na ktorý sa pozrieš. Okamžite s tým prestaň alebo sa priprav na vojnu!
+WARN_BUILDUP_01            | Tvoja flotila sa rozrástla do úctyhodnej veľkosti, [your_name]. Dávaj si pozor, ako ju využívaš, moja flotila je nablízku. 
+WARN_SKIRMISH_01           | Incident v systéme [system] ma znepokojil. Bolo to z tvojej strany len nedorozumenie? Zabezpeč, aby sa to už neopakovalo: [your_name], nechcem s tebou bojovať ak nemusím. 
+WARN_ATTACKED_01           | Čo tým získaš, keď si na mňa takto zaútočil? Okamžite prestaň s agresiou, inak ma prinútiš, aby som ti to stonásobne vrátil! 
+WARN_INVADED_01            | Prečo si vtrhol do môjho priestoru v systéme [system]?! Máš v úmysle vyprovokovať konflikt alebo si len stratil kontrolu nad svojimi telami? 
+WARN_ESPIONAGE_01          | Nerozumiem ti, [spy_name]. Tváriš sa, akoby si nechcel vyprovokovať konflikt, ale potom sa pokúšaš ukradnúť moje tajomstvá? Ak budeš takto pokračovať, sľubujem, že ťa to bude mrzieť! [framed]
+WARN_SABOTAGE_01           | Touto sabotážou ma zosmiešňuješ! Moje pátranie má prednosť pred všetkým ostatným, ale ak sa to bude opakovať, pozastavím svoje pátranie, aby som sa s tebou osobne vysporiadal! [forced]
+WARN_BIOWEAPON_01          | Táto tvoja zbraň je úplne desivá. To, že si ju vôbec používate, svedčí o tom, akí v skutočnosti si. Som tebou absolútne znechutený! 
+WARN_GENOCIDE_01           | Ako bezcitné! Nikdy by som nečakal, že zájdeš tak ďaleko, aby si úplne zničil toho, kto je známy ako [victim_name]. Nikdy nezabudnem na barbarstvo, ktorým si sa dnes preukázal. 
+WARN_FINAL_WAR_01          | Teraz vidím, že aby som mohol uskutočniť svoj sen, musí nastať v galaxii mier. Ale, kým existuješ, mier nikdy nenastane. Odpoveď je zrejmá: [rebel_name] musí byť zničený! 
+WARN_COUNCIL_VOTE_01       | Priznám sa, že nepoznám nuansy toho, čo nazývate „politické úskoky“. Ale viem, že tým, že tvoj hlas dostal [other_name] si urobil krok proti mne. A ja nezabúdam na tých čo sa postavia proti mne.
+WARN_OATHBREAKER_01        | Takto takto to robíš, [your_name]? Uzavrieš dohodu, len aby si ju porušil, kedykoľvek to uznáš za vhodné? Vedel som, že nie si ako ja, a tvoje činy to aj dokazujú! [spiesCaught] 
+WARN_ATTACKED_ALLY_01      | Prečo útočíš na môjho priateľa, [your_name]? [defender_name], je pod mojou ochranou. Nájdi iný spôsob riešenia vašich nezhôd: Inak budem nútený zasiahnuť! 
+WARN_REBELLING_AGAINST_01  | [your_name] sa mi nepáči. A ešte menej sa mi páči, že [your_name] bol zvolený za vodcu rady! Musím sa zamyslieť nad tým, čo sa dnes stalo a ty by si sa mal zamyslieť nad tým, ako budem možno čoskoro nútený reagovať! 
+
+PRAISE_COUNCIL_VOTE_01     | [voter_name]! Nemysli si, že tvoj hlas v Rade považujem za samozrejmosť! Hoci ty a ja sme veľmi rozdielni, som naozaj šťastný, že som na svojej ceste mohol stretnúť takého úžasného priateľa, ako si ty. 
+PRAISE_COUNCIL_VOTE_02     | Nikdy som za svoju dlhú existenciu nemal potrebu „politiky,“ ale to, čo si urobil, je vec, ktorá mi prospeje, áno? Čoskoro sa znova porozprávajme. 
+PRAISE_COUNCIL_VOTE_03     | Tým, že si hlasoval za mňa v rade bolo podľa mňa iba preto, aby som zmenil svoj názor na teba. Ak budeš pokračovať v takomto konaní, tak ten názor naozaj jedného dna zmením.  
+PRAISE_ATTACKED_ENEMY_01   | Áno! Napadli ma a môj priateľ mi prišiel na pomoc! [defender_name], ten podliak! Ukážme mu, že bojujeme spolu a nič nás nerozdelí! 
+PRAISE_ATTACKED_ENEMY_02   | Ďakujem [attacker_name]! Je dobré vidieť, že je tu ešte niekto kto si uvedomuje, akú hrozbu predstavuje [defender_name]. Poď! Zaútočíme naňho spoločne, kým z neho nič nezostane! 
+PRAISE_ATTACKED_ENEMY_03   | Neviem, čo chceš dosiahnuť tým, že [defender_name] je pod tvojou paľbou, [attacker_name]. Si nevypočítateľný a nedá sa ti veriť, ale napriek tomu si toto gesto zapamätám.
+PRAISE_TRADE_01            | Tak ďaleko sme sa dostali len vďaka tomu, že sme spolupracovali. Nech prosperita získaná z našich obchodov trvá dovtedy, kým obaja nenájdeme to, čo hľadáme!   
+PRAISE_TRADE_02            | Teší ma, ako veľmi nám obom pomáha naša obchodná dohoda. Tiež ta to teší, že, [your_name]?  
+PRAISE_REBELLING_WITH_01   | [your_name] žiada o pomoc! Pridám sa k tebe a postavím sa so zbraňou v ruke proti tejto smiešnej rade! Si môj priateľ, a to znamená, že nikdy nebudeš bojovať sám!
+
+DIPLO_TECH_REQUEST_MENU_01   | O aké technológie máš záujem?
+DIPLO_TECH_COUNTER_MENU_01   | Začo ju vymeníš?
+DIPLO_TRADE_MENU_01          | Navrhuješ obchodnú dohodu na:
+DIPLO_TREATY_MENU_01         | Navrhuješ dohodu
+DIPLO_DECLARE_WAR_MENU_01    | Určite chceš začať vojnu?
+DIPLO_SUGGEST_WAR_MENU_01    | Komu vyhlásiť vojnu?
+DIPLO_BREAK_ALLIANCE_MENU_01 | Ktoré spojenectvo by som mal zrušiť?
+DIPLO_THREATEN_MENU_01       | Tvoje rozhodnutie:
+
+DECLINE_OFFER_01           | Odmietam.
+DECLINE_OFFER_02           | Zvážil som tvoju ponuku a odmietam ju.
+DECLINE_OFFER_03           | S úctou odmietam tvoju ponuku.
+DECLINE_OFFER_04           | V tejto chvíli nemám záujem.
+DECLINE_OFFER_05           | Tvoju ponuku nepovažujem za férovú.
+DECLINE_OFFER_06           | V tejto chvíli by nebolo v mojom najlepšom záujme prijať tvoju ponuku.
+DECLINE_OFFER_07           | Možno si si ma pomýlili s dôverčivým hlupákom. Odmietam tvoju ponuku.
+DECLINE_OFFER_08           | Tvoja ponuka sa mi nezdá férová.
+DECLINE_OFFER_09           | Obávam sa, že musím odmietnuť.
+
+DECLINE_ENEMY_ALLY_01      | Nikdy by som nejednal nikým, kto si myslí, že [other_name] je jeho priateľ. 
+
+DECLINE_ANNOYED_01         | [your_name] je tvor, ktorý veľa tára, ale nič neurobí. A mňa tvoje reči už unavujú.
+DECLINE_ANNOYED_01         | [your_name], pokúšaš moju trpezlivosť. Možno by sme sa mali porozprávať neskôr.
+DECLINE_ANNOYED_01         | Už som toho počul dosť. Porozprávame sa neskôr.
+DECLINE_ANNOYED_02         | Tieto diplomatické rokovania ma unavujú. Môžeme v nich pokračovať neskôr.
+DECLINE_ANNOYED_02         | Tieto rozhovory nikam nevedú. Musím ísť.
+DECLINE_ANNOYED_02         | Idem.
+DECLINE_ANNOYED_03         | Tisíckrát sa ospravedlňujem, [your_name], ale mám iné povinnosti.
+DECLINE_ANNOYED_03         | Prepáč, ale náš čas je už takmer u konca.
+DECLINE_ANNOYED_03         | Mám málo času a veľa práce. Porozprávame sa neskôr.
+
+
+DECLINE_OATHBREAKER_01     | Momentálne nemám záujem uzavrieť zmluvu. V minulosti si naše dohodi porušil.
+DECLINE_OATHBREAKER_01     | V minulosti si nedodržal naše dohody. Nevidím dôvod, prečo by som ti mal zrazu dôverovať.
+DECLINE_OATHBREAKER_01     | Prečo by som ti mal teraz dôverovať, keď už v minulosti si mnohé zmluvy porušil?
+DECLINE_OATHBREAKER_01     | Nevidím dôvod súhlasiť s niekým, kto nevie dodržať sľuby.
+DECLINE_OATHBREAKER_01     | Nebudem rokovať s tebou, [your_name]. Nemáš žiadnu česť.
+
+DECLINE_ESPIONAGE_01       | Ty zlodejský pes, ktorý kradne plody môjho výskumu. Zamietam tvoju žiadosť.
+DECLINE_ESPIONAGE_01       | Moja technológia je len moja. Nemáš právo si ju brať. Budem s tebou jednať až, keď prestaneš kradnúť.
+DECLINE_ESPIONAGE_01       | Prečo by som ty mal niečo dať? Tvoji špióni mi už ukradli všetko, čo potrebuješ!
+DECLINE_ESPIONAGE_01       | Ako môžeš čakať, že to prijmem, keď tvoji špióni ma okrádajú?
+DECLINE_ESPIONAGE_01       | Odstráň svojich špiónov, potom sa porozprávame.
+
+DECLINE_SABOTAGE_01 	   | Nezabudol som na tvoju poslednú sabotáž. Kým nebudeš dôveryhodnejší, ta s tebou nebudem rokovať.
+DECLINE_SABOTAGE_01 	   | Trpel som kvôli sabotáži spôsobenej tvojimi špiónmi. Nebudem s tebou rokovať, pokým s tým neprestaneš.
+DECLINE_SABOTAGE_01	       | Čože?! Čakáš, že budem súhlasiť, keď sabotuješ môj systém, [target]?
+DECLINE_SABOTAGE_01        | Ničíte môj systém, [target]. Prečo by som sa mal vôbec s tebou jednať?
+DECLINE_SABOTAGE_01 	   | Keď tvoji špióni prestanú ničiť môj svet, [target], môžem túto záležitosť zvážiť.
+
+DECLINE_BUILDUP_01		 | Nebudem o tom hovoriť, kým zhromažďuješ lode pri mojich hraniciach.
+DECLINE_BUILDUP_01 	     | Odstráňte svoje lode pozdĺž mojich hraníc a ja zvážim tvoju ponuku. Dovtedy o ňu nemám záujem.
+DECLINE_BUILDUP_01		 | Tvoje lode na mojich hraniciach ma neohrozujú. Odmietam však s tebou rokovať, pokým tam zostanú.
+DECLINE_BUILDUP_01		 | Ak chceš so mnou rokovať, pošlite svoje lode, aby šli ohrozovať iných, nie mňa.
+
+DECLINE_ENCROACH_01        | Tvoje flotily zasahujú do môjho priestoru. Odstráň ich a potom sa porozprávame.
+
+DECLINE_SKIRMISH_01 	| Útočíš na moje lode bez akejkoľvek provokácie a očakávaš, že prijmem tvoju ponuku? Nie, ponuku zamietam.
+DECLINE_SKIRMISH_01 	| Nemôžem prijať ponuku od niekoho, kto útočí na moje flotily.
+DECLINE_SKIRMISH_01 	| Keď tvoje flotily prestanú útočiť na moje, môžeme sa rokovať.
+DECLINE_SKIRMISH_01 	| Ak chceš so mnou rokovať, tak nechaj moje flotily na pokoji.
+DECLINE_SKIRMISH_01 	| Nepáči sa mi, že ničíš moje flotily. Neakceptujem tvoj návrh.
+
+DECLINE_ATTACK_01 		| Tvoj neopodstatnený útok na systém [system] ti dáva veľmi malý priestor na vyjednávanie.
+DECLINE_ATTACK_01 		| Na útok na kolóniu v systéme [system] som nezabudol. V žiadnom prípade to neprijmem.
+
+DECLINE_INVASION_01 | Zmasakroval si kolóniu v systéme [system]. Nechcem mať s tebou nič spoločné. Odčiň, čo si spáchal.
+DECLINE_INVASION_01 | Moja krv preliata v systéme [system] špiní tvoje slová. Tvoju ponuku odmietam.
+DECLINE_INVASION_01 | Moja strata systému [system] volá po pomste. Bolesť, ktorú cítim, je hlasnejšia ako to, čo ponúkaš.
+
+DECLINE_BIOWEAPONS_01 | S tým, čo používa biologické zbrane zmluvy neuzatváram.
+DECLINE_BIOWEAPONS_01 | Odmietam rokovať so zúfalcom, čo sa zníži k použitiu biologických zbraní.
+DECLINE_BIOWEAPONS_01 | Používaš zbrane, ktoré spôsobujú nevýslovné hrôzy. Odmietam sa zaoberať s takým šialencom.
+DECLINE_BIOWEAPONS_01 | Bohom sa hnusia tí, ktorí ničia planéty biologickými zbraňami. Nemôžem to dopustiť.
+DECLINE_BIOWEAPONS_01 | Bolesť, ktorú spôsobili tvoje biologické zbrane, mi prehlušuje. Preto nepočujem tvoju ponuku.
+
+DECLINE_TECH_TRADE_01 | Nemáš žiadnu technológiu, ktorá by ma zaujímala.
+DECLINE_TECH_TRADE_01 | Nepotrebujem tvoje hračky.
+DECLINE_TECH_TRADE_01 | Tvoje primitívne vynálezy ma nezaujímajú.
+DECLINE_TECH_TRADE_01 | Som ďaleko za tvojou technológiou.
+DECLINE_TECH_TRADE_01 | [your_name], nepotrebujem, čo mi ponúkaš.
+DECLINE_TECH_TRADE_01 | O tvoju technológiu nemám veľký záujem.
+
+DECLINE_NO_WAR_ON_ALLY_01 | Nevyhlásim vojnu spojencovi.
+DECLINE_PEACE_TREATY_01 | [other_name] a ja máme podpísanú mierovú zmluvu a ja ju neporuším.
+
+OFFER_TECH_EXCHANGE_01 | Veľmi potrebujem tvoju technológiu: [tech]. Možno si ochotný vymeniť ju za nejakú moju technológiu.
+OFFER_TECH_EXCHANGE_01 | Viem, že si sa naučil tajomstvá: [tech]. Môžem ti ponúknuť výmenou nejakú moju technológiu?
+OFFER_TECH_EXCHANGE_01 | Želám si tajomstvo technológie: [tech]. Vymeníš ho za jeden z mojich vynálezov?
+OFFER_TECH_EXCHANGE_01 | Som ohromený vedeckými zázrakmi a mám záujem o: [tech]. Čo ti môžem ponúknuť za toto tajomstvo?
+
+ACCEPT_TECH_EXCHANGE_01 | Dobre. Súhlasím s výmenou [techGiven] za technológiu [techReceived].
+ACCEPT_FINANCIAL_AID_01 | Prijímam tvoj dar vo výške [amt] BC.
+ACCEPT_TECHNOLOGY_AID_01 | Prijímam tvoj dar [tech].
+
+BREAK_TRADE_01 | [your_name], už nemám záujem s tebou obchodovať.
+ANNOUNCE_TRADE_01 | S účinnosťou od roku [year] sme sa ja a [your_name] dohodoli na obchodovaní v hodnote [amt] BC ročne.
+ACCEPT_TRADE_01 | Obchodná zmluva vo výške [amt] BC je akceptovateľná.
+ACCEPT_TRADE_01 | Netrpezlivo očakávam skvelý tovar, ktorý ponúkaš [vaše_meno]. Prijímam tvoju dohodu na [amt] BC ročne.
+ACCEPT_TRADE_01 | Súhlasím s obchodom v hodnote [amt] BC ročne.
+ACCEPT_TRADE_01 | Dobre, [your_name], tvoju ponuku v hodnote [amt] BC ročne považujem za férovú a spravodlivú.
+
+ANNOUNCE_PEACE_01 | V roku [year] sme sa ja a [your_name] dohodli na ukončení všetkých nepriateľských akcií.
+ANNOUNCE_PEACE_01 | Týmto nariaďujem ukončenie všetkých nepriateľských akcií medzi mnou a tebou.
+ACCEPT_PEACE_01 | Súhlasím. Nastal čas ukončiť naše malicherné hádky.
+ACCEPT_PEACE_01 | Prijímam tvoju ponuku na mier. Prestaň strieľať na moje lode a ja prestanem útočiť na tvoje sily.
+ACCEPT_PEACE_01 | Už ma unavuje toto nezmyselné ničenie. Prijímam tvoju ponuku mieru.
+
+BREAK_PACT_01 | Varovanie odo mňa tebe [your_name]: náš pakt o neútočení už neplatí!
+ANNOUNCE_PACT_01 | V roku [year] sa zaväzujem dodržiavať pakt o neútočení a neútočiť na tvoju flotily, pokiaľ nebudú na orbite jednej z mojich kolónií.
+
+ACCEPT_PACT_01 | Súhlasím s paktom o neútočení. Žiadna z lodí nezaútočí na flotily druhej strany, pokiaľ nevstúpi na obežnú dráhu  kolónie protistrany.
+ACCEPT_PACT_01 | Ak súhlasíš, že nepošleš lode na žiadnu z mojich kolónií, sľubujem, že nezaútočím na žiadnu z tvojich lodí.
+ACCEPT_PACT_01 | Súhlasím s tvojím návrhom zmluvy o neútočení. Tak je to napísané, tak sa aj stane!
+ACCEPT_PACT_01 | Súhlasím. Pokiaľ nezaútočíš na moje kolónie, budem dodržiavať pakt o neútočení.
+
+BREAK_ALLIANCE_01 | Už s tebou nemôžem udržiavať alianciu. Je mi ľúto, [your_name].
+ANNOUNCE_ALLIANCE_01 | Roku [year] som sa ja a [your_name] dohodol na vytvorení aliancie. Ani jeden z nás nebude útočiť na flotily alebo kolónie toho druhého.
+ANNOUNCE_ALLIANCE_01 | Tak vzniká naša aliancia. Tvoje lode môžu navštevovať moje kolónie podľa želania a získavať palivo z mojich základní.
+ACCEPT_ALLIANCE_01 | Vítam spojenectvo s mojím dobrým priateľom. [your_name], spája nás nerozdelitelné puto.
+ACCEPT_ALLIANCE_01 | Ja a [your_name] dnes uzatvárame alianciu. Smrť našim nepriateľom!
+ACCEPT_ALLIANCE_01 | Vidím múdrosť v spojenectve s tebou [your_name]. Nech sa tak stane!
+
+ACCEPT_BREAK_ALLIANCE_01 | Súhlasím, [other_name] už nie je dôveryhodný. Moje spojenectvo s ním už neexistuje.
+ACCEPT_BREAK_ALLIANCE_01 | Hoci ma bolí, že sa musím obrátiť chrbtom k môjmu priateľovi, urobil som to.
+ACCEPT_BREAK_ALLIANCE_01 | [other_name] už nie je mojím spojencom
+ACCEPT_BREAK_ALLIANCE_01 | Aliancia, ktorú som podpísal ja a [other_name] je v troskách.
+ACCEPT_BREAK_ALLIANCE_01 | Ako si želáš, [other_name] už nie je môj spojenec.
+
+ACCEPT_JOINT_WAR_01 | [other_name] musí padnúť pred našimi spoločnými silami [your_name].
+ACCEPT_JOINT_WAR_01 | [your_name], pred nami ako spojencami nemá [other_name] šancu dlho vydržať.
+ACCEPT_JOINT_WAR_01 | V roku [year] sme sa ja a [your_name] rozhodli spojiť sily, aby sme galaxiu zbavili hrozby. Hrozby, ktorá sa volá [other_name].
+
+RESPOND_CLOSE_EMBASSY_01 | Nech sa páči. [your_name] a ja sa už viac nebudeme rozprávať.
+
+RESPOND_BREAK_TRADE_01 | To si zapamätám.
+RESPOND_BREAK_TRADE_01 | Takže, [your_name], nevie dodržať slovo. Toto si isto zapamätám.
+
+RESPOND_BREAK_PACT_01 | Slová zmlúv, ktoré si porušil napíšem na tvoj náhrobný kameň, [your_name].
+RESPOND_BREAK_PACT_01 | [your_name] a jeho ríša sa zrúti pod ťarchou nedodržaných sľubov.
+
+RESPOND_BREAK_ALLIANCE_01 | Nedodržal si dohodu. Aliancia už nie je.
+RESPOND_BREAK_ALLIANCE_01 | Veľmi dobre. Tvoje skutočné úmysly sa ukázali v plnej paráde. Naša aliancia už neexistuje.
+RESPOND_BREAK_ALLIANCE_01 | Zmluvy, ktoré sa nedodržiavajú, nepotrebujem. Považuj aliancia za zrušenú.
+RESPOND_BREAK_ALLIANCE_01 | Nech sa tak stane. Naše spojenectvo už neexistuje.
+
+ACCEPT_TRADE_01 | Chceš so mnou obchodovať? Za koľko? [amt] BC ročne? Áno... áno, myslím, že to by šlo. [your_name], tvoju ponuku príjmam.
+RESPOND_IGNORE_THREAT_01 | Nevyhrážaj sa mi, hlúpy [your_name]. Je ma tak veľa, že ak by sme vidli vojnu, tak nikdy nevyhráš. Odíď!
+RESPOND_STOP_SPYING_01 | Len som sa snažil zistiť, aký je [your_name], keď je sám so sebou. Už to neurobím. Prosím, vráť mi môjho špióna.
+RESPOND_STOP_ATTACKING_01 | Haha! Vidíš, aký som silný! [your_name] sa mi nikdy nemôže rovnať! Svoje flotily pošlem domov, ale moju silu si zapamätaj!
+

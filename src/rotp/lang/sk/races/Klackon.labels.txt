@@ -1,0 +1,101 @@
+// race-specific variables (must start with _)
+_empire                           | Klackonský úľ, Klackantský úľ, Klockanský úľ, Arthroponský úľ, Koleopteronský úľ
+_empire_lowercase				| Klackonský úľ, Klackantský úľ, Klockanský úľ, Arthroponský úľ, Koleopteronský úľ	
+_race                             | Klackon, Klackant, Klockan, Arthropon, Koleopteron
+_race_plural                      | Klackoni, Klackanti, Klockani, Arthroponi, Koleopteroni
+_race_akuzativ					  | Klackonov, Klackantov, Klockanov, Arthroponov, Koleopteronov
+_race_dativ  					  | Klackonom, Klackantom, Klockanom, Arthroponom, Koleopteronom 
+_race_instrumental				  | Klackonmi, Klackantami, Klockanmi, Arthroponmi, Koleopteronmi
+_race_adjective					  | Klackonská, Klackantská, Klockanská, Arthroponská, Koleopteronská
+_race_adjective_akuzativ		  | klackonského, klackantského, klockanského, arthroponského, koleopteronského
+_race_adjective_instrumental	  | klackonskými, klackantskými, klockanskými, arthroponskými, koleopteronskými
+
+_title                            | Ja
+_nameTitle                        | Ja
+
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Advisor text
+MAIN_ADVISOR_TITLE                | [player_name]
+MAIN_ADVISOR_BUTTON_OK            | OK
+MAIN_ADVISOR_SCOUT                | Lode sú konečne hotové. Musím navigovať  prieskumníkov, aby som našiel nové svety, na ktorých by mohla pristáť moja koloniálna loď.
+MAIN_ADVISOR_TRANSPORT            | Usadil som sa na tomto novom svete a musím poslať ďalších z domova, aby som ho zveladil. Iná inteligentná forma života tu nie je. Moje hľadanie tak pokračuje.
+MAIN_ADVISOR_DIPLOMACY            | Inteligentná forma života! Aká zvláštna. Komunikovuje pomocou zvukov a gest. Musím sa zamyslieť nad informáciami z diplomacie a spravodajstva, ktoré o nich mám, kým sa rozhodnem pre ďalší krok.
+MAIN_ADVISOR_SHIP_ENGINE          | Pokračujem v zdokonaľovaní motorov svojich lodí. Potrebujem upraviť návrhy lodí, aby som ich mohol začať nasadzovať do služby.
+MAIN_ADVISOR_RALLY_POINTS         | Prečo na mňa útočia? Nerozumiem tomu. Musím si vybrať zhromaždisko, kde sa zhromaždí moja obranná flotila. A medzitým sa pokúsim pochopiť, prečo mňa zaútočili.
+MAIN_ADVISOR_MISSILE_BASES        | Vidím, že nie všetok život sa naučil spolupracovať. Musím opevniť svoje vonkajšie svety raketovými základňami, aby som udržal svoje územie v bezpečí.
+MAIN_ADVISOR_SHIP_WEAPON          | Pokračujem v napredovaní a moje nové zbraňové technológie mi poskytnú väčšiu silu akonáhle ich začlením do služby.
+MAIN_ADVISOR_COUNCIL              | Vzrušenie! Čoskoro sa uskutoční stretnutie mnohých druhov. Aké formy života sa tam stretnú? Ak sa pokúsim dostať na svoju stranu tých čo už poznám, možno mi to uľahčí strenutie s ostatnými druhmi.
+MAIN_ADVISOR_REBELLION            | Čo to? Stratil som nad sebou kontrolu v systéme %1? Na tom nezáleží, musím tam jednoducho ísť a ukázať im, že ja som ten, kto rozhoduje.
+MAIN_ADVISOR_RESIST_COUNCIL       | Nemožné! Niekto iný bol zvolený, aby vládol týmto prostoduchým bábkam a moja múdrosť zostala ignorovaná! Ale na tom už viac nezáleží: Okamžite s nimi všetkými skoncujem! 
+MAIN_ADVISOR_COUNCIL_RESISTED     | Čomu títo hlupáci stále tak odporujú? Rada je moja, galaxia je moja a teraz musia pochopiť kde je ich miesto v mojom panstve! 
+
+MAIN_SCOUT_TITLE                  | Preskúmal som novú hviezdnu sústavu
+MAIN_COLONIZE_TITLE               | Som na obežnej dráhe systému %1, nekolonizovanej sveta.
+MAIN_COLONIZE_ANIMATION_TITLE     | Roku %1 zakladám novú kolóniu.
+MAIN_ALERT_SPY_CAPTURED           | Zajal som špióna z ríše [alien_race_akuzativ] a prinútil som ho priznať sa k %2.
+MAIN_ALERT_TRANSPORTS_KILLED      | Moje pokusy dosiahnuť  systém %1 bol zastavený obrannými silami [alien_race_akuzativ].
+MAIN_ALERT_INVADERS_KILLED        | Zničil som transporty [alien_race_akuzativ], ktoré sa pokúšali napadnúť systém %1. Počet zničených transportov: %2 
+MAIN_BOMBARD_TITLE                | Som na orbite nepriateľskej kolónie [alien_race_akuzativ].
+
+TECH_RESEARCH_COMPUTER            | Musím vybrať ďalší výskum počítačovej technológie, na ktorú sa zameriam.
+TECH_RESEARCH_CONSTRUCTION        | Musím vybrať ďalší výskum strojárskej technológie, na ktorú sa zameriam.
+TECH_RESEARCH_FORCE_FIELD         | Musím vybrať ďalší výskum silového poľa, na ktorý sa zameriam.
+TECH_RESEARCH_PLANETOLOGY         | Musím vybrať ďalšiu planetologickú výskum, na ktorý sa zameriam.
+TECH_RESEARCH_PROPULSION          | Musím si vybrať ďalšiu výskum pohonu, na ktorý sa zameriam.
+TECH_RESEARCH_WEAPON              | Musím si vybrať ďalšiu výskum zbraní, na ktorý sa zameriam.
+TECH_DISCOVERY_TITLE              | Dosiahol som pokrok v %1
+TECH_SCOUTED_TITLE                | Pri skúmaní ruín v systéme %1 som objavil novú technológiu
+TECH_STOLEN_TITLE                 | Vnikol som do výskumného centra ríše %1 na adrese v systéme %2.
+TECH_TRADED_TITLE                 | Zobchodoval som technológiu od ríše [alien_race_akuzativ] 
+TECH_PLUNDERED_TITLE              | Pri rabovaní ruín v systéme %1 som objavil novú technológiu
+TECH_ALLOCATE_SHIELD              | Mal by som navýšiť obranný rozpočet svojich kolónií, aby som mohol postaviť nové planetárne štíty?
+TECH_ALLOCATE_MISSILE_BASES       | Mal by som navýšiť obranný rozpočet všetkých svojich kolónií, aby som vylepšil raketové základne?
+TECH_ALLOCATE_FACTORIES           | Mal by som navýšiť priemyselné výdavky všetkých svojich kolónií, aby som vylepšil svoje továrenské ovládacie prvky?
+TECH_ALLOCATE_CLEAN_WASTE         | Mal by som znížiť výdavky na ekológiu všetkých svojich úľov na minimum potrebné k udržanie života?
+TECH_ALLOCATE_ENRICH_SOIL         | Mal by som navýšiť výdavky na ekológiu svojich kolónií so štandardným prostredím, aby sa mohla začať teraformácia planét?
+TECH_ALLOCATE_ATMOSPHERE          | Mal by som navýšiť výdavky na ekológiu svojich kolónií s nehostinným prostredím, aby sa mohla začať teraformácia planét?
+TECH_ALLOCATE_TERRAFORM           | Mal by som navýšiť výdavky na ekológiu svojich kolónií, aby sa mohla začať teraformácia planét?
+
+NOTICE_ESPIONAGE_TITLE            | Infiltroval som základňu rasy [alien_race_akuzativ].
+NOTICE_ESPIONAGE_FRAME_TITLE      | Podarilo sa mi falošne obviniť inú rasu z krádeže.
+
+SHIP_COMBAT_TITLE_DESC            | Stretávam sa s nepriateľskou flotilou patricej ríši [alien_race_akuzativ].
+
+SABOTAGE_FACTORIES_RESULT         | Zničil som %1 tovární.
+SABOTAGE_BASES_RESULT             | Zničil som %1 raketových základní.
+SABOTAGE_REBELS_RESULT            | Podnietil som %1 povstalcov.
+SABOTAGE_REBELS_TOTAL             | Podnietil som %1 povstalcov. Nepokoje sú teraz na úrovni %2%.
+SABOTAGE_REBELS_REVOLT            | Vyvolal som vzburu!
+
+COUNCIL_CAST_PROMPT               | Musím vybrať (%1 hlasov)...
+
+// text for endings... '#' represents a paragraph break
+// variables: %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 is special race-specific text described below
+GAME_OVER_MILITARY_LOSS2          | Stretol ťa strašný osud.#Na začiatku svojej cesty do neznáma si sa vydal do vesmíru s nádejou, že nájdeš inú formu života, ktorá bude rovnako jedinečná ako ty. Nanešťastie, tvoj sen zostal až do tvojho posledného dňa neuskutočnený. Nielenže sa ukázalo, že iné inteligentné formy života, ktoré si našiel, sa ti vôbec nepodobajú, ale ukázali sa aj ako násilnícke a nesympatické k tvojmu hľadaniu. Toto násilie sa stalo záhubou tvojej nádeje a všetky tvoje svety sú teraz v rukách tých, ktorí ťa nenávideli od chvíle vášho prvého stretnutia.#Každé z tvojich tiel leží zlomené a bez života na mieste, kde boli zabité, od tvojej domovskej planéty až po najvzdialenejšie kolónie. Keď svetlo v tvojich očiach pomaly vyhasína v záchveve tvojho posledného dychu, dochádza ti, že vesmír čoskoro navždy stratí svoju najunikátnejšiu formu života...
+GAME_OVER_MILITARY_WIN2           | Tvoje hľadanie sa skončilo... Zatiaľ.#S veľkými nádejami si sa odvážil snívať o tom, že niekde v hlbinách vesmíru nájdeš ďalšie vedomie, ako je to tvoje. Hoci si sa stretol s mnohými inými formami vyššej inteligencie, bolo až príliš zrejmé, že žiadna z nich sa nepodobá jedinečnosti, ktorú máš len ty. A čo je horšie: v strachu z toho, čo nechápali, na teba útočili, čím vyvolali u teba a nespočetných tiel, ktoré obývaš tú najstrašnejšiu reakciu. S ťažkým srdcom si ich do jedného odstránil a s ešte ťažším srdcom si zistili, že si jedinou inteligenciou, ktorá obýva túto galaxiu. #Ale nie je všetko stratené. Hoci tieto mimozemské rasy so svojimi jedinečnými formami seba samého neuspokojili tvoje hľadanie, teraz si uvedomuješ, že tam vonku je celý vesmír na preskúmanie. Zostáva ti len rozšíriť sa do všetkých kútov tejto galaxie a začať svoje hľadanie odznova...
+GAME_OVER_MILITARY_ALLIANCE_WIN2  | Tvoje hľadanie sa skončilo... Zatiaľ.# Napĺňa ťa nesmierny smútok nad činmi, ktoré si bol nútený spáchať. Pri hľadaní spriaznenosti medzi planétami tejto galaxie si sa namiesto toho stretol skoro výlučne s množstvom ignorantských tvorov, ktorí sa na teba vrhli pre to, že si sa od nich líšil. Keď sa ich slová menili na násilné činy, udrel si na nich, aby si bránili seba a svoje záujmy. Celý čas si dúfal, že uvidia chybu svojho počínania a začnú v tebe vidieť jedinečnú formu života, akou si. Tvoje nádeje boli nakoniec zmarené a všetci tí, ktorí sa ti odvdačili násilím boli navždy umlčaní. # Ale raduj sa! Hoci si nedokázal nájsť vedomie podobné svojmu, podarilo sa ti získať aspoň zopár dôveryhodných spojencov. Je to zvláštne, ale prinajmenšom k tebe cítia priateľstvo, aké ty cítiš k nim. Ak ťa opäť prepadne túžba zistiť, či si vo vesmíre naozaj jedinečný, môžeš sa kedykoľvek vydať do iných galaxií. Zatiaľ si však môžeš oddýchnuť a užívať si tento pocit spolupatričnosti, ktorý si našiel. A s ním užívať všetky výhody, ktoré ti nepochybne prinesie.
+GAME_OVER_COUNCIL_LOSS2           | Tvoje hľadanie sa skončilo... Zatiaľ.#Toto nebol koniec, ktorý si si želal pri hľadaní príbuzenstva v mori hviezd. Hoci si počas svojho hľadania stretol mnoho zvláštnych a podivuhodných národov, stretol si aj mnoho podlých a nevľúdnych kultúr. Bohužiaľ, tá najneznesiteľnejšia, s ktorou si sa stretol, teraz sedí ako vládca Novej republiky. Pochybuješ, že tento nový vodca bude k tebe láskavý. #Všetko, čo si si želal, bolo nájsť iného, ktorý by bol taký jedinečný ako ty. Teraz môžeš len podriadene čakať kým ťa ušlapú päty väčšej moci. Modlíš sa, aby ťa [leader_name] nechal na pokoji, pretože ak sa tak rozhodne, bude proti tebe nasadená celá sila galaxie...
+GAME_OVER_COUNCIL_ALLIANCE_WIN2   | Tvoje hľadanie sa skončilo... Zatiaľ.#Nový vek Klackonu sa začína a tvoj priateľ, [leader_name], je pripravení viesť Novú republiku do slávnej budúcnosti. Hoci sa od teba v mnohom líšia, tvoji priatelia ťa vnímajú so záujmom a súcitom. Ty im dôveruješ, že ti umožnia pokračovať v tvojej misii, keď sa práca na tomto novom spojenectve skončí. Dosiahnutie harmonického spolužitia tak odlišných druhov si vyžiada veľa. Ale ty vieš, že to zvládneš.# Pri tomto výsledku môžeš cítiť spokojnosť. Aj tak ťa nikdy veľmi nezaujímali politické manévre a si rád, že tvoj priateľ takéto bremeno z tvojich pliec navždy sníme. Jediné, čo si si želal, bolo nájsť niekde v tejto galaxii dušu, ako je tá tvoja. Možno sa ti to jedného dňa podarí...
+GAME_OVER_REBELLION_LOSS2         | Stretol ťa strašný osud.# Na svojom začiatku si bol sám a na svojom konci si stále sám. Neschopný dosiahnuť konečný cieľ svojej výpravy si sa plavil od stretnutia s jednou podivnou civilizáciou k druhej, až kým sa tí, ktorí mali viac rozhľadu ako ty, nespojili a nevytvorili Novú republiku. Keďže si tušil, že tvoja výprava sa predčasne skončí, keď sa vodcovského plášťa ujme [leader_name], rozhodol si sa radšej bojovať proti tomuto osudu, než sa mu pokorne podriadiť. Nebola to prvá chyba, ktorú si na svojej ceste urobil, ale žiaľ, ukázala sa ako tvoja posledná.#V posledných chvíľach potichu premýšlaš, že tvojou smrťou sa tvoje starosti končia. Keby si len našiel iného, ako si ty, alebo aspoň takého, ktorý by pochopil, kto a čo si. Možno by sa tvoj osud zmenil, keby ste sa obaja spoločne chopili zbraní...
+GAME_OVER_REBELLION_WIN2          | Tvoje pátranie sa skončilo... Zatiaľ.#V rozpore s tvojimi najhlbšími želaniami sa galaxia postavila proti tebe a prinútila ta, aby si jej to vrátili. Nemohol si akceptovať, že bude vládnuť xenofób [leader_name]. Sám si sa chopil zbrane, aby si bránil seba pred jeho hroznou vládou. Vedel si, že tí, ktorí sa nechali zmanipulovať týmito dvojtvárnymi tyranmi, sa pravdepodobne postavia proti tebe. No pokračovanie tvojej misie nemohlo byť za žiadnych okolností ohrozené. So smútkom v srdci si teda rozdrvil všetkých, ktorí by sa ti postavili na odpor. # Keby jedna z týchto rás nepodľahla svojmu strachu a nenávisti z neznámeho, možno by s tebou dokázala žiť v mierovom spolužití. Aspoň budeš mať strastiplný príbeh, o ktorý sa budeš môcť podeliť s tým, kto je predmetom tvojho pátrania, ak sa ti ho niekedy podarí nájsť...
+GAME_OVER_REBEL_ALLIANCE_WIN2     | Tvoje hľadanie sa skončilo... Zatiaľ.# Vedel si, že sa to stane od prvého stretnutia Galaktickej rady. Napriek tvojim varovaniam ostatným, zradný a podlý [leader_name] prevzal kormidlo Novej republiky a hrozil, že nakazí galaxiu svojou odpornou xenofóbiou. Statočne si proti nemu bojoval. Hoci sa mnohí v galaxii rozhodli vrhnúť sa proti tebe, nakoniec sa ti podarilo úspešne ubrániť svoje záujmy. #Snáď najšťastnejšia zo všetkého bola podpora, ktorú si v tejto poslednej vojne dostal od svojich priateľov. Boli dostatočne múdri, aby videli nebezpečenstvo, a dostatočne súcitní, aby ti pomohol. Bol si šťastný, že si v tomto boji nebol sám. Teraz môžeš dosiahnuť skutočne mierové spolužitie a spoločne sa podeliť o bohatstvo tejto galaxie. Jedného dňa si možno čoskoro nájdete cestu do ešte hlbšieho vesmíru a opustíte galaxiu v nádeji, že stretneš toho, koho si tak veľmi, veľmi dlho hľadal...
+GAME_OVER_COUNCIL_WIN2            | Tvoje hľadanie dospelo k nečakanému koncu.# Odkedy si sa prvýkrát vydal zo svojej starobylej planéty hľadať iné vedomie podobné tvojmu, objavil si toho veľa. Hoci sa ti tento sen ešte nesplnil, vedomosti a priateľstvo, ktoré si získal od tých, ktorých si stretol, sa ukázali ako sladká odmena. Tvoji spojenci nielenže prekonali strach z tvojej jedinečnosti, ale rozhodli sa ťa zvoliť za Majstra Novej republiky. Pred tebou leží budúcnosť, ktorú si si sám nikdy nevedel predstaviť. V nej svojich nových priateľov povedieš so všetkou trpezlivosťou a dôverou, ktorú ti preukázali. # Možno sa jedného dňa opäť vydáš na cestu hľadania, aby si našiel niekoho ďalšieho, kto je taký ako ty. Zatiaľ ťa však čaká veľa práce a tvoje hľadanie bude musieť počkať, kým sa tvoja práca dokončí. A keď bude dokončená, možno zistíš, že tvoja prvotná túžba sa zmenila. Koniec koncov, po prvýkrát za svoj dlhý život už nie si sám.
+GAME_OVER_COUNCIL_MILITARY_WIN2   | Tvoje hľadanie sa nečakane skončilo.#Všetky boje ustali. Po tom, čo si sa ujal funkcie majstra Novej republiky, sa ti podarilo priviesť všetky vyššie formy života v tejto galaxii k stolu priateľstva. Aspoň dovtedy, kým sa proti tebe nesformovala žalostne nepripravená vzbura. Tí, ktorí sa ťa snažili zvrhnúť, vznikli z xenofóbie a strachu z toho, čo si. Nedokázali pochopiť ani hĺbku tvojej cieľavedomej sily, ani zúrivosť tvojich spojencov pri obrane republiky. Boli rozdrtení a mier bude prúdiť galaxiou ako voda do oceánov početných svetov, ktoré teraz nazývate svojimi. #Keď sa územia rebelov rozdelia medzi teba a tvojich spojencov, tvoja myseľ na chvíľu prejde k výprave, ktorá ťa tak dávno poslala z tvojho domova. Pravda, nikdy si nenašiel predmet svojho hľadania a v mnohých ohľadoch zostávaš vo vesmíre osamotený. S radosťou si však uvedomuješ, že so spojencami, ktorých si na svojej ceste získal, už nikdy nebudeš skutočne sám.
+GAME_OVER_COUNCIL_MILITARY_LOSS2  | Stretol ťa strašný osud.# Nikto ti nemôže vyčítať, že si dúfal, že povedieš galaxiu k mieru ako Majster Novej republiky. Nikto ti nemôže vyčítať, že si sa zo všetkých síl snažíl spojiť toľko nesmierne odlišných civilizácií. Ale napriek tvojmu najlepšiemu úsiliu sa povstaniu, ktoré proti tebe vzniklo roznietiť nespokojnosť, ale dokonca ťa zosadiť z postu vodcu a rozdrviť Novú republiku všetkou silou. Tvoji spojenci, ktorí sú už dávno mŕtvi, možno ľutovali, že si ťa vybrali za svojho vodcu skôr, než sa im ich ríše pred očami premenili na popol. Aspoň nemôžeš počuť ich náreky, pretože ich hlasy boli navždy umlčané.# Tvoje posledné telá sa pripravujú na svoj osud v úkrytoch, ktoré si vykopali, keď sa snažili uniknúť tvojim nepriateľom. Bez jedla a vody sa ich čas chýli ku koncu. Keby sa našiel niekto ako ty, kto by ti skutočne rozumel a bojoval by po tvojom boku s rovnakou húževnatosťou, akú by si preukázal ty. Skončilo by sa to inak? Možno. Bohužiaľ, nikdy sa to nedozvieš s istotou...
+
+// This text is the %8 variable in some of the game over text... when this race wins the game
+GAME_OVER_ALLIANCE_WIN3           | neomylná cieľavedomosť Klackona
+GAME_OVER_REBELLION_LOSS3         | bezduché hordy Klackonov dominujú

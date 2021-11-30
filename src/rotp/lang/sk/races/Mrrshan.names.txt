@@ -1,0 +1,22 @@
+// all possible names
+name: Mrršani, Prršani, Mňaušani, Pazúrani, Hisšani
+
+desc1: Bezcitní militaristi
+desc2: Špičkoví strelci
+desc3: Mrršanská horda sa šíri naprieč galaxiou a jediné čo ich zaujíma je vojnová korisť.
+
+// possible home system names
+home: Fierias, Fierina, Miamara, Miriana, Yailaria
+
+title:     Chán
+fulltitle: Chán
+
+// possible leader names
+leader: Jasana, Miamar, Mirana, Prrsha, Shandra, Yalara
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Rosomák, Divoch, Fretka, Jazvec, Mačka, Myšolap, Klbko
+ship2: Rys, Manul, Oncila, Divá mačka, Karakal, Margaj, Serval
+ship3: Panter, Leopard, Bojový kocúr, Gepard, Irbis, Ocelot, Jaguarundi
+ship4: Šabľozub, Puma, Tiger, Lev, Jaguár, Liger, Smilodon
+

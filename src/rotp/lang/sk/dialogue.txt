@@ -1,0 +1,151 @@
+//
+// Dialogue that is not race-specific
+//
+
+DIPLO_TECH_REQUEST_MENU_01   | O akú technológiu máte záujem?
+DIPLO_TECH_COUNTER_MENU_01   | Za čo ju chcete vymeniť?
+DIPLO_TRADE_MENU_01          | Navrhujete obchodnú dohodu za:
+DIPLO_TREATY_MENU_01         | Čo si želáte?
+DIPLO_THREATEN_MENU_01       | Čím chcete pohroziť?
+DIPLO_DECLARE_WAR_MENU_01    | Určite chcete vyhlásiť vojnu?
+DIPLO_JOINT_WAR_MENU_01      | Komu máme vyhlásiť vojnu?
+DIPLO_BREAK_ALLIANCE_MENU_01 | Ktoré spojenectvo chcete ukončiť?
+DIPLO_OFFER_AID_MENU_01      | Čo chcete darovať?
+DIPLO_OFFER_TECH_MENU_01     | Čo chcete darovať?
+
+DECLINE_OFFER_01           | [my_nameTitle] [my_name] odmieta.
+DECLINE_OFFER_02           | [my_race_plural] zvážili ponuku a odmietli ju.
+DECLINE_OFFER_03           | Vašu ponuku s úctou odmietame.
+DECLINE_OFFER_04           | Momentálne nemáme záujem.
+DECLINE_OFFER_05           | [my_race_plural] nepovažujú vašu ponuku za dostatočnú.
+DECLINE_OFFER_06           | Momentálne nie je v našom záujme prijať vašu ponuku.
+DECLINE_OFFER_07           | Možno ste si nás pomýlili s dôverčivými hlupákmi. Vašu ponuku odmietame.
+DECLINE_OFFER_08           | Vaša ponuka sa nám nezdá férová.
+DECLINE_OFFER_09           | Obávame sa, že musíme odmietnuť.
+
+DECLINE_ENEMY_ALLY_01      | [my_race_plural] nejedná so spojencami nenávidenej rasy [other_race_akuzativ].
+DECLINE_ALREADY_ALLIED_01  | [my_race_plural] a naši spojenci nemôžu zvážiť vašu žiadosť, pokiaľ ste spojencami iných ríš.
+DECLINE_NO_WAR_ON_ALLY_01  | Nevyhlásime vojnu našim spojencom.
+DECLINE_PEACE_TREATY_01    | Mierovú zmluvu s [other_race_instrumental] neporušíme.
+
+DECLINE_ANNOYED_01         | [your_race_plural] sú tvory, ktoré toho veľa natárajú, ale veľa neurobia. Už nás unavujete.
+DECLINE_ANNOYED_01         | [your_nameTitle] [your_name], pokúšate našu trpezlivosť. Možno by sme sa mali porozprávať niekedy inokedy.
+DECLINE_ANNOYED_01         | [my_nameTitle] [my_name] už počul dosť. Porozprávame sa neskôr. 
+DECLINE_ANNOYED_02         | Tieto diplomatické rozhovory nás už unavujú. V rokovaniach môžeme pokračovať inokedy.
+DECLINE_ANNOYED_02         | Tieto rozhovory nikam nevedú. Už musíme ísť.
+DECLINE_ANNOYED_02         | Odchádzame.
+DECLINE_ANNOYED_03         | Tisíc ospravedlnení, [your_nameTitle] [your_name], ale volajú nás iné povinnosti.
+DECLINE_ANNOYED_03         | Ospravedlňte nás. Náš čas už vypršal.
+DECLINE_ANNOYED_03         | Máme málo času a veľa práce. Možno sa budeme môcť porozprávať niekedy inokedy.
+
+
+DECLINE_OATHBREAKER_01     | Momentálne s vami nie sme ochotní uzavrieť zmluvu. V minulosti ste dohody porušovali.
+DECLINE_OATHBREAKER_01     | Už ste nedodržali svoje dohody v minulosti. Nevidíme dôvod, prečo by sme vám mali dôverovať.
+DECLINE_OATHBREAKER_01     | Prečo by sme vám mali dôverovať teraz, keď ste množstvo dohôd porušili už v minulosti?
+DECLINE_OATHBREAKER_01     | Nevidíme dôvod, prečo by sme mali súhlasiť s niekým, kto už v minulosti nesplnil svoje sľuby.
+DECLINE_OATHBREAKER_01     | S [your_race_instrumental] odmietame jednať. Nemáte žiadnu česť.
+
+DECLINE_ESPIONAGE_01       | Vy psy zlodejské, kradnete plody nášho výskumu. Odmietame vašu žiadosť.
+DECLINE_ESPIONAGE_01       | Naša technológia patrí iba nám. Nemáte právo ju ukradnúť. Porozprávame sa, keď prestanete kradnúť.
+DECLINE_ESPIONAGE_01       | Prečo by sme vám mali niečo dať? Veď vaši špióni kradnú všetko, čo potrebujete!
+DECLINE_ESPIONAGE_01       | Ako môžete očakávať, že budeme vašu ponuku akceptovať, keď vaši špióni kradnú naše technológie?
+DECLINE_ESPIONAGE_01       | Odvolajte svojich špiónov a potom sa porozprávame.
+
+DECLINE_SABOTAGE_01        | Na vašu poslednú sabotáž sme nezabudli. Kým nepreukážete, že ste dôveryhodnejší, odmietame s vami spolupracovať.
+DECLINE_SABOTAGE_01        | Naši ľudia trpeli kvôli vašimi sabotážami. Odmietame sa s vami baviť, pokým s tým neprestanete.
+DECLINE_SABOTAGE_01        | Čože?! Očakávate, že budeme súhlasiť, keď vaši špióni vykonávajú sabotáž v našom systéme [target]?
+DECLINE_SABOTAGE_01        | Zničili ste našu kolóniu v systéme [target]. Prečo by sme sa mali vôbec s vami baviť?
+DECLINE_SABOTAGE_01        | Keď zastavíte sabotáže v systéme [target], môžeme túto záležitosť ďalej zvážiť.
+
+DECLINE_BUILDUP_01         | Nebudeme o tom hovoriť, kým budete zhromažďovať ďalšie lode v blízkosti našich hraníc.
+DECLINE_BUILDUP_01         | Odstráňte svoje lode nasadené pozdĺž našich hraníc a my zvážime vašu ponuku. Dovtedy nemáme záujem.
+DECLINE_BUILDUP_01         | Vaše lode na našich hraniciach pre nás nepredstavujú hrozbu, no odmietame rokovať ďalej, kým tam budú.
+DECLINE_BUILDUP_01         | Ak chcete urobiť obchod s [my_race_instrumental], pošlite svoje lode, aby ohrozovali iných a nie nás.
+
+DECLINE_ENCROACH_01        | Vaše flotily zasahujú do priestoru patriaceho [my_race_dativ]. Odvolajte ich a potom sa porozprávame.
+
+DECLINE_SKIRMISH_01        | Útočíte na naše lode bez provokácie a očakávate, že to prijmeme? Odmietame s vami jednať.
+DECLINE_SKIRMISH_01        | Nemôžeme prijať ponuku od niekoho, kto neustále útočí na naše flotily.
+DECLINE_SKIRMISH_01        | Môžeme sa rozprávať až keď vaše flotily prestanú útočiť na naše.
+DECLINE_SKIRMISH_01        | Ak chcete rokovať s [my_race_instrumental], nechajte naše flotily na pokoji.
+DECLINE_SKIRMISH_01        | [my_nameTitle] [my_name] neoceňuje ničenie našich flotíl. Odmietame.
+
+DECLINE_ATTACK_01          | Váš neoprávnený útok na systém [system] vám dáva malý priestor na vyjednávanie.
+DECLINE_ATTACK_01          | Nezabudli sme na nedávny útok na kolóniu v systéme [system]. V žiadnom prípade nebudeme akceptovať vašu ponuku.
+
+DECLINE_INVASION_01        | Naši ľudia nechcú mať dočinenia s mäsiarmi, ktorí zmasakrovali kolóniu v systéme [system]. Najskôr odčiňte čo ste napáchali. 
+DECLINE_INVASION_01        | Krv, ktorá sa rinie systémom [system] prekrýva akékoľvek vaše slová. Nemôžeme prijať.
+DECLINE_INVASION_01        | Mŕtvi v systéme [system] volajú po odplate. Ich výkriky počujeme hlasnejšie ako vašu ponuku.
+
+DECLINE_BIOWEAPONS_01      | [my_race_plural] nebudú uzatvárať žiadne dohody s rasou, ktorá používa biologické zbrane.
+DECLINE_BIOWEAPONS_01      | Nemôžeme jednať s nikým, kto je tak zúfalý, že používa biologické zbrane.
+DECLINE_BIOWEAPONS_01      | Používate zbrane, ktoré spôsobujú nevýslovné hrôzy nevinnému obyvateľstvu. Odmietame jednať s takými šialencami.
+DECLINE_BIOWEAPONS_01      | Bohom sa hnusia tí, ktorí ničia planéty biologickými zbraňami. To nemôžme dovoliť.
+DECLINE_BIOWEAPONS_01      | Plač tých, ktorých vyhubili vaše biologické zbrane, nám napĺňa uši. Vašu ponuku nepočujeme.
+
+DECLINE_ANNOYED_01         | Tieto diplomatické rokovania nás už unavujú. Môžeme pokračovať inokedy.
+DECLINE_ANNOYED_01         | Tieto rozhovory nikam nevedú. Musíme odísť.
+DECLINE_ANNOYED_01         | [my_nameTitle] [my_name] už počul dosť. Porozprávame sa inokedy. 
+DECLINE_ANNOYED_01         | [your_nameTitle] [your_name], skúšate našu trpezlivosť. Možno by ste sa mali prihovoriť inokedy.
+DECLINE_ANNOYED_01         | Tisícero ospravedlnení, [your_nameTitle] [your_name], ale máme iné povinnosti.
+DECLINE_ANNOYED_01         | Máme málo času a veľa práce. Možno sa budeme môcť porozprávať neskôr.
+DECLINE_ANNOYED_01         | [your_race_plural] sú tvory, ktoré toho veľa natárajú, ale veľa neurobia. Už nás unavujú vaše reči.
+DECLINE_ANNOYED_01         | Odchádzame.
+DECLINE_ANNOYED_01         | Prepáčte, ale náš čas vypršal.
+
+DECLINE_TECH_TRADE_01      | Nemáte žiadnu technológiu, o ktorú by sme mali záujem.
+DECLINE_TECH_TRADE_01      | Hračky [your_race_akuzativ] nepotrebujeme.
+DECLINE_TECH_TRADE_01      | Vaše primitívne vynálezy nás nezaujímajú.
+DECLINE_TECH_TRADE_01      | [my_race_plural] sú ďaleko za vami a vašou technológiou. 
+DECLINE_TECH_TRADE_01      | [your_nameTitle] [your_name], to čo vaši vedci ponúkajú naozaj nepotrebujeme.
+DECLINE_TECH_TRADE_01      | [my_nameTitle] [my_name] nemá záujem o vašu technológiu.
+
+OFFER_TECH_EXCHANGE_01     | Ríša [your_race_akuzativ] veľmi potrebuje vašu technológiu, [tech]. Možno ste ochotní vymeniť ju za niektorú z našich technológií.
+OFFER_TECH_EXCHANGE_01     | [your_race_plural] vedia, že ste sa naučil tajomstvá: [tech]. Môžeme vám ponúknuť niektorú z našich technológií na výmenu?
+OFFER_TECH_EXCHANGE_01     | [your_nameTitle] [your_name] si želá poznať tajomstvo technológie: [tech]. Môžme vám ponúknuť na výmenu jeden z našich výdobytkov?
+OFFER_TECH_EXCHANGE_01     | Rasa [your_race_akuzativ] je ohromená touto technológiou: [tech]. Čo vám môžeme ponúknuť za jej tajomstvo?
+
+ACCEPT_TECH_EXCHANGE_01    | Dobre. [my_nameTitle] [my_name] súhlasí s výmenou zázračných tajomstiev [my_race_akuzativ]. Technológiu: [techGiven], vymení za technológiu: [techReceived].
+ACCEPT_FINANCIAL_AID_01    | [my_nameTitle] [my_name] prijíma váš dar vo výške [amt] BC.
+ACCEPT_TECHNOLOGY_AID_01   | [my_nameTitle] [my_name] prijíma váš dar technológie ([tech]).
+
+BREAK_TRADE_01             | Občania ríše [my_race_akuzativ] už nemajú záujem o tovar z vašej ríše.
+ANNOUNCE_TRADE_01          | S účinnosťou od roku [year] sa [my_race_plural] a [your_race_plural] dohodli na obchode v hodnote [amt] BC ročne.
+
+ANNOUNCE_PEACE_01          | V roku [year] sa ríša [my_race_plural] a ríša [your_race_plural] dohodli na ukončení všetkých nepriateľských akcií.
+ANNOUNCE_PEACE_01          | [my_nameTitle] [my_name] týmto nariaďuje ukončiť akékoľvek nepriateľské akcie medzi našimi ríšami.
+ACCEPT_PEACE_01            | Zhodli sme sa, že nastal čas ukončiť naše malicherné hádky.
+ACCEPT_PEACE_01            | Príjmame vašu ponuku mieru. Prestaňte útočiť na jednotky [my_race_akuzativ] a my prestaneme útočiť na vaše.
+ACCEPT_PEACE_01            | Toto nezmyselné ničenie nás unavuje. [my_race_plural] prijímajú vašu ponuku mieru.
+
+BREAK_PACT_01              | Varovanie [your_race_dativ] od [my_race_akuzativ]: náš pakt o neútočení už neplatí!
+ANNOUNCE_PACT_01           | V roku [year] sa ríša [my_race_akuzativ] zaväzuje dodržiavať pakt o neútočení a neútočiť na flotily [your_race_akuzativ], pokiaľ nebudú obiehať okolo jej kolónií.
+ACCEPT_PACT_01             | Ríša [my_race_akuzativ] súhlasí s paktom o neútočení. Žiadna zo strán nezaútočí na flotily druhej strany, pokiaľ nevstúpia na obežnú dráhu  kolónie patriacej protistrane.
+ACCEPT_PACT_01             | Ak súhlasíte, že nepošlete lode do žiadnej z našich kolónií, obyvatelia z ríše [my_race_akuzativ] sľúbia, že nezaútočia na žiadnu z vašich lodí.
+ACCEPT_PACT_01             | [my_nameTitle] [my_name] súhlasí s vaším návrhom paktu o neútočení. Tak ako je písané, tak sa aj stane!
+ACCEPT_PACT_01             | Súhlasím. Pokiaľ nezaútočíte na naše kolónie, [my_race_plural] budú dodržiavať pakt o neútočení.
+
+BREAK_ALLIANCE_01          | Ríša [My_race_akuzativ] už naďalej nemôže udržiavať spojenectvo s ríšou [your_race_akuzativ].
+ANNOUNCE_ALLIANCE_01       | V roku [year] sa ríša [my_race_akuzativ] a [your_race_akuzativ] dohodli na vytvorení spojenectva, v ktorom ani jedna z nich nezaútočí na flotily alebo kolónie tej druhej.
+ANNOUNCE_ALLIANCE_01       | Tak vzniká naša aliancia. Vaše lode môžu navštevovať naše kolónie podľa vašej ľubovôle a získavať palivo z našich základní.
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] víta spojenectvo s našími dobrými priateľmi [your_race_instrumental].
+ACCEPT_ALLIANCE_01         | [my_race_plural] a [your_race_plural] dnes uzatvárajú spojenecké puto medzi našimi národmi. Smrť našim nepriateľom!
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] vidí múdrosť v spojenectve s [your_race_instrumental]. Nech sa tak stane!
+
+OFFER_JOINT_WAR_01         | Nastal čas, aby sa [your_race_plural] a [my_race_plural] spojili vo vojne proti [other_race_dativ].
+ACCEPT_JOINT_WAR_01        | Ríša [other_race_akuzativ] musí padnúť pred spojenými silami [my_race_akuzativ] a [your_race_akuzativ].
+ACCEPT_JOINT_WAR_01        | Keď sa [my_race_plural] a [your_race_plural] spoja, [other_race_plural] dlho nevydržia.
+ACCEPT_JOINT_WAR_01        | V roku [year] spojili [my_race_plural] a [your_race_plural] svoje sily, aby zbavili galaxiu hrozby z ríše [other_race_akuzativ].
+COUNTER_JOINT_WAR_01       | Pridáme sa k vám vo vašej vojne proti [other_race_dativ] výmenou za nasledujúcu kompenzáciu:
+RESPOND_CLOSE_EMBASSY_01   | Ako chcete. Medzi našimi ríšami už nebudú žiadne rozhovory.
+
+RESPOND_BREAK_TRADE_01     | Toto si zapamätáme.
+RESPOND_BREAK_TRADE_01     | Takže, [your_nameTitle] [your_name], nedokáže dodržať slovo. Na toto nezabudneme.
+
+RESPOND_BREAK_PACT_01      | Na tvoj náhrobný kameň napíšeme slová z tvojich nedodržaných dohôd, [your_nameTitle] [your_name].
+RESPOND_BREAK_PACT_01      | Ríša [your_race_akuzativ] sa jedného dňa rozsype pod ťarchou vlastných nesplnených sľubov.
+
+RESPOND_BREAK_ALLIANCE_01  | Zneuctili ste dohodu. Naše spojenectvo je zrušené.
+RESPOND_BREAK_ALLIANCE_01  | Veľmi dobre. Vaše nedôveryhodné úmysly sa ukázali. Rušíme naše spojenectvo.
+RESPOND_BREAK_ALLIANCE_01  | Zmluvy, ktoré sa nedodržiavajú, nepotrebujeme. Aliancia už nemá význam.
+RESPOND_BREAK_ALLIANCE_01  | Budiž. Dohoda o aliancií už neplatí.

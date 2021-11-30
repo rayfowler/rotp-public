@@ -1,0 +1,22 @@
+// all possible names
+name: Klackoni, Klackanti, Klockani, Arthroponi, Koleopteroni
+
+desc1: Xenofóbni priemyselníci
+desc2: Kolektívna inteligencia a zvýšená produkcia 
+desc3: Pracovitá rasa Klackonov je druh, kde myseľ každého jedinca je podriadená spoločnej mysli. Pre iné rasy je nepochopiteľná.
+
+// possible home system names
+home: Kholdan, Kholdant, Khaldon, Klokdon, Khakdon
+
+title:     Ja
+fulltitle: Ja
+
+// possible leader names
+leader: Ixitixl, Kaxal, Kikitik, Klaquan, K'kalak, Xantak
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Čmeliak, Ihla, Modlivka, Chrobák, Trúd, Pavúk, Čeľusť
+ship2: Sršeň, Otrava, Jed, Vážka, Žihadlo, Skarabeus, Osa
+ship3: Tarantula, Zmija, Kobra, Asp, Had, Mamba, Škorpión
+ship4: Okuliarnik, Čierna vdova, Pytón, Vretenica, Nága, Čierna zmija, Čierna mamba
+

@@ -1,0 +1,83 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Psilon specific dialogue
+CONTACT_PACIFIST | Vitajte, pozdravujeme vás! My [my_race_plural] už dávno vieme, že mierová spolupráca prináša najviac výhod. Dúfame, že naše diplomatické vzťahy s vami budú rovnako harmonické ako naše vlastné vnútorné záležitosti.
+CONTACT_HONORABLE | Aká radostná príležitosť stretnúť sa s ostatnými, ktorí putujú týmto nekonečným priestorom! Voláme sa [my_race_plural] a urobíme všetko, čo je v našich silách, aby sme sa vám mohli čo najviac venovať.
+CONTACT_ERRATIC | [my_empire] želá všetko dobré. Váš ľud máme volať... [your_race_plural]? Fascinujúce. Áno... Naozaj fascinujúce.
+
+//
+GREETING_01 | Sme veľmi radi, že sa nám ozval náš veľavážený priateľ. Ako vám môžu byť [my_race_plural ] dnes nápomocní?
+GREETING_04 | Pozdravujeme veľvyslanec. Som rád, že môžem predložiť vaše požiadavky našej Rade na... Prerokovanie.
+GREETING_07 | Linka je otvorená, veľvyslanec. O čom chcete... Diskutovať?
+//
+DECLAREWAR_HATE_01 | Urobili sme všetko, čo bolo v našich silách, aby sme sa prispôsobili vašej prítomnosti. Žiaľ, tak neinteligentná rasa je na nás príliš, aby sme ju zniesli za nášho nebeského suseda. Nebojte sa, váš koniec bude rovnako rýchly ako bezbolestný.
+DECLAREWAR_HATE_02 | Strávili sme veľa času úvahami. Je to... Poľutovaniahodné, ale rozhodli sme sa, že váš ľud musí byť odstránený z galaxie.
+DECLAREWAR_HATE_03 | Hoci vždy uprednostňujeme mier, nemôžeme sa zmieriť s tým, aby ste pokračovali vo vašom konaní. Urobíme všetko preto, aby v galaxii opäť zavládol pokoj.
+DECLAREWAR_ERRATIC_01 | Priznávam, že konanie našej rady považujem za záhadné, ale usúdili, že vaši ľudia dosiahli hranice svojej inteligencie a musia byť... Odstránení. Žiaľ, som len veľvyslanec a nemám prostriedky, aby som ich presvedčil o opaku.
+DECLAREWAR_ERRATIC_02 | Aby sme si mohli vážiť mier, musíme si občas... Pripomenúť ohavnosť vojny. Nemyslíte, pán veľvyslanec?
+DECLAREWAR_ERRATIC_03 | Nastal čas vojny, veľvyslanec. Kým skončí, jedna z našich ríš si bude navždy pripomínať jej hrôzostrašnú cenu. Druhá ríša, žiaľ, prestane existovať.
+DECLAREWAR_MILITARY_01 | Ospravedlňujem sa, veľvyslanec, ale nastal čas, aby Republika rozšírila svoj vplyv. Ak nemôžeme... Získať tieto územia mierovou cestou, musíme ich získať silou.
+DECLAREWAR_MILITARY_02 | Len málo vecí v tejto galaxii stojí za porušenie mieru. Súhlasíte, veľvyslanec, že územie je jednou z nich?
+DECLAREWAR_MILITARY_03 | Prinášam zvesti o vojne, veľvyslanec. Rada rozhodla, že v musíme zväčšiť územie našej republiky. Hoci vaše bojové schopnosti sú... Pôsobivé, vôľa rady sa neodmieta.
+DECLAREWAR_ALLIANCE_01 | Jeden z naších spojencov, [other_race_plural], nás prišiel požiadať o pomoc v boji proti vám. Rada ich vypočula a súhlasila s pomocou.
+DECLAREWAR_ALLIANCE_02 | To, že ste vaša rasa a [other_race_plural] porušili mier, je... Smutné. To, že sa musíme zapojiť do boja proti vám, je ešte smutnejšie. 
+DECLAREWAR_ALLIANCE_03 | Je zrejmé, že váš druh je príliš hašterivý na to, aby sa s ním dal uzavrieť akýkoľvek... Trvalý mier. Ak sa [other_race_plural] rozhodli ísť s vami do vojny, urobíme tak i my.
+DECLAREWAR_SPYING_01 | Zaujímalo by ma, čo ste si mysleli, že nastane. Podnikať takú rozsiahlu špionáž proti našej republike... Možno sme predsa len precenili vašu inteligenciu. 
+DECLAREWAR_SPYING_02 | Keď ste od nás niečo potrebovali... Získať, mohli ste sa nás priamo spýtať namiesto použitia špionáže. Teraz nemáme inú možnosť, ako porušiť mier. Mier, o ktorý sme sa tak usilovne snažili. 
+DECLAREWAR_SPYING_03 | Smutné, veľvyslanec. Vy a vaši špióni ste mohli zvážiť toľko iných možností. Žiaľ, oba naše národy teraz musia znášať veľkú potupu vojny.
+DECLAREWAR_ATTACK_01 | Vaše konanie nemá logiku, veľvyslanec. Zaútočiť na ľudí, ktorí sú výlučne za mier a pritom majú takú obrovskú prevahu je, no, prinajmenšom... Záhadné. Zdá sa, že vaša rasa je oveľa menej inteligentná, ako sa doteraz myslelo.  
+DECLAREWAR_ATTACK_02 | Temný deň pre obe naše ríše. Neželali sme si nič viac než harmonické spolužitie s vaším ľudom. Žiaľ o to nestojíte.
+DECLAREWAR_ATTACK_03 | Prečo ste sa rozhodli ísť touto cestou? Sme mierumilovný národ už od svojej podstaty, ale buďte si istí, že keď treba vieme sa brániť.
+DECLAREWAR_OPPORTUNITY_01 | Nuž, bola to určite zaujímavá skúsenosť, pán veľvyslanec. Nastal však čas, aby sa vaša ríša odporúčala do histórie. Veríme, že tí, ktorí majú také mizivé intelektuálne schopnosti budú prekážať našim cieľom.
+DECLAREWAR_ASSASSIN_01 | Musím vám do istej miery... Pogratulovať. Len málo činov by mohlo spôsobiť, že sa [my_race_plural] tak rýchlo zmobilizujú do vojny. Zabitie neozbrojeného veľvyslanca je jedným z nich.
+
+OFFER_PEACE_01             | Vojna sa nikdy nezmení, pán veľvyslanec. Toľko zabíjania, toľko ničenia a prečo vlastne? Prosím, uznajme si obaja naše chyby a začnime novú éru mieru.
+OFFER_TRADE_01             | Civilizované a inteligentné rasy, ako je tá naša, vedia, že blahobyt, nie vojna, je najvýhodnejšia. Republika si želá vzájomnú spoluprácu za účelom zvyšovania blahobytu. Obchodná dohoda vo výške [amt] BC ročne by mohla byť slušným začiatkom. Súhlasíte?
+OFFER_PACT_01              | Čím viac času trávime s vami, tým viac si ceníme naše vzťahy. Mali by sme urobiť všetko, čo je v našich silách, aby sme... Toto puto zachovali. Pakt o neútočení medzi našimi ríšami sa postará o to, aby naďalej pretrvalo, však, veľvyslanec? 
+OFFER_ALLIANCE_01          | Nastal čas, veľvyslanec: čas uzavrieť spojenectvo medzi [my_race_instrumental] a [your_race_instrumental]. Vďaka nám galaxia uvidí, že mierové spolužitie je jedinou prijateľnou voľbou! 
+
+WARN_TRESPASSING_01 | Vaša prítomnosť v systéme [system] vzbudila v rade pozornosť. Prosím, okamžite sa stiahnite, aby sa nenarušil mier, na ktorom sme tak ťažko pracovali. 
+WARN_EXPANSION_01 | Existuje len málo spôsobov, ako si môžeme tak rýchlo interpretovať vaše pokusy o... Rozšírenie vašej sféry vplyvu. Žiadny z nich však nie je dobrý pre dlhodobé udržanie mieru medzi našimi ríšami.
+WARN_BUILDUP_01 | Budovanie vašich flotíl týmto spôsobom by sa mohlo ukázať ako... Zlá predzvesť pre mier, veľvyslanec. Dávajte si pozor, aby si náhodou niekto interpretoval vaše akcie ako pokus o zastrašovanie.
+WARN_SKIRMISH_01 | Potýčka v systéme [system], to je... Nepríjemné. Máme si to vysvetliť ako dočasné vyšinutie? Alebo znamenie, že čoskoro môže nastať niečo oveľa nebezpečnejšie? 
+WARN_ATTACKED_01 | To je nehoráznosť! Takéto útoky nemôžu pokračovať! Varujem vás, veľvyslanec: prestaňte ohrozovať mier medzi [attacker_race_instrumental] a republikou. 
+WARN_INVADADED_01 | Veľvyslanec, čo má znamenať váš vpád na územie [defender_race_akuzativ]? Zaiste nemáte v úmysle svojím agresívnym konaním nahlodať náš mier? 
+WARN_ESPIONAGE_01 | Špionáž, veľvyslanec? Nebolo by rozumnejšie iba... Vyjednávať, o tom čo potrebujete? V mene nášho harmonického spolužitia to pre tento raz prehliadneme, ale nabudúce už možno nebudeme takí zhovievaví... [framed]
+WARN_SABOTAGE_01 | Nikdy by ma nenapadlo, že [spy_race_plural] sú schopní takej... Podlej sabotáže. V mene mieru sa modlím, aby sa taká hlúpa chyba už neopakovala. [forced]
+WARN_BIOWEAPON_01 | To je... Neslýchané, veľvyslanec. Čo i len raz použiť biologickú zbraň na civilistov nás okamžite núti prehodnotiť, ako vás vnímame! 
+WARN_GENOCIDE_01 | A práve tak sa navždy stratil hlas v chóre galaxie. To, že existuje niekto schopný takého zla... Obávam sa, že s vami nakoniec nebudeme schopní uzavrieť trvalý mier.
+WARN_FINAL_WAR_01 | Galaxia je na tak blízko k harmónie, no vy jej tvrdohlavo stojíte v ceste. Ak je odstránenie [rebel_race_akuzativ] cenou za večný mier, tak sme ochotní túto cenu zaplatiť.
+WARN_COUNCIL_VOTE_01 | [candidate_race_plural] má jediný záujem, mier a  prosperite. Ak si želáte iba tú najlepšiu... Budúcnosť pre svoj ľud... Vaše hlasovanie proti republike sa už viac nebude opakovať.
+WARN_OATHBREAKER_01 | Podlý a nečestný veľvyslanec. Premýšľame či ste ochotní porušiť mier tak ľahko, ako porušujete naše dohody. Pre istotu budeme pripravení, ak by ste sa tak niekedy rozhodli urobiť. [spiesCaught]
+WARN_ATTACKED_ALLY_01 | Odvolajte svoje útoky, veľvyslanec! Viete, že sme spojencami [defender_race_akuzativ]. Nemohli by sme radšej sprostredkovať mier prostredníctvom dialógu namiesto toho, aby ste nás všetkých donútili vstúpiť do vojny? 
+WARN_REBELLING_AGAINST_01 | Nie! Neveríme, že dovediete radu k mieru! Naša oddanosť mieru ďaleko prevyšuje tú vašu. No kvôli vám sme ochotní túto oddanosť dočasne zahodiť! 
+
+PRAISE_COUNCIL_VOTE_01 | Naši priatelia [voter_race_plural] nás ešte nikdy nesklamali! Republika vám vyjadruje svoju vďaku za vaše... Dnešné pôsobenie v rade. Tešíme sa na vašu najbližšiu návštevu v systéme [candidate_home].
+PRAISE_COUNCIL_VOTE_02 | Rada dnes prijala mnohé múdre rozhodnutia. No najmúdrejšie, bolo vaše rozhodnutie dať hlas Republike. Uznávame takúto... Oddanosť mieru a môžeme sa tešiť z priateľstva s vami, kým táto oddanosť bude pokračovať.  
+PRAISE_COUNCIL_VOTE_03 | Sme si vedomí vášho hlasovania za Republiku v rade. Sme prekvapení, pán veľvyslanec a možno sme podcenili inteligenciu vášho ľudu. 
+
+PRAISE_ATTACKED_ENEMY_01 | Veľvyslanec! Vašu pomoc si veľmi... Ceníme. Spoločne odstránime hrozbu [defender_race_akuzativ]. Obnovme mier, po ktorom táto galaxia tak veľmi túži. 
+PRAISE_ATTACKED_ENEMY_02 | Vnímame a ctíme si činy [attacker_race_akuzativ] ako záväzok voči našim ideálom mieru. Buďte si istí, že hneď ako... Prinútime [defender_race_akuzativ] k ústupu opäť nastane mier. 
+PRAISE_ATTACKED_ENEMY_03 | Váš ľud je násilnícky a drzý, takže nie je prekvapením, že sa tak ochotne zapojíte do vojny. Napriek tomu skutočnosť, že ste obrátili svoje zbrane proti strane, ktorá nebojuje za mier, treba prinajmenšom... Uznať. 
+
+PRAISE_TRADE_01 | Obchodovať s niekým, kto je tak oddaný mieru, je dobrodenie, ale obchodovať s priateľom, ktorý je oddaný mieru, je skutočné požehnanie. Nech naše dohody a naše priateľstvo pretrvajú až do konca vekov! 
+PRAISE_TRADE_02 | Veľvyslanec! Vidíte, aký úžitok prinášajú jednoduché obchodné dohody všetkým zúčastneným? Dúfame, že to bude aj naďalej prínosom pre obe naše rasy po celé veky! 
+PRAISE_REBELLING_WITH_01 | My [my_race_plural] sme vždy verili, že vojna nikdy nie je riešením. Galaktická rada nám však ukazuje, že sme sa mýlili. Republika vo finálnej vojne stojí pri vás! 
+ 
+ACCEPT_TRADE_01 | Áno, pán veľvyslanec, súhlasíme, že vzájomný obchod je najlepšou cestou k mieru. [amt] BC ročne je v poriadku. Ďakujeme za vašu štedrosť.
+RESPOND_IGNORE_THREAT_01 | Nemýľte si náš pacifizmus so slabosťou! Vaša hrozba bola určite vyslovená v iracionálnom hneve. Pre tento krát vám váš výbuch odpustíme.
+RESPOND_STOP_SPYING_01 | Hovoríte, že špión patriaci ríši [my_race_akuzativ]? Určite ide o nejaké nedorozumenie. Vráťte nám, prosím, nášho občana, aby sme tomu mohli prísť na koreň. Pokojne si vydýchnite, špehovanie je to posledné, na čo myslíme.
+RESPOND_STOP_ATTACKING_01 | Nech táto mocná flotila odradí každého, kto je natoľko hlúpy, aby začal nákladnú vojnu. A nech naše odvolanie tejto flotily slúži ako dôkaz nášho záväzku voči mieru. 
+
