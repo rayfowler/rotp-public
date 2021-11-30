@@ -573,65 +573,20 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                     selectAllSystems();
                 }
                 return;
-            case KeyEvent.VK_Q:
-                selectNormalAndRichWithFullEconomy();
-                if (control) {
-                    multiSpendingPane.selectCat(0);
-                    multiSpendingPane.setSpendingLevel(1);
-                }
-                return;
-            case KeyEvent.VK_Y:
-            case KeyEvent.VK_Z:
-                selectLackingPopulation();
-                if (control) {
-                    multiSpendingPane.selectCat(3);
-                    multiSpendingPane.setSpendingLevel(1);
-                }
-                return;
             case KeyEvent.VK_S:
                 multiSpendingPane.selectCat(0);
-                if(control)
-                    multiSpendingPane.setLock(0, true);
-                else if(shift)
-                    multiSpendingPane.setLock(0, false);
-                else
-                    multiSpendingPane.setSpendingLevel(1);
                 return;
             case KeyEvent.VK_D:
                 multiSpendingPane.selectCat(1);
-                if(control)
-                    multiSpendingPane.setLock(1, true);
-                else if(shift)
-                    multiSpendingPane.setLock(1, false);
-                else
-                    multiSpendingPane.setSpendingLevel(1);
                 return;
-            case KeyEvent.VK_W:
+            case KeyEvent.VK_I:
                 multiSpendingPane.selectCat(2);
-                if(control)
-                    multiSpendingPane.setLock(2, true);
-                else if(shift)
-                    multiSpendingPane.setLock(2, false);
-                else
-                    multiSpendingPane.setSpendingLevel(1);
                 return;
             case KeyEvent.VK_E:
                 multiSpendingPane.selectCat(3);
-                if(control)
-                    multiSpendingPane.setLock(3, true);
-                else if(shift)
-                    multiSpendingPane.setLock(3, false);
-                else
-                    multiSpendingPane.setSpendingLevel(1);
                 return;
-            case KeyEvent.VK_R:
+            case KeyEvent.VK_T:
                 multiSpendingPane.selectCat(4);
-                if(control)
-                    multiSpendingPane.setLock(4, true);
-                else if(shift)
-                    multiSpendingPane.setLock(4, false);
-                else
-                    multiSpendingPane.setSpendingLevel(1);
                 return;
         }
         if (repaint)
@@ -687,42 +642,6 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             showMultiPlanetPanel();
         repaint();
         setAnchorSystem(selectedSystems().get(0), true);
-    }
-    private void selectNormalAndRichWithFullEconomy() {
-        List<StarSystem> selectedSystems = selectedSystems();
-        selectedSystems.clear();
-        for(StarSystem sel : allSystems())
-        {
-            if(sel.planet().researchAdj() > 1 || sel.planet().productionAdj() < 1)
-                continue;
-            if(sel.colony().currentProductionCapacity() == 1)
-                selectedSystems.add(sel);
-        }
-        
-        if (selectedSystems.size() > 1)
-            showMultiPlanetPanel();
-        else
-            showSinglePlanetPanel();
-        repaint();
-        if (!selectedSystems.isEmpty())
-            setAnchorSystem(selectedSystems().get(0), true);
-    }
-    private void selectLackingPopulation() {
-        List<StarSystem> selectedSystems = selectedSystems();
-        selectedSystems.clear();
-        for(StarSystem sel : allSystems())
-        {
-            if(sel.colony().workingPopulation() * sel.empire().maxRobotControls() < sel.colony().industry().factories())
-                selectedSystems.add(sel);
-        }
-        
-        if (selectedSystems.size() > 1)
-            showMultiPlanetPanel();
-        else
-            showSinglePlanetPanel();
-        repaint();
-        if (!selectedSystems.isEmpty())
-            setAnchorSystem(selectedSystems().get(0), true);
     }
     private void shiftSelectedSystem(StarSystem sys, boolean updateFieldValues) {
         StarSystem anchor = anchorSystem();
