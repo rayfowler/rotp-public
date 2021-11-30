@@ -1788,9 +1788,9 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
         }
         public boolean isButtonEnabled() { return (int)player().totalReserve() > 0; }
         public void buttonClicked() {
-            if (isButtonEnabled() && !selectedSystems().isEmpty()) {
+            if (isButtonEnabled()) {
                 softClick();
-                transferReservePane.targetSystems(selectedSystems());
+                transferReservePane.targetSystem(lastSelectedSystem());
                 enableGlassPane(transferReservePane);
             }
             else
@@ -2346,14 +2346,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                     player().empireTaxLevel(newLevel);
                     repaint();
                     planetDisplayPane.repaint();
-                } else if(!selectedSystems().isEmpty() && player().totalReserve() > 0) {
-                    softClick();
-                    transferReservePane.targetSystems(selectedSystems());
-                    enableGlassPane(transferReservePane);
-                } else {
-                    misClick();
-                }
-                    
+                }                   
             }
         }
         @Override
