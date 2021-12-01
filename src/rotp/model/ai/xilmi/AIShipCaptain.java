@@ -592,22 +592,28 @@ public class AIShipCaptain implements Base, ShipCaptain {
         if(galaxy().shipCombat().results().damageSustained(st.empire) > 0
                 || galaxy().shipCombat().results().damageSustained(tgt.empire) > 0)
             shallGoForFirstStrike = false;
-        boolean enemiesBesidesTarget = false;
-        boolean friendsBesidesMe = false;
-        for(CombatStack cst : galaxy().shipCombat().activeStacks())
+        boolean enemyCanAttackAnythingFromMe = false;
+        for(CombatStack enemy : galaxy().shipCombat().activeStacks())
         {
-            if(cst.hits < cst.maxHits)
+            if(enemy.empire != empire)
+                continue;
+            for(CombatStack mine : galaxy().shipCombat().activeStacks())
             {
-                shallGoForFirstStrike = false;
+                if(mine.empire != empire)
+                    continue;
+                if(enemy.isArmed())
+                {
+                    if(enemy.maxFiringRange(mine) + enemy.maxMove <= enemy.distanceTo(mine.x(), mine.y()))
+                    {
+                        enemyCanAttackAnythingFromMe = true;
+                        break;
+                    }
+                }
             }
-            if(cst.empire == tgt.empire && cst != tgt && cst.isArmed())
-                enemiesBesidesTarget = true;
-            if(cst.empire == st.empire && cst != st && cst.isArmed())
-                friendsBesidesMe = true;
         }
-        if(!enemiesBesidesTarget && !friendsBesidesMe)
+        if(!enemyCanAttackAnythingFromMe)
             shallGoForFirstStrike = true;
-        if(st.maxMove <= tgt.maxMove)
+        if(st.maxMove <= tgt.maxMove && st.empire == galaxy().shipCombat().results().attacker())
             shallGoForFirstStrike = false;
         if(st.move < st.movePointsTo(tgt) - st.optimalFiringRange(tgt) && shallGoForFirstStrike)
         {
