@@ -744,12 +744,17 @@ public class AIShipCaptain implements Base, ShipCaptain {
 
         // don't retreat if all enemies can only target planets
         boolean canBeTargeted = false;
+        boolean canTarget = false;
         for (CombatStack st: activeStacks) {
             if (st.canPotentiallyAttack(currStack))
                 canBeTargeted = true;
+            if(currStack.canPotentiallyAttack(st))
+                canTarget = true;
         }
         if (!canBeTargeted)
             return false;
+        if(!canTarget)
+            return true;
         
         if (facingOverwhelmingForce(currStack)) {
             log(currStack.toString()+" retreating from overwhelming force");
