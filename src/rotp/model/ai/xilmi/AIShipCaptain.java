@@ -818,7 +818,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 healPerTurn = ship.designShipRepairPct() / st1.num;
             }
             damagePerTurn -= healPerTurn;
-            //System.out.print("\n"+stack.mgr.system().name()+" "+st1.fullName()+" takes "+damagePerTurn+" damage per turn.");
+            //System.out.print("\n"+stack.mgr.system().name()+" "+st1.fullName()+" takes "+damagePerTurn+" damage per turn with heal. heal per turn: "+healPerTurn);
             if(damagePerTurn > 0)
                 allyKillTime += pctOfMaxHP / damagePerTurn;
             else
@@ -852,7 +852,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 healPerTurn = ship.designShipRepairPct() / st1.num;
             }
             damagePerTurn -= healPerTurn;
-            //System.out.print("\n"+stack.mgr.system().name()+" "+st1.fullName()+" takes "+damagePerTurn+" damage per turn.");
+            //System.out.print("\n"+stack.mgr.system().name()+" "+st1.fullName()+" takes "+damagePerTurn+" damage per turn with heal. heal per turn: "+healPerTurn);
             if(damagePerTurn > 0)
                 enemyKillTime += pctOfMaxHP / damagePerTurn;
             else
