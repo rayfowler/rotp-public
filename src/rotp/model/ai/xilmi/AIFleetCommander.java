@@ -769,7 +769,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             }
             //Improve retreat-target for retreating fleets that are still at the system they retreat from
             //this cannot be done from ship-captain as at that point it isn't known how big the retreating fleet will become when it retreats partially
-            if(fleet.retreating() && fleet.distanceTo(fleet.system()) == 0)
+            if(fleet.retreating() && fleet.system() != null && fleet.distanceTo(fleet.system()) == 0)
             {
                 if(RetreatSystem(fleet) != null)
                 {
