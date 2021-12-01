@@ -38,7 +38,6 @@ public class ShipWeapon extends ShipComponent {
         float max = maxDamage();
         float shd = shield * shieldMod();
         float dmg = (summate(max-shd) - summate(min-shd-1)) / (max-min+1);
-        System.out.print("\n"+name()+" min: "+min+" max: "+max+" dmg: "+dmg+" shd: "+shd);
         return attacksPerRound() * dmg * scatterAttacks();
     }
     public float max(ShipDesign d, int i) {
