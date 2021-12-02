@@ -1,0 +1,22 @@
+// all possible names
+name: Sakkrovia, Reptarovia, Saurani, Raptorani, Tyranaňia
+
+desc1: Stúpenci výbojnej expanzie
+desc2: Zvýšený rast počtu obyvateľov
+desc3: Konkláve fanatikov usilujúcich o neustále zdokonaľovanie dobytých svetov.
+
+// possible home system names
+home: Sssla, Sssana, Sssihs, Sssha, Sssss, Hsssa
+
+title:     Veľmajster
+fulltitle: Veľmajster
+
+// possible leader names
+leader: Guanar, Hissa, Kryssta, Saurak, Sauron, Tyranid
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Gekón, Chameleón, Jašterica, Leguán, Slepúch, Hatéria, Bičík
+ship2: Tegu, Varan, Kajman, Aligátor, Krokodíl, Gaviál, Bazilišek
+ship3: Dinosaur, Dravec, Pterodaktyl, Veľjašter, Ceratop, Predátor, Plesiosaur
+ship4: Titán, Kolos, Drak, Godzila, Kraken, Gorgona, Tyranosaur
+

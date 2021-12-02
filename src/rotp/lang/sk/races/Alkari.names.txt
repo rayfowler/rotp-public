@@ -1,0 +1,22 @@
+// all possible names
+name: Alkarani, Lietani, Kvokani, Perania, Kurania
+
+desc1: Ctihodní bojovníci
+desc2: Špičkoví piloti
+desc3: Alkaranská zvrchovanosť je spoločenstvo bojovníkov, ktorí si nadovšetko cenia česť v boji.
+
+// possible home system names
+home: Altair, Aegir, Aviar, Volary, Aerie
+
+title:     Kráľ
+fulltitle: Kráľ veže 
+
+// possible leader names
+leader: Ariel, Ostrozrak, Vysokolet , Červenokrídlo, Ostrodráp, Nebokráľ
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Prepelica, Lastovička, Pelikán, Sova, Vrana, Havran, Pierko
+ship2: Sokol, Krakľa , Čajka, Sova, Haja , Zdochlinár
+ship3: Bocian, Jastrab, Orol, Orliak, Sup, Harpia, Kondor
+ship4: Hromový vták, Ziz, Pán oblakov, Sfinga, Pteranodon, Gryf, Fénix
+

@@ -1,0 +1,22 @@
+// all possible names
+name: Ľudia, Terania, Teláni, Primani, Midgardaňia
+
+desc1: Skúsení diplomati
+desc2: Poctiví obchodníci
+desc3: Ľudia majú dar jazyka. Sú majstri v presviedčaní ostatných, aby dobrovoľne slúžili ich záujmom.
+
+// possible home system names
+home: Sol, Tera, Telus, Primus, Midgard
+
+title:     Triumvir
+fulltitle: Triumvir
+
+// possible leader names
+leader: Alexander, Bladrov II, Duraš IV, Johan III, Lasitus, Strader
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Čln, Prieskumník, Kuriér, Výskumník, Hľadač, Posol, Raketoplán
+ship2: Fregata, Korveta, Torpédovka, Stíhač, Hliadka, Mínonoska, Strážca
+ship3: Krížnik, Eskorta, Vojnová loď, Obranca, Obrnenec, Mínolovka, Komando
+ship4: Torpédoborec, Bojová loď, Hviezda smrti, Devastátor, Vojnový křižník, Pomstiteľ, Ničiteľ
+

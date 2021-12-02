@@ -1,0 +1,21 @@
+// all possible names
+name: Meklarani, Mecharani, Kyberani, Digitarani, Technarani
+
+desc1: Nevyspytateľní priemyselníci
+desc2: Pokročilé riadenie tovární
+desc3: Občania Meklarského domínia sa prostredníctvom technológie usilujú o dosiahnutie dokonalosti a nesmrteľnosti.
+
+// possible home system names
+home: Meklon, Collosson, Calculon, Bender, Optimus
+
+title:     Arbiter
+fulltitle: Hlavný arbiter
+
+// possible leader names
+leader: CB-715, INT-986, MS-35, QX-537, TVC-15, TX-1138
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Bajt, Tranzistor, Prepínač, Komponent, Obvod, Číslo, Logika  
+ship2: Procesor, Kalkulačka, Počítač, Algoritmus, Sieť, Kalkul
+ship3: Dynamo, Akumulátor, Ajax, Tornádo, Nexus, Nájazdník, Drachma
+ship4: Nemezis, Devastátor, Annihilátor, Narušiteľ, Hyperión, Penetrátor, Trýzniteľ

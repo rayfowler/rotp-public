@@ -1,0 +1,85 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Silicoid specific dialogue
+
+CONTACT_XENOPHOBIC         | Ríša [my_race_akuzativ] sa rozhodla uznať vašu prítomnosť, [your_name] z ríše [your_race_akuzativ]. Budeme vás kontaktovať ako uznáme za vhodné.
+CONTACT_RUTHLESS           | Oči impéria sú upreté na vás, [your_race_plural]. Kvôli vám a všetkým, ktorí sú vám drahí, modlite sa, aby vás [my_title] vnímal priaznivo.
+CONTACT_AGGRESSIVE         | Sme [my_race_plural], ubohý [your_race]. Naše územie je rozľahlé a naša sila neporovnateľná. Varujem vás, nepokúšajte náš hnev, inak spoznáte našu ničivú odplatu.
+
+//
+GREETING_01                | Zdravím veľvyslanec. Uveďte, čo od cisára žiadate. Ak vás uzná za hodného, prerušíme našu svätú vojnu, aby sme vám pomohli.
+GREETING_04                | Buďte stručný, pán veľvyslanec: [my_title] nezastavuje našu krížovú výpravu zo zbytočných dôvodov.
+GREETING_07                | Mizerný [your_race]! Opovážit sa prerušiť našu posvätnú vojnu znamená privolať na seba náš hnev!
+//
+DECLAREWAR_HATE_01         | Teraz je jasnejšie ako kedykoľvek predtým, že váš ľud sú dlho hľadané deti Quaralonu! S najväčším potešením odstránime váš druh z tejto galaxie pretože predstavujete najnebezpečnejšiu hrozbu!
+DECLAREWAR_HATE_02         | Konečne nastal čas, o ktorom sa hovorí v legendách! Priprav sa, potomstvo Quaralonu! Bez ohľadu na to, kto vyhrá, naša krížová výprava sa čoskoro skončí!
+DECLAREWAR_HATE_03         | Konečne sme vás našli, deti Quaralonu! Náš boj môže započať! Vaša sila je nepodstatná: sila Diamodu nám ukáže cestu!
+DECLAREWAR_ERRATIC_01      | Od nášho prvého stretnutia sa [my_title] zamýšľa nad tým, či ste alebo nie ste náš najnenávidenejší nepriateľ. Budeme pokračovať v premýšlaní ďalej, i keď vašu rasu medzitým vyhladíme.
+DECLAREWAR_ERRATIC_02      | Naše nebeské susedstvo je zatiaľ veľmi priateľské, ale i najmenšia šanca, že vaši ľudia sú deťmi Quaralonu, stačí na to, aby sme vám vyhlásili vojnu.
+DECLAREWAR_ERRATIC_03      | Aj najmenšie riziko nevraživosti z vašej strany je nad rámec toho, čo sme ochotní akceptovať. Vyčistíme galaxiu od špiny, ktorú predstavujete, alebo pri tom zomrieme.
+DECLAREWAR_MILITARY_01     | Opovažujete sa takto zasiahnuť do nášho územia? Tak nech sa stane! Čoskoro spoznáte náš hnev, [your_race_plural], a s tým zároveň spoznáte mieru svoju hlúposť.
+DECLAREWAR_MILITARY_02     | Zapamätajte si toto, úbohá ríša [your_race_plural]: všetky svety v tejto galaxii patria božským právom cisárovi [my_race_akuzativ]. A my budeme bojovať za cisára so zúrivosťou, ktorá zatrasie i samotnými hviezdami!
+DECLAREWAR_MILITARY_03     | Nedovolíme vám, aby ste si nárokovali čo i len jediný kameň na svetoch, ktoré sú alebo budú naše! Bude to sila vašej armády proti sile nášho presvedčenia. Uvidíme, čo zvíťazí!
+DECLAREWAR_ALLIANCE_01     | Vyhlásiť vojnu cisárskemu spojencovi bolo veľmi nerozumné. Modlite sa, aby ste našli milosť u svojich bohov, pretože u nás ju istotne nenájdete.
+DECLAREWAR_ALLIANCE_02     | Náš spojenec nás informoval, že ste sa rozhodli viesť proti nemu vojnu: tým ste vyhlásili vojnu aj nám. Pripravte sa!
+DECLAREWAR_ALLIANCE_03     | Osud [other_race_akuzativ] nám je ľahostajný. Využijeme túto šancu a zbavíme galaxiu vášho druhu, aby sme mohli nerušene pokračovať v našej svätej krížovej výprave. 
+DECLAREWAR_SPYING_01       | Žalostná [your_race_plural]! V tento deň spoznáte, aké je hlúpe kradnúť cisárove tajomstvá!
+DECLAREWAR_SPYING_02       | Tak veľmi si prajete poznať naše tajomstvá? Potom vám s radosťou prezradíme to najdôležitejšie: Neodpúšťame a nezabúdame. Pripravte sa na vojnu!
+DECLAREWAR_SPYING_03       | Myslíte si, že ste v pozícii, aby ste si mohli vziať naše tajomstvá bez následkov? Čoskoro sa presvedčíte o hlúposti takéhoto arogantného správania.
+DECLAREWAR_ATTACK_01       | Konečne ste sa odhalili, deti Quaralonu! Nikto iný ako výplod nášho najnenávidenejšieho nepriateľa by nebol taký hlúpy, aby nás tak bez rozmyslu vyzval! Pripravte sa na svoju poslednú bitku!
+DECLAREWAR_ATTACK_02       | Už dlho sme vás podozrievali, že ste deti nášho dávneho nepriateľa! Týmto úderom ste to navždy potvrdili! Proroctvo sa napĺňa!
+DECLAREWAR_ATTACK_03       | Zloduch! Pliaga jedna! V našej najtemnejšej hodine na nás takto útočíte?! Teraz ste dokázali, že ste naším odvekým nepriateľom. Do posledného vás zničíme!
+DECLAREWAR_OPPORTUNITY_01  | Ako pokračujeme v našej presvätej krížovej výprave naprieč galaxiou, musíme využiť každú príležitosť, ktorá nám prinesie výhody. Ten čas nastal práve teraz a vyhladenie vášho druhu je onou príležitosťou. Zbohom, úbohá rasa [your_race_akuzativ].
+DECLAREWAR_ASSASSIN_01     | Ako sa opovažujete zabiť cisárskeho veľvyslanca? Iba jeden z Quaralonových potomkov môže konať s tak zlým úmyslom! Pripravte svoje flotily na vojnu! 
+
+OFFER_PEACE_01             | Hovorí sa, že ak chcete niekoho spoznať, musíte s ním najprv bojovať. My sme bojovali a vidíme, že nie ste deti netvora Quaralona. Teraz by sme s vami chceli mať mier, aby sme sa mohli sústrediť na tých, ktorí si zaslúžia pocítiť náš hnev. 
+OFFER_TRADE_01             | Výskum hlbín vesmíru je nákladný podnik. Impérium chce s vami začať obchodovať. [amt] BC ročne zvládne financovať našu svätú krížovú výpravu i dať viac bohatstva vášmu ľudu. Čo poviete? 
+OFFER_PACT_01              | Snažíme sa zničiť len Quaralona a jemu podobných. Veríme, že vaši ľudia nimi nie sú a tak nemáme voči vám žiadne výhrady. Svoje zámery by sme chceli dokázať paktom o neútočení. Či sa ho rozhodnete podpísať, je na vás.
+OFFER_ALLIANCE_01          | Počas našej svätej vojny za vyčistenie galaxie sme sa stretli s mnohými podivnými a odpornými bytosťami. Spomedzi tých, s ktorými sme sa stretli, si myslíme, že vy ste s najmenšou pravdepodobný náš odveký nepriateľ. Spojte sa s nami, [your_race_plural], a získajte požehnanie [my_title]! 
+
+WARN_TRESPASSING_01        | Svojou nepozvanou prítomnosťou znesväcujete posvätný priestor v systéme [system]! Okamžite sa stiahnite, inak vás vyženieme ohňom spravodlivosti! 
+WARN_EXPANSION_01          | Myslíte si, že galaxia je len a len vaša? Okamžite prestaňte s touto bezohľadnou expanziou, inak budete čeliť hnevu celého Impéria!
+WARN_BUILDUP_01            | Iba Impérium môže mať najsilnejšie flotily v galaxii, pretože iba Impérium môže vyniesť správny rozsudok nad bezbožníkmi. Spochybňujete tento diktát na vlastné nebezpečenstvo, [your_race].  
+WARN_SKIRMISH_01           | Čo ste tým mysleli, pán veľvyslanec? Nad malou potýčkou prižmúrime oči len raz: nedovoľte, aby sa to opakovalo! 
+WARN_ATTACKED_01           | Šialenstvo! Opovažujete sa útočiť na Impérium?! [defender_title] vo svojej múdrosti pozastavil naše odvetné flotily, aby videl, čo urobíte ďalej. Mohli by ste predsa len byť naším dlho hľadaným nepriateľom?! 
+WARN_INVADED_01            | Určite šlo o akt zúfalstva ríše [attacker_race_akuzativ], takto ukradnúť územie Impéria. Vedzte, že systém [system] bol pre nás bezvýznamný, ale pokračovať v zaberaní toho, čo patrí cisárovi, môže skončiť len a len vašou záhubou! 
+WARN_ESPIONAGE_01          | Rozhodnutie ukradnúť naše tajomstvá bolo vážnou chybou v úsudku, pán veľvyslanec. Vyzývam vás k opatrnosti: keby váš pokus nebol taký úbohý, určite by si vyslúžil ostrejšiu reakciu! [framed]
+WARN_SABOTAGE_01           | Čo je toto za trik? Sabotáž je odsúdeniahodný čin hodný len zbabelcov a zloduchov! Odhaľujete sa predsa len ako podlý nepriateľ z našich proroctiev? O tom ešte rozhodne [victim_title]... [forced]
+WARN_BIOWEAPON_01          | Unthinkable! Obyčajné telo je už tak dosť slabé proti konvenčným zbraniam, ale proti biologickým zbraniam nemá žiadnu šancu. A proti civilistom?! V žilách vášho druhu určite koluje temná krv Quaralonu!
+WARN_GENOCIDE_01           | Teraz nám povedzte, prečo ste spáchali genocídu na rase [victim_race_akuzativ]. Starostlivo vážte teraz vaše slová: vaša odpoveď rozhodne o tom, ako budú naše dve rasy postupovať ďalej!
+WARN_FINAL_WAR_01          | Iba vytvorením spojenectiev môžeme dovŕšiť našu svätú vojnu! Stojíme spolu ako zjednotené národy, ale vy stojíte sám ako hlas chaosu a vojny. Proroctvo sa naplnilo: TY si skutočne potomok Quaralonova. 
+WARN_COUNCIL_VOTE_01       | Najlepšie by bolo, keby bola celá táto rada rozpustená a Impérium by získalo výhradnú kontrolu nad galaktickými záležitosťami. Potom by si vaši ľudia vyslúžili našu nevraživosť, keďže sa tak radi proti nám vyjadrujete! 
+WARN_OATHBREAKER_01        | Nepríjemné. Nedodržať slovo znamená porušiť dôveru. Niet pochýb o tom, že nepriateľ z proroctiev by sa konal presne takýmto spôsobom! [spiesCaught]
+WARN_ATTACKED_ALLY_01      | [defender_race_plural] májú tú česť byť súčasťou Impéria! Stiahnite sa. Varovanie od nás dostanete len raz!
+WARN_REBELLING_AGAINST_01  | Naša krížová výprava nemôže byť oddialená! Nie kvôli hlupákom z rady a isto nie kvôli vám! Pripravte sa, veľvyslanec: čoskoro sa na vás znesie svätý hnev!
+
+
+PRAISE_COUNCIL_VOTE_01     | Náš dôveryhodný spojenec si opäť zaslúži našu pochvalu! Vy, ktorý tak múdro našepkávate Rade slová rozumu! Dnes ste si zaslúžil vďačnosť Impéria, [voter_race]. 
+PRAISE_COUNCIL_VOTE_02     | Vaša rasa ešte nepreukázala svoju nevinu, pán veľvyslanec. Naďalej podporujte našu vec v rade a preukážte, že ste spojencom našej krížovej výpravy. 
+PRAISE_COUNCIL_VOTE_03     | Nemyslite si, že jediný hlas za Impérium v Rade vás zbavuje podozrenia! Vaši druhovia musia dokázať oveľa viac, kým naše pochybnosti vymiznú! 
+
+PRAISE_ATTACKED_ENEMY_01   | Ešte nevieme, či sú [defender_race_plural] skutočne deťmi Quaralonu. To, že sa k nám naši spojenci pridávajú s takou chuťou, nám však dodáva odvahu v tejto vojne! Vpred! Za spravodlivosť! Za Impérium!  
+PRAISE_ATTACKED_ENEMY_02   | Chcete sa pridať k nášmu boju proti [defender_race_dativ]? Choďte a ukážte nám, ako sa viete biť. Víťazstvo vám istotne prinesie vyššie postavenie na cisárskom dvore, ale porážka vám prinesie smrť! 
+PRAISE_ATTACKED_ENEMY_03   | Určite ste si nemysleli, že sme takí hlúpi, aby sme uverili vašej nevine len preto, že ste sa k nám pridali v boji proti [defender_race_dativ]? Nepriateľ, o ktorom rozprávajú našie proroctvá by urobil to isté, aby zamaskoval svoju skutočnú identitu. Choďte a ukážte nám, ako bojujete, a my posúdime, či ste bez poškvrny! 
+
+PRAISE_TRADE_01            | Impérium vám želá všetko dobré, priateľ krížovej výpravy! Naša obchodná dohoda financovala už nespočetné bitky pri pátraní po Quaralonovom potomstve. Impérium dúfa, že i vášmu ľud priniesla veľký osoh. 
+PRAISE_TRADE_02            | Nemôžeme síce povedať, že vás nepovažujeme za aspoň trocha podozrivých, ale môžeme povedať, že priame financovanie našej svätej vojny prostredníctvom obchodu posilnilo našu vieru vo vás. Kráčate správnym smerom, veľvyslanec! 
+PRAISE_REBELLING_WITH_01   | Náše hladanie nepriateľa je ukonca! Odporný potomkovia Quaralona si prisvojili galaktický trón! Do boja: [my_race_plural] a [your_race_plural] spolu vyčistia galaxiu od tejto špiny!
+ 
+ACCEPT_TRADE_01            | Impérium prijíma vašu ponuku, [your_race]. Každý rok s vami budeme obchodovať za [amt] BC.
+RESPOND_IGNORE_THREAT_01   | Naše križiacke ťaženie sa nenechá odradiť vašimi planými hrozbami. Nájdite si niekoho iného, koho budete obťažovať, alebo pocítite náš hnev!
+RESPOND_STOP_SPYING_01     | Chceli sme len overiť totožnosť Quaralonových potomkov. Sme presvedčení, že váš ľud medzi nich nepatrí. 
+RESPOND_STOP_ATTACKING_01  | Naše flotily hľadajú nepriateľov Impéria. Ak nie ste našimi nepriateľmi, tak potom nemajú potrebu zostať tam, kde sú.
+

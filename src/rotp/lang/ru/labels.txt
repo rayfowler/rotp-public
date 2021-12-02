@@ -220,7 +220,7 @@ INC_COUNCIL_VOTE_FOR_DESC         | [voter_race_plural] проголосовал
 INC_COUNCIL_VOTE_AGAINST_DESC     | [voter_race_plural] проголосовали против [candidate_race_plural_rod].
 INC_COUNCIL_ABSTAIN_DESC          | [voter_race_plural] воздержались от голосования, отказавшись голосовать за [candidate_race_plural_rod].
 INC_DECLARED_WAR_TITLE            | Объявление Войны
-INC_DECLARED_WAR_DESC             | Лидер [your_empire_rodit] объявил войну [victim_empire_dativs].
+INC_DECLARED_WAR_DESC             | Лидер [aggressor_empire_rodit] объявил войну [victim_empire_dativs].
 INC_ERRATIC_WAR_TITLE             | Неустойчивое Поведение
 INC_ERRATIC_WAR_DESC              | [aggressor_race_plural] объявили войну [victim_empire_dativs]. Причина неизвестна.
 INC_DEMANDED_TRIBUTE_TITLE        | Потребовала Дань
@@ -1613,8 +1613,8 @@ RACES_DIPLOMACY_MANAGE_DIPLOMATS  | Управлять Дипломатами
 RACES_DIPLOMACY_AUDIENCE          | Аудиенция
 RACES_DIPLOMACY_CONTACT           | Установить Контакт
 RACES_DIPLOMACY_TRADE_SUMMARY     | Сводка Торговли
-RACES_DIPLOMACY_TRADE_DESC        | Свяжитесь с послом [alien_race_plural_rod], чтобы заключить торговый договор. Торговые договора требуют денег и времени для установления, но позже повышают производительность колоний.
-RACES_DIPLOMACY_TRADE_DESC_RANGE  | Мы не можем заключать торговые договора с [alien_race_plural_tvor], в то время как они находятся вне диапазона действия наших кораблей.
+RACES_DIPLOMACY_TRADE_DESC        | Свяжитесь с послом [alien_race_plural_rod], чтобы заключить торговый договор. Торговые договоры требуют денег и времени для установления, но позже повышают производительность колоний.
+RACES_DIPLOMACY_TRADE_DESC_RANGE  | Мы не можем заключать торговые договоры с [alien_race_plural_tvor], в то время как они находятся вне диапазона действия наших кораблей.
 RACES_DIPLOMACY_TRADE_DESC_FINAL  | Мы участвуем в последней войне. Торговля невозможна. 
 RACES_DIPLOMACY_TRADE_TREATY      | Торговый Договор
 RACES_DIPLOMACY_FOREIGN_RELATIONS | Межрасовые Отношения
@@ -1961,7 +1961,7 @@ GAME_OVER_MILITARY_LOSS           | Истребление
 GAME_OVER_DIPLOMATIC_LOSS         | Инопланетные Правители
 GAME_OVER_NEW_REPUBLIC_LOSS       | Крах Новой Республики
 GAME_OVER_REBELLION_LOSS          | Уничтожение Восстания
-GAME_OVER_DIPLOMATIC_WIN          | Лидеры Объедененной Галактики
+GAME_OVER_DIPLOMATIC_WIN          | Лидеры Объединенной Галактики
 GAME_OVER_MILITARY_WIN            | Завоевание Галактики
 GAME_OVER_MILITARY_ALLIANCE_WIN   | Лидеры Союза
 GAME_OVER_NEW_REPUBLIC_WIN        | Лидеры Новой Республики

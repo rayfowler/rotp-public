@@ -1,0 +1,89 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Mrrshan specific dialogue
+
+CONTACT_AGGRESSIVE | Pozdravujem ťa, čudo. Som [my_race], priamy služobník Zlatého chána. Dúfam, že si silný, [your_race], nielen kvôli tvojmu ľudu, ale hlavne kvôli bohatstvu, ktoré máš. 
+CONTACT_RUTHLESS | Sme [my_race_plural] a vyznávame jedinú vieru: Silní berú, slabí dávajú. Ak ešte nechápete múdrosť tejto filozofie, určite vás ju čoskoro naučíme.
+CONTACT_XENOPHOBIC | Modli sa, aby ťa Zlatý chán považoval za hodného, [your_race]. Vzbuď jeho hnev a nebude mať výčitky svedomia, keď ta rozprášia flotily [my_race_akuzativ].
+//
+GREETING_01 | Opakovane ste nám dokázali, že ste hodní našej úcty. Je nám cťou urobiť pre vás všetko, čo je v našich silách.
+GREETING_04 | Vypočujem si tvoje slová, ale nie som povinný dať ti všetko, čo hľadáš.
+GREETING_07 | Hmmmm, máš v sebe kúsok odvahy, keď sa opovažuješ priblížiť sa k chánovmu služobníkovi. Povedz, čo máš na srdci a ak len márniš môj čas, radím ti utekaj.
+//
+DECLAREWAR_HATE_01 | Vaše artefakty sú vám k ničomu! Vaše kosti a poklady ozdobia naše sály na Fieriase a budú všetkým, čo zostane po vašej biednej rase!
+DECLAREWAR_HATE_02 | Už toho bolo dosť! Samotné nájazdy neuspokoja naše nepriateľstvo voči vášmu druhu: [your_race_plural] si zaslúži oveľa rozsiahlejší a osobnejší prístup!
+DECLAREWAR_HATE_03 | Už len vedomie, že taká slabá rasa, ako je tá vaša, má v tomto vesmíre vplyv, nám stačí na to, aby sa nám urobilo zle. Bez ohľadu na šance vám sľubujem, že urobíme všetko pre to, aby sme vás naučili, kde je vaše miesto.
+//
+DECLAREWAR_ERRATIC_01 | Drápy chanátu si treba z času načas nabrúsiť, veľvyslanec. Tvoj ľud by nám mal dopriať šport, ktorý potrebujeme, aby sme sa pripravili na dôstojnejších nepriateľov.
+DECLAREWAR_ERRATIC_02 | [your_race], tvoj ľud má skutočne jedny z najkrajších pokladov aké sme kedy videli. Sme zvedaví, ako urputne budete on bojovať.
+DECLAREWAR_ERRATIC_03 | Už je to príliš dlho, čo sme domov priniesli nejakú poriadnu korisť. Tvoj ľud bojuje dobre, ale dokáže nám zabrániť, aby sme si odniesli vaše trblietavé čačky?
+//
+DECLAREWAR_MILITARY_01 | Silný berie a slabý dáva: železný zákon vesmíru. Čoskoro sa presvedčíte, že sa vzťahuje nielen na vaše bohatstvo, ale aj na vaše planéty.
+DECLAREWAR_MILITARY_02 | Hoci sa pôda málokedy trbliece ako zlato, často je sama o sebe dôstojnou odmenou. A za každú dobrú sa oplatí bojovať, však, veľvyslanec?
+DECLAREWAR_MILITARY_03 | Potreby chanátu prevažujú nad potrebami rasy [your_race_akuzativ]. Možno máte pôsobivú technológiu, ale pochybujeme, že sa ňou dá nahradiť naša krutosť!
+//
+DECLAREWAR_ALLIANCE_01 | Rozohrali ste veľmi nebezpečnú hru. Zo spojenca chanátu si urobiť nepriateľa. Táto hra sa pre vás čoskoro a krvavo skončí!
+DECLAREWAR_ALLIANCE_02 | Naši spojenci, [other_race_plural ], sú čestní, ale slabí. Možno by ste vyhrali, keby sa tejto vojny zúčastnili len vaše dve ríše, ale s nami na ich strane nemáte šancu!
+DECLAREWAR_ALLIANCE_03 | Radšej by sme mali tú česť zvrhnúť vašu ríšu osamote. Vyzerá to však, že tentoraz sa budeme deliť o slávu a korisť s [other_race_instrumental].
+//
+DECLAREWAR_SPYING_01 | Zbabelec, ktorý sa radšej angažuje v utajení, než aby bojoval priamo nemá žiadnu česť! Tvoje činy ukazujú aká je vaša ríša slabá. Teraz za to zaplatíš! 
+DECLAREWAR_SPYING_02 | Aký je to pocit? Riskovať tak veľa a jediné čo si svojmu ľudu priniesol je vojnu.
+DECLAREWAR_SPYING_03 | Povedz svojmu pánovi toto: [your_nameTitle] [your_name], toto divadlo, ktoré predvádzajú tvoji špióni je hodné iba bezcharakterných bastardov. Tvoja zbabelosť odsúdi tvoj národ k záhube, nás naša divokosť dovedie k víťazstvu!
+//
+DECLAREWAR_ATTACK_01 | Ha! My sme vás mali za zbabelých slabochov, ale zdá sa, že predsa len máte v sebe štipku bojovnosti! Škoda len, že tu nebudete dlho, aby ste mohli toto skromné víťazstvo užiť!
+DECLAREWAR_ATTACK_02 | Urobili ste nám veľkú láskavosť tým, že sa rozhodli na nás zaútočiť! My sa vám odvďačíme hrdinskou smrťou pre vašich ľudí.
+DECLAREWAR_ATTACK_03 | Na vašom mieste by som sa vyhýbal arogancii, veľvyslanec. Udatnosť našich bojovníkov nikdy neprekoná nejaká technológia, bez ohľadu na to, akú ju máte silnú!
+//
+DECLAREWAR_OPPORTUNITY_01 | Váš druh už nám je k ničomu. Ale buď si istí, že našim najmladším a najneskúsenejším bojovníkom poskytnete aspoň ako takú zábavu pri zdokonaľovaní ich bojových zručností.
+DECLAREWAR_ASSASSIN_01 | Ani trochu ma nešokuje, že sa tvoj druh sa správa tak bezcharakterne. Zavraždiť veľvyslanca je tá najťažšia potupa, akú si môžeš spôsobiť. Tvoj ľud bude v smrteľnách kŕčoch preklínať tvoje meno zato čo si spôsobil!
+
+
+OFFER_PEACE_01 | Všetko má svoj čas, veľvyslanec. Teraz nastal čas ukončiť nepriateľstvo. Bohatstvo si nechajte; mier je všetko, čo od teba teraz chceme!
+OFFER_TRADE_01 | Niet pochýb o tom, že najrýchlejší spôsob, ako získať bohatstvo, je jednoducho ho zobrať tým, ktorí sú príliš slabí na to, aby nás zastavili! Ale aj obchodovanie môže byť zaujímavou alternatívou ako niečo získať. Začnime pri [amt] BC ročne, aby sme zistili, koľko môžeme... Jeden od druhého získať. 
+OFFER_PACT_01 | Nie je potrebné, aby tak vyrovnané ríše medzi sebou bojovali, keď je tu veľa slabších rás, ktoré sa dajú vyplieniť a vypáliť. Dohodnime sa na pakte o neútočení, aby sme svoju energiu mohli lepšie venovať tým, ktorí bohatstvo sa dá ľahšie získať! 
+OFFER_ALLIANCE_01 | Prichádzam dnes k tebe, aby som navrhol oficiálne spojenectvo medzi chanátom a [your_race_instrumental]. Verím, že nebudete otáľať s podpisom tejto zmluvy. A ešte jedna vec: rovnaký podiel na spojenectve znamená rovnaký podiel na vojnovej koristi! 
+ 
+WARN_TRESPASSING_01 | Pokiaľ tvoje lode nie sú v systéme [system], aby mi doručili pocty, tak navrhujem, aby sa okamžite otočili. 
+WARN_EXPANSION_01 | Hoci dávame prednosť cennostiam, ktorými môžeme ozdobiť steny našich chrámov, nie sme takí slepí, aby sme ignorovali poklad, ktorým je neobsadená zem. Príliš sa nerozširuj, inak riskuješ náš hnev, veľvyslanec. 
+WARN_BUILDUP_01 | Ak buduješ flotily na nájazdy na inú rasu, tak nemáme námietky. Kým však nebudú z tvoje strany nejaké záruky tak predpokladáme, že tie flotily budú namierené na nás. A my neváhame konať preventívne. 
+WARN_SKIRMISH_01 | To bola ale zábavná malá potýčka, však? Napriek tomu sú tieto malé bitky nudné a nie je z nich žiaden osoh: ak chceš pokračovať v nájazdoch, radi spravíme niečo oficiálnejšie a vyhlásime vojnu! 
+WARN_ATTACKED_01 | Ha! To bol akože vážne pokus vyprovokovať nás? Tvoj ľud je slabý a tvoje poklady bezcenné čačky! Prestaň sa hrať na bojovníkov inak s vami skoncujeme! 
+WARN_INVADED_01 | To bol určite iba vtip! Tá tvoja ubohá invázia na našu kolóniu. Máš šťastie, že sme mali zo systému [system] iba malý úžitok. Ak sa pokúsiš o niečo podobné na našich cennejších kolóniách tak sa postaráme o to, aby si trpel! 
+WARN_ESPIONAGE_01 | Čo za zákerné hry to hráš?! Ak chceš získať tajomstvá Chanátu pre seba, budeš musieť vynaložiť oveľa viac úsilia. Vezmi si so sebou svojho špióna a odíď, kým pre nás táto hra neprestane byť zábavná. [framed]
+WARN_SABOTAGE_01 | Zahrávaš sa s ohňom, veľvyslanec. Keby sa v budove, ktorú ste zničili nachádzali veľké cennosti, tak už by sme tvoju krv zmývali z ulíc tvojej domoviny. Dôrazne ti odporúčam, aby ti ďalšia sabotáž už na um neprišla. [forced]
+WARN_BIOWEAPON_01 | Trofeje treba získavať v čestnom boji, nie oberať z kostí tých, ktorí boli bezbranní aj keď ešte žili! Ak ešte niekedy použiješ biologické zbrane, tak ta uisťujem, že to bude posledná vec čo urobíš! 
+WARN_GENOCIDE_01 | Nie je to zlé rozhodnutie, vyhubiť celý druh [victim_race] a zobrať všetok poklad za svoj. Aj keď pochybujem, že by ste boli natoľko hlúpi, aby ste sa o niečo také pokúsili proti nám. Vaše schopnosti sú ale aj tak dosť znepokojujúce a dáme si na vás pozor. 
+WARN_FINAL_WAR_01 | Hlúpi [your_race_plural]! Vzoprieť sa rozhodnutiu Rady znamená vzoprieť sa vôli [my_race_akuzativ]! Vezmeme všetky vaše trofeje a spálime ich do posledného kusu! Keď skončíme, z tvojho druhu nezostane nič! 
+WARN_COUNCIL_VOTE_01 | Chanát má na starosti dôležitejšie veci, než hrať politické hry v rokovacích miestnostiach rady. Bolo by pre nás lepšie, keby ste sa jednoducho podriadili našim želaniam. A aj pre teba by bolo lepšie, keby ti doplo, čo tým chcem povedať.
+WARN_OATHBREAKER_01 | Hmph! Len zúfalci nedodržia svoje slová. Na to už je jedno! Odteraz s tebou jednoducho budeme zaobchádzať tak, ako zaobchádzame s ostatnými slabochmi. [spiesCaught]
+WARN_ATTACKED_ALLY_01 | Nemôžem povedať, že mi nie je nepochopiteľné, prečo ste zaútočili na [defender_race_akuzativ]. Ich poklady sú také veľmi krásne... Ale budú patriť nám, keď si ich budeme chcieť vziať: nie tebe!
+WARN_REBELLING_AGAINST_01 | Tento mier, ktorý obhajuje rada, by nášmu ľudu nikdy nevyhovoval. Túžime po jedinom: oberať slabých o ich bohatstvo! 
+
+PRAISE_COUNCIL_VOTE_01 | Tvoju podporu v Rade si vždy vážime, veľvyslanec. Sám Zlatý chán si želá, aby si vedel, že tvoj ľud je pre chanát cenným prínosom. A ak navštíviš [candidate_home] bude v tvojom mene hostina! 
+PRAISE_COUNCIL_VOTE_02 | Videl si, ako sa ten zástupca [rival_race_akuzativ] mračí? Ha! Nech sa posmievajú! Pokiaľ múdri ľudia ako ty budú uznávať našu moc, potom sa chanát nemá čoho báť! 
+PRAISE_COUNCIL_VOTE_03 | Bojíte sa našich nájazdov, veľvyslanec? Dúfate, že hlas za nás v rade nás upokojí? Hmhmhmhm, no určite to tvoje šance nijako nepoškodí, že áno?
+PRAISE_ATTACKED_ENEMY_01 | Dnešný deň bude veľkolepý pre oba naše druhy! Proti našej spojenej sile nemajú [defender_race_plural] najmenšiu šancu! Majú dosť pokladov pre nás oboch! 
+PRAISE_ATTACKED_ENEMY_02 | Dúfaš, že dnes sa ti podarí získať nejaký poklad, veľvyslanec? Dobre, spravím s tebou dohodu: pomôž nám zbaviť sa [defender_race_akuzativ] a my sa postaráme o to, aby si dostal spravodlivú odmenu. 
+PRAISE_ATTACKED_ENEMY_03 | Je očividné, že tejto vojne ste len a len kvôli bohatstvu, ktoré si môžete vziať pre seba. [defender_race_plural] však skoro nič nemajú. Ich artefakty za veľa nestoja. Ak nám však pomôžete, tak vám zanecháme čo nebudeme potrebovať. 
+PRAISE_TRADE_01 | Pamätáte si, keď som začal našu obchodnú dohodu? Vravel som, ti že obaja na tom získame. Som rád, že som sa nemýlil.
+PRAISE_TRADE_02 | Vždy je väčšia zábava o bohatstvo bojovať a vracať sa domov s loďami prepchatými korisťou z boja! No dobre, uznávam, že táto obchodná dohoda má isté výhody. Hlavne, keď zohľadníte náklady. Uisti sa, že to tak zostane, veľvyslanec.
+PRAISE_REBELLING_WITH_01 | Takto sa mi to páči! Nie je nič lepšie ako dobrý boj, však? A toľko koristi, ktorá sa priam žiada byť získaná... Dúfam, že ti nevadí, že sa do tejto zábavy chce zapojiť aj chanát! 
+
+ACCEPT_TRADE_01 | Predpokladám, že asi nemôžeme vyplieniť každú civilizáciu, na ktorú narazíme. Koľko chcete ročne vymeniť BC? [amt]? Fajn..
+RESPOND_IGNORE_THREAT_01 | Haha! Hahahahaaa! Prepáč, že sa smejem, tvoje hrozby sú až komicky trápne. Utekaj domov, než sa naši nájazdníci nerozhodnú naostriť si pazúry na vaše kolónie.
+RESPOND_STOP_SPYING_01 | Našli ste špióna, ktorý podľa vás patrí k nám? Určite nie. Nikdy by nás ani vo sne nenapadlo špehovať  [your_race_akuzativ]. Robte si so špiónom, čo chcete, nám je to jedno.
+RESPOND_STOP_ATTACKING_01 | Obávate sa nájazdu, [your_race]? Nemajte obavy, nemáme záujem o to, čo vlastníte. Teraz ich presunieme. Nechceli by sme vás, predsa vystrašiť.
+
+

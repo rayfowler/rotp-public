@@ -1,0 +1,94 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Alkari specific dialogue
+
+CONTACT_HONORABLE          | Buď pozdravený, ó, [your_nameTitle] [your_name] z ríše [your_race_akuzativ]! My, [my_race_plural], vás srdečne pozdravujeme a tešíme sa na úctivé vzťahy s vaším druhom. 
+CONTACT_PACIFIST           | Srdečne vás pozdravujem, [your_title] [your_race_akuzativ]. Neprinášajte vojnu k prahu našej zvrchovanosti, ale spoločne prosperujme vo vzájomnej úcte a priateľstve. 
+CONTACT_ERRATIC            | Som veľvyslancom prastarej ríše [my_race_akuzativ].Ako je naším zvykom,  môj ľud vás pozdravuje. Váš druh je známy ako [your_race_plural]? Veľmi... Zaujímavé.
+
+//
+GREETING_01                | Buď pozdravený, veľvyslanec! Akú službu by mohla naša výsosť v tento deň poskytnúť takému ctihodnému spojencovi?
+GREETING_04                | Pozdravujem vás, pán veľvyslanec. Naša výsosť je pripravená vypočuť vašu žiadosť, ale či vyhovieme, sa ešte uvidí...
+GREETING_07                | Hovorte rýchlo, veľvyslanec! Protokol nás zaväzuje dodržiavať všetky náležité pravidlá, ale to neznamená, že budeme strácať čas plnením akokoľvek triviálnych požiadaviek!
+
+//
+DECLAREWAR_HATE_01         | Rasa, ako je tá vaša, nedbá na slušnosť ani zdvorilosť. Do galaxie, v ktorej vládne zvrchovanosť nepatríte, veľvyslanec! Pripravte sa na boj!
+DECLAREWAR_HATE_02         | Spôsobila to vaša bezočivosť a arogancia! Doručte túto správu vášmu pánovi: Vojna sa začína!
+DECLAREWAR_HATE_03         | Taká hrubosť! Ríša [my_race_akuzativ] radšej zanikne, než by sa naďalej delila o vesmír s hulvátmi ako ste vy!
+//
+DECLAREWAR_ERRATIC_01      | Pán veľvyslanec, nemôžeme poprieť, že bolo príjemné mať do činenia s takou zaujímavou rasou, ako je tá vaša. Je nám ľúto, že teraz sa tieto kontakty musia skončiť.
+DECLAREWAR_ERRATIC_02      | Od nášho prvého stretnutia nás stále bavíte. Zvrchovanosť je zvedavá, či budete rovnako zábavný aj počas vojny, veľvyslanec!
+DECLAREWAR_ERRATIC_03      | Buď pozdravený, veľvyslanec! [my_race_plural] si želajú otestovať svoju česť a hrdinstvo v boji proti značnej sile. Pripravte svoje flotily a svoj ľud na vojnu!
+//
+DECLAREWAR_MILITARY_01     | Zvrchovanosť musí pokračovať v rozširovaní územia, aby nakŕmila naše kŕdle. Keď už nevieme nájsť neobývané svety tak zaberáme svety slabších. Vaša ríša je slabšia ako naša. Takže vaše svety sa teraz stanú našimi.
+DECLAREWAR_MILITARY_02     | Konečne nastal čas, pán veľvyslanec! Jedným krídlom nad tebou zvrchovanosť rozprestrie tieň vojny a druhým strhne tvoje svety do svojho lona.
+DECLAREWAR_MILITARY_03     | Je poľutovaniahodné, že veci dospeli až sem, veľvyslanec. Buď získame vaše planéty pre naše potreby alebo zahynieme. Žiaľ, nemáme na výber, pripravte sa na vojnu!
+//
+DECLAREWAR_ALLIANCE_01     | Diplomati [other_race_akuzativ] nás informovali, že sú vo vojne s vaším ľudom. Sme viazaní povinnosťou pomáhať našim spojencom v časoch vojny. A tento fakt, veľvyslanec, čoskoro oľutujete.
+DECLAREWAR_ALLIANCE_02     | Náš spojenec žiada o pomoc a zvrchovanosť odpovedá! Váš koniec sa blíži, veľvyslanec. Našim flotilám dlho odolávať nedokážete!
+DECLAREWAR_ALLIANCE_03     | Znepokojuje nás, že ste sa rozhodli viesť vojnu proti jednému z našich spojencov týmto spôsobom. Podľa našich najsvätejších zákonov im musíme pomôcť v boji proti vám! Prosím, ukončite túto cestu do zatratenia skôr, než bude neskoro!
+//
+DECLAREWAR_SPYING_01       | Mali sme radosť z priateľských vzťahov s vašimi ľuďmi, pán veľvyslanec. To, že ste sa zapojili do takýchto nečestných činov proti korune nás prinútilo prehodnotiť náš postoj.
+DECLAREWAR_SPYING_02       | Takáto nehoráznosť nezostane nepotrestaná, pán veľvyslanec! Tí, ktorí proti nám kujú pikle, budú naším hnevom zrazení k zemi!
+DECLAREWAR_SPYING_03       | Veľvyslanec! Ako sa vaši ľudia opovažujú páchať takéto ohavné činy proti zvrchovanosti?! Spravodlivosti sa dočkáme za každú cenu! Pripravte sa na vojnu!
+//
+DECLAREWAR_ATTACK_01       | Hmfff! Nerozumné rozhodnutie, veľvyslanec, veľmi nerozumné! Ale ak túžite po vojne, tak vám ju zvrchovanosť rada prinesie!
+DECLAREWAR_ATTACK_02       | Tak už sa to začína, pán veľvyslanec! Ak náš ľud dokázal prežiť nekonečné vojny Krvavého tisícročia, tak vojnu proti vám prežijeme bez výraznej ujmy!
+DECLAREWAR_ATTACK_03       | To sme mohli od takej neokrôchanej rasy čakať, pán veľvyslanec! Nemyslite si však, že sa vám zvrchovanosť len tak vzdá!
+//
+DECLAREWAR_OPPORTUNITY_01  | Ako vidíte, [my_race_plural] dosiahli v doterajších výpravách veľký úspech. Nanešťastie pre vás, veľvyslanec, náš ďalší úspech musí prísť na úkor vášho impéria. 
+DECLAREWAR_ASSASSIN_01     | Čo je to za hlúposť? Spáchať tak obludný čin, ako je chladnokrvná vražda veľvyslanca? Zvrchovanosť už nebude trpieť existenciu tak odpornej rasy, ako je tá vaša!
+
+
+OFFER_PEACE_01             | Príbeh Krvavého tisícročia sa nesmie opakovať, veľvyslanec! Žiadame vás, aby ste podpísaním tejto mierovej zmluvy priniesli česť [your_race_dativ] i [my_race_dativ]. Zabránite tak ďalšiemu krviprelievaniu!
+OFFER_TRADE_01             | Civilizované rasy, ako sú tie naše, si určite dokážu navzájom pomáhať a spolupracovať. [my_race_plural] si želajú uzavrieť obchodnú dohodu s [your_race_instrumental] v hodnote [amt] BC ročne. Čo vy nato, pán veľvyslanec?
+OFFER_PACT_01              | Zvrchovanosť je spokojná s tým s akou obratnosťou vaši ľudia zvládajú diplomatické záležitosti. Aby sme ukázali, ako veľmi si vážime náš vzťah, chceme podpísať pakt o neútočení. Zabezpečí, že sa ani jeden z nás nestane obeťou... Nesprávnej interpretácie zámerov toho druhého.
+OFFER_ALLIANCE_01          | Vaše činy vám priniesli veľkú úctu zvrchovanosti, veľvyslanec! Kráľ veže nariadil, že spojenectvo medzi [your_race_instrumental] a [my_race_instrumental] sa musí uzavrieť okamžite! Čakáme len na váš podpis!
+
+WARN_TRESPASSING_01        | Je veľmi nevhodné, aby sa flotily [your_race_akuzativ] pohybovali v systéme [system], akoby im patril. Je v najlepšom záujme všetkých zúčastnených, pán veľvyslanec, aby ste danú situáciu okamžite napravili. 
+WARN_EXPANSION_01          | Nekontrolovaná expanzia kamkoľvek si želáte je prejavom veľkej neúcty, pán veľvyslanec! Dôrazne vám odporúčame, aby ste v neúcte voči zvrchovanosti už ďalej nepokračovali. 
+WARN_BUILDUP_01            | Myslíte si, že sme slepí, pán veľvyslanec?! Vidíme, že vaše flotily sa stále zväčšujú a mohutnejú. Ukážte nám, že vaše úmysly sú čisté a ukončite hromadenie vašich lodí. V opačnom prípade si môžete vyslúžiť príučku!
+WARN_SKIRMISH_01           | Dobre vieme o bitke v systéme [system], veľvyslanec! Zvrchovanosť pre tento kráť vaše činy prehliadne. Prečo? Nevidím dôvod, prečo by som vám mal nato odpovedať !
+WARN_ATTACKED_01           | Takto odvážny útok vyplýva len z úplného nedostatku rešpektu, pán veľvyslanec! Máte naozaj šťastie, že sa kráľ veže neunúva pokarhať vašu drzosť. Nabudúce však už také šťastie mať nemusíte! 
+WARN_INVADED_01            | Takže si beriete to, čo vám nepatrí, veľvyslanec?! Radíme vám však, viac nás už nepokúšajte. Radi by sme sa zbavili tej bezcennej planéty, keby to znamenalo zbaviť sa i vašej hlúposti! 
+WARN_ESPIONAGE_01          | Hmfhmfhmf, vôbec nás neprekvapuje, že taká podlá rasa ako vaša sa uchýli k špionáži. Pamätajte však, veľvyslanec. Naše oči sú tak ostré, že ich pohľadu nič neunikne. [framed]
+WARN_SABOTAGE_01           | Absolútne pod akúkoľvek úroveň, veľvyslanec! Plížiť sa v tme a páchať sabotáže ako nejakí diabli v noci!? Ale vy ste rovnako hlúpy ako neokrôchaný. Budovy, ktoré ste zničili, neboli dosť dôležité na to, aby si zaslúžili reakciu z našej strany! [forced]
+WARN_BIOWEAPON_01          | Hanebnosť! Nekonečná hanebnosť! Použili ste tú najodpornejšiu zbraň proti tým, ktorí nedokážu pozdvihnúť ani štít, aby sa ochránili! Vaša hanba vás bude sprevádzať až do konca vekov, veľvyslanec! 
+WARN_GENOCIDE_01           | Hoci súhlasím s tým, že [victim_race_plural] bola úbohou zberbou, zvrchovanosť je zásadne proti páchaniu genocídy. Zaujímalo by nás, veľvyslanec, či sú vaši ľudia schopní zopakovať tieto činy na... civilizovanejších rasách?
+WARN_FINAL_WAR_01          | V ceste, ktorú ste si vybrali nie je žiadna česť, pán veľvyslanec. Nemýľte sa: rozhodli ste sa postaviť proti riadne zvolenému vodcovi galaxie a my sme povinní urobiť všetko, čo je v našich silách, aby sme vás zastavili! 
+WARN_COUNCIL_VOTE_01       | Toľko o slávnom a čestnom veľvyslancovi [your_race_akuzativ]! Naozaj ste si mysleli, že sa o vašej zrade v rade nedozvieme? Mali by ste sa začať báť o svoj ľud, veľvyslanec: kráľ veže bude s vami veľmi nespokojný. 
+WARN_OATHBREAKER_01        | Aký škandál! Viete ako veľmi si vážime česť a dodržiavanie zásad. A predsa otvorene porušujete svoje slovo, len aby ste uspokojili svoje túžby?! Náš kráľ si bude túto urážku pamätať navždy, veľvyslanče, a určite vám ju jedného dňa oplatí! [spiesCaught]
+WARN_ATTACKED_ALLY_01      | Je nepríjemné, veľvyslanec, že sa váš ľud a [defender_race_plural] takto rozhádali. Nemôžte snáď veriť, že sa vyrovnáte našej spojenej presile, veľvyslanec. Zvrchovanosť vás vyzýva, aby ste prehodnotili svoje konanie.
+WARN_REBELLING_AGAINST_01  | Mysleli ste si, že sme zabudli, že česť vám nič nehovorí? Nezáleží na tom, či musíme bojovať s vami, alebo s celou galaxiou: nikdy nezasadnete na trón Rady, pokým bude žiť kráľ veže! 
+ 
+PRAISE_COUNCIL_VOTE_01     | Vážený a ctihodný veľvyslanec [your_race_akuzativ]! Sme vám zaviazaní za vašu službu na tomto zasadnutí rady. Tento dlh sme ochotní splniť kedykoľvek nás o to požiadate.
+PRAISE_COUNCIL_VOTE_02     | Pozdravujem vás, pán veľvyslanec. Ctíte nás hlasom, ktorý hovorí v prospech našej veci pred tými, ktorí sa tu zhromaždili. Som si istý, že kráľ veže sa bude chcieť dozvedieť viac o tak čestnej rase ako ste vy.
+PRAISE_COUNCIL_VOTE_03     | Hmfhmfhmf, určite neočakávate, že budeme veriť, že ste sa postavili na stranu zvrchovanosti z úcty alebo pocitu cti, pán veľvyslanec? A predsa, ak vám dáme daľšiu šancu možno nám predsalen dokážete, že máte štipku cti.
+
+PRAISE_ATTACKED_ENEMY_01   | Ach! Náš vážený priateľ a spojenec prináša dobré správy v tomto vojnovom období! Poď, veľvyslanec: nech naši ľudia bojujú proti hrozným [defender_race_dativ] spolu ako jeden! 
+PRAISE_ATTACKED_ENEMY_02   | Táto vojna sa rýchlo skončí, pán veľvyslanec. Zvrchovanosť by sama poľahky porazila lavou zadnou tieto vulgárne beštie z ríše [defender_race_akuzativ]. Ale spolu? Spoločne navždy vymažeme škvrnu, ktorú ich odporná rasa zanechala v našej galaxií! 
+PRAISE_ATTACKED_ENEMY_03   | Som si istý, že konáte z čistého oportunizmu. Veď vy vôbec nepoznáte význam slova „česť!“ Dovolíme vám však, aby ste nám pomohli proti ríši [defender_race_akuzativ]. Aj keby to malo byť len preto, aby sme nemali toľko obetí! 
+
+PRAISE_TRADE_01            | Uľavuje sa mi viac, než si myslíte, pán veľvyslanec, že vaši ľudia vedú obchody tak čestne. Zvrchovanosť si vás a váš ľud ctí a naše priateľstvo si váži ešte viac ako našu obchodnú dohodu! 
+PRAISE_TRADE_02            | Existuje mnoho spôsobov, ako dokázať česť, veľvyslanec. Jedným z najlepších spôsobov je úprimné a dobromyseľné obchodovanie, čo si zvrchovanosť veľmi cení. 
+
+PRAISE_REBELLING_WITH_01   | Tieto zvieratá v rade nás podceňujú, veľvyslanec! Spoločne im však ukážeme, čo znamená pojem „kolosálny omyl“! 
+
+ACCEPT_TRADE_01            | Zvrchovanosť vždy s radosťou nadviaže kontakty s [your_race_instrumental]. Ročná suma [amt] BC je prijateľná, ďakujem.
+RESPOND_IGNORE_THREAT_01   | Opovažujete sa provokovať [my_race_akuzativ]? Choďte so svojimi vtipmi inam, kým nám neprestanú byť zábavné.
+RESPOND_STOP_SPYING_01     | Zdá sa, že vaše oči sú pri hľadaní špiónov rovnako ostré ako naše. Považujte naše pokus o lesť za ukončený.
+RESPOND_STOP_ATTACKING_01  | Teraz poznáte silu zvrchovanosti. Zapamätajte si našu moc. Nateraz vás už nebudeme obťažovať našimi flotilami.
+
+ 

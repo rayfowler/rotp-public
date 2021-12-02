@@ -1,0 +1,143 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Meklar specific dialogue
+
+CONTACT_ERRATIC            | Druh: [your_race_plural]. Označenie vodcu: [your_title]. Technologické inovácie: Rôzne. Úroveň hrozby: Nedostatok dát.
+CONTACT_HONORABLE          | Druh:[your_race_plural]. Prejavili záujem o kontakt. [my_race_plural] cítia potenciál pre vzájomne prospešnú spoluprácu. Výsledky sa ešte len preukážu.
+CONTACT_RUTHLESS           | [my_race_plural] vedia o existencii nového druhu. Druh: [your_race_plural]. Druh zaradený do databázy. Domínium vyhlasuje varovanie: nezasahujte do cieľov Domínia. Bude to mať za následok vyhynutie druhu: [your_race_plural].
+//
+GREETING_01 | Potvrdená identita spojeneckého veľvyslanca. Štátna žiadosť domínia. Domínium pomôže, ak to bude možné. 
+GREETING_04 | [my_race_plural] potvrdzujú príjem veľvyslanca druhu: [your_race_plural]. Domínium má kapacitu spracovať žiadosť.
+GREETING_07 | Žiadosť o audienciu. Domínium pravdepodobne neprepošle žiadosti od vás na spracovanie Hlavnému arbiterovi.
+//
+DECLAREWAR_HATE_01 | Domínium už nie je ochotná tolerovať prítomnosť druhu:  [your_race_plural]. Sila druhu je pomerne primitívna. Vykonávanie protokolu vyhľadať a zničiť.
+DECLAREWAR_HATE_02 | Hlavný arbiter nedovolí, aby ste zasahovali cieľov Domínia. Druh: [your_race_plural]. Pripravte sa na záhubu. Domínium je pripravené venovať veľa zdrojov na zachovanie primárnej smernice.
+DECLAREWAR_HATE_03 | Domínium nemôže pokračovať v plnení direktív, kým váš druh existuje. Druh: [your_race_plural]. Domínium musí tento druh zlikvidovať. Alternatíva nenájdená.
+DECLAREWAR_ERRATIC_01 | Druh: [your_race_plural]. Hlavný arbiter dospel k záveru, že existencia vášho druhu ohrozuje ciele Domínia. Domínium spúšta protokoly na vyhladzovanie.
+DECLAREWAR_ERRATIC_02 | Druh: [your_race_plural]. Hlavný arbiter usudzuje, že ukrývate tajomstvo, ktoré umožní dosiahnuť ďalší cieľ Domínia. Domínium násilím odoberie tajomstvá vášmu druhu.
+DECLAREWAR_ERRATIC_03 | Správa od hlavného arbitera Domínia. Druh: [your_race_plural]. Druh sa považuje za neprijateľnú premennú v plánoch Domínia. Domínium vyhladí daný druh alebo ukončí svoju existenciu v procese vyhladzovania.
+DECLAREWAR_MILITARY_01 | [my_race_plural] musia pokračovať v rozširovaní v snahe dosiahnuť konečný cieľ. Druh: [your_race_plural]. Druh bráni expanzii. Na vyriešení problém sa pracuje.
+DECLAREWAR_MILITARY_02 | Domínium nedokáže nájsť primárny cieľ misie. Možnosť, že planéty v blízkosti alebo patriace vášmu druhu obsahujú to čo hľadáme. Druh: [your_race_plural]. Vojna s vami je nevyhnutná.
+DECLAREWAR_MILITARY_03 | Domínium je nútené rozšíriť rozsah svojho územia. Sila vášho druhu nemôže byť odstrašujúcim faktorom. Druh: [your_race_plural]. Vojna s vami je poľutovaniahodná, ale nevyhnutná.
+DECLAREWAR_ALLIANCE_01 | Druh: [your_race_plural]. Vyhlásili ste vojnu spojencovi Domínia. Domínium bude chrániť svoje záujmy v cieľoch tým, že zlikviduje váš druh.
+DECLAREWAR_ALLIANCE_02 | Domínium dostal žiadosť o pomoc od druhu: [other_race_plural]. Domínium bude pomáhať v pomoci spojencovi vo vojne proti vášmu druhu, pokiaľ konflikt pretrváva.
+DECLAREWAR_ALLIANCE_03 | Druh: [your_race_plural]. Arogantný, vyhlasuje vojnu ostatným. Domínium bude pomáhať iným ríšam vyhladiť druh z galaxie.
+DECLAREWAR_SPYING_01 | Druh: [your_race_plural]. Druh je zodpovedný za špionáž proti Domíniu.  Dôsledky pre Domínium: zanedbateľné. Dôsledky pre druh: [your_race_plural]. Fatálne.
+DECLAREWAR_SPYING_02 | Na území Domínium bola zistená sabotáž. Zdroj potvrdený ako druh: [your_race_plural]. Protokoly Domínia vyžadujú vojnu ako odpoveď. 
+DECLAREWAR_SPYING_03 | Domínium zistil zjavný pokus o destabilizáciu zo strany druhu: [your_race_plural]. Druhu nemôže byť dovolené pokračovať v zasahovaní cieľov. Domínium musí podniknúť odvetné kroky za každú cenu.
+DECLAREWAR_ATTACK_01 | Druh: [your_race_plural]. Nepriateľský napriek zjavnej prevahe [my_race_akuzativ]. Domínium odstráni hrozbu.
+DECLAREWAR_ATTACK_02 | Druh: [your_race_plural]. Druh bráni cieľom Domínia priamym útokom. Konfrontácii nevyhnutná.
+DECLAREWAR_ATTACK_03 | Druh: [your_race_plural]. Druh sa pokúša zabrániť Dominionu v dosiahnutí cieľov vyhladením druhu [my_race_akuzativ]. Domínium odpovie celou dostupnou vojenskou silou.
+DECLAREWAR_OPPORTUNITY_01 | Hlavný arbiter verí, že váš druh bude brániť dosiahnutiu cieľov primárnej smernice. Druh: [your_race_plural]. Domínium vyhubí druh skôr, ako sa hrozba naplno prejaví.
+DECLAREWAR_ASSASSIN_01 | Veľvyslanec Domínia znefunkčnený pred opätovným začlenením do Centrálneho mozgu. Druh zodpovedný za znefunkčnenie: [your_race_plural]. Akcia si vyžadujú násilnú odvetu.
+
+OFFER_PEACE_01 | [my_title]: nová direktíva. Vojna už nie je pre Domínium prijateľným výdavkom. Domínium si želá okamžite sprostredkovať mier. 
+OFFER_TRADE_01 | Druh: [your_race_plural]. Druh disponuje významnými zdrojmi. Domínium vlastní hodnotné predmety. Domínium navrhuje obchodnú dohodu za [amt] BC ročne.  
+OFFER_PACT_01 | Domínium sa usiluje o výsledok bez drahých konfliktov. Domínium navrhuje pakt o neútočení s druhom: [your_race_plural]. Príjmate? 
+OFFER_ALLIANCE_01 | [my_title] si cení diplomaciu s druhom: [your_race_plural]. Domínium navrhuje formálne spojenectvo s cieľom zabezpečiť prežitie oboch druhov. Žiadame o okamžitú odpoveď.  
+
+WARN_TRESPASSING_01 | Druh: [your_race_plural]. Druh zachytený v systéme [system]. Oblasť, ktorú si nárokuje Domínium. Okamžite ju opustite. 
+WARN_EXPANSION_01 | Rýchla expanzia vášho druhu je považovaná za hrozbu pre ciele Domínia. Varovanie pre druh: [your_race_plural]. Pokračovanie územného rastu si vynúti vojenskú akciu ako odpoveď. 
+WARN_BUILDUP_01 | Druh: [your_race_plural]. Obranná sieť Domínia detekovala a identifikovala vaše flotily ako potenciálnu hrozbu pre bezpečnosť. Domínium zvyšuje dohľad nad vaším druhom s cieľom chrániť záujmy Domínia.
+WARN_SKIRMISH_01 | Konflikt medzi flotilami Domínia a vašou rasou zistený v systéme [system]. Domínium neodporúča opakovať priestupky: Domínium je pripravené primerane reagovať, ak varovanie nebude vypočuté. 
+WARN_ATTACKED_01 | Agresia zaznamenaná v systéme [system]. Druh označený za agresora: [your_race_plural]. Pokračovanie v ohrozovaní bezpečnosti Domínia bude mať za následok vyhynutie druhu: [attacker_race_plural]. 
+WARN_INVADED_01 | Druh: [attacker_race]. Pripomienka. Druh nemá nárok na priestor Domínia. Okamžite odstráňte flotily, inak budete čeliť úplnému vyhladeniu.
+WARN_ESPIONAGE_01 | Špionáž. Zodpovedný druh: [spy_race_plural]. Aktivita  zaznamenaná na území Domínia. Bezpečnostné protokoly Domínia sú väčšie ako schopnosti druhu v oblasti špionáže. Opätovné testovanie Domínia sa môže stať osudným. [framed]
+WARN_SABOTAGE_01 | Sabotáž. Zodpovedný druh: [spy_race]. Domínium si je vedomý účasti druhu na sabotáži. Pokus o chaos má minimálny dopad na to, aby si vyžadoval reakciu. Ďalšie pokusy o sabotáž zabezpečia rýchlu odplatu. [forced]
+WARN_BIOWEAPON_01 | Domínium pozoruje použitie hrubej biologickej zbrane. Účinná zbraň. Hodnotenie druhu: [attacker_race_plural]. Potenciál hrozby zvýšený o 3 úrovne.
+WARN_GENOCIDE_01 | Zaznamenaná genocída. Obeť, druh: [victim_race_plural]. Agresor, druh: [attacker_race_plural]. Domínium sa nezaoberá možnou príčinou alebo alternatívami. Hodnotenie druhu: [attacker_race_plural]. Potenciál hrozby zvýšený o 5 úrovní.  
+WARN_FINAL_WAR_01 | Všetky známe druhy vytvorili dohodu na zabezpečenie trvalého mieru v galaxii. Druh: [rebel_race_plural]. Jediný nesúhlasiaci. Domínium prijme príslušné opatrenia.
+WARN_COUNCIL_VOTE_01 | Druh: [voter_race_plural]. Domínium si je vedomé vašich akcií v rade. Význam irelevantný. Výsledok vyhodnotený ako škodlivý pre ciele [candidate_race_akuzative]. Diplomatické postavenie sa primerane upraví.  
+WARN_OATHBREAKER_01 | [my_title] vynáša rozsudo. Druh: [your_race]. Druh už nie je považovaný za dôveryhodný. Všetky budúce vzťahy podliehajú revízii na základe toho, že druh porušil záväznú dohodu. [spiesCaught]
+WARN_ATTACKED_ALLY_01 | Zaznamenaný konflikt medzi druhmi: [your_race_plural] a  [defender_race_plural]. Druh: [defender_race_plural]. Druh je spojenec domínia. Ukončite boj alebo sa znášajte na následky. 
+WARN_REBELLING_AGAINST_01 | Druh: [your_race_plural]. Druh je prekážkou cieľov Domínia. Rozhodnutie Galaktickej rady je neprijateľné. Čakáme na odpoveď Najvyššieho arbitra. 
+
+
+PRAISE_COUNCIL_VOTE_01 | Veľvyslanec druhu: [voter_race_plural]. Naďalej pomáhate pri presadzovaní cieľov Domínia. Domínium uznáva prínos pokračujúceho vzťahu s druhom:  [voter_race_plural]. Domínium sa v prípade potreby odvďačí za svoju priazeň. 
+PRAISE_COUNCIL_VOTE_02 | Domínium berie na vedomie vaše pozitívne hlasovanie v rade. Domínium zodpovedajúcim spôsobom upraví svoj pohľad na druh: [voter_race_plural].
+PRAISE_COUNCIL_VOTE_03 | Domínium berie na vedomie pravdepodobnosť úskokov zo strany druhu: [voter_race_plural]. Pokračovanie pomoci Domíniu v rade môže zmierniť obavy. 
+
+PRAISE_ATTACKED_ENEMY_01 | Útok na nepriateľov Domínia dokazuje oddanosť cieľom rasy:  [my_race_plural]. Domínium sa zaviazalo udržať straty druhu: [attacker_race_plural], na absolútnom minime. 
+PRAISE_ATTACKED_ENEMY_02 | Domínium víta pomoc proti druhu: [defender_race_plural]. Táto vojna môže byť novým začiatkom medzi druhmi [my_race_plural] a [attacker_race_plural]. 
+PRAISE_ATTACKED_ENEMY_03 | Útok na druh: [defender_race_plural]. Útok neospravedlňuje minulé zločiny proti Domíniu. Domínium prehodnotí úroveň ohrozenia druhu: [attacker_race_plural], v závislosti od jeho konania v tejto vojne. 
+
+PRAISE_TRADE_01 | Domínium a druh: [your_race_plural]. Naďalej prúdi veľký príjem z nepretržitého obchodu. Domínium si želá, aby obchod zostal zachovaný.
+PRAISE_TRADE_02 | Domínium vyjadruje spokojnosť s obchodnou dohodou s druhom : [your_race_plural]. Uistite sa, že dohoda vydrží, aby oba druhy mali zo seba vzájomný prospech. 
+PRAISE_REBELLING_WITH_01 | Dominion súhlasí, že vládca Galaktickej rady nie je dôveryhodný. Námietka druhu: [your_race_plural]. Námietka vzatá na vedomie. Domínium pomôže pri vzbure. 
+ 
+ACCEPT_TRADE_01 | Prijatá žiadosť o výmenu tovaru od: [your_race_plural]. Navrhovaná suma: [amt] BC . Domínium súhlasí.
+RESPOND_IGNORE_THREAT_01 | Hrozba od druhu: [your_race_plural]. Hrozba je mätúca. Vaša civilizácia je podstatne slabšia ako flotily Domínia. Ignorujem.
+RESPOND_STOP_SPYING_01 | Špión Domínia zajatý pri pokuse získať informácie o životných formách: [your_race_plural]. Domínium sa ospravedlňuje. Pri najbližšej príležitosti vráťte zajatú jednotku.
+RESPOND_STOP_ATTACKING_01 | Domínium úspešne demonštrovalo vojenské schopnosti voči civilizácii: [your_race_plural]. Návrat flotily na určené súradnice.
+
+DIPLO_TECH_REQUEST_MENU_01 | Zadajte technológiu.
+DIPLO_TECH_COUNTER_MENU_01 | Zadajte kompenzáciu.
+DIPLO_TRADE_MENU_01 | Zadajte veľkosť.
+DIPLO_TREATY_MENU_01 | Zadajte zmluvu.
+DIPLO_DECLARE_WAR_MENU_01 | Pred pokračovaním potvrďte.
+DIPLO_SUGGEST_WAR_MENU_01 | Zadajte cieľ.
+DIPLO_BREAK_ALLIANCE_MENU_01 | Zadajte spojenca.
+DIPLO_THREATEN_MENU_01 | Zadajte.
+DIPLO_OFFER_AID_MENU_01 | Zadajte.
+DIPLO_OFFER_TECH_MENU_01 | Zadajte technológiu.
+
+DECLINE_OFFER_01	 	   | Žiadosť zamietnutá.
+DECLINE_OFFER_02	 	   | Žiadosť zamietnutá.
+DECLINE_OFFER_03 		   | Žiadosť zamietnutá.
+DECLINE_OFFER_04 		   | Žiadosť zamietnutá.
+DECLINE_OFFER_05 		   | Žiadosť zamietnutá.
+DECLINE_OFFER_06 		   | Žiadosť zamietnutá.
+DECLINE_OFFER_07	 	   | Žiadosť zamietnutá.
+DECLINE_OFFER_08	 	   | Žiadosť zamietnutá.
+DECLINE_OFFER_09	 	   | Žiadosť zamietnutá.
+DECLINE_ENEMY_ALLY_01 	   | Žiadosť zamietnutá.
+DECLINE_NO_WAR_ON_ALLY_01  | Žiadosť zamietnutá.
+DECLINE_PEACE_TREATY_01    | Žiadosť zamietnutá.
+DECLINE_ANNOYED_01 		   | Žiadosť zamietnutá.
+DECLINE_ANNOYED_02         | Žiadosť zamietnutá.
+DECLINE_ANNOYED_03         | Žiadosť zamietnutá.
+DECLINE_OATHBREAKER_01     | Žiadosť zamietnutá.
+DECLINE_ESPIONAGE_01       | Žiadosť zamietnutá.
+DECLINE_SABOTAGE_01        | Žiadosť zamietnutá.
+DECLINE_BUILDUP_01         | Žiadosť zamietnutá.
+DECLINE_ENCROACH_01        | Žiadosť zamietnutá.
+DECLINE_SKIRMISH_01 	   | Žiadosť zamietnutá.
+DECLINE_ATTACK_01 		   | Žiadosť zamietnutá.
+DECLINE_INVASION_01        | Žiadosť zamietnutá.
+DECLINE_BIOWEAPONS_01      | Žiadosť zamietnutá.
+DECLINE_TECH_TRADE_01      | Žiadosť zamietnutá.
+OFFER_TECH_EXCHANGE_01     | Dominión vyžaduje technológiu [tech]. Uveďte kompenzáciu.
+ACCEPT_TECH_EXCHANGE_01    | Zaznamenané prijatie.
+ACCEPT_FINANCIAL_AID_01    | Zaznamenaná akceptácia.
+ACCEPT_TECHNOLOGY_AID_01   | Zaznamenaná akceptácia.
+
+BREAK_TRADE_01 		| Ukončenie obchodnej dohody.
+ANNOUNCE_PEACE_01 	| Zaznamenaná akceptácia.
+ACCEPT_PEACE_01 	| Žiadosti sa vyhovuje.
+
+BREAK_PACT_01 		| Pakt o neútočení ukončený.
+ANNOUNCE_PACT_01 	| Zaznamenané prijatie.
+ACCEPT_PACT_01 		| Žiadosti sa vyhovuje.
+
+BREAK_ALLIANCE_01 	| Aliancia ukončená.
+ANNOUNCE_ALLIANCE_01| Schválenie zaznamenané.
+ACCEPT_ALLIANCE_01  | Žiadosť schválená.
+ACCEPT_JOINT_WAR_01 | Žiadosť schválená.
+
+RESPOND_CLOSE_EMBASSY_01   | Úkon zaznamenaný.
+RESPOND_BREAK_TRADE_01     | Úkon zaznamenaný.
+RESPOND_BREAK_PACT_01      | Úkon zaznamenaný.
+RESPOND_BREAK_ALLIANCE_01  | Úkon zaznamenaný.
+RESPOND_DECLARE_WAR_01     | Úkon zaznamenaný.

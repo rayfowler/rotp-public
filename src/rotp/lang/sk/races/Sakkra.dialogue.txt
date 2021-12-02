@@ -1,0 +1,88 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Sakkra specific dialogue
+
+CONTACT_AGGRESSIVE | Ahoj! Sme známi ako [my_race_plural], ale to nie je vôbec dôležité. Dôležité je, aby ste vedeli, že máme v pláne zdokonaliť ekológiu každej jednej planéty v galaxii akýmikoľvek prostriedkami, dobre? Pa!
+CONTACT_RUTHLESS | Hej! Sme [my_race_plural]! Dúfam, že ste sa nesprávali zle ku ekosystémom svojich planét. Museli by sme to okamžite napraviť a to by vás asi veľmi nebavilo, však?
+CONTACT_ERRATIC | Fíha, nový druh! My sme [my_race_plural], a vy ste? [your_race_plural]? Úžasné! Len vám chcem oznámiť, že by ste si mali udržiavať čistotu na svojich planétach, dobre? My sa o to postaráme tým, že vás budeme veľmi, ale, že veľmi pozorne sledovať.
+//
+GREETING_01 | Hej, veľvyslanec! Vždy sa teším, keď sa mi ozve priateľ ako ty! Potrebuješ s niečím pomôcť?
+GREETING_04 | To je veľvyslanec za [your_race_akuzativ]! Sme práve zaneprázdnení dolaďovaním niektorých planetárnych ekosystémov, ale vypočujeme si narýchlo, čo chceš povedať. 
+GREETING_07 | Ach, to si ty. Čo chceš? Vieš, že sa neradi stýkame so špinavými rasami, ako je tá vaša, však?
+//
+DECLAREWAR_HATE_01 | Zdá sa, že tvoji ľudia nedokážu prestať špiniť každú planétu, ktorá sa im dostane do rúk, čo? No tak tú špinu vymažeme z galaxie. A keď hovoríme o špine, hovoríme o vás.
+DECLAREWAR_HATE_02 | Odkedy sme vás stretli, stále si ničíte ekosystémy tým najnepochopiteľnejším spôsobom! Zlikvidujeme vás do jedného skôr, než stihneš ublížiť ďalším z týchto planét!
+DECLAREWAR_HATE_03 | Už sa nemôžeme pozerať na to, ako znehodnocujete svoje svety! Bude nás to stáť veľa, ale niekedy účel svätí prostriedky!
+//
+DECLAREWAR_ERRATIC_01 | Páni, vaši ľudia sú naozaj špinaví. Mohli by sme vám pomôcť vyčistiť vaše svety, ale oveľa rýchlejšie by bolo zbaviť sa vás a opraviť ich sami. Howg.
+DECLAREWAR_ERRATIC_02 | Ahoj! Pripravení na vojnu? Nie? Tak to je veľmi zlé! Teda, hlavne pre vás. Vidíme totiž niektoré vaše svety, ktoré si priam pýtajú optimalizáciu, a my sa ich jednoducho vezmeme.
+DECLAREWAR_ERRATIC_03 | Ahoj! Vedeli ste, že sme nedávno navrhli ešte energeticky efektívnejší biodom? Chceli by sme ich otestovať na niektorých naozaj špinavých planétach. No a premýšlali sme, že kde vo vesmíre sú najšpinavšie planéty. A vtedy nás to trklo a spomenuli sme si na vás. Takže nevadí, ak si zoberieme a vyčistíme niektoré z vašich, že?
+//
+DECLAREWAR_MILITARY_01 | Vieš, že Konkláve sa chystá zdokonaliť životné prostredie každej planéty v tejto galaxii, však? Nuž, začneme pracovať na vašich svetoch. Mali by ste ich teraz opustiť. Mali by ste ich opustiť čo najskôr: ak sa budete snažiť bojovať, tak iba také male upozornenie. Ste bez šance!
+DECLAREWAR_MILITARY_02 | [my_title] vraví, že teraz musíme dostať vašich ľudí z ich planét, aby sme ich mohli začať opravovať. Chystáte sa ich opustiť pokojne? Nie? Hmmm, blbé!
+DECLAREWAR_MILITARY_03 | Na svojich územiach máte niektoré z najúžasnejších ekologických hádaniek na riešenie a správate sa k nim, akoby tam ani neboli! Už to nemôžeme vydržať! Nech sa deje čokoľvek, berieme si ich!
+//
+DECLAREWAR_ALLIANCE_01 | Počuli sme, že [other_race_plural] a vy ste sa s kvôli niečomu pohádali. Som si istý, že je to hlúpe a nedôležité, ale toto je pre nás najlepšia príležitosť, ako si vziať vaše kolónie pre seba, aby sme konečne mohli napraviť všetok bordel čo ste narobili!
+DECLAREWAR_ALLIANCE_02 | Rozhodne nemôžem poprieť, že [other_race_plural] sú špinavá rasa. Ale, keď ich porovnáme s vami, tak vy ste úplne ina liga. Čo to vravím... Vy ste úplne iný šport. Takže, ak sú oni ochotní s vami bojovať, radi im pomôžme.
+DECLAREWAR_ALLIANCE_03 | Tentoraz ste vám to fakt ušlo, veľvyslanec! Musel si vedieť, že sa spojíme so spojencom, ktorý s tebou pôjde do vojny, aj keď je ten spojenec taký špinavý ako [other_race_plural]. Počkaj, ty si to nevedel? Aha...
+//
+DECLAREWAR_SPYING_01 | Čo presne si myslíte, že robíte? Tvoji ľudia sú tak špinaví, že pri špionáži za sebou nechávaju kopec špiny a neznesiteľný smrad. Jasné, že vás je ľahké sledovať?
+DECLAREWAR_SPYING_02 | To, že ste konali v takomto utajení proti Konkláve, nás akože celkom nakrkla, ale budiž. Ale to, že ste pošpinili naše planéty svojou nechutnou prítomnosťou, tak to nás dostalo úplne do vývrtky!
+DECLAREWAR_SPYING_03 | Urobili ste chybu, keď ste si mysleli, že vám útok nevrátime, keď ste sa rozhodli nás špehovať. To, že je vaša armáda o niečo väčšia ako naša, neznamená, že s vami, špinavcami, budeme jednať v rukavičkách!
+//
+DECLAREWAR_ATTACK_01 | Čo to robíte?! Ako sa opovažuje nejaký špinavý slaboch ako ty poškodzovať naše vzácne planéty?! Za to tvojich ľudí vhodíme do pece na odpad!
+DECLAREWAR_ATTACK_02 | Chcete proti nám viesť vojnu, čo? Nebojte sa, vyradíme vás. Kolóniu po kolónii, a oslobodíme vaše planéty od tej špiny a smradu!
+DECLAREWAR_ATTACK_03 | Špinavci! Špinaví! Špinaví špinavci! To ste! Poškvrnili ste našu planétu svojou túžbou po krvi! Konkláve zmobilizuje všetky sily, ktoré má, aby vás zahnala späť do tej odpadovej jamy, z ktorej ste vyliezli!
+//
+DECLAREWAR_OPPORTUNITY_01 | [my_title] minule premýšľal o vašich ľuďoch. Dospel k záveru, že pre nás bude najlepšie, ak vám zabránime v šírení po galaxii skôr ako neskôr. Keď vás zlikvidujeme teraz, nebudeme musieť upratovať toľko svetov! Ušetríme si čas i energiu. No neni to super nápad?
+DECLAREWAR_ASSASSIN_01 | Čože ste to urobili?! Vedel som, že tvojmu druhu sa fakt nedá veriť! Ale ak ste zabili neozbrojeného veľvyslanca, desím sa, keď si pomyslím, čo asi robíte svojim ekosystémom! Pripravte sa na vojnu, špinavá [your_race_plural].
+
+
+OFFER_PEACE_01 | Ach, tie úbohé planéty! Už sa nemôžeme pozerať na to, ako sú zjazvené touto hlúpou vojnou! Ukončime boje hneď teraz, veľvyslanec, a začnime liečiť tieto svety, ktorým sme tak ublížili!  
+OFFER_TRADE_01 | Páni, na všetkých týchto svetoch je toľko zložitých prostredí! Chceli by sme posilniť našu ekonomiku, aby sme mohli financovať všetky tieto projekty a obchodovanie s vami by nám veľmi pomohlo! [amt] BC ročne, ruku nato? 
+OFFER_PACT_01 | Zdá sa, že sa o svoje planéty staráte v rámci možností celkom dobre. Vojny robia so svetmi, na ktorých sa vedú, také škaredé veci. Chceli by ste s nami uzavrieť pakt o neútočení? Tak sa žiadny z našich krásnych ekosystémov nebude musieť ničoho báť! A všetci budú spokojní!
+OFFER_ALLIANCE_01 | Wow, som ohromený! To, ako sa staráte o svoje planéty, je takmer ako keby ste boli sami [my_race_plural]! Uzavrite s nami spojenectvo, veľvyslanec! Budeme spoločne chrániť všetky svety: nikto nás neohrozí, kým budeme stáť ako jeden! 
+ 
+WARN_TRESPASSING_01 | Hej! Hej! Hej! Systém [system] je pod ochranou konkláve! Nepatríš tam, vieš? Vypadni! Hneď! Na čo čakáš? Choď! Frč!
+WARN_EXPANSION_01 | Berieš si oveľa viac, ako by si mal, veľvyslanec! Nie si dosť vyspelý na to, aby si sa staral o každý z týchto svetov, a my ti nedovolíme premárniť všetky tieto ekologické hádanky a tajomstvá! Zastav svoju expanziu. Inak za seba neručíme!
+WARN_BUILDUP_01 | Načo toľko lodí? Máte tam fakt, že veľa lodí! Ak ich budete privážať stále viac, niektoré ríše môžu začať byť nervózne. Môžu na teba začať mieriť svojimi zbraňami. Možno dokonca jeden alebo dva krát vystrelia! Teda ak budete privážať ďalšie lode. 
+WARN_SKIRMISH_01 | Nemôžem uveriť, že v systéme [system] došlo k potýčke! Na čo ste mysleli, veľvyslanec? Tentoraz to prehliadneme, keďže ste nepoškodili planétu, ale odteraz si dávajte pozor na svoje flotily. Ach, hlúpa rasa [your_race_akuzativ]! 
+WARN_ATTACKED_01 | Čo si myslíte, že robíte?! Prestaň sa tu predvádzať! Sme veľmi zaneprázdnení snahou zdokonaliť ekológiu v [system]. Naozaj nepotrebujeme, aby vaše lode lietali okolo, robili hluk a celkovo nám tu prácu ešte viac stažovali! 
+WARN_INVADED_01 | Zbláznili ste sa?! Ten váš rozum musí byť fakt maličký, že [your_race_plural] ?! Bude trvať roky, kým napravíme škody, ktoré ste napáchali! Toto už fakt nie je vtipné! Prestaňte hrať tieto vaše hry, lebo to oľutujete! 
+WARN_ESPIONAGE_01 | Myslíte si, že nás môžete špehovať a podarí sa vám to udržať v tajnosti? Si naozaj robíš srandu, veľvyslanec. Ha ha! Nabudúce, keď nás to prestane baviť tak vás jednoducho zabijeme, dobre? [framed]
+WARN_SABOTAGE_01 | Čo ste to urobili?! Prerazili ste biodom! Všetky tie vzácne vzorky, všetky tie experimenty zničené! To už je príliš: ak to bude pokračovať, očakávajte od nás odpoveď, špinavci! [forced]
+WARN_BIOWEAPON_01 | Vám už to musí fakt čisto...chalani! Biologická zbraň?!  Biologická zbraň!! Tie nevýslovné škody, ktoré sa napáchali na ekológii tejto bezbrannej planéty! Ty absolútne monštrum: toto oľutuješ!
+WARN_GENOCIDE_01 | Odstránil si [victim_race_akuzativ], však? Dobre, veď aj nám už  liezli na nervy. Samozrejme, že nám dáte ich svety na ekologickú obnovu. Nedáte? Aha...
+WARN_FINAL_WAR_01 | Viete, že sme sa všetci rozhodli spojiť pre dobro všetkých svetov, však? Prečo sa chcete postaviť proti našej jednote, veľvyslanec? Čoskoro už na tom nebude záležať. Ale nebojte sa! O vaše planéty sa dobre postaráme aj po vašom odchode. Poslúžite ako dobré hnojivo.
+WARN_COUNCIL_VOTE_01 | To nebolo veľmi pekné, čo ste urobili v rade. Myslel som si, že sme sa dohodli, veľvyslanec? Že vôľa [candidate_race_akuzativ] bola vždy tou správnou voľbou? Nabudúce už si volebné tlačidlo nepomýľ, špinavý [your_race]!
+WARN_OATHBREAKER_01 | Vždy sme si mysleli, že ste fyzicky nechutní, máte čudné telá a odporný pach. Ale teraz vidíme, že výzor a vaše činy idú ruka v ruke! Zmizni mi z očí, veľvyslanec: Začína mi byť naozaj veľmi zle. [spiesCaught]
+WARN_ATTACKED_ALLY_01 | Pozri, nie sme práve fanúšikmi [obranca_race_akuzativ], aj keď technicky vzaté sme spojenci. Čo chcem povedať je, prestaňte s tým hlúpym hašterením, inak sa budeme musieť zapojiť.
+WARN_REBELLING_AGAINST_01 | Ako nám to mohla rada urobiť?! Ako si mohli zo všetkých ľudí vybrať práve teba, aby si viedol túto galaxiu? Nemôžeme to nechať len tak... ste jednoducho... takí... ŠPINAVÍ! 
+
+PRAISE_COUNCIL_VOTE_01 | Hej veľvyslanec! Ďakujem, že si bol v rade taký super. Tie ostatné rasy sú fakt nechutné, ale mať podporu od bytostí ako ty? No, vďaka tebe máme pocit, že robíme niečo správne. Keby si náhodou niečo potreboval, tak mi zavolaj, dobre? 
+PRAISE_COUNCIL_VOTE_02 | Dnes ste si v rokovacej sále rady počínali veľmi dobre. Som naozaj rád, že vidíte múdrosť v našich postupoch. Dúfam, že vaše planéty budú mať z vašej múdrosti rovnaký úžitok ako konkláve! 
+PRAISE_COUNCIL_VOTE_03 | Hmm, čo to plánuješ, snažíš sa dostať na našu stranu tým, že za nás hlasuješ na zasadnutí rady? No, čo už, som si istý, že čoskoro zistíme, o čo ti ide. Každopádne vďaka za podporu, špinavec. 
+PRAISE_ATTACKED_ENEMY_01 | Počul si volanie tých planét, však, veľvyslanec? Musia sa čo najskôr oslobodiť spod útlaku [defender_race_akuzativ]. Ja som vedel, že ste v vnútri ako my! Teraz to bude vidieť aj zvyšok konkláve! 
+PRAISE_ATTACKED_ENEMY_02 | Haha, áno! Takto sa to robí! Hnať tých špinavých [defender_race_akuzativ] späť, až kým nebudú mať kam utiecť! Len sa posnažte príliš neublížiť planétam, dobre? Budeme ich potrebovať. 
+PRAISE_ATTACKED_ENEMY_03 | Bojuješ aj proti [defender_race_dativ], špinavec? To ten ich zápach, že? Preniká všetkým, čo ich obklopuje. Len sa od nás držte ďalej, keď skončíte! Som si istý, že sa ten smrad obtrie aj o teba! 
+PRAISE_TRADE_01 | Táto obchodná dohoda je taká super! Podarilo sa nám na jej základe získať podporu pre toľko projektov. Úprimne ďakujem a svety [my_race_akuzativ] spievajú chválospevy tvojmu menu! 
+PRAISE_TRADE_02 | Tu si! [my_title] chcel, aby som ti zablahoželal k dodržaniu bezchybnej obchodnej dohody s Konkláve. Dúfa, že budeme v našej spolupráci pokračovať, pretože máme naplánovaných veľa projektov ! To je všetko. Pac a pusu! 
+PRAISE_REBELLING_WITH_01 | Rada sa zbláznila, keď dosadila na trón tých odporných [leader_race_plural]. Už len z ich zápachu sa našim ľuďom robí zle. Pomôžeme vám ich zosadiť, veľvyslanec!  
+ 
+ACCEPT_TRADE_01 | Čas na obchod! Čas na obchod! [amt] BC ročne pomôže pri vytváraní a úprave biosfér! Vďaka za príspevok, priateľu!
+RESPOND_IGNORE_THREAT_01 | Ach, chlapče, ty si naozaj naštvaný, že? No, veď aj keby si bol, tak nič nezmôžeš! Choď už, prosím, preč, mám dnes veľmi veľa práce.
+RESPOND_STOP_SPYING_01 | Chytil si špióna, čo? Neboj, len sme si kontrolovali, či ste boli na svoje planéty milí. Zdá sa, že ste boli, takže nám ho pokojne vráťte a my už nebudeme musieť posielať ďalšieho!
+RESPOND_STOP_ATTACKING_01 | Vidíš, koľko máme lodí? A každá má veľké a desivé zbrane! Ak niekedy zistíme, že zneužívate svoje planéty, budeme ich musieť poslať späť, a to ani jeden z nás nechce! Pa!
+

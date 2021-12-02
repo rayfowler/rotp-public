@@ -1,0 +1,1197 @@
+
+
+//
+// Armor techs
+// 
+ARMOR_0_NAME     | Titánový pancier
+ARMOR_0_ITEM     | Titán
+ARMOR_0_BRIEF    | %1 bodov
+ARMOR_0_DETAIL   | Základné opancierovanie. Pancier vesmírnej lode i pozemných jednotiek je bez bonusu.
+
+ARMOR_1_NAME     | Duralový pancier
+ARMOR_1_ITEM     | Dural
+ARMOR_1_BRIEF    | %1 bodov
+ARMOR_1_DETAIL   | Zvyšuje množstvo zásahových bodov panciera lode a transportov o 50%. Osobná zbroj pridáva 5 bodov v boji na zemi.
+
+ARMOR_2_NAME     | Zortriový pancier
+ARMOR_2_ITEM     | Zortrium
+ARMOR_2_BRIEF    | %1 bodov
+ARMOR_2_DETAIL   | Zvyšuje množstvo zásahových bodov panciera lode a transportov o 100%. Osobná zbroj pridáva 10 bodov v boji na zemi.
+
+ARMOR_3_NAME     | Andriový pancier
+ARMOR_3_ITEM     | Andrium
+ARMOR_3_BRIEF    | %1 bodov
+ARMOR_3_DETAIL   | Zvyšuje množstvo zásahových bodov panciera lode a transportov o 150%. Osobná zbroj pridáva 15 bodov v boji na zemi.
+
+ARMOR_4_NAME     | Tritániový pancier
+ARMOR_4_ITEM     | Tritánium
+ARMOR_4_BRIEF    | %1 bodov
+ARMOR_4_DETAIL   | Zvyšuje množstvo zásahových bodov panciera lode a transportov o 200%. Osobná zbroj pridáva 20 bodov v boji na zemi.
+
+ARMOR_5_NAME     | Adamantiový pancier
+ARMOR_5_ITEM     | Adamantium
+ARMOR_5_BRIEF    | %1 bodov
+ARMOR_5_DETAIL   | Zvyšuje množstvo zásahových bodov panciera lode a transportov o 250%. Osobná zbroj pridáva 25 bodov v boji na zemi.
+
+ARMOR_6_NAME     | Neutrónový pancier
+ARMOR_6_ITEM     | Neutrónium
+ARMOR_6_BRIEF    | %1 bodov
+ARMOR_6_DETAIL   | Zvyšuje množstvo zásahových bodov panciera lode a transportov o 300%. Osobná zbroj pridáva 30 bodov v boji na zemi.
+
+
+//
+// Atmospheric Terraforming techs
+// 
+ATMOSPHERE_0_NAME      | Teraformovanie atmosféry
+ATMOSPHERE_0_DETAIL    | Premení nedýchateľné prostredie na štandardné za cenu 150 BC.
+
+//
+// Automated Repair techs
+// 
+AUTOREPAIR_0_NAME      | Automatizovaný systém opráv
+AUTOREPAIR_0_BRIEF     | Opraví 15% poškodenia lode za ťah
+AUTOREPAIR_0_DETAIL    | Nezničené lode môžu opraviť až 15% svojich celkových bodov trupu na konci ťahu.
+
+AUTOREPAIR_1_NAME      | Pokročilé riadenie škôd
+AUTOREPAIR_1_BRIEF     | Opraví 30% poškodenia lode za ťah
+AUTOREPAIR_1_DETAIL    | Nezničené lode môžu opraviť až 30% svojich celkových bodov trupu na konci ťahu.
+
+
+//
+// Battle Computer techs
+// 
+// this is the Ship Design entry for selecting no battle computer
+COMPUTER_0_NAME    | 
+COMPUTER_0_ITEM    |  
+COMPUTER_0_BRIEF   | Úroveň útoku 0
+COMPUTER_0_DETAIL  |
+
+COMPUTER_1_NAME    | Bojový počítač verzia I
+COMPUTER_1_ITEM    | Verzia I
+COMPUTER_1_BRIEF   | Úroveň útoku I
+COMPUTER_1_DETAIL  | Zvyšuje presnosť zbraní na úroveň 1.
+
+COMPUTER_2_NAME    | Bojový počítač verzia II
+COMPUTER_2_ITEM    | Verzia II
+COMPUTER_2_BRIEF   | Úroveň útoku II
+COMPUTER_2_DETAIL  | Zvyšuje presnosť zbraní na úroveň 2.
+
+COMPUTER_3_NAME    | Bojový počítač verzia III
+COMPUTER_3_ITEM    | Verzia III
+COMPUTER_3_BRIEF   | Úroveň útoku III
+COMPUTER_3_DETAIL  | Zvyšuje presnosť zbraní na úroveň 3.
+
+COMPUTER_4_NAME    | Bojový počítač verzia IV
+COMPUTER_4_ITEM    | Verzia IV
+COMPUTER_4_BRIEF   | Úroveň útoku IV
+COMPUTER_4_DETAIL  | Zvyšuje presnosť zbraní na úroveň 4.
+
+COMPUTER_5_NAME    | Bojový počítač verzia V
+COMPUTER_5_ITEM    | Verzia V
+COMPUTER_5_BRIEF   | Úroveň útoku V
+COMPUTER_5_DETAIL  | Zvyšuje presnosť zbraní na úroveň 5.
+
+COMPUTER_6_NAME    | Bojový počítač verzia VI
+COMPUTER_6_ITEM    | Verzia VI
+COMPUTER_6_BRIEF   | Úroveň útoku VI
+COMPUTER_6_DETAIL  | Zvyšuje presnosť zbraní na úroveň 6.
+
+COMPUTER_7_NAME    | Bojový počítač verzia VII
+COMPUTER_7_ITEM    | Verzia VII
+COMPUTER_7_BRIEF   | Úroveň útoku VII
+COMPUTER_7_DETAIL  | Zvyšuje presnosť zbraní na úroveň 7.
+
+COMPUTER_8_NAME    | Bojový počítač verzia VIII
+COMPUTER_8_ITEM    | Verzia VIII
+COMPUTER_8_BRIEF   | Úroveň útoku VIII
+COMPUTER_8_DETAIL  | Zvyšuje presnosť zbraní na úroveň 8.
+
+COMPUTER_9_NAME    | Bojový počítač verzia IX
+COMPUTER_9_ITEM    | Verzia IX
+COMPUTER_9_BRIEF   | Úroveň útoku IX
+COMPUTER_9_DETAIL  | Zvyšuje presnosť zbraní na úroveň 9.
+
+COMPUTER_10_NAME   | Bojový počítač verzia X
+COMPUTER_10_ITEM   | Verzia X
+COMPUTER_10_BRIEF  | Úroveň útoku X
+COMPUTER_10_DETAIL | Zvyšuje presnosť zbraní na úroveň 10.
+
+COMPUTER_11_NAME   | Bojový počítač verzia XI
+COMPUTER_11_ITEM   | Verzia XI
+COMPUTER_11_BRIEF  | Úroveň útoku XI
+COMPUTER_11_DETAIL | Zvyšuje presnosť zbraní na úroveň 11.
+
+
+//
+// Battle Suit techs for ground combat
+// 
+// this is for default, no-bonus armor that player starts with
+BATTLESUIT_0_NAME    | Brnenie
+BATTLESUIT_0_DETAIL  |
+
+BATTLESUIT_1_NAME    | Bojové kombinézy
+BATTLESUIT_1_DETAIL  | Osobná zbroj, ktoré nielen chráni, ale aj zvyšuje silu. Pridáva 10 bodov k pozemnému útoku.
+
+BATTLESUIT_2_NAME    | Obrnený exoskelet
+BATTLESUIT_2_DETAIL  | Pokročilé mobilné obleky, ktoré nielen zvyšujú výkon a obranyschopnosť, ale ponúkajú aj obmedzený let pozemných jednotiek. Pridáva 20 bodov k pozemnému útoku.
+
+BATTLESUIT_3_NAME    | Silový pancier
+BATTLESUIT_3_DETAIL  | Kombinuje vysokú mobilitu, schopnosti antigravitačného letu a ťažký pancier. Je najpokročilejším typom ochrany pre pozemné jednotky. Pridáva 30 bodov k pozemnému útoku.
+
+
+//
+// Energy Focus techs for beam weapons
+// 
+BEAMFOCUS_0_NAME    | Vysoko energetické ohnisko
+BEAMFOCUS_0_BRIEF   | Pridáva +3 k dosahu energetickej zbrane
+BEAMFOCUS_0_DETAIL  | Dosah energetických zbraní zvýši o tri.
+
+BEAMFOCUS_1_NAME    | Rozhranie orákulum
+BEAMFOCUS_1_BRIEF   | Sústredený lúč zníži štít nepriateľa na polovicu.
+BEAMFOCUS_1_DETAIL  | Spája všetky útoky energetickými zbraňami do jedného lúča, ktorý zníži silu štítu nepriateľa na polovicu.
+
+
+//
+// Biological antidote techs 
+// 
+BIOANTIDOTE_0_NAME    | Protilátka proti biotoxínom
+BIOANTIDOTE_0_DETAIL  | Znižuje množstvo obetí biologických zbraní o 1M na útok.
+
+BIOANTIDOTE_1_NAME    | Univerzálny liek
+BIOANTIDOTE_1_DETAIL  | Znižuje množstvo obetí biologických zbraní o 2M na útok.
+
+
+//
+// Biological weapon techs 
+// 
+BIOWEAPON_0_NAME     | Spóry smrti
+BIOWEAPON_0_BRIEF    | Biologická zbraň
+BIOWEAPON_0_DETAIL   | Strašná biologická zbraň. Znižuje maximálny počet obyvateľov planéty o 1 milión na útok.
+
+BIOWEAPON_1_NAME     | Vírus skazy
+BIOWEAPON_1_BRIEF    | Biologická zbraň
+BIOWEAPON_1_DETAIL   | Desivá biologická zbraň. Znižuje maximálny počet obyvateľov planéty o 1 milión na útok.
+
+BIOWEAPON_2_NAME     | Bioterminátor
+BIOWEAPON_2_BRIEF    | Biologická zbraň
+BIOWEAPON_2_DETAIL   | Najhrôzostrašnejšia biologická zbraň. Znižuje maximálny počet obyvateľov planéty o 1 milión na útok.
+
+//
+// Black Hole Generator tech
+//
+BLACKHOLE_0_NAME     | Generátor čiernych dier
+BLACKHOLE_0_DETAIL   | Vytvorí subpriestorové pole, ktoré deformuje normálny priestor a vytvorí čiernu dieru. Pohltí a zničí 25% až 100% nepriateľských lodí alebo raketových základní, mínus 2% za triedu štítu.
+
+
+//
+// Bomb weapon tech
+//
+BOMB_0_NAME     | Jadrová bomba
+BOMB_0_BRIEF    | Iba na pozemné útoky
+BOMB_0_DETAIL   | Pri výbuchu spôsobí 3 až 12 bodov poškodenia proti pozemným cieľom.
+
+BOMB_1_NAME     | Fúzna bomba
+BOMB_1_BRIEF    | Iba na pozemné útoky
+BOMB_1_DETAIL   | Pri výbuchu spôsobí 5 až 20 bodov poškodenia proti pozemným cieľom.
+
+BOMB_2_NAME     | Bomba z antihmoty
+BOMB_2_BRIEF    | Iba na pozemné útoky
+BOMB_2_DETAIL   | Pri výbuchu spôsobí 10 až 40 bodov poškodenia proti pozemným cieľom.
+
+BOMB_3_NAME     | Bomba Omega-V
+BOMB_3_BRIEF    | Iba na pozemné útoky
+BOMB_3_DETAIL   | Pri výbuchu spôsobí 20 až 50 bodov poškodenia proti pozemným cieľom.
+
+BOMB_4_NAME     | Neutrónová bombu
+BOMB_4_BRIEF    | Iba na pozemné útoky
+BOMB_4_DETAIL   | Pri výbuchu spôsobí 40 až 70 bodov poškodenia proti pozemným cieľom.
+
+
+//
+// Cloaking tech
+//
+CLOAK_0_NAME     | Maskovacie zariadenie
+CLOAK_0_BRIEF    | Robí loď takmer neviditeľnou
+CLOAK_0_DETAIL   | Urobí loď takmer neviditeľnou pokým nezaútočí a zvýši obranu o 5 bodov. Loď sa musí odmaskovať, aby mohla zaútočiť. Loď sa opätovne zamaskuje v ťahu, v ktorom nezaútočí.
+
+
+//
+// Cloning tech
+//
+CLONE_0_NAME     | Klonovanie
+CLONE_0_DETAIL   | Umožňuje vyrábať biologicky upravených kolonistov rýchlosťou 1M za 10 BC.
+
+CLONE_1_NAME     | Pokročilé klonovanie
+CLONE_1_DETAIL   | Umožňuje vyrábať biologicky upravených kolonistov rýchlosťou 1M za 5 BC.
+
+
+//
+// Combat Transporter tech
+//
+COMBATTRANSPORT_0_NAME     | Bojové transportéry
+COMBATTRANSPORT_0_DETAIL   | Transporty vybavené týmito zariadeniami majú 50% šancu, že sa prenesú na nepriateľský povrch skôr, ako na ne môžu zaútočiť nepriateľské lode alebo základne protiraketovej obrany.
+
+
+//
+// Control Environment tech
+//
+CONTROLENV_0_NAME    | Riadené bežné prostredie
+CONTROLENV_0_ITEM    | Štandardná základňa
+CONTROLENV_0_BRIEF   | Umožňuje pristáť na bežnej planéte
+CONTROLENV_0_DETAIL  | Umožňuje kolonizovať štandardné planéty.
+
+CONTROLENV_1_NAME    | Riadené nehostinné prostredie
+CONTROLENV_1_ITEM    | Nehostinná základňa
+CONTROLENV_1_BRIEF   | Umožňuje pristáť na nehostinnej planéte
+CONTROLENV_1_DETAIL  | Umožňuje kolonizovať nehostinné a menej nepriateľské planéty.
+
+CONTROLENV_2_NAME    | Riadené prostredie tundry
+CONTROLENV_2_ITEM    | Koloniálna základňa v tundre
+CONTROLENV_2_BRIEF   | Umožňuje pristáť na chladných planétach
+CONTROLENV_2_DETAIL  | Umožňuje kolonizovať tundry a menej nepriateľské planéty.
+
+CONTROLENV_3_NAME    | Riadené prostredie mŕtvych planét
+CONTROLENV_3_ITEM    | Základňa na mŕtvej planéte
+CONTROLENV_3_BRIEF   | Umožňuje pristáť na mŕtvej planéte
+CONTROLENV_3_DETAIL  | Umožňuje kolonizovať mŕtve a menej nepriateľské planéty.
+
+CONTROLENV_4_NAME    | Kontrolované ohnivé prostredie
+CONTROLENV_4_ITEM    | Základňa na ohnivej planéte
+CONTROLENV_4_BRIEF   | Umožňuje pristáť na ohnivej planéte
+CONTROLENV_4_DETAIL  | Umožňuje kolonizovať ohnivé a menej nepriateľské planéty.
+
+CONTROLENV_5_NAME    | Kontrolované jedovaté prostredie
+CONTROLENV_5_ITEM    | Základňa na jedovatej planéte
+CONTROLENV_5_BRIEF   | Umožňuje pristáť na jedovatej planéte
+CONTROLENV_5_DETAIL  | Umožňuje kolonizovať jedovaté a menej nepriateľské planéty.
+
+CONTROLENV_6_NAME    | Kontrolované rádioaktívne prostredie
+CONTROLENV_6_ITEM    | Základňa na rádioaktívnej planéte
+CONTROLENV_6_BRIEF   | Umožňuje pristáť na rádioaktívnej planéte
+CONTROLENV_6_DETAIL  | Umožňuje kolonizovať rádioaktívne a menej nepriateľské planéty.
+
+
+//
+// Deflector Shield tech
+//
+// this is the entry on Ship Design for selecting no deflector shield
+DEFLECTOR_0_NAME      | 
+DEFLECTOR_0_ITEM      |   
+DEFLECTOR_0_BRIEF     |  
+DEFLECTOR_0_DETAIL    | 
+
+DEFLECTOR_1_NAME      | Ochranné štíty I. triedy
+DEFLECTOR_1_ITEM      | I. trieda
+DEFLECTOR_1_BRIEF     | Pohltí zásah za 1 bod
+DEFLECTOR_1_DETAIL    | Pohltí 1 bod poškodenia zo všetkých útokov.
+
+DEFLECTOR_2_NAME      | Ochranné štíty II. triedy
+DEFLECTOR_2_ITEM      | II. trieda
+DEFLECTOR_2_BRIEF     | Pohltí zásah za 2 body
+DEFLECTOR_2_DETAIL    | Pohltí 2 body poškodenia zo všetkých útokov.
+
+DEFLECTOR_3_NAME      | Ochranné štíty III. triedy
+DEFLECTOR_3_ITEM      | III. trieda
+DEFLECTOR_3_BRIEF     | Pohltí zásah za 3 body
+DEFLECTOR_3_DETAIL    | Pohltí 3 body poškodenia zo všetkých útokov.
+
+DEFLECTOR_4_NAME      | Ochranné štíty IV. triedy
+DEFLECTOR_4_ITEM      | IV. trieda
+DEFLECTOR_4_BRIEF     | Pohltí zásah za 4 body
+DEFLECTOR_4_DETAIL    | Pohltí 4 body poškodenia zo všetkých útokov.
+
+DEFLECTOR_5_NAME      | Ochranné štíty V. triedy
+DEFLECTOR_5_ITEM      | V. trieda
+DEFLECTOR_5_BRIEF     | Pohltí zásah za 5 bodov
+DEFLECTOR_5_DETAIL    | Pohltí 5 bodov poškodenia zo všetkých útokov.
+
+DEFLECTOR_6_NAME      | Ochranné štíty VI. triedy
+DEFLECTOR_6_ITEM      | VI. trieda
+DEFLECTOR_6_BRIEF     | Pohltí zásah za 6 bodov
+DEFLECTOR_6_DETAIL    | Pohltí 6 bodov poškodenia zo všetkých útokov.
+
+DEFLECTOR_7_NAME      | Ochranné štíty VII. triedy
+DEFLECTOR_7_ITEM      | VII. trieda
+DEFLECTOR_7_BRIEF     | Pohltí zásah za 7 bodov
+DEFLECTOR_7_DETAIL    | Pohltí 7 bodov poškodenia zo všetkých útokov.
+
+DEFLECTOR_8_NAME      | Ochranné štíty IX. triedy
+DEFLECTOR_8_ITEM      | IX. trieda
+DEFLECTOR_8_BRIEF     | Pohltí zásah za 9 bodov
+DEFLECTOR_8_DETAIL    | Pohltí 9 bodov poškodenia zo všetkých útokov.
+
+DEFLECTOR_9_NAME      | Ochranné štíty XI. triedy
+DEFLECTOR_9_ITEM      | XI. trieda
+DEFLECTOR_9_BRIEF     | Pohltí zásah za 11 bodov
+DEFLECTOR_9_DETAIL    | Pohltí 11 bodov poškodenia zo všetkých útokov.
+
+DEFLECTOR_10_NAME     | Ochranné štíty XIII. triedy
+DEFLECTOR_10_ITEM     | XIII. trieda
+DEFLECTOR_10_BRIEF    | Pohltí zásah za 13 bodov
+DEFLECTOR_10_DETAIL   | Pohltí 13 bodov poškodenia zo všetkých útokov.
+
+DEFLECTOR_11_NAME     | Ochranné štíty XV. triedy
+DEFLECTOR_11_ITEM     | XV. trieda
+DEFLECTOR_11_BRIEF    | Pohltí zásah za 15 bodov
+DEFLECTOR_11_DETAIL   | Pohltí 15 bodov poškodenia zo všetkých útokov.
+
+
+//
+// Displacement tech
+//
+DISPLACEMENT_0_NAME   | Premiestňovač
+DISPLACEMENT_0_BRIEF  | Tretina všetkých nepriateľských útokov minie
+DISPLACEMENT_0_DETAIL | Náhodne presúva lode do a mimo normálneho priestoru, čím im umožňuje vyhnúť sa tretine všetkých útokov zo zbraní. 
+
+
+//
+// ECM Jammer tech
+//
+// this is the entry on Ship Design for selecting no ECM Jammer
+ECMJAMMER_0_NAME      | 
+ECMJAMMER_0_ITEM      | 
+ECMJAMMER_0_BRIEF     | Obrana proti raketám 0
+ECMJAMMER_0_DETAIL    | 
+
+ECMJAMMER_1_NAME      | ECM rušička I. generácie
+ECMJAMMER_1_ITEM      | Rušička I
+ECMJAMMER_1_BRIEF     | Obrana proti raketám 1
+ECMJAMMER_1_DETAIL    | Pridáva 1 úroveň k obrane proti nepriateľským raketovým útokom.
+
+ECMJAMMER_2_NAME      | ECM rušička II. generácie
+ECMJAMMER_2_ITEM      | Rušička II
+ECMJAMMER_2_BRIEF     | Obrana proti raketám 2
+ECMJAMMER_2_DETAIL    | Pridáva 2 úrovne k obrane proti nepriateľským raketovým útokom.
+
+ECMJAMMER_3_NAME      | ECM rušička III. generácie
+ECMJAMMER_3_ITEM      | Rušička III
+ECMJAMMER_3_BRIEF     | Obrana proti raketám 3
+ECMJAMMER_3_DETAIL    | Pridáva 3 úrovne k obrane proti nepriateľským raketovým útokom.
+
+ECMJAMMER_4_NAME      | ECM rušička IV. generácie
+ECMJAMMER_4_ITEM      | Rušička IV
+ECMJAMMER_4_BRIEF     | Obrana proti raketám 4
+ECMJAMMER_4_DETAIL    | Pridáva 4 úrovne k obrane proti nepriateľským raketovým útokom.
+
+ECMJAMMER_5_NAME      | ECM rušička V. generácie
+ECMJAMMER_5_ITEM      | Rušička V
+ECMJAMMER_5_BRIEF     | Obrana proti raketám 5
+ECMJAMMER_5_DETAIL    | Pridáva 5 úrovní k obrane proti nepriateľským raketovým útokom.
+
+ECMJAMMER_6_NAME      | ECM rušička VI. generácie
+ECMJAMMER_6_ITEM      | Rušička VI
+ECMJAMMER_6_BRIEF     | Obrana proti raketám 6
+ECMJAMMER_6_DETAIL    | Pridáva 6 úrovní k obrane proti nepriateľským raketovým útokom.
+
+ECMJAMMER_7_NAME      | ECM rušička VII. generácie
+ECMJAMMER_7_ITEM      | Rušička VII
+ECMJAMMER_7_BRIEF     | Obrana proti raketám 7
+ECMJAMMER_7_DETAIL    | Pridáva 7 úrovní k obrane proti nepriateľským raketovým útokom.
+
+ECMJAMMER_8_NAME      | ECM rušička VIII. generácie
+ECMJAMMER_8_ITEM      | Rušička VIII
+ECMJAMMER_8_BRIEF     | Obrana proti raketám 8
+ECMJAMMER_8_DETAIL    | Pridáva 8 úrovní k obrane proti nepriateľským raketovým útokom.
+
+ECMJAMMER_9_NAME      | ECM rušička IX. generácie
+ECMJAMMER_9_ITEM      | Rušička IX
+ECMJAMMER_9_BRIEF     | Obrana proti raketám 9
+ECMJAMMER_9_DETAIL    | Pridáva 9 úrovní k obrane proti nepriateľským raketovým útokom.
+
+ECMJAMMER_10_NAME     | ECM rušička X. generácie
+ECMJAMMER_10_ITEM     | Rušička X
+ECMJAMMER_10_BRIEF    | Obrana proti raketám 10
+ECMJAMMER_10_DETAIL   | Pridáva 10 úrovní k obrane proti nepriateľským raketovým útokom.
+
+
+//
+// Ecological Restoration techs
+//
+ECORESTORATION_0_NAME   | Environmentálna obnova
+ECORESTORATION_0_DETAIL | Odstráni 2 jednotky priemyselného odpadu za cenu 1 BC.
+
+ECORESTORATION_1_NAME   | Vylepšená environmentálna obnova
+ECORESTORATION_1_DETAIL | Odstráni 3 jednotky priemyselného odpadu za cenu 1 BC.
+
+ECORESTORATION_2_NAME   | Posilnená environmentálna obnova
+ECORESTORATION_2_DETAIL | Odstráni 5 jednotiek priemyselného odpadu za cenu 1 BC.
+
+ECORESTORATION_3_NAME   | Pokročilá environmentálna obnova
+ECORESTORATION_3_DETAIL | Odstráni 10 jednotiek priemyselného odpadu za cenu 1 BC.
+
+ECORESTORATION_4_NAME   | Úplná environmentálna obnova
+ECORESTORATION_4_DETAIL | Odstráni 20 jednotiek priemyselného odpadu za cenu 1 BC.
+
+
+//
+// Energy Pulsar techs
+//
+PULSAR_0_NAME | Energetický výboj
+PULSAR_0_BRIEF | Výboj spôsobujúci poškodenie za 1-5 bodov
+PULSAR_0_DETAIL | Modifikácia motora, ktorá generuje sférický výbuch energie, ktorý zasiahne všetky susedné lode a spôsobí im až 5 bodov poškodenia +1 za každé dve lode v skupine.
+
+PULSAR_1_NAME | Iónový pulzar
+PULSAR_1_BRIEF | Výboj spôsobujúci poškodenie za 2-10 bodov
+PULSAR_1_DETAIL | Výkonná modifikácia motora schopná generovať sférický výboj fázovej energie, ktorý zasiahne všetky susedné lode a spôsobí im až 10 bodov poškodenia +1 za každú útočiacu loď.
+
+
+//
+// Engine techs
+//
+ENGINE_0_NAME    | Raketový pohon
+ENGINE_0_DETAIL  | Lode sa pohybujú rýchlosťou Warp %1 a majú maximálnu manévrovateľnosť triedy I v boji.
+ENGINE_0_ITEM    | Raketový
+ENGINE_0_ITEM2   | 1. trieda
+ENGINE_0_BRIEF   | Warp 1  Obrana %1
+ENGINE_0_BRIEF2  | Rýchlosť v boji %1
+
+ENGINE_1_NAME    | Nukleárny pohon 
+ENGINE_1_DETAIL  | Lode sa pohybujú rýchlosťou Warp %1 a majú maximálnu manévrovateľnosť triedy II v boji.
+ENGINE_1_ITEM    | Jadrový
+ENGINE_1_ITEM2   | 2. trieda
+ENGINE_1_BRIEF   | Warp 2  Obrana %1
+ENGINE_1_BRIEF2  | Rýchlosť v boji %1
+
+ENGINE_2_NAME    | Podsvetelný pohon
+ENGINE_2_DETAIL  | Lode sa pohybujú rýchlosťou Warp %1 a majú maximálnu manévrovateľnosť triedy III v boji.
+ENGINE_2_ITEM    | Podsvetelný
+ENGINE_2_ITEM2   | 3. trieda
+ENGINE_2_BRIEF   | Warp 3  Obrana %1
+ENGINE_2_BRIEF2  | Rýchlosť v boji %1
+
+ENGINE_3_NAME    | Fúzny pohon
+ENGINE_3_DETAIL  | Lode sa pohybujú rýchlosťou Warp %1 a majú maximálnu manévrovateľnosť triedy IV v boji.
+ENGINE_3_ITEM    | Fúzny
+ENGINE_3_ITEM2   | 4. trieda
+ENGINE_3_BRIEF   | Warp 4  Obrana %1
+ENGINE_3_BRIEF2  | Rýchlosť v boji %1
+
+ENGINE_4_NAME    | Impulzný pohon
+ENGINE_4_DETAIL  | Lode sa pohybujú rýchlosťou Warp %1 a majú maximálnu manévrovateľnosť triedy V v boji.
+ENGINE_4_ITEM    | Impulzný
+ENGINE_4_ITEM2   | 5. trieda
+ENGINE_4_BRIEF   | Warp 5  Obrana %1
+ENGINE_4_BRIEF2  | Rýchlosť v boji %1
+
+ENGINE_5_NAME    | Iónový pohon
+ENGINE_5_DETAIL  | Lode sa pohybujú Warp %1 a majú maximálnu manévrovateľnosť triedy VI v boji.
+ENGINE_5_ITEM    | Iónový
+ENGINE_5_ITEM2   | 6. trieda 
+ENGINE_5_BRIEF   | Warp 6  Obrana %1
+ENGINE_5_BRIEF2  | Rýchlosť v boji %1
+
+ENGINE_6_NAME    | Pohon z antihmoty
+ENGINE_6_DETAIL  | Lode sa pohybujú rýchlosťou Warp %1 a majú maximálnu manévrovateľnosť triedy VII v boji.
+ENGINE_6_ITEM    | Z antihmoty
+ENGINE_6_ITEM2   | 7. trieda
+ENGINE_6_BRIEF   | Warp 7  Obrana %1
+ENGINE_6_BRIEF2  | Rýchlosť v boji %1
+
+ENGINE_7_NAME    | Medzifázový pohon
+ENGINE_7_DETAIL  | Lode sa pohybujú rýchlosťou Warp %1 a majú maximálnu manévrovateľnosť triedy VIII v boji.
+ENGINE_7_ITEM    | Medzifázový
+ENGINE_7_ITEM2   | 8. trieda
+ENGINE_7_BRIEF   | Warp 8  Obrana %1
+ENGINE_7_BRIEF2  | Rýchlosť v boji %1
+
+ENGINE_8_NAME    | Hyper pohon
+ENGINE_8_DETAIL  | Lode sa pohybujú rýchlosťou Warp %1 a majú maximálnu manévrovateľnosť triedy IX v boji.
+ENGINE_8_ITEM    | Hyper
+ENGINE_8_ITEM2   | 9. trieda
+ENGINE_8_BRIEF   | Warp 9  Obrana %1
+ENGINE_8_BRIEF2  | Rýchlosť v boji %1
+
+
+//
+// Fuel Range techs
+//
+FUELRANGE_0_NAME   | Palivové články
+FUELRANGE_0_DETAIL | Zásoby paliva umožňujú lodiam pohybovať sa do vzdialenosti %1 svetelných rokov od kolónií.
+
+FUELRANGE_1_NAME   | Vodíkové palivové články
+FUELRANGE_1_DETAIL | Zásoby paliva umožňujú lodiam pohybovať sa do vzdialenosti %1 svetelných rokov od kolónií.
+
+FUELRANGE_2_NAME   | Palivové články z ťažkého vodíka
+FUELRANGE_2_DETAIL | Zásoby paliva umožňujú lodiam pohybovať sa do vzdialenosti %1 svetelných rokov od kolónií.
+
+FUELRANGE_3_NAME   | Irídiové palivové články
+FUELRANGE_3_DETAIL | Zásoby paliva umožňujú lodiam pohybovať sa do vzdialenosti %1 svetelných rokov od kolónií.
+
+FUELRANGE_4_NAME   | Kryštály dotomitu
+FUELRANGE_4_DETAIL | Zásoby paliva umožňujú lodiam pohybovať sa do vzdialenosti %1 svetelných rokov od kolónií.
+
+FUELRANGE_5_NAME   | Urídiové palivové články
+FUELRANGE_5_DETAIL | Zásoby paliva umožňujú lodiam pohybovať sa do vzdialenosti %1 svetelných rokov od kolónií.
+
+FUELRANGE_6_NAME   | Rejax II palivové články
+FUELRANGE_6_DETAIL | Zásoby paliva umožňujú lodiam pohybovať sa do vzdialenosti %1 svetelných rokov od kolónií.
+
+FUELRANGE_7_NAME   | Kryštály trilítia
+FUELRANGE_7_DETAIL | Zásoby paliva umožňujú lodiam pohybovať sa do vzdialenosti %1 svetelných rokov od kolónií.
+
+FUELRANGE_8_NAME   | Články tória 
+FUELRANGE_8_DETAIL | Zásoby paliva umožňujú lodiam pohybovať sa do vzdialenosti %1 svetelných rokov od kolónií.
+
+
+//
+// Future Computer techs
+//
+FUTURECOMP_0_NAME    | Počítač budúcnosti I
+FUTURECOMP_0_DETAIL  | Pokročilé inovácie v oblasti počítačových technológií.
+
+FUTURECOMP_1_NAME    | Počítač budúcnosti II
+FUTURECOMP_1_DETAIL  | Pokročilé inovácie v oblasti počítačových technológií.
+
+FUTURECOMP_2_NAME    | Počítač budúcnosti III
+FUTURECOMP_2_DETAIL  | Pokročilé inovácie v oblasti počítačových technológií.
+
+FUTURECOMP_3_NAME    | Počítač budúcnosti IV
+FUTURECOMP_3_DETAIL  | Pokročilé inovácie v oblasti počítačových technológií.
+
+FUTURECOMP_4_NAME    | Počítač budúcnosti V
+FUTURECOMP_4_DETAIL  | Pokročilé inovácie v oblasti počítačových technológií.
+
+FUTURECOMP_5_NAME    | Počítač budúcnosti VI
+FUTURECOMP_5_DETAIL  | Pokročilé inovácie v oblasti počítačových technológií.
+
+FUTURECOMP_6_NAME    | Počítač budúcnosti VII
+FUTURECOMP_6_DETAIL  | Pokročilé inovácie v oblasti počítačových technológií.
+
+FUTURECOMP_7_NAME    | Počítač budúcnosti VIII
+FUTURECOMP_7_DETAIL  | Pokročilé inovácie v oblasti počítačových technológií.
+
+FUTURECOMP_8_NAME    | Počítač budúcnosti IX
+FUTURECOMP_8_DETAIL  | Pokročilé inovácie v oblasti počítačových technológií.
+
+FUTURECOMP_9_NAME    | Počítač budúcnosti X
+FUTURECOMP_9_DETAIL  | Pokročilé inovácie v oblasti počítačových technológií.
+
+
+//
+// Future Construction techs
+//
+FUTURECONST_0_NAME    | Strojárstvo budúcnosti I
+FUTURECONST_0_DETAIL  | Pokročilé inovácie v oblasti strojárstva.
+
+FUTURECONST_1_NAME    | Strojárstvo budúcnosti II
+FUTURECONST_1_DETAIL  | Pokročilé inovácie v oblasti strojárstva.
+
+FUTURECONST_2_NAME    | Strojárstvo budúcnosti III
+FUTURECONST_2_DETAIL  | Pokročilé inovácie v oblasti strojárstva.
+
+FUTURECONST_3_NAME    | Strojárstvo budúcnosti IV
+FUTURECONST_3_DETAIL  | Pokročilé inovácie v oblasti strojárstva.
+
+FUTURECONST_4_NAME    | Strojárstvo budúcnosti V
+FUTURECONST_4_DETAIL  | Pokročilé inovácie v oblasti strojárstva.
+
+FUTURECONST_5_NAME    | Strojárstvo budúcnosti VI
+FUTURECONST_5_DETAIL  | Pokročilé inovácie v oblasti strojárstva.
+
+FUTURECONST_6_NAME    | Strojárstvo budúcnosti VII
+FUTURECONST_6_DETAIL  | Pokročilé inovácie v oblasti strojárstva.
+
+FUTURECONST_7_NAME    | Strojárstvo budúcnosti VIII
+FUTURECONST_7_DETAIL  | Pokročilé inovácie v oblasti strojárstva.
+
+FUTURECONST_8_NAME    | Strojárstvo budúcnosti IX
+FUTURECONST_8_DETAIL  | Pokročilé inovácie v oblasti strojárstva.
+
+FUTURECONST_9_NAME    | Strojárstvo budúcnosti X
+FUTURECONST_9_DETAIL  | Pokročilé inovácie v oblasti strojárstva.
+
+
+//
+// Future Force Field techs
+//
+FUTUREFORCE_0_NAME    | Silové pole budúcnosti I
+FUTUREFORCE_0_DETAIL  | Pokročilé inovácie v oblasti silových polí.
+
+FUTUREFORCE_1_NAME    | Silové pole budúcnosti II
+FUTUREFORCE_1_DETAIL  | Pokročilé inovácie v oblasti silových polí.
+
+FUTUREFORCE_2_NAME    | Silové pole budúcnosti III
+FUTUREFORCE_2_DETAIL  | Pokročilé inovácie v oblasti silových polí.
+
+FUTUREFORCE_3_NAME    | Silové pole budúcnosti IV
+FUTUREFORCE_3_DETAIL  | Pokročilé inovácie v oblasti silových polí.
+
+FUTUREFORCE_4_NAME    | Silové pole budúcnosti V
+FUTUREFORCE_4_DETAIL  | Pokročilé inovácie v oblasti silových polí.
+
+FUTUREFORCE_5_NAME    | Silové pole budúcnosti VI
+FUTUREFORCE_5_DETAIL  | Pokročilé inovácie v oblasti silových polí.
+
+FUTUREFORCE_6_NAME    | Silové pole budúcnosti VII
+FUTUREFORCE_6_DETAIL  | Pokročilé inovácie v oblasti silových polí.
+
+FUTUREFORCE_7_NAME    | Silové pole budúcnosti VIII
+FUTUREFORCE_7_DETAIL  | Pokročilé inovácie v oblasti silových polí.
+
+FUTUREFORCE_8_NAME    | Silové pole budúcnosti IX
+FUTUREFORCE_8_DETAIL  | Pokročilé inovácie v oblasti silových polí.
+
+FUTUREFORCE_9_NAME    | Silové pole budúcnosti X
+FUTUREFORCE_9_DETAIL  | Pokročilé inovácie v oblasti silových polí.
+
+
+//
+// Future Planetology techs
+//
+FUTUREPLANET_0_NAME    | Planetológia budúcnosti I
+FUTUREPLANET_0_DETAIL  | Pokročilé inovácie v oblasti planetológie.
+
+FUTUREPLANET_1_NAME    | Planetológia budúcnostiII
+FUTUREPLANET_1_DETAIL  | Pokročilé inovácie v oblasti planetológie.
+
+FUTUREPLANET_2_NAME    | Planetológia budúcnosti III
+FUTUREPLANET_2_DETAIL  | Pokročilé inovácie v oblasti planetológie.
+
+FUTUREPLANET_3_NAME    | Planetológia budúcnosti IV
+FUTUREPLANET_3_DETAIL  | Pokročilé inovácie v oblasti planetológie.
+
+FUTUREPLANET_4_NAME    | Planetológia budúcnosti V
+FUTUREPLANET_4_DETAIL  | Pokročilé inovácie v oblasti planetológie.
+
+FUTUREPLANET_5_NAME    | Planetológia budúcnosti VI
+FUTUREPLANET_5_DETAIL  | Pokročilé inovácie v oblasti planetológie.
+
+FUTUREPLANET_6_NAME    | Planetológia budúcnosti VII
+FUTUREPLANET_6_DETAIL  | Pokročilé inovácie v oblasti planetológie.
+
+FUTUREPLANET_7_NAME    | Planetológia budúcnosti VIII
+FUTUREPLANET_7_DETAIL  | Pokročilé inovácie v oblasti planetológie.
+
+FUTUREPLANET_8_NAME    | Planetológia budúcnosti IX
+FUTUREPLANET_8_DETAIL  | Pokročilé inovácie v oblasti planetológie.
+
+FUTUREPLANET_9_NAME    | Planetológia budúcnosti X
+FUTUREPLANET_9_DETAIL  | Pokročilé inovácie v oblasti planetológie.
+
+
+//
+// Future Propulsion techs
+//
+FUTUREPROP_0_NAME    | Pohon budúcnosti I
+FUTUREPROP_0_DETAIL  | Pokročilé inovácie v oblasti pohonu.
+
+FUTUREPROP_1_NAME    | Pohon budúcnosti II
+FUTUREPROP_1_DETAIL  | Pokročilé inovácie v oblasti pohonu.
+
+FUTUREPROP_2_NAME    | Pohon budúcnosti III
+FUTUREPROP_2_DETAIL  | Pokročilé inovácie v oblasti pohonu.
+
+FUTUREPROP_3_NAME    | Pohon budúcnosti IV
+FUTUREPROP_3_DETAIL  | Pokročilé inovácie v oblasti pohonu.
+
+FUTUREPROP_4_NAME    | Pohon budúcnosti V
+FUTUREPROP_4_DETAIL  | Pokročilé inovácie v oblasti pohonu.
+
+FUTUREPROP_5_NAME    | Pohon budúcnosti VI
+FUTUREPROP_5_DETAIL  | Pokročilé inovácie v oblasti pohonu.
+
+FUTUREPROP_6_NAME    | Pohon budúcnosti VII
+FUTUREPROP_6_DETAIL  | Pokročilé inovácie v oblasti pohonu.
+
+FUTUREPROP_7_NAME    | Pohon budúcnosti VIII
+FUTUREPROP_7_DETAIL  | Pokročilé inovácie v oblasti pohonu.
+
+FUTUREPROP_8_NAME    | Pohon budúcnosti IX
+FUTUREPROP_8_DETAIL  | Pokročilé inovácie v oblasti pohonu.
+
+FUTUREPROP_9_NAME    | Pohon budúcnosti X
+FUTUREPROP_9_DETAIL  | Pokročilé inovácie v oblasti pohonu.
+
+
+//
+// Future Weapon techs
+//
+FUTUREWEAPON_0_NAME    | Zbraň budúcnosti I
+FUTUREWEAPON_0_DETAIL  | Pokročilé inovácie v oblasti zbraní.
+
+FUTUREWEAPON_1_NAME    | Zbraň budúcnosti II
+FUTUREWEAPON_1_DETAIL  | Pokročilé inovácie v oblasti zbraní.
+
+FUTUREWEAPON_2_NAME    | Zbraň budúcnosti III
+FUTUREWEAPON_2_DETAIL  | Pokročilé inovácie v oblasti zbraní.
+
+FUTUREWEAPON_3_NAME    | Zbraň budúcnosti IV
+FUTUREWEAPON_3_DETAIL  | Pokročilé inovácie v oblasti zbraní.
+
+FUTUREWEAPON_4_NAME    | Zbraň budúcnosti V
+FUTUREWEAPON_4_DETAIL  | Pokročilé inovácie v oblasti zbraní.
+
+FUTUREWEAPON_5_NAME    | Zbraň budúcnosti VI
+FUTUREWEAPON_5_DETAIL  | Pokročilé inovácie v oblasti zbraní.
+
+FUTUREWEAPON_6_NAME    | Zbraň budúcnosti VII
+FUTUREWEAPON_6_DETAIL  | Pokročilé inovácie v oblasti zbraní.
+
+FUTUREWEAPON_7_NAME    | Zbraň budúcnosti VIII
+FUTUREWEAPON_7_DETAIL  | Pokročilé inovácie v oblasti zbraní.
+
+FUTUREWEAPON_8_NAME    | Zbraň budúcnosti IX
+FUTUREWEAPON_8_DETAIL  | Pokročilé inovácie v oblasti zbraní.
+
+FUTUREWEAPON_9_NAME    | Zbraň budúcnosti X
+FUTUREWEAPON_9_DETAIL  | Pokročilé inovácie v oblasti zbraní.
+
+
+//
+// Hand Weapon techs
+//
+HANDWEAPON_0_NAME      | 
+HANDWEAPON_0_DETAIL    | 
+
+HANDWEAPON_1_NAME      | Ručný laser
+HANDWEAPON_1_DETAIL    | Osobné lasery pridávajú 5 bodov k zásahu pri pozemných súbojoch.
+
+HANDWEAPON_2_NAME      | Iónová puška
+HANDWEAPON_2_DETAIL    | Osobný lúčomet. Pridáva 10 bodov k zásahu pri pozemných súbojoch.
+
+HANDWEAPON_3_NAME      | Fúzna puška
+HANDWEAPON_3_DETAIL    | Nepresná, ale neuveriteľne silná energetická zbraň, ktorá pridáva 20 bodov k zásahu v boji na zemi.
+
+HANDWEAPON_4_NAME      | Ručný fázer
+HANDWEAPON_4_DETAIL    | Silné ručné energetické zbrane schopné rozložiť protivníka na atómy. Pridáva 25 k zásahu v pozemnom boji.
+
+HANDWEAPON_5_NAME      | Plazmová puška
+HANDWEAPON_5_DETAIL    | Najničivejšia dostupná ručná zbraň. Pridáva 30 bodov k zásahu v boji na zemi.
+
+
+//
+// Hyperspace Communication tech
+//
+HYPERSPACE_0_NAME      | Hyperpriestorová komunikácia
+HYPERSPACE_0_DETAIL    | Umožní vám komunikovať s flotilami lodí v hyperpriestore a meniť ich destinácie, keď sú v tranzite.
+
+
+//
+// Improved Industrial techs
+//
+IMPRINDUSTRY_0_NAME     | Vylepšená priemyselná technika 9
+IMPRINDUSTRY_0_DETAIL   | Zníži náklady na výstavbu továrne na 9 BC za kus.
+
+IMPRINDUSTRY_1_NAME     | Vylepšená priemyselná technika 8
+IMPRINDUSTRY_1_DETAIL   | Zníži náklady na výstavbu továrne na 8 BC za kus.
+
+IMPRINDUSTRY_2_NAME     | Vylepšená priemyselná technika 7
+IMPRINDUSTRY_2_DETAIL   | Zníži náklady na výstavbu továrne na 7 BC za kus.
+
+IMPRINDUSTRY_3_NAME     | Vylepšená priemyselná technika 6
+IMPRINDUSTRY_3_DETAIL   | Zníži náklady na výstavbu továrne na6 BC za kus.
+
+IMPRINDUSTRY_4_NAME     | Vylepšená priemyselná technika 5
+IMPRINDUSTRY_4_DETAIL   | Zníži náklady na výstavbu továrne na 5 BC za kus.
+
+IMPRINDUSTRY_5_NAME     | Vylepšená priemyselná technika 4
+IMPRINDUSTRY_5_DETAIL   | Zníži náklady na výstavbu továrne na 4 BC za kus.
+
+IMPRINDUSTRY_6_NAME     | Vylepšená priemyselná technika 3
+IMPRINDUSTRY_6_DETAIL   | Zníži náklady na výstavbu továrne na 3 BC za kus.
+
+IMPRINDUSTRY_7_NAME     | Vylepšená priemyselná technika 2
+IMPRINDUSTRY_7_DETAIL   | Zníži náklady na výstavbu továrne na 2 BC za kus.
+
+
+//
+// Improved Terraforming techs
+//
+IMPRTFORM_0_NAME        | Vylepšené teraformovanie +10
+IMPRTFORM_0_DETAIL      | Navýši kapacitu populácie planét o 10 miliónov za cenu 5 BC na milión obyvateľov.
+
+IMPRTFORM_1_NAME        | Vylepšené teraformovanie +20
+IMPRTFORM_1_DETAIL      | Navýši kapacitu populácie planét o 20 miliónov za cenu 5 BC na milión obyvateľov.
+
+IMPRTFORM_2_NAME        | Vylepšené teraformovanie +30
+IMPRTFORM_2_DETAIL      | Navýši kapacitu populácie planét o 30 miliónov za cenu 4 BC na milión obyvateľov.
+
+IMPRTFORM_3_NAME        | Vylepšené teraformovanie +40
+IMPRTFORM_3_DETAIL      | Navýši kapacitu populácie planét o 40 miliónov za cenu 4 BC na milión obyvateľov.
+
+IMPRTFORM_4_NAME        | Vylepšené teraformovanie +50
+IMPRTFORM_4_DETAIL      | Navýši kapacitu populácie planét o 50 miliónov za cenu 3 BC na milión obyvateľov.
+
+IMPRTFORM_5_NAME        | Vylepšené teraformovanie +60
+IMPRTFORM_5_DETAIL      | Navýši kapacitu populácie planét o 60 miliónov za cenu 3 BC na milión obyvateľov.
+
+IMPRTFORM_6_NAME        | Vylepšené teraformovanie +80
+IMPRTFORM_6_DETAIL      | Navýši kapacitu populácie planét o 80 miliónov za cenu 2 BC na milión obyvateľov.
+
+IMPRTFORM_7_NAME        | Vylepšené teraformovanie +100
+IMPRTFORM_7_DETAIL      | Navýši kapacitu populácie planét o 100 miliónov za cenu 2 BC na milión obyvateľov.
+
+IMPRTFORM_8_NAME        | Úplné teraformovanie
+IMPRTFORM_8_DETAIL      | Navýši kapacitu populácie planét o 120 miliónov za cenu 2 BC na milión obyvateľov.
+
+
+//
+// Industrial Waste techs
+//
+INDWASTE_0_NAME         | Zníženie priemyselného odpadu 80%
+INDWASTE_0_DETAIL       | Zníži úroveň znečistenia z tovární na 80%.
+
+INDWASTE_1_NAME         | Zníženie priemyselného odpadu 60%
+INDWASTE_1_DETAIL       | Zníži úroveň znečistenia z tovární na 60%.
+
+INDWASTE_2_NAME         | Zníženie priemyselného odpadu 40%
+INDWASTE_2_DETAIL       | Zníži úroveň znečistenia z tovární na 40%.
+
+INDWASTE_3_NAME         | Zníženie priemyselného odpadu 20%
+INDWASTE_3_DETAIL       | Zníži úroveň znečistenia z tovární na 20%.
+
+INDWASTE_4_NAME         | Eliminácia priemyselného odpadu
+INDWASTE_4_DETAIL       | Továrne viac neznečisťujú životné prostredie.
+
+
+//
+// Missile Defense techs
+//
+MISSDEF_0_NAME      | Protiraketové strely
+MISSDEF_0_BRIEF     | 40% šanca na zničenie rakiet
+MISSDEF_0_DETAIL    | Trans-svetelné rakety schopné zničiť prichádzajúce rakety v 40% prípadov, -1 % za technologickú úroveň rakety.
+
+MISSDEF_1_NAME      | Štít Zyro
+MISSDEF_1_BRIEF     | 75% šanca na zničenie rakiet
+MISSDEF_1_DETAIL    | Energetické pole, ktoré zničí prichádzajúce rakety a torpéda v 75% prípadov, -1 % za technologickú úroveň rakety.
+
+MISSDEF_2_NAME      | Bleskový štít
+MISSDEF_2_BRIEF     | 100% šanca, že rakety budú zničené
+MISSDEF_2_DETAIL    | Energetické pole, ktoré zničí prichádzajúce rakety a torpéda v 100% prípadov, -1 % za technologickú úroveň rakety.
+
+
+//
+// Missile Weapon techs
+//
+MISSWPN_0_NAME      | Jadrové strely
+MISSWPN_0_BRIEF     | 2 strely, +1 rýchlosť
+MISSWPN_0_BRIEF2    | 5 striel
+MISSWPN_0_DETAIL    | Strely s jadrovými hlavicami spôsobia 4 body poškodenia a pohybujú sa rýchlosťou 2.
+
+MISSWPN_1_NAME      | Rakety Hyper-V
+MISSWPN_1_BRIEF     | 2 strely, +1 rýchlosť
+MISSWPN_1_BRIEF2    | 5 striel
+MISSWPN_1_DETAIL    | Rýchle strely, ktoré spôsobia 6 bodov poškodenia a pohybujú sa rýchlosťou 2,5.
+
+MISSWPN_2_NAME      | Rakety Hyper-X
+MISSWPN_2_BRIEF     | 2 strely, +1 k zásahu
+MISSWPN_2_BRIEF2    | 5 striel, +1 k zásahu
+MISSWPN_2_DETAIL    | Strely vybavené vysoko energetickými hlavicami spôsobia poškodenie za 8 bodov. Pohybujú sa rýchlosťou 2,5 a sú riadené zameriavacím počítačom úrovne +1.
+
+MISSWPN_3_NAME      | Rozptylové rakety V
+MISSWPN_3_BRIEF     | 2 strely, +1 rýchlosť
+MISSWPN_3_BRIEF2    | 5 striel
+MISSWPN_3_DETAIL    | Verzia rakiet Hyper-V, ktorá sa pri odpálení rozdelí na 5 samostatných hlavíc. Každá hlavica spôsobí 6 bodov poškodenia a pohybuje sa rýchlosťou 2,5.
+
+MISSWPN_4_NAME      | Merkulitové rakety
+MISSWPN_4_BRIEF     | 2 strely, +2 na zásah
+MISSWPN_4_BRIEF2    | 5 striel, +2 na zásah
+MISSWPN_4_DETAIL    | Rýchle strely s tvrdým zásahom, ktoré spôsobujú 10-bodové poškodenie. Pohybujú sa rýchlosťou 3 a sú riadené zameriavacím počítačom +2.
+
+MISSWPN_5_NAME      | Rakety Stinger
+MISSWPN_5_BRIEF     | 2 strely, +3 na zásah
+MISSWPN_5_BRIEF2    | 5 striel, +3 na zásah
+MISSWPN_5_DETAIL    | Pomalé, hyperpresné strely, ktoré spôsobujú 15-bodové poškodenie. Pohybujú sa rýchlosťou 3,5 a sú riadené sofistikovaným zameriavacím počítačom +3.
+
+MISSWPN_6_NAME      | Rozptylové rakety VII
+MISSWPN_6_BRIEF     | 2 strely, 7 hlavíc
+MISSWPN_6_BRIEF2    | 5 striel, 7 hlavíc
+MISSWPN_6_DETAIL    | Verzia rakiet Hyper-X. Pozostáva zo 7 samostatných hlavíc, pričom každá spôsobuje 10 bodov poškodenia. Pohybujú sa rýchlosťou 3 a sú navádzané zameriavacím počítačom +2.
+
+MISSWPN_7_NAME      | Pulzné rakety
+MISSWPN_7_BRIEF     | 2 strely, +4 na zásah
+MISSWPN_7_BRIEF2    | 5 striel, +4 na zásah
+MISSWPN_7_DETAIL    | Výkonné strely vybavené hlavicami plnené antihmotou. Spôsobujú 20-bodové poškodenie, pohybujú sa rýchlosťou 4 a sú riadené zameriavacím počítačom +4.
+
+MISSWPN_8_NAME      | Herkulove strely
+MISSWPN_8_BRIEF     | 2 strely, +5 na zásah
+MISSWPN_8_BRIEF2    | 5 striel, +5 na zásah
+MISSWPN_8_DETAIL    | Vysoko sofistikovaná strela, ktorá exploduje a spôsobuje poškodenie za 25 bodov. Herkulova strela sa pohybuje rýchlosťou 4,5 a je riadená zameriavacím počítačom +5.
+
+MISSWPN_9_NAME      | Rakety Zeon
+MISSWPN_9_BRIEF     | 2 strely, +6 na zásah
+MISSWPN_9_BRIEF2    | 5 striel, +6 na zásah
+MISSWPN_9_DETAIL    | Najvyspelejšia dostupná strela. Dokáže zasiahnuť nepriateľské lode s poškodením 30 bodov a pohybuje sa rýchlosťou 5. Strelu navádza zameriavací počítač +6.
+
+MISSWPN_10_NAME      | Rozptylové rakety X 
+MISSWPN_10_BRIEF     | 2 strely, 10 hlavíc
+MISSWPN_10_BRIEF2    | 5 striel, 10 hlavíc
+MISSWPN_10_DETAIL    | Verzie rakiet Stinger. Delia sa na 10 samostatných hlavíc, z ktorých každá spôsobí 15 bodov poškodenia. Pohybujú sa rýchlosťou 3,5 a sú navádzané zameriavacím počítačom +3.
+
+
+//
+// Personal Shield techs for ground combat
+//
+// default "no shield" tech that each player starts with
+PERSSHIELD_0_NAME     | 
+PERSSHIELD_0_DETAIL   | 
+
+PERSSHIELD_1_NAME     | Osobný ochranný štít
+PERSSHIELD_1_DETAIL   | Chráni pozemné jednotky pomocou silového poľa. Pridáva +10 ku všetkým pozemným bojom.
+
+PERSSHIELD_2_NAME     | Osobný pohlcujúci štít
+PERSSHIELD_2_DETAIL   | Absorbuje poškodenie od ručných zbraní. Pridáva +20 ku všetkým pozemným súbojom.
+
+PERSSHIELD_3_NAME     | Osobný bariérový štít
+PERSSHIELD_3_DETAIL   | Uzavrie vojaka do takmer nepreniknuteľného silového poľa. Pridáva +30 ku všetkým hodom v pozemnom boji.
+
+
+//
+// Planetary Shield techs 
+//
+PLANETSHIELD_0_NAME    | Planetárne štíty triedy V
+PLANETSHIELD_0_DETAIL  | Absorbuje 5 bodov poškodenia z útokov na povrchu planéty. Obklopuje a opevňuje už existujúce štíty raketových základní.
+
+PLANETSHIELD_1_NAME    | Planetárne štíty triedy X
+PLANETSHIELD_1_DETAIL  | Absorbuje 10 bodov poškodenia z útokov na povrchu planéty. Obklopuje a opevňuje už existujúce štíty raketových základní.
+
+PLANETSHIELD_2_NAME    | Planetárne štíty triedy XV
+PLANETSHIELD_2_DETAIL  | Absorbuje 15 bodov poškodenia z útokov na povrchu planéty. Obklopuje a opevňuje už existujúce štíty raketových základní.
+
+PLANETSHIELD_3_NAME    | Planetárne štíty triedy XX
+PLANETSHIELD_3_DETAIL  | Absorbuje 20 bodov poškodenia z útokov na povrchu planéty. Obklopuje a opevňuje už existujúce štíty raketových základní.
+
+
+//
+// Repulsor tech 
+//
+REPULSOR_0_NAME    | Lúč odpudzovač
+REPULSOR_0_BRIEF   | Vráti nepriateľské lode o 1 pole späť
+REPULSOR_0_DETAIL  | Odpudzuje nepriateľské lode o jedno miesto od brániacej sa lode. Táto špeciálna zbraň má dosah jedno pole.
+
+
+//
+// Reserve Fuel tech 
+//
+RSRVFUEL_0_NAME    | Záložné palivové nádrže
+RSRVFUEL_0_BRIEF   | Predĺži dosah lode o %1 svetelné roky
+RSRVFUEL_0_DETAIL  | Rezervné palivové nádrže zväčšujú dolet lode.
+
+
+//
+// Robotic Controls techs 
+//
+ROBOTCTRL_0_NAME     | Vylepšená automatizácia III
+ROBOTCTRL_0_DETAIL   | Umožňuje prevádzku 3 tovární na obyvateľa. Náklady na modernizáciu sú polovica štandardných obstarávacích nákladov za každú továreň.
+
+ROBOTCTRL_1_NAME     | Vylepšená automatizácia IV
+ROBOTCTRL_1_DETAIL   | Umožňuje prevádzku 4 tovární na obyvateľa. Náklady na modernizáciu sa rovnajú obstarávacím nákladom za každú továreň.
+
+ROBOTCTRL_2_NAME     | Vylepšená automatizácia V
+ROBOTCTRL_2_DETAIL   | Umožňuje prevádzku 5 tovární na obyvateľa. Náklady na modernizáciu sú jedenapolnásobkom obstarávacích nákladov za každú továreň.
+
+ROBOTCTRL_3_NAME     | Vylepšená automatizácia VI
+ROBOTCTRL_3_DETAIL   | Umožňuje prevádzku 6 tovární na obyvateľa. Náklady na modernizáciu sú dvojnásobkom obstarávacích nákladov za každú továreň.
+
+ROBOTCTRL_4_NAME     | Vylepšená automatizácia VII
+ROBOTCTRL_4_DETAIL   | Umožňuje prevádzku 7 tovární na obyvateľa. Náklady na modernizáciu sú 2,5-násobkom obstarávacích nákladov za každú továreň.
+
+
+//
+// Scanner techs 
+//
+SCANNER_0_NAME       | Bojový skener
+SCANNER_0_BRIEF      | Skenuje nepriateľské lode v boji
+SCANNER_0_DETAIL     | Odhaľuje technické špecifikácie nepriateľských vesmírnych lodí v boji.
+
+SCANNER_1_NAME       | Skener hlbokého vesmíru
+SCANNER_1_BRIEF      | Detekuje lode do vzdialenosti 5 svetelných rokov
+SCANNER_1_DETAIL     | Odhalí nepriateľské lode do vzdialenosti 5 svetelných rokov od vašich kolónií a 1 svetelný rok od vašich lodí.
+
+SCANNER_2_NAME       | Vylepšený vesmírny skener
+SCANNER_2_BRIEF      | Detekuje lode do vzdialenosti 7 svetelných rokov
+SCANNER_2_DETAIL     | Odhalí nepriateľské lode do vzdialenosti 7 svetelných rokov od vašich kolónií a 2 svetelné roky od vašich lodí. Dajú sa určiť ciele nepriateľských lodí.
+
+SCANNER_3_NAME       | Pokročilý vesmírny skener
+SCANNER_3_BRIEF      | Umožňuje prieskum planét do vzdialenosti 9 svetelných rokov
+SCANNER_3_DETAIL     | Umožňuje prieskum planét z koloniálnych základní až do vzdialenosti 9 svetelných rokov a detekuje nepriateľské lode až do vzdialenosti 3 svetelných rokov od vašich lodí.
+
+
+//
+// Ship Inertial techs 
+//
+SHIPINERTIAL_0_NAME     | Inerciálny stabilizátor 
+SHIPINERTIAL_0_BRIEF    | Pridáva +2 k manévrovateľnosti
+SHIPINERTIAL_0_DETAIL   | Znižuje zotrvačnosť lodí a pridá 2 triedy k manévrovateľnosti v boji (+2 k obrane a +1 k bojovej rýchlosti).
+
+SHIPINERTIAL_1_NAME     | Inerciálny vypínač
+SHIPINERTIAL_1_BRIEF    | Pridáva +4 k manévrovateľnosti
+SHIPINERTIAL_1_DETAIL   | Znižuje zotrvačnosť lodí a pridá 4 triedy manévrovateľnosti v boji. Znižuje tiež účinok útokov generátorom čiernych dier o -30 %.
+
+
+//
+// Ship Inertial techs 
+//
+SHIPNULLIFIER_0_NAME     | Technologická rušička
+SHIPNULLIFIER_0_BRIEF    | Ničí nepriateľské počítače
+SHIPNULLIFIER_0_DETAIL   | Znefunční nepriateľské bojové počítače a ECM rušičky.  Znižuje ich úroveň o 2-6 úrovní na útok. Jeho dosah prevyšuje väčšinu lodných zbraní.
+
+SHIPNULLIFIER_1_NAME     | Rozptyľovač Warpového pola
+SHIPNULLIFIER_1_BRIEF    | Znižuje rýchlosť nepriateľských lodí
+SHIPNULLIFIER_1_DETAIL   | Rozptyľovače warpu sú zbrane dlhého dosahu, ktoré narušujú pohon nepriateľských lodí. Každým útokom znižujú ich celkovú rýchlosť.
+
+
+//
+// Ship Weapon techs 
+//
+SHIPWPN_0_NAME         | Laser
+SHIPWPN_0_ITEM2        | Ťažký laser
+SHIPWPN_0_DETAIL       | Priamo strieľajúca energetická zbraň. Spôsobuje 1 až 4 body poškodenia. Ťažké lasery majú dosah dve polia a spôsobujú 1-7 bodov poškodenia.
+
+SHIPWPN_1_NAME         | Guľometný laser
+SHIPWPN_1_BRIEF        | Strieľa 4-krát/ťah
+SHIPWPN_1_DETAIL       | Pokročilá verzia laseru, ktorý vystrelí až štyrikrát za ťah a pri každom zásahu spôsobí poškodenie za 1 až 4 body.
+
+SHIPWPN_2_NAME         | Delo na neutrónové broky
+SHIPWPN_2_BRIEF        | Znižuje úroveň štítu
+SHIPWPN_2_DETAIL       | Zbraň strieľajúca prúd častíc, ktoré znižujú účinnosť nepriateľských štítov na polovicu. Spôsobuje 2 až 5 bodov poškodenia.
+
+SHIPWPN_3_NAME         | Iónové delo
+SHIPWPN_3_ITEM2        | Ťažké iónové delo
+SHIPWPN_3_DETAIL       | Vysoko intenzívne energetické zbrane schopné spôsobiť 3-8 bodov poškodenia. Ťažké iónové delá zasahujú za 3-15 bodov a majú dosah dve polia.
+
+SHIPWPN_4_NAME         | Elektromagnetický katapult
+SHIPWPN_4_BRIEF        | Znižuje efektivitu štítu na polovicu
+SHIPWPN_4_DETAIL       | Lineárny urýchľovač, ktorý znižuje účinnosť nepriateľských  štítov na polovicu. Spôsobuje 5-8 bodov poškodenia.
+
+SHIPWPN_5_NAME         | Neutrónový lúčomet
+SHIPWPN_5_ITEM2        | Ťažký neutrónový lúčomet
+SHIPWPN_5_DETAIL       | Vysoko výkonné energetické zbrane schopné spôsobiť 3-12 bodov poškodenia. Ťažké neutrónové blastery spôsobujú 3-24 bodov a majú dosah 2 polia.
+
+SHIPWPN_6_NAME         | Gravitónový lúč
+SHIPWPN_6_BRIEF        | Útok prúdom častíc
+SHIPWPN_6_DETAIL       | Vlečný pulzný lúč je schopný roztrhať lode na kusy. Zasiahne za 1-15 bodov poškodenia a efekt nepretržitého prúdu umožňuje preniesť poškodenie na okolité lode.
+
+SHIPWPN_7_NAME         | Tvrdý lúč
+SHIPWPN_7_BRIEF        | Znižuje silu štítu na polovicu
+SHIPWPN_7_DETAIL       | Zbraň založená na princípe tranformácie energie na hmotu, ktorá znižuje účinnosť nepriateľských štítov na polovicu. Spôsobuje 8-12 bodov poškodenia.
+
+SHIPWPN_8_NAME         | Fúzny lúč
+SHIPWPN_8_ITEM2        | Ťažký fúzny lúč
+SHIPWPN_8_DETAIL       | Vysoko intenzívna energetická zbraň schopná spôsobiť 4-16 bodov poškodenia. Ťažké fúzne lúče spôsobujú 4-30 bodov a majú dosah 2 polia.
+
+SHIPWPN_9_NAME         | Bleskový kanón
+SHIPWPN_9_BRIEF        | +3 úrovne k zásahu
+SHIPWPN_9_DETAIL       | Vystreľuje viacero bleskov čistej energie, ktoré majú široký záber. Má +30% bonusovú šancu na zásah a spôsobuje 2-20 bodov poškodenia.
+
+SHIPWPN_10_NAME        | Fázer
+SHIPWPN_10_ITEM2       | Ťažký fázer
+SHIPWPN_10_DETAIL      | Fázové energetické lúče dokážu spôsobiť 5 až 20 bodov poškodenia. Ťažké fázové lúče spôsobujú 5 až 40 bodov poškodenia a majú dosah dve polia. 
+
+SHIPWPN_11_NAME        | Lúčomet
+SHIPWPN_11_BRIEF       | Strieľa 3-krát za ťah
+SHIPWPN_11_DETAIL      | Pokročilý neutrónový lúčomet, ktorý vystrelí trikrát za ťah s poškodením 4-16 bodov na zásah.
+
+SHIPWPN_12_NAME        | Tachyónový lúč
+SHIPWPN_12_BRIEF       | Útok prúdom častíc
+SHIPWPN_12_DETAIL      | Vystreľuje intenzívny prúd tachyónových častíc, ktoré zasiahnu nepriateľské lode a spôsobia 1-25 bodov poškodenia. Efekt nepretržitého prúdu umožňuje, aby sa nadmerné poškodenie prenieslo na okolité lode.
+
+SHIPWPN_13_NAME        | Gaussovo automatické delo
+SHIPWPN_13_BRIEF       | 1/2 štíty, 4x strely
+SHIPWPN_13_DETAIL      | Pokročilý lineárny urýchľovač schopný vystreliť 4 výbušné strely za ťah, z ktorých každá dokáže spôsobiť 7 až 10 bodov poškodenia. Strely znižujú účinnosť nepriateľských štítov na polovicu.
+
+SHIPWPN_14_NAME        | Lúč častíc
+SHIPWPN_14_BRIEF       | Znižuje silu štítu na polovicu
+SHIPWPN_14_DETAIL      | Vysoko intenzívne urýchľovače častíc schopné zasiahnuť nepriateľské lode s poškodením 10-20 bodov a znížiť účinnosť štítov na polovicu.
+
+SHIPWPN_15_NAME        | Plazmové delo
+SHIPWPN_15_DETAIL      | Vystreľuje intenzívne energetické blesky, ktoré spôsobujú 6-30 bodov poškodenia.
+
+SHIPWPN_16_NAME        | Lúč smrti
+SHIPWPN_16_DETAIL      | Starobylá zbraň s neuveriteľne ničivou silou, ktorá spôsobuje 200-1000 bodov poškodenia a má dosah jedného poľa.
+
+SHIPWPN_17_NAME        | Dizruptor
+SHIPWPN_17_DETAIL      | Vypúšťa silné blesky čistej energie, ktoré môžu zasiahnuť nepriateľské ciele vzdialené až dve polia a spôsobiť im 10-40 bodov poškodenia.
+
+SHIPWPN_18_NAME        | Pulzný fázer
+SHIPWPN_18_BRIEF       | Vystrelí 3-krát za ťah
+SHIPWPN_18_DETAIL      | Pokročilý fázer schopný vystreliť 3 strely za ťah s poškodením 5-20 bodov pri každom zásahu.
+
+SHIPWPN_19_NAME        | Plazmové trojdelo
+SHIPWPN_19_DETAIL      | Vystreľuje trojicu vysoko intenzívnych plazmových lúčov schopných spôsobiť 20 až 50 bodov poškodenia.
+
+SHIPWPN_20_NAME        | Stelárny konvertor
+SHIPWPN_20_BRIEF       | Zasahuje všetky štyri štíty
+SHIPWPN_20_DETAIL      | Obklopí cieľ extrémne silným poľom premeny hmoty na energiu a spôsobí štyri útoky s hodnotou 10 až 35 bodov. Má dosah 3 polia.
+
+SHIPWPN_21_NAME        | Drvič
+SHIPWPN_21_DETAIL      | Vypustí obrovské množstvo sústredenej energie na nepriateľské ciele a spôsobí im 20-100 bodov poškodenia.
+
+SHIPWPN_22_NAME        | Amébin prúd
+SHIPWPN_22_DETAIL      | Prúd, ktorý spôsobuje 250-1000 bodov poškodenia a má dosah 3 polia. Efekt nepretržitého prúdu umožňuje prenášať poškodenie z jednej lode na druhú.
+
+SHIPWPN_23_NAME        | Kryštálový lúč
+SHIPWPN_23_DETAIL      | Lúč, ktorý obklopí štíty cieľa a spôsobí 4 útoky, každý s poškodením 100-300 bodov. Má dosah 3 polia.
+
+
+//
+// Soil Enrichment techs
+//
+SOILENRICH_0_NAME     | Obohatenie pôdy
+SOILENRICH_0_DETAIL   | Premení štandardné planéty na úrodné. Za jednorazový  poplatok 150 BC sa rast populácie zvýši o 50% a obývateľný priestor planéty o +25%.
+
+SOILENRICH_1_NAME     | Pokročilé obohatenie pôdy
+SOILENRICH_1_DETAIL   | Premení štandardné a úrodné planéty na raj. Za jednorazový  poplatok 300 BC zdvojnásobí rast populácie a zvýši obývateľný priestor planéty o +50%.
+
+
+//
+// Stargate tech
+//
+STARGATE_0_NAME      | Medzigalaktické hviezdne brány
+STARGATE_0_DETAIL    | Umožňuje vašim lodiam pohybovať sa medzi ľubovoľnými dvoma planétami vybavenými hviezdnymi bránami za jeden ťah. Náklady na vybudovanie 3000 BC.
+
+
+//
+// Stasis Field tech
+//
+STASIS_0_NAME      | Stázové pole
+STASIS_0_BRIEF     | Nepriateľ je na 1 ťah zmrazený 
+STASIS_0_DETAIL    | Zmrazí jednu skupinu nepriateľských lodí vzdialených maximálne jedno pole na jeden ťah. Zmrazené lode nemôžu útočiť ani byť napadnuté.
+
+
+//
+// Stream Weapon techs
+//
+STREAMWPN_0_NAME    | Projektor iónového prúdu
+STREAMWPN_0_BRIEF   | Znižuje pancier nepriateľa o 20%.
+STREAMWPN_0_DETAIL  | Vystrelí intenzívny prúd iontov, ktorý zníži úroveň panciera každej lode v cieľovej skupine o 20-50% zásahových bodov.
+
+STREAMWPN_1_NAME    | Projektor neutrónového prúdu
+STREAMWPN_1_BRIEF   | Znižuje pancier nepriateľa o 40%
+STREAMWPN_1_DETAIL  | Vystrelí prúd koncentrovaných neutrín, ktorý zníži úroveň panciera každej lode v cieľove skupine o 40-75% zásahových bodov.
+
+
+//
+// Subspace Interdictor tech
+//
+SUBSPACEINT_0_NAME    | Podpriestorová rušička
+SUBSPACEINT_0_DETAIL  | Zabraňuje používaniu nepriateľských podpriestorových teleportov a bojových transportérov. Zariadenie sa automaticky inštaluje na raketové základne.
+
+
+//
+// Subspace Teleporter tech
+//
+SUBSPACETEL_0_NAME    | Podpriestorový teleport
+SUBSPACETEL_0_BRIEF   | Teleportuje loď v boji
+SUBSPACETEL_0_DETAIL  | Teleportuje lode do ľubovoľného priestoru na bojovej mape a pred normálnym určením bojovej iniciatívy.
+
+
+//
+// Ship Torpedo Weapon techs
+//
+TORPEDO_0_NAME        | Torpéda s antihmotou
+TORPEDO_0_BRIEF       | Vystrelí raz za 2 ťahy
+TORPEDO_0_DETAIL      | Vysoko výbušné navadzané torpéda, ktoré spôsobujú poškodenie za 30-bodov. Môžu byť vystrelené len každý druhý ťah. Každé torpédo je vybavené zameriavacím počítačom úrovne +4.
+
+TORPEDO_1_NAME        | Torpéda Hellfire
+TORPEDO_1_BRIEF       | Zasahuje všetky štyri štíty
+TORPEDO_1_DETAIL      | Obalové energetické torpéda, ktoré naraz zasiahnu všetky štíty. Pohybujú sa rýchlosťou 5, sú riadené zameriavacím počítačom úrovne +6 a spôsobujú poškodenie rovnajúce sa štyrom 25-bodovým útokom.
+
+TORPEDO_2_NAME        | Protónové torpéda
+TORPEDO_2_BRIEF       | Vystrelí raz za 2 ťahy
+TORPEDO_2_DETAIL      | Energetické torpéda s vysokým výkonom, ktoré spôsobujú 75 bodov poškodenia. Môžu byť vystrelené len každý druhý ťah. Každé torpédo je vybavené zameriavacím počítačom úrovne +6.
+
+TORPEDO_3_NAME        | Plazmové torpéda
+TORPEDO_3_BRIEF       | Stráca 15 bodov poškodenia/pole
+TORPEDO_3_DETAIL      | Torpéda z čistej energie, ktoré spôsobujú poškodenia za 150 bodov. Pohybujú sa rýchlosťou 6, ale strácajú 15 bodov poškodenia za každé prejdené pole. Odpaľovacie zariadenie strieľa každý druhý ťah a má navádzanie úrovne 7.
+

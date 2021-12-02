@@ -1,0 +1,83 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Darlok specific dialogue
+
+CONTACT_AGGRESSIVE         | Pozdravujeme vás dnes, svojrázny občan vesmírnej prázdnoty. Zároveň vás varujeme: nebráňte nám v prieskume, inak možno budete ľutovať, že ste nás stretli.
+CONTACT_RUTHLESS           | Pozdravujeme vás, obyvatelia cudzieho priestoru. Bolo by najlepšie, keby ste urobili všetko, čo je vo vašich silách, aby naše spolužitie bolo... Obojstranne výhodné.
+CONTACT_ERRATIC            | Náhodné stretnutie v mori hviezd. V tejto nebeskej priepasti sa majte na pozore pred temnotou, pretože sa v nej skrýva mnoho neviditeľných vecí...
+//
+GREETING_01                | Dokázali ste, že nám v našej veci viete byť nápomocní. Urobíme, čo bude v našich silách, aby sme vám pomohli v tej vašej.
+GREETING_04                | Hovorte!
+GREETING_07                | Ani neviete, akú drzosť prejavujete, keď nás žiadate o pomoc. Považujeme to takmer za zábavné.
+//
+DECLAREWAR_HATE_01         | V snahe dosiahnuť náš konečný cieľ musíme tolerovať veľa. Sme vďační, že vašu prítomnosť už tolerovať nemusíme.
+DECLAREWAR_HATE_02         | Vy nenapraviteľní úbožiaci! Už nebudeme trpieť vašu hlúposť! Či už sú vaše vojská pripravené alebo nie, čaká vás váš koniec!
+DECLAREWAR_HATE_03         | Zlosini! Nemá zmysel, aby sa naša rasa delila o túto galaxiu s vaším druhom. Pripravte sa nato, že vás odtiaľto vyženieme, aj keby sme mali do jedného padnúť.
+DECLAREWAR_ERRATIC_01      | Naši ľudia často hovoria, že nôž na bojisku zabíja rovnako ľahko ako nôž v tme. Váš druh čoskoro zistí, čo to znamená.
+DECLAREWAR_ERRATIC_02      | Pozerali ste sa niekedy na hviezdy a želali ste vedieť, čo sa skrýva v tme za ich svetlom? Dávate si pozor na to, čo si želáte, mohlo by sa vám to splniť.
+DECLAREWAR_ERRATIC_03      | V časoch veľkej neistoty sa môže stať, že aj tie najnenápadnejšie bytosti dokážu zasadiť smrtiaci úder.
+DECLAREWAR_MILITARY_01     | Stále sme nenašli to, po čom najviac túžime, a tak si od vás vezmeme miesta, ktoré naše oči ešte nevideli. Vzdajte sa svojich svetov alebo padnite pri ich obrane.
+DECLAREWAR_MILITARY_02     | Existuje možnosť, že odpovede, ktoré hľadáme, sa skrývajú na niektorej planéte vo vašej ríši. Preto si ich všetky vezmeme. Vedzte, že v tom nie je nič osobné, [vaša_race_plural. Zúfalé časy si vyžadujú zúfalé činy.
+DECLAREWAR_MILITARY_03     | Ak nedokážeme nájsť riešenie našej záhady, nemá zmysel, aby naša existencia pokračovala! Ak sa odpoveď nachádza na jednom z vašich svetov, urobíme všetko preto, aby sme ju získali!
+DECLAREWAR_ALLIANCE_01     | Hlupáci! Z nášho spojenca si urobiť nepriateľa. Tým ste si urobili nepriateľa i z nás! Rýchlo vás zlikvidujeme: nemáme čas zdržiavať sa vašimi omylmi a hlúposťami!
+DECLAREWAR_ALLIANCE_02     | Málokedy sa miešame do záležitostí iných. Keď nás však spojenec, ktorý nám pomohol v hodine temnej požiada o pomoc, urobíme čo je v našich silách, aby sme mu pomohli.
+DECLAREWAR_ALLIANCE_03     | S potešením sledujeme, ako vaše ríše bojujú medzi sebou. Vieme, akú hrozbu pre nás predstavujete, a preto radi pomôžeme [defender_race_dativ	] vás odstrániť.
+DECLAREWAR_SPYING_01       | Pobavili ste nás! Takéto chabé pokusy o špionáž voči nám, majstrom v špehovaní? Trest za váš neúspech vás však neminie.
+DECLAREWAR_SPYING_02       | Je odvážne, že sa nás pokúšate prekonať v oblasti špionáže. Som zvedavý, ako sa vaša odvaha prejaví, keď použijeme vojenskú silu.
+DECLAREWAR_SPYING_03       | Vy ste vážne verili tomu, že vaši neohrabaní špióni uniknú nášmu ostražitému pohľadu? Ak ste tak arogantný, že ste si to mysleli, tak ste asi i dosť arogantný postaviť sa nám v boji.
+DECLAREWAR_ATTACK_01       | Bezočivosť! Takýto útok bez akejkoľvek provokácie môže znamenať len to, že si želáte, aby sme vás úplne vyhladili!
+DECLAREWAR_ATTACK_02       | Neznesiteľní hulváti! Čoskoro zistíme či vaše sebavedomie získané po útoku proti nám, sprevádza aj primeraná sila!
+DECLAREWAR_ATTACK_03       | Pliaga jedna! Zloduchovia! Nepoddáme sa vám ani nikomu inému, kým sa neskončí naše veledielo! Pripravte sa na našu odplatu!
+DECLAREWAR_OPPORTUNITY_01  | Politika je iba hra o príležitostiach. Zistili sme, že víťazom sa stáva ten, kto najviac využije príležitosti, ktoré sa mu naskytnú. Tak to bolo v minulosti a platí to tak i dnes.
+DECLAREWAR_ASSASSIN_01     | Je nehorázne, že vedome zlikvidujete veľvyslanca, ktorý k vám prichádza neozbrojený! Vezmeme si vaše tajomstvá pre seba a vaše telá rozptýlime ako popol na slnečných vánkoch!
+
+OFFER_PEACE_01             | Nebolo snáď už toho zabíjania na jedného vojnového veľvyslanca dosť? Ani jeden z našich národov si určite nemôže dovoliť takto nezmyselne plytvať životom. Navrhujeme okamžité ukončenie tohto konfliktu v záujme budúcnosti nás oboch.
+OFFER_TRADE_01             | Hoci priamy prístup môže byť niekedy najlepší, nie je jediným spôsobom, ako ríša môže dosiahnuť svoje ciele. Existuje i čas na obchodovanie v dobrej viere a my veríme, že ten čas je teraz. Začneme s... [amt] BC ročne? 
+OFFER_PACT_01              | Tento nekonečný priestor skrýva neznáme nebezpečenstvá pre tých, ktorý sa ho rozhodnú skúmať. Nepridávajme k nim ďalšie nebezpečia, pokiaľ to nie je nevyhnutné. Pakt o neútočení medzi našimi národmi zníži riziká pri našej i vašej expanzii po celej galaxii. 
+OFFER_ALLIANCE_01          | Sú bytosti, ktoré sa na nás pozerajú a dovolia, aby im ich strach zatemnil úsudok. Neveríme, že medzi nich patríte aj vy. Uzatvorme spojenectvo medzi [my_race_instrumental] a [your_race_instrumental]. Využime strach ostatných ako výhodu pre naše ríše. 
+
+WARN_TRESPASSING_01        | Naozaj si teraz neželáme viesť proti vám vojnu. Vašu prítomnosť v systéme [system] je však ťažké interpretovať inak ako neoprávnené vniknutie. Okamžite odíďte a preukážte, že naše obavy sú neopodstatnené. 
+WARN_EXPANSION_01          | Nie sme slepí k potrebám, ktoré rozširovanie územia napĺňa. Ale ani sa nebudeme iba nečinne prizerať a necháme vás, aby ste si ukradli každý jeden svet pre seba. Varujeme vás, veľvyslanec. 
+WARN_BUILDUP_01            | Máte v úmysle použiť takúto mocnú flotilu, aby sa ľudia okolo vás podriadili strachu? Vedzte, že ak sa budete naďalej chváliť takou vojenskou silou, reakcie ostatných ríš môžu byť menej... ústretové, než ste dúfali. 
+WARN_SKIRMISH_01           | Čo nám poviete o potýčke v systéme [system]? Pre vaše dobro dúfame, že ste si nás pomýlili s niekým iným. V opačnom prípade môžu byť následky hrozivé. Vskutku veľmi hrozné.
+WARN_ATTACKED_01           | Odvažujete sa zaútočiť na našich ľudí, pán veľvyslanec?! Počítajte so šťastím, že naša pozornosť nateraz leží inde: nabudúce vaša opovážlivosť nezostane bez odozvy! 
+WARN_INVADED_01            | Vstúpite do nášho priestoru, akoby bol váš. Hráte odvážnu, ale nebezpečnú hru. Váš príchod sme predvídali a tento ťah vám nateraz prenecháme bez povšimnutia...   
+WARN_ESPIONAGE_01          | Váš neohrabaný pokus o špionáž nás veľmi pobavil. Tentoraz vám dovolíme, aby sa k vám váš špión vrátil, ale vedzte, že opakovaný vtip prestáva byť vtipom. [framed]
+WARN_SABOTAGE_01           | Takže [spy_race_plural] sa rozhodli pre sabotáž? Vaša snaha bola príliš bezvýznamná na to, aby si vynútila našu odvetu. Ale ak sa o to pokúsite znovu, tak s vami budeme zaobchádzať ako so škodcom! [forced]
+WARN_BIOWEAPON_01          | Škaredá vec, tá zbraň. Ešte škaredšia je tá ríša, ktorá sa ju rozhodne použiť na bezbranných civilistoch. Ich výkriky bolesti sa budú ozývať vesmírom po celé stáročia a my sa pridáme, keď sa bude preklínať vaše podlé meno.
+WARN_GENOCIDE_01           | Hrozba genocídy nie je môjmu ľudu neznáma, ale vidieť ju tak ľahkovážne zrealizovanú... Znechucujete nás spôsobom, ktorý nepozná hraníc, veľvyslanec. 
+WARN_FINAL_WAR_01          | Keď v galaxii konečne nastane mier, všetci nájdu to po čom ich srdcia túžia. Ak tento mier ohrozujete, ohrozujete náš konečný cieľ. Urobíme všetko, čo je v našich silách, aby jediné čo po vás ostane, je poznámka v kronike tejto galaxie. 
+WARN_COUNCIL_VOTE_01       | Niežeby sme si nevážili jemné politické úskoky, ale dotýka sa nás, keď tieto úskoky pôsobia proti nám. Postupujte opatrne, pán veľvyslanec: možno v blízkej budúcnosti sa váš priestor na úskoky významne zúži.
+WARN_OATHBREAKER_01        | Bezočiví zbabelci! Žiaľ, že náš ľud musí znášať nedôveru úplne celej galaxie. Ste to však vy, kto svojím správaním dokazuje, že si zaslúžite takúto nedôveru! [spiesCaught]
+WARN_ATTACKED_ALLY_01      | Varujeme vás len raz, pán veľvyslanec. Zastavte svoju agresiu voči [defender_race_dativ]: oni stoja pri nás a my stojíme pri nich.
+WARN_REBELLING_AGAINST_01  | Opovažujete sa uzurpovať si najvyššie miesto v rade. To miesto patrí po práve nám! Váš ľud bude ešte tento deň ľutovať, veľvyslanec.
+//
+PRAISE_COUNCIL_VOTE_01     | Náš cieľ si vyžaduje veľa energie, veľvyslanec a sme nesmierne vďační, že sa môžeme spoľahnúť na hlas [voter_race_akuzativ] v rade. Buďte si istí, že na to nezabudneme, keď nás jedného dňa budete potrebovať.
+PRAISE_COUNCIL_VOTE_02     | Pán veľvyslanec, ďakujeme za prejavenú dôveru. Vedzte, že si pamätáme tých, ktorí nám pomáhajú dosiahnuť náš konečný cieľ. 
+PRAISE_COUNCIL_VOTE_03     | Samozrejme, že vaši ľudia majú postranné úmysly, keď nám vyjadrujú podporu. Stále sme voči vám i vám podobným veľmi ostražití, ale napriek tomu vám ďakujeme.  
+
+PRAISE_ATTACKED_ENEMY_01   | Vedeli sme, že nám v tejto vojne pomôžete, pán veľvyslanec! S naším spoločným odhodlaním sa [defender_race_plural] voči nám dlho neubránia! 
+PRAISE_ATTACKED_ENEMY_02   | Je dobré vidieť, že sa do boja proti opovrhovanej ríše [defender_race_akuzativ] pridávajú aj iní. Spoločne ich rýchlo zničme, aby sme mohli sa mohli sústrediť na oveľa dôležitejšie ciele.
+PRAISE_ATTACKED_ENEMY_03   | Ak si chcete získať úctu nášho ľudu, vedzte, že táto úloha je pre vás takmer nemožná. Ale útok na [defender_race_akuzativ] je krok správnym smerom.
+
+PRAISE_TRADE_01            | Nie je úžasné ako tak jednoduchá vec, akou je obchod, môže otvoriť toľko dverí pre obe zúčastnené strany? Naši ľudia sú naozaj veľmi spokojní a dúfame, že aj vaši. 
+PRAISE_TRADE_02            | Náš súčasný obchod je pre oba naše národy prínosom. Dúfame, pán veľvyslanec, že aj naďalej sa môžme v tomto ohľade spoliehať jeden na druhého. 
+
+PRAISE_REBELLING_WITH_01   | Hlupáci v rade sa rozhodli nesprávne, ale to sme očakávali. Ste v práve, keď ste sa rozhodli postaviť ich voľbe. A my sa stojíme pri vás.
+
+ACCEPT_TRADE_01            | Touto obchodnou dohodou nám výrazne pomôžete pri hľadaní nášho cieľa. [amt] BC ročne nám pomôže viac, než si myslíte.
+RESPOND_IGNORE_THREAT_01   | Dávajte si pozor, komu sa vyhrážate. Naša odpoveď sa obvykle skrýva v tieni a nemusela by sa vám veľmi páčiť.
+RESPOND_STOP_SPYING_01     | Vy ste zajali jedného z našich špiónov? Ako to... Na tom nezáleží, vráťte nám ho a my ukončíme našu činnosť.
+RESPOND_STOP_ATTACKING_01  | Nateraz stiahneme naše flotily, ale pamätajte, že najnebezpečnejšia sila je tá, ktorá nie je vidieť.
