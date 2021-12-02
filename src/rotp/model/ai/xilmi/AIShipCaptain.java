@@ -826,7 +826,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             damagePerTurn -= healPerTurn;
             //System.out.print("\n"+stack.mgr.system().name()+" "+st1.fullName()+" takes "+damagePerTurn+" damage per turn with heal. heal per turn: "+healPerTurn);
             if(damagePerTurn > 0)
-                allyKillTime += pctOfMaxHP / damagePerTurn;
+                allyKillTime += pctOfMaxHP / min(damagePerTurn, 1.0f);
             else
             {
                 allyKillTime = Float.MAX_VALUE;
@@ -860,7 +860,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
             damagePerTurn -= healPerTurn;
             //System.out.print("\n"+stack.mgr.system().name()+" "+st1.fullName()+" takes "+damagePerTurn+" damage per turn with heal. heal per turn: "+healPerTurn);
             if(damagePerTurn > 0)
-                enemyKillTime += pctOfMaxHP / damagePerTurn;
+                enemyKillTime += pctOfMaxHP / min(damagePerTurn, 1.0f);
             else
             {
                 if(st1.isColony())
@@ -874,7 +874,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         if(invulnerableFriend != null && invulnerableFriend != stack)
             return true;
         
-        //System.out.print("\n"+stack.mgr.system().name()+" "+stack.fullName()+" allyKillTime: "+allyKillTime+" enemyKillTime: "+enemyKillTime);
+        System.out.print("\n"+stack.mgr.system().name()+" "+stack.fullName()+" allyKillTime: "+allyKillTime+" enemyKillTime: "+enemyKillTime);
         if (enemyKillTime == allyKillTime)
             return false;
         else {

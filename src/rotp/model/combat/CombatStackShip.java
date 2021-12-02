@@ -459,7 +459,7 @@ public class CombatStackShip extends CombatStack {
                 kills += hitPct * comp.estimatedKills(this, target, weaponCount[i] * num);
             }
         }
-        return min(1.0f, kills);
+        return kills;
     }
     @Override
     public boolean currentWeaponCanAttack(CombatStack target) {
