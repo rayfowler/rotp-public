@@ -874,7 +874,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         if(invulnerableFriend != null && invulnerableFriend != stack)
             return true;
         
-        System.out.print("\n"+stack.mgr.system().name()+" "+stack.fullName()+" allyKillTime: "+allyKillTime+" enemyKillTime: "+enemyKillTime);
+        //System.out.print("\n"+stack.mgr.system().name()+" "+stack.fullName()+" allyKillTime: "+allyKillTime+" enemyKillTime: "+enemyKillTime);
         if (enemyKillTime == allyKillTime)
             return false;
         else {
