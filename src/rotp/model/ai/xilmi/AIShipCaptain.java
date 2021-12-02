@@ -361,7 +361,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 if(target.isColony() && target.num == 0)
                 {
                     for (int i=0;i<stack.numWeapons(); i++) {
-                        if(!stack.weapon(i).groundAttacksOnly() && !stack.shipComponentIsUsed(i))
+                        if(!stack.weapon(i).groundAttacksOnly() && !stack.shipComponentIsUsed(i) && !stack.weapon(i).isSpecial())
                         {
                             killPct = 0;
                             break;
