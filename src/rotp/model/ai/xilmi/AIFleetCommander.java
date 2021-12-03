@@ -628,7 +628,9 @@ public class AIFleetCommander implements Base, FleetCommander {
                 ShipFleet fleet = empire.sv.orbitingFleet(fp.destId);
                 if (fleet != null) {
                     StarSystem dest = galaxy().system(fp.destId);
-                    StarSystem safeSystem = empire.ai().shipCaptain().retreatSystem(dest);
+                    StarSystem safeSystem = RetreatSystem(fleet);
+                    if(safeSystem == null)
+                        safeSystem = empire.shipCaptainAI().retreatSystem(dest);
                     log("Withdrawing fleet: ", fleet.toString(), " from: ", str(fp.destId), "  to: ", safeSystem.toString());
                     galaxy().ships.retreatFleet(fleet, safeSystem.id);
                 }
@@ -764,6 +766,16 @@ public class AIFleetCommander implements Base, FleetCommander {
             {
                 if(fleet.retreatOnArrival() && empire.enemies().contains(fleet.destination().empire()))
                     fleet.toggleRetreatOnArrival();
+            }
+            //Improve retreat-target for retreating fleets that are still at the system they retreat from
+            //this cannot be done from ship-captain as at that point it isn't known how big the retreating fleet will become when it retreats partially
+            if(fleet.retreating() && fleet.system() != null && fleet.distanceTo(fleet.system()) == 0)
+            {
+                if(RetreatSystem(fleet) != null)
+                {
+                    //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" fleet at "+fleet.system().name()+" rerouted from "+fleet.destination().name()+" to "+RetreatSystem(fleet).name());
+                    attackWithFleet(fleet, RetreatSystem(fleet), 1.0f, 1.0f, true, true, true, true, 0, true);
+                }
             }
             if(!fleet.canSend() || fleet.deployed() || fleet.retreating())
             {
@@ -1314,5 +1326,21 @@ public class AIFleetCommander implements Base, FleetCommander {
             case 9: default:
                 return 1;
         }
+    }
+    public StarSystem RetreatSystem(ShipFleet fl) {
+        float shortestDistance = Float.MAX_VALUE;
+        StarSystem best = null;
+        for(StarSystem sys : empire.allColonizedSystems())
+        {
+            UpdateSystemInfo(sys.id);
+            if(systemInfoBuffer.get(sys.id).enemyFightingBc > bcValue(fl, false, true, false, false) + systemInfoBuffer.get(sys.id).myFightingBc)
+                continue;
+            if(fl.distanceTo(sys) < shortestDistance)
+            {
+                shortestDistance = fl.distanceTo(sys);
+                best = sys;
+            }
+        }
+        return best;
     }
 }

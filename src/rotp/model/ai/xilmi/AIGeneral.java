@@ -733,7 +733,7 @@ public class AIGeneral implements Base, General {
                 continue;
             if(empire.tech().topSpeed() < empire.viewForEmpire(emp).spies().tech().topSpeed())
                 continue;
-            float currentScore = totalEmpirePopulationCapacity(emp) / emp.militaryPowerLevel() * (fleetCenter(emp).distanceTo(colonyCenter(empire)) / fleetCenter(empire).distanceTo(colonyCenter(emp)));
+            float currentScore = totalEmpirePopulationCapacity(emp) / (fleetCenter(empire).distanceTo(colonyCenter(emp)) + colonyCenter(empire).distanceTo(colonyCenter(emp)));
             if(UserPreferences.xilmiRoleplayMode() && empire.leader().isHonorable())
             {
                 if(!emp.atWar())

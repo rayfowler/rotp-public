@@ -361,7 +361,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 if(target.isColony() && target.num == 0)
                 {
                     for (int i=0;i<stack.numWeapons(); i++) {
-                        if(!stack.weapon(i).groundAttacksOnly() && !stack.shipComponentIsUsed(i))
+                        if(!stack.weapon(i).groundAttacksOnly() && !stack.shipComponentIsUsed(i) && !stack.weapon(i).isSpecial())
                         {
                             killPct = 0;
                             break;
@@ -592,20 +592,26 @@ public class AIShipCaptain implements Base, ShipCaptain {
         if(galaxy().shipCombat().results().damageSustained(st.empire) > 0
                 || galaxy().shipCombat().results().damageSustained(tgt.empire) > 0)
             shallGoForFirstStrike = false;
-        boolean enemiesBesidesTarget = false;
-        boolean friendsBesidesMe = false;
-        for(CombatStack cst : galaxy().shipCombat().activeStacks())
+        boolean enemyCanAttackAnythingFromMe = false;
+        for(CombatStack enemy : galaxy().shipCombat().activeStacks())
         {
-            if(cst.hits < cst.maxHits)
+            if(enemy.empire != empire)
+                continue;
+            for(CombatStack mine : galaxy().shipCombat().activeStacks())
             {
-                shallGoForFirstStrike = false;
+                if(mine.empire != empire)
+                    continue;
+                if(enemy.isArmed())
+                {
+                    if(enemy.maxFiringRange(mine) + enemy.maxMove <= enemy.distanceTo(mine.x(), mine.y()))
+                    {
+                        enemyCanAttackAnythingFromMe = true;
+                        break;
+                    }
+                }
             }
-            if(cst.empire == tgt.empire && cst != tgt && cst.isArmed())
-                enemiesBesidesTarget = true;
-            if(cst.empire == st.empire && cst != st && cst.isArmed())
-                friendsBesidesMe = true;
         }
-        if(!enemiesBesidesTarget && !friendsBesidesMe)
+        if(!enemyCanAttackAnythingFromMe)
             shallGoForFirstStrike = true;
         if(st.maxMove <= tgt.maxMove)
             shallGoForFirstStrike = false;
@@ -744,12 +750,17 @@ public class AIShipCaptain implements Base, ShipCaptain {
 
         // don't retreat if all enemies can only target planets
         boolean canBeTargeted = false;
+        boolean canTarget = false;
         for (CombatStack st: activeStacks) {
             if (st.canPotentiallyAttack(currStack))
                 canBeTargeted = true;
+            if(currStack.canPotentiallyAttack(st))
+                canTarget = true;
         }
         if (!canBeTargeted)
             return false;
+        if(!canTarget)
+            return true;
         
         if (facingOverwhelmingForce(currStack)) {
             log(currStack.toString()+" retreating from overwhelming force");
@@ -813,9 +824,9 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 healPerTurn = ship.designShipRepairPct() / st1.num;
             }
             damagePerTurn -= healPerTurn;
-            //System.out.print("\n"+stack.mgr.system().name()+" "+st1.fullName()+" takes "+damagePerTurn+" damage per turn.");
+            //System.out.print("\n"+stack.mgr.system().name()+" "+st1.fullName()+" takes "+damagePerTurn+" damage per turn with heal. heal per turn: "+healPerTurn);
             if(damagePerTurn > 0)
-                allyKillTime += pctOfMaxHP / damagePerTurn;
+                allyKillTime += pctOfMaxHP / min(damagePerTurn, 1.0f);
             else
             {
                 allyKillTime = Float.MAX_VALUE;
@@ -847,9 +858,9 @@ public class AIShipCaptain implements Base, ShipCaptain {
                 healPerTurn = ship.designShipRepairPct() / st1.num;
             }
             damagePerTurn -= healPerTurn;
-            //System.out.print("\n"+stack.mgr.system().name()+" "+st1.fullName()+" takes "+damagePerTurn+" damage per turn.");
+            //System.out.print("\n"+stack.mgr.system().name()+" "+st1.fullName()+" takes "+damagePerTurn+" damage per turn with heal. heal per turn: "+healPerTurn);
             if(damagePerTurn > 0)
-                enemyKillTime += pctOfMaxHP / damagePerTurn;
+                enemyKillTime += pctOfMaxHP / min(damagePerTurn, 1.0f);
             else
             {
                 if(st1.isColony())

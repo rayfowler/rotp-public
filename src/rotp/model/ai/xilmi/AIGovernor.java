@@ -235,7 +235,7 @@ public class AIGovernor implements Base, Governor {
         float prodScore = productionScore(col.starSystem());
         float factoriesNeeded = max(0, col.maxUseableFactories() + col.normalPopGrowth() * empire.maxRobotControls() - col.industry().factories());
         float workerGoal = max(0, col.industry().factories() / empire.maxRobotControls() - col.workingPopulation() - col.normalPopGrowth());
-        if(popGrowthROI > workerROI || needToMilitarize)
+        if(popGrowthROI > workerROI && !needToMilitarize)
             workerGoal = col.maxSize() - col.workingPopulation();
         
         workerGoal -= empire.transportsInTransit(col.starSystem());
@@ -253,7 +253,7 @@ public class AIGovernor implements Base, Governor {
         }
         
         //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+col.name()+" popGrowthROI: "+popGrowthROI+" colship-time: "+colShipTime);
-        //System.out.print("\n"+empire.name()+" "+col.name()+" workerROI: "+workerROI+" popGrowthROI: "+popGrowthROI+" factoryROI: "+factoryROI+" prodScore: "+prodScore+" factoriesNeeded: "+factoriesNeeded);
+        //System.out.print("\n"+empire.name()+" "+col.name()+" workerROI: "+workerROI+" popGrowthROI: "+popGrowthROI+" factoryROI: "+factoryROI+" prodScore: "+prodScore+" factoriesNeeded: "+factoriesNeeded+" workergoal: "+workerGoal+" needToMilitarize: "+needToMilitarize);
         //System.out.print("\n"+empire.name()+" "+col.name()+" workerROI: "+workerROI+" popGrowthROI: "+popGrowthROI+" factoryROI: "+factoryROI+" warROI: "+warROI+" techROI: "+techROI);
         
         suggestMissileBaseCount(col);

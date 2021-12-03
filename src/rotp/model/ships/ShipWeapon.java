@@ -50,7 +50,6 @@ public class ShipWeapon extends ShipComponent {
         float shieldLevel = target.shieldLevel();
         //ail: we multiply our damage by the amount of weapons shooting
         float dmg = firepower(shieldLevel) * num;
-		
         // modnar: account for planetDamageMod()
         // correctly calculate damage estimate for attacking colony (in round-about way)
         // beams and torpedoes do half damage against colonies, planetDamageMod() = 0.5f
@@ -65,7 +64,7 @@ public class ShipWeapon extends ShipComponent {
         if (dmg == 0)
             return 0;
         //ail: The only thing that makes sense to return here is our total damage divided by the target's hitpoints
-        return min(dmg/target.maxHits(), target.num);
+        return dmg/target.maxHits();
     }
     @Override
     public float estimatedBombardDamage(CombatStack source, CombatStackColony target) {
