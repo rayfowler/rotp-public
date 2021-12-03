@@ -573,20 +573,65 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                     selectAllSystems();
                 }
                 return;
+            case KeyEvent.VK_Q:
+                selectNormalAndRichWithFullEconomy();
+                if (control) {
+                    multiSpendingPane.selectCat(0);
+                    multiSpendingPane.setSpendingLevel(1);
+                }
+                return;
+            case KeyEvent.VK_Y:
+            case KeyEvent.VK_Z:
+                selectLackingPopulation();
+                if (control) {
+                    multiSpendingPane.selectCat(3);
+                    multiSpendingPane.setSpendingLevel(1);
+                }
+                return;
             case KeyEvent.VK_S:
                 multiSpendingPane.selectCat(0);
+                if(control)
+                    multiSpendingPane.setLock(0, true);
+                else if(shift)
+                    multiSpendingPane.setLock(0, false);
+                else
+                    multiSpendingPane.setSpendingLevel(1);
                 return;
             case KeyEvent.VK_D:
                 multiSpendingPane.selectCat(1);
+                if(control)
+                    multiSpendingPane.setLock(1, true);
+                else if(shift)
+                    multiSpendingPane.setLock(1, false);
+                else
+                    multiSpendingPane.setSpendingLevel(1);
                 return;
-            case KeyEvent.VK_I:
+            case KeyEvent.VK_W:
                 multiSpendingPane.selectCat(2);
+                if(control)
+                    multiSpendingPane.setLock(2, true);
+                else if(shift)
+                    multiSpendingPane.setLock(2, false);
+                else
+                    multiSpendingPane.setSpendingLevel(1);
                 return;
             case KeyEvent.VK_E:
                 multiSpendingPane.selectCat(3);
+                if(control)
+                    multiSpendingPane.setLock(3, true);
+                else if(shift)
+                    multiSpendingPane.setLock(3, false);
+                else
+                    multiSpendingPane.setSpendingLevel(1);
                 return;
-            case KeyEvent.VK_T:
+            case KeyEvent.VK_R:
                 multiSpendingPane.selectCat(4);
+                if(control)
+                    multiSpendingPane.setLock(4, true);
+                else if(shift)
+                    multiSpendingPane.setLock(4, false);
+                else
+                    multiSpendingPane.setSpendingLevel(1);
                 return;
         }
         if (repaint)
@@ -2301,7 +2346,14 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                     player().empireTaxLevel(newLevel);
                     repaint();
                     planetDisplayPane.repaint();
-                }                   
+                } else if(!selectedSystems().isEmpty() && player().totalReserve() > 0) {
+                    softClick();
+                    transferReservePane.targetSystems(selectedSystems());
+                    enableGlassPane(transferReservePane);
+                } else {
+                    misClick();
+                }
+                    
             }
         }
         @Override
