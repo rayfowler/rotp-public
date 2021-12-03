@@ -573,6 +573,21 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                     selectAllSystems();
                 }
                 return;
+            case KeyEvent.VK_S:
+                multiSpendingPane.selectCat(0);
+                return;
+            case KeyEvent.VK_D:
+                multiSpendingPane.selectCat(1);
+                return;
+            case KeyEvent.VK_I:
+                multiSpendingPane.selectCat(2);
+                return;
+            case KeyEvent.VK_E:
+                multiSpendingPane.selectCat(3);
+                return;
+            case KeyEvent.VK_T:
+                multiSpendingPane.selectCat(4);
+                return;
         }
         if (repaint)
             repaint();
@@ -2250,7 +2265,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
                     player().empireTaxLevel(newLevel);
                     repaint();
                     planetDisplayPane.repaint();
-                }
+                }                   
             }
         }
         @Override
