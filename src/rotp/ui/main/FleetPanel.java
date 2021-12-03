@@ -26,6 +26,7 @@ import java.awt.Polygon;
 import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.Stroke;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -609,6 +610,10 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         private final Polygon maxBox[] = new Polygon[ShipDesignLab.MAX_DESIGNS];
         private final Polygon downBox[] = new Polygon[ShipDesignLab.MAX_DESIGNS];
         private final Polygon upBox[] = new Polygon[ShipDesignLab.MAX_DESIGNS];
+        private final Rectangle minBoxH[] = new Rectangle[ShipDesignLab.MAX_DESIGNS];
+        private final Rectangle maxBoxH[] = new Rectangle[ShipDesignLab.MAX_DESIGNS];
+        private final Rectangle downBoxH[] = new Rectangle[ShipDesignLab.MAX_DESIGNS];
+        private final Rectangle upBoxH[] = new Rectangle[ShipDesignLab.MAX_DESIGNS];
         protected Shape textureClip;
 
         public FleetDetailPane(FleetPanel p) {
@@ -622,6 +627,10 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 maxBox[i] = new Polygon();
                 downBox[i] = new Polygon();
                 upBox[i] = new Polygon();
+                minBoxH[i] = new Rectangle();
+                maxBoxH[i] = new Rectangle();
+                downBoxH[i] = new Rectangle();
+                upBoxH[i] = new Rectangle();
             }
             addMouseListener(this);
             addMouseMotionListener(this);
@@ -663,6 +672,10 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 maxBox[i].reset();
                 upBox[i].reset();
                 downBox[i].reset();
+                minBoxH[i].setBounds(0,0,0,0);
+                maxBoxH[i].setBounds(0,0,0,0);
+                upBoxH[i].setBounds(0,0,0,0);
+                downBoxH[i].setBounds(0,0,0,0);
             }
         }
         private void drawInfo(Graphics2D g, ShipFleet displayFl, int x, int y, int w, int h) {
@@ -972,37 +985,41 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 g.setColor(c0);
                 b[0]=y3-s6;  b[1]=y3-s12; b[2]=y3;
                 // draw min box
-                c1 = hoverBox2 == minBox[i] ? SystemPanel.yellowText : SystemPanel.grayText;
+                c1 = hoverBox2 == minBoxH[i] ? SystemPanel.yellowText : SystemPanel.grayText;
                 g.setColor(c1);
                 a[0]=x+s5; a[1]=x+s15; a[2]=x+s15;
                 minBox[i].addPoint(a[0], b[0]);
                 minBox[i].addPoint(a[1], b[1]);
                 minBox[i].addPoint(a[2], b[2]);
                 g.fill(minBox[i]); g.fillRect(a[0], b[1], s2, b[2]-b[1]);
+                minBoxH[i].setBounds(x+s5,y3-s20,s12,s23);
                 // draw left box
-                c1 = hoverBox2 == downBox[i] ? SystemPanel.yellowText : SystemPanel.grayText;
+                c1 = hoverBox2 == downBoxH[i] ? SystemPanel.yellowText : SystemPanel.grayText;
                 g.setColor(c1);
                 a[0]=x+s17; a[1]=x+s27; a[2]=x+s27;
                 downBox[i].addPoint(a[0], b[0]);
                 downBox[i].addPoint(a[1], b[1]);
                 downBox[i].addPoint(a[2], b[2]);
                 g.fill(downBox[i]);
+                downBoxH[i].setBounds(x+s17,y3-s20,s12,s23);
                 // draw max box
-                c1 = hoverBox2 == maxBox[i] ? SystemPanel.yellowText : SystemPanel.grayText;
+                c1 = hoverBox2 == maxBoxH[i] ? SystemPanel.yellowText : SystemPanel.grayText;
                 g.setColor(c1);
                 a[0]=x+w-s5; a[1]=x+w-s15; a[2]=x+w-s15;
                 maxBox[i].addPoint(a[0], b[0]);
                 maxBox[i].addPoint(a[1], b[1]);
                 maxBox[i].addPoint(a[2], b[2]);
                 g.fill(maxBox[i]); g.fillRect(a[0]-s2, b[1], s2, b[2]-b[1]);
+                maxBoxH[i].setBounds(x+w-s15,y3-s20,s12,s23);
                 // draw up box
-                c1 = hoverBox2 == upBox[i] ? SystemPanel.yellowText : SystemPanel.grayText;
+                c1 = hoverBox2 == upBoxH[i] ? SystemPanel.yellowText : SystemPanel.grayText;
                 g.setColor(c1);
                 a[0]=x+w-s17; a[1]=x+w-s27; a[2]=x+w-s27;
                 upBox[i].addPoint(a[0], b[0]);
                 upBox[i].addPoint(a[1], b[1]);
                 upBox[i].addPoint(a[2], b[2]);
                 g.fill(upBox[i]);
+                upBoxH[i].setBounds(x+w-s27,y3-s20,s12,s23);
             }
 
             // draw ship count
@@ -1079,14 +1096,14 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                     hoverBox = shipBox[i];
                     hoverStackNum = i;
                 }
-                if (minBox[i].contains(x,y))
-                    hoverBox2 = minBox[i];
-                if (downBox[i].contains(x,y))
-                    hoverBox2 = downBox[i];
-                if (upBox[i].contains(x,y))
-                    hoverBox2 = upBox[i];
-                if (maxBox[i].contains(x,y))
-                    hoverBox2 = maxBox[i];
+                if (minBoxH[i].contains(x,y))
+                    hoverBox2 = minBoxH[i];
+                if (downBoxH[i].contains(x,y))
+                    hoverBox2 = downBoxH[i];
+                if (upBoxH[i].contains(x,y))
+                    hoverBox2 = upBoxH[i];
+                if (maxBoxH[i].contains(x,y))
+                    hoverBox2 = maxBoxH[i];
             }
             if ((hoverBox != prevHover)
             || (hoverBox2 != prevHover2))
@@ -1137,13 +1154,22 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
             int stackNum = fl.num(index);
             int currAdj = stackAdjustment[index];
             int newAdj = 1;
+            boolean shiftPressed = (e.getModifiers() & InputEvent.SHIFT_MASK) != 0;
+            boolean ctrlPressed = (e.getModifiers() & InputEvent.CTRL_MASK) != 0;
+            
+            int adjAmt = 1;
+            if (shiftPressed)
+                adjAmt = 5;
+            else if (ctrlPressed)
+                adjAmt = 20;
+            
             for (int i=0;i<shipBox.length;i++) {
-                if (minBox[i].contains(x,y))
+                if (minBoxH[i].contains(x,y))
                     newAdj = 0-stackNum;
                 else if (downBox[i].contains(x,y))
-                    newAdj = max(currAdj-1, 0-stackNum);
+                    newAdj = max(currAdj-adjAmt, 0-stackNum);
                 else if (upBox[i].contains(x,y))
-                    newAdj = min(currAdj+1, 0);
+                    newAdj = min(currAdj+adjAmt, 0);
                 else if (maxBox[i].contains(x,y))
                             newAdj = 0;
             }
