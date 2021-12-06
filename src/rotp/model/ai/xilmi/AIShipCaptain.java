@@ -759,7 +759,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
         if (!canBeTargeted)
             return false;
-        if(!canTarget)
+        if(!canTarget && combat().currentStack() != null)
             return true;
         
         if (facingOverwhelmingForce(currStack)) {
