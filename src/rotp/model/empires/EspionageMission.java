@@ -48,7 +48,7 @@ public class EspionageMission implements Base, Serializable {
         for (Tech t: techs) {
             String catId = t.cat.id();
             if (!techPossibles.containsKey(catId))
-                techPossibles.put(catId, new ArrayList<String>());
+                techPossibles.put(catId, new ArrayList<>());
             techPossibles.get(catId).add(t.id());
         }
         

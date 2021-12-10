@@ -148,20 +148,18 @@ public class ColonyEcology extends ColonySpendingCategory {
         }
 
         //if not Hostile & civ has SoilEnrichment that will improvement this environment,
-        // then try to pay for soil enrichment... silicoids cannot do this
-        if (!emp.ignoresPlanetEnvironment()) {
-            soilEnrichCompleted = false;
-            if (!p.isEnvironmentHostile() && tr.enrichSoil() && (tr.topSoilEnrichmentTech().environment > p.environment()))  {
-                float enrichCost = min(newBC,enrichSoilCost() - soilEnrichBC);
-                enrichCost = max(enrichCost,0);
-                soilEnrichBC += enrichCost;
-                newBC -= enrichCost;
-                while (soilEnrichBC >= SOIL_UPGRADE_BC) {
-                    soilEnrichBC -= SOIL_UPGRADE_BC;
-                    p.enrichSoil();
-                }
-                soilEnrichCompleted = p.environment() >= tr.topSoilEnrichmentTech().environment;
+        // then try to pay for soil enrichment...
+        soilEnrichCompleted = false;
+        if (!p.isEnvironmentHostile() && tr.enrichSoil() && (tr.topSoilEnrichmentTech().environment > p.environment()))  {
+            float enrichCost = min(newBC,enrichSoilCost() - soilEnrichBC);
+            enrichCost = max(enrichCost,0);
+            soilEnrichBC += enrichCost;
+            newBC -= enrichCost;
+            while (soilEnrichBC >= SOIL_UPGRADE_BC) {
+                soilEnrichBC -= SOIL_UPGRADE_BC;
+                p.enrichSoil();
             }
+            soilEnrichCompleted = p.environment() >= tr.topSoilEnrichmentTech().environment;
         }
 
         // try to terraform planet to maxSize
@@ -305,18 +303,16 @@ public class ColonyEcology extends ColonySpendingCategory {
             newBC -= cost;
         }
 
-        // check for soil enrichment, not for silicoids
+        // check for soil enrichment
         TechTree tr = emp.tech();
-        if (!emp.ignoresPlanetEnvironment()) {
-            if ((! p.isEnvironmentHostile()) || canTerraformAtmosphere) {
-                if (tr.enrichSoil()) {
-                    int envUpgrade = tr.topSoilEnrichmentTech().environment - p.environment();
-                    if (envUpgrade > 0) {
-                        cost = ((tr.topSoilEnrichmentTech().environment - p.environment()) * SOIL_UPGRADE_BC) - soilEnrichBC;
-                        if (newBC < cost)
-                            return text(enrichSoilText);
-                        newBC -= cost;
-                    }
+        if ((! p.isEnvironmentHostile()) || canTerraformAtmosphere) {
+            if (tr.enrichSoil()) {
+                int envUpgrade = tr.topSoilEnrichmentTech().environment - p.environment();
+                if (envUpgrade > 0) {
+                    cost = ((tr.topSoilEnrichmentTech().environment - p.environment()) * SOIL_UPGRADE_BC) - soilEnrichBC;
+                    if (newBC < cost)
+                        return text(enrichSoilText);
+                    newBC -= cost;
                 }
             }
         }
