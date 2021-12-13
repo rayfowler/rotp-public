@@ -141,3 +141,70 @@ TECH_INERTIAL_STABILIZER      | images/techs/Inertial_Stabilizer.png
 TECH_INERTIAL_NULLIFIER       | images/techs/Inertial_Nullifier.png
 TECH_TECH_NULLIFIER           | images/techs/Technology_Nullifier.png
 TECH_WARP_DISSIPATOR          | images/techs/Warp_Dissipator.png
+
+TECH_FUTURE_COMPUTER_01       | images/techs/Future_Computer_01.png
+TECH_FUTURE_COMPUTER_02       | images/techs/Future_Computer_02.png
+TECH_FUTURE_COMPUTER_03       | images/techs/Future_Computer_03.png
+TECH_FUTURE_COMPUTER_04       | images/techs/Future_Computer_04.png
+TECH_FUTURE_COMPUTER_05       | images/techs/Future_Computer_05.png
+TECH_FUTURE_COMPUTER_06       | images/techs/Future_Computer_06.png
+TECH_FUTURE_COMPUTER_07       | images/techs/Future_Computer_07.png
+TECH_FUTURE_COMPUTER_08       | images/techs/Future_Computer_08.png
+TECH_FUTURE_COMPUTER_09       | images/techs/Future_Computer_09.png
+TECH_FUTURE_COMPUTER_10       | images/techs/Future_Computer_10.png
+
+TECH_FUTURE_CONSTRUCTION_01   | images/techs/Future_Construction_01.png
+TECH_FUTURE_CONSTRUCTION_02   | images/techs/Future_Construction_02.png
+TECH_FUTURE_CONSTRUCTION_03   | images/techs/Future_Construction_03.png
+TECH_FUTURE_CONSTRUCTION_04   | images/techs/Future_Construction_04.png
+TECH_FUTURE_CONSTRUCTION_05   | images/techs/Future_Construction_05.png
+TECH_FUTURE_CONSTRUCTION_06   | images/techs/Future_Construction_06.png
+TECH_FUTURE_CONSTRUCTION_07   | images/techs/Future_Construction_07.png
+TECH_FUTURE_CONSTRUCTION_08   | images/techs/Future_Construction_08.png
+TECH_FUTURE_CONSTRUCTION_09   | images/techs/Future_Construction_09.png
+TECH_FUTURE_CONSTRUCTION_10   | images/techs/Future_Construction_10.png
+
+TECH_FUTURE_FORCE_FIELD_01    | images/techs/Future_Force_Field_01.png
+TECH_FUTURE_FORCE_FIELD_02    | images/techs/Future_Force_Field_02.png
+TECH_FUTURE_FORCE_FIELD_03    | images/techs/Future_Force_Field_03.png
+TECH_FUTURE_FORCE_FIELD_04    | images/techs/Future_Force_Field_04.png
+TECH_FUTURE_FORCE_FIELD_05    | images/techs/Future_Force_Field_05.png
+TECH_FUTURE_FORCE_FIELD_06    | images/techs/Future_Force_Field_06.png
+TECH_FUTURE_FORCE_FIELD_07    | images/techs/Future_Force_Field_07.png
+TECH_FUTURE_FORCE_FIELD_08    | images/techs/Future_Force_Field_08.png
+TECH_FUTURE_FORCE_FIELD_09    | images/techs/Future_Force_Field_09.png
+TECH_FUTURE_FORCE_FIELD_10    | images/techs/Future_Force_Field_10.png
+
+TECH_FUTURE_PLANETOLOGY_01    | images/techs/Future_Planetology_01.png
+TECH_FUTURE_PLANETOLOGY_02    | images/techs/Future_Planetology_02.png
+TECH_FUTURE_PLANETOLOGY_03    | images/techs/Future_Planetology_03.png
+TECH_FUTURE_PLANETOLOGY_04    | images/techs/Future_Planetology_04.png
+TECH_FUTURE_PLANETOLOGY_05    | images/techs/Future_Planetology_05.png
+TECH_FUTURE_PLANETOLOGY_06    | images/techs/Future_Planetology_06.png
+TECH_FUTURE_PLANETOLOGY_07    | images/techs/Future_Planetology_07.png
+TECH_FUTURE_PLANETOLOGY_08    | images/techs/Future_Planetology_08.png
+TECH_FUTURE_PLANETOLOGY_09    | images/techs/Future_Planetology_09.png
+TECH_FUTURE_PLANETOLOGY_10    | images/techs/Future_Planetology_10.png
+
+TECH_FUTURE_PROPULSION_01     | images/techs/Future_Propulsion_01.png
+TECH_FUTURE_PROPULSION_02     | images/techs/Future_Propulsion_02.png
+TECH_FUTURE_PROPULSION_03     | images/techs/Future_Propulsion_03.png
+TECH_FUTURE_PROPULSION_04     | images/techs/Future_Propulsion_04.png
+TECH_FUTURE_PROPULSION_05     | images/techs/Future_Propulsion_05.png
+TECH_FUTURE_PROPULSION_06     | images/techs/Future_Propulsion_06.png
+TECH_FUTURE_PROPULSION_07     | images/techs/Future_Propulsion_07.png
+TECH_FUTURE_PROPULSION_08     | images/techs/Future_Propulsion_08.png
+TECH_FUTURE_PROPULSION_09     | images/techs/Future_Propulsion_09.png
+TECH_FUTURE_PROPULSION_10     | images/techs/Future_Propulsion_10.png
+
+TECH_FUTURE_WEAPON_01         | images/techs/Future_Weapon_01.png
+TECH_FUTURE_WEAPON_02         | images/techs/Future_Weapon_02.png
+TECH_FUTURE_WEAPON_03         | images/techs/Future_Weapon_03.png
+TECH_FUTURE_WEAPON_04         | images/techs/Future_Weapon_04.png
+TECH_FUTURE_WEAPON_05         | images/techs/Future_Weapon_05.png
+TECH_FUTURE_WEAPON_06         | images/techs/Future_Weapon_06.png
+TECH_FUTURE_WEAPON_07         | images/techs/Future_Weapon_07.png
+TECH_FUTURE_WEAPON_08         | images/techs/Future_Weapon_08.png
+TECH_FUTURE_WEAPON_09         | images/techs/Future_Weapon_09.png
+TECH_FUTURE_WEAPON_10         | images/techs/Future_Weapon_10.png
+
