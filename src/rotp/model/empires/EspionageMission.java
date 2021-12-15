@@ -43,15 +43,19 @@ public class EspionageMission implements Base, Serializable {
         spies = sn;
         spy = s;
         targetSystem = target;
+        
+        // build a list of possible techs to steal by category
         for (Tech t: techs) {
             String catId = t.cat.id();
-            String currTechId = techChoices.get(catId);
-            Tech currTech = tech(currTechId);
-            if ((currTech == null) || (currTech.level < t.level))
-                techChoices.put(catId, t.id());
             if (!techPossibles.containsKey(catId))
-                techPossibles.put(catId, new ArrayList<String>());
+                techPossibles.put(catId, new ArrayList<>());
             techPossibles.get(catId).add(t.id());
+        }
+        
+        // pre-select which tech will be stolen for each category
+        for (String catId: techPossibles.keySet()) {
+            String techToSteal = random(techPossibles.get(catId));
+            techChoices.put(catId, techToSteal);
         }
 
         // build a list of potential empires to frame. Both the spy and victim
