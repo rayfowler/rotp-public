@@ -999,7 +999,7 @@ public class AIGeneral implements Base, General {
     @Override
     public boolean isInvader()
     {
-        if(empire.race().groundAttackBonus() > 0)
+        if(empire.race().groundAttackBonus() > 0 || empire.race().growthRateMod() > 1)
             return true;
         return false;
     }
@@ -1008,10 +1008,8 @@ public class AIGeneral implements Base, General {
     {
         if(empire.race().shipAttackBonus() > 0 
                 || empire.race().shipDefenseBonus() > 0 
-                || empire.leader().isRuthless() 
-                || empire.leader().isExpansionist()
-                || empire.leader().isMilitarist()
-                || isExpander())
+                || isInvader()
+                || empire.race().spyInfiltrationAdj() > 0)
             return true;
         return false;
     }
