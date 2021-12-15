@@ -84,6 +84,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     private boolean planetDrawn = false;
     boolean showPlanet = false;
     boolean exited = false;
+    boolean shiftPressed = false;
     BufferedImage renderedPlanetImage;
     Image[] asteroids = new Image[16];
     public int[][] asteroidRoll = new int[GRID_COUNT_X][GRID_COUNT_Y];
@@ -247,7 +248,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
 
         planetDrawn = false;
         showPlanet = false;
-
+        shiftPressed = false;
         Color redEdgeC = new Color(92,20,20);
         Color redMidC = new Color(117,42,42);
         redColors[0]=redEdgeC; redColors[1]=redMidC; redColors[2]=redEdgeC;
@@ -312,6 +313,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     public String ambienceSoundKey()     { return "ShipCombatAmbience"; }
     @Override
     public boolean hasStarBackground()   { return false; }
+    public boolean showTacticalInfo()    { return shiftPressed || Toolkit.getDefaultToolkit().getLockingKeyState(KeyEvent.VK_CAPS_LOCK); }
     @Override
     public void animate() {
         if (this.stillFading()) {
@@ -693,6 +695,12 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         drawString(g,val1, x1b - s10 - sw1, y2 + s12);
         drawString(g,lbl2, x1b, y2 + s12);
         drawString(g,val2, x1 + w1 - sw2 - s5, y2 + s12);
+        
+        if (showTacticalInfo()) {
+            int lblW = g.getFontMetrics().stringWidth(lbl1);
+            g.setColor(CombatStack.sysShieldC);
+            g.fillOval(x1a+lblW+s5, y2+s2, s20, s12);
+        }
 
         y2 += s15;
         g.setColor(lineColor);
@@ -704,7 +712,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         g.setColor(textColor);
         drawString(g,lbl1, x1a, y2 + s12);
         drawString(g,lbl2, x1b, y2 + s12);
-        val1 = str((int) target.colony.population());
+        val1 = str((int) Math.ceil(target.colony.population()));
         val2 = str((int) target.maxHits);
         sw1 = g.getFontMetrics().stringWidth(val1);
         sw2 = g.getFontMetrics().stringWidth(val2);
@@ -713,6 +721,12 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         drawString(g,val1, x1b - s10 - sw1, y2 + s12);
         drawString(g,lbl2, x1b, y2 + s12);
         drawString(g,val2, x1 + w1 - sw2 - s5, y2 + s12);
+
+        if (showTacticalInfo()) {
+            int lblW = g.getFontMetrics().stringWidth(lbl1);
+            g.setColor(CombatStack.sysPopC);
+            g.fillOval(x1a+lblW+s5, y2+s2, s20, s12);
+        }
 
         y2 += s15;
         g.setColor(lineColor);
@@ -724,7 +738,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         g.setColor(textColor);
         drawString(g,lbl1, x1a, y2 + s12);
         drawString(g,lbl2, x1b, y2 + s12);
-        val1 = str((int) target.colony.industry().factories());
+        val1 = str((int) Math.ceil(target.colony.industry().factories()));
         val2 = str((int) target.attackLevel());
         sw1 = g.getFontMetrics().stringWidth(val1);
         sw2 = g.getFontMetrics().stringWidth(val2);
@@ -733,6 +747,12 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         drawString(g,val1, x1b - s10 - sw1, y2 + s12);
         drawString(g,lbl2, x1b, y2 + s12);
         drawString(g,val2, x1 + w1 - sw2 - s5, y2 + s12);
+
+        if (showTacticalInfo()) {
+            int lblW = g.getFontMetrics().stringWidth(lbl1);
+            g.setColor(CombatStack.sysFactoryC);
+            g.fillOval(x1a+lblW+s5, y2+s2, s20, s12);
+        }
 
         y2 += s15;
         g.setColor(lineColor);
@@ -935,6 +955,12 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         drawString(g,lbl2, x1b,y2+s12);
         drawString(g,val2, x1+w1-sw2-s5, y2+s12);
 
+        if (showTacticalInfo()) {
+            int lblW = g.getFontMetrics().stringWidth(lbl2);
+            g.setColor(CombatStack.shipShieldC);
+            g.fillOval(x1b+lblW+s5, y2+s2, s12, s12);
+        }
+
         y2 += s15;
         g.setColor(lineColor);
         g.fillRect(x1,y2,w1,s1);
@@ -955,7 +981,16 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         drawString(g,lbl2, x1b,y2+s12);
         drawString(g,val2, x1+w1-sw2-s5, y2+s12);
 
-        y2 += s15;
+        if (showTacticalInfo()) {
+            int lblW = g.getFontMetrics().stringWidth(lbl1);
+            g.setColor(CombatStack.shipMissDefenseC);
+            g.fillOval(x1a+lblW+s5, y2+s2, s12, s12);
+            lblW = g.getFontMetrics().stringWidth(lbl2);
+            g.setColor(CombatStack.shipAttackC);
+            g.fillOval(x1b+lblW+s5, y2+s2, s12, s12);
+        }
+
+         y2 += s15;
         g.setColor(lineColor);
         g.fillRect(x1,y2,w1,s1);
 
@@ -974,6 +1009,12 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         drawString(g,val1, x1b-s10-sw1, y2+s12);
         drawString(g,lbl2, x1b,y2+s12);
         drawString(g,val2, x1+w1-sw2-s5, y2+s12);
+
+        if (showTacticalInfo()) {
+            int lblW = g.getFontMetrics().stringWidth(lbl1);
+            g.setColor(CombatStack.shipBeamDefenseC);
+            g.fillOval(x1a+lblW+s5, y2+s2, s12, s12);
+        }
 
         y2 += s15;
         g.setColor(lineColor);
@@ -1300,9 +1341,9 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         }
         else if (st.isColony()) {
             showPlanet = true;
-            planetX = x+((w-h)/2);
-            planetY = y+(h/12);
             planetR = h*5/6;
+            planetX = x+((w-planetR)/2);
+            planetY = y+(h/12);
             planetBox.setBounds(x,y,w,h);
             if (mgr.currentStack().isColony() && !mgr.performingStackTurn) {
                 Stroke prev = g.getStroke();
@@ -1321,6 +1362,8 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             int imgH = renderedPlanetImage.getHeight();
             g.drawImage(renderedPlanetImage, planetX, planetY, planetX+planetR, planetY+planetR, 0, 0, imgW, imgH, null);
         }
+        st.drawStack(this, g, 0, x, y, w, h);
+        /*
         int y0 = y+h-s5;
         g.setFont(narrowFont(18));
         g.setColor(Color.white);
@@ -1334,6 +1377,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             int x0 = x+(w-sw)/2;
             drawString(g,dispName, x0, y0);
         }
+        */
     }
     private void rotateAndRenderPlanet() {
         if (!showPlanet)
@@ -1724,12 +1768,31 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             finishAndResume();
     }
     @Override
+    public void keyReleased(KeyEvent e) {
+        if (stillFading())
+            return;
+        int k = e.getKeyCode();
+        switch(k) {
+            case KeyEvent.VK_SHIFT: 
+                shiftPressed = false;
+                repaint();
+                return;    
+        }
+    }
+    @Override
     public void keyPressed(KeyEvent e) {
         if (stillFading())
             return;
         int k = e.getKeyCode();
         boolean rightClick = false;
         switch(k) {
+            case KeyEvent.VK_CAPS_LOCK:
+                repaint();
+                return;
+            case KeyEvent.VK_SHIFT: 
+                shiftPressed = true;
+                repaint();
+                return; 
             case KeyEvent.VK_1:   clickActionButton(1, rightClick);  return;
             case KeyEvent.VK_2:   clickActionButton(2, rightClick);  return;
             case KeyEvent.VK_3:   clickActionButton(3, rightClick);  return;
