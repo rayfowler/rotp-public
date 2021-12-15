@@ -52,6 +52,8 @@ import rotp.model.galaxy.Ship;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.galaxy.Transport;
+import rotp.model.ships.ShipDesign;
+import rotp.model.ships.ShipDesignLab;
 import rotp.model.tech.Tech;
 import rotp.ui.BasePanel;
 import rotp.ui.ExitButton;
@@ -556,7 +558,18 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         
         float sysDistance = sv.distance();
         Empire pl = player();
-        if ((sysDistance <= pl.shipRange()) && pl.canColonize(sv.sysId)) {
+        float colonyShipRange = pl.shipRange();
+        for (int slot=0;slot<ShipDesignLab.MAX_DESIGNS;slot++) {
+            ShipDesign d = pl.shipLab().design(slot);
+            if(!d.active())
+                continue;
+            if(!d.hasColonySpecial())
+                continue;
+            if(d.range() > colonyShipRange)
+                colonyShipRange = d.range();
+        }
+                
+        if ((sysDistance <= colonyShipRange) && pl.canColonize(sv.sysId)) {
             if (this.expandGuardedSystems.containsKey(sv.sysId))
                 return MainUI.redAlertC;
             else if (expandEnRouteSystems.containsKey(sv.sysId))
@@ -569,7 +582,7 @@ public final class SystemsUI extends BasePanel implements IMapHandler, ActionLis
         String envTech = pl.environmentTechNeededToColonize(sv.sysId);   
         if ((rangeTech != null) && (envTech != null))
             return MainUI.yellowAlertC;
-        if ((envTech != null) && (sysDistance <= pl.shipRange()))
+        if ((envTech != null) && (sysDistance <= colonyShipRange))
             return MainUI.yellowAlertC;
         if ((rangeTech != null) && pl.canColonize(sv.sysId)) 
             return MainUI.yellowAlertC;
