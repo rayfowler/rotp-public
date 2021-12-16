@@ -74,8 +74,7 @@ public class ColonyIndustry extends ColonySpendingCategory {
         newFactories = 0;
         previousFactories = 0;
     }
-    public float upgradeCost()
-    {
+    public float upgradeCost() {
         float upgradeCost = 0;
         float factoriesToUpgrade = min(factories+newFactories, maxBuildableFactories(robotControls));
         if (!empire().ignoresFactoryRefit())
