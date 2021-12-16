@@ -174,6 +174,7 @@ TECH_ECM_JAMMER_06            | images/techs/ECM_Jammer_06.png
 TECH_ECM_JAMMER_07            | images/techs/ECM_Jammer_07.png
 TECH_ECM_JAMMER_08            | images/techs/ECM_Jammer_08.png
 TECH_ECM_JAMMER_09            | images/techs/ECM_Jammer_09.png
+TECH_ECM_JAMMER_10            | images/techs/ECM_Jammer_10.png
 TECH_WASTE_REDUCTION_80       | images/techs/Industrial_Waste_80.png
 TECH_WASTE_REDUCTION_60       | images/techs/Industrial_Waste_60.png
 TECH_WASTE_REDUCTION_40       | images/techs/Industrial_Waste_40.png
