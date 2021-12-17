@@ -1368,22 +1368,26 @@ public class AIDiplomat implements Base, Diplomat {
         
         // from -70 to -90
         float warThreshold = v.empire().diplomatAI().leaderHateWarThreshold();
+        System.out.println(galaxy().currentTurn()+" "+empire.name()+" hate-check for "+v.empire().name()+" base Threshold: "+warThreshold);
         
         // modnar: change war threshold by number of our wars vs. number of their wars
         // try not to get into too many wars, and pile on if target is in many wars
         float enemyMod = (float) (10 * (v.empire().numEnemies() - empire.numEnemies()));
         warThreshold += enemyMod;
+        System.out.println(galaxy().currentTurn()+" "+empire.name()+" hate-check for "+v.empire().name()+" Threshold with enemy-mod: "+warThreshold);
         
         // allied with an enemy? not good
         if (v.embassy().alliedWithEnemy())
             warThreshold += 30;
+        System.out.println(galaxy().currentTurn()+" "+empire.name()+" hate-check for "+v.empire().name()+" Threshold with allied-mod: "+warThreshold);
         
         // higher contempt = more likely to increase war
         // positive contempt raises the threshold = more likely for war
         // if relative power is 3, then contempt mod is 30 or -30
         float contemptMod = 10 * v.scaleOfContempt();
         warThreshold += contemptMod;
-        
+        System.out.println(galaxy().currentTurn()+" "+empire.name()+" hate-check for "+v.empire().name()+" Threshold with contempt-mod: "+warThreshold);
+        System.out.println(galaxy().currentTurn()+" "+empire.name()+" hate-check for "+v.empire().name()+" "+v.embassy().relations()+" <= "+warThreshold+" ?");
         return (v.embassy().relations() <= warThreshold);
     }
     @Override
@@ -1450,20 +1454,24 @@ public class AIDiplomat implements Base, Diplomat {
     }
     private void beginIncidentWar(EmpireView view, DiplomaticIncident inc) {
         log(view.toString(), " - Declaring war based on incident: ", inc.toString(), " id:", inc.declareWarId());
+        System.out.println(galaxy().currentTurn()+" "+empire.name()+" starts incident-war on "+view.empire().name());
         view.embassy().beginWarPreparations(inc.declareWarId(), inc);
         if (inc.triggersImmediateWar())
             view.embassy().declareWar();
     }
     private void beginOpportunityWar(EmpireView view) {
         log(view+" - Declaring war based on opportunity");
+        System.out.println(galaxy().currentTurn()+" "+empire.name()+" starts opportunity-war on "+view.empire().name());
         view.embassy().beginWarPreparations(DialogueManager.DECLARE_OPPORTUNITY_WAR, null);
     }
     private void beginHateWar(EmpireView view) {
         log(view+" - Declaring war based on hate");
+        System.out.println(galaxy().currentTurn()+" "+empire.name()+" starts hate-war on "+view.empire().name());
         view.embassy().beginWarPreparations(DialogueManager.DECLARE_HATE_WAR, null);
     }
     private void beginErraticWar(EmpireView view) {
         log(view+" - Declaring war based on erratic");
+        System.out.println(galaxy().currentTurn()+" "+empire.name()+" starts erratic-war on "+view.empire().name());
         view.embassy().beginWarPreparations(DialogueManager.DECLARE_ERRATIC_WAR, null);
     }
     @Override
