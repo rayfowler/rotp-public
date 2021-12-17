@@ -1779,6 +1779,9 @@ public class AIDiplomat implements Base, Diplomat {
         if (v.embassy().finalWar())
             return false;
         
+        if(!empire.inShipRange(v.empId()))
+            return true;
+        
         // modnar: scale warWeary by number of our wars vs. number of their wars
         // more weary (willing to take less losses) if we are in more wars than they are
         // willing to take at least 15% losses
