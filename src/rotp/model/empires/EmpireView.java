@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import static rotp.model.empires.EmpireStatus.POWER;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.incidents.DiplomaticIncident;
 import rotp.ui.diplomacy.DialogueManager;
@@ -101,8 +102,11 @@ public final class EmpireView implements Base, Serializable {
         // This returns the estimated strength of the view.civ vs. the view.owner
         // > 1 means empire is STRONGER than view.owner
         // < 1 means empire is WEAKER than view.owner
-        float num = owner.powerLevel(empire)+1;
+        float num = empire.status().lastViewValue(owner, POWER);
         float den = owner.powerLevel(owner);
+        //xilmi: When we don't know anything about the other empire, we assume it's as strong as we are
+        if(num == 0)
+            num = den;
         return num / den;
     }
     public void refresh() {

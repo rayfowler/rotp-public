@@ -47,5 +47,4 @@ public interface General {
     default boolean sensePotentialAttack() { return false; }
     default Location colonyCenter(Empire emp) { return new Location(0, 0); }
     default Location fleetCenter(Empire emp) { return new Location(0, 0); }
-    default boolean masksDiplomacy() { return false; }
 }

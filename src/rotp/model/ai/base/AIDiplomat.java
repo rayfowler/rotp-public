@@ -24,6 +24,7 @@ import rotp.model.combat.CombatStack;
 import rotp.model.combat.ShipCombatResults;
 import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.Empire;
+import static rotp.model.empires.EmpireStatus.FLEET;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.GalacticCouncil;
 import rotp.model.empires.Leader;
@@ -1368,26 +1369,21 @@ public class AIDiplomat implements Base, Diplomat {
         
         // from -70 to -90
         float warThreshold = v.empire().diplomatAI().leaderHateWarThreshold();
-        System.out.println(galaxy().currentTurn()+" "+empire.name()+" hate-check for "+v.empire().name()+" base Threshold: "+warThreshold);
         
         // modnar: change war threshold by number of our wars vs. number of their wars
         // try not to get into too many wars, and pile on if target is in many wars
         float enemyMod = (float) (10 * (v.empire().numEnemies() - empire.numEnemies()));
         warThreshold += enemyMod;
-        System.out.println(galaxy().currentTurn()+" "+empire.name()+" hate-check for "+v.empire().name()+" Threshold with enemy-mod: "+warThreshold);
         
         // allied with an enemy? not good
         if (v.embassy().alliedWithEnemy())
             warThreshold += 30;
-        System.out.println(galaxy().currentTurn()+" "+empire.name()+" hate-check for "+v.empire().name()+" Threshold with allied-mod: "+warThreshold);
         
         // higher contempt = more likely to increase war
         // positive contempt raises the threshold = more likely for war
         // if relative power is 3, then contempt mod is 30 or -30
         float contemptMod = 10 * v.scaleOfContempt();
         warThreshold += contemptMod;
-        System.out.println(galaxy().currentTurn()+" "+empire.name()+" hate-check for "+v.empire().name()+" Threshold with contempt-mod: "+warThreshold);
-        System.out.println(galaxy().currentTurn()+" "+empire.name()+" hate-check for "+v.empire().name()+" "+v.embassy().relations()+" <= "+warThreshold+" ?");
         return (v.embassy().relations() <= warThreshold);
     }
     @Override
@@ -1419,8 +1415,11 @@ public class AIDiplomat implements Base, Diplomat {
         // modnar: reduce basePower due to other changes (techMod, enemyMod)
         int basePower = 200;
         
-        float otherPower = basePower+v.owner().militaryPowerLevel(v.empire());
+        float otherPower = basePower+v.empire().status().lastViewValue(empire, FLEET);
         float myPower = basePower+v.owner().militaryPowerLevel();
+        // xilmi: When we have never had any espionage-information on that empire we assume it's as strong as we are
+        if(v.empire().status().lastViewTurn(empire) < 0)
+            otherPower = myPower;
         
         // modnar: due to other changes (techMod, enemyMod), reduce baseThreshold
         float baseThreshold = v.owner().atWar() ? 8.0f : 4.0f;
