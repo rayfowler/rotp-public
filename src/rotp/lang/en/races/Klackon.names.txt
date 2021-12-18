@@ -1,5 +1,5 @@
 // all possible names
-name: Klackon, Klackant, Klockan, Arthropon, Coleopteron
+name: Khalkon, Klackant, Klockan, Arthropon, Coleopteron
 
 desc1: Xenophobic Industrialists
 desc2: Hive Mind and Increased Worker Production

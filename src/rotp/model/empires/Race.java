@@ -617,9 +617,7 @@ public class Race implements Base, Serializable {
         diploOpacity = parseFloat(vals.get(3).trim());
     }
     public void parseRaceNames(String names, String langId) {
-        String raceKey = langId+"."+id;
-        String prefNames = UserPreferences.raceNames(raceKey, names);
         raceNames.clear();
-        raceNames.addAll(substrings(prefNames, ','));
+        raceNames.addAll(substrings(names, ','));
     }
 }
