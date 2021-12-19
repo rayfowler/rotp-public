@@ -17,7 +17,6 @@ package rotp.model.tech;
 
 import rotp.model.colony.Colony;
 import rotp.model.empires.Empire;
-import rotp.model.empires.Race;
 
 public final class TechSoilEnrichment extends Tech {
     public float growthMod;
@@ -30,10 +29,6 @@ public final class TechSoilEnrichment extends Tech {
         cat = c;
         free = b;
         init();
-    }
-    @Override
-    public boolean canBeResearched(Race r)  {
-        return !r.ignoresPlanetEnvironment();  // silicoids don't research these techs
     }
     @Override
     public boolean promptToReallocate()     { return super.promptToReallocate() && !player().ignoresPlanetEnvironment(); }
