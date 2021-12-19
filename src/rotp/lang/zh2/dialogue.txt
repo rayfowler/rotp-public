@@ -1,0 +1,143 @@
+//
+// Dialogue that is not race-specific
+//
+// 第一次校對：2021.12.04
+
+DIPLO_TECH_REQUEST_MENU_01   | 你對哪一個技術感興趣？
+DIPLO_TECH_COUNTER_MENU_01   | 你想用來交換什麼？
+DIPLO_TRADE_MENU_01          | 你提出了貿易協定，數額爲：
+DIPLO_TREATY_MENU_01         | 你想做什麼？
+DIPLO_THREATEN_MENU_01       | 你想威脅什麼？
+DIPLO_DECLARE_WAR_MENU_01    | 你確定要開戰嗎？
+DIPLO_JOINT_WAR_MENU_01      | 我們開戰的原因是什麼？
+DIPLO_BREAK_ALLIANCE_MENU_01 | 我們想破壞與誰的聯盟？
+DIPLO_OFFER_AID_MENU_01      | 你想要資助什麼？
+DIPLO_OFFER_TECH_MENU_01     | 你想要提供什麼技術？
+
+DECLINE_OFFER_01           | [my_nameTitle][my_name]拒絕了。
+DECLINE_OFFER_02           | [my_race]考慮了你的提議，並拒絕了。
+DECLINE_OFFER_03           | 我們恭敬地拒絕您的提議。
+DECLINE_OFFER_04           | 我們目前不感興趣。
+DECLINE_OFFER_05           | [my_race]認爲您的提議不公平。
+DECLINE_OFFER_06           | 此時接受你方的提議不符合我們的最佳利益。
+DECLINE_OFFER_07           | 也許你把我們誤認爲是容易上當的傻瓜了，我們拒絕你的提議。
+DECLINE_OFFER_08           | 你的提議看起來並不公平。
+DECLINE_OFFER_09           | 我們恐怕要拒絕您的提議。
+
+DECLINE_ENEMY_ALLY_01      | [my_race]永遠不會與可惡的[other_race]的盟友做交易。
+DECLINE_ALREADY_ALLIED_01  | 只要你仍然與其他帝國結盟，[my_race]和我的盟友就不會考慮你的請求。
+DECLINE_NO_WAR_ON_ALLY_01  | 我們不會向自己的盟友宣戰。
+DECLINE_PEACE_TREATY_01    | 我們不會破壞自己與[other_race]的和平協議。
+DECLINE_ANNOYED_01         | [your_race]是滿嘴空話而缺乏行動的生物，我們厭倦了你們的胡言亂語。
+DECLINE_ANNOYED_01         | [your_name][your_nameTitle]，你正在考驗我們的耐心。也許你應該晚點再找我們聊。
+DECLINE_ANNOYED_01         | [my_name][my_nameTitle]已經聽夠了，我們以後再聊吧。
+DECLINE_ANNOYED_02         | 我們已經厭倦了外交談判。以後再溝通吧。
+DECLINE_ANNOYED_02         | 這些談話不會有結果。我們先告辭了。
+DECLINE_ANNOYED_02         | 告辭。
+DECLINE_ANNOYED_03         | [your_name][your_nameTitle]，非常抱歉，我們有更重要的任務要完成。
+DECLINE_ANNOYED_03         | 請原諒，我們的時間到了。
+DECLINE_ANNOYED_03         | 我們時間有限，任務繁多。也許以後我們可以再溝通。
+
+DECLINE_OATHBREAKER_01     | 因爲你以前曾破壞過協議，我們不願意再跟你訂立協議了。
+DECLINE_OATHBREAKER_01     | 你沒有遵守你過去的協議。我們看不出有什麼理由相信你。
+DECLINE_OATHBREAKER_01     | 你違反了那麼多過去的協議，我們爲什麼要相信你呢?
+DECLINE_OATHBREAKER_01     | 我們看不出有什麼理由去信任一個沒有兌現過去承諾的人。 
+DECLINE_OATHBREAKER_01     | 我們不會與沒有榮譽感的[your_race]打交道。
+DECLINE_ESPIONAGE_01       | 你們這些偷東西的狗，你們偷走了我們的研究成果。我們拒絕你們的請求。
+DECLINE_ESPIONAGE_01       | 我們的技術是爲[my_race]種族服務的。你沒有權利偷走它。等你什麼時候停止偷竊了，我們再對話。
+DECLINE_ESPIONAGE_01       | 爲什麼我們要給你東西呢？你們的間諜已經偷走了所有你們需要的東西！
+DECLINE_ESPIONAGE_01       | 你們的間諜正在偷走我們的研究成果，你怎麼還敢期待我們接受你？
+DECLINE_ESPIONAGE_01       | 撤回你的間諜，然後我們再聊。
+
+DECLINE_SABOTAGE_01        | 我們還沒有忘記你們的上一次破壞行動。除非你能證明值得更多信任，否則我們不會再跟你們打交道。
+DECLINE_SABOTAGE_01        | 我們的民衆因爲你們的破壞行動而遭殃。除非你們停止，否則我們不會與你們打交道。
+DECLINE_SABOTAGE_01        | 什麼？你期待我們在你還在破壞 [target] 的時候同意你們的協議嗎？
+DECLINE_SABOTAGE_01        | 你破壞了我們的 [target]，爲什麼我們要跟你打交道？
+DECLINE_SABOTAGE_01        | 等你停止破壞我們的 [target]，我們就會進一步考慮這件事情。
+
+DECLINE_BUILDUP_01         | 當你在我們的國界召集艦隊的時候，我們不會與你談話。
+DECLINE_BUILDUP_01         | 讓你的艦隊從我們的國界離開我們的國界，否則我們不會與你談話。
+DECLINE_BUILDUP_01         | 我們不害怕你在我們國界處集結的艦隊。但只要它們還在那裏，我們就不會跟你們打交道。
+DECLINE_BUILDUP_01         | 如果你想跟 [my_empire] 打交道，就把你的艦隊派往別的地方，別派來我們這裏。
+
+DECLINE_ENCROACH_01        | 你的艦隊入侵了[my_race]的空間。把它們挪走，然後我們纔對話。
+
+DECLINE_SKIRMISH_01        | 你沒有理由地攻擊了我們的艦隊，你還期待我們接受你們的提議？我們拒絕。
+DECLINE_SKIRMISH_01        | 我們不能接受攻擊我們艦隊的人的提議。
+DECLINE_SKIRMISH_01        | 等你們的艦隊停止攻擊我方艦隊，我們再談。
+DECLINE_SKIRMISH_01        | 如果你想跟[my_empire]打交道，就別碰我們的艦隊。
+DECLINE_SKIRMISH_01        | [my_name][my_nameTitle]對你們摧毀我們艦隊的事情很不滿意。我們拒絕。
+
+DECLINE_ATTACK_01          | 你對[system]的無理由進攻可不會給你談判的籌碼。
+DECLINE_ATTACK_01          | 我們還沒有忘記你們對[system]殖民地的進攻。我們不可能接受的。
+
+DECLINE_INVASION_01        | 我們的人民不會同意跟[system]的劊子手打交道。請先補償你的過錯。
+DECLINE_INVASION_01        | [system]的鮮血是你的污點。我們拒絕你的提議。
+DECLINE_INVASION_01        | [system]的死難者哭喊着報仇。他們的哭喊聲比你們的提議更響亮。
+
+DECLINE_BIOWEAPONS_01      | [my_race]不會與使用生化武器的種族做交易。
+
+DECLINE_BIOWEAPONS_01      | 我們不會與瘋狂到使用生化武器的種族做交易。
+DECLINE_BIOWEAPONS_01      | 你的武器對無辜的人們造成了不可描述的恐怖。我們拒絕跟這樣的瘋子打交道。
+DECLINE_BIOWEAPONS_01      | 神明憎恨使用生化武器消滅一個星球的人。[my_race]絕不會接受。
+DECLINE_BIOWEAPONS_01      | 你的生化武器殺死了太多無辜者。我們不會接受你的提議。
+
+DECLINE_TECH_TRADE_01      | 你的技術我們不感興趣。
+DECLINE_TECH_TRADE_01      | 我們不需要[your_race]的玩具。
+DECLINE_TECH_TRADE_01      | 你的原始發明我們不感興趣。
+DECLINE_TECH_TRADE_01      | [my_race]的技術已經遠遠超過了你們。
+DECLINE_TECH_TRADE_01      | [your_name][your_nameTitle]，我們並不需要你們科學家提供的東西。
+DECLINE_TECH_TRADE_01      | [my_name][my_nameTitle]對你們的科學不感興趣。
+
+OFFER_TECH_EXCHANGE_01     | [your_empire]非常需要你們的[tech]技術。也許你願意跟我們做一做交換。
+OFFER_TECH_EXCHANGE_01     | [your_empire]瞭解到你已經掌握了[tech]的祕密。我們可以提供一些自己的技術跟你做交換嗎？
+OFFER_TECH_EXCHANGE_01     | [your_empire]的[your_name][your_nameTitle]希望能學習[tech]技術。你是否願意用它來交換我方的先進技術呢？
+
+OFFER_TECH_EXCHANGE_01     | [your_race]種族驚歎於[tech]的科學奇蹟。我們能給您提供什麼以換取這個技術呢？
+
+ACCEPT_TECH_EXCHANGE_01    | 很好。[my_name][my_nameTitle]願意用[my_race]的[techGiven]交換技術[techReceived]。
+ACCEPT_FINANCIAL_AID_01    | [my_name][my_nameTitle]感謝你贈送的[amt] BC 饋贈。
+ACCEPT_TECHNOLOGY_AID_01   | [my_name][my_nameTitle]接受你贈予的[tech]。
+
+BREAK_TRADE_01             | [my_race]公民不再需要[your_empire]的商品。
+
+ANNOUNCE_TRADE_01          | 從[year]開始，[my_empire]和[your_empire]同意每年交易[amt] BC的商品。
+
+ANNOUNCE_PEACE_01          | [year]年，[my_race]和[your_race]同意終止所有的敵對活動。
+ANNOUNCE_PEACE_01          | [my_name][my_nameTitle]在此宣佈雙方暫停敵對關係。
+ACCEPT_PEACE_01            | 我同意是時候終止我們之間的小矛盾了。
+ACCEPT_PEACE_01            | 我們同意你的停戰協議。如果你停止向[my_race]的軍隊進攻，我們也會停止進攻你的軍隊。
+ACCEPT_PEACE_01            | 我們對無謂的破壞感到厭倦了。[my_empire]接受你的和平提議。
+BREAK_PACT_01              | [my_race]向[your_empire]發出警告：我們的互不侵犯協議不再有效！
+ANNOUNCE_PACT_01           | [year]年，[my_empire]許諾遵守互不侵犯協議，不會攻擊[your_race]的艦隊，除非它們出現在我方殖民地的軌道上。
+ACCEPT_PACT_01             | [my_empire]接受互不侵犯協議。雙方都不會攻擊彼此的艦隊，除非它們駛入對方殖民地的軌道。
+ACCEPT_PACT_01             | 如果你同意不再把艦隊派往我方殖民地，[my_race]人民就同意不再攻擊你的飛船。
+ACCEPT_PACT_01             | [my_name][my_nameTitle]同意了你提出的互不侵犯條約。既已協約，便當履行。
+ACCEPT_PACT_01             | 同意了。只要你不攻擊我方殖民地，[my_empire]就會遵守互不侵犯條約。
+
+BREAK_ALLIANCE_01          | [my_empire]不能再與[your_empire]維持盟友關係。
+ANNOUNCE_ALLIANCE_01       | [year]年，[my_empire]與[your_empire]同意結成聯盟，不會攻擊彼此的艦隊和殖民地。
+
+ANNOUNCE_ALLIANCE_01       | 我們的聯盟已經建立。你的艦隊可以隨時造訪我們的殖民地，從我們的基地補充燃料。
+
+ACCEPT_ALLIANCE_01         | [my_name][my_nameTitle]歡迎我們的好盟友，[your_name][your_nameTitle]。
+ACCEPT_ALLIANCE_01         | [my_empire]和[your_empire]於今日結成同盟。讓我們的敵人顫抖吧！
+ACCEPT_ALLIANCE_01         | [my_name][my_nameTitle]認爲與[your_empire]的結盟是明智的。就按您說的做。
+
+OFFER_JOINT_WAR_01         | 是時候讓[your_empire]和[my_empire]攜手向[other_race]開戰了。
+ACCEPT_JOINT_WAR_01        | [other_empire]必須臣服於[my_empire]和[your_empire]的聯合力量！
+ACCEPT_JOINT_WAR_01        | 在[my_race]和[your_race]的聯手下，[other_race]將迅速潰敗。
+ACCEPT_JOINT_WAR_01        | [year]年，[my_empire]和[your_empire]將攜手消滅宇宙的禍害[other_race]。
+COUNTER_JOINT_WAR_01       | 我們將會加入你對抗[other_empire]的戰爭，只要你提供如下報酬：
+RESPOND_CLOSE_EMBASSY_01   | 到此爲止。我們之間將不會有更多的交流了。
+
+RESPOND_BREAK_TRADE_01     | 我們會記住這一切的。
+RESPOND_BREAK_TRADE_01     | 所以，[your_name][your_nameTitle]，你說到卻做不到。我們會記住這一切的。
+
+RESPOND_BREAK_PACT_01      | 我們會把你所背棄的協議刻在你的墓碑上，[your_name][your_nameTitle]。
+RESPOND_BREAK_PACT_01      | [your_empire]會因自己背棄了承諾而毀滅。
+
+RESPOND_BREAK_ALLIANCE_01  | 你違背了協議。聯盟破裂了。
+RESPOND_BREAK_ALLIANCE_01  | 非常好，你令人懷疑的意圖已經暴露了。聯盟破裂了。
+RESPOND_BREAK_ALLIANCE_01  | 我們不需要一個不被遵守的協議。聯盟就此解散。
+RESPOND_BREAK_ALLIANCE_01  | 就這樣吧，聯盟就此解散。

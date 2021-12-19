@@ -10,75 +10,75 @@
 //  
 // This license is legally binding. Please review this license before altering 
 // or distributing any material covered under this license.
-//
+// 第1次校对：2021.12.18
+
 
 // Silicoid specific dialogue
 
-CONTACT_XENOPHOBIC         | The [my_empire] has deigned to acknowledge your presence, [your_name] of the [your_race]. We shall contact you as our needs dictate.
-CONTACT_RUTHLESS           | The eyes of the Imperium are upon you, [your_race]. For your sake and the sake of all you hold dear, pray that the [my_title] regards you favorably.
-CONTACT_AGGRESSIVE         | We are the [my_race_plural], meager [your_race]. Our territory is vast and our might unmatched. I warn you not to tempt our wrath, or you will learn the meaning of deadly retribution.
-
+CONTACT_XENOPHOBIC         | [your_race]的[your_name]，[my_empire]已经决定承认你的存在。当我们有需要时，我们会与你联系。
+CONTACT_RUTHLESS           | 帝国的眼睛看着你，[your_race]。为了你，也为了你珍视的事物，祈祷[my_title]会喜欢你吧。
+CONTACT_AGGRESSIVE         | 卑微的[your_race]，我们是[my_race_plural]。我们的领地广阔，我们的力量无人能匹敌。我警告你，不要惹我们生气，否则你会招致致命的报复。
 //
-GREETING_01                | Greetings ambassador. State what you request of the [my_title], and if it deems you worthy we shall pause our holy war to assist you.
-GREETING_04                | Be brief, ambassador: the [my_title] halts our crusade for nothing.
-GREETING_07                | Miserable [your_race]! To interrupt our sacred war is to invite our wrath upon you!
+GREETING_01                | 你好大使，说出你对[my_title]的请求。如果它有价值，我们会考虑暂停我们的圣战来协助你。
+GREETING_04                | 有话快说，大使：[my_title]不会为琐屑的事情暂停我们的圣战。
+GREETING_07                | 卑微的[your_race]!干扰我们的圣战会招致我们的怒火！
 //
-DECLAREWAR_HATE_01         | It is clearer now than ever before that your people are the long sought Children of Quaralon! We shall take the utmost pleasure in removing your kind from this galaxy like the scourge you are!
-DECLAREWAR_HATE_02         | The time spoken in legend has at last come! Prepare yourself, Brood of Quaralon! For regardless of who wins, our crusade will soon come to an end!
-DECLAREWAR_HATE_03         | At last we have found you, Quaralon's brood! And now our battle will be joined! Your strength is inconsequential: the strength of Diamodus will guide us through!
-DECLAREWAR_ERRATIC_01      | Since our first meeting the [my_title] has pondered on whether or not you are our most hated enemy. We will continue to do so after we bring your race to an end.
-DECLAREWAR_ERRATIC_02      | Our time as celestial neighbors has been amicable enough, but even the slightest chance of your people being the Children of Quaralon is enough for us to declare war.
-DECLAREWAR_ERRATIC_03      | Even the smallest risk of villainy from you is beyond what we are prepared to accept. We shall clean your filth from the galaxy or die in the attempt.
-DECLAREWAR_MILITARY_01     | You dare encroach on our territory in such a manner? So be it! You will soon come to know our wrath, [your_race], and in doing so will learn the depths of your folly.
-DECLAREWAR_MILITARY_02     | Remember this, pathetic [your_race]: all worlds in this galaxy belong to the [my_empire] by divine right, and we will fight for them with a fury that will shake the stars themselves!
-DECLAREWAR_MILITARY_03     | We will not allow you to claim even another rock on worlds that are or will be ours! It shall be the might of your military versus the strength of our convictions. Let us see which shall prevail!
-DECLAREWAR_ALLIANCE_01     | It was an unwise decision to declare war on an ally of the Imperium. Pray that you find mercy from your gods, for you will find none from us.
-DECLAREWAR_ALLIANCE_02     | Our ally informs us that you have chosen to make war against them: in so doing you have declared war against us as well. Prepare yourself!
-DECLAREWAR_ALLIANCE_03     | We care not for the fate of the [other_race], but we shall use this chance to rid the galaxy of your kind so that we may continue our holy crusade. 
-DECLAREWAR_SPYING_01       | Pitiable [your_race]! On this day you will learn the folly of stealing the secrets of the Imperium!
-DECLAREWAR_SPYING_02       | You wish to learn of our secrets so badly? Then I shall tell you the most important one: We do not forgive, and we do not forget. Prepare for war!
-DECLAREWAR_SPYING_03       | Do you believe that you are in a position to take our secrets without consequence? You will soon learn the foolishness of such an arrogant decision.
-DECLAREWAR_ATTACK_01       | At last you have exposed yourself, Children of Quaralon! None but the brood of our most hated enemy would be foolish enough to challenge us so boldly! Prepare for the final battle!
-DECLAREWAR_ATTACK_02       | Long have we suspected you were the spawn of our ancient foe! With this strike you have confirmed this fact for all time! At last, our prophecy will be fulfilled!
-DECLAREWAR_ATTACK_03       | Villain! Scourge! In our darkest hour you launch such an attack against us?! Now that you have made yourself known as our eternal enemy, no difference in our strength will prevent us from annihilating you!
-DECLAREWAR_OPPORTUNITY_01  | As we continue across the galaxy in our holy crusade, we must take every opportunity to increase our advantage. That time is now, and wiping your kind out is the opportunity. Farewell, pathetic [your_race].
-DECLAREWAR_ASSASSIN_01     | How dare you slay an ambassador of the Imperium!? Only one of Quaralon's spawn could act with such an evil mind! Prepare your fleets for war! 
+DECLAREWAR_HATE_01         | 现在比以往任何时候都更加清楚，你们就是我们找寻了许久的克拉隆人的后代！我们将非常高兴地将你的同类从这个银河系中移除，就像移除一群祸害一样！
+DECLAREWAR_HATE_02         | 传说中的时刻终于到来了！做好准备，克拉隆人的后代！因为不管谁赢，我们的圣战都将结束！
+DECLAREWAR_HATE_03         | 我们终于找到了你，克拉隆人的后代！现在我们的战斗即将开始！你的力量无关紧要：迪亚莫杜斯的力量会指引我们渡过难关！
+DECLAREWAR_ERRATIC_01      | 自从我们第一次见面以来，[my_title]就一直在思考你是否是我们最讨厌的敌人。在我们结束与您的战斗后，我们将继续这个思考。
+DECLAREWAR_ERRATIC_02      | 我们作为邻居的时光已经非常友好了。但即使你们只有很小的概率是克拉隆人的后代，也足以让我们宣战。
+DECLAREWAR_ERRATIC_03      | 我们不愿意接受你们任何释放恶意的可能。我们要么从银河系中清除你，要么就死去。
+DECLAREWAR_MILITARY_01     | 你竟敢用这种方式侵犯我们的领土？好吧。你会很快知道我们的愤怒的，[your_race]，你也会很快知道你的错误有多严重。
+DECLAREWAR_MILITARY_02     | 记住，可悲的[your_race]：以神的名义，这个宇宙的所有世界都属于[my_empire]，我们会以狂暴的愤怒扫荡这些世界
+DECLAREWAR_MILITARY_03     | 我们不会允许你在已经或将要属于我们的世界上再拥有一块石头！这将是你们军队的力量与我们信念的力量的对决。让我们看看谁会胜出！
+DECLAREWAR_ALLIANCE_01     | 向帝国的盟友宣战是一个不明智的决定。祈求你从你的众神那里得到怜悯吧，因为你在我们身上将得不到任何怜悯。
+DECLAREWAR_ALLIANCE_02     | 我们的盟友通知我们，你已选择与他们开战：你这样做也是向我们宣战。做好准备吧！
+DECLAREWAR_ALLIANCE_03     | 我们不关心[other_race]的命运，但我们会利用这个机会让你们从银河系消失，以便我们继续我们的圣战。
+DECLAREWAR_SPYING_01       | 可怜的[your_race]！在这一天，你将了解窃取帝国秘密是个愚蠢的行为！
+DECLAREWAR_SPYING_02       | 你这么想知道我们的秘密吗？那么我要告诉你最重要的一点：我们不会原谅，我们不会忘记。备战吧！
+DECLAREWAR_SPYING_03       | 你觉得你可以不计后果地窃取我们的秘密吗？你很快就会明白这样一个傲慢的决定是多么愚蠢。
+DECLAREWAR_ATTACK_01       | 你终于暴露了自己，克拉隆之子！除了我们最讨厌的敌人的后代，没有人会愚蠢到如此大胆地挑战我们！准备最后的战斗吧！
+DECLAREWAR_ATTACK_02       | 我们早就怀疑你是我们远古敌人的后代！通过这次进攻，你已经证实了这一事实！终于，我们的预言要应验了！
+DECLAREWAR_ATTACK_03       | 恶棍！天灾！在我们最黑暗的时刻，你对我们发动了这样的攻击？！既然你已经是我们的宿敌了，我们的实力再差也不会防止我们消灭你们！
+DECLAREWAR_OPPORTUNITY_01  | 当我们的圣战在银河系中继续时，我们必须抓住每一个机会来增加我们的优势。现在是时候了，消灭你们就是一个机会。再见了，可怜的[your_race]。
+DECLAREWAR_ASSASSIN_01     | 你怎么敢杀帝国的大使！？只有克拉隆的后代才能以如此邪恶的方式行事！准备你的舰队以备战吧！
+OFFER_PEACE_01             | 他们说，要了解一个人，你必须先与他们战斗。我们打了一架，我们看到你不是野兽克拉隆的后代。我们现在会和你和平相处，这样我们就可以把注意力集中在那些应该感受到我们愤怒的人身上了。
+OFFER_TRADE_01             | 探索太空是一项代价高昂的冒险。帝国希望开放贸易 每年[amt] BC 的贸易额将为我们的圣战提供资金，并为您的人民积累更多财富。您说呢？
+OFFER_PACT_01              | 我们只想摧毁克拉隆人和他的后代。只要我们相信你们不是克拉隆人，我们就对你没有任何疑虑。为证明我们的意图，我提议签署互不侵犯条约。是否选择签署，是您的决定。
+OFFER_ALLIANCE_01          | 在我们为净化银河系而进行的圣战中，我们遇到了许多奇怪而邪恶的生物。在我们遇到的那些人中，我们相信你是我们可怜的敌人的可能性最小。与我们结盟吧，[your_race]，并赢得[my_title]的祝福！
 
-OFFER_PEACE_01             | They say that to know someone you must first fight them. We have fought, and we see that you are not the children of the beast Quaralon. We would have peace with you now, so that we may focus our attention on those who deserve to feel our fury. 
-OFFER_TRADE_01             | To explore the depths of space is a costly venture. The Imperium wishes to propose open trade. [amt] BC per year will both fund our holy crusade and accrue more wealth for your people. What say you? 
-OFFER_PACT_01              | We seek the destruction of Quaralon and his ilk alone. So long as we believe your people not to be them, we have no qualms with you. We would prove our intentions with a non-aggression pact. Whether you choose to sign it is your decision.
-OFFER_ALLIANCE_01          | We have met numerous strange and vile creatures on our holy war to cleanse the galaxy. Of those we have encountered, we believe you the least likely to be our wretched foe. Ally with us, [your_race], and earn the blessing of the [my_title]! 
+WARN_TRESPASSING_01        | 你不请自来，玷污了[system]的神圣空间！立即撤退，否则我们会用导弹将你驱逐出去！
+WARN_EXPANSION_01          | 你觉得银河系是你一个人的吗？立即停止这种鲁莽的扩张，否则你将面临整个帝国的愤怒！
+WARN_BUILDUP_01            | 只有帝国才能拥有银河系中最强大的舰队，因为只有帝国才能对恶人做出正确的判决。[your_race]若挑战此规则，后果自负。
+WARN_SKIRMISH_01           | 你这是什么意思，大使？仅仅是一场小冲突，我们只会在这一次视而不见：不要让这种事情再次发生！
+WARN_ATTACKED_01           | 疯狂！竟然敢进攻帝国！？[defender_title]以它的智慧下令停止我们的报复，以便他可以看到你接下来会做什么。你真的是我们长期寻找的敌人吗？！
+WARN_INVADED_01            | 从帝国窃取领土，这肯定是[attacker_race]绝望的行动。[system]对我们来说毫无意义，但继续夺取属于帝国的东西只会意味着你的厄运！
+WARN_ESPIONAGE_01          | 窃取我们机密的决定是一个严重的决策错误，大使。我劝你小心：如果你的尝试不那么可笑，它会赢得更可怕的反应！ [framed]
+WARN_SABOTAGE_01           | 这是什么套路？破坏是只有懦夫和恶棍才会做的事情！毕竟，你是在表明自己是我们预言的宿敌吗？ [victim_title]将做出决定……[forced]
 
-WARN_TRESPASSING_01        | You defile the consecrated space of [system] with your uninvited presence! Retreat immediately or we will drive you out with righteous fire! 
-WARN_EXPANSION_01          | Do you believe the galaxy to be yours and yours alone? Halt this reckless expansion immediately, or face the wrath of the entire Imperium!
-WARN_BUILDUP_01            | Only the Imperium may possess the strongest fleets in the galaxy, for only the Imperium can pass proper judgment on the wicked. Challenge this dictum at your own peril, [your_race].  
-WARN_SKIRMISH_01           | What do you mean by this, ambassador? A mere skirmish we will turn a blind eye to only once: do not allow this to happen again! 
-WARN_ATTACKED_01           | Madness! You dare attack the Imperium so!? In its wisdom the [defender_title] has ordered a stay in our retaliation so that he may see what you will do next. Are you truly our long-sought foe after all?! 
-WARN_INVADED_01            | Surely an act of [attacker_race] desperation, to steal territory from the Imperium. Know that [system] was meaningless to us, but continuing to take what belongs to the Imperium can only spell your doom! 
-WARN_ESPIONAGE_01          | The decision to steal our secrets was a grave error in judgment, ambassador. I urge you caution: were your attempt not so laughable, it would certainly have earned a more dire response! [framed]
-WARN_SABOTAGE_01           | What trickery is this? Sabotage is a reprehensible action worthy only of cowards and villains! Are you revealing yourself to be our vile foe of our prophecies after all? The [victim_title] will decide... [forced]
-WARN_BIOWEAPON_01          | Unthinkable! The flesh is weak enough against conventional weaponry, but against biological weapons it stands no chance. And against civilians as well?! Surely the dark blood of Quaralon courses through the veins of your kind!
-WARN_GENOCIDE_01           | Tell us now why you have committed genocide against the [victim_race] race. Choose your words carefully: your answer determines how our two people will proceed from here!
-WARN_FINAL_WAR_01          | Only through the forging of alliances can we complete our holy crusade! We stand together as united peoples, yet you stand alone as the voice of chaos and war. The prophecy is in motion: you are the brood of Quaralon indeed! 
-WARN_COUNCIL_VOTE_01       | It would surely be better if this council were dissolved and the Imperium given sole control of galactic affairs. Then your people would be able to earn our enmity when you speak out against us so! 
-WARN_OATHBREAKER_01        | How disconcerting, to break one's word is to break one's trust. There is no doubt the Enemy of the Prophecies would dare act in such a way! [spiesCaught]
-WARN_ATTACKED_ALLY_01      | The [defender_race] bear the honor of fellowship with the Imperium! Heed our warning in response to your attack: I assure you that you will receive it only once!
-WARN_REBELLING_AGAINST_01  | Our crusade will not be delayed! Not by the simpletons of the council, and not by you! Brace yourself, ambassador: a holy storm will soon be upon you!
+WARN_BIOWEAPON_01          | 不可思议！肉体对抗常规武器已经足够弱小了，对抗生物武器更是毫无胜算。而且还针对平民？！毫无疑问，克拉隆人的黑血在你们的血脉中流淌！
+WARN_GENOCIDE_01           | 告诉我们你为什么对[victim_race]种族做出屠杀行动。谨慎选择你的措辞：你的回答决定了我们两个种族的未来！
+WARN_FINAL_WAR_01          | 只有结盟，才能完成我们的圣战！我们作为团结的人民站在一起，而你们却选择了混乱和战争。预言成为现实：你确实是克拉隆人的后代！
+WARN_COUNCIL_VOTE_01       | 如果这个委员会被解散并且让帝国单独控制银河系事务，那肯定会更好。那样的话，当你站出来反对我们时，你就能赢得我们的敌意！
+WARN_OATHBREAKER_01        | 多么令人不安啊，违背诺言就是违背信任。毫无疑问，预言中的宿敌就会这样做！ [spiesCaught]
 
-PRAISE_COUNCIL_VOTE_01     | Our trusted ally earns our praise once again! With you to speak reason to the council, our crusade will never falter! You have earned gratitude from the Imperium today, [voter_race]. 
-PRAISE_COUNCIL_VOTE_02     | Your race has not yet proven itself innocent, ambassador. Continue to support our cause in council, and prove yourself an ally of our crusade. 
-PRAISE_COUNCIL_VOTE_03     | Do not think that a single vote for the Imperium in council clears you of suspicion! Your kind have much more to prove before our doubts will be assuaged! 
+WARN_ATTACKED_ALLY_01      | [defender_race]享受着作为帝国盟友的荣耀！请注意我们对您攻击的警告：我向您保证，您只会收到一次！
+WARN_REBELLING_AGAINST_01  | 我们的讨伐不会被耽误！不会被议会的傻瓜们耽搁，也不会被你耽搁！站起来，大使：一场圣战的风暴即将降临在你身上！
 
-PRAISE_ATTACKED_ENEMY_01   | We do not yet know if the [defender_race] are the most nefarious children of Quaralon, but to see our allies join us so readily bolsters our spirits in this war! Onward! For Justice! For the Imperium!  
-PRAISE_ATTACKED_ENEMY_02   | You wish to join our fight against the [defender_race]? Go forth then, and show us how you conduct yourselves on the battlefield. Victory will bring higher status among the Imperial Court, but defeat will bring only death! 
-PRAISE_ATTACKED_ENEMY_03   | Surely you did not think us foolish enough to believe your innocence just for joining us in the fight against the [defender_race]? The Enemy of Prophecy would do just the thing to mask his identity. Go now! Show us how you fight, and we shall judge how pure you truly are! 
+PRAISE_COUNCIL_VOTE_01     | 我们值得信赖的盟友再次赢得了我们的赞誉！有你向委员会讲道理，我们的圣战将不会受阻！你今天赢得了帝国的感激，[voter_race]。
 
-PRAISE_TRADE_01            | The Imperium wishes you well, friend of the crusade! Our trade agreement has funded countless battles in our search for Quaralon's spawn. The Imperium hopes your people have profited equally so. 
-PRAISE_TRADE_02            | While we cannot say that we hold you above suspicion, we can say that directly funding our holy war through trade has bolstered our faith in you. See that it continues, ambassador! 
-PRAISE_REBELLING_WITH_01   | Our enemy has been found! The hideous spawn of Quaralon has usurped the galactic throne! Onward to battle: [my_race] and [your_race] fleets will join together and purge this filth from the galaxy!
- 
-ACCEPT_TRADE_01            | The Imperium accepts your offer, [your_race]. We will trade [amt] BC each year with you so that we may further our holy crusade.
-RESPOND_IGNORE_THREAT_01   | Our crusade will not be deterred by your idle threats. Find someone else to bother or risk our wrath!
-RESPOND_STOP_SPYING_01     | We merely wished to determine the identity of Quaralon's foul brood. We are satisfied your people are not our mortal enemies in disguise.
-RESPOND_STOP_ATTACKING_01  | Our fleets sought out enemies of the Imperium. If you are not our enemies, they have no need to remain where they are.
+PRAISE_COUNCIL_VOTE_02     | 你的种族还没有证明自己是无辜的，大使。继续在委员会中支持我们的事业，并证明自己是我们圣战的盟友吧。
+PRAISE_COUNCIL_VOTE_03     | 不要认为在议会中为帝国投一票就可以消除我们的怀疑！在我们的疑虑得到缓解之前，你们还有更多的东西需要证明！
+PRAISE_ATTACKED_ENEMY_01   | 我们还不知道[defender_race]是否是克拉隆最邪恶的孩子，但看到我们的盟友如此欣然加入我们，这鼓舞了我们的精神！向前！为了正义！为了帝国！
+PRAISE_ATTACKED_ENEMY_02   | 你想加入我们对抗[defender_race]的战斗吗？那就去吧，向我们展示你在战场上的表现。如果获胜，你们会在帝国中获得更高的地位，但失败只会带来死亡！
+PRAISE_ATTACKED_ENEMY_03   | 你肯定不认为我们愚蠢到仅仅因为你加入我们与[defender_race]的斗争就相信你是清白的吧？预言中的宿敌会做的是掩盖他的身份。现在走吧！向我们展示你是如何战斗的，我们将判断你是否无辜！
 
+PRAISE_TRADE_01            | 帝国祝你一切顺利，圣战的朋友！我们的贸易协定为我们寻找克拉隆后裔的战斗提供了资金。帝国希望你们的人民也同样受益。
+PRAISE_TRADE_02            | 虽然我们不能说我们对你毫无怀疑，但我们可以说，通过贸易直接资助我们的圣战增强了我们对你的信心。让它继续吧，大使！
+PRAISE_REBELLING_WITH_01   | 我们的敌人被发现了！克拉隆人的可怕后裔篡夺了银河王座！继续战斗吧：[my_race]和[your_race]的舰队将联合起来，从银河系中清除这些污秽！
+ACCEPT_TRADE_01            | 帝国接受你的提议，[your_race]。我们将每年与您交易[amt] BC，以便我们可以进一步推进我们的圣战。
+RESPOND_IGNORE_THREAT_01   | 我们的圣战不会被你的无用威胁吓倒。去打扰其他人吧，否则准备接受我们的怒火！
+
+RESPOND_STOP_SPYING_01     | 我们只是想确定克拉隆人肮脏的后代的身份。我们很满意你们的人民不是我们的死敌。
+RESPOND_STOP_ATTACKING_01  | 我们的舰队寻找帝国的敌人。如果你们不是我们的敌人，他们就没有必要呆在那里。

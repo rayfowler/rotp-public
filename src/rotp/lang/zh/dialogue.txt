@@ -1,6 +1,7 @@
 //
 // Dialogue that is not race-specific
 //
+// 第一次校对：2021.12.04
 
 DIPLO_TECH_REQUEST_MENU_01   | 你对哪一个技术感兴趣？
 DIPLO_TECH_COUNTER_MENU_01   | 你想用来交换什么？
@@ -10,40 +11,40 @@ DIPLO_THREATEN_MENU_01       | 你想威胁什么？
 DIPLO_DECLARE_WAR_MENU_01    | 你确定要开战吗？
 DIPLO_JOINT_WAR_MENU_01      | 我们开战的原因是什么？
 DIPLO_BREAK_ALLIANCE_MENU_01 | 我们想破坏与谁的联盟？
-DIPLO_OFFER_AID_MENU_01      | 你想要资助多少钱？
+DIPLO_OFFER_AID_MENU_01      | 你想要资助什么？
 DIPLO_OFFER_TECH_MENU_01     | 你想要提供什么技术？
 
-DECLINE_OFFER_01           | [my_nameTitle] [my_name] 拒绝了。
-DECLINE_OFFER_02           | [my_race] 考虑了你的提议，并拒绝了。
+DECLINE_OFFER_01           | [my_nameTitle][my_name]拒绝了。
+DECLINE_OFFER_02           | [my_race]考虑了你的提议，并拒绝了。
 DECLINE_OFFER_03           | 我们恭敬地拒绝您的提议。
 DECLINE_OFFER_04           | 我们目前不感兴趣。
-DECLINE_OFFER_05           | [my_race] 认为您的提议不公平。
+DECLINE_OFFER_05           | [my_race]认为您的提议不公平。
 DECLINE_OFFER_06           | 此时接受你方的提议不符合我们的最佳利益。
 DECLINE_OFFER_07           | 也许你把我们误认为是容易上当的傻瓜了，我们拒绝你的提议。
 DECLINE_OFFER_08           | 你的提议看起来并不公平。
 DECLINE_OFFER_09           | 我们恐怕要拒绝您的提议。
 
-DECLINE_ENEMY_ALLY_01      | [my_race] 永远不会与可恶的 [other_race] 的盟友做交易。
-DECLINE_ALREADY_ALLIED_01  | 只要你仍然与其他帝国结盟，[my_race] 和我的盟友就不会考虑你的请求。
+DECLINE_ENEMY_ALLY_01      | [my_race]永远不会与可恶的[other_race]的盟友做交易。
+DECLINE_ALREADY_ALLIED_01  | 只要你仍然与其他帝国结盟，[my_race]和我的盟友就不会考虑你的请求。
 DECLINE_NO_WAR_ON_ALLY_01  | 我们不会向自己的盟友宣战。
-DECLINE_PEACE_TREATY_01    | 我们不会破坏自己与 [other_race] 的和平协议。
-DECLINE_ANNOYED_01         | [your_race] 是满嘴空话而缺乏行动的生物，我们厌倦了你们的胡扯。
-DECLINE_ANNOYED_01         | [your_name] [your_nameTitle]，你考验了我们的耐心。也许你应该晚点再找我们聊。
-DECLINE_ANNOYED_01         | [my_name] [my_nameTitle] 已经听够了，我们以后再聊吧。
-DECLINE_ANNOYED_02         | 我们已经厌倦了外交谈判。我们以后再沟通吧。
+DECLINE_PEACE_TREATY_01    | 我们不会破坏自己与[other_race]的和平协议。
+DECLINE_ANNOYED_01         | [your_race]是满嘴空话而缺乏行动的生物，我们厌倦了你们的胡言乱语。
+DECLINE_ANNOYED_01         | [your_name][your_nameTitle]，你正在考验我们的耐心。也许你应该晚点再找我们聊。
+DECLINE_ANNOYED_01         | [my_name][my_nameTitle]已经听够了，我们以后再聊吧。
+DECLINE_ANNOYED_02         | 我们已经厌倦了外交谈判。以后再沟通吧。
 DECLINE_ANNOYED_02         | 这些谈话不会有结果。我们先告辞了。
 DECLINE_ANNOYED_02         | 告辞。
-DECLINE_ANNOYED_03         | [your_name] [your_nameTitle]， 非常抱歉，我们有更重要的任务要完成。
-DECLINE_ANNOYED_03         | 请原谅，我们已经没有时间了。
+DECLINE_ANNOYED_03         | [your_name][your_nameTitle]，非常抱歉，我们有更重要的任务要完成。
+DECLINE_ANNOYED_03         | 请原谅，我们的时间到了。
 DECLINE_ANNOYED_03         | 我们时间有限，任务繁多。也许以后我们可以再沟通。
 
 DECLINE_OATHBREAKER_01     | 因为你以前曾破坏过协议，我们不愿意再跟你订立协议了。
 DECLINE_OATHBREAKER_01     | 你没有遵守你过去的协议。我们看不出有什么理由相信你。
 DECLINE_OATHBREAKER_01     | 你违反了那么多过去的协议，我们为什么要相信你呢?
 DECLINE_OATHBREAKER_01     | 我们看不出有什么理由去信任一个没有兑现过去承诺的人。 
-DECLINE_OATHBREAKER_01     | 我们不会与没有荣誉感的 [your_race] 打交道。
+DECLINE_OATHBREAKER_01     | 我们不会与没有荣誉感的[your_race]打交道。
 DECLINE_ESPIONAGE_01       | 你们这些偷东西的狗，你们偷走了我们的研究成果。我们拒绝你们的请求。
-DECLINE_ESPIONAGE_01       | 我们的技术是为 [my_race] 种族服务的。你没有权利偷走它。等你什么时候停止偷窃了，我们再对话。
+DECLINE_ESPIONAGE_01       | 我们的技术是为[my_race]种族服务的。你没有权利偷走它。等你什么时候停止偷窃了，我们再对话。
 DECLINE_ESPIONAGE_01       | 为什么我们要给你东西呢？你们的间谍已经偷走了所有你们需要的东西！
 DECLINE_ESPIONAGE_01       | 你们的间谍正在偷走我们的研究成果，你怎么还敢期待我们接受你？
 DECLINE_ESPIONAGE_01       | 撤回你的间谍，然后我们再聊。
@@ -59,83 +60,84 @@ DECLINE_BUILDUP_01         | 让你的舰队从我们的国界离开我们的国
 DECLINE_BUILDUP_01         | 我们不害怕你在我们国界处集结的舰队。但只要它们还在那里，我们就不会跟你们打交道。
 DECLINE_BUILDUP_01         | 如果你想跟 [my_empire] 打交道，就把你的舰队派往别的地方，别派来我们这里。
 
-DECLINE_ENCROACH_01        | 你的舰队入侵了 [my_race] 的空间。把它们挪走，然后我们才对话。
+DECLINE_ENCROACH_01        | 你的舰队入侵了[my_race]的空间。把它们挪走，然后我们才对话。
 
 DECLINE_SKIRMISH_01        | 你没有理由地攻击了我们的舰队，你还期待我们接受你们的提议？我们拒绝。
 DECLINE_SKIRMISH_01        | 我们不能接受攻击我们舰队的人的提议。
 DECLINE_SKIRMISH_01        | 等你们的舰队停止攻击我方舰队，我们再谈。
-DECLINE_SKIRMISH_01        | 如果你想跟 [my_empire] 打交道，就别碰我们的舰队。
-DECLINE_SKIRMISH_01        | [my_name] [my_nameTitle] 对你们摧毁我们舰队的事情很不满意。我们拒绝。
+DECLINE_SKIRMISH_01        | 如果你想跟[my_empire]打交道，就别碰我们的舰队。
+DECLINE_SKIRMISH_01        | [my_name][my_nameTitle]对你们摧毁我们舰队的事情很不满意。我们拒绝。
 
-DECLINE_ATTACK_01          | 你对 [system] 的无理由进攻可不会给你谈判的筹码。
-DECLINE_ATTACK_01          | 我们还没有忘记你们对 [system] 殖民地的进攻。我们不可能接受的。
+DECLINE_ATTACK_01          | 你对[system]的无理由进攻可不会给你谈判的筹码。
+DECLINE_ATTACK_01          | 我们还没有忘记你们对[system]殖民地的进攻。我们不可能接受的。
 
-DECLINE_INVASION_01        | 我们的人民不会同意跟 [system] 的刽子手打交道。请先补偿你的过错。
-DECLINE_INVASION_01        | [system] 的鲜血是你的污点。我们拒绝你的提议。
-DECLINE_INVASION_01        | [system] 的死难者哭喊着报仇。他们的哭喊声比你们的提议更响亮。
+DECLINE_INVASION_01        | 我们的人民不会同意跟[system]的刽子手打交道。请先补偿你的过错。
+DECLINE_INVASION_01        | [system]的鲜血是你的污点。我们拒绝你的提议。
+DECLINE_INVASION_01        | [system]的死难者哭喊着报仇。他们的哭喊声比你们的提议更响亮。
 
-DECLINE_BIOWEAPONS_01      | [my_race] 不会与使用生化武器的种族做交易。
+DECLINE_BIOWEAPONS_01      | [my_race]不会与使用生化武器的种族做交易。
 
 DECLINE_BIOWEAPONS_01      | 我们不会与疯狂到使用生化武器的种族做交易。
 DECLINE_BIOWEAPONS_01      | 你的武器对无辜的人们造成了不可描述的恐怖。我们拒绝跟这样的疯子打交道。
-DECLINE_BIOWEAPONS_01      | 神明憎恨会使用生化武器消灭一个星球的人。[my_race] 绝不会接受。
+DECLINE_BIOWEAPONS_01      | 神明憎恨使用生化武器消灭一个星球的人。[my_race]绝不会接受。
 DECLINE_BIOWEAPONS_01      | 你的生化武器杀死了太多无辜者。我们不会接受你的提议。
 
 DECLINE_TECH_TRADE_01      | 你的技术我们不感兴趣。
-DECLINE_TECH_TRADE_01      | 我们不需要 [your_race] 到玩具。
+DECLINE_TECH_TRADE_01      | 我们不需要[your_race]的玩具。
 DECLINE_TECH_TRADE_01      | 你的原始发明我们不感兴趣。
-DECLINE_TECH_TRADE_01      | [my_race] 的技术已经远远超过了你们。
-DECLINE_TECH_TRADE_01      | [your_name] [your_nameTitle]，我们并不需要你们科学家提供的东西。
-DECLINE_TECH_TRADE_01      | [my_name] [my_nameTitle] 对你们的科学不感兴趣。
+DECLINE_TECH_TRADE_01      | [my_race]的技术已经远远超过了你们。
+DECLINE_TECH_TRADE_01      | [your_name][your_nameTitle]，我们并不需要你们科学家提供的东西。
+DECLINE_TECH_TRADE_01      | [my_name][my_nameTitle]对你们的科学不感兴趣。
 
-OFFER_TECH_EXCHANGE_01     | [your_empire] 非常需要你们的 [tech] 技术。也许你愿意跟我们做一做交换。
-OFFER_TECH_EXCHANGE_01     | [your_empire] 了解到你已经掌握了 [tech] 的秘密。我们可以提供一些自己的技术跟你做交换吗？
-OFFER_TECH_EXCHANGE_01     | [your_empire] 的 [your_name] [your_nameTitle] 希望能学习 [tech] 技术。你是否愿意用它来交换我方的先进技术呢？
+OFFER_TECH_EXCHANGE_01     | [your_empire]非常需要你们的[tech]技术。也许你愿意跟我们做一做交换。
+OFFER_TECH_EXCHANGE_01     | [your_empire]了解到你已经掌握了[tech]的秘密。我们可以提供一些自己的技术跟你做交换吗？
+OFFER_TECH_EXCHANGE_01     | [your_empire]的[your_name][your_nameTitle]希望能学习[tech]技术。你是否愿意用它来交换我方的先进技术呢？
 
-OFFER_TECH_EXCHANGE_01     | [your_race] 种族惊叹于 [tech] 的科学奇迹。我们能给您提供什么以换取这个技术呢？
+OFFER_TECH_EXCHANGE_01     | [your_race]种族惊叹于[tech]的科学奇迹。我们能给您提供什么以换取这个技术呢？
 
-ACCEPT_TECH_EXCHANGE_01    | 很好。[my_name] [my_nameTitle] 愿意用 [my_race] 的 [techGiven] 交换技术 [techReceived]
-ACCEPT_FINANCIAL_AID_01    | [my_name] [my_nameTitle] 你赠送的 [amt] BC 馈赠。
-ACCEPT_TECHNOLOGY_AID_01   | [my_name] [my_nameTitle] 接受你赠予的 [tech]。
+ACCEPT_TECH_EXCHANGE_01    | 很好。[my_name][my_nameTitle]愿意用[my_race]的[techGiven]交换技术[techReceived]。
+ACCEPT_FINANCIAL_AID_01    | [my_name][my_nameTitle]感谢你赠送的[amt] BC 馈赠。
+ACCEPT_TECHNOLOGY_AID_01   | [my_name][my_nameTitle]接受你赠予的[tech]。
 
-BREAK_TRADE_01             | [my_race] 公民不再需要 [your_empire] 的商品。
+BREAK_TRADE_01             | [my_race]公民不再需要[your_empire]的商品。
 
-ANNOUNCE_TRADE_01          | 从[year]开始，[my_empire] 和 [your_empire] 同意每年交易 [amt] BC的商品。
+ANNOUNCE_TRADE_01          | 从[year]开始，[my_empire]和[your_empire]同意每年交易[amt] BC的商品。
 
-ANNOUNCE_PEACE_01          | In the year [year] the [my_race] and [your_race] empires agree to terminate all hostilities.
-ANNOUNCE_PEACE_01          | [my_nameTitle] [my_name] hereby orders all hostilities to end between our empires.
-ACCEPT_PEACE_01            | We agree that the time has come to end our petty bickering.
-ACCEPT_PEACE_01            | We accept your offer of peace. Cease fire on [my_race] forces, and we will stop attacking yours.
-ACCEPT_PEACE_01            | We grow weary of this senseless destruction. The [my_empire] accepts your offer of peace.
+ANNOUNCE_PEACE_01          | [year]年，[my_race]和[your_race]同意终止所有的敌对活动。
+ANNOUNCE_PEACE_01          | [my_name][my_nameTitle]在此宣布双方暂停敌对关系。
+ACCEPT_PEACE_01            | 我同意是时候终止我们之间的小矛盾了。
+ACCEPT_PEACE_01            | 我们同意你的停战协议。如果你停止向[my_race]的军队进攻，我们也会停止进攻你的军队。
+ACCEPT_PEACE_01            | 我们对无谓的破坏感到厌倦了。[my_empire]接受你的和平提议。
+BREAK_PACT_01              | [my_race]向[your_empire]发出警告：我们的互不侵犯协议不再有效！
+ANNOUNCE_PACT_01           | [year]年，[my_empire]许诺遵守互不侵犯协议，不会攻击[your_race]的舰队，除非它们出现在我方殖民地的轨道上。
+ACCEPT_PACT_01             | [my_empire]接受互不侵犯协议。双方都不会攻击彼此的舰队，除非它们驶入对方殖民地的轨道。
+ACCEPT_PACT_01             | 如果你同意不再把舰队派往我方殖民地，[my_race]人民就同意不再攻击你的飞船。
+ACCEPT_PACT_01             | [my_name][my_nameTitle]同意了你提出的互不侵犯条约。既已协约，便当履行。
+ACCEPT_PACT_01             | 同意了。只要你不攻击我方殖民地，[my_empire]就会遵守互不侵犯条约。
 
-BREAK_PACT_01              | A warning to the [your_empire] from the [my_race]: our Non-Aggression Pact is broken!
-ANNOUNCE_PACT_01           | In the year [year] the [my_empire] pledges to adhere to a Non-Aggression Pact and not to attack [your_race] fleets unless they are orbiting one of our colonies.
-ACCEPT_PACT_01             | The [my_empire] agrees to a Non-Aggression Pact. Neither side will attack the other's fleets, unless they enter the orbit of an opposing colony.
-ACCEPT_PACT_01             | If you agree not to send ships to any of our colonies, the [my_race] people vow to not attack any of your ships.
-ACCEPT_PACT_01             | [my_nameTitle] [my_name] agrees to your proposed Non-Aggression Pact. So it is written, so shall it be done!
-ACCEPT_PACT_01             | Agreed, then. As long as you do not attack our colonies, the [my_empire] will abide by the Non-Aggression Pact.
+BREAK_ALLIANCE_01          | [my_empire]不能再与[your_empire]维持盟友关系。
+ANNOUNCE_ALLIANCE_01       | [year]年，[my_empire]与[your_empire]同意结成联盟，不会攻击彼此的舰队和殖民地。
 
-BREAK_ALLIANCE_01          | The [my_empire] can no longer maintain an Alliance with the [your_empire].
-ANNOUNCE_ALLIANCE_01       | In the year [year] the [my_empire] and [your_empire] agree to form an alliance in which neither will attack the other's fleets or colonies.
-ANNOUNCE_ALLIANCE_01       | So our Alliance is forged. Your ships may visit our colonies as you wish, and get fuel from our bases.
-ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] welcomes an Alliance with our good friend, [your_nameTitle] [your_name].
-ACCEPT_ALLIANCE_01         | The [my_empire] and [your_empire] today forge an Alliance between our peoples. Death to our enemies!
-ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] sees the wisdom in an Alliance with the [your_empire]. So be it!
+ANNOUNCE_ALLIANCE_01       | 我们的联盟已经建立。你的舰队可以随时造访我们的殖民地，从我们的基地补充燃料。
 
-OFFER_JOINT_WAR_01         | The time has come for the [your_empire] and [my_empire] to join together in war against the [other_race].
-ACCEPT_JOINT_WAR_01        | The [other_empire] must fall before the combined might of the [my_empire] and [your_empire].
-ACCEPT_JOINT_WAR_01        | With [my_race] and [your_race] allied, the [other_race] will not last long.
-ACCEPT_JOINT_WAR_01        | In the year [year], the [my_empire] and [your_empire] join forces to rid the galaxy of the [other_race] menace.
-COUNTER_JOINT_WAR_01       | We will join you in your war against the [other_empire] in exchange for the following compensation:
-RESPOND_CLOSE_EMBASSY_01   | So be it. There will be no further discussions between our empires.
+ACCEPT_ALLIANCE_01         | [my_name][my_nameTitle]欢迎我们的好盟友，[your_name][your_nameTitle]。
+ACCEPT_ALLIANCE_01         | [my_empire]和[your_empire]于今日结成同盟。让我们的敌人颤抖吧！
+ACCEPT_ALLIANCE_01         | [my_name][my_nameTitle]认为与[your_empire]的结盟是明智的。就按您说的做。
 
-RESPOND_BREAK_TRADE_01     | We will remember this.
-RESPOND_BREAK_TRADE_01     | So, [your_nameTitle] [your_name], you cannot keep your word. We will not forget this.
+OFFER_JOINT_WAR_01         | 是时候让[your_empire]和[my_empire]携手向[other_race]开战了。
+ACCEPT_JOINT_WAR_01        | [other_empire]必须臣服于[my_empire]和[your_empire]的联合力量！
+ACCEPT_JOINT_WAR_01        | 在[my_race]和[your_race]的联手下，[other_race]将迅速溃败。
+ACCEPT_JOINT_WAR_01        | [year]年，[my_empire]和[your_empire]将携手消灭宇宙的祸害[other_race]。
+COUNTER_JOINT_WAR_01       | 我们将会加入你对抗[other_empire]的战争，只要你提供如下报酬：
+RESPOND_CLOSE_EMBASSY_01   | 到此为止。我们之间将不会有更多的交流了。
 
-RESPOND_BREAK_PACT_01      | We will inscribe the words of your broken treaties upon your tombstone, [your_nameTitle] [your_name].
-RESPOND_BREAK_PACT_01      | The [your_empire] will crumble under the weight of its own broken promises.
+RESPOND_BREAK_TRADE_01     | 我们会记住这一切的。
+RESPOND_BREAK_TRADE_01     | 所以，[your_name][your_nameTitle]，你说到却做不到。我们会记住这一切的。
 
-RESPOND_BREAK_ALLIANCE_01  | You have dishonored the agreement. The alliance is broken.
-RESPOND_BREAK_ALLIANCE_01  | Very well. Your untrustworthy intentions have shown. The alliance is broken.
-RESPOND_BREAK_ALLIANCE_01  | We have little need of treaties that are not honored. The alliance is broken.
-RESPOND_BREAK_ALLIANCE_01  | So be it. The alliance is broken.
+RESPOND_BREAK_PACT_01      | 我们会把你所背弃的协议刻在你的墓碑上，[your_name][your_nameTitle]。
+RESPOND_BREAK_PACT_01      | [your_empire]会因自己背弃了承诺而毁灭。
+
+RESPOND_BREAK_ALLIANCE_01  | 你违背了协议。联盟破裂了。
+RESPOND_BREAK_ALLIANCE_01  | 非常好，你令人怀疑的意图已经暴露了。联盟破裂了。
+RESPOND_BREAK_ALLIANCE_01  | 我们不需要一个不被遵守的协议。联盟就此解散。
+RESPOND_BREAK_ALLIANCE_01  | 就这样吧，联盟就此解散。

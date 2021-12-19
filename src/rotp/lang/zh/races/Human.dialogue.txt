@@ -10,80 +10,100 @@
 //  
 // This license is legally binding. Please review this license before altering 
 // or distributing any material covered under this license.
-//
+
+// 第1次校对：2021.12.17
+
 
 // Human specific dialogue
 
-CONTACT_HONORABLE          | We are the [my_race_plural] of Earth, [your_title], and we're very excited to make contact with you. If you need anything of the Triumvirate, anything at all, please don't hesitate to ask.
-CONTACT_PACIFIST           | A warm hello, [your_name]. You are the [your_empire]? I represent the [my_empire], and I hope this will be the first of countless friendly exchanges between our people.
-CONTACT_ERRATIC            | The people of Earth usually prefer to solve our problems with negotiation and diplomacy. If your people prefer more violent methods though, we'd be more than happy to accommodate you, [your_race].
-//
-GREETING_01                | Ah! The ambassador for the [your_empire] is here! Can I get you any food or drink? Please make yourself comfortable and tell me what we can do for you today.
-GREETING_04                | Hello! You require something of the Triumvirate? I'm not sure I can get your request passed to the Triumvirs, but perhaps you need something they needn't be bothered with in the first place?
-GREETING_07                | Well, the [your_race] ambassador appears. What exactly do you want from us? It'd be best not ask for anything too unreasonable.
-//
-DECLAREWAR_HATE_01         | The Triumvirate is happy to show you why you shouldn't irritate a race whose power dwarfs your own. You should learn from this lesson... if you live through it that is.
-DECLAREWAR_HATE_02         | It saddens me to think of all the time we wasted "playing nice" with you when we were so obviously destined for a long and bloody war.
-DECLAREWAR_HATE_03         | There's no point in playing pretend anymore! We won't tolerate the demands that sharing the galaxy with you makes on us for even a second later! No matter what price we have to pay!
+CONTACT_HONORABLE          | [your_title]，我们是地球的[my_race_plural]，能联系到您是非常让人兴奋的事情。如果您需要任何属于执政官的东西，任何东西都行，请务必向我提出。
+CONTACT_PACIFIST           | 向您问好，[your_name]。您是[your_empire]吗？我是[my_empire]，我希望这次会面会为两国人民的交流开启一个友好的序章。
+CONTACT_ERRATIC            | 地球人更倾向于用协商和外交的方式解决问题。如果你们更想要使用暴力方法，我们也会奉陪到底，[your_race]。
 
-DECLAREWAR_ERRATIC_01      | There's been a lot of talk lately about our military getting lazy and complacent. Hopefully a war with you will whip them back into shape for the Triumvirate's more dangerous enemies.
-DECLAREWAR_ERRATIC_02      | Do you know about wargames, ambassador? Mock battles where we pit our forces against each other for training purposes. Well, we're hoping a real war with your people might be more beneficial towards that end. 
-DECLAREWAR_ERRATIC_03      | Nothing unites a population like a common enemy, ambassador! If you won't serve our interests via diplomacy, you can at least be of use to us as a force that brings our people together. 
 //
-DECLAREWAR_MILITARY_01     | It would have been better for you to agree to cede us territory through diplomatic means. Your refusal to do so forces us to take alternative action. 
-DECLAREWAR_MILITARY_02     | As you well know, a growing population requires ever expanding territory to meet its ever increasing needs. The time has come for us to expand, and the territory we need is yours. 
-DECLAREWAR_MILITARY_03     | The Triumvirs are as devoted to the people as the people are devoted to the Triumvirs. If our needs dictate we need your worlds to colonize, they will happily give their lives to see it done!
+GREETING_01                | 啊！[your_empire]的大使驾临了！我可以给您准备什么食物或饮品呢？请好好享受，并随时吩咐我您想要什么。
+GREETING_04                | 您好！您需要执政官的什么东西吗？我不确定我能把您的需求转告给执政官，但也许您想要的东西并不需要我向他们汇报。
+GREETING_07                | [your_race]的大使来了。你想要什么呢？最好不要提出太过分的要求。
 //
-DECLAREWAR_ALLIANCE_01     | There are many ways to impress one's allies, ambassador. Eliminating you will most assuredly increase our standing with the [other_race], so try to put on a good show won't you?
-DECLAREWAR_ALLIANCE_02     | The Triumvirate will never abandon its allies to face their enemies alone! With Human and [other_race] united, you have no hope for victory!
-DECLAREWAR_ALLIANCE_03     | Just because you have a strong military doesn't mean the galaxy is yours by default. We gladly join with the [other_race], and together we'll see you punished for your innumerable crimes!
+DECLAREWAR_HATE_01         | 执政官会很高兴地教你们一个道理：不要激怒一个比你们强大的种族。你们会从这个教训里学会很多，如果你们能活下去的话。
+DECLAREWAR_HATE_02         | 如今我们即将开始一场血腥的战争，想到我们曾经浪费时间与你友好相处，我真的难过。
+DECLAREWAR_HATE_03         | 没有再伪装下去的必要了！不管付出任何代价，我们不会再想要与你们共存在这个宇宙里，一秒钟也不行！
+DECLAREWAR_ERRATIC_01      | 帝国内有流言在宣称我们的军队在变得懒散以及孱弱。这场与你们的战争会让我们的军队得到锻炼，让我们在未来能对付更强大的敌人。
+DECLAREWAR_ERRATIC_02      | 你知道战争游戏吗，大使？那是以训练为目的的模拟战斗。现在，我们希望这场真实的战争能帮助我们更好地训练自己的军队。
+DECLAREWAR_ERRATIC_03      | 大使，没有什么比一个共同的敌人更能团结一群人了！如果你不愿意通过外交方式为我们的利益服务，那么你们至少可以作为让我们人民变得更团结的手段。
+
 //
-DECLAREWAR_SPYING_01       | It looks like you thought that you could get away with such underhanded tactics just because of our diplomatic preferences. Fear not! We'll help you learn just how big of a mistake you made!
-DECLAREWAR_SPYING_02       | It would have been better for both of us if you'd been as committed to diplomacy as we are. We'll respond to your war of subterfuge with a more... traditional method of warfare.
-DECLAREWAR_SPYING_03       | We'd hoped you agreed with our views on diplomacy as a means of achieving goals. Since you so obviously have more nefarious ideas, I'm afraid we have no other choice but to respond this way.
+DECLAREWAR_MILITARY_01     | 你最好愿意通过外交方式割让领土，如果你拒绝的话，我们只能采取其他手段了。
+DECLAREWAR_MILITARY_02     | 如你所知，更多的领土才能容纳快速繁育的人口。我们扩张的时候到了，而我们需要的领土就在你们手上。
+DECLAREWAR_MILITARY_03     | 执政官愿意为我们的人民献身，我们的人民也愿意为执政官献身。如果有一天我们不得不征服你的领土，我们的人民会愿意献出他们的生命来实现这个目标。
+
 //
-DECLAREWAR_ATTACK_01       | No need for a diplomatic facade anymore! To attack us simply proves you have outlived your usefulness. But don't worry! I'm sure we'll find a page for your people in our history books somewhere.
-DECLAREWAR_ATTACK_02       | Don't underestimate the military of the Triumvirate! If it's a fight you want then we're more than happy to take you on, ambassador!
-DECLAREWAR_ATTACK_03       | Humanity has gone through numerous dark times, but every time we've emerged stronger and wiser than we were before. I assure you, ambassador, this time will be no different.
+DECLAREWAR_ALLIANCE_01     | 大使，有很多方法能够让我们的盟友开心。将你们消灭一定会让我们与[other_race]的关系更进一步，所以请好好开始一场表演吧。
+DECLAREWAR_ALLIANCE_02     | 执政官永远不会让他们的盟友独自面对敌人！在人类和[other_race]的合力下，你毫无胜算！
+DECLAREWAR_ALLIANCE_03     | 你们有强大的军队，并不意味着宇宙就属于你们。我们与[other_race]结成了联盟，在我们的合力下你们将因为自己的罪恶而受到惩罚！
+
 //
-DECLAREWAR_OPPORTUNITY_01  | Every action we make is to serve our own goals, ambassador. We usually prefer using diplomacy, but since there's no real reason to keep you around, a quick war with you will better serve our ends.
-DECLAREWAR_ASSASSIN_01     | I was shocked to learn that a seemingly intelligent race could do something as heinous as killing an ambassador. We'll make an example of you, so that no empire will ever take this action against the Triumvirate as you have!
+DECLAREWAR_SPYING_01       | 你似乎认为我们可以因为外交原因忽略你们的阴谋诡计。我们会帮助你们认识到自己犯了一个多大的错误！
+DECLAREWAR_SPYING_02       | 如果你像我们一样尊重外交关系的话就好了。我们会回应你们的间谍破坏活动，用战争的方法！
 
-OFFER_PEACE_01             | Surely you can see now that wars such as this only bring tragedy. Let us stop this folly before more precious [your_race] and [my_race] blood is spilled. Join us in ending the war and forging a new future that our children will be proud to inherit!
-OFFER_TRADE_01             | There's a saying on [my_home] that "war is inevitable," but we learned long ago that it never comes true where prosperity reigns. Let us join together in pursuit of that prosperity. Shall we begin at, oh, [amt] BC per year? 
-OFFER_PACT_01              | We both know that wars may start accidentally when empires expand throughout the galaxy. The last thing the Triumvirate wants is war with a people as exemplary as yours, and a nonaggression pact will make both all our people rest easier at night. Don't you agree? 
-OFFER_ALLIANCE_01          | The [your_race_plural] are wonderful indeed! Ambassador, an idea just occurred to me: let us formalize an alliance between [your_race] and [my_race]. Together we can teach the rabble of this galaxy that diplomacy, not violence, is the only way forward! 
+DECLAREWAR_SPYING_03       | 我们曾经期待你们会像我们一样把外交当作实现目标的方法。显然你们有更糟糕的想法，恐怕我们别无选择，只能做出回应。
 
-WARN_TRESPASSING_01        | Ambassador, it seems a [your_race] fleet has taken up position in [my_race] space. Surely you know we can't allow this? It's quite alright, simply remove your fleets and we'll forget it ever happened.  
-WARN_EXPANSION_01          | While the Triumvirate wishes to respect your people's will, we simply can't turn a blind eye to such aggressive territorial expansion. I'm sure you will cease this in the name of preserving our diplomatic ties, right ambassador? 
-WARN_BUILDUP_01            | Ambassador, please! Our military leaders are in an uproar over the recent buildup of your fleets! I ask you slow your ship construction to show those military fools that their fears are unfounded! 
-WARN_SKIRMISH_01           | I've just received a grim report about a skirmish between Triumvirate ships and a fleet belonging to the [your_empire]. Please make sure this never happens again, otherwise I fear war will be an inescapable future!
-WARN_ATTACKED_01           | Not good ambassador: very not good. To attack us at [system]... what are you thinking? I'm trying to keep the military at bay due to my commitment to diplomacy, but if you keep this up there will be nothing I can do to satiate them. 
-WARN_INVADED_01            | Our generals are furious at the latest action your people have taken! With you invading the [system] system, they're ready to go to battle! You must stop this at once! You're not trying to start a war, are you?! 
-WARN_ESPIONAGE_01          | My people are no strangers to spying, and it has pervaded our culture since a bitterly frigid war many centuries ago. But you must know that repeated attempts to steal our secrets will be met with retaliation in the future? [framed]
-WARN_SABOTAGE_01           | Espionage we could understand, but sabotage?! I'll do what I can to keep the generals placated, but if you try something like this again I doubt I'll be able or even willing to help you in the future. [forced]
-WARN_BIOWEAPON_01          | It's come to my attention that you used a bioweapon on civilians at [system]. I'm... frankly at a loss for words. For the good of our diplomatic ties I'll do what I can, but I can't say I'm enthusiastic about what the response will be within the Triumvirate. 
-WARN_GENOCIDE_01           | What have you done?! A beautiful and ancient culture has been lost forever! I shudder to think how the Triumvirs will react to this news: to genocide the [victim_race] is the absolute antithesis of our philosophy! 
-WARN_FINAL_WAR_01          | At last the galaxy has chosen to join together and move for peace, and yet you of all people choose to defy our democratically chosen course of action? After all our dealings I was mistaken to think better of you. But I know that soon that mistake will be rectified!  
-WARN_COUNCIL_VOTE_01       | I confess myself disappointed at your actions in council, ambassador. I'm hoping that this was a single mistake on your part and that this can become, as we humans like to say, "water under the bridge."
-WARN_OATHBREAKER_01        | Trust is the basis of all diplomacy, ambassador. In breaking your word you've spat upon our trust, and I assure you that our diplomatic relations have been dealt a blow from which they'll likely never recover. [spiesCaught]
-WARN_ATTACKED_ALLY_01      | Ambassador, I strongly advise you against further attacks on the [defender_race]. We have sworn an alliance with them, and even I won't be able to keep our military at bay if you insist on continuing this violent course of action!
-WARN_REBELLING_AGAINST_01  | It cannot be that you have been chosen over us to lead the Galactic Council! The Triumvirs will be furious! I fear that they will see war as this only viable option remaining! 
 //
-PRAISE_COUNCIL_VOTE_01     | My good friend the ambassador! I just wanted to tell you: well done in the council today! The Triumvirate always appreciates those who support our causes, and are happy that an ally as grand as you continues to earn that appreciation. 
-PRAISE_COUNCIL_VOTE_02     | Ah, the ambassador of the [voter_empire]. I'm glad I found you before we adjourned. I'm happy to see your faith in the ideals of the Triumvirate are so strong! When we each return home, be sure to reach out to me so that we might strengthen our diplomatic ties!
-PRAISE_COUNCIL_VOTE_03     | So you voted for us after all, eh? I'm pleased that you're finally coming to your senses. If you're willing to put the work in to forge new diplomatic bonds with the Triumvirate, I might be willing to put in a good word for you. 
+DECLAREWAR_ATTACK_01       | 不用再做外交上的掩饰了。对我们发动攻击，说明你们的存在也没了意义。不用担心，我们会在历史书上给你们种族留下一页的。
+DECLAREWAR_ATTACK_02       | 不要低估执政官的军事力量！如果这就是你想要的战争，我们会全力以赴的，大使！
 
-PRAISE_ATTACKED_ENEMY_01   | I have little doubt that the [defender_race] wasn't expecting the Triumvirate would ever fight a war, but I know they didn't expect our friends the [your_race] to join as well! Together we'll show them why diplomacy and trust the most important tools one can master! 
-PRAISE_ATTACKED_ENEMY_02   | Today is a good day for battle, ambassador. We prefer to make friends under far more peaceful circumstances, but if a war against the [defender_race] marks the beginning of a long friendship between my people and yours, then this is doubtless a war worth fighting! 
-PRAISE_ATTACKED_ENEMY_03   | The Triumvirate is more than capable of taking on any enemy who scorns our attempts at peaceful relations. But, if you insist on joining this fight as an act of good faith, we'll certainly not do anything to stand in your way!
+DECLAREWAR_ATTACK_03       | 人类经过了许多的黑暗时刻，但每一次我们都变得更强大和睿智。我向你保证，大使，这次也不会有区别。
 
-PRAISE_TRADE_01            | Now this is what it's all about! Good friends and prosperous trade agreements are worth more than enemies and devastating wars! I'm glad that your people elect to be our friends, and I'm sure the Triumvirs feel the exact same way! 
-PRAISE_TRADE_02            | Yes, trust is the foundation of diplomacy, but mutually beneficial trade certainly never hurts, eh? I hope we can continue our agreement indefinitely, and that new ways for us to help each other emerge. As we humans like to say, "if you scratch my back, then I'll scratch yours!" 
+//
+DECLAREWAR_OPPORTUNITY_01  | 我们的一切行动都是为了实现自己的目标，大使。通常我们会选择外交手段。但是，如今你们的存在已经不再有价值，与你们开战会更能让我们实现目标。
+DECLAREWAR_ASSASSIN_01     | 一个看上去智慧的种族会做出刺杀大使的事情，太让我震惊了。我们会把你变成反面教材，让其他帝国再也不敢对执政官采取这样的行动！
 
-PRAISE_REBELLING_WITH_01   | Fear not, ambassador! We too recognize the council for what it is: corrupt dictatorship masquerading as peaceful coexistence. We will stand as one, and we will not stop until we're rid of these despots once and for all! 
+OFFER_PEACE_01             | 毫无疑问，你已经注意到这场战争带来的灾难。为了让不让更多[your_race]和[my_race]的鲜血流淌，让我们停止这一切吧。请加入我们，停止战争，让我们的子女都能有一个更好的未来！
+OFFER_TRADE_01             | [my_home]有一句古话：战争不可避免。但很久以前我们就认识到富足能避免争端。让我们一起追求富足的生活吧。我提议双方展开贸易活动，每年[amt] BC 如何？
+OFFER_PACT_01              | 我们都知道在帝国扩张的过程中，战争是不可避免的。执政官想最不希望发生的就是和像你们这样出色的种族爆发战争。让我们订立一个互不侵犯协议吧，这会让我们的人民在晚上都能安睡。
+OFFER_ALLIANCE_01          | [your_race_plural]人民是优秀的！大使，让我们建立[your_race]和[my_race]之间的联盟吧。我们双方可以教会这个宇宙的暴民们一个道理：外交，而不是暴力，才是永远的生存之道。
 
-ACCEPT_TRADE_01            | This trade agreement will profit us both, ambassador. The [my_empire] and the [your_empire], friends to the tune of [amt] BC yearly! That has a nice ring to it, don't you agree?
-RESPOND_IGNORE_THREAT_01   | Oh surely this threat of yours is a joke of some kind? Yes, yes, a joke! Haha, very amusing, ambassador!
-RESPOND_STOP_SPYING_01     | Well this is a messy affair. The Triumvirate disavows any knowledge of this rogue agent who acted of their own accord in spying on your people. Please return them to us, and I assure you this will not happen again.
-RESPOND_STOP_ATTACKING_01  | This is an old [my_race] tradition we call "saber rattling." Consider the saber adequately rattled, ambassador: our fleets will return to us now.
+WARN_TRESPASSING_01        | 大使，[your_race]的舰队正占据着属于[my_race]的空间。你应该知道我们不能允许这样的事情发生吧？很简单，请把你们的舰队撤走，我们会当作这件事情没有发生。
+WARN_EXPANSION_01          | 尽管执政官想要尊重你们人民的意志，但我们不可能对这种激进扩张领土的行为视而不见。我相信为了维护我们双方的外交关系，你们会停止这种激进扩张的行为，对吧，大使？
+WARN_BUILDUP_01            | 大使！你们舰队的扩张让我方的军方高层非常担心！希望你们把军队扩张的速度慢下来，证明我方的担忧是多虑了。
+
+WARN_SKIRMISH_01           | 我刚收到一个报告：执政官的舰队与[your_empire]的舰队爆发了摩擦。请确保这不会再次发生，否则我担心战争会成为不可避免的结果。
+
+WARN_ATTACKED_01           | 这不好，大使，这一点也不好。攻击我们的[system]，你们在想什么？我用自己的外交努力限制着军队的影响，但如果你们继续这样做，我将无法再让我们的军方保持冷静。
+WARN_INVADED_01            | 我们的将军对你们最近的行动非常愤怒。你们进攻了[system]之后，他们已经准备好开战了！你必须立刻停止这些！你们不会是想爆发全面战争吧？
+WARN_ESPIONAGE_01          | 我们对间谍并不陌生。几个世纪以前我们经历一场因为间谍导致的残酷战争。你应该意识到，这些窃取我们机密的间谍行动会导致我们的报复吧？[framed]
+WARN_SABOTAGE_01           | 我们可以理解窃密，但破坏行动？我会尽己所能让军队们冷静，但如果你们再次尝试做这些事情，恐怕我也帮不了你们了。[forced]
+WARN_BIOWEAPON_01          | 我注意到你们在[system]对一个文明使用了生化武器。我……不知道说什么了。为了我们的外交关系我会尽力而为，但我很难说执政官们会对这件事情有什么反应。
+
+WARN_GENOCIDE_01           | 你们做了什么？！一个美丽古老的文明就这样永远地消失了。执政官会对这个消息作出的反应让我颤抖：屠杀[victim_race]绝对地违背了我们的生存哲学。
+WARN_FINAL_WAR_01          | 整个宇宙终于团结一致选择了永久的和平，但你们却公然违抗了民主选择的道路？我们过去的外交关系让我把你想得太好了。但现在我只知道，你很快就会为自己的错误付出代价！
+
+WARN_COUNCIL_VOTE_01       | 我承认我对你在议会上的投票非常失望，大使。我希望这会是你犯的唯一一个错误，就像我们人类所说的：木已成舟，过去的就过去吧。
+WARN_OATHBREAKER_01        | 信任，大使，是外交的基石。你破坏了我们之间的信任。我们的外交关系遭到了无法修复的损坏。[spiesCaught]
+
+WARN_ATTACKED_ALLY_01      | 大使，我强烈地建议你们不要再进攻[defender_race]。我们与他们已经宣布成为同盟。如果你继续暴力行动，我将无法阻止我方军队的反应。
+
+WARN_REBELLING_AGAINST_01  | 我无法相信你们竟然没有选择让我们领导宇宙议会！执政官们会愤怒的！我恐怕战争已经变成了我们唯一的选择。
+
+
+//
+PRAISE_COUNCIL_VOTE_01     | 大使，我的好朋友！我想告诉你：今天你在议会的表现太好了。执政官们非常欣赏那些愿意支持我们事业的朋友，我很高兴像你这样的盟友值得这样的欣赏。
+PRAISE_COUNCIL_VOTE_02     | 啊，[voter_empire]的大使。能在休会前见到你太好了。我很高兴你对执政官有如此强的信心。回家后请你务必与我联系，让我们能够增强双方的外交纽带。
+PRAISE_COUNCIL_VOTE_03     | 所以你们终于给给我们投票了？我很高兴你们恢复了理智。如果你们想与执政官建立新的外交联系，我会为你美言几句的。
+
+PRAISE_ATTACKED_ENEMY_01   | 我不认为[defender_race]会预料到我们的执政官会发动一场战争，我也同样不认为他们会预料到我们的盟友[your_race]会加入！我们双方的合作会告诉他们，外交和信任是最重要的。
+PRAISE_ATTACKED_ENEMY_02   | 今天是适合打仗的日子，大使。我们一般会在和平年代交朋友，但如果与[defender_race]的战斗标志着我们双方长期友谊的开始，那这场战争就是值得的。
+PRAISE_ATTACKED_ENEMY_03   | 执政官们对打败任何敌人都充满信信心。但如果你们为了表达信任而坚持加入战场战斗，我们不会阻止！
+
+PRAISE_TRADE_01            | 这就是最重要的了吧！友谊和贸易强过敌对和战争！我很高兴你们的人民选择成为我们的朋友，我相信执政官也会有相同的感觉。
+
+PRAISE_TRADE_02            | 信任是外交的基础，但互惠互利的贸易也不会有害处，对吧？我希望我们的协议会一直持续下去，而且能够让我们互惠的新可能会出现。就像人类喜欢说的：如果你给我的背部挠痒痒，我也会给你的背部挠痒痒。
+
+PRAISE_REBELLING_WITH_01   | 不用担心，大使！我们也清楚地看到了议会的真面目：伪装成和平合作的腐败独裁统治。我们会站在一起，直到我们彻底摆脱这些腐朽的专制者！
+
+
+ACCEPT_TRADE_01            | 这个贸易协议会让我们双方获利的，大使。[my_empire]和[your_empire]，为每年[amt] BC 的贸易干杯吧！这听上去很棒，你说呢？
+RESPOND_IGNORE_THREAT_01   | 你的威胁应该是个玩笑吧？是的，一定是个玩笑。真好笑，哈哈哈，大使。
+RESPOND_STOP_SPYING_01     | 这是个糟糕的状况。执政官并不知道这些间谍的行动，他们的行动应该出于自作主张。请把他们归还给我们，我保证这些不会再发生。
+
+RESPOND_STOP_ATTACKING_01  | 这是一个[my_race]的老传统：秀秀肌肉。请相信我们已经秀了肌肉，大使。我们的军舰这就返航。

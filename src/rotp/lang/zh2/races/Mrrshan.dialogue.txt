@@ -1,0 +1,97 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+// 第1次校對：2021.12.18
+
+
+// Mrrshan specific dialogue
+
+CONTACT_AGGRESSIVE         | 向你問好，奇怪的生物。我是[my_race]的一員，黃金可汗的僕人。希望你足夠強大，[your_race]，不只是爲了保護你的同類，也是爲了保護你珍視的財寶。
+CONTACT_RUTHLESS           | [your_race]，我們是[my_race]。我們只相信一個準則：弱肉強食。如果你不理解這句話的意思，我們很快就會讓你知道。
+CONTACT_XENOPHOBIC         | 祈禱黃金可汗會喜歡你們吧，[your_race]。如果引發了他的憤怒，他會立刻命令[my_race]的艦隊把你碾壓。
+
+//
+GREETING_01                | 你們一次次地證明了自己。我們也會很榮幸地證明自己。
+GREETING_04                | 我會傾聽你的訴求，但我不一定能給你你想要的東西。
+GREETING_07                | 敢於接近可汗的僕人，證明你是有些膽子的。說出你想幹嘛吧，如果我覺得你在浪費我時間，那你得準備好逃跑了。
+
+//
+DECLAREWAR_HATE_01         | 你的寶物被你糟蹋了！我們會用你的骨頭和你的財寶來裝飾菲利亞斯的大廳。當戰爭結束時，這些東西將成爲你們種族的唯一遺物！
+DECLAREWAR_HATE_02         | 夠了！單純的襲擊並不足以展示我們對你們種族的敵意：你們[your_race_plural]應該受到更大規模的攻擊！
+DECLAREWAR_HATE_03         | 像你這樣弱小的種族在這個宇宙中也能有影響，這讓我們作嘔。我向你保證，我們會教你擺正自己的位置。
+
+//
+DECLAREWAR_ERRATIC_01      | 汗國的利爪需要磨礪，大使。你的人民要做好準備了，我們的狩獵需要有價值的對手。
+DECLAREWAR_ERRATIC_02      | 你的人民確實擁有一些最美麗的寶藏，[your_race]。 我們迫不及待地想看看你會爲了留住它們而戰鬥！
+DECLAREWAR_ERRATIC_03      | 我們已經很久沒有帶回傳奇戰利品了。你們很會戰鬥，但你們能防止我們奪取自己想要的戰利品嗎？
+
+//
+DECLAREWAR_MILITARY_01     | 強者取之，弱者予之：這是一條鐵一般的宇宙法則。你很快就會發現它不僅適用於你的財寶，也適用於你的行星。
+DECLAREWAR_MILITARY_02     | 雖然它很少像黃金一樣閃閃發光，但土地本身是一種有價值的戰利品。所有的好戰利品都值得爲之奮鬥，不是嗎，大使？
+DECLAREWAR_MILITARY_03     | 汗國的需求比[your_race]種族的需要的更重要。您可能擁有令人印象深刻的技術，但我懷疑您是否具有與之匹配的戰鬥力！
+
+//
+DECLAREWAR_ALLIANCE_01     | 你選擇成爲汗國盟友的敵人，這是個危險的遊戲。這個遊戲很快就會來到一個慘烈的結局！
+DECLAREWAR_ALLIANCE_02     | 我們的盟友[other_race_plural]是一個光榮但軟弱的種族。如果這場戰爭只涉及你們兩個帝國，你可能會贏，但有我們在他們身邊，你就沒有獲勝的機會！
+DECLAREWAR_ALLIANCE_03     | 我們本來希望能以一己之力毀滅你們的帝國。現在看來，我要跟[other_race]一起平分榮耀和戰利品了。
+
+//
+DECLAREWAR_SPYING_01       | 膽小鬼，相比於爲榮譽而戰，你更願意行雞鳴狗盜之事！你的行爲與你的弱小相得益彰，現在你將付出代價！
+DECLAREWAR_SPYING_02       | 冒這麼大的風險，卻只給你的人民帶來戰爭。你現在感覺如何，[your_race]？
+DECLAREWAR_SPYING_03       | 告訴[your_name][your_nameTitle]：竊密是膽小者的標配。你會如此懦弱，意味着我們的兇猛足以讓我們取得勝利！
+//
+DECLAREWAR_ATTACK_01       | 哈！在這裏，我們把你當成了弱者，但看來你終究還是有些戰鬥力的！遺憾的是，你沒有機會慶祝任何勝利！
+DECLAREWAR_ATTACK_02       | 你把戰鬥帶到了我們家門口，幫了我們大忙！我們會好好迴應你，確保你的人民像真正的戰士一樣在戰場上安息！
+DECLAREWAR_ATTACK_03       | 如果我是你，我會避免顯得太傲慢，大使。我們戰士的力量是永遠不會被科技打敗的，無論你的科技有多強大！
+//
+DECLAREWAR_OPPORTUNITY_01  | 你們的同類已經不再有存在的意義。但是請放心，你們將成爲我們最年輕和最缺乏經驗的戰士的訓練對象，他們會藉機磨練他們的戰鬥技能。
+DECLAREWAR_ASSASSIN_01     | 我一點也不感到震驚，你們這種人會如此魯莽行事。暗殺大使是最嚴重的恥辱。你的人民會在他們倒下時詛咒你的名字。
+OFFER_PEACE_01             | 任何事都是可以商量的，大使。現在是結束我們敵對行動的時候了。保管好你的寶物吧。和平是我們唯一需要從你身上得到的。
+OFFER_TRADE_01             | 毫無疑問，獲得寶物的最快方法就是從那些無法保護寶物的弱者身上奪走它們！但貿易也可以成爲兩個帝國相互獲取利益的方式。讓我們每年從[amt] BC 開始，看看我們能從彼此身上獲得多少。
+OFFER_PACT_01              | 當有大量弱小的種族等待着被掠奪時，實力匹配的帝國不需要相互爭鬥。讓我們達成互不侵犯條約吧，這樣我們的精力就可以專注於奪取弱者的寶物了。
+OFFER_ALLIANCE_01          | 我今來此，是想提議可汗與[your_empire]結成盟友。我相信你會毫不猶豫地簽下這份協議。記住這點：盟友之間會平分戰爭的獎勵。
+WARN_TRESPASSING_01        | 除非你位於[system]星系的飛船是想上貢，否則我建議你趕緊離開，越開越好。
+WARN_EXPANSION_01          | 雖然我們更喜歡能夠被裝飾在牆上的珍寶，但我們也不會忽視另一種寶貝：無人佔領的領土。注意你的擴張速度，否則我們會生氣的，大使。
+WARN_BUILDUP_01            | 如果你擴張艦隊是爲了入侵其他種族，我們不會反對。除非我們能夠獲得這方面的保證，否則我們會認爲你的艦隊就是要進攻我們，這樣的話，我們也只能相應地行動了。
+
+WARN_SKIRMISH_01           | 那是令人愉快的衝突，對嗎？而且這些小戰鬥無聊，又缺少獎勵。但你如果想要繼續的話，我們會考慮正式宣戰的。
+
+WARN_ATTACKED_01           | 哈！你想用這麼一個糟糕的行動來刺激我們嗎，大使？你們很弱小，你們的寶物不值一提。停止這個沒有意義的賭博吧，不然我們會被迫幫你們停止。
+WARN_INVADED_01            | 你這小小的入侵行動應該是種玩笑吧？你應該感到慶幸，[system]星系對我們的用處不大，但如果你想侵佔更有價值的領土，我們會保證你一無所獲。
+WARN_ESPIONAGE_01          | 你的人在玩什麼鬼鬼祟祟的遊戲！如果你想獲得汗國的祕密，你將不得不付出更多的努力。在這個遊戲不再有趣之前，帶上你的間諜離開吧。[framed]
+WARN_SABOTAGE_01           | 危險的做法，大使！如果你想要破壞的建築裏藏着珍貴的物品，我們毫無疑問地會血洗你的家園。我非常認真地建議你停止破壞行動。[forced]
+WARN_BIOWEAPON_01          | 獎品只應該從公平的戰鬥中獲得，而不是從那些手無寸鐵的人身上偷取！如果你再次使用這種令人鄙夷的武器，我們會保證你不會再有下一次機會。
+WARN_GENOCIDE_01           | 消滅一整個[victim_race]物種，拿走屬於他們的一切財寶，這不是個糟糕的決定。雖然我懷疑你是否會愚蠢到對我們做類似的事情，但你仍然讓我們感到不安。
+WARN_FINAL_WAR_01          | 愚蠢的[your_race]！違抗委員會的決定，就是在違抗[my_race]的意志！我們會奪走並燒燬你們的一切寶物！你們種族的任何東西都不會留下來。
+WARN_COUNCIL_VOTE_01       | 相比於在委員會的房間裏玩政治遊戲，可汗有更重要的任務要去處理。在我們看來，你應該按照我們的想法行動。這對你也是有好處的，如果你知道我什麼意思的話。
+WARN_OATHBREAKER_01        | 只有絕望的人會破壞他們的諾言。無論如何，從現在開始，我們會把你當作不值得信任的種族來對待。[spiesCaught]
+WARN_ATTACKED_ALLY_01      | 我承認理解你攻擊[defender_race]的原因。他們的寶藏實在吸引人……但這些寶藏屬於未來進攻他們的我們，這些寶藏不屬於你們！
+WARN_REBELLING_AGAINST_01  | 委員會所確定的和平並不符合我們人民的想法。我們要且僅要一件事情：將弱者的寶藏據爲己有！
+
+PRAISE_COUNCIL_VOTE_01     | 你在委員會裏的支持至關重要，大使！黃金可汗想告訴你，你們對可汗有巨大的價值。如果有一天你們想拜訪[candidate_home]，一場宴會會以你們的名義舉行！
+
+PRAISE_COUNCIL_VOTE_02     | 你看到[rival_race]代表皺眉了嗎？哈！讓他們冷笑吧！只要像你這樣的智者繼續承認我們的力量，那麼汗國就沒有什麼可害怕的！
+PRAISE_COUNCIL_VOTE_03     | 你害怕我們的突襲嗎，大使？你是否在委員會中安撫了我們呢？這會讓我們的尋寶者遠離你的世界的。嗯嗯嗯，這肯定不會傷害到你，是吧。
+PRAISE_ATTACKED_ENEMY_01   | [attacker_race]，今天會是我們兩個種族的大日子！[defender_race]在我們的聯合力量下將不堪一擊。有足夠多的戰利品供我們瓜分，最強的戰士會獲得最好的戰利品！
+PRAISE_ATTACKED_ENEMY_02   | 大使，你們也想獲得寶物吧？很好，我會和你做個交易：幫助我們擺脫這些[defender_race]害蟲，我們會確保你獲得公正的獎勵。
+PRAISE_ATTACKED_ENEMY_03   | 很明顯，你加入這場戰爭只是因爲你可以爲自己獲取財富。但是這些[defender_race]的財寶很普通。我想如果你幫助我們，我們會爲你留下任何我們不想帶走的東西。
+PRAISE_TRADE_01            | 還記得我們剛開始貿易協議的時候嗎？我告訴你，我們想看看各自能獲得多少好處。我很高興地看到我們都獲得了好處。
+PRAISE_TRADE_02            | 爲財富而戰並帶着戰利品滿載而歸是一件很棒的事情。但是，我猜這份貿易協議也會帶來持續的財富。讓這個狀態維持吧，大使。
+PRAISE_REBELLING_WITH_01   | 這纔像話！沒有什麼比一場酣暢淋漓的戰鬥更爽的事情了，對吧？而且還有那麼多的戰利品等着我們……我希望你不介意可汗想要加入這場戰爭！
+
+ACCEPT_TRADE_01            | 我想我們不可能去掠奪每一個我們見到的文明。你想要每年交易多少 BC 來着？[amt]？好的吧。
+
+RESPOND_IGNORE_THREAT_01   | 原諒我笑了，你的威脅空洞得可笑。快跑吧，在我們的戰士決定拿你們的殖民地開刀前。
+
+RESPOND_STOP_SPYING_01     | 你發現了一個屬於我們的戰士？我們不會想要偵查了不起的[your_empire]。隨便你怎麼處置這個所謂的間諜吧，我們不關心。
+RESPOND_STOP_ATTACKING_01  | 擔心一次進攻嗎，[your_race]？不用擔心，我們對你的東西不敢興趣。我們這就離開。畢竟，我們不想驚嚇到你。
+

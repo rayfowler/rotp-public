@@ -1,0 +1,24 @@
+// 第1次校對：2021.12.15
+
+// all possible names
+name: 熊族, 熊拉提族, 大熊族, 熊爪族, 灰熊族
+
+desc1: 好鬥的生態主義者
+desc2: 出色的地面格鬥家
+desc3: 忠誠的[race]高度重視他們哲人王的力量和智慧。
+
+
+// possible home system names
+home: 大熊星, 熊星, 灰熊星, 熊貓星, 棕熊星
+
+title:     大主教
+fulltitle: 大主教
+
+// possible leader names
+leader: 布盧克斯, 杜普, 格魯克, 克魯格, 蒙克, 斯莫克
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: 熊掌, 巡邏者, 熊爪, 熊牙, 熊齒, 公熊, 熊
+ship2: 獵人, 角鬥士, 哨兵, 漁人, 追蹤者, 肉食者, 熊貓
+ship3: 戰熊, 野獸, 捕食者, 威脅者, 殺手, 守衛, 保護者
+ship4: 大灰熊, 懲罰者, 犀牛號, 科迪亞克, 毀滅者, 地獄犬, 大槌

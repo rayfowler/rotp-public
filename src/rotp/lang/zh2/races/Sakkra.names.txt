@@ -1,0 +1,23 @@
+// 第1次校對：2021.12.18
+// all possible names
+name: 蜥蜴族, 爬行族, 索拉族, 拉普托拉族, 提拉那族
+
+desc1: 好鬥的擴張主義者
+desc2: 較快的人口增速
+desc3: 狂熱的[race]想要通過征服讓宇宙變得完美。
+
+// possible home system names
+home: 斯拉, 斯納, 斯斯爾, 斯薩, 斯斯, 斯斯納
+
+title:     長官
+fulltitle: 最高長官
+
+// possible leader names
+leader: 瓜納, 西薩, 克里斯塔, 薩拉可, 索隆, 提拉尼德
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: 壁虎, 變色龍, 蜥蜴, 鬣蜥, 靈蜥, 安樂蜥, 鞭尾蜥
+ship2: 南美蜥, 紅樹蜥, 凱門蜥, 鼉蜥, 紅眼鷹蜥, 恆河鱷, 鹽齒鱷魚
+ship3: 恐龍, 伶盜龍, 翼手龍, 獸腳龍, 角龍, 掠龍, 蛇頸龍
+ship4: 泰坦龍, 巨龍, 龍, 哥斯拉, 海龍王, 蛇怪龍, 霸王龍
+

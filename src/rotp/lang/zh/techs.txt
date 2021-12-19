@@ -3,6 +3,8 @@
 //
 // Armor techs
 // 
+// 第1次校对：2021.12.14
+
 ARMOR_0_NAME     | 钛装甲
 ARMOR_0_ITEM     | 钛
 ARMOR_0_BRIEF    | 护甲值%1
@@ -69,57 +71,57 @@ COMPUTER_0_DETAIL  |
 COMPUTER_1_NAME    | 制导系统1
 COMPUTER_1_ITEM    | 型号1
 COMPUTER_1_BRIEF   | 进攻等级1
-COMPUTER_1_DETAIL  | 将武器精准度提高到等级1.
+COMPUTER_1_DETAIL  | 将武器精准度提高到等级1。
 
 COMPUTER_2_NAME    | 制导系统2
 COMPUTER_2_ITEM    | 型号2
 COMPUTER_2_BRIEF   | 进攻等级2
-COMPUTER_2_DETAIL  | 将武器精准度提高到等级2.
+COMPUTER_2_DETAIL  | 将武器精准度提高到等级2。
 
 COMPUTER_3_NAME    | 制导系统3
 COMPUTER_3_ITEM    | 型号3
 COMPUTER_3_BRIEF   | 进攻等级3
-COMPUTER_3_DETAIL  | 将武器精准度提高到等级3.
+COMPUTER_3_DETAIL  | 将武器精准度提高到等级3。
 
 COMPUTER_4_NAME    | 制导系统4
 COMPUTER_4_ITEM    | 型号4
 COMPUTER_4_BRIEF   | 进攻等级4
-COMPUTER_4_DETAIL  | 将武器精准度提高到等级4.
+COMPUTER_4_DETAIL  | 将武器精准度提高到等级4。
 
 COMPUTER_5_NAME    | 制导系统5
 COMPUTER_5_ITEM    | 型号5
 COMPUTER_5_BRIEF   | 进攻等级5
-COMPUTER_5_DETAIL  | 将武器精准度提高到等级5.
+COMPUTER_5_DETAIL  | 将武器精准度提高到等级5。
 
 COMPUTER_6_NAME    | 制导系统6
 COMPUTER_6_ITEM    | 型号6
 COMPUTER_6_BRIEF   | 进攻等级6
-COMPUTER_6_DETAIL  | 将武器精准度提高到等级6.
+COMPUTER_6_DETAIL  | 将武器精准度提高到等级6。
 
 COMPUTER_7_NAME    | 制导系统7
 COMPUTER_7_ITEM    | 型号7
 COMPUTER_7_BRIEF   | 进攻等级7
-COMPUTER_7_DETAIL  | 将武器精准度提高到等级7.
+COMPUTER_7_DETAIL  | 将武器精准度提高到等级7。
 
 COMPUTER_8_NAME    | 制导系统8
 COMPUTER_8_ITEM    | 型号8
 COMPUTER_8_BRIEF   | 进攻等级8
-COMPUTER_8_DETAIL  | 将武器精准度提高到等级8.
+COMPUTER_8_DETAIL  | 将武器精准度提高到等级8。
 
 COMPUTER_9_NAME    | 制导系统9
 COMPUTER_9_ITEM    | 型号9
 COMPUTER_9_BRIEF   | 进攻等级9
-COMPUTER_9_DETAIL  | 将武器精准度提高到等级9.
+COMPUTER_9_DETAIL  | 将武器精准度提高到等级9。
 
 COMPUTER_10_NAME   | 制导系统10
 COMPUTER_10_ITEM   | 型号10
 COMPUTER_10_BRIEF  | 进攻等级10
-COMPUTER_10_DETAIL | 将武器精准度提高到等级10.
+COMPUTER_10_DETAIL | 将武器精准度提高到等级10。
 
 COMPUTER_11_NAME   | 制导系统11
 COMPUTER_11_ITEM   | 型号11
 COMPUTER_11_BRIEF  | 进攻等级11
-COMPUTER_11_DETAIL | 将武器精准度提高到等级11.
+COMPUTER_11_DETAIL | 将武器精准度提高到等级11。
 
 
 //
@@ -144,7 +146,7 @@ BATTLESUIT_3_DETAIL  | 提供高机动性、反重力飞行和强力护甲，最
 // 
 BEAMFOCUS_0_NAME    | 高能聚焦
 BEAMFOCUS_0_BRIEF   | 对敌武器的距离+3
-BEAMFOCUS_0_DETAIL  | 使所有对敌武器的距离+3
+BEAMFOCUS_0_DETAIL  | 使所有对敌武器的距离+3。
 
 BEAMFOCUS_1_NAME    | 破盾之光
 BEAMFOCUS_1_BRIEF   | 使敌人的力场盾减半
@@ -180,7 +182,7 @@ BIOWEAPON_2_DETAIL   | 人神共愤的生化武器，每次攻击让行星人口
 // Black Hole Generator tech
 //
 BLACKHOLE_0_NAME     | 黑洞生成器
-BLACKHOLE_0_DETAIL   | 创造一个扭曲时空的子空间，生成的黑洞会破坏25%到100%的敌军飞船或导弹基地。力场等级每提高1级，会减少2%的伤害。
+BLACKHOLE_0_DETAIL   | 创造一个扭曲时空的子空间，生成的黑洞会破坏25%到100%的敌军飞船或导弹基地。力场等级每提高1级，会减少2%的伤害。
 
 
 
@@ -238,7 +240,7 @@ COMBATTRANSPORT_0_DETAIL   | 装备了这个装置的运输机有50%的概率直
 // Control Environment tech
 //
 CONTROLENV_0_NAME    | 控制正常环境
-CONTROLENV_0_ITEM    | 殖民基地：标准
+CONTROLENV_0_ITEM    | 殖民基地：普通
 CONTROLENV_0_BRIEF   | 允许在正常星球登陆
 CONTROLENV_0_DETAIL  | 允许在正常行星殖民。
 
@@ -414,16 +416,16 @@ ECMJAMMER_10_DETAIL   | 舰船的反导弹能力增加10级。
 ECORESTORATION_0_NAME   | 入门恢复生态学
 ECORESTORATION_0_DETAIL | 消耗1BC治理2单位工业污染。
 
-ECORESTORATION_1_NAME   | 进阶恢复生态学
+ECORESTORATION_1_NAME   | 初级恢复生态学
 ECORESTORATION_1_DETAIL | 消耗1BC治理3单位工业污染。
 
-ECORESTORATION_2_NAME   | 中阶恢复生态学
+ECORESTORATION_2_NAME   | 中级恢复生态学
 ECORESTORATION_2_DETAIL | 消耗1BC治理5单位工业污染。
 
-ECORESTORATION_3_NAME   | 高阶恢复生态学
+ECORESTORATION_3_NAME   | 高级恢复生态学
 ECORESTORATION_3_DETAIL | E消耗1BC治理10单位工业污染。
 
-ECORESTORATION_4_NAME   | 终极恢复生态学
+ECORESTORATION_4_NAME   | 最高级恢复生态学
 ECORESTORATION_4_DETAIL | 消耗1BC治理20单位工业污染。
 
 
@@ -765,8 +767,8 @@ HANDWEAPON_5_DETAIL    | 最有破坏力的手持武器。地面部队的战斗�
 //
 // Hyperspace Communication tech
 //
-HYPERSPACE_0_NAME      | Hyperspace Communications
-HYPERSPACE_0_DETAIL    | Allows you to communicate with ship fleets in hyperspace, and change their destinations while en route.
+HYPERSPACE_0_NAME      | 超时空通讯
+HYPERSPACE_0_DETAIL    | 允许你与舰队进行超时空通讯，让舰队在航行过程中改变目的地。
 
 
 //
@@ -992,7 +994,7 @@ ROBOTCTRL_1_NAME     | 自动化控制4阶
 ROBOTCTRL_1_DETAIL   | 允许每单位人口控制4个工厂。升级改装成本等于工厂的制造成本。
 
 ROBOTCTRL_2_NAME     | 自动化控制5阶
-ROBOTCTRL_2_DETAIL   | 允许每单位人口控制2个工厂。升级改装成本等于工厂制造成本的1.5倍。
+ROBOTCTRL_2_DETAIL   | 允许每单位人口控制5个工厂。升级改装成本等于工厂制造成本的1.5倍。
 
 ROBOTCTRL_3_NAME     | 自动化控制6阶
 ROBOTCTRL_3_DETAIL   | 允许每单位人口控制6个工厂。升级改装成本等于工厂的制造成本的2倍。
@@ -1064,7 +1066,7 @@ SHIPWPN_2_DETAIL       | 粒子光速武器，能将敌人力场盾的效果减�
 
 SHIPWPN_3_NAME         | 离子炮
 SHIPWPN_3_ITEM2        | 重型离子炮
-SHIPWPN_3_DETAIL       | 粒子炮是一种高强度的激光武器，能够造成3到8点伤害。重型离子炮造成3到15点伤害，有2格射程。
+SHIPWPN_3_DETAIL       | 离子炮是一种高强度的激光武器，能够造成3到8点伤害。重型离子炮造成3到15点伤害，有2格射程。
 
 
 SHIPWPN_4_NAME         | 质量炮
@@ -1229,10 +1231,10 @@ TORPEDO_1_DETAIL      | 高速鱼雷，它的速度为5，配备了精准度为6
 
 TORPEDO_2_NAME        | 质子鱼雷
 TORPEDO_2_BRIEF       | 每2回合发射1次
-TORPEDO_2_DETAIL      | 一种能量鱼雷，造成75点伤害，但每隔1回合才能发射1次。配备了精准度为+6的制导设备。
+TORPEDO_2_DETAIL      | 一种能量鱼雷，造成75点伤害，但每隔1回合才能发射1次。配备了精准度+6的制导设备。
 
 
 
 TORPEDO_3_NAME        | 等离子鱼雷
 TORPEDO_3_BRIEF       | 伤害-15/每格
-TORPEDO_3_DETAIL      | 一种高精度能量鱼雷，造成150点伤害，移动速度为6。每移动1格，它的伤害就减少15。每隔1回合才能发射1次。配备了精准度为+7的制导设备。
+TORPEDO_3_DETAIL      | 一种高精度能量鱼雷，造成150点伤害，移动速度为6。每移动1格，它的伤害就减少15。每隔1回合才能发射1次。配备了精准度+7的制导设备。

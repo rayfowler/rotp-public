@@ -1,0 +1,1978 @@
+// This is the label text file for Remnants of the Precursors
+// comment lines should start with '/'  they are ignored
+//  
+// the format for each line is   key | label
+//    where 'key' is the code used by the game to retrieve the label
+//    You cannot create new keys! The game will not use them
+//    You can only use keys that the game is looking for.
+//
+// Large number formatting
+// 第1次校對：2021.12.06
+
+NUM_FORMAT_THOUSANDS              | %1K
+NUM_FORMAT_MILLIONS               | %1M
+NUM_FORMAT_BILLIONS               | %1B
+
+// Star descriptions
+RED_STAR_DESCRIPTION              | 紅色恆星是暮氣沉沉的恆星，它的行星一般資源匱乏。
+YELLOW_STAR_DESCRIPTION           | 黃色恆星有最大的概率找到類地行星和近似類地行星。
+ORANGE_STAR_DESCRIPTION           | 橙色恆星的亮度中等，有大量的行星類型。
+BLUE_STAR_DESCRIPTION             | 藍色恆星是相對年輕的恆星，有礦產豐富但沒有生命的星球。
+WHITE_STAR_DESCRIPTION            | 白色恆星異常炙熱，這裏的行星一般環境惡劣。
+PURPLE_STAR_DESCRIPTION           | 中子星很少見，但有最大的可能找到資源豐富的行星。
+
+// Planet Types
+PLANET_ARID                       | 乾旱
+PLANET_BARREN                     | 沙暴
+PLANET_DEAD                       | 死寂
+PLANET_DESERT                     | 荒漠
+PLANET_INFERNO                    | 熔爐
+PLANET_JUNGLE                     | 叢林
+PLANET_MINIMAL                    | 袖珍
+PLANET_NONE                       | 無
+PLANET_OCEAN                      | 海洋
+PLANET_RADIATED                   | 輻射
+PLANET_STEPPE                     | 草原
+PLANET_TERRAN                     | 類地行星
+PLANET_TOXIC                      | 劇毒
+PLANET_TUNDRA                     | 凍土
+
+// Spy Missions
+SPY_HIDE                          | 潛伏
+SPY_ESPIONAGE                     | 竊密
+SPY_SABOTAGE                      | 破壞
+SPY_CAUGHT                        | [你的間諜被抓住了]
+SPY_FRAMED                        | [你被栽贓了]
+SPY_FORCED_CONFESSION             | [你被錯誤地指認了]
+SPY_WARNING                       | [你已經被警告]
+
+ARID_DESC_BIOLOGICAL              | 乾旱行星是有少量植被的世界，水覆蓋面積不到40%。
+BARREN_DESC_BIOLOGICAL            | 沙暴行星是乾燥的、塵土飛揚的世界，這裏大氣稀薄，沒有地表水。
+DEAD_DESC_BIOLOGICAL              | 死寂行星是極寒的、沒有生命痕跡的世界，這裏大氣稀薄，沒有地表水。
+DESERT_DESC_BIOLOGICAL            | 沙漠行星是乾燥的世界，植被非常稀疏，地表水覆蓋面積不超過20%。
+INFERNO_DESC_BIOLOGICAL           | 熔爐行星是極其炎熱的世界，有着厚厚的大氣層和猛烈的風暴。
+JUNGLE_DESC_BIOLOGICAL            | 叢林行星是茂密的熱帶世界，覆蓋着茂密的森林、叢林和沼澤。
+MINIMAL_DESC_BIOLOGICAL           | 袖珍行星是乾燥、荒涼的世界，幾乎不可居住。
+NONE_DESC_BIOLOGICAL              | 由於沒有石質行星，這些充滿小行星的星系在理論上不可能形成可以居住的行星。
+OCEAN_DESC_BIOLOGICAL             | 海洋行星幾乎完全被水覆蓋，因此通常很難獲取資源。
+RADIATED_DESC_BIOLOGICAL          | 受輻射的行星是沒有空氣、沒有生命的世界，被附近恆星的輻射所籠罩。
+STEPPE_DESC_BIOLOGICAL            | 草原行星是溫度較低的世界，以冬天和極地環境爲主。
+TERRAN_DESC_BIOLOGICAL            | 類地行星是最適合生存的世界，大片的溫帶地區支持着各種各樣的生物羣落。
+TOXIC_DESC_BIOLOGICAL             | 劇毒行星是冰凍的世界，有着寒冷的、以甲烷爲基礎的生態系統。
+TUNDRA_DESC_BIOLOGICAL            | 凍土行星是處於休眠狀態的極端寒冷的世界。
+
+// Planet Specials
+PLANET_ARTIFACTS                  | 史前遺蹟
+PLANET_ULTRA_POOR                 | 非常匱乏
+PLANET_POOR                       | 資源匱乏
+PLANET_RICH                       | 資源豐富
+PLANET_ULTRA_RICH                 | 非常豐富
+PLANET_HOSTILE                    | 惡劣
+PLANET_FERTILE                    | 肥沃
+PLANET_GAIA                       | 天堂
+
+// Planet Descriptors for Race
+PLANET_HOMEWORLD                  | [alien_race]母星
+PLANET_WORLD                      | [alien_race]世界
+PLANET_COLONY                     | [alien_race]殖民地
+PLANET_ORION                      | 獵戶座
+PLANET_ORION_GUARDIAN             | 守衛
+
+// Nebula names  ("starName" Nebula)
+NEBULA_NAME                       | %1星雲
+NEBULA_ID                         | %1號星雲
+
+// %2 is the leader's actual name
+TITLE_LEADERNAME                  | [alien_nameTitle] %2
+
+// Extended Colony Name prefix when we run out of names
+COLONY_NAME_2                     | 新%1
+COLONY_NAME_3                     | 邊%1
+COLONY_NAME_4                     | 外%1
+COLONY_NAME_5                     | 遠%1
+
+// Space Monster Names
+SPACE_AMOEBA                      | 太空變形蟲
+SPACE_CRYSTAL                     | 太空水晶
+ORION_GUARDIAN                    | 獵戶座守衛
+
+// Personality types (adjective)
+LEADER_ERRATIC                    | 神經質的
+LEADER_PACIFIST                   | 和平的
+LEADER_HONORABLE                  | 正直的
+LEADER_RUTHLESS                   | 冷酷的
+LEADER_AGGRESSIVE                 | 好鬥的
+LEADER_XENOPHOBIC                 | 排他的
+
+// Leader Objective Types (noun)
+LEADER_DIPLOMAT                   | 外交家
+LEADER_MILITARIST                 | 軍事家
+LEADER_ECOLOGIST                  | 生態主義者
+LEADER_INDUSTRIALIST              | 工業主義者
+LEADER_EXPANSIONIST               | 擴張主義者
+LEADER_TECHNOLOGIST               | 科學家
+// Leader Personality & Objective displayed together
+LEADER_PERSONALITY_FORMAT         | %1 %2
+
+// Technology names and descriptions 
+TECH_COMPUTERS                    | 計算科學
+TECH_CONSTRUCTION                 | 製造研究
+TECH_FORCE_FIELDS                 | 力場研究
+TECH_PLANETOLOGY                  | 行星學
+TECH_PROPULSION                   | 動力學
+TECH_WEAPONS                      | 武器研究
+
+// Random Events
+EVENT_ACCIDENT                    | [target_race]世界的[system]星系出現了一個巨大的工業事故，工業廢料徹底破壞了星球生態並造成了永久的輻射。
+EVENT_ASSASSINATION               | 來自[assassin_empire]的恐怖分子刺殺了[victim_race]的外交官，兩個帝國來到了戰爭邊緣。
+EVENT_COMET                       | [system]星系探測到一個巨大的彗星，它即將在[years]年後與[target_race]相撞，除非一個強大的艦隊被部署在該星系並摧毀彗星。
+EVENT_COMET_2                     | 一個巨大的彗星會在[years]年後毀滅[target_race]世界在[system]星系的所有生命。需要更多武裝飛船才能逆轉這個災難。
+EVENT_COMET_3                     | 因爲[target_race]艦隊的努力，[system]的彗星已經被毀滅了。
+EVENT_COMET_4                     | 致命的彗星摧毀了[target_race]世界的[system]星系。
+EVENT_DONATION                    | 一個富商大賈爲了支持[target_race]的事業，向其國庫捐助了可觀的[amt] BC。
+EVENT_DEPLETED                    | [target_race]世界的[system]已經耗盡了自己的重金屬儲藏，變成了資源匱乏的星球。
+EVENT_DERELICT                    | [target_empire]的艦隊發現了一艘上古廢棄飛船。[target_race]科學家掌握了多個該飛船的力場技術和武器技術。
+EVENT_EARTHQUAKE                  | 一場破壞力強大的地震發生在[target_race]的[system]星系，破壞了大量工廠的同時也造成了[amt]百萬的人員傷亡。
+EVENT_ENRICHED                    | [target_race][system]星系的採礦活動發現了一個巨大的、從未被探索過的重金屬礦藏，該行星成爲資源豐富的行星。
+EVENT_FERTILE                     | [target_race][system]星系內行星軸發生了偏移，這改變了星球的環境，使其變爲肥沃星球，人口增長率增加50%。
+EVENT_PIRACY                      | 太空海盜破壞了[target_race]各個星系的貿易活動，導致貿易收入降低[amt]%。武裝艦船需要駛入[system]星系才能破壞太空海盜的總部。
+EVENT_PIRACY_2                    | [system]的太空海盜持續地破壞着[target_ract]的貿易活動，導致貿易收入減少了[amt]%。
+EVENT_PIRACY_3                    | [target_race]消滅了總部位於[system]星系的間諜活動。貿易水平已經恢復正常。
+EVENT_PLAGUE                      | 致命的傳染病在[target_race]世界的[system]的星系爆發。隔離區已經創建。每年都會有幾百萬人死亡，除非科學家找到傳染病的治療方法。
+EVENT_PLAGUE_2                    | [system]星系的致命傳染病仍然在肆虐。科學家估計還需要[amt] RP 的投入才能研究出治療方法。
+EVENT_PLAGUE_3                    | [target_race]科學家發現了肆虐[system]星系的傳染病的治療方法。該星系的隔離已經結束。
+EVENT_REBELLION                   | [target_race]世界的[system]星系發生了起義，所有工業生產都停止了。起義會持續進行下去，除非軍隊登陸星球進行武力鎮壓。
+EVENT_SUPERNOVA                   | [target_race]的科學家預測[system]星系的恆星會在[years]年後變成超新星。科學家們建議將該星系的所有資源都投入研究，以探索一個解決方案。
+EVENT_SUPERNOVA_2                 | [system]星系內恆星在[years]年內變成超新星威脅仍然存在。科學家預計還需要[amt] RP 才能避免這個災難的發生。
+EVENT_SUPERNOVA_3                 | 經過努力的工作，[target_race]世界[system]星系的物理學家找到了一個延遲附近恆星變成超新星的方案。
+EVENT_SUPERNOVA_4                 | [system]星系的恆星變成了超新星，輻射了[target_rate]世界，毀滅了環境，造成了數百萬人死亡。
+EVENT_VIRUS                       | 一個破壞力巨大的計算機病毒襲擊了[target_race]的研究中心，導致“[technology]”的研究進展歸零。
+EVENT_SPACE_AMOEBA                | 一個被命名爲“太空變形蟲”的巨大外星生物被發現正在接近[system]星系。[victim_race]的居民和艦隊正在做最壞的打算。
+EVENT_SPACE_AMOEBA_1              | 一個被命名爲“太空變形蟲”的巨大外星生物被發現正在接近[system]星系。
+EVENT_SPACE_AMOEBA_2              | 太空變形蟲徹底吞噬了[system]星系的[victim_race]殖民地。
+EVENT_SPACE_AMOEBA_3              | 太空變形蟲被[system]星系的[victim_race]力量給消滅了。
+EVENT_SPACE_CRYSTAL               | 一個被命名爲“太空水晶”的巨大物體在[system]星系的附近被發現。[victim_race]的居民和艦隊在做最壞的打算。
+EVENT_SPACE_CRYSTAL_1             | 一個被命名爲“太空水晶”的巨大物體在[system]星系的附近被發現。
+EVENT_SPACE_CRYSTAL_2             | 太空水晶徹底消滅了[system]星系的[victim_race]生命。
+EVENT_SPACE_CRYSTAL_3             | 太空水晶被[system]星系的[victim_race]力量給消滅了。
+
+SYSEVENT_HOMEWORLD                | [alien_race]的母星。
+SYSEVENT_SCOUTED                  | [alien_race]首先發現。
+SYSEVENT_COLONIZED                | 被[alien_race]殖民。
+SYSEVENT_CAPTURED                 | 被[alien_race]佔領。
+SYSEVENT_ABANDONED                | 被[alien_race]遺棄。
+SYSEVENT_DESTROYED                | 被[alien_race]軍艦毀滅。
+SYSEVENT_DESTROYED_MONSTER        | 被%1毀滅。
+SYSEVENT_DESTROYED_UNKNOWN        | 已毀滅。
+SYSEVENT_ATMOSPHERE_TERRAFORMED   | 該星球的大氣被改造了。
+SYSEVENT_SOIL_ENRICHED            | 該星球的土壤被改造了，變成了肥沃的星球。
+SYSEVENT_GAIA_TERRAFORMING        | 該星球被改造成了天堂星球。
+SYSEVENT_REBELLION                | 殖民地陷入叛亂。
+SYSEVENT_COMET                    | 彗星撞擊了行星。
+SYSEVENT_PLAGUE                   | 致命的瘟疫在行星裏爆發。
+SYSEVENT_PLAGUE_ENDED             | 瘟疫結束了。
+SYSEVENT_ENRICHED                 | 行星發現了豐富的礦藏資源。
+SYSEVENT_DEPLETED                 | 行星的礦藏被挖掘殆盡。
+SYSEVENT_ACCIDENT                 | 一個巨大的工業事故讓整個行星被輻射。
+SYSEVENT_SUPERNOVA                | 超新星爆炸讓行星陷入被輻射狀態。
+
+
+// Diplomatic Incident titles & descriptions
+INC_ASSASSINATION_TITLE           | 暗殺
+INC_ASSASSINATION_DESC            | 來自[assassin_empire]的恐怖分子刺殺了[victim_race]的外交官。
+INC_ATTACKED_ALLY_TITLE           | 盟友遭襲
+INC_ATTACKED_ALLY_DESC            | [attacker_empire]進攻了[my_empire]的盟友[defender_empire]。
+INC_ATTACKED_ENEMY_TITLE          | 敵人遭襲
+INC_ATTACKED_ENEMY_DESC           | [attacker_empire]進攻了[my_empire]的敵人[defender_empire]。
+INC_USED_BIOWEAPONS_TITLE         | 生化武器
+INC_USED_BIOWEAPONS_DESC          | [attacker_empire]在[system]星系使用生化武器攻擊了[victim_empire]。
+INC_KILLED_MONSTER_TITLE          | %1
+INC_KILLED_MONSTER_DESC           | [your_empire]擊敗了[monster]，解決了所有帝國的共同威脅。
+INC_KILLED_GUARDIAN_TITLE         | 獵戶守衛
+INC_KILLED_GUARDIAN_DESC          | [your_empire]擊敗了獵戶座的守衛飛船，揭露了上古文明的祕密。
+INC_NO_RELATIONS_TITLE            | 無外交關係
+INC_NO_RELATIONS_DESC             | [your_empire]和[my_empire] 當前並無外交關係。
+INC_ALLIED_WITH_ENEMY_TITLE       | 與虎謀皮
+INC_ALLIED_WITH_ENEMY_DESC        | [my_empire]的民衆反對你與令人厭惡的[other_empire]結盟。
+INC_AT_WAR_WITH_ALLY_TITLE        | 盟友之爭
+INC_AT_WAR_WITH_ALLY_DESC         | 你正在跟[my_empire]的盟友[other_empire]開戰。
+INC_CLOSED_EMBASSY_TITLE          | 召回外相
+INC_CLOSED_EMBASSY_DESC           | [your_empire]停止了與[my_empire]的外交關係。
+INC_EVICTED_SPIES_TITLE           | 驅逐外相
+INC_EVICTED_SPIES_DESC            | [your_empire]驅逐了[my_empire]的所有不重要的外交官。
+INC_BROKE_ALLIANCE_TITLE          | 聯盟破裂
+INC_BROKE_ALLIANCE_DESC           | [your_empire]解除了與[my_empire]的聯盟關係。 [spiesCaught]
+INC_BROKE_PACT_TITLE              | 解除互不侵犯條約
+INC_BROKE_PACT_DESC               | [your_empire]解除了與[my_empire]的互不侵犯條約。 [spiesCaught]
+INC_BROKE_TRADE_TITLE             | 解除貿易協議
+INC_BROKE_TRADE_DESC              | [your_empire]解除了與[my_empire]的貿易協議。
+INC_ATTACKED_COLONY_TITLE         | 進攻殖民地
+INC_ATTACKED_COLONY_DESC          | [attacker_empire]的艦隊進攻了[defender_race]的[system]星系。[amt]百萬居民喪生。
+INC_CAPTURED_COLONY_TITLE         | 佔領殖民地
+INC_CAPTURED_COLONY_DESC          | [attacker_empire]的軍隊入侵併佔領了[defender_race]的[system]星系。[amt]百萬居民喪生。
+INC_DESTROYED_COLONY_TITLE        | 摧毀殖民地
+INC_DESTROYED_COLONY_DESC         | [attacker_empire]的艦隊徹底摧毀了[defender_race]的[system]星系。[amt]百萬居民喪生。
+INC_FIRST_CONTACT_TITLE           | 首次接觸
+INC_FIRST_CONTACT_DESC            | 第一次與[your_empire]產生了接觸。請小心。
+INC_INVADED_COLONY_TITLE          | 入侵殖民地
+INC_INVADED_COLONY_DESC           | [attacker_empire]的軍隊入侵了[defender_race]的[system]星系，但沒能成功佔領。[amt]百萬居民喪生。
+INC_COUNCIL_VOTE_TITLE            | 委員會投票
+INC_COUNCIL_VOTE_FOR_DESC         | [voter_race]投票支持[candidate_race]的領導人[candidate_name]。
+INC_COUNCIL_VOTE_AGAINST_DESC     | [voter_race]投票反對[candidate_race]的領導人[candidate_name]。
+INC_COUNCIL_ABSTAIN_DESC          | [voter_race]在星際委員會選舉中棄權，拒絕給[candidate_race]的領導人[candidate_name]投票。
+INC_DECLARED_WAR_TITLE            | 宣戰
+INC_DECLARED_WAR_DESC             | [aggressor_empire]宣佈向[victim_empire]開戰。
+INC_ERRATIC_WAR_TITLE             | 奇怪的行動
+INC_ERRATIC_WAR_DESC              | [aggressor_race]宣佈向[victim_empire]開戰，沒有人知道原因是什麼。
+INC_DEMANDED_TRIBUTE_TITLE        | 要求上貢
+INC_ENCROACHING_TITLE             | 侵入邊界
+INC_ENCROACHING_DESC              | [your_empire]殖民了[system]星系，入侵了[my_empire]的邊界。
+INC_TECH_STOLEN_TITLE             | 技術偷竊
+INC_TECH_STOLEN_DESC              | [spy_race]偷竊了[victim_race]的機密技術：[tech]。
+INC_TECH_FRAMED_DESC              | 未知間諜偷走了[victim_race]的機密技術（你被栽贓了）。
+INC_TECH_EXCHANGE_TITLE           | 技術交易
+INC_TECH_EXCHANGE_DESC            | [my_empire]與[your_empire]發生了技術交易，[my_empire]學會了[techReceived]，[your_empire]學會了[techGiven]。
+INC_FINANCIAL_AID_TITLE           | 經濟資助
+INC_FINANCIAL_AID_DESC            | [your_empire]無條件資助了[my_empire][amt] BC。
+INC_TECHNOLOGY_AID_TITLE          | 技術援助
+INC_TECHNOLOGY_AID_DESC           | [your_empire]免費把機密技術[tech]分享給了[my_empire]。
+INC_TECHNOLOGY_AID_DESC_MULT      | [your_empire]免費把下列機密技術分享給了[my_empire]：[techs]。
+INC_TECHNOLOGY_TECH_LIST_COMMA    | ，
+INC_ENEMY_AID_TITLE               | 敵人獲得援助
+INC_ENEMY_AID_MONEY_DESC          | [your_empire]資助了[my_empire]的敵人[enemy_empire][amt] BC。
+INC_ENEMY_AID_TECH_DESC           | [your_empire]向[my_empire]的敵人[enemy_empire]贈送了機密技術[tech]。
+INC_PARANOIA_TITLE                | 偏執狂
+INC_PARANOIA_DESC1                | [my_empire]一羣激進的陰謀論者可笑地認爲[your_race]是對他們種族的威脅。[your_empire]目前佔據了[num]個最開始由[my_empire]發現的星系。
+INC_PARANOIA_DESC2                | [my_empire]的邊緣羣體認爲[your_race]是對他們種族的威脅。[your_empire]目前佔據了[num]個最開始由[my_empire]發現的星系。
+INC_PARANOIA_DESC3                | [my_empire]的一個敢於發聲的少數派別表達了一種擔憂：[your_race]是對他們種族的威脅。[your_empire]目前佔據了[num]個最開始由[my_empire]發現的星系。
+INC_PARANOIA_DESC4                | [my_empire]的許多人擔心[your_race]確實是對他們種族的威脅，他們要求對[your_race]採取行動。[your_empire]目前佔據了[num]個最開始由 [my_empire]發現的星系。
+INC_PARANOIA_DESC5                | [my_empire]出現了大規模的恐慌，人們意識到[your_race]已經變成了對他們種族清晰的威脅。[your_empire]目前佔據了[num]個最開始由[my_empire]發現的星系。
+INC_EXPANSION_TITLE               | 擴張
+INC_EXPANSION_DESC                | 控制了[num]個星系後，[your_empire]已經變得太大了。
+INC_GENOCIDE_TITLE                | 種族滅絕
+INC_GENOCIDE_DESC                 | [attacker_empire]已經徹底消滅了[victim_race]種族。
+INC_FINAL_WAR_TITLE               | 大決戰！
+INC_FINAL_WAR_DESC                | [rebel_empire]已經武力反抗星際委員會，宇宙中的其他帝國決定聯手徹底毀滅[rebel_empire]。
+INC_MILITARY_BUILDUP_TITLE        | 軍事行動
+INC_MILITARY_BUILDUP_DESC         | [your_empire]正在[system]集結艦隊。
+INC_OATHBREAKER_TITLE             | 破壞誓言
+INC_DESTROYED_BASES_TITLE         | 破壞導彈基地
+INC_DESTROYED_BASES_DESC          | 在[spy_empire]搞破壞的間諜搗毀了[system]星系的[amt]個導彈基地。
+INC_DESTROYED_FACTORIES_TITLE     | 破壞工廠
+INC_DESTROYED_FACTORIES_DESC      | 在[spy_empire]搞破壞的間諜搗毀了[system]星系的[amt]個工廠。
+INC_INCITED_REBELLION_TITLE       | 煽動起義
+INC_INCITED_REBELLION_DESC        | 在[spy_empire]教唆起義的間諜在[system]星系煽動了[amt]百萬人的起義。
+INC_SIGNED_ALLIANCE_TITLE         | 結盟
+INC_SIGNED_ALLIANCE_DESC          | [my_empire]和[your_empire]結成了聯盟，許諾共同對抗外敵。
+INC_JOINT_WAR_TITLE               | 宣戰
+INC_LEFT_ALLIANCE_TITLE           | 破壞聯盟
+INC_SIGNED_PACT_TITLE             | 互不侵犯條約
+INC_SIGNED_PACT_DESC              | [my_empire]和[your_empire]簽訂了一個互不侵犯條約，避免軍艦在中立星球開戰。
+INC_SIGNED_PEACE_TITLE            | 停戰協議
+INC_SIGNED_PEACE_DESC             | [my_empire]和[your_empire]簽訂了停戰協定，許諾在[endYear]之前中止敵對行動。
+INC_SIGNED_TRADE_TITLE            | 貿易協議
+INC_SIGNED_TRADE_DESC             | [my_empire]和[your_empire]協商確定了一個數額最高達到[amt] BC 的貿易協議。
+INC_SKIRMISH_TITLE                | 衝突
+INC_SKIRMISH_DESC                 | [my_race]和[your_race]的艦隊在[system]星系發生了一次武裝衝突。
+INC_SPY_CONFESSION_TITLE          | 間諜招認
+INC_SPY_CONFESS_ESPIONAGE_DESC    | [spy_empire]的間諜被抓住並坦白了當前正在進行的針對[victim_empire]的竊密行動。
+INC_SPY_CONFESS_SABOTAGE_DESC     | [spy_empire]的間諜被抓住並坦白了當前正在進行的針對[victim_empire]的破壞行動。
+INC_SPY_CAPTURED_DESC             | [spy_empire]的間諜被抓住並被迫承認了當前正在進行的針對[victim_empire]的破壞行動。
+INC_TRADE_INCOME_TITLE            | 貿易利潤
+INC_TRADE_INCOME_DESC             | [your_empire]和[my_empire]的貿易協議已經產生了[amt]BC 的利潤。
+INC_TRESPASSING_TITLE             | 非法侵入
+INC_TRESPASSING_DESC              | [your_race]正在非法穿過屬於[my_empire]的[system] 星系。
+
+// generic click to skip or continue messages
+CLICK_SKIP                        | 單擊或點擊ESC跳過動畫
+CLICK_CONTINUE                    | 單擊或點擊ESC以繼續……
+CLICK_EXIT                        | 單擊或點擊ESC以退出……
+BUTTON_EXIT                       | 返回
+
+// GAME/SETUP UI 
+GAME_TITLE_LINE_1                 | 文明的餘燼
+GAME_TITLE_LINE_2                 | 
+GAME_TITLE_LINE_3                 | 
+GAME_DISCUSS_ONLINE               | 進入社區
+GAME_MENU_CONTINUE                | 繼續遊戲
+GAME_MENU_NEW_GAME                | 新遊戲
+GAME_MENU_LOAD_GAME               | 加載遊戲
+GAME_MENU_SAVE_GAME               | 保存遊戲
+GAME_MENU_SETTINGS                | 設置
+GAME_MENU_EXIT                    | 退出
+GAME_MENU_RESTART                 | 重啓遊戲
+GAME_VERSION                      | 版本號: %1
+GAME_SHRINK                       | 縮小 -
+GAME_ENLARGE                      | 放大
+
+// Game Settings UI
+GAME_SETTINGS_TITLE               | 遊戲設置
+GAME_SETTINGS_DESCRIPTION         | 單擊可修改各個設置
+GAME_SETTINGS_EXIT                | 返回
+GAME_SETTINGS_DEFAULT             | 默認設置
+GAME_SETTINGS_DISPLAY_MODE        | 顯示模式: %1
+GAME_SETTINGS_WINDOWED            | 窗口
+GAME_SETTINGS_BORDERLESS          | 無邊框
+GAME_SETTINGS_FULLSCREEN          | 全屏幕
+GAME_SETTINGS_DISPLAY_MODE_DESC   | 需要重啓。窗口模式使用固定比例、可調整尺寸。無邊框模式是最大化的窗口。全屏是個獨佔窗口。
+GAME_SETTINGS_GRAPHICS            | 畫面質量: %1
+GAME_SETTINGS_GRAPHICS_LOW        | 低
+GAME_SETTINGS_GRAPHICS_MED        | 中
+GAME_SETTINGS_GRAPHICS_HIGH       | 高
+GAME_SETTINGS_GRAPHICS_DESC       | 調整遊戲的畫面質量。 中: 關閉抗鋸齒。 低：無動畫。
+GAME_SETTINGS_TEXTURES            | 紋理: %1
+GAME_SETTINGS_TEXTURES_NO         | 無
+GAME_SETTINGS_TEXTURES_INTERFACE  | UI界面
+GAME_SETTINGS_TEXTURES_MAP        | 宇宙地圖
+GAME_SETTINGS_TEXTURES_BOTH       | UI界面和地圖
+GAME_SETTINGS_TEXTURES_DESC       | 切換紋理的使用場景。
+GAME_SETTINGS_SENSITIVITY         | 光標懸浮敏感度: %1
+GAME_SETTINGS_SENSITIVITY_HIGH    | 高
+GAME_SETTINGS_SENSITIVITY_MEDIUM  | 中
+GAME_SETTINGS_SENSITIVITY_LOW     | 低
+GAME_SETTINGS_SENSITIVITY_DESC    | 鼠標懸浮在地圖上的星系時，會展示該星系的信息面板。這裏可以調整交互的敏感程度。
+GAME_SETTINGS_MEMORY              | 展示內存使用情況: %1
+GAME_SETTINGS_MEMORY_YES          | 是
+GAME_SETTINGS_MEMORY_NO           | 否
+GAME_SETTINGS_MEMORY_DESC         | 是否在遊戲右下角顯示內存的使用情況。對監控內存有幫助。
+GAME_SETTINGS_SOUNDS              | 音效: %1
+GAME_SETTINGS_SOUNDS_OFF          | 靜音
+GAME_SETTINGS_SOUNDS_ON           | %1/10
+GAME_SETTINGS_SOUNDS_DESC         | 單擊以禁止或播放遊戲音效。使用鼠標滑輪來提高或降低音量。
+GAME_SETTINGS_SOUNDS_DISABLED     | 無法使用
+GAME_SETTINGS_SOUNDS_ERR_DESC     | 因爲以下原因音效無法使用: %1
+GAME_SETTINGS_MUSIC               | 音樂: %1
+GAME_SETTINGS_MUSIC_OFF           | 靜音
+GAME_SETTINGS_MUSIC_ON            | %1/10
+GAME_SETTINGS_MUSIC_DESC          | 單擊以禁止或播放音樂。使用鼠標滑輪啊調整音量。
+GAME_SETTINGS_AUTOCOLONIZE        | 殖民: %1
+GAME_SETTINGS_AUTOCOLONIZE_YES    | 自動
+GAME_SETTINGS_AUTOCOLONIZE_NO     | 總是提示
+GAME_SETTINGS_AUTOCOLONIZE_DESC   | 當殖民飛船到達行星時，是否自動殖民該星球。在大地圖使用自動殖民可以節約時間。
+GAME_SETTINGS_AUTOBOMBARD         | 轟炸: %1
+GAME_SETTINGS_AUTOBOMBARD_NO      | 總是提示
+GAME_SETTINGS_AUTOBOMBARD_NEVER   | 不轟炸
+GAME_SETTINGS_AUTOBOMBARD_YES     | 總是轟炸
+GAME_SETTINGS_AUTOBOMBARD_WAR     | 僅限戰爭
+GAME_SETTINGS_AUTOBOMBARD_INVADE  | 僅限戰爭，且無派遣軍隊
+GAME_SETTINGS_AUTOBOMBARD_DESC    | 切換自動轟炸設定。提示是否轟炸、自動轟炸、僅在戰爭狀態自動轟炸、在戰爭狀態且無派遣軍隊時轟炸。
+GAME_SETTINGS_BACKUP_OFF          | 關閉
+GAME_SETTINGS_BACKUP_ON           | 每%1回合
+GAME_SETTINGS_BACKUP              | 自動備份: %1
+GAME_SETTINGS_BACKUP_DESC         | 將你當前的遊戲定期自動備份到 backup 文件夾，這能允許你載入之前的回合。
+GAME_SETTINGS_SAVEDIR             | 存檔文件夾: %1
+GAME_SETTINGS_SAVEDIR_DEFAULT     | 默認
+GAME_SETTINGS_SAVEDIR_CUSTOM      | 自定義
+GAME_SETTINGS_SAVEDIR_DESC1       | 存檔文件夾默認是遊戲所在文件夾。
+GAME_SETTINGS_SAVEDIR_DESC2       | 當前的存檔文件夾是: %1
+
+// Load Game UI
+LOAD_GAME_TITLE                   | 載入遊戲
+LOAD_GAME_AUTOSAVE                | 自動存檔
+LOAD_GAME_BACKUP_DIR              | 備份文件夾: %1 文件
+LOAD_GAME_SAVE_DIR                | 保存到文件夾: %1 文件
+LOAD_GAME_FILENAME                | 按文件名
+LOAD_GAME_DATE                    | 日期
+LOAD_GAME_SIZE                    | 大小
+LOAD_GAME_LOADING                 | 載入中……
+LOAD_GAME_BAD_VERSION             | 無法載入存檔: %1。 這個文件可能已被損壞。
+LOAD_GAME_CANCEL                  | 取消
+LOAD_GAME_OK                      | 載入
+LOAD_GAME_TOO_LONG                | ……
+
+// Save Game UI
+SAVE_GAME_TITLE                   | 保存遊戲
+SAVE_GAME_FILENAME                | 按文件名
+SAVE_GAME_DATE                    | 日期
+SAVE_GAME_SIZE                    | 尺寸
+SAVE_GAME_SAVING                  | 保存中……
+SAVE_GAME_CANCEL                  | 取消
+SAVE_GAME_OK                      | 保存
+
+// Intro UI
+INTRO_BEGIN                       | 開始
+
+// MAIN UI - Bottom Navigation options
+MAIN_NAVIGATION_GAME              | 遊戲
+MAIN_NAVIGATION_DESIGN            | 設計
+MAIN_NAVIGATION_FLEETS            | 艦隊
+MAIN_NAVIGATION_SYSTEMS           | 星系
+MAIN_NAVIGATION_RACES             | 種族
+MAIN_NAVIGATION_COLONIES          | 殖民地
+MAIN_NAVIGATION_TECH              | 科技
+MAIN_NAVIGATION_NEXT_TURN         | 下一回合
+MAIN_NAVIGATION_NEXT_YEAR         | 下一年
+MAIN_YEAR_DISPLAY                 | %1年
+MAIN_TURN_DISPLAY                 | 第%1回合
+MAIN_SPY_REPORT                   | 諜報
+MAIN_TECH_NONE                    | 沒有研究
+MAIN_TECH_COMPLETED               | 研究完成
+MAIN_TECH_RP_REMAINING            | 還差 %1 RP
+MAIN_TECH_RP_DISCOVERY            | 即將成功
+MAIN_TECH_RESERVE_BC              | %1 BC
+MAIN_TECH_RESERVE_TAX_ALL         | 對所有殖民地徵收%1%的稅
+MAIN_TECH_RESERVE_TAX             | 對發達殖民地徵收%1%的稅
+MAIN_TECH_RESERVE_TAX_NONE        | 沒有徵稅
+MAIN_HELP_ALL                     | 幫助：點擊按鈕，切換幫助信息。按 ESC 鍵取消。
+MAIN_HELP_1A                      | 每個星系的發展分爲5個模塊。灰色表示該部分的資源分配被鎖定，無法再修改。單擊切換鎖定/非鎖定狀態。
+MAIN_HELP_1B                      | 船塢：建造被選中的艦船，大型艦船可能需要若干回合建造。
+MAIN_HELP_1C                      | 防禦：建造、升級導彈基地和護盾等級。
+MAIN_HELP_1D                      | 工廠：建造工廠，提高殖民地的產出。
+MAIN_HELP_1E                      | 生態：清理污染，改造行星，增加人口。
+MAIN_HELP_1F                      | 科技：將資源投入帝國的科研計劃。
+MAIN_HELP_1G                      | 滾動條展示個該模塊的投入情況。每一個模塊的投入可以用如下方式調整：鼠標滑輪、點擊滾動條的內部、或滾動條兩邊的按鈕。
+MAIN_HELP_1H                      | 預期生產結果展示在滾動條的右邊。
+MAIN_HELP_2A                      | 殖民地的護盾等級。在星雲內無法建造護盾。
+MAIN_HELP_2B                      | 導彈基地數量/預期建造數量。單擊或使用鼠標滑輪修改預期建造數量。
+MAIN_HELP_2C                      | 總產出。受到人口和工廠數量的影響。
+MAIN_HELP_2D                      | 淨產出。在總產出的基礎上扣除了貿易開支、間諜和安全開支、導彈基地和艦船維護費用。
+MAIN_HELP_2E                      | 改變船塢裏的艦船型號。未完成船隻的累計投入將使新船隻的生產速度加快50%, 直到該累計投入耗盡。單擊或使用鼠標滑輪修改在建型號。
+MAIN_HELP_2F                      | 設置集合點，使新建船隻開往另一個殖民星球。
+MAIN_HELP_2G                      | 派遣殖民者去支援另一個殖民地，或派遣軍隊去入侵敵對星球。殖民地需要一次性支付交通成本。
+MAIN_HELP_2H                      | 徹底遺棄一個行星，把所有人口轉移到另一個殖民地。
+MAIN_HELP_2I                      | 當前人口/最大人口。未被改造的母星的人口上限是100。
+MAIN_HELP_2J                      | 當前工廠數量/最大工廠數量。最大工廠數量受到人口數量和自動化技術的影響。
+MAIN_HELP_2K                      | 給星系插一面旗，讓它在宇宙地圖裏更突出。
+MAIN_HELP_2L                      | 國庫裏的存款數量。
+MAIN_HELP_2M                      | 6個研究領域的研究進展。
+MAIN_HELP_3A                      | 遊戲：返回遊戲菜單。你可以調整設置、保存、載入或開始新遊戲。
+MAIN_HELP_3B                      | 星系：按不同主題展示星系的現狀。
+MAIN_HELP_3C                      | 艦隊：大規模地控制艦隊和艦船建造。
+MAIN_HELP_3D                      | 設計：設計新的艦船。你可以採用最新的科技，並移除老的設計方案。
+MAIN_HELP_3E                      | 種族：已遭遇種族的信息展示和外交選擇。
+MAIN_HELP_3F                      | 殖民地：殖民地的詳細信息，以及帝國的開支情況。
+MAIN_HELP_3G                      | 科技：展示科研成果。你可以在這裏調整6大領域的資源分配。
+MAIN_HELP_3H                      | 下一年：讓遊戲進入下一年。
+MAIN_HELP_3I                      | 當前回合：展示遊戲的當前回合或帝國紀元。單擊可切換。
+MAIN_HELP_3J                      | 地圖設置：單擊可調整宇宙地圖的展示設置。
+
+MAIN_SYSTEM_DETAIL_PFB            | 人口%1 工業%2 導彈%3
+MAIN_SYSTEM_DETAIL_PF             | 人口%1 工業%2
+MAIN_SYSTEM_DETAIL_NO_DATA        | 無數據
+MAIN_UNEXPLORED_SYSTEM            | 未探索
+MAIN_ALLIED_COLONY                | 盟友殖民地
+MAIN_SYSTEM_RANGE                 | %1光年
+MAIN_OUT_OF_RANGE_DESC            | 航程外
+MAIN_SCOUT_RANGE_DESC             | 需要備用燃料箱
+MAIN_IN_RANGE_DESC                | 航程內
+MAIN_NO_PLANETS                   | 無法生存的星球
+MAIN_NO_COLONIES                  | 未殖民
+MAIN_UNSCOUTED                    | 未探索
+MAIN_ABANDONED                    | 已遺棄
+MAIN_ALIEN_COLONY                 | %1殖民地
+MAIN_UNKNOWN_COLONY               | 異族殖民地
+MAIN_NEBULA_DESC                  | 穿過星雲的飛船速度被限制在第1階曲速
+MAIN_PLANET_SIZE                  | 空間 %1
+MAIN_PLANET_SIZE+                 | 空間 %1+
+MAIN_PLANET_POP                   | 人口 %1
+MAIN_PLANET_POP_SIZE              | 人口 %1/%2
+MAIN_PLANET_REBELLION             | 起義中
+MAIN_PLANET_QUARANTINE            | 被隔離
+MAIN_PLANET_EVENT_COMET           | 彗星
+MAIN_PLANET_EVENT_PIRACY          | 海盜
+MAIN_PLANET_EVENT_PLAGUE          | 瘟疫
+MAIN_PLANET_EVENT_SUPERNOVA       | 超新星
+MAIN_PLANET_EVENT_AMOEBA          | 太空變形蟲
+MAIN_PLANET_EVENT_CRYSTAL         | 太空水晶
+MAIN_ADVANCING_YEAR               | 進入%1年……
+MAIN_ADVANCING_TURN               | 進入%1回合……
+TURN_SAVING                       | 保存進度
+TURN_LAUNCHING_FLEETS             | 艦隊行動
+TURN_SHIP_COMBAT                  | 艦隊戰鬥
+TURN_BOMBARDMENT                  | 轟炸行星
+TURN_TRANSPORTS                   | 運輸
+TURN_COLONIES                     | 殖民中
+TURN_SPIES                        | 間諜活動
+TURN_REBELLION                    | 起義
+TURN_COUNCIL                      | 議會狀態
+TURN_RESEARCH                     | 研究
+TURN_ASSESS                       | 完成內務
+TURN_DIPLOMACY                    | 外交
+TURN_ACQUIRE_TECHS                | 學習交換科技
+TURN_MAKE_DECISIONS               | 決策
+TURN_RECALC_DISTANCES             | 重新計算星系距離
+TURN_REFRESHING                   | 刷新視窗
+TURN_SCRAP_SHIPS                  | 拆除艦船
+TURN_FLEET_PLANS                  | 艦隊計劃
+TURN_DEPLOY_FLEETS                | 部署艦船
+TURN_DEPLOY_FLEET_X               | 部署艦船 (已完成%1/%2)
+TURN_RETREAT_FLEETS               | 艦船撤退
+TURN_DESIGN_SHIPS                 | 設計艦船
+TURN_COLONY_SPENDING              | 殖民地分配
+
+// Fleet labels
+MAIN_FLEET_TITLE                  | [fleet_race]艦隊
+MAIN_FLEET_TITLE_UNKNOWN          | 未知艦隊
+MAIN_FLEET_IN_ORBIT               | 軌道環繞
+MAIN_FLEET_DEPLOYED               | 部署中
+MAIN_FLEET_IN_TRANSIT             | 航行中
+MAIN_FLEET_RETREATING             | 撤退中
+MAIN_FLEET_LOCATION               | 位置 %1
+MAIN_FLEET_ORIGIN                 | 起點 %1
+MAIN_FLEET_DESTINATION            | 終點 %1
+MAIN_FLEET_DEST_UNSCOUTED         | 探索未知星球
+MAIN_FLEET_ALLY                   | 盟友
+MAIN_FLEET_ENEMY                  | 敵人
+MAIN_FLEET_DEPLOYMENT             | 艦隊部署
+MAIN_FLEET_DISPLAY                | 查看艦隊
+MAIN_FLEET_CHOOSE_DEST            | 選擇目的地和需要部署的數量
+MAIN_FLEET_OUT_OF_RANGE_DESC      | 目標在艦隊航程之外，離最近的殖民地%1光年
+MAIN_FLEET_INVALID_RETREAT        | 只有派往盟軍殖民地的飛船可以撤回
+MAIN_FLEET_ETA_UNNAMED            | 預計耗時: %1年 
+MAIN_FLEET_ETA_NAMED              | 到達%1耗時: %2年
+MAIN_FLEET_SET_RALLY              | 集結中
+MAIN_FLEET_AUTO_RETREAT           | 到達後直接返回
+MAIN_FLEET_ETA_UNKNOWN            | 掃描設備無法確定其目的地
+MAIN_FLEET_THROUGH_NEBULA         | 星雲內的飛行速度被限制在曲速1
+
+MAIN_FLEET_CANCEL                 | 取消
+MAIN_FLEET_OUT_OF_RANGE           | 無法到達
+MAIN_FLEET_DEPLOY_FLEET           | 部署
+MAIN_FLEET_UNDEPLOY_FLEET         | 取消部署
+MAIN_FLEET_INVALID_RETREAT        | 無效的撤退
+MAIN_FLEET_INVALID_DESTINATION    | 無法部署到%1
+MAIN_FLEET_INVALID_DESTINATION2   | 無法部署到這個星系
+
+// Rally Point labels
+MAIN_RALLY_TITLE                  | 設置集結點
+MAIN_RALLY_PROMPT                 | 選擇一個你的殖民星球以集結新的艦船
+MAIN_RALLY_FORWARD                | 將友軍轉移到此處
+MAIN_RALLY_TRAVEL_TIME            | 飛往%1耗時: %2年
+MAIN_RALLY_INSTANT_TIME           | 飛往%1耗時: 立刻
+MAIN_RALLY_WILL_CANCEL            | 選擇這個目的地會清除之前的集結點
+MAIN_RALLY_ERROR                  | 你只能選擇自己控制下的星球
+MAIN_RALLY_NO_SELECTION           | 尚未選擇
+MAIN_RALLY_CANCEL                 | 返回
+MAIN_RALLY_START                  | 開始集結
+MAIN_RALLY_STOP                   | 取消集結
+
+// Transport labels
+MAIN_TRANSPORTS_EMPIRE            | [empire_race]運輸機
+MAIN_TRANSPORTS_COUNT             | %1人員
+MAIN_TRANSPORTS_CANCEL            | 取消
+MAIN_TRANSPORTS_SHOW_DEST         | 到達%1的預計耗時: %2年
+MAIN_TRANSPORT_TITLE              | 輸送人員
+MAIN_TRANSPORT_ABANDON_TITLE      | 遺棄星系
+MAIN_TRANSPORT_PROMPT             | 選擇一個己方星系，派遣平民；或選擇敵人星系，派遣軍隊。
+MAIN_TRANSPORT_ABANDON_PROMPT     | 選擇一個星系來接收所有的人口
+MAIN_TRANSPORT_SELECT_POP         | 選擇要派遣的平民數量 (至多爲%1一半的人口)
+MAIN_TRANSPORT_SELECT_TROOPS      | 選擇要派遣的軍隊數量 (至多爲%1一半的人口)
+MAIN_TRANSPORT_POP_LABEL          | 人數
+MAIN_TRANSPORT_TOTAL_POP_LABEL    | 總人數: %1
+MAIN_TRANSPORT_ETA                | 到達%1的航行時間: %2年
+MAIN_TRANSPORT_ERROR              | 你必須選擇一個已被殖民的星系。
+MAIN_TRANSPORT_ABANDON_ERROR      | 你必須選擇一個%1星系。
+MAIN_TRANSPORT_OUT_OF_RANGE       | 這個星系在我們的軍隊輸送範圍之外。
+MAIN_TRANSPORT_UNSCOUTED          | 我們無法把人員輸送到未探索的星系。
+MAIN_TRANSPORT_HOSTILE            | 我們沒有登陸這個環境的技術。
+MAIN_TRANSPORT_NO_ROOM            | 警告 - 目標行星已達最大人口。
+MAIN_TRANSPORT_SIZE_WARNING       | 警告 - 目標行星只能再容納%1百萬人。
+MAIN_TRANSPORT_NO_SELECTION       | 未選擇
+MAIN_TRANSPORT_CANCEL             | 取消
+MAIN_TRANSPORT_SEND               | 輸送人員
+MAIN_TRANSPORT_ABANDON            | 確定遺棄
+MAIN_TRANSPORT_CLEAR              | 取消輸送
+MAIN_TRANSPORT_SURRENDER          | 到達後自動投降
+
+// Colony labels
+MAIN_COLONY_HOMEWORLD             | %1母星
+MAIN_COLONY_FOUNDED               | %1殖民地
+MAIN_COLONY_POPULATION            | 人口
+MAIN_COLONY_FACTORIES             | 工業
+MAIN_COLONY_VALUE+                | %1+
+MAIN_COLONY_SHIELD                | 護盾等級
+MAIN_COLONY_BASES                 | 導彈基地
+MAIN_COLONY_PRODUCTION            | 產能 - 淨值 (總值)
+MAIN_COLONY_SHIP                  | 船塢
+MAIN_COLONY_DEFENSE               | 防禦
+MAIN_COLONY_INDUSTRY              | 工業
+MAIN_COLONY_ECOLOGY               | 生態
+MAIN_COLONY_TECHNOLOGY            | 科技
+MAIN_COLONY_ALLOCATE_SPENDING     | 分配資源
+MAIN_COLONY_SPENDING_NONE         | 無
+MAIN_COLONY_SPENDING_RESERVE      | 國庫
+MAIN_COLONY_SPENDING_TECH         | 科技
+MAIN_COLONY_SPENDING_CONVERT      | 轉化
+MAIN_COLONY_SPENDING_REFIT        | 升級
+MAIN_COLONY_SPENDING_MAX_FACT     | 已達最大
+MAIN_COLONY_SPENDING_WASTE        | 污染
+MAIN_COLONY_SPENDING_ECO_GROWTH   | 增長 %1
+MAIN_COLONY_SPENDING_ATMOSPHERE   | 大氣
+MAIN_COLONY_SPENDING_ENRICH_SOIL  | 土壤
+MAIN_COLONY_SPENDING_TERRAFORM    | 改造
+MAIN_COLONY_SPENDING_CLEANUP      | 乾淨
+MAIN_COLONY_SPENDING_GROWTH       | 增長
+MAIN_COLONY_SPENDING_SHIELD       | 護盾
+MAIN_COLONY_SPENDING_UPG_BASES    | 升級
+MAIN_COLONY_SPENDING_PLAGUE       | 瘟疫
+MAIN_COLONY_SPENDING_SUPERNOVA    | 超新星
+MAIN_COLONY_SPENDING_RP           | %1 RP
+MAIN_COLONY_COMPLETION_YEAR       | 1年
+MAIN_COLONY_COMPLETION_YEARS      | %1年
+MAIN_COLONY_COMPLETION_CENTURY    | %1年
+MAIN_COLONY_COMPLETION_PER_YEAR   | %1/年
+MAIN_COLONY_SHIPYARD_COMPLETED    | 已完成: %1
+MAIN_COLONY_SHIPYARD_LIMIT        | 製造上限:
+MAIN_COLONY_SHIPYARD_LIMIT_NONE   | 無
+MAIN_COLONY_SHIPYARD_CONSTRUCTION | 艦船生產隊列
+MAIN_COLONY_RELOCATE_LABEL        | 設置集合點
+MAIN_COLONY_TRANSPORTS_LABEL      | 派遣殖民者
+MAIN_COLONY_ABANDON_LABEL         | 遺棄
+MAIN_COLONY_SHIP_SCRAPPED         | 被遺棄
+MAIN_COLONY_NO_SHIELD             | 星雲
+
+// System Scouted Notification
+MAIN_SCOUT_TITLE                  | 科學家歸類了一個新的星系
+MAIN_SCOUT_SUBTITLE_1             | 我們的飛船已經完成這個星系的偵察
+MAIN_SCOUT_SUBTITLE_2             | 宇航員已經蒐集了這個星球的數據
+MAIN_SCOUT_SUBTITLE_3             | 盟友跟我們分享這個星球的數據
+MAIN_SCOUT_TYPE                   | 歸類: %1      空間: %2
+MAIN_SCOUT_NO_PLANET              | 沒有找到可生存星球。
+MAIN_SCOUT_HOSTILE_DESC           | 環境: 惡劣 - 人口增長減半。
+MAIN_SCOUT_FERTILE_DESC           | 環境: 肥沃 - 人口增長加快50%。
+MAIN_SCOUT_GAIA_DESC              | 環境: 天堂 - 人口增長翻倍。
+MAIN_SCOUT_ARTIFACTS_DESC         | 上古遺蹟: 科技研究效果翻倍。
+MAIN_SCOUT_ANCIENTS_DESC          | 上古家園: 科技研究效果翻三倍。
+MAIN_SCOUT_ULTRA_POOR_DESC        | 資源: 非常匱乏 - 工業產值僅爲正常情況的三分之一。
+MAIN_SCOUT_POOR_DESC              | 資源: 匱乏 - 工業產值減半。
+MAIN_SCOUT_RICH_DESC              | 資源: 豐富 - 工業產值翻倍。
+MAIN_SCOUT_ULTRA_RICH_DESC        | 資源: 非常豐富 - 工業產值爲正常情況的三倍。
+
+// Colonization prompt
+MAIN_COLONIZE_TITLE               | 我們的殖民者正圍繞%1飛行，這是一個未被殖民的星系。
+MAIN_COLONIZE_PROMPT              | 建造一個新的殖民地?
+MAIN_COLONIZE_YES                 | 是
+MAIN_COLONIZE_NO                  | 否
+MAIN_COLONIZE_ANIMATION_TITLE     | %1年, [player_empire]創建了一個新的殖民地。
+MAIN_COLONIZE_NAME_PROMPT         | 殖民地名稱
+MAIN_COLONIZE_NAME_OK             | 確定
+
+// Reasons to ask player to reallocate a system (during next turn)
+MAIN_ALLOCATE_TITLE               | 支出分配
+MAIN_ALLOCATE_DESIGN_SCRAPPED     | %1的在建飛船已經被拆除。
+MAIN_ALLOCATE_COLONIZED           | • %1已經被殖民。
+MAIN_ALLOCATE_STARGATE_COMPLETE   | • %1已經完成星門的建造。
+MAIN_ALLOCATE_SHIPS_COMPLETE      | • %1已經完成了要求建造的%2飛船。
+MAIN_ALLOCATE_SHIELD_COMPLETE     | • %1已經完成了%2的建造。
+MAIN_ALLOCATE_BASES_COMPLETE      | • %1已經完成了%2個導彈基地的建造。
+MAIN_ALLOCATE_BASES_UPGRADED      | • %1已經完成導彈基地的升級。
+MAIN_ALLOCATE_MAX_FACTORIES       | • %1的工廠數量已經達到了的上限%2。
+MAIN_ALLOCATE_MAX_POPULATION      | • %1的人口數量已經達到了上限%2。
+MAIN_ALLOCATE_TERRAFORM_COMPLETE  | • %1已經完成了行星改造。
+MAIN_ALLOCATE_ATMOSPHERE_COMPLETE | • %1完成了大氣改造，人口增長速度現在是正常水平。
+MAIN_ALLOCATE_FERTILE_COMPLETE    | • %1已經變成了肥沃的行星，人口增長速度是正常水平的1.5倍。
+MAIN_ALLOCATE_GAIA_COMPLETE       | • %1已經變成了天堂行星，人口增長速度是正常水平的2倍。
+MAIN_ALLOCATE_SABOTAGE_BASES      | • %1的%2個導彈基地被[spy_race]的間諜破壞了。
+MAIN_ALLOCATE_SABOTAGE_FACTORIES  | • %1的%2個工廠被[spy_race]的間諜破壞了。
+MAIN_ALLOCATE_COLONY_CAPTURED     | • %1被%2個軍隊佔領了。
+MAIN_ALLOCATE_ECO_LOCKED_WASTE    | • %1的生態支出被人爲控制在了一個沒有辦法清理污染的水平。
+MAIN_ALLOCATE_PROJECT_ENDED       | • %1不再研究這個項目：%2。
+MAIN_ALLOCATE_CHANGE_SPENDING     | 星系的支出可以在這裏調整。
+MAIN_ALLOCATE_NOTICE_NUMBER       | 報告 %1/%2
+MAIN_ALLOCATE_BRIEF_NUMBER        | %1/%2
+MAIN_ALLOCATE_PREV_SYSTEM         | 前一條
+MAIN_ALLOCATE_NEXT_SYSTEM         | 下一條
+MAIN_ALLOCATE_CLOSE               | 關閉
+
+// Fleet Production display (during next turn)
+MAIN_FLEET_PRODUCTION_TITLE       | 艦船建造總結
+MAIN_FLEET_SHIP_COUNT             | %1/%2
+
+// 32-bit Java Warning
+MAIN_JAVA_32BIT_TITLE             | 警告! 你使用的是32位 Java
+MAIN_JAVA_32BIT_DESC              | 你正在用32位 Java 運行這個遊戲。這會極大影響可用內存和遊戲性能。
+MAIN_JAVA_32BIT_DESC_2            | 儘管遊戲可以在這個模式下運行，但使用64位 Java 會大大優化你的遊戲體驗。
+MAIN_JAVA_32BIT_DESC_3            | 如果你想獲取升級 Java 的幫助，請訪問 www.reddit.com/r/rotp 獲取幫助
+MAIN_JAVA_32BIT_OK                | 好的
+
+// Memory Low Warning
+MAIN_MEMORY_LOW_TITLE             | 警告! 遊戲內存不足
+MAIN_MEMORY_LOW_DESC              | 遊戲的可用內存不足。這可能是因爲遊戲地圖太大，或電腦的可用內存不夠。
+MAIN_MEMORY_LOW_DESC_2            | 點擊“重新啓動”，重新啓動遊戲，並從當前進度繼續。如果不重啓遊戲，可能會導致無法預測的後果，比如遊戲存檔丟失。
+MAIN_MEMORY_LOW_DESC_3            | 如果你頻繁看到這個提示，請嘗試在重啓前關閉其他應用。
+MAIN_MEMORY_LOW_RESTART           | 重新啓動
+MAIN_MEMORY_LOW_SKIP              | 忽略
+
+// Autosave Failed Warning
+MAIN_AUTOSAVE_FAILED_TITLE        | 警告! 自動存檔失敗
+MAIN_AUTOSAVE_FAILED_DESC         | 遊戲在你點擊“下一回合”後自動存檔。自動存檔失敗了。這可能是一個臨時的內存錯誤，但請你在繼續遊戲前重啓一次。
+MAIN_AUTOSAVE_FAILED_DESC_2       | 錯誤信息: %1
+MAIN_AUTOSAVE_FAILED_DESC_3       | 如果你經常看到這個信息，請訪問 www.reddit.com/r/rotp，並提供截圖。
+MAIN_AUTOSAVE_FAILED_OK           | 好的
+
+// Alerts
+MAIN_ALERT_TITLE                  | 情報
+MAIN_ALERT_TITLE_COUNT            | 情報：%1/%2
+MAIN_ALERT_SPY_REPORT             | 我們的情報官員彙報了一個新的間諜活動情報。
+MAIN_ALERT_TECH_STOLEN            | 安全部門發現了來自[alien_race]的間諜活動。
+MAIN_ALERT_FACTORIES_DESTROYED    | 爲[alien_empire]工作的間諜破壞了%2星系的%1個工廠。
+MAIN_ALERT_BASES_DESTROYED        | 爲[alien_empire]工作的間諜破壞了%2星系的%1個導彈基地。
+MAIN_ALERT_FACTORIES_DESTROYED2   | 未知間諜破壞了%2星系的%1個工廠。
+MAIN_ALERT_BASES_DESTROYED2       | 未知間諜破壞了%2星系的%1個導彈基地。
+MAIN_ALERT_TRANSPORTS_PERISHED    | %1星系的殖民地已經毀滅。我們嘗試着陸的殖民者都喪生了。
+MAIN_ALERT_TRANSPORTS_CAPTURED    | 我們登陸%1星系的%2百萬人員已經向[alien_race]的軍隊投降。
+MAIN_ALERT_TRANSPORTS_KILLED      | 我方嘗試登陸%1星系的%2百萬人員已經被[alien_race]的守軍擊潰。
+MAIN_ALERT_INVADERS_CAPTURED      | 登陸%1星系的%2百萬[alien_race]人員已經向我方守軍投降。
+MAIN_ALERT_INVADERS_KILLED        | 想要入侵%1的%2百萬[alien_race]軍隊已經徹底被我方守軍擊潰。
+MAIN_ALERT_TRESPASSING1           | [alien_race]的飛船正在穿過我們在%1星系的殖民地。
+MAIN_ALERT_TRESPASSING2           | [alien_race]的大使抗議我們的飛船經過了%1星系。
+MAIN_ALERT_TRADE_MATURED          | 我們與[alien_empire]的貿易協議達到了協定的%2BC。
+MAIN_ALERT_ALLIANCE_WEAKENING     | 我們與[ally_empire]的聯盟關係變弱了。
+MAIN_ALERT_ALLIANCE_BREAKING      | 我們與[ally_empire]的聯盟關係在崩潰的邊緣！
+
+
+// Colony Listing UI
+PLANETS_TITLE                     | %1 殖民地
+PLANETS_VIEW_ECOLOGY              | 生態
+PLANETS_VIEW_INDUSTRY             | 工業
+PLANETS_VIEW_MILITARY             | 軍事
+PLANETS_SPENDING_COSTS            | 帝國開支
+PLANETS_COSTS_DESC                | 每個殖民地都支付一定比例的產出以維持帝國開支。
+PLANETS_COSTS_SHIPS               | 戰艦維護
+PLANETS_COSTS_BASES               | 導彈基地
+PLANETS_COSTS_STARGATES           | 星門
+PLANETS_COSTS_SPYING              | 間諜
+PLANETS_COSTS_SECURITY            | 安全
+PLANETS_TOTAL_INCOME              | 年收入
+PLANETS_INCOME_TRADE              | 貿易收入
+PLANETS_INCOME_PLANETS            | 殖民地產出
+PLANETS_INCOME_TOTAL              | 總收入
+PLANETS_TREASURY                  | 帝國國庫
+PLANETS_TREASURY_FUNDS            | 國庫儲備
+PLANETS_TAX_DESC                  | 對殖民地徵稅以增加國庫收入
+PLANETS_RESERVE_TAX               | 稅收
+PLANETS_RESERVE_INCREASE          | +%1 BC/年
+PLANETS_RESERVE_NO_TAX            | 無稅收
+PLANETS_RESERVE_ONLY_DEVELOPED    | 只對完全發展殖民地徵稅
+PLANETS_BUTTON_TRANSFER           | 轉賬
+PLANETS_BUTTON_EXIT               | 返回
+PLANETS_AMT_PCT                   | %1%
+PLANETS_AMT_BC                    | %1 BC
+PLANETS_TRANSFER_DESC             | 從國庫轉移資金到%1
+PLANETS_TRANSFER_CANCEL           | 取消
+PLANETS_TRANSFER_ACCEPT           | 轉賬
+PLANETS_COLONY_TRANSFER_TITLE     | 轉移資金
+PLANETS_COLONY_TRANSFER_DETAIL    | 從國庫轉移資金到殖民地以臨時增加殖民地產出。
+PLANETS_COLONY_TRANSFER_BUTTON    | 從國庫轉移資金
+PLANETS_LIST_NUM                  | 
+PLANETS_LIST_NAME                 | 名稱
+PLANETS_LIST_POPULATION           | 人口
+PLANETS_LIST_POP                  | 人口
+PLANETS_LIST_SIZE                 | 大小
+PLANETS_LIST_TYPE                 | 類型
+PLANETS_LIST_FACTORIES            | 工廠
+PLANETS_LIST_WASTE                | 污染
+PLANETS_LIST_BASES                | 導彈
+PLANETS_LIST_SHIELD               | 護盾
+PLANETS_LIST_PRODUCTION           | 產出
+PLANETS_LIST_CAPACITY             | 產能
+PLANETS_LIST_RESERVE              | 存款
+PLANETS_LIST_SHIPYARD             | 船塢
+PLANETS_LIST_NOTES                | 備註
+PLANETS_LIST_TURNS                | 回合
+PLANETS_LIST_YEARS                | 年
+PLANETS_LIST_TRANSPORTS           | 人數
+PLANETS_LIST_RESOURCES            | 資源
+PLANETS_MULTI_SYSTEMS             | %1個星系
+PLANETS_AGGREGATE_VALUES          | 總數量
+PLANETS_SPENDING_0                | 無投入：%1
+PLANETS_SPENDING_25               | 25% 投入：%1
+PLANETS_SPENDING_50               | 50% 投入：%1
+PLANETS_SPENDING_75               | 75% 投入：%1
+PLANETS_SPENDING_MAX              | 最大投入： %1
+PLANETS_HELP_ALL                  | 縱覽：這個界面展示了帝國的經濟情況，你可以按指標修改各個殖民地的排序。
+PLANETS_HELP_1A                   | 生態：單擊以展示殖民地的生態數據。
+PLANETS_HELP_1B                   | 工業：單擊以展示殖民地的工業數據。
+PLANETS_HELP_1C                   | 軍事：單擊以展示殖民地的軍事數據。
+PLANETS_HELP_1D                   | 可以在右側界面修改殖民地的支出分配。
+PLANETS_HELP_1E                   | 從國庫轉移資金到殖民地，至多增加殖民地50%的產出。
+PLANETS_HELP_1F                   | 你帝國的總產出。
+PLANETS_HELP_1G                   | 你帝國的開支情況，以收入的百分比形式展現。
+PLANETS_HELP_1H                   | 對殖民地徵稅以增加國庫收入。可以只對已經完成生態、工業和防禦建設的殖民地徵稅。
+PLANETS_HELP_2A                   | 名稱：殖民地的名稱。可以編輯。
+PLANETS_HELP_2B                   | 人口：當前人口，以及相比上一回合的變化數量。
+PLANETS_HELP_2C                   | 地形：星球的地形。綠色表示肥沃星球。
+PLANETS_HELP_2D                   | 資源：星球的資源豐富或匱乏，以及是否有史前遺蹟。
+PLANETS_HELP_2E                   | 大小：星球當前的大小。
+PLANETS_HELP_2F                   | 污染：星球當前的污染情況。
+PLANETS_HELP_2G                   | 備註：該星系的備註。可編輯。
+PLANETS_HELP_3A                   | 名稱：殖民地的名稱。可以編輯。
+PLANETS_HELP_3B                   | 人口：當前人口，以及相比上一回合的變化數量。
+PLANETS_HELP_3C                   | 資源：星球的資源豐富或匱乏，以及是否有史前遺蹟。
+PLANETS_HELP_3D                   | 工廠：工廠的數量，包括相比上一回合的變化數量。
+PLANETS_HELP_3E                   | 產出：殖民地的總產出。
+PLANETS_HELP_3F                   | 存款：當前殖民地的存款。
+PLANETS_HELP_3G                   | 備註：該星系的備註。可編輯。
+PLANETS_HELP_3H                   | 產能：當前產出佔最大可能產出的百分比。
+PLANETS_HELP_4A                   | 名稱：殖民地的名稱。可以編輯。
+PLANETS_HELP_4B                   | 人口：當前人口，以及相比上一回合的變化數量。
+PLANETS_HELP_4C                   | 資源：星球的資源豐富或匱乏，以及是否有史前遺蹟。
+PLANETS_HELP_4D                   | 產出：殖民地的總產出。
+PLANETS_HELP_4E                   | 護盾：星球護盾等級。
+PLANETS_HELP_4F                   | 導彈：星球的導彈基地數量。如果技術已過時，會被標爲紅色。
+PLANETS_HELP_4G                   | 船塢：當前正在建造的飛船型號。
+PLANETS_HELP_4H                   | 備註：該星系的備註。可編輯。
+PLANETS_HELP_4I                   | 旗幟：你可以爲星系設置一個標記旗幟。
+
+// Bombardment prompt
+MAIN_BOMBARDED_TITLE             | %1被[alien_race]的艦隊轟炸了。
+MAIN_BOMBARD_TITLE               | 我們的艦隊正在圍繞[alien_race]殖民地飛行。
+MAIN_BOMBARD_TROOPS              | %1 [alien_race]飛船正在圍繞該殖民地或駛向該殖民地。
+MAIN_BOMBARD_PROMPT              | 是否轟炸該殖民地?
+MAIN_BOMBARD_YES                 | 是
+MAIN_BOMBARD_NO                  | 否
+MAIN_BOMBARD_POPULATION          | 人口: %1
+MAIN_BOMBARD_FACTORIES           | 工廠: %1
+MAIN_BOMBARD_BASES               | 導彈基地: %1
+MAIN_BOMBARD_SHIELD              | 護盾: %1
+MAIN_BOMBARD_COMPLETE            | 完成轟炸。
+MAIN_BOMBARD_DESTROYED           | 摧毀殖民地
+MAIN_BOMBARD_DMG                 | (%1)
+MAIN_BOMBARD_NAME_PROMPT         | 殖民地名稱
+
+// Fleet listing UI
+FLEETS_TITLE                      | 艦隊
+FLEETS_SELECT_SYSTEMS             | 選擇星系
+FLEETS_SELECT_FLEETS              | 選擇艦隊
+FLEETS_SELECT_ALL                 | 選擇全部
+FLEETS_DESELECT_ALL               | 反選全部
+FLEETS_FILTER_BY                  | 篩選：
+FLEETS_CONSTRUCTING_DESIGN        | 建造條件：
+FLEETS_INCLUDES_SHIP_TYPE         | 只部署下列類型的艦艇：
+FLEETS_SELECTED_SHIPS             | 被選中的飛船
+FLEETS_BUILDING_DESIGN            | %1
+FLEETS_HAS_STARGATE               | 星系有星門
+FLEETS_HAS_NO_STARGATE            | 星系無星門
+FLEETS_HAS_RALLY_POINT            | 星系有集結點
+FLEETS_HAS_NO_RALLY_POINT         | 星系無集結點
+FLEETS_SENDING_TRANSPORTS         | 星系正在派遣人員
+FLEETS_NOT_SENDING_TRANSPORTS     | 星系沒有派遣人員
+FLEETS_IS_RICH                    | 星系資源豐富或非常豐富
+FLEETS_IS_ULTRA_RICH              | 星系資源非常豐富
+FLEETS_IS_POOR                    | 星系資源匱乏或非常匱乏
+FLEETS_IS_ULTRA_POOR              | 星系資源非常匱乏
+FLEETS_IS_STANDARD                | 星系的資源狀況正常
+FLEETS_SYSTEMS_SELECTED           | 選中%1個星系
+FLEETS_FLEETS_SELECTED            | 選中%1艘艦船
+FLEETS_MULTIPLE_DESIGNS           | 多種飛船
+FLEETS_RELOCATE_LABEL             | 設置集結點
+FLEETS_TRANSPORTS_LABEL           | 派遣人員
+FLEETS_SPENDING_LABEL             | 調整造船投入
+FLEETS_HAS_ORDERS                 | 飛船正在移動
+FLEETS_HAS_NO_ORDERS              | 飛船正在軌道繞行
+FLEETS_IS_RALLYING                | 飛船正在集結
+FLEETS_DESIGN_COUNT               | %1 %2
+FLEETS_DEPLOY_FLEETS              | 部署艦隊
+FLEETS_SET_RALLY_POINTS           | 設置集結點
+FLEETS_STOP_RALLIES_DESC          | %1個被選中的星系已經有被設置好的集結點
+FLEETS_STOP_RALLIES               | 停止集結
+FLEETS_SETTING_RALLY_POINTS       | 開啓集結點
+FLEETS_START_RALLIES_DESC         | 選擇一個你控制的星系，將所有被選中星系的新造艦船都部署到這個星系。
+FLEETS_START_RALLIES              | 開始集結
+FLEETS_SEND_TRANSPORTS            | 派遣人員
+FLEETS_ADJUST_SPENDING_SELECT     | 選擇要調整造船比例的星系
+FLEETS_ADJUST_SPENDING_DESC       | 爲選中的%1個星系設置造船投入比例
+FLEETS_ADJUST_SPENDING_DESC2      | 其他投入模塊會自動調整。
+FLEETS_ADJUST_SPENDING_DESC3      | 生態投入會調整到足夠清理污染的最小值。
+FLEETS_ADJUST_SPENDING            | 調整造船投入
+FLEETS_SPENDING_0                 | 無造船投入
+FLEETS_SPENDING_25                | 投入產出的25%
+FLEETS_SPENDING_50                | 投入產出的50%
+FLEETS_SPENDING_75                | 投入產出的75%
+FLEETS_SPENDING_MAX               | 最大化造船投入
+FLEETS_SPENDING_CANCEL            | 取消
+FLEETS_CANCEL_TRANSPORTS_DESC     | %1個被選中的星系已經有計劃中的派遣任務
+FLEETS_CANCEL_TRANSPORTS          | 取消派遣
+FLEETS_DEPLOYING_TRANSPORTS_DESC  | 選擇一個航程內的行星以派遣平民或軍隊。
+FLEETS_DEPLOY_TRANSPORTS          | 確定派遣人員
+FLEETS_FLEET_DEPLOYMENT           | 艦隊部署
+FLEETS_UNDEPLOYING_FLEETS         | %1個被選中的飛船已經有部署任務。
+FLEETS_CANCEL_DEPLOYMENTS         | 取消部署
+FLEETS_DEPLOYING_FLEETS           | 正在部署
+FLEETS_DEPLOYING_FLEETS_DESC      | 選擇一個航程內的星系以部署被選中的飛船。
+FLEETS_DEPLOY_FLEETS              | 部署艦艇
+FLEETS_TRANSPORTS_TITLE           | 從下列行星派遣:
+FLEETS_TRANSPORTS_SEND            | 派遣%1人員
+FLEETS_TRANSPORTS_SYNCH           | 同步
+FLEETS_TRANSPORTS_UNSYNCH         | 不同步
+FLEETS_TRANSPORT_NO_ROOM          | 警告：目標星球已經達到最大人口！
+FLEETS_TRANSPORT_SIZE_WARNING     | 警告：目標星球僅支持%1人口!
+FLEETS_TRANSPORT_TIME             | 抵達時間: %1年後
+FLEETS_TRANSPORT_TIME_RANGE       | 抵達時間: %1到%2年後
+FLEETS_CANNOT_SEND_TRANSPORTS     | %1無法排遣人員
+FLEETS_EXISTING_TRANSPORT         | 派遣%1人員到%2
+FLEETS_EXISTING_STOP              | 放棄
+FLEETS_CANCEL                     | 取消
+FLEETS_HELP_ALL                   | 總覽：這個界面允許你批量管理艦隊、人員派遣和戰艦建造。一般來說，你會選擇一組飛船或星系，然後篩選出子集，再進一步操作。
+FLEETS_HELP_1A                    | 選擇星系：有3種方式。1. 選擇地圖上的星系；2. 右鍵在地圖上拖拽；3. 使用“選擇全部”和“反選全部”。
+FLEETS_HELP_1B                    | 篩選：勾選單選框以縮小被選中的星系範圍，選項也可以被點擊以切換內容。
+FLEETS_HELP_1C                    | 建造條件：根據在建飛船在篩選星系。
+FLEETS_HELP_1D                    | 艦艇型號：改變被選中星系的在建飛船。空白表示被選中星系在建造不同的飛船。注意：這個操作沒有確認鍵。
+FLEETS_HELP_1E                    | 派遣人員： 從被選中星系派遣人員到某個目標星系。
+FLEETS_HELP_1F                    | 設置集結點：將被選中星系的集結點設置爲某個星系。
+FLEETS_HELP_2A                    | 選擇艦艇：有3種方法。1. 在地圖上點選；2.右鍵在地圖上拖拽；3. 使用“選擇全部”和“反選全部”。
+FLEETS_HELP_2B                    | 篩選：勾選單選框以縮小被選中的星系，選項也可以被點擊以切換內容。
+FLEETS_HELP_2C                    | 只部署下列類型的艦艇：限制你想要部署的飛船類型。
+FLEETS_HELP_2D                    | 被選中的飛船： 被選中飛船裏各種類型的數量。
+FLEETS_HELP_2E                    | 部署艦艇：將被選中的飛船部署到某個目標星系。
+
+// Select Next Tech to Research UI
+TECH_RESEARCH_COMPUTER            | 選擇科學家研究的下一個計算科學技術。
+TECH_RESEARCH_CONSTRUCTION        | 選擇科學家研究的下一個製造技術。
+TECH_RESEARCH_FORCE_FIELD         | 選擇科學家研究的下一個力場技術。
+TECH_RESEARCH_PLANETOLOGY         | 選擇科學家研究的下一個行星學技術。
+TECH_RESEARCH_PROPULSION          | 選擇科學家研究的下一個動力技術。
+TECH_RESEARCH_WEAPON              | 選擇科學家研究的下一個武器技術。
+TECH_TOP_TIER_DETAIL              | 掌握這個技術將會解鎖更高級的技術。
+TECH_OBSOLETE_DETAIL              | 這個科技已經過時了。
+TECH_CAN_CHANGE                   | 在進入下一回合前，你的決定可以在科技界面修改。
+TECH_CHOOSE_RESEARCH_COST         | %1 RP
+TECH_CHOOSE_RESEARCH_TIER         | %1階
+TECH_TRADE_TIER_COST_INFO         | (Tier %1 - %2 RP)
+TECH_CONFIRM_CHOICE               | 選擇
+TECH_DISCOVERY_TITLE              | [player_race]科學家實現了一個%1突破
+TECH_SCOUTED_TITLE                | 偵察人員探索了%1發現的遺蹟
+TECH_STOLEN_TITLE                 | 間諜滲透了%2的[alien_race]研究中心。
+TECH_TRADED_TITLE                 | [player_race]科學家從[alien_race]科學家處獲取了技術
+TECH_PLUNDERED_TITLE              | 軍隊在掠奪%1後的廢墟 
+TECH_DERELICT_TITLE               | [player_race]探索者獲取到了一個上古技術
+TECH_GUARDIAN_TITLE               | [player_race]士兵發現了一個上古武器
+TECH_ALLOCATE_SHIELD              | 是否提高所有殖民地的防禦開支比例，以建造新的護盾?
+TECH_ALLOCATE_MISSILE_BASES       | 是否提高所有殖民地的防禦開支比例，以升級導彈基地?
+TECH_ALLOCATE_FACTORIES           | 是否提高所有殖民地的工業開支比例，以提高工廠數量?
+TECH_ALLOCATE_CLEAN_WASTE         | 是否減少所有殖民地的生態開支，僅把星球的生態狀況維持在“乾淨”?
+TECH_ALLOCATE_ENRICH_SOIL         | 是否提高正常環境的殖民地的生態投入，以開始行星的環境改造。
+TECH_ALLOCATE_ATMOSPHERE          | 是否提高惡劣環境的殖民地的生態投入，以開始行星的環境改造。
+TECH_ALLOCATE_TERRAFORM           | 是否提高所有殖民地的生態投入，以開始行星的環境改造。
+TECH_ALLOCATE_NO                  | 不
+TECH_ALLOCATE_PCT                 | +%1%
+TECH_COMPLETED_TITLE              | 研究完成!
+TECH_COMPLETED_COMPUTER           | 我們完成了計算科學領域的所有研究！該領域已經沒有更多的研究了。
+TECH_COMPLETED_CONSTRUCTION       | 我們完成了製造領域的所有研究！該領域已經沒有更多的研究了。
+TECH_COMPLETED_FORCE_FIELD        | 我們完成了力場科學領域的所有研究！該領域已經沒有更多的研究了。
+TECH_COMPLETED_PLANETOLOGY        | 我們完成了行星學領域的所有研究！該領域已經沒有更多的研究了。
+TECH_COMPLETED_PROPULSION         | 我們完成了動力學領域的所有研究！該領域已經沒有更多的研究了。
+TECH_COMPLETED_WEAPON             | 我們完成了武器領域的所有研究！該領域已經沒有更多的研究了。
+TECH_COMPLETED_ALL                | 我們已經完成了所有科學研究。研究的時代已經結束了。從今往後所有研究資金都會進入國庫。
+TECH_COMPLETED_VERIFY             | 確認未來研究的投入分配方案已經正確設置。
+
+// prompt for espionage
+NOTICE_ESPIONAGE_TITLE            | 我們的間諜滲透了一個[alien_race]基地。
+NOTICE_ESPIONAGE_SUBTITLE         | 選擇一個想要投偷竊的技術
+NOTICE_ESPIONAGE_NO_TECH          | 無可用技術
+NOTICE_ESPIONAGE_MANY_TECHS       | %1個可用技術
+NOTICE_ESPIONAGE_FOOTER           | 如果被發現，會導致外交爭端。
+NOTICE_ESPIONAGE_FRAME_TITLE      | 我們的間諜成功把技術盜竊案栽贓給了另一個種族。
+NOTICE_ESPIONAGE_FRAME_SUBTITLE   | 選擇被栽贓種族：
+
+// Spy Capture display (during next turn)
+NOTICE_SPIES_TITLE                | 當前情報
+NOTICE_SPIES_NO_ACTIVITY          | 當前沒有重要的情報活動。
+NOTICE_SPIES_ACTIVITY             | 當前活動:
+NOTICE_SPIES_LOST_DESC            | •[alien_empire]搗毀了我方的%1個間諜網絡。
+NOTICE_SPIES_LOST_CONFESSED       | 我方間諜坦白了正在進行的破壞活動。
+NOTICE_SPIES_LOST_CONFESSED2      | 我方間諜坦白了正在進行的竊密活動。
+NOTICE_SPIES_LOST_CONFESSED3      | 我方間諜被迫承認了正在進行的破壞活動。
+NOTICE_SPIES_CAUGHT_DESC          | • 我方安全部門搗毀了%1個[alien_empire]的間諜網絡。
+NOTICE_SPIES_CAUGHT_CONFESSED     | 對方間諜承認在進行破壞活動。
+NOTICE_SPIES_CAUGHT_CONFESSED2    | 對方間諜承認在進行竊密活動。
+NOTICE_SPIES_FRAMED               | • 我方被栽贓爲[alien_empire]竊密事件的幕後黑手。
+NOTICE_SPIES_ESPIONAGE            | • 我方間諜偷竊了[alien_empire]的機密技術：%1。
+NOTICE_SPIES_ESPIONAGE_FRAME      | 我們成功把本次竊密行動栽贓給了 [framed_empire]。
+NOTICE_SPIES_SABOTAGE_FACTORIES   | • 我方間諜成功破壞了%2星系的%1個工廠。
+NOTICE_SPIES_SABOTAGE_BASES       | • 我方間諜成功破壞了%2星系的%1個導彈基地。
+NOTICE_SPIES_SABOTAGE_REBELS      | • 我方間諜成功在%2星系培養了反叛力量。
+NOTICE_SPIES_SABOTAGE_REBELLION   | • 我方間諜成功在%2星系煽動了起義。
+NOTICE_SPIES_LEARNED_TECH         | • 我方間諜彙報：[alien_empire]近期發現了一個我方尚未掌握的新技術：%1。
+
+// this just details how to concatenate a list of multiple technology (English uses ,)
+NOTICE_SPIES_MULTIPLE_TECHS       | %1, %2
+NOTICE_SPIES_THREATEN             | 威脅
+NOTICE_SPIES_MANAGE               | 管理間諜
+NOTICE_SPIES_CLOSE                | 關閉
+
+// Ground Combat UI
+INVASION_BATTLE                   | %1年，[attacker_race]和[defender_race]爲爭奪%2發生戰鬥。
+INVASION_BATTLE_REBELS            | %1年，[attacker_race]與反叛軍爲爭奪%2發生戰鬥。
+INVASION_TROOPS_LANDED            | [attacker_race]的%1個部隊登陸了。
+INVASION_SOME_TROOPS_LANDED       | %2個[attacker_race]部隊中有%1個登陸了。
+INVASION_WIN                      | [attacker_race]的部隊佔領了%2。
+INVASION_LOSS                     | [defender_race]的部隊成功守護了%2。
+INVASION_ATTACKERS_TITLE          | %1 [attacker_race]部隊
+INVASION_DEFENDERS_TITLE          | %1 [defender_race]部隊
+INVASION_REBELS_TITLE             | %1 [defender_race]起義軍
+INVASION_TROOP_ARMOR_DESC         | %1 %2
+
+// GNN Text
+GNN_TITLE                         | [player_race]星際新聞網絡報告：
+GNN_EMPIRE_RANKING                | %1. [empire_race]
+GNN_EXTINCTION_KNOWN_VICTIM       | [victim_race]
+GNN_EXTINCTION_KNOWN_KILLER       | [killer_race]
+GNN_EXTINCTION_UNKNOWN_VICTIM     | 一個未知文明
+GNN_EXTINCTION_UNKNOWN_KILLER     | 一個未知帝國
+GNN_EXTINCTION                    | %1已經徹底被%2消滅。
+GNN_EXTINCTION_NO_KILLER          | %1已經徹底被消滅。
+GNN_EXPANSION_1                   | [expanding_empire]已經佔領%1個星系，超過了所有其他種族。
+GNN_EXPANSION_2                   | [expanding_empire]已經佔領%1個星系。如果他們的擴張不被阻止，他們很快就會佔領整個銀河系。
+GNN_EXPANSION_3                   | [expanding_empire]幾乎控制了大部分星系。領導者已經準備好加入這個強大的帝國。
+GNN_ALLIANCE_FORMED               | [first_empire]已經與[second_empire]結成同盟。
+GNN_ALLIANCE_BROKEN               | [first_empire]和[second_empire]之間的同盟已經被毀掉。
+GNN_FLEETS_RANKING                | 當前艦隊實力排名：
+GNN_CENSUS_RANKING                | 當前人口數量排名：
+GNN_PRODUCTION_RANKING            | 當前經濟實力排名：
+GNN_TECHNOLOGY_RANKING            | 當前技術實力排名：
+GNN_PLAYER_REBELLION              | %1已經叛變並拒絕再爲[rebelling_empire]進行生產。至少%2百萬叛軍控制了殖民地。地面部隊必須登陸該星球平定判斷。 
+GNN_ALIEN_REBELLION               | %1已經叛變並拒絕再爲[rebelling_empire]進行生產。至少%2百萬叛軍控制了殖民地。
+GNN_PLAYER_REBELLION_SPREAD       | 叛亂繼續在[rebelling_empire]傳播，至少%2百萬叛亂分子控制了%1的殖民地。
+GNN_OVERTHROW                     | [alien_empire]出現了一個新的領導者。傳聞他是一個%1。我們的關係變成了中立，且所有貿易都中斷了。
+GNN_END_COUNCIL                   | 宇宙中僅剩下兩個帝國，通過星際委員會實現統一已經不再可行。領導者們開始辯論什麼樣的最終解決方案才能給宇宙帶來和平。
+GNN_FORM_COUNCIL                  | 爲了追求和平，各個種族的代表即將舉行會議，將從兩個人口最多的帝國中投票選出領導全宇宙的皇帝。
+GNN_ALLY_AT_WAR                   | 我方的盟友[ally_empire]與[other_empire]爆發戰爭。
+
+// Error UI text
+ERROR_TITLE                       | 出現了一個錯誤  :(
+ERROR_MESSAGE                     | 如果你想要幫助修復這個問題，請將截圖和最近的存檔文件 'recent.ropt' 通過郵件發給 Ray Fowler，或者在 ROTP 的 Reddit 論壇上發一個帖子。
+ERROR_EMAIL                       | 郵件： rayfowler@fastmail.com
+ERROR_REDDIT                      | Reddit: www.Reddit.com/r/rotp
+
+// Setup UI
+SETUP_SELECT_RACE                 | 選擇你的種族
+SETUP_SELECT_OPPONENTS            | 選擇對手
+SETUP_SELECT_GALAXY               | 選擇宇宙
+SETUP_SELECT_GALAXY_OPTIONS       | 選擇選項
+SETUP_GALAXY_RULESET_LABEL        | 規則
+SETUP_INSUFFICIENT_MEMORY         | 內存不足
+SETUP_CREATING_GALAXY             | 創建宇宙...
+SETUP_RULESET_ORION               | 獵戶座
+SETUP_RULESET_ANTARES             | 心宿二
+SETUP_RULESET_SIRIUS              | 天狼星
+SETUP_GALAXY_SIZE_LABEL           | 尺寸
+SETUP_RACE_MULTIPLIER             | x%1
+SETUP_GALAXY_SHAPE_LABEL          | 形狀
+SETUP_GALAXY_SIZE_TINY            | 很小
+SETUP_GALAXY_SIZE_SMALL           | 小
+SETUP_GALAXY_SIZE_SMALL2          | 小
+SETUP_GALAXY_SIZE_AVERAGE         | 普通
+SETUP_GALAXY_SIZE_AVERAGE2        | 普通
+SETUP_GALAXY_SIZE_LARGE           | 大
+SETUP_GALAXY_SIZE_LARGE2          | 大
+SETUP_GALAXY_SIZE_HUGE            | 很大
+SETUP_GALAXY_SIZE_HUGE2           | 很大
+SETUP_GALAXY_SIZE_MASSIVE         | 巨大
+SETUP_GALAXY_SIZE_MASSIVE2        | 巨大
+SETUP_GALAXY_SIZE_MASSIVE3        | 巨大
+SETUP_GALAXY_SIZE_MASSIVE4        | 巨大
+SETUP_GALAXY_SIZE_MASSIVE5        | 巨大
+SETUP_GALAXY_SIZE_INSANE          | 非常大
+SETUP_GALAXY_SIZE_LUDICROUS       | 超級大
+SETUP_GALAXY_SIZE_MAXIMUM         | 最大
+SETUP_GALAXY_SHAPE_RECTANGLE      | 分散
+SETUP_GALAXY_SHAPE_CIRCULAR       | 圓形
+SETUP_GALAXY_SHAPE_RING           | 環形
+SETUP_GALAXY_SHAPE_ELLIPSE        | 橢圓
+SETUP_GALAXY_SHAPE_SPIRAL         | 螺旋
+SETUP_GALAXY_SHAPE_STAR           | 恆星
+SETUP_GALAXY_SHAPE_BARSPIRAL      | 條狀螺旋
+SETUP_GALAXY_SHAPE_TEXT           | 文字
+SETUP_GALAXY_SHAPE_CLUSTER        | 集合
+SETUP_GALAXY_SHAPE_SWIRLCLUSTERS  | 漩渦集合
+SETUP_GALAXY_SHAPE_GRID           | 格子
+SETUP_GALAXY_SHAPE_SPIRALARMS     | 旋臂
+SETUP_GALAXY_SHAPE_MAZE           | 迷宮
+SETUP_GALAXY_SHAPE_VOID           | 虛空
+SETUP_GALAXY_SHAPE_SHURIKEN       | 忍者鏢
+SETUP_GALAXY_SHAPE_BULLSEYE       | 靶心
+SETUP_GALAXY_SHAPE_LORENZ         | 洛倫茲
+SETUP_GALAXY_SHAPE_LORENZ2        | 洛倫茲 2
+SETUP_GALAXY_SHAPE_FRACTAL        | 分形
+SETUP_GALAXY_SHAPE_CHAOSGAME      | 混沌遊戲
+SETUP_GALAXY_MAP_OPTION_LABEL     | 選項
+SETUP_GALAXY_MAP_OPTION_A         | 選項 A
+SETUP_GALAXY_MAP_OPTION_B         | 選項 B
+SETUP_GALAXY_MAP_OPTION_C         | 選項 C
+SETUP_GALAXY_AGE_NORMAL           | 普通
+SETUP_GALAXY_AGE_YOUNG            | 年輕
+SETUP_GALAXY_AGE_OLD              | 老
+SETUP_RANDOM_EVENTS_ON            | 開
+SETUP_RANDOM_EVENTS_OFF           | 關
+SETUP_RANDOM_EVENTS_NO_MONSTERS   | 無太空怪物
+SETUP_GALAXY_NUMBER_EMPIRES       | 帝國數量: %1
+SETUP_GALAXY_NUMBER_SYSTEMS       | 星系數量: %1
+SETUP_GALAXY_MAX_OPPONENTS        | 最大敵人數量: %1
+SETUP_OPPONENTS_HEADER_1          | %1 vs.
+SETUP_OPPONENTS_HEADER_2          | 對手
+SETUP_OPPONENT_RANDOM             | ???
+SETUP_OPPONENT_AI                 | AI 設置:
+SETUP_OPPONENT_AI_BASE            | AI: 原版
+SETUP_OPPONENT_AI_MODNAR          | AI: Modnar版
+SETUP_OPPONENT_AI_XILMI           | AI: Xilmi版
+SETUP_OPPONENT_AI_SELECT          | AI: 可選
+SETUP_AUTOPLAY_OFF                | 無
+SETUP_AUTOPLAY_AI_BASE            | AI: 原版
+SETUP_AUTOPLAY_AI_MODNAR          | AI: Modnar版
+SETUP_AUTOPLAY_AI_XILMI           | AI: Xilmi版
+SETUP_GAME_DIFFICULTY_LABEL       | 難度
+SETUP_DIFFICULTY_EASIEST          | 最簡單
+SETUP_DIFFICULTY_EASIER           | 很簡單
+SETUP_DIFFICULTY_EASY             | 簡單
+SETUP_DIFFICULTY_NORMAL           | 普通
+SETUP_DIFFICULTY_HARD             | 困難
+SETUP_DIFFICULTY_HARDER           | 很困難
+SETUP_DIFFICULTY_HARDEST          | 最困難
+SETUP_RESEARCH_RATE_NORMAL        | 普通
+SETUP_RESEARCH_RATE_SLOW          | 慢
+SETUP_RESEARCH_RATE_SLOWER        | 很慢
+SETUP_RESEARCH_RATE_SLOWEST       | 最慢
+SETUP_TECH_TRADING_YES            | 允許
+SETUP_TECH_TRADING_ALLIES         | 僅限盟友
+SETUP_TECH_TRADING_NO             | 無
+SETUP_WARP_SPEED_NORMAL           | 普通
+SETUP_WARP_SPEED_FAST             | 快
+SETUP_NEBULA_NONE                 | 無
+SETUP_NEBULA_RARE                 | 很少
+SETUP_NEBULA_UNCOMMON             | 少
+SETUP_NEBULA_NORMAL               | 正常
+SETUP_NEBULA_COMMON               | 常見
+SETUP_NEBULA_FREQUENT             | 很多
+SETUP_COUNCIL_NONE                | 無
+SETUP_COUNCIL_IMMEDIATE           | 立即勝利
+SETUP_COUNCIL_REBELS              | 允許反叛
+SETUP_STAR_DENSITY_LOWEST         | 最低
+SETUP_STAR_DENSITY_LOWER          | 很低
+SETUP_STAR_DENSITY_LOW            | 低
+SETUP_STAR_DENSITY_NORMAL         | 普通
+SETUP_STAR_DENSITY_HIGH           | 高
+SETUP_STAR_DENSITY_HIGHER         | 很高
+SETUP_STAR_DENSITY_HIGHEST        | 最高
+SETUP_AI_HOSTILITY_LOWEST         | 最友好
+SETUP_AI_HOSTILITY_LOWER          | 很友好
+SETUP_AI_HOSTILITY_LOW            | 友好
+SETUP_AI_HOSTILITY_NORMAL         | 普通
+SETUP_AI_HOSTILITY_HIGH           | 高
+SETUP_AI_HOSTILITY_HIGHER         | 很高
+SETUP_AI_HOSTILITY_HIGHEST        | 最高
+SETUP_GAME_NUMBER_OPPONENTS       | 敵人數量
+SETUP_PLANET_QUALITY_POOR         | 糟糕
+SETUP_PLANET_QUALITY_MEDIOCRE     | 平庸
+SETUP_PLANET_QUALITY_NORMAL       | 普通
+SETUP_PLANET_QUALITY_GOOD         | 好
+SETUP_PLANET_QUALITY_GREAT        | 優質
+SETUP_TERRAFORMING_NORMAL         | 正常
+SETUP_TERRAFORMING_REDUCED        | 少
+SETUP_TERRAFORMING_NONE           | 無
+SETUP_COLONIZING_NORMAL           | 正常
+SETUP_COLONIZING_RESTRICTED       | 受限
+SETUP_FUEL_RANGE_NORMAL           | 普通
+SETUP_FUEL_RANGE_HIGH             | 強
+SETUP_FUEL_RANGE_HIGHER           | 很強
+SETUP_FUEL_RANGE_HIGHEST          | 最強
+SETUP_RANDOMIZE_AI_NONE           | 無
+SETUP_RANDOMIZE_AI_PERSONALITY    | 天性
+SETUP_RANDOMIZE_AI_ABILITY        | 特長
+SETUP_RANDOMIZE_AI_BOTH           | 天性和特長
+SETUP_RACE_LABEL                  | 可選種族
+SETUP_RACE_COLOR                  | 帝國顏色:
+SETUP_HOMEWORLD_NAME_LABEL        | 母星:
+SETUP_LEADER_NAME_LABEL           | 領袖:
+SETUP_FLAG_LABEL                  | 旗幟
+SETUP_BUTTON_CANCEL               | 取消
+SETUP_BUTTON_BACK                 | 返回
+SETUP_BUTTON_NEXT                 | 下一步
+SETUP_BUTTON_START                | 開始
+SETUP_BUTTON_SETTINGS             | 高級設置
+
+SETUP_SPIRAL_2_ARMS               | 雙臂
+SETUP_SPIRAL_3_ARMS               | 三臂
+SETUP_SPIRAL_4_ARMS               | 四臂
+SETUP_SPIRAL_5_ARMS               | 五臂
+SETUP_SPIRAL_6_ARMS               | 六臂
+SETUP_SPIRAL_7_ARMS               | 七臂
+SETUP_SPIRAL_8_ARMS               | 八臂
+SETUP_SPIRAL_ROTATION_0           | 無旋轉
+SETUP_SPIRAL_ROTATION_1           | 旋轉1
+SETUP_SPIRAL_ROTATION_2           | 旋轉2
+SETUP_SPIRAL_ROTATION_3           | 旋轉3
+SETUP_SPIRAL_ROTATION_4           | 旋轉4
+SETUP_SPIRAL_ROTATION_5           | 旋轉5
+SETUP_SPIRAL_ROTATION_6           | 旋轉6
+SETUP_ELLIPSE_0                   | 圓形
+SETUP_ELLIPSE_1                   | 橢圓 1
+SETUP_ELLIPSE_2                   | 橢圓 2
+SETUP_ELLIPSE_3                   | 橢圓 3
+SETUP_ELLIPSE_4                   | 橢圓 4
+SETUP_VOID_0                      | 無虛空
+SETUP_VOID_1                      | 虛空 1
+SETUP_VOID_2                      | 虛空 2
+SETUP_VOID_3                      | 虛空 3
+SETUP_VOID_4                      | 虛空 4
+
+
+// Advanced Settings
+SETTINGS_TITLE                    | 高級遊戲設置
+SETTINGS_DESCRIPTION              | 單擊切換設置
+SETTINGS_EXIT                     | 返回
+SETTINGS_DEFAULT                  | 默認設置
+SETTINGS_STAR_DENSITY             | 星系密度: %1
+SETTINGS_RANDOM_EVENTS            | 隨機事件: %1
+SETTINGS_RESEARCH_RATE            | 研究速度: %1
+SETTINGS_COUNCIL_WIN              | 議會勝利: %1
+SETTINGS_RANDOMIZE_AI             | 隨機 AI: %1
+SETTINGS_AUTOPLAY                 | 自動遊戲: %1
+SETTINGS_TECH_TRADING             | 技術交易: %1
+SETTINGS_GALAXY_AGE               | 宇宙年齡: %1
+SETTINGS_WARP_SPEED               | 曲速飛行速度: %1
+SETTINGS_NEBULAE                  | 星雲: %1
+SETTINGS_PLANET_QUALITY           | 行星質量: %1
+SETTINGS_TERRAFORMING             | 環境改造效果: %1
+SETTINGS_COLONIZING               | 殖民設置: %1
+SETTINGS_FUEL_RANGE               | 燃料效果: %1
+SETTINGS_AI_HOSTILITY             | 敵意: %1
+SETTINGS_RANDOM_EVENTS_DESC       | 太空怪物屬於隨機事件，是遊戲中期值得注意的威脅。你可以關閉太空怪物或所有隨機事件。 
+SETTINGS_WARP_SPEED_DESC          | 提高高級曲速飛行技術的速度。這對大地圖很有幫助。
+SETTINGS_GALAXY_AGE_DESC          | 相比於普通宇宙，年輕宇宙有更多的白色和藍色星球，老年宇宙有更多紅色和中子星球。
+SETTINGS_TECH_TRADING_DESC        | 取消技術交易，或僅限盟友之間的技術交易。
+SETTINGS_STAR_DENSITY_DESC        | 把星系密度調高可以讓各個文明離得更近。
+SETTINGS_RESEARCH_RATE_DESC       | 降低科技的研究速率，延長當前科技的使用壽命。
+SETTINGS_NEBULAE_DESC             | 星雲會降低飛船移動速度，且讓護盾無效。這個設置可以增加或減少星雲的出現頻率。
+SETTINGS_PLANET_QUALITY_DESC      | 增加或減少高質量行星的出現頻率。
+SETTINGS_TERRAFORMING_DESC        | 減少或移除環境改造技術的效果。
+SETTINGS_COLONIZING_DESC          | 殖民星球技術只能殖民對應類型的星球。
+SETTINGS_COUNCIL_DESC             | 取消議會勝利條件，或者允許敵對帝國反抗議會勝利。
+SETTINGS_RANDOMIZE_AI_DESC        | 隨機AI玩家的天性、種族特長。
+SETTINGS_AUTOPLAY_DESC            | 讓AI代表玩家遊戲。這能讓你看到AI是如何遊戲的。
+SETTINGS_AUTOPLAY_WARNING         | 警告! 你啓用了自動遊戲，這會讓你無法操作。請在高級設置中取消這個設置。
+SETTINGS_FUEL_RANGE_DESC          | 提高燃料科技和備用油箱的航程效果。
+SETTINGS_AI_HOSTILITY_DESC        | 增加或降低不同種族間的敵對程度。
+
+// Tech UI labels
+TECH_RESEARCH                     | 科技研究
+TECH_RESEARCH_POINTS              | 研究點數
+TECH_EMPIRE_SPENDING              | 帝國科技投入
+TECH_EMPIRE_SPENDING_DESC         | 所有殖民地的科技投入之和
+TECH_EMPIRE_TECH_RESERVE_OPT      | 把每年的國庫儲備投入科技
+TECH_EMPIRE_BALANCED_DESC         | 平均分配投入可以增加總的RP
+TECH_EMPIRE_DETAIL_1              | 投入%1BC獲得
+TECH_EMPIRE_DETAIL_2              | %2 RP/年
+TECH_TOTAL_RP                     | %1 RP
+TECH_DISCOVERY_PCT                | %1%
+TECH_CHANGE_RESEARCH              | 單擊以研究這個技術
+TECH_NEXT_TIER_TITLE              | 暫不可見。
+TECH_FIRST_TIER_DESC              | 在該領域投入研究點以解鎖。
+TECH_NEXT_TIER_DESC               | 掌握前一個階段的技術以解鎖。
+TECH_FUTURE_TIER_DESC             | 掌握前一個階段的所有技術以解鎖。
+TECH_ALLOCATE_POINTS              | 分配研究點
+TECH_EQUALIZE                     | 平均分配
+TECH_RESEARCH_COMPLETED           | 研究完成
+TECH_RESEARCHING                  | 正在研究:
+TECH_NONE_RESEARCHED              | 無
+TECH_PLANETARY_SHIELDS            | 行星護盾
+TECH_PLANETARY_SHIELDS_NONE       | 無
+TECH_PLANETARY_SHIELDS_CLASS      | %1級
+TECH_GROUND_COMBAT                | 地面戰鬥
+TECH_GROUND_COMBAT_NO_BONUS       | 無增益
+TECH_GROUND_COMBAT_BONUS          | +%1%
+TECH_TERRAFORM                    | 環境改造
+TECH_TERRAFORM_NO_BONUS           | 無增益
+TECH_TERRAFORM_BONUS              | 最大人口+%1
+TECH_FACTORY_CONTROLS             | 工廠數量
+TECH_FACTORY_CONTROLS_BONUS       | %1/每人
+TECH_PLANET_SCANNER               | 偵察範圍
+TECH_PLANET_SCANNER_NONE          | 無
+TECH_PLANET_SCANNER_RANGE         | %1光年
+TECH_WASTE_REDUCTION              | 污染減少
+TECH_WASTE_REDUCTION_NONE         | 無
+TECH_WASTE_REDUCTION_AMT          | -%1%
+TECH_WASTE_CLEANUP                | 污染清理
+TECH_WASTE_CLEANUP_BONUS          | %1污染/BC
+TECH_SHIP_RANGE                   | 飛船航程
+TECH_SHIP_RANGE_AMT               | %1光年
+TECH_SHIP_SPEED                   | 最高速度
+TECH_SHIP_SPEED_AMT               | 曲速%1
+TECH_BUTTON_EXIT                  | 返回
+
+// Tech UI help
+TECH_HELP_1A                      | 總攬：這個界面可以調整6個科技領域的研究投入。你可以查看已經學會的科技（綠色），正在研究的科技（黃色）或可研究的科技（棕色）。
+TECH_HELP_1B                      | 單擊或點擊鼠標滑輪查看某個領域的科技情況。
+TECH_HELP_1C                      | 當科技點數（RP）被投入該領域時，圓形會被填充。一旦填滿，掌握這門技術的概率每年都會提高。
+TECH_HELP_1D                      | 當前正在研究的科技。可以查看科技描述瞭解其價值。
+TECH_HELP_1E                      | 當前領域科技提供的通用增益。
+TECH_HELP_1F                      | 科技研究的總經費（BC），以及經費產生的科技點數（RP）。
+TECH_HELP_1G                      | 殖民地的多餘經費可以直接轉入科技研究，而不是進入國庫。
+TECH_HELP_1H                      | 每個領域的滾動條。點擊科技名稱可以鎖定該滾動條。每個滾動條的前1/6部分會獲得25%的額外收益。
+TECH_HELP_1I                      | 對未鎖定的滾動條，平均分配投入。
+
+// =========================================================================
+//   ALPHA 4
+// =========================================================================
+
+// Ship Design UI
+SHIP_DESIGN_TITLE                 | 艦船設計
+SHIP_DESIGN_SLOTS                 | 設計欄位
+SHIP_DESIGN_AVAILABLE             | 可用
+SHIP_DESIGN_AVAILABLE_DESC        | 選擇這個欄位以開啓一個新設計。
+SHIP_DESIGN_AVAILABLE_DESC2       | 部署這個設計以讓殖民地開始建造。
+SHIP_DESIGN_PROTOTYPE             | 模板飛船
+SHIP_DESIGN_PROTOTYPE_DESC        | 模板設計無法被部署
+SHIP_DESIGN_SLOT_DESC             | 總數量:
+SHIP_DESIGN_SLOT_DESC2            | 軌道繞行:
+SHIP_DESIGN_SLOT_DESC3            | 航行中:
+SHIP_DESIGN_SLOT_DESC4            | 殖民地在建造:
+SHIP_DESIGN_NEW                   | 新的設計
+SHIP_DESIGN_PROTOTYPE_TITLE       | 艦船設計原型
+SHIP_DESIGN_SIZE_SMALL            | 小
+SHIP_DESIGN_SIZE_MEDIUM           | 中
+SHIP_DESIGN_SIZE_LARGE            | 大
+SHIP_DESIGN_SIZE_HUGE             | 巨大
+SHIP_DESIGN_SIZE_LABEL            | 尺寸
+SHIP_DESIGN_TYPE_LABEL            | 類型
+SHIP_DESIGN_COUNT_LABEL           | 數量
+SHIP_DESIGN_DAMAGE_LABEL          | 傷害
+SHIP_DESIGN_POWER_LABEL           | 能耗
+SHIP_DESIGN_RANGE_LABEL           | 航程
+SHIP_DESIGN_SPEED_LABEL           | 速度
+SHIP_DESIGN_COST_LABEL            | 成本
+SHIP_DESIGN_DESCRIPTION_LABEL     | 描述
+SHIP_DESIGN_RANGE_VALUE           | %1光年
+SHIP_DESIGN_RANGE_UNLIMITED       | 無限
+SHIP_DESIGN_SPEED_VALUE           | 曲速%1
+SHIP_DESIGN_COST_VALUE            | %1BC
+SHIP_DESIGN_TOTAL_SPACE_LABEL     | 已用空間
+SHIP_DESIGN_AVAIL_SPACE_LABEL     | 可用空間
+SHIP_DESIGN_COLORS                | 顏色
+SHIP_DESIGN_COMBAT_STATS_TITLE    | 戰鬥參數
+SHIP_DESIGN_HIT_POINTS_LABEL      | 護甲值
+SHIP_DESIGN_MISSILE_DEF_LABEL     | 導彈防禦
+SHIP_DESIGN_BEAM_DEF_LABEL        | 激光防禦
+SHIP_DESIGN_ATTACK_LEVEL_LABEL    | 進攻等級
+SHIP_DESIGN_COMBAT_SPEED_LABEL    | 戰場速度
+SHIP_DESIGN_COMBAT_SPEED_VALUE    | %1格
+SHIP_DESIGN_ENGINES_TITLE         | 引擎
+SHIP_DESIGN_ENGINES_DESC          | 爲你的飛船和組件提供能量
+SHIP_DESIGN_ENGINE_TYPE           | 類型
+SHIP_DESIGN_ENGINE_SPEED          | 速度
+SHIP_DESIGN_ENGINE_COST1          | 成本/個
+SHIP_DESIGN_ENGINE_SIZE1          | 尺寸/個
+SHIP_DESIGN_ENGINE_POWER1         | 能量/個
+SHIP_DESIGN_POWER_REQUIREMENTS    | 總能耗需求
+SHIP_DESIGN_ENGINES_REQUIRED      | 引擎需求量
+SHIP_DESIGN_ENGINES_SIZE          | 引擎總尺寸
+SHIP_DESIGN_ENGINES_COST          | 引擎總成本
+SHIP_DESIGN_COPY_BUTTON           | 複製
+SHIP_DESIGN_CLEAR_BUTTON          | 重製
+SHIP_DESIGN_RENAME_BUTTON         | 重命名
+SHIP_DESIGN_DEPLOY_BUTTON         | 部署設計
+SHIP_DESIGN_DEPLOY_DESC           | 一旦部署，你就能在殖民地建造新的設計，你只能重命名或廢除該設計。
+SHIP_DESIGN_SCRAP_BUTTON          | 廢除設計
+SHIP_DESIGN_SCRAP_CONFIRM1        | 確定要廢除設計 %1 嗎？
+SHIP_DESIGN_SCRAP_CONFIRM2        | 我們將拆除%1個飛船，並把%2 BC 存入國庫。
+SHIP_DESIGN_SCRAP_CONFIRM3        | 當前沒有正在服役的該型號飛船。
+SHIP_DESIGN_SCRAP_CANCEL          | 取消
+SHIP_DESIGN_SCRAP_OK              | 廢除
+SHIP_DESIGN_RENAME_CONFIRM        | 重命名你的設計
+SHIP_DESIGN_DEPLOY_CONFIRM        | 給新設計命名
+SHIP_DESIGN_DEPLOY_CANCEL         | 取消
+SHIP_DESIGN_DEPLOY_OK             | 部署
+SHIP_DESIGN_RENAME_OK             | 重命名
+SHIP_DESIGN_UNNAMED_DESIGN        | 未命名
+SHIP_DESIGN_COMPONENT_NONE        | 無
+
+
+// ship design selection dialogs
+SHIP_DESIGN_STARGATE_NAME         | 星門
+SHIP_DESIGN_1ST_SCOUT_NAME        | 偵察機
+SHIP_DESIGN_1ST_FIGHTER_NAME      | 戰鬥機
+SHIP_DESIGN_1ST_DESTROYER_NAME    | 毀滅者
+SHIP_DESIGN_1ST_BOMBER_NAME       | 轟炸機
+SHIP_DESIGN_1ST_COLONY_NAME       | 殖民飛船
+SHIP_DESIGN_COMPUTER_TITLE        | 艦載電腦
+SHIP_DESIGN_COMPUTER_TYPE         | 型號
+SHIP_DESIGN_COMPUTER_COST         | 成本
+SHIP_DESIGN_COMPUTER_SIZE         | 尺寸
+SHIP_DESIGN_COMPUTER_POWER        | 能耗
+SHIP_DESIGN_COMPUTER_SPACE        | 空間
+SHIP_DESIGN_SHIELD_TITLE          | 力場盾
+SHIP_DESIGN_SHIELD_TYPE           | 型號
+SHIP_DESIGN_SHIELD_COST           | 成本
+SHIP_DESIGN_SHIELD_SIZE           | 尺寸
+SHIP_DESIGN_SHIELD_POWER          | 能耗
+SHIP_DESIGN_SHIELD_SPACE          | 空間
+SHIP_DESIGN_ECM_TITLE             | 電子干擾器
+SHIP_DESIGN_ECM_TYPE              | 型號
+SHIP_DESIGN_ECM_COST              | 成本
+SHIP_DESIGN_ECM_SIZE              | 尺寸
+SHIP_DESIGN_ECM_POWER             | 能耗
+SHIP_DESIGN_ECM_SPACE             | 空間
+SHIP_DESIGN_ARMOR_TITLE           | 裝甲
+SHIP_DESIGN_ARMOR_TYPE            | 型號
+SHIP_DESIGN_ARMOR_COST            | 成本
+SHIP_DESIGN_ARMOR_SIZE            | 尺寸
+SHIP_DESIGN_ENGINE_TITLE          | 引擎
+SHIP_DESIGN_ENGINE_TYPE           | 類型
+SHIP_DESIGN_ENGINE_NUM            | 引擎數量
+SHIP_DESIGN_ENGINE_SPACE          | 空間
+SHIP_DESIGN_ENGINE_COST           | 成本
+SHIP_DESIGN_ENGINE_SIZE           | 尺寸
+SHIP_DESIGN_ENGINE_POWER          | 能耗
+SHIP_DESIGN_MANEUVER_TITLE        | 機動裝置
+SHIP_DESIGN_MANEUVER_TYPE         | 型號
+SHIP_DESIGN_MANEUVER_SPEED        | 速度
+SHIP_DESIGN_MANEUVER_COST         | 成本
+SHIP_DESIGN_MANEUVER_POWER        | 能耗
+SHIP_DESIGN_MANEUVER_SPACE        | 空間
+SHIP_DESIGN_WEAPON_TITLE          | 武器
+SHIP_DESIGN_WEAPON_MAX            | 最大數量
+SHIP_DESIGN_WEAPON_TYPE           | 型號
+SHIP_DESIGN_WEAPON_DESCRIPTION    | 描述
+SHIP_DESIGN_WEAPON_DAMAGE         | 傷害
+SHIP_DESIGN_WEAPON_DMG_RANGE      | %1-%2
+SHIP_DESIGN_WEAPON_COST           | 成本
+SHIP_DESIGN_WEAPON_SIZE           | 尺寸
+SHIP_DESIGN_WEAPON_POWER          | 能耗
+SHIP_DESIGN_WEAPON_SPACE          | 空間
+SHIP_DESIGN_SPECIAL_TITLE         | 特殊裝置
+SHIP_DESIGN_SPECIAL_TYPE          | 類型
+SHIP_DESIGN_SPECIAL_DESCRIPTION   | 描述
+SHIP_DESIGN_SPECIAL_COST          | 成本
+SHIP_DESIGN_SPECIAL_SIZE          | 尺寸
+SHIP_DESIGN_SPECIAL_POWER         | 能耗
+SHIP_DESIGN_SPECIAL_SPACE         | 空間
+
+// Ship Design help
+SHIP_DESIGN_HELP_ALL              | 總覽：每個帝國可以有6種艦船型號。設計時，需要先選擇船架，然後選擇其他組件，比如護甲、力場盾和武器。每個組件都有尺寸、成本和能耗。能耗的能量來源是引擎。每個組件的佔用空間等於組件本身的尺寸加上提供能量的所需引擎數量。一旦部署，該型號就能夠在你的任何一個殖民地建造。
+SHIP_DESIGN_HELP_1A               | 尺寸：更大的船架會增加成本，但能提供更多空間。
+SHIP_DESIGN_HELP_1B               | 航程：飛船能夠飛離你的星系多遠。
+SHIP_DESIGN_HELP_1C               | 速度：在宇宙中的飛行速度。  
+SHIP_DESIGN_HELP_1D               | 成本：總的建造成本。
+SHIP_DESIGN_HELP_1E               | 已用空間：該飛船各個組件已經佔用的空間。
+SHIP_DESIGN_HELP_1F               | 可用空間：該飛船未使用的空間。
+SHIP_DESIGN_HELP_1G               | 護甲值：如果護甲變爲0，飛船就會被毀掉。
+SHIP_DESIGN_HELP_1H               | 導彈防禦：戰鬥中對導彈武器的防禦能力。
+SHIP_DESIGN_HELP_1I               | 激光防禦：戰鬥中對激光武器的防禦能力。
+SHIP_DESIGN_HELP_1J               | 進攻等級：戰鬥中武器的進攻等級。
+SHIP_DESIGN_HELP_1K               | 戰場速度：戰鬥中每回合的可移動距離。
+SHIP_DESIGN_HELP_1L               | 顏色：改變飛船的顏色。
+SHIP_DESIGN_HELP_2A               | 引擎型號：飛船的引擎型號。
+SHIP_DESIGN_HELP_2B               | 速度：引擎提供的速度。
+SHIP_DESIGN_HELP_2C               | 成本：每個引擎的成本。
+SHIP_DESIGN_HELP_2D               | 尺寸：每個引擎佔據的空間。
+SHIP_DESIGN_HELP_2E               | 能量：每個引擎提供的能量。
+SHIP_DESIGN_HELP_2F               | 總能耗需求：所有飛船組件的能耗之和。
+SHIP_DESIGN_HELP_2G               | 引擎需求量：爲了滿足總能耗需要的引擎數量。
+SHIP_DESIGN_HELP_2H               | 引擎總尺寸：引擎需要的總的船體空間。
+SHIP_DESIGN_HELP_2I               | 引擎總成本：所有引擎需要的總成本。
+SHIP_DESIGN_HELP_2J               | 艦船的外型。每個尺寸的船架都有6種不同的造型。設計艦船時，可以單擊以選擇不同的選項。
+SHIP_DESIGN_HELP_2K               | 艦船型號的名稱
+SHIP_DESIGN_HELP_3A               | 艦載電腦：影響飛船在戰場中的攻擊力。
+SHIP_DESIGN_HELP_3B               | 裝甲：影響艦船可以承受的傷害，重型裝甲的可承受傷害會增加50%。
+SHIP_DESIGN_HELP_3C               | 力場盾：可以減少攻擊造成的傷害。
+SHIP_DESIGN_HELP_3D               | 電子干擾器：該裝置能夠干擾敵方導彈的制導，增加你對導彈的防禦力。
+SHIP_DESIGN_HELP_3E               | 機動裝置：增加戰鬥中的速度和防禦。
+SHIP_DESIGN_HELP_3F               | 武器：可以對敵艦或殖民地造成傷害。每個飛船可以安裝至多4種武器。
+SHIP_DESIGN_HELP_3G               | 特殊裝置：能夠給飛船提供特殊能力。每個飛船可以安裝至多3個特殊裝置。
+SHIP_DESIGN_HELP_4A               | 改名：讓你能夠給當前設計改名。
+SHIP_DESIGN_HELP_4B               | 廢除設計：廢除一種正在服役的型號。被拆除的飛船會把25%的製造成本返還到國庫。
+SHIP_DESIGN_HELP_4C               | 已經部署的設計可以在任何一個殖民地建造。
+SHIP_DESIGN_HELP_4D               | 點擊可用設計欄位，可以創造一個新的設計。
+SHIP_DESIGN_HELP_4E               | 複製：複製一個當前的設計，將其作爲新設計的初始形態。
+SHIP_DESIGN_HELP_4F               | 重置：重置所有被選中的組件。
+SHIP_DESIGN_HELP_4G               | 部署設計：當你完成了設計，就可以部署它，你需要給它一個名字，然後就可以建造了。
+
+// Ship Combat UI
+SHIP_COMBAT_TITLE_SYSTEM          | %1發生了空戰!
+SHIP_COMBAT_TITLE_UNSCOUTED       | 未探索星系發生了空戰!
+SHIP_COMBAT_TITLE_DESC            | 我方艦隊遭遇了敵對的[alien_race]艦隊。
+SHIP_COMBAT_TITLE_MONSTER_DESC    | 我方艦隊遭遇了敵對的%1。
+SHIP_COMBAT_BASES                 | %1導彈基地
+SHIP_COMBAT_SHIELD                | %1級護盾
+SHIP_COMBAT_POPULATION            | %1人口
+SHIP_COMBAT_FACTORIES             | %1工廠
+SHIP_COMBAT_ENTER_BATTLE          | 進入戰鬥
+SHIP_COMBAT_MISS                  | 丟失
+SHIP_COMBAT_DEFLECTED             | 偏轉
+SHIP_COMBAT_DESTROYED             | 摧毀!
+SHIP_COMBAT_STASIS                | 靜止
+SHIP_COMBAT_TITLE                 | %1戰鬥
+SHIP_COMBAT_TITLE_UNNAMED         | 未知星系戰鬥
+SHIP_COMBAT_SYSTEM_POP            | 人口
+SHIP_COMBAT_SYSTEM_FACT           | 工廠
+SHIP_COMBAT_SYSTEM_BASE           | 導彈
+SHIP_COMBAT_TITLE_VICTORIOUS      | 勝利
+SHIP_COMBAT_SHIP_TOTALS           | %1 🡒 %2
+SHIP_COMBAT_RESULTS_RETREATED     | 撤退
+SHIP_COMBAT_RESULTS_DESTROYED     | 被摧毀
+SHIP_COMBAT_RETREAT_ALL           | 全體撤退
+SHIP_COMBAT_NEXT                  | 下一組艦船
+SHIP_COMBAT_AUTO_RESOLVE          | 自動快速戰鬥
+SHIP_COMBAT_AUTO_RESOLVING        | 快速戰鬥中……
+SHIP_COMBAT_PLAY_BATTLE           | 自動戰鬥
+SHIP_COMBAT_PAUSE_BATTLE          | 暫停戰鬥
+SHIP_COMBAT_EXIT                  | 退出
+SHIP_COMBAT_COUNT_NAME            | %1  %2
+SHIP_COMBAT_MONSTER_TARGET        | 瞄準太空怪物
+SHIP_COMBAT_ENEMY_TARGET          | 瞄準敵軍艦船
+SHIP_COMBAT_ALLY_TARGET           | 瞄準友軍艦船
+SHIP_COMBAT_ENEMY_COLONY          | 瞄準敵人行星
+SHIP_COMBAT_ALLY_COLONY           | 瞄準友軍行星
+SHIP_COMBAT_CURRENT_TARGET        | 瞄準當前艦船
+SHIP_COMBAT_SELECT_ACTION         | 選擇一個行動
+SHIP_COMBAT_SELECT_WEAPON         | 選擇武器或裝置
+SHIP_COMBAT_FIRE_WEAPON           | 開火
+SHIP_COMBAT_ACTION_NEXT_SHIP      | 下一組艦船
+SHIP_COMBAT_ACTION_TURN_DONE      | 回合結束
+SHIP_COMBAT_ACTION_RETREAT        | 撤退
+SHIP_COMBAT_ACTION_FIRE_ALL       | 所有武器開火
+SHIP_COMBAT_ACTION_CLOAK          | 隱身
+SHIP_COMBAT_ACTION_MOVE           | 飛行到此處
+SHIP_COMBAT_ACTION_TELEPORT       | 傳送到此處
+SHIP_COMBAT_ACTION_RANGE          | 射程外
+SHIP_COMBAT_ACTION_NO_MISSILES    | 沒有導彈了
+SHIP_COMBAT_ACTION_NO_BOMBS       | 沒有炸彈了
+SHIP_COMBAT_ACTION_FIRED          | 已開火
+SHIP_COMBAT_ACTION_USED           | 已使用
+SHIP_COMBAT_ACTION_BAD_TARGET     | 無效目標
+SHIP_COMBAT_ACTION_WPN_COUNT      | %1 x%2
+SHIP_COMBAT_ACTION_WPN_COUNT_SHOTS| %1 x%2 x%3
+SHIP_COMBAT_INFO_LABEL            | 艦船信息
+SHIP_COMBAT_SCAN_LABEL            | 掃描檢查信息
+SHIP_COMBAT_SCAN_HIT_POINTS       | 護甲值
+SHIP_COMBAT_SCAN_MISSILE_DEF      | 導彈防禦
+SHIP_COMBAT_SCAN_BEAM_DEF         | 激光防禦
+SHIP_COMBAT_SCAN_SHIELD_CLASS     | 護盾等級
+SHIP_COMBAT_SCAN_ATTACK_LEVEL     | 進攻等級
+SHIP_COMBAT_SCAN_SPEED            | 速度
+SHIP_COMBAT_SCAN_WEAPONS          | 武器
+SHIP_COMBAT_SCAN_DEVICES          | 裝置
+SHIP_COMBAT_SCAN_HITS_VALUE       | %1/%2
+SHIP_COMBAT_SCAN_WEAPON_CNT       | %1 x %2
+SHIP_COMBAT_SCAN_UNSCANNED_VALUE  | ???
+SHIP_COMBAT_COLONY_LABEL          | 殖民地信息
+SHIP_COMBAT_COLONY_SCAN_LABEL     | 掃描殖民地信息
+SHIP_COMBAT_COLONY_POPULATION     | 人口
+SHIP_COMBAT_COLONY_SHIELD         | 護盾
+SHIP_COMBAT_COLONY_FACTORIES      | 工廠
+SHIP_COMBAT_COLONY_BASES          | 導彈基地
+SHIP_COMBAT_COLONY_BASE_HITS      | 導彈基地護甲值
+SHIP_COMBAT_COLONY_BASE_ATTACK    | 導彈進攻等級
+SHIP_COMBAT_ACTION_FMT            | %1 - %2
+
+RELATIONS_FEUD                    | 死敵
+RELATIONS_HATE                    | 仇恨
+RELATIONS_DISCORD                 | 不和
+RELATIONS_TROUBLED                | 憂慮
+RELATIONS_TENSE                   | 緊張
+RELATIONS_RESTLESS                | 警惕
+RELATIONS_WARY                    | 謹慎
+RELATIONS_UNEASE                  | 不安
+RELATIONS_NEUTRAL                 | 中立
+RELATIONS_RELAXED                 | 放鬆
+RELATIONS_AMIABLE                 | 溫和
+RELATIONS_CALM                    | 平靜
+RELATIONS_AFFABLE                 | 善意
+RELATIONS_PEACEFUL                | 和平
+RELATIONS_FRIENDLY                | 友好
+RELATIONS_UNITY                   | 團結
+RELATIONS_HARMONY                 | 和諧
+
+RACES_TITLE                       | 種族報告
+RACES_SELECTOR_TITLE              | 選擇帝國
+RACES_TAB_DIPLOMACY               | 外交
+RACES_TAB_INTELLIGENCE            | 情報
+RACES_TAB_MILITARY                | 軍事
+RACES_TAB_STATUS                  | 現狀
+RACES_KNOWN_EMPIRES               | 已發現%1個帝國
+RACES_RECALLED_DIPLOMATS          | 已召回%1個外交官
+RACES_NO_TREATY                   | 無外交關係
+RACES_AT_FINAL_WAR                | 決戰
+RACES_AT_WAR                      | 戰爭中
+RACES_PEACE                       | 和平協定
+RACES_PACT                        | 互不侵犯協定
+RACES_ALLY                        | 盟友
+RACES_UNITY                       | 一體化
+RACES_OUT_OF_RANGE                | 航程外
+RACES_TRADE_LEVEL                 | %1 BC 貿易協議
+RACES_TRADE_NONE                  | 無貿易協議
+RACES_DIPLOMAT_RECALLED           | [alien_race]已撤回外交官
+RACES_DIPLOMATS_RECALLED          | 外交官已撤回
+
+RACES_DIPLOMACY_HOMEWORLD         | 母星
+RACES_DIPLOMACY_LEADER            | 領袖
+RACES_DIPLOMACY_CURRENT_TRADE     | 當前貿易收入
+RACES_DIPLOMACY_TOTAL_TRADE       | 貿易協議總額
+RACES_DIPLOMACY_TRADE_AMT         | %1 BC
+RACES_DIPLOMACY_CHARACTER         | 性格
+RACES_DIPLOMACY_STATUS            | 外交現狀
+RACES_DIPLOMACY_RELATIONS_METER   | 關係
+RACES_DIPLOMACY_RELATIONS_UNKNOWN | 我們的外交官和情報人員無法理解[alien_empire]的想法和動機。
+RACES_DIPLOMACY_BUREAU            | 外交官員
+RACES_DIPLOMACY_BUREAU_DESC1      | 照會其他帝國的外交官，或從其他帝國召回我們的外交官。
+RACES_DIPLOMACY_BUREAU_DESC       | 照會[alien_race]的外交官；如果你的外交官已經被撤回，就建立外交關係。
+RACES_DIPLOMACY_BUREAU_DESC_RANGE | 我們無法跟航程範圍之外的帝國建立外交關係。
+RACES_DIPLOMACY_BUREAU_DESC_FINAL | 我們與新成立的共和國處於決戰狀態，不再有外交可能。
+RACES_DIPLOMACY_KNOWN_EMPIRES     | 已知的外星帝國
+RACES_DIPLOMACY_RECALLED_DIPLOMAT | 召回外交官
+RACES_DIPLOMACY_MANAGE_DIPLOMATS  | 管理外交事務
+RACES_DIPLOMACY_AUDIENCE          | 會面
+RACES_DIPLOMACY_CONTACT           | 建立聯繫
+RACES_DIPLOMACY_TRADE_SUMMARY     | 貿易情況
+RACES_DIPLOMACY_TRADE_DESC        | 聯繫[alien_race]外交官以協商貿易協定。貿易網絡需要時間和金錢建立，但一旦成功建立，就會給帝國帶來收入。
+RACES_DIPLOMACY_TRADE_DESC_RANGE  | 我們無法與航程範圍之外的帝國建立貿易協議。
+RACES_DIPLOMACY_TRADE_DESC_FINAL  | 我們與新成立的共和國處於決戰狀態，不再有貿易可能。
+RACES_DIPLOMACY_TRADE_TREATY      | 貿易協議
+RACES_DIPLOMACY_FOREIGN_RELATIONS | 外交關係
+RACES_DIPLOMACY_FOREIGN_RANGE     | 在與[alien_empire]建立外交關係前，我們無法判斷外交關係。
+RACES_DIPLOMACY_FOREIGN_DESC      | [alien_race_plural]與下列帝國的關係：
+RACES_DIPLOMACY_COUNTER_BUREAU    | 反間諜部門
+RACES_DIPLOMACY_COUNTER_DESC      | 提高安全開支可以增加你發現敵人間諜的概率。
+RACES_DIPLOMACY_COUNTER_DESC2     | 對殖民地徵稅以提高安全開支。
+RACES_DIPLOMACY_EVENT_YEAR        | 年
+RACES_DIPLOMACY_EVENT_TURN        | 回合
+RACES_DIPLOMACY_EVENT_RACE        | 種族
+RACES_DIPLOMACY_EVENT_TITLE       | 外交事件
+RACES_DIPLOMACY_EVENT_EFFECT      | 影響
+RACES_MANAGE_DIALOG_OK            | 好的
+RACES_MANAGE_REINSTATE_DIPLOMAT   | 重派外交官
+RACES_MANAGE_RECALL_DIPLOMAT      | 召回外交官
+RACES_MANAGE_OUR_RECALLED         | 我方外交官已撤回
+RACES_MANAGE_THEIR_RECALLED       | 對方外交官已撤回
+RACES_MANAGE_BOTH_RECALLED        | 雙方外交官已撤回
+
+RACES_INTEL_TITLE                 | [alien_race]情報
+RACES_COUNTER_INTEL_TITLE         | 反間諜工作
+RACES_INTEL_SECURITY_BONUS        | 安全係數
+RACES_INTEL_TOTAL_SPENDING        | 總開支
+RACES_INTEL_SECURITY_TAX          | 安全稅
+RACES_INTEL_TAX_DESC              | 對殖民地徵收安全稅以提高你發現外國間諜的成功率
+RACES_INTEL_TAX_OUT_OF_RANGE      | 與外星文明接觸後會開始支出
+RACES_INTEL_SECURITY_BONUS_AMT    | +%1%
+RACES_INTEL_SECURITY_BONUS_NONE   | 無
+RACES_INTEL_REPORT_AGE            | 報告時間
+RACES_INTEL_SPY_NETWORK           | 間諜網絡
+RACES_INTEL_SPENDING              | 支出
+RACES_INTEL_SPENDING_DESC         | 增加開支以培養間諜
+RACES_INTEL_SPENDING_DESC_UNITY   | 在新共和國裏技術已經可以自由分享，間諜網絡不再有存在必要。
+RACES_INTEL_SPENDING_CAPPED       | 達到情報開支上限。對情報工作的投入會減少%1%。
+RACES_INTEL_SPENDING_RANGE        | 無法在航程範圍外的帝國設置情報網絡。
+RACES_INTEL_PERCENT_AMT           | %1%
+RACES_INTEL_YEARS                 | %1年
+RACES_INTEL_NO_SPIES              | 無間諜
+RACES_INTEL_1_SPY                 | 1 間諜
+RACES_INTEL_N_SPIES               | %1 間諜
+RACES_INTEL_SPIES                 | %1 / %2
+RACES_INTEL_SPENDING_ANNUAL       | %1 BC/年
+RACES_INTEL_CURRENT               | 最新
+RACES_INTEL_NO_DATA               | 無數據
+RACES_INTEL_SPENDING_NONE         | 無
+RACES_INTEL_COMPLETION_YEARS      | %1年
+RACES_INTEL_COMPLETION_PER_YEAR   | %1/年
+RACES_INTEL_BUREAU_TITLE          | 情報部門
+RACES_INTEL_BUREAU_DESC           | 讓你的間諜竊取技術，或破壞敵人殖民地。
+RACES_INTEL_BUREAU_SPIES          | 間諜總數
+RACES_INTEL_BUREAU_MANAGE         | 管理間諜
+RACES_INTEL_BUREAU_SPENDING       | 總開支
+RACES_INTEL_SPY_ORDERS            | 間諜目標
+RACES_INTEL_SPY_ORDERS_DESC       | 命令你的間諜潛伏、竊取技術或破壞[alien_race]殖民地。你的間諜數量越多，每回合你的成功率就越高，只要沒有間諜被抓住並坦白。
+RACES_INTEL_SPY_WARNING           | 該任務一旦暴露，會破壞我們與[alien_race]的貿易協議。
+RACES_INTEL_SPY_WARNING_WAR       | 該任務一旦暴露，會導致[alien_race]與我們開戰。
+RACES_INTEL_KNOWN_TECHNOLOGY      | [alien_race]已知科技
+RACES_INTEL_KNOWN_TECH_DESC       | 間諜彙報[alien_race]掌握瞭如下技術。我們未掌握的技術高亮顯示。
+RACES_INTEL_UNKNOWN_TECHNOLOGY    | 未知技術報告
+RACES_INTEL_UNKNOWN_TECH_DESC     | 情報部門報告外星文明已經掌握瞭如下技術。我們未掌握的技術高亮顯示。
+
+RACES_MILITARY_TITLE              | [alien_race]艦隊
+RACES_MILITARY_SUBTITLE           | 艦船統計，按尺寸
+RACES_MILITARY_UNSCANNED          | ??
+RACES_MILITARY_UNSCANNED_LONG     | 未掃描
+RACES_MILITARY_SMALL              | 小
+RACES_MILITARY_MEDIUM             | 中
+RACES_MILITARY_LARGE              | 大
+RACES_MILITARY_HUGE               | 巨大
+RACES_MILITARY_REPORT_CURRENT     | 飛船報告已更新
+RACES_MILITARY_DEFENSE            | 防禦
+RACES_MILITARY_DEF_PLANET_SHIELD  | 行星護盾
+RACES_MILITARY_DEF_DEFL_SHIELD    | 力場盾
+RACES_MILITARY_DEF_ARMOR          | 裝甲
+RACES_MILITARY_TROOP_BONUS        | 地面部隊加成
+RACES_MILITARY_DEF_MISSILE        | 導彈基地型號
+RACES_MILITARY_DEF_MISSILE_MAX    | 新殖民地的默認導彈基地數量
+RACES_MILITARY_NO_SHIELD          | 無
+RACES_MILITARY_REPORT_NONE        | 無數據，需要更多間諜以獲取信息
+RACES_MILITARY_REPORT_OLD         | 艦隊報告時間：%1年前。
+RACES_MILITARY_NO_SHIPS           | 沒有發現飛船
+RACES_MILITARY_HULL               | 尺寸
+RACES_MILITARY_ARMOR              | 護甲值
+RACES_MILITARY_ATTACK_LEVEL       | 進攻等級
+RACES_MILITARY_MISSILE_DEFENSE    | 導彈防禦
+RACES_MILITARY_BEAM_DEFENSE       | 激光防禦
+RACES_MILITARY_SHIELD             | 護盾等級
+RACES_MILITARY_COMBAT_SPEED       | 戰場速度
+RACES_MILITARY_TRAVEL_SPEED       | 航行速度
+RACES_MILITARY_WEAPON_CNT         | %2 x%1
+RACES_MILITARY_NO_WEAPONS         | 無武器
+RACES_MILITARY_NO_SPECIALS        | 無特殊裝置
+RACES_MILITARY_ACTIVE             | 服役中
+RACES_MILITARY_INACTIVE           | 已退役
+RACES_MILITARY_LAST_SEEN          | 上次目擊時間
+RACES_MILITARY_SCAN_AGE           | %1 年前
+RACES_MILITARY_TACTICAL           | 型號信息
+RACES_MILITARY_WEAPONS            | 武器
+RACES_MILITARY_SPECIALS           | 特殊裝置
+
+RACES_STATUS_THE_EMPIRE           | [alien_empire]
+RACES_STATUS_VS                   | vs.
+RACES_STATUS_KNOWN_EMPIRES        | %1 已知帝國
+RACES_STATUS_HISTORY              | 展示[alien_race]歷史
+RACES_STATUS_NO_DATA              | 無數據
+RACES_STATUS_OLD_DATA             | 老數據
+RACES_STATUS_FLEET_STRENGTH       | 艦隊實力
+RACES_STATUS_POPULATION           | 人口
+RACES_STATUS_TECHNOLOGY           | 科技
+RACES_STATUS_PLANETS              | 行星
+RACES_STATUS_PRODUCTION           | 經濟
+RACES_STATUS_TOTAL_POWER          | 總體國力
+RACES_UNKNOWN_DATA                | ???
+
+RACES_SET_COLOR_TITLE             | 爲[alien_empire]選擇新的地圖顏色
+RACES_SET_COLOR_DESC              | 如果被選擇的顏色已經被用在其他帝國上，它們的顏色就會互換。
+
+// Races UI help
+RACES_HELP_0A                     | 概覽：這個界面展示你所遇到的外星文明的信息。
+RACES_HELP_0B                     | 外交：處理與被選中帝國的外交事務。
+RACES_HELP_0C                     | 情報：展示外星文明的技術，並管理你的諜報網絡。
+RACES_HELP_0D                     | 軍事：展示艦隊數量和艦船型號。
+RACES_HELP_0E                     | 現狀：各個帝國的實力比較。
+RACES_HELP_0F                     | 選中你的帝國可以讓你在一個界面管理各個對手的外交事務。
+RACES_HELP_0G                     | 選中一個對手，可以讓你查看這個對手的詳細情況。
+RACES_HELP_1A                     | 被選中帝國的基本情況。
+RACES_HELP_1B                     | 在這裏批量管理外交事務。
+RACES_HELP_1C                     | 增收安全稅，以提高發現敵人間諜的概率。
+RACES_HELP_1D                     | 在這裏批量管理情報事務。
+RACES_HELP_1E                     | 影響其他文明對你態度的外交事件。效果會隨着時間流逝而逐漸歸零。
+RACES_HELP_1F                     | 單擊以修改該種族在地圖上的展示顏色。
+RACES_HELP_2A                     | 被選中帝國的基本信息。
+RACES_HELP_2B                     | 與該帝國的外交官會面。
+RACES_HELP_2C                     | 與該帝國的貿易協議信息。
+RACES_HELP_2D                     | 該帝國與其他帝國的關係。
+RACES_HELP_2E                     | 影響該帝國對你態度的外交事件。效果會隨着時間流逝而逐漸歸零。
+RACES_HELP_2F                     | 與被選中帝國的當前關係。
+RACES_HELP_3A                     | 增收安全稅，以提高發現敵人間諜的概率。
+RACES_HELP_3B                     | 在這裏批量管理情報事務。
+RACES_HELP_3C                     | 所有其他文明的技術，信息來自你的間諜提供。你沒有掌握的技術，會被標爲黃色。
+RACES_HELP_4A                     | 設置你想在該帝國安排的情報網絡數量，以及你每年的資金投入。
+RACES_HELP_4B                     | 設置情報人員在該帝國的工作目標。潛伏：獲取信息。偷竊：竊取技術。破壞：誘發起義、破壞工廠和導彈基地。
+RACES_HELP_4C                     | 該帝國的所有技術。你沒有掌握的技術會被標記爲黃色。
+RACES_HELP_5A                     | 被選中種族的艦艇數量，按照艦船大小統計。只要你在該帝國安排了活躍的情報人員，這個信息就會保持更新。
+RACES_HELP_5B                     | 艦船型號以及參數。老的型號可能已經退役。這裏的信息主要在戰鬥中搜集。
+RACES_HELP_5C                     | 被選中工帝國的防禦能力。
+RACES_HELP_6A                     | 這個界面展示了不同維度下的實力排名。信息來自我們安插在各個帝國的情報人員。
+RACES_HELP_6A2                    | 這個界面展示了我方和對方在不同維度下的歷史實力對比。信息來自我們安插在該帝國的情報人員。
+RACES_HELP_6B                     | 艦隊實力：基於艦船大小和數量計算。
+RACES_HELP_6C                     | 人口：各個殖民星系的總人口。
+RACES_HELP_6D                     | 研究：六大研究領域的平均等級。
+RACES_HELP_6E                     | 行星：殖民地的數量。
+RACES_HELP_6F                     | 經濟：各個帝國的總產能。
+RACES_HELP_6G                     | 總實力：結合了軍事、科技和經濟的總體實力。
+
+// Sabotage UI
+SABOTAGE_TITLE                    | 我方間諜已滲透[alien_race]殖民地，並準備好了執行命令。
+SABOTAGE_PROMPT                   | 選擇想要對[alien_empire]的%1星系展開的破壞活動。
+SABOTAGE_WARNING                  | 警告！任何破壞活動都會破壞我方與[alien_empire]的協議。
+SABOTAGE_SELECT_TARGET            | 選擇一個目標
+SABOTAGE_BUTTON_FACTORIES         | 破壞工廠
+SABOTAGE_BUTTON_BASES             | 破壞導彈基地
+SABOTAGE_BUTTON_REBELLION         | 煽動叛亂
+SABOTAGE_BUTTON_NO_ACTION         | 不採取行動
+SABOTAGE_FACTORIES_RESULT         | 你的間諜破壞了%1個工廠。
+SABOTAGE_BASES_RESULT             | 你的間諜破壞了%1個導彈基地。
+SABOTAGE_REBELS_TOTAL             | 你的間諜培養了%1個反叛力量，反叛分子占星系人口的%2%。
+SABOTAGE_REBELS_REVOLT            | 你的間諜煽動了叛亂！
+SABOTAGE_BASES                    | 導彈基地
+SABOTAGE_FACTORIES                | 工廠
+NOTICE_SPYING_MISSION_HIDE        | 滲透
+NOTICE_SPYING_MISSION_ESPIONAGE   | 竊密
+NOTICE_SPYING_MISSION_SABOTAGE    | 破壞
+
+// History UI
+HISTORY_TITLE                     | 已探索宇宙的歷史
+HISTORY_TITLE_ALL                 | 全部宇宙的歷史
+HISTORY_TURN_DESC                 | 回合： %1 / %2
+HISTORY_FORWARD                   | 前進
+HISTORY_BACK                      | 後退
+HISTORY_PLAY                      | 播放
+HISTORY_PAUSE                     | 暫停
+HISTORY_RESET                     | 重置
+HISTORY_EXIT                      | 退出
+HISTORY_EXTINCT                   | 滅絕
+HISTORY_SYSTEMS                   | 星系
+HISTORY_EMPIRE                    | 帝國
+
+
+
+// Council UIs
+COUNCIL_CONVENE_TITLE             | 星際委員會
+COUNCIL_CONVENE                   | 星際委員會召開了集會，目的是選舉一個星際領袖。
+COUNCIL_CONVENE2                  | 每個帝國擁有等比例於其人口的票數。候選人需要獲取到總票數的2/3才能當選。候選人是兩個人口最多的帝國的領導者：[first_empire]的[first_name]和[second_empire]的[second_name]。
+COUNCIL_ADJOURN_TITLE             | 星際委員會休會
+COUNCIL_ADJOURN                   | 投票已經完成，沒有候選人獲得2/3的票數。沒有選舉出最終領導人。星際委員會將在25年後重新召開會議。
+COUNCIL_SUMMARY_TITLE             | 投票情況彙總
+COUNCIL_SUMMARY                   | 星際委員會按照人口數量確定了投票順序。需要獲得%1張選票才能贏得選舉。
+COUNCIL_BEGIN_VOTING              | 開始投票
+COUNCIL_SHOW_VOTING               | 繼續投票
+COUNCIL_SKIP_TO_PLAYER            | 快進到[player_race]投票
+COUNCIL_COMPLETE_VOTING           | 完成所有投票
+COUNCIL_SHOW_RESULTS              | 展示結果
+COUNCIL_VIEW_SUMMARY              | 展示投票情況彙總
+COUNCIL_VOTES_REQUIRED            | 需要%1張選票贏得選舉。
+COUNCIL_CAST_PROMPT               | 我們必須投出自己的%1票。
+COUNCIL_CAST_PROMPT_TITLE         | 選擇一個候選人。
+COUNCIL_CHOICE_ABSTAIN            | 棄權
+COUNCIL_CAST_VOTE                 | [voter_empire]爲[candidate_name]投出%1票。 
+COUNCIL_CAST_ABSTAIN              | [voter_empire]棄權了(%1 票)。
+COUNCIL_CHOICE_ABSTAIN            | 棄權
+COUNCIL_VOTE_COUNT                | %1 票
+COUNCIL_VOTE_CAST                 | %1 票 - 支持[alien_race]
+COUNCIL_VOTE_ABSTAINED            | %1 票 - 棄權
+COUNCIL_TREATY_CANDIDATE          | [alien_race]: 候選人
+COUNCIL_TREATY_ALLIANCE           | [alien_race]: 盟友
+COUNCIL_TREATY_PACT               | [alien_race]: 互不侵犯
+COUNCIL_TREATY_NONE               | [alien_race]: 無協議
+COUNCIL_TREATY_WAR                | [alien_race]: 戰爭中
+COUNCIL_CONTINUE                  | 繼續
+COUNCIL_ELECTED_TITLE             | 選出了宇宙的領導者！
+COUNCIL_ACCEPT_RULING             | 接受統治
+COUNCIL_REJECT_RULING             | 拒絕統治
+
+
+// Credit text
+CREDITS_DEVELOPER                 | 開發者 Ray Fowler
+CREDITS_ILLUSTRATOR               | 插畫師 Petar Penev
+CREDITS_GRAPHIC_DESIGN            | 視覺設計 Kaitlin Lindsay
+CREDITS_MUSIC                     | 音樂 Efe Tozan
+CREDITS_WRITER                    | 劇本 Jeff Colucci
+CREDITS_SOUND                     | 音效 Remi Agullo
+CREDITS_TRANSLATOR                | 
+
+// Systems UI
+SYSTEMS_TITLE                     | 星系
+SYSTEMS_TAB_EXPLORE               | 探索
+SYSTEMS_TAB_EXPAND                | 擴張
+SYSTEMS_TAB_EXPLOIT               | 開發
+SYSTEMS_TAB_EXTERMINATE           | 征服
+SYSTEMS_RANGE                     | %1 光年
+SYSTEMS_ENVIRONMENT_SIZE          | %1 %2
+SYSTEMS_ENVIRONMENT_TYPE          | %1 %2
+SYSTEMS_SHIELD                    | 護盾 %1
+SYSTEMS_BASES                     | 導彈 %1
+SYSTEMS_ENTER_NOTES               | 在這裏輸入星系備註
+SYSTEMS_ALERT                     | 星系警告
+SYSTEMS_NO_ALERTS                 | 當前無警告。
+SYSTEMS_HISTORY                   | 星系歷史
+SYSTEMS_UNSCOUTED                 | 未探索該星系，但星系在偵察機的航程範圍內。
+SYSTEMS_UNSCOUTED_NEED_TECH       | 星系未被探索，在研究完"%1"後會在航程範圍內。
+SYSTEMS_UNSCOUTED_COLONIZED       | 星系未探索，且不被我們的盟友控制。
+SYSTEMS_UNSCOUTED_ENEMY           | 星系未探索，且被敵對帝國控制。
+SYSTEMS_UNSCOUTED_GUARDED         | 星系在被守衛時無法探索。
+SYSTEMS_UNSCOUTED_UNREACHABLE     | 星系未探索，且當下無法抵達。
+SYSTEMS_CAN_COLONIZE              | 當前技術可以探索並殖民該星系。
+SYSTEMS_CAN_COLONIZE_EN_ROUTE     | 一個殖民飛船正駛向該星系。預計%1回合後到達。
+SYSTEMS_CAN_COLONIZE_ENEMY        | 星系可被探索和殖民，但此時正被敵對的[alien_race]軍艦繞行。
+SYSTEMS_UNCOLONIZED_NEED_TECH     | 在研究完"%1"後該星系可以被殖民。
+SYSTEMS_UNCOLONIZED_NEED_TECHS    | 在研究完"%1"和"%2"後該星系可以被殖民。
+SYSTEMS_UNCOLONIZEABLE            | 星系無法被殖民。
+SYSTEMS_EXPLOIT_PCT               | 殖民地已實現最大生產力水平的%1%。
+SYSTEMS_EXPLOIT_WASTE             | 殖民地在製造工業垃圾。
+SYSTEMS_EXPLOIT_COMPLETE          | 殖民地已實現最大生產力水平。
+SYSTEMS_EXPLOIT_TRANSPORTS        | %1的人口在運輸中。
+SYSTEMS_EXT_ENEMY                 | 敵人的殖民地。
+SYSTEMS_EXT_ENEMY_FLEET           | 敵人的飛船在軌道繞行。
+SYSTEMS_EXT_ENEMY_FLEET_PLAYER    | 敵人飛船在我方殖民地繞行。
+SYSTEMS_EXT_ENEMY_FLEET_ALLY      | 敵人飛船在我們盟友的殖民地繞行。
+SYSTEMS_EXT_INC_FLEET_PLAYER      | 敵艦在駛向我方殖民地。
+SYSTEMS_EXT_INC_FLEET_ALLY        | 敵艦在駛向我們盟友的殖民地。
+SYSTEMS_EXT_NEED_DEFENSE          | 該殖民地的防禦未升級完畢。
+SYSTEMS_EXT_INC_TRANSPORTS        | %1[player_race]的軍隊在運輸中。
+SYSTEMS_HELP_1A                   | 總覽：這個界面的目的是給玩家提供宇宙中值得注意的信息。緊急或危險情況會以顏色表示：紅色表示最緊急，綠色表示最不重要。
+SYSTEMS_HELP_1B                   | 探索：展示偵察機能夠探索的星系，或經過科學研究後可以抵達的星系。
+SYSTEMS_HELP_1C                   | 擴張：展示可抵達範圍內未殖民的星系，或經過科學研究後可以殖民的星系。
+SYSTEMS_HELP_1D                   | 開發：展示仍有經濟發展空間的殖民地。同時展示有資源的未殖民星系。
+SYSTEMS_HELP_1E                   | 征服：展示當前受到攻擊或有敵人艦隊開往的星系。
+SYSTEMS_HELP_1F                   | 星系警告：展示被選中信息的警告情況。
+SYSTEMS_HELP_1G                   | 星系備註：玩家可以在這裏對星系做備註。
+SYSTEMS_HELP_1H                   | 星系歷史：該星系內發生的重要事件的記錄。
+SYSTEMS_STATUS_REBELLION          | 該星系正發生起義。
+SYSTEMS_STATUS_COMET              | 彗星會在%1年後撞擊這個星系。
+SYSTEMS_STATUS_SUPERNOVA          | 星系的恆星會在%1年後變成超新星。物理學家需要%2 RP 才能阻止這個災難。
+SYSTEMS_STATUS_PLAGUE             | 殖民地正在經歷全球範圍的瘟疫，需要%1 RP 才能控制疫情。
+SYSTEMS_STATUS_PIRACY             | 海盜在影響這個星系的商業貿易。
+SYSTEMS_STATUS_SPACE_AMOEBA       | 一個巨大的太空變形蟲正要襲擊這個星系。
+SYSTEMS_STATUS_SPACE_CRYSTAL      | 一個巨大的太空水晶正準備襲擊這個星系。
+
+
+DIPLOMACY_RECEIVING               | 正在翻譯消息……
+DIPLOMACY_MENU_CONTINUE           | 繼續
+DIPLOMACY_MENU_ACKNOWLEDGE        | 承認
+DIPLOMACY_MENU_ACCEPT             | 接受
+DIPLOMACY_MENU_ACCEPT_NEED_BC     | 接受 (金錢不足)
+DIPLOMACY_MENU_FORGET_IT          | 算了吧
+DIPLOMACY_TRADE_LEVEL             | %1 BC / 年
+DIPLOMACY_MENU_TREATIES           | 提出協議
+DIPLOMACY_MENU_TRADE              | 貿易
+DIPLOMACY_MENU_TECHNOLOGY         | 交換科技
+DIPLOMACY_MENU_OFFER_AID          | 提供援助
+DIPLOMACY_MENU_AMT                | %1 BC
+DIPLOMACY_MENU_OFFER_TECHS        | 提供科技
+DIPLOMACY_MENU_THREATEN           | 威脅
+DIPLOMACY_MENU_DECLARE_WAR        | 宣戰
+DIPLOMACY_MENU_EVICT_SPIES        | 撤回間諜 (會降低關係)
+DIPLOMACY_MENU_STOP_SPYING        | 停止間諜行動
+DIPLOMACY_MENU_STOP_ATTACKING     | 停止攻擊
+DIPLOMACY_MENU_GOODBYE            | 再見
+DIPLOMACY_MENU_PACT               | 提議互不侵犯條約
+DIPLOMACY_MENU_ALLIANCE           | 提議結盟
+DIPLOMACY_MENU_PEACE              | 提議停戰
+DIPLOMACY_MENU_TRADE              | 開展貿易
+DIPLOMACY_MENU_JOINT_WAR          | 加入對另一個種族的宣戰
+DIPLOMACY_MENU_PROPOSE_BREAK_ALLY | 與另一個種族斷絕聯盟關係
+DIPLOMACY_MENU_BREAK_TRADE        | 破壞貿易協議
+DIPLOMACY_MENU_BREAK_PACT         | 破壞互不侵犯條約
+DIPLOMACY_MENU_BREAK_ALLIANCE     | 破壞結盟關係
+DIPLOMACY_TRADE_MENU_BREAK        | 破壞貿易協議
+DIPLOMACY_THREATEN_MENU_0         | 召回大使
+DIPLOMACY_THREATEN_MENU_1         | 要求上貢
+DIPLOMACY_THREATEN_MENU_2         | 破壞互不侵犯條約
+DIPLOMACY_THREATEN_MENU_3         | 破壞結盟關係
+DIPLOMACY_THREATEN_MENU_BR        | 破壞貿易協議
+DIPLOMACY_THREATEN_MENU_5         | 宣戰
+DIPLOMACY_ACCEPT_OFFER            | 接受
+DIPLOMACY_ACCEPT_JOIN_WAR         | 接受 (加入戰爭)
+DIPLOMACY_ACCEPT_END_WAR          | 接受 (停止戰爭，召回軍隊)
+DIPLOMACY_ACCEPT_FORM_PACT        | 接受 (訂立條約)
+DIPLOMACY_ACCEPT_FORM_ALLIANCE    | 接受 (結成聯盟)
+DIPLOMACY_ACCEPT_ESTABLISH_TRADE  | 接受 (確定貿易)
+DIPLOMACY_DECLINE_OFFER           | 拒絕
+DIPLOMACY_DECLINE_BREAK_ALLIANCE  | 拒絕 (破壞聯盟)
+DIPLOMACY_IGNORE_THREAT           | 無視威脅
+DIPLOMACY_SHUTDOWN_SPIES          | 關閉所有位於[alien_empire]的情報網絡
+DIPLOMACY_HIDE_SPIES              | 命令所有[alien_empire]的間諜進入潛伏狀態
+DIPLOMACY_RETREAT_SHIPS           | 命令所有環繞或駛向[ailen_race]星系的艦船撤回
+
+// types of endings
+GAME_OVER_OVERTHROWN_LOSS         | 失敗：被推翻統治
+GAME_OVER_MILITARY_LOSS           | 軍事失敗
+GAME_OVER_DIPLOMATIC_LOSS         | 外交失敗
+GAME_OVER_NEW_REPUBLIC_LOSS       | 新共和國失敗
+GAME_OVER_REBELLION_LOSS          | 起義失敗
+GAME_OVER_DIPLOMATIC_WIN          | 外交勝利
+GAME_OVER_MILITARY_WIN            | 軍事勝利
+GAME_OVER_MILITARY_ALLIANCE_WIN   | 聯盟軍事勝利
+GAME_OVER_NEW_REPUBLIC_WIN        | 新共和國勝利
+GAME_OVER_REBELLION_WIN           | 起義勝利
+GAME_OVER_REBEL_ALLIANCE_WIN      | 聯盟反叛勝利
+GAME_OVER_ALLIANCE_WIN            | 盟友勝利
+GAME_OVER_NO_COLONIES_LOSS        | 社會崩潰失敗
+
+GAME_OVER_EXIT                    | 退出
+GAME_OVER_REPLAY                  | 重新遊戲
+
+// text for race-generic endings
+// %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 special text
+GAME_OVER_NO_COLONIES_LOSS2       | %2的統治結束了。#再也沒有星球能夠讓你登錄，你的%3個旅行途中的人員無法繼續維持文明的技術進步。#野蠻纔是社會的自然狀態。文明反而是一種反常，一特定條件的臨時情況。最終，野蠻一定會勝利。

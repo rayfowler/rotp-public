@@ -1,0 +1,24 @@
+// 第1次校对：2021.12.14
+
+// all possible names
+name: 翼族, 翼人, 鸟族, 羽人, 禽族
+
+desc1: 正直的军事家
+desc2: 顶级的飞行员
+desc3: [race]是一个高度动员的战斗民族，他们看重战场上的荣耀
+
+// possible home system names
+home: 牵牛星, 埃吉尔星, 群鸟星, 沃拉里星, 鹰巢星
+
+title:     國王
+fulltitle: 尖塔王
+
+// possible leader names
+leader: 阿里尔, 远见者, 高飞者, 红翼, 尖爪, 天主
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: 狐蝠, 雀, 鹈, 燕, 鹪鹩, 渡鸦, 羽毛
+ship2: 隼, 天鹰, 星鸥, 猫头鹰, 海鹦, 星翼
+ship3: 战隼, 战鸷, 战鹰, 鱼鹰, 秃鹫, 鹰身怪, 神鹫
+ship4: 雷鸟, 死亡之翼, 天空之主, 大鹏, 拉顿, 狮鹫, 凤凰
+

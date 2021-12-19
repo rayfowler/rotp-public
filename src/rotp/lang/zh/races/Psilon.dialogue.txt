@@ -11,73 +11,72 @@
 // This license is legally binding. Please review this license before altering 
 // or distributing any material covered under this license.
 //
+// 第1次校对：2021.12.18
+
 
 // Psilon specific dialogue
-CONTACT_PACIFIST           | Greetings and salutations! We of the [my_empire] learned long ago the benefits of peaceful cooperation. We hope that our diplomatic ties with you will be as harmonious as our own internal affairs.
-CONTACT_HONORABLE          | What a joyous occasion to meet others traversing this infinite expanse! We are called the [my_race_plural], and we will do what we can to avail ourselves to you at every opportunity.
-CONTACT_ERRATIC            | The [my_empire] wishes you well. We should know your people as the... [your_empire], was it? How fascinating. Yes... quite fascinating indeed.
+CONTACT_PACIFIST           | 你好，向你敬礼！[my_empire]的我们很久前就知道了和平相处的好处。我们希望双方的外交纽带能像我们的内部事务一样和谐。
+CONTACT_HONORABLE          | 与穿越了这无限广阔空间的人相遇是多么愉快的时刻啊！我们被称为[my_race_plural]，我们将尽我们所能利用每一个机会为你服务。
+CONTACT_ERRATIC            | [my_empire]祝你一切顺利。我们知道你们是……[your_empire]，是吗？多么迷人。是的……确实很迷人。
 
 //
-GREETING_01                | We are overjoyed to hear from such an esteemed friend. How can the [my_empire] be of assistance?
-GREETING_04                | Greetings ambassador. I am happy to bring your requests to the Council for... deliberation.
-GREETING_07                | The line is open, ambassador. What is it you... wish to discuss?
+GREETING_01                | 我们很高兴听到这样一位受人尊敬的朋友的来信。[my_empire]能如何为您提供帮助？
+GREETING_04                | 您好大使。我很乐意将您的请求提交给议会进行……审议。
+GREETING_07                | 通话是开放的，大使。您……想讨论什么？
 //
-DECLAREWAR_HATE_01         | We have done all we can to... accommodate your presence, but a race as unintelligent as yours is simply too much to bear as a celestial neighbor. Fear not, your end will be as swift as it is painless.
-DECLAREWAR_HATE_02         | We have spent much time in deliberation. It is... regrettable, but we have determined your people must be removed from the galaxy at this time.
-DECLAREWAR_HATE_03         | Though we prefer peace in all instances, we cannot abide you to continue to act as you have been. We will... do what we must to restore peace to the galaxy.
-DECLAREWAR_ERRATIC_01      | I admit I find actions of the Council puzzling, but they have deemed that your people have reached the limit of their intelligence and must be... removed. Alas, I am merely an ambassador and have no means to persuade them otherwise.
-DECLAREWAR_ERRATIC_02      | To properly value peace, we must on occasion... remind ourselves of the ugliness of war. Do you not agree, ambassador?
-DECLAREWAR_ERRATIC_03      | The time for battle is upon us, ambassador. By the time we are done, one of our empires will be forever reminded of the costs of war. The other empire will, unfortunately, cease to exist.
-DECLAREWAR_MILITARY_01     | I apologize ambassador, but the time has come for the Republic to expand its influence. If we cannot... gain these territories peacefully, we must take them by force.
-DECLAREWAR_MILITARY_02     | Few things in this galaxy are worth breaking a peace for. You would certainly agree, ambassador, that territory is one of them?
-DECLAREWAR_MILITARY_03     | I come with tidings of war, ambassador. The Council has decreed that we must increase the territory of the Republic at this time. Though your combat prowess may be... impressive, the will of the Council will not be denied.
-DECLAREWAR_ALLIANCE_01     | One of our allies, the [other_race], has come to us to plead for our aid in their fight against you. The Council has heard them and agreed, and so our aid they shall have.
-DECLAREWAR_ALLIANCE_02     | That your race and the [other_race] have broken your peace is... sorrowful. That we must join in the fight against you is even more so. 
-DECLAREWAR_ALLIANCE_03     | It is evident that your kind are too quarrelsome for any... lasting peace to be brokered. If the [other_race] have chosen to go to war with you, we will do so as well.
-DECLAREWAR_SPYING_01       | I am curious about how you thought this course would play out. To take such actions against the Republic... perhaps we overestimated your intelligence after all. 
-DECLAREWAR_SPYING_02       | Had you wished to... gain something from us, we would have preferred that you merely ask rather than act covertly. Now you leave us no choice but to break this peace we have tried so hard to preserve. 
-DECLAREWAR_SPYING_03       | Saddening, ambassador. There were so many other options for you and your spies to consider, and now both our peoples must suffer the great ignominy of war.
-DECLAREWAR_ATTACK_01       | Your actions are without logic, ambassador. To strike a people who solely desire peace while they so clearly out match you is... puzzling. It would seem that your race is much less clever than previously thought.  
-DECLAREWAR_ATTACK_02       | A... dark day for both our empires. We wished nothing more than harmonious co-existence with your people. Why do you force our hand so?
-DECLAREWAR_ATTACK_03       | Why have you chosen this course? We are a peaceful people down to our very essence, but rest assured that we know how to defend ourselves in times such as these.
-DECLAREWAR_OPPORTUNITY_01  | Ah well, it has certainly been an interesting experience, ambassador. However the time has come for us to put an end to your history. We believe those of such diminutive intellectual capabilities will ultimately interfere with our goals in the end.
-DECLAREWAR_ASSASSIN_01     | I must offer you some level of... congratulations. Few actions could cause the [my_empire] to mobilize for war so readily, but killing an unarmed ambassador is doubtlessly one of them.
+DECLAREWAR_HATE_01         | 我们已竭尽所能……容忍你的存在，但有你这样没有智慧的种族作为邻居实在是难以忍受。不要害怕，你的结局会很快到来，而且不会痛苦。
+DECLAREWAR_HATE_02         | 我们花了很多时间进行审议。这……令人遗憾，但我们已决定必须将你们从银河系中移除。
+DECLAREWAR_HATE_03         | 尽管我们在所有情况下都更喜欢和平，但我们不能容忍你继续像以前那样行事。我们将……竭尽所能恢复银河系的和平。
+DECLAREWAR_ERRATIC_01      | 我承认议会的行动令人费解，但他们认为你们的人民已经达到了智力极限，必须……除掉。唉，我只是一个大使，没有办法说服他们。
+DECLAREWAR_ERRATIC_02      | 为了珍视和平，我们有时必须……提醒自己战争的丑陋。你不同意吗，大使？
+DECLAREWAR_ERRATIC_03      | 战斗的时候到了，大使。当我们完成任务时，我们的一个帝国将永远记住战争的代价。不幸的是，另一个帝国将不复存在。
+DECLAREWAR_MILITARY_01     | 我向大使致歉，但共和国扩大影响的时候到了。如果我们不能……和平地获得这些领土，我们就必须用武力夺取它们。
+DECLAREWAR_MILITARY_02     | 这个星系中很少有东西值得打破和平。你肯定会同意，大使，领土就是其中之一。
+DECLAREWAR_MILITARY_03     | 我带着战争的消息而来，大使。理事会已下令，我们必须在此时扩大共和国的领土。虽然你的战斗能力可能……令人印象深刻，但议会的意志不容抗拒。
+DECLAREWAR_ALLIANCE_01     | 我们的盟友之一，[other_race]，恳求我们协助他们与你作战。议会听取了他们的意见并同意了，所以他们应该得到我们的援助。
+DECLAREWAR_ALLIANCE_02     | 你的种族和[other_race]打破了你们的和平……这令人悲伤。我们必须加入反对你的斗争，这更让我悲伤。
+DECLAREWAR_ALLIANCE_03     | 很明显，你们这种人太吵闹了，无法促成任何……持久的和平。如果[other_race]选择与您开战，我们也会这样做。
+DECLAREWAR_SPYING_01       | 我很好奇你觉得这个行动会如何收场。对共和国采取这样的行动……也许我们毕竟高估了你的智力。
+DECLAREWAR_SPYING_02       | 如果你想从我们这里得到什么，我们宁愿你问我们，而不是偷鸡摸狗。现在你让我们别无选择，只能打破我们如此努力维护的和平。
+DECLAREWAR_SPYING_03       | 令人难过，大使。你和你的间谍有很多其他的选择可以考虑，但现在我们两国人民都必须承受战争的巨大痛苦。
+DECLAREWAR_ATTACK_01       | 你的行为没有逻辑，大使。进攻一个只渴望和平的人，而他们的实力与你不相伯仲，这令人费解。看来你们的种族远没有我们想象的那么聪明。
+DECLAREWAR_ATTACK_02       | 对我们两个帝国来说都是黑暗的一天。我们只希望与你们的人民和谐共处。你为什么要逼我们动手？
+DECLAREWAR_ATTACK_03       | 你为什么选择这样做？我们本质上是一个和平的民族，但请放心，我们知道如何在这样的时刻保护自己。
+DECLAREWAR_OPPORTUNITY_01  | 嗯，这确实是一次有趣的经历，大使。然而，现在是我们结束你们历史的时候了。我们相信那些智力低下的人最终会干扰我们的目标。
+DECLAREWAR_ASSASSIN_01     | 我必须向你表示某种程度的……祝贺。很少有行动能让[my_empire]如此轻易地为战争动员起来，但杀死一名手无寸铁的大使无疑是其中之一。
+OFFER_PEACE_01             | 战争永远不会改变，大使。这么多杀戮，这么多破坏，这一切都是为了什么？请让我们承认我们过去的错误……并开始一个新的和平时代。
+OFFER_TRADE_01             | 像我们这样文明和智慧的种族都知道，最有益的是繁荣，而不是战争。共和国希望与你们的人民共同繁荣，每年[amt] BC 的贸易协定是最好的起点。
+OFFER_PACT_01              | 我们与你们相处的时间越多，我们就越重视我们的外交关系。我们应该尽我们所能保持这种联系。我们应该订立一个互不侵犯条约，你说呢，大使？
+OFFER_ALLIANCE_01          | 时候到了，大使。必须在[my_empire]和[your_empire]之间建立联盟。通过我们的合作，银河系将看到和平共处是唯一可接受的选择！
+WARN_TRESPASSING_01        | 你在[system]的出现引起了议会的注意。请在我们努力争取的和平被打破之前立即撤退。
+WARN_EXPANSION_01          | 对于你的扩张，我们没有合理的理由去解释，这无助于维护我们人民之间的和平。
+WARN_BUILDUP_01            | 以这种方式建立你的舰队可能被认为是和平的……不祥之兆，大使。警惕这样一支令人生畏的舰队将如何被其他人，包括共和国在内，解读吧。
+WARN_SKIRMISH_01           | [system]的小冲突是……麻烦的。我们是否应该将其解释为理智暂时的缺失吗？或者有迹象表明更危险的事情可能很快就会发生？
+WARN_ATTACKED_01           | 这太离谱了！不能让这样的攻击继续下去！我警告你大使：不要轻易危害[attacker_empire]和共和国之间的和平。
+WARN_INVADED_01            | 大使，你侵占[defender_race]领土是什么意思！？你肯定不打算通过如此咄咄逼人的行为来破坏我们的和平吧？
+WARN_ESPIONAGE_01          | 间谍，大使？为了得到你想要的东西，谈判不是更好吗？我们会出于和谐共处的目的忽略这次错误，但下次我们可能不会那么宽容……[framed]
+WARN_SABOTAGE_01           | 我做梦也没想到[spy_empire]能够进行如此……卑鄙的破坏活动。以和平的名义，我祈祷你不要再犯这个愚蠢的错误。[forced]
+WARN_BIOWEAPON_01          | 这是……闻所未闻的，大使。对平民目标使用生化武器，即使是一次也迫使我们重新考虑我们对你的看法！
+WARN_GENOCIDE_01           | 银河系大合唱中的一个声音永远消失了，就这么消失了。一个人能做出这种恶事……我怕我们到头来不一定能和你和平共处。
+WARN_FINAL_WAR_01          | 银河系在和谐的边缘，而你却顽固地选择挡路。如果……移除[rebel_empire]是永恒和平的代价，那么我们将尽我们所能。
+WARN_COUNCIL_VOTE_01       | [candidate_empire]只追求和平，以便所有人都能分享它带来的繁荣。如果你希望你的人民拥有最好的……未来，你就不会在议会中再次投票反对共和国。
+WARN_OATHBREAKER_01        | 卑鄙无耻，大使。我们想知道您是否会像破坏协议一样轻易破坏和平，如果您选择这样做，我们将做好准备。 [spiesCaught]
+WARN_ATTACKED_ALLY_01      | 停止你的这些攻击，大使！你知道我们是[defender_race]的盟友。难道我们不能通过对话促成和平吗？不要强迫我们所有人开战。
+WARN_REBELLING_AGAINST_01  | 不！我不相信你们会把宇宙引向和平！我们对和平的执念强过你们，但你在逼迫我们放弃这种执念！
+PRAISE_COUNCIL_VOTE_01     | 我们在[voter_empire]的朋友从来没有让我们失望过！共和国感谢您今天在委员会中的做法，我们期待您有空时拜访[candidate_home]，我们会隆重接待您。
+PRAISE_COUNCIL_VOTE_02     | 议会做出了明智的决定，但也许最明智的决定是您投给共和国的一票。我们承认您对和平的奉献，并且只要这种奉献继续下去，我们就能享受彼此的友谊。
+PRAISE_COUNCIL_VOTE_03     | 我们知道你在议会中投票支持共和国。我们很惊讶，大使，我们可能低估了你们人民的智慧。
 
-OFFER_PEACE_01             | War never changes, ambassador. So much killing, so much destruction, all of it for what? Please, let us acknowledge our... past wrongs and begin a new era of peace. 
-OFFER_TRADE_01             | Civilized and... intelligent races like ours know that prosperity, not war, proves the most beneficial. The Republic wishes mutual prosperity with your people, and a trade agreement of [amt] BC each year as the best place to begin. 
-OFFER_PACT_01              | The more time we spend amongst your kind, the more we value our diplomatic ties. We should do all we can to... preserve that bond, and a non-aggression pact between our people will see that continues to endure, will it not, ambassador? 
-OFFER_ALLIANCE_01          | The time has come ambassador: an alliance between the [my_empire] and the [your_empire] must be forged. Through us the galaxy will see that peaceful co-existence is the only acceptable choice! 
+PRAISE_ATTACKED_ENEMY_01   | 大使！你的帮助是最让人感激的。我们将一起消除[defender_race]的威胁，并恢复这个银河系迫切渴望的和平。
+PRAISE_ATTACKED_ENEMY_02   | 我们将[attacker_empire]的行为视为对我们实现和平理想的支持。请放心，一旦我们迫使[defender_race]投降，和平就可以恢复。
+PRAISE_ATTACKED_ENEMY_03   | 你的人民既暴力又无耻，所以你会如此轻易地加入战争也就不足为奇了。尽管如此，您将武器转向不为和平而战的那一方，这是值得肯定的。
 
-WARN_TRESPASSING_01        | Your presence at the [system] has raised eyebrows in the council. Please, withdraw at once before the peace we've worked so hard to achieve is broken. 
-WARN_EXPANSION_01          | There are few ways for us to interpret you so rapidly... expanding your sphere of influence. None of them are good for maintaining the peace between our people.
-WARN_BUILDUP_01            | To build up your fleets this way could prove an... ill portent for peace, ambassador. Be wary of how such an intimidating fleet will be construed by others, the Republic included.
-WARN_SKIRMISH_01           | The skirmish at the [system] is... troublesome. Are we to interpret this as a temporary leave of sanity? Or a sign that something far more dangerous may soon occur? 
-WARN_ATTACKED_01           | This is outrageous! Such attacks cannot be allowed to continue! I warn you ambassador: do not endanger the peace between the [attacker_empire] and the Republic so lightly. 
-WARN_INVADED_01            | Ambassador, what is the meaning of your encroachment into [defender_race] territory!? Surely you do not intend to break our peace by acting so aggressively? 
-WARN_ESPIONAGE_01          | Spying, ambassador? Would it not have been more prudent to merely... negotiate for the things you seek? We will allow this in the name of harmonious co-existence, but we may not be so forgiving next time... [framed]
-WARN_SABOTAGE_01           | I never would have dreamed the [spy_empire] was capable of such... despicable sabotage. In the name of peace, I pray you do not repeat this foolish mistake again. [forced]
-WARN_BIOWEAPON_01          | This is... unheard of, ambassador. To use a bioweapon on civilian targets even a single time forces us to reconsider in every possible way how we perceive you! 
-WARN_GENOCIDE_01           | And just like that, a voice in the chorus of the galaxy is lost forever. For a people to be capable of such evil... I fear we may not be able to form a lasting peace with you in the end.
-WARN_FINAL_WAR_01          | The galaxy is on the brink of harmony, and yet you obstinately choose to stand in the way. If the... removal of the [rebel_empire] is the cost of eternal peace, than we will do what we can to see that cost paid.  
-WARN_COUNCIL_VOTE_01       | The [candidate_empire] seeks nothing but peace so that all may share in the prosperity it brings. If you wish for the best... future for your people, you will not vote against the Republic in council again.
-WARN_OATHBREAKER_01        | Scurrilous and dishonorable, ambassador. We wonder if you would break peace as easily as you break agreements, and we will be ready should you ever choose to do so. [spiesCaught]
-WARN_ATTACKED_ALLY_01      | Call off these attacks of yours, ambassador! You know we are allies of the [defender_race]. Can we not instead broker a peace through dialogue instead of you forcing us all to war? 
-WARN_REBELLING_AGAINST_01  | No! You cannot be trusted to lead the council to peace! Our dedication to peace far outmatches yours, but you may force us to soon discard that dedication! 
-
-PRAISE_COUNCIL_VOTE_01     | Our friends at the [voter_empire] have never let us down before! The Republic extends its gratitude to you for your... actions in council today, and we look forward to hosting you on [candidate_home] as soon as you can spare the time. 
-PRAISE_COUNCIL_VOTE_02     | Wise decisions were made at the council, but perhaps the wisest was the vote you placed for the Republic. We recognize such... dedication to peace, and may enjoy friendship with you so long as that dedication continues.  
-PRAISE_COUNCIL_VOTE_03     | We are aware of your vote for the Republic in council. We are surprised, ambassador, and may have underestimated the intelligence of your people. 
-
-PRAISE_ATTACKED_ENEMY_01   | Ambassador! Your aid is most... appreciated. Together we will remove the [defender_race] menace, and restore the peace this galaxy so desperately craves. 
-PRAISE_ATTACKED_ENEMY_02   | We see and honor the actions of the [attacker_empire] as a commitment to our ideals of a greater peace. Rest assured that as soon as we... force the [defender_race] to abate, that peace can be allowed to resume. 
-PRAISE_ATTACKED_ENEMY_03   | Your people are both violent and brazen, so it is little surprise you would join in a war so readily. Still, the fact that you turned your weapons towards the party who does not fight for peace must at least be... acknowledged. 
-
-PRAISE_TRADE_01            | To trade with another who is dedicated to peace is a boon, but to trade with a friend who is dedicated to peace is truly a blessing. May our trade agreements, and our friendship, last until the ending of the galaxy! 
-PRAISE_TRADE_02            | Isn't it wonderful, ambassador? See how much simple acts of trade benefit all parties involved! We hope that this will continue to be a boon to both our races for eons to come! 
-PRAISE_REBELLING_WITH_01   | We [my_race_plural] have always believed that war is never the answer. This council, however, shows us that we were in error all along. Make your war, ambassador, and know the Republic stands with you! 
+PRAISE_TRADE_01            | 与一个致力于和平的人交易是一种恩惠，与一个致力于和平的朋友交易确实是一种祝福。愿我们的贸易协定和友谊，持续到银河系的尽头！
+PRAISE_TRADE_02            | 是不是很棒，大使？看看简单的贸易能让大家获得多少收益！我们希望这将继续成为我们两个种族的福音！
+PRAISE_REBELLING_WITH_01   | 我们[my_race_plural]一直相信战争永远不是答案。然而，这个委员会向我们表明，我们错了。开战吧，大使，共和国站在你这边。
  
-ACCEPT_TRADE_01            | Yes, ambassador, we do agree that mutual trade is the best path to peace. [amt] BC each year is quite fine, and we thank you for your generosity.
-RESPOND_IGNORE_THREAT_01   | Do not mistake our pacifism for weakness! Surely your threat was spoken in irrational anger, and so we shall forgive your outburst this time.
-RESPOND_STOP_SPYING_01     | A [my_race] spy, you say? Surely this must be a misunderstanding. Please return our citizen to us so that we may get to the bottom of this, and rest easy knowing spying is the last thing on our minds.
-RESPOND_STOP_ATTACKING_01  | May this mighty fleet deter anyone foolish enough to begin a costly war, and may our removal of it without ordering it to be used show our commitment to peace.
+ACCEPT_TRADE_01            | 是的，大使，我们确实同意相互贸易是通向和平的最佳途径。 每年[amt] BC，这很好，我们感谢您的慷慨解囊。
+RESPOND_IGNORE_THREAT_01   | 不要把我们的和平主义误认为软弱！当然，你的威胁是出于非理性的愤怒，所以我们会原谅你这次的爆发。
+RESPOND_STOP_SPYING_01     | [my_race]间谍，你说什么？这肯定是个误会。请将我们的公民归还给我们，以便我们能够查明真相。所谓间谍活动是我们最不想做的事情，请放心。
+RESPOND_STOP_ATTACKING_01  | 愿这支强大的舰队阻止任何愚蠢的战争发动者，愿我们就此撤回这支舰队，以表明我们对和平的承诺。
 

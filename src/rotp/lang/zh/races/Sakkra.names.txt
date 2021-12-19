@@ -1,22 +1,23 @@
+// 第1次校对：2021.12.18
 // all possible names
-name: Sakkra, Reptara, Saura, Raptora, Tyranna
+name: 蜥蜴族, 爬行族, 索拉族, 拉普托拉族, 提拉那族
 
 desc1: 好斗的扩张主义者
 desc2: 较快的人口增速
 desc3: 狂热的[race]想要通过征服让宇宙变得完美。
 
 // possible home system names
-home: Sssla, Sssana, Sssihs, Sssha, Sssss, Hsssa
+home: 斯拉, 斯纳, 斯斯尔, 斯萨, 斯斯, 斯斯纳
 
-title:     Magister
-fulltitle: Prime Magister
+title:     长官
+fulltitle: 最高长官
 
 // possible leader names
-leader: Guanar, Hissa, Kryssta, Saurak, Sauron, Tyranid
+leader: 瓜纳, 西萨, 克里斯塔, 萨拉可, 索隆, 提拉尼德
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
-ship1: Gecko, Chameleon, Lizard, Iguana, Skink, Anole, Whiptail
-ship2: Tegu, Monitor, Caiman, Alligator, Crocodile, Gavial, Basilisk
-ship3: Dinosaur, Raptor, Pterodactyl, Theropod, Ceratops, Predator, Plesiosaur
-ship4: Titan, Colossus, Dragon, Godzilla, Kraken, Gorgon, Tyrannosaur
+ship1: 壁虎, 变色龙, 蜥蜴, 鬣蜥, 灵蜥, 安乐蜥, 鞭尾蜥
+ship2: 南美蜥, 红树蜥, 凯门蜥, 鼍蜥, 紅眼鷹蜥, 恒河鳄, 盐齿鳄鱼
+ship3: 恐龙, 伶盗龙, 翼手龙, 兽脚龙, 角龙, 掠龙, 蛇颈龙
+ship4: 泰坦龙, 巨龙, 龙, 哥斯拉, 海龙王, 蛇怪龙, 霸王龙
 

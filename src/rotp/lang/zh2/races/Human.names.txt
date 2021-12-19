@@ -1,0 +1,24 @@
+// 第1次校對：2021.12.17
+// all possible names
+name: 人類, 地球人, 泰拉人, 原人, 智人
+
+desc1: 正直的外交家
+desc2: 專業的商人和出色的外交家
+desc3: 能說會道的人類最擅長說服其他種族爲自己的利益服務。
+
+
+// possible home system names
+home: 地球, 泰拉星, 特勒斯星, 原星, 智人星
+
+title:     執政官
+fulltitle: 執政官
+
+// possible leader names
+leader: 亞歷山大, 布拉德羅夫二世, 杜拉什四世, 約翰三世, 拉西圖斯, 斯特拉德
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: 哨兵, 調查號, 速遞號, 探索號, 求知號, 信使號, 巡邏者
+ship2: 護衛號, 巡洋號, 炮擊號, 戰鬥機, 軍旅號, 史萊克號, 突擊號
+ship3: 巡洋艦, 護衛艦, 戰艦, 防禦者號, 集結號, 尖兵號, 掠奪號
+ship4: 無畏號, 決鬥號, 恐怖之星, 破壞者號, 戰列艦, 復仇者號, 毀滅者號
+

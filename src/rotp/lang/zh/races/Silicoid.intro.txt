@@ -1,6 +1,8 @@
-The Silicoid Imperium
-The year is 12414...
-As the Imperium ends its search of Cryslon's desiccated surface, the Silicoid find themselves unable to locate even the remotest trace of their eternal enemy Quaralon and his nefarious brood. 
-As the sole inhabitants of a planet otherwise entirely devoid of life, the Silicoids know that they must now leave their homeworld to locate their foes and, hopefully, eliminate them once and for all. In the hopes of dealing a devastating first strike to the children of Quaralon, the Silicoids have rushed to develop the technology that will enable them to traverse the infinite Sea of Worlds. 
-As the reigning Crystal Emperor, you have galvanized the Silicoids from all walks of life on this noble crusade against a faceless nemesis, and prepared every facet of the Imperium to do whatever is necessary to expunge the threat of your ancient foe. 
-Should your people succeed, all life in the galaxy will rejoice in your victory. Should your people fail, the toll of your defeat will be more terrible than you can even comprehend...
+// 第1次校对：2021.12.18
+硅帝国
+现在是12414年……
+
+当帝国完成了对克里斯隆干燥地表的搜索时，他们没能找到一丝他们永恒的敌人——克拉隆人和及其邪恶后代的踪迹。
+作为这个没有生命的星球上唯一的居民，硅人知道他们必须离开自己的母星，去寻找他们的敌人，并一劳永逸地将之消灭。硅人想要在第一次攻击时就给克拉隆人的后代以致命一击，他们努力创造出了能够让自己在宇宙中遨游的技术。
+作为当权的水晶皇帝，你发动了一场针对死敌的圣战，所有硅人都做好了准备，帝国将不惜一切代价消灭你们永远的仇敌。
+如果你们获得成功，宇宙的所有生命都会因你们的胜利而欢呼。如果你们失败，那你们将会付出你无法想象的代价……

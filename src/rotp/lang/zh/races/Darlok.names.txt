@@ -1,5 +1,6 @@
+// 第1次校对：2021.12.15
 // all possible names
-name: Darlok, Sarlok, Spylok, Shadelok, Nazlok
+name: 幽灵族, 萨洛克斯, 斯派洛克, 沙德洛克斯, 纳兹洛克
 
 desc1: 好斗的外交家
 desc2: 优秀的间谍
@@ -7,16 +8,16 @@ desc3: [race]是超自然的神秘幽灵，他们来自另一个空间。
 
 
 // possible home system names
-home: Nazin, Mordor, Hades, Abyssal, Hel
-title:     Emperor
-fulltitle: Emperor
+home: 纳星, 魔都星, 冥王星, 深渊星, 地狱星
+title:     皇帝
+fulltitle: 皇帝
 
 // possible leader names
-leader: Darquan, Morfane, Narzina, Nazgur, Shador, Ssithra
+leader: 达昆, 莫凡, 纳尔齐纳, 纳兹古尔, 沙多, 西特拉
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
-ship1: Mist, Vapor, Spark, Veil, Omen, Ether, Glimmer
-ship2: Mirage, Shadow, Dream, Illusion, Reflection, Vision, Haunt
-ship3: Phantom, Spectre, Wraith, Shade, Ghost, Spirit, Poltergeist
-ship4: Nightmare, Phantasm, Terror, Horror, Revenant, Grim Reaper, Phobos
+ship1: 雾, 汽, 火花, 幕, 预兆, 以太, 荧
+ship2: 幻象, 影子, 梦境, 幻影, 倒影, 梦, 萦绕
+ship3: 幽灵, 鬼魂, 冥魂, 幽鬼, 鬼怪, 阴魂, 历鬼
+ship4: 梦魇, 噩梦, 恐怖, 恐惧, 还魂, 死神, 惊惧
 

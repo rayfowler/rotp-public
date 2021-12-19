@@ -1,0 +1,141 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+// 第1次校對：2021.12.18
+
+
+// Meklar specific dialogue
+
+CONTACT_ERRATIC            | 物種：[your_race]。領袖頭銜：[your_title]。技術：多種多樣。威脅評估：不確定。
+CONTACT_HONORABLE          | [your_race]物種展現出了興趣。[my_empire]感覺到了合作互利的潛力。結果有待觀察。
+CONTACT_RUTHLESS           | [my_empire]現在知道了[your_race]的存在。[my_title]向所有[your_race]物種發出警告：不要干擾自治領的目標，否則將導致[your_race]滅絕。
+//
+GREETING_01                | 盟國大使的身份得到確認。提出你對自治領的請求，如果可能，自治領會提供幫助。
+GREETING_04                | [my_empire]接受[your_race]大使，自治領現在願意處理請求。
+GREETING_07                | 提出你的請求。自治領可能將來自[your_race]的請求呈交給[my_title]進行處理。
+//
+DECLAREWAR_HATE_01         | [my_empire]不再願意容忍[your_empire]的存在。[your_race]是一種原始物種，開始執行銷燬協議。
+DECLAREWAR_HATE_02         | [my_title]將不再允許[your_race]物種干擾自治領的目標，自治領將致力於維護終極指令。
+DECLAREWAR_HATE_03         | 當[your_empire]存在時，自治領不能執行指令。自治領沒有找到替代方案，必須終止這個物種的存在。
+DECLAREWAR_ERRATIC_01      | [my_title]得出結論，[your_race]物種的存在威脅到自治領的目標。自治領立即執行滅絕協議。
+DECLAREWAR_ERRATIC_02      | [my_title]判斷[your_race]物種可能持有能推進自治領目標的祕密。自治領將通過武力從[your_race]物種那裏獲取祕密。
+DECLAREWAR_ERRATIC_03      | [my_title]將[your_race]物種視爲自治領計劃中不可接受的變量。自治領要麼消滅[your_race]物種，要麼自我終結。
+DECLAREWAR_MILITARY_01     | [my_empire]必須繼續在銀河系中擴張以追求終極目標。[your_empire]抑制了[my_empire]的擴張。此問題需要修復。
+DECLAREWAR_MILITARY_02     | 自治領無法定位終極目標。靠近或屬於[your_empire]的行星可能存在自治領所需要的東西。戰爭不可避免。
+DECLAREWAR_MILITARY_03     | 自治領被迫擴大其領土範圍。[your_race]物種的實力無法阻止自治領。戰爭讓人遺憾，但必要。
+DECLAREWAR_ALLIANCE_01     | [your_empire]已向自治領盟友宣戰。自治領將通過消除的[your_race]威脅來保護終極指令。
+DECLAREWAR_ALLIANCE_02     | 自治領收到了來自[other_empire]的援助請求。只要衝突持續，自治領就會繼續幫助盟友對抗[your_race]物種。
+DECLAREWAR_ALLIANCE_03     | [your_race]種族傲慢地向他人宣戰。自治領將幫助其他帝國從星系中移除[your_race]物種。
+DECLAREWAR_SPYING_01       | [your_race]種族對自治領進行間諜行動。對自治領的後果：微不足道。對[your_race]物種的後果：致命。
+DECLAREWAR_SPYING_02       | 在自治領領土上發現了破壞行動。對象確認爲[your_race]物種。自治領協議要求以戰爭作爲迴應。
+DECLAREWAR_SPYING_03       | 自治領檢測到[your_empire]煽動不穩定因素的明顯企圖。不能允許[your_race]物種繼續幹擾終極目標。自治領必須不惜一切代價進行報復。
+DECLAREWAR_ATTACK_01       | [your_race]物種選擇敵對，儘管[my_race]佔有優勢。自治領將爲完全消除威脅而行動。
+DECLAREWAR_ATTACK_02       | [your_race]物種通過進攻來阻礙自治領的終極目標。戰爭在所難免。
+DECLAREWAR_ATTACK_03       | [your_race]種族試圖通過消滅[my_race]來阻止自治領達到目標。自治領將用所有軍事力量進行報復。
+DECLAREWAR_OPPORTUNITY_01  | [my_title]相信[your_race]物種最終會損害終極指令。自治領將在威脅出現前消滅[your_race]物種。
+DECLAREWAR_ASSASSIN_01     | [your_race]物種銷燬了自治領大使。[your_race]需要被暴力報復。
+
+OFFER_PEACE_01             | [my_title]形成了新的判斷。自治領不願再承受戰爭的代價。自治領希望立即促成和平。
+OFFER_TRADE_01             | [your_race]物種擁有大量資源。自治領也擁有有價值的商品。自治領提議進行每年[amt] BC 的貿易。
+OFFER_PACT_01              | 自治領不想要沒有意義的衝突。與[your_race]種族建立互不侵犯條約，是實現自治領目標的謹慎手段。
+OFFER_ALLIANCE_01          | [my_title]重視與[your_race]物種的外交。自治領提議正式結盟以確保[your_race]物種和[my_race]的生存。希望貴方立刻回覆。
+WARN_TRESPASSING_01        | 在[system]系統中檢測到[your_race]物種。自治領聲稱擁有該區域。你應立即撤出！
+WARN_EXPANSION_01          | [your_race]物種的快速擴張被視爲是對自治領目標的威脅。如果繼續擴張，自治領將不得不採取軍事迴應。
+WARN_BUILDUP_01            | 自治領監視網絡將[your_race]艦隊識別爲對安全的潛在威脅。需要加強對[your_race]物種的監視，以確保自治領的利益不會受到損害。
+WARN_SKIRMISH_01           | [system]檢測到自治領和[your_race]艦隊之間的衝突。自治領建議勿要多次再犯：如果警告無人理會，自治領準備做出必要回應。
+WARN_ATTACKED_01           | [attacker_race]在[system]注意到入侵行動。[defender_title]向大使傳達信息：繼續威脅自治領的安全將導致[attacker_race]物種的滅絕。
+WARN_INVADED_01            | 自治領提醒[attacker_race]物種，[attacker_race]並不佔有[defender_race]的空間。立即移除艦隊，否則就是毀滅。
+WARN_ESPIONAGE_01          | 自治領發現[spy_race]的間諜活動。自治領安全協議高於[spy_race]間諜技能。再次試探自治領，可能會被證明是致命的。 [framed]
+WARN_SABOTAGE_01           | 自治領意識到[spy_race]物種參與了最近的破壞活動。試圖製造混亂的行爲太卑鄙，不值得迴應。但進一步的破壞企圖，將招致迅速報復。[forced]
+WARN_BIOWEAPON_01          | 自治領觀察到生物武器的使用。這是有效的武器。[attacker_race]的物種威脅評估提高3級。
+WARN_GENOCIDE_01           | 已記錄[attacker_race]物種對[victim_race]物種的種族滅絕。自治領不關心可能的原因。[attacker_race]物種的威脅評估提高了5級。
+WARN_FINAL_WAR_01          | 所有已知的物種已達成協議確保銀河系的持久和平。[rebel_race]物種是唯一的異議者。自治領將將採取適當的行動。
+WARN_COUNCIL_VOTE_01       | 自治領意識到議會中[voter_race]的行動。該結果被估爲不利於[candidate_race]的目標。自治領的外交行動也會相應調整。
+WARN_OATHBREAKER_01        | [my_title]做出判斷：[your_race]物種不再被認爲值得信賴。所有未來的計劃都會參考[your_race]物種違反協議的事實進行修訂。 [spiesCaught]
+WARN_ATTACKED_ALLY_01      | 已記錄[your_race]物種和[defender_race]物種之間的衝突。[defender_race]種族已知爲自治領盟友。停止戰鬥，否則爲後果做好準備。
+WARN_REBELLING_AGAINST_01  | [your_race]種族已經成爲自治領實現目標的障礙。星際委員會的決定不可接受。等待最高仲裁者的迴應。
+
+PRAISE_COUNCIL_VOTE_01     | [voter_race]物種大使爲推進[candidate_race]的目標提供幫助。自治領承認與[voter_race]物種保持持續關係有好處。自治領會報答恩惠。
+PRAISE_COUNCIL_VOTE_02     | 自治領注意到你在委員會中的支持票。自治領將相應地調整對[voter_race]物種的看法。
+PRAISE_COUNCIL_VOTE_03     | 自治領承認[voter_race]物種進行陰謀詭計的可能性。繼續在委員會中幫助自治領可能會緩解這一擔憂。
+
+PRAISE_ATTACKED_ENEMY_01   | 攻擊自治領的敵人證明了對[my_race]目標的支持。自治領將盡力把[attacker_race]物種的傷亡降到最低。
+PRAISE_ATTACKED_ENEMY_02   | 自治領歡迎對[defender_race]物種的進攻。這場戰爭可能是[my_race]和[attacker_race]物種之間的新開端。
+PRAISE_ATTACKED_ENEMY_03   | 攻擊[defender_race]物種並不能抵消[attacker_race]物種過去對自治領犯下的罪行。自治領將根據[attacker_race]在這場戰爭中的行動重新評估該物種威脅等級。
+PRAISE_TRADE_01            | 自治領和[your_race]物種從持續的貿易中獲益。只要價值存在，自治領就希望貿易繼續存在。
+PRAISE_TRADE_02            | 自治領對與[your_race]物種的貿易協議表示滿意。需要確保協議維持，以便兩個種族都能從中獲利。
+PRAISE_REBELLING_WITH_01     | 自治領同意星際委員會的統治者不可信任。自治領注意到了[your_race]物種的反抗。自治領將幫助[your_race]物種進行反抗。
+ACCEPT_TRADE_01            | 收到[your_race]物種的貿易請求。提議金額爲[amt] BC。自治領同意。
+RESPOND_IGNORE_THREAT_01   | 來自[your_race]物種的威脅令人費解。[your_race]文明遠不如自治領艦隊。自治領決定無視。
+RESPOND_STOP_SPYING_01     | 自治領間諜在試圖深入瞭解[your_race]生命形式時被抓獲。自治領表示道歉。請儘早遣返抓獲的[my_race]。
+
+RESPOND_STOP_ATTACKING_01  | 自治領成功地向[your_race]文明展示了軍事能力。艦隊將返回到指定的座標。
+
+DIPLO_TECH_REQUEST_MENU_01   | 請指定科技。
+DIPLO_TECH_COUNTER_MENU_01   | 請說明你的回報。
+DIPLO_TRADE_MENU_01          | 請說明數量。
+DIPLO_TREATY_MENU_01         | 請說明協議內容。
+DIPLO_DECLARE_WAR_MENU_01    | 請確定。
+DIPLO_SUGGEST_WAR_MENU_01    | 請說明目標。
+DIPLO_BREAK_ALLIANCE_MENU_01 | 請說明對象。
+DIPLO_THREATEN_MENU_01       | 請說明。
+DIPLO_OFFER_AID_MENU_01      | 請說明。
+DIPLO_OFFER_TECH_MENU_01     | 請告知科技內容。
+
+DECLINE_OFFER_01           | 拒絕。
+DECLINE_OFFER_02           | 拒絕。
+DECLINE_OFFER_03           | 拒絕。
+DECLINE_OFFER_04           | 拒絕。
+DECLINE_OFFER_05           | 拒絕。
+DECLINE_OFFER_06           | 拒絕。
+DECLINE_OFFER_07           | 拒絕。
+DECLINE_OFFER_08           | 拒絕。
+DECLINE_OFFER_09           | 拒絕。
+DECLINE_ENEMY_ALLY_01      | 拒絕。
+DECLINE_NO_WAR_ON_ALLY_01  | 拒絕。
+DECLINE_PEACE_TREATY_01    | 拒絕。
+DECLINE_ANNOYED_01         | 拒絕。
+DECLINE_ANNOYED_02         | 拒絕。
+DECLINE_ANNOYED_03         | 拒絕。
+DECLINE_OATHBREAKER_01     | 拒絕。
+DECLINE_ESPIONAGE_01       | 拒絕。
+DECLINE_SABOTAGE_01        | 拒絕。
+DECLINE_BUILDUP_01         | 拒絕。
+DECLINE_ENCROACH_01        | 拒絕。
+DECLINE_SKIRMISH_01        | 拒絕。
+DECLINE_ATTACK_01          | 拒絕。
+DECLINE_INVASION_01        | 拒絕。
+DECLINE_BIOWEAPONS_01      | 拒絕。
+DECLINE_TECH_TRADE_01      | 拒絕。
+OFFER_TECH_EXCHANGE_01     | 自治領需要[tech]。請說明你需要的回報。
+ACCEPT_TECH_EXCHANGE_01    | 接受。
+ACCEPT_FINANCIAL_AID_01    | 接受。
+ACCEPT_TECHNOLOGY_AID_01   | 
+
+BREAK_TRADE_01             | 貿易協議終止。
+ANNOUNCE_PEACE_01          | 接受。
+ACCEPT_PEACE_01            | 接受。
+
+BREAK_PACT_01              | 終止互不侵犯協議。
+ANNOUNCE_PACT_01           | 接受。
+ACCEPT_PACT_01             | 接受。
+
+BREAK_ALLIANCE_01          | 聯盟。
+ANNOUNCE_ALLIANCE_01       | 接受。
+ACCEPT_ALLIANCE_01         | 接受。
+ACCEPT_JOINT_WAR_01        | 接受。
+
+RESPOND_CLOSE_EMBASSY_01   | 已收到。
+RESPOND_BREAK_TRADE_01     | 已收到。
+RESPOND_BREAK_PACT_01      | 已收到。
+RESPOND_BREAK_ALLIANCE_01  | 已收到。
+RESPOND_DECLARE_WAR_01     | 已收到。
