@@ -1309,7 +1309,7 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
         if (view.embassy().unity() || view.embassy().anyWar())
             return false;
-        if (!view.inEconomicRange())
+        if(!empire.inShipRange(view.empId()))
             return false;
         
         // look at new incidents. If any trigger war, pick
@@ -1435,10 +1435,9 @@ public class AIDiplomat implements Base, Diplomat {
         
         // modnar: scale war threshold by number of our wars vs. number of their wars
         // try not to get into too many wars, and pile on if target is in many wars
-        float enemyMod = (float) ((empire.numEnemies() + 1) / (v.empire().numEnemies() + 1));
+        float enemyMod = (float)(empire.numEnemies() + 1) / (v.empire().numEnemies() + 1);
         
         float warThreshold = baseThreshold * techMod * enemyMod * treatyMod * v.owner().diplomatAI().leaderExploitWeakerEmpiresRatio();
-        
         return (myPower/otherPower) > warThreshold;
     }
     private DiplomaticIncident worstWarnableIncident(Collection<DiplomaticIncident> incidents) {
@@ -1785,7 +1784,8 @@ public class AIDiplomat implements Base, Diplomat {
    private boolean warWeary(EmpireView v) {
         if (v.embassy().finalWar())
             return false;
-        
+        if(!empire.inShipRange(v.empId()))
+            return true;
         // modnar: scale warWeary by number of our wars vs. number of their wars
         // more weary (willing to take less losses) if we are in more wars than they are
         // willing to take at least 15% losses
