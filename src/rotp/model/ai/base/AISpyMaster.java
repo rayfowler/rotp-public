@@ -79,7 +79,16 @@ public class AISpyMaster implements Base, SpyMaster {
 
         // if we are not in war preparations and we've received threats 
         // about spying, then no spending
-        if (!emb.isEnemy() && spies.threatened()) {
+        boolean shouldHide = false;
+        if (!v.embassy().anyWar() && (v.spies().maxSpies() > 0)
+        && v.otherView().embassy().timerIsActive(DiplomaticEmbassy.TIMER_SPY_WARNING)) {
+            if (!v.spies().isHide()
+            || (v.empire().leader().isXenophobic())) {
+                shouldHide = true;
+            }
+        }
+        
+        if (!emb.isEnemy() && shouldHide) {
             spies.allocation(0);
             return;
         }
@@ -126,7 +135,16 @@ public class AISpyMaster implements Base, SpyMaster {
         }
 
         // we've been warned and they are not our enemy (i.e. no war preparations)
-        if (!emb.isEnemy() && spies.threatened()) {
+        boolean shouldHide = false;
+        if (!v.embassy().anyWar() && (v.spies().maxSpies() > 0)
+        && v.otherView().embassy().timerIsActive(DiplomaticEmbassy.TIMER_SPY_WARNING)) {
+            if (!v.spies().isHide()
+            || (v.empire().leader().isXenophobic())) {
+                shouldHide = true;
+            }
+        }
+        
+        if (!emb.isEnemy() && shouldHide) {
             spies.beginHide();
             return;
         }
