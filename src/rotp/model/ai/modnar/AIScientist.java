@@ -1106,8 +1106,6 @@ public class AIScientist implements Base, Scientist {
     }
     @Override
     public float baseValue(TechSoilEnrichment t) {
-        if (empire.ignoresPlanetEnvironment())
-            return 0;
         TechSoilEnrichment curr = empire.tech().topSoilEnrichmentTech();
         float topIncrease = curr == null ? 0 : curr.planetaryIncrease;
 

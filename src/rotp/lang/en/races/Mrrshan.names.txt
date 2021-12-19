@@ -1,5 +1,5 @@
 // all possible names
-name: Mrrshan, Prrshan, Mewshan, Clawshan, Hisshan
+name: Fiershan, Prrshan, Mewshan, Clawshan, Hisshan
 
 desc1: Ruthless Militarists
 desc2: Superior Gunners

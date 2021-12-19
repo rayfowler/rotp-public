@@ -1,5 +1,5 @@
 // all possible names
-name: Meklar, Mechanar, Cybernar, Digitar, Technar
+name: Meklonar, Mechanar, Cybernar, Digitar, Technar
 
 desc1: Erratic Industrialists
 desc2: Enhanced Factory Controls

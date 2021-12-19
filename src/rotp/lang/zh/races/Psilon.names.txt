@@ -1,21 +1,23 @@
+// 第1次校对：2021.12.18
+
 // all possible names
-name: Psilon, Mentalon, Psychon, Cerebron, Neuralon
+name: 赛隆人, 美塔隆人, 西隆人, 塞里布隆人, 纽拉隆人
 
 desc1: 和平的科学家
 desc2: 优秀的研究能力
 desc3: [race]追求与其他种族的和谐共处。
 
 // possible home system names
-home: Mentar, Cogitar, Psilar, Metrica, Neura
+home: 门塔星, 科吉塔星, 塞拉星, 矩阵星, 神经元星
 
-title:     Councilor
-fulltitle: High Councilor
+title:     议长
+fulltitle: 最高议长
 
 // possible leader names
-leader: Dynalon, Kelvan, Meson, Quark, Tachaon, Zygot
+leader: 戴娜隆, 开尔文, 米松, 夸克, 塔川, 塞高特
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
-ship1: Electron, Neutrino, Quark, Neutron, Proton, Atom, Molecule
-ship2: Sigma, Prime, Radius, Hypotenuse, Algebra, Tangent, Logarithm
-ship3: Parallax, Ellipse, Axis, Sine Wave, Fractal, Calculus, Derivation
-ship4: Sun Fire, Constellation, Nova, Quasar, Galaxy, Nebula, Corona
+ship1: 电子, 中微子, 夸克, 中子, 质子, 原子, 分子
+ship2: 西格玛, 质数, 半径, 斜边, 代数, 切线, 对数
+ship3: 视差, 椭圆, 轴, 正弦波, 分形, 微积分, 推导
+ship4: 日火, 星座, 新星, 类星体, 银河, 星云, 日冕

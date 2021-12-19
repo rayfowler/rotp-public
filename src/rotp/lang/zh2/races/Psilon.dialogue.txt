@@ -1,0 +1,82 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+// 第1次校對：2021.12.18
+
+
+// Psilon specific dialogue
+CONTACT_PACIFIST           | 你好，向你敬禮！[my_empire]的我們很久前就知道了和平相處的好處。我們希望雙方的外交紐帶能像我們的內部事務一樣和諧。
+CONTACT_HONORABLE          | 與穿越了這無限廣闊空間的人相遇是多麼愉快的時刻啊！我們被稱爲[my_race_plural]，我們將盡我們所能利用每一個機會爲你服務。
+CONTACT_ERRATIC            | [my_empire]祝你一切順利。我們知道你們是……[your_empire]，是嗎？多麼迷人。是的……確實很迷人。
+
+//
+GREETING_01                | 我們很高興聽到這樣一位受人尊敬的朋友的來信。[my_empire]能如何爲您提供幫助？
+GREETING_04                | 您好大使。我很樂意將您的請求提交給議會進行……審議。
+GREETING_07                | 通話是開放的，大使。您……想討論什麼？
+//
+DECLAREWAR_HATE_01         | 我們已竭盡所能……容忍你的存在，但有你這樣沒有智慧的種族作爲鄰居實在是難以忍受。不要害怕，你的結局會很快到來，而且不會痛苦。
+DECLAREWAR_HATE_02         | 我們花了很多時間進行審議。這……令人遺憾，但我們已決定必須將你們從銀河系中移除。
+DECLAREWAR_HATE_03         | 儘管我們在所有情況下都更喜歡和平，但我們不能容忍你繼續像以前那樣行事。我們將……竭盡所能恢復銀河系的和平。
+DECLAREWAR_ERRATIC_01      | 我承認議會的行動令人費解，但他們認爲你們的人民已經達到了智力極限，必須……除掉。唉，我只是一個大使，沒有辦法說服他們。
+DECLAREWAR_ERRATIC_02      | 爲了珍視和平，我們有時必須……提醒自己戰爭的醜陋。你不同意嗎，大使？
+DECLAREWAR_ERRATIC_03      | 戰鬥的時候到了，大使。當我們完成任務時，我們的一個帝國將永遠記住戰爭的代價。不幸的是，另一個帝國將不復存在。
+DECLAREWAR_MILITARY_01     | 我向大使致歉，但共和國擴大影響的時候到了。如果我們不能……和平地獲得這些領土，我們就必須用武力奪取它們。
+DECLAREWAR_MILITARY_02     | 這個星系中很少有東西值得打破和平。你肯定會同意，大使，領土就是其中之一。
+DECLAREWAR_MILITARY_03     | 我帶着戰爭的消息而來，大使。理事會已下令，我們必須在此時擴大共和國的領土。雖然你的戰鬥能力可能……令人印象深刻，但議會的意志不容抗拒。
+DECLAREWAR_ALLIANCE_01     | 我們的盟友之一，[other_race]，懇求我們協助他們與你作戰。議會聽取了他們的意見並同意了，所以他們應該得到我們的援助。
+DECLAREWAR_ALLIANCE_02     | 你的種族和[other_race]打破了你們的和平……這令人悲傷。我們必須加入反對你的鬥爭，這更讓我悲傷。
+DECLAREWAR_ALLIANCE_03     | 很明顯，你們這種人太吵鬧了，無法促成任何……持久的和平。如果[other_race]選擇與您開戰，我們也會這樣做。
+DECLAREWAR_SPYING_01       | 我很好奇你覺得這個行動會如何收場。對共和國採取這樣的行動……也許我們畢竟高估了你的智力。
+DECLAREWAR_SPYING_02       | 如果你想從我們這裏得到什麼，我們寧願你問我們，而不是偷雞摸狗。現在你讓我們別無選擇，只能打破我們如此努力維護的和平。
+DECLAREWAR_SPYING_03       | 令人難過，大使。你和你的間諜有很多其他的選擇可以考慮，但現在我們兩國人民都必須承受戰爭的巨大痛苦。
+DECLAREWAR_ATTACK_01       | 你的行爲沒有邏輯，大使。進攻一個只渴望和平的人，而他們的實力與你不相伯仲，這令人費解。看來你們的種族遠沒有我們想象的那麼聰明。
+DECLAREWAR_ATTACK_02       | 對我們兩個帝國來說都是黑暗的一天。我們只希望與你們的人民和諧共處。你爲什麼要逼我們動手？
+DECLAREWAR_ATTACK_03       | 你爲什麼選擇這樣做？我們本質上是一個和平的民族，但請放心，我們知道如何在這樣的時刻保護自己。
+DECLAREWAR_OPPORTUNITY_01  | 嗯，這確實是一次有趣的經歷，大使。然而，現在是我們結束你們歷史的時候了。我們相信那些智力低下的人最終會干擾我們的目標。
+DECLAREWAR_ASSASSIN_01     | 我必須向你表示某種程度的……祝賀。很少有行動能讓[my_empire]如此輕易地爲戰爭動員起來，但殺死一名手無寸鐵的大使無疑是其中之一。
+OFFER_PEACE_01             | 戰爭永遠不會改變，大使。這麼多殺戮，這麼多破壞，這一切都是爲了什麼？請讓我們承認我們過去的錯誤……並開始一個新的和平時代。
+OFFER_TRADE_01             | 像我們這樣文明和智慧的種族都知道，最有益的是繁榮，而不是戰爭。共和國希望與你們的人民共同繁榮，每年[amt] BC 的貿易協定是最好的起點。
+OFFER_PACT_01              | 我們與你們相處的時間越多，我們就越重視我們的外交關係。我們應該盡我們所能保持這種聯繫。我們應該訂立一個互不侵犯條約，你說呢，大使？
+OFFER_ALLIANCE_01          | 時候到了，大使。必須在[my_empire]和[your_empire]之間建立聯盟。通過我們的合作，銀河系將看到和平共處是唯一可接受的選擇！
+WARN_TRESPASSING_01        | 你在[system]的出現引起了議會的注意。請在我們努力爭取的和平被打破之前立即撤退。
+WARN_EXPANSION_01          | 對於你的擴張，我們沒有合理的理由去解釋，這無助於維護我們人民之間的和平。
+WARN_BUILDUP_01            | 以這種方式建立你的艦隊可能被認爲是和平的……不祥之兆，大使。警惕這樣一支令人生畏的艦隊將如何被其他人，包括共和國在內，解讀吧。
+WARN_SKIRMISH_01           | [system]的小衝突是……麻煩的。我們是否應該將其解釋爲理智暫時的缺失嗎？或者有跡象表明更危險的事情可能很快就會發生？
+WARN_ATTACKED_01           | 這太離譜了！不能讓這樣的攻擊繼續下去！我警告你大使：不要輕易危害[attacker_empire]和共和國之間的和平。
+WARN_INVADED_01            | 大使，你侵佔[defender_race]領土是什麼意思！？你肯定不打算通過如此咄咄逼人的行爲來破壞我們的和平吧？
+WARN_ESPIONAGE_01          | 間諜，大使？爲了得到你想要的東西，談判不是更好嗎？我們會出於和諧共處的目的忽略這次錯誤，但下次我們可能不會那麼寬容……[framed]
+WARN_SABOTAGE_01           | 我做夢也沒想到[spy_empire]能夠進行如此……卑鄙的破壞活動。以和平的名義，我祈禱你不要再犯這個愚蠢的錯誤。[forced]
+WARN_BIOWEAPON_01          | 這是……聞所未聞的，大使。對平民目標使用生化武器，即使是一次也迫使我們重新考慮我們對你的看法！
+WARN_GENOCIDE_01           | 銀河系大合唱中的一個聲音永遠消失了，就這麼消失了。一個人能做出這種惡事……我怕我們到頭來不一定能和你和平共處。
+WARN_FINAL_WAR_01          | 銀河系在和諧的邊緣，而你卻頑固地選擇擋路。如果……移除[rebel_empire]是永恆和平的代價，那麼我們將盡我們所能。
+WARN_COUNCIL_VOTE_01       | [candidate_empire]只追求和平，以便所有人都能分享它帶來的繁榮。如果你希望你的人民擁有最好的……未來，你就不會在議會中再次投票反對共和國。
+WARN_OATHBREAKER_01        | 卑鄙無恥，大使。我們想知道您是否會像破壞協議一樣輕易破壞和平，如果您選擇這樣做，我們將做好準備。 [spiesCaught]
+WARN_ATTACKED_ALLY_01      | 停止你的這些攻擊，大使！你知道我們是[defender_race]的盟友。難道我們不能通過對話促成和平嗎？不要強迫我們所有人開戰。
+WARN_REBELLING_AGAINST_01  | 不！我不相信你們會把宇宙引向和平！我們對和平的執念強過你們，但你在逼迫我們放棄這種執念！
+PRAISE_COUNCIL_VOTE_01     | 我們在[voter_empire]的朋友從來沒有讓我們失望過！共和國感謝您今天在委員會中的做法，我們期待您有空時拜訪[candidate_home]，我們會隆重接待您。
+PRAISE_COUNCIL_VOTE_02     | 議會做出了明智的決定，但也許最明智的決定是您投給共和國的一票。我們承認您對和平的奉獻，並且只要這種奉獻繼續下去，我們就能享受彼此的友誼。
+PRAISE_COUNCIL_VOTE_03     | 我們知道你在議會中投票支持共和國。我們很驚訝，大使，我們可能低估了你們人民的智慧。
+
+PRAISE_ATTACKED_ENEMY_01   | 大使！你的幫助是最讓人感激的。我們將一起消除[defender_race]的威脅，並恢復這個銀河系迫切渴望的和平。
+PRAISE_ATTACKED_ENEMY_02   | 我們將[attacker_empire]的行爲視爲對我們實現和平理想的支持。請放心，一旦我們迫使[defender_race]投降，和平就可以恢復。
+PRAISE_ATTACKED_ENEMY_03   | 你的人民既暴力又無恥，所以你會如此輕易地加入戰爭也就不足爲奇了。儘管如此，您將武器轉向不爲和平而戰的那一方，這是值得肯定的。
+
+PRAISE_TRADE_01            | 與一個致力於和平的人交易是一種恩惠，與一個致力於和平的朋友交易確實是一種祝福。願我們的貿易協定和友誼，持續到銀河系的盡頭！
+PRAISE_TRADE_02            | 是不是很棒，大使？看看簡單的貿易能讓大家獲得多少收益！我們希望這將繼續成爲我們兩個種族的福音！
+PRAISE_REBELLING_WITH_01   | 我們[my_race_plural]一直相信戰爭永遠不是答案。然而，這個委員會向我們表明，我們錯了。開戰吧，大使，共和國站在你這邊。
+ 
+ACCEPT_TRADE_01            | 是的，大使，我們確實同意相互貿易是通向和平的最佳途徑。 每年[amt] BC，這很好，我們感謝您的慷慨解囊。
+RESPOND_IGNORE_THREAT_01   | 不要把我們的和平主義誤認爲軟弱！當然，你的威脅是出於非理性的憤怒，所以我們會原諒你這次的爆發。
+RESPOND_STOP_SPYING_01     | [my_race]間諜，你說什麼？這肯定是個誤會。請將我們的公民歸還給我們，以便我們能夠查明真相。所謂間諜活動是我們最不想做的事情，請放心。
+RESPOND_STOP_ATTACKING_01  | 願這支強大的艦隊阻止任何愚蠢的戰爭發動者，願我們就此撤回這支艦隊，以表明我們對和平的承諾。
+

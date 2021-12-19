@@ -1,12 +1,12 @@
 // all possible names
-name: Sakkra, Reptara, Saura, Raptora, Tyranna
+name: Ssslaura, Reptara, Saura, Raptora, Tyranna
 
 desc1: Aggressive Expansionists
 desc2: Increased Population Growth
 desc3: The zealots of the [race] Conclave strive to perfect the worlds they conquer.
 
 // possible home system names
-home: Sssla, Sssana, Sssihs, Sssha, Sssss, Hsssa
+home: Sssla, Repta, Saur, Raptor, Tyrann
 
 title:     Magister
 fulltitle: Prime Magister

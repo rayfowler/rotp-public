@@ -1,0 +1,22 @@
+// 第1次校對：2021.12.18
+// all possible names
+name: 梅科拉人, 梅卡娜人, 賽博人, 數碼人, 科技人
+
+desc1: 神經質的工業主義者
+desc2: 強大的工業自動化技術
+desc3: [race]相信通過科學技術可以實現完美和永生。
+
+// possible home system names
+home: 梅科隆星, 科羅森星, 卡庫隆星, 本德爾星, 極星
+
+title:     皇帝
+fulltitle: 最高仲裁者
+
+// possible leader names
+leader: CB-715, INT-986, MS-35, QX-537, TVC-15, TX-1138
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: 比特, 晶體管, 開關, 組件, 電路, 數碼, 邏輯  
+ship2: 處理器, 計算器, 計算機, 算法, 網絡, 微積分
+ship3: 發電機, 電池, 阿賈克斯, 龍捲風, 聯結點, 掠奪者, 德拉克馬
+ship4: 剋星, 毀滅者, 殲滅者,  入侵者,  海波龍, 穿透者, 折磨者

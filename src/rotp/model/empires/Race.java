@@ -21,7 +21,6 @@ import java.awt.image.BufferedImage;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -29,7 +28,6 @@ import rotp.model.empires.Leader.Objective;
 import rotp.model.empires.Leader.Personality;
 import rotp.model.planet.PlanetType;
 import rotp.model.ships.ShipDesign;
-import rotp.ui.UserPreferences;
 import rotp.util.Base;
 import rotp.util.ImageTransformer;
 import rotp.util.LabelManager;
@@ -617,9 +615,7 @@ public class Race implements Base, Serializable {
         diploOpacity = parseFloat(vals.get(3).trim());
     }
     public void parseRaceNames(String names, String langId) {
-        String raceKey = langId+"."+id;
-        String prefNames = UserPreferences.raceNames(raceKey, names);
         raceNames.clear();
-        raceNames.addAll(substrings(prefNames, ','));
+        raceNames.addAll(substrings(names, ','));
     }
 }

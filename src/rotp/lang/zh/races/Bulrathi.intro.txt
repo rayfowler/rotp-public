@@ -1,7 +1,9 @@
-The Bulrathi Empire
-The year is 14215...
+// 第1次校对：2021.12.14
 
-You sit upon the Throne of Might as the unopposed Grand Hierarch of the Bulrathi Empire. After a period of explosive technological growth under your wise direction, your people stand ready to follow whatever path you deem most prudent as their beloved philosopher-king. 
-Knowing that you are the one destined to guide your people into the cosmos to claim whatever waits to be discovered therein, you command your advisors to complete work on functional starships as soon as possible. 
-Your people have strength of both heart and body, and the technology developed to enhance their overwhelming physical prowess means they will easily overpower any feeble resistance they find in the depths of the galaxy.
-After fifteen years of rule, the time has come to propel the might of the Empire forward and conquer everything that lies in your path. Each world that you take will add to the size of your legions, the status of your station, the grandeur of your legacy, and the terror struck in the very souls of those who would dare to stand in your way...
+熊族帝国
+现在是熊历14215年
+
+你坐在权力的王座上，作为熊族帝国无人反对的大主教。在您明智的指导下，帝国经历了一段爆炸性的技术发展。作为人民心爱的哲人王，您的人民随时准备走向任何您认为正确的道路。
+您知道自己是命中注定会带领熊族走向宇宙的人，那里有等待你们去发现和占领的宝藏。为了实现这一切，您命令您的顾问尽快完成能够进行星际航行的飞船。
+您的人民有决心和身体的力量，新技术也增强了他们本就压倒性的身体优势，这意味着他们将轻易克服宇宙中任何微弱的抵抗。
+经过十五年的统治，是时候推动帝国的力量去征服您前进道路上的一切障碍了。您占领的每一个世界都会增加你的军团规模、您的地位、您的宏伟遗产，以及那些敢于阻挡您的人的恐惧……

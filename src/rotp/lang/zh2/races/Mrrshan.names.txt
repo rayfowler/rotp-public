@@ -1,0 +1,23 @@
+// 第1次校對：2021.12.18
+// all possible names
+name: 貓族, 貓科族, 喵族, 爪族, 貓爪族
+
+desc1: 冷酷的軍事家
+desc2: 頂級的射手
+desc3: [race]喜歡在擴張的過程裏蒐集戰利品。
+
+// possible home system names
+home: 菲利亞斯, 菲利亞娜, 米馬拉, 米里亞娜, 耶拉里亞
+
+title:     可汗
+fulltitle: 可汗
+
+// possible leader names
+leader: 賈薩那, 米亞瑪, 米拉娜, 普沙, 香德拉, 亞拉拉
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: 狼, 野性, 雪貂, 獾, 貓, 鼠, 三色貓
+ship2: 猞猁, 貓頭鷹, 奧西拉, 野貓, 獰貓, 孟加拉貓, 草原貓
+ship3: 黑豹, 豹, 戰貓, 獵豹, 山貓, 豹貓, 美洲虎
+ship4: 劍齒虎, 美洲獅, 老虎, 獅子, 美洲豹, 獅虎獸, 山獅
+

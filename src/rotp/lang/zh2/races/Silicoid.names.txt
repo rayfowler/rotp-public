@@ -1,0 +1,22 @@
+// 第1次校對：2021.12.18
+// all possible names
+name: 硅人, 火巖人, 賽德米德人, 花崗岩人, 岩漿人
+
+desc1: 排他的擴張主義者
+desc2: 無視惡劣環境
+desc3: 謎一樣的硅基生命[race]在宇宙中尋找着他們的宿敵。
+
+// possible home system names
+home: 克里斯隆, 吉歐德, 卡斯特, 英吉歐斯, 西里坎
+
+title:     皇帝
+fulltitle: 水晶皇帝
+
+// possible leader names
+leader: 卡納克斯, 克里圖斯, 吉歐德, 格拉尼德, 英吉歐斯, 塞德米
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: 沉積物, 卵石, 石頭, 岩石, 水晶, 礦物, 沙子
+ship2: 花崗岩, 大理石, 板岩, 石英, 浮石, 輝長岩, 黑曜石
+ship3: 岩漿, 熔岩, 長石, 流紋岩, 雲母, 玄武岩, 英安巖
+ship4: 鑽石, 藍寶石, 祖母綠, 紅寶石, 紫水晶, 黃玉, 石榴石

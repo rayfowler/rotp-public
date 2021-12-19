@@ -1,0 +1,104 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// 第1次校對：2021.12.14
+
+// Alkari specific dialogue
+
+CONTACT_HONORABLE          | [your_empire]的[your_nameTitle][your_name]，向您問好！[my_empire]的我們向您致以親切的問候。我們期待與您種族的誠懇交流。
+CONTACT_PACIFIST           | [your_empire]的[your_title]，向您致以最誠摯的問候。只要您不把戰火帶到我們的王國，我們雙方就能和睦地繁榮發展。
+CONTACT_ERRATIC            | 我是永恆的[my_empire]的外交官。按照本民族的習俗，我向您致以問候。你們被稱爲[your_race_plural]嗎？這真的……耐人尋味啊。
+
+//
+GREETING_01                | 向您問好，大使！今天王國能向您這位尊敬的盟友提供什麼服務嗎？
+GREETING_04                | 向您問好，大使！王國已經準備好聽取您的要求，但我們能多大程度上滿足您的要求，還有待觀察。
+GREETING_07                | 有話快說，大使！我們的習俗要求我們遵守適當的禮儀，但這不意味着我們會浪費時間滿足你的瑣屑要求。
+
+//
+DECLAREWAR_HATE_01         | 像你們這樣不講究禮節的種族，不配在王國統治的宇宙裏生存。大使，準備戰鬥吧！
+DECLAREWAR_HATE_02         | 你的粗魯和傲慢造成了這一切！將消息傳遞給你的[your_title]吧：戰爭正在向你們襲來！
+DECLAREWAR_HATE_03         | 大使，多麼無恥啊！[my_empire]寧願不復存在，也不願繼續與如此無恥的種族生存在一個宇宙！
+
+//
+DECLAREWAR_ERRATIC_01      | 大使，我們不能否認，與您這樣有趣的種族打交道是很愉快的。很遺憾，我們的關係必須結束了。
+DECLAREWAR_ERRATIC_02      | 大使，自從第一次見面以來，你們一直被我們種族當笑料。王國很想看看你們在戰爭裏是否也同樣有趣！
+DECLAREWAR_ERRATIC_03      | 萬歲，[your_empire]的大使！[my_empire]希望與你方強大的軍隊進行一場光榮的戰鬥，這會檢驗我們的實力。請準備好你的軍艦和部隊吧！
+
+//
+DECLAREWAR_MILITARY_01     | 王國必須繼續擴大其領土以供養我們的族羣。當我們找不到無人居住的世界時，我們會佔領較小帝國的世界。你的帝國比我們的小，所以你的世界將成爲我們的。
+DECLAREWAR_MILITARY_02     | 終於到了這個時候，大使！用一隻翅膀，王國將讓戰爭的陰影降臨在你們頭頂；用另一隻翅膀，王國將把你的世界捲入它的懷抱。
+DECLAREWAR_MILITARY_03     | 很遺憾，事情到了這個地步，大使。我們要麼佔領你們的行星以供己用，要麼就在嘗試中滅亡。我們別無選擇，準備開戰吧！
+
+
+//
+DECLAREWAR_ALLIANCE_01     | [other_empire]的外交官告訴我們，他們正在與你們種族交戰。 [my_empire]有義務在戰爭時期協助我們的盟友。你會很快後悔你們的開戰，大使。
+DECLAREWAR_ALLIANCE_02     | 盟友呼喚援助，王國就會響應！末日即將降臨在你身上，大使：在聯合艦隊面前，你們抵抗不了多久！
+DECLAREWAR_ALLIANCE_03     | 你選擇以這種方式對我們的盟友宣戰，這讓我們很惱火。根據最神聖的法律，我們必須協助他們與您作戰！請迷途知返，以免爲時太晚！
+//
+
+
+DECLAREWAR_SPYING_01       | 與你的人民保持友好的關係本是件令人高興的事情，大使。 但你們會對王國做出瞭如此不光彩的行爲，這迫使我們重新考慮雙方的關係。
+DECLAREWAR_SPYING_02       | 大使先生，這樣的惡行不會逍遙法外！那些對我們採取間諜行動的人將接受我們憤怒的打擊！
+DECLAREWAR_SPYING_03       | 大使！你們怎麼敢對王國做出如此令人髮指的行爲？我們將不惜一切代價伸張正義！準備戰鬥吧！
+
+
+//
+DECLAREWAR_ATTACK_01       | 哼！真是魯莽的決定，大使！但如果你想要戰爭，王國就會帶給你戰爭！
+DECLAREWAR_ATTACK_02       | 開始了，大使！如果[my_race]人能在猩紅千年無盡的戰爭中倖存下來，我們就能輕鬆地在與你們的戰爭中倖存下來！
+DECLAREWAR_ATTACK_03       | 我們應該預料到像您這樣粗魯的種族會做出這樣的惡行，大使！不要認爲王國會毫無抵抗地向你投降！
+//
+DECLAREWAR_OPPORTUNITY_01  | 如您所見，[my_empire]在宇宙擴張事業中取得了巨大成功。不幸的是，大使，我們的下一次成功必須以犧牲你的帝國爲代價。
+DECLAREWAR_ASSASSIN_01     | 這是怎樣的瘋狂啊？你們竟然會做出刺殺大使這種駭人聽聞的惡行？王國不會再忍受像你這樣令人厭惡的種族了！
+
+
+OFFER_PEACE_01             | 不能讓猩紅千年的故事重演了，大使！我們請求您簽署這份和平條約，爲[your_race]和[my_race]帶來榮譽，避免更多的流血犧牲。
+OFFER_TRADE_01             | 像我們這樣的文明種族能夠在誠實的合作中互相幫助。[my_empire]希望與[your_empire]達成每年[amt] BC 的貿易協議。你有何想法呢，大使？
+
+OFFER_PACT_01              | 王國對您的人民在外交事務中的表現感到滿意。爲了表明我們多麼重視我們的關係，我們希望簽署一項互不侵犯條約，以確保我們都不會……誤解彼此的意圖。
+OFFER_ALLIANCE_01          | 您的行爲贏得了王國的尊重！尖塔王已經下令必須立即在[your_race]和[my_race]之間建立聯盟！我們只等待您的簽署！
+
+WARN_TRESPASSING_01        | [your_race]艦隊在[system]星系中像在他們自己的領土一樣四處航行，這非常不合適。爲了大家的利益，大使，您必須立即糾正這一點。
+WARN_EXPANSION_01          | 隨心所欲地隨意擴張是對鄰居的極大不尊重，大使！我強烈建議您不要再繼續不尊重王國了。
+
+WARN_BUILDUP_01            | 你認爲我們是瞎子嗎，大使？！我們看到你們的艦隊不斷擴大。請停止擴軍，以證明你們沒有歹意，否則我們可能不得不先發制人。
+WARN_SKIRMISH_01           | 我們很清楚[system]發生了小規模衝突，大使！這一次王國會忽視你的行爲。爲什麼？我看不出有什麼理由回答像你們這樣的人提出的問題！
+WARN_ATTACKED_01           | 如此大膽的攻擊，你對我們完全缺乏尊重，大使！你真的很幸運，尖塔王不會屈尊譴責你的無禮。下次可能就沒那麼幸運了！
+WARN_INVADED_01            | 你要奪走不屬於你的東西，大使？！不要再激怒我們。如果這意味着擺脫你的愚蠢，我們很樂意擺脫那個毫無價值的星球！
+
+WARN_ESPIONAGE_01          | 下流的種族爲了達到目的而訴諸間諜活動，對此我們並不感到驚訝。記住，大使：[my_race]的眼睛是如此敏銳，以至於沒有什麼能逃過他們的視線。[framed]
+WARN_SABOTAGE_01           | 太噁心了，大使！在黑暗中偷偷摸摸，像黑夜的惡魔一樣進行破壞！？但是你既愚蠢又粗魯：你摧毀的建築物還不夠重要，不值得我們做出迴應！ [forced]
+WARN_BIOWEAPON_01          | 恥辱！恥辱！你們對那些手無寸鐵的人使用了最難以啓齒的武器！大使，惡名將永遠伴隨你們！
+WARN_GENOCIDE_01           | 雖然我同意[victim_race]是一羣可憐的害蟲，但王國強烈反對進行種族滅絕。我們想知道，大使，您的人民是否也會對更文明種族這麼做呢？
+WARN_FINAL_WAR_01          | 大使，你們的選擇並不正義。你需要知道：既然你已經決定反抗民主選出的宇宙領袖，榮譽要求我們不惜一切代價阻止你。
+WARN_COUNCIL_VOTE_01       | [your_empire]的傑出大使簡直太好了！你真的覺得我們不知道你在議會中的欺騙行爲嗎？你應該爲你的人民擔心，大使：尖塔之王非常生氣。
+WARN_OATHBREAKER_01        | 多麼可恥！你知道我們對榮譽的重視，但你們爲了滿足自己的慾望而公然違背諾言？！王國將牢記這次侮辱，大使，我們遲早會以牙還牙！ [spiesCaught]
+WARN_ATTACKED_ALLY_01      | 很麻煩，大使。你們和[defender_empire]鬧了這樣的矛盾。你不可能匹敵我們聯合起來的力量，大使：王國敦促你重新考慮你的行爲。
+WARN_REBELLING_AGAINST_01  | 你以爲我們忘記了你是多麼可恥嗎？我們是否必須與您或整個銀河系戰鬥並不重要：只要尖塔之王還活着，你就永遠不會坐在委員會的王座上。
+ 
+PRAISE_COUNCIL_VOTE_01     | [your_empire]受人尊敬的大使！您在這次委員會上的支持讓我們感激，假以時日我們會回報您的支持。
+PRAISE_COUNCIL_VOTE_02     | 向您問好，大使。您在聚集於此的人羣中對我們表示了支持，這是對我們的尊重。我敢肯定，我一向尖塔王彙報，他就會希望更多地瞭解這樣一位尊貴的人。
+PRAISE_COUNCIL_VOTE_03     | 您是出於尊重或榮譽感支持王國的吧，大使？如果未來還有機會，您或許會繼續向我們證明您的想法。
+PRAISE_ATTACKED_ENEMY_01   | 啊!我們尊敬的朋友和盟友在這個戰爭時期帶來了好消息！來吧，大使。讓我們的人民以戰友的身份一起對抗這些可怕的[defender_race]！
+
+PRAISE_ATTACKED_ENEMY_02   | 這場戰爭很快就會結束，大使。王國能輕易打敗這些惡劣的[defender_race]野獸。但是我們一起呢？我們將從宇宙中永遠抹去他們種族的存在！
+PRAISE_ATTACKED_ENEMY_03   | 我敢肯定您是出於私利而行動，就像我敢肯定您不知道“榮譽”一詞的含義一樣！我們允許你幫助我們對抗 [defender_race]，即使只是爲了防止我們出現更多傷亡！
+PRAISE_TRADE_01            | 大使先生，您的人民如此誠實地從事貿易，這讓我非常寬慰。王國尊重您和您的人民，並將如尊重我們的貿易協議一樣重視我們的友誼。
+PRAISE_TRADE_02            | 大使，有很多種方法證明一個人的榮譽。誠實地經商是其中一種最好的方式，這也是王國在這個宇宙裏最重視的。
+
+PRAISE_REBELLING_WITH_01   | 委員會上的那些野蠻人低估了我們，大使！我們將一起向他們展示“致命失誤”一詞的真正含義！
+
+ACCEPT_TRADE_01            | 王國總是樂於與[your_empire]打交道。每年[amt] BC 的貿易額相當可觀，謝謝。
+RESPOND_IGNORE_THREAT_01   | 你敢挑釁[my_empire]？在它們不再有趣之前，把你可笑的笑話帶到別處吧。
+RESPOND_STOP_SPYING_01     | 在尋找間諜上，您的眼睛似乎和我們一樣敏銳。我們的間諜活動就到此爲止了。
+RESPOND_STOP_ATTACKING_01  | 你看到我們王國的力量了嗎？只要你們記得我們的力量，我們就不會再用這些艦隊來麻煩你們。

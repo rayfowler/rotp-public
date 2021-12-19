@@ -1,0 +1,98 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+// 第1次校對：2021.12.15
+
+// Darlok specific dialogue
+
+CONTACT_AGGRESSIVE         | 我們今天向你致意，宇宙虛空的任性公民。給你一個警告：不要妨礙我們的搜索，否則你可能會爲這次致命的相遇而後悔。
+CONTACT_RUTHLESS           | 我們向你們致意，外部空間的居民。你最好盡你所能確保我們的共存是……互利的。
+CONTACT_ERRATIC            | 星海中的偶遇。提防深淵的黑暗吧，因爲你會發現它隱藏着許多看不見的東西……
+//
+GREETING_01                | 你已經證明自己對我們的事業很有價值。我們將盡我們所能爲你提供幫助。
+GREETING_04                | 說。
+GREETING_07                | 當你請求我們的幫助時，你不知道自己表現出的厚顏無恥。我們覺得這很有趣。
+//
+DECLAREWAR_HATE_01         | 我們在追求目標的過程中容忍了很多，但我們很慶幸我們不需要再容忍你的存在，[your_race]。
+DECLAREWAR_HATE_02         | 無恥的壞蛋！我們不會再忍受你的愚蠢了！無論你的軍隊是否已經準備好，你都會遇到同樣的結局！
+DECLAREWAR_HATE_03         | 惡棍！我們的種族在這裏繁榮發展，不是爲了與你們的同類分享銀河系。做好準備！因爲即使我們戰鬥到最後一人，我們也會把你趕出這個空間。
+DECLAREWAR_ERRATIC_01      | 我們的人常說，戰場上的刀和黑暗中的刀一樣容易殺人。你們很快就會知道原因的。
+DECLAREWAR_ERRATIC_02      | 你有沒有凝視過星星，想知道在星光之間的黑暗中隱藏着什麼嗎？你有沒有聽過這個古老的智慧：小心那些你所期待的東西。
+DECLAREWAR_ERRATIC_03      | 在充滿不確定性的時代，你可能會發現最不起眼的生物仍然能夠給你致命一擊。
+
+DECLAREWAR_MILITARY_01     | 我們還沒有找到我們最想要的東西，所以我們要從你那裏拿走我們還沒有探索的星球。要麼投降，要麼就在抵抗中滅亡。
+DECLAREWAR_MILITARY_02     | 有可能我們尋求的答案隱藏在你們帝國的一個星球上，所以我們將佔領它們。這不是在針對你們，[your_race]。特殊時期需要特殊行動。
+DECLAREWAR_MILITARY_03     | 如果我們無法解開謎團，我們就沒有繼續生存下去的意義了！如果答案在你們的一個星球中，我們將付出任何代價去佔領它！
+DECLAREWAR_ALLIANCE_01     | 傻子！你與我們的盟友爲敵，因此也與我們爲敵！我們會迅速打擊你：我們不想在你的錯誤和愚蠢上浪費時間！
+DECLAREWAR_ALLIANCE_02     | 我們很少直接插手別人的事情。但是，當幫助我們的盟友向我們尋求幫助時，我們會盡我們所能幫助他們。
+DECLAREWAR_ALLIANCE_03     | 我們很高興看到你們的帝國相互爭鬥，但我們知道你們給我們帶來的威脅。我們很樂意幫助 [defender_race]消滅你。
+DECLAREWAR_SPYING_01       | 有趣的是，你會對那些掌握了祕密的人採取這樣的行動。而對你們間諜互動失敗的懲罰，可就沒那麼有趣了。
+DECLAREWAR_SPYING_02       | 令人欽佩，試圖在機密問題上佔我們便宜。我想知道，你的軍事實力會和你的勇敢一樣值得稱道嗎？
+DECLAREWAR_SPYING_03       | 你相信這種笨拙的笨手笨腳會逃脫我們警惕的目光嗎？如果你傲慢到認爲你的間諜不會被注意到，那麼你就傲慢到會被我們在戰鬥中碾壓。
+DECLAREWAR_ATTACK_01       | 無禮！如此公然攻擊我們，你只能是想徹底毀滅吧！
+DECLAREWAR_ATTACK_02       | 難以忍受的暴徒！我們很快就會發現，你進攻我們的信心是否伴隨着與之匹配的力量！
+DECLAREWAR_ATTACK_03       | 天災！惡棍！在我們偉大的工作完成之前，我們不會屈服於你或其他任何人！爲我們的報復做好準備！
+DECLAREWAR_OPPORTUNITY_01  | 政治只是機會的遊戲。我們發現，最能利用機會的人是能取得勝利的人。一直如此，也將永遠如此。
+DECLAREWAR_ASSASSIN_01     | 太離譜了，竟然殺死一位手無寸鐵的大使！我們將奪走你們的祕密，讓你們人民的屍體像風中的灰燼一樣散落！
+
+OFFER_PEACE_01             | 對於一場戰爭來說，死傷那麼多人已經夠多了。我們兩國人民都不能如此肆無忌憚地浪費生命，爲了我們雙方的未來，我們提議立即結束這場衝突。
+
+OFFER_TRADE_01             | 雖然直接方法有時可能是最好的，但它們並不是帝國推進其目標的唯一方式。是時候進行誠實的貿易了，我們相信現在是時候了。我們每年從……[amt] BC 開始如何？
+
+OFFER_PACT_01              | 對於那些選擇探索它的人來說，這片無限廣闊的空間蘊藏着未知的危險。如非必要，我們不要增加它的危險。我們兩國之間的互不侵犯條約將減少銀河系的擴張風險。
+OFFER_ALLIANCE_01          | 有些人看着我們，他們的恐懼矇蔽了他們的判斷。我們不相信你們也跟這些人一樣。讓我們正式建立[my_race]和[your_race]之間的聯盟，並利用其他人的恐懼來爲我們兩個帝國服務吧。
+
+WARN_TRESPASSING_01        | 我們現在不希望對你發動戰爭，但你在[system]星球的存在很難不被解釋爲非法侵入。立即離開，證明我們的擔憂是沒必要的。
+WARN_EXPANSION_01          | 我們不會對你擴大領土的行爲視而不見。我們也不能袖手旁觀，讓你偷走每一個星球。你已經被警告了，[your_empire]的大使。
+
+WARN_BUILDUP_01            | 你打算用這麼強大的艦隊，讓周圍的人膽戰心驚嗎？注意，如果你繼續這樣擴張軍事力量，你可能會發現其他帝國的反應不像你預想的那樣……通融。
+WARN_SKIRMISH_01           | 關於[system]星球的小衝突，你有什麼想說的？我們希望你是把我們誤認爲另一個帝國了，否則後果可能很嚴重，非常嚴重。
+WARN_ATTACKED_01           | 你竟敢對我們的人民發動攻擊，大使？！算你走運，我們的注意力在別處：下次你的大膽不會無人迴應！
+WARN_INVADED_01            | 你進入我們的地盤，就好像它是你的一樣。這是一個大膽的策略，但要知道，我們預見到了你的到來，並允許你以這種方式行動……暫時地。
+
+WARN_ESPIONAGE_01          | 你拙劣的間諜活動在我們看來很幽默。這次我們允許你的間諜回到你身邊，但要知道，如果我們發現了更多的間諜，就一點也不幽默了。[framed]
+
+WARN_SABOTAGE_01           | 所以[spy_empire]想要搞破壞？你的行動太微不足道了，無法讓我們有報復的衝動，但如果你再試一次，我們可能會選擇把你當作害蟲來對待！ [forced]
+
+WARN_BIOWEAPON_01          | 一個醜陋的東西，那個武器。更醜陋的是選擇將其用於無助的平民。他們痛苦的尖叫將在太空中迴盪幾個世紀，我們將哼唱副歌，它將詛咒你卑鄙的名字。
+WARN_GENOCIDE_01           | 我的人民並非不知道種族滅絕的威脅，但看到它如此隨意地發生……讓我們感到厭惡，我懷疑我們永遠不會原諒這件事情，大使。
+WARN_FINAL_WAR_01          | 隨着宇宙出現和平的曙光，所有參與其中的人都將獲得他們所尋求的福音。如果你[rebel_race_plural]威脅和平，你就威脅到我們的最終目標，我們將盡一切努力將你毀滅。
+
+WARN_COUNCIL_VOTE_01       | 並不是我們對微妙的政治策略缺乏鑑賞力，只是當這些策略對我們不利時，我們會變得不高興。注意了，大使：我們可能不會再給你一次機會。
+WARN_OATHBREAKER_01        | 無恥的懦夫！唉，你如此厚顏無恥地證明了你是應該受到敵意的人！ [spiesCaught]
+WARN_ATTACKED_ALLY_01      | 我們只警告你一次，大使。停止對[defender_race_plural]的侵略：他們與我們站在一起，我們與他們站在一起。
+WARN_REBELLING_AGAINST_01  | 你敢從我們合法的主人手中篡奪議會的最高席位？大使，你的人民會爲這一天感到遺憾。
+
+//
+PRAISE_COUNCIL_VOTE_01     | 我們的事業需要很多支持，大使，我們永遠感激[voter_empire]，你們在委員會中值得我們的依靠。請放心，您下次來拜訪我的人時，我們不會忘記這一點。
+
+PRAISE_COUNCIL_VOTE_02     | 大使，您今天對我們充滿信心，真是太好了。要知道，我們會記住那些幫助我們實現最終目標的人。
+PRAISE_COUNCIL_VOTE_03     | 你們的人對我們表示支持當然是別有用心的。我們仍然對你和你的同類最警惕，但我們也很感激。
+
+PRAISE_ATTACKED_ENEMY_01   | 我們知道你會在這場戰爭中幫助我們，大使！以我們共同的決心，即使是[defender_race]也無法長期對抗我們！
+PRAISE_ATTACKED_ENEMY_02   | 很高興看到其他人加入對抗可鄙的[defender_race]。讓我們共同努力，儘快結束這一切，以便我們可以繼續追求更重要的目標。
+PRAISE_ATTACKED_ENEMY_03   | 如果您想贏得我人民的欽佩，您會發現這項任務幾乎是不可能的。但是，攻擊[defender_race]仍然是令人欽佩的第一步。
+
+PRAISE_TRADE_01            | 貿易這麼簡單的事情，竟然能爲雙方打開這麼多扇門，這難道不令人驚奇嗎？我們非常滿意，我們希望您也滿意。
+PRAISE_TRADE_02            | 事實證明，我們持續的誠實交易對我們兩國人民都是一種持續的好處。大使，我們希望繼續以這種方式相互依存。
+
+PRAISE_REBELLING_WITH_01   | 正如我們所知道的那樣，議會中的傻瓜做出了錯誤的選擇。你反對他們是對的，我們加入你的叛亂也是對的。
+
+ACCEPT_TRADE_01            | 你通過這個貿易協定極大地幫助了我們的探索，[your_race]。每年[amt] BC 對我們的幫助超出您的想象。
+
+RESPOND_IGNORE_THREAT_01   | 小心你所威脅的人。你可能會發現隱藏在陰影中的反應最令人不快。
+
+RESPOND_STOP_SPYING_01     | 你是怎麼抓到我們的間諜的？沒關係，馬上還給我們，我們從此停止活動。
+
+RESPOND_STOP_ATTACKING_01  | 我們現在將召回我們的艦隊，但請記住，最危險的力量是那些看不見的力量。
+

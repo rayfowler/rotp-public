@@ -1,21 +1,22 @@
+// 第1次校对：2021.12.18
 // all possible names
-name: Silicoid, Igneoid, Sedimoid, Granitoid, Magmoid
+name: 硅人, 火岩人, 赛德米德人, 花岗岩人, 岩浆人
 
 desc1: 排他的扩张主义者
 desc2: 无视恶劣环境
 desc3: 谜一样的硅基生命[race]在宇宙中寻找着他们的宿敌。
 
 // possible home system names
-home: Cryslon, Geode, Karst, Igneous, Silican
+home: 克里斯隆, 吉欧德, 卡斯特, 英吉欧斯, 西里坎
 
-title:     Emperor
-fulltitle: Crystal Emperor
+title:     皇帝
+fulltitle: 水晶皇帝
 
 // possible leader names
-leader: Carnax, Crystous, Geode, Granid, Igneous, Sedimin
+leader: 卡纳克斯, 克里图斯, 吉欧德, 格拉尼德, 英吉欧斯, 塞德米
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
-ship1: Sediment, Pebble, Stone, Rock, Crystal, Mineral, Sand
-ship2: Granite, Marble, Slate, Quartz, Pumice, Gabbro, Obsidian
-ship3: Magma, Lava, Feldspar, Rhyolite, Mica, Basalt, Dacite
-ship4: Diamond, Sapphire, Emerald, Ruby, Amethyst, Topaz, Garnet
+ship1: 沉积物, 卵石, 石头, 岩石, 水晶, 矿物, 沙子
+ship2: 花岗岩, 大理石, 板岩, 石英, 浮石, 辉长岩, 黑曜石
+ship3: 岩浆, 熔岩, 长石, 流纹岩, 云母, 玄武岩, 英安岩
+ship4: 钻石, 蓝宝石, 祖母绿, 红宝石, 紫水晶, 黄玉, 石榴石

@@ -1,22 +1,23 @@
+// 第1次校对：2021.12.18
 // all possible names
-name: Mrrshan, Prrshan, Mewshan, Clawshan, Hisshan
+name: 猫族, 猫科族, 喵族, 爪族, 猫爪族
 
 desc1: 冷酷的军事家
 desc2: 顶级的射手
-desc3: [race]喜欢在扩张的进程里搜集战利品。
+desc3: [race]喜欢在扩张的过程里搜集战利品。
 
 // possible home system names
-home: Fierias, Fierina, Miamara, Miriana, Yailaria
+home: 菲利亚斯, 菲利亚娜, 米马拉, 米里亚娜, 耶拉里亚
 
-title:     Khan
-fulltitle: Khan
+title:     可汗
+fulltitle: 可汗
 
 // possible leader names
-leader: Jasana, Miamar, Mirana, Prrsha, Shandra, Yalara
+leader: 贾萨那, 米亚玛, 米拉娜, 普沙, 香德拉, 亚拉拉
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
-ship1: Wolverine, Feral, Ferret, Badger, Feline, Mouser, Calico
-ship2: Lynx, Catamount, Oncilla, Wildcat, Caracal, Margay, Serval
-ship3: Panther, Leopard, Warcat, Cheetah, Bobcat, Ocelot, Jaguarundi
-ship4: Sabretooth, Puma, Tiger, Lion, Jaguar, Liger, Cougar
+ship1: 狼, 野性, 雪貂, 獾, 猫, 鼠, 三色猫
+ship2: 猞猁, 猫头鹰, 奥西拉, 野猫, 狞猫, 孟加拉猫, 草原猫
+ship3: 黑豹, 豹, 战猫, 猎豹, 山猫, 豹猫, 美洲虎
+ship4: 剑齿虎, 美洲狮, 老虎, 狮子, 美洲豹, 狮虎兽, 山狮
 

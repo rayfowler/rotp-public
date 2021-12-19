@@ -1,6 +1,9 @@
-The Alkari Sovereignty
-The year is IC 299...
-The Alkari enjoy an unprecedented era of peace in the wake of what they now call the "Crimson Millennium." United under the crown of the Spire King, the 33 Great Lords maintain the order within their respective territories as serfs replenish their populations now free from the yoke of constant war.
-However, an unforeseen obstacle has arisen with this period of prosperity: with no wars being waged to enable them to win glory, the peasantry can no longer gain honor and prestige for themselves to increase their rank in society. 
-This extreme social immobility has led to rumblings of civil unrest, threatening to send these peaceful times into an upheaval. The aristocracy, tense over the looming threat of another prolonged world-spanning conflict, continuously petition you to act immediately to prevent the return of dire times. 
-As the Spire King, you must now lead your people in a grand conquest of the stars. Doing so will not only provide them with limitless opportunity to win glory for themselves and for the crown, but will expand the reach of your sovereignty to worlds beyond imagining...
+// 第1次校对：2021.12.14
+翼族王国
+
+现在是IC299年
+
+在结束了被称为“猩红千年”的动乱年代后，翼族人民享受着前所未有的和平时代。在尖塔王的领导下，33个大领主维持着他们各自领地的秩序，人民不再受到战争的伤害，开始生生不息的繁衍。
+但是，一个未曾预料到的困难开始在这个和平时期出现：没有了战争，底层人民失去了获取荣耀和军功的机会，也失去了提升自己阶级的可能。
+社会阶层的固化引发了人民的不满和动荡，承平日久的盛世受到了威胁。贵族们担心颠覆秩序的冲突会发生，他们请求你立刻行动，防止动荡年代的回归。
+作为尖塔王，你必须带领人民开始一场伟大的星际征服之旅。这不仅会让他们获得无数建功立业的机会，还能够将你王国的领土扩张到遥远的边疆……

@@ -1,0 +1,23 @@
+// 第1次校對：2021.12.15
+// all possible names
+name: 幽靈族, 薩洛克斯, 斯派洛克, 沙德洛克斯, 納茲洛克
+
+desc1: 好鬥的外交家
+desc2: 優秀的間諜
+desc3: [race]是超自然的神祕幽靈，他們來自另一個空間。
+
+
+// possible home system names
+home: 納星, 魔都星, 冥王星, 深淵星, 地獄星
+title:     皇帝
+fulltitle: 皇帝
+
+// possible leader names
+leader: 達昆, 莫凡, 納爾齊納, 納茲古爾, 沙多, 西特拉
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: 霧, 汽, 火花, 幕, 預兆, 以太, 熒
+ship2: 幻象, 影子, 夢境, 幻影, 倒影, 夢, 縈繞
+ship3: 幽靈, 鬼魂, 冥魂, 幽鬼, 鬼怪, 陰魂, 歷鬼
+ship4: 夢魘, 噩夢, 恐怖, 恐懼, 還魂, 死神, 驚懼
+

@@ -1,5 +1,6 @@
+// 第1次校对：2021.12.18
 // all possible names
-name: Klackon, Klackant, Klockan, Arthropon, Coleopteron
+name: 蚁族, 克拉肯族, 克洛克族, 节肢族, 鞘翅族
 
 desc1: 排他的工业主义者
 desc2: 蜂巢思维和高效的工人产能
@@ -7,17 +8,17 @@ desc3: 任劳任怨的[race]是只有一个中枢大脑的种族，外族跟他�
 
 
 // possible home system names
-home: Kholdan, Kholdant, Khaldon, Klokdon, Khakdon
+home: 科尔丹, 科洛丹, 卡尔顿, 克洛登, 卡克顿
 
-title:     The
-fulltitle: The
+title:     大
+fulltitle: 大
 
 // possible leader names
-leader: Ixitixl, Kaxal, Kikitik, Klaquan, K'kalak, Xantak
+leader: 伊西提克斯, 卡萨尔, 基基蒂克, 克拉昆, 卡拉克, 尚达克
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
-ship1: Bumblebee, Needle, Mantis, Beetle, Drone, Spider, Mandible
-ship2: Hornet, Poison, Venom, Dragonfly, Stinger, Scarab, Wasp
-ship3: Tarantula, Viper, Cobra, Asp, Snake, Mamba, Scorpion
-ship4: King Cobra, Black Widow, Death Wyn, Pit Viper, Naga, Black Adder, Black Mamba
+ship1: 蜂, 针, 螳螂, 甲虫, 无虫机, 蜘蛛, 颚
+ship2: 大黄蜂, 毒, 毒液, 蜻蜓, 刺, 圣甲虫, 马蜂
+ship3: 狼蛛, 毒蛇, 眼镜蛇, 蝮蛇, 蛇, 曼巴, 蝎子
+ship4: 眼镜王蛇, 黑寡妇, 死亡之王, 剧毒之蛇, 那伽之神, 黑蝰, 黑曼巴
 

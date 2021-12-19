@@ -1,0 +1,96 @@
+// race-specific variables (must start with _)
+_empire                           | 蟻族巢穴, 克拉肯巢穴, 克洛克巢穴, 節肢族巢穴, 鞘翅族巢穴
+_race                             | 蟻族, 克拉肯族, 克洛克族, 節肢族, 鞘翅族
+_race_plural                      | 蟻族, 克拉肯族, 克洛克族, 節肢族, 鞘翅族
+_title                            | 統治者
+_nameTitle                        |
+
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Advisor text
+MAIN_ADVISOR_TITLE                | [player_name]
+MAIN_ADVISOR_BUTTON_OK            | 好的
+MAIN_ADVISOR_SCOUT                | 我的飛船終於完工了。我必須使用我的偵察機爲我的殖民飛船尋找新的世界。
+MAIN_ADVISOR_TRANSPORT            | 我已經在這個新世界建立了自己的地盤。我必須從我的家鄉派出更多蟻族來擴展它。這裏沒有新的生命，所以我的探索還在繼續。
+MAIN_ADVISOR_DIPLOMACY            | 終於迎來新的生命！通過聲音和手勢進行交流是一種多麼奇怪的生命形式。在採取下一步行動之前，我必須研究有關他們的外交和情報信息。
+MAIN_ADVISOR_SHIP_ENGINE          | 我繼續改進我的航天器引擎。我必須重新審視我的船舶設計了，將它整合到我的艦隊中。
+
+MAIN_ADVISOR_RALLY_POINTS         | 他們爲什麼要攻擊我？我不明白。我必須爲我的船隻選擇一個集結點來保護自己，同時我得試圖理解爲什麼會發生這種情況。
+MAIN_ADVISOR_MISSILE_BASES        | 我現在發現了，並不是所有生命都學會了合作的好處。我必須用導彈基地武裝我的外部世界，以確保我領地的安全。
+MAIN_ADVISOR_SHIP_WEAPON          | 我繼續前進，一旦我將它們集成到我的艦船設計中，我的新武器技術就會賦予我更多的力量。
+MAIN_ADVISOR_COUNCIL              | 激動！許多物種的會議很快就會舉行。那裏會聚集哪些生命體？如果我讓認識的種族都對我產生好感，也許他們會更主動地把我給介紹給新的種族。
+MAIN_ADVISOR_REBELLION            | 發生了什麼？我在%1失去了對自己的控制。無論如何，我需要親自去到那裏，並找回自己的控制。
+
+MAIN_ADVISOR_RESIST_COUNCIL       | 不可能！另一個生命被選中來統治這些愚蠢的傻瓜，而我的智慧卻被忽視了！不管怎樣：我會立即將他們全部消滅！
+MAIN_ADVISOR_COUNCIL_RESISTED     | 爲什麼這些傻瓜堅持做讓人討厭的事情？議會是我的，銀河系是我的，現在他們將知道他們確實在我的統治下！
+
+MAIN_SCOUT_TITLE                  | 我發現了一個新的星球。
+MAIN_COLONIZE_TITLE               | 我正在環繞%1飛行，這是一個沒有被殖民的星球。
+MAIN_COLONIZE_ANIMATION_TITLE     | 在%1年，我建立了一個新的殖民地。
+MAIN_ALERT_SPY_CAPTURED           | 我逮住了一個來自[alien_empire]的間諜，他坦白了他們的%2活動。
+MAIN_ALERT_TRANSPORTS_KILLED      | 我想要抵達%1的嘗試被在那裏防禦的[alien_race]軍隊阻止了。
+MAIN_ALERT_INVADERS_KILLED        | %2個[alien_race]軍隊想要入侵%1，他們被我徹底毀滅了。
+
+MAIN_BOMBARD_TITLE                | 我正在環繞敵人[alien_race]的殖民地。
+TECH_RESEARCH_COMPUTER            | 我必須選擇下一個需要研究的計算科學。
+TECH_RESEARCH_CONSTRUCTION        | 我必須選擇下一個需要研究的製造技術。
+TECH_RESEARCH_FORCE_FIELD         | 我必須選擇下一個需要研究的力場技術。
+TECH_RESEARCH_PLANETOLOGY         | 我必須選擇下一個需要研究的行星學技術。
+TECH_RESEARCH_PROPULSION          | 我必須選擇下一個需要研究的動力學技術。
+TECH_RESEARCH_WEAPON              | 我必須選擇下一個需要研究的武器技術。
+TECH_DISCOVERY_TITLE              | 我獲得了一個%1突破。
+TECH_SCOUTED_TITLE                | 在探索%1的遺蹟時，我發現了一個新的科技。
+TECH_STOLEN_TITLE                 | 我成功潛入了位於%2的%1研究所。
+TECH_TRADED_TITLE                 | 我從[alien_race]學會了科技。
+TECH_PLUNDERED_TITLE              | 在掠奪%1的遺蹟時，我發現了一個新技術。
+TECH_ALLOCATE_SHIELD              | 我是否應該提高各個殖民地的防禦開支佔比，以建造新的護盾呢？
+TECH_ALLOCATE_MISSILE_BASES       | 我是否應該提高各個殖民地的防禦開支佔比，以升級導彈基地呢？
+TECH_ALLOCATE_FACTORIES           | 我是否應該提高各個殖民地的工業開支佔比，以升級工廠呢？
+TECH_ALLOCATE_CLEAN_WASTE         | 我是否應該減少各個殖民地的生態開支佔比，只保持各個星球的乾淨呢？
+TECH_ALLOCATE_ENRICH_SOIL         | 我是否應該提高普通環境殖民地的生態開支佔比，來開始行星改造呢？
+TECH_ALLOCATE_ATMOSPHERE          | 我是否應該提高惡劣環境殖民地的生態開支佔比，以開始行星的生態改造呢？
+TECH_ALLOCATE_TERRAFORM           | 我是否應該提高各個殖民地的生態開支佔比，以開始行星的生態改造呢？
+
+NOTICE_ESPIONAGE_TITLE            | 我已經潛入了[alien_race]的導彈基地。
+NOTICE_ESPIONAGE_FRAME_TITLE      | 我成功把盜竊行動栽贓給了另一個種族。
+
+SHIP_COMBAT_TITLE_DESC            | 我碰到另一個充滿敵意的[alien_race]艦隊。
+
+SABOTAGE_FACTORIES_RESULT         | 我毀滅了%1個工廠。
+SABOTAGE_BASES_RESULT             | 我毀滅了%1個導彈基地。
+SABOTAGE_REBELS_RESULT            | 我教唆了%1個叛徒。
+SABOTAGE_REBELS_TOTAL             | 我教唆了%1個叛徒，不滿意程度爲%2。
+SABOTAGE_REBELS_REVOLT            | 我成功製造了一場起義。
+
+COUNCIL_CAST_PROMPT               | 我需要選擇(%1票)……
+
+// text for endings... '#' represents a paragraph break
+// variables: %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 is special race-specific text described below
+GAME_OVER_MILITARY_LOSS2          | 你遭遇了可怕的命運。#在你的未知之旅開始時，你進入太空，希望找到另一個和你一樣獨特的生命形式。不幸的是，直到你臨終的那一天，你的夢想仍未實現。你發現的其他智能生命形式不僅與你完全不同，而且他們還充斥着暴力和冷漠。那種暴力摧毀了你的希望，從你們第一次見面的那一刻起，你所有的世界就開始掌握在那些恨你的人手中。#從你的家園到你最遠的殖民地，你的每一個身體都被殺掉，冰冷冷地倒在地上。當你最後的肉體失去了眼中最後的光線時，你意識到宇宙即將失去一個獨一無二的生命形態……
+GAME_OVER_MILITARY_WIN2           | 您的探索已經結束了，暫時地。#帶着巨大的期待，你夢想着太空深處的某個地方找到另一個像你一樣的意識。儘管你遇到了許多高級的智慧形態，但他們都不具備你身上獨一無二的特質。更糟糕的是，出於無法理解的恐懼，他們攻擊了你，招致了你和你無限軀體的可怕的迴應。你懷着沉重的心情將他們擊倒，並發現自己將成爲宇宙中唯一的智慧生命。#然而，你並不是一無所獲。儘管這些具備獨立個體意識的外星種族並不符合你的研究目的，你也很快意識到自己還有一整個宇宙等待你的探索。接下來你要做的，就是蔓延到宇宙的每一個角落，並繼續你的求索……
+GAME_OVER_MILITARY_ALLIANCE_WIN2  | 您的探索已經結束了，暫時地。#你對你被迫採取的行動感到無盡的悲傷。你想在這個星系裏尋找親友，但你卻碰到了一羣無知的生物，他們猛烈地抨擊你，因爲你與他們完全不同。當他們的話語變成暴力行爲時，你只能攻擊他們以捍衛自己的利益。你一直希望他們能看到自己的錯誤，並接受你這種獨特的生命形式。你的希望破滅了，因爲那些對你使用暴力的人都永遠地沉默了。#但慶幸吧，儘管你無法找到與自己相似的生命形態，但在旅程結束之前你建立了值得信賴的盟友關係。奇怪的是，他們以友善的方式對待你，就像你友善地對待他們。如果那種想知道自己在宇宙這種是否獨一無二的渴望再次襲來，你可以隨時前往其他星系。但現在，你可以放鬆下來，享受已經找到的陪伴，並享受它將帶來的一切好處。
+GAME_OVER_COUNCIL_LOSS2           | 您的探索已經結束了，暫時地。#這不是你在星海中尋找親友的旅程所期待的結局。雖然你在尋找的過程中遇到了許多奇怪而奇妙的種族，但你也遇到了許多卑鄙的、脾氣暴躁的文明。唉，你遇到的最令人難以忍受的種族現在是新共和國的領導。你懷疑這位新領袖是否會善待你，而你的恐懼來源於過去你與這位外星領袖的交流。#你所希望的只是找到另一個和你一樣獨特的生命。現在你只能臣服於更強大的權力。你只能祈禱[leader_name]與你相安無事，因爲如果他們不這樣做，整個銀河系的力量都會與你爲敵……
+GAME_OVER_COUNCIL_ALLIANCE_WIN2   | 您的探索已經結束了，暫時地。#蟻族的新時代即將開始，你可信賴的朋友[leader_name]現在準備帶領新共和國邁向輝煌的未來。儘管在許多方面與你不同，但你的朋友對你充滿興趣和同理心。你信任他們，你相信可以在新聯盟的工作完成後繼續你的探索。如此不同的物種要實現和諧共處需要很多時間，但你知道%8會看到它。#你只能對這個結果感到滿足。無論如何，你從來都不在意錯綜複雜的政治權術，並且很高興你的朋友永遠從你的肩上卸下這樣的負擔。你所希望的只是在這個銀河系的某個地方找到一個像你一樣的靈魂。也許，有一天，你很可能會找到……
+GAME_OVER_REBELLION_LOSS2         | 你遭遇了可怕的命運。#在你旅途的起點，你是孤獨的，在你旅途的終點，你還是孤獨的。從遇見一個陌生的文明，到遇見另一個陌生的文明，你始終無法找到你求索的目標。直到那些比你更有遠見的種族組建了新共和國。當[leader_name]成爲新共和國的領導時，你感到你的使命會提前結束，於是你選擇與這種命運抗爭，而不是溫順地屈服於它。這不是你在旅途中犯下的第一個錯誤，但不幸的是，它被證明是你的最後一個錯誤。#現在，當%8整個銀河系，你默默地思考着並意識到，至少在死亡時，你的憂慮結束了。如果你能找到另一個像你一樣的生命，或者至少了解你是誰的人，也許你們會一起拿起武器，而你的命運會隨之改變……
+GAME_OVER_REBELLION_WIN2          | 你的探索已經結束了，暫時地。#銀河系事與願違地給你展示了它最壞的一面，還強迫你去接受它。你無法忍受排外主義者[leader_name]的領導，於是你拿起武器，捍衛你自己和你的追求，免受他們可怕的統治。你知道那些被二流暴君操縱的人，很可能會與你作對，但沒有什麼能阻止你的追求。所以，你帶着悲傷的心情粉碎了所有反對你的人。#如果這些種族中有任何一個沒有屈服於對未知事物的恐懼和仇恨，也許他們本可以與你和平共處。但這並不是一個完全的壞事，因爲至少你會有一個悲劇可以與你想要找到的生命分享，如果你能找到這個生命的話……
+GAME_OVER_REBEL_ALLIANCE_WIN2     | 你的探索已經結束了，暫時地。#第一次星際委員會之後，你就知道這一切會發生。儘管你已經警告了銀河系中的其他帝國，卑鄙的[leader_name]還是成功掌管了新共和國，他們卑鄙的仇外情緒將威脅整個銀河系。你勇敢地與他們作戰，銀河系中的許多人決定與你作對，但你最終仍然成功地捍衛了自己的利益。#也許最開心的是，你在這場最後的戰爭中獲得了朋友們的支持。他們聰明地看到了危險，也富有同情心地決定幫助你。你很高興沒有獨自參加這場戰鬥。現在，你們可以真正實現和平共處，並一起分享這個銀河系的恩賜。也許有一天，你會離開銀河系，進入更深的深空，去尋找你找了很久的那個生命……
+GAME_OVER_COUNCIL_WIN2            | 你的探索以意想不到的方式結束了。#自從你離開自己古老的家園去尋找像你一樣的意識以來，你已經發現了很多。雖然你還沒有實現那個夢想，但你從遇到的人那裏獲得的知識和友誼已經證明是一種甜蜜的恩賜。你的盟友不僅克服了對你的獨特性的恐懼，而且還選舉你爲新共和國的領導者。一個你從未想過的未來擺在你面前，你會以十足的耐心和信任帶領你的朋友走向未來#也許有一天你會再次開始你的探索，尋找一個像你一樣的生命。不過，就目前而言，你還有很多工作要做，你的探索需要等到工作結束之後才能進行。當這些工作完成時，你可能會發現你最初的衝動大大減少了。畢竟，在你漫長的一生中，你第一次不再孤單。
+GAME_OVER_COUNCIL_MILITARY_WIN2   | 你的搜索意外結束了。#現在，你的戰鬥終於結束了。在擔任新共和國之主的職位後，你設法將這個星系中所有更高形式的生命都帶到了友誼的桌子旁，直到一場倉促準備的叛亂形成。由於仇外心理和對你的恐懼，那些試圖推翻你的人既無法理解你力量的深度，也無法理解你的盟友在保衛共和國時的憤怒。他們被粉碎了。和平將像水一樣流過銀河系，流入屬於你的無數世界的海洋。#當叛軍的領土被你和你的盟友瓜分時，你的思緒短暫地轉向很久以前的過去。誠然，你從未找到自己想找到的東西，而且在多個層面上來說你都是孤獨的。但你很高興地意識到，有了你在旅途中結識的盟友，你將永遠不再孤單。
+
+GAME_OVER_COUNCIL_MILITARY_LOSS2  | 你遭遇了可怕的命運。#作爲新共和國的主人，你想把銀河系帶向和平，這無可指摘。你想要把如此不同的種族團結到一起，這也無可指摘。但是儘管你盡了最大的努力，針對你的叛亂仍然被煽動了起來。你的王座被推翻，新共和國被粉碎了。你的盟友早已死去，也許在最後時刻，他們會後悔選擇你來當領導者，以至於他們的王國不得不在眼前化爲灰燼。#你最後的身體在他們爲自己挖掘的藏身之處中等待着最後的命運。沒有食物和水，他們的時間即將到頭了。如果你能找到一個像你一樣的生命，一個真正理解你的生命，並堅韌地與你並肩作戰，事情會有不同的結局嗎？也許吧。哎，然而，你永遠不能知道了……
+
+// This text is the %8 variable in some of the game over text... when this race wins the game
+GAME_OVER_ALLIANCE_WIN3           | 蟻族的孤注一擲
+GAME_OVER_REBELLION_LOSS3         | 蟻族沒有靈魂的大軍控制了

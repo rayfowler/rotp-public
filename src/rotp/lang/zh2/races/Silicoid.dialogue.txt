@@ -1,0 +1,84 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+// 第1次校對：2021.12.18
+
+
+// Silicoid specific dialogue
+
+CONTACT_XENOPHOBIC         | [your_race]的[your_name]，[my_empire]已經決定承認你的存在。當我們有需要時，我們會與你聯繫。
+CONTACT_RUTHLESS           | 帝國的眼睛看着你，[your_race]。爲了你，也爲了你珍視的事物，祈禱[my_title]會喜歡你吧。
+CONTACT_AGGRESSIVE         | 卑微的[your_race]，我們是[my_race_plural]。我們的領地廣闊，我們的力量無人能匹敵。我警告你，不要惹我們生氣，否則你會招致致命的報復。
+//
+GREETING_01                | 你好大使，說出你對[my_title]的請求。如果它有價值，我們會考慮暫停我們的聖戰來協助你。
+GREETING_04                | 有話快說，大使：[my_title]不會爲瑣屑的事情暫停我們的聖戰。
+GREETING_07                | 卑微的[your_race]!干擾我們的聖戰會招致我們的怒火！
+//
+DECLAREWAR_HATE_01         | 現在比以往任何時候都更加清楚，你們就是我們找尋了許久的克拉隆人的後代！我們將非常高興地將你的同類從這個銀河系中移除，就像移除一羣禍害一樣！
+DECLAREWAR_HATE_02         | 傳說中的時刻終於到來了！做好準備，克拉隆人的後代！因爲不管誰贏，我們的聖戰都將結束！
+DECLAREWAR_HATE_03         | 我們終於找到了你，克拉隆人的後代！現在我們的戰鬥即將開始！你的力量無關緊要：迪亞莫杜斯的力量會指引我們渡過難關！
+DECLAREWAR_ERRATIC_01      | 自從我們第一次見面以來，[my_title]就一直在思考你是否是我們最討厭的敵人。在我們結束與您的戰鬥後，我們將繼續這個思考。
+DECLAREWAR_ERRATIC_02      | 我們作爲鄰居的時光已經非常友好了。但即使你們只有很小的概率是克拉隆人的後代，也足以讓我們宣戰。
+DECLAREWAR_ERRATIC_03      | 我們不願意接受你們任何釋放惡意的可能。我們要麼從銀河系中清除你，要麼就死去。
+DECLAREWAR_MILITARY_01     | 你竟敢用這種方式侵犯我們的領土？好吧。你會很快知道我們的憤怒的，[your_race]，你也會很快知道你的錯誤有多嚴重。
+DECLAREWAR_MILITARY_02     | 記住，可悲的[your_race]：以神的名義，這個宇宙的所有世界都屬於[my_empire]，我們會以狂暴的憤怒掃蕩這些世界
+DECLAREWAR_MILITARY_03     | 我們不會允許你在已經或將要屬於我們的世界上再擁有一塊石頭！這將是你們軍隊的力量與我們信念的力量的對決。讓我們看看誰會勝出！
+DECLAREWAR_ALLIANCE_01     | 向帝國的盟友宣戰是一個不明智的決定。祈求你從你的衆神那裏得到憐憫吧，因爲你在我們身上將得不到任何憐憫。
+DECLAREWAR_ALLIANCE_02     | 我們的盟友通知我們，你已選擇與他們開戰：你這樣做也是向我們宣戰。做好準備吧！
+DECLAREWAR_ALLIANCE_03     | 我們不關心[other_race]的命運，但我們會利用這個機會讓你們從銀河系消失，以便我們繼續我們的聖戰。
+DECLAREWAR_SPYING_01       | 可憐的[your_race]！在這一天，你將瞭解竊取帝國祕密是個愚蠢的行爲！
+DECLAREWAR_SPYING_02       | 你這麼想知道我們的祕密嗎？那麼我要告訴你最重要的一點：我們不會原諒，我們不會忘記。備戰吧！
+DECLAREWAR_SPYING_03       | 你覺得你可以不計後果地竊取我們的祕密嗎？你很快就會明白這樣一個傲慢的決定是多麼愚蠢。
+DECLAREWAR_ATTACK_01       | 你終於暴露了自己，克拉隆之子！除了我們最討厭的敵人的後代，沒有人會愚蠢到如此大膽地挑戰我們！準備最後的戰鬥吧！
+DECLAREWAR_ATTACK_02       | 我們早就懷疑你是我們遠古敵人的後代！通過這次進攻，你已經證實了這一事實！終於，我們的預言要應驗了！
+DECLAREWAR_ATTACK_03       | 惡棍！天災！在我們最黑暗的時刻，你對我們發動了這樣的攻擊？！既然你已經是我們的宿敵了，我們的實力再差也不會防止我們消滅你們！
+DECLAREWAR_OPPORTUNITY_01  | 當我們的聖戰在銀河系中繼續時，我們必須抓住每一個機會來增加我們的優勢。現在是時候了，消滅你們就是一個機會。再見了，可憐的[your_race]。
+DECLAREWAR_ASSASSIN_01     | 你怎麼敢殺帝國的大使！？只有克拉隆的後代才能以如此邪惡的方式行事！準備你的艦隊以備戰吧！
+OFFER_PEACE_01             | 他們說，要了解一個人，你必須先與他們戰鬥。我們打了一架，我們看到你不是野獸克拉隆的後代。我們現在會和你和平相處，這樣我們就可以把注意力集中在那些應該感受到我們憤怒的人身上了。
+OFFER_TRADE_01             | 探索太空是一項代價高昂的冒險。帝國希望開放貿易 每年[amt] BC 的貿易額將爲我們的聖戰提供資金，併爲您的人民積累更多財富。您說呢？
+OFFER_PACT_01              | 我們只想摧毀克拉隆人和他的後代。只要我們相信你們不是克拉隆人，我們就對你沒有任何疑慮。爲證明我們的意圖，我提議簽署互不侵犯條約。是否選擇簽署，是您的決定。
+OFFER_ALLIANCE_01          | 在我們爲淨化銀河系而進行的聖戰中，我們遇到了許多奇怪而邪惡的生物。在我們遇到的那些人中，我們相信你是我們可憐的敵人的可能性最小。與我們結盟吧，[your_race]，並贏得[my_title]的祝福！
+
+WARN_TRESPASSING_01        | 你不請自來，玷污了[system]的神聖空間！立即撤退，否則我們會用導彈將你驅逐出去！
+WARN_EXPANSION_01          | 你覺得銀河系是你一個人的嗎？立即停止這種魯莽的擴張，否則你將面臨整個帝國的憤怒！
+WARN_BUILDUP_01            | 只有帝國才能擁有銀河系中最強大的艦隊，因爲只有帝國才能對惡人做出正確的判決。[your_race]若挑戰此規則，後果自負。
+WARN_SKIRMISH_01           | 你這是什麼意思，大使？僅僅是一場小衝突，我們只會在這一次視而不見：不要讓這種事情再次發生！
+WARN_ATTACKED_01           | 瘋狂！竟然敢進攻帝國！？[defender_title]以它的智慧下令停止我們的報復，以便他可以看到你接下來會做什麼。你真的是我們長期尋找的敵人嗎？！
+WARN_INVADED_01            | 從帝國竊取領土，這肯定是[attacker_race]絕望的行動。[system]對我們來說毫無意義，但繼續奪取屬於帝國的東西只會意味着你的厄運！
+WARN_ESPIONAGE_01          | 竊取我們機密的決定是一個嚴重的決策錯誤，大使。我勸你小心：如果你的嘗試不那麼可笑，它會贏得更可怕的反應！ [framed]
+WARN_SABOTAGE_01           | 這是什麼套路？破壞是隻有懦夫和惡棍纔會做的事情！畢竟，你是在表明自己是我們預言的宿敵嗎？ [victim_title]將做出決定……[forced]
+
+WARN_BIOWEAPON_01          | 不可思議！肉體對抗常規武器已經足夠弱小了，對抗生物武器更是毫無勝算。而且還針對平民？！毫無疑問，克拉隆人的黑血在你們的血脈中流淌！
+WARN_GENOCIDE_01           | 告訴我們你爲什麼對[victim_race]種族做出屠殺行動。謹慎選擇你的措辭：你的回答決定了我們兩個種族的未來！
+WARN_FINAL_WAR_01          | 只有結盟，才能完成我們的聖戰！我們作爲團結的人民站在一起，而你們卻選擇了混亂和戰爭。預言成爲現實：你確實是克拉隆人的後代！
+WARN_COUNCIL_VOTE_01       | 如果這個委員會被解散並且讓帝國單獨控制銀河系事務，那肯定會更好。那樣的話，當你站出來反對我們時，你就能贏得我們的敵意！
+WARN_OATHBREAKER_01        | 多麼令人不安啊，違背諾言就是違背信任。毫無疑問，預言中的宿敵就會這樣做！ [spiesCaught]
+
+WARN_ATTACKED_ALLY_01      | [defender_race]享受着作爲帝國盟友的榮耀！請注意我們對您攻擊的警告：我向您保證，您只會收到一次！
+WARN_REBELLING_AGAINST_01  | 我們的討伐不會被耽誤！不會被議會的傻瓜們耽擱，也不會被你耽擱！站起來，大使：一場聖戰的風暴即將降臨在你身上！
+
+PRAISE_COUNCIL_VOTE_01     | 我們值得信賴的盟友再次贏得了我們的讚譽！有你向委員會講道理，我們的聖戰將不會受阻！你今天贏得了帝國的感激，[voter_race]。
+
+PRAISE_COUNCIL_VOTE_02     | 你的種族還沒有證明自己是無辜的，大使。繼續在委員會中支持我們的事業，並證明自己是我們聖戰的盟友吧。
+PRAISE_COUNCIL_VOTE_03     | 不要認爲在議會中爲帝國投一票就可以消除我們的懷疑！在我們的疑慮得到緩解之前，你們還有更多的東西需要證明！
+PRAISE_ATTACKED_ENEMY_01   | 我們還不知道[defender_race]是否是克拉隆最邪惡的孩子，但看到我們的盟友如此欣然加入我們，這鼓舞了我們的精神！向前！爲了正義！爲了帝國！
+PRAISE_ATTACKED_ENEMY_02   | 你想加入我們對抗[defender_race]的戰鬥嗎？那就去吧，向我們展示你在戰場上的表現。如果獲勝，你們會在帝國中獲得更高的地位，但失敗只會帶來死亡！
+PRAISE_ATTACKED_ENEMY_03   | 你肯定不認爲我們愚蠢到僅僅因爲你加入我們與[defender_race]的鬥爭就相信你是清白的吧？預言中的宿敵會做的是掩蓋他的身份。現在走吧！向我們展示你是如何戰鬥的，我們將判斷你是否無辜！
+
+PRAISE_TRADE_01            | 帝國祝你一切順利，聖戰的朋友！我們的貿易協定爲我們尋找克拉隆後裔的戰鬥提供了資金。帝國希望你們的人民也同樣受益。
+PRAISE_TRADE_02            | 雖然我們不能說我們對你毫無懷疑，但我們可以說，通過貿易直接資助我們的聖戰增強了我們對你的信心。讓它繼續吧，大使！
+PRAISE_REBELLING_WITH_01   | 我們的敵人被發現了！克拉隆人的可怕後裔篡奪了銀河王座！繼續戰鬥吧：[my_race]和[your_race]的艦隊將聯合起來，從銀河系中清除這些污穢！
+ACCEPT_TRADE_01            | 帝國接受你的提議，[your_race]。我們將每年與您交易[amt] BC，以便我們可以進一步推進我們的聖戰。
+RESPOND_IGNORE_THREAT_01   | 我們的聖戰不會被你的無用威脅嚇倒。去打擾其他人吧，否則準備接受我們的怒火！
+
+RESPOND_STOP_SPYING_01     | 我們只是想確定克拉隆人骯髒的後代的身份。我們很滿意你們的人民不是我們的死敵。
+RESPOND_STOP_ATTACKING_01  | 我們的艦隊尋找帝國的敵人。如果你們不是我們的敵人，他們就沒有必要呆在那裏。

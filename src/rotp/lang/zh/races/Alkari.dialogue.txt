@@ -12,83 +12,93 @@
 // or distributing any material covered under this license.
 //
 
+// 第1次校对：2021.12.14
+
 // Alkari specific dialogue
 
-CONTACT_HONORABLE          | Hail to you, oh [your_nameTitle] [your_name] of the [your_empire]! We of the [my_empire] extend cordial greetings, and look forward to honorable dealings with your kind. 
-CONTACT_PACIFIST           | Sincerest greetings to you, [your_title] of the [your_empire]. Bring not war to the doorstep of our Sovereignty, and we shall both prosper in each other's amity. 
-CONTACT_ERRATIC            | I am an ambassador for the long-lived [my_empire]. My people extend greetings as is our custom. Your kind are known as [your_race_plural]? How very... intriguing.
+CONTACT_HONORABLE          | [your_empire]的[your_nameTitle][your_name]，向您问好！[my_empire]的我们向您致以亲切的问候。我们期待与您种族的诚恳交流。
+CONTACT_PACIFIST           | [your_empire]的[your_title]，向您致以最诚挚的问候。只要您不把战火带到我们的王国，我们双方就能和睦地繁荣发展。
+CONTACT_ERRATIC            | 我是永恒的[my_empire]的外交官。按照本民族的习俗，我向您致以问候。你们被称为[your_race_plural]吗？这真的……耐人寻味啊。
 
 //
-GREETING_01                | Hail to you, ambassador! What service might the Sovereignty provide for such a venerated ally on this day?
-GREETING_04                | I greet you, ambassador. The Sovereignty is prepared to hear your request, but how far we will go to accommodate it remains to be seen...
-GREETING_07                | Speak quickly, ambassador! We are required by our laws to observe all proper decorum, but that does not mean we will waste our time fulfilling your trivial demands!
+GREETING_01                | 向您问好，大使！今天王国能向您这位尊敬的盟友提供什么服务吗？
+GREETING_04                | 向您问好，大使！王国已经准备好听取您的要求，但我们能多大程度上满足您的要求，还有待观察。
+GREETING_07                | 有话快说，大使！我们的习俗要求我们遵守适当的礼仪，但这不意味着我们会浪费时间满足你的琐屑要求。
 
 //
-DECLAREWAR_HATE_01         | A race such as yours, which has no concern for propriety and politesse, does not belong in a galaxy ruled by the Sovereignty, ambassador! Prepare for battle!
-DECLAREWAR_HATE_02         | Your crassness and arrogance have brought this about! Deliver this message to your [your_title]: War is now upon you!
-DECLAREWAR_HATE_03         | Such vulgarity! The [my_empire] would rather cease to exist than continue to share the cosmos with such a boorish people, ambassador!
+DECLAREWAR_HATE_01         | 像你们这样不讲究礼节的种族，不配在王国统治的宇宙里生存。大使，准备战斗吧！
+DECLAREWAR_HATE_02         | 你的粗鲁和傲慢造成了这一切！将消息传递给你的[your_title]吧：战争正在向你们袭来！
+DECLAREWAR_HATE_03         | 大使，多么无耻啊！[my_empire]宁愿不复存在，也不愿继续与如此无耻的种族生存在一个宇宙！
+
 //
-DECLAREWAR_ERRATIC_01      | Ambassador, we cannot deny that it has been pleasant to deal with as intriguing a race as yours. We regret that now those dealings must now come to an end.
-DECLAREWAR_ERRATIC_02      | You have continued to amuse us since our people first met. The Sovereignty is eager to see if you will prove just as amusing during a time of war, ambassador!
-DECLAREWAR_ERRATIC_03      | Hail, ambassador of the [your_empire]! The [my_empire] wishes to test itself in honorable combat against your considerable strength. Prepare your fleets and your people for war!
+DECLAREWAR_ERRATIC_01      | 大使，我们不能否认，与您这样有趣的种族打交道是很愉快的。很遗憾，我们的关系必须结束了。
+DECLAREWAR_ERRATIC_02      | 大使，自从第一次见面以来，你们一直被我们种族当笑料。王国很想看看你们在战争里是否也同样有趣！
+DECLAREWAR_ERRATIC_03      | 万岁，[your_empire]的大使！[my_empire]希望与你方强大的军队进行一场光荣的战斗，这会检验我们的实力。请准备好你的军舰和部队吧！
+
 //
-DECLAREWAR_MILITARY_01     | The Sovereignty must continue to grow its territory to provide for our flocks. When we cannot find uninhabited worlds, we take the worlds of lesser empires. Your empire is lesser than ours, and so your worlds will now become ours.
-DECLAREWAR_MILITARY_02     | The time has come at last, ambassador! With one wing, the Sovereignty will spread the shadow of war above you, and with the other it shall sweep your worlds into its fold.
-DECLAREWAR_MILITARY_03     | It is... regrettable for things to have come to this, ambassador. We must attain your planets for our own use or perish in the attempt. We have no choice, prepare for war!
-//
-DECLAREWAR_ALLIANCE_01     | Diplomats of the [other_empire] have informed us that they are at war with your people. The [my_empire] is honor-bound to assist our allies in times of war: a fact that you will soon regret, ambassador. 
-DECLAREWAR_ALLIANCE_02     | Our ally calls for aid, and the Sovereignty answers! Your end is upon you, ambassador: you cannot stand against our combined fleets for long!
-DECLAREWAR_ALLIANCE_03     | It vexes us that you have chosen to wage war against one of our allies this way. By our most sacred laws, we must now assist them in the fight against you! Please, turn back from this path before it is too late for us all!
-//
-DECLAREWAR_SPYING_01       | We were content to maintain amiable relations with your people, ambassador. That you would engage in such dishonorable acts against the crown has forced us to reconsider.
-DECLAREWAR_SPYING_02       | Such an outrage will not go unpunished, ambassador! Those who would act in secrecy against us will be brought to heel under our wrath!
-DECLAREWAR_SPYING_03       | Ambassador! How dare your people commit such heinous acts against the Sovereignty?! We will have justice for this at any cost! Prepare for war!
-//
-DECLAREWAR_ATTACK_01       | Hmph! Such a foolhardy decision, ambassador! But if war is what you desire, then war is what the Sovereignty will bring to you!
-DECLAREWAR_ATTACK_02       | So it begins, ambassador! If the [my_race] people could survive the endless wars of the Crimson Millennium, we shall easily survive a war against your kind!
-DECLAREWAR_ATTACK_03       | We should have expected this kind of vulgarity from an uncouth race such as yours, ambassador! Do not think that the Sovereignty will yield itself to you uncontested!
-//
-DECLAREWAR_OPPORTUNITY_01  | As you can see, we of the [my_empire] have managed a great deal of success in our space-faring ventures. Unfortunately, ambassador, our needs dictate that our next success must come at the expense of your empire. 
-DECLAREWAR_ASSASSIN_01     | What crassness is this? You would commit so monstrous an act as slaying an ambassador in cold blood? The Sovereignty will not suffer so loathsome a race as yours to exist any longer!
+DECLAREWAR_MILITARY_01     | 王国必须继续扩大其领土以供养我们的族群。当我们找不到无人居住的世界时，我们会占领较小帝国的世界。你的帝国比我们的小，所以你的世界将成为我们的。
+DECLAREWAR_MILITARY_02     | 终于到了这个时候，大使！用一只翅膀，王国将让战争的阴影降临在你们头顶；用另一只翅膀，王国将把你的世界卷入它的怀抱。
+DECLAREWAR_MILITARY_03     | 很遗憾，事情到了这个地步，大使。我们要么占领你们的行星以供己用，要么就在尝试中灭亡。我们别无选择，准备开战吧！
 
 
-OFFER_PEACE_01             | The story of the Crimson Millennium cannot be allowed to repeat, ambassador! We request that you bring honor to [your_race] and [my_race] alike by signing this peace treaty to prevent any further bloodshed!
-OFFER_TRADE_01             | Surely civilized races such as ours are capable of aiding one another in honorable cooperation. The [my_empire] wishes a trade agreement with the [your_empire] set at [amt] BC, each year. What is your response, ambassador?
-OFFER_PACT_01              | The Sovereignty is pleased with how your people present themselves in diplomatic affairs. To show how much we value our relationship, we wish to sign a non-aggression pact, ensuring that neither of us falls prey to... misinterpreting each other's intentions.
-OFFER_ALLIANCE_01          | Your actions have earned you much esteem with the Sovereignty, ambassador! The Spire King has decreed an alliance between [your_race] and [my_race] must be made at once! We await only your signature!
+//
+DECLAREWAR_ALLIANCE_01     | [other_empire]的外交官告诉我们，他们正在与你们种族交战。 [my_empire]有义务在战争时期协助我们的盟友。你会很快后悔你们的开战，大使。
+DECLAREWAR_ALLIANCE_02     | 盟友呼唤援助，王国就会响应！末日即将降临在你身上，大使：在联合舰队面前，你们抵抗不了多久！
+DECLAREWAR_ALLIANCE_03     | 你选择以这种方式对我们的盟友宣战，这让我们很恼火。根据最神圣的法律，我们必须协助他们与您作战！请迷途知返，以免为时太晚！
+//
 
-WARN_TRESPASSING_01        | It is highly improper for [your_race] fleets to trounce around in the [system] system as if it was their own domain. It is in the best interests of everyone, ambassador, that you rectify this immediately. 
-WARN_EXPANSION_01          | To expand unchecked wherever you wish shows a great deal of disrespect to your neighbors, ambassador! I strongly advise you not to continue that disrespect towards the Sovereignty any longer. 
-WARN_BUILDUP_01            | Do you think us blind, ambassador?! We see your fleets continuing to increase in size and strength. Show us you mean no harm by quashing this buildup, or you may indeed earn a preemptive response!
-WARN_SKIRMISH_01           | We know full well about the skirmish at [system], ambassador! The Sovereignty will overlook your actions this once. Why? I see no reason to answer such a question from the likes of you! 
-WARN_ATTACKED_01           | Such a bold attack stems only from a complete lack of respect, ambassador! You are fortunate indeed that the Spire King does not deign to reprimand your insolence. You may not be as fortunate next time! 
-WARN_INVADED_01            | So you seek to take that which does not belong to you, ambassador?! Tempt our wrath no more: we would gladly be rid of that worthless planet if it means being rid of your stupidity! 
-WARN_ESPIONAGE_01          | Hmfhmfhmf, it does not surprise us that so scurrilous a race would resort to espionage in order to achieve their goals. Remember, ambassador: the eyes of the [my_race] are so sharp that nothing escapes their gaze. [framed]
-WARN_SABOTAGE_01           | Absolutely disgusting, ambassador! To slink in darkness and commit sabotage like fiends in the night!? But you are as stupid as you are crass: the buildings you destroyed were not important enough to warrant a response! [forced]
-WARN_BIOWEAPON_01          | Dishonor! Dishonor! You have used the most unspeakable type of weapon against those who cannot so much as raise a shield to protect themselves! Your well-earned infamy will follow you to the end, ambassador! 
-WARN_GENOCIDE_01           | While I do agree that the [victim_race] were a miserable horde of churlish vermin, the Sovereignty strongly opposes committing genocide. We wonder, ambassador, if your people are capable of repeating these actions with more... civilized races?
-WARN_FINAL_WAR_01          | There is no virtue in this course you have chosen, ambassador. Make no mistake: now that you have decided to stand against the duly elected leader of the galaxy, we are honor bound to do everything we can to stop you! 
-WARN_COUNCIL_VOTE_01       | So much for the illustrious ambassador of the [your_empire]! Did you truly believe we would not learn of your deception in council? You should fear for your people, ambassador: the Spire King will be most displeased. 
-WARN_OATHBREAKER_01        | How scandalous! You know the esteem we place upon honor, yet you so openly break your word merely to satisfy your own desires?! The Sovereignty will remember this insult forever, ambassador, and will surely repay it in kind! [spiesCaught]
-WARN_ATTACKED_ALLY_01      | It is troublesome, ambassador, that your people and the [defender_empire] have chosen to bicker so. You cannot hope to match our combined might, ambassador: the Sovereignty urges you to reconsider your actions.
-WARN_REBELLING_AGAINST_01  | Did you think we had forgotten how dishonorable you have proven to be? It matters not whether we must fight you or the entire galaxy: you will never sit on the throne of the council so long as the Spire King lives! 
+
+DECLAREWAR_SPYING_01       | 与你的人民保持友好的关系本是件令人高兴的事情，大使。 但你们会对王国做出了如此不光彩的行为，这迫使我们重新考虑双方的关系。
+DECLAREWAR_SPYING_02       | 大使先生，这样的恶行不会逍遥法外！那些对我们采取间谍行动的人将接受我们愤怒的打击！
+DECLAREWAR_SPYING_03       | 大使！你们怎么敢对王国做出如此令人发指的行为？我们将不惜一切代价伸张正义！准备战斗吧！
+
+
+//
+DECLAREWAR_ATTACK_01       | 哼！真是鲁莽的决定，大使！但如果你想要战争，王国就会带给你战争！
+DECLAREWAR_ATTACK_02       | 开始了，大使！如果[my_race]人能在猩红千年无尽的战争中幸存下来，我们就能轻松地在与你们的战争中幸存下来！
+DECLAREWAR_ATTACK_03       | 我们应该预料到像您这样粗鲁的种族会做出这样的恶行，大使！不要认为王国会毫无抵抗地向你投降！
+//
+DECLAREWAR_OPPORTUNITY_01  | 如您所见，[my_empire]在宇宙扩张事业中取得了巨大成功。不幸的是，大使，我们的下一次成功必须以牺牲你的帝国为代价。
+DECLAREWAR_ASSASSIN_01     | 这是怎样的疯狂啊？你们竟然会做出刺杀大使这种骇人听闻的恶行？王国不会再忍受像你这样令人厌恶的种族了！
+
+
+OFFER_PEACE_01             | 不能让猩红千年的故事重演了，大使！我们请求您签署这份和平条约，为[your_race]和[my_race]带来荣誉，避免更多的流血牺牲。
+OFFER_TRADE_01             | 像我们这样的文明种族能够在诚实的合作中互相帮助。[my_empire]希望与[your_empire]达成每年[amt] BC 的贸易协议。你有何想法呢，大使？
+
+OFFER_PACT_01              | 王国对您的人民在外交事务中的表现感到满意。为了表明我们多么重视我们的关系，我们希望签署一项互不侵犯条约，以确保我们都不会……误解彼此的意图。
+OFFER_ALLIANCE_01          | 您的行为赢得了王国的尊重！尖塔王已经下令必须立即在[your_race]和[my_race]之间建立联盟！我们只等待您的签署！
+
+WARN_TRESPASSING_01        | [your_race]舰队在[system]星系中像在他们自己的领土一样四处航行，这非常不合适。为了大家的利益，大使，您必须立即纠正这一点。
+WARN_EXPANSION_01          | 随心所欲地随意扩张是对邻居的极大不尊重，大使！我强烈建议您不要再继续不尊重王国了。
+
+WARN_BUILDUP_01            | 你认为我们是瞎子吗，大使？！我们看到你们的舰队不断扩大。请停止扩军，以证明你们没有歹意，否则我们可能不得不先发制人。
+WARN_SKIRMISH_01           | 我们很清楚[system]发生了小规模冲突，大使！这一次王国会忽视你的行为。为什么？我看不出有什么理由回答像你们这样的人提出的问题！
+WARN_ATTACKED_01           | 如此大胆的攻击，你对我们完全缺乏尊重，大使！你真的很幸运，尖塔王不会屈尊谴责你的无礼。下次可能就没那么幸运了！
+WARN_INVADED_01            | 你要夺走不属于你的东西，大使？！不要再激怒我们。如果这意味着摆脱你的愚蠢，我们很乐意摆脱那个毫无价值的星球！
+
+WARN_ESPIONAGE_01          | 下流的种族为了达到目的而诉诸间谍活动，对此我们并不感到惊讶。记住，大使：[my_race]的眼睛是如此敏锐，以至于没有什么能逃过他们的视线。[framed]
+WARN_SABOTAGE_01           | 太恶心了，大使！在黑暗中偷偷摸摸，像黑夜的恶魔一样进行破坏！？但是你既愚蠢又粗鲁：你摧毁的建筑物还不够重要，不值得我们做出回应！ [forced]
+WARN_BIOWEAPON_01          | 耻辱！耻辱！你们对那些手无寸铁的人使用了最难以启齿的武器！大使，恶名将永远伴随你们！
+WARN_GENOCIDE_01           | 虽然我同意[victim_race]是一群可怜的害虫，但王国强烈反对进行种族灭绝。我们想知道，大使，您的人民是否也会对更文明种族这么做呢？
+WARN_FINAL_WAR_01          | 大使，你们的选择并不正义。你需要知道：既然你已经决定反抗民主选出的宇宙领袖，荣誉要求我们不惜一切代价阻止你。
+WARN_COUNCIL_VOTE_01       | [your_empire]的杰出大使简直太好了！你真的觉得我们不知道你在议会中的欺骗行为吗？你应该为你的人民担心，大使：尖塔之王非常生气。
+WARN_OATHBREAKER_01        | 多么可耻！你知道我们对荣誉的重视，但你们为了满足自己的欲望而公然违背诺言？！王国将牢记这次侮辱，大使，我们迟早会以牙还牙！ [spiesCaught]
+WARN_ATTACKED_ALLY_01      | 很麻烦，大使。你们和[defender_empire]闹了这样的矛盾。你不可能匹敌我们联合起来的力量，大使：王国敦促你重新考虑你的行为。
+WARN_REBELLING_AGAINST_01  | 你以为我们忘记了你是多么可耻吗？我们是否必须与您或整个银河系战斗并不重要：只要尖塔之王还活着，你就永远不会坐在委员会的王座上。
  
-PRAISE_COUNCIL_VOTE_01     | The esteemed and venerable ambassador of the [your_empire]! We are in debt for your service to us at this council meeting, and are eager to make well on that debt whenever you decide on how best that might be done. 
-PRAISE_COUNCIL_VOTE_02     | Greetings to you, ambassador. You honor us with a voice that speaks favor to our cause before those gathered here. I'm certain that the Spire King will wish to learn more of such an honorable people as soon as I make my report to him. 
-PRAISE_COUNCIL_VOTE_03     | Hmfhmfhmf, surely you do not expect us to believe that you sided with the Sovereignty out of respect or a sense of honor, ambassador? Yet, perhaps you will continue to prove yourself to us if only we give you another chance to do so? 
+PRAISE_COUNCIL_VOTE_01     | [your_empire]受人尊敬的大使！您在这次委员会上的支持让我们感激，假以时日我们会回报您的支持。
+PRAISE_COUNCIL_VOTE_02     | 向您问好，大使。您在聚集于此的人群中对我们表示了支持，这是对我们的尊重。我敢肯定，我一向尖塔王汇报，他就会希望更多地了解这样一位尊贵的人。
+PRAISE_COUNCIL_VOTE_03     | 您是出于尊重或荣誉感支持王国的吧，大使？如果未来还有机会，您或许会继续向我们证明您的想法。
+PRAISE_ATTACKED_ENEMY_01   | 啊!我们尊敬的朋友和盟友在这个战争时期带来了好消息！来吧，大使。让我们的人民以战友的身份一起对抗这些可怕的[defender_race]！
 
-PRAISE_ATTACKED_ENEMY_01   | Ah! Our esteemed friend and ally brings good tidings in this time of war! Come ambassador: let our people do battle against these horrid [defender_race] together as comrades-in-arms! 
-PRAISE_ATTACKED_ENEMY_02   | This war shall be over quickly, ambassador. Even alone the Sovereignty would easily overpower these vulgar [defender_race] beasts. But together? Together we shall wipe the stain of their race clean from the galaxy forever! 
-PRAISE_ATTACKED_ENEMY_03   | I am as certain that you act out of opportunity as I am certain that you do not know the meaning of the word "honor"! We allow you to help us against the [defender_race], if for nothing more than to prevent us from taking as many casualties as we might otherwise! 
+PRAISE_ATTACKED_ENEMY_02   | 这场战争很快就会结束，大使。王国能轻易打败这些恶劣的[defender_race]野兽。但是我们一起呢？我们将从宇宙中永远抹去他们种族的存在！
+PRAISE_ATTACKED_ENEMY_03   | 我敢肯定您是出于私利而行动，就像我敢肯定您不知道“荣誉”一词的含义一样！我们允许你帮助我们对抗 [defender_race]，即使只是为了防止我们出现更多伤亡！
+PRAISE_TRADE_01            | 大使先生，您的人民如此诚实地从事贸易，这让我非常宽慰。王国尊重您和您的人民，并将如尊重我们的贸易协议一样重视我们的友谊。
+PRAISE_TRADE_02            | 大使，有很多种方法证明一个人的荣誉。诚实地经商是其中一种最好的方式，这也是王国在这个宇宙里最重视的。
 
-PRAISE_TRADE_01            | It relieves me more than you know, ambassador, that your people conduct business so honorably. The Sovereignty honors you and your people, and will value our friendship even more than it does our continued agreement of trade! 
-PRAISE_TRADE_02            | There are many ways to prove one's honor, ambassador. Conducting business fairly and in good faith is one of the best ways to do so, and something the Sovereignty values highly from those we encounter in this galaxy. 
+PRAISE_REBELLING_WITH_01   | 委员会上的那些野蛮人低估了我们，大使！我们将一起向他们展示“致命失误”一词的真正含义！
 
-PRAISE_REBELLING_WITH_01   | Those brutes on the council underestimate us, ambassador! Together we will show them what the term "fatal misstep" truly means! 
-
-ACCEPT_TRADE_01            | The Sovereignty is always pleased to make dealings with the [your_empire]. An annual amount of [amt] BC is quite agreeable, thank you.
-RESPOND_IGNORE_THREAT_01   | You dare try and provoke the [my_empire]? Take your laughable jests elsewhere before they cease to be amusing.
-RESPOND_STOP_SPYING_01     | Your eyes seem to be sharp as ours when it comes to finding spies. Consider our efforts at subterfuge finished.
-RESPOND_STOP_ATTACKING_01  | Now you see the might of our Sovereignty? As long as you do not forget our power, we will not trouble you with these fleets again.
-
- 
+ACCEPT_TRADE_01            | 王国总是乐于与[your_empire]打交道。每年[amt] BC 的贸易额相当可观，谢谢。
+RESPOND_IGNORE_THREAT_01   | 你敢挑衅[my_empire]？在它们不再有趣之前，把你可笑的笑话带到别处吧。
+RESPOND_STOP_SPYING_01     | 在寻找间谍上，您的眼睛似乎和我们一样敏锐。我们的间谍活动就到此为止了。
+RESPOND_STOP_ATTACKING_01  | 你看到我们王国的力量了吗？只要你们记得我们的力量，我们就不会再用这些舰队来麻烦你们。

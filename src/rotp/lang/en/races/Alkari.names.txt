@@ -1,5 +1,5 @@
 // all possible names
-name: Alkari, Aviari, Cluckari, Feathari, Fowlari
+name: Altairi, Aviari, Cluckari, Feathari, Fowlari
 
 desc1: Honorable Militarists
 desc2: Superior Pilots

@@ -1,5 +1,7 @@
+// 第1次校对：2021.12.15
+
 // all possible names
-name: Bulrathi, Bearathi, Ursinathi, Pawrathi, Grizzlathi
+name: 熊族, 熊拉提族, 大熊族, 熊爪族, 灰熊族
 
 desc1: 好斗的生态主义者
 desc2: 出色的地面格斗家
@@ -7,16 +9,16 @@ desc3: 忠诚的[race]高度重视他们哲人王的力量和智慧。
 
 
 // possible home system names
-home: Ursa, Canis, Grizzla, Pandara, Bruin
+home: 大熊星, 熊星, 灰熊星, 熊猫星, 棕熊星
 
-title:     Grand Hierarch
-fulltitle: Grand Hierarch
+title:     大主教
+fulltitle: 大主教
 
 // possible leader names
-leader: Bullux, Durpp, Grunk, Krungo, Monch, Smurch
+leader: 布卢克斯, 杜普, 格鲁克, 克鲁格, 蒙克, 斯莫克
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
-ship1: Paw, Patrol, Claw, Fang, Tooth, Boar, Ursine
-ship2: Hunter, Gladiator, Sentinel, Fisher, Tracker, Carnivore, Panda
-ship3: Warbear, Brute, Predator, Intimidator, Killer, Guardian, Protector
-ship4: Grizzly, Punisher, Rhino, Kodiak, Destroyer, Cerberus, Mauler
+ship1: 熊掌, 巡逻者, 熊爪, 熊牙, 熊齿, 公熊, 熊
+ship2: 猎人, 角斗士, 哨兵, 渔人, 追踪者, 肉食者, 熊猫
+ship3: 战熊, 野兽, 捕食者, 威胁者, 杀手, 守卫, 保护者
+ship4: 大灰熊, 惩罚者, 犀牛号, 科迪亚克, 毁灭者, 地狱犬, 大槌

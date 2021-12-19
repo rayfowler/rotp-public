@@ -1,8 +1,8 @@
 // race-specific variables (must start with _)
-_empire                           | Klackon Hive, Klackant Hive, Klockan Hive, Arthropon Hive, Coleopteron Hive
-_race                             | Klackon, Klackant, Klockan, Arthropon, Coleopteron
-_race_plural                      | Klackons, Klackants, Klockans, Arthropons, Coleopterons
-_title                            | ruler
+_empire                           | 蚁族巢穴, 克拉肯巢穴, 克洛克巢穴, 节肢族巢穴, 鞘翅族巢穴
+_race                             | 蚁族, 克拉肯族, 克洛克族, 节肢族, 鞘翅族
+_race_plural                      | 蚁族, 克拉肯族, 克洛克族, 节肢族, 鞘翅族
+_title                            | 统治者
 _nameTitle                        |
 
 //
@@ -22,72 +22,75 @@ _nameTitle                        |
 // Advisor text
 MAIN_ADVISOR_TITLE                | [player_name]
 MAIN_ADVISOR_BUTTON_OK            | 好的
-MAIN_ADVISOR_SCOUT                | At last my ships have reached completion. I must use my scouts to find new worlds for my colony vessel to land upon.
-MAIN_ADVISOR_TRANSPORT            | I've established myself on this new world and must send more from my home to expand upon it. There is no new life here, and so my search continues.
-MAIN_ADVISOR_DIPLOMACY            | New life at last! What a strange life form it is to communicate by noises and gestures. I must contemplate the diplomacy and intelligence information I know about them before making my next move.
-MAIN_ADVISOR_SHIP_ENGINE          | I continue to improve with this refinement of my spacecraft engines. I must re-visit my ship designs to integrate them into my fleet.
-MAIN_ADVISOR_RALLY_POINTS         | Why do they attack me? I don't understand. I must choose a rally point for my ships to go to defend myself while I try to understand why this has occurred.
-MAIN_ADVISOR_MISSILE_BASES        | I see now that not all life has learned the boon of cooperation. I must fortify my outer worlds with missile bases to keep my acquisitions safe.
-MAIN_ADVISOR_SHIP_WEAPON          | I continue to advance, and my new weapon technology will grant me more power as soon as I integrate them into my ship designs.
-MAIN_ADVISOR_COUNCIL              | Excitement! A meeting of many species will soon take place. What lifeforms will be gathered there? If I put myself in a better light among those I know, perhaps they'll ease my introduction to any new species.
-MAIN_ADVISOR_REBELLION            | What is this? I've lost control of myself on %1. No matter, I must simply go there and show them that I'm the one in charge.
-MAIN_ADVISOR_RESIST_COUNCIL       | Impossible! That another was chosen to rule these simpering dolts while my wisdom remains ignored! But no matter: I will put an end to all of them immediately! 
-MAIN_ADVISOR_COUNCIL_RESISTED     | Why do these fools persist in being so disagreeable? The council is mine, the galaxy is mine, and now they will learn their place in my dominion! 
+MAIN_ADVISOR_SCOUT                | 我的飞船终于完工了。我必须使用我的侦察机为我的殖民飞船寻找新的世界。
+MAIN_ADVISOR_TRANSPORT            | 我已经在这个新世界建立了自己的地盘。我必须从我的家乡派出更多蚁族来扩展它。这里没有新的生命，所以我的探索还在继续。
+MAIN_ADVISOR_DIPLOMACY            | 终于迎来新的生命！通过声音和手势进行交流是一种多么奇怪的生命形式。在采取下一步行动之前，我必须研究有关他们的外交和情报信息。
+MAIN_ADVISOR_SHIP_ENGINE          | 我继续改进我的航天器引擎。我必须重新审视我的船舶设计了，将它整合到我的舰队中。
 
-MAIN_SCOUT_TITLE                  | I Explore A New Star System
-MAIN_COLONIZE_TITLE               | I am orbiting %1, an uncolonized system.
-MAIN_COLONIZE_ANIMATION_TITLE     | In the year %1, I form a new colony.
-MAIN_ALERT_SPY_CAPTURED           | I have captured a spy from the [alien_empire], forcing a confession of their %2 activities.
-MAIN_ALERT_TRANSPORTS_KILLED      | My attempts to reach %1 have been stopped by defending [alien_race] forces.
-MAIN_ALERT_INVADERS_KILLED        | %2 [alien_race] transports attempting to invade %1 have been completely destroyed by me.
-MAIN_BOMBARD_TITLE                | I am orbiting an enemy [alien_race] colony.
+MAIN_ADVISOR_RALLY_POINTS         | 他们为什么要攻击我？我不明白。我必须为我的船只选择一个集结点来保护自己，同时我得试图理解为什么会发生这种情况。
+MAIN_ADVISOR_MISSILE_BASES        | 我现在发现了，并不是所有生命都学会了合作的好处。我必须用导弹基地武装我的外部世界，以确保我领地的安全。
+MAIN_ADVISOR_SHIP_WEAPON          | 我继续前进，一旦我将它们集成到我的舰船设计中，我的新武器技术就会赋予我更多的力量。
+MAIN_ADVISOR_COUNCIL              | 激动！许多物种的会议很快就会举行。那里会聚集哪些生命体？如果我让认识的种族都对我产生好感，也许他们会更主动地把我给介绍给新的种族。
+MAIN_ADVISOR_REBELLION            | 发生了什么？我在%1失去了对自己的控制。无论如何，我需要亲自去到那里，并找回自己的控制。
 
-TECH_RESEARCH_COMPUTER            | I must select the next computer technology to focus on.
-TECH_RESEARCH_CONSTRUCTION        | I must select the next construction technology to focus on.
-TECH_RESEARCH_FORCE_FIELD         | I must select the next force field technology to focus on.
-TECH_RESEARCH_PLANETOLOGY         | I must select the next planetology technology to focus on.
-TECH_RESEARCH_PROPULSION          | I must select the next propulsion technology to focus on.
-TECH_RESEARCH_WEAPON              | I must select the next weapon technology to focus on.
-TECH_DISCOVERY_TITLE              | I Achieve a %1 Breakthrough
-TECH_SCOUTED_TITLE                | While Exploring the Ruins of %1, I discover a new Technology
-TECH_STOLEN_TITLE                 | I have infiltrated the %1 research center at %2.
-TECH_TRADED_TITLE                 | I Acquire Technology from [alien_race] Scientists
-TECH_PLUNDERED_TITLE              | While Plundering the Ruins of %1, I discover a new Technology
-TECH_ALLOCATE_SHIELD              | Should I increase the defense ratios of all of my colonies to build the new planetary shields?
-TECH_ALLOCATE_MISSILE_BASES       | Should I increase the defense ratios of all of my colonies to upgrade my missile bases?
-TECH_ALLOCATE_FACTORIES           | Should I increase the industry ratios of all of my colonies to upgrade my factory controls?
-TECH_ALLOCATE_CLEAN_WASTE         | Should I reduce the ecology ratios of all of my colonies to the minimum amount necessary to keep them clean?
-TECH_ALLOCATE_ENRICH_SOIL         | Should I increase the ecology ratios of my colonies with standard environments in order to begin terraforming my planets?
-TECH_ALLOCATE_ATMOSPHERE          | Should I increase the ecology ratios of my colonies with hostile environments in order to begin terraforming my planets?
-TECH_ALLOCATE_TERRAFORM           | Should I increase the ecology ratios of all of my colonies in order to begin terraforming my planets?
+MAIN_ADVISOR_RESIST_COUNCIL       | 不可能！另一个生命被选中来统治这些愚蠢的傻瓜，而我的智慧却被忽视了！不管怎样：我会立即将他们全部消灭！
+MAIN_ADVISOR_COUNCIL_RESISTED     | 为什么这些傻瓜坚持做让人讨厌的事情？议会是我的，银河系是我的，现在他们将知道他们确实在我的统治下！
 
-NOTICE_ESPIONAGE_TITLE            | I have infiltrated a [alien_race] base.
-NOTICE_ESPIONAGE_FRAME_TITLE      | I have managed to frame another race for the theft.
+MAIN_SCOUT_TITLE                  | 我发现了一个新的星球。
+MAIN_COLONIZE_TITLE               | 我正在环绕%1飞行，这是一个没有被殖民的星球。
+MAIN_COLONIZE_ANIMATION_TITLE     | 在%1年，我建立了一个新的殖民地。
+MAIN_ALERT_SPY_CAPTURED           | 我逮住了一个来自[alien_empire]的间谍，他坦白了他们的%2活动。
+MAIN_ALERT_TRANSPORTS_KILLED      | 我想要抵达%1的尝试被在那里防御的[alien_race]军队阻止了。
+MAIN_ALERT_INVADERS_KILLED        | %2个[alien_race]军队想要入侵%1，他们被我彻底毁灭了。
 
-SHIP_COMBAT_TITLE_DESC            | I meet a hostile [alien_race] fleet.
+MAIN_BOMBARD_TITLE                | 我正在环绕敌人[alien_race]的殖民地。
+TECH_RESEARCH_COMPUTER            | 我必须选择下一个需要研究的计算科学。
+TECH_RESEARCH_CONSTRUCTION        | 我必须选择下一个需要研究的制造技术。
+TECH_RESEARCH_FORCE_FIELD         | 我必须选择下一个需要研究的力场技术。
+TECH_RESEARCH_PLANETOLOGY         | 我必须选择下一个需要研究的行星学技术。
+TECH_RESEARCH_PROPULSION          | 我必须选择下一个需要研究的动力学技术。
+TECH_RESEARCH_WEAPON              | 我必须选择下一个需要研究的武器技术。
+TECH_DISCOVERY_TITLE              | 我获得了一个%1突破。
+TECH_SCOUTED_TITLE                | 在探索%1的遗迹时，我发现了一个新的科技。
+TECH_STOLEN_TITLE                 | 我成功潜入了位于%2的%1研究所。
+TECH_TRADED_TITLE                 | 我从[alien_race]学会了科技。
+TECH_PLUNDERED_TITLE              | 在掠夺%1的遗迹时，我发现了一个新技术。
+TECH_ALLOCATE_SHIELD              | 我是否应该提高各个殖民地的防御开支占比，以建造新的护盾呢？
+TECH_ALLOCATE_MISSILE_BASES       | 我是否应该提高各个殖民地的防御开支占比，以升级导弹基地呢？
+TECH_ALLOCATE_FACTORIES           | 我是否应该提高各个殖民地的工业开支占比，以升级工厂呢？
+TECH_ALLOCATE_CLEAN_WASTE         | 我是否应该减少各个殖民地的生态开支占比，只保持各个星球的干净呢？
+TECH_ALLOCATE_ENRICH_SOIL         | 我是否应该提高普通环境殖民地的生态开支占比，来开始行星改造呢？
+TECH_ALLOCATE_ATMOSPHERE          | 我是否应该提高恶劣环境殖民地的生态开支占比，以开始行星的生态改造呢？
+TECH_ALLOCATE_TERRAFORM           | 我是否应该提高各个殖民地的生态开支占比，以开始行星的生态改造呢？
 
-SABOTAGE_FACTORIES_RESULT         | I destroyed %1 factories.
-SABOTAGE_BASES_RESULT             | I destroyed %1 missile bases.
-SABOTAGE_REBELS_RESULT            | I incited %1 rebels.
-SABOTAGE_REBELS_TOTAL             | I incited %1 rebels. Unrest now at %2%.
-SABOTAGE_REBELS_REVOLT            | I have triggered a revolt!
+NOTICE_ESPIONAGE_TITLE            | 我已经潜入了[alien_race]的导弹基地。
+NOTICE_ESPIONAGE_FRAME_TITLE      | 我成功把盗窃行动栽赃给了另一个种族。
 
-COUNCIL_CAST_PROMPT               | I must choose (%1 votes)...
+SHIP_COMBAT_TITLE_DESC            | 我碰到另一个充满敌意的[alien_race]舰队。
+
+SABOTAGE_FACTORIES_RESULT         | 我毁灭了%1个工厂。
+SABOTAGE_BASES_RESULT             | 我毁灭了%1个导弹基地。
+SABOTAGE_REBELS_RESULT            | 我教唆了%1个叛徒。
+SABOTAGE_REBELS_TOTAL             | 我教唆了%1个叛徒，不满意程度为%2。
+SABOTAGE_REBELS_REVOLT            | 我成功制造了一场起义。
+
+COUNCIL_CAST_PROMPT               | 我需要选择(%1票)……
 
 // text for endings... '#' represents a paragraph break
 // variables: %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 is special race-specific text described below
-GAME_OVER_MILITARY_LOSS2          | You've met with a terrible fate.#At the beginning of your journey into the unknown, you surged into space with the hopes of finding another lifeform as unique as you. Unfortunately, your dream remained unrealized until your dying day. Not only did the other intelligent lifeforms you found prove themselves wholly unlike you, but they showed themselves to be violent and unsympathetic to your quest as well. That violence became the undoing of your hope, and all your worlds are now in the hands of those who hated you from the moment of your first encounter.#Each of your bodies lies broken and lifeless where they were slain, from your homeworld to your most distant former colonies. As the light leaves the eyes of your last remaining mortal coil, it dawns on you that the universe is about to lose its most unique form of life forever...
-GAME_OVER_MILITARY_WIN2           | Your search has come to an end... for now.#With high hopes you dared to dream of finding another consciousness like yours somewhere in the depths of space. Though you met many other forms of higher intelligence, it became all too evident that none of them were similar to the uniqueness that you alone possess. And worse: in fearing what they did not understand, they attacked you, provoking a most terrible of responses from you and the innumerable bodies you inhabit. With a heavy heart you put them down, and with a heavier heart you now find yourself as the sole intelligence that inhabits this galaxy.#Yet, all is not lost. Though these alien races with their unique forms of self did not satisfy your search, you realize now that there is a whole universe out there to explore. All that is left is for you to spread to every corner of this galaxy, and begin your search all over again...
-GAME_OVER_MILITARY_ALLIANCE_WIN2  | Your search has come to an end... for now.#You are filled with sorrow beyond measure at the acts you have been forced to commit. In searching for kinship among the planets of this galaxy, you have instead encountered exclusively a slew of ignorant creatures who lashed out at you for how different from them you were. When their words turned to violent action, you struck them down to defend yourself and your interests, hoping all the while that they would see the error of their ways and come to see you for the unique form of life that you are. Your hopes were eventually dashed, and all those who met you with violence have been silenced forever.#But rejoice, ancient one! Though you were unable to find a consciousness similar to your own, you were able to make trusted allies before your journey came to an end. Strange to be sure, they at least regard you with the same friendship that you feel for them. If the yearning to find out if you are truly unique in the universe strikes again, you can set out to other galaxies whenever you desire. But for now, you can relax and enjoy this sense of companionship you have found, and enjoy as well all the benefits it will doubtlessly bring.
-GAME_OVER_COUNCIL_LOSS2           | Your search has come to an end... for now.#This was not the ending you wanted in your quest for kinship through the sea of stars. Although you have met many strange and wondrous peoples on your search, you have met many vile and ill-tempered cultures as well. Alas that the most insufferable you have encountered now sits as Master of the New Republic. You doubt that this new leader will be kind to you, and all the proof you need for this fear comes from past dealings that you have had with this alien leader.#All you wished was to find another who was as unique as you. Now you can only wait in submission at the heels of a greater power. You only pray that [leader_name] leaves you in peace, for should they so choose, the entire might of the galaxy will be brought to bear against you...
-GAME_OVER_COUNCIL_ALLIANCE_WIN2   | Your search has come to an end... for now.#A new age for the Klackon is set to begin, and your trusted friends, [leader_name], is now poised to lead the New Republic forward into a glorious future. Though unlike you in many respects, your friends regard you with interest and compassion, and you place your trust in them to allow you to continue on your quest once the work on this new alliance is done. It will take much for such different species to achieve harmonious coexistence, but you know that %8 will see it done.#You can only feel a sense of contentment at this outcome. You never cared much for the intricacies of political maneuverings anyway, and are glad your friend will take such a burden from your shoulders forever. All you wished for was to find a soul like yours somewhere in this galaxy. Perhaps, one day, you very well may...
-GAME_OVER_REBELLION_LOSS2         | You've met with a terrible fate.#You were alone at your beginning, and at your end you are still alone. Unable to achieve the ultimate goal of your quest, you drifted from meeting one strange civilization to the next until those with more foresight than you banded to form the New Republic. Sensing your quest would reach a premature end as [leader_name] assumed the mantle of leadership, you chose to fight against this fate rather than meekly submit to it. It was not the first mistake you made on your journey, but it proved, unfortunately, to be your last.#Now, as %8 the galaxy, you muse silently to yourself in your final moments that in death, at least, your worries will come to an end. If only you could have found another like you, or at least one who understands who and what you are, perhaps your fate may have changed as you both took up arms together...
-GAME_OVER_REBELLION_WIN2          | Your search has come to an end... for now.#Against your deepest wishes, the galaxy has brought itself to bear against you and forced you to pay it back in kind. Unable to accept the ruling of the xenophobic [leader_name], you took up arms alone to defend yourself, and your quest, from their horrid rule. You knew that those who had been manipulated by these duplicitious tyrants would likely stand against you, but the continuation of your quest could not be jeopardized under any circumstances. So with sadness in your heart you have crushed all who would oppose you.#Had one of these races not given into their fear and hatred of the unknown, perhaps they would have been able to live with you in peaceful co-existence. But this is not an entirely sorrowful state of affairs, for at least you will have a harrowing story to share with the one who is the object of your search, if you ever manage to find them...
-GAME_OVER_REBEL_ALLIANCE_WIN2     | Your search has come to an end... for now.#You knew that this would happen since the first meeting of the Galactic Council. Despite your warnings to the other empires who inhabited the galaxy, the traitorous and vile [leader_name] had managed to take the helm of the New Republic and threatened to infect the galaxy with their vile xenophobia. Bravely you fought against them, and though many in the galaxy decided to throw their lot in against you, you were able to defend your interests successfully in the end.#Perhaps happiest of all was the support you received from your friends in this final war. Wise enough to see the danger and compassionate enough to aid you, you were happy not to have been in this fight alone. Now you may achieve a truly peaceful co-existence, and share in the bounty of this galaxy together. One day soon, you may find your way into even deeper space, and leave the galaxy hoping to meet the one you have sought after for so very, very long...
-GAME_OVER_COUNCIL_WIN2            | Your search has come to an unexpected end.#You have discovered much since you first set out from your ancient homeworld in search of another consciousness like your own. Though you have yet to fulfill that dream, the knowledge and friendship you have gained from those you have encountered has proven to be a sweet bounty indeed. Your allies have not only overcome their fear of your uniqueness, but have chosen to elect you as Master of the New Republic. A future that you had never fathomed for yourself lies before you, and you will lead your new friends into it with all the patience and trust that they have shown you.#Perhaps one day you will set out on your search again, to find someone else who exists as you do. For now, though, there is much work for you to do, and your quest will need to wait until that work is done. And when it is finished, you may find your primal yearning vastly diminished. After all, for the first time in your long life, you are no longer alone.
-GAME_OVER_COUNCIL_MILITARY_WIN2   | Your search has come to an unexpected end.#Now at last, your battles have finished. After assuming the station of Master of the New Republic, you had managed to bring all the higher forms of life in this galaxy to sit at the table of friendship. At least, until a woefully underprepared rebellion formed against you. Founded out of xenophobia and fear for what you are, those who sought to topple you could fathom neither the depths of your single-minded strength nor the fury of your allies in defending the republic. They have been crushed, and peace will flow through the galaxy like water into the oceans of the numerous worlds you now call your own.#As the territories of the rebels are divided amongst you and your allies, your mind passes briefly to the quest that sent you from your home so very long ago. True, you never found the object of your search, and you remain alone in the universe in many respects. But happily you realize that with the allies you have made on your journey, you will never truly be alone again.
-GAME_OVER_COUNCIL_MILITARY_LOSS2  | You've met with a terrible fate.#None can fault you for hoping to lead the galaxy to peace as Master of the New Republic. None can fault you for trying your best to tie so many vastly different civilizations together. But despite your best efforts, the rebellion that arose against you was able to not only foment, but unseat you as leader and crush the New Republic with all the power it could muster. Your allies, long since dead, perhaps regretted choosing you to lead them before their empires turned to ash before their eyes. At least you cannot hear their lamentations as their voices have been silenced forever.#The last of your bodies are preparing to meet their fate in the hideouts they dug for themselves trying to escape your enemies. With no food or water, their time is about to come to an end. If only you had found another like you, one who truly understood and would fight by your side with the same tenacity you would have shown for them. Would things have ended differently? Perhaps. Alas, however, you will never know for sure...
+GAME_OVER_MILITARY_LOSS2          | 你遭遇了可怕的命运。#在你的未知之旅开始时，你进入太空，希望找到另一个和你一样独特的生命形式。不幸的是，直到你临终的那一天，你的梦想仍未实现。你发现的其他智能生命形式不仅与你完全不同，而且他们还充斥着暴力和冷漠。那种暴力摧毁了你的希望，从你们第一次见面的那一刻起，你所有的世界就开始掌握在那些恨你的人手中。#从你的家园到你最远的殖民地，你的每一个身体都被杀掉，冰冷冷地倒在地上。当你最后的肉体失去了眼中最后的光线时，你意识到宇宙即将失去一个独一无二的生命形态……
+GAME_OVER_MILITARY_WIN2           | 您的探索已经结束了，暂时地。#带着巨大的期待，你梦想着太空深处的某个地方找到另一个像你一样的意识。尽管你遇到了许多高级的智慧形态，但他们都不具备你身上独一无二的特质。更糟糕的是，出于无法理解的恐惧，他们攻击了你，招致了你和你无限躯体的可怕的回应。你怀着沉重的心情将他们击倒，并发现自己将成为宇宙中唯一的智慧生命。#然而，你并不是一无所获。尽管这些具备独立个体意识的外星种族并不符合你的研究目的，你也很快意识到自己还有一整个宇宙等待你的探索。接下来你要做的，就是蔓延到宇宙的每一个角落，并继续你的求索……
+GAME_OVER_MILITARY_ALLIANCE_WIN2  | 您的探索已经结束了，暂时地。#你对你被迫采取的行动感到无尽的悲伤。你想在这个星系里寻找亲友，但你却碰到了一群无知的生物，他们猛烈地抨击你，因为你与他们完全不同。当他们的话语变成暴力行为时，你只能攻击他们以捍卫自己的利益。你一直希望他们能看到自己的错误，并接受你这种独特的生命形式。你的希望破灭了，因为那些对你使用暴力的人都永远地沉默了。#但庆幸吧，尽管你无法找到与自己相似的生命形态，但在旅程结束之前你建立了值得信赖的盟友关系。奇怪的是，他们以友善的方式对待你，就像你友善地对待他们。如果那种想知道自己在宇宙这种是否独一无二的渴望再次袭来，你可以随时前往其他星系。但现在，你可以放松下来，享受已经找到的陪伴，并享受它将带来的一切好处。
+GAME_OVER_COUNCIL_LOSS2           | 您的探索已经结束了，暂时地。#这不是你在星海中寻找亲友的旅程所期待的结局。虽然你在寻找的过程中遇到了许多奇怪而奇妙的种族，但你也遇到了许多卑鄙的、脾气暴躁的文明。唉，你遇到的最令人难以忍受的种族现在是新共和国的领导。你怀疑这位新领袖是否会善待你，而你的恐惧来源于过去你与这位外星领袖的交流。#你所希望的只是找到另一个和你一样独特的生命。现在你只能臣服于更强大的权力。你只能祈祷[leader_name]与你相安无事，因为如果他们不这样做，整个银河系的力量都会与你为敌……
+GAME_OVER_COUNCIL_ALLIANCE_WIN2   | 您的探索已经结束了，暂时地。#蚁族的新时代即将开始，你可信赖的朋友[leader_name]现在准备带领新共和国迈向辉煌的未来。尽管在许多方面与你不同，但你的朋友对你充满兴趣和同理心。你信任他们，你相信可以在新联盟的工作完成后继续你的探索。如此不同的物种要实现和谐共处需要很多时间，但你知道%8会看到它。#你只能对这个结果感到满足。无论如何，你从来都不在意错综复杂的政治权术，并且很高兴你的朋友永远从你的肩上卸下这样的负担。你所希望的只是在这个银河系的某个地方找到一个像你一样的灵魂。也许，有一天，你很可能会找到……
+GAME_OVER_REBELLION_LOSS2         | 你遭遇了可怕的命运。#在你旅途的起点，你是孤独的，在你旅途的终点，你还是孤独的。从遇见一个陌生的文明，到遇见另一个陌生的文明，你始终无法找到你求索的目标。直到那些比你更有远见的种族组建了新共和国。当[leader_name]成为新共和国的领导时，你感到你的使命会提前结束，于是你选择与这种命运抗争，而不是温顺地屈服于它。这不是你在旅途中犯下的第一个错误，但不幸的是，它被证明是你的最后一个错误。#现在，当%8整个银河系，你默默地思考着并意识到，至少在死亡时，你的忧虑结束了。如果你能找到另一个像你一样的生命，或者至少了解你是谁的人，也许你们会一起拿起武器，而你的命运会随之改变……
+GAME_OVER_REBELLION_WIN2          | 你的探索已经结束了，暂时地。#银河系事与愿违地给你展示了它最坏的一面，还强迫你去接受它。你无法忍受排外主义者[leader_name]的领导，于是你拿起武器，捍卫你自己和你的追求，免受他们可怕的统治。你知道那些被二流暴君操纵的人，很可能会与你作对，但没有什么能阻止你的追求。所以，你带着悲伤的心情粉碎了所有反对你的人。#如果这些种族中有任何一个没有屈服于对未知事物的恐惧和仇恨，也许他们本可以与你和平共处。但这并不是一个完全的坏事，因为至少你会有一个悲剧可以与你想要找到的生命分享，如果你能找到这个生命的话……
+GAME_OVER_REBEL_ALLIANCE_WIN2     | 你的探索已经结束了，暂时地。#第一次星际委员会之后，你就知道这一切会发生。尽管你已经警告了银河系中的其他帝国，卑鄙的[leader_name]还是成功掌管了新共和国，他们卑鄙的仇外情绪将威胁整个银河系。你勇敢地与他们作战，银河系中的许多人决定与你作对，但你最终仍然成功地捍卫了自己的利益。#也许最开心的是，你在这场最后的战争中获得了朋友们的支持。他们聪明地看到了危险，也富有同情心地决定帮助你。你很高兴没有独自参加这场战斗。现在，你们可以真正实现和平共处，并一起分享这个银河系的恩赐。也许有一天，你会离开银河系，进入更深的深空，去寻找你找了很久的那个生命……
+GAME_OVER_COUNCIL_WIN2            | 你的探索以意想不到的方式结束了。#自从你离开自己古老的家园去寻找像你一样的意识以来，你已经发现了很多。虽然你还没有实现那个梦想，但你从遇到的人那里获得的知识和友谊已经证明是一种甜蜜的恩赐。你的盟友不仅克服了对你的独特性的恐惧，而且还选举你为新共和国的领导者。一个你从未想过的未来摆在你面前，你会以十足的耐心和信任带领你的朋友走向未来#也许有一天你会再次开始你的探索，寻找一个像你一样的生命。不过，就目前而言，你还有很多工作要做，你的探索需要等到工作结束之后才能进行。当这些工作完成时，你可能会发现你最初的冲动大大减少了。毕竟，在你漫长的一生中，你第一次不再孤单。
+GAME_OVER_COUNCIL_MILITARY_WIN2   | 你的搜索意外结束了。#现在，你的战斗终于结束了。在担任新共和国之主的职位后，你设法将这个星系中所有更高形式的生命都带到了友谊的桌子旁，直到一场仓促准备的叛乱形成。由于仇外心理和对你的恐惧，那些试图推翻你的人既无法理解你力量的深度，也无法理解你的盟友在保卫共和国时的愤怒。他们被粉碎了。和平将像水一样流过银河系，流入属于你的无数世界的海洋。#当叛军的领土被你和你的盟友瓜分时，你的思绪短暂地转向很久以前的过去。诚然，你从未找到自己想找到的东西，而且在多个层面上来说你都是孤独的。但你很高兴地意识到，有了你在旅途中结识的盟友，你将永远不再孤单。
+
+GAME_OVER_COUNCIL_MILITARY_LOSS2  | 你遭遇了可怕的命运。#作为新共和国的主人，你想把银河系带向和平，这无可指摘。你想要把如此不同的种族团结到一起，这也无可指摘。但是尽管你尽了最大的努力，针对你的叛乱仍然被煽动了起来。你的王座被推翻，新共和国被粉碎了。你的盟友早已死去，也许在最后时刻，他们会后悔选择你来当领导者，以至于他们的王国不得不在眼前化为灰烬。#你最后的身体在他们为自己挖掘的藏身之处中等待着最后的命运。没有食物和水，他们的时间即将到头了。如果你能找到一个像你一样的生命，一个真正理解你的生命，并坚韧地与你并肩作战，事情会有不同的结局吗？也许吧。哎，然而，你永远不能知道了……
 
 // This text is the %8 variable in some of the game over text... when this race wins the game
-GAME_OVER_ALLIANCE_WIN3           | the unerring single-mindedness of the Klackon
-GAME_OVER_REBELLION_LOSS3         | the soulless hordes of the Klackon dominates
+GAME_OVER_ALLIANCE_WIN3           | 蚁族的孤注一掷
+GAME_OVER_REBELLION_LOSS3         | 蚁族没有灵魂的大军控制了

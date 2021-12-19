@@ -29,6 +29,9 @@ public final class TechAtmosphereEnrichment extends Tech {
         free = b;
         init();
     }
+    public float sizeIncrease(float baseSize)  {
+        return 20;
+    }
     @Override
     public Colony.Orders followup()                   { return Colony.Orders.ATMOSPHERE; }
     @Override

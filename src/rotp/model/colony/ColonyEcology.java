@@ -239,6 +239,7 @@ public class ColonyEcology extends ColonySpendingCategory {
             if (pop > size) {
                 float over = pop - size;
                 float loss= over/pop * .1f * over;
+                loss=min(loss,over);
                 c.setPopulation(c.population()-loss);
             }
         }

@@ -1,8 +1,9 @@
-The Sakkra Conclave
+// 第1次校对：2021.12.18
+蜥蜴族王国
+现在是EE973年……
 
-The year is 973 EE...
-As the last of the Ecodomes close over the disparate surface of Sssla, preparations have also completed to enable the settlement of neighboring worlds. 
-Knowing that your people view the environment as an intricate puzzle begging to be solved, the Great Families realize how critical the presence of these mysteries are to maintaining stability within the Conclave. 
-As the Sakkra begin transformation into a space-faring society, they appoint you as the first central authority figure in the history of your civilization. With your newfound authority as the Prime Magister, you must ensure that your people are provided with a steady stream of planets to colonize and environments to bring to heel. 
-You have often dwelt on what strange alien civilizations must await discovery in the depths of space, and what will happen when your people encounter them at some point in their exploration. 
-But, no matter who or what you encounter, you are certain that they will eventually kneel before the superiority of Sakkran science, and that it is the destiny of your people to free every world that lies within this galaxy their ecological imperfection no matter the cost...
+随着生态屋逐渐覆盖斯拉星的不同区域，殖民附近星系的准备工作也已经完成。
+你的人民把环境当作一个等待被解决的谜团，大家族们意识到这些谜团对于维护王国的统治非常重要。
+随着蜥蜴族逐渐把自己变成了一个向太空扩张的种族，你被任命为文明历史上第一位集权人物。作为最高长官，你获得了大量权力。你必须保证你的人民持续地获得可以殖民的行星，这些行星上需要有可以被改造的环境。
+你经常陷入思考，在深空中等待着你们的会是怎样奇怪的外星文明，当你们在外星探索中遭遇他们时会发生什么。
+但是，不管你碰到的是谁或什么，你都确定他们最终将屈服于蜥蜴族至高无上的科学技术；你们的人民背负着崇高的使命，你们要将这个宇宙从糟糕的生态环境中拯救出来，不管代价如何……

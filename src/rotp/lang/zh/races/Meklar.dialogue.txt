@@ -10,134 +10,132 @@
 //  
 // This license is legally binding. Please review this license before altering 
 // or distributing any material covered under this license.
-//
+// 第1次校对：2021.12.18
+
 
 // Meklar specific dialogue
 
-CONTACT_ERRATIC            | Species: [your_race]. Leader designation: [your_title]. Technological innovations: varied. Threat assessment: Inconclusive.
-CONTACT_HONORABLE          | [your_race] species presents interest. [my_empire] senses potential to cooperate for mutual benefit. Results remain to be seen.
-CONTACT_RUTHLESS           | [my_empire] now aware of [your_race] existence. [my_title] states a warning to all [your_race] species: do not interfere with Dominion objectives. Will result in [your_race] extinction.
+CONTACT_ERRATIC            | 物种：[your_race]。领袖头衔：[your_title]。技术：多种多样。威胁评估：不确定。
+CONTACT_HONORABLE          | [your_race]物种展现出了兴趣。[my_empire]感觉到了合作互利的潜力。结果有待观察。
+CONTACT_RUTHLESS           | [my_empire]现在知道了[your_race]的存在。[my_title]向所有[your_race]物种发出警告：不要干扰自治领的目标，否则将导致[your_race]灭绝。
 //
-GREETING_01                | Identity of allied ambassador confirmed. State request of Dominion. Dominion will assist if possible. 
-GREETING_04                | [my_empire] acknowledges [your_race] ambassador. Dominion willing to process requests at this time.
-GREETING_07                | State request. Dominion unlikely to send requests from [your_race] to [my_title] for processing.
+GREETING_01                | 盟国大使的身份得到确认。提出你对自治领的请求，如果可能，自治领会提供帮助。
+GREETING_04                | [my_empire]接受[your_race]大使，自治领现在愿意处理请求。
+GREETING_07                | 提出你的请求。自治领可能将来自[your_race]的请求呈交给[my_title]进行处理。
 //
-DECLAREWAR_HATE_01         | [my_empire] no longer willing to tolerate presence of [your_empire]. Strength of [your_race] species comparatively primitive. Executing search and destroy protocol.
-DECLAREWAR_HATE_02         | [my_title] will no longer allow [your_race] species interference with Dominion objectives. Dominion prepared to dedicate much to preserve primary directive.
-DECLAREWAR_HATE_03         | Dominion cannot continue directives while [your_empire] persists. Dominion must terminate this species. No alternative found.
-DECLAREWAR_ERRATIC_01      | [my_title] concludes existence of [your_race] species threatens Dominion objectives. Dominion to begin extermination protocols immediately.
-DECLAREWAR_ERRATIC_02      | [my_title] judges [your_race] species likely holds secret to further Dominion goal. Dominion will take secrets from [your_race] species by force.
-DECLAREWAR_ERRATIC_03      | [my_title] deems [your_race] species as unacceptable variable in Dominion plans. Dominion will eradicate [your_race] species or terminate itself in process.
-DECLAREWAR_MILITARY_01     | [my_empire] must continue to proliferate across galaxy in pursuit of ultimate goal. [your_empire] inhibits expansion. Problem now being rectified.
-DECLAREWAR_MILITARY_02     | Dominion unable to locate primary objective. Possibility that planets near or belonging to [your_empire] contain what is sought. War unavoidable.
-DECLAREWAR_MILITARY_03     | Dominion forced to expand reach of its territory. Strength of [your_race] species cannot be dissuading factor. War regrettable, but necessary.
-DECLAREWAR_ALLIANCE_01     | [your_empire] has declared war on Dominion ally. Dominion will protect vested interest in objectives by eradicating [your_race] threat.
-DECLAREWAR_ALLIANCE_02     | Dominion received request for aid from [other_empire]. Proceeding to aid ally in war against [your_race] species so long as conflict persists.
-DECLAREWAR_ALLIANCE_03     | [your_race] species grows arrogant to declare war on others. Dominion will aid other empire to remove [your_race] species from galaxy.
-DECLAREWAR_SPYING_01       | [your_race] species engages in secret action against Dominion.  Consequences for Dominion: negligible. Consequences for [your_race] species: fatal.
-DECLAREWAR_SPYING_02       | Subterfuge detected in Dominion territory. Source confirmed as [your_race] species. Dominion protocols require war as response. 
-DECLAREWAR_SPYING_03       | Dominion detects obvious attempt at destabilization by [your_empire]. Cannot allow [your_race] species to continue interference with objectives. Dominion must retaliate at any cost.
-DECLAREWAR_ATTACK_01       | [your_race] species proven hostile despite evident [my_race] superiority. Dominion moving to remove threat entirely.
-DECLAREWAR_ATTACK_02       | [your_race] species impedes Dominion objectives by attacking directly. Confrontation unavoidable.
-DECLAREWAR_ATTACK_03       | [your_race] species attempts to prevent Dominion from reaching objectives by wiping out [my_race]. Dominion will retaliate with all available military strength.
-DECLAREWAR_OPPORTUNITY_01  | [my_title] believes [your_race] species will ultimately prove detrimental in attaining primary directive. Dominion will eradicate [your_race] species before threat is fully realized.
-DECLAREWAR_ASSASSIN_01     | Dominion Ambassador rendered inoperable by [your_race] species before being re-integrated into Mainframe. [your_race] actions demand violent retaliation.
+DECLAREWAR_HATE_01         | [my_empire]不再愿意容忍[your_empire]的存在。[your_race]是一种原始物种，开始执行销毁协议。
+DECLAREWAR_HATE_02         | [my_title]将不再允许[your_race]物种干扰自治领的目标，自治领将致力于维护终极指令。
+DECLAREWAR_HATE_03         | 当[your_empire]存在时，自治领不能执行指令。自治领没有找到替代方案，必须终止这个物种的存在。
+DECLAREWAR_ERRATIC_01      | [my_title]得出结论，[your_race]物种的存在威胁到自治领的目标。自治领立即执行灭绝协议。
+DECLAREWAR_ERRATIC_02      | [my_title]判断[your_race]物种可能持有能推进自治领目标的秘密。自治领将通过武力从[your_race]物种那里获取秘密。
+DECLAREWAR_ERRATIC_03      | [my_title]将[your_race]物种视为自治领计划中不可接受的变量。自治领要么消灭[your_race]物种，要么自我终结。
+DECLAREWAR_MILITARY_01     | [my_empire]必须继续在银河系中扩张以追求终极目标。[your_empire]抑制了[my_empire]的扩张。此问题需要修复。
+DECLAREWAR_MILITARY_02     | 自治领无法定位终极目标。靠近或属于[your_empire]的行星可能存在自治领所需要的东西。战争不可避免。
+DECLAREWAR_MILITARY_03     | 自治领被迫扩大其领土范围。[your_race]物种的实力无法阻止自治领。战争让人遗憾，但必要。
+DECLAREWAR_ALLIANCE_01     | [your_empire]已向自治领盟友宣战。自治领将通过消除的[your_race]威胁来保护终极指令。
+DECLAREWAR_ALLIANCE_02     | 自治领收到了来自[other_empire]的援助请求。只要冲突持续，自治领就会继续帮助盟友对抗[your_race]物种。
+DECLAREWAR_ALLIANCE_03     | [your_race]种族傲慢地向他人宣战。自治领将帮助其他帝国从星系中移除[your_race]物种。
+DECLAREWAR_SPYING_01       | [your_race]种族对自治领进行间谍行动。对自治领的后果：微不足道。对[your_race]物种的后果：致命。
+DECLAREWAR_SPYING_02       | 在自治领领土上发现了破坏行动。对象确认为[your_race]物种。自治领协议要求以战争作为回应。
+DECLAREWAR_SPYING_03       | 自治领检测到[your_empire]煽动不稳定因素的明显企图。不能允许[your_race]物种继续干扰终极目标。自治领必须不惜一切代价进行报复。
+DECLAREWAR_ATTACK_01       | [your_race]物种选择敌对，尽管[my_race]占有优势。自治领将为完全消除威胁而行动。
+DECLAREWAR_ATTACK_02       | [your_race]物种通过进攻来阻碍自治领的终极目标。战争在所难免。
+DECLAREWAR_ATTACK_03       | [your_race]种族试图通过消灭[my_race]来阻止自治领达到目标。自治领将用所有军事力量进行报复。
+DECLAREWAR_OPPORTUNITY_01  | [my_title]相信[your_race]物种最终会损害终极指令。自治领将在威胁出现前消灭[your_race]物种。
+DECLAREWAR_ASSASSIN_01     | [your_race]物种销毁了自治领大使。[your_race]需要被暴力报复。
 
-OFFER_PEACE_01             | [my_title] reaches new judgment. War no longer acceptable expenditure for Dominion. Dominion wishes to broker peace immediately. 
-OFFER_TRADE_01             | [your_race] species possesses significant resources. Dominion also possesses items of value. Dominion proposes trade agreement at [amt] BC per year.  
-OFFER_PACT_01              | Dominion aspires for outcome beyond senseless conflict. Non-aggression pact with [your_race] species deemed most prudent means of obtaining stated result. 
-OFFER_ALLIANCE_01          | [my_title] values diplomacy with [your_race] species. Dominion proposes formal alliance to ensure survival of both [your_race] species and [my_race]. Immediate response requested.  
+OFFER_PEACE_01             | [my_title]形成了新的判断。自治领不愿再承受战争的代价。自治领希望立即促成和平。
+OFFER_TRADE_01             | [your_race]物种拥有大量资源。自治领也拥有有价值的商品。自治领提议进行每年[amt] BC 的贸易。
+OFFER_PACT_01              | 自治领不想要没有意义的冲突。与[your_race]种族建立互不侵犯条约，是实现自治领目标的谨慎手段。
+OFFER_ALLIANCE_01          | [my_title]重视与[your_race]物种的外交。自治领提议正式结盟以确保[your_race]物种和[my_race]的生存。希望贵方立刻回复。
+WARN_TRESPASSING_01        | 在[system]系统中检测到[your_race]物种。自治领声称拥有该区域。你应立即撤出！
+WARN_EXPANSION_01          | [your_race]物种的快速扩张被视为是对自治领目标的威胁。如果继续扩张，自治领将不得不采取军事回应。
+WARN_BUILDUP_01            | 自治领监视网络将[your_race]舰队识别为对安全的潜在威胁。需要加强对[your_race]物种的监视，以确保自治领的利益不会受到损害。
+WARN_SKIRMISH_01           | [system]检测到自治领和[your_race]舰队之间的冲突。自治领建议勿要多次再犯：如果警告无人理会，自治领准备做出必要回应。
+WARN_ATTACKED_01           | [attacker_race]在[system]注意到入侵行动。[defender_title]向大使传达信息：继续威胁自治领的安全将导致[attacker_race]物种的灭绝。
+WARN_INVADED_01            | 自治领提醒[attacker_race]物种，[attacker_race]并不占有[defender_race]的空间。立即移除舰队，否则就是毁灭。
+WARN_ESPIONAGE_01          | 自治领发现[spy_race]的间谍活动。自治领安全协议高于[spy_race]间谍技能。再次试探自治领，可能会被证明是致命的。 [framed]
+WARN_SABOTAGE_01           | 自治领意识到[spy_race]物种参与了最近的破坏活动。试图制造混乱的行为太卑鄙，不值得回应。但进一步的破坏企图，将招致迅速报复。[forced]
+WARN_BIOWEAPON_01          | 自治领观察到生物武器的使用。这是有效的武器。[attacker_race]的物种威胁评估提高3级。
+WARN_GENOCIDE_01           | 已记录[attacker_race]物种对[victim_race]物种的种族灭绝。自治领不关心可能的原因。[attacker_race]物种的威胁评估提高了5级。
+WARN_FINAL_WAR_01          | 所有已知的物种已达成协议确保银河系的持久和平。[rebel_race]物种是唯一的异议者。自治领将将采取适当的行动。
+WARN_COUNCIL_VOTE_01       | 自治领意识到议会中[voter_race]的行动。该结果被估为不利于[candidate_race]的目标。自治领的外交行动也会相应调整。
+WARN_OATHBREAKER_01        | [my_title]做出判断：[your_race]物种不再被认为值得信赖。所有未来的计划都会参考[your_race]物种违反协议的事实进行修订。 [spiesCaught]
+WARN_ATTACKED_ALLY_01      | 已记录[your_race]物种和[defender_race]物种之间的冲突。[defender_race]种族已知为自治领盟友。停止战斗，否则为后果做好准备。
+WARN_REBELLING_AGAINST_01  | [your_race]种族已经成为自治领实现目标的障碍。星际委员会的决定不可接受。等待最高仲裁者的回应。
 
-WARN_TRESPASSING_01        | [your_race] species detected in [system] system. Area previously claimed by Dominion. Vacate immediately. 
-WARN_EXPANSION_01          | Rapid expansion of [your_race] species deemed threat to Dominion objectives. Continuation of territorial growth will force military action as response. 
-WARN_BUILDUP_01            | Dominion surveillance network identifies [your_race] fleets as potential threat to security. Increasing watch on [your_race] species to ensure Dominion interests are not compromised.
-WARN_SKIRMISH_01           | Conflict between Dominion and [your_race] fleets detected at [system]. Dominion advises against repeat offenses: Dominion prepared to respond appropriately if warning unheeded. 
-WARN_ATTACKED_01           | [attacker_race] aggression noted at [system]. [defender_title] gives message to ambassador: continuing to threaten Dominion security will result in extinction of [attacker_race] species. 
-WARN_INVADED_01            | Reminder from Dominion that [attacker_race] species has no claim on [defender_race] space. Remove fleets immediately or face total annihilation.
-WARN_ESPIONAGE_01          | [spy_race] espionage activity recorded in Dominion territory. Dominion security protocols greater than [spy_race] skill at espionage. Testing Dominion again may prove fatal. [framed]
-WARN_SABOTAGE_01           | Dominion aware of [spy_race] species involvement in recent sabotage. Attempt at chaos too menial to warrant response. Further attempts at sabotage will ensure swift retribution [forced]
-WARN_BIOWEAPON_01          | Dominion observes use of crude bioweapon. Effective armament. [attacker_race] species threat assessment increased by 3 levels. 
-WARN_GENOCIDE_01           | Genocide of [victim_race] species by [attacker_race] species recorded. Dominion unconcerned with possible cause or alternatives. [attacker_race] species threat assessment increased by 5 levels.  
-WARN_FINAL_WAR_01          | All known species create agreement to ensure lasting peace in galaxy. [rebel_race] species sole dissenter. Dominion will take appropriate action.
-WARN_COUNCIL_VOTE_01       | Dominion aware of [voter_race] actions in council. Meaning irrelevant. Result assessed as detrimental to [candidate_race] goals. Diplomatic standing adjusted accordingly.  
-WARN_OATHBREAKER_01        | [my_title] passes judgment: [your_race] species no longer deemed trustworthy. All future dealings subject to revision based on [your_race] species breaking binding agreement. [spiesCaught]
-WARN_ATTACKED_ALLY_01      | Conflict recorded between [your_race] species and [defender_race] species. [defender_race] species known ally of Dominion. Cease fighting or prepare for consequences. 
-WARN_REBELLING_AGAINST_01  | [your_race] species now obstacle of Dominion objectives. Galactic Council ruling unacceptable. Awaiting response from Supreme Arbiter. 
+PRAISE_COUNCIL_VOTE_01     | [voter_race]物种大使为推进[candidate_race]的目标提供帮助。自治领承认与[voter_race]物种保持持续关系有好处。自治领会报答恩惠。
+PRAISE_COUNCIL_VOTE_02     | 自治领注意到你在委员会中的支持票。自治领将相应地调整对[voter_race]物种的看法。
+PRAISE_COUNCIL_VOTE_03     | 自治领承认[voter_race]物种进行阴谋诡计的可能性。继续在委员会中帮助自治领可能会缓解这一担忧。
 
+PRAISE_ATTACKED_ENEMY_01   | 攻击自治领的敌人证明了对[my_race]目标的支持。自治领将尽力把[attacker_race]物种的伤亡降到最低。
+PRAISE_ATTACKED_ENEMY_02   | 自治领欢迎对[defender_race]物种的进攻。这场战争可能是[my_race]和[attacker_race]物种之间的新开端。
+PRAISE_ATTACKED_ENEMY_03   | 攻击[defender_race]物种并不能抵消[attacker_race]物种过去对自治领犯下的罪行。自治领将根据[attacker_race]在这场战争中的行动重新评估该物种威胁等级。
+PRAISE_TRADE_01            | 自治领和[your_race]物种从持续的贸易中获益。只要价值存在，自治领就希望贸易继续存在。
+PRAISE_TRADE_02            | 自治领对与[your_race]物种的贸易协议表示满意。需要确保协议维持，以便两个种族都能从中获利。
+PRAISE_REBELLING_WITH_01     | 自治领同意星际委员会的统治者不可信任。自治领注意到了[your_race]物种的反抗。自治领将帮助[your_race]物种进行反抗。
+ACCEPT_TRADE_01            | 收到[your_race]物种的贸易请求。提议金额为[amt] BC。自治领同意。
+RESPOND_IGNORE_THREAT_01   | 来自[your_race]物种的威胁令人费解。[your_race]文明远不如自治领舰队。自治领决定无视。
+RESPOND_STOP_SPYING_01     | 自治领间谍在试图深入了解[your_race]生命形式时被抓获。自治领表示道歉。请尽早遣返抓获的[my_race]。
 
-PRAISE_COUNCIL_VOTE_01     | Ambassador of [voter_race] species continues to provide aid in advancing [candidate_race] objectives. Dominion recognizes benefit of continued relationship with [voter_race] species. Dominion will repay favor as needed. 
-PRAISE_COUNCIL_VOTE_02     | Dominion notes your positive vote in council. Dominion will adjust view on [voter_race] species accordingly.
-PRAISE_COUNCIL_VOTE_03     | Dominion acknowledges likelihood of subterfuge by [voter_race] species. Continuing to aid Dominion in council may assuage concerns. 
+RESPOND_STOP_ATTACKING_01  | 自治领成功地向[your_race]文明展示了军事能力。舰队将返回到指定的坐标。
 
-PRAISE_ATTACKED_ENEMY_01   | To attack enemies of Dominion proves commitment to [my_race] objectives. Dominion committed to keeping casualties of [attacker_race] species to absolute minimum. 
-PRAISE_ATTACKED_ENEMY_02   | Dominion welcomes assistance against [defender_race] species. This war may prove new beginning between [my_race] and [attacker_race] species. 
-PRAISE_ATTACKED_ENEMY_03   | Attacking [defender_race] species does not excuse past crimes against Dominion. Dominion will reassess [attacker_race] species threat level dependent upon its action in this war. 
+DIPLO_TECH_REQUEST_MENU_01   | 请指定科技。
+DIPLO_TECH_COUNTER_MENU_01   | 请说明你的回报。
+DIPLO_TRADE_MENU_01          | 请说明数量。
+DIPLO_TREATY_MENU_01         | 请说明协议内容。
+DIPLO_DECLARE_WAR_MENU_01    | 请确定。
+DIPLO_SUGGEST_WAR_MENU_01    | 请说明目标。
+DIPLO_BREAK_ALLIANCE_MENU_01 | 请说明对象。
+DIPLO_THREATEN_MENU_01       | 请说明。
+DIPLO_OFFER_AID_MENU_01      | 请说明。
+DIPLO_OFFER_TECH_MENU_01     | 请告知科技内容。
 
-PRAISE_TRADE_01            | Dominion and [your_race] species continue to gain much from continuous trade. Dominion wishes trade to remain as long as arrangement continues beneficial status.
-PRAISE_TRADE_02            | Dominion expresses satisfaction at trade agreement with [your_race] species. Ensure agreement endures so that both races profit from each other. 
-PRAISE_REBELLING_WITH_01     | Dominion agrees Galactic Council ruler untrustworthy. [your_race] species objection noted. Dominion will aid [your_race] species in rebellion. 
- 
-ACCEPT_TRADE_01            | [your_race] species trade request received. [amt] BC proposed amount. Dominion agrees.
-RESPOND_IGNORE_THREAT_01   | Threat from [your_race] species puzzling. [your_race] civilization substantially inferior to Dominion fleets. Ignoring.
-RESPOND_STOP_SPYING_01     | Dominion spy captured while attempting to gain insight into [your_race] lifeforms. Dominion professes apology. Return captured [my_race] at earliest opportunity
-RESPOND_STOP_ATTACKING_01  | Dominion successful in display of military capability to [your_race] civilization. Returning fleets to designated holding coordinates.
+DECLINE_OFFER_01           | 拒绝。
+DECLINE_OFFER_02           | 拒绝。
+DECLINE_OFFER_03           | 拒绝。
+DECLINE_OFFER_04           | 拒绝。
+DECLINE_OFFER_05           | 拒绝。
+DECLINE_OFFER_06           | 拒绝。
+DECLINE_OFFER_07           | 拒绝。
+DECLINE_OFFER_08           | 拒绝。
+DECLINE_OFFER_09           | 拒绝。
+DECLINE_ENEMY_ALLY_01      | 拒绝。
+DECLINE_NO_WAR_ON_ALLY_01  | 拒绝。
+DECLINE_PEACE_TREATY_01    | 拒绝。
+DECLINE_ANNOYED_01         | 拒绝。
+DECLINE_ANNOYED_02         | 拒绝。
+DECLINE_ANNOYED_03         | 拒绝。
+DECLINE_OATHBREAKER_01     | 拒绝。
+DECLINE_ESPIONAGE_01       | 拒绝。
+DECLINE_SABOTAGE_01        | 拒绝。
+DECLINE_BUILDUP_01         | 拒绝。
+DECLINE_ENCROACH_01        | 拒绝。
+DECLINE_SKIRMISH_01        | 拒绝。
+DECLINE_ATTACK_01          | 拒绝。
+DECLINE_INVASION_01        | 拒绝。
+DECLINE_BIOWEAPONS_01      | 拒绝。
+DECLINE_TECH_TRADE_01      | 拒绝。
+OFFER_TECH_EXCHANGE_01     | 自治领需要[tech]。请说明你需要的回报。
+ACCEPT_TECH_EXCHANGE_01    | 接受。
+ACCEPT_FINANCIAL_AID_01    | 接受。
+ACCEPT_TECHNOLOGY_AID_01   | 
 
-DIPLO_TECH_REQUEST_MENU_01   | Specify technology.
-DIPLO_TECH_COUNTER_MENU_01   | Specify compensation.
-DIPLO_TRADE_MENU_01          | Specify magnitude.
-DIPLO_TREATY_MENU_01         | Specify treaty.
-DIPLO_DECLARE_WAR_MENU_01    | Confirm before proceeding.
-DIPLO_SUGGEST_WAR_MENU_01    | Specify target.
-DIPLO_BREAK_ALLIANCE_MENU_01 | Specify ally.
-DIPLO_THREATEN_MENU_01       | Specify.
-DIPLO_OFFER_AID_MENU_01      | Specify.
-DIPLO_OFFER_TECH_MENU_01     | Specify technology.
+BREAK_TRADE_01             | 贸易协议终止。
+ANNOUNCE_PEACE_01          | 接受。
+ACCEPT_PEACE_01            | 接受。
 
-DECLINE_OFFER_01           | Request denied.
-DECLINE_OFFER_02           | Request denied.
-DECLINE_OFFER_03           | Request denied.
-DECLINE_OFFER_04           | Request denied.
-DECLINE_OFFER_05           | Request denied.
-DECLINE_OFFER_06           | Request denied.
-DECLINE_OFFER_07           | Request denied.
-DECLINE_OFFER_08           | Request denied.
-DECLINE_OFFER_09           | Request denied.
-DECLINE_ENEMY_ALLY_01      | Request denied.
-DECLINE_NO_WAR_ON_ALLY_01  | Request denied.
-DECLINE_PEACE_TREATY_01    | Request denied.
-DECLINE_ANNOYED_01         | Request denied.
-DECLINE_ANNOYED_02         | Request denied.
-DECLINE_ANNOYED_03         | Request denied.
-DECLINE_OATHBREAKER_01     | Request denied.
-DECLINE_ESPIONAGE_01       | Request denied.
-DECLINE_SABOTAGE_01        | Request denied.
-DECLINE_BUILDUP_01         | Request denied.
-DECLINE_ENCROACH_01        | Request denied.
-DECLINE_SKIRMISH_01        | Request denied.
-DECLINE_ATTACK_01          | Request denied.
-DECLINE_INVASION_01        | Request denied.
-DECLINE_BIOWEAPONS_01      | Request denied.
-DECLINE_TECH_TRADE_01      | Request denied.
-OFFER_TECH_EXCHANGE_01     | Dominion requires [tech] technology. Specify compensation.
-ACCEPT_TECH_EXCHANGE_01    | Acceptance recorded.
-ACCEPT_FINANCIAL_AID_01    | Acceptance recorded.
-ACCEPT_TECHNOLOGY_AID_01   | Acceptance recorded.
+BREAK_PACT_01              | 终止互不侵犯协议。
+ANNOUNCE_PACT_01           | 接受。
+ACCEPT_PACT_01             | 接受。
 
-BREAK_TRADE_01             | Trade agreement terminated.
-ANNOUNCE_PEACE_01          | Acceptance recorded.
-ACCEPT_PEACE_01            | Request granted.
+BREAK_ALLIANCE_01          | 联盟。
+ANNOUNCE_ALLIANCE_01       | 接受。
+ACCEPT_ALLIANCE_01         | 接受。
+ACCEPT_JOINT_WAR_01        | 接受。
 
-BREAK_PACT_01              | Non-aggression pact terminated.
-ANNOUNCE_PACT_01           | Acceptance recorded.
-ACCEPT_PACT_01             | Request granted.
-
-BREAK_ALLIANCE_01          | Alliance terminated.
-ANNOUNCE_ALLIANCE_01       | Acceptance recorded.
-ACCEPT_ALLIANCE_01         | Request granted.
-ACCEPT_JOINT_WAR_01        | Request granted.
-
-RESPOND_CLOSE_EMBASSY_01   | Actions recorded.
-RESPOND_BREAK_TRADE_01     | Actions recorded.
-RESPOND_BREAK_PACT_01      | Actions recorded.
-RESPOND_BREAK_ALLIANCE_01  | Actions recorded.
-RESPOND_DECLARE_WAR_01     | Actions recorded.
+RESPOND_CLOSE_EMBASSY_01   | 已收到。
+RESPOND_BREAK_TRADE_01     | 已收到。
+RESPOND_BREAK_PACT_01      | 已收到。
+RESPOND_BREAK_ALLIANCE_01  | 已收到。
+RESPOND_DECLARE_WAR_01     | 已收到。

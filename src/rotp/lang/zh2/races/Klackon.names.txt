@@ -1,0 +1,24 @@
+// 第1次校對：2021.12.18
+// all possible names
+name: 蟻族, 克拉肯族, 克洛克族, 節肢族, 鞘翅族
+
+desc1: 排他的工業主義者
+desc2: 蜂巢思維和高效的工人產能
+desc3: 任勞任怨的[race]是隻有一箇中樞大腦的種族，外族跟他們難以溝通。
+
+
+// possible home system names
+home: 科爾丹, 科洛丹, 卡爾頓, 克洛登, 卡克頓
+
+title:     大
+fulltitle: 大
+
+// possible leader names
+leader: 伊西提克斯, 卡薩爾, 基基蒂克, 克拉昆, 卡拉克, 尚達克
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: 蜂, 針, 螳螂, 甲蟲, 無蟲機, 蜘蛛, 顎
+ship2: 大黃蜂, 毒, 毒液, 蜻蜓, 刺, 聖甲蟲, 馬蜂
+ship3: 狼蛛, 毒蛇, 眼鏡蛇, 蝮蛇, 蛇, 曼巴, 蠍子
+ship4: 眼鏡王蛇, 黑寡婦, 死亡之王, 劇毒之蛇, 那伽之神, 黑蝰, 黑曼巴
+

@@ -35,6 +35,17 @@ import rotp.util.Base;
 public class CombatStack implements Base {
     static final Color shipCountTextC = new Color(255,240,78);
     static final Float MOVE_STEP = 0.1f;
+    public static final Color healthBarC = new Color(0,96,0);
+    public static final Color shipCountBackC = new Color(0,0,0);
+    public static final Color healthBarBackC = new Color(0,48,0);
+    public static final Color healthBorderC = new Color(64,192,64);
+    public static final Color shipShieldC = new Color(128,128,0);
+    public static final Color shipAttackC = new Color(128,0,0);
+    public static final Color shipMissDefenseC = new Color(0,0,128);
+    public static final Color shipBeamDefenseC = new Color(64,64,160);
+    public static final Color sysShieldC = new Color(128,128,0);
+    public static final Color sysPopC = new Color(128,0,0);
+    public static final Color sysFactoryC = new Color(0,0,128);
     public Empire empire;
     public ShipCombatManager mgr;
     public ShipCaptain captain;

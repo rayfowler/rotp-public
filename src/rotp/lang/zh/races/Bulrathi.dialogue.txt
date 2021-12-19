@@ -14,73 +14,74 @@
 
 // Bulrathi specific dialogue
 
-CONTACT_AGGRESSIVE         | I am ambassador of the [my_empire]. I advise you to stay on the good side of the [my_title], little [your_race]. For he needs only to say the word and your kind will perish beneath a fury you couldn't possibly imagine.
-CONTACT_RUTHLESS           | Such small creatures you are! You need only know two things: first, that we are called "[my_race]", and second, that opposing our conquest only guarantees your demise!
-CONTACT_ERRATIC            | We of the [my_empire] greet you, little ones. Our destiny lies somewhere among these scattered worlds and burning stars. It'll be interesting to see where you will fit in our grand design.
+// 第1次校对：2021.12.14
+
+CONTACT_AGGRESSIVE         | 我是[my_empire]的大使。我建议你站在[my_title]的一边，小[your_race]。因为他只需要开口，你的族人就会在你无法想象的力量下灭亡。
+CONTACT_RUTHLESS           | 你真是个可爱的小动物！你只需要知道两件事：第一，我们被称为“[my_race]”，第二，反对我们的征服只会加速你的灭亡！
+CONTACT_ERRATIC            | 我们[my_empire]向你们致意，小家伙们。我们的未来就在这广袤的宇宙中。你会如何融入我们的雄伟版图呢？我拭目以待。
 //
-GREETING_01                | So you have acted with honor, and so we shall act to honor you. Tell us what you need, little friend. 
-GREETING_04                | Speak quickly, little [your_race]. Do not tempt our anger with false promises and one-sided deals.
-GREETING_07                | To come and speak with us shows great bravery for one so little. That bravery earns your safety for now.
+GREETING_01                | 你会做符合荣誉的事情，所以我们也会用符合荣誉的方式对待你。告诉我们你需要什么吧，小朋友。
+GREETING_04                | 有话快说，小[your_race]。记住，不要用虚假的承诺来激怒我们。
+GREETING_07                | 对于你这么小的一个生物来说，来跟我们对话就表现出了极大的勇气。现在，这种勇敢为您赢得了安全。
 
-DECLAREWAR_HATE_01         | Little [your_race_plural] on their little worlds with their little schemes. The [my_title] grows tired of your constant interference. You will not survive the doom we bring upon you!
-DECLAREWAR_HATE_02         | Enough of this! Our people's destiny is charted in the stars. We'll not have ones as diminutive as you oppose us any longer!
-DECLAREWAR_HATE_03         | Prepare yourself for battle, little [your_race]! We'll show you that ferocity is the only strength that brings victory on the battlefield!
-DECLAREWAR_ERRATIC_01      | The wisdom of philosophers can puzzle those unable to understand it. When our greatest minds tell us to attack, our warriors will of course obey.
-DECLAREWAR_ERRATIC_02      | Each thing has a time and place in this universe. War and peace, life and death, domination and submission. For us it is a time to strike, and for you it is a time to defend.
-DECLAREWAR_ERRATIC_03      | Have you ever marveled at fate, ambassador? It has a funny way of making real that which seems impossible. Let us test fate together, little [your_race], and see what it has in store.
-DECLAREWAR_MILITARY_01     | To the strong go the spoils. The [my_race] are strong, and so we shall gain the spoils, regardless of who they belong to.
-DECLAREWAR_MILITARY_02     | Your people fight well for ones so small, ambassador. Let us find out how well they'll fight with the might of the [my_race] brought to bear upon them!
-DECLAREWAR_MILITARY_03     | This galaxy belongs to the mighty, and our might will not allow yours to eclipse it. Defend your worlds well, or we shall take them from you in turn!
-DECLAREWAR_ALLIANCE_01     | An ally of the Empire has requested our aid! We will show both you and the [defender_race] the true power of the [my_race] unleashed!
-DECLAREWAR_ALLIANCE_02     | You make war on our ally, doubtless unaware that you make war on us as well. This is a fight from which your people will not emerge victorious, ambassador. Count on it.
-DECLAREWAR_ALLIANCE_03     | Even with all your might, you stand no chance against the [defender_race] if we [my_race] join with them! Prepare yourself, little [your_race]!
-DECLAREWAR_SPYING_01       | Such treachery! But when you must exist in so small a body you must have little other choice: you obviously stand no chance on the field of battle, as we will now so easily prove.
-DECLAREWAR_SPYING_02       | To think that people so small cannot succeed in such covert operations. Hang your spies high for your worlds to see; you will pay for their blunders with your life! 
-DECLAREWAR_SPYING_03       | You think we are too weak to respond to such underhanded actions, little one? We will show you just how grave a misjudgment you have made!
-DECLAREWAR_ATTACK_01       | If you wish to fight so much, you need only ask, little [your_race]. We will crush everything you hold dear before your very eyes in a single strike!
-DECLAREWAR_ATTACK_02       | To attack us so brazenly, as though you were much stronger than you are. Commendable, but mistaken in the end.
-DECLAREWAR_ATTACK_03       | So be it! It may be true that we are outgunned, but you will still find yourself clearly outmatched!
-DECLAREWAR_OPPORTUNITY_01  | Our people are always looking for chances to sharpen their combat skills, and your people may prove to be a worthy challenge. Be sure to make good sport of it so your kind will be spoken of fondly in our chronicles.
-DECLAREWAR_ASSASSIN_01     | We expected nothing less: a race so physically inferior that they must resort to killing an unarmed ambassador to further their ambition. Pray to whatever gods you have, little [your_race], for we will ensure that this is your final battle.
+DECLAREWAR_HATE_01         | 小[your_race_plural]在他们的小窝窝里耍着他们的雕虫小技。[my_title]对你不断的骚扰，感到厌烦了。你将无法在我们给你带来的厄运中幸存下来！
+DECLAREWAR_HATE_02         | 够了！熊族人民的命运已经被写在星辰中。我们不会再忍受像你这样你反对我们的小人物了！
+DECLAREWAR_HATE_03         | 为战斗做好准备吧，小[your_race]！我们将向您展示，只有勇猛能在战场上带来胜利！
+DECLAREWAR_ERRATIC_01      | 哲人的智慧会让那些无法理解它的人感到困惑。当我们最伟大的大脑告诉我们进攻时，我们的战士当然会服从。
 
-OFFER_PEACE_01             | Your people fight well, little one, but more than enough blood has been shed in this war. We are prepared to leave our disputes in the past and move towards peace, if you are brave enough to do so as well.
-OFFER_TRADE_01             | What you lack in size you seem to make up for in your resourcefulness. Our people propose a trade of [amt] BC, every year, in the hope that trade proves more beneficial than conflict for both of us.
-OFFER_PACT_01              | We [my_race_plural] have varied opinions for the numerous races we've encountered. Your kind in particular amuses the [my_title], and he wishes us you to sign a non-aggression pact with us to prevent any unnecessary disputes in the future. 
-OFFER_ALLIANCE_01          | Though we are unmatched in combat, we are not so barbarous that we would throw away our ties with a race such as yours merely to feel the thrill of victory. Little ambassador, let us formalize an alliance, and meet on the battlefield as friends instead of foes.
+DECLAREWAR_ERRATIC_02      | 每个事物在这个宇宙中都有其时间和位置。战争与和平，生与死，统治与臣服 对我们来说，这是进攻的时候，对你们来说，这是防守的时候。
+DECLAREWAR_ERRATIC_03      | 大使，你有没有惊叹过命运的无常呢？它经常将看似不可能的事情变成现实。让我们一起面对命运吧，小[your_race]，看看它会带来什么。
+DECLAREWAR_MILITARY_01     | 战利品属于强者。[my_race]最强大，所以无论不论战利品是什么，我们都会获得它。
+DECLAREWAR_MILITARY_02     | 大使，对于像你们种族这么渺小的生物，你们战斗得已经很勇敢了。让我们看看在[my_race]的力量下，你们表现得怎么样吧。
+DECLAREWAR_MILITARY_03     | 这个宇宙属于强者，我们的力量不会让它旁落。好好保卫你的世界，否则我们将从你手上夺走它们！
+DECLAREWAR_ALLIANCE_01     | 帝国的一位盟友向我们请求援助！我们将向您和[defender_race]展示[my_race]的真正力量！
+DECLAREWAR_ALLIANCE_02     | 你对我们的盟友开战，毫无疑问你也对我们开战了。这是一场你不可能胜利的战斗。大使，考虑一下吧。
+DECLAREWAR_ALLIANCE_03     | 如果我们[my_race]加入[defender_race]，你竭尽全力也无法对抗[defender_race]！做好准备吧，小[your_race]！
+DECLAREWAR_SPYING_01       | 这简直是背叛！但是当你必须以如此渺小的身体存在时，你别无选择：正如我们现在将快证明的那样，你在战场上没有机会，只能做些鸡鸣狗盗之事。
+DECLAREWAR_SPYING_02       | 我还以为这么渺小的生物不可能在这种秘密行动中取得成功。把你的间谍高高挂起吧，让你的世界看到。你会用你的生命为他们的错误付出代价！
+DECLAREWAR_SPYING_03       | 你认为我们太软弱，无法对这种卑鄙的行为做出反应吗，小家伙？我们将向您展示您的误判有多严重！
+DECLAREWAR_ATTACK_01       | 如果你想打仗，你只需要开口就行了，小[your_race]。我们将粉碎你眼前所珍视的一切！
+DECLAREWAR_ATTACK_02       | 你竟然如此肆无忌惮地攻击我们，似乎你觉得自己很强大。这值得称赞，但最终你会发现自己的错误。
+DECLAREWAR_ATTACK_03       | 就这样吧，我们可能确实输了一场战斗了，但你最终会发现自己输掉一场战争！
+DECLAREWAR_OPPORTUNITY_01  | 我们的人一直在寻找机会来提高他们的战斗技能，而你们可能是一个值得挑战的种族。你们可要利用好这个机会，我们的编年史会亲切地描述你们种族的。
+DECLAREWAR_ASSASSIN_01     | 我们对你们没有期待：一个身体素质如此低劣的种族，你们必须诉诸于杀死一名手无寸铁的大使来实现野心。向你的任何神灵祈祷吧，小[your_race]，因为我们将确保这是你的最后一战。
+OFFER_PEACE_01             | 你的人打得很好，小家伙，但这场战争流的血已经够多了。如果你也有足够的勇气，我们已准备好摆脱过去的争端，走向和平。
+OFFER_TRADE_01             | 你体型上的不足似乎可以用你的足智多谋来弥补。我们提议每年进行[amt] BC 的贸易，希望对我们双方来说贸易比冲突更有利。
+OFFER_PACT_01              | 我们[my_race_plural]对我们遇到的众多种族有不同的看法。你的族人让[my_title]很开心，他希望我们签署互不侵犯条约，以防止将来发生任何不必要的争端。
+OFFER_ALLIANCE_01          | 虽然我们在战斗中无人能敌，但我们不会野蛮到为了感受胜利的快感而放弃与你们的纽带。小大使，让我们正式结盟，在战场上做朋友，而不是敌人。
 //
-WARN_TRESPASSING_01        | Your presence at [system] has begun to annoy us. It would be wise for you to leave before you tempt our anger any further. 
-WARN_EXPANSION_01          | To take territory is the right of the strongest empires. We warn you against further expansion, little one, unless you wish us to defend future [my_race] territory before it is formally made ours. 
-WARN_BUILDUP_01            | Space is the theater of cowards: true bravery can only be proven on a planet's surface. Though your fleet grows vast, you cannot use it to hide from our fury should you continue to grow it even larger. 
-WARN_SKIRMISH_01           | The skirmish at [system] is little more than nuisance to us. Bother us no more, or we will crush you like the pest you seem so insistent on being!
-WARN_ATTACKED_01           | A pathetic display from an equally pathetic race! Count your blessings that the [defender_title] has more important matters to tend to than your meager show of force, but know that if you wish for a war we are happy to oblige you, little one. 
-WARN_INVADED_01            | Ha! Such bravery from so small a people. Leave our territories now little one, before you do something you are certain to regret soon after. 
-WARN_ESPIONAGE_01          | Cowards! To sneak amongst [victim_race_plural] like chommkas escaping their tubes. Be grateful we did not crush your spy, and do not force us to respond to such spinelessness again! [framed]
-WARN_SABOTAGE_01           | Why not face us in combat, little one? It would bore us to battle a race timid enough to rely on sabotage, but if you do this again we may endure that boredom just to be rid of you! [forced] 
-WARN_BIOWEAPON_01          | The ultimate act of cowardice, to use a bioweapon against those who cannot even defend themselves! Your people will bear this shame until the end of your empire, little one: nothing you do will ever wipe this slate clean. 
-WARN_GENOCIDE_01           | The [victim_race_plural] were weak and frail, and are no great loss to the galaxy. That a people as insignificant as yours would be the ones responsible for their extinction is what we find most disconcerting.
-WARN_FINAL_WAR_01          | We admire the bravery of those who seek to stand against the galaxy when it has chosen to unite in peace? We will record your boldness in our histories, little one, after we have crushed you down to the very last child! 
-WARN_COUNCIL_VOTE_01       | This council is a gathering of simpering fools who would rather discuss their grievances than settle them like warriors! But just because we have such disdain for these proceedings does not mean we will readily forgive your opposition during them!
-WARN_OATHBREAKER_01        | Little one! To break your word is the ultimate shame! We know your kind to be feeble in body, but to be feeble in word as well surprises even us! [spiesCaught]
-WARN_ATTACKED_ALLY_01      | The little [defender_race] are under our protection! Cease your war and make amends, or you will die by our hand before you know what hits you!
-WARN_REBELLING_AGAINST_01    | The Grand Hierarch is the only one fit to sit upon the throne of the Galactic Council! We will never accept your vile usurpation!
+WARN_TRESPASSING_01        | 你在[system]的存在让我们很恼火。在你进一步激怒我们之前，离开是明智的。
+WARN_EXPANSION_01          | 占领领土是最强大帝国的权利。我们警告你不要进一步扩张了，小家伙，除非你希望我们保卫未来会属于[my_race]的领土。
+WARN_BUILDUP_01            | 太空是懦夫的剧场：真正的勇者会在地面上证明自己。你的舰队越来越庞大，如果你继续扩张，你将要直面我们的愤怒。
+WARN_SKIRMISH_01           | [system]的小规模冲突对我们来说不过是麻烦事。不要再打扰我们了，否则我们会像碾碎害虫一样碾碎你！
+WARN_ATTACKED_01           | 来自同样可悲的种族的可悲表演！你很幸运，[defender_title]有比你微薄的耀武扬威更重要的事情要处理，但记住，如果你想要一场战争，我们很乐意为你效劳，小家伙。
+WARN_INVADED_01            | 哈！这么袖珍的种族竟然有这么大的勇气。在你做一些你会后悔的事情之前，离开我们的领地吧。
+WARN_ESPIONAGE_01          | 懦夫！在 [victim_race_plural]中潜行。感恩我们没有碾碎你的间谍吧，不要再让我们发现这种懦夫行径了！ [framed]
+WARN_SABOTAGE_01           | 小家伙，为什么不在战斗中面对我们呢？与胆小到只会搞破坏的种族战斗，会让我们感到无聊。如果你再次这样做，为了消灭你，我们可能要忍受与你战斗的无趣了！ [forced]
+WARN_BIOWEAPON_01          | 用生化武器对付手无寸铁的人，这是懦夫的终极表现！你的人民将承受这种耻辱，直到你的帝国毁灭，小家伙：你所做的任何事情都无法抹去这个恶行了。
+WARN_GENOCIDE_01           | [victim_race_plural]是一群病号，他们的毁灭对银河系没有太大的损失。但一个像你们这样微不足道的种族对他们的灭绝负责，这是我们不齿的。
+WARN_FINAL_WAR_01          | 我们钦佩那些在银河系选择和平统一之后仍然试图与之对抗的人，你们很勇敢。当我们杀死你们的最后一个孩子时，我们会把你们的勇气记录在史书里。
+WARN_COUNCIL_VOTE_01       | 这个议会里的人都是一群傻笑的傻瓜，他们宁愿在嘴上讨论问题，也不愿像战士一样解决问题！但是，仅仅因为我们对这些程序如此不屑，并不意味着我们会欣然原谅你在会议上对我们的反对！
+WARN_OATHBREAKER_01        | 小家伙！违背诺言是最大的耻辱！我们知道你是身体上的软弱者，但言语上的软弱甚至更让我们感到惊讶！[spiesCaught]
+WARN_ATTACKED_ALLY_01      | 小[defender_race]在我们的保护之下！停止你的战争并进行补偿吧，否则你会死在我们手上。
+WARN_REBELLING_AGAINST_01    | 大主教是唯一适合坐在星际委员会宝座上的人！我们绝不会接受你的卑鄙篡位！
+
 //
-PRAISE_COUNCIL_VOTE_01     | Ha! The looks on their faces as you sided with us proves very amusing. But now they know where the true power lies, and we thank our little friends for helping them to learn! 
-PRAISE_COUNCIL_VOTE_02     | It's quite tedious to be forced to endure babbling dotards during these meetings. Whether you aided us to end it quicker or because you are aware of our power, we recognize what you have done today.
-PRAISE_COUNCIL_VOTE_03     | You intrigue us, little one. But it is good for your people that you have chosen to recognize our might this day. For your sake, I hope you continue to do so. 
+PRAISE_COUNCIL_VOTE_01     | 哈！当你站在我们一边时，那些人脸上的表情非常有趣。但现在他们知道真正的力量在哪里了，我们感谢小伙伴们帮助他们学习！
+PRAISE_COUNCIL_VOTE_02     | 在这些会议期间被迫忍受喋喋不休的蠢话是相当乏味的。无论您想帮助我们更快地休会，还是因为您了解我们的力量，我们都认可您今天的选票。
+PRAISE_COUNCIL_VOTE_03     | 你引起了我们的兴趣，小家伙。你选择在今天承认我们的力量，这对你的人民来说是件好事。为了你的好处，我希望你继续这样做。
 
-PRAISE_ATTACKED_ENEMY_01   | Ha ha! Good to see you on the battlefield today, little friend! Let us crush these pathetic [defender_race] together! Let their blood flow over their worlds until not a single one of them remain! 
-PRAISE_ATTACKED_ENEMY_02   | What glorious battle we will make today, little one! Show us how you fight against the [defender_race], so that we may give you the proper respect from this day forward!  
-PRAISE_ATTACKED_ENEMY_03   | It's painfully obvious that you only fight against the [defender_race] because we also do so. Still, that you do not shy away from the fight entirely... perhaps we have misjudged you after all.
+PRAISE_ATTACKED_ENEMY_01   | 哈哈！很高兴今天在战场上见到你，小朋友！让我们一起粉碎这些可悲的[defender_race]！让他们的血流遍他们的世界，直到他们一个都不剩！
+PRAISE_ATTACKED_ENEMY_02   | 小家伙，我们将打出多么光辉的一战！向我们展示你如何打败[defender_race]吧，我们从今天起将给你应有的尊重！
+PRAISE_ATTACKED_ENEMY_03   | 很明显，你与[defender_race]战斗，只是因为我们选择这样做。尽管如此，你并没有完全回避战斗……也许我们该对你刮目相看了。
+PRAISE_TRADE_01            | 我们的贸易协定对我们两个种族都是有利可图的，小朋友。信任是最有价值的通货，只要你这样做，我们就会继续信任你。
+PRAISE_TRADE_02            | 虽然战争可能是最令人振奋的前进方式，但正如我们的贸易协议所证明的那样，战争不是唯一的方式。愿它继续下去，使我们两国人民都能繁荣昌盛！
 
-PRAISE_TRADE_01            | Our trade agreement has been most profitable for both our races, little friend. But trust is the most valuable coin, and we will continue to trust you so long as you act thusly.
-PRAISE_TRADE_02            | While war may be the most exhilarating way to advance, it is not the only way, as our trade agreement proves. Long may it continue so both our people may prosper! 
+PRAISE_REBELLING_WITH_01   | 哈哈！所以你想靠自己对抗银河系？你以为我们会回避这样一场光荣的战斗吗？我们挺身而出，因为[my_empire]与您同在！
 
-PRAISE_REBELLING_WITH_01   | Ha ha! So you think to stand against the galaxy on your own? Did you think we would shy away from such a glorious battle? Stand tall, for the [my_empire] stands with you!
+ACCEPT_TRADE_01            | 你谈判的智慧弥补了你体型上的不足，小[your_race]！从现在开始，帝国很高兴每年与你进行[amt] BC 的交易。
 
-ACCEPT_TRADE_01            | The wisdom of your negotiations makes up for your lack in size, little [your_race]! The Empire is pleased to trade [amt] BC with you yearly from now on.
-RESPOND_IGNORE_THREAT_01   | Hahaha, and why should we listen to threats from such tiny beings? Go now, and count yourself lucky we are in such a forgiving mood today!
-RESPOND_STOP_SPYING_01     | The little chommkas we use for spying were caught, were they? Ah well, return both them and our spies to us unharmed and we will see that they trouble you no more.
-RESPOND_STOP_ATTACKING_01  | The fleets of the Empire are terrifying, aren't they? Fear not little one, our display has had its intended effect, and we will recall them now.
+RESPOND_IGNORE_THREAT_01   | 哈哈哈，为什么要听这些小动物的威胁？现在去吧，算你走运，我们今天的心情很好！
 
-
-
+RESPOND_STOP_SPYING_01     | 我们用来监视的小怪物被抓住了，是吗？好吧，把我们的间谍安然无恙地还给我们，我们保证他们不再打扰你。
+RESPOND_STOP_ATTACKING_01  | 帝国的舰队很可怕吧？不要害怕，我们的表演已经达到了预期的效果，我们现在将召回军队。

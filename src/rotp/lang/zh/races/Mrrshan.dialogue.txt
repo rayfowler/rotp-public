@@ -10,80 +10,88 @@
 //  
 // This license is legally binding. Please review this license before altering 
 // or distributing any material covered under this license.
-//
+// 第1次校对：2021.12.18
+
 
 // Mrrshan specific dialogue
 
-CONTACT_AGGRESSIVE         | I greet you, strange thing. I am of the [my_race], and a servant of the Golden Khan. I hope that you are strong, [your_race], not just for your peoples' sake, but also for the sake of the treasures you hold most dear. 
-CONTACT_RUTHLESS           | We are the [my_race], [your_race], and we adhere to one belief alone: the strong shall take and the weak shall give. If you do not already understand the wisdom of such a philosophy, we'll be sure to teach it to you very soon.
-CONTACT_XENOPHOBIC         | Pray the Golden Khan regards you as worthy, [your_race]. Arouse his ire and he'll have no qualm about having fleets of [my_race] descend upon you.
-//
-GREETING_01                | You've proven yourself to us time and time again. We're honored to do what we can to prove ourselves to you in kind.
-GREETING_04                | I'll hear your words ambassador, but I'm not bound to give you whatever it is you're seeking.
-GREETING_07                | You've some daring in you to approach a servant of the Khan. Say what you have to say, and be prepared to flee if you're merely wasting my time.
-//
-DECLAREWAR_HATE_01         | Your relics are wasted on you! We'll adorn our halls on Fierias with your bones and your treasure, and they'll be all that remains of your people when we are through!
-DECLAREWAR_HATE_02         | Enough of this! Mere raids will not satisfy our enmity towards your kind: you [your_race_plural] deserve a far more large-scale approach!
-DECLAREWAR_HATE_03         | Even knowing that a race as weak as yours has influence in this universe is enough to make us sick. No matter the odds, I promise you we'll do everything we can to teach you your place.
-//
-DECLAREWAR_ERRATIC_01      | The claws of the Khanate need sharpening, ambassador. Your people should provide us with the sport we need to keep ourselves ready for more worthy foes.
-DECLAREWAR_ERRATIC_02      | Your people truly have some of the most beautiful treasures, [your_race]. We're eager to see how fiercely you'll fight to keep them!
-DECLAREWAR_ERRATIC_03      | It's been far too long since we've brought back legendary spoils. Your people fight well, but can they prevent us from taking so many glittering trophies when they're within our grasp?
-//
-DECLAREWAR_MILITARY_01     | The strong take and the weak give: an iron-clad law of the universe. You will soon see that it applies to not just your treasures, but to your planets as well.
-DECLAREWAR_MILITARY_02     | Though it rarely glitters like gold, land is often a worthy prize in and of itself. And all good prizes are worth fighting for, aren't they, ambassador?
-DECLAREWAR_MILITARY_03     | The needs of the Khanate outweigh the needs of the [your_race] race. You may have impressive technology, but I doubt you have the ferocity to match it!
-//
-DECLAREWAR_ALLIANCE_01     | You've played a dangerous game to make an enemy of the Khanate's ally. That game will soon come to a swift and bloody end!
-DECLAREWAR_ALLIANCE_02     | Our ally, the [other_race_plural], are an honorable but weak people. You might have won had this war involved only your two empires, but with us on their side you've no chance of victory!
-DECLAREWAR_ALLIANCE_03     | We'd have preferred to have the honor of toppling your empire all to ourselves. It looks like we'll have to split the glory, and the loot, with the [other_race] this time around.
-//
-DECLAREWAR_SPYING_01       | Coward, to engage in secrecy rather than fight with honor! Your actions match your weakness, and now you shall pay the price! 
-DECLAREWAR_SPYING_02       | How does it feel, [your_race]? To risk so much only to bring nothing but war upon your people?
-DECLAREWAR_SPYING_03       | Tell the [your_nameTitle] [your_name] this: secrecy is the theater of gutless curs. That you would act in such an cowardly way means our ferocity alone will see us to victory!
-//
-DECLAREWAR_ATTACK_01       | Ha! Here we took you for cowardly weaklings, but it seems you've some fight in you after all! It's just too bad you won't be around long to celebrate this meager victory!
-DECLAREWAR_ATTACK_02       | You've done us quite the favor by bringing the fight to our doorstep! We'll repay you in kind by ensuring your people meet their end on the battlefield like true warriors!
-DECLAREWAR_ATTACK_03       | I'd avoid arrogance if I were you, ambassador. The fury of our warriors will never be beaten by technology, no matter how strong you've made yours!
-//
-DECLAREWAR_OPPORTUNITY_01  | Your kind have long outlived their usefulness. But rest assured that you will provide adequate sport for the youngest and most inexperienced of our warriors as they hone their combat skills.
-DECLAREWAR_ASSASSIN_01     | I'm not shocked in the least that your kind would act so spinelessly. To assassinate an ambassador is the gravest dishonor you can bring upon yourself, and in their death throes your people will curse your name for ordering it done!
+CONTACT_AGGRESSIVE         | 向你问好，奇怪的生物。我是[my_race]的一员，黄金可汗的仆人。希望你足够强大，[your_race]，不只是为了保护你的同类，也是为了保护你珍视的财宝。
+CONTACT_RUTHLESS           | [your_race]，我们是[my_race]。我们只相信一个准则：弱肉强食。如果你不理解这句话的意思，我们很快就会让你知道。
+CONTACT_XENOPHOBIC         | 祈祷黄金可汗会喜欢你们吧，[your_race]。如果引发了他的愤怒，他会立刻命令[my_race]的舰队把你碾压。
 
+//
+GREETING_01                | 你们一次次地证明了自己。我们也会很荣幸地证明自己。
+GREETING_04                | 我会倾听你的诉求，但我不一定能给你你想要的东西。
+GREETING_07                | 敢于接近可汗的仆人，证明你是有些胆子的。说出你想干嘛吧，如果我觉得你在浪费我时间，那你得准备好逃跑了。
 
-OFFER_PEACE_01             | There's a time for everything ambassador, and the time now has come for an end to our hostilities. Keep your relics; peace is all we desire from you now!
-OFFER_TRADE_01             | There's no doubt that the fastest way to gain trophies is to just take them from those too feeble to stop you! But trading can be an acceptable way for two empires to gain from each other too. Let's start at [amt] BC every year to see how much we can... gain from each other. 
-OFFER_PACT_01              | No need for empires so equally matched to fight amongst themselves when there are plenty of weaker races to pillage and burn. Let's agree to an official pact of non-aggression so that our energies can be better spent on those with easier treasures for the taking! 
-OFFER_ALLIANCE_01          | I come to you today to propose a formal alliance between the Khanate and the [your_empire]. I trust you will waste no time in signing this treaty? Remember too: an equal share in an alliance means an equal share in the spoils of war! 
- 
-WARN_TRESPASSING_01        | Unless your ships are in the [system] system to deliver tribute, I suggest you order them to turn around and leave as soon as possible. 
-WARN_EXPANSION_01          | While we prefer valuables we can adorn the walls of our temples with, we're not so blind as to ignore the treasure that is unclaimed land. Check your expansion or risk arousing our ire, ambassador. 
-WARN_BUILDUP_01            | If you're building up your fleets to raid another race, you'll get no objections from us. But until we have assurances to that end, we'll assume your fleets will be pointed at us, and will not hesitate to act pre-emptively. 
-WARN_SKIRMISH_01           | That was an amusing little skirmish, wasn't it? Still, these small battles are boring and without reward: if you insist on continuing them, we'll be happy to make a more formal declaration of war! 
-WARN_ATTACKED_01           | Ha! Was that a serious attempt at trying to provoke us ambassador? Your people are weak and your treasures tarnished! Cease this foolish gambit before you force us to end you! 
-WARN_INVADED_01            | Surely you jest with this meager little invasion of yours? You're fortunate that we had little use for the [system] system, but if you set your sights on more valuable systems, we'll ensure that you can take nothing from anyone ever again! 
-WARN_ESPIONAGE_01          | What sneaky games your people play! You will have to put forth a great deal more effort than that if you wish to gain the secrets of the Khanate for yourself. Take your spy back with you and leave, before this game ceases to be amusing. [framed]
-WARN_SABOTAGE_01           | Dangerous ploys, ambassador. Had the building you wished to destroy housed great valuables, we would doubtless be washing your blood from the streets of your homeworld. I would heavily recommend you not to consider sabotage again. [forced]
-WARN_BIOWEAPON_01          | Trophies must be won in honorable combat, not stolen from the bones of those who were defenseless even while alive! If you ever use such despicable weapons again, I assure you it will be the last time! 
-WARN_GENOCIDE_01           | Not a bad decision, to eradicate the entire [victim_race] species and take every one of their treasures for your own. While I doubt you'd be stupid enough to try something like that with us, your capabilities are still quite disconcerting. 
-WARN_FINAL_WAR_01          | Stupid [your_race]! To defy the will of the council decision is to defy the will of the [my_race]! We will take your trophies and burn them down to the smallest bauble! Nothing will remain of your kind once we are through! 
-WARN_COUNCIL_VOTE_01       | The Khanate has more important matters to deal with than playing political games in council chambers. It would be better for us if you would simply yield to our wishes. And it would be better for you too, if my meaning is made clear.
-WARN_OATHBREAKER_01        | Hmph! Only the desperate break the bond of their word. No matter! From now on we will simply deal with you as we deal with others too duplicitous to be trusted. [spiesCaught]
-WARN_ATTACKED_ALLY_01      | I can't say I don't see why you'd attack the [defender_race]. Their treasures are so very lovely... but they will belong to us when we wish to take them: they will not belong to you!
-WARN_REBELLING_AGAINST_01  | This peace espoused by the council would never sit well with our people. We desire one thing and one thing only: to take treasures from the weak and make them ours! 
+//
+DECLAREWAR_HATE_01         | 你的宝物被你糟蹋了！我们会用你的骨头和你的财宝来装饰菲利亚斯的大厅。当战争结束时，这些东西将成为你们种族的唯一遗物！
+DECLAREWAR_HATE_02         | 够了！单纯的袭击并不足以展示我们对你们种族的敌意：你们[your_race_plural]应该受到更大规模的攻击！
+DECLAREWAR_HATE_03         | 像你这样弱小的种族在这个宇宙中也能有影响，这让我们作呕。我向你保证，我们会教你摆正自己的位置。
 
-PRAISE_COUNCIL_VOTE_01     | Your support in council is always valued, ambassador. The Golden Khan himself wished you to know that your people are a prized asset to the Khanate, and should you wish visit [candidate_home], a feast will be held in your name! 
-PRAISE_COUNCIL_VOTE_02     | Did you see that [rival_race] representative scowl? Ha! Let them sneer! As long as wise people like you continue to recognize our power then the Khanate has nothing to fear! 
-PRAISE_COUNCIL_VOTE_03     | Do you fear our raids ambassador? Are you hoping that appeasing us in council will keep our treasure seekers from your worlds? Hmhmhmhm, well it certainly does nothing to hurt your chances, does it?
-PRAISE_ATTACKED_ENEMY_01   | Today will be grand for both of our people, [attacker_race]! The [defender_race] hasn't a prayer against our combined strength! There's plenty of treasure for the both of us: to the greatest warriors go the greatest spoils! 
-PRAISE_ATTACKED_ENEMY_02   | Hoping for a chance at some treasure today, ambassador? Very well, I'll make you a deal: assist us in being rid of these [defender_race] pests and we will see to it that you earn a just reward. 
-PRAISE_ATTACKED_ENEMY_03   | It's obvious that you're only in this war for the riches you can take for yourself. But these [defender_race] have pitiful relics, so I suppose if you assist us then we'll leave for you whatever we don't wish to take for ourselves. 
-PRAISE_TRADE_01            | Remember when I began our trade agreement? I told you that we would see how much we would gain from each other, and I'm glad to see that the value gained has been mutual. 
-PRAISE_TRADE_02            | It's always more fun to fight for riches and head home with ships loaded with the spoils of victory! Ah well, I suppose that this trade agreement is at least a little bit more profitable when you factor in the costs. Be sure it stays that way, ambassador.
-PRAISE_REBELLING_WITH_01   | That's more like it! There's nothing like a good fight, eh? And so much loot begging to be acquired... I hope you don't mind that the Khanate wants to join in the fun! 
+//
+DECLAREWAR_ERRATIC_01      | 汗国的利爪需要磨砺，大使。你的人民要做好准备了，我们的狩猎需要有价值的对手。
+DECLAREWAR_ERRATIC_02      | 你的人民确实拥有一些最美丽的宝藏，[your_race]。 我们迫不及待地想看看你会为了留住它们而战斗！
+DECLAREWAR_ERRATIC_03      | 我们已经很久没有带回传奇战利品了。你们很会战斗，但你们能防止我们夺取自己想要的战利品吗？
 
-ACCEPT_TRADE_01            | I suppose we can't loot every civilization we come across. You want to trade how much BC annually? [amt]? Fine..
-RESPOND_IGNORE_THREAT_01   | Forgive me for laughing, your threats are just comically empty. Run along now before our raiders decide to sharpen their claws on your colonies.
-RESPOND_STOP_SPYING_01     | You found a spy you say belongs to us? Surely not. We would never dream of spying on the exalted [your_empire]. Do what you want with the spy, it is of no consequence to us.
-RESPOND_STOP_ATTACKING_01  | Worried about a raid, [your_race]? Don't worry, we have no interest in what you possess. We'll move them now. We wouldn't want to scare you, after all.
+//
+DECLAREWAR_MILITARY_01     | 强者取之，弱者予之：这是一条铁一般的宇宙法则。你很快就会发现它不仅适用于你的财宝，也适用于你的行星。
+DECLAREWAR_MILITARY_02     | 虽然它很少像黄金一样闪闪发光，但土地本身是一种有价值的战利品。所有的好战利品都值得为之奋斗，不是吗，大使？
+DECLAREWAR_MILITARY_03     | 汗国的需求比[your_race]种族的需要的更重要。您可能拥有令人印象深刻的技术，但我怀疑您是否具有与之匹配的战斗力！
 
+//
+DECLAREWAR_ALLIANCE_01     | 你选择成为汗国盟友的敌人，这是个危险的游戏。这个游戏很快就会来到一个惨烈的结局！
+DECLAREWAR_ALLIANCE_02     | 我们的盟友[other_race_plural]是一个光荣但软弱的种族。如果这场战争只涉及你们两个帝国，你可能会赢，但有我们在他们身边，你就没有获胜的机会！
+DECLAREWAR_ALLIANCE_03     | 我们本来希望能以一己之力毁灭你们的帝国。现在看来，我要跟[other_race]一起平分荣耀和战利品了。
+
+//
+DECLAREWAR_SPYING_01       | 胆小鬼，相比于为荣誉而战，你更愿意行鸡鸣狗盗之事！你的行为与你的弱小相得益彰，现在你将付出代价！
+DECLAREWAR_SPYING_02       | 冒这么大的风险，却只给你的人民带来战争。你现在感觉如何，[your_race]？
+DECLAREWAR_SPYING_03       | 告诉[your_name][your_nameTitle]：窃密是胆小者的标配。你会如此懦弱，意味着我们的凶猛足以让我们取得胜利！
+//
+DECLAREWAR_ATTACK_01       | 哈！在这里，我们把你当成了弱者，但看来你终究还是有些战斗力的！遗憾的是，你没有机会庆祝任何胜利！
+DECLAREWAR_ATTACK_02       | 你把战斗带到了我们家门口，帮了我们大忙！我们会好好回应你，确保你的人民像真正的战士一样在战场上安息！
+DECLAREWAR_ATTACK_03       | 如果我是你，我会避免显得太傲慢，大使。我们战士的力量是永远不会被科技打败的，无论你的科技有多强大！
+//
+DECLAREWAR_OPPORTUNITY_01  | 你们的同类已经不再有存在的意义。但是请放心，你们将成为我们最年轻和最缺乏经验的战士的训练对象，他们会借机磨练他们的战斗技能。
+DECLAREWAR_ASSASSIN_01     | 我一点也不感到震惊，你们这种人会如此鲁莽行事。暗杀大使是最严重的耻辱。你的人民会在他们倒下时诅咒你的名字。
+OFFER_PEACE_01             | 任何事都是可以商量的，大使。现在是结束我们敌对行动的时候了。保管好你的宝物吧。和平是我们唯一需要从你身上得到的。
+OFFER_TRADE_01             | 毫无疑问，获得宝物的最快方法就是从那些无法保护宝物的弱者身上夺走它们！但贸易也可以成为两个帝国相互获取利益的方式。让我们每年从[amt] BC 开始，看看我们能从彼此身上获得多少。
+OFFER_PACT_01              | 当有大量弱小的种族等待着被掠夺时，实力匹配的帝国不需要相互争斗。让我们达成互不侵犯条约吧，这样我们的精力就可以专注于夺取弱者的宝物了。
+OFFER_ALLIANCE_01          | 我今来此，是想提议可汗与[your_empire]结成盟友。我相信你会毫不犹豫地签下这份协议。记住这点：盟友之间会平分战争的奖励。
+WARN_TRESPASSING_01        | 除非你位于[system]星系的飞船是想上贡，否则我建议你赶紧离开，越开越好。
+WARN_EXPANSION_01          | 虽然我们更喜欢能够被装饰在墙上的珍宝，但我们也不会忽视另一种宝贝：无人占领的领土。注意你的扩张速度，否则我们会生气的，大使。
+WARN_BUILDUP_01            | 如果你扩张舰队是为了入侵其他种族，我们不会反对。除非我们能够获得这方面的保证，否则我们会认为你的舰队就是要进攻我们，这样的话，我们也只能相应地行动了。
+
+WARN_SKIRMISH_01           | 那是令人愉快的冲突，对吗？而且这些小战斗无聊，又缺少奖励。但你如果想要继续的话，我们会考虑正式宣战的。
+
+WARN_ATTACKED_01           | 哈！你想用这么一个糟糕的行动来刺激我们吗，大使？你们很弱小，你们的宝物不值一提。停止这个没有意义的赌博吧，不然我们会被迫帮你们停止。
+WARN_INVADED_01            | 你这小小的入侵行动应该是种玩笑吧？你应该感到庆幸，[system]星系对我们的用处不大，但如果你想侵占更有价值的领土，我们会保证你一无所获。
+WARN_ESPIONAGE_01          | 你的人在玩什么鬼鬼祟祟的游戏！如果你想获得汗国的秘密，你将不得不付出更多的努力。在这个游戏不再有趣之前，带上你的间谍离开吧。[framed]
+WARN_SABOTAGE_01           | 危险的做法，大使！如果你想要破坏的建筑里藏着珍贵的物品，我们毫无疑问地会血洗你的家园。我非常认真地建议你停止破坏行动。[forced]
+WARN_BIOWEAPON_01          | 奖品只应该从公平的战斗中获得，而不是从那些手无寸铁的人身上偷取！如果你再次使用这种令人鄙夷的武器，我们会保证你不会再有下一次机会。
+WARN_GENOCIDE_01           | 消灭一整个[victim_race]物种，拿走属于他们的一切财宝，这不是个糟糕的决定。虽然我怀疑你是否会愚蠢到对我们做类似的事情，但你仍然让我们感到不安。
+WARN_FINAL_WAR_01          | 愚蠢的[your_race]！违抗委员会的决定，就是在违抗[my_race]的意志！我们会夺走并烧毁你们的一切宝物！你们种族的任何东西都不会留下来。
+WARN_COUNCIL_VOTE_01       | 相比于在委员会的房间里玩政治游戏，可汗有更重要的任务要去处理。在我们看来，你应该按照我们的想法行动。这对你也是有好处的，如果你知道我什么意思的话。
+WARN_OATHBREAKER_01        | 只有绝望的人会破坏他们的诺言。无论如何，从现在开始，我们会把你当作不值得信任的种族来对待。[spiesCaught]
+WARN_ATTACKED_ALLY_01      | 我承认理解你攻击[defender_race]的原因。他们的宝藏实在吸引人……但这些宝藏属于未来进攻他们的我们，这些宝藏不属于你们！
+WARN_REBELLING_AGAINST_01  | 委员会所确定的和平并不符合我们人民的想法。我们要且仅要一件事情：将弱者的宝藏据为己有！
+
+PRAISE_COUNCIL_VOTE_01     | 你在委员会里的支持至关重要，大使！黄金可汗想告诉你，你们对可汗有巨大的价值。如果有一天你们想拜访[candidate_home]，一场宴会会以你们的名义举行！
+
+PRAISE_COUNCIL_VOTE_02     | 你看到[rival_race]代表皱眉了吗？哈！让他们冷笑吧！只要像你这样的智者继续承认我们的力量，那么汗国就没有什么可害怕的！
+PRAISE_COUNCIL_VOTE_03     | 你害怕我们的突袭吗，大使？你是否在委员会中安抚了我们呢？这会让我们的寻宝者远离你的世界的。嗯嗯嗯，这肯定不会伤害到你，是吧。
+PRAISE_ATTACKED_ENEMY_01   | [attacker_race]，今天会是我们两个种族的大日子！[defender_race]在我们的联合力量下将不堪一击。有足够多的战利品供我们瓜分，最强的战士会获得最好的战利品！
+PRAISE_ATTACKED_ENEMY_02   | 大使，你们也想获得宝物吧？很好，我会和你做个交易：帮助我们摆脱这些[defender_race]害虫，我们会确保你获得公正的奖励。
+PRAISE_ATTACKED_ENEMY_03   | 很明显，你加入这场战争只是因为你可以为自己获取财富。但是这些[defender_race]的财宝很普通。我想如果你帮助我们，我们会为你留下任何我们不想带走的东西。
+PRAISE_TRADE_01            | 还记得我们刚开始贸易协议的时候吗？我告诉你，我们想看看各自能获得多少好处。我很高兴地看到我们都获得了好处。
+PRAISE_TRADE_02            | 为财富而战并带着战利品满载而归是一件很棒的事情。但是，我猜这份贸易协议也会带来持续的财富。让这个状态维持吧，大使。
+PRAISE_REBELLING_WITH_01   | 这才像话！没有什么比一场酣畅淋漓的战斗更爽的事情了，对吧？而且还有那么多的战利品等着我们……我希望你不介意可汗想要加入这场战争！
+
+ACCEPT_TRADE_01            | 我想我们不可能去掠夺每一个我们见到的文明。你想要每年交易多少 BC 来着？[amt]？好的吧。
+
+RESPOND_IGNORE_THREAT_01   | 原谅我笑了，你的威胁空洞得可笑。快跑吧，在我们的战士决定拿你们的殖民地开刀前。
+
+RESPOND_STOP_SPYING_01     | 你发现了一个属于我们的战士？我们不会想要侦查了不起的[your_empire]。随便你怎么处置这个所谓的间谍吧，我们不关心。
+RESPOND_STOP_ATTACKING_01  | 担心一次进攻吗，[your_race]？不用担心，我们对你的东西不敢兴趣。我们这就离开。毕竟，我们不想惊吓到你。
 

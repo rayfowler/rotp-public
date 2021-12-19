@@ -780,6 +780,8 @@ public class DiscoverTechUI extends FadeInPanel implements MouseListener, MouseM
             case KeyEvent.VK_SPACE:
                 if (mode == MODE_SHOW_TECH)
                     handleShowTechAction();
+                else if (mode == MODE_COMPLETED) 
+                    handleModeCompletedAction();
                 return;
             case KeyEvent.VK_1:
                 if (mode == MODE_REALLOCATE)

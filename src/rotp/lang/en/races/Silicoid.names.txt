@@ -1,5 +1,5 @@
 // all possible names
-name: Silicoid, Igneoid, Sedimoid, Granitoid, Magmoid
+name: Cryslonoid, Igneoid, Sedimoid, Granitoid, Magmoid
 
 desc1: Xenophobic Expansionists
 desc2: Immune to Hostile Environments

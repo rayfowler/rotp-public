@@ -79,7 +79,6 @@ public class UserPreferences {
     private static String saveDir = "";
     private static float uiTexturePct = 0.20f;
     private static int screenSizePct = 93;
-    private static final HashMap<String, String> raceNames = new HashMap<>();
     private static int backupTurns = 0;
 
     public static void setToDefault() {
@@ -257,8 +256,6 @@ public class UserPreferences {
     }
     public static void save() {
         String path = Rotp.jarPath();
-        List<String> raceKeys = new ArrayList<>(raceNames.keySet());
-        Collections.sort(raceKeys);
         try (FileOutputStream fout = new FileOutputStream(new File(path, PREFERENCES_FILE));
             // modnar: change to OutputStreamWriter, force UTF-8
             PrintWriter out = new PrintWriter(new OutputStreamWriter(fout, "UTF-8")); ) {
@@ -282,8 +279,6 @@ public class UserPreferences {
             out.println(keyFormat("SCREEN_SIZE_PCT")+ screenSizePct());
             out.println(keyFormat("UI_TEXTURE_LEVEL")+(int) (uiTexturePct()*100));
             out.println(keyFormat("LANGUAGE")+ languageDir());
-            for (String raceKey: raceKeys) 
-              out.println(keyFormat(raceKey)+raceNames.get(raceKey));
         }
         catch (IOException e) {
             System.err.println("UserPreferences.save -- IOException: "+ e.toString());
@@ -332,7 +327,7 @@ public class UserPreferences {
             case "UI_TEXTURE_LEVEL": uiTexturePct(Integer.valueOf(val)); return;
             case "LANGUAGE":     selectLanguage(val); return;
             default:
-                raceNames.put(key, val); break;
+                break;
         }
     }
     private static String yesOrNo(boolean b) {
@@ -367,14 +362,6 @@ public class UserPreferences {
         int oldSize = screenSizePct;
         setScreenSizePct(screenSizePct+5);
         return oldSize != screenSizePct;
-    }
-    public static String raceNames(String id, String defaultNames) {
-        String idUpper = id.toUpperCase();
-        if (raceNames.containsKey(idUpper))
-            return raceNames.get(idUpper);
-        
-        raceNames.put(idUpper, defaultNames);
-        return defaultNames;
     }
     public static String displayModeToSettingName(String s) {
         switch(s) {

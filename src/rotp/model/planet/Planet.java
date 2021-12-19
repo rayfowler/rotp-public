@@ -32,6 +32,7 @@ import rotp.model.galaxy.IMappedObject;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.game.GameSession;
+import rotp.model.tech.TechSoilEnrichment;
 import rotp.ui.util.planets.Sphere2D;
 import rotp.ui.util.planets.SphereShadowPaint;
 import rotp.util.Base;
@@ -384,6 +385,40 @@ public class Planet implements Base, IMappedObject, Serializable {
     }
     public float maxSize() {
         return isColonized() ? colony.maxSize() : baseSize();
+    }
+    public float maxSizeAfterSoilAtmoTform() {
+        float size = maxSize();
+        int tempEnv = environment();
+        Empire emp = empire();
+        
+        // if hostile, can we t-form atmosphere?
+        if (canTerraformAtmosphere(emp)) {
+            size += emp.tech().topAtmoEnrichmentTech().sizeIncrease(baseSize());
+            tempEnv = ENVIRONMENT_NORMAL;
+        }
+        
+        // still hostile, fall out
+        if (tempEnv == ENVIRONMENT_HOSTILE)
+            return size;
+        
+        // check if known soil enrich tech is better than this planet's 
+        // current environment. If not, fall out
+        TechSoilEnrichment soilTech = emp.tech().topSoilEnrichmentTech();
+        if (soilTech == null)
+            return size;
+   
+        // if we are not fertile and can be made fertile, count that
+        if ((tempEnv == ENVIRONMENT_NORMAL) && (soilTech.environment > ENVIRONMENT_NORMAL)) {
+            tempEnv = ENVIRONMENT_FERTILE;
+            size += ((float)Math.ceil(baseSize() / 20.0f) * 5);
+        }
+        
+        // if we are not gaia and can be made gaia, count that
+        if ((tempEnv == ENVIRONMENT_FERTILE) && (soilTech.environment > ENVIRONMENT_FERTILE)) {
+            size += ((float)Math.ceil((baseSize()-10) / 20.0f) * 5);
+        }
+
+        return size;
     }
     private void initColors() {
         switch(type().key()) {

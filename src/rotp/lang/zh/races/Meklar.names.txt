@@ -1,21 +1,22 @@
+// 第1次校对：2021.12.18
 // all possible names
-name: Meklar, Mechanar, Cybernar, Digitar, Technar
+name: 梅科拉人, 梅卡娜人, 赛博人, 数码人, 科技人
 
 desc1: 神经质的工业主义者
 desc2: 强大的工业自动化技术
 desc3: [race]相信通过科学技术可以实现完美和永生。
 
 // possible home system names
-home: Meklon, Collosson, Calculon, Bender, Optimus
+home: 梅科隆星, 科罗森星, 卡库隆星, 本德尔星, 极星
 
-title:     Emperor
-fulltitle: Supreme Arbiter
+title:     皇帝
+fulltitle: 最高仲裁者
 
 // possible leader names
 leader: CB-715, INT-986, MS-35, QX-537, TVC-15, TX-1138
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
-ship1: Byte, Transistor, Switch, Component, Circuit, Digit, Logic  
-ship2: Processor, Calculator, Computer, Algorithm, Network, Calculus
-ship3: Dynamo, Battery, Ajax, Tornado, Nexus, Marauder, Drachma
-ship4: Nemesis, Devastator, Annihilator,  Intruder,  Hyperion, Penetrator, Tormentor
+ship1: 比特, 晶体管, 开关, 组件, 电路, 数码, 逻辑  
+ship2: 处理器, 计算器, 计算机, 算法, 网络, 微积分
+ship3: 发电机, 电池, 阿贾克斯, 龙卷风, 联结点, 掠夺者, 德拉克马
+ship4: 克星, 毁灭者, 歼灭者,  入侵者,  海波龙, 穿透者, 折磨者

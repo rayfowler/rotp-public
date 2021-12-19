@@ -1,0 +1,23 @@
+// 第1次校對：2021.12.18
+
+// all possible names
+name: 賽隆人, 美塔隆人, 西隆人, 塞里布隆人, 紐拉隆人
+
+desc1: 和平的科學家
+desc2: 優秀的研究能力
+desc3: [race]追求與其他種族的和諧共處。
+
+// possible home system names
+home: 門塔星, 科吉塔星, 塞拉星, 矩陣星, 神經元星
+
+title:     議長
+fulltitle: 最高議長
+
+// possible leader names
+leader: 戴娜隆, 開爾文, 米鬆, 夸克, 塔川, 塞高特
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: 電子, 中微子, 夸克, 中子, 質子, 原子, 分子
+ship2: 西格瑪, 質數, 半徑, 斜邊, 代數, 切線, 對數
+ship3: 視差, 橢圓, 軸, 正弦波, 分形, 微積分, 推導
+ship4: 日火, 星座, 新星, 類星體, 銀河, 星雲, 日冕

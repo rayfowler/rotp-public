@@ -1,5 +1,5 @@
 // all possible names
-name: Psilon, Mentalon, Psychon, Cerebron, Neuralon
+name: Mentaran, Mentalon, Psychon, Cerebron, Neuralon
 
 desc1: Pacifist Technologists
 desc2: Superior Research Techniques
