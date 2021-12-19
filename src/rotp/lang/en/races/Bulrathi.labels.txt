@@ -1,7 +1,7 @@
 // race-specific variables (must start with _)
-_empire                           | Burlathi Empire, Bearathi Empire, Ursinathi Empire, Pawrathi Empire, Grizzlathi Empire
-_race                             | Burlathi, Bearathi, Ursinathi, Pawrathi, Grizzlathi
-_race_plural                      | Burlathis, Bearathis, Ursinathis, Pawrathis, Grizzlathis
+_empire                           | Ursinathi Empire, Bearathi Empire, Burlathi Empire, Pawrathi Empire, Grizzlathi Empire
+_race                             | Ursinathi, Bearathi, Burlathi, Pawrathi, Grizzlathi
+_race_plural                      | Ursinathis, Bearathis, Burlathis, Pawrathis, Grizzlathis
 _title                            | Grand Hierarch
 _nameTitle                        | Grand Hierarch
 
