@@ -1452,24 +1452,20 @@ public class AIDiplomat implements Base, Diplomat {
     }
     private void beginIncidentWar(EmpireView view, DiplomaticIncident inc) {
         log(view.toString(), " - Declaring war based on incident: ", inc.toString(), " id:", inc.declareWarId());
-        System.out.println(galaxy().currentTurn()+" "+empire.name()+" starts incident-war on "+view.empire().name());
         view.embassy().beginWarPreparations(inc.declareWarId(), inc);
         if (inc.triggersImmediateWar())
             view.embassy().declareWar();
     }
     private void beginOpportunityWar(EmpireView view) {
         log(view+" - Declaring war based on opportunity");
-        System.out.println(galaxy().currentTurn()+" "+empire.name()+" starts opportunity-war on "+view.empire().name());
         view.embassy().beginWarPreparations(DialogueManager.DECLARE_OPPORTUNITY_WAR, null);
     }
     private void beginHateWar(EmpireView view) {
         log(view+" - Declaring war based on hate");
-        System.out.println(galaxy().currentTurn()+" "+empire.name()+" starts hate-war on "+view.empire().name());
         view.embassy().beginWarPreparations(DialogueManager.DECLARE_HATE_WAR, null);
     }
     private void beginErraticWar(EmpireView view) {
         log(view+" - Declaring war based on erratic");
-        System.out.println(galaxy().currentTurn()+" "+empire.name()+" starts erratic-war on "+view.empire().name());
         view.embassy().beginWarPreparations(DialogueManager.DECLARE_ERRATIC_WAR, null);
     }
     @Override
