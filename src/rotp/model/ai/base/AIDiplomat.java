@@ -1415,8 +1415,8 @@ public class AIDiplomat implements Base, Diplomat {
         // modnar: reduce basePower due to other changes (techMod, enemyMod)
         int basePower = 200;
         
-        float otherPower = basePower+v.empire().status().lastViewValue(empire, FLEET);
-        float myPower = basePower+v.owner().totalFleetSize();
+        float otherPower = basePower+v.empire().status().lastViewValue(empire, FLEET) * v.spies().tech().avgTechLevel();
+        float myPower = basePower+v.owner().totalFleetSize() * empire.tech().avgTechLevel();
         // xilmi: When we have never had any espionage-information on that empire we assume it's as strong as we are
         if(v.empire().status().lastViewTurn(empire) < 0)
             otherPower = myPower;
