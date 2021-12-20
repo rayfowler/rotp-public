@@ -740,10 +740,13 @@ public class DiplomaticEmbassy implements Base, Serializable {
     }
     private void beginPeace(int duration) {
         treaty = new TreatyPeace(view.empire(), view.owner(), duration);
-        for (DiplomaticIncident ev: incidents.values()) 
+        if(owner().generalAI().absolution() > 0)
         {
-            if(ev.severity < 0)
-                ev.severity /= 2;
+            for (DiplomaticIncident ev: incidents.values()) 
+            {
+                if(ev.severity < 0)
+                    ev.severity *= 1 - owner().generalAI().absolution();
+            }
         }
         view.setSuggestedAllocations();
     }

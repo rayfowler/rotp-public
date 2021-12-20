@@ -1168,4 +1168,6 @@ public class AIGeneral implements Base, General {
         //System.out.println(galaxy().currentTurn()+" "+empire.name()+" highest Threat: "+biggestThreat.name()+": "+highestThreat);
         return biggestThreat;
     }
+    @Override
+    public float absolution() { return 1f; }
 }
