@@ -1,9 +1,9 @@
 // all possible names
-name: Sakkra, Reptara, Sauria, Lizzra, Anura, Gekkra, Squamara, Tuatara
+name: Ssslaura, Reptara, Sauria, Lizzra, Anura, Gekkra, Squamara, Tuatara
 
 desc1: Aggressive Expansionisten
 desc2: Erhöhtes Bevölkerungswachstum
-desc3: Die Eiferer des Sakkra-Konklave bemühen sich, die Welten zu perfektionieren, die sie erobern.
+desc3: Die Eiferer des Ssslaura-Konklave bemühen sich, die Welten zu perfektionieren, die sie erobern.
 
 // possible home system names
 home: Sssla, Sssana, Sssihs, Sssha, Sssss, Hsssa

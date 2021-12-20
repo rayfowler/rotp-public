@@ -1,9 +1,9 @@
 // all possible names
-name: Meklar, Mechanar, Cybernar
+name: Meklonar, Mechanar, Cybernar
 
 desc1: Xenophobe Technokraten
 desc2: verbesserte Fabrikkontrolle
-desc3: Die Bürger der Meklar Corporate suchen Perfektion und Unsterblichkeit durch Technologie.
+desc3: Die Bürger der Meklonar Corporate suchen Perfektion und Unsterblichkeit durch Technologie.
 
 // possible home system names
 home: Meklon, Collosson, Calculon, Bender, Optimus

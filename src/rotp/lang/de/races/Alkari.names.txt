@@ -1,9 +1,9 @@
 // all possible names
-name: Alkari, Aviari, Cluckari
+name: Altairi, Aviari, Cluckari
 
 desc1: Ehrhafte Militaristen
 desc2: Überragende Piloten
-desc3: Die Alkari Souveränität ist eine Kriegergesellschaft, die Ehre in der Schlacht anpreist.
+desc3: Die Altairi Souveränität ist eine Kriegergesellschaft, die Ehre in der Schlacht anpreist.
 
 // possible home system names
 home: Altair, Aegir, Aviar, Volary, Aerie

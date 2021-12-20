@@ -1,9 +1,9 @@
 // all possible names
-name: Mrrshan, Prrsah, Mewshan
+name: Fiershan, Prrsah, Mewshan
 
 desc1: Rücksichtslose Militaristen
 desc2: Überragende Schützen
-desc3: Die Mrrshan Horden suchen Schlachttrophäen während sie sich über die Galaxie verbreiten.
+desc3: Die Fiershan Horden suchen Schlachttrophäen während sie sich über die Galaxie verbreiten.
 
 // possible home system names
 home: Fierias, Fierina, Miamara, Miriana, Yailaria
