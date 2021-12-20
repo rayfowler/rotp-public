@@ -29,76 +29,75 @@ public enum FontManager implements Base {
     public static FontManager current()  { return INSTANCE; }
 
     private static final int MAX_FONT_SIZE = 200;
-    private Font logoFont;
-    private Font introFont;
-    private Font dlgFont;
-    private Font narrowFont;
-    private Font plainFont;
-    private final Map<String,Font> languageFonts = new HashMap<>();
-    private final Map<String,Integer> languageFontSizes = new HashMap<>();
-    private int logoSize, introSize, dlgSize, narrowSize, plainSize, languageSize;
-    private Font[] createdLogoFont;
-    private Font[] createdDlgFont;
-    private Font[] createdNarrowFonts;
-    private Font[] createdPlainFonts;
-    private Font[] createdIntroFonts;
+    private String logoFont;
+    private String introFont;
+    private String dlgFont;
+    private String narrowFont;
+    private String plainFont;
+    private final Map<String,String[]> languageFontNames = new HashMap<>(); // maps lang code to filenames of font
+    private final Map<String,Font> languageFonts = new HashMap<>();       // maps filename of font to a font[]
+    private final Map<String,Font[]> allFonts = new HashMap<>();
+    private int dlgSize, narrowSize, plainSize, introSize,  logoSize, languageSize;
 
     @Override
-    public Font dlgFont(int n) {
-        int i = min(MAX_FONT_SIZE, n);
-        if (createdDlgFont[i] == null)
-            createdDlgFont[i] = dlgFont.deriveFont((float) scaled(i*dlgSize/100));
-        return createdDlgFont[i];
+    public Font dlgFont(int n) { return getFont(dlgFont, n, dlgSize); }
+    @Override
+    public Font narrowFont(int n) { return getFont(narrowFont, n, narrowSize); }
+    @Override
+    public Font plainFont(int n)          { return getFont(plainFont, n, plainSize);  }
+    public Font languageFont(String code) {
+        String filenames[] = languageFontNames.get(code);
+        return languageFonts.get(filenames[5]);
     }
     @Override
-    public Font narrowFont(int n) {
-        int i = min(MAX_FONT_SIZE, n);
-        if (createdNarrowFonts[i] == null)
-            createdNarrowFonts[i] = narrowFont.deriveFont((float) scaled(i*narrowSize/100));
-        return createdNarrowFonts[i];
-    }
+    public Font font(int n)        { return getFont(introFont, n, introSize);  }
     @Override
-    public Font plainFont(int n) {
-        int i = min(MAX_FONT_SIZE, n);
-        if (createdPlainFonts[i] == null)
-            createdPlainFonts[i] = plainFont.deriveFont((float) scaled(i*plainSize/100));
-        return createdPlainFonts[i];
+    public Font logoFont(int n)    { return getFont(logoFont, n, logoSize); }
+    private Font getFont(String filename, int size, int scale) {
+        if (!allFonts.containsKey(filename)) 
+            createFontTable(filename, null);
+        
+        int n = min(MAX_FONT_SIZE, size);
+        Font[] fonts = allFonts.get(filename);
+        
+        int index = n*scale/100;
+        return fonts[index];
     }
-    public Font languageFont(String code, int size) {
-        int i = min(MAX_FONT_SIZE, size);
-        Font baseFont = languageFonts.get(code);
-        int baseSize = languageFontSizes.get(code);
-        return baseFont.deriveFont((float)scaled(i*baseSize/100));
-    }
-    @Override
-    public Font font(int n) {
-        int i = min(MAX_FONT_SIZE, n);
-        if (createdIntroFonts[i] == null)
-            createdIntroFonts[i] = introFont.deriveFont((float) scaled(i*introSize/100));
-        return createdIntroFonts[i];
-    }
-    @Override
-    public Font logoFont(int n) {
-        int i = min(MAX_FONT_SIZE, n);
-        if (createdLogoFont[i] == null)
-            createdLogoFont[i] = logoFont.deriveFont((float) scaled(i*logoSize/100));
-        return createdLogoFont[i];
-    }
-    private void initFonts() {
-        createdLogoFont = new Font[MAX_FONT_SIZE+1];
-        createdDlgFont = new Font[MAX_FONT_SIZE+1];
-        createdNarrowFonts = new Font[MAX_FONT_SIZE+1];
-        createdPlainFonts = new Font[MAX_FONT_SIZE+1];
-        createdIntroFonts = new Font[MAX_FONT_SIZE+1];
+    private void createFontTable(String filename, Font f) {
+        if (allFonts.containsKey(filename))
+            return;
+        
+        Font[] fonts = new Font[MAX_FONT_SIZE+1];
+        allFonts.put(filename, fonts);
+        
+        // index 0 is the base font that we use to re-derive
+        // the others when the window size changes 
+        fonts[0] = f;
+        
+        for (int size=1;size<=MAX_FONT_SIZE;size++) {
+            if (fonts[size] == null)
+                fonts[size] = f.deriveFont((float) scaled(size));
+        }
     }
     public void resetFonts() {
-        initFonts();
+        // window scaling has scaled. Rederive all fonts according to new scale
+        for (String key: allFonts.keySet()) {
+            Font[] fonts = allFonts.get(key);
+            Font baseFont = fonts[0];
+            for (int size=1;size<=MAX_FONT_SIZE;size++) 
+                fonts[size] = baseFont.deriveFont((float) scaled(size));
+        }
+    }
+    public String[] fontNames(String langCode) {
+        if (!languageFontNames.containsKey(langCode))
+            languageFontNames.put(langCode, new String[6]);
+        
+        return languageFontNames.get(langCode);
     }
     public void loadFonts(String baseDir, String langDir) {
         String fontDir = baseDir+"fonts/";
         String dir = baseDir+langDir+"/";
         log("Loading fonts - baseDir: ", baseDir, "  fontDir: ", fontDir, "  langDir: ", dir);
-        initFonts();
         String dataFile = "fonts.txt";
 
         BufferedReader in = reader(dir+dataFile);
@@ -130,28 +129,39 @@ public enum FontManager implements Base {
             err("FontManager.loadFont: could not get inputStream for:"+fontDir+filename);
             return;
         }
-
+        
         try {
             Font newFont = Font.createFont(Font.TRUETYPE_FONT, is);
+            String[] fontNames = fontNames(langCode);
             if (fontName.equalsIgnoreCase("dialogue")) {
-                dlgFont = newFont;
+                fontNames[0] = filename;
+                dlgFont = filename;
                 dlgSize = fontSizing;
+                createFontTable(filename, newFont);
             }
             else if (fontName.equalsIgnoreCase("narrow")) {
-                narrowFont = newFont;
+                fontNames[1] = filename;
+                narrowFont = filename;
                 narrowSize = fontSizing;
+                createFontTable(filename, newFont);
             }
             else if (fontName.equalsIgnoreCase("plain")) {
-                plainFont = newFont;
+                fontNames[2] = filename;
+                plainFont = filename;
                 plainSize = fontSizing;
+                createFontTable(filename, newFont);
             }
             else if (fontName.equalsIgnoreCase("normal")) {
-                introFont = newFont;
+                fontNames[3] = filename;
+                introFont = filename;
                 introSize = fontSizing;
+                createFontTable(filename, newFont);
             }
             else if (fontName.equalsIgnoreCase("logo")) {
-                logoFont = newFont;
+                fontNames[4] = filename;
+                logoFont = filename;
                 logoSize = fontSizing;
+                createFontTable(filename, newFont);
             }
         }
         catch (FontFormatException | IOException e) {
@@ -162,7 +172,6 @@ public enum FontManager implements Base {
         String fontDir = baseDir+"fonts/";
         String dir = baseDir+langDir+"/";
         log("Loading fonts - baseDir: ", baseDir, "  fontDir: ", fontDir, "  langDir: ", dir);
-        initFonts();
         String dataFile = "fonts.txt";
 
         BufferedReader in = reader(dir+dataFile);
@@ -191,7 +200,14 @@ public enum FontManager implements Base {
             return;
         
         String filename = fields.size() > 1 ? fields.get(1) : fields.get(0);
-        int fontSizing = fields.size() > 2 ? parseInt(fields.get(2)): 100;
+        
+        String[] fontNames = fontNames(langCode);
+        fontNames[5] = filename;
+        
+        if (languageFonts.containsKey(filename))
+            return;
+        
+        int fontScaling = fields.size() > 2 ? parseInt(fields.get(2)): 100;
 
         InputStream is = fileInputStream(fontDir+filename);
         if (is == null) {
@@ -201,10 +217,11 @@ public enum FontManager implements Base {
 
         try {
             Font newFont = Font.createFont(Font.TRUETYPE_FONT, is);
-            languageFonts.put(langCode, newFont);
-            languageFontSizes.put(langCode, fontSizing);
+            createFontTable(filename, newFont);
+            Font font2 = getFont(filename, 15, fontScaling);
+            languageFonts.put(filename, font2);
         }
-        catch (Exception e) {
+        catch (FontFormatException | IOException e) {
             err("FontManager.loadFont -- Exception: " + e.getMessage());
         }
     }

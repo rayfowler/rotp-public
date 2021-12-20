@@ -121,7 +121,7 @@ public class LanguageManager implements Base {
         //Language defLang = languages().get(DEFAULT_LANGUAGE);
         Language newLang = languages().get(i);
 
-        // load fonts for selected lanage
+        // load fonts for selected language
         FontManager.current().loadFonts(baseDir, newLang.directory);
 
         // reset dialogue maps in label managers
