@@ -1,5 +1,5 @@
 // all possible names
-nome: Silicoide, Igneoide, Sedimoide, Granitoide, Magmoide
+name: Silicoide, Igneoide, Sedimoide, Granitoide, Magmoide
 
 desc1: Espansionisti Xenofobi
 desc2: Immune agli Ambienti Ostili

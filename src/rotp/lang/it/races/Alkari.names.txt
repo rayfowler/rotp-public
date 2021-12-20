@@ -1,5 +1,5 @@
 // all possible names
-nome: Alkari, Aviari, Cluckari, Fedari, Faulari
+name: Alkari, Aviari, Cluckari, Fedari, Faulari
 
 desc1: Militaristi Onorevoli
 desc2: Piloti Superiori

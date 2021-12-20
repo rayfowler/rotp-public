@@ -1,5 +1,5 @@
 // all possible names
-nome: Sakkra, Reptara, Saura, Raptora, Tyranna
+name: Sakkra, Reptara, Saura, Raptora, Tyranna
 
 desc1: Espansionisti Aggressivi
 desc2: Aumento della Crescita della Popolazione
