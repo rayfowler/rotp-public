@@ -1416,7 +1416,7 @@ public class AIDiplomat implements Base, Diplomat {
         int basePower = 200;
         
         float otherPower = basePower+v.empire().status().lastViewValue(empire, FLEET);
-        float myPower = basePower+v.owner().militaryPowerLevel();
+        float myPower = basePower+v.owner().totalFleetSize();
         // xilmi: When we have never had any espionage-information on that empire we assume it's as strong as we are
         if(v.empire().status().lastViewTurn(empire) < 0)
             otherPower = myPower;
