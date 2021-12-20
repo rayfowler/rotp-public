@@ -88,6 +88,10 @@ public final class TechShipNullifier extends Tech {
     @Override
     public boolean providesShipComponent()  { return true; }
     @Override
+    public float baseValue(Empire c) {
+        return c.ai().scientist().baseValue(this);
+    }
+    @Override
     public void provideBenefits(Empire c) {
         super.provideBenefits(c);
         ShipSpecialShipNullifier sh = new ShipSpecialShipNullifier (this);
