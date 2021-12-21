@@ -1,9 +1,9 @@
 // all possible names
-name: Bulrathi, Bearathi, Ursinathi, Pawrathi, Grizzlathi
+name: Ursinathi, Bearathi, Burlathi, Pawrathi, Grizzlathi
 
 desc1: Ahli Lingkungan yang Agresif 
 desc2: Prajurit Lapangan yang Hebat
-desc3: [race] yang sangat setia, menghargai baik kekuatan fisik maupun kebijaksanaan raja filsuf
+desc3: Ursinathi yang sangat setia, menghargai baik kekuatan fisik maupun kebijaksanaan raja filsuf
 
 // possible home system names
 home: Ursa, Canis, Grizzla, Pandara, Bruin

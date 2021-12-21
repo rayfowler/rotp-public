@@ -1,9 +1,9 @@
 // all possible names
-name: Silicoid, Igneoid, Sedimoid, Granitoid, Magmoid
+name: Cryslonoid, Igneoid, Sedimoid, Granitoid, Magmoid
 
 desc1: Pelaku perluasan wilayah yang tidak suka ras asing
 desc2: Kebal terhadap lingkungan yang tidak ramah
-desc3: [race] yang sulit dimengerti dan terus haus akan energi mencari mushh abadi mereka di seluruh galaksi ini.
+desc3: Cryslonoid yang sulit dimengerti dan terus haus akan energi mencari mushh abadi mereka di seluruh galaksi ini.
 
 // possible home system names
 home: Cryslon, Geode, Karst, Igneous, Silican

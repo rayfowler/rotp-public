@@ -455,7 +455,7 @@ MAIN_SYSTEM_DETAIL_PF             | Pop %1  Fac %2
 MAIN_SYSTEM_DETAIL_NO_DATA        | Tidak Ada Data
 MAIN_UNEXPLORED_SYSTEM            | Belum Dieksplorasi
 MAIN_ALLIED_COLONY                | Koloni Sekutu
-MAIN_SYSTEM_RANGE                 | %1 Tahun Cahaya
+MAIN_SYSTEM_RANGE                 | %1 tc
 MAIN_OUT_OF_RANGE_DESC            | Di Luar Jangkauan
 MAIN_SCOUT_RANGE_DESC             | Diperlukan untuk Menyimpan Tangki Bahan Bakar
 MAIN_IN_RANGE_DESC                | Dalam Batas Jangkauan
@@ -520,7 +520,7 @@ MAIN_FLEET_ENEMY                  | Musuh
 MAIN_FLEET_DEPLOYMENT             | Pengerahan Armada
 MAIN_FLEET_DISPLAY                | Tampilan Armada
 MAIN_FLEET_CHOOSE_DEST            | Pilih tujuan dan jumlah kapal untuk dikirim.
-MAIN_FLEET_OUT_OF_RANGE_DESC      | Tujuan berada di luar jangkauan armada, %1 tahun-cahaya dari koloni terdekat.
+MAIN_FLEET_OUT_OF_RANGE_DESC      | Tujuan berada di luar jangkauan armada, %1 tc dari koloni terdekat.
 MAIN_FLEET_INVALID_RETREAT        | Memundurkan armada hanya bisa dilakukan dengan mengirimkannya ke koloni yang ramah.
 MAIN_FLEET_ETA_UNNAMED            | Perkiraan Waktu Tiba menuju tujuan: %1 tahun 
 MAIN_FLEET_ETA_NAMED              | Perkiraan Waktu Tiba menuju %1: %2 Tahun 
@@ -616,7 +616,7 @@ MAIN_COLONY_COMPLETION_YEARS      | %1 Tahun
 MAIN_COLONY_COMPLETION_CENTURY    | %1 Thn
 MAIN_COLONY_COMPLETION_PER_YEAR   | %1/Tahun
 MAIN_COLONY_SHIPYARD_COMPLETED    | Terpenuhi: %1
-MAIN_COLONY_SHIPYARD_LIMIT        | Batas Pembangunan:
+MAIN_COLONY_SHIPYARD_LIMIT        | Batas Konstruksi:
 MAIN_COLONY_SHIPYARD_LIMIT_NONE   | Tidak Ada
 MAIN_COLONY_SHIPYARD_CONSTRUCTION | Antrian Pembangunan Kapal
 MAIN_COLONY_RELOCATE_LABEL        | Tetapkan Titik Kumpul
@@ -1281,14 +1281,14 @@ TECH_FACTORY_CONTROLS             | Kontrol Pabrik
 TECH_FACTORY_CONTROLS_BONUS       | %1 per koloni
 TECH_PLANET_SCANNER               | Jangkauan Pemindai
 TECH_PLANET_SCANNER_NONE          | Tidak Ada
-TECH_PLANET_SCANNER_RANGE         | %1 tahun-cahaya
+TECH_PLANET_SCANNER_RANGE         | %1 tc
 TECH_WASTE_REDUCTION              | Pengurangan Limbah
 TECH_WASTE_REDUCTION_NONE         | Tidak Ada
 TECH_WASTE_REDUCTION_AMT          | -%1%
 TECH_WASTE_CLEANUP                | Pembersihan Limbah
 TECH_WASTE_CLEANUP_BONUS          | %1 Limbah/BC
 TECH_SHIP_RANGE                   | Jangkauan Kapal
-TECH_SHIP_RANGE_AMT               | %1 tahun-cahaya
+TECH_SHIP_RANGE_AMT               | %1 tc
 TECH_SHIP_SPEED                   | Kecepatan Puncak
 TECH_SHIP_SPEED_AMT               | Pergerakan %1
 TECH_BUTTON_EXIT                  | KELUAR
@@ -1330,12 +1330,12 @@ SHIP_DESIGN_SIZE_LABEL            | Ukuran
 SHIP_DESIGN_TYPE_LABEL            | Tipe
 SHIP_DESIGN_COUNT_LABEL           | Hitung
 SHIP_DESIGN_DAMAGE_LABEL          | Kerusakan
-SHIP_DESIGN_POWER_LABEL           | Kekuatan
-SHIP_DESIGN_RANGE_LABEL           | Jangkauan
+SHIP_DESIGN_POWER_LABEL           | Energi
+SHIP_DESIGN_RANGE_LABEL           | Jarak
 SHIP_DESIGN_SPEED_LABEL           | Kecepatan
 SHIP_DESIGN_COST_LABEL            | Biaya
 SHIP_DESIGN_DESCRIPTION_LABEL     | Deskripsi
-SHIP_DESIGN_RANGE_VALUE           | %1 tahun-cahaya
+SHIP_DESIGN_RANGE_VALUE           | %1 tc
 SHIP_DESIGN_RANGE_UNLIMITED       | Tak terbatas
 SHIP_DESIGN_SPEED_VALUE           | Pergerakan %1
 SHIP_DESIGN_COST_VALUE            | %1 BC
@@ -1345,9 +1345,9 @@ SHIP_DESIGN_COLORS                | Warna
 SHIP_DESIGN_COMBAT_STATS_TITLE    | Statistik Pertempuran
 SHIP_DESIGN_HIT_POINTS_LABEL      | Poin pukulan
 SHIP_DESIGN_MISSILE_DEF_LABEL     | Pertahanan Misil
-SHIP_DESIGN_BEAM_DEF_LABEL        | Pertahanan Tembakan Laser
+SHIP_DESIGN_BEAM_DEF_LABEL        | Pertahanan Sinar
 SHIP_DESIGN_ATTACK_LEVEL_LABEL    | Level Serangan
-SHIP_DESIGN_COMBAT_SPEED_LABEL    | Kecepatan Pertempuran
+SHIP_DESIGN_COMBAT_SPEED_LABEL    | Mobilitas
 SHIP_DESIGN_COMBAT_SPEED_VALUE    | %1 persegi(s)
 SHIP_DESIGN_ENGINES_TITLE         | Mesin
 SHIP_DESIGN_ENGINES_DESC          | Menyalakan kapal dan komponennya.
@@ -1355,8 +1355,8 @@ SHIP_DESIGN_ENGINE_TYPE           | Tipe
 SHIP_DESIGN_ENGINE_SPEED          | Kecepatan
 SHIP_DESIGN_ENGINE_COST1          | Biaya, per mesin
 SHIP_DESIGN_ENGINE_SIZE1          | Ukuran, per mesin
-SHIP_DESIGN_ENGINE_POWER1         | Kekuatan, per mesin
-SHIP_DESIGN_POWER_REQUIREMENTS    | Kelengkapan Kekuatan
+SHIP_DESIGN_ENGINE_POWER1         | Energi, per mesin
+SHIP_DESIGN_POWER_REQUIREMENTS    | Kelengkapan Energi
 SHIP_DESIGN_ENGINES_REQUIRED      | Mesin yang Dibutuhkan
 SHIP_DESIGN_ENGINES_SIZE          | Ukuran Mesin Total
 SHIP_DESIGN_ENGINES_COST          | Biaya Mesin Total
@@ -1391,19 +1391,19 @@ SHIP_DESIGN_COMPUTER_TITLE        | Komputer
 SHIP_DESIGN_COMPUTER_TYPE         | Tipe
 SHIP_DESIGN_COMPUTER_COST         | Biaya
 SHIP_DESIGN_COMPUTER_SIZE         | Ukuran
-SHIP_DESIGN_COMPUTER_POWER        | Kekuatan
+SHIP_DESIGN_COMPUTER_POWER        | Energi
 SHIP_DESIGN_COMPUTER_SPACE        | Ruang
 SHIP_DESIGN_SHIELD_TITLE          | Lapisan Pelindung
 SHIP_DESIGN_SHIELD_TYPE           | Tipe
 SHIP_DESIGN_SHIELD_COST           | Biaya
 SHIP_DESIGN_SHIELD_SIZE           | Ukuran
-SHIP_DESIGN_SHIELD_POWER          | Kekuatan
+SHIP_DESIGN_SHIELD_POWER          | Energi
 SHIP_DESIGN_SHIELD_SPACE          | Ruang
 SHIP_DESIGN_ECM_TITLE             | ECM Pengumpul
 SHIP_DESIGN_ECM_TYPE              | Tipe
 SHIP_DESIGN_ECM_COST              | Biaya
 SHIP_DESIGN_ECM_SIZE              | Ukuran
-SHIP_DESIGN_ECM_POWER             | Kekuatan
+SHIP_DESIGN_ECM_POWER             | Energi
 SHIP_DESIGN_ECM_SPACE             | Ruang
 SHIP_DESIGN_ARMOR_TITLE           | Baju Perang
 SHIP_DESIGN_ARMOR_TYPE            | Tipe
@@ -1415,12 +1415,12 @@ SHIP_DESIGN_ENGINE_NUM            | Banyaknya Mesin
 SHIP_DESIGN_ENGINE_SPACE          | Ruang
 SHIP_DESIGN_ENGINE_COST           | Biaya
 SHIP_DESIGN_ENGINE_SIZE           | Ukuran
-SHIP_DESIGN_ENGINE_POWER          | Kekuatan
+SHIP_DESIGN_ENGINE_POWER          | Energi
 SHIP_DESIGN_MANEUVER_TITLE        | Manuver
 SHIP_DESIGN_MANEUVER_TYPE         | Tipe
 SHIP_DESIGN_MANEUVER_SPEED        | Kecepatan
 SHIP_DESIGN_MANEUVER_COST         | Biaya
-SHIP_DESIGN_MANEUVER_POWER        | Kekuatan
+SHIP_DESIGN_MANEUVER_POWER        | Energi
 SHIP_DESIGN_MANEUVER_SPACE        | Ruang
 SHIP_DESIGN_WEAPON_TITLE          | Senjata
 SHIP_DESIGN_WEAPON_MAX            | Maks
@@ -1430,39 +1430,39 @@ SHIP_DESIGN_WEAPON_DAMAGE         | Kerusakan
 SHIP_DESIGN_WEAPON_DMG_RANGE      | %1-%2
 SHIP_DESIGN_WEAPON_COST           | Biaya
 SHIP_DESIGN_WEAPON_SIZE           | Ukuran
-SHIP_DESIGN_WEAPON_POWER          | Kekuatan
+SHIP_DESIGN_WEAPON_POWER          | v
 SHIP_DESIGN_WEAPON_SPACE          | Ruang
 SHIP_DESIGN_SPECIAL_TITLE         | Peralatan Khusus
 SHIP_DESIGN_SPECIAL_TYPE          | Tipe
 SHIP_DESIGN_SPECIAL_DESCRIPTION   | Deskripsi
 SHIP_DESIGN_SPECIAL_COST          | Biaya
 SHIP_DESIGN_SPECIAL_SIZE          | Ukuran
-SHIP_DESIGN_SPECIAL_POWER         | Kekuatan
+SHIP_DESIGN_SPECIAL_POWER         | Energi
 SHIP_DESIGN_SPECIAL_SPACE         | Ruang
 
 // Ship Design help
 SHIP_DESIGN_HELP_ALL              | IKHTISAR - Suatu kekaisaran bisa memiliki sampai enam desain kapal aktif. Untuk setiap desain, pilih satu ukuran kerangka kemudian isi dengan berbagai komponen seperti baju perang, lapisan pelindung, dan senjata. Setiap komponen memiliki ukuran, kekuatan, dan biaya. Total ruang yang diperlukan untuk suatu komponen adalah ukurannya ditambah ukuran total mesin yang dibutuhkan untuk menyalakannya. Begitu digunakan, suatu desain kapal bisa dibangun di koloni manapun.
 SHIP_DESIGN_HELP_1A               | Ukuran - ukuran kerangkan yang lebih besar perlu banyak biaya tetapi bisa menyediakan ruang yang lebih besar.
-SHIP_DESIGN_HELP_1B               | Jangkauan - seberapa jauh syuatu kapal bisa berjalan dari sistemmu.
+SHIP_DESIGN_HELP_1B               | Jarak - seberapa jauh syuatu kapal bisa berjalan dari sistemmu.
 SHIP_DESIGN_HELP_1C               | Kecepatan - kecepatan perjalanan di ruang angkasa di antara bintang-bintang. 
 SHIP_DESIGN_HELP_1D               | Biaya  - total biaya untuk membangun kapal ini.
-SHIP_DESIGN_HELP_1E               | Total ruang - total ruang yang digunakan oleh komponen dalam desain kapal ini.
-SHIP_DESIGN_HELP_1F               | Ruang yang tersedia - ruang yang tidak atau belum digunakan dalam desain kapal ini.
+SHIP_DESIGN_HELP_1E               | Ruang total- total ruang yang digunakan oleh komponen dalam desain kapal ini.
+SHIP_DESIGN_HELP_1F               | Ruang tersedia - ruang yang tidak atau belum digunakan dalam desain kapal ini.
 SHIP_DESIGN_HELP_1G               | Poin pukulan - kerusakan yang diperlukan untuk menghancurkan kapal ini dalam suatu pertempuran.
-SHIP_DESIGN_HELP_1H               | Misil Pertahanan - level pertahanan vs. senjata misil dalam suatu pertempuran.
-SHIP_DESIGN_HELP_1I               | Pertahanan Tembakan Laser - level pertahanan vs. senjata tembakan laser dalam suatu pertempuran.
+SHIP_DESIGN_HELP_1H               | Pertahanan Misil - level pertahanan vs. senjata misil dalam suatu pertempuran.
+SHIP_DESIGN_HELP_1I               | Pertahanan Sinar - level pertahanan vs. senjata tembakan laser dalam suatu pertempuran.
 SHIP_DESIGN_HELP_1J               | Level Serangan - level serangan untuk senjata di suatu pertempuran. 
-SHIP_DESIGN_HELP_1K               | Kecepatan Pertempuran - jarak suatu kapal bisa berjalan dalam suatu pertempuran, per putaran.
+SHIP_DESIGN_HELP_1K               | Mobilitas - jarak suatu kapal bisa berjalan dalam suatu pertempuran, per putaran.
 SHIP_DESIGN_HELP_1L               | Warna - ubah warna kapal.
-SHIP_DESIGN_HELP_2A               | Tipe Mesin - tipe mesin yang digunakan untuk menyalakan desain kapal ini.
+SHIP_DESIGN_HELP_2A               | Tipe - tipe mesin yang digunakan untuk menyalakan desain kapal ini.
 SHIP_DESIGN_HELP_2B               | Kecepatan - kecepatan perjalanan yang disediakan oleh mesin.
-SHIP_DESIGN_HELP_2C               | Biaya - biaya setiap mesin yang dibutuhkan untuk kekuatannya.
-SHIP_DESIGN_HELP_2D               | Ukuran - ruang kerangka yang dibutuhkan per mesin.
-SHIP_DESIGN_HELP_2E               | Kekuatan - output kekuatan per mesin.
-SHIP_DESIGN_HELP_2F               | Kebutuhkan kekuatan - kekuatan total yang diperlukan untuk semua komponen kapal.
-SHIP_DESIGN_HELP_2G               | Kebutuhan Mesin - jumlah mesin yang dibutuhkan untuk memenuhi keperluan kekuatan.
-SHIP_DESIGN_HELP_2H               | Ukuran total - ruang kerangka total yang dibutuhkan untuk semua mesin.
-SHIP_DESIGN_HELP_2I               | Biaya Total - biaya konstruksi total untuk semua mesin.
+SHIP_DESIGN_HELP_2C               | Biaya, per mesin - biaya setiap mesin yang dibutuhkan untuk kekuatannya.
+SHIP_DESIGN_HELP_2D               | Ukuran, per mesin - ruang kerangka yang dibutuhkan per mesin.
+SHIP_DESIGN_HELP_2E               | Energi, per mesin - output kekuatan per mesin.
+SHIP_DESIGN_HELP_2F               | Kebutuhkan Energi - kekuatan total yang diperlukan untuk semua komponen kapal.
+SHIP_DESIGN_HELP_2G               | Mesin yang Dibutuhkan - jumlah mesin yang dibutuhkan untuk memenuhi keperluan kekuatan.
+SHIP_DESIGN_HELP_2H               | Ukuran Mesin total - ruang kerangka total yang dibutuhkan untuk semua mesin.
+SHIP_DESIGN_HELP_2I               | Biaya Mesin Total - biaya konstruksi total untuk semua mesin.
 SHIP_DESIGN_HELP_2J               | Gambaran yang digunakan untuk desain kapal terpilih. Ada enam gambaran untuk setiap empat ukuran rangka. Ketika menciptakan desain kapal baru, klik untuk meluncur pada setiap pilihan.
 SHIP_DESIGN_HELP_2K               | Nama desain kapal.
 SHIP_DESIGN_HELP_3A               | Komputer - berdampak pada level serangan kapal di suatu pertempuran.
@@ -1471,7 +1471,7 @@ SHIP_DESIGN_HELP_3C               | Lapisan pelindung - mengurangi kerusakan dar
 SHIP_DESIGN_HELP_3D               | ECM Pengumpul - penghitung elektronik yang mengukur perkembangan pertahanan misil.
 SHIP_DESIGN_HELP_3E               | Manuver - meningkatkan kecepatan perkelahian dan pertahanan kapal.
 SHIP_DESIGN_HELP_3F               | Senjata - bisa menimbulkan kerusakan pada kapal musuh dan koloni musuh. Pada suatu desain kapal bisa ditambahkan sampai sebanyak empat tipe senjata yang berbeda.
-SHIP_DESIGN_HELP_3G               | Spesial/khusus - peralatan yang menyediakan kemampuan unik pada kapal. Pada suatu desain kapal bisa ditambahkan sampai sebanyak tiga peralatan khusus.
+SHIP_DESIGN_HELP_3G               | Peralatan Khusus - peralatan yang menyediakan kemampuan unik pada kapal. Pada suatu desain kapal bisa ditambahkan sampai sebanyak tiga peralatan khusus.
 SHIP_DESIGN_HELP_4A               | Ubah Nama - membolehkanmu mengubah nama desain yang ada.
 SHIP_DESIGN_HELP_4B               | Buang Desain - Buang desain yang ada. Kapal terbuang mengembalikan 25% nilai konstruksi kembali ke harta kekaisaran.
 SHIP_DESIGN_HELP_4C               | Desain kapal yang digunakan bisa dibangun di koloni manapun.
@@ -1528,7 +1528,7 @@ SHIP_COMBAT_ACTION_FIRE_ALL       | Tembakkan semua senjata
 SHIP_COMBAT_ACTION_CLOAK          | Jubah
 SHIP_COMBAT_ACTION_MOVE           | Pindahkan ke sini
 SHIP_COMBAT_ACTION_TELEPORT       | Teleportasi ke sini
-SHIP_COMBAT_ACTION_RANGE          | Di Luar Jangkauan
+SHIP_COMBAT_ACTION_RANGE          | Di Luar Jarak
 SHIP_COMBAT_ACTION_NO_MISSILES    | Tidak ada misil tersisa
 SHIP_COMBAT_ACTION_NO_BOMBS       | Tidak ada bom tersisa
 SHIP_COMBAT_ACTION_FIRED          | Sudah ditembakkan
@@ -1587,7 +1587,7 @@ RACES_KNOWN_EMPIRES               | %1 kekaisaran yang telah dikenal
 RACES_RECALLED_DIPLOMATS          | %1 diplomat dipanggil mundur
 RACES_NO_TREATY                   | Tidak ada perjanjian diplomatik
 RACES_AT_FINAL_WAR                | Perang pamungkas
-RACES_AT_WAR                      | Dalam perang
+RACES_AT_WAR                      | sDalam perang
 RACES_PEACE                       | Perjanjian damai
 RACES_PACT                        | Pakta Non-Agresi
 RACES_ALLY                        | Sekutu

@@ -1,5 +1,5 @@
 // all possible names
-name: Klackon, Klackant, Klockan, Arthropon, Coleopteron
+name: Kholdan, Klackant, Klockan, Arthropon, Coleopteron
 
 desc1: Industrialis yang Anti Makhluk Asing
 desc2: Pemikir Hiva dan Produksi Pekerja yang Meningkat
