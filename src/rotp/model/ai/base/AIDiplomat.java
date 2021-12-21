@@ -1384,6 +1384,7 @@ public class AIDiplomat implements Base, Diplomat {
         // if relative power is 3, then contempt mod is 30 or -30
         float contemptMod = 10 * v.scaleOfContempt();
         warThreshold += contemptMod;
+        
         return (v.embassy().relations() <= warThreshold);
     }
     @Override
@@ -1417,9 +1418,6 @@ public class AIDiplomat implements Base, Diplomat {
         
         float otherPower = basePower+v.empire().status().lastViewValue(empire, FLEET) * v.spies().tech().avgTechLevel();
         float myPower = basePower+v.owner().totalFleetSize() * empire.tech().avgTechLevel();
-        // xilmi: When we have never had any espionage-information on that empire we assume it's as strong as we are
-        if(v.empire().status().lastViewTurn(empire) < 0)
-            otherPower = myPower;
         
         // modnar: due to other changes (techMod, enemyMod), reduce baseThreshold
         float baseThreshold = v.owner().atWar() ? 8.0f : 4.0f;
@@ -1436,8 +1434,8 @@ public class AIDiplomat implements Base, Diplomat {
         // modnar: scale war threshold by number of our wars vs. number of their wars
         // try not to get into too many wars, and pile on if target is in many wars
         float enemyMod = (float)(empire.numEnemies() + 1) / (v.empire().numEnemies() + 1);
-        
         float warThreshold = baseThreshold * techMod * enemyMod * treatyMod * v.owner().diplomatAI().leaderExploitWeakerEmpiresRatio();
+        
         return (myPower/otherPower) > warThreshold;
     }
     private DiplomaticIncident worstWarnableIncident(Collection<DiplomaticIncident> incidents) {
