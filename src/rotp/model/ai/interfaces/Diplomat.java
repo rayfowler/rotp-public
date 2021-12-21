@@ -129,4 +129,5 @@ public interface Diplomat {
     default int facCapRank() { return 1; }
     default int militaryRank(Empire etc, boolean inAttackRange) { return 1; }
     default int popLossToTriggerWar() { return 30; }
+    default boolean masksDiplomacy() { return false; }
 }

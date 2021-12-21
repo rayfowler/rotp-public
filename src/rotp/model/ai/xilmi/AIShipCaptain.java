@@ -613,7 +613,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
         if(!enemyCanAttackAnythingFromMe)
             shallGoForFirstStrike = true;
-        if(st.maxMove <= tgt.maxMove)
+        if(st.maxMove <= tgt.maxMove || st.canTeleport)
             shallGoForFirstStrike = false;
         if(st.move < st.movePointsTo(tgt) - st.optimalFiringRange(tgt) && shallGoForFirstStrike)
         {
@@ -759,7 +759,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
         if (!canBeTargeted)
             return false;
-        if(!canTarget)
+        if(!canTarget && combat().currentStack() != null)
             return true;
         
         if (facingOverwhelmingForce(currStack)) {

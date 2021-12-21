@@ -36,6 +36,8 @@ public class ColonyIndustry extends ColonySpendingCategory {
         industryReserveBC = 0;
         unallocatedBC = 0;
         newFactories = 0;
+        while(c.planet().numAlienFactories() > c.maxSize() * effectiveRobotControls() && robotControls() < maxRobotControls())
+          robotControls++;
     }
     @Override
     public int categoryType()               { return Colony.INDUSTRY; }
@@ -94,13 +96,13 @@ public class ColonyIndustry extends ColonySpendingCategory {
         newFactories = 0;
         
         // convert captured factories, one at a time until no more BC or alien factories
-        while (hasAlienFactories() && (newBC > factoryConversionCost())) {
+        while (hasAlienFactories() && (newBC > factoryConversionCost()) && newFactories + factories < maxFactories()) {
             convertRandomAlienFactory();
             newBC -= factoryConversionCost();
         }
         
         // if unconverted factories remain, save off BC remainder for next turn
-        if (hasAlienFactories()) {
+        if (hasAlienFactories() && newFactories + factories < maxFactories()) {
             industryReserveBC = newBC;
             return;
         }
@@ -303,7 +305,7 @@ public class ColonyIndustry extends ColonySpendingCategory {
         int colonyControls = robotControls;
 
         // cost to upgrade existing factories
-        if (hasAlienFactories()) {
+        if (hasAlienFactories() && newFactories + factories < maxFactories()) {
             convertFactoriesCost = totalAlienConversionCost();
             convertFactoriesCost = Math.max(0, convertFactoriesCost);
         }

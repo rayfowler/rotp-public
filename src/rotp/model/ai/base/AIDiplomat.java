@@ -24,6 +24,7 @@ import rotp.model.combat.CombatStack;
 import rotp.model.combat.ShipCombatResults;
 import rotp.model.empires.DiplomaticEmbassy;
 import rotp.model.empires.Empire;
+import static rotp.model.empires.EmpireStatus.FLEET;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.GalacticCouncil;
 import rotp.model.empires.Leader;
@@ -1308,7 +1309,7 @@ public class AIDiplomat implements Base, Diplomat {
             return false;
         if (view.embassy().unity() || view.embassy().anyWar())
             return false;
-        if (!view.inEconomicRange())
+        if(!empire.inShipRange(view.empId()))
             return false;
         
         // look at new incidents. If any trigger war, pick
@@ -1415,8 +1416,8 @@ public class AIDiplomat implements Base, Diplomat {
         // modnar: reduce basePower due to other changes (techMod, enemyMod)
         int basePower = 200;
         
-        float otherPower = basePower+v.owner().militaryPowerLevel(v.empire());
-        float myPower = basePower+v.owner().militaryPowerLevel();
+        float otherPower = basePower+v.empire().status().lastViewValue(empire, FLEET) * v.spies().tech().avgTechLevel();
+        float myPower = basePower+v.owner().totalFleetSize() * empire.tech().avgTechLevel();
         
         // modnar: due to other changes (techMod, enemyMod), reduce baseThreshold
         float baseThreshold = v.owner().atWar() ? 8.0f : 4.0f;
@@ -1432,8 +1433,7 @@ public class AIDiplomat implements Base, Diplomat {
         
         // modnar: scale war threshold by number of our wars vs. number of their wars
         // try not to get into too many wars, and pile on if target is in many wars
-        float enemyMod = (float) ((empire.numEnemies() + 1) / (v.empire().numEnemies() + 1));
-        
+        float enemyMod = (float)(empire.numEnemies() + 1) / (v.empire().numEnemies() + 1);
         float warThreshold = baseThreshold * techMod * enemyMod * treatyMod * v.owner().diplomatAI().leaderExploitWeakerEmpiresRatio();
         
         return (myPower/otherPower) > warThreshold;
@@ -1778,10 +1778,8 @@ public class AIDiplomat implements Base, Diplomat {
    private boolean warWeary(EmpireView v) {
         if (v.embassy().finalWar())
             return false;
-        
         if(!empire.inShipRange(v.empId()))
             return true;
-        
         // modnar: scale warWeary by number of our wars vs. number of their wars
         // more weary (willing to take less losses) if we are in more wars than they are
         // willing to take at least 15% losses

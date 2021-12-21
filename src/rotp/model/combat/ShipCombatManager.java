@@ -196,8 +196,8 @@ public class ShipCombatManager implements Base {
             RotPUI.instance().promptForShipCombat(this);
         else {
             resolveAllCombat();
-            endOfCombat(true);
         }
+        endOfCombat(true);
     }
     private void battle(StarSystem sys, Empire emp, SpaceMonster monster) {
         finished = false;
@@ -216,8 +216,8 @@ public class ShipCombatManager implements Base {
             RotPUI.instance().promptForShipCombat(this);
         else {
             resolveAllCombat();
-            endOfCombat(true);
         }
+        endOfCombat(true);
     }
     private void beginInSystem(StarSystem s, Empire emp1, Empire emp2) {
         system = s;

@@ -1408,6 +1408,9 @@ public class AIDiplomat implements Base, Diplomat {
         {
             warAllowed = false;
         }
+        if(!empire.generalAI().isRusher() && facCapRank() > 1)
+            warAllowed = false;
+        
         //Ail: If there's only two empires left, there's no time for preparation. We cannot allow them the first-strike-advantage!
         if(galaxy().numActiveEmpires() < 3)
             warAllowed = true;
@@ -1914,6 +1917,11 @@ public class AIDiplomat implements Base, Diplomat {
     public int popLossToTriggerWar()
     {
         return 1;
+    }
+    @Override
+    public boolean masksDiplomacy()
+    {
+        return true;
     }
 }
 

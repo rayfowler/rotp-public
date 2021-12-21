@@ -17,7 +17,6 @@ package rotp.model.tech;
 
 import rotp.model.colony.Colony;
 import rotp.model.empires.Empire;
-import rotp.model.empires.Race;
 
 public final class TechSoilEnrichment extends Tech {
     public float growthMod;
