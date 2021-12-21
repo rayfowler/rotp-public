@@ -22,7 +22,7 @@ GREETING_01                | You've proven yourself to us time and time again. W
 GREETING_04                | I'll hear your words ambassador, but I'm not bound to give you whatever it is you're seeking.
 GREETING_07                | You've some daring in you to approach a servant of the Khan. Say what you have to say, and be prepared to flee if you're merely wasting my time.
 //
-DECLAREWAR_HATE_01         | Your relics are wasted on you! We'll adorn our halls on Fierias with your bones and your treasure, and they'll be all that remains of your people when we are through!
+DECLAREWAR_HATE_01         | Your relics are wasted on you! We'll adorn our halls on [my_home] with your bones and your treasure, and they'll be all that remains of your people when we are through!
 DECLAREWAR_HATE_02         | Enough of this! Mere raids will not satisfy our enmity towards your kind: you [your_race_plural] deserve a far more large-scale approach!
 DECLAREWAR_HATE_03         | Even knowing that a race as weak as yours has influence in this universe is enough to make us sick. No matter the odds, I promise you we'll do everything we can to teach you your place.
 //
