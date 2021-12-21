@@ -1,9 +1,9 @@
 // all possible names
-name: Alkari, Latacz, Gdakacz, Pierzacz, Dziobacz
+name: Altairi, Latacz, Gdakacz, Pierzacz, Dziobacz
 
 desc1: Honorowi militaryści
 desc2: Doskonali piloci
-desc3: Autonomiczna rasa [race] to zorganizowane społeczeństwo wojowników ceniących honor w bitwie.
+desc3: Autonomiczna rasa Altairi to zorganizowane społeczeństwo wojowników ceniących honor w bitwie.
 
 // possible home system names
 home: Altair, Aegir, Aviar, Volary, Aerie

@@ -1,9 +1,9 @@
 // all possible names
-name: Bulrathi, Dźwiedź, Ursyn, Grizzlacz, Łapowiec
+name: Ursinathi, Dźwiedź, Ursyn, Grizzlacz, Łapowiec
 
 desc1: Agresywni ekolodzy
 desc2: Doskonali wojownicy naziemni
-desc3: Wściekle lojalna rasa o nazwie [race] ceni zarówno siłę jak i mądrość swego króla-filozofa.
+desc3: Wściekle lojalna rasa o nazwie Ursinathi ceni zarówno siłę jak i mądrość swego króla-filozofa.
 
 // possible home system names
 home: Ursa, Canis, Grizzla, Pandara, Bruin

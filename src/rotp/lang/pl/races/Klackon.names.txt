@@ -3,7 +3,7 @@ name: Klakon, Klakant, Klokan, Artropon, Żuk
 
 desc1: Ksenofobiczni industrialiści
 desc2: Umysł roju i zwiększona produkcja robotników
-desc3: Pracowita rasa znana jako [race] to niepojęty dla obcych gatunek mający jeden kontrolujący umysł.
+desc3: Pracowita rasa znana jako Klakon to niepojęty dla obcych gatunek mający jeden kontrolujący umysł.
 
 // possible home system names
 home: Kholdan, Kholdant, Khaldon, Klokdon, Khakdon

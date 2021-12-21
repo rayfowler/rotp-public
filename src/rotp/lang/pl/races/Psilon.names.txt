@@ -1,9 +1,9 @@
 // all possible names
-name: Psilon, Mentalon, Psychon, Cerebron, Neuralon
+name: Mentaran, Mentalon, Psychon, Cerebron, Neuralon
 
 desc1: Pacyfistyczni technokraci
 desc2: Doskonałe techniki naukowe
-desc3: Republika rasy [race] dąży do pokojowej i oświeconej koegzystencji z innymi rasami.
+desc3: Republika rasy Mentaran dąży do pokojowej i oświeconej koegzystencji z innymi rasami.
 
 // possible home system names
 home: Mentar, Cogitar, Psilar, Metrica, Neura

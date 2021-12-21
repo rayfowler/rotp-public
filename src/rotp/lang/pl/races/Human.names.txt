@@ -3,7 +3,7 @@ name: Człowiek, Terran, Ziemianin, Naczelny, Midgardczyk
 
 desc1: Honorowi dyplomaci
 desc2: Doskonali handlarze i pierwszorzędni dyplomaci
-desc3: Złotousta rasa znana jako [race] to mistrzowie w przekonywaniu innych do służenia swoim interesom.
+desc3: Złotousta rasa znana jako Człowiek to mistrzowie w przekonywaniu innych do służenia swoim interesom.
 
 // possible home system names
 home: Ziemia, Terra, Tellus, Prime, Midgard

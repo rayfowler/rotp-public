@@ -1,9 +1,9 @@
 // all possible names
-name: Mrrszan, Prrszan, Miauszan, Pazurszan, Syczszan
+name: Fierszan, Prrszan, Miauszan, Pazurszan, Syczszan
 
 desc1: Bezlitośni militaryści
 desc2: Doskonali strzelcy
-desc3: Hordy rasy znanej jako [race] poszukują trofeów wojennych w swej galaktycznej wędrówce.
+desc3: Hordy rasy znanej jako Fierszan poszukują trofeów wojennych w swej galaktycznej wędrówce.
 
 // possible home system names
 home: Fierias, Fierina, Miamara, Miriana, Yailaria

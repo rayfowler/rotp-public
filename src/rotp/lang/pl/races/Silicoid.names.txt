@@ -3,7 +3,7 @@ name: Sylikoid, Wulkanoid, Mineraloid, Granitoid, Magmoid
 
 desc1: Ksenofobiczni ekspansjoniści
 desc2: Odporność na nieprzyjazne środowisko
-desc3: Zagadkowi, żywiący się minerałami [race]zi przeczesują galaktykę w poszukiwaniu odwiecznego wroga.
+desc3: Zagadkowi, żywiący się minerałami Sylikoidzi przeczesują galaktykę w poszukiwaniu odwiecznego wroga.
 
 // possible home system names
 home: Cryslon, Geode, Karst, Igneous, Silican

@@ -1,9 +1,9 @@
 // all possible names
-name: Darlok, Sarlok, Szpielok, Cień, Nazlok
+name: Nazlok, Sarlok, Szpielok, Cień, Dralok
 
 desc1: Agresywni technokraci
 desc2: Doskonali szpiedzy
-desc3: Rasa [race] to nienaturalne i tajemnicze widma pochodzące z innego wymiaru.
+desc3: Rasa Nazlok to nienaturalne i tajemnicze widma pochodzące z innego wymiaru.
 
 // possible home system names
 home: Nazin, Mordor, Hades, Abyssal, Hel
