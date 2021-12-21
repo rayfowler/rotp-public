@@ -1,9 +1,9 @@
 // all possible names
-name: Silicoid, Igneoid, Sedimoid
+name: Cryslonoid, Igneoid, Sedimoid
 
 desc1: Xenophobe Expansionisten
 desc2: Immun gegen feindliche Umgebung
-desc3: Die rätselhaften und lithovorischen Silicoide durchsuchen die Galaxis nach ihrem ewigen Feind.
+desc3: Die rätselhaften und lithovorischen Cryslonoide durchsuchen die Galaxis nach ihrem ewigen Feind.
 
 // possible home system names
 home: Cryslon, Geode, Karst, Igneous, Silican

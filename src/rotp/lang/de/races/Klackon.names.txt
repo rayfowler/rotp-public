@@ -1,5 +1,5 @@
 // all possible names
-name: Klackon, Klackant, Klockan, Arthropon, Coleopteron
+name: Kholdan, Klackant, Klockan, Arthropon, Coleopteron
 
 desc1: Fremdenfeindliche Industrielle
 desc2: Hive Mind und gesteigerte Arbeiterproduktion

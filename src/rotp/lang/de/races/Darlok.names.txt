@@ -1,5 +1,5 @@
 // all possible names
-name: Darlok, Sarlok, Shadelok, Spylok, Cylok
+name: Nazlok, Sarlok, Shadelok, Spylok, Cylok
 
 desc1: Aggressive Technokraten
 desc2: Hervorragende Spione

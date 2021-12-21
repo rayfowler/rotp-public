@@ -1468,7 +1468,7 @@ SHIP_DESIGN_HELP_3F               | Weapons - can deal damage to enemy ships and
 SHIP_DESIGN_HELP_3G               | Specials - devices that provide unique capabilities to your ship. Up to three special devices can be added to a ship design.
 SHIP_DESIGN_HELP_4A               | Rename - allows you to rename an existing design.
 SHIP_DESIGN_HELP_4B               | Scrap Design - scraps an existing design. Scrapped ships return 25% of their construction value back to the treasury.
-SHIP_DESIGN_HELP_4C               | Deployed ship designs can constructed on any of your colonies.
+SHIP_DESIGN_HELP_4C               | Deployed ship designs can be constructed on any of your colonies.
 SHIP_DESIGN_HELP_4D               | Available ship design slots can be selected in order to create a new design.
 SHIP_DESIGN_HELP_4E               | Copy - copy an existing design to serve as a starting point for a new design.
 SHIP_DESIGN_HELP_4F               | Clear - resets all of the selected components.

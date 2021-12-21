@@ -1,9 +1,9 @@
 // all possible names
-name: Sakkra, Reptara, Saura, Raptora, Tyranna
+name: Ssslaura, Reptara, Saura, Raptora, Tyranna
 
 desc1: Ahli Ekspansi Agresif
 desc2: Peningkatan Pertumbuhan Populasi
-desc3: Orang-orang fanatik dari [race] Conclave berjuang untuk menyempurnakan dunia yang mereka taklukkan.
+desc3: Orang-orang fanatik dari Ssslaura Conclave berjuang untuk menyempurnakan dunia yang mereka taklukkan.
 
 // possible home system names
 home: Sssla, Sssana, Sssihs, Sssha, Sssss, Hsssa

@@ -1,9 +1,9 @@
 // all possible names
-name: Meklar, Mechanar, Cybernar, Digitar, Technar
+name: Meklonar, Mechanar, Cybernar, Digitar, Technar
 
 desc1: Industrialis Kacau
 desc2: Kontrol Pabrik yang Maju
-desc3: Warga Dominion [race] mencari kesempurnaan dan keabadian melalui teknologi.
+desc3: Warga Dominion Meklonar mencari kesempurnaan dan keabadian melalui teknologi.
 
 // possible home system names
 home: Meklon, Collosson, Calculon, Bender, Optimus

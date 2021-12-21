@@ -1,22 +1,22 @@
 // all possible names
-nome: Alkari, Aviari, Cluckari, Fedari, Faulari
+name: Alkari, Aviari, Cluckari, Fedari, Faulari
 
 desc1: Militaristi Onorevoli
 desc2: Piloti Superiori
-desc3: La Sovranità [_raceadjecF] è una società guerriera organizzata che premia l'onore in battaglia.
+desc3: La Sovranità Alkariana è una società guerriera organizzata che premia l'onore in battaglia.
 
 // possible home system names
-casa: Altair, Eigher, Aviar, Voliera, Nido
+home: Altair, Eigher, Aviar, Voliera, Nido
 
-titulo: Re Guglia
-titulo completo: Re Guglia
+title: Re Guglia
+fulltitle: Re Guglia
 
 // possible leader names
 leader: Ariel, Veggente, Volaralto, Alarossa, Artigliaffilato, Capocielo
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
-nave1: Volpe, Sparviero, Pellicano, Fringuello, Scricciolo, Corvo, Piuma
-nave2: Falco, Falco del Cielo, Gabbiano Spaziale, Gufo da Battaglia, Fratercula, Stellala
-nave3: Uccello da Guerra, Falco da Guerra, Aquila da Guerra, Osprey, Avvoltoio, Arpia, Condor
-nave4: Uccello del Tuono, Paurala, Maestro del Cielo, Rokh, Rodano, Grifone, Fenice
+ship1: Volpe, Sparviero, Pellicano, Fringuello, Scricciolo, Corvo, Piuma
+ship2: Falco, Falco del Cielo, Gabbiano Spaziale, Gufo da Battaglia, Fratercula, Stellala
+ship3: Uccello da Guerra, Falco da Guerra, Aquila da Guerra, Osprey, Avvoltoio, Arpia, Condor
+ship4: Uccello del Tuono, Paurala, Maestro del Cielo, Rokh, Rodano, Grifone, Fenice
 

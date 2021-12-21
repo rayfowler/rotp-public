@@ -1,9 +1,9 @@
 // all possible names
-name: Darlok, Sarlok, Spylok, Shadelok, Nazlok
+name: Nazlok, Sarlok, Spylok, Shadelok, Dralok
 
 desc1: Diplomat Agresif
 desc2: Mata-mata Agung
-desc3: Ras [race] ini tidak alamiah dan rahasia bagaikan hantu, berasal dari dimensi lain  
+desc3: Ras Nazlok ini tidak alamiah dan rahasia bagaikan hantu, berasal dari dimensi lain  
 
 // possible home system names
 home: Nazin, Mordor, Hades, Abyssal, Hel

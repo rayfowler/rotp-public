@@ -1,9 +1,9 @@
 // all possible names
-name: Meklar, Mechanar, Cybernar, Digitar, Technar
+name: Meklonar, Mechanar, Cybernar, Digitar, Technar
 
 desc1: Niekonsekwentni industrialiści
 desc2: Ulepszona kontrola fabryk
-desc3: Społeczeństwo Dominium [race]ów dąży do perfekcji i nieśmiertelności poprzez rozwój technologii.
+desc3: Społeczeństwo Dominium Meklonarów dąży do perfekcji i nieśmiertelności poprzez rozwój technologii.
 
 // possible home system names
 home: Meklon, Collosson, Calculon, Bender, Optimus

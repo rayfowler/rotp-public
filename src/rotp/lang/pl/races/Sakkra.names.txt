@@ -1,9 +1,9 @@
 // all possible names
-name: Sakkra, Gad, Saur, Reptar, Tyran
+name: Ssslaur, Gad, Saur, Reptar, Tyran
 
 desc1: Agresywni ekspansjoniści
 desc2: Zwiększone tempo wzrostu populacji
-desc3: Zeloci rasy o nazwie [race] pragną doprowadzać do perfekcji podbite przez siebie światy.
+desc3: Zeloci rasy o nazwie Ssslaur pragną doprowadzać do perfekcji podbite przez siebie światy.
 
 // possible home system names
 home: Sssla, Sssana, Sssihs, Sssha, Sssss, Hsssa

@@ -1,9 +1,9 @@
 // all possible names
-name: Psilon, Mentalon, Psychon, Scienton, Logicon, Neurolon, Cognilon
+name: Mentaran, Mentalon, Psychon, Scienton, Logicon, Neurolon, Cognilon
 
 desc1: Pazifistische Technokraten
-desc2: Überragende Forscher
-desc3: Die Psilon Republik sucht nach einer friedlichen und erhöhenden Koexistenz mit anderen Spezies.
+desc2: Überragende Forschers
+desc3: Die Mentaran Republik sucht nach einer friedlichen und erhöhenden Koexistenz mit anderen Spezies.
 
 // possible home system names
 home: Mentar, Cogitar, Psilar, Metrica, Neura

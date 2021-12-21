@@ -1,9 +1,9 @@
 // all possible names
-name: Psilon, Mentalon, Psychon, Cerebron, Neuralon
+name: Mentaran, Mentalon, Psychon, Cerebron, Neuralon
 
 desc1: Ahli Teknologi Pemersatu
 desc2: Teknik Riset Unggulan
-desc3: Republik [race] mencari perdamaian dan kebersamaan penuh pencerahan dengan ras lain.
+desc3: Republik Mentaran mencari perdamaian dan kebersamaan penuh pencerahan dengan ras lain.
 
 // possible home system names
 home: Mentar, Cogitar, Psilar, Metrica, Neura

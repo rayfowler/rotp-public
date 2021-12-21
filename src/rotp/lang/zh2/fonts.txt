@@ -6,5 +6,5 @@ logo,       NotoSansSC-Thin.otf, 100
 dialogue,   NotoSansSC-Thin.otf, 100
 narrow,     NotoSansSC-Thin.otf, 100
 normal,     NotoSansSC-Thin.otf, 100
-plain,      NotoSansSC-Thin.otf, s100
+plain,      NotoSansSC-Thin.otf, 100
 language,   NotoSansSC-Thin.otf,  80

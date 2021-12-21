@@ -1,9 +1,9 @@
 // all possible names
-name: Alkari, Aviari, Cluckari, Feathari, Fowlari
+name: Altairi, Aviari, Cluckari, Feathari, Fowlari
 
 desc1: Ahli Militer Agung
 desc2: Pilot Superior
-desc3: [race] Sovereignty adalah masyarakat pejuang yang hidup teratur dan menghargai kehormatan dalam pertempuran.
+desc3: Altairi Sovereignty adalah masyarakat pejuang yang hidup teratur dan menghargai kehormatan dalam pertempuran.
 
 // possible home system names
 home: Altair, Aegir, Aviar, Volary, Aerie

@@ -44,7 +44,7 @@ public class Rotp {
     public static boolean countWords = false;
     private static String startupDir;
     private static JFrame frame;
-    public static String releaseId = "0.95i";
+    public static String releaseId = "0.99b";
     public static long startMs = System.currentTimeMillis();
     public static long maxHeapMemory = Runtime.getRuntime().maxMemory() / 1048576;
     public static long maxUsedMemory;
@@ -120,12 +120,12 @@ public class Rotp {
     }
     public static void setFrameSize() {
         resizeAmt = -1;
-        FontManager.current().resetFonts();
         double adj = resizeAmt();
         int vFrame = 0;
         int hFrame = 0;
         int maxX = (int)((hFrame+IMG_W)*adj);
         int maxY = (int)((vFrame+IMG_H)*adj);
+        FontManager.current().resetFonts();
         if (logging)
             System.out.println("setting size to: "+maxX+" x "+maxY);
         frame.getContentPane().setPreferredSize(new Dimension(maxX,maxY));

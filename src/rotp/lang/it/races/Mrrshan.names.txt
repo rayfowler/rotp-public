@@ -1,22 +1,22 @@
 // all possible names
-nome: Mrrshan, Prrshan, Mewshan, Clawshan, Hisshan
+name: Mrrshan, Prrshan, Mewshan, Clawshan, Hisshan
 
 desc1: Militaristi Spietati
 desc2: Artiglieri Superiori
-desc3: Le orde [_race_pluraladjecF] cercano trofei di battaglia mentre si diffondono nella galassia.
+desc3: Le orde Mrrshan cercano trofei di battaglia mentre si diffondono nella galassia.
 
 // possible home system names
-casa: Fierias, Fierina, Miamara, Miriana, Yailaria
+home: Fierias, Fierina, Miamara, Miriana, Yailaria
 
-titulo:     Khan
-titulo completo: Khan
+title:     Khan
+fulltitle: Khan
 
 // possible leader names
 leader: Jasana, Miamar, Mirana, Prrsha, Shandra, Yalara
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
-Nave1: Ghiottone, Selvatico, Furetto, Tasso, Felino, Acchiappatopi, Calicò
-Nave2: Lince, Catamount, Gatto Tigre, Gattopardo, Caracal, Margay, Serval
-Nave3: Pantera, Leopardo, Warcat, Ghepardo, Lince Rossa, Ocelot, Yaguarundi
-Nave4: Dente a Sciabola, Puma, Tigre, Leone, Giaguaro, Ligre, Coguaro
+ship1: Ghiottone, Selvatico, Furetto, Tasso, Felino, Acchiappatopi, Calicò
+ship2: Lince, Catamount, Gatto Tigre, Gattopardo, Caracal, Margay, Serval
+ship3: Pantera, Leopardo, Warcat, Ghepardo, Lince Rossa, Ocelot, Yaguarundi
+ship4: Dente a Sciabola, Puma, Tigre, Leone, Giaguaro, Ligre, Coguaro
 

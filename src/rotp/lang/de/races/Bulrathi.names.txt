@@ -1,9 +1,9 @@
 // all possible names
-name: Bulrathi, Bearathi, Ursinathi
+name: Ursinathi, Bearathi, Burlathi
 
 desc1: Aggressive Militaristen
 desc2: Hervorragende Bodentruppen
-desc3: Die sehr loyalen Bulrathi schätzen Stärke und Weisheit in ihrem Philosophenkönig.
+desc3: Die sehr loyalen Ursinathi schätzen Stärke und Weisheit in ihrem Philosophenkönig.
 
 // possible home system names
 home: Ursa, Canis, Grizzla, Pandara, Bruin
