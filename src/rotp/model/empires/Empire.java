@@ -735,6 +735,17 @@ public final class Empire implements Base, NamedObject, Serializable {
     }
     public float shipRange()              { return tech().shipRange(); }
     public float scoutRange()             { return tech().scoutRange(); }
+    
+    public float colonyShipRange() {
+        // return max range of design with colony special
+        float range = shipRange();
+        for (int slot=0;slot<ShipDesignLab.MAX_DESIGNS;slot++) {
+            ShipDesign d = shipLab().design(slot);
+            if(d.active() && d.hasColonySpecial() && (d.range() > range))
+                range = d.range();
+        }
+        return range;
+    }
     public float researchingShipRange()   { return tech().researchingShipRange(); }
     public float researchingScoutRange()  { return tech().researchingScoutRange(); }
     public float learnableShipRange()     { return tech().learnableShipRange(); }

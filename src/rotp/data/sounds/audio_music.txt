@@ -13,7 +13,7 @@ NewsAmbience            , data/sounds/gnn.wav               , 100            , L
 GroundCombatAmbience    , data/sounds/combat_ground.wav     , 100            , L
 VictoryAmbience         , data/sounds/victory.wav           , 100            , L
 DefeatAmbience          , data/sounds/defeat.wav            , 100            , L
-ShipCombatAmbience      , data/sounds/combat_space.wav      , 100            , L
+ShipCombatAmbience      , data/sounds/combat_space.wav      , 50             , L
 ShipCombatIntro         , data/sounds/combat_open.wav       , 100            ,
 
 #Dipomacy Themes

@@ -4,6 +4,7 @@
 # more easily referenced in animation files
 # 
 FlagPole            | images/flagPole.png
+MANUAL              | images/manual.png
 LANGUAGE_ICON       | images/language_icon-red.png
 TEXTURE_BROWN       | images/texture_brown.jpg
 TEXTURE_GRAY        | images/texture_gray.jpg

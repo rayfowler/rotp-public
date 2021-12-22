@@ -32,9 +32,15 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
+import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 import javax.swing.border.Border;
 import rotp.Rotp;
@@ -120,6 +126,8 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     String startingDisplayMode;
     public static Image defaultBackground;
     Image backImg1, backImg2;
+    Image manualImg;
+    Rectangle manualBox = new Rectangle();
     BufferedImage titleImg;
     BufferedImage backImg;
     String imageKey1, imageKey2;
@@ -334,6 +342,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         languagePanel = new GameLanguagePane(this);
         imageKey1 = backImgKeys[0];
         imageKey2 = random(backImgKeys);
+        manualImg = image("MANUAL");
         while (imageKey1.equals(imageKey2))
             imageKey2 = random(backImgKeys);
         Color enabledC = menuEnabled[0];
@@ -466,6 +475,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         int w = getWidth();
         
         languagePanel.initFonts();
+        manualBox.setBounds(0,0,0,0);
 
         if (backImg == null) {
             backImg1 =  ImageManager.current().image(imageKey1);
@@ -478,6 +488,8 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         int imgH = back.getHeight(null);
         g.drawImage(back, 0, 0, getWidth(), getHeight(), 0, 0, imgW, imgH, this);
 
+  
+        
         Composite prevComp = g.getComposite();
         if (slideshowFade < 1) {
             AlphaComposite ac = java.awt.AlphaComposite.getInstance(AlphaComposite.SRC_OVER,max(0,1-slideshowFade));
@@ -496,6 +508,10 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             g.setComposite(ac);
         }
         
+        if (manualExists()) {
+            g.drawImage(manualImg, s8, s30, s24, s24, null);
+            manualBox.setBounds(s8,s30,s24,s24);
+        }
         String titleStr1 = text("GAME_TITLE_LINE_1");
         String titleStr2 = text("GAME_TITLE_LINE_2");
         String titleStr3 = text("GAME_TITLE_LINE_3");
@@ -603,6 +619,13 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         
         g.setComposite(prevComp);
     }
+    private String manualFilePath() {
+        return LanguageManager.current().selectedLanguageFullPath()+"/manual.pdf";
+    }
+    private boolean manualExists() { 
+        String filename = manualFilePath();
+        return readerExists(filename);
+    }
     private boolean canContinue()    { return session().status().inProgress() || session().hasRecentSession(); }
     private boolean canNewGame()     { return true; }
     private boolean canLoadGame()    { return true; }
@@ -691,6 +714,19 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             Desktop.getDesktop().browse(new URL("http://www.reddit.com/r/rotp").toURI());
         } catch (IOException | URISyntaxException e) {}
     }
+    private void openManual() {
+        try {
+            buttonClick();
+            String filename = manualFilePath();
+            InputStream manualAsStream = fileInputStream(filename);
+            Path tempOutput = Files.createTempFile("ROTP_Manual", ".pdf");
+            tempOutput.toFile().deleteOnExit();
+            Files.copy(manualAsStream, tempOutput, StandardCopyOption.REPLACE_EXISTING);
+            File userManual = new File (tempOutput.toFile().getPath());
+            if (userManual.exists()) 
+                Desktop.getDesktop().open(userManual);
+        } catch (IOException e) {}
+    }
     public void continueGame() {
         if (canContinue()) {
             buttonClick();
@@ -769,7 +805,9 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             hoverBox.mouseReleased();
         mouseDepressed = false;
 
-        if (discussText.contains(x,y))
+        if (manualBox.contains(x,y))
+            openManual();
+        else if (discussText.contains(x,y))
             openRedditPage();
         else if (continueText.contains(x,y))
             continueGame();

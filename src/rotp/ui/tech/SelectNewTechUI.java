@@ -239,7 +239,7 @@ public class SelectNewTechUI extends BasePanel implements MouseListener, MouseMo
             g.setFont(narrowFont(16));
             drawString(g,text(t.name()),x1+5, y1+s15);
 
-            float techCost = t.researchCost();
+            float techCost = category.costForTech(t);
             String cost = text("TECH_CHOOSE_RESEARCH_COST", shortFmt(techCost));
             int sw1 = g.getFontMetrics().stringWidth(cost);
             drawString(g,cost, boxRightX-s35-sw1, y1+s15);

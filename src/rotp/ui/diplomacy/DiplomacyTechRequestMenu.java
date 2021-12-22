@@ -47,7 +47,7 @@ public class DiplomacyTechRequestMenu extends DiplomaticMessage {
     public String replyDetail(int i)          {
         if (i < choices.size()){
             Tech tech = choices.get(i);
-            return text("TECH_TRADE_TIER_COST_INFO", str(tech.quintile+1), str((int) tech.researchCost()));
+            return text("TECH_TRADE_TIER_COST_INFO", str(tech.quintile), str((int) tech.researchCost()));
         }
         return "";
     }
