@@ -488,7 +488,7 @@ public class AIScientist implements Base, Scientist {
             if(t.isType(Tech.ENGINE_WARP))
                 continue;
             //If others, who we are not at war with, have it, we value it lower because in that case we can try and trade for it
-            if(!empire.atWarWith(ev.empId()) && )
+            if(!empire.atWarWith(ev.empId()) && ev.spies().unknownTechs().contains(t))
                 ownerFactor /= 2;
             //If we could steal it we don't want to research it ourselves at all
             if(ev.spies().possibleTechs().contains(t.name()) && ev.spies().isEspionage() && ev.spies().hasSpies())
