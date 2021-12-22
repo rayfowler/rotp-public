@@ -669,6 +669,34 @@ public interface Base {
             }
         }
     }
+    public default boolean readerExists(String n) {
+        String fullString = "../rotp/" +n;
+        FileInputStream fis = null;
+        InputStreamReader in = null;
+        InputStream zipStream = null;
+
+        try {
+            fis = new FileInputStream(new File(Rotp.jarPath(), n));
+        } catch (FileNotFoundException e) {
+            try {
+                fis = new FileInputStream(fullString);
+            } catch (FileNotFoundException ex) {
+                zipStream = Rotp.class.getResourceAsStream(n);
+            }
+        }
+
+        boolean exists = (fis != null) || (zipStream != null);
+        
+        try {
+            if (fis != null) 
+                fis.close();    
+            else if (zipStream != null)
+                zipStream.close();
+        }
+        catch(IOException e) {};
+        
+        return exists;
+    }
     public default BufferedReader reader(String n) {
         String fullString = "../rotp/" +n;
         FileInputStream fis = null;

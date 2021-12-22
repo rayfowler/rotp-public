@@ -624,12 +624,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     }
     private boolean manualExists() { 
         String filename = manualFilePath();
-        BufferedReader in = reader(filename);
-        if (in == null) {
-            err("Cannot find dialog file: ", filename);
-            return false;
-        }
-        return true;
+        return readerExists(filename);
     }
     private boolean canContinue()    { return session().status().inProgress() || session().hasRecentSession(); }
     private boolean canNewGame()     { return true; }
