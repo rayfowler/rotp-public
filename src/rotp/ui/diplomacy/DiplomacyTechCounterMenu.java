@@ -59,7 +59,7 @@ public class DiplomacyTechCounterMenu extends DiplomacyRequestReply {
     public String replyDetail(int i)          {
         if (i < counterOffers.size()){
             Tech tech = counterOffers.get(i);
-            return text("TECH_TRADE_TIER_COST_INFO", str(tech.quintile+1), str((int) tech.researchCost()));
+            return text("TECH_TRADE_TIER_COST_INFO", str(tech.quintile), str((int) tech.researchCost()));
         }
         return "";
     }
