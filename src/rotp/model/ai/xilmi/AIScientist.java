@@ -137,7 +137,7 @@ public class AIScientist implements Base, Scientist {
             boolean researchingSomethingWeDontReallyWant = false;
             if(currentTechResearching != null)
             {
-                if(researchPriority(currentTechResearching) == 0 && currentTechResearching.level() > empire.tech().avgTechLevel() - 5)
+                if(researchPriority(currentTechResearching) == 0)
                 {
                     researchingSomethingWeDontReallyWant = true;
                     //System.out.print("\n"+empire.name()+" "+empire.tech().category(j).id()+" reduced because "+currentTechResearching.name()+" is either owned by someone else or not something we want.");
@@ -156,7 +156,7 @@ public class AIScientist implements Base, Scientist {
                 Tech currentTechResearching = empire.tech().category(j).tech(empire.tech().category(j).currentTech());
                 boolean researchingSomethingWeDontReallyWant = false;
                 if(currentTechResearching != null)
-                    if(researchPriority(currentTechResearching) == 0 && currentTechResearching.level() > empire.tech().avgTechLevel() - 5)
+                    if(researchPriority(currentTechResearching) == 0)
                         researchingSomethingWeDontReallyWant = true;
                 if (!empire.tech().category(j).possibleTechs().isEmpty()
                         && discoveryChanceOfCategoryIfAllocationWasZero(j) <= empire.tech().category(j).allocation()
@@ -476,25 +476,25 @@ public class AIScientist implements Base, Scientist {
     //
     @Override
     public float researchPriority(Tech t) {
+        float ownerFactor = 1.0f;
         for(EmpireView ev : empire.contacts())
         {
             if(!ev.inEconomicRange())
                 continue;
             if(!galaxy().options().canTradeTechs(empire, ev.empire()))
                 continue;
-            if(empire.atWarWith(ev.empId()))
-                continue;
             if(ev.empire().race().internalSecurityAdj() > empire.race().spyInfiltrationAdj())
                 continue;
             if(t.isType(Tech.ENGINE_WARP))
                 continue;
-            //If we can steal it or trade for it, we don't want to research it ourselves
-            if(ev.spies().unknownTechs().contains(t))
-            {
+            //If others, who we are not at war with, have it, we value it lower because in that case we can try and trade for it
+            if(!empire.atWarWith(ev.empId()) && )
+                ownerFactor /= 2;
+            //If we could steal it we don't want to research it ourselves at all
+            if(ev.spies().possibleTechs().contains(t.name()) && ev.spies().isEspionage() && ev.spies().hasSpies())
                 return 0;
-            }
         }
-        return max(researchValue(t), 1);
+        return max(researchValue(t) * ownerFactor, 1);
     }
     @Override
     public float researchValue(Tech t) {
