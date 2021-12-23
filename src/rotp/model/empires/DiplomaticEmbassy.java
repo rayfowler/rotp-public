@@ -533,7 +533,7 @@ public class DiplomaticEmbassy implements Base, Serializable {
     }
     public DiplomaticIncident signPeace() {
         beginTreaty();
-        int duration = roll(8,15);
+        int duration = roll(10,15);
         endWarPreparations();
         otherEmbassy().endWarPreparations();
         beginPeace(duration);
