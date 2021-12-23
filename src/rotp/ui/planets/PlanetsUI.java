@@ -1239,6 +1239,7 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
             g.setFont(narrowFont(20));
             g.setColor(Color.black);
             String str = text("MAIN_COLONY_SHIPYARD_CONSTRUCTION");
+            scaledFont(g, str, getWidth()-s10, 20, 16);
             drawShadowedString(g, str, 2, s5, s22, MainUI.shadeBorderC(), textColor);
         }
         private List<Colony> colonies() {

@@ -612,7 +612,7 @@ MAIN_COLONY_COMPLETION_YEARS      | %1 Anni
 MAIN_COLONY_COMPLETION_CENTURY    | %1 Anni
 MAIN_COLONY_COMPLETION_PER_YEAR   | %1/Anno
 MAIN_COLONY_SHIPYARD_COMPLETED    | Completato: %1
-MAIN_COLONY_SHIPYARD_LIMIT        | Limite di Costruzione:
+MAIN_COLONY_SHIPYARD_LIMIT        | Limite:
 MAIN_COLONY_SHIPYARD_LIMIT_NONE   | Nessuno
 MAIN_COLONY_SHIPYARD_CONSTRUCTION | Coda di Costruzione di Nave
 MAIN_COLONY_RELOCATE_LABEL        | Impostare Punto di Raduno
@@ -1322,7 +1322,7 @@ SHIP_DESIGN_SIZE_SMALL            | Piccola
 SHIP_DESIGN_SIZE_MEDIUM           | Media
 SHIP_DESIGN_SIZE_LARGE            | Grande
 SHIP_DESIGN_SIZE_HUGE             | Enorme
-SHIP_DESIGN_SIZE_LABEL            | Dimensione
+SHIP_DESIGN_SIZE_LABEL            | Dim.
 SHIP_DESIGN_TYPE_LABEL            | Tipo
 SHIP_DESIGN_COUNT_LABEL           | Conto
 SHIP_DESIGN_DAMAGE_LABEL          | Danno
@@ -1340,10 +1340,10 @@ SHIP_DESIGN_AVAIL_SPACE_LABEL     | Spazio Disponibile
 SHIP_DESIGN_COLORS                | Tinta
 SHIP_DESIGN_COMBAT_STATS_TITLE    | Statistiche di combattimento
 SHIP_DESIGN_HIT_POINTS_LABEL      | Punti Ferita
-SHIP_DESIGN_MISSILE_DEF_LABEL     | Difesa Contro i Missili
-SHIP_DESIGN_BEAM_DEF_LABEL        | Difesa Contro i Raggi
+SHIP_DESIGN_MISSILE_DEF_LABEL     | Difesa Missilistica
+SHIP_DESIGN_BEAM_DEF_LABEL        | Difesa dal Raggio
 SHIP_DESIGN_ATTACK_LEVEL_LABEL    | Livello di Attacco
-SHIP_DESIGN_COMBAT_SPEED_LABEL    | Velocità di Combattimento
+SHIP_DESIGN_COMBAT_SPEED_LABEL    | Manovra
 SHIP_DESIGN_COMBAT_SPEED_VALUE    | %1 Quadrato(i)
 SHIP_DESIGN_ENGINES_TITLE         | Motori
 SHIP_DESIGN_ENGINES_DESC          | Alimenta la tua nave e i suoi componenti.
@@ -1395,7 +1395,7 @@ SHIP_DESIGN_SHIELD_COST           | Costo
 SHIP_DESIGN_SHIELD_SIZE           | Dimensione
 SHIP_DESIGN_SHIELD_POWER          | Potenza
 SHIP_DESIGN_SHIELD_SPACE          | Spazio
-SHIP_DESIGN_ECM_TITLE             | Jammer di contromisure elettroniche (ECM)
+SHIP_DESIGN_ECM_TITLE             | Jammer di ECM
 SHIP_DESIGN_ECM_TYPE              | Tipo
 SHIP_DESIGN_ECM_COST              | Costo
 SHIP_DESIGN_ECM_SIZE              | Dimensione
@@ -1410,7 +1410,7 @@ SHIP_DESIGN_ENGINE_TYPE           | Tipo
 SHIP_DESIGN_ENGINE_NUM            | Motori Num
 SHIP_DESIGN_ENGINE_SPACE          | Spazio
 SHIP_DESIGN_ENGINE_COST           | Costo
-SHIP_DESIGN_ENGINE_SIZE           | Dimensione
+SHIP_DESIGN_ENGINE_SIZE           | Dim.
 SHIP_DESIGN_ENGINE_POWER          | Potenza
 SHIP_DESIGN_MANEUVER_TITLE        | Manovra
 SHIP_DESIGN_MANEUVER_TYPE         | Tipo

@@ -319,6 +319,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         // fill in top right panel
         String title2 = text("TECH_EMPIRE_SPENDING");
         g.setFont(narrowFont(20));
+        this.scaledFont(g, title2, scaled(200), 20, 15);
         drawShadowedString(g, title2, 1, subPanelX+s20, subPanelY+s30, Color.black, Color.white);
 
         g.setFont(plainFont(16));
@@ -385,6 +386,7 @@ public class AllocateTechUI extends BasePanel implements MouseListener, MouseMot
         // draw tech spending area
         String allocateTitle = text("TECH_ALLOCATE_POINTS");
         g.setFont(narrowFont(20));
+        this.scaledFont(g, allocateTitle, scaled(200), 20, 15);
         drawShadowedString(g, allocateTitle, 1, subPanelX+s20, botSubPaneY+s20, Color.black, Color.white);
 
         // draw equalize spending hihit

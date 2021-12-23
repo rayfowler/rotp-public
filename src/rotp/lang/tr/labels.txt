@@ -744,7 +744,7 @@ PLANETS_RESERVE_NO_TAX            | Vergi Yok.
 PLANETS_RESERVE_ONLY_DEVELOPED    | Sadece tam gelişmiş koloniler vergilendiriliyor
 PLANETS_BUTTON_TRANSFER           | AKTAR
 PLANETS_BUTTON_EXIT               | ÇIKIŞ
-PLANETS_AMT_PCT                   | Yüzde %1
+PLANETS_AMT_PCT                   | %%1
 PLANETS_AMT_BC                    | %1 BC
 PLANETS_TRANSFER_DESC             | İmparatorluk Fonlarını %1 Bütçesine Aktar
 PLANETS_TRANSFER_CANCEL           | İptal
@@ -774,9 +774,9 @@ PLANETS_LIST_RESOURCES            | Kaynaklar
 PLANETS_MULTI_SYSTEMS             | %1 Sistem
 PLANETS_AGGREGATE_VALUES          | Toplam Değerler
 PLANETS_SPENDING_0                | %1 Harcaması Yok
-PLANETS_SPENDING_25               | Yüzde 25 %1 Harcaması
-PLANETS_SPENDING_50               | Yüzde 50 %1 Harcaması
-PLANETS_SPENDING_75               | Yüzde 75 %1 Harcaması
+PLANETS_SPENDING_25               | %25 %1 Harcaması
+PLANETS_SPENDING_50               | %50 %1 Harcaması
+PLANETS_SPENDING_75               | %75 %1 Harcaması
 PLANETS_SPENDING_MAX              | Maksimum %1 Harcaması
 PLANETS_HELP_ALL                  | GENEL BAKIŞ - Bu ekran, imparatorluğunun ekonomik verilerini ve kolonilerinin çeşitli verilere göre sıralanabilen bir listesini gösterir.
 PLANETS_HELP_1A                   | Ekoloji - Kolonilerin ekolojik verilerini göstermek için bu sekmeyi tıkla.
@@ -944,7 +944,7 @@ TECH_ALLOCATE_ENRICH_SOIL         | Gezegenlerimizi yerselleştirmeye başlamak 
 TECH_ALLOCATE_ATMOSPHERE          | Gezegenlerimizi yerselleştirmeye başlamak için zorlu ortamlara sahip kolonilerimizin ekoloji oranlarını artırmalı mıyız?
 TECH_ALLOCATE_TERRAFORM           | Gezegenlerimizi yerselleştirmeye başlamak için bütün kolonilerimizin ekoloji oranlarını artırmalı mıyız?
 TECH_ALLOCATE_NO                  | Hayır
-TECH_ALLOCATE_PCT                 | +Yüzde %1
+TECH_ALLOCATE_PCT                 | +%%1
 TECH_COMPLETED_TITLE              | Araştırma Tamamlandı!
 TECH_COMPLETED_COMPUTER           | Bilgisayar teknolojisinde mümkün olan tüm araştırmaları tamamladık! Bu alanda daha fazla araştırma yapmak mümkün değildir.
 TECH_COMPLETED_CONSTRUCTION       | İnşaat teknolojisinde mümkün olan tüm araştırmaları tamamladık! Bu alanda daha fazla araştırma yapmak mümkün değildir.
@@ -1252,7 +1252,7 @@ TECH_EMPIRE_BALANCED_DESC         | Dengeli harcama genel araştırma puanların
 TECH_EMPIRE_DETAIL_1              | %1 BC ile 
 TECH_EMPIRE_DETAIL_2              | %2 AP / Yıl
 TECH_TOTAL_RP                     | %1 AP
-TECH_DISCOVERY_PCT                | Yüzde %1
+TECH_DISCOVERY_PCT                | %%1
 TECH_CHANGE_RESEARCH              | Bu teknolojiyi araştırmak için sol tıkla.
 TECH_NEXT_TIER_TITLE              | Henüz Mevcut Değil.
 TECH_FIRST_TIER_DESC              | Erişebilmek için bu kategoride araştırma puanı harca.
@@ -1268,7 +1268,7 @@ TECH_PLANETARY_SHIELDS_NONE       | Yok
 TECH_PLANETARY_SHIELDS_CLASS      | Sınıf %1
 TECH_GROUND_COMBAT                | Kara Savaşı
 TECH_GROUND_COMBAT_NO_BONUS       | Bonus Yok
-TECH_GROUND_COMBAT_BONUS          | +Yüzde %1
+TECH_GROUND_COMBAT_BONUS          | +%%1
 TECH_TERRAFORM                    | Yerselleştirme
 TECH_TERRAFORM_NO_BONUS           | Bonus Yok
 TECH_TERRAFORM_BONUS              | +%1 Maks Nüf.
@@ -1279,7 +1279,7 @@ TECH_PLANET_SCANNER_NONE          | Yok
 TECH_PLANET_SCANNER_RANGE         | %1 ışıkyılı
 TECH_WASTE_REDUCTION              | Atık Azaltma
 TECH_WASTE_REDUCTION_NONE         | Yok
-TECH_WASTE_REDUCTION_AMT          | -Yüzde %1
+TECH_WASTE_REDUCTION_AMT          | -%%1
 TECH_WASTE_CLEANUP                | Atık Temizleme
 TECH_WASTE_CLEANUP_BONUS          | %1 Atık/BC
 TECH_SHIP_RANGE                   | Gemi Menzili

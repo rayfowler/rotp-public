@@ -267,6 +267,7 @@ public class EmpireSystemPanel extends SystemPanel {
             g.setFont(narrowFont(20));
             g.setColor(Color.black);
             String str = text("MAIN_COLONY_SHIPYARD_CONSTRUCTION");
+            scaledFont(g, str, getWidth()-s10, 20, 16);
             drawShadowedString(g, str, 2, s5, s22, MainUI.shadeBorderC(), textColor);
         }
         private void drawShipIcon(Graphics2D g,  Colony c, int x, int y, int w, int h) {
@@ -471,7 +472,7 @@ public class EmpireSystemPanel extends SystemPanel {
             g.setStroke(prevStroke);
 
             String s = text("MAIN_COLONY_RELOCATE_LABEL");
-            scaledFont(g, s, w-s10, 17, 15);
+            scaledFont(g, s, w-s10, 17, 13);
             if (!enabled)
                 g.setColor(gray90C);
             else if (hoverBox == rallyPointBox)	

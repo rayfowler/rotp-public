@@ -922,7 +922,7 @@ public class DesignUI extends BasePanel {
                 g.setFont(narrowFont(14));
                 g.setColor(SystemPanel.blackText);
                 String desc = designNum == selectedSlot ? text("SHIP_DESIGN_AVAILABLE_DESC2"): text("SHIP_DESIGN_AVAILABLE_DESC");
-                List<String> lines = wrappedLines(g, desc, getWidth()-s20-leftM);
+                List<String> lines = scaledNarrowWrappedLines(g, desc, getWidth()-s5-leftM, 4, 14, 12);
                 int y0 = s40;
                 for (String line: lines) {
                     drawString(g,line, leftM, y0);
@@ -1342,7 +1342,9 @@ public class DesignUI extends BasePanel {
                 drawColorOptions(g, x1, y6, w-s20, rowH);
             
             g.setFont(narrowFont(22));
-            drawShadowedString(g, text("SHIP_DESIGN_COMBAT_STATS_TITLE"),3,x2+s5,y1,SystemPanel.textShadowC, SystemPanel.whiteText);
+            String title = text("SHIP_DESIGN_COMBAT_STATS_TITLE");
+            this.scaledFont(g, title, (w*45/100)-s10, 22, 16);
+            drawShadowedString(g, title,3,x2+s5,y1,SystemPanel.textShadowC, SystemPanel.whiteText);
 
             if (UserPreferences.texturesInterface()) 
                 drawTexture(g,x, y0+s10, w, h-s85);
@@ -2100,6 +2102,7 @@ public class DesignUI extends BasePanel {
             int y2 = y1+rowH;
             String title1 = text("SHIP_DESIGN_ECM_TITLE");
             g.setFont(narrowFont(20));
+            scaledFont(g, title1, x2-x1-s5, 20, 17);
             drawShadowedString(g, title1, 3, x1, y2, SystemPanel.textShadowC, SystemPanel.whiteText);
 
             // draw ship maneuver row
