@@ -36,8 +36,6 @@ public class ColonyIndustry extends ColonySpendingCategory {
         industryReserveBC = 0;
         unallocatedBC = 0;
         newFactories = 0;
-        while(c.planet().numAlienFactories() > c.maxSize() * effectiveRobotControls() && robotControls() < maxRobotControls())
-          robotControls++;
     }
     @Override
     public int categoryType()               { return Colony.INDUSTRY; }

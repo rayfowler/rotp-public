@@ -52,8 +52,6 @@ import rotp.model.galaxy.Ship;
 import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.galaxy.Transport;
-import rotp.model.ships.ShipDesign;
-import rotp.model.ships.ShipDesignLab;
 import rotp.model.tech.Tech;
 import rotp.ui.BasePanel;
 import rotp.ui.ExitButton;
