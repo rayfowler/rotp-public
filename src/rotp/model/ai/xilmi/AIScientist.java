@@ -491,7 +491,7 @@ public class AIScientist implements Base, Scientist {
             if(!empire.atWarWith(ev.empId()) && ev.spies().unknownTechs().contains(t))
                 ownerFactor /= 2;
             //If we could steal it we don't want to research it ourselves at all
-            if(ev.spies().possibleTechs().contains(t.name()) && ev.spies().isEspionage() && ev.spies().hasSpies())
+            if(ev.spies().possibleTechs().contains(t.id()) && ev.spies().isEspionage() && ev.spies().hasSpies())
                 return 0;
         }
         return max(researchValue(t) * ownerFactor, 1);
