@@ -1,4 +1,4 @@
-F
+
 
 //
 // Armor techs
@@ -351,52 +351,52 @@ ECMJAMMER_0_ITEM      |
 ECMJAMMER_0_BRIEF     | Missile Def 0
 ECMJAMMER_0_DETAIL    | 
 
-ECMJAMMER_1_NAME      | Mark I Jammer di contromisure elettroniche (ECM)
+ECMJAMMER_1_NAME      | Mark I Jammer di ECM
 ECMJAMMER_1_ITEM      | Jammer I
 ECMJAMMER_1_BRIEF     | Missile Def 1
 ECMJAMMER_1_DETAIL    | Aggiunge 1 livello alla difesa contro gli attacchi missilistici nemici.
 
-ECMJAMMER_2_NAME      | Mark II Jammer di contromisure elettroniche (ECM)
+ECMJAMMER_2_NAME      | Mark II Jammer di ECM
 ECMJAMMER_2_ITEM      | Jammer II
 ECMJAMMER_2_BRIEF     | Missile Def 2
 ECMJAMMER_2_DETAIL    | Aggiunge 2 livelli alla difesa contro gli attacchi missilistici nemici.
 
-ECMJAMMER_3_NAME      | Mark III Jammer di contromisure elettroniche (ECM)
+ECMJAMMER_3_NAME      | Mark III Jammer di ECM
 ECMJAMMER_3_ITEM      | Jammer III
 ECMJAMMER_3_BRIEF     | Missile Def 3
 ECMJAMMER_3_DETAIL    | Aggiunge 3 livelli alla difesa contro gli attacchi missilistici nemici.
 
-ECMJAMMER_4_NAME      | Mark IV Jammer di contromisure elettroniche (ECM)
+ECMJAMMER_4_NAME      | Mark IV Jammer di ECM
 ECMJAMMER_4_ITEM      | Jammer IV
 ECMJAMMER_4_BRIEF     | Missile Def 4
 ECMJAMMER_4_DETAIL    | Aggiunge 4 livelli alla difesa contro gli attacchi missilistici nemici.
 
-ECMJAMMER_5_NAME      | Mark V Jammer di contromisure elettroniche (ECM)
+ECMJAMMER_5_NAME      | Mark V Jammer di ECM
 ECMJAMMER_5_ITEM      | Jammer V
 ECMJAMMER_5_BRIEF     | Missile Def 5
 ECMJAMMER_5_DETAIL    | Aggiunge 5 livelli alla difesa contro gli attacchi missilistici nemici.
 
-ECMJAMMER_6_NAME      | Mark VI Jammer di contromisure elettroniche (ECM)
+ECMJAMMER_6_NAME      | Mark VI Jammer di ECM
 ECMJAMMER_6_ITEM      | Jammer VI
 ECMJAMMER_6_BRIEF     | Missile Def 6
 ECMJAMMER_6_DETAIL    | Aggiunge 6 livelli alla difesa contro gli attacchi missilistici nemici.
 
-ECMJAMMER_7_NAME      | Mark VII Jammer di contromisure elettroniche (ECM)
+ECMJAMMER_7_NAME      | Mark VII Jammer di ECM
 ECMJAMMER_7_ITEM      | Jammer VII
 ECMJAMMER_7_BRIEF     | Missile Def 7
 ECMJAMMER_7_DETAIL    | Aggiunge 7 livelli alla difesa contro gli attacchi missilistici nemici.
 
-ECMJAMMER_8_NAME      | Mark VIII Jammer di contromisure elettroniche (ECM)
+ECMJAMMER_8_NAME      | Mark VIII Jammer di ECM
 ECMJAMMER_8_ITEM      | Jammer VIII
 ECMJAMMER_8_BRIEF     | Missile Def 8
 ECMJAMMER_8_DETAIL    | Aggiunge 8 livelli alla difesa contro gli attacchi missilistici nemici..
 
-ECMJAMMER_9_NAME      | Mark IX Jammer di contromisure elettroniche (ECM)
+ECMJAMMER_9_NAME      | Mark IX Jammer di ECM
 ECMJAMMER_9_ITEM      | Jammer IX
 ECMJAMMER_9_BRIEF     | Missile Def 9
 ECMJAMMER_9_DETAIL    | Aggiunge 9 livelli alla difesa contro gli attacchi missilistici nemici.
 
-ECMJAMMER_10_NAME     | Mark X Jammer di contromisure elettroniche (ECM)
+ECMJAMMER_10_NAME     | Mark X Jammer di ECM
 ECMJAMMER_10_ITEM     | Jammer X
 ECMJAMMER_10_BRIEF    | Missile Def 10
 ECMJAMMER_10_DETAIL   | Aggiunge 10 livelli alla difesa contro gli attacchi missilistici nemici.

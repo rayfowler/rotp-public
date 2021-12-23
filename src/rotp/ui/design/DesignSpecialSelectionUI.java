@@ -55,7 +55,7 @@ public class DesignSpecialSelectionUI extends DesignSelectionUI {
     int minimumWidth(int i) {
         switch(i) {
             case 0: return 250;
-            case 5: return 300;
+            case 5: return 375;
         }
         return super.minimumWidth(i);
     }

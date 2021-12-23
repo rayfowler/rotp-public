@@ -533,6 +533,7 @@ public class SystemMassQueryPanel extends BasePanel {
 
             String s = text("FLEETS_RELOCATE_LABEL");
             g.setFont(narrowFont(17));
+            this.scaledFont(g, s, scaled(120), 17, 14);
             if (!player().canRallyFleets())
                 g.setColor(SystemPanel.grayText);
             else if (hoverBox == rallyPointBox)	

@@ -63,7 +63,7 @@ public class DesignWeaponSelectionUI extends DesignSelectionUI {
         switch(i) {
             case 0: return 250;
             case 2: return 100;
-            case 7: return 225;
+            case 7: return 300;
         }
         return super.minimumWidth(i);
     }
