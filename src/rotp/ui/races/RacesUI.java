@@ -976,7 +976,7 @@ public class RacesUI extends BasePanel {
             Color blackC = selected ? Color.black : SystemPanel.blackText;
             Color whiteC = (emp == hoverEmp) && !hoveringIcon ? Color.yellow : selected ? Color.white : SystemPanel.whiteText;
              //empire name
-            int x1 = x0+w1+mgn+s10;
+            int x1 = x0+w1+mgn+s5;
             int y1 = y0+s25;
             g.setFont(narrowFont(22));
             drawShadowedString(g, emp.raceName(), 1, x1, y1, blackC, whiteC);
@@ -996,7 +996,9 @@ public class RacesUI extends BasePanel {
                 g.setFont(narrowFont(16));
                 g.setColor(blackC);
                 y1 += s20;
-                drawString(g,text("RACES_KNOWN_EMPIRES", n), x1, y1);
+                String line1 = text("RACES_KNOWN_EMPIRES", n);
+                scaledFont(g, line1, scaled(130), 16, 12);
+                drawString(g,line1, x1, y1);
                 if (n > 0) {
                     int r = 0;
                     for (EmpireView v : views) {
@@ -1004,7 +1006,9 @@ public class RacesUI extends BasePanel {
                             r++;
                     }
                     y1 += s16;
-                    drawString(g,text("RACES_RECALLED_DIPLOMATS", r), x1, y1);
+                    String line2 = text("RACES_RECALLED_DIPLOMATS", r);
+                    scaledFont(g, line2, scaled(130), 16, 12);
+                    drawString(g,line2, x1, y1);
                 }
             }
             else {
@@ -1021,6 +1025,7 @@ public class RacesUI extends BasePanel {
                     int starW = s8;
                     String s = treaty.status(player());
                     int sw = g.getFontMetrics().stringWidth(s);
+                    scaledFont(g, s, scaled(130), 16, 12);
                     drawString(g,s, x1, y1);
                     if (isAlly) {
                         TreatyAlliance alliance = (TreatyAlliance) treaty;
@@ -1030,11 +1035,14 @@ public class RacesUI extends BasePanel {
                     y1 += s16;
                     int level = view.trade().level();
                     String tradeStr = (level == 0) ? text("RACES_TRADE_NONE") : text("RACES_TRADE_LEVEL", level);
+                    scaledFont(g, tradeStr, scaled(130), 16, 12);
                     drawString(g,tradeStr, x1, y1);
                 }
                 else {
                     y1 += s20;
-                    drawString(g,text("RACES_OUT_OF_RANGE"), x1, y1);
+                    String line = text("RACES_OUT_OF_RANGE");
+                    scaledFont(g, line, scaled(130), 16, 12);
+                    drawString(g,line, x1, y1);
                 }
                 if (!emp.masksDiplomacy()) 
                     drawRelationsBar(g, emp, x1, y0+h0-s25, w0-x1-s10, s10, s10, s5);
