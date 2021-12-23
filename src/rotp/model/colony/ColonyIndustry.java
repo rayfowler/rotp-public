@@ -69,6 +69,7 @@ public class ColonyIndustry extends ColonySpendingCategory {
         Planet p = planet();
         p.addAlienFactories(empire().id, (int) factories);
         industryReserveBC = 0;
+        robotControls = newCiv.tech().baseRobotControls();
         factories = p.alienFactories(newCiv.id);
         p.removeAlienFactories(newCiv.id);
         unallocatedBC = 0;
@@ -86,6 +87,11 @@ public class ColonyIndustry extends ColonySpendingCategory {
     public void nextTurn(float totalProd, float totalReserve) {
         if (factories < 0) // correct possible data issue
             factories = 0;
+        
+        // correct for any captured errors in existing saves where a
+        // captured colony had higher controlss
+        robotControls = min(robotControls, tech().baseRobotControls());
+        
         previousFactories = factories;
         // prod gets planetary bonus, but not reserve
         float prodBC = pct()* totalProd * planet().productionAdj();
@@ -175,10 +181,10 @@ public class ColonyIndustry extends ColonySpendingCategory {
         
         // deduct cost to build remaining factories at current robot controls level
         float maxBuildable = maxBuildableFactories(robotControls);
-        float newFactories = 0;
+        float possibleNewFactories = 0;
         if (maxBuildable > factories) {
-            newFactories = maxBuildable-factories;
-            float buildCost = newFactories*newFactoryCost();
+            possibleNewFactories = maxBuildable-factories;
+            float buildCost = possibleNewFactories*newFactoryCost();
             if (totalBC <= buildCost)
                 return 0;
             totalBC -= buildCost;      
@@ -188,7 +194,7 @@ public class ColonyIndustry extends ColonySpendingCategory {
         while ((totalBC > 0) && (colonyControls < tech().baseRobotControls())) {
             // calculate cost to refit existing factories
             float upgradeCost = 0;
-            float factoriesToUpgrade = min(factories+newFactories, maxBuildableFactories(colonyControls));
+            float factoriesToUpgrade = min(factories+possibleNewFactories, maxBuildableFactories(colonyControls));
             if (!empire().ignoresFactoryRefit())
                 upgradeCost = factoriesToUpgrade * tech().baseFactoryCost() / 2;
             // not enough to upgrade? save off BC for next turn and exit
@@ -198,13 +204,13 @@ public class ColonyIndustry extends ColonySpendingCategory {
             totalBC -= upgradeCost;
             colonyControls++;
             //after refitting, build up to max useable factories at current robot controls level
-            float factoriesToBuild = max(0, maxBuildableFactories(colonyControls)-factories-newFactories);
+            float factoriesToBuild = max(0, maxBuildableFactories(colonyControls)-factories-possibleNewFactories);
             if (factoriesToBuild > 0) {
                 float costPerFactory = tech().newFactoryCost(colonyControls);
                 float buildCost = factoriesToBuild * costPerFactory;
                 if (buildCost > totalBC)
                     return 0;
-                newFactories += factoriesToBuild;
+                possibleNewFactories += factoriesToBuild;
                 totalBC -= buildCost;
             }
         }
@@ -219,7 +225,7 @@ public class ColonyIndustry extends ColonySpendingCategory {
         float rsvBC = pct() * colony().maxReserveIncome();
         float startBC = prodBC+rsvBC+industryReserveBC;
         float newBC = prodBC+rsvBC+industryReserveBC;
-        int colonyControls = robotControls;
+        int colonyControls = min(robotControls, tech().baseRobotControls());
         float builtFactories = factories;
 
         if (newBC <= 0)
