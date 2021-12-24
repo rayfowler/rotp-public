@@ -87,7 +87,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     boolean showPlanet = false;
     boolean exited = false;
     boolean shiftPressed = false;
-    boolean showTactics = false;
+    boolean showTactics = true;
     BufferedImage renderedPlanetImage;
     Image[] asteroids = new Image[16];
     public int[][] asteroidRoll = new int[GRID_COUNT_X][GRID_COUNT_Y];
