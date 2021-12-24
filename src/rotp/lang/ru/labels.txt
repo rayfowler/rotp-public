@@ -1504,6 +1504,8 @@ SHIP_COMBAT_NEXT                  | Следующий Корабль
 SHIP_COMBAT_AUTO_RESOLVE          | Перейти к Результату
 SHIP_COMBAT_AUTO_RESOLVING        | Результат Вычисляется...
 SHIP_COMBAT_PLAY_BATTLE           | Передать Управление ИИ
+SHIP_COMBAT_STATS_ON              | Доп. информация: вкл
+SHIP_COMBAT_STATS_OFF             | Доп. информация: выкл
 SHIP_COMBAT_PAUSE_BATTLE          | Пауза
 SHIP_COMBAT_EXIT                  | Выйти
 SHIP_COMBAT_COUNT_NAME            | %1  %2
