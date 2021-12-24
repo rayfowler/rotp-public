@@ -918,9 +918,9 @@ public class DesignUI extends BasePanel {
             ShipDesign des = slotDesign();
             if (!des.active()) {
                 g.setFont(narrowFont(18));
-                drawShadowedString(g, text("SHIP_DESIGN_AVAILABLE"), 3, leftM, s20, SystemPanel.textShadowC, SystemPanel.whiteText);
+                drawShadowedString(g, text("SHIP_DESIGN_AVAILABLE"), 3, leftM, s20, SystemPanel.textShadowC, SystemPanel.yellowText);
                 g.setFont(narrowFont(14));
-                g.setColor(SystemPanel.blackText);
+                g.setColor(SystemPanel.whiteText);
                 String desc = designNum == selectedSlot ? text("SHIP_DESIGN_AVAILABLE_DESC2"): text("SHIP_DESIGN_AVAILABLE_DESC");
                 List<String> lines = scaledNarrowWrappedLines(g, desc, getWidth()-s5-leftM, 4, 14, 12);
                 int y0 = s40;
