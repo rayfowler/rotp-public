@@ -1504,6 +1504,8 @@ SHIP_COMBAT_AUTO_RESOLVE          | Auto-Resolve Battle
 SHIP_COMBAT_AUTO_RESOLVING        | Resolving Combat...
 SHIP_COMBAT_PLAY_BATTLE           | Auto-Play Battle
 SHIP_COMBAT_PAUSE_BATTLE          | Pause Battle
+SHIP_COMBAT_STATS_ON              | Combat Stats: On
+SHIP_COMBAT_STATS_OFF             | Combat Stats: Off
 SHIP_COMBAT_EXIT                  | Exit
 SHIP_COMBAT_COUNT_NAME            | %1  %2
 SHIP_COMBAT_MONSTER_TARGET        | Space monster targeted.

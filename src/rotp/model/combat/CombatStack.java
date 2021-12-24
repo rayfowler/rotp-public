@@ -693,5 +693,41 @@ public class CombatStack implements Base {
             int y3 = y1+(stackH/2);
             drawBorderedString(g, s,x3,y3, Color.black, Color.white);
         }
+        int mgn = BasePanel.s2;
+        int x4 = x+mgn;
+        int y4 = y+mgn;
+        int w4 = stackW-mgn-mgn;
+        int barH = BasePanel.s10;
+        if (ui.showTacticalInfo()) {
+            // draw health bar & hp
+            g.setColor(healthBarBackC);
+            g.fillRect(x4, y4, w4, barH);
+            int w4a = (int)(w4*hits/maxHits);
+            g.setColor(healthBarC);
+            g.fillRect(x4, y4, w4a, barH);
+            int numW = 0;
+            // draw ship count
+            if (num > 1) {
+                g.setColor(healthBarC);
+                String numStr = str(num);
+                g.setFont(narrowFont(20));
+                numW = g.getFontMetrics().stringWidth(numStr);
+                int x6 = reversed ? x4: x4+w4-numW-BasePanel.s10;
+                g.fillRect(x6, y4, numW+BasePanel.s10, BasePanel.s22);
+                g.setColor(Color.white);
+                Stroke prevStroke = g.getStroke();
+                g.setStroke(BasePanel.stroke1);
+                g.drawRect(x6, y4, numW+BasePanel.s10, BasePanel.s22);
+                g.setStroke(prevStroke);
+                g.drawString(numStr, x6+BasePanel.s5,y4+BasePanel.s18);
+            }
+            // draw hit points
+            g.setColor(Color.white);
+            String hpStr = ""+(int)Math.ceil(hits)+"/"+(int)Math.ceil(maxHits);
+            g.setFont(narrowFont(12));
+            int hpW = g.getFontMetrics().stringWidth(hpStr);
+            int x5 = reversed ? x4+((w4-hpW+numW)/2) : x4+((w4-hpW-numW)/2);
+            g.drawString(hpStr, x5, y4+BasePanel.s9);
+        }
     }
 }

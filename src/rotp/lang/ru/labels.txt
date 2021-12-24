@@ -1505,6 +1505,8 @@ SHIP_COMBAT_AUTO_RESOLVE          | Перейти к Результату
 SHIP_COMBAT_AUTO_RESOLVING        | Результат Вычисляется...
 SHIP_COMBAT_PLAY_BATTLE           | Передать Управление ИИ
 SHIP_COMBAT_PAUSE_BATTLE          | Пауза
+SHIP_COMBAT_STATS_ON              | Боевая Стат.: да
+SHIP_COMBAT_STATS_OFF             | Боевая Стат.: нет
 SHIP_COMBAT_EXIT                  | Выйти
 SHIP_COMBAT_COUNT_NAME            | %1  %2
 SHIP_COMBAT_MONSTER_TARGET        | Нацелено космическое чудовище.

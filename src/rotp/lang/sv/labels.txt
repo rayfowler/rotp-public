@@ -1505,6 +1505,8 @@ SHIP_COMBAT_AUTO_RESOLVE          | Auto-Beräkna Strid
 SHIP_COMBAT_AUTO_RESOLVING        | Beräknar Battalj...
 SHIP_COMBAT_PLAY_BATTLE           | Auto-Spela Strid
 SHIP_COMBAT_PAUSE_BATTLE          | Pausa Strid
+SHIP_COMBAT_STATS_ON              | Stridsspecifikationer: På
+SHIP_COMBAT_STATS_OFF             | Stridsspecifikationer: Av
 SHIP_COMBAT_EXIT                  | Avsluta
 SHIP_COMBAT_COUNT_NAME            | %1  %2
 SHIP_COMBAT_MONSTER_TARGET        | Rymdmonster som anfallsmål.

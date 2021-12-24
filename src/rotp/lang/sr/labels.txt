@@ -1505,6 +1505,8 @@ SHIP_COMBAT_AUTO_RESOLVE          | Auto-reši bitku
 SHIP_COMBAT_AUTO_RESOLVING        | Rešavanje borbe...
 SHIP_COMBAT_PLAY_BATTLE           | Auto-igraj borbu
 SHIP_COMBAT_PAUSE_BATTLE          | Pauziraj borbu
+SHIP_COMBAT_STATS_ON              | Borbene Stat.: da
+SHIP_COMBAT_STATS_OFF             | Borbene Stat.: ne
 SHIP_COMBAT_EXIT                  | Izlaz
 SHIP_COMBAT_COUNT_NAME            | %1  %2
 SHIP_COMBAT_MONSTER_TARGET        | Ciljano svemirsko čudovište.

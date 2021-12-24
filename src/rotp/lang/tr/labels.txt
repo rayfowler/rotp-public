@@ -1505,6 +1505,8 @@ SHIP_COMBAT_AUTO_RESOLVE          | Otomatik Savaş
 SHIP_COMBAT_AUTO_RESOLVING        | Savaş Sonuçlandırılıyor...
 SHIP_COMBAT_PLAY_BATTLE           | Savaşı Otomatik Yürüt
 SHIP_COMBAT_PAUSE_BATTLE          | Savaşı Duraklat
+SHIP_COMBAT_STATS_ON              | Savaş İstatistikleri: Evet
+SHIP_COMBAT_STATS_OFF             | Savaş İstatistikleri: Hayır 
 SHIP_COMBAT_EXIT                  | Çık
 SHIP_COMBAT_COUNT_NAME            | %1 %2
 SHIP_COMBAT_MONSTER_TARGET        | Uzay canavarı hedef alındı.

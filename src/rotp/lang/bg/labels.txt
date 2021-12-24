@@ -1504,6 +1504,8 @@ SHIP_COMBAT_AUTO_RESOLVE          | Автоматично разрешаван�
 SHIP_COMBAT_AUTO_RESOLVING        | Разрешаване на борбата...
 SHIP_COMBAT_PLAY_BATTLE           | Автоматично възпроизвеждане на битка
 SHIP_COMBAT_PAUSE_BATTLE          | Пауза на битката
+SHIP_COMBAT_STATS_ON              | Бойна статистика: да
+SHIP_COMBAT_STATS_OFF             | Бойна статистика: не
 SHIP_COMBAT_EXIT                  | Изход
 SHIP_COMBAT_COUNT_NAME            | %1  %2
 SHIP_COMBAT_MONSTER_TARGET        | Космическо Чудовище Под Прицел.

@@ -1505,6 +1505,8 @@ SHIP_COMBAT_AUTO_RESOLVE          | Rezolvă Automat Lupta
 SHIP_COMBAT_AUTO_RESOLVING        | Rezolvare Luptă...
 SHIP_COMBAT_PLAY_BATTLE           | Execută Lupta Prin Auto-Play
 SHIP_COMBAT_PAUSE_BATTLE          | Pauză Luptă
+SHIP_COMBAT_STATS_ON              | Statistici de Luptă: da
+SHIP_COMBAT_STATS_OFF             | Statistici de Luptă: Nu
 SHIP_COMBAT_EXIT                  | Ieșire
 SHIP_COMBAT_COUNT_NAME            | %1  %2
 SHIP_COMBAT_MONSTER_TARGET        | Monstru Spațial țintit.
