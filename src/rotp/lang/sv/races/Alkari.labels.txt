@@ -2,6 +2,7 @@
 _empire                           | Alkari Överhet, Avesi Överhet, Perigrini Överhet, Fjäderling Överhet, Psittacini Överhet
 _race                             | Alkari, Avesi, Perigrini, Fjäderling, Psittacini
 _race_plural                      | Alkarier, Avesier, Perigrinier, Fjäderlingar, Psittacinier
+_racepludef                       | Alkarierna, Avesierna, Perigrinierna, Fjäderlingarna, Psittacinierna
 _raceposs                         | Alkaris, Avesis, Perigrinis, Fjäderlingars, Psittacinis
 _title                            | Kung av Höjden
 _nameTitle                        | Kung av Höjden

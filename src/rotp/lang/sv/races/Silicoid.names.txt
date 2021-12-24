@@ -3,7 +3,7 @@ name: Kiseloider, Vulkanoider, Magmoider, Granitoider, Sedimentoider
 
 desc1: Xenofobiska Expansionister
 desc2: Immuna mot Ogästvänligt klimat
-desc3: [race] är ett gåtfullt och mineralätande folk som genomsöker galaxen i jakt på deras evige fiende.
+desc3: Kiseloiderna är ett gåtfullt och mineralätande folk som genomsöker galaxen i jakt på deras evige fiende.
 
 // possible home system names
 home: Krislon, Geode, Kvartshem, Magmati, Kalcito

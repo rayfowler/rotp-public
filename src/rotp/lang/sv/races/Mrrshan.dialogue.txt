@@ -15,7 +15,7 @@
 // Mrrshan specific dialogue
 
 CONTACT_AGGRESSIVE         | Jag hälsar dig, du konstiga sak. Jag är av [my_race], och en tjänare till vår Gyllene Khan. Jag hoppas att ni är starka, [your_race], inte bara för ert folks skull, utan också för de skatter ni håller mest kära.
-CONTACT_RUTHLESS           | Vi är [my_race], [your_race], och vi håller oss till endast en tro: de starka tar, och de veka ger. Om ni inte redan förstår insikten i en sådan filosofi, så kommer vi snart göra er varse.
+CONTACT_RUTHLESS           | Vi är [my_race], [your_race], och vi håller oss till endast en tro: de starka tar, och de veka ger. Ni kanske inte redan har insikt om betydelsen av en sådan filosofi, men det är något ni kommer få lära er.
 CONTACT_XENOPHOBIC         | Bäst att hoppas att vår Gyllene Khan dömer er värdiga, [your_race]. Väck hans vrede, så kommer han inte dra sig för att låta [my_raceposs] flottor gå till jakt mot er.
 //
 GREETING_01                | Ni har bevisat er position gång på gång. Vi är hedrade att göra vad vi kan för att bevisa vår pålitlighet likaså.
@@ -51,7 +51,7 @@ DECLAREWAR_ASSASSIN_01     | Jag är inte förvånad i det minsta att sådana so
 
 
 OFFER_PEACE_01             | Allt har sin tid, ambassadör, och tiden har nu kommit för oss att upphöra med våra aggressioner. Behåll ni era reliker och skatter; fred är den vinning vi jagar nu!
-OFFER_TRADE_01             | Det råder inga tvivel att det snabbaste sättet att vinna troféer är helt enkelt att ta från de som är för svaga för att hindra dig! Men handelsutbyte kan också vara ett bra sätt för två imperier att finna vinning. Låt oss börja med [amt] BC varje år för att se hur mycket som... står att vinna från varandra.
+OFFER_TRADE_01             | Det råder inga tvivel att det snabbaste sättet att vinna troféer är helt enkelt att ta från de som är för svaga för att hindra dig! Men handelsutbyte kan också vara ett bra sätt för två imperier att finna vinning. Låt oss börja med [amt] BC varje år för att se hur mycket vi... står att vinna från varandra.
 OFFER_PACT_01              | När två imperier är så pass jämnt matchade är det inte så viktigt att tampas med varandra, när det finns gott om vekare nationer att plundra och bränna. Låt oss sluta upp i en officiell pakt om icke-aggression, så att vi bättre kan spendera vår energi på dem med mer lättillgängliga skatter att ta!
 OFFER_ALLIANCE_01          | Vi uppsöker ett möte idag för att föreslå en offentlig allians mellan Khanatet och [your_empire]. Jag förmodar att ni inte kommer dröja med att underteckna? Kom också ihåg detta: en gemensam uppdelning av resurser i en allians betyder också att man delar i krigsbyte!
  
