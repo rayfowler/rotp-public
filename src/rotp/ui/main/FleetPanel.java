@@ -145,7 +145,16 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         // cannot be sent to it
         if (s instanceof StarSystem) {
             ShipFleet fleet = adjustedFleet();
-            return (fleet != null) && fleet.canBeSentBy(player());
+            if (fleet == null)
+                return false;
+            if (!fleet.canBeSentBy(player()))
+                return false;
+            if ((fleet.system() == s) && !fleet.isInTransit()) {
+                tentativeDest(null);
+                FlightPathSprite.clearWorkingPaths();
+                return false;                
+            }
+            return true;
         }
         
         return false;
