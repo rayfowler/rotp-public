@@ -297,6 +297,7 @@ GAME_MENU_NEW_GAME                | New Game
 GAME_MENU_LOAD_GAME               | Load Game
 GAME_MENU_SAVE_GAME               | Save Game
 GAME_MENU_SETTINGS                | Settings
+GAME_MENU_OPEN_MANUAL             | Open Manual
 GAME_MENU_EXIT                    | Exit
 GAME_MENU_RESTART                 | Restart
 GAME_VERSION                      | Version: %1

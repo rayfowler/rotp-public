@@ -115,7 +115,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     int diff = s60;
     int languageX;
     BaseText discussText, continueText, newGameText, loadGameText, saveGameText, settingsText, exitText, restartText;
-    BaseText versionText;
+    BaseText versionText, manualText;
     BaseText developerText, artistText, graphicDsnrText, writerText, soundText, translatorText, slideshowText;
     BaseText shrinkText, enlargeText;
     BaseText hoverBox;
@@ -126,8 +126,6 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     String startingDisplayMode;
     public static Image defaultBackground;
     Image backImg1, backImg2;
-    Image manualImg;
-    Rectangle manualBox = new Rectangle();
     BufferedImage titleImg;
     BufferedImage backImg;
     String imageKey1, imageKey2;
@@ -342,7 +340,6 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         languagePanel = new GameLanguagePane(this);
         imageKey1 = backImgKeys[0];
         imageKey2 = random(backImgKeys);
-        manualImg = image("MANUAL");
         while (imageKey1.equals(imageKey2))
             imageKey2 = random(backImgKeys);
         Color enabledC = menuEnabled[0];
@@ -360,7 +357,8 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         loadGameText    = new BaseText(this, true, 45,   0, 430,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
         saveGameText    = new BaseText(this, true, 45,   0, 475,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
         settingsText    = new BaseText(this, true, 45,   0, 520,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
-        exitText        = new BaseText(this, true, 45,   0, 565,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
+        manualText      = new BaseText(this, true, 45,   0, 565,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
+        exitText        = new BaseText(this, true, 45,   0, 610,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
         restartText     = new BaseText(this, true, 45,   0, 430,  enabledC, disabledC, hoverC, depressedC, shadedC, 1, 1, 8);
         versionText     = new BaseText(this, false,16,   5, -35,  enabledC,  enabledC, hoverC, depressedC, Color.black, 1, 0, 1);
         discussText     = new BaseText(this, false,22,   5, -10,  enabledC, disabledC, hoverC, depressedC, Color.black, 1, 1, 1);
@@ -408,6 +406,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         loadGameText.displayText(text("GAME_MENU_LOAD_GAME"));
         saveGameText.displayText(text("GAME_MENU_SAVE_GAME"));
         settingsText.displayText(text("GAME_MENU_SETTINGS"));
+        manualText.displayText(text("GAME_MENU_OPEN_MANUAL"));
         exitText.displayText(text("GAME_MENU_EXIT"));
         restartText.displayText(text("GAME_MENU_RESTART"));
 
@@ -475,7 +474,6 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         int w = getWidth();
         
         languagePanel.initFonts();
-        manualBox.setBounds(0,0,0,0);
 
         if (backImg == null) {
             backImg1 =  ImageManager.current().image(imageKey1);
@@ -508,10 +506,6 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             g.setComposite(ac);
         }
         
-        if (manualExists()) {
-            g.drawImage(manualImg, s8, s30, s24, s24, null);
-            manualBox.setBounds(s8,s30,s24,s24);
-        }
         String titleStr1 = text("GAME_TITLE_LINE_1");
         String titleStr2 = text("GAME_TITLE_LINE_2");
         String titleStr3 = text("GAME_TITLE_LINE_3");
@@ -575,6 +569,12 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         discussText.disabled(false);
         if (!discussText.isEmpty())
             discussText.draw(g);
+        
+        if (canOpenManual()) {
+            exitText.setY(610);
+        }
+        else
+            exitText.setY(565);
 
         if (canRestart()) {
             continueText.reset();
@@ -583,6 +583,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             saveGameText.reset();
             settingsText.disabled(false);
             settingsText.drawCentered(g);
+            manualText.reset();
             exitText.reset();
             restartText.disabled(false);
             restartText.drawCentered(g);
@@ -599,6 +600,8 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             saveGameText.drawCentered(g);
             settingsText.disabled(false);
             settingsText.drawCentered(g);
+            manualText.visible(canOpenManual());
+            manualText.drawCentered(g);
             exitText.disabled(!canExit());
             exitText.drawCentered(g);
         }
@@ -630,6 +633,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     private boolean canNewGame()     { return true; }
     private boolean canLoadGame()    { return true; }
     private boolean canSaveGame()    { return session().status().inProgress(); }
+    private boolean canOpenManual()  { return manualExists(); }
     private boolean canExit()        { return true; }
     private boolean canRestart()     { return !UserPreferences.displayMode().equals(startingDisplayMode) 
             || (UserPreferences.screenSizePct() != startingScale); }
@@ -641,6 +645,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         loadGameText.rescale();
         saveGameText.rescale();
         settingsText.rescale();
+        manualText.rescale();
         exitText.rescale();
     }
     private void resetSlideshowTimer() {
@@ -805,7 +810,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             hoverBox.mouseReleased();
         mouseDepressed = false;
 
-        if (manualBox.contains(x,y))
+        if (manualText.contains(x,y))
             openManual();
         else if (discussText.contains(x,y))
             openRedditPage();
@@ -855,6 +860,8 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             newHover = loadGameText;
         else if (canSaveGame() && saveGameText.contains(x,y))
             newHover = saveGameText;
+        else if (manualText.contains(x,y))
+            newHover = manualText;
         else if (settingsText.contains(x,y))
             newHover = settingsText;
         else if (canExit() && exitText.contains(x,y))
