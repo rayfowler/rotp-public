@@ -73,9 +73,11 @@ public class DesignWeaponSelectionUI extends DesignSelectionUI {
     ShipComponent selectedComponent()              { return selectedDesign.weapon(bank); }
     @Override
     void select(int compNum)   { 
+        ShipComponent newComp = (ShipWeapon)components().get(compNum);
+        int minCount = newComp.isNone() ? 0 : 1;
         String valStr = value(compNum, 1, bank);
-        int val = max(1,Integer.valueOf(valStr));
-        selectedDesign.weapon(bank, (ShipWeapon)components().get(compNum)); 
+        int val = max(minCount,Integer.valueOf(valStr));
+        selectedDesign.weapon(bank, (ShipWeapon)newComp); 
         selectedDesign.wpnCount(bank, val);
     }
 }
