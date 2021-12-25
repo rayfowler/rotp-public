@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>rotp</groupId>
+    <groupId>rayfowler</groupId>
     <artifactId>rotp-public</artifactId>
     <version>1.0</version>
 
@@ -50,6 +50,7 @@
                             <mainClass>rotp.Rotp</mainClass>
                         </manifest>
                     </archive>
+                    <finalName>${project.artifactId}</finalName>
                     <outputDirectory>target/dist</outputDirectory>
                 </configuration>
             </plugin>
@@ -61,10 +62,15 @@
                 can be in full control of exactly what runtime environment the game runs in.
 
                 This does not allow for cross-compilation though, so each executable format will need to be built on
-                the target platform (e.g. dmg files can only be built on macOS, exe/msi only on Windows).
+                the target platform (e.g. dmg files can only be built on macOS, exe/msi only on Windows). This plugin
+                is part of the package execution step, but must be manually invoked since it depends on certain non-JDK
+                things being present on the packager's system (see links below).
+
+                To invoke this step from the pom.xml directory:
+                    `mvn clean package jpackage:jpackage`
 
                 Overview of jpackage: https://docs.oracle.com/en/java/javase/14/jpackage/packaging-overview.html
-                See also: 
+                See also: https://docs.oracle.com/en/java/javase/14/docs/specs/man/jpackage.html
             -->
             <plugin>
                 <groupId>org.panteleyev</groupId>
@@ -74,26 +80,12 @@
                     <name>Remnants of the Precursor</name>
                     <input>target/dist</input>
                     <appVersion>${version}</appVersion>
-                    <mainJar>${project.build.finalName}.jar</mainJar>
+                    <mainJar>${project.artifactId}.jar</mainJar>
                     <destination>target</destination>
                     <javaOptions>
-                        <option>--enable-preview</option>
                         <option>-Dfile.encoding=UTF-8</option>
                     </javaOptions>
                 </configuration>
-                <!--
-                    this executions block is only necessary to ensure that this plugin gets run when
-                    `mvn clean install` is run by binding it to the package phase.
-                 -->
-                <executions>
-                    <execution>
-                        <id>make-assembly</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>jpackage</goal>
-                        </goals>
-                    </execution>
-                </executions>
             </plugin>
         </plugins>
     </build>
