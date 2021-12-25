@@ -302,7 +302,7 @@ GAME_MENU_SAVE_GAME               | Αποθήκευση
 GAME_MENU_SETTINGS                | Ρυθμίσεις
 GAME_MENU_EXIT                    | Έξοδος
 GAME_MENU_RESTART                 | Επανεκκίνηση
-GAME_VERSION                      | Έκδοση: Ελληνική Έκδοση %1
+GAME_VERSION                      | Έκδοση: %1
 GAME_SHRINK                       | Σμίκρυνση -
 GAME_ENLARGE                      | Μεγέθυνση
 
