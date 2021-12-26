@@ -193,12 +193,15 @@ public class CombatStackShip extends CombatStack {
                 continue;
             if (tgt.isColony() && wpn.groundAttacksOnly())
                 return 1;
-            else if (wpn.isMissileWeapon() && roundsRemaining[i] > 0)
+            else if (wpn.isMissileWeapon())
             {
-                float mslRange = 1;
-                float requiredRange = 2 * tgt.maxMove * sqrt(2) - 0.7f;
-                mslRange = max(weaponRange(wpn) - requiredRange, mslRange);
-                missileRange = (int) max(tgt.repulsorRange() + 1, repulsorRange() + 1, missileRange, mslRange);
+                if(roundsRemaining[i] > 0)
+                {
+                    float mslRange = 1;
+                    float requiredRange = 2 * tgt.maxMove * sqrt(2) - 0.7f;
+                    mslRange = max(weaponRange(wpn) - requiredRange, mslRange);
+                    missileRange = (int) max(tgt.repulsorRange() + 1, repulsorRange() + 1, missileRange, mslRange);
+                }
             }
             else
             {
