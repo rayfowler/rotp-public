@@ -51,6 +51,8 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     static final Color hostileBorderC = new Color(151,18,23);
     public static final Color currentBorderC = new Color(163,123,0);
     static final Color friendlyBorderC = new Color(79,79,79);
+    static final Color yellowButtonCenterC = new Color(120,120,42);
+    static final Color yellowButtonEdgeC = new Color(92,92,21);
     static final Color redButtonCenterC = new Color(120,45,42);
     static final Color redButtonEdgeC = new Color(92,20,21);
     static final Color greenButtonCenterC = new Color(70,93,47);
@@ -85,6 +87,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     boolean showPlanet = false;
     boolean exited = false;
     boolean shiftPressed = false;
+    boolean showTactics = true;
     BufferedImage renderedPlanetImage;
     Image[] asteroids = new Image[16];
     public int[][] asteroidRoll = new int[GRID_COUNT_X][GRID_COUNT_Y];
@@ -95,6 +98,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     private LinearGradientPaint resolveButtonBackC;
     private LinearGradientPaint retreatButtonBackC;
     private LinearGradientPaint nextShipButtonBackC;
+    private LinearGradientPaint tacticalButtonBackC;
     private LinearGradientPaint exitBackC;
     private LinearGradientPaint playPauseBackC;
     private LinearGradientPaint leftGreenActionBackC;
@@ -116,6 +120,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     Rectangle currentGrid;
     Rectangle resolveBox = new Rectangle();
     Rectangle retreatBox = new Rectangle();
+    Rectangle tacticalBox = new Rectangle();
     Rectangle exitBox = new Rectangle();
     Rectangle playPauseBox = new Rectangle();
     Rectangle nextBox = new Rectangle();
@@ -313,7 +318,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
     public String ambienceSoundKey()     { return "ShipCombatAmbience"; }
     @Override
     public boolean hasStarBackground()   { return false; }
-    public boolean showTacticalInfo()    { return shiftPressed || Toolkit.getDefaultToolkit().getLockingKeyState(KeyEvent.VK_CAPS_LOCK); }
+    public boolean showTacticalInfo()    { return showTactics || shiftPressed; }
     @Override
     public void animate() {
         if (this.stillFading()) {
@@ -1029,7 +1034,6 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             g.setFont(narrowFont(12));
             g.setColor(textColor);
             drawString(g,lbl1, x1a,y2+s12);
-            List<ShipWeapon> wpns = view.weapons();
             for (int i=0; i<ShipDesign.maxWeapons(); i++) {
                 int num = view.wpnCount(i);
                 if (num > 0) {
@@ -1273,11 +1277,15 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             int buttX = x + s10;
             drawButton(g, resolveButtonBackC, resolveText, resolveBox, redButtonEdgeC, redButtonCenterC, buttX, buttY, buttW, buttH, performingTurn);
 
-
             if (!mgr.autoResolve) {
                 String retreatText = text("SHIP_COMBAT_RETREAT_ALL");
                 buttX = buttX+s10+buttW;
                 drawButton(g, retreatButtonBackC, retreatText, retreatBox, redButtonEdgeC, redButtonCenterC, buttX, buttY, buttW, buttH, performingTurn);
+
+                tacticalBox.setBounds(0,0,0,0);
+                String tacticalText = showTacticalInfo() ? text("SHIP_COMBAT_STATS_ON") : text("SHIP_COMBAT_STATS_OFF");
+                int ctrX = x+(w-buttW)/2; 
+                drawButton(g, tacticalButtonBackC, tacticalText, tacticalBox, yellowButtonEdgeC, yellowButtonCenterC, ctrX, buttY, buttW, buttH, false);
 
                 String nextText = text("SHIP_COMBAT_NEXT");
                 buttX = x + w - buttW - s10;
@@ -1319,6 +1327,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         g.setStroke(prev);
 
         g.setFont(narrowFont(18));
+        scaledFont(g, label, w-s10, 18, 14);
         int labelW = g.getFontMetrics().stringWidth(label);
         int x1 = x+((w-labelW)/2);
         int y1 = y+h-s10;
@@ -1657,6 +1666,10 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         mgr.toggleAutoComplete();
         paintAllImmediately();
     }
+    private void toggleTacticalDisplay() {
+        showTactics = !showTactics;
+        paintAllImmediately();
+    }
     private void nextStack() {
         if (mode != Display.INTRO)
             return;
@@ -1831,6 +1844,9 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             case KeyEvent.VK_A:
                 togglePlayPause();
                 return;
+            case KeyEvent.VK_C:
+                toggleTacticalDisplay();
+                return;
             case KeyEvent.VK_N:
                 if (mgr.combatIsFinished())
                     finish();
@@ -1889,7 +1905,9 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         }
         else if (hoverBox == retreatBox) 
             retreatAllPlayerShips(true);
-        if (hoverBox == playPauseBox)
+        if (hoverBox == tacticalBox)
+            toggleTacticalDisplay();
+        else if (hoverBox == playPauseBox)
             togglePlayPause();
         else if (hoverBox == exitBox) {
             finishAndResume();
@@ -1938,6 +1956,11 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
         }
         else if (exitBox.contains(x,y)) {
             hoverBox = exitBox;
+            mouseGridX = -1;
+            currentGrid = null;
+        }
+        else if (tacticalBox.contains(x,y)) {
+            hoverBox = tacticalBox;
             mouseGridX = -1;
             currentGrid = null;
         }

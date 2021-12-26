@@ -302,7 +302,7 @@ GAME_MENU_SAVE_GAME               | Αποθήκευση
 GAME_MENU_SETTINGS                | Ρυθμίσεις
 GAME_MENU_EXIT                    | Έξοδος
 GAME_MENU_RESTART                 | Επανεκκίνηση
-GAME_VERSION                      | Έκδοση: Ελληνική Έκδοση %1
+GAME_VERSION                      | Έκδοση: %1
 GAME_SHRINK                       | Σμίκρυνση -
 GAME_ENLARGE                      | Μεγέθυνση
 
@@ -1507,6 +1507,8 @@ SHIP_COMBAT_AUTO_RESOLVE          | Αυτόματη Επίλυση Μάχης
 SHIP_COMBAT_AUTO_RESOLVING        | Επιλύοντας τη Μάχη...
 SHIP_COMBAT_PLAY_BATTLE           | Αυτόματη Αναπαραγωγή Εξέλιξης Μάχης
 SHIP_COMBAT_PAUSE_BATTLE          | Παύση Μάχης
+SHIP_COMBAT_STATS_ON              | Στατιστικά Μάχης: Ναί
+SHIP_COMBAT_STATS_OFF             | Στατιστικά Μάχης: όχι
 SHIP_COMBAT_EXIT                  | Έξοδος
 SHIP_COMBAT_COUNT_NAME            | %1  %2
 SHIP_COMBAT_MONSTER_TARGET        | Στόχευση Διαστημικού Τέρατος.

@@ -1503,6 +1503,8 @@ SHIP_COMBAT_AUTO_RESOLVE          | Auto-Austragen Schlacht
 SHIP_COMBAT_AUTO_RESOLVING        | Kampf wird ausgetragen...
 SHIP_COMBAT_PLAY_BATTLE           | Auto-Play Schlacht
 SHIP_COMBAT_PAUSE_BATTLE          | Pause Schlacht
+SHIP_COMBAT_STATS_ON              | Kampfstatistik: An
+SHIP_COMBAT_STATS_OFF             | Kampfstatistik: Aus
 SHIP_COMBAT_EXIT                  | Ausgang
 SHIP_COMBAT_COUNT_NAME            | %1  %2
 SHIP_COMBAT_MONSTER_TARGET        | Weltraummonster anvisiert.

@@ -73,6 +73,10 @@ public class BaseText implements Base {
         x = x1;
         y = y1;
     }
+    public void setY(int y1) {
+        yOrig = y1;
+        y = scaled(y1);
+    }
     private Font font() {
         return logoFont ? logoFont(fontSize) : narrowFont(fontSize);
     }

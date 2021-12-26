@@ -3,7 +3,7 @@ name: Darlok, Sarlok, Spiolok, Skugglok, Tengilok
 
 desc1: Aggressiva Diplomater
 desc2: Överlägsna Spioner
-desc3: [race]-folket är onaturliga, hemlighetsfulla, spökliknande väsen med ursprung från en annan dimension
+desc3: Darlok-folket är onaturliga, hemlighetsfulla, spökliknande väsen med ursprung från en annan dimension
 
 // possible home system names
 home: Nazin, Mordor, Hades, Abyssal, Hel

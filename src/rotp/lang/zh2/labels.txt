@@ -1506,6 +1506,8 @@ SHIP_COMBAT_AUTO_RESOLVE          | 自動快速戰鬥
 SHIP_COMBAT_AUTO_RESOLVING        | 快速戰鬥中……
 SHIP_COMBAT_PLAY_BATTLE           | 自動戰鬥
 SHIP_COMBAT_PAUSE_BATTLE          | 暫停戰鬥
+SHIP_COMBAT_STATS_ON              | 戰鬥參數: 開
+SHIP_COMBAT_STATS_OFF             | 戰鬥參數: 關
 SHIP_COMBAT_EXIT                  | 退出
 SHIP_COMBAT_COUNT_NAME            | %1  %2
 SHIP_COMBAT_MONSTER_TARGET        | 瞄準太空怪物

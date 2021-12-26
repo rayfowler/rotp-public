@@ -1506,6 +1506,8 @@ SHIP_COMBAT_AUTO_RESOLVE          | Rozwiąż Walkę Automatycznie
 SHIP_COMBAT_AUTO_RESOLVING        | Rozwiązywanie Walki...
 SHIP_COMBAT_PLAY_BATTLE           | Rozegraj Walkę Automatycznie
 SHIP_COMBAT_PAUSE_BATTLE          | Wstrzymaj Walkę
+SHIP_COMBAT_STATS_ON              | Statystyki bojowe: tak
+SHIP_COMBAT_STATS_OFF             | Statystyki bojowe: nie
 SHIP_COMBAT_EXIT                  | Wyjdź
 SHIP_COMBAT_COUNT_NAME            | %1  %2
 SHIP_COMBAT_MONSTER_TARGET        | Kosmiczny potwór na celowniku.

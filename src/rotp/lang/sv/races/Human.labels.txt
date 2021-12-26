@@ -21,7 +21,7 @@ _nameTitle                        | Triumvir
 //
 
 // Advisor text
-MAIN_ADVISOR_TITLE                | %1 Ledsagare
+MAIN_ADVISOR_TITLE                | Ledsagare
 MAIN_ADVISOR_BUTTON_OK            | Uppfattat
 MAIN_ADVISOR_SCOUT                | Vår logistiska division rapporterar att två spejare och ett koloniskepp är redo för färduppdrag. Jag föreslår att vi lokaliserar och koloniserar en närliggande planet så snart som möjligt.
 MAIN_ADVISOR_TRANSPORT            | Grundandet av kolonin vid %1 gick igenom utan problem. Ju fler transporter vi använder, desto snabbare kommer %1 att utvecklas till ett av vårt interstellära imperiers hörnstenar.

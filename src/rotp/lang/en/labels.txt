@@ -297,6 +297,7 @@ GAME_MENU_NEW_GAME                | New Game
 GAME_MENU_LOAD_GAME               | Load Game
 GAME_MENU_SAVE_GAME               | Save Game
 GAME_MENU_SETTINGS                | Settings
+GAME_MENU_OPEN_MANUAL             | Open Manual
 GAME_MENU_EXIT                    | Exit
 GAME_MENU_RESTART                 | Restart
 GAME_VERSION                      | Version: %1
@@ -1309,7 +1310,7 @@ SHIP_DESIGN_AVAILABLE             | Available
 SHIP_DESIGN_AVAILABLE_DESC        | Select this design slot to begin work on a new ship design.
 SHIP_DESIGN_AVAILABLE_DESC2       | Deploy this design to allow construction on colonies.
 SHIP_DESIGN_PROTOTYPE             | Prototype
-SHIP_DESIGN_PROTOTYPE_DESC        | Prototype designs cannot be deployed
+SHIP_DESIGN_PROTOTYPE_DESC        | No available ship design slots for deployment
 SHIP_DESIGN_SLOT_DESC             | Total in fleet:
 SHIP_DESIGN_SLOT_DESC2            | In Orbit:
 SHIP_DESIGN_SLOT_DESC3            | In Transit:
@@ -1504,6 +1505,8 @@ SHIP_COMBAT_AUTO_RESOLVE          | Auto-Resolve Battle
 SHIP_COMBAT_AUTO_RESOLVING        | Resolving Combat...
 SHIP_COMBAT_PLAY_BATTLE           | Auto-Play Battle
 SHIP_COMBAT_PAUSE_BATTLE          | Pause Battle
+SHIP_COMBAT_STATS_ON              | Combat Stats: On
+SHIP_COMBAT_STATS_OFF             | Combat Stats: Off
 SHIP_COMBAT_EXIT                  | Exit
 SHIP_COMBAT_COUNT_NAME            | %1  %2
 SHIP_COMBAT_MONSTER_TARGET        | Space monster targeted.

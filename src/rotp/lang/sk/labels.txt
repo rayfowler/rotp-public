@@ -1510,6 +1510,8 @@ SHIP_COMBAT_AUTO_RESOLVE          | Automaticky vyriešiť súboj
 SHIP_COMBAT_AUTO_RESOLVING        | Riešenie bojovej situácie...
 SHIP_COMBAT_PLAY_BATTLE           | Hrať automaticky
 SHIP_COMBAT_PAUSE_BATTLE          | Stopnúť bitku
+SHIP_COMBAT_STATS_ON              | Bojové vlastnosti: da
+SHIP_COMBAT_STATS_OFF             | Bojové vlastnosti: št 
 SHIP_COMBAT_EXIT                  | Zrušiť
 SHIP_COMBAT_COUNT_NAME            | %1  %2
 SHIP_COMBAT_MONSTER_TARGET        | Vesmírna príšera zameraná.

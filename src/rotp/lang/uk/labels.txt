@@ -1504,6 +1504,8 @@ SHIP_COMBAT_AUTO_RESOLVE          | Автоматично вирішити би
 SHIP_COMBAT_AUTO_RESOLVING        | Вирішується результат бою...
 SHIP_COMBAT_PLAY_BATTLE           | Режим Спостерігача
 SHIP_COMBAT_PAUSE_BATTLE          | Призупинити Битву
+SHIP_COMBAT_STATS_ON              | Бойова Статистика: Увімкнено
+SHIP_COMBAT_STATS_OFF             | Бойова Статистика: Вимкнено
 SHIP_COMBAT_EXIT                  | Вихід
 SHIP_COMBAT_COUNT_NAME            | %1  %2
 SHIP_COMBAT_MONSTER_TARGET        | Ціль: Космічний Монстр.

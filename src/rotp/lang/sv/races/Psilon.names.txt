@@ -3,7 +3,7 @@ name: Psilon, Mentalon, Psychon, Cerebron, Neuralon
 
 desc1: Pacifister, Teknologister
 desc2: Högpresterande Forsknings-metodik
-desc3: Den [racedef] Republiken eftersöker en fredlig och insiktsgivande samvaro med andra folkslag.
+desc3: Den Psilonska Republiken eftersöker en fredlig och insiktsgivande samvaro med andra folkslag.
 
 // possible home system names
 home: Mentar, Kognitar, Psailar, Metrica, Neura

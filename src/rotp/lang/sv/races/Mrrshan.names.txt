@@ -3,7 +3,7 @@ name: Mrrshan, Prrshan, Mjaushan, Svanshan, Vässhan
 
 desc1: Skoningslösa Militarister
 desc2: Pricksäkra Skyttar
-desc3: [raceposs] flockar utforskar galaxen i jakt på byte.
+desc3: Mrrshans flockar utforskar galaxen i jakt på byte.
 
 // possible home system names
 home: Fierias, Fierina, Miamara, Miriana, Yailaria

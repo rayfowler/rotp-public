@@ -465,8 +465,19 @@ public class MainUI extends BasePanel implements IMapHandler {
 
         if (lastHoveringSprite() != null)
             lastHoveringSprite().mouseExit(map);
-        lastHoveringSprite(o);
+        
+        if ((o instanceof StarSystem) 
+        && (lastHoveringSprite() instanceof StarSystem)
+        && (clickedSprite() instanceof ShipFleet)) {
+            lastHoveringSprite().mouseExit(map);
+            map.clearHoverSprite();
+            lastHoveringSprite(null);
+            hoveringSprite(null);
+            ((StarSystem)o).repaint(map);
+            displayPanel.useClickedSprite(clickedSprite(), 1, false);
+        }
 
+        lastHoveringSprite(o);
         if (overlay.hoveringOverSprite(o))
             return;
         

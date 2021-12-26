@@ -1310,7 +1310,7 @@ SHIP_DESIGN_AVAILABLE             | Доступный
 SHIP_DESIGN_AVAILABLE_DESC        | Выберете этот слот, чтобы создать новый дизайн.
 SHIP_DESIGN_AVAILABLE_DESC2       | Завершите этот дизайн, чтобы строить его в колониях.
 SHIP_DESIGN_PROTOTYPE             | Прототип
-SHIP_DESIGN_PROTOTYPE_DESC        | Прототипы не могут быть построены
+SHIP_DESIGN_PROTOTYPE_DESC        | Нет доступных слотов дизайна - нельзя завершить
 SHIP_DESIGN_SLOT_DESC             | Всего:
 SHIP_DESIGN_SLOT_DESC2            | На орбите:
 SHIP_DESIGN_SLOT_DESC3            | В пути:
@@ -1504,6 +1504,8 @@ SHIP_COMBAT_NEXT                  | Следующий Корабль
 SHIP_COMBAT_AUTO_RESOLVE          | Перейти к Результату
 SHIP_COMBAT_AUTO_RESOLVING        | Результат Вычисляется...
 SHIP_COMBAT_PLAY_BATTLE           | Передать Управление ИИ
+SHIP_COMBAT_STATS_ON              | Доп. информация: вкл
+SHIP_COMBAT_STATS_OFF             | Доп. информация: выкл
 SHIP_COMBAT_PAUSE_BATTLE          | Пауза
 SHIP_COMBAT_EXIT                  | Выйти
 SHIP_COMBAT_COUNT_NAME            | %1  %2

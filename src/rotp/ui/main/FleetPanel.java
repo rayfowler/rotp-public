@@ -75,12 +75,12 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
     public boolean canEscape()                      { return true; }
     private void selectedFleet(ShipFleet s)         { sessionVar("SELECTED_FLEET", s); }
     private ShipFleet adjustedFleet() {
-        ShipFleet adjFleet = (ShipFleet) sessionVar("ADJUSTED_FLEET");
-        if (adjFleet != null)
-            return adjFleet;
+        Object adjFleetObj = sessionVar("ADJUSTED_FLEET");
+        if ((adjFleetObj != null) && (adjFleetObj instanceof ShipFleet))
+            return (ShipFleet) adjFleetObj;
 
         //log("creating adjusted fleet");
-        adjFleet = newAdjustedFleet();
+        ShipFleet adjFleet = newAdjustedFleet();
         adjustedFleet(adjFleet);
         if (adjFleet == null)
             return null;
@@ -145,7 +145,16 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         // cannot be sent to it
         if (s instanceof StarSystem) {
             ShipFleet fleet = adjustedFleet();
-            return (fleet != null) && fleet.canBeSentBy(player());
+            if (fleet == null)
+                return false;
+            if (!fleet.canBeSentBy(player()))
+                return false;
+            if ((fleet.system() == s) && !fleet.isInTransit()) {
+                tentativeDest(null);
+                FlightPathSprite.clearWorkingPaths();
+                return false;                
+            }
+            return true;
         }
         
         return false;

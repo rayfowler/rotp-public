@@ -1506,6 +1506,8 @@ SHIP_COMBAT_AUTO_RESOLVE          | Risolvi la Battaglia automaticamente
 SHIP_COMBAT_AUTO_RESOLVING        | Risolvendo il Combattimento
 SHIP_COMBAT_PLAY_BATTLE           | Riproduci la Battaglia automaticamente
 SHIP_COMBAT_PAUSE_BATTLE          | Metti in Pausa la Battaglia
+SHIP_COMBAT_STATS_ON              | Statistiche di combattimento: sì
+SHIP_COMBAT_STATS_OFF             | Statistiche di combattimento: no
 SHIP_COMBAT_EXIT                  | Esci
 SHIP_COMBAT_COUNT_NAME            | %1  %2
 SHIP_COMBAT_MONSTER_TARGET        | Mostro spaziale preso di mira.

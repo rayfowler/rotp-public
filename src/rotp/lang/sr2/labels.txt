@@ -1505,6 +1505,8 @@ SHIP_COMBAT_AUTO_RESOLVE          | Ауто-реши битку
 SHIP_COMBAT_AUTO_RESOLVING        | Решавање борбе...
 SHIP_COMBAT_PLAY_BATTLE           | Ауто-играј борбу
 SHIP_COMBAT_PAUSE_BATTLE          | Паузирај борбу
+SHIP_COMBAT_STATS_ON              | Борбене Стат.: да
+SHIP_COMBAT_STATS_OFF             | Борбене Стат.: не
 SHIP_COMBAT_EXIT                  | Излаз
 SHIP_COMBAT_COUNT_NAME            | %1  %2
 SHIP_COMBAT_MONSTER_TARGET        | Циљано свемирско чудовиште.

@@ -918,9 +918,9 @@ public class DesignUI extends BasePanel {
             ShipDesign des = slotDesign();
             if (!des.active()) {
                 g.setFont(narrowFont(18));
-                drawShadowedString(g, text("SHIP_DESIGN_AVAILABLE"), 3, leftM, s20, SystemPanel.textShadowC, SystemPanel.whiteText);
+                drawShadowedString(g, text("SHIP_DESIGN_AVAILABLE"), 3, leftM, s20, SystemPanel.textShadowC, SystemPanel.yellowText);
                 g.setFont(narrowFont(14));
-                g.setColor(SystemPanel.blackText);
+                g.setColor(SystemPanel.whiteText);
                 String desc = designNum == selectedSlot ? text("SHIP_DESIGN_AVAILABLE_DESC2"): text("SHIP_DESIGN_AVAILABLE_DESC");
                 List<String> lines = scaledNarrowWrappedLines(g, desc, getWidth()-s5-leftM, 4, 14, 12);
                 int y0 = s40;
@@ -1478,17 +1478,61 @@ public class DesignUI extends BasePanel {
                 int x2a = buttonX + ((buttonW - sw) / 2);
                 drawBorderedString(g, str, x2a, buttonY + buttonH - s7, SystemPanel.textShadowC, c0);
 
-                g.setFont(narrowFont(15));
-                g.setColor(SystemPanel.whiteText);
-                str = text("SHIP_DESIGN_PROTOTYPE_DESC");
-                int labelW = g.getFontMetrics().stringWidth(str);
-                int maxLabelW = min(labelW, scaled(200));
-                List<String> lines = wrappedLines(g, str, maxLabelW);
-                int lineX = x+w-maxLabelW;
-                int lineY = lines.size() == 1 ? y+h-s15 : y+h-s25;
-                for (String line: lines) {
-                    drawString(g,line, lineX, lineY);
-                    lineY += s16;
+                int firstAvailable = -1;
+                for (int i=0;i<ShipDesignLab.MAX_DESIGNS;i++) {
+                    ShipDesign des1 = player().shipLab().design(i);
+                    if ((firstAvailable < 0) && !des1.active())
+                       firstAvailable = i;     
+                }
+                
+                if (firstAvailable < 0) {
+                    createButtonArea.setBounds(0,0,0,0);
+                    g.setFont(narrowFont(15));
+                    g.setColor(SystemPanel.whiteText);
+                    str = text("SHIP_DESIGN_PROTOTYPE_DESC");
+                    int labelW = g.getFontMetrics().stringWidth(str);
+                    int maxLabelW = min(labelW, scaled(200));
+                    List<String> lines = wrappedLines(g, str, maxLabelW);
+                    int lineX = x+w-maxLabelW;
+                    int lineY = lines.size() == 1 ? y+h-s15 : y+h-s25;
+                    for (String line: lines) {
+                        drawString(g,line, lineX, lineY);
+                        lineY += s16;
+                    }
+                }
+                else {
+                    // draw deploy button
+                    g.setFont(narrowFont(18));
+                    str = text("SHIP_DESIGN_DEPLOY_BUTTON");
+                    sw = g.getFontMetrics().stringWidth(str);
+                    buttonW = sw + s40;
+                    buttonH = s25;
+                    buttonX = x + w - buttonW;
+                    buttonY = y + h - s30;
+                    createButtonArea.setBounds(buttonX, buttonY, buttonW, buttonH);
+
+                    // always create background for create button since config changes to change button color
+                    float[] dist = {0.0f, 0.5f, 1.0f};
+                    Point2D ptStart = new Point2D.Float(buttonX, 0);
+                    Point2D ptEnd = new Point2D.Float(buttonX + buttonW, 0);
+                    Color[] yesColors = {greenEdgeC, greenMidC, greenEdgeC};
+                    Color[] grayColors = {grayEdgeC, grayMidC, grayEdgeC};
+                    if (shipDesign().validConfiguration())
+                        createBackground = new LinearGradientPaint(ptStart, ptEnd, dist, yesColors);
+                    else
+                        createBackground = new LinearGradientPaint(ptStart, ptEnd, dist, grayColors);
+
+                    hovering = hoverTarget == createButtonArea;
+                    g.setPaint(createBackground);
+                    g.fillRoundRect(buttonX, buttonY, buttonW, buttonH, s3, s3);
+                    c0 = des.validConfiguration() ? (hovering ? SystemPanel.yellowText : SystemPanel.whiteText) : SystemPanel.grayText;
+                    g.setColor(c0);
+                    prevStr = g.getStroke();
+                    g.setStroke(BasePanel.stroke1);
+                    g.drawRoundRect(buttonX, buttonY, buttonW, buttonH, s3, s3);
+                    g.setStroke(prevStr);
+                    x2a = buttonX + ((buttonW - sw) / 2);
+                    drawBorderedString(g, str, x2a, buttonY + buttonH - s7, SystemPanel.textShadowC, c0);
                 }
             }
             else if (des.active()) {
@@ -2547,6 +2591,18 @@ public class DesignUI extends BasePanel {
         private void openCreateDialog() {
             if (!shipDesign().validConfiguration())
                 return;
+            // if we are deploying from the prototype, switch to the first
+            // empty slot and copy the prototype design to it
+            if (selectedSlot < 0) {
+                int firstAvailable = -1;
+                for (int i=0;i<ShipDesignLab.MAX_DESIGNS;i++) {
+                    ShipDesign des1 = player().shipLab().design(i);
+                    if ((firstAvailable < 0) && !des1.active())
+                       firstAvailable = i;     
+                }
+                selectedSlot = firstAvailable;
+                configPanel.shipDesign().copyFrom(player().shipLab().prototypeDesign());
+            }
             confirmCreateUI.targetDesign(shipDesign());
             confirmCreateUI.renamingOnly = false;
             enableGlassPane(confirmCreateUI);

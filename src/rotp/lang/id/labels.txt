@@ -1510,6 +1510,8 @@ SHIP_COMBAT_AUTO_RESOLVE          | Pertempuran berakhir otomatis
 SHIP_COMBAT_AUTO_RESOLVING        | Menyelesaikan Pertempuran...
 SHIP_COMBAT_PLAY_BATTLE           | Pertempuran mulai otomatis 
 SHIP_COMBAT_PAUSE_BATTLE          | Hentikan sebentar Pertempuran 
+SHIP_COMBAT_STATS_ON              | Statistik Pertempuran: On
+SHIP_COMBAT_STATS_OFF             | Statistik Pertempuran: Off
 SHIP_COMBAT_EXIT                  | Keluar
 SHIP_COMBAT_COUNT_NAME            | %1  %2
 SHIP_COMBAT_MONSTER_TARGET        | Monster ruang angkasa tertarget.

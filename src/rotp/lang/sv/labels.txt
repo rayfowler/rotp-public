@@ -98,7 +98,7 @@ ORION_GUARDIAN                    | Orions Väktare
 // Personality types (adjective)
 LEADER_ERRATIC                    | Oberäknelig
 LEADER_PACIFIST                   | Pacifist
-LEADER_HONORABLE                  | Hedervärd
+LEADER_HONORABLE                  | Hedervärdig
 LEADER_RUTHLESS                   | Hänsynslös
 LEADER_AGGRESSIVE                 | Aggressiv
 LEADER_XENOPHOBIC                 | Xenofobisk
@@ -123,7 +123,7 @@ TECH_WEAPONS                      | Vapenteknik
 
 // Random Events
 EVENT_ACCIDENT                    | En industriolycka av planetär grad har drabbat [target_race], vid deras koloni [system]. Klimatet har blivit permanent ärrat och ekologiska räddningsinsatser håller på att tillämpas.
-EVENT_ASSASSINATION               | En terrorist tillhörandes [assassin_empire] har mördat en ledande diplomat sänd från [victim_race], med följd av att de två parterna nu är nära på att gå till krig.
+EVENT_ASSASSINATION               | En terrorist tillhörandes [assassin_empire] har mördat en ledande diplomat sänd från [victim_empire], med följd av att de två parterna nu är nära på att gå till krig.
 EVENT_COMET                       | En komet av planetförstörande klass har blivit upptäckt på kurs mot [system]-systemet, och kommer att kollidera med [target_race]'s värld om [years] år, såvida inte en tillräckligt stor rymd-flotta stationeras för att omintetgöra hotet.
 EVENT_COMET_2                     | Den komet av planetförstörande klass på väg mot [system]-systemet, tillhörandes [target_race] förväntas utrota allt liv om bara [years] år. Mer beväpnade skepp kommer behövas för att avstyra den potentiella ödeläggande katastrofen.
 EVENT_COMET_3                     | Kometen som hotade [system]-systemet har nu blivit demolerad, tack vare insatserna från flottan utsänd av [target_race].
@@ -285,8 +285,8 @@ INC_TRESPASSING_DESC              | [your_race] flottor har inkräktat vid [syst
 // generic click to skip or continue messages
 CLICK_SKIP                        | Tryck Escape eller Klicka för att hoppa över animationen...
 CLICK_CONTINUE                    | Klicka eller tryck Escape för att Fortsätta...
-CLICK_EXIT                        | Klicka eller tryck Escape för att Avsluta...
-BUTTON_EXIT                       | Avsluta
+CLICK_EXIT                        | Klicka eller tryck Escape för att Återgå...
+BUTTON_EXIT                       | Klar
 
 // GAME/SETUP UI 
 GAME_TITLE_LINE_1                 | FÖRELÖPARNAS
@@ -406,24 +406,24 @@ MAIN_TURN_DISPLAY                 | Tur  %1
 MAIN_SPY_REPORT                   | Spion
 MAIN_TECH_NONE                    | Ingen Forskning
 MAIN_TECH_COMPLETED               | Forskning Fullbordad
-MAIN_TECH_FP_REMAINING            | %1 FP Kvar
-MAIN_TECH_FP_DISCOVERY            | På gränsen till upptäckt
+MAIN_TECH_RP_REMAINING            | %1 FP Kvar
+MAIN_TECH_RP_DISCOVERY            | Nära upptäckt
 MAIN_TECH_RESERVE_BC              | %1 BC
 MAIN_TECH_RESERVE_TAX_ALL         | Beskattar %1% av alla koloniers produktion
 MAIN_TECH_RESERVE_TAX             | Beskattar %1% av alla färdigställda koloniers produktion
 MAIN_TECH_RESERVE_TAX_NONE        | Ingen beskattning av produktionen
 MAIN_HELP_ALL                     | Hjälp - klicka för att stegvis gå igenom hjälpinformationen för den relevanta sektionen. Tryck Escape för att avbryta.
 MAIN_HELP_1A                      | Varje stjärnsystem fördelar sin produktion inom fem olika områden. Utgråade mätare indikerar att den produktionsmätaren har blivit låst och kommer inte ändras vid manipulation. Klicka på respektive mätares namn för att låsa/låsa upp.
-MAIN_HELP_1B                      | Skeppsvarv - konstruerar utvald skeppsdesign. Stora skepp kan ta flera turer att producera.
+MAIN_HELP_1B                      | Skeppsvarv - konstruerar utvald skeppsdesign. Stora skepp kan ta flera turer att producera, medan flera små kan färdigställas samtidigt.
 MAIN_HELP_1C                      | Försvar - bygger och uppgraderar missilbaser upp till den angivna begränsningsnivån, och också planetära sköldar när de är tillgängliga för konstruktion.
-MAIN_HELP_1D                      | Industri - bygger fabriker som utökar kolonins produktion.
+MAIN_HELP_1D                      | Industri - bygger fabriker som utökar kolonins produktion. Utan uppgraderingar kan 2 fabriker nyttjas per 1 population.
 MAIN_HELP_1E                      | Ekologi  - städar upp industriavfall, terraformerar planeten, och kan också stimulera befolkningstillväxten.
 MAIN_HELP_1F                      | Forskning - producerar forskning för ditt imperiums sammanlagda forskningsresultat.
-MAIN_HELP_1G                      | Ratiostaplar visar fördelningen av en planets produktion. Hur mycket resurser som ska tillägnas varje mätare kan justeras med mushjulet, genom att klicka inom mätarområdet, eller genom att klicka på vänster/höger pil för varje individuell mätare.
+MAIN_HELP_1G                      | Ratiostaplar visar fördelningen av en planets produktion. Justera resursallokeringen med mushjulet, genom att klicka inom mätarområdet, eller genom att klicka på vänster/höger pil för varje individuell mätare.
 MAIN_HELP_1H                      | Det förväntade resultatet för den givna produktionen inom varje område visas till höger om varje mätare. Överflödigt spenderad stimulans förs automatiskt över till imperiets statskassa.
-MAIN_HELP_2A                      | Nivån av Planetära Sköldar för kolonin. Sköldar kan inte konstrueras på planeter inom en nebulosa.
+MAIN_HELP_2A                      | Nivån av Planetära Sköldar för kolonin, vilka märkbart reducerar skada från vapen. Sköldar kan inte konstrueras på planeter inom en nebulosa.
 MAIN_HELP_2B                      | Antalet missilbaser och önskad slutnivå för den här planeten. Klicka eller använd mushjulet för att ändra begränsningsnivån och slutmaximum.
-MAIN_HELP_2C                      | Total planetär produktion sammanlagt från industri och population.
+MAIN_HELP_2C                      | Inom parentes visas planetens totala produktion, sammanlagt från industri och population.
 MAIN_HELP_2D                      | Effektiv produktion efter justering av imperievida effekter som handelsinkomster/avgifter, avgifter för spioner och säkerhet, samt uppehåll av rymdskepp och missilbaser.
 MAIN_HELP_2E                      | Här kan du byta vilken skeppsdesign som konstrueras i skeppsvarvet i planetens omloppsbana. Ansamlad produktion som ej lett till ett färdigställt skepp sparas och accelererar produktionen av nya skepp med 50% tills resurserna är fullt spenderade. Klicka eller använda mushjulet för att ändra valet av design av skepp.
 MAIN_HELP_2F                      | Välj ut en Samlingspunkt för att automatiskt sända nyligen färdigställda skepp till en annan koloni.
@@ -440,7 +440,7 @@ MAIN_HELP_3C                      | Flottor - storskalig kontroll av flottor och
 MAIN_HELP_3D                      | Designer - skapa skeppsdesigner för dina flottor genom att välja mellan dina olika teknologier. En oönskad design kan ratas.
 MAIN_HELP_3E                      | Kontakter - detaljerad information och diplomatiska alternativ för de främmande folkslag du bemött.
 MAIN_HELP_3F                      | Kolonier - detaljerade och sorterbara listor av dina kolonier. Visar också imperiets inkomster och kostnader.
-MAIN_HELP_3G                      | Forskning - visar tillgängliga teknologier. Låter dig fokusera eller balansera forskning mellan upp till sex områden av teknologi.
+MAIN_HELP_3G                      | Forskning - visar tillgängliga teknologier. Låter dig fokusera eller balansera forskning mellan olika områden av teknik.
 MAIN_HELP_3H                      | Nästa År - låter ett år passera i spelet för det nästa.
 MAIN_HELP_3I                      | Nuvarande Tur - visar spelomgångens nuvarande tur eller ditt imperiums nuvarande år, enligt deras tidräkning. Klicka för att välja typ av visning.
 MAIN_HELP_3J                      | Kartalternativ - klicka för att stegvis rotera genom olika visningsalternativ för galaxkartan.
@@ -520,9 +520,9 @@ MAIN_FLEET_INVALID_RETREAT        | Retirerande flottor kan bara sändas till eg
 MAIN_FLEET_ETA_UNNAMED            | ETA för destinationen: %1 År
 MAIN_FLEET_ETA_NAMED              | ETA för %1: %2 År
 MAIN_FLEET_SET_RALLY              | Uppsamling Pågår
-MAIN_FLEET_AUTO_RETREAT           | Ta reträtt automatiskt vid anländande
+MAIN_FLEET_AUTO_RETREAT           | Ta reträtt automatiskt
 MAIN_FLEET_ETA_UNKNOWN            | Skanningar kan inte utröna destinationen
-MAIN_FLEET_THROUGH_NEBULA         | Maximal färdhastighet begränsad till Warb 1 av nebulosa
+MAIN_FLEET_THROUGH_NEBULA         | Maximal färdhastighet begränsad till Warp 1 av nebulosa
 
 MAIN_FLEET_CANCEL                 | Avbryt
 MAIN_FLEET_OUT_OF_RANGE           | Utom Räckvidd
@@ -551,7 +551,7 @@ MAIN_TRANSPORTS_COUNT             | %1 Transportskepp
 MAIN_TRANSPORTS_CANCEL            | Avbryt
 MAIN_TRANSPORTS_SHOW_DEST         | ETA till %1: %2 År
 MAIN_TRANSPORT_TITLE              | Förbereder Transportskepp
-MAIN_TRANSPORT_ABANDON_TITLE      | Evakuera System
+MAIN_TRANSPORT_ABANDON_TITLE      |  Evakuera System
 MAIN_TRANSPORT_PROMPT             | Välj ett koloniserat system att sända civila eller militära transportskepp till.
 MAIN_TRANSPORT_ABANDON_PROMPT     | Välj ett koloniserat system att evakuera alla civila transporter till.
 MAIN_TRANSPORT_SELECT_POP         | Välj mängden civil population att skicka (upp till hälften av %1's population).
@@ -605,7 +605,7 @@ MAIN_COLONY_SPENDING_SHIELD       | Sköld
 MAIN_COLONY_SPENDING_UPG_BASES    | Uppgradering
 MAIN_COLONY_SPENDING_PLAGUE       | Epidemi
 MAIN_COLONY_SPENDING_SUPERNOVA    | Supernova
-MAIN_COLONY_SPENDING_FP           | %1 FP
+MAIN_COLONY_SPENDING_RP           | %1 FP
 MAIN_COLONY_COMPLETION_YEAR       | 1 År
 MAIN_COLONY_COMPLETION_YEARS      | %1 År
 MAIN_COLONY_COMPLETION_CENTURY    | %1 År
@@ -814,7 +814,7 @@ PLANETS_HELP_4I                   | Flagga - användar-vald flagga för ett syst
 
 // Bombardment prompt
 MAIN_BOMBARDED_TITLE             | %1 har blivit bombarderad av %2 styrkor.
-MAIN_BOMBARD_TITLE               | Våra styrkor är i omloppsbana vid en fientlig koloni tillhörandes %2.
+MAIN_BOMBARD_TITLE               | Våra styrkor är i omloppsbana vid en fientlig koloni tillhörandes [alien_racepludef].
 MAIN_BOMBARD_TROOPS              | %1 %2 trupper är i omloppsbana eller på väg mot den här kolonin.
 MAIN_BOMBARD_PROMPT              | Bombardera planeten?
 MAIN_BOMBARD_YES                 | Ja
@@ -942,7 +942,7 @@ TECH_ALLOCATE_FACTORIES           | Vill du höja industribudgeten på alla kolo
 TECH_ALLOCATE_CLEAN_WASTE         | Vill du automatiskt reducera ekologibudgeten på alla kolonier till minsta möjliga mängd för att hålla dem rena?
 TECH_ALLOCATE_ENRICH_SOIL         | Ska vi höja ekologibudgeten på våra kolonier med standard-klimat för att börja terraformera våra planeter?
 TECH_ALLOCATE_ATMOSPHERE          | Ska vi höja ekologibudgeten på våra kolonier med ogästvänligt klimat för att börja terraformera våra planeter?
-TECH_ALLOCATE_TERRAFORM           | Ska vi höja ekologibudgeten på våra alla våra kolonier för att börja terraformera våra planater?
+TECH_ALLOCATE_TERRAFORM           | Ska vi höja ekologibudgeten på våra alla våra kolonier för att börja terraformera våra planeter?
 TECH_ALLOCATE_NO                  | Nej
 TECH_ALLOCATE_PCT                 | +%1%
 TECH_COMPLETED_TITLE              | Forskning Färdig!
@@ -989,6 +989,7 @@ NOTICE_SPIES_THREATEN             | Hota
 NOTICE_SPIES_MANAGE               | Hantera Spioner
 NOTICE_SPIES_CLOSE                | Stäng  
   
+
 // Ground Combat UI
 INVASION_BATTLE                   | År %1, går [attacker_race] och [defender_race] till strid om %2.
 INVASION_BATTLE_REBELS            | År %1, går [attacker_race] och rebellerna vid %2 till strid.
@@ -1177,7 +1178,7 @@ SETUP_BUTTON_CANCEL               | Avbryt
 SETUP_BUTTON_BACK                 | Tillbaka
 SETUP_BUTTON_NEXT                 | Nästa
 SETUP_BUTTON_START                | Börja
-SETUP_BUTTON_SETTINGS             | Advancerade Alternativ
+SETUP_BUTTON_SETTINGS             | Avancerade Alternativ
 
 SETUP_SPIRAL_2_ARMS               | Två Armar
 SETUP_SPIRAL_3_ARMS               | Tre Armar
@@ -1206,7 +1207,7 @@ SETUP_VOID_4                      | Tomrum 4
 
 
 // Advanced Settings
-SETTINGS_TITLE                    | Advancerade Spelinställningar
+SETTINGS_TITLE                    | Avancerade Spelinställningar
 SETTINGS_DESCRIPTION              | Klicka för att rotera eller aktivera inställningar för spelomgång.
 SETTINGS_EXIT                     | Klar
 SETTINGS_DEFAULT                  | Återställ till Standard
@@ -1222,9 +1223,9 @@ SETTINGS_WARP_SPEED               | Warphastighet: %1
 SETTINGS_NEBULAE                  | Nebulosor: %1
 SETTINGS_PLANET_QUALITY           | Planetkvalitet: %1
 SETTINGS_TERRAFORMING             | Ogästvänlig Terraformering: %1
-SETTINGS_COLONIZING               | Colonizing: %1
-SETTINGS_FUEL_RANGE               | Fuel Räckvidd: %1
-SETTINGS_AI_HOSTILITY             | Hostility: %1
+SETTINGS_COLONIZING               | Kolonisation: %1
+SETTINGS_FUEL_RANGE               | Bränslereserver: %1
+SETTINGS_AI_HOSTILITY             | Aggressivitet: %1
 SETTINGS_RANDOM_EVENTS_DESC       | Rymdmonster är Händelser och farliga hot runt mitten-nivån av spelets utveckling. Stäng av rymdmonster eller alla Händelser. 
 SETTINGS_WARP_SPEED_DESC          | Höj färdhastigheten på de mer avancerade warp-motorerna. Kan vara behövligt på extra stora kartor.
 SETTINGS_GALAXY_AGE_DESC          | Jämfört med normala galaxer, så har unga galaxer mer vita och blå stjärnor, medan gamla galaxer har mer röda- och neutronstjärnor.
@@ -1251,7 +1252,7 @@ TECH_EMPIRE_TECH_RESERVE_OPT      | Tilldela överflödiga koloniresurser från 
 TECH_EMPIRE_BALANCED_DESC         | Jämlika nivåer av forskningsinsatser ökar effektiviteten av forskningspoäng.
 TECH_EMPIRE_DETAIL_1              | %1 BC för 
 TECH_EMPIRE_DETAIL_2              | %2 FP / År
-TECH_TOTAL_FP                     | %1 FP
+TECH_TOTAL_RP                     | %1 FP
 TECH_DISCOVERY_PCT                | %1%
 TECH_CHANGE_RESEARCH              | Klicka för att börja Efterforska denna Teknologi
 TECH_NEXT_TIER_TITLE              | Inte tillgängligt.
@@ -1306,7 +1307,7 @@ TECH_HELP_1I                      | Jämställ budgetallokeringen för mätare s
 // Ship Design UI
 SHIP_DESIGN_TITLE                 | Skeppsdesign
 SHIP_DESIGN_SLOTS                 | Antal Designer
-SHIP_DESIGN_AVAILABLE             | Tillgängliga
+SHIP_DESIGN_AVAILABLE             | Tillgängligt
 SHIP_DESIGN_AVAILABLE_DESC        | Välj det här design-utrymmet för att börja planera en ny skeppsdesign.
 SHIP_DESIGN_AVAILABLE_DESC2       | Verkställ design för att kunna börja konstruktion i skeppsvarv.
 SHIP_DESIGN_PROTOTYPE             | Prototyp
@@ -1342,12 +1343,12 @@ SHIP_DESIGN_HIT_POINTS_LABEL      | Skadepoäng
 SHIP_DESIGN_MISSILE_DEF_LABEL     | Missilförsvar
 SHIP_DESIGN_BEAM_DEF_LABEL        | Strålförsvar
 SHIP_DESIGN_ATTACK_LEVEL_LABEL    | Precisionsnivå
-SHIP_DESIGN_COMBAT_SPEED_LABEL    | Hastighet
+SHIP_DESIGN_COMBAT_SPEED_LABEL    | Stridssteg
 SHIP_DESIGN_COMBAT_SPEED_VALUE    | %1 steg
 SHIP_DESIGN_ENGINES_TITLE         | Motorer
 SHIP_DESIGN_ENGINES_DESC          | Driver skeppet och dess komponenter.
 SHIP_DESIGN_ENGINE_TYPE           | Typ
-SHIP_DESIGN_ENGINE_SPEED          | Speed
+SHIP_DESIGN_ENGINE_SPEED          | Hastighet
 SHIP_DESIGN_ENGINE_COST1          | Kostnad, per motor
 SHIP_DESIGN_ENGINE_SIZE1          | Storlek, per motor
 SHIP_DESIGN_ENGINE_POWER1         | Energi, per motor
@@ -1436,7 +1437,7 @@ SHIP_DESIGN_SPECIAL_POWER         | Energi
 SHIP_DESIGN_SPECIAL_SPACE         | Utrymme
 
 // Skeppsdesign help
-SHIP_DESIGN_HELP_ALL              | ÖVERSIKT - ett imperium kan ha upp till sex aktiva skeppsdesigner. För varje design, välj ett skrov och fyll det sedan med olika komponenter liksom pansar, sköldar och vapen. Varje komponent har en storlek, energiförbrukning och produktionskostnad. Det totala utrymmet som krävs för en komponent är dess storlek plus storleken för motorerna som krävs för att driva komponenten. När en design är verkställd, kan den konstrueras i vilken som helst av dina kolonier.
+SHIP_DESIGN_HELP_ALL              | ÖVERSIKT - ett imperium kan ha upp till sex aktiva skeppsdesigner. För varje design, välj ett skrov och fyll det sedan med olika komponenter liksom pansar, sköldar och vapen. Varje komponent har en storlek, energiförbrukning och produktionskostnad. Det totala utrymmet som krävs för en komponent är dess storlek, plus storleken för motorerna som krävs för att driva komponenten. När en design är verkställd, kan den konstrueras i vilken som helst av dina kolonier.
 SHIP_DESIGN_HELP_1A               | Storlek - större storlekar av skrov har högre kostnad, men mer utrymme
 SHIP_DESIGN_HELP_1B               | Räckvidd - hur långt bort skeppet kan färdas från dina system. 
 SHIP_DESIGN_HELP_1C               | Hastighet - färdhastighet genom rymden på färd mellan stjärnor.
@@ -1461,12 +1462,12 @@ SHIP_DESIGN_HELP_2I               | Total Kostnad - den totala konstruktionskost
 SHIP_DESIGN_HELP_2J               | Utseende associerat med utvald skeppsdesign. Det finns sex olika utseenden för varje typ av skrovstorlek. Vid skapande av design, klicka för att rotera igenom alternativen.
 SHIP_DESIGN_HELP_2K               | Skeppsdesignens namn.
 SHIP_DESIGN_HELP_3A               | Datorer - påverkar ditt skepps precisionsnivå i strid.
-SHIP_DESIGN_HELP_3B               | Pansar - bestämmer hur många skadepoäng skeppet tål. Tungt pansar ökar antalet med 50%.
+SHIP_DESIGN_HELP_3B               | Pansar - avgör hur många skadepoäng skeppet tål. Tungt pansar ökar antalet med 50%.
 SHIP_DESIGN_HELP_3C               | Sköldar - reducerar skada från inkommande attacker.
-SHIP_DESIGN_HELP_3D               | ECM Signalstörare - ECM är ett låneuttryck för "Electronic Counter Measures", en teknik som stör utrustningen på missiler, och minskar chansen att bli träffad.
+SHIP_DESIGN_HELP_3D               | "Electronic Counter Measures", en teknik som stör utrustningen på missiler, och minskar chansen att bli träffad.
 SHIP_DESIGN_HELP_3E               | Manöver - ökar antalet stridssteg och skeppets försvar.
-SHIP_DESIGN_HELP_3F               | Weapons - orsakar skada mot fiendeskepp och kolonier. Upp till fyra olika typer av vapen kan läggas till på en skeppsdesign.
-SHIP_DESIGN_HELP_3G               | Special - utrustning som erbjuder unika förmågor till dina skepp. Upp till tre olika enheter specialutrustning kan läggas till på en skeppsdesign.
+SHIP_DESIGN_HELP_3F               | Vapen - orsakar skada mot fiendeskepp och kolonier. Upp till fyra olika typer av vapen kan läggas till på en skeppsdesign.
+SHIP_DESIGN_HELP_3G               | Special - erbjuder unika förmågor för dina skepp. Upp till tre olika enheter specialutrustning kan läggas till på en skeppsdesign.
 SHIP_DESIGN_HELP_4A               | Byt namn - låter dig byta namn på en existerande design.
 SHIP_DESIGN_HELP_4B               | Kassera Design - kasserar en befintlig design. Skrotade skepp återgäldar 25% av sitt konstruktionsvärde tillbaka till statskassan.
 SHIP_DESIGN_HELP_4C               | Verkställda skeppsdesigner kan konstrueras vid valfri koloni.
@@ -1505,7 +1506,9 @@ SHIP_COMBAT_AUTO_RESOLVE          | Auto-Beräkna Strid
 SHIP_COMBAT_AUTO_RESOLVING        | Beräknar Battalj...
 SHIP_COMBAT_PLAY_BATTLE           | Auto-Spela Strid
 SHIP_COMBAT_PAUSE_BATTLE          | Pausa Strid
-SHIP_COMBAT_EXIT                  | Avsluta
+SHIP_COMBAT_STATS_ON              | Stridsspecifikationer: På
+SHIP_COMBAT_STATS_OFF             | Stridsspecifikationer: Av
+ SHIP_COMBAT_EXIT                  | Klar
 SHIP_COMBAT_COUNT_NAME            | %1  %2
 SHIP_COMBAT_MONSTER_TARGET        | Rymdmonster som anfallsmål.
 SHIP_COMBAT_ENEMY_TARGET          | Fiendeflotta som anfallsmål.
