@@ -296,7 +296,7 @@ public class AIShipCaptain implements Base, ShipCaptain {
         }
         //2nd run: fire non-special-weapons
         for (int i=0;i<stack.numWeapons(); i++) {
-            if(stack.selectedWeapon().isSpecial()
+            if(stack.weapon(i).isSpecial()
                     || !((CombatStackShip)stack).shipComponentCanAttack(target, i)
                     || (stack.weapon(i).isMissileWeapon() && stack.movePointsTo(target) > stack.optimalFiringRange(target)))
             {
