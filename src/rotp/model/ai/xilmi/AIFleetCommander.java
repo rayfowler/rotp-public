@@ -398,7 +398,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             if((bc > 0 || bombardDamage > 0) && !canScanTo && empire.aggressiveWith(empire.sv.empId(id)))
             {
                 //System.out.print("\n"+fleet.empire().name()+" check if I can attack "+empire.sv.name(current.id)+" out of range expected bombard: "+fleet.expectedBombardDamage(empire.sv.system(id))+" HP: "+empire.sv.system(id).colony().untargetedHitPoints());
-                if(fleet.expectedBombardDamage(empire.sv.system(id)) < empire.sv.system(id).colony().untargetedHitPoints())
+                if(empire.sv.system(id).colony() != null && fleet.expectedBombardDamage(empire.sv.system(id)) < empire.sv.system(id).colony().untargetedHitPoints())
                     continue;
             }
 
