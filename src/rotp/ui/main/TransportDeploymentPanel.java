@@ -196,9 +196,12 @@ public class TransportDeploymentPanel extends SystemPanel {
     }
     @Override
     public void cancel() {
-        transportSprite().cancel();
-        parentSpritePanel.parent.clickedSprite(transportSprite().homeSystem());
-        parentSpritePanel.parent.repaint();
+        if(transportSprite() != null)
+        {
+            transportSprite().cancel();
+            parentSpritePanel.parent.clickedSprite(transportSprite().homeSystem());
+            parentSpritePanel.parent.repaint();
+        }
     }
     public void clearTransport() {
         transportSprite().clear();
