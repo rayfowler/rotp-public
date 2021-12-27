@@ -75,6 +75,9 @@ public final class SetupRaceUI extends BasePanel implements MouseListener, Mouse
         initTextField(leaderName);
     }
     public void init() {
+        leaderName.setFont(narrowFont(20));
+        homeWorld.setFont(narrowFont(20));
+
         createNewGameOptions();
         newGameOptions().copyOptions(options());
         raceChanged();

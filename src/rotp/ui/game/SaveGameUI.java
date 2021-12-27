@@ -102,6 +102,7 @@ public final class SaveGameUI extends BasePanel implements MouseListener, MouseW
         selectIndex = -1;
         start = 0;
         end = 0;
+        newFileField.setFont(narrowFont(20));
         newFileField.setText(GameUI.gameName);                
         saving = false;
 
