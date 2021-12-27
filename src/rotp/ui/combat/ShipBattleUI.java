@@ -2204,8 +2204,7 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             mgr.performingStackTurn = true;
             FlightPath fp = shipTravelPath;
             CombatStack curr = mgr.currentStack();
-            for (int i=0; i<fp.size(); i++)
-                curr.moveTo(fp.mapX(i),fp.mapY(i));
+            mgr.performMoveStackAlongPath(curr, fp);
             
             // possible for the stack we are moving to die during the move 
             // (missiles) so if it's complete and the new current Stack is
