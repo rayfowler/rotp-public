@@ -128,7 +128,7 @@ public class TransportPanel extends BasePanel {
             // draw title
             g.setFont(narrowFont(32));
             String str1;
-            if (pl.hasContact(tr.empire()))
+            if ((pl == tr.empire()) || pl.hasContact(tr.empire()))
                 str1 = text("MAIN_TRANSPORTS_EMPIRE", tr.empire().raceName());
             else
                 str1 = text("MAIN_FLEET_TITLE_UNKNOWN");
