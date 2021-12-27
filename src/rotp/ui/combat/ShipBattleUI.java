@@ -469,8 +469,8 @@ public class ShipBattleUI extends FadeInPanel implements Base, MouseListener, Mo
             if (!currStack.usingAI()) {
                 for (int y0 = 0; y0 < GRID_COUNT_Y; y0++) {
                     for (int x0 = 0; x0 < GRID_COUNT_X; x0++) {
-                        if (mgr.canTacticallyMoveTo(currStack, x0, y0)) 
-                                g.fill(combatGrids[x0][y0]);
+                        if (mgr.canTacticallyMoveTo(currStack, x0, y0) && (currStack.pathTo(x0, y0) != null)) 
+                            g.fill(combatGrids[x0][y0]);
                     }
                 }
             }

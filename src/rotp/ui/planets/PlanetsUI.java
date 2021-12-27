@@ -141,6 +141,8 @@ public class PlanetsUI extends BasePanel implements SystemViewer {
     }
     public void init() {
         displayedSystems = null;
+        nameField.setFont(narrowFont(20));
+        notesField.setFont(narrowFont(20));
         listingUI.open();
     }
     private void initModel() {

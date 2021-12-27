@@ -62,6 +62,7 @@ public final class RacesShipRenameUI extends BasePanel implements MouseListener,
         targetDesign.resetImage();
         if ((targetDesign.name() == null) || targetDesign.name().isEmpty())
             player().shipLab().nameDesign(targetDesign);
+        nameField.setFont(narrowFont(20));
         nameField.setText(targetDesign.name().trim());
         nameField.setCaretPosition(nameField.getText().length());
         setNameBounds = true;
