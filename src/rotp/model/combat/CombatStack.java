@@ -596,13 +596,18 @@ public class CombatStack implements Base {
 
         // set a clip to minimize delays cause by potential side-effect
         // repainting of the ui
-        g.setClip(rTopLeft.x, rTopLeft.y, 2*rTopLeft.width, 2*rTopLeft.height);
+        int clipX = rTopLeft.x+(int)((offsetX-0.2)*rTopLeft.width);
+        int clipY = rTopLeft.y+(int)((offsetY-0.2)*rTopLeft.height);
+        int clipW = 5*rTopLeft.width/2;
+        int clipH = 5*rTopLeft.height/2;
+        g.setClip(clipX, clipY, clipW, clipH);
 
         for (int i=0;i<FRAMES;i++) {
             long t0 = System.currentTimeMillis();
             if (!mgr.showAnimations()) 
                 break;
-            mgr.ui.paintCellImmediately(x,y);
+            mgr.ui.paintImmediately(clipX,clipY,clipW,clipH);
+            //mgr.ui.paintCellImmediately(x,y);
             g.setFont(font[i]);
             if (dmg != 0)
                 g.setColor(cRed[i]);
