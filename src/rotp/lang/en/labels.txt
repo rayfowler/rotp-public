@@ -517,7 +517,7 @@ MAIN_FLEET_DISPLAY                | Fleet Display
 MAIN_FLEET_CHOOSE_DEST            | Choose destination and number of ships to send.
 MAIN_FLEET_OUT_OF_RANGE_DESC      | Destination is out of fleet range, %1 light-years from closest colony.
 MAIN_FLEET_INVALID_RETREAT        | Retreating fleets can only be sent to friendly colonies
-MAIN_FLEET_ETA_UNNAMED            | ETA to destination: %1 Year 
+MAIN_FLEET_ETA_UNNAMED            | ETA to destination: %1 Years 
 MAIN_FLEET_ETA_NAMED              | ETA to %1: %2 Years 
 MAIN_FLEET_SET_RALLY              | Rallying
 MAIN_FLEET_AUTO_RETREAT           | Automatically retreat upon arrival

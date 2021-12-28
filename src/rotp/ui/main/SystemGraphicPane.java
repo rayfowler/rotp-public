@@ -18,6 +18,9 @@ package rotp.ui.main;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
+import java.awt.Rectangle;
+import java.awt.Stroke;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -27,6 +30,7 @@ import java.awt.geom.Ellipse2D;
 import javax.swing.border.Border;
 import rotp.model.empires.Empire;
 import rotp.model.galaxy.StarSystem;
+import rotp.model.ships.ShipLibrary;
 import rotp.ui.BasePanel;
 import rotp.util.AnimationManager;
 
@@ -36,6 +40,7 @@ public class SystemGraphicPane extends BasePanel implements MouseMotionListener,
     SystemPanel parent;
     Ellipse2D starCircle = new Ellipse2D.Float();
     Ellipse2D planetCircle = new Ellipse2D.Float();
+    Rectangle stargateBox = new Rectangle();
     int currentHover = 0;
     public boolean showPopulation = false;
     public SystemGraphicPane(SystemPanel p, Border coloredBorder) {
@@ -89,6 +94,23 @@ public class SystemGraphicPane extends BasePanel implements MouseMotionListener,
         sys.planet().draw(g0, w, h, x1, y1, (r+r)*adjW/w, 45);
         planetCircle.setFrame(x1, y1, r+r, r+r);
 
+        if (sys.hasStargate(player())) {
+            int x2 = s10;
+            int y2 = y1;
+            Image img = ShipLibrary.current().stargate.getImage();
+            int w2 = img.getWidth(null);
+            int h2 = img.getHeight(null);
+            g.drawImage(img, x2, y2, x2+s14, y2+s14, 0, 0, w2, h2, null);  
+            stargateBox.setBounds(x2,y2,s14,s14);
+            if (currentHover == 3) {
+                Stroke prevStroke = g.getStroke();
+                g.setStroke(stroke2);
+                g.setColor(Color.red);
+                g.drawLine(x2, y2, x2+s14, y2+s14);
+                g.drawLine(x2, y2+s14, x2+s14, y2);
+                g.setStroke(prevStroke);
+            }
+        }
         parent.drawPlanetInfo(g, sys, showSpyData, showPopulation, s40, w-s3, h-s12);
     }
     @Override
@@ -108,7 +130,9 @@ public class SystemGraphicPane extends BasePanel implements MouseMotionListener,
         int x = e.getX();
         int y = e.getY();
         int prevHover = currentHover;
-        if (planetCircle.contains(x,y))
+        if (stargateBox.contains(x,y))
+            currentHover = 3;
+        else if (planetCircle.contains(x,y))
             currentHover = 1;
         else if (starCircle.contains(x,y))
             currentHover = 2;
@@ -134,8 +158,19 @@ public class SystemGraphicPane extends BasePanel implements MouseMotionListener,
     public void mousePressed(MouseEvent e) { }
     @Override
     public void mouseReleased(MouseEvent e) {
-        if (e.getClickCount() == 2) 
+        if (e.getClickCount() == 2) {
             parent.recenterMap();
+            return;
+        }
+        StarSystem sys = parent.systemViewToDisplay();
+        if (sys == null)
+            return;
+        if (currentHover == 3) {
+            currentHover = 0;
+            player().sv.removeStargate(sys.id);
+            player().recalcPlanetaryProduction();
+            repaint();
+        }
     }
     @Override
     public void mouseWheelMoved(MouseWheelEvent e) {

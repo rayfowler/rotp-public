@@ -634,6 +634,11 @@ public class MainUI extends BasePanel implements IMapHandler {
         g.setColor(Color.black);
         g.setFont(narrowFont(18));
         drawString(g,title, x1, y1);
+        
+        String yearStr = displayYearOrTurn();
+        g.setFont(narrowFont(16));
+        int yearW = g.getFontMetrics().stringWidth(yearStr);
+        drawString(g,yearStr, x+w-s5-yearW, y+h-s5);
 
         g.setFont(narrowFont(16));
         List<String> descLines = wrappedLines(g, alert.description(), scaled(230));

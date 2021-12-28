@@ -107,6 +107,10 @@ public class SystemView implements IMappedObject, Base, Serializable {
     public int currentSize()                 { return vCurrentSize; }
     public int artifacts()                   { return vArtifacts; }
     public boolean stargate()                { return vStargate; }
+    public void removeStargate()             { vStargate = false;
+        if (isColonized())
+            colony().removeStargate();
+    }
     public Planet planet()                   { return vPlanet; }
     public int locationSecurity()            { return locationSecurity; }
     public float hostilityLevel()            { return hostilityLevel; }
