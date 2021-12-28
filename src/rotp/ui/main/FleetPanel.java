@@ -748,12 +748,13 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                         text = text("MAIN_FLEET_ETA_UNNAMED", dist);
                     else
                         text = text("MAIN_FLEET_ETA_NAMED", destName, dist);
-                    if (displayFl.passesThroughNebula(dest))
+                    if ((dist > 1) && displayFl.passesThroughNebula(dest))
                         nebulaText = text("MAIN_FLEET_THROUGH_NEBULA");
                 }
                 else if (displayFl.canSendTo(id(dest))) {
+                    int dist = 0;
                     if (displayFl.canReach(dest)) {
-                        int dist = displayFl.travelTurns(dest);
+                        dist = displayFl.travelTurns(dest);
                         String destName = player().sv.name(dest.id);
                         if (destName.isEmpty())
                             text = text("MAIN_FLEET_ETA_UNNAMED", dist);
@@ -761,10 +762,10 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                             text = text("MAIN_FLEET_ETA_NAMED", destName, dist);
                     }
                     else {
-                        int dist = player().rangeTo(dest);
+                        dist = player().rangeTo(dest);
                         text = text("MAIN_FLEET_OUT_OF_RANGE_DESC", dist);
                     }
-                    if (displayFl.passesThroughNebula(dest))
+                    if ((dist > 1) && displayFl.passesThroughNebula(dest))
                         nebulaText = text("MAIN_FLEET_THROUGH_NEBULA");
                 }
                 else if (displayFl.isOrbiting()) {
