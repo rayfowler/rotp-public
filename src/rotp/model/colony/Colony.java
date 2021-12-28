@@ -215,6 +215,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
 
     public boolean hasStargate()         { return shipyard().hasStargate(); }
     public boolean hasStargate(Empire e) { return (empire == e) && hasStargate(); }
+    public void removeStargate()         { shipyard().removeStargate(); }
 
     public int totalAmountAllocated() {
         int amt = 0;

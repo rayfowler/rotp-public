@@ -48,6 +48,7 @@ public class ColonyShipyard extends ColonySpendingCategory {
 
     public boolean hasStargate()              { return hasStargate; }
     public boolean stargateCompleted()        { return stargateCompleted; }
+    public void removeStargate()  { hasStargate = stargateCompleted = false; }
     public boolean shipLimitReached()         { return shipLimitReached; }
     public Design design()                    { return design; }
     public void design(Design d)              { design = d; }

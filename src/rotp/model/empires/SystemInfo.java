@@ -118,6 +118,9 @@ public class SystemInfo implements Serializable, Base {
     public void toggleForwardRallies(int i)      { if (!missing(i)) view(i).toggleForwardRallies(); }
     public void raiseHostility(int i)            { view(i).raiseHostility(); }
     public boolean hasStargate(int i)            { return missing(i) ? false : view(i).stargate(); }
+    public void removeStargate(int i)            { if (!missing(i))
+                                                      view(i).removeStargate();
+                                                 }
     public boolean hasFleetPlan(int i)           { return missing(i) ? false : view(i).hasFleetPlan(); }
     public boolean hasFleetForEmpire(int i, Empire e) { return missing(i) ? false : view(i).hasFleetForCiv(e); }
     public boolean inShipRange(int i)            { return distances[i] <= empire().shipRange(); }
