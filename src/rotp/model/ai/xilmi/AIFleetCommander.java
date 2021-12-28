@@ -488,6 +488,8 @@ public class AIFleetCommander implements Base, FleetCommander {
                     if(!empire.warEnemies().contains(currEmp) && !empire.generalAI().strongEnoughToAttack())
                         continue;
                 }
+                if(!systemInfoBuffer.get(id).inScannerRange && currEmp != null)
+                    enemyFightingBc += currEmp.totalFleetCost();
             }
             if(bombardDamage > 0 && fleet.system() != current)
             {
