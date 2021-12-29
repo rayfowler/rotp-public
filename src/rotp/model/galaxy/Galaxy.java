@@ -51,7 +51,7 @@ public class Galaxy implements Base, Serializable {
     private final List<StarSystem> abandonedSystems = new ArrayList<>();
 
     private Empire playerEmpire;
-    private Empire orionEmpire;
+    private Empire orionEmpire; //unused
     private final int widthLY;
     private final int heightLY;
     private float maxScaleAdj = 1.0f;
@@ -91,8 +91,6 @@ public class Galaxy implements Base, Serializable {
     public Empire player()                   { return playerEmpire; }
     @Override
     public boolean isPlayer(Empire d)        { return playerEmpire == d; }
-    public void orionEmpire(Empire d)        { orionEmpire = d; }
-    public Empire orionEmpire()              { return orionEmpire; }
     public void initNebulas(int size)        { nebulas = new ArrayList<>(size); }
     public ShipCombatManager shipCombat() {
         if (shipCombat == null)
