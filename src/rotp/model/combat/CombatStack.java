@@ -571,22 +571,23 @@ public class CombatStack implements Base {
         int xleft = x0 < x1 ? x : max(0, x-1);
         Rectangle rTopLeft = mgr.ui.combatGrids[xleft][max(0,y-1)];
         
-        int FRAMES = mgr.autoComplete ? 12 : 12;
+        int FRAMES = mgr.autoComplete ? 12 : 18;
         int dx = x0 <= x1 ? BasePanel.s1 : -BasePanel.s1;
         int dy = -BasePanel.s1;
         int dFont = 1;
-        int dAlpha = 255/ FRAMES;
+        int dAlpha = 255/ (FRAMES/2);
 
         Color[] cRed = new Color[FRAMES];
         Color[] cWhite = new Color[FRAMES];
         Font[] font = new Font[FRAMES];
         int alpha = 255;
-        int fontsize = 18;
+        int fontsize = 20;
         for (int i=0;i<FRAMES;i++) {
             cWhite[i] =  new Color(255,255,255,alpha);
-            cRed[i] = new Color(255,0,0,alpha);
+            cRed[i] = new Color(255,64,64,alpha);
             font[i] = narrowFont(fontsize);
-            alpha -= dAlpha;
+            if (i > FRAMES/2)
+                alpha -= dAlpha;
             fontsize += dFont;
         }
 
@@ -607,12 +608,14 @@ public class CombatStack implements Base {
             if (!mgr.showAnimations()) 
                 break;
             mgr.ui.paintImmediately(clipX,clipY,clipW,clipH);
-            //mgr.ui.paintCellImmediately(x,y);
             g.setFont(font[i]);
+            Color c0;
             if (dmg != 0)
-                g.setColor(cRed[i]);
+                c0 = cRed[i];
             else
-                g.setColor(cWhite[i]);
+                c0 = cWhite[i];
+            g.setColor(c0);
+            //drawBorderedString(g, displayStr, x2, y2, cWhite[i], c0);
             drawString(g,displayStr, x2, y2);
             x2 += dx;
             y2 += dy;
