@@ -1077,11 +1077,6 @@ public final class Colony implements Base, IMappedObject, Serializable {
                 completeDefenseAgainstTransports(tr);
         }
 
-        if (empire == galaxy().orionEmpire()) {
-            capturedOrion(tr);
-            return;
-        }
-
         float pctLost = min(1, ((startingPop - population()) / startingPop));
         int popLost = (int) startingPop -  (int) population();
         int rebelsLost = (int) Math.ceil(pctLost*rebels);
@@ -1128,10 +1123,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         loser.lastAttacker(tr.empire());
         starSystem().addEvent(new SystemCapturedEvent(tr.empId()));
         tr.empire().lastAttacker(loser);
-        if (loser == galaxy().orionEmpire()) {
-            capturedOrion(tr);
-            return;
-        }
+
         Empire pl = player();
         if (tr.empire().isPlayerControlled()) {
             allocation(SHIP, 0);
@@ -1158,7 +1150,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
             }
         }
 
-        setPopulation(tr.size());
+        setPopulation(min(planet.currentSize(),tr.size()));
         tr.size(0);
         shipyard().capturedBy(tr.empire());
         industry().capturedBy(tr.empire());
@@ -1185,22 +1177,6 @@ public final class Colony implements Base, IMappedObject, Serializable {
 
         if (loser.numColonies() == 0)
             loser.goExtinct();
-    }
-    public void capturedOrion(Transport tr) {
-        setPopulation(tr.size());
-        tr.size(0);
-        industry().capturedBy(tr.empire());
-        defense().capturedBy(tr.empire());
-        ecology().capturedBy(tr.empire());
-
-        empire = tr.empire();
-        empire.setRecalcDistances();
-        buildFortress();
-        shipyard().goToNextDesign();
-
-        rebels = 0;
-        rebellion = false;
-        clearReserveIncome();
     }
     public void takeCollateralDamage(float damage) {
         if (destroyed())
