@@ -13,7 +13,7 @@ import rotp.util.Base;
 
 
 /**
- *  The purpose of this class is to allow the custom of custom events for mods
+ *  The purpose of this class is to allow the creation of custom events for mods
  *  will not create saves that are incompatible with the base game. Basically, 
  *  each generic event is created with a unique string key and then all of the 
  *  behavior methods will then toggle based on that key. This one class would 
@@ -30,7 +30,7 @@ import rotp.util.Base;
 public class RandomEventGeneric   implements Base, Serializable, RandomEvent {
     private static final long serialVersionUID = 1L;
     private String eventKey;
-    private Map<String,Map> eventData = new HashMap<>();
+    private Map<String,Object> eventData = new HashMap<>();
     public RandomEventGeneric(String key) {
         eventKey = key;
         initData(key);
@@ -113,13 +113,11 @@ public class RandomEventGeneric   implements Base, Serializable, RandomEvent {
         switch(key) {
             //example:
             //case "PirateRampageEvent":
-            //  Map<String,Object> pirateEventData = new HashMap<>();
-            //  pirateEventData.put("SystemList", new ArrayList<StarSystem>());
-            //  pirateEventData.put("PirateHP", new Integer(500));
-            //  eventData.put(key, pirateEventData);
+            //  eventData.put("SystemList", new ArrayList<StarSystem>());
+            //  eventData.put("PirateHP", new Integer(500));
             //  break;
             default:
-                eventData.put(key, new HashMap<String,Object>());
+               
         }
         
     }
