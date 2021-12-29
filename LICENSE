@@ -91,7 +91,8 @@ What this essentially means (read the license for full info):
 WRITING
 =======
 Various *.txt files in this game that contain a license notice are copyright by 
-Jeff Colucci. They are:
+Jeff Colucci. This includes English text and any foreign language translations.
+They are:
 
 // Licensed under the Creative Commons License, 
 // Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
@@ -105,3 +106,21 @@ What this essentially means:
  1. you can distribute a game with these assets, but you cannot sell the game. 
  2. These assets cannot be altered. 
  3. Credits to Jeff Colucci must be preserved.
+ 
+ 
+The manual.pdf file is copyright by Tom Chick. This includes any foreign language 
+translations of the manual contained in this repository. These file(s) are:
+
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+
+What this essentially means: 
+ 1. you can distribute a game with these assets, but you cannot sell the game. 
+ 2. These assets cannot be altered. 
+ 3. Credits to Tom Chick must be preserved.
+ 
