@@ -49,13 +49,13 @@ public class RandomEventSpaceCrystal implements Base, Serializable, RandomEvent 
         // space monsters can be a challenge... delay their entry in the easier game settings
         switch (options().selectedGameDifficulty()) {
             case IGameOptions.DIFFICULTY_EASIEST:
-                return RandomEvents.START_TURN + 200;
+                return RandomEvents.START_TURN + 400;
             case IGameOptions.DIFFICULTY_EASIER:
-                return RandomEvents.START_TURN + 150;
+                return RandomEvents.START_TURN + 300;
             case IGameOptions.DIFFICULTY_EASY:
-                return RandomEvents.START_TURN + 100;
+                return RandomEvents.START_TURN + 200;
             default:
-                return RandomEvents.START_TURN + 50;
+                return RandomEvents.START_TURN + 100;
         }
     }
     @Override
