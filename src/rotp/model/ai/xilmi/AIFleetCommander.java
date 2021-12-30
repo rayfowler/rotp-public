@@ -317,11 +317,15 @@ public class AIFleetCommander implements Base, FleetCommander {
                     continue;
                 float enemyFightingBc = 0.0f;
                 float enemyMissileBc = 0.0f;
+                UpdateSystemInfo(id);
                 if(systemInfoBuffer.containsKey(id))
                 {
                     enemyFightingBc = systemInfoBuffer.get(id).enemyFightingBc;
                     if(currEmp != null && empire.aggressiveWith(currEmp.id))
                         enemyMissileBc += empire.sv.bases(current.id)*currEmp.tech().newMissileBaseCost();
+                    //prevent trickling
+                    if((currEmp != null && empire.warEnemies().contains(currEmp)) || enemyFightingBc > 0)
+                        enemyFightingBc += systemInfoBuffer.get(id).myTotalBc;
                 }
                 if(currEmp != null)
                     targetTech = currEmp.tech().avgTechLevel();
@@ -398,7 +402,7 @@ public class AIFleetCommander implements Base, FleetCommander {
             if((bc > 0 || bombardDamage > 0) && !canScanTo && empire.aggressiveWith(empire.sv.empId(id)))
             {
                 //System.out.print("\n"+fleet.empire().name()+" check if I can attack "+empire.sv.name(current.id)+" out of range expected bombard: "+fleet.expectedBombardDamage(empire.sv.system(id))+" HP: "+empire.sv.system(id).colony().untargetedHitPoints());
-                if(fleet.expectedBombardDamage(empire.sv.system(id)) < empire.sv.system(id).colony().untargetedHitPoints())
+                if(empire.sv.system(id).colony() != null && fleet.expectedBombardDamage(empire.sv.system(id)) < empire.sv.system(id).colony().untargetedHitPoints())
                     continue;
             }
 
@@ -536,7 +540,7 @@ public class AIFleetCommander implements Base, FleetCommander {
                 float speed = fleet.slowestStackSpeed();
                 if(current.inNebula())
                     speed = 1;
-                score /= max(1, fleet.distanceTo(current) / speed) + 1;
+                score /= pow(max(1, fleet.distanceTo(current) / speed), 2) + 1;
             }
             //System.out.print("\n"+galaxy().currentTurn()+" "+fleet.empire().name()+" Fleet at "+empire.sv.name(fleet.system().id)+" => "+empire.sv.name(current.id)+" score: "+score+" enemy-transports: "+transports);
             if(score > bestScore)
@@ -870,13 +874,32 @@ public class AIFleetCommander implements Base, FleetCommander {
                         if(systemInfoBuffer.get(fleet.sysId()).enemyFightingBc > bcValue(fleet, false, true, false, false))
                             keepBc = 0;
                         keepBc = min(keepBc, bcValue(fleet, false, true, false, false));
+                        boolean targetHasEvent = false;
+                        boolean currentHasEvent = false;
+                        if (target.empire() == empire && target.hasEvent()) {
+                            if (target.eventKey().equals("MAIN_PLANET_EVENT_PIRACY")) {
+                                targetHasEvent = true;
+                            }
+                            if (target.eventKey().equals("MAIN_PLANET_EVENT_COMET")) {
+                                targetHasEvent = true;
+                            }
+                        }
+                        if (fleet.system().empire() == empire && fleet.system().hasEvent()) {
+                            if (target.eventKey().equals("MAIN_PLANET_EVENT_PIRACY")) {
+                                currentHasEvent = true;
+                            }
+                            if (target.eventKey().equals("MAIN_PLANET_EVENT_COMET")) {
+                                currentHasEvent = true;
+                            }
+                        }
+                        if(currentHasEvent)
+                            keepBc = fleet.bcValue();
                         //System.out.print("\n"+galaxy().currentTurn()+" "+fleet.empire().name()+" Fleet at "+fleet.system().name()+" keepBc: "+keepBc);
                         if(targetIsGatherPoint)
                         {
                             target = smartPath(fleet, target);
                             //System.out.print("\n"+galaxy().currentTurn()+" "+fleet.empire().name()+" Fleet at "+fleet.system().name()+" gathers at: "+target.name());
                             attackWithFleet(fleet, target, sendAmount - keepAmount, sendBombAmount - keepAmount, false, true, true, true, keepBc, true);
-                            previousAttacked = target;
                             break;
                         }
                         StarSystem stagingPoint = galaxy().system(empire.optimalStagingPoint(target, 1));
@@ -917,6 +940,9 @@ public class AIFleetCommander implements Base, FleetCommander {
                         }
                         if(tgtEmpire != null)
                         {
+                            //experimental: Prevent "trickling in" by adding twice of what we already sent to enemyFightingBC
+                            if(!empire.tech().hyperspaceCommunications() && !targetHasEvent)
+                                enemyFightingBC += systemInfoBuffer.get(target.id).myTotalBc * 2;
                             if(empire.alliedWith(tgtEmpire.id) && (enemyFightingBC > 0 || empire.unfriendlyTransportsInTransit(target) > 0))
                             {
                                 allowBombers = false;
@@ -941,13 +967,10 @@ public class AIFleetCommander implements Base, FleetCommander {
                                     sendAmount = 1.0f;
                                 }
                                 sendBombAmount = 0;
-                                if (target.hasEvent()) {
-                                    if (target.eventKey().equals("MAIN_PLANET_EVENT_PIRACY")
-                                            || target.eventKey().equals("MAIN_PLANET_EVENT_COMET")) {
-                                        sendAmount = 1.0f;
-                                        sendBombAmount = 1.0f;
-                                        allowBombers = true;
-                                    }
+                                if (targetHasEvent) {
+                                    sendAmount = 1.0f;
+                                    sendBombAmount = 1.0f;
+                                    allowBombers = true;
                                 }
                             }
                             else

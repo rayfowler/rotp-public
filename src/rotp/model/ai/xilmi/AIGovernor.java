@@ -638,7 +638,7 @@ public class AIGovernor implements Base, Governor {
                 continue;
             float currentScore = sqrt(current.colony().totalIncome());
             currentScore *= current.planet().productionAdj();
-            currentScore /= current.planet().productionAdj();
+            currentScore /= current.planet().researchAdj();
             avgScore += currentScore;
             counted++;
         }
