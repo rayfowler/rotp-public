@@ -284,8 +284,8 @@ public class AIGeneral implements Base, General {
         int sysId = sys.id;
         EmpireView ev = empire.viewForEmpire(empire.sv.empId(sysId));
         float targetTech = ev.spies().tech().avgTechLevel(); // modnar: target tech level
-        
-        if (empire.sv.hasFleetForEmpire(sys.id, empire))
+
+        if (empire.sv.orbitingFleet(sys.id) != null)
             launchGroundTroops(v, sys, mult);
         else if (empire.combatTransportPct() > 0) {
             // adj pct if enemy has subspace interdictors: fix by ajkfreelance
