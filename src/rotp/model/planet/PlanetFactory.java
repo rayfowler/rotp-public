@@ -57,7 +57,7 @@ public class PlanetFactory implements Base {
         Planet p = instance.options().orionPlanet(sys);
         p.setOrionArtifact();
         p.makeEnvironmentFertile();
-        p.baseSize(p.type().maxSize()*bonus);
+        p.baseSize(120*bonus);
         return p;
     }
     public static Planet createHomeworld(Race r, StarSystem sys, float bonus) {
