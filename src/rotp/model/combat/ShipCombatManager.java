@@ -174,12 +174,22 @@ public class ShipCombatManager implements Base {
         
         ShipFleet fl1 = sys.orbitingFleetForEmpire(emp1);
         ShipFleet fl2 = sys.orbitingFleetForEmpire(emp2);
+        int sysEmpId = sys.empId();
         
-        if (fl1 != null)
+        // each empire gets an encounter scan of the opposing fleet
+        // in addition, if a fleet has a NAP with the system empire,
+        // update the ownership for the system
+        if (fl1 != null) {
             emp2.encounterFleet(fl1);
-        if (fl2 != null)
+            if (emp1.pactWith(sysEmpId))
+                emp1.sv.view(sys.id).setEmpire();
+        }
+        if (fl2 != null) {
             emp1.encounterFleet(fl2);
-        
+            if (emp2.pactWith(sysEmpId))
+                emp2.sv.view(sys.id).setEmpire();
+        }
+
         beginInSystem(sys, emp1, emp2);
         log("Resolving ship battle between empire1:", emp1.name(), "  empire2:", emp2.name());
         ui = null;

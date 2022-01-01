@@ -571,11 +571,11 @@ public class CombatStack implements Base {
         int xleft = x0 < x1 ? x : max(0, x-1);
         Rectangle rTopLeft = mgr.ui.combatGrids[xleft][max(0,y-1)];
         
-        int FRAMES = mgr.autoComplete ? 12 : 18;
+        int FRAMES = mgr.autoComplete ? 12 : 12;
         int dx = x0 <= x1 ? BasePanel.s1 : -BasePanel.s1;
         int dy = -BasePanel.s1;
         int dFont = 1;
-        int dAlpha = 255/ (FRAMES/2);
+        int dAlpha = 255/ (FRAMES/4);
 
         Color[] cRed = new Color[FRAMES];
         Color[] cWhite = new Color[FRAMES];
@@ -586,7 +586,7 @@ public class CombatStack implements Base {
             cWhite[i] =  new Color(255,255,255,alpha);
             cRed[i] = new Color(255,64,64,alpha);
             font[i] = narrowFont(fontsize);
-            if (i > FRAMES/2)
+            if (i > FRAMES*3/4)
                 alpha -= dAlpha;
             fontsize += dFont;
         }

@@ -538,6 +538,8 @@ public class DiplomaticEmbassy implements Base, Serializable {
         otherEmbassy().endWarPreparations();
         beginPeace(duration);
         otherEmbassy().beginPeace(duration);
+        owner().hideSpiesAgainst(empire().id);
+        empire().hideSpiesAgainst(owner().id);
         DiplomaticIncident inc = SignPeaceIncident.create(owner(), empire(), duration);
         addIncident(inc);
         otherEmbassy().addIncident(SignPeaceIncident.create(empire(), owner(), duration));
@@ -546,6 +548,8 @@ public class DiplomaticEmbassy implements Base, Serializable {
     public DiplomaticIncident signPact() {
         beginTreaty();
         endWarPreparations();
+        owner().hideSpiesAgainst(empire().id);
+        empire().hideSpiesAgainst(owner().id);
         setTreaty(new TreatyPact(view.owner(), view.empire()));
         DiplomaticIncident inc = SignPactIncident.create(owner(), empire());
         addIncident(inc);
@@ -574,6 +578,8 @@ public class DiplomaticEmbassy implements Base, Serializable {
         owner().setRecalcDistances();
         empire().setRecalcDistances();
         owner().shareSystemInfoWithAlly(empire());
+        owner().hideSpiesAgainst(empire().id);
+        empire().hideSpiesAgainst(owner().id);
         DiplomaticIncident inc = SignAllianceIncident.create(owner(), empire());
         addIncident(inc);
         otherEmbassy().addIncident(SignAllianceIncident.create(empire(), owner()));

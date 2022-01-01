@@ -364,6 +364,7 @@ public class RotPUI extends BasePanel implements ActionListener, KeyListener {
         repaint();
     }
     public void selectGamePanel()      { 
+        gameUI.init();
         if (!UserPreferences.windowed())
             selectDialogPanel(GAME_PANEL, gameUI);
         else

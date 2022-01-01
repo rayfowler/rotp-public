@@ -25,7 +25,7 @@ import rotp.ui.BasePanel;
 import rotp.ui.BaseTextField;
 import rotp.ui.main.SystemPanel;
 
-public final class ConfirmCreateUI extends BasePanel implements MouseListener, MouseMotionListener {
+public final class ConfirmCreateUI extends BasePanel implements KeyListener, MouseListener, MouseMotionListener {
     private static final long serialVersionUID = 1L;
     private static final Color backgroundHaze = new Color(0,0,0,160);
 
@@ -53,6 +53,7 @@ public final class ConfirmCreateUI extends BasePanel implements MouseListener, M
 
     public boolean renamingOnly = false;
     boolean setNameBounds = true;
+    int keystrokeCount = 0;
 
     public ConfirmCreateUI() {
         setOpaque(true);
@@ -60,6 +61,7 @@ public final class ConfirmCreateUI extends BasePanel implements MouseListener, M
         add(nameField);
     }
     public void targetDesign(ShipDesign d) {
+        keystrokeCount = 0;
         targetDesign = d;
         targetDesign.resetImage();
         if ((targetDesign.name() == null) || targetDesign.name().isEmpty())
@@ -225,6 +227,7 @@ public final class ConfirmCreateUI extends BasePanel implements MouseListener, M
         im0.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), ACCEPT_ACTION);
         am0.put(CANCEL_ACTION, new CancelAction());
         am0.put(ACCEPT_ACTION, new CreateAction());
+        nameField.addKeyListener(this);
         
         addMouseListener(this);
         addMouseMotionListener(this);
@@ -252,6 +255,10 @@ public final class ConfirmCreateUI extends BasePanel implements MouseListener, M
         disableGlassPane();
     }
     private void createAction() {
+        if (renamingOnly && nameField.getText().trim().isEmpty()) {
+            cancelAction();
+            return;
+        }
         targetDesign.active(true);
         targetDesign.setIconKey();
         String name = nameField.getText().trim();
@@ -267,14 +274,13 @@ public final class ConfirmCreateUI extends BasePanel implements MouseListener, M
     }
     @Override
     public void keyPressed(KeyEvent e) {
+        keystrokeCount++;
         int k = e.getKeyCode();
-        if (k == KeyEvent.VK_ESCAPE) {
-            cancelAction();
-            return;
-        }
-        else if (k == KeyEvent.VK_S) {
-            createAction();
-            return;
+        if (k == KeyEvent.VK_BACK_SPACE) {
+            if (keystrokeCount == 1) {
+                nameField.setText(" ");
+                return;
+            }
         }
     }
     @Override

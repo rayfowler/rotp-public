@@ -2876,8 +2876,11 @@ public class DesignUI extends BasePanel {
             else if (clearButtonArea.contains(x,y))
                 hoverTarget = clearButtonArea;
             
-            if (shipDesign().active())
+            if (shipDesign().active()) {
+                if (prevHover != hoverTarget)
+                    repaint();
                 return;
+            }
             
             if (shipImageDecr.contains(x,y))
                 hoverTarget = shipImageDecr;

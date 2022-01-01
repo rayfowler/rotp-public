@@ -32,7 +32,6 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 import java.awt.geom.Point2D;
 import java.awt.image.BufferedImage;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
@@ -61,6 +60,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     protected static RoundGradientPaint rgp;
 
     public static final int BG_DURATION = 80;
+    public static final float SLIDESHOW_MAX = 15f;
     
     public static String gameName = "";
     
@@ -131,8 +131,7 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     String imageKey1, imageKey2;
     int animationTimer = BG_DURATION;
     private final GameLanguagePane languagePanel;
-    float slideshowFade = 1.0f;
-    long slideshowTime = 0;
+    float slideshowFade = SLIDESHOW_MAX;
     
     public static Color langShade()               { return langShade[opt()]; }
     public static Color titleColor()              { return titleColor[opt()]; }
@@ -421,16 +420,18 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
         slideshowText.displayText(text("CREDITS_ILLUSTRATOR"));
         versionText.displayText(text("GAME_VERSION", str(Rotp.releaseId)));
     }
+    public void init() {
+        slideshowFade = SLIDESHOW_MAX;
+        resetSlideshowTimer();
+    }
     @Override
     public void animate() {
         if (glassPane() != null)
             return;
         
-        if (slideshowTime == 0) 
-            slideshowTime = System.currentTimeMillis();
-        
         animationTimer--;
-        if (animationTimer == 0) {
+        slideshowFade -=.1f;
+        if (animationTimer <= 0) {
             imageKey1 = imageKey2;
             imageKey2 = random(backImgKeys);
             backImg1 = backImg2;
@@ -447,21 +448,12 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             AlphaComposite composite = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, pct);
             imgG.setComposite(composite);
             imgG.drawImage(backImg2, 0,0,null);
-            //int alpha =(int) (255* ((10-(int)Math.abs(10-animationTimer))/10.0f));
-            //Color c0 = new Color (0,0,0,alpha);
-            //imgG.setColor(c0);
-            //imgG.fillRect(0,0,img.getWidth(),img.getHeight());
             imgG.dispose();
             backImg = img;
-            if ((animationTimer >= 10) && (slideshowFade > 0) && !languagePanel.isVisible()) {
-                long curTime = System.currentTimeMillis();
-                if ((curTime - slideshowTime) >= (BG_DURATION * RotPUI.ANIMATION_TIMER))
-                    slideshowFade = (animationTimer - 10)/10f;
-                else if (animationTimer == 10)
-                    slideshowTime = curTime;
-            }
             repaint();
         }
+        else if ((slideshowFade <= 1) && (slideshowFade >= -0.3f))
+            repaint();
     }
     @Override
     public boolean drawMemory()       { return true; }
@@ -489,20 +481,23 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
   
         
         Composite prevComp = g.getComposite();
-        if (slideshowFade < 1) {
-            AlphaComposite ac = java.awt.AlphaComposite.getInstance(AlphaComposite.SRC_OVER,max(0,1-slideshowFade));
-            g.setComposite(ac);
+        float textAlpha = min(1,max(0,slideshowFade));
+        if ((textAlpha < 1) || hideText) {
+            if (!hideText) {
+                AlphaComposite ac = java.awt.AlphaComposite.getInstance(AlphaComposite.SRC_OVER,1-textAlpha);
+                g.setComposite(ac);
+            }
             slideshowText.draw(g);
         }
  
-        if (slideshowFade == 0) {
+        if (textAlpha == 0) {
             languagePanel.setVisible(false);
             g.setComposite(prevComp);
             return;
         }
         
-        if (slideshowFade < 1) {
-            AlphaComposite ac = java.awt.AlphaComposite.getInstance(AlphaComposite.SRC_OVER,max(0,slideshowFade));
+        if (textAlpha < 1) {
+            AlphaComposite ac = java.awt.AlphaComposite.getInstance(AlphaComposite.SRC_OVER,textAlpha);
             g.setComposite(ac);
         }
         
@@ -539,7 +534,8 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
             imgG.dispose();
         }
         
-        g.drawImage(titleImg, 0, s100, null);
+        if (!hideText)
+           g.drawImage(titleImg, 0, s100, null);
         if (hideText) {
             g.setComposite(prevComp);
             return;
@@ -650,10 +646,9 @@ public class GameUI  extends BasePanel implements MouseListener, MouseMotionList
     }
     private void resetSlideshowTimer() {
         if (slideshowFade < 1) {
-            slideshowFade = 1;
-            slideshowTime = System.currentTimeMillis();
+            slideshowFade = SLIDESHOW_MAX;
             repaint();
-        }        
+        }
     }
     @Override
     public void keyReleased(KeyEvent e) {

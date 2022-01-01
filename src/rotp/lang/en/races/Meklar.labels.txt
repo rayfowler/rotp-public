@@ -1,5 +1,5 @@
 // race-specific variables (must start with _)
-_empire                           | Meklonars Dominion, Mechanar Dominion, Cybernar Dominion, Digitar Dominion, Technar Dominion
+_empire                           | Meklonar Dominion, Mechanar Dominion, Cybernar Dominion, Digitar Dominion, Technar Dominion
 _race                             | Meklonar, Mechanar, Cybernar, Digitar, Technar
 _race_plural                      | Meklonars, Mechanars, Cybernars, Digitars, Technars
 _title                            | Supreme Arbiter
