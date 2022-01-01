@@ -691,6 +691,14 @@ public final class Colony implements Base, IMappedObject, Serializable {
         if (!industry().isCompleted() && adj > 0)
             adj -= spending[INDUSTRY].adjustValue(adj);
         
+        // if we are building ships and doing no research, then assume this is a shipbuilding
+        // colony and put the rest of the excess in shipbuilding. Good catch, Xilmi
+        if (!locked(SHIP) && (spending[SHIP].allocation() > 0) && (spending[RESEARCH].allocation() == 0))
+            adj -= spending[SHIP].adjustValue(adj);
+        
+        if (adj == 0)
+            return;
+        
         // put whatever is left or take whatever is missing acording to the spending-sequence
         for (int i = 0; i < NUM_CATS; i++) {
             ColonySpendingCategory currCat = spending[spendingSeq[i]];
