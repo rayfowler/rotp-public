@@ -747,6 +747,10 @@ public class AIShipCaptain implements Base, ShipCaptain {
         // ail: Whether I want a war or not depends on whether the other faction is an enemy, not on relation!
         if ((colView != null) && !empire.enemies().contains(col.empire))  
             return true;
+        
+        // threatened to be completely disabled by warp-dissipater
+        if(currStack.maxMove() <= 1 && currStack.design().combatSpeed() > currStack.maxMove())
+            return true;
 
         // don't retreat if all enemies can only target planets
         boolean canBeTargeted = false;
