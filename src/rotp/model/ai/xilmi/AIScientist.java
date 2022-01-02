@@ -266,18 +266,27 @@ public class AIScientist implements Base, Scientist {
             return;
         }
 
-        float totalTechMod = 0;
+        float totalTechCost = 0;
+        
         for(int i = 0; i < 6; ++i)
-            totalTechMod += empire.race().techMod[i];
+            if(tech(empire.tech().category(i).currentTech()) != null)
+                totalTechCost += tech(empire.tech().category(i).currentTech()).researchCost();
+            else
+                totalTechCost += empire.tech().category(i).baseResearchCost(Math.round(empire.tech().category(i).techLevel()));
         
-        totalTechMod /= 36.0;
+        float totalInverse = 0;
         
-        empire.tech().computer().allocationPct(totalTechMod/empire.race().techMod[0]);
-        empire.tech().construction().allocationPct(totalTechMod/empire.race().techMod[1]);
-        empire.tech().forceField().allocationPct(totalTechMod/empire.race().techMod[2]);
-        empire.tech().planetology().allocationPct(totalTechMod/empire.race().techMod[3]);
-        empire.tech().propulsion().allocationPct(totalTechMod/empire.race().techMod[4]);
-        empire.tech().weapon().allocationPct(totalTechMod/empire.race().techMod[5]);
+        for(int i = 0; i < 6; ++i)
+            if(tech(empire.tech().category(i).currentTech()) != null)
+                totalInverse += totalTechCost / tech(empire.tech().category(i).currentTech()).researchCost();
+            else
+                totalInverse += totalTechCost / empire.tech().category(i).baseResearchCost(Math.round(empire.tech().category(i).techLevel()));
+        
+        for(int i = 0; i < 6; ++i)
+            if(tech(empire.tech().category(i).currentTech()) != null)
+                empire.tech().category(i).allocationPct((totalTechCost / tech(empire.tech().category(i).currentTech()).researchCost()) / totalInverse);
+            else
+                empire.tech().category(i).allocationPct((totalTechCost / empire.tech().category(i).baseResearchCost(Math.round(empire.tech().category(i).techLevel()))) / totalInverse);
         
         if (empire.fleetCommanderAI().inExpansionMode()) {
             if(empire.ignoresPlanetEnvironment())
