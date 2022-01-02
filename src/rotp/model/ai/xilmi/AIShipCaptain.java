@@ -405,10 +405,6 @@ public class AIShipCaptain implements Base, ShipCaptain {
                         bestTarget = target;
                         maxDesirability = desirability;
                     }
-                    else if (stack.isColony()) {
-                        bestTarget = target;
-                        maxDesirability = desirability;
-                    }
                     else {
                         FlightPath path = findBestPathToAttack(stack, target);
                         if (path != null) {  // can we even path to this target?
