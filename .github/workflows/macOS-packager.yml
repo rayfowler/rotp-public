@@ -1,0 +1,42 @@
+# Currently, the .dmg file generated is not signed and thus cannot be installed on newer versions of macOS. 
+
+name: Build macOS Installer
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch. Newer repos use 'main'
+  # terminology rather than 'master'. So, if you look up examples you might see 'main' instead of 'master' listed.
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+jobs:
+  build:
+    # The type of runner that the job will run on (e.g. macOS, win, linux)
+    runs-on: macos-latest
+    
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up JDK 17
+        uses: actions/setup-java@v2
+        with:
+          java-version: 17
+          distribution: adopt
+          cache: maven
+      # execute the actual maven step that will call jpackage and create the installer          
+      - name: Build with Maven
+        run: mvn -B clean package jpackage:jpackage
+      # Enable automatic
+      - name: Update Automatic Release
+        uses: marvinpinto/action-automatic-releases@latest
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN}}"
+          automatic_release_tag: "macOS-latest"
+          prerelease: true
+          title: "macOS Development Build"
+          files: ./target/*.dmg
