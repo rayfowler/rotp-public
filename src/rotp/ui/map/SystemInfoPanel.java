@@ -409,19 +409,22 @@ public class SystemInfoPanel extends SystemPanel implements MouseMotionListener 
             int x0 = eventsBox.x+s10;
             int w0 = eventsBox.width-s20;
             int lineH = s16;
+            int lastTurn = sv.lastReportTurn();
             List<StarSystemEvent> reverseEvents = new ArrayList<>(sv.system().events());
             Collections.reverse(reverseEvents);
             for (StarSystemEvent ev: reverseEvents) {
-                String yr= ev.year();
-                String desc = ev.description();
-                List<String> descLines = this.wrappedLines(g, desc, w0-s40);
-                int yrOffset = (descLines.size()-1)*(lineH/2);
-                drawString(g,yr, x0, y0+yrOffset);
-                for (String line: descLines) {
-                    drawString(g,line, x0+s40, y0);
-                    y0 += lineH;
+                if (lastTurn >= ev.turn()) {
+                    String yr= ev.year();
+                    String desc = ev.description();
+                    List<String> descLines = this.wrappedLines(g, desc, w0-s40);
+                    int yrOffset = (descLines.size()-1)*(lineH/2);
+                    drawString(g,yr, x0, y0+yrOffset);
+                    for (String line: descLines) {
+                        drawString(g,line, x0+s40, y0);
+                        y0 += lineH;
+                    }
+                    y0 += s3;
                 }
-                y0 += s3;
             }
             g.setClip(null);
         }

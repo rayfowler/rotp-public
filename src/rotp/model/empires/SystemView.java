@@ -29,7 +29,6 @@ import rotp.model.galaxy.ShipFleet;
 import rotp.model.galaxy.StarSystem;
 import rotp.model.planet.Planet;
 import rotp.model.planet.PlanetType;
-import rotp.ui.main.MainUI;
 import rotp.util.Base;
 
 public class SystemView implements IMappedObject, Base, Serializable {
@@ -118,6 +117,8 @@ public class SystemView implements IMappedObject, Base, Serializable {
     public float scoutTime()                 { return scoutTime; }
     public boolean isGuarded()               { return vGuarded; }
     public StarSystem rallySystem()          { return relocationSystem; }
+    public float spyTurn()                   { return spyTime - galaxy().beginningYear(); }
+    public float scoutTurn()                 { return scoutTime - galaxy().beginningYear(); }
     public void rallySystem(StarSystem sys)  {
         if (canRallyTo(sys)) {
             relocationSystem = (sys == system()) ? null : sys;
@@ -419,6 +420,7 @@ public class SystemView implements IMappedObject, Base, Serializable {
     public boolean scouted()                 { return (owner() == empire()) || (scoutTime() > 0); }
     public boolean spied()                   { return (owner() == empire()) || (spyTime() > 0); }
     public int lastReportYear()              { return (owner() == empire()) ? galaxy().currentYear() : (int) spyTime(); }
+    public int lastReportTurn()              { return (int) max(spyTurn(), scoutTurn()); }
     public int spyReportAge()                { return galaxy().currentYear() - lastReportYear(); }
 
     public boolean canRallyTo(StarSystem sys) { return sys.empire() == owner(); }
