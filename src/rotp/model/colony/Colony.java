@@ -39,6 +39,7 @@ import rotp.model.tech.Tech;
 import rotp.model.tech.TechMissileWeapon;
 import rotp.model.tech.TechTree;
 import rotp.ui.RotPUI;
+import rotp.ui.main.TransportDeploymentPanel;
 import rotp.ui.notifications.GNNNotification;
 import rotp.ui.notifications.InvadersKilledAlert;
 import rotp.ui.notifications.TransportsKilledAlert;
@@ -946,13 +947,15 @@ public final class Colony implements Base, IMappedObject, Serializable {
         }
     }
     public void scheduleTransportsToSystem(StarSystem dest, int pop) {
-        // adjust pop to max allowed
-
-        int xPop = min(pop, maxTransportsAllowed());
-        log("Scheduling " + xPop + " transports from: " + starSystem().name() + "  to: " + dest.name());
+        // If pop is the entire current population then accept it if abandonment is
+        // permitted, otherwise adjust it to the max allowed.
+        if (pop < population() || !TransportDeploymentPanel.enableAbandon) {
+            pop = min(pop, maxTransportsAllowed());
+        }
+        log("Scheduling " + pop + " transports from: " + starSystem().name() + "  to: " + dest.name());
 
         // if zero or to this system, then clear
-        if ((dest == starSystem()) || (xPop == 0))
+        if ((dest == starSystem()) || (pop == 0))
             clearTransport();
         else {
             transport().size(xPop);
