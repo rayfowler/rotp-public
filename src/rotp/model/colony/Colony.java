@@ -958,7 +958,7 @@ public final class Colony implements Base, IMappedObject, Serializable {
         if ((dest == starSystem()) || (pop == 0))
             clearTransport();
         else {
-            transport().size(xPop);
+            transport().size(pop);
             transport().setDest(dest);
             transport().setDefaultTravelSpeed();
         }
