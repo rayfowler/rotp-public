@@ -260,8 +260,16 @@ public final class Colony implements Base, IMappedObject, Serializable {
 
     public int displayPopulation()          { return population < 1 ? (int) Math.ceil(population) : (int) population; }
     public float population()               { return population; }
-    public void setPopulation(float pop)    { population = pop; }
-    public void adjustPopulation(float pop) { population += pop; }
+    public int setPopulation(float pop)    {
+        float currentMaxPop = planet().currentSize();
+        float lost = pop - currentMaxPop;
+        if (lost > 0) {
+            population = currentMaxPop;
+            return (int) lost;
+        }
+        population = max(0.0f, pop);
+        return 0;
+    }
     public int rebels()                      { return rebels; }
     public void rebels(int i)                { rebels = i; }
     public int deltaPopulation()             { return (int) population - (int) previousPopulation - (int) inTransport(); }
@@ -965,8 +973,12 @@ public final class Colony implements Base, IMappedObject, Serializable {
             empire.setVisibleShips();
     }
     public void acceptTransport(Transport t) {
-        setPopulation(min(planet.currentSize(), (population() + t.size())));
-        log("Accepting ", str(t.size()), " transports at: ", starSystem().name(), ". New pop:", fmt(population(), 2));
+        int lostPop = setPopulation(population() + t.size());
+        if (lostPop > 0 && t.empire().isPlayerControlled()) {
+            // TODO: Alert to user...
+        }
+        log("Accepting ", str(t.size() - lostPop), " transports at: ", starSystem().name(), ". New pop:", fmt(population(), 2),
+                "(lost ", str(lostPop), ")");
         t.size(0);
     }
     public float maxTransportsToReceive() {
@@ -1158,7 +1170,10 @@ public final class Colony implements Base, IMappedObject, Serializable {
             }
         }
 
-        setPopulation(min(planet.currentSize(),tr.size()));
+        int lostPop = setPopulation(tr.size());
+        if (lostPop > 0 && tr.empire().isPlayerControlled()) {
+            // TODO: Excess transports lost -- ought to be an alert?
+        }
         tr.size(0);
         shipyard().capturedBy(tr.empire());
         industry().capturedBy(tr.empire());
