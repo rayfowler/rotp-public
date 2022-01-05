@@ -281,6 +281,8 @@ public class EmpireColonyInfoPane extends BasePanel {
         private final int downButtonX[] = new int[3];
         private final int downButtonY[] = new int[3];
         private boolean allowAdjust = true;
+        List<Colony> colonies = new ArrayList<>();
+        private int maxBasesValue = 0;
         public EmpireBasesPane() {
             super();
             init();
@@ -291,17 +293,10 @@ public class EmpireColonyInfoPane extends BasePanel {
             addMouseWheelListener(this);
         }
         private void incrementBases() {
-            StarSystem sys = parentUI.systemViewToDisplay();
-            if (sys == null)
-                return;
-            Colony colony = sys.colony();
-            if  (colony == null)
-                return;
-            boolean updated = colony.defense().incrementMaxBases();
-            if (updated)
-                softClick();
-            else
-                misClick();
+            maxBasesValue++;
+            for (Colony c: colonies)
+                c.defense().maxBases(maxBasesValue);
+            softClick();
             repaint();
         }
         private void decrementBases() {
@@ -311,11 +306,14 @@ public class EmpireColonyInfoPane extends BasePanel {
             Colony colony = sys.colony();
             if  (colony == null)
                 return;
-            boolean updated = colony.defense().decrementMaxBases();
-            if (updated)
-                softClick();
-            else
+            if (maxBasesValue == 0) {
                 misClick();
+                return;
+            }
+            maxBasesValue--;
+            for (Colony c: colonies)
+                c.defense().maxBases(maxBasesValue);
+            softClick();
             repaint();
         }
         @Override
@@ -335,7 +333,8 @@ public class EmpireColonyInfoPane extends BasePanel {
         protected int maxValue(List<Colony> colonies) { 
             int val = 0;
             for (Colony c: colonies)
-                val += c.defense().maxBases(); 
+                val = max(val,c.defense().maxBases()); 
+            maxBasesValue = val;
             return val;
         }
         @Override
@@ -344,25 +343,27 @@ public class EmpireColonyInfoPane extends BasePanel {
             super.paintComponent(g);
 
             List<StarSystem> systems = parentUI.systemsToDisplay();
+            colonies.clear();
             if (systems == null) {
                 systems = new ArrayList<>();
                 StarSystem sys = parentUI.systemViewToDisplay();
-                if (sys != null)
+                if (sys != null) 
                     systems.add(sys);
             }
             
-            if (systems.isEmpty())
+            for (StarSystem sys: systems) {
+                if (sys.isColonized())
+                    colonies.add(sys.colony());
+            }
+            
+            if (colonies.isEmpty())
                 return;           
             
-            allowAdjust = systems.size() == 1;
-            if (!allowAdjust)
-                return;
+            allowAdjust = true;
+//            allowAdjust = systems.size() == 1;
+//            if (!allowAdjust)
+//                return;
             
-            StarSystem sys = systems.get(0);
-            Colony colony = sys.colony();
-            if  (colony == null)
-                return;
-
             int w = getWidth();
             int h = getHeight();
 
@@ -375,7 +376,7 @@ public class EmpireColonyInfoPane extends BasePanel {
             g.setColor(enabledArrowColor);
             g.fillPolygon(upButtonX, upButtonY, 3);
 
-            if (colony.defense().maxBases() == 0)
+            if (maxBasesValue == 0)
                 g.setColor(disabledArrowColor);
             else
                 g.setColor(enabledArrowColor);
@@ -394,7 +395,7 @@ public class EmpireColonyInfoPane extends BasePanel {
                 g.drawPolygon(upArrow);
             }
             else if ((hoverBox == downArrow)
-                && (colony.defense().maxBases() > 0)) {
+                && (maxBasesValue > 0)) {
                 g.setColor(SystemPanel.yellowText);
                 g.drawPolygon(downArrow);
             }
