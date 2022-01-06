@@ -334,6 +334,14 @@ public class ShipFleet implements Base, Sprite, Ship, Serializable {
         }
         return false;
     }
+    public boolean allowsScanning() {
+        for (int i=0;i<num.length;i++) {
+            ShipDesign d = design(i);
+            if ((num[i] > 0) && (d != null) && d.allowsScanning())
+                return true;
+        }
+        return false;
+    }
     public ShipDesign design(int emp, int num) {
         int[] visible = visibleShips(emp);
         int cnt = num;

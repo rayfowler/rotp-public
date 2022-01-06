@@ -180,12 +180,19 @@ public class ShipCombatManager implements Base {
         // in addition, if a fleet has a NAP with the system empire,
         // update the ownership for the system
         if (fl1 != null) {
-            emp2.encounterFleet(fl1);
+            if ((fl2 != null) && fl2.allowsScanning())
+                emp2.scanFleet(fl1);
+            else
+                emp2.encounterFleet(fl1);
             if (emp1.pactWith(sysEmpId))
                 emp1.sv.view(sys.id).setEmpire();
         }
+        
         if (fl2 != null) {
-            emp1.encounterFleet(fl2);
+            if ((fl1 != null) && fl1.allowsScanning())
+                emp1.scanFleet(fl2);
+            else
+                emp1.encounterFleet(fl2);
             if (emp2.pactWith(sysEmpId))
                 emp2.sv.view(sys.id).setEmpire();
         }
