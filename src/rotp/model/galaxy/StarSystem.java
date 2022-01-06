@@ -290,6 +290,29 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
     public void resolveAnyShipConflict() {
         if (orbitingShipsInConflict())
             galaxy().shipCombat().battle(this);
+        else
+            resolvePeacefulShipScans();
+    }
+    public void resolvePeacefulShipScans() {
+        List<ShipFleet> fleets = galaxy().ships.allFleetsAtSystem(id);
+        
+        if (fleets.size() < 2)
+            return;
+        
+        int sysEmpId = this.empId();
+                
+        for (ShipFleet fl1: fleets) {
+            boolean canScan = (fl1.empId() == sysEmpId) || (fl1.allowsScanning());
+            for (ShipFleet fl2: fleets) {
+                if (fl1 != fl2) {
+                    if (canScan)
+                        fl1.empire().scanFleet(fl2);
+                    else
+                        fl1.empire().encounterFleet(fl2);
+                }
+            }
+        }
+        
     }
     public void resolvePendingTransports() {
         if (!hasOrbitingTransports())
