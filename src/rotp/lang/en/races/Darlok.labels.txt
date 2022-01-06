@@ -1,7 +1,7 @@
 // race-specific variables (must start with _)
-_empire                           | Nazlok, Sarloks, Spyloks, Shadeloks, Nazloks
-_race                             | Nazlok, Sarlok, Spylok, Shadelok, Nazlok
-_race_plural                      | Nazlok, Sarloks, Spyloks, Shadeloks, Nazloks
+_empire                           | Nazlok, Sarloks, Spyloks, Shadeloks, Draloks
+_race                             | Nazlok, Sarlok, Spylok, Shadelok, Dralok
+_race_plural                      | Nazlok, Sarloks, Spyloks, Shadeloks, Draloks
 _title                            | ruler
 _nameTitle                        | 
 

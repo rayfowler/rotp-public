@@ -1,5 +1,5 @@
 // all possible names
-name: Nazlok, Sarlok, Spylok, Shadelok, Nazlok
+name: Nazlok, Sarlok, Spylok, Shadelok, Dralok
 
 desc1: Aggressive Diplomats
 desc2: Supreme Spies

@@ -169,6 +169,7 @@ public class MapOverlayNone extends MapOverlay {
                         StarSystem sys = (StarSystem) parent.clickedSprite();
                         if (player().canSendTransportsFrom(sys)) {
                             softClick();
+                            TransportDeploymentPanel.enableAbandon = false; 
                             parent.hoveringOverSprite(null);
                             parent.clickedSprite(sys.transportSprite());
                             parent.displayPanel().repaint();
