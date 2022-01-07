@@ -59,12 +59,12 @@ public class ColonyShipyard extends ColonySpendingCategory {
     public int buildLimit()                   { return buildLimit; }
     public void buildLimit(int i)             { buildLimit = max(0,i); }
     public String buildLimitStr() { return buildLimit == 0 ? text("MAIN_COLONY_SHIPYARD_LIMIT_NONE") : str(buildLimit); }
-    public boolean incrementBuildLimit()      { buildLimit++;  return true; }
-    public boolean decrementBuildLimit()      { 
+    public boolean incrementBuildLimit(int amt)  { buildLimit += amt;  return true; }
+    public boolean decrementBuildLimit(int amt)  { 
         if (buildLimit == 0)
             return false;
         
-        buildLimit--;
+        buildLimit = max(0, buildLimit - amt);
         return true;
     }
     public boolean resetBuildLimit()         {
