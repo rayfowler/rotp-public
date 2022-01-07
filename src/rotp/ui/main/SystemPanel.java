@@ -508,17 +508,17 @@ public abstract class SystemPanel extends BasePanel implements SystemViewer, Map
             if (descLines.size() == 1) {
                 int sw2 = g.getFontMetrics().stringWidth(desc);
                 int x2a = x2+((w2-sw2)/2);
-                drawBorderedString(g, desc, x2a, h-s13, Color.black, grayText);
+                drawBorderedString(g, desc, x2a, h-s13, Color.black, whiteText);
             }
             else if (descLines.size() == 2) {
                 String line = descLines.get(0);
                 int sw2 = g.getFontMetrics().stringWidth(line);
                 int x2a = x2+((w2-sw2)/2);
-                drawBorderedString(g, line, x2a, h-s20, Color.black, grayText);
+                drawBorderedString(g, line, x2a, h-s20, Color.black, whiteText);
                 line = descLines.get(1);
                 sw2 = g.getFontMetrics().stringWidth(line);
                 x2a = x2+((w2-sw2)/2);
-                drawBorderedString(g, line, x2a, h-s6, Color.black, grayText);
+                drawBorderedString(g, line, x2a, h-s6, Color.black, whiteText);
             }
 
             g.setColor(Color.black);
