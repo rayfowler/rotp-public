@@ -965,6 +965,13 @@ public final class Colony implements Base, IMappedObject, Serializable {
             empire.setVisibleShips();
     }
     public void acceptTransport(Transport t) {
+        if (!t.empire().canColonize(starSystem())) {
+            // no appropriate alert message for this transport loss. This is an edge case anyway
+            // as it occurs only when the destination system has been rendered inhabitable by a 
+            // random event while the transport was in transits
+            t.size(0);
+            return;
+        }
         setPopulation(min(planet.currentSize(), (population() + t.size())));
         log("Accepting ", str(t.size()), " transports at: ", starSystem().name(), ". New pop:", fmt(population(), 2));
         t.size(0);
@@ -975,6 +982,13 @@ public final class Colony implements Base, IMappedObject, Serializable {
     public void resistTransportWithRebels(Transport tr) {
         log(str(rebels), " ", empire().raceName(), " rebels at ", starSystem().name(), " resisting ",
                     str(tr.size()), " ", tr.empire().raceName(), " transports");
+        
+        if (!tr.empire().canColonize(starSystem())) {
+            // no appropriate alert message for this transport loss. Even more of an edge case.
+            tr.size(0);
+            return;
+        }
+        
         captives = population() - rebels;
         setPopulation(rebels);
 
@@ -1001,6 +1015,16 @@ public final class Colony implements Base, IMappedObject, Serializable {
     public void resistTransport(Transport tr) {
         log(empire().raceName() + " colony at " + starSystem().name() + " resisting " + tr.size() + " "
                         + tr.empire().raceName() + " transports");
+        
+        if (!tr.empire().canColonize(starSystem())) {
+            if (tr.empire().isPlayerControlled()) 
+                TransportsKilledAlert.create(empire(), starSystem(), tr.launchSize());
+            else if (empire().isPlayerControlled()) 
+                InvadersKilledAlert.create(tr.empire(), starSystem(), tr.launchSize());
+            tr.size(0);
+            return;
+        }
+        
         int passed = 0;
         int num = tr.size();
         float pct = tr.combatTransportPct();
