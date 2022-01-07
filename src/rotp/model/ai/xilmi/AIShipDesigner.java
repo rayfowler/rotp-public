@@ -810,10 +810,10 @@ public class AIShipDesigner implements Base, ShipDesigner {
         for (int slot=0;slot<ShipDesignLab.MAX_DESIGNS;slot++) {
             ShipDesign d = lab.design(slot);
             float fightingAdapted = fightingAdapted(d);
-            float score = fightingAdapted * (1 - d.availableSpace() / d.totalSpace()) * d.warpSpeed() * (d.attackLevel() + 5);
+            float score = fightingAdapted * (1 - d.availableSpace() / d.totalSpace()) * d.warpSpeed();
             if(fightingAdapted > 0.5f)
             {
-                score = (fightingAdapted + bombingAdapted(d)) * (1 - d.availableSpace() / d.totalSpace()) * d.warpSpeed() * (d.attackLevel() + 5);
+                score = (fightingAdapted + bombingAdapted(d)) * (1 - d.availableSpace() / d.totalSpace()) * d.warpSpeed();
             }
             //System.out.print("\n"+empire.name()+" BestDesignToFight "+d.name()+" score: "+score);
             if(score > fightScore)
@@ -843,7 +843,7 @@ public class AIShipDesigner implements Base, ShipDesigner {
         int lowestCount = Integer.MAX_VALUE;
         for (int slot=0;slot<ShipDesignLab.MAX_DESIGNS;slot++) {
             ShipDesign d = lab.design(slot);
-            float score = bombingAdapted(d) * (1 - d.availableSpace() / d.totalSpace()) * d.warpSpeed() * (d.attackLevel() + 5);
+            float score = bombingAdapted(d) * (1 - d.availableSpace() / d.totalSpace()) * d.warpSpeed();
             if(score > bombScore)
             {
                 bombScore = score;
