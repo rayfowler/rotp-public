@@ -153,6 +153,9 @@ public class ColonyShipyard extends ColonySpendingCategory {
     }
     @Override
     public void nextTurn(float totalProd, float totalReserve) {
+        if (colony().allocation(categoryType()) == 0)
+            return;
+        
         rallyCount = 0;
         rallyDesignId = 0;
         rallyDestSysId = StarSystem.NULL_ID;
@@ -282,6 +285,9 @@ public class ColonyShipyard extends ColonySpendingCategory {
     public int upcomingShipCount() {
         if (buildingObsoleteDesign())
             return 0;
+        if (colony().allocation(categoryType()) == 0)
+            return 0;
+        
         float tmpShipReserveBC = shipReserveBC;
         float tmpShipBC = shipBC;
         float tmpStargateBC = stargateBC;
@@ -347,6 +353,9 @@ public class ColonyShipyard extends ColonySpendingCategory {
     }
     @Override
     public String upcomingResult() {
+        if (colony().allocation(categoryType()) == 0)
+            return noneText;
+        
         float tmpShipReserveBC = shipReserveBC;
         float tmpShipBC = shipBC;
         float tmpStargateBC = stargateBC;
