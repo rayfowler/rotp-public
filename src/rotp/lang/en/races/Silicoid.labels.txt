@@ -32,7 +32,7 @@ MAIN_ADVISOR_SHIP_WEAPON   | God-Emperor! Your scientists present their latest a
 MAIN_ADVISOR_COUNCIL       | A meeting of lords known as the Galactic Council will soon be upon us! Our ancient enemy must be concealed among those who gather there! We must expose them so that our noble crusade can truly begin!
 MAIN_ADVISOR_REBELLION     | Mighty Emperor! The unthinkable occurs. Our people, doubtless infected by our nefarious Ancient Enemy, rebel against you on %1. We must put an end to this corruption at once!
 MAIN_ADVISOR_RESIST_COUNCIL   | The temerity of these fools! God-Emperor, our fleets stand ready! Lead us to victory in this fated battle!
-MAIN_ADVISOR_COUNCIL_RESISTED | Of course the children of our enemy could not accept [my_race] dominance! Our people are in a frenzy: at last the prophecy will be fulfilled!
+MAIN_ADVISOR_COUNCIL_RESISTED | Of course the children of our enemy could not accept Cryslonoid dominance! Our people are in a frenzy: at last the prophecy will be fulfilled!
 
 // text for endings... '#' represents a paragraph break
 // variables: %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 is special race-specific text described below
