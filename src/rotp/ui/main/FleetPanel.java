@@ -671,8 +671,15 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 displayFleet = origFleet;
 
             clearButtons();
-            drawInfo(g,displayFleet, 0,0,w,h1);
-            drawFleet(g,origFleet,displayFleet, canAdjust,0,h1,w,h-h1);
+
+            boolean sameFleet = (origFleet.empId() == displayFleet.empId()) && (origFleet.sysId() == displayFleet.sysId()) && (origFleet.destSysId() == displayFleet.destSysId());
+            boolean showAdjust = canAdjust && sameFleet;
+
+            if (showAdjust)
+                drawInfo(g,displayFleet, 0,0,w,h1);
+            else
+                drawInfo(g,origFleet, 0,0,w,h1);
+            drawFleet(g,origFleet,displayFleet, showAdjust,0,h1,w,h-h1);
         }
         private void clearButtons() {
             for (int i=0;i<shipBox.length;i++) {
@@ -853,7 +860,7 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                 }
             }
         }
-        private void drawFleet(Graphics2D g, ShipFleet origFl, ShipFleet displayFl, boolean canAdjust, int x, int y, int w, int h) {
+        private void drawFleet(Graphics2D g, ShipFleet origFl, ShipFleet displayFl, boolean showAdjust, int x, int y, int w, int h) {
             // draw star background
             g.setColor(Color.black);
             g.fillRect(x, y, w, h);
@@ -891,8 +898,6 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
                     num++;
             }
             
-            boolean sameFleet = (origFl.empId() == displayFl.empId()) && (origFl.sysId() == displayFl.sysId()) && (origFl.destSysId() == displayFl.destSysId());
-            boolean showAdjust = canAdjust && sameFleet;
             boolean contact = origFl.empire().isPlayer() || player().hasContacted(origFl.empId());
             switch(num) {
                 case 0:
