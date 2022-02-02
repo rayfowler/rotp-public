@@ -1,0 +1,1980 @@
+// This is the label text file for Remnants of the Precursors
+// comment lines should start with '/'  they are ignored
+//  
+// the format for each line is   key | label
+//    where 'key' is the code used by the game to retrieve the label
+//    You cannot create new keys! The game will not use them
+//    You can only use keys that the game is looking for.
+//
+// Large number formatting
+NUM_FORMAT_THOUSANDS              | %1K
+NUM_FORMAT_MILLIONS               | %1M
+NUM_FORMAT_BILLIONS               | %1B
+
+// Star descriptions
+RED_STAR_DESCRIPTION              | Les étoiles rouges sont des étoiles vieilles et ternes qui ont généralement des planètes pauvres.
+YELLOW_STAR_DESCRIPTION           | Les étoiles jaunes offrent les meilleures chances de découvrir les planètes terrestres et souterraines.
+ORANGE_STAR_DESCRIPTION           | Les étoiles oranges sont modérément brillantes et ont un large éventail de types planétaires.
+BLUE_STAR_DESCRIPTION             | Les étoiles bleues sont des étoiles relativement jeunes avec des planètes sans vie riches en minéraux.
+WHITE_STAR_DESCRIPTION            | Les étoiles blanches brûlent incroyablement chaudes et ont généralement des planètes hostiles.
+PURPLE_STAR_DESCRIPTION           | Les étoiles à neutrons sont rares et offrent les meilleures chances de trouver des planètes riches.
+
+// Planet Types
+PLANET_ARID                       | Aride
+PLANET_BARREN                     | Stérile
+PLANET_DEAD                       | Morte
+PLANET_DESERT                     | Désertique
+PLANET_INFERNO                    | Inferno
+PLANET_JUNGLE                     | Jungle
+PLANET_MINIMAL                    | Minimale
+PLANET_NONE                       | Aucun
+PLANET_OCEAN                      | Océanique
+PLANET_RADIATED                   | Irradiée
+PLANET_STEPPE                     | Steppe
+PLANET_TERRAN                     | Terriene
+PLANET_TOXIC                      | Toxique
+PLANET_TUNDRA                     | Toundra
+
+// Spy Missions
+SPY_HIDE                          | Cacher
+SPY_ESPIONAGE                     | Espionnage
+SPY_SABOTAGE                      | Sabotage
+SPY_CAUGHT                        | [Vos espions ont été pris.]
+SPY_FRAMED                        | [Vous aves été piégé]
+SPY_FORCED_CONFESSION             | [Un faux aveu a été forcé.]
+SPY_WARNING                       | [Vous avez été averti.]
+
+ARID_DESC_BIOLOGICAL              | Les planètes arides sont des mondes terrestres secs avec une végétation limitée et pas plus de 40% de surface d'eau.
+BARREN_DESC_BIOLOGICAL            | Les planètes stériles sont des mondes secs et poussiéreux avec des atmosphères minces et aucune eau de surface.
+DEAD_DESC_BIOLOGICAL              | Les planètes mortes sont des mondes terrestres froids et morts depuis longtemps avec des atmosphères minces et aucune eau de surface. 
+DESERT_DESC_BIOLOGICAL            | Les planètes désertiques sont des mondes terrestres secs avec une végétation très clairsemée et pas plus de 20% de surface d'eau.
+INFERNO_DESC_BIOLOGICAL           | Les planètes Inferno sont des mondes extrêmement chauds avec des atmosphères épaisses et des tempêtes violentes.
+JUNGLE_DESC_BIOLOGICAL            | Les planètes jungle sont des mondes tropicaux luxuriants recouverts de forêts épaisses, de jungles et de marécages.
+MINIMAL_DESC_BIOLOGICAL           | Les planètes minimales sont des mondes terrestres desséchés et désolés en marge de l'habitabilité.
+NONE_DESC_BIOLOGICAL              | Sans planètes rocheuses, ces systèmes remplis d'astéroïdes défient toutes les théories sur la formation planétaire.
+OCEAN_DESC_BIOLOGICAL             | Les planètes océaniques sont presque entièrement recouvertes d'eau, ce qui rend l'accès aux ressources souvent difficile.
+RADIATED_DESC_BIOLOGICAL          | Les planètes irradiées sont des mondes sans air et sans vie inondés par le rayonnement des étoiles proches.
+STEPPE_DESC_BIOLOGICAL            | Les planètes steppiques sont des mondes terrestres plus froids dominés par des hivers rigoureux et des environnements arctiques.
+TERRAN_DESC_BIOLOGICAL            | Les planètes terriennes sont des paradis terrestres, avec de vastes zones tempérées supportant une grande variété de biomes.
+TOXIC_DESC_BIOLOGICAL             | Les planètes toxiques sont des mondes gelés avec des écosystèmes glacés à base de méthane.
+TUNDRA_DESC_BIOLOGICAL            | Les planètes toundra sont des mondes terrestres dormants piégés dans une glacière.
+
+// Planet Specials
+PLANET_ARTIFACTS                  | Artefacts
+PLANET_ULTRA_POOR                 | Ultra Pauvre
+PLANET_POOR                       | Pauvre
+PLANET_RICH                       | Riche
+PLANET_ULTRA_RICH                 | Ultra Riche
+PLANET_HOSTILE                    | Hostile
+PLANET_FERTILE                    | Fertile
+PLANET_GAIA                       | Gaïa
+
+// Planet Descriptors for Race
+PLANET_HOMEWORLD                  | Monde [alien_race_pluralnounof]
+PLANET_WORLD                      | Planète [alien_race_pluralnounof] 
+PLANET_COLONY                     | Colonie [alien_race_pluralnounof] 
+PLANET_ORION                      | Orion
+PLANET_ORION_GUARDIAN             | Gardien
+
+// Nebula names  ("starName" Nebula)
+NEBULA_NAME                       | Nebula %1
+NEBULA_ID                         | NGC %1
+
+// %2 is the leader's actual name
+TITLE_LEADERNAME                  | [alien_nameTitle] %2
+
+// Extended Colony Name prefix when we run out of names
+COLONY_NAME_2                     | Nouvelle %1
+COLONY_NAME_3                     | %1 Extérieur
+COLONY_NAME_4                     | %1 Lointaine
+COLONY_NAME_5                     | %1 Distante
+
+// Space Monster Names
+SPACE_AMOEBA                      | l'Amibe Spatial
+SPACE_CRYSTAL                     | le Cristal Spatial
+ORION_GUARDIAN                    | le Gardien d'Orion
+
+// Personality types (adjective)
+LEADER_ERRATIC                    | Erratique
+LEADER_PACIFIST                   | Pacifiste
+LEADER_HONORABLE                  | Honorable
+LEADER_RUTHLESS                   | Impitoyable
+LEADER_AGGRESSIVE                 | Aggressif
+LEADER_XENOPHOBIC                 | Xénophobe
+
+// Leader Objective Types (noun)
+LEADER_DIPLOMAT                   | Diplomate
+LEADER_MILITARIST                 | Militariste
+LEADER_ECOLOGIST                  | Écologiste
+LEADER_INDUSTRIALIST              | Industriel
+LEADER_EXPANSIONIST               | Expansionniste
+LEADER_TECHNOLOGIST               | Technologue
+// Leader Personality & Objective displayed together
+LEADER_PERSONALITY_FORMAT         | %1 %2
+
+// Technology names and descriptions 
+TECH_COMPUTERS                    | Des ordinateurs
+TECH_CONSTRUCTION                 | Construction
+TECH_FORCE_FIELDS                 | Champs de Force
+TECH_PLANETOLOGY                  | Planétologie
+TECH_PROPULSION                   | Propulsion
+TECH_WEAPONS                      | Armes
+
+// Random Events
+EVENT_ACCIDENT                    | Un accident industriel majeur pollue le monde [target_raceadjec] dans le système [system] avec des déchets industriels, endommageant son écologie et irradiant de façon permanente la planète.
+EVENT_ASSASSINATION               | Un terroriste [assassin_empireof] a assassiné le diplomate [victim_race_pluralnounof], plaçant les deux empires au bord de la guerre.
+EVENT_COMET                       | Une énorme comète a été détectée dans le système [system] et entrera en collision avec le monde [target_raceadjec] dans [years] ans à moins qu'une grande flotte de navires ne soit déployée pour la détruire.
+EVENT_COMET_2                     | Une énorme comète devrait anéantir toute vie sur le monde [target_raceadjec] dans le système [system] en seulement [years] ans. Plus de navires armés sont nécessaires pour éviter cette catastrophe.
+EVENT_COMET_3                     | La comète du système [system] a été détruite, grâce aux efforts de la flotte [target_raceadjecF].
+EVENT_COMET_4                     | La comète mortelle a détruit le monde [target_raceadjec] dans le système [system].
+EVENT_DONATION                    | Un riche marchand désireux de soutenir la cause fait un don substantiel de [amt] BC à la réserve planétaire [target_raceadjecF].
+EVENT_DEPLETED                    | Le monde [target_raceadjec] de [system] a épuisé ses gisements de métaux lourds, rendant la planète Mineral Poor.
+EVENT_DERELICT                    | La flotte [target_empireof] a découvert un ancien navire abandonné. Les scientifiques [target_race_pluralnounof] ont depuis récolté plusieurs technologies de champ de force et d'armes à partir du navire.
+EVENT_EARTHQUAKE                  | Un tremblement de terre dévastateur frappe le monde [target_raceadjec] dans le système [system], tuant [amt] millions de colons tout en endommageant de vastes zones d'activité industrielle.
+EVENT_ENRICHED                    | L'exploration minière en profondeur dans le monde [target_raceadjec] dans le système [system] révèle un énorme gisement de métaux lourds jusque-là non détecté, rendant la planète riche en minéraux.
+EVENT_FERTILE                     | Un changement soudain de l'axe planétaire du monde [target_raceadjec] à [system] a changé son environnement pour qu'il soit plus fertile. La croissance démographique augmente de 50 %.
+EVENT_PIRACY                      | Des pirates ont commencé à perturber le commerce global entre les systèmes [target_race_pluraladjec], réduisant les revenus commerciaux de [amt]%. Des navires armés sont nécessaires dans le système [system] pour interrompre leur base d'opérations.
+EVENT_PIRACY_2                    | Les pirates basés dans le système [system] continuent de perturber l'activité commerciale [target_race_pluralnounof], réduisant les niveaux commerciaux globaux d'environ [amt]%.
+EVENT_PIRACY_3                    | La flotte [target_raceadjecF] a détruit une opération de piratage majeure basée sur le système [system]. Dans l'ensemble, les niveaux commerciaux sont revenus à des niveaux normaux.
+EVENT_PLAGUE                      | Une peste mortelle frappe le monde [target_raceadjec] dans le système [system]. Une quarantaine a été placée sur le système et des millions de personnes devraient mourir chaque année jusqu'à ce que les scientifiques puissent trouver un remède.
+EVENT_PLAGUE_2                    | La peste mortelle dans le système [system] persiste. Les scientifiques estiment qu'il faudra encore [amt] RP pour trouver un remède.
+EVENT_PLAGUE_3                    | Les scientifiques [target_race_pluraladjec] ont trouvé un remède contre la peste mortelle qui afflige le système [system]. La quarantaine du système a été levée.
+EVENT_REBELLION                   | Le monde [target_raceadjec] dans le système [system] est entré en révolte, cessant toute production planétaire. La révolte se poursuivra jusqu'à ce que la rébellion soit vaincue militairement.
+EVENT_SUPERNOVA                   | Les scientifiques [target_race_pluraladjec] prédisent que l'étoile du système [system] deviendra une supernova d'ici [year] ans. Ils recommandent de détourner toutes les recherches du système vers la recherche d'une solution.
+EVENT_SUPERNOVA_2                 | La menace d'une supernova dans le système [system] d'ici [year] ans demeure. Les scientifiques estiment qu'il faudra encore [amt] RP pour prévenir cette catastrophe.
+EVENT_SUPERNOVA_3                 | En travaillant fébrilement, les physiciens [target_race_pluraladjec] dans le système [system] ont trouvé un moyen de retarder la supernova de leur étoile proche dans un avenir prévisible.
+EVENT_SUPERNOVA_4                 | L'étoile du système [system] est devenue une supernova, irradiant le monde [target_raceadjec], dévastant son environnement et tuant des millions de personnes.
+EVENT_VIRUS                       | Un virus informatique hautement destructeur frappe les centres de recherche [target_race_pluraladjec], détruisant des années de recherche en [technology].
+EVENT_SPACE_AMOEBA                | Une forme biologique monstrueuse surnommée "l'Amibe Spatiale" a été repérée s'approchant du système [system]. Les colons et les flottes [victim_race_pluraladjec] se préparent au pire.
+EVENT_SPACE_AMOEBA_1              | Une forme biologique monstrueuse surnommée "l'Amibe Spatiale" a été repérée s'approchant du système non colonisé [system].
+EVENT_SPACE_AMOEBA_2              | L'Amibe Spatiale a complètement consommé la colonie [victim_raceadjecF] dans le système [system].
+EVENT_SPACE_AMOEBA_3              | L'Amibe Spatiale a été détruite par les défenseurs [victim_race_pluraladjec] dans le système [system].
+EVENT_SPACE_CRYSTAL               | Une gigantesque entité cristalline appelée "le Cristal Spatial" a été repérée s'approchant du système [system]. Les colons et les flottes [victim_race_pluraladjec] se préparent au pire.
+EVENT_SPACE_CRYSTAL_1             | Une gigantesque entité cristalline appelée "le Cristal Spatial" a été repérée s'approchant du système non colonisé [system].
+EVENT_SPACE_CRYSTAL_2             | Le Cristal Spatial a complètement détruit toute vie sur la colonie [victim_raceadjecF] dans le système [system].
+EVENT_SPACE_CRYSTAL_3             | Le Cristal Spatial a été détruit par les défenseurs [victim_race_pluraladjec] dans le système [system].
+
+SYSEVENT_HOMEWORLD                | Monde d'origine [alien_race_pluralnounof].
+SYSEVENT_SCOUTED                  | D'abord repéré par [alien_race_pluralnoun].
+SYSEVENT_COLONIZED                | Colonisé par [alien_race_pluralnoun].
+SYSEVENT_CAPTURED                 | Capturé par des forces [alien_race_pluraladjecF].
+SYSEVENT_ABANDONED                | Abandonné par [alien_race_pluralnoun].
+SYSEVENT_DESTROYED                | Détruit par des forces [alien_race_pluraladjecF] en orbite.
+SYSEVENT_DESTROYED_MONSTER        | Détruit par %1.
+SYSEVENT_DESTROYED_UNKNOWN        | Détruit.
+SYSEVENT_ATMOSPHERE_TERRAFORMED   | L'atmosphère de la planète a été terraformée.
+SYSEVENT_SOIL_ENRICHED            | Le sol de la planète s'est enrichi, ce qui le rend fertile.
+SYSEVENT_GAIA_TERRAFORMING        | La planète a été convertie en un monde Gaïa.
+SYSEVENT_REBELLION                | La colonie est entrée en rébellion.
+SYSEVENT_COMET                    | Une comète a impacté la planète.
+SYSEVENT_PLAGUE                   | Une peste mortelle a balayé la planète.
+SYSEVENT_PLAGUE_ENDED             | La peste qui afflige la planète est terminée.
+SYSEVENT_ENRICHED                 | D'énormes gisements de minerai riche ont été découverts sur la planète.
+SYSEVENT_DEPLETED                 | Les gisements de minerai sur la planète ont été épuisés.
+SYSEVENT_ACCIDENT                 | Un accident industriel massif a irradié la planète.
+SYSEVENT_SUPERNOVA                | La planète a été irradiée par une supernova.	
+
+
+// Diplomatic Incident titles & descriptions
+INC_ASSASSINATION_TITLE           | Assassinat
+INC_ASSASSINATION_DESC            | Un terroriste [assassin_empireof] a assassiné le diplomate [victim_raceadjec].
+INC_ATTACKED_ALLY_TITLE           | Allié attaqué
+INC_ATTACKED_ALLY_DESC            | [attacker_empire] a attaqué [defender_empire], un allié [my_empireof].
+INC_ATTACKED_ENEMY_TITLE          | Ennemi attaqué
+INC_ATTACKED_ENEMY_DESC           | [attacker_empire] a attaqué [defender_empire], un ennemi [my_empireof].
+INC_USED_BIOWEAPONS_TITLE         | Des armes biologiques ont été utilisées
+INC_USED_BIOWEAPONS_DESC          | [attacker_empire] a utilisé des armes biologiques contre [victim_empire] à [system].
+INC_KILLED_MONSTER_TITLE          | %1
+INC_KILLED_MONSTER_DESC           | [your_empire] a détruit [monster], mettant fin à une menace galactique pour tous les empires.
+INC_KILLED_GUARDIAN_TITLE         | le Gardien d'Orion
+INC_KILLED_GUARDIAN_DESC          | [your_empire] a détruit le Guardianship d'Orion, révélant les secrets des précurseurs.
+INC_NO_RELATIONS_TITLE            | Pas de relations diplomatiques
+INC_NO_RELATIONS_DESC             | Il n'y a actuellement aucune relation diplomatique entre [your_empire] et [my_empire].
+INC_ALLIED_WITH_ENEMY_TITLE       | Allié avec l'ennemi
+INC_ALLIED_WITH_ENEMY_DESC        | [my_empire] s'oppose à votre alliance avec les détestés [other_empireof].
+INC_AT_WAR_WITH_ALLY_TITLE        | En guerre avec un Allié
+INC_AT_WAR_WITH_ALLY_DESC         | Vous êtes en guerre contre [other_empire], un allié [my_empireof].
+INC_CLOSED_EMBASSY_TITLE          | Ambassadeur rappelé
+INC_CLOSED_EMBASSY_DESC           | [your_empire] a mis fin aux relations diplomatiques avec [my_empire].
+INC_EVICTED_SPIES_TITLE           | Des diplomates expulsés
+INC_EVICTED_SPIES_DESC            | [your_empire] a expulsé tous les diplomates non essentiels [my_empireof].
+INC_BROKE_ALLIANCE_TITLE          | Alliance brisée
+INC_BROKE_ALLIANCE_DESC           | [your_empire] a rompu leur alliance avec [my_empire]. [spiesCaught]
+INC_BROKE_PACT_TITLE              | Pacte de non-agression rompu
+INC_BROKE_PACT_DESC               | [your_empire] a rompu leur pacte de non-agression avec [my_empire]. [spiesCaught]
+INC_BROKE_TRADE_TITLE             | Traité commercial rompu
+INC_BROKE_TRADE_DESC              | [your_empire] a rompu leur traité commercial avec [my_empire].
+INC_ATTACKED_COLONY_TITLE         | Colonie attaquée
+INC_ATTACKED_COLONY_DESC          | Une flotte [attacker_empireof] a attaqué le monde [defender_raceadjec] dans [system]. [amt] millions de citoyens ont été perdus.
+INC_CAPTURED_COLONY_TITLE         | Colonie capturée
+INC_CAPTURED_COLONY_DESC          | Les troupes de [attacker_empire] ont envahi et capturé le monde [defender_race_pluralnounof] dans [system]. [amt] millions de citoyens ont été perdus.
+INC_DESTROYED_COLONY_TITLE        | Colonie détruite
+INC_DESTROYED_COLONY_DESC         | Une flotte [attacker_empireof] a complètement détruit le monde [defender_raceadjec] dans [system]. [amt] millions de citoyens ont été perdus.
+INC_FIRST_CONTACT_TITLE           | Premier contact
+INC_FIRST_CONTACT_DESC            | Le premier contact a été établi avec [your_empire]. Méfiez-vous !
+INC_INVADED_COLONY_TITLE          | Colonie envahie
+INC_INVADED_COLONY_DESC           | Des troupes [attacker_race_pluralnounof] ont envahi mais n'ont pas réussi à capturer le monde [defender_raceadjec] dans [system]. [amt] millions de citoyens ont été perdus.
+INC_COUNCIL_VOTE_TITLE            | Vote du Conseil
+INC_COUNCIL_VOTE_FOR_DESC         | [voter_race_pluralnoun] ont voté pour [candidate_name], leader [candidate_race_pluralnounof].
+INC_COUNCIL_VOTE_AGAINST_DESC     | [voter_race_pluralnoun] ont voté contre [candidate_name], leader [candidate_race_pluralnounof].
+INC_COUNCIL_ABSTAIN_DESC          | [voter_race_pluralnoun] se sont abstenus lors de l'élection du Conseil Galactique, refusant de voter pour [candidate_name], leader [candidate_race_pluralnounof].
+INC_DECLARED_WAR_TITLE            | Guerre déclarée
+INC_DECLARED_WAR_DESC             | [aggressor_empire] a déclaré la guerre aux [victim_empire_pluraladjec].
+INC_ERRATIC_WAR_TITLE             | Comportement ératique
+INC_ERRATIC_WAR_DESC              | [aggressor_race_pluralnoun] sont devenus agités et ont déclaré la guerre à [victim_empire], et personne ne sait vraiment pourquoi.
+INC_DEMANDED_TRIBUTE_TITLE        | Hommage demandé
+INC_ENCROACHING_TITLE             | Empiètement
+INC_ENCROACHING_DESC              | [your_empire] a colonisé le système [system], empiétant sur les frontières [my_empireof].
+INC_TECH_STOLEN_TITLE             | Technologie volée
+INC_TECH_STOLEN_DESC              | Des espions [spy_race_pluraladjec] ont volé les secrets de [tech] à [victim_race_pluraladjec].
+INC_TECH_FRAMED_DESC              | Des espions inconnus ont volé des secrets technologiques à la [victim_race_pluraladjec]. (Vous avez été piégé)
+INC_TECH_EXCHANGE_TITLE           | Technologie échangée
+INC_TECH_EXCHANGE_DESC            | [my_empire] a enseigné les secrets de [techGiven] à [your_empire] en échange des secrets de [techReceived].
+INC_FINANCIAL_AID_TITLE           | De l'aide financière
+INC_FINANCIAL_AID_DESC            | [your_empire] a donné gratuitement [amt] BC à [my_empire].
+INC_TECHNOLOGY_AID_TITLE          | De l'aide technologique
+INC_TECHNOLOGY_AID_DESC           | [your_empire] a librement partagé les secrets de [tech] avec [my_empire].
+INC_TECHNOLOGY_AID_DESC_MULT      | [your_empire] a librement partagé avec [my_empire] les secrets des technologies suivantes : [techs]
+INC_TECHNOLOGY_TECH_LIST_COMMA    | , 
+INC_ENEMY_AID_TITLE               | De l'aide à l'ennemi 
+INC_ENEMY_AID_MONEY_DESC          | [your_empire] a donné [amt] BC en aide à [enemy_empire], un ennemi [my_empireof].
+INC_ENEMY_AID_TECH_DESC           | [your_empire] a donné les secrets de [tech] à [enemy_empire], un ennemi [my_empireof].
+INC_PARANOIA_TITLE                | Paranoïa
+INC_PARANOIA_DESC1                | Une frange radicale de théoriciens du complot dans [my_empire] croient ridiculement que [your_race_pluralnoun] représentent une menace existentielle pour leur espèce. [your_empire] occupe désormais [num] systèmes fondés à l'origine par [my_empire].
+INC_PARANOIA_DESC2                | Une faction marginale au sein [my_empireof] pense que [your_race_pluralnoun] représentent une menace existentielle pour leur espèce. [your_empire] occupe désormais [num] systèmes fondés à l'origine par [my_empire].
+INC_PARANOIA_DESC3                | Une minorité bruyante au sein [my_empireof] exprime ses inquiétudes quant au fait que [your_race_pluralnoun] représentent une menace existentielle pour leur espèce. [your_empire] occupe désormais [num] systèmes fondés à l'origine par [my_empire].
+INC_PARANOIA_DESC4                | Une grande partie [my_empireof] appelle à l'action face aux craintes croissantes que [your_race_pluralnoun] puissent en effet constituer une menace existentielle pour leur espèce. [your_empire] occupe désormais [num] systèmes fondés à l'origine par [my_empire].
+INC_PARANOIA_DESC5                | Des paniques de masse ont saisi [my_empire] en réalisant que [your_race_pluralnoun] sont clairement devenus une menace existentielle pour leur espèce. [your_empire] occupe désormais [num] systèmes fondés à l'origine par [my_empire].
+INC_EXPANSION_TITLE               | Expansion
+INC_EXPANSION_DESC                | Avec le contrôle de [num] systèmes, [your_empire] est devenu trop grand.
+INC_GENOCIDE_TITLE                | Génocide
+INC_GENOCIDE_DESC                 | [attacker_empire] a complètement détruit la race [victim_raceadjecF].
+INC_FINAL_WAR_TITLE               | Guerre Finale !
+INC_FINAL_WAR_DESC                | [rebel_empire] s'est rebellé contre la décision du Conseil Galactique, ce qui a entraîné un appel à son éradication complète par les forces alliées restantes de la galaxie.
+INC_MILITARY_BUILDUP_TITLE        | Réarmement
+INC_MILITARY_BUILDUP_DESC         | [your_empire] assemble une flotte armée à [system].
+INC_OATHBREAKER_TITLE             | Serment Rompu
+INC_DESTROYED_BASES_TITLE         | Des Bases de Missiles Détruites
+INC_DESTROYED_BASES_DESC          | Des saboteurs travaillant pour [spy_empire] ont détruit des bases de missiles défensifs [amt] dans le système [system].
+INC_DESTROYED_FACTORIES_TITLE     | Des Usines Détruites
+INC_DESTROYED_FACTORIES_DESC      | Des saboteurs travaillant pour [spy_empire] ont détruit des usines [amt] dans le système [system].
+INC_INCITED_REBELLION_TITLE       | Incité à la rébellion
+INC_INCITED_REBELLION_DESC        | Des séditionnistes travaillant pour [spy_empire] ont incité [amt] millions de rebelles dans le système [system].
+INC_SIGNED_ALLIANCE_TITLE         | Alliance
+INC_SIGNED_ALLIANCE_DESC          | [my_empire] et [your_empire] se sont unis dans une Alliance, promettant de se défendre les uns les autres contre les menaces extérieures. 
+INC_JOINT_WAR_TITLE               | Guerre déclarée
+INC_LEFT_ALLIANCE_TITLE           | Alliance brisée
+INC_SIGNED_PACT_TITLE             | Pacte de non-agression
+INC_SIGNED_PACT_DESC              | [my_empire] et [your_empire] ont signé un pacte de non-agression, évitant les conflits de navires dans les systèmes neutres.
+INC_SIGNED_PEACE_TITLE            | Traité de Paix
+INC_SIGNED_PEACE_DESC             | [my_empire] et [your_empire] ont signé un traité de paix, mettant fin à toutes les hostilités jusqu'à ce que[endYear].
+INC_SIGNED_TRADE_TITLE            | Traité Commercial
+INC_SIGNED_TRADE_DESC             | [my_empire] et [your_empire] ont convenu d'un traité commercial jusqu'à un montant annuel maximum de [amt] BC.
+INC_SKIRMISH_TITLE                | Escarmouche
+INC_SKIRMISH_DESC                 | Les flottes [my_raceadjecF] et [your_raceadjecF] engagées dans le combat dans le système [system].
+INC_SPY_CONFESSION_TITLE          | Confession d'Espion
+INC_SPY_CONFESS_ESPIONAGE_DESC    | Un espion [spy_empireof] a été capturé et a avoué des activités d'espionnage en cours prévues contre [victim_empire].
+INC_SPY_CONFESS_SABOTAGE_DESC     | Un espion [spy_empireof] a été capturé et et avoué des activités de sabotage en cours prévues contre [victim_empire].
+INC_SPY_CAPTURED_DESC             | Un espion [spy_empireof] a été capturé et et avoué des activités de sabotage en cours prévues contre [victim_empire].
+INC_TRADE_INCOME_TITLE            | Bénéfice Commercial
+INC_TRADE_INCOME_DESC             | Le commerce entre [your_empire] et [my_empire] a généré un profit de [amt] BC.
+INC_TRESPASSING_TITLE             | Intrusion
+INC_TRESPASSING_DESC              | Les flottes [your_race_pluraladjecF] s'introduisent dans le système [system], qui fait partie [my_empireof].
+
+// generic click to skip or continue messages
+CLICK_SKIP                        | Échappez ou Cliquez pour ignorer l'animation
+CLICK_CONTINUE                    | Cliquez ou Échappez pour Continuer ...
+CLICK_EXIT                        | Cliquez ou Échappez pour Quitter ...
+BUTTON_EXIT                       | Quitter
+
+// GAME/SETUP UI 
+GAME_TITLE_LINE_1                 | DES RESTES
+GAME_TITLE_LINE_2                 | des
+GAME_TITLE_LINE_3                 | PRÉCURSEURS
+GAME_DISCUSS_ONLINE               | Discutez en ligne
+GAME_MENU_CONTINUE                | Continuez le jeu
+GAME_MENU_NEW_GAME                | Nouveau Jeu
+GAME_MENU_LOAD_GAME               | Charger la Partie
+GAME_MENU_SAVE_GAME               | Enregistrer la Partie
+GAME_MENU_SETTINGS                | Paramètres
+GAME_MENU_OPEN_MANUAL             | Ouvrir le Manuel
+GAME_MENU_EXIT                    | Quitter
+GAME_MENU_RESTART                 | Recommencer
+GAME_VERSION                      | Version: %1
+GAME_SHRINK                       | Rétrécir -
+GAME_ENLARGE                      | Élargir
+
+// Game Settings UI
+GAME_SETTINGS_TITLE               | Paramètres de Jeu
+GAME_SETTINGS_DESCRIPTION         | Cliquez pour basculer chaque paramètre de jeu. 
+GAME_SETTINGS_EXIT                | Quitter
+GAME_SETTINGS_DEFAULT             | Définir par défaut
+GAME_SETTINGS_DISPLAY_MODE        | Mode d'Affichage: %1
+GAME_SETTINGS_WINDOWED            | Fenêtré
+GAME_SETTINGS_BORDERLESS          | Sans Frontières
+GAME_SETTINGS_FULLSCREEN          | Plein Écran
+GAME_SETTINGS_DISPLAY_MODE_DESC   | Nécessite un redémarrage. Fenêtré est un rapport fixe et redimensionnable. Sans Frontières est une fenêtre maximisée. Le plein écran est une fenêtre maximisée exclusive. 
+GAME_SETTINGS_GRAPHICS            | Niveau Graphique: %1
+GAME_SETTINGS_GRAPHICS_LOW        | Faible
+GAME_SETTINGS_GRAPHICS_MED        | Moyen
+GAME_SETTINGS_GRAPHICS_HIGH       | Élevé
+GAME_SETTINGS_GRAPHICS_DESC       | Ajuste la qualité graphique du jeu. Moyen : l'anticrénelage des images est désactivé. Faible : les animations sont désactivées.
+GAME_SETTINGS_TEXTURES            | Textures: %1
+GAME_SETTINGS_TEXTURES_NO         | Non
+GAME_SETTINGS_TEXTURES_INTERFACE  | Interface Utilisateur
+GAME_SETTINGS_TEXTURES_MAP        | Carte de la Galaxie
+GAME_SETTINGS_TEXTURES_BOTH       | Interface et Carte
+GAME_SETTINGS_TEXTURES_DESC       | Basculez l'utilisation des textures sur la carte de la galaxie ou sur les différents écrans tout au long du jeu.
+GAME_SETTINGS_SENSITIVITY         | Sensibilité au Survol: %1
+GAME_SETTINGS_SENSITIVITY_HIGH    | Haute
+GAME_SETTINGS_SENSITIVITY_MEDIUM  | Moyenne
+GAME_SETTINGS_SENSITIVITY_LOW     | Faible
+GAME_SETTINGS_SENSITIVITY_DESC    | Basculez la vitesse à laquelle la carte de la galaxie répond au mouvement de la souris lors de la mise à jour du panneau d'affichage.
+GAME_SETTINGS_MEMORY              | Afficher l'utilisation de la mémoire : %1
+GAME_SETTINGS_MEMORY_YES          | Oui
+GAME_SETTINGS_MEMORY_NO           | Non
+GAME_SETTINGS_MEMORY_DESC         | Active ou désactive l'affichage des statistiques d'utilisation de la mémoire dans le coin inférieur droit du jeu. Useful for monitoring memory usage.
+GAME_SETTINGS_SOUNDS              | Sons: %1
+GAME_SETTINGS_SOUNDS_OFF          | Muet
+GAME_SETTINGS_SOUNDS_ON           | %1/10
+GAME_SETTINGS_SOUNDS_DESC         | Cliquez pour désactiver ou réactiver les effets sonores dans le jeu. Utilisez la molette de la souris pour augmenter ou diminuer le volume.
+GAME_SETTINGS_SOUNDS_DISABLED     | Désactivé
+GAME_SETTINGS_SOUNDS_ERR_DESC     | Sons désactivés en raison de l'erreur suivante : %1
+GAME_SETTINGS_MUSIC               | Musique: %1
+GAME_SETTINGS_MUSIC_OFF           | Muet
+GAME_SETTINGS_MUSIC_ON            | %1/10
+GAME_SETTINGS_MUSIC_DESC          | Cliquez pour désactiver ou réactiver la musique dans le jeu. Utilisez la molette de la souris pour augmenter ou diminuer le volume.
+GAME_SETTINGS_AUTOCOLONIZE        | Coloniser : %1
+GAME_SETTINGS_AUTOCOLONIZE_YES    | Automatiquement
+GAME_SETTINGS_AUTOCOLONIZE_NO     | Toujours demander.
+GAME_SETTINGS_AUTOCOLONIZE_DESC   | Basculez pour auto-coloniser et nommer les planètes dès l'arrivée des vaisseaux coloniaux. Cela peut faire gagner du temps sur de très grandes cartes.
+GAME_SETTINGS_AUTOBOMBARD         | Bombarder : %1
+GAME_SETTINGS_AUTOBOMBARD_NO      | Toujours demander.
+GAME_SETTINGS_AUTOBOMBARD_NEVER   | Jamais
+GAME_SETTINGS_AUTOBOMBARD_YES     | Toujours
+GAME_SETTINGS_AUTOBOMBARD_WAR     | Seulement guerre
+GAME_SETTINGS_AUTOBOMBARD_INVADE  | Seulement guerre et pas invasion
+GAME_SETTINGS_AUTOBOMBARD_DESC    | Basculez pour toujours inviter à bombarder, ne jamais bombarder, toujours bombarder, uniquement bombarder automatiquement en cas de guerre, ou uniquement bombarder automatiquement en cas de guerre sans forces d'invasion en route. 
+GAME_SETTINGS_BACKUP_OFF          | Désactivé
+GAME_SETTINGS_BACKUP_ON           | Tout/tous %1 tours
+GAME_SETTINGS_BACKUP              | Sauvegarde: %1
+GAME_SETTINGS_BACKUP_DESC         | Activer pour que votre jeu en cours soit enregistré périodiquement dans le dossier de sauvegarde avec un nom unique, vous permettant de recharger à partir des tours précédents.
+GAME_SETTINGS_SAVEDIR             | Enregistrer le répertoire : %1
+GAME_SETTINGS_SAVEDIR_DEFAULT     | Défaut
+GAME_SETTINGS_SAVEDIR_CUSTOM      | Personnalisé
+GAME_SETTINGS_SAVEDIR_DESC1       | Le répertoire de sauvegarde est actuellement défini sur le même répertoire que le jeu.
+GAME_SETTINGS_SAVEDIR_DESC2       | Le répertoire de sauvegarde est actuellement défini sur: %1
+
+// Load Game UI
+LOAD_GAME_TITLE                   | Charger la Partie
+LOAD_GAME_AUTOSAVE                | Enregistrement automatique plus récent
+LOAD_GAME_BACKUP_DIR              | Répertoire de sauvegarde : %1 fichiers
+LOAD_GAME_SAVE_DIR                | Répertoire de sauvegarde : %1 fichiers
+LOAD_GAME_FILENAME                | Trier par nom de fichier
+LOAD_GAME_DATE                    | par Date
+LOAD_GAME_SIZE                    | par Taille
+LOAD_GAME_LOADING                 | Chargement...
+LOAD_GAME_BAD_VERSION             | Impossible de charger le fichier de jeu enregistré: %1. Ce fichier est peut-être corrompu ou obsolète.
+LOAD_GAME_CANCEL                  | Annuler
+LOAD_GAME_OK                      | Charger
+LOAD_GAME_TOO_LONG                | ...
+
+// Save Game UI
+SAVE_GAME_TITLE                   | Sauvegarder la Partie
+SAVE_GAME_FILENAME                | Trier par nom de fichier
+SAVE_GAME_DATE                    | par Date
+SAVE_GAME_SIZE                    | par Taille
+SAVE_GAME_SAVING                  | Sauvegarde en cours ...
+SAVE_GAME_CANCEL                  | Annuler
+SAVE_GAME_OK                      | Sauvegarder
+
+// Intro UI
+INTRO_BEGIN                       | Commencer
+
+// MAIN UI - Bottom Navigation options
+MAIN_NAVIGATION_GAME              | Jeu
+MAIN_NAVIGATION_DESIGN            | Conceptions
+MAIN_NAVIGATION_FLEETS            | Flottes
+MAIN_NAVIGATION_SYSTEMS           | Systèmes
+MAIN_NAVIGATION_RACES             | Races
+MAIN_NAVIGATION_COLONIES          | Colonies
+MAIN_NAVIGATION_TECH              | Tech
+MAIN_NAVIGATION_NEXT_TURN         | Tour Suivant
+MAIN_NAVIGATION_NEXT_YEAR         | L'année Suivante
+MAIN_YEAR_DISPLAY                 | Année  %1
+MAIN_TURN_DISPLAY                 | Tour  %1
+MAIN_SPY_REPORT                   | Spion
+MAIN_TECH_NONE                    | Aucune Aecherche
+MAIN_TECH_COMPLETED               | Recherche Terminée
+MAIN_TECH_RP_REMAINING            | %1 RP Restant(s)
+MAIN_TECH_RP_DISCOVERY            | Découverte Imminente
+MAIN_TECH_RESERVE_BC              | %1 BC
+MAIN_TECH_RESERVE_TAX_ALL         | Taxer %1% de la production sur toutes les colonies
+MAIN_TECH_RESERVE_TAX             | Taxer %1% de la production sur les colonies développées
+MAIN_TECH_RESERVE_TAX_NONE        | Aucune taxe prélevée sur la production de la colonie
+MAIN_HELP_ALL                     | Aide - cliquez pour parcourir les informations d'aide pour un écran particulier. Hit escape to cancel.
+MAIN_HELP_1A                      | Chaque star system divise sa production en cinq zones. Les barres grisées indiquent que la barre de production a été verrouillée et ne changera pas. Cliquez sur le nom pour verrouiller/déverrouiller.
+MAIN_HELP_1B                      | Chantier naval - construit le modèle de navire sélectionné. Les gros navires peuvent prendre plusieurs tours.
+MAIN_HELP_1C                      | Défenses - construit et améliore les bases de missiles jusqu'à la limite spécifiée et les boucliers planétaires lorsqu'ils sont disponibles.
+MAIN_HELP_1D                      | Industrie - construit des usines qui augmentent la production globale de la colonie.
+MAIN_HELP_1E                      | Écologie - nettoie les déchets industriels, terraforme la planète et peut augmenter la croissance démographique.
+MAIN_HELP_1F                      | Technologie - ajoute à la recherche globale de l'empire.
+MAIN_HELP_1G                      | Les barres de ratio montrent la répartition de la production d'une planète. Les dépenses pour chaque barre peuvent être ajustées à l'aide de la molette de la souris, en cliquant dans la barre ou en cliquant sur les flèches gauche/droite de chaque barre.
+MAIN_HELP_1H                      | Le résultat attendu des dépenses pour une zone est affiché à droite de chaque barre. Les dépenses excédentaires seront envoyées à la réserve du trésor de l'empire.
+MAIN_HELP_2A                      | Niveau de bouclier planétaire pour la colonie. Les boucliers ne peuvent pas être construits sur les planètes dans une nébuleuse.
+MAIN_HELP_2B                      | Nombre de bases de missiles et le maximum souhaité pour cette planète. Cliquez ou utilisez la molette de la souris pour modifier le maximum.
+MAIN_HELP_2C                      | Production planétaire totale de l'industrie et de la population.
+MAIN_HELP_2D                      | Production réelle ajustée en fonction des revenus commerciaux à l'échelle de l'empire, des coûts d'espionnage et de sécurité, ainsi que de la maintenance des bases de missiles et des navires.
+MAIN_HELP_2E                      | Modifiez la conception du navire pour le construire dans le chantier naval en orbite de la planète. La production accumulée pour les navires inachevés accélérera la production de nouveaux navires de 50 % jusqu'à leur épuisement. Cliquez ou utilisez la molette de la souris pour modifier la conception du navire.
+MAIN_HELP_2F                      | Définissez un point de ralliement pour envoyer automatiquement les navires nouvellement construits vers une autre colonie.
+MAIN_HELP_2G                      | Transportez de la population pour fortifier une autre colonie ou envoyez des troupes envahir une planète ennemie. La colonie engage un coût de production unique pour le transport.
+MAIN_HELP_2H                      | Abandonnez complètement une planète en transférant toute sa population vers une autre colonie.
+MAIN_HELP_2I                      | Population actuelle et maximale de la planète. 100 représente une planète d'origine complète qui n'a pas été terraformée.
+MAIN_HELP_2J                      | Usines actuelles et maximales autorisées. Usines maximales basées sur la population et la technologie des contrôles robotiques.
+MAIN_HELP_2K                      | Placez un drapeau sur le système pour l'aider à se démarquer sur la carte de la galaxie.
+MAIN_HELP_2L                      | Le montant de la réserve stockée dans le trésor de l'empire.
+MAIN_HELP_2M                      | L'état actuel de la recherche pour chacun des six domaines technologiques.
+MAIN_HELP_3A                      | Jeu - revient au menu d'ouverture. Vous permet d'ajuster les paramètres ou d'enregistrer, de charger et de démarrer des jeux.
+MAIN_HELP_3B                      | Systems - galaxy map showing the status of systems in the galaxy by different criteria.
+MAIN_HELP_3C                      | Flottes - permet un contrôle à grande échelle de vos flottes et de la construction navale au sein de votre empire.
+MAIN_HELP_3D                      | Conceptions - créez des conceptions de navires pour votre flotte en utilisant votre dernière technologie. Les conceptions indésirables peuvent être supprimées.
+MAIN_HELP_3E                      | Races - des informations détaillées et des options diplomatiques pour toutes les races extraterrestres que vous avez rencontrées.
+MAIN_HELP_3F                      | Colonies - liste détaillée et triable de vos colonies. Fournit également des revenus et des coûts d'empire.
+MAIN_HELP_3G                      | Tech - affiche les technologies disponibles. Vous permet de concentrer ou d'équilibrer la recherche sur un maximum de six technologies.
+MAIN_HELP_3H                      | L'année prochaine - fait avancer le jeu à l'année suivante.
+MAIN_HELP_3I                      | Tour actuel - affiche le tour actuel du jeu ou l'année en cours de votre empire. Cliquez pour basculer.
+MAIN_HELP_3J                      | Commandes de la carte - cliquez pour parcourir les différents paramètres d'affichage de la carte de la galaxie.
+
+MAIN_SYSTEM_DETAIL_PFB            | Pop %1  Usi %2  Base %3
+MAIN_SYSTEM_DETAIL_PF             | Pop %1  Usi %2
+MAIN_SYSTEM_DETAIL_NO_DATA        | Pas de données
+MAIN_UNEXPLORED_SYSTEM            | Inexploré
+MAIN_ALLIED_COLONY                | Colonie alliée
+MAIN_SYSTEM_RANGE                 | %1 A.L.
+MAIN_OUT_OF_RANGE_DESC            | Hors de portée
+MAIN_SCOUT_RANGE_DESC             | Besoin réservoirs carburant
+MAIN_IN_RANGE_DESC                | À portée
+MAIN_NO_PLANETS                   | Pas de Planètes Colonisables
+MAIN_NO_COLONIES                  | Non colonisé
+MAIN_UNSCOUTED                    | Inconnue
+MAIN_ABANDONED                    | Abandonné
+MAIN_ALIEN_COLONY                 | %1 Colonie
+MAIN_UNKNOWN_COLONY               | Colonie Extraterrestre
+MAIN_NEBULA_DESC                  | La vitesse de déplacement des vaisseaux à travers les nébuleuses est limitée à Warp 1
+MAIN_PLANET_SIZE                  | Taille %1
+MAIN_PLANET_SIZE+                 | Taille %1+
+MAIN_PLANET_POP                   | Pop %1
+MAIN_PLANET_POP_SIZE              | Pop %1/%2
+MAIN_PLANET_REBELLION             | En Rébellion
+MAIN_PLANET_QUARANTINE            | En Quarantaine
+MAIN_PLANET_EVENT_COMET           | Comète
+MAIN_PLANET_EVENT_PIRACY          | Piraterie
+MAIN_PLANET_EVENT_PLAGUE          | Peste
+MAIN_PLANET_EVENT_SUPERNOVA       | Supernova
+MAIN_PLANET_EVENT_AMOEBA          | l'Amibe Spatial
+MAIN_PLANET_EVENT_CRYSTAL         | le Cristal Spatial
+MAIN_ADVANCING_YEAR               | Passer à l'Année  %1...
+MAIN_ADVANCING_TURN               | Passer au Tour %1...
+TURN_SAVING                       | Sauvegarde de la Partie
+TURN_LAUNCHING_FLEETS             | Lancement des Flottes
+TURN_SHIP_COMBAT                  | Combat entre Vaisseaux
+TURN_BOMBARDMENT                  | Bombardement Planétaire
+TURN_TRANSPORTS                   | Transports
+TURN_COLONIES                     | Colonization
+TURN_SPIES                        | Activités d'Espionnage
+TURN_REBELLION                    | Rébellions 
+TURN_COUNCIL                      | Statut du Conseil
+TURN_RESEARCH                     | Recherche
+TURN_ASSESS                       | Achèvement Interne
+TURN_DIPLOMACY                    | Diplomatie
+TURN_ACQUIRE_TECHS                | Apprentissage des Technologies Échangées
+TURN_MAKE_DECISIONS               | Faire des Décisions
+TURN_RECALC_DISTANCES             | Recalcul des Distances Système
+TURN_REFRESHING                   | Actualisation des Vues
+TURN_SCRAP_SHIPS                  | Démolir des Navires
+TURN_FLEET_PLANS                  | Plans de Flotte
+TURN_DEPLOY_FLEETS                | Déployer des Navires
+TURN_DEPLOY_FLEET_X               | Déployer des navires (%1/%2 completed)
+TURN_RETREAT_FLEETS               | Flottes en Retraite
+TURN_DESIGN_SHIPS                 | Concevoir des Navires
+TURN_COLONY_SPENDING              | Allocations de Colonie
+
+// Fleet labels
+MAIN_FLEET_TITLE                  | Flotte [fleet_raceadjecF]
+MAIN_FLEET_TITLE_UNKNOWN          | Flotte Inconnue
+MAIN_FLEET_IN_ORBIT               | En orbite
+MAIN_FLEET_DEPLOYED               | Déployé
+MAIN_FLEET_IN_TRANSIT             | En transit
+MAIN_FLEET_RETREATING             | En Retraite
+MAIN_FLEET_LOCATION               | par %1
+MAIN_FLEET_ORIGIN                 | de %1
+MAIN_FLEET_DESTINATION            | à %1
+MAIN_FLEET_DEST_UNSCOUTED         | à Inexploré
+MAIN_FLEET_ALLY                   | Allié
+MAIN_FLEET_ENEMY                  | Ennemi
+MAIN_FLEET_DEPLOYMENT             | Déploiement de Flotte
+MAIN_FLEET_DISPLAY                | Affichage de la Flotte
+MAIN_FLEET_CHOOSE_DEST            | Choisissez la destination et le nombre de navires à envoyer.
+MAIN_FLEET_OUT_OF_RANGE_DESC      | La destination est hors de portée de la flotte, %1 a.l. de la colonie la plus proche.
+MAIN_FLEET_INVALID_RETREAT        | Les flottes en retraite ne peuvent être envoyées que dans des colonies amies
+MAIN_FLEET_ETA_UNNAMED            | heure d'arrivée estimée jusqu'à destination : %1 Ans 
+MAIN_FLEET_ETA_NAMED              | heure d'arrivée estimée jusqu'à  %1 : %2 Ans 
+MAIN_FLEET_SET_RALLY              | Ralliement
+MAIN_FLEET_AUTO_RETREAT           | Se retirer automatiquement à l'arrivée
+MAIN_FLEET_ETA_UNKNOWN            | Les scanners ne peuvent pas déterminer la destination
+MAIN_FLEET_THROUGH_NEBULA         | Vitesse maximale limitée à Distorsion 1 par nebula
+
+MAIN_FLEET_CANCEL                 | Annuler
+MAIN_FLEET_OUT_OF_RANGE           | Hors de Portée
+MAIN_FLEET_DEPLOY_FLEET           | Déployer la Flotte
+MAIN_FLEET_UNDEPLOY_FLEET         | Annuler le Déploiement de la Flotte
+MAIN_FLEET_INVALID_RETREAT        | Retraite Invalide
+MAIN_FLEET_INVALID_DESTINATION    | Impossible d'envoyer la flotte à %1
+MAIN_FLEET_INVALID_DESTINATION2   | Impossible d'envoyer la flotte à ce système
+
+// Rally Point labels
+MAIN_RALLY_TITLE                  | Définition du Point de Ralliement
+MAIN_RALLY_PROMPT                 | Sélectionnez un système sous votre contrôle pour y envoyer des navires nouvellement construits.
+MAIN_RALLY_FORWARD                | Transférer les rallyes entrants
+MAIN_RALLY_TRAVEL_TIME            | Temps de trajet vers %1 : %2 Ans
+MAIN_RALLY_INSTANT_TIME           | Temps de trajet vers %1 : Instantané
+MAIN_RALLY_WILL_CANCEL            | La sélection de cette destination effacera tout point de ralliement existant.
+MAIN_RALLY_ERROR                  | Vous devez sélectionner un système sous votre contrôle.
+MAIN_RALLY_NO_SELECTION           | Pas de Sélection
+MAIN_RALLY_CANCEL                 | Annuler
+MAIN_RALLY_START                  | Démarrer le Rallye
+MAIN_RALLY_STOP                   | Arrêter le Rallye
+
+// Transport labels
+MAIN_TRANSPORTS_EMPIRE            | Transports [empire_raceof]
+MAIN_TRANSPORTS_COUNT             | %1 Transports
+MAIN_TRANSPORTS_CANCEL            | Annuler
+MAIN_TRANSPORTS_SHOW_DEST         | Heure d'arrivée estimée jusqu'à %1 : %2 Ans
+MAIN_TRANSPORT_TITLE              | Envoi de Transports
+MAIN_TRANSPORT_ABANDON_TITLE      | Abandonner le Système
+MAIN_TRANSPORT_PROMPT             | Sélectionnez un système colonisé vers lequel envoyer des navires de transport civils ou militaires.
+MAIN_TRANSPORT_ABANDON_PROMPT     | Sélectionnez un système colonisé vers lequel évacuer tous les navires de transport civils.
+MAIN_TRANSPORT_SELECT_POP         | Sélectionnez la population civile à envoyer (jusqu'à la moitié de la population de %1).
+MAIN_TRANSPORT_SELECT_TROOPS      | Sélectionnez le nombre d'unités militaires à envoyer (jusqu'à la moitié de la population de %1).
+MAIN_TRANSPORT_POP_LABEL          | Population
+MAIN_TRANSPORT_TOTAL_POP_LABEL    | Population Totale: %1
+MAIN_TRANSPORT_ETA                | Temps de trajet vers %1: %2 Ans
+MAIN_TRANSPORT_ERROR              | Vous devez sélectionner un système colonisé.
+MAIN_TRANSPORT_ABANDON_ERROR      | Vous devez sélectionner un système %1.
+MAIN_TRANSPORT_OUT_OF_RANGE       | Ce système est hors de portée de nos transports militaires.
+MAIN_TRANSPORT_UNSCOUTED          | Nous ne pouvons pas envoyer de transports vers des systèmes non surveillés.
+MAIN_TRANSPORT_HOSTILE            | Nous n'avons pas la technologie pour atterrir dans cet environnement.
+MAIN_TRANSPORT_NO_ROOM            | Attention - La planète cible a atteint sa population maximale !
+MAIN_TRANSPORT_SIZE_WARNING       | Attention - La planète cible ne peut supporter que %1 million !
+MAIN_TRANSPORT_NO_SELECTION       | Pas de Sélection
+MAIN_TRANSPORT_CANCEL             | Annuler
+MAIN_TRANSPORT_SEND               | Envoyer des Transports
+MAIN_TRANSPORT_ABANDON            | Abandonner
+MAIN_TRANSPORT_CLEAR              | Effacer les Transports
+MAIN_TRANSPORT_SURRENDER          | Capitulation Automatique à l'Arrivée
+
+// Colony labels
+MAIN_COLONY_HOMEWORLD             | Planète %1
+MAIN_COLONY_FOUNDED               | Colonie %1
+MAIN_COLONY_POPULATION            | Population
+MAIN_COLONY_FACTORIES             | Usines
+MAIN_COLONY_VALUE+                | %1+
+MAIN_COLONY_SHIELD                | Niveau de Bouclier
+MAIN_COLONY_BASES                 | Bases
+MAIN_COLONY_PRODUCTION            | Production - Nette (Brute)
+MAIN_COLONY_SHIP                  | Vaisseau
+MAIN_COLONY_DEFENSE               | Def
+MAIN_COLONY_INDUSTRY              | Ind
+MAIN_COLONY_ECOLOGY               | Eco
+MAIN_COLONY_TECHNOLOGY            | Tech
+MAIN_COLONY_ALLOCATE_SPENDING     | Allouer les Dépenses
+MAIN_COLONY_SPENDING_NONE         | Aucune
+MAIN_COLONY_SPENDING_RESERVE      | Réserve
+MAIN_COLONY_SPENDING_TECH         | Tech
+MAIN_COLONY_SPENDING_CONVERT      | Convertir
+MAIN_COLONY_SPENDING_REFIT        | Remettre en État
+MAIN_COLONY_SPENDING_MAX_FACT     | Max
+MAIN_COLONY_SPENDING_WASTE        | Déchets
+MAIN_COLONY_SPENDING_ECO_GROWTH   | Croissance %1
+MAIN_COLONY_SPENDING_ATMOSPHERE   | Atmo
+MAIN_COLONY_SPENDING_ENRICH_SOIL  | Sol
+MAIN_COLONY_SPENDING_TERRAFORM    | T-form
+MAIN_COLONY_SPENDING_CLEANUP      | Nettoyer
+MAIN_COLONY_SPENDING_GROWTH       | Croissance
+MAIN_COLONY_SPENDING_SHIELD       | Bouclier
+MAIN_COLONY_SPENDING_UPG_BASES    | Amélioration
+MAIN_COLONY_SPENDING_PLAGUE       | Peste
+MAIN_COLONY_SPENDING_SUPERNOVA    | Supernova
+MAIN_COLONY_SPENDING_RP           | %1 RP
+MAIN_COLONY_COMPLETION_YEAR       | 1 An
+MAIN_COLONY_COMPLETION_YEARS      | %1 Ans
+MAIN_COLONY_COMPLETION_CENTURY    | %1 Ans
+MAIN_COLONY_COMPLETION_PER_YEAR   | %1/An
+MAIN_COLONY_SHIPYARD_COMPLETED    | Complété : %1
+MAIN_COLONY_SHIPYARD_LIMIT        | Limite :
+MAIN_COLONY_SHIPYARD_LIMIT_NONE   | Aucune
+MAIN_COLONY_SHIPYARD_CONSTRUCTION | File d'Attente de Construction de navires
+MAIN_COLONY_RELOCATE_LABEL        | Définir Pt. Ralliement
+MAIN_COLONY_TRANSPORTS_LABEL      | Envoyer des Transports
+MAIN_COLONY_ABANDON_LABEL         | Abandonner
+MAIN_COLONY_SHIP_SCRAPPED         | Supprimé
+MAIN_COLONY_NO_SHIELD             | Nébuleuse
+
+// System Scouted Notification
+MAIN_SCOUT_TITLE                  | Les Scientifiques Cataloguent un Nouveau Système Stellaire
+MAIN_SCOUT_SUBTITLE_1             | Nos navires ont repéré ce système
+MAIN_SCOUT_SUBTITLE_2             | Nos astronomes ont collecté ces données
+MAIN_SCOUT_SUBTITLE_3             | Nos alliés ont partagé ces données
+MAIN_SCOUT_TYPE                   | Classification: %1      Taille : %2
+MAIN_SCOUT_NO_PLANET              | Aucune Planète Habitable Trouvée
+MAIN_SCOUT_HOSTILE_DESC           | Environnement : Hostile - La croissance démographique est divisée par deux.
+MAIN_SCOUT_FERTILE_DESC           | Environnement: Fertile - La croissance démographique est de +50% normale.
+MAIN_SCOUT_GAIA_DESC              | Environnement: Gaïa - La croissance démographique est de +100% normale.
+MAIN_SCOUT_ARTIFACTS_DESC         | Ruines Antiques : Les points de technologie issus de la recherche sont doublés.
+MAIN_SCOUT_ANCIENTS_DESC          | Ancienne Planète Natale : Les points technologiques issus de la recherche sont quadruplés.
+MAIN_SCOUT_ULTRA_POOR_DESC        | Ressources : Ultra-Pauvre - La production de l'industrie est réduite d'un tiers.
+MAIN_SCOUT_POOR_DESC              | Ressources : Pauvre - La production de l'industrie est divisée par deux.
+MAIN_SCOUT_RICH_DESC              | Ressources : Riche - La production de l'industrie est doublée.
+MAIN_SCOUT_ULTRA_RICH_DESC        | Ressources : Ultra-Rich - La production de l'industrie est triplée.
+
+// Colonization prompt
+MAIN_COLONIZE_TITLE               | Nos colons sont en orbite autour de %1, un système non colonisé.
+MAIN_COLONIZE_PROMPT              | Construire une nouvelle colonie ?
+MAIN_COLONIZE_YES                 | Oui
+MAIN_COLONIZE_NO                  | Non
+MAIN_COLONIZE_ANIMATION_TITLE     | En l'an %1, [player_empire] forme une nouvelle colonie.
+MAIN_COLONIZE_NAME_PROMPT         | Nom de la Colonie
+MAIN_COLONIZE_NAME_OK             | OK
+
+// Reasons to ask player to reallocate a system (during next turn)
+MAIN_ALLOCATE_TITLE               | Ajustements des Dépenses
+MAIN_ALLOCATE_DESIGN_SCRAPPED     | Le modèle de vaisseau en cours de construction à %1 a été supprimé
+MAIN_ALLOCATE_COLONIZED           | • %1 a été colonisé.
+MAIN_ALLOCATE_STARGATE_COMPLETE   | • %1 a terminé la construction d'une Porte des Étoiles.
+MAIN_ALLOCATE_SHIPS_COMPLETE      | • %1 a terminé la construction du nombre demandé de navires %2.
+MAIN_ALLOCATE_SHIELD_COMPLETE     | • %1 a terminé la construction de %2.
+MAIN_ALLOCATE_BASES_COMPLETE      | • %1 a terminé la construction de %2 bases de missiles.
+MAIN_ALLOCATE_BASES_UPGRADED      | • %1 a terminé la mise à niveau de ses bases de missiles.
+MAIN_ALLOCATE_MAX_FACTORIES       | • %1 a atteint son maximum industriel de %2 usines à construire.
+MAIN_ALLOCATE_MAX_POPULATION      | • %1 a atteint son maximum de population de %2 colons.
+MAIN_ALLOCATE_TERRAFORM_COMPLETE  | • %1 a terminé la terraformation de l'environnement.
+MAIN_ALLOCATE_ATMOSPHERE_COMPLETE | • %1 a été terraformé dans un environnement normal avec le taux de croissance standard.
+MAIN_ALLOCATE_FERTILE_COMPLETE    | • %1 a été terraformé en un environnement fertile avec 150 % du taux de croissance standard.
+MAIN_ALLOCATE_GAIA_COMPLETE       | • %1 a été terraformé en un environnement gaia avec le double du taux de croissance standard.
+MAIN_ALLOCATE_SABOTAGE_BASES      | • %1 a eu %2 bases de missiles détruites par des saboteurs [spy_race_pluraladjec].
+MAIN_ALLOCATE_SABOTAGE_FACTORIES  | • %1 a vu %2 usines détruites par des saboteurs [spy_race_pluraladjec].
+MAIN_ALLOCATE_COLONY_CAPTURED     | • %1 a été récemment capturé par %2 troupes.
+MAIN_ALLOCATE_ECO_LOCKED_WASTE    | • %1 a des dépenses écologiques verrouillées manuellement à un niveau insuffisant pour nettoyer la pollution.
+MAIN_ALLOCATE_PROJECT_ENDED       | • %1 ne recherche plus de projet spécial : %2
+MAIN_ALLOCATE_CHANGE_SPENDING     | Les allocations de dépenses du système peuvent être ajustées à ce moment.
+MAIN_ALLOCATE_NOTICE_NUMBER       | Avis %1 sur %2
+MAIN_ALLOCATE_BRIEF_NUMBER        | %1 sur %2
+MAIN_ALLOCATE_PREV_SYSTEM         | Précédent
+MAIN_ALLOCATE_NEXT_SYSTEM         | Prochain
+MAIN_ALLOCATE_CLOSE               | Fermer
+
+// Fleet Production display (during next turn)
+MAIN_FLEET_PRODUCTION_TITLE       | Résumé de la Production de la Flotte
+MAIN_FLEET_SHIP_COUNT             | %1/%2
+
+// 32-bit Java Warning
+MAIN_JAVA_32BIT_TITLE             | Avertissement! Java 32 bits en cours d'utilisation
+MAIN_JAVA_32BIT_DESC              | Vous exécutez ce jeu avec une version 32 bits de Java. Cela peut réduire considérablement la mémoire disponible et avoir un impact sur les performances du jeu.
+MAIN_JAVA_32BIT_DESC_2            | Bien que Des Restes des Précurseurs fonctionne dans ce mode, la mise à niveau vers Java 64 bits améliorera l'expérience de jeu.
+MAIN_JAVA_32BIT_DESC_3            | Si vous avez besoin d'aide pour mettre à niveau Java, veuillez vous connecter à www.reddit.com/r/rotp et demander de l'aide.
+MAIN_JAVA_32BIT_OK                | OK
+
+// Memory Low Warning
+MAIN_MEMORY_LOW_TITLE             | Avertissement! Mémoire de jeu faible
+MAIN_MEMORY_LOW_DESC              | La mémoire disponible pour ce jeu est faible. Cela peut être dû à une lecture prolongée ou à un démarrage insuffisant avec suffisamment de mémoire libre.
+MAIN_MEMORY_LOW_DESC_2            | Appuyez sur "Redémarrer" pour redémarrer ce jeu et reprendre à partir de ce point. Continuer à jouer sans redémarrer peut entraîner un comportement imprévisible, y compris la perte de données de sauvegarde.
+MAIN_MEMORY_LOW_DESC_3            | Si vous voyez ce message à plusieurs reprises, essayez de fermer d'autres applications sur votre ordinateur avant de redémarrer.
+MAIN_MEMORY_LOW_RESTART           | Redémarrer
+MAIN_MEMORY_LOW_SKIP              | Ignorer
+
+// Autosave Failed Warning
+MAIN_AUTOSAVE_FAILED_TITLE        | Avertissement! Échec de la sauvegarde automatique
+MAIN_AUTOSAVE_FAILED_DESC         | La fonction de sauvegarde automatique automatique qui se déclenche lorsque vous appuyez sur "Prochain Tour" a échoué. Cela pourrait être un problème momentané dans la matrice, mais veuillez sauvegarder ce jeu manuellement avant de continuer.
+MAIN_AUTOSAVE_FAILED_DESC_2       | Le message fourni au jeu pour cette erreur est : %1
+MAIN_AUTOSAVE_FAILED_DESC_3       | Si vous voyez ce message fréquemment, veuillez vous connecter sur www.reddit.com/r/rotp publier cette capture d'écran.
+MAIN_AUTOSAVE_FAILED_OK           | OK
+
+// Alerts
+MAIN_ALERT_TITLE                  | Alerte 
+MAIN_ALERT_TITLE_COUNT            | Alerte - %1 sur %2
+MAIN_ALERT_SPY_REPORT             | Notre bureau de renseignement a fourni un nouveau rapport sur les récentes activités d'espionnage.
+MAIN_ALERT_TECH_STOLEN            | La sécurité intérieure a découvert des activités d'espionnage par des espions [alien_race_pluraladjec].
+MAIN_ALERT_FACTORIES_DESTROYED    | Les agents travaillant pour [alien_empire] ont détruit %1 usines dans le système %2.
+MAIN_ALERT_BASES_DESTROYED        | Les agents travaillant pour [alien_empire] ont détruit %1 bases de missiles défendant le système %2.
+MAIN_ALERT_FACTORIES_DESTROYED2   | Des saboteurs inconnus ont détruit %1 usines dans le système %2.
+MAIN_ALERT_BASES_DESTROYED2       | Des saboteurs inconnus ont détruit %1 bases de missiles défendant le système %2.
+MAIN_ALERT_TRANSPORTS_PERISHED    | La colonie du système %1 a été détruite. Nos transports tentant d'y débarquer ont péri.
+MAIN_ALERT_TRANSPORTS_CAPTURED    | Nos %2 transports arrivant dans le système %1 se sont rendus aux forces [alien_race_pluraladjecF].
+MAIN_ALERT_TRANSPORTS_KILLED      | Nos %2 transports tentant d'atteindre %1 ont été détruits par les forces de défense [alien_race_pluraladjecF].
+MAIN_ALERT_INVADERS_CAPTURED      | %2 transports [alien_race_pluraladjec] arrivant dans le système %1 se sont rendus à nos forces défensives.
+MAIN_ALERT_INVADERS_KILLED        | %2 transports [alien_race_pluraladjec] tentant d'envahir %1 ont été complètement détruits par nos forces défensives.
+MAIN_ALERT_TRESPASSING1           | Des vaisseaux [alien_race_pluraladjec] ont été repérés en train de s'introduire près de notre colonie dans le système %1.
+MAIN_ALERT_TRESPASSING2           | L'ambassadeur [alien_raceadjec] proteste contre l'intrusion de nos vaisseaux dans le système %1.
+MAIN_ALERT_TRADE_MATURED          | Notre traité commercial avec [alien_empire] a atteint sa valeur maximale de %2 BC.
+MAIN_ALERT_ALLIANCE_WEAKENING     | Notre alliance avec [ally_empire] s'affaiblit.
+MAIN_ALERT_ALLIANCE_BREAKING      | Notre alliance avec [ally_empire] est sur le point de s'effondrer !
+
+// Colony Listing UI
+PLANETS_TITLE                     | Colonies [player_race_pluraladjecF]
+PLANETS_VIEW_ECOLOGY              | Vue Écologique
+PLANETS_VIEW_INDUSTRY             | Vue Industrielle
+PLANETS_VIEW_MILITARY             | Vue Militaire
+PLANETS_SPENDING_COSTS            | Dépenses de l'Empire
+PLANETS_COSTS_DESC                | Chaque colonie paie un pour cent de sa production pour soutenir les dépenses de l'empire.
+PLANETS_COSTS_SHIPS               | Entretien des Navires
+PLANETS_COSTS_BASES               | Bases de Missiles
+PLANETS_COSTS_STARGATES           | Portes des Étoiles
+PLANETS_COSTS_SPYING              | Espionnage
+PLANETS_COSTS_SECURITY            | Sécurité
+PLANETS_TOTAL_INCOME              | Revenu Annuel
+PLANETS_INCOME_TRADE              | Revenu Commercial
+PLANETS_INCOME_PLANETS            | Production de la Colonie
+PLANETS_INCOME_TOTAL              | Total
+PLANETS_TREASURY                  | Trésor de l'Empire
+PLANETS_TREASURY_FUNDS            | Fonds du Trésor
+PLANETS_TAX_DESC                  | Taxer vos colonies pour les ajouter au trésor de l'empire.
+PLANETS_RESERVE_TAX               | Taxe de Réserve
+PLANETS_RESERVE_INCREASE          | +%1 BC/Année
+PLANETS_RESERVE_NO_TAX            | Pas d'Impôts
+PLANETS_RESERVE_ONLY_DEVELOPED    | Taxer que colonies pleinement développées
+PLANETS_BUTTON_TRANSFER           | TRANSFÉRER
+PLANETS_BUTTON_EXIT               | QUITTER
+PLANETS_AMT_PCT                   | %1%
+PLANETS_AMT_BC                    | %1 BC
+PLANETS_TRANSFER_DESC             | TransféreR des fonds de l'Empire vers %1
+PLANETS_TRANSFER_CANCEL           | Annuler
+PLANETS_TRANSFER_ACCEPT           | Transférer
+PLANETS_COLONY_TRANSFER_TITLE     | Transférer des Fonds
+PLANETS_COLONY_TRANSFER_DETAIL    | Transférer des fonds du trésor de l'empire pour augmenter la production de cette colonie.
+PLANETS_COLONY_TRANSFER_BUTTON    | Transférer des Fonds du Trésor
+PLANETS_LIST_NUM                  | 
+PLANETS_LIST_NAME                 | Nom
+PLANETS_LIST_POPULATION           | Population
+PLANETS_LIST_POP                  | Pop.
+PLANETS_LIST_SIZE                 | Taille
+PLANETS_LIST_TYPE                 | Type
+PLANETS_LIST_FACTORIES            | Usines
+PLANETS_LIST_WASTE                | Waste
+PLANETS_LIST_BASES                | Bases
+PLANETS_LIST_SHIELD               | Shield
+PLANETS_LIST_PRODUCTION           | Prod
+PLANETS_LIST_CAPACITY             | Capacity
+PLANETS_LIST_RESERVE              | Reserve
+PLANETS_LIST_SHIPYARD             | Shipyard
+PLANETS_LIST_NOTES                | Déchtes
+PLANETS_LIST_TURNS                | Tours
+PLANETS_LIST_YEARS                | Ans
+PLANETS_LIST_TRANSPORTS           | Transports
+PLANETS_LIST_RESOURCES            | Ressources
+PLANETS_MULTI_SYSTEMS             | Systèmes %1
+PLANETS_AGGREGATE_VALUES          | Valeurs Agrégées
+PLANETS_SPENDING_0                | Aucune Dépense %1
+PLANETS_SPENDING_25               | Dépenses %1 25%
+PLANETS_SPENDING_50               | Dépenses %1 50%
+PLANETS_SPENDING_75               | Dépenses %1 75%
+PLANETS_SPENDING_MAX              | Dépenses %1 maximales
+PLANETS_HELP_ALL                  | APERÇU - Cet écran affiche les données économiques de votre empire ainsi qu'une liste de vos colonies triables selon diverses données.
+PLANETS_HELP_1A                   | Ecologie - Cliquez sur cet onglet pour afficher les données écologiques des colonies.
+PLANETS_HELP_1B                   | Industrie - Cliquez sur cet onglet pour afficher les données industrielles des colonies.
+PLANETS_HELP_1C                   | Armée - Cliquez sur cet onglet pour afficher les données militaires des colonies.
+PLANETS_HELP_1D                   | Les dépenses de la colonie peuvent être ajustées comme sur l'écran principal.
+PLANETS_HELP_1E                   | Augmentez la production de la colonie jusqu'à 50 % en transférant des fonds du trésor de l'empire.
+PLANETS_HELP_1F                   | Revenu total pour votre empire.
+PLANETS_HELP_1G                   | Dépenses totales pour votre empire exprimées en pourcentage de revenu.
+PLANETS_HELP_1H                   | Prélevez une taxe sur vos colonies à ajouter au trésor de l'empire. En option, limitez cette taxe aux seules colonies qui ont terminé leurs dépenses d'écologie, d'industrie et de défense.
+PLANETS_HELP_2A                   | Nom - Le nom de votre système. Modifiable.
+PLANETS_HELP_2B                   | Population - Population actuelle, y compris le changement par rapport au tour précédent.
+PLANETS_HELP_2C                   | Type - Type de terrain de la planète. Vert pour les planètes Fertiles.
+PLANETS_HELP_2D                   | Ressources - pour les planètes Riches, Pauvres et Artefacts.
+PLANETS_HELP_2E                   | Taille - Taille actuelle de la planète.
+PLANETS_HELP_2F                   | Déchets - niveau de déchets industriels sur la planète.
+PLANETS_HELP_2G                   | Notes - Notes du joueur sur le système. Modifiable.
+PLANETS_HELP_3A                   | Nom - Le nom de votre système. Modifiable.
+PLANETS_HELP_3B                   | Population - Population actuelle, y compris le changement par rapport au tour précédent.
+PLANETS_HELP_3C                   | Ressources - pour les planètes Riches, Pauvres et Artefacts.
+PLANETS_HELP_3D                   | Usines- Nombre d'usines, y compris le changement par rapport au tour précédent.
+PLANETS_HELP_3E                   | Production - production totale de la colonie.
+PLANETS_HELP_3F                   | Reserve - réserve totale actuellement stockée sur la colonie.
+PLANETS_HELP_3G                   | Notes - Notes du joueur sur le système. Modifiable.
+PLANETS_HELP_3H                   | Capacity - pct de la production maximale possible.
+PLANETS_HELP_4A                   | Nom - Le nom de votre système. Modifiable.
+PLANETS_HELP_4B                   | Population - Population actuelle, y compris le changement par rapport au tour précédent.
+PLANETS_HELP_4C                   | Ressources - pour les planètes Riches, Pauvres et Artefacts.
+PLANETS_HELP_4D                   | Production - production totale de la colonie.
+PLANETS_HELP_4E                   | Shield - niveau du bouclier planétaire.
+PLANETS_HELP_4F                   | Bases - bases de missiles sur la planète. Rouge si technologie obsolète.
+PLANETS_HELP_4G                   | Chantier Naval - conception du navire en cours de construction.
+PLANETS_HELP_4H                   | Notes - PNotes du joueur sur le système. Modifiable.
+PLANETS_HELP_4I                   | Drapeau - Drapeau du système, choisi par l'utilisateur.
+
+// Bombardment prompt
+MAIN_BOMBARDED_TITLE             | %1 a été bombardé par des forces [alien_race_pluraladjecF].
+MAIN_BOMBARD_TITLE               | Nos forces sont en orbite autour d'une colonie ennemie [alien_raceajecF].
+MAIN_BOMBARD_TROOPS              | %1 troupes [alien_race_pluraladjecF] sont en orbite ou en transit vers cette colonie.
+MAIN_BOMBARD_PROMPT              | Bombarder la planète ?
+MAIN_BOMBARD_YES                 | Oui
+MAIN_BOMBARD_NO                  | Non
+MAIN_BOMBARD_POPULATION          | Population : %1
+MAIN_BOMBARD_FACTORIES           | Usines : %1
+MAIN_BOMBARD_BASES               | Bases : %1
+MAIN_BOMBARD_SHIELD              | Bouclier : %1
+MAIN_BOMBARD_COMPLETE            | Bombardement terminé.
+MAIN_BOMBARD_DESTROYED           | Colonie détruite
+MAIN_BOMBARD_DMG                 | (%1)
+MAIN_BOMBARD_NAME_PROMPT         | Nom de la Colonie
+
+
+// Fleet listing UI
+FLEETS_TITLE                      | Flottes
+FLEETS_SELECT_SYSTEMS             | Sélectionner les Systèmes
+FLEETS_SELECT_FLEETS              | Sélectionner les Flottes
+FLEETS_SELECT_ALL                 | Tout Sélectionner
+FLEETS_DESELECT_ALL               | Tout Déselectionner
+FLEETS_FILTER_BY                  | Filtrer par:
+FLEETS_CONSTRUCTING_DESIGN        | Et en train de construire :
+FLEETS_INCLUDES_SHIP_TYPE         | Déployer que navires type:
+FLEETS_SELECTED_SHIPS             | Sélectionné pour le Péploiement
+FLEETS_BUILDING_DESIGN            | %1
+FLEETS_HAS_STARGATE               | Le Système a une Porte des Étoiles
+FLEETS_HAS_NO_STARGATE            | Le Système n'a pas de Porte des Étoiles
+FLEETS_HAS_RALLY_POINT            | Le Système a un Point de Ralliement
+FLEETS_HAS_NO_RALLY_POINT         | Le Système n'a pas de Point de Ralliement
+FLEETS_SENDING_TRANSPORTS         | Le système envoie des transports
+FLEETS_NOT_SENDING_TRANSPORTS     | Le système n'envoie pas de transports
+FLEETS_IS_RICH                    | Le système est riche ou ultra-riche
+FLEETS_IS_ULTRA_RICH              | Le système est ultra-riche
+FLEETS_IS_POOR                    | Le système est pauvre ou ultra-pauvre
+FLEETS_IS_ULTRA_POOR              | Le système est ultra-pauvre
+FLEETS_IS_STANDARD                | Le système a des ressources standard
+FLEETS_SYSTEMS_SELECTED           | %1 Systèmes sélectionnés
+FLEETS_FLEETS_SELECTED            | %1 Flottes sélectionnées
+FLEETS_MULTIPLE_DESIGNS           | Plusieurs
+FLEETS_RELOCATE_LABEL             | Définir pnts ralliement
+FLEETS_TRANSPORTS_LABEL           | Envoyer des transports
+FLEETS_SPENDING_LABEL             | Ajuster les dépenses des navires
+FLEETS_HAS_ORDERS                 | La flotte est en transit
+FLEETS_HAS_NO_ORDERS              | La flotte est en orbite
+FLEETS_IS_RALLYING                | La flotte se mobilise
+FLEETS_DESIGN_COUNT               | %1 %2
+FLEETS_DEPLOY_FLEETS              | Déployer des flottes
+FLEETS_SET_RALLY_POINTS           | Définir pnts ralliement
+FLEETS_STOP_RALLIES_DESC          | %1 systèmes sélectionnés ont déjà des points de ralliement attribués
+FLEETS_STOP_RALLIES               | Arrêter les rassemblements
+FLEETS_SETTING_RALLY_POINTS       | Points de départ du rallye
+FLEETS_START_RALLIES_DESC         | Sélectionner un système que vous contrôlez pour envoyer des navires nouvellement construits à partir de tous les systèmes sélectionnés.
+FLEETS_START_RALLIES              | Démarrer les rallyes
+FLEETS_SEND_TRANSPORTS            | Envoyer des transports
+FLEETS_ADJUST_SPENDING_SELECT     | Sélectionnez les systèmes pour définir les dépenses des navires 
+FLEETS_ADJUST_SPENDING_DESC       | Sélectionnez les niveaux de dépenses de navire souhaités pour les %1 systèmes sélectionnés
+FLEETS_ADJUST_SPENDING_DESC2      | Les autres catégories de dépenses seront automatiquement ajustées.
+FLEETS_ADJUST_SPENDING_DESC3      | L'écologie retiendra les dépenses minimales nécessaires pour nettoyer la pollution.
+FLEETS_ADJUST_SPENDING            | Ajuster les dépenses de navires
+FLEETS_SPENDING_0                 | Aucune dépense des navires
+FLEETS_SPENDING_25                | 25 % de dépenses de navire
+FLEETS_SPENDING_50                | 50% de dépenses de navire
+FLEETS_SPENDING_75                | 75% de dépenses de navire
+FLEETS_SPENDING_MAX               | Dépenses maximales de navires
+FLEETS_SPENDING_CANCEL            | Annuler
+FLEETS_CANCEL_TRANSPORTS_DESC     | %1 systèmes sélectionnés ont déjà planifié des transports
+FLEETS_CANCEL_TRANSPORTS          | Annuler les transports
+FLEETS_DEPLOYING_TRANSPORTS_DESC  | Sélectionner un système à portée pour y envoyer des transports de colonies ou des troupes militaires.
+FLEETS_DEPLOY_TRANSPORTS          | Déployer des transports
+FLEETS_FLEET_DEPLOYMENT           | Déploiement de flotte
+FLEETS_UNDEPLOYING_FLEETS         | %1 flottes sélectionnées ont déjà des déploiements affectés.
+FLEETS_CANCEL_DEPLOYMENTS         | Annuler les déploiements
+FLEETS_DEPLOYING_FLEETS           | En train de déployer des flottes
+FLEETS_DEPLOYING_FLEETS_DESC      | Sélectionner un système à portée pour déployer toutes les flottes sélectionnées.
+FLEETS_DEPLOY_FLEETS              | Déployer des flottes
+FLEETS_TRANSPORTS_TITLE           | Envoyer des transports depuis :
+FLEETS_TRANSPORTS_SEND            | Envoyer %1 transports
+FLEETS_TRANSPORTS_SYNCH           | Synchroniser
+FLEETS_TRANSPORTS_UNSYNCH         | Désynchroniser
+FLEETS_TRANSPORT_NO_ROOM          | Avertissement - La planète cible est à sa population maximale !
+FLEETS_TRANSPORT_SIZE_WARNING     | Avertissement - La planète cible ne peut supporter que %1 million !
+FLEETS_TRANSPORT_TIME             | Arrivée prévue : %1 Ans
+FLEETS_TRANSPORT_TIME_RANGE       | Arrivée prévue : %1 à %2 ans
+FLEETS_CANNOT_SEND_TRANSPORTS     | %1 est incapable d'envoyer des transports
+FLEETS_EXISTING_TRANSPORT         | En train d'envoyer %1 transports vers %2
+FLEETS_EXISTING_STOP              | Arrêter
+FLEETS_CANCEL                     | Annuler
+FLEETS_HELP_ALL                   | APERÇU - Cet écran permet la gestion des flottes, des transports et de la construction navale à grande échelle. En général, vous sélectionnerez un groupe de flottes ou de systèmes à gérer, les filtrerez en un ensemble plus petit, puis choisirez l'action à effectuer sur eux.
+FLEETS_HELP_1A                    | Sélectionner les systèmes - il existe trois façons de sélectionner les systèmes : 1) en cliquant sur les systèmes sur la carte, 2) en cliquant avec le bouton droit de la souris sur la carte et 3) en utilisant les boutons "Sélectionner tout" et "Désélectionner tout".
+FLEETS_HELP_1B                    | Filtrer par - cochez les cases pour affiner la liste des systèmes sélectionnés. Il est également possible de cliquer sur les filtres pour faire défiler les options associées.
+FLEETS_HELP_1C                    | Et en train de construire - filtrez les systèmes en fonction de la conception du navire en cours de construction.
+FLEETS_HELP_1D                    | Conception du navire - modifiez la conception du navire pour l'intégrer aux systèmes sélectionnés. Une image vide signifie que les systèmes sélectionnés construisent actuellement des conceptions différentes. Attention ! Il n'y a pas d'invite de confirmation pour cette action.
+FLEETS_HELP_1E                    | Envoyer des transports - envoyer des transports depuis les systèmes sélectionnés vers un seul système cible.
+FLEETS_HELP_1F                    | Définir pnts. ralliement - définissez les points de ralliement pour les systèmes sélectionnés sur un seul système cible. 
+FLEETS_HELP_2A                    | Sélectionner les flottes - il existe trois façons de sélectionner des flottes : 1) en cliquant sur les flottes sur la carte, 2) en cliquant avec le bouton droit de la souris sur la carte et 3) en utilisant les boutons "Sélectionner tout" et "Désélectionner tout".
+FLEETS_HELP_2B                    | Filtrer par - cochez les cases pour réduire la liste des flottes sélectionnées. Il est également possible de cliquer sur les filtres pour faire défiler les options associées.
+FLEETS_HELP_2C                    | Déployer uniquement des navires de type - restreignez les types de navires que vous souhaitez déployer à partir de vos flottes. 
+FLEETS_HELP_2D                    | Sélectionné pour le déploiement - un nombre de navires, par type, qui seront déployés.
+FLEETS_HELP_2E                    | Déployer des flottes - déployer les flottes sélectionnées sur un seul système cible.
+
+// Select Next Tech to Research UI
+TECH_RESEARCH_COMPUTER            | Sélectionnez la prochaine technologie informatique sur laquelle nos chercheurs devraient se concentrer.
+TECH_RESEARCH_CONSTRUCTION        | Sélectionnez la prochaine technologie de construction sur laquelle nos chercheurs devraient se concentrer.
+TECH_RESEARCH_FORCE_FIELD         | Sélectionnez la prochaine technologie de champ de force sur laquelle nos chercheurs devraient se concentrer.
+TECH_RESEARCH_PLANETOLOGY         | Sélectionnez la prochaine technologie de planétologie sur laquelle nos chercheurs devraient se concentrer.
+TECH_RESEARCH_PROPULSION          | Sélectionnez la prochaine technologie de propulsion sur laquelle nos chercheurs devraient se concentrer.
+TECH_RESEARCH_WEAPON              | Sélectionnez la prochaine technologie d'arme sur laquelle nos chercheurs devraient se concentrer.
+TECH_TOP_TIER_DETAIL              | La réalisation de ces recherches rendra disponibles des technologies plus avancées.
+TECH_OBSOLETE_DETAIL              | Cette technologie est obsolète.
+TECH_CAN_CHANGE                   | Ce choix peut être modifié sur l'écran Technologie avant de passer au tour suivant.
+TECH_CHOOSE_RESEARCH_COST         | %1 RP
+TECH_CHOOSE_RESEARCH_TIER         | Étage %1
+TECH_TRADE_TIER_COST_INFO         | (Étage %1 - %2 RP)
+TECH_CONFIRM_CHOICE               | Sélectionner
+TECH_DISCOVERY_TITLE              | Les scientifiques [player_race_pluraladjec] réalisent une percée %1
+TECH_SCOUTED_TITLE                | Éclaireurs explorant les ruines de %1 découvrent
+TECH_STOLEN_TITLE                 | Our spies have infiltrated the [alien_race] research center at %2.
+TECH_TRADED_TITLE                 | Les scientifiques [player_race_pluraladjec] acquièrent la technologie des scientifiques [alien_race_pluraladjec]
+TECH_PLUNDERED_TITLE              | Soldats aux Ruines de %1 pillent
+TECH_DERELICT_TITLE               | Les explorateurs [alien_race_pluraladjec] pillent une technologie ancienne
+TECH_GUARDIAN_TITLE               | Les soldats [alien_race_pluraladjec] récupèrent une arme ancienne
+TECH_ALLOCATE_SHIELD              | Devrions-nous augmenter les ratios de défense de toutes nos colonies pour construire les nouveaux boucliers planétaires ?
+TECH_ALLOCATE_MISSILE_BASES       | Devrions-nous augmenter les ratios de défense de toutes nos colonies pour moderniser nos bases de missiles ?
+TECH_ALLOCATE_FACTORIES           | Devrions-nous augmenter les ratios industriels de toutes nos colonies pour améliorer nos contrôles d'usine ?
+TECH_ALLOCATE_CLEAN_WASTE         | Devrions-nous réduire les ratios écologiques de toutes nos colonies au minimum nécessaire pour les garder propres ?
+TECH_ALLOCATE_ENRICH_SOIL         | Devrions-nous augmenter les ratios écologiques de nos colonies avec des environnements standards afin de commencer à terraformer nos planètes ?
+TECH_ALLOCATE_ATMOSPHERE          | Devrions-nous augmenter les ratios écologiques de nos colonies avec des environnements hostiles afin de commencer à terraformer nos planètes ?
+TECH_ALLOCATE_TERRAFORM           | Devrions-nous augmenter les ratios écologiques de toutes nos colonies afin de commencer à terraformer nos planètes ?
+TECH_ALLOCATE_NO                  | Non
+TECH_ALLOCATE_PCT                 | +%1%
+TECH_COMPLETED_TITLE              | Recherche terminée !
+TECH_COMPLETED_COMPUTER           | Nous avons terminé toutes les recherches possibles en informatique! Aucune autre recherche dans ce domaine n'est possible.
+TECH_COMPLETED_CONSTRUCTION       | Nous avons terminé toutes les recherches possibles en technologie de la construction ! Aucune autre recherche dans ce domaine n'est possible.
+TECH_COMPLETED_FORCE_FIELD        | Nous avons terminé toutes les recherches possibles sur la technologie de champ de force ! Aucune autre recherche dans ce domaine n'est possible.
+TECH_COMPLETED_PLANETOLOGY        | Nous avons terminé toutes les recherches possibles en matière de technologie de planétologie ! Aucune autre recherche dans ce domaine n'est possible.
+TECH_COMPLETED_PROPULSION         | Nous avons terminé toutes les recherches possibles en matière de technologie de propulsion ! Aucune autre recherche dans ce domaine n'est possible.
+TECH_COMPLETED_WEAPON             | Nous avons terminé toutes les recherches possibles sur la technologie des armes ! Aucune autre recherche dans ce domaine n'est possible.
+TECH_COMPLETED_ALL                | Nous avons terminé toutes les recherches scientifiques possibles. Le temps de l’étude est fini. Tous les futurs financements de la recherche seront transférés au trésor de l'empire.
+TECH_COMPLETED_VERIFY             | Vérifiez que les allocations de dépenses dans les domaines de recherche restants sont définies correctement.
+
+// prompt for espionage
+NOTICE_ESPIONAGE_TITLE            | Nos espions se sont infiltrés dans une base [alien_raceadjecF].
+NOTICE_ESPIONAGE_SUBTITLE         | Sélectionnez un type de technologie à voler.
+NOTICE_ESPIONAGE_NO_TECH          | Aucune technologie disponible
+NOTICE_ESPIONAGE_MANY_TECHS       | %1 technologies disponibles
+NOTICE_ESPIONAGE_FOOTER           | Si cela est remarqué, cela peut provoquer un incident diplomatique.
+NOTICE_ESPIONAGE_FRAME_TITLE      | Nos espions ont réussi à à blâmer une autre race pour le vol.
+NOTICE_ESPIONAGE_FRAME_SUBTITLE   | Choisissez la race de la victime :
+
+// Spy Capture display (during next turn)
+NOTICE_SPIES_TITLE                | apport d'espionnage actuel
+NOTICE_SPIES_NO_ACTIVITY          | Aucune activité d'espionnage significative n'a été observée.
+NOTICE_SPIES_ACTIVITY             | Activité actuel:
+NOTICE_SPIES_LOST_DESC            | • [alien_empire] a fermé %1 de nos réseaux d'espionnage.
+NOTICE_SPIES_LOST_CONFESSED       | Nos espions ont avoué des activités de sabotage en cours.
+NOTICE_SPIES_LOST_CONFESSED2      | Nos espions ont avoué des activités d'espionnage en cours.
+NOTICE_SPIES_LOST_CONFESSED3      | Nos espions ont été forcés d'avouer des activités de sabotage en cours.
+NOTICE_SPIES_CAUGHT_DESC          | • Nos forces de sécurité internes ont fermé %1 réseaux d'espionnage [alien_empireof].
+NOTICE_SPIES_CAUGHT_CONFESSED     | Leurs espions ont avoué des activités de sabotage en cours.
+NOTICE_SPIES_CAUGHT_CONFESSED2    | Leurs espions ont avoué des activités d'espionnage en cours.
+NOTICE_SPIES_FRAMED               | • Nous avons été piégés pour des activités d'espionnage au sein [alien_empireof].
+NOTICE_SPIES_ESPIONAGE            | • Nos espions ont volé les secrets de %1 à [alien_empire].
+NOTICE_SPIES_ESPIONAGE_FRAME      | Nous avons réussi à blâmer [framed_empire] pour ce vol.
+NOTICE_SPIES_SABOTAGE_FACTORIES   | • Nos espions ont réussi à détruire %1 usines dans le système %2.
+NOTICE_SPIES_SABOTAGE_BASES       | • Nos espions ont réussi à détruire %1 bases de missiles protégeant le système %2.
+NOTICE_SPIES_SABOTAGE_REBELS      | • Nos espions ont réussi à inciter les rebelles dans le système %2.
+NOTICE_SPIES_SABOTAGE_REBELLION   | • Nos espions ont réussi à déclencher une rébellion dans le système %2.
+NOTICE_SPIES_LEARNED_TECH         | • Nos espions rapportent que [alien_empire] a récemment appris les technologies suivantes qui nous sont inconnues : %1
+// this just details how to concatenate a list of multiple technology (English uses ,)
+NOTICE_SPIES_MULTIPLE_TECHS       | %1, %2
+NOTICE_SPIES_THREATEN             | Menacer
+NOTICE_SPIES_MANAGE               | Gérer les Espions
+NOTICE_SPIES_CLOSE                | Fermer
+
+// Ground Combat UI
+INVASION_BATTLE                   | Dans l'année %1, [attacker_race_pluralnoun] et [defender_race_pluralnoun] se battent pour %2.
+INVASION_BATTLE_REBELS            | Dans l'année %1, [attacker_race_pluralnoun] et les rebelles se battent pour %2.
+INVASION_TROOPS_LANDED            | %1 troupes [attacker_race_pluraladjecF] ont atterri. 
+INVASION_SOME_TROOPS_LANDED       | %1 sur %2 troupes [attacker_race_pluraladjecF] ont atterri.
+INVASION_WIN                      | Des transports [attacker_race_pluraladjec] capturent %2.
+INVASION_LOSS                     | Des troupes [attacker_race_pluraladjecF] ont réussi à défendre %2.
+INVASION_ATTACKERS_TITLE          | %1 troupes [attacker_race_pluraladjecF]
+INVASION_DEFENDERS_TITLE          | %1 troupes [defender_race_pluraladjecF]
+INVASION_REBELS_TITLE             | %1 rebelles [defender_race_pluraladjec]
+INVASION_TROOP_ARMOR_DESC         | %1 %2
+
+// GNN Text
+GNN_TITLE                         | La Réseau d'actualités galactique [player_race_pluralnounof] rapporte :
+GNN_EMPIRE_RANKING                | %1. [empire_race_pluralnoun]
+GNN_EXTINCTION_KNOWN_VICTIM       | [victim_race_pluralnoun]
+GNN_EXTINCTION_KNOWN_KILLER       | [killer_race_pluralnoun]
+GNN_EXTINCTION_UNKNOWN_VICTIM     | Une civilisation inconnue 
+GNN_EXTINCTION_UNKNOWN_KILLER     | un empire inconnu
+GNN_EXTINCTION                    | %1 a été complètement détruit par %2.
+GNN_EXTINCTION_NO_KILLER          | %1 a été complètement détruit.
+GNN_EXPANSION_1                   | [expanding_empire] couvre maintenant %1 systèmes stellaires, dépassant toutes les autres races.
+GNN_EXPANSION_2                   | [expanding_empire] compte maintenant %1 systèmes stellaires. Si leur expansion n'est pas contenue, ils contrôleront bientôt la galaxie.
+GNN_EXPANSION_3                   | [expanding_empire] contrôle presque la majorité de la galaxie. Les dirigeants se préparent déjà à fusionner avec le puissant empire.
+GNN_ALLIANCE_FORMED               | [first_empire] a formé une alliance avec [second_empire].
+GNN_ALLIANCE_BROKEN               | L'alliance entre [first_empire] et [second_empire] a été rompue.
+GNN_FLEETS_RANKING                | Classement actuel des points forts de la flotte spatiale :
+GNN_CENSUS_RANKING                | Le classement censitaire des populations de l'empire :
+GNN_PRODUCTION_RANKING            | Classements actuels de la production de l'empire :
+GNN_TECHNOLOGY_RANKING            | Leaders actuels de la technologie de pointe :
+GNN_PLAYER_REBELLION              | %1 s'est rebellé et refuse de contribuer à [rebelling_empire]. Au moins %2 millions de rebelles contrôlent la colonie. Des troupes doivent être envoyées pour réprimer le soulèvement. 
+GNN_ALIEN_REBELLION               | %1 s'est rebellé et a refusé de contribuer à [rebelling_empire]. Au moins %2 millions de rebelles contrôlent la colonie.
+GNN_PLAYER_REBELLION_SPREAD       | Rebellion continues to spread throughout the [rebelling_empire]. At least %2 million rebels now control the colony at %1. 
+GNN_OVERTHROW                     | Un nouveau chef a émergé de l'intérieur [alien_empireof]. Les rumeurs indiquent que le nouvel empereur est %1. Les relations sont devenues neutres et les échanges ont été perturbés.
+GNN_END_COUNCIL                   | Avec seulement deux Empires restants, les tentatives d'unification de la galaxie avec un Conseil Galactique ont pris fin. De nombreux dirigeants débattent maintenant du type de solution finale qui peut apporter une paix durable.
+GNN_FORM_COUNCIL                  | Dans la poursuite de la paix, des représentants de chaque race se réuniront bientôt pour élire un empereur galactique à choisir parmi les dirigeants des deux empires les plus peuplés.
+GNN_ALLY_AT_WAR                   | Notre allié, [ally_empire], est entré en guerre contre [other_empire].
+
+// Error UI text
+ERROR_TITLE                       | Une erreur est survenue  :(
+ERROR_MESSAGE                     | Si vous souhaitez aider à résoudre ce problème, veuillez envoyer une capture d'écran de cette interface utilisateur ainsi que le fichier de sauvegarde du jeu "recent.rotp" à Ray Fowler, ou portez-le à son attention sur le subreddit ROTP.
+ERROR_EMAIL                       | E-mail: rayfowler@fastmail.com
+ERROR_REDDIT                      | Reddit: www.Reddit.com/r/rotp
+
+// Setup UI
+SETUP_SELECT_RACE                 | Sélectionnez votre race
+SETUP_SELECT_OPPONENTS            | Sélectionnez les adversaires
+SETUP_SELECT_GALAXY               | Sélectionnez Galaxie
+SETUP_SELECT_GALAXY_OPTIONS       | Sélectionnez les options
+SETUP_GALAXY_RULESET_LABEL        | Ensemble de règles
+SETUP_INSUFFICIENT_MEMORY         | Mémoire insuffisante
+SETUP_CREATING_GALAXY             | En train de créer la galaxie...
+SETUP_RULESET_ORION               | Orion
+SETUP_RULESET_ANTARES             | Antarès
+SETUP_RULESET_SIRIUS              | Sirius
+SETUP_GALAXY_SIZE_LABEL           | Taille
+SETUP_RACE_MULTIPLIER             | x%1
+SETUP_GALAXY_SHAPE_LABEL          | Forme
+SETUP_GALAXY_SIZE_TINY            | Minuscule
+SETUP_GALAXY_SIZE_SMALL           | Petite
+SETUP_GALAXY_SIZE_SMALL2          | Peite
+SETUP_GALAXY_SIZE_AVERAGE         | Moyenne
+SETUP_GALAXY_SIZE_AVERAGE2        | Moyenne
+SETUP_GALAXY_SIZE_LARGE           | Grande
+SETUP_GALAXY_SIZE_LARGE2          | Grande
+SETUP_GALAXY_SIZE_HUGE            | Énorme
+SETUP_GALAXY_SIZE_HUGE2           | Énorme
+SETUP_GALAXY_SIZE_MASSIVE         | Massive
+SETUP_GALAXY_SIZE_MASSIVE2        | Massive
+SETUP_GALAXY_SIZE_MASSIVE3        | Massive
+SETUP_GALAXY_SIZE_MASSIVE4        | Massive
+SETUP_GALAXY_SIZE_MASSIVE5        | Massive
+SETUP_GALAXY_SIZE_INSANE          | Folle
+SETUP_GALAXY_SIZE_LUDICROUS       | Ridicule
+SETUP_GALAXY_SIZE_MAXIMUM         | Maximum
+SETUP_GALAXY_SHAPE_RECTANGLE      | Champ d'étoiles
+SETUP_GALAXY_SHAPE_CIRCULAR       | Circulaire
+SETUP_GALAXY_SHAPE_RING           | Bague
+SETUP_GALAXY_SHAPE_ELLIPSE        | Ellipse
+SETUP_GALAXY_SHAPE_SPIRAL         | Spirale
+SETUP_GALAXY_SHAPE_STAR           | Étoile
+SETUP_GALAXY_SHAPE_BARSPIRAL      | Spirale barrée
+SETUP_GALAXY_SHAPE_TEXT           | Texte
+SETUP_GALAXY_SHAPE_CLUSTER        | Amas galactique
+SETUP_GALAXY_SHAPE_SWIRLCLUSTERS  | Grappes tourbillonnantes
+SETUP_GALAXY_SHAPE_GRID           | Grille
+SETUP_GALAXY_SHAPE_SPIRALARMS     | Bras spiraux
+SETUP_GALAXY_SHAPE_MAZE           | abyrinthe
+SETUP_GALAXY_SHAPE_VOID           | Vide
+SETUP_GALAXY_SHAPE_SHURIKEN       | Shuriken
+SETUP_GALAXY_SHAPE_BULLSEYE       | Cible
+SETUP_GALAXY_SHAPE_LORENZ         | Lorenz
+SETUP_GALAXY_SHAPE_LORENZ2        | Lorenz 2
+SETUP_GALAXY_SHAPE_FRACTAL        | Fractale
+SETUP_GALAXY_SHAPE_CHAOSGAME      | Jeu du chaos
+SETUP_GALAXY_MAP_OPTION_LABEL     | Option
+SETUP_GALAXY_MAP_OPTION_A         | Option A
+SETUP_GALAXY_MAP_OPTION_B         | Option B
+SETUP_GALAXY_MAP_OPTION_C         | Option C
+SETUP_GALAXY_AGE_NORMAL           | Normale
+SETUP_GALAXY_AGE_YOUNG            | Jeune
+SETUP_GALAXY_AGE_OLD              | Vieille
+SETUP_RANDOM_EVENTS_ON            | Activé
+SETUP_RANDOM_EVENTS_OFF           | Désactivé
+SETUP_RANDOM_EVENTS_NO_MONSTERS   | Pas de monstres
+SETUP_GALAXY_NUMBER_EMPIRES       | Total des empires : %1
+SETUP_GALAXY_NUMBER_SYSTEMS       | Total des systèmes: %1
+SETUP_GALAXY_MAX_OPPONENTS        | Maximum d'adversaires : %1
+SETUP_OPPONENTS_HEADER_1          | %1 vs.
+SETUP_OPPONENTS_HEADER_2          | Empires rivaux
+SETUP_OPPONENT_RANDOM             | ???
+SETUP_OPPONENT_AI                 | Jouer contre :
+SETUP_OPPONENT_AI_BASE            | AI: Base
+SETUP_OPPONENT_AI_MODNAR          | AI: Modnar
+SETUP_OPPONENT_AI_XILMI           | AI: Xilmi
+SETUP_OPPONENT_AI_SELECT          | AI: Sélectionnable
+SETUP_AUTOPLAY_OFF                | Desactivpe
+SETUP_AUTOPLAY_AI_BASE            | AI: Base
+SETUP_AUTOPLAY_AI_MODNAR          | AI: Modnar
+SETUP_AUTOPLAY_AI_XILMI           | AI: Xilmi
+SETUP_GAME_DIFFICULTY_LABEL       | Difficulté
+SETUP_DIFFICULTY_EASIEST          | Le plus facile
+SETUP_DIFFICULTY_EASIER           | Plus facile
+SETUP_DIFFICULTY_EASY             | Facile
+SETUP_DIFFICULTY_NORMAL           | Normale
+SETUP_DIFFICULTY_HARD             | Difficile
+SETUP_DIFFICULTY_HARDER           | Plus difficile
+SETUP_DIFFICULTY_HARDEST          | Le plus difficile
+SETUP_RESEARCH_RATE_NORMAL        | Normale
+SETUP_RESEARCH_RATE_SLOW          | Lent
+SETUP_RESEARCH_RATE_SLOWER        | Plus lent
+SETUP_RESEARCH_RATE_SLOWEST       | Le plus lent
+SETUP_TECH_TRADING_YES            | Oui
+SETUP_TECH_TRADING_ALLIES         | Alliés uniquement
+SETUP_TECH_TRADING_NO             | Non
+SETUP_WARP_SPEED_NORMAL           | Normale
+SETUP_WARP_SPEED_FAST             | Rapide
+SETUP_NEBULA_NONE                 | Aucune
+SETUP_NEBULA_RARE                 | Rare
+SETUP_NEBULA_UNCOMMON             | Rare
+SETUP_NEBULA_NORMAL               | Normale
+SETUP_NEBULA_COMMON               | Commune
+SETUP_NEBULA_FREQUENT             | Fréquente
+SETUP_COUNCIL_NONE                | Pas de Conseil
+SETUP_COUNCIL_IMMEDIATE           | Immédiat
+SETUP_COUNCIL_REBELS              | Autoriser les rebelles
+SETUP_STAR_DENSITY_LOWEST         | La plus faible
+SETUP_STAR_DENSITY_LOWER          | Plus faible
+SETUP_STAR_DENSITY_LOW            | Faible
+SETUP_STAR_DENSITY_NORMAL         | Normale
+SETUP_STAR_DENSITY_HIGH           | Élevée
+SETUP_STAR_DENSITY_HIGHER         | Plus élevée
+SETUP_STAR_DENSITY_HIGHEST        | La plus élevée
+SETUP_AI_HOSTILITY_LOWEST         | Le plus gentil
+SETUP_AI_HOSTILITY_LOWER          | Plus gentil
+SETUP_AI_HOSTILITY_LOW            | Gentil
+SETUP_AI_HOSTILITY_NORMAL         | Normale
+SETUP_AI_HOSTILITY_HIGH           | En colère
+SETUP_AI_HOSTILITY_HIGHER         | Plus en colère
+SETUP_AI_HOSTILITY_HIGHEST        | Le plus en colère
+SETUP_GAME_NUMBER_OPPONENTS       | Adversaires
+SETUP_PLANET_QUALITY_POOR         | Pauvre
+SETUP_PLANET_QUALITY_MEDIOCRE     | Médiocre
+SETUP_PLANET_QUALITY_NORMAL       | Normale
+SETUP_PLANET_QUALITY_GOOD         | Bonne
+SETUP_PLANET_QUALITY_GREAT        | Gramde
+SETUP_TERRAFORMING_NORMAL         | Normale
+SETUP_TERRAFORMING_REDUCED        | Réduite
+SETUP_TERRAFORMING_NONE           | Aucune
+SETUP_COLONIZING_NORMAL           | Normale
+SETUP_COLONIZING_RESTRICTED       | restreinte
+SETUP_FUEL_RANGE_NORMAL           | Normale
+SETUP_FUEL_RANGE_HIGH             | Élevée
+SETUP_FUEL_RANGE_HIGHER           | Plus élevée
+SETUP_FUEL_RANGE_HIGHEST          | La plus élevée
+SETUP_RANDOMIZE_AI_NONE           | Aucun
+SETUP_RANDOMIZE_AI_PERSONALITY    | Personnalité
+SETUP_RANDOMIZE_AI_ABILITY        | Capacité
+SETUP_RANDOMIZE_AI_BOTH           | Les deux
+SETUP_RACE_LABEL                  | Races disponibles
+SETUP_RACE_COLOR                  | Coleur de l'empire
+SETUP_HOMEWORLD_NAME_LABEL        | Planète :
+SETUP_LEADER_NAME_LABEL           | Leader :
+SETUP_FLAG_LABEL                  | Bannière
+SETUP_BUTTON_CANCEL               | Annuler
+SETUP_BUTTON_BACK                 | Retour
+SETUP_BUTTON_NEXT                 | Suivant
+SETUP_BUTTON_START                | Commencer
+SETUP_BUTTON_SETTINGS             | Options avancées
+
+SETUP_SPIRAL_2_ARMS               | Deux bras
+SETUP_SPIRAL_3_ARMS               | Trois bras
+SETUP_SPIRAL_4_ARMS               | Quatre bras
+SETUP_SPIRAL_5_ARMS               | Cinq bras
+SETUP_SPIRAL_6_ARMS               | Six bras
+SETUP_SPIRAL_7_ARMS               | Sept bras
+SETUP_SPIRAL_8_ARMS               | Huit bras
+SETUP_SPIRAL_ROTATION_0           | Pas de rotation
+SETUP_SPIRAL_ROTATION_1           | Rotation 1
+SETUP_SPIRAL_ROTATION_2           | Rotation 2
+SETUP_SPIRAL_ROTATION_3           | Rotation 3
+SETUP_SPIRAL_ROTATION_4           | Rotation 4
+SETUP_SPIRAL_ROTATION_5           | Rotation 5
+SETUP_SPIRAL_ROTATION_6           | Rotation 6
+SETUP_ELLIPSE_0                   | Circulaire
+SETUP_ELLIPSE_1                   | Ellipse 1
+SETUP_ELLIPSE_2                   | Ellipse 2
+SETUP_ELLIPSE_3                   | Ellipse 3
+SETUP_ELLIPSE_4                   | Ellipse 4
+SETUP_VOID_0                      | Pas de vide
+SETUP_VOID_1                      | Vide 1
+SETUP_VOID_2                      | Vide 2
+SETUP_VOID_3                      | Vide 3
+SETUP_VOID_4                      | Vide 4
+
+
+// Advanced Settings
+SETTINGS_TITLE                    | Options de jeu avancées
+SETTINGS_DESCRIPTION              | Cliquez pour basculer chaque paramètre de jeu.
+SETTINGS_EXIT                     | Quitter
+SETTINGS_DEFAULT                  | Définir par défaut
+SETTINGS_STAR_DENSITY             | Densité d'étoiles : %1
+SETTINGS_RANDOM_EVENTS            | Événements aléatoires : %1
+SETTINGS_RESEARCH_RATE            | Taux de recherche : %1
+SETTINGS_COUNCIL_WIN              | Victoire du conseil : %1
+SETTINGS_RANDOMIZE_AI             | Randomiser l'IA : %1
+SETTINGS_AUTOPLAY                 | Lecture automatique : %1
+SETTINGS_TECH_TRADING             | Commerce de technologie : %1
+SETTINGS_GALAXY_AGE               | âge de la galaxie : %1
+SETTINGS_WARP_SPEED               | Vitesse de distorsion : %1
+SETTINGS_NEBULAE                  | Nébuleuse : %1
+SETTINGS_PLANET_QUALITY           | qualité de la planète : %1
+SETTINGS_TERRAFORMING             | Terraformation hostile : %1
+SETTINGS_COLONIZING               | Colonisation : %1
+SETTINGS_FUEL_RANGE               | Portée de carburants : %1
+SETTINGS_AI_HOSTILITY             | Hostilité : %1
+SETTINGS_RANDOM_EVENTS_DESC       | Les monstres spatiaux sont des événements aléatoires et des menaces considérables en milieu de partie. Désactiver les monstres spatiaux ou tous les événements aléatoires. 
+SETTINGS_WARP_SPEED_DESC          | Augmenter la vitesse des technologies de distorsion plus avancées. Cela peut être souhaitable sur de très grandes cartes.
+SETTINGS_GALAXY_AGE_DESC          | Par rapport aux galaxies normales, les jeunes galaxies ont plus d'étoiles blanches et bleues tandis que les vieilles galaxies ont plus d'étoiles rouges et à neutrons.
+SETTINGS_TECH_TRADING_DESC        | Désactivez tous les métiers technologiques ou limitez ces métiers aux alliés.
+SETTINGS_STAR_DENSITY_DESC        | Régler sur élevé pour réduire le risque que des empires soient bloqués au début de la partie.
+SETTINGS_RESEARCH_RATE_DESC       | Ralentir le rythme de recherche de nouvelles technologies, prolongeant la durée de vie utile des technologies actuelles.
+SETTINGS_NEBULAE_DESC             | Les nébuleuses ralentissent les déplacements des vaisseaux et rendent les boucliers inutiles. Augmentez ou diminuez leur fréquence.
+SETTINGS_PLANET_QUALITY_DESC      | Augmente ou diminue la fréquence des planètes de meilleure qualité.
+SETTINGS_TERRAFORMING_DESC        | Réduisez ou éliminez les avantages des technologies de terraformation améliorées sur les planètes hostiles.
+SETTINGS_COLONIZING_DESC          | Limiter la colonisation des systèmes à ceux pour lesquels vous avez acquis la technologie spécifique.
+SETTINGS_COUNCIL_DESC             | Disable the council victory condition or allow enemy empires to rebel against a player victory.
+SETTINGS_RANDOMIZE_AI_DESC        | Randomiser les personnalités des joueurs IA, les capacités raciales ou les deux.
+SETTINGS_AUTOPLAY_DESC            | Automatiser complètement le jeu en faisant jouer une IA pour le joueur. Ceci est utile pour une vue de première main du fonctionnement de l'IA.
+SETTINGS_AUTOPLAY_WARNING         | Avertissement! La lecture automatique est actuellement activée, ce qui empêchera le jeu de l'utilisateur. Utilisez "Options avancées" pour désactiver.
+SETTINGS_FUEL_RANGE_DESC          | Augmenter la gamme des technologies de portée de carburant et des réservoirs de carburant de réserve.
+SETTINGS_AI_HOSTILITY_DESC        | Augmenter ou diminuez le niveau général d'hostilité entre les races extraterrestres.
+
+// Tech UI labels
+TECH_RESEARCH                     | Recherche technologique
+TECH_RESEARCH_POINTS              | Points de recherche
+TECH_EMPIRE_SPENDING              | Dépenses technologiques de l'Empire
+TECH_EMPIRE_SPENDING_DESC         | Somme des dépenses technologiques de toutes les colonies. 
+TECH_EMPIRE_TECH_RESERVE_OPT      | Détourner les dépenses excédentaires de la colonie de la réserve du Trésor vers la recherche
+TECH_EMPIRE_BALANCED_DESC         | Des dépenses équilibrées augmentent les points de recherche globaux.
+TECH_EMPIRE_DETAIL_1              | %1 BC pour
+TECH_EMPIRE_DETAIL_2              | %2 RP / Année
+TECH_TOTAL_RP                     | %1 RP
+TECH_DISCOVERY_PCT                | %1%
+TECH_CHANGE_RESEARCH              | Cliquez pour rechercher cette technologie
+TECH_NEXT_TIER_TITLE              | Pas encore disponible.
+TECH_FIRST_TIER_DESC              | Dépensez des points de recherche dans cette catégorie pour débloquer.
+TECH_NEXT_TIER_DESC               | Apprenez une technologie du niveau précédent pour la débloquer.
+TECH_FUTURE_TIER_DESC             | Apprenez toutes les technologies des niveaux précédents pour les débloquer.
+TECH_ALLOCATE_POINTS              | Attribuer des points de recherche
+TECH_EQUALIZE                     | Égaliser les allocations
+TECH_RESEARCH_COMPLETED           | Recherche terminée
+TECH_RESEARCHING                  | En recherche :
+TECH_NONE_RESEARCHED              | Aucun
+TECH_PLANETARY_SHIELDS            | Boucliers planétaires
+TECH_PLANETARY_SHIELDS_NONE       | Aucun
+TECH_PLANETARY_SHIELDS_CLASS      | Classe %1
+TECH_GROUND_COMBAT                | Combat au sol
+TECH_GROUND_COMBAT_NO_BONUS       | Aucun bonus
+TECH_GROUND_COMBAT_BONUS          | +%1%
+TECH_TERRAFORM                    | Terraforme
+TECH_TERRAFORM_NO_BONUS           | Aucun bonus
+TECH_TERRAFORM_BONUS              | +%1 Pop Max.
+TECH_FACTORY_CONTROLS             | Contrôles d'usine
+TECH_FACTORY_CONTROLS_BONUS       | %1 par colon
+TECH_PLANET_SCANNER               | Portée de scanner
+TECH_PLANET_SCANNER_NONE          | Aucun
+TECH_PLANET_SCANNER_RANGE         | %1 A.L.
+TECH_WASTE_REDUCTION              | Réduction des déchets
+TECH_WASTE_REDUCTION_NONE         | Aucune
+TECH_WASTE_REDUCTION_AMT          | -%1%
+TECH_WASTE_CLEANUP                | Nettoyage des déchets
+TECH_WASTE_CLEANUP_BONUS          | %1 Déchets/BC
+TECH_SHIP_RANGE                   | Portée de navires
+TECH_SHIP_RANGE_AMT               | %1 A.L.
+TECH_SHIP_SPEED                   | Vitesse de pointe
+TECH_SHIP_SPEED_AMT               | Distorsion %1
+TECH_BUTTON_EXIT                  | QUITTER
+
+// Tech UI help
+TECH_HELP_1A                      | APERÇU - Cet écran vous permet d'ajuster les dépenses dans les six domaines technologiques que vous pouvez étudier. Vous pouvez passer en revue les technologies déjà apprises (vert), en cours de recherche (jaune) ou disponibles pour de futures recherches (marron). 
+TECH_HELP_1B                      | Cliquez ou faites défiler avec la molette de la souris pour afficher les technologies d'un domaine de recherche. 
+TECH_HELP_1C                      | Se remplit lorsque des points de recherche (RP) sont dépensés dans une zone. Une fois rempli, il y a une chance croissante à chaque tour d'apprendre la technologie.
+TECH_HELP_1D                      | Technologie actuellement à l'étude. Voyez sa description pour les avantages.
+TECH_HELP_1E                      | Avantages généraux fournis par les technologies déjà apprises dans ce domaine.
+TECH_HELP_1F                      | La production totale (BC) appliquée à la recherche et les points de recherche totaux (RP) qui en découlent.
+TECH_HELP_1G                      | Les dépenses excessives dans une colonie peuvent être dirigées vers la recherche au lieu du trésor de l'empire.
+TECH_HELP_1H                      | Chaque domaine technologique a une barre de dépenses. Cliquez sur le nom pour verrouiller une barre. Dépenser pour le premier 1/6e de la barre gagne un bonus de recherche de 25 %.
+TECH_HELP_1I                      | Égalisez les allocations de dépenses pour les barres déverrouillées. 
+
+// =========================================================================
+//   ALPHA 4
+// =========================================================================
+
+// Ship Design UI
+SHIP_DESIGN_TITLE                 | Conception de navires
+SHIP_DESIGN_SLOTS                 | Emplacements de conception
+SHIP_DESIGN_AVAILABLE             | Disponible
+SHIP_DESIGN_AVAILABLE_DESC        | Sélectionnez cet emplacement de conception pour commencer à travailler sur une nouvelle conception de navire.
+SHIP_DESIGN_AVAILABLE_DESC2       | Déployez cette conception pour permettre la construction sur les colonies.
+SHIP_DESIGN_PROTOTYPE             | Prototype
+SHIP_DESIGN_PROTOTYPE_DESC        | Aucun créneau de conception de vaisseau disponible pour le déploiement
+SHIP_DESIGN_SLOT_DESC             | Total en flotte :
+SHIP_DESIGN_SLOT_DESC2            | En orbite :
+SHIP_DESIGN_SLOT_DESC3            | En transit :
+SHIP_DESIGN_SLOT_DESC4            | En construction :
+SHIP_DESIGN_NEW                   | Nouvelle conception de navire
+SHIP_DESIGN_PROTOTYPE_TITLE       | Prototype de conception de navire
+SHIP_DESIGN_SIZE_SMALL            | Petite
+SHIP_DESIGN_SIZE_MEDIUM           | Moyenne
+SHIP_DESIGN_SIZE_LARGE            | Grande
+SHIP_DESIGN_SIZE_HUGE             | Énorme
+SHIP_DESIGN_SIZE_LABEL            | Taille
+SHIP_DESIGN_TYPE_LABEL            | Type
+SHIP_DESIGN_COUNT_LABEL           | Décompte
+SHIP_DESIGN_DAMAGE_LABEL          | Dommage
+SHIP_DESIGN_POWER_LABEL           | Puiss.
+SHIP_DESIGN_RANGE_LABEL           | Portée
+SHIP_DESIGN_SPEED_LABEL           | Vitesse
+SHIP_DESIGN_COST_LABEL            | Coût
+SHIP_DESIGN_DESCRIPTION_LABEL     | Description
+SHIP_DESIGN_RANGE_VALUE           | %1 a.l.
+SHIP_DESIGN_RANGE_UNLIMITED       | Illimité
+SHIP_DESIGN_SPEED_VALUE           | Distorsion %1
+SHIP_DESIGN_COST_VALUE            | %1 BC
+SHIP_DESIGN_TOTAL_SPACE_LABEL     | Espace total
+SHIP_DESIGN_AVAIL_SPACE_LABEL     | Espace disponible
+SHIP_DESIGN_COLORS                | Teinte
+SHIP_DESIGN_COMBAT_STATS_TITLE    | Statistiques de combat
+SHIP_DESIGN_HIT_POINTS_LABEL      | Points de vie
+SHIP_DESIGN_MISSILE_DEF_LABEL     | Défense antimissile
+SHIP_DESIGN_BEAM_DEF_LABEL        | Défense de Faisceau
+SHIP_DESIGN_ATTACK_LEVEL_LABEL    | Niveau d'attaque
+SHIP_DESIGN_COMBAT_SPEED_LABEL    | Vitesse de combat
+SHIP_DESIGN_COMBAT_SPEED_VALUE    | %1 carré(s)
+SHIP_DESIGN_ENGINES_TITLE         | Moteurs
+SHIP_DESIGN_ENGINES_DESC          | Propulse votre vaisseau et ses composants.
+SHIP_DESIGN_ENGINE_TYPE           | Type
+SHIP_DESIGN_ENGINE_SPEED          | Vitesse
+SHIP_DESIGN_ENGINE_COST1          | Coût, par moteur
+SHIP_DESIGN_ENGINE_SIZE1          | Taille, par moteur
+SHIP_DESIGN_ENGINE_POWER1         | Puiss., par moteur
+SHIP_DESIGN_POWER_REQUIREMENTS    | Exigences d'alimentation
+SHIP_DESIGN_ENGINES_REQUIRED      | Moteurs requis
+SHIP_DESIGN_ENGINES_SIZE          | Taille totale du moteur
+SHIP_DESIGN_ENGINES_COST          | Coût total du moteur
+SHIP_DESIGN_COPY_BUTTON           | Copier
+SHIP_DESIGN_CLEAR_BUTTON          | Effacer
+SHIP_DESIGN_RENAME_BUTTON         | Renommer
+SHIP_DESIGN_DEPLOY_BUTTON         | Déployer la conception
+SHIP_DESIGN_DEPLOY_DESC           | Une fois déployé, vous pouvez construire ce vaisseau sur vos colonies et ce design ne peut être que renommé ou mis au rebut.
+SHIP_DESIGN_SCRAP_BUTTON          | Annuler la conception
+SHIP_DESIGN_SCRAP_CONFIRM1        | Êtes-vous sûr de vouloir supprimer le design %1 ?
+SHIP_DESIGN_SCRAP_CONFIRM2        | Cela détruira %1 navires de votre flotte et placera %2 BC dans la réserve planétaire.
+SHIP_DESIGN_SCRAP_CONFIRM3        | Vous n'avez actuellement aucun navire construit de ce type.
+SHIP_DESIGN_SCRAP_CANCEL          | Annuler
+SHIP_DESIGN_SCRAP_OK              | Supprimer
+SHIP_DESIGN_RENAME_CONFIRM        | Renommez la conception de votre navire
+SHIP_DESIGN_DEPLOY_CONFIRM        | Nommez votre nouveau design de navire
+SHIP_DESIGN_DEPLOY_CANCEL         | Annuler
+SHIP_DESIGN_DEPLOY_OK             | Déployer
+SHIP_DESIGN_RENAME_OK             | Renommer
+SHIP_DESIGN_UNNAMED_DESIGN        | Innomé
+SHIP_DESIGN_COMPONENT_NONE        | Aucun
+
+
+// ship design selection dialogs
+SHIP_DESIGN_STARGATE_NAME         | Porte des étoiles
+SHIP_DESIGN_1ST_SCOUT_NAME        | Éclaireur
+SHIP_DESIGN_1ST_FIGHTER_NAME      | Chasser
+SHIP_DESIGN_1ST_DESTROYER_NAME    | Destructeer
+SHIP_DESIGN_1ST_BOMBER_NAME       | Bombardier
+SHIP_DESIGN_1ST_COLONY_NAME       | Navire colonial
+SHIP_DESIGN_COMPUTER_TITLE        | Ordinateurs
+SHIP_DESIGN_COMPUTER_TYPE         | Type
+SHIP_DESIGN_COMPUTER_COST         | Coût
+SHIP_DESIGN_COMPUTER_SIZE         | Taille
+SHIP_DESIGN_COMPUTER_POWER        | Puiss.
+SHIP_DESIGN_COMPUTER_SPACE        | Espace
+SHIP_DESIGN_SHIELD_TITLE          | Boucliers
+SHIP_DESIGN_SHIELD_TYPE           | Type
+SHIP_DESIGN_SHIELD_COST           | Coût
+SHIP_DESIGN_SHIELD_SIZE           | Taille
+SHIP_DESIGN_SHIELD_POWER          | Puiss.
+SHIP_DESIGN_SHIELD_SPACE          | Espace
+SHIP_DESIGN_ECM_TITLE             | Brouilleurs
+SHIP_DESIGN_ECM_TYPE              | Type
+SHIP_DESIGN_ECM_COST              | Coût
+SHIP_DESIGN_ECM_SIZE              | Taille
+SHIP_DESIGN_ECM_POWER             | Puiss.
+SHIP_DESIGN_ECM_SPACE             | Espace
+SHIP_DESIGN_ARMOR_TITLE           | Armure
+SHIP_DESIGN_ARMOR_TYPE            | Type
+SHIP_DESIGN_ARMOR_COST            | Coût
+SHIP_DESIGN_ARMOR_SIZE            | Taille
+SHIP_DESIGN_ENGINE_TITLE          | Moteurs
+SHIP_DESIGN_ENGINE_TYPE           | Type
+SHIP_DESIGN_ENGINE_NUM            | Moteurs Num
+SHIP_DESIGN_ENGINE_SPACE          | Espace
+SHIP_DESIGN_ENGINE_COST           | Coût
+SHIP_DESIGN_ENGINE_SIZE           | Taille
+SHIP_DESIGN_ENGINE_POWER          | Puiss.
+SHIP_DESIGN_MANEUVER_TITLE        | Manœuvre
+SHIP_DESIGN_MANEUVER_TYPE         | Type
+SHIP_DESIGN_MANEUVER_SPEED        | Vitesse
+SHIP_DESIGN_MANEUVER_COST         | Coût
+SHIP_DESIGN_MANEUVER_POWER        | Puiss.
+SHIP_DESIGN_MANEUVER_SPACE        | Espace
+SHIP_DESIGN_WEAPON_TITLE          | Armes
+SHIP_DESIGN_WEAPON_MAX            | Max
+SHIP_DESIGN_WEAPON_TYPE           | Type
+SHIP_DESIGN_WEAPON_DESCRIPTION    | Description
+SHIP_DESIGN_WEAPON_DAMAGE         | Dommage
+SHIP_DESIGN_WEAPON_DMG_RANGE      | %1-%2
+SHIP_DESIGN_WEAPON_COST           | Coût
+SHIP_DESIGN_WEAPON_SIZE           | Taille
+SHIP_DESIGN_WEAPON_POWER          | Puiss.
+SHIP_DESIGN_WEAPON_SPACE          | Espace
+SHIP_DESIGN_SPECIAL_TITLE         | Dispositifs spéciaux
+SHIP_DESIGN_SPECIAL_TYPE          | Type
+SHIP_DESIGN_SPECIAL_DESCRIPTION   | Description
+SHIP_DESIGN_SPECIAL_COST          | Coût
+SHIP_DESIGN_SPECIAL_SIZE          | Taille
+SHIP_DESIGN_SPECIAL_POWER         | Puiss.
+SHIP_DESIGN_SPECIAL_SPACE         | Espace
+
+// Ship Design help
+SHIP_DESIGN_HELP_ALL              | APERÇU - un empire peut avoir jusqu'à six modèles de navires actifs. Pour chaque conception, choisissez une taille de coque puis remplissez-la de divers composants tels que des armures, des boucliers et des armes. Chaque composant a une taille, une Puiss. et un coût. L'espace total requis pour un composant est sa taille plus la taille du nombre de moteurs nécessaires pour l'alimenter. Une fois déployé, un modèle de vaisseau peut être construit dans n'importe laquelle de vos colonies.
+SHIP_DESIGN_HELP_1A               | Taille - les grandes tailles de coque augmentent les coûts mais offrent plus d'espace.
+SHIP_DESIGN_HELP_1B               | Portée - jusqu'où le vaisseau peut voyager depuis vos systèmes.
+SHIP_DESIGN_HELP_1C               | Vitesse - vitesse de déplacement dans l'espace entre les étoiles. 
+SHIP_DESIGN_HELP_1D               | Coût - coût total pour construire ce vaisseau.
+SHIP_DESIGN_HELP_1E               | Espace total - espace total utilisé par les composants sur cette conception de vaisseau.
+SHIP_DESIGN_HELP_1F               | Espace disponible - espace inutilisé sur ce modèle de vaisseau.
+SHIP_DESIGN_HELP_1G               | Points de vie - dégâts nécessaires pour détruire ce vaisseau au combat.
+SHIP_DESIGN_HELP_1H               | Défense antimissile - niveau de défense contre les armes de missiles au combat.
+SHIP_DESIGN_HELP_1I               | Défense de faisceau - niveau de défense contre les armes à faisceau au combat.
+SHIP_DESIGN_HELP_1J               | Niveau d'attaque - niveau d'attaque des armes en combat. 
+SHIP_DESIGN_HELP_1K               | Vitesse de combat - distance que le vaisseau peut parcourir en combat, par tour.
+SHIP_DESIGN_HELP_1L               | Teinte - modifie la couleur du navire.
+SHIP_DESIGN_HELP_2A               | Type de moteur - le type de moteur utilisé pour propulser cette conception de vaisseau.
+SHIP_DESIGN_HELP_2B               | Vitesse - vitesse de déplacement fournie par le moteur.
+SHIP_DESIGN_HELP_2C               | Coût - le coût de chaque moteur nécessaire pour la Puiss..
+SHIP_DESIGN_HELP_2D               | Taille - espace de coque requis par moteur.
+SHIP_DESIGN_HELP_2E               | Puiss. - la Puiss. de sortie par moteur.
+SHIP_DESIGN_HELP_2F               | Exigences d'alimentation - exigence d'alimentation requises pour tous les composants du vaisseau.
+SHIP_DESIGN_HELP_2G               | Moteurs requis - nombre de moteurs nécessaires pour répondre aux besoins en Puiss..
+SHIP_DESIGN_HELP_2H               | Taille totale - espace total de la coque nécessaire pour tous les moteurs.
+SHIP_DESIGN_HELP_2I               | Coût total - coût de construction total pour tous les moteurs.
+SHIP_DESIGN_HELP_2J               | L'image attribuée à la conception de navire sélectionné. Il y a six images différentes pour chacune des quatre tailles de coque. Lors de la création d'un nouveau design de vaisseau, cliquez sur pour faire défiler les options.
+SHIP_DESIGN_HELP_2K               | Le nom de la conception du navire.
+SHIP_DESIGN_HELP_3A               | Ordinateurs - affectent le niveau d'attaque de votre vaisseau au combat.
+SHIP_DESIGN_HELP_3B               | Armure - affecte les points de vie de votre vaisseau. L'armure lourde l'augmente de 50 %.
+SHIP_DESIGN_HELP_3C               | Boucliers - réduisent les dégâts des attaques entrantes.
+SHIP_DESIGN_HELP_3D               | les contre-mesures électroniques améliorent votre défense antimissile. - les contre-mesures électroniques améliorent votre défense antimissile.
+SHIP_DESIGN_HELP_3E               | Manœuvre - augmente la vitesse de combat et les défenses du navire.
+SHIP_DESIGN_HELP_3F               | Armes - peuvent infliger des dégâts aux navires et colonies ennemis. Jusqu'à quatre types d'armes différents peuvent être ajoutés à une conception de navire.
+SHIP_DESIGN_HELP_3G               | Spéciaux - appareils qui offrent des capacités uniques à votre vaisseau. Jusqu'à trois dispositifs spéciaux peuvent être ajoutés à une conception de navire.
+SHIP_DESIGN_HELP_4A               | Renommer - vous permet de renommer un dessin existant.
+SHIP_DESIGN_HELP_4B               | Supprimer conception - supprime une conception existante. Les navires démolis retournent 25% de leur valeur de construction au trésor.
+SHIP_DESIGN_HELP_4C               | Les conceptions de navires déployés peuvent être construites sur n'importe laquelle de vos colonies.
+SHIP_DESIGN_HELP_4D               | Les emplacements de conception de navire disponibles peuvent être sélectionnés afin de créer un nouveau design.
+SHIP_DESIGN_HELP_4E               | Copier - copier une conception existante pour servir de point de départ à une nouvelle conception.
+SHIP_DESIGN_HELP_4F               | Effacer - réinitialise tous les composants sélectionnés.
+SHIP_DESIGN_HELP_4G               | Déployer conception - Lorsque votre nouvelle conception est terminée, son déploiement vous permet de la nommer et de la rendre disponible pour la construction.
+
+
+// Ship Combat UI
+SHIP_COMBAT_TITLE_SYSTEM          | Combat de vaisseaux à %1!
+SHIP_COMBAT_TITLE_UNSCOUTED       | Combat de vaisseaux dans un système inexploré!
+SHIP_COMBAT_TITLE_DESC            | Nos forces rencontrent une flotte [alien_raceadjecF] hostile.
+SHIP_COMBAT_TITLE_MONSTER_DESC    | Nos forces rencontrent un %1 hostile.
+SHIP_COMBAT_BASES                 | %1  bases de missiles
+SHIP_COMBAT_SHIELD                | Bouclier planétaire de niveau %1
+SHIP_COMBAT_POPULATION            | %1 Population
+SHIP_COMBAT_FACTORIES             | %1 Usines
+SHIP_COMBAT_ENTER_BATTLE          | Entrer dans la bataille
+SHIP_COMBAT_MISS                  | Manqué
+SHIP_COMBAT_DEFLECTED             | Dévié
+SHIP_COMBAT_DESTROYED             | Détruit!
+SHIP_COMBAT_STASIS                | Stase
+SHIP_COMBAT_TITLE                 | Bataille à %1
+SHIP_COMBAT_TITLE_UNNAMED         | Bataille dans un système inexploré
+SHIP_COMBAT_SYSTEM_POP            | Population
+SHIP_COMBAT_SYSTEM_FACT           | Usines
+SHIP_COMBAT_SYSTEM_BASE           | Bases
+SHIP_COMBAT_TITLE_VICTORIOUS      | VICTORIEUX
+SHIP_COMBAT_SHIP_TOTALS           | %1 🡒 %2
+SHIP_COMBAT_RESULTS_RETREATED     | RECULÉ
+SHIP_COMBAT_RESULTS_DESTROYED     | DÉTRUIT
+SHIP_COMBAT_RETREAT_ALL           | Reculer tout
+SHIP_COMBAT_NEXT                  | Prochain navire
+SHIP_COMBAT_AUTO_RESOLVE          | Bataille à résolution automatique
+SHIP_COMBAT_AUTO_RESOLVING        | En train de résoudre le combat...
+SHIP_COMBAT_PLAY_BATTLE           | Bataille en lecture automatique
+SHIP_COMBAT_PAUSE_BATTLE          | Interrompre la bataille
+SHIP_COMBAT_STATS_ON              | Statistiques de combat : activées
+SHIP_COMBAT_STATS_OFF             | Statistiques de combat : désactivées
+SHIP_COMBAT_EXIT                  | Quitter
+SHIP_COMBAT_COUNT_NAME            | %1  %2
+SHIP_COMBAT_MONSTER_TARGET        | Monstre spatial ciblé.
+SHIP_COMBAT_ENEMY_TARGET          | Flotte ennemie ciblée.
+SHIP_COMBAT_ALLY_TARGET           | Flotte amie ciblée.
+SHIP_COMBAT_ENEMY_COLONY          | Planète ennemie ciblée.
+SHIP_COMBAT_ALLY_COLONY           | Planète amicale ciblée.
+SHIP_COMBAT_CURRENT_TARGET        | Flotte actuelle ciblée.
+SHIP_COMBAT_SELECT_ACTION         | Sélectionner une action.
+SHIP_COMBAT_SELECT_WEAPON         | Sélectionner une arme ou un appareil.
+SHIP_COMBAT_FIRE_WEAPON           | Tirer
+SHIP_COMBAT_ACTION_NEXT_SHIP      | Prochain vaisseau
+SHIP_COMBAT_ACTION_TURN_DONE      | Tour effectué
+SHIP_COMBAT_ACTION_RETREAT        | Battre en retraite
+SHIP_COMBAT_ACTION_FIRE_ALL       | Tirer toutes les armes.
+SHIP_COMBAT_ACTION_CLOAK          | Masquer
+SHIP_COMBAT_ACTION_MOVE           | Venir ici
+SHIP_COMBAT_ACTION_TELEPORT       | Téléporter ici
+SHIP_COMBAT_ACTION_RANGE          | Hors de portée
+SHIP_COMBAT_ACTION_NO_MISSILES    | Aucun missile restant
+SHIP_COMBAT_ACTION_NO_BOMBS       | Aucune bombe restante
+SHIP_COMBAT_ACTION_FIRED          | Déjà tiré
+SHIP_COMBAT_ACTION_USED           | Déjà utilisé
+SHIP_COMBAT_ACTION_BAD_TARGET     | Cible invalide
+SHIP_COMBAT_ACTION_WPN_COUNT      | %1 x%2
+SHIP_COMBAT_ACTION_WPN_COUNT_SHOTS| %1 x%2 x%3
+SHIP_COMBAT_INFO_LABEL            | Informations sur le navire
+SHIP_COMBAT_SCAN_LABEL            | Informations sur l'analyse du navire
+SHIP_COMBAT_SCAN_HIT_POINTS       | Points de vie
+SHIP_COMBAT_SCAN_MISSILE_DEF      | Défense antimissile
+SHIP_COMBAT_SCAN_BEAM_DEF         | Défense de faisceau
+SHIP_COMBAT_SCAN_SHIELD_CLASS     | Classe de bouclier
+SHIP_COMBAT_SCAN_ATTACK_LEVEL     | Niveau d'attaque
+SHIP_COMBAT_SCAN_SPEED            | Vitesse
+SHIP_COMBAT_SCAN_WEAPONS          | Armes
+SHIP_COMBAT_SCAN_DEVICES          | Dispositifs
+SHIP_COMBAT_SCAN_HITS_VALUE       | %1/%2
+SHIP_COMBAT_SCAN_WEAPON_CNT       | %1 x %2
+SHIP_COMBAT_SCAN_UNSCANNED_VALUE  | ???
+SHIP_COMBAT_COLONY_LABEL          | Informations sur la colonie
+SHIP_COMBAT_COLONY_SCAN_LABEL     | Informations sur l'analyse des colonies
+SHIP_COMBAT_COLONY_POPULATION     | Population
+SHIP_COMBAT_COLONY_SHIELD         | Bouclier
+SHIP_COMBAT_COLONY_FACTORIES      | Usines
+SHIP_COMBAT_COLONY_BASES          | Bases de missiles
+SHIP_COMBAT_COLONY_BASE_HITS      | Points vie base de missiles
+SHIP_COMBAT_COLONY_BASE_ATTACK    | Niveau attaque missiles
+SHIP_COMBAT_ACTION_FMT            | %1 - %2
+
+RELATIONS_FEUD                    | Querelle
+RELATIONS_HATE                    | Haine
+RELATIONS_DISCORD                 | Discorde
+RELATIONS_TROUBLED                | Troublé
+RELATIONS_TENSE                   | Tendu
+RELATIONS_RESTLESS                | Agité
+RELATIONS_WARY                    | Méfiant
+RELATIONS_UNEASE                  | Malaise
+RELATIONS_NEUTRAL                 | Neutre
+RELATIONS_RELAXED                 | Détendu
+RELATIONS_AMIABLE                 | Aimable
+RELATIONS_CALM                    | Calme
+RELATIONS_AFFABLE                 | Affable
+RELATIONS_PEACEFUL                | Pacifique
+RELATIONS_FRIENDLY                | Amical
+RELATIONS_UNITY                   | Unité
+RELATIONS_HARMONY                 | Harmonie
+
+RACES_TITLE                       | Rapports de course
+RACES_SELECTOR_TITLE              | Sélecteur d'Empire
+RACES_TAB_DIPLOMACY               | Diplomatie
+RACES_TAB_INTELLIGENCE            | Intelligence
+RACES_TAB_MILITARY                | Militaire
+RACES_TAB_STATUS                  | Statut
+RACES_KNOWN_EMPIRES               | %1 empires connus
+RACES_RECALLED_DIPLOMATS          | %1 ont rappelé des diplomates
+RACES_NO_TREATY                   | Sans traité diplomatique
+RACES_AT_FINAL_WAR                | Guerre finale
+RACES_AT_WAR                      | En guerre
+RACES_PEACE                       | Traité de paix
+RACES_PACT                        | Pacte de non-agression
+RACES_ALLY                        | Alliance
+RACES_UNITY                       | Unité
+RACES_OUT_OF_RANGE                | Hors de portée du navire
+RACES_TRADE_LEVEL                 | Traité commercial de %1 BC
+RACES_TRADE_NONE                  | Pas de traité commercial
+RACES_DIPLOMAT_RECALLED           | Diplomate [alien_raceadjec] rappelé
+RACES_DIPLOMATS_RECALLED          | Diplomates rappelés
+
+RACES_DIPLOMACY_HOMEWORLD         | Planète
+RACES_DIPLOMACY_LEADER            | Leader
+RACES_DIPLOMACY_CURRENT_TRADE     | Revenu commercial courant
+RACES_DIPLOMACY_TOTAL_TRADE       | Total des traités commerciaux
+RACES_DIPLOMACY_TRADE_AMT         | %1 BC
+RACES_DIPLOMACY_CHARACTER         | Personnage
+RACES_DIPLOMACY_STATUS            | Statust
+RACES_DIPLOMACY_RELATIONS_METER   | Compteur de relations
+RACES_DIPLOMACY_RELATIONS_UNKNOWN | L'humeur et les motivations [alien_empireof] sont impénétrables pour nos diplomates et nos espions.
+RACES_DIPLOMACY_BUREAU            | Bureau de la diplomatie
+RACES_DIPLOMACY_BUREAU_DESC1      | Contactez les empires étrangers ou rappelez vos diplomates pour empêcher les empires de vous contacter.
+RACES_DIPLOMACY_BUREAU_DESC       | Contactez l'ambassadeur [alien_raceadjec] pour une audience ou établissez un contact si vos diplomates ont été rappelés. 
+RACES_DIPLOMACY_BUREAU_DESC_RANGE | Nous ne pouvons pas établir de relations diplomatiques avec des empires qui sont hors de portée de nos navires.
+RACES_DIPLOMACY_BUREAU_DESC_FINAL | Nous sommes engagés dans une guerre finale avec la Nouvelle République. La diplomatie n'est plus une option.
+RACES_DIPLOMACY_KNOWN_EMPIRES     | Empires étrangers connus
+RACES_DIPLOMACY_RECALLED_DIPLOMAT | Diplomates rappelés
+RACES_DIPLOMACY_MANAGE_DIPLOMATS  | Gérer les diplomates
+RACES_DIPLOMACY_AUDIENCE          | Public
+RACES_DIPLOMACY_CONTACT           | Établir contact
+RACES_DIPLOMACY_TRADE_SUMMARY     | Résumé commercial
+RACES_DIPLOMACY_TRADE_DESC        | Contactez l'ambassadeur [alien_raceadjec] pour négocier un traité commercial. Les réseaux commerciaux prennent du temps et de l'argent à mettre en place, mais une fois matures, ils apportent de l'argent au trésor de votre empire.
+RACES_DIPLOMACY_TRADE_DESC_RANGE  | Nous ne pouvons pas établir de réseaux commerciaux avec des empires qui sont hors de portée de nos navires.
+RACES_DIPLOMACY_TRADE_DESC_FINAL  | Nous sommes engagés dans une guerre finale avec la Nouvelle République. Le commerce n'est plus possible. 
+RACES_DIPLOMACY_TRADE_TREATY      | Traité de commerce
+RACES_DIPLOMACY_FOREIGN_RELATIONS | Relations étrangères
+RACES_DIPLOMACY_FOREIGN_RANGE     | Nous ne pouvons pas connaître les relations extérieures [alien_empireof] tant que nous n'avons pas établi de contact diplomatique.
+RACES_DIPLOMACY_FOREIGN_DESC      | [alien_race_pluralnoun] sont en contact avec les races suivantes :
+RACES_DIPLOMACY_COUNTER_BUREAU    | Bureau de contre-espionnage
+RACES_DIPLOMACY_COUNTER_DESC      | Les dépenses de sécurité augmentent vos dépenses et vos chances de découvrir des espions étrangers.
+RACES_DIPLOMACY_COUNTER_DESC2     | Taxez vos colonies pour augmenter les dépenses de sécurité.
+RACES_DIPLOMACY_EVENT_YEAR        | Année
+RACES_DIPLOMACY_EVENT_TURN        | Tour
+RACES_DIPLOMACY_EVENT_RACE        | Race
+RACES_DIPLOMACY_EVENT_TITLE       | Incident diplomatique
+RACES_DIPLOMACY_EVENT_EFFECT      | Effet
+RACES_MANAGE_DIALOG_OK            | OK
+RACES_MANAGE_REINSTATE_DIPLOMAT   | Réintégrer Diplomate
+RACES_MANAGE_RECALL_DIPLOMAT      | Rappeler Diplomate
+RACES_MANAGE_OUR_RECALLED         | Notre diplomate rappelé
+RACES_MANAGE_THEIR_RECALLED       | Leur diplomate rappelé
+RACES_MANAGE_BOTH_RECALLED        | Les deux diplomates rappelé
+
+RACES_INTEL_TITLE                 | Rapport de renseignement [alien_raceadjec]
+RACES_COUNTER_INTEL_TITLE         | Rapport de contre-espionnage
+RACES_INTEL_SECURITY_BONUS        | Bonus de sécurité
+RACES_INTEL_TOTAL_SPENDING        | Dépenses totales
+RACES_INTEL_SECURITY_TAX          | Taxe sur la sécurité
+RACES_INTEL_TAX_DESC              | Taxez vos colonies pour augmenter vos chances de découvrir des espions étrangers.
+RACES_INTEL_TAX_OUT_OF_RANGE      | Les dépenses commencent lorsque vous êtes à portée de races extraterrestres.
+RACES_INTEL_SECURITY_BONUS_AMT    | +%1%
+RACES_INTEL_SECURITY_BONUS_NONE   | None
+RACES_INTEL_REPORT_AGE            | Signaler l'âge
+RACES_INTEL_SPY_NETWORK           | Réseaux d'espionnage
+RACES_INTEL_SPENDING              | Dépenses
+RACES_INTEL_SPENDING_DESC         | Augmentez les dépenses pour ajouter des espions au réseau au fil du temps. 
+RACES_INTEL_SPENDING_DESC_UNITY   | Les réseaux d'espionnage sont inutiles car la technologie est partagée librement entre les membres de la Nouvelle République.
+RACES_INTEL_SPENDING_CAPPED       | Limite de dépenses d'espionnage de l'Empire atteinte. Financement des réseaux d'espionnage réduit de %1%.
+RACES_INTEL_SPENDING_RANGE        | Impossible de créer des réseaux d'espionnage pour les empires hors de portée des navires.
+RACES_INTEL_PERCENT_AMT           | %1%
+RACES_INTEL_YEARS                 | %1 ans
+RACES_INTEL_NO_SPIES              | Pas d'espions
+RACES_INTEL_1_SPY                 | 1 spion
+RACES_INTEL_N_SPIES               | %1 spions
+RACES_INTEL_SPIES                 | %1 / %2
+RACES_INTEL_SPENDING_ANNUAL       | %1 BC/année
+RACES_INTEL_CURRENT               | Courant
+RACES_INTEL_NO_DATA               | Pas de données
+RACES_INTEL_SPENDING_NONE         | Aucune
+RACES_INTEL_COMPLETION_YEARS      | %1 Ans
+RACES_INTEL_COMPLETION_PER_YEAR   | %1/Année
+RACES_INTEL_BUREAU_TITLE          |  Bureau des Renseignements
+RACES_INTEL_BUREAU_DESC           | Affectez vos espions pour voler de la technologie ou saboter des races étrangères.
+RACES_INTEL_BUREAU_SPIES          | Total d'espions
+RACES_INTEL_BUREAU_MANAGE         | Gérer les espions
+RACES_INTEL_BUREAU_SPENDING       | Dépenses totales
+RACES_INTEL_SPY_ORDERS            | Ordres d'espionnage
+RACES_INTEL_SPY_ORDERS_DESC       | Affectez vos espions pour cacher, voler des secrets ou saboter des colonies [alien_race_pluraladjecF]. Plus votre réseau d'espionnage est grand, plus vous avez de chances de réussir à chaque tour tant qu'aucun de vos espions n'est capturé et n'avoue.
+RACES_INTEL_SPY_WARNING           | Si elle est découverte, cette mission rompra notre traité avec [alien_race_pluraladjec].
+RACES_INTEL_SPY_WARNING_WAR       | Si elle est découverte, cette mission pourrait déclencher une guerre avec [alien_race_pluraladjec].
+RACES_INTEL_KNOWN_TECHNOLOGY      | Technologie [alien_raceadjecF] connue.
+RACES_INTEL_KNOWN_TECH_DESC       | Nos espions rapportent que [alien_race_pluraladjec] maîtrisent les technologies suivantes. Toute technologie qui nous est inconnue est mise en avant.
+RACES_INTEL_UNKNOWN_TECHNOLOGY    | Rapport de technologie inconnue
+RACES_INTEL_UNKNOWN_TECH_DESC     | Nos espions rapportent que les races étrangères ont maîtrisé les technologies suivantes qui nous sont inconnues.
+
+RACES_MILITARY_TITLE              | Flotte de vaisseaux [alien_race_pluraladjecF] 
+RACES_MILITARY_SUBTITLE           | Navires par taille de coque
+RACES_MILITARY_UNSCANNED          | ??
+RACES_MILITARY_UNSCANNED_LONG     | Non scanné
+RACES_MILITARY_SMALL              | Petit
+RACES_MILITARY_MEDIUM             | Moyen
+RACES_MILITARY_LARGE              | Grand
+RACES_MILITARY_HUGE               | Énorme
+RACES_MILITARY_REPORT_CURRENT     | Le rapport de flotte est à jour.
+RACES_MILITARY_DEFENSE            | Défenses
+RACES_MILITARY_DEF_PLANET_SHIELD  | Boucliers planétaires
+RACES_MILITARY_DEF_DEFL_SHIELD    | Boucliers déflecteurs
+RACES_MILITARY_DEF_ARMOR          | Armure
+RACES_MILITARY_TROOP_BONUS        | Bonus de troupe terrestre
+RACES_MILITARY_DEF_MISSILE        | Base de missiles
+RACES_MILITARY_DEF_MISSILE_MAX    | Bases de missiles maximales par défaut pour les nouvelles colonies
+RACES_MILITARY_NO_SHIELD          | Aucun
+RACES_MILITARY_REPORT_NONE        | Pas de données. Besoin d'espions supplémentaires pour s'infiltrer.
+RACES_MILITARY_REPORT_OLD         | Âge du rapport de flotte : %1 ans.
+RACES_MILITARY_NO_SHIPS           | Aucun navire détecté
+RACES_MILITARY_HULL               | Coque
+RACES_MILITARY_ARMOR              | Armure
+RACES_MILITARY_ATTACK_LEVEL       | Niveau d'attaque
+RACES_MILITARY_MISSILE_DEFENSE    | Défense antimissile
+RACES_MILITARY_BEAM_DEFENSE       | Défense de faisceau
+RACES_MILITARY_SHIELD             | Classe de bouclier
+RACES_MILITARY_COMBAT_SPEED       | Vitesse de combat
+RACES_MILITARY_TRAVEL_SPEED       | Vitesse de voyage
+RACES_MILITARY_WEAPON_CNT         | %2 x%1
+RACES_MILITARY_NO_WEAPONS         | Pas d'armes
+RACES_MILITARY_NO_SPECIALS        | Pas de speciaux
+RACES_MILITARY_ACTIVE             | Actif
+RACES_MILITARY_INACTIVE           | Inactif
+RACES_MILITARY_LAST_SEEN          | Vu pour la dernière fois
+RACES_MILITARY_SCAN_AGE           | %1 Ans
+RACES_MILITARY_TACTICAL           | Informations tactiques
+RACES_MILITARY_WEAPONS            | Armes
+RACES_MILITARY_SPECIALS           | Appareils spéciaux
+
+RACES_STATUS_THE_EMPIRE           | [alien_empire]
+RACES_STATUS_VS                   | vs.
+RACES_STATUS_KNOWN_EMPIRES        | %1 empires connus
+RACES_STATUS_HISTORY              | Afficher l'historique [alien_raceadjecF]
+RACES_STATUS_NO_DATA              | Pas de données
+RACES_STATUS_OLD_DATA             | Anciennes données
+RACES_STATUS_FLEET_STRENGTH       | Force de la flotte
+RACES_STATUS_POPULATION           | Population
+RACES_STATUS_TECHNOLOGY           | Technologie
+RACES_STATUS_PLANETS              | Planètes
+RACES_STATUS_PRODUCTION           | Production
+RACES_STATUS_TOTAL_POWER          | Pouvoir total
+RACES_UNKNOWN_DATA                | ???
+
+RACES_SET_COLOR_TITLE             | Choisissez une nouvelle couleur pour [alien_empire]
+RACES_SET_COLOR_DESC              | Si la couleur et la forme sélectionnées sont utilisées par un autre empire, les couleurs seront inversées.
+
+// Races UI help
+RACES_HELP_0A                     | APERÇU : Cet écran fournit des informations détaillées sur chacune des races extraterrestres que vous avez rencontrées.
+RACES_HELP_0B                     | Diplomatie - Engagez-vous dans la diplomatie avec l'empire sélectionné.
+RACES_HELP_0C                     | Intelligence - Affichez la technologie extraterrestre et gérez vos réseaux d'espionnage.
+RACES_HELP_0D                     | Armée - Affichez les conceptions de la flotte et des navires.
+RACES_HELP_0E                     | Statut - Comparaison entre plusieurs catégories.
+RACES_HELP_0F                     | La sélection de votre empire vous permet de gérer les informations de toutes les races contactées sur chaque onglet.
+RACES_HELP_0G                     | La sélection d'un empire extraterrestre affiche des informations plus détaillées pour cette race sur chaque onglet.
+RACES_HELP_1A                     | Informations générales pour l'empire sélectionné.
+RACES_HELP_1B                     | Fournit un accès direct aux diplomates de tous les empires contactés.
+RACES_HELP_1C                     | Augmentez la taxe de sécurité pour améliorer vos chances de déjouer les espions ennemis.
+RACES_HELP_1D                     | Fournit un accès direct pour gérer vos espions dans tous les empires contactés.
+RACES_HELP_1E                     | Des incidents diplomatiques qui affectent la façon dont les autres empires réagissent à votre égard. Les effets tendront vers zéro avec le temps.
+RACES_HELP_1F                     | Cliquez pour changer la couleur d'une course affichée sur la carte
+RACES_HELP_2A                     | Informations générales pour l'empire sélectionné.
+RACES_HELP_2B                     | Accorde une audience avec un diplomate de l'empire sélectionné.
+RACES_HELP_2C                     | Informations sur les traités commerciaux signés avec l'empire sélectionné.
+RACES_HELP_2D                     | Autres empires que l'empire sélectionné a contactés.
+RACES_HELP_2E                     | Incidents diplomatiques qui affectent la façon dont l'empire sélectionné réagit à votre égard. Les effets tendront vers zéro avec le temps.
+RACES_HELP_2F                     | Une mesure de l'état actuel des relations avec l'empire sélectionné.
+RACES_HELP_3A                     | Augmentez la taxe de sécurité pour améliorer vos chances de déjouer les espions ennemis.
+RACES_HELP_3B                     | Fournit un accès direct pour gérer vos espions dans tous les empires contactés.
+RACES_HELP_3C                     | Toutes les technologies connues par d'autres empires, telles que rassemblées par vos espions. Les technologies que vous ne connaissez pas sont indiquées en jaune.
+RACES_HELP_4A                     | Définissez le nombre de réseaux d'espionnage que vous souhaitez établir dans l'empire sélectionné et le montant que vous souhaitez dépenser chaque année.
+RACES_HELP_4B                     | Définissez les ordres pour les espions infiltrant l'empire sélectionné. Masquer - collecter des données. Espionnage - tentative de vol de technologie. Sabotage - incitez à des rébellions ou détruisez des usines et des bases de missiles.
+RACES_HELP_4C                     | Toutes les technologies connues par l'empire sélectionné. Les technologies que vous ne connaissez pas sont indiquées en jaune.
+RACES_HELP_5A                     | Le nombre connu de navires dans la flotte de la race sélectionnée, par taille de coque. Ces informations resteront à jour tant que vous aurez un réseau d'espionnage actif dans l'empire sélectionné.
+RACES_HELP_5B                     | Les capacités connues des conceptions de navires. Les conceptions plus anciennes peuvent être hors service. Ces informations sont principalement recueillies lors des combats navals.
+RACES_HELP_5C                     | Les capacités défensives connues de l'empire sélectionné. 
+RACES_HELP_6A                     | Cet écran fournit un classement actuel, dans diverses catégories, de notre empire par rapport aux autres empires connus. Ces données sont recueillies à partir de nos réseaux d'espionnage au sein de ces empires.. 
+RACES_HELP_6A2                    | Cet écran fournit une comparaison historique, dans diverses catégories, de notre empire à un empire sélectionné. Ces données sont recueillies à partir de nos réseaux d'espionnage au sein de ces empires.
+RACES_HELP_6B                     | Force de la Flotte - combine le nombre et la taille des navires.
+RACES_HELP_6C                     | Population - tpopulation totale de tous les systèmes colonisés.
+RACES_HELP_6D                     | Technologie - niveau moyen de technologie dans tous les domaines de la recherche.
+RACES_HELP_6E                     | Planètes - le nombre de systèmes colonisés.
+RACES_HELP_6F                     | Production - production industrielle totale pour l'empire.
+RACES_HELP_6G                     | Puiss. totale - une combinaison de la force de la flotte, de la technologie et des niveaux de production.
+
+// Sabotage UI
+SABOTAGE_TITLE                    | Nos espions ont infiltré les colonies [alien_race_pluraladjecF] et sont prêts à exécuter les ordres.
+SABOTAGE_PROMPT                   | Sélectionnez la forme de sabotage à commettre contre [alien_empire] dans le système %1.
+SABOTAGE_WARNING                  | Avertissement! Tout acte de sabotage rompra notre traité avec [alien_empire].
+SABOTAGE_SELECT_TARGET            | Sélectionner une cible
+SABOTAGE_BUTTON_FACTORIES         | Détruire les usines
+SABOTAGE_BUTTON_BASES             | Détruire les bases de missiles
+SABOTAGE_BUTTON_REBELLION         | Inciter à la rébellion
+SABOTAGE_BUTTON_NO_ACTION         | Ne pas agir
+SABOTAGE_FACTORIES_RESULT         | Vos espions ont détruit %1 usines.
+SABOTAGE_BASES_RESULT             | Vos espions ont détruit %1 bases de missiles.
+SABOTAGE_REBELS_TOTAL             | Vos espions ont incité %1 rebelles. Troubles maintenant à %2%.
+SABOTAGE_REBELS_REVOLT            | Vos espions ont déclenché une révolte !
+SABOTAGE_BASES                    | bases de missiles
+SABOTAGE_FACTORIES                | usines
+NOTICE_SPYING_MISSION_HIDE        | Infiltration
+NOTICE_SPYING_MISSION_ESPIONAGE   | Espionnage
+NOTICE_SPYING_MISSION_SABOTAGE    | Sabotage
+
+// History UI
+HISTORY_TITLE                     | Histoire galactique connue
+HISTORY_TITLE_ALL                 | Histoire galactique complète
+HISTORY_TURN_DESC                 | Tournez %1 sur %2
+HISTORY_FORWARD                   | En avant
+HISTORY_BACK                      | Retour
+HISTORY_PLAY                      | Lire
+HISTORY_PAUSE                     | Pauser
+HISTORY_RESET                     | Réinitialiser
+HISTORY_EXIT                      | Quitter
+HISTORY_EXTINCT                   | Disparu
+HISTORY_SYSTEMS                   | Systèmes
+HISTORY_EMPIRE                    | Empire
+
+
+
+// Council UIs
+COUNCIL_CONVENE_TITLE             | Le Haut Conseil se réunit
+COUNCIL_CONVENE                   | Le Haut Conseil s'est réuni pour élire un dirigeant qui sera le Souverain de la Galaxie.
+COUNCIL_CONVENE2                  | Chaque empire émet une part de voix proportionnelle à sa population. Un candidat doit recueillir au moins les deux tiers de tous les suffrages pour être élu. Les candidats sont les dirigeants des deux empires les plus peuplés :[first_name] [first_empireof] et [second_name] [second_empireof].
+COUNCIL_ADJOURN_TITLE             | Le Haut Conseil s'ajourne
+COUNCIL_ADJOURN                   | Le vote est terminé et aucun des candidats n'a recueilli les deux tiers des voix. Aucun dirigeant n'a été nommé. Le Haut Conseil se réunira à nouveau pour un autre vote dans 25 ans.
+COUNCIL_SUMMARY_TITLE             | Résumé de l'électeur
+COUNCIL_SUMMARY                   | Les votes sont exprimés par ordre de population. %1 votes sont requis pour remporter l'élection.
+COUNCIL_BEGIN_VOTING              | Commencer à voter
+COUNCIL_SHOW_VOTING               | Continuer à voter
+COUNCIL_SKIP_TO_PLAYER            | Passer au vote [player_raceadjec]
+COUNCIL_COMPLETE_VOTING           | Compléter tous les votes
+COUNCIL_SHOW_RESULTS              | Montrer les résultats
+COUNCIL_VIEW_SUMMARY              | Voir le résumé de l'électeur
+COUNCIL_VOTES_REQUIRED            | %1 votes requis pour remporter l'élection.
+COUNCIL_CAST_PROMPT               | Nous devons émettre nos %1 voix.
+COUNCIL_CAST_PROMPT_TITLE         | Sélectionner un candidat.
+COUNCIL_CHOICE_ABSTAIN            | Abstention
+COUNCIL_CAST_VOTE                 | [voter_empire] a voté %1 pour [candidate_name]!
+COUNCIL_CAST_ABSTAIN              | [voter_empire] s'abstient (%1 votes)
+COUNCIL_CHOICE_ABSTAIN            | Abstention
+COUNCIL_VOTE_COUNT                | %1 votes
+COUNCIL_VOTE_CAST                 | %1 votes - pour [alien_race_pluralnoun]
+COUNCIL_VOTE_ABSTAINED            | %1 votes - Abstention
+COUNCIL_TREATY_CANDIDATE          | [alien_race_pluralnoun] : Candidat
+COUNCIL_TREATY_ALLIANCE           | [alien_race_pluralnoun] : Alliance
+COUNCIL_TREATY_PACT               | [alien_race_pluralnoun] : Pacte de non-agression
+COUNCIL_TREATY_NONE               | [alien_race_pluralnoun] : Pas de traité
+COUNCIL_TREATY_WAR                | [alien_race_pluralnoun] : En guerre
+COUNCIL_CONTINUE                  | Continuer
+COUNCIL_ELECTED_TITLE             | Élu Souverain de la Galaxie !
+COUNCIL_ACCEPT_RULING             | Accepter la décision
+COUNCIL_REJECT_RULING             | Rejeter la décision
+
+
+// Credit text
+CREDITS_DEVELOPER                 | Ray Fowler, Développeur
+CREDITS_ILLUSTRATOR               | Petar Penev, Illustrateur
+CREDITS_GRAPHIC_DESIGN            | Kaitlin Lindsay, Graphiste
+CREDITS_MUSIC                     | Efe Tozan, Musique
+CREDITS_WRITER                    | Jeff Colucci, Écrivain
+CREDITS_SOUND                     | Remi Agullo, Concepteur Sonore 
+CREDITS_TRANSLATOR                | Thales Seabra, Traducteur
+
+// Systems UI
+SYSTEMS_TITLE                     | Systèmes
+SYSTEMS_TAB_EXPLORE               | Explorer
+SYSTEMS_TAB_EXPAND                | Étendre
+SYSTEMS_TAB_EXPLOIT               | Exploiter
+SYSTEMS_TAB_EXTERMINATE           | Exterminer
+SYSTEMS_RANGE                     | %1 ly
+SYSTEMS_ENVIRONMENT_SIZE          | %1 %2
+SYSTEMS_ENVIRONMENT_TYPE          | %1 %2
+SYSTEMS_SHIELD                    | Bouclier %1
+SYSTEMS_BASES                     | Bases %1
+SYSTEMS_ENTER_NOTES               | Mettez les notes système ici.
+SYSTEMS_ALERT                     | Alerte système
+SYSTEMS_NO_ALERTS                 | Aucune alerte pour le moment.
+SYSTEMS_HISTORY                   | Historique du système
+SYSTEMS_UNSCOUTED                 | Le système n'est pas surveillé mais est à portée de nos vaisseaux éclaireurs.
+SYSTEMS_UNSCOUTED_NEED_TECH       | Le système n'est pas surveillé et peut être atteint une fois la recherche dans "%1" terminée.
+SYSTEMS_UNSCOUTED_COLONIZED       | Le système n'est pas surveillé et contrôlé par un empire qui n'est pas un allié.
+SYSTEMS_UNSCOUTED_ENEMY           | Le système n'est pas surveillé et contrôlé par un empire ennemi.
+SYSTEMS_UNSCOUTED_GUARDED         | Impossible d'effectuer une reconnaissance alors que le système est protégé.
+SYSTEMS_UNSCOUTED_UNREACHABLE     | Le système n'est pas surveillé et est actuellement inaccessible.
+SYSTEMS_CAN_COLONIZE              | Le système peut être atteint et colonisé avec notre technologie actuelle.
+SYSTEMS_CAN_COLONIZE_EN_ROUTE     | Un vaisseau colonial est en route vers ce système. Heure d'arrivée estimée est de %1 tours.
+SYSTEMS_CAN_COLONIZE_ENEMY        | Le système peut être atteint et colonisé mais est en orbite par une flotte [alien_raceadjecF] hostile.
+SYSTEMS_UNCOLONIZED_NEED_TECH     | Le système peut être colonisé une fois la recherche dans "%1" terminée.
+SYSTEMS_UNCOLONIZED_NEED_TECHS    | Le système peut être colonisé une fois la recherche dans « %1 » et « %2 » terminée.
+SYSTEMS_UNCOLONIZEABLE            | Le système ne peut pas être colonisé.
+SYSTEMS_EXPLOIT_PCT               | Colonie à %1 % de capacité de production totale.
+SYSTEMS_EXPLOIT_WASTE             | Colony crée des déchets industriels.
+SYSTEMS_EXPLOIT_COMPLETE          | Colony est à sa capacité de production maximale.
+SYSTEMS_EXPLOIT_TRANSPORTS        | %1 transports sont en transit.
+SYSTEMS_EXT_ENEMY                 | Colonie ennemie.
+SYSTEMS_EXT_ENEMY_FLEET           | Flotte ennemie en orbite.
+SYSTEMS_EXT_ENEMY_FLEET_PLAYER    | Flotte ennemie en orbite autour de notre colonie.
+SYSTEMS_EXT_ENEMY_FLEET_ALLY      | Flotte ennemie en orbite autour d'une colonie alliée.
+SYSTEMS_EXT_INC_FLEET_PLAYER      | Flotte ennemie en transit vers notre colonie.
+SYSTEMS_EXT_INC_FLEET_ALLY        | Flotte ennemie en transit vers une colonie alliée.
+SYSTEMS_EXT_NEED_DEFENSE          | Les défenses de cette colonie ne sont pas entièrement améliorées.
+SYSTEMS_EXT_INC_TRANSPORTS        | %1 troupes [player_race_pluraladjec] sont en transit.
+SYSTEMS_HELP_1A                   | APERÇU - Le but de cet écran est de mettre en évidence les systèmes de la galaxie qui méritent l'attention du joueur. L'urgence ou le danger est indiqué par la couleur : le rouge clignotant est le plus élevé et le vert est le plus bas.
+SYSTEMS_HELP_1B                   | Explorer - montre des systèmes inexplorés à la portée des éclaireurs, ou potentiellement avec des technologies non étudiées.
+SYSTEMS_HELP_1C                   | Étendre - montre des systèmes colonisables à portée de navires, ou potentiellement avec des technologies non étudiées.
+SYSTEMS_HELP_1D                   | Exploiter - montre des colonies basées en manque de développement économique. Affiche également les systèmes non colonisés avec des ressources.
+SYSTEMS_HELP_1E                   | Exterminer - montre les colonies qui sont attaquées ou qui ont des flottes ennemies entrantes.
+SYSTEMS_HELP_1F                   | Alerte Système - décrit l'alerte système, le cas échéant, pour le système sélectionné
+SYSTEMS_HELP_1G                   | Notes du Système - champ de texte permettant au joueur de laisser des notes.
+SYSTEMS_HELP_1H                   | Historique du Système - une liste chronologique des événements significatifs qui se sont produits dans ce système.
+
+SYSTEMS_STATUS_REBELLION          | La colonie est en rébellion.
+SYSTEMS_STATUS_COMET              | Une comète frappera cette planète dans %1 ans.
+SYSTEMS_STATUS_SUPERNOVA          | L'étoile du système deviendra une supernova dans %1 ans. Les physiciens ont besoin de %2 RP pour éviter cette catastrophe.
+SYSTEMS_STATUS_PLAGUE             | La colonie connaît un fléau mondial qui nécessite %1 RP pour guérir.
+SYSTEMS_STATUS_PIRACY             | Les pirates affectent les routes commerciales dans ce système.
+SYSTEMS_STATUS_SPACE_AMOEBA       | Une amibe spatiale géante se dirige vers ce système.
+SYSTEMS_STATUS_SPACE_CRYSTAL      | Un gigantesque cristal spatial se dirige vers ce système.
+
+
+DIPLOMACY_RECEIVING               | En train de traduire message entrant ...
+DIPLOMACY_MENU_CONTINUE           | Continuer
+DIPLOMACY_MENU_ACKNOWLEDGE        | Reconnaître
+DIPLOMACY_MENU_ACCEPT             | Accepter
+DIPLOMACY_MENU_ACCEPT_NEED_BC     | Accepter (pas assez de fonds)
+DIPLOMACY_MENU_FORGET_IT          | Oubliez-le
+DIPLOMACY_TRADE_LEVEL             | %1 BC / Année
+DIPLOMACY_MENU_TREATIES           | Proposer un traité
+DIPLOMACY_MENU_TRADE              | Accord commercial
+DIPLOMACY_MENU_TECHNOLOGY         | Technologie d'échange
+DIPLOMACY_MENU_OFFER_AID          | Offrir de l'aide
+DIPLOMACY_MENU_AMT                | %1 BC
+DIPLOMACY_MENU_OFFER_TECHS        | Technologie d'offre
+DIPLOMACY_MENU_THREATEN           | Menacer
+DIPLOMACY_MENU_DECLARE_WAR        | Déclarer la guerre
+DIPLOMACY_MENU_EVICT_SPIES        | Déplacer tous les espions (diminue les relations)
+DIPLOMACY_MENU_STOP_SPYING        | Arrêter les activités d'espionnage
+DIPLOMACY_MENU_STOP_ATTACKING     | Arrêter d'attaquer
+DIPLOMACY_MENU_GOODBYE            | Au revoir
+DIPLOMACY_MENU_PACT               | Proposer un pacte de non-agression
+DIPLOMACY_MENU_ALLIANCE           | Proposer une alliance
+DIPLOMACY_MENU_PEACE              | Proposer un traité de paix
+DIPLOMACY_MENU_TRADE              | Proposer un traité commercial
+DIPLOMACY_MENU_JOINT_WAR          | Déclaration conjointe de guerre contre une autre race
+DIPLOMACY_MENU_PROPOSE_BREAK_ALLY | Rompre l'alliance avec une autre race
+DIPLOMACY_MENU_BREAK_TRADE        | Rompre le traité commercial
+DIPLOMACY_MENU_BREAK_PACT         | Rompre le pacte de non-agression
+DIPLOMACY_MENU_BREAK_ALLIANCE     | Rompre l'alliance
+DIPLOMACY_TRADE_MENU_BREAK        | Rompre le traité commercial
+DIPLOMACY_THREATEN_MENU_0         | Rappeler Ambassadeur
+DIPLOMACY_THREATEN_MENU_1         | Exigez un hommage 
+DIPLOMACY_THREATEN_MENU_2         | Rompre le pacte de non-agression
+DIPLOMACY_THREATEN_MENU_3         | Rompre l'alliance
+DIPLOMACY_THREATEN_MENU_BR        | Break Trade Treaty
+DIPLOMACY_THREATEN_MENU_5         | Déclarer la guerre
+DIPLOMACY_ACCEPT_OFFER            | Accepter
+DIPLOMACY_ACCEPT_JOIN_WAR         | Accepter (Rejoint la guerre)
+DIPLOMACY_ACCEPT_END_WAR          | Accepter (Met fin à la guerre, rappelle les forces)
+DIPLOMACY_ACCEPT_FORM_PACT        | Accepter (forme un pacte)
+DIPLOMACY_ACCEPT_FORM_ALLIANCE    | Accepter (forme une alliance)
+DIPLOMACY_ACCEPT_ESTABLISH_TRADE  | Accepter (établit le commerce)
+DIPLOMACY_DECLINE_OFFER           | Décliner
+DIPLOMACY_DECLINE_BREAK_ALLIANCE  | Décliner (rompt l'alliance)
+DIPLOMACY_IGNORE_THREAT           | Ignorer la menace
+DIPLOMACY_SHUTDOWN_SPIES          | Arrêter tous les réseaux d'espionnage dans [alien_empire] 
+DIPLOMACY_HIDE_SPIES              | Ordonner à tous les espions [alien_empireof] de se cacher
+DIPLOMACY_RETREAT_SHIPS           | Ordonner à tous les vaisseaux en orbite ou en transit vers les systèmes [alien_race_pluraladjec] de battre en retraite
+
+// types of endings
+GAME_OVER_OVERTHROWN_LOSS         | Perte renversée
+GAME_OVER_MILITARY_LOSS           | Perte militaire
+GAME_OVER_DIPLOMATIC_LOSS         | Perte diplomatique
+GAME_OVER_NEW_REPUBLIC_LOSS       | Perte de la Nouvelle République
+GAME_OVER_REBELLION_LOSS          | Perte de la rébellion
+GAME_OVER_DIPLOMATIC_WIN          | Victoire diplomatique
+GAME_OVER_MILITARY_WIN            | Victoire militaire
+GAME_OVER_MILITARY_ALLIANCE_WIN   | Victoire de l'alliance militaire
+GAME_OVER_NEW_REPUBLIC_WIN        | Victoire de la Nouvelle République
+GAME_OVER_REBELLION_WIN           | Victoire de la rébellion
+GAME_OVER_REBEL_ALLIANCE_WIN      | Victoire de l'alliance rebelle
+GAME_OVER_ALLIANCE_WIN            | Victoire d'alliance
+GAME_OVER_NO_COLONIES_LOSS        | Perte d'effondrement sociétal
+
+GAME_OVER_EXIT                    | Quitter
+GAME_OVER_REPLAY                  | Rejouer
+
+// text for race-generic endings
+// %1 Game year, %2 player name, %3 player race, %4 player empire, %5 leader name, %6 leader race, %7 leader empire, %8 special text
+GAME_OVER_NO_COLONIES_LOSS2       | Le règne de %2 a pris fin, annulé par l'incompétence impériale.#En l'absence de mondes civilisés sur lesquels atterrir en toute sécurité, les transports [player_race_pluraladjec] survivants sont incapables de soutenir les progrès technologiques réalisés par votre société.#La barbarie est l'état naturel de la société. La civilisation n'est pas naturelle. C'est un caprice de circonstance. Et la barbarie doit finalement triompher.

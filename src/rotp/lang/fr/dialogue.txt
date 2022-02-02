@@ -1,0 +1,140 @@
+//
+// Dialogue that is not race-specific
+//
+
+DIPLO_TECH_REQUEST_MENU_01   | Quel type de technologie vous intéresse ?
+DIPLO_TECH_COUNTER_MENU_01   | Qu'allez-vous échanger pour cela?
+DIPLO_TRADE_MENU_01          | Vous proposez un accord commercial pour :
+DIPLO_TREATY_MENU_01         | Que souhaitez-vous faire ?
+DIPLO_THREATEN_MENU_01       | Que menacez-vous?
+DIPLO_DECLARE_WAR_MENU_01    | Êtes-vous sûr de vouloir déclencher une guerre ?
+DIPLO_JOINT_WAR_MENU_01      | À qui doit-on déclarer la guerre ?
+DIPLO_BREAK_ALLIANCE_MENU_01 | Quelle alliance devons-nous rompre ?
+DIPLO_OFFER_AID_MENU_01      | Que voulez-vous donner ?
+DIPLO_OFFER_TECH_MENU_01     | Que voulez-vous donner ?
+
+DECLINE_OFFER_01           | [my_nameTitle] [my_name] décline.
+DECLINE_OFFER_02           | [my_race_pluralnoun] ont considéré votre offre et l'ont rejetée.
+DECLINE_OFFER_03           | Nous déclinons respectueusement votre offre.
+DECLINE_OFFER_04           | Nous ne sommes pas intéressés pour le moment.
+DECLINE_OFFER_05           | [my_race_pluralnoun] ne considèrent pas votre offre comme juste.
+DECLINE_OFFER_06           | Il ne serait pas dans notre intérêt d'accepter votre offre pour le moment.
+DECLINE_OFFER_07           | Vous nous avez peut-être pris pour des imbéciles crédules. Nous rejetons votre offre
+DECLINE_OFFER_08           | Votre offre ne nous semble pas juste.
+DECLINE_OFFER_09           | Nous craignons de devoir décliner.
+
+DECLINE_ENEMY_ALLY_01      | [my_race] ne traiteraient jamais avec les alliés des détestés [other_race_pluraladjec].
+DECLINE_ALREADY_ALLIED_01  | [my_race] et nos alliés ne peuvent pas considérer votre demande tant que vous êtes allié avec d'autres empires.
+DECLINE_NO_WAR_ON_ALLY_01  | Nous ne déclarerons pas la guerre à nos alliés.
+DECLINE_PEACE_TREATY_01    | Nous ne romprons pas notre traité de paix avec [other_race_pluralnoun].
+
+DECLINE_ANNOYED_01         | [your_race_pluralnoun] sont des créatures avec beaucoup de vent et peu d'action. Nous nous lassons de votre bavardage.
+DECLINE_ANNOYED_01         | [your_nameTitle] [your_name], vous testez notre patience. Peut-être devriez-vous reparler plus tard.
+DECLINE_ANNOYED_01         | [my_nameTitle] [my_name] has heard enough. We will talk again later. 
+DECLINE_ANNOYED_02         | On se lasse des négociations diplomatiques. Nous pourrons poursuivre les discussions plus tard.
+DECLINE_ANNOYED_02         | Ces discussions ne nous mènent nulle part. Nous devons prendre congé.
+DECLINE_ANNOYED_02         | On y va maintenant.
+DECLINE_ANNOYED_03         | Mille excuses, [your_nameTitle] [your_name], mais d'autres devoirs appellent.
+DECLINE_ANNOYED_03         | Excusez-nous, mais notre temps est écoulé.
+DECLINE_ANNOYED_03         | Nous avons peu de temps et beaucoup à faire. On pourra peut-être en reparler plus tard.
+
+DECLINE_OATHBREAKER_01     | Nous ne sommes pas disposés à conclure un traité pour le moment parce que vous avez rompu des traités dans le passé.
+DECLINE_OATHBREAKER_01     | Vous n'avez pas honoré vos accords passés. Nous voyons peu de raisons de vous faire confiance maintenant.
+DECLINE_OATHBREAKER_01     | Pourquoi devrions-nous vous faire confiance maintenant, alors que vous avez rompu tant de traités passés ?
+DECLINE_OATHBREAKER_01     | Nous ne voyons aucune raison d'être d'accord avec quelqu'un qui n'a pas tenu ses promesses passées.
+DECLINE_OATHBREAKER_01     | Nous ne traiterons pas avec [your_race_pluralnoun] qui n'ont aucun honneur.
+
+DECLINE_ESPIONAGE_01       | Chiens voleurs, vous volez les fruits de nos recherches. Nous refusons votre demande.
+DECLINE_ESPIONAGE_01       | Notre technologie est pour la race [my_raceadjecF]. Vous n'avez pas le droit de le voler. Nous parlerons quand vous arrêterez de voler.
+DECLINE_ESPIONAGE_01       | Pourquoi devrions-nous vous donner quelque chose ? Vos espions volent déjà tout ce dont vous avez besoin !
+DECLINE_ESPIONAGE_01       | Comment pouvez-vous vous attendre à ce que nous acceptions quand vos espions volent notre technologie ?
+DECLINE_ESPIONAGE_01       | Retirez vos espions, puis nous parlerons.
+
+DECLINE_SABOTAGE_01        | Nous n'avons pas oublié votre dernier incident de sabotage. Tant que vous n'aurez pas prouvé que vous êtes plus digne de confiance, nous ne traiterons pas avec vous.
+DECLINE_SABOTAGE_01        | Notre peuple a souffert de votre sabotage. Nous ne traiterons pas avec vous jusqu'à ce qu'il cesse.
+DECLINE_SABOTAGE_01        | Quoi ?! Vous vous attendez à ce que nous acceptions lorsque vous sabotez notre [target]?
+DECLINE_SABOTAGE_01        | Vous détruisez notre [target]. Pourquoi devrions-nous traiter avec vous?
+DECLINE_SABOTAGE_01        | Lorsque vous arrêtez de saboter notre [target], nous pouvons examiner la question plus avant.
+
+DECLINE_BUILDUP_01         | Nous n'en parlerons pas pendant que vous amassez des navires près de nos frontières.
+DECLINE_BUILDUP_01         | Retirez vos navires le long de nos frontières et nous envisagerons d'accepter. Jusque-là, nous ne sommes pas intéressés.
+DECLINE_BUILDUP_01         | Vos navires à nos frontières ne sont pas une menace pour nous. Mais nous refusons de traiter tant qu'ils restent.
+DECLINE_BUILDUP_01         | Si vous souhaitez traiter avec [my_empire], alors envoyez vos navires menacer les autres, pas nous.
+
+DECLINE_ENCROACH_01        | Vos flottes empiètent sur l'espace [my_raceadjec]. Éloignez-les, puis nous parlerons.
+
+DECLINE_SKIRMISH_01        | Vous attaquez nos navires sans provocation et vous attendez de nous que nous acceptions ? Nous refusons de traiter.
+DECLINE_SKIRMISH_01        | Nous ne pouvons accepter une offre de quelqu'un qui attaque nos flottes.
+DECLINE_SKIRMISH_01        | Une fois que vos flottes auront cessé d'attaquer les nôtres, nous pourrons parler.
+DECLINE_SKIRMISH_01        | Si vous souhaitez traiter avec [my_empire], laissez nos flottes tranquilles.
+DECLINE_SKIRMISH_01        | [my_nameTitle] [my_name] n'apprécie pas votre destruction de nos flottes. Nous n'acceptons pas.
+
+DECLINE_ATTACK_01          | Votre agression injustifiée contre [system] vous laisse peu de place pour négocier.
+DECLINE_ATTACK_01          | Nous n'avons pas oublié l'attaque contre la colonie de [system]. Il n'y a aucun moyen que nous acceptions.
+
+DECLINE_INVASION_01        | Notre peuple ne veut pas traiter avec les bouchers de [system]. Faites d'abord amende honorable.
+DECLINE_INVASION_01        | Le sang de [system] souille vos mots. Nous ne pouvons pas accepter votre offre.
+DECLINE_INVASION_01        | Les morts de [system] réclament des représailles. Nous entendons leurs cris plus fort que votre offre.
+
+DECLINE_BIOWEAPONS_01      | [my_race_pluralnoun] ne concluront aucun accord avec une race qui utiliserait des armes biologiques.
+DECLINE_BIOWEAPONS_01      | Nous ne pouvons traiter avec quelqu'un d'assez désespéré pour utiliser des armes biologiques.
+DECLINE_BIOWEAPONS_01      | Vous utilisez des armes qui causent des horreurs indicibles à des populations innocentes. Nous refusons de traiter avec une telle folie.
+DECLINE_BIOWEAPONS_01      | Les dieux détestent ceux qui détruiraient les planètes avec des armes biologiques. [my_race_pluralnoun] ne peuvent pas le permettre.
+DECLINE_BIOWEAPONS_01      | Les cris de ceux qui ont été tués par vos armes biologiques remplissent nos oreilles. Nous ne pouvons pas entendre votre offre.
+
+DECLINE_TECH_TRADE_01      | Vous n'avez aucune technologie qui nous intéresse.
+DECLINE_TECH_TRADE_01      | Nous n'avons pas besoin de jouets [your_race_pluralnounof]
+DECLINE_TECH_TRADE_01      | Vos inventions primitives ne nous intéressent pas.
+DECLINE_TECH_TRADE_01      | [my_race_pluralnoun] sont bien au-delà de votre technologie. 
+DECLINE_TECH_TRADE_01      | [your_nameTitle] [your_name], nous avons peu besoin de ce que vos scientifiques nous offrent.
+DECLINE_TECH_TRADE_01      | [my_nameTitle] [my_name] voit peu d'intérêt pour votre technologie.
+
+OFFER_TECH_EXCHANGE_01     | [your_empire] a grand besoin de votre technologie [tech]. Peut-être êtes-vous prêt à l'échanger contre une partie de notre technologie.
+OFFER_TECH_EXCHANGE_01     | [your_empire] sait que vous avez appris les secrets de [tech]. Pouvons-nous vous offrir une partie de notre technologie en échange ?
+OFFER_TECH_EXCHANGE_01     | [your_nameTitle] [your_name] [your_empireof] souhaite le secret de la technologie [tech]. L'échangerez-vous contre une de nos avances ?
+OFFER_TECH_EXCHANGE_01     | La race [your_raceadjecF] est impressionnée par les merveilles scientifiques de [tech]. Que pouvons-nous vous offrir pour son secret ?
+
+ACCEPT_TECH_EXCHANGE_01    | Très bien. [my_nameTitle] [my_name] il accepte d'échanger les merveilleux secrets [my_race_pluraladjec] de [techGiven] contre la technologie [techReceived].
+ACCEPT_FINANCIAL_AID_01    | [my_nameTitle] [my_name] accepte votre cadeau de [amt] BC.
+ACCEPT_TECHNOLOGY_AID_01   | [my_nameTitle] [my_name] accepte votre cadeau de [tech].
+
+BREAK_TRADE_01             | Les citoyens [my_race_pluraladjec] n'ont plus aucun désir pour les marchandises commerciales [your_empireof].
+ANNOUNCE_TRADE_01          | À compter de [year], [my_empire] et [your_empire] conviennent d'échanger [amt] BC par an.
+
+ANNOUNCE_PEACE_01          | Au cours de l'année [year], les empires [my_raceadjec] et [your_raceadjec] conviennent de mettre fin à toutes les hostilités.
+ANNOUNCE_PEACE_01          | [my_nameTitle] [my_name] ordonne par la présente à toutes les hostilités de cesser entre nos empires.
+ACCEPT_PEACE_01            | Nous convenons que le moment est venu de mettre fin à nos petites querelles.
+ACCEPT_PEACE_01            | Nous acceptons votre offre de paix. Cessez le feu sur les forces [my_race_pluraladjecF] et nous arrêterons d'attaquer les vôtres.
+ACCEPT_PEACE_01            | Nous nous lassons de cette destruction insensée. [my_empire] accepte votre offre de paix.
+
+BREAK_PACT_01              | Un avertissement à [your_empire] [my_race_pluralnounof] : notre pacte de non-agression est rompu !
+ANNOUNCE_PACT_01           | Au cours de l'année [year], [my_empire] s'engage à adhérer à un pacte de non-agression et à ne pas attaquer les flottes [your_race_pluraladjecF] à moins qu'elles ne soient en orbite autour de l'une de nos colonies.
+ACCEPT_PACT_01             | [my_empire] accepte un pacte de non-agression. Aucune des deux parties n'attaquera les flottes de l'autre, à moins qu'elles n'entrent dans l'orbite d'une colonie adverse.
+ACCEPT_PACT_01             | Si vous acceptez de ne pas envoyer de navires dans l'une de nos colonies, le peuple [my_raceadjec] jure de ne pas attaquer aucun de vos navires.
+ACCEPT_PACT_01             | [my_nameTitle] [my_name] accepte votre pacte de non-agression proposé. Ainsi c'est écrit, ainsi ce sera fait !
+ACCEPT_PACT_01             | C'est d'accord alors. Tant que vous n'attaquez pas nos colonies, [my_empire] respectera le Pacte de non-agression.
+
+BREAK_ALLIANCE_01          | [my_empire] ne peut plus maintenir une alliance avec [your_empire].
+ANNOUNCE_ALLIANCE_01       | En [year] [my_empire] et [your_empire] acceptent de former une alliance dans laquelle ni l'un ni l'autre n'attaquera les flottes ou les colonies de l'autre.
+ANNOUNCE_ALLIANCE_01       | Ainsi notre Alliance est forgée. Vos navires peuvent visiter nos colonies à votre guise et s'approvisionner en carburant dans nos bases.
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] accueille une Alliance avec notre bon ami, [your_nameTitle] [your_name].
+ACCEPT_ALLIANCE_01         | [my_empire] et [your_empire] forgent aujourd'hui une Alliance entre nos peuples. Mort à nos ennemis !
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] voit la sagesse dans une Alliance avec [your_empire]. Ainsi soit-il!
+
+OFFER_JOINT_WAR_01         | Le moment est venu pour [your_empire] et [my_empire] de s'unir dans la guerre contre [other_race_pluralnoun].
+ACCEPT_JOINT_WAR_01        | [other_empire] doit tomber avant la puissance combinée [my_empireof] et [your_empireof].
+ACCEPT_JOINT_WAR_01        | Avec [my_race] et [your_race] alliés, [other_race_pluralnoun] ne dureront pas longtemps.
+ACCEPT_JOINT_WAR_01        | En [year], [my_empire] et [your_empire] unissent leurs forces pour débarrasser la galaxie de la menace [other_raceadjecF].
+COUNTER_JOINT_WAR_01       | Nous vous rejoindrons dans votre guerre contre [other_empire] en échange de la compensation suivante :
+RESPOND_CLOSE_EMBASSY_01   | Qu'il en soit ainsi. Il n'y aura plus de discussions entre nos empires.
+
+RESPOND_BREAK_TRADE_01     | Nous nous en souviendrons.
+RESPOND_BREAK_TRADE_01     | Donc, [your_nameTitle] [your_name], vous ne pouvez pas tenir votre parole. Nous ne l'oublierons pas.
+
+RESPOND_BREAK_PACT_01      | Nous inscrirons les paroles de vos traités rompus sur votre pierre tombale, [your_nameTitle] [your_name].
+RESPOND_BREAK_PACT_01      | [your_empire] s'effondrera sous le poids de ses propres promesses non tenues.
+
+RESPOND_BREAK_ALLIANCE_01  | Vous avez déshonoré l'accord. L'alliance est rompue.
+RESPOND_BREAK_ALLIANCE_01  | Très bien. Vos intentions indignes de confiance se sont manifestées. L'alliance est rompue.
+RESPOND_BREAK_ALLIANCE_01  | Nous n'avons guère besoin de traités qui ne soient pas respectés. L'alliance est rompue.
+RESPOND_BREAK_ALLIANCE_01  | Qu'il en soit ainsi. L'alliance est rompue.

@@ -1,0 +1,89 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Mrrshan specific dialogue
+
+CONTACT_AGGRESSIVE         | Je vous salue, chose étrange. Je suis [my_race_pluralnounof], et un serviteur du Khan D'Or. J'espère que vous êtes fort, [your_racejec], pas seulement pour le bien de votre peuple, mais aussi pour le bien des trésors qui vous sont les plus chers. 
+CONTACT_RUTHLESS           | Nous sommes [my_race_pluralnoun], [your_raceadjec], et nous adhérons à une seule croyance : le fort prendra et le faible donnera. Si vous ne comprenez pas déjà la sagesse d'une telle philosophie, nous ne manquerons pas de vous l'enseigner très bientôt.
+CONTACT_XENOPHOBIC         | Priez que le Khan D'Or vous considère comme digne, [your_race]. Suscitez sa colère et il n'aura aucun scrupule à ce que des flottes [my_race_pluralnounof] s'abattent sur vous.
+//
+GREETING_01                | Vous nous avez prouvé maintes et maintes fois. Nous sommes honorés de faire ce que nous pouvons pour faire nos preuves envers vous.
+GREETING_04                | J'entendrai vos paroles, ambassadeur, mais je ne suis pas obligé de vous donner ce que vous cherchez.
+GREETING_07                | Vous avez de l'audace pour approcher un serviteur du Khan. Dites ce que vous avez à dire et préparez-vous à fuir si vous ne faites que me faire perdre mon temps.
+//
+DECLAREWAR_HATE_01         | Vos reliques sont gaspillées pour vous ! Nous ornerons nos salles sur [my_home] avec vos os et votre trésor, et ils seront tout ce qui restera de votre peuple lorsque nous aurons terminé !
+DECLAREWAR_HATE_02         | Assez ! De simples raids ne satisferont pas notre inimitié envers votre espèce : vous [your_race_pluralnoun] méritez une approche bien plus large !
+DECLAREWAR_HATE_03         | Même savoir qu'une race aussi faible que la vôtre a de l'influence dans cet univers suffit à nous rendre malade. No matter the odds, I promise you we'll do everything we can to teach you your place.
+//
+DECLAREWAR_ERRATIC_01      | Les griffes du Khanat ont besoin d'être aiguisées, ambassadeur. Votre peuple devrait nous fournir le sport dont nous avons besoin pour nous tenir prêts pour des ennemis plus dignes.
+DECLAREWAR_ERRATIC_02      | Votre peuple possède vraiment certains des plus beaux trésors, [your_raceadjec]. Nous sommes impatients de voir à quel point vous vous battrez pour les garder !
+DECLAREWAR_ERRATIC_03      | Cela fait bien trop longtemps que nous n'avons pas ramené de butin légendaire. Vos gens se battent bien, mais peuvent-ils nous empêcher de remporter autant de trophées scintillants lorsqu'ils sont à notre portée ?
+//
+DECLAREWAR_MILITARY_01     | Le fort prend et le faible donne : une loi de fer de l'univers. Vous verrez bientôt que cela s'applique non seulement à vos trésors, mais aussi à vos planètes.
+DECLAREWAR_MILITARY_02     | Bien qu'elle brille rarement comme de l'or, la terre est souvent une valeur en soi. Et tous les bons prix valent la peine de se battre, n'est-ce pas, ambassadeur ?
+DECLAREWAR_MILITARY_03     | Les besoins du Khanat l'emportent sur les besoins de la race [votre_raceadjecF]. Vous avez peut-être une technologie impressionnante, mais je doute que vous ayez la férocité pour l'égaler !
+//
+DECLAREWAR_ALLIANCE_01     | Vous avez joué à un jeu dangereux pour faire de l'allié du Khanat un ennemi. Ce jeu va bientôt se terminer rapidement et de manière sanglante !
+DECLAREWAR_ALLIANCE_02     | Notre allié, [other_race_pluralnoun], est un peuple honorable mais faible. Vous auriez pu gagner si cette guerre n'avait impliqué que vos deux empires, mais avec nous à leurs côtés, vous n'avez aucune chance de victoire !
+DECLAREWAR_ALLIANCE_03     | Nous aurions préféré avoir l'honneur de renverser votre empire pour nous tous seuls. Il semble que nous devrons partager la gloire et le butin avec [other_race_pluralnoun] cette fois-ci.
+//
+DECLAREWAR_SPYING_01       | Lâche, de s'engager dans le secret plutôt que de se battre avec honneur ! Vos actions correspondent à votre faiblesse, et maintenant vous en paierez le prix ! 
+DECLAREWAR_SPYING_02       | Comment se sent-il, [your_raceadjec]? Risquer autant pour n'apporter que la guerre à votre peuple ?
+DECLAREWAR_SPYING_03       | Dites à [your_nameTitle], [your_name], ceci: le secret est le théâtre des chiens lâches. Que vous agissiez d'une manière aussi lâche signifie que notre férocité seule nous mènera à la victoire !
+//
+DECLAREWAR_ATTACK_01       | Ha! Ici, nous vous avons pris pour des lâches faibles, mais il semble que vous ayez du combat en vous après tout ! Dommage que vous ne soyez pas là longtemps pour fêter cette maigre victoire !
+DECLAREWAR_ATTACK_02       | Vous nous avez rendu service en amenant le combat à notre porte ! Nous vous rembourserons en nature en veillant à ce que votre peuple finisse sur le champ de bataille comme de vrais guerriers !
+DECLAREWAR_ATTACK_03       | J'éviterais l'arrogance si j'étais vous, ambassadeur. La fureur de nos guerriers ne sera jamais battue par la technologie, peu importe à quel point vous avez fait la vôtre !
+//
+DECLAREWAR_OPPORTUNITY_01  | Votre espèce a longtemps depassé à son utilité. Mais soyez assuré que vous offrirez un sport adéquat aux plus jeunes et aux moins expérimentés de nos guerriers pendant qu'ils perfectionnent leurs compétences au combat.
+DECLAREWAR_ASSASSIN_01     | Je ne suis pas du tout choqué que votre espèce se comporte de manière aussi molle. Assassiner un ambassadeur est le plus grave déshonneur que vous puissiez vous attirer, et dans l'agonie votre peuple maudira votre nom pour avoir ordonné cela !
+
+
+OFFER_PEACE_01             | Il y a un temps pour tout, ambassadeur, et le temps est maintenant venu de mettre fin à nos hostilités. Gardez vos reliques; la paix est tout ce que nous désirons de vous maintenant!
+OFFER_TRADE_01             | Il ne fait aucun doute que le moyen le plus rapide de gagner des trophées est de les prendre à ceux qui sont trop faibles pour vous arrêter ! Mais le commerce peut également être un moyen acceptable pour deux empires de gagner l'un de l'autre. Commençons à [amt] BC chaque année pour voir combien nous pouvons... gagner les uns des autres. 
+OFFER_PACT_01              | Pas besoin d'empires si égaux pour se battre entre eux quand il y a beaucoup de races plus faibles à piller et à brûler. Mettons-nous d'accord sur un pacte officiel de non-agression afin que nos énergies soient mieux dépensées pour ceux qui ont des trésors plus faciles à prendre ! 
+OFFER_ALLIANCE_01          | Je viens à vous aujourd'hui pour vous proposer une alliance formelle entre le Khanat et [votre_empire]. J'espère que vous ne perdrez pas de temps à signer ce traité ? N'oubliez pas non plus : une part égale dans une alliance signifie une part égale du butin de guerre ! 
+ 
+WARN_TRESPASSING_01        | À moins que vos navires ne soient dans le système [system] pour payer des tributs, je vous suggère de leur ordonner de faire demi-tour et de partir dès que possible. 
+WARN_EXPANSION_01          | Bien que nous préférions les objets de valeur avec lesquels nous pouvons orner les murs de nos temples, nous ne sommes pas aveugles au point d'ignorer le trésor qu'est la terre non réclamée. Vérifiez votre expansion ou risquez de susciter notre colère, ambassadeur. 
+WARN_BUILDUP_01            | Si vous construisez vos flottes pour piller une autre race, vous n'aurez aucune objection de notre part. Mais jusqu'à ce que nous ayons des assurances à cette fin, nous supposerons que vos flottes seront pointées sur nous et n'hésiterons pas à agir de manière préventive. 
+WARN_SKIRMISH_01           | C'était une petite escarmouche amusante, n'est-ce pas ? Pourtant, ces petites batailles sont ennuyeuses et sans récompense : si vous insistez pour les continuer, nous nous ferons un plaisir de faire une déclaration de guerre plus formelle ! 
+WARN_ATTACKED_01           | Ha! Était-ce une tentative sérieuse de nous provoquer, ambassadeur ? Votre peuple est faible et vos trésors ternis ! Cessez ce pari insensé avant de nous forcer à vous tuer ! 
+WARN_INVADED_01            | Vous plaisantez sûrement avec votre maigre petite invasion ?! Vous avez de la chance que le système [system] nous est peu utile, mais si vous jetez votre dévolu sur des systèmes plus précieux, nous veillerons à ce que vous ne puissiez plus rien prendre à personne ! 
+WARN_ESPIONAGE_01          | À quels jeux sournois votre peuple joue-t-il ! Vous aurez à faire beaucoup plus d'efforts que cela si vous souhaitez obtenir les secrets du Khanat pour vous-même. Ramenez votre espion avec vous et partez, avant que ce jeu ne cesse d'être amusant. [framed]
+WARN_SABOTAGE_01           | Des stratagèmes dangereux, ambassadeur. Si le bâtiment que vous vouliez détruire abritait des objets de grande valeur, nous aurions sans aucun doute lavé votre sang des rues de votre monde natal. Je vous recommande fortement de ne plus envisager le sabotage. [forced]
+WARN_BIOWEAPON_01          | Les trophées doivent être gagnés dans des combats honorables, pas volés dans les os de ceux qui étaient sans défense même de leur vivant ! Si jamais vous utilisez à nouveau des armes aussi ignobles, je vous assure que ce sera la dernière fois ! 
+WARN_GENOCIDE_01           | Ce n'est pas une mauvaise décision, d'éradiquer toute l'espèce [victim_racedjecF] et de prendre chacun de leurs trésors pour le vôtre. Bien que je doute que vous soyez assez stupide pour essayer quelque chose comme ça avec nous, vos capacités sont toujours assez déconcertantes. 
+WARN_FINAL_WAR_01          | [your_raceadjec] idiot! Défier la volonté de la décision du conseil, c'est défier la volonté [my_race_pluralnounof] mêmes ! Nous prendrons vos trophées et les brûlerons jusqu'à la plus petite boule ! Rien ne restera de votre espèce une fois que nous aurons fini ! 
+WARN_COUNCIL_VOTE_01       | Le khanat a des affaires plus importantes à régler que de jouer à des jeux politiques dans les chambres du conseil. Il vaudrait mieux pour nous que vous cédiez simplement à nos souhaits. Et ce serait mieux pour toi aussi, si je me disais clairement.
+WARN_OATHBREAKER_01        | Hmph! Seuls les désespérés brisent le lien de leur parole. Peu importe! À partir de maintenant, nous traiterons simplement avec vous comme nous traitons avec d'autres personnes trop trompeuses pour qu'on puisse leur faire confiance. [spiesCaught]
+WARN_ATTACKED_ALLY_01      | Je ne peux pas dire que je ne vois pas pourquoi vous attaqueriez [defender_race_pluralnoun]. Leurs trésors sont si beaux... mais ils nous appartiendront quand nous souhaiterons les prendre : ils ne vous appartiendront pas !
+WARN_REBELLING_AGAINST_01  | Cette paix épousée par le conseil ne conviendrait jamais à notre peuple. Nous désirons une chose et une seule : prendre les trésors des faibles et les faire nôtres ! 
+
+PRAISE_COUNCIL_VOTE_01     | Votre soutien au conseil est toujours apprécié, ambassadeur. Le Khan D'Or lui-même a souhaité que vous sachiez que votre peuple est un atout précieux pour le Khanat, et si vous souhaitez visiter [candidate_home], une fête sera organisée en votre nom ! 
+PRAISE_COUNCIL_VOTE_02     | Avez-vous vu ce représentant [rival_raceadjec] renfrogné ?Ha! Qu'ils ricanent ! Tant que des sages comme vous continueront à reconnaître notre pouvoir, le Khanat n'aura rien à craindre ! 
+PRAISE_COUNCIL_VOTE_03     | Craignez-vous nos raids, ambassadeur ? Espérez-vous que nous apaiser en conseil éloignera nos chercheurs de trésors de vos mondes ? Hmhmhmhm, eh bien, cela ne fait certainement rien pour nuire à vos chances, n'est-ce pas ?
+PRAISE_ATTACKED_ENEMY_01   | Aujourd'hui sera grandiose pour nos deux peuples, [attacker_raceadjec]! [defender_race_pluralnoun] n'a pas de prière contre notre force combinée ! Il y a plein de trésors pour nous deux : aux plus grands guerriers revient le plus grand butin ! 
+PRAISE_ATTACKED_ENEMY_02   | En espérant avoir une chance de trouver un trésor aujourd'hui, ambassadeur ? Très bien, je vais vous faire un marché : aidez-nous à nous débarrasser de ces parasites [defender_race_pluraladjec] et nous veillerons à ce que vous obteniez une juste récompense. 
+PRAISE_ATTACKED_ENEMY_03   | Il est évident que vous n'êtes dans cette guerre que pour les richesses que vous pouvez prendre pour vous-même. Mais ces [defender_race_pluraladjec] ont des reliques pitoyables, donc je suppose que si vous nous aidez, nous vous laisserons tout ce que nous ne souhaitons pas prendre pour nous-mêmes. 
+PRAISE_TRADE_01            | Rappelez-vous quand j'ai commencé notre accord commercial? Je vous ai dit que nous verrions combien nous gagnerions l'un de l'autre, et je suis heureux de voir que la valeur acquise a été mutuelle. 
+PRAISE_TRADE_02            | C'est toujours plus amusant de se battre pour la richesse et de rentrer chez soi avec des navires chargés du butin de la victoire ! Eh bien, je suppose que cet accord commercial est au moins un peu plus rentable lorsque l'on tient compte des coûts. Assurez-vous que cela reste ainsi, ambassadeur.
+PRAISE_REBELLING_WITH_01   | C'est mieux comme ça. Il n'y a rien comme un bon combat, hein ? Et tant de butin ne demandant qu'à être acquis... J'espère que cela ne vous dérange pas que le Khanat veuille se joindre à la fête ! 
+
+ACCEPT_TRADE_01            | Je suppose que nous ne pouvons pas piller toutes les civilisations que nous rencontrons. Vous voulez échanger combien de BC par an ? [amt]? Très bien.
+RESPOND_IGNORE_THREAT_01   | Pardonnez-moi de rire, vos menaces sont juste comiquement vides. Courez maintenant avant que nos pillards ne décident d'aiguiser leurs griffes sur vos colonies.
+RESPOND_STOP_SPYING_01     | Vous avez trouvé un espion qui, selon vous, nous appartient ? Sûrement pas. Nous n'aurions jamais songé à espionner l'exalté [your_empire]. Faites ce que vous voulez de l'espion, cela n'a aucune importance pour nous.
+RESPOND_STOP_ATTACKING_01  | Inquiet d'un raid, [your_race]? Ne vous inquiétez pas, nous n'avons aucun intérêt à ce que vous possédez. Nous allons les déplacer maintenant. Nous ne voudrions pas vous effrayer, après tout.
+
+
