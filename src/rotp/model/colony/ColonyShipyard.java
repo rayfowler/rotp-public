@@ -153,9 +153,6 @@ public class ColonyShipyard extends ColonySpendingCategory {
     }
     @Override
     public void nextTurn(float totalProd, float totalReserve) {
-        if (colony().allocation(categoryType()) == 0)
-            return;
-        
         rallyCount = 0;
         rallyDesignId = 0;
         rallyDestSysId = StarSystem.NULL_ID;
@@ -179,6 +176,9 @@ public class ColonyShipyard extends ColonySpendingCategory {
         shipLimitReached = false;
         stargateCompleted = false;
 
+        if (colony().allocation(categoryType()) == 0)
+            return;
+        
         // should never happen anymore, but hey
         if (buildingObsoleteDesign()) {
             empire().addReserve(newBC);
