@@ -1,9 +1,9 @@
 // all possible names
-name: Meklar, Mekanar, Cybernar, Digitar, Technar
+name: Meklonar, Mekanar, Cybernar, Digitar, Technar
 
 desc1: Oberäkneliga Industrialister
 desc2: Förbättrade Fabrikskontroller
-desc3: Innevånarna av Meklar Domän strävar efter odödlighet och perfektion genom teknologi.
+desc3: Innevånarna av Meklonar Domän strävar efter odödlighet och perfektion genom teknologi.
 
 // possible home system names
 home: Meklon, Kollosson, Kalculon, Plåtniklon, Optimus

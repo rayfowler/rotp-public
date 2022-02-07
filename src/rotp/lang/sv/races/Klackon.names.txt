@@ -1,9 +1,9 @@
 // all possible names
-name: Klackon, Klackrant, Klyckrin, Arthropon, Coleopteron
+name: Kholdan, Klackrant, Klyckrin, Arthropon, Coleopteron
 
 desc1: Xenofobisk Industrialist
 desc2: Enat Koloni-medvetande och Ökad Produktion för Population
-desc3: En livsform med ett enda sinne som kontrollerar alla, de flitiga Klackon är obegripliga för andra folkslag.
+desc3: En livsform med ett enda sinne som kontrollerar alla, de flitiga Kholdan är obegripliga för andra folkslag.
 
 // possible home system names
 home: Kholdan, Kholdant, Khaldon, Klykdon, Khakdon

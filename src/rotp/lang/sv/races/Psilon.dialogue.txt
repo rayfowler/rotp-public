@@ -12,7 +12,7 @@
 // or distributing any material covered under this license.
 //
 
-// Psilon specific dialogue
+// Mentaran specific dialogue
 CONTACT_PACIFIST           | Varma hälsningar, ambassadör! Vi av den [my_empire] har för länge sedan lärt oss fördelarna av samarbete i fredstider. Vi hoppas att våra utrikes diplomatiska band med er kommer att fungera lika harmoniskt som vårt inrikes samarbete.
 CONTACT_HONORABLE          | Idag är en dag av fröjd, att få bemöta andra som färdas genom dessa oändliga räckvidder! Vi kallar oss [my_race_plural], och vi kommer att göra vad vi kan för att vara till nytta vid varje tillfälle.
 CONTACT_ERRATIC            | [my_empire] sänder sina välönskningar. Ni gav er till känna som... [your_empire], var det? Fascinerande. Verkligen... fascinerande, så sant.

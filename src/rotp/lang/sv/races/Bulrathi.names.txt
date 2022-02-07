@@ -1,9 +1,9 @@
 // all possible names
-name: Bulrathi, Ursathi, Ramrathi, Grizzlathi, Ursinus
+name: Ursinathi, Ursathi, Ramrathi, Grizzlathi, Ursinus
 
 desc1: Aggressiva Ekologister
 desc2: Enastående Markstridstrupper
-desc3: De djärva och lojala Bulrathi sätter värde på både styrka och visdom i deras filosofiske Härskare.
+desc3: De djärva och lojala Ursinathi sätter värde på både styrka och visdom i deras filosofiske Härskare.
 
 // possible home system names
 home: Ursa, Ramhem, Grizzla, Pandara, Canis

@@ -1,12 +1,12 @@
 // all possible names
-name: Sakkra, Reptara, Saura, Lasserta, Tyranna
+name: Ssslaura, Reptara, Saura, Lasserta, Tyranna
 
 desc1: Aggressiva Expansionister
 desc2: Ökad Befolkningstillväxt
-desc3: Den ivriga befolkningen av Sakkra Samfund strävar med perfektionism att förädla de planeter de kommer över.
+desc3: Den ivriga befolkningen av Ssslaura Samfund strävar med perfektionism att förädla de planeter de kommer över.
 
 // possible home system names
-home: Sssla, Sssana, Sssihs, Sssha, Sssss, Hsssa
+home: Sssla, Sssana, Sssihs, Sssha, Sszss, Hsssa
 
 title:     Odlare
 fulltitle: Främste Odlare
