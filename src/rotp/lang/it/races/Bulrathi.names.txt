@@ -1,21 +1,21 @@
 // all possible names
-name: Bulrati, Bearati, Ursinati, Porati, Grizzlati
+name: Ursinatiani, Bearatiani, Bulratiani, Poratiani, Grizzlatiani
 
 desc1: Ecologisti Aggressivi
 desc2: Fantastici Combattenti a Terra
-desc3: I ferocemente leali Bulratiani apprezza sia la forza che la saggezza nel loro re-filosofo.
+desc3: I ferocemente leali Ursinatiani apprezza sia la forza che la saggezza nel loro re-filosofo.
 
 // possible home system names
-home: Ursa, Canis, Grizzla, Pandara, Bruin
+casa: Ursa, Canis, Grizzla, Pandara, Bruin
 
-title:     Gran Gerarca
-fulltitle: Gran Gerarca
+titolo:     Gran Gerarca
+titolo completo: Gran Gerarca
 
 // possible leader names
 leader: Bullux, Durpp, Grunk, Krungo, Monch, Smurch
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
-ship1: Zampa, Pattuglia, Artiglio, Zanna, Dente, Cinghiale, Ursine
-ship2: Cacciatore, Gladiatore, Sentinella, Pescatore, Localizzatore, Carnivoro, Panda
-ship3: Orso da Guerra, Bruto, Predatore, Intimidatore, Uccisore, Custode, Protettore
-ship4: Orsogrigio, Punitore, Rino, Kodiak, Cacciatorpediniere, Cerberus, Picchiatore
+nave1: Zampa, Pattuglia, Artiglio, Zanna, Dente, Cinghiale, Ursine
+nave2: Cacciatore, Gladiatore, Sentinella, Pescatore, Localizzatore, Carnivoro, Panda
+nave3: Orso da Guerra, Bruto, Predatore, Intimidatore, Uccisore, Custode, Protettore
+nave4: Orsogrigio, Punitore, Rino, Kodiak, Cacciatorpediniere, Cerberus, Picchiatore

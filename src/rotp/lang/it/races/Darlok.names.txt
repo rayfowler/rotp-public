@@ -1,13 +1,12 @@
 // all possible names
-name: Darlok, Sarlok, Spylok, Shadelok, Nazlok
+nome: Nazlokiani, Sarlokiani, Spailokiani, Shadelokiani, Nazlokiani
 
 desc1: Diplomatici Aggressivi
 desc2: Spie Supreme
-desc3: i Darlokiani sono spettri innaturali e segreti, provenienti da un'altra dimensione
+desc3: i Nazlokiani sono spettri innaturali e segreti, provenienti da un'altra dimensione
 
 // possible home system names
-home: Nazin, Mordor, Hades, Abyssal, Hel
-
+Casa: Nazin, Mordor, Hades, Abyssal, Hel
 title:     Imperatore
 fulltitle: Imperatore
 
@@ -15,8 +14,8 @@ fulltitle: Imperatore
 leader: Darquan, Morfane, Narzina, Nazgur, Shador, Ssithra
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
-ship1: Nebbia, Vapore, Scintilla, Velo, Presagio, Etere, Barlume
-ship2: Miraggio, Ombra, Sogno, Illusione, Riflessione, Visione, Tana
-ship3: Fantasma, Spettro, Wraith, Shade, Ghost, Spirito, Poltergeist
-ship4: Incubo, Phantasm, Terrore, Orrore, Redivivo, Tristo Mietitore, Fobos
+nave1: Nebbia, Vapore, Scintilla, Velo, Presagio, Etere, Barlume
+nave2: Miraggio, Ombra, Sogno, Illusione, Riflessione, Visione, Tana
+nave3: Fantasma, Spettro, Wraith, Shade, Ghost, Spirito, Poltergeist
+nave4: Incubo, Phantasm, Terrore, Orrore, Redivivo, Tristo Mietitore, Fobos
 

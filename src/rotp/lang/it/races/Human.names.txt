@@ -6,17 +6,17 @@ desc2: Commercianti Esperti e Diplomatici Magnifici
 desc3: Gli molto eloquenti Umani sono maestri nel convincere gli altri a servire gli interessi Umani.
 
 // possible home system names
-home: Terra, Tellus, Primo, Midgard
+casa: Terra, Tellus, Primo, Midgard
 
-title:     Triumviro
-fulltitle: Triumviro
+titulo:     Triumviro
+titolo completo: Triumviro
 
 // possible leader names
 leader: Alexander, Bladrov II, Durash IV, Johann III, Lasitus, Strader
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
-ship1: Sentinella, Indagine, Corriere, Esploratore, Cercatore, Messaggero, Pattuglia
-ship2: Fregata, Corvetta, Cannoniera, Caccia, Brigata, Averla, Commando
-ship3: Incrociatore, Scorta, Nave da Guerra, Difensore, Portaerei, Avanguardia, Circus
-ship4: Corazzata Monocalibro, Corazzata, Dreadstar, Devastatore, Incrociatore Corazzato, Vendicatore, Cacciatorpediniere 
+nave1: Sentinella, Indagine, Corriere, Esploratore, Cercatore, Messaggero, Pattuglia
+nave2: Fregata, Corvetta, Cannoniera, Caccia, Brigata, Averla, Commando
+nave3: Incrociatore, Scorta, Nave da Guerra, Difensore, Portaerei, Avanguardia, Circus
+nave4: Corazzata Monocalibro, Corazzata, Dreadstar, Devastatore, Incrociatore Corazzato, Vendicatore, Cacciatorpediniere 
 

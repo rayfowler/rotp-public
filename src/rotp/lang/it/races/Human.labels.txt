@@ -1,5 +1,5 @@
 // race-specific variables (must start with _)
-_empire                           | IL Triumvirato Umano, Il Triumvirato Terrano, Il Triumvirato Tellano, Il Triumvirato Primano, Il Triumvirato Midgardiano
+_empire                           | Il Triumvirato Umano, Il Triumvirato Terrano, Il Triumvirato Tellano, Il Triumvirato Primano, Il Triumvirato Midgardiano
 _empireof                         | del Triumvirato Umano, del Triumvirato Terrano, del Triumvirato Tellano, del Triumvirato Primano, del Triumvirato Midgardiano
 _raceadjec                        | Umano, Terrano, Tellano, Primano, Midgardiano
 _raceadjecF                       | Umana, Terrana, Tellana, Primana, Midgardiana
@@ -39,7 +39,7 @@ MAIN_ADVISOR_RALLY_POINTS         | Le nostre forze militari si stanno preparand
 MAIN_ADVISOR_MISSILE_BASES        | I nostri strateghi si preoccupano delle capacità difensive dei mondi ai margini del nostro territorio. Raccomandano di creare basi missilistiche per fortificare le difese planetarie e sono d'accordo con la loro valutazione.
 MAIN_ADVISOR_SHIP_WEAPON          | La nostra più recente ricerca ha portato a un progresso nella tecnologia delle armi. Può modificare i nuovi design delle navi per includere queste armi in qualsiasi momento d'ora in poi.
 MAIN_ADVISOR_COUNCIL              | Triumviro! Un incontro di tutti gli imperi interstellari avverrà in soli 5 anni. Indirizzi i nostri diplomatici a migliorare il modo in cui siamo visti e utilizzeremo i nostri vantaggi per guidare questo Consiglio Galattico ai nostri fini.
-MAIN_ADVISOR_REBELLION            | Ho sentito dire che è in corso una ribellione su %1. Una ribellione! Di tutte le cose! Mettiamo degli stivali a terra e teniamo sotto controllo quella colonia.
+MAIN_ADVISOR_REBELLION            | Ho sentito dire che è in corso una ribellione su %1. Una ribellione! L'audacia ! Mettiamo degli stivali a terra e teniamo sotto controllo quella colonia.
 MAIN_ADVISOR_RESIST_COUNCIL       | Sembra che questa sarà la nostra guerra finale in un modo o nell'altro. Spero solo che tutto ciò che il nostro passato ci ha insegnato sarà sufficiente per prepararci a ciò che ci aspetta...
 MAIN_ADVISOR_COUNCIL_RESISTED     | Guardi quegli sciocchi ribelli! Siamo stati democraticamente eletti per guidare questa galassia in avanti e tutto ciò a cui riescono a pensare è la guerra?! Allora diamogli quello che chiedono!
 
