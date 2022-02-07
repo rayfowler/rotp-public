@@ -3,7 +3,7 @@ nom: Kholdanien, Klackantien, Klockanien, Arthroponien, Coleopteronien
 
 desc1: Des Industriels Xénophobes
 desc2: De l'esprit de ruche et augmentation de la production de travailleurs
-desc3: Une espèce avec un seul esprit de contrôle, [_race_pluralnoun] industrieuses sont impénétrables pour les étrangers.
+desc3: Une espèce avec un seul esprit de contrôle, les Kholdaniens industrieuses sont impénétrables pour les étrangers.
 
 // possible home system names
 Maison: Kholdan, Klackant, Klockan, Arthropon, Coleopteron

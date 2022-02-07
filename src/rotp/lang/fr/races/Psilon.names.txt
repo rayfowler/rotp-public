@@ -3,7 +3,7 @@ nom: Mentarien, Mentalien, Psychien, Cerebrien, Neuralien
 
 desc1: Des Technologues Pacifistes
 desc2: Des Techniques de Recherche Supérieures
-desc3: La République [_raceadjecF] recherche une coexistence pacifique et éclairée avec les autres races.
+desc3: La République Mentarienne recherche une coexistence pacifique et éclairée avec les autres races.
 
 // possible home system names
 Maison: Mentar, Cogitar, Psilar, Metrica, Neura

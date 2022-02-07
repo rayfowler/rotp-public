@@ -3,7 +3,7 @@ name: Nazlok, Sarlok, Spylok, Shadelok, Dralok
 
 desc1: Aggressive Diplomats
 desc2: Supreme Spies
-desc3: The [race]s are unnatural and secretive wraiths, originating from another dimension  
+desc3: The Nazloks are unnatural and secretive wraiths, originating from another dimension  
 
 // possible home system names
 home: Nazin, Mordor, Hades, Abyssal, Hel

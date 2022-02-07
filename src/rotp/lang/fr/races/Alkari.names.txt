@@ -3,7 +3,7 @@ nom: Altaïrien, Aviarien, Cluckarien, Featharien, Foularien
 
 desc1: Des Honorables Militaristes
 desc2: Des Pilotes supérieurs
-desc3: La Souveraineté [_raceadjecF] est une société guerrière organisée qui récompense l'honneur au combat.
+desc3: La Souveraineté Altaïrienne est une société guerrière organisée qui récompense l'honneur au combat.
 
 // possible home system names
 maison: Altair, Aegir, Aviar, Volary, Aerie

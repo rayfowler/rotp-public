@@ -3,7 +3,7 @@ nom: Ursinathien, Bearathien, Burlathien, Paurathien, Grizzlathien
 
 desc1: Des Écologistes agressifs
 desc2: Des formidables combattants au sol
-desc3: Les farouchement loyaux [_race_pluraladjec] apprécient à la fois la force et la sagesse de leur roi philosophe.
+desc3: Les farouchement loyaux Ursinathiennes apprécient à la fois la force et la sagesse de leur roi philosophe.
 
 // possible home system names
 maison: Ursa, Canis, Grizzla, Pandara, Bruin

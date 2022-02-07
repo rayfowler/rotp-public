@@ -3,7 +3,7 @@ nom: Ssslaurien, Reptarien, Saurien, Raptorien, Tyrannien
 
 desc1: Des Expansionnistes Agressifs
 desc2: Croissance démographique Accrue
-desc3: Les fanatiques du Conclave [_raceadjec] s'efforcent de perfectionner les mondes qu'ils conquièrent.
+desc3: Les fanatiques du Conclave Ssslaurien s'efforcent de perfectionner les mondes qu'ils conquièrent.
 
 // possible home system names
 maison: Sssla, Repta, Saur, Raptor, Tyrann

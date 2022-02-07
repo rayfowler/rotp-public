@@ -3,7 +3,7 @@ nom: Fiershan, Prrshan, Mewshan, Clawshan, Hisshan
 
 desc1: Des Militaristes Impitoyables
 desc2: Des Artilleurs Supérieurs
-desc3: Les hordes [_race_pluraladjecF] cherchent des trophées de combat alors qu'elles se répandent à travers la galaxie.
+desc3: Les hordes Fiershan cherchent des trophées de combat alors qu'elles se répandent à travers la galaxie.
 
 // possible home system names
 maison: Fierias, Fierina, Miamara, Miriana, Yailaria
