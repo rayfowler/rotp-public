@@ -3211,7 +3211,7 @@ public class DesignUI extends BasePanel {
                     return;
                 }
                 if (hoverTarget == weaponCountArea[i]) {
-                    if (count < 0) {
+                    if (count > 0) {
                         if (shiftPressed) 
                             shipWeaponCountDecrement(i,5);
                         else if (ctrlPressed) 
