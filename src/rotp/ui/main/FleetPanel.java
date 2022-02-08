@@ -197,8 +197,10 @@ public class FleetPanel extends BasePanel implements MapSpriteViewer {
         ShipFleet newFleet = adjustedFleet();
         ShipFleet displayedFleet = displayedFleet();
 
-        if (displayedFleet.isInTransit())
+        if (displayedFleet.isInTransit()) {
             galaxy().ships.redirectFleet(displayedFleet, selectedDest().id);
+            cancelFleet();
+        }
         else {
             boolean newFleetCreated = galaxy().ships.deploySubfleet(displayedFleet, newFleet.num, selectedDest().id);
             // newFleet isEmpty if it was the entire fleet selected
