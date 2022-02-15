@@ -1,4 +1,4 @@
-// all possible names
+s// all possible names
 name: Meklonariani, Mechanariani, Cybernariani, Digitariani, Technariani
 
 desc1: Industriali Erratici
@@ -6,16 +6,16 @@ desc2: Controlli di Fabbrica Avanzati
 desc3: I cittadini del Dominio Meklonariano cercano la perfezione e l'immortalità attraverso la tecnologia.
 
 // possible home system names
-casa: Meklon, Collosson, Calculon, Bender, Optimus
+home: Meklon, Collosson, Calculon, Bender, Optimus
 
-titulo:     Imperatore
-titulo completo: Arbitro Supremo
+title:     Imperatore
+fulltitle: Arbitro Supremo
 
 // possible leader names
 leader: CB-715, INT-986, MS-35, QX-537, TVC-15, TX-1138
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
-nave1: Byte, Transistor, Interruttore, Componente, Circuito, Cifra, Logica  
-nave2: Processore, Calcolatore, Computer, Algoritmo, Rete, Calcolo
-nave3: Dinamo, Batteria, Aiace, Tornado, Nesso, Predone, Dracma
-nave4: Nemesi, Devastatore, Annientatore, Intruso, Iperione, Penetratore, Tormentatore
+ship1: Byte, Transistor, Interruttore, Componente, Circuito, Cifra, Logica  
+ship2: Processore, Calcolatore, Computer, Algoritmo, Rete, Calcolo
+ship3: Dinamo, Batteria, Aiace, Tornado, Nesso, Predone, Dracma
+ship4: Nemesi, Devastatore, Annientatore, Intruso, Iperione, Penetratore, Tormentatore

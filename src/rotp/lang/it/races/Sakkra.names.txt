@@ -1,21 +1,22 @@
 // all possible names
-nome: Ssslaurani, Reptarani, Saurani, Raptorani, Tyrannani
+name: Ssslaurani, Reptarani, Saurani, Raptorani, Tyrannani
 
 desc1: Espansionisti Aggressivi
 desc2: Aumento della Crescita della Popolazione
 desc3: I fanatici del Conclave Ssslaurani si sforzano di perfezionare i mondi che conquistano.
+
 // possible home system names
 home: Sssla, Sssana, Sssihs, Sssha, Sssss, Hsssa
 
-titulo:     Magister
-titulo completo: Primo Magister
+title:     Magister
+fulltitle: Primo Magister
 
 // possible leader names
 leader: Guanar, Hissa, Kryssta, Saurak, Sauron, Tyranid
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
-nave1: Geco, Camaleonte, Lucertola, Iguana, Scinco, Anolis, Teiidae
-nave2: Tegu, Varanus, Caimano, Alligatore, Coccodrillo, Gaviale, Basilisco
-nave3: Dinosauro, Raptor, Pterodattilo, Teropode, Ceratopo, Predatore, Plesiosauro
-nave4: Titano, Colosso, Drago, Godzilla, Kraken, Gorgone, Tirannosauro
+ship1: Geco, Camaleonte, Lucertola, Iguana, Scinco, Anolis, Teiidae
+ship2: Tegu, Varanus, Caimano, Alligatore, Coccodrillo, Gaviale, Basilisco
+ship3: Dinosauro, Raptor, Pterodattilo, Teropode, Ceratopo, Predatore, Plesiosauro
+ship4: Titano, Colosso, Drago, Godzilla, Kraken, Gorgone, Tirannosauro
 
