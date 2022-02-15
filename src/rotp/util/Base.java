@@ -793,7 +793,19 @@ public interface Base {
         return new Color(r,g,b,a);
     }
     public default String str(String s) { return s == null ? "null" : s; }
-    public default String str(int i)    { return Integer.toString(i); }
+    public default String str(int i)    { 
+        if (LanguageManager.customDigits == null)
+            return Integer.toString(i); 
+        
+        String res = Integer.toString(i);
+        
+        char[] oldDigits = LanguageManager.latinDigits;
+        char[] newDigits = LanguageManager.customDigits;
+        int n = min(oldDigits.length, newDigits.length);
+        for (int j=0;j<n;j++) 
+            res = res.replace(oldDigits[j], newDigits[j]);
+        return res;
+    }
     public default String str(float i) { return Float.toString(i); }
     public default BufferedImage flip(BufferedImage img) {
         if (img == null)
