@@ -1,21 +1,21 @@
 // all possible names
-nom: Mentarien, Mentalien, Psychien, Cerebrien, Neuralien
+name: Mentarien, Mentalien, Psychien, Cerebrien, Neuralien
 
 desc1: Des Technologues Pacifistes
 desc2: Des Techniques de Recherche Supérieures
 desc3: La République Mentarienne recherche une coexistence pacifique et éclairée avec les autres races.
 
 // possible home system names
-Maison: Mentar, Cogitar, Psilar, Metrica, Neura
+home: Mentar, Cogitar, Psilar, Metrica, Neura
 
-titre:     Conseiller
-titre complet: Haut Conseiller
+title:     Conseiller
+fulltitle: Haut Conseiller
 
 // possible leader names
 leader: Dynalon, Kelvan, Meson, Quark, Tachaon, Zygot
 
 // ship names, by size: 1-small, 2-medium, 3-large, 4-huge
-navire1: Électron, Neutrino, Quark, Neutron, Proton, Atome, Molécule
-navire2: Sigma, Prime, Rayon, Hypoténuse, Algèbre, Tangente, Logarithme
-navire3: Parallaxe, Ellipse, Axe, Onde Sinusoïdale, Fractal, Calculu, Derivation
-navire4: Sun Fire, Constellation, Nova, Quasar, Galaxie, Nébuleuse, Couronne
+ship1: Électron, Neutrino, Quark, Neutron, Proton, Atome, Molécule
+ship2: Sigma, Prime, Rayon, Hypoténuse, Algèbre, Tangente, Logarithme
+ship3: Parallaxe, Ellipse, Axe, Onde Sinusoïdale, Fractal, Calculu, Derivation
+ship4: Sun Fire, Constellation, Nova, Quasar, Galaxie, Nébuleuse, Couronne
