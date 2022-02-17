@@ -308,50 +308,6 @@ public class AIScientist implements Base, Scientist {
                 empire.tech().weapon().adjustAllocation(-9);
             }
         }
-        else if(UserPreferences.xilmiRoleplayMode())
-        {
-            if(empire.leader().isEcologist()) {
-                empire.tech().computer().allocation(5);
-                empire.tech().construction().allocation(5);
-                empire.tech().forceField().allocation(5);
-                empire.tech().planetology().allocation(35);
-                empire.tech().propulsion().allocation(5);
-                empire.tech().weapon().allocation(5);
-            }
-            if(empire.leader().isExpansionist()) {
-                empire.tech().computer().allocation(5);
-                empire.tech().construction().allocation(5);
-                empire.tech().forceField().allocation(5);
-                empire.tech().planetology().allocation(15);
-                empire.tech().propulsion().allocation(25);
-                empire.tech().weapon().allocation(5);
-            }
-            if(empire.leader().isIndustrialist()) {
-                empire.tech().computer().allocation(15);
-                empire.tech().construction().allocation(15);
-                empire.tech().forceField().allocation(5);
-                empire.tech().planetology().allocation(15);
-                empire.tech().propulsion().allocation(5);
-                empire.tech().weapon().allocation(5);
-            }
-            if(empire.leader().isMilitarist()) {
-                empire.tech().computer().allocation(10);
-                empire.tech().construction().allocation(10);
-                empire.tech().forceField().allocation(10);
-                empire.tech().planetology().allocation(5);
-                empire.tech().propulsion().allocation(10);
-                empire.tech().weapon().allocation(15);
-            }
-            if(empire.leader().isDiplomat()) {
-                empire.tech().computer().allocation(35);
-                empire.tech().construction().allocation(5);
-                empire.tech().forceField().allocation(5);
-                empire.tech().planetology().allocation(5);
-                empire.tech().propulsion().allocation(5);
-                empire.tech().weapon().allocation(5);
-            }
-            //Technolgist is left out on purpose. It'll go with the strengths of the race to maximize RP-usage
-        }
         
         int futureTechs = 0;
         for (int j=0; j<TechTree.NUM_CATEGORIES; j++) {

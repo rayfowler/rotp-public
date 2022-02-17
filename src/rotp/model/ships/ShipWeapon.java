@@ -71,26 +71,42 @@ public class ShipWeapon extends ShipComponent {
         int num = bombardAttacks();
         float shieldMod = source.targetShieldMod(this);
         float shieldLevel = shieldMod * target.shieldLevel();
+        float beamMod = 1;
+        float pct = (5 + source.attackLevel() - target.bombDefense()) / 10;
+        pct = max(.05f, pct);
+        if(isBeamWeapon())
+        {
+            shieldLevel /= planetDamageMod(); 
+            beamMod = planetDamageMod();
+        }
         if(isBioWeapon() && target.num == 0)
         {
             float targetAntiDote = target.empire.tech().antidoteLevel();
             float damage = TechBiologicalWeapon.avgDamage(maxDamage(), (int)targetAntiDote) * 200;
             return damage * num;
         }
-        return firepower(shieldLevel)* num;
+        return firepower(shieldLevel)* num * beamMod * pct;
     }
     @Override
     public float estimatedBombardDamage(ShipDesign des, CombatStackColony target) {
         int num = bombardAttacks();
         float shieldMod = des.targetShieldMod(this);
         float shieldLevel = shieldMod * target.shieldLevel();
+        float beamMod = 1;
+        float pct = (5 + des.attackLevel() - target.bombDefense()) / 10;
+        pct = max(.05f, pct);
+        if(isBeamWeapon())
+        {
+            shieldLevel /= planetDamageMod(); 
+            beamMod = planetDamageMod();
+        }
         if(isBioWeapon() && target.num == 0)
         {
             float targetAntiDote = target.empire.tech().antidoteLevel();
             float damage = TechBiologicalWeapon.avgDamage(maxDamage(), (int)targetAntiDote) * 200;
             return damage * num;
-        }   
-        return firepower(shieldLevel)* num;
+        }
+        return firepower(shieldLevel)* num * beamMod * pct;
     }
     @Override
     public String fieldValue(int n, ShipDesign d, int bank) {

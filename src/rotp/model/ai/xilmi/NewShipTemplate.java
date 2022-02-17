@@ -116,20 +116,23 @@ public class NewShipTemplate implements Base {
         float biggestShipWeaponSize = 0;
         float biggestBombSize = 0;
         float highestAttackLevel = 0;
-        float highestShieldLevel = 0;
+        ShipDesign biggestWeaponDesign = null;
         for (int i = 0; i<4; i++) {
             ShipDesign design = shipDesigns[i];
             for (int j=0; j<maxWeapons(); j++)
             {
                 if(design.weapon(j).groundAttacksOnly())
                 {
-                    if(design.weapon(j).size(design) > biggestBombSize)
+                    if(design.weapon(j).space(design) > biggestBombSize)
                         biggestBombSize = design.weapon(j).space(design);
                 }
                 else
                 {
-                    if(design.weapon(j).size(design) > biggestShipWeaponSize)
+                    if(design.weapon(j).space(design) > biggestShipWeaponSize)
+                    {
                         biggestShipWeaponSize = design.weapon(j).space(design);
+                        biggestWeaponDesign = design;
+                    }
                 }
             }
             if(design.attackLevel() > highestAttackLevel)
@@ -145,7 +148,7 @@ public class NewShipTemplate implements Base {
             hitPct = min(hitPct, 1.0f);
             float absorbPct = 1.0f;
             if(design.firepowerAntiShip(0) > 0)
-                absorbPct = max(design.firepowerAntiShip(design.shieldLevel()) / design.firepowerAntiShip(0), 0.05f); //more than 95% absorb will be normalized so score doesn't become infinity
+                absorbPct = max(biggestWeaponDesign.firepowerAntiShip(design.shieldLevel()) / biggestWeaponDesign.firepowerAntiShip(0), 0.05f); //more than 95% absorb will be normalized so score doesn't become infinity
             float mitigation = Float.MAX_VALUE;
             if(hitPct > 0 && absorbPct > 0)    
                 mitigation = (1 / hitPct) * (1 / absorbPct);
@@ -727,18 +730,23 @@ public class NewShipTemplate implements Base {
             return spaceAllowed;
         
         float remainingSpace = spaceAllowed; 
-
+        
+        boolean alreadyInertial = false;
         for(ShipSpecial spec : specials.values())
         {
             if(spec.isNone())
                 continue;
             if((spec.beamRangeBonus() > 0 || spec.beamShieldMod() < 1) && skipBeamBonus)
                 continue;
+            if(spec.isInertial() && alreadyInertial)
+                continue;
             if(spec.space(d) <= remainingSpace)
             {
                 d.special(nextSlot,spec);
                 nextSlot++;
                 remainingSpace -= spec.space(d);
+                if(spec.isInertial())
+                    alreadyInertial = true;
                 //System.out.print("\n"+ai.empire().name()+" "+d.name()+" added "+spec.name()+" with "+spec.space(d)+" remaining: "+remainingSpace);
                 if(nextSlot > 2)
                     break;

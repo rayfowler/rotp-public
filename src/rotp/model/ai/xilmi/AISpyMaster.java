@@ -41,19 +41,24 @@ public class AISpyMaster implements Base, SpyMaster {
         // MAX_SECURITY_TICKS = 10 in model/empires/Empire.java
 
         float paranoia = 0;
-        float highestOpponentTechLevel = 0;
+        float avgOpponentTechLevel = 0;
+        float opponentCount = 0;
         for (EmpireView cv : empire.empireViews()) {
             if ((cv != null) && cv.embassy().contact() && cv.inEconomicRange()) {
-                if(cv.empire().tech().avgTechLevel() > highestOpponentTechLevel)
-                    highestOpponentTechLevel = cv.empire().tech().avgTechLevel();
+                if(empire.allies().contains(cv.empire()))
+                    continue;
+                avgOpponentTechLevel += cv.empire().tech().maxTechLevel();
+                opponentCount++;
             }
         }
-        paranoia = empire.tech().avgTechLevel() - highestOpponentTechLevel;
-        if(highestOpponentTechLevel == 0)
+        if(opponentCount > 0)
+            avgOpponentTechLevel /= opponentCount;
+        paranoia = empire.tech().avgTechLevel() - avgOpponentTechLevel;
+        if(avgOpponentTechLevel == 0)
             paranoia = 0;
         if (paranoia < 0)
             paranoia = 0;
-        //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" counter-espionage: "+paranoia+" mt: "+empire.tech().avgTechLevel()+" ot: "+highestOpponentTechLevel);
+        //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" counter-espionage: "+paranoia+" mt: "+empire.tech().avgTechLevel()+" ot: "+avgOpponentTechLevel);
         return min(10, (int)Math.round(paranoia)); // modnar: change max to 10, MAX_SECURITY_TICKS = 10
     }
     @Override
@@ -131,20 +136,38 @@ public class AISpyMaster implements Base, SpyMaster {
         }
 
         // we've been warned and they are not our enemy (i.e. no war preparations)
-        if (!emb.isEnemy() && spies.threatened()) {
+        boolean shouldHide = false;
+        if (!v.embassy().anyWar() && (v.spies().maxSpies() > 0)
+        && v.otherView().embassy().timerIsActive(DiplomaticEmbassy.TIMER_SPY_WARNING)) {
+            //System.out.println(empire.galaxy().currentTurn()+" "+ empire.name()+" we have been recently warned to stop spying by "+v.embassy().empire()+" "+v.otherView().embassy().timers[DiplomaticEmbassy.TIMER_SPY_WARNING]);
+            if (!v.spies().isHide()
+            || (v.empire().leader().isXenophobic())) {
+                shouldHide = true;
+            }
+        }
+        
+        //When I'm ruthless or they can't reach me anyways, no reason to listen to their threats
+        if(empire.leader().isRuthless() || !v.empire().inShipRange(empire.id))
+            shouldHide = false;
+        
+        //check if they are in trouble. If they are, we don't care about their threat
+        if(shouldHide)
+        {
+            if(empire.diplomatAI().readyForWar(v, false))
+                shouldHide = false;
+        }
+        
+        if (!emb.isEnemy() && shouldHide) {
+            if(v.empire().leader().isXenophobic())
+            {
+                spies.shutdownSpyNetworks();
+                return;
+            }
             spies.beginHide();
             spies.maxSpies(1);
             return;
         }
         
-        // don't bother trying to steal/sabotage against Darloks unless we are Darloks ourselves, it's probably just a waste of resources
-        if(emb.empire().race().internalSecurityAdj > empire.race().spyInfiltrationAdj)
-        {
-            spies.beginHide();
-            spies.maxSpies(1);
-            return; 
-        }
- 
         boolean canEspionage = !spies.possibleTechs().isEmpty();
         Sabotage sabMission = bestSabotageChoice(v);
         boolean canSabotage = spies.canSabotage() && (sabMission != null);

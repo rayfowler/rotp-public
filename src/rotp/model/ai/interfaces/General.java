@@ -29,6 +29,7 @@ public interface General {
     
     // specific to Xilmi AI
     default Empire bestVictim()               { return null; }
+    default Empire bestAlly(boolean includeCurrentAllies) { return null; }
     default Empire biggestThreat() { return null; }
     default float defenseRatio()              { return 0.5f; }
     default float totalEmpirePopulationCapacity(Empire emp) { return 0; }

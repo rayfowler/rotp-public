@@ -64,12 +64,16 @@ public final class ShipWeaponBiological extends ShipWeapon {
         float totalDamage = 0;
         for (int i=0;i<count;i++) {
             if (random() < pct) 
-                totalDamage += roll(minDamage(), maxDamage());
+            {
+                float currentDamage = roll(minDamage(), maxDamage());
+                currentDamage = max(0, currentDamage - target.empire.tech().antidoteLevel());
+                totalDamage += currentDamage;
+            }
         }
         if (totalDamage > 0)
             drawSuccessfulAttack(source, target, totalDamage);
         else
-            drawUnsuccessfulAttack(source, target);
+            drawIneffectiveAttack(source, target);
         target.takeBioweaponDamage(totalDamage);
     }
 }
