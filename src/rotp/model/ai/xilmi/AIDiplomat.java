@@ -263,27 +263,29 @@ public class AIDiplomat implements Base, Diplomat {
         if (tech.isObsolete(requestor))
             return new ArrayList<>();
         
-        if(!willingToTradeTech(tech))
-            return new ArrayList<>();
-        
         EmpireView view = empire.viewForEmpire(requestor);
 
+        // what is this times the value of the request tech?dec
+        float maxTechValue = techDealValue(view) * max(tech.level(), tech.baseValue(requestor));
+
         // what are all of the unknown techs that we could ask for
-        List<Tech> allTechs = requestor.diplomatAI().offerableTechnologies(empire);
-        Tech.comparatorCiv = empire;
-        Collections.sort(allTechs, tech.OBJECT_TRADE_PRIORITY); 
+        List<Tech> allTechs = view.spies().unknownTechs();
+
         // include only those techs which have a research value >= the trade value
         // of the requestedTech we would be trading away
-        //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" report age on "+requestor.name()+": "+view.spies().reportAge());
         List<Tech> worthyTechs = new ArrayList<>(allTechs.size());
         for (Tech t: allTechs) {
-            //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" could like "+t.name()+" in return for "+tech.name()+" obsolete: "+t.isObsolete(empire)+" value: "+t.baseValue(empire));
-            if (!t.isObsolete(empire) && t.baseValue(empire) > 0)
-                worthyTechs.add(t);
+            if (t.quintile() == tech.quintile()) {
+                if (t.baseValue(empire) > maxTechValue) {
+                    if (!t.isObsolete(empire))
+                        worthyTechs.add(t);
+                }
+            }
         }
 
         // sort techs by the diplomat's research priority (hi to low)
-        Collections.sort(worthyTechs, tech.OBJECT_TRADE_PRIORITY);        
+        Tech.comparatorCiv = empire;
+        Collections.sort(worthyTechs, Tech.BASE_VALUE);        
         
         // limit return to top 5 techs
         Tech.comparatorCiv = requestor;
@@ -293,15 +295,14 @@ public class AIDiplomat implements Base, Diplomat {
         List<Tech> topFiveTechs = new ArrayList<>(maxTechs);
         for (int i=0; i<maxTechs;i++)
             topFiveTechs.add(worthyTechs.get(i));
-        Collections.sort(topFiveTechs, tech.OBJECT_TRADE_PRIORITY);
+        Collections.sort(topFiveTechs, Tech.RESEARCH_VALUE);
         return topFiveTechs;
     }
-
     private boolean decidedToExchangeTech(EmpireView v) {
         if (!willingToOfferTechExchange(v))
             return false;
 
-        List<Tech> availableTechs = v.empire().diplomatAI().offerableTechnologies(empire);
+        List<Tech> availableTechs = v.spies().unknownTechs();
         if (availableTechs.isEmpty())
             return false;
 
@@ -309,34 +310,22 @@ public class AIDiplomat implements Base, Diplomat {
         // until one is found that we can make counter-offers for... use that one
         while (!availableTechs.isEmpty()) {
             Tech wantedTech = empire.ai().scientist().mostDesirableTech(availableTechs);
-            //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" wants from "+v.empire().name()+" the tech "+wantedTech.name() + " value: "+empire.ai().scientist().researchValue(wantedTech));
             availableTechs.remove(wantedTech);
-            if (empire.ai().scientist().researchValue(wantedTech) > 1) {
+            if (empire.ai().scientist().researchValue(wantedTech) > 0) {
                 List<Tech> counterTechs = v.empire().diplomatAI().techsRequestedForCounter(empire, wantedTech);
-                List<Tech> willingToTradeCounterTechs = new ArrayList<>(counterTechs.size());
-                for (Tech t: counterTechs) {
-                    if (willingToTradeTech(t))
-                        willingToTradeCounterTechs.add(t);
-                }
-                //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" wants from "+v.empire().name()+" the tech "+wantedTech.name() +" countertechs: "+counterTechs.size());
-                if (!willingToTradeCounterTechs.isEmpty()) {
-                    List<Tech> previouslyOffered;
-                    if(v.empire().isPlayerControlled())
-                        previouslyOffered = v.embassy().alreadyOfferedTechs();
-                    else
-                        previouslyOffered = v.embassy().alreadyOfferedTechs(wantedTech);
+                if (!counterTechs.isEmpty()) {
+                    List<Tech> previouslyOffered = v.embassy().alreadyOfferedTechs(wantedTech);
                     // simplified logic so that if we have ever asked for wantedTech before, don't ask again
-                    if (previouslyOffered == null || !previouslyOffered.containsAll(counterTechs)) {
-                        //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" ask "+v.empire().name()+" for "+wantedTech.name());
-                        v.embassy().logTechExchangeRequest(wantedTech, counterTechs);
-                        //only now send the request
+                    if (previouslyOffered == null) {
+                         v.embassy().logTechExchangeRequest(wantedTech, counterTechs);
+                        // there are counters available.. send request
                         DiplomaticReply reply = v.empire().diplomatAI().receiveRequestTech(empire, wantedTech);
                         if ((reply != null) && reply.accepted()) {
                             // techs the AI is willing to consider in exchange for wantedTech
                             // find the tech with the lowest trade value
-                            Collections.sort(willingToTradeCounterTechs, Tech.TRADE_PRIORITY);
-                            Collections.reverse(willingToTradeCounterTechs);
-                            Tech cheapestCounter = willingToTradeCounterTechs.get(0);
+                            counterTechs.add(wantedTech);
+                            Collections.sort(counterTechs, Tech.TRADE_PRIORITY);
+                            Tech cheapestCounter = counterTechs.get(0);
                             // if the lowest trade value tech is not the requested tech, then make the deal
                             if (cheapestCounter != wantedTech)
                                 v.empire().diplomatAI().receiveCounterOfferTech(empire, cheapestCounter, wantedTech);
