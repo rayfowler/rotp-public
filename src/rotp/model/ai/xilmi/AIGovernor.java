@@ -56,11 +56,7 @@ public class AIGovernor implements Base, Governor {
         float pct = col.currentProductionCapacity();
         float estProd = col.industry().factories()*col.planet().productionAdj();
         //System.out.println(galaxy().currentTurn()+" "+empire.name()+" "+col.name()+" estProd: "+estProd+" designCost: "+designCost+" sh.plan.priority(): "+sh.plan.priority()+" Repel: "+FleetPlan.REPEL+" enemy-fleet: "+!empire.enemyFleets().isEmpty());
-        if (pct >= 1.0)  // ail: I don't want them to build scouts instead of factories
-            return true;
-        if(sh.plan.priority() >= 1100)
-            return estProd > designCost;
-        return false;
+        return estProd > designCost;
     }
     @Override
     public void setColonyAllocations(Colony col) {
@@ -68,9 +64,9 @@ public class AIGovernor implements Base, Governor {
             baseSetColonyAllocations(col);
             ensureMinimumCleanup(col);
             col.validate();
+            //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+col.name()+" col.pct(SHIP): "+col.pct(SHIP)+" col.pct(DEFENSE): "+col.pct(DEFENSE)+" col.pct(INDUSTRY): "+col.pct(INDUSTRY)+" col.pct(ECOLOGY): "+col.pct(ECOLOGY)+" col.pct(TECH): "+col.pct(RESEARCH)+" yard: "+col.shipyardProject());
             return;
         }
-
         StarSystem sys = col.starSystem();
         String name = empire.sv.name(sys.id);
         boolean cleanupOK = ensureMinimumCleanup(col);
@@ -131,7 +127,7 @@ public class AIGovernor implements Base, Governor {
         int orderedInd = col.industry().orderedAllocation();
         int orderedEco = col.ecology().orderedAllocation();
         int orderedDef = col.defense().orderedAllocation();
-
+        
         // reset all unlocked allocations to zero
         col.clearUnlockedSpending();
         col.hasNewOrders(false);
@@ -170,6 +166,14 @@ public class AIGovernor implements Base, Governor {
         if (!col.locked(DEFENSE))
             col.setAllocation(DEFENSE,  min(prevDef, maxDef));
 
+        // if this is a ship-building-colony that is not researching put rest in ships
+        if(!col.locked(SHIP)
+                && prevShip > 0
+                && prevRes == 0
+                && !col.shipyard().shipLimitReached()
+                && !col.shipyard().stargateCompleted())
+            col.addAllocation(SHIP, col.allocationRemaining());
+        
         // SPEND THE EXCESS
         // if there is industry left to build, go there first
         if (!col.locked(INDUSTRY))
@@ -183,7 +187,7 @@ public class AIGovernor implements Base, Governor {
         // if there is population to grow, go there
         if (!col.locked(ECOLOGY))
             col.setAllocation(ECOLOGY, maxEco2);
-
+        
         // if research not locked go there
         if (!col.locked(RESEARCH))
             col.addAllocation(RESEARCH, col.allocationRemaining());
@@ -199,6 +203,8 @@ public class AIGovernor implements Base, Governor {
     private void baseSetColonyAllocations(Colony col) {                
         int maxAllocation = ColonySpendingCategory.MAX_TICKS;
 
+        if(col.shipyard().canLowerMaintenance())
+            col.shipyard().lowerMaintenance();
         // for systems that have a research project, focus research and forget
         // everything else until the project is done
         if (col.research().hasProject()) {
@@ -245,7 +251,6 @@ public class AIGovernor implements Base, Governor {
         boolean buildingVitalShip = false;
         //Mostly for Sakkra and Meklar, so they expand quicker when they can 72% pop is where the growth drops below 80%
         if(col.shipyard().desiredShips() > 0
-                && col.shipyard().design() != empire.shipDesignerAI().BestDesignToScout()
                 && (col.currentProductionCapacity() > 0.5f || col.production() > col.shipyard().design().cost()))
         {
             workerGoal = 0;
@@ -470,7 +475,6 @@ public class AIGovernor implements Base, Governor {
 
         for (int i=0;i<col.spending.length;i++)
             col.locked(i, false);
-        //System.out.print("\n"+galaxy().currentTurn()+" "+empire.name()+" "+col.name()+" col.pct(SHIP): "+col.pct(SHIP)+" col.pct(DEFENSE): "+col.pct(DEFENSE)+" col.pct(INDUSTRY): "+col.pct(INDUSTRY)+" col.pct(ECOLOGY): "+col.pct(ECOLOGY)+" col.pct(TECH): "+col.pct(RESEARCH)+" yard: "+col.shipyardProject());
     }
     @Override
     public float maxShipBCPermitted(Colony col) {
@@ -483,9 +487,14 @@ public class AIGovernor implements Base, Governor {
     }
     public boolean wantShield(Colony col) {
         StarSystem sys = col.starSystem();
-        if(!col.defense().shieldAtMaxLevel()
-                && (empire.sv.isAttackTarget(sys.id) || empire.sv.isBorderSystem(sys.id))) {
-            return true;
+        if(!col.defense().shieldAtMaxLevel()) {
+            for(Empire emp : empire.contactedEmpires())
+            {
+                if(empire.friendlyWith(emp.id))
+                    continue;
+                if(emp.sv.inShipRange(sys.id))
+                    return true;
+            }
         }
         return false;
     }

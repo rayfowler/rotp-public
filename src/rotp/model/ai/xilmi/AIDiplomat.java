@@ -23,15 +23,19 @@ import rotp.model.ai.interfaces.Diplomat;
 import rotp.model.combat.CombatStack;
 import rotp.model.combat.ShipCombatResults;
 import rotp.model.empires.DiplomaticEmbassy;
-import rotp.model.empires.DiplomaticTreaty;
 import rotp.model.empires.Empire;
 import rotp.model.empires.EmpireView;
 import rotp.model.empires.GalacticCouncil;
 import rotp.model.empires.Leader;
-import rotp.model.empires.SpyNetwork;
-import rotp.model.empires.SpyNetwork.Mission;
-import rotp.model.empires.SpyReport;
-import rotp.model.empires.TreatyWar;
+import static rotp.model.empires.Leader.Objective.DIPLOMAT;
+import static rotp.model.empires.Leader.Objective.ECOLOGIST;
+import static rotp.model.empires.Leader.Objective.EXPANSIONIST;
+import static rotp.model.empires.Leader.Objective.INDUSTRIALIST;
+import static rotp.model.empires.Leader.Objective.MILITARIST;
+import static rotp.model.empires.Leader.Objective.TECHNOLOGIST;
+import static rotp.model.empires.Leader.Personality.AGGRESSIVE;
+import static rotp.model.empires.Leader.Personality.PACIFIST;
+import static rotp.model.empires.Leader.Personality.XENOPHOBIC;
 import rotp.model.events.StarSystemEvent;
 import rotp.model.galaxy.Galaxy;
 import rotp.model.galaxy.ShipFleet;
@@ -70,7 +74,6 @@ import rotp.ui.notifications.DiplomaticNotification;
 import rotp.util.Base;
 
 public class AIDiplomat implements Base, Diplomat {
-    private static final float ERRATIC_WAR_PCT = .02f;
     private final Empire empire;
     private float cumulativeSeverity = 0;
 
@@ -235,7 +238,7 @@ public class AIDiplomat implements Base, Diplomat {
     @Override
     public List<Tech> techsAvailableForRequest(Empire diplomat) {
         EmpireView view = empire.viewForEmpire(diplomat);
-        List<Tech> allUnknownTechs = view.spies().unknownTechs();
+        List<Tech> allUnknownTechs = diplomat.diplomatAI().offerableTechnologies(empire);
 
         List<Tech> allTechs = new ArrayList<>();
         for (int i=0; i<allUnknownTechs.size();i++) {
@@ -260,25 +263,27 @@ public class AIDiplomat implements Base, Diplomat {
         if (tech.isObsolete(requestor))
             return new ArrayList<>();
         
+        if(!willingToTradeTech(tech))
+            return new ArrayList<>();
+        
         EmpireView view = empire.viewForEmpire(requestor);
 
         // what are all of the unknown techs that we could ask for
-        List<Tech> allTechs = view.spies().unknownTechs();
+        List<Tech> allTechs = requestor.diplomatAI().offerableTechnologies(empire);
         Tech.comparatorCiv = empire;
-        Collections.sort(allTechs, Tech.BASE_VALUE); 
+        Collections.sort(allTechs, tech.OBJECT_TRADE_PRIORITY); 
         // include only those techs which have a research value >= the trade value
         // of the requestedTech we would be trading away
+        //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" report age on "+requestor.name()+": "+view.spies().reportAge());
         List<Tech> worthyTechs = new ArrayList<>(allTechs.size());
         for (Tech t: allTechs) {
-            if(t.quintile() == tech.quintile())
-            {
-                if (!t.isObsolete(empire) && t.baseValue(empire) > 0)
-                    worthyTechs.add(t);
-            }
+            //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" could like "+t.name()+" in return for "+tech.name()+" obsolete: "+t.isObsolete(empire)+" value: "+t.baseValue(empire));
+            if (!t.isObsolete(empire) && t.baseValue(empire) > 0)
+                worthyTechs.add(t);
         }
 
         // sort techs by the diplomat's research priority (hi to low)
-        Collections.sort(worthyTechs, Tech.BASE_VALUE);        
+        Collections.sort(worthyTechs, tech.OBJECT_TRADE_PRIORITY);        
         
         // limit return to top 5 techs
         Tech.comparatorCiv = requestor;
@@ -288,7 +293,7 @@ public class AIDiplomat implements Base, Diplomat {
         List<Tech> topFiveTechs = new ArrayList<>(maxTechs);
         for (int i=0; i<maxTechs;i++)
             topFiveTechs.add(worthyTechs.get(i));
-        Collections.sort(topFiveTechs, Tech.RESEARCH_VALUE);
+        Collections.sort(topFiveTechs, tech.OBJECT_TRADE_PRIORITY);
         return topFiveTechs;
     }
 
@@ -296,7 +301,7 @@ public class AIDiplomat implements Base, Diplomat {
         if (!willingToOfferTechExchange(v))
             return false;
 
-        List<Tech> availableTechs = v.spies().unknownTechs();
+        List<Tech> availableTechs = v.empire().diplomatAI().offerableTechnologies(empire);
         if (availableTechs.isEmpty())
             return false;
 
@@ -304,14 +309,24 @@ public class AIDiplomat implements Base, Diplomat {
         // until one is found that we can make counter-offers for... use that one
         while (!availableTechs.isEmpty()) {
             Tech wantedTech = empire.ai().scientist().mostDesirableTech(availableTechs);
+            //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" wants from "+v.empire().name()+" the tech "+wantedTech.name() + " value: "+empire.ai().scientist().researchValue(wantedTech));
             availableTechs.remove(wantedTech);
             if (empire.ai().scientist().researchValue(wantedTech) > 1) {
-                
                 List<Tech> counterTechs = v.empire().diplomatAI().techsRequestedForCounter(empire, wantedTech);
-                if (!counterTechs.isEmpty()) {
-                    List<Tech> previouslyOffered = v.embassy().alreadyOfferedTechs(wantedTech);
+                List<Tech> willingToTradeCounterTechs = new ArrayList<>(counterTechs.size());
+                for (Tech t: counterTechs) {
+                    if (willingToTradeTech(t))
+                        willingToTradeCounterTechs.add(t);
+                }
+                //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" wants from "+v.empire().name()+" the tech "+wantedTech.name() +" countertechs: "+counterTechs.size());
+                if (!willingToTradeCounterTechs.isEmpty()) {
+                    List<Tech> previouslyOffered;
+                    if(v.empire().isPlayerControlled())
+                        previouslyOffered = v.embassy().alreadyOfferedTechs();
+                    else
+                        previouslyOffered = v.embassy().alreadyOfferedTechs(wantedTech);
                     // simplified logic so that if we have ever asked for wantedTech before, don't ask again
-                    if (previouslyOffered == null) {
+                    if (previouslyOffered == null || !previouslyOffered.containsAll(counterTechs)) {
                         //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" ask "+v.empire().name()+" for "+wantedTech.name());
                         v.embassy().logTechExchangeRequest(wantedTech, counterTechs);
                         //only now send the request
@@ -319,9 +334,9 @@ public class AIDiplomat implements Base, Diplomat {
                         if ((reply != null) && reply.accepted()) {
                             // techs the AI is willing to consider in exchange for wantedTech
                             // find the tech with the lowest trade value
-                            Collections.sort(counterTechs, Tech.TRADE_PRIORITY);
-                            Collections.reverse(counterTechs);
-                            Tech cheapestCounter = counterTechs.get(0);
+                            Collections.sort(willingToTradeCounterTechs, Tech.TRADE_PRIORITY);
+                            Collections.reverse(willingToTradeCounterTechs);
+                            Tech cheapestCounter = willingToTradeCounterTechs.get(0);
                             // if the lowest trade value tech is not the requested tech, then make the deal
                             if (cheapestCounter != wantedTech)
                                 v.empire().diplomatAI().receiveCounterOfferTech(empire, cheapestCounter, wantedTech);
@@ -343,7 +358,7 @@ public class AIDiplomat implements Base, Diplomat {
         return true;
     }
     public Tech mostDesirableTech(EmpireView v) {
-        return empire.ai().scientist().mostDesirableTech(v.spies().unknownTechs());
+        return empire.ai().scientist().mostDesirableTech(v.empire().diplomatAI().offerableTechnologies(empire));
     }
     private float techDealValue(EmpireView v) {
         return 1.0f;
@@ -757,7 +772,9 @@ public class AIDiplomat implements Base, Diplomat {
     public boolean willingToRequestAllyToJoinWar(Empire friend, Empire target) {
         // this method is called only for targets that we are at explicit war with
         // and the friend is our ALLY
-        
+        //xilmi: It is possible to be in range but not have contact
+        if(!friend.hasContact(target))
+            return false;
         // if he's already at war, don't bother
         if (friend.atWarWith(target.id))
             return false;
@@ -770,9 +787,12 @@ public class AIDiplomat implements Base, Diplomat {
         // this method is called only for targets that we are at war with
         // or targets we are preparing for war with
         // only ask people who we are in real contact with
+        //xilmi: It is possible to be in range but not have contact
+        if(!friend.hasContact(target))
+            return false;
         if (!empire.inEconomicRange(friend.id))
             return false;
-        if (friend.isPlayerControlled()) {
+        if (friend.isPlayerControlled() && !friend.alliedWith(empire.id)) {
             EmpireView v = empire.viewForEmpire(friend);
             if (!v.otherView().embassy().readyForJointWar())
                 return false;
@@ -1009,11 +1029,6 @@ public class AIDiplomat implements Base, Diplomat {
     }
     //ail: no good reason to ever break an alliance
     private boolean wantToBreakAlliance(EmpireView v) {
-        if(UserPreferences.xilmiRoleplayMode() && empire.leader().isPacifist())
-        {
-            if(v.empire().atWar())
-                return true;
-        }
         if(!canBreakAlliance(v.empire()))
             return false;
         return false;
@@ -1052,16 +1067,13 @@ public class AIDiplomat implements Base, Diplomat {
 //----------------
     @Override
     public void makeDiplomaticOffers(EmpireView v) {
+        //updatePersonality(); this is too telling but I'll leave the code in
         if(empire.enemies().contains(v.empire()) && !empire.warEnemies().contains(v.empire()))
         {
             if(!empire.inShipRange(v.empId()))
                 v.embassy().endWarPreparations();
         }
-        if(UserPreferences.xilmiRoleplayMode() && empire.leader().isXenophobic() && !empire.atWarWith(v.empId()))
-        {
-            if(!v.embassy().diplomatGone())
-                v.embassy().recallAmbassador();
-        } else if(v.embassy().diplomatGone()) {
+        if(v.embassy().diplomatGone()) {
             v.embassy().openEmbassy();
         }
             
@@ -1370,54 +1382,31 @@ public class AIDiplomat implements Base, Diplomat {
             System.out.println(empire.name()+" best ally for me would be "+best.name()+" with score: "+highestMatchScore);*/
         return best;
     }
+    public boolean readyForWar() {
+        boolean warAllowed = true;
+        if(empire.generalAI().additionalColonizersToBuild(false) > 0)
+            warAllowed = false;
+        if(!techIsAdequateForWar())
+            warAllowed = false;
+        //Ail: If there's only two empires left, there's no time for preparation. We cannot allow them the first-strike-advantage!
+        if(galaxy().numActiveEmpires() < 3)
+            warAllowed = true;
+        return warAllowed;
+    }
     public boolean wantToDeclareWar(EmpireView v) {
         //System.out.println(empire.name()+" atpeace: "+v.embassy().atPeace()+" no enemies:  "+empire.enemies().isEmpty());
         if (v.embassy().atPeace())
         {
             return false;
         }
-        if(UserPreferences.xilmiRoleplayMode() && empire.leader().isPacifist())
-            return false;
         if(!empire.inShipRange(v.empId()))
             return false;
         if(galaxy().options().baseAIRelationsAdj() <= -30)
             return true;
         if (!empire.enemies().isEmpty())
             return false;
-        boolean warAllowed = true;
-        if(empire.generalAI().additionalColonizersToBuild(false) > 0)
-            warAllowed = false;
-        int popCapRank = popCapRank(empire, false);
-        /*if(!everyoneMet() && popCapRank < 3)
-            warAllowed = false;*/
-        boolean reseachHasGoodROI = false;
-        for(int i = 0; i < NUM_CATEGORIES; ++i)
-        {
-            int levelToCheck = (int)Math.ceil(empire.tech().category(i).techLevel());
-            float techCost = empire.tech().category(i).baseResearchCost(levelToCheck) * levelToCheck * levelToCheck * empire.techMod(i);
-            if(techCost < empire.totalIncome())
-            {
-                //System.out.println(galaxy().currentTurn()+" "+empire.name()+" cat: "+empire.tech().category(i).id()+" techlevel: "+levelToCheck+" techcost: "+techCost+" income: "+empire.totalIncome());
-                reseachHasGoodROI = true;
-                break;
-            }
-        }
-        if(reseachHasGoodROI && techLevelRank() > 1)
-            warAllowed = false;
-        if(techLevelRank() > popCapRank)
-        {
-            warAllowed = false;
-        }
-        if(!empire.generalAI().isRusher() && facCapRank() > 1)
-            warAllowed = false;
-        
-        //Ail: If there's only two empires left, there's no time for preparation. We cannot allow them the first-strike-advantage!
-        if(galaxy().numActiveEmpires() < 3)
-            warAllowed = true;
-        if(UserPreferences.xilmiRoleplayMode() && empire.leader().isAggressive())
-            warAllowed = true;
         //System.out.println(galaxy().currentTurn()+" "+empire.name()+" popCap: "+empire.generalAI().totalEmpirePopulationCapacity(empire)+" popCapRank: "+popCapRank+" facCapRank: " +facCapRank()+" tech-rank: "+techLevelRank()+" has good RP-ROI: "+reseachHasGoodROI+" war Allowed: "+warAllowed);
-        if(warAllowed)
+        if(readyForWar())
             if(v.empire() == empire.generalAI().bestVictim())
             {
                 //System.out.println(galaxy().currentTurn()+" "+empire.name()+" war against " +empire.generalAI().bestVictim()+" should be allowed.");
@@ -1695,8 +1684,6 @@ public class AIDiplomat implements Base, Diplomat {
    private boolean warWeary(EmpireView v) {
         if (v.embassy().finalWar() || galaxy().activeEmpires().size() < 3)
             return false;
-        if(UserPreferences.xilmiRoleplayMode() && empire.leader().isPacifist())
-            return true;
         //ail: when we have incoming transports, we don't want them to perish
         for(Transport trans:empire.transports())
         {
@@ -1711,14 +1698,23 @@ public class AIDiplomat implements Base, Diplomat {
         //ail: no war-weariness in always-war-mode
         if(galaxy().options().baseAIRelationsAdj() <= -30)
             return false;
-        //ail: If we are not fighting our preferred target, we don't really want a war
-        if(v.empire() != empire.generalAI().bestVictim())
-            return true;
-        //ail: If I have more than one war, we try to go to peace with everyone of our multiple enemies to increase the likelyness of at least one saying yes
-        if(empire.warEnemies().size() > 1)
-            return true;
+        //new: If we are strong enough, we are okay with fighting the wrong target or several enemies at once
+        float enemyPower = 0;
+        for(Empire enemy : empire.enemies())
+        {
+            enemyPower+= enemy.powerLevel(enemy);
+        }
+        if(empire.powerLevel(empire) < enemyPower * 2)
+        {
+            //ail: If we are not fighting our preferred target, we don't really want a war
+            if(v.empire() != empire.generalAI().bestVictim())
+                return true;
+            //ail: If I have more than one war, we try to go to peace with everyone of our multiple enemies to increase the likelyness of at least one saying yes
+            if(empire.warEnemies().size() > 1)
+                return true;
+        }
         //ail: If I'm outteched by others I also don't really want to stick to a war anymore, except for aggressive leader as that would lead to contradictory behavior
-        if(techLevelRank() > popCapRank(empire, false) && !(UserPreferences.xilmiRoleplayMode() && empire.leader().isAggressive()))
+        if(techLevelRank() > popCapRank(empire, false))
             return true;
         boolean everythingUnderSiege = true;
         for(StarSystem sys : empire.allColonizedSystems())
@@ -1922,6 +1918,67 @@ public class AIDiplomat implements Base, Diplomat {
     public boolean masksDiplomacy()
     {
         return true;
+    }
+    public void updatePersonality()
+    {
+        empire.leader().personality = XENOPHOBIC;
+        if(empire.atWar() || !empire.enemies().isEmpty())
+            empire.leader().objective = MILITARIST;
+        else if(empire.generalAI().additionalColonizersToBuild(false) > 0)
+            empire.leader().objective = EXPANSIONIST;
+        else if(!empire.generalAI().isRusher() && facCapRank() > 1)
+            empire.leader().objective = INDUSTRIALIST;
+        else if(!techIsAdequateForWar())
+            empire.leader().objective = TECHNOLOGIST;
+        else if(empire.totalPlanetaryPopulation() < empire.generalAI().totalEmpirePopulationCapacity(empire))
+            empire.leader().objective = ECOLOGIST;
+        else
+            empire.leader().objective = DIPLOMAT;
+    }
+    @Override
+    public boolean techIsAdequateForWar()
+    {
+        boolean warAllowed = true;
+        int popCapRank = popCapRank(empire, false);
+        /*if(!everyoneMet() && popCapRank < 3)
+            warAllowed = false;*/
+        boolean reseachHasGoodROI = false;
+        for(int i = 0; i < NUM_CATEGORIES; ++i)
+        {
+            int levelToCheck = (int)Math.ceil(empire.tech().category(i).techLevel());
+            float techCost = empire.tech().category(i).baseResearchCost(levelToCheck) * levelToCheck * levelToCheck * empire.techMod(i);
+            if(techCost < empire.totalIncome())
+            {
+                //System.out.println(galaxy().currentTurn()+" "+empire.name()+" cat: "+empire.tech().category(i).id()+" techlevel: "+levelToCheck+" techcost: "+techCost+" income: "+empire.totalIncome());
+                reseachHasGoodROI = true;
+                break;
+            }
+        }
+        if(reseachHasGoodROI && techLevelRank() > 1)
+            warAllowed = false;
+        if(techLevelRank() > popCapRank)
+        {
+            warAllowed = false;
+        }
+        return warAllowed;
+    }
+    boolean willingToTradeTech(Tech tech)
+    {
+        //The player can decide for themselves what they want to give away!
+        if(!empire.isAIControlled())
+            return true;
+        for(Empire emp : empire.contactedEmpires())
+        {
+            EmpireView ev = empire.viewForEmpire(emp);
+            if(!ev.inEconomicRange())
+                continue;
+            if(ev.spies().tech().allKnownTechs().contains(tech.id()))
+                return true;
+            if(emp.viewForEmpire(empire).spies().possibleTechs().contains(tech.id()) && emp.viewForEmpire(empire).spies().isEspionage())
+                return true;
+        }
+        //System.out.println(empire.galaxy().currentTurn()+" "+empire.name()+" is not willing to trade "+tech.name());
+        return false;
     }
 }
 
