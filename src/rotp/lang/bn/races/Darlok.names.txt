@@ -1,0 +1,21 @@
+// all possible names
+name: Nazlok, Sarlok, Spylok, Shadelok, Dralok
+
+desc1: Aggressive Diplomats
+desc2: Supreme Spies
+desc3: The [race]s are unnatural and secretive wraiths, originating from another dimension  
+
+// possible home system names
+home: Nazin, Mordor, Hades, Abyssal, Hel
+title:     Emperor
+fulltitle: Emperor
+
+// possible leader names
+leader: Darquan, Morfane, Narzina, Nazgur, Shador, Ssithra
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Mist, Vapor, Spark, Veil, Omen, Ether, Glimmer
+ship2: Mirage, Shadow, Dream, Illusion, Reflection, Vision, Haunt
+ship3: Phantom, Spectre, Wraith, Shade, Ghost, Spirit, Poltergeist
+ship4: Nightmare, Phantasm, Terror, Horror, Revenant, Grim Reaper, Phobos
+

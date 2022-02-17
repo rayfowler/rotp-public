@@ -1,0 +1,21 @@
+// all possible names
+name: Meklonar, Mechanar, Cybernar, Digitar, Technar
+
+desc1: Erratic Industrialists
+desc2: Enhanced Factory Controls
+desc3: The citizens of the [race] Dominion seek perfection and immortality through technology.
+
+// possible home system names
+home: Meklon, Collosson, Calculon, Bender, Optimus
+
+title:     Emperor
+fulltitle: Supreme Arbiter
+
+// possible leader names
+leader: CB-715, INT-986, MS-35, QX-537, TVC-15, TX-1138
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Byte, Transistor, Switch, Component, Circuit, Digit, Logic  
+ship2: Processor, Calculator, Computer, Algorithm, Network, Calculus
+ship3: Dynamo, Battery, Ajax, Tornado, Nexus, Marauder, Drachma
+ship4: Nemesis, Devastator, Annihilator,  Intruder,  Hyperion, Penetrator, Tormentor

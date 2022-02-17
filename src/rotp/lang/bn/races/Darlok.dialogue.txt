@@ -1,0 +1,83 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Darlok specific dialogue
+
+CONTACT_AGGRESSIVE         | We greet you this day, wayward citizen of the cosmic void. We also offer a word of caution: do not to impede us in our search, or you may not live to regret this fateful encounter.
+CONTACT_RUTHLESS           | We greet you, denizens of foreign space. It would be best for you to do what you can to ensure our co-existence is... mutually beneficial.
+CONTACT_ERRATIC            | A happenstance meeting in a sea of stars. Be wary of the darkness in this celestial abyss, for you will find it to conceal many things unseen...
+//
+GREETING_01                | You have proven yourself valuable to our cause. We will do what we can to assist you in yours.
+GREETING_04                | Speak.
+GREETING_07                | You do not know the impudence you display when you request our aid. We find it almost amusing.
+//
+DECLAREWAR_HATE_01         | We have tolerated much in the pursuit of our goal, but we are thankful that we need not tolerate your presence much longer, [your_race].
+DECLAREWAR_HATE_02         | Interminable wretch! We will suffer your foolishness no more! Whether or not your armies are prepared, you will meet finality just the same!
+DECLAREWAR_HATE_03         | Villains! There is no point in our race prospering here only to share the galaxy with your kind. Prepare yourself! For we will cast you out from this space even if every last one of us falls in kind.
+DECLAREWAR_ERRATIC_01      | Our people often say that the knife on the battlefield kills just as easily as the knife in the dark. Your kind will soon find out why.
+DECLAREWAR_ERRATIC_02      | Have you ever gazed at the stars and wished to know what hides in the darkness between the lights? Do you not know the wisdom in being careful what you wish for?
+DECLAREWAR_ERRATIC_03      | In times of great uncertainty, you may find the most unassuming of creatures still capable of delivering a fatal blow.
+DECLAREWAR_MILITARY_01     | We have still not found the thing we desire most, and so we shall take from you the places which our eyes have not yet seen. Surrender your worlds or fall in their defense.
+DECLAREWAR_MILITARY_02     | The possibility exists that the answers we seek hide on a planet in your empire, and so we will  have them all. Know it not to be personal, [your_race], but desperate times demand desperate action.
+DECLAREWAR_MILITARY_03     | If we cannot attain the solution to our enigma, there is no point in us continuing on! If the answer lies upon one of your worlds, we will give anything we must to obtain it!
+DECLAREWAR_ALLIANCE_01     | Fool! You have made an enemy of our ally, and as such made an enemy of us! We will strike you down quickly: we have not time to waste on your blunders and folly!
+DECLAREWAR_ALLIANCE_02     | It is rare we meddle directly in the affairs of others. But, when an ally who has aided our quest begs for our assistance, we will do what we can to help them.
+DECLAREWAR_ALLIANCE_03     | We are pleased to watch your empires fight amongst themselves, but we know the threat you present to us. We will gladly aid the [defender_race] to remove the impediment your existence poses.
+DECLAREWAR_SPYING_01       | It is amusing that you would pursue such actions against those who have so mastered secrecy. The punishment for failure, however, will be significantly less so.
+DECLAREWAR_SPYING_02       | Admirable, to try and outmaneuver us in matters of secrecy. I wonder, will your military power prove to be as commendable as your daring?
+DECLAREWAR_SPYING_03       | Did you believe this cloddish bumbling would escape our vigilant gaze? If you are so arrogant that you believe your spying could go unnoticed, you are arrogant enough for us to crush in battle.
+DECLAREWAR_ATTACK_01       | Impudence! To attack us so openly can only mean that you wish for total annihilation!
+DECLAREWAR_ATTACK_02       | Insufferable louts! We will soon find out if the confidence that comes from striking against us is accompanied by strength to match!
+DECLAREWAR_ATTACK_03       | Scourge! Villains! We will not yield to you or anyone else until our great work is finished! Prepare for our retribution!
+DECLAREWAR_OPPORTUNITY_01  | Politics are mere games of opportunity. We find that the one who most capitalizes on their opportunities is the one who emerges victorious. So it has always been, and so shall it always be.
+DECLAREWAR_ASSASSIN_01     | Outrageous, to knowingly lay low an ambassador who comes to you unarmed! We shall take your secrets for ourselves, and scatter the bodies of your people like ash upon solar winds!
+
+OFFER_PEACE_01             | That is enough killing for one war ambassador. Surely neither of our peoples can afford to waste life so wantonly. We propose an immediate end to this conflict, for the sake of both our futures.
+OFFER_TRADE_01             | While direct approaches can sometimes be best, they are not the only way an empire can advance its goals. There is a time for trade in good faith, and we believe that time is now. Shall we begin with... [amt] BC every year? 
+OFFER_PACT_01              | This infinite expanse holds unknown dangers for those who choose to explore it. Let us not add to them unless necessary. A non-aggression pact between our peoples will reduce by one the risks in expanding throughout the galaxy. 
+OFFER_ALLIANCE_01          | There are those who look upon us and allow their fear to cloud their judgment. We do not believe your kind are among them. Let us formalize an alliance between [my_race] and [your_race], and use the fear others have as an advantage to both our empires. 
+
+WARN_TRESPASSING_01        | We do not wish a war against you at this time, but your presence at [system] is hard to interpret as anything but trespassing. Leave at once, and prove our fears unfounded. 
+WARN_EXPANSION_01          | We are not blind to the needs that expanding your territory fulfills. Neither must we sit by and let you steal every world for yourself. You have been so warned, ambassador of the [your_empire]. 
+WARN_BUILDUP_01            | Do you intend to use such a powerful fleet to make those around you submit in fear? Know this: if you continue to boast such military power, you may find the reactions of other empires to be less... accommodating than you had hoped for. 
+WARN_SKIRMISH_01           | What have you to say about the skirmish in the [system] system? We hope for your sake that you mistook us for another empire. Otherwise the consequences may be dire. Very dire indeed.
+WARN_ATTACKED_01           | You dare launch an attack against our people, ambassador?! Count yourself fortunate our attention lies elsewhere: next time your boldness will not go unanswered! 
+WARN_INVADED_01            | You move into our space as if it is yours. A bold ploy, but know that we foresaw your coming and allow you to maneuver this way... for now. 
+WARN_ESPIONAGE_01          | Your plodding attempt at espionage has proven most humorous to us. We allow your spy to return to you this time, but know that we will find additional attempts to be far less entertaining. [framed]
+WARN_SABOTAGE_01           | So the [spy_empire] means to sabotage? Your endeavor was too insignificant to force our retaliation, but should you try this again we may opt to treat you like the pest you insist on being! [forced]
+WARN_BIOWEAPON_01          | An ugly thing, that weapon. Even uglier is the one who chooses to use it on helpless civilians. Their screams of agony will echo through space for centuries, and we will join that lilting refrain as it curses your despicable name.
+WARN_GENOCIDE_01           | The threat of genocide is not unknown to my people, but to see it so casually realized... you disgust us in ways I doubt we will ever forgive, ambassador. 
+WARN_FINAL_WAR_01          | As peace dawns on the galaxy, all who partake shall find what they seek. If you [rebel_race_plural] threaten that peace, you threaten our ultimate goal, and we will do everything we can to banish you to the annals of the galaxy. 
+WARN_COUNCIL_VOTE_01       | It is not that we lack appreciation for subtle political maneuverings, only that we become most displeased when those maneuverings work against us. Tread lightly, ambassador: we may not give you the opportunity to maneuver this way again.
+WARN_OATHBREAKER_01        | Feckless cowards! Alas that our people must endure the distrust of the entire galaxy when you so brazenly prove that you are the ones who deserve such enmity! [spiesCaught]
+WARN_ATTACKED_ALLY_01      | We warn you only once, ambassador. Halt your aggression towards the [defender_race_plural]: they stand with us, and we stand with them.
+WARN_REBELLING_AGAINST_01  | You dare usurp the highest seat on the council from us, its rightful masters? Your people will live to regret this day, ambassador.
+//
+PRAISE_COUNCIL_VOTE_01     | Our cause demands much, ambassador, and we are eternally grateful to be able to rely on the [voter_empire] in council. Rest assured that we will not forget this the next time you come to call on my people.
+PRAISE_COUNCIL_VOTE_02     | It was good of you to place confidence in us today, ambassador. Know that we remember those who aid us in achieving our final goal. 
+PRAISE_COUNCIL_VOTE_03     | Of course your people have an ulterior motive in voicing support for us. We are still most wary of you and your kind, but we are also appreciative nonetheless.  
+
+PRAISE_ATTACKED_ENEMY_01   | We knew that you would aid us in this war, ambassador! With our combined determination, not even the [defender_race] can stand against us for long! 
+PRAISE_ATTACKED_ENEMY_02   | It is good to see others join the fight against the contemptable [defender_race]. Let us work together to end this quickly so that we may resume pursuing much more important goals.
+PRAISE_ATTACKED_ENEMY_03   | If you mean to earn the admiration of my people, know that you will find the task nigh impossible. But attacking the [defender_race] is an admirable first step all the same.
+
+PRAISE_TRADE_01            | Is it not amazing how such a simple thing as trade can open so many doors for both parties involved? Our people are most pleased indeed, and we hope yours are pleased as well. 
+PRAISE_TRADE_02            | Our ongoing honest trading proves to be a continuous boon to both our peoples. We hope, ambassador, to continue relying on each other in this way. 
+
+PRAISE_REBELLING_WITH_01   | The fools in the council have chosen incorrectly as we knew they would. You are right to fight against them, and we are right in joining your rebellion.
+
+ACCEPT_TRADE_01            | You greatly aid our quest with this trade agreement, [your_race]. [amt] BC each year will help us more than you know.
+RESPOND_IGNORE_THREAT_01   | Be careful who you threaten. You might find a response hidden in the shadows to be most displeasing.
+RESPOND_STOP_SPYING_01     | How is it that YOU came to catch one of our spies? No matter, return it to us at once and we will cease our activities from here on.
+RESPOND_STOP_ATTACKING_01  | We will recall our fleets now for your sake, but remember the most dangerous power is the one that goes unseen.

@@ -1,0 +1,227 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Klackon specific dialogue
+
+CONTACT_AGGRESSIVE         | I am the [my_name], and you are the... [your_name]? An odd name for another like me, but you say you are nothing like me? This is becoming a most... irritating encounter.
+CONTACT_RUTHLESS           | I am known as [my_name]. You are the [your_name]? What is a [your_name]? I have little need for a kind who thrives on such convolution!
+CONTACT_XENOPHOBIC         | I knew when I began my journey that there must be another like me, but you are not like me at all... You are different... alien... and dangerous.
+//
+GREETING_01                | My friend! I am happy that you've come! I hope I can provide whatever it is you're seeking.
+GREETING_04                | The strange [your_name] calls on me. What do you require, strange [your_name]?
+GREETING_07                | You behave oddly and I do not like it. Just say what it is you've come to say and leave.
+//
+
+DECLAREWAR_HATE_01         | I've waited too long, I must find another who is like me! You continue to be in my way, and I'll not wait a second longer to be rid of you.
+DECLAREWAR_HATE_02         | When I think of you it gives me a feeling of disgust I never even knew I could feel. I will give everything I must to see you destroyed once and for all!
+DECLAREWAR_HATE_03         | No! It can't be that I set out on my journey only to find something like you in this galaxy! I won't continue living with you as a neighbor! Either you perish or I will!
+DECLAREWAR_ERRATIC_01      | You cannot fool me with your trickery! I know you will strike me at the time that suits you best! But I will kill you before that can happen!
+DECLAREWAR_ERRATIC_02      | Your behavior is strange and unpredictable. The uncertainty you make me feel vexes me so, and I do not see why I should have to suffer it any longer. Prepare for oblivion!
+DECLAREWAR_ERRATIC_03      | Why do you do what you do? What drives you? And will it drive you to bring war to me one day? I cannot just wait to see what you'll do next: for my future I must make war on you immediately!
+DECLAREWAR_MILITARY_01     | I still have not found the one who is like me. I know they must exist, and I will search for them on each and every one of your worlds once I take them from you!
+DECLAREWAR_MILITARY_02     | What do you hide from me [your_name]? I will not know for certain until I examine each of your worlds, and I'll take them from you now so that I may do so!
+DECLAREWAR_MILITARY_03     | I won't let you conceal the object of my search any longer! I know that the one I seek is on one of your worlds. I will not rest until you have given them to me!
+DECLAREWAR_ALLIANCE_01     | My friend called [other_name] has aided me in my quest more than you could know. I'm happy to repay them by getting rid of you!
+DECLAREWAR_ALLIANCE_02     | Those who help me in my search have my undying appreciation, and I will happily give what I can to honor my friend [other_name]. Prepare to die, [your_name]!
+DECLAREWAR_ALLIANCE_03     | You push everyone in the galaxy because you think no one would dare oppose your will. If the [other_name] will bring the fight to you, then so will I!
+DECLAREWAR_SPYING_01       | Not a thing happens on one of my worlds that escapes my gaze. Since you insist on behaving in such a nefarious way, you leave me no choice but to destroy you.
+DECLAREWAR_SPYING_02       | Silly [your_name], I have had enough of your games! You won't have time for such devious scheming if you have to fend off my armies! Prepare for war!
+DECLAREWAR_SPYING_03       | What did you hope to gain by moving against me so? Now I have no choice but to fight you, no matter what the difference in our armies may be!
+DECLAREWAR_ATTACK_01       | What is this, [your_name]? Do you mean to impede me in my search by attacking one of my worlds? I suppose that destroying you will provide an amusing, if short, distraction.
+DECLAREWAR_ATTACK_02       | Is this what's known as an act of war? You wish your armies and fleet to do battle against mine? Let us go to war then: I'm eager to learn more!
+DECLAREWAR_ATTACK_03       | How dare you launch such a strike against me?! You mean to prevent me from completing my search, but instead you will now know my full fury!
+DECLAREWAR_OPPORTUNITY_01  | When something proves to be an obstacle, the best way to be rid of it is to eliminate it entirely. I don't know all the ways of diplomacy, but I do know that eliminating you from my path will be a laughably simple thing.
+DECLAREWAR_ASSASSIN_01     | To attack one of my bodies is to attack all of my bodies. Since you have chosen to kill one of me, I'll kill all of you in return!
+
+OFFER_PEACE_01             | I do not like this thing you call war. It is merciless and cruel, and we both have more important things to do than continuing this ceaseless killing. Let us end this in peace, [your_name].
+OFFER_TRADE_01             | We both set into the galaxy with our own goals, [your_name]. Why not help each other to accomplish our ambitions? A trade agreement of [amt] BC every year would do just that, yes?
+OFFER_PACT_01              | I have met many strange creatures on my journey through space, and many of them are quarrelsome and violent by nature. You seem to be neither of these things, so let us prevent any misunderstandings with a pact of non-aggression. 
+OFFER_ALLIANCE_01          | Our relationship has been exceedingly beneficial to both of us, [your_name]. Let us become allies in word and in bond, so that all in the galaxy will know that we stand as one! 
+ 
+WARN_TRESPASSING_01        | You being at [system] makes me very uneasy. Remove the [your_name] fleet from the area, or I may be forced to retaliate.  
+WARN_EXPANSION_01          | I won't let you prevent me from completing my search by claiming every world you lay your eyes upon. Stop at once, or prepare yourself for war!
+WARN_BUILDUP_01            | You have grown your fleet to an impressive size, [your_name]. Be careful how you use it while my fleets are present. 
+WARN_SKIRMISH_01           | The incident at [system] unsettles me. Was it merely a misunderstanding on your part? Ensure that it does not happen again: I don't want to fight the [your_name] if I don't have to. 
+WARN_ATTACKED_01           | What is there to gain by attacking me so? Cease your aggression at once, or you'll force me to repay it back onto you one-hundred fold! 
+WARN_INVADED_01            | Why have you invaded my space at the [system] system?! Do you intend to start a conflict or have you merely lost control of your bodies? 
+WARN_ESPIONAGE_01          | I don't understand you, [spy_name]. You act as though you don't want conflict but then try to steal my secrets? If you insist on continuing this way, I promise to make you sorry! [framed]
+WARN_SABOTAGE_01           | You make a mockery of me with this act of sabotage! My quest takes precedence over all else, but if this happens again I will pause my search to deal with you personally! [forced]
+WARN_BIOWEAPON_01          | This weapon of yours is absolutely horrifying. To use it at all speaks of what you really are, but to use it on the bodies of another living thing makes me completely mortified! 
+WARN_GENOCIDE_01           | How callous! I never expected that you would go so far as to completely destroy the one known as [victim_name]. I will never forget the barbarity you've shown this day. 
+WARN_FINAL_WAR_01          | I now see that for me to realize my dream, the galaxy must be at peace. But as long as you exist that peace can never be made real. The answer is obvious: the [rebel_name] must be destroyed! 
+WARN_COUNCIL_VOTE_01       | I admit that I'm unfamiliar with the nuances of what you call "political maneuvering." But I do know that by voting for [other_name] you have made a move against me, and I don't forget those impede me so. 
+WARN_OATHBREAKER_01        | Is this how you operate, [your_name]? To make an agreement only to break it when you see fit? I knew that you were nothing like me, and your actions prove this beyond a shadow of a doubt! [spiesCaught] 
+WARN_ATTACKED_ALLY_01      | Why do you attack my friend [defender_name], [your name]? Find another way to resolve your differences: I will not like being forced to intervene! 
+WARN_REBELLING_AGAINST_01  | I do not like the [your_name], and I like even less that you were chosen as leader of the council! I must reflect on what has happened today, and you should reflect on how I may soon be forced to respond! 
+
+PRAISE_COUNCIL_VOTE_01     | [voter_name]! Don't think I take your vote in the Council for granted! Though you and I are very different, I'm truly happy that I was able to meet such a wonderful friend as you on my journey. 
+PRAISE_COUNCIL_VOTE_02     | I have never had a need for "politics" in my long existence, but what you've done is a thing that benefits me, yes? Let us talk again soon, so that we may better learn how to benefit each other. 
+PRAISE_COUNCIL_VOTE_03     | Your vote for me in the council is just an attempt to have me rethink my opinion of you. However, I believe I may be forced to do so if your actions continue to benefit me.  
+PRAISE_ATTACKED_ENEMY_01   | Yes! I am attacked and my friend comes to my aid! Let us show the despicable [defender_name] that we fight together with an unbreakable bond! 
+PRAISE_ATTACKED_ENEMY_02   | Thank you [attacker_name]! It is good to see there's another who recognizes what a menace the one known as "[defender_name]" poses. Come! We will attack it together until nothing remains! 
+PRAISE_ATTACKED_ENEMY_03   |I don't know what you hope to gain in attacking [defender_name], [attacker_name]. You are erratic and not one to be trusted, but still I will remember this all the same.
+PRAISE_TRADE_01            | We have only managed to come so far by working together for mutual benefit. May the prosperity gained from our trades last until we both find what we are seeking!   
+PRAISE_TRADE_02            | It pleases me how much our trade agreement aids us both. You're pleased by this as well, aren't you, [your_name]?  
+PRAISE_REBELLING_WITH_01   | The [your_name] calls for aid! I will join you in taking up arms against this ridiculous council! You are my friend, and that means you will never fight alone!
+
+DIPLO_TECH_REQUEST_MENU_01   | What type of technology interests you?
+DIPLO_TECH_COUNTER_MENU_01   | What will you trade for it?
+DIPLO_TRADE_MENU_01          | You propose a trade agreement for:
+DIPLO_TREATY_MENU_01         | You propose a treaty
+DIPLO_DECLARE_WAR_MENU_01    | Are you sure you want to start a war?
+DIPLO_SUGGEST_WAR_MENU_01    | Who should I declare war on?
+DIPLO_BREAK_ALLIANCE_MENU_01 | Which alliance should I break?
+DIPLO_THREATEN_MENU_01       | Your actions:
+
+DECLINE_OFFER_01           | I decline.
+DECLINE_OFFER_02           | I have considered your offer, and rejected it.
+DECLINE_OFFER_03           | I respectfully decline your offer.
+DECLINE_OFFER_04           | I am not interested at this time.
+DECLINE_OFFER_05           | I do not consider your offer a fair one.
+DECLINE_OFFER_06           | It would not be in my best interest to accept your offer at this time.
+DECLINE_OFFER_07           | Perhaps you mistook me for a gullible fool. I reject your offer.
+DECLINE_OFFER_08           | Your offer does not seem fair to me.
+DECLINE_OFFER_09           | I am afraid I must decline.
+
+DECLINE_ENEMY_ALLY_01      | I would never deal with allies of the hated [other_name]
+
+DECLINE_ANNOYED_01         | [your_name] is a creature of much wind and little action. I tire of your prattle.
+DECLINE_ANNOYED_01         | [your_name], you try my patience. Perhaps you should speak again later.
+DECLINE_ANNOYED_01         | I have heard enough. We will talk again later.
+DECLINE_ANNOYED_02         | I tire of diplomatic negotiations. We can continue discussions at a later time.
+DECLINE_ANNOYED_02         | These talks get us nowhere. I must take my leave.
+DECLINE_ANNOYED_02         | I go now.
+DECLINE_ANNOYED_03         | A thousand apologies, [your_name], but other duties call.
+DECLINE_ANNOYED_03         | Pardon me, but our time is at an end.
+DECLINE_ANNOYED_03         | I have little time and much to do. Perhaps we can talk again later.
+
+
+DECLINE_OATHBREAKER_01     | I am unwilling to enter into a treaty at this time because you have broken treaties in the past.
+DECLINE_OATHBREAKER_01     | You have not honored your past agreements. I see little reason to trust you now.
+DECLINE_OATHBREAKER_01     | Why should I trust you now, when you have broken so many past treaties?
+DECLINE_OATHBREAKER_01     | I see no reason to agree with someone who has not lived up to past promises.
+DECLINE_OATHBREAKER_01     | I will not deal with [your_name] who has no honor.
+
+DECLINE_ESPIONAGE_01       | You thieving dogs, you steal the fruits of my research. I deny your request.
+DECLINE_ESPIONAGE_01       | My technology is for the me alone. You have no right to steal it. I will talk when you stop stealing.
+DECLINE_ESPIONAGE_01       | Why should I give you anything? Your spies already steal everything you need!
+DECLINE_ESPIONAGE_01       | How can you expect me to accept when your spies are stealing my technology?
+DECLINE_ESPIONAGE_01       | Remove your spies, then we will talk.
+
+DECLINE_SABOTAGE_01        | I have not forgotten your last sabotage incident. Until you have proven to be more trustworthy, I will not deal with you.
+DECLINE_SABOTAGE_01        | I have suffered from your sabotage. I will not deal with you until it ceases.
+DECLINE_SABOTAGE_01        | What! You expect me to agree when you are sabotaging my [target]?
+DECLINE_SABOTAGE_01        | You destroy my [target]. Why should I deal with you?
+DECLINE_SABOTAGE_01        | When you stop sabotaging my [target], I can consider the matter further.
+
+DECLINE_BUILDUP_01         | I will not talk of it while you are amassing ships near my borders.
+DECLINE_BUILDUP_01         | Remove your ships along my borders and I will consider accepting. Until then I am not interested.
+DECLINE_BUILDUP_01         | Your ships on my borders are no threat to me. But I refuse to deal while they remain.
+DECLINE_BUILDUP_01         | If you wish to deal with me, then send your ships to threaten others, not I.
+
+DECLINE_ENCROACH_01        | Your fleets intrude on my space. Move them away, then we shall talk.
+
+DECLINE_SKIRMISH_01        | You attack my ships without provocation and expect me to accept? I refuse to deal.
+DECLINE_SKIRMISH_01        | I cannot accept an offer from one who attacks my fleets.
+DECLINE_SKIRMISH_01        | Once your fleets have stopped attacking mine, we can talk.
+DECLINE_SKIRMISH_01        | If you wish to deal with the me, then leave my fleets alone.
+DECLINE_SKIRMISH_01        | I do not appreciate your destruction of my fleets. I do not accept.
+
+DECLINE_ATTACK_01          | Your unjustified assault of [system] gives you little room to bargain.
+DECLINE_ATTACK_01          | I have not forgotten the attack on the [system] colony. There is no way that I will accept.
+
+DECLINE_INVASION_01        | I do not wish to deal with the butchers of [system]. Make your amends first.
+DECLINE_INVASION_01        | My blood at [system] smears your words. I cannot accept your offer.
+DECLINE_INVASION_01        | My loss at [system] cries out for retribution. The pain I feel is louder than your offer.
+
+DECLINE_BIOWEAPONS_01      | I will not make any deals with one who would use biological weapons.
+DECLINE_BIOWEAPONS_01      | I cannot deal with anybody desperate enough to use biological weaponry.
+DECLINE_BIOWEAPONS_01      | You use weapons that cause untold horrors on me. I refuse to deal with such madness.
+DECLINE_BIOWEAPONS_01      | The gods abhor those who would destroy planets with biological weaponry. I cannot allow it.
+DECLINE_BIOWEAPONS_01      | The pain inflicted on me by your biological weapons fills my ears. I cannot hear your offer.
+
+DECLINE_TECH_TRADE_01      | You have no technology which interests me.
+DECLINE_TECH_TRADE_01      | I have no need of your toys.
+DECLINE_TECH_TRADE_01      | Your primitive inventions do not interest me.
+DECLINE_TECH_TRADE_01      | I am far beyond your technology.
+DECLINE_TECH_TRADE_01      | [your_name], I have little need for what you offer me.
+DECLINE_TECH_TRADE_01      | I see little of interest in your technology.
+
+DECLINE_NO_WAR_ON_ALLY_01  | I will not declare war on an ally.
+DECLINE_PEACE_TREATY_01    | I will not break my peace treaty with [other_name].
+
+OFFER_TECH_EXCHANGE_01     | I am in great need of your [tech] technology. Perhaps you are willing to exchange it for some of my technology.
+OFFER_TECH_EXCHANGE_01     | I know you have learned the secrets of [tech]. Can I offer you some of my technology in exchange?
+OFFER_TECH_EXCHANGE_01     | I wish for the secret of the [tech] technology. Will you exchange it for one of my advances?
+OFFER_TECH_EXCHANGE_01     | I am awed by the scientific wonders of [tech]. What can I offer you for its secret?
+
+ACCEPT_TECH_EXCHANGE_01    | Very well. I agree to exchange my wondrous secrets of [techGiven] for the technology [techReceived].
+ACCEPT_FINANCIAL_AID_01    | I accept your gift of [amt] BC.
+ACCEPT_TECHNOLOGY_AID_01   | I accept your gift of [tech].
+
+BREAK_TRADE_01             | I have no further desire for the trade goods from [your_name].
+ANNOUNCE_TRADE_01          | Effective [year], I and [your_name] agree to trade [amt] BC per year.
+ACCEPT_TRADE_01            | A trade pact of [amt] BC is acceptable.
+ACCEPT_TRADE_01            | I eagerly await the fine goods that [your_name] offers. I accept an agreement for [amt] BC per year.
+ACCEPT_TRADE_01            | I agree to trade [amt] BC per year.
+ACCEPT_TRADE_01            | Well, [your_name], I find your offer of [amt] BC per year to be fair and equitable.
+
+ANNOUNCE_PEACE_01          | In the year [year], I and [your_name] agree to terminate all hostilities.
+ANNOUNCE_PEACE_01          | I hereby order all hostilities to end between your and I.
+ACCEPT_PEACE_01            | I agree that the time has come to end our petty bickering.
+ACCEPT_PEACE_01            | I accept your offer of peace. Cease fire on me, and I will stop attacking your forces.
+ACCEPT_PEACE_01            | I grow weary of this senseless destruction. I accept your offer of peace.
+
+BREAK_PACT_01              | A warning to the [your_name] from me: our Non-Aggression Pact is broken!
+ANNOUNCE_PACT_01           | In the year [year], I pledge to adhere to a Non-Aggression Pact and not to attack your fleets unless they are orbiting one of my colonies.
+ACCEPT_PACT_01             | I agree to a Non-Aggression Pact. Neither will attack the other's fleets, unless the orbit of an opposing colony is entered.
+ACCEPT_PACT_01             | If you agree not to send ships to any of my colonies, I vow to not attack any of your ships.
+ACCEPT_PACT_01             | I agree to your proposed Non-Aggression Pact. So it is written, so shall it be done!
+ACCEPT_PACT_01             | Agreed, then. As long as you do not attack my colonies, I will abide by the Non-Aggression Pact.
+
+BREAK_ALLIANCE_01          | I can no longer maintain an Alliance with [your_name].
+ANNOUNCE_ALLIANCE_01       | In the year [year] I and [your_name] agree to form an alliance in which neither will attack the other's fleets or colonies.
+ANNOUNCE_ALLIANCE_01       | So our Alliance is forged. Your ships may visit my colonies as you wish, and get fuel from my bases.
+ACCEPT_ALLIANCE_01         | I welcome an Alliance with my good friend, [your_name].
+ACCEPT_ALLIANCE_01         | I and [your_name] today forge an Alliance. Death to our enemies!
+ACCEPT_ALLIANCE_01         | I see the wisdom in an Alliance with [your_name]. So be it!
+
+ACCEPT_BREAK_ALLIANCE_01   | I agree, [other_name] is no longer trustworthy and I have broken my alliance with them.
+ACCEPT_BREAK_ALLIANCE_01   | Though it pains me to turn our backs on [other_name], I have done so.
+ACCEPT_BREAK_ALLIANCE_01   | [other_name] is no longer my ally
+ACCEPT_BREAK_ALLIANCE_01   | The Alliance of I and [other_name] now lies in shreds under our feet.
+ACCEPT_BREAK_ALLIANCE_01   | As you wish, I no longer shall call [other_name] my ally.
+
+ACCEPT_JOINT_WAR_01        | [other_name] must fall before the combined might of [your_name] and I.
+ACCEPT_JOINT_WAR_01        | With [your_name] and I allied, [other_name] will not last long.
+ACCEPT_JOINT_WAR_01        | In the year [year], I and [your_name] join forces to rid the galaxy of the [other_name] menace.
+
+RESPOND_CLOSE_EMBASSY_01   | So be it. There will be no further discussions between myself and [your_name].
+
+RESPOND_BREAK_TRADE_01     | I will remember this.
+RESPOND_BREAK_TRADE_01     | So, [your_name], you cannot keep your word. I will not forget this.
+
+RESPOND_BREAK_PACT_01      | I will inscribe the words of your broken treaties upon your tombstone, [your_name].
+RESPOND_BREAK_PACT_01      | [your_name] will crumble under the weight of its own broken promises.
+
+RESPOND_BREAK_ALLIANCE_01  | You have dishonored the agreement. The alliance is broken.
+RESPOND_BREAK_ALLIANCE_01  | Very well. Your untrustworthy intentions have shown. The alliance is broken.
+RESPOND_BREAK_ALLIANCE_01  | I have little need of treaties that are not honored. The alliance is broken.
+RESPOND_BREAK_ALLIANCE_01  | So be it. The alliance is broken.`
+
+ACCEPT_TRADE_01            | You want to trade with me? How much was it? [amt] BC every year? Yes... yes I think I can accept such an arrangement from [your_name].
+RESPOND_IGNORE_THREAT_01   | Don't threaten me, stupid [your_name]. There are so many of me you could never hope to win if we were to wage war. Go away!
+RESPOND_STOP_SPYING_01     | I was just trying to see how [your_name] was when you are alone among yourself. I will not do this again. Please return my spy to me now?
+RESPOND_STOP_ATTACKING_01  | Haha! See how strong I am! [your_name] cannot compare to me! Don't forget that after I return my fleets home!
+

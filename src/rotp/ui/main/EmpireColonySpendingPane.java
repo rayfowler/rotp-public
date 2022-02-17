@@ -251,7 +251,7 @@ public class EmpireColonySpendingPane extends BasePanel {
             if (category == Colony.ECOLOGY)  {
                 int popGrowth = colony.ecology().upcomingPopGrowth();
                 g.setFont(narrowFont(14));
-                String popStr = text("MAIN_COLONY_SPENDING_ECO_GROWTH",String.format("%+3d", popGrowth));
+                String popStr = text("MAIN_COLONY_SPENDING_ECO_GROWTH",strFormat("%+3d", popGrowth));
                 int sw1 = g.getFontMetrics().stringWidth(popStr);
                 int x1 = (boxW-sw1)/2;
                 

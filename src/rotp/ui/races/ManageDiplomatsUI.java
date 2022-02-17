@@ -315,7 +315,7 @@ public class ManageDiplomatsUI  extends BasePanel implements MouseListener, Mous
                 int x0 = x3+((w3-sw2)/2);
                 int y0 = y+h-s10;
                 g.setColor(SystemPanel.whiteText);
-                g.drawString(label2, x0, y0);
+                drawString(g, label2, x0, y0);
             }
             else {
                 String label2 = ourRecalled ? text("RACES_MANAGE_REINSTATE_DIPLOMAT") : text("RACES_MANAGE_RECALL_DIPLOMAT");

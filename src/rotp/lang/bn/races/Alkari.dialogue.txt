@@ -1,0 +1,94 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Alkari specific dialogue
+
+CONTACT_HONORABLE          | Hail to you, oh [your_nameTitle] [your_name] of the [your_empire]! We of the [my_empire] extend cordial greetings, and look forward to honorable dealings with your kind. 
+CONTACT_PACIFIST           | Sincerest greetings to you, [your_title] of the [your_empire]. Bring not war to the doorstep of our Sovereignty, and we shall both prosper in each other's amity. 
+CONTACT_ERRATIC            | I am an ambassador for the long-lived [my_empire]. My people extend greetings as is our custom. Your kind are known as [your_race_plural]? How very... intriguing.
+
+//
+GREETING_01                | Hail to you, ambassador! What service might the Sovereignty provide for such a venerated ally on this day?
+GREETING_04                | I greet you, ambassador. The Sovereignty is prepared to hear your request, but how far we will go to accommodate it remains to be seen...
+GREETING_07                | Speak quickly, ambassador! We are required by our laws to observe all proper decorum, but that does not mean we will waste our time fulfilling your trivial demands!
+
+//
+DECLAREWAR_HATE_01         | A race such as yours, which has no concern for propriety and politesse, does not belong in a galaxy ruled by the Sovereignty, ambassador! Prepare for battle!
+DECLAREWAR_HATE_02         | Your crassness and arrogance have brought this about! Deliver this message to your [your_title]: War is now upon you!
+DECLAREWAR_HATE_03         | Such vulgarity! The [my_empire] would rather cease to exist than continue to share the cosmos with such a boorish people, ambassador!
+//
+DECLAREWAR_ERRATIC_01      | Ambassador, we cannot deny that it has been pleasant to deal with as intriguing a race as yours. We regret that now those dealings must now come to an end.
+DECLAREWAR_ERRATIC_02      | You have continued to amuse us since our people first met. The Sovereignty is eager to see if you will prove just as amusing during a time of war, ambassador!
+DECLAREWAR_ERRATIC_03      | Hail, ambassador of the [your_empire]! The [my_empire] wishes to test itself in honorable combat against your considerable strength. Prepare your fleets and your people for war!
+//
+DECLAREWAR_MILITARY_01     | The Sovereignty must continue to grow its territory to provide for our flocks. When we cannot find uninhabited worlds, we take the worlds of lesser empires. Your empire is lesser than ours, and so your worlds will now become ours.
+DECLAREWAR_MILITARY_02     | The time has come at last, ambassador! With one wing, the Sovereignty will spread the shadow of war above you, and with the other it shall sweep your worlds into its fold.
+DECLAREWAR_MILITARY_03     | It is... regrettable for things to have come to this, ambassador. We must attain your planets for our own use or perish in the attempt. We have no choice, prepare for war!
+//
+DECLAREWAR_ALLIANCE_01     | Diplomats of the [other_empire] have informed us that they are at war with your people. The [my_empire] is honor-bound to assist our allies in times of war: a fact that you will soon regret, ambassador. 
+DECLAREWAR_ALLIANCE_02     | Our ally calls for aid, and the Sovereignty answers! Your end is upon you, ambassador: you cannot stand against our combined fleets for long!
+DECLAREWAR_ALLIANCE_03     | It vexes us that you have chosen to wage war against one of our allies this way. By our most sacred laws, we must now assist them in the fight against you! Please, turn back from this path before it is too late for us all!
+//
+DECLAREWAR_SPYING_01       | We were content to maintain amiable relations with your people, ambassador. That you would engage in such dishonorable acts against the crown has forced us to reconsider.
+DECLAREWAR_SPYING_02       | Such an outrage will not go unpunished, ambassador! Those who would act in secrecy against us will be brought to heel under our wrath!
+DECLAREWAR_SPYING_03       | Ambassador! How dare your people commit such heinous acts against the Sovereignty?! We will have justice for this at any cost! Prepare for war!
+//
+DECLAREWAR_ATTACK_01       | Hmph! Such a foolhardy decision, ambassador! But if war is what you desire, then war is what the Sovereignty will bring to you!
+DECLAREWAR_ATTACK_02       | So it begins, ambassador! If the [my_race] people could survive the endless wars of the Crimson Millennium, we shall easily survive a war against your kind!
+DECLAREWAR_ATTACK_03       | We should have expected this kind of vulgarity from an uncouth race such as yours, ambassador! Do not think that the Sovereignty will yield itself to you uncontested!
+//
+DECLAREWAR_OPPORTUNITY_01  | As you can see, we of the [my_empire] have managed a great deal of success in our space-faring ventures. Unfortunately, ambassador, our needs dictate that our next success must come at the expense of your empire. 
+DECLAREWAR_ASSASSIN_01     | What crassness is this? You would commit so monstrous an act as slaying an ambassador in cold blood? The Sovereignty will not suffer so loathsome a race as yours to exist any longer!
+
+
+OFFER_PEACE_01             | The story of the Crimson Millennium cannot be allowed to repeat, ambassador! We request that you bring honor to [your_race] and [my_race] alike by signing this peace treaty to prevent any further bloodshed!
+OFFER_TRADE_01             | Surely civilized races such as ours are capable of aiding one another in honorable cooperation. The [my_empire] wishes a trade agreement with the [your_empire] set at [amt] BC, each year. What is your response, ambassador?
+OFFER_PACT_01              | The Sovereignty is pleased with how your people present themselves in diplomatic affairs. To show how much we value our relationship, we wish to sign a non-aggression pact, ensuring that neither of us falls prey to... misinterpreting each other's intentions.
+OFFER_ALLIANCE_01          | Your actions have earned you much esteem with the Sovereignty, ambassador! The Spire King has decreed an alliance between [your_race] and [my_race] must be made at once! We await only your signature!
+
+WARN_TRESPASSING_01        | It is highly improper for [your_race] fleets to trounce around in the [system] system as if it was their own domain. It is in the best interests of everyone, ambassador, that you rectify this immediately. 
+WARN_EXPANSION_01          | To expand unchecked wherever you wish shows a great deal of disrespect to your neighbors, ambassador! I strongly advise you not to continue that disrespect towards the Sovereignty any longer. 
+WARN_BUILDUP_01            | Do you think us blind, ambassador?! We see your fleets continuing to increase in size and strength. Show us you mean no harm by quashing this buildup, or you may indeed earn a preemptive response!
+WARN_SKIRMISH_01           | We know full well about the skirmish at [system], ambassador! The Sovereignty will overlook your actions this once. Why? I see no reason to answer such a question from the likes of you! 
+WARN_ATTACKED_01           | Such a bold attack stems only from a complete lack of respect, ambassador! You are fortunate indeed that the Spire King does not deign to reprimand your insolence. You may not be as fortunate next time! 
+WARN_INVADED_01            | So you seek to take that which does not belong to you, ambassador?! Tempt our wrath no more: we would gladly be rid of that worthless planet if it means being rid of your stupidity! 
+WARN_ESPIONAGE_01          | Hmfhmfhmf, it does not surprise us that so scurrilous a race would resort to espionage in order to achieve their goals. Remember, ambassador: the eyes of the [my_race] are so sharp that nothing escapes their gaze. [framed]
+WARN_SABOTAGE_01           | Absolutely disgusting, ambassador! To slink in darkness and commit sabotage like fiends in the night!? But you are as stupid as you are crass: the buildings you destroyed were not important enough to warrant a response! [forced]
+WARN_BIOWEAPON_01          | Dishonor! Dishonor! You have used the most unspeakable type of weapon against those who cannot so much as raise a shield to protect themselves! Your well-earned infamy will follow you to the end, ambassador! 
+WARN_GENOCIDE_01           | While I do agree that the [victim_race] were a miserable horde of churlish vermin, the Sovereignty strongly opposes committing genocide. We wonder, ambassador, if your people are capable of repeating these actions with more... civilized races?
+WARN_FINAL_WAR_01          | There is no virtue in this course you have chosen, ambassador. Make no mistake: now that you have decided to stand against the duly elected leader of the galaxy, we are honor bound to do everything we can to stop you! 
+WARN_COUNCIL_VOTE_01       | So much for the illustrious ambassador of the [your_empire]! Did you truly believe we would not learn of your deception in council? You should fear for your people, ambassador: the Spire King will be most displeased. 
+WARN_OATHBREAKER_01        | How scandalous! You know the esteem we place upon honor, yet you so openly break your word merely to satisfy your own desires?! The Sovereignty will remember this insult forever, ambassador, and will surely repay it in kind! [spiesCaught]
+WARN_ATTACKED_ALLY_01      | It is troublesome, ambassador, that your people and the [defender_empire] have chosen to bicker so. You cannot hope to match our combined might, ambassador: the Sovereignty urges you to reconsider your actions.
+WARN_REBELLING_AGAINST_01  | Did you think we had forgotten how dishonorable you have proven to be? It matters not whether we must fight you or the entire galaxy: you will never sit on the throne of the council so long as the Spire King lives! 
+ 
+PRAISE_COUNCIL_VOTE_01     | The esteemed and venerable ambassador of the [your_empire]! We are in debt for your service to us at this council meeting, and are eager to make well on that debt whenever you decide on how best that might be done. 
+PRAISE_COUNCIL_VOTE_02     | Greetings to you, ambassador. You honor us with a voice that speaks favor to our cause before those gathered here. I'm certain that the Spire King will wish to learn more of such an honorable people as soon as I make my report to him. 
+PRAISE_COUNCIL_VOTE_03     | Hmfhmfhmf, surely you do not expect us to believe that you sided with the Sovereignty out of respect or a sense of honor, ambassador? Yet, perhaps you will continue to prove yourself to us if only we give you another chance to do so? 
+
+PRAISE_ATTACKED_ENEMY_01   | Ah! Our esteemed friend and ally brings good tidings in this time of war! Come ambassador: let our people do battle against these horrid [defender_race] together as comrades-in-arms! 
+PRAISE_ATTACKED_ENEMY_02   | This war shall be over quickly, ambassador. Even alone the Sovereignty would easily overpower these vulgar [defender_race] beasts. But together? Together we shall wipe the stain of their race clean from the galaxy forever! 
+PRAISE_ATTACKED_ENEMY_03   | I am as certain that you act out of opportunity as I am certain that you do not know the meaning of the word "honor"! We allow you to help us against the [defender_race], if for nothing more than to prevent us from taking as many casualties as we might otherwise! 
+
+PRAISE_TRADE_01            | It relieves me more than you know, ambassador, that your people conduct business so honorably. The Sovereignty honors you and your people, and will value our friendship even more than it does our continued agreement of trade! 
+PRAISE_TRADE_02            | There are many ways to prove one's honor, ambassador. Conducting business fairly and in good faith is one of the best ways to do so, and something the Sovereignty values highly from those we encounter in this galaxy. 
+
+PRAISE_REBELLING_WITH_01   | Those brutes on the council underestimate us, ambassador! Together we will show them what the term "fatal misstep" truly means! 
+
+ACCEPT_TRADE_01            | The Sovereignty is always pleased to make dealings with the [your_empire]. An annual amount of [amt] BC is quite agreeable, thank you.
+RESPOND_IGNORE_THREAT_01   | You dare try and provoke the [my_empire]? Take your laughable jests elsewhere before they cease to be amusing.
+RESPOND_STOP_SPYING_01     | Your eyes seem to be sharp as ours when it comes to finding spies. Consider our efforts at subterfuge finished.
+RESPOND_STOP_ATTACKING_01  | Now you see the might of our Sovereignty? As long as you do not forget our power, we will not trouble you with these fleets again.
+
+ 

@@ -5,11 +5,13 @@
 ##   3 - "Y" if this is a right-to-left language
 ##   4 - global font size multiplier (100=normal size)
 ##   5 - "Y" if this is a logographic language (affects word wrapping)
+##   6 - optional, character replacements for the digits 0-9 (supports Bengali)
 ##
 
 
 en,  English          ,  ,   , 
 bg,  българин         ,  ,   , 
+#bn,  বাংলা            ,  ,   ,  , ০১২৩৪৫৬৭৮৯
 de,  Deutsch          ,  ,   , 
 el,  Ελληνικά         ,  ,   , 
 fr,  Français         ,  ,   ,  , 

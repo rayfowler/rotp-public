@@ -1,0 +1,8 @@
+// These are the fonts used for the 5 font types within the game.
+
+logo,       Mina-Bold.ttf,             			100
+dialogue,   Mina-Regular.ttf,                           100
+narrow,     HindSiliguri-Light.ttf,      		90
+normal,     HindSiliguri-Medium.ttf,         		100
+plain,      HindSiliguri-Regular.ttf,                	100
+language,   HindSiliguri-Bold.ttf,                   	100

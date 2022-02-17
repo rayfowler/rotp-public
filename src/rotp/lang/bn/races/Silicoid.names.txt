@@ -1,0 +1,21 @@
+// all possible names
+name: Cryslonoid, Igneoid, Sedimoid, Granitoid, Magmoid
+
+desc1: Xenophobic Expansionists
+desc2: Immune to Hostile Environments
+desc3: The enigmatic and lithovoric [race]s search the galaxy for their eternal enemy.
+
+// possible home system names
+home: Cryslon, Geode, Karst, Igneous, Silican
+
+title:     Emperor
+fulltitle: Crystal Emperor
+
+// possible leader names
+leader: Carnax, Crystous, Geode, Granid, Igneous, Sedimin
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Sediment, Pebble, Stone, Rock, Crystal, Mineral, Sand
+ship2: Granite, Marble, Slate, Quartz, Pumice, Gabbro, Obsidian
+ship3: Magma, Lava, Feldspar, Rhyolite, Mica, Basalt, Dacite
+ship4: Diamond, Sapphire, Emerald, Ruby, Amethyst, Topaz, Garnet

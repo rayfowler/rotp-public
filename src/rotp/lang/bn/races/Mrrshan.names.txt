@@ -1,0 +1,22 @@
+// all possible names
+name: Fiershan, Prrshan, Mewshan, Clawshan, Hisshan
+
+desc1: Ruthless Militarists
+desc2: Superior Gunners
+desc3: The [race] hordes seek battle trophies as they spread across the galaxy.
+
+// possible home system names
+home: Fierias, Fierina, Miamara, Miriana, Yailaria
+
+title:     Khan
+fulltitle: Khan
+
+// possible leader names
+leader: Jasana, Miamar, Mirana, Prrsha, Shandra, Yalara
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Wolverine, Feral, Ferret, Badger, Feline, Mouser, Calico
+ship2: Lynx, Catamount, Oncilla, Wildcat, Caracal, Margay, Serval
+ship3: Panther, Leopard, Warcat, Cheetah, Bobcat, Ocelot, Jaguarundi
+ship4: Sabretooth, Puma, Tiger, Lion, Jaguar, Liger, Cougar
+
