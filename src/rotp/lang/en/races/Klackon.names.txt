@@ -3,7 +3,7 @@ name: Kholdan, Klackant, Klockan, Arthropon, Coleopteron
 
 desc1: Xenophobic Industrialists
 desc2: Hive Mind and Increased Worker Production
-desc3: A species with a single controlling mind, the industrious [race] is inscrutable to outsiders.
+desc3: A species with a single controlling mind, the industrious Kholdan is inscrutable to outsiders.
 
 // possible home system names
 home: Kholdan, Klackant, Klockan, Arthropon, Coleopteron

@@ -1,0 +1,140 @@
+//
+// Dialogue that is not race-specific
+//
+
+DIPLO_TECH_REQUEST_MENU_01   | What type of technology interests you?
+DIPLO_TECH_COUNTER_MENU_01   | What will you trade for it?
+DIPLO_TRADE_MENU_01          | You propose a trade agreement for:
+DIPLO_TREATY_MENU_01         | What do you wish to do?
+DIPLO_THREATEN_MENU_01       | What are you threatening?
+DIPLO_DECLARE_WAR_MENU_01    | Are you sure you want to start a war?
+DIPLO_JOINT_WAR_MENU_01      | Who should we declare war on?
+DIPLO_BREAK_ALLIANCE_MENU_01 | Which alliance should we break?
+DIPLO_OFFER_AID_MENU_01      | What do you want to give?
+DIPLO_OFFER_TECH_MENU_01     | What do you want to give?
+
+DECLINE_OFFER_01           | [my_nameTitle] [my_name] declines.
+DECLINE_OFFER_02           | The [my_race] have considered your offer, and rejected it.
+DECLINE_OFFER_03           | We respectfully decline your offer.
+DECLINE_OFFER_04           | We are not interested at this time.
+DECLINE_OFFER_05           | The [my_race] do not consider your offer a fair one.
+DECLINE_OFFER_06           | It would not be in our best interest to accept your offer at this time.
+DECLINE_OFFER_07           | Perhaps you mistook us for gullible fools. We reject your offer.
+DECLINE_OFFER_08           | Your offer does not seem fair to us.
+DECLINE_OFFER_09           | We are afraid we must decline.
+
+DECLINE_ENEMY_ALLY_01      | The [my_race] would never deal with allies of the hated [other_race].
+DECLINE_ALREADY_ALLIED_01  | The [my_race] and our allies cannot consider your request as long as you are allied with other empires.
+DECLINE_NO_WAR_ON_ALLY_01  | We will not declare war on our allies.
+DECLINE_PEACE_TREATY_01    | We will not break our peace treaty with the [other_race].
+
+DECLINE_ANNOYED_01         | The [your_race] are creatures of much wind and little action. We tire of your prattle.
+DECLINE_ANNOYED_01         | [your_nameTitle] [your_name], you try our patience. Perhaps you should speak again later.
+DECLINE_ANNOYED_01         | [my_nameTitle] [my_name] has heard enough. We will talk again later. 
+DECLINE_ANNOYED_02         | We tire of diplomatic negotiations. We can continue discussions at a later time.
+DECLINE_ANNOYED_02         | These talks get us nowhere. We must take our leave.
+DECLINE_ANNOYED_02         | We go now.
+DECLINE_ANNOYED_03         | A thousand apologies, [your_nameTitle] [your_name], but other duties call.
+DECLINE_ANNOYED_03         | Pardon us, but our time is at an end.
+DECLINE_ANNOYED_03         | We have little time and much to do. Perhaps we can talk again later.
+
+DECLINE_OATHBREAKER_01     | We are unwilling to enter into a treaty at this time because you have broken treaties in the past.
+DECLINE_OATHBREAKER_01     | You have not honored your past agreements. We see little reason to trust you now.
+DECLINE_OATHBREAKER_01     | Why should we trust you now, when you have broken so many past treaties?
+DECLINE_OATHBREAKER_01     | We see no reason to agree with someone who has not lived up to past promises.
+DECLINE_OATHBREAKER_01     | We will not deal with [your_race] who have no honor.
+
+DECLINE_ESPIONAGE_01       | You thieving dogs, you steal the fruits of our research. We deny your request.
+DECLINE_ESPIONAGE_01       | Our technology is for the [my_race] race. You have no right to steal it. We will talk when you stop stealing.
+DECLINE_ESPIONAGE_01       | Why should we give you anything? Your spies already steal everything you need!
+DECLINE_ESPIONAGE_01       | How can you expect us to accept when your spies are stealing our technology?
+DECLINE_ESPIONAGE_01       | Remove your spies, then we will talk.
+
+DECLINE_SABOTAGE_01        | We have not forgotten your last sabotage incident. Until you have proven to be more trustworthy we will not deal with you.
+DECLINE_SABOTAGE_01        | Our people have suffered from your sabotage. We will not deal with you until it ceases.
+DECLINE_SABOTAGE_01        | What! You expect us to agree when you are sabotaging our [target]?
+DECLINE_SABOTAGE_01        | You destroy our [target]. Why should we deal with you?
+DECLINE_SABOTAGE_01        | When you stop sabotaging our [target], we can consider the matter further.
+
+DECLINE_BUILDUP_01         | We will not talk of it while you are amassing ships near our borders.
+DECLINE_BUILDUP_01         | Remove your ships along our borders and we will consider accepting. Until then we are not interested.
+DECLINE_BUILDUP_01         | Your ships on our borders are no threat to us. But we refuse to deal while they remain.
+DECLINE_BUILDUP_01         | If you wish to deal with the [my_empire], then send your ships to threaten others, not us.
+
+DECLINE_ENCROACH_01        | Your fleets intrude on [my_race] space. Move them away, then we shall talk.
+
+DECLINE_SKIRMISH_01        | You attack our ships without provocation and expect us to accept? We refuse to deal.
+DECLINE_SKIRMISH_01        | We cannot accept an offer from one who attacks our fleets.
+DECLINE_SKIRMISH_01        | Once your fleets have stopped attacking ours, we can talk.
+DECLINE_SKIRMISH_01        | If you wish to deal with the [my_empire], then leave our fleets alone.
+DECLINE_SKIRMISH_01        | [my_nameTitle] [my_name] does not appreciate your destruction of our fleets. We do not accept.
+
+DECLINE_ATTACK_01          | Your unjustified assault of [system] gives you little room to bargain.
+DECLINE_ATTACK_01          | We have not forgotten the attack on the [system] colony. There is no way that we will accept.
+
+DECLINE_INVASION_01        | Our people do not wish to deal with the butchers of [system]. Make your amends first.
+DECLINE_INVASION_01        | The blood from [system] smears your words. We cannot accept your offer.
+DECLINE_INVASION_01        | The dead of [system] cry out for retribution. We hear their cries louder than your offer.
+
+DECLINE_BIOWEAPONS_01      | The [my_race] will not make any deals with a race who would use biological weapons.
+DECLINE_BIOWEAPONS_01      | We cannot deal with anybody desperate enough to use biological weaponry.
+DECLINE_BIOWEAPONS_01      | You use weapons that cause untold horrors on innocent populations. We refuse to deal with such madness.
+DECLINE_BIOWEAPONS_01      | The gods abhor those who would destroy planets with biological weaponry. The [my_race] cannot allow it.
+DECLINE_BIOWEAPONS_01      | The cries of those killed by your biological weapons fill our ears. We cannot hear your offer.
+
+DECLINE_TECH_TRADE_01      | You have no technology which interests us.
+DECLINE_TECH_TRADE_01      | We have no need of [your_race] toys.
+DECLINE_TECH_TRADE_01      | Your primitive inventions do not interest us.
+DECLINE_TECH_TRADE_01      | The [my_race] are far beyond your technology. 
+DECLINE_TECH_TRADE_01      | [your_nameTitle] [your_name], we have little need for what your scientists offer us.
+DECLINE_TECH_TRADE_01      | [my_nameTitle] [my_name] sees little of interest in your technology.
+
+OFFER_TECH_EXCHANGE_01     | The [your_empire] is in great need of your [tech] technology. Perhaps you are willing to exchange it for some of our technology.
+OFFER_TECH_EXCHANGE_01     | The [your_empire] knows you have learned the secrets of [tech]. Can we offer you some of our technology in exchange?
+OFFER_TECH_EXCHANGE_01     | [your_nameTitle] [your_name] of the [your_empire] wishes for the secret of the [tech] technology. Will you exchange it for one of our advances?
+OFFER_TECH_EXCHANGE_01     | The [your_race] race is awed by the scientific wonders of [tech]. What can we offer you for its secret?
+
+ACCEPT_TECH_EXCHANGE_01    | Very well. [my_nameTitle] [my_name] agrees to exchange the wondrous [my_race] secrets of [techGiven] for the technology [techReceived].
+ACCEPT_FINANCIAL_AID_01    | [my_nameTitle] [my_name] accepts your gift of [amt] BC.
+ACCEPT_TECHNOLOGY_AID_01   | [my_nameTitle] [my_name] accepts your gift of [tech].
+
+BREAK_TRADE_01             | [my_race] citizens have no further desire for the trade goods from the [your_empire].
+ANNOUNCE_TRADE_01          | Effective [year], the [my_empire] and [your_empire] agree to trade [amt] BC per year.
+
+ANNOUNCE_PEACE_01          | In the year [year] the [my_race] and [your_race] empires agree to terminate all hostilities.
+ANNOUNCE_PEACE_01          | [my_nameTitle] [my_name] hereby orders all hostilities to end between our empires.
+ACCEPT_PEACE_01            | We agree that the time has come to end our petty bickering.
+ACCEPT_PEACE_01            | We accept your offer of peace. Cease fire on [my_race] forces, and we will stop attacking yours.
+ACCEPT_PEACE_01            | We grow weary of this senseless destruction. The [my_empire] accepts your offer of peace.
+
+BREAK_PACT_01              | A warning to the [your_empire] from the [my_race]: our Non-Aggression Pact is broken!
+ANNOUNCE_PACT_01           | In the year [year] the [my_empire] pledges to adhere to a Non-Aggression Pact and not to attack [your_race] fleets unless they are orbiting one of our colonies.
+ACCEPT_PACT_01             | The [my_empire] agrees to a Non-Aggression Pact. Neither side will attack the other's fleets, unless they enter the orbit of an opposing colony.
+ACCEPT_PACT_01             | If you agree not to send ships to any of our colonies, the [my_race] people vow to not attack any of your ships.
+ACCEPT_PACT_01             | [my_nameTitle] [my_name] agrees to your proposed Non-Aggression Pact. So it is written, so shall it be done!
+ACCEPT_PACT_01             | Agreed, then. As long as you do not attack our colonies, the [my_empire] will abide by the Non-Aggression Pact.
+
+BREAK_ALLIANCE_01          | The [my_empire] can no longer maintain an Alliance with the [your_empire].
+ANNOUNCE_ALLIANCE_01       | In the year [year] the [my_empire] and [your_empire] agree to form an alliance in which neither will attack the other's fleets or colonies.
+ANNOUNCE_ALLIANCE_01       | So our Alliance is forged. Your ships may visit our colonies as you wish, and get fuel from our bases.
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] welcomes an Alliance with our good friend, [your_nameTitle] [your_name].
+ACCEPT_ALLIANCE_01         | The [my_empire] and [your_empire] today forge an Alliance between our peoples. Death to our enemies!
+ACCEPT_ALLIANCE_01         | [my_nameTitle] [my_name] sees the wisdom in an Alliance with the [your_empire]. So be it!
+
+OFFER_JOINT_WAR_01         | The time has come for the [your_empire] and [my_empire] to join together in war against the [other_race].
+ACCEPT_JOINT_WAR_01        | The [other_empire] must fall before the combined might of the [my_empire] and [your_empire].
+ACCEPT_JOINT_WAR_01        | With [my_race] and [your_race] allied, the [other_race] will not last long.
+ACCEPT_JOINT_WAR_01        | In the year [year], the [my_empire] and [your_empire] join forces to rid the galaxy of the [other_race] menace.
+COUNTER_JOINT_WAR_01       | We will join you in your war against the [other_empire] in exchange for the following compensation:
+RESPOND_CLOSE_EMBASSY_01   | So be it. There will be no further discussions between our empires.
+
+RESPOND_BREAK_TRADE_01     | We will remember this.
+RESPOND_BREAK_TRADE_01     | So, [your_nameTitle] [your_name], you cannot keep your word. We will not forget this.
+
+RESPOND_BREAK_PACT_01      | We will inscribe the words of your broken treaties upon your tombstone, [your_nameTitle] [your_name].
+RESPOND_BREAK_PACT_01      | The [your_empire] will crumble under the weight of its own broken promises.
+
+RESPOND_BREAK_ALLIANCE_01  | You have dishonored the agreement. The alliance is broken.
+RESPOND_BREAK_ALLIANCE_01  | Very well. Your untrustworthy intentions have shown. The alliance is broken.
+RESPOND_BREAK_ALLIANCE_01  | We have little need of treaties that are not honored. The alliance is broken.
+RESPOND_BREAK_ALLIANCE_01  | So be it. The alliance is broken.

@@ -1,0 +1,21 @@
+// all possible names
+name: Ursinathien, Bearathien, Burlathien, Paurathien, Grizzlathien
+
+desc1: Des Écologistes agressifs
+desc2: Des formidables combattants au sol
+desc3: Les farouchement loyaux Ursinathiennes apprécient à la fois la force et la sagesse de leur roi philosophe.
+
+// possible home system names
+home: Ursa, Canis, Grizzla, Pandara, Bruin
+
+title:     Grand Hiérarque
+fulltitle: Grand Hiérarque
+
+// possible leader names
+leader: Bullux, Durpp, Grunk, Krungo, Monch, Smurch
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Patte, Patrouille, Griffe, Croc, Dent, Sanglier, Ourse
+ship2: Chasseur, Gladiateur, Sentinelle, Pêcheur, Traqueur, Carnivore, Panda
+ship3: Ours de Guerre, Brute, Prédateur, Intimidateur, Tueur, Gardien, Protecteur
+ship4: Grizzli, Punisseur, Rhinocéros, Kodiak, Destructeur, Cerbère, Mutilateur

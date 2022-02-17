@@ -1,0 +1,22 @@
+// all possible names
+name: Altairi, Aviari, Cluckari, Feathari, Fowlari
+
+desc1: Honorable Militarists
+desc2: Superior Pilots
+desc3: The [race] Sovereignty is an organized warrior society that prizes honor in battle.
+
+// possible home system names
+home: Altair, Aegir, Aviar, Volary, Aerie
+
+title:     King
+fulltitle: Spire King
+
+// possible leader names
+leader: Ariel, Farseer, Highsoar, Redwing, Sharpclaw, Skylord
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Foxbat, Sparrowhawk, Pelican, Finch, Wren, Raven, Feather
+ship2: Falcon, Sky Hawk, Space Gull, Battle Owl, Puffin, Star Wing
+ship3: Warbird, Warhawk, War Eagle, Osprey, Vulture, Harpy, Condor
+ship4: Thunderbird, Dreadwing, Sky Master, Roc, Rodan, Griffon, Phoenix
+

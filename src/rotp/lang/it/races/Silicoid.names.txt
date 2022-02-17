@@ -1,9 +1,9 @@
 // all possible names
-name: Silicoide, Igneoide, Sedimoide, Granitoide, Magmoide
+name: Cryslonoidi, Igneoidi, Sedimoidi, Granitoidi, Magmoidi
 
 desc1: Espansionisti Xenofobi
 desc2: Immune agli Ambienti Ostili
-desc3: i Silicoidi enigmatichi e litovorichi cercano nella galassia il loro eterno nemico.
+desc3: i Cryslonoidi enigmatichi e litovorichi cercano nella galassia il loro eterno nemico.
 
 // possible home system names
 home: Cryslon, Geode, Karst, Igneous, Silican

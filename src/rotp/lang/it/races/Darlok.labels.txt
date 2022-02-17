@@ -1,17 +1,16 @@
 // race-specific variables (must start with _)
-_empire                           | i Darlokiani, i Sarlokiani, gli Spailokiani, gli Shadelokini, i Nazlokiani
-_empireof                         | dei Darlokiani, dei Sarlokiani, degli Spailokiani, degli Shadelokini, dei Nazlokiani
-_raceadjec                        | Darlokiano , Sarlokiano, Spailokiano, Shadelokiano, Nazlokiano
-_raceadjecF                       | Darlokiana , Sarlokiana, Spailokiana, Shadelokiana, Nazlokiana
-_race_pluralnoun                  | i Darlokiani, i Sarlokiani, gli Spailokiani, gli Shadelokiani, i Nazlokiani
-_race_pluralnounF                 | le Darlokiane, le Sarlokiane, le Spailokiane, le Shadelokiane, le Nazlokiane
-_race_pluralnounof                | dei Darlokiani, dei Sarlokiani, degli Spailokiani, degli Shadelokiani, dei Nazlokiani
-_race_pluralnounto                | ai Darlokiani, ai Sarlokiani, agli Spailokiani, agli Shadelokiani, ai Nazlokiani
-_race_pluraladjec                 | Darlokiani, Sarlokiani, Spailokiani, Shadelokiani, Nazlokiani
-_race_pluraladjecF                | Darlokiane, Sarlokiane, Spailokiane, Shadelokiane, Nazlokiane
+_empire                           | i Nazlokiani, i Sarlokiani, gli Spailokiani, gli Shadelokini, i Nazlokiani
+_empireof                         | dei Nazlokiani, dei Sarlokiani, degli Spailokiani, degli Shadelokini, dei Nazlokiani
+_raceadjec                        | Nazlokiano , Sarlokiano, Spailokiano, Shadelokiano, Nazlokiano
+_raceadjecF                       | Nazlokiana , Sarlokiana, Spailokiana, Shadelokiana, Nazlokiana
+_race_pluralnoun                  | i Nazlokiani, i Sarlokiani, gli Spailokiani, gli Shadelokiani, i Nazlokiani
+_race_pluralnounF                 | le Nazlokiane, le Sarlokiane, le Spailokiane, le Shadelokiane, le Nazlokiane
+_race_pluralnounof                | dei Nazlokiani dei Sarlokiani, degli Spailokiani, degli Shadelokiani, dei Nazlokiani
+_race_pluralnounto                | ai Nazlokiani, ai Sarlokiani, agli Spailokiani, agli Shadelokiani, ai Nazlokiani
+_race_pluraladjec                 | Nazlokiani, Sarlokiani, Spailokiani, Shadelokiani, Nazlokiani
+_race_pluraladjecF                | Nazlokiane, Sarlokiane, Spailokiane, Shadelokiane, Nazlokiane
 _title                            | Sovrano
 _nameTitle                        | 
-
 
 
 

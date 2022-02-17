@@ -1,16 +1,16 @@
 // race-specific variables (must start with _)
-_empire                           | L'Impero Bulratiano, L'Impero Bearatiano, L'Impero Ursinatiano, L'Impero Porati, L'Impero Grizzlatiano
-_empireof                         | dell'Impero Bulratiano, dell'Impero Bearatiano, dell'Impero Ursinatiano, dell'Impero Porati, dell'Impero Grizzlatiano
-_raceadjec                        | Bulratiano, Bearatiano, Ursinatiano, Poratiano, Grizzlatiano
-_raceadjecF                       | Bulratiana, Bearatiana, Ursinatiana, Poratiana, Grizzlatiana
-_race_pluralnoun                  | i Bulratiani, i Bearatiani, gli Ursinatiani, i Poratiani, i Grizzlatiani
-_race_pluralnounF                 | le Bulratiane, le Bearatiane, le Ursinatiane, le Poratiane, le Grizzlatiane
-_race_pluralnounof                | dei Bulratiani, dei Bearatiani, degli Ursinatiani, dei Poratiani, dei Grizzlatiani
-_race_pluralnounto                | ai Bulratiani, ai Bearatiani, agli Ursinatiani, ai Poratiani, ai Grizzlatiani
-_race_pluraladjec                 | Bulratiani, Bearatiani, Ursinatiani, Poratiani, Grizzlatiani
-_race_pluraladjecF                | Bulratiane, Bearatiane, Ursinatiane, Poratiane, Grizzlatiane
+_empire                           | L'Impero Ursinatiano, L'Impero Bearatiano, L'Impero Bulratiano, L'Impero Poratiano, L'Impero Grizzlatiano
+_empireof                         | dell'Impero Ursinatiano, dell'Impero Bearatiano, dell'Impero Bulratiano, dell'Impero Porati, dell'Impero Grizzlatiano
+_raceadjec                        | Ursinatiano, Bearatiano, Bulratiano, Poratiano, Grizzlatiano
+_raceadjecF                       | Ursinatiana, Bearatiana, Bulratiana, Poratiana, Grizzlatiana
+_race_pluralnoun                  | i Ursinatiani, i Bearatiani, gli Bulratiani, i Poratiani, i Grizzlatiani
+_race_pluralnounF                 | le Ursinatiane, le Bearatiane, le Bulratiane, le Poratiane, le Grizzlatiane
+_race_pluralnounof                | dei Ursinatiani, dei Bearatiani, degli Bulratiani, dei Poratiani, dei Grizzlatiani
+_race_pluralnounto                | ai Ursinatiani, ai Bearatiani, agli Bulratiani, ai Poratiani, ai Grizzlatiani
+_race_pluraladjec                 | Ursinatiani, Bearatiani, Bulratiani, Poratiani, Grizzlatiani
+_race_pluraladjecF                | Ursinatiane, Bearatiane, Bulratiane, Poratiane, Grizzlatiane
 
-
+Ursinathi, Bearathi, Burlathi, Pawrathi, Grizzlathi
 
 _title                            | Gran Gerarca
 _nameTitle                        | Gran Gerarca

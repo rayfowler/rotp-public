@@ -1,0 +1,21 @@
+// all possible names
+name: Cryslonoïdien, Igneoïdien, Sedimoïdien, Granitoïdien, Magmoïdien
+
+desc1: Des Expansionnistes Xénophobes
+desc2: Immunisé aux Environnements Hostiles
+desc3: Les énigmatiques et lithovores Cryslonoïdiens recherchent dans la galaxie leur ennemi éternel.
+
+// possible home system names
+home: Cryslon, Geode, Karst, Igneous, Silican
+
+title:     l'Empereur
+fulltitle: l'Empereur de Cristal
+
+// possible leader names
+leader: Carnax, Crystous, Geode, Granid, Igneous, Sedimin
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Sédiment, Caillou, Pierre, Roche, Cristal, Minéral, Sable
+ship2: Granit, Marbre, Ardoise, Quartz, Pierre Ponce, Gabbro, Obsidienne
+ship3: Magma, Lave, Feldspath, Rhyolite, Mica, Basalte, Dacite
+ship4: Diamant, Saphir, Émeraude, Rubis, Améthyste, Topaze, Grenat

@@ -12,7 +12,7 @@
 // or distributing any material covered under this license.
 //
 
-// Sakkra specific dialogue
+// Ssslaura specific dialogue
 
 CONTACT_AGGRESSIVE         | Hejsan! Vårt folk kallar sig [my_race], men det är inte så viktigt. Vad som *är* viktigt, är att ni känner till vårt mål att utveckla varje planets ekologi till fulländad perfektion, och det gäller alla planeter i galaxen till vilket pris som än krävs, OK? Hej då!
 CONTACT_RUTHLESS           | Hallå där! Vi är [my_race]! Jag hoppas att ni inte är vårdslösa med era planeters ekosystem. I så fall skulle vi måsta åtgärda det omedelbart, och det skulle inte vara så kul för er, vore det?
@@ -53,7 +53,7 @@ DECLAREWAR_ASSASSIN_01     | Vad har ni *gjort*?! Jag visste att er sort inte gi
 OFFER_PEACE_01             | De stackars planeterna! Vi står bara inte längre ut med att se dem ärrde av det här dumma kriget! Låt oss sätta ett slut på stridandet nu, ambassadör, och påbörja helandet av dessa världar vi inte tagit väl vara på!
 OFFER_TRADE_01             | Fantastiskt, det finns så många komplexa klimat bland alla de här planeterna! Vi skulle vilja förstärka vår ekonomi för att kunna finansiera alla dessa projekt, och handel med er skulle hjälpa massor! [amt] BC per år skulle gå fint, va?
 OFFER_PACT_01              | Ni verkar ta hand om er planeter väl nog, och krig ställer till med sån oreda vid de världar de utkämpas. Skulle ni vilja sluta ett avtal om icke-aggression med oss? Det skulle betyda att inget av våra vackra ekosystem skulle behöva frukta!
-OFFER_ALLIANCE_01          | Otroligt, vi är imponerade! Det sätt som ni brukar och bryr er om era planeter, det är nästan som om ni själva är Sakkra! Gå ihop i en allians med oss, ambassadör! Vi kan då beskydda varandras världar tillsammans: ingen kommer hota oss så länge vi står enade!
+OFFER_ALLIANCE_01          | Otroligt, vi är imponerade! Det sätt som ni brukar och bryr er om era planeter, det är nästan som om ni själva är [my_race]! Gå ihop i en allians med oss, ambassadör! Vi kan då beskydda varandras världar tillsammans: ingen kommer hota oss så länge vi står enade!
  
 WARN_TRESPASSING_01        | Alltså hallå där! [system] är under Samfundets beskydd! Ni hör inte hemma här, förstår ni väl? Schas! Nu! Vad väntar ni på? Försvinn!
 WARN_EXPANSION_01          | Ni tar mycket mer för er själva än vad ni borde, ambassadör! Ni är inte framstående nog att bevara alla dessa världar, och vi kommer inte låta er slösa alla dessa ekologiska pusssel! Tygla er expansion, annars så!

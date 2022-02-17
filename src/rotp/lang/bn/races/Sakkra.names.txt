@@ -1,0 +1,22 @@
+// all possible names
+name: Ssslaura, Reptara, Saura, Raptora, Tyranna
+
+desc1: Aggressive Expansionists
+desc2: Increased Population Growth
+desc3: The zealots of the [race] Conclave strive to perfect the worlds they conquer.
+
+// possible home system names
+home: Sssla, Repta, Saur, Raptor, Tyrann
+
+title:     Magister
+fulltitle: Prime Magister
+
+// possible leader names
+leader: Guanar, Hissa, Kryssta, Saurak, Sauron, Tyranid
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Gecko, Chameleon, Lizard, Iguana, Skink, Anole, Whiptail
+ship2: Tegu, Monitor, Caiman, Alligator, Crocodile, Gavial, Basilisk
+ship3: Dinosaur, Raptor, Pterodactyl, Theropod, Ceratops, Predator, Plesiosaur
+ship4: Titan, Colossus, Dragon, Godzilla, Kraken, Gorgon, Tyrannosaur
+

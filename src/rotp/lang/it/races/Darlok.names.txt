@@ -1,9 +1,9 @@
 // all possible names
-name: Darlok, Sarlok, Spylok, Shadelok, Nazlok
+name: Nazlokiani, Sarlokiani, Spailokiani, Shadelokiani, Nazlokiani
 
 desc1: Diplomatici Aggressivi
 desc2: Spie Supreme
-desc3: i Darlokiani sono spettri innaturali e segreti, provenienti da un'altra dimensione
+desc3: i Nazlokiani sono spettri innaturali e segreti, provenienti da un'altra dimensione
 
 // possible home system names
 home: Nazin, Mordor, Hades, Abyssal, Hel

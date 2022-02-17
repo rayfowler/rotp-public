@@ -1,17 +1,16 @@
 // race-specific variables (must start with _)
-_empire                           | L'Alveare Klackoniano, L'Alveare Klackantiano, L'Alveare Klockaniano, L'Alveare Artroponiano, L'Alveare Coleopteroniano
-_empireof                         | dell'Alveare Klackoniano, dell'Alveare Klackantiano, dell'Alveare Klockaniano, dell'Alveare Artroponiano, dell'Alveare Coleopteroniano
-_raceadjec                        | Klackoniano, Klackantiano, Klockaniano, Artroponiano, Coleopteroniano
-_raceadjecF                       | Klackoniana, Klackantiana, Klockaniana, Artroponiana, Coleopteroniana
-_race_pluralnoun                  | i Klackoniani, i Klackantiani, i Klockaniani, gli Artroponiani, i Coleopteroniani
-_race_pluralnounF                 | le Klackoniane, le Klackantiane, le Klockaniane, le Artroponiane, le Coleopteroniane
-_race_pluralnounof                | dei Klackoniani, dei Klackantiani, dei Klockaniani, degli Artroponiani, dei Coleopteroniani
-_race_pluralnounto                | ai Klackoniani, ai Klackantiani, ai Klockaniani, agli Artroponiani, ai Coleopteroniani
-_race_pluraladjec                 | Klackoniani, Klackantiani, Klockaniani, Artroponiani, Coleopteroniani
-_race_pluraladjecF                | Klackoniane, Klackantiane, Klockaniane, Artroponiane, Coleopteroniane
+_empire                           | L'Alveare Koldaniano, L'Alveare Klackantiano, L'Alveare Klockaniano, L'Alveare Artroponiano, L'Alveare Coleopteroniano
+_empireof                         | dell'Alveare Koldanianoo, dell'Alveare Klackantiano, dell'Alveare Klockaniano, dell'Alveare Artroponiano, dell'Alveare Coleopteroniano
+_raceadjec                        | Koldaniano, Klackantiano, Klockaniano, Artroponiano, Coleopteroniano
+_raceadjecF                       | Koldaniana, Klackantiana, Klockaniana, Artroponiana, Coleopteroniana
+_race_pluralnoun                  | i Koldaniani, i Klackantiani, i Klockaniani, gli Artroponiani, i Coleopteroniani
+_race_pluralnounF                 | le Koldaniane, le Klackantiane, le Klockaniane, le Artroponiane, le Coleopteroniane
+_race_pluralnounof                | dei Koldaniani, dei Klackantiani, dei Klockaniani, degli Artroponiani, dei Coleopteroniani
+_race_pluralnounto                | ai Koldaniani, ai Klackantiani, ai Klockaniani, agli Artroponiani, ai Coleopteroniani
+_race_pluraladjec                 | Koldaniani, Klackantiani, Klockaniani, Artroponiani, Coleopteroniani
+_race_pluraladjecF                | Koldaniane, Klackantiane, Klockaniane, Artroponiane, Coleopteroniane
 _title                            | Righello
 _nameTitle                        |
-
 
 
 //
@@ -48,7 +47,7 @@ MAIN_COLONIZE_TITLE               | I am orbiting %1, an uncolonized system.
 MAIN_COLONIZE_ANIMATION_TITLE     | Nell'anno %1, ho formato una nuova colonia.
 MAIN_ALERT_SPY_CAPTURED           | Ho catturato una spia [ofalien_empire], costringendolo a confessare le loro attività %2 .
 MAIN_ALERT_TRANSPORTS_KILLED      | I miei tentativi di raggiungere %2 sono stati fermati difendendo le forze [alien_race].
-MAIN_ALERT_INVADERS_KILLED        | I trasporti [alien_race_plural] che tentavano di invadere %2 sono stati completamente distrutti da me.
+MAIN_ALERT_INVADERS_KILLED        | Dei trasporti [alien_race_plural] che tentavano di invadere %2 sono stati completamente distrutti da me.
 MAIN_BOMBARD_TITLE                | Sto orbitando attorno a una colonia nemica [alien_raceF].
 
 TECH_RESEARCH_COMPUTER            | Devo selezionare la prossima tecnologia informatica su cui concentrarmi.
@@ -75,10 +74,10 @@ NOTICE_ESPIONAGE_FRAME_TITLE      | Sono riuscito a incastrare un'altra razza pe
 
 SHIP_COMBAT_TITLE_DESC            | Incontro una flotta [alien_race] ostile.
 
-SABOTAGE_FACTORIES_RESULT         | Ho distrutto %1 fabbriche.
-SABOTAGE_BASES_RESULT             | Ho distrutto %1 basi missilistiche.
-SABOTAGE_REBELS_RESULT            | Ho incitato %1 ribelli.
-SABOTAGE_REBELS_TOTAL             | Ho incitato %1 ribelli. Disordini ora a %2%.
+SABOTAGE_FACTORIES_RESULT         | Ho distrutto fabbriche %1 .
+SABOTAGE_BASES_RESULT             | Ho distrutto basi missilistiche %1.
+SABOTAGE_REBELS_RESULT            | Ho incitato ribelli %1.
+SABOTAGE_REBELS_TOTAL             | Ho incitato ribelli %1. Disordini ora a %2%.
 SABOTAGE_REBELS_REVOLT            | Ho scatenato una rivolta!
 
 COUNCIL_CAST_PROMPT               | Devo scegliere (%1 voti)...

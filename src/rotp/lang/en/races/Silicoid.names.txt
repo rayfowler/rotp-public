@@ -3,7 +3,7 @@ name: Cryslonoid, Igneoid, Sedimoid, Granitoid, Magmoid
 
 desc1: Xenophobic Expansionists
 desc2: Immune to Hostile Environments
-desc3: The enigmatic and lithovoric [race]s search the galaxy for their eternal enemy.
+desc3: The enigmatic and lithovoric Cryslonoids search the galaxy for their eternal enemy.
 
 // possible home system names
 home: Cryslon, Geode, Karst, Igneous, Silican

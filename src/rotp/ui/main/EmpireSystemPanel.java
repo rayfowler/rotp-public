@@ -27,6 +27,7 @@ import java.awt.Polygon;
 import java.awt.Rectangle;
 import java.awt.Shape;
 import java.awt.Stroke;
+import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -554,12 +555,12 @@ public class EmpireSystemPanel extends SystemPanel {
                 g.setStroke(prevStroke);
             }
         }
-        private void incrementBuildLimit() {
+        private void incrementBuildLimit(int amt) {
             StarSystem sys = parentSpritePanel.systemViewToDisplay();
             Colony col = sys == null ? null : sys.colony();
             if (col == null)
                 return;
-            boolean updated = col.shipyard().incrementBuildLimit();
+            boolean updated = col.shipyard().incrementBuildLimit(amt);
             if (updated) {
                 softClick();
                 parent.repaint();
@@ -567,12 +568,12 @@ public class EmpireSystemPanel extends SystemPanel {
             else
                 misClick();
         }
-        private void decrementBuildLimit() {
+        private void decrementBuildLimit(int amt) {
             StarSystem sys = parentSpritePanel.systemViewToDisplay();
             Colony col = sys == null ? null : sys.colony();
             if (col == null)
                 return;
-            boolean updated = col.shipyard().decrementBuildLimit();
+            boolean updated = col.shipyard().decrementBuildLimit(amt);
             if (updated) {
                 softClick();
                 parent.repaint();
@@ -626,11 +627,19 @@ public class EmpireSystemPanel extends SystemPanel {
             int x = e.getX();
             int y = e.getY();
             boolean rightClick = SwingUtilities.isRightMouseButton(e);
-
+            boolean shiftPressed = (e.getModifiers() & InputEvent.SHIFT_MASK) != 0;
+            boolean ctrlPressed = (e.getModifiers() & InputEvent.CTRL_MASK) != 0;
+            
+            int adjAmt = 1;
+            if (shiftPressed)
+                adjAmt = 5;
+            else if (ctrlPressed)
+                adjAmt = 20;
+                    
             if (upArrow.contains(x,y))
-                incrementBuildLimit();
+                incrementBuildLimit(adjAmt);
             else if (downArrow.contains(x,y)) 
-                decrementBuildLimit();
+                decrementBuildLimit(adjAmt);
             else if (limitBox.contains(x,y))
                 resetBuildLimit();
             else if (shipDesignBox.contains(x,y)){
@@ -724,10 +733,18 @@ public class EmpireSystemPanel extends SystemPanel {
             int y = e.getY();
             
             if (limitBox.contains(x,y)) {
+                boolean shiftPressed = (e.getModifiers() & InputEvent.SHIFT_MASK) != 0;
+                boolean ctrlPressed = (e.getModifiers() & InputEvent.CTRL_MASK) != 0;
+
+                int adjAmt = 1;
+                if (shiftPressed)
+                    adjAmt = 5;
+                else if (ctrlPressed)
+                    adjAmt = 20;
                 if (e.getWheelRotation() < 0)
-                    incrementBuildLimit();
+                    incrementBuildLimit(adjAmt);
                 else
-                    decrementBuildLimit();
+                    decrementBuildLimit(adjAmt);
                 return;
             }
             if (shipDesignBox.contains(x,y) 

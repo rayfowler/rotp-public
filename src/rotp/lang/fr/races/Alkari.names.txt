@@ -1,0 +1,22 @@
+// all possible names
+name: Altaïrien, Aviarien, Cluckarien, Featharien, Foularien
+
+desc1: Des Honorables Militaristes
+desc2: Des Pilotes supérieurs
+desc3: La Souveraineté Altaïrienne est une société guerrière organisée qui récompense l'honneur au combat.
+
+// possible home system names
+home: Altair, Aegir, Aviar, Volary, Aerie
+
+title:     Roi
+fulltitle: Roi Flèche
+
+// possible leader names
+leader: Ariel, Longvoyant, Hautplaner, Ailerouge, Griffeacérée, Cielmaître
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Renardsouris, Épervier, Pélican, Pinson, Troglodyte, Corbeau, Plume
+ship2: Faucon, Faucon Céleste, Mouette de l'Espace, Hibou de Bataille, Macareux, Aile d'Étoile
+ship3: Coucou, Faucon de Guerre, Aigle de Guerre, Balbuzard, Vautour, Harpie, Condor
+ship4: Oiseau-Tonnerre, Aile d'Effroi, Maître du Ciel, Roc, Rodan, Griffon, Phénix
+

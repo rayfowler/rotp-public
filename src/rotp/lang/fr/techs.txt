@@ -1,0 +1,1194 @@
+
+
+//
+// Armor techs
+// 
+ARMOR_0_NAME     | Armure en Titane
+ARMOR_0_ITEM     | Titane
+ARMOR_0_BRIEF    | Point de Vie %1
+ARMOR_0_DETAIL   | Technologie d'armure débutante. Aucun bonus au blindage du navire ou aux attaques au sol.
+
+ARMOR_1_NAME     | Armure en Duralloy
+ARMOR_1_ITEM     | Duralloy
+ARMOR_1_BRIEF    | Point de Vie %1
+ARMOR_1_DETAIL   | Augmente les points de vie des navires et des transports de 50 %. L'armure de combat personnelle est également améliorée, ajoutant 5 à toutes les attaques au sol.
+
+ARMOR_2_NAME     | Armure en Zortrium
+ARMOR_2_ITEM     | Zortrium
+ARMOR_2_BRIEF    | Point de Vie %1
+ARMOR_2_DETAIL   | Augmente les points de vie des navires et des transports de 100 %. L'armure de combat personnelle est également améliorée, ajoutant 10 à toutes les attaques au sol.
+
+ARMOR_3_NAME     | Armure en Andrium
+ARMOR_3_ITEM     | Andrium
+ARMOR_3_BRIEF    | Point de Vie %1
+ARMOR_3_DETAIL   | Augmente les points de vie des navires et des transports de 150 %. L'armure de combat personnelle est également améliorée, ajoutant 15 à toutes les attaques au sol.
+
+ARMOR_4_NAME     | Armure en Tritane
+ARMOR_4_ITEM     | Tritanium
+ARMOR_4_BRIEF    | Point de Vie %1
+ARMOR_4_DETAIL   | Augmente les points de vie des navires et des transports de 200%.  L'armure de combat personnelle est également améliorée, ajoutant 20 à toutes les attaques au sol.
+
+ARMOR_5_NAME     | Armure en Adamantium
+ARMOR_5_ITEM     | Adamantium
+ARMOR_5_BRIEF    | Point de Vie %1
+ARMOR_5_DETAIL   | Augmente les points de vie des navires et des transports de 250%. L'armure de combat personnelle est également améliorée, ajoutant 25 à toutes les attaques au sol.
+
+ARMOR_6_NAME     | Armure en Neutronium
+ARMOR_6_ITEM     | Neutronium
+ARMOR_6_BRIEF    | Point de Vie %1
+ARMOR_6_DETAIL   | Augmente les points de vie des navires et des transports de 300%. L'armure de combat personnelle est également améliorée, ajoutant 30 à toutes les attaques au sol.
+
+
+//
+// Atmospheric Terraforming techs
+// 
+ATMOSPHERE_0_NAME      | Terraformation atmosphérique
+ATMOSPHERE_0_DETAIL    | Convertit les environnements hostiles en environnements normaux pour un coût de 150 BC.
+
+//
+// Automated Repair techs
+// 
+AUTOREPAIR_0_NAME      | Système de réparation automatisé
+AUTOREPAIR_0_BRIEF     | Soigne 15 % des coups du navire par tour
+AUTOREPAIR_0_DETAIL    | Les navires non détruits peuvent réparer jusqu'à 15 % de leurs points de vie totaux à la fin de chaque tour.
+
+AUTOREPAIR_1_NAME      | Contrôle avancé des dommages
+AUTOREPAIR_1_BRIEF     | Soigne 30 % des coups du navire par tour
+AUTOREPAIR_1_DETAIL    | Les navires non détruits peuvent réparer jusqu'à 30 % de leurs points de vie totaux à la fin de chaque tour.
+
+
+//
+// Battle Computer techs
+// 
+// this is the Ship Design entry for selecting no battle computer
+COMPUTER_0_NAME    | 
+COMPUTER_0_ITEM    |  
+COMPUTER_0_BRIEF   | Niveau d'attaque 0
+COMPUTER_0_DETAIL  |
+
+COMPUTER_1_NAME    | Ordinateur de Combat Mark I
+COMPUTER_1_ITEM    | Mark I
+COMPUTER_1_BRIEF   | Niveau d'attaque I
+COMPUTER_1_DETAIL  | Augmente la précision de l'arme au niveau 1.
+
+COMPUTER_2_NAME    | Ordinateur de Combat Mark II
+COMPUTER_2_ITEM    | Mark II
+COMPUTER_2_BRIEF   | Niveau d'attaque II
+COMPUTER_2_DETAIL  | Augmente la précision de l'arme au niveau 2.
+
+COMPUTER_3_NAME    | Ordinateur de Combat Mark III
+COMPUTER_3_ITEM    | Mark III
+COMPUTER_3_BRIEF   | Niveau d'attaque III
+COMPUTER_3_DETAIL  | Augmente la précision de l'arme au niveau 3.
+
+COMPUTER_4_NAME    | Ordinateur de Combat Mark IV
+COMPUTER_4_ITEM    | Mark IV
+COMPUTER_4_BRIEF   | Niveau d'attaque IV
+COMPUTER_4_DETAIL  | Augmente la précision de l'arme au niveau 4.
+
+COMPUTER_5_NAME    | Ordinateur de Combat Mark V
+COMPUTER_5_ITEM    | Mark V
+COMPUTER_5_BRIEF   | Niveau d'attaque V
+COMPUTER_5_DETAIL  | Augmente la précision de l'arme au niveau 5.
+
+COMPUTER_6_NAME    | Ordinateur de Combat Mark VI
+COMPUTER_6_ITEM    | Mark VI
+COMPUTER_6_BRIEF   | Niveau d'attaque VI
+COMPUTER_6_DETAIL  | Augmente la précision de l'arme au niveau 6.
+
+COMPUTER_7_NAME    | Ordinateur de Combat Mark VII
+COMPUTER_7_ITEM    | Mark VII
+COMPUTER_7_BRIEF   | Niveau d'attaque VII
+COMPUTER_7_DETAIL  | Augmente la précision de l'arme au niveau 7.
+
+COMPUTER_8_NAME    | Ordinateur de Combat Mark VIII
+COMPUTER_8_ITEM    | Mark VIII
+COMPUTER_8_BRIEF   | Niveau d'attaque VIII
+COMPUTER_8_DETAIL  | Augmente la précision de l'arme au niveau 8.
+
+COMPUTER_9_NAME    | Ordinateur de Combat Mark IX
+COMPUTER_9_ITEM    | Mark IX
+COMPUTER_9_BRIEF   | Niveau d'attaque IX
+COMPUTER_9_DETAIL  | Augmente la précision de l'arme au niveau 9.
+
+COMPUTER_10_NAME   | Ordinateur de Combat Mark X
+COMPUTER_10_ITEM   | Mark X
+COMPUTER_10_BRIEF  | Niveau d'attaque X
+COMPUTER_10_DETAIL | Augmente la précision de l'arme au niveau 10.
+
+COMPUTER_11_NAME   | Ordinateur de Combat Mark XI
+COMPUTER_11_ITEM   | Mark XI
+COMPUTER_11_BRIEF  | Niveau d'attaque XI
+COMPUTER_11_DETAIL | Augmente la précision de l'arme au niveau 11.
+
+
+//
+// Battle Suit techs for ground combat
+// 
+// this is for default, no-bonus armor that player starts with
+BATTLESUIT_0_NAME    | Armure
+BATTLESUIT_0_DETAIL  |
+
+BATTLESUIT_1_NAME    | Tenues de Combat
+BATTLESUIT_1_DETAIL  | Une armure qui non seulement protège mais renforce également la force. Ajoute 10 à tous les jets de combat au sol.
+
+BATTLESUIT_2_NAME    | Exosquelette Blindé
+BATTLESUIT_2_DETAIL  | Des tenues mobiles avancées qui non seulement augmentent la puissance et augmentent les défenses, mais offrent également un vol limité aux troupes au sol. Ajoute 20 à tous les jets de combat au sol.
+
+BATTLESUIT_3_NAME    | Armure de Force 
+BATTLESUIT_3_DETAIL  | Combine une grande mobilité, un vol anti-gravité et un blindage lourd pour former l'armure la plus avancée disponible pour les troupes au sol. Ajoute 30 à tous les jets de combat au sol.
+
+
+//
+// Energy Focus techs for beam weapons
+// 
+BEAMFOCUS_0_NAME    | Concentration à haute énergie
+BEAMFOCUS_0_BRIEF   | Ajoute +3 à la portée des armes énergétiques
+BEAMFOCUS_0_DETAIL  | Augmente la portée de tir de toutes les armes à énergie de trois.
+
+BEAMFOCUS_1_NAME    | Interface Oracle
+BEAMFOCUS_1_BRIEF   | Concentrez les armes à faisceau, divisez par deux le bouclier de l'ennemi
+BEAMFOCUS_1_DETAIL  | Coordonne toutes les attaques d'armes à faisceau en une rafale simultanée de tir concentré, réduisant de moitié la force du bouclier de l'ennemi.
+
+
+//
+// Biological antidote techs 
+// 
+BIOANTIDOTE_0_NAME    | Antidote aux toxines biologiques
+BIOANTIDOTE_0_DETAIL  | Réduit les pertes causées par les armes biologiques de 1M par attaque.
+
+BIOANTIDOTE_1_NAME    | Antidote universel
+BIOANTIDOTE_1_DETAIL  | Réduit les pertes causées par les armes biologiques de 2M par attaque.
+
+
+//
+// Biological weapon techs 
+// 
+BIOWEAPON_0_NAME     | Spores de la mort
+BIOWEAPON_0_BRIEF    | Arme biologique
+BIOWEAPON_0_DETAIL   | Des armes biologiques horribles capables de réduire les populations planétaires maximales de 1M par attaque.
+
+BIOWEAPON_1_NAME     | Virus du Malheur
+BIOWEAPON_1_BRIEF    | Arme biologique
+BIOWEAPON_1_DETAIL   | Ded redoutables armes biologiques capables de réduire les populations planétaires de 2M par attaque.
+
+BIOWEAPON_2_NAME     | Terminateur Bio
+BIOWEAPON_2_BRIEF    | Arme biologique
+BIOWEAPON_2_DETAIL   | Des armes biologiques abominables capables de réduire les populations planétaires de 3M par attaque.
+
+//
+// Black Hole Generator tech
+//
+BLACKHOLE_0_NAME     | Générateur de trous noirs
+BLACKHOLE_0_DETAIL   | Crée un champ sous-espace qui déforme l'espace normal, créant un trou noir qui détruit 25 % à 100 % des navires ennemis ou des bases de missiles, moins 2 % par Classee de bouclier.
+
+
+//
+// Bomb weapon tech
+//
+BOMB_0_NAME     | Bombe nucléaire
+BOMB_0_BRIEF    | Attaques au sol uniquement
+BOMB_0_DETAIL   | Des bombes qui explosent et causent 3 à 12 points de dégâts sur des cibles au sol uniquement.
+
+BOMB_1_NAME     | Bombe à fusion
+BOMB_1_BRIEF    | Attaques au sol uniquement
+BOMB_1_DETAIL   | Des bombes qui explosent et causent 5 à 20 points de dégâts sur des cibles au sol uniquement.
+
+BOMB_2_NAME     | Bombe anti-matière
+BOMB_2_BRIEF    | Attaques au sol uniquement
+BOMB_2_DETAIL   | Des bombes qui explosent et infligent 10 à 40 points de dégâts contre des cibles planétaires uniquement.
+
+BOMB_3_NAME     | Bombe Oméga-V
+BOMB_3_BRIEF    | Attaques au sol uniquement
+BOMB_3_DETAIL   | Des bombes qui explosent et causent 20 à 50 points de dégâts sur des cibles au sol uniquement.
+
+BOMB_4_NAME     | Bombe à neutronium
+BOMB_4_BRIEF    | Attaques au sol uniquement
+BOMB_4_DETAIL   | Des bombes qui explosent et causent 40 à 70 points de dégâts sur des cibles au sol uniquement.
+
+
+//
+// Cloaking tech
+//
+CLOAK_0_NAME     | Bouclier occulteur
+CLOAK_0_BRIEF    | Rend le navire presque invisible
+CLOAK_0_DETAIL   | Les vaisseaux rendus sont presque invisibles jusqu'à ce qu'ils attaquent, améliorant leurs défenses de +5. Les navires doivent se dévoiler pour attaquer et se recouvrent automatiquement à chaque tour pendant lequel ils n'attaquent pas.
+
+
+//
+// Cloning tech
+//
+CLONE_0_NAME     | Clonage
+CLONE_0_DETAIL   | Permet aux colons bio-conçus d'être cultivés à un taux de 1M par 10 BC.
+
+CLONE_1_NAME     | Clonage avancé
+CLONE_1_DETAIL   | Permet aux colons bio-conçus d'être cultivés à un taux de 1M par 5 BC.
+
+
+//
+// Combat Transporter tech
+//
+COMBATTRANSPORT_0_NAME     | Transporteurs de combat
+COMBATTRANSPORT_0_DETAIL   | Les transports équipés de ces dispositifs ont 50 % de chances de se téléporter sur les surfaces ennemies avant de pouvoir être attaqués par des navires et des bases de défense antimissile ennemis.
+
+
+//
+// Control Environment tech
+//
+CONTROLENV_0_NAME    | Environnement Normal Contrôlé
+CONTROLENV_0_ITEM    | Base de colonie standard
+CONTROLENV_0_BRIEF   | Allows Normal Planet Landings
+CONTROLENV_0_DETAIL  | Permits the colonization of standard planets.
+
+CONTROLENV_1_NAME    | Environnement stérile contrôlé
+CONTROLENV_1_ITEM    | Base de colonie stérile
+CONTROLENV_1_BRIEF   | Autorise les atterrissages sur des planètes stériles
+CONTROLENV_1_DETAIL  | Permet la colonisation des planètes stériles et moins hostiles.
+
+CONTROLENV_2_NAME    | Environnement toundra contrôlé
+CONTROLENV_2_ITEM    | Base de colonie toundra
+CONTROLENV_2_BRIEF   | Autorise les atterrissages sur des planètes tundra
+CONTROLENV_2_DETAIL  | Permet la colonisation des planètes toundra et moins hostiles.
+
+CONTROLENV_3_NAME    | Environnement mort contrôlé
+CONTROLENV_3_ITEM    | Base de la colonie morte
+CONTROLENV_3_BRIEF   | Autorise les atterrissages sur des planètes mortes
+CONTROLENV_3_DETAIL  | Permet la colonisation des planètes mortes et moins hostiles.
+
+CONTROLENV_4_NAME    | Environnement inferno contrôlé
+CONTROLENV_4_ITEM    | Base de la colonie inferno
+CONTROLENV_4_BRIEF   | Autorise les atterrissages sur des planètes inferno
+CONTROLENV_4_DETAIL  | Permet la colonisation des planètes inferno et moins hostiles.
+
+CONTROLENV_5_NAME    | Environnement toxique contrôlé
+CONTROLENV_5_ITEM    | Base de colonie toxique
+CONTROLENV_5_BRIEF   | Autorise les atterrissages sur des planètes toxiques
+CONTROLENV_5_DETAIL  | Permet la colonisation des planètes toxiques et moins hostiles.
+
+CONTROLENV_6_NAME    | Environnement irradié contrôlé
+CONTROLENV_6_ITEM    | base de colonie irradiée
+CONTROLENV_6_BRIEF   | Permet les atterrissages sur des planètes irradiées
+CONTROLENV_6_DETAIL  | Permet la colonisation des planètes irradiées et moins hostiles.
+
+
+//
+// Deflector Shield tech
+//
+// this is the entry on Ship Design for selecting no deflector shield
+DEFLECTOR_0_NAME      | 
+DEFLECTOR_0_ITEM      |   
+DEFLECTOR_0_BRIEF     |  
+DEFLECTOR_0_DETAIL    | 
+
+DEFLECTOR_1_NAME      | Boucliers déflecteurs de Classee I
+DEFLECTOR_1_ITEM      | Classee I
+DEFLECTOR_1_BRIEF     | Absorbe 1 coup
+DEFLECTOR_1_DETAIL    | Absorbe 1 point de dégâts de toutes les attaques.
+
+DEFLECTOR_2_NAME      | Boucliers déflecteurs de Classee II
+DEFLECTOR_2_ITEM      | Classee II
+DEFLECTOR_2_BRIEF     | Absorbe 2 coup
+DEFLECTOR_2_DETAIL    | Absorbe 2 points de dégâts de toutes les attaques.
+
+DEFLECTOR_3_NAME      | Boucliers déflecteurs de Classee III
+DEFLECTOR_3_ITEM      | Classee III
+DEFLECTOR_3_BRIEF     | Absorbe 3 coup
+DEFLECTOR_3_DETAIL    | Absorbe 3 points de dégâts de toutes les attaques.
+
+DEFLECTOR_4_NAME      | Boucliers déflecteurs de Classee IV
+DEFLECTOR_4_ITEM      | Classee IV
+DEFLECTOR_4_BRIEF     | Absorbe 4 coup
+DEFLECTOR_4_DETAIL    | Absorbe 4 points de dégâts de toutes les attaques.
+
+DEFLECTOR_5_NAME      | Boucliers déflecteurs de Classee V
+DEFLECTOR_5_ITEM      | Classee V
+DEFLECTOR_5_BRIEF     | Absorbe 5 coup
+DEFLECTOR_5_DETAIL    | Absorbe 5 points de dégâts de toutes les attaques.
+
+DEFLECTOR_6_NAME      | Boucliers déflecteurs de Classee VI
+DEFLECTOR_6_ITEM      | Classee VI
+DEFLECTOR_6_BRIEF     | Absorbe 6 coup
+DEFLECTOR_6_DETAIL    | Absorbe 6 points de dégâts de toutes les attaques.
+
+DEFLECTOR_7_NAME      | Boucliers déflecteurs de Classee VII
+DEFLECTOR_7_ITEM      | Classee VII
+DEFLECTOR_7_BRIEF     | Absorbe 7 coup
+DEFLECTOR_7_DETAIL    | Absorbe 7 points de dégâts de toutes les attaques.
+
+DEFLECTOR_8_NAME      | Boucliers déflecteurs de Classee IX
+DEFLECTOR_8_ITEM      | Classee IX
+DEFLECTOR_8_BRIEF     | Absorbe 9 coup
+DEFLECTOR_8_DETAIL    | Absorbe 9 points de dégâts de toutes les attaques.
+
+DEFLECTOR_9_NAME      | Boucliers déflecteurs de Classee XI
+DEFLECTOR_9_ITEM      | Classee XI
+DEFLECTOR_9_BRIEF     | Absorbe 11 coup
+DEFLECTOR_9_DETAIL    | Absorbe 11 points de dégâts de toutes les attaques.
+
+DEFLECTOR_10_NAME     | Boucliers déflecteurs de Classee XIII
+DEFLECTOR_10_ITEM     | Classee XIII
+DEFLECTOR_10_BRIEF    | Absorbe 13 coup
+DEFLECTOR_10_DETAIL   | Absorbe 13 points de dégâts de toutes les attaques.
+
+DEFLECTOR_11_NAME     | Boucliers déflecteurs de Classee XV
+DEFLECTOR_11_ITEM     | Classee XV
+DEFLECTOR_11_BRIEF    | Absorbe 15 coup
+DEFLECTOR_11_DETAIL   | Absorbe 15 points de dégâts de toutes les attaques.
+
+
+//
+// Displacement tech
+//
+DISPLACEMENT_0_NAME   | Dispositif de déplacement
+DISPLACEMENT_0_BRIEF  | 1/3 de toutes les attaques ennemies ratent
+DISPLACEMENT_0_DETAIL | Déplace aléatoirement les vaisseaux équipés dans et hors de l'espace normal, leur permettant d'éviter 1/3 de toutes les attaques d'armes hors zone.
+
+//
+// ECM Jammer tech
+//
+// this is the entry on Ship Design for selecting no ECM Jammer
+ECMJAMMER_0_NAME      | 
+ECMJAMMER_0_ITEM      | 
+ECMJAMMER_0_BRIEF     | Défense antimissile 0
+ECMJAMMER_0_DETAIL    | 
+
+ECMJAMMER_1_NAME      | Brouilleurs(ECM) Mark I
+ECMJAMMER_1_ITEM      | Brouilleur I
+ECMJAMMER_1_BRIEF     | Déf. missiles 1
+ECMJAMMER_1_DETAIL    | Ajoute 1 niveau à la défense contre les attaques de missiles ennemis.
+
+ECMJAMMER_2_NAME      | Brouilleurs(ECM) Mark II
+ECMJAMMER_2_ITEM      | Brouilleur II
+ECMJAMMER_2_BRIEF     | Déf. missiles 2
+ECMJAMMER_2_DETAIL    | Ajoute 2 niveau à la défense contre les attaques de missiles ennemis.
+
+ECMJAMMER_3_NAME      | Brouilleurs(ECM) Mark III
+ECMJAMMER_3_ITEM      | Brouilleur III
+ECMJAMMER_3_BRIEF     | Déf. missiles 3
+ECMJAMMER_3_DETAIL    | Ajoute 3 niveau à la défense contre les attaques de missiles ennemis.
+
+ECMJAMMER_4_NAME      | Brouilleurs(ECM) Mark IV
+ECMJAMMER_4_ITEM      | Brouilleur IV
+ECMJAMMER_4_BRIEF     | Déf. missiles 4
+ECMJAMMER_4_DETAIL    | Ajoute 4 niveau à la défense contre les attaques de missiles ennemis.
+
+ECMJAMMER_5_NAME      | Brouilleurs(ECM) Mark V
+ECMJAMMER_5_ITEM      | Brouilleur V
+ECMJAMMER_5_BRIEF     | Déf. missiles 5
+ECMJAMMER_5_DETAIL    | Ajoute 5 niveau à la défense contre les attaques de missiles ennemis.
+
+ECMJAMMER_6_NAME      | Brouilleurs(ECM) Mark VI
+ECMJAMMER_6_ITEM      | Brouilleur VI
+ECMJAMMER_6_BRIEF     | Déf. missiles 6
+ECMJAMMER_6_DETAIL    | Ajoute 6 niveau à la défense contre les attaques de missiles ennemis.
+
+ECMJAMMER_7_NAME      | Brouilleurs(ECM) Mark VII
+ECMJAMMER_7_ITEM      | Brouilleur VII
+ECMJAMMER_7_BRIEF     | Déf. missiles 7
+ECMJAMMER_7_DETAIL    | Ajoute 7 niveau à la défense contre les attaques de missiles ennemis.
+
+ECMJAMMER_8_NAME      | Brouilleurs(ECM) Mark VIII
+ECMJAMMER_8_ITEM      | Brouilleur VIII
+ECMJAMMER_8_BRIEF     | Déf. missiles 8
+ECMJAMMER_8_DETAIL    | Ajoute 8 niveau à la défense contre les attaques de missiles ennemis.
+
+ECMJAMMER_9_NAME      | Brouilleurs(ECM) Mark IX
+ECMJAMMER_9_ITEM      | Brouilleur IX
+ECMJAMMER_9_BRIEF     | Déf. missiles 9
+ECMJAMMER_9_DETAIL    | Ajoute 9 niveau à la défense contre les attaques de missiles ennemis.
+
+ECMJAMMER_10_NAME     | Brouilleurs(ECM) Mark X
+ECMJAMMER_10_ITEM     | Brouilleur X
+ECMJAMMER_10_BRIEF    | Déf. missiles 10
+ECMJAMMER_10_DETAIL   | Ajoute 10 niveau à la défense contre les attaques de missiles ennemis.
+
+
+//
+// Ecological Restoration techs
+//
+ECORESTORATION_0_NAME   | Restauration écologique
+ECORESTORATION_0_DETAIL | Élimine 2 unités de déchets industriels pour un coût de 1 BC.
+
+ECORESTORATION_1_NAME   | Restauration écologique ameliorée
+ECORESTORATION_1_DETAIL | Élimine 3 unités de déchets industriels pour un coût de 1 BC.
+
+ECORESTORATION_2_NAME   | Restauration écologique renforcée
+ECORESTORATION_2_DETAIL | Élimine 5 unités de déchets industriels pour un coût de 1 BC.
+
+ECORESTORATION_3_NAME   | Restauration écologique avancée
+ECORESTORATION_3_DETAIL | Élimine 10 unités de déchets industriels pour un coût de 1 BC.
+
+ECORESTORATION_4_NAME   | Restauration écologique complète
+ECORESTORATION_4_DETAIL | Élimine 20 unités de déchets industriels pour un coût de 1 BC.
+
+
+//
+// Energy Pulsar techs
+//
+PULSAR_0_NAME     | Pulsar d'énergie
+PULSAR_0_BRIEF    | S'étend pour infliger 1 à 5 coups
+PULSAR_0_DETAIL   | Une puissante modification du moteur qui génère une explosion d'énergie sphérique soudaine frappant tous les navires adjacents, infligeant jusqu'à 5 points de dégâts +1 pour deux navires.
+
+PULSAR_1_NAME     | Pulsar ionique
+PULSAR_1_BRIEF    | S'étend pour infliger 2 à 10 coups
+PULSAR_1_DETAIL   | Une puissante modification de moteur capable de générer une rafale sphérique d'énergie phasée frappant tous les navires adjacents et infligeant jusqu'à 10 points de dégâts +1 par navire attaquant.
+
+
+//
+// Engine techs
+//
+ENGINE_0_NAME    | Moteurs rétro
+ENGINE_0_DETAIL  | Déplace les vaisseaux à Distorsion %1, et permet une maniabilité maximale de Classee I en combat.
+ENGINE_0_ITEM    | Rétro
+ENGINE_0_ITEM2   | Classee 1
+ENGINE_0_BRIEF   | Distorsion 1  Def %1
+ENGINE_0_BRIEF2  | Vitesse de combat %1
+
+ENGINE_1_NAME    | Moteurs nucléaires
+ENGINE_1_DETAIL  | Déplace les vaisseaux à Distorsion %1, et permet une maniabilité maximale de Classee II en combat.
+ENGINE_1_ITEM    | Nucléaire
+ENGINE_1_ITEM2   | Classee 2
+ENGINE_1_BRIEF   | Distorsion 2  Def %1
+ENGINE_1_BRIEF2  | Vitesse de combat %1
+
+ENGINE_2_NAME    | Propulsion conventionnelle/sous-lumière
+ENGINE_2_DETAIL  | Déplace les vaisseaux à Distorsion %1, et permet une maniabilité maximale de Classee III en combat.
+ENGINE_2_ITEM    | Sous-lumière
+ENGINE_2_ITEM2   | Classe 3
+ENGINE_2_BRIEF   | Distorsion 3  Def %1
+ENGINE_2_BRIEF2  | Vitesse de combat %1
+
+ENGINE_3_NAME    | Propulsion à fusion 
+ENGINE_3_DETAIL  | Déplace les vaisseaux à Distorsion %1, et permet une maniabilité maximale de Classee IV en combat.
+ENGINE_3_ITEM    | Fusion
+ENGINE_3_ITEM2   | Classe 4
+ENGINE_3_BRIEF   | Distorsion 4  Def %1
+ENGINE_3_BRIEF2  | Vitesse de combat %1
+
+ENGINE_4_NAME    | Moteurs d'impulsion 
+ENGINE_4_DETAIL  | Déplace les vaisseaux à Distorsion %1, et permet une maniabilité maximale de Classee V en combat.
+ENGINE_4_ITEM    | Impulsion
+ENGINE_4_ITEM2   | Classe 5
+ENGINE_4_BRIEF   | Distorsion 5  Def %1
+ENGINE_4_BRIEF2  | Vitesse de combat %1
+
+ENGINE_5_NAME    | Propulsion ionique 
+ENGINE_5_DETAIL  | Déplace les vaisseaux à Distorsion %1, et permet une maniabilité maximale de Classee VI en combat.
+ENGINE_5_ITEM    | Ionique
+ENGINE_5_ITEM2   | Classe 6
+ENGINE_5_BRIEF   | Distorsion 6  Def %1
+ENGINE_5_BRIEF2  | Vitesse de combat %1
+
+ENGINE_6_NAME    | Moteurs à l'anti-matière 
+ENGINE_6_DETAIL  | Déplace les vaisseaux à Distorsion %1, et permet une maniabilité maximale de Classee VII en combat.
+ENGINE_6_ITEM    | Anti-matière 
+ENGINE_6_ITEM2   | Classe 7
+ENGINE_6_BRIEF   | Distorsion 7  Def %1
+ENGINE_6_BRIEF2  | Vitesse de combat %1
+
+ENGINE_7_NAME    | Propulsion interphasée
+ENGINE_7_DETAIL  | Déplace les vaisseaux à Distorsion %1, et permet une maniabilité maximale de Classee VII en combat.
+ENGINE_7_ITEM    | Interphasée
+ENGINE_7_ITEM2   | Classe 8
+ENGINE_7_BRIEF   | Distorsion 8  Def %1
+ENGINE_7_BRIEF2  | Vitesse de combat %1
+
+ENGINE_8_NAME    | Propulsion hyper
+ENGINE_8_DETAIL  | Déplace les vaisseaux à Distorsion %1, et permet une maniabilité maximale de Classee IX en combat.
+ENGINE_8_ITEM    | Hyper
+ENGINE_8_ITEM2   | Classe 9
+ENGINE_8_BRIEF   | Distorsion 9  Def %1
+ENGINE_8_BRIEF2  | Vitesse de combat %1
+
+
+//
+// Fuel Range techs
+//
+FUELRANGE_0_NAME   | Piles à combustible
+FUELRANGE_0_DETAIL | Les réserves de carburant permettent aux vaisseaux de s'éloigner jusqu'à %1 années-lumière des planètes des colonies.
+
+FUELRANGE_1_NAME   | Piles à combustible à hydrogène
+FUELRANGE_1_DETAIL | Les réserves de carburant permettent aux vaisseaux de s'éloigner jusqu'à %1 années-lumière des planètes des colonies.
+
+FUELRANGE_2_NAME   | Piles à combustible au deutérium
+FUELRANGE_2_DETAIL | Les réserves de carburant permettent aux vaisseaux de s'éloigner jusqu'à %1 années-lumière des planètes des colonies.
+
+FUELRANGE_3_NAME   | Piles à combustible au irridium
+FUELRANGE_3_DETAIL | Les réserves de carburant permettent aux vaisseaux de s'éloigner jusqu'à %1 années-lumière des planètes des colonies.
+
+FUELRANGE_4_NAME   | Cristaux de Dotomite
+FUELRANGE_4_DETAIL | Les réserves de carburant permettent aux vaisseaux de s'éloigner jusqu'à %1 années-lumière des planètes des colonies.
+
+FUELRANGE_5_NAME   | Piles à combustible au uridium
+FUELRANGE_5_DETAIL | Les réserves de carburant permettent aux vaisseaux de s'éloigner jusqu'à %1 années-lumière des planètes des colonies.
+
+FUELRANGE_6_NAME   | Piles à combustible Reajax II
+FUELRANGE_6_DETAIL | Les réserves de carburant permettent aux vaisseaux de s'éloigner jusqu'à %1 années-lumière des planètes des colonies.
+
+FUELRANGE_7_NAME   | Cristaux de trilithium
+FUELRANGE_7_DETAIL | Les réserves de carburant permettent aux vaisseaux de s'éloigner jusqu'à %1 années-lumière des planètes des colonies.
+
+FUELRANGE_8_NAME   | Piles de thorium
+FUELRANGE_8_DETAIL | Les réserves de carburant permettent aux navires de s'éloigner de n'importe quelle distance des planètes de la colonie.
+
+
+//
+// Ordinateur futuriste techs
+//
+FUTURECOMP_0_NAME    | Ordinateur futuriste I
+FUTURECOMP_0_DETAIL  | Améliorations générales de la technologie informatique.
+
+FUTURECOMP_1_NAME    | Ordinateur futuriste II
+FUTURECOMP_1_DETAIL  | Améliorations générales de la technologie informatique.
+
+FUTURECOMP_2_NAME    | Ordinateur futuriste III
+FUTURECOMP_2_DETAIL  | Améliorations générales de la technologie informatique.
+
+FUTURECOMP_3_NAME    | Ordinateur futuriste IV
+FUTURECOMP_3_DETAIL  | Améliorations générales de la technologie informatique.
+
+FUTURECOMP_4_NAME    | Ordinateur futuriste V
+FUTURECOMP_4_DETAIL  | Améliorations générales de la technologie informatique.
+
+FUTURECOMP_5_NAME    | Ordinateur futuriste VI
+FUTURECOMP_5_DETAIL  | Améliorations générales de la technologie informatique.
+
+FUTURECOMP_6_NAME    | Ordinateur futuriste VII
+FUTURECOMP_6_DETAIL  | Améliorations générales de la technologie informatique.
+
+FUTURECOMP_7_NAME    | Ordinateur futuriste VIII
+FUTURECOMP_7_DETAIL  | Améliorations générales de la technologie informatique.
+
+FUTURECOMP_8_NAME    | Ordinateur futuriste IX
+FUTURECOMP_8_DETAIL  | Améliorations générales de la technologie informatique.
+
+FUTURECOMP_9_NAME    | Ordinateur futuriste X
+FUTURECOMP_9_DETAIL  | Améliorations générales de la technologie informatique. 
+
+
+//
+// Construction futuriste techs
+//
+FUTURECONST_0_NAME    | Construction futuriste I
+FUTURECONST_0_DETAIL  | Améliorations générales de la technologie de la construction.
+
+FUTURECONST_1_NAME    | Construction futuriste II
+FUTURECONST_1_DETAIL  | Améliorations générales de la technologie de la construction.
+
+FUTURECONST_2_NAME    | Construction futuriste III
+FUTURECONST_2_DETAIL  | Améliorations générales de la technologie de la construction.
+
+FUTURECONST_3_NAME    | Construction futuriste IV
+FUTURECONST_3_DETAIL  | Améliorations générales de la technologie de la construction.
+
+FUTURECONST_4_NAME    | Construction futuriste V
+FUTURECONST_4_DETAIL  | Améliorations générales de la technologie de la construction.
+
+FUTURECONST_5_NAME    | Construction futuriste VI
+FUTURECONST_5_DETAIL  | Améliorations générales de la technologie de la construction.
+
+FUTURECONST_6_NAME    | Construction futuriste VII
+FUTURECONST_6_DETAIL  | Améliorations générales de la technologie de la construction.
+
+FUTURECONST_7_NAME    | Construction futuriste VIII
+FUTURECONST_7_DETAIL  | Améliorations générales de la technologie de la construction.
+
+FUTURECONST_8_NAME    | Construction futuriste IX
+FUTURECONST_8_DETAIL  | Améliorations générales de la technologie de la construction.
+
+FUTURECONST_9_NAME    | Construction futuriste X
+FUTURECONST_9_DETAIL  | Améliorations générales de la technologie de la construction. 
+
+
+//
+// Champ de force futuriste techs
+//
+FUTUREFORCE_0_NAME    | Champ de force futuriste I
+FUTUREFORCE_0_DETAIL  | Améliorations générales de la technologie des champs de force.
+
+FUTUREFORCE_1_NAME    | Champ de force futuriste II
+FUTUREFORCE_1_DETAIL  | Améliorations générales de la technologie des champs de force.
+
+FUTUREFORCE_2_NAME    | Champ de force futuriste III
+FUTUREFORCE_2_DETAIL  | Améliorations générales de la technologie des champs de force.
+
+FUTUREFORCE_3_NAME    | Champ de force futuriste IV
+FUTUREFORCE_3_DETAIL  | Améliorations générales de la technologie des champs de force.
+
+FUTUREFORCE_4_NAME    | Champ de force futuriste V
+FUTUREFORCE_4_DETAIL  | Améliorations générales de la technologie des champs de force.
+
+FUTUREFORCE_5_NAME    | Champ de force futuriste VI
+FUTUREFORCE_5_DETAIL  | Améliorations générales de la technologie des champs de force.
+
+FUTUREFORCE_6_NAME    | Champ de force futuriste VII
+FUTUREFORCE_6_DETAIL  | Améliorations générales de la technologie des champs de force.
+
+FUTUREFORCE_7_NAME    | Champ de force futuriste VIII
+FUTUREFORCE_7_DETAIL  | Améliorations générales de la technologie des champs de force.
+
+FUTUREFORCE_8_NAME    | Champ de force futuriste IX
+FUTUREFORCE_8_DETAIL  | Améliorations générales de la technologie des champs de force.
+
+FUTUREFORCE_9_NAME    | Champ de force futuriste X
+FUTUREFORCE_9_DETAIL  | Améliorations générales de la technologie des champs de force.
+
+
+//
+// Planétologie futuriste techs
+//
+FUTUREPLANET_0_NAME    | Planétologie futuriste I
+FUTUREPLANET_0_DETAIL  | Améliorations générales de la technologie de la planétologie.
+
+FUTUREPLANET_1_NAME    | Planétologie futuriste II
+FUTUREPLANET_1_DETAIL  | Améliorations générales de la technologie de la planétologie.
+
+FUTUREPLANET_2_NAME    | Planétologie futuriste III
+FUTUREPLANET_2_DETAIL  | Améliorations générales de la technologie de la planétologie.
+
+FUTUREPLANET_3_NAME    | Planétologie futuriste IV
+FUTUREPLANET_3_DETAIL  | Améliorations générales de la technologie de la planétologie.
+
+FUTUREPLANET_4_NAME    | Planétologie futuriste V
+FUTUREPLANET_4_DETAIL  | Améliorations générales de la technologie de la planétologie.
+
+FUTUREPLANET_5_NAME    | Planétologie futuriste VI
+FUTUREPLANET_5_DETAIL  | Améliorations générales de la technologie de la planétologie.
+
+FUTUREPLANET_6_NAME    | Planétologie futuriste VII
+FUTUREPLANET_6_DETAIL  | Améliorations générales de la technologie de la planétologie.
+
+FUTUREPLANET_7_NAME    | Planétologie futuriste VIII
+FUTUREPLANET_7_DETAIL  | Améliorations générales de la technologie de la planétologie.
+
+FUTUREPLANET_8_NAME    | Planétologie futuriste IX
+FUTUREPLANET_8_DETAIL  | Améliorations générales de la technologie de la planétologie.
+
+FUTUREPLANET_9_NAME    | Planétologie futuriste X
+FUTUREPLANET_9_DETAIL  | Améliorations générales de la technologie de la planétologie.
+
+
+//
+// Propulsion futuriste techs
+//
+FUTUREPROP_0_NAME    | Propulsion futuriste I
+FUTUREPROP_0_DETAIL  | Améliorations générales de la technologie de propulsion.
+
+FUTUREPROP_1_NAME    | Propulsion futuriste II
+FUTUREPROP_1_DETAIL  | Améliorations générales de la technologie de propulsion.
+
+FUTUREPROP_2_NAME    | Propulsion futuriste III
+FUTUREPROP_2_DETAIL  | Améliorations générales de la technologie de propulsion.
+
+FUTUREPROP_3_NAME    | Propulsion futuriste IV
+FUTUREPROP_3_DETAIL  | Améliorations générales de la technologie de propulsion.
+
+FUTUREPROP_4_NAME    | Propulsion futuriste V
+FUTUREPROP_4_DETAIL  | Améliorations générales de la technologie de propulsion.
+
+FUTUREPROP_5_NAME    | Propulsion futuriste VI
+FUTUREPROP_5_DETAIL  | Améliorations générales de la technologie de propulsion.
+
+FUTUREPROP_6_NAME    | Propulsion futuriste VII
+FUTUREPROP_6_DETAIL  | Améliorations générales de la technologie de propulsion.
+
+FUTUREPROP_7_NAME    | Propulsion futuriste VIII
+FUTUREPROP_7_DETAIL  | Améliorations générales de la technologie de propulsion.
+
+FUTUREPROP_8_NAME    | Propulsion futuriste IX
+FUTUREPROP_8_DETAIL  | Améliorations générales de la technologie de propulsion.
+
+FUTUREPROP_9_NAME    | Propulsion futuriste X
+FUTUREPROP_9_DETAIL  | Améliorations générales de la technologie de propulsion.
+
+
+//
+// Arme futuriste techs
+//
+FUTUREWEAPON_0_NAME    | Arme futuriste I
+FUTUREWEAPON_0_DETAIL  | Améliorations générales de la technologie des armes.
+
+FUTUREWEAPON_1_NAME    | Arme futuriste II
+FUTUREWEAPON_1_DETAIL  | Améliorations générales de la technologie des armes.
+
+FUTUREWEAPON_2_NAME    | Arme futuriste III
+FUTUREWEAPON_2_DETAIL  | Améliorations générales de la technologie des armes.
+
+FUTUREWEAPON_3_NAME    | Arme futuriste IV
+FUTUREWEAPON_3_DETAIL  | Améliorations générales de la technologie des armes.
+
+FUTUREWEAPON_4_NAME    | Arme futuriste V
+FUTUREWEAPON_4_DETAIL  | Améliorations générales de la technologie des armes.
+
+FUTUREWEAPON_5_NAME    | Arme futuriste VI
+FUTUREWEAPON_5_DETAIL  | Améliorations générales de la technologie des armes.
+
+FUTUREWEAPON_6_NAME    | Arme futuriste VII
+FUTUREWEAPON_6_DETAIL  | Améliorations générales de la technologie des armes.
+
+FUTUREWEAPON_7_NAME    | Arme futuriste VIII
+FUTUREWEAPON_7_DETAIL  | Améliorations générales de la technologie des armes.
+
+FUTUREWEAPON_8_NAME    | Arme futuriste IX
+FUTUREWEAPON_8_DETAIL  | Améliorations générales de la technologie des armes.
+
+FUTUREWEAPON_9_NAME    | Arme futuriste X
+FUTUREWEAPON_9_DETAIL  | Améliorations générales de la technologie des armes.
+
+
+//
+// Hand Weapon techs
+//
+HANDWEAPON_0_NAME      | 
+HANDWEAPON_0_DETAIL    | 
+
+HANDWEAPON_1_NAME      | Lasers à main
+HANDWEAPON_1_DETAIL    | Des lasers personnels qui ajoutent 5 à vos jets de combat au sol.
+
+HANDWEAPON_2_NAME      | Fusil ionique
+HANDWEAPON_2_DETAIL    | Armes à rayon personnelles qui ajoutent 10 points à vos attaques au sol.
+
+HANDWEAPON_3_NAME      | Fusil à fusion
+HANDWEAPON_3_DETAIL    | Des armes à rayon imprécises mais incroyablement puissantes qui ajoutent 20 points à vos jets de combat au sol.
+
+HANDWEAPON_4_NAME      | Phaseur manuel
+HANDWEAPON_4_DETAIL    | Ded puissantes armes à énergie portatives capables de réduire un adversaire à ses atomes composants. Ajoute 25 à vos jets de combat au sol.
+
+HANDWEAPON_5_NAME      | Fusil à plasma
+HANDWEAPON_5_DETAIL    | L'arme de poing la plus dévastatrice disponible. Ajoute 30 à vos attaques au sol.
+
+
+//
+// Hyperspace Communication tech
+//
+HYPERSPACE_0_NAME      | Communications hyperspatiales
+HYPERSPACE_0_DETAIL    | Vous permet de communiquer avec des flottes de navires dans l'hyperespace et de modifier leurs destinations en cours de route.
+
+
+//
+// Technologie industrielle améliorées
+//
+IMPRINDUSTRY_0_NAME     | Technologie industrielle améliorée 9
+IMPRINDUSTRY_0_DETAIL   | Réduit les coûts de construction d'usine à 9 BC chacun.
+
+IMPRINDUSTRY_1_NAME     | Technologie industrielle améliorée 8
+IMPRINDUSTRY_1_DETAIL   | Réduit les coûts de construction d'usine à 8 BC chacun.
+
+IMPRINDUSTRY_2_NAME     | Technologie industrielle améliorée 7
+IMPRINDUSTRY_2_DETAIL   | Réduit les coûts de construction d'usine à 7 BC chacun.
+
+IMPRINDUSTRY_3_NAME     | Technologie industrielle améliorée 6
+IMPRINDUSTRY_3_DETAIL   | Réduit les coûts de construction d'usine à 6 BC chacun.
+
+IMPRINDUSTRY_4_NAME     | Technologie industrielle améliorée 5
+IMPRINDUSTRY_4_DETAIL   | Réduit les coûts de construction d'usine à 5 BC chacun.
+
+IMPRINDUSTRY_5_NAME     | Technologie industrielle améliorée 4
+IMPRINDUSTRY_5_DETAIL   | Réduit les coûts de construction d'usine à 4 BC chacun.
+
+IMPRINDUSTRY_6_NAME     | Technologie industrielle améliorée 3
+IMPRINDUSTRY_6_DETAIL   | Réduit les coûts de construction d'usine à 3 BC chacun.
+
+IMPRINDUSTRY_7_NAME     | Technologie industrielle améliorée 2
+IMPRINDUSTRY_7_DETAIL   | Réduit les coûts de construction d'usine à 2 BC chacun.
+
+
+//
+// Terraformation améliorée techs
+//
+IMPRTFORM_0_NAME        | Terraformation améliorée +10
+IMPRTFORM_0_DETAIL      | Augmente la capacité de population des planètes de 10 millions pour un coût de 5 BC par million.
+
+IMPRTFORM_1_NAME        | Terraformation améliorée +20
+IMPRTFORM_1_DETAIL      | Augmente la capacité de population des planètes de 20 millions pour un coût de 5 BC par million.
+
+IMPRTFORM_2_NAME        | Terraformation améliorée +30
+IMPRTFORM_2_DETAIL      | Augmente la capacité de population des planètes de 30 millions pour un coût de 4 BC par million.
+
+IMPRTFORM_3_NAME        | Terraformation améliorée +40
+IMPRTFORM_3_DETAIL      | Augmente la capacité de population des planètes de 40 millions pour un coût de 4 BC par million.
+
+IMPRTFORM_4_NAME        | Terraformation améliorée +50
+IMPRTFORM_4_DETAIL      | Augmente la capacité de population des planètes de 50 millions pour un coût de 3 BC par million..
+
+IMPRTFORM_5_NAME        | Terraformation améliorée +60
+IMPRTFORM_5_DETAIL      | Augmente la capacité de population des planètes de 60 millions pour un coût de 3 BC par million.
+
+IMPRTFORM_6_NAME        | Terraformation améliorée +80
+IMPRTFORM_6_DETAIL      | Augmente la capacité de population des planètes de 80 millions pour un coût de 2 BC par million.
+
+IMPRTFORM_7_NAME        | Terraformation améliorée +100
+IMPRTFORM_7_DETAIL      | Augmente la capacité de population des planètes de 100 millions pour un coût de 2 BC par million.
+
+IMPRTFORM_8_NAME        | Terraformation complète
+IMPRTFORM_8_DETAIL      | Augmente la capacité de population des planètes de 120 millions pour un coût de 2 BC par million.
+
+
+//
+// Industrial Waste techs
+//
+INDWASTE_0_NAME         | Réduction des déchets industriels 80%
+INDWASTE_0_DETAIL       | Réduit les niveaux de pollution de l'usine à 80 % du taux normal.
+
+INDWASTE_1_NAME         | Réduction des déchets industriels 60%
+INDWASTE_1_DETAIL       | Réduit les niveaux de pollution de l'usine à 60 % du taux normal.
+
+INDWASTE_2_NAME         | Réduction des déchets industriels 40%
+INDWASTE_2_DETAIL       | Réduit les niveaux de pollution de l'usine à 40 % du taux normal.
+
+INDWASTE_3_NAME         | Réduction des déchets industriels 20%
+INDWASTE_3_DETAIL       | Réduit les niveaux de pollution de l'usine à 20 % du taux normal.
+
+INDWASTE_4_NAME         | Élimination des déchets industriels
+INDWASTE_4_DETAIL       | Les usines cessent de polluer.
+
+
+//
+// Missile Defense techs
+//
+MISSDEF_0_NAME      | Fusées anti-missiles
+MISSDEF_0_BRIEF     | 40 % de chances que les missiles soient détruits
+MISSDEF_0_DETAIL    | Roquettes trans-légères capables de détruire les missiles ennemis entrants 40 % du temps, -1 % par niveau de technologie du missile.
+
+MISSDEF_1_NAME      | Bouclier Zyro
+MISSDEF_1_BRIEF     | 75 % de chances que les missiles soient détruits
+MISSDEF_1_DETAIL    | Un champ d'énergie qui détruit les missiles et torpilles ennemis entrants 75% du temps, -1% par niveau technologique du missile.
+
+MISSDEF_2_NAME      | Bouclier de foudre
+MISSDEF_2_BRIEF     | 100 % de chances que les missiles soient détruits
+MISSDEF_2_DETAIL    | Un champ d'énergie qui détruit les missiles et torpilles ennemis entrants 100% du temps, -1% par niveau technologique du missile.
+
+
+//
+// Missile Weapon techs
+//
+MISSWPN_0_NAME      | Missile nucléaire
+MISSWPN_0_BRIEF     | 2 coups, +1 vitesse
+MISSWPN_0_BRIEF2    | 5 coups
+MISSWPN_0_DETAIL    | Missiles munis d'ogives nucléaires qui explosent en infligeant 4 points de dégâts et se déplacent à une vitesse de 2.
+
+MISSWPN_1_NAME      | Fusées Hyper-V
+MISSWPN_1_BRIEF     | 2 coups, +1 vitesse
+MISSWPN_1_BRIEF2    | 5 coups
+MISSWPN_1_DETAIL    | Des missiles rapides qui explosent pour 6 points de dégâts et se déplacent à une vitesse de 2,5.
+
+MISSWPN_2_NAME      | Fusées Hyper-X
+MISSWPN_2_BRIEF     | 2 coups, +1 to hit
+MISSWPN_2_BRIEF2    | 5 coups, +1 to hit
+MISSWPN_2_DETAIL    | Missiles équipés d'ogives à haute énergie qui explosent pour 8 points de dégâts, se déplacent à une vitesse de 2,5 et sont contrôlés par un ordinateur de ciblage de niveau +1.
+
+MISSWPN_3_NAME      | Fusées pack de dispersion V
+MISSWPN_3_BRIEF     | 2 coups, +1 vitesse
+MISSWPN_3_BRIEF2    | 5 coups
+MISSWPN_3_DETAIL    | Versions mirvage des fusées Hyper-V, se divisant en cinq ogives distinctes qui explosent chacune pour 6 points de dégâts et se déplacent à une vitesse de 2,5.
+
+MISSWPN_4_NAME      | Missiles à merculite
+MISSWPN_4_BRIEF     | 2 coups, +2 pour toucher
+MISSWPN_4_BRIEF2    | 5 coups, +2 pour toucher
+MISSWPN_4_DETAIL    |Des missiles rapides et percutants qui explosent en infligeant 10 points de dégâts, se déplacent à une vitesse de 3 et sont contrôlés par un ordinateur de ciblage +2.
+
+MISSWPN_5_NAME      | Missiles Stinger
+MISSWPN_5_BRIEF     | 2 coups, +3 pour toucher
+MISSWPN_5_BRIEF2    | 5 coups, +3 pour toucher
+MISSWPN_5_DETAIL    | Des missiles lents et hyper-précis pour infliger 15 points de dégâts, se déplacer à une vitesse de 3,5 et sont contrôlés par un ordinateur de ciblage sophistiqué +3.
+
+MISSWPN_6_NAME      | Fusées pack de dispersion VII
+MISSWPN_6_BRIEF     | 2 coups, Mirvage à 7
+MISSWPN_6_BRIEF2    | 5 coups, Mirvage à 7
+MISSWPN_6_DETAIL    | Versions Mirvage des fusées Hyper-X, se divisant en 7 ogives distinctes qui explosent chacune pour 10 points de dégâts, se déplacent à une vitesse de 3 et sont guidées par un ordinateur de ciblage +2.
+
+MISSWPN_7_NAME      | Missiles Pulson
+MISSWPN_7_BRIEF     | 2 coups, +4 pour toucher
+MISSWPN_7_BRIEF2    | 5 coups, +4 pour toucher
+MISSWPN_7_DETAIL    | De puissants missiles équipés d'ogives anti-matière qui explosent pour 20 points de dégâts, se déplacent à la vitesse 4 et sont contrôlés par un ordinateur de ciblage +4.
+
+MISSWPN_8_NAME      | Missiles herculaires
+MISSWPN_8_BRIEF     | 2 coups, +5 pour toucher
+MISSWPN_8_BRIEF2    | 5 coups, +5 pour toucher
+MISSWPN_8_DETAIL    | Missile très avancé qui explose et inflige 25 points de dégâts. Les missiles herculaires se déplacent à une vitesse de 4,5 et sont contrôlés par un ordinateur de ciblage +5.
+
+MISSWPN_9_NAME      | Missiles Zeon
+MISSWPN_9_BRIEF     | 2 coups, +6 pour toucher
+MISSWPN_9_BRIEF2    | 5 coups, +6 pour toucher
+MISSWPN_9_DETAIL    | Le missile le plus avancé disponible. Capable de frapper les navires ennemis pour 30 points de dégâts et de se déplacer à une vitesse de 5. Le missile est guidé par un ordinateur de ciblage +6.
+
+MISSWPN_10_NAME      | Fusées pack de dispersion X
+MISSWPN_10_BRIEF     | 2 coups, Mirvage à 10
+MISSWPN_10_BRIEF2    | 5 coups, Mirvage à 10
+MISSWPN_10_DETAIL    | Les versions Mirvage des missiles Stinger, se divisant en 10 ogives distinctes qui explosent chacune pour 15 points de dégâts, se déplacent à une vitesse de 3,5 et sont guidées par un ordinateur de ciblage +3.
+
+
+//
+// Personal Shield techs for ground combat
+//
+// default "no shield" tech that each player starts with
+PERSSHIELD_0_NAME     | 
+PERSSHIELD_0_DETAIL   | 
+
+PERSSHIELD_1_NAME     | Bouclier déflecteur personnel
+PERSSHIELD_1_DETAIL   | Protège les troupes terrestres individuelles avec un champ de force directionnel. Ajoute +10 à toutes les batailles au sol.
+
+PERSSHIELD_2_NAME     | Bouclier d'absorption personnel
+PERSSHIELD_2_DETAIL   | Absorbe les dégâts de toutes les armes à main. Ajoute +20 à toutes les batailles au sol.
+
+PERSSHIELD_3_NAME     | Bouclier barrière personnel
+PERSSHIELD_3_DETAIL   | Enveloppe complètement le soldat dans un champ de force presque impénétrable. Ajoute +30 à tous les jets de combat au sol.
+
+
+//
+// Planetary Shield techs 
+//
+PLANETSHIELD_0_NAME    | Boucliers Planétaires Classe V
+PLANETSHIELD_0_DETAIL  | Absorbe 5 points de dégâts de toutes les attaques contre les surfaces des planètes, ajoutant aux boucliers déflecteurs de base de missiles.
+
+PLANETSHIELD_1_NAME    | Boucliers Planétaires Classe X
+PLANETSHIELD_1_DETAIL  | Absorbe 10 points de dégâts de toutes les attaques contre les surfaces des planètes, ajoutant aux boucliers déflecteurs de base de missiles.
+
+PLANETSHIELD_2_NAME    | Boucliers Planétaires Classe XV
+PLANETSHIELD_2_DETAIL  | Absorbe 15 points de dégâts de toutes les attaques contre les surfaces des planètes, ajoutant aux boucliers déflecteurs de base de missiles.
+
+PLANETSHIELD_3_NAME    | Boucliers Planétaires Classe XX
+PLANETSHIELD_3_DETAIL  | Absorbe 20 points de dégâts de toutes les attaques contre les surfaces des planètes, ajoutant aux boucliers déflecteurs de base de missiles.
+
+
+//
+// Repulsor tech 
+//
+REPULSOR_0_NAME    | Faisceau repulseur
+REPULSOR_0_BRIEF   | Fait reculer les navires ennemis d'une case
+REPULSOR_0_DETAIL  | Repousse les navires ennemis à une case du navire défenseur. Cette arme spéciale a une portée d'une case.
+
+
+//
+// Reserve Fuel tech 
+//
+RSRVFUEL_0_NAME    | Réservoirs de carburant de réserve
+RSRVFUEL_0_BRIEF   | Étend la portée du vaisseau de %1 années-lumière
+RSRVFUEL_0_DETAIL  | Les réservoirs de carburant de réserve augmentent la portée d'un navire.
+
+
+//
+// Robotic Controls techs 
+//
+ROBOTCTRL_0_NAME     | Commandes robotiques améliorées III
+ROBOTCTRL_0_DETAIL   | Permet de faire fonctionner 3 usines par habitant. Le coût de remise en état pour la mise à niveau est la moitié du coût standard de chaque usine.
+
+ROBOTCTRL_1_NAME     | Commandes robotiques améliorées IV
+ROBOTCTRL_1_DETAIL   | Permet de faire fonctionner 4 usines par habitant. Le coût de remise en état pour la mise à niveau est le coût standard de chaque usine.
+
+ROBOTCTRL_2_NAME     | Commandes robotiques améliorées V
+ROBOTCTRL_2_DETAIL   | Permet de faire fonctionner 5 usines par habitant. Le coût de remise en état pour la mise à niveau est une fois et demie le coût standard de chaque usine.
+
+ROBOTCTRL_3_NAME     | Commandes robotiques améliorées VI
+ROBOTCTRL_3_DETAIL   | Permet de faire fonctionner 6 usines par habitant. Le coût de remise en état de la mise à niveau est le double du coût standard de chaque usine.
+
+ROBOTCTRL_4_NAME     | Commandes robotiques améliorées VII
+ROBOTCTRL_4_DETAIL   | Permet de faire fonctionner 7 usines par habitant. Le coût de remise en état de la mise à niveau est de 2,5 fois le coût standard de chaque usine.
+
+
+//
+// Scanner techs 
+//
+SCANNER_0_NAME       | Scanner de combat
+SCANNER_0_BRIEF      | Scanne les navires ennemis au combat
+SCANNER_0_DETAIL     | Révèle les spécifications techniques des vaisseaux spatiaux ennemis au combat.
+
+SCANNER_1_NAME       | Scanner de l'espace lointain
+SCANNER_1_BRIEF      | Détecte les navires jusqu'à 5 années-lumière
+SCANNER_1_DETAIL     | Détecte les navires ennemis jusqu'à 5 années-lumière de vos colonies et 1 année-lumière de vos navires.
+
+SCANNER_2_NAME       | Scanner spatial amélioré
+SCANNER_2_BRIEF      | Détecte les navires et les destinations jusqu'à 7 années-lumière
+SCANNER_2_DETAIL     | Détecte les navires ennemis jusqu'à 7 années-lumière de vos colonies et 2 années-lumière de vos navires. Les destinations ennemies peuvent être déterminées.
+
+SCANNER_3_NAME       | Scanner spatial avancé
+SCANNER_3_BRIEF      | Permet l'exploration de planètes jusqu'à 9 années-lumière
+SCANNER_3_DETAIL     | Permet l'exploration de planètes à partir de bases de colonies jusqu'à 9 années-lumière et détecte les navires ennemis jusqu'à 3 années-lumière de vos navires. 
+
+
+//
+// Ship Inertial techs 
+//
+SHIPINERTIAL_0_NAME     | Stabilisateur inertiel
+SHIPINERTIAL_0_BRIEF    | Ajoute +2 à la maniabilité
+SHIPINERTIAL_0_DETAIL   | Réduit l'inertie des navires, ajoutant 2 Classes de maniabilité au combat (+2 défense et +1 Vitesse de combat).
+
+SHIPINERTIAL_1_NAME     | Annulateur inertiel
+SHIPINERTIAL_1_BRIEF    | Ajoute +4 à la maniabilité
+SHIPINERTIAL_1_DETAIL   | Annule l'inertie des navires, ajoutant 4 classes de maniabilité au combat. Réduit également l'effet des attaques de Trou Noir de -30%.
+
+
+//
+// Ship Inertial techs 
+//
+SHIPNULLIFIER_0_NAME     | Annulateur de technologie
+SHIPNULLIFIER_0_BRIEF    | Détruit les ordinateurs ennemis
+SHIPNULLIFIER_0_DETAIL   | Brouille les ordinateurs de combat et l'ECM ennemis, les réduisant de 2 à 6 niveaux par attaque. Sa portée dépasse la plupart des armes des navires.
+
+SHIPNULLIFIER_1_NAME     | Dissipateur de distorsion
+SHIPNULLIFIER_1_BRIEF    | Réduit la vitesse des navires ennemis
+SHIPNULLIFIER_1_DETAIL   | Les dissipateurs de distorsion sont des armes à longue portée qui perturbent les moteurs des vaisseaux ennemis, réduisant leur vitesse à chaque attaque.
+
+
+//
+// Ship Weapon techs 
+//
+SHIPWPN_0_NAME         | Laser
+SHIPWPN_0_ITEM2        | Laser lourd
+SHIPWPN_0_DETAIL       | Arme à faisceau à tir direct qui inflige 1 à 4 points de dégâts.Les lasers lourds ont une portée de deux espaces et infligent 1 à 7 points de dégâts.
+
+SHIPWPN_1_NAME         | Laser Gatling
+SHIPWPN_1_BRIEF        | Tire 4 fois/tour
+SHIPWPN_1_DETAIL       | Un laser avancé qui tire jusqu'à quatre fois par tour et inflige 1 à 4 points de dégâts à chaque coup.
+
+SHIPWPN_2_NAME         | Pistolet à plombs à neutrons
+SHIPWPN_2_BRIEF        | Réduit de moitié la force du bouclier
+SHIPWPN_2_DETAIL       | Arme à flux de particules lourdes qui réduit de moitié l'efficacité des boucliers déflecteurs ennemis et inflige 2 à 5 points de dégâts.
+
+SHIPWPN_3_NAME         | Canon à ions
+SHIPWPN_3_ITEM2        | Canon à ions lourds
+SHIPWPN_3_DETAIL       | Armes à faisceau de haute intensité capables d'infliger 3 à 8 points de dégâts. Les canons à ions lourds frappent pendant 3 à 15 et ont une portée de deux espaces.
+
+SHIPWPN_4_NAME         | Conducteur de masse
+SHIPWPN_4_BRIEF        | Réduit de moitié la force du bouclier
+SHIPWPN_4_DETAIL       | Un accélérateur linéaire qui divise par deux l'efficacité des boucliers déflecteurs ennemis et inflige 5 à 8 points de dégâts.
+
+SHIPWPN_5_NAME         | Blaster à neutrons
+SHIPWPN_5_ITEM2        | Blaster lourd à neutrons
+SHIPWPN_5_DETAIL       | Armes à faisceau puissant capables d'infliger 3 à 12 points de dégâts. Les blasters à neutrons lourds frappent de 3 à 24 points et ont une portée de 2 espaces.
+
+SHIPWPN_6_NAME         | Faisceau gravitonnel
+SHIPWPN_6_BRIEF        | Attaque en continu
+SHIPWPN_6_DETAIL       | Faisceau tracteur-répulseur capable de réduire les navires en pièces. Il frappe pour 1 à 15 points de dégâts, et l'effet de flux continu permet aux dégâts excédentaires de se propager à d'autres navires.
+
+SHIPWPN_7_NAME         | Faisceau dur
+SHIPWPN_7_BRIEF        | Réduit de moitié la force du bouclier
+SHIPWPN_7_DETAIL       | Une arme à faisceau énergétique-matière qui réduit de moitié l'efficacité des boucliers déflecteurs ennemis et inflige 8 à 12 points de dégâts.
+
+SHIPWPN_8_NAME         | Faisceau de fusion
+SHIPWPN_8_ITEM2        | Faisceau de fusion lourd
+SHIPWPN_8_DETAIL       | Arme à faisceau de haute intensité capable de faire 4 à 16 points de dégâts. Les faisceaux de fusion lourds frappent de 4 à 30 points et ont une portée de 2 espaces.
+
+SHIPWPN_9_NAME         | Canon mégaéclair
+SHIPWPN_9_BRIEF        | +3 niveaux à toucher.
+SHIPWPN_9_DETAIL       | Libère plusieurs éclairs d'énergie pure dans un large champ. Il a +30% de chances supplémentaires de toucher et inflige 2 à 20 points de dégâts.
+
+SHIPWPN_10_NAME        | Phaseur
+SHIPWPN_10_ITEM2       | Phaseur lourd
+SHIPWPN_10_DETAIL      | Rayons à énergie phasée capables d'infliger 5 à 20 points de dégâts. Les phaseurs lourds infligent 5 à 40 points de dégâts et ont une portée de deux cases.
+
+SHIPWPN_11_NAME        | Blaster automatique
+SHIPWPN_11_BRIEF       | Tire 3 fois/tour
+SHIPWPN_11_DETAIL      | Un blaster à neutrons avancé qui tire jusqu'à trois fois par tour pour 4 à 16 points de dégâts par coup.
+
+SHIPWPN_12_NAME        | Faisceau Tachyon
+SHIPWPN_12_BRIEF       | Attaque en continu
+SHIPWPN_12_DETAIL      | Tire un flux intense de particules de tachyons qui frappent les navires ennemis pendant 1 à 25 coups. L'effet de flux continu permet aux dommages excédentaires de se propager à d'autres navires.
+
+SHIPWPN_13_NAME        | Canon automatique Gauss
+SHIPWPN_13_BRIEF       | 1/2 Boucliers, tire 4x
+SHIPWPN_13_DETAIL      | Un accélérateur linéaire avancé capable de tirer 4 obus explosifs par tour qui infligent 7 à 10 points de dégâts chacun. Ces cartouches de projectiles réduisent également de moitié l'efficacité des boucliers ennemis.
+
+SHIPWPN_14_NAME        | Faisceau de particules
+SHIPWPN_14_BRIEF       | Réduit de moitié la force du bouclier
+SHIPWPN_14_DETAIL      | Accélérateurs de particules à haute intensité capables de frapper les navires ennemis pour 10 à 20 points de dégâts et de réduire de moitié l'efficacité des boucliers déflecteurs.
+
+SHIPWPN_15_NAME        | Canon à plasma
+SHIPWPN_15_DETAIL      | Tire des éclairs d'énergie intenses qui infligent 6 à 30 points de dégâts à une distance de 1.
+
+SHIPWPN_16_NAME        | Rayon de la mort
+SHIPWPN_16_DETAIL      | Une arme ancienne d'une puissance incroyablement destructrice qui inflige 200 à 1000 points de dégâts et a une portée d'un espace.
+
+SHIPWPN_17_NAME        | Disrupteur
+SHIPWPN_17_DETAIL      | Libère d'énormes éclairs d'énergie pure qui peuvent frapper des cibles ennemies jusqu'à deux espaces et leur infliger 10 à 40 points de dégâts.
+
+SHIPWPN_18_NAME        | Phaseur d'impulsion
+SHIPWPN_18_BRIEF       | Tire 3 fois/tour
+SHIPWPN_18_DETAIL      | Un phaseur avancé capable de tirer 3 rafales par tour pour 5 à 20 points de dégâts à chaque coup.
+
+SHIPWPN_19_NAME        | Canon à plasma tri-focus
+SHIPWPN_19_DETAIL      | Tire une triade de faisceaux de plasma à haute intensité capables d'infliger 20 à 50 points de dégâts.
+
+SHIPWPN_20_NAME        | Convertisseur stellaire
+SHIPWPN_20_BRIEF       | Frappe les quatre boucliers
+SHIPWPN_20_DETAIL      | Entoure la cible d'un champ de conversion matière-énergie extrêmement puissant, infligeant quatre attaques de 10 à 35 points. Il dispose d'une portée de 3 espaces.
+
+SHIPWPN_21_NAME        | Appareil mutilateur
+SHIPWPN_21_DETAIL      | Libère d'énormes quantités d'énergie concentrée sur les cibles ennemies, infligeant 20 à 100 points de dégâts.
+
+SHIPWPN_22_NAME        | Le flux amibe
+SHIPWPN_22_DETAIL      | Un flux qui fait 250-1000 points de dégâts et a une portée de 3 cases. Son effet de flux continu lui permet de transporter les dégâts d'un navire à l'autre.
+
+SHIPWPN_23_NAME        | Le rayon de cristal
+SHIPWPN_23_DETAIL      | Un rayon qui entoure les boucliers d'une cible, délivrant 4 attaques pour 100-300 points de dégâts chacune. Il dispose d'une portée de 3 espaces.
+
+//
+// Soil Enrichment techs
+//
+SOILENRICH_0_NAME     | Enrichissement du sol
+SOILENRICH_0_DETAIL   | Convertit les planètes standard en environnements fertiles, augmentant la croissance démographique de 50 % et augmentant la taille planétaire de base de + 25 % pour un coût unique de 150 BC.
+
+SOILENRICH_1_NAME     | Enrichissement avancé du sol
+SOILENRICH_1_DETAIL   | Convertit les planètes standard et fertiles en gaias, doublant la croissance démographique et augmentant la taille de base de la planète de + 50 % pour un coût unique de 300 Bc.
+
+
+//
+// Stargate tech
+//
+STARGATE_0_NAME      | Portes des étoiles intergalactiques
+STARGATE_0_DETAIL    | Permet à vos vaisseaux de se déplacer entre deux planètes équipées de portes stellaires en un seul tour. Coût 3000 BC à construire.
+
+
+//
+// Stasis Field tech
+//
+STASIS_0_NAME      | Champ de stase
+STASIS_0_BRIEF     | Ennemi figé pendant 1 tour
+STASIS_0_DETAIL    | Fige un groupe de navires ennemis, jusqu'à une case de distance, pendant un tour. Les navires figés ne peuvent ni attaquer ni être attaqués.
+
+
+//
+// Stream Weapon techs
+//
+STREAMWPN_0_NAME    | Projecteur de flux ionique
+STREAMWPN_0_BRIEF   | Réduit l'armure ennemie de 20%
+STREAMWPN_0_DETAIL  | Tire une explosion ionique intense, réduisant l'armure de chaque cible du groupe adverse de 20 % plus 1 % pour 2 vaisseaux qui tirent, jusqu'à un maximum de 50 % de ses points de vie de départ par attaque.
+
+STREAMWPN_1_NAME    | Projecteur de flux de neutrons
+STREAMWPN_1_BRIEF   | Réduit l'armure ennemie de 40%
+STREAMWPN_1_DETAIL  | Tire une explosion de neutrinos concentrés, réduisant l'armure de chaque cible du groupe adverse de 40 % plus 1 % par navire qui tire, jusqu'à un maximum de 75 % de ses points de vie par attaque.
+
+
+//
+// Subspace Interdictor tech
+//
+SUBSPACEINT_0_NAME    | Interdicteur sub-spatial
+SUBSPACEINT_0_DETAIL  | Empêche l'utilisation de téléporteurs subspatiaux ennemis et de transporteurs de combat. L'appareil est automatiquement ajouté aux bases de missiles.
+
+//
+// Subspace Teleporter tech
+//
+SUBSPACETEL_0_NAME    | Téléporteur subspatial
+SUBSPACETEL_0_BRIEF   | Téléporte le vaisseau au combat
+SUBSPACETEL_0_DETAIL  | Téléporte les vaisseaux dans n'importe quel espace de la carte de combat et avant de déterminer normalement l'initiative de combat.
+
+
+//
+// Ship Torpedo Weapon techs
+//
+TORPEDO_0_NAME        | Torpilles anti-matière
+TORPEDO_0_BRIEF       | Tire un tous les 2 tours
+TORPEDO_0_DETAIL      | Des torpilles de poursuite à haute énergie qui infligent 30 points de dégâts mais ne peuvent être tirées qu'un tour sur deux. Chaque torpille est équipée d'un ordinateur de ciblage de niveau +4.
+
+TORPEDO_1_NAME        | Torpilles feu de l'enfer
+TORPEDO_1_BRIEF       | Touche les quatre boucliers
+TORPEDO_1_DETAIL      | Torpilles à énergie enveloppante qui frappent simultanément tous les boucliers. Ils se déplacent à vitesse 5, sont guidés par un ordinateur de ciblage de niveau +6, infligeant des dégâts égaux à quatre attaques de 25 points.
+
+TORPEDO_2_NAME        | Torpilles à protons
+TORPEDO_2_BRIEF       | Tire un tous les 2 tours
+TORPEDO_2_DETAIL      | Torpilles énergétiques à haut rendement qui infligent 75 points de dégâts mais ne peuvent être tirées qu'un tour sur deux. Chaque torpille est équipée d'un ordinateur de ciblage de niveau +6.
+
+TORPEDO_3_NAME        | Torpilles à plasma
+TORPEDO_3_BRIEF       | Perd 15 dégâts/hex
+TORPEDO_3_DETAIL      | Torpilles à énergie pure qui infligent 150 points de dégâts et se déplacent à la vitesse 6, mais perdent 15 dégâts par case parcourue. Le lanceur tire un tour sur deux et dispose d'un ordinateur de guidage +7.
+

@@ -1,0 +1,21 @@
+// all possible names
+name: Ssslaurien, Reptarien, Saurien, Raptorien, Tyrannien
+
+desc1: Des Expansionnistes Agressifs
+desc2: Croissance démographique Accrue
+desc3: Les fanatiques du Conclave Ssslaurien s'efforcent de perfectionner les mondes qu'ils conquièrent.
+
+// possible home system names
+home: Sssla, Repta, Saur, Raptor, Tyrann
+
+title:     Magister
+fulltitle: Premier Magister
+
+// possible leader names
+leader: Guanar, Hissa, Kryssta, Saurak, Sauron, Tyranid
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Gecko, Caméléon, Lézard, Iguane, Scinque, Anole, Queue de Fouet
+ship2: Tégu, Moniteur, Caïman, Alligator, Crocodile, Gharial, Basilic
+ship3: Dinosaure, Raptor, Ptérodactyle, Théropode, Ceratops, Prédateur, Plésiosaure
+ship4: Titan, Colosse, Dragon, Godzilla, Kraken, Gorgone, Tyrannosaure

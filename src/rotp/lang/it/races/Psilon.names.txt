@@ -1,9 +1,10 @@
 // all possible names
-name: Psilon, Mentalon, Psychon, Cerebron, Neuralon
+name: Mentarani, Mentaloni, Psychoni, Cerebroni, Neuraloni
 
 desc1: Tecnologi Pacifisti
 desc2: Tecniche di Ricerca Superiori
-desc3: La Repubblica Psilon cerca la convivenza pacifica e illuminata con le altre razze.
+desc3: La Repubblica Mentarani cerca la convivenza pacifica e illuminata con le altre razze.
+
 // possible home system names
 home: Mentar, Cogitar, Psilar, Metrica, Neura
 

@@ -5,13 +5,16 @@
 ##   3 - "Y" if this is a right-to-left language
 ##   4 - global font size multiplier (100=normal size)
 ##   5 - "Y" if this is a logographic language (affects word wrapping)
+##   6 - optional, character replacements for the digits 0-9 (supports Bengali)
 ##
 
 
 en,  English          ,  ,   , 
 bg,  българин         ,  ,   , 
+#bn,  বাংলা            ,  ,   ,  , ০১২৩৪৫৬৭৮৯
 de,  Deutsch          ,  ,   , 
 el,  Ελληνικά         ,  ,   , 
+fr,  Français         ,  ,   ,  , 
 id,  Indonesia        ,  ,   , 
 it,  Italiana         ,  ,   ,
 pl,  Polski           ,  ,   , 
@@ -30,7 +33,6 @@ zh2, 繁體中文          ,  ,   , Y
 //bn,     , বাংলা     , 
 //es,     , Español    ,
 //fi,     , Suomen kieli,
-//fr,     , Français   ,
 //he,     , עִברִית ,
 //hi,     , हिन्दी              ,
 //hu,     , Magyar     ,

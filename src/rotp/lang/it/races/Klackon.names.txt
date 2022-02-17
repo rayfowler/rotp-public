@@ -1,9 +1,9 @@
 // all possible names
-name: Klackon, Klackant, Klockan, Arthropon, Coleopteron
+name: Koldaniani, Klackantiani, Klockaniani, Artroponiani, Coleopteroniani
 
 desc1: Industriali Xenofobi
 desc2: Mente Alveare e Aumento della Produzione dei Lavoratori
-desc3: Una specie con un'unica mente controllante, gli industriosi Klackoniani sono imperscrutabili per gli estranei.
+desc3: Una specie con un'unica mente controllante, gli industriosi Koldaniani sono imperscrutabili per gli estranei.
 
 // possible home system names
 home: Kholdan, Kholdant, Khaldon, Klokdon, Khakdon

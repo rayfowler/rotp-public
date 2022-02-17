@@ -1,0 +1,94 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Alkari specific dialogue
+
+CONTACT_HONORABLE          | Salut à vous, ô [your_nameTitle] [your_name] [your_empireof]! Nous [my_empireof] vous adressons des salutations cordiales et attendons avec impatience des relations honorables avec votre espèce. 
+CONTACT_PACIFIST           | Salutations les plus sincères à vous, [your_title] [your_empireof]. N'amenez pas la guerre aux portes de notre Souveraineté, et nous prospérerons tous les deux dans l'amitié l'un de l'autre. 
+CONTACT_ERRATIC            | Je suis un ambassadeur du longtemps vécu [my_empire]. Mon peuple salue comme c'est notre coutume. Votre espèce est connue comme [your_race_pluralnoun]? Comme c'est très... intriguant.
+
+//
+GREETING_01                | Salut à vous, ambassadeur ! Quel service la Souveraineté pourrait-elle rendre à un allié aussi vénéré en ce jour ?
+GREETING_04                | Je vous salue, ambassadeur. La Souveraineté est prête à écouter votre demande, mais jusqu'où nous irons pour y répondre reste à voir...
+GREETING_07                | Parlez vite, ambassadeur ! Nos lois nous obligent à observer tout le décorum approprié, mais cela ne signifie pas que nous perdrons notre temps à répondre à vos demandes insignifiantes !
+
+//
+DECLAREWAR_HATE_01         | Une race comme la vôtre, qui n'a aucun souci de bienséance et de politesse, n'appartient pas à une galaxie gouvernée par la Souveraineté, ambassadeur ! Préparez-vous au combat !
+DECLAREWAR_HATE_02         | Votre grossièreté et votre arrogance ont provoqué cela ! Envoyez ce message à votre [your_title] : la guerre est maintenant à vos portes !
+DECLAREWAR_HATE_03         | Quelle vulgarité ! [my_empire] préférerait cesser d'exister plutôt que de continuer à partager le cosmos avec un peuple aussi grossier, ambassadeur !
+//
+DECLAREWAR_ERRATIC_01      | Monsieur l'Ambassadeur, nous ne pouvons nier qu'il a été agréable de traiter avec une race aussi intrigante que la vôtre. Nous regrettons que ces transactions doivent maintenant prendre fin.
+DECLAREWAR_ERRATIC_02      | Vous avez continué à nous amuser depuis que nos gens se sont rencontrés pour la première fois. La Souveraineté a hâte de voir si vous vous montrerez tout aussi amusant en temps de guerre, ambassadeur !
+DECLAREWAR_ERRATIC_03      | Salut à vous, ambassadeur [your_empireof]! [my_empire] veut s'éprouver dans un combat honorable contre votre force considérable. Préparez vos flottes et votre peuple à la guerre !
+//
+DECLAREWAR_MILITARY_01     | La Souveraineté doit continuer à agrandir son territoire pour subvenir aux besoins de nos troupeaux. Lorsque nous ne pouvons pas trouver de mondes inhabités, nous prenons les mondes d'empires inférieurs. Votre empire est inférieur au nôtre, et vos mondes deviendront donc désormais les nôtres.
+DECLAREWAR_MILITARY_02     | Le moment est enfin venu, ambassadeur ! D'une aile, la Souveraineté étendra l'ombre de la guerre au-dessus de vous, et de l'autre elle emportera vos mondes dans son giron.
+DECLAREWAR_MILITARY_03     | C'est... regrettable que les choses en soient arrivées là, ambassadeur. Nous devons atteindre vos planètes pour notre propre usage ou périr dans la tentative. Nous n'avons pas le choix, préparez-vous à la guerre !
+//
+DECLAREWAR_ALLIANCE_01     | Des diplomates [other_empireof] nous ont informés qu'ils sont en guerre avec votre peuple. [my_empire] est tenu par l'honneur d'assister nos alliés en temps de guerre : ce que vous regretterez bientôt, ambassadeur. 
+DECLAREWAR_ALLIANCE_02     | Notre allié appelle à l'aide, et la Souveraineté répond ! Votre fin est proche, ambassadeur : vous ne pouvez pas résister longtemps à nos flottes combinées !
+DECLAREWAR_ALLIANCE_03     | Cela nous vexe que vous ayez choisi de faire la guerre à l'un de nos alliés de cette façon. Par nos lois les plus sacrées, nous devons maintenant les aider dans la lutte contre vous ! S'il vous plaît, détournez-vous de ce chemin avant qu'il ne soit trop tard pour nous tous !
+//
+DECLAREWAR_SPYING_01       | Nous nous sommes contentés d'entretenir d'aimables relations avec votre peuple, ambassadeur. Que vous vous livriez à des actes aussi déshonorants contre la couronne nous a obligés à reconsidérer.
+DECLAREWAR_SPYING_02       | Un tel outrage ne restera pas impuni, ambassadeur ! Ceux qui agiraient en secret contre nous seront mis au pas sous notre colère !
+DECLAREWAR_SPYING_03       | Ambassadeur! Comment votre peuple ose-t-il commettre des actes aussi odieux contre la Souveraineté ?! Nous aurons justice pour cela à tout prix ! Préparez-vous à la guerre!
+//
+DECLAREWAR_ATTACK_01       | Hum! Une décision si téméraire, ambassadeur ! Mais si la guerre est ce que vous désirez, alors la guerre est ce que la Souveraineté vous apportera !
+DECLAREWAR_ATTACK_02       | Alors ça commence, ambassadeur ! Si le peuple [my_raceadjec] a pu survivre aux guerres sans fin du Millénium Cramoisi, nous survivrons facilement à une guerre contre les vôtres !
+DECLAREWAR_ATTACK_03       | On aurait dû s'attendre à ce genre de vulgarité de la part d'une race grossière comme la vôtre, ambassadeur ! Ne pensez pas que la Souveraineté se rendra à vous sans contestation !
+//
+DECLAREWAR_OPPORTUNITY_01  | Comme vous pouvez le voir, nous, [my_empireof], avons remporté beaucoup de succès dans nos entreprises spatiales. Malheureusement, ambassadeur, nos besoins imposent que notre prochain succès se fasse aux dépens de votre empire. 
+DECLAREWAR_ASSASSIN_01     | Quelle grossièreté est-ce? Vous voudriez commettre un acte aussi monstrueux que de tuer un ambassadeur de sang-froid ? La Souveraineté ne souffrira plus d'une race aussi détestable que la vôtre pour exister !
+
+
+OFFER_PEACE_01             | L'histoire du Millénium Cramoisi ne peut pas se répéter, ambassadeur ! Nous vous demandons de faire honneur à [your_race] et [my_race] signant ce traité de paix pour empêcher toute nouvelle effusion de sang !
+OFFER_TRADE_01             | Assurément, des races civilisées comme la nôtre sont capables de s'entraider dans une coopération honorable. [my_empire] souhaite un accord commercial avec [your_empire] fixé à [amt] BC, chaque année. Quelle est votre réponse, ambassadeur ?
+OFFER_PACT_01              | La Souveraineté est satisfaite de la manière dont votre peuple se présente dans les affaires diplomatiques. Pour montrer à quel point nous valorisons notre relation, nous souhaitons signer un pacte de non-agression, garantissant qu'aucun de nous ne soit la proie de... mal interpréter les intentions de l'autre.
+OFFER_ALLIANCE_01          | Vos actions vous ont valu beaucoup d'estime auprès de la Souveraineté, ambassadeur ! Le Roi Flèche a décrété qu'une alliance entre [your_race] et [my_race] doit être conclue immédiatement ! Nous n'attendons que votre signature !
+
+WARN_TRESPASSING_01        | Il est tout à fait inapproprié que les flottes [your__race_pluraladjecF] se promènent dans le système [system] comme s'il s'agissait de leur propre domaine. Il est dans l'intérêt de tous, ambassadeur, que vous rectifiiez cela immédiatement. 
+WARN_EXPANSION_01          | Se développer sans contrôle là où vous le souhaitez montre un grand manque de respect envers vos voisins, ambassadeur ! Je vous conseille fortement de ne plus continuer ce manque de respect envers la Souveraineté. 
+WARN_BUILDUP_01            | Pensez-vous que nous sommes aveugles, ambassadeur ?! Nous voyons vos flottes continuer à augmenter en taille et en force. Montrez-nous que vous ne voulez pas nuire en annulant cette accumulation, ou vous pourriez en effet gagner une réponse préventive !
+WARN_SKIRMISH_01           | Nous connaissons parfaitement de l'escarmouche de [system], ambassadeur ! La Souveraineté ignorera vos actions cette fois-ci. Pourquoi? Je ne vois aucune raison de répondre à une telle question de la part de personnes comme vous ! 
+WARN_ATTACKED_01           | Une attaque aussi audacieuse n'est due qu'à un manque total de respect, ambassadeur ! Vous avez de la chance en effet que le Spire King ne daigne pas réprimander votre insolence.Vous avez de la chance en effet que le Roi Flèche ne daigne pas réprimander votre insolence. Vous ne serez peut-être pas aussi chanceux la prochaine fois ! 
+WARN_INVADED_01            | Alors vous cherchez à prendre ce qui ne vous appartient pas, ambassadeur ?! Ne tentez plus notre courroux : nous serions volontiers débarrassés de cette planète sans valeur si cela signifiait être débarrassés de votre bêtise ! 
+WARN_ESPIONAGE_01          | Hmfhmfhmf, cela ne nous surprend pas qu'une race aussi calomnieuse ait recours à l'espionnage pour atteindre ses objectifs. Souvenez-vous, ambassadeur : les yeux [my_race_pluraladjec] sont si perçants que rien n'échappe à leur regard. [framed]
+WARN_SABOTAGE_01           | Absolument dégoûtant, ambassadeur ! Se faufiler dans les ténèbres et commettre des sabotages comme des démons dans la nuit !? Mais vous êtes aussi stupide que grossier : les bâtiments que vous avez détruits n'étaient pas assez importants pour justifier une réponse ! [forced]
+WARN_BIOWEAPON_01          | Honte! Déshonneur! Vous avez utilisé le type d'arme le plus inqualifiable contre ceux qui ne peuvent même pas lever un bouclier pour se protéger ! Votre infamie bien méritée vous suivra jusqu'au bout, ambassadeur ! 
+WARN_GENOCIDE_01           | Bien que je convienne que [victim_race_pluralnoun] étaient une misérable horde de vermine grossière, la Souveraineté s'oppose fermement à commettre un génocide. Nous nous demandons, ambassadeur, si votre peuple est capable de répéter ces actions avec des races plus... civilisées ?
+WARN_FINAL_WAR_01          | Il n'y a aucune vertu dans ce cours que vous avez choisi, ambassadeur. Ne vous y trompez pas : maintenant que vous avez décidé de vous opposer au chef dûment élu de la galaxie, nous sommes tenus par l'honneur de faire tout notre possible pour vous arrêter ! 
+WARN_COUNCIL_VOTE_01       | Voilà pour l'illustre ambassadeur [your_empireof]! Croyez-vous vraiment que nous n'apprendrons pas votre tromperie en conseil ? Vous devriez craindre pour votre peuple, ambassadeur : le Roi Flèche sera très mécontent. 
+WARN_OATHBREAKER_01        | Quel scandale ! Vous connaissez l'estime que nous accordons à l'honneur, et pourtant vous rompez si ouvertement votre parole simplement pour satisfaire vos propres désirs ?! La Souveraineté se souviendra de cette insulte pour toujours, ambassadeur, et la remboursera sûrement de la même façon ! [spiesCaught]
+WARN_ATTACKED_ALLY_01      | C'est gênant, ambassadeur, que votre peuple et [defender_empire] aient choisi de se chamailler ainsi. Vous ne pouvez pas espérer égaler notre puissance combinée, ambassadeur : la Souveraineté vous exhorte à reconsidérer vos actions.
+WARN_REBELLING_AGAINST_01  | Pensiez-vous que nous avions oublié à quel point vous vous êtes avéré être déshonorant ? Peu importe que nous devions vous battre contre vous ou contre toute la galaxie : vous ne resterez jamais assis sur le trône du conseil tant que le Roi Flèche vivra ! 
+ 
+PRAISE_COUNCIL_VOTE_01     | Le estimé et vénérable ambassadeur [your_empireof]! Nous sommes endettés pour les services que vous nous avez rendus lors de cette réunion du conseil, et nous sommes impatients de régler cette dette chaque fois que vous déciderez de la meilleure façon de le faire. 
+PRAISE_COUNCIL_VOTE_02     | Salutations à vous, ambassadeur. Vous nous honorez d'une voix qui parle en faveur de notre cause devant ceux qui sont réunis ici. Je suis certain que le Roi Flèche voudra en savoir plus sur un peuple aussi honorable dès que je lui ferai mon rapport. 
+PRAISE_COUNCIL_VOTE_03     | Hmfhmfhmf, vous ne vous attendez sûrement pas à ce que nous croyions que vous vous êtes rangé du côté de la Souveraineté par respect ou par sens de l'honneur, ambassadeur ? Pourtant, peut-être continuerez-vous à faire vos preuves si seulement nous vous donnions une autre chance de le faire ? 
+
+PRAISE_ATTACKED_ENEMY_01   | Ah! Notre estimé ami et allié apporte de bonnes nouvelles en cette période de guerre ! Venez ambassadeur : que notre peuple se batte contre ces horribles [defender_race_pluraladjec] ensemble en tant que compagnons d'armes ! 
+PRAISE_ATTACKED_ENEMY_02   | Cette guerre sera finie rapidement, ambassadeur. Même seule, la souveraineté dominerait facilement ces bêtes [defender_race_pluraladjec] vulgaires. Mais ensemble ? Ensemble, nous effacerons à jamais la tache de leur race de la galaxie ! 
+PRAISE_ATTACKED_ENEMY_03   | Je suis aussi certain que vous agissez par opportunité que je suis certain que vous ne connaissez pas le sens du mot « honneur » ! Nous vous permettons de nous aider contre les [defender_race_pluraladjec], ne serait-ce que pour nous empêcher de faire autant de victimes que possible ! 
+
+PRAISE_TRADE_01            | Cela me soulage plus que vous ne le pensez, ambassadeur, que vos gens mènent leurs affaires si honorablement. La Souveraineté vous honore, vous et votre peuple, et appréciera encore plus notre amitié que notre accord commercial continu ! 
+PRAISE_TRADE_02            | Il y a plusieurs façons de prouver son honneur, ambassadeur. Mener des affaires de manière équitable et de bonne foi est l'un des meilleurs moyens de le faire, et la Souveraineté accorde une grande importance à ceux que nous rencontrons qui le font dans cette galaxie. 
+
+PRAISE_REBELLING_WITH_01   | Ces brutes du conseil nous sous-estiment, ambassadeur ! Ensemble, nous allons leur montrer ce que signifie vraiment le terme « faute fatale » ! 
+
+ACCEPT_TRADE_01            | La Souveraineté est toujours heureuse de traiter avec [your_empire]. Un montant annuel de [amt] BC est tout à fait agréable, merci.
+RESPOND_IGNORE_THREAT_01   | Vous osez essayer de provoquer [my_empire]? Emportez vos plaisanteries risibles ailleurs avant qu'elles cessent d'être amusantes.
+RESPOND_STOP_SPYING_01     | Vos yeux semblent aussi aiguisés que les nôtres lorsqu'il s'agit de trouver des espions. Considérez nos efforts de subterfuge comme terminés.
+RESPOND_STOP_ATTACKING_01  | Maintenant, voyez-vous la puissance de notre souveraineté ? Tant que vous n'oubliez pas notre puissance, nous ne vous dérangerons plus avec ces flottes.
+
+ 

@@ -53,7 +53,7 @@ DECLAREWAR_ASSASSIN_01     | What have you done?! I knew your kind couldn't be t
 OFFER_PEACE_01             | Those poor planets! We just can't bear to see them scarred any longer by this stupid war! Let's put an end to the fighting now, ambassador, and begin to heal these worlds we've done so wrong by!  
 OFFER_TRADE_01             | Wow, there're so many complex environments on all these worlds! We'd like to make our economy more robust to fund all these projects, and trading with you would be a big help! [amt] BC each year is fine, right? 
 OFFER_PACT_01              | You seem to take care of your planets well enough, and wars do such ugly things to the worlds they're fought upon. Would you like a non-aggression pact with us? That way none of our beautiful ecosystems will have anything to fear! 
-OFFER_ALLIANCE_01          | Wow, I'm impressed! The way you care for your planets, it's almost like you're Ssaakra yourself! Make an alliance with us, ambassador! We'll protect each other's worlds together: no one will threaten us so long as we stand as one! 
+OFFER_ALLIANCE_01          | Wow, I'm impressed! The way you care for your planets, it's almost like you're [my_race] yourself! Make an alliance with us, ambassador! We'll protect each other's worlds together: no one will threaten us so long as we stand as one! 
  
 WARN_TRESPASSING_01        | Hey! Hey! Hey! [system] is under the protection of the Conclave! You don't belong here, you know? Get out! Now! What're you waiting for? Go! 
 WARN_EXPANSION_01          | You take for yourself way more than you should, ambassador! You're not advanced enough to care for each of these worlds, and we're not about to let you waste all these ecological puzzles! Slow your expansion, or else!

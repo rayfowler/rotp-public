@@ -1,9 +1,9 @@
 // all possible names
-name: Alkari, Aviari, Cluckari, Fedari, Faulari
+name: Altairiani, Aviariani, Cluckariani, Fedariani, Faulariani
 
 desc1: Militaristi Onorevoli
 desc2: Piloti Superiori
-desc3: La Sovranità Alkariana è una società guerriera organizzata che premia l'onore in battaglia.
+desc3: La Sovranità Altairiana è una società guerriera organizzata che premia l'onore in battaglia.
 
 // possible home system names
 home: Altair, Eigher, Aviar, Voliera, Nido

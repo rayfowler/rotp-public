@@ -1,9 +1,9 @@
-// all possible names
-name: Meklar, Mechanar, Cybernar, Digitar, Technar
+s// all possible names
+name: Meklonariani, Mechanariani, Cybernariani, Digitariani, Technariani
 
 desc1: Industriali Erratici
 desc2: Controlli di Fabbrica Avanzati
-desc3: I cittadini del Dominio Meklariano cercano la perfezione e l'immortalità attraverso la tecnologia.
+desc3: I cittadini del Dominio Meklonariano cercano la perfezione e l'immortalità attraverso la tecnologia.
 
 // possible home system names
 home: Meklon, Collosson, Calculon, Bender, Optimus

@@ -1,9 +1,9 @@
 // all possible names
-name: Alkari, Avesi, Perigrini, Fjäderling, Psittacini
+name: Altairi, Avesi, Perigrini, Fjäderling, Psittacini
 
 desc1: Hedervärdiga Militarister
 desc2: Skickliga Piloter
-desc3: Alkari Överhet är ett feodaliskt krigar-samhälle som värdesätter ära i strid.
+desc3: Altairi Överhet är ett feodaliskt krigar-samhälle som värdesätter ära i strid.
 
 // possible home system names
 home: Altair, Aegir, Avetar, Volary, Psittar

@@ -3,7 +3,7 @@ name: Ursinathi, Bearathi, Burlathi, Pawrathi, Grizzlathi
 
 desc1: Aggressive Ecologists
 desc2: Terrific Ground Fighters
-desc3: The fiercely loyal [race] value both strength and wisdom in their philosopher-king.
+desc3: The fiercely loyal Ursinathi value both strength and wisdom in their philosopher-king.
 
 // possible home system names
 home: Ursa, Canis, Grizzla, Pandara, Bruin

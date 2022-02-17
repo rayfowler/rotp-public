@@ -39,6 +39,8 @@ public class LanguageManager implements Base {
     private static final String languageFile = "languages.txt";
     private static final List<Language> languages = new ArrayList<>();
     private static int selectedLanguage = LanguageManager.DEFAULT_LANGUAGE;
+    public static final char[] latinDigits = { '0','1','2','3','4','5','6','7','8','9' };
+    public static char[] customDigits = null;
 
     public static void selectDefaultLanguage() { instance.selectLanguage(LanguageManager.DEFAULT_LANGUAGE); }
     public static int selectedLanguage()        { return selectedLanguage; }
@@ -137,6 +139,8 @@ public class LanguageManager implements Base {
 
         // now overwrite those with labels for the selected language
         selectedLanguage(i);
+        
+        customDigits = newLang.digits;
 
         //if (i != DEFAULT_LANGUAGE) {
             String currDir = baseDir+newLang.directory+"/";
@@ -166,7 +170,7 @@ public class LanguageManager implements Base {
                     if (langName != null) {
                         FontManager.current().loadLanguageFonts(baseDir, langCode);
                         if (language == null) 
-                            languages.add(new Language(langCode, "", langName, "", "", false));
+                            languages.add(new Language(langCode, "", langName, "", "", false,null));
                         else 
                             language.name = langName;
                     }
@@ -233,10 +237,11 @@ public class LanguageManager implements Base {
         String orientString = strings.get(2);
         String fontString = strings.get(3);
         String logoString = strings.get(4);
+        char[] digitsString = strings.size() > 5 ? strings.get(5).toCharArray() : null;
          
         boolean logo = logoString.equalsIgnoreCase("Y");
 
-        languages.add(new Language(dirString, subdirString, nameString, orientString, fontString, logo));
+        languages.add(new Language(dirString, subdirString, nameString, orientString, fontString, logo, digitsString));
         // load fonts for selected lanage
         FontManager.current().loadLanguageFonts(baseDir, dirString);
     }
@@ -248,13 +253,15 @@ public class LanguageManager implements Base {
         boolean logographic = false;
         String name;
         String font;
-        public Language(String dir, String sub, String n, String o, String f, boolean logo) {
+        char[] digits;
+        public Language(String dir, String sub, String n, String o, String f, boolean logo, char[] d) {
             directory = dir;
             subdirectory = sub;
             name = n;
             font = f;
             logographic = logo;
             locale = new Locale(dir);
+            digits = d;
             if (o.trim().equalsIgnoreCase("RT"))
                 orientation = ComponentOrientation.RIGHT_TO_LEFT;
             else

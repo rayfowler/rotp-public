@@ -3,7 +3,7 @@ name: Mentaran, Mentalon, Psychon, Cerebron, Neuralon
 
 desc1: Pacifist Technologists
 desc2: Superior Research Techniques
-desc3: The [race] Republic seeks peaceful and enlightened coexistence with other races.
+desc3: The Mentaran Republic seeks peaceful and enlightened coexistence with other races.
 
 // possible home system names
 home: Mentar, Cogitar, Psilar, Metrica, Neura

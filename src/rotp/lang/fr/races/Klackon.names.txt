@@ -1,0 +1,21 @@
+// all possible names
+name: Kholdanien, Klackantien, Klockanien, Arthroponien, Coleopteronien
+
+desc1: Des Industriels Xénophobes
+desc2: De l'esprit de ruche et augmentation de la production de travailleurs
+desc3: Une espèce avec un seul esprit de contrôle, les Kholdaniens industrieuses sont impénétrables pour les étrangers.
+
+// possible home system names
+home: Kholdan, Klackant, Klockan, Arthropon, Coleopteron
+
+title:     Le
+fulltitle: Le
+
+// possible leader names
+leader: Ixitixl, Kaxal, Kikitik, Klaquan, K'kalak, Xantak
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Bourdon, Aiguille, Mante, Coléoptère, Drone, Araignée, Mandibule
+ship2: Frelon, Poison, Venin, Libellule, Dard, Scarabée, Guêpe
+ship3: Tarentule, Vipère, Cobra, Aspic, Serpent, Mamba, Scorpion
+ship4: Cobra Royal, Veuve Noire, Death Wyn, Crotale, Naga, Vipère Noire, Mamba Noir

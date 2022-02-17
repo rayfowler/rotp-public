@@ -1,9 +1,9 @@
 // all possible names
-name: Bulrati, Bearati, Ursinati, Porati, Grizzlati
+name: Ursinatiani, Bearatiani, Bulratiani, Poratiani, Grizzlatiani
 
 desc1: Ecologisti Aggressivi
 desc2: Fantastici Combattenti a Terra
-desc3: I ferocemente leali Bulratiani apprezza sia la forza che la saggezza nel loro re-filosofo.
+desc3: I ferocemente leali Ursinatiani apprezza sia la forza che la saggezza nel loro re-filosofo.
 
 // possible home system names
 home: Ursa, Canis, Grizzla, Pandara, Bruin

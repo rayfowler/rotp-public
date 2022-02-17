@@ -272,13 +272,18 @@ public class SystemView implements IMappedObject, Base, Serializable {
         setOrbitingFleets();
     }
     public void refreshSpyScan() {
-        spyTime = galaxy().currentYear();
         setName();
         setEmpire();
         setColonyData();
+        spyTime = galaxy().currentYear();
     }
     public void setEmpire() {
+        // if the empire has changed, reset the spy time
+        Empire prevEmpire = vEmpire;
         vEmpire = system().empire();
+        if (vEmpire != prevEmpire)
+            spyTime = 0;
+        
         if (!owner().aggressiveWith(id(vEmpire)))
             clearHostility();
     }

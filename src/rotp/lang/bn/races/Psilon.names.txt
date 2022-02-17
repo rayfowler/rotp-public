@@ -1,0 +1,21 @@
+// all possible names
+name: Mentaran, Mentalon, Psychon, Cerebron, Neuralon
+
+desc1: Pacifist Technologists
+desc2: Superior Research Techniques
+desc3: The [race] Republic seeks peaceful and enlightened coexistence with other races.
+
+// possible home system names
+home: Mentar, Cogitar, Psilar, Metrica, Neura
+
+title:     Councilor
+fulltitle: High Councilor
+
+// possible leader names
+leader: Dynalon, Kelvan, Meson, Quark, Tachaon, Zygot
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Electron, Neutrino, Quark, Neutron, Proton, Atom, Molecule
+ship2: Sigma, Prime, Radius, Hypotenuse, Algebra, Tangent, Logarithm
+ship3: Parallax, Ellipse, Axis, Sine Wave, Fractal, Calculus, Derivation
+ship4: Sun Fire, Constellation, Nova, Quasar, Galaxy, Nebula, Corona

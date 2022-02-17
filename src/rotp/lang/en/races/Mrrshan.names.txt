@@ -3,7 +3,7 @@ name: Fiershan, Prrshan, Mewshan, Clawshan, Hisshan
 
 desc1: Ruthless Militarists
 desc2: Superior Gunners
-desc3: The [race] hordes seek battle trophies as they spread across the galaxy.
+desc3: The Fiershan hordes seek battle trophies as they spread across the galaxy.
 
 // possible home system names
 home: Fierias, Fierina, Miamara, Miriana, Yailaria

@@ -1,0 +1,22 @@
+// all possible names
+name: Nazlok, Sarlok, Spylok, Shadelok, Nazlok
+
+desc1: Des Diplomates Agressifs
+desc2: Des Espions Suprêmes
+desc3: Les Nazlokiennes sont des spectres contre nature et secrets, originaires d'une autre dimension  
+
+// possible home system names
+home: Nazin, Mordor, Hades, Abyssal, Hel
+
+title:     Empereur
+fulltitle: Empereur
+
+// possible leader names
+leader: Darquan, Morfane, Narzina, Nazgur, Shador, Ssithra
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Brouillard, Vapeur, Étincelle, Voile, Présage, Éther, Lueur
+ship2: Mirage, Ombre, Rêve, Illusion, Reflet, Vision, Hantise
+ship3: Fantôme, Spectre, Apparition, Nuance, Âme, Esprit, Poltergeist
+ship4: Cauchemar, Fantasme, Terreur, Horreur, Revenant, Faucheuse, Phobos
+

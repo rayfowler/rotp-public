@@ -26,6 +26,8 @@ import java.awt.Stroke;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
 import java.awt.geom.Rectangle2D;
 import java.util.List;
 import javax.swing.SwingUtilities;
@@ -62,7 +64,7 @@ public class UnexploredAlienSystemPanel extends SystemPanel {
     protected BasePanel detailPane() {
         return new DetailPane(this);
     }
-    private class DetailPane extends BasePanel implements MouseMotionListener, MouseListener {
+    private class DetailPane extends BasePanel implements MouseMotionListener, MouseListener, MouseWheelListener {
         private static final long serialVersionUID = 1L;
         SystemPanel parent;
         Shape textureClip;
@@ -78,6 +80,7 @@ public class UnexploredAlienSystemPanel extends SystemPanel {
         private void init() {
             setOpaque(true);
             addMouseMotionListener(this);
+            addMouseWheelListener(this);
             addMouseListener(this);
         }
         @Override
@@ -239,6 +242,17 @@ public class UnexploredAlienSystemPanel extends SystemPanel {
             if (hoverBox != null) {
                 hoverBox = null;
                 repaint();
+            }
+        }
+        @Override
+        public void mouseWheelMoved(MouseWheelEvent e) {
+            if (hoverBox == flagBox) {
+                StarSystem sys = parentSpritePanel.systemViewToDisplay();
+                if (e.getWheelRotation() < 0)
+                    player().sv.toggleFlagColor(sys.id, true);
+                else
+                    player().sv.toggleFlagColor(sys.id, false);
+                parentSpritePanel.repaint();
             }
         }
     }

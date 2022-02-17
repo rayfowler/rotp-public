@@ -1,9 +1,9 @@
 // all possible names
-name: Mrrshan, Prrshan, Mewshan, Clawshan, Hisshan
+name: Fiershan, Prrshan, Mewshan, Clawshan, Hisshan
 
 desc1: Militaristi Spietati
 desc2: Artiglieri Superiori
-desc3: Le orde Mrrshan cercano trofei di battaglia mentre si diffondono nella galassia.
+desc3: Le orde Fiershan cercano trofei di battaglia mentre si diffondono nella galassia.
 
 // possible home system names
 home: Fierias, Fierina, Miamara, Miriana, Yailaria

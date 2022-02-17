@@ -1,0 +1,88 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Sakkra specific dialogue
+
+CONTACT_AGGRESSIVE         | Hi there! We're known as the [my_race], but that isn't important. What is important though, is that you know we plan on perfecting the ecology of every planet in the galaxy by any means necessary, ok? Bye now!
+CONTACT_RUTHLESS           | Hey! We're the [my_race]! I hope you haven't been mistreating your planets' ecosystems. We'd have to fix that immediately and that probably wouldn't be very fun for you, would it?
+CONTACT_ERRATIC            | Wow, a new species! We're the [my_race], and you are? [your_race]? Amazing! Just to let you know that you should keep your planets clean, ok? We'll make sure you do by keeping a very, very close eye on you.
+//
+GREETING_01                | Hey ambassador! Always happy to hear from a friend like you! Need help with something?
+GREETING_04                | It's the ambassador of the [your_empire]! We're busy fine-tuning some planetary ecosystems, but we'll listen to what you have to say. 
+GREETING_07                | Oh it's you. What do you want? You know we don't really like to associate with dirty races like yours, right?
+//
+DECLAREWAR_HATE_01         | Your people can't seem to stop defiling every planet they get their hands on, huh? We're going to wipe your filth from the galaxy in less time than it takes to build a biodome!
+DECLAREWAR_HATE_02         | Ever since we met you, you keep messing up your ecosystems in the most inconceivable of ways! We're gonna take you out before you can hurt anymore of these planets!
+DECLAREWAR_HATE_03         | We can't bear watching you foul up your worlds anymore! It'll cost us a lot, but sometimes the ends more than justify the means!
+//
+DECLAREWAR_ERRATIC_01      | Wow, your people sure are dirty. We could help you clean your worlds, but it'd be way faster to just get rid of you and fix them ourselves.
+DECLAREWAR_ERRATIC_02      | Hi! Ready for war? You're not? Well that's too bad! But we see some of your worlds that are just begging for optimization and we just have to get our hands on them.
+DECLAREWAR_ERRATIC_03      | Hey there! Did you know we recently designed an even more energy efficient biodome? We'd like to test them on some really filthy planets, so do you mind if we purge some of yours so we can get underway?
+//
+DECLAREWAR_MILITARY_01     | You know that the Conclave is going to perfect the environment of every planet in this galaxy, right? Well, we're going to start working on your worlds. You should leave them now. You should leave them soon: there's no way you'll beat us if you try to fight!
+DECLAREWAR_MILITARY_02     | The [my_title] says we have to get your people off their planets now so we can start fixing them. Are you going to leave them peacefully? No? That's too bad!
+DECLAREWAR_MILITARY_03     | You have some of the most wondrous ecological puzzles to solve in your territories and you treat them like they're not even there! We can't stand it any longer! No matter what, we're going to take them from you!
+//
+DECLAREWAR_ALLIANCE_01     | We heard you and the [other_race] were fighting about something. I'm sure it's stupid and unimportant, but this is the best chance for us to take your colonies for ourselves so we can finally fix all the damage you've caused!
+DECLAREWAR_ALLIANCE_02     | I definitely can't deny that the [other_race] are a dirty people. You're far filthier than they are though, so if they're willing to fight you we'll gladly join the cause.
+DECLAREWAR_ALLIANCE_03     | You definitely slipped up this time, ambassador! You had to have known we would join up with an ally who would go to war with you, even if that ally is as dirty as the [other_race]. Wait, you didn't know? Oh my...
+//
+DECLAREWAR_SPYING_01       | What do you think you're doing exactly? Someone as filthy as your people could never conduct spying against the Conclave without leaving a trail of filth behind you for us to follow, you know?
+DECLAREWAR_SPYING_02       | The fact that you'd act in such secrecy against the Conclave makes us mad, but the fact that you soiled our planets with your disgusting presence makes us absolutely livid!
+DECLAREWAR_SPYING_03       | You made the mistake in thinking we wouldn't strike back when you decided to spy on us. Just because your military is a little bigger than ours doesn't mean we're not willing to go to war with you filthmongers!
+//
+DECLAREWAR_ATTACK_01       | What are you doing?! How dare some filthy weakling like you damage our precious planets?! For this we'll burn your people like the trash they are!
+DECLAREWAR_ATTACK_02       | Want to fight a war against us, huh? Don't worry, we'll pick you off, a colony at a time, and liberate your planets from their horrid defilers!
+DECLAREWAR_ATTACK_03       | Dirty! Dirty! Dirty! You've tarnished our planet with your horrid bloodlust! The Conclave will muster every bit of strength it has to drive you back to the dross pit you came from!
+//
+DECLAREWAR_OPPORTUNITY_01  | The [my_title] was thinking about your people recently. He came to the conclusion that it'll be best for us to prevent you from spreading across the galaxy sooner rather than later. That way, we won't have as many worlds to clean up after we eliminate you!
+DECLAREWAR_ASSASSIN_01     | What have you done?! I knew your kind couldn't be trusted! If you'd kill an unarmed ambassador I shudder to think what you do to your ecosystems! Prepare for war, filthy [your_race].
+
+
+OFFER_PEACE_01             | Those poor planets! We just can't bear to see them scarred any longer by this stupid war! Let's put an end to the fighting now, ambassador, and begin to heal these worlds we've done so wrong by!  
+OFFER_TRADE_01             | Wow, there're so many complex environments on all these worlds! We'd like to make our economy more robust to fund all these projects, and trading with you would be a big help! [amt] BC each year is fine, right? 
+OFFER_PACT_01              | You seem to take care of your planets well enough, and wars do such ugly things to the worlds they're fought upon. Would you like a non-aggression pact with us? That way none of our beautiful ecosystems will have anything to fear! 
+OFFER_ALLIANCE_01          | Wow, I'm impressed! The way you care for your planets, it's almost like you're Ssaakra yourself! Make an alliance with us, ambassador! We'll protect each other's worlds together: no one will threaten us so long as we stand as one! 
+ 
+WARN_TRESPASSING_01        | Hey! Hey! Hey! [system] is under the protection of the Conclave! You don't belong here, you know? Get out! Now! What're you waiting for? Go! 
+WARN_EXPANSION_01          | You take for yourself way more than you should, ambassador! You're not advanced enough to care for each of these worlds, and we're not about to let you waste all these ecological puzzles! Slow your expansion, or else!
+WARN_BUILDUP_01            | That's a lot of ships you've got there! If you keep bringing more, some empires may start getting nervous. They may start pointing their guns your way. They may even fire a shot or two! If you keep bringing more ships, that is. 
+WARN_SKIRMISH_01           | I can't believe there was a skirmish at [system]! What were you thinking, ambassador? We'll look past it this time since you didn't harm any planets, but watch your fleets from now on, stupid [your_race]! 
+WARN_ATTACKED_01           | What do you think you're doing?! Stop fooling around! We're very busy trying to perfect the ecology in the [system], we don't need your ships flying around and making things even more challenging! 
+WARN_INVADED_01            | Have you lost your minds?! Or what little minds you stupid [your_race] have?! It'll take years to repair the damage you've done! These jokes aren't funny anymore! Stop playing games or we'll make you regret it! 
+WARN_ESPIONAGE_01          | Thinking you could spy on us and succeed in keeping it a secret? You're funny, ambassador. But if this stops being so amusing, we're probably just going to go ahead and kill you, ok? [framed]
+WARN_SABOTAGE_01           | What have you done?! You broke the biodome wide open! All those precious samples, all those experiments ruined! You go too far: expect a response from us if this continues, dirty [your_race]! [forced]
+WARN_BIOWEAPON_01          | Now you've done it! A bioweapon?!  A bioweapon!! Think of the untold damage you've done on the ecology of that defenseless planet! You absolute monster: you'll live to regret this!
+WARN_GENOCIDE_01           | You removed the [victim_race] didn't you? Good, they were really beginning to get on our nerves. Of course you'll be giving us their worlds for ecological restoration. You won't? I see...
+WARN_FINAL_WAR_01          | You know that we've all decided to join together for the good of all worlds, right? Why do you want to oppose our unity, ambassador? I guess it won't matter soon. But don't worry! We'll take good care of your planets after you're gone.
+WARN_COUNCIL_VOTE_01       | That wasn't a very nice thing to do in council. I thought we had an understanding, ambassador? That the will of the [candidate_race] was always the correct choice to make? Don't slip up again, dirty [your_race]!
+WARN_OATHBREAKER_01        | We always thought you were physically disgusting, with your weird bodies and foul odors. But now we see the actions match the visage! Be gone from my sight now, ambassador: I'm beginning to feel very sick indeed. [spiesCaught]
+WARN_ATTACKED_ALLY_01      | Look, we're not really fans of the [defender_race] even if we are technically allies. Just stop your stupid bickering otherwise we'll have to get involved.
+WARN_REBELLING_AGAINST_01  | How could the council do this to us?! How could they choose YOU of all people to lead this galaxy? We can't let this slide... you're just... so... FILTHY! 
+
+PRAISE_COUNCIL_VOTE_01     | Hey ambassador! Thanks for being so reliable in council. Those other races are so gross, but to have support from people like you? Well, it makes us feel like we're doing something right. Just let me know if you need anything, ok? 
+PRAISE_COUNCIL_VOTE_02     | You did very well today in the council chambers. I'm really glad to know that you see the wisdom in our ways. I hope your planets benefit from your wisdom as much as the Conclave does! 
+PRAISE_COUNCIL_VOTE_03     | Hmm, what are you plotting, trying to get on our good side by voting for us in the council meeting? Well, whatever, I'm sure we'll find out what it is soon enough if it's important. Thanks for the support anyway, filthling. 
+PRAISE_ATTACKED_ENEMY_01   | You heard the call of those worlds, didn't you ambassador? They need to be freed from the [defender_race] oppression as soon possible. I just knew you were like us at heart! Now the rest of the Conclave will know it as well! 
+PRAISE_ATTACKED_ENEMY_02   | Haha, yeah! That's the way! Drive those dirty [defender_race_plural] back until there's nowhere left for them to run! Just try not to hurt the planets too much, ok? We'll need them when we're through. 
+PRAISE_ATTACKED_ENEMY_03   | You're fighting the [defender_race] too, filthling? It's the smell isn't it? It permeates everything surrounding it. Just stay away from us when you're done! I'm sure it will infect you, too! 
+PRAISE_TRADE_01            | This trade agreement is so great! We've been able to generate support for so many projects from it. I thank you sincerely, and the worlds of the [my_empire] sing eternal praises to your name! 
+PRAISE_TRADE_02            | There you are! The [my_title] wanted me to congratulate you on maintaining a flawless trade agreement with the Conclave. He hopes that you will see the wisdom in continuing, as we have many projects to explore! That's all. Bye now! 
+PRAISE_REBELLING_WITH_01   | The council has gone insane to put those disgusting [leader_race_plural] on the proverbial throne. Their rank stench is already making our people sick. Let us help you take them down, ambassador!  
+ 
+ACCEPT_TRADE_01            | Trade time! Trade time! [amt] BC each year will go a long way to helping set up our biospheres! Thanks, friend!
+RESPOND_IGNORE_THREAT_01   | Oh boy, you're really mad aren't you? Oh well, it's not like you could do anything even if you were! Go away now please, I'm very busy with these flora samples today.
+RESPOND_STOP_SPYING_01     | Caught a spy, did ya? Well don't worry, we were just checking to make sure you were being nice to your planets. Seems like you were, so give us back our monitor and we won't need to send another one out!
+RESPOND_STOP_ATTACKING_01  | See how many ships we have? And every one has big, scary guns! If we ever find out you're abusing your planets, we'll have to send them back, and neither one of us wants that to happen! Bye now!
+

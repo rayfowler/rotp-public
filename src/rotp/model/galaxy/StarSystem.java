@@ -294,7 +294,7 @@ public class StarSystem implements Base, Sprite, IMappedObject, Serializable {
             resolvePeacefulShipScans();
     }
     public void resolvePeacefulShipScans() {
-        List<ShipFleet> fleets = galaxy().ships.allFleetsAtSystem(id);
+        List<ShipFleet> fleets = galaxy().ships.orbitingFleets(id);
         
         if (fleets.size() < 2)
             return;

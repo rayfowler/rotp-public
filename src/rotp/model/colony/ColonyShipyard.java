@@ -59,12 +59,12 @@ public class ColonyShipyard extends ColonySpendingCategory {
     public int buildLimit()                   { return buildLimit; }
     public void buildLimit(int i)             { buildLimit = max(0,i); }
     public String buildLimitStr() { return buildLimit == 0 ? text("MAIN_COLONY_SHIPYARD_LIMIT_NONE") : str(buildLimit); }
-    public boolean incrementBuildLimit()      { buildLimit++;  return true; }
-    public boolean decrementBuildLimit()      { 
+    public boolean incrementBuildLimit(int amt)  { buildLimit += amt;  return true; }
+    public boolean decrementBuildLimit(int amt)  { 
         if (buildLimit == 0)
             return false;
         
-        buildLimit--;
+        buildLimit = max(0, buildLimit - amt);
         return true;
     }
     public boolean resetBuildLimit()         {
@@ -176,6 +176,9 @@ public class ColonyShipyard extends ColonySpendingCategory {
         shipLimitReached = false;
         stargateCompleted = false;
 
+        if (colony().allocation(categoryType()) == 0)
+            return;
+        
         // should never happen anymore, but hey
         if (buildingObsoleteDesign()) {
             empire().addReserve(newBC);
@@ -282,6 +285,9 @@ public class ColonyShipyard extends ColonySpendingCategory {
     public int upcomingShipCount() {
         if (buildingObsoleteDesign())
             return 0;
+        if (colony().allocation(categoryType()) == 0)
+            return 0;
+        
         float tmpShipReserveBC = shipReserveBC;
         float tmpShipBC = shipBC;
         float tmpStargateBC = stargateBC;
@@ -347,6 +353,9 @@ public class ColonyShipyard extends ColonySpendingCategory {
     }
     @Override
     public String upcomingResult() {
+        if (colony().allocation(categoryType()) == 0)
+            return noneText;
+        
         float tmpShipReserveBC = shipReserveBC;
         float tmpShipBC = shipBC;
         float tmpStargateBC = stargateBC;

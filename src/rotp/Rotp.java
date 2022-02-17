@@ -42,9 +42,9 @@ public class Rotp {
     public static String jarFileName = "Remnants.jar";
     public static String exeFileName = "Remnants.exe";
     public static boolean countWords = false;
-    private static String startupDir;
+    private static String startupDir = System.getProperty("startupdir");
     private static JFrame frame;
-    public static String releaseId = "1.01";
+    public static String releaseId = "1.02a";
     public static long startMs = System.currentTimeMillis();
     public static long maxHeapMemory = Runtime.getRuntime().maxMemory() / 1048576;
     public static long maxUsedMemory;

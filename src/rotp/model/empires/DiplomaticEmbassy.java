@@ -386,6 +386,8 @@ public class DiplomaticEmbassy implements Base, Serializable {
             return true;
         if (pact())
             return (s.hasColonyForEmpire(owner()) || s.hasColonyForEmpire(empire()));
+        if (alliance() || unity())
+            return false;
         return !peaceTreatyInEffect();
     }
     public boolean peaceTreatyInEffect()   { return treaty.isPeace() || (peaceDuration > 0); }

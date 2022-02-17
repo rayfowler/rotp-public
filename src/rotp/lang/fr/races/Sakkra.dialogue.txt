@@ -1,0 +1,88 @@
+//
+// All text below this point is copyright 2018-2020 Jeff Colucci
+// 
+// Licensed under the Creative Commons License, 
+// Attribution-NonCommercial-NoDerivatives 4.0 International (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+// 
+//     https://creativecommons.org/licenses/by-nc-nd/4.0/
+//  
+// This license is legally binding. Please review this license before altering 
+// or distributing any material covered under this license.
+//
+
+// Sakkra specific dialogue
+
+CONTACT_AGGRESSIVE         | Salut! Nous sommes connus sous le nom [my_race_pluraladjec], mais ce n'est pas important. Ce qui est important, c'est que vous sachiez que nous prévoyons de perfectionner l'écologie de chaque planète de la galaxie par tous les moyens nécessaires, d'accord ? Salut!
+CONTACT_RUTHLESS           | Hey! Nous sommes [my_race_pluralnoun] ! J'espère que vous n'ayez pas maltraité les écosystèmes de vos planètes. Nous serions obligés de résoudre ce problème immédiatement et ce ne serait probablement pas très amusant pour vous, n'est-ce pas ?
+CONTACT_ERRATIC            | Wow, une nouvelle espèce ! Nous sommes [my_race_pluralnoun], et vous êtes? [your_race_pluralnoun]? Incroyable! Juste pour que vous sachiez que vous devez garder vos planètes propres, d'accord ? Nous veillerons à ce que vous le fassiez en gardant un œil très attentif sur vous.
+//
+GREETING_01                | Hey, ambassadeur ! Toujours heureux d'avoir des nouvelles d'un ami comme vous ! Besoin d'aide pour quelque chose ?
+GREETING_04                | C'est l'ambassadeur [your_empireof] ! Nous sommes occupés à peaufiner certains écosystèmes planétaires, mais nous écouterons ce que vous avez à dire. 
+GREETING_07                | Oh, c'est vous. Qu'est-ce que vous voulez? Vous savez que nous n'aimons pas vraiment nous associer à des races sales comme la vôtre, n'est-ce pas ?
+//
+DECLAREWAR_HATE_01         | Votre peuple n'arrive pas à arrêter de souiller chaque planète sur laquelle il met la main, hein ? Nous allons effacer vos saletés de la galaxie en moins de temps qu'il n'en faut pour construire un biodôme !
+DECLAREWAR_HATE_02         | Depuis que nous vous avons rencontrés, vous n'arrêtez pas de chambouler vos écosystèmes de la manière la plus inconcevable ! Nous allons vous éliminer avant que vous ne puissiez plus blesser ces planètes !
+DECLAREWAR_HATE_03         | Nous ne pouvons plus supporter de vous voir gâcher vos mondes ! Cela va nous coûter cher, mais parfois la fin plus que justifie les moyens !
+//
+DECLAREWAR_ERRATIC_01      | Wow, vos gens sont vraiment sales. Nous pourrions vous aider à nettoyer vos mondes, mais ce serait bien plus rapide de vous débarrasser de vous et de les réparer nous-mêmes.
+DECLAREWAR_ERRATIC_02      | Salut! Prêts pour la guerre? Vous n'êtes pas? Et bien c'est dommage ! Mais nous voyons certains de vos mondes qui ne demandent qu'à être optimisés et nous devons simplement mettre la main dessus.
+DECLAREWAR_ERRATIC_03      | Salut! Saviez-vous que nous avons récemment conçu un biodôme encore plus écoénergétique ? Nous aimerions les tester sur des planètes vraiment sales, alors ça vous dérange si nous purgeons certaines des vôtres afin que nous puissions démarrer ?
+//
+DECLAREWAR_MILITARY_01     | Vous savez que le Conclave va perfectionner l'environnement de chaque planète de cette galaxie, n'est-ce pas ? Eh bien, nous allons commencer à travailler sur vos mondes. Vous devriez les quitter maintenant. Vous devriez les quitter bientôt : vous ne pourrez pas nous battre si vous essayez de vous battre !
+DECLAREWAR_MILITARY_02     | [my_title] dit que nous devons faire sortir vos gens de leurs planètes maintenant afin que nous puissions commencer à les réparer. Allez-vous les quitter sereinement ? Non? Tant pis!
+DECLAREWAR_MILITARY_03     | Vous avez certaines des énigmes écologiques les plus merveilleuses à résoudre dans vos territoires et vous les traitez comme s'ils n'étaient même pas là ! Nous n'en pouvons plus ! Quoi qu'il en soit, nous allons vous les prendre !
+//
+DECLAREWAR_ALLIANCE_01     | Nous avons entendu que vous et [other_race_pluralnoun] vous disputiez à propos de quelque chose. Je suis sûr que c'est stupide et sans importance, mais c'est la meilleure chance pour nous de prendre vos colonies pour nous-mêmes afin que nous puissions enfin réparer tous les dégâts que vous avez causés !
+DECLAREWAR_ALLIANCE_02     | Je ne peux certainement pas nier que [other_race_pluralnoun] sont des gens sales. Vous êtes bien plus sale qu'eux, donc s'ils sont prêts à vous combattre, nous nous joindrons avec plaisir à la cause.
+DECLAREWAR_ALLIANCE_03     | Vous vous êtes définitivement trompé cette fois, ambassadeur ! Vous deviez savoir que nous rejoindrions un allié qui partirait en guerre avec vous, même si cet allié est aussi sale que [other_race_pluralnoun]. Attends, vous ne le saviez pas ? Fiou...
+///
+DECLAREWAR_SPYING_01       | Que pensez-vous faire exactement ? Quelqu'un d'aussi sale que votre peuple ne pourrait jamais espionner le Conclave sans laisser une traînée de saleté derrière vous pour que nous suivions, vous savez?
+DECLAREWAR_SPYING_02       | Le fait que vous agissiez dans un tel secret contre le Conclave nous rend fous, mais le fait que vous ayez souillé nos planètes avec votre présence dégoûtante nous rend complètement livides !
+DECLAREWAR_SPYING_03       | Vous avez fait l'erreur de penser que nous ne riposterions pas lorsque vous avez décidé de nous espionner. Ce n'est pas parce que votre armée est un peu plus grosse que la nôtre que nous ne sommes pas prêts à partir en guerre contre vous, les salauds !
+//
+DECLAREWAR_ATTACK_01       | Que faites-vous?! Comment des sales faibles comme vous osez endommager nos précieuses planètes ?! Pour cela, nous allons brûler vos gens comme les ordures qu'ils sont !
+DECLAREWAR_ATTACK_02       | V'voulez nous faire la guerre, hein ? Ne vous inquiétez pas, nous vous éliminerons, colonie à la fois, et libérerons vos planètes de leurs horribles profanateurs !
+DECLAREWAR_ATTACK_03       | Sale! Sale! Sale! Vous avez terni notre planète avec votre horrible soif de sang ! Le Conclave rassemblera toutes ses forces pour vous ramener à la fosse à scories d'où vous venez !
+//
+DECLAREWAR_OPPORTUNITY_01  | [my_title] pensait à votre peuple récemment. Il est arrivé à la conclusion qu'il serait préférable pour nous de vous empêcher de vous propager à travers la galaxie le plus tôt possible. De cette façon, nous n'aurons pas autant de mondes à nettoyer après vous avoir éliminé !
+DECLAREWAR_ASSASSIN_01     | Qu'avez-vous fait?! Je savais qu'on ne pouvait pas faire confiance à votre espèce ! Si vous tuiez un ambassadeur désarmé, je frissonne en pensant à ce que vous faites à vos écosystèmes ! Préparez-vous à la guerre, sale [your_raceadjec].
+
+
+OFFER_PEACE_01             | Ces pauvres planètes ! Nous ne pouvons plus supporter de les voir marqués plus longtemps par cette guerre stupide ! Mettons un terme aux combats maintenant, ambassadeur, et commençons à guérir ces mondes par lesquels nous avons si mal agi !  
+OFFER_TRADE_01             | Wow, il y a tellement d'environnements complexes sur tous ces mondes ! Nous aimerions rendre notre économie plus robuste pour financer tous ces projets, et échanger avec vous serait d'une grande aide ! [amt] BC chaque année, c'est bien, n'est-ce pas ? 
+OFFER_PACT_01              | Vous semblez prendre assez bien soin de vos planètes, et les guerres font des choses si horribles aux mondes sur lesquels elles se battent. Souhaitez-vous un pacte de non-agression avec nous ? Ainsi, aucun de nos beaux écosystèmes n'aura rien à craindre ! 
+OFFER_ALLIANCE_01          | Wow, je suis impressionné! La façon dont vous prenez soin de vos planètes, c'est presque comme si vous étiez vous-même [my_raceadjec] ! Faites alliance avec nous, ambassadeur ! Ensemble, nous protégerons nos mondes : personne ne nous menacera tant que nous ne ferons qu'un ! 
+ 
+WARN_TRESPASSING_01        | Hey! Hey! Hey! [system] est sous la protection du Conclave ! Vous n'êtes pas à votre place ici, v'savez ? Allez-vous-en ! Maintenant ! Qu'est-ce que vous attendez ? Sortez ! 
+WARN_EXPANSION_01          | Vous prenez pour vous bien plus que vous ne devriez, ambassadeur ! Vous n'êtes pas assez avancé pour vous occuper de chacun de ces mondes, et nous n'allons pas vous laisser gâcher tous ces puzzles écologiques ! Ralentissez votre expansion ! Sinon...
+WARN_BUILDUP_01            | Cela fait beaucoup de navires que vous avez là-bas ! Si vous continuez à apporter plus, certains empires peuvent commencer à devenir nerveux. Ils peuvent commencer à pointer leurs armes vers vous. Ils peuvent même vous tirer dessus une ou deux fois ! Si vous continuez à apporter plus de navires, bien sûr. 
+WARN_SKIRMISH_01           | Je ne peux pas croire qu'il y ait eu une escarmouche à [system] ! A quoi pensiez-vous, ambassadeur ? Nous allons regarder au-delà cette fois puisque vous n'avez fait de mal à aucune planète, mais surveillez vos flottes à partir de maintenant, [your_race] stupide ! 
+WARN_ATTACKED_01           | Qu'est ce que vous croyez faire?! Arrêtez de faire l'imbécile ! Nous sommes très occupés à essayer de perfectionner l'écologie dans le [system], nous n'avons pas besoin que vos navires volent et rendent les choses encore plus difficiles ! 
+WARN_INVADED_01            | Avez-vous perdu la tête ?! Ou au moins votre peu de cervelle que vous, [your_race_pluralnoun,] vous avez ?! Il faudra des années pour réparer les dégâts que vous avez causés ! Ces blagues ne sont plus drôles ! Arrêtez de jouer ou nous vous le ferons regretter ! 
+WARN_ESPIONAGE_01          | Vous pensez pouvoir nous espionner et réussir à garder le secret ? Vous êtes drôle, ambassadeur. Mais si ça cesse d'être si amusant, on va probablement tout simplement vous tuer, d'accord ? [framed]
+WARN_SABOTAGE_01           | Qu'avez-vous fait?! Vous avez ouvert le biodôme en grand ! Tous ces précieux échantillons, toutes ces expériences ruinées ! Vous allez trop loin : attendez une réponse de notre part si cela continue, sale [your_raceadjec]! [forced]
+WARN_BIOWEAPON_01          | Maintenant Vous avez maintenant dépassé la dernière limite ! Ça y est ! Une arme biologique ?! Une arme biologique !! Pensez aux dommages incalculables que vous avez causés à l'écologie de cette planète sans défense ! Monstruosité absolue : vous vivrez pour le regretter !
+WARN_GENOCIDE_01           | Vous avez supprimé [victim_race_pluralnoun], n'est-ce pas ? Tant mieux, ils commençaient vraiment à nous énerver. Bien sûr, vous nous donnerez leurs mondes pour la restauration écologique. Vous ne le ferez pas ? Très bien, alors...
+WARN_FINAL_WAR_01          | Vous savez que nous avons tous décidé de nous unir pour le bien de tous les mondes, n'est-ce pas ? Pourquoi voulez-vous vous opposer à notre unité, ambassadeur ? Je suppose que cela n'aura pas d'importance bientôt. Mais ne vous inquiétez pas ! Nous prendrons bien soin de vos planètes après votre départ.
+WARN_COUNCIL_VOTE_01       | Ce n'était pas une très belle chose à faire en conseil. Je pensais qu'on s'était entendu, ambassadeur ? Que la volonté [candidat_race_pluralnounof] a toujours été le bon choix à faire ? Ne vous trompez d'encore, sale [your_raceadjec]!
+WARN_OATHBREAKER_01        | Nous avons toujours pensé que vous étiez physiquement dégoûtant, avec vos corps étranges et vos odeurs nauséabondes. Mais maintenant, nous voyons que les actions correspondent au visage ! Débarrassez-vous de ma vue maintenant, ambassadeur : je commence vraiment à me sentir très mal.[spiesCaught]
+WARN_ATTACKED_ALLY_01      | Écoutez, nous ne sommes pas vraiment fans [defender_race_pluralnounof] même si nous sommes techniquement des alliés. Arrêtez juste vos querelles stupides sinon nous devrons nous impliquer.
+WARN_REBELLING_AGAINST_01  | Comment le conseil a-t-il pu nous faire ça ?! Comment pourraient-ils VOUS choisir parmi toutes les personnes pour diriger cette galaxie ? On ne peut pas laisser passer ça... vous êtes juste... tellement... crasseux ! 
+
+PRAISE_COUNCIL_VOTE_01     | Hey, ambassadeur! Merci d'être si fiable en conseil. Ces autres races sont tellement dégoûtantes, mais avoir le soutien de gens comme vous ? Eh bien, cela nous donne l'impression que nous faisons quelque chose de bien. Faites-moi savoir si vous avez besoin de quelque chose, d'accord ? 
+PRAISE_COUNCIL_VOTE_02     | Vous avez très bien fait aujourd'hui dans la salle du conseil. Je suis vraiment heureux de savoir que vous voyez la sagesse dans nos manières. J'espère que vos planètes bénéficieront de votre sagesse autant que le Conclave ! 
+PRAISE_COUNCIL_VOTE_03     | Hmm, qu'est-ce que vous complotez, en essayant d'être de notre côté en votant pour nous à la réunion du conseil ? Bon, peu importe, je suis sûr que nous saurons ce que c'est assez tôt si c'est important. Merci pour le soutien en tout cas, crasseux. 
+PRAISE_ATTACKED_ENEMY_01   | Vous avez entendu l'appel de ces mondes, n'est-ce pas, ambassadeur ? Ils doivent être libérés de l'oppression [defender_raceadjecF] dès que possible. Je savais juste que vous étiez comme nous dans l'âme ! Désormais, le reste du Conclave le saura aussi ! 
+PRAISE_ATTACKED_ENEMY_02   | Haha, ouais ! Bravo ! Repoussez ces sales [defender_race_pluraladjec] jusqu'à ce qu'ils n'aient plus nulle part où courir ! Essayez juste de ne pas trop blesser les planètes, d'accord ? Nous aurons besoin d'eux quand nous aurons fini. 
+PRAISE_ATTACKED_ENEMY_03   | Vous combattez [defender_race_pluralnoun] aussi, le crasseux ? C'est l'odeur, non ? Il imprègne tout ce qui l'entoure. Restez loin de nous lorsque vous avez terminé ! Je suis sûr qu'il vous infectera aussi ! 
+PRAISE_TRADE_01            | Cet accord commercial est tellement génial! Nous avons pu générer un soutien pour tant de projets à partir de cela. Je vous remercie sincèrement, et les mondes [my_empireof] chantent des louanges éternelles à votre nom ! 
+PRAISE_TRADE_02            | Vous voilà ! [my_title] voulait que je vous félicite d'avoir maintenu un accord commercial sans faille avec le Conclave. Il espère que vous verrez la sagesse de continuer, car nous avons de nombreux projets à explorer ! C'est tout. Salut ! 
+PRAISE_REBELLING_WITH_01   | Le conseil est devenu fou pour mettre ces dégoûtants [leader_race_pluraladjec] sur le trône proverbial. Leur odeur nauséabonde commence déjà à dégoûter notre peuple. Laissez-nous vous aider à les abattre, ambassadeur !  
+ 
+ACCEPT_TRADE_01            | L'heure du commerce ! L'heure du commerce ! [amt] BC chaque année contribuera grandement à la mise en place de nos biosphères ! Merci, l'ami!
+RESPOND_IGNORE_THREAT_01   | Oh merde, vous êtes vraiment en colère, n'est-ce pas ? Et bien, ce n'est pas comme si vous pouviez faire quoi que ce soit même si vous l'étiez ! Allez-vous-en maintenant, je suis très occupé avec ces échantillons de flore aujourd'hui.
+RESPOND_STOP_SPYING_01     | Vs'avez attrapé un espion, n'est-ce pas ? Eh bien, ne vous inquiétez pas, nous vérifiions juste que vous étiez gentil avec vos planètes. On dirait que vous l'étiez, alors rendez-nous notre moniteur et nous n'aurons pas besoin d'en envoyer un autre !
+RESPOND_STOP_ATTACKING_01  | Vous voyez combien de navires nous avons ? Et chaqu'un a de gros pistolets effrayants ! Si jamais nous découvrons que vous abusez de vos planètes, nous devrons les renvoyer, et aucun de nous ne veut que cela se produise ! Salut !
+

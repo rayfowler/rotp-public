@@ -1,0 +1,21 @@
+// all possible names
+name: Humain, Terrien, Tellien, Primien, Midgardien
+
+desc1: Des Diplomates Honorables
+desc2: Des Commerçants experts et diplomates magnifiques
+desc3: Les humains à la langue d'argent sont des maîtres dans l'art de convaincre les autres de servir leurs intérêts.
+
+// possible home system names
+home: Terre, Terra, Tellus, Prime, Midgard
+
+title: Triumvir
+fulltitle: Triumvir
+
+// possible leader names
+leader: Alexander, Bladrov II, Durash IV, Johann III, Lasitus, Strader
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Sentinelle, Sondage, Courrier, Explorateur, Chercheur, Messager, Patrouille
+ship2: Frégate, Corvette, Canonnière, Chasseur, Brigade, Pie-grièche, Commando
+ship3: Croiseur, Escorteur, Navire de Guerre, Défenseur, Transporteur, Avant-garde, Harrier
+ship4: Dreadnought, Cuirassé, Étoile de l'Effroi, Dévastateur, Croiseur de Combat, Vengeur, Destructeur

@@ -90,7 +90,7 @@ public interface IMapHandler {
     default public void drawAlerts(Graphics2D g)         { }
 
     default Empire empireBoundaries()                    { return Empire.thePlayer(); }
-    default public float systemClickRadius()             { return 1.0f; }
+    default public float systemClickRadius()             { return 0.4f; }
     default public boolean showYear()                    { return true; }
     default Color flagColor(StarSystem s)                { return Empire.thePlayer().sv.flagColor(s.id); }
     default Image flagImage(StarSystem s)                { return Empire.thePlayer().sv.flagImage(s.id); }

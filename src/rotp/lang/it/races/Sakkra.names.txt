@@ -1,9 +1,10 @@
 // all possible names
-name: Sakkra, Reptara, Saura, Raptora, Tyranna
+name: Ssslaurani, Reptarani, Saurani, Raptorani, Tyrannani
 
 desc1: Espansionisti Aggressivi
 desc2: Aumento della Crescita della Popolazione
-desc3: I fanatici del Conclave Sakkra si sforzano di perfezionare i mondi che conquistano.
+desc3: I fanatici del Conclave Ssslaurani si sforzano di perfezionare i mondi che conquistano.
+
 // possible home system names
 home: Sssla, Sssana, Sssihs, Sssha, Sssss, Hsssa
 

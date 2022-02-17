@@ -794,7 +794,7 @@ public interface Base {
     }
     public default String str(String s) { return s == null ? "null" : s; }
     public default String str(int i)    { return Integer.toString(i); }
-    public default String str(float i) { return Float.toString(i); }
+    public default String str(float i)  { return Float.toString(i); }
     public default BufferedImage flip(BufferedImage img) {
         if (img == null)
             return null;
@@ -838,7 +838,25 @@ public interface Base {
     public default Border newEmptyBorder(int top, int left, int bottom, int right) {
         return BorderFactory.createEmptyBorder(scaled(top), scaled(left), scaled(bottom), scaled(right));
     }
-    public default void drawString(Graphics g, String str, int x, int y) {
+    public default String replaceDigits(String s0) {
+        String s = s0;
+        if (LanguageManager.customDigits != null) {
+            char[] oldDigits = LanguageManager.latinDigits;
+            char[] newDigits = LanguageManager.customDigits;
+            int n = min(oldDigits.length, newDigits.length);
+            for (int j=0;j<n;j++) 
+                s = s.replace(oldDigits[j], newDigits[j]);           
+        }           
+        return s;
+    }
+    public default String strFormat(String fmt, int n) {
+        if (LanguageManager.customDigits == null) 
+            return String.format(fmt, n);
+        
+        return replaceDigits(String.format(fmt,n));
+    }
+    public default void drawString(Graphics g, String str0, int x, int y) {
+        String str = replaceDigits(str0);
         g.drawString(str, x, y);
     }
     public default void drawBorderedString(Graphics g, String str, int x, int y, Color back, Color fore) {

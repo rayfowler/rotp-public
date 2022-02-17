@@ -1,0 +1,22 @@
+// all possible names
+name: Fiershan, Prrshan, Mewshan, Clawshan, Hisshan
+
+desc1: Des Militaristes Impitoyables
+desc2: Des Artilleurs Supérieurs
+desc3: Les hordes Fiershan cherchent des trophées de combat alors qu'elles se répandent à travers la galaxie.
+
+// possible home system names
+home: Fierias, Fierina, Miamara, Miriana, Yailaria
+
+title:     Khan
+fulltitle: Khan
+
+// possible leader names
+leader: Jasana, Miamar, Mirana, Prrsha, Shandra, Yalara
+
+// ship names, by size: 1-small, 2-medium, 3-large, 4-huge
+ship1: Carcajou, Féral, Ferret, Blaireau, Félin, Souricier, Calicot
+ship2: Lynx, Catamount, Oncille, Chat Sauvage, Caracal, Margay, Serval
+ship3: Panthère, Léopard, Chat de Guerre, Guépard, Lynx roux, Ocelot, Jaguarondi
+ship4: Dent de Sabre, Puma, Tigre, Lion, Jaguar, Liger, Couguar
+
