@@ -849,12 +849,7 @@ public interface Base {
         }           
         return s;
     }
-    public default String strFormat(String fmt, int n) {
-        if (LanguageManager.customDigits == null) 
-            return String.format(fmt, n);
-        
-        return replaceDigits(String.format(fmt,n));
-    }
+    public default String strFormat(String fmt, int n) { return String.format(fmt, n);  }
     public default void drawString(Graphics g, String str0, int x, int y) {
         String str = replaceDigits(str0);
         g.drawString(str, x, y);
