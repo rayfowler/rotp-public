@@ -42,6 +42,7 @@ import java.util.Comparator;
 import java.util.List;
 
 import javax.swing.SwingUtilities;
+import rotp.Rotp;
 
 import rotp.model.game.GameSession;
 import rotp.ui.BasePanel;
@@ -127,8 +128,18 @@ public final class LoadGameUI  extends BasePanel implements MouseListener, Mouse
         hasBackupDir = backupDir.exists() && backupDir.isDirectory();
         
         FilenameFilter filter = (File dir, String name1) -> name1.toLowerCase().endsWith(ext);
+        File[] fileList = saveDir.listFiles(filter);
         
-        long sSize = saveDir.listFiles(filter).length;
+          // fileList = null if prefs pointing to an invalid folder...default to jarPath 
+        if (fileList == null) {
+            saveDirPath = Rotp.jarPath();
+            saveDir = new File(saveDirPath);
+            backupDirPath = saveDirPath+"/"+GameSession.BACKUP_DIRECTORY;
+            backupDir = new File(backupDirPath);
+            hasBackupDir = backupDir.exists() && backupDir.isDirectory();;
+            fileList = saveDir.listFiles(filter);
+        }
+        long sSize = fileList.length;
         if (hasBackupDir)
             sSize--;
         saveDirInfo = text("LOAD_GAME_SAVE_DIR", (int)sSize);
